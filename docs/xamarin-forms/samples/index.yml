@@ -1,0 +1,69 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: "Ukázky Xamarin.Forms"
+metadata:
+  description: "Ukázkové aplikace a ukázky kódu Xamarin.Forms pro vývojáře mobilních aplikací"
+  author: conceptdev
+  ms.author: crdun
+  ms.date: 02/17/2018
+  ms.topic: article
+  ms.openlocfilehash: 2cd0a8019df09c8da0f19812b5217bcad5f0c2e9
+  ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+  ms.translationtype: HT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 02/28/2018
+abstract:
+  description: "Ukázkové aplikace a ukázky kódu Xamarin.Forms, které vám pomůžou začít pracovat a pochopit koncepty Xamarin.Forms"
+  menu:
+    items:
+    - href: https://developer.xamarin.com/samples/xamarin-forms/all/
+      text: "Všechny ukázky Xamarin.Forms"
+sections:
+- title: 
+  items:
+  - type: list
+    style: cards
+    className: cardsW
+    items:
+    - href: https://developer.xamarin.com/samples/xamarin-forms/Todo/
+      html: "Tato ukázka demonstruje aplikaci seznamu úkolů (Todo), ve které se data ukládají a získávají přes místní databázi SQLite."
+      image:
+        src: images/todo.png
+        href: https://developer.xamarin.com/samples/xamarin-forms/Todo/
+      title: Todo
+    - href: https://developer.xamarin.com/samples/mobile/LivePlayer/BugSweeperLP/
+      html: "Toto je známá hra s novým prvkem. V poli 9 x 9 je skryto 10 chyb. Abyste vyhráli, musíte najít a označit všech 10 chyb."
+      image:
+        src: images/bugsweeper.png
+        href: https://developer.xamarin.com/samples/mobile/LivePlayer/BugSweeperLP/
+      title: BugSweeper
+    - href: https://developer.xamarin.com/samples/xamarin-forms/RpnCalculator/
+      html: "Kalkulačka RPN (reverzní polská notace) umožňuje, aby se čísla a operace zadávaly bez závorek nebo rovnítka."
+      image:
+        src: images/rpncalc.png
+        href: https://developer.xamarin.com/samples/xamarin-forms/RpnCalculator/
+      title: "Kalkulačka RPN"
+    - href: https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SpinPaint/
+      html: "Program simuluje otáčející se disk, na který můžete dotykem a pohybem prstů malovat. SpinPaint reaguje na dotyk tím, že pod vaším prstem nakreslí čáru, ale zároveň tuto čáru duplikuje ve třech zrcadlových obrazech v ostatních třech kvadrantech disku."
+      image:
+        src: images/spinpaint.png
+        href: https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SpinPaint/
+      title: SpinPaint
+    - href: https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/
+      html: "XAML – eXtensible Application Markup Language – umožňuje vývojářům definovat uživatelská rozhraní v aplikacích Xamarin.Forms pomocí značek namísto kódu."
+      image:
+        src: images/xaml.png
+        href: https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/
+      title: "Ukázky XAML"
+    - href: https://developer.xamarin.com/samples/mobile/LivePlayer/XamagonXuzzleLP/
+      html: "XAML – eXtensible Application Markup Language – umožňuje vývojářům definovat uživatelská rozhraní v aplikacích Xamarin.Forms pomocí značek namísto kódu."
+      image:
+        src: images/xuzzle.png
+        href: https://developer.xamarin.com/samples/mobile/LivePlayer/XamagonXuzzleLP/
+      title: Xuzzle
+    - href: https://developer.xamarin.com/samples/xamarin-forms/all/
+      html: "Všechny ukázkové aplikace a ukázky kódů Xamarin.Forms"
+      image:
+        src: ~/media/shared/sample-download.svg
+        href: https://developer.xamarin.com/samples/xamarin-forms/all/
+      title: "Všechny ukázky Xamarin.Forms"

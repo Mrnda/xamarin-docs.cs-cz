@@ -1,0 +1,57 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: "Ukázky Xamarin.Mac"
+metadata:
+  description: "Multiplatformní ukázkové aplikace Xamarin.Mac pro vývojáře mobilních aplikací"
+  author: conceptdev
+  ms.author: crdun
+  ms.date: 02/27/2018
+  ms.topic: article
+  ms.openlocfilehash: b367917c1605ccb6e50a55621521b56942ef8f54
+  ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+  ms.translationtype: HT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 02/28/2018
+abstract:
+  description: "Ukázkové aplikace a ukázky kódu Xamarin.Mac, které vám pomůžou začít vytvářet aplikace pomocí jazyka C# a Xamarinu"
+  menu:
+    items:
+    - href: https://developer.xamarin.com/samples/mac/all/
+      text: "Všechny ukázky Xamarin.Mac"
+sections:
+- title: 
+  items:
+  - type: list
+    style: cards
+    className: cardsW
+    items:
+    - href: https://developer.xamarin.com/samples/mac/Hello_Mac/
+      html: "Aplikace Hello World, která vám pomůže začít s vývojem pro Mac"
+      image:
+        src: images/hellomac.png
+        href: https://developer.xamarin.com/samples/mac/Hello_Mac/
+      title: Hello, Mac
+    - href: https://developer.xamarin.com/samples/mac/MacControls/
+      html: "Ukázky ovládacích prvků uživatelského rozhraní pro aplikace pro Mac"
+      image:
+        src: images/controls.png
+        href: https://developer.xamarin.com/samples/mac/MacControls/
+      title: MacControls
+    - href: https://developer.xamarin.com/samples/mac/MacImages/
+      html: "Ukázky ovládacích prvků uživatelského rozhraní pro aplikace pro Mac"
+      image:
+        src: images/images.png
+        href: https://developer.xamarin.com/samples/mac/MacImages/
+      title: MacImages
+    - href: https://developer.xamarin.com/samples/mac/SourceWriter/
+      html: "Jednoduchý editor, který nabízí podporu dokončování kódu a zvýrazňování syntaxe"
+      image:
+        src: images/sourcewriter.png
+        href: https://developer.xamarin.com/samples/mac/SourceWriter/
+      title: SourceWriter
+    - href: https://developer.xamarin.com/samples/mac/all/
+      html: "Všechny ukázkové aplikace a ukázky kódů Xamarin.Mac"
+      image:
+        src: ~/media/shared/sample-download.svg
+        href: https://developer.xamarin.com/samples/mac/all/
+      title: "Všechny ukázky Xamarin.Mac"
