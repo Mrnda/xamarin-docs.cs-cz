@@ -35,6 +35,7 @@
     "overwrite": [],
     "externalReference": [],
     "globalMetadata": {
+      "uhfHeaderId":"MSDocsHeader-Xamarin",
       "breadcrumb_path": "/xamarin/breadcrumb/toc.json",
       "extendBreadcrumb": true
     },
