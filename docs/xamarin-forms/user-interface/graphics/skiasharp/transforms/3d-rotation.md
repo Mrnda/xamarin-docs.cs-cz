@@ -9,7 +9,7 @@ ms.author: chape
 ms.date: 04/14/2017
 ms.openlocfilehash: 1341cde32778358fbeb7b65045616d5d81623d37
 ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 02/27/2018
 ---
@@ -27,7 +27,7 @@ Je obtížné vyvíjet to `SKMatrix` transformace funguje pouze v rámci dvěma 
 
 Trojrozměrné souřadnicový systém přidá třetí osy Z. koncepčně volat, osy Z v pravém úhlu na obrazovku. Souřadnice body v 3D prostoru jsou vypsány s tři čísla: (x, y, z). V 3D systém souřadnic používané v tomto článku, zvýšení hodnoty X jsou napravo a roste hodnoty y přejděte dolů, jako v případě dvěma rozměry. Zvyšující kladné Z hodnoty pocházejí z obrazovky. Levém horním rohu, jako v případě grafiky 2D pochází. Na obrazovce si lze představit jako XY rovině s osy Z v pravém úhlu k této roviny.
 
-Tomu se říká levé souřadnicový systém. Pokud jste bodu ukazováčkem pro vaše vlevo ve směru osy X kladné koordinuje (napravo) a prstu střední ve směru osy y roste koordinuje (dolů), pak bodům jezdec ve směru zvýšení souřadnice Z & #x 2014; rozšíření se z obrazovky.
+Tomu se říká levé souřadnicový systém. Pokud jste bodu ukazováčkem pro vaše vlevo ve směru osy X kladné koordinuje (napravo) a prstu střední ve směru osy y roste koordinuje (dolů), pak bodům jezdec ve směru zvýšení souřadnice Z &#x2014; rozšíření se z obrazovky.
 
 V 3D grafiky jsou transformací založené na matice 4 4. Tady je matice 4 4 identity:
 
@@ -109,7 +109,7 @@ Otočení kolem osy Z je stejné jako grafiky 2D:
 |    0       0     0  1  |
 </pre>
 
-Směru je zahrnuto v uchopení pera z souřadnicový systém. Toto je levou systému, takže pokud se bod úchytu levé ruky při zvyšování hodnoty pro konkrétní osy & #x 2014; vpravo pro otočení okolo osy X dolů pro otočení okolo osy Y a směrem můžete pro otočení kolem osy Z & #x 2014; potom křivku jiných prsty udává směr pro kladné hodnoty úhlu otočení.
+Směru je zahrnuto v uchopení pera z souřadnicový systém. Toto je levou systému, takže pokud se bod úchytu levé ruky při zvyšování hodnoty pro konkrétní osy &#x2014; vpravo pro otočení okolo osy X dolů pro otočení okolo osy Y a směrem můžete pro otočení kolem osy Z &#x2014; potom křivku jiných prsty udává směr pro kladné hodnoty úhlu otočení.
 
 `SKMatrix44` má zobecněné statické [ `CreateRotation` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix44.CreateRotation/p/System.Single/System.Single/System.Single/System.Single/) a [ `CreateRotationDegrees` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix44.CreateRotationDegrees/p/System.Single/System.Single/System.Single/System.Single/) metody, které umožňují určit osy, kolem kterého dojde k otočení:
 
@@ -442,7 +442,7 @@ public class AnimatedRotation3DPage : ContentPage
 }
 ```
 
-`OnAppearing` Přepsání definuje tři Xamarin.Forms `Animation` objekty, které se použije animaci `xRotationDegrees`, `yRotationDegrees`, a `zRotationDegrees` pole různým tempem. Všimněte si, že období tyto animací jsou nastaveny na prvočísel & #x 2014; 5 sekund, 7 sekund a 11 sekund & #x 2014; takže celkový kombinace pouze opakuje každý 385 sekund nebo delší než 10 minut:
+`OnAppearing` Přepsání definuje tři Xamarin.Forms `Animation` objekty, které se použije animaci `xRotationDegrees`, `yRotationDegrees`, a `zRotationDegrees` pole různým tempem. Všimněte si, že období tyto animací jsou nastaveny na prvočísel &#x2014; 5 sekund, 7 sekund a 11 sekund &#x2014; takže celkový kombinace pouze opakuje každý 385 sekund nebo delší než 10 minut:
 
 ```csharp
 public class AnimatedRotation3DPage : ContentPage

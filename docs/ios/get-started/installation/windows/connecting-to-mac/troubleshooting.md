@@ -10,7 +10,7 @@ ms.author: brumbaug
 ms.date: 03/19/2017
 ms.openlocfilehash: fbf18bad2dbe227575f4d820a121eab6e91655a0
 ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 02/27/2018
 ---
@@ -207,7 +207,7 @@ Tato zpráva je Ignorovatelná, pokud si všimnete, že dialogové okno připoje
 
 ### <a name="invalid-user-a-from-101895-and-inputuserauthrequest-invalid-user-a-preauth"></a>"Neplatný uživatel z 10.1.8.95" a "vstupní\_userauth\_požadavek: Neplatné uživatelské [předběžného ověření]"
 
-Možná jste si všimli to zprávy v **sshd.log**. Tyto zprávy jsou součástí procesu normální připojení. Se objeví, protože Xamarin používá uživatelské jméno **** dočasně při načítání _SSH otisk_.
+Možná jste si všimli to zprávy v **sshd.log**. Tyto zprávy jsou součástí procesu normální připojení. Se objeví, protože Xamarin používá uživatelské jméno **a** dočasně při načítání _SSH otisk_.
 
 ## <a name="output-window-and-log-files"></a>Okno výstup a soubory protokolu.
 
@@ -238,7 +238,7 @@ Pokud ve výstupním okně neobsahuje dostatek informací, aby mohli problém di
 
     [ ![](troubleshooting-images/troubleshooting-image12.png "Shromážděte protokoly z nápovědy > Xamarin > Zip protokoly")](troubleshooting-images/troubleshooting-image12.png)
 
-4. Když otevřete soubor .zip, zobrazí se seznam souborů, podobně jako v příkladu níže. Chyby připojení, jsou nejdůležitější soubory  **\*Ide.log** a  **\*Ide.svclog** soubory. Tyto soubory obsahují stejné zprávy ve dvou mírně odlišné formáty. **.Svclog** XML a je užitečné, pokud chcete procházet zprávy. **.Log** je prostý text a je užitečné, pokud chcete filtrovat zprávy pomocí nástroje příkazového řádku.
+4. Když otevřete soubor .zip, zobrazí se seznam souborů, podobně jako v příkladu níže. Chyby připojení, jsou nejdůležitější soubory **\*Ide.log** a **\*Ide.svclog** soubory. Tyto soubory obsahují stejné zprávy ve dvou mírně odlišné formáty. **.Svclog** XML a je užitečné, pokud chcete procházet zprávy. **.Log** je prostý text a je užitečné, pokud chcete filtrovat zprávy pomocí nástroje příkazového řádku.
 
 
     Procházet všechny zprávy, vyberte a otevřete **.svclog** souboru:
