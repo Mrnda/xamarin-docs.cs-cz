@@ -10,7 +10,7 @@ ms.author: dabritch
 ms.date: 01/12/2016
 ms.openlocfilehash: ecea0f55360fcde7a50c52bb33c45a2c5fff5eeb
 ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 02/28/2018
 ---
@@ -22,7 +22,7 @@ _Rozložení Xamarin.Forms se používají k uspořádání ovládacích prvků 
 
 ## <a name="layouts"></a>Rozložení
 
-[ `Layout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout) Třídy v Xamarin.Forms je specializované podtypem zobrazení, která slouží jako kontejner pro ostatní rozložení nebo zobrazení. Obvykle obsahuje logiku a nastavit umístění a velikost podřízených elementů v aplikacích Xamarin.Forms.
+[`Layout`](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout) Třídy v Xamarin.Forms je specializované podtypem zobrazení, která slouží jako kontejner pro ostatní rozložení nebo zobrazení. Obvykle obsahuje logiku a nastavit umístění a velikost podřízených elementů v aplikacích Xamarin.Forms.
 
  [ ![](layouts-images/layouts-sml.png "Typy rozložení Xamarin.Forms")](layouts-images/layouts.png "typy rozložení Xamarin.Forms")
 
