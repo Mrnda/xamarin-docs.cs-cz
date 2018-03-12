@@ -8,7 +8,7 @@ ms.author: chape
 ms.date: 11/07/2017
 ms.openlocfilehash: 37afa3a54fd20745a65312fb5a24d958c8ec405f
 ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 02/27/2018
 ---
@@ -30,7 +30,7 @@ Je běžné pro použití aplikacemi modelem MVVM `ListView` zobrazíte kolekci 
 
 [ **PickerDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/PickerDemo) ukázka ukazuje, jak můžete nastavit pomocí XAML `Picker` [ `Title` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.Title/) vlastnost a přidejte `string` položek [ `Items` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.Items/) kolekce. Když uživatel vybere `Picker`, se zobrazí položky v `Items` kolekce způsobem závislé na platformu.
 
-[ `SelectedIndexChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Picker.SelectedIndexChanged/) Událost označuje, když má uživatel vybrané položky. Nule [ `SelectedIndex` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.SelectedIndex/) vlastnost pak označuje vybranou položku. Pokud není vybrána žádná položka, `SelectedIndex` rovná & #x 2013; 1.
+[ `SelectedIndexChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Picker.SelectedIndexChanged/) Událost označuje, když má uživatel vybrané položky. Nule [ `SelectedIndex` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.SelectedIndex/) vlastnost pak označuje vybranou položku. Pokud není vybrána žádná položka, `SelectedIndex` rovná &#x2013; 1.
 
 Můžete také použít `SelectedIndex` k chybě při inicializaci vybranou položku, ale musí být nastavena po `Items` naplní kolekce. V jazyce XAML, to znamená, že budete pravděpodobně používat vlastnost element nastavit `SelectedIndex`.
 
@@ -82,10 +82,10 @@ Pokud chcete vyzkoušet tuto funkci, můžete použít [ `NamedColor` ](https://
 `ListView` musí šablonu zobrazíte tyto položky. V kódu, můžete nastavit [ `ItemTemplate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ItemsView%3CTVisual%3E.ItemTemplate/) vlastnosti definované `ItemsView<TVisual>` k [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) pomocí [ `DataTemplate` konstruktor](https://developer.xamarin.com/api/constructor/Xamarin.Forms.DataTemplate.DataTemplate/p/System.Type/) , odkazuje na odvozený ze [ `Cell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Cell/) třídy. `Cell` má pět odvozené konfigurace:
 
 - [`TextCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.TextCell/) & #x 2014; obsahuje dva `Label` zobrazení (koncepčně mluvení)
-- [`ImageCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageCell/) & #x 2014; Přidá `Image` zobrazení `TextCell`
-- [`EntryCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.EntryCell/) & #x 2014; obsahuje `Entry` zobrazení s `Label`
-- [`SwitchCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.SwitchCell/) & #x 2014; obsahuje `Switch` s `Label`
-- [`ViewCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) & #x 2014; může být libovolná `View` (pravděpodobně s podřízenými položkami)
+- [`ImageCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageCell/) &#x2014; Přidá `Image` zobrazení `TextCell`
+- [`EntryCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.EntryCell/) &#x2014; obsahuje `Entry` zobrazení s `Label`
+- [`SwitchCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.SwitchCell/) &#x2014; obsahuje `Switch` s `Label`
+- [`ViewCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) &#x2014; může být libovolná `View` (pravděpodobně s podřízenými položkami)
 
 Potom zavolejte [ `SetValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.DataTemplate.SetValue/p/Xamarin.Forms.BindableProperty/System.Object/) a [ `SetBinding` ](https://developer.xamarin.com/api/member/Xamarin.Forms.DataTemplate.SetBinding/p/Xamarin.Forms.BindableProperty/Xamarin.Forms.BindingBase/) na `DataTemplate` objekt, který chcete přidružit hodnoty se `Cell` vlastnosti, nebo nastavit vazby dat na `Cell` odkazování na vlastnosti položek v části vlastnosti `ItemsSource` kolekce. Tento postup je znázorněn v [ **TextCellListCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/TextCellListCode) ukázka.
 
