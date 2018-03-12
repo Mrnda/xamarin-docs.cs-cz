@@ -10,7 +10,7 @@ ms.author: amburns
 ms.date: 04/08/2017
 ms.openlocfilehash: d2db4af7dd13611075bc2b100470b5fb3ba83118
 ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 02/27/2018
 ---
