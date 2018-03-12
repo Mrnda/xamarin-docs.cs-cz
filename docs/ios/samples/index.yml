@@ -8,10 +8,10 @@ metadata:
   ms.date: 02/17/2018
   ms.topic: article
   ms.openlocfilehash: b0c3efa12cbeb045104b2ce823cbf57cd1f56f75
-  ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+  ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
   ms.translationtype: HT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 02/28/2018
+  ms.lasthandoff: 03/12/2018
 abstract:
   description: "Ukázkové aplikace a ukázky kódu Xamarin.iOS, které vám pomůžou začít vytvářet aplikace pomocí jazyka C# a Xamarinu"
   menu:

@@ -7,11 +7,11 @@ metadata:
   ms.author: crdun
   ms.date: 02/26/2018
   ms.topic: article
-  ms.openlocfilehash: 48a8e18e681f2642c3a777a45ba21a832d72efff
-  ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+  ms.openlocfilehash: 24f32938930d7cf13374536f9513640ab8e834dc
+  ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
   ms.translationtype: HT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 02/28/2018
+  ms.lasthandoff: 03/12/2018
 abstract:
   description: "Multiplatformní ukázkové aplikace a ukázky kódu Xamarin, které vám pomůžou začít vytvářet aplikace pomocí jazyka C# a Xamarinu"
   menu:
@@ -31,11 +31,11 @@ sections:
         src: images/todo.png
         href: https://developer.xamarin.com/samples/xamarin-forms/Todo/
       title: Todo
-    - href: https://github.com/jamesmontemagno/MyShoppe
+    - href: https://github.com/xamarinhq/app-myshoppe
       html: "Ukázková aplikace, která umožňuje prodejcům sledovat jejich prodejní výsledky, spravovat zájemce, zobrazovat si kontakty, spravovat objednávky a procházet katalog produktů."
       image:
         src: images/myshoppe.png
-        href: https://github.com/jamesmontemagno/MyShoppe
+        href: https://github.com/xamarinhq/app-myshoppe
       title: My Shoppe
     - href: https://github.com/xamarin/app-crm
       html: "Ukázková aplikace, která umožňuje prodejcům sledovat jejich prodejní výsledky, spravovat zájemce, zobrazovat si kontakty, spravovat objednávky a procházet katalog produktů."

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: e78b76a531e9f8ea88adca46fc59b2063fce14cc
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3e12e33b254e58759043ed838d5c34dd7bd024fd
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="walkthrough---using-custom-controls-with-the-xamarin-designer-for-ios"></a>Návod - použití vlastních ovládacích prvků pomocí návrháře Xamarin pro iOS
 
@@ -33,13 +33,13 @@ Tato příručka předpokládá znalost obsahu zahrnutého v [Začínáme proved
 1. Vytvořte nové řešení z **iOS > aplikace > jediné zobrazení aplikace > C#** šablony, pojmenujte ji `ScratchTicket`a pokračujte v průvodci Nový projekt:
 
 
-    [![](ios-designable-controls-walkthrough-images/01new.png "Vytvořte nové řešení")](ios-designable-controls-walkthrough-images/01new.png)
+    [![](ios-designable-controls-walkthrough-images/01new.png "Vytvořte nové řešení")](ios-designable-controls-walkthrough-images/01new.png#lightbox)
 
 
 1. Vytvoření nového souboru prázdné třídy s názvem `ScratchTicketView`:
 
 
-    [![](ios-designable-controls-walkthrough-images/02new.png "Vytvořte novou třídu ScratchTicketView")](ios-designable-controls-walkthrough-images/02new.png)
+    [![](ios-designable-controls-walkthrough-images/02new.png "Vytvořte novou třídu ScratchTicketView")](ios-designable-controls-walkthrough-images/02new.png#lightbox)
 
 
 1. Přidejte následující kód pro `ScratchTicketView` třídy:
@@ -168,63 +168,50 @@ Tato příručka předpokládá znalost obsahu zahrnutého v [Začínáme proved
     
 1. Dvakrát klikněte `Main.storyboard` soubor otevřete v Návrháři:
 
-    
-    [![](ios-designable-controls-walkthrough-images/03new.png "IOS návrháře")](ios-designable-controls-walkthrough-images/03new.png)
-
+    [![](ios-designable-controls-walkthrough-images/03new.png "IOS návrháře")](ios-designable-controls-walkthrough-images/03new.png#lightbox)
 
 
 1. Přetažením **Image zobrazení** z **sada nástrojů** na zobrazení ve scénáři.
 
-    
-    [![](ios-designable-controls-walkthrough-images/04new.png "Zobrazení Image přidat do rozložení")](ios-designable-controls-walkthrough-images/04new.png)
+    [![](ios-designable-controls-walkthrough-images/04new.png "Zobrazení Image přidat do rozložení")](ios-designable-controls-walkthrough-images/04new.png#lightbox)
 
 
 1. Vyberte **Image zobrazení** a změňte jeho **Image** vlastnost `Monkey.png`.
 
-    
-    [![](ios-designable-controls-walkthrough-images/05new.png "Nastavení vlastnosti bitové kopie zobrazení bitové kopie na Monkey.png")](ios-designable-controls-walkthrough-images/05new.png)
+    [! [] (ios navrhovatelé – ovládací prvky návod-bitové kopie nebo 05new.png "vlastnost Image zobrazení nastavení bitové kopie do Monkey.png)](ios-designable-controls-walkthrough-images/05new.png#lightbox)
 
     
 1. Protože používáme velikost třídy budeme potřebovat k omezení zobrazení této bitové kopie. Kliknutím na bitovou kopii na uvést do režimu omezení dvakrát. Umožňuje omezit k centru kliknutím popisovač Připnutí center Zarovnat a vertikálně a horizontálně:
-    
-    
-    [![](ios-designable-controls-walkthrough-images/06new.png "Zarovnání obrázku")](ios-designable-controls-walkthrough-images/06new.png)
 
-    
+    [![](ios-designable-controls-walkthrough-images/06new.png "Zarovnání obrázku")](ios-designable-controls-walkthrough-images/06new.png#lightbox)
+
 1. Chcete-li omezit výšku a šířku, klikněte na popisovače Připnutí velikost (ve tvaru kost popisovačů) a vyberte šířku a výšku v uvedeném pořadí:
 
-    
-    [![](ios-designable-controls-walkthrough-images/07new.png "Přidání omezení")](ios-designable-controls-walkthrough-images/07new.png)
+    [![](ios-designable-controls-walkthrough-images/07new.png "Přidání omezení")](ios-designable-controls-walkthrough-images/07new.png#lightbox)
 
 
 1. Aktualizace rámečku založené na omezeních kliknutím na tlačítko Aktualizovat na panelu nástrojů:
 
-
-    [![](ios-designable-controls-walkthrough-images/08new.png "Omezení panelu nástrojů")](ios-designable-controls-walkthrough-images/08new.png)
+    [![](ios-designable-controls-walkthrough-images/08new.png "Omezení panelu nástrojů")](ios-designable-controls-walkthrough-images/08new.png#lightbox)
 
 
 1. V dalším kroku sestavení projektu tak, aby **pomocné zobrazení lístku** se zobrazí v části **vlastní součásti** v panelu nástrojů:
 
-    
-    [![](ios-designable-controls-walkthrough-images/09new.png "Sada nástrojů vlastní komponenty")](ios-designable-controls-walkthrough-images/09new.png)
+    [![](ios-designable-controls-walkthrough-images/09new.png "Sada nástrojů vlastní komponenty")](ios-designable-controls-walkthrough-images/09new.png#lightbox)
 
 
 1. Přetáhnout myší **pomocné zobrazení lístku** tak, aby se přes opic bitové kopie. Upravte popisovače přetažení tak lístku zobrazení pomocné vztahuje opic úplně, jak je uvedeno níže:
 
-    
-    [![](ios-designable-controls-walkthrough-images/10new.png "Zobrazení pomocné lístku přes zobrazení bitové kopie")](ios-designable-controls-walkthrough-images/10new.png)
-
+    [![](ios-designable-controls-walkthrough-images/10new.png "Zobrazení pomocné lístku přes zobrazení bitové kopie")](ios-designable-controls-walkthrough-images/10new.png#lightbox)
 
 1. Omezte pomocné lístku zobrazení zobrazení bitovou kopii podle kreslení ohraničující obdélník vyberte obou zobrazeních. Vyberte možnosti omezit na šířky, výšky, Center a střední a aktualizace snímky podle omezení, jak je uvedeno níže:
- 
-    
-    [![](ios-designable-controls-walkthrough-images/11new.png "Centrování a přidání omezení")](ios-designable-controls-walkthrough-images/11new.png)
+
+    [![](ios-designable-controls-walkthrough-images/11new.png "Centrování a přidání omezení")](ios-designable-controls-walkthrough-images/11new.png#lightbox)
 
 
 1. Spusťte aplikaci a "pomocné vypnout" bitovou kopii na nich opic.
 
-
- [ ![](ios-designable-controls-walkthrough-images/10-app.png "Spuštění ukázkové aplikace")](ios-designable-controls-walkthrough-images/10-app.png)
+    [![](ios-designable-controls-walkthrough-images/10-app.png "Spuštění ukázkové aplikace")](ios-designable-controls-walkthrough-images/10-app.png#lightbox)
 
 ## <a name="adding-design-time-properties"></a>Přidání vlastnosti doby návrhu
 
@@ -286,7 +273,7 @@ public override void Draw(CGRect rect)
 
 Včetně `ExportAttribute` a `BrowsableAttribute` s argumentem nastavena na `true` výsledkem vlastnost se zobrazuje v nástroji designer **vlastnost** panelu. Změna vlastnosti pro jiný obrázek, které jsou součástí projektu, například `FillTexture2.png`, výsledkem aktualizaci ovládacího prvku v době návrhu, jak je uvedeno níže:
 
- [ ![](ios-designable-controls-walkthrough-images/11-customproperty.png "Úprava vlastností v době návrhu")](ios-designable-controls-walkthrough-images/10-app.png)
+ [![](ios-designable-controls-walkthrough-images/11-customproperty.png "Úprava vlastností v době návrhu")](ios-designable-controls-walkthrough-images/10-app.png#lightbox)
 
 ## <a name="summary"></a>Souhrn
 
