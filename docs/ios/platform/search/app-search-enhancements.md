@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: 95f7ad5069abfe4dff82659c0fbc79eef2125e15
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: af124c2ae0390c5321e9dd34158c7b53b33b2c48
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="app-search-enhancements"></a>Vylepšení hledání aplikace
 
@@ -54,17 +54,15 @@ V iOS 10 Apple staví na této funkce tím, že se uživateli spustit vyhledáv�
 
 Chcete-li tuto funkci implementovat, upravte aplikace `Info.plist` soubor, přidejte `CoreSpotlightContinuation` klíče typu **Boolean** a jeho hodnotu nastavte `YES`:
 
-[[ide name="xs]]
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![](app-search-enhancements-images/search01.png "Úpravy CoreSpotlightContinuation v souboru Info.plist")](app-search-enhancements-images/search01.png)
+[![](app-search-enhancements-images/search01.png "Úpravy CoreSpotlightContinuation v souboru Info.plist")](app-search-enhancements-images/search01.png#lightbox)
 
-[[/ide]]
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[[ide name="vs]]
+[![](app-search-enhancements-images/searchw01.png "Úpravy CoreSpotlightContinuation v souboru Info.plist")](app-search-enhancements-images/search01.png#lightbox)
 
-[ ![](app-search-enhancements-images/searchw01.png "Úpravy CoreSpotlightContinuation v souboru Info.plist")](app-search-enhancements-images/search01.png)
-
-[[/ide]]
+-----
 
 Reagovat na uživatele pokračováním výsledků na vyhledávacím (`NSUserActivity`), upravit `AppDelegate.cs` souboru a přepíše `ContinueUserActivity` metoda. Příklad:
 

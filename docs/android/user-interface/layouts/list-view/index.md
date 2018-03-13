@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 70a7abb186c102fb803c0ab6fa38c7b2d8222292
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2d5a83b9f6278406e9b643277357df253f5fd524
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="listview"></a>ListView
 
 _ListView je důležitou součástí uživatelského rozhraní aplikace pro Android; Umožňuje everywhere z krátké seznamy možností v nabídce dlouhými seznamy kontaktů nebo Oblíbené položky. Poskytuje jednoduchý způsob, jak posouvání seznam řádků, které může být naformátovaný předdefinovaný styl, nebo podob, k dispozici._
 
-<a name="overview" />
 
 ## <a name="overview"></a>Přehled
 
@@ -30,10 +29,9 @@ Nejprve krátký kurz představuje `ListView` s příklad základní kódu. Dál
 
 
 > [!NOTE]
-> **Poznámka:**: `RecyclerView` pomůcky je verze více pokročilé a flexibilní `ListView`. Protože `RecyclerView` je navržený jako nástupcem `ListView` (a `GridView`), doporučujeme vám, že používáte `RecyclerView` místo `ListView` pro nový vývoj aplikací. Další informace najdete v tématu [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md).
+> `RecyclerView` Pomůcky je verze více pokročilé a flexibilní `ListView`. Protože `RecyclerView` je navržený jako nástupcem `ListView` (a `GridView`), doporučujeme vám, že používáte `RecyclerView` místo `ListView` pro nový vývoj aplikací. Další informace najdete v tématu [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md).
 
 
-<a name="tutorial" />
 
 ## <a name="listview-tutorial"></a>Kurz ListView
 
@@ -147,7 +145,7 @@ Toto je pole řetězce, které budou umístěny do [ `ListView` ](https://develo
 
 Spusťte aplikaci. Můžete posuňte se v seznamu nebo zadejte vyfiltrujete ho a pak klikněte na položku Zobrazit zprávu. Měli byste vidět zhruba takhle:
 
-[ ![Příklad snímek obrazovky ListView s názvy země](images/helloviews6.png)](images/helloviews6.png)
+[![Příklad snímek obrazovky ListView s názvy země](images/helloviews6.png)](images/helloviews6.png#lightbox)
 
 Všimněte si, že pomocí pole řetězců pevně není doporučený postup návrhu. V tomto kurzu pro jednoduchost, jeden se používá k předvedení [ `ListView` ](https://developer.xamarin.com/api/type/Android.Widget.ListView/) pomůcky. Lepší postupem je odkazovat na pole řetězců definované externí zdroj, například s `string-array` prostředků ve vašem projektu **Resources/Values/Strings.xml** souboru. Příklad:
 
@@ -173,7 +171,6 @@ string[] countries = Resources.GetStringArray (Resource.Array.countries_array);
 ListAdapter = new ArrayAdapter<string> (this, Resource.Layout.list_item, countries);
 ```
 
-<a name="going_further" />
 
 ## <a name="going-further-with-listview"></a>Budete pokračovat s ListView
 
@@ -200,7 +197,6 @@ Diskusní (rozdělen do šesti částí) začíná přehled `ListView` třídy s
 -   [Používání ContentProvideru](~/android/user-interface/layouts/list-view/content-provider.md)
 -   [ListView a životní cyklus aktivity](~/android/user-interface/layouts/list-view/activity-lifecycle.md)
 
-<a name="summary" />
 
 ## <a name="summary"></a>Souhrn
 

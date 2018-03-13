@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/23/2017
-ms.openlocfilehash: 7e964f2bdb523720e044c309a2ec0801080be59b
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: fdf5d1236c0d8f797bc53d01eada1777b1d92373
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="hello-mac"></a>Hello, Mac
 
@@ -22,7 +22,7 @@ Navíc vzhledem k tomu, že Xamarin.Mac aplikace jsou napsané v C# a rozhraní 
 
 Tento článek vás seznámí klíčové koncepty jsou potřeba k vytvoření aplikace pro Mac pomocí Xamarin.Mac, Visual Studio pro Mac a na Xcode rozhraní tvůrce rámci prostřednictvím procesu vytváření jednoduše **Hello, Mac** aplikaci, která vrátí počet časy tlačítko bylo stisknuto:
 
-[ ![](hello-mac-images/run02.png "Příklad Hello, Mac aplikaci spuštěnou")](hello-mac-images/run02.png)
+[![](hello-mac-images/run02.png "Příklad Hello, Mac aplikaci spuštěnou")](hello-mac-images/run02.png#lightbox)
 
 Následující koncepty se budeme:
 
@@ -57,29 +57,29 @@ Abyste mohli začít, postupujte takto:
 
 1. Spuštění sady Visual Studio pro Mac:
 
-    [ ![](hello-mac-images/setup01.png "Hlavní sady Visual Studio pro Mac rozhraní")](hello-mac-images/setup01.png)
+    [![](hello-mac-images/setup01.png "Hlavní sady Visual Studio pro Mac rozhraní")](hello-mac-images/setup01.png#lightbox)
 
 2. Klikněte na **nové řešení...**  odkaz v levém horním rohu obrazovky, otevřete **nový projekt** dialogové okno:
 
-    [ ![](hello-mac-images/setup03.png "Vytvoření nové řešení v sadě Visual Studio pro Mac")](hello-mac-images/setup02.png)
+    [![](hello-mac-images/setup03.png "Vytvoření nové řešení v sadě Visual Studio pro Mac")](hello-mac-images/setup02.png#lightbox)
 
 3. Vyberte **Mac** > **aplikace** > **kakao aplikace** a klikněte na **Další** tlačítko:
 
-    [ ![](hello-mac-images/setup03.png "Výběr aplikace kakao")](hello-mac-images/setup03.png)
+    [![](hello-mac-images/setup03.png "Výběr aplikace kakao")](hello-mac-images/setup03.png#lightbox)
 
 4. Zadejte `Hello_Mac` pro **název aplikace**a udržovat všem ostatním jako výchozí. Klikněte na tlačítko **Další**:
 
-    [ ![](hello-mac-images/setup05.png "Nastavení názvu aplikace")](hello-mac-images/setup05.png)
+    [![](hello-mac-images/setup05.png "Nastavení názvu aplikace")](hello-mac-images/setup05.png#lightbox)
 
 4. Při vytváření řešení, která bude obsahovat několik různých projektů, vývojář může chtít nastavit jiný **název řešení** zde, ale z důvodu tento příklad, nechte nastavení na výchozí je stejný jako  **Název projektu**:
 
-    [ ![](hello-mac-images/setup04.png "Ověření nové podrobnosti řešení")](hello-mac-images/setup04.png)
+    [![](hello-mac-images/setup04.png "Ověření nové podrobnosti řešení")](hello-mac-images/setup04.png#lightbox)
 
 5. Klikněte **vytvořit** tlačítko.
 
 Visual Studio pro Mac se vytvořit novou aplikaci Xamarin.Mac a zobrazit výchozí soubory, které se přidají do řešení aplikace:
 
- [ ![](hello-mac-images/project01.png "Nové výchozí zobrazení řešení")](hello-mac-images/project01.png)
+ [![](hello-mac-images/project01.png "Nové výchozí zobrazení řešení")](hello-mac-images/project01.png#lightbox)
 
 Visual Studio pro Mac používá **řešení** a **projekty**, přesný stejným způsobem, který Visual Studio. Řešení je kontejner, který může obsahovat jeden nebo více projektů; projekty může zahrnovat aplikací, podpora knihovny, testovací aplikace atd. V takovém případě Visual Studio pro Mac se vytvořil řešení a projekt aplikace automaticky.
 
@@ -246,7 +246,7 @@ Projekt aplikace Xamarin.Mac vytvořen a základní znalosti o jeho komponenty p
 
 `Info.plist` Soubor obsahuje informace o aplikaci Xamarin.Mac jako jeho **název** a **identifikátor svazku**:
 
-[ ![](hello-mac-images/infoplist01.png "Visual Studio pro Mac editor plist.")](hello-mac-images/infoplist01.png)
+[![](hello-mac-images/infoplist01.png "Visual Studio pro Mac editor plist.")](hello-mac-images/infoplist01.png#lightbox)
 
 A definuje _Storyboard_ který se použije k zobrazení uživatelského rozhraní pro aplikaci Xamarin.Mac pod **hlavní rozhraní** rozevíracího seznamu. V případě příkladu nahoře `Main` v rozevírací nabídce má vztah k `Main.storyboard` ve stromu zdroje projektu v **Průzkumníku řešení**. Také definuje ikon aplikace tak, že zadáte *katalog Asset* obsahující je (v tomto případě AppIcons).
 
@@ -254,7 +254,7 @@ A definuje _Storyboard_ který se použije k zobrazení uživatelského rozhran�
 
 Aplikace `Entitlements.plist` soubor řídí oprávnění, které má aplikace Xamarin.Mac jako **Sandboxing** a **Icloudu**:
 
-[ ![](hello-mac-images/entitlements01.png "Visual Studio pro Mac oprávnění editor")](hello-mac-images/entitlements01.png)
+[![](hello-mac-images/entitlements01.png "Visual Studio pro Mac oprávnění editor")](hello-mac-images/entitlements01.png#lightbox)
 
 Například Hello World se bude vyžadovat žádná oprávnění. V další části ukazuje, jak na Xcode rozhraní tvůrce použít k úpravě `Main.storyboard` souboru a definovat Xamarin.Mac uživatelském rozhraní aplikace.
 
@@ -266,11 +266,11 @@ V rámci Xcodu Apple vytvořil nástroj volat rozhraní tvůrce, který umožňu
 
 Chcete-li začít, dvakrát klikněte na `Main.storyboard` souboru v **Průzkumníku řešení** otevřete pro úpravy v Xcode a Tvůrce rozhraní:
 
-[ ![](hello-mac-images/xcode01.png "Main.storyboard soubor v Průzkumníku řešení")](hello-mac-images/xcode01.png)
+[![](hello-mac-images/xcode01.png "Main.storyboard soubor v Průzkumníku řešení")](hello-mac-images/xcode01.png#lightbox)
 
 To by měl spusťte Xcode a vypadat podobně jako následující:
 
-[ ![](hello-mac-images/xcode02.png "Výchozí zobrazení rozhraní tvůrce Xcode")](hello-mac-images/xcode02.png)
+[![](hello-mac-images/xcode02.png "Výchozí zobrazení rozhraní tvůrce Xcode")](hello-mac-images/xcode02.png#lightbox)
 
 Před zahájením návrhu rozhraní, trvat rychlý přehled o Xcode pro orientaci s hlavní funkce, které se budou používat.
 
@@ -284,7 +284,7 @@ Před zahájením návrhu rozhraní, trvat rychlý přehled o Xcode pro orientac
 
 Při otevírání `.storyboard` souboru v Xcode ze sady Visual Studio pro Mac, otevře se **navigátoru projektů** na levé straně **rozhraní hierarchie** a **rozhraní editoru**uprostřed a **vlastnosti & Nástroje** části na pravé straně:
 
-[ ![](hello-mac-images/xcode03.png "Různé části Tvůrce rozhraní v Xcode")](hello-mac-images/xcode03.png)
+[![](hello-mac-images/xcode03.png "Různé části Tvůrce rozhraní v Xcode")](hello-mac-images/xcode03.png#lightbox)
 
 V následujících částech prohlédněte si co každý z těchto funkcí proveďte Xcode a jakým způsobem je použít k vytvoření rozhraní pro aplikaci Xamarin.Mac.
 
@@ -314,13 +314,13 @@ Při otevírání `.storyboard` souboru pro úpravy v Xcode, Visual Studio pro M
 
 **Vlastnosti & Nástroje** část je rozdělena na dvě hlavní části **vlastnosti** (také nazývané inspektoři) a **knihovny**:
 
-[ ![](hello-mac-images/xcode04.png "Vlastnosti Inspector")](hello-mac-images/xcode04.png)
+[![](hello-mac-images/xcode04.png "Vlastnosti Inspector")](hello-mac-images/xcode04.png#lightbox)
 
 Zpočátku je v této části téměř prázdný, ale pokud vývojář vybere element v **rozhraní editoru** nebo **rozhraní hierarchie**, **vlastnosti** bude oddíl obsahuje informace o daného elementu a vlastnosti, které se můžete upravit.
 
 V rámci **vlastnosti** části, se liší 8 *Inspector karty*, jak je znázorněno na následujícím obrázku:
 
-[ ![](hello-mac-images/xcode05.png "Přehled všechny kontroly")](hello-mac-images/xcode05.png)
+[![](hello-mac-images/xcode05.png "Přehled všechny kontroly")](hello-mac-images/xcode05.png#lightbox)
 
 <a name="Properties_Utility_Types" />
 
@@ -339,7 +339,7 @@ Z zleva doprava jsou těchto karet:
 
 Použití **knihovny** části najít ovládací prvky a objekty, které chcete umístit do návrháře graficky sestavit uživatelské rozhraní:
 
-[ ![](hello-mac-images/xcode06.png "Knihovna Xcode Inspector")](hello-mac-images/xcode06.png)
+[![](hello-mac-images/xcode06.png "Knihovna Xcode Inspector")](hello-mac-images/xcode06.png#lightbox)
 
 <a name="Creating_the_Interface" />
 
@@ -351,31 +351,31 @@ Postupujte takto:
 
 1. V Xcode, přetáhněte ji **tlačítko** z **knihovny části**:
 
-    [ ![](hello-mac-images/xcode07.png "Výběr NSButton z knihovny Inspector")](hello-mac-images/xcode07.png)
+    [![](hello-mac-images/xcode07.png "Výběr NSButton z knihovny Inspector")](hello-mac-images/xcode07.png#lightbox)
 
 2. Vyřaďte tlačítko na **zobrazení** (v části **okno řadiče**) v **rozhraní editoru**:
 
-    [ ![](hello-mac-images/xcode08.png "Přidání tlačítka na návrh rozhraní")](hello-mac-images/xcode08.png)
+    [![](hello-mac-images/xcode08.png "Přidání tlačítka na návrh rozhraní")](hello-mac-images/xcode08.png#lightbox)
 
 3. Klikněte na **název** vlastnost **atribut Inspector** a změňte název na tlačítko pro `Click Me`:
 
-    [ ![](hello-mac-images/xcode09.png "Nastavení vlastností tlačítka")](hello-mac-images/xcode09.png)
+    [![](hello-mac-images/xcode09.png "Nastavení vlastností tlačítka")](hello-mac-images/xcode09.png#lightbox)
 
 4. Přetáhněte **popisek** z **knihovny části**:
 
-    [ ![](hello-mac-images/xcode10.png "Výběr štítek z knihovny Inspector")](hello-mac-images/xcode10.png)
+    [![](hello-mac-images/xcode10.png "Výběr štítek z knihovny Inspector")](hello-mac-images/xcode10.png#lightbox)
 
 5. Vyřaďte popisek na **okno** vedle tlačítka na **rozhraní editoru**:
 
-    [ ![](hello-mac-images/xcode11.png "Přidávání do rozhraní návrhu štítek")](hello-mac-images/xcode11.png)
+    [![](hello-mac-images/xcode11.png "Přidávání do rozhraní návrhu štítek")](hello-mac-images/xcode11.png#lightbox)
 
 6. Získat popisovač vpravo na štítek a přetáhněte ji, dokud nebude u okraje okna:
 
-    [ ![](hello-mac-images/xcode12.png "Změna velikosti popisku")](hello-mac-images/xcode12.png)
+    [![](hello-mac-images/xcode12.png "Změna velikosti popisku")](hello-mac-images/xcode12.png#lightbox)
 
 7. Kliknutím na tlačítko právě přidali v **rozhraní editoru**a klikněte na tlačítko **omezení Editor** ikonu a dolní části okna:
 
-    [ ![](hello-mac-images/xcode13.png "Přidání omezení pro tlačítko")](hello-mac-images/xcode13.png)
+    [![](hello-mac-images/xcode13.png "Přidání omezení pro tlačítko")](hello-mac-images/xcode13.png#lightbox)
 
 8. V horní části editoru, klikněte **Red I světla** v horní a levé straně. Při změně velikosti okna to ponechá tlačítko ve stejném umístění, v levém horním rohu obrazovky.
 
@@ -385,7 +385,7 @@ Postupujte takto:
 
 11. Vyberte štítek a klikněte na **omezení Editor** ikonu znovu:
 
-    [ ![](hello-mac-images/xcode14.png "Přidání omezení do popisku")](hello-mac-images/xcode14.png)
+    [![](hello-mac-images/xcode14.png "Přidání omezení do popisku")](hello-mac-images/xcode14.png#lightbox)
 
 12. Kliknutím na **Red I světla** v horní, pravé a levé z **omezení Editor**, informuje štítek, který k jeho zablokování jeho dané X a Y umístění a chcete zvýšit nebo snížit při změně velikosti okna v provozu aplikace.
 
@@ -397,7 +397,7 @@ Při změně velikosti a přesouvání ovládacích prvků kolem, Všimněte si,
 
 Oblast hledání **rozhraní hierarchie** části Jak se zobrazují rozložení a hierarchii elementů, které tvoří uživatelské rozhraní:
 
-[ ![](hello-mac-images/xcode15.png "Výběr elementu v hierarchii rozhraní")](hello-mac-images/xcode15.png)
+[![](hello-mac-images/xcode15.png "Výběr elementu v hierarchii rozhraní")](hello-mac-images/xcode15.png#lightbox)
 
 Tady můžete vybrat vývojář položky, které chcete upravit nebo přetáhněte v případě potřeby změňte pořadí prvky uživatelského rozhraní. Například pokud prvku uživatelského rozhraní se vztahuje jiný element, se může přetáhněte jej do dolní části seznamu, chcete-li nejvyšší položku v okně.
 
@@ -416,7 +416,7 @@ V Xcode **výstupy** a **akce** přidají přímo v kódu pomocí *přetahován�
 
 Pro vývojáře Xamarin.Mac, to znamená, že vývojář bude přetáhněte do souborů se zakázaným inzerováním jazyka Objective-C, které odpovídají požadované k vytvoření souboru C# **výstupu** nebo **akce**. Visual Studio pro Mac vytvořit soubor s názvem `ViewController.h` jako součást shim projektu Xcode vygeneroval Tvůrce rozhraní:
 
-[ ![](hello-mac-images/xcode16.png "Zobrazení zdroje v Xcode")](hello-mac-images/xcode16.png)
+[![](hello-mac-images/xcode16.png "Zobrazení zdroje v Xcode")](hello-mac-images/xcode16.png#lightbox)
 
 Toto se zakázaným inzerováním `.h` souboru zrcadlení `ViewController.designer.cs` , se automaticky přidá do projektu Xamarin.Mac při novou `NSWindow` je vytvořena. Tento soubor se použije k synchronizovat změny provedené při Tvůrce rozhraní a je tam, kde **výstupy** a **akce** jsou vytvořeny tak, aby se zveřejňují prvky uživatelského rozhraní pro kód C#.
 
@@ -430,7 +430,7 @@ Postupujte takto:
 
 1. V Xcode na nejvíce vpravo nahoře dolním rohu obrazovky klikněte na tlačítko **dvojitý kroužek** tlačítko Otevřít **pomocníka Editor**:
 
-    [ ![](hello-mac-images/outlet01.png "Zobrazování editoru pomocníka")](hello-mac-images/outlet01.png)
+    [![](hello-mac-images/outlet01.png "Zobrazování editoru pomocníka")](hello-mac-images/outlet01.png#lightbox)
 
 2. Xcode dojde k přepnutí do režimu zobrazení rozdělení s **rozhraní editoru** na jedné straně a **Editor kódu** na straně druhé.
 
@@ -438,25 +438,25 @@ Postupujte takto:
 
 4. V horní části **Editor kódu** klikněte na **automatické propojení** a vyberte `ViewController.h` souboru:
 
-    [ ![](hello-mac-images/outlet02.png "Výběr správný soubor")](hello-mac-images/outlet02.png)
+    [![](hello-mac-images/outlet02.png "Výběr správný soubor")](hello-mac-images/outlet02.png#lightbox)
 
 5. Xcode by měl mít nyní vybrán správný soubor:
 
-    [ ![](hello-mac-images/outlet03.png "Zobrazení soubor ViewController.h")](hello-mac-images/outlet03.png)
+    [![](hello-mac-images/outlet03.png "Zobrazení soubor ViewController.h")](hello-mac-images/outlet03.png#lightbox)
 
 6. **Poslední krok je velmi důležité!** Pokud vývojář neměly správný soubor vybrána, nebudou moci vytvořit **výstupy** a **akce** nebo zveřejní nesprávný třídy v jazyce C#!
 
 7. V **rozhraní editoru**, podržte klávesu **řízení** klíče na klávesnici a klepnutím přetažením popisek vytvořili výše do editoru kódu právě níže `@interface ViewController : NSViewController {}` kódu:
 
-    [ ![](hello-mac-images/outlet04.png "Vytvoření výstupu tažením")](hello-mac-images/outlet04.png)
+    [![](hello-mac-images/outlet04.png "Vytvoření výstupu tažením")](hello-mac-images/outlet04.png#lightbox)
 
 8. Zobrazí se dialogové okno. Ponechte **připojení** nastavena na **výstupu** a zadejte `ClickedLabel` pro **název**:
 
-    [ ![](hello-mac-images/outlet05.png "Definování výstupu")](hello-mac-images/outlet05.png)
+    [![](hello-mac-images/outlet05.png "Definování výstupu")](hello-mac-images/outlet05.png#lightbox)
 
 9. Klikněte **připojit** tlačítko vytvořte **výstupu**:
 
-    [ ![](hello-mac-images/outlet06.png "Zobrazení poslední výstupu")](hello-mac-images/outlet06.png)
+    [![](hello-mac-images/outlet06.png "Zobrazení poslední výstupu")](hello-mac-images/outlet06.png#lightbox)
 
 10. Uložte změny do souboru.
 
@@ -471,19 +471,19 @@ Postupujte takto:
 1. Zkontrolujte, zda je pořád ještě v Xcode **pomocníka Editor** a **ViewController.h** souboru se zobrazí na **Editor kódu**.
 2. V **rozhraní editoru**, podržte klávesu **řízení** klíče na klávesnici a přetáhněte klikněte na tlačítko vytvořili výše do editoru kódu právě níže `@property (assign) IBOutlet NSTextField *ClickedLabel;` kódu:
 
-    [ ![](hello-mac-images/action01.png "Vytvoření akce tažením")](hello-mac-images/action01.png)
+    [![](hello-mac-images/action01.png "Vytvoření akce tažením")](hello-mac-images/action01.png#lightbox)
 
 3. Změna **připojení** typ **akce**:
 
-    [ ![](hello-mac-images/action02.png "Definování akce")](hello-mac-images/action02.png)
+    [![](hello-mac-images/action02.png "Definování akce")](hello-mac-images/action02.png#lightbox)
 
 4. Zadejte `ClickedButton` jako **název**:
 
-    [ ![](hello-mac-images/action03.png "Pojmenování nové akce")](hello-mac-images/action03.png)
+    [![](hello-mac-images/action03.png "Pojmenování nové akce")](hello-mac-images/action03.png#lightbox)
 
 5. Klikněte **připojit** tlačítko vytvořte **akce**:
 
-    [ ![](hello-mac-images/action04.png "Zobrazení poslední akce")](hello-mac-images/action04.png)
+    [![](hello-mac-images/action04.png "Zobrazení poslední akce")](hello-mac-images/action04.png#lightbox)
 
 6. Uložte změny do souboru.
 
@@ -500,7 +500,7 @@ Když vývojáři přejde zpět do Visual Studio pro Mac z Xcode, všechny změn
 
 Vybere **ViewController.designer.cs** v **Průzkumníku řešení** zobrazíte jak **výstupu** a **akce** byla drátové nahoru v C # kód:
 
-[ ![](hello-mac-images/sync01.png "Synchronizace změn s Xcode")](hello-mac-images/sync01.png)
+[![](hello-mac-images/sync01.png "Synchronizace změn s Xcode")](hello-mac-images/sync01.png#lightbox)
 
 Všimněte si jak dvě definice v **ViewController.designer.cs** souboru:
 
@@ -534,7 +534,7 @@ Uživatelské rozhraní pro vytvoření a je prvky uživatelského rozhraní, kt
 
 V této ukázkové aplikaci pokaždé, když se po kliknutí na první tlačítko, popisek zaktualizuje a zobrazí počet kliknutí na tlačítko. Chcete-li dosáhnout, otevřete `ViewController.cs` soubor pro úpravy poklepáním v **Průzkumníku řešení**:
 
-[ ![](hello-mac-images/code01.png "Prohlížení souboru ViewController.cs v sadě Visual Studio pro Mac")](hello-mac-images/code01.png)
+[![](hello-mac-images/code01.png "Prohlížení souboru ViewController.cs v sadě Visual Studio pro Mac")](hello-mac-images/code01.png#lightbox)
 
 Nejprve vytvořte proměnnou úrovni třídy v `ViewController` třída sledovat počet kliknutí, které došlo. Upravit definici třídy a nastavit jej vypadat následovně:
 
@@ -586,7 +586,7 @@ Vždy, když je integrovaná aplikace, můžete zvolit vývojář, jaký druh se
 
 Vývojář můžete vybrat typ sestavení z **konfigurace selektor** v levém horním rohu sady Visual Studio pro Mac obrazovky:
 
-[ ![](hello-mac-images/run01.png "Výběr sestavení ladicí verze")](hello-mac-images/run01.png)
+[![](hello-mac-images/run01.png "Výběr sestavení ladicí verze")](hello-mac-images/run01.png#lightbox)
 
 <a name="Building_the_Application" />
 
@@ -608,11 +608,11 @@ Existují tři způsoby, jak spustit aplikaci:
 
 Aplikace bude sestavení (pokud nebyl již vytvořen), spusťte v režimu ladění a zobrazí rozhraní hlavní okno:
 
-[ ![](hello-mac-images/run02.png "Spuštění aplikace")](hello-mac-images/run02.png)
+[![](hello-mac-images/run02.png "Spuštění aplikace")](hello-mac-images/run02.png#lightbox)
 
 Pokud je stisknuto tlačítko několikrát, je třeba aktualizovat popisek počet:
 
-[ ![](hello-mac-images/run03.png "Zobrazuje výsledky klepnutím na tlačítko")](hello-mac-images/run03.png)
+[![](hello-mac-images/run03.png "Zobrazuje výsledky klepnutím na tlačítko")](hello-mac-images/run03.png#lightbox)
 
 <a name="Where_to_Next" />
 

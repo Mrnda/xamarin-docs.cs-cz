@@ -3,16 +3,16 @@ title: "Dotykové ovládání"
 description: "Dotykové obrazovky na množství dnešních zařízení umožňují uživatelům rychle a efektivně využívat zařízení přirozené a intuitivní způsobem. Tato interakce se neomezuje jenom na jednoduchý touch detekce – je možné pomocí gest také. Například gesto roztahováním přiblížení, je velmi běžné příklad tohoto – roztáhnout součástí obrazovky se dvěma prsty, které uživatel může zvětšit nebo zmenšit. Tato příručka prověří touch a gest v iOS."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 4A17FD28-313F-4AAC-B82B-3847B4D64A88
+ms.assetid: E3904713-6018-4755-A315-EB045DFB3500
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/23/2017
-ms.openlocfilehash: 8f6c26048bc0ece0d64acf069151ff1d67403ccc
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b0e1cf8b1cb18982fe319fef7c524aeb70be4a9b
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="touch"></a>Dotykové ovládání
 
@@ -31,14 +31,14 @@ Existují však situace když potřebujete použít nízké úrovně touch zprac
 
 ## <a name="sections"></a>Oddíly
 
--  [Touch v iOS](touch-in-ios.md)
+-  [Dotykové ovládání v iOSu](touch-in-ios.md)
 -  [Návod: Použití Touch v iOS](ios-touch-walkthrough.md)
--  [Více Touch sledování](touch-tracking.md)
+-  [Sledování více dotyků](touch-tracking.md)
 
 Tato příručka slouží jako úvod do Touch v iOS. Další informace o použití 3D Touch a hmatová zpětné vazby v iOS, které byly zavedeny v iOS 9 a 10 v uvedeném pořadí naleznete konkrétní příručky níže:
 
-* [3D dotykového ovládání](~/ios/platform/3d-touch.md)
-* [Poskytnutí zpětné vazby hmatová](~/ios/user-interface/ios-ui/haptic-feedback.md)
+* [3D Touch](~/ios/platform/3d-touch.md)
+* [Poskytování hmatové zpětné vazby](~/ios/user-interface/ios-ui/haptic-feedback.md)
 
 
 

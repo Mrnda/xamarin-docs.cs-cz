@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2017
-ms.openlocfilehash: 78ccb117e621b89d85e701b2ea027115f8681dc9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4d50ea5c3db0f5a141f1b48cf0a948c10b63f7f0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="boxview"></a>BoxView
 
@@ -68,7 +68,7 @@ A `BoxView` může být omezené v jednou dimenzí a neomezeného v dalších. N
 
 Tady je výsledek:
 
-[![Základní BoxView](boxview-images/basicboxview-small.png "základní BoxView")](boxview-images/basicboxview-large.png "BasicBoxView")
+[![Základní BoxView](boxview-images/basicboxview-small.png "základní BoxView")](boxview-images/basicboxview-large.png#lightbox "BasicBoxView")
 
 Pokud `VerticalOptions` a `HorizontalOptions` vlastnosti jsou odebrány z `BoxView` značka nebo se nastaví na `Fill`, pak se `BoxView` stane omezené velikost stránky a rozbalí k zaplnění stránky.
 
@@ -113,7 +113,7 @@ Můžete použít `BoxView` přidat některé jednoduché dekorace na vaše str�
 
 Všechny značky následující podřízené objekty jsou `StackLayout`. Tento kód se skládá z několika typů dekorativní `BoxView` prvky používané s `Label` element:
 
-[![Textové dekorace](boxview-images/textdecoration-small.png "textové dekorace")](boxview-images/textdecoration-large.png "textové dekorace")
+[![Textové dekorace](boxview-images/textdecoration-small.png "textové dekorace")](boxview-images/textdecoration-large.png#lightbox "textové dekorace")
 
 Stylových hlavičky v horní části stránky se dosáhne s `AbsoluteLayout` jehož podřízené objekty jsou čtyři `BoxView` elementy a `Label`, všechny z které jsou přiřazeny konkrétní umístění a velikost:
 
@@ -168,7 +168,7 @@ Nakonec kreslení svislé čáry na jedné straně odstavec textu uzavřením i 
 
 `BoxView` Je vhodné pro zobrazení barev. Tento program používá `ListView` seznam všech veřejných statických jen pro čtení pole platformě Xamarin.Forms `Color` strukturu:
 
-[![Barvy ListView](boxview-images/listviewcolors-small.png "ListView barvy")](boxview-images/listviewcolors-large.png "ListView barvy")
+[![Barvy ListView](boxview-images/listviewcolors-small.png "ListView barvy")](boxview-images/listviewcolors-large.png#lightbox "ListView barvy")
 
 [ **ListViewColors** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/ListViewColors/) program zahrnuje třídy s názvem `NamedColor`. Statický konstruktor reflexe používá pro přístup k všechna pole `Color` struktury a vytvořte `NamedColor` objekt pro každé z nich. Tyto jsou uložené v statických `All` vlastnost:
 
@@ -350,7 +350,7 @@ class LifeCell : BoxView
 
 **GameOfLife** program také zahrnuje `LifeGrid` třídy, který zapouzdřuje velkou část logiky ve hře, a `MainPage` třída, která zpracovává vizuály programu. Mezi ně patří překrytí, který popisuje pravidla hry. Tady je program v akci zobrazující několik set `LifeCell` objekty na stránce:
 
-[![Herní života](boxview-images/gameoflife-small.png "herní životní")](boxview-images/gameoflife-large.png "herní životnosti")
+[![Herní života](boxview-images/gameoflife-small.png "herní životní")](boxview-images/gameoflife-large.png#lightbox "herní životnosti")
 
 <a name="digitalclock" />
 
@@ -358,7 +358,7 @@ class LifeCell : BoxView
 
 [ **DotMatrixClock** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/DotMatrixClock/) program vytvoří 210 `BoxView` elementy k simulaci tečky stejné 5 7 maticové zobrazení. Můžete si přečíst čas v režimu na výšku nebo na šířku, ale je větší v na šířku:
 
-[![Maticové hodiny](boxview-images/dotmatrixclock-small.png "maticové hodiny")](boxview-images/dotmatrixclock-large.png "maticové hodiny")
+[![Maticové hodiny](boxview-images/dotmatrixclock-small.png "maticové hodiny")](boxview-images/dotmatrixclock-large.png#lightbox "maticové hodiny")
 
 Vytvoření souboru XAML trochu více než instance `AbsoluteLayout` používá pro hodiny:
 
@@ -594,7 +594,7 @@ public partial class MainPage : ContentPage
 
 Maticové hodiny zdát zřejmé aplikace `BoxView`, ale `BoxView` prvky jsou také schopná porozumění analogovým hodiny:
 
-[![Hodiny BoxView](boxview-images/boxviewclock-small.png "BoxView hodiny")](boxview-images/boxviewclock-large.png "BoxView hodiny")
+[![Hodiny BoxView](boxview-images/boxviewclock-small.png "BoxView hodiny")](boxview-images/boxviewclock-large.png#lightbox "BoxView hodiny")
 
 Všech vizuálů na [ **BoxViewClock** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BoxViewClock/) programu jsou podřízené `AbsoluteLayout`. Tyto prvky jsou dimenzované pomocí `LayoutBounds` přidružená vlastnost a otáčet pomocí `Rotation` vlastnost. 
 

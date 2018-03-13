@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 9a3090873569db2466db9ab25cc105ea59401df3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: abcda680f6cfbde802f7b666cf2aade2c6e11093
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="lines-and-stroke-caps"></a>Řádky a tahu CAP k vzdálené ploše
 
@@ -92,7 +92,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Pro každého člena `SKStrokeCap` výčtu obslužná rutina nevykresluje dva řádky, jeden s sílu tahu 50 pixelů a další čáru umístěný v horní části s sílu tahu 2 pixelů. Tento druhý řádek je určen k objasnění geometrickou začátku a konci řádku nezávisle na tloušťku čáry a zakončení tahu:
 
-[![](lines-images/strokecaps-small.png "Trojitá snímek obrazovky stránky tahu CAP k vzdálené ploše")](lines-images/strokecaps-large.png "Trojitá snímek obrazovky stránky tahu CAP k vzdálené ploše")
+[![](lines-images/strokecaps-small.png "Trojitá snímek obrazovky stránky tahu CAP k vzdálené ploše")](lines-images/strokecaps-large.png#lightbox "Trojitá snímek obrazovky stránky tahu CAP k vzdálené ploše")
 
 Jak je vidět `Square` a `Round` tahu CAP k vzdálené ploše efektivně rozšířit délka řádku poloviční šířku tahu na začátek řádku a znovu na konci. Toto rozšíření změní důležité, pokud je třeba určit dimenze vykreslené grafického objektu.
 
@@ -230,7 +230,7 @@ T GetPickerItem<T>(Picker picker)
 
 Na snímku obrazovky vidíte celou řadu `Picker` výběr na tři platformy:
 
-[![](lines-images/multiplelines-small.png "Trojitá snímek obrazovky stránky více řádků")](lines-images/multiplelines-large.png "Trojitá snímek obrazovky stránky více řádků")
+[![](lines-images/multiplelines-small.png "Trojitá snímek obrazovky stránky více řádků")](lines-images/multiplelines-large.png#lightbox "Trojitá snímek obrazovky stránky více řádků")
 
 Pro iPhone na levém ukazuje jak `SKPointMode.Points` – člen výčtu způsobí, že `DrawPoints` k vykreslení každý z bodů `SKPoint` pole jako čtverce, pokud je zakončení čáry `Butt` nebo `Square`. Kroužky jsou vykreslovány, pokud je zakončení čáry `Round`.
 

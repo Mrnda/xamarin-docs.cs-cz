@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 02/24/2017
-ms.openlocfilehash: 4798da42718658096509948bae07e5e5534d5af0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8f4d8253d56708f77ede7b5173f3dd771e1da0ea
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xaml-previewer-for-xamarinforms"></a>Náhled XAML pro Xamarin.Forms
 
@@ -30,13 +30,13 @@ Další informace naleznete v [poznámky k verzi](https://developer.xamarin.com/
 
 **Preview** tlačítko lze zobrazit v editoru pravým tlačítkem myši na soubor XAML a výběrem **otevřít v > prohlížeče XAML**. V podokně náhledu pak můžete zobrazen nebo skryt stisknutím **Preview** tlačítko v pravém horním rohu okna dokumentu žádné XAML:
 
-[ ![Náhled ovládacího prvku ListView v sadě Visual Studio pro Mac](xaml-previewer-images/xamlp-list-sml.png "prohlížeč formulářů v sadě Visual Studio pro Mac")](xaml-previewer-images/xamlp-list.png "prohlížeč formulářů v sadě Visual Studio pro Mac")
+[![Náhled ovládacího prvku ListView v sadě Visual Studio pro Mac](xaml-previewer-images/xamlp-list-sml.png "prohlížeč formulářů v sadě Visual Studio pro Mac")](xaml-previewer-images/xamlp-list.png#lightbox "prohlížeč formulářů v sadě Visual Studio pro Mac")
 
 ### <a name="visual-studio-on-windows"></a>Visual Studio v systému Windows
 
 Použití **zobrazení > ostatní okna > Náhled Xamarin.Forms** nabídky v sadě Visual Studio otevřete okno náhledu. Použití **okno > nové svislém kartě skupiny** nabídky na místo, vedle sebe.
 
-[ ![Náhled ovládacího prvku ListView v sadě Visual Studio](xaml-previewer-images/xamlp-list-vs-sml.png "prohlížeč formulářů v sadě Visual Studio")](xaml-previewer-images/xamlp-list-vs.png "prohlížeč formulářů v sadě Visual Studio")
+[![Náhled ovládacího prvku ListView v sadě Visual Studio](xaml-previewer-images/xamlp-list-vs-sml.png "prohlížeč formulářů v sadě Visual Studio")](xaml-previewer-images/xamlp-list-vs.png#lightbox "prohlížeč formulářů v sadě Visual Studio")
 
 ## <a name="xaml-preview-options"></a>Možnosti Preview XAML
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 37c0b3f1f826893bef5c1a7ffb5d422c1c8c5c78
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fc9765b3f6a77f47fdce32dbc3805dd7bd70a08a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-tab-bar-controller"></a>Práce s řadiče posuvníku
 
@@ -20,7 +20,7 @@ _Tento článek se zabývá navrhování a práce s karta panelu řadiče uvnit�
 
 Pro mnoho typů aplikací tvOS primární navigační prezentována jako pás karet spuštěna v horní části obrazovky. Uživatel swipes napříč seznamu možných kategorií a oblast obsahu níže změny podle uživatele výběru doleva a doprava.
 
-[ ![](tab-bars-images/tab01.png "Ukázka posuvníku")](tab-bars-images/tab01.png)
+[![](tab-bars-images/tab01.png "Ukázka posuvníku")](tab-bars-images/tab01.png#lightbox)
 
 Na kartě panelu jsou průhledné ve výchozím nastavení a vždy se zobrazí v horní části obrazovky. Když v fokus, pás karet nejvyšší 140 pixelů obrazovce se bude zabývat ale bude rychle Vysuňte ji okamžitě po deaktivaci k oblast obsahu.
 
@@ -64,22 +64,22 @@ Nejjednodušší způsob, jak pracovat s řádky karta v aplikaci Xamarin.tvOS j
     
 1. Spusťte novou aplikaci Xamarin.tvOS a vyberte položku **tvOS** > **aplikace** > **– záložkami aplikace**: 
 
-    [ ![](tab-bars-images/tab02.png "Vyberte aplikaci, s kartami")](tab-bars-images/tab02.png)
+    [![](tab-bars-images/tab02.png "Vyberte aplikaci, s kartami")](tab-bars-images/tab02.png#lightbox)
 1. Postupujte podle výzev a vytvořte nové řešení Xamarin.tvOS všechny.
 1. V **řešení Pad**, dvakrát klikněte `Main.storyboard` souborů a otevřete pro úpravy.
 1. Chcete-li změnit **ikonu** nebo **název** pro danou kategorii, vyberte **položka panelu karty** pro **View Controller** v  **Osnova dokumentu**:
 
-    [ ![](tab-bars-images/tab03a.png "Na kartě panelu položky pro řadiče zobrazení v Osnova dokumentu")](tab-bars-images/tab03a.png)
+    [![](tab-bars-images/tab03a.png "Na kartě panelu položky pro řadiče zobrazení v Osnova dokumentu")](tab-bars-images/tab03a.png#lightbox)
 1. Poté nastavte požadované vlastnosti **pomůcky karta** z **Explorer vlastnosti**: 
 
-    [ ![](tab-bars-images/tab03.png "Na kartě pomůcky")](tab-bars-images/tab03.png)
+    [![](tab-bars-images/tab03.png "Na kartě pomůcky")](tab-bars-images/tab03.png#lightbox)
 1. Pokud chcete přidat novou kategorii (karty), drop **View Controller** na návrhovou plochu: 
 
-    [ ![](tab-bars-images/tab04.png "Řadič zobrazení")](tab-bars-images/tab04.png)
+    [![](tab-bars-images/tab04.png "Řadič zobrazení")](tab-bars-images/tab04.png#lightbox)
 1. Ovládací prvek klikněte a přetáhněte ji z **kartě View Controller** do nového **View Controller**.
 1. V překryvném okně vyberte **zobrazení řadičů** nové zobrazení přidat jako na kartě (kategorie): 
 
-    [ ![](tab-bars-images/tab05.png "Vyberte kartu")](tab-bars-images/tab05.png)
+    [![](tab-bars-images/tab05.png "Vyberte kartu")](tab-bars-images/tab05.png#lightbox)
 1. Navrhněte rozložení uživatelského rozhraní pro každou oblast obsahu Caterogies jako normální přidáním prvky uživatelského rozhraní v iOS Designer.
 1. Vystavení všechny požadované události pro práci s ovládacími prvky uživatelského rozhraní v kódu jazyka C#.
 1. Název všech ovládacích prvků uživatelského rozhraní, které chcete vystavit v kódu jazyka C#.
@@ -89,22 +89,22 @@ Nejjednodušší způsob, jak pracovat s řádky karta v aplikaci Xamarin.tvOS j
     
 1. Spusťte novou aplikaci Xamarin.tvOS a vyberte položku **tvOS** > **aplikace** > **– záložkami aplikace**: 
 
-    [ ![](tab-bars-images/tab02vs.png "Vyberte aplikaci, s kartami")](tab-bars-images/tab02vs.png)
+    [![](tab-bars-images/tab02vs.png "Vyberte aplikaci, s kartami")](tab-bars-images/tab02vs.png#lightbox)
 1. Postupujte podle výzev a vytvořte nové řešení Xamarin.tvOS všechny.
 1. V **Průzkumníku řešení**, dvakrát klikněte `Main.storyboard` souborů a otevřete pro úpravy.
 1. Chcete-li změnit **ikonu** nebo **název** pro danou kategorii, vyberte **položka panelu karty** pro **View Controller** v  **Osnova dokumentu**:
 
-    [ ![](tab-bars-images/tab03avs.png "Řadiče zobrazení v Osnova dokumentu")](tab-bars-images/tab03avs.png)
+    [![](tab-bars-images/tab03avs.png "Řadiče zobrazení v Osnova dokumentu")](tab-bars-images/tab03avs.png#lightbox)
 1. Poté nastavte požadované vlastnosti **pomůcky karta** z **Explorer vlastnosti**: 
 
-    [ ![](tab-bars-images/tab03vs.png "Na kartě pomůcky")](tab-bars-images/tab03vs.png)
+    [![](tab-bars-images/tab03vs.png "Na kartě pomůcky")](tab-bars-images/tab03vs.png#lightbox)
 1. Chcete-li přidat novou kategorii (karty), přetáhněte **View Controller** z **sada nástrojů** na návrhovou plochu: 
 
-    [ ![](tab-bars-images/tab04vs.png "Řadič zobrazení")](tab-bars-images/tab04vs.png)
+    [![](tab-bars-images/tab04vs.png "Řadič zobrazení")](tab-bars-images/tab04vs.png#lightbox)
 1. Ovládací prvek klikněte a přetáhněte ji z **kartě View Controller** do nového **View Controller**.
 1. V překryvném okně vyberte **zobrazení řadičů** nové zobrazení přidat jako na kartě (kategorie): 
 
-    [ ![](tab-bars-images/tab05vs.png "Vyberte kartu")](tab-bars-images/tab05vs.png)
+    [![](tab-bars-images/tab05vs.png "Vyberte kartu")](tab-bars-images/tab05vs.png#lightbox)
 1. Navrhněte rozložení uživatelského rozhraní pro každou oblast obsahu Caterogies jako normální přidáním prvky uživatelského rozhraní v iOS Designer.
 1. Vystavení všechny požadované události pro práci s ovládacími prvky uživatelského rozhraní v kódu jazyka C#.
 1. Název všech ovládacích prvků uživatelského rozhraní, které chcete vystavit v kódu jazyka C#.
@@ -137,7 +137,7 @@ TabBar.Items [2].BadgeValue = "10";
 
 Které byste mohli vytvořit při spuštění následující výsledky:
 
-[ ![](tab-bars-images/tab06.png "Položku panelu karta s oznámení "BADGE"")](tab-bars-images/tab06.png)
+[![](tab-bars-images/tab06.png "Položku panelu karta s oznámení "BADGE"")](tab-bars-images/tab06.png#lightbox)
 
 Použití `Title` vlastnost `UITabBarItem` Chcete-li změnit název a `Image` vlastnosti chcete změnit ikonu.
 

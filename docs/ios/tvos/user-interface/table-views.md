@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 26a73c2536bf4b4959928bfb27958b1a10734bf5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: af562ac03f2cd5f293f99c7509000499ad5deaa4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-table-views"></a>Práce se zobrazeními tabulky
 
@@ -22,7 +22,7 @@ V tvOS zobrazí se jako jeden sloupec posouvání řádků, které lze voliteln�
 
 Zobrazení tabulek se obvykle zobrazují v jedné straně [rozděleným zobrazením](~/ios/tvos/user-interface/split-views.md) jako navigační podrobné informace o této položce vybrané v opačné straně zobrazí:
 
-[ ![](table-views-images/intro01.png "Ukázková tabulka zobrazení")](table-views-images/intro01.png)
+[![](table-views-images/intro01.png "Ukázková tabulka zobrazení")](table-views-images/intro01.png#lightbox)
 
 <a name="About-Table-Views" />
 
@@ -30,7 +30,7 @@ Zobrazení tabulek se obvykle zobrazují v jedné straně [rozděleným zobrazen
 
 A `UITableView` zobrazí jeden sloupec posouvatelného řádků jako seznam hierarchické informace, které lze volitelně můžete uspořádat do skupin nebo částech: 
 
-[ ![](table-views-images/table01.png "Vybranou položku")](table-views-images/table01.png)
+[![](table-views-images/table01.png "Vybranou položku")](table-views-images/table01.png#lightbox)
 
 Společnost Apple má následující návrhy pro práci s tabulkami:
 
@@ -72,86 +72,86 @@ Abyste mohli začít, postupujte takto:
     
 1. V sadě Visual Studio pro Mac, vytvořte nový projekt aplikace tvOS a vyberte **tvOS** > **aplikace** > **jediné zobrazení aplikace** a klikněte na  **Další** tlačítko: 
 
-    [ ![](table-views-images/table02.png "Vyberte aplikaci, jednoho zobrazení")](table-views-images/table02.png)
+    [![](table-views-images/table02.png "Vyberte aplikaci, jednoho zobrazení")](table-views-images/table02.png#lightbox)
 1. Zadejte **název** pro aplikaci a klikněte na tlačítko **Další**: 
 
-    [ ![](table-views-images/table03.png "Zadejte název aplikace")](table-views-images/table03.png)
+    [![](table-views-images/table03.png "Zadejte název aplikace")](table-views-images/table03.png#lightbox)
 1. Buď upravit **název projektu** a **název řešení** nebo přijměte výchozí hodnoty a klikněte na **vytvořit** tlačítko vytvořte nové řešení: 
 
-    [ ![](table-views-images/table04.png "Název projektu a název řešení")](table-views-images/table04.png)
+    [![](table-views-images/table04.png "Název projektu a název řešení")](table-views-images/table04.png#lightbox)
 1. V **Pad řešení**, dvakrát klikněte `Main.storyboard` soubor otevřete v iOS Designer: 
 
-    [ ![](table-views-images/table05.png "Soubor Main.storyboard")](table-views-images/table05.png)
+    [![](table-views-images/table05.png "Soubor Main.storyboard")](table-views-images/table05.png#lightbox)
 1. Vyberte a odstraňte **výchozí View Controller**: 
 
-    [ ![](table-views-images/table06.png "Vyberte a odstraňte řadiče výchozí zobrazení")](table-views-images/table06.png)
+    [![](table-views-images/table06.png "Vyberte a odstraňte řadiče výchozí zobrazení")](table-views-images/table06.png#lightbox)
 1. Vyberte **rozdělení View Controller** z **sada nástrojů** a přetáhněte ji na návrhovou plochu.
 1. Ve výchozím nastavení, získáte [rozděleným zobrazením](~/ios/tvos/user-interface/split-views.md) s **navigační View Controller** a **řadiče zobrazení tabulky** v na levé straně a **View Controller** v pravé straně. Toto je navržené využití zobrazení tabulky v tvOS společnosti Apple: 
 
-    [ ![](table-views-images/table08.png "Přidání zobrazení rozdělení")](table-views-images/table08.png)
+    [![](table-views-images/table08.png "Přidání zobrazení rozdělení")](table-views-images/table08.png#lightbox)
 1. Budete muset vybrat každou část Tabulka zobrazení a přiřaďte ho vlastní **název třídy** v **pomůcky** kartě **Explorer vlastnosti** , aby přístup později v jazyce C# kód. Například **řadiče zobrazení tabulky**: 
 
-    [ ![](table-views-images/table09.png "Přiřaďte název třídy")](table-views-images/table09.png)
+    [![](table-views-images/table09.png "Přiřaďte název třídy")](table-views-images/table09.png#lightbox)
 1. Ujistěte se, že vytvoříte vlastní třída pro **řadiče zobrazení tabulky**, **zobrazení tabulky** a jakýkoli **prototypu buněk**. Visual Studio pro Mac přidá vlastní třídy do stromu projektu při jejich vytvoření: 
 
-    [ ![](table-views-images/table10.png "Vlastní třídy ve stromu projektu")](table-views-images/table10.png)
+    [![](table-views-images/table10.png "Vlastní třídy ve stromu projektu")](table-views-images/table10.png#lightbox)
 1. V dalším kroku vyberte zobrazení tabulky v návrhové plochy a podle potřeby upravte její vlastnosti. Například počet **prototypu buněk** a **styl** (prostý nebo seskupené): 
 
-    [ ![](table-views-images/table11.png "Na kartě pomůcky")](table-views-images/table11.png)
+    [![](table-views-images/table11.png "Na kartě pomůcky")](table-views-images/table11.png#lightbox)
 1. Pro každou **prototypu buňky**, vyberte ho a přiřadit jedinečný **identifikátor** v **pomůcky** kartě **Explorer vlastnosti**. Tento krok je _velmi důležité_ jako budete později potřebovat tento identifikátor při naplňování tabulky. Například `AttrCell`: 
 
-    [ ![](table-views-images/table12.png "Na kartě pomůcky")](table-views-images/table12.png)
+    [![](table-views-images/table12.png "Na kartě pomůcky")](table-views-images/table12.png#lightbox)
 1. Můžete také vybrat nabídne buňky jako jeden z [výchozí typy buněk tabulky zobrazení](#Table-View-Cell-Types) prostřednictvím **styl** rozevírací nebo ji nastavte na **vlastní** a použít na návrhovou plochu na rozložení buňky Přetažením v jiných pomůcky uživatelského rozhraní z **sada nástrojů**: 
 
-    [ ![](table-views-images/table13.png "Rozložení buněk")](table-views-images/table13.png)
+    [![](table-views-images/table13.png "Rozložení buněk")](table-views-images/table13.png#lightbox)
 1. Přiřadit jedinečný **název** na každý element uživatelského rozhraní v návrhu prototypu buňky ve **pomůcky** kartě **vlastnosti Explorer** tak k dispozici novější v kódu jazyka C#: 
 
-    [ ![](table-views-images/table14.png "Přiřadit název")](table-views-images/table14.png)
+    [![](table-views-images/table14.png "Přiřadit název")](table-views-images/table14.png#lightbox)
 1. Opakujte předchozí krok pro všechny prototypu buněk v tabulce zobrazení.
 1. V dalším kroku přiřadit vlastní třídy s ostatními návrh uživatelského rozhraní, rozložení zobrazení podrobností a přiřazení jedinečných **názvy** pro každý prvek uživatelského rozhraní v podrobnostech zobrazení tak, aby se dostanete v jazyce C# také. Příklad: 
 
-    [ ![](table-views-images/table15.png "Rozložení uživatelského rozhraní")](table-views-images/table15.png)
+    [![](table-views-images/table15.png "Rozložení uživatelského rozhraní")](table-views-images/table15.png#lightbox)
 1. Uložte změny do scénáře.
     
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
     
 1. V sadě Visual Studio spusťte nový projekt aplikace tvOS a vyberte **tvOS** > **jediné zobrazení aplikace** a zadejte název pro vaši aplikaci. Klikněte **nevadí** tlačítko vytvořte nové řešení: 
 
-    [ ![](table-views-images/table02-vs.png "Vyberte aplikaci, jednoho zobrazení")](table-views-images/table02-vs.png)
+    [![](table-views-images/table02-vs.png "Vyberte aplikaci, jednoho zobrazení")](table-views-images/table02-vs.png#lightbox)
 1. V **Průzkumníku řešení**, dvakrát klikněte `Main.storyboard` soubor otevřete v iOS Designer: 
 
-    [ ![](table-views-images/table05-vs.png "Soubor Main.storyboard")](table-views-images/table05-vs.png)
+    [![](table-views-images/table05-vs.png "Soubor Main.storyboard")](table-views-images/table05-vs.png#lightbox)
 1. Vyberte a odstraňte **výchozí View Controller**: 
 
-    [ ![](table-views-images/table06-vs.png "Vyberte a odstraňte řadiče výchozí zobrazení")](table-views-images/table06-vs.png)
+    [![](table-views-images/table06-vs.png "Vyberte a odstraňte řadiče výchozí zobrazení")](table-views-images/table06-vs.png#lightbox)
 1. Vyberte **rozdělení View Controller** z **sada nástrojů** a přetáhněte ji na návrhovou plochu: 
 
-    [ ![](table-views-images/table07-vs.png "Řadič zobrazení rozdělení")](table-views-images/table07-vs.png)
+    [![](table-views-images/table07-vs.png "Řadič zobrazení rozdělení")](table-views-images/table07-vs.png#lightbox)
 1. Ve výchozím nastavení, získáte [rozděleným zobrazením](~/ios/tvos/user-interface/split-views.md) s **navigační View Controller** a **řadiče zobrazení tabulky** v na levé straně a **View Controller** v pravé straně. Toto je navržené využití zobrazení tabulky v tvOS společnosti Apple: 
 
-    [ ![](table-views-images/table08-vs.png "Rozložení uživatelského rozhraní")](table-views-images/table08-vs.png)
+    [![](table-views-images/table08-vs.png "Rozložení uživatelského rozhraní")](table-views-images/table08-vs.png#lightbox)
 1. Budete muset vybrat každou část Tabulka zobrazení a přiřaďte ho vlastní **název třídy** v **pomůcky** kartě **Explorer vlastnosti** , aby přístup později v jazyce C# kód. Například **řadiče zobrazení tabulky**: 
 
-    [ ![](table-views-images/table09-vs.png "Na kartě pomůcky")](table-views-images/table09-vs.png)
+    [![](table-views-images/table09-vs.png "Na kartě pomůcky")](table-views-images/table09-vs.png#lightbox)
 1. Ujistěte se, že vytvoříte vlastní třída pro **řadiče zobrazení tabulky**, **zobrazení tabulky** a jakýkoli **prototypu buněk**. Visual Studio pro Mac přidá vlastní třídy do stromu projektu při jejich vytvoření: 
 
-    [ ![](table-views-images/table10-vs.png "Vlastní třídy ve stromu projektu")](table-views-images/table10-vs.png)
+    [![](table-views-images/table10-vs.png "Vlastní třídy ve stromu projektu")](table-views-images/table10-vs.png#lightbox)
 1. V dalším kroku vyberte zobrazení tabulky v návrhové plochy a podle potřeby upravte její vlastnosti. Například počet **prototypu buněk** a **styl** (prostý nebo seskupené): 
 
-    [ ![](table-views-images/table11-vs.png "Na kartě pomůcky")](table-views-images/table11-vs.png)
+    [![](table-views-images/table11-vs.png "Na kartě pomůcky")](table-views-images/table11-vs.png#lightbox)
 1. Pro každou **prototypu buňky**, vyberte ho a přiřadit jedinečný **identifikátor** v **pomůcky** kartě **Explorer vlastnosti**. Tento krok je _velmi důležité_ jako budete později potřebovat tento identifikátor při naplňování tabulky. Například `AttrCell`: 
 
-    [ ![](table-views-images/table12-vs.png "Přiřadit identifikátor")](table-views-images/table12-vs.png)
+    [![](table-views-images/table12-vs.png "Přiřadit identifikátor")](table-views-images/table12-vs.png#lightbox)
 1. Můžete také vybrat nabídne buňky jako jeden z [výchozí typy buněk tabulky zobrazení](#Table-View-Cell-Types) prostřednictvím **styl** rozevírací nebo ji nastavte na **vlastní** a použít na návrhovou plochu na rozložení buňky Přetažením v jiných pomůcky uživatelského rozhraní z **sada nástrojů**: 
 
-    [ ![](table-views-images/table13-vs.png "Styl rozevíracího seznamu")](table-views-images/table13-vs.png)
+    [![](table-views-images/table13-vs.png "Styl rozevíracího seznamu")](table-views-images/table13-vs.png#lightbox)
 1. Přiřadit jedinečný **název** na každý element uživatelského rozhraní v návrhu prototypu buňky ve **pomůcky** kartě **vlastnosti Explorer** tak k dispozici novější v kódu jazyka C#: 
 
-    [ ![](table-views-images/table14-vs.png "Na kartě pomůcky")](table-views-images/table14-vs.png)
+    [![](table-views-images/table14-vs.png "Na kartě pomůcky")](table-views-images/table14-vs.png#lightbox)
 1. Opakujte předchozí krok pro všechny prototypu buněk v tabulce zobrazení.
 1. V dalším kroku přiřadit vlastní třídy s ostatními návrh uživatelského rozhraní, rozložení zobrazení podrobností a přiřazení jedinečných **názvy** pro každý prvek uživatelského rozhraní v podrobnostech zobrazení tak, aby se dostanete v jazyce C# také. Příklad: 
 
-    [ ![](table-views-images/table15.png "Rozložení uživatelského rozhraní")](table-views-images/table15.png)
+    [![](table-views-images/table15.png "Rozložení uživatelského rozhraní")](table-views-images/table15.png#lightbox)
 1. Uložte změny do scénáře.
     
 -----
@@ -168,13 +168,13 @@ Proveďte v příkladu aplikaci rezervace cesta, která obsahuje seznam **města
 
 K vytvoření datového modelu pro **přitažlivosti**, klikněte pravým tlačítkem na název projektu v **řešení Pad** a vyberte **přidat** > **nový soubor...** . Zadejte `AttractionInformation` pro **název** a klikněte na **nový** tlačítko: 
 
-[ ![](table-views-images/data01.png "Zadejte pro název AttractionInformation")](table-views-images/data01.png)
+[![](table-views-images/data01.png "Zadejte pro název AttractionInformation")](table-views-images/data01.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 K vytvoření datového modelu pro **přitažlivosti**, klikněte pravým tlačítkem na název projektu v **Průzkumníku řešení** a vyberte **přidat** > **novou položku ...** . Vyberte **třída** a zadejte `AttractionInformation` pro **název** a klikněte na tlačítko **přidat** tlačítko: 
 
-[ ![](table-views-images/data01-vs.png "Vyberte třídu a jako název zadejte AttractionInformation")](table-views-images/data01-vs.png)
+[![](table-views-images/data01-vs.png "Vyberte třídu a jako název zadejte AttractionInformation")](table-views-images/data01-vs.png#lightbox)
 
 -----
 
@@ -216,13 +216,13 @@ Tato třída poskytuje vlastností pro ukládání informací o danou **přitaž
 
 Pak klikněte pravým tlačítkem na název projektu v **řešení Pad** znovu a vyberte **přidat** > **nový soubor...** . Zadejte `CityInformation` pro **název** a klikněte na **nový** tlačítko: 
 
-[ ![](table-views-images/data02.png "Zadejte pro název CityInformation")](table-views-images/data02.png)
+[![](table-views-images/data02.png "Zadejte pro název CityInformation")](table-views-images/data02.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 Pak klikněte pravým tlačítkem na název projektu v **Průzkumníku řešení** znovu a vyberte **přidat** > **novou položku...** . Zadejte `CityInformation` pro **název** a klikněte na **přidat** tlačítko: 
 
-[ ![](table-views-images/data02-vs.png "Zadejte pro název CityInformation")](table-views-images/data02-vs.png)
+[![](table-views-images/data02-vs.png "Zadejte pro název CityInformation")](table-views-images/data02-vs.png#lightbox)
 
 -----
 
@@ -733,7 +733,7 @@ Další informace o práci s `UITableViewController`, najdete v tématu společn
 
 Jak jsme uvedli na začátku tohoto dokumentu, zobrazení tabulek se obvykle zobrazují v jedné straně [rozděleným zobrazením](~/ios/tvos/user-interface/split-views.md) jako navigační podrobné informace o této položce vybrané v opačné straně zobrazí. Příklad: 
 
-[ ![](table-views-images/intro01.png "Spuštění ukázkové aplikace")](table-views-images/intro01.png)
+[![](table-views-images/intro01.png "Spuštění ukázkové aplikace")](table-views-images/intro01.png#lightbox)
 
 Vzhledem k tomu, že je standardní vzor v tvOS, podíváme se na poslední postup všechno, co společně nabídnou a levé a pravé strany rozděleným zobrazením vzájemné interakce.
 
@@ -957,7 +957,7 @@ Tento článek má zahrnutých navrhování a práce se zobrazeními tabulky uvn
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Ukázky tvOS](https://developer.xamarin.com/samples/tvos/all/)
+- [Ukázky pro tvOS](https://developer.xamarin.com/samples/tvos/all/)
 - [UITableViewController](https://developer.apple.com/library/prerelease/tvos/documentation/UIKit/Reference/UITableViewController_Class/index.html#//apple_ref/doc/uid/TP40007523)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS lidské rozhraní příručky](https://developer.apple.com/tvos/human-interface-guidelines/)

@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/22/2018
-ms.openlocfilehash: 3de935fd407524d7ba62a93205e333c7dd7adde0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b62af404ce0d3f5dacc479682a3002af49e968d1
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="date-picker"></a>Výběr data
 
@@ -24,7 +24,7 @@ Moderní aplikace pro Android by se měla zobrazovat `DatePickerDialog` v [ `Dia
 
 Tato příručka popisuje, jak používat `DatePickerDialog`, zabalené v `DialogFragment`. Ukázkové aplikace se zobrazí `DatePickerDialog` jako modální dialogové okno, když uživatel klikne na tlačítko na aktivitu. Pokud bude nastaveno uživatelem, `TextView` aktualizuje data, která byla vybrána.
 
-[![Tlačítko – snímek obrazovky vyberte datum následuje dialogové okno pro výběr data](date-picker-images/image-01-sml.png)](date-picker-images/image-01.png)
+[![Tlačítko – snímek obrazovky vyberte datum následuje dialogové okno pro výběr data](date-picker-images/image-01-sml.png)](date-picker-images/image-01.png#lightbox)
 
 ## <a name="requirements"></a>Požadavky
 
@@ -49,7 +49,6 @@ Existuje několik způsobů `DialogFragment` vrátit hostování aktivity vybran
 3. **Použijte `Action`**  &ndash; `DialogFragment` můžete vyvolat `Action<DateTime>` chcete zobrazit datum v aktivitě. Poskytne aktivity `Action<DateTime` při vytváření instance `DialogFragment`. Tato ukázka třetí způsobem a aby museli aktivity `Action<DateTime>` k `DialogFragment`.
 
 
-<a name="extending_dialogfragment" />
 
 ### <a name="extending-dialogfragment"></a>Rozšíření DialogFragment
 
@@ -99,10 +98,9 @@ Po který se má zobrazit fragment Android zavolá metodu `OnCreateDialog`. Tato
 
 
 > [!NOTE]
-> **Poznámka:** mějte na paměti, hodnota měsíce při `IOnDateSetListener.OnDateSet` je volána v rozsahu 0 až 11 a není 1 do 12. Den v měsíci bude v rozsahu od 1 do 31 (podle toho, která byla vybrána měsíce).
+> Mějte na paměti, hodnota měsíce při `IOnDateSetListener.OnDateSet` je volána v rozsahu 0 až 11 a není 1 do 12. Den v měsíci bude v rozsahu od 1 do 31 (podle toho, která byla vybrána měsíce).
 
 
-<a name="date_picker_fragment" />
 
 ### <a name="showing-the-datepickerfragment"></a>Zobrazuje DatePickerFragment
 
@@ -136,7 +134,6 @@ public class MainActivity : Activity
 }
 ```
 
-<a name="summary" />
 
 ## <a name="summary"></a>Souhrn
 

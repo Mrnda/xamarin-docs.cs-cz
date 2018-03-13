@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: e599c56f732f918d2a9c82255bc01182651d506c
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 74b22f31fabf70885eca732ef021232124df71bb
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-dependencyservice"></a>Úvod do DependencyService
 
@@ -129,13 +129,13 @@ DependencyService.Get<ITextToSpeech>().Speak("Hello from Xamarin Forms");
 
 [Ukázkové řešení UsingDependencyService](https://developer.xamarin.com/samples/UsingDependencyService/) je uvedeno níže pro iOS a Android, se změnami kódu uvedených výše zvýrazněná.
 
- [ ![iOS a Android řešení](introduction-images/solution-sml.png "DependencyService ukázkové řešení struktura")](introduction-images/solution.png "DependencyService ukázkové řešení struktura")
+ [![iOS a Android řešení](introduction-images/solution-sml.png "DependencyService ukázkové řešení struktura")](introduction-images/solution.png#lightbox "DependencyService ukázkové řešení struktura")
 
 > [!NOTE]
-> **Poznámka:** jste **musí** poskytnout implementaci ve všech projektech platformy. Pokud žádné implementace rozhraní je registrován, pak se `DependencyService` nelze přeložit `Get<T>()` metoda za běhu.
+> Můžete **musí** poskytnout implementaci ve všech projektech platformy. Pokud žádné implementace rozhraní je registrován, pak se `DependencyService` nelze přeložit `Get<T>()` metoda za běhu.
 
 
 ## <a name="related-links"></a>Související odkazy
 
 - [DependencyServiceSample](https://developer.xamarin.com/samples/xamarin-forms/UsingDependencyService/)
-- [Xamarin.Forms Samples](https://developer.xamarin.com/samples/xamarin-forms/all/)
+- [Ukázky Xamarin.Forms](https://developer.xamarin.com/samples/xamarin-forms/all/)

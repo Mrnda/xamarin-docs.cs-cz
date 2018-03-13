@@ -8,15 +8,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 08/23/2017
-ms.openlocfilehash: f8680cde2e5536495f33d571adea9980020a72fa
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 02a425c8276524accc088b53c1099e7c2e28d828
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="tabbed-layouts"></a>Na kartách rozložení
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Přehled
 
@@ -45,7 +44,6 @@ Tyto nekompatibilní API existovat kvůli významné změny uživatelského rozh
 `TabHost` Rozhraní API je kompatibilní mezi všemi verzemi systému Android, ale vyžaduje další úsilí použití a není konzistentní s aktuálním [Android pokyny uživatelského rozhraní](http://developer.android.com/design/index.html). Vývojáři se nedoporučuje používat toto rozhraní API a by měl upřednostňovat novější nadřízených členů pro své aplikace Xamarin.Android. 
 
 
-<a name="Introducing_ActionBarSherlock" />
 
 ## <a name="actionbarsherlock"></a>ActionBarSherlock
 
@@ -55,8 +53,8 @@ Než rozhraní API nadřízených členů byly přeneseny zpět do Android 2.2, 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Přehled TabHost](tab-host.md)
+- [TabHost – přehled](tab-host.md)
 - [Návod TabHost](~/android/user-interface/layouts/tab-layout/creating-a-tabbed-ui.md)
-- [Nadřízených členů.](http://developer.android.com/guide/topics/ui/actionbar.html)
+- [Panel akcí](http://developer.android.com/guide/topics/ui/actionbar.html)
 - [Balíček NuGet Android, podporují knihovny v7 kompatibility aplikace](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/)
 - [Knihovna v7 kompatibility aplikace](http://developer.android.com/tools/support-library/features.html#v7-appcompat)

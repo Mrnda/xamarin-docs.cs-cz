@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 0bc039385a6b2077c3b5fa5114b35b586a14a150
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b75bc7e4ccf53e82ff107c867c5ba01813960ea5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="the-command-interface"></a>Rozhraní příkazového
 
@@ -279,7 +279,7 @@ Zde je, jak to funguje: první stisknutí uživatele **nový** tlačítko. To um
 
 Na obrazovce iOS na levé straně se zobrazí rozložení předtím, než je zadaná platná stáří. Android a UWP obrazovky zobrazit **odeslání** tlačítko povoleno po stáří:
 
-[![Položka osoba](commanding-images/personentry-small.png "osoba položka")](commanding-images/personentry-large.png "osoba položka")
+[![Položka osoba](commanding-images/personentry-small.png "osoba položka")](commanding-images/personentry-large.png#lightbox "osoba položka")
 
 Program nemá žádné zařízení pro úpravy existujících položek a neukládá položky, když přejdete mimo stránku.
 
@@ -531,7 +531,7 @@ Tlačítka 11 pro 10 číslic a desetinnou sdílet vazbu ke `DigitCommand`. `Com
 
 Tady je program v akci:
 
-[![Decimal klávesnice](commanding-images/decimalkeyboard-small.png "Decimal klávesnice")](commanding-images/decimalkeyboard-large.png "Decimal klávesnice")
+[![Decimal klávesnice](commanding-images/decimalkeyboard-small.png "Decimal klávesnice")](commanding-images/decimalkeyboard-large.png#lightbox "Decimal klávesnice")
 
 Všimněte si, že na tlačítko desetinné čárky všechny tři snímcích obrazovky zakázaná, protože zadané číslo již obsahuje desetinné čárky. 
 

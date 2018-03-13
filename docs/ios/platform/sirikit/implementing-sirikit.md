@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: a891e5bf797742ceb1bb45bb8144fa77dec99b2c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0e271fb78cfd225f9ccdae9a515685e89bfd7ac2
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="implementing-sirikit"></a>Implementace SiriKit
 
@@ -35,7 +35,7 @@ Když uživatel odešle žádost siri jeden rozšíření aplikace služby, ode�
 
 Tato příručka nabídne zběžný příklad včetně podpory SiriKit do stávající aplikace. Z důvodu v tomto příkladu budeme používat falešných MonkeyChat aplikace:
 
-[ ![](implementing-sirikit-images/monkeychat01.png "Ikona MonkeyChat")](implementing-sirikit-images/monkeychat01.png)
+[![](implementing-sirikit-images/monkeychat01.png "Ikona MonkeyChat")](implementing-sirikit-images/monkeychat01.png#lightbox)
 
 MonkeyChat udržuje vlastní kontaktní adresáře uživatele přátel, každý přidružený název obrazovky (např. Bobo třeba) a umožňuje uživatelům poslat textové konverzace každý friend podle názvu jejich obrazovky.
 
@@ -43,7 +43,7 @@ MonkeyChat udržuje vlastní kontaktní adresáře uživatele přátel, každý 
 
 Jak je znázorněno [Principy SiriKit koncepty](~/ios/platform/sirikit/understanding-sirikit.md) průvodce, se účastní rozšíření aplikace pomocí SiriKit tři hlavní části:
 
-[ ![](implementing-sirikit-images/elements01.png "Rozšíření aplikace pomocí SiriKit diagram")](implementing-sirikit-images/elements01.png)
+[![](implementing-sirikit-images/elements01.png "Rozšíření aplikace pomocí SiriKit diagram")](implementing-sirikit-images/elements01.png#lightbox)
 
 Mezi ně patří:
 
@@ -75,20 +75,20 @@ Postupujte takto:
 1. Spuštění sady Visual Studio pro Mac a otevřete aplikaci MonkeyChat.
 2. Klikněte pravým tlačítkem na název řešení v **řešení Pad** a vyberte **přidat** > **nový projekt...** : 
 
-    [ ![](implementing-sirikit-images/prep01.png "Přidat nový projekt")](implementing-sirikit-images/prep01.png)
+    [![](implementing-sirikit-images/prep01.png "Přidat nový projekt")](implementing-sirikit-images/prep01.png#lightbox)
 3. Vyberte **iOS** > **knihovny** > **knihovny tříd** a klikněte na **Další** tlačítko: 
 
-    [ ![](implementing-sirikit-images/prep02.png "Vyberte knihovnu – třída")](implementing-sirikit-images/prep02.png)
+    [![](implementing-sirikit-images/prep02.png "Vyberte knihovnu – třída")](implementing-sirikit-images/prep02.png#lightbox)
 4. Zadejte `MonkeyChatCommon` pro **název** a klikněte na **vytvořit** tlačítko: 
 
-    [ ![](implementing-sirikit-images/prep03.png "Zadejte pro název MonkeyChatCommon")](implementing-sirikit-images/prep03.png)
+    [![](implementing-sirikit-images/prep03.png "Zadejte pro název MonkeyChatCommon")](implementing-sirikit-images/prep03.png#lightbox)
 5. Klikněte pravým tlačítkem na **odkazy** složky hlavní aplikace v **Průzkumníku řešení** a vyberte **upravit odkazy...** . Zkontrolujte **MonkeyChatCommon** projektu a klikněte na **OK** tlačítko: 
 
-    [ ![](implementing-sirikit-images/prep05.png "Zkontrolujte MonkeyChatCommon projektu")](implementing-sirikit-images/prep05.png)
+    [![](implementing-sirikit-images/prep05.png "Zkontrolujte MonkeyChatCommon projektu")](implementing-sirikit-images/prep05.png#lightbox)
 6. V **Průzkumníku**, přetáhněte společný kód sdílený z hlavní aplikace do nativní knihovny.
 7. V případě MonkeyChat, přetáhněte **DataModels** a **procesory** složky z hlavní aplikace do nativní knihovny: 
 
-    [ ![](implementing-sirikit-images/prep06.png "DataModels a procesory složky v Průzkumníku řešení")](implementing-sirikit-images/prep06.png)
+    [![](implementing-sirikit-images/prep06.png "DataModels a procesory složky v Průzkumníku řešení")](implementing-sirikit-images/prep06.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -96,11 +96,11 @@ Postupujte takto:
 2. Klikněte pravým tlačítkem na název řešení v **Průzkumníku řešení** a vyberte **přidat** > **nový projekt...** .
 3. Vyberte **Visual C#** > **sdílený projekt** a klikněte na **Další** tlačítko: 
 
-    [ ![](implementing-sirikit-images/prep02w.png "Vyberte knihovnu – třída")](implementing-sirikit-images/prep02w.png)
+    [![](implementing-sirikit-images/prep02w.png "Vyberte knihovnu – třída")](implementing-sirikit-images/prep02w.png#lightbox)
 4. Zadejte `MonkeyChatCommon` pro **název** a klikněte na **vytvořit** tlačítko.
 5. Klikněte pravým tlačítkem na **odkazy** složky hlavní aplikace v **Průzkumníku řešení** a vyberte **upravit odkazy...** . Zkontrolujte **MonkeyChatCommon** projektu a klikněte na **OK** tlačítko: 
 
-    [ ![](implementing-sirikit-images/prep05w.png "Zkontrolujte MonkeyChatCommon projektu")](implementing-sirikit-images/prep05w.png)
+    [![](implementing-sirikit-images/prep05w.png "Zkontrolujte MonkeyChatCommon projektu")](implementing-sirikit-images/prep05w.png#lightbox)
 6. V **Průzkumníku**, přetáhněte společný kód sdílený z hlavní aplikace na sdílený projekt.
 7. V případě MonkeyChat, přetáhněte **DataModels** a **procesory** složky z hlavní aplikace do nativní knihovny.
 
@@ -172,12 +172,12 @@ Postupujte takto:
 2. Přepnout **zdroj** kartě.
 3. Přidat `com.apple.developer.siri` **vlastnost**, nastavte **typ** k `Boolean` a **hodnotu** k `Yes`: 
 
-    [ ![](implementing-sirikit-images/setup01.png "Přidat vlastnost com.apple.developer.siri")](implementing-sirikit-images/setup01.png)
+    [![](implementing-sirikit-images/setup01.png "Přidat vlastnost com.apple.developer.siri")](implementing-sirikit-images/setup01.png#lightbox)
 4. Uložte změny do souboru.
 5. Dvakrát klikněte **soubor projektu** v **Průzkumníku řešení** otevřete pro úpravy.
 6. Vyberte **iOS podepisování sady** a ujistěte se, že `Entitlements.plist` je vybrán soubor v **vlastní oprávnění** pole: 
 
-    [ ![](implementing-sirikit-images/setup02.png "Vyberte soubor Entitlements.plist v poli vlastní oprávnění")](implementing-sirikit-images/setup02.png)
+    [![](implementing-sirikit-images/setup02.png "Vyberte soubor Entitlements.plist v poli vlastní oprávnění")](implementing-sirikit-images/setup02.png#lightbox)
 7. Klikněte **OK** tlačítko a uložte změny.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -185,7 +185,7 @@ Postupujte takto:
 1. Dvakrát klikněte `Entitlements.plist` souboru v **Průzkumníku řešení** otevřete pro úpravy.
 3. Přidat `com.apple.developer.siri` **vlastnost**, nastavte **typ** k `Boolean` a **hodnotu** k `Yes`: 
 
-    [ ![](implementing-sirikit-images/setup01w.png "Přidat vlastnost com.apple.developer.siri")](implementing-sirikit-images/setup01w.png)
+    [![](implementing-sirikit-images/setup01w.png "Přidat vlastnost com.apple.developer.siri")](implementing-sirikit-images/setup01w.png#lightbox)
 4. Uložte změny do souboru.
 5. Dvakrát klikněte **soubor projektu** v **Průzkumníku řešení** otevřete pro úpravy.
 6. Vyberte **iOS podepisování sady** a ujistěte se, že `Entitlements.plist` je vybrán soubor v **vlastní oprávnění** pole.
@@ -218,7 +218,7 @@ Proveďte v počítači Mac:
 5. Zadejte **ID sady** následující Apple názvů prvku doporučení.
 6. Přejděte dolů k položce **App Services** vyberte **SiriKit** a klikněte na tlačítko **pokračovat** tlačítko: 
 
-    [ ![](implementing-sirikit-images/setup03.png "Vyberte SiriKit")](implementing-sirikit-images/setup03.png)
+    [![](implementing-sirikit-images/setup03.png "Vyberte SiriKit")](implementing-sirikit-images/setup03.png#lightbox)
 7. Zkontrolujte všechna nastavení, pak **odeslání** ID aplikace.
 8. Vyberte **profily zřizování** > **vývoj**, klikněte  **+**  tlačítko, vyberte **Apple ID**, pak klikněte na tlačítko **pokračovat**.
 9. Klikněte na vybrat **všechny**, pak klikněte na tlačítko **pokračovat**.
@@ -228,21 +228,21 @@ Proveďte v počítači Mac:
 13. Vyberte z nabídky Xcode **předvolby...**
 14. Vyberte **účty**, klikněte **zobrazit podrobnosti...** tlačítko: 
 
-    [ ![](implementing-sirikit-images/setup04.png "Vyberte účty")](implementing-sirikit-images/setup04.png)
+    [![](implementing-sirikit-images/setup04.png "Vyberte účty")](implementing-sirikit-images/setup04.png#lightbox)
 15. Klikněte **stáhnout všechny profily** tlačítko v levém dolním: 
 
-    [ ![](implementing-sirikit-images/setup05.png "Stáhnout všechny profily")](implementing-sirikit-images/setup05.png)
+    [![](implementing-sirikit-images/setup05.png "Stáhnout všechny profily")](implementing-sirikit-images/setup05.png#lightbox)
 16. Ujistěte se, že **profil zřizování** vytvořit vyšší nainstalován v Xcode.
 17. Otevřete projekt přidat SiriKit podporu, aby v sadě Visual Studio for Mac.
 18. Dvakrát klikněte `Info.plist` ve **Průzkumníku řešení**.
 18. Ujistěte se, že **identifikátor svazku** odpovídá vytvořeném v portálu pro vývojáře Apple výše: 
 
-    [ ![](implementing-sirikit-images/setup06.png "Identifikátor balíku")](implementing-sirikit-images/setup06.png)
+    [![](implementing-sirikit-images/setup06.png "Identifikátor balíku")](implementing-sirikit-images/setup06.png#lightbox)
 18. V **Průzkumníku řešení**, vyberte **projektu**.
 19. Klikněte pravým tlačítkem na projekt a vyberte **možnosti**.
 21. Vyberte **iOS podepisování sady**, vyberte **identitu podepisování** a **profil zřizování** vytvořili výše: 
 
-    [ ![](implementing-sirikit-images/setup07.png "Vyberte identitu podepisování a profilu pro zřizování")](implementing-sirikit-images/setup07.png)
+    [![](implementing-sirikit-images/setup07.png "Vyberte identitu podepisování a profilu pro zřizování")](implementing-sirikit-images/setup07.png#lightbox)
 22. Klikněte **OK** tlačítko a uložte změny.
 
 > [!IMPORTANT]
@@ -256,13 +256,13 @@ Předtím, než aplikace přidá všechny termínů konkrétní uživatele nebo 
 
 Upravit aplikace `Info.plist` souboru, přepněte do **zdroj** zobrazení a přidat `NSSiriUsageDescription` klíče s hodnotou řetězce, které popisují, jak bude aplikace používat Siri a co typy dat budou odeslány. Řekněme například, MonkeyChat aplikace může "MonkeyChat kontakty do zašle Siri":
 
-[ ![](implementing-sirikit-images/request01.png "NSSiriUsageDescription v editoru Info.plist")](implementing-sirikit-images/request01.png)
+[![](implementing-sirikit-images/request01.png "NSSiriUsageDescription v editoru Info.plist")](implementing-sirikit-images/request01.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 Upravit aplikace `Info.plist` souboru a přidejte `NSSiriUsageDescription` klíče s hodnotou řetězce, které popisují, jak bude aplikace používat Siri a co typy dat budou odeslány. Řekněme například, MonkeyChat aplikace může "MonkeyChat kontakty do zašle Siri":
 
-[ ![](implementing-sirikit-images/request01w.png "NSSiriUsageDescription v editoru Info.plist")](implementing-sirikit-images/request01w.png)
+[![](implementing-sirikit-images/request01w.png "NSSiriUsageDescription v editoru Info.plist")](implementing-sirikit-images/request01w.png#lightbox)
 
 -----
 
@@ -460,128 +460,128 @@ Chcete-li přidat `AppIntentVocabulary.plist` souboru do projektu aplikace, post
 
 1. Klikněte pravým tlačítkem myši na název projektu v **Průzkumníku řešení** a vyberte **přidat** > **nový soubor...**   >  **iOS**:
 
-    [ ![](implementing-sirikit-images/plist01.png "Přidat seznam vlastností")](implementing-sirikit-images/plist01.png) 
+    [![](implementing-sirikit-images/plist01.png "Přidat seznam vlastností")](implementing-sirikit-images/plist01.png#lightbox) 
 2. Dvakrát klikněte `AppIntentVocabulary.plist` souboru v **Průzkumníku řešení** otevřete pro úpravy.
 3. Klikněte na tlačítko  **+**  přidat klíč, nastavte **název** k `ParameterVocabularies` a **typ** k `Array`:
 
-    [ ![](implementing-sirikit-images/plist02.png "Nastavte název na ParameterVocabularies a zadejte do pole")](implementing-sirikit-images/plist02.png)
+    [![](implementing-sirikit-images/plist02.png "Nastavte název na ParameterVocabularies a zadejte do pole")](implementing-sirikit-images/plist02.png#lightbox)
 4. Rozbalte položku `ParameterVocabularies` a klikněte na tlačítko  **+**  tlačítko a nastavte **typ** k `Dictionary`:
 
-    [ ![](implementing-sirikit-images/plist03.png "Nastavte typ slovníku")](implementing-sirikit-images/plist03.png)
+    [![](implementing-sirikit-images/plist03.png "Nastavte typ slovníku")](implementing-sirikit-images/plist03.png#lightbox)
 5. Klikněte na tlačítko  **+**  přidat nový klíč, nastavte **název** k `ParameterNames` a **typ** k `Array`:
 
-    [ ![](implementing-sirikit-images/plist04.png "Nastavte název na ParameterNames a zadejte do pole")](implementing-sirikit-images/plist04.png)
+    [![](implementing-sirikit-images/plist04.png "Nastavte název na ParameterNames a zadejte do pole")](implementing-sirikit-images/plist04.png#lightbox)
 6. Klikněte  **+**  přidat nový klíč s **typ** z `String` a hodnotu jako jeden z dostupných názvy parametrů. Například `INStartWorkoutIntent.workoutName`:
 
-    [ ![](implementing-sirikit-images/plist05.png "Klíč INStartWorkoutIntent.workoutName")](implementing-sirikit-images/plist05.png)
+    [![](implementing-sirikit-images/plist05.png "Klíč INStartWorkoutIntent.workoutName")](implementing-sirikit-images/plist05.png#lightbox)
 7. Přidat `ParameterVocabulary` klíče k `ParameterVocabularies` klíč s **typ** z `Array`:
 
-    [ ![](implementing-sirikit-images/plist06.png "Přidejte klíč ParameterVocabulary ke klíči ParameterVocabularies s poli typu")](implementing-sirikit-images/plist06.png)
+    [![](implementing-sirikit-images/plist06.png "Přidejte klíč ParameterVocabulary ke klíči ParameterVocabularies s poli typu")](implementing-sirikit-images/plist06.png#lightbox)
 8. Přidejte nový klíč s **typ** z `Dictionary`:
 
-    [ ![](implementing-sirikit-images/plist07.png "Přidejte nový klíč s slovníku typů.")](implementing-sirikit-images/plist07.png)
+    [![](implementing-sirikit-images/plist07.png "Přidejte nový klíč s slovníku typů.")](implementing-sirikit-images/plist07.png#lightbox)
 9. Přidat `VocabularyItemIdentifier` klíč s **typ** z `String` a zadejte jedinečné ID pro termín:
 
-    [ ![](implementing-sirikit-images/plist08.png "Přidejte klíč VocabularyItemIdentifier s typu řetězec a zadejte jedinečné ID")](implementing-sirikit-images/plist08.png)
+    [![](implementing-sirikit-images/plist08.png "Přidejte klíč VocabularyItemIdentifier s typu řetězec a zadejte jedinečné ID")](implementing-sirikit-images/plist08.png#lightbox)
 10. Přidat `VocabularyItemSynonyms` klíč s **typ** z `Array`:
 
-    [ ![](implementing-sirikit-images/plist09.png "Přidejte klíč VocabularyItemSynonyms s poli typu")](implementing-sirikit-images/plist09.png)
+    [![](implementing-sirikit-images/plist09.png "Přidejte klíč VocabularyItemSynonyms s poli typu")](implementing-sirikit-images/plist09.png#lightbox)
 11. Přidejte nový klíč s **typ** z `Dictionary`:
 
-    [ ![](implementing-sirikit-images/plist10.png "Přidejte nový klíč s slovníku typů.")](implementing-sirikit-images/plist10.png)
+    [![](implementing-sirikit-images/plist10.png "Přidejte nový klíč s slovníku typů.")](implementing-sirikit-images/plist10.png#lightbox)
 12. Přidat `VocabularyItemPhrase` klíč s **typ** z `String` a podmínek jsou definování aplikace:
 
-    [ ![](implementing-sirikit-images/plist11.png "Přidejte klíč VocabularyItemPhrase s typu řetězec a termín definování aplikace")](implementing-sirikit-images/plist11.png)
+    [![](implementing-sirikit-images/plist11.png "Přidejte klíč VocabularyItemPhrase s typu řetězec a termín definování aplikace")](implementing-sirikit-images/plist11.png#lightbox)
 13. Přidat `VocabularyItemPronunciation` klíč s **typ** z `String` a výslovnosti výslovnosti podmínek:
 
-    [ ![](implementing-sirikit-images/plist12.png "Přidejte klíč VocabularyItemPronunciation s typu řetězec a výslovnosti výslovnosti podmínek.")](implementing-sirikit-images/plist12.png)
+    [![](implementing-sirikit-images/plist12.png "Přidejte klíč VocabularyItemPronunciation s typu řetězec a výslovnosti výslovnosti podmínek.")](implementing-sirikit-images/plist12.png#lightbox)
 14. Přidat `VocabularyItemExamples` klíč s **typ** z `Array`:
 
-    [ ![](implementing-sirikit-images/plist13.png "Přidejte klíč VocabularyItemExamples s poli typu")](implementing-sirikit-images/plist13.png)
+    [![](implementing-sirikit-images/plist13.png "Přidejte klíč VocabularyItemExamples s poli typu")](implementing-sirikit-images/plist13.png#lightbox)
 15. Přidat pár `String` klíče se používá příklad podmínek:
 
-    [ ![](implementing-sirikit-images/plist14.png "Přidat pár klíčů řetězec se používá příklad podmínek.")](implementing-sirikit-images/plist14.png)
+    [![](implementing-sirikit-images/plist14.png "Přidat pár klíčů řetězec se používá příklad podmínek.")](implementing-sirikit-images/plist14.png#lightbox)
 16. Zopakujte výše uvedené kroky pro vlastní podmínky aplikace muset definovat.
 17. Sbalit `ParameterVocabularies` klíč.
 18. Přidat `IntentPhrases` klíč s **typ** z `Array`:
 
-    [ ![](implementing-sirikit-images/plist15.png "Přidejte klíč IntentPhrases s poli typu")](implementing-sirikit-images/plist15.png)
+    [![](implementing-sirikit-images/plist15.png "Přidejte klíč IntentPhrases s poli typu")](implementing-sirikit-images/plist15.png#lightbox)
 19. Přidejte nový klíč s **typ** z `Dictionary`:
 
-    [ ![](implementing-sirikit-images/plist16.png "Přidejte nový klíč s slovníku typů.")](implementing-sirikit-images/plist16.png)
+    [![](implementing-sirikit-images/plist16.png "Přidejte nový klíč s slovníku typů.")](implementing-sirikit-images/plist16.png#lightbox)
 20. Přidat `IntentName` klíč s **typ** z `String` a záměrné pro tento příklad:
 
-    [ ![](implementing-sirikit-images/plist17.png "Přidejte klíč IntentName s řetězec typu a záměr pro tento příklad")](implementing-sirikit-images/plist17.png)
+    [![](implementing-sirikit-images/plist17.png "Přidejte klíč IntentName s řetězec typu a záměr pro tento příklad")](implementing-sirikit-images/plist17.png#lightbox)
 21. Přidat `IntentExamples` klíč s **typ** z `Array`:
 
-    [ ![](implementing-sirikit-images/plist18.png "Přidejte klíč IntentExamples s poli typu")](implementing-sirikit-images/plist18.png)
+    [![](implementing-sirikit-images/plist18.png "Přidejte klíč IntentExamples s poli typu")](implementing-sirikit-images/plist18.png#lightbox)
 22. Přidat pár `String` klíče se používá příklad podmínek:
 
-    [ ![](implementing-sirikit-images/plist19.png "Přidat pár klíčů řetězec se používá příklad podmínek.")](implementing-sirikit-images/plist19.png)
+    [![](implementing-sirikit-images/plist19.png "Přidat pár klíčů řetězec se používá příklad podmínek.")](implementing-sirikit-images/plist19.png#lightbox)
 23. Výše uvedené kroky opakujte pro všechny záměry aplikace je potřeba zadat příklad použití.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. Klikněte pravým tlačítkem myši na název projektu v **Průzkumníku řešení** a vyberte **přidat** > **nový soubor...**   >  **iOS**:
 
-    [ ![](implementing-sirikit-images/plist01w.png "Přidat nové Info.plist")](implementing-sirikit-images/plist01w.png) 
+    [![](implementing-sirikit-images/plist01w.png "Přidat nové Info.plist")](implementing-sirikit-images/plist01w.png#lightbox) 
 2. Dvakrát klikněte `AppIntentVocabulary.plist` souboru v **Průzkumníku řešení** otevřete pro úpravy.
 3. Klikněte na tlačítko  **+**  přidat klíč, nastavte **název** k `ParameterVocabularies` a **typ** k `Array`:
 
-    [ ![](implementing-sirikit-images/plist02w.png "Nastavte název na ParameterVocabularies a zadejte do pole")](implementing-sirikit-images/plist02w.png)
+    [![](implementing-sirikit-images/plist02w.png "Nastavte název na ParameterVocabularies a zadejte do pole")](implementing-sirikit-images/plist02w.png#lightbox)
 4. Rozbalte položku `ParameterVocabularies` a klikněte na tlačítko  **+**  tlačítko a nastavte **typ** k `Dictionary`:
 
-    [ ![](implementing-sirikit-images/plist03w.png "Nastavte typ slovníku")](implementing-sirikit-images/plist03w.png)
+    [![](implementing-sirikit-images/plist03w.png "Nastavte typ slovníku")](implementing-sirikit-images/plist03w.png#lightbox)
 5. Klikněte na tlačítko  **+**  přidat nový klíč, nastavte **název** k `ParameterNames` a **typ** k `Array`:
 
-    [ ![](implementing-sirikit-images/plist04w.png "Nastavte název na ParameterNames a zadejte do pole")](implementing-sirikit-images/plist04w.png)
+    [![](implementing-sirikit-images/plist04w.png "Nastavte název na ParameterNames a zadejte do pole")](implementing-sirikit-images/plist04w.png#lightbox)
 6. Klikněte  **+**  přidat nový klíč s **typ** z `String` a hodnotu jako jeden z dostupných názvy parametrů. Například `INStartWorkoutIntent.workoutName`:
 
-    [ ![](implementing-sirikit-images/plist05w.png "Klíč INStartWorkoutIntent.workoutName")](implementing-sirikit-images/plist05w.png)
+    [![](implementing-sirikit-images/plist05w.png "Klíč INStartWorkoutIntent.workoutName")](implementing-sirikit-images/plist05w.png#lightbox)
 7. Přidat `ParameterVocabulary` klíče k `ParameterVocabularies` klíč s **typ** z `Array`:
 
-    [ ![](implementing-sirikit-images/plist06w.png "Přidejte klíč ParameterVocabulary ke klíči ParameterVocabularies s poli typu")](implementing-sirikit-images/plist06w.png)
+    [![](implementing-sirikit-images/plist06w.png "Přidejte klíč ParameterVocabulary ke klíči ParameterVocabularies s poli typu")](implementing-sirikit-images/plist06w.png#lightbox)
 8. Přidejte nový klíč s **typ** z `Dictionary`:
 
-    [ ![](implementing-sirikit-images/plist07w.png "Přidejte nový klíč s slovníku typů.")](implementing-sirikit-images/plist07w.png)
+    [![](implementing-sirikit-images/plist07w.png "Přidejte nový klíč s slovníku typů.")](implementing-sirikit-images/plist07w.png#lightbox)
 9. Přidat `VocabularyItemIdentifier` klíč s **typ** z `String` a zadejte jedinečné ID pro termín:
 
-    [ ![](implementing-sirikit-images/plist08w.png "Přidejte klíč VocabularyItemIdentifier s typu řetězec a zadejte jedinečné ID pro termín")](implementing-sirikit-images/plist08w.png)
+    [![](implementing-sirikit-images/plist08w.png "Přidejte klíč VocabularyItemIdentifier s typu řetězec a zadejte jedinečné ID pro termín")](implementing-sirikit-images/plist08w.png#lightbox)
 10. Přidat `VocabularyItemSynonyms` klíč s **typ** z `Array`:
 
-    [ ![](implementing-sirikit-images/plist09w.png "Přidejte klíč VocabularyItemSynonyms s poli typu")](implementing-sirikit-images/plist09w.png)
+    [![](implementing-sirikit-images/plist09w.png "Přidejte klíč VocabularyItemSynonyms s poli typu")](implementing-sirikit-images/plist09w.png#lightbox)
 11. Přidejte nový klíč s **typ** z `Dictionary`:
 
-    [ ![](implementing-sirikit-images/plist10w.png "Přidejte nový klíč s slovníku typů.")](implementing-sirikit-images/plist10w.png)
+    [![](implementing-sirikit-images/plist10w.png "Přidejte nový klíč s slovníku typů.")](implementing-sirikit-images/plist10w.png#lightbox)
 12. Přidat `VocabularyItemPhrase` klíč s **typ** z `String` a podmínek jsou definování aplikace:
 
-    [ ![](implementing-sirikit-images/plist11w.png "Přidejte klíč VocabularyItemPhrase s typu řetězec a termín definování aplikace")](implementing-sirikit-images/plist11w.png)
+    [![](implementing-sirikit-images/plist11w.png "Přidejte klíč VocabularyItemPhrase s typu řetězec a termín definování aplikace")](implementing-sirikit-images/plist11w.png#lightbox)
 13. Přidat `VocabularyItemPronunciation` klíč s **typ** z `String` a výslovnosti výslovnosti podmínek:
 
-    [ ![](implementing-sirikit-images/plist12w.png "Přidejte klíč VocabularyItemPronunciation s typu řetězec a výslovnosti výslovnosti podmínek.")](implementing-sirikit-images/plist12w.png)
+    [![](implementing-sirikit-images/plist12w.png "Přidejte klíč VocabularyItemPronunciation s typu řetězec a výslovnosti výslovnosti podmínek.")](implementing-sirikit-images/plist12w.png#lightbox)
 14. Přidat `VocabularyItemExamples` klíč s **typ** z `Array`:
 
-    [ ![](implementing-sirikit-images/plist13w.png "Přidejte klíč VocabularyItemExamples s poli typu")](implementing-sirikit-images/plist13w.png)
+    [![](implementing-sirikit-images/plist13w.png "Přidejte klíč VocabularyItemExamples s poli typu")](implementing-sirikit-images/plist13w.png#lightbox)
 15. Přidat pár `String` klíče se používá příklad podmínek:
 
-    [ ![](implementing-sirikit-images/plist14w.png "Přidat pár klíčů řetězec se používá příklad podmínek.")](implementing-sirikit-images/plist14w.png)
+    [![](implementing-sirikit-images/plist14w.png "Přidat pár klíčů řetězec se používá příklad podmínek.")](implementing-sirikit-images/plist14w.png#lightbox)
 16. Zopakujte výše uvedené kroky pro vlastní podmínky aplikace muset definovat.
 17. Sbalit `ParameterVocabularies` klíč.
 18. Přidat `IntentPhrases` klíč s **typ** z `Array`:
 
-    [ ![](implementing-sirikit-images/plist15w.png "Přidejte klíč IntentPhrases s poli typu")](implementing-sirikit-images/plist15w.png)
+    [![](implementing-sirikit-images/plist15w.png "Přidejte klíč IntentPhrases s poli typu")](implementing-sirikit-images/plist15w.png#lightbox)
 19. Přidejte nový klíč s **typ** z `Dictionary`:
 
-    [ ![](implementing-sirikit-images/plist16w.png "Přidejte nový klíč s slovníku typů.")](implementing-sirikit-images/plist16w.png)
+    [![](implementing-sirikit-images/plist16w.png "Přidejte nový klíč s slovníku typů.")](implementing-sirikit-images/plist16w.png#lightbox)
 20. Přidat `IntentName` klíč s **typ** z `String` a záměrné pro tento příklad:
 
-    [ ![](implementing-sirikit-images/plist17w.png "Přidejte klíč IntentName s řetězec typu a záměr pro tento příklad")](implementing-sirikit-images/plist17w.png)
+    [![](implementing-sirikit-images/plist17w.png "Přidejte klíč IntentName s řetězec typu a záměr pro tento příklad")](implementing-sirikit-images/plist17w.png#lightbox)
 21. Přidat `IntentExamples` klíč s **typ** z `Array`:
 
-    [ ![](implementing-sirikit-images/plist18w.png "Přidejte klíč IntentExamples s poli typu")](implementing-sirikit-images/plist18w.png)
+    [![](implementing-sirikit-images/plist18w.png "Přidejte klíč IntentExamples s poli typu")](implementing-sirikit-images/plist18w.png#lightbox)
 22. Přidat pár `String` klíče se používá příklad podmínek:
 
-    [ ![](implementing-sirikit-images/plist19w.png "Přidat pár klíčů řetězec se používá příklad podmínek.")](implementing-sirikit-images/plist19w.png)
+    [![](implementing-sirikit-images/plist19w.png "Přidat pár klíčů řetězec se používá příklad podmínek.")](implementing-sirikit-images/plist19w.png#lightbox)
 23. Výše uvedené kroky opakujte pro všechny záměry aplikace je potřeba zadat příklad použití.
 
 -----
@@ -612,27 +612,27 @@ Chcete-li přidat rozšíření tříd Intent k řešení, postupujte takto:
 1. Klikněte pravým tlačítkem na **název řešení** v **řešení Pad** a vyberte **přidat** > **přidat nový projekt...** .
 2. V dialogovém okně vyberte **iOS** > **rozšíření** > **záměr rozšíření** a klikněte na tlačítko **Další** tlačítko: 
 
-    [ ![](implementing-sirikit-images/intents05.png "Vyberte záměrné rozšíření")](implementing-sirikit-images/intents05.png)
+    [![](implementing-sirikit-images/intents05.png "Vyberte záměrné rozšíření")](implementing-sirikit-images/intents05.png#lightbox)
 3. Potom zadejte **název** záměr rozšíření a klikněte na tlačítko **Další** tlačítko: 
 
-    [ ![](implementing-sirikit-images/intents06.png "Zadejte název pro záměrné rozšíření")](implementing-sirikit-images/intents06.png)
+    [![](implementing-sirikit-images/intents06.png "Zadejte název pro záměrné rozšíření")](implementing-sirikit-images/intents06.png#lightbox)
 4. Nakonec klikněte na **vytvořit** tlačítko Přidat rozšíření záměr řešení aplikace: 
 
-    [ ![](implementing-sirikit-images/intents07.png "Přidejte rozšíření záměr do řešení aplikace")](implementing-sirikit-images/intents07.png)
+    [![](implementing-sirikit-images/intents07.png "Přidejte rozšíření záměr do řešení aplikace")](implementing-sirikit-images/intents07.png#lightbox)
 5. V **Průzkumníku řešení**, klikněte pravým tlačítkem na **odkazy** složky nově vytvořený rozšíření záměr. Zkontrolujte název běžné projektu knihovny sdíleného kódu (který aplikaci vytvořili výše) a klikněte **OK** tlačítko: 
 
-    [ ![](implementing-sirikit-images/intents08.png "Vyberte název běžné knihovny projektu sdíleného kódu")](implementing-sirikit-images/intents08.png)
+    [![](implementing-sirikit-images/intents08.png "Vyberte název běžné knihovny projektu sdíleného kódu")](implementing-sirikit-images/intents08.png#lightbox)
     
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. Klikněte pravým tlačítkem na **název řešení** v **Průzkumníku řešení** a vyberte **přidat** > **přidat nový projekt...** .
 2. V dialogovém okně vyberte **iOS** > **rozšíření** > **záměr rozšíření** a klikněte na tlačítko **Další** tlačítko: 
 
-    [ ![](implementing-sirikit-images/intents05w.png "Vyberte záměrné rozšíření")](implementing-sirikit-images/intents05w.png)
+    [![](implementing-sirikit-images/intents05w.png "Vyberte záměrné rozšíření")](implementing-sirikit-images/intents05w.png#lightbox)
 3. Potom zadejte **název** záměr rozšíření a klikněte na tlačítko **OK** tlačítko.
 5. V **Průzkumníku řešení**, klikněte pravým tlačítkem na **odkazy** složky nově vytvořený rozšíření záměr. Zkontrolujte název běžné projektu knihovny sdíleného kódu (který aplikaci vytvořili výše) a klikněte **OK** tlačítko: 
 
-    [ ![](implementing-sirikit-images/intents08w.png "Vyberte název běžné knihovny projektu sdíleného kódu")](implementing-sirikit-images/intents08w.png)
+    [![](implementing-sirikit-images/intents08w.png "Vyberte název běžné knihovny projektu sdíleného kódu")](implementing-sirikit-images/intents08w.png#lightbox)
     
 -----
 
@@ -644,7 +644,7 @@ Pro každé rozšíření tříd Intent, který jste přidali do řešení aplik
 
 Stejně jako všechny typické rozšíření aplikace, aplikace bude mít existující klíče `NSExtension` a `NSExtensionAttributes`. Pro rozšíření tříd Intent existují dvě nové atributy, které musí být nakonfigurovaná:
 
-[ ![](implementing-sirikit-images/intents01.png "Dva nové atributy, které musí být nakonfigurované")](implementing-sirikit-images/intents01.png)
+[![](implementing-sirikit-images/intents01.png "Dva nové atributy, které musí být nakonfigurované")](implementing-sirikit-images/intents01.png#lightbox)
 
 - **IntentsSupported** – požadované a skládá se z pole názvy záměr tříd, které aplikace chce podporovat z rozšíření záměr.
 - **IntentsRestrictedWhileLocked** -je volitelné klíč pro aplikaci na konkrétní rozšíření zámek obrazovky chování. Skládá se z pole názvy záměr tříd, které aplikace chce vyžadovat, aby uživatel k přihlášení používat z rozšíření záměr.
@@ -653,11 +653,11 @@ Ke konfiguraci rozšíření záměr `Info.plist` souboru, klikněte dvakrát na
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![](implementing-sirikit-images/intents02.png "NSExtension a NSExtensionAttributes klíče v editoru")](implementing-sirikit-images/intents02.png)
+[![](implementing-sirikit-images/intents02.png "NSExtension a NSExtensionAttributes klíče v editoru")](implementing-sirikit-images/intents02.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](implementing-sirikit-images/intents02w.png "NSExtension a NSExtensionAttributes klíče v editoru")](implementing-sirikit-images/intents02w.png)
+[![](implementing-sirikit-images/intents02w.png "NSExtension a NSExtensionAttributes klíče v editoru")](implementing-sirikit-images/intents02w.png#lightbox)
 
 -----
 
@@ -665,11 +665,11 @@ Rozbalte `IntentsSupported` klíče a přidejte název třídy žádné záměr 
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![](implementing-sirikit-images/intents09.png "Klíč INSendMessageIntent")](implementing-sirikit-images/intents09.png)
+[![](implementing-sirikit-images/intents09.png "Klíč INSendMessageIntent")](implementing-sirikit-images/intents09.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](implementing-sirikit-images/intents09w.png "Klíč INSendMessageIntent")](implementing-sirikit-images/intents09w.png)
+[![](implementing-sirikit-images/intents09w.png "Klíč INSendMessageIntent")](implementing-sirikit-images/intents09w.png#lightbox)
 
 -----
 
@@ -677,11 +677,11 @@ Pokud aplikace volitelně vyžaduje, aby uživatel přihlášen do zařízení p
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![](implementing-sirikit-images/intents10.png "Přidaném klíči INSendMessageIntent")](implementing-sirikit-images/intents10.png)
+[![](implementing-sirikit-images/intents10.png "Přidaném klíči INSendMessageIntent")](implementing-sirikit-images/intents10.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](implementing-sirikit-images/intents10w.png "Přidaném klíči INSendMessageIntent")](implementing-sirikit-images/intents10w.png)
+[![](implementing-sirikit-images/intents10w.png "Přidaném klíči INSendMessageIntent")](implementing-sirikit-images/intents10w.png#lightbox)
 
 -----
 
@@ -857,7 +857,7 @@ Další informace najdete v tématu naše [zpracování odkazu fáze](~/ios/plat
 
 Volitelné rozšíření tříd Intent uživatelského rozhraní představuje možnost převést aplikace uživatelského rozhraní a značka do prostředí Siri a uživatelů působí připojený k aplikaci. S touto příponou aplikace můžete zahrnout značky, jakož i visual a dalších informací do zápis.
 
-[ ![](implementing-sirikit-images/intentsui01.png "Příklad výstupu rozšíření tříd Intent uživatelského rozhraní")](implementing-sirikit-images/intentsui01.png)
+[![](implementing-sirikit-images/intentsui01.png "Příklad výstupu rozšíření tříd Intent uživatelského rozhraní")](implementing-sirikit-images/intentsui01.png#lightbox)
 
 Stejně jako rozšíření tříd Intent bude vývojář proveďte následující krok pro rozšíření tříd Intent uživatelského rozhraní:
 
@@ -876,16 +876,16 @@ Chcete-li přidat rozšíření tříd Intent uživatelského rozhraní k řeše
 1. Klikněte pravým tlačítkem na **název řešení** v **řešení Pad** a vyberte **přidat** > **přidat nový projekt...** .
 2. V dialogovém okně vyberte **iOS** > **rozšíření** > **záměr uživatelského rozhraní rozšíření** a klikněte na tlačítko **Další** tlačítko: 
 
-    [ ![](implementing-sirikit-images/intents11.png "Vyberte rozšíření záměrné uživatelského rozhraní")](implementing-sirikit-images/intents11.png)
+    [![](implementing-sirikit-images/intents11.png "Vyberte rozšíření záměrné uživatelského rozhraní")](implementing-sirikit-images/intents11.png#lightbox)
 3. Potom zadejte **název** záměr rozšíření a klikněte na tlačítko **Další** tlačítko: 
 
-    [ ![](implementing-sirikit-images/intents12.png "Zadejte název pro záměrné rozšíření")](implementing-sirikit-images/intents12.png)
+    [![](implementing-sirikit-images/intents12.png "Zadejte název pro záměrné rozšíření")](implementing-sirikit-images/intents12.png#lightbox)
 4. Nakonec klikněte na **vytvořit** tlačítko Přidat rozšíření záměr řešení aplikace: 
 
-    [ ![](implementing-sirikit-images/intents13.png "Přidejte rozšíření záměr do řešení aplikace")](implementing-sirikit-images/intents13.png)
+    [![](implementing-sirikit-images/intents13.png "Přidejte rozšíření záměr do řešení aplikace")](implementing-sirikit-images/intents13.png#lightbox)
 5. V **Průzkumníku řešení**, klikněte pravým tlačítkem na **odkazy** složky nově vytvořený rozšíření záměr. Zkontrolujte název běžné projektu knihovny sdíleného kódu (který aplikaci vytvořili výše) a klikněte **OK** tlačítko: 
 
-    [ ![](implementing-sirikit-images/intents14.png "Vyberte název běžné knihovny projektu sdíleného kódu")](implementing-sirikit-images/intents14.png)
+    [![](implementing-sirikit-images/intents14.png "Vyberte název běžné knihovny projektu sdíleného kódu")](implementing-sirikit-images/intents14.png#lightbox)
     
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -902,7 +902,7 @@ Konfigurace uživatelského rozhraní rozšíření tříd Intent `Info.plist` s
 
 Stejně jako všechny typické rozšíření aplikace, aplikace bude mít existující klíče `NSExtension` a `NSExtensionAttributes`. Pro rozšíření tříd Intent je jeden nový atribut, který musí být nakonfigurovaná:
 
-[ ![](implementing-sirikit-images/intents03.png "Jeden nový atribut, který musí být nakonfigurované")](implementing-sirikit-images/intents03.png)
+[![](implementing-sirikit-images/intents03.png "Jeden nový atribut, který musí být nakonfigurované")](implementing-sirikit-images/intents03.png#lightbox)
 
 **IntentsSupported** požadované a skládá se z pole názvy záměr tříd, které chcete podporovat z rozšíření záměr aplikace.
 
@@ -910,13 +910,13 @@ Stejně jako všechny typické rozšíření aplikace, aplikace bude mít existu
 
 Ke konfiguraci rozšíření uživatelského rozhraní záměr `Info.plist` souboru, klikněte dvakrát na jeho **Průzkumníku řešení** otevřete pro úpravy. Potom přepnout **zdroj** prohlédněte si potom rozbalte položku `NSExtension` a `NSExtensionAttributes` klíče v editoru:
 
-[ ![](implementing-sirikit-images/intents04.png "NSExtension a NSExtensionAttributes klíče v editoru")](implementing-sirikit-images/intents04.png)
+[![](implementing-sirikit-images/intents04.png "NSExtension a NSExtensionAttributes klíče v editoru")](implementing-sirikit-images/intents04.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 Ke konfiguraci rozšíření uživatelského rozhraní záměr `Info.plist` souboru, klikněte dvakrát na jeho **Průzkumníku řešení** otevřete pro úpravy. Rozbalte `NSExtension` a `NSExtensionAttributes` klíče v editoru:
 
-[ ![](implementing-sirikit-images/intents04w.png "Tnelze NSExtension a NSExtensionAttributes klíče v editoru")](implementing-sirikit-images/intents04w.png)
+[![](implementing-sirikit-images/intents04w.png "Tnelze NSExtension a NSExtensionAttributes klíče v editoru")](implementing-sirikit-images/intents04w.png#lightbox)
 
 -----
 
@@ -924,11 +924,11 @@ Rozbalte `IntentsSupported` klíče a přidejte název třídy žádné záměr 
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![](implementing-sirikit-images/intents15.png "Klíč INSendMessageIntent")](implementing-sirikit-images/intents15.png)
+[![](implementing-sirikit-images/intents15.png "Klíč INSendMessageIntent")](implementing-sirikit-images/intents15.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](implementing-sirikit-images/intents15w.png "Klíč INSendMessageIntent")](implementing-sirikit-images/intents15w.png)
+[![](implementing-sirikit-images/intents15w.png "Klíč INSendMessageIntent")](implementing-sirikit-images/intents15w.png#lightbox)
 
 -----
 

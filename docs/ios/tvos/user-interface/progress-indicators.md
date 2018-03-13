@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: b5d3a03324e73b06bd3defe7e6610163c3d1b26d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c021550e17cf8206d59102856a11c72000ad06aa
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-progress-indicators"></a>Práce s indikátory průběhu
 
@@ -21,7 +21,7 @@ _Tento článek se zabývá navrhování a práce s indikátory průběhu uvnit�
 
 Mohou nastat situace, když vaše aplikace Xamarin.tvOS musí načíst nový obsah nebo provést operaci zdlouhavé zpracování. Během této doby by měla představovat buď ukazatel aktivity nebo indikátor průběhu aby mohl uživatel vědět, že aplikace je stále spuštěná a dát jim některé údaj o délce úloha spuštěná.
 
-[ ![](progress-indicators-images/intro01.png "Ukázka indikátory průběhu")](progress-indicators-images/intro01.png)
+[![](progress-indicators-images/intro01.png "Ukázka indikátory průběhu")](progress-indicators-images/intro01.png#lightbox)
 
 <a name="About-Activity-Indicators" />
 
@@ -57,19 +57,19 @@ Nejjednodušší způsob, jak pracovat s ukazatelem průběhu v aplikaci Xamarin
 1. V **řešení Pad**, dvakrát klikněte `Main.storyboard` souborů a otevřete pro úpravy.
 1. Přetáhněte **ukazatel aktivity** z **sada nástrojů** na zobrazení: 
 
-    [ ![](progress-indicators-images/activity01.png "Ukazatel aktivity")](progress-indicators-images/activity01.png)
+    [![](progress-indicators-images/activity01.png "Ukazatel aktivity")](progress-indicators-images/activity01.png#lightbox)
 1. V **pomůcky karta** z **vlastnosti Pad**, můžete upravit několik vlastností ukazatel aktivity, jako jeho **styl** a **chování**: 
 
-    [ ![](progress-indicators-images/activity02.png "Na kartě pomůcky ")](progress-indicators-images/activity02.png)
+    [![](progress-indicators-images/activity02.png "Na kartě pomůcky ")](progress-indicators-images/activity02.png#lightbox)
 1. Přetáhněte **zobrazení průběhu** z **sada nástrojů** na zobrazení: 
 
-    [ ![](progress-indicators-images/activity03.png "Zobrazení průběhu")](progress-indicators-images/activity03.png)
+    [![](progress-indicators-images/activity03.png "Zobrazení průběhu")](progress-indicators-images/activity03.png#lightbox)
 1. V **pomůcky karta** z **vlastnost Explorer**, můžete upravit několik vlastností zobrazení průběhu jeho **styl** a **průběh**(dokončeno): 
 
-    [ ![](progress-indicators-images/activity04.png "Na kartě pomůcky")](progress-indicators-images/activity04.png)
+    [![](progress-indicators-images/activity04.png "Na kartě pomůcky")](progress-indicators-images/activity04.png#lightbox)
 1. Nakonec přiřadit **názvy** pro ovládací prvky, aby mohli odpovídat na ně v kódu jazyka C#. Příklad: 
 
-    [ ![](progress-indicators-images/activity05.png "Přiřadit název")](progress-indicators-images/activity05.png)
+    [![](progress-indicators-images/activity05.png "Přiřadit název")](progress-indicators-images/activity05.png#lightbox)
 1. Uložte provedené změny.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -77,19 +77,19 @@ Nejjednodušší způsob, jak pracovat s ukazatelem průběhu v aplikaci Xamarin
 1. V **Průzkumníku řešení**, dvakrát klikněte `Main.storyboard` souborů a otevřete pro úpravy.
 1. Přetáhněte **ukazatel aktivity** z **sada nástrojů** na zobrazení: 
 
-    [ ![](progress-indicators-images/activity01-vs.png "Ukazatel aktivity")](progress-indicators-images/activity01-vs.png)
+    [![](progress-indicators-images/activity01-vs.png "Ukazatel aktivity")](progress-indicators-images/activity01-vs.png#lightbox)
 1. V **pomůcky karta** z **Explorer vlastnosti**, můžete upravit několik vlastností ukazatel aktivity, jako jeho **styl** a **chování**: 
 
-    [ ![](progress-indicators-images/activity02-vs.png "Na kartě pomůcky")](progress-indicators-images/activity02-vs.png)
+    [![](progress-indicators-images/activity02-vs.png "Na kartě pomůcky")](progress-indicators-images/activity02-vs.png#lightbox)
 1. Přetáhněte **zobrazení průběhu** z **sada nástrojů** na zobrazení: 
 
-    [ ![](progress-indicators-images/activity03-vs.png "Zobrazení průběhu")](progress-indicators-images/activity03-vs.png)
+    [![](progress-indicators-images/activity03-vs.png "Zobrazení průběhu")](progress-indicators-images/activity03-vs.png#lightbox)
 1. V **pomůcky karta** z **vlastnost Explorer**, můžete upravit několik vlastností zobrazení průběhu jeho **styl** a **průběh**(dokončeno): 
 
-    [ ![](progress-indicators-images/activity04-vs.png "Na kartě pomůcky")](progress-indicators-images/activity04-vs.png)
+    [![](progress-indicators-images/activity04-vs.png "Na kartě pomůcky")](progress-indicators-images/activity04-vs.png#lightbox)
 1. Nakonec přiřadit **názvy** pro ovládací prvky, aby mohli odpovídat na ně v kódu jazyka C#. Příklad: 
 
-    [ ![](progress-indicators-images/activity05-vs.png "Přiřadit název")](progress-indicators-images/activity05-vs.png)
+    [![](progress-indicators-images/activity05-vs.png "Přiřadit název")](progress-indicators-images/activity05-vs.png#lightbox)
 1. Uložte provedené změny.
 
 -----
@@ -134,7 +134,7 @@ Tento článek má zahrnutých navrhování a práce s indikátory průběhu uvn
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Ukázky tvOS](https://developer.xamarin.com/samples/tvos/all/)
+- [Ukázky pro tvOS](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS lidské rozhraní příručky](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [Průvodce programováním aplikace pro tvOS](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

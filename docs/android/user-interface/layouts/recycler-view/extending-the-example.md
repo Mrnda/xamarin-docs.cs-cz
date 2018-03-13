@@ -7,18 +7,17 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: de4683ca660224aa3cf17398ac649086b7e4ad88
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6c0f2b92b34ce4d446e51b0aafa56f6283701dd1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="extending-the-recyclerview-example"></a>Příklad RecyclerView rozšíření
 
 
 Základní aplikaci popsané v [A základní příklad RecyclerView](~/android/user-interface/layouts/recycler-view/recyclerview-example.md) ve skutečnosti mnoho neprovádí &ndash; jednoduše posune a zobrazí pevný seznam položek fotografie usnadňuje procházení. Ve skutečných aplikacích uživatelé očekávají, že abyste mohli pracovat s aplikací klepnutím položky v zobrazení. Navíc na podkladový zdroj dat, můžete změnit (nebo změnit aplikaci) a obsah zobrazení musí zůstat konzistentní se tyto změny. V následujících částech se dozvíte způsobu zpracování události kliknutí na položku a aktualizace `RecyclerView` při změně zdroje v základních datech.
 
-<a name="itemclick" />
 
 ### <a name="handling-item-click-events"></a>Zpracování události kliknutí na položku
 
@@ -91,7 +90,7 @@ PhotoViewHolder vh = new PhotoViewHolder (itemView, OnClick);
 
 Když sestavíte a spustíte ukázkovou aplikaci zobrazení fotografií, klepnutím fotografii v zobrazení způsobí oznámení se objeví, který vytváří sestavy, které fotografie byla dotýkal:
 
-[ ![Příklad informační zprávy, které se zobrazí po fotografie karta je stisknuté](extending-the-example-images/01-photo-selected-sml.png)](extending-the-example-images/01-photo-selected.png)
+[![Příklad informační zprávy, které se zobrazí po fotografie karta je stisknuté](extending-the-example-images/01-photo-selected-sml.png)](extending-the-example-images/01-photo-selected.png#lightbox)
 
 Tento příklad ukazuje právě jeden z přístupů pro implementace obslužných rutin událostí pomocí `RecyclerView`. Jiný přístup, který může použít zde je umístěte události držitele zobrazení a mít adaptér přihlásit k odběru těchto událostí. Pokud ukázková aplikace fotografie fotografie možnosti úprav, samostatné události by byla zapotřebí pro `ImageView` a `TextView` v každém `CardView`: dotykem `TextView` by spusťte `EditView` dialog, který umožňuje uživateli upravit Popisek a úpravy na `ImageView` by spusťte nástroj retušování fotografií, který umožňuje uživatelům oříznout nebo otočit fotografie. V závislosti na potřebách vaší aplikace je třeba navrhnout nejlepší metodou pro zpracování a zpracování události touch.
 
@@ -159,7 +158,7 @@ randomPickBtn.Click += delegate
 
 Teď, když **náhodných vyberte** je tlačítko stisknuté, `RecyclerView` aktualizuje zobrazení zobrazit, že další fotografie dolů v kolekci má byla si místo se první fotografii v kolekci:
 
-[ ![První snímek před odkládacího souboru, druhý snímek obrazovky po swap](extending-the-example-images/02-random-pick-sml.png)](extending-the-example-images/02-random-pick.png)
+[![První snímek před odkládacího souboru, druhý snímek obrazovky po swap](extending-the-example-images/02-random-pick-sml.png)](extending-the-example-images/02-random-pick.png#lightbox)
 
 Samozřejmě `NotifyDataSetChanged` by byla volána namísto volání dvě `NotifyItemChanged`, ale je to proto by vynutit `RecyclerView` aktualizovat celou kolekci, i když byla změněna pouze dvě položky v kolekci. Volání metody `NotifyItemChanged` je výrazně efektivnější než volání `NotifyDataSetChanged`.
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 10/27/2017
-ms.openlocfilehash: 9c95a1b71f83ee810b775420aab3ceafeeca0379
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e5c17c53c154eb4da4ec76e567c1c73695de7e35
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -212,11 +212,11 @@ Xamarin profileru se skládá z pěti částí, jak je uvedeno dále:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![](images/profiler-mac-sml.png "Části profileru v sadě Visual Studio pro Mac")](images/profiler-mac.png) 
+[![](images/profiler-mac-sml.png "Části profileru v sadě Visual Studio pro Mac")](images/profiler-mac.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![](images/profiler-vs.png "Části profileru v sadě Visual Studio")](images/profiler-vs.png)
+[![](images/profiler-vs.png "Části profileru v sadě Visual Studio")](images/profiler-vs.png#lightbox)
 
 -----
 
@@ -234,11 +234,11 @@ V horní části profileru je graf přidělení, která zobrazuje množství pam
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![](images/allocations1.png "Přidělení nástrojích")](images/allocations1.png) 
+[![](images/allocations1.png "Přidělení nástrojích")](images/allocations1.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![](images/allocations1-vs.png "Přidělení nástrojích")](images/allocations1-vs.png)
+[![](images/allocations1-vs.png "Přidělení nástrojích")](images/allocations1-vs.png#lightbox)
 
 -----
 
@@ -248,11 +248,11 @@ Existují různé datové zobrazení s nástrojem přidělení, které umožňuj
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-  [![](images/allocations3.png "Karta přidělení")](images/allocations3.png) 
+  [![](images/allocations3.png "Karta přidělení")](images/allocations3.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-  [![](images/allocations2-vs.png "Karta přidělení")](images/allocations2-vs.png)
+  [![](images/allocations2-vs.png "Karta přidělení")](images/allocations2-vs.png#lightbox)
 
 -----
 
@@ -264,11 +264,11 @@ Zobrazení Inspector pro přidělení poskytuje možnosti pro filtrování a ses
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-  [![](images/allocations2.png "Karta stromu volání")](images/allocations2.png) 
+  [![](images/allocations2.png "Karta stromu volání")](images/allocations2.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-  [![](images/allocations3-vs.png "Karta stromu volání")](images/allocations3-vs.png)
+  [![](images/allocations3-vs.png "Karta stromu volání")](images/allocations3-vs.png#lightbox)
 
 -----
 
@@ -276,11 +276,11 @@ Zobrazení Inspector pro přidělení poskytuje možnosti pro filtrování a ses
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-  [![](images/allocations4.png "Karta snímky")](images/allocations4.png) 
+  [![](images/allocations4.png "Karta snímky")](images/allocations4.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-  [![](images/allocations4-vs.png "Karta snímky")](images/allocations4-vs.png)
+  [![](images/allocations4-vs.png "Karta snímky")](images/allocations4-vs.png#lightbox)
 
 -----
 
@@ -292,15 +292,15 @@ Krabicový diagram, jak je vidět na tomto snímku obrazovky, zobrazuje počet v
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Čas nástrojích profileru](images/time1.png)](images/time1.png) 
+[![Čas nástrojích profileru](images/time1.png)](images/time1.png#lightbox) 
 
-[![Čas profileru nástrojích – ukázky seznamu](images/time3.png)](images/time3.png) 
+[![Čas profileru nástrojích – ukázky seznamu](images/time3.png)](images/time3.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Čas nástrojích profileru](images/time1-vs.png)](images/time1-vs.png) 
+[![Čas nástrojích profileru](images/time1-vs.png)](images/time1-vs.png#lightbox) 
 
-[![Čas profileru nástrojích – ukázky seznamu](images/time3-vs.png)](images/time3-vs.png) 
+[![Čas profileru nástrojích – ukázky seznamu](images/time3-vs.png)](images/time3-vs.png#lightbox) 
 
 -----
 
@@ -309,11 +309,11 @@ Krabicový diagram, jak je vidět na tomto snímku obrazovky, zobrazuje počet v
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-  [![](images/time2.png "Čas profileru nástrojích – stromu volání")](images/time2.png) 
+  [![](images/time2.png "Čas profileru nástrojích – stromu volání")](images/time2.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-  [![](images/time2-vs.png "Čas profileru nástrojích – stromu volání")](images/time2-vs.png) 
+  [![](images/time2-vs.png "Čas profileru nástrojích – stromu volání")](images/time2-vs.png#lightbox) 
 
 -----
 
@@ -325,7 +325,7 @@ Pomocí jazyka C# a F # spravovaný kód může být celkem běžné a bohužel 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Cykly nástrojích](images/cycles-vs.png)](images/time1-vs.png) 
+[![Cykly nástrojích](images/cycles-vs.png)](images/time1-vs.png#lightbox) 
 
 -----
 
@@ -338,11 +338,11 @@ Pokud je profil aplikace pro ostatní konfigurace, zobrazí se následující di
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Profilace chybové dialogové okno](images/image001.png)](images/image001.png) 
+[![Profilace chybové dialogové okno](images/image001.png)](images/image001.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![](images/image1vs.png "Profilace chybové dialogové okno")](images/image1vs.png) 
+[![](images/image1vs.png "Profilace chybové dialogové okno")](images/image1vs.png#lightbox) 
 
 -----
 
@@ -350,7 +350,7 @@ Pokud je profil aplikace pro ostatní konfigurace, zobrazí se následující di
 Vyberte **aktualizace** pokračujte.
 
 <!---
-##Profiling Android Applications
+## Profiling Android Applications
 
 
 Due to the recent inclusion of the profiling libraries into any new Android project template, you will find that when profiling any legacy applications you are greeted with the message dialog above.
@@ -358,7 +358,7 @@ Due to the recent inclusion of the profiling libraries into any new Android proj
 You will need to enable this to make sure that the profiling libraries are included in your Android application, for debug builds. This should not be checked for release builds as it creates overhead.
 
 
-##Profiling iOS Applications
+## Profiling iOS Applications
 
 ### Profiling tvOS
 

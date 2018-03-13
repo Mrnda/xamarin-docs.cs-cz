@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 523d79adbc5d4f88d4a2670b6422a58fb9256ab2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e40fd215d23e7da6f1356bba17fac84ce91007ae
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="polylines-and-parametric-equations"></a>Čáru lomených a čištění vzorce
 
@@ -109,7 +109,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Výsledek se také nazývá *aritmetické Spirála* protože posun mezi každou smyčku je konstantní:
 
-[![](polylines-images/archimedeanspiral-small.png "Trojitá snímek obrazovky stránky Spirála Archimedean")](polylines-images/archimedeanspiral-large.png "Trojitá snímek obrazovky stránky Archimedean Spirála")
+[![](polylines-images/archimedeanspiral-small.png "Trojitá snímek obrazovky stránky Spirála Archimedean")](polylines-images/archimedeanspiral-large.png#lightbox "Trojitá snímek obrazovky stránky Archimedean Spirála")
 
 Všimněte si, že `SKPath` je vytvořen v `using` bloku. To `SKPath` spotřebovává více paměti, než `SKPath` objekty v předchozí programy, které naznačuje, které `using` bloku je vhodnější, aby uvolnila veškeré nespravované prostředky.
 

@@ -2,20 +2,19 @@
 title: "Písma"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 3F543FC5-FDED-47F8-8D2C-481FCC98BFDA$
+ms.assetid: 3F543FC5-FDED-47F8-8D2C-481FCC98BFDA
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
-ms.date: 01/30/2018
-ms.openlocfilehash: 3b7c45a50ffb0748b5f63edfd444cb02af3fdc67
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+author: topgenorth
+ms.author: toopge
+ms.date: 03/09/2018
+ms.openlocfilehash: 7cde19a153585a6f9739aa02f3ea69dc4f09be58
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="fonts"></a>Písma
 
-<a name="overview" />
 
 ## <a name="overview"></a>Přehled
 
@@ -60,7 +59,6 @@ Také písem jsou k dispozici do aplikace systému Android správné způsobem, 
 
 Tento průvodce nejprve popisují způsob použití písem jako prostředek Android a poté přejde k popisují postup stažení písem za běhu.
 
-<a name="fonts_as_a_resource" />
 
 ## <a name="fonts-as-a-resource"></a>Písma jako prostředek
 
@@ -139,7 +137,6 @@ Po definování v dané rodině písem, může sloužit deklarativně nastavení
     />
 ```
 
-<a name="programatically_assigning_fonts" />
 
 ### <a name="programmatically-assigning-fonts"></a>Prostřednictvím kódu programu přiřazení písem
 
@@ -158,7 +155,6 @@ var typeface = Typeface.Create("<FONT FAMILY NAME>", Android.Graphics.TypefaceSt
 textView1.Typeface = typeface;
 ```
 
-<a name="downloading_fonts" />
 
 ## <a name="downloading-fonts"></a>Stahování je víc písem.
 
@@ -202,7 +198,6 @@ Bez ohledu na to, jaký přístup je použita lze stáhnout soubory prostředků
 
 Jakmile jsou definovány písma, může být nezbytné k poskytování informací o _písma certifikáty_ zahrnuta ve stahování.
 
-<a name="font_certificates" />
 
 ### <a name="font-certificates"></a>Certifikáty písma
 
@@ -232,7 +227,6 @@ Například následující kód XML s názvem **Resources/values/fonts_cert.xml*
 
 Tyto soubory prostředků v místě je aplikace schopná stahování písma.
 
-<a name="downloadable_font_resource_declaration" />
 
 ### <a name="declaring-downloadable-fonts-as-resources"></a>Zaváděná písma deklarace jako prostředky
 
@@ -253,7 +247,6 @@ Ke stažení těchto písem, musí být deklarován v **AndroidManifest.XML** p�
 <meta-data android:name="downloadable_fonts" android:resource="@array/downloadable_fonts" />
 ```
 
-<a name="programatically_downloading_fonts" />
 
 ### <a name="downloading-a-font-with-the-font-apis"></a>Stahování písma s rozhraními API sady písma
 
@@ -326,10 +319,6 @@ public class FontDownloadHelper : FontsContractCompat.FontRequestCallback
     }
 }
 
-
-/// <summary>
-/// EventArg when a font has been downloaded. 
-/// </summary>
 public class FontDownloadEventArg : EventArgs
 {
     public FontDownloadEventArg(Android.Graphics.Typeface typeface)
@@ -360,7 +349,6 @@ fontHelper.FontDownloaded += (object sender, FontDownloadEventArg e) =>
 fontHelper.DownloadFonts(this); // this is an Android Context instance.
 ```
 
-<a name="summary" />
 
 ## <a name="summary"></a>Souhrn
 

@@ -3,16 +3,16 @@ title: "Hello, Android Multiobrazovka: Podrobné informace"
 description: "V této příručce dvě části je základní aplikace Phoneword (vytvořený ve Hello, Android průvodce) rozšířit pro zpracování druhý obrazovky. Cestou se vydávají základních stavebních bloků Android aplikace. O podrobnější prohlídku do Android architektury je součástí můžete vyvinout lépe porozumět struktura aplikace pro Android a funkce."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: AD3BAE9A-963C-4CF7-9733-111033034289
+ms.assetid: E4150036-7760-4023-BD33-B7BDE7B7AF5B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: a47dea43b1fb1e84a0cd3dffc07b483497edbe09
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: acced081daa9416c5c8dcf90f769aaacd584ec9a
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="hello-android-multiscreen-deep-dive"></a>Hello, Android Multiobrazovka: Podrobné informace
 
@@ -30,7 +30,6 @@ V této příručce zaměříte pokročilejší Android architektura jako Androi
 
 V [Hello, Android podrobné informace](~/android/get-started/hello-android/hello-android-deepdive.md), jste se dozvěděli, že aplikace pro Android jsou jedinečné programy tím, že neobsahují jeden vstupní bod. Místo toho operačního systému (nebo jiná aplikace) spustí některého z registrovaných aktivity aplikace, který pak zahájí proces pro danou aplikaci. Toto podrobné informace do Android architektury rozšíří vaše pochopení jak Android aplikací, které se vytvářejí zavedením Android stavební bloky aplikací a jejich funkce.
 
-<a name="AndroidApplicationBlocks" />
 
 ### <a name="android-application-blocks"></a>Bloky aplikace pro Android
 
@@ -52,7 +51,6 @@ Android je uspořádaná kolem *Princip nejnižších nutných oprávnění* &nd
 
 Pro komunikaci, bloky aplikace odesílat asynchronní zprávy názvem *záměry* a zpět. Záměry obsahují informace o přijímající bloku a někdy některá data. Záměrem odeslaný jeden triggery pro součást aplikace určitou akci v jiné aplikaci součásti vazby dvě součásti aplikace a umožní, aby mohla komunikovat. Odesílání tříd Intent a zpět, lze získat bloky ke koordinaci komplexní akce, jako je spuštění aplikace fotoaparát trvat a uložte, shromažďování informací o umístění nebo navigace z jedné obrazovky na další.
 
-<a name="AndroidManifestXML" />
 
 ### <a name="androidmanifestxml"></a>AndroidManifest.XML
 

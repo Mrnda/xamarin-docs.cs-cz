@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 44775853a29a384216af308a607cfddd18c9c192
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b7c850d0ea06d69c3601081c1e9cde193903eb27
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="spinner"></a>Číselník
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 02/27/2018
 
 V první části tohoto kurzu vytvoříte jednoduchý číselník pomůcku, která zobrazuje seznam Planet. Pokud je vybraná planetu, zobrazí se zpráva informační vybrané položky:
 
-[![Příklad snímky obrazovky HelloSpinner aplikace](spinner-images/01-example-screenshots-sml.png)](spinner-images/01-example-screenshots.png)
+[![Příklad snímky obrazovky HelloSpinner aplikace](spinner-images/01-example-screenshots-sml.png)](spinner-images/01-example-screenshots.png#lightbox)
 
 Spuštění nového projektu s názvem **HelloSpinner**.
 
@@ -120,7 +120,7 @@ Pokud je vybrána položka, odesílatel přetypovat [ `Spinner` ](https://develo
 
 Spusťte aplikaci; ho by měl vypadat takto:
 
-[![Příklad – snímek obrazovky s Mars vybrán jako planety číselník](spinner-images/02-basic-example-sml.png)](spinner-images/02-basic-example.png)
+[![Příklad – snímek obrazovky s Mars vybrán jako planety číselník](spinner-images/02-basic-example-sml.png)](spinner-images/02-basic-example.png#lightbox)
 
 ## <a name="spinner-using-keyvalue-pairs"></a>Číselník pomocí párů klíč hodnota
 
@@ -188,10 +188,9 @@ private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventAr
 
 Spusťte aplikaci; informační by měl vypadat takto:
 
-[![Příklad výběru planetu zobrazení teploty](spinner-images/03-keyvalue-example-sml.png)](spinner-images/03-keyvalue-example.png)
+[![Příklad výběru planetu zobrazení teploty](spinner-images/03-keyvalue-example-sml.png)](spinner-images/03-keyvalue-example.png#lightbox)
    
   
-<a name="Resources" />
 
 ## <a name="resources"></a>Prostředky
 

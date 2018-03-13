@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 82151599b92094b816f4763c533ed7746db37920
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 489f3bd43ff4515000127ac29de197435493d5a9
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-navigation-and-focus"></a>Práce s navigační a výběr
 
@@ -21,7 +21,7 @@ _Tento článek se zabývá koncept fokus a jak se používá k zobrazení a zpr
 
 Tento článek se zabývá koncept [fokus](#Focus-and-Selection) a jak se používají pro zpracování [navigační](#Navigation) v uživatelském rozhraní aplikace Xamarin.tvOS. Podíváme se, jak použít předdefinované tvOS ovládací prvky pro navigaci fokus, zvýraznění a výběr zajistit aplikace Xamarin.tvOS uživatelské rozhraní navigace.
 
-[ ![](navigation-focus-images/intro01.png "aplikace tvOS navigační uživatelské rozhraní")](navigation-focus-images/intro01.png)
+[![](navigation-focus-images/intro01.png "aplikace tvOS navigační uživatelské rozhraní")](navigation-focus-images/intro01.png#lightbox)
 
 V dalším kroku provedeme podívejte se na použití fokus s [paralaxy](#Focus-and-Parallax) a *na základě bitové kopie* zajistit visual různá vodítka pro aktuální stav navigace pro koncového uživatele.
 
@@ -35,7 +35,7 @@ Uživatele vaší aplikace Xamarin.tvOS nebude interakci s jeho rozhraní přím
 
 Úspěšné tvOS aplikace implementuje navigační způsobem, který bez problémů podporuje účel aplikace a struktura dat, která představuje bez volání pozornost navigační sám sebe. Návrh vašeho navigační tak, aby se domnívá, přirozené a známým bez dominantní uživatelského rozhraní nebo kreslení fokus od obsah a činnost koncového uživatele aplikace.
 
-[ ![](navigation-focus-images/nav01.png "V aplikaci nastavení tvOS")](navigation-focus-images/nav01.png)
+[![](navigation-focus-images/nav01.png "V aplikaci nastavení tvOS")](navigation-focus-images/nav01.png#lightbox)
 
 Při použití Apple TV, uživatel obvykle přejde na skládaný sadu obrazovky, každý prezentací danou sadu obsahu. Pak může vést každé nové obrazovky na jeden nebo více dílčích obrazovky obsahu pomocí standardní ovládací prvky uživatelského rozhraní, jako [tlačítka](~/ios/tvos/user-interface/buttons.md), [kartě řádky](~/ios/tvos/user-interface/tab-bars.md), tabulky, [zobrazení kolekce](~/ios/tvos/user-interface/collection-views.md) nebo [ Rozdělení zobrazení](~/ios/tvos/user-interface/split-views.md).
 
@@ -58,7 +58,7 @@ Apple naznačuje, přičemž následující mějte při navrhování navigace pr
 
 Na Apple TV, bitovou kopii, tlačítko nebo jiného uživatelského rozhraní elementu se považuje za _nezvýrazní_ Pokud je cílem aktuální navigace.
 
-[ ![](navigation-focus-images/focus01.png "Příklad fokus a výběr")](navigation-focus-images/focus01.png)
+[![](navigation-focus-images/focus01.png "Příklad fokus a výběr")](navigation-focus-images/focus01.png#lightbox)
 
 Na rozdíl od zařízení iOS, kde je uživatel přímo interakci s elementů na dotykovou obrazovku zařízení uživatelé komunikovat s tvOS elementy z napříč místnosti pomocí vzdáleného Siri. K dispozici a zpracovávají interakci s uživatelem, Apple TV používá _fokus_ na základě modelu.
 
@@ -138,7 +138,7 @@ Však může nastat situace, z důvodu životní potřeby vašeho návrhu uživa
 
 Proveďte následující rozložení uživatelského rozhraní pro příklad:
 
- [ ![](navigation-focus-images/guide01.png "Práce s příklad fokus příručky")](navigation-focus-images/guide01.png)
+ [![](navigation-focus-images/guide01.png "Práce s příklad fokus příručky")](navigation-focus-images/guide01.png#lightbox)
  
 Protože **Další informace o** tlačítko nespadá na vodorovného a svislého mřížka s **koupit** tlačítko je dostupná pro uživatele. Však tento problém můžete snadno odstranit pomocí _fokus průvodce_ zajistit pohyb Nápověda k modulu fokus. 
 
@@ -170,7 +170,7 @@ První, nový `UIFocusGuide` je vytvořen a přidán do zobrazení rozložení p
 
 V dalším kroku upravena průvodci fokus Top, vlevo, šířka a výška kotvy vzhledem k **Další informace o** a **koupit** tlačítka na pozici mezi nimi. Další informace:
 
-[ ![](navigation-focus-images/guide02.png "Příklad fokus Průvodce")](navigation-focus-images/guide02.png)
+[![](navigation-focus-images/guide02.png "Příklad fokus Průvodce")](navigation-focus-images/guide02.png#lightbox)
 
 Je také důležité si uvědomit, že nové omezení jsou aktivované jako je vytvořen nastavením své `Active` vlastnost `true`:
 
@@ -283,7 +283,7 @@ Tento článek má zahrnutých koncept fokus a jak se používají pro zpracová
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Ukázky tvOS](https://developer.xamarin.com/samples/tvos/all/)
+- [Ukázky pro tvOS](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS lidské rozhraní příručky](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [Průvodce programováním aplikace pro tvOS](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

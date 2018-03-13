@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 02/02/2018
-ms.openlocfilehash: fe58aa8ffb74a9b6e937be5a7f1dde0432794405
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5eccb36b3c6a437ddc1ec055e779d8f78460643e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="hello-tvos-quick-start-guide"></a>Hello, tvOS úvodní příručce
 
@@ -34,7 +34,7 @@ Navíc vzhledem k tomu, že aplikace Xamarin.tvOS jsou napsané v C# a rozhraní
 
 Tento článek vás seznámí s klíčové koncepty jsou potřeba k vytvoření aplikace pro Apple TV pomocí návodem proces vytváření základní Xamarin.tvOS a Visual Studio **Hello, tvOS** aplikaci, která udává počet, kolikrát má tlačítka klepnutí na:
 
-[ ![](hello-tvos-images/run05.png "Příklad aplikace spustit")](hello-tvos-images/run05.png)
+[![](hello-tvos-images/run05.png "Příklad aplikace spustit")](hello-tvos-images/run05.png#lightbox)
 
 Zaměříme jsme následující koncepty:
 
@@ -51,21 +51,21 @@ Abyste mohli začít, budeme takto:
 
 1. Spuštění sady Visual Studio pro Mac:
 
-    [ ![](hello-tvos-images/setup01.png "Visual Studio for Mac")](hello-tvos-images/setup01.png)
+    [![](hello-tvos-images/setup01.png "Visual Studio for Mac")](hello-tvos-images/setup01.png#lightbox)
 2. Klikněte na **nové řešení...**  odkaz v levém horním rohu obrazovky, otevřete **nový projekt** dialogové okno.
 3. Vyberte **tvOS** > **aplikace** > **jediné zobrazení aplikace** a klikněte na **Další** tlačítko:
 
-    [ ![](hello-tvos-images/setup02.png "Vyberte aplikaci, jednoho zobrazení")](hello-tvos-images/setup02.png)
+    [![](hello-tvos-images/setup02.png "Vyberte aplikaci, jednoho zobrazení")](hello-tvos-images/setup02.png#lightbox)
 4. Zadejte `Hello, tvOS` pro **název aplikace**, zadejte vaše **identifikátor organizace** a klikněte na tlačítko **Další** tlačítko:
 
-    [ ![](hello-tvos-images/setup04.png "Zadejte text Hello, tvOS")](hello-tvos-images/setup04.png)
+    [![](hello-tvos-images/setup04.png "Zadejte text Hello, tvOS")](hello-tvos-images/setup04.png#lightbox)
 5. Zadejte `Hello_tvOS` pro **název projektu** a klikněte na **vytvořit** tlačítko:
 
-    [ ![](hello-tvos-images/setup03.png "Enter HellotvOS")](hello-tvos-images/setup03.png)
+    [![](hello-tvos-images/setup03.png "Enter HellotvOS")](hello-tvos-images/setup03.png#lightbox)
 
 Visual Studio pro Mac se vytvořit novou aplikaci Xamarin.tvOS a zobrazit výchozí soubory, které se přidají do vaší aplikace řešení:
 
- [ ![](hello-tvos-images/project01.png "Výchozí zobrazení souborů")](hello-tvos-images/project01.png)
+ [![](hello-tvos-images/project01.png "Výchozí zobrazení souborů")](hello-tvos-images/project01.png#lightbox)
 
 Visual Studio pro Mac používá **řešení** a **projekty**, přesný stejným způsobem, který Visual Studio. Řešení je kontejner, který může obsahovat jeden nebo více projektů; projekty může zahrnovat aplikací, podpora knihovny, testovací aplikace atd. V takovém případě Visual Studio pro Mac řešení a projekt aplikace pro vás vytvořil.
 
@@ -253,11 +253,11 @@ Nemáte k vytvoření uživatelského rozhraní pro vaši aplikaci Xamarin.tvOS 
 
 Pokud chcete začít vytvářet uživatelské rozhraní, můžeme dvakrát klikněte na `Main.storyboard` v soubor **Průzkumníku řešení** otevřete pro úpravy v iOS Designer:
 
-[ ![](hello-tvos-images/designer01.png "Main.storyboard soubor v Průzkumníku řešení")](hello-tvos-images/designer01.png)
+[![](hello-tvos-images/designer01.png "Main.storyboard soubor v Průzkumníku řešení")](hello-tvos-images/designer01.png#lightbox)
 
 To by měl spusťte návrháře a vypadat následovně:
 
-[ ![](hello-tvos-images/designer02.png "Návrháře")](hello-tvos-images/designer02.png)
+[![](hello-tvos-images/designer02.png "Návrháře")](hello-tvos-images/designer02.png#lightbox)
 
 Další informace o iOS Designer a jak to funguje, najdete v části [Úvod do návrháře Xamarin pro iOS](~/ios/user-interface/designer/introduction.md) průvodce.
 
@@ -267,57 +267,57 @@ Postupujte takto:
 
 1. Vyhledejte **sada nástrojů**, což by mělo být napravo od návrhové plochy:
 
-    [![](hello-tvos-images/designer03.png "V panelu nástrojů")](hello-tvos-images/designer03.png)
+    [![](hello-tvos-images/designer03.png "V panelu nástrojů")](hello-tvos-images/designer03.png#lightbox)
 
     Pokud zde ji nelze najít, přejděte do **zobrazení > dotyková zařízení > Sada nástrojů** k jeho zobrazení.
 2. Přetáhněte **popisek** z **sada nástrojů** na návrhovou plochu:
 
-    [ ![](hello-tvos-images/designer04.png "Přetáhněte štítek z panelu nástrojů")](hello-tvos-images/designer04.png)
+    [![](hello-tvos-images/designer04.png "Přetáhněte štítek z panelu nástrojů")](hello-tvos-images/designer04.png#lightbox)
 3. Klikněte na **název** vlastnost v **vlastnost pad** a změňte název na tlačítko pro `Hello, tvOS` a nastavte **velikost písma** do 128:
 
-    [ ![](hello-tvos-images/designer05.png "Nastavený nadpis můžete Hello, tvOS a velikost písma na 128")](hello-tvos-images/designer05.png)
+    [![](hello-tvos-images/designer05.png "Nastavený nadpis můžete Hello, tvOS a velikost písma na 128")](hello-tvos-images/designer05.png#lightbox)
 4. Změnit velikost popisku tak, aby všechna slova jsou viditelné a umístěte ji na střed v horní části okna:
 
-    [ ![](hello-tvos-images/designer06.png "Změní velikost a center popisek")](hello-tvos-images/designer06.png)
+    [![](hello-tvos-images/designer06.png "Změní velikost a center popisek")](hello-tvos-images/designer06.png#lightbox)
 5. Popisek teď muset být omezené na jeho pracovní pozici, tak, aby se tak, jak má. bez ohledu na velikost obrazovky. K tomu, klikněte na štítek, dokud *ve tvaru T popisovač* se zobrazí:
 
-    [ ![](hello-tvos-images/designer07.png "Popisovač ve tvaru T")](hello-tvos-images/designer07.png)
+    [![](hello-tvos-images/designer07.png "Popisovač ve tvaru T")](hello-tvos-images/designer07.png#lightbox)
 6. Chcete-li omezit popisek vodorovně, vyberte druhou mocninu center a přetáhněte jej do svisle přerušovanou čáru:
 
-    [ ![](hello-tvos-images/designer08.png "Vyberte druhou mocninu center")](hello-tvos-images/designer08zoom.png)
+    [![](hello-tvos-images/designer08.png "Vyberte druhou mocninu center")](hello-tvos-images/designer08zoom.png#lightbox)
 
      Popisek doporučujeme zapnout oranžová.
 7. Vyberte popisovač T v horní části popisek a přetáhněte ji na horní okraj okna:
 
-    [ ![](hello-tvos-images/designer09.png "Přetažením úchytu na horní okraj okna")](hello-tvos-images/designer09.png)
+    [![](hello-tvos-images/designer09.png "Přetažením úchytu na horní okraj okna")](hello-tvos-images/designer09.png#lightbox)
 8. Klikněte na tlačítko šířku a potom výška *kost popisovač* jak je uvedeno dále:
 
-    [ ![](hello-tvos-images/designer10.png "Šířka a výška úplně dělit obslužných rutin")](hello-tvos-images/designer10.png)
+    [![](hello-tvos-images/designer10.png "Šířka a výška úplně dělit obslužných rutin")](hello-tvos-images/designer10.png#lightbox)
 
      Při každém *kost popisovač* je klikli, vyberte šířku i výšku v uvedeném pořadí nastavit pevné dimenze.
 9. Po dokončení vaše omezení by měl vypadat podobné těm, na kartě Rozložení panelu Vlastnosti pro:
 
-    [ ![](hello-tvos-images/designer11.png "Příklad omezení")](hello-tvos-images/designer11.png)
+    [![](hello-tvos-images/designer11.png "Příklad omezení")](hello-tvos-images/designer11.png#lightbox)
 8. Přetáhněte **tlačítko** z **sada nástrojů** a umístěte jej do popisku.
 9. Klikněte na **název** vlastnost **vlastnost pad** a změňte název na tlačítko pro `Click Me`:
 
-    [ ![](hello-tvos-images/designer12.png "Změnit text tlačítka klikněte na tlačítko vám.")](hello-tvos-images/designer12.png)
+    [![](hello-tvos-images/designer12.png "Změnit text tlačítka klikněte na tlačítko vám.")](hello-tvos-images/designer12.png#lightbox)
 10. Opakujte kroky 5 až 8 omezit tlačítka v okně tvOS výše. Však několik způsobů T-popisovač do horní části okna (jako kroku #7), přetáhněte jej do dolní části štítku:
 
-    [ ![](hello-tvos-images/designer14.png "Omezit na tlačítko")](hello-tvos-images/designer14.png)
+    [![](hello-tvos-images/designer14.png "Omezit na tlačítko")](hello-tvos-images/designer14.png#lightbox)
 11. Přetáhněte jiný popisek pod tlačítko, velikost, že bude stejnou délku jako první popisek a sadu jeho **zarovnání** k **Center**:
 
-    [ ![](hello-tvos-images/designer15.png "Přetáhněte jiný popisek pod tlačítko, velikost ho mít stejnou šířku jako první popisek a nastavit jeho zarovnání na Center")](hello-tvos-images/designer15.png)
+    [![](hello-tvos-images/designer15.png "Přetáhněte jiný popisek pod tlačítko, velikost ho mít stejnou šířku jako první popisek a nastavit jeho zarovnání na Center")](hello-tvos-images/designer15.png#lightbox)
 12. Jako první popisek a tlačítko nastavte tento popisek center a připnout do umístění a velikost:
 
-    [ ![](hello-tvos-images/designer16.png "PIN kód popisek do umístění a velikost")](hello-tvos-images/designer16.png)
+    [![](hello-tvos-images/designer16.png "PIN kód popisek do umístění a velikost")](hello-tvos-images/designer16.png#lightbox)
 13. Uloží změny do uživatelského rozhraní.
 
 Jako byly změny velikosti a přesouvání ovládacích prvků kolem, měli jste si všimli, že návrháře poskytuje užitečné snap pomocné parametry, které jsou založeny na [Apple TV Human Interface Guidelines](https://developer.apple.com/tvos/human-interface-guidelines/). Tyto pokyny vám pomůže vytvořit vysoce kvalitního aplikace, které budou mít známých vzhled a chování pro Apple TV uživatele.
 
 Pokud se podíváte **Osnova dokumentu** část, Všimněte si, jak jsou uvedeny rozložení a hierarchii elementů, které tvoří naše uživatelské rozhraní:
 
-[ ![](hello-tvos-images/designer17.png "V části Osnova dokumentu")](hello-tvos-images/designer17.png)
+[![](hello-tvos-images/designer17.png "V části Osnova dokumentu")](hello-tvos-images/designer17.png#lightbox)
 
 Tady můžete vybrat položky, které chcete upravit nebo přetáhněte v případě potřeby změňte pořadí prvky uživatelského rozhraní. Například pokud prvku uživatelského rozhraní se vztahuje jiný element, vám může přetáhněte jej do dolní části seznamu, chcete-li nejvyšší položku v okně.
 
@@ -339,16 +339,16 @@ V této ukázkové aplikaci, po kliknutí na tlačítko chceme _něco_ provést,
 1. V Xamarin iOS Designer vyberte tlačítko řadiče zobrazení.
 2. V panelu pro vlastnosti, vyberte **události** karty:
 
-    [![](hello-tvos-images/event1.png "Na kartě události")](hello-tvos-images/event1.png)
+    [![](hello-tvos-images/event1.png "Na kartě události")](hello-tvos-images/event1.png#lightbox)
 3. Vyhledejte události TouchUpInside a pojmenujte ho obslužné rutiny události s názvem `Clicked`:
 
-    [![](hello-tvos-images/event2.png "Událost TouchUpInside")](hello-tvos-images/event2.png)
+    [![](hello-tvos-images/event2.png "Událost TouchUpInside")](hello-tvos-images/event2.png#lightbox)
 4. Po stisknutí klávesy **Enter**, **ViewController**.cs soubor se otevře, které naznačují, umístění pro vaší obslužné rutiny událostí v kódu. Chcete-li nastavit umístění, použijte klávesy se šipkami na klávesnici:
 
-    [![](hello-tvos-images/event3.png "Nastavení umístění")](hello-tvos-images/event3.png)
+    [![](hello-tvos-images/event3.png "Nastavení umístění")](hello-tvos-images/event3.png#lightbox)
 5. Tím se vytvoří částečné metodu, jak je uvedeno níže:
 
-    [![](hello-tvos-images/event4.png "Částečné metody")](hello-tvos-images/event4.png)
+    [![](hello-tvos-images/event4.png "Částečné metody")](hello-tvos-images/event4.png#lightbox)
 
 Nyní připraveni začít přidávat kód, který povolí tlačítko pro funkce.
 
@@ -359,10 +359,10 @@ Při kliknutí na tlačítko popisek by měl aktualizovat na základě počtu kl
 1. Otevřete scénáři a vyberte štítek, který v dolní části řadiče zobrazení.
 2. V panelu pro vlastnosti, vyberte **pomůcky** karty:
 
-    [![](hello-tvos-images/name1.png "Vyberte kartu pomůcky")](hello-tvos-images/name1.png)
+    [![](hello-tvos-images/name1.png "Vyberte kartu pomůcky")](hello-tvos-images/name1.png#lightbox)
 3. V části **Identity > název**, přidejte `ClickedLabel`:
 
-    [![](hello-tvos-images/name2.png "Nastavit ClickedLabel")](hello-tvos-images/name2.png)
+    [![](hello-tvos-images/name2.png "Nastavit ClickedLabel")](hello-tvos-images/name2.png#lightbox)
 
 Nyní připraveni spusťte aktualizaci popisku!
 
@@ -370,7 +370,7 @@ Nyní připraveni spusťte aktualizaci popisku!
 
 Pokud jste vybrali `ViewController.designer.cs` v **Průzkumníku řešení** budete moci zobrazit jak `ClickedLabel` popisek a `Clicked` namapované na obslužné rutiny události **výstupu** a  **Akce** v jazyce C#:
 
-[ ![](hello-tvos-images/accesscontrol.png "Výstupy a akcí")](hello-tvos-images/accesscontrol.png)
+[![](hello-tvos-images/accesscontrol.png "Výstupy a akcí")](hello-tvos-images/accesscontrol.png#lightbox)
 
 Může také zjistíte, že `ViewController.designer.cs` je konkrétní třídu, takže nemá Visual Studio pro Mac k úpravě `ViewController.cs` který by přepsala veškeré změny, které jsme provedli pro třídu.
 
@@ -386,7 +386,7 @@ Naše uživatelské rozhraní, vytvořit a jeho prvky uživatelského rozhraní,
 
 V naší aplikaci pokaždé, když se po kliknutí na první tlačítko, vytvoříme naše štítek, který chcete zobrazit kolikrát kliknutí na tlačítko Aktualizovat. K tomu je potřeba otevřít `ViewController.cs` soubor pro úpravy poklepáním v **řešení Pad**:
 
-[ ![](hello-tvos-images/code01.png "Odsazení řešení")](hello-tvos-images/code01.png)
+[![](hello-tvos-images/code01.png "Odsazení řešení")](hello-tvos-images/code01.png#lightbox)
 
 Nejprve musíme vytvořit proměnnou úrovni třídy v našem `ViewController` třída sledovat počet kliknutí, které došlo. Upravit definici třídy a nastavit jej vypadat následovně:
 
@@ -440,7 +440,7 @@ Vždy, když jsme sestavit aplikaci, jsme můžete zvolit, jaký druh sestavení
 
 Můžete vybrat typ sestavení z **konfigurace selektor** v levém horním rohu sady Visual Studio pro Mac obrazovky:
 
-[ ![](hello-tvos-images/run01.png "Vyberte typ sestavení")](hello-tvos-images/run01.png)
+[![](hello-tvos-images/run01.png "Vyberte typ sestavení")](hello-tvos-images/run01.png#lightbox)
 
 ### <a name="building-the-application"></a>Sestavení aplikace
 
@@ -458,15 +458,15 @@ Ke spuštění aplikace, máme tři možnosti:
 
 Aplikace bude sestavení (pokud nebyl již vytvořen), spustí spuštění v režimu ladění, tvOS simulátoru a bude spustit a zobrazí rozhraní hlavní okno aplikace:
 
-[ ![Domovskou obrazovku ukázkové aplikace](hello-tvos-images/run03.png)](hello-tvos-images/run03.png)
+[![Domovskou obrazovku ukázkové aplikace](hello-tvos-images/run03.png)](hello-tvos-images/run03.png#lightbox)
 
 Z **hardwaru** nabídky vyberte možnost **zobrazit Apple TV na vzdálené** , můžete řídit simulátoru.
 
-[ ![](hello-tvos-images/run04.png "Vyberte zobrazení Apple TV vzdálené")](hello-tvos-images/run04.png)
+[![](hello-tvos-images/run04.png "Vyberte zobrazení Apple TV vzdálené")](hello-tvos-images/run04.png#lightbox)
 
 Pokud kliknete na tlačítko několikrát popisek pomocí vzdáleného simulátoru, je třeba aktualizovat počet:
 
-[ ![](hello-tvos-images/run05.png "Popisek aktualizovaný počet")](hello-tvos-images/run05.png)
+[![](hello-tvos-images/run05.png "Popisek aktualizovaný počet")](hello-tvos-images/run05.png#lightbox)
 
 Blahopřejeme! Jsme zahrnutých spoustu základů zde, ale pokud jste provedli v tomto kurzu od začátku do konce, teď byste měli mít dobré porozumění součásti aplikace Xamarin.tvOS, jakož i nástroje používané k jejich vytvoření.
 

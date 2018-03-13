@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 278b9e782073a26dc04bac9418613ea4c09db445
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7b6d0901f8b01668626fc3b6a70a091e99e2287e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="troubleshooting"></a>Poradce při potížích
 
@@ -46,7 +46,7 @@ Chcete-li tento problém vyřešit, postupujte takto:
 1. V sadě Visual Studio pro Mac, klikněte pravým tlačítkem na soubor projektu Xamarin.tvOS v **Průzkumníku řešení** a vyberte **možnosti**.
 2. Vyberte **tvOS sestavení** a ujistěte se, že jste na **verze** konfigurace: 
 
-    [ ![](troubleshooting-images/ts01.png "Vyberte tvOS možnosti sestavení")](troubleshooting-images/ts01.png)
+    [![](troubleshooting-images/ts01.png "Vyberte tvOS možnosti sestavení")](troubleshooting-images/ts01.png#lightbox)
 3. Přidat `--bitcode=asmonly` k **mtouch další argumenty** pole a klikněte na tlačítko **OK** tlačítko.
 4. Opětovné sestavení aplikace v rámci **verze** konfigurace.
 
@@ -124,7 +124,7 @@ Znovu zkompiluje aplikaci pro verzi a znovu odešlete do iTunes připojit.
 
 Pokud používáte knihovnu 3. stran (například MonoGame) a vaše verze kompilace se nezdařila s dlouho řadu chybové zprávy, které končí na `Task "MTouch" execution -- FAILED`, zkuste přidat `-gcc_flags="-framework OpenAL"` k vaší **touch další argumenty**:
 
-[ ![](troubleshooting-images/mtouch01.png "MTouch provedení úlohy")](troubleshooting-images/mtouch01.png)
+[![](troubleshooting-images/mtouch01.png "MTouch provedení úlohy")](troubleshooting-images/mtouch01.png#lightbox)
 
 Musí rovněž zahrnovat `--bitcode=asmonly` v **touch další argumenty**, možnosti linkeru nastavili **odkaz všechny** a proveďte čistou kompilace.
 

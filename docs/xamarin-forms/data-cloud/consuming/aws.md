@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 590e39deb7972df9e45064bb1a96e533a1fc9856
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5604477ff182711a63ba2b0e6bbcbbcc082a76ed
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="consuming-an-amazon-simpledb-service"></a>Využívání služby Amazon SimpleDB
 
@@ -141,7 +141,7 @@ public async Task<List<TodoItem>> RefreshDataAsync ()
 `SelectAsync` Metoda přijímá `SelectRequest` instance jako parametr, který určuje `Select` dotaz výrazu v jeho `SelectExpression` vlastnost. Formát výrazu dotazu je podobný formát standardní SQL `SELECT` příkaz. Další informace o výrazu dotazu najdete v tématu [pomocí vyberte vytvořit dotazy SimpleDB Amazon](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/UsingSelect.html) na webu Amazon společnosti.
 
 > [!NOTE]
-> **Poznámka:**: buďte opatrní při sestavování výrazu dotazu sledovat z hlediska stylu citací pravidla. Další informace najdete v tématu [vyberte citací pravidla](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/QuotingRulesSelect.html) na webu Amazon společnosti.
+> Pečlivě dodržujte z hlediska stylu citací pravidla při sestavování výrazu dotazu. Další informace najdete v tématu [vyberte citací pravidla](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/QuotingRulesSelect.html) na webu Amazon společnosti.
 
 `SelectAsync` Metoda vrátí odpověď obsahující kolekci položek a přidružených atributů, které odpovídají výrazu dotazu. Tato kolekce je potom převedou do `List` z `TodoItem` instance pro zobrazení.
 

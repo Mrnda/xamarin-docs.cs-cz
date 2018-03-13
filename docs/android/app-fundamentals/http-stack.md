@@ -5,14 +5,14 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: D7ABAFAB-5CA2-443D-B902-2C7F3AD69CE2
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: bcb6f033c7fad76a17a7a5aa82f48a76b1ae501d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+author: topgenorth
+ms.author: toopge
+ms.date: 03/09/2018
+ms.openlocfilehash: 5c63bda11a57c0f27efa1db6f0455b25f7da531b
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="httpclient-stack-and-ssltls-implementation-selector-for-android"></a>Zásobník HttpClient a SSL/TLS implementace selektor pro Android
 
@@ -23,34 +23,31 @@ _Selektory zásobník HttpClient a SSL/TLS implementace určit implementace Http
 Xamarin.Android poskytuje dva seznamem, které bude řídit nastavení TLS pro aplikace pro Android. Jednoho pole se seznamem zjistit, jaké `HttpMessageHandler` budou používat při vytváření instance `HttpClient` objektu, zatímco druhý identifikuje, které implementaci TLS, se použije v webových požadavků.
 
 > [!NOTE]
-> **Poznámka:** projekty musí odkazovat **System.Net.Http** sestavení.
+> Projekty musí odkazovat **System.Net.Http** sestavení.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 Nastavení pro HttpClient zásobníku se nacházejí v projektu možnosti projektu Xamarin.Android. Klikněte na **Android možnosti** a pak klikněte na **pokročilé možnosti** tlačítko. Bude se zobrazovat **pokročilé možnosti Android** dialogu, který má dvě pole se seznamem, jeden pro implementace HttpClient a jeden pro implementaci protokolu SSL/TLS:
 
 
-[ ![Android možnosti sady Visual Studio](http-stack-images/tls07-vs-sml.png)](http-stack-images/tls07-vs.png)
+[![Android možnosti sady Visual Studio](http-stack-images/tls07-vs-sml.png)](http-stack-images/tls07-vs.png#lightbox)
+
+## <a name="httpclient-stack-selector"></a>Výběr zobrazení HttpClient
+
+Tato možnost projektu prvky, které `HttpMessageHandler` implementace se použije vždy, když `HttpClient` dojde k vytvoření objektu. Ve výchozím nastavení, toto je spravovaný `HttpClientHandler`.
+
+[![Android pole se seznamem implementace HttpClient v sadě Visual Studio](http-stack-images/tls04-vs-sml.png)](http-stack-images/tls04-vs.png#lightbox) 
 
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 Nastavení pro HttpClient zásobníku se nacházejí v projektu možnosti pro projekt Xamarin.Android. Klikněte na **sestavení > Android sestavení** nastavení a klikněte na **Obecné** karta:
 
-[ ![Visual Studio pro Android možnosti Mac](http-stack-images/tls07-xs-sml.png)](http-stack-images/tls07-xs.png)
-
-
------
+[![Visual Studio pro Android možnosti Mac](http-stack-images/tls07-xs-sml.png)](http-stack-images/tls07-xs.png#lightbox)
 
 ## <a name="httpclient-stack-selector"></a>Výběr zobrazení HttpClient
 
 Tato možnost projektu prvky, které `HttpMessageHandler` implementace se použije vždy, když `HttpClient` dojde k vytvoření objektu. Ve výchozím nastavení, toto je spravovaný `HttpClientHandler`.
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-[ ![Android pole se seznamem implementace HttpClient v sadě Visual Studio](http-stack-images/tls04-vs-sml.png)](http-stack-images/tls04-vs.png) 
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 ![Android pole se seznamem implementace HttpClient v sadě Visual Studio pro Mac](http-stack-images/tls04-xs.png )
 
@@ -84,10 +81,32 @@ AndroidClientHandler je novou obslužnou rutinu, která deleguje do nativního k
 - Vyžaduje Android 5.0 nebo novější.
 - Některé funkce nebo možnosti HttpClient nejsou k dispozici.
 
+### <a name="choosing-a-handler"></a>Výběr obslužná rutina
+
+Volba mezi `AndroidClientHandler` a `HttpClientHandler` závisí na potřebách vaší aplikace. `AndroidClientHandler` je vhodné použít, pokud platí všechny následující kroky:
+
+-   Budete potřebovat podporu protokolu TLS 1.2 +.
+-   Aplikace je cílení na Android 5.0 (21 rozhraní API) nebo novější.
+-   Je třeba TLS 1.2 + podporu pro `HttpClient`.
+-   Nepotřebujete podpora TLS 1.2 + pro `WebClient`.
+
+`HttpClientHandler` je vhodné použít, pokud potřebujete TLS 1.2 + podporují, ale musí podporovat verze systému Android starší než Android 5.0. Je také vhodné použít pokud potřebujete TLS 1.2 + podporu pro `WebClient`.
+
+Počínaje Xamarin.Android 8.3 `HttpClientHandler` výchozí hodnota je přítomnost SSL (`btls`) jako výchozí zprostředkovatel TLS. Poskytovatel přítomnost SSL TLS nabízí následující výhody:
+
+-   Podporuje TLS 1.2.
+-   Podporuje všechny verze systému Android.
+-   Poskytuje podporu protokolu TLS 1.2 pro obě `HttpClient` a `WebClient`.
+
+Nevýhodou přítomnost protokolu SSL používá jako zprostředkovatel TLS základní slovník je, že můžete zvětšit velikost výsledné APK (přidá další velikosti APK za podporované ABI o 1MB).
+
+Počínaje Xamarin.Android 8.3, je výchozí zprostředkovatel TLS přítomnost SSL (`btls`). Pokud nechcete používat přítomnost protokol SSL, můžete se vrátit k historických spravované implementaci SSL nastavením `$(AndroidTlsProvider)` vlastnost `legacy` (Další informace o nastavení vlastnosti sestavení najdete v tématu [procesu sestavení](~/android/deploy-test/building-apps/build-process.md)).
+
 
 ### <a name="programatically-using-androidclienthandler"></a>Programově pomocí `AndroidClientHandler`
 
-`Xamarin.Android.Net.AndroidClientHandler` Je `HttpMessageHandler` implementace speciálně pro Xamarin.Android. Instance této třídy použije nativního `java.net.URLConnection` implementace pro všechna připojení HTTP. To zajistí teoreticky zvýšení výkonu protokolu HTTP a menší velikosti APK.
+`Xamarin.Android.Net.AndroidClientHandler` Je `HttpMessageHandler` implementace speciálně pro Xamarin.Android.
+Instance této třídy použije nativního `java.net.URLConnection` implementace pro všechna připojení HTTP. To zajistí teoreticky zvýšení výkonu protokolu HTTP a menší velikosti APK.
 
 Tento fragment kódu je příklad toho, jak explicitně pro jednu instanci `HttpClient` třídy:
 
@@ -97,7 +116,7 @@ HttpClient client = new HttpClient(new Xamarin.Android.Net.AndroidClientHandler 
 ```
 
 > [!NOTE]
->  **Poznámka:**: základní zařízení s Androidem musí podporovat protokol TLS 1.2 (tj. Android 5.0 a novější)
+> Základní zařízení s Androidem musí podporovat protokol TLS 1.2 (tj. Android 5.0 a novější)
 
 
 ## <a name="ssltls-implementation-build-option"></a>Možnost sestavení implementace SSL/TLS.
@@ -106,11 +125,11 @@ Tato možnost projektu řídí, jaké základní knihovna TLS budou používat v
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Pole se seznamem implementaci protokolu TLS/SSL v sadě Visual Studio](http-stack-images/tls06-vs.png)](http-stack-images/tls05-vs.png)
+[![Pole se seznamem implementaci protokolu TLS/SSL v sadě Visual Studio](http-stack-images/tls06-vs.png)](http-stack-images/tls05-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Pole se seznamem implementaci protokolu TLS/SSL v sadě Visual Studio pro Mac](http-stack-images/tls06-xs.png)](http-stack-images/tls05-xs.png)
+[![Pole se seznamem implementaci protokolu TLS/SSL v sadě Visual Studio pro Mac](http-stack-images/tls06-xs.png)](http-stack-images/tls05-xs.png#lightbox)
 
 -----
 
@@ -132,8 +151,7 @@ Existují tři způsoby, že aplikace pro Xamarin.Android můžete řídit nasta
 2. Programově pomocí `Xamarin.Android.Net.AndroidClientHandler`.
 3. Deklarování proměnných prostředí (volitelné).
 
-Z těchto tří možností doporučený přístup je použití možností projektu Xamarin.Android deklarovat výchozí `HttpMessageHandler` a TLS pro celou aplikaci. Poté, v případě potřeby prostřednictvím kódu programu vytvořit instanci `Xamarin.Android.Net.AndroidClientHandler` objekty.
-Tyto možnosti jsou popsané výše.
+Z těchto tří možností doporučený přístup je použití možností projektu Xamarin.Android deklarovat výchozí `HttpMessageHandler` a TLS pro celou aplikaci. Poté, v případě potřeby prostřednictvím kódu programu vytvořit instanci `Xamarin.Android.Net.AndroidClientHandler` objekty. Tyto možnosti jsou popsané výše.
 
 Třetí možnost &ndash; použití proměnných prostředí &ndash; je popsáno níže.
 

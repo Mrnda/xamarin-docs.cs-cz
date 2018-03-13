@@ -7,17 +7,17 @@ ms.assetid: A3B6C041-4052-4E7D-999C-C4FA10BE3D67
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.openlocfilehash: fb74e0efd62c6347534e6f301953325bd4d378d2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/09/2018
+ms.openlocfilehash: 240fc917a154085a459c6612f68c8b71e3ef01bb
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="xamarin-for-java-developers"></a>Xamarin pro vývojáře v jazyce Java
 
 _Pokud jste vývojář Java, jste i na moct využívat znalosti a existující kód na platformě Xamarin při využívat kód znovu použít výhody jazyka C#. Zjistíte, že je velmi podobné Java syntaxe jazyka C# – syntaxe a že oba jazyky poskytují velmi podobné funkce. Kromě toho budete zjišťovat funkce, které jsou jedinečné pro C#, která se bude snazší vývoj webů._
 
-<a name="overview" />
 
 ## <a name="overview"></a>Přehled
 
@@ -91,7 +91,6 @@ Nakonec Xamarin umožňuje [využívat stávající prostředky Java](#interop) 
 Následující oddíly popisují základní "Začínáme" rozdíly mezi C# a Java; Další části popisuje objektově orientované rozdíly mezi tyto jazyky.
 
 
-<a name="assemblies" />
 
 ### <a name="libraries-vs-assemblies"></a>Knihovny vs. Sestavení
 
@@ -99,7 +98,6 @@ Java obvykle balíčky související třídy v **.jar** soubory. V jazyce C# a r
 
 Další informace o sestavení, najdete v článku webu MSDN [sestavení a globální mezipaměť sestavení](https://msdn.microsoft.com/en-us/library/ms173099.aspx) tématu.
 
-<a name="namespaces" />
 
 ### <a name="packages-vs-namespaces"></a>Balíčky vs. Jmenné prostory
 
@@ -111,7 +109,6 @@ namespace WeatherApp
     ...
 ```
 
-<a name="imports" />
 
 ### <a name="importing-types"></a>Import typy
 
@@ -146,7 +143,6 @@ using System.Threading.Tasks;
 Import funkce z těchto příkazů `System`, `Android.App`, `Android.Content`, obory názvů atd.
 
 
-<a name="generics" />
 
 ### <a name="generics"></a>Obecné typy
 
@@ -197,7 +193,6 @@ Existují však také několik důležitých rozdílů:
 -   C# používá syntaxi destruktor stylu C++ do express finalizační metody. Syntaxe se liší od jazyka Java `finalize` metoda, ale sémantiky jsou téměř stejné. (V jazyku C#, destruktory automaticky volána destruktor základní třídy &ndash; na rozdíl od Java kde explicitní volání `super.finalize` se používá.)
 
 
-<a name="inheritance" />
 
 ### <a name="class-inheritance"></a>Dědičnost tříd
 
@@ -251,7 +246,6 @@ Přístup k vlastnostem může být pro čtení a zápis, jen pro čtení, nebo 
 Další informace o vlastnosti jazyka C#, najdete v článku webu MSDN [vlastnosti](https://msdn.microsoft.com/en-us/library/x9fsa0sw.aspx) tématu.
 
 
-<a name="basemethods" />
 
 ### <a name="calling-base-class-methods"></a>Volání metody třídy Base
 
@@ -287,7 +281,6 @@ public class MainActivity : Activity
 V takovém případě `OnCreate` metoda definované v odvozené třídě (`MainActivity`) volání `OnCreate` metoda základní třídy (`Activity`).
 
 
-<a name="accessmodifiers" />
 
 ### <a name="access-modifiers"></a>Modifikátory přístupu
 
@@ -300,7 +293,6 @@ Java a C# obě podporu `public`, `private`, a `protected` přístup modifikátor
 Další informace o modifikátory přístupu C#, najdete v článku webu MSDN [modifikátory přístupu](https://msdn.microsoft.com/en-us/library/ms173121.aspx) tématu.
 
 
-<a name="virtualoverride" />
 
 ### <a name="virtual-and-override-methods"></a>Virtuální a přepište metody
 
@@ -792,7 +784,6 @@ Pokud máte existující funkce Java, které nechcete převést na C#, můžete 
 Další informace o těchto postupech najdete v tématu [Přehled integrace Java](~/android/platform/java-integration/index.md).
 
 
-<a name="further" />
 
 ## <a name="for-further-reading"></a>Pro další čtení
 
@@ -803,7 +794,6 @@ Stejně jako alespoň tolik informací znalost knihovny tříd Java jako znalost
 Až budete připraveni k řešení svůj první projekt Xamarin.Android v jazyce C#, naše [Hello, Android](~/android/get-started/hello-android/index.md) řady můžete sestavit svoji první aplikaci Xamarin.Android a další zálohy pochopení základy Android vývoj aplikací s funkcí Xamarin.
 
 
-<a name="summary" />
 
 ## <a name="summary"></a>Souhrn
 

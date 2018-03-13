@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: 011b6d184e55c9054a845d4922687b4565221859
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: bbbf3fb09edb802f1315977fb14ecfe154b2572f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="binding-a-jar"></a>Vytvoření vazby. JAR
 
@@ -75,7 +75,6 @@ Picasso.With (this)
 
 ```
 
-<a name="creating" />
 
 ### <a name="creating-the-bindings-library"></a>Vytvoření vazby knihovny
 
@@ -83,19 +82,19 @@ Před zahájením pomocí následujících kroků, stáhněte si prosím [picass
 
 Nejdřív vytvořte nový projekt knihovny vazby. V sadě Visual Studio pro Mac nebo Visual Studio, vytvořte nové řešení a vyberte *knihovna pro Android vazby* šablony. (Na snímcích obrazovky v tomto názorném postupu použijte sadu Visual Studio, ale je velmi podobný jako Visual Studio pro Mac.) Název řešení **JarBinding**: 
 
-[ ![Vytvoření projektu knihovny JarBinding](binding-a-jar-images/01-new-bindings-library-sml.png)](binding-a-jar-images/01-new-bindings-library.png)
+[![Vytvoření projektu knihovny JarBinding](binding-a-jar-images/01-new-bindings-library-sml.png)](binding-a-jar-images/01-new-bindings-library.png#lightbox)
 
 Šablona obsahuje **Jars** složku, kde můžete přidat vaše. JAR(s) na projekt knihovny vazby. Klikněte pravým tlačítkem myši **Jars** složky a vyberte **Přidat > existující položka**: 
 
-[ ![Přidat existující položku](binding-a-jar-images/02-add-existing-item-sml.png)](binding-a-jar-images/02-add-existing-item.png)
+[![Přidat existující položku](binding-a-jar-images/02-add-existing-item-sml.png)](binding-a-jar-images/02-add-existing-item.png#lightbox)
 
 Přejděte na **picasso 2.x.x.jar** předtím stáhli soubor, vyberte ho a klikněte na tlačítko **přidat**: 
 
-[ ![Vyberte soubor jar a klikněte na tlačítko Přidat](binding-a-jar-images/03-select-jar-file-sml.png)](binding-a-jar-images/03-select-jar-file.png)
+[![Vyberte soubor jar a klikněte na tlačítko Přidat](binding-a-jar-images/03-select-jar-file-sml.png)](binding-a-jar-images/03-select-jar-file.png#lightbox)
 
 Ověřte, zda **picasso 2.x.x.jar** soubor byl úspěšně přidán do projektu: 
 
-[ ![JAR přidat do projektu](binding-a-jar-images/04-jar-added-sml.png)](binding-a-jar-images/04-jar-added.png)
+[![JAR přidat do projektu](binding-a-jar-images/04-jar-added-sml.png)](binding-a-jar-images/04-jar-added.png#lightbox)
 
 Když vytvoříte projekt knihovny vazby Java, je nutné zadat zda. JAR je vložených v knihovně vazby nebo zabalené samostatně. K tomu, zadáte, jednu z následujících *akce sestavení*: 
 
@@ -107,19 +106,18 @@ Obvykle se používá **EmbeddedJar** akce sestavení tak, aby. JAR je automatic
 
 Nastavit akce sestavení na **EmbeddedJar**: 
 
-[ ![Vyberte akci EmbeddedJar sestavení](binding-a-jar-images/05-embeddedjar-sml.png)](binding-a-jar-images/05-embeddedjar.png)
+[![Vyberte akci EmbeddedJar sestavení](binding-a-jar-images/05-embeddedjar-sml.png)](binding-a-jar-images/05-embeddedjar.png#lightbox)
 
 Dále otevřete vlastnosti pro konfiguraci projektu *cílové rozhraní*. Pokud. JAR používá žádné rozhraní Android API, nastavte cílové rozhraní API úrovně. JAR očekává. Obvykle se na vývojáře. Soubor JAR označí, které rozhraní API na úrovni (nebo úrovně),. JAR je kompatibilní s. (Další informace o nastavení cílové rozhraní a úrovně rozhraní API systému Android v obecné najdete v tématu [Principy Android API úrovně](~/android/app-fundamentals/android-api-levels.md).)
 
 Nastavte úroveň cílové rozhraní API pro knihovnu vazby (v tomto příkladu používáme API úrovně 19): 
 
-[ ![Úroveň rozhraní API cíl nastavená na 19 rozhraní API](binding-a-jar-images/06-set-target-framework-sml.png)](binding-a-jar-images/06-set-target-framework.png)
+[![Úroveň rozhraní API cíl nastavená na 19 rozhraní API](binding-a-jar-images/06-set-target-framework-sml.png)](binding-a-jar-images/06-set-target-framework.png#lightbox)
 
 
 Nakonec sestavte knihovně vazby. I když některé zprávy upozornění, může se zobrazit, by měl projektu knihovny vazby sestavení úspěšně a vytvořit výstup. Knihovny DLL v následujícím umístění: **JarBinding/bin/Debug/JarBinding.dll**
     
 
-<a name="using" />
 
 ### <a name="using-the-bindings-library"></a>Použití knihovny vazby
 
@@ -133,19 +131,19 @@ V následujících krocích vytvoříme minimální aplikaci, která používá 
 
 Nejprve vytvořte novou aplikaci pro Xamarin.Android, který využívá knihovně vazby. Klikněte pravým tlačítkem na řešení a vyberte **přidat nový projekt**; název nového projektu **BindingTest**. Vytváříme tuto aplikaci ve stejném řešení jako vazby knihovny za účelem zjednodušení Tento názorný postup; aplikace, které zabírá knihovně vazby může, ale místo toho nacházet v jiné řešení: 
 
-[ ![Přidat nový projekt BindingTest](binding-a-jar-images/07-add-new-project-sml.png)](binding-a-jar-images/07-add-new-project.png)
+[![Přidat nový projekt BindingTest](binding-a-jar-images/07-add-new-project-sml.png)](binding-a-jar-images/07-add-new-project.png#lightbox)
 
 Klikněte pravým tlačítkem myši **odkazy** uzlu **BindingTest** projektu a vyberte **přidat odkaz na...** :
 
-[ ![Práva Přidat odkaz](binding-a-jar-images/08-add-reference.png)](binding-a-jar-images/08-add-reference.png)
+[![Práva Přidat odkaz](binding-a-jar-images/08-add-reference.png)](binding-a-jar-images/08-add-reference.png#lightbox)
 
 Zkontrolujte **JarBinding** projektu dříve vytvořili a klikněte na tlačítko **OK**:
 
-[ ![Vyberte projekt JarBinding](binding-a-jar-images/09-choose-jar-binding-sml.png)](binding-a-jar-images/09-choose-jar-binding.png)
+[![Vyberte projekt JarBinding](binding-a-jar-images/09-choose-jar-binding-sml.png)](binding-a-jar-images/09-choose-jar-binding.png#lightbox)
 
 Otevřete **odkazy** uzlu **BindingTest** projektu a ověřte, zda **JarBinding** nachází odkaz: 
 
-[ ![JarBinding se zobrazí pod odkazy](binding-a-jar-images/10-references-shows-jarbinding-sml.png)](binding-a-jar-images/10-references-shows-jarbinding.png)
+[![JarBinding se zobrazí pod odkazy](binding-a-jar-images/10-references-shows-jarbinding-sml.png)](binding-a-jar-images/10-references-shows-jarbinding.png#lightbox)
 
 Změnit **BindingTest** rozložení (**Main.axml**) tak, aby měl jeden `ImageView`:
 
@@ -191,11 +189,10 @@ public class MainActivity : Activity
 
 Zkompilování a spuštění **BindingTest** projektu. Aplikace bude spuštěna, a po chvíli trvat (v závislosti na stavu sítě), by měla stáhnout a zobrazit bitovou kopii podobně jako na následujícím snímku obrazovky:
 
-[ ![Snímek obrazovky BindingTest spuštěná](binding-a-jar-images/11-result-sml.png)](binding-a-jar-images/11-result.png)
+[![Snímek obrazovky BindingTest spuštěná](binding-a-jar-images/11-result-sml.png)](binding-a-jar-images/11-result.png#lightbox)
 
 Blahopřejeme! Úspěšně jste vázaný knihovna Java. JAR a použít ho v aplikaci Xamarin.Android.
  
-<a name="summary" />
  
 ## <a name="summary"></a>Souhrn
 

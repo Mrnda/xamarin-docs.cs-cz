@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/24/2017
-ms.openlocfilehash: d8fa54f23dfea063fa25f6e26e2df2c2ed82101e
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 9aa66a531b723f176b940ba35ee4e86eae711f7d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="collection-views"></a>Zobrazení kolekce
 
@@ -22,7 +22,7 @@ Při práci s C# a rozhraní .NET v aplikaci Xamarin.Mac, vývojář má příst
 
 A `NSCollectionView` zobrazí mřížku uspořádané pomocí dílčích zobrazení `NSCollectionViewLayout`. Je reprezentována každý dílčí zobrazení v mřížce `NSCollectionViewItem` které spravuje načítání zobrazení obsahu z `.xib` souboru.
 
-[ ![Příklad aplikace spustit](collection-view-images/intro01.png)](collection-view-images/intro01.png)
+[![Příklad aplikace spustit](collection-view-images/intro01.png)](collection-view-images/intro01.png#lightbox)
 
 Tento článek popisuje základní informace o práci s zobrazení kolekcí v aplikaci Xamarin.Mac. Vysoce navržený na spolupracovat [Hello, Mac](~/mac/get-started/hello-mac.md) článek nejprve, konkrétně [Úvod do Xcode a rozhraní tvůrce](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) a [výstupy a akce](~/mac/get-started/hello-mac.md#Outlets_and_Actions) oddíly, jak se popisuje klíčové koncepty a techniky, které se používají v tomto článku.
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: cf43cfe31811e91524af7894ea347e3dba784d92
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 52a9fc206a2c303d13d80be4de743d98056f7684
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="menus"></a>Nabídky
 
@@ -28,7 +28,7 @@ Nabídky jsou nedílnou součástí aplikace systému Mac uživatelské prostře
 - **Ukotvení nabídky** -nabídky pro každou aplikaci v ukotvení, se zobrazí, když uživatel klikne pravým tlačítkem myši nebo ovládací prvek klikne na ikonu aplikace nebo když uživatel left-clicks ikonu a obsahuje tlačítko myši směrem dolů.
 - **Rozevírací seznamy a automaticky otevírané okno tlačítko** -rozbalovací tlačítka zobrazí vybrané položky a zobrazí seznam možností, které lze vybírat při kliknutí na uživatelem. Rozevírací seznam je typ rozbalovací tlačítka obvykle slouží k výběru příkazy, které jsou specifické pro kontext aktuální úlohy. Obě může vyskytovat kdekoli v okně.
 
-[![Nabídce příklad](menu-images/intro01.png "nabídce příklad")](menu-images/intro01-large.png)
+[![Nabídce příklad](menu-images/intro01.png "nabídce příklad")](menu-images/intro01-large.png#lightbox)
 
 V tomto článku vám nabídneme základní informace o práci s pruhy nabídky kakao, nabídky a položek nabídky v aplikaci Xamarin.Mac. Vysoce navržený na spolupracovat [Hello, Mac](~/mac/get-started/hello-mac.md) článek nejprve, konkrétně [Úvod do Xcode a rozhraní tvůrce](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) a [výstupy a akce](~/mac/get-started/hello-mac.md#Outlets_and_Actions) oddíly, jak se popisuje klíčové koncepty a techniky, které budeme používat v tomto článku.
 
@@ -38,7 +38,7 @@ Můžete chtít podívejte se na [třídy vystavení jazyka C# nebo metody jazyk
 
 Na rozdíl od aplikace spuštěné na operačním systému Windows, kde každé okno může mít svůj vlastní řádek nabídek k němu připojen všechny aplikace běžící v systému macOS má jeden nabídek, které v horní části obrazovky, který se používá pro každý okna v této aplikaci:
 
-[![Panel nabídek](menu-images/appmenu01.png "řádku nabídek")](menu-images/appmenu01-large.png)
+[![Panel nabídek](menu-images/appmenu01.png "řádku nabídek")](menu-images/appmenu01-large.png#lightbox)
 
 Položky v této nabídce jsou aktivace nebo deaktivace na základě aktuálního kontextu nebo stav aplikace a jeho uživatelské rozhraní v každém okamžiku. Například: Pokud uživatel vybere textové pole, položky na **upravit** nabídky budou pocházet povoleno jako **kopie** a **Vyjmout**.
 
@@ -64,21 +64,21 @@ Vždy, když vytvoříte nový projekt Xamarin.Mac, automaticky získáte standa
 
 Dvakrát klikněte **Main.storyboard** soubor otevřete pro úpravy v Xcode na rozhraní tvůrce a vám bude nabídnuta rozhraní editoru nabídky:
 
-[![Úpravy uživatelského rozhraní v Xcode](menu-images/defaultbar01.png "úpravy uživatelského rozhraní v Xcode")](menu-images/defaultbar01-large.png)
+[![Úpravy uživatelského rozhraní v Xcode](menu-images/defaultbar01.png "úpravy uživatelského rozhraní v Xcode")](menu-images/defaultbar01-large.png#lightbox)
 
 Zde jsme můžete kliknutím na položky, jako **otevřete** položka nabídky v **soubor** nabídky a upravit nebo upravit jeho vlastnosti v **atributy Inspector**:
 
-[![Úpravy atributy z nabídky](menu-images/defaultbar02.png "úpravy atributy z nabídky")](menu-images/defaultbar02-large.png)
+[![Úpravy atributy z nabídky](menu-images/defaultbar02.png "úpravy atributy z nabídky")](menu-images/defaultbar02-large.png#lightbox)
 
 Budete se nám získat do přidávání, úpravy a odstranění nabídek a položky později v tomto článku. Pro teď my chceme jenom zobrazit jaké nabídky a položky nabídky jsou k dispozici ve výchozím nastavení a jak byli automaticky vystaveni kódu přes sadu předdefinovaných výstupy a akcí (Další informace najdete v našich [výstupy a akce](~/mac/get-started/hello-mac.md#Outlets_and_Actions) dokumentace).
 
 Například, pokud jsme klikněte na **připojení Inspector** pro **otevřete** položky nabídky, uvidíte je automaticky drátové až `openDocument:` akce: 
 
-[![Zobrazení připojené akce](menu-images/defaultbar03.png "zobrazení připojené akce")](menu-images/defaultbar03-large.png)
+[![Zobrazení připojené akce](menu-images/defaultbar03.png "zobrazení připojené akce")](menu-images/defaultbar03-large.png#lightbox)
 
 Pokud vyberete **první respondér** v **rozhraní hierarchie** a posuňte se dolů v **připojení Inspector**, a zobrazí se vám definice `openDocument:` Akce, **otevřete** položky nabídky je připojen k (spolu s několika další výchozí akce pro aplikaci a nejsou automaticky svázanou ovládací prvky):
 
-[![Zobrazení všech připojených akce](menu-images/defaultbar04.png "zobrazení všechny připojené akce")](menu-images/defaultbar04-large.png) 
+[![Zobrazení všech připojených akce](menu-images/defaultbar04.png "zobrazení všechny připojené akce")](menu-images/defaultbar04-large.png#lightbox) 
 
 Proč je to důležité? V další části uvidí, jak se tyto akce automaticky definované pracovat s další prvky uživatelského rozhraní kakao automaticky povolit a zakázat položky nabídky, jakož i, nabízí integrované funkce pro položky.
 
@@ -98,11 +98,11 @@ Při další položky nabídky, například **Vyjmout**, **kopie**, a **vložen�
 
 Pojďme zastavte aplikaci a dvakrát klikněte na **Main.storyboard** v soubor **Pad řešení** otevřete pro úpravy v Xcode je rozhraní tvůrce. V dalším kroku přetáhněte **textového zobrazení** z **knihovny** do okna řadiče zobrazení v **rozhraní editoru**:
 
-[![Výběr zobrazení textu v knihovně](menu-images/appmenu05.png "výběru zobrazení textu v knihovně")](menu-images/appmenu05-large.png)
+[![Výběr zobrazení textu v knihovně](menu-images/appmenu05.png "výběru zobrazení textu v knihovně")](menu-images/appmenu05-large.png#lightbox)
 
 V **Editor omezení** umožňuje připnout zobrazení textu okraje okna a nastavte ji kde zvětšování a zmenší se okno klepnutím na všechny čtyři red I světla v horní části editoru a na **přidat omezení 4** tlačítko:
 
-[![Úpravy omezení](menu-images/appmenu06.png "úpravy omezení")](menu-images/appmenu06-large.png)
+[![Úpravy omezení](menu-images/appmenu06.png "úpravy omezení")](menu-images/appmenu06-large.png#lightbox)
 
 Uloží změny do návrh uživatelského rozhraní a přepněte zpět sady Visual Studio pro Mac synchronizovat změny se Xamarin.Mac projektu. Nyní spusťte aplikaci, zadejte text do textového zobrazení, vyberte ho a otevřete **upravit** nabídky:
 
@@ -209,7 +209,7 @@ Když kliknete na **otevřete** tlačítko, zobrazí se zpráva naše výstrahy:
 
 Klíč řádku byl `[Export ("openDocument:")]`, sdělí `NSMenu` , naše **AppDelegate** má metodu `void OpenDialog (NSObject sender)` který reaguje na `openDocument:` akce. Pokud z výše, budete si vzpomenout **otevřete** položky nabídky je automaticky přes drátové sítě až tato akce ve výchozím nastavení v Tvůrci rozhraní:
 
-[![Zobrazení připojené akce](menu-images/defaultbar03.png "zobrazení připojené akce")](menu-images/defaultbar03-large.png)
+[![Zobrazení připojené akce](menu-images/defaultbar03.png "zobrazení připojené akce")](menu-images/defaultbar03-large.png#lightbox)
 
 Další Podíváme se na vytváření vlastní nabídky, položek nabídky a akce a reagovat na je v kódu.
 
@@ -453,7 +453,7 @@ Ovládací prvek klikněte na tlačítko a přetáhněte ji z položku nabídky 
 
 Uložte změny do scénáře a vrátit k sadě Visual Studio pro Mac, aby synchronizovat změny. Pokud spustíte aplikaci, položku nabídky, které jste připojeni k vlastní akci bude automaticky být povoleno nebo zakázáno (na základě okno s akcí se otevřít) a vyberete položku nabídky se aktivují vypnout akce:
 
-[![Testování nové akce](menu-images/action05.png "testování nové akce")](menu-images/action05-large.png)
+[![Testování nové akce](menu-images/action05.png "testování nové akce")](menu-images/action05-large.png#lightbox)
 
 <a name="Adding,_Editing_and_Deleting_Menus" />
 
@@ -465,7 +465,7 @@ V této části se podíváme na odebrání položky nabídky, které společnos
 
 Dvakrát klikněte **Main.storyboard** souboru v **řešení Pad** otevřete pro úpravy:
 
-[![Úpravy uživatelského rozhraní v Xcode](menu-images/maint01.png "úpravy uživatelského rozhraní v Xcode")](menu-images/maint01-large.png)
+[![Úpravy uživatelského rozhraní v Xcode](menu-images/maint01.png "úpravy uživatelského rozhraní v Xcode")](menu-images/maint01-large.png#lightbox)
 
 Pro naše konkrétní aplikaci Xamarin.Mac jsme nebudete používat výchozí **zobrazení** nabídky, přidáme ho odebrat. V **rozhraní hierarchie** vyberte **zobrazení** položky nabídky, která je součástí hlavní nabídce:
 
@@ -477,19 +477,19 @@ Stiskněte delete nebo backspace k odstranění v nabídce. V dalším kroku jsm
 
 Přetáhněte na nadřazené položky **nabídky** podnabídce tam, kde právě jsou:
 
-[![Přetahování položek nabídky do nabídky nadřazené](menu-images/maint04.png "přetahování položek nabídky do nadřazené nabídky")](menu-images/maint04-large.png)
+[![Přetahování položek nabídky do nabídky nadřazené](menu-images/maint04.png "přetahování položek nabídky do nadřazené nabídky")](menu-images/maint04-large.png#lightbox)
 
 Vaše nabídky by teď měl vypadat podobně jako:
 
-[![Položky v novém umístění](menu-images/maint05.png "položky v novém umístění")](menu-images/maint05-large.png)
+[![Položky v novém umístění](menu-images/maint05.png "položky v novém umístění")](menu-images/maint05-large.png#lightbox)
 
 Další umožňuje přetáhněte **Text** dílčí nabídky se z v části **formátu** nabídky a umístěte ji na hlavním panelu nabídek mezi **formátu** a **okno** nabídky:
 
-[![V nabídce Text](menu-images/maint06.png "nabídky textu")](menu-images/maint06-large.png)
+[![V nabídce Text](menu-images/maint06.png "nabídky textu")](menu-images/maint06-large.png#lightbox)
 
 Přejděte zpět v části **formátu** nabídce a odstranění **písma** položku dílčí nabídky. Potom vyberte **formát** nabídky a přejmenujte ji "Font":
 
-[![V nabídce písma](menu-images/maint07.png "písma nabídce")](menu-images/maint07-large.png)
+[![V nabídce písma](menu-images/maint07.png "písma nabídce")](menu-images/maint07-large.png#lightbox)
 
 V dalším kroku vytvoříme vlastní nabídky předdefinované frází, které automaticky získat, připojí k text v zobrazení textu když je tato možnost vybrána. Do vyhledávacího pole v dolní části na **knihovny Inspector** typu v "nabídku." To znamená, že snadno najít a pracovat s všechny prvky uživatelského rozhraní nabídky:
 
@@ -502,42 +502,42 @@ Nyní Pojďme vytvořit naše nabídku pomocí následujícího postupu:
     ![Když vyberete novou položku nabídky v knihovně](menu-images/maint10.png "vyberete novou položku nabídky v knihovně")
 2. Přejmenujte položku "Frází": 
 
-    [![Název nabídky nastavení](menu-images/maint09.png "nastavení název nabídky")](menu-images/maint09-large.png)
+    [![Název nabídky nastavení](menu-images/maint09.png "nastavení název nabídky")](menu-images/maint09-large.png#lightbox)
 3. Další přetáhněte **nabídky** z **knihovny Inspector**: 
 
     ![Výběr nabídky z knihovny](menu-images/maint11.png "výběrem nabídky z knihovny")
 4. Pak vyřadit **nabídky** na novém **položky nabídky** jsme právě vytvořili a změnit její název "Frází": 
 
-    [![Úpravy název nabídky](menu-images/maint12.png "úpravy název nabídky")](menu-images/maint12-large.png)
+    [![Úpravy název nabídky](menu-images/maint12.png "úpravy název nabídky")](menu-images/maint12-large.png#lightbox)
 5. Nyní Pojďme přejmenovat tři výchozí **položky nabídky** "Address", "Data" a "S pozdravem": 
 
-    [![V nabídce frází](menu-images/maint13.png "frází nabídce")](menu-images/maint13-large.png)
+    [![V nabídce frází](menu-images/maint13.png "frází nabídce")](menu-images/maint13-large.png#lightbox)
 6. Přidejme čtvrtý **položky nabídky** tak, že přetáhnete **položky nabídky** z **knihovny Inspector** a volání metody "Podpis": 
 
-    [![Úprava názvu](menu-images/maint14.png "úpravy název položky nabídky")](menu-images/maint14-large.png)
+    [![Úprava názvu](menu-images/maint14.png "úpravy název položky nabídky")](menu-images/maint14-large.png#lightbox)
 7. Uložte změny do panelu nabídek.
 
 Nyní vytvoříme sadu vlastní akce, aby naše nové položky nabídky se zveřejňují pro kód C#. V Xcode umožňuje přepnout **pomocníka** zobrazení:
 
-[![Vytváření akce požadované](menu-images/maint15.png "vytváření požadované akce")](menu-images/maint15-large.png)
+[![Vytváření akce požadované](menu-images/maint15.png "vytváření požadované akce")](menu-images/maint15-large.png#lightbox)
 
 Pojďme postupujte takto:
 
 1. Přetáhněte ovládací prvek z **adresu** položku nabídky **AppDelegate.h** souboru.
 2. Přepínač **připojení** typ **akce**: 
 
-    [![Výběr typu akce](menu-images/maint17.png "vyberete typ akce")](menu-images/maint17-large.png)
+    [![Výběr typu akce](menu-images/maint17.png "vyberete typ akce")](menu-images/maint17-large.png#lightbox)
 3. Zadejte **název** "phraseAddress" a stiskněte klávesu **Connect** tlačítko pro vytvoření nové akce: 
 
-    [![Konfigurace akce](menu-images/maint18.png "konfigurace akce")](menu-images/maint18-large.png)
+    [![Konfigurace akce](menu-images/maint18.png "konfigurace akce")](menu-images/maint18-large.png#lightbox)
 4. Zopakujte výše uvedené kroky pro **datum**, **s pozdravem**, a **podpis** položky nabídky: 
 
-    [![Dokončených akcí](menu-images/maint19.png "dokončených akcí")](menu-images/maint19-large.png)
+    [![Dokončených akcí](menu-images/maint19.png "dokončených akcí")](menu-images/maint19-large.png#lightbox)
 5. Uložte změny do panelu nabídek.
 
 Dále je potřeba vytvořit výstupu pro naše textového zobrazení, takže jsme můžete upravit jeho obsah z kódu. Vyberte **ViewController.h** v soubor **pomocníka Editor** a vytvořit nové výstupu názvem `documentText`:
 
-[![Vytváření výstupu](menu-images/maint20.png "vytváření výstupu")](menu-images/maint20-large.png)
+[![Vytváření výstupu](menu-images/maint20.png "vytváření výstupu")](menu-images/maint20-large.png#lightbox)
 
 Vraťte se k Visual Studio pro Mac synchronizaci změn z Xcode. Dále upravit **ViewController.cs** souboru a nastavit jej vypadat třeba takto:
 
@@ -895,36 +895,36 @@ Kontextové nabídky se zobrazí, když uživatel klikne pravým tlačítkem my�
 
 Umožňuje upravit naše **Main.storyboard** souboru v Xcode a přidejte **okno** okna naše návrhu, nastavte jeho **– třída** na "NSPanel" v **Identity Inspector**, přidejte nový **pomocníka** položkou **okno** nabídce a jeho připojení k nové okno pomocí **zobrazit Segue**:
 
-[![Nastavení typu segue](menu-images/context01.png "segue typ nastavení")](menu-images/context01-large.png)
+[![Nastavení typu segue](menu-images/context01.png "segue typ nastavení")](menu-images/context01-large.png#lightbox)
 
 Pojďme postupujte takto:
 
 1. Přetáhněte **popisek** z **knihovny Inspector** na **Panel** okno a nastavit jeho text na "Vlastnost": 
 
-    [![Úpravy hodnotu popisku](menu-images/context03.png "úpravy hodnotu popisku")](menu-images/context03-large.png)
+    [![Úpravy hodnotu popisku](menu-images/context03.png "úpravy hodnotu popisku")](menu-images/context03-large.png#lightbox)
 2. Další přetáhněte **nabídky** z **knihovny Inspector** do řadiče zobrazení v zobrazení hierarchie a přejmenování tří položek nabídky výchozí **dokumentu**, **textu**  a **písma**:
 
-    [![Položky nabídky požadované](menu-images/context02.png "položky požadované nabídky")](menu-images/context02-large.png)
+    [![Položky nabídky požadované](menu-images/context02.png "položky požadované nabídky")](menu-images/context02-large.png#lightbox)
 3. Ovládací prvek nyní přetažení z **vlastnost popisek** na **nabídky**:
 
-    [![Přetažení k vytvoření segue](menu-images/context04.png "přetažení k vytvoření segue")](menu-images/context04-large.png)
+    [![Přetažení k vytvoření segue](menu-images/context04.png "přetažení k vytvoření segue")](menu-images/context04-large.png#lightbox)
 4. Z tohoto dialogového okna místní vyberte **nabídky**: 
 
     ![Nastavení typu segue](menu-images/context05.png "segue typ nastavení")
 5. Z **Identity Inspector**, nastavte řadič zobrazení třídy "PanelViewController": 
 
-    [![Nastavení třídy segue](menu-images/context10.png "nastavení segue – třída")](menu-images/context10-large.png)
+    [![Nastavení třídy segue](menu-images/context10.png "nastavení segue – třída")](menu-images/context10-large.png#lightbox)
 6. Přepněte zpět na Visual Studio pro Mac k synchronizaci a vraťte se do rozhraní tvůrce.
 7. Přepnout **pomocníka Editor** a vyberte **PanelViewController.h** souboru.
 8. Vytvoří akci pro **dokumentu** položky nabídky názvem `propertyDocument`: 
 
-    [![Konfigurace akce](menu-images/context06.png "konfigurace akce")](menu-images/context06-large.png)
+    [![Konfigurace akce](menu-images/context06.png "konfigurace akce")](menu-images/context06-large.png#lightbox)
 9. Pro zbývající položky nabídky opakujte vytváření akce: 
 
-    [![Akce požadované](menu-images/context07.png "požadované akce")](menu-images/context07-large.png)
+    [![Akce požadované](menu-images/context07.png "požadované akce")](menu-images/context07-large.png#lightbox)
 10. Nakonec vytvořte výstupu pro **vlastnost popisek** názvem `propertyLabel`: 
 
-    [![Konfigurace výstupu](menu-images/context08.png "konfigurace výstupu")](menu-images/context08-large.png)
+    [![Konfigurace výstupu](menu-images/context08.png "konfigurace výstupu")](menu-images/context08-large.png#lightbox)
 11. Uložte změny a vrátit k sadě Visual Studio pro Mac k synchronizaci s Xcode.
 
 Upravit **PanelViewController.cs** souboru a přidejte následující kód:
@@ -1013,26 +1013,26 @@ Umožňuje vytvořit vlastní ukotvení nabídku pro naši aplikaci následujíc
     ![Přidání definice prázdného rozhraní](menu-images/dock02.png "přidání definice prázdného rozhraní")
 2. V **řešení Pad**, dvakrát klikněte **DockMenu.xib** soubor otevřete pro úpravy v Xcode. Vytvořte novou **nabídky** s následující položky: **adresu**, **datum**, **s pozdravem**, a **podpisu** 
 
-    [![Rozložení rozhraní](menu-images/dock03.png "rozložení uživatelského rozhraní")](menu-images/dock03-large.png)
+    [![Rozložení rozhraní](menu-images/dock03.png "rozložení uživatelského rozhraní")](menu-images/dock03-large.png#lightbox)
 3. Dále umožňuje připojení k naší existující akce, které jsme vytvořili pro naše vlastní nabídky v naší nové položky nabídky [přidání, úpravy a odstraňování nabídky](#Adding,_Editing_and_Deleting_Menus) část výše. Přepnout **připojení Inspector** a vyberte **první respondér** v **rozhraní hierarchie**. Posuňte se dolů a najděte `phraseAddress:` akce. Přetáhněte řádek z kruhu na této akce **adresu** položky nabídky:
 
-    [![Přetahování k přenosu až akce](menu-images/dock04.png "přetahování k přenosu až akce")](menu-images/dock04-large.png)
+    [![Přetahování k přenosu až akce](menu-images/dock04.png "přetahování k přenosu až akce")](menu-images/dock04-large.png#lightbox)
 4. Opakujte pro všechny ostatní položky nabídky jejich připojením k jejich odpovídající akce: 
 
-    [![Akce požadované](menu-images/dock05.png "požadované akce")](menu-images/dock05-large.png)
+    [![Akce požadované](menu-images/dock05.png "požadované akce")](menu-images/dock05-large.png#lightbox)
 5. Potom vyberte **aplikace** v **rozhraní hierarchie**. V **připojení Inspector**, přetáhněte řádek z kruhu na `dockMenu` výstupu do nabídky jsme právě vytvořili:
 
-    [![Přetahování přenosová až výstupu](menu-images/dock06.png "přetahování přenosová až výstupu")](menu-images/dock06-large.png)
+    [![Přetahování přenosová až výstupu](menu-images/dock06.png "přetahování přenosová až výstupu")](menu-images/dock06-large.png#lightbox)
 6. Uložte změny a přepněte zpět na Visual Studio pro Mac k synchronizaci s Xcode.
 7. Dvakrát klikněte **Info.plist** soubor otevřete pro úpravy: 
 
-    [![Úpravy souboru Info.plist](menu-images/dock07.png "úprav souboru Info.plist")](menu-images/dock07-large.png)
+    [![Úpravy souboru Info.plist](menu-images/dock07.png "úprav souboru Info.plist")](menu-images/dock07-large.png#lightbox)
 8. Klikněte **zdroj** karta v dolní části obrazovky: 
 
-    [![Výběr zobrazení zdroje](menu-images/dock08.png "výběr zobrazení zdroje")](menu-images/dock08-large.png)
+    [![Výběr zobrazení zdroje](menu-images/dock08.png "výběr zobrazení zdroje")](menu-images/dock08-large.png#lightbox)
 9. Klikněte na tlačítko **přidat novou položku**, klikněte na zelenou a tlačítko, nastavte název vlastnosti do "AppleDockMenu" a hodnota, která má "DockMenu" (název souboru naší nové .xib bez přípony): 
 
-    [![Přidání položky DockMenu](menu-images/dock09.png "přidání položky DockMenu")](menu-images/dock09-large.png)
+    [![Přidání položky DockMenu](menu-images/dock09.png "přidání položky DockMenu")](menu-images/dock09-large.png#lightbox)
 
 Nyní když jsme spuštění aplikace a klikněte pravým tlačítkem na ikonu na ukotvení, bude zobrazena naší nové položky nabídky:
 
@@ -1050,16 +1050,16 @@ Umožňuje vytvořit vlastní místní tlačítko pro naši aplikaci následují
 
 1. Upravit **Main.storyboard** souboru v Xcode a přetáhněte **tlačítko místní** z **knihovny Inspector** do **Panel** okno jsme vytvořili v [kontextové nabídky](#Contextual_Menus) části: 
 
-    [![Přidání tlačítka místní](menu-images/popup01.png "přidání tlačítka automaticky otevřeném okně.")](menu-images/popup01-large.png)
+    [![Přidání tlačítka místní](menu-images/popup01.png "přidání tlačítka automaticky otevřeném okně.")](menu-images/popup01-large.png#lightbox)
 2. Přidat novou položku nabídky a nastavit názvy položek v automaticky otevřeném okně na: **adresu**, **datum**, **s pozdravem**, a **podpisu** 
 
-    [![Konfigurace položky nabídky](menu-images/popup02.png "konfigurace položky nabídky")](menu-images/popup02-large.png)
+    [![Konfigurace položky nabídky](menu-images/popup02.png "konfigurace položky nabídky")](menu-images/popup02-large.png#lightbox)
 3. Dále umožňuje připojení k existující akce, které jsme vytvořili pro naše vlastní nabídky v naší nové položky nabídky [přidání, úpravy a odstraňování nabídky](#Adding,_Editing_and_Deleting_Menus) část výše. Přepnout **připojení Inspector** a vyberte **první respondér** v **rozhraní hierarchie**. Posuňte se dolů a najděte `phraseAddress:` akce. Přetáhněte řádek z kruhu na této akce **adresu** položky nabídky: 
 
-    [![Přetahování k přenosu až akce](menu-images/popup03.png "přetahování k přenosu až akce")](menu-images/popup03-large.png)
+    [![Přetahování k přenosu až akce](menu-images/popup03.png "přetahování k přenosu až akce")](menu-images/popup03-large.png#lightbox)
 4. Opakujte pro všechny ostatní položky nabídky jejich připojením k jejich odpovídající akce: 
 
-    [![Všechny požadované akce](menu-images/popup04.png "všechny požadované akce")](menu-images/popup04-large.png)
+    [![Všechny požadované akce](menu-images/popup04.png "všechny požadované akce")](menu-images/popup04-large.png#lightbox)
 5. Uložte změny a přepněte zpět na Visual Studio pro Mac k synchronizaci s Xcode.
 
 Nyní když jsme spuštění aplikace a z místní nabídce vyberte položku, se změní textu v našem textového zobrazení:

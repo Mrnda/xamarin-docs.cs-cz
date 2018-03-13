@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 2a10c161c49e7cd0d45d29522a98c0dc78f7adb7
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 702a5986c9249eec38868895f55ef6f63b534b9b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="tab-bars-and-tab-bar-controllers"></a>Karta řádky a řadiče posuvníku
 
@@ -42,7 +42,7 @@ Chcete-li získat představu o tom, jak pracovat `UITabBarController`, projděme
 
 V tomto návodu vytvoříme vytvořit následující aplikace:
 
-[ ![](creating-tabbed-applications-images/00-app.png "Ukázkové aplikace s kartami")](creating-tabbed-applications-images/00-app.png)
+[![](creating-tabbed-applications-images/00-app.png "Ukázkové aplikace s kartami")](creating-tabbed-applications-images/00-app.png#lightbox)
 
 I když už není k dispozici v sadě Visual Studio pro Mac, v tomto příkladu šablonu záložkách aplikace, vytvoříme z prázdného projektu k získání lepší pochopení, jak je vytvořený aplikace fungovat.
 
@@ -55,9 +55,9 @@ Začněme tím, že vytvoříte novou aplikaci.
 
 Vyberte **soubor > Nový > řešení** položky nabídky v sadě Visual Studio pro Mac a vyberte **iOS > aplikace > prázdný projekt** šablony, název projektu `TabbedApplication`, jak je uvedeno níže:
 
-[ ![](creating-tabbed-applications-images/newsolution1.png "Vyberte šablonu, prázdný projekt")](creating-tabbed-applications-images/newsolution1.png)
+[![](creating-tabbed-applications-images/newsolution1.png "Vyberte šablonu, prázdný projekt")](creating-tabbed-applications-images/newsolution1.png#lightbox)
 
-[ ![](creating-tabbed-applications-images/newsolution2.png "Název projektu TabbedApplication")](creating-tabbed-applications-images/newsolution2.png)
+[![](creating-tabbed-applications-images/newsolution2.png "Název projektu TabbedApplication")](creating-tabbed-applications-images/newsolution2.png#lightbox)
 
 
 
@@ -65,7 +65,7 @@ Vyberte **soubor > Nový > řešení** položky nabídky v sadě Visual Studio p
 
 Dál přidejte třídu prázdný výběrem **soubor > Nový soubor** a výběr **Obecné: prázdné třídy** šablony. Název souboru `TabController` jak je uvedeno níže:
 
-[ ![](creating-tabbed-applications-images/02-newclass.png "Přidání třídy TabController")](creating-tabbed-applications-images/02-newclass.png)
+[![](creating-tabbed-applications-images/02-newclass.png "Přidání třídy TabController")](creating-tabbed-applications-images/02-newclass.png#lightbox)
 
 `TabController` Třída bude obsahovat implementace `UITabBarController` který budou spravovat pole `UIViewControllers`. Když uživatel vybere na kartě `UITabBarController` se postará o prezentací zobrazení pro řadič odpovídající zobrazení.
 
@@ -113,7 +113,7 @@ namespace TabbedApplication {
 
 Všimněte si, že se pro každou `UIViewController` instance, nastaví `Title` vlastnost `UIViewController`. Když jsou přidány na řadiče do `UITabBarController`, `UITabBarController` , bude číst `Title` pro každý kontroler a zobrazit na kartě přidružené popisek, jak je uvedeno níže:
 
-[ ![](creating-tabbed-applications-images/00-app.png "Ukázková aplikace spustit")](creating-tabbed-applications-images/00-app.png)
+[![](creating-tabbed-applications-images/00-app.png "Ukázková aplikace spustit")](creating-tabbed-applications-images/00-app.png#lightbox)
 
 #### <a name="setting-the-tabcontroller-as-the-rootviewcontroller"></a>Nastavení TabController jako RootViewController
 
@@ -144,7 +144,7 @@ Chcete-li získat `UITabController` načíst jako první obrazovce, potřebujeme
 
 Pokud jsme aplikaci teď spustit `UITabBarController` načte první kartě ve výchozím nastavení zaškrtnuto. Výběrem libovolné ostatní karty má za následek přidruženého kontroleru zobrazení se předložený `UITabBarController,` jak je uvedeno níže, kde má koncový uživatel vybrané kartě druhý:
 
-[ ![](creating-tabbed-applications-images/03-secondtab.png "Druhý karta ukazuje")](creating-tabbed-applications-images/03-secondtab.png)
+[![](creating-tabbed-applications-images/03-secondtab.png "Druhý karta ukazuje")](creating-tabbed-applications-images/03-secondtab.png#lightbox)
 
  <a name="Modifying_TabBarItems" />
 
@@ -185,7 +185,7 @@ tab2.View.BackgroundColor = UIColor.Orange;
 
 Ve výše uvedeném kódu předpokládá image s názvem `second.png` byla přidána do kořenového adresáře projektu v sadě Visual Studio for Mac. Jsme přidali ve skutečnosti tři bitové kopie do našich projektu, tak, aby pokrývalo řešení všech zařízení, jak je uvedeno níže:
 
- [ ![](creating-tabbed-applications-images/tabbedimages7new.png "Bitové kopie, přidány do projektu")](creating-tabbed-applications-images/tabbedimages7new.png)
+ [![](creating-tabbed-applications-images/tabbedimages7new.png "Bitové kopie, přidány do projektu")](creating-tabbed-applications-images/tabbedimages7new.png#lightbox)
 
 Obrázek karty musí být 30 × 30 png s průhlednost pro normální překlad IP adres 60 x 60 pro s vysokým rozlišením a 90 x 90 pro iPhone 6 Plus řešení. V našem kódu, musíme pouze načíst soubor s názvem `second.png` a iOS se automaticky načte vysokým rozlišením, jeden v zařízeních s sítnice zobrazení. Další informace najdete v [práce s obrázky](~/ios/app-fundamentals/images-icons/index.md) příručky. Ve výchozím nastavení jsou položky panelu karta šedá s blue odstín při výběru.
 
@@ -193,13 +193,13 @@ Obrázek karty musí být 30 × 30 png s průhlednost pro normální překlad IP
 
 Výše uvedené Image také lze přidat do **prostředky** adresáři, který je speciální adresář, jejichž obsah se automaticky zkopírují do kořenového adresáře aplikace sady:
 
-[ ![](creating-tabbed-applications-images/tabbedapplication8.png "Bitové kopie jako prostředky")](creating-tabbed-applications-images/tabbedapplication8.png)
+[![](creating-tabbed-applications-images/tabbedapplication8.png "Bitové kopie jako prostředky")](creating-tabbed-applications-images/tabbedapplication8.png#lightbox)
 
 Kromě toho když nastaví `Title` vlastnost přímo na `TabBarItem`, ho by se mělo přepsat žádnou hodnotu pro nastavit `Title` na samotný řadič.
 
 Při spuštění aplikace nyní jsme druhý karta ukazuje naše vlastní název a bitové kopie jak je uvedeno níže:
 
-[ ![](creating-tabbed-applications-images/05-customtab.png "Na druhé kartu s čtvercovou ikonu")](creating-tabbed-applications-images/05-customtab.png)
+[![](creating-tabbed-applications-images/05-customtab.png "Na druhé kartu s čtvercovou ikonu")](creating-tabbed-applications-images/05-customtab.png#lightbox)
 
  <a name="Setting_the_Badge_Value" />
 
@@ -214,7 +214,7 @@ tab3.TabBarItem.BadgeValue = "Hi";
 
 Spuštění to výsledkem red štítek s řetězec "Hi" v levém horním rohu na kartě, jak je uvedeno níže:
 
-[ ![](creating-tabbed-applications-images/06-badge.png "Na druhé kartu s HIS použití oznámení")](creating-tabbed-applications-images/06-badge.png)
+[![](creating-tabbed-applications-images/06-badge.png "Na druhé kartu s HIS použití oznámení")](creating-tabbed-applications-images/06-badge.png#lightbox)
 
 Oznámení "BADGE" se často používá k zobrazení se číslo označením nepřečtená, nové položky. Chcete-li odebrat oznámení, nastavte `BadgeValue` na hodnotu null, jak je uvedeno níže:
 
@@ -236,7 +236,7 @@ V předchozím příkladu jsme vám ukázal, jak pracovat `UITabBarController` k
 
 V tomto scénáři úvodní obrazovka načte z kontroler, který není `UITabBarController`. Když uživatel pracuje s obrazovky klepnutím na tlačítko, do budou načteny stejného řadiče zobrazení `UITabBarController`, který se předloží uživateli. Následující snímek obrazovky zobrazuje tok aplikace:
 
-[ ![](creating-tabbed-applications-images/inital-screen-application.png "Tento snímek obrazovky ukazuje toku aplikace")](creating-tabbed-applications-images/inital-screen-application.png)
+[![](creating-tabbed-applications-images/inital-screen-application.png "Tento snímek obrazovky ukazuje toku aplikace")](creating-tabbed-applications-images/inital-screen-application.png#lightbox)
 
 Začněme nové aplikace v tomto příkladu. Znovu, použijeme **iPhone > aplikace > prázdný projekt (C#)** šablony, tentokrát pojmenování projektu `InitialScreenDemo`.
 
@@ -249,14 +249,14 @@ V tomto příkladu budeme potřebovat scénáře pro uložení naše řadiče zo
 
 Umožňuje volání této nové scénáře **MainStoryboard** , jak je uvedeno dále: 
 
-[ ![](creating-tabbed-applications-images/new-file-dialog.png "Přidejte soubor MainStoryboard do projektu")](creating-tabbed-applications-images/new-file-dialog.png)
+[![](creating-tabbed-applications-images/new-file-dialog.png "Přidejte soubor MainStoryboard do projektu")](creating-tabbed-applications-images/new-file-dialog.png#lightbox)
 
 Existuje několik důležitých kroků, které při přidávání scénáře do souboru dříve scénáře, které jsou popsané v pamatujte [Úvod do scénářů](~/ios/user-interface/storyboards/index.md) průvodce. Jsou to:
 
  
 1. Přidání názvu Storyboard k **hlavní rozhraní** části `Info.plist`:
 
-    [![](creating-tabbed-applications-images/project-options.png "Nastavte hlavní rozhraní na MainStoryboard")](creating-tabbed-applications-images/project-options.png)
+    [![](creating-tabbed-applications-images/project-options.png "Nastavte hlavní rozhraní na MainStoryboard")](creating-tabbed-applications-images/project-options.png#lightbox)
 1. Ve vašem `App Delegate`, přepsat metodu okno s následujícím kódem:
 
     ```csharp
@@ -270,11 +270,11 @@ Budeme potřebovat tři řadiče zobrazení v tomto příkladu. Jeden, s názvem
 
 Otevřete návrháře dvojím kliknutím na soubor MainStoryboard.storyboard a přetáhněte tři řadiče zobrazení na návrhovou plochu. Každý z těchto zobrazení řadičů do mají své vlastní třídu odpovídající se jménem uvedeným výše, chceme Ano, v části **Identity > třída**, zadejte jeho název, jak ukazuje následující snímek obrazovky:
 
-[ ![](creating-tabbed-applications-images/class-name.png "Nastavit třídy na ViewController1")](creating-tabbed-applications-images/class-name.png)
+[![](creating-tabbed-applications-images/class-name.png "Nastavit třídy na ViewController1")](creating-tabbed-applications-images/class-name.png#lightbox)
 
 Visual Studio pro Mac automaticky vygeneruje třídy a návrháře soubory potřebné, to se zobrazí v panelu pro řešení, jak je uvedeno dále:
 
-[ ![](creating-tabbed-applications-images/solution-pad2.png "Automaticky generované soubory v projektu")](creating-tabbed-applications-images/solution-pad2.png)
+[![](creating-tabbed-applications-images/solution-pad2.png "Automaticky generované soubory v projektu")](creating-tabbed-applications-images/solution-pad2.png#lightbox)
 
  <a name="Creating_the_UI" />
 
@@ -291,11 +291,11 @@ Chceme přetáhněte `Label` a `Button` do ViewController1 z **sada nástrojů**
 
 Jsme řízení viditelnost v našem tlačítko `TouchUpInside` událostí a budeme muset na ni odkazuje v kódu. Umožňuje určit její **název** `aButton` v panelu pro vlastnosti, jak je znázorněno na následujícím snímku obrazovky:
 
-[ ![](creating-tabbed-applications-images/abutton-properties.png "Nastavte název na aButton v panelu pro vlastnosti")](creating-tabbed-applications-images/abutton-properties.png)
+[![](creating-tabbed-applications-images/abutton-properties.png "Nastavte název na aButton v panelu pro vlastnosti")](creating-tabbed-applications-images/abutton-properties.png#lightbox)
 
 Návrhové ploše by teď měl vypadat podobně jako tento snímek obrazovky:
 
-[ ![](creating-tabbed-applications-images/design-surface1.png "Návrhové ploše by teď měl vypadat podobně jako tento snímek obrazovky")](creating-tabbed-applications-images/design-surface1.png)
+[![](creating-tabbed-applications-images/design-surface1.png "Návrhové ploše by teď měl vypadat podobně jako tento snímek obrazovky")](creating-tabbed-applications-images/design-surface1.png#lightbox)
 
 Přidejme trochu podrobněji k `ViewController2` a `ViewController3`, přidáním štítek pro každé a změna text na 'Dva' a 'Tři' v uvedeném pořadí. To ukazuje uživateli kartě nebo zobrazení, které jsme prohlížení.
 
@@ -305,7 +305,7 @@ Vytvoříme načíst `ViewController1` při prvním spuštění aplikace. Když 
 
 Když uživatel uvolní `aButton`, chceme TouchUpInside událostí až se spustí. Umožňuje vybrat tlačítko a v **kartu události** plocha vlastnosti deklarovat obslužná rutina události – `InitialActionCompleted` – tak může být uvedené v kódu. To je znázorněno v následující snímek obrazovky:
 
-[ ![](creating-tabbed-applications-images/event-handler.png "Když uživatel uvolní aButton, aktivuje událost TouchUpInside")](creating-tabbed-applications-images/event-handler.png)
+[![](creating-tabbed-applications-images/event-handler.png "Když uživatel uvolní aButton, aktivuje událost TouchUpInside")](creating-tabbed-applications-images/event-handler.png#lightbox)
 
 Nyní potřebujeme říct řadiče zobrazení skrýt tlačítko při aktivuje událost `InitialActionCompleted`. V `ViewController1`, přidejte následující metodu částečné:
 
@@ -324,7 +324,7 @@ Nyní je k dispozici naše počáteční zobrazení funguje podle očekávání.
 
 V **sada nástrojů**, vyhledejte **kartě panelu řadiče** pod řadiče & objekty a přetáhněte to na návrhovou plochu. Jak vidíte na tomto snímku obrazovky, je na kartě panelu řadič bez uživatelského rozhraní a proto přináší dva řadiče zobrazení s ním ve výchozím nastavení:
 
-[ ![](creating-tabbed-applications-images/tabbarcontroller.png "Přidávání řadiče panelu karta k rozložení")](creating-tabbed-applications-images/tabbarcontroller.png)
+[![](creating-tabbed-applications-images/tabbarcontroller.png "Přidávání řadiče panelu karta k rozložení")](creating-tabbed-applications-images/tabbarcontroller.png#lightbox)
 
 Odstraňte tyto nové řadiče zobrazení výběrem černým panelu v dolní a stisknutím klávesy odstranit.
 
@@ -334,15 +334,15 @@ V našem scénáři používáme k Segues pro zpracování přechodů mezi TabBa
  
 Nastavit všechny naše karty **Ctrl + kliknutí** z TabBarController ke každému z našich řadiče zobrazení v pořadí od jedné do tří a vyberte vztah **kartě** z kontextové nabídky, jak je uvedeno dále:
 
-[ ![](creating-tabbed-applications-images/context-menu.png "Vyberte kartu vztah")](creating-tabbed-applications-images/context-menu.png)
+[![](creating-tabbed-applications-images/context-menu.png "Vyberte kartu vztah")](creating-tabbed-applications-images/context-menu.png#lightbox)
 
 Vaše scénáře by měl vypadat na následující snímek obrazovky:
 
-[ ![](creating-tabbed-applications-images/segue-layout.png "Scénáři by měl vypadat podobně jako tento snímek obrazovky")](creating-tabbed-applications-images/segue-layout.png)
+[![](creating-tabbed-applications-images/segue-layout.png "Scénáři by měl vypadat podobně jako tento snímek obrazovky")](creating-tabbed-applications-images/segue-layout.png#lightbox)
 
 Pokud jsme klikněte na jedné z položek panelu kartě a prozkoumejte panelu Vlastnosti, můžete zjistit počet různé možnosti, jak je uvedeno dále:
 
-[ ![](creating-tabbed-applications-images/properties-panel.png "Nastavení na kartě Možnosti v Průzkumníku vlastnosti")](creating-tabbed-applications-images/properties-panel.png)
+[![](creating-tabbed-applications-images/properties-panel.png "Nastavení na kartě Možnosti v Průzkumníku vlastnosti")](creating-tabbed-applications-images/properties-panel.png#lightbox)
 
 To jsme můžete použít k úpravě některých atributů, jako jsou třeba oznámení "BADGE", název a iOS [identifikátor](https://developer.apple.com/library/ios/documentation/userexperience/conceptual/UIKitUICatalog/TabBarItem.html), mimo jiné
 
@@ -360,11 +360,11 @@ public override void ViewDidLoad ()
 
 Při spouštět aplikace a uživatel klepnutím na tlačítko na první obrazovce UITabBarController je načtena, k zobrazení na první obrazovce umístěn na první kartě, jak je uvedeno níže:
 
-[ ![](creating-tabbed-applications-images/first-view.png "Ukázkový výstup aplikace")](creating-tabbed-applications-images/first-view.png)
+[![](creating-tabbed-applications-images/first-view.png "Ukázkový výstup aplikace")](creating-tabbed-applications-images/first-view.png#lightbox)
 
 <!--Save the files and run the application:
 
-[ ![](creating-tabbed-applications-images/inital-screen-application.png "Save the files and run the application")](creating-tabbed-applications-images/inital-screen-application.png)-->
+[![](creating-tabbed-applications-images/inital-screen-application.png "Save the files and run the application")](creating-tabbed-applications-images/inital-screen-application.png#lightbox)-->
 
 ## <a name="summary"></a>Souhrn
 

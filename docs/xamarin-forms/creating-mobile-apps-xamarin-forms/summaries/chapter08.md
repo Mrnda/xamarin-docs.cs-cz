@@ -3,14 +3,15 @@ title: "Souhrn kapitoly 8. Kód a XAML v souladu"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 5970DEEB-1FC9-4F78-B4F6-D403E16D22ED
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: e95d6a20e828c92deb0e03fe1bcbcf18aac9e508
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 452a7835bcb54501edffe7a2467544c6677616ba
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-8-code-and-xaml-in-harmony"></a>Souhrn kapitoly 8. Kód a XAML v souladu
 
@@ -69,7 +70,7 @@ Všechny `View` objekt můžete získat dotykové ovládání a generovat událo
 
 [ `TapGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/) Generuje [ `Tapped` ](https://developer.xamarin.com/api/event/Xamarin.Forms.TapGestureRecognizer.Tapped/) události. [ **MonkeyTap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/MonkeyTap) program ukazuje, jak připojit `TapGestureRecognizer` objekty čtyři `BoxView` elementy vytvořit napodobeniny herní:
 
-[![Trojitá snímek obrazovky klepněte na opic](images/ch08fg07-small.png "napodobení herní")](images/ch08fg07-large.png "napodobení hra")
+[![Trojitá snímek obrazovky klepněte na opic](images/ch08fg07-small.png "napodobení herní")](images/ch08fg07-large.png#lightbox "napodobení hra")
 
 Ale **MonkeyTap** program opravdu potřebuje zvuku. (Viz [další kapitoly](chapter09.md).)
 

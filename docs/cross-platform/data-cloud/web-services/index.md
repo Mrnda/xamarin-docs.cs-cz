@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 76934b56503c381b40081d2ac82a785a7bb86fa2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 48489ca7dc28dcc14a7810b15dc1ffa1fd4f7cf4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-web-services"></a>Úvod k webovým službám
 
@@ -305,7 +305,7 @@ Adresa URL webové služby může být hostované vzdáleného zdroje nebo míst
 file:///Users/myUserName/projects/MyProjectName/service.wsdl
 ```
 
-[ ![](images/add-webreference-dialog.png "Adresa URL webové služby může být hostované vzdáleného zdroje nebo místního souboru Systémový prostředek přístupné přes předponu cesta k souboru")](images/add-webreference-dialog.png)
+[![](images/add-webreference-dialog.png "Adresa URL webové služby může být hostované vzdáleného zdroje nebo místního souboru Systémový prostředek přístupné přes předponu cesta k souboru")](images/add-webreference-dialog.png#lightbox)
 
 Tím se vytvoří proxy serveru ve složce Web nebo odkazy na službu projektu. Vzhledem k tomu, že se generuje proxy server kódu, nesmí být měněny.
 

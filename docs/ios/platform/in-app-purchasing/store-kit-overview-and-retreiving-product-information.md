@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 2a636a5ee2b027a2b2889c375f1fef5be67c379b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: bafada037f912007201fd5e81b17302b21de3092
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="store-kit-overview-and-retrieving-product-information"></a>Uložení Kit přehled a načítání informací o produktu
 
@@ -19,7 +19,7 @@ Uživatelské rozhraní pro nákupy v aplikaci je vidět na následujících sn�
 Před provedením jakékoli transakce, aplikace musí získat cena produktu a popis pro zobrazení. Když uživatel potom stiskne **koupit**, aplikace odešle požadavek StoreKit, která spravuje dialogové okno potvrzení a Apple ID přihlášení. Za předpokladu, že transakce pak úspěšné, StoreKit upozorní kódu aplikace, které musíte uložit výsledek transakce a uživateli poskytnout přístup k jejich nákupu.   
 
    
- [ ![](store-kit-overview-and-retreiving-product-information-images/image14.png "StoreKit upozorní kód aplikace, který musíte uložit výsledek transakce a uživateli poskytnout přístup k jejich nákupu")](store-kit-overview-and-retreiving-product-information-images/image14.png)
+ [![](store-kit-overview-and-retreiving-product-information-images/image14.png "StoreKit upozorní kód aplikace, který musíte uložit výsledek transakce a uživateli poskytnout přístup k jejich nákupu")](store-kit-overview-and-retreiving-product-information-images/image14.png#lightbox)
 
 ## <a name="classes"></a>Třídy
 
@@ -41,7 +41,7 @@ Následující diagram znázorňuje vztahy mezi různými třídami StoreKit (ab
    
    
    
- [ ![](store-kit-overview-and-retreiving-product-information-images/image15.png "Vztahy mezi různými třídami abstraktní třídy StoreKit musí být implementován v aplikaci")](store-kit-overview-and-retreiving-product-information-images/image15.png)   
+ [![](store-kit-overview-and-retreiving-product-information-images/image15.png "Vztahy mezi různými třídami abstraktní třídy StoreKit musí být implementován v aplikaci")](store-kit-overview-and-retreiving-product-information-images/image15.png#lightbox)   
    
    
    
@@ -64,7 +64,7 @@ Pokud se pokusíte o přihlášení k úložišti skutečné s testovací účet
 
 K testování kódu StoreKit musíte odhlášení regulární iTunes testovací účet a přihlášení s speciální testovací účet (vytvořený v iTunes připojení), propojeném do testů úložiště. Chcete-li odhlásit z aktuálního účtu najdete **Nastavení > iTunes App Storu a** jak je vidět tady:
 
- [ ![](store-kit-overview-and-retreiving-product-information-images/image16.png "Odhlaste se od aktuálního účtu návštěvu nastavení iTunes a obchodu s aplikacemi")](store-kit-overview-and-retreiving-product-information-images/image16.png)
+ [![](store-kit-overview-and-retreiving-product-information-images/image16.png "Odhlaste se od aktuálního účtu návštěvu nastavení iTunes a obchodu s aplikacemi")](store-kit-overview-and-retreiving-product-information-images/image16.png#lightbox)
  
 pak se přihlaste pomocí účtu test *žádost StoreKit v aplikaci*:
 
@@ -72,19 +72,19 @@ pak se přihlaste pomocí účtu test *žádost StoreKit v aplikaci*:
 
 Vytvoření testovacích uživatelů v iTunes připojení klikněte na **uživatelů a rolí** na hlavní stránce.
 
- [ ![](store-kit-overview-and-retreiving-product-information-images/image17.png "Vytvoření testovacích uživatelů v iTunes připojení klikněte na uživatele a role na hlavní stránce")](store-kit-overview-and-retreiving-product-information-images/image17.png)
+ [![](store-kit-overview-and-retreiving-product-information-images/image17.png "Vytvoření testovacích uživatelů v iTunes připojení klikněte na uživatele a role na hlavní stránce")](store-kit-overview-and-retreiving-product-information-images/image17.png#lightbox)
 
 Vyberte **testery izolovaného prostoru**
 
- [ ![](store-kit-overview-and-retreiving-product-information-images/image18.png "Výběr testery izolovaného prostoru")](store-kit-overview-and-retreiving-product-information-images/image18.png)
+ [![](store-kit-overview-and-retreiving-product-information-images/image18.png "Výběr testery izolovaného prostoru")](store-kit-overview-and-retreiving-product-information-images/image18.png#lightbox)
 
 Zobrazí se seznam stávajících uživatelů. Můžete přidat nového uživatele nebo odstranění existujícího záznamu. Na portálu nemá (aktuálně) vám umožní zobrazit nebo upravit existující testovat uživatele, proto se doporučuje, aby byl dobrý záznam každý testovacího uživatele, který je vytvořen (zejména heslo přiřadíte). Po odstranění testovacího uživatele nelze znovu použít pro jiný účet testovací e-mailovou adresu.  
    
- [ ![](store-kit-overview-and-retreiving-product-information-images/image19.png "Zobrazí se seznam stávajících uživatelů")](store-kit-overview-and-retreiving-product-information-images/image19.png)   
+ [![](store-kit-overview-and-retreiving-product-information-images/image19.png "Zobrazí se seznam stávajících uživatelů")](store-kit-overview-and-retreiving-product-information-images/image19.png#lightbox)   
    
  Nový test uživatelé mají podobné atributy, které mají skutečné Apple ID (například jméno, heslo, svou tajnou otázku a odpověď). Uchovávejte informace o všech podrobností o zadaném. **Obchodu iTunes vyberte** pole určí, které měny a jazyk nákupy v aplikaci použijte, když přihlášený jako tohoto uživatele.
 
- [ ![](store-kit-overview-and-retreiving-product-information-images/image20.png "Pole obchodu iTunes vyberte určí měny a jazyk pro jejich nákupy v aplikaci uživatele")](store-kit-overview-and-retreiving-product-information-images/image20.png)
+ [![](store-kit-overview-and-retreiving-product-information-images/image20.png "Pole obchodu iTunes vyberte určí měny a jazyk pro jejich nákupy v aplikaci uživatele")](store-kit-overview-and-retreiving-product-information-images/image20.png#lightbox)
 
 ## <a name="retrieving-product-information"></a>Načítání informací o produktu
 
@@ -102,7 +102,7 @@ Prvním krokem při prodeji produktu nákupy v aplikaci je zobrazení ho: načí
 
 Celkové interakce bude vypadat takto ( **StoreKit** je integrovaný do systému iOS a **obchod** představuje servery společnosti Apple):
 
- [ ![](store-kit-overview-and-retreiving-product-information-images/image21.png "Načítání informací o produktu grafu")](store-kit-overview-and-retreiving-product-information-images/image21.png)
+ [![](store-kit-overview-and-retreiving-product-information-images/image21.png "Načítání informací o produktu grafu")](store-kit-overview-and-retreiving-product-information-images/image21.png#lightbox)
 
 ### <a name="displaying-product-information-example"></a>Zobrazení například informace o produktu
 
@@ -110,7 +110,7 @@ Celkové interakce bude vypadat takto ( **StoreKit** je integrovaný do systému
    
    
    
- [ ![](store-kit-overview-and-retreiving-product-information-images/image23.png "Na hlavní obrazovce zobrazí produkty informace načíst z obchodu s aplikacemi")](store-kit-overview-and-retreiving-product-information-images/image23.png)   
+ [![](store-kit-overview-and-retreiving-product-information-images/image23.png "Na hlavní obrazovce zobrazí produkty informace načíst z obchodu s aplikacemi")](store-kit-overview-and-retreiving-product-information-images/image23.png#lightbox)   
    
    
    
@@ -235,7 +235,7 @@ public override void RequestFailed (SKRequest request, NSError error)
 
 Tento snímek obrazovky ukazuje ukázkovou aplikaci bezprostředně po načtení (Pokud je k dispozici žádné informace o produktu):
 
- [ ![](store-kit-overview-and-retreiving-product-information-images/image24.png "Ukázková aplikace bezprostředně po načtení, když je k dispozici žádné informace o produktu")](store-kit-overview-and-retreiving-product-information-images/image24.png)
+ [![](store-kit-overview-and-retreiving-product-information-images/image24.png "Ukázková aplikace bezprostředně po načtení, když je k dispozici žádné informace o produktu")](store-kit-overview-and-retreiving-product-information-images/image24.png#lightbox)
 
 ## <a name="invalid-products"></a>Neplatný produkty
 
@@ -296,7 +296,7 @@ Použití dvou různých iTunes testovací účty (jeden pro American úložišt
    
    
    
- [ ![](store-kit-overview-and-retreiving-product-information-images/image25.png "Dva různé iTunes testovací účty zobrazující jazyk konkrétní výsledky")](store-kit-overview-and-retreiving-product-information-images/image25.png)   
+ [![](store-kit-overview-and-retreiving-product-information-images/image25.png "Dva různé iTunes testovací účty zobrazující jazyk konkrétní výsledky")](store-kit-overview-and-retreiving-product-information-images/image25.png#lightbox)   
    
    
    

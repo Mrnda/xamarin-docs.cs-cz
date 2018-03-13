@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: e95cf18c281732c85c2029e4ff35e8dd8be0f5e2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a56cc080ac04c45ef3f0fcc6c7c89096a08beddf
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-a-new-multiplatform-library-for-nuget"></a>Vytvoření nové knihovny s více platformami pro NuGet
 
@@ -30,21 +30,21 @@ Pokud budete později potřebovat funkce specifické pro platformu, [projekty sp
 
 2. Zvolte **Multiplatform knihovny** z **Multiplatform > Knihovna** části:
 
-  [ ![](single-codebase-images/mulitplatform-library-sml.png "Konfigurace více platformami knihovny pro jeden základní kód")](single-codebase-images/mulitplatform-library.png)
+  [![](single-codebase-images/mulitplatform-library-sml.png "Konfigurace více platformami knihovny pro jeden základní kód")](single-codebase-images/mulitplatform-library.png#lightbox)
 
 3. Zadejte **název** a **popis**a zvolte **jeden pro všechny platformy**:
 
-  [ ![](single-codebase-images/single-configure-sml.png "Konfigurace více platformami knihovny pro jeden základní kód")](single-codebase-images/single-configure.png)
+  [![](single-codebase-images/single-configure-sml.png "Konfigurace více platformami knihovny pro jeden základní kód")](single-codebase-images/single-configure.png#lightbox)
 
 4. Dokončete průvodce. Jediná knihovna projektu se vytvoří v řešení.
 
 5. Klikněte pravým tlačítkem na nový projekt knihovny a potom vyberte **možnosti**. **Sestavení > Obecné** část umožňuje **cílové rozhraní** nastavit – zvolte profil .NET přenosné PCL nebo .NET Standard verze:
 
-  [ ![](single-codebase-images/single-choose-type-sml.png "Zvolte pro typ knihovny PCL nebo .NET Standard")](single-codebase-images/single-choose-type.png)
+  [![](single-codebase-images/single-choose-type-sml.png "Zvolte pro typ knihovny PCL nebo .NET Standard")](single-codebase-images/single-choose-type.png#lightbox)
 
 6. Také v **možnosti projektu** okno, otevřete **balíček NuGet > Metadata** a zadejte [požadovaná metadata](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md) (a také veškerá metadata, volitelný):
 
-  [ ![](single-codebase-images/single-metadata-sml.png "Zadejte požadovaná metadata")](single-codebase-images/single-metadata.png)
+  [![](single-codebase-images/single-metadata-sml.png "Zadejte požadovaná metadata")](single-codebase-images/single-metadata.png#lightbox)
 
 7. Klikněte pravým tlačítkem na projekt knihovny a zvolte **vytvořit balíček NuGet** (nebo sestavení nebo nasazení řešení) a **.nupkg** soubor balíčku NuGet se uloží do **/bin/** složka (ladění nebo verze, v závislosti na konfiguraci):
 
@@ -61,17 +61,17 @@ Tento snímek obrazovky ukazuje obsah na základě PCL NuGet – pouze jednoho s
 
 <a name="add-platforms" />
 
-# <a name="adding-platform-specific-code"></a>Přidání kódu pro konkrétní platformu
+## <a name="adding-platform-specific-code"></a>Přidání kódu pro konkrétní platformu
 
 Na základě PCL projekty a .NET Standard na základě projekty nemůže obsahovat odkazy na specifické pro platformu (například funkce systému Android nebo iOS).
 
 Pokud potřebujete rozšířit, aby obsahovaly kód specifický pro platformu existujícího projektu PCL nebo .NET Standard projektu, stačí pravým tlačítkem myši na projekt a výběrem **Přidat > přidejte platformu implementace...** :
 
-[ ![](single-codebase-images/add-later-sml.png "Přidejte platformu implementace nabídky")](single-codebase-images/add-later.png)
+[![](single-codebase-images/add-later-sml.png "Přidejte platformu implementace nabídky")](single-codebase-images/add-later.png#lightbox)
 
 Jeden nebo více projekty platformy mohou být přidány do řešení a existující knihovny PCL nebo .NET Standard volitelně možné převést na sdílený projektu:
 
-[ ![](single-codebase-images/add-later-platforms-sml.png "Přidání možnosti platformy jako iOS, Android a sdílet projektu")](single-codebase-images/add-later-platforms-sml.png)
+[![](single-codebase-images/add-later-platforms-sml.png "Přidání možnosti platformy jako iOS, Android a sdílet projektu")](single-codebase-images/add-later-platforms-sml.png#lightbox)
 
 Po převodu do projektu sdílené, přejděte **možnosti projektu > balíček NuGet > referenční sestavení**
 [části](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/platform-specific.md) a ujistěte se, že veškeré požadované profily jsou vybrané (tak, aby NuGet dál, aby byl kompatibilní s projekty, které byl dříve používán v).
@@ -79,4 +79,4 @@ Po převodu do projektu sdílené, přejděte **možnosti projektu > balíček N
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Průvodce metadat](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)
+- [Průvodce metadaty](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)

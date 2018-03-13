@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: c5deb294aac679d60535f3f3bd6c9745e8bff358
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c8d66ff8199d451ce7469fa893b7673589c9e320
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="auto-sizing-row-height"></a>Výška řádku automatickou
 
@@ -23,25 +23,25 @@ iOS 11 přidala možnost pro řádky automaticky rozšiřovat. Záhlaví, zápat
 
 Otevřete scénáře pro zobrazení tabulky, že budete chtít mít automaticky velikosti řádku pro v iOS Designer, vyberte z buňky *prototypu* a navrhněte rozložení buňky. Příklad:
 
-[ ![](autosizing-row-height-images/table01.png "Návrh prototypu buňky")](autosizing-row-height-images/table01.png)
+[![](autosizing-row-height-images/table01.png "Návrh prototypu buňky")](autosizing-row-height-images/table01.png#lightbox)
 
 Pro každý prvek v prototyp přidáte omezení zachovat elementy ve správné pozici při změně velikosti zobrazení tabulky pro otočení nebo jiné iOS velikost obrazovky zařízení. Například Připnutí `Title` nahoře vlevo a vpravo od buňky *zobrazení obsahu*:
 
-[ ![](autosizing-row-height-images/table02.png "Připnutí nadpis v horní, vlevo a vpravo od zobrazení obsahu buněk")](autosizing-row-height-images/table02.png)
+[![](autosizing-row-height-images/table02.png "Připnutí nadpis v horní, vlevo a vpravo od zobrazení obsahu buněk")](autosizing-row-height-images/table02.png#lightbox)
 
 V případě naší příklad tabulky malým `Label` (v části `Title`) je pole, které můžete zmenšit a dosáhnout zvýšení nebo snížení výšku řádku. K dosažení tohoto efektu, přidejte následující omezení připnete vlevo, vpravo, horní a dolní popisku:
 
-[ ![](autosizing-row-height-images/table03.png "Těchto omezení pro Připnutí vlevo, vpravo, horní a dolní popisku")](autosizing-row-height-images/table03.png)
+[![](autosizing-row-height-images/table03.png "Těchto omezení pro Připnutí vlevo, vpravo, horní a dolní popisku")](autosizing-row-height-images/table03.png#lightbox)
 
 Teď, když jsme plně mít omezené elementů v buňky, musíme vysvětlení by měl být roztažen tak, který element. Chcete-li to provést, nastavte **obsahu s prioritou Tvá objetí** a **obsahu s prioritou komprese odporu** podle potřeby v **rozložení** části panelu Vlastnosti pro:
 
-[ ![](autosizing-row-height-images/table03a.png "Části panelu Vlastnosti pro rozložení")](autosizing-row-height-images/table03a.png)
+[![](autosizing-row-height-images/table03a.png "Části panelu Vlastnosti pro rozložení")](autosizing-row-height-images/table03a.png#lightbox)
 
 Nastavit elementu, který chcete rozšířit tak, aby měl **nižší** hodnota Tvá objetí Priority a **nižší** hodnota Priority odporu komprese.
 
 V dalším kroku musíme vyberte buňku prototypu a pojmenujte ho jedinečný **identifikátor**:
 
-[ ![](autosizing-row-height-images/table04.png "Poskytnutí prototypu buňky jedinečný identifikátor")](autosizing-row-height-images/table04.png)
+[![](autosizing-row-height-images/table04.png "Poskytnutí prototypu buňky jedinečný identifikátor")](autosizing-row-height-images/table04.png#lightbox)
 
 V našem příkladu případě `GrowCell`. Tato hodnota jsme budete používat později při naplníme v tabulce.
 
@@ -50,19 +50,19 @@ V našem příkladu případě `GrowCell`. Tato hodnota jsme budete používat p
 
 Pro každý prvek naše buňky prototypu přiřadit **název** vystavit kódu C#. Příklad:
 
-[ ![](autosizing-row-height-images/table05.png "Přiřadit název, který umístěte do kódu jazyka C#")](autosizing-row-height-images/table05.png)
+[![](autosizing-row-height-images/table05.png "Přiřadit název, který umístěte do kódu jazyka C#")](autosizing-row-height-images/table05.png#lightbox)
 
 V dalším kroku přidejte vlastní třídu pro `UITableViewController`, `UITableView` a `UITableCell` (prototyp). Příklad: 
 
-[ ![](autosizing-row-height-images/table06.png "Přidání vlastní třídy UITableViewController, UITableView a UITableCell")](autosizing-row-height-images/table06.png)
+[![](autosizing-row-height-images/table06.png "Přidání vlastní třídy UITableViewController, UITableView a UITableCell")](autosizing-row-height-images/table06.png#lightbox)
 
 Nakonec pokud chcete mít jistotu, že všechny očekávaný obsah se zobrazí v našem popisek, nastavte **řádky** vlastnost `0`:
 
-[ ![](autosizing-row-height-images/table06.png "Vlastnost nastavena na hodnotu 0 na řádky")](autosizing-row-height-images/table06a.png)
+[![](autosizing-row-height-images/table06.png "Vlastnost nastavena na hodnotu 0 na řádky")](autosizing-row-height-images/table06a.png#lightbox)
 
 Pomocí uživatelského rozhraní definované přidejme kód umožňující změnu velikosti výšku řádku automaticky.
 
-##<a name="enabling-auto-resizing-height"></a>Povolení výška automatickou změnu velikosti
+## <a name="enabling-auto-resizing-height"></a>Povolení výška automatickou změnu velikosti
 
 Buď naše tabulka zobrazení zdroje dat (`UITableViewDatasource`) nebo zdroje (`UITableViewSource`), když jsme dequeue – buňku je potřeba použít `Identifier` , definovaného v návrháři. Příklad:
 
@@ -106,7 +106,7 @@ Tento odhad nemusí být přesné, právě odhad průměrná výška každý ř�
 
 S tímto kódem na místě když se aplikace spustí, každý řádek se zmenšit a růst v závislosti na výšku poslední popisek v buňce prototypu. Příklad:
 
-[ ![](autosizing-row-height-images/table07.png "Spuštění ukázkové tabulky")](autosizing-row-height-images/table07.png)
+[![](autosizing-row-height-images/table07.png "Spuštění ukázkové tabulky")](autosizing-row-height-images/table07.png#lightbox)
 
 
 ## <a name="related-links"></a>Související odkazy

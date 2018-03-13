@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/01/2017
-ms.openlocfilehash: 89d3b56a15110d0c106c43ce227f11f86bbdf404
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 0fd037e62bcdb1b2be4c93dc0d32ca76f4e1ba8e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="invoking-events-from-effects"></a>Vyvolání událostí z efekty
 
@@ -448,7 +448,7 @@ void OnTouchEffectAction(object sender, TouchActionEventArgs args)
 
 Můžete přesunout více `BoxView` elementů současně pomocí různých prstů.
 
-[![](touch-tracking-images/boxviewdragging-small.png "Trojitá snímek obrazovky stránky přetahování BoxView")](touch-tracking-images/boxviewdragging-large.png "Trojitá snímek obrazovky stránky BoxView přetahování")
+[![](touch-tracking-images/boxviewdragging-small.png "Trojitá snímek obrazovky stránky přetahování BoxView")](touch-tracking-images/boxviewdragging-large.png#lightbox "Trojitá snímek obrazovky stránky BoxView přetahování")
 
 ### <a name="subclassing-the-view"></a>Vytvoření podtřídy zobrazení
 
@@ -511,7 +511,7 @@ Následující dva předvádění vyžadují grafiky a používají SkiaSharp pr
 
 **Kreslení elipsy** stránka umožňuje Nakreslení elipsy potažením prstem na obrazovce. Podle toho, jak přesunout prstu, můžete se třemi tečkami kreslení z levé horní do dolní nebo z jiných rohu do opačné rohu. Se třemi tečkami vykreslením s náhodných barvy a krytí.
 
-[![](touch-tracking-images/ellipsedrawing-small.png "Trojitá snímek obrazovky stránky kreslení elipsy")](touch-tracking-images/ellipsedrawing-large.png "Trojitá snímek obrazovky stránky elipsy kreslení")
+[![](touch-tracking-images/ellipsedrawing-small.png "Trojitá snímek obrazovky stránky kreslení elipsy")](touch-tracking-images/ellipsedrawing-large.png#lightbox "Trojitá snímek obrazovky stránky elipsy kreslení")
 
 Pokud jste pak touch mezi na symbol tří teček, můžete ji přetáhněte na jiné místo. To vyžaduje techniku známou jako "vstupů do testování," který zahrnuje hledání grafického objektu na určitém místě. Výpustky SkiaSharp nejsou Xamarin.Forms prvky, takže nemůžou provést vlastní `TouchEffect` zpracování. `TouchEffect` Se musí vztahovat na celou `SKCanvasView` objektu.
 
@@ -683,7 +683,7 @@ case TouchActionType.Pressed:
 
 Další příklad SkiaSharp **Malování prstem** stránky. Barva linky a šířku tahu můžete vybrat ze dvou `Picker` zobrazení a potom kreslení jeden nebo více prsty:
 
-[![](touch-tracking-images/fingerpaint-small.png "Trojitá snímek obrazovky stránky Malování prstem")](touch-tracking-images/fingerpaint-large.png "Trojitá snímek obrazovky stránky prstem Malování")
+[![](touch-tracking-images/fingerpaint-small.png "Trojitá snímek obrazovky stránky Malování prstem")](touch-tracking-images/fingerpaint-large.png#lightbox "Trojitá snímek obrazovky stránky prstem Malování")
 
 Tento příklad také vyžaduje samostatné třídy představující každý řádek vykresluje na obrazovce:
 
@@ -791,7 +791,7 @@ void OnTouchEffectAction(object sender, TouchActionEventArgs args)
 
 Různé `WhiteKey` a `BlackKey` jsou uspořádány elementy na stránce [souboru XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/SilentKeyboardPage.xaml), která vypadá nejlepší telefonu se nachází v režimu na šířku:
 
-[![](touch-tracking-images/silentkeyboard-small.png "Trojitá snímek obrazovky stránky tichou klávesnice")](touch-tracking-images/silentkeyboard-large.png "Trojitá snímek obrazovky stránky tichou klávesnice")
+[![](touch-tracking-images/silentkeyboard-small.png "Trojitá snímek obrazovky stránky tichou klávesnice")](touch-tracking-images/silentkeyboard-large.png#lightbox "Trojitá snímek obrazovky stránky tichou klávesnice")
 
 Pokud jste oblouku prstu napříč klíče, se zobrazí mírné změny v barvu, události touch přenášených z jednoho klíče na jiný.
 

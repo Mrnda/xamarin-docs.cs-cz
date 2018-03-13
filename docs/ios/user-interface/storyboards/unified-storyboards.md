@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 077be02aacb9d4200db2d2eadf6f7388842b8e29
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 30a952bf0df4db34c749de3d6198877b7a9766b9
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="unified-storyboards"></a>Jednotná scénářů
 
@@ -36,7 +36,7 @@ Zařízení jsou definovány třídy velikosti ve vodorovném i svislém osy a e
 
 Pokud se dvěma konceptů použijí společně, výsledkem je mřížky 2 x 2, který definuje různé možné velikosti, které lze použít v obou různé orientace, jak je vidět v následujícím diagramu:
 
- [ ![](unified-storyboards-images/sizeclassgrid.png "Mřížky 2 x 2, který definuje různé možné velikosti, které lze použít v regulárním a Compact orientaci")](unified-storyboards-images/sizeclassgrid.png)
+ [![](unified-storyboards-images/sizeclassgrid.png "Mřížky 2 x 2, který definuje různé možné velikosti, které lze použít v regulárním a Compact orientaci")](unified-storyboards-images/sizeclassgrid.png#lightbox)
 
 Vývojář může vytvořit řadič zobrazení, která používá čtyři možnosti, které by způsobilo různých rozložení (jak je vidět v grafiky výše).
 
@@ -44,14 +44,14 @@ Vývojář může vytvořit řadič zobrazení, která používá čtyři možno
 
 IPad kvůli překročení velikosti, má **regulární** třídy velikost obou směrech.
 
- [ ![](unified-storyboards-images/image1.png "iPad velikost třídy")](unified-storyboards-images/image1.png)
+ [![](unified-storyboards-images/image1.png "iPad velikost třídy")](unified-storyboards-images/image1.png#lightbox)
 
 
 ### <a name="iphone-size-classes"></a>iPhone velikost třídy
 
 Pro iPhone má jinou velikost třídy na základě orientace zařízení:
 
- [![](unified-storyboards-images/iphonesizeclasses.png "iPhone velikost třídy")](unified-storyboards-images/iphonesizeclasses.png)
+ [![](unified-storyboards-images/iphonesizeclasses.png "iPhone velikost třídy")](unified-storyboards-images/iphonesizeclasses.png#lightbox)
 
 -  Když je zařízení v režimu na výšku, má na obrazovce **compact** třídy vodorovně a **regulární** svisle
 -  Když je zařízení v režimu na šířku, třídy obrazovku se vrátit zpět z režimu na výšku.
@@ -60,7 +60,7 @@ Pro iPhone má jinou velikost třídy na základě orientace zařízení:
 
 Velikosti jsou stejné jako starší Iphony v orientaci na výšku, ale liší na šířku:
 
-[![](unified-storyboards-images/iphone6sizeclasses.png "Velikost třídy iPhone 6 Plus")](unified-storyboards-images/iphone6sizeclasses.png)
+[![](unified-storyboards-images/iphone6sizeclasses.png "Velikost třídy iPhone 6 Plus")](unified-storyboards-images/iphone6sizeclasses.png#lightbox)
 
 Protože iPhone 6 Plus má dostatečně velké na obrazovku, bude moci mít běžné třídy velikost šířka v režimu na šířku.
 
@@ -104,7 +104,7 @@ Vývojář kolekce znak vrácené znak prostředí používá k určení, jak by
 
 Všechny prostředí znak Zkontrolujte hierarchie, jak je vidět v následujícím diagramu:
 
- [ ![](unified-storyboards-images/viewhierarchy.png "Diagram hierarchie znak prostředí")](unified-storyboards-images/viewhierarchy.png)
+ [![](unified-storyboards-images/viewhierarchy.png "Diagram hierarchie znak prostředí")](unified-storyboards-images/viewhierarchy.png#lightbox)
 
 Kolekce znak každou z výše uvedených znak prostředí mají bude procházet, ve výchozím nastavení z nadřazené do podřízené prostředí.
 
@@ -233,17 +233,17 @@ Pokud je zařízení typu iPhone na šířku, nabídne řadiče zobrazení rozd�
 
 Znak prostředí přeneseny z kontejneru nadřazené a podřízené kontejnery, stejně jako na následujícím obrázku zobrazující řadič zobrazení rozdělení na Ipadu v orientaci na šířku:
 
- [ ![](unified-storyboards-images/cascadingclasses01.png "Řadič zobrazení rozdělení na Ipadu v orientaci na šířku")](unified-storyboards-images/cascadingclasses01.png)
+ [![](unified-storyboards-images/cascadingclasses01.png "Řadič zobrazení rozdělení na Ipadu v orientaci na šířku")](unified-storyboards-images/cascadingclasses01.png#lightbox)
 
 Vzhledem k tomu, že iPad má běžné třídy velikost v vodorovného a svislého orientaci, se zobrazí zobrazení rozdělení hlavní i podrobné zobrazení.
 
 V zařízení iPhone, kde je třída velikost compact v obou směrech, rozdělení řadiče zobrazení pouze zobrazuje podrobné zobrazení, jak vidíte níže:
 
- [ ![](unified-storyboards-images/cascadingclasses02.png "Rozdělení řadiče zobrazení pouze zobrazuje podrobné zobrazení")](unified-storyboards-images/cascadingclasses02.png)
+ [![](unified-storyboards-images/cascadingclasses02.png "Rozdělení řadiče zobrazení pouze zobrazuje podrobné zobrazení")](unified-storyboards-images/cascadingclasses02.png#lightbox)
 
 V aplikaci, kde chce zobrazení hlavní i podrobné zobrazení v zařízení iPhone v orientaci na šířku vývojáře musí vývojář vložení nadřazený kontejner pro řadiče zobrazení rozdělení a přepsat kolekci znak. Jak je vidět na následujícím obrázku:
 
- [ ![](unified-storyboards-images/cascadingclasses03.png "Vývojář musí vložení nadřazený kontejner pro řadiče zobrazení rozdělení a přepsat kolekci znak")](unified-storyboards-images/cascadingclasses03.png)
+ [![](unified-storyboards-images/cascadingclasses03.png "Vývojář musí vložení nadřazený kontejner pro řadiče zobrazení rozdělení a přepsat kolekci znak")](unified-storyboards-images/cascadingclasses03.png#lightbox)
 
 A `UIView` je nastaven jako nadřazená položka řadiče zobrazení rozdělení a `SetOverrideTraitCollection` metoda je volána v zobrazení předávání v nové kolekce znak a cílení řadiče zobrazení rozdělení. Nová kolekce znak přepsání `HorizontalSizeClass`, jeho nastavení na hodnotu `Regular`tak, aby řadiče zobrazení rozdělení zobrazí hlavní i podrobné zobrazení u zařízení typu iPhone v orientaci na šířku.
 
@@ -253,7 +253,7 @@ Všimněte si, že `VerticalSizeClass` byla nastavena na `unspecified`, která u
 
 Tato část bude trvat vypadá a podrobně v jak kolekce znak přechod při změně prostředí znak. Pokud je například zařízení otáčet z výšky na šířku.
 
- [ ![](unified-storyboards-images/traittransitions01.png "Výšky na šířku změny znak – přehled")](unified-storyboards-images/traittransitions01.png)
+ [![](unified-storyboards-images/traittransitions01.png "Výšky na šířku změny znak – přehled")](unified-storyboards-images/traittransitions01.png#lightbox)
 
 Nejprve iOS 8 nepodporuje některé instalace přípravy přechod proběhla. V dalším kroku systému animuje přechodový stav. Nakonec iOS 8 vyčistí up všechny dočasné stavy vyžaduje během přechodu.
 
@@ -352,7 +352,7 @@ Vývojářům můžete implementovat `ShowViewController` a `ShowDetailViewContr
 
 V této části jsme se podívejte se na tom, jak jsou tyto metody ve skutečnosti implementují v iOS 8. První Podíváme se na nové `GetTargetForAction` metoda:
 
- [ ![](unified-storyboards-images/gettargetforaction.png "Nová metoda GetTargetForAction")](unified-storyboards-images/gettargetforaction.png)
+ [![](unified-storyboards-images/gettargetforaction.png "Nová metoda GetTargetForAction")](unified-storyboards-images/gettargetforaction.png#lightbox)
 
 Tato metoda provede řetězec hierarchie, dokud nebude nalezen řadiče zobrazení správné kontejneru. Příklad:
 
@@ -374,7 +374,7 @@ Když vývojáři uvede řadiče zobrazení pomocí `PresentViewController` meto
 
 Styl vlastní prezentace vývojáři mají možnost použít vlastní řadiče prezentace. Tento vlastní řadič lze upravit vzhled a chování je příbuzných k zobrazení.
 
-<a name="size-classes">
+<a name="size-classes"/>
 
 ## <a name="working-with-size-classes"></a>Práce s třídami velikost
 
@@ -388,7 +388,7 @@ Nyní Podívejme bližší pohled na jak projektu adaptivní fotografie je imple
 
 Při spuštění aplikace adaptivní fotografie v zařízení iPhone, když uživatel otočí zařízení z výšky na šířku, rozdělení řadiče zobrazení se zobrazí seznamu a podrobností zobrazení:
 
- [ ![](unified-storyboards-images/rotation.png "Rozdělení řadiče zobrazení se zobrazí oba hlavní a zobrazit podrobnosti, jak je vidět tady")](unified-storyboards-images/rotation.png)
+ [![](unified-storyboards-images/rotation.png "Rozdělení řadiče zobrazení se zobrazí oba hlavní a zobrazit podrobnosti, jak je vidět tady")](unified-storyboards-images/rotation.png#lightbox)
 
 Toho lze dosáhnout přepsáním `UpdateConstraintsForTraitCollection` na základě hodnoty na základě metod řadiče zobrazení a úpravě omezení `VerticalSizeClass`. Příklad:
 
@@ -662,11 +662,11 @@ Ve výchozím nastavení, budou všechny nového projektu Xamarin.iOS nám velik
 
 Otevřete scénáře, který má být převeden na iOS Designer a kontrola **použití třídy velikost** zaškrtnutí políčka:
 
- [ ![](unified-storyboards-images/sizeclass01.png "Zaškrtněte políčko použití velikost třídy")](unified-storyboards-images/sizeclass01.png)
+ [![](unified-storyboards-images/sizeclass01.png "Zaškrtněte políčko použití velikost třídy")](unified-storyboards-images/sizeclass01.png#lightbox)
 
 IOS Designer bude tak jasné, že vývojář chce převést formát scénáři používat velikost třídy:
 
- [ ![](unified-storyboards-images/sizeclass02.png "Použití třídy velikost výstrahy")](unified-storyboards-images/sizeclass02.png)
+ [![](unified-storyboards-images/sizeclass02.png "Použití třídy velikost výstrahy")](unified-storyboards-images/sizeclass02.png#lightbox)
 
 > [!IMPORTANT]
 > **Poznámka:**: Automatické rozložení také musí být kontrolované velikost třídy fungovala správně.
@@ -675,41 +675,41 @@ IOS Designer bude tak jasné, že vývojář chce převést formát scénáři p
 
 Jakmile scénáři byl převeden na použití třídy velikost, ji budou zobrazí znovu, že v návrhovou plochu a **zobrazení jako** zařízení bude Obecné:
 
- [ ![](unified-storyboards-images/sizeclass03.png "Zobrazit jako typ Obecné zařízení")](unified-storyboards-images/sizeclass03.png)
+ [![](unified-storyboards-images/sizeclass03.png "Zobrazit jako typ Obecné zařízení")](unified-storyboards-images/sizeclass03.png#lightbox)
 
 Pokud je vybraný typ zařízení, bude nastavena čtverce 600 × 600 velikost všechny řadiče zobrazení. Tato čtvereček představuje velikost všech šířku a výšku. všechny. Když iOS Designer je v tomto režimu, veškeré úpravy platit pro všechny třídy velikost.
 
 Vývojář má také možnost zobrazení na návrhovou plochu, jako je iPhone:
 
- [ ![](unified-storyboards-images/sizeclass04.png "Zobrazení na návrhovou plochu, jako je iPhone")](unified-storyboards-images/sizeclass04.png)
+ [![](unified-storyboards-images/sizeclass04.png "Zobrazení na návrhovou plochu, jako je iPhone")](unified-storyboards-images/sizeclass04.png#lightbox)
 
 Nebo zobrazení jako iPad:
 
- [ ![](unified-storyboards-images/sizeclass05.png "Zobrazení na návrhovou plochu jako iPad")](unified-storyboards-images/sizeclass05.png)
+ [![](unified-storyboards-images/sizeclass05.png "Zobrazení na návrhovou plochu jako iPad")](unified-storyboards-images/sizeclass05.png#lightbox)
 
 ### <a name="select-a-size-class"></a>Vyberte třídu, velikost
 
 Tlačítko výběru třídy velikost je v levém horním rohu na návrhovou plochu (téměř zobrazení jako rozevíracího seznamu). To umožňuje vývojáři vyberte, které třídy velikost jsou aktuálně upravovaný:
 
- [ ![](unified-storyboards-images/sizeclass06.png "Vyberte třídu, velikost")](unified-storyboards-images/sizeclass06.png)
+ [![](unified-storyboards-images/sizeclass06.png "Vyberte třídu, velikost")](unified-storyboards-images/sizeclass06.png#lightbox)
 
 Selektor uvede výběr třídu velikost jako mřížka 3 x 3. Každý kvadratických v mřížce představuje kombinaci třídu šířka a výška třída. Hranaté center vybere třídu Any Width/Any výšku velikosti (což je výchozí zobrazení pro scénář Unified). Pokud je vybraná tato hranaté, vývojář se úpravy výchozí rozložení, který zdědí všechny ostatní konfigurace.
 
 Hranaté v levém horním rohu mřížky představuje Compact třídu šířka/Compact výšku velikosti:
 
- [ ![](unified-storyboards-images/sizeclass07.png "Třída Compact šířka/Compact výšku velikosti")](unified-storyboards-images/sizeclass07.png)
+ [![](unified-storyboards-images/sizeclass07.png "Třída Compact šířka/Compact výšku velikosti")](unified-storyboards-images/sizeclass07.png#lightbox)
 
 Tento režim odpovídá zařízení typu iPhone v orientaci na šířku. Hranaté v pravém dolním rohu mřížky představuje regulární šířka/Regular výšku velikosti třídu, která představuje iPad:
 
- [ ![](unified-storyboards-images/sizeclass08.png "Třídy regulárních šířka/regulární výška velikost")](unified-storyboards-images/sizeclass08.png)
+ [![](unified-storyboards-images/sizeclass08.png "Třídy regulárních šířka/regulární výška velikost")](unified-storyboards-images/sizeclass08.png#lightbox)
 
 Chcete-li upravit rozložení pro zařízení typu iPhone v orientaci na výšku, vyberte v levém dolním druhou mocninu. Reprezentuje třídu velikost výška Compact šířka/Regular:
 
- [ ![](unified-storyboards-images/sizeclass09.png "Třída Compact šířka/Regular výška velikost")](unified-storyboards-images/sizeclass09.png)
+ [![](unified-storyboards-images/sizeclass09.png "Třída Compact šířka/Regular výška velikost")](unified-storyboards-images/sizeclass09.png#lightbox)
 
 Klikněte v hranaté ji vyberte a návrhovou plochu, která se změní velikost řadiče zobrazení tak, aby odpovídala nové výběr:
 
- [ ![](unified-storyboards-images/sizeclass10.png "Návrhovou plochu, která se změní velikost řadiče zobrazení tak, aby odpovídala nové výběr, jak je znázorněno")](unified-storyboards-images/sizeclass10.png)
+ [![](unified-storyboards-images/sizeclass10.png "Návrhovou plochu, která se změní velikost řadiče zobrazení tak, aby odpovídala nové výběr, jak je znázorněno")](unified-storyboards-images/sizeclass10.png#lightbox)
 
 Najdete v části třídy velikost tohoto článku informace na velikost třídy a jejich vliv na rozložení pro Iphony a Ipady.
 
@@ -724,49 +724,49 @@ Trvat příklad iOS 8 aplikace, která používá scénáře se Unified s řadi�
 
 K dosažení tohoto efektu, v iOS Designer ovládacího prvku, klikněte na tlačítko a přetáhněte řádek View Controller, který se má zobrazit. Po uvolnění tlačítka myši, vyberte `Show Detail` z Segue místní typu:
 
- [ ![](unified-storyboards-images/segue01.png "Vyberte zobrazení podrobností Segue typ místní nabídky")](unified-storyboards-images/segue01.png)
+ [![](unified-storyboards-images/segue01.png "Vyberte zobrazení podrobností Segue typ místní nabídky")](unified-storyboards-images/segue01.png#lightbox)
 
 Vytvoří se nový segue mezi tlačítko a řadiče zobrazení. Nyní spusťte aplikaci v simulátoru iPhone a zobrazí se v hlavní nabídce:
 
- [ ![](unified-storyboards-images/segue02.png "Hlavní nabídky")](unified-storyboards-images/segue02.png)
+ [![](unified-storyboards-images/segue02.png "Hlavní nabídky")](unified-storyboards-images/segue02.png#lightbox)
 
 Klikněte na **vyberte herní** tlačítko a řadiče zobrazení položky se vloží do zásobníku navigační:
 
- [ ![](unified-storyboards-images/segue03.png "Položky řadiče zobrazení se vloží do zásobníku navigace, jak je znázorněno")](unified-storyboards-images/segue03.png)
+ [![](unified-storyboards-images/segue03.png "Položky řadiče zobrazení se vloží do zásobníku navigace, jak je znázorněno")](unified-storyboards-images/segue03.png#lightbox)
 
 Zastavte iPhone simulátoru a spusťte aplikaci v simulátoru iPad. Přepnout na orientaci na šířku a hlavní nabídky se znovu zobrazí:
 
- [ ![](unified-storyboards-images/segue04.png "V hlavní nabídce Zobrazit")](unified-storyboards-images/segue04.png)
+ [![](unified-storyboards-images/segue04.png "V hlavní nabídce Zobrazit")](unified-storyboards-images/segue04.png#lightbox)
 
 Znovu, klikněte na **vyberte herní** tlačítko a řadiče zobrazení položky se zobrazí v části Podrobnosti řadiče zobrazení rozdělení:
 
- [ ![](unified-storyboards-images/segue05.png "Položky řadiče zobrazení uvedené v části Podrobnosti o řadiče zobrazení rozdělení")](unified-storyboards-images/segue05.png)
+ [![](unified-storyboards-images/segue05.png "Položky řadiče zobrazení uvedené v části Podrobnosti o řadiče zobrazení rozdělení")](unified-storyboards-images/segue05.png#lightbox)
 
 ### <a name="excluding-an-element-from-a-size-class"></a>S výjimkou Element od třídy, velikost
 
 Existují situace, kdy se nevyžaduje v určité třídy velikost daného elementu (například zobrazení, řízení nebo omezení). Vyloučit element od třídy, velikost, vyberte požadovanou položku k vyloučení z **návrhová plocha**. Přejděte do dolní části **vlastnost Explorer** a klikněte na tlačítko **ozubené kolečko** rozevírací nabídce. Vyberte kombinace **šířka** a **výška** chcete vyloučit položky od:
 
-[ ![](unified-storyboards-images/exclude-a.png "Vyberte kombinace šířky a výšky")](unified-storyboards-images/exclude-a.png)
+[![](unified-storyboards-images/exclude-a.png "Vyberte kombinace šířky a výšky")](unified-storyboards-images/exclude-a.png#lightbox)
 
 Nový *vyloučení případ* se zařadí do element v dolní části **Explorer vlastnost**. Další, zrušte zaškrtnutí políčka **nainstalovaná** zaškrtávací políčko pro danou třídu velikost:
 
-[ ![](unified-storyboards-images/exclude-b.png "Zrušte zaškrtnutí políčka nainstalovaná")](unified-storyboards-images/exclude-b.png)
+[![](unified-storyboards-images/exclude-b.png "Zrušte zaškrtnutí políčka nainstalovaná")](unified-storyboards-images/exclude-b.png#lightbox)
 
 Šířka a výška, které byla položka vyloučené z přepnout na návrhovou plochu, byl odebrán z dané třídy velikost, ale ne celý návrh uživatelského rozhraní:
 
- [ ![](unified-storyboards-images/exclude02.png "Přepnout na návrhovou plochu na šířku a výšku položky vyloučil z")](unified-storyboards-images/exclude02.png)
+ [![](unified-storyboards-images/exclude02.png "Přepnout na návrhovou plochu na šířku a výšku položky vyloučil z")](unified-storyboards-images/exclude02.png#lightbox)
 
 Přepnout zpět a třída velikost Any Width/Any Výška elementu je stále navázaný:
 
- [ ![](unified-storyboards-images/exclude03.png "Přepnout zpět k třídě Any Width/Any výšku velikosti")](unified-storyboards-images/exclude03.png)
+ [![](unified-storyboards-images/exclude03.png "Přepnout zpět k třídě Any Width/Any výšku velikosti")](unified-storyboards-images/exclude03.png#lightbox)
 
 Když aplikace běží v simulátoru iPad, zobrazí se element:
 
- [ ![](unified-storyboards-images/exclude04.png "Element při spuštěné aplikaci v simulátoru iPad")](unified-storyboards-images/exclude04.png)
+ [![](unified-storyboards-images/exclude04.png "Element při spuštěné aplikaci v simulátoru iPad")](unified-storyboards-images/exclude04.png#lightbox)
 
 A když se aplikace spustí na zařízení iPhone simulátoru, nebyl nalezen element:
 
- [ ![](unified-storyboards-images/exclude05.png "Element chybí při spuštěné aplikaci v simulátoru iPhone")](unified-storyboards-images/exclude05.png)
+ [![](unified-storyboards-images/exclude05.png "Element chybí při spuštěné aplikaci v simulátoru iPhone")](unified-storyboards-images/exclude05.png#lightbox)
 
 K odebrání případu vyloučení z elementu, jednoduše vyberte požadovaný prvek v **návrhová plocha**, přejděte do dolní části **vlastnost Explorer** a klikněte na tlačítko  **-** tlačítko vedle případ odebrat.
 
@@ -797,48 +797,48 @@ Postupujte takto:
 1. Otevřete **Visual Studio pro Mac** a zatížení **řešení** přidat dynamické spusťte obrazovky.
 2. V **Průzkumníku řešení**, klikněte pravým tlačítkem myši `MainStoryboard.storyboard` soubor a vyberte **otevřít v** > **Xcode rozhraní tvůrce**:
 
-    [![](unified-storyboards-images/dls01.png "Otevřít v aplikaci Tvůrce Xcode rozhraní")](unified-storyboards-images/dls01.png)
+    [![](unified-storyboards-images/dls01.png "Otevřít v aplikaci Tvůrce Xcode rozhraní")](unified-storyboards-images/dls01.png#lightbox)
 3. V Xcode, vyberte **soubor** > **nový** > **souboru...** :
 
-    [![](unified-storyboards-images/dls02.png "Vyberte soubor / New")](unified-storyboards-images/dls02.png)
+    [![](unified-storyboards-images/dls02.png "Vyberte soubor / New")](unified-storyboards-images/dls02.png#lightbox)
 4. Vyberte **iOS** > **uživatelské rozhraní** > **spusťte obrazovky** a klikněte na tlačítko **Další** tlačítko:
 
-    [![](unified-storyboards-images/dls03.png "Vyberte iOS / uživatelské rozhraní nebo spusťte obrazovky")](unified-storyboards-images/dls03.png)
+    [![](unified-storyboards-images/dls03.png "Vyberte iOS / uživatelské rozhraní nebo spusťte obrazovky")](unified-storyboards-images/dls03.png#lightbox)
 5. Název souboru `LaunchScreen.xib` a klikněte na **vytvořit** tlačítko:
 
-    [![](unified-storyboards-images/dls04.png "Název souboru LaunchScreen.xib")](unified-storyboards-images/dls04.png)
+    [![](unified-storyboards-images/dls04.png "Název souboru LaunchScreen.xib")](unified-storyboards-images/dls04.png#lightbox)
 6. Návrh úvodní obrazovka upravte přidáním grafické elementy a umístit je pro dané zařízení, orientace a velikost obrazovky pomocí rozložení omezení:
 
-    [![](unified-storyboards-images/dls05.png "Úpravy návrh úvodní obrazovka")](unified-storyboards-images/dls05.png)
+    [![](unified-storyboards-images/dls05.png "Úpravy návrh úvodní obrazovka")](unified-storyboards-images/dls05.png#lightbox)
 7. Uložit změny do `LaunchScreen.xib`.
 8. Vyberte **cíl aplikací** a **Obecné** karty:
 
-    [![](unified-storyboards-images/dls06.png "Vyberte cíl aplikací a karta Obecné")](unified-storyboards-images/dls06.png)
+    [![](unified-storyboards-images/dls06.png "Vyberte cíl aplikací a karta Obecné")](unified-storyboards-images/dls06.png#lightbox)
 9. Klikněte na tlačítko **zvolte Info.plist** tlačítko, vyberte `Info.plist` pro aplikace Xamarin a klikněte na tlačítko **zvolte** tlačítko:
 
-    [![](unified-storyboards-images/dls07.png "Vyberte Info.plist pro aplikace Xamarin")](unified-storyboards-images/dls07.png)
+    [![](unified-storyboards-images/dls07.png "Vyberte Info.plist pro aplikace Xamarin")](unified-storyboards-images/dls07.png#lightbox)
 10. V **ikony aplikace a spuštění bitové kopie** část, otevřete **spusťte soubor obrazovky** rozevírací seznam a vyberte `LaunchScreen.xib` vytvořili výše:
 
-    [![](unified-storyboards-images/dls08.png "Vyberte LaunchScreen.xib")](unified-storyboards-images/dls08.png)
+    [![](unified-storyboards-images/dls08.png "Vyberte LaunchScreen.xib")](unified-storyboards-images/dls08.png#lightbox)
 11. Uložte změny do souboru a vrátit k sadě Visual Studio for Mac.
 12. Počkejte, než pro sadu Visual Studio pro Mac na dokončení synchronizace změn pomocí Xcode.
 13. V **Průzkumníku řešení**, klikněte pravým tlačítkem na **prostředků** složky a vyberte **přidat** > **přidat soubory...** :
 
-    [![](unified-storyboards-images/dls09.png "Vyberte možnost Přidat nebo přidání souborů...")](unified-storyboards-images/dls09.png)
+    [![](unified-storyboards-images/dls09.png "Vyberte možnost Přidat nebo přidání souborů...")](unified-storyboards-images/dls09.png#lightbox)
 14. Vyberte `LaunchScreen.xib` vytvořili výše, klikněte na **otevřete** tlačítko:
 
-    [![](unified-storyboards-images/dls10.png "Vyberte soubor LaunchScreen.xib")](unified-storyboards-images/dls10.png)
+    [![](unified-storyboards-images/dls10.png "Vyberte soubor LaunchScreen.xib")](unified-storyboards-images/dls10.png#lightbox)
 15. Sestavení aplikace.
 
 ### <a name="testing-the-dynamic-launch-screen"></a>Testování dynamické úvodní obrazovka
 
 V sadě Visual Studio pro Mac vyberte simulátoru sítnice iPhone 4 a spusťte aplikaci. Dynamické spusťte obrazovky se zobrazí ve správném formátu a orientaci:
 
-[![](unified-storyboards-images/dls11.png "Dynamické spusťte obrazovce zobrazen ve svislém orientaci")](unified-storyboards-images/dls11.png)
+[![](unified-storyboards-images/dls11.png "Dynamické spusťte obrazovce zobrazen ve svislém orientaci")](unified-storyboards-images/dls11.png#lightbox)
 
 Zastavte aplikaci v sadě Visual Studio pro Mac a vyberte zařízení s iOS 8 iPad. Spusťte aplikaci a úvodní obrazovka bude správně naformátován pro toto zařízení a orientaci:
 
-[![](unified-storyboards-images/dls12.png "Dynamické spusťte obrazovce zobrazen v vodorovné orientaci")](unified-storyboards-images/dls12.png)
+[![](unified-storyboards-images/dls12.png "Dynamické spusťte obrazovce zobrazen v vodorovné orientaci")](unified-storyboards-images/dls12.png#lightbox)
 
 Vraťte se na Visual Studio pro Mac a zastavit spuštění aplikace.
 

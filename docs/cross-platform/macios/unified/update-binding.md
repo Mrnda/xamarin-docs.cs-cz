@@ -8,23 +8,23 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: b07a88f25da1ea504785ddc4a0db8db1ed0e2650
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2a04dc047674b67b8f21571ed9e7890ddf773f64
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="migrating-a-binding-to-the-unified-api"></a>Migrace vazbu na jednotné rozhraní API
 
 _Tento článek popisuje kroky potřebné k aktualizaci existující Xamarin vazby projektu aplikace podporují jednotné rozhraní API pro aplikace Xamarin.IOS a Xamarin.Mac._
 
-#<a name="overview"></a>Přehled
+## <a name="overview"></a>Přehled
 
 Od 1. února 2015 Apple vyžaduje, aby všechny nové odesílání iTunes a Mac App Storu musí 64bitových aplikací. Novou aplikaci Xamarin.iOS nebo Xamarin.Mac v důsledku toho bude nutné používat nový unifikované API namísto existující Classic MonoTouch a MonoMac rozhraní API pro podporu 64 bitů.
 
 Všechny vazby projektu Xamarin musí taky podporovat nových jednotné rozhraní API mají být zahrnuty v 64bitových Xamarin.iOS nebo Xamarin.Mac projektu. Tento článek se zabývá kroky potřebné k aktualizaci existujícího projektu vazby používat unifikované API.
 
-#<a name="requirements"></a>Požadavky
+## <a name="requirements"></a>Požadavky
 
 Pokud chcete provést kroky uvedené v tomto článku se vyžaduje následující text:
 
@@ -33,7 +33,7 @@ Pokud chcete provést kroky uvedené v tomto článku se vyžaduje následujíc�
 
 Vazba projekty nejsou podporované v sadě Visual studio na počítači s Windows.
 
-#<a name="modify-the-using-statements"></a>Upravit pomocí příkazů
+## <a name="modify-the-using-statements"></a>Upravit pomocí příkazů
 
 Jednotné rozhraní API je jednodušší než kdy dřív přístup ke sdílení kódu mezi Mac a iOS a také umožňuje podporu 32 až 64 bitové aplikace se stejným binární. Pádem _MonoMac_ a _MonoTouch_ předpony z oborů názvů, je jednodušší sdílení napříč projekty Xamarin.Mac a Xamarin.iOS aplikace dosáhnout.
 
@@ -61,9 +61,9 @@ using ObjCRuntime;
 
 Znovu, budeme muset provést pro všechny `.cs` soubor v našem vazby projektu. Díky této změně zavedené dalším krokem je aktualizace našich vazby projektu pro použití nového nativní datové typy.
 
-Další informace o rozhraní API Unified najdete [unifikované API](~/cross-platform/macios/unified/index.md) dokumentaci. Pro další informace na podporu 32 až 64-bitové aplikace a informace o rozhraní viz [32 a 64 bitů platformy aspekty](~/cross-platform/macios/32-and-64.md) dokumentaci.
+Další informace o rozhraní API Unified najdete [unifikované API](~/cross-platform/macios/unified/index.md) dokumentaci. Pro další informace na podporu 32 až 64-bitové aplikace a informace o rozhraní viz [32 a 64 bitů platformy aspekty](~/cross-platform/macios/32-and-64/index.md) dokumentaci.
 
-#<a name="update-to-native-data-types"></a>Aktualizace na nativní datové typy
+## <a name="update-to-native-data-types"></a>Aktualizace na nativní datové typy
 
 Mapuje jazyka Objective-C `NSInteger` datový typ pro `int32_t` na 32bitové systémy a na `int64_t` v 64bitových systémech. Tak, aby odpovídaly toto chování, nové rozhraní API Unified nahrazuje předchozí použití `int` (který v rozhraní .NET je definován jako vždy `System.Int32`) na nový datový typ: `System.nint`.
 
@@ -94,7 +94,7 @@ Pokud jsme se mapování na novější verze 3. stran knihovnu než co jsme měl
 
 Další informace o těchto změnách typu dat, najdete v článku [nativní typy](~/cross-platform/macios/nativetypes.md) dokumentu.
 
-#<a name="update-the-coregraphics-types"></a>Aktualizace typů CoreGraphics
+## <a name="update-the-coregraphics-types"></a>Aktualizace typů CoreGraphics
 
 Bod, velikost a obdélníku typy dat, které se používají s `CoreGraphics` použít 32 nebo 64 bitů v závislosti na zařízení se systémem. Kdy Xamarinem původně navázána iOS a Mac rozhraní API jsme použili existující datové struktury, které se stalo s odpovídat datovým typům v `System.Drawing` (`RectangleF` třeba).
 
@@ -130,12 +130,12 @@ IntPtr Constructor (CGRect frame);
 
 Se všemi změn kódu provedla musíme upravit naše vazby projektu nebo zajistěte soubor pro vazbu vůči sjednocený rozhraní API.
 
-#<a name="modify-the-binding-project"></a>Upravit vazby projektu
+## <a name="modify-the-binding-project"></a>Upravit vazby projektu
 
 Jako poslední krok aktualizace našich vazby projektu pro použití rozhraní API Unified, musíme buď změnit `MakeFile` používaných pro sestavení projektu nebo typ projektu Xamarin (Pokud jsme vazbu z v sadě Visual Studio pro Mac) a vyzvat _btouch_  vytvořit vazbu na rozhraní API Unified místo klasického ty, které jsou.
 
 
-##<a name="updating-a-makefile"></a>Aktualizace souboru pravidel
+### <a name="updating-a-makefile"></a>Aktualizace souboru pravidel
 
 Pokud souboru pravidel se používá k vytvoření projektu naše vazby do Xamarin. Knihovny DLL, bude musíme zahrnout `--new-style` možnost příkazového řádku a volání `btouch-native` místo `btouch`.
 
@@ -189,7 +189,7 @@ XMBindingLibrary.dll: AssemblyInfo.cs XMBindingLibrarySample.cs extras.cs libXMB
 
 Můžeme nyní spouštět naše `MakeFile` normální k vytvoření nové 64bitovou verzí systému našem rozhraní API.
 
-##<a name="updating-a-binding-project-type"></a>Aktualizace typu vazby projektu
+### <a name="updating-a-binding-project-type"></a>Aktualizace typu vazby projektu
 
 Pokud Visual Studio pro Mac vazby šablona projektu se používá k vytvoření našem rozhraní API, budeme potřebovat aktualizovat na novou verzi unifikované API projektu šablony vazby. Nejjednodušší způsob je začít nový projekt vazby jednotné rozhraní API a zkopírujte znovu všechny stávající kód a nastavení.
 
@@ -199,7 +199,7 @@ Postupujte takto:
 2. Vyberte **soubor** > **nové** > **řešení...**
 3. V dialogovém okně nové řešení vyberte **iOS** > **unifikované API** > **iOS vazby projektu**: 
 
-    [ ![](update-binding-images/image01new.png "V dialogovém okně nové řešení vyberte iOS / unifikované API / projekt iOS vazby")](update-binding-images/image01new.png)
+    [![](update-binding-images/image01new.png "V dialogovém okně nové řešení vyberte iOS / unifikované API / projekt iOS vazby")](update-binding-images/image01new.png#lightbox)
 4. V dialogovém okně, konfigurovat nový projekt, zadejte **název** pro nový projekt vazby a klikněte na **OK** tlačítko.
 5. Zahrňte 64bitové verzi knihovny jazyka Objective-C, která se chystáte se vytváření vazeb pro.
 6. Zkopírovat z existující projekt vazby 32bitové klasické rozhraní API přes zdrojový kód (například `ApiDefinition.cs` a `StructsAndEnums.cs` soubory).
@@ -207,7 +207,7 @@ Postupujte takto:
 
 Se všemi těchto změn v místě můžete vytvořit novou 64bitové verzi rozhraní API stejně jako na 32bitové verzi.
 
-#<a name="summary"></a>Souhrn
+## <a name="summary"></a>Souhrn
 
 V tomto článku jsme ukázaly změny, které je potřeba provést k existujícímu vazby projektu Xamarin pro podporu nových jednotné rozhraní API a 64bitová verze zařízení a kroky potřebné k vytvoření nové verze kompatibilní 64bitová verze rozhraní API.
 
@@ -217,7 +217,7 @@ V tomto článku jsme ukázaly změny, které je potřeba provést k existujíc�
 
 - [Mac a iOS](~/cross-platform/macios/index.md)
 - [Unified API](~/cross-platform/macios/nativetypes.md)
-- [Aspekty platformy 32 nebo 64bitový](~/cross-platform/macios/32-and-64.md)
+- [Aspekty platformy 32 nebo 64bitový](~/cross-platform/macios/32-and-64/index.md)
 - [Upgrade existující iOS aplikace](~/cross-platform/macios/unified/updating-ios-apps.md)
 - [Unified API](~/cross-platform/macios/unified/index.md)
 - [BindingSample](https://developer.xamarin.com/samples/monotouch/BindingSample/)

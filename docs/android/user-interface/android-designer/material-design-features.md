@@ -8,17 +8,20 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: c0b5fa3e7eacb9f7fd8aa133a290d0e7654972ce
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9c1797398fba580ab7f34526b10e1da455eb2dc5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="material-design-features"></a>Funkce podstatným návrhu
 
 _Toto téma popisuje funkce Designer, které usnadňují vývojářům vytvářet podstatným návrhu vyhovující rozložení. Tato část uvádí a vysvětluje, jak použít materiálu mřížky, materiálu paletu barev, typografických škálování a Editor motivů._
 
-<a name="overview" />
+
+> [!Video https://youtube.com/embed/E3_ZjIOzVzY]
+
+**Momentální 2016: Everyone můžete vytvořit Krásný aplikace s podstatným návrhu**
 
 ## <a name="overview"></a>Přehled
 
@@ -37,7 +40,6 @@ V této příručce máme podívejte se na následující funkce Designer:
 Jsme budete podívejte se na jednotlivé funkce a příklady jejich použití.
 
 
-<a name="material_grid" />
 
 ## <a name="material-design-grid"></a>Podstatným návrhu mřížky
 
@@ -45,11 +47,11 @@ Je k dispozici na panelu nástrojů v horní části návrháře nabídka materi
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Podstatným návrhu mřížky](material-design-features-images/vs/01-material-design-grid-sml.png)](material-design-features-images/vs/01-material-design-grid.png)
+[![Podstatným návrhu mřížky](material-design-features-images/vs/01-material-design-grid-sml.png)](material-design-features-images/vs/01-material-design-grid.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Podstatným návrhu mřížky](material-design-features-images/xs/01-material-design-grid-sml.png)](material-design-features-images/xs/01-material-design-grid.png)
+[![Podstatným návrhu mřížky](material-design-features-images/xs/01-material-design-grid-sml.png)](material-design-features-images/xs/01-material-design-grid.png#lightbox)
 
 -----
 
@@ -65,11 +67,11 @@ Tyto prvky jsou uvedeny v následující snímek obrazovky:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Oříznut, mezery a mřížky](material-design-features-images/vs/02-grid-and-keylines-sml.png)](material-design-features-images/vs/02-grid-and-keylines.png)
+[![Oříznut, mezery a mřížky](material-design-features-images/vs/02-grid-and-keylines-sml.png)](material-design-features-images/vs/02-grid-and-keylines.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Oříznut, mezery a mřížky](material-design-features-images/xs/02-grid-and-keylines-sml.png)](material-design-features-images/xs/02-grid-and-keylines.png)
+[![Oříznut, mezery a mřížky](material-design-features-images/xs/02-grid-and-keylines-sml.png)](material-design-features-images/xs/02-grid-and-keylines.png#lightbox)
 
 -----
 
@@ -89,7 +91,7 @@ Změníte-li tyto hodnoty konfigurace, jsou uloženy v souboru XML rozložení a
 
 Každá z těchto položek překrytí je možné konfigurovat. Po kliknutí na tlačítko dolů trojúhelník vedle nabídky materiálu návrhu mřížky, otevře dialogové okno popover, umožňuje zakázat nebo povolit mřížky, nakonfigurujte umístění objekty a nastavte mezery. Všimněte si, že všechny hodnoty jsou vyjádřeny v `dp` (nezávislé na hustotě pixelů):
 
-[![Mřížky, oříznut a konfiguraci mezery](material-design-features-images/xs/03-grid-configuration-sml.png)](material-design-features-images/xs/03-grid-configuration.png)
+[![Mřížky, oříznut a konfiguraci mezery](material-design-features-images/xs/03-grid-configuration-sml.png)](material-design-features-images/xs/03-grid-configuration.png#lightbox)
 
 Pokud chcete přidat nový oříznut, zadejte novou hodnotu posunutí v **posun** , vyberte umístění (**levém**, **horní**, **správné**, nebo  **dolní**) a klikněte + ikonu, čímž přidáte nové oříznut.
 
@@ -102,20 +104,20 @@ Změníte-li tyto hodnoty konfigurace, jsou uloženy v souboru XML rozložení a
 
 Každá položka vlastnost panel, který přijímá barvu, která teď má další ikonu, která slouží k otevření materiálu návrhu palety, jak je vidět na tomto snímku obrazovky:
 
-[![Ikona barev](material-design-features-images/xs/04-new-color-icon-sml.png)](material-design-features-images/xs/04-new-color-icon.png)
+[![Ikona barev](material-design-features-images/xs/04-new-color-icon-sml.png)](material-design-features-images/xs/04-new-color-icon.png#lightbox)
 
 Když kliknete na tuto ikonu, otevře dialogové okno popover, který vám umožňuje nakonfigurovat barvu této vlastnosti z palety materiálu návrhu:
 
-[![Palety barev podstatným návrhu](material-design-features-images/xs/05-material-palette-sml.png)](material-design-features-images/xs/05-material-palette.png)
+[![Palety barev podstatným návrhu](material-design-features-images/xs/05-material-palette-sml.png)](material-design-features-images/xs/05-material-palette.png#lightbox)
 
 Horní části palety barev zobrazí primární barvy materiálu návrhu při dolní části palety barev zobrazí rozsah odstíny pro vybranou primární barvu. Například když vyberete **džínovinu**, kolekce **džínovinu** odstíny se zobrazí v dolní části dialogového okna.
 Když vyberete hue, barva vlastnosti se změní na vybrané hue. V následujícím příkladu `Background Tint` tlačítko se změní na *džínovinu 500*:
 
-[![Zvolte džínovinu 500](material-design-features-images/xs/06-indigo-sml.png)](material-design-features-images/xs/06-indigo.png)
+[![Zvolte džínovinu 500](material-design-features-images/xs/06-indigo-sml.png)](material-design-features-images/xs/06-indigo.png#lightbox)
 
 `Background Tint` je nastaven na kód barvu pro *džínovinu 500* (`#ff3f51b5`), a návrháře aktualizace barvu pozadí tlačítka tak, aby odrážela tuto změnu:
 
-[![Pozadí TINT – změny](material-design-features-images/xs/07-background-tint-sml.png)](material-design-features-images/xs/07-background-tint.png)
+[![Pozadí TINT – změny](material-design-features-images/xs/07-background-tint-sml.png)](material-design-features-images/xs/07-background-tint.png#lightbox)
 
 Další informace o návrhu materiálu paletu barev zobrazit návrh materiálu [výběr barev palety](http://www.google.com/design/spec/style/color.html#color-color-palette).
 
@@ -123,24 +125,23 @@ Další informace o návrhu materiálu paletu barev zobrazit návrh materiálu [
 
 **Vzhledu textu** části **vlastnost** pad **styl** karta má ikonu, která vám umožní vyberte z `TextAppearance` styl, který vyhovuje materiálu návrhu specifikace:
 
-[![Styl karty](material-design-features-images/xs/08-typo-scale-icon-sml.png)](material-design-features-images/xs/08-typo-scale-icon.png)
+[![Styl karty](material-design-features-images/xs/08-typo-scale-icon-sml.png)](material-design-features-images/xs/08-typo-scale-icon.png#lightbox)
 
 Když kliknete na tuto ikonu, otevře se **typografických škálování** popover dialogu, který zobrazí seznam styly předem nakonfigurovaná textu, které můžete vybrat z:
 
-[![Výběru styl textu](material-design-features-images/xs/09-text-appearance-sml.png)](material-design-features-images/xs/09-text-appearance.png)
+[![Výběru styl textu](material-design-features-images/xs/09-text-appearance-sml.png)](material-design-features-images/xs/09-text-appearance.png#lightbox)
 
 V následujícím příkladu, kliknutím na tlačítko **zobrazení 1** změní text tlačítka na větší písmo **zobrazení 1**:
 
-[![Styl zobrazení 1](material-design-features-images/xs/10-display-1-sml.png)](material-design-features-images/xs/10-display-1.png)
+[![Styl zobrazení 1](material-design-features-images/xs/10-display-1-sml.png)](material-design-features-images/xs/10-display-1.png#lightbox)
 
 Styl textu v **typografických škálování** dialogové okno odpovídá **motiv** nastavení. Například pokud **Light** motiv je vybrán v Návrháři seznam dostupných text styly zrcadlení **Light** motivu:
 
-[![Motiv světlý](material-design-features-images/xs/11-light-theme-sml.png)](material-design-features-images/xs/11-light-theme.png)
+[![Motiv světlý](material-design-features-images/xs/11-light-theme-sml.png)](material-design-features-images/xs/11-light-theme.png#lightbox)
 
 -----
 
 
-<a name="theme_editor" />
 
 ## <a name="theme-editor"></a>Editor motivů
 
@@ -152,7 +153,7 @@ Styl textu v **typografických škálování** dialogové okno odpovídá **moti
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Ikona Editor motivů](material-design-features-images/xs/12a-theme-editor-icon-sml.png)](material-design-features-images/xs/12a-theme-editor-icon.png)
+[![Ikona Editor motivů](material-design-features-images/xs/12a-theme-editor-icon-sml.png)](material-design-features-images/xs/12a-theme-editor-icon.png#lightbox)
 
 -----
 
@@ -162,11 +163,11 @@ Na levém panelu **Editor motivů** zobrazí seznam barev, které tvoří aktuá
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Editor motivů](material-design-features-images/vs/05-theme-editor-sml.png)](material-design-features-images/vs/05-theme-editor.png)
+[![Editor motivů](material-design-features-images/vs/05-theme-editor-sml.png)](material-design-features-images/vs/05-theme-editor.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Editor motivů](material-design-features-images/xs/12b-theme-editor-sml.png)](material-design-features-images/xs/12b-theme-editor.png)
+[![Editor motivů](material-design-features-images/xs/12b-theme-editor-sml.png)](material-design-features-images/xs/12b-theme-editor.png#lightbox)
 
 -----
 
@@ -183,7 +184,6 @@ Když vyberete barvu na levé straně, v pravém panelu obsahuje následující 
 Podívejme se na každé z nich z těchto karet podrobně.
 
 
-<a name="theme_edit_inherit_tab" />
 
 ### <a name="inherit-tab"></a>Zdědit karta
 
@@ -191,11 +191,11 @@ Jak je vidět v následujícím příkladu **zděděné** karta Vypíše seznam 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Zdědit karta](material-design-features-images/vs/06-inherit-tab-sml.png)](material-design-features-images/vs/06-inherit-tab.png)
+[![Zdědit karta](material-design-features-images/vs/06-inherit-tab-sml.png)](material-design-features-images/vs/06-inherit-tab.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Zdědit karta](material-design-features-images/xs/13-inherit-sml.png)](material-design-features-images/xs/13-inherit.png)
+[![Zdědit karta](material-design-features-images/xs/13-inherit-sml.png)](material-design-features-images/xs/13-inherit.png#lightbox)
 
 -----
 
@@ -203,7 +203,6 @@ V tomto příkladu **výchozí motiv** dědí z styl, který používá `@color/
 Další informace o dědičnosti styl najdete v tématu [styly a motivů](http://developer.android.com/guide/topics/ui/themes.html#Inheritance).
 
 
-<a name="theme_edit_color_picker" />
 
 ### <a name="color-picker"></a>Výběr barvy
 
@@ -211,11 +210,11 @@ Následující snímek obrazovky ukazuje **volby barev**:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Výběr barvy](material-design-features-images/vs/07-color-picker-sml.png)](material-design-features-images/vs/07-color-picker.png)
+[![Výběr barvy](material-design-features-images/vs/07-color-picker-sml.png)](material-design-features-images/vs/07-color-picker.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Výběr barvy](material-design-features-images/xs/14-color-picker-sml.png)](material-design-features-images/xs/14-color-picker.png)
+[![Výběr barvy](material-design-features-images/xs/14-color-picker-sml.png)](material-design-features-images/xs/14-color-picker.png#lightbox)
 
 -----
 
@@ -229,7 +228,6 @@ V tomto příkladu **pozadí** barvu lze změnit na jakoukoli hodnotu různé zp
 
 Barva, vyberte v dialogovém okně Výběr barvy je *není* omezený pokynů pro návrh materiálu nebo sadu prostředků dostupných barev.
 
-<a name="theme_edit_resources" />
 
 ### <a name="resources"></a>Prostředky
 
@@ -237,18 +235,17 @@ Barva, vyberte v dialogovém okně Výběr barvy je *není* omezený pokynů pro
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Prostředky](material-design-features-images/vs/08-resources-sml.png)](material-design-features-images/vs/08-resources.png)
+[![Prostředky](material-design-features-images/vs/08-resources-sml.png)](material-design-features-images/vs/08-resources.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Prostředky](material-design-features-images/xs/15-resources-sml.png)](material-design-features-images/xs/15-resources.png)
+[![Prostředky](material-design-features-images/xs/15-resources-sml.png)](material-design-features-images/xs/15-resources.png#lightbox)
 
 -----
 
 Pomocí **prostředky** kartě omezí vaše volby do tohoto seznamu barvy. Mějte na paměti, že pokud si zvolíte barvu prostředek, který je již přiřazen k jiné části motivu, dva sousední elementy uživatelského rozhraní může "spustit současně" (protože mají stejné barvy) a stát se pro uživatele k rozlišení.
 
 
-<a name="theme_edit_material_pallette" />
 
 ### <a name="material-palette"></a>Podstatným palety
 
@@ -256,7 +253,7 @@ Pomocí **prostředky** kartě omezí vaše volby do tohoto seznamu barvy. Mějt
 
 **Materiálu palety** kartě se otevře **paletu barev návrhu materiálu**. Výběr hodnoty barvy z palety omezí výběr barvy, aby byl konzistentní s pokyny pro návrh materiálů.
 
-[![Podstatným palety](material-design-features-images/vs/09-material-palette-sml.png)](material-design-features-images/vs/09-material-palette.png)
+[![Podstatným palety](material-design-features-images/vs/09-material-palette-sml.png)](material-design-features-images/vs/09-material-palette.png#lightbox)
 
 Horní části palety barev zobrazí primární barvy materiálu návrhu při dolní části palety barev zobrazí rozsah odstíny pro vybranou primární barvu. Například když vyberete **džínovinu**, kolekce **džínovinu** odstíny se zobrazí v dolní části dialogového okna.
 Když vyberete hue, barva vlastnosti se změní na vybrané hue. V následujícím příkladu `Background Tint` tlačítko se změní na *džínovinu 500*:
@@ -265,7 +262,7 @@ Když vyberete hue, barva vlastnosti se změní na vybrané hue. V následujíc�
 
 `Background Tint` je nastaven na kód barvu pro *džínovinu 500* (`#ff3f51b5`), a návrháře aktualizace barvu pozadí tak, aby odrážela tuto změnu:
 
-[![TINT – pozadí změnit](material-design-features-images/vs/11-background-tint-sml.png)](material-design-features-images/vs/11-background-tint.png)
+[![TINT – pozadí změnit](material-design-features-images/vs/11-background-tint-sml.png)](material-design-features-images/vs/11-background-tint.png#lightbox)
 
 Další informace o návrhu materiálu paletu barev zobrazit návrh materiálu [výběr barev palety](http://www.google.com/design/spec/style/color.html#color-color-palette).
 
@@ -273,12 +270,11 @@ Další informace o návrhu materiálu paletu barev zobrazit návrh materiálu [
 
 **Materiálu palety** kartě se otevře **paletu barev návrhu materiálu** popsané [starší](#material_palette). Výběr hodnoty barvy z palety omezí výběr barvy, aby byl konzistentní s pokyny pro návrh materiálů.
 
-[![Podstatným palety](material-design-features-images/xs/16-material-palette-sml.png)](material-design-features-images/xs/16-material-palette.png)
+[![Podstatným palety](material-design-features-images/xs/16-material-palette-sml.png)](material-design-features-images/xs/16-material-palette.png#lightbox)
 
 -----
 
 
-<a name="theme_create" />
 
 ### <a name="creating-a-new-theme"></a>Vytváření nový motiv
 
@@ -290,7 +286,7 @@ V následujícím příkladu použijeme palety materiálu k vytvoření nové vl
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Změnit pozadí na modré 900](material-design-features-images/xs/17-change-background-to-blue-sml.png)](material-design-features-images/xs/17-change-background-to-blue.png)
+[![Změnit pozadí na modré 900](material-design-features-images/xs/17-change-background-to-blue-sml.png)](material-design-features-images/xs/17-change-background-to-blue.png#lightbox)
 
 -----
 
@@ -299,11 +295,11 @@ Při změně prostředku barva zprávu objeví se zpráva, *aktuálního motivu 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Neuložené změny upozornění](material-design-features-images/vs/13-unsaved-changes-sml.png)](material-design-features-images/vs/13-unsaved-changes.png)
+[![Neuložené změny upozornění](material-design-features-images/vs/13-unsaved-changes-sml.png)](material-design-features-images/vs/13-unsaved-changes.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Neuložené změny upozornění](material-design-features-images/xs/18-unsaved-changes-sml.png)](material-design-features-images/xs/18-unsaved-changes.png)
+[![Neuložené změny upozornění](material-design-features-images/xs/18-unsaved-changes-sml.png)](material-design-features-images/xs/18-unsaved-changes.png#lightbox)
 
 -----
 
@@ -327,18 +323,17 @@ Předchozí příklad, kliknutím na Pokračovat **vytvořit nový motiv** názv
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Přidat vlastní motiv](material-design-features-images/vs/14-custom-theme-sml.png)](material-design-features-images/vs/14-custom-theme.png)
+[![Přidat vlastní motiv](material-design-features-images/vs/14-custom-theme-sml.png)](material-design-features-images/vs/14-custom-theme.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Přidat vlastní motiv](material-design-features-images/xs/19-custom-theme-sml.png)](material-design-features-images/xs/19-custom-theme.png)
+[![Přidat vlastní motiv](material-design-features-images/xs/19-custom-theme-sml.png)](material-design-features-images/xs/19-custom-theme.png#lightbox)
 
 -----
 
 
 Vzhledem k tomu, že v aktuálně vybraném motivu není motiv projektu, neexistuje žádné dialogové okno Aktualizovat vybrané motiv a určete nové umístění.
 
-<a name="summary" />
 
 ## <a name="summary"></a>Souhrn
 

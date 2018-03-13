@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 00980c0038ac3ae51d0444e6f71dde9dfef25831
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 33e27043c3738c5213b17786e5a88fb30a7fc017
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="speech-recognition"></a>Rozpoznávání řeči
 
@@ -33,7 +33,7 @@ Rozhraní API pro rozpoznávání řeči podle společnosti Apple, má následuj
 
 Rozpoznávání řeči je implementované v aplikaci pro iOS získávání za provozu nebo předem záznam zvuku (v některém z mluvené jazyky, které podporuje rozhraní API) a předání do rozpoznávání řeči, která vrátí hodnotu přepis prostého textu mluvené slovo.
 
-[ ![](speech-images/speech01.png "Jak funguje rozpoznávání řeči")](speech-images/speech01.png)
+[![](speech-images/speech01.png "Jak funguje rozpoznávání řeči")](speech-images/speech01.png#lightbox)
 
 ### <a name="keyboard-dictation"></a>Diktování klávesnice
 
@@ -104,13 +104,13 @@ K poskytování požadované `NSSpeechRecognitionUsageDescription` klíče v `In
 1. Dvakrát klikněte `Info.plist` soubor otevřete pro úpravy.
 2. Přepnout **zdroj** zobrazení: 
 
-    [ ![](speech-images/speech02.png "Zobrazení zdroje")](speech-images/speech02.png)
+    [![](speech-images/speech02.png "Zobrazení zdroje")](speech-images/speech02.png#lightbox)
 3. Klikněte na **přidat novou položku**, zadejte `NSSpeechRecognitionUsageDescription` pro **vlastnost**, `String` pro **typ** a **využití popis** jako **hodnotu**. Příklad: 
 
-    [ ![](speech-images/speech03.png "Přidání NSSpeechRecognitionUsageDescription")](speech-images/speech03.png)
+    [![](speech-images/speech03.png "Přidání NSSpeechRecognitionUsageDescription")](speech-images/speech03.png#lightbox)
 4. Pokud aplikace bude zpracovávat za provozu zvuk přepis, bude vyžadovat také popis mikrofon využití. Klikněte na **přidat novou položku**, zadejte `NSMicrophoneUsageDescription` pro **vlastnost**, `String` pro **typ** a **využití popis** jako **hodnotu**. Příklad: 
 
-    [ ![](speech-images/speech04.png "Přidání NSMicrophoneUsageDescription")](speech-images/speech04.png)
+    [![](speech-images/speech04.png "Přidání NSMicrophoneUsageDescription")](speech-images/speech04.png#lightbox)
 4. Uložte změny do souboru.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -118,10 +118,10 @@ K poskytování požadované `NSSpeechRecognitionUsageDescription` klíče v `In
 1. Dvakrát klikněte `Info.plist` soubor otevřete pro úpravy.
 3. Klikněte na **přidat novou položku**, zadejte `NSSpeechRecognitionUsageDescription` pro **vlastnost**, `String` pro **typ** a **využití popis** jako **hodnotu**. Příklad: 
 
-    [ ![](speech-images/speech03w.png "Přidání NSSpeechRecognitionUsageDescription")](speech-images/speech03w.png)
+    [![](speech-images/speech03w.png "Přidání NSSpeechRecognitionUsageDescription")](speech-images/speech03w.png#lightbox)
 4. Pokud aplikace bude zpracovávat za provozu zvuk přepis, bude vyžadovat také popis mikrofon využití. Klikněte na **přidat novou položku**, zadejte `NSMicrophoneUsageDescription` pro **vlastnost**, `String` pro **typ** a **využití popis** jako **hodnotu**. Příklad: 
 
-    [ ![](speech-images/speech04w.png "Přidání NSMicrophoneUsageDescription")](speech-images/speech04w.png)
+    [![](speech-images/speech04w.png "Přidání NSMicrophoneUsageDescription")](speech-images/speech04w.png#lightbox)
 4. Uložte změny do souboru.
 
 -----

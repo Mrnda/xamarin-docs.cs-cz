@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 6df47bd54611feedd0d355a976a055d62f37afeb
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1ad37cb4a794ac47e0e2f184a730949f14e85572
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ios-7-user-interface-overview"></a>iOS 7 přehled uživatelského rozhraní
 
@@ -146,7 +146,7 @@ Během přípravy aplikace pro iOS 7, můžete změnit zarovnání dílčích zo
 
  `TopLayoutGuide` a `BottomLayoutGuide` sloužit jako referenční kde by měl zobrazení začínat ani končit, tak, aby obsah není překrytý průhledná `UIKit` řádku, jako v následujícím příkladu:
 
- [ ![](ios7-ui-images/clipped.png "Ukázkový obsah není překrytý průhledná UIKit panelu")](ios7-ui-images/clipped.png)
+ [![](ios7-ui-images/clipped.png "Ukázkový obsah není překrytý průhledná UIKit panelu")](ios7-ui-images/clipped.png#lightbox)
 
 Tato rozhraní API slouží k výpočtu přestavění zobrazení z horní nebo dolní části obrazovky a odpovídajícím způsobem upravit umístění obsahu:
 
@@ -166,7 +166,7 @@ public override void ViewDidLayoutSubviews ()
 
 Můžeme použít hodnotu vypočítat výše nastavit naše `ImageView`na přestavění z horní části obrazovky, takže celého obrázku je vidět:
 
- [ ![](ios7-ui-images/good2.png "Příklad ImageViews přestavění z horní části obrazovky")](ios7-ui-images/good2.png)
+ [![](ios7-ui-images/good2.png "Příklad ImageViews přestavění z horní části obrazovky")](ios7-ui-images/good2.png#lightbox)
 
 Odkazovat [ImageViewer](https://developer.xamarin.com/samples/mobile/iOS7-ui-updates) pro pracovní vzorek.
 
@@ -179,15 +179,15 @@ Hodnota posunutí je generována dynamicky po přidání zobrazení do hierarchi
 
 Toto rozhraní API Určuje, které hrany zobrazení je třeba rozšířit na celé obrazovce, bez ohledu na panelu průsvitnosti. V iOS 7 navigační panely a panelů nástrojů zobrazí vrstvu nad kontroleru zobrazení – na rozdíl od v iOS předchozí verze, kde nebyla trvat až stejnému adresnímu prostoru. Aplikace systému iOS 7 fotografie znázorňuje výchozí `UIViewController.EdgesForExtendedLayout` hodnotu `UIRectEdge.All`. Toto nastavení vyplní celé všechny čtyři strany v okně s obsahem, vytváření účinek překrývajících se a celé obrazovky:
 
- [ ![](ios7-ui-images/photos.png "Ukázka EdgesForExtendedLayout")](ios7-ui-images/photos.png)
+ [![](ios7-ui-images/photos.png "Ukázka EdgesForExtendedLayout")](ios7-ui-images/photos.png#lightbox)
 
 Klepnutím bitovou kopii odebere pruhů a ukazuje obrázek celé obrazovky:
 
- [ ![](ios7-ui-images/photos2.png "EdgesForExtendedLayout s pruhy odebrat")](ios7-ui-images/photos2.png)
+ [![](ios7-ui-images/photos2.png "EdgesForExtendedLayout s pruhy odebrat")](ios7-ui-images/photos2.png#lightbox)
 
 Protože výchozí hodnota je celé obrazovky obsah, budou mít aplikace, nakonfigurované pro iOS 6 část zobrazení oříznut, stejně jako na následující snímek obrazovky:
 
- [ ![](ios7-ui-images/clipped.png "Nakonfigurované pro iOS 6 aplikace bude mít část zobrazení oříznut, stejně jako tento snímek obrazovky")](ios7-ui-images/clipped.png)
+ [![](ios7-ui-images/clipped.png "Nakonfigurované pro iOS 6 aplikace bude mít část zobrazení oříznut, stejně jako tento snímek obrazovky")](ios7-ui-images/clipped.png#lightbox)
 
 Úpravy `UIViewController.EdgesForExtendedLayout` upraví vlastnosti pro toto chování. Jsme můžete určit, že zobrazení nevyplní žádné okraje, vyhnete se naše zobrazení, zobrazení obsahu v prostoru obsazena navigace nebo panelů nástrojů (v každé orientaci):
 
@@ -199,7 +199,7 @@ if (UIDevice.CurrentDevice.CheckSystemVersion (7, 0)) {
 
 V naší aplikaci jsme se zobrazí v že zobrazení je znovu změnit jejich umístění, takže celého obrázku je vidět:
 
- [ ![](ios7-ui-images/good.png "Příklad s viditelné celého obrázku")](ios7-ui-images/good.png)
+ [![](ios7-ui-images/good.png "Příklad s viditelné celého obrázku")](ios7-ui-images/good.png#lightbox)
 
 Všimněte si, že se při důsledky `TopLayoutGuide/BottomLayoutGuide` a `EdgesForExtendedLayout` rozhraní API jsou podobné, jsou určená k vyplnění jiné cíle. Změna `EdgesForExtendedLayout` ve výchozím nastavení může problém vyřešit oříznutí zobrazení v aplikací navržených pro systém iOS 6, ale dobrý iOS 7 návrh by měl respektovat estetické celé obrazovky a poskytují celé obrazovce zobrazení prostředí, spoléhat na `TopLayoutGuide` a `BottomLayoutGuide`k správně umístění obsahu, který má chtěli upravit do možnost místo pro uživatele.
 

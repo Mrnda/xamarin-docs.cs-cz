@@ -7,21 +7,19 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 18c53ed6428eff911420c696d45b341d8e0fa5c1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1bf481e4999365f4afc52cb9dda83c6e627950e1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="customizing-a-listviews-appearance"></a>Přizpůsobení vzhledu prvku ListView
 
-<a name="overview" />
 
 ## <a name="overview"></a>Přehled
 
 Vzhledu ovládacího prvku ListView je určen rozložení řádků, které se zobrazí. Chcete-li změnit vzhled `ListView`, použijte jiný řádek rozložení.
 
-<a name="Built-in_Row_Views" />
 
 ## <a name="built-in-row-views"></a>Předdefinované řádek zobrazení
 
@@ -53,11 +51,11 @@ Existují dvanáct předdefinovaných zobrazení, které mohou odkazovat pomocí
 
 Každý řádek předdefinovaných zobrazení má předdefinovaný styl s ním spojená. Tyto snímky obrazovky ukazují, jak se zobrazuje jednotlivých zobrazení:
 
-[![Snímky obrazovky TestListItem, SimpleSelectableListItem, SimpleListitem1 a SimpleListItem2](customizing-appearance-images/builtinviews.png)](customizing-appearance-images/builtinviews.png)
+[![Snímky obrazovky TestListItem, SimpleSelectableListItem, SimpleListitem1 a SimpleListItem2](customizing-appearance-images/builtinviews.png)](customizing-appearance-images/builtinviews.png#lightbox)
 
-[![Snímky obrazovky SimpleListItemActivated1, SimpleListItemActivated2, SimpleListItemChecked a SimpleListItemMultipleChecked](customizing-appearance-images/builtinviews-2.png)](customizing-appearance-images/builtinviews-2.png)
+[![Snímky obrazovky SimpleListItemActivated1, SimpleListItemActivated2, SimpleListItemChecked a SimpleListItemMultipleChecked](customizing-appearance-images/builtinviews-2.png)](customizing-appearance-images/builtinviews-2.png#lightbox)
 
-[![Snímky obrazovky SimpleListItemSingleChoice, TwoLineListItem, ActivityListItem a SimpleExpandableListItem](customizing-appearance-images/builtinviews-3.png)](customizing-appearance-images/builtinviews-3.png)
+[![Snímky obrazovky SimpleListItemSingleChoice, TwoLineListItem, ActivityListItem a SimpleExpandableListItem](customizing-appearance-images/builtinviews-3.png)](customizing-appearance-images/builtinviews-3.png#lightbox)
 
 **BuiltInViews/HomeScreenAdapter.cs** ukázkového souboru (v **BuiltInViews** řešení) obsahuje kód k vytvoření obrazovky položka seznamu – rozšíření. Zobrazení je nastavena v `GetView` metoda takto:
 
@@ -88,7 +86,6 @@ view = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleExpandableLi
 Vlastnosti pro zobrazení skupiny a podřízené zobrazení pak můžete nastavit odkazem standardní `Text1` a `Text2` identifikátory řídit, jak je uvedeno výše. Na snímku obrazovky SimpleExpandableListItem (viz výše) poskytuje příklad skupiny jednořádkové zobrazení (SimpleExpandableListItem1) a zobrazení podřízených dvou řádcích (SimpleExpandableListItem2). Alternativně zobrazení skupiny mohou být konfigurovány pro dva řádky (SimpleExpandableListItem2) a podřízené zobrazení mohou být konfigurovány pro jeden řádek (SimpleExpandableListItem1), nebo obě skupiny, zobrazení a podřízené zobrazení může mít stejný počet řádků. 
 
 
-<a name="Accessories" />
 
 ## <a name="accessories"></a>Příslušenství
 
@@ -102,7 +99,7 @@ Vlastnosti pro zobrazení skupiny a podřízené zobrazení pak můžete nastavi
 
 Zmíněnými příslušenství jsou zobrazené v následující obrazovky v pořadí podle jejich odpovídajících:
 
-[![Snímky obrazovky SimpleListItemChecked, SimpleListItemSingleChoice a SimpleListItemMultipleChoice s příslušenství](customizing-appearance-images/accessories.png)](customizing-appearance-images/accessories.png)
+[![Snímky obrazovky SimpleListItemChecked, SimpleListItemSingleChoice a SimpleListItemMultipleChoice s příslušenství](customizing-appearance-images/accessories.png)](customizing-appearance-images/accessories.png#lightbox)
 
 Zobrazit jednu z těchto příslušenství průchodu ID prostředku požadované rozložení adaptéru pak ručně nastavte stav výběru požadované řádků. Tento řádek kódu ukazuje, jak vytvořit a přiřadit `Adapter` pomocí těchto rozložení:
 
@@ -112,7 +109,6 @@ ListAdapter = new ArrayAdapter<String>(this, Android.Resource.Layout.SimpleListI
 
 `ListView` Samotné podporuje jiný výběr režimy, bez ohledu na to příslušenství zobrazily. Chcete-li předejít nejasnostem, použijte `Single` režim výběru s `Checked` a `SingleChoice` příslušenství a `Multiple` režimu se `MultipleChoice` stylu. Režim výběru řídí `ChoiceMode` vlastnost `ListView`.
 
-<a name="Handling_API_Level" />
 
 ### <a name="handling-api-level"></a>Zpracování úroveň rozhraní API
 
@@ -137,7 +133,6 @@ lv.ChoiceMode = Android.Widget.ChoiceMode.Single; // Single
 */
 ```
 
-<a name="Selecting_Items_Programmatically" />
 
 ### <a name="selecting-items-programmatically"></a>Výběr položek prostřednictvím kódu programu
 
@@ -165,7 +160,6 @@ for (var i = 0; i < sparseArray.Size(); i++ )
 Console.WriteLine();
 ```
 
-<a name="Creating_Custom_Row_Layouts" />
 
 ## <a name="creating-custom-row-layouts"></a>Vytváření vlastní řádek rozložení
 
@@ -188,7 +182,6 @@ V tomto příkladu se liší od předchozích příkladech v mnoha různými zp�
 
 Tyto změny jsou podrobně popsány níže, počínaje vytváření zobrazení aktivity a vlastní řádek zobrazení a potom pokrývajících úpravy adaptéru a aktivity k vykreslení je.
 
-<a name="Adding_a_ListView_to_an_Activity_Layout" />
 
 ### <a name="adding-a-listview-to-an-activity-layout"></a>Přidání prvku ListView do aktivity rozložení
 
@@ -220,7 +213,6 @@ Protože `HomeScreen` už nebude dědit z `ListActivity` nemá výchozí zobraze
 
 Výhodou použití `Activity` vlastní rozložení (místo `ListActivity`) spočívá v je možné přidat další ovládací prvky na obrazovce, například záhlaví `TextView` v tomto příkladu.
 
-<a name="Creating_a_Custom_Row_Layout" />
 
 ### <a name="creating-a-custom-row-layout"></a>Vytváření vlastní řádek rozložení
 
@@ -267,7 +259,6 @@ Jiný soubor rozložení AXML musí obsahovat vlastní rozložení pro každý �
 
 Při vlastní řádek rozložení může obsahovat mnoho různých ovládacích prvků, posouvání výkon může být ovlivněno komplexních návrhů a pomocí bitové kopie (zejména v případě, že mají být načtená přes síť). Najdete v článku Google informace na adresování posouvání problémy s výkonem.
 
-<a name="Referencing_a_Custom_Row_View" />
 
 ### <a name="referencing-a-custom-row-view"></a>Odkazování na řádek vlastní zobrazení
 
@@ -309,7 +300,6 @@ public class HomeScreenAdapter : BaseAdapter<TableItem> {
 }
 ```
 
-<a name="Referencing_the_Custom_ListView_in_the_Activity" />
 
 ### <a name="referencing-the-custom-listview-in-the-activity"></a>Odkazování na vlastní ListView v aktivitě
 
@@ -343,10 +333,9 @@ void OnListItemClick(object sender, AdapterView.ItemClickEventArgs e)
 
 Výsledný obrazovky vypadá takto:
 
-[![Snímek obrazovky výsledné CustomRowView](customizing-appearance-images/customrowview.png)](customizing-appearance-images/customrowview.png)
+[![Snímek obrazovky výsledné CustomRowView](customizing-appearance-images/customrowview.png)](customizing-appearance-images/customrowview.png#lightbox)
 
 
-<a name="Customizing_the_Row_Selector_Color" />
 
 ### <a name="customizing-the-row-selector-color"></a>Přizpůsobení barev pro výběr řádků
 
@@ -386,10 +375,9 @@ android:background="@drawable/CustomSelector"
 
 Vybraný řádek a odpovídající `Toast` zprávy teď vypadá takto:
 
-[![Vybraný řádek v oranžová s informační zprávou zobrazení název vybraného řádku](customizing-appearance-images/customselectcolor.png)](customizing-appearance-images/customselectcolor.png)
+[![Vybraný řádek v oranžová s informační zprávou zobrazení název vybraného řádku](customizing-appearance-images/customselectcolor.png)](customizing-appearance-images/customselectcolor.png#lightbox)
 
 
-<a name="Preventing_Flickering_on_Custom_Layouts" />
 
 ### <a name="preventing-flickering-on-custom-layouts"></a>Brání blikání na vlastní rozložení
 

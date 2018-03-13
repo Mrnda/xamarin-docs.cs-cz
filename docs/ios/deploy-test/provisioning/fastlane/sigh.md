@@ -2,16 +2,16 @@
 title: "sigh fastlane pro iOS –"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 92B35AB1-7AB7-3D3B-DB31-CC971E0B43AE
+ms.assetid: CD17276F-2C8C-4A46-A54C-DD532EBD5720
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 3d80a0ab5583231f95241fb8d4f6e339e44a84ca
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2c6ac298ca2040bb2d3619be080fb1387fbfd3a0
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="fastlane-for-ios--sigh"></a>sigh fastlane pro iOS –
 
@@ -61,7 +61,7 @@ ID aplikace lze vytvořit pomocí následujícího příkazu:
 
 Kde `com.company.appname` je ID sady prostředků aplikace, který se nachází v souboru Info.plist aplikace Xamarin.iOS, jak je uvedeno dále:
 
-[ ![](sigh-images/fastlane-image5.png "Do souboru Info.plist aplikace Xamarin.iOS")](sigh-images/fastlane-image5.png)
+[![](sigh-images/fastlane-image5.png "Do souboru Info.plist aplikace Xamarin.iOS")](sigh-images/fastlane-image5.png#lightbox)
 
 Jedinečné ID aplikace musí být řetězec styl zpětného DNS. Po vytvoření, zachovat poznamenejte si, jak je budete muset používat v případě, že pomocí sigh dál v této příručce.
 
@@ -108,7 +108,7 @@ Zadejte svoje Apple ID uživatelské jméno po zobrazení výzvy fastlane. Můž
 
 Pokud vaše Apple ID je připojen k více týmů se zobrazí tady. Vyberte číslo, které odpovídá týmu, který chcete použít:
 
-[ ![](sigh-images/fastlane-image2.png "Vyberte tým, který chcete použít")](sigh-images/fastlane-image2.png)
+[![](sigh-images/fastlane-image2.png "Vyberte tým, který chcete použít")](sigh-images/fastlane-image2.png#lightbox)
 
 ID týmu lze předat také rozhraní příkazového řádku následujícím způsobem:
 
@@ -124,7 +124,7 @@ pak bude fastlane vytvořit, stáhněte a nainstalujte profil zřizování pro v
 
 Pokud středisku pro vývojáře, můžete zobrazit nově vytvořený profil zřizování, jak je uvedeno dále:
 
-[ ![](sigh-images/fastlane-image10.png "Zobrazení nově vytvořený profil zřizování")](sigh-images/fastlane-image10.png)
+[![](sigh-images/fastlane-image10.png "Zobrazení nově vytvořený profil zřizování")](sigh-images/fastlane-image10.png#lightbox)
 
 sigh uloží zřizovacích profilů v aktuální složce, ve výchozím nastavení. Chcete-li změnit adresář výstupu, upravte `output_path`, nebo postupujte takto:
 
@@ -140,19 +140,19 @@ Poskytnout další podporu při použití sigh lze použít následující možn
 
 - Chcete-li stáhnout všechny profily zřizování používat:
 
-    ````bash
+    ```bash
     fastlane sigh download_all
     ```
 
-- To use a specific signing identity for your provisioning profile use:
+- Použití konkrétní podpisové identity pro použití v profilu zřizování:
 
     ```bash
     fastlane sigh -c "Amy cert"
     ```
     
-    Where `Amy cert` is the Code Signing Identity name.
+    Kde `Amy cert` je název identitu podepisování kódu.
 
 
-## Related Links
+## <a name="related-links"></a>Související odkazy
 
 - [fastlane - sigh](https://github.com/fastlane/fastlane/tree/master/sigh#readme)

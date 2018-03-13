@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/01/2017
-ms.openlocfilehash: 21d5478c7e8317510a6f46b72a261582c9432301
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 9918c7e54f443477006ad40931c24d814f7171ea
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="light-theme"></a>Motiv světlý
 
@@ -50,7 +50,7 @@ Potom zadejte [řešení potíží s krok](~/xamarin-forms/user-interface/themes
 
 Tady je příklad tlačítka a popisky v motiv světlý, společně s kód, který vytváří je.
 
-[ ![](light-images/light-theme-sml.png "Popisky v motiv světlý a tlačítka")](light-images/light-theme.png "popisky v motiv světlý a tlačítka")
+[![](light-images/light-theme-sml.png "Popisky v motiv světlý a tlačítka")](light-images/light-theme.png#lightbox "popisky v motiv světlý a tlačítka")
 
 ```xaml
 <StackLayout Padding="20">

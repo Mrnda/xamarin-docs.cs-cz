@@ -3,16 +3,16 @@ title: "Dialogová okna"
 description: "Tento článek se zabývá práce se dialogová okna a modální okna v aplikaci Xamarin.Mac. Popisuje vytváření modální okna v Xcode a rozhraní tvůrce, práce s standardní dialogová okna a interakci s tyto ovládací prvky v kódu jazyka C#."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: F1DB93A1-7549-4540-AD5E-D7605CCD8435
+ms.assetid: 55451990-B77B-4D44-B8BB-F874EC503B0C
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 9b65e870fae0074726d0bdd46d9eecbe99240e98
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 661874ae8599fed35ce10213fece383eb81de94d
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="dialogs"></a>Dialogová okna
 
@@ -22,7 +22,7 @@ Zobrazí se dialogové okno se zobrazí v reakci na akci uživatele a obvykle po
 
 Windows může být použité v nemodální stavu (třeba textový editor, který může mít více dokumentů současně) nebo modální (například dialogu Export, které musí být před pokračováním aplikace zavře).
 
-[ ![](dialog-images/dialog03.png "Otevřené dialogové okno")](dialog-images/dialog03.png)
+[![](dialog-images/dialog03.png "Otevřené dialogové okno")](dialog-images/dialog03.png#lightbox)
 
 V tomto článku vám nabídneme základní informace o práci s dialogová okna a modální okna v aplikaci Xamarin.Mac. Vysoce navržený na spolupracovat [Hello, Mac](~/mac/get-started/hello-mac.md) článek nejprve, konkrétně [Úvod do Xcode a rozhraní tvůrce](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) a [výstupy a akce](~/mac/get-started/hello-mac.md#Outlets_and_Actions) oddíly, jak se popisuje klíčové koncepty a techniky, které budeme používat v tomto článku.
 
@@ -44,25 +44,25 @@ Podle společnosti Apple existují tři způsoby, jak zobrazení dialogu:
 
 Všechny standardní `NSWindow` lze použít jako vlastní dialogové okno zobrazením modálně:
 
-[ ![](dialog-images/modal01.png "Modální okno s příklad")](dialog-images/modal01.png)
+[![](dialog-images/modal01.png "Modální okno s příklad")](dialog-images/modal01.png#lightbox)
 
 ### <a name="document-modal-dialog-sheets"></a>Listy modálních dialogových dokumentu
 
 A _list_ je modální dialogové okno, který je připojen k okno daného dokumentu, brání uživatelům v interakci s okna, dokud se zavřete toto dialogové okno. List je připojený k okno, ve kterém ukáže, a v jednom okamžiku může být pouze jeden list otevřené pro okno.
 
-[ ![](dialog-images/sheet08.png "Modální list příklad")](dialog-images/sheet08.png)
+[![](dialog-images/sheet08.png "Modální list příklad")](dialog-images/sheet08.png#lightbox)
 
 ### <a name="preferences-windows"></a>Předvolby Windows
 
 Okno Předvolby je nemodální dialog, který obsahuje nastavení aplikace, které uživatel změní zřídka. Předvolby Windows často patří panel nástrojů, který umožňuje uživatelům přepínat mezi různé skupiny nastavení:
 
-[ ![](dialog-images/dialog02.png "Okno s příklad předvoleb")](dialog-images/dialog02.png)
+[![](dialog-images/dialog02.png "Okno s příklad předvoleb")](dialog-images/dialog02.png#lightbox)
 
 ### <a name="open-dialog"></a>Dialogové okno Otevřít
 
 Otevřete dialogové okno poskytuje uživatelům konzistentní způsob, jak najít a otevřít položku v aplikaci:
 
-[ ![](dialog-images/dialog03.png "Otevřete dialogové okno")](dialog-images/dialog03.png)
+[![](dialog-images/dialog03.png "Otevřete dialogové okno")](dialog-images/dialog03.png#lightbox)
 
 
 ### <a name="print-and-page-setup-dialogs"></a>Tiskové a dialogová okna nastavení stránky
@@ -71,37 +71,37 @@ systému macOS poskytuje standardní tisku a stránka Instalace dialogů, které
 
 Dialogové okno tisku může být zobrazen jako obou bezplatné plovoucí dialogové okno:
 
-[ ![](dialog-images/print01.png "Dialogové okno tisku")](dialog-images/print01.png)
+[![](dialog-images/print01.png "Dialogové okno tisku")](dialog-images/print01.png#lightbox)
 
 Nebo se může zobrazovat jako list:
 
-[ ![](dialog-images/print02.png "Tisk seznamu vlastností")](dialog-images/print02.png)
+[![](dialog-images/print02.png "Tisk seznamu vlastností")](dialog-images/print02.png#lightbox)
 
 Dialogové okno nastavení stránky lze zobrazit jako obou bezplatné plovoucí dialogové okno:
 
-[ ![](dialog-images/print03.png "Dialogové okno nastavení stránky")](dialog-images/print03.png)
+[![](dialog-images/print03.png "Dialogové okno nastavení stránky")](dialog-images/print03.png#lightbox)
 
 Nebo se může zobrazovat jako list:
 
-[ ![](dialog-images/print04.png "Instalační program list stránky")](dialog-images/print04.png)
+[![](dialog-images/print04.png "Instalační program list stránky")](dialog-images/print04.png#lightbox)
 
 ### <a name="save-dialogs"></a>Uložit dialogová okna
 
 Dialogové okno Uložit poskytuje uživatelům konzistentní způsob, jak uložit položku v aplikaci. Dialogové okno Uložit má dva stavy: **minimální** (také označované jako sbalené):
 
-[ ![](dialog-images/save01.png "A uložte dialogové okno")](dialog-images/save01.png)
+[![](dialog-images/save01.png "A uložte dialogové okno")](dialog-images/save01.png#lightbox)
 
 A **rozšířené** stavu:
 
-[ ![](dialog-images/save02.png "Rozšířené uložit dialogové okno")](dialog-images/save02.png)
+[![](dialog-images/save02.png "Rozšířené uložit dialogové okno")](dialog-images/save02.png#lightbox)
 
 **Minimální** uložit dialogové okno lze také zobrazit jako list:
 
-[ ![](dialog-images/save03.png "Minimální uložení listu")](dialog-images/save03.png)
+[![](dialog-images/save03.png "Minimální uložení listu")](dialog-images/save03.png#lightbox)
 
 Jak můžete **rozšířené** uložit dialogové okno:
 
-[ ![](dialog-images/save04.png "Rozšířené list uložit")](dialog-images/save04.png)
+[![](dialog-images/save04.png "Rozšířené list uložit")](dialog-images/save04.png#lightbox)
 
 Další informace najdete v tématu [v dialogových oknech](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/WindowDialogs.html#//apple_ref/doc/uid/20000957-CH43-SW1) části společnosti Apple [OS X Human Interface Guidelines](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
 
@@ -116,20 +116,20 @@ Pokud chcete přidat nové okno, postupujte takto:
 1. V **Průzkumníku řešení**, otevřete `Main.storyboard` soubor pro úpravy v Tvůrci rozhraní pro Xcode.
 2. Přetáhněte novou **View Controller** do návrhové plochy:
 
-    [ ![](dialog-images/new01.png "Výběr řadič zobrazení z knihovny")](dialog-images/new01.png)
+    [![](dialog-images/new01.png "Výběr řadič zobrazení z knihovny")](dialog-images/new01.png#lightbox)
 3. V **Identity Inspector**, zadejte `CustomDialogController` pro **název třídy**: 
 
-    [ ![](dialog-images/new02.png "Nastavení názvu – třída")](dialog-images/new02.png)
+    [![](dialog-images/new02.png "Nastavení názvu – třída")](dialog-images/new02.png#lightbox)
 4. Přepněte zpět na Visual Studio pro Mac, aby ji synchronizovat s Xcode a vytvořit `CustomDialogController.h` souboru.
 5. Vraťte se na Xcode a navrhnout vaše rozhraní: 
 
-    [ ![](dialog-images/new03.png "Návrh uživatelského rozhraní v Xcode")](dialog-images/new03.png)
+    [![](dialog-images/new03.png "Návrh uživatelského rozhraní v Xcode")](dialog-images/new03.png#lightbox)
 6. Vytvoření **modální Segue** v hlavním okně vaší aplikace na novém řadiči zobrazení tak, že přetáhnete ovládací prvek z uživatelského rozhraní elementu, který se otevře dialogové okno dialogovém okně. Přiřazení **identifikátor** `ModalSegue`: 
 
-    [ ![](dialog-images/new06.png "Modální segue")](dialog-images/new06.png)
+    [![](dialog-images/new06.png "Modální segue")](dialog-images/new06.png#lightbox)
 6. Navázání, všechny **akce** a **výstupy**: 
 
-    [ ![](dialog-images/new04.png "Konfigurace akce")](dialog-images/new04.png)
+    [![](dialog-images/new04.png "Konfigurace akce")](dialog-images/new04.png#lightbox)
 6. Uložte změny a vrátit k sadě Visual Studio pro Mac k synchronizaci s Xcode.
 
 Ujistěte se, `CustomDialogController.cs` soubor vypadá takto:
@@ -249,7 +249,7 @@ Tento kód inicializuje segue, který jsme definovali v Xcode na rozhraní tvůr
 
 Můžeme spuštění aplikace a zobrazit dialogové okno Vlastní:
 
-[ ![](dialog-images/new05.png "O příklad dialogové okno")](dialog-images/new05.png)
+[![](dialog-images/new05.png "O příklad dialogové okno")](dialog-images/new05.png#lightbox)
 
 Další informace o používání oken v aplikaci Xamarin.Mac, najdete v tématu naše [práce s Windows](~/mac/user-interface/window.md) dokumentaci.
 
@@ -264,19 +264,19 @@ Pokud chcete vytvořit vlastní list v Xamarin.Mac, můžeme takto:
 1. V **Průzkumníku řešení**, otevřete `Main.storyboard` soubor pro úpravy v Tvůrci rozhraní pro Xcode.
 2. Přetáhněte novou **View Controller** do návrhové plochy:
 
-    [ ![](dialog-images/new01.png "Výběr řadič zobrazení z knihovny")](dialog-images/new01.png)
+    [![](dialog-images/new01.png "Výběr řadič zobrazení z knihovny")](dialog-images/new01.png#lightbox)
 2. Návrh uživatelského rozhraní:
 
-    [ ![](dialog-images/sheet01.png "Návrh uživatelského rozhraní")](dialog-images/sheet01.png)
+    [![](dialog-images/sheet01.png "Návrh uživatelského rozhraní")](dialog-images/sheet01.png#lightbox)
 3. Vytvoření **Segue list** z vaší hlavní okno na nový řadič zobrazení: 
 
-    [ ![](dialog-images/sheet02.png "Výběr typu segue listu")](dialog-images/sheet02.png)
+    [![](dialog-images/sheet02.png "Výběr typu segue listu")](dialog-images/sheet02.png#lightbox)
 4. V **Identity Inspector**, název řadiče zobrazení **třída** `SheetViewController`: 
 
-    [ ![](dialog-images/sheet03.png "Nastavení názvu – třída")](dialog-images/sheet03.png)
+    [![](dialog-images/sheet03.png "Nastavení názvu – třída")](dialog-images/sheet03.png#lightbox)
 5. Zadejte všechny potřebné **výstupy** a **akce**: 
 
-    [ ![](dialog-images/sheet04.png "Definování požadované výstupy a akce")](dialog-images/sheet04.png)
+    [![](dialog-images/sheet04.png "Definování požadované výstupy a akce")](dialog-images/sheet04.png#lightbox)
 6. Uložte změny a vrátit k sadě Visual Studio pro Mac k synchronizaci.
 
 Potom upravte `SheetViewController.cs` souboru a nastavit jej vypadat třeba takto:
@@ -407,7 +407,7 @@ public override void PrepareForSegue (NSStoryboardSegue segue, NSObject sender)
 
 Pokud jsme spuštění aplikace a otevřete list, bude připojen do okna:
 
-[ ![](dialog-images/sheet08.png "Příklad listu")](dialog-images/sheet08.png)
+[![](dialog-images/sheet08.png "Příklad listu")](dialog-images/sheet08.png#lightbox)
 
 <a name="Creating_a_Preferences_Dialog" />
 
@@ -481,36 +481,36 @@ Pokud chcete přidat nové okno, postupujte takto:
 1. V **Průzkumníku řešení**, otevřete `Main.storyboard` soubor pro úpravy v Tvůrci rozhraní pro Xcode.
 2. Přetáhněte novou **okno řadiče** do návrhové plochy:
 
-    [ ![](dialog-images/pref01.png "Vyberte řadič okno z knihovny")](dialog-images/pref01.png)
+    [![](dialog-images/pref01.png "Vyberte řadič okno z knihovny")](dialog-images/pref01.png#lightbox)
 3. Uspořádá okna téměř **řádku nabídek** designer:
 
-    [ ![](dialog-images/pref02.png "Přidání nové okno")](dialog-images/pref02.png)
+    [![](dialog-images/pref02.png "Přidání nové okno")](dialog-images/pref02.png#lightbox)
 4. Vytvořte kopie připojené řadiče zobrazení jako v zobrazení předvoleb bude být karty:
 
-    [ ![](dialog-images/pref03.png "Přidávání na požadované řadiče zobrazení")](dialog-images/pref03.png)
+    [![](dialog-images/pref03.png "Přidávání na požadované řadiče zobrazení")](dialog-images/pref03.png#lightbox)
 5. Přetáhněte novou **nástrojů řadič** z **knihovny**:
 
-    [ ![](dialog-images/pref04.png "Vyberte panelu nástrojů řadič z knihovny")](dialog-images/pref04.png)
+    [![](dialog-images/pref04.png "Vyberte panelu nástrojů řadič z knihovny")](dialog-images/pref04.png#lightbox)
 6. A umístěte jej v okně v návrhové ploše:
 
-    [ ![](dialog-images/pref05.png "Přidávání nového řadiče panelu nástrojů")](dialog-images/pref05.png)
+    [![](dialog-images/pref05.png "Přidávání nového řadiče panelu nástrojů")](dialog-images/pref05.png#lightbox)
 7. Rozložení panelu nástrojů v návrhu:
 
-    [ ![](dialog-images/pref06.png "Rozložení panelu nástrojů")](dialog-images/pref06.png)
+    [![](dialog-images/pref06.png "Rozložení panelu nástrojů")](dialog-images/pref06.png#lightbox)
 8. Ovládací prvek klikněte a přetáhněte ji z každé **tlačítka panelu nástrojů** k zobrazení, které jste vytvořili výše. Vyberte **vlastní** segue typu:
 
-    [ ![](dialog-images/pref07.png "Nastavení typu segue")](dialog-images/pref07.png)
+    [![](dialog-images/pref07.png "Nastavení typu segue")](dialog-images/pref07.png#lightbox)
 9. Vyberte nové Segue a nastavte **třída** k `ReplaceViewSegue`:
 
-    [ ![](dialog-images/pref08.png "Nastavení segue – třída")](dialog-images/pref08.png)
+    [![](dialog-images/pref08.png "Nastavení segue – třída")](dialog-images/pref08.png#lightbox)
 10. V **Menubar Návrhář** na návrhovou plochu, vyberte v nabídce aplikace **předvolby...** , řízení klikněte a přetáhněte ji do okna předvoleb k vytvoření **zobrazit** segue:
 
-    [ ![](dialog-images/pref09.png "Nastavení typu segue")](dialog-images/pref09.png)
+    [![](dialog-images/pref09.png "Nastavení typu segue")](dialog-images/pref09.png#lightbox)
 11. Uložte změny a vrátit k sadě Visual Studio pro Mac k synchronizaci.
 
 Pokud jsme spustit kód a vybrat **předvolby...**  z **nabídku aplikace**, zobrazí se okno:
 
-[ ![](dialog-images/pref10.png "Okno Předvolby s příklad")](dialog-images/pref10.png)
+[![](dialog-images/pref10.png "Okno Předvolby s příklad")](dialog-images/pref10.png#lightbox)
 
 Další informace o práci s Windows a panelů nástrojů, najdete v tématu naše [Windows](~/mac/user-interface/window.md) a [panely nástrojů](~/mac/user-interface/toolbar.md) dokumentaci.
 
@@ -719,7 +719,7 @@ namespace SourceWriter
 
 V dalším kroku připojit předvoleb třída k elementům uživatelského rozhraní v okně předvoleb a zobrazení vytvořili výše. V Tvůrci rozhraní, vyberte řadič zobrazení předvoleb a přepněte do **Identity Inspector**, vytvořte vlastní třídu pro kontroler: 
 
-[ ![](dialog-images/prefs12.png "Nástroj Inspector Identity")](dialog-images/prefs12.png)
+[![](dialog-images/prefs12.png "Nástroj Inspector Identity")](dialog-images/prefs12.png#lightbox)
 
 Přepněte zpátky na Visual Studio pro Mac synchronizovat změny a otevřete nově vytvořený třídy pro úpravy. Ujistěte se, třída vypadat následovně:
 
@@ -758,7 +758,7 @@ Všimněte si, že tato třída provedla zde dvě věci: první je pomocné ruti
 
 Potom poklikejte na soubor Storyboard ho znovu otevřete v Tvůrci rozhraní (a zobrazit pouze změny výše). Přetáhněte potřebné k vytváření rozhraní předvolby do zobrazení všech ovládacích prvků uživatelského rozhraní. Pro každý ovládací prvek, přepněte do **vazby Inspector** a vytvořit vazbu na jednotlivé vlastnosti **AppPreference** třídy:
 
-[ ![](dialog-images/prefs13.png "Vazba Inspector")](dialog-images/prefs13.png)
+[![](dialog-images/prefs13.png "Vazba Inspector")](dialog-images/prefs13.png#lightbox)
 
 Výše uvedené kroky opakujte u všech panelů (řadiče zobrazení) a požadované vlastnosti předvoleb.
 
@@ -903,7 +903,7 @@ namespace SourceWriter
 
 Všechny tyto změny v místě pokud uživatel upravuje předvoleb aplikace a zavře okno předvoleb, změny se použijí pro všechna otevřená okna:
 
-[ ![](dialog-images/prefs14.png "Okno Předvolby s příklad")](dialog-images/prefs14.png)
+[![](dialog-images/prefs14.png "Okno Předvolby s příklad")](dialog-images/prefs14.png#lightbox)
 
 <a name="The_Open_Dialog" />
 
@@ -954,7 +954,7 @@ Dialogové okno Otevřít jako pole adresy URL v vrátí vybrané soubory nebo a
 
 Pokud jsme spustit program a vybrat **otevřete...**  položky z **souboru** se zobrazí nabídka následující: 
 
-[ ![](dialog-images/dialog03.png "Otevřené dialogové okno")](dialog-images/dialog03.png)
+[![](dialog-images/dialog03.png "Otevřené dialogové okno")](dialog-images/dialog03.png#lightbox)
 
 <a name="The_Print_and_Page_Setup_Dialogs" />
 
@@ -991,11 +991,11 @@ void ShowDocument (NSObject sender) {
 
 Pokud se nastaví `ShowPrintAsSheet` vlastnost `false`, spusťte aplikaci a zobrazit dialogovém okně tisku, zobrazí se následující:
 
-[ ![](dialog-images/print01.png "Dialogové okno tisku")](dialog-images/print01.png)
+[![](dialog-images/print01.png "Dialogové okno tisku")](dialog-images/print01.png#lightbox)
 
 Pokud nastavení `ShowPrintAsSheet` vlastnost `true`, spusťte aplikaci a zobrazit dialogovém okně tisku, zobrazí se následující:
 
-[ ![](dialog-images/print02.png "Tisk seznamu vlastností")](dialog-images/print02.png)
+[![](dialog-images/print02.png "Tisk seznamu vlastností")](dialog-images/print02.png#lightbox)
 
 Následující kód se zobrazí dialogové okno rozložení stránky:
 
@@ -1022,11 +1022,11 @@ void ShowLayout (NSObject sender) {
 
 Pokud se nastaví `ShowPrintAsSheet` vlastnost `false`, spusťte aplikaci a zobrazit dialogové okno tisku rozložení, zobrazí se následující:
 
-[ ![](dialog-images/print03.png "Dialogové okno nastavení stránky")](dialog-images/print03.png)
+[![](dialog-images/print03.png "Dialogové okno nastavení stránky")](dialog-images/print03.png#lightbox)
 
 Pokud nastavení `ShowPrintAsSheet` vlastnost `true`, spusťte aplikaci a zobrazit dialogové okno tisku rozložení, zobrazí se následující:
 
-[ ![](dialog-images/print04.png "Instalační program list stránky")](dialog-images/print04.png)
+[![](dialog-images/print04.png "Instalační program list stránky")](dialog-images/print04.png#lightbox)
 
 Další informace o práci s tiskových a dialogová okna nastavení stránky, najdete v tématu společnosti Apple [NSPrintPanel](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSPrintPanel_Class/index.html#//apple_ref/doc/uid/TP40004092), [NSPageLayout](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSPageLayout_Class/index.html#//apple_ref/doc/uid/TP40004080) a [Úvod do tisk](http://sdg.mesonet.org/people/brad/XCode3/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/#documentation/Cocoa/Conceptual/Printing/Printing.html#//apple_ref/doc/uid/10000083-SW1) dokumentace.
 
@@ -1076,19 +1076,19 @@ void ShowSaveAs (NSObject sender)
 
 Pokud se nastaví `ShowSaveAsSheet` vlastnost `false`, spusťte aplikaci a vyberte **uložit jako...**  z **souboru** nabídky, zobrazí se následující:
 
-[ ![](dialog-images/save01.png "A uložte dialogové okno")](dialog-images/save01.png)
+[![](dialog-images/save01.png "A uložte dialogové okno")](dialog-images/save01.png#lightbox)
 
 Uživatele můžete rozšířit dialogové okno:
 
-[ ![](dialog-images/save02.png "Rozšířené dialogové okno uložení")](dialog-images/save02.png)
+[![](dialog-images/save02.png "Rozšířené dialogové okno uložení")](dialog-images/save02.png#lightbox)
 
 Pokud se nastaví `ShowSaveAsSheet` vlastnost `true`, spusťte aplikaci a vyberte **uložit jako...**  z **souboru** nabídky, zobrazí se následující:
 
-[ ![](dialog-images/save03.png "A uložte listu")](dialog-images/save03.png)
+[![](dialog-images/save03.png "A uložte listu")](dialog-images/save03.png#lightbox)
 
 Uživatele můžete rozšířit dialogové okno:
 
-[ ![](dialog-images/save04.png "Rozšířené list uložit")](dialog-images/save04.png)
+[![](dialog-images/save04.png "Rozšířené list uložit")](dialog-images/save04.png#lightbox)
 
 Další informace o práci se dialogové okno Uložit, najdete v tématu společnosti Apple [NSSavePanel](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSSavePanel_Class/index.html#//apple_ref/doc/uid/TP40004098) dokumentaci.
 

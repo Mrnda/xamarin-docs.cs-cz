@@ -3,16 +3,16 @@ title: "Zobrazení osnovy"
 description: "Tento článek se zabývá práci s zobrazení osnovy v aplikaci Xamarin.Mac. Popisuje vytvoření a udržování zobrazení osnovy v Xcode a Tvůrce rozhraní a práce s nimi prostřednictvím kódu programu."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 675B9405-D9A7-49F0-94AD-417F10A71D11
+ms.assetid: 043248EE-11DA-4E96-83A3-08824A4F2E01
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: a125c2991c9b8c2453fad396c1d0baebe10be015
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: dbbd10af046c0a8421e06e675364f92405b2317f
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="outline-views"></a>Zobrazení osnovy
 
@@ -22,7 +22,7 @@ Při práci s C# a rozhraní .NET v aplikaci Xamarin.Mac, máte přístup ke ste
 
 Zobrazení osnovy je typ tabulky, který uživateli umožňuje rozbalit nebo sbalit řádky hierarchické data. Podobně jako zobrazení a tabulky zobrazení osnovy zobrazí data pro sadu související položky s řádky, které představují jednotlivé položky a sloupce představující atributy tyto položky. Na rozdíl od zobrazení tabulky položky v zobrazení osnovy nejsou jako plochý seznam, jsou uspořádány do hierarchie, jako jsou soubory a složky na pevném disku.
 
-[ ![](outline-view-images/populate03.png "Příklad aplikace spustit")](outline-view-images/populate03.png)
+[![](outline-view-images/populate03.png "Příklad aplikace spustit")](outline-view-images/populate03.png#lightbox)
 
 V tomto článku vám nabídneme základní informace o práci s zobrazení osnovy v aplikaci Xamarin.Mac. Vysoce navržený na spolupracovat [Hello, Mac](~/mac/get-started/hello-mac.md) článek nejprve, konkrétně [Úvod do Xcode a rozhraní tvůrce](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) a [výstupy a akce](~/mac/get-started/hello-mac.md#Outlets_and_Actions) oddíly, jak se popisuje klíčové koncepty a techniky, které budeme používat v tomto článku.
 
@@ -50,23 +50,23 @@ Vzhledem k tomu, že zobrazení osnovy většinu funkcí a její chování sdíl
 
 Když vytvoříte novou aplikaci Xamarin.Mac kakao, zobrazí okno Standardní prázdné, ve výchozím nastavení. Toto systému windows je definována v `.storyboard` automaticky zahrnutý v projektu. Chcete-li upravit návrh vašeho systému windows v **Průzkumníku řešení**, dvakrát klikněte `Main.storyboard` souboru:
 
-[ ![](outline-view-images/edit01.png "Výběr hlavní storyboard")](outline-view-images/edit01.png)
+[![](outline-view-images/edit01.png "Výběr hlavní storyboard")](outline-view-images/edit01.png#lightbox)
 
 Otevře se okno návrhu v Xcode na rozhraní Tvůrce:
 
-[ ![](outline-view-images/edit02.png "Úpravy uživatelského rozhraní v Xcode")](outline-view-images/edit02.png)
+[![](outline-view-images/edit02.png "Úpravy uživatelského rozhraní v Xcode")](outline-view-images/edit02.png#lightbox)
 
 Typ `outline` do **knihovny Inspector** vyhledávací pole, aby bylo snazší najít ovládací prvky zobrazení osnovy:
 
-[ ![](outline-view-images/edit03.png "Výběr zobrazení osnovy z knihovny")](outline-view-images/edit03.png)
+[![](outline-view-images/edit03.png "Výběr zobrazení osnovy z knihovny")](outline-view-images/edit03.png#lightbox)
 
 Přetáhněte zobrazení osnovy na řadiče zobrazení v **rozhraní editoru**, bylo vyplnil celou oblast obsahu řadiče zobrazení a nastavte ji na kde zmenšuje a roste s oknem v **omezení Editor**:
 
-[ ![](outline-view-images/edit04.png "Úpravy omezení")](outline-view-images/edit04.png)
+[![](outline-view-images/edit04.png "Úpravy omezení")](outline-view-images/edit04.png#lightbox)
 
 Vyberte zobrazení osnovy v **rozhraní hierarchie** a následující vlastnosti jsou k dispozici v **atribut Inspector**:
 
-[ ![](outline-view-images/edit05.png "Atribut Inspector")](outline-view-images/edit05.png)
+[![](outline-view-images/edit05.png "Atribut Inspector")](outline-view-images/edit05.png#lightbox)
 
 - **Popisují sloupec** – sloupci tabulky, ve kterém se zobrazí hierarchické data.
 - **Automatické ukládání Outline sloupec** – Pokud `true`, sloupci Outline budou automaticky uložena a obnovit mezi spouštět aplikace.
@@ -101,7 +101,7 @@ Vyberte zobrazení osnovy v **rozhraní hierarchie** a následující vlastnosti
 
 Vyberte sloupec tabulky v **rozhraní hierarchie** a následující vlastnosti jsou k dispozici v **atribut Inspector**:
 
-[ ![](outline-view-images/edit06.png "Atribut Inspector")](outline-view-images/edit06.png)
+[![](outline-view-images/edit06.png "Atribut Inspector")](outline-view-images/edit06.png#lightbox)
 
 - **Název** -nastaví název sloupce.
 - **Zarovnání** -nastavit zarovnání textu v rámci buněk.
@@ -119,19 +119,19 @@ Umožňuje vybrat každý sloupec v našem zobrazení tabulky a poskytněte prvn
 
 Vyberte zobrazení buněk tabulky (`NSTableViewCell`) v **rozhraní hierarchie** a následující vlastnosti jsou k dispozici v **atribut Inspector**:
 
-[ ![](outline-view-images/edit07.png "Atribut Inspector")](outline-view-images/edit07.png)
+[![](outline-view-images/edit07.png "Atribut Inspector")](outline-view-images/edit07.png#lightbox)
 
 Toto jsou všechny vlastnosti standardní zobrazení. Máte také možnost změny velikosti řádků pro tento sloupec sem.
 
 Vyberte zobrazení buňky tabulky (ve výchozím nastavení je to `NSTextField`) v **rozhraní hierarchie** a následující vlastnosti jsou k dispozici v **atribut Inspector**:
 
-[ ![](outline-view-images/edit08.png "Atribut Inspector")](outline-view-images/edit08.png)
+[![](outline-view-images/edit08.png "Atribut Inspector")](outline-view-images/edit08.png#lightbox)
 
 Budete mít všechny vlastnosti standardní textové pole pro nastavení sem. Ve výchozím nastavení standardní textové pole slouží k zobrazení dat pro buňku ve sloupci.
 
 Vyberte zobrazení buněk tabulky (`NSTableFieldCell`) v **rozhraní hierarchie** a následující vlastnosti jsou k dispozici v **atribut Inspector**:
 
-[ ![](outline-view-images/edit09.png "Atribut Inspector")](outline-view-images/edit09.png)
+[![](outline-view-images/edit09.png "Atribut Inspector")](outline-view-images/edit09.png#lightbox)
 
 Jsou zde nejdůležitější nastavení:
 
@@ -145,7 +145,7 @@ Jsou zde nejdůležitější nastavení:
 
 Vyberte zobrazení buněk tabulky (`NSTableFieldCell`) v dolní části sloupec tabulky v **rozhraní hierarchie**:
 
-[ ![](outline-view-images/edit11.png "Výběr zobrazení buněk tabulky")](outline-view-images/edit10.png)
+[![](outline-view-images/edit11.png "Výběr zobrazení buněk tabulky")](outline-view-images/edit10.png#lightbox)
 
 To umožňuje upravit tabulce buňku zobrazení použít jako základní _vzor_ pro všechny buňky vytvořené pro daný sloupec.
 
@@ -159,14 +159,14 @@ Proces je stejný pro libovolný element zobrazení osnovy, který chcete vystav
 
 1. Přepnout **pomocníka Editor** a ujistěte se, že `ViewController.h` vybraný soubor: 
 
-    [ ![](outline-view-images/edit11.png "Výběr souboru správné h")](outline-view-images/edit11.png)
+    [![](outline-view-images/edit11.png "Výběr souboru správné h")](outline-view-images/edit11.png#lightbox)
 2. Vyberte zobrazení osnovy z **rozhraní hierarchie**, řízení kliknutím a tažením `ViewController.h` souboru.
 3. Vytvoření **výstupu** pro zobrazení osnovy názvem `ProductOutline`: 
 
-    [ ![](outline-view-images/edit13.png "Konfigurace výstupu")](outline-view-images/edit13.png)
+    [![](outline-view-images/edit13.png "Konfigurace výstupu")](outline-view-images/edit13.png#lightbox)
 4. Vytvoření **výstupy** u sloupce tabulky se také označuje `ProductColumn` a `DetailsColumn`: 
 
-    [ ![](outline-view-images/edit14.png "Konfigurace výstupu")](outline-view-images/edit14.png)
+    [![](outline-view-images/edit14.png "Konfigurace výstupu")](outline-view-images/edit14.png#lightbox)
 5. Můžete uložit změny a vrátit k sadě Visual Studio pro Mac k synchronizaci s Xcode.
 
 Dále jsme budete napište zobrazení kódu některá data pro obrys při spuštění aplikace.
@@ -179,7 +179,7 @@ S naše zobrazení osnovy určená v Tvůrci rozhraní a zveřejňovány prostř
 
 Nejdříve vytvoříme nový `Product` třída pro uložení informací pro jednotlivé řádky a skupiny dílčí produktů. V **Průzkumníku řešení**, klikněte pravým tlačítkem na projekt a vyberte **přidat** > **nový soubor...** Vyberte **Obecné** > **prázdné třídy**, zadejte `Product` pro **název** a klikněte na tlačítko **nový** tlačítko:
 
-[ ![](outline-view-images/populate01.png "Vytvoření prázdné třídy")](outline-view-images/populate01.png)
+[![](outline-view-images/populate01.png "Vytvoření prázdné třídy")](outline-view-images/populate01.png#lightbox)
 
 Ujistěte se, `Product.cs` soubor vypadá takto:
 
@@ -390,11 +390,11 @@ public override void AwakeFromNib ()
 
 Pokud jsme aplikaci spustit, se zobrazí následující:
 
-[ ![](outline-view-images/populate02.png "Sbaleným zobrazením")](outline-view-images/populate02.png)
+[![](outline-view-images/populate02.png "Sbaleným zobrazením")](outline-view-images/populate02.png#lightbox)
 
 Pokud jsme rozbalte uzel v zobrazení osnovy, bude vypadat takto:
 
-[ ![](outline-view-images/populate03.png "Rozšířené zobrazení")](outline-view-images/populate03.png)
+[![](outline-view-images/populate03.png "Rozšířené zobrazení")](outline-view-images/populate03.png#lightbox)
 
 <a name="Sorting_by_Column" />
 
@@ -402,7 +402,7 @@ Pokud jsme rozbalte uzel v zobrazení osnovy, bude vypadat takto:
 
 Umožňuje povolit uživateli řazení dat v osnově kliknutím na záhlaví sloupce. První, dvakrát klikněte `Main.storyboard` soubor otevřete pro úpravy v Tvůrci rozhraní. Vyberte `Product` sloupce, zadejte `Title` pro **klíč řazení**, `compare:` pro **selektor** a vyberte `Ascending` pro **pořadí**:
 
-[ ![](outline-view-images/sort01.png "Nastavení klíče pořadí řazení")](outline-view-images/sort01.png)
+[![](outline-view-images/sort01.png "Nastavení klíče pořadí řazení")](outline-view-images/sort01.png#lightbox)
 
 Uložte změny a vrátit k sadě Visual Studio pro Mac k synchronizaci s Xcode.
 
@@ -435,7 +435,7 @@ public override void SortDescriptorsChanged (NSOutlineView outlineView, NSSortDe
 
 Pokud jsme spusťte aplikaci a klikněte na záhlaví sloupců, podle tohoto sloupce seřadí řádky:
 
-[ ![](outline-view-images/sort02.png "Příklad seřazené výstupu")](outline-view-images/sort02.png)
+[![](outline-view-images/sort02.png "Příklad seřazené výstupu")](outline-view-images/sort02.png#lightbox)
 
 <a name="Row_Selection" />
 
@@ -443,7 +443,7 @@ Pokud jsme spusťte aplikaci a klikněte na záhlaví sloupců, podle tohoto slo
 
 Pokud chcete povolit uživateli vybrat jeden řádek, dvakrát klikněte `Main.storyboard` soubor otevřete pro úpravy v Tvůrci rozhraní. Vyberte zobrazení osnovy v **rozhraní hierarchie** a zrušte zaškrtnutí políčka **více** zaškrtnout políčko **atribut Inspector**:
 
-[ ![](outline-view-images/select01.png "Atribut Inspector")](outline-view-images/select01.png)
+[![](outline-view-images/select01.png "Atribut Inspector")](outline-view-images/select01.png#lightbox)
 
 Uložte změny a vrátit k sadě Visual Studio pro Mac k synchronizaci s Xcode.
 
@@ -466,7 +466,7 @@ To vám umožní uživateli vybrat všechny jeden řádek v zobrazení osnovy. V
 
 Pokud chcete povolit uživateli vybrat více řádků, dvakrát klikněte `Main.storyboard` soubor otevřete pro úpravy v Tvůrci rozhraní. Vyberte zobrazení osnovy v **rozhraní hierarchie** a zkontrolujte **více** zaškrtnout políčko **atribut Inspector**:
 
-[ ![](outline-view-images/select02.png "Atribut Inspector")](outline-view-images/select02.png)
+[![](outline-view-images/select02.png "Atribut Inspector")](outline-view-images/select02.png#lightbox)
 
 Uložte změny a vrátit k sadě Visual Studio pro Mac k synchronizaci s Xcode.
 
@@ -489,7 +489,7 @@ To vám umožní uživateli vybrat všechny jeden řádek v zobrazení osnovy. V
 
 Pokud chcete povolit uživatelům zadejte znak s zobrazení osnovy vybrané a vyberte první řádek, který má tento znak, dvakrát klikněte `Main.storyboard` soubor otevřete pro úpravy v Tvůrci rozhraní. Vyberte zobrazení osnovy v **rozhraní hierarchie** a zkontrolujte **vyberte typ** zaškrtnout políčko **atribut Inspector**:
 
-[ ![](outline-view-images/type01.png "Úpravy typ řádku typu")](outline-view-images/type01.png)
+[![](outline-view-images/type01.png "Úpravy typ řádku typu")](outline-view-images/type01.png#lightbox)
 
 Uložte změny a vrátit k sadě Visual Studio pro Mac k synchronizaci s Xcode.
 
@@ -517,7 +517,7 @@ public override NSObject GetNextTypeSelectMatch (NSOutlineView outlineView, NSOb
 
 Pokud chcete povolit uživatelům přetáhněte změnit pořadí sloupců v zobrazení osnovy, dvakrát klikněte `Main.storyboard` soubor otevřete pro úpravy v Tvůrci rozhraní. Vyberte zobrazení osnovy v **rozhraní hierarchie** a zkontrolujte **Reordering** zaškrtnout políčko **atribut Inspector**:
 
-[ ![](outline-view-images/reorder01.png "Atribut Inspector")](outline-view-images/reorder01.png)
+[![](outline-view-images/reorder01.png "Atribut Inspector")](outline-view-images/reorder01.png#lightbox)
 
 Pokud nás dostanete hodnotu **automatické ukládání** vlastnost a kontrola **informace o sloupci** pole, všechny změny, provedeme rozložení tabulky budou automaticky uloženy pro nás a obnovit dalším spuštění aplikace je spuštěn.
 
@@ -536,7 +536,7 @@ public override bool ShouldReorder (NSOutlineView outlineView, nint columnIndex,
 
 Pokud jsme aplikaci spustit, jsme přetáhněte záhlaví sloupců kolem Změna uspořádání naše sloupců:
 
-[ ![](outline-view-images/reorder02.png "Příklad způsob sloupců")](outline-view-images/reorder02.png)
+[![](outline-view-images/reorder02.png "Příklad způsob sloupců")](outline-view-images/reorder02.png#lightbox)
 
 <a name="Editing_Cells" />
 
@@ -598,7 +598,7 @@ public override NSView GetView (NSOutlineView outlineView, NSTableColumn tableCo
 
 Nyní když jsme aplikaci spustit, můžete upravit uživatele buněk v tabulce zobrazení:
 
-[ ![](outline-view-images/editing01.png "Příklad úpravy buněk")](outline-view-images/editing01.png)
+[![](outline-view-images/editing01.png "Příklad úpravy buněk")](outline-view-images/editing01.png#lightbox)
 
 <a name="Using_Images_in_Outline_Views" />
 

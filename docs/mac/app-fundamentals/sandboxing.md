@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 9e64f1962e35372a6058f4b515efa5a61c1c9e45
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 9cf9cb2e4773b90ecdd9321c6627003be3fa1b8b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="sandboxing-a-xamarinmac-app"></a>Sandboxing Xamarin.Mac aplikace
 
@@ -22,7 +22,7 @@ _Tento článek se zabývá sandboxing Xamarin.Mac aplikaci pro verzi na webu Ap
 
 Při práci s C# a rozhraní .NET v aplikaci Xamarin.Mac, máte stejné možnosti izolovaného prostoru aplikace jako při práci s Objective-C nebo Swiftu.
 
-[![Příkladem spuštěné aplikaci](sandboxing-images/intro01.png "příklad spuštěné aplikaci")](sandboxing-images/intro01-large.png)
+[![Příkladem spuštěné aplikaci](sandboxing-images/intro01.png "příklad spuštěné aplikaci")](sandboxing-images/intro01-large.png#lightbox)
 
 V tomto článku vám nabídneme základní informace o práci s sandboxing v Xamarin.Mac aplikace a všechny prvky, které patří do sandboxing: kontejneru adresáře, oprávnění, určit uživatele oprávnění, oprávnění oddělení a vynucení jádra. Vysoce navržený na spolupracovat [Hello, Mac](~/mac/get-started/hello-mac.md) článek nejprve, konkrétně [Úvod do Xcode a rozhraní tvůrce](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) a [výstupy a akce](~/mac/get-started/hello-mac.md#Outlets_and_Actions) oddíly, jak se popisuje klíčové koncepty a techniky, které budeme používat v tomto článku.
 
@@ -70,19 +70,19 @@ Umožňuje provést následující příkaz pro vytvoření projektu naše ukáz
 1. Spuštění sady Visual Studio pro Mac a kliknutím **nové řešení...** Odkaz.
 2. Z **nový projekt** dialogové okno, vyberte **Mac** > **aplikace** > **kakao aplikace**: 
 
-    [![Vytvoření nové aplikace kakao](sandboxing-images/sample01.png "vytvořit novou aplikaci, kakao")](sandboxing-images/sample01-large.png)
+    [![Vytvoření nové aplikace kakao](sandboxing-images/sample01.png "vytvořit novou aplikaci, kakao")](sandboxing-images/sample01-large.png#lightbox)
 3. Klikněte **Další** tlačítko, zadejte `MacSandbox` pro název projektu a klikněte na tlačítko **vytvořit** tlačítko: 
 
-    [![Zadat název aplikace](sandboxing-images/sample02.png "zadáte název aplikace")](sandboxing-images/sample02-large.png)
+    [![Zadat název aplikace](sandboxing-images/sample02.png "zadáte název aplikace")](sandboxing-images/sample02-large.png#lightbox)
 4. V **řešení Pad**, dvakrát klikněte **Main.storyboard** soubor otevřete pro úpravy v Xcode: 
 
-    [![Úpravy hlavní storyboard](sandboxing-images/sample03.png "úpravy hlavní storyboard")](sandboxing-images/sample03-large.png)
+    [![Úpravy hlavní storyboard](sandboxing-images/sample03.png "úpravy hlavní storyboard")](sandboxing-images/sample03-large.png#lightbox)
 5. Přetáhněte **webové zobrazení** do okna, velikost vyplnil celou oblast obsahu, a nastavte ji na zvýšit nebo snížit s okno: 
 
-    [![Přidání webové zobrazení](sandboxing-images/sample04.png "přidání webové zobrazení")](sandboxing-images/sample04-large.png)
+    [![Přidání webové zobrazení](sandboxing-images/sample04.png "přidání webové zobrazení")](sandboxing-images/sample04-large.png#lightbox)
 6. Vytvoření výstupu pro webové zobrazení s názvem `webView`: 
 
-    [![Vytvoření nové výstupu](sandboxing-images/sample05.png "vytváření nové výstupu")](sandboxing-images/sample05-large.png)
+    [![Vytvoření nové výstupu](sandboxing-images/sample05.png "vytváření nové výstupu")](sandboxing-images/sample05-large.png#lightbox)
 7. Vrátit k sadě Visual Studio pro Mac a dvakrát klikněte na soubor **ViewController.cs** v soubor **řešení Pad** otevřete pro úpravy.
 8. Přidejte následující příkaz using: `using WebKit;`
 9. Ujistěte se, `ViewDidLoad` metoda vypadá takto: 
@@ -99,7 +99,7 @@ public override void AwakeFromNib ()
 
 Aplikaci spustit a ujistěte se, že je na webu Apple nezobrazí v okně:
 
-[![Zobrazuje příklad aplikace spuštění](sandboxing-images/sample06.png "zobrazující spuštění příklad aplikace")](sandboxing-images/sample06-large.png)
+[![Zobrazuje příklad aplikace spuštění](sandboxing-images/sample06.png "zobrazující spuštění příklad aplikace")](sandboxing-images/sample06-large.png#lightbox)
 
 <a name="Signing_and_Provisioning_the_App" />
 
@@ -111,34 +111,34 @@ Umožní, postupujte takto:
 
 1. Přihlaste se k portálu pro vývojáře Apple: 
 
-    [![Protokolování do portálu pro vývojáře Apple](sandboxing-images/sign01.png "přihlášením se do portálu pro vývojáře Apple")](sandboxing-images/sign01-large.png)
+    [![Protokolování do portálu pro vývojáře Apple](sandboxing-images/sign01.png "přihlášením se do portálu pro vývojáře Apple")](sandboxing-images/sign01-large.png#lightbox)
 2. Vyberte **certifikáty, identifikátory a profily**: 
 
-    [![Výběr certifikáty, identifikátory a profily](sandboxing-images/sign02.png "výběru certifikátů, identifikátory a profily")](sandboxing-images/sign02-large.png)
+    [![Výběr certifikáty, identifikátory a profily](sandboxing-images/sign02.png "výběru certifikátů, identifikátory a profily")](sandboxing-images/sign02-large.png#lightbox)
 3. V části **Mac aplikace**, vyberte **identifikátory**: 
 
-    [![Výběr identifikátory](sandboxing-images/sign03.png "výběr identifikátory")](sandboxing-images/sign03-large.png)
+    [![Výběr identifikátory](sandboxing-images/sign03.png "výběr identifikátory")](sandboxing-images/sign03-large.png#lightbox)
 4. Vytvoření nového ID pro aplikaci: 
 
-    [![Vytvoření nového ID aplikace](sandboxing-images/sign04.png "vytváření nové ID aplikace")](sandboxing-images/sign04-large.png)
+    [![Vytvoření nového ID aplikace](sandboxing-images/sign04.png "vytváření nové ID aplikace")](sandboxing-images/sign04-large.png#lightbox)
 5. V části **profily zřizování**, vyberte **vývoj**: 
 
-    [![Výběr vývoj](sandboxing-images/sign05.png "výběr vývoj")](sandboxing-images/sign05-large.png)
+    [![Výběr vývoj](sandboxing-images/sign05.png "výběr vývoj")](sandboxing-images/sign05-large.png#lightbox)
 6. Vytvoření nového profilu a vyberte **vývoj aplikací pro Mac**: 
 
-    [![Vytvoření nového profilu](sandboxing-images/sign06.png "vytvoření nového profilu")](sandboxing-images/sign06-large.png)
+    [![Vytvoření nového profilu](sandboxing-images/sign06.png "vytvoření nového profilu")](sandboxing-images/sign06-large.png#lightbox)
 7. Vyberte ID aplikace jsme vytvořili výše: 
 
-    [![Výběr ID aplikace](sandboxing-images/sign07.png "výběr ID aplikace")](sandboxing-images/sign07-large.png)
+    [![Výběr ID aplikace](sandboxing-images/sign07.png "výběr ID aplikace")](sandboxing-images/sign07-large.png#lightbox)
 8. Vyberte vývojáři pro tento profil: 
 
-    [![Přidání vývojáři](sandboxing-images/sign08.png "přidání vývojáře")](sandboxing-images/sign08-large.png)
+    [![Přidání vývojáři](sandboxing-images/sign08.png "přidání vývojáře")](sandboxing-images/sign08-large.png#lightbox)
 9. Vyberte počítače, pro tento profil: 
 
-    [![Výběr povolené počítačů](sandboxing-images/sign09.png "výběr povolené počítačů")](sandboxing-images/sign09-large.png)
+    [![Výběr povolené počítačů](sandboxing-images/sign09.png "výběr povolené počítačů")](sandboxing-images/sign09-large.png#lightbox)
 10. Zadejte název profilu: 
 
-    [![Profil pojmenujete](sandboxing-images/sign10.png "pojmenujete profil")](sandboxing-images/sign10-large.png)
+    [![Profil pojmenujete](sandboxing-images/sign10.png "pojmenujete profil")](sandboxing-images/sign10-large.png#lightbox)
 11. Klikněte **provádí** tlačítko.
 
 > [!IMPORTANT]
@@ -160,10 +160,10 @@ Dále je potřeba v našem Xamarin.Mac projektu vyberte nové ID aplikace a prof
 1. V **řešení Pad**, dvakrát klikněte **Info.plist** soubor otevřete pro úpravy.
 2. Ujistěte se, že **identifikátor svazku** odpovídá naše ID aplikace, které jsme vytvořili výše (Příklad: `com.appracatappra.MacSandbox`): 
 
-    [![Úpravy identifikátor balíku](sandboxing-images/sign13.png "úpravy identifikátor balíku")](sandboxing-images/sign13-large.png)
+    [![Úpravy identifikátor balíku](sandboxing-images/sign13.png "úpravy identifikátor balíku")](sandboxing-images/sign13-large.png#lightbox)
 3. V dalším kroku klikněte dvakrát na **Entitlements.plist** souboru a ujistěte se, naše **Icloudu úložiště dvojic klíč-hodnota** a **Icloudu kontejnery** všechny odpovídat naše ID aplikace, které jsme vytvořili výše (Příklad: `com.appracatappra.MacSandbox`): 
 
-    [![Úpravy souboru Entitlements.plist](sandboxing-images/sign17.png "úprav souboru Entitlements.plist")](sandboxing-images/sign17-large.png)
+    [![Úpravy souboru Entitlements.plist](sandboxing-images/sign17.png "úprav souboru Entitlements.plist")](sandboxing-images/sign17-large.png#lightbox)
 3. Uložte provedené změny.
 4. V **řešení Pad**, poklikejte na soubor projektu otevřete její možnosti pro úpravy:  
 
@@ -180,7 +180,7 @@ Dále je potřeba v našem Xamarin.Mac projektu vyberte nové ID aplikace a prof
 
 V tomto okamžiku by měl pokusit spusťte aplikaci a ujistěte se, že všechno, co je podepsaná a správně zřízený. Pokud aplikace stále běží jako předtím, vše, co je správná. V případě selhání může získat dialogové okno stejný, jako je následující:
 
-[![Příklad problém dialog zřizování](sandboxing-images/sign16.png "příklad problém dialog zřizování")](sandboxing-images/sign16-large.png)
+[![Příklad problém dialog zřizování](sandboxing-images/sign16.png "příklad problém dialog zřizování")](sandboxing-images/sign16-large.png#lightbox)
 
 Tady jsou nejběžnější příčiny zřizování a podepisování problémy:
 
@@ -197,12 +197,12 @@ Povolíte izolovaného prostoru aplikace, vyberte zaškrtávací políčko v mo�
 1. V **řešení Pad**, dvakrát klikněte **Entitlements.plist** soubor otevřete pro úpravy.
 2. Zkontrolujte i **povolte oprávnění** a **povolit aplikaci Sandboxing**: 
 
-    [![Úpravy oprávnění a povolení sandboxing](sandboxing-images/sign17.png "úpravy oprávnění a povolení sandboxing")](sandboxing-images/sign17-large.png)
+    [![Úpravy oprávnění a povolení sandboxing](sandboxing-images/sign17.png "úpravy oprávnění a povolení sandboxing")](sandboxing-images/sign17-large.png#lightbox)
 3. Uložte provedené změny.
 
 V tomto okamžiku jste povolili izolovaného prostoru aplikace, ale nezadali přístup k požadované síti pro webové zobrazení. Pokud nyní aplikaci spustíte, měli byste obdržet prázdné okno:
 
-[![Zobrazuje webový přístup blokován](sandboxing-images/sample08.png "zobrazující webový přístup blokován")](sandboxing-images/sample08-large.png)
+[![Zobrazuje webový přístup blokován](sandboxing-images/sample08.png "zobrazující webový přístup blokován")](sandboxing-images/sample08-large.png#lightbox)
 
 ### <a name="verifying-that-the-app-is-sandboxed"></a>Ověření, že je aplikace v izolovaném prostoru
 
@@ -210,25 +210,25 @@ Kromě zajištění dostatečného prostředků blokování chování existují 
 
 1. V hledání, zkontrolujte obsah `~/Library/Containers/` složky – pokud je aplikace v izolovaném prostoru, bude složka s názvem, jako je identifikátor vaší aplikace sady (Příklad: `com.appracatappra.MacSandbox`): 
 
-    [![Otevření aplikace sady](sandboxing-images/sample09.png "otevření aplikace sady")](sandboxing-images/sample09-large.png)
+    [![Otevření aplikace sady](sandboxing-images/sample09.png "otevření aplikace sady")](sandboxing-images/sample09-large.png#lightbox)
 2. Systém se zobrazí aplikace jako v izolovaném prostoru v monitoru aktivity:
     - Spustit monitorování aktivity (v části `/Applications/Utilities`). 
     - Zvolte **zobrazení** > **sloupce** a ujistěte se, že **izolovaného prostoru** je zaškrtnuta možnost položku nabídky.
     - Ujistěte se, že sloupci izolovaného prostoru čte `Yes` pro aplikaci: 
 
-    [![Kontrola aplikace v monitoru aktivity](sandboxing-images/sample10.png "Kontrola aplikace v monitoru aktivity")](sandboxing-images/sample10-large.png)
+    [![Kontrola aplikace v monitoru aktivity](sandboxing-images/sample10.png "Kontrola aplikace v monitoru aktivity")](sandboxing-images/sample10-large.png#lightbox)
 3. Zkontrolujte, že je binární aplikace v izolovaném prostoru:
     - Spusťte aplikaci terminálu.
     - Přejděte do aplikace `bin` adresáře.
     - Tento příkaz: `codesign -dvvv --entitlements :- executable_path` (kde `executable_path` je cesta k aplikaci): 
 
-    [![Kontrola aplikace na příkazovém řádku](sandboxing-images/sample11.png "Kontrola aplikace na příkazovém řádku")](sandboxing-images/sample11-large.png)
+    [![Kontrola aplikace na příkazovém řádku](sandboxing-images/sample11.png "Kontrola aplikace na příkazovém řádku")](sandboxing-images/sample11-large.png#lightbox)
 
 ### <a name="debugging-a-sandboxed-app"></a>Ladění aplikace pro práci s řešeními v izolovaném prostoru
 
 Ladicí program se připojí k Xamarin.Mac aplikací prostřednictvím protokolu TCP, což znamená, že ve výchozím nastavení při povolení sandboxing, nelze se připojit k aplikaci, takže pokud se pokusíte spustit aplikaci bez oprávnění povoleno, dojde k chybě *"nelze se připojit k ladicí program"*. 
 
-[![Požadované možnosti nastavení](sandboxing-images/debug01.png "požadované možnosti nastavení")](sandboxing-images/debug01-large.png)
+[![Požadované možnosti nastavení](sandboxing-images/debug01.png "požadované možnosti nastavení")](sandboxing-images/debug01-large.png#lightbox)
 
 **Povolit odchozí síťové připojení (klienta)** oprávnění, která je potřeba v ladicím programu, povolíte tento jeden, bude mít ladění normálně. Vzhledem k tomu, že ladíte nelze bez ní, jste aktualizovali jsme `CompileEntitlements` cíle pro `msbuild` pro každou aplikaci, která je v izolovaném prostoru pro ladění sestavení pouze automaticky přidat tato oprávnění pro oprávnění. Verze sestavení by měli používat oprávnění zadaný v souboru oprávnění ponechat beze změny.
 
@@ -248,7 +248,7 @@ Postupujte takto:
 2. Otevřete **konzoly** aplikace (z `/Applications/Utilties/`).
 3. Vyberte **všechny zprávy** na bočním panelu a zadejte `sandbox` do vyhledávání: 
 
-    [![Příkladem sandboxing problém v konzole](sandboxing-images/resolve01.png "příklad sandboxing problém v konzole")](sandboxing-images/resolve01-large.png)
+    [![Příkladem sandboxing problém v konzole](sandboxing-images/resolve01.png "příklad sandboxing problém v konzole")](sandboxing-images/resolve01-large.png#lightbox)
 
 Pro náš příklad aplikaci výše, uvidíte, že jádra/blokuje `network-outbound` provoz z důvodu aplikace izolovaného prostoru, protože jsme nebyly požadovaná práva.
 
@@ -261,7 +261,7 @@ Postupujte takto:
 1. V **řešení Pad**, dvakrát klikněte **Entitlements.plist** soubor otevřete pro úpravy.
 2. V části **oprávnění** část, zkontrolujte **povolit odchozí síťové připojení (klienta)** políčko: 
 
-    [![Úpravy oprávnění](sandboxing-images/sign17.png "úpravy oprávnění")](sandboxing-images/sign17-large.png)
+    [![Úpravy oprávnění](sandboxing-images/sign17.png "úpravy oprávnění")](sandboxing-images/sign17-large.png#lightbox)
 3. Uložte změny do aplikace.
 
 Pokud jsme pak provést výše pro náš příklad aplikaci sestavit a spustit ji, webový obsah nyní se zobrazí podle očekávání.
@@ -284,7 +284,7 @@ Když zapnete izolovaného prostoru aplikace, odeberte všechny kromě minimáln
 
 Upravit prostředky izolovaného prostoru aplikace aplikace tak, že upravíte jeho **Entitlements.plist** soubor a kontrola nebo výběr práva potřebná z rozevírací seznamy editory:
 
-[![Úpravy oprávnění](sandboxing-images/sign17.png "úpravy oprávnění")](sandboxing-images/sign17-large.png)
+[![Úpravy oprávnění](sandboxing-images/sign17.png "úpravy oprávnění")](sandboxing-images/sign17-large.png#lightbox)
 
 ### <a name="container-directories-and-file-system-access"></a>Kontejner adresářů a přístupu k systému souborů
 

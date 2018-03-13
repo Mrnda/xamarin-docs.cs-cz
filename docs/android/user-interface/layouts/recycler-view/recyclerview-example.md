@@ -7,22 +7,21 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: a8de515563d9b9e38f049fd92c94b95e75239eb2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 44ebc8098250da26762538cddf5a89ffac709d8e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="a-basic-recyclerview-example"></a>Základní příklad RecyclerView
 
 
 Zjistit, jak `RecyclerView` jsou zde popsány v tomto tématu funguje v typické aplikaci [RecyclerViewer](https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer/) ukázkové aplikace, příklad jednoduchého kódu, který používá `RecyclerView` zobrazíte velké kolekce fotografií: 
 
-[ ![Dva snímky obrazovky RecyclerView aplikaci, která používá CardViews zobrazíte fotografie](recyclerview-example-images/01-recyclerviewer-sml.png)](recyclerview-example-images/01-recyclerviewer.png)
+[![Dva snímky obrazovky RecyclerView aplikaci, která používá CardViews zobrazíte fotografie](recyclerview-example-images/01-recyclerviewer-sml.png)](recyclerview-example-images/01-recyclerviewer.png#lightbox)
 
 **RecyclerViewer** používá [zobrazení karty aplikace](~/android/user-interface/controls/card-view.md) implementovat jednotlivé položky fotografie `RecyclerView` rozložení. Z důvodu `RecyclerView`na výkon výhody této ukázkové aplikace je schopen rychle procházet velké kolekce fotografií plynule a bez znatelného zpoždění.
 
-<a name="datasource" />
 
 ### <a name="an-example-data-source"></a>Zdroj dat příklad
 
@@ -48,7 +47,6 @@ mPhotoAlbum.RandomSwap ();
 
 Protože podrobnosti implementace `PhotoAlbum` nejsou důležité k porozumění `RecyclerView`, `PhotoAlbum` zdrojový kód není uveden zde. Zdrojový kód a `PhotoAlbum` je k dispozici na [PhotoAlbum.cs](https://github.com/xamarin/monodroid-samples/blob/master/android5.0/RecyclerViewer/RecyclerViewer/PhotoAlbum.cs) v [RecyclerViewer](https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer/) ukázkovou aplikaci.
 
-<a name="preliminaries" />
 
 ### <a name="layout-and-initialization"></a>Rozložení a inicializace
 
@@ -128,7 +126,7 @@ Místo použití predefind `LinearLayoutManager`, můžete zařadit vlastní roz
 
 Třída vlastníka zobrazení se nazývá `PhotoViewHolder`. Každý `PhotoViewHolder` instance obsahuje odkazy na `ImageView` a `TextView` položky přidružené řádek, který je nastíněny v `CardView` jako na tomto serveru provedeny tady:
 
-[ ![Diagram zobrazení karty aplikace obsahující ImageView a TextView](recyclerview-example-images/02-cardview-layout-sml.png)](recyclerview-example-images/02-cardview-layout.png)
+[![Diagram zobrazení karty aplikace obsahující ImageView a TextView](recyclerview-example-images/02-cardview-layout-sml.png)](recyclerview-example-images/02-cardview-layout.png#lightbox)
 
 `PhotoViewHolder` odvozená z `RecyclerView.ViewHolder` a obsahuje vlastnosti, které chcete uložit odkazy na `ImageView` a `TextView` zobrazeno ve výše uvedené zobrazení.
 `PhotoViewHolder` se skládá ze dvou vlastností a jeden konstruktor:
@@ -181,7 +179,6 @@ public class PhotoAlbumAdapter : RecyclerView.Adapter
 
 Správce rozložení volání těchto metod, přičemž se je umístění položky v rámci `RecyclerView`. V následujících částech je zkontrolován provádění těchto metod.
 
-<a name="oncreateviewholder" />
 
 #### <a name="oncreateviewholder"></a>OnCreateViewHolder
 
@@ -245,7 +242,6 @@ public override RecyclerView.ViewHolder
 
 Výsledné zobrazení držitel instanci `vh`, je vrácen zpět do volající (manager rozložení).
 
-<a name="onbindviewholder" />
 
 #### <a name="onbindviewholder"></a>OnBindViewHolder
 
@@ -270,7 +266,6 @@ Adaptér načte prostředek bitové kopie do zobrazení odkazuje držitele zobra
 
 Všimněte si, že `OnBindViewHolder` je kód, který se zabývá strukturu dat. V takovém případě `OnBindViewHolder` rozumí mapování `RecyclerView` položka pozice k jeho položka přidružená data v datovém zdroji. Mapování je přehledné v tomto případě protože pozice lze použít jako index pole do fotoalba; složitější zdroje dat však může vyžadovat další kód k vytvoření takové mapování.
 
-<a name="itemcount" />
 
 #### <a name="itemcount"></a>ItemCount
 
@@ -285,7 +280,6 @@ public override int ItemCount
 
 Další informace o `RecyclerView.Adapter`, najdete v článku [referenci třídy RecyclerView.Adapter](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.Adapter.html).
 
-<a name="together" />
 
 ### <a name="putting-it-all-together"></a>Jeho uvedení společně všechny
 
@@ -372,11 +366,10 @@ public class PhotoAlbumAdapter : RecyclerView.Adapter
 
 Když tento kód kompiluje a spustit, vytvoří základní fotografie zobrazení aplikací, jak je vidět na následujících snímcích obrazovky:
 
-[ ![Dva snímky obrazovky fotografií zobrazení aplikace pomocí svisle posouvání fotografií karty](recyclerview-example-images/03-recyclerviewer-basic-sml.png)](recyclerview-example-images/03-recyclerviewer-basic.png)
+[![Dva snímky obrazovky fotografií zobrazení aplikace pomocí svisle posouvání fotografií karty](recyclerview-example-images/03-recyclerviewer-basic-sml.png)](recyclerview-example-images/03-recyclerviewer-basic.png#lightbox)
 
 Tato základní aplikace podporuje pouze procházení alba fotografií. Neodpovídá na položku touch události, ani nebude zpracovat změny v základních datech. Tato funkce je přidaný do [rozšíření příklad RecyclerView](~/android/user-interface/layouts/recycler-view/extending-the-example.md).
 
-<a name="layoutmanagerchange" />
 
 ### <a name="changing-the-layoutmanager"></a>Změna LayoutManager
 
@@ -388,7 +381,7 @@ mLayoutManager = new GridLayoutManager(this, 2, GridLayoutManager.Horizontal, fa
 
 Tato změna kódu nahrazuje svislice `LinearLayoutManager` s `GridLayoutManager` , uvede mřížka tvořen dvěma řádky, které přejděte ve vodorovném směru. Při kompilování a znovu spusťte aplikaci, dozvíte se, že fotografie se zobrazují v mřížce a že posouvání je vodorovné spíše než svislé:
 
-[ ![Příklad snímek obrazovky aplikace s fotografiemi vodorovně posouvání v mřížce](recyclerview-example-images/04-gridlayoutmanager-sml.png)](recyclerview-example-images/04-gridlayoutmanager.png)
+[![Příklad snímek obrazovky aplikace s fotografiemi vodorovně posouvání v mřížce](recyclerview-example-images/04-gridlayoutmanager-sml.png)](recyclerview-example-images/04-gridlayoutmanager.png#lightbox)
 
 Změnou pouze jeden řádek kódu je lze změnit zobrazení fotografií aplikaci, aby používala jiné rozložení s jiným chováním.
 Všimněte si, že kód adaptér ani rozložení XML museli upravit tak, aby změna stylu rozložení. 

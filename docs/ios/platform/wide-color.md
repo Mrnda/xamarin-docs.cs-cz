@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: ab6124e2b11d26d4c10330e7b824e4761ebf4603
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 95098cd5c97ccc8357531feb79e55600f53a4be5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="wide-color"></a>Široké barev
 
@@ -38,19 +38,19 @@ Následující základní koncepty barva musí být uvedeny před přepnutím hl
 
 Barevný prostor je prostředí, ve kterém můžete reprezentované barvy a porovnání. Může být jeden až čtyři dimenzí místa, které je definované intenzitou jeho součástí barev. 
 
-[ ![](wide-color-images/color00.png "Barevný prostor")](wide-color-images/color00.png)
+[![](wide-color-images/color00.png "Barevný prostor")](wide-color-images/color00.png#lightbox)
 
 ### <a name="color-channels"></a>Kanály barev
 
 Barva součásti můžete také označovány jako kanály barev. Některé známé reprezentace bude prostory RGB, šedá prostory, prostory CMYK nebo nezávislé prostory zařízení. 
 
-[ ![](wide-color-images/color02.png "Barva součásti lze také odkazovat na jako kanály barev")](wide-color-images/color02.png)
+[![](wide-color-images/color02.png "Barva součásti lze také odkazovat na jako kanály barev")](wide-color-images/color02.png#lightbox)
 
 ### <a name="color-primaries"></a>Základní barva barvy
 
 Základní barva barvy zadejte souřadnicový systém, který se používá k porovnání a výpočetní barvy. Základní barva barvy obvykle spadají nejvíce intenzivního verzi daného barvu, která může být generována v rámci kanálu barev.
 
-[ ![](wide-color-images/color01.png "Zadejte základní barva barvy souřadnicový systém, který se používá k porovnání a výpočetní barvy")](wide-color-images/color01.png)
+[![](wide-color-images/color01.png "Zadejte základní barva barvy souřadnicový systém, který se používá k porovnání a výpočetní barvy")](wide-color-images/color01.png#lightbox)
 
 V případě RGB barevný prostor reprezentované výše, jsou základní barvy barva where `1.0` jsou ukotvené souřadnice (například `[1.0, 0.0, 0.0]` pro red).
 
@@ -58,7 +58,7 @@ V případě RGB barevný prostor reprezentované výše, jsou základní barvy 
 
 Barevný rozsah se rozumí všechny barev, které může být definováno jako kombinaci jednotlivých barev kanálů v rámci udělení barevný prostor.
 
-[ ![](wide-color-images/color03.png "Příklad barvu barevného rozsahu")](wide-color-images/color03.png)
+[![](wide-color-images/color03.png "Příklad barvu barevného rozsahu")](wide-color-images/color03.png#lightbox)
 
 ## <a name="what-is-wide-color"></a>Co je široké barva
 
@@ -80,7 +80,7 @@ Uživatelé, kteří mají byla zaznamenávání digitální bitové kopie v NEZ
 
 V 2015 Apple vydala nové produkty (iMac a iPad Pro 9.7"), které poskytují nové zobrazení P3. barevný prostor pro zpracování problémy vytvořené sRGB barevný prostor.
 
-[ ![](wide-color-images/color04.png "Nové zobrazení P3 barevný prostor")](wide-color-images/color04.png)
+[![](wide-color-images/color04.png "Nové zobrazení P3 barevný prostor")](wide-color-images/color04.png#lightbox)
 
 Zobrazení P3 barevný prostor má následující vlastnosti:
 
@@ -112,7 +112,7 @@ Při povolení pro hodnoty menší než nula a větší než 1, sRGB Extended ro
 
 Pokud chcete zobrazit, jak fungují hodnoty mimo nula a jeden v rozsahu Extended sRGB barevný prostor, proveďte na následující příklad nejvíce nasycených červené k dispozici v zobrazení P3 barevný prostor:
 
-[ ![](wide-color-images/color05.png "Jak fungují hodnoty mimo nula a jeden v rozsahu Extended sRGB barevný prostor")](wide-color-images/color05.png)
+[![](wide-color-images/color05.png "Jak fungují hodnoty mimo nula a jeden v rozsahu Extended sRGB barevný prostor")](wide-color-images/color05.png#lightbox)
 
 V zobrazení P3, bude tato barva reprezentováno `[1.0, 0.0, 0.0]` a v rozsahu Extended sRGB by bylo `[1.358, -0.074, -0.012]`. Protože sRGB hodnoty jsou úplné obsažené v rámci P3 zobrazení a zobrazení P3 hodnoty leží "mimo" sRGB rozsahy.
 

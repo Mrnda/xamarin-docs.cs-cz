@@ -7,17 +7,17 @@ ms.assetid: E38C9AD9-56AA-B983-8B21-E1F466C4DB36
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.openlocfilehash: c06dab9bf280a2543585d36147c7c3311f6445ad
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/09/2018
+ms.openlocfilehash: 90dc37612f36eb914c3aaa140200762945ac4516
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="android-designer"></a>Android Designer
 
 _Tento článek popisuje funkce návrháře Xamarin.Android. Vysvětluje základy návrháře, jak používat návrháře k rozložení pomůcky vizuálně a úprava vlastností. Také ukazuje, jak používat návrháře pro práci s uživatelská rozhraní a prostředky v různých konfiguracích, jako je například motivy, jazyků a konfigurací zařízení, a také jak navrhnout alternativní zobrazení jako orientaci na výšku a._
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Přehled
 
@@ -37,7 +37,6 @@ Tento článek zjišťování mnoha funkcí návrháře Xamarin.Android. Vysvět
 9.  Jak používat nástrojů návrhu materiály sestavit podstatným návrhu vyhovující aplikace.
 
 
-<a name="Sections" />
 
 ## <a name="sections"></a>Oddíly
 
@@ -52,7 +51,6 @@ Tento článek zjišťování mnoha funkcí návrháře Xamarin.Android. Vysvět
  [Funkce Material Design](~/android/user-interface/android-designer/material-design-features.md)
 
 
-<a name="Summary" />
 
 ## <a name="summary"></a>Souhrn
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2017
-ms.openlocfilehash: 15f198465c544989b347fe534978956741478ed2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e03acbbac737bffd21ee3b592ab017d227f822ad
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="layout-compression"></a>Komprese rozložení
 
@@ -60,7 +60,7 @@ Výsledný vnořené zobrazení hierarchie může být prověřen s [Xamarin Ins
 Rozložení kompresi, která je k dispozici pro Xamarin.Forms aplikace v iOS a Android platformy, cílem je vyrovnání zobrazení vnoření odebráním zadaný rozložení ze stromu visual, což může zlepšit výkon vykreslení stránky. Výhody výkonu, která je dodávána se liší v závislosti na složitosti stránky, na verzi operačního systému používá a zařízení, na kterém je aplikace spuštěna. Ale největších zvýšení výkonu se zobrazí na starší zařízení.
 
 > [!NOTE]
-> **Poznámka:**: Při tomto článku se zaměřuje na výsledky použití rozložení komprese na Android, je rovněž použitelná pro iOS.
+> Tento článek zaměřuje na výsledcích použití komprese rozložení v systému Android, je rovněž na iOS.
 
 ## <a name="layout-compression"></a>Komprese rozložení
 

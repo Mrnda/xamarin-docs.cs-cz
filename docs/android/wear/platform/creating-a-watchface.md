@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 004f7c815a1629310ba4c0f4c6f4219581a12366
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fb3a2a9e60bda2a99a719bf75d23c29d42a94bdb
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-a-watch-face"></a>Vytváření řez sledování
 
@@ -22,11 +22,11 @@ _Tato příručka vysvětluje, jak implementovat vlastní sledování vzhled slu
 
 V tomto návodu se vytvoří základní sledování vzhled služby pro ilustraci essentials vytváření vlastní Android nosit sledovat řez. Služba počáteční sledovat řez zobrazí jednoduché digitální sledování, které se zobrazí aktuální čas v hodinách a minutách: 
 
-[![Vzhled digitální sledovat](creating-a-watchface-images/01-initial-face.png "snímku obrazovky s příkladem písmo, počáteční digitální sledování")](creating-a-watchface-images/01-initial-face.png)
+[![Vzhled digitální sledovat](creating-a-watchface-images/01-initial-face.png "snímku obrazovky s příkladem písmo, počáteční digitální sledování")](creating-a-watchface-images/01-initial-face.png#lightbox)
 
 Tento digitální sledovat řez je vyvinutých, testování, je přidán další kód ho upgradovat další pokročilé analogovým sledovat setkávají s tři rukou: 
 
-[ ![Vzhled analogovým sledovat](creating-a-watchface-images/02-example-watchface.png "snímku obrazovky s příkladem písmo, poslední analogovým sledování")](creating-a-watchface-images/02-example-watchface.png)
+[![Vzhled analogovým sledovat](creating-a-watchface-images/02-example-watchface.png "snímku obrazovky s příkladem písmo, poslední analogovým sledování")](creating-a-watchface-images/02-example-watchface.png#lightbox)
 
 Podívejte se na vzhled služby jsou seskupeny a nainstalován jako součást aplikace a opotřebením motoru. V následujících příkladech `MainActivity` obsahuje nic jiného než kód z šablony aplikace opotřebení tak, aby službu sledování řez se dají zabalené a nasadit do inteligentní sledování v rámci aplikace. V důsledku toho tato aplikace bude sloužit výhradně jako vehicle pro získání službu sledování vzhled načten do paměti zařízení (nebo emulátoru) pro ladění a testování. 
 
@@ -47,11 +47,11 @@ Vytvořit nový projekt Android nosit s názvem **WatchFace** (Další informace
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Dialogové okno Nový projekt](creating-a-watchface-images/03-wear-project-vs-sml.png "vyberte nosit aplikace v dialogovém okně Nový projekt")](creating-a-watchface-images/03-wear-project-vs.png)
+[![Dialogové okno Nový projekt](creating-a-watchface-images/03-wear-project-vs-sml.png "vyberte nosit aplikace v dialogovém okně Nový projekt")](creating-a-watchface-images/03-wear-project-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Dialogové okno Nový projekt](creating-a-watchface-images/03-wear-project-xs-sml.png "vyberte nosit aplikace v dialogovém okně Nový projekt")](creating-a-watchface-images/03-wear-project-xs.png)
+[![Dialogové okno Nový projekt](creating-a-watchface-images/03-wear-project-xs-sml.png "vyberte nosit aplikace v dialogovém okně Nový projekt")](creating-a-watchface-images/03-wear-project-xs.png#lightbox)
 
 -----
 
@@ -60,11 +60,11 @@ Nastavte název balíčku na `com.xamarin.watchface`:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Balíček nastavení název](creating-a-watchface-images/04-package-name-vs.png "nastavte název balíčku na com.xamarin.watchface")](creating-a-watchface-images/04-package-name-vs.png)
+[![Balíček nastavení název](creating-a-watchface-images/04-package-name-vs.png "nastavte název balíčku na com.xamarin.watchface")](creating-a-watchface-images/04-package-name-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Balíček nastavení název](creating-a-watchface-images/04-package-name-xs.png "nastavte název balíčku na com.xamarin.watchface")](creating-a-watchface-images/04-package-name-xs.png)
+[![Balíček nastavení název](creating-a-watchface-images/04-package-name-xs.png "nastavte název balíčku na com.xamarin.watchface")](creating-a-watchface-images/04-package-name-xs.png#lightbox)
 
 -----
 
@@ -72,13 +72,13 @@ Nastavte název balíčku na `com.xamarin.watchface`:
 
 Kromě toho, posuňte se dolů a povolte **INTERNET** a **WAKE_LOCK** oprávnění: 
 
-[ ![Požadovaná oprávnění](creating-a-watchface-images/05-required-permissions-vs.png "oprávnění povolit INTERNET a WAKE_LOCK")](creating-a-watchface-images/05-required-permissions-vs.png)
+[![Požadovaná oprávnění](creating-a-watchface-images/05-required-permissions-vs.png "oprávnění povolit INTERNET a WAKE_LOCK")](creating-a-watchface-images/05-required-permissions-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 Nastavte minimální Android verzi **Android 5.1 (API úrovně 22)**. Také povolit **Internet** a **WakeLock** oprávnění:
 
-[ ![Požadovaná oprávnění](creating-a-watchface-images/05-required-permissions-xs.png "oprávnění povolit Internet a WakeLock")](creating-a-watchface-images/05-required-permissions-xs.png)
+[![Požadovaná oprávnění](creating-a-watchface-images/05-required-permissions-xs.png "oprávnění povolit Internet a WakeLock")](creating-a-watchface-images/05-required-permissions-xs.png#lightbox)
 
 -----
 
@@ -91,24 +91,24 @@ V dalším kroku Stáhnout [preview.png](creating-a-watchface-images/preview.png
 
 Spusťte Správce balíčků NuGet (v sadě Visual Studio, klikněte pravým tlačítkem na **odkazy** v **Průzkumníku řešení** a vyberte **spravovat balíčky NuGet...** ). Aktualizovat na nejnovější stabilní verze projektu **Xamarin.Android.Wear**: 
 
-[ ![Přidat Správce balíčků NuGet](creating-a-watchface-images/06-add-wear-pkg-vs-sml.png "přidejte balíček Xamarin.Android.Wear")](creating-a-watchface-images/06-add-wear-pkg-vs.png)
+[![Přidat Správce balíčků NuGet](creating-a-watchface-images/06-add-wear-pkg-vs-sml.png "přidejte balíček Xamarin.Android.Wear")](creating-a-watchface-images/06-add-wear-pkg-vs.png#lightbox)
 
 Dále pokud **Xamarin.Android.Support.v13** je nainstalovaná, odinstalujte ji:
 
-[ ![Odebrat Správce balíčků NuGet](creating-a-watchface-images/07-uninstall-v13-sml.png "odebrat Xamarin.Support.v13")](creating-a-watchface-images/07-uninstall-v13.png)
+[![Odebrat Správce balíčků NuGet](creating-a-watchface-images/07-uninstall-v13-sml.png "odebrat Xamarin.Support.v13")](creating-a-watchface-images/07-uninstall-v13.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 Spusťte Správce balíčků NuGet (v sadě Visual Studio pro Mac, klikněte pravým tlačítkem na **balíčky** v **řešení podokně** a vyberte **přidat balíčky...** ). Aktualizovat na nejnovější stabilní verze projektu **Xamarin.Android.Wear**: 
 
-[ ![Přidat Správce balíčků NuGet](creating-a-watchface-images/06-add-wear-pkg-xs-sml.png "přidejte balíček Xamarin.Android.Wear")](creating-a-watchface-images/06-add-wear-pkg-xs.png)
+[![Přidat Správce balíčků NuGet](creating-a-watchface-images/06-add-wear-pkg-xs-sml.png "přidejte balíček Xamarin.Android.Wear")](creating-a-watchface-images/06-add-wear-pkg-xs.png#lightbox)
 
 -----
 
 
 Sestavení a spusťte aplikaci v emulátoru nebo zařízení a opotřebením motoru (Další informace o tom, jak to udělat najdete v tématu [Začínáme](~/android/wear/get-started/index.md) průvodce). Na zařízení a opotřebením motoru, byste měli vidět obrazovce následující aplikace:
 
-[ ![Snímek obrazovky aplikace](creating-a-watchface-images/08-app-screen.png "obrazovky aplikace v paměti zařízení")](creating-a-watchface-images/08-app-screen.png)
+[![Snímek obrazovky aplikace](creating-a-watchface-images/08-app-screen.png "obrazovky aplikace v paměti zařízení")](creating-a-watchface-images/08-app-screen.png#lightbox)
 
 Základní aplikaci opotřebení v tomto okamžiku nemá sledovat vzhled funkci, protože ještě neposkytuje implementace služby sledovat řez. Tato služba se přidají další. 
 
@@ -117,7 +117,7 @@ Základní aplikaci opotřebení v tomto okamžiku nemá sledovat vzhled funkci,
 
 Podívejte se na Android implementuje opotřebení řezy prostřednictvím `CanvasWatchFaceService` třídy. `CanvasWatchFaceService` je odvozený od `WatchFaceService`, které je odvozený od `WallpaperService` jak je znázorněno v následujícím diagramu: 
 
-[ ![Diagram dědičnosti](creating-a-watchface-images/09-inheritance-diagram-sml.png "CanvasWatchFaceService dědičnosti diagram")](creating-a-watchface-images/09-inheritance-diagram.png)
+[![Diagram dědičnosti](creating-a-watchface-images/09-inheritance-diagram-sml.png "CanvasWatchFaceService dědičnosti diagram")](creating-a-watchface-images/09-inheritance-diagram.png#lightbox)
 
 `CanvasWatchFaceService` obsahuje vnořený `CanvasWatchFaceService.Engine`; vytvoření instance `CanvasWatchFaceService.Engine` objekt, který neodpovídá skutečné práci při kreslení sledovat písmo. `CanvasWatchFaceService.Engine` je odvozený od `WallpaperService.Engine` jak je vidět v diagramu. 
 
@@ -317,11 +317,11 @@ Nastavit tento soubor sestavení akce na **AndroidResource**:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Akce sestavení](creating-a-watchface-images/10-android-resource-vs.png "akci k AndroidResource sestavení sady")](creating-a-watchface-images/10-android-resource-vs.png)
+[![Akce sestavení](creating-a-watchface-images/10-android-resource-vs.png "akci k AndroidResource sestavení sady")](creating-a-watchface-images/10-android-resource-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Akce sestavení](creating-a-watchface-images/10-android-resource-xs.png "akci k AndroidResource sestavení sady")](creating-a-watchface-images/10-android-resource-xs.png)
+[![Akce sestavení](creating-a-watchface-images/10-android-resource-xs.png "akci k AndroidResource sestavení sady")](creating-a-watchface-images/10-android-resource-xs.png#lightbox)
 
 -----
 
@@ -342,13 +342,13 @@ Vytvoření a nasazení aplikace na zařízení a opotřebením motoru. Měli by
 
 4.  Vyberte **Xamarin ukázka** sledovat vzhled (zobrazené na pravé straně): 
 
-    [ ![Výběr Watchface](creating-a-watchface-images/11-watchface-picker.png "prstem najít vzhled sledovat ukázka Xamarin")](creating-a-watchface-images/11-watchface-picker.png)
+    [![Výběr Watchface](creating-a-watchface-images/11-watchface-picker.png "prstem najít vzhled sledovat ukázka Xamarin")](creating-a-watchface-images/11-watchface-picker.png#lightbox)
 
 5.  Klepněte na **Xamarin ukázka** sledovat vzhled ji vyberte. 
 
 Tato operace změní písmo sledovat opotřebení ze zařízení používat službu vzhled vlastní sledování implementována, pokud: 
 
-[ ![Vzhled digitální sledovat](creating-a-watchface-images/12-digital-watchface.png "vlastní digitální sledovat spuštěné na opotřebení ze zařízení")](creating-a-watchface-images/12-digital-watchface.png)
+[![Vzhled digitální sledovat](creating-a-watchface-images/12-digital-watchface.png "vlastní digitální sledovat spuštěné na opotřebení ze zařízení")](creating-a-watchface-images/12-digital-watchface.png#lightbox)
 
 Je to řez relativně hrubých sledovat, proto je tak minimální implementace aplikace (například neobsahuje čelní strany pozadí sledovat a není volání `Paint` vyhlazení metody zlepšit vzhled). Ale ho implementovat holou funkce, které jsou potřeba k vytvoření vlastních sledovat řez. 
 
@@ -476,7 +476,7 @@ Application.Context.UnregisterReceiver (timeZoneReceiver);
 
 Vytvoření a nasazení aplikace na zařízení a opotřebením motoru znovu. Vyberte tučné sledovat vzhled výběru sledovat jako před. Ve verzi preview v dialogu pro výběr sledování se zobrazí na levé straně a nový vzhled sledování se zobrazí na pravé straně:
 
-[ ![Vzhled analogovým sledovat](creating-a-watchface-images/13-analog-watchface.png "vylepšené analogovým řez v výběr a na zařízení")](creating-a-watchface-images/13-analog-watchface.png)
+[![Vzhled analogovým sledovat](creating-a-watchface-images/13-analog-watchface.png "vylepšené analogovým řez v výběr a na zařízení")](creating-a-watchface-images/13-analog-watchface.png#lightbox)
 
 Na tomto snímku obrazovky je ruční sekundu přesunutí jednou za sekundu. Při spuštění tohoto kódu na zařízení a opotřebením motoru, druhé straně zmizí při hodinek zadá vedlejším režimu.
 

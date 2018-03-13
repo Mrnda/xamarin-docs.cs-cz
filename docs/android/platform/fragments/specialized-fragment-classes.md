@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: e7b4349ee2664a94ef6dff3c6a58d5f8f97682a1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f962f4619352dbaaed8c8ffcf5d8c8305cb6ad62
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="specialized-fragment-classes"></a>Specializované Fragment třídy
 
@@ -24,15 +24,13 @@ Rozhraní API fragmenty poskytuje další podtříd zapouzdření některé z b�
 -   **PreferenceFragment** &ndash; tento Fragment se používá k zobrazení předvoleb objekty seznamy.
 
 
-<a name="The_ListFragment" />
 
 ## <a name="the-listfragment"></a>ListFragment
 
 `ListFragment` Je velmi podobný koncept a funkce `ListActivity`; je obálky, který je hostitelem `ListView` v Fragment. Obrázek níže znázorňuje `ListFragment` systémem tablet a telefonního čísla:
 
-[![Snímky obrazovky z ListFragment na tablet a na telefon](specialized-fragment-classes-images/intro-screenshot-sml.png)](specialized-fragment-classes-images/intro-screenshot.png)
+[![Snímky obrazovky z ListFragment na tablet a na telefon](specialized-fragment-classes-images/intro-screenshot-sml.png)](specialized-fragment-classes-images/intro-screenshot.png#lightbox)
 
-<a name="Binding_Data_With_The_ListAdapter" />
 
 ### <a name="binding-data-with-the-listadapter"></a>Vazba dat s ListAdapter
 
@@ -51,7 +49,6 @@ public override void OnActivityCreated(Bundle savedInstanceState)
 
 Při nastavení `ListAdapter`, je důležité použít `ListFragment.ListAdapter` vlastnost a ne `ListView.ListAdapter` vlastnost. Pomocí `ListView.ListAdapter` způsobí kód důležité inicializace přeskočen.
 
-<a name="Responding_to_User_Selection" />
 
 
 ### <a name="responding-to-user-selection"></a>Reakce na výběr uživatele
@@ -84,14 +81,13 @@ public override void OnListItemClick(ListView l, View v, int index, long id)
 
 V kódu výše, když uživatel vybere položku v `ListFragment`, Fragment nové se zobrazí v hostitelských aktivity, zobrazuje podrobnosti o položce, který byl vybrán.
 
-<a name="DialogFragment" />
 
 
 ## <a name="dialogfragment"></a>DialogFragment
 
 *DialogFragment* je Fragment, který se používá k zobrazení objektu dialogového okna uvnitř Fragment, který bude float nad okno aktivity. Smyslem je nahradit dialogu spravované rozhraní API (od verze Android 3.0). Následující snímek obrazovky ukazuje příklad `DialogFragment`:
 
-[![Snímek obrazovky DialogFragment zobrazení přidat textové pole nový Vehicle](specialized-fragment-classes-images/dialog-fragment-example.png)](specialized-fragment-classes-images/dialog-fragment-example.png)
+[![Snímek obrazovky DialogFragment zobrazení přidat textové pole nový Vehicle](specialized-fragment-classes-images/dialog-fragment-example.png)](specialized-fragment-classes-images/dialog-fragment-example.png#lightbox)
 
 A `DialogFragment` zajistí, aby zůstaly konzistentní stav mezi Fragment a dialogové okno. Všechny interakce a kontrolu nad objektu dialogového okna by měl nastat pomocí `DialogFragment` rozhraní API a nesmí být vytvářeny pomocí přímého volání na objektu dialogového okna. `DialogFragment` Rozhraní API poskytuje každá instance s `Show()` metoda, která se používá k zobrazení Fragment. Existují dva způsoby, jak se zbavit Fragment:
 
@@ -106,13 +102,12 @@ Chcete-li vytvořit `DialogFragment`, třídy dědí z `Android.App.DialogFragme
 - **OnCreateDialog** &ndash; tím se vytvoří vlastní dialogové okno. Obvykle se používá k zobrazení *AlertDialog*. Při přepisování tuto metodu, není nutné přepsat `OnCreateView` .
 
 
-<a name="A_Simple_DialogFragment" />
 
 ### <a name="a-simple-dialogfragment"></a>Jednoduché DialogFragment
 
 Následující snímek obrazovky ukazuje jednoduchý `DialogFragment` má `TextView` a dvě `Button`s:
 
-[![Příklad DialogFragment s TextView a dvě tlačítka](specialized-fragment-classes-images/dialog-fragment-example-2.png)](specialized-fragment-classes-images/dialog-fragment-example-2.png)
+[![Příklad DialogFragment s TextView a dvě tlačítka](specialized-fragment-classes-images/dialog-fragment-example-2.png)](specialized-fragment-classes-images/dialog-fragment-example-2.png#lightbox)
 
 `TextView` Zobrazí počet pokusů, které uživatel klepne na jednu tlačítko `DialogFragment`, zatímco klepnutím na tlačítko Další se zavře Fragment. Kód pro `DialogFragment` je:
 
@@ -145,7 +140,6 @@ public class MyDialogFragment : DialogFragment
 }
 ```
 
-<a name="Displaying_a_Fragment" />
 
 ### <a name="displaying-a-fragment"></a>Zobrazení Fragment
 
@@ -164,14 +158,12 @@ public void ShowDialog()
 }
 ```
 
-<a name="Dismissing_a_Fragment" />
 
 ### <a name="dismissing-a-fragment"></a>Zavření Fragment
 
 Volání metody `Dismiss()` na instanci systému `DialogFragment` způsobí, že Fragment odeberou z aktivity a potvrdí, že transakce.
 Standardní metody Fragment životního cyklu, které se podílejí s zničení Fragment bude mít název.
 
-<a name="Alert_Dialog" />
 
 ### <a name="alert-dialog"></a>Dialogového okna výstrah
 
@@ -195,7 +187,6 @@ public class AlertDialogFragment : DialogFragment
 }
 ```
 
- <a name="PreferenceFragment" />
 
 
 ## <a name="preferencefragment"></a>PreferenceFragment
@@ -204,9 +195,8 @@ Ke správě předvoleb, poskytuje rozhraní API fragmenty `PreferenceFragment` p
 ) &ndash; hierarchie předvolby uživateli se zobrazí v Fragment. Jako uživatel pracuje s předvolby, se budou automaticky uloženy do [SharedPreferences](http://developer.android.com/reference/android/content/SharedPreferences.html).
 V systému Android 3.0 nebo vyšší aplikace, použijte `PreferenceFragment` jak nakládat s předvoleb v aplikacích. Následující obrázek ukazuje příklad `PreferenceFragment`:
 
-[![Příklad PreferencesFragment vložené, dialogové okno a předvolby spuštění](specialized-fragment-classes-images/preferences-dialog.png)](specialized-fragment-classes-images/preferences-dialog.png)
+[![Příklad PreferencesFragment vložené, dialogové okno a předvolby spuštění](specialized-fragment-classes-images/preferences-dialog.png)](specialized-fragment-classes-images/preferences-dialog.png#lightbox)
 
-<a name="Create_A_Preference_Fragment_from_a_Resource" />
 
 ### <a name="create-a-preference-fragment-from-a-resource"></a>Vytvořit Fragment předvoleb z prostředku
 
@@ -278,7 +268,6 @@ public class PrefFragment : PreferenceFragment
 }
 ```
 
- <a name="Querying_Activities_to_Create_a_Preference_Fragment" />
 
 
 ### <a name="querying-activities-to-create-a-preference-fragment"></a>Dotazování aktivit za účelem vytvoření Fragment předvoleb
@@ -316,4 +305,4 @@ public class MyActivityWithPreferences : Activity
 
 `MetaDataAttribute` Deklaruje souboru prostředků jazyka XML, který `PreferenceFragment` použije k zvýšilo předvoleb hierarchii. Pokud `MetatDataAttribute` není k dispozici, pak bude vyvolána výjimka za běhu. Po spuštění tohoto kódu `PreferenceFragment` se zobrazí jako na následujícím snímku obrazovky:
 
-[![Snímek obrazovky aplikace příklad s PreferenceFragment zobrazí](specialized-fragment-classes-images/preference-fragment-getpreferencesfromintent.png)](specialized-fragment-classes-images/preference-fragment-getpreferencesfromintent.png)
+[![Snímek obrazovky aplikace příklad s PreferenceFragment zobrazí](specialized-fragment-classes-images/preference-fragment-getpreferencesfromintent.png)](specialized-fragment-classes-images/preference-fragment-getpreferencesfromintent.png#lightbox)

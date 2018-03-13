@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/19/2016
-ms.openlocfilehash: a9908429994f4575a9e41936d500bfd8906a843b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 837d75bd4ecde92d4c375c680a5f5e7ff231f825
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-custom-renderers"></a>Úvod do vlastní nástroji pro vykreslování
 
@@ -52,7 +52,7 @@ public class MyEntry : Entry
 `local` Předponu oboru názvů můžete použít jakýkoli. Ale `namespace` a `assembly` hodnoty musí odpovídat podrobnosti vlastního ovládacího prvku. Jakmile je deklarován obor názvů, je předpona, která slouží k odkazování vlastního ovládacího prvku.
 
 > [!NOTE]
-> **Poznámka:**: definování `xmlns` v PCLs mnohem jednodušší než sdílených projektů. Kompiluje PCL do sestavení tak, aby byl snadno zjistit, co `assembly=CustomRenderer` hodnota by měla být. Při použití sdílených projektů, jsou všechny sdílené prostředky (včetně XAML) zkompilovány do každé odkazující projektů, které znamená, že pokud iOS, Android a Windows Phone projekty mají svůj vlastní *názvy sestavení* není možné o zápis `xmlns` deklarace vzhledem k tomu, že hodnota musí být různé pro jednotlivé aplikace. Vlastní ovládací prvky v jazyce XAML pro sdílených projektů bude vyžadovat každý projekt aplikace nakonfigurovat se stejným názvem sestavení.
+> Definování `xmlns` v PCLs mnohem jednodušší než sdílených projektů. Kompiluje PCL do sestavení tak, aby byl snadno zjistit, co `assembly=CustomRenderer` hodnota by měla být. Při použití sdílených projektů, jsou všechny sdílené prostředky (včetně XAML) zkompilovány do každé odkazující projektů, které znamená, že pokud iOS, Android a Windows Phone projekty mají svůj vlastní *názvy sestavení* není možné o zápis `xmlns` deklarace vzhledem k tomu, že hodnota musí být různé pro jednotlivé aplikace. Vlastní ovládací prvky v jazyce XAML pro sdílených projektů bude vyžadovat každý projekt aplikace nakonfigurovat se stejným názvem sestavení.
 
 `MyEntry` Vlastní vykreslení ovládacího prvku klikněte na každou platformu, barvou pozadí, jak je vidět na následujících snímcích obrazovky:
 
@@ -69,7 +69,7 @@ Proces pro vytvoření třídy vlastní zobrazovací jednotky vypadá takto:
 1. Přidat `ExportRenderer` atributu na vlastní zobrazovací jednotky třídu k určení, že bude použit k vykreslení ovládacího prvku Xamarin.Forms. Tento atribut slouží k registraci vlastní zobrazovací jednotky s Xamarin.Forms.
 
 > [!NOTE]
-> **Poznámka:**: pro většinu prvků Xamarin.Forms, je volitelný poskytnout vlastní zobrazovací jednotky v každém projektu platformy. Pokud vlastní zobrazovací jednotky není registrované, bude použit výchozí zobrazovací jednotky pro základní třídu ovládacího prvku. Však vlastní nástroji pro vykreslování se vyžadují v každém projektu platformy při vykreslování [zobrazení](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) nebo [ViewCell](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) element.
+> Pro většinu prvků Xamarin.Forms je volitelné poskytnout vlastní zobrazovací jednotky v každém projektu platformy. Pokud vlastní zobrazovací jednotky není registrované, bude použit výchozí zobrazovací jednotky pro základní třídu ovládacího prvku. Však vlastní nástroji pro vykreslování se vyžadují v každém projektu platformy při vykreslování [zobrazení](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) nebo [ViewCell](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) element.
 
 Témata v této série vám poskytne předvádění a vysvětlení tohoto procesu pro různé prvky Xamarin.Forms.
 
@@ -96,4 +96,4 @@ Tento článek poskytl úvod do vlastní nástroji pro vykreslování a má uved
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Účinky](~/xamarin-forms/app-fundamentals/effects/index.md)
+- [Efekty](~/xamarin-forms/app-fundamentals/effects/index.md)

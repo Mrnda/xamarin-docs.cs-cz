@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: 9dc50aeec88131a1ce49c7e3357382c019774450
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b7f42d6e36638bf5c7e98b9363295e37997ee067
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="installing-nunit-264-using-nuget"></a>Instalace NUnit 2.6.4 pomocí nástroje NuGet
 
@@ -43,16 +43,16 @@ Následující kroky popisují postup instalace NUnit 2.6.4.
 
 1. **Otevřete Správce balíčků** -klikněte pravým tlačítkem na **balíčky** a vyberte **přidat balíčky** z místní nabídky:
 
-    [![](installing-nunit-using-nuget-images/add-packages-xs.png "Klikněte pravým tlačítkem na balíčky a v místní nabídce vyberte Přidat balíčky")](installing-nunit-using-nuget-images/add-packages-xs.png)
+    [![](installing-nunit-using-nuget-images/add-packages-xs.png "Klikněte pravým tlačítkem na balíčky a v místní nabídce vyberte Přidat balíčky")](installing-nunit-using-nuget-images/add-packages-xs.png#lightbox)
     
 1. **Vyhledejte `NUnit version:2.6.4`**  -Visual Studio pro Mac odinstalovat NUnit 3.0 (v případě potřeby) a pak stáhnout a nainstalují NUnit 2.6.4. V **přidat balíčky** dialogové okno, zadejte text `nunit version:2.6.4` v **vyhledávání** pole umístěné v pravém horním rohu. Vyberte **NUnit** výsledky hledání a klikněte na **přidat balíček** tlačítko:
 
-    [![](installing-nunit-using-nuget-images/nunit-search-xs.png "Ve výsledcích hledání vyberte NUnit a klikněte na tlačítko Přidat balíček")](installing-nunit-using-nuget-images/nunit-search-xs.png)
+    [![](installing-nunit-using-nuget-images/nunit-search-xs.png "Ve výsledcích hledání vyberte NUnit a klikněte na tlačítko Přidat balíček")](installing-nunit-using-nuget-images/nunit-search-xs.png#lightbox)
 
 
 Je možné k potvrzení, že byla nainstalována NUnit 2.6.4 zkontrolováním číslo verze balíčku NUnit v řešení pro:
 
-[![](installing-nunit-using-nuget-images/nunit-2-6-4-installed.png "Zkontrolujte číslo verze balíčku NUnit v řešení pro")](installing-nunit-using-nuget-images/nunit-2-6-4-installed.png)
+[![](installing-nunit-using-nuget-images/nunit-2-6-4-installed.png "Zkontrolujte číslo verze balíčku NUnit v řešení pro")](installing-nunit-using-nuget-images/nunit-2-6-4-installed.png#lightbox)
 
 ## <a name="summary"></a>Souhrn
 
@@ -68,7 +68,7 @@ Tato část je zaměřená na pomocí _Konzola správce balíčků NuGet_ ve Vis
 
 1. **Spuštění konzole Správce balíčků NuGet** – vyberte **nástroje > Správce balíčků NuGet > Konzola správce balíčků**:
 
-    [![](installing-nunit-using-nuget-images/package-manager-console.png "Spuštění konzoly Správce balíčků NuGet - konzoly Správce balíčků Správce balíčků NuGet vyberte položku Nástroje")](installing-nunit-using-nuget-images/package-manager-console.png)
+    [![](installing-nunit-using-nuget-images/package-manager-console.png "Spuštění konzoly Správce balíčků NuGet - konzoly Správce balíčků Správce balíčků NuGet vyberte položku Nástroje")](installing-nunit-using-nuget-images/package-manager-console.png#lightbox)
     
 1. **Ověření verze NUnit** -může volitelně ověřit verzi NUnit, který je nainstalován spuštěním příkazu `Get-Package -Project <UITEST PROJECT>`:
 

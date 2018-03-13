@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 7ee2af392a00e045b1992d189a15d7a0ee04b02f
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: a2378cb439ceed94751e61fd44b54aae3a65bebd
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="touch-id"></a>Touch ID
 
@@ -29,7 +29,7 @@ Abyste plně porozuměli tomu Touch ID a svůj význam, jsme měli prozkoumat sl
 Řetězce klíčů je specializované databáze, kde je každý řádek říká _řetězce klíčů položky_. Každá položka je popsán atributy řetězce klíčů a se skládá z šifrované hodnoty. Povolit pro efektivní použití řetězce klíčů, je optimalizovaný pro malé položek, nebo _tajné klíče_.
 Každá položka řetězce klíčů je chráněn hesla uživatele a jedinečné zařízení tajný klíč. Položky řetězce klíčů by měly být chráněné, i když nejsou uživatelé ze svých zařízení. Tato možnost je implementovaná v iOS tím, že se pouze položky k dispozici po odemknutí zařízení – Pokud je zařízení uzamčené k dispozici. Může být také uložen v šifrované zálohování. Jedním z klíčových funkcích služby řetězce klíčů je vynutit řízení přístupu; má aplikace přístup k jeho část řetězci klíčů a všechny ostatní aplikace nebude možné. Následující obrázek znázorňuje, jak se aplikace komunikuje s řetězci klíčů:
 
-[![](touchid-images/image1.png "Tento diagram znázorňuje, jak se aplikace komunikuje s řetězci klíčů")](touchid-images/image1.png)
+[![](touchid-images/image1.png "Tento diagram znázorňuje, jak se aplikace komunikuje s řetězci klíčů")](touchid-images/image1.png#lightbox)
 
 ### <a name="secure-enclave"></a>Zabezpečené Enclave
 
@@ -49,7 +49,7 @@ Aplikace by měla nejprve dotaz do řetězce klíčů se, zda existuje heslo. Po
 
 Seznam řízení přístupu je nový atribut položku řetězce klíčů v iOS 8, která popisuje informace, o co musí dojít k povolení určité operace proběhnout. To může být ve formátu zobrazení dialogového okna výstrah nebo pro požadování heslem. Seznam ACL umožňuje nastavit usnadnění přístupu a ověřování pro položku řetězce klíčů. Následující diagram ukazuje, jak tento nový atribut sváže pomocí zbytek řetězce klíčů položky:
 
-[![](touchid-images/image2.png "Tento diagram znázorňuje, jak tento nový atribut sváže pomocí rest položky řetězce klíčů")](touchid-images/image2.png)
+[![](touchid-images/image2.png "Tento diagram znázorňuje, jak tento nový atribut sváže pomocí rest položky řetězce klíčů")](touchid-images/image2.png#lightbox)
 
 Od verze iOS 8, je nyní nové zásady přítomnosti uživatele, `SecAccessControl`, což je vynucené zabezpečené enclave pro zařízení typu iPhone 5s a vyšší. Vidíme v následující tabulce, právě způsob konfigurace zařízení mohou mít vliv na vyhodnocení zásad:
 
@@ -94,7 +94,7 @@ Za druhé LocalAuthentication nabízí dvě metody k ověření vaší aplikaci 
 Při obě schopnosti nabízí místní ověřování, neposkytují mechanismus pro aplikace nebo pro uživatele k ověření na vzdáleném serveru.
 Místní ověřování poskytuje nové standardní uživatelské rozhraní pro ověřování. V případě Touch ID jde zobrazení výstrah se dvěma tlačítky, jak je uvedeno dále. Jeden tlačítko Zrušit a má použít záložní způsob ověřování – hesla. Je také vlastní zprávu, která musí být nastavena. Je vhodné použít vysvětlit, proč se vyžaduje ověření Touch ID uživateli.
 
-[![](touchid-images/image12.png "Výstraha ověřování Touch ID")](touchid-images/image12.png)
+[![](touchid-images/image12.png "Výstraha ověřování Touch ID")](touchid-images/image12.png#lightbox)
 
 ### <a name="with-keychain-services"></a>Službou řetězce klíčů
 
@@ -116,7 +116,7 @@ Místní ověřování byl vytvořen jako způsob pro zadání přihlašovacích
 
 K tomu aplikace volá vyhodnocení zásad uvnitř místní ověřování, které spustí operaci uvnitř Enclave zabezpečení. Můžete využít k poskytování ověřování do vaší aplikace, a to bez přímo dotazování nebo přístup k Enclave zabezpečení.
 
-[![](touchid-images/image13a.png "Pomocí místního ověřování bez služeb řetězce klíčů")](touchid-images/image13a.png)
+[![](touchid-images/image13a.png "Pomocí místního ověřování bez služeb řetězce klíčů")](touchid-images/image13a.png#lightbox)
 
 Použití místního ověřování v aplikaci poskytuje jednoduchý způsob implementace ověření uživatele, například funkci výhradně pro očí vlastník zařízení, jako je například bankovní aplikace, a zjednodušit tak rodičovské kontroly odemknout pro jednotlivce aplikace. Můžete ji použít také jako způsob, jak rozšířit ověřování, která již existuje – uživatelé jako své informace zabezpečená, ale jejich chtěl také mít možnosti.
 
@@ -150,16 +150,16 @@ Proto Podíváme se na přidání některé Touch ID ověřování do aplikace. 
 2.  Dvakrát klikněte na `MainStoryboard.Storyboard` otevřete ukázku v iOS Designer. Pomocí této ukázky jsme chcete přidat nové obrazovky do naší aplikaci, která bude řídit ověřování. To přejde předcházející aktuálnímu `MasterViewController`.
 3.  Přetáhněte novou **View Controller** z **sada nástrojů** k **návrhová plocha**. Nastavit jako **kořenového řadiče zobrazení** podle **Ctrl + přetažení** z **navigační řadiče**:
 
-    [![](touchid-images/image4.png "Nastavte řadič zobrazení kořenové")](touchid-images/image4.png)
+    [![](touchid-images/image4.png "Nastavte řadič zobrazení kořenové")](touchid-images/image4.png#lightbox)
 4.  Název nového řadiče zobrazení `AuthenticationViewController`.
 5.  Přetáhněte tlačítka a umístěte ji na `AuthenticationViewController`. Toto volání `AuthenticateButton`a pojmenujte ho text `Add a Chore`.
 6.  Vytvoření událostí na `AuthenticateButton` názvem `AuthenticateMe`.
 7.  Vytvoření ruční segue z `AuthenticationViewController` kliknutím na černé panelu v dolní části a **Ctrl + přetažení** z panelu `MasterViewController` a výběr **nabízené** (nebo **zobrazit** Pokud pomocí třídy velikost):
 
-    [![](touchid-images/image5.png "Přetáhněte z panelu MasterViewController a výběr nabízených nebo zobrazení")](touchid-images/image6.png)
+    [![](touchid-images/image5.png "Přetáhněte z panelu MasterViewController a výběr nabízených nebo zobrazení")](touchid-images/image6.png#lightbox)
 8.  Klikněte na nově vytvořený segue a dejte mu identifikátor `AuthenticationSegue`, jak je uvedeno dále:
 
-    [![](touchid-images/image7.png "Nastavit identifikátor segue na AuthenticationSegue")](touchid-images/image7.png)
+    [![](touchid-images/image7.png "Nastavit identifikátor segue na AuthenticationSegue")](touchid-images/image7.png#lightbox)
 9.  Přidejte následující kód, který `AuthenticationViewController`:
 
     ```
@@ -191,19 +191,19 @@ Proto Podíváme se na přidání některé Touch ID ověřování do aplikace. 
 
 Toto je veškerý kód, je nutné implementovat Touch ID ověřování pomocí místního ověřování. Zvýrazněné řádky na obrázku níže ukazují použití místního ověřování:
 
-[![](touchid-images/image8.png "Zvýrazněné řádky ukazují použití místního ověřování")](touchid-images/image8.png)
+[![](touchid-images/image8.png "Zvýrazněné řádky ukazují použití místního ověřování")](touchid-images/image8.png#lightbox)
 
 Nejprve musíme vytvořit, pokud je schopný přijímat vstup pomocí Touch ID zařízení `CanEvaluatePolicy` a předání v zásadách `DeviceOwnerAuthenticationWithBiometrics`. Pokud je tato hodnota true, pak rozhraní Touch ID jsme můžete zobrazit pomocí `EvaluatePolicy`. Existují tři údaje máme k předání do `EvaluatePolicy` – zásady sám sebe, řetězec vysvětlením, proč je nutné provést ověření a odpověď obslužná rutina. Obslužná rutina odpovědi informuje aplikace, jak ho postupovat v případě úspěšné nebo neúspěšné ověřování. Podíváme blíže na obslužnou rutinu odpovědi:
 
-[![](touchid-images/image9.png "Obslužná rutina odpovědi")](touchid-images/image9.png)
+[![](touchid-images/image9.png "Obslužná rutina odpovědi")](touchid-images/image9.png#lightbox)
 
 Obslužná rutina odpovědi je zadán typu `LAContextReplyHandler`, což trvá parametry úspěch – `bool` hodnotu a `NSError` názvem `error`. Pokud se to nezdaří, je to kde ve skutečnosti provedeme ať je, že chceme ověření – v tomto případě zobrazení na obrazovce, dejte nám přidáte nové případě. Mějte na paměti, jedním z upozornění místní ověřování je, že musí být spustit na popředí, takže nezapomeňte použít `InvokeOnMainThread`:
 
-[![](touchid-images/image10.png "Použití InvokeOnMainThread pro místní ověřování")](touchid-images/image10.png)
+[![](touchid-images/image10.png "Použití InvokeOnMainThread pro místní ověřování")](touchid-images/image10.png#lightbox)
 
 Nakonec, když ověření proběhlo úspěšně, chceme přechod `MasterViewController`. `PerformSegue` Metoda slouží k tomu:
 
-[![](touchid-images/image11.png "Volání metody PerformSegue pro přechod MasterViewController")](touchid-images/image11.png)
+[![](touchid-images/image11.png "Volání metody PerformSegue pro přechod MasterViewController")](touchid-images/image11.png#lightbox)
 
 ## <a name="summary"></a>Souhrn
 V této příručce jsme se podívali na řetězce klíčů a jak to funguje v iOS. Můžeme také prozkoumali řetězce klíčů seznamu ACL a to změny v iOS. V dalším kroku vzali jsme podívejte se na místní ověřování rozhraní, které je nového v iOS 8 a pak prohlédl implementace ověřování Touch ID v naší aplikaci.

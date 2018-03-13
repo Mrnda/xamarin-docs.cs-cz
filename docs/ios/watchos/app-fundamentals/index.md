@@ -6,14 +6,13 @@ ms.assetid: 156D6D1C-83CA-4088-BA08-40B22312269C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: a470314097342e9c2e068a6015664074540d0ddd
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 06c2fbe7537df004641a2c1bd6e7d4e420fef1c7
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="watchos-application-fundamentals"></a>watchOS Základy aplikace
-
 
 ##  <a name="parent-applicationioswatchosapp-fundamentalsparent-appmd"></a>[Nadřazená aplikace](~/ios/watchos/app-fundamentals/parent-app.md)
 
@@ -39,7 +38,7 @@ Příručka k překladu obsah aplikace Apple Watch zajistit podporu více jazyk�
 
 Další informace o dvě možnosti navigace, která je k dispozici pro sledování aplikace: navigace hierarchické nebo na stránce.
 
-##  <a name="screen-sizesioswatchosapp-fundamentalsscreen-sizesmd"></a>[Velikost obrazovky](~/ios/watchos/app-fundamentals/screen-sizes.md)
+##  <a name="screen-sizesioswatchosapp-fundamentalsscreen-sizesmd"></a>[Velikosti obrazovky](~/ios/watchos/app-fundamentals/screen-sizes.md)
 
 Zobrazte náhled a optimalizovat uživatelského rozhraní pro obě sledování dostupné velikosti.
 

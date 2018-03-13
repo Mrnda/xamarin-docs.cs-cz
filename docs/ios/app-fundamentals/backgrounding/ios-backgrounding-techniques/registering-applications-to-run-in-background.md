@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: dddd1ad4ae70b97f17ba71a7e96b553759e35695
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5fcb41f4f60adc8ca5be761c2b9a7449387a89d0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="registering-applications-to-run-in-the-background"></a>Registrace aplikace, které poběží na pozadí
 
@@ -34,7 +34,7 @@ Registrovaná aplikace můžete rozdělit do několika kategorií:
 
 Aplikace se dají registrovat nastavením **požadované režimy pozadí** vlastnost aplikace *Info.plist*. Aplikace můžete zaregistrovat v tolik kategoriích, jak to vyžaduje:
 
- [ ![](registering-applications-to-run-in-background-images/bgmodes.png "Nastavení režimy pozadí")](registering-applications-to-run-in-background-images/bgmodes.png)
+ [![](registering-applications-to-run-in-background-images/bgmodes.png "Nastavení režimy pozadí")](registering-applications-to-run-in-background-images/bgmodes.png#lightbox)
 
 Podrobný návod k registraci aplikace pro pozadí umístění aktualizace, najdete v článku [návod umístění pozadí](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/location-walkthrough.md).
 
@@ -42,7 +42,7 @@ Podrobný návod k registraci aplikace pro pozadí umístění aktualizace, najd
 
 Další vlastnost, která může být nastavena v *Info.plist* je *aplikaci nelze spustit v pozadí*, nebo `UIApplicationExitsOnSuspend` vlastnost:
 
- [ ![](registering-applications-to-run-in-background-images/plist.png "Zakázání spuštění pozadí")](registering-applications-to-run-in-background-images/plist.png)
+ [![](registering-applications-to-run-in-background-images/plist.png "Zakázání spuštění pozadí")](registering-applications-to-run-in-background-images/plist.png#lightbox)
 
 To má přesně stejný účinek jako nastavení nastavení aktualizace na pozadí aplikace vypnout v iOS 7 + s výjimkou lze změnit pouze na straně pro vývojáře a je k dispozici pro iOS 4 a vyšší. Aplikace bude pozastaveno okamžitě po zadání na pozadí a nebude možné provést jakékoli zpracovávání.
 

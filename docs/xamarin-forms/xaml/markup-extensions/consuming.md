@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: cc4407be9dee7e19dbf1f3cc03b3b88191717e6f
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 0c68d2cfd43eb535fe2e02b5662250cb6e453ddd
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="consuming-xaml-markup-extensions"></a>Využívání XAML – rozšíření značek
 
@@ -137,7 +137,7 @@ V posledním příkladu se zobrazí `Device.RuntimePlatform` hodnotu. `Environme
 
 Zde je ukázka běžící na všechny tři platformách:
 
-[![x:Static Demo](consuming-images/staticdemo-small.png "x:Static Demo")](consuming-images/staticdemo-large.png "x:Static Demo")
+[![x:Static Demo](consuming-images/staticdemo-small.png "x:Static Demo")](consuming-images/staticdemo-large.png#lightbox "x:Static Demo")
 
 <a name="reference" />
 
@@ -181,7 +181,7 @@ Zde je ukázka běžící na všechny tři platformách:
 
 Obě `x:Reference` výrazy použít zkrácenou verzi `ReferenceExtension` název třídy a eliminovat `Name=` část výrazu. V prvním příkladu `x:Reference` součástí – rozšíření značek `Binding` – rozšíření značek. Všimněte si, že `Source` a `StringFormat` nastavení jsou odděleny čárkami. Tady je programy spuštěné na všech tří platformách:
 
-[![x: Reference ukázku](consuming-images/referencedemo-small.png "ukázku x: Reference")](consuming-images/referencedemo-large.png "x: Reference Demo")
+[![x: Reference ukázku](consuming-images/referencedemo-small.png "ukázku x: Reference")](consuming-images/referencedemo-large.png#lightbox "x: Reference Demo")
 
 <a name="type" />
 
@@ -236,7 +236,7 @@ Jedná se jak v navigační nabídce `MainPage` v **rozšíření značek** prog
 
 Zde je hlavní stránce otevírání v **rozšíření značek**:
 
-[![Hlavní stránka](consuming-images/mainpage-small.png "hlavní stránky")](consuming-images/mainpage-large.png "hlavní stránky")
+[![Hlavní stránka](consuming-images/mainpage-small.png "hlavní stránky")](consuming-images/mainpage-large.png#lightbox "hlavní stránky")
 
 Každý `CommandParameter` je nastavena na `x:Type` rozšíření značek, který odkazuje na jednu z dalších stránek. `Command` Vlastnost je vázána na vlastnost s názvem `NavigateCommand`. Tato vlastnost je definována v `MainPage` souboru kódu na pozadí:
 
@@ -319,7 +319,7 @@ public partial class TypeDemoPage : ContentPage
 
 Metoda, která je spuštěna při `Button` stisknutí vytvoří novou instanci třídy argument, nastaví její `VerticalOptions` vlastnost a přidává ji k `StackLayout`. Tří `Button` stránku elementy potom sdílet s dynamicky vytvořené zobrazení:
 
-[![x: Type ukázku](consuming-images/typedemo-small.png "ukázku x: Type")](consuming-images/typedemo-large.png "x: Type Demo")
+[![x: Type ukázku](consuming-images/typedemo-small.png "ukázku x: Type")](consuming-images/typedemo-large.png#lightbox "x: Type Demo")
 
 <a name="array" />
 
@@ -376,7 +376,7 @@ Metoda, která je spuštěna při `Button` stisknutí vytvoří novou instanci t
 
 `ViewCell` Vytvoří jednoduchou `BoxView` pro každou položku barev:
 
-[![x: Array ukázku](consuming-images/arraydemo-small.png "ukázku x: Array")](consuming-images/arraydemo-large.png "x: Array Demo")
+[![x: Array ukázku](consuming-images/arraydemo-small.png "ukázku x: Array")](consuming-images/arraydemo-large.png#lightbox "x: Array Demo")
 
 Existuje několik způsobů určení jednotlivých `Color` položky v toto pole. Můžete použít `x:Static` – rozšíření značek:
 
@@ -449,7 +449,7 @@ Pak můžete zjistíte, že pro jeden z `Label` elementy, chcete, aby všechny h
 
 Tady je program běžící na třech platformách:
 
-[![x: Null ukázku](consuming-images/nulldemo-small.png "ukázku x: Null")](consuming-images/nulldemo-large.png "x: Null Demo")
+[![x: Null ukázku](consuming-images/nulldemo-small.png "ukázku x: Null")](consuming-images/nulldemo-large.png#lightbox "x: Null Demo")
 
 Všimněte si, že čtyři z `Label` prvky mít serif písmo, ale centru `Label` má výchozí sans-serif písmo.
 
@@ -462,6 +462,6 @@ Pokud byla zjištěna potřebu rozšíření značek XAML, která není k dispoz
 
 - [Rozšíření značek (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/)
 - [Kapitola rozšíření značek XAML z adresáře Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
-- [Slovnících prostředků](~/xamarin-forms/xaml/resource-dictionaries.md)
+- [Slovníky prostředků](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [Dynamické styly](~/xamarin-forms/user-interface/styles/dynamic.md)
 - [Datová vazba](~/xamarin-forms/app-fundamentals/data-binding/index.md)

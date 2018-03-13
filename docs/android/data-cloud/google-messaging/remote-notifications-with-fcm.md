@@ -7,12 +7,12 @@ ms.assetid: 4D7C5F46-C997-49F6-AFDA-6763E68CDC90
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 4e5bf2b24845fa008c6f97a6d55e18a51bc82164
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 7e107fc9ced62027bc793c97a388344d74becd66
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="remote-notifications-with-firebase-cloud-messaging"></a>Vzdálená oznámení s Firebase cloudu zasílání zpráv
 
@@ -22,7 +22,7 @@ _Tento názorný postup obsahuje podrobné vysvětlení způsobu implementace vz
 
 V tomto návodu se nazývá základní aplikaci **FCMClient** se vytvoří pro ilustraci essentials FCM zasílání zpráv. **FCMClient** ověří přítomnost služby Google Play, přijímá registrace tokenů ze FCM, zobrazí vzdáleného oznámení, které odešlete z konzoly Firebase a jako odběratel u zpráv tématu:
 
-[![Příklad snímek obrazovky aplikace](remote-notifications-with-fcm-images/00-app-example-sml.png)](remote-notifications-with-fcm-images/00-app-example.png)
+[![Příklad snímek obrazovky aplikace](remote-notifications-with-fcm-images/00-app-example-sml.png)](remote-notifications-with-fcm-images/00-app-example.png#lightbox)
 
 Bude prozkoumali se následujících témat:
 
@@ -56,7 +56,7 @@ V [Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-clou
 
 V následujícím příkladu je název balíčku nastavte na `com.xamarin.fcmexample`: 
 
-[![Nastavení názvu balíčku](remote-notifications-with-fcm-images/01-package-name-vs-sml.png)](remote-notifications-with-fcm-images/01-package-name-vs.png)
+[![Nastavení názvu balíčku](remote-notifications-with-fcm-images/01-package-name-vs-sml.png)](remote-notifications-with-fcm-images/01-package-name-vs.png#lightbox)
 
 Při aktualizaci **Android Manifest**, taky zkontrolujte, zda `Internet` je povoleno oprávnění. 
 
@@ -68,7 +68,7 @@ Při aktualizaci **Android Manifest**, taky zkontrolujte, zda `Internet` je povo
 
 V následujícím příkladu je název balíčku nastavte na `com.xamarin.fcmexample`: 
 
-[![Nastavení názvu balíčku](remote-notifications-with-fcm-images/01-package-name-xs-sml.png)](remote-notifications-with-fcm-images/01-package-name-xs.png)
+[![Nastavení názvu balíčku](remote-notifications-with-fcm-images/01-package-name-xs-sml.png)](remote-notifications-with-fcm-images/01-package-name-xs.png#lightbox)
 
 Při aktualizaci **Android Manifest**, taky zkontrolujte, zda `INTERNET` je povoleno oprávnění (v části **požadovaná oprávnění**). 
 
@@ -88,7 +88,7 @@ Protože zasílání zpráv cloudu Firebase na služby Google Play, závisí [Xa
 
 3.  Instalaci tohoto balíčku do **FCMClient** projektu: 
 
-    [ ![Instalace základní služby Google Play](remote-notifications-with-fcm-images/02-google-play-services-vs-sml.png)](remote-notifications-with-fcm-images/02-google-play-services-vs.png)
+    [![Instalace základní služby Google Play](remote-notifications-with-fcm-images/02-google-play-services-vs-sml.png)](remote-notifications-with-fcm-images/02-google-play-services-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -98,7 +98,7 @@ Protože zasílání zpráv cloudu Firebase na služby Google Play, závisí [Xa
 
 3.  Instalaci tohoto balíčku do **FCMClient** projektu: 
 
-    [ ![Instalace základní služby Google Play](remote-notifications-with-fcm-images/02-google-play-services-xs-sml.png)](remote-notifications-with-fcm-images/02-google-play-services-xs.png)
+    [![Instalace základní služby Google Play](remote-notifications-with-fcm-images/02-google-play-services-xs-sml.png)](remote-notifications-with-fcm-images/02-google-play-services-xs.png#lightbox)
 
 -----
 
@@ -125,7 +125,7 @@ Pro příjem zpráv z FCM, [Xamarin Firebase - zasílání zpráv](https://www.n
 
 3.  Instalaci tohoto balíčku do **FCMClient** projektu: 
 
-    [ ![Nainstalovat Xamarin Firebase zasílání zpráv](remote-notifications-with-fcm-images/03-firebase-messaging-vs-sml.png)](remote-notifications-with-fcm-images/03-firebase-messaging-vs.png)
+    [![Nainstalovat Xamarin Firebase zasílání zpráv](remote-notifications-with-fcm-images/03-firebase-messaging-vs-sml.png)](remote-notifications-with-fcm-images/03-firebase-messaging-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -135,7 +135,7 @@ Pro příjem zpráv z FCM, [Xamarin Firebase - zasílání zpráv](https://www.n
 
 3.  Instalaci tohoto balíčku do **FCMClient** projektu: 
 
-    [ ![Nainstalovat Xamarin Firebase zasílání zpráv](remote-notifications-with-fcm-images/03-firebase-messaging-xs-sml.png)](remote-notifications-with-fcm-images/03-firebase-messaging-xs.png)
+    [![Nainstalovat Xamarin Firebase zasílání zpráv](remote-notifications-with-fcm-images/03-firebase-messaging-xs-sml.png)](remote-notifications-with-fcm-images/03-firebase-messaging-xs.png#lightbox)
 
 -----
  
@@ -166,7 +166,7 @@ Dalším krokem je přidání **google services.json** souboru do kořenového a
 
 4.  V **vlastnosti** podokně nastavit **akce sestavení** k **GoogleServicesJson** (Pokud **GoogleServicesJson** akce sestavení není zobrazený, Uložte a zavřete řešení a poté ho znovu otevřít):
 
-    [![Nastavení akce sestavení na GoogleServicesJson](remote-notifications-with-fcm-images/04-google-services-json-vs-sml.png)](remote-notifications-with-fcm-images/04-google-services-json-vs.png)
+    [![Nastavení akce sestavení na GoogleServicesJson](remote-notifications-with-fcm-images/04-google-services-json-vs-sml.png)](remote-notifications-with-fcm-images/04-google-services-json-vs.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -178,7 +178,7 @@ Dalším krokem je přidání **google services.json** souboru do kořenového a
 
 4.  Nastavte **akce sestavení** k **GoogleServicesJson**: 
 
-    [![Nastavení akce sestavení na GoogleServicesJson](remote-notifications-with-fcm-images/04-google-services-json-xs-sml.png)](remote-notifications-with-fcm-images/04-google-services-json-xs.png)
+    [![Nastavení akce sestavení na GoogleServicesJson](remote-notifications-with-fcm-images/04-google-services-json-xs-sml.png)](remote-notifications-with-fcm-images/04-google-services-json-xs.png#lightbox)
  
 -----
  
@@ -254,7 +254,7 @@ protected override void OnCreate (Bundle bundle)
 
 `IsPlayServicesAvailable` je volána na konci `OnCreate` tak, aby zkontrolujte služby Google Play spustí každý spuštění aplikace. Pokud má vaše aplikace `OnResume` metody by měly volat `IsPlayServicesAvailable` z `OnResume` také. Zcela znovu sestavte a spusťte aplikaci. Pokud všechny správně nakonfigurovaný, byste měli vidět k obrazovce, která vypadá jako na následujícím snímku obrazovky: 
 
-[![Aplikace označuje, že je k dispozici služby Google Play](remote-notifications-with-fcm-images/05-gps-available-sml.png)](remote-notifications-with-fcm-images/05-gps-available.png)
+[![Aplikace označuje, že je k dispozici služby Google Play](remote-notifications-with-fcm-images/05-gps-available-sml.png)](remote-notifications-with-fcm-images/05-gps-available.png#lightbox)
 
 Pokud nejste s tímto výsledkem, ověřte, zda je na zařízení nainstalován APK služby Google Play (Další informace najdete v tématu [nastavení nahoru služby Google Play](https://developers.google.com/android/guides/setup)). Také ověřte, že jste přidali **Xamarin.Google.Play.Services.Base** balíčku do vaší **FCMClient** projektu jak je popsáno výše.
 
@@ -365,7 +365,7 @@ Při odeslání token na aplikační server `SendRegistrationToAppServer` musí 
 
 Teď, když příjemce služby jsou na místě, kód klienta aplikace lze zapsat chcete využít výhod těchto služeb. V následujících částech je tlačítko Přidat do uživatelského rozhraní k protokolování registrační token (také nazývané *Instance ID token*), a další kód je přidán do `MainActivity` zobrazíte `Intent` informace při spuštění aplikace z oznámení: 
 
-[![Token tlačítko Přidat na obrazovku aplikace](remote-notifications-with-fcm-images/06-log-token-sml.png)](remote-notifications-with-fcm-images/06-log-token.png)
+[![Token tlačítko Přidat na obrazovku aplikace](remote-notifications-with-fcm-images/06-log-token-sml.png)](remote-notifications-with-fcm-images/06-log-token.png#lightbox)
 
 ### <a name="log-tokens"></a>Tokeny protokolu
 
@@ -419,11 +419,11 @@ Spouštěč aplikace `Intent` je aktivována, když uživatel klepnutím své zp
 
 Sestavení a spuštění **FCMClient** aplikace. **Protokolu tokenu** je zobrazeno tlačítko:
 
-[![Je zobrazeno tlačítko Token protokolu](remote-notifications-with-fcm-images/06-log-token-sml.png)](remote-notifications-with-fcm-images/06-log-token.png)
+[![Je zobrazeno tlačítko Token protokolu](remote-notifications-with-fcm-images/06-log-token-sml.png)](remote-notifications-with-fcm-images/06-log-token.png#lightbox)
 
 Klepněte **protokolu tokenu** tlačítko. V okně výstupu IDE by se zobrazit zpráva takto: 
 
-[![Token ID instance zobrazí v okně výstupu](remote-notifications-with-fcm-images/07-token-received-sml.png)](remote-notifications-with-fcm-images/07-token-received.png)
+[![Token ID instance zobrazí v okně výstupu](remote-notifications-with-fcm-images/07-token-received-sml.png)](remote-notifications-with-fcm-images/07-token-received.png#lightbox)
 
 Dlouhý řetězec označený verzí **tokenu** je token ID instance, který bude vložte do konzoly Firebase &ndash; vyberte a zkopírujte tento řetězec do schránky. Pokud nevidíte instance ID token, přidejte následující řádek na začátek `OnCreate` metodu k ověření, který **google services.json** byla správně analyzovat:
 
@@ -437,34 +437,34 @@ Log.Debug(TAG, "google app id: " + Resource.String.google_app_id);
 
 Přihlaste se k [Firebase konzoly](https://console.firebase.google.com)vyberte projektu, klikněte na tlačítko **oznámení**a klikněte na tlačítko **odeslat vaše první zprávu**: 
 
-[![Vaše první zprávu tlačítko Odeslat](remote-notifications-with-fcm-images/08-first-notification-sml.png)](remote-notifications-with-fcm-images/08-first-notification.png)
+[![Vaše první zprávu tlačítko Odeslat](remote-notifications-with-fcm-images/08-first-notification-sml.png)](remote-notifications-with-fcm-images/08-first-notification.png#lightbox)
 
 Na **zprávy vytvářené** stránky, zadejte text zprávy a vyberte **jedno zařízení**. Zkopírujte instance ID token v okně výstupu IDE a vložte ji do **FCM registrační token** pole Firebase konzoly: 
 
-[![Vytvořit dialogové okno zprávy](remote-notifications-with-fcm-images/09-compose-message-sml.png)](remote-notifications-with-fcm-images/09-compose-message.png)
+[![Vytvořit dialogové okno zprávy](remote-notifications-with-fcm-images/09-compose-message-sml.png)](remote-notifications-with-fcm-images/09-compose-message.png#lightbox)
 
 Na Android zařízení (nebo emulátoru) na pozadí aplikace klepnutím Android **přehled** tlačítko a klepnou na domovskou obrazovku. Když je zařízení připraveno, klikněte na tlačítko **odeslat zprávu** v konzole Firebase: 
 
-[![Zpráva tlačítko Odeslat](remote-notifications-with-fcm-images/10-send-message-sml.png)](remote-notifications-with-fcm-images/10-send-message.png)
+[![Zpráva tlačítko Odeslat](remote-notifications-with-fcm-images/10-send-message-sml.png)](remote-notifications-with-fcm-images/10-send-message.png#lightbox)
 
 Když **Zkontrolujte zprávu** dialogové okno se zobrazí, klikněte na tlačítko **odeslat**.
 Na ikonu v oznamovací objevit v oznamovací oblasti (emulátoru nebo zařízení): 
 
-[![Ikona oznámení se zobrazí.](remote-notifications-with-fcm-images/11-notification-icon-sml.png)](remote-notifications-with-fcm-images/11-notification-icon.png)
+[![Ikona oznámení se zobrazí.](remote-notifications-with-fcm-images/11-notification-icon-sml.png)](remote-notifications-with-fcm-images/11-notification-icon.png#lightbox)
 
 Otevřete na ikonu oznámení a zobrazení zprávy. Oznámení by mělo obsahovat přesně co zadaného do **text zprávy** pole Firebase konzoly: 
 
-[![Oznámení se zobrazí na zařízení](remote-notifications-with-fcm-images/12-notification-sml.png)](remote-notifications-with-fcm-images/12-notification.png)
+[![Oznámení se zobrazí na zařízení](remote-notifications-with-fcm-images/12-notification-sml.png)](remote-notifications-with-fcm-images/12-notification.png#lightbox)
 
 Klepněte na ikonu oznámení se vrátíte do **FCMClient** aplikace. `Intent` Funkce posílá **FCMClient** jsou uvedeny v okně výstupu IDE: 
 
-[![Seznamy záměrné funkce z klíče, ID zprávy a sbalit klíč](remote-notifications-with-fcm-images/13-intent-extras-sml.png)](remote-notifications-with-fcm-images/13-intent-extras.png)
+[![Seznamy záměrné funkce z klíče, ID zprávy a sbalit klíč](remote-notifications-with-fcm-images/13-intent-extras-sml.png)](remote-notifications-with-fcm-images/13-intent-extras.png#lightbox)
 
 V tomto příkladu **z** klíč nastaven na číslo projektu Firebase aplikace (v tomto příkladu `41590732`) a **collapse_key** je nastaven na jeho název balíčku ( **com.xamarin.fcmexample**). Pokud neobdržíte zprávu, zkuste odstranit **FCMClient** aplikace na zařízení (nebo emulátoru) a opakujte výše uvedené kroky. 
 
 
 > [!NOTE]
-> **Poznámka:** můžete vynutit zavřít aplikaci, pokud se zastaví FCM doručování oznámení. Android zabrání pozadí služby všesměrové nechtěně nebo zbytečně spuštění součásti zastaven aplikací. (Další informace o tomto chování najdete v tématu [spusťte ovládací prvky v aplikacích pro zastavený](https://developer.android.com/about/versions/android-3.1.html#launchcontrols).) Z tohoto důvodu je nutné ručně odinstalovat aplikaci pokaždé, když ji spustit a zastavit z relace ladění &ndash; vynutí FCM vygenerovat nový token, aby zpráv bude nadále přijímat.
+> Pokud jste force zavřít aplikaci, FCM se zastaví doručování oznámení. Android zabrání pozadí služby všesměrové nechtěně nebo zbytečně spuštění součásti zastaven aplikací. (Další informace o tomto chování najdete v tématu [spusťte ovládací prvky v aplikacích pro zastavený](https://developer.android.com/about/versions/android-3.1.html#launchcontrols).) Z tohoto důvodu je nutné ručně odinstalovat aplikaci pokaždé, když ji spustit a zastavit z relace ladění &ndash; vynutí FCM vygenerovat nový token, aby zpráv bude nadále přijímat.
 
 ### <a name="add-a-custom-default-notification-icon"></a>Přidat vlastní výchozí ikonu oznámení
 
@@ -515,11 +515,11 @@ Tento kód vyhledá **přihlášení k odběru oznámení do** tlačítko v rozl
 
 Odinstalovat aplikaci, jej vytvořte znovu a potom ho spusťte znovu. Klikněte **přihlášení k odběru oznámení** tlačítko:
 
-[![Přihlášení k odběru na tlačítko oznámení](remote-notifications-with-fcm-images/14-subscribe-sml.png)](remote-notifications-with-fcm-images/14-subscribe.png)
+[![Přihlášení k odběru na tlačítko oznámení](remote-notifications-with-fcm-images/14-subscribe-sml.png)](remote-notifications-with-fcm-images/14-subscribe.png#lightbox)
 
 Pokud aplikace se úspěšně připojila, měli byste vidět **úspěšná synchronizace tématu** v prostředí IDE výstup okna: 
 
-[![Výstup – okno zobrazí zprávu úspěšná synchronizace tématu](remote-notifications-with-fcm-images/15-topic-sync-sml.png)](remote-notifications-with-fcm-images/15-topic-sync.png)
+[![Výstup – okno zobrazí zprávu úspěšná synchronizace tématu](remote-notifications-with-fcm-images/15-topic-sync-sml.png)](remote-notifications-with-fcm-images/15-topic-sync.png#lightbox)
 
 Použijte následující postup k odesílání zpráv tématu:
 
@@ -529,7 +529,7 @@ Použijte následující postup k odesílání zpráv tématu:
 
 3.  V **tématu** rozevírací nabídky vyberte předdefinované tématu **zprávy**: 
 
-    [ ![Výběr sekci zprávy](remote-notifications-with-fcm-images/16-topic-message-sml.png)](remote-notifications-with-fcm-images/16-topic-message.png)
+    [![Výběr sekci zprávy](remote-notifications-with-fcm-images/16-topic-message-sml.png)](remote-notifications-with-fcm-images/16-topic-message.png#lightbox)
 
 4.  Na Android zařízení (nebo emulátoru) na pozadí aplikace klepnutím Android **přehled** tlačítko a klepnou na domovskou obrazovku. 
 
@@ -537,11 +537,11 @@ Použijte následující postup k odesílání zpráv tématu:
 
 6.  Zkontrolujte okno IDE výstupu a zobrazit **/témata/zprávy** ve výstupu protokolu: 
 
-    [ ![Se zobrazí zpráva od /topic/news](remote-notifications-with-fcm-images/17-message-arrived-sml.png)](remote-notifications-with-fcm-images/17-message-arrived.png)
+    [![Se zobrazí zpráva od /topic/news](remote-notifications-with-fcm-images/17-message-arrived-sml.png)](remote-notifications-with-fcm-images/17-message-arrived.png#lightbox)
 
 Když tato zpráva se zobrazí v okně výstupu, by také zobrazit na ikonu v oznamovací v oznamovací oblasti na zařízení s Androidem. Otevřete na ikonu oznámení a zobrazení zprávy tématu: 
 
-[![Téma zpráva se zobrazí jako oznámení](remote-notifications-with-fcm-images/18-other-news-sml.png)](remote-notifications-with-fcm-images/18-other-news.png)
+[![Téma zpráva se zobrazí jako oznámení](remote-notifications-with-fcm-images/18-other-news-sml.png)](remote-notifications-with-fcm-images/18-other-news.png#lightbox)
 
 Pokud neobdržíte zprávu, zkuste odstranit **FCMClient** aplikace na zařízení (nebo emulátoru) a opakujte výše uvedené kroky. 
 
@@ -593,7 +593,7 @@ Log.Debug(TAG, "Notification Message Body: " + message.GetNotification().Body);
 ```
 
 > [!NOTE]
-> **Poznámka:** Pokud nastavte zarážky v `FirebaseMessagingService`, vaše ladicí relace může nebo nemusí stiskněte tlačítko tyto zarážky kvůli způsob FCM doručení zprávy.
+> Pokud nastavte zarážky v `FirebaseMessagingService`, vaše ladicí relace může nebo nemusí stiskněte tlačítko tyto zarážky kvůli způsob FCM doručení zprávy.
  
 
 ### <a name="send-another-message"></a>Odeslat další zprávu
@@ -608,13 +608,13 @@ Odinstalovat aplikaci, jej vytvořte znovu, potom ho spusťte znovu a postupujte
 
 4.  Ujistěte se, že je aplikace spuštěná v popředí a pak klikněte na **odeslat zprávu** v konzole Firebase: 
 
-    [ ![Odesílání další zprávu z konzoly](remote-notifications-with-fcm-images/19-hello-again-sml.png)](remote-notifications-with-fcm-images/19-hello-again.png)
+    [![Odesílání další zprávu z konzoly](remote-notifications-with-fcm-images/19-hello-again-sml.png)](remote-notifications-with-fcm-images/19-hello-again.png#lightbox)
 
 5.  Když **Zkontrolujte zprávu** dialogové okno se zobrazí, klikněte na tlačítko **odeslat**.
 
 6.  Do okna výstupu IDE je zaznamenána příchozí zpráva:
 
-    [ ![Tělo zprávy vytisknout pro výstup – okno](remote-notifications-with-fcm-images/20-logged-message.png)](remote-notifications-with-fcm-images/20-logged-message.png)
+    [![Tělo zprávy vytisknout pro výstup – okno](remote-notifications-with-fcm-images/20-logged-message.png)](remote-notifications-with-fcm-images/20-logged-message.png#lightbox)
 
 
 ### <a name="add-a-local-notifications-sender"></a>Přidání odesílatele místní oznámení
@@ -675,15 +675,15 @@ Odinstalovat aplikaci, znovu ji vytvořit, potom ho spusťte znovu a pak použij
 
 4.  Ujistěte se, že je aplikace spuštěná v popředí a pak klikněte na **odeslat zprávu** v konzole Firebase: 
 
-    [ ![Odeslání zprávy popředí](remote-notifications-with-fcm-images/21-console-fg-msg-sml.png)](remote-notifications-with-fcm-images/21-console-fg-msg.png)
+    [![Odeslání zprávy popředí](remote-notifications-with-fcm-images/21-console-fg-msg-sml.png)](remote-notifications-with-fcm-images/21-console-fg-msg.png#lightbox)
 
 Tentokrát zprávu, která byla zaznamenána ve výstupním okně je také součástí nové oznámení &ndash; ikonu oznámení se zobrazí na hlavním panelu oznámení, když je aplikace spuštěná v popředí: 
 
-[![Ikony v oznamovací zprávy popředí](remote-notifications-with-fcm-images/22-foreground-icon-sml.png)](remote-notifications-with-fcm-images/22-foreground-icon.png)
+[![Ikony v oznamovací zprávy popředí](remote-notifications-with-fcm-images/22-foreground-icon-sml.png)](remote-notifications-with-fcm-images/22-foreground-icon.png#lightbox)
 
 Když otevřete oznámení, měli vidět poslední zprávu, která byla odeslána z grafického uživatelského rozhraní Firebase konzoly oznámení: 
 
-[![Zobrazí se ikona popředí oznámení popředí](remote-notifications-with-fcm-images/23-foreground-msg-sml.png)](remote-notifications-with-fcm-images/23-foreground-msg.png)
+[![Zobrazí se ikona popředí oznámení popředí](remote-notifications-with-fcm-images/23-foreground-msg-sml.png)](remote-notifications-with-fcm-images/23-foreground-msg.png#lightbox)
 
  
 ## <a name="troubleshooting"></a>Poradce při potížích

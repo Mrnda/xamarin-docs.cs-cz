@@ -8,18 +8,18 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 4b3299ad138b5cd74ce77cac1da49d21a833fe1a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 93a2effd42432d13767dad05a47548aebc9a0b93
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="time-picker"></a>Výběr času
 
 Chcete-li poskytují způsob, jak uživateli vybrat dobu, můžete použít [TimePicker](https://developer.xamarin.com/api/type/Android.Widget.TimePicker/). Aplikace pro Android se obvykle používají `TimePicker` s [TimePickerDialog](https://developer.xamarin.com/api/type/Android.App.TimePickerDialog/) pro výběr hodnotu času &ndash; tyto zásady pomáhají zajistit konzistentní rozhraní mezi zařízeními a aplikacemi. `TimePicker` umožňuje uživatelům vyberte denní dobu, v režimu dop. / odp 24 hodin nebo 12 hodin.
 `TimePickerDialog` je pomocná třída, který zapouzdřuje `TimePicker` v dialogu.
 
-[![Příklad snímek obrazovky dialogového okna pro výběr čas v akci](time-picker-images/01-example-screen-sml.png)](time-picker-images/01-example-screen.png)
+[![Příklad snímek obrazovky dialogového okna pro výběr čas v akci](time-picker-images/01-example-screen-sml.png)](time-picker-images/01-example-screen.png#lightbox)
 
 ## <a name="overview"></a>Přehled
 
@@ -36,11 +36,11 @@ Ukázkové aplikace pro tato příručka cílem Android 4.1 (API úrovně
 
 V tomto příkladu rozšiřuje `DialogFragment`; implementace podtřídami `DialogFragment` (nazývá `TimePickerFragment` níže) hostitelem a zobrazí `TimePickerDialog`. Při prvním spuštění ukázkové aplikace se zobrazí **vybrat čas** výše uvedené tlačítko `TextView` který se použije k zobrazení vybrané času:
 
-[![Počáteční ukázkové aplikace obrazovky](time-picker-images/02-initial-app-screen-sml.png)](time-picker-images/02-initial-app-screen.png)
+[![Počáteční ukázkové aplikace obrazovky](time-picker-images/02-initial-app-screen-sml.png)](time-picker-images/02-initial-app-screen.png#lightbox)
 
 Když kliknete **vybrat čas** tlačítko spustí aplikaci příklad `TimePickerDialog` jak je vidět na tomto snímku obrazovky:
 
-[![Snímek obrazovky dialogového okna Výběr času výchozí zobrazí aplikace](time-picker-images/03-am-pm-time-dialog-sml.png)](time-picker-images/03-am-pm-time-dialog.png)
+[![Snímek obrazovky dialogového okna Výběr času výchozí zobrazí aplikace](time-picker-images/03-am-pm-time-dialog-sml.png)](time-picker-images/03-am-pm-time-dialog.png#lightbox)
 
 V `TimePickerDialog`, čas výběrem a kliknutím na **OK** tlačítko příčiny `TimePickerDialog` k vyvolání metody [IOnTimeSetListener.OnTimeSet](https://developer.xamarin.com/api/member/Android.App.TimePickerDialog+IOnTimeSetListener.OnTimeSet/p/Android.Widget.TimePicker/System.Int32/System.Int32/System.Int32/).
 Toto rozhraní je implementováno modulem, který je hostitelem `DialogFragment` (`TimePickerFragment`, které jsou popsány níže). Kliknutím **zrušit** tlačítko způsobí, že fragment a dialogovém okně můžete zrušit.
@@ -56,7 +56,6 @@ Toto rozhraní je implementováno modulem, který je hostitelem `DialogFragment`
 Tato ukázka použije třetí technika, který vyžaduje, aby aktivity napájení `Action<DateTime>` obslužná rutina `DialogFragment`.
 
 
-<a name="start" />
 
 ## <a name="start-an-app-project"></a>Spusťte projekt aplikace
 
@@ -123,13 +122,12 @@ namespace TimePickerDemo
 
 Když sestavení a spuštění tohoto příkladu, byste měli vidět úvodní obrazovka, podobně jako na následujícím snímku obrazovky:
 
-[![Úvodní obrazovka aplikace](time-picker-images/02-initial-app-screen-sml.png)](time-picker-images/02-initial-app-screen.png)
+[![Úvodní obrazovka aplikace](time-picker-images/02-initial-app-screen-sml.png)](time-picker-images/02-initial-app-screen.png#lightbox)
 
 Kliknutím na **vybrat čas** tlačítko se nic nestane. protože `DialogFragment` není dosud implementována pro zobrazení `TimePicker`.
 Dalším krokem je vytvoření to `DialogFragment`.
 
 
-<a name="extend_dialogfragment" />
 
 ## <a name="extending-dialogfragment"></a>Rozšíření DialogFragment
 
@@ -169,7 +167,6 @@ public class TimePickerFragment : DialogFragment, TimePickerDialog.IOnTimeSetLis
 
 To `TimePickerFragment` třída je rozdělit na menší části a vysvětlené v další části.
 
-<a name="details" />
 
 ### <a name="dialogfragment-implementation"></a>Implementace DialogFragment
 
@@ -230,7 +227,6 @@ To `TimePickerFragment` třída je rozdělit na menší části a vysvětlené v
     ```
 
 
-<a name="time_picker_fragment" />
 
 ## <a name="displaying-the-timepickerfragment"></a>Zobrazení TimePickerFragment
 
@@ -262,17 +258,16 @@ timeSelectButton.Click += TimeSelectOnClick;
 Když **vybrat čas** po kliknutí na tlačítko `TimeSelectOnClick` bude volána k zobrazení `TimePicker` fragment dialogové okno pro uživatele.
 
 
-<a name="try-it" />
 
 ## <a name="try-it"></a>Můžete je vyzkoušejte.
 
 Sestavte a spusťte aplikaci. Když kliknete **vybrat čas** tlačítko `TimePickerDialog` se zobrazí ve formátu času výchozí aktivity (v tomto režimu dop. / odp případu, 12 hodin):
 
-[![Zobrazí Dialog čas v režimu dop. / odp](time-picker-images/03-am-pm-time-dialog-sml.png)](time-picker-images/03-am-pm-time-dialog.png)
+[![Zobrazí Dialog čas v režimu dop. / odp](time-picker-images/03-am-pm-time-dialog-sml.png)](time-picker-images/03-am-pm-time-dialog.png#lightbox)
    
 Když kliknete na tlačítko **OK** v `TimePicker` dialogové okno, obslužná rutina aktualizace aktivity `TextView` s zvoleném časovém a ukončí:
 
-[![Zobrazení času A/M v TextView aktivity](time-picker-images/04-after-time-dialog-sml.png)](time-picker-images/04-after-time-dialog.png)
+[![Zobrazení času A/M v TextView aktivity](time-picker-images/04-after-time-dialog-sml.png)](time-picker-images/04-after-time-dialog.png#lightbox)
 
 V dalším kroku přidejte následující řádek kódu `OnCreateDialog` ihned po `is24HourFormat` je deklarovaný a inicializovat:
 
@@ -282,12 +277,11 @@ is24HourFormat = true;
 
 Tato změna vynutí příznak předaný `TimePickerDialog` konstruktor být `true` tak, že režimu 24 hodin se používá namísto formát času hostování aktivity. Po vytvoření a znovu spusťte aplikaci, klikněte na tlačítko **vybrat čas** tlačítko `TimePicker` dialogové okno se nyní zobrazí ve 24hodinovém formátu:
 
-[![Dialogové okno TimePicker ve 24hodinovém formátu](time-picker-images/05-24hr-time-dialog-sml.png)](time-picker-images/05-24hr-time-dialog.png)
+[![Dialogové okno TimePicker ve 24hodinovém formátu](time-picker-images/05-24hr-time-dialog-sml.png)](time-picker-images/05-24hr-time-dialog.png#lightbox)
 
 Protože obslužná rutina volá [DateTime.ToShortTimeString](https://msdn.microsoft.com/en-us/library/system.datetime.toshortdatestring%28v=vs.110%29.aspx) čas na aktivitu vytisknout `TextView`, čas je stále vytištěno ve výchozím formátu dop. / odp 12 hodin.
 
 
-<a name="summary" />
 
 ## <a name="summary"></a>Souhrn
 

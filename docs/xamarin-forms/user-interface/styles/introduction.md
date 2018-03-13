@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 6b4d63637eae7c1719f3f6e525327d416ddff59d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ce5a7976f5bac68ca01b30a8d437aa83b8360580
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-styles"></a>Úvod do styly
 
@@ -84,7 +84,7 @@ public class NoStylesPageCS : ContentPage
 
 Každý [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) instance má stejné vlastnosti hodnoty pro řízení vzhledu textu zobrazovaného `Label`. Výsledkem je vidět na následujících snímcích obrazovky vzhled:
 
-[![](introduction-images/no-styles.png "Označení vzhled bez styly")](introduction-images/no-styles-large.png "popisku vzhled bez styly")
+[![](introduction-images/no-styles.png "Označení vzhled bez styly")](introduction-images/no-styles-large.png#lightbox "popisku vzhled bez styly")
 
 Může být nastavení vzhled jednotlivých ovládacích prvků opakovaných a chyba náchylné k chybám. Místo toho styl umožňuje vytvořit, která definuje vzhled a potom se použijí na požadovaných ovládacích prvků.
 

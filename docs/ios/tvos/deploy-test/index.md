@@ -1,5 +1,5 @@
 ---
-title: "Nasazení a testování"
+title: "Nasazování a testování"
 description: "Tato část obsahuje témata týkající se používá k testování aplikace a její distribuce. Témata v tomto poli mezi patří například nástroje používané pro ladění, nasazení a testery, jak publikovat aplikace pro Apple TV App Store."
 ms.topic: article
 ms.prod: xamarin
@@ -8,13 +8,15 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 5ae7753fe7d12fd41b39f9429fa4a3ee97a22a5d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f781e0ad889415d75f22e7dd5fb3eae75d080a8f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
-# <a name="app-distributioniostvosdeploy-testapp-distributionindexmd"></a>[Distribuce aplikací](~/ios/tvos/deploy-test/app-distribution/index.md)
+# <a name="deployment-and-testing"></a>Nasazování a testování
+
+## <a name="app-distributioniostvosdeploy-testapp-distributionindexmd"></a>[Distribuce aplikace](~/ios/tvos/deploy-test/app-distribution/index.md)
 
 Tento článek ukazuje, jak nakonfigurovat, vytvářet a publikovat aplikace Xamarin.tvOS pro distribuci přes různé jiné prostředky, včetně:
 
@@ -24,11 +26,9 @@ Tento článek ukazuje, jak nakonfigurovat, vytvářet a publikovat aplikace Xam
 
 Pokud máte problémy s odesláním aplikace Xamarin.tvOS do App Storu Apple TV, najdete v tématu naše [Poradce při potížích s](~/ios/tvos/troubleshooting.md) průvodce. Obsahuje několik známých problémů, které se můžete setkat a jak je vyřešit v Xamarin.tvOS.
 
-
-
 ## <a name="related-links"></a>Související odkazy
 
-- [Ukázky tvOS](https://developer.xamarin.com/samples/tvos/all/)
+- [Ukázky pro tvOS](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS lidské rozhraní příručky](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [Průvodce programováním aplikace pro tvOS](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

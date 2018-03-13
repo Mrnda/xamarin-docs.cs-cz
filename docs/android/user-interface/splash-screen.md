@@ -7,18 +7,17 @@ ms.assetid: 26480465-CE19-71CD-FC7D-69D0990D05DE
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/05/2018
-ms.openlocfilehash: 9acb1ad6ab1425edb98b938e8c03edc3704f50ae
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 9f88899d390f7f268f1b2f435617dc952f9eb205
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="splash-screen"></a>Úvodní obrazovka
 
 _Aplikace pro Android trvá delší dobu spuštění, zejména při prvním spuštění aplikace na zařízení. Úvodní obrazovka se může zobrazovat počáteční registrace probíhá na uživatele nebo k označení brandingu._
 
-<a name="overview" />
 
 ## <a name="overview"></a>Přehled
 
@@ -32,10 +31,8 @@ Tato příručka popisuje jednoho technika, jak implementovat úvodní obrazovky
 
 3.  Přidává se nová aktivita k aplikaci, která se použije jako úvodní obrazovka definované motiv vytvořili v předchozím kroku.
 
-[![Příklad Xamarin logo úvodní obrazovky následuje obrazovky aplikace](splash-screen-images/splashscreen-01-sml.png)](splash-screen-images/splashscreen-01.png)
+[![Příklad Xamarin logo úvodní obrazovky následuje obrazovky aplikace](splash-screen-images/splashscreen-01-sml.png)](splash-screen-images/splashscreen-01.png#lightbox)
 
-
-<a name="requirements" />
 
 ## <a name="requirements"></a>Požadavky
 
@@ -43,7 +40,6 @@ Tato příručka předpokládá, že cílem aplikace Android API úrovně 15 (An
 
 Všechny kód a kód XML v této příručce najdete v [SplashScreen](https://developer.xamarin.com/samples/monodroid/SplashScreen) ukázkový projekt této příručce.
 
-<a name="implement" />
 
 ## <a name="implementing-a-splash-screen"></a>Implementace úvodní obrazovky
 
@@ -51,7 +47,6 @@ Nejrychlejší způsob, jak vykreslit a zobrazí úvodní obrazovka je vytvořte
 
 Úvodní obrazovka je implementovaná jako aktivity, která se zobrazí partnerské drawable, provede všechny inicializacích a spuštění žádné úlohy. Jakmile aplikace má připravili, úvodní obrazovka aktivity spustí hlavní aktivitu a samotné odebere back zásobník aplikací.
 
-<a name="drawable" />
 
 ### <a name="creating-a-drawable-for-the-splash-screen"></a>Vytváření Drawable pro úvodní obrazovka
 
@@ -79,7 +74,6 @@ Umístěte tento soubor **prostředky/drawable** složky (například **Resource
 
 Po vytvoření drawable úvodní obrazovka, dalším krokem je vytvoření motiv pro úvodní obrazovka.
 
-<a name="theme" />
 
 ### <a name="implementing-a-theme"></a>Implementace motiv
 
@@ -103,7 +97,6 @@ Pokud chcete vytvořit vlastní motivy pro úvodní obrazovka aktivity, upravit 
 
 **MyTheme.Splash** je velmi spartan &ndash; deklaruje pozadí okna, explicitně odebere záhlaví z okna a deklaruje, že je přes celou obrazovku. Pokud chcete vytvořit úvodní obrazovky, který emuluje uživatelského rozhraní aplikace před aktivity zvýšení kapacity první rozložení, můžete použít `windowContentOverlay` místo `windowBackground` ve vašem definici stylu. V takovém případě musíte také upravit **splash_screen.xml** drawable tak, aby zobrazil emulaci uživatelské rozhraní.
 
-<a name="activity" />
 
 ### <a name="create-a-splash-activity"></a>Vytvořit úvodní aktivitu
 
@@ -161,7 +154,6 @@ public class MainActivity : AppCompatActivity
 }
 ```
 
-<a name="summary" />
 
 ## <a name="summary"></a>Souhrn
 

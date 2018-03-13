@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: b752ebdd1a98d5258cc27b2221d33e07fa04aa46
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 44813ea6c1e795889444d949ca2706c0f50483c6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ios-build-mechanics"></a>iOS mechanismy sestavení
 
@@ -33,7 +33,7 @@ Pokud chcete povolit výstup diagnostiky MSBuild v sadě Visual Studio pro Mac:
 
 1. Klikněte na tlačítko **Visual Studio pro Mac > Předvolby...**
 2. V levém stromové zobrazení, vyberte **projekty > sestavení**
-3. V pravém panelu nastavení podrobností protokolu rozevírací seznam pro **diagnostiky**: [ ![ ] (ios-build-mechanics-images/image2.png "nastavení podrobností protokolu")](ios-build-mechanics-images/image2.png)
+3. V pravém panelu nastavení podrobností protokolu rozevírací seznam pro **diagnostiky**: [ ![ ] (ios-build-mechanics-images/image2.png "nastavení podrobností protokolu")](ios-build-mechanics-images/image2.png#lightbox)
 4. Klikněte na tlačítko **OK**
 5. Restartujte Visual Studio pro Mac
 6. Vyčistěte a sestavte svůj balíček znovu
@@ -46,7 +46,7 @@ Chcete-li povolit výstup diagnostiky MSBuild v sadě Visual Studio:
 
 1. Klikněte na tlačítko **nástroje > Možnosti...**
 2. V levém stromové zobrazení, vyberte **projekty a řešení > sestavit a spustit**
-3. V pravém panelu nastavit *výstup nástroje MSBuild sestavení podrobností rozevírací* k **diagnostiky**: [ ![ ] (ios-build-mechanics-images/image2-vs.png "nastavení MSBuild sestavení výstupu podrobností")](ios-build-mechanics-images/image2-vs.png)
+3. V pravém panelu nastavit *výstup nástroje MSBuild sestavení podrobností rozevírací* k **diagnostiky**: [ ![ ] (ios-build-mechanics-images/image2-vs.png "nastavení MSBuild sestavení výstupu podrobností")](ios-build-mechanics-images/image2-vs.png#lightbox)
 4. Klikněte na tlačítko **OK**
 5. Vyčistěte a sestavte svůj balíček znovu.
 6. Výstup diagnostiky se zobrazí na panelu Výstup.
@@ -101,7 +101,7 @@ Při vezme v úvahu výše uvedené informace, nabízí níže uvedeného seznam
 
 Následující snímek obrazovky ukazuje, jak nastavit tyto možnosti simulátoru v možnostech iOS:
 
-[ ![](ios-build-mechanics-images/image3.png "Nastavení možností")](ios-build-mechanics-images/image3.png)
+[![](ios-build-mechanics-images/image3.png "Nastavení možností")](ios-build-mechanics-images/image3.png#lightbox)
 
 ## <a name="device-tricks"></a>Zařízení triky
 
@@ -155,7 +155,7 @@ Další tipy
 
 Následující snímek obrazovky ukazuje, jak nastavit tyto možnosti simulátoru v možnostech iOS:
 
-[ ![](ios-build-mechanics-images/image4.png "Nastavení možností")](ios-build-mechanics-images/image4.png)
+[![](ios-build-mechanics-images/image4.png "Nastavení možností")](ios-build-mechanics-images/image4.png#lightbox)
 
 ## <a name="using-the-linker"></a>Pomocí Linkeru
 
@@ -317,4 +317,4 @@ L3 Cache: 4 MB
 
 - [Příspěvek blogu](https://blog.xamarin.com/xamarin-ios-build-improvements/)
 - [Propojení v systému iOS](~/ios/deploy-test/linker.md)
-- [Konfigurace vlastní Linkeru](~/cross-platform/deploy-test/linker.md)
+- [Vlastní konfigurace linkeru](~/cross-platform/deploy-test/linker.md)

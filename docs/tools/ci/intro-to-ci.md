@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 07/19/2017
-ms.openlocfilehash: 94d88246090208913c4b340eaed221ab64b78f19
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2a8849a75f3c26a83a030700878a3195fde7515f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>Úvod do průběžnou integraci s funkcí Xamarin
 
@@ -33,13 +33,13 @@ Znovu s průběžnou integraci operace potvrzení změn způsobí, že server po
 
 Následující diagram znázorňuje tento proces:
 
-[![](intro-to-ci-images/intro01-small.png "Tento diagram znázorňuje tento proces")](intro-to-ci-images/intro01.png)
+[![](intro-to-ci-images/intro01-small.png "Tento diagram znázorňuje tento proces")](intro-to-ci-images/intro01.png#lightbox)
 
 Mobilní aplikace zavést jedinečné výzvy pro nepřetržitou integraci. Aplikace může vyžadovat snímače například GPS nebo fotoaparát, které jsou dostupné jenom na fyzických zařízení. Kromě toho simulátorů emulátorů jsou pouze sblížení hardwaru a může skrýt nebo skrývat problémy. Díky tomu je potřeba otestovat mobilní aplikace na skutečné hardwaru, který má být jistý, že je skutečně zákazníka.
 
 [Test Center aplikace](https://docs.microsoft.com/en-us/appcenter/test-cloud) testování aplikací přímo na stovky fyzických zařízení řeší konkrétní problém. Vývojáři psát přijetí automatizované testy, které umožňují efektivní testování uživatelského rozhraní. Jakmile tyto testy se odešlou do Center aplikace, CI serveru můžete spustit je automaticky jako součást procesu CI jak je znázorněno v následujícím diagramu:
 
-[![](intro-to-ci-images/intro02-small.png "Tyto testy se odešlou do aplikace Center, CI serveru můžete spustit po je automaticky v rámci procesu CI znázorněné v tomto diagramu")](intro-to-ci-images/intro02.png)
+[![](intro-to-ci-images/intro02-small.png "Tyto testy se odešlou do aplikace Center, CI serveru můžete spustit po je automaticky v rámci procesu CI znázorněné v tomto diagramu")](intro-to-ci-images/intro02.png#lightbox)
 
 # <a name="components-of-continuous-integration"></a>Součástí průběžnou integraci
 
@@ -72,7 +72,7 @@ Visual Studio Team služby sestavení systém má přímé podpory pro Xamarin p
 
 Git může fungovat zcela prostřednictvím webových prohlížečů nebo přes [grafickým uživatelským rozhraním klienti](http://git-scm.com/downloads/guis) spuštěné v systému Windows, Linux a Mac OSX. Je zdarma pro veřejné úložiště; privátní úložiště vyžadují [placené plán](https://github.com/pricing).
 
-Visual Studio 2015 a Visual Studio pro Mac poskytuje nativní podporu pro Git; pro Visual Studio 2013 a starší, společnost Microsoft poskytuje [ke stažení rozšíření pro Git](http://visualstudiogallery.msdn.microsoft.com/abafc7d6-dcaa-40f4-8a5e-d6724bdb980c). Jak jsme uvedli výše, Visual Studio Team Services a TFS můžete použít Git pro správu verzí místo TFVC.
+Visual Studio 2015 a Visual Studio pro Mac poskytuje nativní podporu pro Git; pro starší verze, společnost Microsoft poskytuje [ke stažení rozšíření pro Git](http://visualstudiogallery.msdn.microsoft.com/abafc7d6-dcaa-40f4-8a5e-d6724bdb980c). Jak jsme uvedli výše, Visual Studio Team Services a TFS můžete použít Git pro správu verzí místo TFVC.
 
 
 ### <a name="subversion"></a>Podverze
@@ -102,7 +102,7 @@ S produktem Team Foundation Server nakonfigurujete počítač sestavení pro kon
 
 Následující diagram znázorňuje tento topografie:
 
-[![](intro-to-ci-images/intro03-small.png "Tento diagram znázorňuje tento topografie")](intro-to-ci-images/intro03.png)
+[![](intro-to-ci-images/intro03-small.png "Tento diagram znázorňuje tento topografie")](intro-to-ci-images/intro03.png#lightbox)
 
 Je také možné propojit místní server TFS projekt Visual Studio Team Services tak, aby služby VSTS sestavení jsou delegovanými k místnímu serveru. Podrobnosti najdete v tématu [nasadit a nakonfigurovat server sestavení](http://msdn.microsoft.com/en-us/library/ms181712.aspx) na webu MSDN.
 
@@ -110,13 +110,13 @@ Je také možné propojit místní server TFS projekt Visual Studio Team Service
 
 Pokud použijete volaných k sestavení aplikace, můžete ukládat kódu ve Visual Studio Team Services nebo Team Foundation Server a pokračovat v používání volaných pro vaše buildy CI. Sestavení volaných můžete aktivovat po stisknutí kód do úložiště Git nebo když jste se změnami kódu TFVC týmového projektu. Podrobnosti najdete v tématu [volaných s Visual Studio Team Services](https://www.visualstudio.com/en-us/docs/marketplace/integrate/service-hooks/services/jenkins).
 
-[![](intro-to-ci-images/intro04-small.png "Pokud použijete volaných k sestavení aplikace, můžete ukládat kódu ve Visual Studio Team Services nebo Team Foundation Server a pokračovat v používání volaných pro vaše buildy CI")](intro-to-ci-images/intro04.png)
+[![](intro-to-ci-images/intro04-small.png "Pokud použijete volaných k sestavení aplikace, můžete ukládat kódu ve Visual Studio Team Services nebo Team Foundation Server a pokračovat v používání volaných pro vaše buildy CI")](intro-to-ci-images/intro04.png#lightbox)
 
 ### <a name="git-and-jenkins"></a>Git a volaných
 
 Další běžné CI prostředí může být zcela OS X na základě. Tento scénář zahrnuje pomocí Git pro správu zdrojového kódu a volaných serveru sestavení. Obě tyto běží v jednom počítači Mac OS X pomocí sady Visual Studio pro Mac, které jsou nainstalované. To je velmi podobné Visual Studio Team Services + volaných prostředí popsané v předchozí části:
 
-[![](intro-to-ci-images/intro05-small.png "To je velmi podobné Visual Studio Team Services + volaných prostředí popsané v předchozí části")](intro-to-ci-images/intro05.png)
+[![](intro-to-ci-images/intro05-small.png "To je velmi podobné Visual Studio Team Services + volaných prostředí popsané v předchozí části")](intro-to-ci-images/intro05.png#lightbox)
 
 > [!IMPORTANT]
 > **Poznámka: Je volaných [nepodporuje Xamarin](~/cross-platform/troubleshooting/questions/xamarin-jenkins.md).**

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: fd31413b777e1179e7f4faf6f91f91bc6c41e82b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6561ff70997af05ed4df6b7bfe0ba6345fb44d9d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-segmented-controls"></a>Práce s Segmentovaným ovládací prvky
 
@@ -21,7 +21,7 @@ _Tento článek se zabývá navrhování a práce s ovládacími prvky Segmentov
 
 Ovládacího prvku Segmentovaným poskytuje sadu lineární prvky, z nichž každá může obsahovat ikony nebo text a slouží k poskytování souvisejících voleb pro uživatele.
 
-[ ![](segmented-controls-images/segment01.png "Ukázka segment ovládací prvky")](segmented-controls-images/segment01.png)
+[![](segmented-controls-images/segment01.png "Ukázka segment ovládací prvky")](segmented-controls-images/segment01.png#lightbox)
 
 Společnost Apple má následující návrhy pro práci s Segmentovaným ovládací prvky:
 
@@ -57,36 +57,36 @@ Znovu není možné kombinovat text a ikony na daný Segment a není vhodné kom
 
 Nejjednodušší způsob, jak pracovat s ovládacími prvky segmentu v aplikaci Xamarin.tvOS je chcete přidat do aplikace uživatelského rozhraní pomocí návrháře iOS.
 
-[[ide name="xs"]]
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. V **řešení Pad**, dvakrát klikněte `Main.storyboard` souborů a otevřete pro úpravy.
 1. Přetáhněte **Segment řízení** z **sada nástrojů** na zobrazení: 
 
-    [ ![](segmented-controls-images/segment02.png "Segment ovládacího prvku")](segmented-controls-images/segment02.png)
+    [![](segmented-controls-images/segment02.png "Segment ovládacího prvku")](segmented-controls-images/segment02.png#lightbox)
 1. V **pomůcky karta** z **vlastnost Pad**, můžete upravit několik vlastností ovládacího prvku Segment jeho **styl** a **stavu**: 
 
-    [ ![](segmented-controls-images/segment03.png "Na kartě pomůcky")](segmented-controls-images/segment03.png)
+    [![](segmented-controls-images/segment03.png "Na kartě pomůcky")](segmented-controls-images/segment03.png#lightbox)
 1. Použití **segmenty** pole k řízení počet segmentů v kontroleru.
 1. Vyberte daný Segment z **Segment rozevírací** upravit jeho jednotlivé vlastnosti, jako **název** nebo **Image** a kontrolu, pokud je daný Segment  **Povolit** nebo **vybrané** při zobrazení ovládacího prvku.
 1. Nakonec přiřadit **názvy** pro ovládací prvky, aby mohli odpovídat na ně v kódu jazyka C#. Příklad: 
 
-    [ ![](segmented-controls-images/segment04.png "Přiřadit název")](segmented-controls-images/segment04.png)
+    [![](segmented-controls-images/segment04.png "Přiřadit název")](segmented-controls-images/segment04.png#lightbox)
 1. Uložte provedené změny.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
     
 1. V **Průzkumníku řešení**, dvakrát klikněte `Main.storyboard` souborů a otevřete pro úpravy.
 1. Přetáhněte **Segment řízení** z **sada nástrojů** na zobrazení: 
 
-    [ ![](segmented-controls-images/segment02-vs.png "Segment ovládacího prvku")](segmented-controls-images/segment02-vs.png)
+    [![](segmented-controls-images/segment02-vs.png "Segment ovládacího prvku")](segmented-controls-images/segment02-vs.png#lightbox)
 1. V **pomůcky karta** z **vlastnost Explorer**, můžete upravit několik vlastností ovládacího prvku Segment jeho **styl** a **stavu**: 
 
-    [ ![](segmented-controls-images/segment03-vs.png "Na kartě pomůcky")](segmented-controls-images/segment03-vs.png)
+    [![](segmented-controls-images/segment03-vs.png "Na kartě pomůcky")](segmented-controls-images/segment03-vs.png#lightbox)
 1. Použití **segmenty** pole k řízení počet segmentů v kontroleru.
 1. Vyberte daný Segment z **Segment rozevírací** upravit jeho jednotlivé vlastnosti, jako **název** nebo **Image** a kontrolu, pokud je daný Segment  **Povolit** nebo **vybrané** při zobrazení ovládacího prvku.
 1. Nakonec přiřadit **názvy** pro ovládací prvky, aby mohli odpovídat na ně v kódu jazyka C#. Příklad: 
 
-    [ ![](segmented-controls-images/segment04-vs.png "Přiřadit název")](segmented-controls-images/segment04-vs.png)
+    [![](segmented-controls-images/segment04-vs.png "Přiřadit název")](segmented-controls-images/segment04-vs.png#lightbox)
 1. Uložte provedené změny.
     
 -----
@@ -240,7 +240,7 @@ Tento článek má zahrnutých navrhování a práce s Segmentovaným řízení 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Ukázky tvOS](https://developer.xamarin.com/samples/tvos/all/)
+- [Ukázky pro tvOS](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS lidské rozhraní příručky](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [Průvodce programováním aplikace pro tvOS](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

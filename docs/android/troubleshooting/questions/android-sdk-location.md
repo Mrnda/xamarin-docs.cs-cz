@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 11/16/2017
-ms.openlocfilehash: 32a058ace69fe5647d3285ac46bc981ddef39a51
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0113cc15bf1de5e0e668b05c2b0288a6ead141b5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="where-can-i-set-my-android-sdk-locations"></a>Kde můžete nastavit Moje umístění sady SDK pro Android?
 
@@ -19,7 +19,7 @@ ms.lasthandoff: 02/27/2018
 
 V sadě Visual Studio, přejděte na **nástroje > Možnosti > Xamarin > Nastavení Androidu** k zobrazení a nastavte umístění, sady SDK pro Android:
 
-[![Karta umístění příklad v předvolbách](android-sdk-location-images/win/01-locations-sml.png)](android-sdk-location-images/win/01-locations.png)
+[![Karta umístění příklad v předvolbách](android-sdk-location-images/win/01-locations-sml.png)](android-sdk-location-images/win/01-locations.png#lightbox)
 
 Výchozí umístění pro každou z cest je následujícím způsobem:
 
@@ -44,7 +44,7 @@ Například, pokud je vaše umístění sady SDK pro Android na **C:\\uživatel�
 
 V sadě Visual Studio pro Mac, přejděte na **Předvolby > Projekty > SDK umístění > Android**. V **Android** klikněte na tlačítko **umístění** k zobrazení a nastavte umístění SDK karty:
 
-[![Karta umístění příklad v předvolbách](android-sdk-location-images/mac/01-locations-sml.png)](android-sdk-location-images/mac/01-locations.png)
+[![Karta umístění příklad v předvolbách](android-sdk-location-images/mac/01-locations-sml.png)](android-sdk-location-images/mac/01-locations.png#lightbox)
 
 Výchozí umístění pro každou z cest je následujícím způsobem:
 
@@ -62,6 +62,6 @@ Výchozí umístění pro každou z cest je následujícím způsobem:
 
 Všimněte si, že číslo verze na NDK se může lišit. Například místo z **android ndk-r14b**, může to být starší verze, jako **android ndk-r10e**.
 
-Pokud chcete nastavit umístění sady SDK pro Android, zadejte úplnou cestu do adresáře sady SDK pro Android **Android SDK umístění** pole. Můžete vybrat složku sady SDK pro Android v nástroji hledání, stiskněte klávesu **CTRL + &#8984; + I** zobrazíte informace o složce klikněte a přetáhněte cestu napravo od **kde:**, zkopírujte a vložte jej do **sady SDK pro Android Umístění** pole **umístění** kartě. Například, pokud je vaše umístění sady SDK pro Android na **~/Library/Developer/Android/Sdk**, odstraňte původní cestu v **Android SDK umístění** pole, vložte v této cestě a klikněte na tlačítko **OK**.
+Pokud chcete nastavit umístění sady SDK pro Android, zadejte úplnou cestu do adresáře sady SDK pro Android **Android SDK umístění** pole. Můžete vybrat složku sady SDK pro Android v nástroji hledání, stiskněte klávesu **CTRL +&#8984;+ I** zobrazíte informace o složce klikněte a přetáhněte cestu napravo od **kde:**, zkopírujte a vložte jej do **sady SDK pro Android Umístění** pole **umístění** kartě. Například, pokud je vaše umístění sady SDK pro Android na **~/Library/Developer/Android/Sdk**, odstraňte původní cestu v **Android SDK umístění** pole, vložte v této cestě a klikněte na tlačítko **OK**.
 
 -----

@@ -7,11 +7,11 @@ ms.assetid: 405F966A-4085-4621-AA15-33D663AD15CD
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 0b3471f607bbde6560af597b6b901e6fbd1ec0b0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 25220f37433037b55f13c4de5a07c0c09173a269
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="handoff"></a>Aby handoff
 
@@ -19,7 +19,7 @@ _Tento článek obsahuje práce aby Handoff v aplikaci Xamarin.iOS přenos aktiv
 
 Společnost Apple vydala aby Handoff v iOS 8 a OS X Yosemite (10.10) k poskytování běžné mechanismus pro uživatele k přenosu aktivity spustit na jednom ze svých zařízení k jinému zařízení systémem stejné aplikaci nebo jinou aplikaci, která podporuje stejné aktivity.
 
-[ ![](handoff-images/handoff02.png "Příklad provádění operace aby Handoff")](handoff-images/handoff02.png)
+[![](handoff-images/handoff02.png "Příklad provádění operace aby Handoff")](handoff-images/handoff02.png#lightbox)
 
 Tento článek se rychle zobrazit v povolení sdílení v aplikaci Xamarin.iOS aktivity a zahrnují rozhraní aby Handoff podrobně:
 
@@ -45,7 +45,7 @@ Aby handoff předá úplné minimum informace, které definujte aktivitu, chcete
 
 Na přijímací zařízení uživatel dostane upozornění, že aktivita je k dispozici pro pokračování. Pokud uživatel vybere možnost pokračovat aktivity na nové zařízení, je zadaná aplikace spuštěná (pokud ještě není spuštěna) a datovou část z `NSUserActivity` se používá k restartu aktivity.
 
-[ ![](handoff-images/handoffinteractions.png "Přehled trvalého aktivit uživatelů")](handoff-images/handoffinteractions.png)
+[![](handoff-images/handoffinteractions.png "Přehled trvalého aktivit uživatelů")](handoff-images/handoffinteractions.png#lightbox)
 
 Jenom aplikace, které sdílejí stejné vývojáře ID týmu a reagovat na danou _typ aktivity_ jsou způsobilé pro pokračování. Aplikace definuje typy aktivit, které podporuje v části `NSUserActivityTypes` klíče z jeho **Info.plist** souboru. To zadána trvalého zařízení vybere aplikaci k provedení pokračování na základě ID týmu, typ aktivity a volitelně _název aktivity_.
 
@@ -114,21 +114,21 @@ Postupujte takto:
 3. Pokud jste tak již neučinili, klikněte na **identifikátory** a vytvoření ID pro vaši aplikaci (například `com.company.appname`), jinak upravit své existující ID.
 4. Ujistěte se, že **Icloudu** služby bude zkontrolován pro dané ID: 
 
-    [ ![](handoff-images/provision01.png "Povolení služby iCloud pro zadané ID.")](handoff-images/provision01.png)
+    [![](handoff-images/provision01.png "Povolení služby iCloud pro zadané ID.")](handoff-images/provision01.png#lightbox)
 5. Uložte provedené změny.
 4. Klikněte na **profily zřizování** > **vývoj** a vytvořte nový vývoj profil pro zřizování pro vás aplikace: 
 
-    [ ![](handoff-images/provision02.png "Vytvořit nový vývoj zřizování profilu pro aplikaci")](handoff-images/provision02.png)
+    [![](handoff-images/provision02.png "Vytvořit nový vývoj zřizování profilu pro aplikaci")](handoff-images/provision02.png#lightbox)
 5. Stáhnout a nainstalovat nový profil pro zřizování nebo pomocí Xcode stáhněte a nainstalujte profil.
 6. Upravit možnosti projektu Xamarin.iOS a ujistěte se, že používáte profil zřizování, který jste právě vytvořili: 
 
-    [ ![](handoff-images/provision03.png "Vyberte právě vytvořený profilu pro zřizování")](handoff-images/provision03.png)
+    [![](handoff-images/provision03.png "Vyberte právě vytvořený profilu pro zřizování")](handoff-images/provision03.png#lightbox)
 7. Potom upravte vaše **Info.plist** souboru a ujistěte se, že používáte ID aplikace, která byla použita k vytvoření profilu pro zřizování: 
 
-    [ ![](handoff-images/provision04.png "ID sady aplikace")](handoff-images/provision04.png)
+    [![](handoff-images/provision04.png "ID sady aplikace")](handoff-images/provision04.png#lightbox)
 8. Přejděte k položce **režimy pozadí** části a zkontrolujte následující položky: 
 
-    [ ![](handoff-images/provision05.png "Povolit režimy požadované pozadí")](handoff-images/provision05.png)
+    [![](handoff-images/provision05.png "Povolit režimy požadované pozadí")](handoff-images/provision05.png#lightbox)
 9. Uložte změny do všechny soubory.
 
 S těmito nastaveními zavedené aplikace je nyní připraven k přístupu k rozhraním API Framework aby Handoff. Podrobné informace o zřizování, najdete v tématu naše [zřizování zařízení](~/ios/get-started/installation/device-provisioning/index.md) a [zřizování aplikace](~/ios/get-started/installation/device-provisioning/index.md) příručky.
@@ -155,7 +155,7 @@ Jako příklad přidáme k vytvoření ukázkové aplikace volá **MonkeyBrowser
 
 Chcete-li vytvořit požadovaný typ identifikátory aktivit pro podporu toto chování, upravte **Info.plist** souboru a přepněte do **zdroj** zobrazení. Přidat `NSUserActivityTypes` klíče a vytváření identifikátorů následující:
 
-[ ![](handoff-images/type01.png "Klíč NSUserActivityTypes a požadované identifikátory v editoru plist.")](handoff-images/type01.png)
+[![](handoff-images/type01.png "Klíč NSUserActivityTypes a požadované identifikátory v editoru plist.")](handoff-images/type01.png#lightbox)
 
 Jsme vytvořili čtyři nový typ identifikátory aktivit, jeden pro každou z karet v příkladu **MonkeyBrowser** aplikace. Při vytváření vlastních aplikací, nahraďte obsah `NSUserActivityTypes` pole s typem identifikátory aktivit, které jsou specifické pro aktivity aplikace podporuje.
 
@@ -610,15 +610,15 @@ Jako příklad použití aby Handoff v aplikaci Xamarin.iOS, jsme zahrnuli [ **M
 
 Na kartě, když uživatel zadá nové adresy URL a odposlouchávání **přejděte** tlačítko Nový `NSUserActivity` se vytvoří pro tuto kartu, která obsahuje adresu URL, která je aktuálně procházení uživatele:
 
-[ ![](handoff-images/handoff01.png "Příklad aby Handoff aplikace")](handoff-images/handoff01.png)
+[![](handoff-images/handoff01.png "Příklad aby Handoff aplikace")](handoff-images/handoff01.png#lightbox)
 
 Pokud má jiné zařízení uživatele **MonkeyBrowser** aplikace nainstalovaná, je přihlášení k serveru služby iCloud pomocí stejného uživatelského účtu, je na stejné sítě a v těsné blízkosti výše uvedených zařízení, aby Handoff aktivity se zobrazí na domovské stránce obrazovka (v levém dolním):
 
-[ ![](handoff-images/handoff02.png "Aby Handoff aktivity zobrazené na domovské obrazovce, v levém dolním")](handoff-images/handoff02.png)
+[![](handoff-images/handoff02.png "Aby Handoff aktivity zobrazené na domovské obrazovce, v levém dolním")](handoff-images/handoff02.png#lightbox)
 
 Pokud uživatel nastavuje tažením směrem nahoru na ikonu aby Handoff, spustí se aplikace a aktivita uživatele zadané v `NSUserActivity` bude pokračovat na nové zařízení:
 
-[ ![](handoff-images/handoff03.png "Aktivity uživatelů, pokračoval na nové zařízení")](handoff-images/handoff03.png)
+[![](handoff-images/handoff03.png "Aktivity uživatelů, pokračoval na nové zařízení")](handoff-images/handoff03.png#lightbox)
 
 Když aktivita uživatele byla úspěšně odeslána do jiného Apple zařízení, odesílání zařízení `NSUserActivity` obdrží volání `UserActivityWasContinued` metoda na jeho `NSUserActivityDelegate` umožníte ho vědět, že aktivita uživatele úspěšně přenést do jiného zařízení.
 

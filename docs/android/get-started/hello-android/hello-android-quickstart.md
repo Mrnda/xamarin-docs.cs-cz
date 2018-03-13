@@ -3,16 +3,16 @@ title: "Hello, Android: rychlý start"
 description: "V této příručce dvě části bude vytvoření vaší první aplikace Xamarin.Android (pomocí sady Visual Studio nebo Visual Studio pro Mac) a vytvořit si představu základy vývoje aplikace pro Android pomocí Xamarinu. Na této cestě bude nutné zavést nástrojů, koncepty a kroky potřebné k sestavení a nasazení aplikace pro Xamarin.Android."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: ED99584A-BA3B-429A-AEE5-CF3CB0116762
+ms.assetid: 44007FA1-3ABC-4935-BF52-4613AF0553A6
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: 2ec01091314df64070cafb570f01e54634759c77
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 58197ae9f7c05ab9a838555ba5ab496550a16bce
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="hello-android-quickstart"></a>Hello, Android: rychlý start
 
@@ -22,7 +22,7 @@ _V této příručce dvě části bude vytvoření vaší první aplikace Xamari
 
 V tomto návodu vytvoříte aplikaci, která znamená, že alfanumerické telefonní číslo (zadaná uživatelem) do číselné telefonní číslo a zobrazit číselné telefonní číslo uživatele. Konečné aplikace vypadá takto:
 
-[![Snímek obrazovky aplikace po dokončení](hello-android-quickstart-images/intro-app-examples-sml.png)](hello-android-quickstart-images/intro-app-examples.png)
+[![Snímek obrazovky aplikace po dokončení](hello-android-quickstart-images/intro-app-examples-sml.png)](hello-android-quickstart-images/intro-app-examples.png#lightbox)
 
 
 ## <a name="requirements"></a>Požadavky
@@ -67,42 +67,42 @@ Spuštění sady Visual Studio.  Klikněte na tlačítko **soubor > Nový > proj
 V **nový projekt** dialogové okno, klikněte **prázdná aplikace (Android)** šablony.
 Název nového projektu `Phoneword`. Klikněte na tlačítko **OK** k vytvoření nového projektu:
 
-[![Nový projekt je Phoneword](hello-android-quickstart-images/vs/02-new-project-name-sml.png)](hello-android-quickstart-images/vs/02-new-project-name.png)
+[![Nový projekt je Phoneword](hello-android-quickstart-images/vs/02-new-project-name-sml.png)](hello-android-quickstart-images/vs/02-new-project-name.png#lightbox)
 
 ### <a name="creating-the-layout"></a>Vytváření rozložení
 
 Po vytvoření nového projektu, rozbalte **prostředky** složku a potom **rozložení** složky v **Průzkumníku řešení**.
 Klikněte dvakrát na **Main.axml** otevřít v Návrháři Android. Toto je soubor rozložení obrazovky aplikace:
 
-[![Open Main.axml](hello-android-quickstart-images/vs/04-open-layout-sml.png)](hello-android-quickstart-images/vs/04-open-layout.png)
+[![Open Main.axml](hello-android-quickstart-images/vs/04-open-layout-sml.png)](hello-android-quickstart-images/vs/04-open-layout.png#lightbox)
 
 Z **sada nástrojů** (oblast na levé straně), zadejte `text` do pole hledání a přetažení **Text (velká)** pomůcky na návrhovou plochu (oblast v centru):
 
-[![Přidat pomůcku velké textu](hello-android-quickstart-images/vs/04-large-text-sml.png)](hello-android-quickstart-images/vs/04-large-text.png)
+[![Přidat pomůcku velké textu](hello-android-quickstart-images/vs/04-large-text-sml.png)](hello-android-quickstart-images/vs/04-large-text.png#lightbox)
 
 S **Text (velká)** ovládací prvek na návrhovou plochu, použijte **vlastnosti** podokně změnit `text` vlastnost **Text (velká)** pomůcka k `Enter a Phoneword:` jak je vidět tady:
 
-[![Nastavení vlastností velké textu](hello-android-quickstart-images/vs/05-enter-a-phoneword-sml.png)](hello-android-quickstart-images/vs/05-enter-a-phoneword.png)
+[![Nastavení vlastností velké textu](hello-android-quickstart-images/vs/05-enter-a-phoneword-sml.png)](hello-android-quickstart-images/vs/05-enter-a-phoneword.png#lightbox)
 
 Přetáhněte **prostý Text** widget **sada nástrojů** na návrh surface a umístěte ji pod **Text (velká)** pomůcky:
 
-[![Přidat pomůcku prostý text](hello-android-quickstart-images/vs/06-plain-text-sml.png)](hello-android-quickstart-images/vs/06-plain-text.png)
+[![Přidat pomůcku prostý text](hello-android-quickstart-images/vs/06-plain-text-sml.png)](hello-android-quickstart-images/vs/06-plain-text.png#lightbox)
 
 S **prostý Text** pomůcky vybrané na návrhovou plochu, použijte **vlastnosti** podokně změnit `id` vlastnost **prostý Text** pomůcky na `@+id/PhoneNumberText`a změňte `text` vlastnost `1-855-XAMARIN`:
 
-[![Nastavení vlastností ve formátu prostého textu](hello-android-quickstart-images/vs/07-add-properties-sml.png)](hello-android-quickstart-images/vs/07-add-properties.png)
+[![Nastavení vlastností ve formátu prostého textu](hello-android-quickstart-images/vs/07-add-properties-sml.png)](hello-android-quickstart-images/vs/07-add-properties.png#lightbox)
 
 Přetáhněte **tlačítko** z **sada nástrojů** na návrh surface a umístěte ji pod **prostý Text** pomůcky:
 
-[![Přetáhněte převede tlačítko návrhu](hello-android-quickstart-images/vs/08-drag-button-sml.png)](hello-android-quickstart-images/vs/08-drag-button.png)
+[![Přetáhněte převede tlačítko návrhu](hello-android-quickstart-images/vs/08-drag-button-sml.png)](hello-android-quickstart-images/vs/08-drag-button.png#lightbox)
 
 S **tlačítko** vybrané na návrhovou plochu, použijte **vlastnosti** podokně změnit `id` vlastnost **tlačítko** k `@+id/TranslateButton` a změňte `text` vlastnost `Translate`:
 
-[![Sada převede vlastnosti tlačítka](hello-android-quickstart-images/vs/09-translate-button-sml.png)](hello-android-quickstart-images/vs/09-translate-button.png)
+[![Sada převede vlastnosti tlačítka](hello-android-quickstart-images/vs/09-translate-button-sml.png)](hello-android-quickstart-images/vs/09-translate-button.png#lightbox)
 
 Přetáhněte **TextView** z **sada nástrojů** na návrh surface a umístěte ji pod **tlačítko** pomůcky. Nastavte `id` vlastnost **TextView** k `@+id/TranslatedPhoneWord` a změňte `text` na prázdný řetězec:
 
-[![Nastavte vlastnosti v zobrazení textu.](hello-android-quickstart-images/vs/10-textview-properties-sml.png)](hello-android-quickstart-images/vs/10-textview-properties.png)    
+[![Nastavte vlastnosti v zobrazení textu.](hello-android-quickstart-images/vs/10-textview-properties-sml.png)](hello-android-quickstart-images/vs/10-textview-properties.png#lightbox)    
 
 Uložte si práci, stisknutím klávesy **CTRL + S**.
 
@@ -110,11 +110,11 @@ Uložte si práci, stisknutím klávesy **CTRL + S**.
 
 Dalším krokem je přidání kód, který převede telefonní čísla z alfanumerické na číselnou. Přidat nový soubor na projekt kliknete pravým tlačítkem **Phoneword** v projektu **Průzkumníku řešení** podokně a výběr **Přidat > novou položku...**  jak je uvedeno níže:
 
-[![Přidat novou položku](hello-android-quickstart-images/vs/12-add-new-item-sml.png)](hello-android-quickstart-images/vs/12-add-new-item.png)
+[![Přidat novou položku](hello-android-quickstart-images/vs/12-add-new-item-sml.png)](hello-android-quickstart-images/vs/12-add-new-item.png#lightbox)
 
 V **přidat novou položku** dialogovém okně, vyberte **Visual C# > kódu** a název nového souboru kódu **PhoneTranslator.cs**:
 
-[![Add PhoneTranslator.cs](hello-android-quickstart-images/vs/14-add-class-sml.png)](hello-android-quickstart-images/vs/14-add-class.png)
+[![Add PhoneTranslator.cs](hello-android-quickstart-images/vs/14-add-class-sml.png)](hello-android-quickstart-images/vs/14-add-class.png#lightbox)
 
 Tím se vytvoří novou prázdnou C# třídu. Vložte následující kód do tohoto souboru:
 
@@ -260,17 +260,17 @@ namespace Phoneword
 
 Nyní je čas nastavit ikona aplikace. Ve výchozím nastavení Visual Studio poskytne výchozí ikonu pro projekt. Umožňuje odstranit tyto soubory z řešení a nahradíte je vlastní ikonu. Rozbalte položku **prostředky** složku **Pad řešení**. Všimněte si, že jsou pět složky, které mají předponu **mipmap -**, a že každý z těchto složek obsahuje jediný **Icon.png** souboru:
 
-[![složkách Mipmap a Icon.png soubory](hello-android-quickstart-images/vs/21-mipmap-folders-sml.png)](hello-android-quickstart-images/vs/21-mipmap-folders.png)
+[![složkách Mipmap a Icon.png soubory](hello-android-quickstart-images/vs/21-mipmap-folders-sml.png)](hello-android-quickstart-images/vs/21-mipmap-folders.png#lightbox)
 
 Je nutné odstranit všechny tyto soubory ikon z projektu. Klikněte pravým tlačítkem na každý z **Icon.png** soubory a vyberte **odstranit** v místní nabídce:
    
-[![Odstranit výchozí Icon.png](hello-android-quickstart-images/vs/21-delete-icon-sml.png)](hello-android-quickstart-images/vs/21-delete-icon.png)
+[![Odstranit výchozí Icon.png](hello-android-quickstart-images/vs/21-delete-icon-sml.png)](hello-android-quickstart-images/vs/21-delete-icon.png#lightbox)
    
 Klikněte na **odstranit** tlačítka v dialogovém okně.
 
 Další, stáhněte a rozbalte [nastavit ikony aplikace Xamarin](https://github.com/xamarin/monodroid-samples/blob/master/Phoneword/Resources/XamarinAndroidIcons.zip?raw=true). Tento soubor zip obsahuje ikony pro aplikaci. Každá ikona je vizuálně identické, ale v různých řešeních vykreslí správně na různých zařízeních s densities – různých obrazovek.  Sadu souborů musí být zkopírován do projektu Xamarin.Android. V sadě Visual Studio v **Průzkumníku řešení**, klikněte pravým tlačítkem myši **mipmap hdpi** složky a vyberte **Přidat > existující položky**:
 
-[![Přidání souborů](hello-android-quickstart-images/vs/22-add-files-sml.png)](hello-android-quickstart-images/vs/22-add-files.png)
+[![Přidání souborů](hello-android-quickstart-images/vs/22-add-files-sml.png)](hello-android-quickstart-images/vs/22-add-files.png#lightbox)
 
 Dialogovém okně pro výběr, přejděte do adresáře rozbalené ikony AdApp Xamarin a otevřete **mipmap hdpi** složky. Vyberte **Icon.png** a klikněte na tlačítko **přidat**.
 
@@ -278,13 +278,13 @@ Tento postup opakujte pro každou z **mipmap -** složek, dokud nebude obsah **m
 
 Po všech ikon se zkopírují do projektu Xamarin.Android, otevřete **možnosti projektu** dialogové okno kliknutím pravým tlačítkem na projekt v **řešení Pad**. Vyberte **sestavení > aplikace pro Android** a vyberte  **@mipmap/icon**  z **ikona aplikace** – pole se seznamem:
 
-[![Nastavení ikonu projektu](hello-android-quickstart-images/vs/25-set-project-icon-sml.png)](hello-android-quickstart-images/vs/25-set-project-icon.png)
+[![Nastavení ikonu projektu](hello-android-quickstart-images/vs/25-set-project-icon-sml.png)](hello-android-quickstart-images/vs/25-set-project-icon.png#lightbox)
 
 ### <a name="running-the-app"></a>Spuštění aplikace
 
 Nakonec spuštěním ho na emulátoru nebo zařízení se systémem Android a překladu Phoneword testování aplikace:
 
-[![Snímek obrazovky aplikace po dokončení](hello-android-quickstart-images/intro-app-examples-sml.png)](hello-android-quickstart-images/intro-app-examples.png)
+[![Snímek obrazovky aplikace po dokončení](hello-android-quickstart-images/intro-app-examples-sml.png)](hello-android-quickstart-images/intro-app-examples.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -294,11 +294,11 @@ Klikněte na tlačítko **nové řešení...**  k vytvoření nového projektu.
 
 V **vyberte šablonu pro nový projekt** dialogové okno, klikněte na tlačítko **Android > aplikace** a vyberte **aplikace pro Android** šablony. Klikněte na tlačítko **Další**.
 
-[![Výběr šablony aplikace pro Android](hello-android-quickstart-images/xs/03-choose-template-sml.png)](hello-android-quickstart-images/xs/03-choose-template.png)
+[![Výběr šablony aplikace pro Android](hello-android-quickstart-images/xs/03-choose-template-sml.png)](hello-android-quickstart-images/xs/03-choose-template.png#lightbox)
 
 V **nakonfigurovat svoji aplikaci pro Android** dialogové okno, název nové aplikace `Phoneword` a klikněte na tlačítko **Další**.
 
-[![Konfigurace aplikace pro Android](hello-android-quickstart-images/xs/04-configure-android-app-sml.png)](hello-android-quickstart-images/xs/04-configure-android-app.png)
+[![Konfigurace aplikace pro Android](hello-android-quickstart-images/xs/04-configure-android-app-sml.png)](hello-android-quickstart-images/xs/04-configure-android-app.png#lightbox)
 
 V **konfigurace nové aplikace Android** dialogové okno, ponechte název řešení a projektu nastavena na `Phoneword` a klikněte na tlačítko **vytvořit** a vytvořte tak projekt.
 
@@ -307,45 +307,45 @@ V **konfigurace nové aplikace Android** dialogové okno, ponechte název řeše
 Po vytvoření nového projektu, rozbalte **prostředky** složku a potom **rozložení** složky v **řešení** odsazení.
 Klikněte dvakrát na **Main.axml** otevřít v Návrháři Android. Toto je soubor rozložení pro obrazovky při jeho zobrazení v Návrháři Android:
 
-[![Open Main.axml](hello-android-quickstart-images/xs/05-open-layout-sml.png)](hello-android-quickstart-images/xs/05-open-layout.png)
+[![Open Main.axml](hello-android-quickstart-images/xs/05-open-layout-sml.png)](hello-android-quickstart-images/xs/05-open-layout.png#lightbox)
 
 Vyberte **Hello World, klikněte na tlačítko Poslat mi!** **Tlačítko** na návrhovou plochu a stiskněte klávesu **odstranit** klíč k jeho odebrání. 
 
 Z **sada nástrojů** (oblast na pravé straně), zadejte `text` do pole hledání a přetažení **Text (velká)** pomůcky na návrhovou plochu (oblast v centru):
 
-[![Přidat pomůcku velké textu](hello-android-quickstart-images/xs/06-large-text-sml.png)](hello-android-quickstart-images/xs/06-large-text.png)
+[![Přidat pomůcku velké textu](hello-android-quickstart-images/xs/06-large-text-sml.png)](hello-android-quickstart-images/xs/06-large-text.png#lightbox)
 
 S **Text (velká)** pomůcky vybrané na návrhovou plochu, můžete použít **vlastnosti** pad změnit `Text` vlastnost **Text (velká)** pomůcky na `Enter a Phoneword:` jak je uvedeno níže:
 
-[![Nastavit vlastnosti pomůcky velké text](hello-android-quickstart-images/xs/07-enter-a-phoneword-sml.png)](hello-android-quickstart-images/xs/07-enter-a-phoneword.png)
+[![Nastavit vlastnosti pomůcky velké text](hello-android-quickstart-images/xs/07-enter-a-phoneword-sml.png)](hello-android-quickstart-images/xs/07-enter-a-phoneword.png#lightbox)
 
 V dalším kroku přetáhněte **prostý Text** widget **sada nástrojů** na návrh surface a umístěte ji pod **Text (velká)** pomůcky. Všimněte si, že pole hledání můžete použít pro usnadnění vyhledání pomůcky podle názvu:
 
-[![Přidat pomůcku prostý text](hello-android-quickstart-images/xs/08-plain-text-sml.png)](hello-android-quickstart-images/xs/08-plain-text.png)
+[![Přidat pomůcku prostý text](hello-android-quickstart-images/xs/08-plain-text-sml.png)](hello-android-quickstart-images/xs/08-plain-text.png#lightbox)
 
 S **prostý Text** pomůcky vybrané na návrhovou plochu, můžete použít **vlastnosti** pad změnit `Id` vlastnost **prostý Text** pomůcka k `@+id/PhoneNumberText` a změňte `Text` vlastnost `1-855-XAMARIN`:
 
-[![Nastavit vlastnosti pomůcky prostý text](hello-android-quickstart-images/xs/09-add-properties-sml.png)](hello-android-quickstart-images/xs/09-add-properties.png)
+[![Nastavit vlastnosti pomůcky prostý text](hello-android-quickstart-images/xs/09-add-properties-sml.png)](hello-android-quickstart-images/xs/09-add-properties.png#lightbox)
 
 Přetáhněte **tlačítko** z **sada nástrojů** na návrh surface a umístěte ji pod **prostý Text** pomůcky:
 
-[![Přidání tlačítka](hello-android-quickstart-images/xs/10-drag-button-sml.png)](hello-android-quickstart-images/xs/10-drag-button.png)
+[![Přidání tlačítka](hello-android-quickstart-images/xs/10-drag-button-sml.png)](hello-android-quickstart-images/xs/10-drag-button.png#lightbox)
 
 S **tlačítko** vybrané na návrhovou plochu, můžete použít **vlastnosti** pad změnit `Id` vlastnost **tlačítko** k `@+id/TranslateButton` a Změnit `Text` vlastnost `Translate`:
 
-[![Konfigurovat jako přeložit tlačítka](hello-android-quickstart-images/xs/11-translate-button-sml.png)](hello-android-quickstart-images/xs/11-translate-button.png)
+[![Konfigurovat jako přeložit tlačítka](hello-android-quickstart-images/xs/11-translate-button-sml.png)](hello-android-quickstart-images/xs/11-translate-button.png#lightbox)
 
 Přetáhněte **TextView** z **sada nástrojů** na návrh surface a umístěte ji pod **tlačítko** pomůcky. S **TextView** vybrána, nastavte `id` vlastnost **TextView** k `@+id/TranslatedPhoneWord` a změňte `text` na prázdný řetězec:
 
-[![Nastavte vlastnosti v zobrazení textu.](hello-android-quickstart-images/xs/12-textview-properties-sml.png)](hello-android-quickstart-images/xs/12-textview-properties.png)    
+[![Nastavte vlastnosti v zobrazení textu.](hello-android-quickstart-images/xs/12-textview-properties-sml.png)](hello-android-quickstart-images/xs/12-textview-properties.png#lightbox)    
 
-Uložte si práci, stisknutím klávesy **&#8984; + S**.
+Uložte si práci, stisknutím klávesy  **&#8984; + S**.
 
 ### <a name="writing-translation-code"></a>Psaní překlad kódu
 
 Nyní přidáte kód, který převede telefonní čísla z alfanumerické na číselnou. Přidejte do projektu nový soubor kliknutím na ikonu ozubené kolečko vedle možnosti **Phoneword** projektu v **řešení** odsazení a výběr **Přidat > Nový soubor...** :
 
-[![Přidejte do projektu nový soubor](hello-android-quickstart-images/xs/14-add-new-file-sml.png)](hello-android-quickstart-images/xs/14-add-new-file.png)
+[![Přidejte do projektu nový soubor](hello-android-quickstart-images/xs/14-add-new-file-sml.png)](hello-android-quickstart-images/xs/14-add-new-file.png#lightbox)
 
 V **nový soubor** dialogovém okně, vyberte **Obecné > prázdná třída**, pojmenujte nový soubor **PhoneTranslator**a klikněte na tlačítko **nový**. Tím se vytvoří novou prázdnou C# třídu pro nás.
 
@@ -410,7 +410,7 @@ namespace Core
 }
 ```
 
-Uložit změny do **PhoneTranslator.cs** souboru tak, že zvolíte **soubor > Uložit** (nebo stisknutím kombinace kláves **&#8984; + S**), pak zavřete soubor. Ujistěte se, že nejsou žádné chyby kompilace pomocí znovu sestavit řešení.
+Uložit změny do **PhoneTranslator.cs** souboru tak, že zvolíte **soubor > Uložit** (nebo stisknutím kombinace kláves  **&#8984; + S**), pak zavřete soubor. Ujistěte se, že nejsou žádné chyby kompilace pomocí znovu sestavit řešení.
 
 ### <a name="wiring-up-the-interface"></a>Připojení rozhraní
 
@@ -476,7 +476,7 @@ translateButton.Click += (sender, e) =>
 };
 ```
 
-Uložte si práci a sestavte aplikaci tak, že vyberete **sestavení > sestavení všechny** (nebo stisknutím kombinace kláves **&#8984; + B**). Pokud aplikace zkompiluje, zobrazí se zpráva o úspěšném provedení v horní části sady Visual Studio pro Mac:
+Uložte si práci a sestavte aplikaci tak, že vyberete **sestavení > sestavení všechny** (nebo stisknutím kombinace kláves  **&#8984; + B**). Pokud aplikace zkompiluje, zobrazí se zpráva o úspěšném provedení v horní části sady Visual Studio pro Mac:
 
 Pokud nejsou chyby, všechny předchozí kroky a opravte chyby, dokud úspěšně sestavení aplikace. Pokud dojde k chybě sestavení jako je třeba _prostředek neexistuje v aktuálním kontextu_, ověřte, že název oboru názvů v **MainActivity.cs** odpovídá názvu projektu (`Phoneword`) a potom úplně znovu sestavte řešení. Pokud bude stále docházet k chybám sestavení, ověřte, že jste nainstalovali nejnovější Xamarin.Android a aktualizace Visual Studio pro Mac.
 
@@ -498,35 +498,35 @@ namespace Phoneword
 
 Nyní je čas nastavit ikona aplikace. Ve výchozím nastavení Visual Studio pro Mac poskytne výchozí ikonu pro projekt. Umožňuje odstranit tyto soubory z řešení a nahradíte je vlastní ikonu. Rozbalte položku **prostředky** složku **Pad řešení**. Všimněte si, že jsou pět složky, které mají předponu **mipmap -**, a že každý z těchto složek obsahuje jediný **Icon.png** souboru:
 
-[![složkách Mipmap a Icon.png soubory](hello-android-quickstart-images/xs/23-mipmap-folders-sml.png)](hello-android-quickstart-images/xs/23-mipmap-folders.png)
+[![složkách Mipmap a Icon.png soubory](hello-android-quickstart-images/xs/23-mipmap-folders-sml.png)](hello-android-quickstart-images/xs/23-mipmap-folders.png#lightbox)
 
 Je nutné odstranit všechny tyto soubory ikon z projektu. Klikněte pravým tlačítkem na každý z **Icon.png** soubory a vyberte **odebrat** v místní nabídce:
 
-[![Odstranit výchozí Icon.png](hello-android-quickstart-images/xs/23-delete-icon-sml.png)](hello-android-quickstart-images/xs/23-delete-icon.png)
+[![Odstranit výchozí Icon.png](hello-android-quickstart-images/xs/23-delete-icon-sml.png)](hello-android-quickstart-images/xs/23-delete-icon.png#lightbox)
 
 Klikněte na **odstranit** tlačítka v dialogovém okně.
 
 Další, stáhněte a rozbalte [nastavit ikony aplikace Xamarin](https://github.com/xamarin/monodroid-samples/blob/master/Phoneword/Resources/XamarinAndroidIcons.zip?raw=true). Tento soubor zip obsahuje ikony pro aplikaci. Každá ikona je vizuálně identické, ale v různých řešeních vykreslí správně na různých zařízeních s densities – různých obrazovek.  Sadu souborů musí být zkopírován do projektu Xamarin.Android. V sadě Visual Studio pro Mac v **řešení Pad**, klikněte pravým tlačítkem myši **mipmap hdpi** složky a vyberte **Přidat > Přidat soubory**:
 
-[![Přidání souborů](hello-android-quickstart-images/xs/24-add-files-sml.png)](hello-android-quickstart-images/xs/24-add-files.png)
+[![Přidání souborů](hello-android-quickstart-images/xs/24-add-files-sml.png)](hello-android-quickstart-images/xs/24-add-files.png#lightbox)
 
 Dialogovém okně pro výběr, přejděte do adresáře rozbalené ikony AdApp Xamarin a otevřete **mipmap hdpi** složky. Vyberte **Icon.png** a klikněte na tlačítko **otevřete**.
 
 V **přidat soubor do složky** dialogové okno, vyberte **zkopírujte soubor do adresáře** a klikněte na tlačítko **OK**:
 
-[![Zkopírujte soubor do adresáře dialogového okna](hello-android-quickstart-images/xs/26-copy-to-directory-sml.png)](hello-android-quickstart-images/xs/26-copy-to-directory.png)
+[![Zkopírujte soubor do adresáře dialogového okna](hello-android-quickstart-images/xs/26-copy-to-directory-sml.png)](hello-android-quickstart-images/xs/26-copy-to-directory.png#lightbox)
 
 Tento postup opakujte pro každou z **mipmap -** složek, dokud nebude obsah **mipmap -** ikony aplikace Xamarin složky zkopírovaly do jejich protějškem **mipmap -** složek v **Phoneword** projektu.
 
 Po všech ikon se zkopírují do projektu Xamarin.Android, otevřete **možnosti projektu** dialogové okno kliknutím pravým tlačítkem na projekt v **řešení Pad**. Vyberte **sestavení > aplikace pro Android** a vyberte  **@mipmap/icon**  z **ikona aplikace** – pole se seznamem:
 
-[![Nastavení ikonu projektu](hello-android-quickstart-images/xs/28-set-project-icon-sml.png)](hello-android-quickstart-images/xs/28-set-project-icon.png)
+[![Nastavení ikonu projektu](hello-android-quickstart-images/xs/28-set-project-icon-sml.png)](hello-android-quickstart-images/xs/28-set-project-icon.png#lightbox)
 
 ### <a name="running-the-app"></a>Spuštění aplikace
 
 Nakonec spuštěním ho na emulátoru nebo zařízení se systémem Android a překladu Phoneword testování aplikace:
 
-[![Snímek obrazovky aplikace po dokončení](hello-android-quickstart-images/intro-app-examples-sml.png)](hello-android-quickstart-images/intro-app-examples.png)
+[![Snímek obrazovky aplikace po dokončení](hello-android-quickstart-images/intro-app-examples-sml.png)](hello-android-quickstart-images/intro-app-examples.png#lightbox)
 
 -----
 

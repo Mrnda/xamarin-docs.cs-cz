@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 1625fe15d76ffe2bd3712d9126d9bd217bf60085
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f47fded9c09849f6d5f1329a4efd652df80816d5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="manually-signing-the-apk"></a>Ručně podepisování APK
 
-<a name="signing_legacy" />
 
 Po vytvoření aplikace pro verzi, musí být podepsané APK před distribuční tak, aby mohl být program spuštěn na zařízení s Androidem. Tento proces je obvykle zpracovávány pomocí rozhraní IDE, se však některé situace, kdy je nutné se přihlásit APK ručně, v příkazovém řádku. S podepisováním APK se podílejí následující kroky:
 
@@ -29,7 +28,6 @@ Po vytvoření aplikace pro verzi, musí být podepsané APK před distribuční
 Pořadí kroků je důležité a závisí na který nástroj používaný k podepisování APK. Při použití **apksigner**, je důležité nejdřív **zipalign** aplikace a pak přihlásit se s **apksigner**.  Pokud je nutné použít **jarsigner** pro přihlášení APK, pak je potřeba nejdřív přihlásit APK a spusťte **zipalign**. 
 
 
-<a name="Prerequisites" />
 
 ## <a name="prerequisites"></a>Požadavky
 
@@ -38,7 +36,6 @@ Tato příručka je zaměřena na pomocí **apksigner** ze sady Android SDK nás
 Musíte použít aplikací, které jsou vytvořené pomocí starší verze nástroje sestavení Android SDK **jarsigner** jak je popsáno v [přihlásit APK s jarsigner](#Sign_the_APK_with_jarsigner) níže.
 
 
-<a name="Creating_a_Private_Keystore" />
 
 ## <a name="create-a-private-keystore"></a>Vytvoření úložiště klíčů privátní
 
@@ -53,7 +50,6 @@ Je důležité chránit toto úložiště klíčů. Pokud je ke ztrátě, pak ne
 Pouze řešení, aby problém způsobený tím ztraceny úložiště klíčů by k vytvoření nového úložiště klíčů, APK znovu podepsat pomocí nového klíče a pak odeslat novou aplikaci. Potom staré aplikace má odeberou z Google Play. Podobně pokud je toto nové úložiště klíčů ohrožení zabezpečení nebo veřejně distribuován, je možné neoficiální nebo škodlivý verze aplikace distribuována.
 
 
-<a name="Create_a_New_Keystore" />
 
 ### <a name="create-a-new-keystore"></a>Vytvořit nové úložiště klíčů
 
@@ -99,7 +95,6 @@ K zobrazení seznamu klíčů, které jsou uloženy v úložišti klíčů, pou�
 $ keytool -list -keystore xample.keystore
 ```
 
-<a name="Zipalign_the_APK" />
 
 ## <a name="zipalign-the-apk"></a>Zipalign APK
 
@@ -111,7 +106,6 @@ Příkaz postupujte podle kroků bude používat podepsané APK a vytvořit při
 $ zipalign -f -v 4 mono.samples.helloworld-unsigned.apk helloworld.apk
 ```
 
-<a name="Manually_Signing_the_APK" />
 
 ## <a name="sign-the-apk"></a>Přihlaste APK
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/19/2016
-ms.openlocfilehash: d7965c5d4d65dd6bf7aa4128f467acd3e2d39e60
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: c383808d443685c1561113e418aed62467f1d5bd
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="app-class"></a>Aplikace – třída
 
@@ -98,7 +98,7 @@ if (Application.Current.Properties.ContainsKey("id"))
 Vždy zkontrolujte přítomnost klíče před přístupem k, abychom zabránili jeho neočekávaným chybám.
 
 > [!NOTE]
-> **Poznámka:** `Properties` slovníku může serializovat jenom primitivní typy pro úložiště. Pokusu o uložení jiné typy (například `List<string>`) může selhat bezobslužně.
+> `Properties` Slovníku může serializovat jenom primitivní typy pro úložiště. Pokusu o uložení jiné typy (například `List<string>`) může selhat bezobslužně.
 
 <!-- bugzilla 28657 -->
 
@@ -196,7 +196,7 @@ public class MainActivity :
 ```
 
 > [!NOTE]
-> **Poznámka:** je novější [ `FormsAppCompatActivity` ](~/xamarin-forms/platform/android/appcompat.md) základní třídu, která umožňuje lepší podpory Android materiálu návrhu.
+> Je novější [ `FormsAppCompatActivity` ](~/xamarin-forms/platform/android/appcompat.md) základní třídu, která umožňuje lepší podpory Android materiálu návrhu.
 > To se stane výchozí šablonu pro Android v budoucnosti, ale můžete postupovat podle [tyto pokyny](~/xamarin-forms/platform/android/appcompat.md) k aktualizaci existující aplikace pro Android.
 
 

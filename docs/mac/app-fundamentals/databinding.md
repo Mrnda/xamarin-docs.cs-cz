@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 2c01a36eabb15fbe9b975c91328dfa7cfd651896
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: b7ffd069a8c99c2cdfd0ecb58fe7ef762e5a46f3
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="data-binding-and-key-value-coding"></a>Datové vazby a klíč hodnota kódování
 
@@ -24,7 +24,7 @@ Při práci s C# a rozhraní .NET v aplikaci Xamarin.Mac, máte přístup k stej
 
 Pomocí kódování a datové vazby v aplikaci Xamarin.Mac techniky klíč hodnota, může výrazně snížit množství kód, který máte k zápisu a udržovat naplnit a pracovat s prvky uživatelského rozhraní. Máte také výhodou další oddělení zálohování dat (_datový Model_) z vaší přední ukončení uživatelské rozhraní (_Model-View-Controller_), tečka na začátku k snadněji provádět údržbu, flexibilnější aplikace návrh.
 
-[![Příkladem spuštěné aplikaci](databinding-images/intro01.png "příklad spuštěné aplikaci")](databinding-images/intro01-large.png)
+[![Příkladem spuštěné aplikaci](databinding-images/intro01.png "příklad spuštěné aplikaci")](databinding-images/intro01-large.png#lightbox)
 
 V tomto článku vám nabídneme základní informace o práci s klíč hodnota kódování a datové vazby v Xamarin.Mac aplikace. Vysoce navržený na spolupracovat [Hello, Mac](~/mac/get-started/hello-mac.md) článek nejprve, konkrétně [Úvod do Xcode a rozhraní tvůrce](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) a [výstupy a akce](~/mac/get-started/hello-mac.md#Outlets_and_Actions) oddíly, jak se popisuje klíčové koncepty a techniky, které budeme používat v tomto článku.
 
@@ -421,7 +421,7 @@ Pomocí našeho datového modelu definované Podíváme se na jednoduchý přík
 
 Nejprve umožňuje přidat nový **View Controller** k naší **Main.storyboard** souborů v rozhraní tvůrce a název své třídy `SimpleViewController`: 
 
-[![Přidávání nového řadiče zobrazení](databinding-images/simple01.png "přidávání nového řadiče zobrazení")](databinding-images/simple01-large.png)
+[![Přidávání nového řadiče zobrazení](databinding-images/simple01.png "přidávání nového řadiče zobrazení")](databinding-images/simple01-large.png#lightbox)
 
 Pak se vraťte do sady Visual Studio pro Mac, upravit **SimpleViewController.cs** souboru (který se automaticky přidá do našich projekt) a vystavit instanci `PersonModel` jsme bude datové vazby naše formuláře. Přidejte následující kód:
 
@@ -461,27 +461,27 @@ public override void ViewDidLoad ()
 
 Nyní potřebujeme vytvořit našeho formuláře, dvakrát klikněte **Main.storyboard** soubor otevřete pro úpravy v Tvůrci rozhraní. Rozložení formuláře vypadat podobně jako následující:
 
-[![Úpravy storyboard v Xcode](databinding-images/simple02.png "úpravy storyboard v Xcode")](databinding-images/simple02-large.png)
+[![Úpravy storyboard v Xcode](databinding-images/simple02.png "úpravy storyboard v Xcode")](databinding-images/simple02-large.png#lightbox)
 
 Data vazby formuláře `PersonModel` který jsme zveřejněný prostřednictvím `Person` klíč, postupujte takto:
 
 1. Vyberte **jméno zaměstnance** textové pole a přepínač tak, aby **vazby Inspector**.
 2. Zkontrolujte **vytvořit vazbu na** a vyberte položku **jednoduché View Controller** z rozevíracího seznamu. Potom zadejte `self.Person.Name` pro **cesta ke klíči**: 
 
-    [![Zadat cestu ke klíči](databinding-images/simple03.png "zadáte cestu ke klíči")](databinding-images/simple03-large.png)
+    [![Zadat cestu ke klíči](databinding-images/simple03.png "zadáte cestu ke klíči")](databinding-images/simple03-large.png#lightbox)
 3. Vyberte **povolání** textové pole a kontroly **vytvořit vazbu na** pole a vyberte **jednoduché View Controller** z rozevíracího seznamu. Potom zadejte `self.Person.Occupation` pro **cesta ke klíči**:  
 
-    [![Zadat cestu ke klíči](databinding-images/simple04.png "zadáte cestu ke klíči")](databinding-images/simple04-large.png)
+    [![Zadat cestu ke klíči](databinding-images/simple04.png "zadáte cestu ke klíči")](databinding-images/simple04-large.png#lightbox)
 4. Vyberte **je manažera** zaškrtávací políčko a zkontrolujte **vytvořit vazbu na** a vyberte položku **jednoduché View Controller** z rozevíracího seznamu. Potom zadejte `self.Person.isManager` pro **cesta ke klíči**:  
 
-    [![Zadat cestu ke klíči](databinding-images/simple05.png "zadáte cestu ke klíči")](databinding-images/simple05-large.png)
+    [![Zadat cestu ke klíči](databinding-images/simple05.png "zadáte cestu ke klíči")](databinding-images/simple05-large.png#lightbox)
 5. Vyberte **číslo spravované zaměstnanci** textové pole a zkontrolujte **vytvořit vazbu na** a vyberte položku **jednoduché View Controller** z rozevíracího seznamu. Potom zadejte `self.Person.NumberOfEmployees` pro **cesta ke klíči**:  
 
-    [![Zadat cestu ke klíči](databinding-images/simple06.png "zadáte cestu ke klíči")](databinding-images/simple06-large.png)
+    [![Zadat cestu ke klíči](databinding-images/simple06.png "zadáte cestu ke klíči")](databinding-images/simple06-large.png#lightbox)
 6. Pokud zaměstnanec není správce, chceme skrýt číslo z zaměstnanci spravované popisek a textové pole.
 7. Vyberte **číslo spravované zaměstnanci** štítku, rozbalte **Hidden** turndown a zkontrolujte **vytvořit vazbu na** a vyberte položku **jednoduché View Controller** z rozevíracího seznamu. Potom zadejte `self.Person.isManager` pro **cesta ke klíči**:  
 
-    [![Zadat cestu ke klíči](databinding-images/simple07.png "zadáte cestu ke klíči")](databinding-images/simple07-large.png)
+    [![Zadat cestu ke klíči](databinding-images/simple07.png "zadáte cestu ke klíči")](databinding-images/simple07-large.png#lightbox)
 8. Vyberte `NSNegateBoolean` z **hodnotu Transformer** rozevíracího seznamu:  
 
     ![Výběr klíče transformace NSNegateBoolean](databinding-images/simple08.png "výběr klíče transformace NSNegateBoolean")
@@ -491,11 +491,11 @@ Data vazby formuláře `PersonModel` který jsme zveřejněný prostřednictvím
 
 Pokud spustíte aplikaci, hodnoty z `Person` vlastnost bude automaticky vyplnit naše formuláře:
 
-[![Zobrazení formuláře automaticky vyplněna](databinding-images/simple09.png "zobrazující formuláře automaticky vyplněna")](databinding-images/simple09-large.png)
+[![Zobrazení formuláře automaticky vyplněna](databinding-images/simple09.png "zobrazující formuláře automaticky vyplněna")](databinding-images/simple09-large.png#lightbox)
 
 Jakékoli změny, které uživatele provádí formuláře zapíšou zpátky do `Person` vlastnost v Kontroleru zobrazení. Například unselecting **je správce** aktualizace `Person` instanci naše `PersonModel` a **číslo spravované zaměstnanci** jsou automaticky (prostřednictvím skryté popisek a textové pole Datová vazba):
 
-[![Skrytí počet zaměstnanců bez manažerům](databinding-images/simple10.png "skrytí počet zaměstnanců pro jiný správce")](databinding-images/simple10-large.png)
+[![Skrytí počet zaměstnanců bez manažerům](databinding-images/simple10.png "skrytí počet zaměstnanců pro jiný správce")](databinding-images/simple10-large.png#lightbox)
 
 <a name="Table_View_Data_Binding" />
 
@@ -505,7 +505,7 @@ Teď, když máme základy datové vazby stranou, podíváme se na složitějš�
 
 Nejprve umožňuje přidat nový **View Controller** k naší **Main.storyboard** souborů v rozhraní tvůrce a název své třídy `TableViewController`:
 
-[![Přidávání nového řadiče zobrazení](databinding-images/table01.png "přidávání nového řadiče zobrazení")](databinding-images/table01-large.png)
+[![Přidávání nového řadiče zobrazení](databinding-images/table01.png "přidávání nového řadiče zobrazení")](databinding-images/table01-large.png#lightbox)
 
 V dalším kroku tady upravit **TableViewController.cs** souboru (který se automaticky přidá do našich projekt) a zveřejněte pole (`NSArray`) z `PersonModel` třídy, že jsme bude datové vazby naše formuláře. Přidejte následující kód:
 
@@ -572,7 +572,7 @@ public override void AwakeFromNib ()
 
 Nyní potřebujeme vytvořit naše tabulka zobrazení, dvakrát klikněte **Main.storyboard** soubor otevřete pro úpravy v Tvůrci rozhraní. Rozložení tabulku, kterou chcete vypadat podobně jako následující:
 
-[![Rozložení nové zobrazení tabulky](databinding-images/table02.png "rozložení nové zobrazení tabulky")](databinding-images/table02-large.png)
+[![Rozložení nové zobrazení tabulky](databinding-images/table02.png "rozložení nové zobrazení tabulky")](databinding-images/table02-large.png#lightbox)
 
 Je potřeba přidat **řadiče pole** zajistit vázaných dat do našich tabulky, postupujte takto:
 
@@ -581,7 +581,7 @@ Je potřeba přidat **řadiče pole** zajistit vázaných dat do našich tabulky
     ![Výběr řadiče pole z knihovny](databinding-images/table03.png "výběr řadiče pole z knihovny")
 2. Vyberte **řadiče pole** v **rozhraní hierarchie** a přepněte do **atribut Inspector**:  
 
-    [![Výběr Inspector atributy](databinding-images/table04.png "výběr Inspector atributy")](databinding-images/table04-large.png)
+    [![Výběr Inspector atributy](databinding-images/table04.png "výběr Inspector atributy")](databinding-images/table04-large.png#lightbox)
 3. Zadejte `PersonModel` pro **název třídy**, klikněte **Plus** tlačítko a přidejte tři klíče. Název je `Name`, `Occupation` a `isManager`:  
 
     ![Přidání požadovaných klíče cesty](databinding-images/table05.png "přidání požadované klíče cesty")
@@ -595,22 +595,22 @@ Nyní potřebujeme vytvořit vazbu naše tabulka zobrazení řadič pole, postup
 
 1. Vyberte zobrazení, tabulky a **vazby Inspector**:  
 
-    [![Výběr Inspector vazby](databinding-images/table07.png "výběr Inspector vazby")](databinding-images/table07-large.png)
+    [![Výběr Inspector vazby](databinding-images/table07.png "výběr Inspector vazby")](databinding-images/table07-large.png#lightbox)
 2. V části **obsahu tabulky** turndown, vyberte **vytvořit vazbu na** a **řadiče pole**. Zadejte `arrangedObjects` pro **řadiče klíč** pole:  
 
     ![Definování klíč řadič](databinding-images/table08.png "definování řadiče klíč")
 3. Vyberte **buňku zobrazení tabulky** pod **zaměstnanec** sloupce. V **vazby Inspector** pod **hodnotu** turndown, vyberte **vytvořit vazbu na** a **tabulce buňku zobrazení**. Zadejte `objectValue.Name` pro **modelu cestu ke klíči**:  
 
-    [![Nastavení cestu ke klíči modelu](databinding-images/table09.png "nastavení cestu ke klíči modelu")](databinding-images/table09-large.png)
+    [![Nastavení cestu ke klíči modelu](databinding-images/table09.png "nastavení cestu ke klíči modelu")](databinding-images/table09-large.png#lightbox)
 4. `objectValue` je aktuální `PersonModel` v poli je spravováno nástrojem řadič pole.
 5. Vyberte **buňku zobrazení tabulky** pod **povolání** sloupce. V **vazby Inspector** pod **hodnotu** turndown, vyberte **vytvořit vazbu na** a **tabulce buňku zobrazení**. Zadejte `objectValue.Occupation` pro **modelu cestu ke klíči**:  
 
-    [![Nastavení cestu ke klíči modelu](databinding-images/table10.png "nastavení cestu ke klíči modelu")](databinding-images/table10-large.png)
+    [![Nastavení cestu ke klíči modelu](databinding-images/table10.png "nastavení cestu ke klíči modelu")](databinding-images/table10-large.png#lightbox)
 6. Uložte změny a vrátit k sadě Visual Studio pro Mac k synchronizaci s Xcode.
 
 Pokud jsme aplikaci spustit, v tabulce bude možné naplnit naše pole `PersonModels`:
 
-[![Spuštění aplikace](databinding-images/table11.png "spuštění aplikace")](databinding-images/table11-large.png)
+[![Spuštění aplikace](databinding-images/table11.png "spuštění aplikace")](databinding-images/table11-large.png#lightbox)
 
 <a name="Outline_View_Data_Binding" />
 
@@ -620,7 +620,7 @@ Datová vazba proti zobrazení osnovy je velmi podobné vazby proti zobrazení t
 
 Nejprve umožňuje přidat nový **View Controller** k naší **Main.storyboard** souborů v rozhraní tvůrce a název své třídy `OutlineViewController`: 
 
-[![Přidávání nového řadiče zobrazení](databinding-images/outline01.png "přidávání nového řadiče zobrazení")](databinding-images/outline01-large.png)
+[![Přidávání nového řadiče zobrazení](databinding-images/outline01.png "přidávání nového řadiče zobrazení")](databinding-images/outline01-large.png#lightbox)
 
 V dalším kroku tady upravit **OutlineViewController.cs** souboru (který se automaticky přidá do našich projekt) a zveřejněte pole (`NSArray`) z `PersonModel` třídy, že jsme bude datové vazby naše formuláře. Přidejte následující kód:
 
@@ -690,7 +690,7 @@ public override void AwakeFromNib ()
 
 Nyní potřebujeme vytvořit naše zobrazení osnovy, dvakrát klikněte **Main.storyboard** soubor otevřete pro úpravy v Tvůrci rozhraní. Rozložení tabulku, kterou chcete vypadat podobně jako následující:
 
-[![Vytváření zobrazení osnovy](databinding-images/outline02.png "vytváření zobrazení osnovy")](databinding-images/outline02-large.png)
+[![Vytváření zobrazení osnovy](databinding-images/outline02.png "vytváření zobrazení osnovy")](databinding-images/outline02-large.png#lightbox)
 
 Je potřeba přidat **stromu řadiče** poskytovat vázané data do našich outline, postupujte takto:
 
@@ -699,7 +699,7 @@ Je potřeba přidat **stromu řadiče** poskytovat vázané data do našich outl
     ![Výběr řadič stromu z knihovny](databinding-images/outline03.png "výběr řadič stromu z knihovny")
 2. Vyberte **stromu řadič** v **rozhraní hierarchie** a přepněte do **atribut Inspector**:  
 
-    [![Výběr atributu Inspector](databinding-images/outline04.png "výběr atributu Inspector")](databinding-images/outline04-large.png)
+    [![Výběr atributu Inspector](databinding-images/outline04.png "výběr atributu Inspector")](databinding-images/outline04-large.png#lightbox)
 3. Zadejte `PersonModel` pro **název třídy**, klikněte **Plus** tlačítko a přidejte tři klíče. Název je `Name`, `Occupation` a `isManager`:  
 
     ![Přidání požadovaných klíče cesty](databinding-images/outline05.png "přidání požadované klíče cesty")
@@ -717,22 +717,22 @@ Nyní potřebujeme vytvořit vazbu naše zobrazení osnovy řadič stromu, postu
 
 1. Vyberte zobrazení osnovy a v **vazby Inspector** vyberte:  
 
-    [![Výběr Inspector vazby](databinding-images/outline07.png "výběr Inspector vazby")](databinding-images/outline07-large.png)
+    [![Výběr Inspector vazby](databinding-images/outline07.png "výběr Inspector vazby")](databinding-images/outline07-large.png#lightbox)
 2. V části **Outline zobrazit obsah** turndown, vyberte **vytvořit vazbu na** a **stromu řadiče**. Zadejte `arrangedObjects` pro **řadiče klíč** pole:  
 
     ![Nastavení klíče řadič](databinding-images/outline08.png "nastavení klíče řadiče")
 3. Vyberte **buňku zobrazení tabulky** pod **zaměstnanec** sloupce. V **vazby Inspector** pod **hodnotu** turndown, vyberte **vytvořit vazbu na** a **tabulce buňku zobrazení**. Zadejte `objectValue.Name` pro **modelu cestu ke klíči**:  
 
-    [![Zadat cestu ke klíči modelu](databinding-images/outline09.png "zadáte cestu ke klíči modelu")](databinding-images/outline09-large.png)
+    [![Zadat cestu ke klíči modelu](databinding-images/outline09.png "zadáte cestu ke klíči modelu")](databinding-images/outline09-large.png#lightbox)
 4. `objectValue` je aktuální `PersonModel` v poli spravován adaptérem stromu.
 5. Vyberte **buňku zobrazení tabulky** pod **povolání** sloupce. V **vazby Inspector** pod **hodnotu** turndown, vyberte **vytvořit vazbu na** a **tabulce buňku zobrazení**. Zadejte `objectValue.Occupation` pro **modelu cestu ke klíči**:  
 
-    [![Zadat cestu ke klíči modelu](databinding-images/outline10.png "zadáte cestu ke klíči modelu")](databinding-images/outline10-large.png)
+    [![Zadat cestu ke klíči modelu](databinding-images/outline10.png "zadáte cestu ke klíči modelu")](databinding-images/outline10-large.png#lightbox)
 6. Uložte změny a vrátit k sadě Visual Studio pro Mac k synchronizaci s Xcode.
 
 Pokud jsme aplikaci spustit, bude možné obrys naplnit naše pole `PersonModels`:
 
-[![Spuštění aplikace](databinding-images/outline11.png "spuštění aplikace")](databinding-images/outline11-large.png)
+[![Spuštění aplikace](databinding-images/outline11.png "spuštění aplikace")](databinding-images/outline11-large.png#lightbox)
 
 ### <a name="collection-view-data-binding"></a>Kolekce zobrazení datová vazba
 
@@ -860,7 +860,7 @@ For more information on working with Collection Views, please see our [Collectio
 
 Že uděláte chybu v datové vazby může mít za následek _nativní havárií_ v nespravované kódu a způsobit, že aplikace Xamarin.Mac úplné selhání s `SIGABRT` Chyba:
 
-[![Příklad dialogového okna nativní havárií](databinding-images/debug01.png "příklad dialogového okna nativní havárií")](databinding-images/debug01-large.png)
+[![Příklad dialogového okna nativní havárií](databinding-images/debug01.png "příklad dialogového okna nativní havárií")](databinding-images/debug01-large.png#lightbox)
 
 Během vazby dat obvykle existují čtyři hlavní příčiny nativní dojde k chybě:
 
@@ -873,15 +873,15 @@ Během vazby dat obvykle existují čtyři hlavní příčiny nativní dojde k c
 
 Umožňuje způsobit nativní havárie v naší datové vazby, proto jsme ukazují, jak najít a opravit. V Tvůrci rozhraní, zkuste změnit naše vazby první popisek v příkladu zobrazení kolekce z `Name` k `Title`:
 
-[![Úpravy klíč vazby](databinding-images/debug02.png "úpravy klíč vazby")](databinding-images/debug02-large.png)
+[![Úpravy klíč vazby](databinding-images/debug02.png "úpravy klíč vazby")](databinding-images/debug02-large.png#lightbox)
 
 Umožňuje změnu uložíte, přepněte zpět na Visual Studio pro Mac synchronizovat s Xcode a spuštění aplikace. Při zobrazení kolekce se zobrazí, bude v aplikaci na okamžik chybě s `SIGABRT` chyba (jak je znázorněno **výstupu aplikace** v sadě Visual Studio pro Mac) vzhledem k tomu, `PersonModel` nevystavuje vlastnost klíčem `Title`:
 
-[![Příklad chybu vazby](databinding-images/debug03.png "příklad chybu vazby")](databinding-images/debug03-large.png)
+[![Příklad chybu vazby](databinding-images/debug03.png "příklad chybu vazby")](databinding-images/debug03-large.png#lightbox)
 
 Pokud jsme posunete začátek chyby v **výstupu aplikace** vidíme klíč k řešení problému:
 
-[![Hledání problém v protokolu chyb](databinding-images/debug04.png "hledání problém v protokolu chyb")](databinding-images/debug04-large.png)
+[![Hledání problém v protokolu chyb](databinding-images/debug04.png "hledání problém v protokolu chyb")](databinding-images/debug04-large.png#lightbox)
 
 Tento řádek nám oznamuje, že klíč `Title` neexistuje v objektu, který jsme vazbu k. Pokud dojde ke změně vazby zpět do `Name` v Tvůrci rozhraní, uložit, synchronizace, znovu sestavit a spustit, bude aplikace spuštěná podle očekávání bez problém.
 

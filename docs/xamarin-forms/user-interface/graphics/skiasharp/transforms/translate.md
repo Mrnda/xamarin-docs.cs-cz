@@ -4,14 +4,15 @@ description: "Další informace o použití transformace přeložit se posunou S
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: BD28ADA1-49F9-44E2-A548-46024A29882F
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 491c82406dafceb876ddbb4a0a7204447b95f57d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cac2479af2778af6043a85583f9d7b518748d7da
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="the-translate-transform"></a>Transformace přeložit
 
@@ -68,7 +69,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Následných obdélníků skapat dolní části stránky:
 
-[![](translate-images/accumulatedtranslate-small.png "Trojitá snímek obrazovky stránky nahromadění převede")](translate-images/accumulatedtranslate-large.png "Trojitá snímek obrazovky stránky nahromadění převede")
+[![](translate-images/accumulatedtranslate-small.png "Trojitá snímek obrazovky stránky nahromadění převede")](translate-images/accumulatedtranslate-large.png#lightbox "Trojitá snímek obrazovky stránky nahromadění převede")
 
 Pokud jsou faktory Akumulovaná překlad `dx` a `dy`, a zadáte v kreslení funkce bod je (`x`, `y`), pak vykreslením grafického objektu v bodě (`x'`, `y'`), kde:
 
@@ -125,7 +126,7 @@ using (SKPaint textPaint = new SKPaint())
 
 V každé tři příklady `Translate` je volána pro zobrazení textu k posunutí z umístění, které poskytují `x` a `y` proměnné. Text se potom zobrazí znovu v jiné barvy s neplatí překlad:
 
-[![](translate-images/translatetexteffects-small.png "Trojitá snímek obrazovky stránky převede Text důsledky")](translate-images/translatetexteffects-large.png "Trojitá snímek obrazovky stránky převede Text efekty")
+[![](translate-images/translatetexteffects-small.png "Trojitá snímek obrazovky stránky převede Text důsledky")](translate-images/translatetexteffects-large.png#lightbox "Trojitá snímek obrazovky stránky převede Text efekty")
 
 Každý tři příklad ukazuje jiný způsob negace `Translate` volání:
 
@@ -209,7 +210,7 @@ public class HendecagramArrayPage : ContentPage
 
 Tady je výsledek:
 
-[![](translate-images/hendecagramarray-small.png "Trojitá snímek obrazovky stránky pole Hendecagram")](translate-images/hendecagramarray-large.png "Trojitá snímek obrazovky stránky Hendecagram pole")
+[![](translate-images/hendecagramarray-small.png "Trojitá snímek obrazovky stránky pole Hendecagram")](translate-images/hendecagramarray-large.png#lightbox "Trojitá snímek obrazovky stránky Hendecagram pole")
 
 Animace často zahrnuje transformací. **Hendecagram animace** stránky přesune hvězdičky odkazoval 11 v kruh. [ `HendecagramAnimationPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/HendecagramAnimationPage.cs) Třídy začíná některá pole a přepsání `OnAppearing` a `OnDisappearing` metody pro spuštění a zastavení Xamarin.Forms časovače:
 
@@ -294,7 +295,7 @@ public class HendecagramAnimationPage : ContentPage
 
 `PaintSurface` Volání obslužné rutiny `Translate` metodu dvakrát, nejprve převede na střed plátna a potom nepřeloží na obvodu kruhu soustředí na (0, 0). Radius kruhu je nastaven jako co největší přitom hvězdičkou v hranicích stránky:
 
-[![](translate-images/hendecagramanimation-small.png "Trojitá snímek obrazovky stránky animace Hendecagram")](translate-images/hendecagramanimation-large.png "Trojitá snímek obrazovky stránky Hendecagram animace")
+[![](translate-images/hendecagramanimation-small.png "Trojitá snímek obrazovky stránky animace Hendecagram")](translate-images/hendecagramanimation-large.png#lightbox "Trojitá snímek obrazovky stránky Hendecagram animace")
 
 Všimněte si, že hvězdičkou udržuje stejné orientaci, jako je zásadní kolem center stránky. Není otočit vůbec. To je úlohu pro rotační transformace.
 

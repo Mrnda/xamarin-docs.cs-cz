@@ -7,21 +7,20 @@ ms.assetid: 0C0BBEC0-C84A-4558-B905-4EF81FCD62F9
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 12/22/2017
-ms.openlocfilehash: f275ff6c7d3e6eeec5eb3878cc39633d70238f66
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 1e90ebe55dbec9fdcc57b9eaab99e614fdc5cbbc
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="google-emulator-manager"></a>Správce emulátorů Google
 
 Po ověření, zda je povoleno hardwarová akcelerace (jak je popsáno v [Android emulátoru hardwarovou akceleraci](~/android/get-started/installation/android-emulator/hardware-acceleration.md)), dalším krokem je vytvoření virtuálního zařízení používat pro testování a ladění aplikace. Můžete použít starší verze správce emulátorů Google (také označované jako *Manager virtuální zařízení Android (AVD)*) Chcete-li vytvořit virtuální zařízení za účelem použití emulátoru Android SDK.
 
 > [!NOTE]
-> **Poznámka:** při cílení Android 8.0 Oreo, je nutné použít [Správce zařízení Xamarin Android](~/android/get-started/installation/android-emulator/xamarin-device-manager.md) vytvořit a nakonfigurovat virtuální zařízení.
+> Pokud cílíte na Android 8.0 Oreo, musíte použít [Správce zařízení Xamarin Android](~/android/get-started/installation/android-emulator/xamarin-device-manager.md) vytvořit a nakonfigurovat virtuální zařízení.
 
-<a name="sysimg" />
 
 ## <a name="installing-system-images"></a>Instalace bitové kopie systému
 
@@ -46,11 +45,11 @@ Na následujícím snímku obrazovky **Intel x86 Atom** bitové kopie se nainsta
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Výběr bitové kopie systému Android 6.0 x86 emulátoru systému Android](google-emulator-manager-images/win/03-select-x86-images-sml.png)](google-emulator-manager-images/win/03-select-x86-images.png)
+[![Výběr bitové kopie systému Android 6.0 x86 emulátoru systému Android](google-emulator-manager-images/win/03-select-x86-images-sml.png)](google-emulator-manager-images/win/03-select-x86-images.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Výběr bitové kopie systému Android 6.0 x86 emulátoru systému Android](google-emulator-manager-images/mac/02-select-x86-images-sml.png)](google-emulator-manager-images/mac/02-select-x86-images.png)
+[![Výběr bitové kopie systému Android 6.0 x86 emulátoru systému Android](google-emulator-manager-images/mac/02-select-x86-images-sml.png)](google-emulator-manager-images/mac/02-select-x86-images.png#lightbox)
 
 -----
 
@@ -69,23 +68,21 @@ Pokud vyvíjíte aplikace pro Android nosit, nainstalujte následující bitové
 Když jsou nainstalovány tyto bitové kopie systému, můžete vytvořit **x86**– na základě virtuální zařízení se systémem Android výběrem odpovídající úroveň rozhraní API a CPU/ABI volby při konfiguraci virtuálních zařízení (to je popsána dále).
 
 
-<a name="virtualdevice" />
-
 ## <a name="configuring-virtual-devices"></a>Konfigurace virtuálního zařízení
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 Virtuální zařízení je nakonfigurováno pomocí **správce emulátoru Android** (také označuje jako _Android správce virtuálního zařízení_ nebo _správce AVD_). Chcete-li spustit Správce emulátoru Android ze sady Visual Studio, klikněte na tlačítko **správce emulátoru Android** ikonu na panelu nástrojů:
 
-[ ![Umístění ikony AVD](google-emulator-manager-images/win/04-avd-icon-sml.png)](google-emulator-manager-images/win/04-avd-icon.png)
+[![Umístění ikony AVD](google-emulator-manager-images/win/04-avd-icon-sml.png)](google-emulator-manager-images/win/04-avd-icon.png#lightbox)
 
 Můžete také spustit Správce emulátoru Android z řádku nabídek výběrem **nástroje > Android > Správce emulátoru Android**:
 
-[![Umístění položky nabídky Správce emulátoru Android](google-emulator-manager-images/win/05-avd-manager-menu-item-sml.png)](google-emulator-manager-images/win/05-avd-manager-menu-item.png)
+[![Umístění položky nabídky Správce emulátoru Android](google-emulator-manager-images/win/05-avd-manager-menu-item-sml.png)](google-emulator-manager-images/win/05-avd-manager-menu-item.png#lightbox)
 
 **Manager virtuální zařízení Android (AVD)** dialogové okno zobrazí seznam existující virtuální zařízení se systémem Android:
 
-[![Android správce virtuálního zařízení](google-emulator-manager-images/win/06-virtual-device-manager-sml.png)](google-emulator-manager-images/win/06-virtual-device-manager.png)
+[![Android správce virtuálního zařízení](google-emulator-manager-images/win/06-virtual-device-manager-sml.png)](google-emulator-manager-images/win/06-virtual-device-manager.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -93,17 +90,16 @@ Virtuální zařízení je nakonfigurováno pomocí **správce emulátoru Androi
 
 Chcete-li spustit Správce emulátoru Android z řádku nabídek výběrem **nástroje > Správce emulátorů Google**:
 
-[![Umístění položky nabídky Správce emulátoru Android](google-emulator-manager-images/mac/03-avd-manager-menu-item-sml.png)](google-emulator-manager-images/mac/03-avd-manager-menu-item.png)
+[![Umístění položky nabídky Správce emulátoru Android](google-emulator-manager-images/mac/03-avd-manager-menu-item-sml.png)](google-emulator-manager-images/mac/03-avd-manager-menu-item.png#lightbox)
 
 **Manager virtuální zařízení Android (AVD)** dialogové okno zobrazí seznam existující virtuální zařízení se systémem Android:
 
-[![Android správce virtuálního zařízení](google-emulator-manager-images/mac/05-virtual-device-manager-sml.png)](google-emulator-manager-images/mac/05-virtual-device-manager.png)
+[![Android správce virtuálního zařízení](google-emulator-manager-images/mac/05-virtual-device-manager-sml.png)](google-emulator-manager-images/mac/05-virtual-device-manager.png#lightbox)
 
 -----
 
 Můžete vytvořit nové bitové kopie virtuálního zařízení s vlastnostmi různých zařízení a úrovně rozhraní API &ndash; v další části vysvětluje, jak vytvořit vlastní zařízení definice a virtuální zařízení.
 
-<a name="custom-def" />
 
 ### <a name="creating-a-custom-device-definition"></a>Vytváření vlastních zařízení definice
 
@@ -111,11 +107,11 @@ Chcete-li vytvořit definici vlastní zařízení, klikněte na tlačítko **vyt
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Definice vlastního zařízení podle Nexus 6](google-emulator-manager-images/win/07-custom-device-sml.png)](google-emulator-manager-images/win/07-custom-device.png)
+[![Definice vlastního zařízení podle Nexus 6](google-emulator-manager-images/win/07-custom-device-sml.png)](google-emulator-manager-images/win/07-custom-device.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Definice vlastního zařízení podle Nexus 6](google-emulator-manager-images/mac/06-custom-device-sml.png)](google-emulator-manager-images/mac/06-custom-device.png)
+[![Definice vlastního zařízení podle Nexus 6](google-emulator-manager-images/mac/06-custom-device-sml.png)](google-emulator-manager-images/mac/06-custom-device.png#lightbox)
 
 -----
 
@@ -153,11 +149,11 @@ Po kliknutí na tlačítko **OK**, nová konfigurace zařízení se zobrazí v s
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![MyNexus přidán do seznamu zařízení](google-emulator-manager-images/win/09-added-to-list-sml.png)](google-emulator-manager-images/win/09-added-to-list.png)
+[![MyNexus přidán do seznamu zařízení](google-emulator-manager-images/win/09-added-to-list-sml.png)](google-emulator-manager-images/win/09-added-to-list.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![MyNexus přidán do seznamu zařízení](google-emulator-manager-images/mac/08-added-to-list-sml.png)](google-emulator-manager-images/mac/08-added-to-list.png)
+[![MyNexus přidán do seznamu zařízení](google-emulator-manager-images/mac/08-added-to-list-sml.png)](google-emulator-manager-images/mac/08-added-to-list.png#lightbox)
 
 -----
 
@@ -165,16 +161,15 @@ Nové vlastní virtuální zařízení je také přidat do rozevírací nabídky
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![MyNexus přidány do rozevírací nabídky zařízení](google-emulator-manager-images/win/10-available-custom-device-sml.png)](google-emulator-manager-images/win/10-available-custom-device.png)
+[![MyNexus přidány do rozevírací nabídky zařízení](google-emulator-manager-images/win/10-available-custom-device-sml.png)](google-emulator-manager-images/win/10-available-custom-device.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![MyNexus přidány do rozevírací nabídky zařízení](google-emulator-manager-images/mac/09-available-custom-device-sml.png)](google-emulator-manager-images/mac/09-available-custom-device.png)
+[![MyNexus přidány do rozevírací nabídky zařízení](google-emulator-manager-images/mac/09-available-custom-device-sml.png)](google-emulator-manager-images/mac/09-available-custom-device.png#lightbox)
 
 -----
 
 
-<a name="cloning" />
 
 ### <a name="cloning-a-device-definition"></a>Klonování definici zařízení
 
@@ -182,11 +177,11 @@ Je možné vybrat existující definice zařízení a *klon* ji k vytvoření no
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Seznam definic dostupného zařízení](google-emulator-manager-images/win/11-device-definitions-sml.png)](google-emulator-manager-images/win/11-device-definitions.png)
+[![Seznam definic dostupného zařízení](google-emulator-manager-images/win/11-device-definitions-sml.png)](google-emulator-manager-images/win/11-device-definitions.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Seznam definic dostupného zařízení](google-emulator-manager-images/mac/10-device-definitions-sml.png)](google-emulator-manager-images/mac/10-device-definitions.png)
+[![Seznam definic dostupného zařízení](google-emulator-manager-images/mac/10-device-definitions-sml.png)](google-emulator-manager-images/mac/10-device-definitions.png#lightbox)
 
 -----
 
@@ -194,11 +189,11 @@ Předem nakonfigurovaná zařízení v tomto seznamu nemůže být upraven &ndas
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Dialogové okno zařízení klonování](google-emulator-manager-images/win/12-clone-device-sml.png)](google-emulator-manager-images/win/12-clone-device.png)
+[![Dialogové okno zařízení klonování](google-emulator-manager-images/win/12-clone-device-sml.png)](google-emulator-manager-images/win/12-clone-device.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Dialogové okno zařízení klonování](google-emulator-manager-images/mac/11-clone-device-sml.png)](google-emulator-manager-images/mac/11-clone-device.png)
+[![Dialogové okno zařízení klonování](google-emulator-manager-images/mac/11-clone-device-sml.png)](google-emulator-manager-images/mac/11-clone-device.png#lightbox)
 
 -----
 
@@ -210,7 +205,7 @@ Na snímku obrazovky další název se změní na **Nexus 5 vlastní** a paramet
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Vlastní Nexus 5 AVD](google-emulator-manager-images/mac/12-custom-nexus-sml.png)](google-emulator-manager-images/mac/12-custom-nexus.png)
+[![Vlastní Nexus 5 AVD](google-emulator-manager-images/mac/12-custom-nexus-sml.png)](google-emulator-manager-images/mac/12-custom-nexus.png#lightbox)
 
 -----
 
@@ -218,11 +213,11 @@ Kliknutím na tlačítko **klon zařízení** vytvoří nové definice zařízen
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Vlastní nexus 5 se zobrazí jako nové definice zařízení uživatele](google-emulator-manager-images/win/14-new-definition-sml.png)](google-emulator-manager-images/win/14-new-definition.png)
+[![Vlastní nexus 5 se zobrazí jako nové definice zařízení uživatele](google-emulator-manager-images/win/14-new-definition-sml.png)](google-emulator-manager-images/win/14-new-definition.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Vlastní nexus 5 se zobrazí jako nové definice zařízení uživatele](google-emulator-manager-images/mac/13-new-definition-sml.png)](google-emulator-manager-images/mac/13-new-definition.png)
+[![Vlastní nexus 5 se zobrazí jako nové definice zařízení uživatele](google-emulator-manager-images/mac/13-new-definition-sml.png)](google-emulator-manager-images/mac/13-new-definition.png#lightbox)
 
 -----
 
@@ -230,11 +225,11 @@ Všimněte si, že každý definice vytvořené uživatelem zařízení se zobra
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Vytvoření AVD z definice zařízení Nexus 5 vlastní uživatele](google-emulator-manager-images/win/15-create-avd-sml.png)](google-emulator-manager-images/win/15-create-avd.png)
+[![Vytvoření AVD z definice zařízení Nexus 5 vlastní uživatele](google-emulator-manager-images/win/15-create-avd-sml.png)](google-emulator-manager-images/win/15-create-avd.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Vytvoření AVD z definice zařízení Nexus 5 vlastní uživatele](google-emulator-manager-images/mac/14-create-avd-sml.png)](google-emulator-manager-images/mac/14-create-avd.png)
+[![Vytvoření AVD z definice zařízení Nexus 5 vlastní uživatele](google-emulator-manager-images/mac/14-create-avd-sml.png)](google-emulator-manager-images/mac/14-create-avd.png#lightbox)
 
 -----
 
@@ -242,11 +237,11 @@ Po **OK** po kliknutí na vlastní konfigurace zařízení se zobrazí v seznamu
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Přidat nové vlastní AVD do zařízení rozevírací nabídky](google-emulator-manager-images/win/16-new-avd-sml.png)](google-emulator-manager-images/win/16-new-avd.png)
+[![Přidat nové vlastní AVD do zařízení rozevírací nabídky](google-emulator-manager-images/win/16-new-avd-sml.png)](google-emulator-manager-images/win/16-new-avd.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Přidat nové vlastní AVD do zařízení rozevírací nabídky](google-emulator-manager-images/mac/15-new-avd-sml.png)](google-emulator-manager-images/mac/15-new-avd.png)
+[![Přidat nové vlastní AVD do zařízení rozevírací nabídky](google-emulator-manager-images/mac/15-new-avd-sml.png)](google-emulator-manager-images/mac/15-new-avd.png#lightbox)
 
 -----
 

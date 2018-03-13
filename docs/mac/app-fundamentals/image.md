@@ -3,16 +3,16 @@ title: "Obrázky"
 description: "Tento článek se zabývá práce s obrázky a ikony v aplikaci Xamarin.Mac. Popisuje vytváření a správa bitových kopií bylo nutné vytvořit ikona vaší aplikace a pomocí bitové kopie v kódu jazyka C# a rozhraní tvůrce pro Xcode."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 675B9405-D9A7-49F0-94AD-417F10A71D11
+ms.assetid: C6B539C2-FC6A-4C38-B839-32BFFB9B16A7
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: f12b2af0c9325796db63fcd65af135f54277ece0
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: d8098afea87765166db8318b76adf250818a0a6f
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="images"></a>Obrázky
 
@@ -34,7 +34,7 @@ Existuje několik způsobů této bitové kopie, které prostředky se používa
 
 Kromě toho systému macOS poskytuje sadu předdefinovaných bitových kopií, které lze použít v celé vaší aplikaci.
 
-[![Příklad spuštění aplikace](image-images/intro01.png "příklad spuštění aplikace")](image-images/intro01-large.png)
+[![Příklad spuštění aplikace](image-images/intro01.png "příklad spuštění aplikace")](image-images/intro01-large.png#lightbox)
 
 V tomto článku vám nabídneme základní informace o práci s obrázky a ikony v aplikaci Xamarin.Mac. Vysoce navržený na spolupracovat [Hello, Mac](~/mac/get-started/hello-mac.md) článek nejprve, konkrétně [Úvod do Xcode a rozhraní tvůrce](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) a [výstupy a akce](~/mac/get-started/hello-mac.md#Outlets_and_Actions) oddíly, jak se popisuje klíčové koncepty a techniky, které budeme používat v tomto článku.
 
@@ -59,18 +59,18 @@ Jak jsme uvedli výše, **Asset katalogů bitovou kopii sady** obsahovat všechn
     ![Výběr Assets.xcassets](image-images/imageset01.png "výběr Assets.xcassets")
 2. Klikněte pravým tlačítkem na **seznamu datových zdrojů** a vyberte **nastavit novou bitovou kopii**: 
 
-    [![Přidání nové bitové kopie sady](image-images/imageset02.png "přidání nové bitové kopie sady")](image-images/imageset02-large.png)
+    [![Přidání nové bitové kopie sady](image-images/imageset02.png "přidání nové bitové kopie sady")](image-images/imageset02-large.png#lightbox)
 3. Vyberte nové sady bitové kopie a zobrazí se editoru: 
 
-    [![Výběr nové image sady](image-images/imageset03.png "výběr nové image sady")](image-images/imageset03-large.png)
+    [![Výběr nové image sady](image-images/imageset03.png "výběr nové image sady")](image-images/imageset03-large.png#lightbox)
 4. Zde jsme přetáhněte do bitových kopií pro každou z nejrůznějších zařízení a řešení vyžaduje. 
 5. Dvakrát klikněte na nové bitové kopie sady **název** v **seznamu datových zdrojů** ho chcete upravit: 
 
-    [![Název úpravy bitovou kopii sady](image-images/imageset04.png "název úpravy bitovou kopii sady.")](image-images/imageset04-large.png)
+    [![Název úpravy bitovou kopii sady](image-images/imageset04.png "název úpravy bitovou kopii sady.")](image-images/imageset04-large.png#lightbox)
     
 Speciální **vektoru** třídy jako přidané do **bitovou kopii sady** , umožňuje zahrnout _PDF_ formátu vektoru bitové kopie v casset místo včetně rastrový obrázek jednotlivých souborů v různá řešení. Tuto metodu použijete, zadáte soubor jednoho vektoru pro  **@1x**  řešení (ve formátu jako soubor PDF vektoru) a  **@2x**  a  **@3x**  verze souboru, bude vygenerována v době kompilace a součástí sady aplikace.
 
-[![Obrázek nastavení rozhraní editoru](image-images/imageset05.png "bitovou kopii nastavit rozhraní editoru")](image-images/imageset05-large.png)
+[![Obrázek nastavení rozhraní editoru](image-images/imageset05.png "bitovou kopii nastavit rozhraní editoru")](image-images/imageset05-large.png#lightbox)
 
 Například, pokud zahrnete `MonkeyIcon.pdf` souboru jako vektoru katalog Asset s rozlišením 150px x 150px, následující rastrový obrázek prostředky by obsažených v sadě konečné aplikace, když jeho kompilace:
 
@@ -115,7 +115,7 @@ Než budete moct použít soubor bitové kopie v aplikaci Xamarin.Mac (buď v k�
     ![Přidání souboru](image-images/add01.png "přidání souboru")
 2. Z **přidat soubory** dialogové okno, vyberte soubory bitové kopie pro přidání do projektu, vyberte `BundleResource` pro **akce sestavení přepsání** a klikněte na tlačítko **otevřete** tlačítko:
 
-    [![Výběr souborů k přidání](image-images/add02.png "výběru souborů k přidání")](image-images/add02-large.png)
+    [![Výběr souborů k přidání](image-images/add02.png "výběru souborů k přidání")](image-images/add02-large.png#lightbox)
 3. Pokud soubory již nejsou v **prostředky** složku, zobrazí se dotaz, pokud chcete **kopie**, **přesunout** nebo **odkaz** soubory. Vyberte, které každý sady vašim potřebám, obvykle které budou **kopie**:
 
     ![Výběr akce Přidat](image-images/add04.png "výběrem přidat akci")
@@ -164,13 +164,13 @@ V rozhraní tvůrce použít bitovou kopii, postupujte takto:
      ![Prostředek obrázku v řešení pro](image-images/ib00.png "prostředek obrázku v řešení pro")
 2. Dvakrát klikněte **Main.storyboard** soubor otevřete pro úpravy v Tvůrci rozhraní: 
 
-     [![Úpravy hlavní storyboard](image-images/ib01.png "úpravy hlavní storyboard")](image-images/ib01-large.png)
+     [![Úpravy hlavní storyboard](image-images/ib01.png "úpravy hlavní storyboard")](image-images/ib01-large.png#lightbox)
 3. Přetáhněte prvku uživatelského rozhraní, která přebírá bitové kopie na návrhovou plochu (například **položka panelu nástrojů Image**): 
 
      ![Úpravy položka panelu nástrojů](image-images/ib02.png "úpravy položka panelu nástrojů")
 4. Vyberte bitovou kopii, která jste přidali do **prostředky** složku **název bitové kopie** rozevíracího seznamu: 
 
-     [![Vyberte bitovou kopii pro položku panelu nástrojů](image-images/ib03.png "výběru obrázku pro položku panelu nástrojů")](image-images/ib03-large.png)
+     [![Vyberte bitovou kopii pro položku panelu nástrojů](image-images/ib03.png "výběru obrázku pro položku panelu nástrojů")](image-images/ib03-large.png#lightbox)
 5. Vybraná image se zobrazí na návrhovou plochu: 
 
      ![Image se zobrazí v editoru panelu nástrojů](image-images/ib04.png "bitovou kopii se zobrazuje v editoru panelu nástrojů")
@@ -205,7 +205,7 @@ Založená na návrh vašeho systému macOS aplikace, může nastat situace, kdy
 
 K dosažení tohoto efektu, přepněte _vykreslení režimu_ majetku vaší bitové kopie do **Image šablony**:
 
-[![Nastavení image šablony](image-images/templateimage01.png "nastavení image šablony")](image-images/templateimage01-large.png)
+[![Nastavení image šablony](image-images/templateimage01.png "nastavení image šablony")](image-images/templateimage01-large.png#lightbox)
 
 Z rozhraní tvůrce Xcode přiřaďte Asset bitové kopie do ovládacího prvku uživatelského rozhraní:
 
@@ -337,7 +337,7 @@ view.TextField.AutoresizingMask = NSViewResizingMask.WidthSizable;
 
 Příklad výstupu:
 
-[![Příklad zobrazení obrázku v aplikaci](image-images/tables01.png "příklad zobrazení obrázku v aplikaci")](image-images/tables01-large.png)
+[![Příklad zobrazení obrázku v aplikaci](image-images/tables01.png "příklad zobrazení obrázku v aplikaci")](image-images/tables01-large.png#lightbox)
 
 Další informace o práci se zobrazení tabulek, najdete v tématu naše [zobrazení tabulek](~/mac/user-interface/table-view.md) dokumentaci.
 
@@ -440,7 +440,7 @@ view.TextField.AutoresizingMask = NSViewResizingMask.WidthSizable;
 
 Příklad výstupu:
 
-[![Příklad bitové kopie se zobrazí v zobrazení osnovy](image-images/outline01.png "příklad bitové kopie se zobrazí v zobrazení osnovy")](image-images/outline01-large.png)
+[![Příklad bitové kopie se zobrazí v zobrazení osnovy](image-images/outline01.png "příklad bitové kopie se zobrazí v zobrazení osnovy")](image-images/outline01-large.png#lightbox)
 
 Další informace o práci se zobrazení osnovy, najdete v tématu naše [zobrazení osnovy](~/mac/user-interface/outline-view.md) dokumentaci.
 

@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 10/25/2017
-ms.openlocfilehash: 43d1ef53933ca7867b834dbf118ec730ccbf71ac
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5cadaf5f41d940a0255113178d018b59b780eabc
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="using-cursoradapters"></a>Pomocí CursorAdapters
 
-<a name="overview" />
 
 ## <a name="overview"></a>Přehled
 
@@ -27,7 +26,6 @@ Android poskytuje třídy adaptér speciálně pro zobrazení dat z dotazu datab
 
 Kurzor adaptérů umožňují vysoce výkonné nemuseli probírat dlouhými seznamy data, která jsou uložená v SQLite. Kód náročné musí definovat dotazu SQL v `Cursor` objekt a potom popisují, jak vytvořit a naplnit zobrazení pro každý řádek.
 
-<a name="Creating_an_SQLite_Database" />
 
 ## <a name="creating-an-sqlite-database"></a>Vytváření databázi SQLite
 
@@ -63,7 +61,6 @@ class VegetableDatabase  : SQLiteOpenHelper {
 
 Dotaz kurzor *musí* mít sloupec celé číslo `_id` pro `CursorAdapter` pracovat. Pokud základní tabulka neobsahuje sloupec celé číslo s názvem `_id` pak použít alias sloupce pro jiný jedinečný celé číslo v `RawQuery` , která tvoří kurzor. Odkazovat [dokumenty Android](https://developer.xamarin.com/api/type/Android.Widget.CursorAdapter/) Další informace.
 
-<a name="Creating_the_Cursor" />
 
 ### <a name="creating-the-cursor"></a>Vytvoření kurzoru
 
@@ -85,7 +82,6 @@ cursor.Close();
 
 Jakmile aplikace má k dispozici databáze SQLite a vytvořil objekt kurzoru, jak je znázorněno, ho můžete využít buď `SimpleCursorAdapter` nebo podtřídou třídy `CusorAdapter` zobrazíte řádků v `ListView`.
 
-<a name="Using_SimpleCursorAdapter" />
 
 ## <a name="using-simplecursoradapter"></a>Pomocí SimpleCursorAdapter
 
@@ -119,7 +115,6 @@ listView.Adapter = new SimpleCursorAdapter (this, Android.Resource.Layout.Simple
 
 `SimpleCursorAdapter` je rychlý a jednoduchý způsob, jak zobrazit SQLite data `ListView`. Hlavní omezení je, že ho můžete vázat pouze hodnoty ve sloupcích zobrazíte ovládací prvky, neumožňuje měnit dalších aspektů rozložení řádků (například zobrazení nebo skrytí ovládacích prvků nebo změna vlastností).
 
-<a name="Subclassing_CursorAdapter" />
 
 ## <a name="subclassing-cursoradapter"></a>Vytvoření podtřídy CursorAdapter
 
@@ -133,7 +128,6 @@ Zadané funkční databáze SQLite, potřebujete jenom k přepsání dvě metody
 
 Podtřídy adaptér v předchozích příkladech mají metody, které se chcete vrátit počet řádků a k získání aktuální položky – `CursorAdapter` nevyžaduje těchto metod, protože tyto informace můžete shromažďovat informace ze samotné kurzor. Rozdělením vytvoření a naplnění jednotlivých zobrazení v těchto dvou metod `CursorAdapter` vynucuje zobrazení znovu použít. Jde na rozdíl od regulární adaptéru kde je možné ignorovat `convertView` parametr `BaseAdapter.GetView` metoda.
 
-<a name="Implementing_the_CursorAdapter" />
 
 ### <a name="implementing-the-cursoradapter"></a>Implementace CursorAdapter
 
@@ -159,7 +153,6 @@ public class HomeScreenCursorAdapter : CursorAdapter {
 }
 ```
 
-<a name="Assigning_the_CursorAdapter" />
 
 ### <a name="assigning-the-cursoradapter"></a>Přiřazení CursorAdapter
 

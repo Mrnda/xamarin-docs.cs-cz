@@ -3,16 +3,16 @@ title: "Přidání aplikace pro Universal Windows Platform (UWP)"
 description: "Tento článek vysvětluje, jak přidat projekt aplikace UPW do řešení Xamarin.Forms, která byla vytvořena v sadě Visual Studio for Mac."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: ADF99B78-F1BC-48DF-9128-01B93C4411C1
+ms.assetid: 34AAA045-64B8-4FDE-BB49-3FF0B4FFA17C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/16/2016
-ms.openlocfilehash: a3746165db83b5b8adba9adb862f9ea09f7069b9
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 36865dac6bd2ad13b9d3e286ab18a035c1edb3d8
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="adding-a-universal-windows-platform-uwp-app"></a>Přidání aplikace pro Universal Windows Platform (UWP)
 
@@ -38,7 +38,7 @@ Postupujte podle těchto pokynů můžete přidat aplikace pro UPW, který se sp
 
  4 . Ujistěte se, že nový projekt UWP budou vytvořeny **sestavení > nástroje Configuration Manager** okno (to pravděpodobně nebude došlo ve výchozím nastavení). Značky **sestavení** a **nasadit** polí pro univerzální projekt:
 
-  [ ![](universal-images/configuration-sml.png "Okno nástroje Configuration Manager")](universal-images/configuration.png "okno nástroje Configuration Manager")
+  [![](universal-images/configuration-sml.png "Okno nástroje Configuration Manager")](universal-images/configuration.png#lightbox "okno nástroje Configuration Manager")
 
  5 . Klikněte pravým tlačítkem na projekt a vyberte **Přidat > odkaz** a vytvořit odkaz na projekt aplikace Xamarin.Forms (PCL, .NET Standard nebo sdílený projekt).
 

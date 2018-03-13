@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: f7ded8fdc1274f7c98d8f7134f6a87c7ba767646
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9b0d757c951f9244beb093a0a9b13ac1d069b507
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="reporting-bugs"></a>Zasílání zpráv o chybách
 
@@ -70,7 +70,7 @@ Následující části se věnují známé problémy a jejich řešení.
 
 Ladicí program se připojí k Xamarin.Mac aplikací prostřednictvím protokolu TCP, což znamená, že ve výchozím nastavení při povolení sandboxing, nelze se připojit k aplikaci, takže pokud se pokusíte spustit aplikaci bez oprávnění povoleno, dojde k chybě *"nelze se připojit k ladicí program"*. 
 
-[![Úpravy oprávnění](troubleshooting-images/debug01.png "úpravy oprávnění")](troubleshooting-images/debug01-large.png)
+[![Úpravy oprávnění](troubleshooting-images/debug01.png "úpravy oprávnění")](troubleshooting-images/debug01-large.png#lightbox)
 
 **Povolit odchozí síťové připojení (klienta)** oprávnění, která je potřeba v ladicím programu, povolíte tento jeden, bude mít ladění normálně. Vzhledem k tomu, že ladíte nelze bez ní, jste aktualizovali jsme `CompileEntitlements` cíle pro `msbuild` pro každou aplikaci, která je v izolovaném prostoru pro ladění sestavení pouze automaticky přidat tato oprávnění pro oprávnění. Verze sestavení by měli používat oprávnění zadaný v souboru oprávnění ponechat beze změny.
 
@@ -80,7 +80,7 @@ Při zahrnutí 3. stran knihovny v aplikaci Xamarin.Mac, může dojde k chybě v
 
 To lze vyřešit tak, že otevřete Možnosti projektu Xamarin.Mac, přejdete na **sestavení Mac** > **internacionalizace** a kontrolu **– západ** mezinárodní prostředí:
 
-[![Možnosti sestavení úprav](troubleshooting-images/issue01.png "sestavení možnosti úprav")](troubleshooting-images/issue01-large.png)
+[![Možnosti sestavení úprav](troubleshooting-images/issue01.png "sestavení možnosti úprav")](troubleshooting-images/issue01-large.png#lightbox)
 
 ### <a name="failed-to-compile-mm5103"></a>Kompilace (mm5103) se nezdařila.
 
@@ -100,7 +100,7 @@ Pomocí nové sady Visual Studio pro Mac, když vytvoříte nový projekt aplika
 
 Pokud dvakrát kliknete **Entitlements.plist** editoru oprávnění souboru se zobrazí:
 
-[![Úpravy oprávnění](troubleshooting-images/entitlements02.png "úpravy oprávnění")](troubleshooting-images/entitlements02-large.png)
+[![Úpravy oprávnění](troubleshooting-images/entitlements02.png "úpravy oprávnění")](troubleshooting-images/entitlements02-large.png#lightbox)
 
 Pro existující projekty Xamarin.Mac, budete muset ručně vytvořit **Entitlements.plist** kliknutím pravým tlačítkem myši na projekt v souboru **řešení Pad** a výběrem **přidat**  >  **Nový soubor...** . Potom vyberte **Xamarin.Mac** > **prázdný seznam vlastností**:
 
@@ -108,7 +108,7 @@ Pro existující projekty Xamarin.Mac, budete muset ručně vytvořit **Entitlem
 
 Zadejte `Entitlements` pro název a klikněte **nový** tlačítko. Pokud váš projekt dříve zahrnuty soubor nároků, vyzve k přidání do projektu místo vytvoření nového souboru:
 
-[![Ověření přepsání soubor](troubleshooting-images/entitlements04.png "ověření přepsat souboru")](troubleshooting-images/entitlements04-large.png)
+[![Ověření přepsání soubor](troubleshooting-images/entitlements04.png "ověření přepsat souboru")](troubleshooting-images/entitlements04-large.png#lightbox)
 
 ## <a name="contacting-support-business-or-enterprise-licenses"></a>Kontaktování podpory (podnikové licence)
 

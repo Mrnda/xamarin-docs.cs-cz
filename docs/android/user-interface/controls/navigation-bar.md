@@ -7,18 +7,18 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 05/01/2017
-ms.openlocfilehash: 396ed31cba336976342a8dfb26f31eeda20cf494
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fe76c93afc149553e44b5e8fa29a21767becf5c5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="navigation-bar"></a>Navigační panel
 
 Android 4 zavedená nová systému uživatelské rozhraní funkce s názvem *navigační panel*, který poskytuje ovládací prvky pro navigaci na zařízeních, která nezahrnuje hardwaru tlačítka pro **Domů**, **zpět** , a **nabídky**.
 Následující snímek obrazovky ukazuje na navigačním panelu z Nexus Prime zařízení:
 
- [ ![Příklad zobrazí Android navigační panel](navigation-bar-images/19-navbar.png)](navigation-bar-images/19-navbar.png)
+ [![Příklad zobrazí Android navigační panel](navigation-bar-images/19-navbar.png)](navigation-bar-images/19-navbar.png#lightbox)
 
 Jsou k dispozici několik nových příznaky, řídit viditelnost navigačním panelu a jeho ovládací prvky, a také viditelnost panelu systému, která byla zavedena v systému Android 3. Příznaky jsou definovány v `Android.View.View` třídy a jsou uvedeny níže:
 
@@ -31,7 +31,7 @@ Tyto příznaky můžete použít pro všechna zobrazení v hierarchii zobrazen�
 
 Následující příklad ukazuje jednoduchou aplikaci, kde kliknete na některou z tlačítka změní `SystemUiVisibility`:
 
- [ ![Ukázka viditelný, nízká profil a skryté SystemUiVisibility snímky obrazovky](navigation-bar-images/18-systemuivisibility.png)](navigation-bar-images/18-systemuivisibility.png)
+ [![Ukázka viditelný, nízká profil a skryté SystemUiVisibility snímky obrazovky](navigation-bar-images/18-systemuivisibility.png)](navigation-bar-images/18-systemuivisibility.png#lightbox)
 
 Chcete-li změnit kód `SystemUiVisibility` nastaví vlastnost na `TextView` z každé tlačítko klikněte na obslužnou rutinu události, jak je uvedeno níže:
 

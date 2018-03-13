@@ -8,17 +8,17 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 1a49c3a3181b477b777de74b0eb53f5e0da6f041
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ea51dc2c7dadc5cc430df990c9ce79eac6e941da
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="homekit"></a>HomeKit
 
 _HomeKit je architektura společnosti Apple pro řízení zařízení domácí automatizace. Tento článek představuje HomeKit a popisuje konfiguraci testovací příslušenství v simulátoru HomeKit příslušenství a zápis jednoduchou aplikaci Xamarin.iOS k interakci se tyto příslušenství._
 
-[ ![](homekit-images/accessory01.png "Aplikace s povoleným příklad HomeKit")](homekit-images/accessory01.png)
+[![](homekit-images/accessory01.png "Aplikace s povoleným příklad HomeKit")](homekit-images/accessory01.png#lightbox)
 
 Společnost Apple vydala HomeKit v iOS 8 jako způsob, jak se bezproblémově integruje více zařízení domácí automatizace od různých dodavatelů do jednoho, souvislý jednotky. Podporou společný protokol pro zjišťování, konfiguraci a řízení domácí automatizace zařízení HomeKit umožňuje zařízení bez vztahu výrobců spolupracují, aniž byste museli jednotlivých dodavatelů museli koordinaci úsilí.
 
@@ -57,21 +57,21 @@ Postupujte takto:
 3. Pokud jste tak již neučinili, klikněte na **identifikátory** a vytvoření ID pro vaši aplikaci (například `com.company.appname`), jinak upravit své existující ID.
 4. Ujistěte se, že **HomeKit** služby bude zkontrolován pro dané ID: 
 
-    [ ![](homekit-images/provision01.png "Povolení služby HomeKit pro zadané ID.")](homekit-images/provision01.png)
+    [![](homekit-images/provision01.png "Povolení služby HomeKit pro zadané ID.")](homekit-images/provision01.png#lightbox)
 5. Uložte provedené změny.
 4. Klikněte na **profily zřizování** > **vývoj** a vytvořte nový vývoj pro svoji aplikaci profil pro zřizování: 
 
-    [ ![](homekit-images/provision02.png "Vytvořit nový vývoj zřizování profilu pro aplikaci")](homekit-images/provision02.png)
+    [![](homekit-images/provision02.png "Vytvořit nový vývoj zřizování profilu pro aplikaci")](homekit-images/provision02.png#lightbox)
 5. Stáhnout a nainstalovat nový profil pro zřizování nebo pomocí Xcode stáhněte a nainstalujte profil.
 6. Upravit možnosti projektu Xamarin.iOS a ujistěte se, že používáte profil zřizování, který jste právě vytvořili: 
 
-    [ ![](homekit-images/provision03.png "Vyberte právě vytvořený profil zřizování")](homekit-images/provision03.png)
+    [![](homekit-images/provision03.png "Vyberte právě vytvořený profil zřizování")](homekit-images/provision03.png#lightbox)
 7. Potom upravte vaše **Info.plist** souboru a ujistěte se, že používáte ID aplikace, která byla použita k vytvoření profilu pro zřizování: 
 
-    [ ![](homekit-images/provision04.png "Nastavit ID aplikace ")](homekit-images/provision04.png)
+    [![](homekit-images/provision04.png "Nastavit ID aplikace ")](homekit-images/provision04.png#lightbox)
 8. Nakonec upravte vaše **Entitlements.plist** souboru a ověřte, že **HomeKit** nárocích nebylo vybráno: 
 
-    [ ![](homekit-images/provision05.png "Povolit HomeKit nároku")](homekit-images/provision05.png)
+    [![](homekit-images/provision05.png "Povolit HomeKit nároku")](homekit-images/provision05.png#lightbox)
 9. Uložte změny do všechny soubory.
 
 S těmito nastaveními zavedené aplikace je nyní připraven pro přístup k rozhraní API HomeKit Framework. Podrobné informace o zřizování, najdete v tématu naše [zřizování zařízení](~/ios/get-started/installation/device-provisioning/index.md) a [zřizování aplikace](~/ios/get-started/installation/device-provisioning/index.md) příručky.
@@ -92,7 +92,7 @@ Postupujte takto:
 1. Ve webovém prohlížeči, navštivte [soubory ke stažení pro vývojáře Apple](https://developer.apple.com/download/more/?name=for%20Xcode)
 2. Stažení **další nástroje pro Xcode xxx** (kde xxx je verzi Xcode, který jste nainstalovali): 
 
-    [ ![](homekit-images/simulator01.png "Stáhnout další nástroje pro Xcode")](homekit-images/simulator01.png)
+    [![](homekit-images/simulator01.png "Stáhnout další nástroje pro Xcode")](homekit-images/simulator01.png#lightbox)
 3. Otevřete bitové kopie disku a nainstalovat nástroje ve vaší **aplikace** adresáře.
 
 S simulátoru příslušenství HomeKit nainstalován můžete vytvořit virtuální příslušenství pro testování.
@@ -103,22 +103,22 @@ Pokud chcete spustit simulátoru HomeKit příslušenství a vytvořit několik 
 
 1. Ve složce aplikace spusťte simulátoru příslušenství HomeKit: 
 
-    [ ![](homekit-images/simulator02.png "Simulátor HomeKit příslušenství")](homekit-images/simulator02.png)
+    [![](homekit-images/simulator02.png "Simulátor HomeKit příslušenství")](homekit-images/simulator02.png#lightbox)
 2. Klikněte  **+**  tlačítko a vyberte **nové příslušenství...** : 
 
-    [ ![](homekit-images/simulator03.png "Přidat nové příslušenství")](homekit-images/simulator03.png)
+    [![](homekit-images/simulator03.png "Přidat nové příslušenství")](homekit-images/simulator03.png#lightbox)
 3. Zadejte informace o nové příslušenství a klikněte na **Dokončit** tlačítko: 
 
-    [ ![](homekit-images/simulator04.png "Zadejte informace o nové příslušenství")](homekit-images/simulator04.png)
+    [![](homekit-images/simulator04.png "Zadejte informace o nové příslušenství")](homekit-images/simulator04.png#lightbox)
 4. Klikněte **přidat službu...** tlačítko a z rozevíracího seznamu vyberte typ služby: 
 
-    [ ![](homekit-images/simulator05.png "Z rozevíracího seznamu vyberte typ služby")](homekit-images/simulator05.png)
+    [![](homekit-images/simulator05.png "Z rozevíracího seznamu vyberte typ služby")](homekit-images/simulator05.png#lightbox)
 5. Zadejte **název** služby a klikněte na tlačítko **Dokončit** tlačítko: 
 
-    [ ![](homekit-images/simulator06.png "Zadejte název pro službu")](homekit-images/simulator06.png)
+    [![](homekit-images/simulator06.png "Zadejte název pro službu")](homekit-images/simulator06.png#lightbox)
 6. Volitelné vlastnosti můžete zadat pro službu kliknutím **přidat vlastnosti** tlačítko a konfiguraci požadovaných nastavení: 
 
-    [ ![](homekit-images/simulator07.png "Požadovaná nastavení konfigurace.")](homekit-images/simulator07.png)
+    [![](homekit-images/simulator07.png "Požadovaná nastavení konfigurace.")](homekit-images/simulator07.png#lightbox)
 7. Opakujte tento postup k vytvoření každého typu domácí automatizace virtuální zařízení, které podporuje HomeKit.
 
 Některé ukázkové virtuální HomeKit příslušenství vytvořený a nakonfigurovaný můžete nyní využívat a řídit tato zařízení z vaší aplikace Xamarin.iOS.
@@ -127,7 +127,7 @@ Některé ukázkové virtuální HomeKit příslušenství vytvořený a nakonfi
 
 Nové pro iOS 10 (a vyšší), bude nutné přidat Vývojář `NSHomeKitUsageDescription` klíče na aplikaci `Info.plist` souboru a zadejte řetězec deklarace, proč aplikace chce získat přístup k databázi HomeKit uživatele. Tento řetězec předloží čas uživatele při prvním spuštění aplikace:
 
-[ ![](homekit-images/info01.png "Dialogové okno oprávnění HomeKit")](homekit-images/info01.png)
+[![](homekit-images/info01.png "Dialogové okno oprávnění HomeKit")](homekit-images/info01.png#lightbox)
 
 Pokud chcete nastavit tento klíč, postupujte takto:
 
@@ -136,10 +136,10 @@ Pokud chcete nastavit tento klíč, postupujte takto:
 3. Přidejte nový **položka** do seznamu.
 4. Z rozevíracího seznamu vyberte **soukromí - HomeKit využití popis**: 
 
-    [ ![](homekit-images/info02.png "Vyberte možnost ochrany osobních údajů – popis HomeKit využití")](homekit-images/info02.png)
+    [![](homekit-images/info02.png "Vyberte možnost ochrany osobních údajů – popis HomeKit využití")](homekit-images/info02.png#lightbox)
 5. Zadejte popis proč aplikace chce získat přístup k databázi HomeKit uživatele: 
 
-    [ ![](homekit-images/info03.png "Zadejte popis")](homekit-images/info03.png)
+    [![](homekit-images/info03.png "Zadejte popis")](homekit-images/info03.png#lightbox)
 6. Uložte změny do souboru.
 
 > [!IMPORTANT]
@@ -189,7 +189,7 @@ public override void FinishedLaunching (UIApplication application)
 
 Při prvním spuštění aplikace, uživatel se vyzve, zda chtějí povolit ho pro přístup k jejich HomeKit informace:
 
-[ ![](homekit-images/home01.png "Uživatel bude požádán Pokud chtějí povolit ho pro přístup k jejich HomeKit informace")](homekit-images/home01.png)
+[![](homekit-images/home01.png "Uživatel bude požádán Pokud chtějí povolit ho pro přístup k jejich HomeKit informace")](homekit-images/home01.png#lightbox)
 
 Pokud uživatel odpoví **OK**, bude moct pracovat s jejich HomeKit příslušenství aplikace v opačném případě není a volání HomeKit se nezdaří s chybou.
 
@@ -283,7 +283,7 @@ Volání `StartSearchingForNewAccessories` metoda spusťte hledání nové pří
 
 Jakmile byl nalezen nový příslušenství, by měla zobrazit uživatelům a proto můžete jej vybrat a přidat jej do síť doma. Příklad:
 
-[ ![](homekit-images/accessory01.png "Hledání nové příslušenství")](homekit-images/accessory01.png)
+[![](homekit-images/accessory01.png "Hledání nové příslušenství")](homekit-images/accessory01.png#lightbox)
 
 Volání `AddAccessory` metoda přidáte vybrané příslušenství na domovské stránce kolekci. Příklad:
 
@@ -300,11 +300,11 @@ ThisApp.HomeManager.PrimaryHome.AddAccessory (_controller.AccessoryBrowser.Disco
 
 Pokud `err` vlastnost není `null`, došlo k chybě a by měla zobrazit uživatelům. Jinak hodnota uživatele vyzve k zadání kódu instalační program pro zařízení, které chcete přidat:
 
-[ ![](homekit-images/accessory02.png "Zadejte kód nastavení pro zařízení, které chcete přidat")](homekit-images/accessory02.png)
+[![](homekit-images/accessory02.png "Zadejte kód nastavení pro zařízení, které chcete přidat")](homekit-images/accessory02.png#lightbox)
 
 V simulátoru příslušenství HomeKit toto číslo naleznete v části **instalační kód** pole:
 
-[ ![](homekit-images/accessory03.png "Pole instalační kód v simulátoru HomeKit příslušenství")](homekit-images/accessory03.png)
+[![](homekit-images/accessory03.png "Pole instalační kód v simulátoru HomeKit příslušenství")](homekit-images/accessory03.png#lightbox)
 
 Pro skutečné HomeKit příslušenství instalační kód buď na budou vytištěny štítek na zařízení, samostatně, na pole produktu nebo v uživatelské příručce příslušenství.
 
@@ -320,7 +320,7 @@ Z důvodu v tomto příkladu budete jsme se udržuje věcí jednoduché a práce
 
 `HMHome` Objekt obsahuje seznam přiřazené příslušenství, kterou lze zobrazit na uživatele v jeho `Accessories` vlastnost. Příklad:
 
-[ ![](homekit-images/accessory04.png "Příklad příslušenství")](homekit-images/accessory04.png)
+[![](homekit-images/accessory04.png "Příklad příslušenství")](homekit-images/accessory04.png#lightbox)
 
 Zde formuláři, můžete vybrat daný příslušenství a pracovat s služby, které poskytuje uživatele.
 
@@ -368,7 +368,7 @@ Následující typy služby jsou dostupné prostřednictvím `HMServiceType` vý
 
 Po načtení `HMAccessory` můžete dotazovat jednotlivých `HNService` objekty poskytuje a zobrazit tyto informace pro uživatele:
 
-[ ![](homekit-images/accessory05.png "Zobrazení informací o služby")](homekit-images/accessory05.png)
+[![](homekit-images/accessory05.png "Zobrazení informací o služby")](homekit-images/accessory05.png#lightbox)
 
 Byste měli vždy by měl zkontrolovat `Reachable` vlastnost `HMAccessory` dřív, než se s ním pracovat. Určité příslušenství může být nedostupný uživatele není v rozsahu zařízení nebo pokud byl odpojen.
 
@@ -658,7 +658,7 @@ Při práci s `HMCharacteristics` a simulované příslušenství, změny `Value
 
 Pomocí **HomeKitIntro** aplikaci spuštěnou na skutečné iOS hardwaru zařízení, změn vlastnosti hodnoty měla by se zobrazit v simulátoru příslušenství HomeKit téměř okamžitě. Například změna stavu light v aplikaci pro iOS:
 
-[ ![](homekit-images/test01.png "Změna stavu light v aplikaci pro iOS")](homekit-images/test01.png)
+[![](homekit-images/test01.png "Změna stavu light v aplikaci pro iOS")](homekit-images/test01.png#lightbox)
 
 Stav světlým v simulátoru příslušenství HomeKit by se měl změnit. Pokud hodnota nezmění, zkontrolujte stav chybové zprávy při zápisu nové hodnoty charakteristik a zajistěte, aby byl příslušenství stále dostupný.
 

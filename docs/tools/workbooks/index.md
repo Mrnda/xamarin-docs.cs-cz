@@ -1,20 +1,20 @@
 ---
-title: "Sešity Xamarin"
+title: "Sešity ke Xamarinu"
 description: "Sešity Xamarin zadejte blend dokumentace a kód, který je ideální pro experimentování, učení a vytváření příruček a výukových pomůcky."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: A5CCD63C-18E5-4D19-AFEA-301FE4F8538A
+ms.assetid: 04275482-0488-4F1C-8808-D03A8E21BE62
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/30/2017
-ms.openlocfilehash: 3d01d157fde1e69c7180c07adfd52e259cdddf14
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 04d6110ea9d0f2c10cf0c3d17182cd06b88e7708
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
-# <a name="xamarin-workbooks"></a>Sešity Xamarin
+# <a name="xamarin-workbooks"></a>Sešity ke Xamarinu
 
 Sešity Xamarin zadejte blend dokumentace a kód, který je ideální pro experimentování, učení a vytváření příruček a výukových pomůcky.
 
@@ -26,7 +26,7 @@ Sešity Xamarin je software s otevřeným zdrojem. Vývoj open probíhá na Gith
 
 Zkuste to a dejte nám vědět, co si myslíte, nebo pokud jste [spustit do veškerých chyb](~/tools/workbooks/install.md#reporting-bugs). Máme [fórum](https://forums.xamarin.com/categories/inspector) příliš!
 
-[ ![](images/interactive-1.0.0-urho-planet-earth-small.png "Ukázka sešitu UrhoSharp na základě")](images/interactive-1.0.0-urho-planet-earth.png)
+[![](images/interactive-1.0.0-urho-planet-earth-small.png "Ukázka sešitu UrhoSharp na základě")](images/interactive-1.0.0-urho-planet-earth.png#lightbox)
 
 ## <a name="installation-and-requirementsinstallmd"></a>[Instalace a požadavky](install.md)
 
@@ -40,7 +40,7 @@ Informace o získávání sešity nainstalován v počítači Mac nebo Windows.
 
 Existují širokou škálu [ukázkové sešity](https://developer.xamarin.com/workbooks/) k dispozici, včetně těch, které zvýrazněná [zde](samples/index.md).
 
-## <a name="integration-sdksdkindexmd"></a>[Integrace sady SDK](sdk/index.md)
+## <a name="integration-sdksdkindexmd"></a>[Sada SDK pro integraci](sdk/index.md)
 
 Je možné rozšířit Xamarin sešity s reprezentace vlastních dat a pro vykreslování. Integrace jsou zapsány s C# a TypeScript/JavaScript.
 

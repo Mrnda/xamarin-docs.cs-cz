@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: beb690fe495d142bb4b0424ad752101fc46da590
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 28cfb4cda27446b914c23a2ce4e8e9f845876107
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="location-services"></a>Umístění služby
 
@@ -54,7 +54,7 @@ Pro aplikace, které cílí na rozhraní API verze 21 (typu Lupa Android 5.0) ne
 
 Pokud chcete nastavit oprávnění, rozbalte položku **vlastnosti** složky v **řešení Pad** a dvakrát klikněte na **AndroidManifest.xml**. Oprávnění, zobrazí se v části **požadovaných oprávnění**:
 
-[![Snímek obrazovky nastavení Android Manifest požadovaných oprávnění](location-images/location-01-xs.png)](location-images/location-01-xs.png)
+[![Snímek obrazovky nastavení Android Manifest požadovaných oprávnění](location-images/location-01-xs.png)](location-images/location-01-xs.png#lightbox)
 
 Nastavení některý z těchto oprávnění informuje Android, že aplikace potřebuje oprávnění od uživatele, aby měli přístup k umístění zprostředkovatele. Zařízení, která spustit úroveň rozhraní API 22 (Android 5.1) nebo nižší vyzve uživatele k udělení těchto oprávnění pokaždé, když je aplikace nainstalovaná. Na zařízení se systémem rozhraní API na úrovni 23 (Android 6.0) nebo vyšší, aplikace by měla provést kontrolu oprávnění pro spuštění před provedením požadavku umístění poskytovatele. 
 
@@ -334,11 +334,11 @@ else
 > [!NOTE]
 >  Pokud je uživatel vypnul všechny umístění poskytovatele `GetBestProvider` vrátí `null`. Pokud chcete zobrazit, jak tento kód funguje na skutečné zařízení, je nutné povolit GPS, Wi-Fi a mobilní sítě v části **nastavení Google > umístění > režimu** jak je vidět na tomto snímku obrazovky:
 
-[![Obrazovka nastavení režimu umístění s telefonem s Androidem](location-images/location-02.png)](location-images/location-02.png)
+[![Obrazovka nastavení režimu umístění s telefonem s Androidem](location-images/location-02.png)](location-images/location-02.png#lightbox)
 
 Následující snímek obrazovky ukazuje umístění aplikace spuštěná pomocí `GetBestProvider`:
 
-[![Aplikace GetBestProvider zobrazení, šířky a zprostředkovatele](location-images/location-03.png)](location-images/location-03.png)
+[![Aplikace GetBestProvider zobrazení, šířky a zprostředkovatele](location-images/location-03.png)](location-images/location-03.png#lightbox)
 
 Mějte na paměti, `GetBestProvider` nezmění zprostředkovatele dynamicky. Místo toho určuje nejlépe dostupného poskytovatele jednou během životního cyklu aktivity. Pokud po byla nastavena, změní se stav poskytovatele, aplikace bude vyžadovat další kód v `ILocationListener` metody &ndash; `OnProviderEnabled`, `OnProviderDisabled`, a `OnStatusChanged` &ndash; pro každou možnost týkající se zpracování přepínač zprostředkovatele.
 

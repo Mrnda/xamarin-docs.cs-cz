@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: c78396ce55c776c615f3b3027a97b5a334c0b7f8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cf519cb964bf852c74249c874b9a934d4a6cf5c3
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="callkit"></a>CallKit
 
@@ -52,11 +52,11 @@ V následujících částech se vztahují na architektuře CallKit, příchozí 
 
 V iOS 10 přijal Apple CallKit ve všech služeb System tak, že jsou volání provedená na CarPlay, například známé uživatelského rozhraní systému prostřednictvím CallKit. V příkladu dále uvedených vzhledem k tomu, že MonkeyCall přijme CallKit ji není systému znám stejným způsobem jako těchto předdefinovaných systémových služeb a získá všechny stejné funkce:
 
-[ ![](callkit-images/callkit01.png "Služba CallKit zásobníku")](callkit-images/callkit01.png)
+[![](callkit-images/callkit01.png "Služba CallKit zásobníku")](callkit-images/callkit01.png#lightbox)
 
 Prohlédněte si blíže MonkeyCall aplikace z diagramu výše. Aplikace obsahuje všechny jeho kódu ke komunikaci s vlastní síť a obsahuje vlastní uživatelská rozhraní. Odkazuje v CallKit ke komunikaci s systému:
 
-[ ![](callkit-images/callkit02.png "Architektura MonkeyCall aplikace")](callkit-images/callkit02.png)
+[![](callkit-images/callkit02.png "Architektura MonkeyCall aplikace")](callkit-images/callkit02.png#lightbox)
 
 Existují dvě hlavní rozhraní v CallKit, který používá aplikaci:
 
@@ -75,7 +75,7 @@ Aplikace by měl používat `CXProvider` pro následující:
 
 Pokud aplikace chce, aby se pro komunikaci se systém, použije `CXCallUpdate` třídy a když se systém potřebuje ke komunikaci s aplikací, použije `CXAction` třídy:
 
-[ ![](callkit-images/callkit03.png "Komunikuje s systému prostřednictvím CXProvider")](callkit-images/callkit03.png)
+[![](callkit-images/callkit03.png "Komunikuje s systému prostřednictvím CXProvider")](callkit-images/callkit03.png#lightbox)
 
 ### <a name="the-cxcallcontroller"></a>CXCallController
 
@@ -89,7 +89,7 @@ Aplikace by měl používat `CXCallController` pro následující:
 
 Pokud aplikace chce komunikovat akce místního uživatele k systému, použije `CXTransaction` třídy:
 
-[ ![](callkit-images/callkit04.png "Vytváření sestav do systému pomocí CXCallController")](callkit-images/callkit04.png)
+[![](callkit-images/callkit04.png "Vytváření sestav do systému pomocí CXCallController")](callkit-images/callkit04.png#lightbox)
 
 ## <a name="implementing-callkit"></a>Implementace CallKit
 
@@ -748,7 +748,7 @@ V následujících částech bude trvat podrobné podívejte se na tom, jak apli
 
 Když vzdálený uživatel má spustili VOIP konverzace s místního uživatele, dojde k následující položky:
 
-[ ![](callkit-images/callkit05.png "Vzdálený uživatel bylo zahájeno VOIP konverzace")](callkit-images/callkit05.png)
+[![](callkit-images/callkit05.png "Vzdálený uživatel bylo zahájeno VOIP konverzace")](callkit-images/callkit05.png#lightbox)
 
 1. Aplikace získá oznámení z jeho komunikační síť se příchozího hovoru VOIP.
 2. Aplikace používá `CXProvider` k odeslání `CXCallUpdate` systému, jelikož se volání.
@@ -783,7 +783,7 @@ Tento kód vytvoří novou `CXCallUpdate` instance a připojí k němu identifik
 
 Pokud chce uživatel odpovíte na příchozí volání VOIP, dojde k následující položky:
 
-[ ![](callkit-images/callkit06.png "Uživatel přijme příchozí volání VOIP")](callkit-images/callkit06.png)
+[![](callkit-images/callkit06.png "Uživatel přijme příchozí volání VOIP")](callkit-images/callkit06.png#lightbox)
 
 1. Uživatelského rozhraní systému informuje systému, že uživatel chce přijetí hovoru VOIP.
 2. Odešle systému `CXAnswerCallAction` na aplikaci `CXProvider` Jelikož se záměrem odpovědí.
@@ -824,7 +824,7 @@ Tento kód nejprve hledá dané volání ve svém seznamu active volání. Pokud
 
 Pokud uživatel chce ukončit volání z v uživatelském rozhraní aplikace, dojde k následující položky:
 
-[ ![](callkit-images/callkit07.png "Uživatel ukončí volání z v uživatelském rozhraní aplikace")](callkit-images/callkit07.png)
+[![](callkit-images/callkit07.png "Uživatel ukončí volání z v uživatelském rozhraní aplikace")](callkit-images/callkit07.png#lightbox)
 
 1. Aplikace vytvoří `CXEndCallAction` , získá seskupeny do `CXTransaction` odeslaná do systému informovat, že volání ukončuje.
 2. Systém ověřuje koncové volání záměr a odešle `CXEndCallAction` zpět do aplikace pomocí `CXProvider`.
@@ -874,7 +874,7 @@ V situaci, udávají výše, odešle systému `CXTransaction` na aplikaci, kter�
 
 Pokud uživatel klepnutím položku ze seznamu nedávno (v telefonní aplikace), například, který je volání náležící k aplikaci, bude odeslána _spustit volání záměr_ systémem:
 
-[ ![](callkit-images/callkit08.png "Přijímá volání záměr spuštění")](callkit-images/callkit08.png)
+[![](callkit-images/callkit08.png "Přijímá volání záměr spuštění")](callkit-images/callkit08.png#lightbox)
 
 1. Aplikace vytvoří _spustit akci volání_ podle spustit volání záměr přijatou ze systému. 
 2. Aplikace bude používat `CXCallController` k vyžádání akce spustit volání ze systému.
@@ -1119,7 +1119,7 @@ Kromě toho CallKit má přístup k jiné zvuk směrování pomocné parametry, 
 
 Během životního cyklu typické VOIP volat pomocí CallKit, bude nutné nakonfigurovat zvuk datový proud, který ho poskytne CallKit aplikace. Podívejte se na následující příklad:
 
-[ ![](callkit-images/callkit09.png "Počáteční sekvence volání akce")](callkit-images/callkit09.png)
+[![](callkit-images/callkit09.png "Počáteční sekvence volání akce")](callkit-images/callkit09.png#lightbox)
 
 1. Aplikace k přijetí příchozího hovoru přijme spustit volání akce.
 2. Než tuto akci je splněna aplikací, poskytuje konfiguraci, která se bude vyžadovat pro jeho `AVAudioSession`.
@@ -1140,13 +1140,13 @@ K implementaci příponu volání adresáře v aplikaci Xamarin.iOS, postupujte 
 2. Klikněte pravým tlačítkem na název řešení v **Průzkumníku řešení** a vyberte **přidat** > **přidat nový projekt**.
 3. Vyberte **iOS** > **rozšíření** > **volání rozšíření adresáře** a klikněte na **Další** tlačítko: 
 
-    [ ![](callkit-images/calldir01.png "Vytvoření nové rozšíření adresáře volání")](callkit-images/calldir01.png)
+    [![](callkit-images/calldir01.png "Vytvoření nové rozšíření adresáře volání")](callkit-images/calldir01.png#lightbox)
 4. Zadejte **název** pro rozšíření a klikněte na **Další** tlačítko: 
 
-    [ ![](callkit-images/calldir02.png "Zadejte název pro rozšíření")](callkit-images/calldir02.png)
+    [![](callkit-images/calldir02.png "Zadejte název pro rozšíření")](callkit-images/calldir02.png#lightbox)
 5. Upravit **název projektu** nebo **název řešení** dle potřeby **vytvořit** tlačítko: 
 
-    [ ![](callkit-images/calldir03.png "Vytvoření projektu")](callkit-images/calldir03.png) 
+    [![](callkit-images/calldir03.png "Vytvoření projektu")](callkit-images/calldir03.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -1154,7 +1154,7 @@ K implementaci příponu volání adresáře v aplikaci Xamarin.iOS, postupujte 
 2. Klikněte pravým tlačítkem na název řešení v **Průzkumníku řešení** a vyberte **přidat** > **přidat nový projekt**.
 3. Vyberte **iOS** > **rozšíření** > **volání rozšíření adresáře** a klikněte na **Další** tlačítko: 
 
-    [ ![](callkit-images/calldir01w.png "Vytvoření nové rozšíření adresáře volání")](callkit-images/calldir01.png)
+    [![](callkit-images/calldir01w.png "Vytvoření nové rozšíření adresáře volání")](callkit-images/calldir01.png#lightbox)
 4. Zadejte **název** pro rozšíření a klikněte na **OK** tlačítko
 
 -----

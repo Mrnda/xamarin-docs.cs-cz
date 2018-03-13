@@ -7,21 +7,20 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 04/05/2017
-ms.openlocfilehash: a6bfebb5272da3fd50f4f165fc25bb75574a0b63
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4bcbd14b88f19dc48dc9d0694fb30aed31708153
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="maps-application"></a>Aplikace mapy
 
 Nejjednodušší způsob, jak pracovat s map v Xamarin.Android je využít integrované mapy aplikace vidíte níže:
 
-[![Příklad snímek obrazovky integrovaných v aplikaci Google Maps](maps-application-images/01-mapsapplication.png)](maps-application-images/01-mapsapplication.png)
+[![Příklad snímek obrazovky integrovaných v aplikaci Google Maps](maps-application-images/01-mapsapplication.png)](maps-application-images/01-mapsapplication.png#lightbox)
 
 Pokud používáte aplikace mapy, mapy nebude součástí vaší aplikace. Místo toho bude vaše aplikace mapy aplikaci spustit a načte mapy externě. V další části prozkoumá použití Xamarin.Android spustíte mapy podobný jako výše.
 
-<a name="Creating_the_Intent" />
 
 ## <a name="creating-the-intent"></a>Vytváření záměr
 
@@ -35,7 +34,6 @@ StartActivity (mapIntent);
 
 Tento kód je všechno, co je potřeba ke spuštění mapy uvedené v předchozím snímku obrazovky. Kromě určení zeměpisné šířky a délky, schéma identifikátoru URI pro maps podporuje několik dalších možností.
 
-<a name="Geo_Uri_Scheme" />
 
 ## <a name="geo-uri-scheme"></a>Schéma identifikátoru URI geograficky
 
@@ -52,10 +50,9 @@ Výše uvedený kód používá k vytvoření adresu URI geografická schéma. T
 
 Verze identifikátoru URI, které trvat dotazu (konkrétně. ulice podmínky adresu nebo vyhledávání) pomocí služby Google geocoder načíst umístění, které se následně zobrazí na mapě. Například identifikátor URI `geo:0,0?q=coop+Cambridge` výsledků v mapě vidíte níže:
 
-[![Příklad snímek obrazovky zobrazující Google Maps se hledaný termín](maps-application-images/02-mapsearch.png)](maps-application-images/02-mapsearch.png)
+[![Příklad snímek obrazovky zobrazující Google Maps se hledaný termín](maps-application-images/02-mapsearch.png)](maps-application-images/02-mapsearch.png#lightbox)
 
 
-<a name="Street_View" />
 
 Další informace o geograficky schémata identifikátoru URI najdete v tématu [umístění zobrazit na mapě](http://developer.android.com/guide/components/intents-common.html#Maps).
 
@@ -64,7 +61,7 @@ Další informace o geograficky schémata identifikátoru URI najdete v tématu 
 
 Kromě schéma geograficky Android také podporuje načítání ulice zobrazení z záměrem. Příkladem ulice zobrazení aplikace spuštěna pomocí Xamarin.Android je zobrazena níže:
 
-[![Snímek obrazovky příklad ulice zobrazení](maps-application-images/03-streetview.png)](maps-application-images/03-streetview.png)
+[![Snímek obrazovky příklad ulice zobrazení](maps-application-images/03-streetview.png)](maps-application-images/03-streetview.png#lightbox)
 
 Chcete-li spustit ulice zobrazení, jednoduše použijte `google.streetview` schéma identifikátoru URI, jak je ukázáno v následujícím kódu:
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/13/2017
-ms.openlocfilehash: 524d551a96dd1352d86671238a63c103cef9b0c5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 83841e62d863bf4be4edef5c0b6b7d486f192f4d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="background-tasks"></a>Úlohy na pozadí
 
@@ -30,7 +30,7 @@ Před hovoříte o všechny způsoby, které vývojář může chránit data a u
 
 Proveďte v následujícím příkladu:
 
-[ ![](background-tasks-images/update00.png "Jak může uživatel přesunout mezi jejich iPhone a jejich Apple Watch během dne")](background-tasks-images/update00.png)
+[![](background-tasks-images/update00.png "Jak může uživatel přesunout mezi jejich iPhone a jejich Apple Watch během dne")](background-tasks-images/update00.png#lightbox)
 
 1. Ráno, při čekání na řádku pro kávy uživatel prohlíží aktuální novinky na jejich zařízení iPhone několik minut.
 2. Před opuštěním kavárně, se rychle zjistit, počasí s komplikace na jejich sledovat řez.
@@ -43,7 +43,7 @@ Z důvodu "rychlého přehledu" (méně než tři sekundy) povaha jak je chce u�
 
 Pomocí nové rozhraní API Apple použila v watchOS 3, můžete naplánovat aplikace na _aktualizace na pozadí_ a mít připravené požadované informace, aby uživatel požaduje. V příkladu komplikace počasí výše popsané proveďte:
 
-[ ![](background-tasks-images/update01.png "Příklad komplikace počasí")](background-tasks-images/update01.png)
+[![](background-tasks-images/update01.png "Příklad komplikace počasí")](background-tasks-images/update01.png#lightbox)
 
 1. Plány aplikace v určitém čase probouzet pomocí systému. 
 2. Aplikace načte informace, že bude nutné vygenerovat aktualizace.
@@ -52,7 +52,7 @@ Pomocí nové rozhraní API Apple použila v watchOS 3, můžete naplánovat apl
 
 Jak je vidět výše, systém watchOS probudí aplikace pomocí jedné nebo více úloh, které má velmi omezená fondu k dispozici:
 
-[ ![](background-tasks-images/update02.png "Systém watchOS probudí aplikace pomocí jedné nebo více úloh")](background-tasks-images/update02.png)
+[![](background-tasks-images/update02.png "Systém watchOS probudí aplikace pomocí jedné nebo více úloh")](background-tasks-images/update02.png#lightbox)
 
 Apple navrhnout optimální využití této úlohy (protože je omezená prostředků do aplikace) tím, že na něj, dokud aplikace nedokončí proces aktualizace sám sebe.
 
@@ -86,7 +86,7 @@ namespace MonkeyWatch.MonkeySeeExtension
 
 Když aplikace dokončí danou úlohu, vrátí se do systému jeho označením dokončena:
 
-[ ![](background-tasks-images/update03.png "Vrátí úlohu systému jeho označením byla dokončena")](background-tasks-images/update03.png)
+[![](background-tasks-images/update03.png "Vrátí úlohu systému jeho označením byla dokončena")](background-tasks-images/update03.png#lightbox)
 
 <a name="New-Background-Tasks" />
 
@@ -107,7 +107,7 @@ Tyto úlohy budou podrobně v následujících částech.
 
 `WKApplicationRefreshBackgroundTask` Je obecný úkol, který lze naplánovat tak, aby měl aplikace probuzený v budoucnosti:
 
-[ ![](background-tasks-images/update04.png "WKApplicationRefreshBackgroundTask, probuzený v budoucnosti")](background-tasks-images/update04.png)
+[![](background-tasks-images/update04.png "WKApplicationRefreshBackgroundTask, probuzený v budoucnosti")](background-tasks-images/update04.png#lightbox)
 
 V modulu runtime úlohy můžete provést jakýkoli druh místní zpracování například aktualizace časová osa komplikace nebo načíst některá požadovaná data se aplikace `NSUrlSession`.
 
@@ -118,7 +118,7 @@ V modulu runtime úlohy můžete provést jakýkoli druh místní zpracování n
 
 Systém bude odesílat `WKURLSessionRefreshBackgroundTask` při data dokončil stahování a lze ji zpracovat aplikace:
 
-[ ![](background-tasks-images/update05.png "WKURLSessionRefreshBackgroundTask po dokončení stahování dat")](background-tasks-images/update05.png)
+[![](background-tasks-images/update05.png "WKURLSessionRefreshBackgroundTask po dokončení stahování dat")](background-tasks-images/update05.png#lightbox)
 
 Aplikace není ponechat spuštěnou při stahování dat na pozadí. Místo toho aplikace plánuje požadavku na data, pak je pozastavená a systém zpracovává stahování dat, pouze reawakening aplikaci po dokončení stahování.
 
@@ -128,17 +128,17 @@ Aplikace není ponechat spuštěnou při stahování dat na pozadí. Místo toho
 
 V watchOS 3 byl přidán Apple ukotvení, kde mohou uživatelé připnout své oblíbené aplikace a rychle přistupovat k nim. Když uživatel stiskne tlačítko straně na Apple Watch, zobrazí se Galerie definovaného aplikace snímků. Uživatel může prstem doleva nebo doprava najít požadovanou aplikaci a pak klepněte na aplikaci spustíte nahraďte snímek spuštěné aplikaci rozhraní.
 
-[ ![](background-tasks-images/update06.png "Nahraďte snímek rozhraní spuštěné aplikace")](background-tasks-images/update06.png)
+[![](background-tasks-images/update06.png "Nahraďte snímek rozhraní spuštěné aplikace")](background-tasks-images/update06.png#lightbox)
 
 Systém pravidelně trvá snímky uživatelském rozhraní aplikace (odesláním `WKSnapshotRefreshBackgroundTask`) a používá tyto snímky k naplnění ukotvení. watchOS poskytuje aplikaci příležitost k aktualizaci uživatelského rozhraní a obsahu předtím, než se provede tento snímek.
 
 Snímky jsou velmi důležité pro watchOS 3, protože fungují jako obrázky verzi preview a spuštění aplikace. Pokud uživatel vyrovná v aplikaci v ukotvení, budou rozšíření na celou obrazovku, zadejte popředí a spustit, takže je nutné, že se snímek aktuální:
 
-[ ![](background-tasks-images/update07.png "Pokud uživatel vyrovná v aplikaci v ukotvení, se rozbalí na celou obrazovku")](background-tasks-images/update07.png)
+[![](background-tasks-images/update07.png "Pokud uživatel vyrovná v aplikaci v ukotvení, se rozbalí na celou obrazovku")](background-tasks-images/update07.png#lightbox)
 
 Znovu, bude vydávat systému `WKSnapshotRefreshBackgroundTask` tak, aby aplikace můžete připravit (aktualizace, data a uživatelského rozhraní) před pořízení snímku:
 
-[ ![](background-tasks-images/update08.png "Aplikace můžete připravit se tak aktualizace dat a uživatelské rozhraní před pořízení snímku")](background-tasks-images/update08.png)
+[![](background-tasks-images/update08.png "Aplikace můžete připravit se tak aktualizace dat a uživatelské rozhraní před pořízení snímku")](background-tasks-images/update08.png#lightbox)
 
 Když aplikaci označí `WKSnapshotRefreshBackgroundTask` dokončit, systém bude automaticky pořízení snímku uživatelském rozhraní aplikace.
 
@@ -150,7 +150,7 @@ Když aplikaci označí `WKSnapshotRefreshBackgroundTask` dokončit, systém bud
 
 Kromě toho když uživatel obdrží oznámení z aplikace a klepne na jeho uvedení aplikace do popředí, snímku, je potřeba aktuální vzhledem k tomu, že funguje jako spouštěcí obrazovku:
 
-[ ![](background-tasks-images/update09.png "Uživatel obdrží oznámení z aplikace a klepne na jeho uvedení aplikace do popředí")](background-tasks-images/update09.png)
+[![](background-tasks-images/update09.png "Uživatel obdrží oznámení z aplikace a klepne na jeho uvedení aplikace do popředí")](background-tasks-images/update09.png#lightbox)
 
 Pokud již uběhlo více než jednu hodinu vzhledem k tomu, že má uživatel zpracoval watchOS aplikaci, bude moct vrátit do výchozího stavu. Výchozí stav může znamenat různé věci pro různé aplikace a podle návrhu aplikace, pravděpodobně nemá výchozí stav vůbec.
 
@@ -162,13 +162,13 @@ Pokud již uběhlo více než jednu hodinu vzhledem k tomu, že má uživatel zp
 
 V watchOS 3, Apple má integrované sledování připojení s rozhraním API pozadí aktualizovat prostřednictvím nové `WKWatchConnectivityRefreshBackgroundTask`. Pomocí této nové funkce, aplikaci pro iPhone doručovat čerstvá data k jeho protějšku aplikace sledovat, když watchOS aplikace běží na pozadí:
 
-[ ![](background-tasks-images/update10.png "Aplikaci pro iPhone může poskytnout čerstvá data k jeho protějšku aplikace sledovat, když aplikace watchOS běží na pozadí")](background-tasks-images/update10.png)
+[![](background-tasks-images/update10.png "Aplikaci pro iPhone může poskytnout čerstvá data k jeho protějšku aplikace sledovat, když aplikace watchOS běží na pozadí")](background-tasks-images/update10.png#lightbox)
 
 Probíhá inicializace komplikace Push, bude aplikace kontextu, odesílání souboru nebo aktualizace informací o uživateli z aplikace iPhone probuzení Apple Watch aplikace na pozadí.
 
 Když je aplikace sledovat probuzený prostřednictvím `WKWatchConnectivityRefreshBackgroundTask` ji budou muset používat standardní metody rozhraní API pro příjem dat z aplikace iPhone.
 
-[ ![](background-tasks-images/update11.png "Tok dat WKWatchConnectivityRefreshBackgroundTask")](background-tasks-images/update11.png)
+[![](background-tasks-images/update11.png "Tok dat WKWatchConnectivityRefreshBackgroundTask")](background-tasks-images/update11.png#lightbox)
 
 1. Ujistěte se, že relace aktivoval.
 2. Monitorování nové `HasContentPending` , pokud je hodnota vlastnosti `true`, aplikace má stále data ke zpracování. Jako dříve, aplikace by měla obsahovat na úlohu dokud se nedokončí zpracování všech dat.
@@ -180,7 +180,7 @@ Když je aplikace sledovat probuzený prostřednictvím `WKWatchConnectivityRefr
 
 Umístění všech částí do jednoho nového rozhraní API pozadí úlohy dohromady, typickou sadu interakce by vypadat následovně:
 
-[ ![](background-tasks-images/update12.png "Životní cyklus pozadí rozhraní API")](background-tasks-images/update12.png)
+[![](background-tasks-images/update12.png "Životní cyklus pozadí rozhraní API")](background-tasks-images/update12.png#lightbox)
 
 1. Nejprve aplikace watchOS naplánuje pozadí úlohy awoke jako některé bod v budoucnu.
 2. Aplikace je probuzený v systému a odeslat úlohu.
@@ -196,7 +196,7 @@ Je důležité, aby aplikace watchOS chová jeho zodpovědné v rámci tento eko
 
 Podívejte se na následující scénář:
 
-[ ![](background-tasks-images/update13.png "Aplikace watchOS omezuje jeho vyprazdňování na sdílené prostředky systému")](background-tasks-images/update13.png)
+[![](background-tasks-images/update13.png "Aplikace watchOS omezuje jeho vyprazdňování na sdílené prostředky systému")](background-tasks-images/update13.png#lightbox)
 
 1. Uživatel spustí aplikaci watchOS: 00: 00.
 2. Aplikace naplánuje úlohu k probuzení a stáhněte si nový obsah za hodinu na 2:00 PM.
@@ -213,7 +213,7 @@ Z důvodu příklad bude tento dokument pomocí falešných aplikace MonkeySocce
 
 Podívejte se na následující scénář typickému využití:
 
-[ ![](background-tasks-images/update14.png "Scénář typickému využití")](background-tasks-images/update14.png)
+[![](background-tasks-images/update14.png "Scénář typickému využití")](background-tasks-images/update14.png#lightbox)
 
 Uživatele Oblíbené fotbalový tým přehrávání big shoda v 19:00:00 do 21:00:00, aplikace by měl očekávat uživateli skóre pravidelně kontrolovat a rozhodne se na intervalu 30 minut aktualizace.
 
@@ -262,7 +262,7 @@ Vrátí systému `NSError` Pokud se jednalo o nelze naplánovat požadovanou úl
 
 Potom přepněte bližší pohled na 5 minut okna s kroky potřebné k aktualizaci skóre:
 
-[ ![](background-tasks-images/update15.png "Okno 5 minut zobrazující kroky potřebné k aktualizaci skóre")](background-tasks-images/update15.png)
+[![](background-tasks-images/update15.png "Okno 5 minut zobrazující kroky potřebné k aktualizaci skóre")](background-tasks-images/update15.png#lightbox)
 
 1. Na 19:30:02: 00 probudí, systém a aplikace danou aktualizaci pozadí úloh. Jeho první prioritu má získat nejnovější skóre ze serveru. V tématu [plánování NSUrlSession](#Scheduling-a-NSUrlSession) níže.
 2. Na 7:30:05 aplikace dokončí původní úlohu, systém převádí aplikace do režimu spánku a nadále stahovat požadovaná data na pozadí.
@@ -529,7 +529,7 @@ Kromě toho také obsahuje informace pro úlohu snímku, není aplikace vrátí 
 
 Jak je vidět v předchozím příkladu okna pět minut, které aplikace MonkeySoccer trvalo aktualizovat jeho skóre efektivní práci a použitím nové watchOS 3 úlohy na pozadí, aplikace byla pouze aktivní celkem 15 sekund: 
 
-[ ![](background-tasks-images/update16.png "Aplikace byla pouze aktivní celkem 15 sekund")](background-tasks-images/update16.png)
+[![](background-tasks-images/update16.png "Aplikace byla pouze aktivní celkem 15 sekund")](background-tasks-images/update16.png#lightbox)
 
 To snižuje vliv, která aplikace bude mít na dostupné prostředky Apple Watch i výdrž baterie a rovněž umožňuje aplikaci lépe pracovat s jinými aplikacemi sledování a systémem.
 
@@ -617,7 +617,7 @@ Použije `RemainingComplicationUserInfoTransfers` vlastnost `WCSession` chcete z
 
 V watchOS 3 byl přidán Apple ukotvení, kde mohou uživatelé připnout své oblíbené aplikace a rychle přistupovat k nim. Když uživatel stiskne tlačítko straně na Apple Watch, zobrazí se Galerie definovaného aplikace snímků. Uživatel může prstem doleva nebo doprava najít požadovanou aplikaci a pak klepněte na aplikaci spustíte nahraďte snímek spuštěné aplikaci rozhraní.
 
-[ ![](background-tasks-images/dock01.png "Ukotvení")](background-tasks-images/dock01.png)
+[![](background-tasks-images/dock01.png "Ukotvení")](background-tasks-images/dock01.png#lightbox)
 
 Systém pravidelně trvá snímky uživatelském rozhraní aplikace a používá tyto snímky k vyplnění dokumentaci. watchOS poskytuje aplikaci příležitost k aktualizaci uživatelského rozhraní a obsahu předtím, než se provede tento snímek.
 
@@ -676,7 +676,7 @@ Při práci s aktualizací snímků, Apple umožňuje následující návrhy:
 
 Apple návrhu pro práci s tok dat následující:
 
-[ ![](background-tasks-images/update17.png "Diagram toku dat aplikací")](background-tasks-images/update17.png)
+[![](background-tasks-images/update17.png "Diagram toku dat aplikací")](background-tasks-images/update17.png#lightbox)
 
 Událost externí (například sledovat připojením) se probudí aplikace. Vynutí se tak aplikaci aktualizovat jeho datového modelu (představující aktuální stav aplikace). V důsledku změny datový Model aplikace bude nutné aktualizovat jeho komplikace požádat o nový snímek, případně spustit na pozadí `NSURLSession` vyžádá další data a naplánovat další pozadí aktualizuje.
 

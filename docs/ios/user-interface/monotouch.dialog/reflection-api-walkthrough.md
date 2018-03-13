@@ -7,11 +7,11 @@ ms.assetid: C0F923D2-300E-DB9D-F390-9FA71B22DFD6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 44df6fce4ec6d667c096da01cfc339ec2afdb077
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ec5ca2883c6e109a67ee8a4ecb25fe938d0df4ec
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough-creating-an-application-using-the-reflection-api"></a>Návod: Vytvoření aplikace pomocí rozhraní API reflexe
 
@@ -34,7 +34,7 @@ Pomocí rozhraní API reflexe je stejně jednoduché jako:
 
 Podívejme se na příklad na ukazují, jak používat rozhraní API reflexe. V tomto příkladu využijeme záznam obrazovky jednoduché datové, jak je uvedeno níže:
 
- [ ![](reflection-api-walkthrough-images/01-expense-entry.png "V tomto příkladu jsme jak je vidět tady budete vytvářet obrazovky jednoduché datové položky")](reflection-api-walkthrough-images/01-expense-entry.png)
+ [![](reflection-api-walkthrough-images/01-expense-entry.png "V tomto příkladu jsme jak je vidět tady budete vytvářet obrazovky jednoduché datové položky")](reflection-api-walkthrough-images/01-expense-entry.png#lightbox)
 
  <a name="Creating_a_Class_with_MT.D_Attributes" />
 
@@ -119,7 +119,7 @@ window.RootViewController = nav;
 
 Nyní když jsme aplikaci spustit, název se zobrazí v `UINavigationController’s` navigační panel jako na snímku obrazovky níže znázorňuje:
 
- [ ![](reflection-api-walkthrough-images/02-create-task.png "Teď když jsme aplikaci spustit, název se zobrazí v navigačním panelu UINavigationControllers")](reflection-api-walkthrough-images/02-create-task.png)
+ [![](reflection-api-walkthrough-images/02-create-task.png "Teď když jsme aplikaci spustit, název se zobrazí v navigačním panelu UINavigationControllers")](reflection-api-walkthrough-images/02-create-task.png#lightbox)
 
 Zahrnutím `UINavigationController`, jsme teď můžete využít výhod dalších funkcí strojový překladů. D, pro které je nutné navigace. Například nyní můžete přidat výčet k `Expense` třída zadat kategorii výdajů a strojový překladů. D automaticky vytvoří obrazovku pro výběr. K předvedení, změnit `Expense` třídy patří `ExpenseCategory` pole následujícím způsobem:
 
@@ -142,11 +142,11 @@ public class Expense
 
 Spuštění aplikace teď výsledkem nový řádek v tabulce pro kategorii, jak je znázorněno:
 
- [ ![](reflection-api-walkthrough-images/03-set-details.png "Spuštění aplikace teď výsledkem nový řádek v tabulce pro kategorii, jak je znázorněno")](reflection-api-walkthrough-images/03-set-details.png)
+ [![](reflection-api-walkthrough-images/03-set-details.png "Spuštění aplikace teď výsledkem nový řádek v tabulce pro kategorii, jak je znázorněno")](reflection-api-walkthrough-images/03-set-details.png#lightbox)
 
 Výběr řádku výsledkem aplikace přejdete na nové obrazovce s řádky odpovídající výčtu, jak je uvedeno níže:
 
- [ ![](reflection-api-walkthrough-images/04-set-category.png "Výběr řádku výsledkem aplikace přejdete na nové obrazovce s řádky odpovídající výčtu")](reflection-api-walkthrough-images/04-set-category.png)
+ [![](reflection-api-walkthrough-images/04-set-category.png "Výběr řádku výsledkem aplikace přejdete na nové obrazovce s řádky odpovídající výčtu")](reflection-api-walkthrough-images/04-set-category.png#lightbox)
 
  <a name="Summary" />
 

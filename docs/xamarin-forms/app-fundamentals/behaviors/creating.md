@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: c70e4c9ec49b48c3bf6ecc6a4944d992f8ae930a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 160dd4b2326529abbb456e77391f0f73ee374f50
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarinforms-behaviors"></a>Xamarin.Forms Behaviors
 
@@ -85,7 +85,7 @@ public class NumericValidationBehavior : Behavior<Entry>
 `NumericValidationBehavior` Je odvozena z [ `Behavior<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior%3CT%3E/) třídy, kde `T` je [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/). [ `OnAttachedTo` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnAttachedTo/p/Xamarin.Forms.BindableObject/) Metoda registruje obslužné rutiny události pro [ `TextChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Entry.TextChanged/) událostí, s [ `OnDetachingFrom` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnDetachingFrom/p/Xamarin.Forms.BindableObject/) metoda zrušte registraci `TextChanged`nevracení událostí, aby se zabránilo paměti. Poskytuje základní funkce služby chování `OnEntryTextChanged` metoda, která analyzuje zadaná uživatelem do hodnota `Entry`a nastaví [ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.TextColor/) vlastnosti tak, aby červená, pokud není hodnota `double`.
 
 > [!NOTE]
-> **Poznámka:**: Xamarin.Forms nenastaví `BindingContext` chování, protože chování můžete sdílet a použity na více ovládacích prvků prostřednictvím stylů.
+> Xamarin.Forms nenastaví `BindingContext` chování, protože chování můžete sdílet a použity na více ovládacích prvků prostřednictvím stylů.
 
 ## <a name="consuming-a-xamarinforms-behavior"></a>Využívání chování Xamarin.Forms
 
@@ -108,10 +108,10 @@ entry.Behaviors.Add (new NumericValidationBehavior ());
 
 V době běhu chování bude reagovat na interakci s ovládacím prvkem podle chování implementace. Tyto snímky obrazovky ukazují chování neodpovídá na požadavky neplatný vstup:
 
-[ ![](creating-images/screenshots-sml.png "Ukázkové aplikace s Xamarin.Forms chování")](creating-images/screenshots.png "ukázkové aplikace s chováním Xamarin.Forms")
+[![](creating-images/screenshots-sml.png "Ukázkové aplikace s Xamarin.Forms chování")](creating-images/screenshots.png#lightbox "ukázkové aplikace s chováním Xamarin.Forms")
 
 > [!NOTE]
-> **Poznámka:**: chování jsou určeny pro konkrétní ovládací prvek typu (nebo nadřazenou třídu, která můžete použít pro mnoho ovládací prvky) a musí být pouze přidaní do ovládacího prvku kompatibilní. Probíhá pokus o připojení chování do ovládacího prvku nekompatibilní způsobí výjimku hlášeny.
+> Chování jsou určeny pro konkrétní ovládací prvek typu (nebo nadřazenou třídu, která můžete použít pro mnoho ovládací prvky) a musí být pouze přidaní do ovládacího prvku kompatibilní. Probíhá pokus o připojení chování do ovládacího prvku nekompatibilní způsobí výjimku hlášeny.
 
 ### <a name="consuming-a-xamarinforms-behavior-with-a-style"></a>Využívání chování Xamarin.Forms s styl
 
@@ -181,7 +181,7 @@ Následující příklad kódu ukazuje *explicitní* styl pro `NumericValidation
 Další informace o styly najdete v tématu [styly](~/xamarin-forms/user-interface/styles/index.md).
 
 > [!NOTE]
-> **Poznámka:**: při můžete přidat vazbu vlastnosti na chování, které je nastavit nebo dotaz v jazyce XAML, je-li vytvořit chování, které mají stav, neměl by se sdílet mezi ovládacími prvky v `Style` v `ResourceDictionary`.
+> Přestože můžete přidat vazbu vlastnosti na chování, které je nastavit nebo dotaz v jazyce XAML, je-li vytvořit chování, které mají stav, neměl by se sdílet mezi ovládacími prvky v `Style` v `ResourceDictionary`.
 
 ### <a name="removing-a-behavior-from-a-control"></a>Odebrání chování z ovládacího prvku
 

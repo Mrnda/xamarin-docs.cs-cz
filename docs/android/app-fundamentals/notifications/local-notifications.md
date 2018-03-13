@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 7566ebac0f487ef321c512c988c79f34e50777ac
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f13515326bd75f2b2c15e2b6059e6f829814ea5c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="local-notifications"></a>Místní oznámení
 
@@ -28,7 +28,7 @@ Android poskytuje dvě systém řídí oblasti pro zobrazení ikon upozornění 
 
 Pokud chcete získat podrobnosti o oznámení, může uživatel otevřít panel oznámení (který rozbalí každý ikonu oznámení a odhalit obsah oznámení) a provádět všechny akce přidružené k oznámení. Ukazuje snímek následující obrazovky *nástroj oznámení drawer* odpovídající oznamovací oblasti zobrazí výše:
 
-[![Příklad oznámení zásuvky zobrazení tři oznámení](local-notifications-images/02-notification-drawer-sml.png)](local-notifications-images/02-notification-drawer.png)
+[![Příklad oznámení zásuvky zobrazení tři oznámení](local-notifications-images/02-notification-drawer-sml.png)](local-notifications-images/02-notification-drawer.png#lightbox)
 
 Oznámení systému Android používat dva typy rozložení:
 
@@ -38,7 +38,6 @@ Oznámení systému Android používat dva typy rozložení:
 
 Každý z těchto typů rozložení (a postupy při jejich vytváření) je vysvětlené v následujících částech.
 
-<a name="base-layout" />
 
 ### <a name="base-layout"></a>Základní rozložení
 
@@ -54,7 +53,7 @@ Všechna oznámení Android jsou postaveny na základní rozložení formátu, k
 
 Tyto prvky jsou zobrazeny, jak je znázorněno v následujícím diagramu:
 
-[![Umístění elementů oznámení](local-notifications-images/03-notification-callouts-sml.png)](local-notifications-images/03-notification-callouts.png)
+[![Umístění elementů oznámení](local-notifications-images/03-notification-callouts-sml.png)](local-notifications-images/03-notification-callouts.png#lightbox)
 
 Základní rozložení jsou omezená na 64 nezávislé na hustotě pixelů (dp) na výšku. Android vytvoří tento styl základní oznámení ve výchozím nastavení.
 
@@ -64,13 +63,13 @@ Oznámení můžete volitelně zobrazit velké ikonu, která představuje odesí
 
 Od verze Android 5.0, oznámení můžete také zobrazit na zamykací obrazovky:
 
-[![Příklad zamykací obrazovky oznámení](local-notifications-images/05-lockscreen-notification-sml.png)](local-notifications-images/05-lockscreen-notification.png)
+[![Příklad zamykací obrazovky oznámení](local-notifications-images/05-lockscreen-notification-sml.png)](local-notifications-images/05-lockscreen-notification.png#lightbox)
 
 Uživatel může poklepání zamykací obrazovky oznámení k odemknutí zařízení a přejít na aplikaci, která pochází oznámení, nebo prstem k zavření oznámení. Aplikace můžete nastavit úroveň viditelnosti oznámení k řízení, co se zobrazí na zamykací obrazovky a mohli uživatelé vybrat, jestli se má povolit citlivého obsahu, která se má zobrazit v oznámeních zamykací obrazovky.
 
 Android 5.0 zavedená do formátu prezentace oznámení s vysokou prioritou *z pohotového*. Oznámení z pohotového posuňte se dolů z horní části obrazovky na několik sekund a pak retreat zálohovat oznamovací oblasti:
 
-[![Příklad heads-up oznámení](local-notifications-images/06-heads-up-notification-sml.png)](local-notifications-images/06-heads-up-notification.png)
+[![Příklad heads-up oznámení](local-notifications-images/06-heads-up-notification-sml.png)](local-notifications-images/06-heads-up-notification.png#lightbox)
 
 Oznámení z pohotového umožňují systému uživatelského rozhraní pro umístění důležité informace u uživatele, a to bez přerušení stavu aktuálně probíhající aktivity.
 
@@ -84,7 +83,6 @@ Android zahrnuje podporu pro metadata oznámení tak, aby oznámení lze seřadi
 
 **Poznámka:** **viditelnost** a **kategorie** byly zavedeny v systému Android 5.0 a nejsou k dispozici v dřívějších verzích systému Android. Od verze Android 8.0 [kanály oznámení](#notif-chan) je možné určit, jak mají zobrazovat oznámení uživatelům.
 
-<a name="expanded-layouts" />
 
 ### <a name="expanded-layouts"></a>Rozšířené rozložení
 
@@ -106,7 +104,6 @@ Android podporuje tři styly rozšířené rozložení pro jednotlivé události
 
 [Kromě základních oznámení](#beyond-the-basic-notification) (dále v tomto článku) vysvětluje, jak vytvořit *dlouhý Text*, *doručené pošty*, a *Image* oznámení.
 
-<a name="notification-creation" />
 
 ## <a name="notification-creation"></a>Vytvoření oznámení
 
@@ -127,7 +124,6 @@ Pokud chcete vytvořit oznámení v Android, můžete použít [Notification.Bui
 
 Po nastavení těchto možností v Tvůrce generování oznámení objekt, který obsahuje nastavení. Publikování oznámení, předáte tento objekt oznámení *Správce oznámení*. Poskytuje Android [NotificationManager](https://developer.xamarin.com/api/type/Android.App.NotificationManager/) třídy, která je zodpovědná za publikování oznámení a jejich zobrazení pro uživatele. Odkaz na tuto třídu můžete získat z jakýkoliv kontext, například aktivitu nebo služby.
 
-<a name="how-to-generate" />
 
 ### <a name="how-to-generate-a-notification"></a>Jak vygenerovat oznámení
 
@@ -185,7 +181,6 @@ Na levé straně oznámení se zobrazí na ikonu v oznamovací &ndash; tuto bito
 ```csharp
 builder.SetWhen (Java.Lang.JavaSystem.CurrentTimeMillis());
 ```
-<a name="sound-and-vibr" />
 
 ### <a name="enabling-sound-and-vibration"></a>Povolení zvuk a vibrace
 
@@ -265,7 +260,6 @@ Dokud jednu ze tří akcí se stane, zůstává viditelná oznámení:
 
 Další informace o aktualizaci Android oznámení najdete v tématu [upravit oznámení](http://developer.android.com/training/notify-user/managing.html#Updating).
 
-<a name="starting-an-activity" />
 
 ### <a name="starting-an-activity-from-a-notification"></a>Aktivita od oznámení
 
@@ -380,11 +374,11 @@ Od verze Android 8.0 (Oreo), můžete použít *kanály oznámení* funkce vytvo
 
 **YouTube** aplikaci, která je nainstalovaná se systémem Android Oreo uvádí dvě kategorie oznámení: **stáhnout oznámení** a **Obecné oznámení**:
 
-[![Oznámení obrazovky pro YouTube v Android Oreo](local-notifications-images/27-youtube-sml.png)](local-notifications-images/27-youtube.png)
+[![Oznámení obrazovky pro YouTube v Android Oreo](local-notifications-images/27-youtube-sml.png)](local-notifications-images/27-youtube.png#lightbox)
 
 Každý z těchto kategorií odpovídá kanál oznámení. Implementuje aplikace YouTube **stáhnout oznámení** kanál a **Obecné oznámení** kanál. Uživatel může klepnout **stáhnout oznámení**, který zobrazuje na obrazovku nastavení pro aplikace kanál oznámení:
 
-[![Stáhnout obrazovky oznámení pro aplikace YouTube](local-notifications-images/28-yt-download-sml.png)](local-notifications-images/28-yt-download.png)
+[![Stáhnout obrazovky oznámení pro aplikace YouTube](local-notifications-images/28-yt-download-sml.png)](local-notifications-images/28-yt-download.png#lightbox)
 
 Na této obrazovce můžete upravit uživatele chování **Stáhnout** oznámení kanálu pomocí těchto kroků:
 
@@ -400,14 +394,13 @@ Na této obrazovce můžete upravit uživatele chování **Stáhnout** oznámen�
 
 **Obecné oznámení** kanál obsahuje podobné nastavení:
 
-[![Obrazovka Obecné oznámení pro aplikace YouTube](local-notifications-images/29-yt-general-sml.png)](local-notifications-images/29-yt-general.png)
+[![Obrazovka Obecné oznámení pro aplikace YouTube](local-notifications-images/29-yt-general-sml.png)](local-notifications-images/29-yt-general.png#lightbox)
 
 Všimněte si, že nemáte absolutní ovládat, jak vaše kanály oznámení komunikovat s uživatelem &ndash; uživatele můžete upravit nastavení pro všechny kanál oznámení na zařízení, jak je vidět na snímcích obrazovky výše. Můžete ale nakonfigurovat výchozí hodnoty (jak budou popsány níže). Protože tyto příklady ilustrují, nové funkce kanály oznámení umožňuje vám poskytuje jemně odstupňovanou kontrolu nad různé druhy oznámení uživatelům.
 
 Můžete přidat podporu pro kanály oznámení do aplikace? Pokud jste cílení na Android 8.0, vaše aplikace *musí* implementovat kanály oznámení.
 Aplikace cílené na Oreo, které se pokouší odeslat místního oznámení pro uživatele bez použití kanál oznámení nebude možné zobrazit oznámení na Oreo zařízení. Pokud nemáte cíle Android 8.0, aplikace bude i nadále spustit na Android 8.0, ale s stejné chování oznámení jako by vykazovat, při spuštění na Android 7.1 nebo dřívější.
 
-<a name="notif-chan-create" />
 
 ### <a name="creating-a-notification-channel"></a>Vytvoření kanálu oznámení
 
@@ -448,7 +441,6 @@ Pokud chcete vytvořit kanál oznámení, postupujte takto:
     notificationManager.CreateNotificationChannel (chan);
     ```
 
-<a name="notif-chan-post" />
 
 ### <a name="posting-to-a-notifications-channel"></a>Publikování oznámení kanálu
 
@@ -507,7 +499,6 @@ builder.SetLargeIcon (BitmapFactory.DecodeResource (Resources, Resource.Drawable
 Tento příklad kódu otevře soubor bitové kopie na **Resources/drawable/monkey_icon.png**, převede ji na rastrový obrázek a předá výsledné rastrového obrázku na `Notification.Builder`. Obvykle je větší než malé ikony rozlišení obrázku zdroj &ndash; ale mnohem větší. Obrázek, který je příliš velký může způsobit zbytečné změny velikosti operace, které může zpoždění zveřejňování oznámení.
 Další informace o velikosti ikonu oznámení na Android, najdete v části [ikony oznámení](http://developer.android.com/design/style/iconography.html#notification).
 
-<a name="big-text-style" />
 
 ### <a name="big-text-style"></a>Styl Big textu
 
@@ -544,7 +535,6 @@ builder.SetStyle (textStyle);
 
 V tomto příkladu text zprávy a text shrnutí jsou uloženy v `BigTextStyle` objektu (`textStyle`) předtím, než je předán do `Notification.Builder.`
 
-<a name="image-style" />
 
 ### <a name="image-style"></a>Styl bitové kopie
 
@@ -609,7 +599,6 @@ Pokud si nejste jisti předem velikost souboru bitové kopie, je vhodné zabalen
 
 Další informace o načítání a dekódování velké rastrové obrázky, naleznete v části [zatížení velké bitmap efektivně](https://developer.xamarin.com/recipes/android/resources/general/load_large_bitmaps_efficiently).
 
-<a name="inbox-style" />
 
 ### <a name="inbox-style"></a>Styl doručené pošty
 
@@ -645,13 +634,11 @@ Chcete-li přidat nové řádky textu do textu oznámení, zavolejte [Addline](h
 
 Můžete také *doručené pošty* styl pro všechna oznámení vyžadující zobrazíte jednotlivé řádky textu ve formátu rozšířené. Například *doručené pošty* styl oznámení je možné kombinovat více čekající oznámení do souhrnu oznámení &ndash; můžete aktualizovat jeden *doručené pošty* styl oznámení New. řádcích obsahu oznámení (najdete v části [aktualizace oznámení](#updating-a-notification) výše), spíš než generovat může nepřetržitý proud nové, většinou podobné oznámení. Další informace o tento přístup, najdete v části [shrnout oznámení](http://developer.android.com/design/patterns/notifications.html#summarize_your_notifications).
 
-<a name="configuring-metadata" />
 
 ## <a name="configuring-metadata"></a>Konfigurace metadat
 
 `Notification.Builder` obsahuje metody, které můžete volat nastavit metadata o oznámení, jako je například priorita, viditelnost a kategorie. Tyto informace využívá Android &mdash; společně s uživatelská nastavení &mdash; k určení, jak a kdy mají zobrazovat oznámení.
 
-<a name="priority-settings" />
 
 ### <a name="priority-settings"></a>Nastavení priority
 
@@ -694,7 +681,6 @@ V následujícím příkladu se zobrazí oznámení "Představit dne" nízkou pr
 
 Vzhledem k tomu, že se oznámení o "Myšlenku dne" oznámení nízkou prioritu, Android nebudou zobrazeny na Heads-up formátu.
 
-<a name="visibility-settings" />
 
 ### <a name="visibility-settings"></a>Nastavení viditelnosti
 
@@ -719,7 +705,6 @@ Když `Private` odeslání oznámení, název a ikona aplikace se zobrazí na za
 
 V tomto příkladu **NotificationsLab** je název původní aplikace. Tato verze zredigované oznámení se zobrazí pouze v případě, zamykací obrazovky je zabezpečený (tj, zabezpečené pomocí kódu PIN, vzor nebo heslo) &ndash; Pokud zamykací obrazovky nejsou zabezpečené, celý obsah oznámení je k dispozici na zamykací obrazovky.
 
-<a name="category-settings" />
 
 ### <a name="category-settings"></a>Kategorie nastavení
 
@@ -791,7 +776,6 @@ Jak ukazuje tento příklad, volání metod pro možnosti základní oznámení 
 
 [LocalNotifications](https://developer.xamarin.com/samples/monodroid/LocalNotifications) příklad ukazuje způsob použití `NotificationCompat.Builder` spustíte druhá aktivita z oznámení. Tento ukázkový kód je podrobně popsaný [pomocí místního oznámení v Xamarin.Android](~/android/app-fundamentals/notifications/local-notifications-walkthrough.md) návod.
 
-<a name="notification-styles" />
 
 ### <a name="notification-styles"></a>Styly oznámení
 
@@ -806,7 +790,6 @@ builder.SetStyle (textStyle);
 
 Podobně můžete použít aplikaci `NotificationCompat.InboxStyle` a `NotificationCompat.BigPictureStyle` pro *doručené pošty* a *Image* styly v uvedeném pořadí.
 
-<a name="priority-and-category" />
 
 ### <a name="notification-priority-and-category"></a>Oznámení Priority a kategorie
 
@@ -823,7 +806,6 @@ if ((int) Android.OS.Build.Version.SdkInt >= 21) {
 V tomto příkladu aplikace na **cílové rozhraní** je nastaven na Android 5.0 a **minimální verze Android** je nastaven na **Android 4.1 (rozhraní API Level 16)**. Protože `SetCategory` je k dispozici na úrovni rozhraní API 21 a novější, zavolá tento příklad kódu `SetCategory` pouze pokud je k dispozici &ndash; nebude volání `SetCategory` při úroveň rozhraní API je menší než
 21.
 
-<a name="lockscreen-visibility" />
 
 ### <a name="lockscreen-visibility"></a>Viditelnost zamykací obrazovky
 
@@ -835,7 +817,6 @@ if ((int) Android.OS.Build.Version.SdkInt >= 21) {
 }
 ```
 
-<a name="summary" />
 
 ## <a name="summary"></a>Souhrn
 

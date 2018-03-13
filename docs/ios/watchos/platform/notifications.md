@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 0f1d968dcee0cb9b6cd0cee8fa60be4f4dbb2833
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 600d651eae1f470f17511afaf9bc86c80ffc1a75
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="notifications"></a>Oznámení
 
@@ -99,17 +99,17 @@ Můžete *musí* zadejte datovou část JSON test při testování režim oznám
 Visual Studio pro Mac se zobrazí další možnosti sledování rozšíření jako nastavena **spouštěný projekt**.
 Klikněte pravým tlačítkem na projekt rozšíření sledování a zvolte **spustit s > vlastní parametry...** :
     
-[![](notifications-images/runwith-customparams-sml.png "Běh vlastní vlastnosti")](notifications-images/runwith-customparams.png)
+[![](notifications-images/runwith-customparams-sml.png "Běh vlastní vlastnosti")](notifications-images/runwith-customparams.png#lightbox)
     
 Tím se otevře **provádění argumenty** okna, který obsahuje **WatchKit** kartě. Vyberte **oznámení** a zadejte datovou část JSON, stiskněte **Execute** a spusťte aplikaci sledovat v simulátoru:
     
-[![](notifications-images/runwith-execargs-sml.png "Vyberte výchozí datová část oznámení")](notifications-images/runwith-execargs.png)
+[![](notifications-images/runwith-execargs-sml.png "Vyberte výchozí datová část oznámení")](notifications-images/runwith-execargs.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 Nastavit datová část oznámení testů v sadě Visual Studio klikněte pravým tlačítkem na rozšíření sledovat upravit **projektu vlastnosti**. Přejděte na **ladění** a vyberte soubor JSON oznámení ze seznamu (jej bude automaticky všechny soubory JSON zahrnutý v projektu).
     
-[![](notifications-images/runwith-execargs-sml-vs.png "Vyberte soubor JSON oznámení")](notifications-images/runwith-execargs-vs.png)
+[![](notifications-images/runwith-execargs-sml-vs.png "Vyberte soubor JSON oznámení")](notifications-images/runwith-execargs-vs.png#lightbox)
 
 Pokud je rozšíření sledovat **spouštěný projekt**, Visual Studio se zobrazí další možnosti, jak je uvedeno níže. Vyberte jednu z **oznámení** spusťte aplikaci sledovat **oznámení** režimu (pomocí souboru JSON, který je vybrán v okně Vlastnosti):
     

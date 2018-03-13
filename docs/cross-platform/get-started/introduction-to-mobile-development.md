@@ -7,28 +7,19 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/28/2017
-ms.openlocfilehash: 2f29851f9de410183c6f35d19486e7da8017566a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d3a39070e17729e99614e26e0a8892c6314512af
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-mobile-development"></a>Úvod do pro vývoj mobilních řešení
 
-
 Vytváření mobilních aplikací může být stejně snadná jako otevírání až rozhraní IDE, vyvolání něco společně, provádění rychlé bit testování a odesílá na obchod s aplikacemi – všechny provádí za dnešní odpoledne. Nebo může být velmi zahrnutých proces, který zahrnuje přísných počáteční návrh, testování, QA testování na tisíce zařízení, životní cyklus úplné beta a pak nasazení několika různými způsoby použitelnost.
-
-Tato příručka je důkladné úvodní posouzení vytvoření mobilní aplikace Xamarin, včetně:
-
-1.   [ **Úvod do Xamarin** ](#Introduction_to_Xamarin) – seznam funkcí na platformě Xamarin.
-1.   [ **Xamarin jak funguje?**](#How_Does_Xamarin_Work) – Stručný přehled toho, jak funguje Xamarin k poskytování C# na iOS a Android.
-1.   [ **Začněte!**](#Sample_App) – Podrobné informace a sestavte aplikaci Xamarin pro iOS, Android nebo všechny platformy pomocí Xamarin.Forms.
-
 
 Tento dokument je určený k zavedení platformě Xamarin. Další informace o *proces* vytváření mobilních aplikací z návrhu prostřednictvím k testování, naleznete [Úvod do životního cyklu softwaru Mobile](~/cross-platform/get-started/introduction-to-mobile-sdlc.md) dokumentu.
 
 Naleznete v našem [požadavky na systém](~/cross-platform/get-started/requirements.md#mac) k potvrzení, budete moci nainstalovat Xamarin.
-
 
 ## <a name="introduction-to-xamarin"></a>Úvod do Xamarin
 
@@ -90,12 +81,12 @@ Dalším krokem je začít vytvářet aplikace pomocí jedné z těchto průvodc
 
 * [**Hello, iOS**](~/ios/get-started/hello-ios/index.md)
 
-![]Hello, iOS(introduction-to-mobile-development-images/ios.png "")
+![](introduction-to-mobile-development-images/ios.png "Hello, iOS")
 
 
 * [**Hello, Android**](~/android/get-started/hello-android/index.md)
 
-![]Hello, Android(introduction-to-mobile-development-images/android.png "")
+![](introduction-to-mobile-development-images/android.png "Hello, Android")
 
 
 * [**Úvod k platformě Xamarin.Forms**](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)

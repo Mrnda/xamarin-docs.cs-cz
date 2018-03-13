@@ -3,16 +3,16 @@ title: "Zobrazení tabulek"
 description: "Tento článek se zabývá práci s zobrazení tabulek v aplikaci Xamarin.Mac. Popisuje vytváření zobrazení tabulek v Xcode a Tvůrce rozhraní a interakci s nimi v kódu."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 675B9405-D9A7-49F0-94AD-417F10A71D11
+ms.assetid: 3B55B858-4769-4331-966A-7F53B3B7C720
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: dfac551bbb7e6fd9214fe488170455c5916318ae
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 4764a4babc9f6b06c7a9299feab1320971b0bf75
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="table-views"></a>Zobrazení tabulek
 
@@ -22,7 +22,7 @@ Při práci s C# a rozhraní .NET v aplikaci Xamarin.Mac, máte přístup do ste
 
 Zobrazení tabulky zobrazí data v tabulkovém formátu, který obsahuje jeden nebo více sloupců informací ve více řádků. Na základě typu zobrazení tabulky vytváří, uživatel může seřadit podle sloupce, reorganizovat sloupců, přidat sloupce, sloupce odebrat nebo upravit data obsažená v tabulce.
 
-[ ![](table-view-images/intro01.png "Příklad tabulky")](table-view-images/intro01.png)
+[![](table-view-images/intro01.png "Příklad tabulky")](table-view-images/intro01.png#lightbox)
 
 V tomto článku vám nabídneme základní informace o práci s zobrazení tabulek v aplikaci Xamarin.Mac. Vysoce navržený na spolupracovat [Hello, Mac](~/mac/get-started/hello-mac.md) článek nejprve, konkrétně [Úvod do Xcode a rozhraní tvůrce](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) a [výstupy a akce](~/mac/get-started/hello-mac.md#Outlets_and_Actions) oddíly, jak se popisuje klíčové koncepty a techniky, které budeme používat v tomto článku.
 
@@ -51,23 +51,23 @@ Další informace najdete v tématu [obsahu zobrazení](https://developer.apple.
 
 Když vytvoříte novou aplikaci Xamarin.Mac kakao, zobrazí okno Standardní prázdné, ve výchozím nastavení. Toto systému windows je definována v `.storyboard` automaticky zahrnutý v projektu. Chcete-li upravit návrh vašeho systému windows v **Průzkumníku řešení**, dvakrát klikněte `Main.storyboard` souboru:
 
-[ ![](table-view-images/edit01.png "Výběr hlavní storyboard")](table-view-images/edit01.png)
+[![](table-view-images/edit01.png "Výběr hlavní storyboard")](table-view-images/edit01.png#lightbox)
 
 Otevře se okno návrhu v Xcode na rozhraní Tvůrce:
 
-[ ![](table-view-images/edit02.png "Úpravy uživatelského rozhraní v Xcode")](table-view-images/edit02.png)
+[![](table-view-images/edit02.png "Úpravy uživatelského rozhraní v Xcode")](table-view-images/edit02.png#lightbox)
 
 Typ `table` do **knihovny Inspector** vyhledávací pole, aby bylo snazší najít ovládací prvky zobrazení tabulky:
 
-[ ![](table-view-images/edit03.png "Výběr zobrazení tabulky z knihovny")](table-view-images/edit03.png)
+[![](table-view-images/edit03.png "Výběr zobrazení tabulky z knihovny")](table-view-images/edit03.png#lightbox)
 
 Přetažením na řadiče zobrazení v zobrazení tabulky **rozhraní editoru**, bylo vyplnil celou oblast obsahu řadiče zobrazení a nastavte ji na kde zmenšuje a roste s okno v **Editor omezení**:
 
-[ ![](table-view-images/edit04.png "Úpravy omezení")](table-view-images/edit04.png)
+[![](table-view-images/edit04.png "Úpravy omezení")](table-view-images/edit04.png#lightbox)
 
 Vyberte zobrazení tabulky v **rozhraní hierarchie** a následující vlastnosti jsou k dispozici v **atribut Inspector**:
 
-[ ![](table-view-images/edit05.png "Atribut Inspector")](table-view-images/edit05.png)
+[![](table-view-images/edit05.png "Atribut Inspector")](table-view-images/edit05.png#lightbox)
 
 - **Obsahu režimu** -umožňuje používat buď zobrazení (`NSView`) nebo buňky (`NSCell`) k zobrazení dat v řádků a sloupců. Od verze systému macOS 10.7, měli byste použít zobrazení.
 - **Jako plovoucí seskupení řádků** – Pokud `true`, tabulka zobrazení bude kreslení seskupené buněk, jako by se s plovoucí čárkou.
@@ -97,7 +97,7 @@ Vyberte zobrazení tabulky v **rozhraní hierarchie** a následující vlastnost
 
 Vyberte sloupec tabulky v **rozhraní hierarchie** a následující vlastnosti jsou k dispozici v **atribut Inspector**:
 
-[ ![](table-view-images/edit06.png "Atribut Inspector")](table-view-images/edit06.png)
+[![](table-view-images/edit06.png "Atribut Inspector")](table-view-images/edit06.png#lightbox)
 
 - **Název** -nastaví název sloupce.
 - **Zarovnání** -nastavit zarovnání textu v rámci buněk.
@@ -115,19 +115,19 @@ Umožňuje vybrat každý sloupec v našem zobrazení tabulky a poskytněte prvn
 
 Vyberte zobrazení buněk tabulky (`NSTableViewCell`) v **rozhraní hierarchie** a následující vlastnosti jsou k dispozici v **atribut Inspector**:
 
-[ ![](table-view-images/edit07.png "Atribut Inspector")](table-view-images/edit07.png)
+[![](table-view-images/edit07.png "Atribut Inspector")](table-view-images/edit07.png#lightbox)
 
 Toto jsou všechny vlastnosti standardní zobrazení. Máte také možnost změny velikosti řádků pro tento sloupec sem.
 
 Vyberte zobrazení buňky tabulky (ve výchozím nastavení je to `NSTextField`) v **rozhraní hierarchie** a následující vlastnosti jsou k dispozici v **atribut Inspector**:
 
-[ ![](table-view-images/edit08.png "Atribut Inspector")](table-view-images/edit08.png)
+[![](table-view-images/edit08.png "Atribut Inspector")](table-view-images/edit08.png#lightbox)
 
 Budete mít všechny vlastnosti standardního textového pole pro nastavení sem. Ve výchozím nastavení standardní textové pole slouží k zobrazení dat pro buňku ve sloupci.
 
 Vyberte zobrazení buněk tabulky (`NSTableFieldCell`) v **rozhraní hierarchie** a následující vlastnosti jsou k dispozici v **atribut Inspector**:
 
-[ ![](table-view-images/edit09.png "Atribut Inspector")](table-view-images/edit09.png)
+[![](table-view-images/edit09.png "Atribut Inspector")](table-view-images/edit09.png#lightbox)
 
 Jsou zde nejdůležitější nastavení:
 
@@ -141,7 +141,7 @@ Jsou zde nejdůležitější nastavení:
 
 Vyberte zobrazení buněk tabulky (`NSTableFieldCell`) v dolní části sloupec tabulky v **rozhraní hierarchie**:
 
-[ ![](table-view-images/edit10.png "Výběr zobrazení buněk tabulky")](table-view-images/edit10.png)
+[![](table-view-images/edit10.png "Výběr zobrazení buněk tabulky")](table-view-images/edit10.png#lightbox)
 
 To umožňuje upravit tabulce buňku zobrazení použít jako základní _vzor_ pro všechny buňky vytvořené pro daný sloupec.
 
@@ -155,14 +155,14 @@ Proces je stejný pro libovolný element zobrazení tabulky, který chcete vysta
 
 1. Přepnout **pomocníka Editor** a ujistěte se, že `ViewController.h` vybraný soubor: 
 
-    [ ![](table-view-images/edit11.png "Pomocník pro Editor")](table-view-images/edit11.png)
+    [![](table-view-images/edit11.png "Pomocník pro Editor")](table-view-images/edit11.png#lightbox)
 2. Vyberte zobrazení tabulky z **rozhraní hierarchie**, řízení kliknutím a tažením `ViewController.h` souboru.
 3. Vytvoření **výstupu** pro zobrazení tabulky názvem `ProductTable`: 
 
-    [ ![](table-view-images/edit13.png "Konfigurace výstupu")](table-view-images/edit13.png)
+    [![](table-view-images/edit13.png "Konfigurace výstupu")](table-view-images/edit13.png#lightbox)
 4. Vytvoření **výstupy** u sloupce tabulky se také označuje `ProductColumn` a `DetailsColumn`: 
 
-    [ ![](table-view-images/edit14.png "Konfigurace výstupu")](table-view-images/edit14.png)
+    [![](table-view-images/edit14.png "Konfigurace výstupu")](table-view-images/edit14.png#lightbox)
 5. Můžete uložit změny a vrátit k sadě Visual Studio pro Mac k synchronizaci s Xcode.
 
 Dále jsme budete napište zobrazení kódu některá data pro tabulku při spuštění aplikace.
@@ -175,7 +175,7 @@ S naše tabulka zobrazení určená v Tvůrci rozhraní a zveřejňovány prost�
 
 Nejdříve vytvoříme nový `Product` třída pro uložení informací pro jednotlivé řádky. V **Průzkumníku řešení**, klikněte pravým tlačítkem na projekt a vyberte **přidat** > **nový soubor...** Vyberte **Obecné** > **prázdné třídy**, zadejte `Product` pro **název** a klikněte na tlačítko **nový** tlačítko:
 
-[ ![](table-view-images/populate01.png "Vytvoření prázdné třídy")](table-view-images/populate01.png)
+[![](table-view-images/populate01.png "Vytvoření prázdné třídy")](table-view-images/populate01.png#lightbox)
 
 Ujistěte se, `Product.cs` soubor vypadá takto:
 
@@ -333,7 +333,7 @@ public override void AwakeFromNib ()
 
 Pokud jsme aplikaci spustit, se zobrazí následující:
 
-[ ![](table-view-images/populate02.png "Spuštění ukázkové aplikace")](table-view-images/populate02.png)
+[![](table-view-images/populate02.png "Spuštění ukázkové aplikace")](table-view-images/populate02.png#lightbox)
 
 <a name="Sorting_by_Column" />
 
@@ -341,11 +341,11 @@ Pokud jsme aplikaci spustit, se zobrazí následující:
 
 Umožňuje povolit uživateli řazení dat v tabulce kliknutím na záhlaví sloupce. První, dvakrát klikněte `Main.storyboard` soubor otevřete pro úpravy v Tvůrci rozhraní. Vyberte `Product` sloupce, zadejte `Title` pro **klíč řazení**, `compare:` pro **selektor** a vyberte `Ascending` pro **pořadí**:
 
-[ ![](table-view-images/sort01.png "Nastavení klíč řazení")](table-view-images/sort01.png)
+[![](table-view-images/sort01.png "Nastavení klíč řazení")](table-view-images/sort01.png#lightbox)
 
 Vyberte `Details` sloupce, zadejte `Description` pro **klíč řazení**, `compare:` pro **selektor** a vyberte `Ascending` pro **pořadí**:
 
-[ ![](table-view-images/sort02.png "Nastavení klíč řazení")](table-view-images/sort02.png)
+[![](table-view-images/sort02.png "Nastavení klíč řazení")](table-view-images/sort02.png#lightbox)
 
 Uložte změny a vrátit k sadě Visual Studio pro Mac k synchronizaci s Xcode.
 
@@ -395,7 +395,7 @@ public override void SortDescriptorsChanged (NSTableView tableView, NSSortDescri
 
 Pokud jsme spusťte aplikaci a klikněte na záhlaví sloupců, podle tohoto sloupce seřadí řádky:
 
-[ ![](table-view-images/sort03.png "Příklad aplikace spustit")](table-view-images/sort03.png)
+[![](table-view-images/sort03.png "Příklad aplikace spustit")](table-view-images/sort03.png#lightbox)
 
 <a name="Row_Selection" />
 
@@ -403,7 +403,7 @@ Pokud jsme spusťte aplikaci a klikněte na záhlaví sloupců, podle tohoto slo
 
 Pokud chcete povolit uživateli vybrat jeden řádek, dvakrát klikněte `Main.storyboard` soubor otevřete pro úpravy v Tvůrci rozhraní. Vyberte zobrazení tabulky v **rozhraní hierarchie** a zrušte zaškrtnutí políčka **více** zaškrtnout políčko **atribut Inspector**:
 
-[ ![](table-view-images/select01.png "Atribut Inspector")](table-view-images/select01.png)
+[![](table-view-images/select01.png "Atribut Inspector")](table-view-images/select01.png#lightbox)
 
 Uložte změny a vrátit k sadě Visual Studio pro Mac k synchronizaci s Xcode.
 
@@ -432,7 +432,7 @@ Zobrazení tabulky (`NSTableView`) obsahuje následující metody pro práci s v
 
 Pokud chcete povolit uživateli vybrat více řádků, dvakrát klikněte `Main.storyboard` soubor otevřete pro úpravy v Tvůrci rozhraní. Vyberte zobrazení tabulky v **rozhraní hierarchie** a zkontrolujte **více** zaškrtnout políčko **atribut Inspector**:
 
-[ ![](table-view-images/select02.png "Atribut Inspector")](table-view-images/select02.png)
+[![](table-view-images/select02.png "Atribut Inspector")](table-view-images/select02.png#lightbox)
 
 Uložte změny a vrátit k sadě Visual Studio pro Mac k synchronizaci s Xcode.
 
@@ -466,7 +466,7 @@ Zobrazení tabulky (`NSTableView`) obsahuje následující metody pro práci s v
 
 Pokud chcete povolit uživatelům zadejte znak s Tabulka zobrazení vybrané a vyberte první řádek, který má tento znak, dvakrát klikněte `Main.storyboard` soubor otevřete pro úpravy v Tvůrci rozhraní. Vyberte zobrazení tabulky v **rozhraní hierarchie** a zkontrolujte **vyberte typ** zaškrtnout políčko **atribut Inspector**:
 
-[ ![](table-view-images/type01.png "Nastavení výběru typu")](table-view-images/type01.png)
+[![](table-view-images/type01.png "Nastavení výběru typu")](table-view-images/type01.png#lightbox)
 
 Uložte změny a vrátit k sadě Visual Studio pro Mac k synchronizaci s Xcode.
 
@@ -492,7 +492,7 @@ public override nint GetNextTypeSelectMatch (NSTableView tableView, nint startRo
 
 Pokud jsme aplikaci spustit a zadejte znak, je vybrán řádek:
 
-[ ![](table-view-images/type02.png "Spuštění ukázkové aplikace")](table-view-images/type02.png)
+[![](table-view-images/type02.png "Spuštění ukázkové aplikace")](table-view-images/type02.png#lightbox)
 
 <a name="Reordering_Columns" />
 
@@ -500,7 +500,7 @@ Pokud jsme aplikaci spustit a zadejte znak, je vybrán řádek:
 
 Pokud chcete povolit uživatelům přetáhněte změnit pořadí sloupců v tabulce zobrazení, dvakrát klikněte `Main.storyboard` soubor otevřete pro úpravy v Tvůrci rozhraní. Vyberte zobrazení tabulky v **rozhraní hierarchie** a zkontrolujte **Reordering** zaškrtnout políčko **atribut Inspector**:
 
-[ ![](table-view-images/reorder01.png "Atribut Inspector")](table-view-images/reorder01.png)
+[![](table-view-images/reorder01.png "Atribut Inspector")](table-view-images/reorder01.png#lightbox)
 
 Pokud nás dostanete hodnotu **automatické ukládání** vlastnost a kontrola **informace o sloupci** pole, všechny změny, provedeme rozložení tabulky budou automaticky uloženy pro nás a obnovit dalším spuštění aplikace je spuštěn.
 
@@ -519,7 +519,7 @@ public override bool ShouldReorder (NSTableView tableView, nint columnIndex, nin
 
 Pokud jsme aplikaci spustit, jsme přetáhněte záhlaví sloupců kolem Změna uspořádání naše sloupců:
 
-[ ![](table-view-images/reorder02.png "Příklad uspořádaný sloupců")](table-view-images/reorder02.png)
+[![](table-view-images/reorder02.png "Příklad uspořádaný sloupců")](table-view-images/reorder02.png#lightbox)
 
 <a name="Editing_Cells" />
 
@@ -575,7 +575,7 @@ public override NSView GetViewForItem (NSTableView tableView, NSTableColumn tabl
 
 Nyní když jsme aplikaci spustit, můžete upravit uživatele buněk v tabulce zobrazení:
 
-[ ![](table-view-images/editing01.png "Příklad úpravy buňku")](table-view-images/editing01.png)
+[![](table-view-images/editing01.png "Příklad úpravy buňku")](table-view-images/editing01.png#lightbox)
 
 <a name="Using_Images_in_Table_Views" />
 
@@ -650,7 +650,7 @@ V závislosti na požadavcích vaší aplikace, mohou nastat situace kde budete 
 
 Nejprve upravit `Main.storyboard` v Xcode na rozhraní tvůrce, vyberte zobrazení tabulky a zvýšit počet sloupců tří (3). V dalším kroku změnit **název** nové sloupce, který se `Action`:
 
-[ ![](table-view-images/delete01.png "Úprava názvu sloupce")](table-view-images/delete01.png)
+[![](table-view-images/delete01.png "Úprava názvu sloupce")](table-view-images/delete01.png#lightbox)
 
 Uložte změny do scénáře a vrátit k sadě Visual Studio pro Mac, aby synchronizovat změny.
 
@@ -897,15 +897,15 @@ Pro **akce** sloupce, dokud se prohledávají všech dílčí zobrazení `NSButt
 
 Tyto změny zavedené při spuštění aplikace každý řádek bude mít **odstranit** tlačítko:
 
-[ ![](table-view-images/delete02.png "Zobrazení tabulky s odstranění tlačítka")](table-view-images/delete02.png)
+[![](table-view-images/delete02.png "Zobrazení tabulky s odstranění tlačítka")](table-view-images/delete02.png#lightbox)
 
 Když uživatel klikne **odstranit** tlačítko se zobrazí výstraha s žádostí o odstranění daného řádku:
 
-[ ![](table-view-images/delete03.png "Upozornění na Odstranit řádek")](table-view-images/delete03.png)
+[![](table-view-images/delete03.png "Upozornění na Odstranit řádek")](table-view-images/delete03.png#lightbox)
 
 Pokud se uživatel rozhodne odstranit, se odeberou řádek a v tabulce bude překreslen.:
 
-[ ![](table-view-images/delete04.png "Po odstranění řádek tabulky")](table-view-images/delete04.png)
+[![](table-view-images/delete04.png "Po odstranění řádek tabulky")](table-view-images/delete04.png#lightbox)
 
 <a name="Data_Binding_Table_Views" />
 

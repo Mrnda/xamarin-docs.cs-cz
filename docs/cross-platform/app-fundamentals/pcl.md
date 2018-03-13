@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: e3701960f246a8f627d991edf244656b5fd8958e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e81ecd10f4dfc101cf63ba9d052d15b51a367ee5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-portable-class-libraries"></a>Úvod do knihovny přenosných tříd
 
@@ -29,10 +29,6 @@ Existují tři hlavní přístupy sdílení kódu, které řeší tento problém
 
 
 Tato stránka vysvětluje, jak vytvořit **PCL** projektu, jehož cílem konkrétní profil, který může pak odkazovat více projektů specifické pro platformu.
-
-## <a name="requirements"></a>Požadavky
-
-Přenosná knihovna projekty jsou automaticky povolené v sadě Visual Studio pro Mac v systému macOS a jsou integrované do sady Visual Studio 2013 a novější.
 
 
 ## <a name="what-is-a-portable-class-library"></a>Co je přenosné knihovny tříd?
@@ -132,7 +128,7 @@ A </td>
   </tbody>
 </table>
 
-Sloupec Xamarin odráží skutečnost, že Xamarin.iOS a Xamarin.Android podporuje všechny profily dodávané s Visual Studio 2013 a vyšší a dostupnost funkcí ve vytvořené knihovny bude omezena pouze jiné platformy, které jste se rozhodli podpora.
+Sloupec Xamarin odráží fakt, že Xamarin.iOS a Xamarin.Android podporuje všechny profily, které jsou součástí sady Visual Studio a dostupnost funkcí ve vytvořené knihovny bude omezena pouze jiné platformy, které zvolíte pro podporu.
 
 Patří mezi ně profily, které jsou kombinace:
 
@@ -170,7 +166,7 @@ Tento diagram znázorňuje architekturu aplikace napříč platformami pomocí p
 
 
 
-[![](pcl-images/image1.png "Tento diagram znázorňuje architekturu aplikace napříč platformami pomocí přenosné knihovny tříd sdílet kód, ale také pomocí vkládání závislostí předávat platformy – závislé funkce")](pcl-images/image1.png)
+[![](pcl-images/image1.png "Tento diagram znázorňuje architekturu aplikace napříč platformami pomocí přenosné knihovny tříd sdílet kód, ale také pomocí vkládání závislostí předávat platformy – závislé funkce")](pcl-images/image1.png#lightbox)
 
 
 
@@ -212,7 +208,7 @@ K zobrazení a změna PCL nastavení pro tento projekt, klikněte pravým tlač�
 
 
 
-[![](pcl-images/image4.png "K zobrazení a změna PCL nastavení pro tento projekt, klikněte pravým tlačítkem na projekt a zvolte možnosti sestavení obecné zobrazíte tady uvedené obrazovky")](pcl-images/image4.png)
+[![](pcl-images/image4.png "K zobrazení a změna PCL nastavení pro tento projekt, klikněte pravým tlačítkem na projekt a zvolte možnosti sestavení obecné zobrazíte tady uvedené obrazovky")](pcl-images/image4.png#lightbox)
 
 
 
@@ -224,7 +220,7 @@ Změna libovolné `Target Framework` možnosti automaticky aktualizuje `Current 
 
 
 
-[![](pcl-images/image5.png "Změna některé z možností cílové rozhraní automaticky aktualizuje aktuální profil obrazovky se také zobrazí upozornění, pokud jsou vybrané nekompatibilní možnosti")](pcl-images/image5.png)
+[![](pcl-images/image5.png "Změna některé z možností cílové rozhraní automaticky aktualizuje aktuální profil obrazovky se také zobrazí upozornění, pokud jsou vybrané nekompatibilní možnosti")](pcl-images/image5.png#lightbox)
 
 
 
@@ -238,7 +234,7 @@ Pokud kód je napsána v knihovny PCL, sady Visual Studio pro Mac editor rozpozn
 
 
 
-[![](pcl-images/image6.png "Vstupně-výstupní operace pomocí výchozí profil Profile136 používá v sadě Visual Studio pro Mac oznámení scrollbar, který označuje o polovinu dostupných tříd. zobrazí se ve skutečnosti jsou pouze 14 třídy, které jsou k dispozici")](pcl-images/image6.png)
+[![](pcl-images/image6.png "Vstupně-výstupní operace pomocí výchozí profil Profile136 používá v sadě Visual Studio pro Mac oznámení scrollbar, který označuje o polovinu dostupných tříd. zobrazí se ve skutečnosti jsou pouze 14 třídy, které jsou k dispozici")](pcl-images/image6.png#lightbox)
 
 
 
@@ -246,7 +242,7 @@ Porovnání s System.IO automatického dokončování v projektu Xamarin.iOS neb
 
 
 
-[![](pcl-images/image7.png "Nejsou k dispozici včetně běžně používaných tříd jako soubor a adresáře, které nejsou v žádný profil PCL 40 třídy")](pcl-images/image7.png)
+[![](pcl-images/image7.png "Nejsou k dispozici včetně běžně používaných tříd jako soubor a adresáře, které nejsou v žádný profil PCL 40 třídy")](pcl-images/image7.png#lightbox)
 
 
 
@@ -261,7 +257,7 @@ Po vytvoření projektu PCL, můžete přidat odkaz na jeho ze žádného kompat
 
 
 
-[![](pcl-images/image8.png "V sadě Visual Studio pro Mac klikněte pravým tlačítkem na uzel odkazy a zvolte Upravit odkazy a přepněte na kartu projekty, jak je znázorněno")](pcl-images/image8.png)
+[![](pcl-images/image8.png "V sadě Visual Studio pro Mac klikněte pravým tlačítkem na uzel odkazy a zvolte Upravit odkazy a přepněte na kartu projekty, jak je znázorněno")](pcl-images/image8.png#lightbox)
 
 
 
@@ -269,7 +265,7 @@ Následující snímek obrazovky ukazuje panelu pro řešení pro ukázkovou apl
 
 
 
-[![](pcl-images/image9.png "Odsazení řešení pro ukázkovou aplikaci TaskyPortable")](pcl-images/image9.png)
+[![](pcl-images/image9.png "Odsazení řešení pro ukázkovou aplikaci TaskyPortable")](pcl-images/image9.png#lightbox)
 
 
 
@@ -325,7 +321,7 @@ Nastavení PCL můžete zobrazit a změnit tak, že kliknete pravým tlačítkem
 
 
 
-[![](pcl-images/image13.png "Nastavení PCL můžete zobrazit a změnit tak, že kliknete pravým tlačítkem na projekt a výběr vlastnosti knihovny, jak je vidět na tomto snímku obrazovky")](pcl-images/image13.png)
+[![](pcl-images/image13.png "Nastavení PCL můžete zobrazit a změnit tak, že kliknete pravým tlačítkem na projekt a výběr vlastnosti knihovny, jak je vidět na tomto snímku obrazovky")](pcl-images/image13.png#lightbox)
 
 
 
@@ -340,7 +336,7 @@ Kód v knihovny PCL zápisu, Visual Studio rozpozná omezení vybraný profil a 
 
 
 
-[![](pcl-images/image14.png "Pomocí výchozí profil Profile136 vstupně-výstupní operace")](pcl-images/image14.png)
+[![](pcl-images/image14.png "Pomocí výchozí profil Profile136 vstupně-výstupní operace")](pcl-images/image14.png#lightbox)
 
 
 
@@ -348,7 +344,7 @@ Porovnání s System.IO automatického dokončování v pravidelné projektové 
 
 
 
-[![](pcl-images/image15.png "Automatické dokončování v pravidelných projektu")](pcl-images/image15.png)
+[![](pcl-images/image15.png "Automatické dokončování v pravidelných projektu")](pcl-images/image15.png#lightbox)
 
 
 
@@ -363,7 +359,7 @@ Po vytvoření projektu PCL, můžete přidat odkaz na jeho ze žádného kompat
 
 
 
-[![](pcl-images/image16.png "Karta projekty, jak je znázorněno")](pcl-images/image16.png)
+[![](pcl-images/image16.png "Karta projekty, jak je znázorněno")](pcl-images/image16.png#lightbox)
 
 
 
@@ -371,7 +367,7 @@ Následující snímek obrazovky ukazuje na řešení panelu ukázkové aplikace
 
 
 
-[![](pcl-images/image17.png "V podokně řešení pro ukázkovou aplikaci TaskyPortable")](pcl-images/image17.png)
+[![](pcl-images/image17.png "V podokně řešení pro ukázkovou aplikaci TaskyPortable")](pcl-images/image17.png#lightbox)
 
 
 
@@ -393,7 +389,7 @@ Tady jsou některé snímky obrazovky výsledná aplikace běžící v systému 
 
 
 
-[![](pcl-images/image18.png "Tady jsou některé snímky obrazovky výsledná aplikace běžící v systému iOS, Android a Windows Phone")](pcl-images/image18.png)
+[![](pcl-images/image18.png "Tady jsou některé snímky obrazovky výsledná aplikace běžící v systému iOS, Android a Windows Phone")](pcl-images/image18.png#lightbox)
 
 
 
@@ -406,7 +402,7 @@ Struktura řešení jsou uvedeny níže (v sadě Visual Studio pro Mac a Visual 
 
 
 
-[![](pcl-images/image19.png "Struktura řešení je tady uvedené v sadě Visual Studio pro Mac a Visual Studio v uvedeném pořadí")](pcl-images/image19.png)
+[![](pcl-images/image19.png "Struktura řešení je tady uvedené v sadě Visual Studio pro Mac a Visual Studio v uvedeném pořadí")](pcl-images/image19.png#lightbox)
 
 
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/28/2017
-ms.openlocfilehash: ea91dbcf7148651cb5d10acae4ada8bb6758c39e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cc7643d89b4a45b6f6fb87bb027edb1c339a20ec
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="ios-localization"></a>iOS lokalizace
 
@@ -26,28 +26,20 @@ Tato část popisuje některé funkce lokalizace v iOS. Pokračujte [další č�
 
 ### <a name="language"></a>Jazyk
 
-Uživatelé vyberte svůj jazyk v **nastavení** aplikace. Toto nastavení ovlivňuje řetězce jazyků a bitové kopie zobrazuje operačního systému a také aplikace, která zjišťují nastavení jazyka.
+Uživatelé vyberte svůj jazyk v **nastavení** aplikace. Toto nastavení ovlivňuje řetězce jazyků a zobrazovat v operačním systému a v aplikacích bitové kopie. 
 
-Toto je, kde se uživatel rozhodne, zda mají být zobrazeny angličtina, španělština, japonština, francouzština nebo dalších jazyků, zobrazí se ve svých aplikacích.
-
-Je skutečný seznam podporovaných jazyků v iOS 7: angličtina (USA), angličtina (Velká Británie), čínština (zjednodušená), čínština (tradiční), francouzština, němčina, italština, japonština, korejština, španělština, Arabské, Katalánštinu, chorvatština, čeština, dánština, holandština, finština, řečtina, hebrejština, Angličtina (australské), maďarština, indonéština, malajština, norština, polština, portugalština, portugalština (Brazílie), rumunština, ruština, slovenština, švédština, thajštině, turečtina, ukrajinská, vietnamštině, španělština (moderní řazení).
-
-Může dotazovat aktuální jazyk přístup k první prvek `PreferredLanguages` pole:
+Určuje jazyk, používá v aplikaci, získat první prvek `NSBundle.MainBundle.PreferredLocalizations`:
 
 ```csharp
 var lang = NSBundle.MainBundle.PreferredLocalizations[0];
 ```
 
-Tato hodnota bude například kód jazyka `en` pro angličtinu, `es` pro španělštinu, `ja` v japonštině, atd. _Hodnota vrácená je omezený na jednu z lokalizace podporováno v aplikaci (s použitím záložní pravidla určit nejlepší shodu)._
+Tato hodnota bude například kód jazyka `en` pro angličtinu, `es` pro španělštinu, `ja` v japonštině, atd. Hodnota vrácená je omezený na jednu z lokalizace podporováno v aplikaci (s použitím záložní pravidla určit nejlepší shodu).
 
 Kód aplikace zkontrolovat pro tuto hodnotu – Xamarin vždy nemusí a iOS i poskytování funkcí, které pomáhají zajistit automaticky správný řetězec nebo prostředků pro jazyk daného uživatele. Tyto funkce jsou popsané v dalších částech tohoto dokumentu.
 
 > [!NOTE]
-> **Poznámka:** před iOS 9, doporučené kód byl `var lang = NSLocale.PreferredLanguages [0];`.
->
-> Výsledky vrácené tento kód změnit v iOS 9 – viz [Technická poznámka TN2418](https://developer.apple.com/library/content/technotes/tn2418/_index.html) Další informace.
->
-> Můžete dál používat `NSLocale.PreferredLanguages [0]` k určení skutečnými hodnotami vybraný uživatel (bez ohledu na to, lokalizace vaše aplikace podporuje).
+> Použití `NSLocale.PreferredLanguages` určit uživatele jazykové předvolby, bez ohledu na to, lokalizace nepodporuje aplikace. Hodnoty, vrátí tato metoda se změnilo v systému iOS 9; v tématu [Technická poznámka TN2418](https://developer.apple.com/library/content/technotes/tn2418/_index.html) podrobnosti.
 
 ### <a name="locale"></a>Národní prostředí
 
@@ -55,19 +47,18 @@ Uživatelé zvolit, jejich národního prostředí v **nastavení** aplikace. To
 
 Díky tomu mají uživatelé zvolit, zda uvidí formáty času 12 hodin nebo 24 hodin, jestli jejich oddělovač desetinných míst je čárkou nebo bod a pořadí den, měsíc a rok v zobrazení data.
 
-Pomocí Xamarinu máte přístup do obou Apple iOS třídy (`NSNumberFormatter`) a také třídy rozhraní .NET v System.Globalization. Vývojáři byste měli zvážit, které je vhodnější jejich potřeb a jsou dostupné v každé jiné funkce. Zejména pokud načítání a zobrazení ceny nákupy v aplikaci pomocí StoreKit byste měli výborný použít společnosti Apple formátování třídy pro vrácené informace ceny.
+Pomocí Xamarinu máte přístup do obou Apple iOS třídy (`NSNumberFormatter`) a také třídy rozhraní .NET v System.Globalization. Vývojáři byste měli zvážit, které je vhodnější jejich potřeb a jsou dostupné v každé jiné funkce. Zejména pokud načítání a zobrazení ceny nákupy v aplikaci pomocí StoreKit byste měli použít formátování třídy společnosti Apple pro vrácené informace ceny.
 
-Buď může být dotazován aktuální národní prostředí:
+Aktuální národní prostředí může dotazovat dvěma způsoby:
 
 - `NSLocale.CurrentLocale.LocaleIdentifier`
 - `NSLocale.AutoUpdatingCurrentLocale.LocaleIdentifier`
 
 První hodnotu do mezipaměti podle operačního systému a proto nemusí pokaždé odpovídat aktuálně vybrané národního prostředí uživatele. Druhá hodnota použijte k získání aktuálně vybrané národní prostředí.
 
-
 ### <a name="nscurrentlocaledidchangenotification"></a>NSCurrentLocaleDidChangeNotification
 
-generuje iOS `NSCurrentLocaleDidChangeNotification` když uživatel aktualizuje jejich národního prostředí. Aplikace můžete naslouchat pro toto oznámení, když jsou spuštěné a provádět odpovídající změny uživatelského rozhraní.
+generuje iOS `NSCurrentLocaleDidChangeNotification` když uživatel aktualizuje jejich národního prostředí. Aplikace může naslouchat pro toto oznámení, při jejich běží a můžete provádět odpovídající změny uživatelského rozhraní.
 
 <a name="basics" />
 
@@ -75,24 +66,47 @@ generuje iOS `NSCurrentLocaleDidChangeNotification` když uživatel aktualizuje 
 
 Následující funkce sady iOS je možné snadno využít v Xamarin zajistit lokalizované prostředky pro zobrazení pro uživatele. Odkazovat [TaskyL10n ukázka](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n) chcete zjistit, jak implementovat tyto návrhy.
 
-### <a name="infoplist"></a>Info.plist
+### <a name="specifying-default-and-supported-languages-in-infoplist"></a>Určení výchozí a podporovaných jazyků v Info.plist
 
-Než začnete, nakonfigurujte **Info.plist** soubor s následující klíče:
+V [technických otázek a odpovědí A QA1828: Určuje, jak iOS jazyk pro vaše aplikace](https://developer.apple.com/library/content/qa/qa1828/_index.html), Apple popisuje, jak iOS vybere jazyk pro použití v aplikaci. Mít vliv následující faktory na jazyk, který se zobrazí:
 
-- `CFBundleDevelopmentRegion` -výchozí jazyk pro aplikaci (obvykle jazyk používaný vývojáři a použít v scénářů a prostředky řetězce a bitové kopie). V následujícím příkladu **en** (pro angličtinu) je zadán.
-- `CFBundleLocalizations` -řadu dalších lokalizace podporováno v aplikaci, také pomocí jazyka kódy jako **es** (španělština) a **pt-PT** (portugalština (používá se v Portugalsko).
+- Uživatel je preferované jazyky (v nalezen **nastavení** aplikace)
+- Lokalizace dodávat s aplikace (.lproj složky)
+- `CFBundleDevelopmentRegion` (**Info.plist** hodnota, která určuje výchozí jazyk pro aplikace)
+- `CFBundleLocalizations` (**Info.plist** pole zadání všech podporovaných lokalizace)
+
+Jak je uvedeno v technických otázek a odpovědí, `CFBundleDevelopmentRegion` představuje výchozí místní a jazykové aplikace. Pokud aplikace nepodporuje explicitně žádné upřednostňované jazyky uživatele, bude používat jazyk, který v tomto poli. 
+
+> [!IMPORTANT]
+> Tento mechanismus výběr jazyka použije iOS 11 výhradně než předchozí verze operačního systému. Z tohoto důvodu se všechny aplikace pro iOS 11, která explicitně nedeklaruje podporované lokalizace – včetně .lproj složek nebo nastavení hodnoty pro `CFBundleLocalizations` – může zobrazovat v jiném jazyce v iOS 11, než v iOS 10.
+
+Pokud `CFBundleDevelopmentRegion` nebyl zadán v **Info.plist** souboru nástroje sestavení Xamarin.iOS aktuálně použít výchozí hodnotu `en_US`. Když to může změnit v budoucí verzi, znamená to, že je výchozí jazyk angličtinu.
+
+Aby se zajistilo, že vaše aplikace vybere očekávaný jazyk, proveďte následující kroky:
+
+- Zadejte výchozí jazyk. Otevřete **Info.plist** a použít **zdroj** zobrazení a nastavte hodnotu `CFBundleDevelopmentRegion` klíče; v XML, by mělo vypadat jako následující:
 
 ```xml
 <key>CFBundleDevelopmentRegion</key>
-<string>en</string>
+<string>es</string>
+```
+
+Tento příklad používá k určení, že pokud žádné uživatele preferované jazyky jsou podporovány, výchozí do španělštiny "es".
+
+- Všechny podporované lokalizace deklarujte. V **Info.plist**, použijte **zdroj** zobrazení a nastavte pro pole `CFBundleLocalizations` klíče; v XML, by mělo vypadat jako následující:
+
+```xml
 <key>CFBundleLocalizations</key>
 <array>
-  <string>de</string>
-  <string>es</string>
-  <string>ja</string>
-  ...
+    <string>en</string>
+    <string>es</string>
+    ...
 </array>
 ```
+
+Lokalizované pomocí rozhraní .NET mechanismy, jako soubory RESX nutné zadat tyto aplikace na platformě Xamarin.iOS **Info.plist** také hodnoty.
+
+Další informace o těchto **Info.plist** klíče, prohlédněte si společnosti Apple [informace vlastnost seznamu Key Reference](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html).
 
 ### <a name="localizedstring-method"></a>LocalizedString – metoda
 
@@ -107,8 +121,8 @@ Než začnete, nakonfigurujte **Info.plist** soubor s následující klíče:
 Může být několik různých **.strings** soubory v adresáři každé jazyka:
 
 - **Localizable.Strings** – hlavní seznam textu.
-- **InfoPlist.strings** – určité konkrétní klíče jsou povoleny v tomto souboru přeložit takové věci, jako název aplikace.
-- **< název storyboard > .strings** -volitelný soubor, který obsahuje překladů pro prvky uživatelského rozhraní v scénáře.
+- **InfoPlist.strings** – určité konkrétní klíče jsou povoleny v tomto souboru přeložit akcí, například název aplikace.
+- **< název storyboard > .strings** – volitelný soubor, který obsahuje překladů pro prvky uživatelského rozhraní v scénáře.
 
 **Akce sestavení** tyto soubory by měla být **sady prostředků**.
 
@@ -116,7 +130,7 @@ Může být několik různých **.strings** soubory v adresáři každé jazyka:
 
 Syntaxe pro lokalizované hodnoty řetězce je:
 
-```csharp
+```console
 /* comment */
 "key"="localized-value";
 ```
@@ -129,7 +143,7 @@ Následující znaky v řetězci by měl vyhnuli:
 
 Jedná se o příklad **es/Localizable.strings** (tj. Španělština) soubor od vzorku:
 
-```csharp
+```console
 "<new task>" = "<new task>";
 "Task Details" = "Detalles de la tarea";
 "Name" = "Nombre";
@@ -162,7 +176,7 @@ Pokud není k dispozici pro konkrétní jazyk bitovou kopii, iOS se vrátit zpě
 
 Použití standardní zásady vytváření názvů pro spuštění bitové kopie (a XIB nebo Storyboard pro modely iPhone 6) Pokud je v umístění **.lproj** adresáře pro jednotlivé jazyky.
 
-```csharp
+```console
 Default.png
 Default@2x.png
 Default-568h@2x.png
@@ -173,7 +187,7 @@ LaunchScreen.xib
 
 Umístění **InfoPlist.strings** v soubor **.lproj** directory umožňuje přepsat některé hodnoty z aplikace **Info.plist**, včetně názvu aplikace:
 
-```csharp
+```console
 "CFBundleDisplayName" = "LeónTodo";
 ```
 
@@ -182,23 +196,6 @@ Jiných klíčů, které můžete použít k [specifické pro aplikaci řetězce
 - CFBundleName
 - CFBundleShortVersionString
 - NSHumanReadableCopyright
-
-
-<!--
-## App icon
-
-Does not seem to be possible (although it definitely used to be!).
--->
-
-### <a name="localization-native-development-region"></a>Lokalizace nativní vývoj oblast
-
-Výchozí řetězce (umístěný ve **Base.lproj** složky) bude považován za 'záložní' jazyk. To znamená, že pokud posunutí je požadován v kódu a nebyl nalezen pro aktuální jazyk **Base.lproj** složky vyhledávat výchozí řetězec, který má použít (Pokud není nalezena žádná shoda, vlastní řetězec Překlad identifikátoru je Zobrazí).
-
-Mohou zvolit jiný jazyk, jako záložní nastavením klíče plist `CFBundleDevelopmentRegionKey`. Jeho hodnota by měla být nastavena jazyk kódu pro jazyk nativní vývoj. Tento snímek obrazovky ukazuje, že plist v Xamarin studiu s oblasti nativní vývoj nastavena na Španělština (es):
-
-![](images/cfbundledevelopmentregion.png "Vlastnost InfoPList.strings")
-
-Pokud výchozí jazyk použitý v vaší scénářů a v rámci vašeho kódu není angličtina, nastavte tuto hodnotu tak, aby odrážela nativním jazyce používá v kódu aplikace.
 
 ### <a name="dates-and-times"></a>Data a časy
 
@@ -222,7 +219,7 @@ Debug.WriteLine ("Medium,None: " + df.StringFor(date));
 
 Výsledky pro angličtinu ve Spojených státech amerických:
 
-```csharp
+```console
 Full,Long: Friday, August 7, 2015 at 10:29:32 AM PDT
 Short,Short: 8/7/15, 10:29 AM
 Medium,None: Aug 7, 2015
@@ -230,7 +227,7 @@ Medium,None: Aug 7, 2015
 
 Výsledky pro španělštinu v Španělsko:
 
-```csharp
+```console
 Full,Long: viernes, 7 de agosto de 2015, 10:26:58 GMT-7
 Short,Short: 7/8/15 10:26
 Medium,None: 7/8/2015
@@ -244,20 +241,19 @@ Odkazovat na Apple [datum formátování](https://developer.apple.com/library/ma
 
 iOS poskytuje řadu funkcí, které pomáhají při vytváření aplikace využívající technologii zprava doleva:
 
-* Použití **automatického rozložení** `leading` a `trailing` atributy pro řízení aligment (která odpovídá *levém* a *správné* pro angličtinu, ale je třeba vrátit zpět pro jazyky psané zprava doleva).
+* Použití automatického rozložení `leading` a `trailing` atributy pro řízení aligment, (který odpovídá doleva a doprava pro angličtinu, ale je obrácený pro jazyky psané zprava doleva).
   [ `UIStackView` ](~/ios/user-interface/controls/uistackview.md) Ovládací prvek je obzvláště užitečné pro rozložení ovládacích prvků vědět zprava doleva.
-* Použití `TextAlignment = UITextAlignment.Natural` pro zarovnání textu (která bude *levém* pro většinu jazyků, ale *správné* pro zprava doleva).
+* Použití `TextAlignment = UITextAlignment.Natural` pro zarovnání textu (který bude ponechána pro většinu jazyků, ale pro zprava doleva).
 * `UINavigationController` automaticky převrátí tlačítko Zpět a obrátí prstem směrem.
 
-Tyto snímky obrazovky zobrazit [lokalizované **Tasky** ukázka](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n) v arabština a hebrejština (i když angličtina byl zadán v polích):
+Tyto snímky obrazovky zobrazit [lokalizované Tasky ukázka](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n) v arabština a hebrejština (i když angličtina byl zadán v polích):
 
-[ ![](images/rtl-ar-sml.png "Lokalizace v arabština")](images/rtl-ar.png "Arabic") 
+[![](images/rtl-ar-sml.png "Lokalizace v arabština")](images/rtl-ar.png#lightbox "Arabic") 
 
-[ ![](images/rtl-he-sml.png "Lokalizace v hebrejštině")](images/rtl-he.png "Hebrew")
+[![](images/rtl-he-sml.png "Lokalizace v hebrejštině")](images/rtl-he.png#lightbox "Hebrew")
 
 iOS automaticky obrátí `UINavigationController`, a další ovládací prvky jsou umístěna uvnitř `UIStackView` nebo v souladu s automatického rozložení.
 RTL text je lokalizované pomocí **.strings** soubory stejným způsobem jako text zleva doprava.
-
 
 <a name="code"/>
 
@@ -267,17 +263,15 @@ RTL text je lokalizované pomocí **.strings** soubory stejným způsobem jako t
 
 ### <a name="project-structure"></a>Struktura projektu
 
-
-
 ![](images/solution-code.png "Prostředky stromu")
 
 ### <a name="localizablestrings-file"></a>Soubor Localizable.Strings
 
-Jak je popsáno výše, **Localizable.strings** se skládá z páry klíč hodnota, kde klíč je řetězec vybrané uživatelem, který určuje formát souboru
+Jak je popsáno výše, **Localizable.strings** formát souboru se skládá z páry klíč hodnota. Klíč popisuje záměr řetězce a hodnota je přeložený text, který se má použít v aplikaci.
 
 Španělština (**es**) lokalizace pro vzorovou, jsou uvedeny níže:
 
-```csharp
+```console
 "<new task>" = "<new task>";
 "Task Details" = "Detalles de la tarea";
 "Name" = "Nombre";
@@ -318,10 +312,10 @@ Jazyk adresáře musí obsahovat kopii všechny Image, které mají lokalizovan�
 
 Při vytváření a úprava ovládacích prvků scénáře, vyberte každý ovládací prvek a zkontrolujte ID, který má používat pro lokalizaci:
 
-* v sadě Visual Studio pro Mac, je umístěný v panelu pro vlastnosti a názvem **lokalizace ID**.
+* V sadě Visual Studio pro Mac, je umístěn v **vlastnosti Pad** a se nazývá **lokalizace ID**.
 * v Xcode, se nazývá **ID objektu**.
 
-Je řetězcová hodnota, kterou má často formuláře jako **"NF3 h8 xmR"**:
+Tato hodnota řetězce často má formuláře jako je například "NF3-h8-xmR", jak je znázorněno na následujícím snímku obrazovky:
 
 ![](images/xs-designer-localization-id.png "Xcode zobrazení Storyboard lokalizace")
 
@@ -333,7 +327,7 @@ Formát souboru pro překlad scénáře je podobná **Localizable.strings** soub
 
 V příkladu **Mainstoryboard.strings** níže vidíte `UITextField`y mají `placeholder` vlastnost text, který je možné lokalizovat; `UILabel`y mají `text` vlastnost; a `UIButton`s výchozí text se nastavuje pomocí `normalTitle`:
 
-```csharp
+```console
 "SXg-TT-IwM.placeholder" = "nombre de la tarea";
 "Pqa-aa-ury.placeholder"= "otra información de tarea";
 "zwR-D9-hM1.text" = "Detalles de la tarea";
@@ -344,33 +338,9 @@ V příkladu **Mainstoryboard.strings** níže vidíte `UITextField`y mají `pla
 ```
 
 > [!IMPORTANT]
-> **Pomocí třídy velikost scénáře** může mít za následek překlady nejsou uvedena. To je pravděpodobně související s [tento problém](http://stackoverflow.com/questions/24989208/xcode-6-does-not-localize-interface-builder) kde uvádí dokumentace Apple: lokalizace storyboard nebo XIB nebude lokalizaci správně Pokud jsou splněny všechny z následujících tří podmínek: storyboard nebo XIB používá velikost třídy. Základní lokalizace a cíl sestavení jsou nastavené na univerzální. Sestavení cílů iOS 7.0.
-Oprava je duplicitní řetězce souboru storyboard na dva identické soubory: **MainStoryboard~iphone.strings** a **MainStoryboard~ipad.strings**:
-
+> Pomocí třídy velikost scénáře, může mít za následek překladů, které se nezobrazí v aplikaci. [Poznámky k verzi Xcode společnosti Apple](https://developer.apple.com/library/content/releasenotes/DeveloperTools/RN-Xcode/Chapters/Introduction.html) znamenat, že storyboard nebo XIB nebude lokalizaci správně pokud platí tři věci: používá třídy velikost základní lokalizace a cíl sestavení jsou nastaveny na univerzální a sestavení cílem iOS 7.0. Oprava je duplicitní řetězce souboru storyboard na dva identické soubory: **MainStoryboard~iphone.strings** a **MainStoryboard~ipad.strings**, jak je znázorněno na následujícím snímku obrazovky:
+> 
 > ![](images/xs-dup-strings.png "Soubory řetězce")
-
-
-<!--
-# Native Formatting
-
-Xamarin.iOS applications can take advantage of the .NET framework's formatting options for localizing
-numbers and dates.
-
-### Date string formatting
-
-https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/DataFormatting/Articles/dfDateFormatting10_4.html#//apple_ref/doc/uid/TP40002369-SW1
-
-
-NSDateFormatter formatter = new NSDateFormatter ();
-formatter.DateFormat = "MMMM/dd/yyyy";
-NSString dateString = new NSString (formatter.ToString (d));
-
-
-### Number formatting
-
-https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/DataFormatting/Articles/dfNumberFormatting10_4.html#//apple_ref/doc/uid/TP40002368-SW1
-
--->
 
 <a name="appstore" />
 
@@ -378,26 +348,11 @@ https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/DataForma
 
 Odpovídá společnosti Apple – nejčastější dotazy na [lokalizace App Store](https://itunespartner.apple.com/en/apps/faq/App%20Store_Localization) k zadání překladů pro každou zemi aplikace je na prodej. Všimněte si jejich upozornění, že překlady se objeví pouze tehdy, pokud vaše aplikace obsahuje také lokalizované **.lproj** adresář pro jazyk.
 
-<!--
-
-Once you’ve entered your application into iTunes Connect the default language
-metadata and screenshots will appear as shown:
-
-![]( "itunes connect 1")
-
-Use the language list on the right to select other languages to provide
-translated application name, description, search keywords, URLs and screenshots.
-The complete list of languages is shown in this screenshot:
-
-![]( "itunes connect 2")
--->
-
 ## <a name="summary"></a>Souhrn
 
 Tento článek popisuje základní informace o lokalizaci aplikací iOS pomocí funkce integrované prostředků zpracování a scénáře.
 
 Další informace o i18n a L10n pro iOS, Android a multiplatformní aplikace (včetně Xamarin.Forms) v [Tato příručka napříč platformami](~/cross-platform/app-fundamentals/localization.md).
-
 
 ## <a name="related-links"></a>Související odkazy
 

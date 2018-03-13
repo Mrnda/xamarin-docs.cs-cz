@@ -7,23 +7,22 @@ ms.assetid: E5314D7F-2AAC-40DA-BEBA-27C834F078DD
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/29/2017
-ms.openlocfilehash: 9f084899f44e0104d0aa2d4b3c0509812bd3fdd2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: ef073999e10e184806089bed3ef9ab93e2f28dd6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="firebase-cloud-messaging"></a>Firebase cloudu zasílání zpráv
 
 _Zasílání zpráv cloudu firebase (FCM) je služba, která usnadňuje zasílání zpráv mezi mobilní aplikace a aplikace serveru. Tento článek obsahuje přehled toho, jak funguje FCM, a vysvětluje postup konfigurace služby Google tak, aby vaše aplikace může použít FCM._
 
-[![Firebase zasílání zpráv cloudu nejdůležitější image](firebase-cloud-messaging-images/preview.png)](firebase-cloud-messaging-images/preview.png)
+[![Firebase zasílání zpráv cloudu nejdůležitější image](firebase-cloud-messaging-images/preview.png)](firebase-cloud-messaging-images/preview.png#lightbox)
 
 Toto téma obsahuje souhrnné informace o tom, jak zasílání zpráv cloudu Firebase směrování zpráv mezi aplikace Xamarin.Android a aplikačního serveru a poskytuje podrobný postup pro získání přihlašovacích údajů, aby se vaše aplikace používat FCM služby.
 
 
-<a name="overview" />
 
 ## <a name="overview"></a>Přehled
 
@@ -31,12 +30,11 @@ Zasílání zpráv cloudu firebase (FCM) je služba a platformy, která zajišť
 
 Jak je znázorněno v následujícím diagramu, FCM funguje jako zprostředkovatel mezi odesílatelé zpráv a klienty. A *klientskou aplikaci* je FCM povolené aplikace, která běží na zařízení. *Aplikační server* (poskytované vy nebo vaše společnost) je povolen FCM server, který vaší klientské aplikace komunikuje přes FCM. Na rozdíl od GCM FCM umožňuje k odeslání zprávy do klientské aplikace přímo prostřednictvím grafického uživatelského rozhraní Firebase konzoly oznámení:
 
-[![FCM nachází mezi aplikace klienta a aplikačního serveru](firebase-cloud-messaging-images/01-server-fcm-app-sml.png)](firebase-cloud-messaging-images/01-server-fcm-app.png)
+[![FCM nachází mezi aplikace klienta a aplikačního serveru](firebase-cloud-messaging-images/01-server-fcm-app-sml.png)](firebase-cloud-messaging-images/01-server-fcm-app.png#lightbox)
 
 Pomocí FCM, servery aplikace mohou zasílat zprávy na jedno zařízení, do skupiny zařízení nebo na počet zařízení, která jsou přihlášené k odběru do tématu. Klientská aplikace můžete použít FCM k odběru zpráv příjem dat ze serveru aplikace (například pro příjem Vzdálená oznámení). Další informace o různých typech Firebase zpráv najdete v tématu [informace o zprávách FCM](https://firebase.google.com/docs/cloud-messaging/concept-options).
 
 
-<a name="inaction" />
 
 ## <a name="firebase-cloud-messaging-in-action"></a>Cloud firebase zasílání zpráv v akci
 
@@ -64,7 +62,7 @@ Následující části popisují, jak tyto přihlašovací údaje se používaj�
 
 Klientská aplikace musí nejprve zaregistrovat s FCM před zasílání zpráv může proběhnout. Klientské aplikace, musíte provést kroky registrace vidět na následujícím obrázku:
 
-[![Diagram kroky registrace aplikace](firebase-cloud-messaging-images/02-app-registration-sml.png)](firebase-cloud-messaging-images/02-app-registration.png)
+[![Diagram kroky registrace aplikace](firebase-cloud-messaging-images/02-app-registration-sml.png)](firebase-cloud-messaging-images/02-app-registration.png#lightbox)
 
 1.  Klientská aplikace kontaktuje FCM k získání tokenu registrace, předání FCM ID odesílatele, klíč rozhraní API a ID aplikace.
 
@@ -77,13 +75,12 @@ Ukládá do mezipaměti na aplikační server registrační token pro další ko
 Když klientské aplikace se už chce dostávat zprávy ze serveru aplikace, kterou může odesílat žádost na aplikační server, chcete-li odstranit tento token registrace. Pokud klientské aplikace se odinstaluje ze zařízení, FCM to zjistí a automaticky upozorní na aplikační server, chcete-li odstranit tento token registrace.
 
 
-<a name="downstream" />
 
 ### <a name="downstream-messaging"></a>Podřízené zasílání zpráv
 
 Následující diagram znázorňuje, jak zasílání zpráv cloudu Firebase ukládá a předává podřízené zprávy:
 
-[![FCM používá úložiště a jejich předávání pro příjem dat zasílání zpráv](firebase-cloud-messaging-images/03-downstream-sml.png)](firebase-cloud-messaging-images/03-downstream.png)
+[![FCM používá úložiště a jejich předávání pro příjem dat zasílání zpráv](firebase-cloud-messaging-images/03-downstream-sml.png)](firebase-cloud-messaging-images/03-downstream.png#lightbox)
 
 Pokud na aplikační server odešle zprávu podřízené do klientské aplikace, jako Výčtový v diagramu používá následující kroky:
 
@@ -99,14 +96,11 @@ V tomto scénáři zasílání zpráv (kde na aplikační server odešle zprávu
 
 Podrobné informace o přijetí podřízené FCM zprávy v systému Android, najdete v části [vzdáleného oznámení s FCM](~/android/data-cloud/google-messaging/remote-notifications-with-fcm.md).
 
-
-<a name="topic" />
-
 ### <a name="topic-messaging"></a>Zasílání zpráv tématu
 
 *Zasílání zpráv tématu* umožňuje serveru aplikace k odeslání zprávy do více zařízení, která zvolili na příslušné téma. Můžete také vytvořit a odeslat tématu zprávy přes grafické uživatelské rozhraní Firebase konzoly oznámení. FCM zpracovává směrování a doručování zpráv tématu odebírané klientům. Tato funkce slouží pro zprávy, jako je například výstrahy počasí, akcií a hlavní zprávy.
 
-[![Diagram tématu zasílání zpráv](firebase-cloud-messaging-images/04-topic-messaging-sml.png)](firebase-cloud-messaging-images/04-topic-messaging.png)
+[![Diagram tématu zasílání zpráv](firebase-cloud-messaging-images/04-topic-messaging-sml.png)](firebase-cloud-messaging-images/04-topic-messaging.png#lightbox)
 
 Následující postup se používají v tématu zasílání zpráv (po klientské aplikace získá token registrace, jak je popsáno dříve):
 
@@ -127,28 +121,28 @@ Před použitím služby FCM ve vaší aplikaci, musíte vytvořit nový projekt
 
 1.  Přihlaste se k [Firebase konzoly](https://console.firebase.google.com/) s účtu Google (tj, vaši adresu z Gmailu) a klikněte na tlačítko **vytvořit nový projekt**:
 
-    [![Vytvoření nového projektu tlačítka](firebase-cloud-messaging-images/05-firebase-console-sml.png)](firebase-cloud-messaging-images/05-firebase-console.png)
+    [![Vytvoření nového projektu tlačítka](firebase-cloud-messaging-images/05-firebase-console-sml.png)](firebase-cloud-messaging-images/05-firebase-console.png#lightbox)
 
     Pokud máte existujícího projektu, klikněte na tlačítko **import projektu Google**.
 
 2.  V **vytvoření projektu** dialogové okno, zadejte název projektu a klikněte na tlačítko **vytvořit projekt**. V následujícím příkladu se nazývá nový projekt **XamarinFCM** je vytvořena:
 
-    [![Vytvoření projektu dialogového okna](firebase-cloud-messaging-images/06-create-a-project-sml.png)](firebase-cloud-messaging-images/06-create-a-project.png)
+    [![Vytvoření projektu dialogového okna](firebase-cloud-messaging-images/06-create-a-project-sml.png)](firebase-cloud-messaging-images/06-create-a-project.png#lightbox)
 
 3.  V konzole Firebase **přehled**, klikněte na tlačítko **přidat Firebase svoji aplikaci pro Android**:
 
-    [![Přidání Firebase do vaší aplikace pro Android](firebase-cloud-messaging-images/07-add-firebase-sml.png)](firebase-cloud-messaging-images/07-add-firebase.png)
+    [![Přidání Firebase do vaší aplikace pro Android](firebase-cloud-messaging-images/07-add-firebase-sml.png)](firebase-cloud-messaging-images/07-add-firebase.png#lightbox)
 
 4.  Na další obrazovce zadejte název balíčku aplikace. V tomto příkladu je název balíčku **com.xamarin.fcmexample**. Tato hodnota musí odpovídat názvu balíčku aplikace systému Android. Přezdívka aplikaci lze zadat také v **aplikace Přezdívka** pole:
 
-    [![Zadání FCM příklad jako popisný název aplikace](firebase-cloud-messaging-images/08-package-name-sml.png)](firebase-cloud-messaging-images/08-package-name.png)
+    [![Zadání FCM příklad jako popisný název aplikace](firebase-cloud-messaging-images/08-package-name-sml.png)](firebase-cloud-messaging-images/08-package-name.png#lightbox)
 
 5.  Pokud vaše aplikace používá dynamické odkazy, pozve nebo Google ověřování, musíte taky zadat vaše ladění podpisový certifikát. Další informace o vyhledání podpisového certifikátu najdete v tématu [hledání MD5 nebo SHA1 podpis vašeho úložiště klíčů](~/android/deploy-test/signing/keystore-signature.md).
     V tomto příkladu je prázdné podpisový certifikát.
 
 6.  Klikněte na tlačítko **přidat aplikaci**:
 
-    [![Klepnutím na tlačítko Přidat aplikaci](firebase-cloud-messaging-images/09-add-app-sml.png)](firebase-cloud-messaging-images/09-add-app.png)
+    [![Klepnutím na tlačítko Přidat aplikaci](firebase-cloud-messaging-images/09-add-app-sml.png)](firebase-cloud-messaging-images/09-add-app.png#lightbox)
 
     Klíč rozhraní API serveru a ID klienta je automaticky vygeneruje pro aplikaci. Je součástí této informace **google services.json** soubor, který se automaticky stáhne po kliknutí na tlačítko **přidat aplikaci**.
     Ujistěte se, že tento soubor uložit na bezpečném místě.
@@ -156,7 +150,6 @@ Před použitím služby FCM ve vaší aplikaci, musíte vytvořit nový projekt
 Podrobný příklad, jak přidat **google services.json** na projekt aplikace, aby se zprávy FCM nabízených oznámení v systému Android, najdete v části [vzdáleného oznámení s FCM](~/android/data-cloud/google-messaging/remote-notifications-with-fcm.md).
 
 
-<a name="furtherreading" />
 
 ## <a name="for-further-reading"></a>Pro další čtení
 
@@ -167,7 +160,6 @@ Podrobný příklad, jak přidat **google services.json** na projekt aplikace, a
 -   [RFC 6120](https://tools.ietf.org/html/rfc6120) a [RFC 6121](https://tools.ietf.org/html/rfc6121) vysvětlují a definovat Extensible zasílání zpráv a přítomnosti Protocol (protokolu XMPP).
 
 
-<a name="summary" />
 
 ## <a name="summary"></a>Souhrn
 

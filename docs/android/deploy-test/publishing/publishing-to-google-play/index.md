@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 74635b10e97513d6b023cb44ede7745448aa153c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cc6a5f3fe9ff63081936e5714dfb85058204ef33
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="publishing-to-google-play"></a>Publikování na web Google Play
 
@@ -19,7 +19,6 @@ I když existují mnoho trhů aplikace pro distribuci aplikace, je největší a
 
 Tato část se bude zabývat témata, které jsou specifické pro Google Play, jako je registrace k vydavatel, shromažďování prostředky ke Google Play podporovat a inzerovat vaší aplikace, pokyny pro hodnocení aplikace na webu Google Play a použití filtrů k Omezte nasazení aplikace do určitých zařízení.
 
-<a name="Requirements"  />
 
 ## <a name="requirements"></a>Požadavky
 
@@ -32,7 +31,6 @@ Maximální velikost pro APK publikovat na webu Google Play je 100MB. Je-li apli
 Není globálně dostupnou Google Play. Některé umístění nemusí být podporována pro distribuci aplikací.
 
 
-<a name="Becoming_a_Publisher"  />
 
 ## <a name="becoming-a-publisher"></a>Aby se aktivovala vydavatelem
 
@@ -53,14 +51,12 @@ Google Play nepodporuje všech zemích na světě. Nejnovější seznam zemí, n
 1.  [Podporované umístění pro distribuci uživatelům Google Play](https://support.google.com/googleplay/android-developer/bin/answer.py?hl=en&amp;answer=138294) &ndash; Toto je seznam všech zemí, kde může distribuovat aplikace.
 
 
-<a name="Preparing_Promotional_Assets"  />
 
 ### <a name="preparing-promotional-assets"></a>Příprava propagační prostředky
 
 K efektivnímu podporovat a inzerovat aplikace na Google Play, Google umožňuje vývojářům odeslat propagační prostředky, jako jsou snímky obrazovky, grafika a video k odeslání. Google Play poté použije tyto prostředky inzerovat a podporovat aplikace.
 
 
-<a name="Launcher_Icons"  />
 
 #### <a name="launcher-icons"></a>Spouštěč ikony
 
@@ -83,7 +79,6 @@ Tipy pro Spouštěč ikony:
 1.  **Použití kanálu alfa** &ndash; ikony měli používat alfa kanálu a neměla by být služby rámcové úplné bitové kopie.
 
 
-<a name="High_Resolution_Application_Icon"  />
 
 #### <a name="high-resolution-application-icons"></a>Ikony aplikace s vysokým rozlišením
 
@@ -96,7 +91,6 @@ Aplikace na webu Google Play vyžadují vysokou přesnost verzi ikona aplikace. 
 [Android Asset Studio](https://romannurik.github.io/AndroidAssetStudio/) je užitečné nástroj pro vytváření spuštění vhodný ikony a ikona s vysokým rozlišením aplikace.
 
 
-<a name="Screen_shots"  />
 
 #### <a name="screen-shots"></a>Snímky obrazovky
 
@@ -108,7 +102,6 @@ Specifikace pro snímky obrazovky jsou:
 1.  320w x 480h nebo 480w x 800h nebo 480w x 854 h. Landscaped bitové kopie budou oříznuty.
 
 
-<a name="Promotional_Graphic" />
 
 #### <a name="promotional-graphic"></a>Propagační obrázek
 
@@ -118,7 +111,6 @@ Toto je volitelné obrázek, který používá Google Play:
 1.  Bez ohraničení v obrázky.
 
 
-<a name="Feature_Graphic" />
 
 #### <a name="feature-graphic"></a>Obrázek funkce
 
@@ -129,14 +121,12 @@ Použít vybrané oddílu Google Play. Tato grafika nemusí být zobrazeny samos
 1.  Tato grafika může být změněna: použijte velké text a zjednodušení grafiky.
 
 
-<a name="Video_Link" />
 
 #### <a name="video-link"></a>Video odkaz
 
 Toto je adresu URL videa předvádění aplikace YouTube. Video musí být 30 sekund na 2 minuty délku a prezentují nejlepší částí aplikace.
 
 
-<a name="pubgp" />
 
 ### <a name="publishing-to-google-play"></a>Publikování na web Google Play
 
@@ -155,19 +145,19 @@ Xamarin Android 7.0 zavádí ze sady Visual Studio integrované pracovní postup
 
 V [archivu pro publikování](~/android/deploy-test/release-prep/index.md#archive), **distribuční kanál** dialogové okno zobrazí dvě možnosti pro distribuci: **Ad Hoc** a **Google Play** . Pokud **identitu podepisování** místo toho zobrazí dialog, klikněte na tlačítko **zpět** se vrátíte do **distribuční kanál** dialogové okno. Vyberte **Google Play** a klikněte na tlačítko **Další**:
 
-[ ![Dialogové okno distribuční kanál](images/vs/01-distribution-channel-sml.png)](images/vs/01-distribution-channel.png)
+[![Dialogové okno distribuční kanál](images/vs/01-distribution-channel-sml.png)](images/vs/01-distribution-channel.png#lightbox)
 
 V **identitu podepisování** dialogovém okně, vyberte možnost identity vytvořené v [vytváření nového certifikátu](~/android/deploy-test/signing/index.md#newcert) a klikněte na tlačítko **pokračovat**:
 
-[ ![Podepisování Identity dialogové okno](images/vs/02-select-identity-sml.png)](images/vs/02-select-identity.png)
+[![Podepisování Identity dialogové okno](images/vs/02-select-identity-sml.png)](images/vs/02-select-identity.png#lightbox)
 
 V **Google Play účty** dialogové okno, klikněte na tlačítko  **+**  tlačítko Přidat nový účet Google Play účet:
 
-[ ![Dialogové okno účty Google Play](images/vs/03-google-play-accounts-sml.png)](images/vs/03-google-play-accounts.png)
+[![Dialogové okno účty Google Play](images/vs/03-google-play-accounts-sml.png)](images/vs/03-google-play-accounts.png#lightbox)
 
 V **zaregistrovat přístup pomocí rozhraní API Google** dialogové okno, je nutné zadat _ID klienta_ a _tajný klíč klienta_ rozhraní API pro přístup ke svému účtu vývojáře Google Play, který poskytuje:
 
-[ ![Dialogové okno přístup pomocí rozhraní API Google registrace](images/vs/04-register-google-api-access-sml.png)](images/vs/04-register-google-api-access.png)
+[![Dialogové okno přístup pomocí rozhraní API Google registrace](images/vs/04-register-google-api-access-sml.png)](images/vs/04-register-google-api-access.png#lightbox)
 
 V další části vysvětluje, jak vytvořit nový projekt rozhraní Google API a generování potřebné _ID klienta_ a _tajný klíč klienta_.
 
@@ -186,11 +176,11 @@ Visual Studio pro Mac má integrované pracovní postup pro publikování aplika
 
 V [archivu pro publikování](~/android/deploy-test/release-prep/index.md#archive), **přihlásit a distribuovat...**  dialogové okno zobrazí dvě možnosti pro distribuci. Vyberte **Google Play**a klikněte na tlačítko **Další**:
 
-[ ![Vyberte Android distribuční dialogové okno](images/xs/01-select-google-play-sml.png)](images/xs/01-select-google-play.png)
+[![Vyberte Android distribuční dialogové okno](images/xs/01-select-google-play-sml.png)](images/xs/01-select-google-play.png#lightbox)
 
 V **Google Play API účet** dialogové okno, je nutné zadat _ID klienta_ a _tajný klíč klienta_ rozhraní API pro přístup ke svému účtu vývojáře Google Play, který poskytuje:
 
-[ ![Dialogové okno Google Play účet rozhraní API](images/xs/02-google-play-api-account-sml.png)](images/xs/02-google-play-api-account.png)
+[![Dialogové okno Google Play účet rozhraní API](images/xs/02-google-play-api-account-sml.png)](images/xs/02-google-play-api-account.png#lightbox)
 
 V další části vysvětluje, jak vytvořit nový projekt rozhraní Google API a generování potřebné _ID klienta_ a _tajný klíč klienta_.
 
@@ -203,34 +193,34 @@ Nejdřív se přihlaste do vaší [Google Play vývojářský účet](https://pl
 Pokud již nemáte účet pro vývojáře Google Play, přečtěte si téma [začít pracovat s publikování](http://developer.android.com/distribute/googleplay/start.html).
 Navíc Google Play vývojáře rozhraní API [Začínáme](https://developers.google.com/android-publisher/getting_started) vysvětluje, jak používat rozhraní API Google Play Developer. Po přihlášení do vývojářské konzole Google Play, klikněte na tlačítko **nastavení**:
 
-[ ![Ikona nastavení](images/01-google-play-developer-console-sml.png)](images/01-google-play-developer-console.png)
+[![Ikona nastavení](images/01-google-play-developer-console-sml.png)](images/01-google-play-developer-console.png#lightbox)
 
 V **nastavení** vyberte **přístup pomocí rozhraní API**a klikněte na tlačítko **vytvořit nový projekt** tlačítko:
 
-[ ![Vytvoření nového projektu tlačítka](images/02-create-new-project-sml.png)](images/02-create-new-project.png)
+[![Vytvoření nového projektu tlačítka](images/02-create-new-project-sml.png)](images/02-create-new-project.png#lightbox)
 
 Za minutu je nový projekt rozhraní API automaticky generuje a propojený s vaším účtem vývojářské konzole Google Play.
 
 Dalším krokem je vytvoření klienta OAuth pro aplikaci (Pokud je jeden dosud nebyla vytvořena). Pokud uživatelé požadují přístup k jejich privátní datům pomocí aplikace, vaše ID klienta OAuth se používá k ověření vaší aplikace.
 Klikněte na tlačítko **vytvoření klienta OAuth** k vytvoření nového klienta OAuth:
 
-[ ![Vytvoření klienta OAuth tlačítka](images/03-create-oauth-client-sml.png)](images/03-create-oauth-client.png)
+[![Vytvoření klienta OAuth tlačítka](images/03-create-oauth-client-sml.png)](images/03-create-oauth-client.png#lightbox)
 
 Za několik sekund se vygeneruje nové ID klienta. Klikněte na tlačítko **zobrazení v konzole pro vývojáře Google** zobrazíte svoje nové ID klienta v konzole pro vývojáře Google:
 
-[ ![Zobrazí ID klienta](images/04-generated-client-id-sml.png)](images/04-generated-client-id.png)
+[![Zobrazí ID klienta](images/04-generated-client-id-sml.png)](images/04-generated-client-id.png#lightbox)
 
 ID klienta se zobrazují podél jeho název a datum vytvoření. Klikněte **upravit klienta OAuth** ikonu zobrazíte tajný klíč klienta pro aplikaci:
 
-[ ![Zobrazení aplikace pověření](images/05-google-developer-console-sml.png)](images/05-google-developer-console.png)
+[![Zobrazení aplikace pověření](images/05-google-developer-console-sml.png)](images/05-google-developer-console.png#lightbox)
 
 Výchozí název klienta OAuth je *Google Play Android Developer*. To může být změněn na název aplikace Xamarin.Android nebo jakýkoli vhodný název. V tomto příkladu je název klienta OAuth změněna na název aplikace, **Moje aplikace**:
 
-[ ![ID klienta a tajný klíč zobrazí](images/06-client-id-and-secret-sml.png)](images/06-client-id-and-secret.png)
+[![ID klienta a tajný klíč zobrazí](images/06-client-id-and-secret-sml.png)](images/06-client-id-and-secret.png#lightbox)
 
 Klikněte na tlačítko **Uložit**uložte změny. Vrátí k **pověření** stránky, kde lze stáhnout přihlašovací údaje kliknutím na **stáhnout JSON** ikona:
 
-[ ![Stáhnout ikonu JSON](images/07-download-json-sml.png)](images/07-download-json.png)
+[![Stáhnout ikonu JSON](images/07-download-json-sml.png)](images/07-download-json.png#lightbox)
 
 Tento soubor JSON obsahuje ID klienta a tajný klíč klienta, který můžete vyjmout a vložit do **přihlášení a distribuci** dialogové okno, v dalším kroku.
 
@@ -241,18 +231,18 @@ Tento soubor JSON obsahuje ID klienta a tajný klíč klienta, který můžete v
 
 K dokončení použít ID klienta a tajný klíč klienta **Google Play API účet** dialogové okno v sadě Visual Studio for Mac. Je možné poskytnout účet popis &ndash; díky tomu může zaregistrovat více než jeden účet Google Play a nahrajte budoucí APK na různé účty Google Play. Toto dialogové okno Kopírovat ID klienta a tajný klíč klienta a klepněte na **zaregistrovat**:
 
-[ ![Dialogové okno přístup pomocí rozhraní API Google registrace](images/vs/05-enter-client-id-and-secret-sml.png)](images/vs/05-enter-client-id-and-secret.png)
+[![Dialogové okno přístup pomocí rozhraní API Google registrace](images/vs/05-enter-client-id-and-secret-sml.png)](images/vs/05-enter-client-id-and-secret.png#lightbox)
 
 Webový prohlížeč bude otevřete a zobrazí výzvu k přihlásit ke svému účtu Google Play Android Developer (pokud už nejste přihlášení). Po přihlášení na následujícím řádku se zobrazí ve webovém prohlížeči.
 Klikněte na tlačítko **povolit** k autorizaci aplikace:
 
-[ ![Autorizace aplikace dialogové okno](images/vs/06-authorize-app-sml.png)](images/vs/06-authorize-app.png)
+[![Autorizace aplikace dialogové okno](images/vs/06-authorize-app-sml.png)](images/vs/06-authorize-app.png#lightbox)
 
 #### <a name="publish"></a>Publikování
 
 Po kliknutí na **povolit**, prohlížeč sestavy _přijatých ověřovací kód. Zavření..._  a aplikace se přidá do seznamu účtů Google Play v sadě Visual Studio. V **Google Play účty** dialogové okno, klikněte na tlačítko **pokračovat**:
 
-[ ![Účet přidán do Google Play Acccounts](images/vs/07-account-added-sml.png)](images/vs/07-account-added.png)
+[![Účet přidán do Google Play Acccounts](images/vs/07-account-added-sml.png)](images/vs/07-account-added.png#lightbox)
 
 Dále **Google Play sledovat** se zobrazí dialogové okno. Google Play nabízí čtyři možné sleduje pro nahrávání aplikace:
 
@@ -263,33 +253,33 @@ Dále **Google Play sledovat** se zobrazí dialogové okno. Google Play nabízí
 
 Zvolte, které sledovat Google Play se použije pro nahrání aplikace a klikněte na **nahrát**. Pokud vyberete **zavedení**, je nutné zadat hodnotu v procentech:
 
-[ ![Vyberte Alpha, Beta, zavedení nebo produkční](images/vs/08-google-play-track-sml.png)](images/vs/08-google-play-track.png)
+[![Vyberte Alpha, Beta, zavedení nebo produkční](images/vs/08-google-play-track-sml.png)](images/vs/08-google-play-track.png#lightbox)
 
 Další informace o testování webu Google Play a zavedení dvoufázové instalace uživatelům najdete v tématu [nastavit alpha nebo beta testy](https://support.google.com/googleplay/android-developer/answer/3131213?hl=en).
 
 V dalším kroku se zobrazí dialogové okno k zadání hesla pro podpisový certifikát.
 Zadejte heslo a klikněte na tlačítko **OK**:
 
-[ ![Podepisování dialogové okno heslo](images/vs/09-certificate-password-sml.png)](images/vs/09-certificate-password.png)
+[![Podepisování dialogové okno heslo](images/vs/09-certificate-password-sml.png)](images/vs/09-certificate-password.png#lightbox)
 
 **Manager archivu** zobrazí průběh nahrávání:
 
-[ ![Probíhá odesílání APK](images/vs/10-uploading-apk-sml.png)](images/vs/10-uploading-apk.png)
+[![Probíhá odesílání APK](images/vs/10-uploading-apk-sml.png)](images/vs/10-uploading-apk.png#lightbox)
 
 Po dokončení nahrávání se zobrazí stav dokončení v levém dolním rohu Visual Studio:
 
-[ ![Zpráva dokončené publikování projektu](images/vs/11-published-sml.png)](images/vs/11-published.png)
+[![Zpráva dokončené publikování projektu](images/vs/11-published-sml.png)](images/vs/11-published.png#lightbox)
 
 
 ### <a name="troubleshooting"></a>Poradce při potížích
 
 Všimněte si, že jeden APK musí mít již byla odeslána na web Google Play před Uložit **publikovat na webu Google Play** bude fungovat. Pokud není APK již odeslány v Průvodci publikováním se zobrazí následující chyba v **chyby** podokně:
 
-[ ![Je potřeba ručně načíst vaše první APK pro tuto aplikaci.](images/vs/12-upload-error-sml.png)](images/vs/12-upload-error.png)
+[![Je potřeba ručně načíst vaše první APK pro tuto aplikaci.](images/vs/12-upload-error-sml.png)](images/vs/12-upload-error.png#lightbox)
 
 Při této chyby occures, ručně odeslat APK (například sestavení Ad Hoc) prostřednictvím vývojářské konzole Google Play a **distribuční kanál** dialogové okno pro následné aktualizace APK.  Další informace najdete v tématu [ručně odesílání APK](~/android/deploy-test/publishing/publishing-to-google-play/manually-uploading-the-apk.md). Kód verze APK musíte změnit s každou nahrávání, jinak dojde k následující chybě:
 
-[ ![APK kódem verze (1) již byly aktualizovány.](images/vs/13-version-code-error-sml.png)](images/vs/13-version-code-error.png)
+[![APK kódem verze (1) již byly aktualizovány.](images/vs/13-version-code-error-sml.png)](images/vs/13-version-code-error.png#lightbox)
 
 Pokud chcete tuto chybu vyřešit, znovu sestavte aplikaci s číslem různé verze a odešlete ji znovu na web Google Play prostřednictvím **distribuční kanál** dialogové okno.
 
@@ -297,15 +287,15 @@ Pokud chcete tuto chybu vyřešit, znovu sestavte aplikaci s číslem různé ve
 
 K dokončení použít ID klienta a tajný klíč klienta **Google Play API účet** dialogové okno v sadě Visual Studio for Mac. Je možné poskytnout účet popis &ndash; díky tomu může zaregistrovat více než jeden účet Google Play a nahrajte budoucí APK na různé účty Google Play. Toto dialogové okno Kopírovat ID klienta a tajný klíč klienta a klepněte na **zaregistrovat**:
 
-[ ![Autorizace přístupu dialogové okno](images/xs/10-register-sml.png)](images/xs/10-register.png)
+[![Autorizace přístupu dialogové okno](images/xs/10-register-sml.png)](images/xs/10-register.png#lightbox)
 
 Pokud ID klienta a tajný klíč klienta jsou přijata, **registrace úspěšná** se zobrazí zpráva. Klikněte na tlačítko **Další**:
 
-[ ![Zpráva úspěšné registrace](images/xs/11-registration-successful-sml.png)](images/xs/11-registration-successful.png)
+[![Zpráva úspěšné registrace](images/xs/11-registration-successful-sml.png)](images/xs/11-registration-successful.png#lightbox)
 
 V **účet Google Play** dialogovém okně, vyberte účet Google a sledování pro nahrávání aplikace:
 
-[ ![Zvolte účet Google dialogové okno](images/xs/12-choose-google-account-sml.png)](images/xs/12-choose-google-account.png)
+[![Zvolte účet Google dialogové okno](images/xs/12-choose-google-account-sml.png)](images/xs/12-choose-google-account.png#lightbox)
 
 Google Play nabízí čtyři možné sleduje pro nahrávání aplikace:
 
@@ -322,11 +312,11 @@ Další informace o testování webu Google Play a zavedení dvoufázové instal
 V dalším kroku vyberte podpisové identity, na který se bude používat k podepsání aplikace.
 Vyberte **použít existující klíč** Pokud chcete použít existující podepisování identity, v opačném případě naleznete v průvodci [vytváření nového certifikátu](~/android/deploy-test/signing/index.md#newcert) informace o vytvoření nového klíče. Po výběru certifikát pro podepsání aplikace, klikněte na tlačítko **Další**:
 
-[ ![Android podpisový identity dialogové okno](images/xs/13-android-signing-identity-sml.png)](images/xs/13-android-signing-identity.png)
+[![Android podpisový identity dialogové okno](images/xs/13-android-signing-identity-sml.png)](images/xs/13-android-signing-identity.png#lightbox)
 
 V tomto okamžiku je možné aplikaci uložit na web Google Play. **Publikovat na webu Google Play** dialogové okno shrnuje informace o vaší aplikaci &ndash; klikněte na tlačítko **publikovat** k publikování aplikace na web Google Play:
 
-[ ![Publikování do dialogového okna Google Play](images/xs/14-publish-to-google-play-sml.png)](images/xs/14-publish-to-google-play.png)
+[![Publikování do dialogového okna Google Play](images/xs/14-publish-to-google-play-sml.png)](images/xs/14-publish-to-google-play.png#lightbox)
 
 Všimněte si, že jeden APK musí mít již byla odeslána na web Google Play před Uložit **publikovat na webu Google Play** bude fungovat. Pokud není APK může dojít k následující chybě:
 

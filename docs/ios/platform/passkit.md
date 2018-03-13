@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: beff54d2b2bb72b2adf1e77819c56004b92e13f7
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 279b5bc1188c973fddc033f9b592e9acec703a59
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="passkit"></a>PassKit
 
@@ -22,7 +22,7 @@ Peněženka je aplikace pro Iphony a dotykem iPod s iOS 6. Ukládá a zobrazí �
 
 Tento dokument uvádí Peněženka, pomocí rozhraní API Kit předat Xamarin.iOS a popisuje, jak implementovat předává na vašem serveru.
 
- [ ![](passkit-images/image1.png "Peněženka ukládání a uspořádání všechny předává na phone")](passkit-images/image1.png)
+ [![](passkit-images/image1.png "Peněženka ukládání a uspořádání všechny předává na phone")](passkit-images/image1.png#lightbox)
 
 
 ## <a name="requirements"></a>Požadavky
@@ -55,7 +55,7 @@ Jádro předat Kit poskytuje jednoduché a pohodlný způsob, jak uložit a zobr
 
 Kit průchodu není právě rozhraní API v rámci CocoaTouch, místo je součástí větší ekosystém aplikace, data a služby, které usnadňují zabezpečené sdílení a správu čárové kódy a další data. Tento nejvyšší úrovni diagram zobrazuje různé entity, které může být zahrnut ve vytváření a používání předává:
 
- [ ![](passkit-images/image2.png "Tento nejvyšší úrovni diagram znázorňuje entity zahrnutých ve vytváření a používání předává")](passkit-images/image2.png)
+ [![](passkit-images/image2.png "Tento nejvyšší úrovni diagram znázorňuje entity zahrnutých ve vytváření a používání předává")](passkit-images/image2.png#lightbox)
 
 Každá část ekosystému má jasně definované role:
 
@@ -86,7 +86,7 @@ Aktuálně pět podporované typy, které může být v aplikaci Peněženka roz
 
 Na tomto snímku obrazovky jsou uvedeny typy pět průchodu (v pořadí: kupónů obecnou nebo ukládání karty, nástupu průchodu a událostí lístku):
 
- [ ![](passkit-images/image3.png "Na tomto snímku obrazovky jsou uvedeny typy pět průchodu")](passkit-images/image3.png)
+ [![](passkit-images/image3.png "Na tomto snímku obrazovky jsou uvedeny typy pět průchodu")](passkit-images/image3.png#lightbox)
 
 ### <a name="file-structure"></a>Struktura souborů
 
@@ -103,7 +103,7 @@ Předejte soubor je ve skutečnosti archivu ZIP s **.pkpass** rozšíření obsa
 
 Struktura adresářů průchodu souboru je uveden níže (Toto je obsah archivu ZIP):
 
- [ ![](passkit-images/image4.png "Struktura adresářů soubor průchodu je tady uvedené.")](passkit-images/image4.png)
+ [![](passkit-images/image4.png "Struktura adresářů soubor průchodu je tady uvedené.")](passkit-images/image4.png#lightbox)
 
 ### <a name="passjson"></a>pass.json
 
@@ -238,9 +238,9 @@ Chcete-li vytvořit předat ID typu proveďte následující.
 
 Prvním krokem je nastavit a předat typ ID pro každý jiný _typ_ průchodu podporovaná. Předat ID (nebo identifikátor předat typu) vytvoří jedinečný identifikátor pro průchod. Toto ID budeme používat pro propojení průchodu vývojářského účtu pomocí certifikátu.
 
-1. V [identifikátory, certifikátů a profilů části IOS Provisioning Portal](https://developer.apple.com/account/overview.action), přejděte na **identifikátory** a vyberte **předat ID typu** . Vyberte  **+**  tlačítko pro vytvoření nového typu pass: [ ![ ] (passkit-images/passid.png "vytvoříte nový typ průchodu")](passkit-images/passid.png)
+1. V [identifikátory, certifikátů a profilů části IOS Provisioning Portal](https://developer.apple.com/account/overview.action), přejděte na **identifikátory** a vyberte **předat ID typu** . Vyberte  **+**  tlačítko pro vytvoření nového typu pass: [ ![ ] (passkit-images/passid.png "vytvoříte nový typ průchodu")](passkit-images/passid.png#lightbox)
 
-2.   Zadejte **popis** (název) a **identifikátor** (jedinečného řetězce) pro průchod. Všimněte si, že všechna ID typu předat musí začínat řetězcem `pass.` v tomto příkladu používáme `pass.com.xamarin.coupon.banana` : [ ![ ] (passkit-images/register.png "zadejte popis a identifikátor")](passkit-images/register.png)
+2.   Zadejte **popis** (název) a **identifikátor** (jedinečného řetězce) pro průchod. Všimněte si, že všechna ID typu předat musí začínat řetězcem `pass.` v tomto příkladu používáme `pass.com.xamarin.coupon.banana` : [ ![ ] (passkit-images/register.png "zadejte popis a identifikátor")](passkit-images/register.png#lightbox)
 
 
 3.   Potvrďte ID předat stisknutím **zaregistrovat** tlačítko.
@@ -252,11 +252,11 @@ Prvním krokem je nastavit a předat typ ID pro každý jiný _typ_ průchodu po
 
 Pokud chcete vytvořit nový certifikát pro tento typ ID předat, postupujte takto:
 
-1.  Vyberte nově vytvořené ID předat ze seznamu a klikněte na tlačítko **upravit** : [ ![ ] (passkit-images/pass-done.png "vyberte nové ID předat ze seznamu")](passkit-images/pass-done.png)
+1.  Vyberte nově vytvořené ID předat ze seznamu a klikněte na tlačítko **upravit** : [ ![ ] (passkit-images/pass-done.png "vyberte nové ID předat ze seznamu")](passkit-images/pass-done.png#lightbox)
 
     Pak vyberte **vytvořit certifikát...** :
 
-    [ ![](passkit-images/cert-dist.png "Vyberte vytvoření certifikátu")](passkit-images/cert-dist.png)
+    [![](passkit-images/cert-dist.png "Vyberte vytvoření certifikátu")](passkit-images/cert-dist.png#lightbox)
 
 
 2.  Postupujte podle kroků pro vytvoření podepsání certifikátu požadavku (CSR).
@@ -286,7 +286,7 @@ Teď, vytvořili jsme typ předat jsme ručně vytvořit průchodu k testování
 
 V ukázkový kód pro tento článek, který slouží ke generování předejte nejsou některé zdrojové soubory. Použít soubory v `CouponBanana.raw` adresář CreateAPassManually adresáře. Jsou dostupné následující soubory:
 
- [ ![](passkit-images/image18.png "Tyto soubory k dispozici")](passkit-images/image18.png)
+ [![](passkit-images/image18.png "Tyto soubory k dispozici")](passkit-images/image18.png#lightbox)
 
 Otevřete pass.json a upravte JSON. Je nutné aktualizovat minimálně `passTypeIdentifier` a `teamIdentifer` tak, aby odpovídaly účtu vývojáře Apple.
 
@@ -330,11 +330,11 @@ V ukázce je kód pro tento článek existuje projekt s názvem `signpassnet` sp
 
 Pokud byste chtěli zkontrolujte výstup těchto nástrojů (podle nastaví název souboru .zip a pak ho otevřít), zobrazí se následující soubory (Poznámka: přidání `manifest.json` a `signature` soubory):
 
- [ ![](passkit-images/image19.png "Zkoumání výstupu tyto nástroje")](passkit-images/image19.png)
+ [![](passkit-images/image19.png "Zkoumání výstupu tyto nástroje")](passkit-images/image19.png#lightbox)
 
 Jakmile podepsané, ZIPped a přejmenovat soubor (např. k `BananaCoupon.pkpass`) můžete ji přetáhněte do simulátoru k testování nebo e-mailu sami načíst na skutečné zařízení. Měli byste vidět obrazovce **přidat** průchodu, například takto:
 
- [ ![](passkit-images/image20.png "Přidat na obrazovce průchodu")](passkit-images/image20.png)
+ [![](passkit-images/image20.png "Přidat na obrazovce průchodu")](passkit-images/image20.png#lightbox)
 
 Za normálních okolností byste je možné automatizovat procesu na serveru, ale ruční vytvoření průchodu může být možnost pro malé firmy, které jsou pouze vytváření kupóny, které nevyžadují podpoře back-end serverů.
 
@@ -344,7 +344,7 @@ Za normálních okolností byste je možné automatizovat procesu na serveru, al
 
 Peněženka je centrální druhem ekosystému předat Kit. Tento snímek obrazovky ukazuje prázdný Peněženka a vzhled průchodu seznamu a jednotlivých předává:
 
- [ ![](passkit-images/image21.png "Tento snímek obrazovky ukazuje prázdný Peněženka a vzhled průchodu seznamu a jednotlivých předává")](passkit-images/image21.png)
+ [![](passkit-images/image21.png "Tento snímek obrazovky ukazuje prázdný Peněženka a vzhled průchodu seznamu a jednotlivých předává")](passkit-images/image21.png#lightbox)
 
 Funkce Peněženka:
 
@@ -377,9 +377,9 @@ Přenos aplikací jsou zprostředkující aplikace, které může přijímat př
 
 Tento snímek obrazovky ukazuje jak **e-mailu** v iOS 6 rozpozná průchodu přílohy a (Pokud dotýkal) nabízí **přidat** jeho Peněženka.
 
- [ ![](passkit-images/image22.png "Tento snímek obrazovky ukazuje, jak e-mailu v iOS 6 rozpozná průchodu přílohy")](passkit-images/image22.png)
+ [![](passkit-images/image22.png "Tento snímek obrazovky ukazuje, jak e-mailu v iOS 6 rozpozná průchodu přílohy")](passkit-images/image22.png#lightbox)
 
- [ ![](passkit-images/image23.png "Tento snímek obrazovky ukazuje, jak e-mailu nabízí přidání průchodu přílohy do peněženka")](passkit-images/image23.png)
+ [![](passkit-images/image23.png "Tento snímek obrazovky ukazuje, jak e-mailu nabízí přidání průchodu přílohy do peněženka")](passkit-images/image23.png#lightbox)
 
 Pokud vytváříte aplikace, které by mohly být kanál pro předává, můžete rozpoznáno:
 
@@ -498,7 +498,7 @@ var passes = library.GetPasses ();  // returns PKPass[]
 
 Všimněte si, simulátoru není filtrovat seznam předává vrátí, takže tato metoda by měla být testována vždy na skutečné zařízení. Tento seznam lze zobrazit v UITableView, jak vypadá ukázkové aplikace takto po dvou kupóny byly přidány:
 
- [ ![](passkit-images/image29.png "Vzhled ukázkové aplikace, jako to po byly přidány dva kupóny")](passkit-images/image29.png)
+ [![](passkit-images/image29.png "Vzhled ukázkové aplikace, jako to po byly přidány dva kupóny")](passkit-images/image29.png#lightbox)
 
 
 ### <a name="displaying-passes"></a>Zobrazení předává
@@ -520,7 +520,7 @@ string passInfo =
 
 Tento řetězec je zobrazena jako výstrahu v ukázce:
 
- [ ![](passkit-images/image30.png "Výstraha kupónů vybrané v ukázce")](passkit-images/image30.png)
+ [![](passkit-images/image30.png "Výstraha kupónů vybrané v ukázce")](passkit-images/image30.png#lightbox)
 
 Můžete také `LocalizedValueForFieldKey()` metodu pro načtení dat z polí v předává navrženy (vzhledem k tomu, že budete vědět, co polí musí být přítomen). Tento příklad kódu nezobrazuje.
 
@@ -541,7 +541,7 @@ NavigationController.PresentModalViewController (pkapvc, true);
 
 Předloží průchodu **přidat** a **zrušit** možnosti:
 
- [ ![](passkit-images/image20.png "Pass možnosti Přidat a zrušit výběr")](passkit-images/image20.png)
+ [![](passkit-images/image20.png "Pass možnosti Přidat a zrušit výběr")](passkit-images/image20.png#lightbox)
 
 ### <a name="replace-an-existing-pass"></a>Nahraďte stávající průchodu
 

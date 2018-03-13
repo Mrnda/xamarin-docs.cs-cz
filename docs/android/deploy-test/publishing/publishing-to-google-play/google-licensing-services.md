@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 12/20/2017
-ms.openlocfilehash: f1e7e36dfa1bfe122084f0525d83f06760ca1fe0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d4ed2df994ace7f6de5ade78577e759bb811565c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="google-licensing-services"></a>Licencování služby Google
 
@@ -26,7 +26,7 @@ Správa licencí Google je zabezpečený, v tom, že každá odpověď je podeps
 
 Aplikace, která nasadila Google licencování odešle požadavek ke službě hostované v aplikaci Google Play na zařízení. Google Play pak odešle tento požadavek na Google licenční server, který odpoví stav licence: 
 
-[ ![Diagram pracovního postupu licenční server](google-licensing-services-images/gp-licensing-service-overview.png)](google-licensing-services-images/gp-licensing-service-overview.png)
+[![Diagram pracovního postupu licenční server](google-licensing-services-images/gp-licensing-service-overview.png)](google-licensing-services-images/gp-licensing-service-overview.png#lightbox)
 
 Výše uvedené diagram znázorňuje tento pracovní postup: 
 
@@ -36,7 +36,6 @@ Výše uvedené diagram znázorňuje tento pracovní postup:
 
 Služba Licencování Google se také klíčovou součástí soubory rozšíření APK, (které jsou popsány dále v tomto dokumentu). Soubory rozšíření APK využívat Google licencování služby k získání adresy URL rozšíření soubory, které budou staženy.
 
-<a name="Requirements" />
 
 ## <a name="requirements"></a>Požadavky
 

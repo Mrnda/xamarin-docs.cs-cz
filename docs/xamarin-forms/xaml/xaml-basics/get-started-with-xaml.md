@@ -3,16 +3,16 @@ title: "Část 1. Začínáme s XAML"
 description: "V aplikaci Xamarin.Forms XAML nejčastěji používá k definování visual obsahu stránky. Soubor XAML je vždy přidružen souboru kódu C#, který poskytuje podporu kódu pro kód. Tyto dva soubory společně přispívat k nové definice třídy, obsahuje podřízené zobrazení a vlastnosti inicializace. V souboru XAML třídy a vlastnosti jsou odkazovány pomocí XML elementů a atributů, a jsou určeny propojení mezi značek a kódu."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 1D6164F9-4ECE-43A6-B583-1F5D5EFC1DDF
+ms.assetid: 9073FA0E-BD5A-4492-8A93-54C466F6EDB9
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: 8e02dbd8687fc10582874710db7ca6848f546751
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 55c4fa73044b1c37e879ed7731161269bdbf8ba8
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="part-1-getting-started-with-xaml"></a>Část 1. Začínáme s XAML
 
@@ -195,7 +195,7 @@ I když nepotřebujete normálně tráví mnoho času se soubory generovaného k
 
 Při kompilování a spuštění tohoto programu `Label` prvek se zobrazuje v centru stránky, jako navrhuje XAML. Tři platformy zleva doprava se systémem iOS, Android a Windows 10 Mobile:
 
-[![](get-started-with-xaml-images/xamlsamples.png "Výchozí zobrazení Xamarin.Forms")](get-started-with-xaml-images/xamlsamples-large.png "Xamarin.Forms výchozí zobrazení")
+[![](get-started-with-xaml-images/xamlsamples.png "Výchozí zobrazení Xamarin.Forms")](get-started-with-xaml-images/xamlsamples-large.png#lightbox "Xamarin.Forms výchozí zobrazení")
 
 Pro více zajímavé vizuální prvky, stačí je další zajímavé XAML.
 
@@ -354,7 +354,7 @@ public MainPage()
 
 Nastavení `Content` vlastnost stránky nahrazuje nastavení jazyka `Content` vlastnost v souboru XAML. Při kompilování a nasadit novou verzi tohoto programu, se zobrazí tlačítko na obrazovce. Stisknutím ho přejde na `HelloXamlPage`. Tady je výsledné stránky na zařízení iPhone, Android a Windows 10 Mobile zařízení:
 
-[ ![](get-started-with-xaml-images/helloxaml1.png "Text popisku otočen")](get-started-with-xaml-images/helloxaml1-large.png "Text popisku otočen")
+[![](get-started-with-xaml-images/helloxaml1.png "Text popisku otočen")](get-started-with-xaml-images/helloxaml1-large.png#lightbox "Text popisku otočen")
 
 Můžete přejít zpět na `MainPage` pomocí **< Zpět** tlačítko v systému iOS, pomocí na šipku vlevo v horní části stránky nebo v dolní části telefonu v systému Android, nebo pomocí na šipku vlevo v dolní části stránky na Windows 10 Mobile.
 
@@ -364,7 +364,7 @@ Nebojte se experimentovat s XAML pro různé způsoby, jak vykreslit `Label`. Po
 
 Tady je bude vypadat takto:
 
-[ ![](get-started-with-xaml-images/helloxaml2.png "Otáčet textu popisku pomocí znaků Unicode")](get-started-with-xaml-images/helloxaml2-large.png "otočen Text popisku s znaky kódování Unicode")
+[![](get-started-with-xaml-images/helloxaml2.png "Otáčet textu popisku pomocí znaků Unicode")](get-started-with-xaml-images/helloxaml2-large.png#lightbox "otočen Text popisku s znaky kódování Unicode")
 
 ## <a name="xaml-and-code-interactions"></a>XAML a interakce kódu
 
@@ -392,7 +392,7 @@ Tady je bude vypadat takto:
 
 Tento soubor XAML je syntakticky úplná a zde je bude vypadat takto:
 
-[ ![](get-started-with-xaml-images/xamlpluscode1.png "Více ovládacích prvků na stránce")](get-started-with-xaml-images/xamlpluscode1-large.png "více ovládacích prvků na stránce.")
+[![](get-started-with-xaml-images/xamlpluscode1.png "Více ovládacích prvků na stránce")](get-started-with-xaml-images/xamlpluscode1-large.png#lightbox "více ovládacích prvků na stránce.")
 
 Ale budete chtít nejspíš vzít v úvahu tento program jako funkčně nedostatečné. Možná `Slider` by měl být příčinou `Label` pro zobrazení aktuální hodnoty a `Button` pravděpodobně má dělat něco v rámci programu.
 
@@ -483,7 +483,7 @@ void OnSliderValueChanged(object sender, ValueChangedEventArgs args)
 
 Při prvním spuštění programu, `Label` nezobrazí `Slider` hodnota, protože `ValueChanged` událost nebyla ještě aktivována. Ale žádné zpracování `Slider` způsobí, že hodnota zobrazí:
 
-[ ![](get-started-with-xaml-images/xamlpluscode2.png "Zobrazené hodnoty jezdce")](get-started-with-xaml-images/xamlpluscode2-large.png "zobrazené hodnoty posuvníku")
+[![](get-started-with-xaml-images/xamlpluscode2.png "Zobrazené hodnoty jezdce")](get-started-with-xaml-images/xamlpluscode2-large.png#lightbox "zobrazené hodnoty posuvníku")
 
 Teď pro `Button`. Umožňuje simulovat odpověď `Clicked` událostí zobrazením výstrahy s `Text` tlačítka. Obslužné rutiny události můžete bezpečně přetypovat `sender` argument `Button` a pak otevřete jeho vlastnosti:
 

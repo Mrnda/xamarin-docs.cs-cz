@@ -7,11 +7,11 @@ ms.assetid: 9F3C86A3-403E-4025-99CA-99FCA86DC828
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 7e26c11f71b446baf89ca11effe30bc1e041f951
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 275cce891801cd542d202960efc3da668fa8f07b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarin-for-objective-c-developers"></a>Xamarin pro vývojáře jazyka Objective-C
 
@@ -21,7 +21,7 @@ Nabízí Xamarin cestu pro vývojáře cílené iOS přesunout jejich bez uživa
 
 Kromě toho Xamarin umožňuje využít existující Objective-C prostředky pomocí technologie vědět jako vazby. Jednoduše vytvořte statické knihovny v Objective-C a zveřejnění jazyka C# prostřednictvím vazbu, jak je znázorněno v následujícím diagramu:
 
- [ ![](images/01-bindings.png "Statické knihovny v Objective-C zveřejňovány prostřednictvím vazbu na C#")](images/01-bindings.png)
+ [![](images/01-bindings.png "Statické knihovny v Objective-C zveřejňovány prostřednictvím vazbu na C#")](images/01-bindings.png#lightbox)
 
 Toto nemusí být omezeny na kód bez uživatelského rozhraní. Vazby můžou zpřístupnit vyvinuté v Objective-C také uživatelského rozhraní kódu.
 

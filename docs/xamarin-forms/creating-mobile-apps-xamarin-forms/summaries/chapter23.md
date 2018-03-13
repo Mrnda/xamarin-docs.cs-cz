@@ -3,14 +3,15 @@ title: "Shrnutí kapitoly 23. Aktivační události a chování"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 19E84B5D-46B4-4B6D-A255-87BEFB011261
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 72158cac683e46a37d2cbd537cdfd72bea78a336
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9a53cddcf216efd2bb86c838e280d599ff26c191
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-23-triggers-and-behaviors"></a>Shrnutí kapitoly 23. Aktivační události a chování
 
@@ -99,7 +100,7 @@ Můžete také vyvolat akce s použitím `Trigger` (jako distinguished z `EventT
 
 [ **GenderColors** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/GenderColors) ukázka vyžaduje [ **SchoolOfFineArt** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/SchoolOfFineArt) knihovny a nastaví barvy názvy studentů modrá nebo na základě růžová `Sex` vlastnost:
 
-[![Trojitá snímek obrazovky pohlaví barvy](images/ch23fg04-small.png "pohlaví barvy")](images/ch23fg04-large.png "pohlaví barvy")
+[![Trojitá snímek obrazovky pohlaví barvy](images/ch23fg04-small.png "pohlaví barvy")](images/ch23fg04-large.png#lightbox "pohlaví barvy")
 
 [ **ButtonEnabler** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/ButtonEnabler) ukázkové sady `IsEnabled` vlastnost `Entry` k `False` Pokud `Length` vlastnost `Text` vlastnost `Entry`rovná 0. Všimněte si, že `Text` vlastnost inicializovala na prázdný řetězec, ve výchozím nastavení je `null`a `DataTrigger` nebude fungovat správně.
 
@@ -170,7 +171,7 @@ Nevýhodou `EventTrigger` je, že nemůžete připojit jej do `TapGestureRecogni
 
 [ **RadioLabels** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/RadioLabels) program používá textové řetězce pro jeho přepínač. [ **RadioStyle** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/RadioStyle) ukázkové používá `Style` pro rozdíl vzhled mezi tlačítky zaškrtnuto a nezaškrtnuto. [ **RadioImages** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/RadioImages) Ukázka používá pevně určené bitové kopie pro jeho přepínače:
 
-[![Trojitá snímek obrazovky přepínač image](images/ch23fg17-small.png "obrázky přepínacích tlačítek")](images/ch23fg17-large.png "obrázky přepínacích tlačítek")
+[![Trojitá snímek obrazovky přepínač image](images/ch23fg17-small.png "obrázky přepínacích tlačítek")](images/ch23fg17-large.png#lightbox "obrázky přepínacích tlačítek")
 
 [ **TraditionalRadios** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/TraditionalRadios) ukázka nevykresluje tradiční vypadající přepínačů s tečkou uvnitř kruh.
 
@@ -187,4 +188,4 @@ Program také reaguje na změny v orientaci mezi na výšku a šířku pomocí [
 - [Úplný text 23 kapitoly (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch23-Apr2016.pdf)
 - [Ukázky kapitoly 23](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23)
 - [Práce s aktivační události](~/xamarin-forms/app-fundamentals/triggers.md)
-- [Xamarin.Forms Behaviors](~/xamarin-forms/app-fundamentals/behaviors/creating.md)
+- [Chování Xamarin.Forms](~/xamarin-forms/app-fundamentals/behaviors/creating.md)

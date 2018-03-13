@@ -3,16 +3,16 @@ title: mapy
 description: "Xamarin.Forms používá nativní mapy rozhraní API na každou platformu."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 22288ABF-57BE-47A9-ACC3-AC604D787C46
+ms.assetid: 59CD1344-8248-406C-9144-0C8A67141E5B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 98e6cade952e656046c6c0981a0b73ff0894c9d6
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 2f0ad800ed1ab3a336f10dd4431e234ac4ff9675
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="map"></a>mapy
 
@@ -28,7 +28,7 @@ Jednou nakonfigurovaná, `Map` řízení funguje stejně jako jakýkoli jiný Xa
 
 Používá se mapový ovládací prvek v [MapsSample](https://developer.xamarin.com/samples/WorkingWithMaps/) vzorku, který je uveden níže.
 
- [ ![Mapy v ukázce MobileCRM](map-images/maps-zoom-sml.png "Příklad mapy ovládacího prvku")](map-images/maps-zoom.png "Příklad mapy ovládacího prvku")
+ [![Mapy v ukázce MobileCRM](map-images/maps-zoom-sml.png "Příklad mapy ovládacího prvku")](map-images/maps-zoom.png#lightbox "Příklad mapy ovládacího prvku")
 
 Mapování funkce může dále zvýšit tak, že vytvoříte [namapovat vlastní zobrazovací jednotky](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md).
 
@@ -103,7 +103,7 @@ Až projdete tyto pokyny, vložte klíč rozhraní API v **Properties/AndroidMan
 Bez platný klíč rozhraní API ovládacího prvku mapy zobrazí jako šedé pole v systému Android.
 
 > [!NOTE]
-> **Poznámka:**: nezapomeňte generovat jiný klíč pomocí souboru úložiště klíčů, který se používá k podepisování prodejní verze nástroje jakékoli aplikace, která je načtený do obchodu Google Play. Klíč vygenerujete pro vývoj a ladění nebude fungovat a bude obsahovat aplikaci stáhnout z webu Google Play nefunkční zobrazení mapy. Nezapomeňte také znovu vygenerovat klíče Pokud aplikace **název balíčku** změny.
+> Mějte na paměti, ke generování jiný klíč pomocí souboru úložiště klíčů, který se používá k podepisování prodejní verze nástroje jakékoli aplikace, která je načtený do obchodu Google Play. Klíč vygenerujete pro vývoj a ladění nebude fungovat a bude obsahovat aplikaci stáhnout z webu Google Play nefunkční zobrazení mapy. Nezapomeňte také znovu vygenerovat klíče Pokud aplikace **název balíčku** změny.
 
 Musíte také povolit příslušná oprávnění kliknutím pravým tlačítkem myši na projekt pro Android a výběrem **možnosti > sestavení > aplikace pro Android** a tikání následující:
 
@@ -185,7 +185,7 @@ slider.ValueChanged += (sender, e) => {
 };
 ```
 
- [ ![Mapy s přiblížení](map-images/maps-zoom-sml.png "Přiblížení mapy ovládacího prvku")](map-images/maps-zoom.png "Přiblížení mapy ovládacího prvku")
+ [![Mapy s přiblížení](map-images/maps-zoom-sml.png "Přiblížení mapy ovládacího prvku")](map-images/maps-zoom.png#lightbox "Přiblížení mapy ovládacího prvku")
 
 ### <a name="map-pins"></a>Mapování kódů PIN
 

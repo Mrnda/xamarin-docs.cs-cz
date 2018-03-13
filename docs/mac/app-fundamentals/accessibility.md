@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 0117364f02302add1f8788de1a79e4c4210fd07b
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 4363258a9047ee4e2de4f53595a6eedc5dfe5861
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="accessibility-on-macos"></a>Usnadnění přístupu v systému macOS
 
@@ -30,7 +30,7 @@ Používá AppKit `NSAccessibility` protokol, který se zveřejňují rozhraní 
 Xamarin.Mac používá rozhraní tvůrce Xcode k úpravám storyboard soubory.
 Informace o usnadnění přístupu lze upravit v **Identity inspector** při je vybraný ovládací prvek na návrhovou plochu (jak je znázorněno na tomto snímku obrazovky):
 
-[![Přidání usnadnění v Xcode na rozhraní tvůrce](accessibility-images/xcode.png "přidání usnadnění v Tvůrci rozhraní na Xcode")](accessibility-images/xcode-large.png)
+[![Přidání usnadnění v Xcode na rozhraní tvůrce](accessibility-images/xcode.png "přidání usnadnění v Tvůrci rozhraní na Xcode")](accessibility-images/xcode-large.png#lightbox)
 
 ### <a name="code"></a>Kód
 
@@ -80,7 +80,7 @@ Odemknutí obrazovky nastavení (Pokud je nutný, v levém dolním) a značek **
 
 Po povolení kontrolor zobrazí jako plovoucího okna, které lze přesunout po obrazovce. Následující snímek obrazovky ukazuje inspector systémem vedle Mac ukázkovou aplikaci. Pohybu kurzoru nad okno kontrolor zobrazí všechny dostupné vlastnosti každého ovládacího prvku:
 
-[![Příklad usnadnění Inspector spuštění](accessibility-images/accessibility-example.png "příklad usnadnění Inspector spuštěná")](accessibility-images/accessibility-example-large.png)
+[![Příklad usnadnění Inspector spuštění](accessibility-images/accessibility-example.png "příklad usnadnění Inspector spuštěná")](accessibility-images/accessibility-example-large.png#lightbox)
 
 Další informace najdete v tématu [testování usnadnění pro OS X průvodce](https://developer.apple.com/library/mac/documentation/Accessibility/Conceptual/AccessibilityMacOSX/OSXAXTestingApps.html).
 

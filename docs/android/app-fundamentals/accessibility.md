@@ -6,12 +6,12 @@ ms.assetid: 157F0899-4E3E-4538-90AF-B59B8A871204
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 01/31/2018
-ms.openlocfilehash: 0cf1557cea8d5adb3678ba5e424f9f23375e32bc
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 02/28/2018
+ms.openlocfilehash: 2dea77b4c52db0c032aba9bde471e76eb36ba3ad
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="accessibility-on-android"></a>Usnadnění přístupu v systému Android
 
@@ -171,14 +171,12 @@ V rozložení XML usnadnění atributy, například `hint` a `contentDescription
 
 Výhodou ukládání textu do samostatného souboru je že ve vaší aplikaci lze zadat více překlady jazyka souboru. Najdete v článku [Android Lokalizace průvodce](~/android/app-fundamentals/localization.md) další soubory lokalizovaný řetězec jak přidat do projektu aplikace.
 
-<a name="testing" />
 
 ## <a name="testing-accessibility"></a>Testování usnadnění přístupu
 
 Postupujte podle [tyto kroky](http://developer.android.com/training/accessibility/testing.html#how-to) umožnit TalkBack a prozkoumat modelem Touch k testování usnadnění na zařízeních s Androidem.
 
 Budete muset nainstalovat [TalkBack](https://play.google.com/store/apps/details?id=com.google.android.marvin.talkback) na webu Google Play, pokud se nezobrazí v **Nastavení > usnadnění**.
-
 
 
 ## <a name="related-links"></a>Související odkazy

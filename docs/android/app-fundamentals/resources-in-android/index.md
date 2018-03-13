@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/01/2018
-ms.openlocfilehash: 2a6013d9bab26f90a6d8afa101298b494f2f90ae
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6546870d85f7b77e60dff0cb9e6075f982c9cb8e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="android-resources"></a>Android prostředky
 
 _Tento článek zavádí koncepci Android prostředky v Xamarin.Android a bude dokumentu jejich použití. Vysvětluje postup používat prostředky v aplikaci Android pro podporu více zařízení včetně různou velikost obrazovky a densities – a lokalizace aplikací._
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Přehled
 

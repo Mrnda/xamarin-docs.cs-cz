@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 09/12/2017
-ms.openlocfilehash: 992e6583d64f078c0cd693765a1512c3e41a620a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c7edf0c8e563dad25693d184d3a44a3e66466126
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="path-information-and-enumeration"></a>Informace o cestě a – výčet
 
@@ -110,7 +110,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 `Length` Vlastnost nově vytvořený `SKPathMeasure` objekt získá délka cesty. To je rozdělena `baseTextWidth` hodnotu (což je textu na základě velikosti text 10) a potom vynásobena základního textu velikost 10. Výsledkem je nová velikost textu pro zobrazení textu podél této cesty:
 
-[![](information-images/pathlength-small.png "Trojitá snímek obrazovky stránky délka cesty")](information-images/pathlength-large.png "Trojitá snímek obrazovky stránky délka cesty")
+[![](information-images/pathlength-small.png "Trojitá snímek obrazovky stránky délka cesty")](information-images/pathlength-large.png#lightbox "Trojitá snímek obrazovky stránky délka cesty")
 
 Jako Bézierovy křivky získá delší nebo kratší, zobrazí se změnit velikost textu.
 
@@ -136,7 +136,7 @@ Boolean GetMatrix (Single distance, out SKMatrix matrix, SKPathMeasureMatrixFlag
 
 **Kanálu polovině své blízké** stránky animuje Flash disk obrázek na své blízké, který se zdá se, že vozidlo a zpět podél krychlový Bézierovy křivky pro:
 
-[![](information-images/unicyclehalfpipe-small.png "Trojitá snímek obrazovky stránky kanálu polovině své blízké")](information-images/unicyclehalfpipe-large.png "Trojitá snímek obrazovky stránky své blízké půl kanálu")
+[![](information-images/unicyclehalfpipe-small.png "Trojitá snímek obrazovky stránky kanálu polovině své blízké")](information-images/unicyclehalfpipe-large.png#lightbox "Trojitá snímek obrazovky stránky své blízké půl kanálu")
 
 `SKPaint` Objekt použitý pro vytažení půl kanálu a své blízké je definován jako pole v [ `UnicycleHalfPipePage` ]() třídy. Je také definován `SKPath` objekt pro své blízké:
 
@@ -425,7 +425,7 @@ Všimněte si, že metoda zachová první bod každý obrysem v proměnné názv
 
 **GlobularText** ukázce se používá tato metoda rozšíření zdánlivě zalomení textu kolem polokoule v 3D vliv:
 
-[![](information-images/globulartext-small.png "Trojitá snímek obrazovky stránky Globular Text")](information-images/globulartext-large.png "Trojitá snímek obrazovky stránky Globular Text")
+[![](information-images/globulartext-small.png "Trojitá snímek obrazovky stránky Globular Text")](information-images/globulartext-large.png#lightbox "Trojitá snímek obrazovky stránky Globular Text")
 
 [ `GlobularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/GlobularTextPage.cs) Konstruktoru třídy provede Tato transformace. Vytvoří `SKPaint` objekt pro text a pak získá `SKPath` objektu z `GetTextPath` metoda. Jedná se o cestu předaný `CloneWithTransform` metoda rozšíření spolu s transform funkce: 
 

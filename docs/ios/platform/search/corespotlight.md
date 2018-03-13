@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 20b18cd79eeaabab8019c367e241a4975dc37b0e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b7db9082f05ea4db41ddb84d34be2ec9113f2ad5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="search-with-core-spotlight"></a>Hledání se Spotlight jádra
 
@@ -46,7 +46,7 @@ CSSearchableIndex.DefaultSearchableIndex.Index (new CSSearchableItem[]{ item }, 
 
 Tyto informace se zobrazí jako následující ve výsledku hledání:
 
-[ ![](corespotlight-images/corespotlight01.png "Základní přehled výsledek vyhledávání Spotlight")](corespotlight-images/corespotlight01.png)
+[![](corespotlight-images/corespotlight01.png "Základní přehled výsledek vyhledávání Spotlight")](corespotlight-images/corespotlight01.png#lightbox)
 
 ## <a name="restoring-an-item"></a>Obnovení položky
 
@@ -80,7 +80,7 @@ Všimněte si, že tuto chvíli jsme kontrolu pro aktivity s `ActivityType` z `C
 Může nastat situace, kdy položku indexu jsme vytvořili pomocí jádra Spotlight potřeba upravit, jako je požadovaná ke změně názvu nebo miniaturu. Chcete-li tuto změnu, používáme stejnou metodu používala nejprve vytvořit index.
 Nemůžeme vytvořit nový `CSSearchableItem` pomocí stejné ID jako byla použita k vytvoření položky a připojit novou `CSSearchableItemAttributeSet` obsahující upravené atributy:
 
-[ ![](corespotlight-images/corespotlight02.png "Aktualizace položky Přehled")](corespotlight-images/corespotlight02.png)
+[![](corespotlight-images/corespotlight02.png "Aktualizace položky Přehled")](corespotlight-images/corespotlight02.png#lightbox)
 
 Při této položky se zapisují do indexu s možností vyhledávání, existující položku se aktualizuje novými informacemi.
 

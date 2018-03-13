@@ -3,14 +3,15 @@ title: Souhrn kapitoly 22. Animace
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 47C2B9AB-E688-4412-8AF5-9F633B3DA695
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 0ee99881a43b625cc8a70fb59e54710705c2d07a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: df0647e869fcf37a3a1dfdeb6f3dbf1e7d07ad95
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-22-animation"></a>Souhrn kapitoly 22. Animace
 
@@ -110,7 +111,7 @@ V jiných extreme "navždy" animací spustit, dokud nebudou program je ukončen.
 
 [**RotatingSpokes** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/RotatingSpokes) zásadní `BoxView` paprsky kolem středu obrazovky a pak otočí každý paprsek samotné k vytvoření zajímavých vzorců:
 
-[![Trojitá snímek obrazovky otáčení paprsky](images/ch22fg21-small.png "otáčení paprsky")](images/ch22fg21-large.png "otáčení paprsky")
+[![Trojitá snímek obrazovky otáčení paprsky](images/ch22fg21-small.png "otáčení paprsky")](images/ch22fg21-large.png#lightbox "otáčení paprsky")
 
 Ale postupně zvýšení `Rotation` vlastnost elementu nemusí fungovat na dlouhou dobu, jako [ **RotationBreakdown** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/RotationBreakdown) příklad znázorňuje.
 
@@ -124,7 +125,7 @@ Jedinou metodou rozšíření v `ViewExtensions` ještě nebyla ukázán je [ `L
 
 [ **XamagonXuzzle** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/XamagonXuzzle) ukázkové používá `LayoutTo` přesunutí dlaždice na implementaci classic stavebnice 15-16, která zobrazuje kódované bitové kopie, nikoli číslem dlaždice:
 
-[![Trojitá snímek obrazovky Xamarin Xuzzle](images/ch22fg26-small.png "Xuzzle skládankou herní")](images/ch22fg26-large.png "Xuzzle skládankou hra")
+[![Trojitá snímek obrazovky Xamarin Xuzzle](images/ch22fg26-small.png "Xuzzle skládankou herní")](images/ch22fg26-large.png#lightbox "Xuzzle skládankou hra")
 
 ### <a name="your-own-awaitable-animations"></a>Může používat await animace
 

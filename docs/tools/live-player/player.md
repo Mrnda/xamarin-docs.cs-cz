@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 05/10/2017
-ms.openlocfilehash: 6ae0439566387e22d939ede83e6b4cb5c1a5a8fe
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6b0d62a9026c1248a66166e75ed41bb0148547a6
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="xamarin-live-player-app"></a>Aplikace Xamarin za provozu Player
 
@@ -20,9 +20,15 @@ ms.lasthandoff: 02/27/2018
 
 ## <a name="get-the-app"></a>Získat aplikaci
 
-Přehrávač Xamarin za provozu je dostupná z iOS App Store a Google Play:
+### <a name="xamarin-live-player-for-android"></a>Za provozu Player Xamarin pro Android
+Přehrávač Xamarin za provozu je k dispozici pro Android z Google Play:
 
-[ ![Stáhnout z iOS App Storu](player-images/app-store-badge.svg)](https://itunes.apple.com/us/app/xamarin-live-player/id1228841832?ls=1&mt=8) [ ![k dispozici na webu Google Play](player-images/google-play-badge.png)](https://play.google.com/store/apps/details?id=com.xamarin.live)
+[ ![K dispozici na webu Google Play](images/google-play-badge.png)](https://play.google.com/store/apps/details?id=com.xamarin.live)
+
+Pro zařízení s Androidem bez Google Play je k dispozici prostřednictvím Xamarin Live Player [HockeyApp](https://aka.ms/xlp-hockeyapp) distribuce. Kromě toho časné sestavení pro Android může nainstalovat přímo na webu Google Play vyjádření výslovného souhlasu s [otevřete beta programu](https://play.google.com/apps/testing/com.xamarin.live)
+
+### <a name="xamarin-live-player-for-ios"></a>Přehrávač Live Xamarin pro iOS
+Doporučujeme, aby uživatelé pro připojení [aplikace Xamarin Live Player _iOS Preview_ ](https://aka.ms/liveplayeralpha) rychlý přístup k nejnovější vylepšení prostřednictvím TestFlight.
 
 
 

@@ -3,16 +3,16 @@ title: "Část 5. Z vazby dat na rozhraní MVVM"
 description: "Architekturní vzor Model-View-ViewModel (modelem MVVM) byla vyvinuta s XAML v paměti. Vzor vynucuje oddělení mezi tři vrstvy softwaru – uživatelské rozhraní jazyka XAML volat zobrazení; Základní data, nazývá Model; a zprostředkovatel mezi zobrazení a modelu s názvem ViewModel. Zobrazení a ViewModel jsou často připojené prostřednictvím vazby dat, které jsou definované v souboru XAML. Vazby pro zobrazení je obvykle instanci ViewModel."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 1D6164F9-4ECE-43A6-B583-1F5D5EFC1DDF
+ms.assetid: 48B37D44-4FB1-41B2-9A5E-6D383B041F81
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: b16aa2456cdae7a08f8f9ee8adbc32c124e78e18
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 207bf7649d588f973b400cb452d9d8b246955cdb
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="part-5-from-data-bindings-to-mvvm"></a>Část 5. Z vazby dat na rozhraní MVVM
 
@@ -59,7 +59,7 @@ V **One-Shot DateTime** programu, dva podřízených obsahovat vazby na vlastnos
 
 Samozřejmě velký problém je, že datum a čas sady po při stránce první a nikdy změnit:
 
-[ ![](data-bindings-to-mvvm-images/oneshotdatetime.png "Zobrazení zobrazení datum a čas")](data-bindings-to-mvvm-images/oneshotdatetime-large.png "zobrazení zobrazení datum a čas")
+[![](data-bindings-to-mvvm-images/oneshotdatetime.png "Zobrazení zobrazení datum a čas")](data-bindings-to-mvvm-images/oneshotdatetime-large.png#lightbox "zobrazení zobrazení datum a čas")
 
 Soubor XAML můžete zobrazit hodiny, které vždy zobrazí aktuální čas, ale potřebuje nějaký kód, abyste. Když přemýšlení z hlediska modelem MVVM, Model a ViewModel jsou třídy, které jsou vytvořené zcela v kódu. Zobrazení je často souboru XAML, který odkazuje na vlastnosti definované v ViewModel prostřednictvím datové vazby.
 
@@ -142,7 +142,7 @@ Všimněte si jak `ClockViewModel` je nastaven na `BindingContext` z `Label` pom
 
 `Binding` – Rozšíření značek na `Text` vlastnost `Label` formáty `DateTime` vlastnost. Zde je zobrazení:
 
-[ ![](data-bindings-to-mvvm-images/clock.png "Zobrazení zobrazení datum a čas prostřednictvím ViewModel")](data-bindings-to-mvvm-images/clock-large.png "zobrazení datum a čas prostřednictvím ViewModel zobrazení")
+[![](data-bindings-to-mvvm-images/clock.png "Zobrazení zobrazení datum a čas prostřednictvím ViewModel")](data-bindings-to-mvvm-images/clock-large.png#lightbox "zobrazení datum a čas prostřednictvím ViewModel zobrazení")
 
 Je také možné přístup jednotlivé vlastnosti `DateTime` vlastnost ViewModel oddělením vlastnosti s dobami:
 
@@ -292,7 +292,7 @@ Obsahuje následující soubor XAML `BoxView` jejichž `Color` vlastnost je váz
 
 Vazba na každém `Label` je výchozí `OneWay`. Stačí, když se zobrazí hodnotu. Ale vazbu na každém `Slider` je `TwoWay`. To umožňuje `Slider` inicializované ze ViewModel. Všimněte si, že `Color` je nastavena na `Blue` při vytvoření instance ViewModel. Ke změně, ale `Slider` také je potřeba nastavit novou hodnotu pro vlastnost v ViewModel, který pak vypočítá novou barvu.
 
-[ ![](data-bindings-to-mvvm-images/hslcolorscroll.png "Rozhraní MVVM pomocí obousměrné vazby dat")](data-bindings-to-mvvm-images/hslcolorscroll-large.png "rozhraní MVVM pomocí obousměrné vazby dat")
+[![](data-bindings-to-mvvm-images/hslcolorscroll.png "Rozhraní MVVM pomocí obousměrné vazby dat")](data-bindings-to-mvvm-images/hslcolorscroll-large.png#lightbox "rozhraní MVVM pomocí obousměrné vazby dat")
 
 ## <a name="commanding-with-viewmodels"></a>Tvorba příkazů s ViewModels
 
@@ -553,7 +553,7 @@ Následující klávesnici není pokročilé jako vizuálně, jak by mohla být.
 
 `Command` Vlastnost první `Button` , zobrazí se v tomto značek je vázán k `DeleteCharCommand`; zbytek je vázána na `AddCharCommand` s `CommandParameter` který je stejný jako znak, který se zobrazí na `Button` vzhled. Tady je program v akci:
 
-[ ![](data-bindings-to-mvvm-images/keypad.png "Pomocí příkazů a rozhraní MVVM kalkulačky")](data-bindings-to-mvvm-images/keypad-large.png "kalkulačky pomocí příkazů a rozhraní MVVM")
+[![](data-bindings-to-mvvm-images/keypad.png "Pomocí příkazů a rozhraní MVVM kalkulačky")](data-bindings-to-mvvm-images/keypad-large.png#lightbox "kalkulačky pomocí příkazů a rozhraní MVVM")
 
 ### <a name="invoking-asynchronous-methods"></a>Volání asynchronních metod
 
@@ -678,7 +678,7 @@ V souboru XAML `MainPage` definuje `ListBox` jejichž `ItemsSource` je nastavena
 
 Na stránkách jsou zobrazeny v posouvatelného seznamu:
 
-[ ![](data-bindings-to-mvvm-images/mainpage.png "Posuvný seznam stránek")](data-bindings-to-mvvm-images/mainpage-large.png "posuvný seznam stránek")
+[![](data-bindings-to-mvvm-images/mainpage.png "Posuvný seznam stránek")](data-bindings-to-mvvm-images/mainpage-large.png#lightbox "posuvný seznam stránek")
 
 Obslužná rutina v souboru kódu se aktivuje, když uživatel vybere položku. Nastaví obslužné rutiny `SelectedItem` vlastnost `ListBox` zpět na `null` a vytvoří zvolené stránky a přejde do ní:
 
@@ -695,6 +695,12 @@ private async void OnListViewItemSelected(object sender, SelectedItemChangedEven
     }
 }
 ```
+
+## <a name="video"></a>Video
+
+> [!VIDEO https://youtube.com/embed/DYRLcqG2BAY]
+
+**Xamarin momentální 2016: Rozhraní MVVM zjednodušená s Xamarin.Forms a modulu Prism**
 
 ## <a name="summary"></a>Souhrn
 

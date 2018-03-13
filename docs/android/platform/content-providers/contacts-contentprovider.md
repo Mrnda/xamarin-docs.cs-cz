@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/22/2018
-ms.openlocfilehash: 677d672b3f00d4c3f3505ab2adf977f16fca4de5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 730cc1f815641d79350784790e3b33b743d1aebe
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="using-the-contacts-contentprovider"></a>Pomocí ContentProvider kontaktů
 
@@ -40,7 +40,6 @@ Každá z těchto metod má stejnou základní sadu vstupy:
 -  **SortOrder** &ndash; sloupce, které chcete seřadit.
 
 
-<a name="Creating_Inputs_for_a_Query" />
 
 ## <a name="creating-inputs-for-a-query"></a>Vytváření vstupy pro vytvoření dotazu
 
@@ -60,14 +59,12 @@ string[] projection = {
 V tomto příkladu `selection`, `selectionArgs` a `sortOrder` budou ignorovány jejich nastavením na `null`.
 
 
-<a name="Creating_a_Cursor_from_a_Content_Provider_Uri" />
 
 ## <a name="creating-a-cursor-from-a-content-provider-uri"></a>Vytvoření kurzoru z identifikátoru Uri poskytovateli obsahu
 
 Po vytvoření objektů parametrů lze použít v jednom z následujících tří způsobů:
 
 
-<a name="Using_a_Managed_Query" />
 
 ### <a name="using-a-managed-query"></a>Použití spravovaných dotazu
 
@@ -80,7 +77,6 @@ var cursor = activity.ManagedQuery(uri, projection, null, null, null);
 Tento kurzor bude spravovat Android, není potřeba ho zavřít.
 
 
-<a name="Using_ContentResolver" />
 
 ### <a name="using-contentresolver"></a>Pomocí ContentResolver
 
@@ -100,7 +96,6 @@ cursor.Close();
 Alternativně můžete volat `StartManagingCursor()` a `StopManagingCursor()` ke správě kurzor. Spravované kurzory jsou automaticky deaktivována a znovu dotazován při aktivity jsou zastavena a restartována.
 
 
-<a name="Using_CursorLoader" />
 
 ### <a name="using-cursorloader"></a>Pomocí CursorLoader
 
@@ -116,7 +111,6 @@ var cursor = (ICursor)loader.LoadInBackground();
 Starší verze Android můžete také použít `CursorLoader` pomocí [v4 podpory knihovny](http://developer.android.com/tools/support-library/index.html).
 
 
-<a name="Displaying_the_Cursor_Data_with_a_Custom_Adapter" />
 
 ## <a name="displaying-the-cursor-data-with-a-custom-adapter"></a>Zobrazení dat kurzor vlastní adaptér
 
@@ -189,13 +183,12 @@ public override View GetView (int position, View convertView, ViewGroup parent)
 
 (Pokud existuje), zobrazí se bitovou kopii pomocí identifikátoru Uri k souboru bitové kopie na zařízení. Aplikace vypadá takto:
 
-[![Snímek obrazovky aplikace zobrazení kontaktů v prvku ListView; Obrázek se zobrazí vlevo od jednu položku](contacts-contentprovider-images/contactsprovider.png)](contacts-contentprovider-images/contactsprovider.png)
+[![Snímek obrazovky aplikace zobrazení kontaktů v prvku ListView; Obrázek se zobrazí vlevo od jednu položku](contacts-contentprovider-images/contactsprovider.png)](contacts-contentprovider-images/contactsprovider.png#lightbox)
 
 Používá podobný Princip kódu, vaše aplikace přístup celou řadu dat systému, včetně fotografie, videa a Hudba uživatele.
 Některé typy dat vyžadují speciální oprávnění vyžadované v projektu **AndroidManifest.xml**.
 
 
-<a name="Displaying_the_Cursor_Data_with_a_SimpleCursorAdapter" />
 
 ## <a name="displaying-the-cursor-data-with-a-simplecursoradapter"></a>Zobrazení dat kurzoru s SimpleCursorAdapter
 

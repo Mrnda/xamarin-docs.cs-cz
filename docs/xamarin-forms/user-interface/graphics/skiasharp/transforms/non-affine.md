@@ -4,14 +4,15 @@ description: "Vytvoření perspektivy a Sbíhavost důsledky s třetí sloupec m
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 785F4D13-7430-492E-B24E-3B45C560E9F1
 author: charlespetzold
 ms.author: chape
 ms.date: 04/14/2017
-ms.openlocfilehash: 3fda8524b824042aa4aba07853da2801baf47027
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2e2e83404bc93bd07885008b868c51eba2ff7140
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="non-affine-transforms"></a>Afinní transformace
 
@@ -226,7 +227,7 @@ public partial class TestPerspectivePage : ContentPage
 
 Zde jsou některé obrázky, ukázka:
 
-[![](non-affine-images/testperspective-small.png "Trojitá snímek obrazovky stránky perspektivy testu")](non-affine-images/testperspective-large.png "Trojitá snímek obrazovky stránky perspektivy testu")
+[![](non-affine-images/testperspective-small.png "Trojitá snímek obrazovky stránky perspektivy testu")](non-affine-images/testperspective-large.png#lightbox "Trojitá snímek obrazovky stránky perspektivy testu")
 
 Proto byste posuvníků, zjistíte, že hodnoty nad rámec 0.0066 nebo pod –0.0066 způsobit bitovou kopii k najednou fractured a osamocené. Rastrový obrázek transformaci je hranaté 300 pixelů. Je transformovat relativně k jeho center, takže souřadnice bitmapy v rozsahu od –150 do 150. Odvolat, hodnotu z "je:
 
@@ -390,13 +391,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Následuje několik příkladů:
 
-[![](non-affine-images/tapertransform-small.png "Trojitá snímek obrazovky stránky Sbíhavost transformace")](non-affine-images/tapertransform-large.png "Trojitá snímek obrazovky stránky Sbíhavost transformace")
+[![](non-affine-images/tapertransform-small.png "Trojitá snímek obrazovky stránky Sbíhavost transformace")](non-affine-images/tapertransform-large.png#lightbox "Trojitá snímek obrazovky stránky Sbíhavost transformace")
 
 Dalším typem zobecněný-afinní transformace je 3D otočení, které ukazují další článek, [3D otočení](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/3d-rotation.md).
 
 Afinní transformace můžete převést obdélník do jakékoli konvexní čtyřúhelník. Tento postup je znázorněn podle **zobrazit bez Afinní matici** stránky. Je velmi podobné **zobrazit Afinní matici** stránku z [matice transformuje](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/matrix.md) článek s tím rozdílem, že má čtvrtý `TouchPoint` objektu k manipulaci s čtvrtý rohu bitmapy:
 
-[![](non-affine-images/shownonaffinematrix-small.png "Trojitá snímek obrazovky stránky zobrazit bez Afinní matici")](non-affine-images/shownonaffinematrix-large.png "Trojitá snímek obrazovky stránky zobrazit bez Afinní matici")
+[![](non-affine-images/shownonaffinematrix-small.png "Trojitá snímek obrazovky stránky zobrazit bez Afinní matici")](non-affine-images/shownonaffinematrix-large.png#lightbox "Trojitá snímek obrazovky stránky zobrazit bez Afinní matici")
 
 Tak dlouho, dokud není pokusí úhlu interior jednoho rozích bitmapy větší než 180 stupňů nebo dvě strany cross navzájem, program úspěšně vypočítá transformace pomocí této metody z [ `ShowNonAffineMatrixPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/ShowNonAffineMatrixPage.xaml.cs) třídy:
 

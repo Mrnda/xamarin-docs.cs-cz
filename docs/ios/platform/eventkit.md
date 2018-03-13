@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: db3662db50d8f3538f16f2af1f9e7880957dc25c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a08bc67a9af653a9a646ad62071df0400ce58c12
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="eventkit"></a>EventKit
 
@@ -30,7 +30,7 @@ V této příručce vytvoříme zahrnují:
 
 Všechny úlohy v této příručce jsou k dispozici v doprovodné ukázkovou aplikaci:
 
- [ ![](eventkit-images/01.png "Obrazovky doprovodné ukázkové aplikace")](eventkit-images/01.png)
+ [![](eventkit-images/01.png "Obrazovky doprovodné ukázkové aplikace")](eventkit-images/01.png#lightbox)
 
 ## <a name="requirements"></a>Požadavky
 
@@ -148,7 +148,7 @@ App.Current.EventStore.GetCalendars ( EKEntityType.Event );
 
 *EKEventEditViewController* nemá mnoho lifting těžký pro vás, pokud chcete vytvořit nebo upravit událost se stejné uživatelské rozhraní, které se zobrazí uživatelům při používání aplikace pro kalendáře:
 
- [ ![](eventkit-images/02.png "Uživatelské rozhraní, které se zobrazí uživatelům při používání aplikace pro kalendář")](eventkit-images/02.png)
+ [![](eventkit-images/02.png "Uživatelské rozhraní, které se zobrazí uživatelům při používání aplikace pro kalendář")](eventkit-images/02.png#lightbox)
 
 Pokud chcete použít, budete chtít deklarovat jako proměnnou a úrovni třídy tak, aby ho nebude získat uvolňování paměti by byl deklarován v rámci metody:
 

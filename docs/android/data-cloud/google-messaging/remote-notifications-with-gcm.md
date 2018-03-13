@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: dda7597456421aa4ae401f56ed6cfc7983df29c5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 64961e9c45c28ede4cc84f7b978da565be4426d9
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="remote-notifications-with-google-cloud-messaging"></a>Vzdálená oznámení s zasílání zpráv cloudu Google
 
@@ -53,7 +53,7 @@ Pro příjem zpráv z Google Cloud Messaging [služby Google Play](https://www.n
 
 V sadě Visual Studio, klikněte pravým tlačítkem na **odkazy > spravovat balíčky NuGet...** ; v sadě Visual Studio pro Mac, klikněte pravým tlačítkem na **balíčků > přidat balíčky...** . Vyhledejte **Xamarin Google Play Services - GCM** a instalaci tohoto balíčku do **ClientApp** projektu: 
 
-[ ![Instalace služby Google Play](remote-notifications-with-gcm-images/1-google-play-services-sml.png)](remote-notifications-with-gcm-images/1-google-play-services.png)
+[![Instalace služby Google Play](remote-notifications-with-gcm-images/1-google-play-services-sml.png)](remote-notifications-with-gcm-images/1-google-play-services.png#lightbox)
 
 Při instalaci **Xamarin Google Play Services - GCM**, **Xamarin Google Play Services - základní** se automaticky nainstaluje. Pokud dojde k chybě, změňte projektu *minimální Android k cíli* nastavení na hodnotu než **zkompilovat pomocí sady SDK verze** a znovu zkuste spustit instalaci NuGet. 
 
@@ -76,7 +76,7 @@ Alternativně můžete použít emulátoru Androidu systémem Android 2.2 nebo v
 
 V [Google Cloud Messaging](~/android/data-cloud/google-messaging/google-cloud-messaging.md), jsme zadali název balíčku pro naše aplikace s podporou služby GCM (Tento název balíčku slouží taky jako *ID aplikace* který je přidružen naše klíč rozhraní API a ID odesílatele). Umožňuje otevřít vlastnosti **ClientApp** projektu a nastavte název balíčku na tento řetězec. V tomto příkladu jsme nastavte název balíčku na `com.xamarin.gcmexample`:
 
-[ ![Nastavení názvu balíčku](remote-notifications-with-gcm-images/2-package-name-sml.png)](remote-notifications-with-gcm-images/2-package-name.png)
+[![Nastavení názvu balíčku](remote-notifications-with-gcm-images/2-package-name-sml.png)](remote-notifications-with-gcm-images/2-package-name.png#lightbox)
 
 Klientská aplikace bude nelze přijmout registrační token ze služby GCM, pokud nemá tento název balíčku *přesně* shodovat s názvem balíčku, který jsme zadat v konzole pro vývojáře Google. 
 
@@ -192,7 +192,7 @@ Tento kód zkontroluje přítomnost APK služby Google Play a zapíše výsledek
 
 Pojďme zcela znovu sestavte a spusťte aplikaci. Měli byste vidět k obrazovce, která vypadá jako na následujícím snímku obrazovky: 
 
-[ ![Je k dispozici služby Google Play](remote-notifications-with-gcm-images/3-first-screen-sml.png)](remote-notifications-with-gcm-images/3-first-screen.png)
+[![Je k dispozici služby Google Play](remote-notifications-with-gcm-images/3-first-screen-sml.png)](remote-notifications-with-gcm-images/3-first-screen.png#lightbox)
 
 Pokud nejste s tímto výsledkem, ověřte, zda je APK služby Google Play nainstalovány v zařízení a zda **Xamarin Google Play Services - GCM** balíčku se přidá do vašeho **ClientApp** projektu jak je popsáno dříve. Pokud dojde k chybě sestavení, zkuste čištění řešení a znovu sestavit. 
 
@@ -271,11 +271,11 @@ Ve výše uvedený ukázkový kód, změňte *YOUR_SENDER_ID* číslo ID odesíl
 
 1.  Přihlaste se [Google Cloud Console](https://console.cloud.google.com/) a vyberte název projektu vyžádání nabídku. V **projektu informace** podokně, který se zobrazí u projektu, klikněte na tlačítko **přejděte na nastavení projektu**:
 
-    [![Výběr XamarinGCM projektu](remote-notifications-with-gcm-images/7-choose-project-sml.png)](remote-notifications-with-gcm-images/7-choose-project.png)
+    [![Výběr XamarinGCM projektu](remote-notifications-with-gcm-images/7-choose-project-sml.png)](remote-notifications-with-gcm-images/7-choose-project.png#lightbox)
 
 2.  Na **nastavení** stránky, vyhledejte **číslo projektu** &ndash; jedná se o ID odesílatele pro svůj projekt:
 
-    [![Zobrazí číslo projektu](remote-notifications-with-gcm-images/9-project-number-sml.png)](remote-notifications-with-gcm-images/9-project-number.png)
+    [![Zobrazí číslo projektu](remote-notifications-with-gcm-images/9-project-number-sml.png)](remote-notifications-with-gcm-images/9-project-number.png#lightbox)
 
 My chceme spustit naše `RegistrationIntentService` při spuštění vaší aplikace. Upravit **MainActivity.cs** a upravovat `OnCreate` metoda tak, aby naše `RegistrationIntentService` spustí po jsme kontrolovat přítomnost služby Google Play: 
 
@@ -548,7 +548,7 @@ V této aplikaci konzoly vytváříme datové části JSON, který obsahuje zpr�
 
 Umožňuje hledat **Json.NET** balíček a nainstalujte ho do projektu: 
 
-[ ![Instalace balíčku Json.NET](remote-notifications-with-gcm-images/4-add-json.net-sml.png)](remote-notifications-with-gcm-images/4-add-json.net.png)
+[![Instalace balíčku Json.NET](remote-notifications-with-gcm-images/4-add-json.net-sml.png)](remote-notifications-with-gcm-images/4-add-json.net.png#lightbox)
 
 
 #### <a name="add-a-reference-to-systemnethttp"></a>Přidat odkaz na System.Net.Http
@@ -630,7 +630,6 @@ Tento testovací aplikace server odešle zprávu následující formátu JSON do
 GCM, pak předá tuto zprávu vaší klientské aplikace. Vytvořme **MessageSender** a otevřete okno konzoly, kde jsme můžete spustit z příkazového řádku.
 
 
-<a name="tryit" />
 
 ### <a name="try-it"></a>Můžete je vyzkoušejte.
 
@@ -666,11 +665,11 @@ D/MyGcmListenerService(16103): Message: Hello, Xamarin!
 
 Kromě toho by měl zjistíte, že má ikona oznámení nového zobrazovaly na hlavním panelu oznámení: 
 
-[ ![U zařízení se zobrazí ikona Notiication](remote-notifications-with-gcm-images/5-icon-appears-sml.png)](remote-notifications-with-gcm-images/5-icon-appears.png)
+[![U zařízení se zobrazí ikona Notiication](remote-notifications-with-gcm-images/5-icon-appears-sml.png)](remote-notifications-with-gcm-images/5-icon-appears.png#lightbox)
 
 Při otevření panelu oznámení zobrazit oznámení, měli byste vidět naše vzdáleného oznámení:
 
-[ ![Zobrazí se zpráva oznámení](remote-notifications-with-gcm-images/6-notification-in-tray-sml.png)](remote-notifications-with-gcm-images/6-notification-in-tray.png)
+[![Zobrazí se zpráva oznámení](remote-notifications-with-gcm-images/6-notification-in-tray-sml.png)](remote-notifications-with-gcm-images/6-notification-in-tray.png#lightbox)
 
 Blahopřejeme, aplikace přijal jeho prvního vzdáleného oznámení.
 

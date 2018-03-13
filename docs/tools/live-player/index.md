@@ -8,17 +8,17 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 05/10/2017
-ms.openlocfilehash: edc1dd9f9544d1ab03781e7f3181a78b72f53909
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1fea2e2f7210e282fa1e27ad3a1203da2216791e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarin-live-player"></a>Xamarin Live Player
 
 Xamarin Live Player umožňuje provádět úpravy za provozu do vaší aplikace a mají tyto změny projeví za provozu na vašem zařízení. Váš kód běží v rámci aplikace Xamarin Live Player – není potřeba nastavit emulátorů nebo nasazení kód pomocí kabelů!
 
-[ ![Xamarin Player za provozu: Kódu, kontrolovat, Test](images/xamarin-live.png)](images/xamarin-live-sml.png)
+[![Xamarin Player za provozu: Kódu, kontrolovat, Test](images/xamarin-live.png)](images/xamarin-live-sml.png#lightbox)
 
 1. Povolit *Xamarin Live Player* v **Předvolby**, vyberte z **zařízení** seznamu.
 2. Ladění nebo spuštění a pak prohledávání pár QRCodeto zařízení.
@@ -28,11 +28,11 @@ Xamarin Live Player umožňuje provádět úpravy za provozu do vaší aplikace 
 
 Konfigurace vaší IDE pro použijte přehrávač Xamarin za provozu na Visual Studio 2017 nebo Visual Studio for Mac. Přehrávač Live Xamarin podporuje Android, iOS a Xamarin.Forms projekty.
 
-## <a name="xamarin-live-player-appplayermd"></a>[Aplikace Xamarin za provozu Player](player.md)
+## <a name="xamarin-live-player-appplayermd"></a>[Aplikace Xamarin Live Player](player.md)
 
 Pomocí Xamarin Live Player aplikace.
 
-## <a name="xaml-live-previewinglive-viewmd"></a>[Live nastavenému XAML](live-view.md)
+## <a name="xaml-live-previewinglive-viewmd"></a>[Dynamický náhled XAML](live-view.md)
 
 Pomocí funkce "Live spustit aktuální zobrazení".
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/01/2016
-ms.openlocfilehash: 053696ebf37e73e3b121e2aa52b80b7ea1b8ed64
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: f870cda73625197fb15bf19be1cdabbd675124d6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="layout-for-tablet-and-desktop-apps"></a>Rozložení pro aplikace, tablety a vzdálené ploše
 
@@ -41,7 +41,7 @@ Pokud chcete poskytovat příjemný spuštění a zajistit na celé obrazovce ř
 Před iOS 9 všechny aplikace trvalo nahoru na celé obrazovce na zařízení, ale teď můžete provádět některé Ipady [rozdělení obrazovky multitasking](~/ios/platform/multitasking.md).
 To znamená, že vaše aplikace může trvat až právě tenký sloupec stranu obrazovky, 50 % šířku obrazovky nebo na celé obrazovce.
 
-[ ![](tablet-images/ipad-sml.png "iPad Příklad obrazovky rozdělení")](tablet-images/ipad.png "iPad Příklad obrazovky rozdělení")
+[![](tablet-images/ipad-sml.png "iPad Příklad obrazovky rozdělení")](tablet-images/ipad.png#lightbox "iPad Příklad obrazovky rozdělení")
 
 Funkce rozdělenou obrazovkou znamená, že by měl návrh vaší aplikace pro práci s co 320 pixelů široké, nebo co nejvíc 1366 pixelů.
 
@@ -63,7 +63,7 @@ Pro podporu tablety a stolní počítače se systémem Windows, budete muset pou
 
 Aplikace běžící na Windows tablety a stolní počítače velikost lze změnit na libovolný dimenze kromě k provozu přes celou obrazovku.
 
-[ ![](tablet-images/splitscreen-sml.png "Příklad obrazovky rozdělení Windows")](tablet-images/splitscreen.png "Windows rozdělení Příklad obrazovky")
+[![](tablet-images/splitscreen-sml.png "Příklad obrazovky rozdělení Windows")](tablet-images/splitscreen.png#lightbox "Windows rozdělení Příklad obrazovky")
 
 
 <a name="optimize" />

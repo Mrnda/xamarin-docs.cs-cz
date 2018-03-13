@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/14/2016
-ms.openlocfilehash: 42ef3e6c82763831b5114f3de7603bba8f59eac6
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c582e0306bdc69570e3f8e8d35c7fa15b30523da
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="custom-animations"></a>Vlastní animace
 
@@ -54,7 +54,7 @@ Následující argumenty jsou určené v `Commit` metoda:
 Celkový efekt je vytvoření animace, která zvyšuje [ `Scale` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Scale/) vlastnost [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) z hodnoty 1 na 2, více než 2 sekund (v milisekundách 2000), pomocí [ `Linear` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.Linear/) usnadnění funkce. Pokaždé, když dokončení animace jeho `Scale` vlastnost se resetují na 1 a animace se opakuje.
 
 > [!NOTE]
-> **Poznámka:**: souběžných animací, které spustit nezávisle na sobě navzájem konstruovat vytvořením `Animation` objekt pro každý animace a pak volání `Commit` metodu na každý animace.
+> Souběžné animací, které spustit nezávisle na sobě navzájem konstruovat vytvořením `Animation` objekt pro každý animace a pak volání `Commit` metodu na každý animace.
 
 <a name="child" />
 

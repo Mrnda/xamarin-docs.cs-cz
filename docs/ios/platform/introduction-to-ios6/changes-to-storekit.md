@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: cbaa389e4a115be2face2b72db6108c836676dc7
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ec83bc0f62ee195884cef2f59ba701fcbf15c1da
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="changes-to-storekit"></a>Změny StoreKit
 
@@ -36,7 +36,7 @@ Funkce úložiště Kit popisovaný v tomto dokumentu vyžadují iOS 6 a 4.5 Xco
 Nová funkce v aplikaci nákupu v iOS umožňuje uživatelům zobrazit informace o produktu a zakoupit či stáhnout z produktu v rámci vaší aplikace.
 Dříve aplikace by měla mít k aktivaci iTunes, obchodu s aplikacemi nebo iBookstore, což by způsobilo uživatele je původní aplikaci. Tato nová funkce automaticky vrátí uživatele do vaší aplikace, pokud se provádí.
 
- [ ![](changes-to-storekit-images/image1.png "Pokud chcete u aplikace automaticky vrácení po nákupu")](changes-to-storekit-images/image1.png)
+ [![](changes-to-storekit-images/image1.png "Pokud chcete u aplikace automaticky vrácení po nákupu")](changes-to-storekit-images/image1.png#lightbox)
 
 Existuje několik scénářů, kde může být užitečná, včetně (ale bez omezení):
 
@@ -92,7 +92,7 @@ void Buy (int productId)
 
 Aplikace bude mít tento tvar při spuštění – stažení nebo zakoupení dojde k zcela uvnitř `SKStoreProductViewController`:
 
- [ ![](changes-to-storekit-images/image2.png "Při spuštění bude mít tento tvar aplikace")](changes-to-storekit-images/image2.png)
+ [![](changes-to-storekit-images/image2.png "Při spuštění bude mít tento tvar aplikace")](changes-to-storekit-images/image2.png#lightbox)
 
 ### <a name="supporting-older-operating-systems"></a>Podpora starších operačních systémů
 
@@ -130,7 +130,7 @@ Apple ID, které vyžadují `SKStoreProductViewController` je *číslo* (si ji p
 
 Pro aplikace, které publikujete, se dají snadno najít **Apple ID** v iTunes připojení:
 
- [ ![](changes-to-storekit-images/image3.png "Hledání Apple ID v iTunes Connect")](changes-to-storekit-images/image3.png)
+ [![](changes-to-storekit-images/image3.png "Hledání Apple ID v iTunes Connect")](changes-to-storekit-images/image3.png#lightbox)
 
  <a name="Search_API" />
 
@@ -194,11 +194,11 @@ Před iOS 6, nebyly k dispozici produkt dvě možnosti (Další podrobně popsan
 
 V iOS 6 Apple nabízí varianta doručit serveru produkty: jejich bude hostitelem souborů obsahu na jejich serverech. Díky tomu je mnohem jednodušší vytvořit produkty serveru doručit, protože není nutné provozovat samostatný server, a Kit úložiště poskytuje stahování pozadí funkce, které jste dříve museli psát sami. Abyste mohli využívat hostování společnosti Apple, povolit hostování obsahu pro nové produkty nákupy v aplikaci a upravovat kód Kit úložiště a využívat jejich výhod. Soubory obsahu v produktu jsou pak vyvíjené v Xcode a nahrané do servery společnosti Apple ke kontrole a verzi.
 
- [ ![](changes-to-storekit-images/image4.png "Proces sestavení a doručit")](changes-to-storekit-images/image4.png)
+ [![](changes-to-storekit-images/image4.png "Proces sestavení a doručit")](changes-to-storekit-images/image4.png#lightbox)
 
 Použití obchodu s aplikacemi pro poskytnutí nákupu v aplikaci *s hostitelem obsahu* vyžaduje následující nastavení a konfiguraci:
 
--   **iTunes připojit** – můžete *musí* poskytovaly vaše informace bankovnictví a daň společnosti Apple, takže se můžete uhradit fondů shromážděných vaším jménem. Následně můžete konfigurovat produkty prodeje, a nastavte izolovaný prostor uživatelské účty k testování nákupu.  *Musíte také nakonfigurovat hostované obsahu**pro tyto produkty nespotřebitelné, které chcete do hostitele s Apple* *.*  
+-   **iTunes připojit** – můžete *musí* poskytovaly vaše informace bankovnictví a daň společnosti Apple, takže se můžete uhradit fondů shromážděných vaším jménem. Následně můžete konfigurovat produkty prodeje, a nastavte izolovaný prostor uživatelské účty k testování nákupu.  *Musíte také nakonfigurovat hostované obsahu**pro tyto produkty nespotřebitelné, které chcete do hostitele s Apple* *.* 
 -   **iOS Provisioning Portal** – vytvoření identifikátor svazku a povolení přístup k obchodu s aplikacemi pro vaši aplikaci, jako byste pro každou aplikaci, která podporuje nákupu v aplikaci. 
 -   **Uložení Kit** – přidání kódu do vaší aplikace pro zobrazení produktů, nákup produktů a obnovení transakce.  *V iOS 6 Kit úložiště bude také spravovat, stahování obsahu produktu, na pozadí probíhá aktualizace.* 
 -   **Vlastní kód** – ke sledování nákupy provedené zákazníci a poskytnout produkty nebo služby zakoupili. Využívat nové třídy úložiště Kit iOS 6 jako `SKDownload` k získání obsahu hostovaná společností Apple. 
@@ -213,7 +213,7 @@ Ukázkový projekt *HostedNonConsumables* (v StoreKitiOS6.zip) ukazuje, jak sest
 
 Aplikace se před, během a po nákupu vypadat třeba takto:
 
- [ ![](changes-to-storekit-images/image5.png "Aplikace bude mít tento tvar před, během a po nákupu")](changes-to-storekit-images/image5.png)
+ [![](changes-to-storekit-images/image5.png "Aplikace bude mít tento tvar před, během a po nákupu")](changes-to-storekit-images/image5.png#lightbox)
 
 Textový soubor a bitové kopie stáhnou a zkopírují do adresáře dokumentů aplikace. Najdete v článku [práce v dokumentaci systému souborů](~/ios/app-fundamentals/file-system.md) Další informace o různých adresáře, které jsou k dispozici pro úložiště aplikací.
 
@@ -221,19 +221,19 @@ Textový soubor a bitové kopie stáhnou a zkopírují do adresáře dokumentů 
 
 Při vytváření nových produktů, které budou používat Apple je obsahu je nutné vybrat hostování **Non-Consumable** typ produktu. Jiné typy produktu nepodporují hostování obsahu. Kromě toho by neměla být povolena, hostování obsahu pro *existující* produkty, které prodeje; pouze zapnout hostování obsahu pro nové produkty.
 
- [ ![](changes-to-storekit-images/image6.png "Vyberte typ Non-Consumable produktu")](changes-to-storekit-images/image6.png)
+ [![](changes-to-storekit-images/image6.png "Vyberte typ Non-Consumable produktu")](changes-to-storekit-images/image6.png#lightbox)
 
 Zadejte **ID produktu**. To bude požadován později při vytváření obsahu pro tento produkt.
 
- [ ![](changes-to-storekit-images/image7.png "Zadejte ID produktu")](changes-to-storekit-images/image7.png)
+ [![](changes-to-storekit-images/image7.png "Zadejte ID produktu")](changes-to-storekit-images/image7.png#lightbox)
 
 Hostování obsahu se nastavuje v části Podrobnosti. Před nákupy v aplikaci, budete za provozu jednoduše zrušte zaškrtnutí políčka "Hostitel obsahu s Apple" Pokud chcete zrušit (i když jste nahráli nějaký zkušební obsah). Ale obsahu hostování nelze odebrat po nákupy v aplikaci přešel za provozu.
 
- [ ![](changes-to-storekit-images/image8.png "Hostování obsahu s Apple")](changes-to-storekit-images/image8.png)
+ [![](changes-to-storekit-images/image8.png "Hostování obsahu s Apple")](changes-to-storekit-images/image8.png#lightbox)
 
 Jakmile jste zapnuli hostování obsahu, bude produkt zadejte **čekání nahrávání** stav a zobrazit tato zpráva:
 
- [ ![](changes-to-storekit-images/image9.png "Zadáte čekání pro stav nahrávání a zobrazit tato zpráva produktu")](changes-to-storekit-images/image9.png)
+ [![](changes-to-storekit-images/image9.png "Zadáte čekání pro stav nahrávání a zobrazit tato zpráva produktu")](changes-to-storekit-images/image9.png#lightbox)
 
 Obsah, musí být vytvořeny teď s Xcode a načten pomocí nástroje archivu. Pokyny pro vytváření obsahu balíčků je uveden v další části **vytváření. Soubory PKG**.
 
@@ -262,17 +262,17 @@ Naše ukázková aplikace má kapitolám adresáře pro prodej – každý balí
 
 Začněte výběrem **soubor > Nový projekt** v nabídce a výběr **v aplikaci nákupu obsahu**:
 
- [ ![](changes-to-storekit-images/image10.png "Vybrat obsah nákupy v aplikaci")](changes-to-storekit-images/image10.png)
+ [![](changes-to-storekit-images/image10.png "Vybrat obsah nákupy v aplikaci")](changes-to-storekit-images/image10.png#lightbox)
 
 Zadejte **název produktu** a **identifikátor společnosti** tak, aby **identifikátor svazku** odpovídá **ID produktu** jste zadali v iTunes Připojení pro tento produkt.
 
- [ ![](changes-to-storekit-images/image11.png "Zadejte název a identifikátor")](changes-to-storekit-images/image11.png)
+ [![](changes-to-storekit-images/image11.png "Zadejte název a identifikátor")](changes-to-storekit-images/image11.png#lightbox)
 
 Teď máte prázdný **v aplikaci nákupu obsahu** projektu. Můžete kliknout pravým tlačítkem a **přidat soubory...** nebo je přetáhněte do **navigátoru projektů**. Ujistěte se, že **ContentVersion** správné (měli začínají 1.0, ale pokud se později rozhodnete aktualizovat obsah, nezapomeňte se zvýší).
 
 Tento snímek obrazovky ukazuje Xcode s soubory obsahu, který je součástí projektu a plist položky viditelné v hlavním okně:
 
- [ ![](changes-to-storekit-images/image12.png "Tento snímek obrazovky ukazuje Xcode s soubory obsahu, který je součástí projektu a plist položky viditelné v hlavním okně")](changes-to-storekit-images/image12.png)
+ [![](changes-to-storekit-images/image12.png "Tento snímek obrazovky ukazuje Xcode s soubory obsahu, který je součástí projektu a plist položky viditelné v hlavním okně")](changes-to-storekit-images/image12.png#lightbox)
 
 Po přidání všech souborů obsahu můžete uložit tento projekt a později ji upravit nebo zahájit proces odesílání.
 
@@ -284,15 +284,15 @@ Nejjednodušší způsob, jak nahrát balíčcích obsahu je **Xcode archivu ná
 
 Balíček obsahu se potom zobrazí v archivu, jak je uvedeno níže. Ikona a typ archivu zobrazit toto je upozornění **archivu obsahu v aplikaci nákupu**. Klikněte na tlačítko **ověření...** ke kontrole naše obsahu balíčku chyby bez ve skutečnosti preforming nahrávání.
 
- [ ![](changes-to-storekit-images/image14.png "Ověření balíčku")](changes-to-storekit-images/image14.png)
+ [![](changes-to-storekit-images/image14.png "Ověření balíčku")](changes-to-storekit-images/image14.png#lightbox)
 
 Přihlaste se s vaší iTunes Connect přihlašovací údaje:
 
- [ ![](changes-to-storekit-images/image15.png "Přihlaste se s vaší iTunes přihlašovací údaje pro připojení")](changes-to-storekit-images/image15.png)
+ [![](changes-to-storekit-images/image15.png "Přihlaste se s vaší iTunes přihlašovací údaje pro připojení")](changes-to-storekit-images/image15.png#lightbox)
 
 Vyberte správné aplikací a nákupy v aplikaci Přidružte tento obsah se:
 
- [ ![](changes-to-storekit-images/image16.png "Vyberte správný aplikací a nákupy v aplikaci Přidružte tento obsah s")](changes-to-storekit-images/image16.png)
+ [![](changes-to-storekit-images/image16.png "Vyberte správný aplikací a nákupy v aplikaci Přidružte tento obsah s")](changes-to-storekit-images/image16.png#lightbox)
 
 Zobrazí se zpráva podobná následující:
 
@@ -300,7 +300,7 @@ Zobrazí se zpráva podobná následující:
 
 Nyní přejděte prostřednictvím podobným způsobem, ale kliknutím na tlačítko **distribuci...** Tento obsah se ve skutečnosti nahrát.
 
- [ ![](changes-to-storekit-images/image18.png "Distribuce aplikace")](changes-to-storekit-images/image18.png)
+ [![](changes-to-storekit-images/image18.png "Distribuce aplikace")](changes-to-storekit-images/image18.png#lightbox)
 
 Vyberte první možnost, chcete-li tento obsah nahrát:
 
@@ -308,23 +308,23 @@ Vyberte první možnost, chcete-li tento obsah nahrát:
 
 Přihlásit znovu:
 
- [ ![](changes-to-storekit-images/image15.png "Přihlášení")](changes-to-storekit-images/image15.png)
+ [![](changes-to-storekit-images/image15.png "Přihlášení")](changes-to-storekit-images/image15.png#lightbox)
 
 Zvolte správné aplikací a nákupy v aplikaci záznam nahrát obsah do:
 
- [ ![](changes-to-storekit-images/image20.png "Zvolit záznam nákupu aplikace a v aplikaci")](changes-to-storekit-images/image20.png)
+ [![](changes-to-storekit-images/image20.png "Zvolit záznam nákupu aplikace a v aplikaci")](changes-to-storekit-images/image20.png#lightbox)
 
 Počkejte, Probíhá nahrávání souborů:
 
- [ ![](changes-to-storekit-images/image21.png "Dialogové okno nahrávání obsahu")](changes-to-storekit-images/image21.png)
+ [![](changes-to-storekit-images/image21.png "Dialogové okno nahrávání obsahu")](changes-to-storekit-images/image21.png#lightbox)
 
 Po dokončení nahrávání se zobrazí zpráva poradit, že obsah byla odeslána na obchod s aplikacemi.
 
- [ ![](changes-to-storekit-images/image22.png "Příkladu úspěšné odeslání zprávy")](changes-to-storekit-images/image22.png)
+ [![](changes-to-storekit-images/image22.png "Příkladu úspěšné odeslání zprávy")](changes-to-storekit-images/image22.png#lightbox)
 
 Po který bylo provedeno, když se vrátíte na stránku produktu na iTunes Connect bude zobrazit podrobnosti o balíčcích a být ve **připravené k odeslání** stavu. Pokud produkt je v tomto stavu, můžete zahájit testování v prostředí izolovaného prostoru. NENÍ nutné odeslat produktu pro testování v izolovaném prostoru.
 
- [ ![](changes-to-storekit-images/image23.png "iTunes Connect bude zobrazit podrobnosti o balíčcích a být ve připravené k odeslání stavu")](changes-to-storekit-images/image23.png)
+ [![](changes-to-storekit-images/image23.png "iTunes Connect bude zobrazit podrobnosti o balíčcích a být ve připravené k odeslání stavu")](changes-to-storekit-images/image23.png#lightbox)
 
 Může trvat delší dobu (např. několik minut) mezi odesílání archiv a iTunes se aktualizovat stav připojení. Můžete odeslat produktu ke kontrole samostatně, nebo odešlete ji ve spojení s binární soubory aplikace. Až po Apple oficiálně schválena obsahu se bude k dispozici v produkčním prostředí App Store zakoupit ve vaší aplikaci.
 
@@ -332,7 +332,7 @@ Může trvat delší dobu (např. několik minut) mezi odesílání archiv a iTu
 
 K vytvoření a nahrání hostované obsahu balíčku pomocí Xcode a nástroj v archivu znamená nikdy zobrazit obsah balení, sám sebe. Soubory a adresáře v balíčcích pro ukázkovou aplikaci vytvořit vypadat například takto, s `plist` v kořenu a soubory produktu v souboru `Contents` podadresáři:
 
- [ ![](changes-to-storekit-images/image24.png "Soubor plist v kořenu a soubory produktu v podadresáři obsah")](changes-to-storekit-images/image24.png)
+ [![](changes-to-storekit-images/image24.png "Soubor plist v kořenu a soubory produktu v podadresáři obsah")](changes-to-storekit-images/image24.png#lightbox)
 
 Všimněte si strukturu adresáře balíčku (zejména umístění souborů `Contents` podadresáři) vzhledem k tomu, že je potřeba pochopit, tyto informace k extrahujte soubory z balíčku na zařízení.
 
@@ -352,7 +352,7 @@ Před čtením této části, zkontrolujte stávající [nákupy v aplikaci doku
 
 Posloupnost událostí, který nastane, když produkt hostované obsah je zakoupených a stažení je znázorněna v tomto diagramu:
 
- [ ![](changes-to-storekit-images/image25.png "Posloupnost událostí, který nastane, když produkt hostované obsah je zakoupených a stáhnout")](changes-to-storekit-images/image25.png)
+ [![](changes-to-storekit-images/image25.png "Posloupnost událostí, který nastane, když produkt hostované obsah je zakoupených a stáhnout")](changes-to-storekit-images/image25.png#lightbox)
 
 1.  Nové produkty lze vytvořit v iTunes připojit se s hostované obsahu povoleno. Skutečný obsah je v Xcode samostatně zkonstruovat (jako jednoduše přetahování soubory do složky) a potom archivovat a odeslat do iTunes (není vyžadováno žádné kódování). Každý produkt je potom odeslán na schválení, po jejímž uplynutí je k dispozici pro nákup. V ukázkovém kódu jsou tyto kódy Product ID pevně zakódované, ale hostování obsahu s Apple je flexibilnější, pokud uchováváte seznam dostupných produktů na vzdáleném serveru, aby při odesílání novými produkty a obsah tak, aby iTunes připojení lze aktualizovat. 
 1.  Uživatel zakoupí produkt, transakce je umístěn v platebních fronty ke zpracování. 
@@ -392,7 +392,7 @@ Podrobnosti o nové `SKDownload` třídy:
 
 Interakce mezi třídami v ukázkovém kódu jsou uvedeny v tomto diagramu (kód specifické pro hostované obsahu nákupy je zobrazené zeleně):
 
- [ ![](changes-to-storekit-images/image26.png "Hostované obsahu nákupy je zobrazené zeleně do tohoto diagramu")](changes-to-storekit-images/image26.png)
+ [![](changes-to-storekit-images/image26.png "Hostované obsahu nákupy je zobrazené zeleně do tohoto diagramu")](changes-to-storekit-images/image26.png#lightbox)
 
 Ukázkový kód, kde byly použity tyto třídy je zobrazena ve zbývající části této části:
 

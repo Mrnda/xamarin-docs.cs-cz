@@ -2,16 +2,16 @@
 title: "Implementace přehrávání videa"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: CE9E955D-A9AC-4019-A5D7-6390D80DECA1
+ms.assetid: 0CE9BEE7-4F81-4A00-B9B3-5E2535CD3050
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: e818bc3fa9793f093c10ac2617c5a822d08213d4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a889be5ee31f667117d2c36859e667980f0e6610
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="implementing-a-video-player"></a>Implementace přehrávání videa
 
@@ -27,7 +27,7 @@ V [ **VideoPlayerDemos** ](https://developer.xamarin.com/samples/xamarin-forms/c
 
 Vyžadovat přehrávačů videa *přenosu ovládací prvky*, které jsou tlačítka pro přehrávání a pozastavení videa a umístění panelu, který zobrazuje průběh prostřednictvím videa a umožňuje uživatelům rychle přeskočit do jiného umístění. `VideoPlayer` můžete použít prvky přenosu a umísťovací panelu poskytované platformou (jak je znázorněno níže), nebo můžete zadat vlastní přenos ovládacích prvků a umístění řádku. Tady je program pro systém iOS, Android a univerzální platformu Windows:
 
-[![Přehrávání videa webové](web-videos-images/playwebvideo-small.png "přehrát Video webové")](web-videos-images/playwebvideo-large.png "přehrát Web Video")
+[![Přehrávání videa webové](web-videos-images/playwebvideo-small.png "přehrát Video webové")](web-videos-images/playwebvideo-large.png#lightbox "přehrát Web Video")
 
 Samozřejmě můžete zapnout telefonu ze strany pro větší zobrazení.
 

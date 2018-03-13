@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 8787913c04b11a84828cd98960407f0cc27aa391
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 86a7690d4cf7291a4e44507a6250e3469c8f7ed2
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-split-view-controllers"></a>Práce s řadiče zobrazení rozdělení
 
@@ -21,7 +21,7 @@ _Tento článek se zabývá navrhování a práce s řadiče zobrazení rozděle
 
 Řadič zobrazení rozdělení uvede a spravuje hlavní a řadiče zobrazení podrobností-souběžného, na obrazovce ve stejnou dobu. Rozdělení zobrazení řadiče jsou použít k zobrazení obsahu trvalé, může získat fokus v zobrazení předlohy (menší části na levé straně) a související podrobnosti v zobrazení podrobností (větší oddílu na pravé straně).
 
-[ ![](split-views-images/intro01.png "Ukázkové zobrazení rozdělení")](split-views-images/intro01.png)
+[![](split-views-images/intro01.png "Ukázkové zobrazení rozdělení")](split-views-images/intro01.png#lightbox)
 
 <a name="About-Split-View-Controllers" />
 
@@ -31,7 +31,7 @@ Jak jsme uvedli výše, spravuje řadič zobrazení rozdělení hlavní a řadi�
 
 Kromě toho může hlavní View Controller byla skrytý nebo zobrazený podle potřeby: 
 
-[ ![](split-views-images/intro02.png "Skrytý řadiče zobrazení předlohy")](split-views-images/intro02.png)
+[![](split-views-images/intro02.png "Skrytý řadiče zobrazení předlohy")](split-views-images/intro02.png#lightbox)
 
 Řadiče zobrazení rozdělení se často používají k seznam filtrování obsahu představovat kategorií v hlavní zobrazení a filtrované výsledky v zobrazení podrobností. To je obvykle představují zobrazení tabulky na levé straně a [zobrazení kolekce](~/ios/tvos/user-interface/collection-views.md) na pravé straně.
 
@@ -54,18 +54,18 @@ Nejjednodušší způsob, jak pracovat s rozdělení řadiče zobrazení v aplik
 1. V **řešení Pad**, dvakrát klikněte `Main.storyboard` souborů a otevřete pro úpravy.
 1. Přetáhněte **řadiče zobrazení rozdělení** z **sada nástrojů** na zobrazení: 
 
-    [ ![](split-views-images/activity01.png "Řadič zobrazení rozdělení")](split-views-images/activity01.png)
+    [![](split-views-images/activity01.png "Řadič zobrazení rozdělení")](split-views-images/activity01.png#lightbox)
 1. Ve výchozím nastavení nainstaluje iOS Návrhář řadič navigační a View Controller v hlavního zobrazení. Pokud to nevejde požadavky vaší aplikace, jednoduše je odstraníte.
 1. Pokud odeberete výchozí hlavního zobrazení, přetáhněte na návrhovou plochu nového řadiče zobrazení: 
 
-    [ ![](split-views-images/activity02.png "Řadič zobrazení")](split-views-images/activity02.png)
+    [![](split-views-images/activity02.png "Řadič zobrazení")](split-views-images/activity02.png#lightbox)
 1. Ovládací prvek klikněte na tlačítko a přetáhněte ji z řadiče zobrazení rozdělení na nový řadič hlavního zobrazení. 
 1. Vyberte **hlavní** z **místní nabídky**: 
 
-    [ ![](split-views-images/activity03.png "Vyberte hlavní z místní nabídky")](split-views-images/activity03.png)
+    [![](split-views-images/activity03.png "Vyberte hlavní z místní nabídky")](split-views-images/activity03.png#lightbox)
 1. Návrh obsah hlavní a zobrazení podrobností: 
 
-    [ ![](split-views-images/activity04.png "Příklad rozložení")](split-views-images/activity04.png)
+    [![](split-views-images/activity04.png "Příklad rozložení")](split-views-images/activity04.png#lightbox)
 1. Přiřadit **názvy** v **pomůcky karta** z **Pad vlastnosti** pro práci s ovládacími prvky uživatelského rozhraní v kódu jazyka C#.
 1. Uložte změny a vrátit k sadě Visual Studio for Mac.
 
@@ -74,18 +74,18 @@ Nejjednodušší způsob, jak pracovat s rozdělení řadiče zobrazení v aplik
 1. V **Průzkumníku řešení**, dvakrát klikněte `Main.storyboard` souborů a otevřete pro úpravy.
 1. Přetáhněte **řadiče zobrazení rozdělení** z **sada nástrojů** na zobrazení: 
 
-    [ ![](split-views-images/activity01-vs.png "Řadič zobrazení rozdělení")](split-views-images/activity01-vs.png)
+    [![](split-views-images/activity01-vs.png "Řadič zobrazení rozdělení")](split-views-images/activity01-vs.png#lightbox)
 1. Ve výchozím nastavení přidá iOS Návrhář navigační řadiče a View Controller v zobrazení předlohy. Pokud to nevejde požadavky vaší aplikace, jednoduše je odstraníte.
 1. Pokud odeberete výchozí hlavního zobrazení, přetáhněte na návrhovou plochu nového řadiče zobrazení: 
 
-    [ ![](split-views-images/activity02-vs.png "Řadič zobrazení")](split-views-images/activity02-vs.png)
+    [![](split-views-images/activity02-vs.png "Řadič zobrazení")](split-views-images/activity02-vs.png#lightbox)
 1. Ovládací prvek klikněte na tlačítko a přetáhněte ji z řadiče zobrazení rozdělení na nový řadič hlavního zobrazení. 
 1. Vyberte **hlavní** z **místní nabídky**: 
 
-    [ ![](split-views-images/activity03-vs.png "Vyberte hlavní z místní nabídky")](split-views-images/activity03-vs.png)
+    [![](split-views-images/activity03-vs.png "Vyberte hlavní z místní nabídky")](split-views-images/activity03-vs.png#lightbox)
 1. Návrh obsah hlavní a zobrazení podrobností: 
 
-    [ ![](split-views-images/activity04.png "Rozložení obsahu")](split-views-images/activity04.png)
+    [![](split-views-images/activity04.png "Rozložení obsahu")](split-views-images/activity04.png#lightbox)
 1. Přiřadit **názvy** v **pomůcky karta** z **Explorer vlastnosti** pro práci s ovládacími prvky uživatelského rozhraní v kódu jazyka C#.
 1. Uložte provedené změny.
     
@@ -179,7 +179,7 @@ Tento článek má zahrnutých navrhování a práce s řadiče zobrazení rozd�
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Ukázky tvOS](https://developer.xamarin.com/samples/tvos/all/)
+- [Ukázky pro tvOS](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS lidské rozhraní příručky](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [Průvodce programováním aplikace pro tvOS](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

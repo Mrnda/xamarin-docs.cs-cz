@@ -7,11 +7,11 @@ ms.assetid: 7323EB3D-A78F-4BF0-9990-3160C7E83CF0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 2d802a96fcc8dad1d610b99a1cddffdc4398da38
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6ec8cb9b6fdb391afcb8f9baaa641da5aec38f6d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="new-search-apis"></a>Nové rozhraní API pro vyhledávání
 
@@ -21,7 +21,7 @@ Hledání se rozšířila na iOS 9 zajistit skvělé nové způsoby pro přístu
 
 Kromě toho nové rozhraní API pro vyhledávání usnadňují integraci vyhledávání ve vaší aplikaci bez před vyhledáváním implementace. Z toho důvodu Apple deklarací, že obvykle trvá několik hodin, aby se obsah aplikace iOS 9 všeobecně vyhledávat pomocí vyhledávací aplikaci.
 
-[ ![](images/intro01.png "Příklad všeobecně vyhledávat pomocí vyhledávací aplikaci obsahu aplikace iOS 9")](images/intro01.png)
+[![](images/intro01.png "Příklad všeobecně vyhledávat pomocí vyhledávací aplikaci obsahu aplikace iOS 9")](images/intro01.png#lightbox)
 
 Aplikace vyhledávání se skládá ze tří samostatných rozhraní API:
 

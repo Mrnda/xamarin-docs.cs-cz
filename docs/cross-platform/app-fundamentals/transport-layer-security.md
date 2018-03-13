@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 10/10/2017
-ms.openlocfilehash: 5237ed35116e5f8983df579d0ab68363996fb06f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b0f205c5ab2c65f0e2a99f912f3961f12a4f2b7a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="transport-layer-security-tls"></a>Transport Layer Security (TLS)
 
@@ -41,12 +41,12 @@ Tato část popisuje některé možnosti konfigurace sítě v projektech Xamarin
 
 Tato nastavení najdete v **možnosti projektu > Android možnosti** a kliknete na **Upřesnit** tlačítko: 
 
-[![Konfigurace HttpClient a TLS v sadě Visual Studio](transport-layer-security-images/properties-vs-sml.png)](transport-layer-security-images/properties-vs.png)
+[![Konfigurace HttpClient a TLS v sadě Visual Studio](transport-layer-security-images/properties-vs-sml.png)](transport-layer-security-images/properties-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 Tato nastavení najdete v **vlastnosti projektu > sestavení možnosti > Upřesnit** karty:
 
-[![Konfigurace HttpClient a TLS v Xamarin studiu a Visual Studio pro Mac](transport-layer-security-images/properties-xs-sml.png)](transport-layer-security-images/properties-xs.png)
+[![Konfigurace HttpClient a TLS v Xamarin studiu a Visual Studio pro Mac](transport-layer-security-images/properties-xs-sml.png)](transport-layer-security-images/properties-xs.png#lightbox)
 
 -----
 
@@ -79,7 +79,7 @@ Nové projekty Xamarin výchozí pro nativní implementaci, který podporuje pro
 >
 > Nativní možnost se doporučuje.
 
-# <a name="platform-specific-details"></a>Podrobnosti o specifických pro platformy
+## <a name="platform-specific-details"></a>Podrobnosti o specifických pro platformy
 
 Výše uvedené souhrn vysvětluje nastavení projektu pro implementace HttpClient a SSL/TLS v projektech Xamarin. Implementace HttpClient lze také nastavit dynamicky v kódu a v systému iOS existují dvě možnosti nativní lze vybírat.
 
@@ -87,7 +87,7 @@ Výše uvedené souhrn vysvětluje nastavení projektu pro implementace HttpClie
 - [**iOS a Mac**](~/cross-platform/macios/http-stack.md)
 
 
-# <a name="summary"></a>Souhrn
+## <a name="summary"></a>Souhrn
 
 Aplikace by měly používat zabezpečení TLS (Transport Layer) 1.2, pokud je to možné.
 Nové aplikace se teď výchozí do této konfigurace, ale budete muset aktualizovat nastavení v existujících aplikací podle pokynů v tomto článku.

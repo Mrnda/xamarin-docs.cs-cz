@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: a16f72e6aaee93aa313aff0aba23887b51acf701
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 10c4a1e3355263722d170dff0a5e2707eb794818
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="authenticating-users-with-an-azure-cosmos-db-document-database"></a>Ověřování uživatelů s databází Azure Cosmos DB dokumentu
 
@@ -81,7 +81,7 @@ Proces hostování tokenu zprostředkovatele prostředků v Azure App Service je
 
     Následující snímek obrazovky ukazuje tuto konfiguraci:
 
-    [![](authentication-images/azure-web-app-settings.png "Nastavení webové aplikace služby App Service")](authentication-images/azure-web-app-settings-large.png "nastavení webové aplikace služby App Service")
+    [![](authentication-images/azure-web-app-settings.png "Nastavení webové aplikace služby App Service")](authentication-images/azure-web-app-settings-large.png#lightbox "nastavení webové aplikace služby App Service")
 
 1. Publikujte řešení tokenu zprostředkovatele prostředků do webové aplikace služby Azure App Service.
 
@@ -117,7 +117,7 @@ Proces pro konfiguraci služby App Service, snadné ověřování vypadá takto:
 
   Následující snímek obrazovky ukazuje tuto konfiguraci:
 
-  [![](authentication-images/app-service-authentication-settings.png "Nastavení ověřování webové aplikace služby App Service")](authentication-images/app-service-authentication-settings-large.png "nastavení ověřování webové aplikace služby App Service")
+  [![](authentication-images/app-service-authentication-settings.png "Nastavení ověřování webové aplikace služby App Service")](authentication-images/app-service-authentication-settings-large.png#lightbox "nastavení ověřování webové aplikace služby App Service")
 
 Webové aplikace App Service musí také nakonfigurován pro komunikaci se povolit tok ověřování aplikace pro síť Facebook. To lze provést výběrem zprostředkovatele identity Facebook a zadáním **ID aplikace** a **tajný klíč aplikace** hodnoty z nastavení aplikace sítě Facebook v Centru pro vývojáře Facebook. Další informace najdete v tématu [Facebook přidat informace do vaší aplikace](/azure/app-service-mobile/app-service-mobile-how-to-configure-facebook-authentication#a-namesecrets-aadd-facebook-information-to-your-application).
 

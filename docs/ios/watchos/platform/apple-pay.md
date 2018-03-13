@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: e10a34bc5de16c19f48fa1b869daca9670f37804
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 53c2c3e3866cb782eea0cc9514c0c35379e48b5c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="apple-pay-on-watchos"></a>Dotykový identifikátor na watchOS
 
@@ -31,7 +31,7 @@ V iOS 10 rozhraní PassKit rozšířila na podporu dotykový identifikátor mimo
 
 ### <a name="supporting-apple-pay-outside-of-uikit"></a>Podpora Apple platím mimo UIKit
 
-Pomocí [PKPaymentAuthorizationController](https://developer.apple.com/reference/passkit/pkpaymentauthorizationcontroller) a [PKPaymentAuthorixationControllerDelegate](https://developer.apple.com/reference/passkit/pkpaymentauthorizationcontrollerdelegate), aplikace může podporovat stejné funkce poskytované službou [ PKPaymentAuthorizationViewController](https://developer.apple.com/reference/passkit/pkpaymentauthorizationviewcontroller) bez použití UIKit. Toto nové rozhraní API je potřeba pro podporu dotykový identifikátor v Apple Watch (a v konkrétních tříd Intent), je volitelné v jiných situacích (třeba existující aplikace). Apple navrhuje Přesun do nového rozhraní API co nejdříve poskytuje tak podporu dotykový identifikátor ve všech pro vývojáře aplikací s jednotného kódu. Další informace o tříd Intent a integrace Siri, najdete v tématu naše [Úvod do SiriKit](/~/ios/platform/sirikit/index.md) dokumentaci.
+Pomocí [PKPaymentAuthorizationController](https://developer.apple.com/reference/passkit/pkpaymentauthorizationcontroller) a [PKPaymentAuthorixationControllerDelegate](https://developer.apple.com/reference/passkit/pkpaymentauthorizationcontrollerdelegate), aplikace může podporovat stejné funkce poskytované službou [ PKPaymentAuthorizationViewController](https://developer.apple.com/reference/passkit/pkpaymentauthorizationviewcontroller) bez použití UIKit. Toto nové rozhraní API je potřeba pro podporu dotykový identifikátor v Apple Watch (a v konkrétních tříd Intent), je volitelné v jiných situacích (třeba existující aplikace). Apple navrhuje Přesun do nového rozhraní API co nejdříve poskytuje tak podporu dotykový identifikátor ve všech pro vývojáře aplikací s jednotného kódu. Další informace o tříd Intent a integrace Siri, najdete v tématu naše [Úvod do SiriKit](~/ios/platform/sirikit/index.md) dokumentaci.
 
 ### <a name="presenting-issuer-cards-from-within-apps"></a>Prezentace vystavitele z karty v rámci aplikací
 

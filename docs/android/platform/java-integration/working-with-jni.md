@@ -7,18 +7,17 @@ ms.assetid: A417DEE9-7B7B-4E35-A79C-284739E3838E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/15/2018
-ms.openlocfilehash: d1c441de089a84c93c251588115abecb19816868
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/09/2018
+ms.openlocfilehash: e9a6f44637b77bf53c3cab00ac5051e6a2f27386
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="working-with-jni"></a>Práce s JNI
 
 _Xamarin.Android umožňuje psaní aplikací pro Android v C# místo Java. Několik sestavení jsou k dispozici s Xamarin.Android která poskytnout vazby pro knihovny Java, včetně Mono.Android.dll a Mono.Android.GoogleMaps.dll. Ale vazby nejsou zadány všechny možné knihovny Java a vazby, které jsou k dispozici nemusí vazby každý Java typ nebo člen. Pokud chcete použít nevázaný Java typy a členy, mohou být použity Java nativní rozhraní (JNI). Tento článek ukazuje, jak používat JNI k interakci s Java typy a členy z aplikace Xamarin.Android._
 
-<a name="_Overview" />
 
 ## <a name="overview"></a>Přehled
 
@@ -37,14 +36,12 @@ Tento dokument popisuje:
 -  Jak vystavit rozhraní.
 
 
-<a name="_Requirements" />
 
 ## <a name="requirements"></a>Požadavky
 
 JNI, jak je k dispozici prostřednictvím [obor názvů Android.Runtime.JNIEnv](https://developer.xamarin.com/api/type/Android.Runtime.JNIEnv/), je k dispozici ve všech verzích Xamarin.Android.
 Chcete-li vytvořit vazbu Java typy a rozhraní, musíte použít Xamarin.Android 4.0 nebo novější.
 
-<a name="_Managed_Callable_Wrappers" />
 
 ## <a name="managed-callable-wrappers"></a>Spravované obálky s možností volání
 
@@ -58,7 +55,6 @@ Spravované obálky s možností mají dva účely:
 První účelem je výhradně pro usnadnění práce a zapouzdření složitost tak, aby spotřebitelé jednoduchý, kterou spravuje sadu tříd pro použití. To vyžaduje použití různých [JNIEnv](https://developer.xamarin.com/api/type/Android.Runtime.JNIEnv/) členy, jak je popsáno dále v tomto článku. Mějte na paměti, který spravovaný obálky s možností nejsou nezbytně nutné &ndash; "vložené" JNI použít, je zcela přijatelné a jsou užitečné pro jednorázové použití členů Java nepřipojená. Implementace rozhraní a dílčí classing vyžaduje použití spravovaných obálky s možností.
 
 
-<a name="_Android_Callable_Wrappers" />
 
 ## <a name="android-callable-wrappers"></a>Android – obálky s možností
 
@@ -70,7 +66,6 @@ Vždy, když kód Android je provést virtuální nebo rozhraní metoda, která 
 Android – obálky s možností jsou generované **monodroid.exe** programu během [proces sestavení](~/android/deploy-test/building-apps/build-process.md)a jsou generovány pro všechny typy, které dědí (přímo ani nepřímo) [ Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/).
 
 
-<a name="_Implementing_Interfaces" />
 
 ### <a name="implementing-interfaces"></a>Implementace rozhraní
 
@@ -90,7 +85,6 @@ class MyComponentCallbacks : Java.Lang.Object, Android.Content.IComponentCallbac
 }
 ```
 
-<a name="_Implementation_Details" />
 
 ### <a name="implementation-details"></a>Podrobnosti implementace
 
@@ -155,7 +149,6 @@ public class HelloAndroid extends android.app.Activity {
 Všimněte si, že se zachová základní třídy a nativní metoda deklarace jsou k dispozici pro každou metodu, která je přepsána v rámci spravovaného kódu.
 
 
-<a name="_ExportAttribute_and_ExportFieldAttribute" />
 
 ### <a name="exportattribute-and-exportfieldattribute"></a>ExportAttribute a ExportFieldAttribute
 
@@ -176,7 +169,6 @@ Protože generování kódu neposkytuje řešení pro generování libovolné me
 
 [ExportAttribute](https://developer.xamarin.com/samples/monodroid/ExportAttribute/) ukázkový projekt ukazuje, jak se používají tyto atributy.
 
-<a name="_Troubleshooting_ExportAttribute_and_ExportFieldAttribute" />
 
 #### <a name="troubleshooting-exportattribute-and-exportfieldattribute"></a>Řešení potíží s ExportAttribute a ExportFieldAttribute
 
@@ -185,7 +177,6 @@ Protože generování kódu neposkytuje řešení pro generování libovolné me
 -   V sestavení pro vydání `MissingMethodException` dojde k exportu metod &ndash; sestavení pro vydání v, `MissingMethodException` dojde k exportu metod. (Tento problém vyřešen v nejnovější verzi Xamarin.Android.)
 
 
-<a name="_ExportParameterAttribute" />
 
 ### <a name="exportparameterattribute"></a>ExportParameterAttribute
 
@@ -200,7 +191,6 @@ Tento případ však není plně určujícím. Zejména to platí v některé ro
 
 Když například tyto typy jsou potřebné pro exportovaný metody, `ExportParameterAttribute` musíte použít k explicitně udělit s odpovídajícím parametrem nebo vrátí hodnotu typu.
 
- <a name="_Annotation_Attribute" />
 
 
 ### <a name="annotation-attribute"></a>Atribut – Poznámka
@@ -226,7 +216,6 @@ Kromě toho platí následující omezení:
 -   Atributy na vlastnost nefunguje. Místo toho použijte atributy pro vlastnost getter a setter.
 
 
-<a name="_Class_Binding" />
 
 ## <a name="class-binding"></a>Vazby – třída
 
@@ -245,7 +234,6 @@ Vazba obvykle obsahuje následující položky:
 -  Pokud dílčí classing se požaduje, musí mít typ [RegisterAttribute](https://developer.xamarin.com/api/type/Android.Runtime.RegisterAttribute/) vlastní atribut deklarace typu s [RegisterAttribute.DoNotGenerateAcw](https://developer.xamarin.com/api/property/Android.Runtime.RegisterAttribute.DoNotGenerateAcw/) nastavena na `true`.
 
 
-<a name="_Declaring_Type_Handle" />
 
 ### <a name="declaring-type-handle"></a>Deklarující typ popisovač
 
@@ -257,7 +245,6 @@ static IntPtr class_ref = JNIEnv.FindClass(CLASS);
 
 Najdete v článku [odkazy na typ JNI](#_JNI_Type_References) část Podrobnosti o `CLASS` tokenu.
 
-<a name="_Binding_Fields" />
 
 ### <a name="binding-fields"></a>Vazba polí
 
@@ -297,7 +284,6 @@ Poznámka: Používáme [InputStreamInvoker.FromJniHandle](https://developer.xam
 
 Řadu [Android.Runtime](https://developer.xamarin.com/api/namespace/Android.Runtime/) typy mají `FromJniHandle` metody, které bude převedena JNI odkazovat do požadovaného typu.
 
- <a name="_Method_Binding" />
 
 
 ### <a name="method-binding"></a>Vazby – metoda
@@ -318,8 +304,7 @@ Stejně jako v polích, můžete použít k získání id metoda a vyvolání me
 
 Metoda vazba je potenciálně více než jen volání metody. Metoda vazby také zahrnuje povolení metody k přepsání (pro metody abstraktní a bez konečné) nebo implementovat (pro metody rozhraní). [Podpora dědičnosti rozhraní](#_Supporting_Inheritance,_Interfaces_1) část se týká složitosti podpora virtuální metody a metody rozhraní.
 
- <a name="_Static_Methods" />
-
+<a name="_Static_Methods_1" />
 
 #### <a name="static-methods"></a>Statické metody
 
@@ -344,7 +329,6 @@ public static Java.Lang.Runtime GetRuntime ()
 Poznámka: uložíme popisovač metoda v statické pole `id_getRuntime`. Toto je optimalizace výkonu, tak, aby metoda popisovač není nutné, aby ji prohledávat u každé volání. Není nutné pro ukládání do mezipaměti popisovač metoda tímto způsobem. Po získání popisovač metoda [JNIEnv.CallStaticObjectMethod](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.CallStaticObjectMethod/) slouží k vyvolání metody. `JNIEnv.CallStaticObjectMethod` Vrátí `IntPtr` obsahující popisovač vrácený instance Java.
 [Java.Lang.Object.GetObject&lt;T&gt;(IntPtr, JniHandleOwnership)](https://developer.xamarin.com/api/member/Java.Lang.Object.GetObject%7BT%7D/p/System.IntPtr/Android.Runtime.JniHandleOwnership/) slouží k převedení popisovač Java do instance silného typu objektu.
 
- <a name="_Non-virtual_Instance_Method_Binding" />
 
 
 #### <a name="non-virtual-instance-method-binding"></a>Vazba není virtuální Instance – metoda
@@ -368,7 +352,6 @@ Poznámka: uložíme popisovač metoda v statické pole `id_getClass`.
 Toto je optimalizace výkonu, tak, aby metoda popisovač není nutné, aby ji prohledávat u každé volání. Není nutné pro ukládání do mezipaměti popisovač metoda tímto způsobem. Po získání popisovač metoda [JNIEnv.CallStaticObjectMethod](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.CallStaticObjectMethod/) slouží k vyvolání metody. `JNIEnv.CallStaticObjectMethod` Vrátí `IntPtr` obsahující popisovač vrácený instance Java.
 [Java.Lang.Object.GetObject&lt;T&gt;(IntPtr, JniHandleOwnership)](https://developer.xamarin.com/api/member/Java.Lang.Object.GetObject%7BT%7D/p/System.IntPtr/Android.Runtime.JniHandleOwnership/) slouží k převedení popisovač Java do instance silného typu objektu.
 
-<a name="_Binding_Constructors" />
 
 ### <a name="binding-constructors"></a>Vazba konstruktory
 
@@ -444,8 +427,7 @@ public Integer (int value)
 
 [JNIEnv.CreateInstance](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.CreateInstance/) metod jsou pomocné funkce k provedení `JNIEnv.FindClass`, `JNIEnv.GetMethodID`, `JNIEnv.NewObject`, a `JNIEnv.DeleteGlobalReference` na hodnotu vrácenou z `JNIEnv.FindClass`. Podrobnosti naleznete v další části.
 
- <a name="_Supporting_Inheritance,_Interfaces" />
-
+<a name="_Supporting_Inheritance,_Interfaces_1" />
 
 ### <a name="supporting-inheritance-interfaces"></a>Podpora dědičnosti, rozhraní
 
@@ -488,7 +470,6 @@ partial class ManagedAdder : Adder {
 
 Zde `Adder` typ jazyka C# *aliasy* `Adder` typ Java. `[Register]` Atribut slouží k určení názvu JNI `mono.android.test.Adder` typ Java a `DoNotGenerateAcw` vlastnost se používá k potlačení ACW generace. Tato akce způsobí generování ACW pro `ManagedAdder` typ, který správně podtřídy `mono.android.test.Adder` typu. Pokud `RegisterAttribute.DoNotGenerateAcw` nebyly použity vlastnost a potom procesu sestavení Xamarin.Android by mít vygeneroval nový `mono.android.test.Adder` typ Java. To by způsobilo chyby při kompilaci, jako `mono.android.test.Adder` typu by existovat dvakrát v dva samostatné soubory.
 
- <a name="_Binding_Virtual_Methods" />
 
 
 ### <a name="binding-virtual-methods"></a>Virtuální metody vazby
@@ -501,7 +482,6 @@ Vazba `virtual` metody tak, aby povolovala přepsání podtřídy vyžaduje něk
 
 1.  **Metoda registrace**
 
-<a name="_Method_Binding" />
 
 #### <a name="method-binding"></a>Vazby – metoda
 
@@ -562,7 +542,6 @@ Po získání ID metoda `GetType` se porovná s `ThresholdType` k určení, poku
 
 Když `GetType` neodpovídá `ThresholdType`, `Adder` má byla rozčlenění (například podle `ManagedAdder`) a `Adder.Add` implementace bude být volána, pouze pokud je vyvolána podtřídy `base.Add`. Toto je nevirtuálních odesílání případu, kdy je tam, kde `ThresholdClass` odeslán. `ThresholdClass` Určuje, která třída Java bude poskytovat implementace metody vyvolání.
 
- <a name="_Method_Registration" />
 
 
 #### <a name="method-registration"></a>Metoda registrace
@@ -657,7 +636,6 @@ Nakonec `n_Add` metoda odpovídá za zařazování JNI parametry, které chcete 
 
 Poznámka: Použít vždy `JniHandleOwnership.DoNotTransfer` při získávání MCW přes instanci Java. Je práce jako s odkazem na místní (a tedy volání `JNIEnv.DeleteLocalRef`) dojde k porušení spravované -&gt; Java -&gt; spravované přechody zásobníku.
 
- <a name="_Complete_Adder_Binding" />
 
 
 ### <a name="complete-adder-binding"></a>Dokončení přidávání vazby
@@ -719,7 +697,6 @@ public class Adder : Java.Lang.Object {
 }
 ```
 
- <a name="_Restrictions" />
 
 
 ### <a name="restrictions"></a>Omezení
@@ -738,7 +715,6 @@ Potom pro interakci s GC typ *musí není* mít všechna pole, které mohou odka
 Pokud typ musí obsahovat pole instance, najdete `Java.Lang.Object` instance, musí být typ pole `System.WeakReference` nebo `GCHandle`.
 
 
- <a name="_Binding_Abstract_Methods" />
 
 ## <a name="binding-abstract-methods"></a>Vazba abstraktní metody
 
@@ -778,7 +754,6 @@ partial class AdderInvoker : Adder {
 
 `Invoker` Typ je potřeba, pouze při získávání JNI odkazy na jazyce Java vytvořené instance.
 
- <a name="_Binding_Interfaces" />
 
 ## <a name="binding-interfaces"></a>Vazba rozhraní
 
@@ -793,7 +768,6 @@ public interface Progress {
 Vazby rozhraní mají dvě části: definice rozhraní jazyka C# a definici původce volání pro rozhraní.
 
 
-<a name="_Interface_Definition" />
 
 ### <a name="interface-definition"></a>Definice rozhraní
 
@@ -828,7 +802,6 @@ public interface IAdderProgress : IJavaObject {
 Všimněte si v výše, jsme mapování Java `int[]` parametru [JavaArray&lt;int&gt;](https://developer.xamarin.com/api/type/Android.Runtime.JavaArray%601/).
 Tato akce není nutné: jsme může být vázána ho C# `int[]`, nebo `IList<int>`, nebo něco jiného úplně. Ať typ jste vybrali, `Invoker` musí být schopni přeloží ji do Java `int[]` typ pro volání.
 
-<a name="_Invoker_Definition" />
 
 ### <a name="invoker-definition"></a>Definice původce volání
 
@@ -857,7 +830,6 @@ Existují dvě řešení: sledovat, které rozhraní každou metodu pochází z 
 
 Definice původce volání má šest částí: konstruktoru, `Dispose` metoda, `ThresholdType` a `ThresholdClass` členy, `GetObject` metoda, implementace metod rozhraní a metoda provádění konektor.
 
- <a name="_Constructor" />
 
 
 #### <a name="constructor"></a>Konstruktor
@@ -879,7 +851,6 @@ partial class IAdderProgressInvoker {
 
 Poznámka: `Handle` vlastnost je nutné použít v konstruktoru textu a ne `handle` parametr, stejně jako na Android v4.0 `handle` může být po dokončení základní konstruktor provádění neplatný parametr.
 
-<a name="_Dispose_Method" />
 
 #### <a name="dispose-method"></a>Dispose – metoda
 
@@ -897,7 +868,6 @@ partial class IAdderProgressInvoker {
 }
 ```
 
-<a name="_ThresholdType_and_ThresholdClass" />
 
 #### <a name="thresholdtype-and-thresholdclass"></a>ThresholdType a ThresholdClass
 
@@ -918,7 +888,6 @@ partial class IAdderProgressInvoker {
 }
 ```
 
-<a name="_GetObject_Method" />
 
 #### <a name="getobject-method"></a>GetObject – metoda
 
@@ -933,7 +902,6 @@ partial class IAdderProgressInvoker {
 }
 ```
 
-<a name="_Interface_Methods" />
 
 #### <a name="interface-methods"></a>Metody rozhraní
 
@@ -951,7 +919,6 @@ partial class IAdderProgressInvoker {
 }
 ```
 
- <a name="_Connector_Methods" />
 
 
 #### <a name="connector-methods"></a>Konektor metody
@@ -986,7 +953,6 @@ int[] _values = (int[]) JNIEnv.GetArray(values, JniHandleOwnership.DoNotTransfer
 
 Upozorňujeme však, který `JNIEnv.GetArray` zkopíruje celou pole mezi virtuálními počítači, tak pro velké pole v důsledku může dojít v mnoha přidané přetížení GC.
 
-<a name="_Complete_Invoker_Definition" />
 
 ### <a name="complete-invoker-definition"></a>Dokončení definice původce volání
 
@@ -1060,7 +1026,6 @@ new JValue (currentSum));
 }
 ```
 
- <a name="_JNI_Object_References" />
 
 
 ## <a name="jni-object-references"></a>Odkazy na objekty JNI
@@ -1077,13 +1042,11 @@ Emulátorů mít maximálně 2 000 nezpracovaných globální odkazy, při hardw
 
 Slabé globální odkazy jsou k dispozici pouze na Android v2.2 (Froyo) a novější. Slabé odkazy globální odstraněním s [JNIEnv.DeleteWeakGlobalRef](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.DeleteWeakGlobalRef/(System.IntPtr)).
 
-<a name="_Dealing_With_JNI_Local_References" />
 
 ### <a name="dealing-with-jni-local-references"></a>Práci s JNI místní odkazy
 
 [JNIEnv.GetObjectField](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.GetObjectField/), [JNIEnv.GetStaticObjectField](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.GetStaticObjectField/), [JNIEnv.CallObjectMethod](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.CallObjectMethod/), [JNIEnv.CallNonvirtualObjectMethod](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.CallNonvirtualObjectMethod/)a [JNIEnv.CallStaticObjectMethod](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.CallStaticObjectMethod/) metody vrací `IntPtr` obsahující JNI místní odkaz na objekt Java nebo `IntPtr.Zero` vrácen Java `null`. Z důvodu omezený počet místní odkazy, které může být po (512 položky), je třeba zajistit, aby odkazy na zbývající se odstraní včas. Existují tři způsoby, které jde ji vyřešit místní odkazy: explicitně jejich odstranění, vytváření `Java.Lang.Object` instance pro uložení je a pomocí `Java.Lang.Object.GetObject<T>()` vytvořit spravovaná obálka volatelná aplikacemi je obcházet.
 
- <a name="_Explicitly_Deleting_Local_References" />
 
 
 ### <a name="explicitly-deleting-local-references"></a>Explicitní odstranění místní odkazy
@@ -1100,7 +1063,6 @@ finally {
 }
 ```
 
- <a name="_Wrapping_with_Java.Lang.Object" />
 
 
 ### <a name="wrapping-with-javalangobject"></a>Zabalení s Java.Lang.Object
@@ -1131,7 +1093,6 @@ using (var value = new Java.Lang.Object (lref, JniHandleOwnership.TransferLocalR
 }
 ```
 
- <a name="_Using_Java.Lang.Object.GetObject&lt;T&gt;()" />
 
 
 ### <a name="using-javalangobjectgetobjectlttgt"></a>Pomocí Java.Lang.Object.GetObject&lt;T&gt;)
@@ -1170,13 +1131,12 @@ Poznámka: na rozdíl od každých jiných `JNIEnv` metoda, která vrátí hodno
 
 ## <a name="instance-fields"></a>Pole instance
 
-Pole jsou s nimi manipulovat, prostřednictvím *pole ID*. Pole ID jsou získány prostřednictvím [JNIEnv.GetFieldID](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.GetFieldID/), což vyžaduje, aby třídu definovaný v název pole, pole a [podpis typu JNI](#_JNI_Type_Signatures) pole.
+Pole jsou s nimi manipulovat, prostřednictvím *pole ID*. Pole ID jsou získány prostřednictvím [JNIEnv.GetFieldID](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.GetFieldID/), což vyžaduje, aby třídu definovaný v název pole, pole a [podpis typu JNI](#JNI_Type_Signatures) pole.
 
 Pole ID nemusí být uvolněno a jsou platné, dokud je načtena odpovídající typ Java. (Android aktuálně nepodporuje uvolnění třídy.)
 
 Existují dvě sady metody pro práci s pole instancí: jeden pro čtení pole instance a jeden pro zápis pole instance. Všechny sady metod, vyžadují ID pole ke čtení nebo zápisu v poli hodnota.
 
-<a name="_Reading_Instance_Field_Values" />
 
 ### <a name="reading-instance-field-values"></a>Čtení hodnot polí Instance
 
@@ -1207,7 +1167,6 @@ kde `*` je typ pole:
 
 
 
- <a name="_Writing_Instance_Field_Values" />
 
 
 ### <a name="writing-instance-field-values"></a>Zápis Instance pole hodnot
@@ -1243,13 +1202,12 @@ kde *typu* je typ pole:
 
 ## <a name="static-fields"></a>Statická pole
 
-Statická pole jsou s nimi manipulovat, prostřednictvím *pole ID*. Pole ID jsou získány prostřednictvím [JNIEnv.GetStaticFieldID](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.GetStaticFieldID/), což vyžaduje, aby třídu definovaný v název pole, pole a [podpis typu JNI](#JNI%20Type%20Signatures) pole.
+Statická pole jsou s nimi manipulovat, prostřednictvím *pole ID*. Pole ID jsou získány prostřednictvím [JNIEnv.GetStaticFieldID](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.GetStaticFieldID/), což vyžaduje, aby třídu definovaný v název pole, pole a [podpis typu JNI](#JNI_Type_Signatures) pole.
 
 Pole ID nemusí být uvolněno a jsou platné, dokud je načtena odpovídající typ Java. (Android aktuálně nepodporuje uvolnění třídy.)
 
 Existují dvě sady metody pro práci s statických polí: jeden pro čtení pole instance a jeden pro zápis pole instance. Všechny sady metod, vyžadují ID pole ke čtení nebo zápisu v poli hodnota.
 
-<a name="_Reading_Static_Field_Values" />
 
 ### <a name="reading-static-field-values"></a>Čtení hodnot statické pole
 
@@ -1278,7 +1236,6 @@ kde `*` je typ pole:
 -   [JNIEnv.GetStaticDoubleField](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.GetStaticDoubleField/) &ndash; odečíst hodnotu `double` statických polí.
 
 
-<a name="_Writing_Static_Field_Values" />
 
 ### <a name="writing-static-field-values"></a>Zápis statické pole hodnot
 
@@ -1313,7 +1270,7 @@ kde *typu* je typ pole:
 
 ## <a name="instance-methods"></a>Instance metody
 
-Instance metody jsou vyvolány prostřednictvím *metoda ID*. Metoda ID jsou získány prostřednictvím [JNIEnv.GetMethodID](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.GetMethodID/), který vyžaduje typ definovaný v název metody, metodu a [podpis typu JNI](#_JNI_Type_Signatures) metody.
+Instance metody jsou vyvolány prostřednictvím *metoda ID*. Metoda ID jsou získány prostřednictvím [JNIEnv.GetMethodID](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.GetMethodID/), který vyžaduje typ definovaný v název metody, metodu a [podpis typu JNI](#JNI_Type_Signatures) metody.
 
 Metoda ID nemusí být uvolněno a jsou platné, dokud je načtena odpovídající typ Java. (Android aktuálně nepodporuje uvolnění třídy.)
 
@@ -1323,7 +1280,6 @@ Metody rozhraní lze pouze vyhledávat v rámci deklarující typ; metody, kter�
 
 Jakékoli metody deklarovaná ve třídě, nebo může být hledá všechny základní třídy nebo implementovaných rozhraní.
 
-<a name="_Virtual_Method_Invocation" />
 
 ### <a name="virtual-method-invocation"></a>Volání metody virtuální
 
@@ -1352,7 +1308,6 @@ kde `*` je návratový typ metody.
 -   [JNIEnv.CallDoubleMethod](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.CallDoubleMethod/) &ndash; vyvolat metodu, která vrátí hodnotu `double` hodnotu.
 
 
-<a name="_Non-virtual_Method_Invocation" />
 
 ### <a name="non-virtual-method-invocation"></a>Volání metody nevirtuálních
 
@@ -1381,15 +1336,14 @@ kde `*` je návratový typ metody. Volání metody není virtuální se obvykle 
 -   [JNIEnv.CallNonvirtualDoubleMethod](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.CallNonvirtualDoubleMethod/) &ndash; Non prakticky vyvolat metodu, která vrátí hodnotu `double` hodnotu.
 
 
- <a name="_Static_Methods" />
+<a name="_Static_Methods" />
 
 ## <a name="static-methods"></a>Statické metody
 
-Statické metody jsou vyvolány prostřednictvím *metoda ID*. Metoda ID jsou získány prostřednictvím [JNIEnv.GetStaticMethodID](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.GetStaticMethodID/), který vyžaduje typ definovaný v název metody, metodu a [podpis typu JNI](#JNI%20Type%20Signatures) metody.
+Statické metody jsou vyvolány prostřednictvím *metoda ID*. Metoda ID jsou získány prostřednictvím [JNIEnv.GetStaticMethodID](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.GetStaticMethodID/), který vyžaduje typ definovaný v název metody, metodu a [podpis typu JNI](#JNI_Type_Signatures) metody.
 
 Metoda ID nemusí být uvolněno a jsou platné, dokud je načtena odpovídající typ Java. (Android aktuálně nepodporuje uvolnění třídy.)
 
- <a name="_Static_Method_Invocation" />
 
 
 ### <a name="static-method-invocation"></a>Volání statické metody
@@ -1419,8 +1373,7 @@ kde `*` je návratový typ metody.
 -   [JNIEnv.CallStaticDoubleMethod](https://developer.xamarin.com/api/member/Android.Runtime.JNIEnv.CallStaticDoubleMethod/) &ndash; vyvolání statickou metodu, která vrátí hodnotu `double` hodnotu.
 
 
- <a name="_JNI_Type_Signatures" />
-
+<a name="JNI_Type_Signatures" />
 
 ## <a name="jni-type-signatures"></a>Podpisy JNI typu
 
@@ -1453,9 +1406,6 @@ Existují čtyři typy odkazy na typ JNI:
 -  **array**
 
 
- <a name="_Built-in_Type_References" />
-
-
 ### <a name="built-in-type-references"></a>Předdefinovaný typ odkazy
 
 Odkazy předdefinovaný typ musí být jeden znak, slouží k odkazování typy předdefinovaných hodnot. Mapování je následující:
@@ -1471,8 +1421,7 @@ Odkazy předdefinovaný typ musí být jeden znak, slouží k odkazování typy 
 -  `"V"` pro `void` metoda návratové typy.
 
 
- <a name="_Simplified_Type_References" />
-
+<a name="_Simplified_Type_References_1" />
 
 ### <a name="simplified-type-references"></a>Odkazy na zjednodušené typ
 
@@ -1486,7 +1435,6 @@ Odvození odkaz na typ zjednodušené dvěma způsoby:
 
 Buď dvou bude mít za následek typ Java [java.lang.Thread.State](http://developer.android.com/reference/java/lang/Thread.State.html) mapován na odkaz na typ zjednodušené `java/lang/Thread$State`.
 
-<a name="_Type_References" />
 
 ### <a name="type-references"></a>Odkazy na typ
 
@@ -1528,7 +1476,6 @@ static {};
 `Thread.State` je typ výčtu Java, který používáme podpis `valueOf` metoda k určení, že je odkaz na typ stav$ Ljava/lang nebo vlákna;.
 
 
-<a name="_Array_Type_References" />
 
 ### <a name="array-type-references"></a>Odkazy na typ pole
 
@@ -1537,7 +1484,6 @@ Odkazy na zjednodušené typ nelze použít při zadávání pole.
 
 Například `int[]` je `"[I"`, `int[][]` je `"[[I"`, a `java.lang.Object[]` je `"[Ljava/lang/Object;"`.
 
-<a name="_Java_Generics_and_Type_Erasure" />
 
 
 ## <a name="java-generics-and-type-erasure"></a>Obecné typy v jazyce Java a typ vymazání
@@ -1547,7 +1493,6 @@ Existují některé "vráskami", ale tyto vráskami jsou v jak Java komunikuje s
 
 Není žádný rozdíl mezi obecný typ nebo člen a neobecný typ nebo člen, při interakci prostřednictvím JNI. Například obecného typu [java.lang.Class&lt;T&gt; ](http://developer.android.com/reference/java/lang/Class.html) je také "nezpracovaných" obecného typu `java.lang.Class`, které mají odkaz na stejnou zjednodušené typ `"java/lang/Class"`.
 
-<a name="Java_Native_Interface_Support" />
 
 ## <a name="java-native-interface-support"></a>Podpora pro nativní rozhraní Java
 
@@ -1610,7 +1555,6 @@ Activity mapActivity = Java.Lang.Object.GetObject<Activity>(lrefActivity, JniHan
 
 Kromě toho všechny funkce JNI změnilo odebráním `JNIEnv*` parametr v každé JNI funkce.
 
-<a name="_Summary" />
 
 ## <a name="summary"></a>Souhrn
 

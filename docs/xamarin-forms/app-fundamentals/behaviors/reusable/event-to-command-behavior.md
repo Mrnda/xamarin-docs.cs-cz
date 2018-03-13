@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 2727d83e55e305af1372ece35bdf22abfc653fe7
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d82a1391feca9187cf2aca4394509447aeac6a18
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="reusable-eventtocommandbehavior"></a>Znovu použitelné EventToCommandBehavior
 
@@ -182,7 +182,7 @@ selectedItemLabel.SetBinding (Label.TextProperty, "SelectedItemText");
 
 V době běhu chování bude odpovídat interakci s ovládacím prvkem. Když je položka vybrána v [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/), [ `ItemSelected` ](https://developer.xamarin.com/api/event/Xamarin.Forms.ListView.ItemSelected/) bude platit událostí, které budou spuštěny `OutputAgeCommand` v ViewModel. Naopak tím se aktualizuje ViewModel `SelectedItemText` vlastnost, [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) váže na, jak je vidět na následujících snímcích obrazovky:
 
-[ ![](event-to-command-behavior-images/screenshots-sml.png "Ukázkové aplikace s EventToCommandBehavior")](event-to-command-behavior-images/screenshots.png "ukázkové aplikace s EventToCommandBehavior")
+[![](event-to-command-behavior-images/screenshots-sml.png "Ukázkové aplikace s EventToCommandBehavior")](event-to-command-behavior-images/screenshots.png#lightbox "ukázkové aplikace s EventToCommandBehavior")
 
 Výhodou použití toto chování k provedení příkazu, když událost se aktivuje, je, že příkazy mohou být související s ovládacími prvky, které nebyly navrženy tak, aby komunikovali s příkazy. Kromě toho tím odebere kód pro zpracování událostí kotle tabulky z soubory kódu.
 

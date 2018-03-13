@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: 67caa11b23f5651a6b851c1e9baf16c2adca422a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7a077a3dcc47de8416abb0c51b23dc07fc1f1f12
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="webview"></a>WebView
 
@@ -38,7 +38,8 @@ Webové zobrazení teď obsahuje podporu pro následující typy obsahu:
 - Řetězce HTML &ndash; webové zobrazení můžete zobrazit řetězce HTML z paměti.
 - Místní soubory &ndash; webové zobrazení může být jakýkoli z výše uvedených obsahu typů vložených v aplikaci.
 
-**Poznámka:**: `WebView` ve Windows a Windows Phone nepodporuje program Silverlight, Flash nebo všechny ovládací prvky ActiveX i v případě, že se na této platformě se aplikace Internet Explorer nepodporuje.
+> [!NOTE]
+> `WebView` v systémech Windows a Windows Phone nepodporuje program Silverlight, Flash nebo všechny ovládací prvky ActiveX i v případě, že se na této platformě se aplikace Internet Explorer nepodporuje.
 
 ### <a name="websites"></a>Weby
 
@@ -50,14 +51,15 @@ var browser = new WebView {
 };
 ```
 
-**Poznámka:**: adresy URL musí být plně vytvořen s protokol zadaný (tj. musí mít "http://" nebo "https://" přidá jako předpona k němu).
+> [!NOTE]
+> Adresy URL musí být plně vytvořen s protokol zadaný (tj. musí mít "http://" nebo "https://" přidá jako předpona k němu).
 
 #### <a name="ios-and-ats"></a>iOS a ATS
 
 Od verze 9 iOS Povolit jenom aplikace ke komunikaci se servery, které implementují osvědčené postupy zabezpečení ve výchozím nastavení. Hodnoty musí být nastavena v `Info.plist` k umožnění komunikace s nezabezpečené servery.
 
 > [!NOTE]
-> **Poznámka:** Pokud vaše aplikace vyžaduje připojení k nezabezpečené webové stránky, by měla vždycky zadejte doménu jako výjimky pomocí `NSExceptionDomains` místo vypnutí úplně pomocí ATS `NSAllowsArbitraryLoads`. `NSAllowsArbitraryLoads` lze používat pouze v případě extrémně nouze.
+> Pokud vaše aplikace vyžaduje připojení k nezabezpečené webové stránky, by měla vždycky zadejte doménu jako výjimky pomocí `NSExceptionDomains` místo vypnutí úplně pomocí ATS `NSAllowsArbitraryLoads`. `NSAllowsArbitraryLoads` lze používat pouze v případě extrémně nouze.
 
 Následující ukazuje, jak povolit konkrétní domény (v této případu xamarin.com) obejít ATS požadavky:
 
@@ -221,10 +223,10 @@ namespace WorkingWithWebview.Android {
 }
 ```
 
-V systému Android se soubory **prostředky** složky lze také přistupovat prostřednictvím `Forms.Context.Assets` vlastnosti, jak je ukázáno v následujícím příkladu kódu:
+V systému Android se soubory **prostředky** složky lze také přistupovat prostřednictvím aktuální Android kontext, který je zveřejněný prostřednictvím `MainActivity.Instance` vlastnost:
 
 ```csharp
-var assetManager = Xamarin.Forms.Forms.Context.Assets;
+var assetManager = MainActivity.Instance.Assets;
 using (var streamReader = new StreamReader (assetManager.Open ("local.html"))) {
   var html = streamReader.ReadToEnd ();
 }

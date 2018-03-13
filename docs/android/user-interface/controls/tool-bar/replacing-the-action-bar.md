@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 91d5612991c2297418cf7003c499c1a1bbfc7558
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e71c6ea816b8b732d21148db32fd9395732dd4c0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="replacing-the-action-bar"></a>Na panelu akcí nahrazení
 
-<a name="overview" />
 
 ## <a name="overview"></a>Přehled
 
@@ -36,16 +35,14 @@ Nahrazení aplikace výchozí akce panel s `Toolbar`:
 Následující části popisují tento proces podrobně. Vytvoření jednoduché aplikace a je nahrazený jeho panelu akcí s přizpůsobeným `Toolbar`. 
 
 
-<a name="start_project" />
 
 ## <a name="start-an-app-project"></a>Spusťte projekt aplikace
 
 Vytvořit nový projekt Android s názvem **ToolbarFun** (viz [Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md) Další informace o vytvoření nového projektu Android). Po vytvoření tohoto projektu nastavit cíle a minimální úrovně rozhraní API systému Android **Android 5.0 (API úrovně 21 - typu Lupa)**. Další informace o úrovních verzi systému Android nastavení najdete v tématu [Principy Android API úrovně](~/android/app-fundamentals/android-api-levels.md). Při vytvořené a spuštění aplikace zobrazí na panelu akcí výchozí, jak je vidět na tomto snímku obrazovky: 
 
-[![Snímek obrazovky výchozí akce panelu](replacing-the-action-bar-images/01-before-sml.png)](replacing-the-action-bar-images/01-before.png)
+[![Snímek obrazovky výchozí akce panelu](replacing-the-action-bar-images/01-before-sml.png)](replacing-the-action-bar-images/01-before.png#lightbox)
 
 
-<a name="custom_theme" />
 
 ## <a name="create-a-custom-theme"></a>Vytvořte vlastní motiv
 
@@ -89,7 +86,6 @@ Upravit **Properties/AndroidManifest.xml** a přidejte následující `android:t
 Další informace o použití vlastní motiv do aplikace najdete v tématu [pomocí vlastní motivy](~/android/user-interface/material-theme.md#customtheme). 
 
 
-<a name="toolbar_layout" />
 
 ## <a name="define-a-toolbar-layout"></a>Definování rozložení panelu nástrojů
 
@@ -127,7 +123,6 @@ android:theme="@android:style/ThemeOverlay.Material.Dark.ActionBar"
 Toto nastavení se používá, takže položky nabídky rozdíl oproti tmavšího barvu pozadí.
 
 
-<a name="include_layout" />
 
 ## <a name="include-the-toolbar-layout"></a>Zahrnout rozložení panelu nástrojů
 
@@ -153,7 +148,6 @@ Upravte soubor rozložení **Resources/layout/Main.axml** a nahraďte jeho obsah
 Toto rozložení zahrnuje `Toolbar` definované v **toolbar.xml** a používá `RelativeLayout` určíte, že `Toolbar` má být umístěn na začátek uživatelského rozhraní (nahoře na tlačítko). 
 
 
-<a name="activate_toolbar" />
 
 ## <a name="find-and-activate-the-toolbar"></a>Najít a aktivujte panelu nástrojů
 
@@ -173,12 +167,11 @@ ActionBar.Title = "My Toolbar";
 
 Tento kód vyhledá `Toolbar` a volání `SetActionBar` tak, aby `Toolbar` bude trvat na výchozí akce panelu Vlastnosti. Název panelu nástrojů se změní na **Moje nástrojů**. Jak je vidět v tomto příkladu kódu `ToolBar` můžete přímo odkazovat jako panelu akcí. Zkompilování a spuštění této aplikace &ndash; vlastní `Toolbar` se zobrazí místo panelu výchozí akce: 
 
-[![Snímek obrazovky vlastní panel nástrojů s zelenou barevné schéma](replacing-the-action-bar-images/02-after-sml.png)](replacing-the-action-bar-images/02-after.png)
+[![Snímek obrazovky vlastní panel nástrojů s zelenou barevné schéma](replacing-the-action-bar-images/02-after-sml.png)](replacing-the-action-bar-images/02-after.png#lightbox)
 
 Všimněte si, že `Toolbar` je navržen tak, nezávisle na `Theme.Material.Light.DarkActionBar` motiv, který se použije pro zbývající aplikace. 
 
 
-<a name="main_menus" />
  
 ## <a name="add-menu-items"></a>Přidání položek nabídky 
 
@@ -197,13 +190,11 @@ Chcete-li přidat nabídek `Toolbar`:
 Následující části ukazují tento proces podrobně přidáním **upravit** a **Uložit** položky nabídky k vlastní `Toolbar`. 
 
 
-<a name="menu_icons" />
 
 ### <a name="install-menu-icons"></a>Nainstalujte nabídky ikony
 
 Budete pokračovat `ToolbarFun` aplikace příklad ikony nabídky přidat do projektu aplikace. Stáhněte si [nástrojů icons.zip](https://github.com/xamarin/monodroid-samples/blob/master/Supportv7/AppCompat/Toolbar/Resources/toolbar-icons.zip?raw=true) a rozbalte ho. Zkopírujte obsah extrahované *mipmap -* složky do projektu *mipmap -* složek **ToolbarFun nebo prostředky** a zahrnout každý soubor ikony přidané do projektu.
 
-<a name="menu_resource" />
 
 ### <a name="define-a-menu-resource"></a>Definici zdroje nabídky
 
@@ -239,7 +230,6 @@ Tato konfigurace XML se vytvoří tři položky nabídky:
 
 `showAsAction` Atributy **upravit** a **Uložit** položky nabídky jsou nastaveny na `ifRoom` &ndash; toto nastavení způsobí, že tyto položky nabídky se objeví v `Toolbar` pokud existuje dostatečný prostor pro místo zobrazení. **Předvolby** nastaví položku nabídky `showAsAction` k `never` &ndash; to způsobí, že **Předvolby** chcete zobrazit v nabídce *přetečení* nabídky (tři Svislé tečky). 
 
-<a name="on_create_options_menu" />
 
 ### <a name="implement-oncreateoptionsmenu"></a>Implementace OnCreateOptionsMenu
 
@@ -256,7 +246,6 @@ public override bool OnCreateOptionsMenu(IMenu menu)
 Android volání `OnCreateOptionsMenu` metoda tak, aby aplikace může určit prostředků nabídky pro aktivitu. Tato metoda **top_menus.xml** je zvětšený prostředků do předaný `menu`. Tento kód způsobí, že nové **upravit**, **Uložit**, a **Předvolby** položek nabídky ve `Toolbar`. 
 
 
-<a name="on_options_item_selected" />
 
 ### <a name="implement-onoptionsitemselected"></a>Implementace OnOptionsItemSelected
 
@@ -275,15 +264,15 @@ Když uživatel klepne na položku nabídky, Android volá `OnOptionsItemSelecte
 
 Sestavení a spuštění `ToolbarFun` zobrazíte nové položky nabídky na panelu nástrojů. `Toolbar` Teď zobrazuje tři ikony nabídky, jak je vidět na tomto snímku obrazovky: 
 
-[![Diagram ilustrující umístění úpravy, uložit a přetečení položky nabídky](replacing-the-action-bar-images/04-menu-items-sml.png)](replacing-the-action-bar-images/04-menu-items.png)
+[![Diagram ilustrující umístění úpravy, uložit a přetečení položky nabídky](replacing-the-action-bar-images/04-menu-items-sml.png)](replacing-the-action-bar-images/04-menu-items.png#lightbox)
 
 Když uživatel odposlouchávání **upravit** položky nabídky, oznámení se zobrazí k označení, že `OnOptionsItemSelected` byla volána metoda: 
 
-[![Snímek obrazovky informační zobrazí, když je stisknuté upravit položku](replacing-the-action-bar-images/05-toast-displayed-sml.png)](replacing-the-action-bar-images/05-toast-displayed.png)
+[![Snímek obrazovky informační zobrazí, když je stisknuté upravit položku](replacing-the-action-bar-images/05-toast-displayed-sml.png)](replacing-the-action-bar-images/05-toast-displayed.png#lightbox)
 
 Když uživatel klepnutím nabídce přetečení **Předvolby** položky nabídky se zobrazí. Obvykle méně běžné akce musí být umístěny v nabídce přetečení &ndash; tento příklad používá v nabídce přetečení pro **Předvolby** protože není tak často používá jako **upravit** a  **Uložit**: 
 
-[![Položka nabídky – snímek obrazovky předvolby, který se zobrazí v nabídce přetečení](replacing-the-action-bar-images/06-preferences-sml.png)](replacing-the-action-bar-images/06-preferences.png)
+[![Položka nabídky – snímek obrazovky předvolby, který se zobrazí v nabídce přetečení](replacing-the-action-bar-images/06-preferences-sml.png)](replacing-the-action-bar-images/06-preferences.png#lightbox)
 
 Další informace o Android nabídky najdete v tématu Android Developer [nabídky](https://developer.android.com/guide/topics/ui/menus.html) tématu. 
  

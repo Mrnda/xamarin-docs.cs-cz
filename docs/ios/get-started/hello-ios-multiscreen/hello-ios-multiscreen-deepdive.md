@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/02/2016
-ms.openlocfilehash: 8e36548e0d9926a28c133f8f1dc688fcbfa9f78e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a7d4af1563cb5fe5166c289c4ee5dca6ad3ffb00
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="hello-ios-multiscreen-deep-dive"></a>Hello, iOS Multiobrazovka podrobné informace
 
@@ -27,7 +27,7 @@ Pak podrobně řadičem navigační a zjistěte, jak lze použít k zajištění
 
 V [Hello, iOS](~/ios/get-started/hello-ios/index.md) kurzu jste se dozvěděli, že aplikace pro iOS mají jenom jednu *okno* který řadiče zobrazení se staráte o načtení jejich *obsahu zobrazení hierarchie* do Okno. V druhé návodu Phoneword jsme přidali druhý obrazovky pro naši aplikaci a předán – seznam telefonních čísel – některá data mezi dvěma obrazovky, které jsou popsány v následujícím diagramu:
 
- [ ![](hello-ios-multiscreen-deepdive-images/08.png "Tento diagram znázorňuje předávání dat mezi dvěma obrazovky")](hello-ios-multiscreen-deepdive-images/08.png)
+ [![](hello-ios-multiscreen-deepdive-images/08.png "Tento diagram znázorňuje předávání dat mezi dvěma obrazovky")](hello-ios-multiscreen-deepdive-images/08.png#lightbox)
 
 V našem příkladu nebyla shromážděna data na první obrazovce předat z prvního řadiče zobrazení na druhý a ve druhé obrazovce zobrazí. Toto rozdělení obrazovky, řadiče zobrazení a dat odpovídá *Model, zobrazení, Controller (MVC)* vzor. V následujících částech několik probereme výhod vzoru, jeho komponenty a způsob jejich použití v naší aplikaci Phoneword.
 
@@ -35,7 +35,7 @@ V našem příkladu nebyla shromážděna data na první obrazovce předat z prv
 
 Je model-View-Controller *vzoru návrhu* – opakovaně použitelné architektury řešení běžných problémů nebo použijte případu v kódu. MVC je architekturu pro aplikace s *grafické uživatelské rozhraní (GUI)*. Přiřadí objekty v aplikaci, jednu ze tří rolí - *modelu* (dat nebo aplikaci logiky), *zobrazení* (uživatelské rozhraní) a *řadiče* (kódu na pozadí). Následující obrázek znázorňuje vztahy mezi tři údaje vzor MVC a uživatele:
 
- [ ![](hello-ios-multiscreen-deepdive-images/00.png "Tento diagram znázorňuje vztahy mezi tři údaje vzor MVC a uživatele")](hello-ios-multiscreen-deepdive-images/00.png)
+ [![](hello-ios-multiscreen-deepdive-images/00.png "Tento diagram znázorňuje vztahy mezi tři údaje vzor MVC a uživatele")](hello-ios-multiscreen-deepdive-images/00.png#lightbox)
 
 Vzor MVC je užitečné, protože poskytuje logického oddělení mezi různými částmi aplikace grafickým uživatelským rozhraním a je jednodušší, abychom mohli znovu použít kódu a zobrazení. Umožňuje přejít v a podívejte se na všech tří rolí podrobněji.
 
@@ -71,23 +71,23 @@ V aplikaci Phoneword jsme použili *navigační řadiče* ke správě přecháze
 
 Adaptér navigace je běžné v aplikacích pro iOS a poskytuje navigace pro střižová iOS aplikací, jako **nastavení** aplikace, které jsou popsány v následující snímek obrazovky:
 
- [ ![](hello-ios-multiscreen-deepdive-images/01.png "Adaptér navigační poskytuje navigace pro iOS aplikace, jako jsou tady uvedené nastavení aplikace")](hello-ios-multiscreen-deepdive-images/01.png)
+ [![](hello-ios-multiscreen-deepdive-images/01.png "Adaptér navigační poskytuje navigace pro iOS aplikace, jako jsou tady uvedené nastavení aplikace")](hello-ios-multiscreen-deepdive-images/01.png#lightbox)
 
 Navigace řadič používají tři primární funkce:
 
 -  **Poskytuje háky dál navigace** – řadič navigační používá jedná hierarchická navigace, kde obsahu zobrazení hierarchie jsou *nabídnutých* na *navigační zásobník* . Navigační zásobník si můžete představit jako více přehrávání karet, ve kterých je viditelná, pouze nejvyšší většina karty, které jsou popsány v následujícím diagramu:  
 
-    [ ![](hello-ios-multiscreen-deepdive-images/02.png "Tento diagram znázorňuje navigační jako více karet")](hello-ios-multiscreen-deepdive-images/02.png)
+    [![](hello-ios-multiscreen-deepdive-images/02.png "Tento diagram znázorňuje navigační jako více karet")](hello-ios-multiscreen-deepdive-images/02.png#lightbox)
 
 
 -  **Volitelně poskytuje tlačítka Zpět** – Pokud jsme push novou položku do zásobníku navigace, můžete automaticky zobrazí v záhlaví *tlačítko Zpět* , který umožňuje uživatelům zpětné přejděte. Kliknutím na tlačítko Zpět *POP* je aktuální řadič zobrazení vypnout navigační zásobníku a načítání předchozí hierarchie zobrazení obsahu do okna:  
 
-    [ ![](hello-ios-multiscreen-deepdive-images/03.png "Tento diagram znázorňuje odebrání karet ze zásobníku")](hello-ios-multiscreen-deepdive-images/03.png)
+    [![](hello-ios-multiscreen-deepdive-images/03.png "Tento diagram znázorňuje odebrání karet ze zásobníku")](hello-ios-multiscreen-deepdive-images/03.png#lightbox)
 
 
 -  **Poskytuje záhlaví** – horní části **navigační řadič** je volána *záhlaví* . Zodpovídá za zobrazení názvu řadiče zobrazení, které jsou popsány v následujícím diagramu:  
 
-    [ ![](hello-ios-multiscreen-deepdive-images/04.png "Záhlaví je zodpovědná za zobrazení názvu řadiče zobrazení")](hello-ios-multiscreen-deepdive-images/04.png)
+    [![](hello-ios-multiscreen-deepdive-images/04.png "Záhlaví je zodpovědná za zobrazení názvu řadiče zobrazení")](hello-ios-multiscreen-deepdive-images/04.png#lightbox)
 
 
 
@@ -97,11 +97,11 @@ Navigace řadič používají tři primární funkce:
 A **navigační řadiče** nespravuje obsahu zobrazení hierarchie, tak má nic k zobrazení svoje vlastní.
 Místo toho **navigační řadič** je spárován s *kořenové View Controller*:
 
- [ ![](hello-ios-multiscreen-deepdive-images/05.png "Řadič navigace je spárován s řadičem kořenové zobrazení")](hello-ios-multiscreen-deepdive-images/05.png)
+ [![](hello-ios-multiscreen-deepdive-images/05.png "Řadič navigace je spárován s řadičem kořenové zobrazení")](hello-ios-multiscreen-deepdive-images/05.png#lightbox)
 
 Kořenový řadič zobrazení představuje první řadič v zobrazení **navigační řadiče** zásobníku a View Controller kořenový obsah zobrazení hierarchie je první obsahu zobrazení hierarchie má být načten do okna. Pokud nám chcete vložit naše celá aplikace v zásobníku řadičem navigace, se můžeme přesunout Sourceless Segue k **navigační řadiče** a nastavte řadič zobrazení naše první obrazovce jako kořenový řadič zobrazení, jako jsme provedli Phoneword aplikace:
 
- [ ![](hello-ios-multiscreen-deepdive-images/06.png "Sourceless Segue nastaví první obrazovky řadiče zobrazení jako kořenový řadič zobrazení")](hello-ios-multiscreen-deepdive-images/06.png)
+ [![](hello-ios-multiscreen-deepdive-images/06.png "Sourceless Segue nastaví první obrazovky řadiče zobrazení jako kořenový řadič zobrazení")](hello-ios-multiscreen-deepdive-images/06.png#lightbox)
 
 ### <a name="additional-navigation-options"></a>Možnosti další navigace
 
@@ -115,7 +115,7 @@ V tomto návodu Phoneword jsme zpracovány přechod mezi dva řadiče zobrazení
 
 Když přidáme Segue s **zobrazit** akce do scénáře jsme pokyn iOS tak, aby nabízel druhého řadiče zobrazení na navigační řadiče zásobníku:
 
- [ ![](hello-ios-multiscreen-deepdive-images/09.png "Nastavení typu segue z rozevíracího seznamu")](hello-ios-multiscreen-deepdive-images/09.png)
+ [![](hello-ios-multiscreen-deepdive-images/09.png "Nastavení typu segue z rozevíracího seznamu")](hello-ios-multiscreen-deepdive-images/09.png#lightbox)
 
 Přidání Segue do scénáře, stačí vytvořit jednoduché přechod mezi obrazovky. Pokud nám chcete předávání dat mezi řadiče zobrazení, se musí přepsat `PrepareForSegue` metoda a zpracovat data sebe:
 

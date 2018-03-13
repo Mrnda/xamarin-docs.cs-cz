@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 951de7c134e6882d621b015456d5d40a7cf2b8d2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6512387738217259067e7b9ae8076f73b4fbeb07
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-new-platform-specific-library-projects-for-nuget"></a>Vytváření nových projektů knihovny specifické pro platformu pro NuGet
 
@@ -27,11 +27,11 @@ Více sestavení se vytváří a integrované do jednoho balíčku NuGet. Standa
 
 2. Zvolte **Multiplatform knihovny** z **Multiplatform > Knihovna** části:
 
-  [ ![](platform-specific-images/mulitplatform-library-sml.png "Konfigurace více platformami knihovny pro jeden základní kód")](platform-specific-images/multiplatform-library.png)
+  [![](platform-specific-images/mulitplatform-library-sml.png "Konfigurace více platformami knihovny pro jeden základní kód")](platform-specific-images/multiplatform-library.png#lightbox)
 
 3. Zadejte **název** a **popis**a zvolte **konkrétní platformy**:
 
-  [ ![](platform-specific-images/specific-configure-sml.png "Konfigurace knihovny specifické pro platformu pro iOS a Android")](platform-specific-images/specific-configure.png)
+  [![](platform-specific-images/specific-configure-sml.png "Konfigurace knihovny specifické pro platformu pro iOS a Android")](platform-specific-images/specific-configure.png#lightbox)
 
 4. Dokončete průvodce. Následující projekty jsou přidány k řešení:
 
@@ -42,7 +42,7 @@ Více sestavení se vytváří a integrované do jednoho balíčku NuGet. Standa
 
 5. Klikněte pravým tlačítkem na projekt NuGet a zvolte **možnosti**, pak otevřete **balíček NuGet > Metadata** a zadejte [požadovaná metadata](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md) (jako jakýmikoliv volitelné metadata):
 
-  [ ![](platform-specific-images/specific-metadata-sml.png "Zadejte požadovaná metadata")](platform-specific-images/specific-metadata.png)
+  [![](platform-specific-images/specific-metadata-sml.png "Zadejte požadovaná metadata")](platform-specific-images/specific-metadata.png#lightbox)
 
 6. Také v **možnosti projektu** okno, otevřete **referenční sestavení** tématu a zvolte PCL profily, které bude podporovat sdílenou knihovnu prostřednictvím "návnada a přepínač":
 
@@ -67,4 +67,4 @@ Vybrané tento snímek obrazovky ukazuje obsah NuGet specifické pro platformu, 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Průvodce metadat](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)
+- [Průvodce metadaty](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)

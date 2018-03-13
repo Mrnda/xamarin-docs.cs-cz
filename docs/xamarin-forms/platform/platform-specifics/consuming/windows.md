@@ -3,16 +3,16 @@ title: "Platforma Windows – podrobnosti"
 description: "Platforma specifika umožňují využívat funkce, která je dostupná pouze na konkrétní platformu, bez implementace vlastní nástroji pro vykreslování nebo účinky. Tento článek ukazuje, jak používat Windows platform podrobností, které jsou součástí Xamarin.Forms."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 4729DB9C-8800-4E29-9D66-3BE13C5F8C94
+ms.assetid: 22B403C0-FE6D-498A-AE53-095E6C4B527C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/11/2017
-ms.openlocfilehash: da9279939af8dc4033cd89769a7add60a745ac85
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 01b32d1ca5356ed69480dff0d31c210a8c460417
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="windows-platform-specifics"></a>Platforma Windows – podrobnosti
 
@@ -52,7 +52,7 @@ page.On<Windows>().SetToolbarPlacement(ToolbarPlacement.Bottom);
 
 Výsledkem je, že v umístění zadané nástrojů se použije na [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) instance:
 
-[![](windows-images/toolbar-placement.png "Panel nástrojů umístění specifické pro platformu")](windows-images/toolbar-placement-large.png "příslušnou platformu umístění panelu nástrojů")
+[![](windows-images/toolbar-placement.png "Panel nástrojů umístění specifické pro platformu")](windows-images/toolbar-placement-large.png#lightbox "příslušnou platformu umístění panelu nástrojů")
 
 <a name="collapsable_navigation_bar" />
 
@@ -84,7 +84,7 @@ page.On<Windows>().SetCollapseStyle(CollapseStyle.Partial).CollapsedPaneWidth(14
 
 Výsledkem je, že zadané [ `CollapseStyle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle/) se použije na [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) instance šířce také zadané:
 
-[![](windows-images/collapsed-navigation-bar.png "Sbalené navigační panel specifické platformy")](windows-images/collapsed-navigation-bar-large.png "sbalené navigační panel specifické platformy")
+[![](windows-images/collapsed-navigation-bar.png "Sbalené navigační panel specifické platformy")](windows-images/collapsed-navigation-bar-large.png#lightbox "sbalené navigační panel specifické platformy")
 
 ## <a name="summary"></a>Souhrn
 
@@ -93,6 +93,6 @@ Tento článek ukázal, jak používat Windows platform podrobností, které jso
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Vytváření specifika platformy](~/xamarin-forms/platform/platform-specifics/creating.md)
+- [Vytváření specifik platforem](~/xamarin-forms/platform/platform-specifics/creating.md)
 - [PlatformSpecifics (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
 - [WindowsSpecific](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.WindowsSpecific/)

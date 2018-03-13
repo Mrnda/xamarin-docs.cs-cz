@@ -7,11 +7,11 @@ ms.assetid: E353DF14-51D7-98E3-59EA-16683C770C23
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 63faa0c46abfb509a6834efa647f23ad0ed7f454
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1a5e4ab73c9090cbb743dc8cb339d6f50c5ff527
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough-using-a-json-element-to-create-a-user-interface"></a>Návod: Použití prvku JSON pro vytvoření uživatelského rozhraní
 
@@ -22,7 +22,7 @@ STROJOVÝ PŘEKLADŮ. D podporuje vytváření uživatelské rozhraní deklarova
 
 STROJOVÝ PŘEKLADŮ. D podporuje plný rozsah funkcí, které jsou k dispozici v rozhraní API elementy při použití formátu JSON. Například aplikace na následujícím snímku obrazovky je zcela deklarováno s použitím JSON:
 
-[ ![](json-element-walkthrough-images/01-load-from-file.png "Například aplikace na tomto snímku obrazovky je zcela deklarováno s použitím JSON") ](json-element-walkthrough-images/01-load-from-file.png) [ ![ ] (json-element-walkthrough-images/02-load-from-file-details.png "například aplikace na tomto snímku obrazovky je zcela deklarováno s použitím JSON")](json-element-walkthrough-images/02-load-from-file-details.png)
+[![](json-element-walkthrough-images/01-load-from-file.png "Například aplikace na tomto snímku obrazovky je zcela deklarováno s použitím JSON") ](json-element-walkthrough-images/01-load-from-file.png#lightbox) [ ![ ] (json-element-walkthrough-images/01-load-from-file.png "například aplikace na tomto snímku obrazovky je zcela deklarováno s použitím JSON")](json-element-walkthrough-images/01-load-from-file.png#lightbox)
 
 Pojďme pokroku příklad z [prvky rozhraní API návod](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md) kurzu znázorňující přidat úloha podrobností obrazovky pomocí JSON.
 
@@ -30,7 +30,7 @@ Pojďme pokroku příklad z [prvky rozhraní API návod](~/ios/user-interface/mo
 
 V příkladu v tomto návodu umožňuje vytvořit úkoly. Pokud úloha je vybraná na první obrazovce, obrazovky podrobností se zobrazí, jak je znázorněno:
 
- [ ![](json-element-walkthrough-images/03-task-list.png "Pokud úloha je vybraná na první obrazovce, obrazovky podrobností se zobrazí, jak je znázorněno")](json-element-walkthrough-images/03-task-list.png)
+ [![](json-element-walkthrough-images/03-task-list.png "Pokud úloha je vybraná na první obrazovce, obrazovky podrobností se zobrazí, jak je znázorněno")](json-element-walkthrough-images/03-task-list.png#lightbox)
 
 ## <a name="creating-the-json"></a>Vytváření kódu JSON
 
@@ -166,7 +166,7 @@ _rootElement = new RootElement ("Json Example"){
 
 V době běhu soubor načíst a analyzovat podle strojový překladů. D, když uživatel přejde na druhý zobrazení, jak ukazuje následující snímek obrazovky:
 
- [ ![](json-element-walkthrough-images/04-json-web-example.png "Soubor se načíst a analyzovat podle strojový překladů. Když uživatel přejde na druhý zobrazení D")](json-element-walkthrough-images/04-json-web-example.png)
+ [![](json-element-walkthrough-images/04-json-web-example.png "Soubor se načíst a analyzovat podle strojový překladů. Když uživatel přejde na druhý zobrazení D")](json-element-walkthrough-images/04-json-web-example.png#lightbox)
 
  <a name="Summary" />
 

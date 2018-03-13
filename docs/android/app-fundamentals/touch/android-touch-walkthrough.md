@@ -7,17 +7,17 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/02/2018
-ms.openlocfilehash: c02ad78cc15f2d71f19d605f7a4d6889bbe3ca01
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ec8d000f235a8e0da5198e425f9f1e630b2c662a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough---using-touch-in-android"></a>Návod - pomocí Touch v Android
 
 Dejte nám zjistit, jak použít koncepty z předchozí části v funkční aplikaci. Pomocí čtyř aktivity vytvoříme aplikaci. První aktivitu bude nabídky nebo přepínací panel, který se spustí ostatní aktivity k předvedení různých rozhraních API. Následující snímek obrazovky znázorňuje hlavní aktivity:
 
-[![Příklad – snímek obrazovky s Touch tlačítko](android-touch-walkthrough-images/image14.png)](android-touch-walkthrough-images/image14.png)
+[![Příklad – snímek obrazovky s Touch tlačítko](android-touch-walkthrough-images/image14.png)](android-touch-walkthrough-images/image14.png#lightbox)
 
 První aktivitu Touch ukázka zobrazí používání obslužných rutin událostí pro dotykové ovládání zobrazení. Aktivita gesto rozpoznávání rukopisu se ukazují, jak podtřídami `Android.View.Views` a zpracování událostí a také ukazují, jak zpracovat roztahováním gesta. Třetí a poslední aktivitu, **vlastní gesto**, bude zobrazení jak používat vlastních gest. Aby usnadnily a postupujte podle vyrovná se se zatížením, jsme budete rozdělit tento návod na část se každá část zaměřený na jednu z aktivit.
 
@@ -25,7 +25,7 @@ První aktivitu Touch ukázka zobrazí používání obslužných rutin událost
 
 -   Otevřete projekt **TouchWalkthrough\_spustit**. **MainActivity** je nastavené přejdete &ndash; je až do us implementovat dotykového ovládání chování v aktivitě. Spusťte aplikaci a klikněte na tlačítko **Touch ukázka**, má následující aktivitu spuštění:
 
-    [![Snímek obrazovky aktivity Touch začne zobrazí](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png)
+    [![Snímek obrazovky aktivity Touch začne zobrazí](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png#lightbox)
 
 -   Teď, když bylo potvrzeno, že spuštění aktivity, otevřete soubor **TouchActivity.cs** a přidání obslužné rutiny `Touch` události `ImageView`:
 
@@ -63,11 +63,11 @@ Ve výše uvedeném kódu všimněte, že jednáme `Move` a `Down` akci, jako st
 
 Pokaždé, když uživatel úpravy `ImageView`, `Touch` událost se vyvolá a naše obslužná rutina zobrazí zprávu **Touch začne** na obrazovce, jak je znázorněno na následujícím snímku obrazovky:
 
-[![Snímek obrazovky aktivity Touch začne](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png)
+[![Snímek obrazovky aktivity Touch začne](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png#lightbox)
 
 Tak dlouho, dokud uživatel je klepnou `ImageView`, **Touch začne** se zobrazí v `TextView`. Když je uživatel již klepnou `ImageView`, zpráva **Touch končí** se zobrazí v `TextView`, jak je znázorněno na následujícím snímku obrazovky:
 
-[![Snímek obrazovky aktivity Touch končí](android-touch-walkthrough-images/image16.png)](android-touch-walkthrough-images/image16.png)
+[![Snímek obrazovky aktivity Touch končí](android-touch-walkthrough-images/image16.png)](android-touch-walkthrough-images/image16.png#lightbox)
 
 
 ## <a name="gesture-recognizer-activity"></a>Gesto pro rozpoznávání aktivity
@@ -234,11 +234,11 @@ Teď umožňuje implementovat pro rozpoznávání gesto aktivity. Tato aktivita 
 -   Nyní spusťte aplikaci a spusťte pro rozpoznávání gesto aktivity.
     Když se spustí na obrazovce by měl vypadat podobně jako na následující snímek obrazovky:
 
-    [![Gesto pro rozpoznávání úvodní obrazovka ikonou Android](android-touch-walkthrough-images/image17.png)](android-touch-walkthrough-images/image17.png)
+    [![Gesto pro rozpoznávání úvodní obrazovka ikonou Android](android-touch-walkthrough-images/image17.png)](android-touch-walkthrough-images/image17.png#lightbox)
 
 -   Nyní touch ikonu a přetáhněte ji na obrazovce. Zkuste gesto roztahováním přiblížení. V určitém okamžiku obrazovky může vypadat podobně jako na následujícím snímku obrazovky:
 
-    [![Ikona přesunutí gesta na obrazovce](android-touch-walkthrough-images/image18.png)](android-touch-walkthrough-images/image18.png)
+    [![Ikona přesunutí gesta na obrazovce](android-touch-walkthrough-images/image18.png)](android-touch-walkthrough-images/image18.png#lightbox)
 
 V tomto okamžiku je třeba přiřadit sami pat na pozadí: jste implementovali roztahováním přiblížení jenom v aplikaci Android! Zalomení rychlý a přejít k třetí a poslední aktivita v tomto návodu &ndash; pomocí vlastních gest.
 
@@ -341,17 +341,17 @@ Pro účely tohoto návodu knihovně gesta již byla vytvořena pomocí nástroj
 
 -   Spusťte aplikaci a spuštění pro rozpoznávání gesto vlastní aktivity. Měl by vypadat nějak podobně jako na následujícím snímku obrazovky:
 
-    [![Snímek obrazovky s zkontrolujte bitové kopie](android-touch-walkthrough-images/image19.png)](android-touch-walkthrough-images/image19.png)
+    [![Snímek obrazovky s zkontrolujte bitové kopie](android-touch-walkthrough-images/image19.png)](android-touch-walkthrough-images/image19.png#lightbox)
 
     Nyní kreslení zaškrtnout na obrazovce a rastrový obrázek se zobrazuje by měl vypadat podobně jako zobrazená na další snímky obrazovky:
 
-    [![Vykreslovat zaškrtnutí](android-touch-walkthrough-images/image20.png)](android-touch-walkthrough-images/image20.png)
-    [![Recognized zaškrtnutí](android-touch-walkthrough-images/image21.png)](android-touch-walkthrough-images/image21.png)
+    [![Vykreslovat zaškrtnutí](android-touch-walkthrough-images/image20.png)](android-touch-walkthrough-images/image20.png#lightbox)
+    [![Recognized zaškrtnutí](android-touch-walkthrough-images/image21.png)](android-touch-walkthrough-images/image21.png#lightbox)
 
     Nakonec kreslení scribble na obrazovce. Zaškrtávací políčko měli změnit zpátky na jeho původní image, jak je znázorněno v tyto snímky obrazovky:
 
-    [![Na obrazovce Klikyháky](android-touch-walkthrough-images/image22.png)](android-touch-walkthrough-images/image22.png)
-    [![původní image se zobrazí.](android-touch-walkthrough-images/image23.png)](android-touch-walkthrough-images/image23.png)
+    [![Na obrazovce Klikyháky](android-touch-walkthrough-images/image22.png)](android-touch-walkthrough-images/image22.png#lightbox)
+    [![původní image se zobrazí.](android-touch-walkthrough-images/image23.png)](android-touch-walkthrough-images/image23.png#lightbox)
 
 Nyní máte představu o tom, jak integrovat touch a gest v Android aplikace Xamarin.Android pomocí.
 

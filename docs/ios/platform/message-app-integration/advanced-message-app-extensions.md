@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 7e6621dc580e478873ce2db7139b04284bee355c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fcfd1fd2ec9271bb5e8d9e09b43b7dc4cf3b3f12
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="advanced-message-app-extensions"></a>Rozšíření aplikace pokročilé zpráv
 
@@ -50,11 +50,11 @@ Rozšíření zpráv aplikace jsou podporovány pouze na iOS 10, ale je viditeln
 
 Interaktivní zprávy jsou poskytovány rozšíření aplikace zpráv a bublinový vlastní zprávy k dispozici. Povolit uživatelům vytvářet interaktivní obsah zprávy, se vložte do pole zpráva vstup a odešlete ji.
 
-[ ![](advanced-message-app-extensions-images/interactive01.png "Vytváření obsahu interaktivní zprávy")](advanced-message-app-extensions-images/interactive01.png)
+[![](advanced-message-app-extensions-images/interactive01.png "Vytváření obsahu interaktivní zprávy")](advanced-message-app-extensions-images/interactive01.png#lightbox)
 
 Přijímající uživatel může odpovědět interaktivní zprávu klepnutím jeho bublin zpráva v historii zpráv načíst rozšíření aplikace zprávu, která ji vytvořila. Rozšíření bude spuštěného celé obrazovce a umožní uživateli napište odpověď a odešlete ji zpět do původního uživatele.
 
-[ ![](advanced-message-app-extensions-images/interactive02.png "Rozšíření spuštění celé obrazovky")](advanced-message-app-extensions-images/interactive02.png)
+[![](advanced-message-app-extensions-images/interactive02.png "Rozšíření spuštění celé obrazovky")](advanced-message-app-extensions-images/interactive02.png#lightbox)
 
 
 V následujících tématech se budeme rozpis naleznete níže:
@@ -68,7 +68,7 @@ V následujících tématech se budeme rozpis naleznete níže:
 
 Při vyvolání uživatelem, zobrazí se v dolní části historii zpráv v režimu compact zobrazení rozšíření aplikace zpráv:
 
-[ ![](advanced-message-app-extensions-images/interactive03.png "Přehled rozhraní API zprávy")](advanced-message-app-extensions-images/interactive03.png)
+[![](advanced-message-app-extensions-images/interactive03.png "Přehled rozhraní API zprávy")](advanced-message-app-extensions-images/interactive03.png#lightbox)
 
 1. `MSMessageAppViewController` Objekt v rozšíření zpráv aplikace je hlavní třídy, která je volána, když rozšíření se zobrazí uživateli.
 2. Konverzace se zobrazí uživateli jako `MSConversation` instance objektu.
@@ -80,7 +80,7 @@ Při vyvolání uživatelem, zobrazí se v dolní části historii zpráv v rež
 
 Podívejte se na proces rozšíření aplikace zpráva, aby se aktivovala:
 
-[ ![](advanced-message-app-extensions-images/interactive04.png "Proces rozšíření aplikace zpráva, aby se aktivovala")](advanced-message-app-extensions-images/interactive04.png)
+[![](advanced-message-app-extensions-images/interactive04.png "Proces rozšíření aplikace zpráva, aby se aktivovala")](advanced-message-app-extensions-images/interactive04.png#lightbox)
 
 1. Při spuštění rozšíření (například ze panel aplikace) bude aplikace zpráva spustit proces.
 2. `DidBecomeActive` Metoda je volána a předána `MSConversation` představující konverzace, který rozšíření zpráv aplikace běží v.
@@ -88,7 +88,7 @@ Podívejte se na proces rozšíření aplikace zpráva, aby se aktivovala:
 
 Potom si prohlédněte proces stal deaktivováno rozšíření aplikace zpráva:
 
-[ ![](advanced-message-app-extensions-images/interactive05.png "Proces rozšíření aplikace zpráva stal deaktivováno")](advanced-message-app-extensions-images/interactive05.png)
+[![](advanced-message-app-extensions-images/interactive05.png "Proces rozšíření aplikace zpráva stal deaktivováno")](advanced-message-app-extensions-images/interactive05.png#lightbox)
 
 1. Po deaktivaci rozšíření aplikace zprávy `ViewWillDisappear` první volání metody.
 2. Pak se `ViewDidDisappear` volání metody.
@@ -128,7 +128,7 @@ Pokud uživatel klikne na bublin zpráva v konverzaci v systému macOS, Mac se p
 
 `AccessibilityLabel` Vlastnost je používána čtečky obrazovky na číst zápis konverzace pro uživatele. `Layout` Vlastnost určuje, jak zpráva se zobrazí, aktuálně pouze `MSMessageTemplateLayout` je podporována a vypadá takto:
 
-[ ![](advanced-message-app-extensions-images/interactive06.png "Šablona MSMessageTemplateLayout")](advanced-message-app-extensions-images/interactive06.png)
+[![](advanced-message-app-extensions-images/interactive06.png "Šablona MSMessageTemplateLayout")](advanced-message-app-extensions-images/interactive06.png#lightbox)
 
 `Image` Vlastnost `MSMessageTemplateLayout` poskytuje obsah pro hlavní části MessageBubble na obrazovce. `MediaFileUrl` Vlastnost také poskytuje obsah pro tělo zprávy bublin, ale umožňuje pro obsah, který nepodporuje `UIImage` (například video souboru, který by cykly na pozadí). Pokud `Image` a `MediaFileUrl` vlastnosti jsou k dispozici, `Image` vlastnost bude mít přednost. `MediaFileUrl` Podporuje PNG, JPEG, GIF a videa (v libovolném formátu, který může být přehráván rámcem Media Player) formátů médií.
 
@@ -140,7 +140,7 @@ Když jsou prostředky k příjemce, všechna média připojené bude automatick
 
 `Caption`, `SubCaption`, `TrailingCaption` a `TrailingSubcaption` vlastnosti další popisují bitovou kopii a bude vykreslen v části níže bitovou kopii. Všechny tyto vlastnosti k nastavení `null` vytvoří zprávu bublin bez popisek oblasti:
 
-[ ![](advanced-message-app-extensions-images/interactive07.png "Zpráva bublin bez oblasti popisek")](advanced-message-app-extensions-images/interactive07.png)
+[![](advanced-message-app-extensions-images/interactive07.png "Zpráva bublin bez oblasti popisek")](advanced-message-app-extensions-images/interactive07.png#lightbox)
 
 Poslední věcí, kterou si uvědomit, je, že aplikace zprávy bude kreslení ikonu rozšíření aplikace zpráva v levém horním rohu bublin zprávy.
 
@@ -181,7 +181,7 @@ Jakmile nový obsah na pole vstupu, uživatel se bude moct odeslat zprávu klepn
 
 Rozšíření aplikace zprávy lze zobrazit v jednom ze dvou režimů jiné zobrazení:
 
-[ ![](advanced-message-app-extensions-images/interactive08.png "Rozšíření zpráva aplikace zobrazí ve dvou režimech jiné zobrazení: Compact & Rozšířené")](advanced-message-app-extensions-images/interactive08.png)
+[![](advanced-message-app-extensions-images/interactive08.png "Rozšíření zpráva aplikace zobrazí ve dvou režimech jiné zobrazení: Compact & Rozšířené")](advanced-message-app-extensions-images/interactive08.png#lightbox)
 
 - **Compact** -Toto je výchozí režim, kde rozšíření aplikace zpráva zabírají 25 % dolní zobrazení zpráv. V kompaktním režimu aplikace nemá přístup ke klávesnici a vodorovného posouvání a nástroje pro rozpoznávání gesto prstem. Mít přístup k poli vstup a volá, aby se aplikace `InsertMessage` se okamžitě zobrazí pro uživatele existuje.
 - **Rozšířit** -rozšíření aplikace zprávu doplní celého zobrazení zpráv. Nemá přístup do pole vstupu, ale nemá přístup ke klávesnici, vodorovného posouvání a nástroje pro rozpoznávání gesto prstem.
@@ -384,7 +384,7 @@ Volitelně může mít aplikace používat `WillTransition` metoda se zpracovat 
 
 Existují dva případy, vyžadující rozšíření aplikace zpráv pro zpracování v odpovědi zprávu:
 
-[ ![](advanced-message-app-extensions-images/interactive09.png "Rozšíření aplikace zpráva v režimech neaktivní a aktivní")](advanced-message-app-extensions-images/interactive09.png)
+[![](advanced-message-app-extensions-images/interactive09.png "Rozšíření aplikace zpráva v režimech neaktivní a aktivní")](advanced-message-app-extensions-images/interactive09.png#lightbox)
 
 - **Rozšíření je neaktivní** -existuje jedno rozšíření aplikace zpráva zpráva bublin v přepisu zpráv, který uživatel může klepnout aktivovat rozšíření a pokračujte interaktivní konverzace.
 - **Rozšíření je aktivní** – uživatel může klepnout bublin zpráva rozšíření aplikace zpráva v přepisu zprávy zadejte režim rozšířené zobrazení a pokračovat v procesu interaktivní z tam, kde skončil.
@@ -393,7 +393,7 @@ Existují dva případy, vyžadující rozšíření aplikace zpráv pro zpracov
 
 Když je zpráva bublin stisknuté uživatelem v přepisu zprávu a rozšíření zpráv aplikace je neaktivní, se stane následující proces:
 
-[ ![](advanced-message-app-extensions-images/interactive10.png "Zpracování neaktivní bublin zpráv")](advanced-message-app-extensions-images/interactive10.png)
+[![](advanced-message-app-extensions-images/interactive10.png "Zpracování neaktivní bublin zpráv")](advanced-message-app-extensions-images/interactive10.png#lightbox)
 
 1. Uživatel klepnutím bublin zpráva rozšíření.
 2. Při spuštění rozšíření zpráv aplikace spustí proces.
@@ -406,7 +406,7 @@ Po dokončení procesu se zobrazí rozšíření zpráv aplikace v režimu Rozš
 
 Když je zpráva bublin stisknuté uživatelem v přepisu zprávu a rozšíření zpráv aplikace je aktivní, se stane následující proces:
 
-[ ![](advanced-message-app-extensions-images/interactive11.png "Zpracování active bublin zpráv")](advanced-message-app-extensions-images/interactive11.png)
+[![](advanced-message-app-extensions-images/interactive11.png "Zpracování active bublin zpráv")](advanced-message-app-extensions-images/interactive11.png#lightbox)
 
 1. Uživatel klepnutím bublin zpráva rozšíření.
 2. Protože je již aktivní, rozšíření aplikace zprávu `WillTransition` metodu `MSMessagesAppViewController` je volána pro zpracování přepnutí z Compact do režimu zobrazení rozšířené.
@@ -457,11 +457,11 @@ V uživatelském rozhraní rozšíření zpráv aplikace se mají vybrané zprá
 
 Probíhá odesílání různé kroky interaktivní konverzaci mezi dvěma uživatele v konverzace, můžete začít částečně dokončené bublinách zpráva zbytečných souborů přepis zpráva:
 
-[ ![](advanced-message-app-extensions-images/interactive12.png "Částečně dokončené bublinách zprávu můžete zbytečného přepis zpráv")](advanced-message-app-extensions-images/interactive12.png)
+[![](advanced-message-app-extensions-images/interactive12.png "Částečně dokončené bublinách zprávu můžete zbytečného přepis zpráv")](advanced-message-app-extensions-images/interactive12.png#lightbox)
 
 Místo toho by měla rozšíření aplikace zprávu sbalit předchozí zpráva bublinách do stručného komentář v přepisu zpráva:
 
-[ ![](advanced-message-app-extensions-images/interactive13.png "Sbalení předchozí zpráva bublinách v přepisu zpráv")](advanced-message-app-extensions-images/interactive13.png)
+[![](advanced-message-app-extensions-images/interactive13.png "Sbalení předchozí zpráva bublinách v přepisu zpráv")](advanced-message-app-extensions-images/interactive13.png#lightbox)
 
 To je ke zpracování pomocí `MSSession` na Sbalit všechny existující kroky. Proto `DidSelectMessage` metodu `MSMessagesAppViewController` třída může upravit tak, aby vypadat třeba takto:
 
@@ -516,7 +516,7 @@ Rozšíření aplikace zpráv lze použít při uživatelé jsou součástí sku
 
 Podívejte se na následující interakce skupiny konverzace s tři uživatelé:
 
-[ ![](advanced-message-app-extensions-images/interactive14.png "Interakce skupiny konverzace s tři uživatelé")](advanced-message-app-extensions-images/interactive14.png)
+[![](advanced-message-app-extensions-images/interactive14.png "Interakce skupiny konverzace s tři uživatelé")](advanced-message-app-extensions-images/interactive14.png#lightbox)
 
 1. Uživatel 1 odešle interaktivní zprávy skupinu žádostí uživatele 2 a 3 uživatelů, zvolit burger přičemž.
 2. Uživatel 2 zvolí rajčata.
@@ -531,7 +531,7 @@ Když uživatel odešle zprávu, je token relace generuje a instaluje do cloudu 
 
 Chcete-li diskutovat o přístup k identifikátor odesílatele zprávy, proveďte v příkladu výše uvedené skupiny konverzace:
 
-[ ![](advanced-message-app-extensions-images/interactive15.png "Skupina konverzace odesílání identifikátorů")](advanced-message-app-extensions-images/interactive15.png)
+[![](advanced-message-app-extensions-images/interactive15.png "Skupina konverzace odesílání identifikátorů")](advanced-message-app-extensions-images/interactive15.png#lightbox)
 
 1. Znovu odešle uživatele 1 interaktivní zprávy skupinu žádostí uživatele 2 a 3 uživatelů, zvolit burger přičemž.
 2. Uživatele 3 vybere kyselé okurky.

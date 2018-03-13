@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 2995d9126617a767013ed1f5cb808f22ce0fd2da
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 89768d2562814091f0e5894c4af2edd67d68cb00
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="running-the-android-sdk-emulator"></a>Spuštěný emulátoru sady SDK pro Android
 
@@ -32,13 +32,13 @@ Visual Studio obsahuje předem nakonfigurovaná virtuální zařízení, které 
 
 -   **VisualStudio\_android-23\_x86\_tablet** 
 
-[ ![Virtuální zařízení](running-the-emulator-images/win/01-virtual-devices-sml.png)](running-the-emulator-images/win/01-virtual-devices.png)
+[![Virtuální zařízení](running-the-emulator-images/win/01-virtual-devices-sml.png)](running-the-emulator-images/win/01-virtual-devices.png#lightbox)
 
 Obvykle byste vybrali **Visual Studio\_android 23\_x86\_phone** virtuální zařízení k testování a ladění telefonní aplikace. Pokud jeden z těchto předem konfigurovaný virtuální zařízení splňuje vaše požadavky (tj, odpovídá cíl své aplikace úroveň rozhraní API), přejděte k [spouštění v emulátoru](#launching) zahájíte používající vaši aplikaci v emulátoru. (Pokud ještě nejste obeznámeni s úrovně rozhraní API systému Android, najdete v části [Principy Android API úrovně](~/android/app-fundamentals/android-api-levels.md).)
 
 Pokud projekt Xamarin.Android používá úroveň cílové rozhraní, která není kompatibilní s k dispozici virtuální zařízení, v rozevírací nabídce se zobrazí seznam nepoužitelná virtuální zařízení v části **nepodporované zařízení**. Například následující projekt má cílové rozhraní, nastavte na **Android 7.1 cukrovinkách typu nugát (25 rozhraní API)**, který není kompatibilní s **Android 6.0** virtuální zařízení, které jsou k dispozici ve výchozím nastavení:
 
-[ ![Nekompatibilní virtuálního zařízení](running-the-emulator-images/win/02-incompatible-level-sml.png)](running-the-emulator-images/win/02-incompatible-level.png)
+[![Nekompatibilní virtuálního zařízení](running-the-emulator-images/win/02-incompatible-level-sml.png)](running-the-emulator-images/win/02-incompatible-level.png#lightbox)
 
 Můžete kliknout na **změnit cíl Android minimální** chcete změnit projekt, je minimální verze Android tak, aby odpovídala úroveň rozhraní API k dispozici virtuální zařízení. Alternativně můžete použít **správce emulátoru Android** k vytvoření nové virtuální zařízení, které podporují vaše cílové rozhraní API na úrovni, jak je popsáno později v [konfiguraci virtuálních zařízení](#virtualdevice). Než budete moct nakonfigurovat virtuální zařízení pro novou úroveň rozhraní API, je nutné nejprve nainstalovat odpovídající bitové kopie systému pro tuto úroveň rozhraní API &ndash; to je vysvětleno v následující části.
 
@@ -50,7 +50,7 @@ Visual Studio pro Mac obsahuje předem nakonfigurovaná virtuální zařízení,
 
 -   **Android\_ARMv7a**
 
-[ ![Virtuální zařízení](running-the-emulator-images/mac/01-virtual-devices-sml.png)](running-the-emulator-images/mac/01-virtual-devices.png)
+[![Virtuální zařízení](running-the-emulator-images/mac/01-virtual-devices-sml.png)](running-the-emulator-images/mac/01-virtual-devices.png#lightbox)
 
 Obvykle byste vybrali **Android\_Accelerated\_x86** virtuální zařízení k testování a ladění telefonní aplikace. Pokud to předem nakonfigurované virtuální zařízení splňuje vaše požadavky (tj, odpovídá cíl své aplikace úroveň rozhraní API), přejděte k [spouštění v emulátoru](#launching) zahájíte používající vaši aplikaci v emulátoru. (Pokud ještě nejste obeznámeni s úrovně rozhraní API systému Android, najdete v části [Principy Android API úrovně](~/android/app-fundamentals/android-api-levels.md).)
 
@@ -73,11 +73,11 @@ Po výběru virtuálního zařízení z rozevírací nabídky zařízení, vyber
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Režimy ladění a vydání, tlačítko Přehrát akci](running-the-emulator-images/win/17-debug-release-sml.png)](running-the-emulator-images/win/17-debug-release.png)
+[![Režimy ladění a vydání, tlačítko Přehrát akci](running-the-emulator-images/win/17-debug-release-sml.png)](running-the-emulator-images/win/17-debug-release.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Režimy ladění a vydání, tlačítko Přehrát akci](running-the-emulator-images/mac/16-debug-release-sml.png)](running-the-emulator-images/mac/16-debug-release.png)
+[![Režimy ladění a vydání, tlačítko Přehrát akci](running-the-emulator-images/mac/16-debug-release-sml.png)](running-the-emulator-images/mac/16-debug-release.png#lightbox)
 
 -----
 

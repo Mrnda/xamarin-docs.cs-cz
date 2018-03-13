@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: c59ddde44b0e47122865c55a7964707f106d2691
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e46038b21327fe8847d2c04ee1ba16960f6a059b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-tables-in-the-ios-designer"></a>Práce s tabulkami v iOS návrháře
 
@@ -40,7 +40,7 @@ A `UITableView` s prototypu obsah obvykle slouží k zobrazení seznamu dat kde 
 
 Příklad StoryboardTable obsahuje jednoduchý seznam podrobnosti aplikaci, která používá oba typy UITableView v scénáře. Zbytek této části popisuje, jak sestavit příklad seznamu malé úkolů, která bude po dokončení vypadat například takto:
 
- [ ![Příklad obrazovky](creating-tables-in-a-storyboard-images/image13a.png)](creating-tables-in-a-storyboard-images/image13a.png)
+ [![Příklad obrazovky](creating-tables-in-a-storyboard-images/image13a.png)](creating-tables-in-a-storyboard-images/image13a.png#lightbox)
 
 Uživatelské rozhraní bude vytvořené s nástroji scénáře a obě obrazovky bude používat UITableView. Hlavní obrazovky používá *prototypu obsah* rozložení řádek a podrobností obrazovky používá *statický obsah* vytvořit formulář zadávání dat pomocí vlastní buňky rozložení.
 
@@ -48,7 +48,7 @@ Uživatelské rozhraní bude vytvořené s nástroji scénáře a obě obrazovky
 
 Vytvořte nové řešení v sadě Visual Studio pomocí **(vytvořit) nový projekt... > jednoho zobrazení App(C#)**a pojmenujte ji _StoryboardTables_.
 
- [ ![Vytvořit dialogové okno Nový projekt](creating-tables-in-a-storyboard-images/npd.png)](creating-tables-in-a-storyboard-images/npd.png)
+ [![Vytvořit dialogové okno Nový projekt](creating-tables-in-a-storyboard-images/npd.png)](creating-tables-in-a-storyboard-images/npd.png#lightbox)
 
 Otevře se řešení s některé soubory C# a `Main.storyboard` souborů, které jsou již vytvořeny. Dvakrát klikněte `Main.storyboard` soubor otevřete v iOS Designer.
 
@@ -75,24 +75,24 @@ První změna do scénáře je odstranění existujícího podrobné zobrazení 
 2.  Přetáhněte **navigační řadič** a **tabulky řadiče zobrazení** na scénář z panelu nástrojů. 
 3.  Vytvoření segue ze zobrazení řadiče kořenové do druhý řadiče zobrazení tabulky, který byl právě přidali. K vytvoření segue, řízení + přetažení *z buněk podrobností* pro nově přidaného UITableViewController. Zvolte možnost **zobrazit*** pod **Segue výběr**. 
 4.  Vyberte nové segue jste vytvořili a přidělte mu identifikátor k odkazu na to segue v kódu. Klikněte na segue a zadejte `TaskSegue` pro **identifikátor** v **vlastnosti Pad**, podobné výjimky:    
-  [ ![Pojmenování segue panelu vlastnost](creating-tables-in-a-storyboard-images/image16a-sml.png)](creating-tables-in-a-storyboard-images/image16a.png) 
+  [![Pojmenování segue panelu vlastnost](creating-tables-in-a-storyboard-images/image16a-sml.png)](creating-tables-in-a-storyboard-images/image16a.png#lightbox) 
 
 5. V dalším kroku nakonfigurujte dvě zobrazení tabulek tak, že je vyberete a pomocí vlastnosti odsazení. Je nutné vybrat zobrazení a není View Controller – Osnova dokumentu můžete pomoci s výběrem.
 
 6.  Změnit kořenový řadič zobrazení jako **obsahu: dynamické prototypy** (zobrazení na návrhovou plochu, která budou označené jako **prototypu obsahu** ):
 
-    [ ![Vlastnost obsahu na dynamické prototypů](creating-tables-in-a-storyboard-images/image17a.png)](creating-tables-in-a-storyboard-images/image17a.png)
+    [![Vlastnost obsahu na dynamické prototypů](creating-tables-in-a-storyboard-images/image17a.png)](creating-tables-in-a-storyboard-images/image17a.png#lightbox)
 
 7.  Změnit nové **UITableViewController** být **obsahu: statické buněk**. 
 
 
 8. Nové UITableViewController musí mít jeho název třídy nebo identifikátor nastavit. Vyberte typ a View Controller _TaskDetailViewController_ pro **– třída** v **vlastnosti Pad** – tím se vytvoří nový `TaskDetailViewController.cs` souboru v řešení Odsazení. Zadejte **StoryboardID** jako _podrobností_, jak je popsáno v následujícím příkladu. Bude se používat novější načíst toto zobrazení v kódu jazyka C#:  
 
-    [ ![Nastavení ID scénáře](creating-tables-in-a-storyboard-images/image18a.png)](creating-tables-in-a-storyboard-images/image18a.png)
+    [![Nastavení ID scénáře](creating-tables-in-a-storyboard-images/image18a.png)](creating-tables-in-a-storyboard-images/image18a.png#lightbox)
 
 9. Scénáře návrhovou plochu, která by teď měl vypadat takto (název položky v zobrazení řadiče kořenové navigaci byla změněna na "Případě tabule"):
 
-    [ ![Návrhové plochy](creating-tables-in-a-storyboard-images/image20a-sml.png)](creating-tables-in-a-storyboard-images/image20a.png)  
+    [![Návrhové plochy](creating-tables-in-a-storyboard-images/image20a-sml.png)](creating-tables-in-a-storyboard-images/image20a.png#lightbox)  
 
 
 
@@ -106,11 +106,11 @@ Teď, zobrazení a segues jsou nakonfigurované, prvky uživatelského rozhraní
 
 Nejdřív vyberte prototypu buňky v Kontroleru zobrazení hlavní a nastavte **identifikátor** jako _taskcell_, jak je uvedeno dále. Bude se používat novější v kódu načíst instanci této UITableViewCell:
 
- [ ![nastavení identifikátor buňky](creating-tables-in-a-storyboard-images/image22a-sml.png)](creating-tables-in-a-storyboard-images/image22a.png)
+ [![nastavení identifikátor buňky](creating-tables-in-a-storyboard-images/image22a-sml.png)](creating-tables-in-a-storyboard-images/image22a.png#lightbox)
 
 Potom budete muset vytvořit tlačítko, které přidá nové úkoly, jak je uvedeno dále:
 
-[ ![tlačítko položku na navigačním panelu panelu](creating-tables-in-a-storyboard-images/image23-sml.png)](creating-tables-in-a-storyboard-images/image23.png)
+[![tlačítko položku na navigačním panelu panelu](creating-tables-in-a-storyboard-images/image23-sml.png)](creating-tables-in-a-storyboard-images/image23.png#lightbox)
 
 Postupujte takto: 
 
@@ -123,7 +123,7 @@ Postupujte takto:
 
 Zobrazení podrobností vyžaduje mnoho další práci. Zobrazení buněk tabulky je třeba přetáhli zobrazení a potom naplněný popisky, tlačítka a zobrazení textu. Následující snímek obrazovky ukazuje dokončení uživatelského rozhraní se dvě části. Jeden oddíl má tři buněk, tři popisky, dvou textových polí a jedno přepnout, zatímco druhý oddíl obsahuje jednu buňku s dvě tlačítka:
 
- [ ![rozložení zobrazení podrobností](creating-tables-in-a-storyboard-images/image24a-sml.png)](creating-tables-in-a-storyboard-images/image24a.png)
+ [![rozložení zobrazení podrobností](creating-tables-in-a-storyboard-images/image24a-sml.png)](creating-tables-in-a-storyboard-images/image24a.png#lightbox)
 
 Postup pro sestavení dokončení rozložení jsou:
 
@@ -137,7 +137,7 @@ Vyberte zobrazení, tabulky a otevřete **Pad vlastnost**. Aktualizujte následu
 Vyberte v horní části a v části **vlastnosti > části zobrazení tabulky** změnit **řádky** k _3_, jak je uvedeno dále:
 
 
- [ ![nastavení v horní části na tři řádky](creating-tables-in-a-storyboard-images/image29-sml.png)](creating-tables-in-a-storyboard-images/image29.png)
+ [![nastavení v horní části na tři řádky](creating-tables-in-a-storyboard-images/image29-sml.png)](creating-tables-in-a-storyboard-images/image29.png#lightbox)
 
 Pro každou buňku otevřete **Pad vlastnosti** a nastavte:
 
@@ -152,7 +152,7 @@ V druhé části nastavit **řádky** k _1_ a získat popisovač změny velikost
 -  **Nastavení pozadí**: _vymazat barva_ .
 -  Přetáhněte dvě tlačítka na buňky a nastavte jejich názvy správně (tj. _Uložit_ a _odstranit_), jak je uvedeno dále:
 
-   [ ![nastavení dvě tlačítka v dolní části](creating-tables-in-a-storyboard-images/image30-sml.png)](creating-tables-in-a-storyboard-images/image30.png)
+   [![nastavení dvě tlačítka v dolní části](creating-tables-in-a-storyboard-images/image30-sml.png)](creating-tables-in-a-storyboard-images/image30.png#lightbox)
 
 V tomto okamžiku můžete také nastavit omezení u buněk a ovládací prvky zajistit přizpůsobivé rozložení.
 
@@ -342,7 +342,7 @@ AddButton.Clicked += (sender, e) => CreateTask ();
 
 Která se dokončí příklad scénáře – dokončení aplikace vypadá takto:
 
-[ ![Dokončení aplikace](creating-tables-in-a-storyboard-images/image28a.png)](creating-tables-in-a-storyboard-images/image28a.png)
+[![Dokončení aplikace](creating-tables-in-a-storyboard-images/image28a.png)](creating-tables-in-a-storyboard-images/image28a.png#lightbox)
 
 Příklad ukazuje:
 

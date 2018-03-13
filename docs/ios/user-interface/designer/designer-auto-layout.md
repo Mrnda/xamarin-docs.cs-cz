@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 040a5979339ed12f212f932f3b7e51cf48a9d382
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d9e38f055414ff0eca70df4a4e38aa959b7d7237
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>Automatické rozložení pomocí návrháře Xamarin pro iOS
 
@@ -54,7 +54,7 @@ Ve výchozím nastavení nejsou žádná omezení vytvořené nebo viditelné na
 
 ## <a name="constraints-toolbar"></a>Omezení panelu nástrojů
 
- [ ![](designer-auto-layout-images/toolbarnew.png "Příkazy nabídky kontextu")](designer-auto-layout-images/toolbarnew.png)
+ [![](designer-auto-layout-images/toolbarnew.png "Příkazy nabídky kontextu")](designer-auto-layout-images/toolbarnew.png#lightbox)
 
 Panel nástrojů omezení byl aktualizován a nyní se skládá z dvě hlavní části:
 
@@ -83,7 +83,7 @@ Definování 4 ve tvaru T popisovače na každé straně elementu *horní*, *spr
 
 Pokud chcete vytvořit omezení, vyberte popisovač a přetáhněte jej někde na návrhovou plochu. Při spuštění přetahování řadu zelená řádcích nebo pole se zobrazí na povrchu o tom, co můžete omezit. Na tomto snímku obrazovky jsme se omezíte na horní straně střední tlačítko:
 
- [ ![](designer-auto-layout-images/image07.png "Omezit na horní straně tlačítko střední")](designer-auto-layout-images/image07.png)
+ [![](designer-auto-layout-images/image07.png "Omezit na horní straně tlačítko střední")](designer-auto-layout-images/image07.png#lightbox)
 
 Všimněte si tři přerušované čáry zelená mezi dvě tlačítka. Zelená řádky označují *oblasti přetažení*, nebo jiných prvků, do kterých jsme omezit atributy. Na snímku obrazovky výše, nabízí dvě tlačítka 3 oblastí svislé přetažení ( *dolní*, *centerY*, *horní*) Chcete-li omezit naše tlačítko. Zelená přerušovaná čára v horní části zobrazení znamená řadiče zobrazení nabízí omezení v horní části zobrazení a plnou zelené pole znamená, že řadiče zobrazení nabízí omezení níže v Průvodci nejvyšší rozložení.
 
@@ -98,13 +98,13 @@ V následujících třech částech zavést práci s různými typy omezení.
 
 S omezeními velikost - *výška* a *šířka* -máte dvě možnosti. První možností je přetažením úchytu omezit velikost sousedním elementu, které jsou popsány v předchozím příkladu. Další možností je klikněte dvakrát na popisovač k vytvoření vlastní omezení. To umožňuje určit velikost konstantní hodnotu, které jsou popsány v následující snímek obrazovky:
 
- [ ![](designer-auto-layout-images/sizec.png "Přetažením úchytu omezit na velikost element sousedním, jak je znázorněno zde")](designer-auto-layout-images/sizec.png)
+ [![](designer-auto-layout-images/sizec.png "Přetažením úchytu omezit na velikost element sousedním, jak je znázorněno zde")](designer-auto-layout-images/sizec.png#lightbox)
 
 ### <a name="center-constraints"></a>Omezení Center
 
 Odmocnina obslužná rutina vytvoří *centerX* nebo *centerY* omezení, v závislosti na kontextu. Přetahování odmocnina popisovač bude light až další prvky nabízet obou oblastí svislého a vodorovného přetažení, které jsou popsány v následující snímek obrazovky:
 
- [ ![](designer-auto-layout-images/centerc.png "Omezení Center")](designer-auto-layout-images/centerc.png)
+ [![](designer-auto-layout-images/centerc.png "Omezení Center")](designer-auto-layout-images/centerc.png#lightbox)
 
 Pokud se rozhodnete svislé cílové oblasti, *centerY* vytvoří omezení. Pokud si zvolíte oblast vodorovné přetažení, bude na základě omezení *centerX*.
 
@@ -112,17 +112,17 @@ Pokud se rozhodnete svislé cílové oblasti, *centerY* vytvoří omezení. Poku
 
 Pokud chcete vytvořit zarovnání a omezení velikosti rovnosti mezi dvěma prvky, můžete vybrat položky z horním panelu nástrojů k určení – v pořadí: vodorovné zarovnání, svislé zarovnání a velikost equalities vidíte na následující snímek obrazovky:
 
- [ ![](designer-auto-layout-images/image06.png "Combinational omezení")](designer-auto-layout-images/image06.png)
+ [![](designer-auto-layout-images/image06.png "Combinational omezení")](designer-auto-layout-images/image06.png#lightbox)
 
 ### <a name="visualizing-and-editing-constraints"></a>Vizualizace a omezení pro úpravy
 
 Když přidáte omezení, se bude zobrazovat na návrhovou plochu jako modré řádku při výběru položky:
 
- [ ![](designer-auto-layout-images/image09.png "Vizualizace omezení")](designer-auto-layout-images/image09.png)
+ [![](designer-auto-layout-images/image09.png "Vizualizace omezení")](designer-auto-layout-images/image09.png#lightbox)
 
 Omezení můžete vybrat tak, že kliknete na modré řádek úpravy hodnot omezení přímo v panelu vlastnost. Alternativně dvojitým kliknutím na modré řádku zobrazíte popover, ve kterém můžete upravit hodnoty přímo na návrhovou plochu:
 
- [ ![](designer-auto-layout-images/image08.png "Úpravy omezení")](designer-auto-layout-images/image08.png)
+ [![](designer-auto-layout-images/image08.png "Úpravy omezení")](designer-auto-layout-images/image08.png#lightbox)
 
 ## <a name="constraint-issues"></a>Omezení problémy
 
@@ -139,27 +139,27 @@ Tato část popisuje na tři problémy uvedené výše a poskytuje podrobnosti o
 
 Konfliktní omezení označen červeně a mít symbol upozornění. Ukazatele myši na symboly upozornění vyvoláte popover s informacemi o konflikt:
 
- [ ![](designer-auto-layout-images/image11.png "Konfliktní omezení upozornění")](designer-auto-layout-images/image11.png)
+ [![](designer-auto-layout-images/image11.png "Konfliktní omezení upozornění")](designer-auto-layout-images/image11.png#lightbox)
 
 ### <a name="underconstrained-items"></a>Underconstrained položky
 
 Underconstrained položky se zobrazí v oranžová a aktivuje vzhled oranžové značky ikonu na panelu objektu řadiče zobrazení:
 
- [ ![](designer-auto-layout-images/image02.png "Underconstrained položky se zobrazí v oranžová")](designer-auto-layout-images/image02.png)
+ [![](designer-auto-layout-images/image02.png "Underconstrained položky se zobrazí v oranžová")](designer-auto-layout-images/image02.png#lightbox)
 
 Pokud kliknete na tuto ikonu značky, můžete získat informace o underconstrained položky v scény a vyřešit problémy buď plně omezíte je nebo odebráním jejich omezení, které jsou popsány v následující snímek obrazovky:
 
- [ ![](designer-auto-layout-images/image10.png "Oprava Underconstrained položky")](designer-auto-layout-images/image10.png)
+ [![](designer-auto-layout-images/image10.png "Oprava Underconstrained položky")](designer-auto-layout-images/image10.png#lightbox)
 
 ### <a name="frame-misplacement"></a>Misplacement rámečku
 
 Rámce misplacement používá stejný kód barva jako underconstrained položky. Položka bude vždy vykreslen na povrch pomocí jeho nativní rámce, ale v případě misplacement rámce red obdélníku označíte, kde položka dojdete při spuštění aplikace, které jsou popsány v následující snímek obrazovky:
 
- [ ![](designer-auto-layout-images/image05.png "Ukázkové zobrazení Misplacement rámečku")](designer-auto-layout-images/image05.png)
+ [![](designer-auto-layout-images/image05.png "Ukázkové zobrazení Misplacement rámečku")](designer-auto-layout-images/image05.png#lightbox)
 
 Chcete-li vyřešit chyby misplacement rámce, vyberte **aktualizace rámce podle omezení** tlačítka panelu nástrojů omezení (pravé tlačítko):
 
- [ ![](designer-auto-layout-images/image03.png "Aktualizace rámce podle omezení tlačítka panelu nástrojů")](designer-auto-layout-images/image03.png)
+ [![](designer-auto-layout-images/image03.png "Aktualizace rámce podle omezení tlačítka panelu nástrojů")](designer-auto-layout-images/image03.png#lightbox)
 
 Tímto způsobem se upraví automaticky element rámečku tak, aby odpovídaly pozic definované ovládacích prvků.
 
@@ -174,10 +174,10 @@ Pro přístup k omezení v kódu, budete muset nejprve zveřejnění v iOS Návr
 1. Vytvořte omezení jako normální (pomocí libovolné metody uvedené výše).
 2. V **Outline Průzkumníka dokumentů**, najít požadovaného omezení a vyberte ho:
 
-    [ ![](designer-auto-layout-images/modify01.png "Osnova Průzkumníka dokumentů")](designer-auto-layout-images/modify01.png)
+    [![](designer-auto-layout-images/modify01.png "Osnova Průzkumníka dokumentů")](designer-auto-layout-images/modify01.png#lightbox)
 3. V dalším kroku přiřadit **název** k omezením v atributu **pomůcky** kartě **Explorer vlastnosti**:
 
-    [ ![](designer-auto-layout-images/modify02.png "Na kartě pomůcky")](designer-auto-layout-images/modify02.png)
+    [![](designer-auto-layout-images/modify02.png "Na kartě pomůcky")](designer-auto-layout-images/modify02.png#lightbox)
 4. Uložte provedené změny.
 
 S výše změny v místě můžete přístup k omezení v kódu a upravit její vlastnosti. Například můžete použít následující nastavit výšku připojené zobrazení nule:
@@ -188,7 +188,7 @@ ViewInfoHeight.Constant = 0;
 
 V iOS Návrhář uvedeny následující nastavení pro omezení:
 
-[ ![](designer-auto-layout-images/modify03.png "Úpravy omezení v Průzkumníku vlastnost")](designer-auto-layout-images/modify03.png)
+[![](designer-auto-layout-images/modify03.png "Úpravy omezení v Průzkumníku vlastnost")](designer-auto-layout-images/modify03.png#lightbox)
 
 ### <a name="the-deferred-layout-pass"></a>Odložené průchodu rozložení
 

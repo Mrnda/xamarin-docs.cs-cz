@@ -8,17 +8,17 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 66cc67b38d70992fe815732407317fab3dc52528
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d544647a2718d6b511551f4341dee51b2c68941f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-3d-touch"></a>Úvod do 3D dotykového ovládání
 
 _Tento článek popisuje použití nové iPhone 6s a iPhone 6s Plus 3D Touch gesta ve vaší aplikaci._
 
-[ ![](3d-touch-images/info01.png "Příklady 3D Touch v aplikacích s podporou")](3d-touch-images/info01.png)
+[![](3d-touch-images/info01.png "Příklady 3D Touch v aplikacích s podporou")](3d-touch-images/info01.png#lightbox)
 
 Tento článek zajistí a základní informace o použití nových 3D Touch rozhraní API pro přidání citlivé gesta přetížení pro vaše aplikace Xamarin.iOS, které jsou spuštěny na nové iPhone 6s a iPhone 6s Plus zařízení.
 
@@ -29,7 +29,7 @@ S 3D dotykového ovládání je nyní aplikaci pro iPhone schopen nejen říct, 
 - [Zatížení velkých a malých písmen](#Pressure-Sensitivity) – aplikací lze měřit teď jak pevného nebo light uživatele je klepnou na obrazovce a proveďte výhod těchto informací.
   Například aplikace Malování provádět řádku silnější nebo tenčí podle jak pevného je uživatel klepnou na obrazovce.
 - [Prohlížení a Pop](#Peek-and-Pop) -aplikace můžete teď umožňují uživatelům interakci s jeho data bez nutnosti přejít z jejich aktuálního kontextu. Stisknutím kombinace kláves pevný na obrazovce na obrazovce, můžete prohlížet položku, kterou mají zájem (např. zobrazení náhledu zprávy). Stisknutím kombinace kláves těžší, můžete pop do položky.
-- [Rychlé akce](#Quick-Action) -myslíte o rychlé akce jako kontextové nabídky, které mohou být odebrány up když uživatel klikne pravým tlačítkem myši na položku v aplikace na ploše.
+- [Rychlé akce](#Quick-Actions) -myslíte o rychlé akce jako kontextové nabídky, které mohou být odebrány up když uživatel klikne pravým tlačítkem myši na položku v aplikace na ploše.
   Pomocí rychlé akce, můžete přidat zástupce pro funkce v aplikaci přímo z ikony aplikace na domovské obrazovce.
 - [Testování 3D Touch v simulátoru](#Testing-3D-Touch-in-the-Simulator) -správného hardwaru Mac, můžete otestovat 3D aplikace Touch povolené v simulátoru iOS.
 
@@ -39,7 +39,7 @@ S 3D dotykového ovládání je nyní aplikaci pro iPhone schopen nejen říct, 
 
 Jak je uvedeno výš, pomocí nové vlastnosti [UITouch](https://developer.xamarin.com/api/type/UIKit.UITouch/) třídy můžete měřit objem přetížení uživatele je použití na obrazovce zařízení s iOS a použijte tyto informace v uživatelském rozhraní. Například provádění tahu štětce více průhledná nebo neprůhledná na základě množství přetížení.
 
-[ ![](3d-touch-images/pressure01.png "Tah štětce se vykresluje jako více průhledná nebo neprůhledná podle množství přetížení")](3d-touch-images/pressure01.png)
+[![](3d-touch-images/pressure01.png "Tah štětce se vykresluje jako více průhledná nebo neprůhledná podle množství přetížení")](3d-touch-images/pressure01.png#lightbox)
 
 V důsledku 3D dotykového ovládání, pokud vaše aplikace běží v systému iOS 9 (nebo vyšší) a zařízení s iOS je schopen podpůrné 3D dotykového ovládání, změny v přetížení způsobí, že `TouchesMoved` událost, která má být vyvolána.
 
@@ -80,7 +80,7 @@ Další informace najdete v tématu společnosti Apple [TouchCanvas: pomocí UIT
 
 Například pokud vaše aplikace zobrazuje tabulku zpráv, může uživatel stisknout pevný na na položku, kterou chcete zobrazit náhled jeho obsah v zobrazení překrytí (který Apple odkazuje jako *prohlížet*).
 
-[ ![](3d-touch-images/peekandpop01.png "Příklad prohlížení v obsahu")](3d-touch-images/peekandpop01.png)
+[![](3d-touch-images/peekandpop01.png "Příklad prohlížení v obsahu")](3d-touch-images/peekandpop01.png#lightbox)
 
 Pokud uživatel stiskne těžší, zadá zobrazení regulární zprávy (což se označuje jako *Pop*-ping do zobrazení).
 
@@ -208,9 +208,8 @@ Pomocí 3D Touch a rychlé akce, můžete přidat běžné, rychlé a snadné na
 
 Jak jsme uvedli výše, si můžete představit rychlé akce jako kontextové nabídky, které mohou být odebrány up když uživatel klikne pravým tlačítkem myši na položku v aplikace na ploše. Měli byste použít rychlé akce zajistit zástupce nejběžnější funkce nebo funkce vaší aplikace.
 
-[ ![](3d-touch-images/quickactions01.png "Příkladem rychlé akce nabídky")](3d-touch-images/quickactions01.png)
+[![](3d-touch-images/quickactions01.png "Příkladem rychlé akce nabídky")](3d-touch-images/quickactions01.png#lightbox)
 
-<a name="Defining-Static-Quick-Actions" />
 
 ### <a name="defining-static-quick-actions"></a>Definování statické rychlé akce
 
@@ -287,7 +286,6 @@ Zde jsme se definování dvě statické položky rychlé akce pomocí následuj�
 
 
 
-<a name="Identifying-Quick-Action-Items" />
 
 ### <a name="identifying-quick-action-items"></a>Identifikace rychlé akčních položek
 
@@ -389,7 +387,6 @@ V dalším kroku jsme přepsat `OnActivated` metoda a předejte jí všechny vyb
 
 Nakonec, pokud vaše aplikace je již spuštěna, `PerformActionForShortcutItem` metoda by měla volat za účelem zpracovat položky rychlé akce, takže je potřeba přepsat a volat naše `HandleShortcutItem` metoda také zde.
 
-<a name="Creating-Dynamic-Quick-Action-Items" />
 
 ### <a name="creating-dynamic-quick-action-items"></a>Vytváření položek dynamické rychlé akce
 
@@ -442,7 +439,7 @@ Když trackpadu pomocí nejnovější verzi Xcode a simulátoru iOS na kompatibi
 
 Chcete-li tuto funkci povolit, spuštění libovolné aplikace v simulované zařízení iPhone hardwaru, který podporuje 3D Touch (iPhone 6s a vyšší). Potom vyberte **hardwaru** nabídky v iOS simulátoru a povolit **trackpadu vynucené použití pro 3D touch** položky nabídky:
 
-[ ![](3d-touch-images/simulator01.png "Vyberte nabídku hardwaru v simulátoru iOS a povolit použití Force trackpadu pro položku nabídky 3D dotykového ovládání")](3d-touch-images/simulator01.png)
+[![](3d-touch-images/simulator01.png "Vyberte nabídku hardwaru v simulátoru iOS a povolit použití Force trackpadu pro položku nabídky 3D dotykového ovládání")](3d-touch-images/simulator01.png#lightbox)
 
 Tato funkce aktivní můžete silněji na trackpadu Mac povolit 3D dotykového ovládání, stejně jako na skutečné iPhone hardwaru.
 

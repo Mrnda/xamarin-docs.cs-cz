@@ -4,14 +4,15 @@ description: "Naučte se používat k definování oblouky třemi různými způ
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
 author: charlespetzold
 ms.author: chape
 ms.date: 05/10/2017
-ms.openlocfilehash: 236f5da78022d6f6482ed66ffd439c4cd15766a3
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 390c8f4634ea38ecb93e3f21175db00fef27b8e4
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="three-ways-to-draw-an-arc"></a>Tři způsoby, jak nakreslit oblouk
 
@@ -100,7 +101,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Jak vidíte, může trvat počáteční úhel a úhel oblouku na záporné hodnoty:
 
-[![](arcs-images/anglearc-small.png "Trojitá snímek obrazovky stránky úhel oblouku")](arcs-images/anglearc-large.png "Trojitá snímek obrazovky stránky úhel oblouku")
+[![](arcs-images/anglearc-small.png "Trojitá snímek obrazovky stránky úhel oblouku")](arcs-images/anglearc-large.png#lightbox "Trojitá snímek obrazovky stránky úhel oblouku")
 
 Tento přístup k generování oblouku je algorithmically nejjednodušší a je snadné odvození čištění vzorce, které popisují oblouk. Znalost, velikost a umístění se třemi tečkami a úhly počáteční a oblouku, počáteční a koncové body oblouku, lze vypočítat pomocí jednoduchého trigonometrické:
 
@@ -205,11 +206,11 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Nový `SKPath` objekt se vytvoří pro každou řezu výseče. Cesta se skládá z řádku z centra, pak `ArcTo` k vykreslení oblouk a další čáru zpět do center výsledků `Close` volání. Tento program zobrazí "rozložený" výsečový řezy podle jejich přesunutí ven z centra × 50 pixelů. Tento úkol vyžaduje vektoru ve směru středový úhel oblouku pro každý řez:
 
-[![](arcs-images/explodedpiechart-small.png "Trojitá snímek obrazovky stránky v kolekci rozložen výsečového grafu")](arcs-images/explodedpiechart-large.png "Trojitá snímek obrazovky stránky v kolekci rozložen výsečového grafu")
+[![](arcs-images/explodedpiechart-small.png "Trojitá snímek obrazovky stránky v kolekci rozložen výsečového grafu")](arcs-images/explodedpiechart-large.png#lightbox "Trojitá snímek obrazovky stránky v kolekci rozložen výsečového grafu")
 
 Pokud chcete zobrazit, jak vypadá bez "nárůst", jednoduše komentář `Translate` volání:
 
-[![](arcs-images/explodedpiechartunexploded-small.png "Trojitá snímek obrazovky stránky v kolekci rozložen výsečového grafu bez rozbalení")](arcs-images/explodedpiechartunexploded-large.png "Trojitá snímek obrazovky stránky v kolekci rozložen výsečového grafu bez rozbalení")
+[![](arcs-images/explodedpiechartunexploded-small.png "Trojitá snímek obrazovky stránky v kolekci rozložen výsečového grafu bez rozbalení")](arcs-images/explodedpiechartunexploded-large.png#lightbox "Trojitá snímek obrazovky stránky v kolekci rozložen výsečového grafu bez rozbalení")
 
 ## <a name="the-tangent-arc"></a>Tečný oblouk
 
@@ -413,7 +414,7 @@ public partial class TangentArcPage : InteractivePage
 
 Tady je **tangens oblouk** stránky běžící na všechny tři platformách:
 
-[![](arcs-images/tangentarc-small.png "Trojitá snímek obrazovky stránky tangens oblouk")](arcs-images/tangentarc-large.png "Trojitá snímek obrazovky stránky tangens oblouk")
+[![](arcs-images/tangentarc-small.png "Trojitá snímek obrazovky stránky tangens oblouk")](arcs-images/tangentarc-large.png#lightbox "Trojitá snímek obrazovky stránky tangens oblouk")
 
 Na zařízení Windows Mobile tři body jsou téměř colinear a oblouk je velmi malé.
 
@@ -490,7 +491,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Tady je program běžící na třech platformách:
 
-[![](arcs-images/roundedheptagon-small.png "Trojitá snímek obrazovky stránky pro zaokrouhlené sedmiúhelník")](arcs-images/roundedheptagon-large.png "Trojitá snímek obrazovky stránky pro zaokrouhlené sedmiúhelník")
+[![](arcs-images/roundedheptagon-small.png "Trojitá snímek obrazovky stránky pro zaokrouhlené sedmiúhelník")](arcs-images/roundedheptagon-large.png#lightbox "Trojitá snímek obrazovky stránky pro zaokrouhlené sedmiúhelník")
 
 ## <a name="the-elliptical-arc"></a>Eliptické oblouk
 
@@ -585,7 +586,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Zde je spuštěn na tři platformy:
 
-[![](arcs-images/ellipticalarc-small.png "Trojitá snímek obrazovky stránky eliptické oblouk")](arcs-images/ellipticalarc-large.png "Trojitá snímek obrazovky stránky eliptické oblouk")
+[![](arcs-images/ellipticalarc-small.png "Trojitá snímek obrazovky stránky eliptické oblouk")](arcs-images/ellipticalarc-large.png#lightbox "Trojitá snímek obrazovky stránky eliptické oblouk")
 
 **Oblouk Infinity** stránka používá eliptické oblouk k vykreslení symbolem nekonečna. Infinity přihlášení je založena na dva kruhy s poloměr 100 jednotky oddělených 100 jednotky:
 
@@ -653,7 +654,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Kód používá `Bounds` vlastnost `SKPath` k určení dimenze sinus infinity škálování na velikost od plátna:
 
-[![](arcs-images/arcinfinity-small.png "Trojitá snímek obrazovky stránky oblouk Infinity")](arcs-images/arcinfinity-large.png "Trojitá snímek obrazovky stránky Infinity oblouk")
+[![](arcs-images/arcinfinity-small.png "Trojitá snímek obrazovky stránky oblouk Infinity")](arcs-images/arcinfinity-large.png#lightbox "Trojitá snímek obrazovky stránky Infinity oblouk")
 
 Výsledek vypadá trochu malé, což naznačuje, že `Bounds` vlastnost `SKPath` je generování sestav na velikost větší než cestu.
 
@@ -661,7 +662,7 @@ Interně Skia blíží oblouk pomocí více kvadratických Bézierových křivek
 
 Náročnější přizpůsobit, použijte `TightBounds` vlastnosti, které vylučují kontrolní body. Tady je program spuštěn v režimu na šířku a pomocí `TightBounds` vlastnost, která má získat cestu hranice:
 
-[![](arcs-images/arcinfinitytightbounds-small.png "Trojitá snímek obrazovky stránky Infinity oblouk s úzkou hranice")](arcs-images/arcinfinitytightbounds-large.png "Trojitá snímek obrazovky stránky Infinity oblouk s úzkou hranice")
+[![](arcs-images/arcinfinitytightbounds-small.png "Trojitá snímek obrazovky stránky Infinity oblouk s úzkou hranice")](arcs-images/arcinfinitytightbounds-large.png#lightbox "Trojitá snímek obrazovky stránky Infinity oblouk s úzkou hranice")
 
 I když jsou připojení mezi oblouky a přímky matematicky smooth, tato změna z oblouk přímku zdát trochu náhlému. Lepší infinity přihlášení se zobrazí na další stránce.
 

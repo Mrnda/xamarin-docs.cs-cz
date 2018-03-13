@@ -6,16 +6,15 @@ ms.assetid: 56137ACA-4811-B312-6860-E16D0FA123F7
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: ce62e844a9ec76217947c0f0f5ed5e9a81336c7e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 145c8507ca5ebea6197fa8827b93f58fbc9bb078
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="troubleshooting-tips"></a>Tipy pro odstraňování potíží
 
-<a name="Getting_Diagnostic_Information" />
 
 ## <a name="getting-diagnostic-information"></a>Získání diagnostických informací
 
@@ -27,8 +26,7 @@ Mezi ně patří:
 3.  Android ladění výstup protokolu.
 
 
- <a name="Diagnostic_MSBuild_Output" />
-
+<a name="Diagnostic_MSBuild_Output" />
 
 ## <a name="diagnostic-msbuild-output"></a>Výstup diagnostiky nástroje MSBuild
 
@@ -55,7 +53,6 @@ Pokud chcete povolit výstup diagnostiky MSBuild v sadě Visual Studio pro Mac n
 7.  Výstup diagnostiky je viditelné v rámci Pad chyby (**zobrazení > dotyková zařízení > chyby** ), kliknutím na tlačítko vytvořit výstup.
 
 
- <a name="Device_Deployment_Logs" />
 
 
 ## <a name="device-deployment-logs"></a>Protokoly nasazení zařízení
@@ -74,7 +71,6 @@ Visual Studio pro Mac vždycky zapíše protokoly nasazení zařízení. Hledán
 -  V systému OS X, soubory protokolu se zapisují do `$HOME/Library/Logs/XamarinStudio-{VERSION}`.
 
 
- <a name="Android_Debug_Log_Output" />
 
 
 ## <a name="android-debug-log-output"></a>Výstup protokolu Android ladění
@@ -88,7 +84,6 @@ adb shell setprop PROPERTY_NAME PROPERTY_VALUE
 
 Vlastnosti systému čteny v průběhu spuštění procesu a proto musí být buď sadu dřív, než je aplikace spuštěna, nebo po změně vlastnosti systému, je nutné restartovat aplikaci.
 
-<a name="Xamarin.Android_System_Properties" />
 
 
 ### <a name="xamarinandroid-system-properties"></a>Xamarin.Android System Properties
@@ -130,7 +125,6 @@ K této chybě dochází z důvodu nekompatibility s Visual Studio.
 
 Vyberte prosím správný System.ValueTuple NuGet, který odpovídá s instalací sady Visual Studio 2017.
 
-<a name="GC_Messages" />
 
 ## <a name="gc-messages"></a>Uvolňování paměti zpráv
 
@@ -162,7 +156,6 @@ V `GC_MINOR` a `GC_MAJOR` zprávy, `total` je množství času, zatímco je poza
 
  *Obecně*, větší hodnotu `num_hash_entries`, více času, který `bridge` kolekce bude trvat a tím větší `total` čas strávený shromažďování bude.
 
- <a name="Global_Reference_Messages" />
 
 
 ## <a name="global-reference-messages"></a>Odkaz na globální zprávy
@@ -254,14 +247,12 @@ GREF i hodnoty Wref počty se můžete dotazovat pomocí dotazu `JniRuntime` obj
 
 `Java.Interop.JniRuntime.CurrentRuntime.WeakGlobalReferenceCount` -Slabé počet odkazů
 
- <a name="Offline_Activation" />
 
 
 ## <a name="offline-activation"></a>Offline aktivaci
 
 Pokud jste nelze aktivovat Xamarin.Android v systému Windows, nebo nelze nainstalovat plnou verzi Xamarin.Android na Mac OS X, naleznete v tématu [Offline aktivaci](~/android/get-started/installation/index.md) stránky.
 
- <a name="Can't_upgrade_to_Indie/Business_from_Trial_Account" />
 
 
 ## <a name="cant-upgrade-to-indiebusiness-from-trial-account"></a>Nelze upgradovat ze zkušební verzi účtu Indie nebo firmy
@@ -275,7 +266,6 @@ Pokud jste nedávno koupili Xamarin.Android a dříve spustila Xamarin.Android z
 
 To by měl zprovoznění je. Pokud potíže potrvají, můžete pokusit [Offline aktivaci](~/android/get-started/installation/index.md) k dokončení aktivace pracovní stanici.
 
- <a name="Receiving_'Activation_Incomplete'_Error_Message" />
 
 
 ## <a name="receiving-activation-incomplete-error-message"></a>Přijetí ' aktivace neúplné chybová zpráva
@@ -285,7 +275,6 @@ Tomuto problému může dojít při použití Xamarin.Android pro sadu Visual St
 -  Umístění protokolu: **LocalAppData %\\Xamarin\\protokoly**
 
 
- <a name="Receiving_'Error_Retrieving_Update_Information'_Error_Message" />
 
 
 ## <a name="receiving-error-retrieving-update-information-error-message"></a>Zobrazuje chybová zpráva "Chyba při načítání informací o aktualizacích.
@@ -315,14 +304,12 @@ K tomu, najít vaši platformu volba níže a postupujte podle kroků:
 Pokud se tato chybová zpráva i nadále zobrazovat, prosím odesílání e-mailem  **contact@xamarin.com** .
 
 
- <a name="Android_Debug_Logs" />
 
 
 ## <a name="android-debug-logs"></a>Protokoly Android ladění
 
 [Protokoly Androidu ladění](~/android/deploy-test/debugging/android-debug-log.md) může poskytnout další kontext případné chyby runtime zobrazeny.
 
- <a name="Floating-Point_performance_is_terrible!" />
 
 
 ## <a name="floating-point-performance-is-terrible"></a>S plovoucí desetinnou čárkou výkonu je strašlivých!
@@ -339,7 +326,6 @@ Verze sestavení bude obsahovat pouze bis vybrán na kartě Vlastnosti projektu.
 
 Pokud aplikace potřebuje dobré výkonu s plovoucí desetinnou čárkou (například hry), měli byste povolit *armeabi v7a* ABI. Můžete chtít podporují pouze *armeabi v7a* modul runtime, i když to znamená, že starší zařízení, které podporují pouze *armeabi* budou moci spouštět aplikace.
 
- <a name="Could_not_locate_Android_SDK" />
 
 
 ## <a name="could-not-locate-android-sdk"></a>Nepovedlo se najít sady SDK pro Android
@@ -347,9 +333,8 @@ Pokud aplikace potřebuje dobré výkonu s plovoucí desetinnou čárkou (např�
 Nejsou k dispozici z Google Android SDK pro Windows 2 stahování.
 Pokud si zvolíte instalační program .exe, zapíše klíče registru, které informují Xamarin.Android, kam se nainstaloval. Zvolíte-li soubor .zip a rozbalte ho sami, Xamarin.Android nebude vědět, kde má být vyhledán sady SDK. Můžete zjistit Xamarin.Android kde sady SDK je v sadě Visual Studio přechodem na **nástroje > Možnosti > Xamarin > Nastavení Androidu**:
 
-[![Umístění sady SDK pro Android v nastavení Xamarin Android](troubleshooting-images/01a.png)]()
+[![Umístění sady SDK pro Android v nastavení Xamarin Android](troubleshooting-images/01a.png)](troubleshooting-images/01a.png#lightbox)
 
-<a name="IDE_does_not_display_target_device" />
 
 
 ## <a name="ide-does-not-display-target-device"></a>IDE nezobrazí cílového zařízení
@@ -393,7 +378,6 @@ emulator -partition-size 512 -avd MonoDroid
 
 Ujistěte se, použijete název správné simulátoru, tj. [název, který jste použili při konfiguraci simulátoru](~/android/get-started/installation/windows.md#device).
 
-<a name="INSTALL_FAILED_INVALID_APK_when_installing_a_package" />
 
 ## <a name="installfailedinvalidapk-when-installing-a-package"></a>NAINSTALUJTE\_se nezdařilo\_neplatný\_APK při instalaci balíčku
 
@@ -410,7 +394,6 @@ Balíček Android názvy *musí* obsahovat tečku (.*.*'). Upravte název balí�
     -   Změňte pole název balíčku tak, aby obsahovala '.'.
 
 
-<a name="INSTALL_FAILED_MISSING_SHARED_LIBRARY_when_installing_a_package" />
 
 
 ## <a name="installfailedmissingsharedlibrary-when-installing-a-package"></a>NAINSTALUJTE\_se nezdařilo\_CHYBÍ\_SDÍLENÉ\_KNIHOVNY při instalaci balíčku
@@ -424,7 +407,6 @@ Pokud chcete zjistit, které sdílené knihovny jsou požadovány, podívejte se
 
 Například přidat odkaz na sestavení pro *Mono.Android.GoogleMaps.dll* implicitně přidá `<uses-library/>` pro službu mapy Google sdílenou knihovnu.
 
-<a name="INSTALL_FAILED_UPDATE_INCOMPATIBLE_when_installing_a_package" />
 
 
 ## <a name="installfailedupdateincompatible-when-installing-a-package"></a>NAINSTALUJTE\_se nezdařilo\_aktualizace\_kompatibilní při instalaci balíčku
@@ -450,7 +432,6 @@ E/PackageManager(  146): Package [PackageName] signatures do not match the previ
 
 Pokud chcete vyřešit tuto chybu, úplně odeberte aplikace ze zařízení před instalací znovu.
 
-<a name="INSTALL_FAILED_UID_CHANGED_when_installing_a_package" />
 
 ## <a name="installfaileduidchanged-when-installing-a-package"></a>NAINSTALUJTE\_se nezdařilo\_UID\_změnit při instalaci balíčku
 
@@ -475,7 +456,6 @@ $ adb uninstall @PACKAGE_NAME@
 **Nepoužívejte** `adb uninstall -k`, jak to bude *zachovat* data aplikací a proto zachovat konfliktní UID na cílovém zařízení.
 
 
-<a name="Release_apps_fail_to_launch_on_device" />
 
 ## <a name="release-apps-fail-to-launch-on-device"></a>Verze aplikace se nepodařilo otevřít na zařízení
 
@@ -603,7 +583,6 @@ using (var groupData = new JavaList<IDictionary<string, object>> ()) {
 
 [Tento problém bude vyřešený v příští verzi](https://bugzilla.xamarin.com/show_bug.cgi?id=5401).
 
-<a name="Unexpected_NullReferenceExceptions" />
 
 ## <a name="unexpected-nullreferenceexceptions"></a>Neočekávané NullReferenceExceptions
 
@@ -635,7 +614,6 @@ Pokud chcete zobrazit, pokud se jedná o tento případ, najdete v protokolu And
 E/dalvikvm(  123): VM aborting
 ```
 
-<a name="Abort_due_to_Global_Reference_Exhaustion" />
 
 ## <a name="abort-due-to-global-reference-exhaustion"></a>Kvůli vyčerpání globálního odkaz k přerušení
 
@@ -726,7 +704,6 @@ Obvykle je užitečné řešení k vyhledání typů, které se má příliš mn
 
 Můžete povolit [GREF protokolování](~/android/troubleshooting/index.md) vytvoření GREFs a jejich počet.
 
-<a name="Abort_due_to_JNI_type_mismatch" />
 
 ## <a name="abort-due-to-jni-type-mismatch"></a>Kvůli neshodě typů JNI došlo k přerušení
 

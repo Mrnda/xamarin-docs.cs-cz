@@ -3,16 +3,16 @@ title: "Úvod do fastlane pro iOS"
 description: "Tento průvodce představuje různé fastlane nástroje, které slouží k kódové podepisování aplikací iOS"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 92B35AB1-7AB7-3D3B-DB31-CC971E0B43AE
+ms.assetid: 8202C57D-22FF-4224-A5B1-AAEF12B7C106
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 084be16b55650f607d71f6eb3baf86b6f968aa35
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 15ee039fbfa339a9246b2a4234f37caf685c80c6
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="introduction-to-fastlane-for-ios"></a>Úvod do fastlane pro iOS
 
@@ -87,12 +87,12 @@ Obsah můžete použít jako odrazový můstek na podporu s distribuce aplikací
 
 fastlane je velmi aktivní opensourcový projekt, který pravidelně nabízených oznámení nové verze. Když je k dispozici nová verze fastlane, budete informováni, když spustíte příkaz žádné fastlane:
 
-[ ![](images/fastlane-image0.png "Aktualizace řádku dráhy fast")](images/fastlane-image0.png)
+[![](images/fastlane-image0.png "Aktualizace řádku dráhy fast")](images/fastlane-image0.png#lightbox)
 
 
 Pokud chcete aktualizovat na novou verzi fastlane, stáhněte si nejnovější balíček z [zde](https://download.fastlane.tools) a dvakrát klikněte na instalovat balíček, který chcete spustit:
 
-[ ![](images/fastlane-image0a.png "Spuštění instalace balíčku")](images/fastlane-image0a.png)
+[![](images/fastlane-image0a.png "Spuštění instalace balíčku")](images/fastlane-image0a.png#lightbox)
 
 
 ## <a name="contents"></a>Obsah
@@ -111,7 +111,7 @@ Jakmile vytvoříte podepisování identity a profily s fastlane zřizování, n
 
 Pokud chcete nastavit možnosti pro aplikace pro Xamarin.iOS pro podpis kódu, klikněte pravým tlačítkem na název projektu, vyberte **možnosti projektu > sestavení > iOS podepisování sady** a nastavit identitu podepisování a profil zřizování explicitně, jako ukázáno níže:
 
-[ ![](images/fastlane-image11.png "Explicitně nastavit identitu podepisování a profil zřizování")](images/fastlane-image11.png)
+[![](images/fastlane-image11.png "Explicitně nastavit identitu podepisování a profil zřizování")](images/fastlane-image11.png#lightbox)
 
 ## <a name="related-links"></a>Související odkazy
 

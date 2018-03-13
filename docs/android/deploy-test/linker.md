@@ -6,11 +6,12 @@ ms.assetid: 3528E195-AA74-90AF-B5F3-3B65FB4F0BB8
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.openlocfilehash: 01a45f02d340effe69d1cb0cff7f0d8e5ca7bef6
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/09/2018
+ms.openlocfilehash: bfbd95d33e442d31e94bd8c6ed888741f88d1188
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="linking-on-android"></a>Propojení v systému Android
 
@@ -52,7 +53,6 @@ Verzi s propojení: </td>
 
 Propojování výsledky v balíčku, který je 30 % velikosti původní (odpojit) balíčku v 1.2.0 a % 18 odpojit balíčku v 4.0.1.
 
- <a name="Control" />
 
 
 ## <a name="control"></a>Ovládací prvek
@@ -77,7 +77,6 @@ public class MyActivity {
 }
 ```
 
-<a name="Linker_Behavior" />
 
 ### <a name="linker-behavior"></a>Chování linkeru
 
@@ -115,7 +114,6 @@ E/mono    (17755):   at Android.App.Activity.n_OnCreate_Landroid_os_Bundle_ (Int
 E/mono    (17755):   at (wrapper dynamic-method) object:95bb4fbe-bef8-4e5b-8e99-ca83a5d7a124 (intptr,intptr,intptr)
 ```
 
-<a name="PreserveAttribute" />
 
 ### <a name="preserving-code"></a>Zachování kódu
 
@@ -177,7 +175,6 @@ namespace Android.Runtime
 ```
 
 
-<a name="falseflag" />
 
 ### <a name="falseflag"></a>falseflag
 
@@ -202,7 +199,6 @@ class MyActivity {
 ```
 
 
-<a name="linkskip" />
 
 ### <a name="linkskip"></a>linkskip
 
@@ -214,7 +210,6 @@ Je možné zadat, že sadu zadaný uživatelem sestavení nemá být propojena n
 </PropertyGroup>
 ```
 
-<a name="LinkDescription" />
 
 ### <a name="linkdescription"></a>LinkDescription
 
@@ -223,7 +218,6 @@ Je možné zadat, že sadu zadaný uživatelem sestavení nemá být propojena n
 soubor. Vlastní linkeru konfigurační soubory, může být nutné zachovat `internal` nebo `private` členů, které je potřeba zachovat.
 
 
-<a name="Custom_Attributes" />
 
 ### <a name="custom-attributes"></a>Vlastní atributy
 
@@ -254,5 +248,5 @@ Po sestavení je propojená, vytvoří se následující vlastní atribut, kter�
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Konfigurace vlastní Linkeru](~/cross-platform/deploy-test/linker.md)
+- [Vlastní konfigurace linkeru](~/cross-platform/deploy-test/linker.md)
 - [Propojení v systému iOS](~/ios/deploy-test/linker.md)

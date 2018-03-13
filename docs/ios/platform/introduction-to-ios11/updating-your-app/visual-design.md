@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: 2904a7da73f5bf6e8960f65239d1f8dc52ab1aba
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d66d8cd722aa9a7b6fe27db3f6128ee24309a1de
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="visual-design-updates"></a>Visual Design Updates
 
@@ -51,7 +51,7 @@ iOS 11 je snazší přidat řadič vyhledávání přímo na navigačním panelu
 NavigationItem.SearchController = searchController;
 ```
 
-[![Název navigační panel hledání](visual-design-images/image8-sml.png)](visual-design-images/image8-sml.png)
+[![Název navigační panel hledání](visual-design-images/image8-sml.png)](visual-design-images/image8-sml.png#lightbox)
 
 V závislosti na funkce aplikace může nebo nemusí být žádoucí panelu Hledat skrytí potom, co uživatel posune prostřednictvím seznamu. Můžete upravit pomocí `HidesSearchBarWhenScrolling` vlastnost.
 
@@ -75,7 +75,7 @@ iOS 7 [zavedená](~/ios/platform/introduction-to-ios7/ios7-ui.md#fullscreen) `to
 
 Bezpečné oblast je nový způsob přemýšlení o viditelné prostoru aplikace, a jak se přidají omezení mezi zobrazením a super zobrazení. Zvažte například na následujícím obrázku:
 
-[![Oblast pro vs horní a dolní rozložení Průvodce](visual-design-images/image10-sml.png)](visual-design-images/image10.png)
+[![Oblast pro vs horní a dolní rozložení Průvodce](visual-design-images/image10-sml.png)](visual-design-images/image10.png#lightbox)
 
 Dříve, pokud byl přidán zobrazení a chtěli ho mají být zobrazeny v oblasti zelená výše, můžete by omezit její _dolní_ z `TopLayoutGuide` a _horní_ z `BottomLayoutGuide`. V iOS 11, můžete byste místo toho omezit její _horní_ a _dolní_ bezpečné oblasti. Příklad:
 

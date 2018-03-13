@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: a3c9c76ce173606d206166b2bcfb9760eb5634ac
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: abb8ee30828e5d9856b9fd72cca8adb669959818
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="publishing-to-the-apple-tv-app-store"></a>Publikování do App Storu Apple TV
 
@@ -154,12 +154,12 @@ S aplikací Xamarin.tvOS správně nakonfigurovány nyní jste připraveni uděl
     ![](app-store-publishing-images/buildxs01new.png "Vyberte konfigurace verze")
 2. Z **sestavení** nabídce vyberte možnost **archivu pro publikování**:
 
-    [ ![](app-store-publishing-images/buildxs02new.png "Vyberte archivu pro publikování")](app-store-publishing-images/buildxs02new.png)
+    [![](app-store-publishing-images/buildxs02new.png "Vyberte archivu pro publikování")](app-store-publishing-images/buildxs02new.png#lightbox)
 3. Po vytvoření archivu **archivy** zobrazení se zobrazí:
 
-    [ ![](app-store-publishing-images/buildxs03new.png "Zobrazení archivy")](app-store-publishing-images/buildxs03new.png)
+    [![](app-store-publishing-images/buildxs03new.png "Zobrazení archivy")](app-store-publishing-images/buildxs03new.png#lightbox)
 
-#<a name="3-sign-and-distribute-your-app"></a>&#3;# přihlásit a distribuovat aplikace
+### <a name="sign-and-distribute-your-app"></a>Podepisování a distribuce aplikace
 
 Pokaždé, když vytváříte aplikace pro archiv, se automaticky otevře *archivy zobrazení*, zobrazení všech archivovány projekty; seskupené podle řešení. Ve výchozím nastavení toto zobrazení uvádí jenom aktuální, otevřete řešení. Pokud chcete zobrazit všechna řešení, které mají archivy, klikněte na **zobrazit všechny archivy** možnost.
 
@@ -169,19 +169,19 @@ Podepište aplikaci, a příprava pro distribuci:
 
 1. Vyberte **přihlásit a distribuovat...** , ilustrované níže:
 
-    [ ![](app-store-publishing-images/buildxs04new.png ", Vyberte theSign a distribuci...")](app-store-publishing-images/buildxs04new.png)
+    [![](app-store-publishing-images/buildxs04new.png ", Vyberte theSign a distribuci...")](app-store-publishing-images/buildxs04new.png#lightbox)
 2. Otevře se Průvodce přidáním publikování. Vyberte **obchod** distribuční kanál vytvořit balíček a otevřete zavaděč aplikací:
 
-    [ ![](app-store-publishing-images/distribute01.png "Vyberte distribuční kanál obchodu s aplikacemi")](app-store-publishing-images/distribute01.png)
+    [![](app-store-publishing-images/distribute01.png "Vyberte distribuční kanál obchodu s aplikacemi")](app-store-publishing-images/distribute01.png#lightbox)
 3. Na obrazovce profil zřizování vyberte podepisování identity a odpovídající profil pro zřizování nebo znovu podepsat pomocí jiné identity:
 
-    [ ![](app-store-publishing-images/distribute02.png "Vyberte podpisový identity a odpovídající profil pro zřizování")](app-store-publishing-images/distribute02.png)
+    [![](app-store-publishing-images/distribute02.png "Vyberte podpisový identity a odpovídající profil pro zřizování")](app-store-publishing-images/distribute02.png#lightbox)
 4. Zkontrolujte podrobnosti vašeho balíčku a klikněte na tlačítko **publikovat** uložit vaše `.ipa` balíčku:
 
-    [ ![](app-store-publishing-images/distribute03.png "Zkontrolujte podrobnosti o balíčku")](app-store-publishing-images/distribute03.png)
+    [![](app-store-publishing-images/distribute03.png "Zkontrolujte podrobnosti o balíčku")](app-store-publishing-images/distribute03.png#lightbox)
 5. Jednou vaše `.ipa` byl uložen, je aplikace připravená k odeslání do iTunes připojit prostřednictvím zavaděč aplikací:
 
-    [ ![](app-store-publishing-images/distribute04.png "Nahrán do iTunes připojit prostřednictvím zavaděč aplikací")](app-store-publishing-images/distribute04.png)
+    [![](app-store-publishing-images/distribute04.png "Nahrán do iTunes připojit prostřednictvím zavaděč aplikací")](app-store-publishing-images/distribute04.png#lightbox)
 
 S distribuční vytvořit sestavení a archivovat, nyní jste připraveni k odeslání aplikace iTunes připojit.
 
@@ -196,15 +196,15 @@ Pracovní postup archivu v sadě Visual Studio pro Mac se zavaděč aplikací au
 
 2. Vyberte *poskytovat aplikace* a klikněte na *zvolte* tlačítko:
 
-    [ ![](app-store-publishing-images/publishvs01.png "Vyberte poskytování vaší aplikace")](app-store-publishing-images/publishvs01.png)
+    [![](app-store-publishing-images/publishvs01.png "Vyberte poskytování vaší aplikace")](app-store-publishing-images/publishvs01.png#lightbox)
 
 3. Vyberte zip nebo soubor IPA vytvořili výše a klikněte na **OK** tlačítko.
 4. Zavaděč aplikací budou ověření souboru:
 
-    [ ![](app-store-publishing-images/publishvs02.png "Na obrazovce ověření zavaděč aplikací")](app-store-publishing-images/publishvs02.png)
+    [![](app-store-publishing-images/publishvs02.png "Na obrazovce ověření zavaděč aplikací")](app-store-publishing-images/publishvs02.png#lightbox)
 5. Klikněte *Další* tlačítko a aplikace bude ověřovat s obchodu s aplikacemi:
 
-    [ ![](app-store-publishing-images/publishvs03.png "Aplikace ověřován proti obchodu s aplikacemi")](app-store-publishing-images/publishvs03.png)
+    [![](app-store-publishing-images/publishvs03.png "Aplikace ověřován proti obchodu s aplikacemi")](app-store-publishing-images/publishvs03.png#lightbox)
 6. Klikněte **odeslat** tlačítko Odeslat ke kontrole aplikace společnosti Apple.
 7. Zavaděč aplikací bude informovat, když byla úspěšně nahrána soubor.
 
@@ -214,7 +214,7 @@ Pracovní postup archivu v sadě Visual Studio pro Mac se zavaděč aplikací au
 
 Pokud znovu se přihlásili k iTunes připojit a vyberte svou aplikaci ze seznamu dostupných aplikací, stav v iTunes Connect by měl zobrazit nyní, že je **čekání zkontrolujte** (dočasně lze číst **nahrát přijata** Když je zpracován):
 
-[ ![](app-store-publishing-images/image21.png "Tento stav v iTunes připojit zobrazující čekání ke kontrole")](app-store-publishing-images/image21.png)
+[![](app-store-publishing-images/image21.png "Tento stav v iTunes připojit zobrazující čekání ke kontrole")](app-store-publishing-images/image21.png#lightbox)
 
 <a name="Troubleshooting" />
 

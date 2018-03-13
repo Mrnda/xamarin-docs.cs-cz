@@ -4,14 +4,15 @@ description: "V tématu jak můžete vytvořit nakloněné grafické objekty v S
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: FDD16186-E3B7-4FF6-9BC2-8A2974BFF616
 author: charlespetzold
 ms.author: chape
 ms.date: 03/20/2017
-ms.openlocfilehash: b8bb4db49d3800d694724d6be8fe949b55060c21
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a18b60d486a911e4a76298fd20a70f16ac392881
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="the-skew-transform"></a>Zkosení transformace
 
@@ -69,7 +70,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Hodnoty `xSkew` argument posunutí dolní části textu pro kladné hodnoty nebo doleva pro záporné hodnoty. Hodnoty `ySkew` posunout dolů vpravo od textu, kladné hodnoty nebo službu záporné hodnoty:
 
-[![](skew-images/skewexperiment-small.png "Trojitá snímek obrazovky stránky zkreslit experimentu")](skew-images/skewexperiment-large.png "Trojitá snímek obrazovky stránky zkreslit experimentu")
+[![](skew-images/skewexperiment-small.png "Trojitá snímek obrazovky stránky zkreslit experimentu")](skew-images/skewexperiment-large.png#lightbox "Trojitá snímek obrazovky stránky zkreslit experimentu")
 
 Pokud `xSkew` je záporná z `ySkew`, výsledek je otočení, ale také poněkud škálovat jako Windows označuje zobrazení.
 
@@ -152,7 +153,7 @@ void SkewDegrees(SKCanvas canvas, double xDegrees, double yDegrees)
 
 Jako úhlu blíží kladné a záporné 90 stupňů, tangens blíží infinity, ale úhly až o 80 stupních nebo tak lze použít:
 
-[![](skew-images/skewangleexperiment-small.png "Trojitá snímek obrazovky stránky zkreslit experimentu úhel")](skew-images/skewangleexperiment-large.png "Trojitá snímek obrazovky stránky zkreslit úhel experimentu")
+[![](skew-images/skewangleexperiment-small.png "Trojitá snímek obrazovky stránky zkreslit experimentu úhel")](skew-images/skewangleexperiment-large.png#lightbox "Trojitá snímek obrazovky stránky zkreslit úhel experimentu")
 
 Malé záporné vodorovné zkosení mohou napodobovat výběr kurzívy nebo nakloněného text, jako **nakloněné Text** ukazuje stránky. [ `ObliqueTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/ObliqueTextPage.cs) Třída ukazuje, jak se provádí:
 
@@ -188,7 +189,7 @@ void SkewDegrees(SKCanvas canvas, double xDegrees, double yDegrees)
 
 `TextAlign` Vlastnost `SKPaint` je nastaven na `Center`. Bez jakékoli transformace `DrawText` volání s souřadnice (0, 0) by způsobilo pozici text vodorovně na střed standardních hodnot v levém horním rohu. `SkewDegrees` Zkosí text ve vodorovném směru 20 stupňů relativně k směrného plánu. `Translate` Volání přesune vodorovném centru směrného plánu text na střed plátna:
 
-[![](skew-images/obliquetext-small.png "Trojitá snímek obrazovky stránky nakloněné Text")](skew-images/obliquetext-large.png "Trojitá snímek obrazovky stránky nakloněné textu")
+[![](skew-images/obliquetext-small.png "Trojitá snímek obrazovky stránky nakloněné Text")](skew-images/obliquetext-large.png#lightbox "Trojitá snímek obrazovky stránky nakloněné textu")
 
 **Zkreslit Text stínové** stránky ukazuje, jak lze pomocí kombinace 45 stupňů zkosení a svislého škálování na Stín textu, který nastane mimo text. Tady je příslušné části `PaintSurface` obslužné rutiny:
 
@@ -221,11 +222,11 @@ using (SKPaint textPaint = new SKPaint())
 
 Stínové kopie je zobrazené první a potom text:
 
-[![](skew-images/skewshadowtext1-small.png "Trojitá snímek obrazovky stránky zkreslit Text stínové")](skew-images/skewshadowtext1-large.png "Trojitá snímek obrazovky stránky zkreslit stínu textu")
+[![](skew-images/skewshadowtext1-small.png "Trojitá snímek obrazovky stránky zkreslit Text stínové")](skew-images/skewshadowtext1-large.png#lightbox "Trojitá snímek obrazovky stránky zkreslit stínu textu")
 
 Předaný svislé souřadnice `DrawText` metoda označuje pozici textu relativně k směrného plánu. To je stejné souřadnice svislé používá pro středu zkosení. Tento postup nebude fungovat, pokud textový řetězec obsahuje dolní dotahy. Například nahraďte slovo "quirky" pro "Stínové" a zde je výsledek:
 
-[![](skew-images/skewshadowtext2-small.png "Trojitá snímek obrazovky stránky zkreslit stínové Text alternativní slovem s dolní dotahy")](skew-images/skewshadowtext2-large.png "Trojitá snímek obrazovky stránky zkreslit stínové Text alternativní slovem s dolní dotahy")
+[![](skew-images/skewshadowtext2-small.png "Trojitá snímek obrazovky stránky zkreslit stínové Text alternativní slovem s dolní dotahy")](skew-images/skewshadowtext2-large.png#lightbox "Trojitá snímek obrazovky stránky zkreslit stínové Text alternativní slovem s dolní dotahy")
 
 Stínové a text je zarovnán stále v směrného plánu, ale účinek právě vypadá nesprávný. Chcete-li odstranit ji musíte získat hranice text:
 
@@ -245,7 +246,7 @@ canvas.Translate(-xText, -yText - textBounds.Bottom);
 
 Nyní se bude stín rozšiřuje v dolní části těchto dolní dotahy:
 
-[![](skew-images/skewshadowtext3-small.png "Trojitá snímek obrazovky stránky zkreslit Text stínové úprav pro dolní dotahy")](skew-images/skewshadowtext3-large.png "Trojitá snímek obrazovky stránky zkreslit Text stínové úprav pro dolní dotahy")
+[![](skew-images/skewshadowtext3-small.png "Trojitá snímek obrazovky stránky zkreslit Text stínové úprav pro dolní dotahy")](skew-images/skewshadowtext3-large.png#lightbox "Trojitá snímek obrazovky stránky zkreslit Text stínové úprav pro dolní dotahy")
 
 
 ## <a name="related-links"></a>Související odkazy

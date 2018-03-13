@@ -7,17 +7,17 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/19/2016
-ms.openlocfilehash: 34063be728f8a13bbe5d68440d9aceba417c5627
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0717b8484c6094bb1d9589c44df37745d9e21900
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="watchos-user-interface"></a>watchOS uživatelské rozhraní
 
 [ **WatchKitCatalog** ](https://github.com/xamarin/monotouch-samples/tree/master/watchOS/WatchKitCatalog) příklad ukazuje různé watchOS ovládací prvky. Storyboard aplikace se zobrazí zde (klikněte na tlačítko pro přiblížení):
 
-[ ![](images/storyboard-sml.png "Ukázka watchOS rozložení")](images/storyboard.png)
+[![](images/storyboard-sml.png "Ukázka watchOS rozložení")](images/storyboard.png#lightbox)
 
 Programová názvy všech ovládacích prvků je s předponou `WKInterface` (např. `WKInterfaceLabel`, `WKInterfaceButton`).
 

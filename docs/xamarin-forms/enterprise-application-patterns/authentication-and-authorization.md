@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/08/2017
-ms.openlocfilehash: 8b1715c8e7c3e9bb296577acd3d09a0f22488250
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 5f27c1acefa63ee26184b8997594630e24cb0acc
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="authentication-and-authorization"></a>Ověřování a autorizace
 
@@ -48,7 +48,7 @@ EShopOnContainers mobilní aplikace komunikuje s mikroslužbu identity, který p
 -   Přístup k prostředku s IdentityServer je dosaženo tím, že požádá mobilní aplikace *přístup* token, který umožňuje přístup k prostředku rozhraní API. Klienti požádat o přístupové tokeny, které předávají do rozhraní API. Přístupové tokeny obsahují informace o klientovi a uživatele (pokud existuje). Rozhraní API pak pomocí těchto informací k autorizaci přístupu k jejich datům.
 
 > [!NOTE]
-> **Poznámka:**: Klient musí být zaregistrován u IdentityServer předtím, než ji může požádat o tokeny.
+> Klient musí být zaregistrován u IdentityServer předtím, než ji může požádat o tokeny.
 
 ### <a name="adding-identityserver-to-a-web-application"></a>Přidání IdentityServer do webové aplikace
 

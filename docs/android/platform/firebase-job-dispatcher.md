@@ -7,12 +7,12 @@ ms.assetid: 3DB9C7A3-D351-481D-90C5-BEC25D1B9910
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 6b55e525849d57f2ad9e40ea64b75cfc65ef0727
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/09/2018
+ms.openlocfilehash: fd5b2f8c758d8e1e9bb9276da96a410c61478d4a
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="firebase-job-dispatcher"></a>Dispečer firebase úlohy
 
@@ -138,7 +138,7 @@ Job myJob = dispatcher.NewJobBuilder()
 * A `Job`na _životnost_ (jak dlouho naplánuje spuštění) je jenom dokud se zařízení restartuje &ndash; po restartování zařízení `Job` dojde ke ztrátě.
 * A `Job` není opakovaného &ndash; ji lze spustit pouze jednou.
 * A `Job` bude naplánována s co nejdříve spustit.
-* Výchozí strategie opakování pro `Job` , je použít _exponenciálního omezení rychlosti_ (popsané v podrobněji níže v části [nastavení RetryStrategy](#Setting_a_RestryStrategy))
+* Výchozí strategie opakování pro `Job` , je použít _exponenciálního omezení rychlosti_ (popsané v podrobněji níže v části [nastavení RetryStrategy](#Setting_a_RetryStrategy))
 
 ### <a name="scheduling-a-job"></a>Plánování `Job`
 
@@ -164,12 +164,14 @@ Hodnoty vrácené `FirebaseJobDispatcher.Schedule` bude mít jednu z následují
 
 Je možné přizpůsobit úlohu. Příklady, jak lze přizpůsobit úlohu zahrnují následující:
 
-* [Předat parametry do úlohy](#Passing_Parameters_to_a_Job) &ndash; A `Job` může vyžadovat další hodnoty k provedení práce, například stažení souboru.
+* [Předávání parametrů do úlohy](#Passing_Parameters_to_a_Job) &ndash; A `Job` může vyžadovat další hodnoty k provedení práce, například stažení souboru.
 * [Nastavte omezení](#Setting_Constraints) &ndash; může být nutné jenom spustit úlohu při splnění určitých podmínek. Například spusťte pouze `Job` při ukládání zařízení. 
 * [Určete, kdy `Job` měly být spuštěny](#Setting_Job_Triggers) &ndash; The dispečera úloh Firebase umožňuje aplikacím určit čas, kdy má být úloha spuštěna.  
 * [Deklarovat strategie opakování pro neúspěšné úlohy](#Setting_a_RetryStrategy) &ndash; A _se strategie opakování při_ obsahuje pokyny, které `FirebaseJobDispatcher` co dělat s `Jobs` , se nepodařilo dokončit. 
 
 Každý z těchto témat se být uvedeny další informace v následujících částech.
+
+<a name="Passing_Parameters_to_a_Job" />
 
 #### <a name="passing-parameters-to-a-job"></a>Předávání parametrů do úlohy
 
@@ -197,6 +199,7 @@ public override bool OnStartJob(IJobParameters jobParameters)
 } 
 ```
 
+<a name="Setting_Constraints" />
 
 #### <a name="setting-constraints"></a>Nastavení omezení
 
@@ -215,6 +218,8 @@ Job myJob = dispatcher.NewJobBuilder()
                       .Build();
 ```
 
+<a name="Setting_Job_Triggers" />
+
 #### <a name="setting-job-triggers"></a>Nastavení úloh aktivační události
 
 `JobTrigger` Obsahuje pokyny, které operační systém o zahájení úlohy. A `JobTrigger` má _provádění okno_ , který definuje naplánovaném čase, kdy `Job` měly být spuštěny. Provádění okna _spustit okno_ hodnotu a _end okno_ hodnotu. Okno spuštění je počet sekund, po který zařízení čekat před spuštěním úlohy a koncová hodnota okno je maximální počet sekund čekání před spuštěná `Job`. 
@@ -230,6 +235,8 @@ Job myJob = dispatcher.NewJobBuilder()
 ```
 
 Výchozí hodnota `JobTrigger` pro úlohy je reprezentována hodnota `Trigger.Now`, která určuje, zda úlohy spustit co nejdříve po naplánován...
+
+<a name="Setting_a_RetryStrategy" />
 
 #### <a name="setting-a-retrystrategy"></a>Nastavení RetryStrategy
 

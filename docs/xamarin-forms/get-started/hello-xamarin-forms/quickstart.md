@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/06/2018
-ms.openlocfilehash: 7ce674ea38bc847bc9064a5a61113900a45b991d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 434a12c26a5823b082751c95c2090b22c39cf081
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarinforms-quickstart"></a>Xamarin.Forms Quickstart
 
 Tento návod ukazuje, jak vytvořit aplikaci, která znamená, že alfanumerické telefonní číslo, zadané uživatelem do číselné telefonní číslo a číslo, který volá. Konečné aplikace je zobrazena níže:
 
-[![](quickstart-images/intro-app-examples-sml.png "Aplikace Phoneword")](quickstart-images/intro-app-examples.png "Phoneword aplikace")
+[![](quickstart-images/intro-app-examples-sml.png "Aplikace Phoneword")](quickstart-images/intro-app-examples.png#lightbox "Phoneword aplikace")
 
 Vytvoření aplikace Phoneword následujícím způsobem:
 
@@ -113,7 +113,7 @@ Vytvoření aplikace Phoneword následujícím způsobem:
         }
 
   > [!NOTE]
-> **Poznámka:**: Probíhá pokus o sestavení aplikace v tomto okamžiku bude mít za následek chyby, které budou později opravit.
+  > Při pokusu o vytvoření aplikace v tomto okamžiku bude mít za následek chyby, které budou později opravit.
 
   Uložit změny do **MainPage.xaml.cs** stisknutím **CTRL + S**a zavřete soubor.
 
@@ -515,7 +515,7 @@ Vytvoření aplikace Phoneword následujícím způsobem:
             </StackLayout>
         </ContentPage>
 
-  Uložit změny do **MainPage.xaml** výběrem **soubor > Uložit** (nebo stisknutím kombinace kláves **&#8984; + S**) a zavřete soubor.
+  Uložit změny do **MainPage.xaml** výběrem **soubor > Uložit** (nebo stisknutím kombinace kláves  **&#8984; + S**) a zavřete soubor.
 
 1. V **řešení Pad**, dvakrát klikněte na **MainPage.xaml.cs** a otevře se:
 
@@ -565,9 +565,9 @@ Vytvoření aplikace Phoneword následujícím způsobem:
         }
 
   > [!NOTE]
-> **Poznámka:**: Probíhá pokus o sestavení aplikace v tomto okamžiku bude mít za následek chyby, které budou později opravit.
+  > Při pokusu o vytvoření aplikace v tomto okamžiku bude mít za následek chyby, které budou později opravit.
 
-  Uložit změny do **MainPage.xaml.cs** výběrem **soubor > Uložit** (nebo stisknutím kombinace kláves **&#8984; + S**) a zavřete soubor.
+  Uložit změny do **MainPage.xaml.cs** výběrem **soubor > Uložit** (nebo stisknutím kombinace kláves  **&#8984; + S**) a zavřete soubor.
 
 1. V **řešení Pad**, dvakrát klikněte na **App.xaml.cs** a otevře se:
 
@@ -606,7 +606,7 @@ Vytvoření aplikace Phoneword následujícím způsobem:
             }
         }
 
-  Uložit změny do **Phoneword.cs** výběrem **soubor > Uložit** (nebo stisknutím kombinace kláves **&#8984; + S**) a zavřete soubor.
+  Uložit změny do **Phoneword.cs** výběrem **soubor > Uložit** (nebo stisknutím kombinace kláves  **&#8984; + S**) a zavřete soubor.
 
 1. V **řešení Pad**, vyberte **Phoneword** projektu klikněte pravým tlačítkem a vyberte **Přidat > Nový soubor...** :
 
@@ -670,7 +670,7 @@ Vytvoření aplikace Phoneword následujícím způsobem:
             }
         }
 
-  Uložit změny do **PhoneTranslator.cs** výběrem **soubor > Uložit** (nebo stisknutím kombinace kláves **&#8984; + S**) a zavřete soubor.
+  Uložit změny do **PhoneTranslator.cs** výběrem **soubor > Uložit** (nebo stisknutím kombinace kláves  **&#8984; + S**) a zavřete soubor.
 
 1. V **řešení Pad**, vyberte **Phoneword** projektu klikněte pravým tlačítkem a vyberte **Přidat > Nový soubor...** :
 
@@ -690,7 +690,7 @@ Vytvoření aplikace Phoneword následujícím způsobem:
             }
         }
 
-  Uložit změny do **IDialer.cs** výběrem **soubor > Uložit** (nebo stisknutím kombinace kláves **&#8984; + S**) a zavřete soubor.
+  Uložit změny do **IDialer.cs** výběrem **soubor > Uložit** (nebo stisknutím kombinace kláves  **&#8984; + S**) a zavřete soubor.
 
   > [!NOTE]
 > Společný kód aplikace je nyní dokončen. Kód programu Telefon specifické pro platformu phone se teď implementuje jako [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md).
@@ -723,7 +723,7 @@ Vytvoření aplikace Phoneword následujícím způsobem:
             }
         }
 
-  Uložit změny do **PhoneDialer.cs** výběrem **soubor > Uložit** (nebo stisknutím kombinace kláves **&#8984; + S**) a zavřete soubor.
+  Uložit změny do **PhoneDialer.cs** výběrem **soubor > Uložit** (nebo stisknutím kombinace kláves  **&#8984; + S**) a zavřete soubor.
 
 1. V **řešení Pad**, vyberte **Phoneword.Droid** projektu klikněte pravým tlačítkem a vyberte **Přidat > Nový soubor...** :
 
@@ -780,7 +780,7 @@ Vytvoření aplikace Phoneword následujícím způsobem:
             }
         }
 
-  Uložit změny do **PhoneDialer.cs** výběrem **soubor > Uložit** (nebo stisknutím kombinace kláves **&#8984; + S**) a zavřete soubor.
+  Uložit změny do **PhoneDialer.cs** výběrem **soubor > Uložit** (nebo stisknutím kombinace kláves  **&#8984; + S**) a zavřete soubor.
 
 1. V **řešení Pad**v **Phoneword.Droid** projektu, klikněte dvakrát na **MainActivity.cs** otevřete ho odebrat všechny kód šablony a nahraďte ji následujícím kódem kód:
 
@@ -809,7 +809,7 @@ Vytvoření aplikace Phoneword následujícím způsobem:
             }
         }        
 
-  Uložit změny do **MainActivity.cs** výběrem **soubor > Uložit** (nebo stisknutím kombinace kláves **&#8984; + S**) a zavřete soubor.
+  Uložit změny do **MainActivity.cs** výběrem **soubor > Uložit** (nebo stisknutím kombinace kláves  **&#8984; + S**) a zavřete soubor.
 
 1. V **řešení Pad**, rozbalte **vlastnosti** složku a dvojím kliknutím **AndroidManifest.xml** souboru:
 
@@ -819,10 +819,10 @@ Vytvoření aplikace Phoneword následujícím způsobem:
 
   ![](quickstart-images/xs/android-manifest-changed.png "Povolit CallPhone oprávnění")
 
-  Uložit změny do **AndroidManifest.xml** výběrem **soubor > Uložit** (nebo stisknutím kombinace kláves **&#8984; + S**) a zavřete soubor.
+  Uložit změny do **AndroidManifest.xml** výběrem **soubor > Uložit** (nebo stisknutím kombinace kláves  **&#8984; + S**) a zavřete soubor.
 
 1. V **řešení Pad**, odeberte **PhonewordPage** třídy z **Phoneword** projektu. Tato stránka se automaticky přidáno, jakmile projekt byl vytvořen a už nepotřebujete.
-1. V sadě Visual Studio pro Mac, vyberte **sestavení > sestavení všechny** položku nabídky (nebo stiskněte klávesu **&#8984; + B**). Aplikace bude sestavení a zobrazí se zpráva o úspěšném provedení v sadě Visual Studio pro Mac panelu nástrojů.
+1. V sadě Visual Studio pro Mac, vyberte **sestavení > sestavení všechny** položku nabídky (nebo stiskněte klávesu  **&#8984; + B**). Aplikace bude sestavení a zobrazí se zpráva o úspěšném provedení v sadě Visual Studio pro Mac panelu nástrojů.
 
   ![](quickstart-images/xs/build-successful.png "Sestavení úspěšné")
 

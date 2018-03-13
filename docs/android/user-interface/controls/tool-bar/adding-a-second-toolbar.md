@@ -7,21 +7,19 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: b471742ae9fb365d75e8dd3ca0f93f5e55208f19
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 343694163c79ab4d7e8b78875282e7077db979e5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="adding-a-second-toolbar"></a>Přidání druhého panelu nástrojů
 
-<a name="overview" />
 
 ## <a name="overview"></a>Přehled 
 
 `Toolbar` Více než nahradit provést na panelu akcí &ndash; ho může být použita vícekrát v aktivitě, může být možné přizpůsobit pro umístění kdekoli na obrazovce a dá se rozložit částečné šířku obrazovky. Následující příklady ukazují, jak vytvořit druhý `Toolbar` a umístěte jej v dolní části obrazovky. To `Toolbar` implementuje **kopie**, **Vyjmout**, a **vložení** položky nabídky. 
 
-<a name="define_second" />
 
 ## <a name="define-the-second-toolbar"></a>Definování druhý panelu nástrojů 
 
@@ -78,10 +76,9 @@ Upravit **Resources/values/styles.xml** a přidejte následující barva zvýraz
 
 To dává tmavý oranžové barva spodním panelu nástrojů. Sestavení a spuštění aplikace zobrazí prázdné druhý panelu nástrojů v dolní části obrazovky: 
 
-[![Snímek obrazovky aplikace s žlutý druhý panelu nástrojů v dolní části obrazovky](adding-a-second-toolbar-images/01-second-toolbar-sml.png)](adding-a-second-toolbar-images/01-second-toolbar.png)
+[![Snímek obrazovky aplikace s žlutý druhý panelu nástrojů v dolní části obrazovky](adding-a-second-toolbar-images/01-second-toolbar-sml.png)](adding-a-second-toolbar-images/01-second-toolbar.png#lightbox)
 
 
-<a name="second_menus" />
  
 ## <a name="add-edit-menu-items"></a>Přidání položek nabídky Upravit 
 
@@ -100,7 +97,6 @@ Přidání položek nabídky do sekundárního `Toolbar`:
 Následující části ukazují, tento proces podrobně: **Vyjmout**, **kopie**, a **vložení** nabídky položky budou přidány do dolní části `Toolbar`. 
 
 
-<a name="second_resource" />
 
 ### <a name="define-the-edit-menu-resource"></a>Definici zdroje nabídky Upravit
 
@@ -130,7 +126,6 @@ V **prostředky a nabídek** podadresáři, vytvořte nový soubor XML s názvem
 Tato konfigurace XML vytvoří **Vyjmout**, **kopie**, a **vložení** položky nabídky (pomocí ikony, které byly přidány do `mipmap-` složek v [nahrazení panelu akcí ](~/android/user-interface/controls/tool-bar/replacing-the-action-bar.md)).
 
 
-<a name="inflate_menus" />
 
 ### <a name="inflate-the-menus"></a>Zvýšilo v nabídkách
 
@@ -149,18 +144,17 @@ Tento kód vyhledá `edit_toolbar` zobrazení definované v **Main.axml**, nasta
 
 Sestavte a spusťte aplikaci. Při spuštění aplikace, text a ikony přidané v předchozím kroku se zobrazí, jak je vidět tady: 
 
-[![Diagram dolním panelu nástrojů s ikonami vyjmutí, kopírování a vložení](adding-a-second-toolbar-images/02-bottom-toolbar-sml.png)](adding-a-second-toolbar-images/02-bottom-toolbar.png)
+[![Diagram dolním panelu nástrojů s ikonami vyjmutí, kopírování a vložení](adding-a-second-toolbar-images/02-bottom-toolbar-sml.png)](adding-a-second-toolbar-images/02-bottom-toolbar.png#lightbox)
 
 Klepnutím **Vyjmout** ikonu nabídky způsobí, že následující informační zprávy, který se má zobrazit: 
 
-[![Snímek obrazovky informační označující, že byl stisknuté ikonu vyjmutí nabídky](adding-a-second-toolbar-images/03-bottom-tapped-sml.png)](adding-a-second-toolbar-images/03-bottom-tapped.png)
+[![Snímek obrazovky informační označující, že byl stisknuté ikonu vyjmutí nabídky](adding-a-second-toolbar-images/03-bottom-tapped-sml.png)](adding-a-second-toolbar-images/03-bottom-tapped.png#lightbox)
 
 Klepnutím položky nabídky na buď panelu nástrojů zobrazí výsledná informační zprávy: 
 
-[![Snímky obrazovky informační zprávy pro uložit, kopírovat a vložit položky nabídky se stisknuté](adding-a-second-toolbar-images/04-menu-action-sml.png)](adding-a-second-toolbar-images/04-menu-action.png)
+[![Snímky obrazovky informační zprávy pro uložit, kopírovat a vložit položky nabídky se stisknuté](adding-a-second-toolbar-images/04-menu-action-sml.png)](adding-a-second-toolbar-images/04-menu-action.png#lightbox)
 
 
-<a name="up_button" />
 
 ## <a name="the-up-button"></a>Tlačítka nahoru 
 
@@ -187,7 +181,7 @@ SupportActionBar.SetHomeButtonEnabled (true);
 
 Když uživatel přejde z `MainActivity` k `DetailActivity`, `DetailActivity` zobrazí **až** tlačítko (šipka doleva polohovací), jak je uvedené na snímku obrazovky:
 
-[![Snímek obrazovky příklad levém šipka nahoru tlačítka na panelu nástrojů](adding-a-second-toolbar-images/05-up-button-sml.png)](adding-a-second-toolbar-images/05-up-button.png)
+[![Snímek obrazovky příklad levém šipka nahoru tlačítka na panelu nástrojů](adding-a-second-toolbar-images/05-up-button-sml.png)](adding-a-second-toolbar-images/05-up-button.png#lightbox)
 
 Klepnutím to **až** tlačítko způsobí, že aplikace se vraťte do `MainActivity`. Ve složitější aplikaci s více úrovní hierarchie klepnutím na toto tlačítko by vrátit uživatele na další nejvyšší úroveň v aplikaci a nikoli na předchozí obrazovku. 
 

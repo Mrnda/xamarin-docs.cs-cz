@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: b606773b44d32b724fe7f4dfa2ef18fe34b85cae
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 170131a2449b37acfa411eeca54f7aa921b0d9e4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-text-input"></a>Práce s zadávání textu
 
@@ -62,7 +62,7 @@ Když je prostý režim nastavený, uživatel může vybrat:
 - Klikyháky, nebo
 - z předdefinovaného seznamu, který poskytuje aplikace.
 
-[ ![](text-input-images/plain-scribble-sml.png "Diktování, Scribble, nebo z předdefinovaného seznamu, který poskytuje aplikace")](text-input-images/plain-scribble.png)
+[![](text-input-images/plain-scribble-sml.png "Diktování, Scribble, nebo z předdefinovaného seznamu, který poskytuje aplikace")](text-input-images/plain-scribble.png#lightbox)
 
 Výsledek je vždy vrátí jako `NSObject` , může být převeden `string`.
 
@@ -106,4 +106,4 @@ Jakmile budou stiskněte **provádí** tlačítko bude vrácen text.
 ## <a name="related-links"></a>Související odkazy
 
 - [Společnosti Apple Text a popisky dokumentů](https://developer.apple.com/library/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/TextandLabels.html)
-- [Úvod do watchOS 3](~/ios/watchos/platform/introduction-to-watchos3/index.md)
+- [Úvod do watchOSu 3](~/ios/watchos/platform/introduction-to-watchos3/index.md)

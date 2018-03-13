@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/18/2017
-ms.openlocfilehash: c5bd753aaa3a9e807a03a9fb05b233cfa39d0dc3
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 6ac9ca7bae517602c33729134eb0bd48359afbc7
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="implementing-text-to-speech"></a>Implementace převod textu na řeč
 
@@ -44,7 +44,7 @@ public interface ITextToSpeech
 Kódování proti tomuto rozhraní v sdíleného kódu vám umožní aplikaci Xamarin.Forms pro přístup k rozhraní API pro rozpoznávání řeči na každou platformu.
 
 > [!NOTE]
-> **Poznámka:**: třídy implementující rozhraní musí mít konstruktor bez parametrů pro práci s `DependencyService`.
+> Třídy implementující rozhraní musí mít konstruktor bez parametrů pro práci s `DependencyService`.
 
 <a name="iOS_Implementation" />
 
@@ -84,15 +84,12 @@ namespace DependencyServiceSample.iOS
 
 ## <a name="android-implementation"></a>Android implementace
 
-Kód Android je složitější, než je verze iOS: vyžaduje implementující třídu dědění z specifické pro Android `Java.Lang.Object` a implementovat `IOnInitListener` také rozhraní.
-
-Také poskytuje Xamarin.Forms `Forms.Context` objekt, který je instance Android aktuálního kontextu. Mnoho způsobů sady SDK pro Android, vyžadují dobrým příkladem je možnost volání `StartActivity()`.
+Kód Android je složitější, než je verze iOS: vyžaduje implementující třídu dědění z specifické pro Android `Java.Lang.Object` a implementovat `IOnInitListener` také rozhraní. Také budete potřebovat přístup k aktuální Android kontext, který je zveřejněný prostřednictvím `MainActivity.Instance` vlastnost.
 
 ```csharp
 [assembly: Dependency(typeof(TextToSpeechImplementation))]
 namespace DependencyServiceSample.Droid
 {
-
     public class TextToSpeechImplementation : Java.Lang.Object, ITextToSpeech, TextToSpeech.IOnInitListener
     {
         TextToSpeech speaker;
@@ -103,7 +100,7 @@ namespace DependencyServiceSample.Droid
             toSpeak = text;
             if (speaker == null)
             {
-                speaker = new TextToSpeech(Forms.Context, this);
+                speaker = new TextToSpeech(MainActivity.Instance, this);
             }
             else
             {

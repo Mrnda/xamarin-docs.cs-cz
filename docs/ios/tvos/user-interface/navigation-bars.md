@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 3d5b4b0d3e6e9388906efa3bff2db0ea38fa8605
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9c6bbf27d4c8227d96e372e91e1ccf2c9e841ff8
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-navigation-controllers"></a>Práce s navigační řadiče
 
@@ -20,7 +20,7 @@ _Tento článek se zabývá navrhování a práce s navigační panely uvnitř X
 
 Navigační panely mohou být přidány do horní části pohledů pro zobrazení název a volitelný navigačních tlačítek panelu. Obvykle se používají při přešel uživatel z hlavní stránky, jako jsou tabulky zobrazení, kolekce nebo nabídku dílčí zobrazení zobrazující podrobnosti vybrané položky.
 
-[ ![](navigation-bars-images/navbar01.png "Ukázka navigační panel")](navigation-bars-images/navbar01.png)
+[![](navigation-bars-images/navbar01.png "Ukázka navigační panel")](navigation-bars-images/navbar01.png#lightbox)
 
 Kromě toho k titulu (který se zobrazí v centru), navigační panely může obsahovat jeden nebo více tlačítek navigačního panelu (`UIBarButtonItem`) na levé a pravé straně panelu.
 
@@ -42,16 +42,16 @@ Nejjednodušší způsob, jak pracovat s navigační panely v aplikaci Xamarin.t
 1. V **řešení Pad**, dvakrát klikněte na `Main.storyboard` souborů a otevřete pro úpravy.
 1. Přetáhněte **navigační panel** z **sada nástrojů** na zobrazení v horní části obrazovky: 
 
-    [ ![](navigation-bars-images/navbar02.png "Navigační panel")](navigation-bars-images/navbar02.png)
+    [![](navigation-bars-images/navbar02.png "Navigační panel")](navigation-bars-images/navbar02.png#lightbox)
 1. Dvakrát klikněte na **navigační panel** vybrat volbu **navigační položka**. V **pomůcky** kartě **vlastnosti Pad**, můžete nastavit **název**: 
 
-    [ ![](navigation-bars-images/navbar03.png "Název nastavení")](navigation-bars-images/navbar03.png)
+    [![](navigation-bars-images/navbar03.png "Název nastavení")](navigation-bars-images/navbar03.png#lightbox)
 1. Dále můžete přidat jeden nebo víc **položky tlačítko panelu** na libovolném konci panelu: 
 
-    [ ![](navigation-bars-images/navbar04.png "A tlačítko položku panelu")](navigation-bars-images/navbar04.png)
+    [![](navigation-bars-images/navbar04.png "A tlačítko položku panelu")](navigation-bars-images/navbar04.png#lightbox)
 1. Nakonec navázání **položky tlačítko panelu** na akce v **události** kartě **Explorer vlastnosti**: 
 
-    [ ![](navigation-bars-images/navbar05.png "A panelu Akce položka tlačítka")](navigation-bars-images/navbar05.png)
+    [![](navigation-bars-images/navbar05.png "A panelu Akce položka tlačítka")](navigation-bars-images/navbar05.png#lightbox)
 1. Uložte provedené změny.
 
 
@@ -61,16 +61,16 @@ Nejjednodušší způsob, jak pracovat s navigační panely v aplikaci Xamarin.t
 1. V **Průzkumníku řešení**, dvakrát klikněte na `Main.storyboard` souborů a otevřete pro úpravy.
 1. Přetáhněte **navigační panel** z **sada nástrojů** na zobrazení v horní části obrazovky: 
 
-    [ ![](navigation-bars-images/navbar02-vs.png "Navigační panel")](navigation-bars-images/navbar02-vs.png)
+    [![](navigation-bars-images/navbar02-vs.png "Navigační panel")](navigation-bars-images/navbar02-vs.png#lightbox)
 1. Dvakrát klikněte na **navigační panel** vybrat volbu **navigační položka**. V **pomůcky** kartě **Explorer vlastnosti**, můžete nastavit **název**: 
 
-    [ ![](navigation-bars-images/navbar03-vs.png "Název nastavení")](navigation-bars-images/navbar03-vs.png)
+    [![](navigation-bars-images/navbar03-vs.png "Název nastavení")](navigation-bars-images/navbar03-vs.png#lightbox)
 1. Dále můžete přidat jeden nebo víc **položky tlačítko panelu** na libovolném konci panelu: 
 
-    [ ![](navigation-bars-images/navbar04-vs.png "A panelu tlačítko položky")](navigation-bars-images/navbar04-vs.png)
+    [![](navigation-bars-images/navbar04-vs.png "A panelu tlačítko položky")](navigation-bars-images/navbar04-vs.png#lightbox)
 1. Nakonec navázání **položky tlačítko panelu** na akce v **události** kartě **Explorer vlastnosti**: 
 
-    [ ![](navigation-bars-images/navbar05-vs.png "A panelu Akce položky tlačítek")](navigation-bars-images/navbar05-vs.png)
+    [![](navigation-bars-images/navbar05-vs.png "A panelu Akce položky tlačítek")](navigation-bars-images/navbar05-vs.png#lightbox)
 1. Uložte provedené změny.
 
 

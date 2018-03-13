@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 83e01bba82713b55a0a69858c2a83aa243f71588
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 70703797792a2f667a2eb20cbc45d1736e5e6b9d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="web-views"></a>Webové zobrazení
 
@@ -40,7 +40,7 @@ webView.LoadRequest(new NSUrlRequest(new NSUrl(url)));
 
 Tímto se vytvoří následující webové zobrazení:
 
-[ ![](uiwebview-images/webview.png "Účinek ScalesPagesToFit")](uiwebview-images/webview.png)
+[![](uiwebview-images/webview.png "Účinek ScalesPagesToFit")](uiwebview-images/webview.png#lightbox)
 
 Další informace o používání `UIWebView`, naleznete následující recepty:
 
@@ -68,7 +68,7 @@ Následující kód můžete použít ke spuštění `WKWebView` ve vaší aplik
 
 Tímto se vytvoří následující webové zobrazení:
 
-[ ![](uiwebview-images/wkwebview.png "Webové zobrazení na příkladu bez ScalesPagesToFit")](uiwebview-images/wkwebview.png)
+[![](uiwebview-images/wkwebview.png "Webové zobrazení na příkladu bez ScalesPagesToFit")](uiwebview-images/wkwebview.png#lightbox)
 
 Je důležité si uvědomit, že `WKWebView` je v oboru názvů WebKit, takže budete muset přidat to using – direktiva do horní části třídy.
 
@@ -98,7 +98,7 @@ PresentViewController(sfViewController, true, null);
 
 Tímto se vytvoří následující webové zobrazení:
 
-[ ![](uiwebview-images/sfsafariviewcontroller.png "Zobrazení příkladu web s SFSafariViewController")](uiwebview-images/sfsafariviewcontroller.png)
+[![](uiwebview-images/sfsafariviewcontroller.png "Zobrazení příkladu web s SFSafariViewController")](uiwebview-images/sfsafariviewcontroller.png#lightbox)
 
 ## <a name="safari"></a>Safari
 
@@ -113,7 +113,7 @@ UIApplication.SharedApplication.OpenUrl(url);
 
 Tímto se vytvoří následující webové zobrazení:
 
-[ ![](uiwebview-images/safari.png "Na webové stránce se zobrazí v prohlížeči Safari")](uiwebview-images/safari.png)
+[![](uiwebview-images/safari.png "Na webové stránce se zobrazí v prohlížeči Safari")](uiwebview-images/safari.png#lightbox)
 
 Navigace uživatelé z vaší aplikace do prohlížeče Safari obecně vždy je nutno. Většina uživatelů nebude očekávat navigační mimo vaší aplikace, takže pokud přejdete pryč z vaší aplikace, uživatelé můžou nikdy vrátit, v podstatě ukončení zapojení.
 

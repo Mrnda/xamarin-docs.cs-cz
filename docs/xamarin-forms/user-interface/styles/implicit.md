@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 0600a4ca1f26fd034679619c1427821e9c7a12b8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b96b306c882eb30aaf8c81604afb9b6a547d715b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="implicit-styles"></a>Implicitní styly
 
@@ -51,7 +51,7 @@ Následující příklad kódu ukazuje *implicitní* styl deklarované v jazyce 
 
 [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) Definuje jeden *implicitní* styl, který se použije na stránku [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) instance. `Style` Se používá k zobrazení modrý text na pozadí žluté, při nastavení také další možnosti vzhledu. `Style` Se přidá na stránku [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) bez zadání `x:Key` atribut. Proto `Style` se použije pro všechny `Entry` implicitně instance jako odpovídají [ `TargetType` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.TargetType/) vlastnost `Style` přesně. Však `Style` u není použitá `CustomEntry` instanci, která je rozčleněné `Entry`. Výsledkem je vidět na následujících snímcích obrazovky vzhled:
 
-[![](implicit-images/implicit-styles.png "Příklad implicitní styly")](implicit-images/implicit-styles-large.png "příklad implicitní styly")
+[![](implicit-images/implicit-styles.png "Příklad implicitní styly")](implicit-images/implicit-styles-large.png#lightbox "příklad implicitní styly")
 
 Kromě toho čtvrtý [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) přepsání [ `BackgroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.BackgroundColor/) a [ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.TextColor/) vlastnosti styl implicitní do různých `Color`hodnoty.
 
@@ -82,7 +82,7 @@ V tomto příkladu *implicitní* [ `Style` ](https://developer.xamarin.com/api/t
 
 Informace o vytváření stylů v aplikace [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/), najdete v části [globální styly](~/xamarin-forms/user-interface/styles/application.md).
 
-## <a name="creating-an-implicit-style-in-c35"></a>Vytváření implicitní styl C &#35;
+## <a name="creating-an-implicit-style-in-c35"></a>Vytváření implicitní styl v jazyce C&#35;
 
 [`Style`](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) instance lze přidat na stránku [ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Resources/) kolekce v jazyce C# tak, že vytvoříte novou [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)a pak přidáním `Style` instance k `ResourceDictionary`, jak je znázorněno v Následující příklad kódu:
 

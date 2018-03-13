@@ -7,12 +7,12 @@ ms.assetid: 05B34788-F2D2-4347-B66B-40AFD7B1D167
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: ccd55d4d7f1aea55110e109bed1fbd4ebc90b93f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 02/28/2018
+ms.openlocfilehash: 335e63ce5a36cbd0172744a35c82920853b82e5c
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="activity-lifecycle"></a>Životní cyklus aktivity
 
@@ -44,7 +44,7 @@ Tato část také obsahuje [návod](~/android/app-fundamentals/activity-lifecycl
 
 Operační systém Android řeší aktivity podle jejich stavu. To pomáhá identifikovat aktivity, které se už používají, což operačního systému a uvolnit prostředky paměti a Android. Následující diagram znázorňuje stavy, které aktivitu můžete projít během celé jeho životnosti:
 
-[ ![Diagram stavu aktivity](images/image1-sml.png)](images/image1.png)
+[![Diagram stavu aktivity](images/image1-sml.png)](images/image1.png#lightbox)
 
 Tyto stavy možné ho rozdělit do 4 hlavní skupiny takto:
 
@@ -69,7 +69,7 @@ Jsme to později zaměříme [Správa stavu v průběhu cyklu](~/android/app-fun
 
 Sadu Android SDK a rozšíření, rozhraní Xamarin.Android poskytnout efektivní model pro správu stavu aktivity v rámci aplikace. Stav aktivity je změna, aktivity je upozornění podle operačního systému, který volá metody konkrétní aktivity. Následující diagram znázorňuje tyto metody ve vztahu k životního cyklu aktivity:
 
-[ ![Vývojový diagram životního cyklu aktivity](images/image2-sml.png)](images/image2.png)
+[![Vývojový diagram životního cyklu aktivity](images/image2-sml.png)](images/image2.png#lightbox)
 
 Jako vývojář může zpracovávat změny stavu přepsáním tyto metody uvnitř aktivity. Je důležité je však potřeba poznamenat, že všechny metody životního cyklu, se nazývají ve vlákně UI a bude blokovat operačního systému provádět další část práce uživatelského rozhraní, jako je aktuální aktivita skrytí zobrazení nová aktivita atd. Kód v těchto metod by měl být jako takový, jako je možné, aby aplikace myslíte, že dobře fungují jako stručný. Všechny dlouhodobé úlohy by měl být provedeny u vlákna na pozadí.
 
@@ -205,7 +205,7 @@ Další metodou životního cyklu volat po `OnRestart` bude `OnStart`.
 
 Mnoho zařízení se systémem Android máte dvě odlišné tlačítka: tlačítko "Zpět" a "Domů" tlačítko. Příklady najdete v následující snímek obrazovky Android 4.0.3:
 
-[ ![Domovské tlačítek Zpět a](images/image4-sml.png)](images/image4.png)
+[![Domovské tlačítek Zpět a](images/image4-sml.png)](images/image4.png#lightbox)
 
 I když se objeví do mají stejný účinek uvedení aplikace v pozadí je jemně rozdíl mezi dvěma tlačítky. Když uživatel klikne na tlačítko Zpět, budou informace o tom, Android, se provádějí s aktivity. Android zničí aktivity. Naopak když uživatel klikne na tlačítko Domů aktivity je jenom umístí do pozadí &ndash; Android nebude kill aktivity.
 
@@ -225,7 +225,6 @@ To uložený stav se označuje jako stav instance. Android poskytuje tři možno
 
 Tento průvodce popisuje první dvě možnosti.
 
- <a name="Bundle_State" />
 
 
 ### <a name="bundle-state"></a>Stav sady
@@ -241,7 +240,7 @@ Aktivita poskytuje metody, které pomáhají při ukládání a načítání sta
 
 Následující diagram znázorňuje, jak se používají tyto metody:
 
-[ ![Vývojový diagram stavy sady](images/image3-sml.png)](images/image3.png)
+[![Vývojový diagram stavy sady](images/image3-sml.png)](images/image3.png#lightbox)
 
 #### <a name="onsaveinstancestate"></a>OnSaveInstanceState
 
@@ -276,7 +275,7 @@ protected override void OnCreate (Bundle bundle)
 
 Výše uvedený kód zvýší celé číslo s názvem `c` při tlačítko s názvem `incrementCounter` po kliknutí na výsledek v zobrazení `TextView` s názvem `output`. Když se stane změna konfigurace – například když zařízení otočen – výše uvedený kód by dojít ke ztrátě hodnotu `c` protože `bundle` by `null`, jak je znázorněno na obrázku níže:
 
-[ ![Zobrazení neukazuje předchozí hodnotu](images/07-sml.png)](images/07.png)
+[![Zobrazení neukazuje předchozí hodnotu](images/07-sml.png)](images/07.png#lightbox)
 
 Chcete-li zachovat hodnotu `c` v tomto příkladu můžete přepsat aktivity `OnSaveInstanceState`, ukládání hodnota v sadě, jak je uvedeno níže:
 
@@ -295,10 +294,9 @@ c = bundle.GetInt ("counter", -1);
 ```
 
 > [!NOTE]
-> **Poznámka:** je důležité vždy volání základní implementace `OnSaveInstanceState` tak, aby stav zobrazení hierarchie lze uložit.
+> Je důležité vždy volání základní implementace `OnSaveInstanceState` tak, aby stav zobrazení hierarchie lze uložit.
 
 
-<a name="View_State" />
 
 ##### <a name="view-state"></a>Stav zobrazení
 
@@ -312,7 +310,7 @@ Přepsání `OnSaveInstanceState` je vhodný mechanismus pro ukládání dat př
 
 Vzhledem k tomu `EditText` má ovládací prvek `id` přiřazen, když uživatel zadá některá data a otočí zařízení, je stále zobrazí data, jak je uvedeno níže:
 
-[ ![Uchování dat v režimu na šířku](images/08-sml.png)](images/08.png)
+[![Uchování dat v režimu na šířku](images/08-sml.png)](images/08.png#lightbox)
 
 #### <a name="onrestoreinstancestate"></a>OnRestoreInstanceState
 
@@ -334,8 +332,6 @@ Tato metoda existuje zajistit určitou volnost kolem, pokud se má obnovit stav.
 Příklad ukládání stavu pomocí `Bundle`, naleznete [návod - stavu ukládání činnosti](saving-state.md).
 
 
-<a name="Bundle_Limitations" />
-
 #### <a name="bundle-limitations"></a>Sadu omezení
 
 I když `OnSaveInstanceState` umožňuje snadno přechodný data uložit, má určitá omezení:
@@ -348,7 +344,6 @@ I když `OnSaveInstanceState` umožňuje snadno přechodný data uložit, má ur
 
 Stav sady je užitečná pro jednoduché data, která nepoužívá velikost paměti, zatímco *data bez konfigurace instance* je užitečné pro složitější data nebo data, která je nákladná, načíst, například z volání webové služby nebo složitá databázový dotaz. Data instance bez konfigurace získá uložena v objektu, podle potřeby. Zavádí další části `OnRetainNonConfigurationInstance` kvůli zachování komplexnější datové typy prostřednictvím změny konfigurace.
 
-<a name="Persisting_Complex_Data" />
 
 ### <a name="persisting-complex-data"></a>Zachování komplexní Data
 
@@ -407,7 +402,7 @@ public class NonConfigInstanceActivity : ListActivity
 
 Tento kód načte výsledky z webu formátu JSON, analyzuje je a potom zobrazí výsledky v seznamu, jak je znázorněno na následujícím snímku obrazovky:
 
-[ ![Výsledky zobrazené na obrazovce](images/06-sml.png)](images/06.png)
+[![Výsledky zobrazené na obrazovce](images/06-sml.png)](images/06.png#lightbox)
 
 Když dojde ke změně konfigurace – například když zařízení otočen - kód opakuje proces. Znovu použít původně načtený výsledky a není způsobit, že volání zbytečně, redundantní sítě, můžeme použít `OnRetainNonconfigurationInstance` uložení výsledků, jak je uvedeno níže:
 

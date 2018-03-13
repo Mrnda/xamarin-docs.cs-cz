@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 332ce13b08f3d021553be5747b21b05d62aba6ea
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 21f8c6738c00d5738c02962ee95b415e3855d740
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="transactions-and-verification"></a>Transakce a ověření
 
@@ -148,7 +148,7 @@ Protože tyto produkty se dodávají vzdáleně, je také možné přidat více 
    
    
    
- [ ![](transactions-and-verification-images/image38.png "Získávání ceny produktů doručit serveru")](transactions-and-verification-images/image38.png)   
+ [![](transactions-and-verification-images/image38.png "Získávání ceny produktů doručit serveru")](transactions-and-verification-images/image38.png#lightbox)   
    
    
    
@@ -170,7 +170,7 @@ Protože tyto produkty se dodávají vzdáleně, je také možné přidat více 
 
 Vzhledem k tomu, že vzdálený server vyžaduje některé způsob ověření, zda je požadavek na obsah platný (ie. byla vyplacena pro), se předávají informace přijetí podél pro ověřování. Vzdálený server předává dat na iTunes pro ověření a v případě úspěšného zahrnuje obsah produktu v odpovědi na aplikaci.   
    
- [ ![](transactions-and-verification-images/image39.png "Zakoupení doručit serveru produkty")](transactions-and-verification-images/image39.png)   
+ [![](transactions-and-verification-images/image39.png "Zakoupení doručit serveru produkty")](transactions-and-verification-images/image39.png#lightbox)   
    
  1. Přidá aplikaci `SKPayment` do fronty. V případě potřeby uživatel se zobrazí výzva k zadání jejich Apple ID a výzva k potvrzení platbu.   
    

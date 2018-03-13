@@ -3,14 +3,15 @@ title: "Shrnutí kapitoly 19. Zobrazení kolekce"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 0AEC3A5C-586E-4D0F-9895-67E99A053A79
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 37afa3a54fd20745a65312fb5a24d958c8ec405f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
-ms.translationtype: HT
+ms.openlocfilehash: 73b3ec3e60a8fca5c48f515eab2cbb8359618dbb
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-19-collection-views"></a>Shrnutí kapitoly 19. Zobrazení kolekce
 
@@ -97,7 +98,7 @@ Jak každou položku se zobrazí `ListView`, malé vizuálním stromu je vytvoř
 
 V jazyce XAML je možné nastavit [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) k `DataTemplate` a pak definovat vlastní vizuálním stromu jako [ `View` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ViewCell.View/) vlastnost `ViewCell`. (`View` je vlastnost obsahu `ViewCell` proto `ViewCell.View` nejsou požadované značky.) [ **CustomNamedColorList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/CustomNamedColorList) příklad znázorňuje tento postup:
 
-[![Trojitá snímek obrazovky seznam pojmenovaná barva vlastní](images/ch19fg11-small.png "seznam pojmenovaná barva vlastní")](images/ch19fg11-large.png "seznam pojmenovaná barva vlastní")
+[![Trojitá snímek obrazovky seznam pojmenovaná barva vlastní](images/ch19fg11-small.png "seznam pojmenovaná barva vlastní")](images/ch19fg11-large.png#lightbox "seznam pojmenovaná barva vlastní")
 
 Získávání nastavení velikosti pro všechny platformy může být složité. [ `RowHeight` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.RowHeight/) Vlastnost je užitečná, ale v některých případech budete chtít použít [ `HasUnevenRows` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.HasUnevenRows/) vlastnosti, která sice méně efektivní, ale vynutí `ListView` na velikost řádky. Pro iOS a Android musíte použít jednu z těchto dvou vlastností získat nastavení velikosti řádku správné.
 
@@ -127,7 +128,7 @@ K prozkoumání, [ **SchoolOfFineArts** ](https://github.com/xamarin/xamarin-for
 
 [ **StudentList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/StudentList) program používá `ImageCell` zobrazíte studenty a jejich obrázků v `ListView`:
 
-[![Trojitá snímek obrazovky seznamu Student](images/ch19fg18-small.png "Student seznamu")](images/ch19fg18-large.png "Student seznamu")
+[![Trojitá snímek obrazovky seznamu Student](images/ch19fg18-small.png "Student seznamu")](images/ch19fg18-large.png#lightbox "Student seznamu")
 
 [ **ListViewHeader** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/ListViewHeader) ukázka přidá [ `Header` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.Header/) vlastnost ale zobrazuje pouze v systému Android.
 

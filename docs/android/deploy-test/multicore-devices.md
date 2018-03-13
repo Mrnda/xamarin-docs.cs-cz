@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/05/2018
-ms.openlocfilehash: 2a7b2a856d51447d6b7ab2032ebf7445d3f06ecb
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ac525805fce99f44ea1efb132fb99f6d3a01f2f3
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="multi-core-devices--xamarinandroid"></a>Zařízení s více jádry & Xamarin.Android
 
 _Android můžete spustit na několik architektury jiného počítače. Tento dokument popisuje různé architektury procesoru, které může být použit pro aplikace pro Xamarin.Android. Tento dokument taky vysvětluje, jak Android aplikace pro podporu různé architektury procesoru spojených. Bude potřeba zavést aplikace binární rozhraní (ABI) a bude poskytnuta pokyny týkající se které bis používat v aplikaci Xamarin.Android._
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Přehled
 
@@ -47,16 +46,14 @@ Binární rozhraní aplikace se bude zabývat rozpis naleznete níže, ale je d�
 Z důvodu chyby v Android 4.0.0, 4.0.1, 4.0.2 a 4.0.3, bude možné nativní knihovny převzata z `armeabi` adresář, i když je `armeabi-v7a` adresář existuje a zařízení je `armeabi-v7a` zařízení.
 
 > [!NOTE]
-> **Poznámka:**: Xamarin.Android zajistí, že `.so` jsou přidány do APK ve správném pořadí. Tato chyba by neměl být problém pro uživatele Xamarin.Android.
+> Xamarin.Android zajistí, že `.so` jsou přidány do APK ve správném pořadí. Tato chyba by neměl být problém pro uživatele Xamarin.Android.
 
-<a name="ABI_Descriptions" />
 
 ### <a name="abi-descriptions"></a>Popisy ABI
 
 Každý ABI nepodporuje Android je identifikována jedinečný název.
 
 
-<a name="armeabi" />
 
 #### <a name="armeabi"></a>armeabi
 
@@ -65,7 +62,6 @@ Toto je název EABI pro založené na ARM procesorů, které podporují alespoň
 **Poznámka:**: pro Xamarin.Android `armeabi` kód není zaručeno bezpečné používání vláken a neměl by se používat na více procesorů `armeabi-v7a`zařízení (viz dále). Pomocí `aremabi` kódu na jedním jádrem `armeabi-v7a` zařízení je bezpečné.
 
 
-<a name="armeabi-v7a" />
 
 #### <a name="armeabi-v7a"></a>armeabi-v7a
 
@@ -74,7 +70,6 @@ Toto je jiná sada instrukcí procesory založené na ARM, který rozšiřuje `a
 **Poznámka:** `armeabi-v7a` zkompilovaný kód se nespustí na ARMv5 zařízení.
 
 
-<a name="arm64-v8a" />
 
 #### <a name="arm64-v8a"></a>arm64-v8a
 
@@ -82,7 +77,6 @@ Je to sada instrukcí 64-bit, která je založená na architektuře procesoru AR
 Xamarin.Android 5.1 poskytuje experimentální podporu pro tato architektura (Další informace najdete v tématu [povolenými experimentálními funkcemi](https://developer.xamarin.com/releases/android/xamarin.android_5/xamarin.android_5.1/#Experimental_Features)).
 
 
-<a name="x86" />
 
 #### <a name="x86"></a>x86
 
@@ -93,10 +87,9 @@ Toto je název ABI pro procesorů, které podporují pokyn nastavit běžně poj
 -  všechny variant SSE4.
 
 
-**Poznámka:** Google TV, i když je spuštěna na x86, není podporována pro Android NDK nebo Xamarin.Android. <a name="mips" />
+**Poznámka:** Google TV, i když je spuštěna na x86, není podporována pro Android NDK nebo
 
 
-<a name="x86_64" />
 
 #### <a name="x8664"></a>x86_64
 
@@ -110,13 +103,12 @@ Toto je název ABI pro na základě MIPS procesorů, které podporují alespoň 
 **Poznámka:** MIPS zařízení aktuálně nepodporuje Xamarin.Android, ale bude v budoucí verzi.
 
 
-<a name="APK_File_Format" />
 
 #### <a name="apk-file-format"></a>Soubor formátu APK
 
 Balíček aplikace Android je formát souboru, který obsahuje všechny kód, prostředků, prostředků a certifikáty potřebné pro aplikace pro Android. Je `.zip` , ale používá soubor `.apk` příponou názvu souboru. Po rozbalení obsahu `.apk` vytvořené Xamarin.Android si můžete prohlédnout ve na následující snímek obrazovky:
 
-[ ![Obsah .apk](multicore-devices-images/00.png)](multicore-devices-images/00.png)
+[![Obsah .apk](multicore-devices-images/00.png)](multicore-devices-images/00.png#lightbox)
 
 Rychlé popis obsahu `.apk` souboru:
 
@@ -133,10 +125,9 @@ Rychlé popis obsahu `.apk` souboru:
 -   **res** &ndash; tento adresář obsahuje prostředky, které nebyly zkompilovat do `resources.arsc` .
 
 > [!NOTE]
-> **Poznámka:**: soubor `libmonodroid.so` je nativní knihovny požadovaných všech aplikací Xamarin.Android.
+> Soubor `libmonodroid.so` je nativní knihovny požadovaných všech aplikací Xamarin.Android.
 
 
-<a name="Android_Device_ABI_Support" />
 
 #### <a name="android-device-abi-support"></a>Podpora zařízení se systémem Android ABI
 
@@ -149,7 +140,6 @@ Každé zařízení se systémem Android v až dvě bis podporuje provádění n
 
 Například typický zařízení ARMv5TE pouze mít primární ABI z `armeabi`, zatímco zařízení s ARMv7 by zadejte primární ABI z `armeabi-v7a` a sekundární ABI z `armeabi`. Typické x86 zařízení by určit pouze primární ABI z `x86`.
 
-<a name="Android_Native_Library_Installation" />
 
 ### <a name="android-native-library-installation"></a>Knihovna pro Android nativní instalace
 
@@ -249,7 +239,6 @@ $APP/lib/libone.so # from armeabi
 $APP/lib/libtwo.so # from armeabi-v7a
 ```
 
-<a name="Xamarin.Android_and_ABIs" />
 
 ### <a name="xamarinandroid-and-abis"></a>Xamarin.Android a bis 
 
@@ -270,7 +259,6 @@ Všimněte si, že jsou moduly runtime 64-bit *není* nutná k provozování va�
 Xamarin.Android aktuálně neposkytuje podporu pro `mips`.
 
 
-<a name="Declaring_Supported_ABIs" />
 
 ### <a name="declaring-supported-abis"></a>Deklarování podporované na ABI
 
@@ -281,7 +269,7 @@ Ve výchozím nastavení, použije výchozí Xamarin.Android `armeabi-v7a` pro *
 
 V sadě Visual Studio pro Mac, může být vybraný podporované architektury na **Android sestavení** stránka **možnosti projektu**v části **Upřesnit** kartě, jak je znázorněno v následujícím snímek obrazovky:
 
-[![Podporované bis Android sestavení](multicore-devices-images/xs-abi-selections-sml.png)](multicore-devices-images/xs-abi-selections.png)
+[![Podporované bis Android sestavení](multicore-devices-images/xs-abi-selections-sml.png)](multicore-devices-images/xs-abi-selections.png#lightbox)
 
 Když může být nutné deklarovat další podporu ABI jako např. kdy existují některých situacích:
 

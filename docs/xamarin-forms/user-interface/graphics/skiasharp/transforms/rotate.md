@@ -4,14 +4,15 @@ description: "Prozkoumat efekty a animací možné pomocí SkiaSharp rotační t
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: CBB3CD72-4377-4EA3-A768-0C4228229FC2
 author: charlespetzold
 ms.author: chape
 ms.date: 03/23/2017
-ms.openlocfilehash: c87f9a561ac2f7a8c3da1c1e4ab839431073fcb9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 146093e15651316e84947e2bd81eeee3bf55cedb
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="the-rotate-transform"></a>Otočit transformace
 
@@ -57,7 +58,7 @@ using (SKPaint textPaint = new SKPaint
 
 Protože otočení je zaměřená na levém horním rohu plátna pro většinu úhly nastaven v tomto programu Tento text otočen z obrazovky:
 
-[![](rotate-images/basicrotate-small.png "Trojitá snímek obrazovky stránky základní otočit")](rotate-images/basicrotate-large.png "Trojitá snímek obrazovky otočit základní stránky")
+[![](rotate-images/basicrotate-small.png "Trojitá snímek obrazovky stránky základní otočit")](rotate-images/basicrotate-large.png#lightbox "Trojitá snímek obrazovky otočit základní stránky")
 
 Velmi často budete chtít otočit něco zaměřená na bod zadaný pivot používat tyto verze [ `RotateDegrees` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.RotateDegrees/p/System.Single/System.Single/System.Single/) a [ `RotateRadians` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.RotateRadians/p/System.Single/System.Single/System.Single/) metody:
 
@@ -85,7 +86,7 @@ using (SKPaint textPaint = new SKPaint
 
 Nyní text otočí kolem bodu k umístění text, který je vodorovném centru směrného plánu text:
 
-[![](rotate-images/centeredrotate-small.png "Trojitá snímek obrazovky stránky zarovnaný na střed otočit")](rotate-images/centeredrotate-large.png "Trojitá snímek obrazovky stránky zarovnaný na střed otočit")
+[![](rotate-images/centeredrotate-small.png "Trojitá snímek obrazovky stránky zarovnaný na střed otočit")](rotate-images/centeredrotate-large.png#lightbox "Trojitá snímek obrazovky stránky zarovnaný na střed otočit")
 
 Stejně jako u zarovnaný verzi `Scale` metoda, na střed verzi `RotateDegrees` volání je zástupce:
 
@@ -139,7 +140,7 @@ Koncepčně dva soubory použije v pořadí, než jak se zobrazují v kódu. `Dr
 
 Obvykle tam existuje několik způsobů, jak kombinovat otočení a překlad. **Text otočen** stránky vytvoří následující zobrazení:
 
-[![](rotate-images/rotatedtext-small.png "Trojitá snímek obrazovky stránky Text otočen")](rotate-images/rotatedtext-large.png "Trojitá snímek obrazovky stránky Text otočen")
+[![](rotate-images/rotatedtext-small.png "Trojitá snímek obrazovky stránky Text otočen")](rotate-images/rotatedtext-large.png#lightbox "Trojitá snímek obrazovky stránky Text otočen")
 
 Tady je `PaintSurface` obslužnou rutinu [ `RotatedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/RotatedTextPage.cs) třídy:
 
@@ -363,7 +364,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Hodiny je určitě funkční, i když jsou do rukou místo hrubých:
 
-[![](rotate-images/uglyanalogclock-small.png "Trojitá snímek obrazovky stránky Ugly analogovým hodiny textu")](rotate-images/uglyanalogclock-large.png "Triple screenshot of the Ugly Analog page")
+[![](rotate-images/uglyanalogclock-small.png "Trojitá snímek obrazovky stránky Ugly analogovým hodiny textu")](rotate-images/uglyanalogclock-large.png#lightbox "Triple screenshot of the Ugly Analog page")
 
 
 ## <a name="related-links"></a>Související odkazy

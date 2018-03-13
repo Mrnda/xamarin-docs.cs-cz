@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: de37fd1e014938edcacec187ceeed572e573b379
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8376ce2ccff6732fa0c89d6030b9af36d29c5085
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="search-with-nsuseractivity"></a>Hledání s NSUserActivity
 
@@ -20,7 +20,7 @@ Umožňuje vytvořit aktivity v konkrétní části aplikace, který je pak mož
 
 Pro iOS 9, nové `NSUserActivity` můžete (i) a indexovat pomocí vyhledávání Spotlight a Safari. Označením `NSUserActivity` jako prohledávatelný a přidání indexovanou metadata, může být uvedený aktivity ve výsledcích hledání na zařízení s iOS.
 
-[ ![](nsuseractivity-images/apphistory01.png "Přehled aplikace historie")](nsuseractivity-images/apphistory01.png)
+[![](nsuseractivity-images/apphistory01.png "Přehled aplikace historie")](nsuseractivity-images/apphistory01.png#lightbox)
 
 Pokud uživatel vybere výsledek vyhledávání, který patří k aktivitě z vaší aplikace, spustí se aplikace a aktivity popsaného `NSUserActivity` bude restartován a uživateli.
 
@@ -58,7 +58,7 @@ Identifikátor typu aktivity se používá při vytváření `NSUserActivity` in
 
 Chcete-li vytvořit požadovaný typ identifikátory aktivit pro podporu toto chování, upravte **Info.plist** souboru a přepněte do **zdroj** zobrazení. Přidat `NSUserActivityTypes` klíče a vytváření identifikátorů v následujícím formátu:
 
-[ ![](nsuseractivity-images/type01.png "Klíč NSUserActivityTypes a požadované identifikátory v editoru plist.")](nsuseractivity-images/type01.png)
+[![](nsuseractivity-images/type01.png "Klíč NSUserActivityTypes a požadované identifikátory v editoru plist.")](nsuseractivity-images/type01.png#lightbox)
 
 V předchozím příkladu jsme vytvořili jeden nový identifikátor aktivity typu aktivity hledání (`com.xamarin.platform`). Při vytváření vlastních aplikací, nahraďte obsah `NSUserActivityTypes` pole s typem identifikátory aktivit, které jsou specifické pro aktivity aplikace podporuje.
 
@@ -87,7 +87,7 @@ activity.BecomeCurrent();
 
 Nyní může přidat další podrobnosti o nastavením `ContentAttributeSet` vlastnost naše `NSUserActivity` následujícím způsobem:
 
-[ ![](nsuseractivity-images/apphistory02.png "Přehled přidání podrobnosti vyhledávání")](nsuseractivity-images/apphistory02.png)
+[![](nsuseractivity-images/apphistory02.png "Přehled přidání podrobnosti vyhledávání")](nsuseractivity-images/apphistory02.png#lightbox)
 
 Pomocí `ContentAttributeSet` můžete vytvořit bohaté vyhledávání výsledky, které přesvědčit koncového uživatele s nimi pracovat.
 
@@ -114,7 +114,7 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 
 Všimněte si, že se jedná o stejnou přepsání metody používá reagovat na požadavky aby Handoff. Nyní když uživatel klikne na odkaz z vaší aplikace ve výsledcích vyhledávání Spotlight, vaší aplikace bude začlenění do popředí (nebo spustit, pokud ještě není spuštěná) a obsah, navigace nebo funkce reprezentována tento odkaz se zobrazí:
 
-[ ![](nsuseractivity-images/apphistory03.png "Obnovení předchozího stavu z hledání")](nsuseractivity-images/apphistory03.png)
+[![](nsuseractivity-images/apphistory03.png "Obnovení předchozího stavu z hledání")](nsuseractivity-images/apphistory03.png#lightbox)
 
 <a name="indexing" />
 

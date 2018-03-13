@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: d9e0bb41360185ffbe476ec5eed3a5c8c2ebf8f9
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 46d5527a33b82a795029f62900e782d644671f0d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="sign-with-developer-id"></a>Přihlášení s ID vývojáře
 
@@ -24,24 +24,24 @@ Další informace o [vývojáře ID a těchto pravidel](https://developer.apple.
 
 K vytvoření aplikace pro nasazení přímo na uživatele (nikoli prostřednictvím Mac App Storu) **podepisování nastavení** používat **vývojáře ID**. Ujistěte se, chcete-li upravit **verze** konfigurace.
 
- [ ![](signing-images/config02.png "Možnosti podepisování Mac")](signing-images/config02.png)
+ [![](signing-images/config02.png "Možnosti podepisování Mac")](signing-images/config02.png#lightbox)
 
 
 ## <a name="build"></a>Sestavení
 
 Před vytvořením, zkontrolujte na vybraný správnou konfiguraci a vyberte k vytvoření balíčku instalace v **sestavení Mac** nastavení:
 
-[ ![](signing-images/config03.png "Možnosti sestavení")](signing-images/config03.png)
+[![](signing-images/config03.png "Možnosti sestavení")](signing-images/config03.png#lightbox)
 
 Při vytváření aplikace, vývojář se vyzve k používání obou certifikátů:
 
- [ ![](signing-images/image57.png "Umožňuje přístup do řetězce klíčů")](signing-images/image57.png)
+ [![](signing-images/image57.png "Umožňuje přístup do řetězce klíčů")](signing-images/image57.png#lightbox)
 
- [ ![](signing-images/image58.png "Umožňuje přístup do řetězce klíčů")](signing-images/image58.png)
+ [![](signing-images/image58.png "Umožňuje přístup do řetězce klíčů")](signing-images/image58.png#lightbox)
 
 Po vytvoření aplikace, může vývojář klikněte pravým tlačítkem na projekt a zvolte **otevřít složku obsahující** najít soubor balíčku (v `bin/Release` directory). Tento soubor balíčku obsahuje instalační program pro aplikaci, tak můžete distribuována pro všechny uživatele systému macOS instalace.
 
- [ ![](signing-images/image59.png "Vyberte balíček aplikace v hledání")](signing-images/image59.png)
+ [![](signing-images/image59.png "Vyberte balíček aplikace v hledání")](signing-images/image59.png#lightbox)
 
 ## <a name="related-links"></a>Související odkazy
 

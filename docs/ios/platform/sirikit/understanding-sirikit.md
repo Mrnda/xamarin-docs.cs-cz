@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 36d8e27ce06e38e1cf652558bfb5a83f572e4403
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 202df615f1b35504f1fe5c9fd64c9c4b4db77a2d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="understanding-sirikit-concepts"></a>Principy SiriKit koncepty
 
@@ -57,7 +57,7 @@ Siri a mapy spravovat všechny interakce uživatele a zobrazit výsledky pomocí
 
 Tato část nabídne přehled o tom, jak SiriKit umožňuje uživatelům interakci s využitím Siri. Z důvodu v tomto příkladu budeme používat falešných MonkeyChat aplikace:
 
-[ ![](understanding-sirikit-images/monkeychat01.png "Ikona MonkeyChat")](understanding-sirikit-images/monkeychat01.png)
+[![](understanding-sirikit-images/monkeychat01.png "Ikona MonkeyChat")](understanding-sirikit-images/monkeychat01.png#lightbox)
 
 MonkeyChat udržuje vlastní kontaktní adresáře uživatele přátel, každý přidružený název obrazovky (např. Bobo třeba) a umožňuje uživatelům poslat textové konverzace každý friend podle názvu jejich obrazovky.
 
@@ -179,7 +179,7 @@ Bez ohledu na to, jak požadavku nebo jak Siri odpoví na žádost Siri zpracov�
 
 Když uživatel odešle žádost ústní siri, jsou tyto kroky, které bude postupovat podle Siri:
 
-[ ![](understanding-sirikit-images/monkeychat02.png "Kroky, které bude postupovat podle Siri")](understanding-sirikit-images/monkeychat02.png)
+[![](understanding-sirikit-images/monkeychat02.png "Kroky, které bude postupovat podle Siri")](understanding-sirikit-images/monkeychat02.png#lightbox)
 
 1. Nejprve Siri trvá zvuk uživatele **řeči** a převede jej na text.
 2. V dalším kroku text bude převeden do **záměr**, strukturovaná reprezentace žádost uživatele.
@@ -188,7 +188,7 @@ Když uživatel odešle žádost ústní siri, jsou tyto kroky, které bude post
 
 Existují tři hlavní způsoby, které aplikace lze použít při uživatele konverzace s Siri:
 
-[ ![](understanding-sirikit-images/monkeychat03.png "Tři hlavní způsoby, že aplikaci lze použít při uživatelé konverzace s Siri")](understanding-sirikit-images/monkeychat03.png)
+[![](understanding-sirikit-images/monkeychat03.png "Tři hlavní způsoby, že aplikaci lze použít při uživatelé konverzace s Siri")](understanding-sirikit-images/monkeychat03.png#lightbox)
 
 1. **Slovník** – to je, jak aplikaci informuje Siri slova, je nutné vědět, abyste mohli pracovat s ním.
 2. **Aplikace logiky** – jedná se o akce a odpovědi, které bude trvat aplikace na základě dané tříd Intent.
@@ -219,7 +219,7 @@ Výše uvedené informace, zkontrolujte, jak by následující konverzace komuni
 
 První role, která přebírá aplikace konverzace je pomoct Siri pochopit řeči uživatele:
 
-[ ![](understanding-sirikit-images/monkeychat04.png "Pomáhá pochopit řeči uživatelé Siri")](understanding-sirikit-images/monkeychat04.png)
+[![](understanding-sirikit-images/monkeychat04.png "Pomáhá pochopit řeči uživatelé Siri")](understanding-sirikit-images/monkeychat04.png#lightbox)
 
 Siri nemá název "Bobo" ve své databázi, ale aplikace nepodporuje a s Siri přes jeho termínů sdílí tyto informace. Aplikace také pomáhá rozpoznat, že je Bobo příjemce, protože není zadán k Siri jako Siri *kontaktujte*.
 
@@ -227,7 +227,7 @@ Siri ví, že více je nutný k odeslání zprávy než právě příjemce, tak 
 
 V uvedeném příkladu uživatel reagoval, *"Pošlete prosím další banánů"*, který bude Siri sady do strukturovaných **záměr**:
 
-[ ![](understanding-sirikit-images/monkeychat05.png "Siri bude do strukturovaných záměr sady odpověď uživatele")](understanding-sirikit-images/monkeychat05.png)
+[![](understanding-sirikit-images/monkeychat05.png "Siri bude do strukturovaných záměr sady odpověď uživatele")](understanding-sirikit-images/monkeychat05.png#lightbox)
 
 Strukturované záměr bude obsahovat tyto informace:
 
@@ -248,7 +248,7 @@ Siri automaticky sestavit odpovídající `NSUserActivity` spusťte aplikaci a v
 
 Po zpracování záměr a vrátí odpověď Siri aplikace má ji potom zobrazí výsledky uživateli (ústně i vizuálně):
 
-[ ![](understanding-sirikit-images/monkeychat06.png "Výsledky se uživateli zobrazí ústně i vizuálně")](understanding-sirikit-images/monkeychat06.png)
+[![](understanding-sirikit-images/monkeychat06.png "Výsledky se uživateli zobrazí ústně i vizuálně")](understanding-sirikit-images/monkeychat06.png#lightbox)
 
 Siri má několik předdefinovaných odezvy uživatelského rozhraní pro každé z domén, které jsou k dispozici pro aplikaci. Ale vzhledem k tomu, že MonkeyChat poskytl volitelné rozšíření záměr uživatelského rozhraní, použije se na výsledky konverzace pro uživatele ve výše uvedeném příkladu.
 
@@ -256,7 +256,7 @@ Siri má několik předdefinovaných odezvy uživatelského rozhraní pro každ�
 
 Existují tři hlavní úkoly, které rozšíření aplikace bude potřeba udělat při plánování práce s záměry:
 
-[ ![](understanding-sirikit-images/monkeychat07.png "Záměrné životního cyklu")](understanding-sirikit-images/monkeychat07.png)
+[![](understanding-sirikit-images/monkeychat07.png "Záměrné životního cyklu")](understanding-sirikit-images/monkeychat07.png#lightbox)
 
 1. Aplikace musí **vyřešit** každý parametr na události. Aplikace v důsledku toho bude volat vyřešte několikrát (jednou za každý parametr) a někdy víckrát na stejný parametr dokud aplikaci a uživatele dohodnou na co je požadováno.
 2. Aplikace musí **potvrdit** , můžete zpracovat požadovaný záměr a řekněte Siri o očekávaný výsledek.
@@ -329,7 +329,7 @@ Je také rozhraní API k poskytování slova a slovní spojení Siri, které pom
 
 Rozšíření tříd Intent je zodpovědná za zpracování hlavní interakce mezi aplikací a Siri následujícím způsobem:
 
-[ ![](understanding-sirikit-images/intents01.png "Rozšíření tříd Intent")](understanding-sirikit-images/intents01.png)
+[![](understanding-sirikit-images/intents01.png "Rozšíření tříd Intent")](understanding-sirikit-images/intents01.png#lightbox)
 
 Rozšíření záměr může podporovat jeden nebo více tříd Intent, je maximálně vývojáře k rozhodování o tom, jak si přejí implementovat SiriKit v aplikaci. Vývojář může také přidat samostatné záměr rozšíření pro každý záměr museli zpracovávat.  Ale nutné dodat, Apple požadavky, že vývojář omezit počet záměr rozšíření tak, aby Siri nemá otevřete proti aplikace, které vyžadují další paměť a čas pro zpracování více procesů.
 
@@ -355,7 +355,7 @@ Jedním z běžných činností, které budou uživatelé dělat je "verbify" n�
 
 Rozšíření uživatelského rozhraní záměry uvede možnost převést aplikace uživatelského rozhraní a značka do prostředí Siri a aby uživatele působí připojený k aplikaci. S touto příponou aplikace můžete zahrnout značky, jakož i visual a dalších informací do zápis.
 
-[ ![](understanding-sirikit-images/intents02.png "Příklad výstupu rozšíření tříd Intent uživatelského rozhraní")](understanding-sirikit-images/intents02.png)
+[![](understanding-sirikit-images/intents02.png "Příklad výstupu rozšíření tříd Intent uživatelského rozhraní")](understanding-sirikit-images/intents02.png#lightbox)
 
 Vždy vrátí uživatelského rozhraní rozšíření tříd Intent `UIViewController` a aplikace můžete přidat nic ho líbí uvnitř řadiče zobrazení jako je například zobrazující Další informace, které překročí počáteční odpovědi. Rozhraní záměry můžete také aktualizovat uživatele stavem dlouhotrvající události, jako je například jak dlouho bude trvat pravé, sdílení car k dosažení jejich umístění.
 

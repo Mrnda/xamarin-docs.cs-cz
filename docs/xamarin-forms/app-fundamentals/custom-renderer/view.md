@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: d5f9f86447886e2cea46a6317d05506cdbed90bb
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 30ee40272b5f7a6f5863dccf4dcae7431f6f536f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="implementing-a-view"></a>Implementace zobrazení
 
@@ -115,7 +115,7 @@ Proces pro vytvoření třídy vlastní zobrazovací jednotky vypadá takto:
 1. Přidat `ExportRenderer` atributu na vlastní zobrazovací jednotky třídu k určení, že bude použit k vykreslení vlastního ovládacího prvku Xamarin.Forms. Tento atribut slouží k registraci vlastní zobrazovací jednotky s Xamarin.Forms.
 
 > [!NOTE]
-> **Poznámka:**: pro většinu prvků Xamarin.Forms, je volitelný poskytnout vlastní zobrazovací jednotky v každém projektu platformy. Pokud vlastní zobrazovací jednotky není registrované, bude použit výchozí zobrazovací jednotky pro základní třídu ovládacího prvku. Však vlastní nástroji pro vykreslování se vyžadují v každém projektu platformy při vykreslování [zobrazení](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) elementu.
+> Pro většinu prvků Xamarin.Forms je volitelné poskytnout vlastní zobrazovací jednotky v každém projektu platformy. Pokud vlastní zobrazovací jednotky není registrované, bude použit výchozí zobrazovací jednotky pro základní třídu ovládacího prvku. Však vlastní nástroji pro vykreslování se vyžadují v každém projektu platformy při vykreslování [zobrazení](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) elementu.
 
 Následující diagram znázorňuje odpovědnosti jednotlivých projektů v ukázkové aplikace, spolu s jejich vzájemných vztahů:
 
@@ -318,7 +318,7 @@ namespace CustomRenderer.WinPhone81
 Za předpokladu, že `Control` vlastnost je `null`, nový `CaptureElement` je vytvořena instance a `InitializeAsync` metoda je volána, které používá `MediaCapture` rozhraní API k poskytování preview datový proud z kamery. `SetNativeControl` Metoda je volána poté přiřadit odkaz na `CaptureElement` instance k `Control` vlastnost. `CaptureElement` Řízení zpřístupňuje `Tapped` událost, která jsou zpracována `OnCameraPreviewTapped` metoda zastavení a spuštění náhledu videa, když je stisknuté. `Tapped` Událostí je přihlášen k, když je vlastní zobrazovací jednotky připojené k nového elementu Xamarin.Forms a odhlásil z jenom, když je element zobrazovací jednotky připojen na změny.
 
 > [!NOTE]
-> **Poznámka:**: je potřeba zastavit a uvolnění objektů, které poskytují přístup k fotoaparátu v aplikaci Windows Phone nebo UWP. Tak neučiníte, může narušovat jiné aplikace, které se pokoušejí o přístup k fotoaparátu zařízení. Další informace najdete v tématu a [rychlý start: Digitalizace videa pomocí rozhraní API MediaCapture](https://msdn.microsoft.com/library/windows/apps/xaml/dn642092.aspx) pro aplikace Windows Runtime a [zobrazení náhledu fotoaparátu](https://msdn.microsoft.com/windows/uwp/audio-video-camera/simple-camera-preview-access) pro aplikace UWP.
+> Je důležité k zastavení a uvolnění objektů, které poskytují přístup k fotoaparátu na Windows Phone nebo v aplikaci UWP. Tak neučiníte, může narušovat jiné aplikace, které se pokoušejí o přístup k fotoaparátu zařízení. Další informace najdete v tématu a [rychlý start: Digitalizace videa pomocí rozhraní API MediaCapture](https://msdn.microsoft.com/library/windows/apps/xaml/dn642092.aspx) pro aplikace Windows Runtime a [zobrazení náhledu fotoaparátu](https://msdn.microsoft.com/windows/uwp/audio-video-camera/simple-camera-preview-access) pro aplikace UWP.
 
 ## <a name="summary"></a>Souhrn
 

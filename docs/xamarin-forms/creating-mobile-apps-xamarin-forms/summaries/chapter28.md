@@ -3,14 +3,15 @@ title: "Shrnutí kapitoly 28. Umístění a mapy"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: F6E20077-687C-45C4-A375-31D4F49BBFA4
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 7361f65fecfed9d61b9df7088f9021ffa0192ad8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0968270f657d3195855a752da311b4855283e971
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-28-location-and-maps"></a>Shrnutí kapitoly 28. Umístění a mapy
 
@@ -215,7 +216,7 @@ Nakonec `Map` třída definuje [ `Pins` ](https://developer.xamarin.com/api/prop
 
 To se používá v [LocalMuseumsPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/LocalMuseumsPage.xaml) souboru a [LocalMuseumsPage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/LocalMuseumsPage.xaml.cs) souboru kódu má také zobrazit vzdálenost muzea umístění uživatele:
 
-[![Trojitá snímek obrazovky stránky místní muzea](images/ch28fg28-small.png "vzdálenost do umístění")](images/ch28fg28-large.png "vzdálenost do umístění")
+[![Trojitá snímek obrazovky stránky místní muzea](images/ch28fg28-small.png "vzdálenost do umístění")](images/ch28fg28-large.png#lightbox "vzdálenost do umístění")
 
 Program také ukazuje, jak dynamicky omezit počet kódů PIN na základě umístění mapy.
 

@@ -7,18 +7,17 @@ ms.assetid: 48B20C9A-B2A2-AE82-76B2-A3C1E5A4050D
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: b2ed48ae9df7e950525fdc0cb97181ebe5a44dfb
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: d9342dc3a8d324f03cd31e1d03600449bfcf23f1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="designer-basics"></a>Základy návrháře
 
 _Toto téma nabízí funkce Designer, vysvětluje, jak spustit návrháře, popisuje návrhová plocha a podrobnosti o použití podokně Vlastnosti. Chcete-li upravit vlastnosti pomůcky._
 
-<a name="Launching_the_Designer" />
 
 ## <a name="launching-the-designer"></a>Spuštění návrháře
 
@@ -26,11 +25,11 @@ Návrháři se automaticky spustí, když se vytvoří rozložení, nebo může 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Návrhář obrazovky v sadě Visual Studio](designer-basics-images/vs/01-open-designer-sml.png)](designer-basics-images/vs/01-open-designer.png)
+[![Návrhář obrazovky v sadě Visual Studio](designer-basics-images/vs/01-open-designer-sml.png)](designer-basics-images/vs/01-open-designer.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Návrhář obrazovky v sadě Visual Studio pro Mac](designer-basics-images/xs/01-open-designer-sml.png)](designer-basics-images/xs/01-open-designer.png)
+[![Návrhář obrazovky v sadě Visual Studio pro Mac](designer-basics-images/xs/01-open-designer-sml.png)](designer-basics-images/xs/01-open-designer.png#lightbox)
 
 -----
 
@@ -39,20 +38,19 @@ Návrháři se automaticky spustí, když se vytvoří rozložení, nebo může 
 
 Podobně můžete přidat nové rozložení kliknutím pravým tlačítkem myši **rozložení** složky v **Průzkumníku řešení** a výběrem **Přidat > novou položku... > Android rozložení**:
 
-[![Přidat novou položku – dialogové okno](designer-basics-images/vs/02-add-new-layout-sml.png)](designer-basics-images/vs/02-add-new-layout.png)
+[![Přidat novou položku – dialogové okno](designer-basics-images/vs/02-add-new-layout-sml.png)](designer-basics-images/vs/02-add-new-layout.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 Podobně můžete přidat nové rozložení kliknutím pravým tlačítkem myši **rozložení** složky v **řešení Pad** a výběrem **Přidat > Nový soubor > Android > rozložení**:
 
-[![Přidat nový soubor – dialogové okno](designer-basics-images/xs/02-add-new-layout-sml.png)](designer-basics-images/xs/02-add-new-layout.png)
+[![Přidat nový soubor – dialogové okno](designer-basics-images/xs/02-add-new-layout-sml.png)](designer-basics-images/xs/02-add-new-layout.png#lightbox)
 
 -----
 
 Tím se vytvoří nový soubor .axml a načte na návrhovou plochu.
 
 
-<a name="Designer_Features" />
 
 ## <a name="designer-features"></a>Návrhář funkce
 
@@ -60,11 +58,11 @@ Návrháři se skládá z několika oddílů, které podporují různé funkce, 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Diagram podoken návrháře](designer-basics-images/vs/03-designer-features-sml.png)](designer-basics-images/vs/03-designer-features.png)
+[![Diagram podoken návrháře](designer-basics-images/vs/03-designer-features-sml.png)](designer-basics-images/vs/03-designer-features.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Diagram podoken návrháře](designer-basics-images/xs/03-designer-features-sml.png)](designer-basics-images/xs/03-designer-features.png)
+[![Diagram podoken návrháře](designer-basics-images/xs/03-designer-features-sml.png)](designer-basics-images/xs/03-designer-features.png#lightbox)
 
 -----
 
@@ -97,7 +95,6 @@ Při úpravách rozložení v Návrháři použijete k vytvoření a utvářejí
 -----
 
 
-<a name="Toolbar" />
 
 ## <a name="toolbar"></a>Panel nástrojů
 
@@ -105,11 +102,11 @@ Panel nástrojů (umístěný výše na návrhovou plochu) uvede selektory konfi
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Diagram Návrháře panelu nástrojů](designer-basics-images/vs/04-toolbar-sml.png)](designer-basics-images/vs/04-toolbar.png)
+[![Diagram Návrháře panelu nástrojů](designer-basics-images/vs/04-toolbar-sml.png)](designer-basics-images/vs/04-toolbar.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Diagram Návrháře panelu nástrojů](designer-basics-images/xs/04-toolbar-sml.png)](designer-basics-images/xs/04-toolbar.png)
+[![Diagram Návrháře panelu nástrojů](designer-basics-images/xs/04-toolbar-sml.png)](designer-basics-images/xs/04-toolbar.png#lightbox)
 
 -----
 
@@ -143,7 +140,6 @@ Každý z těchto funkcí je podrobně v těchto tématech:
 [Funkce podstatným návrhu](~/android/user-interface/android-designer/material-design-features.md) poskytuje ucelený přehled **Editor motivů** a **materiálu návrhu mřížky**.
 
 
-<a name="Design_Surface" />
 
 ## <a name="design-surface"></a>Návrhové plochy
 
@@ -151,17 +147,16 @@ Návrháře umožňuje přetažení pomůcky z panelu nástrojů na návrhovou p
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Příklad vložení řádků na návrhovou plochu](designer-basics-images/vs/05-insertion-points-sml.png)](designer-basics-images/vs/05-insertion-points.png)
+[![Příklad vložení řádků na návrhovou plochu](designer-basics-images/vs/05-insertion-points-sml.png)](designer-basics-images/vs/05-insertion-points.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Příklad vložení řádků na návrhovou plochu](designer-basics-images/xs/05-insertion-points-sml.png)](designer-basics-images/xs/05-insertion-points.png)
+[![Příklad vložení řádků na návrhovou plochu](designer-basics-images/xs/05-insertion-points-sml.png)](designer-basics-images/xs/05-insertion-points.png#lightbox)
 
 -----
 
 Kromě toho je možné zkopírovat pomůcky: můžete kopírovat a vložit kopírování widget, nebo můžete přetáhnout existující widget při stiskněte <kbd>Ctrl</kbd> klíč.
 
-<a name="Context_Menu_Commands" />
 
 ### <a name="context-menu-commands"></a>Příkazy nabídky kontextu
 
@@ -169,7 +164,7 @@ Je k dispozici jak v návrhová plocha a Osnova dokumentu Kontextová nabídka. 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Příklad kontextové nabídky, když kliknete pravým tlačítkem na návrhovou plochu](designer-basics-images/vs/06-context-menu-sml.png)](designer-basics-images/vs/06-context-menu.png)
+[![Příklad kontextové nabídky, když kliknete pravým tlačítkem na návrhovou plochu](designer-basics-images/vs/06-context-menu-sml.png)](designer-basics-images/vs/06-context-menu.png#lightbox)
 
 V tomto příkladu kliknete pravým tlačítkem `TextView` otevře kontextovou nabídku, která poskytuje několik možností:
 
@@ -179,7 +174,7 @@ V tomto příkladu kliknete pravým tlačítkem `TextView` otevře kontextovou n
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Příklad kontextové nabídky, když kliknete pravým tlačítkem na návrhovou plochu](designer-basics-images/xs/06-context-menu-sml.png)](designer-basics-images/xs/06-context-menu.png)
+[![Příklad kontextové nabídky, když kliknete pravým tlačítkem na návrhovou plochu](designer-basics-images/xs/06-context-menu-sml.png)](designer-basics-images/xs/06-context-menu.png#lightbox)
 
 V tomto příkladu kliknete pravým tlačítkem `TextView` otevře kontextovou nabídku, která poskytuje několik možností:
 
@@ -198,7 +193,6 @@ V tomto příkladu kliknete pravým tlačítkem `TextView` otevře kontextovou n
 -   **Odstranit**, **kopie**, a **Vyjmout** &ndash; operace, která se týkají klepli pravým tlačítkem myši `TextView`.
 
 
-<a name="Zoom_Controls" />
 
 ### <a name="zoom-controls"></a>Ovládací prvky přiblížení
 
@@ -206,11 +200,11 @@ Návrhovou plochu, která podporuje přibližování prostřednictvím několika
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Diagram ovládacích prvků přiblížení návrhové plochy](designer-basics-images/vs/07-zoom-controls-sml.png)](designer-basics-images/vs/07-zoom-controls.png)
+[![Diagram ovládacích prvků přiblížení návrhové plochy](designer-basics-images/vs/07-zoom-controls-sml.png)](designer-basics-images/vs/07-zoom-controls.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Diagram ovládacích prvků přiblížení návrhové plochy](designer-basics-images/xs/07-zoom-controls-sml.png)](designer-basics-images/xs/07-zoom-controls.png)
+[![Diagram ovládacích prvků přiblížení návrhové plochy](designer-basics-images/xs/07-zoom-controls-sml.png)](designer-basics-images/xs/07-zoom-controls.png#lightbox)
 
 -----
 
@@ -228,7 +222,6 @@ Tyto ovládací prvky usnadňují najdete v určité oblasti uživatelského roz
 
 Všimněte si, že nastavení vybrané přiblížení či oddálení neovlivňuje uživatelské rozhraní aplikace za běhu.
 
-<a name="property_pad" />
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -238,11 +231,10 @@ Všimněte si, že nastavení vybrané přiblížení či oddálení neovlivňuj
 
 Návrhář podporuje úpravy vlastností pomůcky prostřednictvím **Pad vlastnost**. Vlastnosti uvedené v vlastnost Pad změn v závislosti na tom, který je vybraný pomůcka v plochu návrháře. Když `Button` v předchozím příkladu je vybraná, vlastnosti pro tento `Button` jsou uvedeny pomůcky:
 
-[![Snímek obrazovky panelu pro vlastnost](designer-basics-images/xs/08-property-pad-sml.png)](designer-basics-images/xs/08-property-pad.png)
+[![Snímek obrazovky panelu pro vlastnost](designer-basics-images/xs/08-property-pad-sml.png)](designer-basics-images/xs/08-property-pad.png#lightbox)
 
 -----
 
-<a name="Property_Pad_Sections" />
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -272,7 +264,6 @@ Vlastnost odsazení je rozdělené do několika oddílů, které Seskupit podobn
 -----
 
 
-<a name="Default_Values" />
 
 ### <a name="default-values"></a>Výchozí hodnoty
 
@@ -287,7 +278,6 @@ Vlastnosti většina pomůcky bude prázdné v **vlastnost Pad** vzhledem k tomu
 
 -----
 
-<a name="Referencing_resources" />
 
 ### <a name="referencing-resources"></a>Odkazování na prostředky
 
@@ -299,13 +289,13 @@ Toto tlačítko otevře selektor prostředků při kliknutí na.
 
 Například následující snímek obrazovky ukazuje dostupné prostředky při kliknutím na tlačítko se třemi tečkami vpravo od pole textu pro `Button` widget **vlastnosti** okno:
 
-[![Příklad prostředků – snímek obrazovky s dva uvedené prostředky](designer-basics-images/vs/09-resources-sml.png)](designer-basics-images/vs/09-resources.png)
+[![Příklad prostředků – snímek obrazovky s dva uvedené prostředky](designer-basics-images/vs/09-resources-sml.png)](designer-basics-images/vs/09-resources.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 Například následující snímek obrazovky ukazuje dostupné prostředky při kliknutím na tlačítko se třemi tečkami vpravo od pole textu pro `Button` widget **vlastnost Pad**:
 
-[![Příklad prostředků – snímek obrazovky s dva uvedené prostředky](designer-basics-images/xs/09-resources-sml.png)](designer-basics-images/xs/09-resources.png)
+[![Příklad prostředků – snímek obrazovky s dva uvedené prostředky](designer-basics-images/xs/09-resources-sml.png)](designer-basics-images/xs/09-resources.png#lightbox)
 
 -----
 
@@ -313,16 +303,15 @@ Další příklad ukazuje selektor prostředků pro `Src` vlastnost `ImageView`:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Výpis ikonu prostředků pro ImageView selektor prostředků](designer-basics-images/vs/10-src-resource-sml.png)](designer-basics-images/vs/10-src-resource.png)
+[![Výpis ikonu prostředků pro ImageView selektor prostředků](designer-basics-images/vs/10-src-resource-sml.png)](designer-basics-images/vs/10-src-resource.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Výpis ikonu prostředků pro ImageView selektor prostředků](designer-basics-images/xs/10-src-resource-sml.png)](designer-basics-images/xs/10-src-resource.png)
+[![Výpis ikonu prostředků pro ImageView selektor prostředků](designer-basics-images/xs/10-src-resource-sml.png)](designer-basics-images/xs/10-src-resource.png#lightbox)
 
 -----
 
 
-<a name="Boolean_Property_References" />
 
 ### <a name="boolean-property-references"></a>Vlastnost typu Boolean odkazy
 
@@ -336,25 +325,21 @@ Další příklad ukazuje selektor prostředků pro `Src` vlastnost `ImageView`:
 
 *Logická hodnota* vlastnosti se obvykle zobrazují jako zaškrtávací políčko v panelu pro vlastnost. Když `Boolean` vlastnost podporuje odkazy na prostředek, malé zaškrtávací políčko se zobrazí vedle vlastnost. Zaškrtnuté zaškrtávací políčko znamená `true` a prázdné pole znamená `false`. Můžete také přímo zadat hodnotu, jako `true` nebo `false`. Ukazatele myši nad vstupu se vyvolá ikonou malé textové pole. Pokud chcete zadat hodnotu ručně, můžete klepněte na ni.
 
-[![Příklad nastavení logická hodnota vlastnosti](designer-basics-images/xs/12-boolean-sml.png)](designer-basics-images/xs/12-boolean.png)
+[![Příklad nastavení logická hodnota vlastnosti](designer-basics-images/xs/12-boolean-sml.png)](designer-basics-images/xs/12-boolean.png#lightbox)
 
-<a name="Grouped_Properties" />
 
 ## <a name="grouped-properties"></a>Seskupené vlastnosti
 
 Některé pomůcky mají vlastnosti s více hodnotami, které jsou seskupeny dohromady (například `Padding`, například). Hodnoty těchto vlastností jsou uvedeny v **vlastnost Pad** v jednom, rozšíření řádku. Některé z těchto vlastností lze upravovat přímo v seskupené řádku, jako `Padding` vlastnost vidíte níže:
 
-[![Příklad nastavení pro vlastnost odsazení](designer-basics-images/xs/13-padding-property-sml.png)](designer-basics-images/xs/13-padding-property.png)
+[![Příklad nastavení pro vlastnost odsazení](designer-basics-images/xs/13-padding-property-sml.png)](designer-basics-images/xs/13-padding-property.png#lightbox)
 
 -----
 
-<a name="Editing_Properties_Inline" />
 
 ## <a name="editing-properties-inline"></a>Úpravy vlastností vložené
 
 Android Návrhář podporuje přímé úpravy některé vlastnosti na návrhovou plochu (takže není nutné pro tyto vlastnosti v seznamu vlastností vyhledávání). Vlastnosti, které lze přímo upravit obsahovat text, marže a velikost.
-
-<a name="Text" />
 
 ### <a name="text"></a>Text
 
@@ -366,7 +351,7 @@ Text vlastnosti některé pomůcky (například `Button` a `TextView`), můžete
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Text prostředků pro řetězec hello](designer-basics-images/xs/14-text-resource-sml.png)](designer-basics-images/xs/14-text-resource.png)
+[![Text prostředků pro řetězec hello](designer-basics-images/xs/14-text-resource-sml.png)](designer-basics-images/xs/14-text-resource.png#lightbox)
 
 -----
 
@@ -378,7 +363,7 @@ Můžete zadat novou textovou hodnotu, nebo můžete zadat nový řetězec prost
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Shift + Enter automaticky text odkazu na nový prostředek](designer-basics-images/xs/15-shift-enter-resource-sml.png)](designer-basics-images/xs/15-shift-enter-resource.png)
+[![Shift + Enter automaticky text odkazu na nový prostředek](designer-basics-images/xs/15-shift-enter-resource-sml.png)](designer-basics-images/xs/15-shift-enter-resource.png#lightbox)
 
 -----
 
@@ -386,7 +371,6 @@ Tuto změnu je uložen v ovládacího prvku `text` vlastnost; neupravuje hodnota
 Pokud jste klíč v nový textový řetězec, můžete stisknout <kbd>Shift</kbd> +
 <kbd>Enter</kbd> automaticky propojit zadaným textem na nový prostředek.
 
-<a name="Margin" />
 
 ### <a name="margin"></a>Okraj
 
@@ -400,7 +384,7 @@ Po kliknutí na tlačítko widget poprvé, zobrazí se zpracovává okraj. Při 
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Snímek obrazovky zobrazující okraj zpracovává v Návrháři](designer-basics-images/xs/16-margin-handles-sml.png)](designer-basics-images/xs/16-margin-handles.png)
+[![Snímek obrazovky zobrazující okraj zpracovává v Návrháři](designer-basics-images/xs/16-margin-handles-sml.png)](designer-basics-images/xs/16-margin-handles.png#lightbox)
 
 -----
 
@@ -412,12 +396,11 @@ Pokud okraj již byla nastavena, zobrazí se tečkovaná řádky, označující 
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Příklad označení prostor kolem tlačítka čáry s koncovými body](designer-basics-images/xs/17-margins-set-sml.png)](designer-basics-images/xs/17-margins-set.png)
+[![Příklad označení prostor kolem tlačítka čáry s koncovými body](designer-basics-images/xs/17-margins-set-sml.png)](designer-basics-images/xs/17-margins-set.png#lightbox)
 
 -----
 
 
-<a name="Size" />
 
 ### <a name="size"></a>Velikost
 
@@ -429,7 +412,7 @@ Jak už bylo zmíněno dříve, můžete přepnout do režimu úprav velikost kl
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Obslužné rutiny wrap obsah a změny velikosti](designer-basics-images/xs/18-wrap-content-sml.png)](designer-basics-images/xs/18-wrap-content.png)
+[![Obslužné rutiny wrap obsah a změny velikosti](designer-basics-images/xs/18-wrap-content-sml.png)](designer-basics-images/xs/18-wrap-content.png#lightbox)
 
 -----
 
@@ -443,7 +426,7 @@ Pokud se hodnota velikosti nastavená na **zabalení obsahu**, Návrhář zobraz
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Popisovač nadřazené shody](designer-basics-images/xs/19-match-parent-sml.png)](designer-basics-images/xs/19-match-parent.png)
+[![Popisovač nadřazené shody](designer-basics-images/xs/19-match-parent-sml.png)](designer-basics-images/xs/19-match-parent.png#lightbox)
 
 -----
 
@@ -457,7 +440,7 @@ Navíc můžete přetáhnout popisovač cyklické změny velikosti (jak je uvede
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Obslužné rutiny cyklické změny velikosti](designer-basics-images/xs/20-resize-dp-sml.png)](designer-basics-images/xs/20-resize-dp.png)
+[![Obslužné rutiny cyklické změny velikosti](designer-basics-images/xs/20-resize-dp-sml.png)](designer-basics-images/xs/20-resize-dp.png#lightbox)
 
 -----
 
@@ -469,12 +452,11 @@ Ne všechny kontejnery povolit úpravy `Size` z widget. Například, Všimněte 
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Obslužné rutiny žádné změny velikosti](designer-basics-images/xs/21-no-resize-handles-sml.png)](designer-basics-images/xs/20-no-resize-handles.png)
+[![Obslužné rutiny žádné změny velikosti](designer-basics-images/xs/21-no-resize-handles-sml.png)](designer-basics-images/xs/20-no-resize-handles.png#lightbox)
 
 -----
 
 
-<a name="Outline_View" />
 
 ## <a name="document-outline"></a>Osnova dokumentu
 
@@ -487,7 +469,7 @@ V následujícím příkladu, obsahující `LinearLayout` je vybrána pomůcky:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Osnova dokumentu](designer-basics-images/xs/22-outline-view-sml.png)](designer-basics-images/xs/22-outline-view.png)
+[![Osnova dokumentu](designer-basics-images/xs/22-outline-view-sml.png)](designer-basics-images/xs/22-outline-view.png#lightbox)
 
 -----
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 0d7b4c5a539470a3544d0117251f40fd6bd37f2b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 778e70f6817b71e5910aa85425d46261dfe9c803
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-property-lists"></a>Práce s seznamů vlastností
 
@@ -24,7 +24,7 @@ Visual Studio pro Mac funkce editor grafické .plist, který umožňuje úpravy 
 
 Seznam vlastností informace ( `Info.plist`) je soubor vyžaduje iOS, která poskytuje informace o konfiguraci vaší aplikace do systému. Visual Studio pro Mac je vlastní `Info.plist` editor funkce zbývající tři panely řízené karty v dolní části okna editoru:
 
- [ ![](property-lists-images/tabs.png "Zbývající karty editor Info.plist v dolní části okna editoru")](property-lists-images/tabs.png)
+ [![](property-lists-images/tabs.png "Zbývající karty editor Info.plist v dolní části okna editoru")](property-lists-images/tabs.png#lightbox)
 
 Jednotlivé panely prvky různé vlastnosti, jak je uvedeno níže:
 
@@ -57,11 +57,11 @@ Tyto možnosti jsou popsány podrobněji v dalších částech.
 Tato část obsahuje důležité informace, které popisují vaše aplikace.
 **Identifikátor** uložené v tomto poli musí odpovídat identifikátor svazku, který jste zadali v iTunes Connect (aplikace pro aplikace pro Store) a taky v seznamu zřizování ID aplikace portálu iOS a vývoj a distribuci certifikátů.
 
- [ ![](property-lists-images/image24.png "iOS cílové aplikace")](property-lists-images/image24.png)
+ [![](property-lists-images/image24.png "iOS cílové aplikace")](property-lists-images/image24.png#lightbox)
 
 ### <a name="device-deployment"></a>Nasazení zařízení
 
- [ ![](property-lists-images/deployment.png "Nasazení zařízení")](property-lists-images/deployment.png)
+ [![](property-lists-images/deployment.png "Nasazení zařízení")](property-lists-images/deployment.png#lightbox)
 
 Zařízení **nasazení** informace o části se zobrazí selektivně, v závislosti na výběru v **zařízení** rozevírací seznam v **cíl aplikací** část výše. **Hlavní rozhraní** rozevíracího seznamu je nastaven na **MainStoryboard** v řízené Storyboard aplikace. Pokud uživatelské rozhraní je zcela napsán v kódu, a to může být ponecháno prázdné.
 
@@ -73,7 +73,7 @@ Zařízení **nasazení** informace o části se zobrazí selektivně, v závisl
 
 **Stav panelu Styly** část se grafické rozhraní pro úpravy aplikace `UIStatusBarStyle`:
 
- [ ![](property-lists-images/status.png "Styly stavového řádku")](property-lists-images/status.png)
+ [![](property-lists-images/status.png "Styly stavového řádku")](property-lists-images/status.png#lightbox)
 
  <a name="Icons" />
 
@@ -89,11 +89,11 @@ Informace o používání ikony, Image a kresby v souboru Info.plist najdete v [
 
 `Info.plist` Obsahuje speciální části k určení integrace mapy a backgrounding režimy. Výběr možností, které chcete podporovat přidá požadované vlastnosti pro aplikaci za vás.
 
- [ ![](property-lists-images/maps.png "Integrace mapy")](property-lists-images/maps.png)
+ [![](property-lists-images/maps.png "Integrace mapy")](property-lists-images/maps.png#lightbox)
 
 Další informace o práci s mapy, najdete v části Xamarin [iOS mapy](~/ios/user-interface/controls/ios-maps/index.md) průvodce.
 
- [ ![](property-lists-images/bging.png "Režimy pozadí")](property-lists-images/bging.png)
+ [![](property-lists-images/bging.png "Režimy pozadí")](property-lists-images/bging.png#lightbox)
 
 Další informace o režimy pozadí, najdete v části Xamarin [Backgrounding v iOS](~/ios/app-fundamentals/backgrounding/introduction-to-backgrounding-in-ios.md) průvodce.
 
@@ -101,7 +101,7 @@ Další informace o režimy pozadí, najdete v části Xamarin [Backgrounding v 
 
 Ovládací prvky panelu Další typů dokumentů a schémata URL, které podporuje aplikace.
 
- [ ![](property-lists-images/image34.png "Pokročilé panely")](property-lists-images/image34.png)
+ [![](property-lists-images/image34.png "Pokročilé panely")](property-lists-images/image34.png#lightbox)
 
  <a name="Document_Types" />
 
@@ -116,7 +116,7 @@ Informace naleznete v dokumentaci na [registrace podporuje vaše aplikace soubor
 
 V některých případech aplikace musí podporovat otevírání vlastní typ souboru. Například může chceme otevřít soubory obrázků s příponou vlastní *.xam*. Pokud chcete zadat vlastní typ souboru, vytvoříme vlastní UTI - univerzální typ identifikátor - pomocí `UIExportedTypeDeclarations` klíč. Následující snímek obrazovky ukazuje, jak vytvořit vlastní UTI .xam rozšíření:
 
- [ ![](property-lists-images/uti.png "UTIs Editor")](property-lists-images/uti.png)
+ [![](property-lists-images/uti.png "UTIs Editor")](property-lists-images/uti.png#lightbox)
 
 Stejně jako exportovaný typ UTIs zadejte vlastní UTIs specifické pro vaši aplikaci *importovat typ UTIs* ( `UIImportedTypeDeclarations` klíč) zadejte vlastní typy podporuje, ale není vlastníkem vaší aplikace.
 
@@ -126,7 +126,7 @@ Další informace o používání vlastní UTIs, najdete v části společnosti 
 
 Název schématu adresy URL (také nazývané protocol) je první část adresy URL. Například `http://` a `https://` jsou společných schémat URL. Máte možnost vytvořit vlastní schéma adresy URL pro aplikaci. Vlastní schémata URL se používají ke komunikaci a odesílat data a zpět s jinými aplikacemi. Následující snímek obrazovky ukazuje vytvoření nové vlastní schéma adresy URL názvem `monkeys://`:
 
- [ ![](property-lists-images/url.png "Vlastní adresy URL")](property-lists-images/url.png)
+ [![](property-lists-images/url.png "Vlastní adresy URL")](property-lists-images/url.png#lightbox)
 
 
 
@@ -136,15 +136,15 @@ Další informace o implementaci vlastní schémata URL, najdete v části spole
 
 **Zdroj** kartě `Info.plist` souboru umožňuje vlastní hodnoty a přidal nebo upravil. Visual Studio pro Mac obsahuje seznam nejčastějších vlastnosti:
 
- [ ![](property-lists-images/image31.png "Přidání nové vlastnosti z rozevírací seznam")](property-lists-images/image31.png)
+ [![](property-lists-images/image31.png "Přidání nové vlastnosti z rozevírací seznam")](property-lists-images/image31.png#lightbox)
 
 Pro známé vlastnosti Visual Studio pro Mac se seznam platných hodnot, které jsou popsány v následující snímek obrazovky:
 
- [ ![](property-lists-images/image32.png "Vyberte hodnotu ze seznamu hodnot přehled")](property-lists-images/image32.png)
+ [![](property-lists-images/image32.png "Vyberte hodnotu ze seznamu hodnot přehled")](property-lists-images/image32.png#lightbox)
 
 Visual Studio pro Mac také detekuje vlastnost typu, jak je znázorněno:
 
- [ ![](property-lists-images/image33.png "Dostupné typy vlastností")](property-lists-images/image33.png)
+ [![](property-lists-images/image33.png "Dostupné typy vlastností")](property-lists-images/image33.png#lightbox)
 
 Zkontrolujte společnosti Apple [související prostředky aplikace](http://developer.apple.com/library/ios/#DOCUMENTATION/iPhone/Conceptual/iPhoneOSProgrammingGuide/App-RelatedResources/App-RelatedResources.html) odkazy na další informace o volitelných vlastností.
 

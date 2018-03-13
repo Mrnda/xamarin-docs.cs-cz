@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 482358b0ccbedf926cd9182065a1eb8f4c12683c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e57f19d1eb66e22badb418d4584f5654904c7ade
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="style-inheritance"></a>Styl dědičnosti
 
@@ -62,10 +62,10 @@ Následující kód ukazuje *explicitní* styl dědičnosti na stránce XAML:
 
 `baseStyle` Cíle [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) instance a nastaví [ `HorizontalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.HorizontalOptions/) a [ `VerticalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) vlastnosti. `baseStyle` Není nastaven přímo na všech ovládacích prvků. Místo toho `labelStyle` a `buttonStyle` , dědí nastavení hodnoty další vazbu vlastnosti. `labelStyle` a `buttonStyle` jsou poté použity [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) instancí a [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) instance, a to nastavením jejich [ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/) vlastnosti. Výsledkem je vidět na následujících snímcích obrazovky vzhled:
 
-[![](inheritance-images/style-inheritance.png)](inheritance-images/style-inheritance-large.png)
+[![](inheritance-images/style-inheritance.png)](inheritance-images/style-inheritance-large.png#lightbox)
 
 > [!NOTE]
-> **Poznámka:**: implicitní styl může být odvozen od explicitní styl, ale explicitní styl nemůže být odvozen od implicitní stylu.
+> Implicitní styl může být odvozen od explicitní styl, ale explicitní styl nemůže být odvozen od implicitní stylu.
 
 ### <a name="respecting-the-inheritance-chain"></a>Respektováním řetězu dědičnosti
 
@@ -106,7 +106,7 @@ Tento řetězec dědičnosti je znázorněn v následujícím příkladu kódu:
 
 V tomto příkladu `labelStyle` a `buttonStyle` prostředků řízení úrovně, zatímco `baseStyle` je úrovně prostředek stránky. Ale při `labelStyle` a `buttonStyle` dědí `baseStyle`, není možné pro `baseStyle` dědění z `labelStyle` nebo `buttonStyle`, kvůli jejich odpovídajících umístění v hierarchii zobrazení.
 
-## <a name="style-inheritance-in-c35"></a>Styl dědičnosti C &#35;
+## <a name="style-inheritance-in-c35"></a>Styl dědičnosti v jazyce C&#35;
 
 Ekvivalentní C# stránky, kde [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) instance přiřazené přímo na [ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/) vlastnosti požadované ovládacích prvků, je znázorněno v následujícím příkladu kódu:
 

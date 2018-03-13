@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 9fec6fca0bf7930a59a6927557786a3ed7a412da
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9a5dc7839b1669e51e79efc0f02111eae8987b95
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="profiling-xamarinios-applications-with-instruments"></a>Profilace – aplikace Xamarin.iOS s nástroji
 
@@ -38,13 +38,13 @@ Vyberte zařízení a spusťte aplikaci nástroje:
 
 Instruments bude nyní otevřít a zobrazit následující dialogové okno:
 
- [ ![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments1.png "Výběr šablony profilace")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments1.png)
+ [![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments1.png "Výběr šablony profilace")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments1.png#lightbox)
 
 Kliknutím vyberte **přidělení** šablony. Další šablony jsou platné, ale tento článek popisuje pouze **přidělení** šablonu profilu.
 
 Potom vyberte zařízení a aplikací pomocí nabídky v horní části okna:
 
-[ ![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments2.png "Vyberte zařízení a aplikací")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments2.png)
+[![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments2.png "Vyberte zařízení a aplikací")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments2.png#lightbox)
 
 Zařízení s iOS by měl vybraný v nabídce v horní části okna a aplikace se profilovaným, měla by být vybrána vedle sebe (**MemoryDemo** na snímku obrazovky výše).
 
@@ -52,13 +52,13 @@ Pokud zařízení není uvedené v části v nabídce, podívejte se **konzoly**
 
 Klikněte na tlačítko **zvolte** by se měla objevit tlačítko a na další obrazovce:
 
-[ ![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments3.png "Rozhraní profilace")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments3.png)
+[![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments3.png "Rozhraní profilace")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments3.png#lightbox)
 
 Klikněte na tlačítko záznam (červené kolečko v levé horní části) ke spuštění profilování.
 
 Následující snímek obrazovky ukazuje příklad profilace pomocí **Instruments**:
 
-[ ![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments4.png "Příklad profilace pomocí nástroje")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments4.png)
+[![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments4.png "Příklad profilace pomocí nástroje")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments4.png#lightbox)
 
 ## <a name="summary"></a>Souhrn
 

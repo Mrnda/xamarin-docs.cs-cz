@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: cddf3c58020b534abdc1541d967a9a7f5a4d891a
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 440ee997b075b5c89504dcf20171fa3c8713e1ce
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="images"></a>Obrázky
 
@@ -79,7 +79,7 @@ var image = new Image { Source = "waterfront.jpg" };
 
 Na následujících snímcích obrazovky zobrazit výsledek zobrazení místní bitové kopie na jednotlivých platformách:
 
-[ ![Místní ImageSource](images-images/local-sml.png "ukázkové aplikace zobrazení obrázek místní")](images-images/local.png "ukázkové aplikace zobrazení místní bitové kopie")
+[![Místní ImageSource](images-images/local-sml.png "ukázkové aplikace zobrazení obrázek místní")](images-images/local.png#lightbox "ukázkové aplikace zobrazení místní bitové kopie")
 
 Pro větší flexibilitu `Device.RuntimePlatform` vlastnosti lze a vyberte jiný soubor bitové kopie nebo cesta pro některé nebo všechny platformy, jak ukazuje tento příklad kódu:
 
@@ -102,7 +102,7 @@ Před iOS 9, může ji umístit sítnice verze bitové kopie **prostředky** slo
 
 Android alternativní řešení obrázků musí být umístěny v [speciálně názvem adresáře](http://developer.android.com/guide/practices/screens_support.html) v projektu pro Android, jak je znázorněno na následujícím snímku obrazovky:
 
-[![Umístění bitové kopie Android více řešení](images-images/xs-highdpisolution-sml.png "umístění bitové kopie Android více řešení")](images-images/xs-highdpisolution.png "umístění Android více rozlišení obrázku")
+[![Umístění bitové kopie Android více řešení](images-images/xs-highdpisolution-sml.png "umístění bitové kopie Android více řešení")](images-images/xs-highdpisolution.png#lightbox "umístění Android více rozlišení obrázku")
 
 ### <a name="additional-controls-that-display-images"></a>Další ovládací prvky, které zobrazení obrázků
 
@@ -159,7 +159,7 @@ Aktuálně neexistuje žádná implicitní převod pro identifikátory prostřed
 
 Na následujících snímcích obrazovky zobrazit výsledek zobrazení vložený obrázek na jednotlivých platformách:
 
-[ ![ResourceImageSource](images-images/resource-sml.png "ukázkové aplikace zobrazení vložený obrázek")](images-images/resource.png "ukázkové aplikace zobrazení vložený obrázek")
+[![ResourceImageSource](images-images/resource-sml.png "ukázkové aplikace zobrazení vložený obrázek")](images-images/resource.png#lightbox "ukázkové aplikace zobrazení vložený obrázek")
 
 <a name="Embedded_Images_in_Xaml" />
 
@@ -261,7 +261,7 @@ webImage.Source = "https://xamarin.com/content/images/pages/forms/example-app.pn
 
 Na následujících snímcích obrazovky zobrazit výsledek zobrazení vzdáleného bitové kopie na jednotlivých platformách:
 
-[![Stáhnout ImageSource](images-images/download-sml.png "ukázkové aplikace zobrazení bitovou kopii stažené")](images-images/download.png "ukázkové aplikace zobrazení stažené bitové kopie")
+[![Stáhnout ImageSource](images-images/download-sml.png "ukázkové aplikace zobrazení bitovou kopii stažené")](images-images/download.png#lightbox "ukázkové aplikace zobrazení stažené bitové kopie")
 
 <a name="Image_Caching" />
 

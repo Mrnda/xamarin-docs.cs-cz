@@ -3,16 +3,16 @@ title: "Část 2. Syntaxe nezbytné XAML"
 description: "XAML je většinou určený k vytváření instancí a inicializace objektů. Ale často, vlastnosti musí být nastavené na komplexní objekty, které nelze snadno reprezentovat jako řetězce XML a někdy vlastnosti definované třídou jeden musí být nastavena na podřízené třídy. Tyto dvě potřeby vyžadují základní funkce syntaxe XAML vlastnost elementů a přidružené vlastnosti."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 1D6164F9-4ECE-43A6-B583-1F5D5EFC1DDF
+ms.assetid: 4022F1DC-3802-4635-A553-688ABD3F0D5A
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: f99d4b177f5957b2e5f8c22171fe92799af8505a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 77ed7c49a901a877d822c2274263bcb8dbe19ac6
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="part-2-essential-xaml-syntax"></a>Část 2. Syntaxe nezbytné XAML
 
@@ -253,7 +253,7 @@ Tady je kompletní GridDemoPage.xaml souboru:
 
 Zde je, jak vypadá na všech tří platformách:
 
-[ ![](essential-xaml-syntax-images/griddemo.png "Rozložení mřížky")](essential-xaml-syntax-images/griddemo-large.png "rozložení mřížky")
+[![](essential-xaml-syntax-images/griddemo.png "Rozložení mřížky")](essential-xaml-syntax-images/griddemo-large.png#lightbox "rozložení mřížky")
 
 Posuzování výhradně z syntaxe, tyto `Grid.Row`, `Grid.Column`, `Grid.RowSpan`, a `Grid.ColumnSpan` atributy se zdají být statická pole nebo vlastnosti `Grid`, ale dostatečně interestingly `Grid` nedefinuje nic s názvem `Row`, `Column`, `RowSpan`, nebo `ColumnSpan`.
 
@@ -310,7 +310,7 @@ Přidružené vlastnosti jsou vždy rozpoznatelném v souborech XAML jako atribu
 
 A tady je:
 
-[ ![](essential-xaml-syntax-images/absolutedemo-large.png "Absolutní rozložení")](essential-xaml-syntax-images/absolutedemo-large.png "absolutní rozložení")
+[![](essential-xaml-syntax-images/absolutedemo-large.png "Absolutní rozložení")](essential-xaml-syntax-images/absolutedemo-large.png#lightbox "absolutní rozložení")
 
 Pro přibližně takto může otázka moudrý použití XAML. Určitě opakování a správnost `LayoutBounds` obdélníku naznačuje, že ho může lépe uskutečňovat v kódu.
 

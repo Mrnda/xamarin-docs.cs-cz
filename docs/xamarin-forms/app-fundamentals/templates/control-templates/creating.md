@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: e09ac502298296277d9264bcd18f1ce1cbbf0c55
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 53309be2712f14c79b84c2eabb519b86dd73a404
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-a-controltemplate"></a>Vytváření ControlTemplate
 
@@ -100,7 +100,7 @@ Tato metoda nahrazuje aktivní [ `ControlTemplate` ](https://developer.xamarin.c
 ![](creating-images/aqua-theme.png "Šablona aqua ovládacího prvku")
 
 > [!NOTE]
-> **Poznámka:**: na `ContentPage`, `Content` vlastnost lze přiřadit a `ControlTemplate` může být nastavena také vlastnost. Pokud k tomu dojde, pokud `ControlTemplate` obsahuje `ContentPresenter` instance obsahu přiřazeného k `Content` vlastnost bude předložený `ContentPresenter` v rámci `ControlTemplate`.
+> Na `ContentPage`, `Content` vlastnost lze přiřadit a `ControlTemplate` může být nastavena také vlastnost. Pokud k tomu dojde, pokud `ControlTemplate` obsahuje `ContentPresenter` instance obsahu přiřazeného k `Content` vlastnost bude předložený `ContentPresenter` v rámci `ControlTemplate`.
 
 ### <a name="setting-a-controltemplate-with-a-style"></a>Nastavení ControlTemplate s styl
 
@@ -148,7 +148,7 @@ Kromě vytváření [ `ControlTemplate` ](https://developer.xamarin.com/api/type
 
 Při přidávání [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) na úrovni stránky [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) je přidán do [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)a potom `ControlTemplate` instance jsou zahrnuty v `ResourceDictionary`.
 
-## <a name="creating-a-controltemplate-in-c35"></a>Vytváření ControlTemplate C &#35;
+## <a name="creating-a-controltemplate-in-c35"></a>Vytváření ControlTemplate v jazyce C&#35;
 
 K definování [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) na úrovni aplikace, `class` musí být vytvořen tento představuje `ControlTemplate`. Třída by měl být odvozen z [rozložení](~/xamarin-forms/user-interface/layouts/index.md) používá pro šablonu, jak je znázorněno v následujícím příkladu kódu:
 

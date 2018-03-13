@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 05/01/2017
-ms.openlocfilehash: 01708f12340ec57bf1cb0e2bd076b680c99dff39
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f336767cb6aea8bd8c7ce44f6479850a63d473a6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="binding-a-java-library"></a>Vazba knihovna Java
 
@@ -30,7 +30,7 @@ Tato příručka vysvětluje první možnost: postup vytvoření *vazby knihovny
 
 Xamarin.Android implementuje pomocí vazby *spravované obálky s možností* (*MCW*). MCW je JNI mostu, který se používá, když potřebuje spravovaného kódu k vyvolání kódu v jazyce Java. Spravované obálky s možností taky poskytuje podporu pro vytvoření podtřídy typy Java a přepisování virtuální metody v jazyce Java typy. Podobně vždy, když kód Android runtime (obrázky), které má být vyvolán spravovaného kódu, učiní tak prostřednictvím jiného JNI most známé jako Android s obálky (ACW). To [architektura](~/android/internals/architecture.md) je znázorněno v následujícím diagramu:
 
-[ ![Android JNI most architektura](images/architecture.png)](images/architecture.png)
+[![Android JNI most architektura](images/architecture.png)](images/architecture.png#lightbox)
 
 Knihovna vazby je sestavení obsahující spravované obálky s možností pro typy jazyka Java. Zde je typu Java, například `MyClass`, který chceme zabalení v knihovně vazby:
 
@@ -74,7 +74,6 @@ Při vytváření vazby existující Android knihovny, je třeba mít na paměti
 
 * **Jaká verze sadu JDK byl použit ke kompilaci knihovny?** &ndash; Chybám vazby může dojít, pokud byla knihovna pro Android vytvořené v jiné verzi JDK než použití Xamarin.Android. Pokud je to možné znovu zkompiluje knihovna pro Android pomocí stejnou verzi nástroje JDK, který je používán instalace Xamarin.Android.
 
-<a name="BUILD_ACTIONS" />
 
 ## <a name="build-actions"></a>Akce sestavení
 
@@ -127,7 +126,6 @@ Generátor vazby Xamarin.Android změní některé Java idioms a vzory tak, aby 
 -   _Vnitřní třídu_ v jazyce Java _vnořené třídy_ s konstruktoru instance v jazyce C#.
 
 
-<a name="BINDING_SCENARIOS" />
 
 ## <a name="binding-scenarios"></a>Scénáře vazeb
 

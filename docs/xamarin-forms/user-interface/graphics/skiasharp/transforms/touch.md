@@ -4,14 +4,15 @@ description: "Použití matice transformuje implementovat přetahování dotykov
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: A0B8DD2D-7392-4EC5-BFB0-6209407AD650
 author: charlespetzold
 ms.author: chape
 ms.date: 04/12/2017
-ms.openlocfilehash: b418e0179c95a424c88d5f5063a09f984bb13ec0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 16e9423c84e591e15a703b4d5bb204a8b642bb40
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="touch-manipulations"></a>Manipulace dotykového ovládání
 
@@ -545,7 +546,7 @@ public partial class TouchManipulationPage : ContentPage
 
 `PaintSurface` Obslužná rutina se ukončí zobrazení `MatrixDisplay` objekt zobrazující matice Akumulovaná touch:
 
-[![](touch-images/touchmanipulation-small.png "Trojitá snímek obrazovky stránky Touch manipulaci s")](touch-images/touchmanipulation-large.png "Trojitá snímek obrazovky stránky Touch manipulace")
+[![](touch-images/touchmanipulation-small.png "Trojitá snímek obrazovky stránky Touch manipulaci s")](touch-images/touchmanipulation-large.png#lightbox "Trojitá snímek obrazovky stránky Touch manipulace")
 
 ## <a name="manipulating-multiple-bitmaps"></a>Manipulace s více rastrové obrázky
 
@@ -684,7 +685,7 @@ public partial class BitmapScatterViewPage : ContentPage
 
 Kód prochází kolekci a zobrazí balík bitmap od začátku kolekce na konec:
 
-[![](touch-images/bitmapscatterview-small.png "Trojitá snímek obrazovky stránky zobrazení bodový rastrový obrázek")](touch-images/bitmapscatterview-large.png "Trojitá snímek obrazovky stránky zobrazení bodový rastrového obrázku")
+[![](touch-images/bitmapscatterview-small.png "Trojitá snímek obrazovky stránky zobrazení bodový rastrový obrázek")](touch-images/bitmapscatterview-large.png#lightbox "Trojitá snímek obrazovky stránky zobrazení bodový rastrového obrázku")
 
 
 ## <a name="related-links"></a>Související odkazy

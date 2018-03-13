@@ -7,18 +7,17 @@ ms.assetid: 646ED563-C34E-256D-4B56-29EE99881C27
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: ea3fd7d73f104f7b9650431a5531fe4399a2630c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 02/28/2018
+ms.openlocfilehash: 91bd5ae83cd0d59872e11a6b1bdc7b84c751e64f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="android-audio"></a>Android Audio
 
 _Operační systém Android poskytuje rozsáhlou podporu pro multimédia, zahrnující audio a video. Tato příručka se zaměřuje na zvuk v Android a popisuje přehrávání a záznam zvuku pomocí předdefinovaných přehrávač a zapisovač třídy a také nízké úrovně zvuk rozhraní API. Také vysvětluje práci s událostmi zvuk vysílání jiné aplikace, tak, aby vývojáři mohou vytvářet dobře behaved aplikace._
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Přehled
 
@@ -44,7 +43,6 @@ Je třeba požadavek `RECORD_AUDIO` oprávnění v **AndroidManifest.XML**:
 ![Požadované oprávnění části Android Manifest s záznam\_zvuk povoleno](android-audio-images/image01.png)
 
 
-<a name="Playing_Audio_with_the_MediaPlayer_Class" />
 
 ## <a name="playing-audio-with-the-mediaplayer-class"></a>Přehrávání zvuku pomocí třídy Media Player
 
@@ -52,7 +50,6 @@ Nejjednodušší způsob, jak přehrajte zvuk v Android je pomocí integrované 
 `MediaPlayer` můžete přehrát místních nebo vzdálených souborů předáním v cestě k souboru. Ale `MediaPlayer` je velmi citlivé na stav a volání jednoho z jeho metod v chybném stavu způsobí výjimku, která je vyvolána. Je důležité pro interakci s `MediaPlayer` v pořadí, abyste se vyhnuli chybám popsané dál.
 
 
-<a name="Initializing_and_Playing" />
 
 ### <a name="initializing-and-playing"></a>Inicializace a přehrávání
 
@@ -84,7 +81,6 @@ public void StartPlayer(String  filePath)
 }
 ```
 
-<a name="Suspending_and_Resuming_Playback" />
 
 ### <a name="suspending-and-resuming-playback"></a>Pozastavení a pokračování přehrávání
 
@@ -113,14 +109,12 @@ Přehrávač už je potřeba, musí být vydán prostředky pro volání [verze]
 player.Release();
 ```
 
-<a name="Using_the_MediaRecorder_Class_to_Record_Audio" />
 
 
 ## <a name="using-the-mediarecorder-class-to-record-audio"></a>Pomocí třídy pro MediaRecorder záznam zvuku
 
 Důsledkem k `MediaPlayer` pro záznam zvuku v Android je [MediaRecorder](https://developer.xamarin.com/api/type/Android.Media.MediaRecorder/) třídy. Podobně jako `MediaPlayer`, je stav-velká a malá písmena a přejde prostřednictvím několika stavy pro zajištění bodu, kde je možné spustit záznam. Chcete-li záznam zvuku, `RECORD_AUDIO` musí být nastavena oprávnění. Pokyny o tom, jak nastavit aplikaci najdete v části oprávnění [práce s AndroidManifest.xml](~/android/platform/android-manifest.md).
 
-<a name="Initializing_and_Recording" />
 
 ### <a name="initializing-and-recording"></a>Záznam a inicializace
 
@@ -170,7 +164,6 @@ void RecordAudio (String filePath)
 }
 ```
 
-<a name="Stopping_recording" />
 
 ### <a name="stopping-recording"></a>Ukončení záznamu
 
@@ -180,7 +173,6 @@ Chcete-li zastavit záznamu, volejte `Stop` metodu `MediaRecorder`:
 recorder.Stop();
 ```
 
-<a name="Cleaning_up" />
 
 
 ### <a name="cleaning-up"></a>Čištění
@@ -197,18 +189,15 @@ Když `MediaRecorder` je již nepotřebujete, musí být jeho prostředky vydan�
 recorder.Release();
 ```
 
-<a name="Managing_Audio_Notifications" />
 
 ## <a name="managing-audio-notifications"></a>Správa zvukových oznámení
 
-<a name="The_AudioManager_Class" />
 
 
 ### <a name="the-audiomanager-class"></a>AudioManager – třída
 
 [AudioManager](https://developer.xamarin.com/api/type/Android.Media.AudioManager/) třída poskytuje přístup k audio oznámení, která umožní aplikace vědět, když dojde k audio událostem. Tato služba také poskytuje přístup k jiné zvuk funkce, jako je svazek a vyzvánění režimu ovládací prvek. `AudioManager` Umožňuje aplikacím zpracovávat zvuk oznámení k řízení přehrávání zvuku.
 
-<a name="Managing_Audio_Focus" />
 
 
 ### <a name="managing-audio-focus"></a>Správa zvukových fokusu
@@ -224,7 +213,6 @@ Zvuk fokus může být udělena okamžitě, nebo původně odepřen a udělit po
 Další informace o zvukových fokus najdete v tématu [Správa zvukových fokus](http://developer.android.com/training/managing-audio/audio-focus.html).
 
 
-<a name="Registering_the_Callback_for_Audio_Focus" />
 
 #### <a name="registering-the-callback-for-audio-focus"></a>Registrace zpětné volání pro zvuk fokusu
 
@@ -235,7 +223,6 @@ Z tohoto důvodu se předá objekt zpětného volání jako parametr do `GetAudi
 Když aplikace dokončí, pomocí zvuky prostředků, zavolá `AbandonFocus` metodu `AudioManager`a opakujte předá v zpětné volání. To deregisters zpětného volání a zvukových prostředky, tak, aby ostatní aplikace může získat zvuk fokus.
 
 
-<a name="Requesting_Audio_Focus" />
 
 #### <a name="requesting-audio-focus"></a>Požaduje zvuk fokusu
 
@@ -270,13 +257,11 @@ Boolean RequestAudioResources(INotificationReceiver parent)
 }
 ```
 
-<a name="Releasing_Audio_Focus" />
 
 #### <a name="releasing-audio-focus"></a>Uvolnění zvuk fokusu
 
 Po dokončení přehrávání dráhy `AbandonFocus` metodu `AudioManager` je volána. To umožňuje jiná aplikace k získání zvuk prostředků zařízení. Jiné aplikace bude zasláno oznámení této změny zvuk fokus, pokud jste zaregistrovali své vlastní naslouchací procesy.
 
-<a name="Low_Level_Audio_API" />
 
 ## <a name="low-level-audio-api"></a>Nízké úrovně zvuk rozhraní API
 
@@ -289,14 +274,10 @@ Nízké úrovně zvuk rozhraní API nabízejí větší kontrolu nad přehrává
 3.  Zvuk streamování.
 
 
- <a name="AudioTrack_Class" />
-
-
 ### <a name="audiotrack-class"></a>AudioTrack – třída
 
 [AudioTrack](https://developer.xamarin.com/api/type/Android.Media.AudioTrack/) třídu používá nízké úrovně zvuk rozhraní API pro záznam a je ekvivalentem nízké úrovně `MediaPlayer` třídy.
 
-<a name="Initializing_and_Playing" />
 
 #### <a name="initializing-and-playing"></a>Inicializace a přehrávání
 
@@ -339,7 +320,6 @@ void PlayAudioTrack(byte[] audioBuffer)
 }
 ```
 
-<a name="Pausing_and_Stopping_the_Playback" />
 
 #### <a name="pausing-and-stopping-the-playback"></a>Pozastavení a ukončení přehrávání
 
@@ -355,7 +335,6 @@ Volání [Zastavit](https://developer.xamarin.com/api/member/Android.Media.Audio
 audioTrack.Stop();
 ```
 
-<a name="Cleaning_up" />
 
 #### <a name="cleanup"></a>Vyčištění
 
@@ -365,13 +344,11 @@ Když `AudioTrack` je již nepotřebujete, musí být jeho prostředky vydané v
 audioTrack.Release();
 ```
 
-<a name="The_AudioRecord_Class" />
 
 ### <a name="the-audiorecord-class"></a>AudioRecord – třída
 
 [AudioRecord](https://developer.xamarin.com/api/type/Android.Media.AudioRecord/) třída je ekvivalentem `AudioTrack` na straně záznam. Jako `AudioTrack`, používá vyrovnávacích pamětí přímo, namísto soubory a identifikátory URI. Vyžaduje, aby `RECORD_AUDIO` nastavit oprávnění v manifestu.
 
-<a name="Initializing_and_Recording" />
 
 #### <a name="initializing-and-recording"></a>Záznam a inicializace
 
@@ -423,7 +400,6 @@ void RecordAudio()
 }
 ```
 
-<a name="Stopping_the_Recording" />
 
 #### <a name="stopping-the-recording"></a>Zastavení záznamu
 
@@ -433,7 +409,6 @@ Volání [Zastavit](https://developer.xamarin.com/api/member/Android.Media.Audio
 audRecorder.Stop();
 ```
 
-<a name="Clean_Up" />
 
 #### <a name="cleanup"></a>Vyčištění
 
@@ -443,7 +418,6 @@ Když `AudioRecord` je objekt již nepotřebujete, volání jeho [verze](https:/
 audRecorder.Release();
 ```
 
-<a name="Summary" />
 
 ## <a name="summary"></a>Souhrn
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: e6df7f9308285b87ff0f42b73c8404b375cbb0de
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: e887026b4f87d2e1bf8c7647a7845765ce8b886c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="standard-controls"></a>Standardní ovládací prvky
 
@@ -22,7 +22,7 @@ Při práci s C# a rozhraní .NET v aplikaci Xamarin.Mac, máte přístup ke ste
 
 Prvky uživatelského rozhraní, které se používají k vytvoření uživatelského rozhraní aplikace Xamarin.Mac jsou AppKit prvky. Se skládá z elementů, jako jsou tlačítka, popisky, textových polí, zaškrtněte políčka a Segmentovaným ovládací prvky a způsobit okamžité akcí nebo nezobrazí výsledky, když uživatel manipuluje je.
 
-[ ![](standard-controls-images/intro01.png "Příklad hlavní obrazovky aplikace")](standard-controls-images/intro01.png)
+[![](standard-controls-images/intro01.png "Příklad hlavní obrazovky aplikace")](standard-controls-images/intro01.png#lightbox)
 
 V tomto článku vám nabídneme základní informace o práci s ovládacími prvky AppKit v aplikaci Xamarin.Mac. Vysoce navržený na spolupracovat [Hello, Mac](~/mac/get-started/hello-mac.md) článek nejprve, konkrétně [Úvod do Xcode a rozhraní tvůrce](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) a [výstupy a akce](~/mac/get-started/hello-mac.md#Outlets_and_Actions) oddíly, jak se popisuje klíčové koncepty a techniky, které budeme používat v tomto článku.
 
@@ -51,7 +51,7 @@ Další informace najdete v tématu stránku [o ovládací prvky a zobrazení](h
 
 Existují podmnožinu AppKit ovládací prvky, které zahrnují styl zobrazení, která umožňuje, aby se zahrnout do oblasti rámce okna. Příklad naleznete v části nástrojů poštovní aplikaci:
 
-[ ![](standard-controls-images/mailapp.png "Rámec okna Mac")](standard-controls-images/mailapp.png)
+[![](standard-controls-images/mailapp.png "Rámec okna Mac")](standard-controls-images/mailapp.png#lightbox)
 
 - **Zaokrouhlí texturou tlačítko** – `NSButton` s styl `NSTexturedRoundedBezelStyle`.
 - **Texturou zaokrouhlené Segmentovaným řízení** – `NSSegmentedControl` s styl `NSSegmentStyleTexturedRounded`.
@@ -73,15 +73,15 @@ Další informace najdete v tématu stránku [o ovládací prvky a zobrazení](h
 
 Když vytvoříte novou aplikaci Xamarin.Mac kakao, zobrazí okno Standardní prázdné, ve výchozím nastavení. Toto systému windows je definována v `.storyboard` automaticky zahrnutý v projektu. Chcete-li upravit návrh vašeho systému windows v **Průzkumníku řešení**, dvakrát klikněte `Main.storyboard` souboru:
 
-[ ![](standard-controls-images/edit01.png "Výběr hlavní Storyboard v Průzkumníku řešení")](standard-controls-images/edit01.png)
+[![](standard-controls-images/edit01.png "Výběr hlavní Storyboard v Průzkumníku řešení")](standard-controls-images/edit01.png#lightbox)
 
 Otevře se okno návrhu v Xcode na rozhraní Tvůrce:
 
-[ ![](standard-controls-images/edit02.png "Úpravy storyboard v Xcode")](standard-controls-images/edit02.png)
+[![](standard-controls-images/edit02.png "Úpravy storyboard v Xcode")](standard-controls-images/edit02.png#lightbox)
 
 Chcete-li vytvořit uživatelské rozhraní, budete přetáhněte prvky uživatelského rozhraní (AppKit ovládací prvky) z **knihovny Inspector** k **rozhraní editoru** v Tvůrci rozhraní. V příkladu níže **svislé rozděleným zobrazením** řízení byl nedovolenému z **knihovny Inspector** a umístit do okna v **rozhraní editoru**:
 
-[ ![](standard-controls-images/edit03.png "Výběr zobrazení rozdělení z knihovny")](standard-controls-images/edit03.png)
+[![](standard-controls-images/edit03.png "Výběr zobrazení rozdělení z knihovny")](standard-controls-images/edit03.png#lightbox)
 
 Další informace o vytváření uživatelské rozhraní v Tvůrci rozhraní, najdete v tématu naše [Úvod do Xcode a rozhraní tvůrce](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) dokumentaci.
 
@@ -91,21 +91,21 @@ Další informace o vytváření uživatelské rozhraní v Tvůrci rozhraní, na
 
 Jakmile ovládacího prvku byl zahrnut v uživatelském rozhraní, použijte **editor omezení** nastavit její umístění a velikost ručním zadáním hodnoty a řídit způsob řízení je automaticky nastavený a když velikost nadřazené okno nebo zobrazení Změní velikost:
 
-[ ![](standard-controls-images/edit04.png "Nastavení omezení")](standard-controls-images/edit04.png)
+[![](standard-controls-images/edit04.png "Nastavení omezení")](standard-controls-images/edit04.png#lightbox)
 
 Použití **Red I světla** místa vně **Autoresizing** pole na _Flash disk_ ovládacího prvku (x, y) daného umístění. Příklad: 
 
-[ ![](standard-controls-images/edit05.png "Úpravy omezení")](standard-controls-images/edit05.png)
+[![](standard-controls-images/edit05.png "Úpravy omezení")](standard-controls-images/edit05.png#lightbox)
 
 Určuje, že vybraný ovládací prvek (v **zobrazení hierarchie** & **rozhraní editoru**) se zablokuje a horního umístění okno nebo zobrazení po změně velikosti nebo přesunout. 
 
 Další prvky editoru řídit vlastnosti, například výška a šířka:
 
-[ ![](standard-controls-images/edit06.png "Nastavení výška")](standard-controls-images/edit06.png)
+[![](standard-controls-images/edit06.png "Nastavení výška")](standard-controls-images/edit06.png#lightbox)
 
 Můžete také ovládat zarovnání elementů s omezeními použití **zarovnání Editor**:
 
-[ ![](standard-controls-images/edit07.png "Editor zarovnání")](standard-controls-images/edit07.png)
+[![](standard-controls-images/edit07.png "Editor zarovnání")](standard-controls-images/edit07.png#lightbox)
 
 > [!IMPORTANT]
 > Na rozdíl od iOS kde (0,0) je horní levém dolním rohu obrazovky, v systému macOS (0,0) je nižší levém dolním rohu. To je proto systému macOS používá matematické souřadnicový systém s číselné hodnoty zvýšení hodnoty směrem nahoru a doprava. Musíte to vzít v úvahu při vkládání ovládacích prvků AppKit na uživatelské rozhraní.
@@ -197,7 +197,7 @@ Kde `[Register("SourceListView")]` zpřístupňuje instrukce `SourceListView` t�
 
 Výše uvedený kód na místě, můžete přetáhnout prvek AppKit základní typu, který bude rozšiřovat na návrhovou plochu (v příkladu níže, **zdrojového seznamu**), přepnout **Identity Inspector** a nastavte **vlastní třída** název, který je vystaven jazyka Objective-C (například `SourceListView`):
 
-[ ![](standard-controls-images/edit10.png "Nastavení vlastní třídy v Xcode")](standard-controls-images/edit10.png)
+[![](standard-controls-images/edit10.png "Nastavení vlastní třídy v Xcode")](standard-controls-images/edit10.png#lightbox)
 
 <a name="Exposing_Outlets_and_Actions" />
 
@@ -205,15 +205,15 @@ Výše uvedený kód na místě, můžete přetáhnout prvek AppKit základní t
 
 Můžete získat přístup k ovládacím prvku AppKit v kódu jazyka C#, je nutné vystavit jako buď **výstupu** nebo a **akce**. Vybrat daný ovládací prvek buď **rozhraní hierarchie** nebo **rozhraní editoru** a přepněte do **pomocníka zobrazení** (zajistěte, abyste měli `.h`okna Vybrat pro úpravy):
 
-[ ![](standard-controls-images/edit11.png "Výběr správný soubor pro úpravu")](standard-controls-images/edit11.png)
+[![](standard-controls-images/edit11.png "Výběr správný soubor pro úpravu")](standard-controls-images/edit11.png#lightbox)
 
 Přetáhněte ovládací prvek z ovládacího prvku AppKit do dané `.h` souboru chcete začít vytvářet **výstupu** nebo **akce**:
 
-[ ![](standard-controls-images/edit12.png "Přetahování pro vytvoření aplikace výstupu nebo akce")](standard-controls-images/edit12.png)
+[![](standard-controls-images/edit12.png "Přetahování pro vytvoření aplikace výstupu nebo akce")](standard-controls-images/edit12.png#lightbox)
 
 Vyberte typ ohrožení vytvořte a přiřaďte **výstupu** nebo **akce** **název**: 
 
-[ ![](standard-controls-images/edit13.png "Konfigurace výstupu nebo akce")](standard-controls-images/edit13.png)
+[![](standard-controls-images/edit13.png "Konfigurace výstupu nebo akce")](standard-controls-images/edit13.png#lightbox)
 
 
 Další informace o práci s **výstupy** a **akce**, najdete v tématu [výstupy a akce](~/mac/get-started/hello-mac.md#Outlets_and_Actions) části našich [Úvod do Xcode a rozhraní Tvůrce](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) dokumentaci.
@@ -226,7 +226,7 @@ Když přepnete zpět do Visual Studio pro Mac od Xcode, všechny změny, které
 
 Pokud jste vybrali `SplitViewController.designer.cs` v **Průzkumníku řešení** budete moci zobrazit jak vaše **výstupu** a **akce** byla drátové nahoru v našem kódu C#:
 
-[ ![](standard-controls-images/sync01.png "Synchronizace změn s Xcode")](standard-controls-images/sync01.png)
+[![](standard-controls-images/sync01.png "Synchronizace změn s Xcode")](standard-controls-images/sync01.png#lightbox)
 
 Všimněte si jak v definici `SplitViewController.designer.cs` souboru:
 
@@ -270,7 +270,7 @@ Obvykle se nikdy musíte otevřít `SplitViewController.designer.cs` sami, ho se
 
 AppKit poskytuje několik typů tlačítka, které lze použít v návrhu uživatelské rozhraní. Další informace najdete v tématu [tlačítka](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsButtons.html#//apple_ref/doc/uid/20000957-CH48-SW1) části společnosti Apple [OS X Human Interface Guidelines](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/). 
 
-[ ![](standard-controls-images/buttons01.png "Příkladem tlačítko různé typy")](standard-controls-images/buttons01.png)
+[![](standard-controls-images/buttons01.png "Příkladem tlačítko různé typy")](standard-controls-images/buttons01.png#lightbox)
 
 Pokud má byla tlačítko zveřejňovány prostřednictvím **výstupu**, následující kód bude odpovídat na ni se stisknutí:
 
@@ -311,7 +311,7 @@ Pro žádné tlačítko, které jste přidali do návrh uživatelského rozhran�
 
 Pokud chcete nastavit jako výchozí tlačítko, vyberte ho v Xcode na rozhraní tvůrce. Vedle **atribut Inspector**, vyberte **klíče ekvivalentní** pole a stiskněte klávesu **vrátit nebo zadejte** klíč:
 
-[ ![](standard-controls-images/buttons03.png "Úpravy klíče ekvivalentní")](standard-controls-images/buttons03.png)
+[![](standard-controls-images/buttons03.png "Úpravy klíče ekvivalentní")](standard-controls-images/buttons03.png#lightbox)
 
 Stejným způsobem můžete přiřadit všechny klíče pořadí, které lze použít k aktivaci tlačítko pomocí klávesnice místo myši. Pomocí klávesy například klíče příkaz C na předchozím obrázku.
 
@@ -323,7 +323,7 @@ Při spuštění aplikace a okna pomocí tlačítka je klíč a zaměřuje, poku
 
 AppKit poskytuje několik typů zaškrtávací políčka a skupin přepínačů, mohou být používány váš návrh uživatelského rozhraní. Další informace najdete v tématu [tlačítka](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsButtons.html#//apple_ref/doc/uid/20000957-CH48-SW1) části společnosti Apple [OS X Human Interface Guidelines](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/). 
 
-[ ![](standard-controls-images/buttons02.png "Příkladem typy k dispozici zaškrtávací políčko")](standard-controls-images/buttons02.png)
+[![](standard-controls-images/buttons02.png "Příkladem typy k dispozici zaškrtávací políčko")](standard-controls-images/buttons02.png#lightbox)
 
 
 Zaškrtávací políčka a přepínače (zveřejňovány prostřednictvím **výstupy**) mají stav (jako je **na** a **vypnout**), stav můžete zkontrolovat nebo nastavit `State` vlastnost k dané `NSCellStateValue` výčtu. Příklad:
@@ -375,7 +375,7 @@ Můžete použít `Tag` vlastnosti výběr byl přepínače.
 
 AppKit poskytuje několik typů nabídky ovládacích prvků, které je možné při návrhu uživatelské rozhraní. Další informace najdete v tématu [nabídky ovládací prvky](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlswithMenus.html#//apple_ref/doc/uid/20000957-CH100-SW1) části společnosti Apple [OS X Human Interface Guidelines](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/). 
 
-[ ![](standard-controls-images/menu01.png "Příklad nabídky ovládací prvky")](standard-controls-images/menu01.png)
+[![](standard-controls-images/menu01.png "Příklad nabídky ovládací prvky")](standard-controls-images/menu01.png#lightbox)
 
 <a name="Providing-Menu-Control-Data" />
 
@@ -429,7 +429,7 @@ Upravit vzhled ovládacího prvku nabídky k dispozici jsou tyto metody:
 
 Pro typy rozevíracího seznamu `NSPopupButtons`, první položku poskytuje název pro ovládací prvek. Příklad: 
 
-[ ![](standard-controls-images/menu02.png "Ovládací prvek příklad nabídky")](standard-controls-images/menu02.png)
+[![](standard-controls-images/menu02.png "Ovládací prvek příklad nabídky")](standard-controls-images/menu02.png#lightbox)
 
 Chcete-li změnit název, vystavit tuto položku jako **výstupu** a použít kód takto:
 
@@ -481,7 +481,7 @@ Další informace o práci s nabídkami a nabídky ovládací prvky, najdete v t
 
 AppKit poskytuje několik typů výběr ovládacích prvků, které je možné při návrhu uživatelské rozhraní. Další informace najdete v tématu [ovládacích prvků výběr](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsSelection.html#//apple_ref/doc/uid/20000957-CH49-SW1) části společnosti Apple [OS X Human Interface Guidelines](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/). 
 
-[ ![](standard-controls-images/select01.png "Příklad výběru ovládací prvky")](standard-controls-images/select01.png)
+[![](standard-controls-images/select01.png "Příklad výběru ovládací prvky")](standard-controls-images/select01.png#lightbox)
 
 Existují dva způsoby, jak sledovat, kdy ovládacího prvku pro výběr má interakci s uživatelem, tak jej jako vystavení **akce**. Příklad:
 
@@ -526,7 +526,7 @@ ImageWell.Image = NSImage.ImageNamed ("tag.png");
 
 AppKit poskytuje několik typů ukazatele ovládacích prvků, které je možné při návrhu uživatelské rozhraní. Další informace najdete v tématu [ukazatele ovládacích prvků](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsIndicators.html#//apple_ref/doc/uid/20000957-CH50-SW1) části společnosti Apple [OS X Human Interface Guidelines](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/). 
 
-[ ![](standard-controls-images/level01.png "Příklad ukazatele ovládacích prvků")](standard-controls-images/level01.png)
+[![](standard-controls-images/level01.png "Příklad ukazatele ovládacích prvků")](standard-controls-images/level01.png#lightbox)
 
 Existují dva způsoby, jak sledovat, kdy má ovládací prvek indikátor interakci s uživatelem, buď ji jako vystavení **akce** nebo **výstupu** a připojení **delegáta** k `Activated`událostí. Příklad:
 
@@ -557,7 +557,7 @@ Volání `StopAnimation` metoda zastaví animace.
 
 AppKit poskytuje několik typů ovládacích prvků Text, který lze použít v návrhu uživatelské rozhraní. Další informace najdete v tématu [ovládacích prvků textu](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsText.html#//apple_ref/doc/uid/20000957-CH51-SW1) části společnosti Apple [OS X Human Interface Guidelines](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/). 
 
-[ ![](standard-controls-images/text01.png "Příklad ovládacích prvků textu")](standard-controls-images/text01.png)
+[![](standard-controls-images/text01.png "Příklad ovládacích prvků textu")](standard-controls-images/text01.png#lightbox)
 
 U textových polí (`NSTextField`), tyto události lze použít ke sledování interakce s uživatelem:
 
@@ -589,7 +589,7 @@ Kód SourceWriter má plně komentář, pokud je k dispozici odkazy být zadané
 
 AppKit poskytuje několik typů obsahu zobrazení, které je možné při návrhu uživatelské rozhraní. Další informace najdete v tématu [obsahu zobrazení](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsView.html#//apple_ref/doc/uid/20000957-CH52-SW1) části společnosti Apple [OS X Human Interface Guidelines](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/).
 
-[ ![](standard-controls-images/content01.png "Zobrazení příkladu obsahu")](standard-controls-images/content01.png)
+[![](standard-controls-images/content01.png "Zobrazení příkladu obsahu")](standard-controls-images/content01.png#lightbox)
 
 <a name="Popovers" />
 
@@ -602,16 +602,16 @@ Pokud chcete vytvořit popover, postupujte takto:
 1. Otevřete `.storyboard` okna, které chcete přidat popover k poklepáním v souboru **Průzkumníku řešení**
 2. Přetáhněte **zobrazit řadiče** z **knihovny Inspector** na **rozhraní editoru**: 
 
-    [ ![](standard-controls-images/content02.png "Výběr řadič zobrazení z knihovny")](standard-controls-images/content02.png)
+    [![](standard-controls-images/content02.png "Výběr řadič zobrazení z knihovny")](standard-controls-images/content02.png#lightbox)
 4. Zadejte velikost a rozložení **vlastní zobrazení**: 
 
-    [ ![](standard-controls-images/content04.png "Úpravy rozložení")](standard-controls-images/content04.png)
+    [![](standard-controls-images/content04.png "Úpravy rozložení")](standard-controls-images/content04.png#lightbox)
 5. Ovládací prvek klikněte a přetáhněte ze zdroje automaticky otevřeném okně na **View Controller**: 
 
-    [ ![](standard-controls-images/content05.png "Vytvoření segue tažením")](standard-controls-images/content05.png)
+    [![](standard-controls-images/content05.png "Vytvoření segue tažením")](standard-controls-images/content05.png#lightbox)
 6. Vyberte **Popover** z místní nabídky: 
 
-    [ ![](standard-controls-images/content06.png "Nastavení typu segue")](standard-controls-images/content06.png)
+    [![](standard-controls-images/content06.png "Nastavení typu segue")](standard-controls-images/content06.png#lightbox)
 7. Uložte změny a vrátit k sadě Visual Studio pro Mac k synchronizaci s Xcode.
 
 <a name="Tab_Views" />
@@ -622,11 +622,11 @@ Karta zobrazení sestává ze seznamu karta (podobně jako do ovládacího prvku
 
 Při práci s kartě zobrazení v Xcode na rozhraní tvůrce, použijte **atribut Inspector** nastavit počet karet:
 
-[ ![](standard-controls-images/content08.png "Úpravy počet karet")](standard-controls-images/content08.png)
+[![](standard-controls-images/content08.png "Úpravy počet karet")](standard-controls-images/content08.png#lightbox)
 
 Vyberte každé kartě v **rozhraní hierarchie** k nastavení jeho **název** a přidejte prvky uživatelského rozhraní pro jeho **podokně**:
 
-[ ![](standard-controls-images/content09.png "Úpravy na karty v Xcode")](standard-controls-images/content09.png)
+[![](standard-controls-images/content09.png "Úpravy na karty v Xcode")](standard-controls-images/content09.png#lightbox)
 
 <a name="Data_Binding_AppKit_Controls" />
 

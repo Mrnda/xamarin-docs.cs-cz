@@ -4,14 +4,15 @@ description: "Použití cesty grafiky klip určitých oblastí a vytvářet obla
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 8022FBF9-2208-43DB-94D8-0A4E9A5DA07F
 author: charlespetzold
 ms.author: chape
 ms.date: 06/16/2017
-ms.openlocfilehash: b1c5b64725a163e15f07d2aecaea4e56b7ecec2e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: bb99984f93f494cfb5ad3d37ccb25f0b91d0b489
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="clipping-with-paths-and-regions"></a>Výstřižek se cesty a oblasti
 
@@ -98,7 +99,7 @@ canvas.ClipPath(keyholePath);
 
 `PaintSurface` Obslužná rutina pak obnoví transformace pomocí volání `ResetMatrix` a nevykresluje rastrový obrázek k rozšíření na úplné výšku obrazovky. Tento kód předpokládá, že bitmapy se čtvereček, který má tato konkrétní rastrový obrázek. Bitmapy je vykreslen pouze v oblasti určené cestou výstřižek:
 
-[![](clipping-images/monkeythroughkeyhole-small.png "Trojitá snímek obrazovky opic prostřednictvím stránky klíčové dírky")](clipping-images/monkeythroughkeyhole-large.png "Trojitá snímek obrazovky opic prostřednictvím klíčové dírky stránky")
+[![](clipping-images/monkeythroughkeyhole-small.png "Trojitá snímek obrazovky opic prostřednictvím stránky klíčové dírky")](clipping-images/monkeythroughkeyhole-large.png#lightbox "Trojitá snímek obrazovky opic prostřednictvím klíčové dírky stránky")
 
 Cesta výstřižek je podmíněno transformace při platit `ClipPath` metoda je volána, a k transformace platit při grafického objektu (například rastrový obrázek) se nezobrazí. Cesta výstřižek je součástí plátno stavu, který je uložený s `Save` metoda a obnovený s `Restore` metoda.
 
@@ -165,7 +166,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Co je ponechán je průnik tyto čtyři kruhy:
 
-[![](clipping-images//fourcircleintersectclip-small.png "Trojitá snímek obrazovky stránky čtyři kruh Intersect klip")](clipping-images/fourcircleintersectclip-large.png "Trojitá snímek obrazovky stránky klip Intersect čtyři kruhu.")
+[![](clipping-images//fourcircleintersectclip-small.png "Trojitá snímek obrazovky stránky čtyři kruh Intersect klip")](clipping-images/fourcircleintersectclip-large.png#lightbox "Trojitá snímek obrazovky stránky klip Intersect čtyři kruhu.")
 
 [ `SKClipOperation` ](https://developer.xamarin.com/api/type/SkiaSharp.SKClipOperation/) Výčet má pouze dva členy:
 
@@ -175,13 +176,13 @@ Co je ponechán je průnik tyto čtyři kruhy:
 
 Pokud nahradíte čtyři `SKClipOperation.Intersect` argumentů `FourCircleIntersectClipPage` třídy s `SKClipOperation.Difference`, zobrazí se následující:
 
-[![](clipping-images//fourcircledifferenceclip-small.png "Trojitá snímek obrazovky stránky čtyři kruh Intersect klip rozdíl operace")](clipping-images/fourcircledifferenceclip-large.png "Trojitá snímek obrazovky stránky čtyři kruh Intersect klip rozdíl operace")
+[![](clipping-images//fourcircledifferenceclip-small.png "Trojitá snímek obrazovky stránky čtyři kruh Intersect klip rozdíl operace")](clipping-images/fourcircledifferenceclip-large.png#lightbox "Trojitá snímek obrazovky stránky čtyři kruh Intersect klip rozdíl operace")
 
 Čtyři kruhy překrývajících se byly odebrány z oblasti výstřižek.
 
 **Klip Operations** stránky ukazuje rozdíl mezi těmito dvěma operacemi s jenom pár kroužky. V prvním kruhu na levé straně je přidáno do oblasti výstřižek s provozem klip výchozí `Intersect`, zatímco druhý kruhu na pravé straně je přidáno do oblasti výstřižek klip operace indikován textový popisek:
 
-[![](clipping-images//clipoperations-small.png "Trojitá snímek obrazovky stránky klip operace")](clipping-images/clipoperations-large.png "Trojitá snímek obrazovky stránky klip operace")
+[![](clipping-images//clipoperations-small.png "Trojitá snímek obrazovky stránky klip operace")](clipping-images/clipoperations-large.png#lightbox "Trojitá snímek obrazovky stránky klip operace")
 
 [ `ClipOperationsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ClipOperationsPage.cs) Třída definuje dvě `SKPaint` objektů jako pole a pak rozdělí na obrazovce na dvě obdélníková oblasti. Tyto oblasti se liší v závislosti na tom, jestli je telefonu v režimu na výšku nebo na šířku. `DisplayClipOp` Třída pak zobrazí text a volání `ClipPath` s dvě kruh cesty k objasnění každou operaci klip:
 
@@ -282,7 +283,7 @@ public void ClipRegion(SKRegion region, SKClipOperation operation = SKClipOperat
 
 Následující snímek obrazovky ukazuje výstřižek oblasti podle činnosti šesti oblast. Levé kroužek je oblast, `Op` metoda je volána na a pravém kroužek je oblast předaný `Op` metoda:
 
-[![](clipping-images//regionoperations-small.png "Trojitá snímek obrazovky stránky oblast operace")](clipping-images/regionoperations-large.png "Trojitá snímek obrazovky stránky operace oblast")
+[![](clipping-images//regionoperations-small.png "Trojitá snímek obrazovky stránky oblast operace")](clipping-images/regionoperations-large.png#lightbox "Trojitá snímek obrazovky stránky operace oblast")
 
 Jsou tyto všechny možnosti kombinace těchto dvou kroužky? Vezměte v úvahu bitovou kopii výsledné jako kombinace tří součástí, která jsou zobrazená v samotné `Difference`, `Intersect`, a `ReverseDifference` operace. Celkový počet kombinací je dva třetí mocninu nebo osm. Jsou dva, které chybí oblasti původní (který výsledkem není volání `Op` vůbec) a oblast zcela prázdný.
 
@@ -423,7 +424,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 `DrawRegion` Volání vyplní celé oblasti oranžovou barvu, když `DrawPath` volání tahy původní cesta modře pro porovnání:
 
-[![](clipping-images//regionpaint-small.png "Trojitá snímek obrazovky stránky oblast Malování")](clipping-images/regionpaint-large.png "Trojitá snímek obrazovky stránky oblast Malování")
+[![](clipping-images//regionpaint-small.png "Trojitá snímek obrazovky stránky oblast Malování")](clipping-images/regionpaint-large.png#lightbox "Trojitá snímek obrazovky stránky oblast Malování")
 
 Oblast je jasně řadu diskrétní souřadnice.
 
@@ -509,7 +510,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Je skutečně nevypadá čtyři – listu jetel, ale je obrázek, který jinak může být obtížné vykreslení bez výstřižek:
 
-[![](clipping-images//fourleafclover-small.png "Trojitá snímek obrazovky stránky čtyři – listu jetel")](clipping-images/fourleafclover-large.png "Trojitá snímek obrazovky stránky čtyři – listu jetel")
+[![](clipping-images//fourleafclover-small.png "Trojitá snímek obrazovky stránky čtyři – listu jetel")](clipping-images/fourleafclover-large.png#lightbox "Trojitá snímek obrazovky stránky čtyři – listu jetel")
 
 
 ## <a name="related-links"></a>Související odkazy

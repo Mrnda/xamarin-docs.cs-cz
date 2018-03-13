@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 641f62d5e646607b2ff61db412a5defce63a211d
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 92b90f8d4655ea89b67e81f3235b6fd9b6d92833
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="toolbars"></a>Panely nástrojů
 
@@ -82,7 +82,7 @@ Prvky uživatelského rozhraní kódu C# pomocí výstupy a akce, aplikace Xamar
 2. Vyberte řadič okno na návrhovou plochu.
 3. Přepnout **Identity Inspector** a zadejte "WindowController" jako **název třídy**: 
 
-    [![Nastavení názvu vlastní třídu zařízení okno](toolbar-images/windowcontroller01.png "název vlastní třídu pro kontroler okno nastavení")](toolbar-images/windowcontroller01-large.png) 
+    [![Nastavení názvu vlastní třídu zařízení okno](toolbar-images/windowcontroller01.png "název vlastní třídu pro kontroler okno nastavení")](toolbar-images/windowcontroller01-large.png#lightbox) 
 
 4. Uložte změny a vrátit k sadě Visual Studio pro Mac k synchronizaci.
 5. A **WindowController.cs** soubor bude přidán do projektu v **řešení Pad** v sadě Visual Studio pro Mac: 
@@ -92,7 +92,7 @@ Prvky uživatelského rozhraní kódu C# pomocí výstupy a akce, aplikace Xamar
 6. Znovu otevřete storyboard v Tvůrci rozhraní pro Xcode.
 7. **WindowController.h** soubor bude k dispozici pro použití: 
 
-    [![Soubor WindowController.h](toolbar-images/windowcontroller03.png "WindowController.h souboru")](toolbar-images/windowcontroller03-large.png)
+    [![Soubor WindowController.h](toolbar-images/windowcontroller03.png "WindowController.h souboru")](toolbar-images/windowcontroller03-large.png#lightbox)
 
 ## <a name="creating-and-maintaining-toolbars-in-xcode"></a>Vytvoření a údržbu panely nástrojů v Xcode
 
@@ -188,7 +188,7 @@ Z tohoto umístění pomocí rozhraní tvůrce konfigurace pole hledání a umí
 
 Několik prvky uživatelského rozhraní kakao interakci s položkami standardním panelu nástrojů ve výchozím nastavení. Například, přetáhněte **textového zobrazení** na okno aplikace a umístit je tak, aby vyplnil oblast obsahu:
 
-[![Přidání zobrazení textu do aplikace](toolbar-images/edit09.png "přidání textového zobrazení aplikace")](toolbar-images/edit09-large.png)
+[![Přidání zobrazení textu do aplikace](toolbar-images/edit09.png "přidání textového zobrazení aplikace")](toolbar-images/edit09-large.png#lightbox)
 
 Uložte dokument, vraťte se do sady Visual Studio pro Mac, aby synchronizovat s Xcode, spusťte aplikaci, zadejte text, vyberte ho a klikněte **barvy** položka panelu nástrojů. Všimněte si, že textového zobrazení automaticky spolupracuje s volby barev:
 
@@ -201,7 +201,7 @@ Pomocí **položka panelu nástrojů Image**, všechny bitové mapy image přida
 1. V sadě Visual Studio pro Mac v **řešení Pad**, klikněte pravým tlačítkem myši **prostředky** složky a vyberte **přidat** > **přidat soubory** .
 2. Z **přidat soubory** dialogové okno pole, přejděte na požadovanou bitové kopie, vyberte je a klikněte **otevřete** tlačítko: 
 
-    [![Výběr Image přidat](toolbar-images/edit11.png "výběru Image, přidat")](toolbar-images/edit11-large.png)
+    [![Výběr Image přidat](toolbar-images/edit11.png "výběru Image, přidat")](toolbar-images/edit11-large.png#lightbox)
 
 3. Vyberte **kopie**, zkontrolujte **použít stejnou akci pro všechny vybrané soubory**a klikněte na tlačítko **OK**:
 
@@ -225,7 +225,7 @@ Pomocí **položka panelu nástrojů Image**, všechny bitové mapy image přida
 
 9. Přetáhněte **položka panelu nástrojů oddělovače** z **knihovny Inspector** na panelu nástrojů **povolené položky panelu nástrojů** oblasti: 
 
-    [![Položka panelu nástrojů oddělovače přidáno do oblasti povolené položky panelu nástrojů](toolbar-images/edit17.png "položka panelu nástrojů A oddělovače přidáno do oblasti povolené položky panelu nástrojů")](toolbar-images/edit17-large.png)
+    [![Položka panelu nástrojů oddělovače přidáno do oblasti povolené položky panelu nástrojů](toolbar-images/edit17.png "položka panelu nástrojů A oddělovače přidáno do oblasti povolené položky panelu nástrojů")](toolbar-images/edit17-large.png#lightbox)
 
 10. Přetáhněte položka oddělovač, položka "Koš", která má **výchozí položky panelu nástrojů** oblasti a sadu pořadí panelu nástrojů položky z zleva doprava (barvy, písma, oddělovač, Koš, flexibilní místa, tisk) takto: 
 
@@ -244,7 +244,7 @@ Pro přístup k panelu nástrojů nebo Položka panelu nástrojů v kódu, musí
 1. V **řešení Pad**, dvakrát klikněte na **Main.storyboard** otevřít v Xcode.
 2. Ujistěte se, že vlastní třídu "WindowController" přiřazený k řadiči hlavní okno v **Identity Inspector**:
 
-    [![Pomocí Identity Inspector nastavení vlastní třídy pro okno řadič](toolbar-images/edit20a.png "pomocí Identity Inspector nastavit vlastní třídu pro kontroler okno")](toolbar-images/edit20a-large.png)
+    [![Pomocí Identity Inspector nastavení vlastní třídy pro okno řadič](toolbar-images/edit20a.png "pomocí Identity Inspector nastavit vlastní třídu pro kontroler okno")](toolbar-images/edit20a-large.png#lightbox)
 
 3. Potom vyberte položku panelu nástrojů v **rozhraní hierarchie**: 
 
@@ -253,11 +253,11 @@ Pro přístup k panelu nástrojů nebo Položka panelu nástrojů v kódu, musí
 4. Otevřete **pomocníka zobrazení**, vyberte **WindowController.h** soubor a přetáhněte ovládací prvek z položky panelu nástrojů na **WindowController.h** souboru.
 5. Nastavte **připojení** typ, který má **akce**, zadejte "trashDocument" **název**a klikněte na tlačítko **připojit** tlačítko: 
 
-    [![Konfigurace akce pro položku panelu nástrojů](toolbar-images/edit23.png "konfigurace akce pro položku panelu nástrojů")](toolbar-images/edit23-large.png)
+    [![Konfigurace akce pro položku panelu nástrojů](toolbar-images/edit23.png "konfigurace akce pro položku panelu nástrojů")](toolbar-images/edit23-large.png#lightbox)
 
 6. Vystavení **textového zobrazení** jako výstupu názvem "documentEditor" v **ViewController.h** souboru: 
 
-    [![Konfigurace výstupu pro zobrazení textu](toolbar-images/edit24.png "konfigurace výstupu pro zobrazení textu")](toolbar-images/edit24-large.png)
+    [![Konfigurace výstupu pro zobrazení textu](toolbar-images/edit24.png "konfigurace výstupu pro zobrazení textu")](toolbar-images/edit24-large.png#lightbox)
 
 7. Uložte změny a vrátit k sadě Visual Studio pro Mac k synchronizaci s Xcode.
 

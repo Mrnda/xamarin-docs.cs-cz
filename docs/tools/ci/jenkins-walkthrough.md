@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/23/2017
-ms.openlocfilehash: eb1602a96b304919fe563d1bb9ea0a15722e436b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8d23211e28cb1b1dae13d67e32462888c66ff065
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="using-jenkins-with-xamarin"></a>Použití volaných s Xamarin
 
@@ -34,7 +34,7 @@ Jakmile je nastavené volaných a byly nainstalovány všechny potřebné modul�
 
 Tento průvodce provede jak nastavit server volaných pokrývajících každý z těchto bodů. Na konci roku jeho jsme měli dostatečné povědomí o tom, jak nainstalovat a nakonfigurovat volaných vytvořit soubor IPA a na APK pro naše mobilní projekty Xamarin.
 
-# <a name="requirements"></a>Požadavky
+## <a name="requirements"></a>Požadavky
 
 Server ideální sestavení je vyhrazený pro výhradně za účelem vytváření a testování aplikace může být samostatný počítač. Vyhrazený počítač zajistí, že artefaktů, které mohou být požadovány pro jiné role (například s webový server) nekontaminovaly sestavení. Například pokud sestavení serveru taky funguje jako webový server, webový server může vyžadovat konfliktní verzi některé běžné knihovny. Kvůli konfliktu, který tento webový server nemusí fungovat správně nebo volaných může vytvořit sestavení, které nefungují při nasazení pro uživatele.
 
@@ -42,7 +42,7 @@ Sestavení serveru pro mobilní aplikace Xamarin je nastavený velmi podobně ja
 
 Následující diagram znázorňuje všechny tyto prvky na typické volaných sestavení serveru:
 
- [ ![](jenkins-walkthrough-images/image1.png "Tento diagram znázorňuje všechny tyto prvky na typické serveru volaných sestavení")](jenkins-walkthrough-images/image1.png)
+ [![](jenkins-walkthrough-images/image1.png "Tento diagram znázorňuje všechny tyto prvky na typické serveru volaných sestavení")](jenkins-walkthrough-images/image1.png#lightbox)
 
 aplikace pro iOS můžete pouze vytvořené a podepsaný v počítači se systémem Mac OS X. Malé Mac je možné logicky možnost nižší náklady, ale každý počítač schopný spustit OS X 10.10 (Yosemite) nebo vyšší není dostatečná.
 
@@ -50,7 +50,7 @@ Pokud pro řízení zdrojového kódu se používají sady TFS, budete chtít na
 
 [!include[](~/tools/ci/includes/firewall-information.md)]
 
-# <a name="installing-jenkins"></a>Instalace volaných
+## <a name="installing-jenkins"></a>Instalace volaných
 
 První úlohou použití volaných je k jeho instalaci. Existují tři způsoby, jak spustit volaných na OS X:
 
@@ -63,57 +63,57 @@ Většina tradičních průběžnou integraci aplikace spuštěný na pozadí, b
 
 Jenkins.App je užitečný způsob, jak nainstalovat volaných. To je AppleScript obálky, který zjednodušuje počáteční a zastavení volaných serveru. Namísto provozujete v prostředí bash, volaných spouští jako aplikace s ikonou v ukotvení, jak je znázorněno na následujícím snímku obrazovky:
 
- [ ![](jenkins-walkthrough-images/image2.png "Namísto provozujete v prostředí bash, volaných spouští jako aplikace s ikonou v ukotvení, jak je vidět na tomto snímku obrazovky")](jenkins-walkthrough-images/image2.png)
+ [![](jenkins-walkthrough-images/image2.png "Namísto provozujete v prostředí bash, volaných spouští jako aplikace s ikonou v ukotvení, jak je vidět na tomto snímku obrazovky")](jenkins-walkthrough-images/image2.png#lightbox)
 
 Spuštění nebo zastavení volaných je jednoduché, spuštění nebo zastavení Jenkins.App.
 
 Pokud chcete nainstalovat Jenkins.App, stažení nejnovější verze ze stránky pro stažení projektu, na tomto snímku obrazovky na obrázku:
 
- [ ![](jenkins-walkthrough-images/image3.png "Aplikace a stáhnout nejnovější verzi z projektů stáhnout stránky, na tomto snímku obrazovky na obrázku")](jenkins-walkthrough-images/image3.png)
+ [![](jenkins-walkthrough-images/image3.png "Aplikace a stáhnout nejnovější verzi z projektů stáhnout stránky, na tomto snímku obrazovky na obrázku")](jenkins-walkthrough-images/image3.png#lightbox)
 
 Extrahujte soubor zip do `/Applications` složky na vašem serveru sestavení a spusťte ho stejně jako všechny aplikace, OS X.
 Při prvním spuštění Jenkins.App, se nabídne dialogové okno oznamující, že se stáhne volaných:
 
- [ ![](jenkins-walkthrough-images/image4.png "Aplikace, nabídne se dialogové okno oznamující, že se stáhne volaných")](jenkins-walkthrough-images/image4.png)
+ [![](jenkins-walkthrough-images/image4.png "Aplikace, nabídne se dialogové okno oznamující, že se stáhne volaných")](jenkins-walkthrough-images/image4.png#lightbox)
 
 Po dokončení jeho stažení Jenkins.App zobrazí další dialog s dotazem, pokud chcete přizpůsobit volaných spuštění, jak je vidět na následujícím snímku obrazovky:
 
- [ ![](jenkins-walkthrough-images/image5.png "Aplikace byl dokončen jeho stahování, zobrazí další dialog s dotazem, pokud chcete přizpůsobit volaných spuštění, jak je vidět na tomto snímku obrazovky")](jenkins-walkthrough-images/image5.png)
+ [![](jenkins-walkthrough-images/image5.png "Aplikace byl dokončen jeho stahování, zobrazí další dialog s dotazem, pokud chcete přizpůsobit volaných spuštění, jak je vidět na tomto snímku obrazovky")](jenkins-walkthrough-images/image5.png#lightbox)
 
 Přizpůsobení volaných je volitelná a není nutné provést pokaždé, když je aplikace spuštěná – výchozí nastavení pro volaných bude fungovat pro většinu situace.
 
 Pokud je nutné přizpůsobit volaných, klikněte na **změnit výchozí nastavení** tlačítko. To bude znamenat dvě po sobě jdoucích dialogová okna: ten, který požádá o parametry příkazového řádku Java a jiné, která požaduje zadání volaných parametry příkazového řádku. Následující dva snímky obrazovky ukazují tyto dvě dialogová okna:
 
- [ ![](jenkins-walkthrough-images/image6.png "Tento snímek obrazovky ukazuje dialogová okna")](jenkins-walkthrough-images/image6.png)
+ [![](jenkins-walkthrough-images/image6.png "Tento snímek obrazovky ukazuje dialogová okna")](jenkins-walkthrough-images/image6.png#lightbox)
 
- [ ![](jenkins-walkthrough-images/image7.png "Tento snímek obrazovky ukazuje dialogová okna")](jenkins-walkthrough-images/image7.png)
+ [![](jenkins-walkthrough-images/image7.png "Tento snímek obrazovky ukazuje dialogová okna")](jenkins-walkthrough-images/image7.png#lightbox)
 
 Jakmile volaných pracuje, můžete ho nastavit jako položku přihlášení, aby spustil až při každém přihlášení uživatele v k počítači. To provedete tak, že pravým tlačítkem myši na ikonu volaných v ukotvení a výběr **možnosti... Otevřete na přihlášení**, jak je znázorněno na následujícím snímku obrazovky:
 
- [ ![](jenkins-walkthrough-images/image8.png "To provedete tak, že pravým tlačítkem myši na ikonu volaných v ukotvení a výběr OptionsOpen na přihlášení, jak je vidět na tomto snímku obrazovky")](jenkins-walkthrough-images/image8.png)
+ [![](jenkins-walkthrough-images/image8.png "To provedete tak, že pravým tlačítkem myši na ikonu volaných v ukotvení a výběr OptionsOpen na přihlášení, jak je vidět na tomto snímku obrazovky")](jenkins-walkthrough-images/image8.png#lightbox)
 
 To způsobí, že Jenkins.App a automaticky spustit pokaždé, když uživatel se přihlásí, ale není při počítač se spustí. Je možné k určení uživatelského účtu, který OS X bude používat pro automatické přihlášení se při spuštění. Otevřete **předvolbách systému**a vyberte **s & kupiny uživatelů** ikonu, jak je vidět na tomto snímku obrazovky:
 
- [ ![](jenkins-walkthrough-images/image9.png "Otevřete předvolbách systému a vyberte ikonu pro skupiny uživatelů, jak je vidět na tomto snímku obrazovky")](jenkins-walkthrough-images/image9.png)
+ [![](jenkins-walkthrough-images/image9.png "Otevřete předvolbách systému a vyberte ikonu pro skupiny uživatelů, jak je vidět na tomto snímku obrazovky")](jenkins-walkthrough-images/image9.png#lightbox)
 
 Klikněte na **možností přihlášení** tlačítko a potom vyberte účet, který bude při spuštění pro přihlášení použili OS X.
 
 V tomto okamžiku volaných byl nainstalován. Ale pokud nám chcete sestavení mobilní aplikace Xamarin, budeme muset nainstalovat některé moduly plug-in.
 
 
-## <a name="installing-plugins"></a>Instalace modulů plug-in
+### <a name="installing-plugins"></a>Instalace modulů plug-in
 
 Po dokončení instalačního programu Jenkins.App bude spustit volaných a spustit webový prohlížeč s adresou URL adrese http://localhost: 8080, jak ukazuje následující snímek obrazovky:
 
- [ ![](jenkins-walkthrough-images/image10.png "8080, jak je vidět na tomto snímku obrazovky")](jenkins-walkthrough-images/image10.png)
+ [![](jenkins-walkthrough-images/image10.png "8080, jak je vidět na tomto snímku obrazovky")](jenkins-walkthrough-images/image10.png#lightbox)
 
 Na této stránce vyberte **volaných > Správa volaných > Správa modulů plug-in** z nabídky v levém horním rohu, jak ukazuje následující snímek obrazovky:
 
- [ ![](jenkins-walkthrough-images/image11.png "Z této stránky vyberte v nabídce v levém horním rohu volaných spravovat volaných spravovat moduly plug-in")](jenkins-walkthrough-images/image11.png)
+ [![](jenkins-walkthrough-images/image11.png "Z této stránky vyberte v nabídce v levém horním rohu volaných spravovat volaných spravovat moduly plug-in")](jenkins-walkthrough-images/image11.png#lightbox)
 
 Bude se zobrazovat **Manager modulu plug-in volaných** stránky. Pokud kliknete na kartě k dispozici, zobrazí se seznam více než 600 modulů plug-in, které je možné stáhnout a nainstalovat. To je na obrázku na následující snímek obrazovky:
 
- [ ![](jenkins-walkthrough-images/image12.png "Pokud kliknete na kartě k dispozici, zobrazí se seznam více než 600 modulů plug-in, které je možné stáhnout a nainstalovat")](jenkins-walkthrough-images/image12.png)
+ [![](jenkins-walkthrough-images/image12.png "Pokud kliknete na kartě k dispozici, zobrazí se seznam více než 600 modulů plug-in, které je možné stáhnout a nainstalovat")](jenkins-walkthrough-images/image12.png#lightbox)
 
 Posouvání prostřednictvím všechny 600 modulů plug-in a zjistit, že několik může to být zdlouhavé a náchylné k chybám chyby. Volaných poskytuje vyhledávací pole filtru v horním pravém rohu rozhraní. Použití tohoto pole filtru k vyhledání zjednoduší vyhledáním a nainstalované jeden nebo více následujících modulů plug-in:
 
@@ -125,22 +125,22 @@ Volaných podporuje Git bez jakékoli další moduly plug-in.
 
 Po instalaci všech moduly plug-in, budete chtít restartovat volaných a nakonfigurujte globální nastavení pro každý modul plug-in. Globální nastavení pro modul plug-in můžete najít tak, že vyberete **volaných > Správa volaných > Konfigurovat systém** v levém horním rohu, jak ukazuje následující snímek obrazovky:
 
- [ ![](jenkins-walkthrough-images/image13.png "Globální nastavení pro modul plug-in můžete najít tak, že vyberete volaných nebo spravovat volaných / rohu ruční konfigurace systému z velká vlevo")](jenkins-walkthrough-images/image13.png)
+ [![](jenkins-walkthrough-images/image13.png "Globální nastavení pro modul plug-in můžete najít tak, že vyberete volaných nebo spravovat volaných / rohu ruční konfigurace systému z velká vlevo")](jenkins-walkthrough-images/image13.png#lightbox)
 
 Když vyberete tuto možnost nabídky, budete přesměrováni na **nakonfigurujte systém [volaných]** stránky. Tato stránka obsahuje oddíly konfigurace volaných sám a nastavit některé z hodnot globálního modulu plug-in.  Následující snímek obrazovky ukazuje příklad této stránky:
 
- [ ![](jenkins-walkthrough-images/image14.png "Tento snímek obrazovky ukazuje příklad této stránky")](jenkins-walkthrough-images/image14.png)
+ [![](jenkins-walkthrough-images/image14.png "Tento snímek obrazovky ukazuje příklad této stránky")](jenkins-walkthrough-images/image14.png#lightbox)
 
 
-### <a name="configuring-the-msbuild-plugin"></a>Konfigurace modulu plug-in nástroje MSBuild
+#### <a name="configuring-the-msbuild-plugin"></a>Konfigurace modulu plug-in nástroje MSBuild
 
 Modul plug-in nástroje MSBuild musí být nakonfigurované na používání **/Library/Frameworks/Mono.framework/Commands/xbuild** ke kompilaci Visual Studio pro Mac soubory řešení a projektu. Posuňte se dolů **nakonfigurujte systém [volaných]** stránky až **přidat MSBuild** tlačítko se zobrazí, jak ukazuje následující snímek obrazovky:
 
- [ ![](jenkins-walkthrough-images/image15.png "Přejděte dolů na stránce konfigurace volaných systému se zobrazí tlačítko Přidat nástroje MSBuild")](jenkins-walkthrough-images/image15.png)
+ [![](jenkins-walkthrough-images/image15.png "Přejděte dolů na stránce konfigurace volaných systému se zobrazí tlačítko Přidat nástroje MSBuild")](jenkins-walkthrough-images/image15.png#lightbox)
 
 Klikněte na toto tlačítko a vyplňte **název** a **cesta** k **MSBuild** pole ve formuláři, který se zobrazí. Název vašeho **MSBuild** instalace by měla být něco smysluplného, při **cestu k MSBuild** by měl být cesta k `xbuild`, což obvykle představuje **/Library/architektury / Mono.framework/Commands/xbuild**. Po jsme uložte změny kliknutím na Uložit nebo na tlačítko použít v dolní části stránky, budou moci používat volaných `xbuild` zkompilovat řešení.
 
-### <a name="configuring-the-tfs-plugin"></a>Konfigurace modulu plug-in sady TFS
+#### <a name="configuring-the-tfs-plugin"></a>Konfigurace modulu plug-in sady TFS
 
 Tato část je povinný, pokud máte v úmyslu použít sady TFS pro vašeho zdrojového kódu.
 
@@ -160,34 +160,34 @@ Aby mohl pracovní stanici OS X pro interakci s serveru TFS Team Explorer Everyw
 
 Po instalaci klienta příkazového řádku pro TFS volaných musí být nakonfigurované úplnou cestu k `tf` klienta příkazového řádku. Posuňte se dolů **nakonfigurujte systém [volaných]** stránka až naleznete v části Team Foundation Server, jak je znázorněno na následujícím snímku obrazovky:
 
- [ ![](jenkins-walkthrough-images/image17.png "Přejděte dolů na stránce konfigurace volaných systému najdete v části Team Foundation Server")](jenkins-walkthrough-images/image17.png)
+ [![](jenkins-walkthrough-images/image17.png "Přejděte dolů na stránce konfigurace volaných systému najdete v části Team Foundation Server")](jenkins-walkthrough-images/image17.png#lightbox)
 
 Zadejte úplnou cestu k `tf` příkaz a klikněte na **Uložit** tlačítko.
 
-## <a name="configure-jenkins-security"></a>Konfigurace zabezpečení volaných
+### <a name="configure-jenkins-security"></a>Konfigurace zabezpečení volaných
 
 Při první instalaci má volaných zabezpečení zakázané, takže je možné pro všechny uživatele pro nastavení a spuštění jakýkoli druh úlohy anonymně. Tato část vysvětluje postup konfigurace zabezpečení pomocí databáze uživatelů volaných nakonfigurovat ověřování a autorizace.
 
 Nastavení zabezpečení se dají najít výběrem **volaných > volaných Správa > Konfigurace globálního zabezpečení**, jak je vidět na tomto snímku obrazovky:
 
- [ ![](jenkins-walkthrough-images/image18.png "Nastavení zabezpečení se dají najít výběrem volaných nebo spravovat volaných nebo konfigurace globálního zabezpečení")](jenkins-walkthrough-images/image18.png)
+ [![](jenkins-walkthrough-images/image18.png "Nastavení zabezpečení se dají najít výběrem volaných nebo spravovat volaných nebo konfigurace globálního zabezpečení")](jenkins-walkthrough-images/image18.png#lightbox)
 
 Na **konfigurace globálního zabezpečení** stránka, zkontrolujte **povolit zabezpečení** zaškrtávací políčko a **řízení přístupu** formuláře by měl vypadat, přibližně další – snímek obrazovky:
 
- [ ![](jenkins-walkthrough-images/image19.png "Na stránce Konfigurace globálního zabezpečení zkontrolujte zabezpečení povolit zaškrtávací políčko a řízení přístupu formulář by měl vypadat, přibližně na tomto snímku obrazovky")](jenkins-walkthrough-images/image19.png)
+ [![](jenkins-walkthrough-images/image19.png "Na stránce Konfigurace globálního zabezpečení zkontrolujte zabezpečení povolit zaškrtávací políčko a řízení přístupu formulář by měl vypadat, přibližně na tomto snímku obrazovky")](jenkins-walkthrough-images/image19.png#lightbox)
 
 Přepněte přepínač pro **volaných vlastní uživatelské databázi** v **části sféry zabezpečení**a ujistěte se, že **umožňují uživatelům zaregistrovat** je také zaškrtnuto, jak je ukázáno v Následující snímek obrazovky:
 
- [ ![](jenkins-walkthrough-images/image20.png "Přepněte přepínač volaných vlastní uživatele databáze v části sféry zabezpečení a ujistěte se, že je zaškrtnuté také povolit uživatelům zaregistrovat")](jenkins-walkthrough-images/image20.png)
+ [![](jenkins-walkthrough-images/image20.png "Přepněte přepínač volaných vlastní uživatele databáze v části sféry zabezpečení a ujistěte se, že je zaškrtnuté také povolit uživatelům zaregistrovat")](jenkins-walkthrough-images/image20.png#lightbox)
 
 Nakonec restartujte volaných a vytvořit nový účet. První účet, který je vytvořen je kořenového účtu a tento účet bude automaticky povýšen na správce. Přejděte zpět do **konfigurace globálního zabezpečení** stránky a zkontrolujte **zabezpečení na základě matice** přepínač. Kořenový účet by měl být umožněn úplný přístup, a anonymní účet má být poskytnut přístup jen pro čtení, jak je znázorněno na následujícím snímku obrazovky:
 
- [ ![](jenkins-walkthrough-images/image21.png "Kořenový účet by měl být umožněn úplný přístup, a anonymní účet má být poskytnut přístup jen pro čtení")](jenkins-walkthrough-images/image21.png)
+ [![](jenkins-walkthrough-images/image21.png "Kořenový účet by měl být umožněn úplný přístup, a anonymní účet má být poskytnut přístup jen pro čtení")](jenkins-walkthrough-images/image21.png#lightbox)
 
 Jakmile tato nastavení se ukládají a volaných restartování, bude zapnuto zabezpečení.
 
 
-### <a name="disabling-security"></a>Zakázání zabezpečení
+#### <a name="disabling-security"></a>Zakázání zabezpečení
 
 V případě zapomenuté heslo nebo celou volaných uzamčení je možné zakázat zabezpečení pomocí následujících kroků:
 
@@ -199,7 +199,7 @@ V případě zapomenuté heslo nebo celou volaných uzamčení je možné zakáz
 4. Odstranit `<authorizationstrategy></authorizationstrategy>` a `<securityrealm></securityrealm>` elementy ze souboru.
 5. Restartujte volaných.
 
-# <a name="setting-up-a-job"></a>Nastavení projektu
+## <a name="setting-up-a-job"></a>Nastavení projektu
 
 Na nejvyšší úrovni, volaných organizuje všechny potřebné k vytvoření softwaru do různých úloh *úlohy*. Úloha má také metadata spojená s ním, poskytuje informace o sestavení například jak získat zdrojový kód, jak často se má spouštět sestavení, jakékoli speciální proměnné, které jsou nezbytné pro vytváření a jak vývojáři upozornit, když je sestavení neúspěšné.
 
@@ -226,11 +226,11 @@ Po vytvoření počáteční úlohu, musí být konfigurován s jedním nebo ví
  - Jeden nebo více *akce sestavení* musí být přidaný do projektu. Toto jsou kroky nebo úlohy, které vyžadují pro sestavení aplikace.
  - Úloha musí být přiřazena jeden *vytvořit aktivační událost* – sada pokynů informuje o tom, jak často volaných konečné projekt sestavil a získat kód pro.
 
-## <a name="configuring-source-code-control"></a>Konfigurace správy zdrojového kódu
+### <a name="configuring-source-code-control"></a>Konfigurace správy zdrojového kódu
 
 První úkol, který nemá volaných je načíst zdrojový kód z systém správy zdrojového kódu. Volaných podporuje mnoho systémy správy kód oblíbených zdroj dnes k dispozici. Tato část obsahuje dva oblíbených systémy, Git a Team Foundation Server. Každý z těchto systémů správy zdrojového kódu je podrobněji popsána v následujících částech.
 
-### <a name="using-git-for-source-code-control"></a>Pomocí Git pro řízení zdrojového kódu
+#### <a name="using-git-for-source-code-control"></a>Pomocí Git pro řízení zdrojového kódu
 
 Pokud používáte sady TFS pro řízení zdrojového kódu, [přeskočit](#Using_TFS_for_Source_Code_Management) tohoto tématu a pokračujte v další části pomocí sady TFS.
 
@@ -240,7 +240,7 @@ Volaných podporuje Git předinstalované – žádné další moduly plug-in js
 
 Po uložení změn konfigurace Git je dokončena.
 
-### <a name="using-tfs-for-source-code-management"></a>Pomocí sady TFS pro správu zdrojového kódu
+#### <a name="using-tfs-for-source-code-management"></a>Pomocí sady TFS pro správu zdrojového kódu
 
 Tato část se týká pouze uživatelům sady TFS.
 
@@ -253,7 +253,7 @@ Zadejte informace potřebné pro TFS. Následující snímek obrazovky ukazuje p
 
 ![](jenkins-walkthrough-images/image27.png "Tento snímek obrazovky ukazuje příklad dokončené formuláře")
 
-### <a name="testing-the-source-code-control-configuration"></a>Testování konfigurace řízení zdrojového kódu
+#### <a name="testing-the-source-code-control-configuration"></a>Testování konfigurace řízení zdrojového kódu
 
 Jakmile byl nakonfigurován příslušný zdrojového kódu, klikněte na možnost **Uložit** a uložte změny. Tím se vrátíte na domovskou stránku pro úlohy, která bude vypadat podobně jako na následujícím snímku obrazovky:
 
@@ -273,7 +273,7 @@ Pomoci při řešení problémů, které by mohly nastat jako součást sestaven
 
 ![](jenkins-walkthrough-images/image31.png "Tento snímek obrazovky ukazuje odkaz výstup konzoly, jakož i některé výstupu z úlohy úspěšné")
 
-### <a name="location-of-build-artifacts"></a>Umístění sestavení artefaktů
+#### <a name="location-of-build-artifacts"></a>Umístění sestavení artefaktů
 
 Volaných načte celý zdrojový kód do speciální složku s názvem *prostoru*. Tento adresář najdete ve složce v následujícím umístění:
 
@@ -285,7 +285,7 @@ Je možné procházet složky prostoru ve volaných tak, že přejdete na cílov
 
 ![](jenkins-walkthrough-images/image32.png "Tento snímek obrazovky ukazuje příklad pracovního prostoru pro úlohu s názvem HelloWorld")
 
-## <a name="build-triggers"></a>Aktivační události sestavení
+### <a name="build-triggers"></a>Aktivační události sestavení
 
 Existuje několik různých strategie pro inicializaci sestavení v volaných – označované jako *sestavení aktivační události*. Aktivační událost sestavení pomáhá volaných při rozhodování, kdy chcete spustit úlohu a sestavte projekt. Dva z běžnějších aktivačních událostí sestavení jsou:
 
@@ -297,7 +297,7 @@ Dotazování SCM je Oblíbené aktivační událost, protože poskytuje rychlý 
 Pravidelné sestavení se často používají k vytvoření verze aplikace, která mohou být distribuovány do testerům, sada. Například pravidelné sestavení může být naplánováno pátek večer tak, aby členové týmu QA můžete otestovat pracovní předchozího týdne.
 
 
-## <a name="compiling-a-xamarinios-applications"></a>Kompilování aplikace Xamarin.iOS
+### <a name="compiling-a-xamarinios-applications"></a>Kompilování aplikace Xamarin.iOS
 Xamarin.iOS projekty mohou být zkompilovány pomocí příkazového řádku `xbuild` nebo `msbuild`. Příkaz prostředí bude spuštěn v kontextu uživatelského účtu, který běží volaných. Je důležité, že uživatelský účet má přístup na profil zřizování, tak aby aplikace mohla správně zabalena pro distribuci. Je možné přidat tento příkaz prostředí na stránku konfigurace úlohy.
 
 Přejděte dolů k položce **sestavení** části. Klikněte **přidat krok sestavení** tlačítko a vyberte **spustit prostředí**, jak vidíte na následujícím snímku obrazovky:
@@ -307,7 +307,7 @@ Přejděte dolů k položce **sestavení** části. Klikněte **přidat krok ses
 
 [!include[](~/tools/ci/includes/commandline-compile-of-xamarin-ios-ipa.md)]
 
-## <a name="building-a-xamarinandroid-project"></a>Sestavení projektu Xamarin.Android
+### <a name="building-a-xamarinandroid-project"></a>Sestavení projektu Xamarin.Android
 
 Sestavení projektu Xamarin.Android je v podstatě hodně podobný pro sestavení projektu Xamarin.iOS. Pokud chcete vytvořit APK z projektu Xamarin.Android, je třeba volaných proveďte následující dva kroky:
 
@@ -316,7 +316,7 @@ Sestavení projektu Xamarin.Android je v podstatě hodně podobný pro sestaven�
 
 Podrobněji v následujících dvou částech se budeme tyto dva kroky.
 
-## <a name="creating-the-apk"></a>Vytváření APK
+### <a name="creating-the-apk"></a>Vytváření APK
 
 Klikněte na **přidat krok sestavení** tlačítko a vyberte **vytvořit projekt sady Visual Studio nebo řešení pomocí nástroje MSBuild**, jak ukazuje následující snímek obrazovky:
 
@@ -337,7 +337,7 @@ Následující snímek obrazovky ukazuje příklad této APK:
 
 Tento APK není připraven pro nasazení, protože není podepsaný s privátní úložiště klíčů a musí být zip zarovnána.
 
-### <a name="signing-and-zipaligning-the-apk-for-release"></a>Podpisování a Zipaligning APK pro vydání
+#### <a name="signing-and-zipaligning-the-apk-for-release"></a>Podpisování a Zipaligning APK pro vydání
 
 Podpisování a zipaligning APK jsou technicky dvou samostatných úloh provedená pomocí dvou samostatných příkazový řádek nástrojů ze sady SDK pro Android. Je však vhodné k jejich provedení akce jeden sestavení. Další informace o podepisování a zipaligning APK dokumentaci pro Xamarin na Příprava aplikace platformy Android pro verzi.
 
@@ -410,12 +410,12 @@ Následující snímek obrazovky ukazuje příklad zadejte `jarsigner` a `zipali
 
 Jakmile jsou všechny akce sestavení na místě, je dobrým zvykem aktivovat ruční build se ověřit, zda že vše funguje. Pokud sestavení selže, **výstup konzoly** by měl být zkontrolovány informace o tom, co způsobilo sestavení selhání.
 
-## <a name="submitting-tests-to-test-cloud"></a>Odesílání testů pro testovací Cloud
+### <a name="submitting-tests-to-test-cloud"></a>Odesílání testů pro testovací Cloud
 
 Automatizované testy můžete odeslat testovací cloudu pomocí příkazů prostředí. Další informace o nastavení testu spusťte v Xamarin Test Cloud máme příručky pro používání [Xamarin.UITest](https://developer.xamarin.com/guides/testcloud/uitest/working-with/submitting-tests-to-xamarin-test-cloud/) nebo [Calabash](https://developer.xamarin.com/guides/testcloud/calabash/working-with/submitting-tests-to-xamarin-test-cloud/).
 
 
-#<a name="summary"></a>Souhrn
+## <a name="summary"></a>Souhrn
 
 V této příručce jsme uvedla volaných sestavení serveru v systému Mac OS X a nakonfigurovat ji pro kompilaci a příprava mobilní aplikace Xamarin pro verzi. Jsme nainstalovali volaných na počítači Mac OS X společně s několik modulů plug-in podporují procesu sestavení. Jsme vytvořený a nakonfigurovaný úlohu, která bude načítat kód z sady TFS nebo Git a potom tento kód kompilována aplikaci připravené na verzi. Také jsme prozkoumali dva různé způsoby, jak naplánovat, kdy by měl být spuštěn úlohy.
 

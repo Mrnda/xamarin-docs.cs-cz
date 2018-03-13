@@ -7,21 +7,20 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/21/2017
-ms.openlocfilehash: 6b4958c6a82b824f19cc041b124e79034eba4c86
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9bae3c56c5f6c445618f41d877c3188a86167be1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="publishing-to-the-amazon-app-store"></a>Publikování do obchodu s aplikacemi Amazon
 
 Program distribuce Amazon mobilní aplikace umožňuje vývojářům mobilní aplikaci publikovat své aplikace na Amazon. Tato část stručně popisuje obchodu s aplikacemi Amazon pro Android. 
 
-[![Obrazovka Amazon App Store](publishing-to-amazon-images/amazon-app-store.png)](publishing-to-amazon-images/amazon-app-store.png)
+[![Obrazovka Amazon App Store](publishing-to-amazon-images/amazon-app-store.png)](publishing-to-amazon-images/amazon-app-store.png#lightbox)
 
 Amazon neomezuje velikost APKs. Ale pokud APK je větší než 30MB, pak použije FTP pro distribuční místo distribuční portálu Amazon mobilní aplikace.
 
-<a name="Submitting_Apps:_Binary_Info" />
 
 ## <a name="submitting-apps-binary-info"></a>Odesílá aplikace: Informace o binární
 
@@ -34,7 +33,6 @@ Podání žádosti o obchodu s aplikacemi Amazon je podobným způsobem podání
 -  Mohou být k dispozici aktualizace pět videa.
 
 
-<a name="Approval_Process" />
 
 ## <a name="approval-process"></a>Proces schválení
 

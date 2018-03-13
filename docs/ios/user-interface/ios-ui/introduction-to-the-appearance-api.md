@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 6d2a454665691c028fe8307940a5662a98ab9c98
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f35256529d6d72a3f5e563dc88b9d5883a9724d4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="appearance-api"></a>Vzhled rozhraní API
 
@@ -32,7 +32,7 @@ Použít vlastní vzhled dvěma různými způsoby:
 
 Ukázkovou aplikaci vzhled ukazuje všechny tři způsoby, jak je znázorněno v tyto snímky obrazovky:
 
- [ ![](introduction-to-the-appearance-api-images/appearance01.png "Ukázkovou aplikaci vzhled ukazuje všechny tři metody")](introduction-to-the-appearance-api-images/appearance01.png)
+ [![](introduction-to-the-appearance-api-images/appearance01.png "Ukázkovou aplikaci vzhled ukazuje všechny tři metody")](introduction-to-the-appearance-api-images/appearance01.png#lightbox)
 
 Od verze iOS 8 proxy vzhled rozšířilo a TraitCollections.
  `AppearanceForTraitCollection` slouží k nastavení vzhledu výchozí kolekce konkrétní znak. Další informace najdete v [Úvod do scénářů](~/ios/user-interface/storyboards/unified-storyboards.md) průvodce.
@@ -87,11 +87,11 @@ sg1.TintColor = UIColor.Magenta;
 
 Alternativně nastavte hodnotu v poli vlastnosti pro návrháře: 
 
-[ ![](introduction-to-the-appearance-api-images/propertiespadtint.png "TINT – vlastnosti odsazení")](introduction-to-the-appearance-api-images/propertiespadtint.png)
+[![](introduction-to-the-appearance-api-images/propertiespadtint.png "TINT – vlastnosti odsazení")](introduction-to-the-appearance-api-images/propertiespadtint.png#lightbox)
 
 Následující obrázek ukazuje, že nastaví tato odstín barvy na pouze ovládací prvek s názvem 'sz1'.
 
- [ ![](introduction-to-the-appearance-api-images/image53.png "Nastavení TINT – jednotlivé ovládací prvek")](introduction-to-the-appearance-api-images/image53.png)
+ [![](introduction-to-the-appearance-api-images/image53.png "Nastavení TINT – jednotlivé ovládací prvek")](introduction-to-the-appearance-api-images/image53.png#lightbox)
 
 Nastavení mnoho ovládacích prvků tímto způsobem by bylo úplně neefektivní, takže jsme místo toho můžete nastavit statickou `Appearance` vlastnost na vlastní třídy. To je ukázáno v následujícím kódu:
 
@@ -101,7 +101,7 @@ UISegmentedControl.Appearance.TintColor = UIColor.Magenta;
 
 Následující obrázek nyní znázorňuje obou segmentovaným ovládací prvky s vzhled nastavit fialově:
 
- [ ![](introduction-to-the-appearance-api-images/image54.png "Nastavení odstín barvy vzhledu ovládacího prvku")](introduction-to-the-appearance-api-images/image54.png)
+ [![](introduction-to-the-appearance-api-images/image54.png "Nastavení odstín barvy vzhledu ovládacího prvku")](introduction-to-the-appearance-api-images/image54.png#lightbox)
 
 `Appearance` vlastnosti musí být nastaveno již v rané fázi v průběhu životního cyklu aplikací, například v AppDelegate `FinishedLaunching` události, nebo v ViewController před ovlivněných ovládací prvky jsou zobrazeny.
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 99b9ed9e3c71766f483f7b00996137aae7a247d1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 26ac42e4b7acbe19dee746130fc335fdf18ffc46
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="android-debug-log"></a>Protokol pro Android ladění
 
@@ -36,7 +36,6 @@ Jakmile se zobrazí okno nástroje fyzického zařízení je možné vybrat z po
 Toto okno Nástroj obsahuje: tabulku položky protokolu, pole se seznamem pro výběr zařízení, způsob, jak zrušit položky protokolu, vyhledávacího pole a přehrát či zastavit nebo pozastavit tlačítky. 
 
 
-<a name="Accessing_from_the_Command_Line" />
 
 ## <a name="accessing-from-the-command-line"></a>Přístup k z příkazového řádku
 
@@ -52,7 +51,6 @@ Pokud je připojeno více než jedno zařízení, musí identifikovat zařízen�
 
 Další příkazy najdete právě spuštěním **adb**.
 
-<a name="Writing_to_the_Debug_Log" />
 
 
 ## <a name="writing-to-the-debug-log"></a>Zápis do protokolu ladění
@@ -75,7 +73,6 @@ W/myapp   (11103): this is a warning message
 E/myapp   (11103): this is an error message
 ```
 
-<a name="Interesting_Messages" />
 
 ## <a name="interesting-messages"></a>Zajímavé zprávy
 

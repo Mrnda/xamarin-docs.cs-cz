@@ -6,11 +6,11 @@ ms.assetid: FAED4445-9F37-46D8-B408-E694060969B9
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: 57dec129a5f16b004e054a7a3fedd296bad92a3e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3978b046a8ab4d42cbf86bf524452a033b5dbb4d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="getting-started-with-the-xamarin-workbooks-sdk"></a>Začínáme s Xamarin sešity SDK
 
@@ -28,15 +28,15 @@ Integrace knihovny jsou nejlépe vyvíjeny jako s více platformami knihovny. Vz
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Přenosná knihovna šablony Visual Studio pro Mac](images/xamarin-studio-pcl.png)](images/xamarin-studio-pcl.png)
+[![Přenosná knihovna šablony Visual Studio pro Mac](images/xamarin-studio-pcl.png)](images/xamarin-studio-pcl.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Přenosná knihovna šablony sady Visual Studio](images/visual-studio-pcl.png)](images/visual-studio-pcl.png)
+[![Přenosná knihovna šablony sady Visual Studio](images/visual-studio-pcl.png)](images/visual-studio-pcl.png#lightbox)
 
 V sadě Visual Studio budete chtít Ujistěte se, že jste vybrali následující cílových platforem pro své přenosné knihovny:
 
-[![Přenosná knihovna platformy Visual Studio](images/visual-studio-pcl-platforms.png)](images/visual-studio-pcl-platforms.png)
+[![Přenosná knihovna platformy Visual Studio](images/visual-studio-pcl-platforms.png)](images/visual-studio-pcl-platforms.png#lightbox)
 
 -----
 
@@ -44,11 +44,11 @@ Po vytvoření projektu knihovny, přidejte odkaz na našem `Xamarin.Workbooks.I
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![NuGet Visual Studio pro Mac](images/xamarin-studio-nuget.png)](images/xamarin-studio-nuget.png)
+[![NuGet Visual Studio pro Mac](images/xamarin-studio-nuget.png)](images/xamarin-studio-nuget.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![NuGet Visual Studio](images/visual-studio-nuget.png)](images/visual-studio-nuget.png)
+[![NuGet Visual Studio](images/visual-studio-nuget.png)](images/visual-studio-nuget.png#lightbox)
 
 -----
 
@@ -146,11 +146,11 @@ a potom ho k publikovat [NuGet][nugetorg]. Jakmile existuje, budete moci na něj
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Sešit s integrací](images/mac-workbooks-integrated.png)](images/mac-workbooks-integrated.png)
+[![Sešit s integrací](images/mac-workbooks-integrated.png)](images/mac-workbooks-integrated.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Sešit s integrací](images/windows-workbooks-integrated.png)](images/windows-workbooks-integrated.png)
+[![Sešit s integrací](images/windows-workbooks-integrated.png)](images/windows-workbooks-integrated.png#lightbox)
 
 -----
 

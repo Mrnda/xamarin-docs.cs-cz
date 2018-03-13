@@ -7,18 +7,17 @@ ms.assetid: 23F57634-2EF9-5C15-C710-B3E19A5AF7E1
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 06/14/2017
-ms.openlocfilehash: 2e54bfc4bea3955dc80a747c4ecce485b78ada1d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 136484644779ac40e661f50ff19cf15884c864c2
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="jelly-bean-features"></a>Funkce položku Bean želé
 
 _Tento dokument poskytne podrobný přehled nových funkcí pro vývojáře, které byly zavedeny v systému Android 4.1. Tyto funkce patří: rozšířeného oznámení, aktualizace Android světla sdílet velké soubory, aktualizace zjišťování sítě multimédia, peer-to-peer, animací, nová oprávnění._
 
-<a name="Overview" />
 
 
 ## <a name="overview"></a>Přehled
@@ -31,21 +30,18 @@ Byla přidána podpora pro pomocí zjišťování sítě služby Bonjour, techno
 
 Nakonec bylo přidáno několik nová oprávnění v Android 4.1.
 
- <a name="Requirements" />
 
 
 ## <a name="requirements"></a>Požadavky
 
 K vývoji aplikací Xamarin.Android pomocí položku Bean želé vyžaduje Xamarin.Android 4.2.6 nebo vyšší a Android 4.1 (rozhraní API Level 16) být nainstalovány prostřednictvím Android SDK Manager, jak je znázorněno na následujícím snímku obrazovky:
 
-[![Výběr Android 4.1 ve správci sady SDK pro Android](jelly-bean-images/image1.png)](jelly-bean-images/image1.png)
+[![Výběr Android 4.1 ve správci sady SDK pro Android](jelly-bean-images/image1.png)](jelly-bean-images/image1.png#lightbox)
 
- <a name="What's_New" />
 
 
 ## <a name="whats-new"></a>Co je nového
 
- <a name="Animations" />
 
 
 ### <a name="animations"></a>Animace
@@ -79,7 +75,6 @@ animator.Start();
 
 Jako `TimeAnimator` je spuštěna instance, bude vyvolání `ITimeAnimator.ITimeListener`, který se potom se přihlaste jak dlouho animator byl spuštěný a jak dlouho se jako byla od posledního metodu metoda byla volána.
 
- <a name="Application_Stack_Navigation" />
 
 
 ### <a name="application-stack-navigation"></a>Navigační zásobník aplikace
@@ -98,7 +93,6 @@ Pro složitější scénáře existují nové metody pro třídu aktivity, kter�
 -   `OnCreateNavigateUpTaskStack` – Tato metoda je potlačena, pokud je potřeba mít plnou kontrolu nad vytváření syntetické zásobníku.
 
 
- <a name="Camera" />
 
 
 ### <a name="camera"></a>Fotoaparát
@@ -149,19 +143,16 @@ button.Click += (sender, args) => mediaActionPlayer.Play(MediaActionSoundType.Sh
 mediaActionPlayer.Release();
 ```
 
- <a name="Connectivity" />
 
 
 ### <a name="connectivity"></a>Připojení k
 
- <a name="Android_Beam" />
 
 
 #### <a name="android-beam"></a>Android Beam
 
 Android světla je NFC, na základě technologie, která umožňuje dvě zařízení se systémem Android ke komunikaci mezi sebou. Android 4.1 poskytuje lepší podporu pro přenos velkých souborů. Při použití nové metody `NfcAdapter.SetBeamPushUris()` Android dojde k přepnutí mezi mechanismy alternativní přenosu (například Bluetooth) na dosáhnout rychlost rychlého přenosu.
 
- <a name="Network_Services_Discovery" />
 
 
 #### <a name="network-services-discovery"></a>Zjišťování sítě služby
@@ -173,14 +164,12 @@ Chcete-li vytvořit službu, která může být spotřebované jinými službami
 
 Ke zjišťování služby na síť a provádění `Nsd.DiscoveryListener` předaný `NsdManager.discoverServices()`.
 
- <a name="Network_Usage" />
 
 
 #### <a name="network-usage"></a>Využití sítě
 
 Nová metoda `ConnectivityManager.IsActiveNetworkMetered` umožňuje zařízení zkontrolujte, zda je připojena k měřené síti. Tato metoda slouží ke správě využití dat pomocí přesně informování uživatelů, může být nákladné poplatků za data operací.
 
- <a name="WiFi_Direct_Service_Discovery" />
 
 
 #### <a name="wifi-direct-service-discovery"></a>Zjišťování sítě Wi-Fi Direct služby
@@ -195,14 +184,12 @@ V položku Bean želé `WifiP2pManager` můžete zjišťovat okolní zařízení
 -   `SetUpnpServiceResponseListener()` – Tato metoda se používá k registraci zpětná volání a volána pro příjem odpovědí na požadavky na zjišťování Upnp.
 
 
- <a name="Content_Providers" />
 
 
 ### <a name="content-providers"></a>Poskytovatelů obsahu
 
 `ContentResolver` Třída přijal nová metoda `AcquireUnstableContentProvider`. Tato metoda umožňuje aplikaci získat poskytovatele "nestabilním" obsahu. Za normálních okolností, kdy aplikace získá poskytovateli obsahu a že poskytovateli obsahu dojde k chybě, proto bude aplikace. S toto volání metody aplikace nebude selhat, pokud dojde k chybě poskytovatele obsahu. Místo toho `Android.OS.DeadObjectionException` bude vyvolána z volání na poskytovateli obsahu k informování aplikaci, která poskytovateli obsahu se příliš rychle. Poskytovatele "nestabilním" obsahu je užitečné při interakci s poskytovatelům obsahu z jiných aplikací – je méně pravděpodobné, že buggy kód z jiné aplikace bude mít vliv jiná aplikace.
 
- <a name="Copy_and_Paste_With_Intents" />
 
 
 ### <a name="copy-and-paste-with-intents"></a>Zkopírujte a vložte pomocí tříd Intent
@@ -214,14 +201,11 @@ V položku Bean želé `WifiP2pManager` můžete zjišťovat okolní zařízení
 -   **Identifikátor URI** – to může být libovolný identifikátor URI, například záložku HTTP nebo identifikátor URI pro poskytovatele obsahu.
 
 
- <a name="Isolated_Services" />
 
 
 ### <a name="isolated-services"></a>Izolované služby
 
 Izolované služba je služba spuštěná pod zvláštní zpracování a nemá žádné oprávnění. Jenom komunikace se službou je při spuštění služby a vazbu k němu prostřednictvím rozhraní API služby. Je možné deklarovat službu jako izolované nastavením vlastnosti `IsolatedProcess="true"` v `ServiceAttribute` , adorns třídu služby.
-
- <a name="Media" />
 
 
 ### <a name="media"></a>Média
@@ -245,7 +229,6 @@ Následující nové třídy poskytovat standardních mechanismů a uživatelsk�
 -   `MediaRouterActionProvider` a `MediaRouteButton` – tyto třídy pomáhají zajistit konzistentní uživatelského rozhraní pro výběr a přehrávání média.
 
 
- <a name="Notifications" />
 
 
 ### <a name="notifications"></a>Oznámení
@@ -255,26 +238,25 @@ Android 4.1 umožňuje aplikacím větší flexibilitu a řízení pomocí zobra
 -   `Notification.BigPictureStyle` – Toto je pomocná třída, která bude generovat oznámení, která je v nich bude mít bitovou kopii. Následující obrázek ukazuje příklad oznámení s velký obrázek:
 
 
- [ ![Snímek obrazovky příklad BigPictureStyle oznámení](jelly-bean-images/image2.png)](jelly-bean-images/image2.png)
+ [![Snímek obrazovky příklad BigPictureStyle oznámení](jelly-bean-images/image2.png)](jelly-bean-images/image2.png#lightbox)
 
 -   `Notification.BigTextStyle` – Toto je pomocná třída, která bude generovat oznámení, které budou mít více řádků textu, například e-mailu. Příkladem tento nový styl oznámení můžete zobrazit na následujícím snímku obrazovky:
 
 
- [ ![Snímek obrazovky příklad BigTextStyle oznámení](jelly-bean-images/image3.png)](jelly-bean-images/image3.png)
+ [![Snímek obrazovky příklad BigTextStyle oznámení](jelly-bean-images/image3.png)](jelly-bean-images/image3.png#lightbox)
 
 -   `Notification.InboxStyle` – Toto je pomocná třída, která bude generovat oznámení, které obsahují seznam řetězců, jako je například fragmenty kódu z e-mailovou zprávu, jak je vidět na tomto snímku obrazovky:
 
 
- [ ![Snímek obrazovky příklad Notification.InboxStyle oznámení](jelly-bean-images/image4.png)](jelly-bean-images/image4.png)
+ [![Snímek obrazovky příklad Notification.InboxStyle oznámení](jelly-bean-images/image4.png)](jelly-bean-images/image4.png#lightbox)
 
 Je možné přidat až dvě tlačítka akce v dolní části zprávy oznámení, když oznámení používá styl Normální nebo větší.
 Příklady najdete v následující snímek obrazovky, které jsou viditelné v dolní části oznámení tlačítka akce:
 
- [ ![Příklad snímek obrazovky tlačítka akce zobrazí následující zprávu oznámení](jelly-bean-images/image5.png)](jelly-bean-images/image5.png)
+ [![Příklad snímek obrazovky tlačítka akce zobrazí následující zprávu oznámení](jelly-bean-images/image5.png)](jelly-bean-images/image5.png#lightbox)
 
 `Notification` Třída přijal nový konstanty, které umožňují vývojář chcete zadat jednu z pěti úrovně priority pro oznámení. To lze nastavit u oznámení pomocí `Priority` vlastnost.
 
- <a name="Permissions" />
 
 
 ### <a name="permissions"></a>Oprávnění
@@ -290,7 +272,6 @@ Byly přidány následující nové oprávnění:
 
 O změnu důležité si uvědomit, `READ_EXTERNAL_STORAGE` – aktuálně toto oprávnění je automaticky přiděleno Android. Budoucích verzích systému Android bude vyžadovat aplikace k vyžádání toto oprávnění před uděleno oprávnění.
 
- <a name="Summary" />
 
 
 ## <a name="summary"></a>Souhrn

@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: ce1014616d0cf5f6cd5228d69976dfeca546b382
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c45ea8cb7c0e3d12e94666d61c6fdf7e5828264e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="text-input"></a>Zadávání textu
 
@@ -19,9 +19,9 @@ Přijetí zadávání textu uživatele se provádí pomocí `UITextField` pro je
 
 Na následujících snímcích obrazovky zobrazit ikony pro tyto ovládací prvky, umístěný v panelu nástrojů v sadě Visual Studio pro Mac:
 
- [ ![](text-input-images/image11a.png "UITextField")](text-input-images/image11a.png)
+ [![](text-input-images/image11a.png "UITextField")](text-input-images/image11a.png#lightbox)
 
- [ ![](text-input-images/image13a.png "UITextView")](text-input-images/image13a.png)
+ [![](text-input-images/image13a.png "UITextView")](text-input-images/image13a.png#lightbox)
 
 Jakmile mají pojmenované výstupu a uložili soubor Storyboard, Visual Studio pro Mac se aktualizuje `.designer.cs` třídu můžete přidat kód C#, který odkazuje na ovládacího prvku do souboru – třída. Každý ovládací prvek má svou vlastní jedinečné vlastnosti a události, které jsou přístupné v kódu jazyka C#.
 
@@ -32,7 +32,7 @@ Jakmile mají pojmenované výstupu a uložili soubor Storyboard, Visual Studio 
 
 `UITextField` Řízení se nejčastěji používá tak, aby přijímal jeden řádek textu vstupu, například uživatelské jméno nebo heslo. Některé z možností pro přizpůsobení ovládacího prvku k dispozici zde se zobrazují:
 
- [ ![](text-input-images/image15a.png "Vlastnosti UITextField")](text-input-images/image15a.png)
+ [![](text-input-images/image15a.png "Vlastnosti UITextField")](text-input-images/image15a.png#lightbox)
 
 Tyto ovládací prvky jsou vysvětleny níže:
 
@@ -76,7 +76,7 @@ View.Add(textfield1);
 
 `UITextView` Řízení lze použít k zobrazení jen pro čtení textu nebo tak, aby přijímal zadávání více řádků textu. Má řadu stejné možnosti jako `UITextField` (například velkých písmen, oprava, atd).
 
- [ ![](text-input-images/image16a.png "Vlastnosti UITextView")](text-input-images/image16a.png)
+ [![](text-input-images/image16a.png "Vlastnosti UITextView")](text-input-images/image16a.png#lightbox)
 
 Určité vlastnosti:
 

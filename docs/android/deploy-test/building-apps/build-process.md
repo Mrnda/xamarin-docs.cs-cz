@@ -6,23 +6,20 @@ ms.assetid: 3BE5EE1E-3FF6-4E95-7C9F-7B443EE3E94C
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/15/2018
-ms.openlocfilehash: 68ddb9baa008ec8222b4399a5ab25330fda2afd1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/09/2018
+ms.openlocfilehash: 51caebb86cb72b11ced70522fc253e608f5ccab0
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="build-process"></a>Proces sestavení
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Přehled
 
 Proces sestavení Xamarin.Android zodpovídá za připevnění všechno, co společně: [generování `Resource.designer.cs` ](~/android/internals/api-design.md), podpůrné `AndroidAsset`, `AndroidResource`a dalších [akce sestavení](#Build_Actions), generování [Android – obálky s možností](~/android/platform/java-integration/android-callable-wrappers.md)a generování `.apk` pro spuštění na zařízeních s Androidem.
 
-<a name="App_Packaging" />
-<a name="Application_Packages" />
 
 ## <a name="application-packages"></a>Balíčky aplikací
 
@@ -34,7 +31,6 @@ V obecné podmínky, existují dva typy balíčků aplikace pro Android (`.apk` 
 
 Toto nastavení není shodou odpovídat MSBuild `Configuration` produkuje balíčku.
 
-<a name="Shared_Runtime" />
 
 ### <a name="shared-runtime"></a>Sdílený modul Runtime
 
@@ -53,7 +49,6 @@ Rychlé nasazení se označuje selhání na zařízení, které blokovat `adb` s
 Rychlé nasazení je ve výchozím nastavení povolené a mohou být zakázány v ladicí sestavení nastavením `$(EmbedAssembliesIntoApk)` vlastnost `True`.
 
 
-<a name="MSBuild_Projects" />
 
 ## <a name="msbuild-projects"></a>Projektů MSBuild
 
@@ -81,7 +76,6 @@ Následující cíle sestavení jsou definovány pro Xamarin.Android projekty:
 
 -   **UpdateAndroidResources** &ndash; aktualizace `Resource.designer.cs` souboru. Tento cíl nazývá IDE obvykle, když se přidají nové prostředky do projektu.
 
-<a name="Build_Properties" />
 
 ## <a name="build-properties"></a>Vlastnosti sestavení
 
@@ -116,7 +110,6 @@ Vlastnosti instalace řídí chování `Install` a `Uninstall` cíle.
     MSBuild /t:Install ProjectName.csproj /p:AdbTarget=-e
     ```
 
-<a name="App_Packaging" />
 
 ### <a name="packaging-properties"></a>Balení vlastnosti
 
@@ -146,7 +139,7 @@ Balení vlastnosti řídit vytváření balíček Android a jsou používány `I
 
     Tato vlastnost je `False` ve výchozím nastavení.
 
--   **AndroidFastDeploymentType** &ndash; A `:` (dvojtečka) – seznam oddělených hodnot k řízení, jaké typy se dá nasadit na [adresáře rychlého nasazení](#Fast_Deployment) na cílovém zařízení při [ `$(EmbedAssembliesIntoApk)` ](#EmbedAssembliesIntoApk) Vlastnosti MSBuild je `False`. Pokud prostředek je rychlé nasazení, je *není* vkládat do vygenerovaného `.apk`, můžete urychlit časů nasazení. (Další, který je rychlé nasazená, pak méně často `.apk` musí být znovu sestavit a proces instalace může být rychlejší.) Platné hodnoty patří:
+-   **AndroidFastDeploymentType** &ndash; A `:` (dvojtečka) – seznam oddělených hodnot k řízení, jaké typy se dá nasadit na [adresáře rychlého nasazení](#Fast_Deployment) na cílovém zařízení při `$(EmbedAssembliesIntoApk)` Vlastnosti nástroje MSBuild `False`. Pokud prostředek je rychlé nasazení, je *není* vkládat do vygenerovaného `.apk`, můžete urychlit časů nasazení. (Další, který je rychlé nasazená, pak méně často `.apk` musí být znovu sestavit a proces instalace může být rychlejší.) Platné hodnoty patří:
 
     - `Assemblies`: Nasazení sestavení aplikace.
 
@@ -158,7 +151,7 @@ Balení vlastnosti řídit vytváření balíček Android a jsou používány `I
 
 -   **AndroidApplicationJavaClass** &ndash; úplný název třídy Java používat místě `android.app.Application` při třídy dědí z [Android.App.Application](https://developer.xamarin.com/api/type/Android.App.Application/).
 
-    Tato vlastnost se obvykle nastavuje *jiných* vlastnosti, například [ `$(AndroidEnableMultiDex)` ](#AndroidEnableMultiDex) vlastnosti MSBuild.
+    Tato vlastnost se obvykle nastavuje *jiných* vlastnosti, například `$(AndroidEnableMultiDex)` vlastnosti MSBuild.
 
     Přidat v Xamarin.Android 6.1.
 
@@ -285,7 +278,7 @@ Balení vlastnosti řídit vytváření balíček Android a jsou používány `I
 
 -   **MonoSymbolArchive** &ndash; vlastnost typu boolean, která určuje, zda `.mSYM` artefakty jsou vytvořené pro pozdější použití s `mono-symbolicate`, k extrakci &ldquo;skutečné&rdquo; a název souboru a řádku číslo informací z Verze trasování zásobníku.
 
-    Toto je True ve výchozím nastavení pro &ldquo;verze&rdquo; aplikace, které mají povolené symboly ladění: [ `$(EmbedAssembliesIntoApk)` ](#EmbedAssembliesIntoApk) má hodnotu True, `$(DebugSymbols)` má hodnotu True, a `$(Optimize)` má hodnotu True.
+    Toto je True ve výchozím nastavení pro &ldquo;verze&rdquo; aplikace, které mají povolené symboly ladění: `$(EmbedAssembliesIntoApk)` má hodnotu True, `$(DebugSymbols)` má hodnotu True, a `$(Optimize)` má hodnotu True.
 
     Přidat v Xamarin.Android 7.1.
 
@@ -301,24 +294,22 @@ Balení vlastnosti řídit vytváření balíček Android a jsou používány `I
 
     Před definované klíčové položky
 
-    -   **ABI** &ndash; vloží abi směrována pro aplikaci  
+    -   **ABI** &ndash; vloží abi směrována pro aplikaci
         -   1 &ndash; `armeabi`
         -   2 &ndash; `armeabi-v7a`
         -   3 &ndash; `x86`
         -   4 &ndash; `arm64-v8a`
         -   5 &ndash; `x86_64`
 
-    -   **minSDK** &ndash; vloží minimální podporovaná hodnota Sdk z `AndroidManifest.xml` nebo `11` Pokud žádný je definována.  
+    -   **minSDK** &ndash; vloží minimální podporovaná hodnota Sdk z `AndroidManifest.xml` nebo `11` Pokud žádný je definována.
 
     -   **versionCode** &ndash; používá direrctly kód verze z `Properties\AndroidManifest.xml`.
 
-    Můžete definovat vlastní položky pomocí [AndroidVersionCodeProperties](#AndroidVersionCodeProperties) vlastnost.
+    Můžete definovat vlastní položky pomocí `AndroidVersionCodeProperties` vlastnosti (definovaná Další).
 
     Přidat v Xamarin.Android 7.2.
 
--   **AndroidVersionCodeProperties** &ndash; ve vlastnosti string, který umožňuje definovat vlastní položky pro použití s vývojáři [AndroidVersionCodePattern](#AndroidVersionCodePattern).
-    Jsou ve formě `key=value` pár. Všechny položky v `value` musí být celočíselné hodnoty. Příklad: `screen=23;target=$(_SupportedApiLevel)`.
-    Jak je vidět, můžete provést pomocí nástroje MSBuild existujících nebo vlastních vlastností v řetězci.
+-   **AndroidVersionCodeProperties** &ndash; ve vlastnosti string, který umožňuje definovat vlastní položky pro použití s vývojáři `AndroidVersionCodePattern`. Jsou ve formě `key=value` pár. Všechny položky v `value` musí být celočíselné hodnoty. Příklad: `screen=23;target=$(_SupportedApiLevel)`. Jak je vidět, můžete provést pomocí nástroje MSBuild existujících nebo vlastních vlastností v řetězci.
 
     Přidat v Xamarin.Android 7.2.
 
@@ -365,8 +356,6 @@ Následující vlastnosti nástroje MSBuild se používají s [vazby projekty](~
     Výchozí hodnota se změní v budoucí verzi.
 
 
-<a name="Resgen" />
-<a name="Resource_Properties" />
 
 ### <a name="resource-properties"></a>Vlastnosti prostředku
 
@@ -385,7 +374,6 @@ Vlastnosti prostředku řídit generování `Resource.designer.cs` souboru, kter
     **Experimentální**. Přidat v Xamarin.Android 7.0.
 
 
-<a name="Signing" />
 <a name="Signing_Properties" />
 
 ### <a name="signing-properties"></a>Podepisování vlastnosti
@@ -446,21 +434,16 @@ Pokud chcete použít úložiště klíčů generované výše, použijte vlastn
 Soubory pomocí akce sestavení `AndroidEnvironment` se používají pro [inicializace proměnné prostředí a vlastnosti systému během spuštění procesu](~/android/deploy-test/environment.md).
 `AndroidEnvironment` Akce sestavení může použít na několik souborů a se vyhodnotí seřazeny (takže nezadávejte stejnou vlastnost proměnnou nebo systému prostředí ve více souborech).
 
-<a name="Java_Interop_Support" />
-<a name="AndroidJavaSource" />
 
 ### <a name="androidjavasource"></a>AndroidJavaSource
 
 Soubory pomocí akce sestavení `AndroidJavaSource` jsou Java zdrojového kódu, které budou zahrnuty do konečné balíček Android.
 
-<a name="AndroidJavaLibrary" />
 
 ### <a name="androidjavalibrary"></a>AndroidJavaLibrary
 
 Soubory pomocí akce sestavení `AndroidJavaLibrary` jsou Java archivy ( `.jar` soubory) které budou zahrnuty do konečné balíček Android.
 
-<a name="Resources" />
-<a name="AndroidResource" />
 
 ### <a name="androidresource"></a>AndroidResource
 
@@ -499,8 +482,6 @@ Pokročilejší uživatele může možná chcete mít různé prostředky použ�
 </ItemGroup>
 ```
 
-<a name="Native_Library_Support" />
-<a name="AndroidNativeLibrary" />
 
 ### <a name="androidnativelibrary"></a>AndroidNativeLibrary
 
@@ -546,7 +527,6 @@ Soubory s *ProguardConfiguration* akce sestavení obsahovat možnosti, které se
 Tyto soubory se ignoruje, pokud `$(EnableProguard)` vlastnosti MSBuild je `True`.
 
 
-<a name="Target_Definitions" />
 
 ## <a name="target-definitions"></a>Definice cílového
 

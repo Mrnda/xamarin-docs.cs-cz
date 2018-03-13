@@ -1,31 +1,31 @@
 ---
-title: "Nasazení a testování"
+title: "Nasazování a testování"
 description: "Ustálení a příruček nasazení"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 92B35AB1-7AB7-3D3B-DB31-CC971E0B43AE
+ms.assetid: 2DBF3BF9-79E7-4E24-AF26-E34C972B0169
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 0c152c389a6aa62512882863cd2830b436587475
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f051e855c9d32f5c9667dc70c7cb9cf9ba8105fb
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
-# <a name="deployment-and-testing"></a>Nasazení a testování
+# <a name="deployment-and-testing"></a>Nasazování a testování
 
 Tato část obsahuje témata týkající se používá k testování aplikace a její distribuce. Témata v tomto poli mezi patří například nástroje používané pro ladění, nasazení a testery, jak publikovat aplikaci do obchodu s aplikacemi.
 
 
-##  <a name="app-distributioniosdeploy-testapp-distributionindexmd"></a>[Distribuce aplikací](~/ios/deploy-test/app-distribution/index.md)
+##  <a name="app-distributioniosdeploy-testapp-distributionindexmd"></a>[Distribuce aplikace](~/ios/deploy-test/app-distribution/index.md)
 
 Tento článek ukazuje, jak nakonfigurovat, vytvářet a publikovat aplikace pro Xamarin.iOS pro distribuci přes různé jiné prostředky, včetně:
 
-- [Distribuce obchodu s aplikacemi](~/ios/deploy-test/app-distribution/app-store-distribution/index.md)
-- [Distribuce interní (Enterprise)](~/ios/deploy-test/app-distribution/in-house-distribution.md)
-- [Ad Hoc distribuce](~/ios/deploy-test/app-distribution/ad-hoc-distribution.md)
+- [Distribuce v obchodě App Store](~/ios/deploy-test/app-distribution/app-store-distribution/index.md)
+- [Interní (podniková) distribuce](~/ios/deploy-test/app-distribution/in-house-distribution.md)
+- [Jednorázová distribuce](~/ios/deploy-test/app-distribution/ad-hoc-distribution.md)
 
 ##  <a name="ipa-deploymentiosdeploy-testapp-distributionipa-supportmd"></a>[Soubor IPA nasazení](~/ios/deploy-test/app-distribution/ipa-support.md)
 
@@ -35,7 +35,7 @@ Ad Hoc a nasazení v podnicích umožňují vývojářům vytvořit balíčky, k
 
 Tato sada příručky obsahuje podepisování kódu a zřizování essentials, například práce s seznamů vlastností a jak zřídit vaší aplikace pro služby aplikací. 
 
-## <a name="wireless-deploymentwireless-deploymentmd"></a>[Bezdrátová nasazení](wireless-deployment.md)
+## <a name="wireless-deploymentwireless-deploymentmd"></a>[Bezdrátové nasazení](wireless-deployment.md)
 
  Xcode 9 zavedla možnost nasazení na zařízení s iOS nebo Apple TV prostřednictvím sítě, místo nutnosti pevně připojené zařízení pokaždé, když chcete nasazení a ladění aplikace. Tato funkce je aktuálně ve verzi preview.
 
@@ -61,7 +61,7 @@ V tomto článku popisují způsob použití nástroje na jakékoli zařízení 
 
 
 
-##  <a name="walkthrough---using-apples-instrument-tooliosdeploy-testwalkthrough-apples-instrumentmd"></a>[Návod – pomocí nástroje nástrojích společnosti Apple](~/ios/deploy-test/walkthrough-apples-instrument.md)
+##  <a name="walkthrough---using-apples-instrument-tooliosdeploy-testwalkthrough-apples-instrumentmd"></a>[Návod – Používání nástroje Apple Instruments](~/ios/deploy-test/walkthrough-apples-instrument.md)
 
 Tento článek vás provede použití společnosti Apple nástrojů nástroje pro diagnostiku problémů paměti v aplikaci pro systém iOS vytvořených pomocí Xamarinu. Ukazuje, jak spustit nástroje, pořizovat snímky haldy a analyzovat růstu paměti. Také ukazuje, jak používat nástroje k zobrazení a přesně určit přesnou řádky kódu, které způsobí problém paměti.
 

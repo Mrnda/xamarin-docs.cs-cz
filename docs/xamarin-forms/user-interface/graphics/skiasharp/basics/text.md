@@ -4,14 +4,15 @@ description: "Zjistit, jak určit velikost vykreslené textový řetězec textu 
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: A0B5AC82-7736-4AD8-AA16-FE43E18D203C
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 9a8cfac8911b1a8a13a4b6f149d02cd2f2c78453
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1cb6b6fcd8a9d02910842eb3eba966fce281d977
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="integrating-text-and-graphics"></a>Integrace textu a obrázků
 
@@ -113,7 +114,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Následující, zbývající část metodu je jednoduché. Vytvoří další `SKPaint` objekt pro ohraničení a volání `DrawRoundRect` dvakrát. Druhé volání používá obdélníku zvětšený o jiné 10 pixelů. První volání Určuje poloměr rohu 20 pixelů; druhý má rohu radius 30 pixelů, takže se zdá být paralelní:
 
- [![](text-images/framedtext-small.png "Trojitá snímek obrazovky stránky s rámečkem Text")](text-images/framedtext-large.png "Trojitá snímek obrazovky stránky textu s rámečkem")
+ [![](text-images/framedtext-small.png "Trojitá snímek obrazovky stránky s rámečkem Text")](text-images/framedtext-large.png#lightbox "Trojitá snímek obrazovky stránky textu s rámečkem")
 
 Chcete-li telefonu nebo do strany simulátoru zobrazíte text a zvýšit velikost rámce.
 
@@ -121,7 +122,7 @@ Pokud potřebujete center část textu na obrazovce, můžete provést přibliž
 
 Vlastní text mohou být považovány za mnohem grafické možnost. Jeden jednoduchý možnost je k zobrazení osnovy textových znaků, místo normálních vyplněný zobrazení:
 
-[![](text-images/outlinedtext-small.png "Snímek obrazovky stránky uvedených Text se třemi")](text-images/outlinedtext-large.png "Trojitá snímek obrazovky stránky uvedených textu")
+[![](text-images/outlinedtext-small.png "Snímek obrazovky stránky uvedených Text se třemi")](text-images/outlinedtext-large.png#lightbox "Trojitá snímek obrazovky stránky uvedených textu")
 
 To se provádí jednoduše tak, že změna normální `Style` vlastnost `SKPaint` objekt z jeho výchozí nastavení `SKPaintStyle.Fill` k `SKPaintStyle.Stroke` a zadáním šířku tahu. `PaintSurface` Obslužnou rutinu **uvedených Text** stránka zobrazuje, jak se provádí:
 

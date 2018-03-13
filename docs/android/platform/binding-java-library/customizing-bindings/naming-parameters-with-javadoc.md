@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/20/2017
-ms.openlocfilehash: 84dfe88e912241eb0024143bca568ae75e5bfa28
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d83135aa9c101e06a680b458cce8c12dcdddd947
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="naming-parameters-with-javadoc"></a>Názvy parametrů s Javadoc
 
 _Tento článek vysvětluje, jak obnovit názvy parametrů v vazby projektu Java pomocí Javadoc vygenerovat z projektu Java._
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Přehled
 
@@ -38,9 +37,8 @@ Až bude vše Hotovo, původní názvy parametrů Java by měla existovat v rozh
 
 
 > [!NOTE]
-> **Poznámka:** je značnou část odchylky JavaDoc výstup. Na. Sada vazby JAR nepodporuje každých jeden možné Permutace a v důsledku toho nemusí být některé parametr pojmenovaný správně.
+> Není značnou část odchylky JavaDoc výstup. Na. Sada vazby JAR nepodporuje každých jeden možné Permutace a v důsledku toho nemusí být některé parametr pojmenovaný správně.
 
-<a name="Summary" />
 
 ## <a name="summary"></a>Souhrn
 

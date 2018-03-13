@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: acdcdc2b76a995ca324532c6a034b2fdf8e21db5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4747fb73358a60d10832a1e650acd90a5a4274d1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ios-security-and-privacy-features"></a>iOS zabezpečení a ochrany osobních údajů funkce
 
@@ -76,7 +76,7 @@ Další informace o práci s `Info.plist` klíče, najdete v tématu společnost
 
 Provést následující příklad přístup k HomeKit v systému iOS 10 (a vyšší), bude nutné přidat Vývojář `NSHomeKitUsageDescription` klíče na aplikaci `Info.plist` souboru a zadejte řetězec deklarace, proč aplikace chce získat přístup k databázi HomeKit uživatele. Tento řetězec předloží čas uživatele při prvním spuštění aplikace:
 
-[ ![](security-privacy-images/info01.png "Příklad NSHomeKitUsageDescription výstrahy")](security-privacy-images/info01.png)
+[![](security-privacy-images/info01.png "Příklad NSHomeKitUsageDescription výstrahy")](security-privacy-images/info01.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -87,7 +87,7 @@ Xamarin.iOS pro aktuální sady Visual Studio nepodporuje úpravy vylepšení za
 3. Přidejte následující uzel zadejte požadované Popis: `<string>Allows the app to control HomeKit enabled devices.</string>`
 4. `Info.plist` Soubor by měl vypadat takto: 
 
-    [ ![](security-privacy-images/info02vs.png "Soubor Info.plist by měl vypadat jako následující")](security-privacy-images/info02vs.png)
+    [![](security-privacy-images/info02vs.png "Soubor Info.plist by měl vypadat jako následující")](security-privacy-images/info02vs.png#lightbox)
 4. Uložte změny do souboru.
 5. Vraťte se k sadě Visual Studio a pak ji znovu zkompilovat této aplikace.
 
@@ -100,10 +100,10 @@ Pokud chcete nastavit některého z klíčů o ochraně osobních údajů, postu
 3. Přidejte nový **položka** do seznamu.
 4. Z rozevíracího seznamu vyberte klíč osobních údajů (například **o ochraně osobních údajů – popis využití HomeKit**): 
 
-    [ ![](security-privacy-images/info02.png "Vyberte klíč osobních údajů")](security-privacy-images/info02.png)
+    [![](security-privacy-images/info02.png "Vyberte klíč osobních údajů")](security-privacy-images/info02.png#lightbox)
 5. Zadejte popis proč aplikace požaduje přístup k dané informace o funkci nebo uživatele: 
 
-    [ ![](security-privacy-images/info03.png "Zadejte popis")](security-privacy-images/info03.png)
+    [![](security-privacy-images/info03.png "Zadejte popis")](security-privacy-images/info03.png#lightbox)
 6. Uložte změny do souboru.
 
 -----

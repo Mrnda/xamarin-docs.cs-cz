@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 43a1a5ee6a8bd9d53f6fd44be935ae7573db6812
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1fbc12288527c053a24041aa6c49cc1a4abdde55
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="explicit-styles"></a>Explicitní styly
 
@@ -64,7 +64,7 @@ Následující příklad kódu ukazuje *explicitní* styly deklarované v jazyce
 
 [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) Definuje tři *explicitní* stylů, které se použijí na stránku [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) instance. Každý `Style` slouží k zobrazení textu v barvu, při velikosti a vodorovného a svislého rozložení možnosti také nastavení písma. Každý `Style` se použije na jiný `Label` nastavením jeho [ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/) vlastností pomocí `StaticResource` – rozšíření značek. Výsledkem je vidět na následujících snímcích obrazovky vzhled:
 
-[![](explicit-images/explicit-styles.png "Příklad explicitní styly")](explicit-images/explicit-styles-large.png "příklad explicitní styly")
+[![](explicit-images/explicit-styles.png "Příklad explicitní styly")](explicit-images/explicit-styles-large.png#lightbox "příklad explicitní styly")
 
 Kromě toho konečné [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) má [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) na něho použít, ale také přepsání [ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.TextColor/) vlastnost, která má jiný `Color`hodnotu.
 
@@ -95,7 +95,7 @@ V tomto příkladu *explicitní* [ `Style` ](https://developer.xamarin.com/api/t
 
 Informace o vytváření stylů v aplikace [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/), najdete v části [globální styly](~/xamarin-forms/user-interface/styles/application.md).
 
-## <a name="creating-an-explicit-style-in-c35"></a>Vytváření explicitní styl C &#35;
+## <a name="creating-an-explicit-style-in-c35"></a>Vytváření explicitní styl v jazyce C&#35;
 
 [`Style`](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) instance lze přidat na stránku [ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Resources/) kolekce v jazyce C# tak, že vytvoříte novou [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)a pak přidáním `Style` instance k `ResourceDictionary`, jak je znázorněno v Následující příklad kódu:
 

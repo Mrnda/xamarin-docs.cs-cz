@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/21/2017
-ms.openlocfilehash: fec57fbeb201d55e887969c5a50baf6a76c10e17
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5e09bb1150c3cc53104b41b75a2c3d4d2db4e5ff
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="publishing-independently"></a>Publikování nezávisle
 
 Je možné k publikování aplikace bez použití žádné existující tržišť Android. V této části se popisují tyto jiné metody publikování a licencování úrovně Xamarin.Android.
 
-<a name="Xamarin_Licensing" />
 
 ## <a name="xamarin-licensing"></a>Licencování Xamarin
 
@@ -31,43 +30,39 @@ Pro vývoj, nasazení a distribuci aplikací Xamarin.Android k dispozici jsou č
 
 Přejděte [visualstudio.com](https://www.visualstudio.com/xamarin/) stahování Community Edition nebo Další informace o zakoupení edice Professional a Enterprise.
 
-<a name="Allow_Installation_from_Unknown_Sources" />
 
 ## <a name="allow-installation-from-unknown-sources"></a>Povolit instalace z neznámých zdrojů
 
 Ve výchozím nastavení Android zabrání uživatelům stahování a instalaci aplikací z umístění než Google Play. Instalace z jiných marketplace zdrojů, uživatel musí povolit *neznámé zdroje* nastavení na zařízení před pokusem o instalaci aplikace. Toto nastavení lze najít v části **Nastavení > zabezpečení**, jak je znázorněno v následujícím diagramu:
 
-[ ![Obrazovka nastavení zabezpečení](publishing-independently-images/settings.png)](publishing-independently-images/settings.png)
+[![Obrazovka nastavení zabezpečení](publishing-independently-images/settings.png)](publishing-independently-images/settings.png#lightbox)
 
 
 > [!IMPORTANT]
-> **Poznámka:** někteří poskytovatelé sítě by mohly bránit instalaci aplikací z neznámých zdrojů, bez ohledu na toto nastavení.
+> Někteří poskytovatelé sítě by mohly bránit instalaci aplikací z neznámých zdrojů, bez ohledu na toto nastavení.
 
 
-<a name="Publishing_by_E-Mail" />
 
 ## <a name="publishing-by-e-mail"></a>Publikování pomocí e-mailu
 
 Verze APK se připojuje k e-mailu je rychlý a snadný způsob, jak distribuovat aplikace pro uživatele. Když uživatel otevře e-mail na zařízení se systémem Android zapnuté, Android rozpozná přílohu APK a zobrazit **nainstalovat** tlačítko jak je znázorněno na následujícím obrázku:
 
-[ ![Tlačítko pro přílohy instalovat](publishing-independently-images/publishing-via-email.png)](publishing-independently-images/publishing-via-email.png)
+[![Tlačítko pro přílohy instalovat](publishing-independently-images/publishing-via-email.png)](publishing-independently-images/publishing-via-email.png#lightbox)
 
 Přestože distribuční prostřednictvím e-mailu je jednoduché, poskytuje několik ochranná opatření proti pirátství nebo neoprávněná distribuce. Nejlepší je vyhrazený pro situacích, kdy jsou několik příjemců aplikace a jsou důvěryhodné nechcete distribuce aplikace.
 
-<a name="Publishing_by_Web" />
 
 ## <a name="publishing-by-web"></a>Publikování pomocí webové
 
 Je možné aplikaci distribuovat webový server. To lze provést odeslání aplikací na webový server a pak zadají odkaz ke stažení pro uživatele. Pokud zařízení se systémem Android zapnuté přejde k odkazu a potom stáhne aplikace, aplikace bude nainstalována automaticky po dokončení stahování.
 
-<a name="Manually_Installing_an_APK" />
 
 ## <a name="manually-installing-an-apk"></a>Ruční instalaci APK
 
 Ruční instalace je třetí možnost pro instalaci aplikace. Za účelem ruční instalace aplikace:
 
 1.   **Distribuovat kopii APK uživateli** &ndash; například tato kopie mohou být distribuovány na disku CD nebo USB flash disku.
-1.   **(Uživatel) nainstaluje aplikaci na zařízení s Androidem** &ndash; pomocí příkazového řádku *Android ladění most* (**adb**) nástroj.   **ADB** je univerzální nástroj příkazového řádku, která umožňuje komunikaci se instance emulátoru nebo zařízení se systémem Android zapnuté. Sada Android SDK zahrnuje **adb**; se nachází v adresáři  **<sdk>/platform-tools /**.
+1.   **(Uživatel) nainstaluje aplikaci na zařízení s Androidem** &ndash; pomocí příkazového řádku *Android ladění most* (**adb**) nástroj. **ADB** je univerzální nástroj příkazového řádku, která umožňuje komunikaci se instance emulátoru nebo zařízení se systémem Android zapnuté. Sada Android SDK zahrnuje **adb**; se nachází v adresáři  **<sdk>/platform-tools /**.
 
 Zařízení s Androidem musí být připojen pomocí kabelu USB k počítači.
 Počítače se systémem Windows může také vyžadovat další ovladače USB od dodavatele phone rozpoznala **adb**. Pokyny k instalaci pro tyto další ovladače USB je nad rámec tohoto dokumentu.

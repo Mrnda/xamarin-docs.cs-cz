@@ -4,18 +4,17 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 3C440714-43E3-4D31-946F-CA59DAB303E8
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: d20b2aa7df17f2000e2de9cb67f091c52989719b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+author: topgenorth
+ms.author: toopge
+ms.date: 03/09/2018
+ms.openlocfilehash: 39ee7f826d4c775ead679a09ce56a7c0f92b60ed
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="permissions-in-xamarinandroid"></a>Oprávnění v Xamarin.Android
 
-<a name="overview" />
 
 ## <a name="overview"></a>Přehled
 
@@ -42,7 +41,7 @@ Před vyžaduje jeden nebo více oprávnění, je osvědčeným postupem zadejte
 
 Celý pracovní postup kontroly a vyžadování oprávnění se označuje jako _běhu oprávnění_ zkontrolujte a může být souhrnu v následujícím diagramu: 
 
-[ ![Vývojový diagram kontrola běhu oprávnění](permissions-images/02-permissions-workflow-sml.png)](permissions-images/02-permissions-workflow.png)
+[![Vývojový diagram kontrola běhu oprávnění](permissions-images/02-permissions-workflow-sml.png)](permissions-images/02-permissions-workflow.png#lightbox)
 
 Knihovna pro Android podporu backports některé z nových rozhraní API Správce oprávnění pro starší verze systému Android. Tyto přeneseny zpět rozhraní API automaticky zkontroluje verzi Androidu na zařízení, takže není nutné provádět kontrolu úrovně rozhraní API pokaždé, když.  
 
@@ -50,7 +49,7 @@ Tento dokument popisuje postup přidání oprávnění k aplikaci Xamarin.Androi
 
 
 > [!NOTE]
-> **Poznámka:** je možné, že oprávnění pro hardware může mít vliv na filtrování aplikace pomocí služby Google Play. Například pokud aplikace vyžaduje oprávnění pro fotoaparát, pak Google Play nebudou zobrazovat aplikace Google Play Storu na zařízení, která nemá nainstalovanou kameru.
+> Je možné, že oprávnění pro hardware může mít vliv na filtrování aplikace pomocí služby Google Play. Například pokud aplikace vyžaduje oprávnění pro fotoaparát, pak Google Play nebudou zobrazovat aplikace Google Play Storu na zařízení, která nemá nainstalovanou kameru.
 
 
 <a name="requirements" />
@@ -59,7 +58,6 @@ Tento dokument popisuje postup přidání oprávnění k aplikaci Xamarin.Androi
 
 Důrazně doporučujeme, zahrnují Xamarin.Android projekty [Xamarin.Android.Support.Compat](https://www.nuget.org/packages/Xamarin.Android.Support.Compat/) balíček NuGet. Toto oprávnění backport bude balíček, který konkrétní rozhraní API pro starší verze systému Android, poskytuje jeden běžné rozhraní bez nutnosti neustále zkontrolujte verzi systému Android, která aplikace běží na.
 
-<a name="requesting_permissions" />
 
 ## <a name="requesting-system-permissions"></a>Požaduje oprávnění systému
 
@@ -68,9 +66,8 @@ Prvním krokem při práci s Androidem oprávnění je deklarovat, že oprávně
 Aplikace, které cílí na Android 6.0 nebo vyšší nelze předpokládat, že vzhledem k tomu, že uživatel oprávnění v určitém okamžiku v minulosti, že oprávnění budou platné při příštím. Aplikace, která je cílena Android 6.0 musí vždy provést kontrolu oprávnění modulu runtime. Není potřeba provést kontrolu oprávnění spuštění aplikace, které cílí na Android 5.1 nebo nižší.
 
 > [!NOTE]
-> **Poznámka:** aplikace by měla požadovat pouze oprávnění, která vyžadují.
+> Aplikace by měla pouze požádat o oprávnění, která vyžadují.
 
-<a name="declaring_permissions_in_the_manifest" />
 
 ### <a name="declaring-permissions-in-the-manifest"></a>Deklarování oprávnění v manifestu
 
@@ -87,15 +84,15 @@ Je možné deklarovat oprávnění pomocí podpory nástroje integrovaná v sad�
 
 1. Klikněte dvakrát na **vlastnosti** v **Průzkumníku řešení** a vyberte **Android Manifest** kartě v okně vlastností:
 
-    [![Požadovaná oprávnění na kartě Android Manifest](permissions-images/04-required-permissions-vs-sml.png)](permissions-images/04-required-permissions-vs.png)
+    [![Požadovaná oprávnění na kartě Android Manifest](permissions-images/04-required-permissions-vs-sml.png)](permissions-images/04-required-permissions-vs.png#lightbox)
 
 2. Pokud aplikace již nemá AndroidManifest.xml, klikněte na tlačítko **ne AndroidManifest.xml nalezen. Klikněte na tlačítko Přidat jeden** jak je uvedeno níže:
 
-    [![Žádná zpráva AndroidManifest.xml](permissions-images/05-no-manifest-vs-sml.png)](permissions-images/05-no-manifest-vs.png)
+    [![Žádná zpráva AndroidManifest.xml](permissions-images/05-no-manifest-vs-sml.png)](permissions-images/05-no-manifest-vs.png#lightbox)
 
 3. Vyberte všechna oprávnění, aplikace musí z **požadovaná oprávnění** seznamu a uložte:
 
-    [![Příklad FOTOAPARÁT oprávnění vybrané](permissions-images/06-selected-permission-vs-sml.png)](permissions-images/06-selected-permission-vs.png)
+    [![Příklad FOTOAPARÁT oprávnění vybrané](permissions-images/06-selected-permission-vs-sml.png)](permissions-images/06-selected-permission-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -103,15 +100,15 @@ Je možné deklarovat oprávnění pomocí podpory nástroje součástí sady Vi
 
 1. Dvakrát klikněte na projekt **řešení Pad** a vyberte **možnosti > sestavení > aplikace pro Android**:
 
-    [![Povinná sekce oprávnění vidět](permissions-images/04-required-permissions-xs-sml.png)](permissions-images/04-required-permissions-xs.png)
+    [![Povinná sekce oprávnění vidět](permissions-images/04-required-permissions-xs-sml.png)](permissions-images/04-required-permissions-xs.png#lightbox)
 
 2. Klikněte **přidat Android Manifest** tlačítko Pokud projekt již nemá **AndroidManifest.xml**:
 
-    [![Chybí projektu manifestu systému Android.](permissions-images/05-no-manifest-xs-sml.png)](permissions-images/05-no-manifest-xs.png)
+    [![Chybí projektu manifestu systému Android.](permissions-images/05-no-manifest-xs-sml.png)](permissions-images/05-no-manifest-xs.png#lightbox)
 
 3. Vyberte všechna oprávnění, aplikace musí z **požadovaná oprávnění** seznamu a klikněte na tlačítko **OK**:
 
-    [![Příklad FOTOAPARÁT oprávnění vybrané](permissions-images/03-select-permission-xs-sml.png)](permissions-images/03-select-permission-xs.png)
+    [![Příklad FOTOAPARÁT oprávnění vybrané](permissions-images/03-select-permission-xs-sml.png)](permissions-images/03-select-permission-xs.png#lightbox)
     
 -----
 
@@ -119,7 +116,6 @@ Xamarin.Android automaticky přidají některá oprávnění v čase vytvoření
 
 Pro aplikace, které cílí na Android 5.1 (API úrovně 22) nebo nižší není nic jiného, který je potřeba udělat. Aplikace, které poběží na Android 6.0 (API 23 úroveň 23) nebo vyšší musí pokračovat k další části o tom, jak provést běhu ověří oprávnění. 
 
-<a name="run_time_permission_checks" />
 
 ### <a name="runtime-permission-checks-in-android-60"></a>Ověří oprávnění Runtime v Android 6.0
 
@@ -213,7 +209,6 @@ public override void OnRequestPermissionsResult(int requestCode, string[] permis
 }
 ```  
 
-<a name="summary" />
 
 ## <a name="summary"></a>Souhrn
 

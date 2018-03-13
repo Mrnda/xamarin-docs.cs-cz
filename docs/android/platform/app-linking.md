@@ -3,16 +3,16 @@ title: "Propojení aplikace v Android"
 description: "Tato příručka popisuje jak Android 6.0 podporuje aplikace propojení, technika, který umožňuje mobilní aplikace reagovat na adresy URL na webech. Bude popisují, jaké aplikace propojení je, jak implementovat aplikaci propojení v aplikaci Android 6.0 a jak nakonfigurovat web, který chcete udělit oprávnění k mobilní aplikaci pro doménu."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: DDE54082-6E2B-9ED9-05FB-D9C1D1B1258E
+ms.assetid: 48174E39-19FD-43BC-B54C-9AF11D4B1F91
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 726890e48407dd26f52c5aeaecf4eab51dcc5182
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 78fef780728ba1c2a3b9978504058f7a386b0e7d
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="app-linking-in-android"></a>Propojení aplikace v Android
 
@@ -84,7 +84,7 @@ Android ověří, že každý hostitel, která je identifikovaná záměrné fil
 Android 6.0 propojení aplikace vyžaduje, aby Android ověřili přidružení mezi aplikací a web před nastavením aplikace jako výchozí obslužnou rutinu pro identifikátor URI. Toto ověření se stane při první instalaci aplikace. *Digitální odkazy prostředky* soubor je soubor JSON, který je hostitelem příslušných webdomain(s).
 
 > [!NOTE]
-> **Poznámka:** `android:autoVerify` musí být nastaven záměrné filtr &ndash; jinak nebude Android provádět ověření.
+> `android:autoVerify` Musí být nastaven záměrné filtr &ndash; jinak nebude Android provádět ověření.
 
 Správce webového serveru domény do umístění vloží soubor **https://domain/.well-known/assetlinks.json**.
 

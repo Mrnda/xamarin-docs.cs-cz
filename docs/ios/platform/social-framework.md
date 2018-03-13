@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: da096c8575896bc9f522a92b3fb94b81f9e772df
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9892577d7e0ed3d3f622f881cc51db09eb44a8fd
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="social-framework"></a>Sociální Framework
 
@@ -30,7 +30,7 @@ Pomocí rozhraní sociálních umožňuje aplikacím komunikovat se sociálními
 
 Pro připojení k Twitter, pomocí rozhraní sociálních, účet je potřeba nakonfigurovat v nastavení zařízení, jak je uvedeno níže:
 
- [ ![](social-framework-images/twitter01.png "Nastavení účtu služby Twitter.")](social-framework-images/twitter01.png)
+ [![](social-framework-images/twitter01.png "Nastavení účtu služby Twitter.")](social-framework-images/twitter01.png#lightbox)
 
 Jakmile je účet zadaný a ověření u služby Twitter, bude tento účet používat všechny aplikace na zařízení, které používá sociálních Framework třídy pro přístup k Twitter.
 
@@ -38,7 +38,7 @@ Jakmile je účet zadaný a ověření u služby Twitter, bude tento účet pou�
 
 Sociální Framework zahrnuje řadič názvem `SLComposeViewController` , uvede systému podle zobrazení pro úpravy a odesílání tweet. Následující snímek obrazovky ukazuje příklad v tomto zobrazení:
 
- [ ![](social-framework-images/twitter02.png "Tento snímek obrazovky ukazuje příklad SLComposeViewController")](social-framework-images/twitter02.png)
+ [![](social-framework-images/twitter02.png "Tento snímek obrazovky ukazuje příklad SLComposeViewController")](social-framework-images/twitter02.png#lightbox)
 
 Používat `SLComposeViewController` službou Twitter, musí být vytvořena instance řadiče voláním `FromService` metoda s `SLServiceType.Twitter` jak je uvedeno níže:
 
@@ -284,7 +284,7 @@ request.PerformRequest ((data, response, error) => {
 
 Pokud data byla úspěšně načtena, zobrazí se nezpracovaná data JSON (jako následující příklad výstupu):
 
-[ ![](social-framework-images/twitter03.png "Příklad zobrazení nezpracovaná data JSON")](social-framework-images/twitter03.png)
+[![](social-framework-images/twitter03.png "Příklad zobrazení nezpracovaná data JSON")](social-framework-images/twitter03.png#lightbox)
 
 V reálné aplikaci může výsledky JSON pak analyzovat jako normální a výsledky uživateli. V tématu [Úvod webové služby](~/cross-platform/data-cloud/web-services/index.md) informace o tom, jak analyzovat JSON.
 
@@ -294,7 +294,7 @@ V reálné aplikaci může výsledky JSON pak analyzovat jako normální a výsl
 
 Připojování ke službě Facebook s sociálních Framework je téměř stejný jako proces použitý pro Twitter uvedené výše. Uživatelský účet Facebook musí být nakonfigurován v nastavení zařízení, jak je uvedeno níže:
 
-[ ![](social-framework-images/facebook01.png "Nastavení účtu služby Facebook")](social-framework-images/facebook01.png)
+[![](social-framework-images/facebook01.png "Nastavení účtu služby Facebook")](social-framework-images/facebook01.png#lightbox)
 
 Po nakonfigurování všech aplikací na zařízení, které používá rozhraní sociálních použije tento účet pro připojení k síti Facebook.
 
@@ -368,7 +368,7 @@ namespace SocialFrameworkDemo
 
 Při použití s Facebook, `SLComposeViewController` zobrazí zobrazení, která vypadá téměř stejný jako příklad Twitter zobrazující **Facebook** jako nadpis v tomto případě:
 
-[ ![](social-framework-images/facebook02.png "Zobrazení SLComposeViewController")](social-framework-images/facebook02.png)
+[![](social-framework-images/facebook02.png "Zobrazení SLComposeViewController")](social-framework-images/facebook02.png#lightbox)
 
 ### <a name="calling-facebook-graph-api"></a>Volání rozhraní API grafu služby Facebook
 

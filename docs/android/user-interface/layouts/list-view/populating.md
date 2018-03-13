@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 08/21/2017
-ms.openlocfilehash: 74d8533d0a757a307d88125701a482dfefd5eec2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 12197d238ddc6ddc2bd8f48f77aa15f5eff22a0a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="populating-a-listview-with-data"></a>Naplnění ListView s daty
 
-<a name="overview" />
 
 ## <a name="overview"></a>Přehled
 
@@ -23,7 +22,6 @@ Přidání řádků, které mají `ListView` je nutné přidat rozložení a imp
 
 Předdefinované adaptéry trvat ID prostředku zobrazení jako parametr, který se používá pro každý řádek. Můžete použít předdefinované prostředkům, například těch, které v `Android.Resource.Layout` , nemusíte psát vlastní.
 
-<a name="Using_ListActivity_and_ArrayAdapterString" />
 
 ## <a name="using-listactivity-and-arrayadapterltstringgt"></a>Pomocí ListActivity a ArrayAdapter&lt;řetězec&gt;
 
@@ -43,13 +41,12 @@ public class HomeScreen : ListActivity {
 }
 ```
 
-<a name="Handling_Row_Clicks" />
 
 ### <a name="handling-row-clicks"></a>Zpracování řádek kliknutím na
 
 Obvykle `ListView` vám také umožní uživatelům touch na řádek pro provedení několika akcí (například přehrávat skladbu nebo volání a obraťte se na zobrazení další obrazovky). Reakce na úpravy uživatele, je potřeba jeden další metoda implementována v `ListActivity` &ndash; `OnListItemClick` &ndash; podobné výjimky:
 
-[![Snímek obrazovky SimpleListItem](populating-images/simplelistitem1.png)](populating-images/simplelistitem1.png)
+[![Snímek obrazovky SimpleListItem](populating-images/simplelistitem1.png)](populating-images/simplelistitem1.png#lightbox)
 
 ```csharp
 protected override void OnListItemClick(ListView l, View v, int position, long id)
@@ -61,9 +58,8 @@ protected override void OnListItemClick(ListView l, View v, int position, long i
 
 Teď uživatel může touch řádek a `Toast` upozornění se zobrazí:
 
-[![Snímek obrazovky z informační, který se zobrazí, když je dotýkal řádek](populating-images/basictable2.png)](populating-images/basictable2.png)
+[![Snímek obrazovky z informační, který se zobrazí, když je dotýkal řádek](populating-images/basictable2.png)](populating-images/basictable2.png#lightbox)
 
-<a name="Implementing_a_ListAdapter" />
 
 ## <a name="implementing-a-listadapter"></a>Implementace ListAdapter
 
@@ -110,7 +106,6 @@ public class HomeScreenAdapter : BaseAdapter<string> {
 }
 ```
 
-<a name="Using_a_Custom_Adapter" />
 
 ### <a name="using-a-custom-adapter"></a>Pomocí vlastního adaptéru
 
@@ -122,7 +117,6 @@ ListAdapter = new HomeScreenAdapter(this, items);
 
 Protože v tomto příkladu se stejné rozvržení řádek (`SimpleListItem1`) výsledné aplikace bude vypadají stejně jako v předchozím příkladu.
 
-<a name="Row_View_Re-Use" />
 
 ### <a name="row-view-re-use"></a>Řádek zobrazení znovu použít.
 
@@ -147,13 +141,12 @@ Implementace vlastního adaptéru by *vždy* znovu použít `convertView` objekt
 
 Některé implementace adaptér (, jako `CursorAdapter`) nemají `GetView` metoda, místo vyžadují dvě různé metody `NewView` a `BindView` který vynutit řádek znovu použít oddělením odpovědnosti `GetView` do dvou metody. Došlo `CursorAdapter` příklad později v dokumentu.
 
-<a name="Enabling_Fast_Scrolling" />
 
 ## <a name="enabling-fast-scrolling"></a>Povolení rychlého posouvání
 
 Rychlé posouvání pomáhá uživatele nemuseli probírat dlouhými seznamy tím, že poskytuje další 'popisovač, který funguje jako posuvníku přímý přístup k části seznamu. Tento snímek obrazovky ukazuje rychlé posuvníku:
 
-[![Snímek obrazovky fast posouvání s popisovačem posuvníku](populating-images/fastscroll.png)](populating-images/fastscroll.png)
+[![Snímek obrazovky fast posouvání s popisovačem posuvníku](populating-images/fastscroll.png)](populating-images/fastscroll.png#lightbox)
 
 Způsobuje rychlé posouvání popisovač zobrazí je jednoduché, nastavení `FastScrollEnabled` vlastnost `true`:
 
@@ -161,13 +154,12 @@ Způsobuje rychlé posouvání popisovač zobrazí je jednoduché, nastavení `F
 ListView.FastScrollEnabled = true;
 ```
 
-<a name="Adding_a_Section_Index" />
 
 ### <a name="adding-a-section-index"></a>Přidání Index oddílu
 
 Index oddílu poskytují další zpětnou vazbu pro uživatele, když jsou fast posouvání v seznamu &ndash; zobrazuje které 'oddíl' jste přešli do. Způsobíte index oddílu zobrazí podtřídy adaptéru musí implementovat `ISectionIndexer` rozhraní k poskytování text indexu v závislosti na řádky se zobrazí:
 
-[![Snímek obrazovky H zobrazovaných výše oddíl, který začíná H](populating-images/sectionindex.png)](populating-images/sectionindex.png)
+[![Snímek obrazovky H zobrazovaných výše oddíl, který začíná H](populating-images/sectionindex.png)](populating-images/sectionindex.png#lightbox)
 
 K implementaci `ISectionIndexer` je třeba přidat tři metody pro adaptér:
 

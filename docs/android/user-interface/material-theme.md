@@ -7,18 +7,14 @@ ms.assetid: DC4CDBD0-3DF9-4B7E-B876-29128985E2A7
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 01/22/2018
-ms.openlocfilehash: ba73e03d6bdeea64918e0232b2188bf8e3b65084
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 479abf7fef695be156d4447592bc59dceabe3f03
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="material-theme"></a>Podstatným motiv
-
-<a name="overview" />
-
-## <a name="overview"></a>Přehled
 
 *Podstatným motiv* je styl rozhraní uživatele, který určuje vzhled a chování zobrazení a aktivit od verze Android 5.0 (typu Lupa). Podstatným motiv je integrovaná do Android 5.0, aby byl použit podle uživatelského rozhraní systému a aplikací. Podstatným motiv není "motivu", v tom smyslu systémové vzhled možnost, která může dynamicky uživatel z nabídky nastavení. Místo toho materiálu motiv můžete představit jako sadu související integrovaných základní stylů, které můžete použít k přizpůsobení vzhledu a chování vaší aplikace.
 
@@ -32,7 +28,7 @@ Android poskytuje tři materiálu motiv charakteristikami:
 
 Příklady těchto typů materiálu motiv se zobrazí tady:
 
-[![Příklad snímky obrazovky tmavý motiv, motiv světlý a panelu akcí světlý motiv](material-theme-images/three-flavors-sml.png)](material-theme-images/three-flavors.png)
+[![Příklad snímky obrazovky tmavý motiv, motiv světlý a panelu akcí světlý motiv](material-theme-images/three-flavors-sml.png)](material-theme-images/three-flavors.png#lightbox)
 
 Můžete odvozujete od materiálu motiv se vytvořte vlastní motiv přepsání některé nebo všechny atributy barvy. Například můžete vytvořit motiv, který je odvozen od `Theme.Material.Light`, ale přepíše barvu panelu aplikace tak, aby odpovídala barva vaší značkou. Můžete také styl jednotlivých zobrazení; Například můžete vytvořit styl [zobrazení karty aplikace](~/android/user-interface/controls/card-view.md) který má více zaokrouhlené rozích a používá tmavšího barvu pozadí.
 
@@ -40,7 +36,6 @@ Pro celou aplikaci můžete použít jeden motiv, nebo můžete použít různé
 
 Protože materiálu motiv je podporována pouze v systému Android 5.0 a novější, nemůžete použít ho (nebo vlastní motiv odvozených z motivu materiálů) pro motiv vaší aplikace pro spuštění v dřívějších verzích systému Android. Ale můžete nakonfigurovat vaše aplikace využívat materiálu motiv na zařízeních Android 5.0 a řádně vrátit zpět k starší motiv při spuštění ve starších verzích Android (najdete v článku [kompatibility](#compatibility) tohoto článku podrobnosti).
 
-<a name="requirements" />
 
 ## <a name="requirements"></a>Požadavky
 
@@ -54,13 +49,11 @@ Používat nové funkce systému Android 5.0 materiálu motiv v aplikace založe
 
 Naučte se konfigurovat projekt aplikace Android 5.0, najdete v tématu [nastavení nahoru Android 5.0 projektu](~/android/platform/lollipop.md).
 
-<a name="builtinthemes" />
 
 ## <a name="using-the-built-in-themes"></a>Pomocí předdefinované motivy
 
 Nejjednodušší způsob, jak používat motiv materiálu je konfigurace aplikace použít předdefinované motiv bez úprav. Pokud nechcete, aby explicitně nakonfigurovat motiv, vaše aplikace bude použita výchozí `Theme.Material` (tmavým motivem). Pokud vaše aplikace obsahuje jenom jedna aktivita, můžete nakonfigurovat motiv na úrovni aplikace. Pokud vaše aplikace obsahuje více aktivit, můžete nakonfigurovat motiv na úrovni aplikace tak, aby ji používá stejný motiv mezi všechny aktivity, nebo můžete přiřadit různé motivy různé aktivity. Následující části popisují postup konfigurace motivy na úrovni aplikace a na úrovni aktivity.
 
-<a name="themeanapp" />
 
 ### <a name="theming-an-application"></a>Tvorba motivů aplikace
 
@@ -88,7 +81,6 @@ Alternativně můžete nastavit aplikaci `Theme` atribut **AssemblyInfo.cs** (ne
 
 Když je aplikace motiv nastavená na `@android:style/Theme.Material.Light`, každá aktivita v *Moje aplikace* se zobrazí pomocí `Theme.Material.Light`.
 
-<a name="activitytheme" />
 
 ### <a name="theming-an-activity"></a>Tvorba motivů aktivitu
 
@@ -125,11 +117,10 @@ Podstatným motiv zveřejňuje následující atributy rozložení pro přizpůs
 
 V následujícím diagramu jsou označeny tyto oblasti obrazovky:
 
-[ ![Diagram atributy a jejich přidružené obrazovky oblasti](material-theme-images/screen-attributes-sml.png)](material-theme-images/screen-attributes.png)
+[![Diagram atributy a jejich přidružené obrazovky oblasti](material-theme-images/screen-attributes-sml.png)](material-theme-images/screen-attributes.png#lightbox)
 
 Ve výchozím nastavení `statusBarColor` je nastaven na hodnotu `colorPrimaryDark`. Můžete nastavit `statusBarColor` na plnou barvou, nebo ji nastavte na `@android:color/transparent` na průhledný stavový řádek. Na navigačním panelu můžete také provést transparentní nastavením `navigationBarColor` k `@android:color/transparent`.
 
-<a name="customapptheme" />
 
 ### <a name="creating-a-custom-app-theme"></a>Vytváření vlastní aplikaci motiv
 
@@ -151,7 +142,7 @@ Vytvoření a úprava souborů v můžete vytvořit vlastní aplikaci motiv **pr
 
 -   Vytvoření **prostředky nebo hodnoty v21** složky. V této složce vytvořte **styles.xml** souboru:
 
-    [ ![Umístění styles.xml ve složce prostředky nebo hodnoty 21.xml](material-theme-images/values-v21-sml.png)](material-theme-images/values-v21.png)
+    [![Umístění styles.xml ve složce prostředky nebo hodnoty 21.xml](material-theme-images/values-v21-sml.png)](material-theme-images/values-v21.png#lightbox)
 
     Všimněte si, že **prostředky nebo hodnoty v21** je specifická pro Android 5.0 &ndash; starší verze Android nebude číst soubory v této složce.
 
@@ -169,7 +160,7 @@ Vytvoření a úprava souborů v můžete vytvořit vlastní aplikaci motiv **pr
 
 -   V tomto okamžiku aplikaci, která používá *MyCustomTheme* se zobrazí stock `Theme.Material.Light` motiv bez úpravy:
 
-    [ ![Vlastní motiv vzhled před přizpůsobení](material-theme-images/custom-theme-before-sml.png)](material-theme-images/custom-theme-before.png)
+    [![Vlastní motiv vzhled před přizpůsobení](material-theme-images/custom-theme-before-sml.png)](material-theme-images/custom-theme-before.png#lightbox)
 
 -   Přidat přizpůsobení barev **styles.xml** definováním barvy rozložení atributů, které chcete změnit. Například změnit barvu panelu aplikace na `my_blue` a změnit barvu ovládacích prvků uživatelského rozhraní pro `my_purple`, přidejte přepsání barva **styles.xml** , odkazovat na prostředky barva nakonfigurované v **colors.xml**:
 
@@ -188,7 +179,7 @@ Vytvoření a úprava souborů v můžete vytvořit vlastní aplikaci motiv **pr
 
 Tyto změny zavedené aplikace, která používá *MyCustomTheme* se zobrazí barvu panelu aplikace v `my_blue` a ovládacích prvků uživatelského rozhraní v `my_purple`, ale použít `Theme.Material.Light` everywhere else barevném schématu:
 
-[ ![Vlastní motiv vzhled po přizpůsobení](material-theme-images/custom-theme-after-sml.png)](material-theme-images/custom-theme-after.png)
+[![Vlastní motiv vzhled po přizpůsobení](material-theme-images/custom-theme-after-sml.png)](material-theme-images/custom-theme-after.png#lightbox)
 
 V tomto příkladu *MyCustomTheme* vypůjčí barvy z `Theme.Material.Light` pozadí barvu, stavový řádek a barvy textu, ale změní barvu panelu aplikace `my_blue` a nastaví barvu přepínače `my_purple`.
 
@@ -225,11 +216,10 @@ K formátování jednotlivých zobrazení, použijte následující postup:
 
 Na následujícím snímku obrazovky představuje příklad, výchozí `CardView` (zobrazené na levé straně) jako ve srovnání s `CardView` , má stylem vlastní `CardView.MyBlue` motiv (zobrazené na pravé straně):
 
-[ ![Příklady výchozí zobrazení karty aplikace a zobrazení karty vlastní aplikace](material-theme-images/custom-cardview-sml.png)](material-theme-images/custom-cardview.png)
+[![Příklady výchozí zobrazení karty aplikace a zobrazení karty vlastní aplikace](material-theme-images/custom-cardview-sml.png)](material-theme-images/custom-cardview.png#lightbox)
 
 V tomto příkladu vlastní `CardView` se zobrazí s barvu pozadí `my_blue` a protokolu radius 18dp rohu.
 
-<a name="compatibility" />
 
 ## <a name="compatibility"></a>Kompatibilita
 

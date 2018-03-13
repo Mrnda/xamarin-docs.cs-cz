@@ -7,11 +7,11 @@ ms.assetid: 52A35B24-C23B-8461-A8FF-5928A2128FB0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: b279f3e643e008e88b8ad086c400d992427c6df4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b9bf4c5ee803aa60a2730703e64fcf73d07efdb5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-monotouchdialog"></a>Úvod do MonoTouch.Dialog
 
@@ -20,7 +20,7 @@ _MonoTouch.Dialog (strojový překladů. D) Sada nástrojů je představuje nepo
 
 MonoTouch.Dialog, označuje jako strojový překladů. D pro zkrácení, je rychlé toolkit vývoj uživatelského rozhraní, která umožňuje vývojářům vytvářet aplikace obrazovky a navigační pomocí informace místo nebylo nutné pracně vytváření řadiče zobrazení, tabulek atd. Jako takový nabízí významné zjednodušení snížení vývoj a kód uživatelského rozhraní. Zvažte například následující snímek obrazovky:
 
- [ ![](images/image1.png "Představte si třeba tento snímek obrazovky")](images/image1.png)
+ [![](images/image1.png "Představte si třeba tento snímek obrazovky")](images/image1.png#lightbox)
 
 Následující kód se používá k definování této celé obrazovky:
 
@@ -57,7 +57,7 @@ Například pokaždé, když je potřeba tabulku, zdroj dat je potřeba k vypln�
 STROJOVÝ PŘEKLADŮ. D, zjednodušuje tím, kdy zapouzdřuje všechny tento kód do obecné rozhraní API pro vytvoření tabulky. Pak poskytuje abstrakci nad toto rozhraní API umožňující pro objekt deklarativní syntaxi, která zjednodušuje i vazby. Jako takový existují dvě rozhraní API dostupná v strojový překladů. D:
 
 -   **Nízké úrovně rozhraní API elementy** – *API elementy* je založena na vytváření hierarchická stromu prvky, které představují obrazovky a jejich součástí. Prvky rozhraní API poskytuje vývojářům nejvíce flexibilitu a řízení při vytváření uživatelská rozhraní. Rozhraní API elementy navíc obsahuje rozšířené podpory pro deklarativní definice prostřednictvím formátu JSON, která umožňuje velmi rychlé deklarace, jak dynamické generování uživatelského rozhraní ze serveru. 
--   **Nejdůležitější rozhraní API reflexe** – taky známé jako *vazby**rozhraní API* , ve které třídy jsou opatřeny poznámkami pomocí uživatelského rozhraní pomocné parametry a potom strojový překladů. D automaticky vytvoří obrazovky založené na objektech a poskytuje vazbu mezi co se zobrazí (a volitelně upravovat) na obrazovce a základní objekt zálohování.   Výše uvedený příklad ukazuje použití rozhraní API reflexe. Toto rozhraní API neposkytuje podrobné ovládací prvek, který nemá elementy rozhraní API, ale snižuje složitost i další podle budovy automaticky se element hierarchii na základě třídy atributů. 
+-   **Nejdůležitější rozhraní API reflexe** – taky známé jako *vazby**rozhraní API* , ve které třídy jsou opatřeny poznámkami pomocí uživatelského rozhraní pomocné parametry a potom strojový překladů. D automaticky vytvoří obrazovky založené na objektech a poskytuje vazbu mezi co se zobrazí (a volitelně upravovat) na obrazovce a základní objekt zálohování. Výše uvedený příklad ukazuje použití rozhraní API reflexe. Toto rozhraní API neposkytuje podrobné ovládací prvek, který nemá elementy rozhraní API, ale snižuje složitost i další podle budovy automaticky se element hierarchii na základě třídy atributů. 
 
 
 STROJOVÝ PŘEKLADŮ. D dodává sbalené s velké sady součástí prvky uživatelského rozhraní pro vytvoření obrazovky, ale také rozpozná potřeba vlastní elementy a pokročilé obrazovky rozložení. Rozšiřitelnost jako takový je, že že první třídy vybrané pečené do rozhraní API. Vývojáři můžou rozšířit stávající elementy nebo vytvořit nové a pak bezproblémově integrovat.
@@ -94,13 +94,13 @@ A *RootElement* je kontejner pro položky, které přejděte do DVC nejvyšší 
 
 Oddíl je skupina buněk v tabulce. Jako s normální tabulky oddílu, můžete volitelně může mít záhlaví a zápatí stránky, která buď může být text nebo dokonce vlastní zobrazení, stejně jako na následujícím snímku obrazovky:
 
- [ ![](images/image2.png "Jako s normální tabulky oddílu, můžete volitelně může mít záhlaví a zápatí stránky, která buď může být text nebo dokonce vlastní zobrazení, stejně jako tento snímek obrazovky")](images/image2.png)
+ [![](images/image2.png "Jako s normální tabulky oddílu, můžete volitelně může mít záhlaví a zápatí stránky, která buď může být text nebo dokonce vlastní zobrazení, stejně jako tento snímek obrazovky")](images/image2.png#lightbox)
 
 ### <a name="element"></a>Prvek
 
 Element představuje skutečný buňku v tabulce. STROJOVÝ PŘEKLADŮ. D dodává sbalené s širokou škálu prvky, které představují různými datovými typy nebo jiné vstupy. Například následující snímky obrazovky ilustruje několik k dispozici následující prvky:
 
- [ ![](images/image3.png "Například tato snímky obrazovky ilustruje několik dostupných prvků")](images/image3.png)
+ [![](images/image3.png "Například tato snímky obrazovky ilustruje několik dostupných prvků")](images/image3.png#lightbox)
 
 ## <a name="more-on-sections-and-rootelements"></a>Další na oddíly a RootElements
 
@@ -112,7 +112,7 @@ Alespoň jeden RootElement je nezbytné ke spuštění procesu MonoTouch.Dialog.
 
 Pokud je RootElement inicializovaný s hodnotou prvek oddílu nebo tato hodnota slouží k vyhledání podřízený Element, který obsahuje všechny konfigurace, které je vykresleno na pravé straně zobrazení. Například následující snímek obrazovky ukazuje tabulky na levé straně s buňku obsahující název obrazovky podrobností na pravé straně, "Cukrářské", společně s hodnotu vybrané poušť.
 
- [ ![](images/image4.png "Tento snímek obrazovky ukazuje tabulky na levé straně s buňku obsahující název obrazovky podrobností na pravé straně, cukrářské, společně s hodnotu vybrané poušť") ](images/image4.png) [ ![ ] (images/image5.png "to Následující snímek obrazovky ukazuje tabulky na levé straně s buňku obsahující název obrazovky podrobností na pravé straně, cukrářské, společně s hodnotu vybrané poušť")](images/image5.png)
+ [![](images/image4.png "Tento snímek obrazovky ukazuje tabulky na levé straně s buňku obsahující název obrazovky podrobností na pravé straně, cukrářské, společně s hodnotu vybrané poušť") ](images/image4.png#lightbox) [ ![ ] (images/image5.png "to Následující snímek obrazovky ukazuje tabulky na levé straně s buňku obsahující název obrazovky podrobností na pravé straně, cukrářské, společně s hodnotu vybrané poušť")](images/image5.png#lightbox)
 
 Kořenové elementy lze také v části pro aktivaci načítání novou stránku vnořené konfigurace, jako v příkladu nahoře. Při použití v tomto režimu titulek zadaný se používá při vykreslit v rámci oddílu a také slouží jako nadpis na podstránku. Příklad:
 
@@ -195,7 +195,7 @@ var taskElement = new RootElement (task.Name){
 
 Tento kód vytvoří uživatelského rozhraní, jak je uvedeno níže. Kompletní a podrobný postup tohoto příkladu, najdete v článku [prvky rozhraní API návod](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md) kurzu.
 
- [ ![](images/image6.png "V kombinaci s vlastností Element.Value, zpětné volání můžete načíst hodnotu nastavenou v další prvky")](images/image6.png)
+ [![](images/image6.png "V kombinaci s vlastností Element.Value, zpětné volání můžete načíst hodnotu nastavenou v další prvky")](images/image6.png#lightbox)
 
 Když uživatel stiskne dolní buňky tabulky, kód v anonymní funkce provede, zápis hodnotu z `element` instance k **výstupu aplikace** odsazení v sadě Visual Studio for Mac.
 
@@ -216,7 +216,7 @@ Jedná se o chování pro všechny elementy, které jsou součástí MonoTouch.D
 
 A `StringElement` zobrazí popisek na levé straně hodnotu řetězce na pravé straně buňky a buňku tabulky.
 
- [ ![](images/image7.png "StringElement zobrazí popisek na levé straně hodnotu řetězce na pravé straně buňky a buňku tabulky")](images/image7.png)
+ [![](images/image7.png "StringElement zobrazí popisek na levé straně hodnotu řetězce na pravé straně buňky a buňku tabulky")](images/image7.png#lightbox)
 
 Použít `StringElement` jako tlačítko, zadejte delegáta.
 
@@ -227,25 +227,25 @@ new StringElement (
 , null, "ok", null).Show(); })
 ```
 
- [ ![](images/image8.png "Pokud chcete použít jako tlačítka StringElement, poskytovat delegáta")](images/image8.png)
+ [![](images/image8.png "Pokud chcete použít jako tlačítka StringElement, poskytovat delegáta")](images/image8.png#lightbox)
 
 ### <a name="styled-string-element"></a>Element stylem řetězce
 
 A `StyledStringElement` umožňuje řetězců, které mají zobrazovat pomocí buď styly buňky předdefinované tabulky nebo s vlastní formátování.
 
- [ ![](images/image9.png "StyledStringElement umožňuje řetězců, které mají zobrazovat pomocí buď styly buňky předdefinované tabulky nebo s vlastní formátování")](images/image9.png)
+ [![](images/image9.png "StyledStringElement umožňuje řetězců, které mají zobrazovat pomocí buď styly buňky předdefinované tabulky nebo s vlastní formátování")](images/image9.png#lightbox)
 
 `StyledStringElement` Třída odvozená z `StringElement`, ale umožňuje vývojářům přizpůsobit několik vlastností, jako je písmo, barvy, barva pozadí buněk, režimu ukončování řádků, počet řádků, které chcete zobrazit, a zda má být zobrazena určité příslušenství.
 
 ### <a name="multiline-element"></a>Multiline – Element
 
- [ ![](images/image10.png "Multiline – Element")](images/image10.png)
+ [![](images/image10.png "Multiline – Element")](images/image10.png#lightbox)
 
 ### <a name="entry-element"></a>Vstupní Element
 
 `EntryElement`, Jako název znamená, že se používá k získání vstupu uživatele. Podporuje regulárních řetězců nebo hesla, kde jsou skryté znaky.
 
- [ ![](images/image11.png "EntryElement slouží k získání vstupu uživatele")](images/image11.png)
+ [![](images/image11.png "EntryElement slouží k získání vstupu uživatele")](images/image11.png#lightbox)
 
 Není inicializována pomocí tří hodnot:
 
@@ -268,11 +268,11 @@ Kromě toho `KeyboardType` vlastnost lze nastavit v okamžiku vytvoření na sty
 
 ### <a name="boolean-element"></a>Boolean – Element
 
- [ ![](images/image12.png "Boolean – Element")](images/image12.png)
+ [![](images/image12.png "Boolean – Element")](images/image12.png#lightbox)
 
 ### <a name="checkbox-element"></a>Zaškrtávací políčko elementu
 
- [ ![](images/image13.png "Zaškrtávací políčko elementu")](images/image13.png)
+ [![](images/image13.png "Zaškrtávací políčko elementu")](images/image13.png#lightbox)
 
 ### <a name="radio-element"></a>Element přepínače
 
@@ -282,7 +282,7 @@ A `RadioElement` vyžaduje `RadioGroup` zadat v `RootElement`.
 mtRoot = new RootElement ("Demos", new RadioGroup("MyGroup", 0))
 ```
 
- [ ![](images/image14.png "RadioElement vyžaduje RadioGroup zadat v RootElement")](images/image14.png)
+ [![](images/image14.png "RadioElement vyžaduje RadioGroup zadat v RootElement")](images/image14.png#lightbox)
 
  `RootElements` také se používají ke koordinaci přepínač elementy. `RadioElement` Členy může mít rozsah více oddílů (například k implementaci něco podobného prstenec styl podání selektor a samostatné vlastní vyzvánění z tónům systému). Souhrnné zobrazení se zobrazí přepínač elementu, který je momentálně zvolen. Pokud chcete použít, vytvořte `RootElement` s konstruktorem skupiny, například takto:
 
@@ -294,15 +294,15 @@ Název skupiny v `RadioGroup` se používá k zobrazení vybrané hodnoty na str
 
 ### <a name="badge-element"></a>Element oznámení "BADGE"
 
- [ ![](images/image15.png "Element oznámení "BADGE"")](images/image15.png)
+ [![](images/image15.png "Element oznámení "BADGE"")](images/image15.png#lightbox)
 
 ### <a name="float-element"></a>Float – Element
 
- [ ![](images/image16.png "Float – Element")](images/image16.png)
+ [![](images/image16.png "Float – Element")](images/image16.png#lightbox)
 
 ### <a name="activity-element"></a>Element aktivity
 
- [ ![](images/image17.png "Element aktivity")](images/image17.png)
+ [![](images/image17.png "Element aktivity")](images/image17.png#lightbox)
 
 ### <a name="date-element"></a>Element datum
 
@@ -310,35 +310,35 @@ Název skupiny v `RadioGroup` se používá k zobrazení vybrané hodnoty na str
 
 Pokud je vybraná buňky odpovídající DateElement, výběr data se zobrazí, jak je uvedeno níže:
 
- [ ![](images/image19.png "Pokud je vybraná buňky odpovídající DateElement, výběr data se zobrazí, jak je znázorněno")](images/image19.png)
+ [![](images/image19.png "Pokud je vybraná buňky odpovídající DateElement, výběr data se zobrazí, jak je znázorněno")](images/image19.png#lightbox)
 
 ### <a name="time-element"></a>Time Element
 
- [ ![](images/image20.png "Time Element")](images/image20.png)
+ [![](images/image20.png "Time Element")](images/image20.png#lightbox)
 
 Pokud je vybraná buňky odpovídající TimeElement, výběr času se zobrazí, jak je uvedeno níže:
 
- [ ![](images/image21.png "Pokud je vybraná buňky odpovídající TimeElement, výběr času se zobrazí, jak je znázorněno")](images/image21.png)
+ [![](images/image21.png "Pokud je vybraná buňky odpovídající TimeElement, výběr času se zobrazí, jak je znázorněno")](images/image21.png#lightbox)
 
 ### <a name="datetime-element"></a>Element data a času
 
- [ ![](images/image22.png "Element data a času")](images/image22.png)
+ [![](images/image22.png "Element data a času")](images/image22.png#lightbox)
 
 Pokud je vybraná buňky odpovídající DateTimeElement, se zobrazí pro výběr data a času, jak je uvedeno níže:
 
- [ ![](images/image23.png "Pokud je vybraná buňky odpovídající DateTimeElement, jak je znázorněno se zobrazí pro výběr data a času")](images/image23.png)
+ [![](images/image23.png "Pokud je vybraná buňky odpovídající DateTimeElement, jak je znázorněno se zobrazí pro výběr data a času")](images/image23.png#lightbox)
 
 ### <a name="html-element"></a>HTML Element
 
- [ ![](images/image24.png "HTML Element")](images/image24.png)
+ [![](images/image24.png "HTML Element")](images/image24.png#lightbox)
 
 `HTMLElement` Zobrazuje hodnotu jeho `Caption` vlastnost v buňce tabulky. Vybraná, kde `Url` přiřazen k elementu je načteno v `UIWebView` řídit, jak je uvedeno níže:
 
- [ ![](images/image25.png "Kde vybraná, adresu Url přiřazen k elementu je načtena v ovládacím prvku UIWebView, jak je uvedeno níže")](images/image25.png)
+ [![](images/image25.png "Kde vybraná, adresu Url přiřazen k elementu je načtena v ovládacím prvku UIWebView, jak je uvedeno níže")](images/image25.png#lightbox)
 
 ### <a name="message-element"></a>Element zprávy
 
- [ ![](images/image26.png "Element zprávy")](images/image26.png)
+ [![](images/image26.png "Element zprávy")](images/image26.png#lightbox)
 
 ### <a name="load-more-element"></a>Načíst další – Element
 

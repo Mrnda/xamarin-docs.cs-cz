@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 5e4b0e7bbad94976b23e58d4248cb2ea1a6f2b0f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b50c4bbef1510b739c4f7da7d732a4f4c66f13f3
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-ios-user-interfaces-in-code"></a>Vytváření iOS uživatelského rozhraní v kódu
 
@@ -24,7 +24,7 @@ Uživatelské rozhraní aplikace iOS se podobá výkladní skříň – aplikace
 
 Následující obrázek znázorňuje vztahy mezi oken, zobrazení, dílčích zobrazení a View Controller, které přinášejí uživatelského rozhraní na obrazovce zařízení: 
 
-[ ![](ios-code-only-images/image9.png "Tento diagram znázorňuje vztahy mezi oken, zobrazení, dílčích zobrazení a View Controller")](ios-code-only-images/image9.png)
+[![](ios-code-only-images/image9.png "Tento diagram znázorňuje vztahy mezi oken, zobrazení, dílčích zobrazení a View Controller")](ios-code-only-images/image9.png#lightbox)
 
 Tyto zobrazení hierarchie se dá vytvořit pomocí [Xamarin Designer pro iOS](~/ios/user-interface/designer/index.md) v sadě Visual Studio, ale je dobrým základní znalosti o tom, jak pracovat zcela v kódu. Tento článek vás provede některé základní body ke zprovoznění a běh vývoj jen kód uživatelského rozhraní.
 
@@ -32,7 +32,7 @@ Tyto zobrazení hierarchie se dá vytvořit pomocí [Xamarin Designer pro iOS](~
 
 Následující obrázek znázorňuje vztahy mezi oken, zobrazení, dílčích zobrazení a View Controller, které přinášejí uživatelského rozhraní na obrazovce zařízení: 
 
-[ ![](ios-code-only-images/image9.png "Tento diagram znázorňuje vztahy mezi oken, zobrazení, dílčích zobrazení a View Controller")](ios-code-only-images/image9.png)
+[![](ios-code-only-images/image9.png "Tento diagram znázorňuje vztahy mezi oken, zobrazení, dílčích zobrazení a View Controller")](ios-code-only-images/image9.png#lightbox)
 
 
 Tyto zobrazení hierarchie se dá vytvořit pomocí [Xamarin Designer pro iOS](~/ios/user-interface/designer/index.md) v sadě Visual Studio pro Mac, ale je dobrým základní znalosti o tom, jak pracovat zcela v kódu. Tento článek vás provede některé základní body ke zprovoznění a běh vývoj jen kód uživatelského rozhraní.
@@ -49,13 +49,13 @@ Tyto zobrazení hierarchie se dá vytvořit pomocí [Xamarin Designer pro iOS](~
 Nejprve vytvořte projekt pro iOS v sadě Visual Studio pomocí iPhone **prázdného projektu** šablony, viz následující obrázek, kterou rozšiřujeme budete přidávat řadiče a zobrazení.
 
 
-[ ![](ios-code-only-images/blankapp-vs.png "Dialogové okno Nový projekt")](ios-code-only-images/blankapp-vs.png)
+[![](ios-code-only-images/blankapp-vs.png "Dialogové okno Nový projekt")](ios-code-only-images/blankapp-vs.png#lightbox)
 
 
 Prázdná šablona projektu přidá 4 soubory do projektu:
 
 
-[ ![](ios-code-only-images/empty-project.png "Soubory projektu")](ios-code-only-images/empty-project.png)
+[![](ios-code-only-images/empty-project.png "Soubory projektu")](ios-code-only-images/empty-project.png#lightbox)
 
 
 1. **AppDelegate.cs** – obsahuje `UIApplicationDelegate` podtřídami, `AppDelegate` , který se používá ke zpracování událostí aplikací z iOS. Okno aplikace je vytvořen v `AppDelegate`na `FinishedLaunching` metoda.
@@ -76,16 +76,16 @@ Následující postup vás provede odebrání scénáři z aplikace:
 
 1. Šablonu jediné zobrazení aplikace použijte k vytvoření nové iOS projektu:
     
-    [ ![](ios-code-only-images/single-view-app.png "Použít šablonu jediné zobrazení aplikace")](ios-code-only-images/single-view-app.png)
+    [![](ios-code-only-images/single-view-app.png "Použít šablonu jediné zobrazení aplikace")](ios-code-only-images/single-view-app.png#lightbox)
 
 1. Odstranit `Main.Storyboard` a `ViewController.cs` soubory. Proveďte **není** odstranit `LaunchScreen.Storyboard`. Řadiče zobrazení by měl odstranit, protože je kódu na pozadí pro řadič zobrazení, která je vytvořena ve scénáři:
 1. Je nutné vybrat **odstranit** z v místním dialogovém okně:
     
-    [ ![](ios-code-only-images/delete.png "Vyberte možnost odstranit z v místním dialogovém okně")](ios-code-only-images/delete.png)
+    [![](ios-code-only-images/delete.png "Vyberte možnost odstranit z v místním dialogovém okně")](ios-code-only-images/delete.png#lightbox)
 
 1. V Info.plist, odstraňte informací uvnitř **informace o nasazení > Main rozhraní** možnost:
     
-    [ ![](ios-code-only-images/main-interface.png "Odstranění informací uvnitř možnost Hlavní rozhraní")](ios-code-only-images/main-interface.png)
+    [![](ios-code-only-images/main-interface.png "Odstranění informací uvnitř možnost Hlavní rozhraní")](ios-code-only-images/main-interface.png#lightbox)
 
 1. Nakonec přidejte následující kód do vaší `FinishedLaunching` metodu v třídě AppDelegate:
         
@@ -176,7 +176,7 @@ public class AppDelegate : UIApplicationDelegate
 
 Každý řadič má přidružené zobrazení, která je přístupná z `View` vlastnost. Ve výše uvedeném kódu změní zobrazení `BackgroundColor` vlastnost `UIColor.LightGray` tak, aby se nebude zobrazovat, jak je uvedeno níže:
 
- [ ![](ios-code-only-images/image1.png "Pozadí zobrazení je viditelné světle šedé")](ios-code-only-images/image1.png)
+ [![](ios-code-only-images/image1.png "Pozadí zobrazení je viditelné světle šedé")](ios-code-only-images/image1.png#lightbox)
 
 Nemůžeme nastavit všechny `UIViewController` podtřídami jako `RootViewController` tímto způsobem je také možné, včetně řadičů z UIKit a také ty jsme si zápisu. Například následující kód přidá `UINavigationController` jako `RootViewController`:
 
@@ -214,7 +214,7 @@ public class AppDelegate : UIApplicationDelegate
 
 To vytváří řadičem vnořené v rámci kontroleru navigace, jak je uvedeno níže:
 
- [ ![](ios-code-only-images/image2.png "Řadič vnořené v rámci kontroleru navigace")](ios-code-only-images/image2.png)
+ [![](ios-code-only-images/image2.png "Řadič vnořené v rámci kontroleru navigace")](ios-code-only-images/image2.png#lightbox)
 
 ## <a name="creating-a-view-controller"></a>Vytvoření řadiče zobrazení
 
@@ -224,11 +224,11 @@ Přidejte novou třídu s názvem `CustomViewController` jak je uvedeno níže:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](ios-code-only-images/customviewcontroller.png "Přidejte novou třídu s názvem CustomViewController")](ios-code-only-images/customviewcontroller.png)
+[![](ios-code-only-images/customviewcontroller.png "Přidejte novou třídu s názvem CustomViewController")](ios-code-only-images/customviewcontroller.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![](ios-code-only-images/new-file.png "Přidejte novou třídu s názvem CustomViewController")](ios-code-only-images/new-file.png)
+[![](ios-code-only-images/new-file.png "Přidejte novou třídu s názvem CustomViewController")](ios-code-only-images/new-file.png#lightbox)
 
 -----
 
@@ -245,6 +245,8 @@ namespace CodeOnlyDemo
     }
 }
 ```
+
+<a name="Initializing_the_View"/>
 
 ## <a name="initializing-the-view"></a>Inicializace zobrazení
 
@@ -302,11 +304,11 @@ Window.RootViewController = navController;
 
 Nyní když načtení aplikace, `CustomViewController` je načteno uvnitř řadič navigace:
 
- [ ![](ios-code-only-images/customvc.png "CustomViewController je načtena uvnitř řadič navigace")](ios-code-only-images/customvc.png)
+ [![](ios-code-only-images/customvc.png "CustomViewController je načtena uvnitř řadič navigace")](ios-code-only-images/customvc.png#lightbox)
  
 Klepnutím na tlačítko, bude _nabízené_ nového řadiče zobrazení do zásobníku navigace:
 
-[ ![](ios-code-only-images/customvca.png "Nový řadič zobrazení vloženy do zásobníku navigace")](ios-code-only-images/customvca.png)
+[![](ios-code-only-images/customvca.png "Nový řadič zobrazení vloženy do zásobníku navigace")](ios-code-only-images/customvca.png#lightbox)
 
 ## <a name="building-the-view-hierarchy"></a>Vytváření zobrazení hierarchie
 
@@ -352,7 +354,7 @@ Když vytvoříme `UITextField`, nastaví `Frame` vlastnost určit jeho umístě
 
 Aplikace s `UITextField` zahrnuté jsou uvedeny níže:
 
- [ ![](ios-code-only-images/image4.png "Aplikace s UITextField zahrnuté")](ios-code-only-images/image4.png)
+ [![](ios-code-only-images/image4.png "Aplikace s UITextField zahrnuté")](ios-code-only-images/image4.png#lightbox)
 
 Nyní můžete přidat `UITextField` hesla podobným způsobem, pouze v tomto případě nastaví `SecureTextEntry` vlastnost na hodnotu true, jak je uvedeno níže:
 
@@ -380,7 +382,7 @@ public class CustomViewController : UIViewController
 
 Nastavení `SecureTextEntry = true` skryje zadaný v text `UITextField` uživatelem, jak je uvedeno níže:
 
- [ ![](ios-code-only-images/image4a.png "Nastavení SecureTextEntry true skryje text zadaný uživatelem")](ios-code-only-images/image4a.png)
+ [![](ios-code-only-images/image4a.png "Nastavení SecureTextEntry true skryje text zadaný uživatelem")](ios-code-only-images/image4a.png#lightbox)
 
 ### <a name="adding-the-button"></a>Přidání tlačítka
 
@@ -403,7 +405,7 @@ View.AddSubview(submitButton);
 
 Obrazovka pro přihlášení s tímto na místě, se teď zobrazí jak je uvedeno níže:
 
- [ ![](ios-code-only-images/image5.png "Obrazovka pro přihlášení")](ios-code-only-images/image5.png)
+ [![](ios-code-only-images/image5.png "Obrazovka pro přihlášení")](ios-code-only-images/image5.png#lightbox)
 
 Na rozdíl od v předchozích verzích systému iOS, na pozadí výchozí tlačítko je transparentní. Změna na tlačítko `BackgroundColor` změny vlastností toto:
 
@@ -419,7 +421,7 @@ submitButton.Layer.CornerRadius = 5f;
 
 Tyto změny bude zobrazení vypadat například takto:
 
-[ ![](ios-code-only-images/image6.png "Na příkladu spuštění zobrazení")](ios-code-only-images/image6.png)
+[![](ios-code-only-images/image6.png "Na příkladu spuštění zobrazení")](ios-code-only-images/image6.png#lightbox)
  
 ## <a name="adding-multiple-views-to-the-view-hierarchy"></a>Přidání více zobrazení do zobrazení hierarchie
 
@@ -452,7 +454,7 @@ submitButton.TouchUpInside += (sender, e) => {
 
 Dole je zobrazená navigaci:
 
-[ ![](ios-code-only-images/navigation.png "Navigaci je znázorněna v tomto grafu")](ios-code-only-images/navigation.png)
+[![](ios-code-only-images/navigation.png "Navigaci je znázorněna v tomto grafu")](ios-code-only-images/navigation.png#lightbox)
 
 Všimněte si, že ve výchozím nastavení, pokud použijete řadič navigační iOS poskytuje aplikaci navigačním panelu a tlačítko Zpět a umožní vám vrátit zpět na zásobníku.
 
@@ -477,7 +479,7 @@ To, ale nebude fungovat, pokud je zobrazení se vstupní pro `UIView` jako všec
 
 Pokud uživatel otočí zařízení na šířku, ovládací prvky se velikost odpovídajícím způsobem, jak ukazuje následující snímek obrazovky:
 
- [ ![](ios-code-only-images/image7.png "Pokud uživatel otočí zařízení na šířku, ovládací prvky velikost nemění správně")](ios-code-only-images/image7.png)
+ [![](ios-code-only-images/image7.png "Pokud uživatel otočí zařízení na šířku, ovládací prvky velikost nemění správně")](ios-code-only-images/image7.png#lightbox)
 
 Je možné tento problém opravit nastavením `AutoresizingMask` vlastnost u jednotlivých zobrazení. V tomto případě chceme ovládacích prvků k roztahování vodorovně, proto doporučujeme nastavit každý `AutoresizingMask`. Následující příklad je určený pro `usernameField`, ale stejné by bylo potřeba použít na každou miniaplikaci v hierarchii zobrazení.
 
@@ -487,7 +489,7 @@ usernameField.AutoresizingMask = UIViewAutoresizing.FlexibleWidth;
 
 Nyní když jsme otočte zařízení nebo simulátoru, vše, co roztahovány k vyplnění další prostor, jak je uvedeno níže:
 
- [ ![](ios-code-only-images/image8.png "Všechny ovládací prvky roztáhnou tak, aby vyplňování další místa")](ios-code-only-images/image8.png)
+ [![](ios-code-only-images/image8.png "Všechny ovládací prvky roztáhnou tak, aby vyplňování další místa")](ios-code-only-images/image8.png#lightbox)
 
 ## <a name="creating-custom-views"></a>Vytváření vlastních zobrazení
 
@@ -592,7 +594,7 @@ submitButton.TouchUpInside += delegate
 
 Teď když jsme aplikaci spustit a klepněte na tlačítko pro odeslání, nové zobrazení s kroužkem se zobrazí:
 
- [ ![](ios-code-only-images/circles.png "Zobrazí se nové zobrazení s kroužkem")](ios-code-only-images/circles.png)
+ [![](ios-code-only-images/circles.png "Zobrazí se nové zobrazení s kroužkem")](ios-code-only-images/circles.png#lightbox)
 
 ## <a name="creating-a-launch-screen"></a>Vytváření úvodní obrazovka
 

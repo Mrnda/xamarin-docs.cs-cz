@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 12/22/2017
-ms.openlocfilehash: 53dc85cab94bdf692e088d7c6eea6916d283ba84
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7560900ace62a737ac765bcfe93f759f8985aca2
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="android-emulator-hardware-acceleration"></a>Hardwarová akcelerace emulátoru systému Android
 
 Protože je prohibitively pomalé bez hardwarové akcelerace, Intel na emulátoru Android SDK HAXM (hardwaru Accelerated správce spuštění) je doporučeným způsobem výrazně zlepšit výkon emulátoru Android SDK.
 
-<a name="haxm-overview" />
 
 ## <a name="haxm-overview"></a>Přehled HAXM
 
@@ -27,9 +26,8 @@ HAXM je modul virtualizace s hardwarovým řízením (hypervisor), který použ�
 Emulátoru Android SDK automaticky využívá HAXM případě, že je k dispozici. Vyberete-li **x86**– na základě virtuální zařízení (jak je popsáno v [konfigurace a použití](~/android/deploy-test/debugging/android-sdk-emulator/index.md)), virtuální zařízení bude používat HAXM hardwarovou akceleraci. Než poprvé použijete emulátoru Android SDK, je vhodné ověřit, že HAXM je nainstalovaná a k dispozici pro Android emulátoru sady SDK.
 
 > [!NOTE]
-> **Poznámka:** HAXM nelze spustit na virtuálním počítači.
+> HAXM nelze spustit na virtuálním počítači.
 
-<a name="verify-haxm" />
 
 ## <a name="verifying-haxm-installation"></a>Ověření instalace HAXM
 
@@ -39,7 +37,7 @@ Můžete zkontrolovat, zda je k dispozici zobrazením HAXM **od emulátoru Andro
 
 1. Kliknutím na spustit Správce emulátoru Android **nástroje > Android > Správce emulátoru Android**:
 
-    [![Umístění položky nabídky Správce emulátoru Android](hardware-acceleration-images/win/01-avd-manager-menu-item-sml.png)](hardware-acceleration-images/win/01-avd-manager-menu-item.png)
+    [![Umístění položky nabídky Správce emulátoru Android](hardware-acceleration-images/win/01-avd-manager-menu-item-sml.png)](hardware-acceleration-images/win/01-avd-manager-menu-item.png#lightbox)
 
 2. Pokud se zobrazí **upozornění výkonu** dialogové okno podobné následujícímu, pak HAXM je ještě nebyly správně nainstalovány nebo nakonfigurovány ve vašem počítači:
 
@@ -65,7 +63,7 @@ Můžete zkontrolovat, zda je k dispozici zobrazením HAXM **od emulátoru Andro
 
 1. Kliknutím na spustit Správce emulátoru Android **nástroje > Správce emulátorů Google**:
 
-    [![Umístění položky nabídky Správce emulátoru Android](hardware-acceleration-images/mac/01-avd-manager-menu-item-sml.png)](hardware-acceleration-images/mac/01-avd-manager-menu-item.png)
+    [![Umístění položky nabídky Správce emulátoru Android](hardware-acceleration-images/mac/01-avd-manager-menu-item-sml.png)](hardware-acceleration-images/mac/01-avd-manager-menu-item.png#lightbox)
 
 2. Pokud se zobrazí **upozornění výkonu** dialogové okno podobné následujícímu, pak HAXM je ještě nebyly správně nainstalovány nebo nakonfigurovány ve vašem počítači:
 
@@ -75,7 +73,7 @@ Můžete zkontrolovat, zda je k dispozici zobrazením HAXM **od emulátoru Andro
 
 3. Vyberte **x86** bitové kopie (například **Android\_Accelerated\_x86**), klikněte na tlačítko **spustit**, pak klikněte na tlačítko **spusťte**:
 
-    [![Počínaje obrázku výchozí virtuální zařízení Android emulátoru sady SDK](hardware-acceleration-images/mac/02-start-default-avd-sml.png)](hardware-acceleration-images/mac/02-start-default-avd.png)
+    [![Počínaje obrázku výchozí virtuální zařízení Android emulátoru sady SDK](hardware-acceleration-images/mac/02-start-default-avd-sml.png)](hardware-acceleration-images/mac/02-start-default-avd.png#lightbox)
 
 3. Sledovat **od emulátoru Android** dialogového okna při spouštění v emulátoru. Pokud je nainstalovaná HAXM, zobrazí se zpráva, **HAX je funkční a emulátoru běží v režimu rychlé virt.krychle** jak je vidět na tomto snímku obrazovky:
 
@@ -147,7 +145,7 @@ Ve Windows 10, použijte následující postup pro případ, **Device Guard** b�
 
 2. V **systému Souhrn**, vzhled a zjistěte, zda **ochrana virtualizace zařízení na základě zabezpečení** je k dispozici a je v **systémem** stavu:
 
-   [![Ochrana zařízení je existovat a běžet](hardware-acceleration-images/win/09-device-guard-sml.png)](hardware-acceleration-images/win/09-device-guard.png)
+   [![Ochrana zařízení je existovat a běžet](hardware-acceleration-images/win/09-device-guard-sml.png)](hardware-acceleration-images/win/09-device-guard.png#lightbox)
 
 Pokud je povolena ochrana zařízení, použijte ji zakázat následující kroky:
 
@@ -157,7 +155,7 @@ Pokud je povolena ochrana zařízení, použijte ji zakázat následující krok
 
 3. V **Editor místních zásad skupiny**, přejděte na **konfigurace počítače > šablony pro správu > Systém > Device Guard**:
 
-   [![Ochrana zařízení v Editoru místních zásad skupiny](hardware-acceleration-images/win/10-group-policy-editor-sml.png)](hardware-acceleration-images/win/10-group-policy-editor.png)
+   [![Ochrana zařízení v Editoru místních zásad skupiny](hardware-acceleration-images/win/10-group-policy-editor-sml.png)](hardware-acceleration-images/win/10-group-policy-editor.png#lightbox)
 
 4. Změna **zapnout na virtualizace zabezpečení na základě** k **zakázané** (jak je uvedeno výše) a ukončete **Editor místních zásad skupiny**.
 
@@ -190,6 +188,6 @@ Pokud ještě není zakázán technologie Hyper-V, zabránit vám v zakázání 
 
 2. Spusťte instalační program HAXM. Přijměte výchozí hodnoty v dialogových oknech instalační program:
 
-   [![Okno Nastavení správce spuštění Accelerated hardwaru Intel](hardware-acceleration-images/mac/05-haxm-installer-sml.png)](hardware-acceleration-images/win/05-haxm-installer.png)
+   [![Okno Nastavení správce spuštění Accelerated hardwaru Intel](hardware-acceleration-images/mac/05-haxm-installer-sml.png)](hardware-acceleration-images/win/05-haxm-installer.png#lightbox)
 
 -----

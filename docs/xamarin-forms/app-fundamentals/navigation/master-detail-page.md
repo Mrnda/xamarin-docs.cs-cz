@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: f7e949902e2f960a9aa68c600514b7fefc8ae30d
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 9d774870a541630d8c6519f9dfeaeb21cacb98e8
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="master-detail-page"></a>Stránka podrobností
 
@@ -22,7 +22,7 @@ _Xamarin.Forms MasterDetailPage je stránka, která spravuje dvě související 
 
 Stránky předlohy obvykle zobrazí seznam položek, jak je vidět na následujících snímcích obrazovky:
 
-[![](master-detail-page-images/masterpage-components.png "Hlavní stránka součásti")](master-detail-page-images/masterpage-components-large.png "hlavní stránky součásti")
+[![](master-detail-page-images/masterpage-components.png "Hlavní stránka součásti")](master-detail-page-images/masterpage-components-large.png#lightbox "hlavní stránky součásti")
 
 Umístění seznamu položek je stejná na každou platformu a výběrem jedné z položek bude přejít na stránku odpovídající podrobnosti. Kromě toho stránky předlohy také funkce navigační panel, který obsahuje tlačítko, které lze přejít na stránku podrobností aktivní:
 

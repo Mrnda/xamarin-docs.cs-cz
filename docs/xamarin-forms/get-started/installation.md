@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/19/2017
-ms.openlocfilehash: 2eaf4c6180b51a827d8182d87ee2db0fd1726c8d
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: fd6214f34c313db0d7a59291b73c5b29a9cc3592
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarinforms-requirements"></a>Požadavky na platformě Xamarin.Forms
 
@@ -86,29 +86,18 @@ Visual Studio pro Mac můžete použít k vývoji aplikací Xamarin.Forms na OS 
 
 ## <a name="windows-system-requirements"></a>Požadavky na systém Windows
 
-Xamarin.Forms aplikace pro iOS a Android se dají vytvářet v žádné instalaci systému Windows, která podporuje vývoj na platformě Xamarin. To vyžaduje Visual Studio 2013 Update 2 nebo novější běžící na systému Windows 7 nebo vyšší. Síťově připojeného počítače Mac se vyžaduje pro vývoj pro iOS.
-
-Existují další požadavky pro následující typy aplikací pro Windows:
+Xamarin.Forms aplikace pro iOS a Android se dají vytvářet v žádné instalaci systému Windows, která podporuje vývoj na platformě Xamarin. To vyžaduje Visual Studio 2015 nebo novější běžící na systému Windows 7 nebo vyšší. Síťově připojeného počítače Mac se vyžaduje pro vývoj pro iOS.
 
 ### <a name="universal-windows-platform-uwp"></a>Univerzální platforma Windows (UPW)
 
 Vývoj aplikací Xamarin.Forms pro UPW vyžaduje:
 
-* Windows 10
+* Windows 10 (doporučené aktualizace Creators patří.)
 
-* Visual Studio 2015 nebo novější
+* Doporučuje se Visual Studio 2017
 
-* [Nástroje pro vývojáře Universal Windows](https://dev.windows.com/downloads/windows-10-sdk)
+* [Windows 10 SDK](https://dev.windows.com/downloads/windows-10-sdk)
 
 Projekty UWP jsou součástí řešení Xamarin.Forms vytvořené v sadě Visual Studio 2015 a Visual Studio 2017.
 Můžete také [přidat univerzální platformu Windows (UWP) aplikace](~/xamarin-forms/platform/windows/installation/universal.md) do existujícího řešení Xamarin.Forms.
 
-
-
-### <a name="windows-81-and-windows-phone-81-winrt"></a>Windows 8.1 a Windows Phone 8.1 WinRT
-
-Vývoj Xamarin.Forms aplikací pro Windows 8.1 a Windows Phone 8.1 WinRT vyžaduje:
-
-* Windows 8.1
-
-* Visual Studio 2013 Update 2 nebo novější

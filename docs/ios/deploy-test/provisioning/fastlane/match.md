@@ -2,16 +2,16 @@
 title: "fastlane iOS – odpovídat"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 92B35AB1-7AB7-3D3B-DB31-CC971E0B43AE
+ms.assetid: C4A2A67E-0643-4CED-B1A9-79D65054F3CA
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 435ba4c3799288724625ca06016770b3ecad56a5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d92f820e22277148b4de3ff87e3fdaca0f573f52
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="fastlane-for-ios---match"></a>fastlane iOS – odpovídat
 
@@ -56,15 +56,15 @@ Pomocí terminálu, změňte adresář na adresář projektu a spusťte:
 
 Po zobrazení výzvy zadejte adresu URL úložiště git:
 
- [ ![](match-images/fastlane-image7.png "Zadejte adresu URL úložiště git")](match-images/fastlane-image7.png)
+ [![](match-images/fastlane-image7.png "Zadejte adresu URL úložiště git")](match-images/fastlane-image7.png#lightbox)
 
 Adresu URL můžete najít a zkopírovat kliknutím **klonovat nebo stáhnout** tlačítko na webu github.com, jak je uvedeno dále:
 
-[ ![](match-images/fastlane-image6.png "Adresu URL v části tlačítko klonovat nebo stáhnout na webu github.com")](match-images/fastlane-image6.png)
+[![](match-images/fastlane-image6.png "Adresu URL v části tlačítko klonovat nebo stáhnout na webu github.com")](match-images/fastlane-image6.png#lightbox)
 
 Inicializace projektu vytvoří matchfile – textový soubor, který lze upravovat předat proměnné prostředí nástroj pro porovnání. Dole je zobrazená příklad matchfile:
 
-[ ![](match-images/fastlane-image8.png "Příklad matchfile")](match-images/fastlane-image8.png)
+[![](match-images/fastlane-image8.png "Příklad matchfile")](match-images/fastlane-image8.png#lightbox)
 
 <a name="running" />
 
@@ -88,7 +88,7 @@ Kromě vytváření nových certifikátů a profilů, pomocí kteréhokoli z tě
 - Soubor readme s základní pokyny
 - Shoda verze
 
-[ ![](match-images/fastlane-image9.png "Struktura projektu v úložišti git")](match-images/fastlane-image9.png)
+[![](match-images/fastlane-image9.png "Struktura projektu v úložišti git")](match-images/fastlane-image9.png#lightbox)
 
 Profily zřizování jsou nainstalovány ve `~/Library/MobileDevice/Provisioning Profiles`. Certifikáty a soukromé klíče jsou nainstalovány přímo v řetězci klíčů.
 

@@ -4,19 +4,16 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 ms.technology: xamarin-cross-platform
-author: asb3993
-ms.author: amburns
-ms.date: 06/26/2017
-ms.openlocfilehash: 286600eb0919d6280a8c861d5d1e217900c5a02e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+author: bradumbaugh
+ms.author: brumbaug
+ms.date: 03/06/2018
+ms.openlocfilehash: d1c4c46b62b95d70dd2832c96ffd2686163990a5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="binding-objective-c-libraries"></a>Vazba knihoven jazyka Objective-C
-
-[//]: # (Původní soubor se nachází pod https://github.com/xamarin/xamarin-macios/tree/master/docs/website/)
-[//]: # (To umožňuje všechny přispěvatele (včetně externí) k odeslání, pomocí PR, aktualizace dokumentace, která odpovídají změny nástroje) [ // ]: # (mimo xamarin-macios/hlavní změny budou ztraceny v budoucnosti aktualizace))
 
 Při práci s Xamarin.iOS nebo Xamarin.Mac se můžete setkat případy, ve které chcete používat knihovnu jazyka Objective-C třetích stran. V těchto situacích můžete Xamarin vazby projekty k vytvoření vazby C# do nativních knihoven jazyka Objective-C. Projekt využívá stejné nástroje, které jsou používány za účelem přidání iOS a Mac rozhraní API jazyka C#.
 
@@ -35,30 +32,24 @@ Můžete použít [iOS vazby ukázka](https://github.com/xamarin/monotouch-sampl
 
 <a name="Getting_Started" />
 
-# <a name="getting-started"></a>Začínáme
+## <a name="getting-started"></a>Začínáme
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
 
 Nejjednodušší způsob, jak vytvořit vazbu je vytvoření projektu Xamarin.iOS vazby.
 To provedete ze sady Visual Studio pro Mac tak, že vyberete typ projektu **iOS > Knihovna > vazby knihovny**:
 
-
-[![](objective-c-libraries-images/00-sml.png "To provést ze sady Visual Studio pro Mac tak, že vyberete typ projektu iOS knihovny vazby knihovny")](objective-c-libraries-images/00.png)
-
+[![](objective-c-libraries-images/00-sml.png "To provést ze sady Visual Studio pro Mac tak, že vyberete typ projektu iOS knihovny vazby knihovny")](objective-c-libraries-images/00.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
 
 Nejjednodušší způsob, jak vytvořit vazbu je vytvoření projektu Xamarin.iOS vazby.
 To provedete ze sady Visual Studio v systému Windows tak, že vyberete typ projektu **Visual C# > iOS > vazby knihovny (iOS)**:
 
-
-[![](objective-c-libraries-images/00vs-sml.png "iOS iOS vazby knihovny")](objective-c-libraries-images/00vs.png)
+[![](objective-c-libraries-images/00vs-sml.png "iOS iOS vazby knihovny")](objective-c-libraries-images/00vs.png#lightbox)
 
 > [!IMPORTANT]
 > Poznámka: Vazba projekty pro **Xamarin.Mac** jsou podporovány pouze v sadě Visual Studio for Mac.
-
 
 -----
 
@@ -68,7 +59,7 @@ Vygenerovaný projekt obsahuje malé šablonu, která můžete upravit, obsahuje
 
 <a name="Binding_an_API" />
 
-# <a name="binding-an-api"></a>Vazba rozhraní API
+## <a name="binding-an-api"></a>Vazba rozhraní API
 
 Pokud chcete provést vazbu komplexní, budete chtít pochopit definici rozhraní API jazyka Objective-C a seznamte se s pokyny pro rozhraní .NET Framework návrh.
 
@@ -111,10 +102,9 @@ Chcete-li vytvořit vazbu dokončení, bude obvykle zabývat čtyři součásti:
 -  Volitelné: Další zdroje, které může rozbalte generovaného vazby, nebo zadejte další C# popisný rozhraní API (C# soubory, které přidáte do projektu).
 -  Nativní knihovny, který vytváříte vazbu.
 
-
 Tento graf znázorňuje vztah mezi soubory:
 
- [ ![](objective-c-libraries-images/screen-shot-2012-02-08-at-3.33.07-pm.png "Tento graf znázorňuje vztah mezi soubory")](objective-c-libraries-images/screen-shot-2012-02-08-at-3.33.07-pm.png)
+ [![](objective-c-libraries-images/screen-shot-2012-02-08-at-3.33.07-pm.png "Tento graf znázorňuje vztah mezi soubory")](objective-c-libraries-images/screen-shot-2012-02-08-at-3.33.07-pm.png#lightbox)
 
 Soubor definice rozhraní API: bude obsahovat pouze definice rozhraní a obory názvů (s žádné členy, které mohou obsahovat rozhraní) a nesmí obsahovat třídy, výčty, delegáti nebo struktury. Soubor definice rozhraní API je jenom kontrakt, který se použije k vygenerování rozhraní API.
 
@@ -145,7 +135,7 @@ Sestavení knihovny způsobí, že vaše nativní vazby.
 Chcete-li dokončit tuto vazbu, měli byste přidat nativní knihovny do projektu.  To provedete tak, že přidáte nativní knihovny do projektu, buď pomocí přetahování nativní knihovny z vyhledávací na projekt v Průzkumníku řešení, nebo pravým tlačítkem na projekt a zvolením **přidat**  >  **Přidat soubory** vyberte nativní knihovny.
 Nativní knihovny pomocí konvence začínat slovem "lib" a končit příponou ".a". Když to uděláte, Visual Studio pro Mac přidá dva soubory: `.a` soubor a automaticky zadané C# soubor, který obsahuje informace o co obsahuje nativní knihovny:
 
- [ ![](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png "Nativní knihovny pomocí konvence word lib začínat a končit .a rozšíření")](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png)
+ [![](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png "Nativní knihovny pomocí konvence word lib začínat a končit .a rozšíření")](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png#lightbox)
 
 Obsah `libMagicChord.linkwith.cs` soubor nemá informace o použití této knihovny a dává pokyn vaší IDE balit tímto binárním souborem do výsledný soubor knihovny DLL:
 
@@ -164,8 +154,7 @@ V některých případech je možné, je nutné, několik hodnot výčtu, deleg�
 
  <a name="The_API_definition_file" />
 
-
-# <a name="the-api-definition-file"></a>Soubor definice rozhraní API
+## <a name="the-api-definition-file"></a>Soubor definice rozhraní API
 
 Soubor definice rozhraní API se skládá z řady rozhraní. Rozhraní v definici rozhraní API bude převedena na deklaraci třídy a musí být doplněny pomocí [[BaseType]](~/cross-platform/macios/binding/binding-types-reference.md) atributu zadejte základní třídu pro třídy.
 
@@ -175,7 +164,7 @@ Ale vzhledem k tomu, že používáme rozhraní kostru ke generování třídu, 
 
 <a name="Binding_Methods" />
 
-## <a name="binding-methods"></a>Metody vazby
+### <a name="binding-methods"></a>Metody vazby
 
 Nejjednodušší vazby, které může provádět je pro navázání metody. Stačí deklarovat metoda v rozhraní s zásady vytváření názvů jazyka C# a uspořádání metodu s [[Export]](~/cross-platform/macios/binding/binding-types-reference.md) atribut. Atribut [Export] je co odkazuje název jazyka C# s názvem jazyka Objective-C v modulu runtime Xamarin.iOS. Parametr exportu atributu je název selektor jazyka Objective-C, několik příkladů:
 
@@ -214,7 +203,7 @@ Při exportu typu odkazu s `[Export]` – klíčové slovo můžete také zadat 
 
 <a name="Binding_Properties" />
 
-## <a name="binding-properties"></a>Vlastnosti vazby
+### <a name="binding-properties"></a>Vlastnosti vazby
 
 Stejně jako metody, vlastnosti jazyka Objective-C vázaných pomocí [[Export]](~/cross-platform/macios/binding/binding-types-reference.md) atribut a mapovat přímo na vlastnosti jazyka C#. Stejně jako metody, vlastnosti může být doplněny pomocí [[Static]](~/cross-platform/macios/binding/binding-types-reference.md) a [[interní]](~/cross-platform/macios/binding/binding-types-reference.md) atributy.
 
@@ -264,7 +253,7 @@ string Text { get; set; }
 string Text { get; [NullAllowed] set; }
 ```
 
-### <a name="caveats-of-binding-custom-controls"></a>Upozornění vazby vlastní ovládací prvky
+#### <a name="caveats-of-binding-custom-controls"></a>Upozornění vazby vlastní ovládací prvky
 
 Následující upozornění považovat za při nastavování vazby pro vlastního ovládacího prvku:
 
@@ -278,8 +267,7 @@ Nedodržení některé z výše uvedených upozornění může způsobit vazby b
 
 <a name="MutablePattern" />
 
-### <a name="objective-c-mutable-pattern-and-properties"></a>Měnitelný vzor jazyka Objective-C a vlastnosti
-
+#### <a name="objective-c-mutable-pattern-and-properties"></a>Měnitelný vzor jazyka Objective-C a vlastnosti
 
 Rozhraní jazyka Objective-C použití stylu, kde jsou některé třídy neměnné s měnitelnou podtřídy.   Například `NSString` je neměnné verze, zatímco `NSMutableString` je podtřídou, která umožňuje mutace.
 
@@ -306,8 +294,7 @@ interface MyMutableTree {
 
  <a name="Binding_Constructors" />
 
-
-## <a name="binding-constructors"></a>Vazba konstruktory
+### <a name="binding-constructors"></a>Vazba konstruktory
 
 **Btouch nativní** nástroj automaticky vygeneruje fours konstruktorů ve třídě, pro danou třídu `Foo`, vygeneruje:
 
@@ -315,7 +302,6 @@ interface MyMutableTree {
 -  `Foo (NSCoder)`: konstruktor použít při deserializaci NIB soubory (mapuje Objective-C "initWithCoder:" konstruktor).
 -  `Foo (IntPtr handle)`: konstruktoru na základě popisovač vytváření, to je vyvoláno modulem runtime modulu runtime musí vystavit spravovaného objektu z nespravovaných objektu.
 -  `Foo (NSEmptyFlag)`: Toto je používáno odvozené třídy aby dvojité inicializace.
-
 
 Pro konstruktory, které definujete, které potřebují deklarovat pomocí následující signatury uvnitř definice rozhraní: mohly musí vrátit `IntPtr` hodnotu a název metody musí mít konstruktor. Chcete-li například vytvořit vazbu `initWithFrame:` konstruktoru, je to, co byste použili:
 
@@ -326,8 +312,7 @@ IntPtr Constructor (CGRect frame);
 
  <a name="Binding_Protocols" />
 
-
-## <a name="binding-protocols"></a>Vytvoření vazby protokolů
+### <a name="binding-protocols"></a>Vytvoření vazby protokolů
 
 Jak je popsáno v dokumentu návrhu rozhraní API, v části [pojednávající o modely a protokoly](~/ios/internals/api-design/index.md), Xamarin.iOS mapy do třídy, které jsou opatření příznakem s protokoly jazyka Objective-C [[Model]](~/cross-platform/macios/binding/binding-types-reference.md) atribut. To se obvykle používá při implementaci třídy jazyka Objective-C delegáta.
 
@@ -434,7 +419,7 @@ interface MyTool {
 
 Výše je potřeba, protože v vazby čas `IMyProtocol` by existovat, který je Proč potřebujete poskytovat prázdného rozhraní.
 
-### <a name="adopting-protocol-generated-interfaces"></a>Přijetí protokolu vygenerované rozhraní
+#### <a name="adopting-protocol-generated-interfaces"></a>Přijetí generované protokol rozhraní
 
 Vždy, když budete implementovat jednomu z rozhraní vygenerované protokoly, například takto:
 
@@ -445,8 +430,6 @@ class MyDelegate : NSObject, IUITableViewDelegate {
     }
 }
 ```
-
-
 
 Implementace pro metody rozhraní automaticky získá exportovaný s názvu, proto je ekvivalentní k tomuto:
 
@@ -463,8 +446,7 @@ Pokud rozhraní je implementováno implicitně nebo explicitně nezáleží.
 
 <a name="Binding_Class_Extensions" />
 
-
-## <a name="binding-class-extensions"></a>Rozšíření třídy vazby
+### <a name="binding-class-extensions"></a>Rozšíření třídy vazby
 
 <!--In Objective-C it is possible to extend classes with new methods,
 similar in spirit to C#'s extension methods. When one of these methods
@@ -499,8 +481,7 @@ interface NSStringDrawingExtensions {
 
  <a name="Binding_Objective-C_Argument_Lists" />
 
-
-## <a name="binding-objective-c-argument-lists"></a>Seznamy argumentů jazyka Objective-C vazby
+### <a name="binding-objective-c-argument-lists"></a>Seznamy argumentů jazyka Objective-C vazby
 
 Jazyka Objective-C podporuje variadická argumenty, můžete použít takto popsané Zach Gris pro [tento příspěvek](http://forums.monotouch.net/yaf_postst311_SOLVED-Binding-ObjectiveC-Argument-Lists.aspx).
 
@@ -541,8 +522,7 @@ public void AppendWorkers(params Worker[] workers)
 
  <a name="Binding_Fields" />
 
-
-## <a name="binding-fields"></a>Vazba polí
+### <a name="binding-fields"></a>Vazba polí
 
 Někdy budete chtít přístup veřejná pole, které byly deklarované v knihovně.
 
@@ -579,7 +559,6 @@ Vygeneruje výše `LonelyClass` který není odvozen od `NSObject` a bude obsaho
 -  `System.Drawing.SizeF`
 -  `CGSize`
 
-
 Kromě název nativní pole můžete určit název knihovny, kde se nachází pole předáním název knihovny:
 
 ```csharp
@@ -602,8 +581,7 @@ interface LonelyClass {
 
 <a name="Binding_Enums" />
 
-
-## <a name="binding-enums"></a>Výčty vazby
+### <a name="binding-enums"></a>Výčty vazby
 
 Můžete přidat `enum` přímo ve vašem vazby soubory usnadňuje používat uvnitř definice rozhraní API – bez použití různých zdrojového souboru (který musí být zkompilovány v vazby a poslední projekt).
 
@@ -652,8 +630,7 @@ Ale omezí vytvoření podtřídy typ jako nicer alternativní používá rozhra
 
 Alternativou je označit původní, `NSString`– na základě definice `[Protected]`. To vám umožní vytváření podtříd pracovat, v případě potřeby, a verze wrap'ed bude stále fungovat a volání metody elementem.
 
-
-## <a name="binding-nsvalue-nsnumber-and-nsstring-to-a-better-type"></a>Vytváření vazby NSValue NSNumber a NSString lepší typ
+### <a name="binding-nsvalue-nsnumber-and-nsstring-to-a-better-type"></a>Vytváření vazby NSValue, NSNumber a NSString lepší typ
 
 [[BindAs]](~/cross-platform/macios/binding/binding-types-reference.md) atribut umožňuje vazby `NSNumber`, `NSValue` a `NSString`(výčty) do přesnější typy C#. Atribut slouží k vytvoření lepší, přesnější, .NET API přes nativní rozhraní API.
 
@@ -699,8 +676,7 @@ Najdete v tématu [dokumentace [BindAs]](~/cross-platform/macios/binding/binding
 
  <a name="Binding_Notifications" />
 
-
-## <a name="binding-notifications"></a>Vazba oznámení
+### <a name="binding-notifications"></a>Vazba oznámení
 
 Oznámení jsou zprávy, které jsou odeslány na `NSNotificationCenter.DefaultCenter` a slouží jako mechanismus k vysílání zprávy z jedné části aplikace do jiné. Vývojáři přihlášení k odběru oznámení obvykle pomocí [NSNotificationCenter](https://developer.xamarin.com/api/type/Foundation.NSNotificationCenter/)na [AddObserver](https://developer.xamarin.com/api/type/Foundation.NSNotificationCenter/M/AddObserver/) metoda. Když aplikace odešle zprávu do centra oznámení, obvykle obsahuje uložené v datové části [NSNotification.UserInfo](https://developer.xamarin.com/api/property/Foundation.NSNotification.UserInfo/) slovníku. Je slabě typované tohoto slovníku a získávání informací mimo ho je chyba náchylné k chybám, jako jsou uživatelé obvykle musí přečíst v dokumentaci, která klíče jsou k dispozici v slovníku a typy hodnot, které mohou být uloženy ve slovníku. Přítomnost klíče někdy se používá jako logická hodnota také.
 
@@ -743,7 +719,6 @@ Vrácená hodnota z `ObserveDidStart` lze snadno zastavit přijímání oznámen
 token.Dispose ();
 ```
 
-
 Nebo můžete volat [NSNotification.DefaultCenter.RemoveObserver](https://developer.xamarin.com/api/member/Foundation.NSNotificationCenter.RemoveObserver/p/Foundation.NSObject/) a předejte token. Pokud oznámení obsahuje parametry, měli byste určit pomocné rutiny `EventArgs` rozhraní, například takto:
 
 ```csharp
@@ -779,8 +754,7 @@ var token = MyClass.NotificationsObserveScreenChanged ((notification) => {
 
  <a name="Binding_Categories" />
 
-
-## <a name="binding-categories"></a>Kategorie vazby
+### <a name="binding-categories"></a>Kategorie vazby
 
 Kategorie jsou mechanismus jazyka Objective-C slouží k rozšíření sadu metod a vlastností, které jsou k dispozici v třídě.   V praxi, používají se buď rozšířit funkce základní třídy (například `NSObject`) Pokud je propojený na konkrétní framework v (například `UIKit`), provedením jejich metody dostupné, ale pouze v případě, že je novou architekturou propojené v.   V některých případech se používají k uspořádání funkce v třídě podle funkce.   Jsou podobné v smyslu rozšiřující metody C#. Toto je, jak by kategorii vypadat v cíl C:
 
@@ -789,8 +763,6 @@ Kategorie jsou mechanismus jazyka Objective-C slouží k rozšíření sadu meto
 -(void) makeBackgroundRed;
 @end
 ```
-
-
 
 Výše uvedeném příkladu Pokud na nalezena knihovnu by rozšířit instancí `UIView` s metodou `makeBackgroundRed`.
 
@@ -807,8 +779,6 @@ interface MyUIViewExtension {
 }
 ```
 
-
-
 Vytvoří výše `MyUIViewExtension` třídu, která obsahuje `MakeBackgroundRed` metoda rozšíření.  To znamená, že teď můžete volat "MakeBackgroundRed" na kterémkoliv `UIView` podtřídami, která poskytuje stejné funkce, které byste získali na Objective-c V některých případech kategorie se používají rozšíření třídy systému, ale k uspořádání funkce výhradně pro účely dekorace.  Nějak tak:
 
 ```csharp
@@ -821,8 +791,6 @@ Vytvoří výše `MyUIViewExtension` třídu, která obsahuje `MakeBackgroundRed
 picture;
 @end
 ```
-
-
 
 Přestože je možné použít `Category` atribut také pro tento styl decoration deklarací, může také právě přidáte do definice třídy.  Obě tyto by dosáhnout stejné:
 
@@ -861,8 +829,7 @@ interface SocialNetworking {
 
  <a name="Binding_Blocks" />
 
-
-## <a name="binding-blocks"></a>Vazba bloky
+### <a name="binding-blocks"></a>Vazba bloky
 
 Bloky jsou nové konstrukce zaváděné Apple aby ekvivalentní C# anonymní metody na cíl C. Například `NSSet` třída nyní zpřístupňuje této metody:
 
@@ -907,8 +874,7 @@ s.Enumerate ((obj, stop) => {
 
  <a name="GeneratingAsync" />
 
-
-## <a name="asynchronous-methods"></a>Asynchronní metody
+### <a name="asynchronous-methods"></a>Asynchronní metody
 
 Generátor vazby můžete zapnout některých tříd metody do popisný asynchronní metody (metody, které vracejí úlohy nebo úkolu&lt;T&gt;).
 
@@ -922,8 +888,6 @@ Příklad:
 void LoadFile (string file, Action<string> completed);
 ```
 
-
-
 Ve výše uvedeném kódu vygeneruje obou funkci LoadFile metody, a také:
 
 ```csharp
@@ -933,7 +897,7 @@ Task<string> LoadFileAsync (string file);
 
 <a name="Surfacing_Strong_Types" />
 
-## <a name="surfacing-strong-types-for-weak-nsdictionary-parameters"></a>Zpřístupnění silné typy parametrů NSDictionary slabé
+### <a name="surfacing-strong-types-for-weak-nsdictionary-parameters"></a>Silné typy parametrů NSDictionary slabé zpřístupnění
 
 Na mnoha místech v rozhraní API jazyka Objective-C parametry se jí předávají jako slabě typované `NSDictionary` rozhraní API s konkrétní klíče a hodnoty, ale ty jsou náchylný (můžete předat neplatné klíče a získat žádná varování; můžete předat neplatné hodnoty a získat žádné upozornění) a frustrující Chcete-li použít, protože vyžadují více cest k dokumentaci pro vyhledání možné názvy klíčů a hodnot.
 
@@ -959,10 +923,9 @@ Můžete vytvořit třída silného typu buď ručně, nebo pomocí generátoru 
 
 Je potřeba vytvořit podpůrných souborů pro tento, nepřejde do smlouva rozhraní API.  Toto je, co jste k zápisu pro vytvoření vlastní třídy XyzOptions:
 
-
 ```csharp
 public class XyzOptions : DictionaryContainer {
-#if !COREBUILD
+# if !COREBUILD
     public XyzOptions () : base (new NSMutableDictionary ()) {}
     public XyzOptions (NSDictionary dictionary) : base (dictionary){}
 
@@ -974,7 +937,7 @@ public class XyzOptions : DictionaryContainer {
        get { return GetStringValue (XyzOptionsKeys.CaptionKey); }
        set { SetStringValue (XyzOptionsKeys.CaptionKey, value); }
     }
-#endif
+# endif
 }
 ```
 
@@ -1048,15 +1011,13 @@ V případě, že je třeba odkazovat ve vaší `XyzOption` členy jiné pole (t
 
  <a name="Type_mappings" />
 
-# <a name="type-mappings"></a>Mapování typu
-
+## <a name="type-mappings"></a>Mapování typu
 
 Tato část popisuje, jak jsou typy jazyka Objective-C mapované na typy C#.
 
 <a name="Simple_Types" />
 
-
-## <a name="simple-types"></a>Jednoduché typy
+### <a name="simple-types"></a>Jednoduché typy
 
 Následující tabulka ukazuje, jak by měla být mapována typy z jazyka Objective-C a CocoaTouch world World Xamarin.iOS:
 
@@ -1212,8 +1173,7 @@ nuint </td>
 
  <a name="Arrays" />
 
-
-## <a name="arrays"></a>Pole
+### <a name="arrays"></a>Pole
 
 Modul runtime Xamarin.iOS automaticky postará pole jazyka C# k převodu `NSArrays` a učinit převod zpátky, takže například pomyslná jazyka Objective-C metoda vrátí `NSArray` z `UIViews`:
 
@@ -1241,8 +1201,7 @@ V případech, kdy nelze sledovat skutečný typ nejodvozenějších obsažené 
 
  <a name="Selectors" />
 
-
-## <a name="selectors"></a>Selektory
+### <a name="selectors"></a>Selektory
 
 Selektory se zobrazí na rozhraní API jazyka Objective-C jako speciální typ "Samoobslužné". Při vytváření vazby selektor, by namapujete typ, který má `ObjCRuntime.Selector`.  Selektory se obvykle zveřejňují v rozhraní API s objekt, cílový objekt a selektor má být vyvolán v cílový objekt. Obě tyto poskytování v podstatě odpovídá delegáta C#: něco, který zapouzdřuje metody vyvolání jak objekt k vyvolání metody v.
 
@@ -1312,19 +1271,17 @@ class DialogPrint : UIViewController {
 
  <a name="Strings" />
 
-
-## <a name="strings"></a>Řetězce
+### <a name="strings"></a>Řetězce
 
 Když vytváříte vazbu metody, která použije `NSString`, můžete nahradit, pomocí jazyka C# typu řetězec, i na vrátí typy a parametry.
 
 Pouze případě, když chcete použít `NSString` přímo je při řetězec se používá jako token. Další informace o řetězce a `NSString`, přečtěte si [rozhraní API návrh NSString](~/ios/internals/api-design/nsstring.md) dokumentu.
 
-Ve výjimečných případech, rozhraní API mohou být vystaveny C jako řetězec (`char *`) namísto řetězec jazyka Objective-C (`NSString *`). V takových případech může opatřit poznámkami parametr pomocí [ `[PlainString]` ](~/cross-platform/macios/binding/binding-types-reference.md) atribut.
+Ve výjimečných případech, rozhraní API mohou být vystaveny C jako řetězec (`char *`) namísto řetězec jazyka Objective-C (`NSString *`). V takových případech může opatřit poznámkami parametr pomocí [ `[PlainString]` ](~/cross-platform/macios/binding/binding-types-reference.md#plainstring) atribut.
 
  <a name="outref_parameters" />
 
-
-## <a name="outref-parameters"></a>limit nebo parametry ref
+### <a name="outref-parameters"></a>limit nebo parametry ref
 
 Některé rozhraní API návratové hodnoty v jejich parametrů a předat parametry odkazem.
 
@@ -1348,8 +1305,7 @@ void SomeString (ref NSObject byref);
 
  <a name="Memory_management_attributes" />
 
-
-## <a name="memory-management-attributes"></a>Atributy správy paměti
+### <a name="memory-management-attributes"></a>Atributy správy paměti
 
 Při použití `[Export]` atribut a jsou předávání dat, která bude zachována zavolat metodu, můžete zadat argument sémantiku předání jako druhý parametr, například:
 
@@ -1363,16 +1319,13 @@ Výše by příznak hodnotu tak, že má sémantiku "Zachovat". Sémantika k dis
 -  Zkopírujte:
 -  Zachovat:
 
-
  <a name="Style_Guidelines" />
 
-
-## <a name="style-guidelines"></a>Styl pokyny
+### <a name="style-guidelines"></a>Styl pokyny
 
  <a name="Using_[Internal]" />
 
-
-### <a name="using-internal"></a>Použití [vnitřní]
+#### <a name="using-internal"></a>Použití [vnitřní]
 
 Můžete použít [[interní]](~/cross-platform/macios/binding/binding-types-reference.md) atribut ke skrytí metoda z veřejné rozhraní API. Můžete to udělat v případech, kdy zveřejněné rozhraní API je příliš nízké úrovně a chcete k zajištění vysoké úrovně implementace v samostatném souboru podle této metody.
 
@@ -1380,8 +1333,7 @@ Můžete taky to když spustíte do omezení v generátoru vazby, například mo
 
  <a name="Event_Handlers_and_Callbacks" />
 
-
-# <a name="event-handlers-and-callbacks"></a>Obslužné rutiny událostí a zpětná volání
+## <a name="event-handlers-and-callbacks"></a>Obslužné rutiny událostí a zpětná volání
 
 Třídy jazyka Objective-C obvykle vysílání oznámení nebo požádat o informace na odesílání zprávy pro třídu delegáta (delegáta jazyka Objective-C).
 
@@ -1422,7 +1374,6 @@ Zalomení třídy, na kterou je potřeba:
 
 -  Ve třídě hostitele přidat do vaší `[BaseType]` zveřejněné deklarace typu, který funguje jako jeho delegáta a jazyka C# název. V našem příkladu výše těch, které jsou "typeof (MyClassDelegate)" a "WeakDelegate" v uvedeném pořadí.
 -  Ve třídě delegáta na každou metodu, která má více než dva parametry je třeba zadat typ, který chcete použít pro automaticky generované třídy EventArgs.
-
 
 Generátor vazba není omezeno na zabalení pouze jedna událost cíl, je možné, že delegovat některé třídy jazyka Objective-C pro vydávání zpráv, které mají více než jeden, tak budete muset zadat pole na podporu této instalace. Většina nastavení nepotřebují, ale generátor je připravený pro podporu těchto případech.
 
@@ -1481,15 +1432,13 @@ Výchozí hodnota bude používat pevné kódování návratovou hodnotu, při `
 
  <a name="Enumerations_and_Base_Types" />
 
-
-# <a name="enumerations-and-base-types"></a>Základní typy a výčty
+## <a name="enumerations-and-base-types"></a>Základní typy a výčty
 
 Můžete taky odkazovat výčty nebo základních typů, které nejsou podporované přímo btouch systému definice rozhraní. K tomuto účelu vložit do samostatného souboru výčty a základní typy a být v rámci jednoho z dalších souborů, které poskytnete btouch.
 
  <a name="Linking_the_Dependencies" />
 
-
-# <a name="linking-the-dependencies"></a>Propojování závislosti
+## <a name="linking-the-dependencies"></a>Propojování závislosti
 
 Pokud vytváříte vazbu rozhraní API, které nejsou součástí vaší aplikace, musíte zajistit, že vaše spustitelný soubor je propojený na tyto knihovny.
 
@@ -1515,8 +1464,7 @@ Možná se ptáte, proč potřebujete příkaz "force_load" a z důvodu je pří
 
  <a name="Assisted_References" />
 
-
-# <a name="assisted-references"></a>Odbornou odkazy
+## <a name="assisted-references"></a>Odbornou odkazy
 
 Některé přechodný objekty, jako jsou seznamy akce a výstrah polí jsou náročná ke sledování pro vývojáře a generátor vazby pomůžou chvíli sem.
 
@@ -1560,14 +1508,12 @@ class Demo {
 
  <a name="Inheriting_Protocols" />
 
-
-# <a name="inheriting-protocols"></a>Dědění protokoly
+## <a name="inheriting-protocols"></a>Dědění protokoly
 
 Od verze Xamarin.iOS v3.2 podporujeme dědění z protokolů, které byly označeny pomocí `[Model]` vlastnost. To je užitečné v určité vzorce rozhraní API, například jako v `MapKit` kde `MKOverlay` protokolu, dědí z `MKAnnotation` protokolu a je přijat několik tříd, které dědí `NSObject`.
 
 V minulosti vyžádali jsme si kopírování protokol pro každou implementaci, ale v těchto případech nyní jsme může mít `MKShape` třídy dědí `MKOverlay` protokolu a vygeneruje všechny požadované metody automaticky.
 
-
-## <a name="related-links"></a>Související odkazy
+### <a name="related-links"></a>Související odkazy
 
 - [Ukázka vazby](https://developer.xamarin.com/samples/BindingSample/)

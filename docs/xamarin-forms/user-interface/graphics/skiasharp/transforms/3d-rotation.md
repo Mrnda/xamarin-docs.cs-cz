@@ -4,14 +4,15 @@ description: "Otočit 2D objektů v 3D prostoru pomocí-afinní transformace."
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: B5894EA0-C415-41F9-93A4-BBF6EC72AFB9
 author: charlespetzold
 ms.author: chape
 ms.date: 04/14/2017
-ms.openlocfilehash: 1341cde32778358fbeb7b65045616d5d81623d37
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
-ms.translationtype: HT
+ms.openlocfilehash: a959278b5de72792b23e46372b1333362bed91c8
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="3d-rotations"></a>3D otočení
 
@@ -27,7 +28,7 @@ Je obtížné vyvíjet to `SKMatrix` transformace funguje pouze v rámci dvěma 
 
 Trojrozměrné souřadnicový systém přidá třetí osy Z. koncepčně volat, osy Z v pravém úhlu na obrazovku. Souřadnice body v 3D prostoru jsou vypsány s tři čísla: (x, y, z). V 3D systém souřadnic používané v tomto článku, zvýšení hodnoty X jsou napravo a roste hodnoty y přejděte dolů, jako v případě dvěma rozměry. Zvyšující kladné Z hodnoty pocházejí z obrazovky. Levém horním rohu, jako v případě grafiky 2D pochází. Na obrazovce si lze představit jako XY rovině s osy Z v pravém úhlu k této roviny.
 
-Tomu se říká levé souřadnicový systém. Pokud jste bodu ukazováčkem pro vaše vlevo ve směru osy X kladné koordinuje (napravo) a prstu střední ve směru osy y roste koordinuje (dolů), pak bodům jezdec ve směru zvýšení souřadnice Z &#x2014; rozšíření se z obrazovky.
+Tomu se říká levé souřadnicový systém. Pokud bod ukazováčkem pro vaše vlevo ve směru kladné X souřadnice (napravo) a prstu střední ve směru zvýšení Y koordinuje (dolů), pak palec bodů ve směru zvýšení souřadnice Z – rozšíření se z na obrazovce.
 
 V 3D grafiky jsou transformací založené na matice 4 4. Tady je matice 4 4 identity:
 
@@ -109,7 +110,7 @@ Otočení kolem osy Z je stejné jako grafiky 2D:
 |    0       0     0  1  |
 </pre>
 
-Směru je zahrnuto v uchopení pera z souřadnicový systém. Toto je levou systému, takže pokud se bod úchytu levé ruky při zvyšování hodnoty pro konkrétní osy &#x2014; vpravo pro otočení okolo osy X dolů pro otočení okolo osy Y a směrem můžete pro otočení kolem osy Z &#x2014; potom křivku jiných prsty udává směr pro kladné hodnoty úhlu otočení.
+Směru je zahrnuto v uchopení pera z souřadnicový systém. Toto je levou systém, takže pokud se bod úchytu levé ruky při zvyšování hodnoty pro konkrétní osu – vpravo pro otočení okolo osy X dolů pro otočení okolo osy Y a směrem můžete pro otočení kolem osy Z – pak křivku z yo Další prsty udává směr pro kladné hodnoty úhlu otočení.
 
 `SKMatrix44` má zobecněné statické [ `CreateRotation` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix44.CreateRotation/p/System.Single/System.Single/System.Single/System.Single/) a [ `CreateRotationDegrees` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix44.CreateRotationDegrees/p/System.Single/System.Single/System.Single/System.Single/) metody, které umožňují určit osy, kolem kterého dojde k otočení:
 
@@ -408,7 +409,7 @@ public partial class Rotation3DPage : ContentPage
 
 Pokud můžete experimentovat s čtvrtý jezdce, můžete si všimnout nastavení různých hloubka nelze přesunout objekt další mimo prohlížeč, že místo toho změnit rozsah účinek perspektivy:
 
-[![](3d-rotation-images/rotation3d-small.png "Trojitá snímek obrazovky stránky natočení 3D")](3d-rotation-images/rotation3d-large.png "Trojitá snímek obrazovky stránky natočení 3D")
+[![](3d-rotation-images/rotation3d-small.png "Trojitá snímek obrazovky stránky natočení 3D")](3d-rotation-images/rotation3d-large.png#lightbox "Trojitá snímek obrazovky stránky natočení 3D")
 
 **Animovaný natočení 3D** také používá `SKMatrix44` pro animaci textového řetězce v 3D prostoru. `textPaint` Objekt nastavit, protože pole v konstruktoru slouží k určení mezí text:
 
@@ -442,7 +443,7 @@ public class AnimatedRotation3DPage : ContentPage
 }
 ```
 
-`OnAppearing` Přepsání definuje tři Xamarin.Forms `Animation` objekty, které se použije animaci `xRotationDegrees`, `yRotationDegrees`, a `zRotationDegrees` pole různým tempem. Všimněte si, že období tyto animací jsou nastaveny na prvočísel &#x2014; 5 sekund, 7 sekund a 11 sekund &#x2014; takže celkový kombinace pouze opakuje každý 385 sekund nebo delší než 10 minut:
+`OnAppearing` Přepsání definuje tři Xamarin.Forms `Animation` objekty, které se použije animaci `xRotationDegrees`, `yRotationDegrees`, a `zRotationDegrees` pole různým tempem. Všimněte si, že období tyto animací jsou nastaveny pro primární čísla – 5 sekund, 7 sekund a 11 sekund – tak celkovou kombinace pouze opakuje každý 385 sekund nebo delší než 10 minut:
 
 ```csharp
 public class AnimatedRotation3DPage : ContentPage
@@ -532,7 +533,7 @@ public class AnimatedRotation3DPage : ContentPage
 
 Tato 3D otočení obklopená několik 2D transformací chcete přesunout střed otáčení center obrazovky a škálování velikost textový řetězec tak, aby se stejnou délku jako obrazovky:
 
-[![](3d-rotation-images/animatedrotation3d-small.png "Trojitá snímek obrazovky stránky animovaný natočení 3D")](3d-rotation-images/animatedrotation3d-large.png "Trojitá snímek obrazovky stránky animovaný natočení 3D")
+[![](3d-rotation-images/animatedrotation3d-small.png "Trojitá snímek obrazovky stránky animovaný natočení 3D")](3d-rotation-images/animatedrotation3d-large.png#lightbox "Trojitá snímek obrazovky stránky animovaný natočení 3D")
 
 
 ## <a name="related-links"></a>Související odkazy

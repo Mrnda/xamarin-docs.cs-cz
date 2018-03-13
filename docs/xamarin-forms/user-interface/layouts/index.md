@@ -5,18 +5,25 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 65030DA3-C7C1-4A02-B478-811073C39139
 ms.technology: xamarin-forms
+ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 1fe290983bf7b130dee6f1a1878a32dce3efc4c4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0ede9bbb47f398a82d6eae5d827122f469ad6ea4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="layouts"></a>Rozložení
 
-Xamarin.Forms má několik rozložení a funkce pro uspořádání obsahu na obrazovce. Každý ovládací prvek rozložení je popsáno níže, a také podrobnosti o tom, jak zpracovat změny orientace obrazovky:
+Xamarin.Forms má několik rozložení a funkce pro uspořádání obsahu na obrazovce. 
+
+> [!VIDEO https://youtube.com/embed/4HlLjTZQzjM]
+
+**Rozložení Xamarin.Forms, pomocí [univerzity Xamarin](https://university.xamarin.com/)**
+
+Každý ovládací prvek rozložení je popsáno níže, a také podrobnosti o tom, jak zpracovat změny orientace obrazovky:
 
 * **[StackLayout](stack-layout.md)**  &ndash; použitá k uspořádání zobrazení lineárně, vodorovně nebo svisle. Zobrazení StackLayout může být zarovnaný na střed doleva nebo doprava na rozložení.
 * **[AbsoluteLayout](absolute-layout.md)**  &ndash; umožňuje uspořádat zobrazení podle nastavení souřadnic & velikost jako absolutní hodnoty nebo poměry. AbsoluteLayout slouží k zobrazení vrstvy a také je ukotvení vlevo, vpravo nebo center.
@@ -35,7 +42,7 @@ Ovládací prvky platformy můžete taky použít přímo v Xamarin.Forms rozlo�
 
 Na následujícím obrázku vizualizuje rozložení ovládacích prvků:
 
-[ ![](images/layouts-sml.png "Rozložení Xamarin.Forms")](images/layouts.png "Xamarin.Forms rozložení")
+[![](images/layouts-sml.png "Rozložení Xamarin.Forms")](images/layouts.png#lightbox "Xamarin.Forms rozložení")
 
 ## <a name="choosing-the-right-layout"></a>Výběr správné rozložení
 
@@ -156,7 +163,7 @@ Všimněte si následujících charakteristik ve výše uvedeném kódu:
 
 [ `LayoutOptions` ](https://developer.xamarin.com/api/type/Xamarin.Forms.LayoutOptions/) Struktura můžete používat k definování zarovnání a rozšíření pro zobrazení, relativně k jeho nadřazený objekt.
 
-### <a name="margin-and-paddingmargin-and-paddingmd"></a>[Okraj a odsazení](margin-and-padding.md)
+### <a name="margin-and-paddingmargin-and-paddingmd"></a>[Okraje a odsazení](margin-and-padding.md)
 
 [ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/) a [ `Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/) vlastnosti řízení rozložení chování při vykreslení elementu v uživatelském rozhraní.
 

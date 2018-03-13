@@ -7,18 +7,16 @@ ms.assetid: 3BB395FA-0545-4024-A18F-98CF5E9CA55F
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 01/24/2018
-ms.openlocfilehash: 5f583fa78674b1b07d362e5171877e4ec3c861a5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 012f563dcdaa70e33d641a4d8fb52df1622c260a
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="setup-and-installation"></a>Instalační program a instalace
 
 _Tento článek vás provede kroky instalace a podrobnosti o konfiguraci, které jsou potřebné při přípravě počítače a zařízení pro vývoj pro Android nosit. Na konci tohoto článku budete mít funkční Xamarin.Android opotřebení instalace integrovaná do sady Visual Studio pro Mac nebo Microsoft Visual Studio a budete připravení začít vytvářet svoji první aplikaci Xamarin.Android a opotřebením motoru._
-
-<a name="requirements" />
 
 ## <a name="requirements"></a>Požadavky
 
@@ -35,9 +33,7 @@ K vytvoření aplikace založené na Xamarinu Android nosit je potřeba následu
 Můžete dál používat [JDK 1.7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) Pokud vývoj speciálně pro úroveň rozhraní API 23 nebo starším.
 
 > [!IMPORTANT]
-> **Poznámka:** Xamarin.Android nepodporuje JDK 9.
-
-<a name="installation" />
+> Xamarin.Android nepodporuje JDK 9.
 
 ## <a name="installation"></a>Instalace
 
@@ -49,7 +45,6 @@ Po instalaci Xamarin.Android, proveďte následující kroky, takže budete při
 
 Tyto kroky jsou popsané v následujících částech.
 
-<a name="sdktools" />
 
 ### <a name="install-android-sdk-and-tools"></a>Instalace nástrojů a SDK pro Android 
 

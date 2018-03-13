@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: e85bc98b5da4c6e529f150c6e7945a8556e2c60f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 887dc3cf710fb75d05d02af179bc218c15d31f97
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="binding-mode"></a>Vazba režimu
 
@@ -45,7 +45,7 @@ Na první, může se to zdát zpětné: nyní `Label` je zdrojem vazby dat a `Sl
 
 Podle očekávání, `Slider` je inicializováno z počáteční hodnotu 1 `Opacity` hodnotu `Label`. Můžete se podívat na snímku obrazovky iOS na levé straně:
 
-[![Zpětná vazba](binding-mode-images/reversebinding-small.png "zpětná vazba")](binding-mode-images/reversebinding-large.png "zpětná vazba")
+[![Zpětná vazba](binding-mode-images/reversebinding-small.png "zpětná vazba")](binding-mode-images/reversebinding-large.png#lightbox "zpětná vazba")
 
 Ale mohou být překvapeni, který `Slider` bude pořád fungovat, jak ukazují, Android a UWP snímky. Vypadá to naznačuje, že datové vazby funguje lépe, když `Slider` je cílem vazby místo `Label` protože inicializace funguje stejně, jako jsme by se dalo očekávat.
 
@@ -250,7 +250,7 @@ Pokud jako zdroj vazba je nastavená ViewModel, infrastruktura vazeb připojí o
 
 Při prvním spuštění programu, `BoxView`, `Label`a tři `Slider` prvky jsou všechny sady z ViewModel podle počáteční `Color` vlastnost nastavena, když ViewModel byla vytvořena instance. Můžete se podívat na snímku obrazovky iOS na levé straně:
 
-[![Výběr barvy jednoduché](binding-mode-images/simplecolorselector-small.png "výběr barvy jednoduché")](binding-mode-images/simplecolorselector-large.png "výběr jednoduché barvy")
+[![Výběr barvy jednoduché](binding-mode-images/simplecolorselector-small.png "výběr barvy jednoduché")](binding-mode-images/simplecolorselector-large.png#lightbox "výběr jednoduché barvy")
 
 Při manipulaci s posuvníků, `BoxView` a `Label` se aktualizují podle toho, které jsou popsány v Android a UWP snímky.
 
@@ -661,7 +661,7 @@ public partial class SampleSettingsPage : ContentPage
 
 Snímek obrazovky iOS na levé straně ukazuje program při prvním spuštění. Konstruktor pro `SampleSettingsViewModel` inicializuje barva pozadí na bílou, na kterém jsou položky vybrané v `ListView`:
 
-[![Ukázkové nastavení](binding-mode-images/samplesettings-small.png "ukázkové nastavení")](binding-mode-images/samplesettings-large.png "ukázkové nastavení")
+[![Ukázkové nastavení](binding-mode-images/samplesettings-small.png "ukázkové nastavení")](binding-mode-images/samplesettings-large.png#lightbox "ukázkové nastavení")
 
 Na dva snímcích obrazovky zobrazit změnit nastavení. Při experimentování se tuto stránku, nezapomeňte uvést do režimu spánku nebo ho ukončit na zařízení nebo emulátor, který je spuštěn program. Ukončení programu z ladicího programu sady Visual Studio nezpůsobí `OnSleep` potlačení v `App` třída, která se má volat.
 

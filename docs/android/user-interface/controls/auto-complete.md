@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 857cafa475f24357b39da0640eb81c37f5a8634c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f4118881272bb605607d528007064ada561cf7fc
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="auto-complete"></a>Automatické dokončování
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Přehled
 
@@ -43,7 +42,6 @@ V tomto kurzu vytvoříte [ `AutoCompleteTextView` ](https://developer.xamarin.c
 
 [ `TextView` ](https://developer.xamarin.com/api/type/Android.Widget.TextView/) Je štítek, který představuje [ `AutoCompleteTextView` ](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/) pomůcky.
 
-<a name="tutorial" />
 
 ## <a name="tutorial"></a>Tutoriál
 
@@ -156,10 +154,9 @@ Toto je seznam návrhů, které se mají poskytnout v rozevíracím seznamu, kdy
 
 Spusťte aplikaci. Jak budete zadávat, byste měli vidět přibližně takto:
 
-[![Automatické dokončování snímku obrazovky s příkladem výpis názvy, které obsahují "ca"](auto-complete-images/helloautocomplete.png)](auto-complete-images/helloautocomplete.png)
+[![Automatické dokončování snímku obrazovky s příkladem výpis názvy, které obsahují "ca"](auto-complete-images/helloautocomplete.png)](auto-complete-images/helloautocomplete.png#lightbox)
 
 
-<a name="More_Information" />
 
 ## <a name="more-information"></a>Další informace
 
@@ -187,7 +184,6 @@ string[] countries = Resources.GetStringArray (Resource.array.countries_array);
 var adapter = new ArrayAdapter<String> (this, Resource.layout.list_item, countries);
 ```
 
-<a name="References" />
 
 ### <a name="references"></a>Odkazy
 

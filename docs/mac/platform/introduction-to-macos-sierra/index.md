@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: d81776dcb48d33927ffde4087ceb3f408b38d16f
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 036e1ddc95f8eabec3e87c13c25cad972c29a5d1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-macos-sierra"></a>Úvod do systému macOS Sierra
 
@@ -52,7 +52,7 @@ Další informace najdete v tématu společnosti Apple [ApplePay JS Framework](h
 
 Moderní systému macOS aplikace například společnosti Apple Safari webový prohlížeč, stránky textového procesoru a čísla šíření pomocí list mnoho nové technologie, které představují jednotné a závislé na kontextu uživatelské rozhraní, která provádí rychle s tradiční prvky uživatelského rozhraní, jako je například plovoucí panely a více open Windows.
 
-[ ![Příkladem okno s kartami Mac](images/content08.png)](images/content08.png)
+[![Příkladem okno s kartami Mac](images/content08.png)](images/content08.png#lightbox)
 
 Naše [systému macOS vytváření moderní aplikace](~/mac/platform/introduction-to-macos-sierra/modern-cocoa-apps.md) Průvodce obsahuje několik tipy, funkce a techniky vývojář může použít k vytvoření aplikace moderní systému macOS v Xamarin.Mac.
 
@@ -152,5 +152,5 @@ Najdete v článku společnosti Apple [v10.12 OS X API Diffs](https://developer.
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Mac – ukázky](https://developer.xamarin.com/samples/mac/)
+- [Ukázky pro Mac](https://developer.xamarin.com/samples/mac/)
 - [Co je nového v OS X 10.12](https://developer.apple.com/library/prerelease/content/releasenotes/MacOSX/WhatsNewInOSX/Articles/OSXv10.html#//apple_ref/doc/uid/TP40017145-SW1)

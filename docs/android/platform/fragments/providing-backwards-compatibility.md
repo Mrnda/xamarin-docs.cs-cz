@@ -7,32 +7,31 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/12/2017
-ms.openlocfilehash: f1567815ec342a958b48ec4801e2918f2981de3d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 670ec465843bbe819b41a53fff71b01ab78b0059
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="providing-backwards-compatibility-with-the-android-support-package"></a>Poskytnutí zpětné kompatibility s balíčkem podpora pro Android
 
 Užitečnost fragmenty by omezené bez zpětné kompatibility předem 3.0 (11 úroveň rozhraní API) se zařízeními s Androidem. Poskytovat této funkce, zavedená Google [knihovna podpory](http://developer.android.com/sdk/compatibility-library.html) (původně volat *knihovna pro Android kompatibility* kdy byl vydán) které backports některé z rozhraní API z novější verze Android starší verze systému Android. Je balíček Android podpory, která umožňuje zařízení se systémem Android 1.6 (rozhraní API úroveň 4) pro Android 2.3.3. (API úrovně 10).
 
 > [!NOTE]
-> **Poznámka:**: pouze `ListFragment` a `DialogFragment` jsou k dispozici prostřednictvím podpory balíček Android. Žádná z dalších fragmentovat podtřídy, například `PreferenceFragment,` jsou podporovány v systému Android podporu balíčku. V aplikacích předem Android 3.0 nebudou správně fungovat. 
+> Pouze `ListFragment` a `DialogFragment` jsou k dispozici prostřednictvím podpory balíček Android. Žádná z dalších fragmentovat podtřídy, například `PreferenceFragment,` jsou podporovány v systému Android podporu balíčku. V aplikacích předem Android 3.0 nebudou správně fungovat. 
 
-<a name="Adding_the_Support_Package" /> 
 
 ## <a name="adding-the-support-package"></a>Probíhá přidávání balíčku podpory
 
 Balíček Android podporu není automaticky přidat do aplikace pro Xamarin.Android. Poskytuje Xamarin [balíček NuGet v4 knihovna pro Android podporují](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) zjednodušit přidání podpory knihovny do aplikace pro Xamarin.Android. K přidání podpory balíčky do vašeho Xamarin.Android aplikace obsahovat [knihovna pro Android podporují v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) komponentu do projektu Xamarin.Android, jak je znázorněno na následujícím snímku obrazovky: 
 
-[![Snímek obrazovky z podpory knihovna pro Android v4 balíčku se přidává do projektu](providing-backwards-compatibility-images/02.png)](providing-backwards-compatibility-images/02.png)
+[![Snímek obrazovky z podpory knihovna pro Android v4 balíčku se přidává do projektu](providing-backwards-compatibility-images/02.png)](providing-backwards-compatibility-images/02.png#lightbox)
 
 Po provedení těchto kroků, bude možné použít fragmenty v dřívějších verzích systému Android. Rozhraní API Fragment bude fungovat stejným nyní ve tyto starší verze, s následujícími výjimkami: 
 
 -   **Změnit minimální verze Android** &ndash; aplikace se už nepotřebuje pro Android 3.0 nebo vyšší, jak je uvedeno níže: 
 
-    [![Snímek obrazovky z aplikaci minimální Android cíl se nastavuje v části Vlastnosti aplikace](providing-backwards-compatibility-images/03.png)](providing-backwards-compatibility-images/03.png)
+    [![Snímek obrazovky z aplikaci minimální Android cíl se nastavuje v části Vlastnosti aplikace](providing-backwards-compatibility-images/03.png)](providing-backwards-compatibility-images/03.png#lightbox)
 
 -   **Rozšíření FragmentActivity** &ndash; aktivit, které jsou hostiteli fragmenty teď musí dědit z `Android.Support.V4.App.FragmentActivity` a nikoli z `Android.App.Activity` . 
 

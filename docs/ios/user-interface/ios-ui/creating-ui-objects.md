@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 035956f5c39a77c625a6f4cb92cbfa67a42f2402
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e7a61dcf2cf2fabf575e30ef402121db3bea7912
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-user-interface-objects"></a>Vytváření objektů uživatelského rozhraní
 
@@ -42,17 +42,17 @@ Pokud chcete začít vytvářet uživatelské rozhraní v iOS Designer, poklikej
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
- [ ![](creating-ui-objects-images/image2b.png "Sada nástrojů odsazení")](creating-ui-objects-images/image2b.png)
+ [![](creating-ui-objects-images/image2b.png "Sada nástrojů odsazení")](creating-ui-objects-images/image2b.png#lightbox)
  
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
- [ ![](creating-ui-objects-images/image2b-vs.png "Sada nástrojů Pad - sadě Visual Studio")](creating-ui-objects-images/image2b.png)
+ [![](creating-ui-objects-images/image2b-vs.png "Sada nástrojů Pad - sadě Visual Studio")](creating-ui-objects-images/image2b.png#lightbox)
  
 -----
 
 Pokud je vybrána ovládacího prvku na návrhovou plochu **vlastnosti Pad** zobrazí atributy pro ovládací prvek. **Pomůcky > Identity > název** pole, které je nezadají informace na tomto snímku obrazovky, se používá jako *výstupu* název. Toto je, jak můžete odkazovat na ovládací prvek v C#:
 
- [ ![](creating-ui-objects-images/image3b.png "Vlastnosti pomůcky odsazení")](creating-ui-objects-images/image3b.png)
+ [![](creating-ui-objects-images/image3b.png "Vlastnosti pomůcky odsazení")](creating-ui-objects-images/image3b.png#lightbox)
 
 Podrobnější prohlídku do pomocí návrháře iOS, najdete v části [Úvod do systému iOS Návrhář](~/ios/user-interface/designer/introduction.md) průvodce.
 
@@ -64,27 +64,27 @@ V Xcode otevřete scénáře, klikněte pravým tlačítkem pro přístup k mís
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
- [ ![](creating-ui-objects-images/imagexcode.png "Scénáře kontextovou nabídku - Xcode")](creating-ui-objects-images/imagexcode.png)
+ [![](creating-ui-objects-images/imagexcode.png "Scénáře kontextovou nabídku - Xcode")](creating-ui-objects-images/imagexcode.png#lightbox)
  
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](creating-ui-objects-images/imagexcode-vs.png "Scénáře kontextovou nabídku - Xcode")](creating-ui-objects-images/imagexcode-vs.png)
+[![](creating-ui-objects-images/imagexcode-vs.png "Scénáře kontextovou nabídku - Xcode")](creating-ui-objects-images/imagexcode-vs.png#lightbox)
 
 -----
 
 Ovládací prvky můžete přetáhnout na návrhovou plochu z **objektu knihovny** znázorněné dole:
 
- [ ![](creating-ui-objects-images/image5a.png "Xcode objektu knihovny")](creating-ui-objects-images/image5a.png)
+ [![](creating-ui-objects-images/image5a.png "Xcode objektu knihovny")](creating-ui-objects-images/image5a.png#lightbox)
 
 Při návrhu vaší uživatelské rozhraní musíte vytvořit tvůrce rozhraní **výstupu** pro každý ovládací prvek, který chcete odkazovat v jazyce C#. K tomu je potřeba zapnout **pomocníka Editor** pomocí centra **Editor** na tlačítka panelu nástrojů Xcode tlačítko:
 
- [ ![](creating-ui-objects-images/image6a.png "Tlačítko pomocníka editoru")](creating-ui-objects-images/image6a.png)
+ [![](creating-ui-objects-images/image6a.png "Tlačítko pomocníka editoru")](creating-ui-objects-images/image6a.png#lightbox)
 
 Klikněte na objekt uživatelského rozhraní; potom **přetáhněte ovládací prvek** do souboru h. K ** řízení přetáhněte **, podržte stisknutou klávesu ovládací prvek pak klikněte na tlačítko a podržte přes rozhraní objektu uživatele které jsou pro vytváření výstupu (nebo akce). Zachovat podržíte stisknutou klávesu řízení a přetáhněte do záhlaví souboru. Dokončit přetahování níže `@interface` definice. Modré řádku by se zobrazit s titulek vložit výstupu nebo kolekce výstupu, jak ukazuje následující snímek obrazovky.
 
 Při vydání a klikněte na vás vyzve k zadání názvu pro výstupu, který bude použit k vytvoření vlastnosti C#, která může být odkazováno v kódu:
 
- [ ![](creating-ui-objects-images/image8a.png "Vytváření výstupu")](creating-ui-objects-images/image8a.png)
+ [![](creating-ui-objects-images/image8a.png "Vytváření výstupu")](creating-ui-objects-images/image8a.png#lightbox)
 
 Další informace o tom, jak na Xcode rozhraní tvůrce integruje pomocí sady Visual Studio pro Mac, najdete v části [generování kódu Xib](~/ios/internals/xib-code-generation.md#generated) dokumentu.
 
@@ -118,7 +118,7 @@ public override void ViewDidLoad () {
 
 Po přidání řadiče zobrazení na návrhovou plochu, odpovídající C# jsou vytvořeny dva soubory v projektu. V tomto příkladu `ControlsViewController.cs` a `ControlsViewController.designer.cs` byly vytvořeny automaticky:
 
- [ ![](creating-ui-objects-images/image9b.png "Částečné třídy ViewController")](creating-ui-objects-images/image9b.png)
+ [![](creating-ui-objects-images/image9b.png "Částečné třídy ViewController")](creating-ui-objects-images/image9b.png#lightbox)
 
 `MainViewController.cs` Soubor je určený pro *kódu*. To je, kdy `View` životního cyklu metody, jako `ViewDidLoad` a `ViewWillAppear` jsou implementované a kde můžete přidat vlastní vlastnosti, pole a metody.
 

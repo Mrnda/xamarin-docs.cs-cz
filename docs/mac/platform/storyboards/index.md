@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 21e35b056293e422b577b0ee8b51e8c43dbbf07d
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: ccee60b5d953987e858ef592d005cec9803b8b96
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-storyboards"></a>Úvod do scénářů
 
@@ -20,7 +20,7 @@ _Tento článek obsahuje úvod do práce s scénářů v aplikaci Xamarin.Mac. V
 
 Scénářů umožňují vývoj uživatelského rozhraní pro aplikaci Xamarin.Mac, ne jenom zahrnuje definice oken a ovládacích prvků, ale obsahuje taky odkazy mezi různé windows (prostřednictvím segues) a zobrazit stavy.
 
-[ ![](images/intro01.png "Ukázka uživatelského rozhraní v Xcode")](images/intro01.png)
+[![](images/intro01.png "Ukázka uživatelského rozhraní v Xcode")](images/intro01.png#lightbox)
 
 Tento článek poskytne úvod k definování Xamarin.Mac aplikace uživatelské rozhraní pomocí scénářů.
 
@@ -36,11 +36,11 @@ S použitím scénářů, všechny aplikace na Xamarin.Mac uživatelského rozhr
 
 Jak jsme uvedli výše, scénáře definuje všechny uživatelské rozhraní pro danou aplikaci rozdělit do funkční přehled jeho _řadiče zobrazení_. V Tvůrci rozhraní Xcode na každý z těchto řadičů žije v jeho vlastní _scény_.
 
-[ ![](images/intro02.png "Řadič příklad zobrazení")](images/intro02.png)
+[![](images/intro02.png "Řadič příklad zobrazení")](images/intro02.png#lightbox)
 
 Každé scény reprezentuje daného zobrazení a zobrazení řadiče pár sadu řádků (nazývané Segues), které připojit každé scény v uživatelském rozhraní, což ukazuje jejich vztahů. Některé Segues definovat jak jeden řadič zobrazení obsahuje jeden nebo více podřízených zobrazení nebo zobrazení řadičů. Další Segues definovat přechodů mezi View Controller (například zobrazení popover nebo dialogové okno pole). 
 
-[ ![](images/intro03.png "Ukázka segue")](images/intro03.png)
+[![](images/intro03.png "Ukázka segue")](images/intro03.png#lightbox)
 
 Je třeba mít na paměti je, že každý Segue představuje toku určitou formu dat mezi daného elementu uživatelském rozhraní aplikace.
 
@@ -50,7 +50,7 @@ Je třeba mít na paměti je, že každý Segue představuje toku určitou formu
 
 Zobrazení řadičů definovat vztahy mezi daného zobrazení informací v rámci aplikace Mac a datový model, který poskytuje tyto informace. Každý nejvyšší úrovně scény ve scénáři, představuje jeden řadič zobrazení v kódu aplikace Xamarin.Mac.
 
-[ ![](images/intro04.png "Příklad skluzu řadiče zobrazení")](images/intro04.png)
+[![](images/intro04.png "Příklad skluzu řadiče zobrazení")](images/intro04.png#lightbox)
 
 Tímto způsobem každého řadiče zobrazení je samostatná, opakovaně použitelný párování informace o vizuální reprezentace (zobrazení) a logiku pro řízení těchto informací a k dispozici.
 

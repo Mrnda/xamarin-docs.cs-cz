@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: 84db17ede0019e1134b65edaca85ef2401fb3bc0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: dfa3d1f89d813f2e57863e615c701cd78c655ac0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="publishing-to-the-app-store"></a>Publikování do obchodu s aplikacemi
 
@@ -133,7 +133,7 @@ Postupujte takto:
 4. Propojování snižuje celkové velikosti vaší aplikace distribuovatelného tím odstraňování se nepoužité metody, vlastnosti třídy, atd. a ve většině případů by měl být ponecháno na výchozí hodnotu **pouze sestavení SDK odkaz**. V některých situacích, jako např. kdy některé konkrétní použití 3. stran knihovny, budete muset nastavit hodnotu **není odkaz** zachovat požadované prvky. odebrání. Další informace najdete v části [iOS sestavení mechanismy](~/ios/deploy-test/ios-build-mechanics.md) průvodce.
 5. **Soubory ve formátu PNG optimalizovat pro iOS** by měl být zaškrtnuto, jako to vám pomůže další zmenšete velikost dodávky vaší aplikace.
 6. Ladění by _není_ povolit sestavení budou provedeny zbytečně velké.
-8. Pro iOS 11, budete muset vyberte jednu z architektury zařízení, které podporuje **ARM64**. Další informace o vytváření pro zařízení s iOS 64bitová verze, najdete v tématu **povolení 64 Bit sestavení z aplikace na platformě Xamarin.iOS** části [32 nebo 64bitový platformy aspekty](~/cross-platform/macios/32-and-64.md) dokumentaci.
+8. Pro iOS 11, budete muset vyberte jednu z architektury zařízení, které podporuje **ARM64**. Další informace o vytváření pro zařízení s iOS 64bitová verze, najdete v tématu **povolení 64 Bit sestavení z aplikace na platformě Xamarin.iOS** části [32 nebo 64bitový platformy aspekty](~/cross-platform/macios/32-and-64/index.md) dokumentaci.
 9. Můžete volitelně použít **LLVM** kompilátoru, která vytvoří kód menší a rychlejší, ale bude trvat déle, než se zkompilovat.
 10. Podle potřeb vaší aplikace, může také chcete upravit typ **uvolňování paměti** používá a nastavení pro **internacionalizace**.
 11. Uloží změny do konfigurace sestavení.
@@ -157,7 +157,7 @@ Postupujte takto:
 
     ![](publishing-to-the-app-store-images/configurevs02.png "Karta Upřesnit")
 
-8. Pokud vaše aplikace Xamarin.iOS je cílení na zařízení s iOS 8 a 64 bit iOS, budete muset vyberte jednu z architektury zařízení, které podporuje **ARM64**. Další informace o vytváření pro zařízení s iOS 64bitová verze, najdete v tématu **povolení 64 Bit sestavení z aplikace na platformě Xamarin.iOS** části [32 nebo 64bitový platformy aspekty](~/cross-platform/macios/32-and-64.md) dokumentaci.
+8. Pokud vaše aplikace Xamarin.iOS je cílení na zařízení s iOS 8 a 64 bit iOS, budete muset vyberte jednu z architektury zařízení, které podporuje **ARM64**. Další informace o vytváření pro zařízení s iOS 64bitová verze, najdete v tématu **povolení 64 Bit sestavení z aplikace na platformě Xamarin.iOS** části [32 nebo 64bitový platformy aspekty](~/cross-platform/macios/32-and-64/index.md) dokumentaci.
 9. Můžete volitelně použít **LLVM** kompilátoru, která vytvoří kód menší a rychlejší, ale bude trvat déle, než se zkompilovat.
 10. Podle potřeb vaší aplikace, může také chcete upravit typ **uvolňování paměti** používá a nastavení pro **internacionalizace**.
 11. Uloží změny do konfigurace sestavení.
@@ -351,16 +351,16 @@ Odeslání vaší žádosti o Apple ke kontrole se provádí pomocí aplikace za
 
 1. Vyberte *poskytovat aplikace* a klikněte na *zvolte* tlačítko:
 
-    [ ![](publishing-to-the-app-store-images/publishvs01.png "Vyberte poskytování vaší aplikace")](publishing-to-the-app-store-images/publishvs01.png)
+    [![](publishing-to-the-app-store-images/publishvs01.png "Vyberte poskytování vaší aplikace")](publishing-to-the-app-store-images/publishvs01.png#lightbox)
 
 2. Vyberte zip nebo soubor IPA vytvořili výše a klikněte na **OK** tlačítko.
 
 3. Zavaděč aplikací budou ověření souboru:
 
-    [ ![](publishing-to-the-app-store-images/publishvs02.png "Na obrazovce ověření")](publishing-to-the-app-store-images/publishvs02.png)
+    [![](publishing-to-the-app-store-images/publishvs02.png "Na obrazovce ověření")](publishing-to-the-app-store-images/publishvs02.png#lightbox)
 4. Klikněte *Další* tlačítko a aplikace bude ověřovat s obchodu s aplikacemi:
 
-    [ ![](publishing-to-the-app-store-images/publishvs03.png "Ověření proti obchodu s aplikacemi")](publishing-to-the-app-store-images/publishvs03.png)
+    [![](publishing-to-the-app-store-images/publishvs03.png "Ověření proti obchodu s aplikacemi")](publishing-to-the-app-store-images/publishvs03.png#lightbox)
 5. Klikněte **odeslat** tlačítko Odeslat ke kontrole aplikace společnosti Apple.
 6. Zavaděč aplikací bude informovat, když byla úspěšně nahrána soubor.
 
@@ -368,7 +368,7 @@ Odeslání vaší žádosti o Apple ke kontrole se provádí pomocí aplikace za
 
 Pokud znovu se přihlásili k iTunes připojit a vybrat aplikaci ze seznamu dostupných aplikací, stav v iTunes Connect by měl zobrazit nyní, že je **čekání zkontrolujte** (dočasně lze číst **nahrát přijata** je zpracování):
 
-[ ![](publishing-to-the-app-store-images/image21.png "Tento stav v iTunes připojení byste nyní měli vidět, že čekáte ke kontrole")](publishing-to-the-app-store-images/image21.png)
+[![](publishing-to-the-app-store-images/image21.png "Tento stav v iTunes připojení byste nyní měli vidět, že čekáte ke kontrole")](publishing-to-the-app-store-images/image21.png#lightbox)
 
 ## <a name="summary"></a>Souhrn
 

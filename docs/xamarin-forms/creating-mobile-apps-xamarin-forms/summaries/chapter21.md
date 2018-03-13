@@ -3,14 +3,15 @@ title: "Shrnutí kapitoly 21. Transformace"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 3642F112-C7FA-4A74-9000-F9087BA89AD9
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 378ce3fb39cfb5c42d5ec7611415f5420146a9cc
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: afb8e2fff58583dc8648c55839649c96cb68b6ba
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-21-transforms"></a>Shrnutí kapitoly 21. Transformace
 
@@ -49,7 +50,7 @@ Nenulové hodnoty [ `TranslationX` ](https://developer.xamarin.com/api/property/
 
 Jeden běžné překlad vlastnosti slouží k posunutí mírně vykreslování textu. Tento postup je znázorněn v [ **TextOffsets** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/TextOffsets) ukázka:
 
-[![Trojitá snímek obrazovky posune Text](images/ch21fg03-small.png "posune Text")](images/ch21fg03-large.png "posune Text")
+[![Trojitá snímek obrazovky posune Text](images/ch21fg03-small.png "posune Text")](images/ch21fg03-large.png#lightbox "posune Text")
 
 Další efekt je k vykreslení více kopií `Label` tak, aby připomínaly 3D bloku, jak je předvedeno v [ **BlockText** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/BlockText) ukázka.
 
@@ -101,7 +102,7 @@ Také součástí **Xamarin.FormsBook.Toolkit** je [ `SecondTickConverter` ](htt
 
 [ **BoxViewClock** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/BoxViewClock) používá `BoxView` pro více rozsáhlou grafikou, včetně značek označí kolem tučné hodiny a předá to otáčení malé vzdálenosti z jejich konce:
 
-[![Trojitá snímek obrazovky hodiny BoxView](images/ch21fg17-small.png "analogovým hodiny vzhled")](images/ch21fg17-large.png "vzhled analogovým hodiny")
+[![Trojitá snímek obrazovky hodiny BoxView](images/ch21fg17-small.png "analogovým hodiny vzhled")](images/ch21fg17-large.png#lightbox "vzhled analogovým hodiny")
 
 Kromě toho [ `SecondBackEaseConverter` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/SecondBackEaseConverter.cs) třídy v **Xamarin.FormsBook.Toolkit** způsobí, že sekundu dlaně se objeví na stáhnout trochu před přechod dopředu a pak přesuňte zpět do správné polohy.
 

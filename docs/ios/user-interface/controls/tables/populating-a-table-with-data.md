@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: fb0e4341d8d8ad0719f35c691add9bad1d3f85a8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fe62b917946dda4cf669f5b15c91a5e3b596a0fc
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="populating-a-table-with-data"></a>Naplnění tabulku s daty
 
@@ -88,7 +88,7 @@ public override void ViewDidLoad ()
 
 Výsledná tabulka vypadá takto:
 
- [ ![](populating-a-table-with-data-images/image3.png "Ukázková tabulka systémem")](populating-a-table-with-data-images/image3.png)
+ [![](populating-a-table-with-data-images/image3.png "Ukázková tabulka systémem")](populating-a-table-with-data-images/image3.png#lightbox)
 
 Většina tabulek povolit uživatelům touch řádek, vyberte ho a provádět další akce (například přehrávat skladbu nebo volání a obraťte se na zobrazení další obrazovky). Jak toho docílit, je několik věcí, které je potřeba udělat. Nejdříve vytvoříme AlertController pro zobrazení zprávy, když uživatel klikněte na řádek přidáním následujícího `RowSelected` metoda:
 
@@ -140,7 +140,7 @@ Teď můžete uživatele touch řádek a zobrazí se výstraha:
 
 
 
- [ ![](populating-a-table-with-data-images/image4.png "Řádek vybranou výstrahu.")](populating-a-table-with-data-images/image4.png)
+ [![](populating-a-table-with-data-images/image4.png "Řádek vybranou výstrahu.")](populating-a-table-with-data-images/image4.png#lightbox)
 
 
 ## <a name="cell-reuse"></a>Opakované použití buňky
@@ -220,7 +220,7 @@ Vidíte příklady témat popsané výše v **BasicTable** ukázka propojené s 
 
 Index umožňuje uživateli posuňte dlouhými seznamy, obvykle v abecedním pořadí i když můžete indexu ať kritériích nechcete. **BasicTableIndex** ukázka načte mnohem delší seznam položek ze souboru k předvedení index. Každá položka v indexu odpovídá 'oddíl' v tabulce.
 
- [ ![](populating-a-table-with-data-images/image5.png "Index zobrazení")](populating-a-table-with-data-images/image5.png)
+ [![](populating-a-table-with-data-images/image5.png "Index zobrazení")](populating-a-table-with-data-images/image5.png#lightbox)
 
 Pro podporu data za tabulky musí být seskupené, tak BasicTableIndex ukázka vytvoří oddíly `Dictionary<>` z pole řetězců pomocí první písmena jednotlivých položek jako slovník klíč:
 
@@ -270,7 +270,7 @@ Indexy jsou obecně používány pouze s styl prostý tabulky.
 Záhlaví a zápatí lze použít k vizuálně seskupení řádků v tabulce. Struktura dat vyžaduje je velmi podobný jako při přidávání indexu – `Dictionary<>` skutečně dobře funguje. Místo použití abecedy k seskupení buněk, v tomto příkladu seskupí zeleninu botanické typem.
 Výstup vypadá takto:
 
- [ ![](populating-a-table-with-data-images/image6.png "Ukázka záhlaví a zápatí")](populating-a-table-with-data-images/image6.png)
+ [![](populating-a-table-with-data-images/image6.png "Ukázka záhlaví a zápatí")](populating-a-table-with-data-images/image6.png#lightbox)
 
 Chcete-li zobrazit záhlaví a zápatí `UITableViewSource` podtřídami vyžaduje tyto další metody:
 

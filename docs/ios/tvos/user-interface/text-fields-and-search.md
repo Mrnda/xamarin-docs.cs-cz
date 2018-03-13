@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: cb6917f9cd0dc22cc32a2d32c203328f1d6d963b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7d58c30e745e26d1076e75470e527cbe95e85eb6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-text-and-search-fields"></a>Práce s textem a vyhledávacích polí
 
@@ -22,11 +22,11 @@ _Tento článek se zabývá navrhování a práci s textem a vyhledávacích pol
 
 Pokud jsou povinné, Xamarin.tvOS aplikace může požádat o svislý text od uživatele (například ID uživatele a hesla) pomocí textové pole a program klávesnice na obrazovce:
 
-[ ![](text-fields-and-search-images/intro01.png "Ukázka pole hledání")](text-fields-and-search-images/intro01.png)
+[![](text-fields-and-search-images/intro01.png "Ukázka pole hledání")](text-fields-and-search-images/intro01.png#lightbox)
 
 Volitelně můžete zadat možnost – klíčové slovo vyhledávání obsahu aplikace pomocí pole hledání:
 
-[ ![](text-fields-and-search-images/intro02.png "Ukázkové výsledky hledání")](text-fields-and-search-images/intro02.png)
+[![](text-fields-and-search-images/intro02.png "Ukázkové výsledky hledání")](text-fields-and-search-images/intro02.png#lightbox)
 
 Tento dokument obsahuje podrobnosti o práci s textem a vyhledávacích polí v aplikaci Xamarin.tvOS.
 
@@ -44,7 +44,7 @@ Kromě toho pokud vaše aplikace zobrazí velké množství obsahu pro uživatel
 
 V tvOS, zobrazí se textové pole jako pole pro zadání-height, zaokrouhlí rohu, které se otevře klávesnice na obrazovce, když uživatel klikne na něm:
 
-[ ![](text-fields-and-search-images/text01.png "Textové pole v tvOS")](text-fields-and-search-images/text01.png)
+[![](text-fields-and-search-images/text01.png "Textové pole v tvOS")](text-fields-and-search-images/text01.png#lightbox)
 
 Když se uživatel přesune [fokus](~/ios/tvos/app-fundamentals/navigation-focus.md) pro dané pole Text, se růst větší a zobrazí hloubkové stínové. Musíte mějte na paměti při navrhování vaší uživatelské rozhraní, jako textová pole může dojít k překrytí další prvky uživatelského rozhraní, když vybraný.
 
@@ -61,7 +61,7 @@ Společnost Apple má následující návrhy pro práci s textová pole:
 
 Vždy, když uživatel klikne na textové pole v uživatelském rozhraní, lineární na obrazovce zobrazená klávesnice. Uživatel používá prostor Touch [Siri vzdálené](~/ios/tvos/platform/remote-bluetooth.md#The-Siri-Remote) vyberte jednotlivé písmena z klávesnice a zadejte požadované informace:
 
-[ ![](text-fields-and-search-images/keyboard01.png "Siri vzdálené klávesnice")](text-fields-and-search-images/keyboard01.png)
+[![](text-fields-and-search-images/keyboard01.png "Siri vzdálené klávesnice")](text-fields-and-search-images/keyboard01.png#lightbox)
 
 Pokud je více než jedno pole Text na aktuální zobrazení **Další** tlačítko se zobrazí automaticky pro uživatele další textové pole. A **provádí** tlačítko se zobrazí pole poslední textu, který bude končit zadávání textu a vracet uživateli na předchozí obrazovku. 
 
@@ -80,7 +80,7 @@ Další informace o práci s program klávesnice na obrazovce, prohlédněte si 
 
 Pole hledání specializované obrazovky poskytuje textové pole k dispozici a klávesnice na obrazovce, která umožňuje uživatelům filtrovat kolekce položek, které jsou zobrazeny níže klávesnice:
 
-[ ![](text-fields-and-search-images/search01.png "Ukázkové výsledky hledání")](text-fields-and-search-images/search01.png)
+[![](text-fields-and-search-images/search01.png "Ukázkové výsledky hledání")](text-fields-and-search-images/search01.png#lightbox)
 
 Jako uživatel zadá písmena do pole hledání, výsledky níže se automaticky projeví výsledky hledání. Uživatel můžete kdykoli, posun zaměření na výsledky a vyberte jednu z položek, které jsou uvedené.
 
@@ -105,16 +105,16 @@ Postupujte takto:
 1. V **řešení Pad**, dvakrát klikněte `Main.storyboard` soubor otevřete pro úpravy.
 1. Přetáhněte jeden nebo více **textových polí** int návrhovou plochu do zobrazení: 
 
-    [ ![](text-fields-and-search-images/text02.png "Textové pole")](text-fields-and-search-images/text02.png)
+    [![](text-fields-and-search-images/text02.png "Textové pole")](text-fields-and-search-images/text02.png#lightbox)
 1. Vyberte **textových polí** a poskytněte každou jedinečnou **název** v **pomůcky** kartě **vlastnosti Pad**: 
 
-    [ ![](text-fields-and-search-images/text03.png "Na kartě pomůcky Pad vlastnosti")](text-fields-and-search-images/text03.png)
+    [![](text-fields-and-search-images/text03.png "Na kartě pomůcky Pad vlastnosti")](text-fields-and-search-images/text03.png#lightbox)
 1. V **textové pole** části, můžete definovat prvky, jako **zástupný symbol** pomocný parametr a výchozí **hodnotu**: 
 
-    [ ![](text-fields-and-search-images/text04.png "V části textové pole.")](text-fields-and-search-images/text04.png)
+    [![](text-fields-and-search-images/text04.png "V části textové pole.")](text-fields-and-search-images/text04.png#lightbox)
 1. Posuňte se dolů k definování vlastností, jako **kontrolu pravopisu**, **malá a velká písmena** a ve výchozím nastavení **klávesnice typ**: 
 
-    [ ![](text-fields-and-search-images/text05.png "Kontrola pravopisu, malá a velká písmena a ve výchozím nastavení typ klávesnice")](text-fields-and-search-images/text05.png) 
+    [![](text-fields-and-search-images/text05.png "Kontrola pravopisu, malá a velká písmena a ve výchozím nastavení typ klávesnice")](text-fields-and-search-images/text05.png#lightbox) 
 1. Uložte změny do vašeho scénáře.
     
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -122,16 +122,16 @@ Postupujte takto:
 1. V **Průzkumníku řešení**, dvakrát klikněte `Main.storyboard` soubor otevřete pro úpravy.
 1. Přetáhněte jeden nebo více **textových polí** int návrhovou plochu do zobrazení: 
 
-    [ ![](text-fields-and-search-images/text02-vs.png "Textové pole")](text-fields-and-search-images/text02-vs.png)
+    [![](text-fields-and-search-images/text02-vs.png "Textové pole")](text-fields-and-search-images/text02-vs.png#lightbox)
 1. Vyberte **textových polí** a poskytněte každou jedinečnou **název** v **pomůcky** kartě **Explorer vlastnosti**: 
 
-    [ ![](text-fields-and-search-images/text03-vs.png "Na kartě pomůcky")](text-fields-and-search-images/text03-vs.png)
+    [![](text-fields-and-search-images/text03-vs.png "Na kartě pomůcky")](text-fields-and-search-images/text03-vs.png#lightbox)
 1. V **textové pole** části, můžete definovat prvky, jako **zástupný symbol** pomocný parametr a výchozí **hodnotu**: 
 
-    [ ![](text-fields-and-search-images/text04-vs.png "V části textové pole.")](text-fields-and-search-images/text04-vs.png)
+    [![](text-fields-and-search-images/text04-vs.png "V části textové pole.")](text-fields-and-search-images/text04-vs.png#lightbox)
 1. Posuňte se dolů k definování vlastností, jako **kontrolu pravopisu**, **malá a velká písmena** a ve výchozím nastavení **klávesnice typ**: 
 
-    [ ![](text-fields-and-search-images/text05-vs.png "Kontrola pravopisu, malá a velká písmena a ve výchozím nastavení typ klávesnice")](text-fields-and-search-images/text05-vs.png) 
+    [![](text-fields-and-search-images/text05-vs.png "Kontrola pravopisu, malá a velká písmena a ve výchozím nastavení typ klávesnice")](text-fields-and-search-images/text05-vs.png#lightbox) 
 1. Uložte změny do vašeho scénáře.
     
 -----
@@ -157,17 +157,17 @@ Postupujte takto:
 1. V **řešení Pad**, dvakrát klikněte `Main.storyboard` soubor otevřete pro úpravy.
 1. Přetáhněte nového řadiče zobrazení kolekce do scénáře k dispozici výsledky hledání uživatele: 
 
-    [ ![](text-fields-and-search-images/search02.png "Řadič zobrazení kolekce")](text-fields-and-search-images/search02.png)
+    [![](text-fields-and-search-images/search02.png "Řadič zobrazení kolekce")](text-fields-and-search-images/search02.png#lightbox)
 1. V **pomůcky** kartě **vlastnosti Pad**, použijte `SearchResultsViewController` pro **– třída** a `SearchResults` pro **Storyboard ID**: 
 
-    [ ![](text-fields-and-search-images/search03.png "Na kartě pomůcky")](text-fields-and-search-images/search03.png)
+    [![](text-fields-and-search-images/search03.png "Na kartě pomůcky")](text-fields-and-search-images/search03.png#lightbox)
 1. Vyberte **buňky prototypu** na návrhovou plochu.
 1. V **pomůcky** kartě **Explorer vlastnosti**, použijte `SearchResultCell` pro **– třída** a `ImageCell` pro **identifikátor**: 
 
-    [ ![](text-fields-and-search-images/search04.png "Na kartě pomůcky")](text-fields-and-search-images/search04.png)
+    [![](text-fields-and-search-images/search04.png "Na kartě pomůcky")](text-fields-and-search-images/search04.png#lightbox)
 1. Rozložení návrh z **buňky prototypu** a vystavit každý prvek s jedinečným **název** v **pomůcky** kartě **vlastnosti Explorer**: 
 
-    [ ![](text-fields-and-search-images/search05.png "Rozložení v návrhu prototypu buňky")](text-fields-and-search-images/search05.png)
+    [![](text-fields-and-search-images/search05.png "Rozložení v návrhu prototypu buňky")](text-fields-and-search-images/search05.png#lightbox)
 1. Uložte změny do vašeho scénáře.
     
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -175,17 +175,17 @@ Postupujte takto:
 1. V **Průzkumníku řešení**, dvakrát klikněte `Main.storyboard` soubor otevřete pro úpravy.
 1. Přetáhněte nového řadiče zobrazení kolekce do scénáře k dispozici výsledky hledání uživatele: 
 
-    [ ![](text-fields-and-search-images/seach02-vs.png "Řadič zobrazení kolekce")](text-fields-and-search-images/seach02-vs.png)
+    [![](text-fields-and-search-images/seach02-vs.png "Řadič zobrazení kolekce")](text-fields-and-search-images/seach02-vs.png#lightbox)
 1. V **pomůcky** kartě **Explorer vlastnosti**, použijte `SearchResultsViewController` pro **– třída** a `SearchResults` pro **Storyboard ID**: 
 
-    [ ![](text-fields-and-search-images/search03-vs.png "Na kartě pomůcky")](text-fields-and-search-images/search03-vs.png)
+    [![](text-fields-and-search-images/search03-vs.png "Na kartě pomůcky")](text-fields-and-search-images/search03-vs.png#lightbox)
 1. Vyberte **buňky prototypu** na návrhovou plochu.
 1. V **pomůcky** kartě **Explorer vlastnosti**, použijte `SearchResultCell` pro **– třída** a `ImageCell` pro **identifikátor**: 
 
-    [ ![](text-fields-and-search-images/search04-vs.png "Na kartě pomůcky")](text-fields-and-search-images/search04-vs.png)
+    [![](text-fields-and-search-images/search04-vs.png "Na kartě pomůcky")](text-fields-and-search-images/search04-vs.png#lightbox)
 1. Rozložení návrh z **buňky prototypu** a vystavit každý prvek s jedinečným **název** v **pomůcky** kartě **vlastnosti Explorer**: 
 
-    [ ![](text-fields-and-search-images/search05-vs.png "Rozložení v návrhu prototypu buňky")](text-fields-and-search-images/search05-vs.png)
+    [![](text-fields-and-search-images/search05-vs.png "Rozložení v návrhu prototypu buňky")](text-fields-and-search-images/search05-vs.png#lightbox)
 1. Uložte změny do vašeho scénáře.
     
 -----
@@ -198,13 +198,13 @@ Postupujte takto:
 
 Dále musíte zadat třídu tak, aby fungoval jako datový Model pro výsledky, který uživatel hledání. V **Průzkumníku řešení**, klikněte pravým tlačítkem na název projektu a vyberte **přidat** > **nový soubor...**   >  **Obecné** > **prázdné třídy** a poskytují **název**: 
 
-[ ![](text-fields-and-search-images/search06.png "Vyberte třídu prázdný a zadejte název")](text-fields-and-search-images/search06.png)
+[![](text-fields-and-search-images/search06.png "Vyberte třídu prázdný a zadejte název")](text-fields-and-search-images/search06.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 Dále musíte zadat třídu tak, aby fungoval jako datový Model pro výsledky, který uživatel hledání. V **Průzkumníku řešení**, klikněte pravým tlačítkem na název projektu a vyberte **přidat** > **novou položku...**   >  **Apple** > **různé** > **třída** a poskytují **název**: 
 
-[ ![](text-fields-and-search-images/search06-vs.png "Vyberte třídu a zadejte název")](text-fields-and-search-images/search06-vs.png)
+[![](text-fields-and-search-images/search06-vs.png "Vyberte třídu a zadejte název")](text-fields-and-search-images/search06-vs.png#lightbox)
 
 -----
 
@@ -772,11 +772,11 @@ public override void ViewDidAppear (bool animated)
 
 Při spuštění aplikace a kartě vybraný uživatelem, nefiltrované úplný seznam položek bude zobrazovat uživatelům:
 
-[ ![](text-fields-and-search-images/intro02.png "Výsledky hledání výchozí")](text-fields-and-search-images/intro02.png)
+[![](text-fields-and-search-images/intro02.png "Výsledky hledání výchozí")](text-fields-and-search-images/intro02.png#lightbox)
 
 Jako uživatel začne zadejte hledaný termín, seznam výsledků se filtrují podle tento termín a aktualizuje automaticky:
 
-[ ![](text-fields-and-search-images/intro03.png "Filtrované výsledky hledání")](text-fields-and-search-images/intro03.png)
+[![](text-fields-and-search-images/intro03.png "Filtrované výsledky hledání")](text-fields-and-search-images/intro03.png#lightbox)
 
 Kdykoli můžete uživatele přepnutí položku ve výsledcích hledání a klikněte na prostor Touch vzdálené Siri ji vyberte.
 
@@ -790,7 +790,7 @@ Tento článek má zahrnutých navrhování a práci s textem a vyhledávacích 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Ukázky tvOS](https://developer.xamarin.com/samples/tvos/all/)
+- [Ukázky pro tvOS](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS lidské rozhraní příručky](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [Průvodce programováním aplikace pro tvOS](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

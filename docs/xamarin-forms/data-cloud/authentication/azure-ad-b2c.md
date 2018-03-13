@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 3b862f03a81364594f33d82ebf02d75440d7bc4c
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 5d64c7c1dbc502acd3876c2442f9bae1c46eeb74
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="authenticating-users-with-azure-active-directory-b2c"></a>Ověřování uživatelů s Azure Active Directory B2C
 
@@ -21,7 +21,7 @@ _Azure Active Directory B2C je cloudové řešení správy identity pro určený
 ![](~/media/shared/preview.png "Toto rozhraní API je aktuálně předběžné verze")
 
 > [!NOTE]
-> **Poznámka:**: [knihovny pro ověřování Microsoft](https://www.nuget.org/packages/Microsoft.Identity.Client) je stále ve verzi preview, ale je vhodná pro použití v provozním prostředí. Ale existuje může být narušující změny na rozhraní API, formát vnitřní mezipaměti a další mechanismy knihovny, která může mít vliv na vaše aplikace.
+> [Knihovny pro ověřování Microsoft](https://www.nuget.org/packages/Microsoft.Identity.Client) je stále ve verzi preview, ale je vhodná pro použití v provozním prostředí. Ale existuje může být narušující změny na rozhraní API, formát vnitřní mezipaměti a další mechanismy knihovny, která může mít vliv na vaše aplikace.
 
 ## <a name="overview"></a>Přehled
 
@@ -38,12 +38,12 @@ Proces pro integraci služby Azure Active Directory B2C identity management do m
 1. Použití [knihovny pro ověřování Microsoft](https://www.nuget.org/packages/Microsoft.Identity.Client) (MSAL) v mobilní aplikaci s inicializujte ověřovací pracovní postup u klienta služby Azure Active Directory B2C.
 
 > [!NOTE]
-> **Poznámka:**: a také integraci správy identit Azure Active Directory B2C do mobilní aplikace, MSAL lze také integrovat správu identit Azure Active Directory do mobilní aplikace. To lze provést po registraci mobilních aplikací v Azure Active Directory [portálu pro registraci aplikace](https://apps.dev.microsoft.com/). Proces registrace přiřadí **ID aplikace** který jednoznačně identifikuje vaši aplikaci, které musí být zadán při použití MSAL. Další informace najdete v tématu [postup registrace aplikace s koncovým bodem v2.0](/azure/active-directory/develop/active-directory-v2-app-registration/), a [ověřit vaše mobilní aplikace pomocí ověřování knihovna Microsoft](https://blog.xamarin.com/authenticate-mobile-apps-using-microsoft-authentication-library/) na blogu Xamarin.
+> A také integraci správy identit Azure Active Directory B2C do mobilní aplikace, MSAL lze také integrovat správu identit Azure Active Directory do mobilní aplikace. To lze provést po registraci mobilních aplikací v Azure Active Directory [portálu pro registraci aplikace](https://apps.dev.microsoft.com/). Proces registrace přiřadí **ID aplikace** který jednoznačně identifikuje vaši aplikaci, které musí být zadán při použití MSAL. Další informace najdete v tématu [postup registrace aplikace s koncovým bodem v2.0](/azure/active-directory/develop/active-directory-v2-app-registration/), a [ověřit vaše mobilní aplikace pomocí ověřování knihovna Microsoft](https://blog.xamarin.com/authenticate-mobile-apps-using-microsoft-authentication-library/) na blogu Xamarin.
 
 MSAL webovému prohlížeči zařízení používá k provedení ověřování. To zvyšuje použitelnost aplikace, jako jsou uživatelé pouze musí přihlášení po každé zařízení, vylepšení převod míry přihlašování a autorizaci toků v aplikaci. Prohlížeč zařízení také poskytuje vyšší úroveň zabezpečení. Po dokončení procesu ověřování uživatele bude ovládací prvek vrátit se do aplikace z kartu webového prohlížeče. Toho dosáhnete tak, že zaregistrujete vlastní schéma adresy URL pro přesměrování URL, která se vrátí z procesu ověřování a pak zjišťování a zpracování vlastní adresu URL, jakmile se odesílají. Další informace o volbě vlastní schéma adresy URL, najdete v části [výběr na identifikátor URI přesměrování nativní aplikaci](/azure/active-directory-b2c/active-directory-b2c-app-registration#choosing-a-native-app-redirect-uri/).
 
 > [!NOTE]
-> **Poznámka:**: Tento mechanismus pro registraci vlastní schéma adresy URL s operačním systémem a zpracování schéma je specifická pro každou platformu.
+> Tento mechanismus pro registraci vlastní schéma adresy URL s operačním systémem a zpracování schéma je specifická pro každou platformu.
 
 Každý požadavek zaslaný do klienta Azure Active Directory B2C Určuje *zásad*. Zásady popisují činnosti identity uživatelů, jako je registrace nebo přihlášení. Například registrační zásadě umožňuje chování klienta Azure Active Directory B2C nakonfigurovat pomocí následující nastavení:
 
@@ -127,7 +127,7 @@ namespace TodoAzure.Droid
             global::Xamarin.Forms.Forms.Init(this, bundle);
             Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
             LoadApplication(new App());
-            App.UiParent = new UIParent(Xamarin.Forms.Forms.Context as Activity);
+            App.UiParent = new UIParent(this);
         }
 
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)

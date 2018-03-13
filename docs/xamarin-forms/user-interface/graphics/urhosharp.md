@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/11/2016
-ms.openlocfilehash: 7937e80b13ca7e3ecec1dc179adade666bd90635
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9cbc756c5ba61d764404ffabd347232a25dbdc58
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="using-urhosharp-in-xamarinforms"></a>Použití UrhoSharp v Xamarin.Forms
 
@@ -33,7 +33,7 @@ Před použitím UrhoSharp, vývojáři nutné přidat balíček UrhoSharp Nuget
 Balíček UrhoSharp.Forms Nuget obsahuje všechny objekty, které jsou potřebné k vytváření objektů UrhoSharp. Balíček nuget UrhoSharp.Forms zahrnuje `UrhoSurface` třídy, která se používá k hostiteli UrhoSharp v Xamarin.Forms.
 Pokud chcete začít, klikněte pravým tlačítkem na PCL **balíčky** složky a vyberte **přidat balíčky...** . Zadejte hledaný termín **UrhoSharp.Forms**, vyberte **UrhoSharp pro Xamarin.Forms**, pak klikněte na tlačítko **přidat balíček**.
 
-[ ![](urhosharp-images/add-package-sml.png "Balíčky dialogové okno Přidání")](urhosharp-images/add-package.png "balíčky dialogové okno Přidání")
+[![](urhosharp-images/add-package-sml.png "Balíčky dialogové okno Přidání")](urhosharp-images/add-package.png#lightbox "balíčky dialogové okno Přidání")
 
 Balíček UrhoSharp.Forms NuGet budou přidány do projektu:
 

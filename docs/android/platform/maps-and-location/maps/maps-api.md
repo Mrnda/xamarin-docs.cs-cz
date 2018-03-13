@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: eddd723c07919db4749c63c5b4f1d05e9be81022
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 48e8827895001d2b1887816a9368fcc5bbc50bbf
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="maps-api"></a>Rozhraní API map
 
@@ -25,7 +25,6 @@ Rozhraní API map je vhodná pro případy, kdy chcete zachovat větší kontrol
 Na rozdíl od zastaralý Google Maps Android API v1, v2 Google Maps Android API je součástí [služby Google Play](http://developer.android.com/google/play-services/index.html).
 Proto je potřeba splnit některé povinné požadavky, než bude možné použít rozhraní API systému Android mapy Google v aplikaci Xamarin.Android.
 
-<a name="Configuring_Maps_API_Prerequisites" />
 
 ## <a name="google-maps-api-prerequisites"></a>Mapuje požadavky rozhraní API Google
 
@@ -37,7 +36,6 @@ Několik položek je potřeba nakonfigurovat před použitím rozhraní API map,
 -  Zadejte požadovaná oprávnění
 
 
-<a name="Google_APIs_Add-On" />
 
 ### <a name="install-the-google-play-services-sdk"></a>Nainstalujte sadu SDK služby Google Play
 
@@ -53,9 +51,8 @@ Aplikace pro Xamarin.Android mohli používat rozhraní API map, musí být nain
 ![Služby Google Play se zobrazí v části funkce v Android SDK Manager](maps-api-images/image01.png)
 
 > [!NOTE]
-> **Poznámka:** služby Google Play APK je licencovaný produkt, který nemusí být k dispozici na všech zařízeních. Pokud není nainstalována, službu mapy Google nebude fungovat v zařízení.
+> Služby Google Play APK je licencovaného produktu, které nemusí být k dispozici na všech zařízeních. Pokud není nainstalována, službu mapy Google nebude fungovat v zařízení.
 
-<a name="Binding_Google_Play_Services" />
 
 #### <a name="binding-google-play-services"></a>Vazba webu Google Play Services
 
@@ -68,7 +65,6 @@ Po instalaci služby Google Play klientské knihovny, musí být vázána knihov
 -  **Ručně vytvořit vazbu klientské knihovny služby Google Play** – to je složitější přístup a je jedinou možností pro Xamarin.Android 4.4 nebo Xamarin.Android 4.6, pro vazbu webu Google Play Services SDK.
    Ručně vazby služby Google Play klientské knihovny je nad rámec tohoto dokumentu, ale najdete příklad toho, jak to udělat v [Maps a umístění ukázku v3 ukázka](https://github.com/xamarin/monodroid-samples/tree/master/MapsAndLocationDemo_v3) na Githubu.
 
-<a name="Adding_the_Google_Play_Services_Component" />
 
 #### <a name="adding-the-google-play-services-map-package"></a>Probíhá přidávání balíčku mapy služby Google Play
 
@@ -78,7 +74,7 @@ Chcete-li přidat balíček Google Play Services mapy, klikněte pravým tlačí
 
 Tím se otevře **Správce balíčků NuGet**. Klikněte na tlačítko **Procházet** a zadejte **Xamarin Google Play Services Maps** do pole hledání. Vyberte **Xamarin.GooglePlayServices.Maps** a klikněte na tlačítko **nainstalovat**. (Pokud tento balíček měl dřív nainstalované, klikněte na tlačítko **aktualizace**.):
 
-[![Správce balíčků NuGet s balíčkem Xamarin.GooglePlayServices.Maps vybrané](maps-api-images/image03-sml.png)](maps-api-images/image03.png)
+[![Správce balíčků NuGet s balíčkem Xamarin.GooglePlayServices.Maps vybrané](maps-api-images/image03-sml.png)](maps-api-images/image03.png#lightbox)
 
 Všimněte si, že jsou nainstalovány také následující balíčky závislost:
 
@@ -87,7 +83,6 @@ Všimněte si, že jsou nainstalovány také následující balíčky závislost
 -   **Xamarin.GooglePlayServices.Tasks**
 
 
-<a name="Creating_an_Emulator_with_Google_APIs" />
 
 ### <a name="create-an-emulator-with-google-apis"></a>Vytvoření emulátor pomocí rozhraní API Google
 
@@ -96,14 +91,12 @@ I když to nedoporučujeme, je možné nastavit emulátor pro podporu rozhraní 
 ![Správce emulátoru Android s AVD nakonfigurované pro rozhraní API úrovně 19](maps-api-images/image04.png)
 
 
-<a name="apikey" />
 
 ### <a name="obtain-a-google-maps-api-key"></a>Získat klíč Google Maps API
 
 Posledním krokem je získat klíč Google Maps API (Všimněte si, že nelze znovu použít klíč rozhraní API ze starší verze v1 Google Maps). Informace o tom, jak získat a použít klíč rozhraní API s Xamarin.Android najdete v tématu [získání A Google klíč rozhraní API map](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md).
  
 
-<a name="Specify_Permissions" />
 
 ### <a name="specify-the-required-permissions"></a>Zadejte požadovaná oprávnění
 
@@ -167,7 +160,6 @@ Následující fragment kódu je příkladem nastavení, která musí být přid
 </manifest>
 ```
 
-<a name="The_GoogleMap" />
 
 ## <a name="the-googlemap-class"></a>GoogleMap – třída
 
@@ -190,13 +182,12 @@ Jakmile požadavky bylo postaráno, je čas začít vyvíjet aplikace a použív
 
 Každý z těchto kontejnerů vystavit `Map` vlastnost, která vrací instanci třídy `GoogleMap`. Měli dává [MapFragment](http://developer.android.com/reference/com/google/android/gms/maps/MapFragment.html) třídy, protože je jednodušší rozhraní API, která snižuje velikost často používaný kód, který vývojář musí implementovat ručně.
 
-<a name="Adding_GoogleMap_To_An_Activity" />
 
 ### <a name="adding-a-mapfragment-to-an-activity"></a>Přidání MapFragment do aktivity
 
 Na následujícím snímku obrazovky je příklad velmi jednoduchý `MapFragment`:
 
-[![Snímek obrazovky zobrazení mapy fragment zařízení](maps-api-images/image05-sml.png)](maps-api-images/image05.png)
+[![Snímek obrazovky zobrazení mapy fragment zařízení](maps-api-images/image05-sml.png)](maps-api-images/image05.png#lightbox)
 
 Podobně jako ostatní třídy Fragment, existují dva způsoby, jak přidat to `MapFragment` do aktivity:
 
@@ -255,7 +246,6 @@ Ve výše uvedeném příkladu kódu `OnMapReady` inicializuje zpětného volán
 Jako příklad toho, jak používat tento výsledek když `OnResume` je volána, může zkontrolovat, zda `_map` hodnotu Null. Pokud `_map` je nastaven na `GoogleMap` objekt, `OnResume` můžete volat metody pro přidání značek a jeho fotoaparát přesunuty zadané zeměpisné šířky a délky. Úplný příklad, naleznete v tématu [SimpleMapDemo](https://github.com/xamarin/monodroid-samples/tree/master/MapsAndLocationDemo_v3/SimpleMapDemo).
 
 
-<a name="Map_Types" />
 
 ### <a name="map-types"></a>Mapování typů
 
@@ -274,7 +264,7 @@ Nejsou k dispozici z rozhraní API Google mapuje pět různých typů map:
 
 Následující obrázek ukazuje tři různé typy map, z zleva doprava (normální hybridní, geologické struktury):
 
-[![Tři mapování snímky obrazovky příklad: Normální, hybridního i geologické struktury](maps-api-images/map-types-sml.png)](maps-api-images/map-types.png)
+[![Tři mapování snímky obrazovky příklad: Normální, hybridního i geologické struktury](maps-api-images/map-types-sml.png)](maps-api-images/map-types.png#lightbox)
 
 `GoogleMap.MapType` Vlastnost se používá k nastavení nebo změna, jaký typ mapy se zobrazí. Následující fragment kódu ukazuje, jak zobrazit mapu satelit.
 
@@ -287,7 +277,6 @@ if (_map != null) {
 }
 ```
 
-<a name="GoogleMap_Properties" />
 
 ### <a name="googlemap-properties"></a>Vlastnosti GoogleMap
 
@@ -317,7 +306,6 @@ if (_map != null) {
 }
 ```
 
-<a name="Interacting_with_the_Map" />
 
 ## <a name="interacting-with-the-map"></a>Interakci s mapy
 
@@ -363,9 +351,8 @@ if (_map != null) {
 
 V předchozím fragmentu kódu je reprezentována určitého umístění na mapě [LatLng](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/model/LatLng) třídy. Úroveň zvětšení je nastavena na 18. Vliv, který je po směru hodinových ručiček severní kompasu měření. Určuje náklon vlastnost ovládací prvky zobrazení úhel a je úhel 25 o od svislice. Následující snímek obrazovky ukazuje `GoogleMap` po provedení předchozí kód:
 
-[![Příklad mapování Google zobrazující určitého umístění s nakloněné zobrazení úhlu](maps-api-images/image06-sml.png)](maps-api-images/image06.png)
+[![Příklad mapování Google zobrazující určitého umístění s nakloněné zobrazení úhlu](maps-api-images/image06-sml.png)](maps-api-images/image06.png#lightbox)
 
-<a name="Adding_Overlays_to_a_Map" />
 
 ### <a name="drawing-on-the-map"></a>Kreslení na mapě
 
@@ -377,13 +364,11 @@ Rozhraní API systému Android mapy poskytuje rozhraní API pro kreslení na map
 
 -  **Řádky, mnohoúhelníky a kroužky** – jedná se rozhraní API umožňující aktivity a přidávání obrazců do mapy.
 
-<a name="markers" />
 
 #### <a name="markers"></a>Značky
 
 Poskytuje rozhraní API map [značky](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/model/Marker) třídy, který zapouzdřuje všechna data o jedno umístění na mapě. Ve výchozím nastavení používají standardní ikonu poskytované Google Maps. Je možné přizpůsobit vzhled značku a reakce na kliknutí uživatele.
 
-<a name="AddingAMarker" />
 
 ##### <a name="adding-a-marker"></a>Přidání značka
 
@@ -403,9 +388,8 @@ if (_map != null) {
 
 Zobrazí se název značky v *informační okno* když uživatel klepnutím na značky. Následující snímek obrazovky ukazuje, jak vypadá této značky:
 
-[![Příklad mapování Google s značku a okno s informací pro Vimy Ridge](maps-api-images/image07-sml.png)](maps-api-images/image07.png)
+[![Příklad mapování Google s značku a okno s informací pro Vimy Ridge](maps-api-images/image07-sml.png)](maps-api-images/image07.png#lightbox)
 
-<a name="Customizing_A_Marker" />
 
 ##### <a name="customizing-a-marker"></a>Přizpůsobení značku
 
@@ -437,7 +421,6 @@ if (_map != null)
 }
 ```
 
-<a name="Info_Windows" />
 
 #### <a name="info-windows"></a>Informace o systému Windows
 
@@ -455,13 +438,11 @@ Následující obrázek ukazuje některé příklady některých vlastní inform
 
 ![Příklad značky windows pro Melbourne, včetně ikonu a naplnění. Pravém má zaokrouhlené rozích.](maps-api-images/marker-infowindows.png)
 
-<a name="Adding_an_overlay" />
 
 #### <a name="ground-overlays"></a>Překryvy základů
 
 Na rozdíl od značek, které identifikovat určitého umístění na mapě, [GroundOverlay](http://developer.android.com/reference/com/google/android/gms/maps/model/GroundOverlay.html) je obrázek, který se používá k identifikaci kolekci umístění nebo oblast na mapě.
 
-<a name="AddingAGroundOverlay" />
 
 ##### <a name="adding-a-groundoverlay"></a>Přidání GroundOverlay
 
@@ -477,9 +458,8 @@ GroundOverlay myOverlay = _map.AddGroundOverlay(groundOverlayOptions);
 
 Následující snímek obrazovky ukazuje tento překrytí na mapě:
 
-[![Příklad mapování s buňka image polárního opatřeny](maps-api-images/image09-sml.png)](maps-api-images/image09.png)
+[![Příklad mapování s buňka image polárního opatřeny](maps-api-images/image09-sml.png)](maps-api-images/image09.png#lightbox)
 
-<a name="Lines_Circles_and_Polygons" />
 
 #### <a name="lines-circles-and-polygons"></a>Řádky, kružnice a mnohoúhelníky
 
@@ -492,7 +472,6 @@ Existují tři typy jednoduché geometrickou obrázků, které mohou být přid�
 -  **Kruh** – to bude nakreslit kruh na mapě.
 
 
-<a name="Polylines" />
 
 ##### <a name="polylines"></a>Čáru lomených
 
@@ -508,7 +487,6 @@ rectOptions.Add(new LatLng(37.35, -122.0)); // close the polyline - this makes a
 myMap.AddPolyline(rectOptions);
 ```
 
-<a name="Polygons" />
 
 ##### <a name="polygons"></a>Mnohoúhelníky
 
@@ -527,7 +505,6 @@ rectOptions.Add(new LatLng(37.35, -122.2));
 myMap.AddPolygon(rectOptions);
 ```
 
-<a name="Circles" />
 
 ##### <a name="circles"></a>Kroužky
 
@@ -541,7 +518,6 @@ circleOptions.InvokeRadius (1000);
 _map.AddCircle (CircleOptions);
 ```
 
-<a name="RespondingToClicks" />
 
 ## <a name="responding-to-events"></a>Reagování na události
 
@@ -555,7 +531,6 @@ Existují tři typy interakcí, které uživatel může mít s mapou:
 
 Každá z těchto událostí bude možné podrobněji popsána níže.
 
-<a name="Marker_Click_Events" />
 
 ### <a name="marker-click-events"></a>Značky události kliknutí
 
@@ -584,7 +559,6 @@ private void MapOnMarkerClick(object sender, GoogleMap.MarkerClickEventArgs mark
 }
 ```
 
-<a name="Marker_Drag_Events" />
 
 ### <a name="marker-drag-events"></a>Přetáhněte událostech
 
@@ -602,7 +576,6 @@ Následující seznam popisuje různé události, které bude vyvolána pro pře
 
 Každý z `EventArgs` obsahuje jednu vlastnost s názvem `P0` tedy odkaz na `Marker` objektu přetažen.
 
-<a name="Info_Window_Click_Events" />
 
 ### <a name="info-window-click-events"></a>Okno informace o události kliknutí
 

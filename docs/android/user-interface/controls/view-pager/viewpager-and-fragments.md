@@ -7,18 +7,17 @@ ms.assetid: 62B6286F-3680-48F3-B91B-453692E457E5
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: 9b200bd335ea65bf46de00d2dc7382b7f838716b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: cd71617cce209ef0127023f69c2b503fee031e43
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="viewpager-with-fragments"></a>ViewPager fragmenty
 
 _ViewPager je rozložení správce, který umožňuje implementovat posunkové navigace. Posunkové navigační umožňuje uživateli prstem levé a pravé krok prostřednictvím stránky data. Tato příručka vysvětluje, jak implementovat swipeable uživatelského rozhraní s ViewPager, pomocí fragmentů jako data stránky._
 
-<a name="overview" />
  
 ## <a name="overview"></a>Přehled
 
@@ -27,14 +26,12 @@ _ViewPager je rozložení správce, který umožňuje implementovat posunkové n
 Tato příručka nepopisuje základy fragmenty &ndash; Pokud ještě nejste obeznámeni s fragmenty v Xamarin.Android, přečtěte si téma [fragmenty](~/android/platform/fragments/index.md) můžete začít pracovat s fragmenty. 
 
 
-<a name="start" />
 
 ## <a name="start-an-app-project"></a>Spusťte projekt aplikace
 
 Vytvořit nový projekt Android s názvem **FlashCardPager**. Potom spusťte Správce balíčků NuGet (Další informace o instalaci balíčků NuGet najdete v tématu [návod: včetně NuGet ve vašem projektu](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)). Najít a nainstalovat **Xamarin.Android.Support.v4** balíček, jak je popsáno v [Viewpager a zobrazení](~/android/user-interface/controls/view-pager/viewpager-and-views.md). 
 
 
-<a name="datasource" />
 
 ## <a name="add-an-example-data-source"></a>Přidat k příklad zdroji dat
 
@@ -61,7 +58,6 @@ Zdrojový kód a `FlashCardDeck` je k dispozici na [FlashCardDeck.cs](https://gi
 Stáhněte si tento zdrojový soubor (nebo zkopírujte a vložte kód do nové **FlashCardDeck.cs** souboru) a přidejte ji do projektu.
 
 
-<a name="layout" />
 
 ## <a name="create-a-viewpager-layout"></a>Vytvoření ViewPager rozložení
 
@@ -80,8 +76,6 @@ Otevřete **Resources/layout/Main.axml** a nahraďte jeho obsah následující k
 
 Tato konfigurace XML definuje `ViewPager` který zabírá celou obrazovku. Všimněte si, že je nutné použít plně kvalifikovaný název **android.support.v4.view.ViewPager** protože `ViewPager` je součástí knihovny podpory. `ViewPager` je k dispozici pouze [podporu knihovna pro Android v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/); není k dispozici v systému Android SDK.
 
-
-<a name="setup" />
 
 ## <a name="set-up-viewpager"></a>Nastavit ViewPager
 
@@ -120,14 +114,13 @@ Tento kód provede následující akce:
 
 Když sestavíte a spustíte tento kód, byste měli vidět zobrazení, která se podobá následující snímek obrazovky: 
 
-[![Snímek obrazovky FlashCardPager aplikace pomocí prázdné ViewPager](viewpager-and-fragments-images/01-initial-screen-sml.png)](viewpager-and-fragments-images/01-initial-screen.png)
+[![Snímek obrazovky FlashCardPager aplikace pomocí prázdné ViewPager](viewpager-and-fragments-images/01-initial-screen-sml.png)](viewpager-and-fragments-images/01-initial-screen.png#lightbox)
 
 V tomto okamžiku `ViewPager` je prázdný vzhledem k tomu, že je nedostatečná fragmenty, které se používají naplnit `ViewPager`, a adaptér je nedostatečná pro vytvoření tyto fragmenty z dat v **FlashCardDeck**. 
 
 V následujících částech `FlashCardFragment` vytvoří implementovat funkci každou kartu flash a `FragmentPagerAdapter` se vytvoří pro připojení `ViewPager` do vytvořené na základě dat v fragmenty `FlashCardDeck`. 
 
 
-<a name="fragment" />
 
 ## <a name="create-the-fragment"></a>Vytvořit Fragment
 
@@ -135,7 +128,6 @@ Každou kartu flash bude spravovat fragment uživatelského rozhraní, která je
 `FlashCardFragment`na zobrazení bude obsahovat `TextView` který zobrazí text problém flash karty. Toto zobrazení bude implementaci obslužné rutiny události, který používá `Toast` k zobrazení odpovědi, když uživatel klepnutím na flash karty otázku. 
 
 
-<a name="layout" />
 
 ### <a name="create-the-flashcardfragment-layout"></a>Vytvoření FlashCardFragment rozložení
 
@@ -163,7 +155,6 @@ Před `FlashCardFragment` lze implementovat, musí být definován jeho rozlože
 Toto rozložení definuje fragment jedna karta flash; Každý fragment se skládá z `TextView` , zobrazí se matematické potíže při použití písmo velké (100sp). Tento text je na střed vodorovně a svisle na kartě flash. 
 
 
-<a name="fcfclass" />
 
 ### <a name="create-the-initial-flashcardfragment-class"></a>Vytvoření počáteční FlashCardFragment třídy
 
@@ -205,7 +196,6 @@ Tento kód zástupných procedur se jejich hlavních `Fragment` definice, který
 Ve fragmentu zobrazení je explicitně zvětšený voláním `inflater.Inflate`. `container` Argument je nadřazeným prvkem zobrazení a `false` příznak dá pokyn inflater nepoužívejte přidávání zvýšeným zobrazení do nadřazeného zobrazení (přidá se při `ViewPager` volání je adaptéru `GetItem` metoda později v tomto návod). 
 
 
-<a name="state" />
 
 ### <a name="add-state-code-to-flashcardfragment"></a>Přidejte do FlashCardFragment stavu kód
 
@@ -251,8 +241,6 @@ public override View OnCreateView(LayoutInflater inflater, ViewGroup container, 
 `answer` Proměnná se zde nepoužívá, ale použije se později při přidání kód obslužné rutiny události pro tento soubor. 
 
 
-<a name="adapter" />
-
 ## <a name="create-the-adapter"></a>Vytvoření adaptéru
 
 `ViewPager` používá objekt řadič adaptéru, která se nachází mezi `ViewPager` a zdroj dat (viz obrázek v ViewPager [adaptér](~/android/user-interface/controls/view-pager/index.md#adapter) článku). Pro přístup k těmto datům `ViewPager` vyžaduje zadání vlastní adaptér odvozen od `PagerAdapter`. Protože tento příklad používá fragmenty, používá `FragmentPagerAdapter` &ndash; `FragmentPagerAdapter` je odvozený od `PagerAdapter`. 
@@ -297,7 +285,6 @@ namespace FlashCardPager
 Tento kód zástupných procedur se jejich hlavních `FragmentPagerAdapter` implementace. V následujících částech každá z těchto metod se nahradí funkční kód. Účelem konstruktoru je předat správce fragment k `FlashCardDeckAdapter`pro konstruktor základní třídy. 
 
 
-<a name="ctor" />
 
 ### <a name="implement-the-adapter-constructor"></a>Implementace adaptér konstruktoru
 
@@ -316,7 +303,6 @@ this.flashCardDeck = flashCards;
 Tento řádek kódu úložišť `FlashCardDeck` instanci `FlashCardDeckAdapter` bude používat. 
 
 
-<a name="count" />
 
 ### <a name="implement-count"></a>Počet implementací
 
@@ -333,7 +319,6 @@ public override int Count
 `NumCards` Vlastnost `FlashCardDeck` vrátí počet karet flash (počet fragmentů) v datové sadě. 
 
 
-<a name="getitem" />
 
 ### <a name="implement-getitem"></a>GetItem – implementace
 
@@ -361,7 +346,6 @@ Tento kód provede následující akce:
 Při `ViewPager` vykreslí `Fragment` v `position`, se zobrazí `TextBox` obsahující řetězec matematické problém, které se nacházejí v `position` v flash karet. 
 
 
-<a name="addadapter" />
 
 ## <a name="add-the-adapter-to-the-viewpager"></a>Přidejte do ViewPager adaptéru
 
@@ -378,10 +362,9 @@ Tento kód vytvoří `FlashCardDeckAdapter`a předejte `SupportFragmentManager` 
 Základní implementace je nyní dokončen &ndash; sestavení a spuštění aplikace.
 Měli byste vidět první obrázek flash karet zobrazují na obrazovce, jak je znázorněno na levé straně na další snímku obrazovky. Prstem zleva najdete v části Další karet flash, pak prstem práva na přechod na předchozí flash karet:
 
-[![Příklad snímky obrazovky aplikace FlashCardPager bez pager ukazatele](viewpager-and-fragments-images/02-example-views-sml.png)](viewpager-and-fragments-images/02-example-views.png)
+[![Příklad snímky obrazovky aplikace FlashCardPager bez pager ukazatele](viewpager-and-fragments-images/02-example-views-sml.png)](viewpager-and-fragments-images/02-example-views.png#lightbox)
 
 
-<a name="pagetabstrip" />
 
 ## <a name="add-a-pager-indicator"></a>Přidat na Pager ukazatel
 
@@ -409,10 +392,9 @@ Otevřete **Resources/layout/Main.axml** a přidejte `PagerTabStrip` k rozložen
 
 Při sestavení a spuštění aplikace, měli byste vidět prázdné `PagerTabStrip` zobrazí v horní části každé kartě flash: 
 
-[![Closeup PagerTabStrip bez textu](viewpager-and-fragments-images/03-empty-pagetabstrip-sml.png)](viewpager-and-fragments-images/03-empty-pagetabstrip.png)
+[![Closeup PagerTabStrip bez textu](viewpager-and-fragments-images/03-empty-pagetabstrip-sml.png)](viewpager-and-fragments-images/03-empty-pagetabstrip.png#lightbox)
 
 
-<a name="title" />
 
 ### <a name="display-a-title"></a>Zobrazí nadpis
 
@@ -427,12 +409,11 @@ public override Java.Lang.ICharSequence GetPageTitleFormatted(int position)
 
 Tento kód převádí pozice v flash karet na problém. Výsledný řetězec je převeden na Java `String` , je vrácen do `ViewPager`. Při spuštění aplikace s Tato nová metoda, každé stránce zobrazuje číslo problém v `PagerTabStrip`: 
 
-[![Snímky obrazovky FlashCardPager číslem problém zobrazí výše každé stránce](viewpager-and-fragments-images/04-pagetabstrip-sml.png)](viewpager-and-fragments-images/04-pagetabstrip.png)
+[![Snímky obrazovky FlashCardPager číslem problém zobrazí výše každé stránce](viewpager-and-fragments-images/04-pagetabstrip-sml.png)](viewpager-and-fragments-images/04-pagetabstrip.png#lightbox)
 
 Můžete přepínat prstem zobrazíte číslo problém z karty flash balíčku, který se zobrazí v horní části každé kartě flash. 
 
 
-<a name="userinput" />
 
 ## <a name="handle-user-input"></a>Zpracování uživatelského vstupu
 
@@ -450,12 +431,11 @@ questionBox.Click += delegate
 
 To `Click` obslužné rutiny události se zobrazí odpověď v informační zprávy, která se zobrazí, když uživatel klepnutím `TextBox`. `answer` Proměnná byl inicializován dříve, pokud byl načten informace o stavu ze sady, který byl předán `OnCreateView`. Sestavení a spuštění aplikace a potom klepněte na text problém na každé kartě flash zobrazíte odpověď: 
 
-[![Snímky obrazovky FlashCardPager aplikace informační zprávy, když je stisknuté matematické problém](viewpager-and-fragments-images/05-answer-sml.png)](viewpager-and-fragments-images/05-answer.png)
+[![Snímky obrazovky FlashCardPager aplikace informační zprávy, když je stisknuté matematické problém](viewpager-and-fragments-images/05-answer-sml.png)](viewpager-and-fragments-images/05-answer.png#lightbox)
 
 **FlashCardPager** uvedené v tomto návodu používá `MainActivity` odvozené z `FragmentActivity`, ale můžete také odvodit `MainActivity` z `AppCompatActivity` (které také poskytuje podporu pro správu fragmenty). Chcete-li zobrazit `AppCompatActivity` příkladu najdete v části [FlashCardPager](https://developer.xamarin.com/samples/monodroid/UserInterface%5CFlashCardPager/) v galerii ukázka. 
 
 
-<a name="summary" />
 
 ## <a name="summary"></a>Souhrn
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: e5ff4e3732476415ff32e98b8281f3cb6e03e332
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7111c1716ef3a8869f8b2401a7653d9e9941977b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="manual-camera-controls"></a>Ovládací prvky ruční fotoaparát
 
@@ -26,7 +26,7 @@ Tyto ovládací prvky může být užitečné také při vývoji aplikace scient
 
 Jestli trvá videa nebo obrázky pomocí fotoaparátu v zařízení se systémem iOS, proces používá k zachycení tyto bitové kopie je z velké části stejný. To platí pro aplikace, které používají výchozí automatizované ovládacích prvků kamery nebo ta, která využít výhod nových ovládacích prvků ruční fotoaparát:
 
- [ ![](intro-to-manual-camera-controls-images/image1.png "AVFoundation zaznamenat objekty – přehled")](intro-to-manual-camera-controls-images/image1.png)
+ [![](intro-to-manual-camera-controls-images/image1.png "AVFoundation zaznamenat objekty – přehled")](intro-to-manual-camera-controls-images/image1.png#lightbox)
 
 Vstup je převzat ze `AVCaptureDeviceInput` do `AVCaptureSession` prostřednictvím `AVCaptureConnection`. Výsledkem je buď výstup jako stále bitovou kopii nebo jako datový proud videa. Celý proces řídí `AVCaptureDevice`.
 
@@ -280,11 +280,11 @@ Tím, že se koncový uživatel provést ovládací prvky typu fokus přímo, m�
 
 Například můžete professional fotografa zmírnění fokus bitovou kopii k dosažení [Bokeh vliv](http://en.wikipedia.org/wiki/Bokeh):
 
-[ ![](intro-to-manual-camera-controls-images/image2.png "Vliv Bokeh")](intro-to-manual-camera-controls-images/image2.png)
+[![](intro-to-manual-camera-controls-images/image2.png "Vliv Bokeh")](intro-to-manual-camera-controls-images/image2.png#lightbox)
 
 Nebo vytvořte [fokus pro vyžádání obsahu vliv](http://www.mediacollege.com/video/camera/focus/pull.html), jako například:
 
-[ ![](intro-to-manual-camera-controls-images/image3.png "Vyžádání účinek fokusu")](intro-to-manual-camera-controls-images/image3.png)
+[![](intro-to-manual-camera-controls-images/image3.png "Vyžádání účinek fokusu")](intro-to-manual-camera-controls-images/image3.png#lightbox)
 
 Vědců nebo zapisovač lékařské aplikace aplikace chtít prostřednictvím kódu programu pohyb přehledu pro experimenty. V obou případech nového rozhraní API umožňuje provedena koncový uživatel nebo aplikace, abyste mohli řídit fokusu v době bitovou kopii.
 
@@ -292,7 +292,7 @@ Vědců nebo zapisovač lékařské aplikace aplikace chtít prostřednictvím k
 
 Před hovoříte o podrobnosti o řízení fokusu v aplikaci IOS 8. Podívejme se rychlé na fungování fokusu v zařízení s iOS:
 
-[ ![](intro-to-manual-camera-controls-images/image4.png "Jak funguje fokusu v zařízení se systémem iOS")](intro-to-manual-camera-controls-images/image4.png)
+[![](intro-to-manual-camera-controls-images/image4.png "Jak funguje fokusu v zařízení se systémem iOS")](intro-to-manual-camera-controls-images/image4.png#lightbox)
 
 Lehký zadá přehledu fotoaparát v zařízení s iOS a se zaměřuje na senzor bitové kopie. Vzdálenost přehledu z ovládacích prvků senzor kde ústředním bodem (oblast, kde se zobrazí bitovou kopii výzkumných) je ve vztahu k senzoru. Tím dále přehledu pochází z senzoru, objekty vzdálenost pravděpodobně výzkumných a pravděpodobně výzkumných blíže, téměř objekty.
 
@@ -358,7 +358,7 @@ Jak je vidět ve výše uvedeném kódu, musí být zařízení zaznamenat uzam�
 
 S kódem obecné AV zachycení nastavení na místě `UIViewController` lze přidat do aplikace scénáře a nakonfigurovány takto:
 
-[ ![](intro-to-manual-camera-controls-images/image5.png "UIViewController můžete přidat do aplikace scénáře a nakonfigurovat, jak je vidět tady")](intro-to-manual-camera-controls-images/image5.png)
+[![](intro-to-manual-camera-controls-images/image5.png "UIViewController můžete přidat do aplikace scénáře a nakonfigurovat, jak je vidět tady")](intro-to-manual-camera-controls-images/image5.png#lightbox)
 
 Zobrazení obsahuje následující hlavní prvky:
 
@@ -491,10 +491,10 @@ Následujícím postupem navázání řadiče zobrazení pro ovládací prvek fo
   
 1. S fotoaparátu v režimu automaticky posuvník se přesune automaticky jako fotoaparát upraví fokus:
 
-    [![](intro-to-manual-camera-controls-images/image6.png "Posuvník se automaticky přesune jako fotoaparát upraví fokusu v této ukázkové aplikace")](intro-to-manual-camera-controls-images/image6.png)
+    [![](intro-to-manual-camera-controls-images/image6.png "Posuvník se automaticky přesune jako fotoaparát upraví fokusu v této ukázkové aplikace")](intro-to-manual-camera-controls-images/image6.png#lightbox)
 1. Klepněte na segmentu uzamčen a přetáhněte ji pozice posuvníku upravíte pozice přehledu ručně:
 
-    [![](intro-to-manual-camera-controls-images/image7.png "Ruční úprava pozice přehledu")](intro-to-manual-camera-controls-images/image7.png)
+    [![](intro-to-manual-camera-controls-images/image7.png "Ruční úprava pozice přehledu")](intro-to-manual-camera-controls-images/image7.png#lightbox)
 1. Zastavte aplikaci.
 
 
@@ -506,7 +506,7 @@ Ohrožení odkazuje také průraznost bitové kopie relativně k také průrazno
 
 Použití ovládacích prvků ohrožení ruční, uživatel může trvat bitové kopie z unrealistically jasně tmavý a moody:
 
-[ ![](intro-to-manual-camera-controls-images/image8.png "Obrázek znázorňující ohrožení z unrealistically jasně tmavý a moody vzorku")](intro-to-manual-camera-controls-images/image8.png)
+[![](intro-to-manual-camera-controls-images/image8.png "Obrázek znázorňující ohrožení z unrealistically jasně tmavý a moody vzorku")](intro-to-manual-camera-controls-images/image8.png#lightbox)
 
 Znovu to můžete provést automaticky pomocí programovací řízení pro scientific aplikace nebo prostřednictvím ruční ovládací prvky, které poskytuje uživatelské rozhraní aplikace. V obou případech nové iOS 8 rozhraní API ohrožení poskytují jemně odstupňovanou kontrolu nad nastavení fotoaparátu v ohrožení.
 
@@ -514,7 +514,7 @@ Znovu to můžete provést automaticky pomocí programovací řízení pro scien
 
 Před hovoříte o podrobnosti o řízení ohrožení v aplikaci IOS 8. Podívejme se rychlé v tom, jak funguje ohrožení:
 
-[ ![](intro-to-manual-camera-controls-images/image9.png "Jak funguje ohrožení")](intro-to-manual-camera-controls-images/image9.png)
+[![](intro-to-manual-camera-controls-images/image9.png "Jak funguje ohrožení")](intro-to-manual-camera-controls-images/image9.png#lightbox)
 
 Jsou tři základní prvky, které spojit ke kontrole expozice:
 
@@ -527,7 +527,7 @@ Jsou tři základní prvky, které spojit ke kontrole expozice:
 
 Před learning jak funguje ruční ohrožení, je správné je vhodné pochopit, jak průběžné Automatická expozice funguje v zařízení se systémem iOS.
 
-[ ![](intro-to-manual-camera-controls-images/image10.png "Jak funguje průběžné Automatická expozice v zařízení se systémem iOS")](intro-to-manual-camera-controls-images/image10.png)
+[![](intro-to-manual-camera-controls-images/image10.png "Jak funguje průběžné Automatická expozice v zařízení se systémem iOS")](intro-to-manual-camera-controls-images/image10.png#lightbox)
 
 Nejprve je automaticky ohrožení bloku, má úloha Výpočet ideální ohrožení a průběžně se předány měření statistiky. Tyto informace použije k výpočtu optimální kombinaci ISO a expozice získat scény dobře lit. Tento cyklus se označuje jako AE smyčky.
 
@@ -535,7 +535,7 @@ Nejprve je automaticky ohrožení bloku, má úloha Výpočet ideální ohrožen
 
 V dalším kroku se podíváme jak uzamčení funguje ohrožení zařízení se systémem iOS.
 
-[ ![](intro-to-manual-camera-controls-images/image11.png "Jak uzamčeném ohrožení funguje v zařízení s iOS")](intro-to-manual-camera-controls-images/image11.png)
+[![](intro-to-manual-camera-controls-images/image11.png "Jak uzamčeném ohrožení funguje v zařízení s iOS")](intro-to-manual-camera-controls-images/image11.png#lightbox)
 
 Znovu máte blok ohrožení automaticky, který se pokouší k výpočtu optimální iOS a hodnoty typu Duration. V tomto režimu je však bloku AE odpojen od modul měření statistiky.
 
@@ -589,7 +589,7 @@ Jak je vidět ve výše uvedeném kódu, musí být zařízení zaznamenat uzam�
 
 S kódem obecné AV zachycení nastavení na místě `UIViewController` lze přidat do aplikace scénáře a nakonfigurovány takto:
 
-[ ![](intro-to-manual-camera-controls-images/image12.png "UIViewController můžete přidat do aplikace scénáře a nakonfigurovat, jak je vidět tady")](intro-to-manual-camera-controls-images/image12.png)
+[![](intro-to-manual-camera-controls-images/image12.png "UIViewController můžete přidat do aplikace scénáře a nakonfigurovat, jak je vidět tady")](intro-to-manual-camera-controls-images/image12.png#lightbox)
 
 Zobrazení obsahuje následující hlavní prvky:
 
@@ -791,13 +791,13 @@ Následujícím postupem navázání řadiče zobrazení pro ruční ovládacím
   
 1. S kamera v režimu automaticky posuvníků se přesune automaticky jako fotoaparát upraví ohrožení:
 
-    [![](intro-to-manual-camera-controls-images/image13.png "Posuvníků se automaticky přesune jako fotoaparát upraví ohrožení")](intro-to-manual-camera-controls-images/image13.png)
+    [![](intro-to-manual-camera-controls-images/image13.png "Posuvníků se automaticky přesune jako fotoaparát upraví ohrožení")](intro-to-manual-camera-controls-images/image13.png#lightbox)
 1. Klepněte na segmentu uzamčen a přetáhněte ji odchylka posuvníku upravíte odchylka automatické expozice ručně:
 
-    [![](intro-to-manual-camera-controls-images/image14.png "Úprava odchylka automatické expozice ručně")](intro-to-manual-camera-controls-images/image14.png)
+    [![](intro-to-manual-camera-controls-images/image14.png "Úprava odchylka automatické expozice ručně")](intro-to-manual-camera-controls-images/image14.png#lightbox)
 1. Klepněte na vlastní segmentu a přetáhněte jezdce doba trvání a ISO ručně řídit ohrožení:
 
-    [![](intro-to-manual-camera-controls-images/image15.png "Přetáhněte jezdce doba trvání a ISO ručně řízení přístupu")](intro-to-manual-camera-controls-images/image15.png)
+    [![](intro-to-manual-camera-controls-images/image15.png "Přetáhněte jezdce doba trvání a ISO ručně řízení přístupu")](intro-to-manual-camera-controls-images/image15.png#lightbox)
 1. Zastavte aplikaci.
 
 
@@ -807,7 +807,7 @@ Ve výše uvedeném kódu má ukazuje postup monitorování nastavení ohrožen�
 
 Ovládací prvky vyvážení bílé umožňují uživatelům nastavit zůstatek colosr v obraze vzhled realističtější. Různé zdroje světla mít jinou barvu teploty a nastavení fotoaparát používá k zaznamenání bitové kopie, musí upraví se pro tyto rozdíly. Znovu tím, že kontrola uživatele nad vyvážení bílé udělat professional úpravy, které jsou k dosažení uměleckého důsledky nepodporující automatické rutiny.
 
-[ ![](intro-to-manual-camera-controls-images/image16.png "Ukázka obrázek znázorňující vyvážení bílé ruční úpravy")](intro-to-manual-camera-controls-images/image16.png)
+[![](intro-to-manual-camera-controls-images/image16.png "Ukázka obrázek znázorňující vyvážení bílé ruční úpravy")](intro-to-manual-camera-controls-images/image16.png#lightbox)
 
 Například letní má blueish přetypování, zatímco žhavé indikátory wolframu využívají odstín teplejší, žlutý oranžová. ("Studených" barvy confusingly, mají vyšší teploty barva než "záložním" barvy. Barva teploty jsou fyzické míry, nikoli vnímání tomu).
 
@@ -821,7 +821,7 @@ Před hovoříte o podrobnosti o řízení vyvážení bílé v aplikaci IOS 8. 
 
 Studie barva dojem [CIE 1931 RGB barva místa a CIE 1931 XYZ barevný prostor](http://en.wikipedia.org/wiki/CIE_1931_color_space) jsou první matematicky definovaných barev prostory. Mezinárodní Komise pro osvětlení (CIE) byly vytvořeny v 1931.
 
-[ ![](intro-to-manual-camera-controls-images/image17.png "RGB CIE 1931 barevný prostor a CIE 1931 XYZ barevných místa")](intro-to-manual-camera-controls-images/image17.png)
+[![](intro-to-manual-camera-controls-images/image17.png "RGB CIE 1931 barevný prostor a CIE 1931 XYZ barevných místa")](intro-to-manual-camera-controls-images/image17.png#lightbox)
 
 Výše uvedené graf zobrazuje nám všechny barvy viditelné pro lidské oko z přímým blue k jasně zelená k jasně červeně. Libovolného bodu v diagramu mohou být vykreslena s hodnotou X a Y, jak je znázorněno v grafu výše.
 
@@ -900,7 +900,7 @@ Zaznamenat zařízení musí být uzamčen pro konfiguraci předtím, než můž
 
 S kódem obecné AV zachycení nastavení na místě `UIViewController` lze přidat do aplikace scénáře a nakonfigurovány takto:
 
-[ ![](intro-to-manual-camera-controls-images/image18.png "UIViewController můžete přidat do aplikace scénáře a nakonfigurovat, jak je vidět tady")](intro-to-manual-camera-controls-images/image18.png)
+[![](intro-to-manual-camera-controls-images/image18.png "UIViewController můžete přidat do aplikace scénáře a nakonfigurovat, jak je vidět tady")](intro-to-manual-camera-controls-images/image18.png#lightbox)
 
 Zobrazení obsahuje následující hlavní prvky:
 
@@ -1111,13 +1111,13 @@ Následujícím postupem navázání řadiče zobrazení pro ruční Kontrola z�
 1. Uložit změny kód a spusťte aplikaci.
 1. S kamera v režimu automaticky posuvníků se přesune automaticky jako fotoaparát upraví vyvážení bílé:
 
-    [![](intro-to-manual-camera-controls-images/image19.png "Posuvníků se automaticky přesune jako fotoaparát upraví vyvážení bílé")](intro-to-manual-camera-controls-images/image19.png)
+    [![](intro-to-manual-camera-controls-images/image19.png "Posuvníků se automaticky přesune jako fotoaparát upraví vyvážení bílé")](intro-to-manual-camera-controls-images/image19.png#lightbox)
 1. Klepněte na segmentu uzamčen a přetáhněte jezdce dočasné a TINT – upravit vyvážení bílé ručně:
 
-    [![](intro-to-manual-camera-controls-images/image20.png "Přetáhněte jezdce dočasné a TINT – ručně upravit vyvážení bílé")](intro-to-manual-camera-controls-images/image20.png)
+    [![](intro-to-manual-camera-controls-images/image20.png "Přetáhněte jezdce dočasné a TINT – ručně upravit vyvážení bílé")](intro-to-manual-camera-controls-images/image20.png#lightbox)
 1. Vybraný segmentu uzamčen umístěte fyzickou kartu šedé vpředu z fotoaparátu a klepněte na tlačítko šedá karty upravit vyvážení bílé World šedá:
 
-    [![](intro-to-manual-camera-controls-images/image21.png "Klepněte na tlačítko šedá karty upravit vyvážení bílé šedá World")](intro-to-manual-camera-controls-images/image21.png)
+    [![](intro-to-manual-camera-controls-images/image21.png "Klepněte na tlačítko šedá karty upravit vyvážení bílé šedá World")](intro-to-manual-camera-controls-images/image21.png#lightbox)
 1. Zastavte aplikaci.
 
 Výše uvedený kód ukazuje, jak monitorovat nastavení vyvážení bílé, když fotoaparát v automatickém režimu nebo pomocí posuvníků ke kontrole bílé zůstatku, pokud je v režimu uzamčen.
@@ -1128,7 +1128,7 @@ V závorkách zaznamenání je založen na nastavení z ovládacích prvků foto
 
 Jednoduše řečeno, v závorkách zaznamenat je shluku stále bitových kopií vytvořených ve řadu nastavení z obrázku na obrázek.
 
-[ ![](intro-to-manual-camera-controls-images/image22.png "Jak funguje v závorkách zachycení")](intro-to-manual-camera-controls-images/image22.png)
+[![](intro-to-manual-camera-controls-images/image22.png "Jak funguje v závorkách zachycení")](intro-to-manual-camera-controls-images/image22.png#lightbox)
 
 Použití v závorkách zachycení v iOS 8, aplikace můžete přednastavení řadu ovládacích prvků ruční fotoaparát, jeden příkaz vystavení a mít aktuální scény vrátit řadu bitových kopií pro každý z ruční přednastavení.
 
@@ -1187,7 +1187,7 @@ Tyto informace v paměti a Podívejme se na příklad použití v závorkách za
 
 S kódem obecné AV zachycení nastavení na místě `UIViewController` lze přidat do aplikace scénáře a nakonfigurovány takto:
 
-[ ![](intro-to-manual-camera-controls-images/image23.png "UIViewController můžete přidat do aplikace scénáře a nakonfigurovat, jak je vidět tady")](intro-to-manual-camera-controls-images/image23.png)
+[![](intro-to-manual-camera-controls-images/image23.png "UIViewController můžete přidat do aplikace scénáře a nakonfigurovat, jak je vidět tady")](intro-to-manual-camera-controls-images/image23.png#lightbox)
 
 Zobrazení obsahuje následující hlavní prvky:
 
@@ -1345,10 +1345,10 @@ Následujícím postupem navázání řadiče zobrazení pro zachycení v závor
 1. Uložit změny kód a spusťte aplikaci.
 1. Rámce scény a klepněte na tlačítko zaznamenat závorky:
 
-    [![](intro-to-manual-camera-controls-images/image24.png "Rámce scény a klepněte na tlačítko zaznamenat závorky")](intro-to-manual-camera-controls-images/image24.png)
+    [![](intro-to-manual-camera-controls-images/image24.png "Rámce scény a klepněte na tlačítko zaznamenat závorky")](intro-to-manual-camera-controls-images/image24.png#lightbox)
 1. Prstem zprava doleva zobrazíte tři provedenou v závorkách zachycení bitové kopie:
 
-    [![](intro-to-manual-camera-controls-images/image25.png "Prstem zprava doleva zobrazíte tři provedenou v závorkách zachycení bitové kopie")](intro-to-manual-camera-controls-images/image25.png)
+    [![](intro-to-manual-camera-controls-images/image25.png "Prstem zprava doleva zobrazíte tři provedenou v závorkách zachycení bitové kopie")](intro-to-manual-camera-controls-images/image25.png#lightbox)
 1. Zastavte aplikaci.
 
 

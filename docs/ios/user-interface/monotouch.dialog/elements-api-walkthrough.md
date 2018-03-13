@@ -7,11 +7,11 @@ ms.assetid: F1124734-DF44-F1F3-0832-46F52A788CDC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 19e20015d1872cbaea21dd8b8e5431981e463c33
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 19e1ab4000e473aa773bf75015ff520a1f9a96d8
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough---creating-an-application-using-the-elements-api"></a>Návod – vytváření aplikací pomocí rozhraní API elementy
 
@@ -19,7 +19,7 @@ _Tento článek je založen na informace uvedené v Úvod do dialogu MonoTouch �
 
 V tomto návodu použijeme strojový překladů. Rozhraní API elementy D vytvořit seznam podrobnosti styl aplikace, která zobrazí seznam úloh. Když uživatel vybere <span class="ui"> + </span> tlačítko na navigačním panelu, bude přidán nový řádek do tabulky pro úlohu. Výběr řádku bude přejděte na obrazovce podrobností, které umožňuje aktualizovat popis úlohy a datum splatnosti, jak je uvedeno dále:
 
- [ ![](elements-api-walkthrough-images/01-task-list-app.png "Výběr řádku bude přejděte na obrazovce podrobností, které umožňuje aktualizovat popis úlohy a datum splatnosti")](elements-api-walkthrough-images/01-task-list-app.png)
+ [![](elements-api-walkthrough-images/01-task-list-app.png "Výběr řádku bude přejděte na obrazovce podrobností, které umožňuje aktualizovat popis úlohy a datum splatnosti")](elements-api-walkthrough-images/01-task-list-app.png#lightbox)
 
  <a name="Elements_API_Walkthrough" />
 
@@ -72,7 +72,7 @@ public override bool FinishedLaunching (UIApplication app,
 
 Výše uvedený kód vytvoří instanci `RootElement` a předá ji do `DialogViewController`. `DialogViewController` Má vždy `RootElement` v horní části hierarchii. V tomto příkladu `RootElement` je vytvořena s řetězcem "Seznam úkolů,", který slouží jako název navigační řadiče navigačním panelu. Spuštění aplikace v tomto okamžiku by prezentovat obrazovky vidíte níže:
 
- [ ![](elements-api-walkthrough-images/02-to-do-list-screen-.png "Spuštění aplikace bude k dispozici na obrazovce zobrazeny zde")](elements-api-walkthrough-images/02-to-do-list-screen-.png)
+ [![](elements-api-walkthrough-images/02-to-do-list-screen-.png "Spuštění aplikace bude k dispozici na obrazovce zobrazeny zde")](elements-api-walkthrough-images/02-to-do-list-screen-.png#lightbox)
 
 Podívejme se, jak používat MonoTouch.Dialog je hierarchická struktura `Sections` a `Elements` přidat další obrazovky.
 
@@ -148,11 +148,11 @@ Použili jsme `RootElement` tak, aby MonoTouch.Dialog by automaticky vytvořit n
 
 Vlastní obrazovka podrobnosti úlohy se skládá ze dvou částech; Každý z těchto částí obsahuje jen jeden prvek. První prvek je vytvořený z `EntryElement` zajistit upravitelné řádek pro úkolu `Description` vlastnost. Pokud je vybraný element, klávesnice pro úpravy textu se zobrazí, jak je uvedeno níže:
 
- [ ![](elements-api-walkthrough-images/03-create-task.png "Pokud je vybraný element, klávesnice pro úpravy textu se zobrazí, jak je znázorněno")](elements-api-walkthrough-images/03-create-task.png)
+ [![](elements-api-walkthrough-images/03-create-task.png "Pokud je vybraný element, klávesnice pro úpravy textu se zobrazí, jak je znázorněno")](elements-api-walkthrough-images/03-create-task.png#lightbox)
 
 Druhý oddíl obsahuje `DateElement` která umožňuje nám spravovat úkolu `DueDate` vlastnost. Výběr datum automaticky načte výběr data, jak je znázorněno:
 
- [ ![](elements-api-walkthrough-images/04-date-picker.png "Výběr data jako výběr datum automaticky načte.")](elements-api-walkthrough-images/04-date-picker.png)
+ [![](elements-api-walkthrough-images/04-date-picker.png "Výběr data jako výběr datum automaticky načte.")](elements-api-walkthrough-images/04-date-picker.png#lightbox)
 
 V obou `EntryElement` a `DateElement` případech (nebo pro libovolný element zadávání dat v MonoTouch.Dialog), všechny změny na hodnoty se zachovají automaticky. Jsme to ukazují úpravy datum a mezi obrazovce kořenové a různé podrobnosti úlohy, kde se zachovají hodnoty na obrazovkách podrobností navigace a zpět.
 

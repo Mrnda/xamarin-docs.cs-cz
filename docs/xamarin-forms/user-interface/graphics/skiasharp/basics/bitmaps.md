@@ -4,14 +4,15 @@ description: "Načíst rastrové obrázky z různých zdrojů a jejich zobrazen�
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
 author: charlespetzold
 ms.author: chape
 ms.date: 04/03/2017
-ms.openlocfilehash: 9045fb2f54407fe8c9071efc5570296bb102f72e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: facdcb6231b77714d6f5d0c7d496db12f75b1d08
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="bitmap-basics"></a>Bitmap Basics
 
@@ -204,7 +205,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Rastrový obrázek je roztažen tak, aby dimenze obdélníku, proto opic vodorovně roztažen tak tyto snímcích obrazovky:
 
-[![](bitmaps-images/basicbitmaps-small.png "Trojitá snímek obrazovky stránky základní bitmap")](bitmaps-images/basicbitmaps-large.png "Trojitá snímek obrazovky stránky základní rastrové obrázky")
+[![](bitmaps-images/basicbitmaps-small.png "Trojitá snímek obrazovky stránky základní bitmap")](bitmaps-images/basicbitmaps-large.png#lightbox "Trojitá snímek obrazovky stránky základní rastrové obrázky")
 
 Třetí image & #x 2014; které lze zobrazit pouze pokud spuštění programu a načíst fotografie z vlastní knihovny obrázků & #x 2014; je také zobrazit v rámci obdélníku, ale obdélníku pozice a velikosti upraveny tak, aby zachovat poměr stran rastrového obrázku. Tohoto výpočtu je trochu složitější, protože vyžaduje výpočet měřítko podle velikosti bitovou mapu a rámeček cílové a zarovnání obdélníku v této oblasti:
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/02/2016
-ms.openlocfilehash: 593e720e4a6125e2ef4a1c9488186cb2c04dcd66
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: be4b0c907774c33dfcd1818da167acb2dc3b04dd
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="an-introduction-to-xamarinforms"></a>Úvod do Xamarin.Forms
 
@@ -45,7 +45,7 @@ Tento článek popisuje základní informace o rozhraní Xamarin.Forms a obsahuj
 
 V sadě Visual Studio pro Mac a Visual Studio vytvoří výchozí šablony aplikaci Xamarin.Forms nejjednodušší řešení Xamarin.Forms možné, který zobrazí text pro uživatele. Pokud aplikaci spouštíte, by měla vypadat podobně jako na následujících snímcích obrazovky:
 
-[ ![](introduction-to-xamarin-forms-images/image05-sml.png "Výchozí aplikaci Xamarin.Forms")](introduction-to-xamarin-forms-images/image05.png "výchozí aplikaci Xamarin.Forms")
+[![](introduction-to-xamarin-forms-images/image05-sml.png "Výchozí aplikaci Xamarin.Forms")](introduction-to-xamarin-forms-images/image05.png#lightbox "výchozí aplikaci Xamarin.Forms")
 
 Každý obrazovky na snímcích obrazovky odpovídá *stránky* v Xamarin.Forms. A [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) představuje *aktivity* v systému Android, *View Controller* v iOS, nebo *stránky* v univerzální pro Windows Platforma (UWP). Vytvoří instanci ukázce výše na snímcích obrazovky [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) objektu a použije ho k zobrazení [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/).
 
@@ -249,7 +249,7 @@ public class StackLayoutExample : ContentPage
 
 Ve výchozím nastavení [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) předpokládá svislou orientaci, jak je vidět na následujících snímcích obrazovky:
 
-[ ![](introduction-to-xamarin-forms-images/image09-sml.png "Svislé StackLayout")](introduction-to-xamarin-forms-images/image09.png "svislé StackLayout")
+[![](introduction-to-xamarin-forms-images/image09-sml.png "Svislé StackLayout")](introduction-to-xamarin-forms-images/image09.png#lightbox "svislé StackLayout")
 
 Orientaci [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) můžete změnit na vodorovné orientaci, jak je ukázáno v následujícím příkladu kódu XAML:
 
@@ -286,7 +286,7 @@ public class StackLayoutExample: ContentPage
 
 Na následujících snímcích obrazovky zobrazit výsledné rozložení:
 
-[ ![](introduction-to-xamarin-forms-images/image10-sml.png "Vodorovné StackLayout")](introduction-to-xamarin-forms-images/image10.png "vodorovné StackLayout")
+[![](introduction-to-xamarin-forms-images/image10-sml.png "Vodorovné StackLayout")](introduction-to-xamarin-forms-images/image10.png#lightbox "vodorovné StackLayout")
 
 Je možné nastavit velikost ovládacích prvků prostřednictvím `HeightRequest` a `WidthRequest` vlastnosti, jak je ukázáno v následujícím příkladu kódu XAML:
 
@@ -329,7 +329,7 @@ Content = new StackLayout
 
 Na následujících snímcích obrazovky zobrazit výsledné rozložení:
 
-[ ![](introduction-to-xamarin-forms-images/image11-sml.png "Vodorovné StackLayout s LayoutOptions")](introduction-to-xamarin-forms-images/image11.png "vodorovné StackLayout s LayoutOptions")
+[![](introduction-to-xamarin-forms-images/image11-sml.png "Vodorovné StackLayout s LayoutOptions")](introduction-to-xamarin-forms-images/image11.png#lightbox "vodorovné StackLayout s LayoutOptions")
 
 Další informace o [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) třídy najdete v tématu [StackLayout](~/xamarin-forms/user-interface/layouts/stack-layout.md).
 

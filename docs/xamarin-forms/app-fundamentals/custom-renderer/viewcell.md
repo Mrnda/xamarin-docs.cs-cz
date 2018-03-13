@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 2c65bce7ae468ef07c6d898e3f532aa95580f2ba
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 9e980dd428ec0efab8578a25f9191dbc71bbaf6c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="customizing-a-viewcell"></a>Přizpůsobení ViewCell
 
@@ -160,7 +160,7 @@ Proces pro vytvoření třídy vlastní zobrazovací jednotky vypadá takto:
 1. Přidat `ExportRenderer` atributu na vlastní zobrazovací jednotky třídu k určení, že bude použit k vykreslení Xamarin.Forms vlastní buňky. Tento atribut slouží k registraci vlastní zobrazovací jednotky s Xamarin.Forms.
 
 > [!NOTE]
-> **Poznámka:**: pro většinu prvků Xamarin.Forms, je volitelný poskytnout vlastní zobrazovací jednotky v každém projektu platformy. Pokud vlastní zobrazovací jednotky není registrované, bude použit výchozí zobrazovací jednotky pro základní třídu ovládacího prvku. Však vlastní nástroji pro vykreslování se vyžadují v každém projektu platformy při vykreslování [ViewCell](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) element.
+> Pro většinu prvků Xamarin.Forms je volitelné poskytnout vlastní zobrazovací jednotky v každém projektu platformy. Pokud vlastní zobrazovací jednotky není registrované, bude použit výchozí zobrazovací jednotky pro základní třídu ovládacího prvku. Však vlastní nástroji pro vykreslování se vyžadují v každém projektu platformy při vykreslování [ViewCell](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) element.
 
 Následující diagram znázorňuje odpovědnosti jednotlivých projektů v ukázkové aplikace, spolu s jejich vzájemných vztahů:
 

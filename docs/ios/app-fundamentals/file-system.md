@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: a2c3ce9e19340067d77a8bc131b5a247806ecfa1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 36c793e7a9b7b30bcb0cdf2c7959fd2df36c8775
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-the-file-system"></a>Práce s systému souborů
 
@@ -26,7 +26,7 @@ iOS má také některé funkce specifické pro systém souborů: některých adr
 
 Tento článek popisuje funkce a omezení IOS systém souborů podrobně a obsahuje ukázkovou aplikaci, která demonstruje použití Xamarin.iOS provést některé operace jednoduché souborového systému:
 
- [ ![](file-system-images/05-sampleapp.png "Ukázka provádění některých operací jednoduchého souboru systému iOS")](file-system-images/05-sampleapp.png)
+ [![](file-system-images/05-sampleapp.png "Ukázka provádění některých operací jednoduchého souboru systému iOS")](file-system-images/05-sampleapp.png#lightbox)
 
  <a name="General_File_Access" />
 
@@ -110,7 +110,7 @@ Další informace o System.IO – obor názvů najdete v tématu [dokumentace MS
 
 Práce s Json dat v aplikaci Xamarin.iOS je velmi snadné použití [Json.NET](http://www.newtonsoft.com/json) vysoce výkonné rozhraní JSON pro balíček NuGet .NET. Jednoduše přidejte balíček NuGet do projektu aplikace: 
 
-[ ![](file-system-images/json01.png "Přidání balíček NuGet do projektu aplikace")](file-system-images/json01.png)
+[![](file-system-images/json01.png "Přidání balíček NuGet do projektu aplikace")](file-system-images/json01.png#lightbox)
 
 V dalším kroku přidejte třídu tak, aby fungoval jako datový model pro serializaci nebo deserializaci (v tomto případě `Account.cs`):
 
@@ -217,11 +217,11 @@ Při procházení k vaší sady aplikace v systému Mac OS, zobrazí se ikona ji
 
 Pokud chcete zobrazit sady aplikací pro ukázkový kód, klikněte pravým tlačítkem na projekt v sadě Visual Studio pro Mac a vyberte **otevřít složku obsahující**. Potom přejděte na **bin/Debug/** kde byste měli najít ikony aplikace (podobně jako tento snímek obrazovky).
 
- [ ![](file-system-images/40-bundle.png "Přejděte do bin/Debug najít ikony aplikace podobně jako tento snímek obrazovky")](file-system-images/40-bundle.png)
+ [![](file-system-images/40-bundle.png "Přejděte do bin/Debug najít ikony aplikace podobně jako tento snímek obrazovky")](file-system-images/40-bundle.png#lightbox)
 
 Klikněte pravým tlačítkem na tuto ikonu a vyberte **zobrazit obsah balíčku** procházet obsah adresáře sady aplikace. Obsah se zobrazí stejně jako obsah regulární adresáře, jak je vidět tady:
 
- [ ![](file-system-images/45-bundle.png "Obsah sady prostředků aplikace")](file-system-images/45-bundle.png)
+ [![](file-system-images/45-bundle.png "Obsah sady prostředků aplikace")](file-system-images/45-bundle.png#lightbox)
 
 Je sada aplikací nainstalovaných v simulátoru, nebo na svém zařízení během testování a nakonec je co je odeslána společnosti Apple pro zařazení do obchodu s aplikacemi.
 
@@ -313,7 +313,7 @@ Obsah tohoto adresáře se nikdy zveřejňují pro uživatele na základě iTune
 
 Tento snímek obrazovky ukazuje strukturu adresáře v okně Vyhledávací:
 
- [ ![](file-system-images/08-library-directory.png "Tento snímek obrazovky ukazuje strukturu adresáře v okně Finder")](file-system-images/08-library-directory.png)
+ [![](file-system-images/08-library-directory.png "Tento snímek obrazovky ukazuje strukturu adresáře v okně Finder")](file-system-images/08-library-directory.png#lightbox)
 
  <a name="Accessing_Other_Directories_Programmatically" />
 
@@ -352,11 +352,11 @@ var tmp = Path.Combine (documents, "..", "tmp");
 
 Uživatelé přístup k souborům v adresáři vaší aplikace dokumenty úpravou `Info.plist` a vytváření **aplikace podporuje sdílení iTunes** (`UIFileSharingEnabled`) záznam v **zdroj** zobrazení, jako Zde se zobrazují:
 
- [ ![](file-system-images/09-uifilesharingenabled-plist.png "Přidání aplikace podporuje iTunes sdílení vlastnost")](file-system-images/09-uifilesharingenabled-plist.png)
+ [![](file-system-images/09-uifilesharingenabled-plist.png "Přidání aplikace podporuje iTunes sdílení vlastnost")](file-system-images/09-uifilesharingenabled-plist.png#lightbox)
 
 Tyto soubory jsou přístupné v iTunes při připojení zařízení a uživatel zvolí `Apps` kartě. Například následující snímek obrazovky ukazuje soubory ve vybrané aplikaci sdílet přes iTunes:
 
- [ ![](file-system-images/10-itunes-file-sharing.png "Tento snímek obrazovky ukazuje soubory ve vybrané aplikaci sdílet přes iTunes")](file-system-images/10-itunes-file-sharing.png)
+ [![](file-system-images/10-itunes-file-sharing.png "Tento snímek obrazovky ukazuje soubory ve vybrané aplikaci sdílet přes iTunes")](file-system-images/10-itunes-file-sharing.png#lightbox)
 
 Uživatelé můžou používat pouze položky na nejvyšší úrovni v tomto adresáři přes iTunes. Obsah jakéhokoliv podadresáře nemohou zobrazit (i když mohou zkopírujte je do jejich počítače nebo je odstranit). Například s GoodReader, souborů PDF a EPUB lze sdílet s aplikací tak, aby uživatelé mohou číst na jejich zařízeních s iOS.
 
@@ -364,7 +364,7 @@ Uživatelé, kteří upravovat obsah jejich složky Dokumenty může způsobit p
 
 Ukázkový kód pro tento článek vytvoří soubor a složku ve složce Dokumenty (v **SampleCode.cs**) a umožňuje sdílení souborů v **Info.plist** souboru. Tento snímek obrazovky ukazuje, jak se zobrazují v iTunes:
 
- [ ![](file-system-images/15-itunes-file-sharing-example.png "Tento snímek obrazovky ukazuje, jak se soubory se zobrazí v iTunes")](file-system-images/15-itunes-file-sharing-example.png)
+ [![](file-system-images/15-itunes-file-sharing-example.png "Tento snímek obrazovky ukazuje, jak se soubory se zobrazí v iTunes")](file-system-images/15-itunes-file-sharing-example.png#lightbox)
 
 Odkazovat [práce s obrázky](~/ios/app-fundamentals/images-icons/index.md) informace o tom, jak nastavení ikon pro aplikace a pro všechny typy vlastní dokumentu vytvoříte článku.
 

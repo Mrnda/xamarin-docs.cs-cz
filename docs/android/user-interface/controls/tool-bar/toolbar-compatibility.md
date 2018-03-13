@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: d4d6e93bf3a755d9b48c9e096de87b4c89f2831f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a17ad79d3f3b537332494fc368c878f2733d5db2
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="toolbar-compatibility"></a>Kompatibilita panelu nástrojů
 
-<a name="overview" />
 
 ## <a name="overview"></a>Přehled
 
@@ -36,7 +35,6 @@ K úpravě aplikace pro použití kompatibility aplikace verze nástrojů:
 Každý z těchto kroků je podrobně vysvětleny v následujících částech.
 
 
-<a name="android_version" />
 
 ## <a name="set-the-minimum-and-target-android-version"></a>Nastavit minimální a cílové verzi systému Android
 
@@ -44,23 +42,20 @@ Cílová architektura aplikace musí být nastavena na 21 úroveň rozhraní API
 
 Nastavte cílové rozhraní úrovně do 21 úroveň rozhraní API nebo vyšší a nastavení úrovně projektu rozhraní API systému Android minimální Android verzi, která je pro podporu aplikace. Další informace o nastavení úrovně rozhraní API systému Android, najdete v části [Principy Android API úrovně](~/android/app-fundamentals/android-api-levels.md). V `ToolbarFun` příklad, minimální verze Android nastavena na KitKat (4.4 úroveň rozhraní API). 
 
-<a name="install_nuget" />
 
 ## <a name="install-the-appcompat-nuget-package"></a>Nainstalujte balíček NuGet kompatibility aplikace
 
 Dál přidejte [kompatibility aplikace podporu knihovna pro Android v7](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/) balíčku do projektu. V sadě Visual Studio, klikněte pravým tlačítkem na **odkazy** a vyberte **spravovat balíčky NuGet...** . Klikněte na tlačítko **Procházet** a vyhledejte **kompatibility podporu knihovna pro Android v7 aplikace**. Vyberte **Xamarin.Android.Support.v7.AppCompat** a klikněte na tlačítko **nainstalovat**: 
 
-[![Snímek obrazovky kompatibility V7 aplikace balíčku vybraný v balíčcích spravovat balíčky NuGet](toolbar-compatibility-images/01-appcompat-nuget-sml.png)](toolbar-compatibility-images/01-appcompat-nuget.png)
+[![Snímek obrazovky kompatibility V7 aplikace balíčku vybraný v balíčcích spravovat balíčky NuGet](toolbar-compatibility-images/01-appcompat-nuget-sml.png)](toolbar-compatibility-images/01-appcompat-nuget.png#lightbox)
 
 Při instalaci této NuGet několik dalších balíčcích NuGet nainstalují taky Pokud již nejsou přítomny (například **Xamarin.Android.Support.Animated.Vector.Drawable**, **Xamarin.Android.Support.v4**, a **Xamarin.Android.Support.Vector.Drawable**). Další informace o instalaci balíčků NuGet najdete v tématu [návod: včetně NuGet ve vašem projektu](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough). 
 
-<a name="appcompat_theme" />
 
 ## <a name="use-an-appcompat-theme-and-toolbar"></a>Použijte motiv kompatibility aplikace a panelu nástrojů
 
 Knihovna kompatibility aplikace obsahuje několik `Theme.AppCompat` motivy, které lze použít na libovolnou verzi systému Android nepodporuje knihovně kompatibility aplikace. `ToolbarFun` Motiv aplikace příklad je odvozený od `Theme.Material.Light.DarkActionBar`, která není k dispozici v systému Android verze starší než typu Lupa. Proto `ToolbarFun` musí být přizpůsobena použít protějšku kompatibility aplikace pro tento motiv `Theme.AppCompat.Light.DarkActionBar`. Navíc vzhledem k tomu `Toolbar` není k dispozici ve verzích systému Android starší než typu Lupa, jsme musí používat verzi kompatibility aplikace `Toolbar`. Proto musíte použít rozložení `android.support.v7.widget.Toolbar` místo `Toolbar`. 
 
-<a name="update_layouts" />
 
 ### <a name="update-layouts"></a>Aktualizace rozložení
 
@@ -91,7 +86,6 @@ Upravit **Resources/layout/toolbar.xml** a nahraďte jeho obsah následující k
 
 Všimněte si, že `?attr` hodnoty jsou už předponou `android:` (odvolat, který `?` zápis odkazuje na prostředek v aktuální motiv). Pokud `?android:attr` stále používaly tady by Android odkazovat hodnotu atributu ze probíhající platformy spíše než z knihovny kompatibility aplikace. Vzhledem k tomu, že v tomto příkladu `actionBarSize` definované knihovně kompatibility aplikace `android:` předpona je vyřazeno. Podobně `@android:style` se změní na `@style` tak, aby `android:theme` je atribut nastaven na motiv v knihovně kompatibility aplikace &ndash; `ThemeOverlay.AppCompat.Dark.ActionBar` tady je použita motiv místo `ThemeOverlay.Material.Dark.ActionBar`. 
 
-<a name="update_style" />
 
 ### <a name="update-the-style"></a>Aktualizace styl
 
@@ -113,7 +107,6 @@ Upravit **Resources/values/styles.xml** a nahraďte jeho obsah následující k�
 Názvy položek a motivu nadřazené v tomto příkladu jsou již s předponou `android:` vzhledem k tomu, že používáme knihovně kompatibility aplikace. Navíc motiv nadřazené se změní na verzi kompatibility aplikace `Light.DarkActionBar`. 
 
 
-<a name="update_menus" />
 
 ### <a name="update-menus"></a>Aktualizace nabídky
 
@@ -180,7 +173,6 @@ Podobně upravit **Resources/menu/edit_menus.xml** a nahraďte jeho obsah násle
 
 Jak tento obor názvů přepínač poskytují podporu pro `showAsAction` atribut na Android verze starší než 11 úroveň rozhraní API? Vlastní atribut `showAsAction` a všechny jeho možné hodnoty jsou zahrnuty v aplikaci při instalaci kompatibility aplikace NuGet. 
 
-<a name="subclass" />
 
 ## <a name="subclass-appcompatactivity"></a>Podtřída AppCompatActivity
 
@@ -208,7 +200,7 @@ Nakonec změňte Android minimální úroveň na předběžné typu Lupa hodnotu
 
 Sestavení aplikace a spusťte jej na předběžné typu Lupa zařízení nebo emulátoru systému Android. Následující snímek obrazovky ukazuje verze kompatibility aplikace **ToolbarFun** na Nexus 4 spuštěný KitKat (rozhraní API 19): 
 
-[![Úplné snímek obrazovky aplikace spuštěné na zařízení KitKat, jsou uvedeny oba panely nástrojů](toolbar-compatibility-images/02-running-on-kitkat-sml.png)](toolbar-compatibility-images/02-running-on-kitkat.png)
+[![Úplné snímek obrazovky aplikace spuštěné na zařízení KitKat, jsou uvedeny oba panely nástrojů](toolbar-compatibility-images/02-running-on-kitkat-sml.png)](toolbar-compatibility-images/02-running-on-kitkat.png#lightbox)
 
 Když knihovna kompatibility aplikace se používá, motivy není nutné přepnout na základě Android verze &ndash; knihovně kompatibility aplikace umožňuje zajistit konzistentní prostředí napříč všechny podporované verze systému Android. 
 

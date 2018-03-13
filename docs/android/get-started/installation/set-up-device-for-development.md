@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/21/2017
-ms.openlocfilehash: 6327c00253036f5ede8bf1934f56e6d4bb8f0ecd
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 64036af82ea49ad4d758a89767ff0da02eef094f
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="set-up-device-for-development"></a>Nastavit zařízení pro vývoj
 
@@ -28,13 +28,11 @@ Nyní pravděpodobně jste viděli skvělé nové aplikace spuštěné v emulát
 
 Každý z těchto kroků se budeme podrobněji v následujících částech.
 
-<a name="EnableDebugging" />
 
 ## <a name="enable-debugging-on-the-device"></a>Povolit ladění na zařízení
 
 Je možné použít k testování aplikace platformy Android žádné zařízení se systémem Android. Ale zařízení musí být správně nakonfigurovaná před ladění situace může nastat. Potřebný postup se mírně liší v závislosti na verzi Android spuštěné na zařízení.
 
-<a name="EnableDebuggingAndroid4" />
 
 ### <a name="android-40-to-android-41"></a>Android 4.0 Android 4.1
 
@@ -46,23 +44,21 @@ Pomocí následujících kroků je pro Android 4.0.x pro Android 4.1.x povoleno 
 
 Tento snímek obrazovky ukazuje **možnosti pro vývojáře** obrazovku na zařízení se systémem Android 4.0.3:
 
-[![Možnosti pro vývojáře](set-up-device-for-development-images/developer-options-sml.png)](set-up-device-for-development-images/developer-options.png)
+[![Možnosti pro vývojáře](set-up-device-for-development-images/developer-options-sml.png)](set-up-device-for-development-images/developer-options.png#lightbox)
 
-<a name="EnableDebuggingAndroid42" />
 
 ### <a name="android-42-and-higher"></a>Android 4.2 a vyšší
 
 Spouštění v systému Android 4.2 a vyšší, **možnosti pro vývojáře** ve výchozím nastavení je skrytý. Chcete-li k dispozici, přejděte na **Nastavení > o telefonu**a klepněte na **číslo sestavení** položky sedm časy a odhalit **možnosti pro vývojáře** karty:
 
-[![Počet položek sestavení](set-up-device-for-development-images/about-phone-sml.png)](set-up-device-for-development-images/about-phone.png)
+[![Počet položek sestavení](set-up-device-for-development-images/about-phone-sml.png)](set-up-device-for-development-images/about-phone.png#lightbox)
 
 Jednou **možnosti pro vývojáře** karta je k dispozici v části **Nastavení > systému**, otevřete ho na nich nastaveními vývojáře:
 
-[![Obrazovka nastavení vývojáře](set-up-device-for-development-images/developer3.png)](set-up-device-for-development-images/developer3.png)
+[![Obrazovka nastavení vývojáře](set-up-device-for-development-images/developer3.png)](set-up-device-for-development-images/developer3.png#lightbox)
 
 Toto je místo, kde zůstat zapnutý a povolit možnosti pro vývojáře například ladění USB.
 
-<a name="USB_Debugging" />
 
 ## <a name="install-usb-drivers"></a>Instalace ovladačů USB
 
@@ -71,13 +67,12 @@ Tento krok není nutný pro OS X. Jednoduše připojte zařízení Mac pomocí k
 Může být nutné k instalaci některé další ovladače, než počítač se systémem Windows rozpozná zařízení se systémem Android pomocí USB.
 
 > [!NOTE]
-> **Poznámka:** tyto kroky nastavení zařízení Google Nexus a jsou dostupné jako odkaz. Kroky pro konkrétní zařízení se může lišit, ale bude postupovat podle podobný Princip. Pokud máte potíže při, vyhledávání v Internetu pro vaše zařízení.
+> Tyto kroky nastavení zařízení Google Nexus a jsou uvedeny jako odkaz. Kroky pro konkrétní zařízení se může lišit, ale bude postupovat podle podobný Princip. Pokud máte potíže při, vyhledávání v Internetu pro vaše zařízení.
 
 Spustit **android.bat** aplikace v **[cesta instalace sady SDK pro Android] \tools** adresáře. Ve výchozím nastavení bude instalační program Xamarin.Android put SDK pro Android v následujícím umístění na počítači se systémem Windows:
 
     C:\Users\[username]\AppData\Local\Android\android-sdk
 
-<a name="Download_the_USB_Drivers" />
 
 ### <a name="download-the-usb-drivers"></a>Stáhněte si ovladače zařízení USB
 
@@ -86,7 +81,7 @@ Všechna ostatní zařízení s Androidem by měl používat [ovladač USB z jej
 
 Nainstalujte **ovladač USB Google** balíček spuštěním Android SDK Manager a rozšíření **funkce** složky, jak je vidět na snímku obrazovky postupujte podle kroků:
 
-[![Balíček ovladačů USB Google vybrané](set-up-device-for-development-images/usbdriverpackage.png)](set-up-device-for-development-images/usbdriverpackage.png)
+[![Balíček ovladačů USB Google vybrané](set-up-device-for-development-images/usbdriverpackage.png)](set-up-device-for-development-images/usbdriverpackage.png#lightbox)
 
 Zkontrolujte **ovladač USB Google** pole a klikněte na tlačítko **nainstalovat** tlačítko.
 Soubory ovladače se stáhnou do následujícího umístění:
@@ -98,7 +93,6 @@ Výchozí cesta pro Xamarin.Android instalace je:
     C:\Users\[username]\AppData\Local\Android\android-sdk\extras\google\usb_driver
 
 
-<a name="Installing_the_USB_Driver" />
 
 ### <a name="installing-the-usb-driver"></a>Instalace ovladače USB
 
@@ -122,7 +116,6 @@ K instalaci ovladačů na systému Windows 7:
 
 8.  Klikněte na tlačítko **Další** instalace ovladače.
 
-<a name="Windows_8" />
 
 ### <a name="installing-unverified-drivers-in-windows-8"></a>Instalace neověřené ovladače v systému Windows 8
 
@@ -140,7 +133,6 @@ Mohou být vyžadovány další kroky instalace neověřené ovladače v systém
 4.  **Instalace ovladačů zařízení** -nainstalovat ovladače zařízení, jak je popsáno výše.
 
 
-<a name="ConnectDevice" />
 
 ## <a name="connect-the-device-to-the-computer"></a>Připojení zařízení k počítači
 
@@ -150,7 +142,6 @@ Posledním krokem je připojení zařízení k počítači. Chcete-li to provés
 
 -   **Wi-Fi** -je možné se připojit zařízení se systémem Android do počítače bez použití kabelu USB přes Wi-Fi. Tento postup vyžaduje trochu další úsilí, ale může být užitečné, pokud neexistuje žádné kabelu USB nebo zařízení je daleko pro kabelu USB. Připojení přes Wi-Fi se budeme v další části.
 
-<a name="Debug_over_WiFi" />
 
 ### <a name="connecting-over-wifi"></a>Připojení přes Wi-Fi
 
@@ -186,7 +177,6 @@ Je možné požádat ADB seznam zařízení, která jsou připojená k počíta�
 
     adb devices
 
-<a name="Summary" />
 
 ## <a name="summary"></a>Souhrn
 

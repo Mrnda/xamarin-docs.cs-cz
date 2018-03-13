@@ -3,16 +3,16 @@ title: .XIb soubory
 description: "Tento článek se zabývá práci s .xib soubory vytvořené v Xcode na tvůrce rozhraní k vytváření a údržbě uživatelského rozhraní pro aplikaci Xamarin.Mac."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 675B9405-D9A7-49F0-94AD-417F10A71D11
+ms.assetid: 6AF3D216-448D-4B2D-9026-74E4FFF5923A
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 8ca187b86126c9a0f2d9931f63d75e99ac4d2b23
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
-ms.translationtype: HT
+ms.openlocfilehash: 9a4b8ac68da7bcb25ea55906e8fe060b7c7fdee9
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="xib-files"></a>.XIb soubory
 
@@ -27,7 +27,7 @@ Při práci s C# a rozhraní .NET v aplikaci Xamarin.Mac, máte přístup do ste
 
 Soubor .xib se používá v systému macOS k definování prvky vaší aplikace uživatelské rozhraní (například nabídky, Windows, zobrazení, popisky, textových polí), které se vytvářejí a spravují graficky v Xcode na rozhraní tvůrce.
 
-[![Příkladem spuštěné aplikaci](xib-images/intro01.png "příklad spuštěné aplikaci")](xib-images/intro01-large.png)
+[![Příkladem spuštěné aplikaci](xib-images/intro01.png "příklad spuštěné aplikaci")](xib-images/intro01-large.png#lightbox)
 
 V tomto článku vám nabídneme základní informace o práci se soubory .xib v aplikaci Xamarin.Mac. Vysoce navržený na spolupracovat [Hello, Mac](~/mac/get-started/hello-mac.md) článek nejprve, jak vysvětluje klíčové koncepty a techniky, které budeme používat v tomto článku.
 
@@ -43,7 +43,7 @@ V rámci Xcodu Apple vytvořil nástroj volat rozhraní tvůrce, který vám umo
 
 Když otevřete soubor .xib v Xcode ze sady Visual Studio pro Mac, otevře se **navigátoru projektů** na levé straně, **rozhraní hierarchie** a **rozhraní editoru** uprostřed a **vlastnosti & Nástroje** části na pravé straně:
 
-[![Komponenty rozhraní Xcode](xib-images/xcode03.png "součásti uživatelského rozhraní Xcode")](xib-images/xcode03-large.png)
+[![Komponenty rozhraní Xcode](xib-images/xcode03.png "součásti uživatelského rozhraní Xcode")](xib-images/xcode03-large.png#lightbox)
 
 Podívejme se na co každý z těchto částech Xcode nepodporuje a jak je bude používat k vytvoření rozhraní pro vaši aplikaci Xamarin.Mac.
 
@@ -75,7 +75,7 @@ Zpočátku je v této části téměř prázdný, ale pokud vyberete element v *
 
 V rámci **vlastnosti** části, se liší 8 *Inspector karty*, jak je znázorněno na následujícím obrázku:
 
-[![Přehled všech inspektoři](xib-images/xcode05.png "přehled všechny kontroly")](xib-images/xcode05-large.png)
+[![Přehled všech inspektoři](xib-images/xcode05.png "přehled všechny kontroly")](xib-images/xcode05-large.png#lightbox)
 
 Z zleva doprava jsou těchto karet:
 
@@ -123,17 +123,17 @@ Přepnout na používání .xib na základě uživatelského rozhraní, postupuj
 10. V **řešení Pad**, dvakrát klikněte **Info.plist** soubor otevřete pro úpravy.
 11. Vyberte `MainMenu` z **hlavní rozhraní** rozevíracího seznamu:
 
-    [![Nastavení v hlavní nabídce](xib-images/setup05.png "nastavení z hlavní nabídky")](xib-images/setup05-large.png)
+    [![Nastavení v hlavní nabídce](xib-images/setup05.png "nastavení z hlavní nabídky")](xib-images/setup05-large.png#lightbox)
 12. V **Pad řešení**, dvakrát klikněte **MainMenu.xib** soubor otevřete pro úpravy v Xcode na rozhraní tvůrce.
 13. V **knihovny Inspector**, typ `object` do pole hledání přetáhněte novou **objekt** na návrhovou plochu:
 
-    [![Úpravy v hlavní nabídce](xib-images/setup06.png "úpravy v hlavní nabídce")](xib-images/setup06-large.png)
+    [![Úpravy v hlavní nabídce](xib-images/setup06.png "úpravy v hlavní nabídce")](xib-images/setup06-large.png#lightbox)
 14. V **Identity Inspector**, zadejte `AppDelegate` pro **třída**:
 
-    [![Výběr aplikace delegáta](xib-images/setup07.png "výběr delegáta aplikace")](xib-images/setup07-large.png)
+    [![Výběr aplikace delegáta](xib-images/setup07.png "výběr delegáta aplikace")](xib-images/setup07-large.png#lightbox)
 15. Vyberte **vlastník souboru** z **rozhraní hierarchie**, přepněte do **Inspector připojení** a přetáhněte ji na řádku z delegátovi, aby se `AppDelegate` **Objekt** právě přidali do projektu:
 
-    [![Připojení aplikace delegáta](xib-images/setup08.png "připojení delegáta aplikace")](xib-images/setup08-large.png)
+    [![Připojení aplikace delegáta](xib-images/setup08.png "připojení delegáta aplikace")](xib-images/setup08-large.png#lightbox)
 16. Uložte změny a vrátit k sadě Visual Studio for Mac.
 
 Všechny tyto změny zavedené upravit **AppDelegate.cs** souboru a nastavit jej vypadat třeba takto:
@@ -168,13 +168,13 @@ namespace MacXib
 }
 ```
 
-Teď hlavní okno aplikace je definována v .xib (OS **X*- **I**rozhraní **B**uilder) automaticky zahrnutý v projektu při přidávání okno Řadiče. Chcete-li upravit návrh vašeho systému windows v **Pad řešení**, dvakrát klikněte na tlačítko **MainWindow.xib** souboru:
+Teď hlavní okno aplikace je definována v **.xib** automaticky zahrnutý v projektu při přidávání řadič okno. Chcete-li upravit návrh vašeho systému windows v **Pad řešení**, dvakrát klikněte na tlačítko **MainWindow.xib** souboru:
 
 ![Vyberte soubor MainWindow.xib](xib-images/edit01.png "výběru MainWindow.xib souboru")
 
 Otevře se okno návrhu v Xcode na rozhraní Tvůrce:
 
-[![Úpravy MainWindow.xib](xib-images/edit02.png "úpravy MainWindow.xib")](xib-images/edit02-large.png)
+[![Úpravy MainWindow.xib](xib-images/edit02.png "úpravy MainWindow.xib")](xib-images/edit02-large.png#lightbox)
 
 
 ### <a name="standard-window-workflow"></a>Standardní okno pracovního postupu
@@ -205,22 +205,22 @@ Příklad:
 
 1. V Xcode, přetáhněte ji **tlačítko** z **knihovny části**:
 
-    [![Výběrem tlačítka z knihovny](xib-images/xcode07.png "výběr tlačítka z knihovny")](xib-images/xcode07-large.png)
+    [![Výběrem tlačítka z knihovny](xib-images/xcode07.png "výběr tlačítka z knihovny")](xib-images/xcode07-large.png#lightbox)
 2. Vyřaďte tlačítko na **okno** v **rozhraní editoru**:
 
-    [![Přidání tlačítka do okna](xib-images/xcode08.png "přidání tlačítka do okna")](xib-images/xcode08-large.png)
+    [![Přidání tlačítka do okna](xib-images/xcode08.png "přidání tlačítka do okna")](xib-images/xcode08-large.png#lightbox)
 3. Klikněte na **název** vlastnost **atribut Inspector** a změňte název na tlačítko pro `Click Me`:
 
     ![Nastavení atributů tlačítko](xib-images/xcode09.png "nastavení atributů tlačítko")
 4. Přetáhněte **popisek** z **knihovny části**:
 
-    [![Výběr štítek v knihovně](xib-images/xcode10.png "výběru štítku v knihovně")](xib-images/xcode10-large.png)
+    [![Výběr štítek v knihovně](xib-images/xcode10.png "výběru štítku v knihovně")](xib-images/xcode10-large.png#lightbox)
 5. Vyřaďte popisek na **okno** vedle tlačítka na **rozhraní editoru**:
 
-    [![Přidání do okna štítek](xib-images/xcode11.png "přidání štítek do okna")](xib-images/xcode11-large.png)
+    [![Přidání do okna štítek](xib-images/xcode11.png "přidání štítek do okna")](xib-images/xcode11-large.png#lightbox)
 6. Získat popisovač vpravo na štítek a přetáhněte ji, dokud nebude u okraje okna:
 
-    [![Změna velikosti popisek](xib-images/xcode12.png "Změna velikosti popisku")](xib-images/xcode12-large.png)
+    [![Změna velikosti popisek](xib-images/xcode12.png "Změna velikosti popisku")](xib-images/xcode12-large.png#lightbox)
 7. S popiskem, vyberte ji v **rozhraní editoru**, přepnout **velikost Inspector**:
 
     ![Výběr Inspector velikost](xib-images/xcode13.png "výběr Inspector velikost")
@@ -256,7 +256,7 @@ Postupujte takto:
 2. Vyberte `NSWindowController` v návrhovou plochu.
 3. Přepnout **Identity Inspector** zobrazení a zadejte `WindowController` jako **název třídy**:
 
-    [![Úprava názvu třídy](xib-images/windowcontroller01.png "úpravy názvu – třída")](xib-images/windowcontroller01-large.png)
+    [![Úprava názvu třídy](xib-images/windowcontroller01.png "úpravy názvu – třída")](xib-images/windowcontroller01-large.png#lightbox)
 4. Uložte změny a vrátit k sadě Visual Studio pro Mac k synchronizaci.
 5. A **WindowController.cs** soubor bude přidán do projektu v **řešení Pad** v sadě Visual Studio pro Mac:
 
@@ -264,7 +264,7 @@ Postupujte takto:
 6. Znovu otevřete Storyboard v Tvůrci rozhraní pro Xcode.
 7. **WindowController.h** soubor bude k dispozici pro použití:
 
-    [![Odpovídající soubor .h v Xcode](xib-images/windowcontroller03.png "odpovídající soubor .h v Xcode")](xib-images/windowcontroller03-large.png)
+    [![Odpovídající soubor .h v Xcode](xib-images/windowcontroller03.png "odpovídající soubor .h v Xcode")](xib-images/windowcontroller03-large.png#lightbox)
 
 
 ### <a name="outlets-and-actions"></a>Výstupy a akcí
@@ -278,7 +278,7 @@ V Xcode, výstupy a akce se přidají přímo v kódu pomocí *přetahování ř
 
 Pro vývojáře Xamarin.Mac to znamená, přetáhněte do souborů se zakázaným inzerováním jazyka Objective-C, které odpovídají do souboru C# kde chcete vytvořit výstupu nebo akce. Visual Studio pro Mac vytvořit soubor s názvem **MainWindow.h** jako součást shim projektu Xcode vygeneroval Tvůrce rozhraní:
 
-[![Příklad souboru .h v Xcode](xib-images/xcode16.png "příklad souboru .h v Xcode")](xib-images/xcode16-large.png)
+[![Příklad souboru .h v Xcode](xib-images/xcode16.png "příklad souboru .h v Xcode")](xib-images/xcode16-large.png#lightbox)
 
 Tento soubor se zakázaným inzerováním .h zrcadlí **MainWindow.designer.cs** , se automaticky přidá do projektu Xamarin.Mac při novou `NSWindow` je vytvořena. Tento soubor se použije k synchronizovat změny provedené při Tvůrce rozhraní a je, kde vytvoříme výstupy a akce, aby se zveřejňují prvky uživatelského rozhraní pro kód C#.
 
@@ -291,22 +291,22 @@ Postupujte takto:
 
 1. V Xcode na nejvíce vpravo nahoře dolním rohu obrazovky klikněte na tlačítko **dvojitý kroužek** tlačítko Otevřít **pomocníka Editor**:
 
-    [![Výběr editoru pomocníka](xib-images/outlet01.png "výběr pomocníka editoru")](xib-images/outlet01-large.png)
+    [![Výběr editoru pomocníka](xib-images/outlet01.png "výběr pomocníka editoru")](xib-images/outlet01-large.png#lightbox)
 2. Xcode dojde k přepnutí do režimu zobrazení rozdělení s **rozhraní editoru** na jedné straně a **Editor kódu** na straně druhé.
 3. Všimněte si, že automaticky vybral Xcode **MainWindowController.m** v soubor **Editor kódu**, což je nesprávný. Pokud jste si z našich zabývat výstupy a akce se výše, je potřeba mít **MainWindow.h** vybrané.
 4. V horní části **Editor kódu** klikněte na **automatické propojení** a vyberte **MainWindow.h** souboru:
 
-    [![Výběr souboru správné h](xib-images/outlet02.png "výběr souboru správné h")](xib-images/outlet02-large.png)
+    [![Výběr souboru správné h](xib-images/outlet02.png "výběr souboru správné h")](xib-images/outlet02-large.png#lightbox)
 5. Xcode by měl mít nyní vybrán správný soubor:
 
-    [![Vybraný správný soubor](xib-images/outlet03.png "vybrán správný soubor")](xib-images/outlet03-large.png)
+    [![Vybraný správný soubor](xib-images/outlet03.png "vybrán správný soubor")](xib-images/outlet03-large.png#lightbox)
 6. **Poslední krok je velmi důležité!** Pokud nemáte vybrán správný soubor, nebude možné vytvořit výstupy a akce nebo se zveřejní nesprávný třídy v jazyce C#!
 7. V **rozhraní editoru**, podržte klávesu **řízení** klíče na klávesnici a klepnutím přetažením popisek jsme vytvořili výše do editoru kódu právě níže `@interface MainWindow : NSWindow { }` kódu:
 
-    [![Přetažení k vytvoření nové výstupu](xib-images/outlet04.png "přetažení k vytvoření nové výstupu")](xib-images/outlet04-large.png)
+    [![Přetažení k vytvoření nové výstupu](xib-images/outlet04.png "přetažení k vytvoření nové výstupu")](xib-images/outlet04-large.png#lightbox)
 8. Zobrazí se dialogové okno. Ponechte **připojení** nastavena na výstupu a zadejte `ClickedLabel` pro **název**:
 
-    [![Nastavení vlastností výstupu](xib-images/outlet05.png "nastavení vlastností výstupu")](xib-images/outlet05-large.png)
+    [![Nastavení vlastností výstupu](xib-images/outlet05.png "nastavení vlastností výstupu")](xib-images/outlet05-large.png#lightbox)
 9. Klikněte **Connect** tlačítko pro vytvoření výstupu:
 
     ![Dokončené výstupu](xib-images/outlet06.png "dokončené výstupu")
@@ -322,13 +322,13 @@ Postupujte takto:
 1. Zkontrolujte, zda jsme jsou pořád ještě v **pomocníka Editor** a **MainWindow.h** souboru se zobrazí na **Editor kódu**.
 2. V **rozhraní editoru**, podržte klávesu **řízení** klíče na klávesnici a přetáhněte klikněte na tlačítko jsme vytvořili výše do editoru kódu právě níže `@property (assign) IBOutlet NSTextField *ClickedLabel;` kódu:
 
-    [![Přetažení vytvořit akce](xib-images/action01.png "přetažení vytvořit akce")](xib-images/action01-large.png)
+    [![Přetažení vytvořit akce](xib-images/action01.png "přetažení vytvořit akce")](xib-images/action01-large.png#lightbox)
 3. Změna **připojení** typ akce:
 
-    [![Vyberte typ akce](xib-images/action02.png "vyberte typ akce")](xib-images/action02-large.png)
+    [![Vyberte typ akce](xib-images/action02.png "vyberte typ akce")](xib-images/action02-large.png#lightbox)
 4. Zadejte `ClickedButton` jako **název**:
 
-    [![Konfigurace akce](xib-images/action03.png "konfigurace akce")](xib-images/action03-large.png)
+    [![Konfigurace akce](xib-images/action03.png "konfigurace akce")](xib-images/action03-large.png#lightbox)
 5. Klikněte **Connect** tlačítko vytvořte akce:
 
     ![Dokončené akce](xib-images/action04.png "dokončené akce")
@@ -341,7 +341,7 @@ Pomocí uživatelského rozhraní drátové nahoru a viditelné na kód C# přep
 
 Vytvoření uživatelského rozhraní a jeho prvky uživatelského rozhraní, které jsou zpřístupněny kód prostřednictvím výstupy a akce jste připravení psát kód, který Oživte vašeho programu. Například otevřete **MainWindow.cs** soubor pro úpravy poklepáním v **řešení Pad**:
 
-[![Soubor MainWindow.cs](xib-images/code01.png "MainWindow.cs souboru")](xib-images/code01-large.png)
+[![Soubor MainWindow.cs](xib-images/code01.png "MainWindow.cs souboru")](xib-images/code01-large.png#lightbox)
 
 A přidejte následující kód, který `MainWindow` třídy pro práci s Ukázka výstupu, který jste vytvořili výše:
 
@@ -407,7 +407,7 @@ Když přepnete zpět do Visual Studio pro Mac od Xcode, všechny změny, které
 
 Pokud jste vybrali **MainWindow.designer.cs** v **řešení Pad** budete moci zobrazit, jak naše výstupu a akce mají byly připojeny v našem kódu C#:
 
-[![Synchronizace změn s Xcode](xib-images/sync01.png "synchronizace změn s Xcode")](xib-images/sync01-large.png)
+[![Synchronizace změn s Xcode](xib-images/sync01.png "synchronizace změn s Xcode")](xib-images/sync01-large.png#lightbox)
 
 Všimněte si jak dvě definice v **MainWindow.designer.cs** souboru:
 
@@ -447,10 +447,10 @@ Pokud chcete přidat nové okno, postupujte takto:
 3. Zadejte `PreferencesWindow` pro **název** a klikněte na **nový** tlačítko.
 4. Dvakrát klikněte **PreferencesWindow.xib** soubor otevřete pro úpravy v Tvůrci rozhraní:
 
-    [![Úpravy okna v Xcode](xib-images/new02.png "úpravy okna v Xcode")](xib-images/new02-large.png)
+    [![Úpravy okna v Xcode](xib-images/new02.png "úpravy okna v Xcode")](xib-images/new02-large.png#lightbox)
 5. Vaše rozhraní návrhu:
 
-    [![Návrh rozložení windows](xib-images/new03.png "návrh rozložení windows")](xib-images/new03-large.png)
+    [![Návrh rozložení windows](xib-images/new03.png "návrh rozložení windows")](xib-images/new03-large.png#lightbox)
 6. Uložte změny a vrátit k sadě Visual Studio pro Mac k synchronizaci s Xcode.
 
 Přidejte následující kód, který **AppDelegate.cs** zobrazíte nové okno:
@@ -488,7 +488,7 @@ Pokud chcete přidat nové zobrazení, postupujte takto:
 3. Zadejte `SubviewTable` pro **název** a klikněte na **nový** tlačítko.
 4. Dvakrát klikněte **SubviewTable.xib** soubor otevřete pro úpravy v Tvůrci rozhraní a návrhu, uživatelské rozhraní:
 
-    [![Navrhování nového zobrazení v Xcode](xib-images/view02.png "návrhu nové zobrazení v Xcode")](xib-images/view02-large.png)
+    [![Navrhování nového zobrazení v Xcode](xib-images/view02.png "návrhu nové zobrazení v Xcode")](xib-images/view02-large.png#lightbox)
 5. Propojit všechny požadované akce a výstupy.
 6. Uložte změny a vrátit k sadě Visual Studio pro Mac k synchronizaci s Xcode.
 
@@ -529,7 +529,7 @@ public enum SubviewType
 
 Upravte soubor .xib okna, které se využívají zobrazení a jeho zobrazení. Přidat **vlastní zobrazení** který bude fungovat jako kontejner pro zobrazení po jeho načtení do paměti kód C# a zveřejněte ji do zásuvky volat `ViewContainer`:
 
-[![Vytváření požadované výstupu](xib-images/view03.png "vytváření požadované výstupu")](xib-images/view03-large.png)
+[![Vytváření požadované výstupu](xib-images/view03.png "vytváření požadované výstupu")](xib-images/view03-large.png#lightbox)
 
 Uložte změny a vrátit k sadě Visual Studio pro Mac k synchronizaci s Xcode.
 
@@ -577,7 +577,7 @@ DisplaySubview(new SubviewTableController(), SubviewType.TableView);
 
 Tím se vytvoří novou instanci třídy řadiče zobrazení pro nové zobrazení, který se má zobrazit, nastaví její typ (podle výčtu k projektu nepřidají) a používá `DisplaySubview` metoda přidat do třídy okna ve skutečnosti zobrazit. Příklad:
 
-[![Spuštění ukázkové aplikace](xib-images/view04.png "spuštění ukázkové aplikace")](xib-images/view04-large.png)
+[![Spuštění ukázkové aplikace](xib-images/view04.png "spuštění ukázkové aplikace")](xib-images/view04-large.png#lightbox)
 
 Další informace o práci s Windows v aplikaci Xamarin.Mac, najdete v tématu naše [Windows](~/mac/user-interface/window.md) a [v dialogových oknech](~/mac/user-interface/dialog.md) dokumentaci.
 

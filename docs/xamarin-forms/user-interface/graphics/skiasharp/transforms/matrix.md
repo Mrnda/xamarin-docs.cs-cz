@@ -4,14 +4,15 @@ description: "Ponořit hlouběji do SkiaSharp transformací s univerzální tran
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 9EDED6A0-F0BF-4471-A9EF-E0D6C5954AE4
 author: charlespetzold
 ms.author: chape
 ms.date: 04/12/2017
-ms.openlocfilehash: 85402768990869a2121cdea5ab7d232d80d64ed2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9d5e65abe675ded48e9239f2cd10ceed4a7c3a52
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="matrix-transforms"></a>Maticové transformace
 
@@ -401,7 +402,7 @@ public class PathTransformPage : ContentPage
 
 Zobrazí se v levém horním rohu na plátno:
 
-[![](matrix-images/pathtransform-small.png "Trojitá snímek obrazovky stránky cesta transformace")](matrix-images/pathtransform-large.png "Trojitá snímek obrazovky stránky cesta transformace")
+[![](matrix-images/pathtransform-small.png "Trojitá snímek obrazovky stránky cesta transformace")](matrix-images/pathtransform-large.png#lightbox "Trojitá snímek obrazovky stránky cesta transformace")
 
 Konstruktor tohoto programu se vztahuje matice cestu s následující volání:
 
@@ -588,7 +589,7 @@ public partial class ShowAffineMatrixPage : ContentPage
 
 Na obrazovce iOS níže znázorňuje bitovou mapu, když prvním načtení stránky, když ho dvou obrazovkách zobrazit po některé manipulaci:
 
-[![](matrix-images/showaffinematrix-small.png "Trojitá snímek obrazovky stránky zobrazit Afinní matici")](matrix-images/showaffinematrix-large.png "Trojitá snímek obrazovky stránky zobrazit Afinní matici")
+[![](matrix-images/showaffinematrix-small.png "Trojitá snímek obrazovky stránky zobrazit Afinní matici")](matrix-images/showaffinematrix-large.png#lightbox "Trojitá snímek obrazovky stránky zobrazit Afinní matici")
 
 I když se zdá být jako body touch přetáhněte rozích rastrový obrázek, který je pouze dojem. Matice počítá z bodů touch transformuje bitovou mapu, aby rozích se shodovat s body dotykového ovládání.
 

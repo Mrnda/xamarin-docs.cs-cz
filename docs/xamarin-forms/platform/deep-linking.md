@@ -5,20 +5,24 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 410C5D19-AA3C-4E0D-B799-E288C5803226
 ms.technology: xamarin-forms
+ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/11/2016
-ms.openlocfilehash: b2decf1331764ed6b1696126d8b23318e329e0c7
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 38d3b6da0dd33e038f2d50209280f2983faf6013
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="application-indexing-and-deep-linking"></a>Indexování aplikace a přímé propojení
 
 _Indexování aplikace umožňuje aplikacím, které by jinak zapomenete po pár používá zůstane relevantní, ve které jsou uvedeny ve výsledcích hledání. Přímé propojení umožňuje aplikacím reagovat na výsledek hledání, který obsahuje data aplikací, obvykle tak, že přejdete na stránku na něj odkazovat z přímý odkaz. Tento článek ukazuje, jak používat aplikace indexování a hloubkové propojení, aby se obsah aplikace Xamarin.Forms prohledávatelné na zařízení iOS a Android._
 
-## <a name="overview"></a>Přehled
+> [!VIDEO https://youtube.com/embed/UJv4jUs7cJw]
+
+**Hluboké propojení s Xamarin.Forms a Azure, pomocí [univerzity Xamarin](https://university.xamarin.com/)**
+
 
 Indexování aplikaci Xamarin.Forms a přímé propojení poskytují rozhraní API pro publikování metadat pro aplikaci indexování jak uživatelé přecházejí mezi aplikací. Indexované obsahu pak lze vyhledat u vyhledávání Spotlight, Google hledání nebo vyhledávání na webu. Klepnutím na výsledek hledání, který obsahuje přímý odkaz na bude platit na událost, která lze provádět pomocí aplikace a obvykle se používá přejít na stránku na něj odkazovat z přímý odkaz na.
 
@@ -31,7 +35,7 @@ Každý `TodoItem` je indexovaný instancí vytvořený uživatelem. Specifické
 Další informace o použití databáze SQLite najdete v tématu [práci s místní databází](~/xamarin-forms/app-fundamentals/databases.md).
 
 > [!NOTE]
-> **Poznámka:**: Xamarin.Forms aplikace indexování a hloubky propojení funkce je dostupná pouze na iOS a Android platformy a vyžaduje iOS 9 a rozhraní API 23 v uvedeném pořadí.
+> Indexování aplikaci Xamarin.Forms přímým propojení funkce je dostupná pouze na iOS a Android platformy a vyžaduje iOS 9 a rozhraní API 23 v uvedeném pořadí.
 
 ## <a name="setup"></a>Instalace
 
@@ -106,7 +110,7 @@ Application.Current.AppLinks.RegisterLink (appLink);
 Tím se přidá [ `AppLinkEntry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AppLinkEntry/) instance aplikace [ `AppLinks` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.AppLinks/) kolekce.
 
 > [!NOTE]
-> **Poznámka:**: `RegisterLink` metody lze také aktualizovat obsah, který je byl indexovaný pro stránku.
+> `RegisterLink` Metody lze také aktualizovat obsah, který je byl indexovaný pro stránku.
 
 Jednou [ `AppLinkEntry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AppLinkEntry/) instance byl registrován pro indexování, může se objevit ve výsledcích hledání. Následující snímek obrazovky ukazuje indexované obsahu, které jsou uvedeny ve výsledcích hledání na platformě iOS:
 
@@ -123,7 +127,7 @@ Application.Current.AppLinks.DeregisterLink (appLink);
 Odebere se tak [ `AppLinkEntry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AppLinkEntry/) instance z aplikace [ `AppLinks` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.AppLinks/) kolekce.
 
 > [!NOTE]
-> **Poznámka:**: na Android není možné odebrání indexované obsahu z výsledků vyhledávání.
+> V systému Android není možné odebrání indexované obsahu z výsledků vyhledávání.
 
 <a name="responding" />
 
@@ -211,7 +215,7 @@ Kromě toho můžete zadat hodnoty pro následující klíče:
 - `shouldAddToPublicIndex` – `string` buď `true` nebo `false` který určuje, zda přidání indexované obsahu do veřejného cloudu index společnosti Apple, která mohou být poskytovány uživatelům, kteří nenainstalovali aplikace na svém zařízení s iOS. Ale stejně, protože obsah je nastavená pro veřejné indexování, neznamená, že ho bude automaticky přidat do indexu veřejného cloudu společnosti Apple. Další informace najdete v tématu [veřejné indexování pro hledání](~/ios/platform/search/nsuseractivity.md). Všimněte si, že tento klíč musí být nastavena na `false` při přidávání osobních údajů [ `KeyValues` ](https://developer.xamarin.com/api/property/Xamarin.Forms.IAppLinkEntry.KeyValues/) kolekce.
 
 > [!NOTE]
-> **Poznámka:**: `KeyValues` kolekce se nepoužije na platformě Android.
+> `KeyValues` Kolekce se nepoužije na platformě Android.
 
 Další informace o předání najdete v tématu [Úvod k předání](~/ios/platform/handoff.md).
 

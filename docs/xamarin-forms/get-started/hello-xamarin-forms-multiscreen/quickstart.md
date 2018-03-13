@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/06/2018
-ms.openlocfilehash: 6a24ff05ae2a2c2368650c368cc408f0219ce21e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5457cb3a80208311bac66a0232afd9cb4dc02c87
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarinforms-multiscreen-quickstart"></a>Rychlý start Multiobrazovka Xamarin.Forms
 
 Tento rychlý start ukazuje, jak rozšířit aplikace Phoneword přidat druhý obrazovky ke sledování historie volání pro aplikaci. Konečné aplikace je zobrazena níže:
 
-[![](quickstart-images/intro-app-examples-sml.png "Aplikace Phoneword")](quickstart-images/intro-app-examples.png "Phoneword aplikace")
+[![](quickstart-images/intro-app-examples-sml.png "Aplikace Phoneword")](quickstart-images/intro-app-examples.png#lightbox "Phoneword aplikace")
 
 Rozšíření aplikace Phoneword následujícím způsobem:
 
@@ -192,7 +192,7 @@ Rozšíření aplikace Phoneword následujícím způsobem:
             </StackLayout>
         </ContentPage>      
 
-  Uložit změny do **CallHistoryPage.xaml** výběrem **soubor > Uložit** (nebo stisknutím kombinace kláves **&#8984; + S**) a zavřete soubor.
+  Uložit změny do **CallHistoryPage.xaml** výběrem **soubor > Uložit** (nebo stisknutím kombinace kláves  **&#8984; + S**) a zavřete soubor.
 
 1. V **řešení Pad**, dvakrát klikněte na **App.xaml.cs** a otevře se:
 
@@ -221,7 +221,7 @@ Rozšíření aplikace Phoneword následujícím způsobem:
             }
         }
 
-  Uložit změny do **App.xaml.cs** výběrem **soubor > Uložit** (nebo stisknutím kombinace kláves **&#8984; + S**) a zavřete soubor.
+  Uložit změny do **App.xaml.cs** výběrem **soubor > Uložit** (nebo stisknutím kombinace kláves  **&#8984; + S**) a zavřete soubor.
 
 1. V **řešení Pad**, dvakrát klikněte na **MainPage.xaml** a otevře se:
 
@@ -239,7 +239,7 @@ Rozšíření aplikace Phoneword následujícím způsobem:
                   Clicked="OnCallHistory" />
         </StackLayout>
 
-  Uložit změny do **MainPage.xaml** výběrem **soubor > Uložit** (nebo stisknutím kombinace kláves **&#8984; + S**) a zavřete soubor.
+  Uložit změny do **MainPage.xaml** výběrem **soubor > Uložit** (nebo stisknutím kombinace kláves  **&#8984; + S**) a zavřete soubor.
 
 1. V **řešení Pad**, dvakrát klikněte na **MainPage.xaml.cs** a otevře se:
 
@@ -274,9 +274,9 @@ Rozšíření aplikace Phoneword následujícím způsobem:
             }
         }
 
-  Uložit změny do **MainPage.xaml.cs** výběrem **soubor > Uložit** (nebo stisknutím kombinace kláves **&#8984; + S**) a zavřete soubor.
+  Uložit změny do **MainPage.xaml.cs** výběrem **soubor > Uložit** (nebo stisknutím kombinace kláves  **&#8984; + S**) a zavřete soubor.
 
-1. V sadě Visual Studio pro Mac, vyberte **sestavení > sestavení všechny** položku nabídky (nebo stiskněte klávesu **&#8984; + B**). Aplikace bude sestavení a zobrazí se zpráva o úspěšném provedení v sadě Visual Studio pro Mac nástrojů:
+1. V sadě Visual Studio pro Mac, vyberte **sestavení > sestavení všechny** položku nabídky (nebo stiskněte klávesu  **&#8984; + B**). Aplikace bude sestavení a zobrazí se zpráva o úspěšném provedení v sadě Visual Studio pro Mac nástrojů:
 
   ![](quickstart-images/xs/build-successful.png "Sestavení úspěšné")
 

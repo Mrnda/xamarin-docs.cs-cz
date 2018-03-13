@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 67bd1caf26c441e2a89def41ce3189b0dd67d7b1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: dc41c70495e40235d7acffa56c1255bfd074ca0a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="advanced-manual-real-world-example"></a>Rozšířené (ruční) příklad reálného
 
@@ -130,7 +130,7 @@ Zjistíte, `-scope` argument je často volitelná implementovaná knihovnám té
 
 Kromě toho jsme zadali `-c -Ibuild/headers`. Za prvé `-c` argument určuje cíl Sharpie zastavení interpretace argumenty příkazového řádku a předávat všechny následné argumenty _přímo do kompilátoru clang_. Proto `-Ibuild/Headers` je argumentem kompilátoru clang obsahující pokyn clang k vyhledání zahrnuje v části `build/Headers`, což je bydlišti hlavičky protokolu POP. Bez tento argument clang vědět, kde najít soubory, `POP.h` je `#import`ing. _Téměř všechny "problémy" s použitím Sharpie cíl povaří, aby se nad tím, co mají být předána do clang_.
 
-###<a name="completing-the-binding"></a>Dokončení vazby
+### <a name="completing-the-binding"></a>Dokončení vazby
 
 Cíle Sharpie má nyní generování `Binding/ApiDefinitions.cs` a `Binding/StructsAndEnums.cs` soubory.
 

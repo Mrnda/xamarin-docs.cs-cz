@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: b1eb886685597e671dccf70063c34e102ce2cac9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b9523d76c04dae97b74744fbe2bd6bc7022c3194
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="using-sqlitenet"></a>Pomocí SQLite.NET
 
@@ -21,7 +21,7 @@ SQLite.NET knihovny, která doporučuje Xamarin je velmi základní ORM, který 
 
 Zahrnout knihovně SQLite.NET aplikace Xamarin, přidejte [balíček SQLite.net PCL NuGet](https://www.nuget.org/packages/sqlite-net-pcl/) pomocí projektu **SQLite net PCL** balíček NuGet:
 
-[ ![Balíček SQLite.NET NuGet](using-sqlite-orm-images/image1a-sml.png "balíček SQLite.NET NuGet")](using-sqlite-orm-images/image1a.png)
+[![Balíček SQLite.NET NuGet](using-sqlite-orm-images/image1a-sml.png "balíček SQLite.NET NuGet")](using-sqlite-orm-images/image1a.png#lightbox)
 
 Až budete mít k dispozici SQLite.NET knihovny, postupujte podle tyto tři kroky ji používat pro přístup k databázi:
 
@@ -185,7 +185,7 @@ foreach (var s in stocksStartingWithA) {
 ```
 
 > [!NOTE]
-> **Poznámka:** při psaní příkazů SQL přímo vytvoření závislosti na názvy tabulek a sloupců v databázi, která byla vygenerována z vaší třídy a jejich atributy. Pokud změníte tyto názvy ve vašem kódu nezapomeňte aktualizovat všechny ručně psaného příkazů SQL.
+> Při psaní příkazů SQL přímo vytvoření závislosti na názvy tabulek a sloupců v databázi, která byla vygenerována z vaší třídy a jejich atributy. Pokud změníte tyto názvy ve vašem kódu nezapomeňte aktualizovat všechny ručně psaného příkazů SQL.
 
 ### <a name="deleting-an-object"></a>Odstranění objektu
 

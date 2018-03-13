@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: ea8335348416dc00074d83e09b74521da7abcb66
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5f33d4c9d826085af3fccb3140bfc70216f40e46
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="getting-started-with-c"></a>Začínáme s C
 
@@ -24,7 +24,7 @@ Použití rozhraní .NET vkládání s C budete potřebovat spuštěný počíta
 * Xcode 8.3.2 nebo novější
 
 * Windows 7, 8, 10 nebo novější
-* Visual Studio 2013 nebo novější
+* Visual Studio 2015 nebo novější
 
 * [Mono](http://www.mono-project.com/download/)
 

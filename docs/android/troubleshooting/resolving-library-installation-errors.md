@@ -7,12 +7,12 @@ ms.assetid: 2AE68ACE-8496-445D-BF17-5E4097D4AE35
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 2df101615ed512d362fc065a1bb7080f3fd3bb33
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 5589d512f9a4ee9c1148810f36fee12d561f725c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="resolving-library-installation-errors"></a>Řešení chyb instalace knihovny
 
@@ -23,7 +23,6 @@ _V některých případech může se zobrazit chyby při instalaci Android, podp
 Při sestavování projektu aplikace Xamarin.Android, může se zobrazit chyby sestavení když Visual Studio nebo Visual Studio pro Mac pokus o stažení a instalace závislostí knihoven. Mnoho z těchto chyb jsou způsobeny problémy se síťovým připojením, došlo k poškození souboru nebo problémy se správou verzí. Tato příručka popisuje nejběžnějších chyb instalace podpory knihovny a poskytuje postup pro řešení těchto problémů a získání projektu aplikace vytváření znovu. 
 
  
-<a name="m2repository" />
  
 ## <a name="errors-while-downloading-m2repository"></a>Chyby při stahování m2Repository
 
@@ -36,7 +35,6 @@ Download failed. Please download https://dl-ssl.google.com/android/repository/an
 V tomto příkladu je pro **android\_m2repository\_r16**, ale mohou zobrazit tato chybová zpráva stejné pro jinou verzi, jako **android\_m2repository\_r18**  nebo **android\_m2repository\_r25**. 
 
 
-<a name="automatic" /> 
 
 ### <a name="automatic-recovery-from-m2repository-errors"></a>Automatické obnovení z m2repository chyb 
 
@@ -50,11 +48,11 @@ Tento problém lze napravit často odstranění problematické knihovně a znovu
 
 2. Vyhledejte složku knihovny a verze odpovídající chybovou zprávu. Například se nachází v složce knihovny a verze pro výše uvedené chybovou zprávu **Android.Support.v4\\22.2.1**:
 
-    [![Příklad umístění složky pro 22.2.1 knihovnu podpory](resolving-library-installation-errors-images/01-example-location.png)](resolving-library-installation-errors-images/01-example-location.png)
+    [![Příklad umístění složky pro 22.2.1 knihovnu podpory](resolving-library-installation-errors-images/01-example-location.png)](resolving-library-installation-errors-images/01-example-location.png#lightbox)
 
 3. Odstraňte obsah složky verze. Nezapomeňte odebrat **.zip** souboru a taky **obsah** a **embedded** podadresáře v této složce. Pro příklad chybové zprávy uvedené výše, soubory a podadresáře vidět na tomto snímku obrazovky (**obsah**, **embedded**, a **android_m2repository_r16.zip**) se odstranit:
 
-    [![Příklad obsah 22.2.1 podporu složku knihovny](resolving-library-installation-errors-images/02-example-folder-vs.png)](resolving-library-installation-errors-images/02-example-folder-vs.png)
+    [![Příklad obsah 22.2.1 podporu složku knihovny](resolving-library-installation-errors-images/02-example-folder-vs.png)](resolving-library-installation-errors-images/02-example-folder-vs.png#lightbox)
 
    Všimněte si, že je potřeba odstranit *celý* obsah této složky. I když tato složka může obsahovat původně "chybí" **android\_m2repository\_r16.zip** souboru tento soubor pravděpodobně částečně stažené nebo je poškozený.
 
@@ -63,7 +61,6 @@ Tento problém lze napravit často odstranění problematické knihovně a znovu
 Ve většině případů bude tyto kroky vyřešte chyby sestavení a možné pokračovat. Pokud odstraníte tuto knihovnu nevyřeší chyby sestavení, musíte ručně stáhnout a nainstalovat **android\_m2repository\_r_nn_.zip** souboru, jak je popsáno v následující části. 
 
 
-<a name="download" /> 
 
 ### <a name="manually-downloading-m2repository"></a>Ručně stahování m2repository
 
@@ -119,13 +116,11 @@ Pokud jste se pokusili pomocí automatického obnovení kroků výše a stále m
 
     Například následující snímek obrazovky ukazuje výsledek při **android\_m2repository\_r16.zip** dojde ke stažení a přejmenován na hodnotu hash MD5 jeho adresa URL pro stahování v systému Windows:
 
-    [![Příkladem je přejmenován na 0595E577D19D31708195A83087881EE6.zip r16.zip úložiště](resolving-library-installation-errors-images/03-md5-rename-vs.png)](resolving-library-installation-errors-images/03-md5-rename-vs.png)
+    [![Příkladem je přejmenován na 0595E577D19D31708195A83087881EE6.zip r16.zip úložiště](resolving-library-installation-errors-images/03-md5-rename-vs.png)](resolving-library-installation-errors-images/03-md5-rename-vs.png#lightbox)
 
 
 Pokud tento postup není vyřešit chyby sestavení, je nutné ručně stáhnout **android\_m2repository\_r_nn_.zip** souboru, rozbalte ho a nainstalujte její obsah, jak je popsáno v následující části. 
 
-
-<a name="install" /> 
 
 ### <a name="manually-downloading-and-installing-m2repository-files"></a>Ruční stažení a instalaci souborů m2repository
 
@@ -140,36 +135,35 @@ Použijte následující postup ke stažení **m2repository** a nainstalujte jej
 1.  Odstraňte obsah složky knihovny odpovídající chybovou zprávu. Ve výše uvedené chybová zpráva by například odstranit obsah **C:\\uživatelé\\***uživatelské jméno***\\data aplikací\\místní\\Xamarin\\ Android.Support.v4\\23.1.1.0**. 
     Jak je popsáno výše, je nutné odstranit celý obsah tohoto adresáře:
 
-    [![Odstranění obsahu, vložených a android_m2repository složek z 23.1.1.0 složky](resolving-library-installation-errors-images/04-delete-contents-vs.png)](resolving-library-installation-errors-images/04-delete-contents-vs.png)
+    [![Odstranění obsahu, vložených a android_m2repository složek z 23.1.1.0 složky](resolving-library-installation-errors-images/04-delete-contents-vs.png)](resolving-library-installation-errors-images/04-delete-contents-vs.png#lightbox)
 
 2.  Stažení **android\_m2repository\_r_nn_.zip** soubor z Google, která odpovídá chyba zprávy (viz tabulka v předchozí části pro odkazy).
 
 3.  Extrahování to **.zip** archivu do libovolného umístění (například stolní počítače). To by měl vytvořit adresář, který odpovídá názvu **.zip** archivu. V tomto adresáři by měl zjistit podadresář s názvem **m2repository**: 
 
-    [![nalezena ve složce m2repository extrahovat archivu zip](resolving-library-installation-errors-images/05-m2repository-vs.png)](resolving-library-installation-errors-images/05-m2repository-vs.png)
+    [![nalezena ve složce m2repository extrahovat archivu zip](resolving-library-installation-errors-images/05-m2repository-vs.png)](resolving-library-installation-errors-images/05-m2repository-vs.png#lightbox)
 
 4.  V adresáři verzí knihovny, která vyprázdní v kroku 1, znovu vytvořit **obsah** a **embedded** podadresářů. Například následující snímek obrazovky ukazuje **obsah** a **embedded** vytváří v podadresářích adresáře **23.1.1.0** složku pro **android \_m2repository\_r25.zip**: 
 
-    [![Vytváření obsahu a embedded složek v 23.1.1.0 složky](resolving-library-installation-errors-images/06-recreate-folders-vs.png)](resolving-library-installation-errors-images/06-recreate-folders-vs.png)
+    [![Vytváření obsahu a embedded složek v 23.1.1.0 složky](resolving-library-installation-errors-images/06-recreate-folders-vs.png)](resolving-library-installation-errors-images/06-recreate-folders-vs.png#lightbox)
 
 5.  Kopírování **m2repository** z extrahované **.zip** do **obsah** adresář, který jste vytvořili v předchozím kroku: 
 
-    [![Snímek obrazovky m2repository zkopírován do složky 23.1.1.0/content](resolving-library-installation-errors-images/07-copied-m2repository-vs.png)](resolving-library-installation-errors-images/07-copied-m2repository-vs.png)
+    [![Snímek obrazovky m2repository zkopírován do složky 23.1.1.0/content](resolving-library-installation-errors-images/07-copied-m2repository-vs.png)](resolving-library-installation-errors-images/07-copied-m2repository-vs.png#lightbox)
 
 6.  V extrahované **.zip** adresáře, procházet a **m2repository\\com\\android\\podporu\\podporu v4** a otevřete složku odpovídající číslo verze vytvořili výše (v tomto příkladu **23.1.1**):
 
-    [![Příklad seznam soubory obsažené ve složce support-v4/23.1.1](resolving-library-installation-errors-images/08-zip-contents-vs.png)](resolving-library-installation-errors-images/08-zip-contents-vs.png)
+    [![Příklad seznam soubory obsažené ve složce support-v4/23.1.1](resolving-library-installation-errors-images/08-zip-contents-vs.png)](resolving-library-installation-errors-images/08-zip-contents-vs.png#lightbox)
 
 7.  Zkopírujte všechny soubory v tomto adresáři **embedded** adresář vytvořený v kroku 4:
 
-    [![Příklad zkopírován do složky 23.1.1.0/embedded souborů](resolving-library-installation-errors-images/09-copied-vs.png)](resolving-library-installation-errors-images/09-copied-vs.png)
+    [![Příklad zkopírován do složky 23.1.1.0/embedded souborů](resolving-library-installation-errors-images/09-copied-vs.png)](resolving-library-installation-errors-images/09-copied-vs.png#lightbox)
 
 8.  Ověřte, že se všechny soubory zkopírovaly přes. **Embedded** directory by měl nyní obsahovat soubory, jako například **.jar**, **.aar**, a **.pom**.
 
 V tomto okamžiku ručně instalaci chybějících součástí a projekt má sestavit bez chyb. Pokud ne, ověřte, že jste si stáhli **m2repository** **.zip** archivovat verze, který přesně odpovídá verzi v chybové zprávě a ověřte, zda jste nainstalovali v jeho obsah Opravte umístění, jak je popsáno v výše uvedené kroky. 
 
 
-<a name="summary" /> 
 
 ## <a name="summary"></a>Souhrn 
 

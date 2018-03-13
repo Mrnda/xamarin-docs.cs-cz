@@ -7,19 +7,17 @@ ms.assetid: 22EE5FBD-3240-4308-AF76-EF45D72936DE
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 01/22/2018
-ms.openlocfilehash: cf2211a572d45b7c29018d00f36cb8408484483f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 30b1cb280c2817f55d73e10ff8b4d7942011bf2c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="toolbar"></a>Panel nástrojů
 
 _Panelu nástrojů je součást panelu Akce, která přináší více flexibility než panelu výchozí akce: mohou být umístěny kdekoli v aplikaci, můžete změnit jeho velikost a barevné schéma, které se liší od motiv aplikace může použít. Navíc jednotlivých obrazovek aplikace může mít více panelů nástrojů._
 
-
-<a name="overview" />
  
 ## <a name="overview"></a>Přehled
 
@@ -27,7 +25,7 @@ Je důležité element libovolné Android aktivity *panelu akcí*. Na panelu akc
 
 `Toolbar` Pomůcky (zavedená v systému Android 5.0 typu Lupa) lze považovat za generalizace rozhraní panelu Akce &ndash; je určena k nahrazení panelu akcí. `Toolbar` Lze použít kdekoli v aplikaci rozvržení a je mnohem víc přizpůsobitelné než zobrazí panel Akce. Následující snímek obrazovky ukazuje vlastní `Toolbar` příklad vytvořené v tomto průvodci: 
 
-[![Příklad snímek obrazovky panel nástrojů s úpravy, uložte a přetečení položky nabídky](images/01-toolbar-sml.png)](images/01-toolbar.png)
+[![Příklad snímek obrazovky panel nástrojů s úpravy, uložte a přetečení položky nabídky](images/01-toolbar-sml.png)](images/01-toolbar.png#lightbox)
 
 Existuje několik důležitých rozdílů mezi `Toolbar` a na panelu akcí: 
 
@@ -72,7 +70,6 @@ Tento průvodce popisuje nejčastěji používaných `Toolbar` scénáře:
 -   Pomocí **podporu knihovna pro Android v7 kompatibility aplikace** knihovny (označují jako *kompatibility aplikace* ve zbývající části této příručky) k nasazení `Toolbar` v dřívějších verzích systému Android. 
 
  
-<a name="requirements" />
  
 ## <a name="requirements"></a>Požadavky
 

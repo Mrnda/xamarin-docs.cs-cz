@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/03/2017
-ms.openlocfilehash: a13de7fbb4b6e1f9fa2853ce599f3a038a5e4040
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: affe58d9276bd0b687089fb42a14ca964c570c9c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="complications"></a>Komplikace
 
@@ -24,7 +24,7 @@ Všimněte si, každá aplikace watchOS může mít pouze jeden komplikace.
 
 Začněte tím, že čtení [dokumentace společnosti Apple](https://developer.apple.com/library/watchos/documentation/General/Conceptual/WatchKitProgrammingGuide/ManagingComplications.html) k určení, zda je vhodný pro komplikace vaší aplikace. Existují 5 `CLKComplicationFamily` typy zobrazení můžete vybrat ze:
 
-[ ![](complications-images/all-complications-sml.png "Dostupné typy 5 CLKComplicationFamily: cyklické malé, modulární malé, modulární velký, využití, a to malé, využití, a to velké")](complications-images/all-complications.png)
+[![](complications-images/all-complications-sml.png "Dostupné typy 5 CLKComplicationFamily: cyklické malé, modulární malé, modulární velký, využití, a to malé, využití, a to velké")](complications-images/all-complications.png#lightbox)
 
 Aplikace můžete implementovat jenom jeden styl nebo všech pět, v závislosti na dat zobrazených.
 Můžete také podporují cestovní čas, zadáním hodnoty pro posledních nebo budoucí časy jako uživatel změní digitální Crown.
@@ -83,7 +83,7 @@ Postupujte podle [zápis komplikace](#writing) pokyny pro přidání kódu do t�
 
 Rozšíření sledování **Info.plist** soubor by měl určovat název `CLKComplicationDataSource` a které rodiny komplikace, které chcete podporovat:
 
-[ ![](complications-images/complications-config-sml.png "Typy rodiny komplikace")](complications-images/complications-config.png)
+[![](complications-images/complications-config-sml.png "Typy rodiny komplikace")](complications-images/complications-config.png#lightbox)
 
 **Třída zdroje dat** položka seznamu se zobrazí názvy tříd této podtřídami `CLKComplicationDataSource` podtřídami, která zahrnuje komplikace logiky.
 

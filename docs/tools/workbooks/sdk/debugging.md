@@ -6,11 +6,11 @@ ms.assetid: 90143544-084D-49BF-B44D-7AF943668F6C
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: 4a83afca753d1131e3486004443f9c4a895f6fbc
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a0873c6b902e29174da5e27a09e8f580d6d69eb7
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="debugging-integrations"></a>Ladění integrace
 
@@ -43,11 +43,11 @@ defaults write com.xamarin.Inspector WebKitDeveloperExtras -bool true
 
 a znovu spusťte Xamarin sešity. Až to uděláte tak, měli byste vidět **zkontrolovat Element** objeví ve vaší místní nabídce klikněte pravým tlačítkem a novou **vývojáře** podokně bude k dispozici v předvolbách sešity. Tato možnost vám umožňuje zvolit, pokud chcete otevřít při spuštění nástroje pro vývojáře:
 
-[![Podokno vývojáře](debugging-images/developer-pane-small.png)](debugging-images/developer-pane.png)
+[![Podokno vývojáře](debugging-images/developer-pane-small.png)](debugging-images/developer-pane.png#lightbox)
 
 Je tato předvolba jen restartování také – budete muset po restartování klienta sešity se projeví na nových sešitů. Aktivace prostřednictvím místní nabídky nebo preference nástrojů pro vývojáře zobrazí známé uživatelské rozhraní Safari:
 
-[![Nástroje pro vývojáře Safari](debugging-images/mac-dev-tools.png)](debugging-images/mac-dev-tools.png)
+[![Nástroje pro vývojáře Safari](debugging-images/mac-dev-tools.png)](debugging-images/mac-dev-tools.png#lightbox)
 
 Informace o používání nástrojů pro vývojáře Safari najdete v tématu [WebKit inspector dokumentaci][webkit-docs].
 
@@ -61,6 +61,6 @@ C:\Windows\System32\F12\F12Chooser.exe
 
 Spuštění výběru F12 a měli vidět embedded instance, která pohání prostor klienta sešity v seznamu. Zvolte jej a známých F12 ladicí nástroje z Internet Exploreru se zobrazí, připojené ke klientovi:
 
-[![Nástroje pro F12](debugging-images/windows-dev-tools.png)](debugging-images/windows-dev-tools.png)
+[![Nástroje pro F12](debugging-images/windows-dev-tools.png)](debugging-images/windows-dev-tools.png#lightbox)
 
 [webkit-docs]: https://trac.webkit.org/wiki/WebInspector

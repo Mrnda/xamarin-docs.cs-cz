@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: b529d0090595cc8a3020f37606d5dc3db5f0db74
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9402132b528d705455c183bb70e5bc9a270a8d05
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="obtaining-a-google-maps-api-key"></a>Získání služby Google mapuje klíč rozhraní API
 
@@ -23,7 +23,6 @@ Získat klíč rozhraní API map v2 zahrnuje následující kroky:
 2.  Vytvoření projektu v konzole rozhraní Google API.
 3.  Získat klíč rozhraní API.
 
-<a name="Step_1_-_Obtaining_your_Signing_Key_Fingerprint" />
 
 ## <a name="obtaining-your-signing-key-fingerprint"></a>Získání podpisového klíče prstu
 
@@ -106,7 +105,6 @@ Certificate fingerprints:
 
 Budete používat otisk prstu SHA-1 (uvedené po **SHA1**) dál v této příručce.
 
-<a name="Step_2_-Create_an_API_project" />
 
 ## <a name="creating-an-api-project"></a>Vytvoření projektu rozhraní API
 
@@ -114,25 +112,24 @@ Po načtení otisku prstu SHA-1 z podpisový úložiště klíčů, je nutné vy
 
 1. V prohlížeči přejděte na [konzole pro vývojáře Google](https://console.developers.google.com/): a klikněte na tlačítko **vytvoření projektu**:
 
-   [![Tlačítko Google Developer konzoly vytvoření projektu](obtaining-a-google-maps-api-key-images/01-google-developer-console-vs-sml.png)](obtaining-a-google-maps-api-key-images/01-google-developer-console-vs.png)
+   [![Tlačítko Google Developer konzoly vytvoření projektu](obtaining-a-google-maps-api-key-images/01-google-developer-console-vs-sml.png)](obtaining-a-google-maps-api-key-images/01-google-developer-console-vs.png#lightbox)
 
 2. V **nový projekt** dialog, který se zobrazí, zadejte název projektu.
    Dialogové okno bude ID jedinečný projektu, který je založen na název projektu, výroby, jak je uvedeno v následujícím příkladu:
 
-   [![Nový projekt jmenuje XamarinMapsDemo](obtaining-a-google-maps-api-key-images/02-new-project-vs-sml.png)](obtaining-a-google-maps-api-key-images/02-new-project-vs.png)
+   [![Nový projekt jmenuje XamarinMapsDemo](obtaining-a-google-maps-api-key-images/02-new-project-vs-sml.png)](obtaining-a-google-maps-api-key-images/02-new-project-vs.png#lightbox)
 
 3. Klikněte **vytvořit** tlačítko. Za minutu, vytvoření projektu a jsou přesměrováni na **rozhraní API Správce** stránky. V **knihovny** klikněte na tlačítko **rozhraní API systému Android mapy Google**:
 
-   [![Kliknutím na tlačítko Google Maps Android API v části knihovny](obtaining-a-google-maps-api-key-images/03-api-selection-vs-sml.png)](obtaining-a-google-maps-api-key-images/03-api-selection-vs.png)
+   [![Kliknutím na tlačítko Google Maps Android API v části knihovny](obtaining-a-google-maps-api-key-images/03-api-selection-vs-sml.png)](obtaining-a-google-maps-api-key-images/03-api-selection-vs.png#lightbox)
 
 4. V horní části **rozhraní API systému Android mapy Google** klikněte na tlačítko **povolit** zapnout službu pro tento projekt:
 
-   [![Klepnutím na tlačítko Povolit v části řídicího panelu](obtaining-a-google-maps-api-key-images/04-enable-api-vs-sml.png)](obtaining-a-google-maps-api-key-images/04-enable-api-vs.png)
+   [![Klepnutím na tlačítko Povolit v části řídicího panelu](obtaining-a-google-maps-api-key-images/04-enable-api-vs-sml.png)](obtaining-a-google-maps-api-key-images/04-enable-api-vs.png#lightbox)
 
 
 V tomto okamžiku vytvoření projektu rozhraní API a rozhraní API systému Android mapy Google v2 byla přidaná k němu. Toto rozhraní API však nelze používat ve vašem projektu, dokud vytvořit přihlašovací údaje pro ni. Dále se podíváme na tom, jak vytvořte klíč rozhraní API a aplikace pro Xamarin.Android seznamu povolených tak, aby je autorizovaný k použití tohoto klíče.
 
-<a name="Obtaining_the_API_Key" />
 
 ## <a name="obtaining-the-api-key"></a>Získat klíč rozhraní API
 
@@ -140,38 +137,37 @@ Po **vývojářské konzole Google** projektu rozhraní API byla vytvořena, je 
 
 1. V **rozhraní API systému Android mapy Google** stránky, která se zobrazí (po kliknutí na **povolit** v předchozím kroku), klikněte na tlačítko **přejít na přihlašovací údaje** tlačítko:
 
-   [![Toto rozhraní API je povoleno zpráv](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs-sml.png)](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs.png)
+   [![Toto rozhraní API je povoleno zpráv](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs-sml.png)](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs.png#lightbox)
 
 2. V **přihlašovací údaje** klikněte na **jaké přihlašovací údaje potřebuji?** tlačítko:
 
-   [![Přidejte pověření do dialogu projektu](obtaining-a-google-maps-api-key-images/06-add-credentials-to-your-project-vs-sml.png)](obtaining-a-google-maps-api-key-images/06-add-credentials-to-your-project-vs.png)
+   [![Přidejte pověření do dialogu projektu](obtaining-a-google-maps-api-key-images/06-add-credentials-to-your-project-vs-sml.png)](obtaining-a-google-maps-api-key-images/06-add-credentials-to-your-project-vs.png#lightbox)
 
 3. Po kliknutí na toto tlačítko se vygeneruje klíč rozhraní API. Dále je potřeba omezit tento klíč tak, aby pouze aplikace můžete volat rozhraní API s tímto klíčem. Klikněte na tlačítko **omezit klíč**:
 
-   [![Kliknutím na klíč omezit na stránce přihlašovací údaje](obtaining-a-google-maps-api-key-images/07-generate-api-key-vs-sml.png)](obtaining-a-google-maps-api-key-images/07-generate-api-key-vs.png)
+   [![Kliknutím na klíč omezit na stránce přihlašovací údaje](obtaining-a-google-maps-api-key-images/07-generate-api-key-vs-sml.png)](obtaining-a-google-maps-api-key-images/07-generate-api-key-vs.png#lightbox)
 
 4. Změna **název** pole z **1 klíč rozhraní API** název, který vám pomůže si vzpomenout, co se používá klíč pro (**XamarinMapsDemoKey** se používá v tomto příkladu). Klikněte na tlačítko **aplikace pro Android** přepínače:
 
-   [![Výběr aplikace pro Android na stránce přihlašovací údaje](obtaining-a-google-maps-api-key-images/08-key-restriction-vs-sml.png)](obtaining-a-google-maps-api-key-images/08-key-restriction-vs.png)
+   [![Výběr aplikace pro Android na stránce přihlašovací údaje](obtaining-a-google-maps-api-key-images/08-key-restriction-vs-sml.png)](obtaining-a-google-maps-api-key-images/08-key-restriction-vs.png#lightbox)
 
 5. Chcete-li přidat otisk prstu SHA-1, klikněte na tlačítko **+ přidat název balíčku a otisk prstu**:
 
-   [![Kliknutím na tlačítko Přidat název balíčku a otisk prstu](obtaining-a-google-maps-api-key-images/09-add-package-fingerprint-vs-sml.png)](obtaining-a-google-maps-api-key-images/09-add-package-fingerprint-vs.png)
+   [![Kliknutím na tlačítko Přidat název balíčku a otisk prstu](obtaining-a-google-maps-api-key-images/09-add-package-fingerprint-vs-sml.png)](obtaining-a-google-maps-api-key-images/09-add-package-fingerprint-vs.png#lightbox)
 
 6. Zadejte název balíčku aplikace a zadejte otisků prstů certifikátů SHA-1 (získat prostřednictvím `keytool` jak je popsáno výše v této příručce). V následujícím příkladu, název balíčku pro `XamarinMapsDemo` je zadaná, za nímž následuje otisk prstu SHA-1 certifikát získaný **debug.keystore**:
 
-   [![Zadaný název balíčku je com.xamarin.docs.android.map](obtaining-a-google-maps-api-key-images/10-enter-package-and-sha1-vs-sml.png)](obtaining-a-google-maps-api-key-images/10-enter-package-and-sha1-vs.png)
+   [![Zadaný název balíčku je com.xamarin.docs.android.map](obtaining-a-google-maps-api-key-images/10-enter-package-and-sha1-vs-sml.png)](obtaining-a-google-maps-api-key-images/10-enter-package-and-sha1-vs.png#lightbox)
 
 7. Všimněte si, že, aby vaše APK přístup k mapám Google, je nutné zahrnout otisky SHA-1 a balíček názvy pro každý keystore (ladění a vydání), který se používá k podepisování vaší APK. Například pokud používat jeden počítač pro ladění a pro generování verze APK jiný počítač, měli byste zahrnout otisk prstu SHA-1 certifikát z úložiště klíčů ladění prvního počítače a SHA-1 otisk prstu certifikát z úložiště klíčů verze systému druhý počítač. Klikněte na tlačítko **+ přidat název balíčku a otisk prstu** přidat jiné otisku prstu a názvu balíčku, jak je znázorněno v tomto příkladu:
 
-   [![Přidání jiného otisk prstu vytvoří jiný certifikát SHA-1](obtaining-a-google-maps-api-key-images/11-second-fingerprint-vs-sml.png)](obtaining-a-google-maps-api-key-images/11-second-fingerprint-vs.png)
+   [![Přidání jiného otisk prstu vytvoří jiný certifikát SHA-1](obtaining-a-google-maps-api-key-images/11-second-fingerprint-vs-sml.png)](obtaining-a-google-maps-api-key-images/11-second-fingerprint-vs.png#lightbox)
 
 8. Klikněte **Uložit** tlačítko uložte provedené změny. V dalším kroku se vrátíte do seznamu klíče rozhraní API. Pokud máte jiné klíče rozhraní API, které jste dříve vytvořili, budou také uvedené v tomto poli. V tomto příkladu je uveden pouze jeden klíč rozhraní API (vytvořený v předchozích krocích):
 
-   [![XamarinMapsDemoKey se zobrazí v seznamu klíče rozhraní API](obtaining-a-google-maps-api-key-images/12-list-of-apis-vs-sml.png)](obtaining-a-google-maps-api-key-images/12-list-of-apis-vs.png)
+   [![XamarinMapsDemoKey se zobrazí v seznamu klíče rozhraní API](obtaining-a-google-maps-api-key-images/12-list-of-apis-vs-sml.png)](obtaining-a-google-maps-api-key-images/12-list-of-apis-vs.png#lightbox)
 
 
-<a name="Adding_the_Key" />
 
 ## <a name="adding-the-key-to-your-project"></a>Přidání klíče do projektu
 

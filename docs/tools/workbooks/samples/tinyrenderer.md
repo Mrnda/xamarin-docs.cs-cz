@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/30/2017
-ms.openlocfilehash: 1689736ce3f2a8e20ceaa23edf410d3892038522
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e5422d3f0a68f99790617fe534b30389aae2563c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="tinyrenderer-workbooks"></a>TinyRenderer sešity
 
@@ -30,7 +30,7 @@ ms.lasthandoff: 02/27/2018
 -    [Lekce 7: Mapování stínové](https://developer.xamarin.com/workbooks/graphics/tiny-renderer/lesson7.workbook)
 -    [Lekce 8: Vedlejším NF pásmová](https://developer.xamarin.com/workbooks/graphics/tiny-renderer/lesson8.workbook)
 
-[ ![](tinyrenderer-images/tinyrenderer-sml.png "Příklad vykreslování obrázek")](tinyrenderer-images/tinyrenderer.png)
+[![](tinyrenderer-images/tinyrenderer-sml.png "Příklad vykreslování obrázek")](tinyrenderer-images/tinyrenderer.png#lightbox)
 
 Kód jazyka C# v těchto sešitech je založen na tento otevřený zdroj [C++ – kód](https://github.com/ssloy/tinyrenderer) a text je z tohoto [wiki](https://github.com/ssloy/tinyrenderer/wiki/). Děkujeme, které jsou k dispozici v části licenci, která nám chcete-li do sady sešity povolené původní práci.
 

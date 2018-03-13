@@ -3,14 +3,15 @@ title: "Shrnutí kapitoly 26. Vlastní rozložení"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 2B7F4346-414E-49FF-97FB-B85E92D98A21
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: dbddaaf2f4a5ad9d7161013f2ae11466b953e20c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9447f9fb47a3de0f278a89d45d657158be9b70b9
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-26-custom-layouts"></a>Shrnutí kapitoly 26. Vlastní rozložení
 
@@ -98,9 +99,9 @@ Tuto metodu je nyní zastaralé a nahradí:
 Každá třída, která je odvozena z `Layout` nebo `Layout<T>` musí přepsat `OnSizeRequest` nebo `OnMeasure`. Toto je, kde třídu rozložení určuje vlastní velikost, která je obecně založena na velikosti jeho podřízených položek, které se získá voláním `GetSizeRequest` nebo `Measure` na podřízené objekty. Před a po volání `OnSizeRequest` nebo `OnMeasure`, `GetSizeRequest` nebo `Measure` provádí úpravy podle následující vlastnosti:
 
 - [`WidthRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.WidthRequest/)typu `double`, má vliv `Request` vlastnost `SizeRequest`
-- [`HeightRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.HeightRequest/)typu `double`, má vliv `Request` vlastnost `SizeRequest`
-- [`MinimumWidthRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.MinimumWidthRequest/)typu `double`, má vliv `Minimum` vlastnost `SizeRequest`
-- [`MinimumHeightRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.MinimumHeightRequest/)typu `double`, má vliv `Minimum` vlastnost `SizeRequest`
+- [`HeightRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.HeightRequest/) typu `double`, má vliv `Request` vlastnost `SizeRequest`
+- [`MinimumWidthRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.MinimumWidthRequest/) typu `double`, má vliv `Minimum` vlastnost `SizeRequest`
+- [`MinimumHeightRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.MinimumHeightRequest/) typu `double`, má vliv `Minimum` vlastnost `SizeRequest`
 
 ### <a name="infinite-constraints"></a>Nekonečné omezení
 
@@ -159,7 +160,7 @@ Ke změně v elementu vlastnost často ovlivňuje, jak tento prvek se zobrazuje 
 
 [ **PhotoGrid** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/PhotoGrid) příklad znázorňuje `UniformGridLayout`:
 
-[![Trojitá snímek obrazovky Mřížka fotografií](images/ch26fg08-small.png "Uniform rozložení mřížky")](images/ch26fg08-large.png "Uniform rozložení mřížky")
+[![Trojitá snímek obrazovky Mřížka fotografií](images/ch26fg08-small.png "Uniform rozložení mřížky")](images/ch26fg08-large.png#lightbox "Uniform rozložení mřížky")
 
 ### <a name="overlapping-children"></a>Překrývající se podřízené objekty
 
@@ -174,7 +175,7 @@ Pro překrývající se děti děti na konec kolekce vizuálně zobrazují nad p
 
 [ `OverlapLayout` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/OverlapLayout.cs) Třídy v [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) knihovny definuje přidružená vlastnost označují pořadí vykreslování a proto povolit jeden z jeho má zobrazit nad jiné podřízené objekty. [ **StudentCardFile** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/StudentCardFile) příklad znázorňuje toto:
 
-[![Trojitá snímek obrazovky Student karta soubor mřížky](images/ch26fg10-small.png "překrývání podřízené objekty rozložení")](images/ch26fg10-large.png "překrývání rozložení podřízené objekty")
+[![Trojitá snímek obrazovky Student karta soubor mřížky](images/ch26fg10-small.png "překrývání podřízené objekty rozložení")](images/ch26fg10-large.png#lightbox "překrývání rozložení podřízené objekty")
 
 ### <a name="more-attached-bindable-properties"></a>Víc připojený vazbu vlastnosti
 

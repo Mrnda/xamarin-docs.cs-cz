@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 99f66fd0d23f14224bcd915ef7d1c6d81367f173
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 412e65e074a171666a0ed9b61e347c4a16ec366b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="publishing-an-application"></a>Publikování aplikace
 
 Po vytvoření kvalitních aplikací, uživatelé chtějí ho použít. Tato část obsahuje kroky s distribuci veřejného aplikace vytvořené s Xamarin.Android prostřednictvím kanálů například e-mailu, privátní webového serveru, webu Google Play nebo obchodu s aplikacemi Amazon pro Android.
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Přehled
 
@@ -29,7 +28,7 @@ Posledním krokem při vývoji aplikace pro Xamarin.Android se k publikování a
 
 Následující diagram znázorňuje kroky s publikováním aplikace pro Xamarin.Android:
 
-[ ![Vytváření a nasazování vývojový diagram](images/build-and-deploy-steps.png)](images/build-and-deploy-steps.png)
+[![Vytváření a nasazování vývojový diagram](images/build-and-deploy-steps.png)](images/build-and-deploy-steps.png#lightbox)
 
 Jak můžete vidět diagramu výše, přípravy je stejný bez ohledu na metodu distribuce, který se používá. Existuje několik způsobů, že aplikace pro Android se může uvolnit uživatelům:
 
@@ -49,7 +48,7 @@ Program distribuce Amazon mobilní aplikace umožňuje vývojářům mobilní ap
 
 Komplexní a oblíbených marketplace pro aplikace pro Android je pravděpodobně Google Play. Google Play umožňuje uživatelům zjistit, stáhnout, míry a kliknutím na jednom ikonu na svém zařízení nebo na svém počítači platit pro aplikace. Také poskytuje nástroje, které pomáhá s analýzou prodeje a trendů trhu a k řízení zařízení, která Google Play a uživatelé mohou stáhnout aplikaci. Snímek obrazovky Google Play spuštěné v zařízení se systémem Android se zobrazí níže:
 
-[ ![Snímek obrazovky Google Play](images/google-play-app.png)](images/google-play-app.png)
+[![Snímek obrazovky Google Play](images/google-play-app.png)](images/google-play-app.png#lightbox)
 
 V této části ukazuje, jak nahrát aplikaci do úložiště jako je Google Play, společně s příslušnou propagační materiály. APK rozšíření soubory jsou vysvětleny umožní koncepční přehled o co jsou a jak pracují. Google licencování služby jsou také popsány. Nakonec se zavedly alternativní způsob distribuce, včetně použití webového serveru se službou protokolu HTTP, distribuce jednoduchého e-mailu a obchodu s aplikacemi Amazon pro Android.
 

@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 1b0b1db6bf73b03eed99c5ede038d07bb3ccf284
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 23aa944b88fe3e743b6b29810c29d1843f2efc29
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="api-design"></a>Rozhraní API návrhu
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Přehled
 
@@ -23,7 +22,6 @@ Kromě základních základní knihovny tříd, které jsou součástí Mono Xam
 
 Základem Xamarin.Android existuje je modul spolupráce této world mostů jazyka C# s Java world a přístup k rozhraním API Java z jazyka C# nebo jinými jazyky rozhraní .NET poskytuje vývojářům.
 
-<a name="Design_Principles" />
 
 ## <a name="design-principles"></a>Principy návrhu
 
@@ -64,7 +62,6 @@ Toto jsou některé z našich Principy návrhu pro vazbu Xamarin.Android
     - Poskytněte mechanismus k volání libovolný Java knihovny ( [Android.Runtime.JNIEnv](https://developer.xamarin.com/api/type/Android.Runtime.JNIEnv/)).
 
 
-<a name="Assemblies" />
 
 ## <a name="assemblies"></a>Sestavení
 
@@ -72,11 +69,9 @@ Xamarin.Android zahrnuje několik sestavení, které tvoří *MonoMobile profil*
 
 Vazby na platformě Android jsou součástí `Mono.Android.dll` sestavení. Toto sestavení obsahuje celý vazby pro využívání rozhraní Android API a komunikaci s modulem runtime Android virtuálních počítačů.
 
-<a name="Binding_Design" />
 
 ## <a name="binding-design"></a>Vazba návrhu
 
-<a name="Collections" />
 
 ### <a name="collections"></a>Kolekce
 
@@ -112,7 +107,6 @@ if (goodSource.Count != 4) // false
     throw new InvalidOperationException ("should not be reached.");
 ```
 
-<a name="Properties" />
 
 ### <a name="properties"></a>Vlastnosti
 
@@ -127,7 +121,6 @@ Java metody jsou transformovány do vlastností, v případě nutnosti:
 -  Vlastnosti jsou *není* vygenerováno, pokud typ vlastnosti by být pole.
 
 
-<a name="Events_and_Listeners" />
 
 ### <a name="events-and-listeners"></a>Události a moduly pro naslouchání
 
@@ -177,7 +170,6 @@ Plánujeme přidat přetížení pro jiné metody a ctors vystavit připojení n
 
 Všechny moduly pro naslouchání rozhraní implementovat [ `Android.Runtime.IJavaObject` ](https://developer.xamarin.com/api/type/Android.Runtime.IJavaObject/) rozhraní, z důvodu podrobnosti implementace vazby, takže třídy naslouchacího procesu musí toto rozhraní implementovat. To lze provést implementací rozhraní naslouchací proces na podtřídou třídy [Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/) nebo jakékoliv zabalené objektu Java, například aktivitu Android.
 
-<a name="Runnables" />
 
 ### <a name="runnables"></a>Runnables
 
@@ -188,7 +180,6 @@ Využívá Java [java.lang.Runnable](https://developer.xamarin.com/api/type/Java
 
 Jsme ponecháno [rozhraní IRunnable](https://developer.xamarin.com/api/type/Java.Lang.IRunnable/) přetížení v místě, ne na jejich náhradu, protože několik typů implementovat rozhraní a proto může být předána jako runnables přímo.
 
-<a name="Inner_Classes" />
 
 ### <a name="inner-classes"></a>Vnitřní třídy
 
@@ -227,7 +218,6 @@ class CubeWallpaper : WallpaperService {
 
 Poznámka: Jak `CubeWallpaper.CubeEngine` vnořen v rámci `CubeWallpaper`, `CubeWallpaper` dědí z obsahující třídu `WallpaperService.Engine`, a `CubeWallpaper.CubeEngine` má konstruktor, který přebírá deklarující typ-- `CubeWallpaper` v tomto případě – všechny jako uveden výše.
 
-<a name="Interfaces" />
 
 ### <a name="interfaces"></a>Rozhraní
 
@@ -254,7 +244,7 @@ Představte si třeba [android.os.Parcelable](https://developer.xamarin.com/api/
 
 
 > [!NOTE]
-> **Poznámka:** počínaje Xamarin.Android 1.9, jsou konstanty rozhraní Java <em>duplicitní</em> ve snaze zjednodušit portování Java kódu. To napomáhá zlepšování přenosem kódu Java, které jsou závislé na [android zprostředkovatele](http://developer.android.com/reference/android/provider/package-summary.html) rozhraní konstanty.
+> Počínaje Xamarin.Android 1.9, jsou konstanty rozhraní Java <em>duplicitní</em> ve snaze zjednodušit portování Java kódu. To napomáhá zlepšování přenosem kódu Java, které jsou závislé na [android zprostředkovatele](http://developer.android.com/reference/android/provider/package-summary.html) rozhraní konstanty.
 
 Kromě výše uvedených typů existují čtyři další změny:
 
@@ -277,7 +267,6 @@ Dříve, k portu výrazu jazyka C# potřebovali byste se podívat na všechna ro
 
 Nakonec s typy *Consts* například přípona *Android.OS.ParcelableConsts* jsou nyní zastaralé, jiné než nově přináší InterfaceConsts vnořené typy. Budou odebrány v Xamarin.Android 3.0.
 
-<a name="Resources" />
 
 ## <a name="resources"></a>Prostředky
 
@@ -323,7 +312,6 @@ public class Resource {
 
 By pak použijete `Resource.Drawable.icon` k odkazu `drawable/icon.png` souboru, nebo `Resource.Layout.main` k odkazu `layout/main.xml` souboru, nebo `Resource.String.first_string` Chcete-li první řetězec v souboru slovníku `values/strings.xml`.
 
-<a name="Constants_and_Enumerations" />
 
 ## <a name="constants-and-enumerations"></a>Konstanty a výčty
 

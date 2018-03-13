@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 08/21/2017
-ms.openlocfilehash: f6884260315f8846720370c558f7435d2c5a9d91
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c2df60a79ea3b5a0ff226cfaade0440db13fd5ea
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="alternative-layout-views"></a>Alternativní rozložení zobrazení
 
 _Toto téma vysvětluje, jak rozložení může být verzí pomocí kvalifikátory prostředků. Například může existovat verzi rozložení, který se používá pouze, když je zařízení v režimu na šířku a rozložení verzi, která je jen pro režim na výšku._
 
-<a name="creating_alternative_layouts" />
 
 ## <a name="creating-alternative-layouts"></a>Vytváření alternativní rozložení
 
@@ -26,11 +25,11 @@ Když kliknete **alternativní rozložení zobrazení** ikona (nalevo od **zař�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![V podokně zobrazení alternativní rozložení](alternative-layout-views-images/vs/01-alt-layout-view-pane-sml.png "podokno zobrazení alternativní rozložení")](alternative-layout-views-images/vs/01-alt-layout-view-pane.png)
+[![V podokně zobrazení alternativní rozložení](alternative-layout-views-images/vs/01-alt-layout-view-pane-sml.png "podokno zobrazení alternativní rozložení")](alternative-layout-views-images/vs/01-alt-layout-view-pane.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![V podokně zobrazení alternativní rozložení](alternative-layout-views-images/xs/01-alt-layout-view-pane-sml.png)](alternative-layout-views-images/xs/01-alt-layout-view-pane.png)
+[![V podokně zobrazení alternativní rozložení](alternative-layout-views-images/xs/01-alt-layout-view-pane-sml.png)](alternative-layout-views-images/xs/01-alt-layout-view-pane.png#lightbox)
 
 -----
 
@@ -38,11 +37,11 @@ Když kliknete na zelený symbol plus vedle **novou verzi**, **vytvořte variace
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Vytvořte variace rozložení](alternative-layout-views-images/vs/02-create-layout-variation-sml.png "vytvořit variantu rozložení")](alternative-layout-views-images/vs/02-create-layout-variation.png)
+[![Vytvořte variace rozložení](alternative-layout-views-images/vs/02-create-layout-variation-sml.png "vytvořit variantu rozložení")](alternative-layout-views-images/vs/02-create-layout-variation.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Vytvořte variace rozložení](alternative-layout-views-images/xs/02-create-layout-variation-sml.png)](alternative-layout-views-images/xs/02-create-layout-variation.png)
+[![Vytvořte variace rozložení](alternative-layout-views-images/xs/02-create-layout-variation-sml.png)](alternative-layout-views-images/xs/02-create-layout-variation.png#lightbox)
 
 -----
 
@@ -51,11 +50,11 @@ V následujícím příkladu, kvalifikátor prostředků pro **orientace obrazov
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Velké krajině variace](alternative-layout-views-images/vs/03-large-land-sml.png "velké krajině variace")](alternative-layout-views-images/vs/03-large-land.png)
+[![Velké krajině variace](alternative-layout-views-images/vs/03-large-land-sml.png "velké krajině variace")](alternative-layout-views-images/vs/03-large-land.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Velké krajině variace](alternative-layout-views-images/xs/03-large-land-sml.png)](alternative-layout-views-images/xs/03-large-land.png)
+[![Velké krajině variace](alternative-layout-views-images/xs/03-large-land-sml.png)](alternative-layout-views-images/xs/03-large-land.png#lightbox)
 
 -----
 
@@ -64,16 +63,15 @@ Všimněte si, že zobrazí v podokně náhledu na levé straně důsledky výb�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Indikátor načíst rozložení](alternative-layout-views-images/vs/04-new-layout-sml.png "indikátor načíst rozložení")](alternative-layout-views-images/vs/04-new-layout.png)
+[![Indikátor načíst rozložení](alternative-layout-views-images/vs/04-new-layout-sml.png "indikátor načíst rozložení")](alternative-layout-views-images/vs/04-new-layout.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Indikátor načíst rozložení](alternative-layout-views-images/xs/04-new-layout-sml.png)](alternative-layout-views-images/xs/04-new-layout.png)
+[![Indikátor načíst rozložení](alternative-layout-views-images/xs/04-new-layout-sml.png)](alternative-layout-views-images/xs/04-new-layout.png#lightbox)
 
 -----
 
 
-<a name="editing_alternative_layouts" />
 
 ## <a name="editing-alternative-layouts"></a>Úpravy alternativní rozložení
 
@@ -83,11 +81,11 @@ Pro zjednodušení správy více verzí rozložení, poskytuje návrháře **ví
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Ikonu pro úpravu více](alternative-layout-views-images/vs/05-multi-layout-icon-sml.png "ikonu pro úpravu více")](alternative-layout-views-images/vs/05-multi-layout-icon.png)
+[![Ikonu pro úpravu více](alternative-layout-views-images/vs/05-multi-layout-icon-sml.png "ikonu pro úpravu více")](alternative-layout-views-images/vs/05-multi-layout-icon.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Ikona více úpravy](alternative-layout-views-images/xs/05-multi-layout-icon-sml.png)](alternative-layout-views-images/xs/05-multi-layout-icon.png)
+[![Ikona více úpravy](alternative-layout-views-images/xs/05-multi-layout-icon-sml.png)](alternative-layout-views-images/xs/05-multi-layout-icon.png#lightbox)
 
 -----
 
@@ -96,11 +94,11 @@ Když kliknete **více upravit** ikonu, se zobrazí řádky, které označují, 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Zrušit propojení všech rozložení](alternative-layout-views-images/vs/06-multi-linked-sml.png "zrušit propojení všech rozložení")](alternative-layout-views-images/vs/06-multi-linked.png)
+[![Zrušit propojení všech rozložení](alternative-layout-views-images/vs/06-multi-linked-sml.png "zrušit propojení všech rozložení")](alternative-layout-views-images/vs/06-multi-linked.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Zrušit propojení všech rozložení](alternative-layout-views-images/xs/06a-linked-sml.png)](alternative-layout-views-images/xs/06a-linked.png)
+[![Zrušit propojení všech rozložení](alternative-layout-views-images/xs/06a-linked-sml.png)](alternative-layout-views-images/xs/06a-linked.png#lightbox)
 
 -----
 
@@ -109,11 +107,11 @@ Pokud máte více než dvě rozložení, můžete selektivně přepínat na tla�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Zrušit propojení střední rozložení](alternative-layout-views-images/vs/07-unlink-middle-layout-sml.png "střední rozložení zrušit propojení")](alternative-layout-views-images/vs/07-unlink-middle-layout.png)
+[![Zrušit propojení střední rozložení](alternative-layout-views-images/vs/07-unlink-middle-layout-sml.png "střední rozložení zrušit propojení")](alternative-layout-views-images/vs/07-unlink-middle-layout.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Zrušit propojení střední rozložení](alternative-layout-views-images/xs/06b-multi-linked-sml.png)](alternative-layout-views-images/xs/06b-multi-linked.png)
+[![Zrušit propojení střední rozložení](alternative-layout-views-images/xs/06b-multi-linked-sml.png)](alternative-layout-views-images/xs/06b-multi-linked.png#lightbox)
  
 -----
  
@@ -121,7 +119,6 @@ Pokud máte více než dvě rozložení, můžete selektivně přepínat na tla�
 V tomto příkladu ke změně buď **výchozí** nebo **dlouho** rozložení se rozšíří na jiné rozložení, ale nikoli k **velké krajině** rozložení. 
 
 
-<a name="multi_edit_example" />
 
 ### <a name="multi-edit-example"></a>Příklad více úpravy 
 
@@ -129,11 +126,11 @@ Obecně platí když změníte jeden rozložení, tato změna stejné rozšíř�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Přidat TextView](alternative-layout-views-images/vs/08-add-textview-sml.png "přidat TextView")](alternative-layout-views-images/vs/08-add-textview.png)
+[![Přidat TextView](alternative-layout-views-images/vs/08-add-textview-sml.png "přidat TextView")](alternative-layout-views-images/vs/08-add-textview.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Přidat TextView](alternative-layout-views-images/xs/07-add-textview-sml.png)](alternative-layout-views-images/xs/07-add-textview.png)
+[![Přidat TextView](alternative-layout-views-images/xs/07-add-textview-sml.png)](alternative-layout-views-images/xs/07-add-textview.png#lightbox)
  
 -----
  
@@ -142,11 +139,11 @@ Obecně platí když změníte jeden rozložení, tato změna stejné rozšíř�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Na šířku TextView](alternative-layout-views-images/vs/09-landscape-textview-sml.png "šířku TextView")](alternative-layout-views-images/vs/09-landscape-textview.png)
+[![Na šířku TextView](alternative-layout-views-images/vs/09-landscape-textview-sml.png "šířku TextView")](alternative-layout-views-images/vs/09-landscape-textview.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Na šířku TextView](alternative-layout-views-images/xs/08-landscape-textview-sml.png)](alternative-layout-views-images/xs/08-landscape-textview.png)
+[![Na šířku TextView](alternative-layout-views-images/xs/08-landscape-textview-sml.png)](alternative-layout-views-images/xs/08-landscape-textview.png#lightbox)
  
 -----
  
@@ -154,7 +151,6 @@ Obecně platí když změníte jeden rozložení, tato změna stejné rozšíř�
 Ale co když budete chtít provést změnu, která je místní pro pouze jedno rozložení (to znamená, že nechcete, aby změny mohly rozšířit do žádné jiné rozložení)? Chcete-li to provést, je nutné zrušit rozložení, který chcete změnit před zahájením úprav, jak je popsáno dále. 
 
 
-<a name="making_local_changes" />
 
 ### <a name="making-local-changes"></a>Provedení místní změn 
 
@@ -162,11 +158,11 @@ Předpokládejme, že chceme obou rozložení tak, aby měl přidaném `TextView
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Místní změny](alternative-layout-views-images/vs/10-local-change-sml.png "místní změny")](alternative-layout-views-images/vs/10-local-change.png)
+[![Místní změny](alternative-layout-views-images/vs/10-local-change-sml.png "místní změny")](alternative-layout-views-images/vs/10-local-change.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Místní změny](alternative-layout-views-images/xs/09-local-change-sml.png)](alternative-layout-views-images/xs/09-local-change.png)
+[![Místní změny](alternative-layout-views-images/xs/09-local-change-sml.png)](alternative-layout-views-images/xs/09-local-change.png#lightbox)
  
 -----
  
@@ -174,7 +170,6 @@ Předpokládejme, že chceme obou rozložení tak, aby měl přidaném `TextView
 Když kliknete **výchozí** rozložení zobrazení, `TextView` textový řetězec je stále nastavené `Portrait`. 
 
 
-<a name="handling_conflicts" />
 
 ## <a name="handling-conflicts"></a>Zpracování konfliktů 
 
@@ -182,22 +177,21 @@ Pokud se rozhodnete změnit barvu textu v **výchozí** rozložení na zelenou, 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Konfliktní změny](alternative-layout-views-images/vs/11-conflicting-change-sml.png "konfliktní změny")](alternative-layout-views-images/vs/11-conflicting-change.png)
+[![Konfliktní změny](alternative-layout-views-images/vs/11-conflicting-change-sml.png "konfliktní změny")](alternative-layout-views-images/vs/11-conflicting-change.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Konfliktní změny](alternative-layout-views-images/xs/10-conflict-sml.png)](alternative-layout-views-images/xs/10-conflict.png)
+[![Konfliktní změny](alternative-layout-views-images/xs/10-conflict-sml.png)](alternative-layout-views-images/xs/10-conflict.png#lightbox)
  
 -----
  
 
 A *konflikt pole* se zobrazí na pravé straně widgetu vysvětlit konflikt: 
 
-[ ![Konflikt upozornění](alternative-layout-views-images/xs/11-warning-sml.png)](alternative-layout-views-images/xs/11-warning.png)
+[![Konflikt upozornění](alternative-layout-views-images/xs/11-warning-sml.png)](alternative-layout-views-images/xs/11-warning.png#lightbox)
 
 Pole konflikt zobrazí seznam vlastností, které se změnily a vypíše jejich hodnot. Kliknutím na tlačítko **Ignorovat konflikt** změnit vlastnost se vztahuje pouze na této pomůcky. Kliknutím na tlačítko **použít** změnit vlastnost se vztahuje na tato pomůcka také tak, aby widgetu protějškem v propojenou **výchozí** rozložení. Pokud jsou použity všechny změny vlastností, je automaticky zahodí konflikt. 
 
-<a name="view_group_conflicts" />
 
 ### <a name="view-group-conflicts"></a>Zobrazení skupiny konfliktu 
 
@@ -205,11 +199,11 @@ Změny vlastností nejsou jediný zdroj je v konfliktu. Při vkládání nebo od
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Zobrazení skupiny konfliktu](alternative-layout-views-images/vs/12-view-group-conflict-sml.png "zobrazit skupiny konfliktu")](alternative-layout-views-images/vs/12-view-group-conflict.png)
+[![Zobrazení skupiny konfliktu](alternative-layout-views-images/vs/12-view-group-conflict-sml.png "zobrazit skupiny konfliktu")](alternative-layout-views-images/vs/12-view-group-conflict.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Zobrazení skupiny konfliktu](alternative-layout-views-images/xs/12-view-group-conflict-sml.png)](alternative-layout-views-images/xs/12-view-group-conflict.png)
+[![Zobrazení skupiny konfliktu](alternative-layout-views-images/xs/12-view-group-conflict-sml.png)](alternative-layout-views-images/xs/12-view-group-conflict.png#lightbox)
  
 -----
  
@@ -220,11 +214,11 @@ Pokud `CheckBox` je přidán do **výchozí** rozložení, je generován jiný k
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Zaškrtávací políčko konflikt](alternative-layout-views-images/vs/13-checkbox-conflict-sml.png "konflikt zaškrtávací políčko")](alternative-layout-views-images/vs/13-checkbox-conflict.png)
+[![Zaškrtávací políčko konflikt](alternative-layout-views-images/vs/13-checkbox-conflict-sml.png "konflikt zaškrtávací políčko")](alternative-layout-views-images/vs/13-checkbox-conflict.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Konflikt zaškrtávací políčko](alternative-layout-views-images/xs/13-checkbox-conflict-sml.png)](alternative-layout-views-images/xs/13-checkbox-conflict.png)
+[![Konflikt zaškrtávací políčko](alternative-layout-views-images/xs/13-checkbox-conflict-sml.png)](alternative-layout-views-images/xs/13-checkbox-conflict.png#lightbox)
  
 -----
  
@@ -233,18 +227,18 @@ Kliknutím **velké krajině** rozložení se zobrazí konflikt. Zobrazí se ná
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![ALT rozložení konflikt](alternative-layout-views-images/vs/14-alt-layout-conflict-sml.png "konflikt Alt rozložení")](alternative-layout-views-images/vs/14-alt-layout-conflict.png)
+[![ALT rozložení konflikt](alternative-layout-views-images/vs/14-alt-layout-conflict-sml.png "konflikt Alt rozložení")](alternative-layout-views-images/vs/14-alt-layout-conflict.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Konflikt ALT rozložení](alternative-layout-views-images/xs/14-alt-layout-conflict-sml.png)](alternative-layout-views-images/xs/14-alt-layout-conflict.png)
+[![Konflikt ALT rozložení](alternative-layout-views-images/xs/14-alt-layout-conflict-sml.png)](alternative-layout-views-images/xs/14-alt-layout-conflict.png#lightbox)
  
 -----
  
 
 Kromě toho pole konflikt zobrazí následující zprávu:
 
-[ ![Zpráva o konfliktu](alternative-layout-views-images/xs/15-conflict-message-sml.png)](alternative-layout-views-images/xs/15-conflict-message.png)
+[![Zpráva o konfliktu](alternative-layout-views-images/xs/15-conflict-message-sml.png)](alternative-layout-views-images/xs/15-conflict-message.png#lightbox)
 
 Přidávání `CheckBox` způsobuje konflikt v podobě, protože **velké krajině** rozložení obsahuje změny `LinearLayout` který ji obsahuje. Ale v takovém případě pole konflikt zobrazuje pomůcky, který byl právě vložen do **výchozí** rozložení ( `CheckBox`).
 
@@ -252,11 +246,11 @@ Pokud kliknete na tlačítko **Ignorovat konflikt**, návrháře vyřeší konfl
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Vyřešit konflikt skupiny](alternative-layout-views-images/vs/15-resolved-group-conflict-sml.png "vyřešit konflikt skupiny")](alternative-layout-views-images/vs/15-resolved-group-conflict.png)
+[![Vyřešit konflikt skupiny](alternative-layout-views-images/vs/15-resolved-group-conflict-sml.png "vyřešit konflikt skupiny")](alternative-layout-views-images/vs/15-resolved-group-conflict.png#lightbox)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Vyřešit konflikt skupiny](alternative-layout-views-images/xs/16-resolved-group-conflict-sml.png)](alternative-layout-views-images/xs/16-resolved-group-conflict.png)
+[![Vyřešit konflikt skupiny](alternative-layout-views-images/xs/16-resolved-group-conflict-sml.png)](alternative-layout-views-images/xs/16-resolved-group-conflict.png#lightbox)
  
 -----
  
@@ -264,7 +258,6 @@ Pokud kliknete na tlačítko **Ignorovat konflikt**, návrháře vyřeší konfl
 Jak je vidět v předchozím příkladu s `Button`, `CheckBox` nemá značku red změnit, protože pouze `LinearLayout` obsahuje změny, které byly použity v **velké krajině** rozložení.
 
 
-<a name="Conflict_Persistence" />
 
 ### <a name="conflict-persistence"></a>Trvalost konflikt
 

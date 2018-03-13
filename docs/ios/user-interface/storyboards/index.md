@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 8bc262ff739cc65da80d887a6dea11ecc708e866
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 342e8189d9dec6eaa60a999d56a7891da845d247
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-storyboards"></a>Úvod do scénářů
 
@@ -33,7 +33,7 @@ Scénářů lze iOS Návrhář v sadě Visual Studio pro Mac nebo s Visual Studi
 
 Scénář je vizuální reprezentace všechny obrazovky v aplikaci. Obsahuje posloupnost scény s každou scény představující *View Controller* a jeho *zobrazení*. Tato zobrazení může obsahovat objekty a [ovládací prvky](~/ios/user-interface/controls/index.md) který vám umožní vaše uživatelům interakci s vaší aplikací. Tato kolekce zobrazení a ovládací prvky (nebo *dílčích zobrazení*) se označuje jako *obsahu zobrazení hierarchie*. Scény připojeni pomocí segue objekty, které představují přechod mezi řadiče zobrazení. Dosahuje se obvykle vytvořením segue mezi objektu na počáteční zobrazení a připojování zobrazení. Vztahy na návrhovou plochu, která jsou zobrazené na obrázku níže:
 
- [ ![](images/storyboardsview.png "Na tomto obrázku jsou znázorněny vztahy na návrhovou plochu")](images/storyboardsview.png)
+ [![](images/storyboardsview.png "Na tomto obrázku jsou znázorněny vztahy na návrhovou plochu")](images/storyboardsview.png#lightbox)
 
 Jak je znázorněno, každý z vaší scény bude Rozvrhněte s obsahem již vykreslen scénáři a znázorňuje připojení mezi nimi.  Je vhodné poznamenat nyní, když v souvislosti se děje v zařízení iPhone, je bezpečné předpokládají, že jeden *scény* ve scénáři je jednu *obrazovky* obsahu na zařízení. Nicméně s iPad, které je možné, že více scény se zobrazí najednou – například pomocí Popover zobrazení řadiče.
 
@@ -47,22 +47,22 @@ Obsah scénáře je uložený jako soubor XML. Čas, sestavení na všechny `.st
 
 A *Segue*, nebo *Segue objekt*, se používá v vývoj pro iOS k reprezentování přechod mezi scény. Chcete-li vytvořit segue, podržte klávesu **Ctrl** klíč a klikněte na tlačítko přetažení z jediné scény do jiného. Tažení jsme naše myš, se zobrazí modrý konektor, která určuje, kde segue povede, jak ukazuje následující obrázek:
 
- [ ![](images/createsegue.png "Se zobrazí modré konektor, která určuje, kde segue povede, jak je předvedeno v této bitové kopie")](images/createsegue.png)
+ [![](images/createsegue.png "Se zobrazí modré konektor, která určuje, kde segue povede, jak je předvedeno v této bitové kopie")](images/createsegue.png#lightbox)
 
 Na myši nahoru nabídky se zobrazí upozornění vyberte akci pro naše segue. Může vypadat podobně jako obrázky níže: 
 
 **Předběžné iOS 8 a velikost třídy**:
 
-[ ![](images/segue1.png "Rozevírací seznam Segue akce bez velikost třídy")](images/segue1.png)
+[![](images/segue1.png "Rozevírací seznam Segue akce bez velikost třídy")](images/segue1.png#lightbox)
 
 **Při použití třídy velikost a adaptivní Segues**:
 
-[ ![](images/16new.png "Akce Segue rozevírací seznam s třídami velikost")](images/16new.png)
+[![](images/16new.png "Akce Segue rozevírací seznam s třídami velikost")](images/16new.png#lightbox)
 
 > [!IMPORTANT]
 > **Poznámka:** Pokud používáte VMWare pro virtuální počítač se systémem Windows, jako je namapovaný Ctrl + kliknutí _klikněte pravým tlačítkem na_ tlačítko myši ve výchozím nastavení. Pokud chcete vytvořit Segue, upravit upřednostňovaných klávesnice prostřednictvím **Předvolby** > **klávesnice a myš** > **zkratky myši** a přemapovat vaší **Sekundární tlačítko** jak je uvedeno dále:
 > 
-> [ ![](images/image22.png "Nastavení předvoleb klávesnici a myš")](images/image22.png)
+> [![](images/image22.png "Nastavení předvoleb klávesnici a myš")](images/image22.png#lightbox)
 > 
 > Teď by měla být možné přidat segue mezi své řadiče zobrazení jako normální.
 
@@ -74,7 +74,7 @@ Existují různé typy přechody, každý uvádějící kontrolu nad jak je nov�
 -  **Unwind** – na unwind segue slouží k přejděte zpátky pomocí nabízených nebo modální segue – například zrušením řadiče modálně uvedené zobrazení. Kromě toho můžete unwind prostřednictvím ne jenom jednoho, ale řadu nabízení a modální segues a vraťte se, že několik kroků ve vaší hierarchii navigační s jedním unwind akce. Abyste pochopili, jak používat unwind segue v iOS, přečtěte si [vytváření Unwind Segues](https://developer.xamarin.com/recipes/ios/general/storyboard/unwind_segue/) recepturách.
 -  **Sourceless** – sourceless segue označuje scény obsahující řadič počáteční zobrazení a které zobrazit uživatele se proto zobrazí první. Je zobrazena ve segue vidíte níže:  
 
-    [ ![](images/sourcelesssegue.png "Sourceless segue")](images/sourcelesssegue.png)
+    [![](images/sourcelesssegue.png "Sourceless segue")](images/sourcelesssegue.png#lightbox)
 
 ### <a name="adaptive-segue-types"></a>Adaptivní Segue typy
 
@@ -82,7 +82,7 @@ Existují různé typy přechody, každý uvádějící kontrolu nad jak je nov�
  
 Všechny aplikace pomocí třídy velikost také použít novou [ *adaptivní Segues*](~/ios/user-interface/storyboards/unified-storyboards.md). Při použití třídy velikosti, nezapomeňte, že jsme nejsou zadání přímo wether používáme iPhone nebo iPad. Jinými slovy vytváříme jeden uživatelské rozhraní, které bude vždy vypadají stejně, bez ohledu na to, kolik nemovitosti musí pracovat. Adaptivní Segues pracovní posuzování prostředí a určení, jak nejlépe prezentovat obsah. Níže jsou uvedeny adaptivní Segues: 
 
-[ ![](images/adaptivesegue.png "Adaptivní Segues rozevíracího seznamu")](images/adaptivesegue.png)
+[![](images/adaptivesegue.png "Adaptivní Segues rozevíracího seznamu")](images/adaptivesegue.png#lightbox)
 
 <table>
     <thead>
@@ -155,11 +155,11 @@ Potřebujete v některých případech přidat do souboru dříve scénáře sc�
 
 1. Vytvoření nového souboru Storyboard procházením **soubor > Nový soubor > iOS > Storyboard**, jak je uvedeno dále: 
     
-    [ ![](images/new-storyboard-xs.png "Dialogové okno Nový soubor")](images/new-storyboard-xs.png)
+    [![](images/new-storyboard-xs.png "Dialogové okno Nový soubor")](images/new-storyboard-xs.png#lightbox)
 
 2. Přidání názvu Storyboard k **hlavní rozhraní** části **Info.plist**, jak je uvedeno níže:
     
-    [ ![](images/infoplist.png "Info.plist editor")](images/infoplist.png)
+    [![](images/infoplist.png "Info.plist editor")](images/infoplist.png#lightbox)
     
     To se o ekvivalent vytváření instancí počáteční řadiče zobrazení v `FinishedLaunching` metoda v rámci delegáta aplikace. S touto sadou možnost aplikace vytvoří okno (viz níže), načte hlavní storyboard a přiřadí instance do scénáře počáteční View Controller (jeden vedle sourceless Segue) jako `RootViewController` vlastnost okna a potom díky okno viditelný na obrazovce.
 
@@ -174,11 +174,11 @@ Potřebujete v některých případech přidat do souboru dříve scénáře sc�
 
 1. Vytvoření nového souboru Storyboard kliknutím pravým tlačítkem na projekt, který má **Přidat > Nový soubor > iOS > prázdná Storyboard**, jak je uvedeno dále: 
     
-    [ ![](images/new-storyboard-vs.png "Dialogové okno Nový položky")](images/new-storyboard-vs.png)
+    [![](images/new-storyboard-vs.png "Dialogové okno Nový položky")](images/new-storyboard-vs.png#lightbox)
 
 2. Přidání názvu Storyboard k **hlavní rozhraní** části IOS aplikací, jak je uvedeno níže:
     
-    [ ![](images/ios-app.png "Info.plist editor")](images/ios-app.png)
+    [![](images/ios-app.png "Info.plist editor")](images/ios-app.png#lightbox)
     
     To se o ekvivalent vytváření instancí počáteční řadiče zobrazení v `FinishedLaunching` metoda v rámci delegáta aplikace. S touto sadou možnost aplikace vytvoří okno (viz níže), načte hlavní storyboard a přiřadí instance do scénáře počáteční View Controller (jeden vedle sourceless Segue) jako `RootViewController` vlastnost okna a potom díky okno viditelný na obrazovce.
 
@@ -205,37 +205,37 @@ Někdy aplikací mít speciální požadavky, které nelze zpracovat s přechody
 
 Následující snímek obrazovky ukazuje, že dva řadiče zobrazení na našem návrhové ploše bez segue mezi nimi. V další části provede jak můžete tento přechod nastavit v kódu.
 
- [ ![](images/viewcontrollerspink.png "Tento snímek obrazovky ukazuje, že dva řadiče zobrazení na návrhovou plochu bez segue mezi nimi")](images/viewcontrollerspink.png)
+ [![](images/viewcontrollerspink.png "Tento snímek obrazovky ukazuje, že dva řadiče zobrazení na návrhovou plochu bez segue mezi nimi")](images/viewcontrollerspink.png#lightbox)
 
 1. Přidat _prázdný iPhone Storyboard_ do existujícího projektu projektu:
     
-    [ ![](images/add-storyboard1.png "Přidání scénáře")](images/add-storyboard1.png)
+    [![](images/add-storyboard1.png "Přidání scénáře")](images/add-storyboard1.png#lightbox)
 
 2. Dvakrát klikněte na nově vytvořený storyboard jej otevřete a přidejte nový **navigační řadiče** na plochu návrháře. Jak je navigace řadič bez uživatelského rozhraní, ve výchozím nastavení se dodává s řadič zobrazení kořenové, jak je uvedeno dále:
 
-    [ ![](images/uinavigationcontroller.png "Zobrazení, Kontrolery Segues")](images/uinavigationcontroller.png)
+    [![](images/uinavigationcontroller.png "Zobrazení, Kontrolery Segues")](images/uinavigationcontroller.png#lightbox)
 
 3. Vyberte _View Controller_ kliknutím na černé panelu v dolní části. V nástroji Designer **vlastnost Pad**v části **Identity** lze zadat vlastní třídu, jakož i jedinečné ID pro řadiče zobrazení. Nastavte **název třídy** a **Storyboard ID** k `MainViewController`.
 
-    [ ![](images/identitypanelnew.png "Zadejte vlastní třídy")](images/identitypanelnew.png)
+    [![](images/identitypanelnew.png "Zadejte vlastní třídy")](images/identitypanelnew.png#lightbox)
 
 4. Později, budeme muset vytvořit instanci naše řadiče zobrazení scénáře a bude pomocí Storyboard ID odkazujte na ně v našem kódu. Nastavení obnovení ID se má shodovat s ID Storyboard zajistí, že kontroleru zobrazení získá znovu vytvořit správně Pokud stav je nutné obnovit.
 
 5. Jsme aktuálně mít pouze jeden řadič zobrazení. Přetáhněte jiného řadiče zobrazení na návrhovou plochu. V **vlastnost Pad**, pod identitou, nastavení třídy a Storyboard ID `PinkViewController`, jak je uvedeno dále:
 
-    [ ![](images/pinkvcnew.png "Vlastnost odsazení")](images/pinkvcnew.png)
+    [![](images/pinkvcnew.png "Vlastnost odsazení")](images/pinkvcnew.png#lightbox)
     
     Prostředí IDE vytvoří tyto vlastní třídy pro řadiče zobrazení. Ty lze zobrazit v **řešení Pad**, jak ukazuje následující snímek obrazovky:
     
-    [ ![](images/solution-pad.png "Odsazení řešení")](images/solution-pad.png)
+    [![](images/solution-pad.png "Odsazení řešení")](images/solution-pad.png#lightbox)
 
 6. V `PinkViewController`, vyberte zobrazení kliknutím směrem k centru rámce kontroleru. V panelu pro vlastnosti v rámci zobrazení změnit **pozadí** fialově:
     
-    [ ![](images/pinkcontroller.png "Nastavení barvy pozadí")](images/pinkcontroller.png)
+    [![](images/pinkcontroller.png "Nastavení barvy pozadí")](images/pinkcontroller.png#lightbox)
 
 7. Nakonec přetáhněte tlačítko z **sada nástrojů** na `MainViewController`. V panelu pro vlastnosti poskytněte název `PinkButton` a název GoToPink, jak je uvedeno dále:
 
-    [ ![](images/pinkbutton.png "Nastavte název tlačítka")](images/pinkbutton.png)
+    [![](images/pinkbutton.png "Nastavte název tlačítka")](images/pinkbutton.png#lightbox)
 
 Scénář je úplný, ale pokud jsme teď nasazení projektu, se nám se získat prázdnou obrazovku. Je to způsobeno musíme sdělení rozhraní IDE používat naše scénáře a nastavit řadič zobrazení kořenové, která bude sloužit jako první zobrazení. Obvykle to lze provést prostřednictvím našich možnosti projektu jak je uvedeno výše. Ale v tomto příkladu jsme se dosáhne stejného výsledku v kódu přidáním následujícího **AppDelegate**:
 
@@ -351,13 +351,13 @@ Než začneme, proveďte kroky 1 – 8 výše. Tyto kroky jsme vytvořit naše s
         - Řádky: 2
         - 'Hidden' zaškrtávací políčko, zaškrtnuté 
         
-    [ ![](images/passwordvc.png "Řádky Center")](images/passwordvc.png)
+    [![](images/passwordvc.png "Řádky Center")](images/passwordvc.png#lightbox)
     
 2. Vytvoření Segue mezi tlačítko přejděte růžový a zobrazení řadiče pomocí Ctrl přetažením z *PinkButton* k *PinkViewController*a výběrem **Push** na myši nahoru . 
 
 3. Klikněte na Segue a pojmenujte ho *identifikátor* `SegueToPink`:
 
-    [ ![](images/namesegue.png "Klikněte na Segue a dejte mu identifikátor SegueToPink")](images/namesegue.png)  
+    [![](images/namesegue.png "Klikněte na Segue a dejte mu identifikátor SegueToPink")](images/namesegue.png#lightbox)  
     
 
 4. Nakonec přidejte následující metodu ShouldPerformSegue do `MainViewController` třídy:
@@ -402,29 +402,29 @@ Pokud chcete přidat odkaz na externí Storyboard, postupujte takto:
 
 1. V **Průzkumníku řešení**, klikněte pravým tlačítkem na název projektu a vyberte **přidat** > **nový soubor...**   >  **iOS** > **Storyboard**. Zadejte **název** pro nové scénáře a klikněte na **nový** tlačítko:
     
-    [ ![](images/ref01.png "Dialogové okno Nový soubor")](images/ref01.png)
+    [![](images/ref01.png "Dialogové okno Nový soubor")](images/ref01.png#lightbox)
     
 2. Návrh rozložení scény nové scénáře, jako za normálních okolností byste a uložte změny: 
     
-    [ ![](images/ref02.png "Rozložení nové scény")](images/ref02.png)
+    [![](images/ref02.png "Rozložení nové scény")](images/ref02.png#lightbox)
     
 3. Otevřete scénáře, který budete přidávat odkaz na v iOS Designer.
 
 4. Přetáhněte **scénáře odkaz** z **sada nástrojů** na návrhovou plochu: 
     
-    [ ![](images/ref03.png "Odkaz na scénáře")](images/ref03.png)
+    [![](images/ref03.png "Odkaz na scénáře")](images/ref03.png#lightbox)
     
 5. V **pomůcky** kartě **Explorer vlastnosti**, vyberte název **Storyboard** kterou jste vytvořili výše: 
 
-    [ ![](images/ref04.png "Na kartě pomůcky")](images/ref04.png)
+    [![](images/ref04.png "Na kartě pomůcky")](images/ref04.png#lightbox)
     
 6. Ovládací prvek, klikněte na Widget uživatelského rozhraní (např. tlačítka) na existující scény a vytvořit nové Segue k **Storyboard odkaz** kterou jste právě vytvořili: 
 
-    [ ![](images/ref05.png "Vytváření segue")](images/ref05.png) 
+    [![](images/ref05.png "Vytváření segue")](images/ref05.png#lightbox) 
     
 7. V místní nabídce vyberte **zobrazit** k dokončení Segue: 
 
-    [ ![](images/ref06.png "Výběr zobrazení k dokončení Segue")](images/ref06.png) 
+    [![](images/ref06.png "Výběr zobrazení k dokončení Segue")](images/ref06.png#lightbox) 
     
 8. Uložte změny do scénáře.
 
@@ -440,29 +440,29 @@ Chcete-li přidat odkaz na konkrétní scény externí Storyboard (a ne počáte
 
 2. Přidejte nové scény a návrh jeho rozložení běžným způsobem: 
 
-    [ ![](images/ref07.png "Nové rozložení scény")](images/ref07.png)
+    [![](images/ref07.png "Nové rozložení scény")](images/ref07.png#lightbox)
     
 3. V **pomůcky** kartě **Explorer vlastnosti**, zadejte **Storyboard ID** pro nové scény View Controller: 
 
-    [ ![](images/ref08.png "Zadejte ID scénáře pro nový řadič zobrazení scény")](images/ref08.png)
+    [![](images/ref08.png "Zadejte ID scénáře pro nový řadič zobrazení scény")](images/ref08.png#lightbox)
     
 3. Otevřete scénáře, který budete přidávat odkaz na v iOS Designer.
 
 4. Přetáhněte **scénáře odkaz** z **sada nástrojů** na návrhovou plochu: 
 
-    [ ![](images/ref03.png "Odkaz na scénáře")](images/ref03.png)
+    [![](images/ref03.png "Odkaz na scénáře")](images/ref03.png#lightbox)
     
 5. V **pomůcky** kartě **Explorer vlastnosti**, vyberte název **Storyboard** a **ID odkazu na** (Storyboard ID) z Scény, kterou jste vytvořili výše: 
 
-    [ ![](images/ref09.png "Na kartě pomůcky ")](images/ref09.png)
+    [![](images/ref09.png "Na kartě pomůcky ")](images/ref09.png#lightbox)
     
 6. Ovládací prvek, klikněte na Widget uživatelského rozhraní (např. tlačítka) na existující scény a vytvořit nové Segue k **Storyboard odkaz** kterou jste právě vytvořili: 
 
-    [ ![](images/ref10.png "Vytváření segue")](images/ref10.png) 
+    [![](images/ref10.png "Vytváření segue")](images/ref10.png#lightbox) 
     
 7. V místní nabídce vyberte **zobrazit** k dokončení Segue: 
 
-    [ ![](images/ref06.png "Výběr zobrazení k dokončení Segue")](images/ref06.png) 
+    [![](images/ref06.png "Výběr zobrazení k dokončení Segue")](images/ref06.png#lightbox) 
     
 8. Uložte změny do scénáře.
 
@@ -478,27 +478,27 @@ Pokud chcete přidat odkaz na konkrétní scény stejné Storyboard, postupujte 
 
 2. Přidejte nové scény a návrh jeho rozložení běžným způsobem: 
 
-    [ ![](images/ref11.png "Nové rozložení scény")](images/ref11.png)
+    [![](images/ref11.png "Nové rozložení scény")](images/ref11.png#lightbox)
 
 3. V **pomůcky** kartě **Explorer vlastnosti**, zadejte **Storyboard ID** pro nové scény View Controller: 
 
-    [ ![](images/ref12.png "Na kartě pomůcky")](images/ref12.png)
+    [![](images/ref12.png "Na kartě pomůcky")](images/ref12.png#lightbox)
     
 3. Přetáhněte **scénáře odkaz** z **sada nástrojů** na návrhovou plochu: 
 
-    [ ![](images/ref03.png "Odkaz na scénáře")](images/ref03.png)
+    [![](images/ref03.png "Odkaz na scénáře")](images/ref03.png#lightbox)
     
 5. V **pomůcky** kartě **Explorer vlastnosti**, vyberte **ID odkazu** (Storyboard ID) scény, kterou jste vytvořili výše: 
 
-    [ ![](images/ref13.png "Na kartě pomůcky")](images/ref13.png)
+    [![](images/ref13.png "Na kartě pomůcky")](images/ref13.png#lightbox)
     
 6. Ovládací prvek, klikněte na Widget uživatelského rozhraní (např. tlačítka) na existující scény a vytvořit nové Segue k **Storyboard odkaz** kterou jste právě vytvořili: 
 
-    [ ![](images/ref14.png "Vytváření segue")](images/ref14.png) 
+    [![](images/ref14.png "Vytváření segue")](images/ref14.png#lightbox) 
     
 7. V místní nabídce vyberte **zobrazit** k dokončení Segue: 
 
-    [ ![](images/ref06.png "Výběr zobrazení k dokončení Segue")](images/ref06.png) 
+    [![](images/ref06.png "Výběr zobrazení k dokončení Segue")](images/ref06.png#lightbox) 
     
 8. Uložte změny do scénáře.
 

@@ -4,14 +4,15 @@ description: "XAML – rozšíření značek tvoří důležitou součást v jaz
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: 7aea7b1536efc952378c6a1df63640af191f1ebe
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1c5c4c30a7e506e19fc4dc0728fb55851ec4911f
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="part-3-xaml-markup-extensions"></a>Část 3. XAML – rozšíření značek
 
@@ -298,7 +299,7 @@ Tady je poslední dokončení souboru XAML s tři tlačítka přístup k šesti 
 
 Na snímcích obrazovky ověřte konzistentní stylů a stylu závislé na platformě:
 
-[ ![](xaml-markup-extensions-images/sharedresources.png "Ovládací prvky ve")](xaml-markup-extensions-images/sharedresources-large.png "ve ovládací prvky")
+[![](xaml-markup-extensions-images/sharedresources.png "Ovládací prvky ve")](xaml-markup-extensions-images/sharedresources-large.png#lightbox "ve ovládací prvky")
 
 I když se nejčastěji můžete definovat `Resources` kolekce v horní části stránky, mějte na paměti, `Resources` je definována vlastnost `VisualElement`, a může mít `Resources` kolekce na další prvky na stránce. Zkuste například přidávání jeden, který `StackLayout` v tomto příkladu:
 
@@ -436,7 +437,7 @@ Obě tyto deklarace oboru názvů jsou součástí **StaticConstantsPage** ukáz
 
 Velikost výsledné `BoxView` relativně k obrazovce je závislá na platformě:
 
- [ ![](xaml-markup-extensions-images/staticconstants.png "Ovládacích prvků pomocí x: Static – rozšíření značek")](xaml-markup-extensions-images/staticconstants-large.png "ovládacích prvků pomocí x: Static – rozšíření značek")
+ [![](xaml-markup-extensions-images/staticconstants.png "Ovládacích prvků pomocí x: Static – rozšíření značek")](xaml-markup-extensions-images/staticconstants-large.png#lightbox "ovládacích prvků pomocí x: Static – rozšíření značek")
 
 ## <a name="other-standard-markup-extensions"></a>Další rozšíření standardní značek
 
@@ -552,7 +553,7 @@ Možná je nejdůležitější lekce byste měli vzít od této ukázky syntaxe 
 
 Tady je spuštěn program:
 
-[ ![](xaml-markup-extensions-images/relativelayout.png "Relativní rozložení pomocí omezení")](xaml-markup-extensions-images/relativelayout-large.png "relativní rozložení pomocí omezení")
+[![](xaml-markup-extensions-images/relativelayout.png "Relativní rozložení pomocí omezení")](xaml-markup-extensions-images/relativelayout-large.png#lightbox "relativní rozložení pomocí omezení")
 
 ## <a name="summary"></a>Souhrn
 

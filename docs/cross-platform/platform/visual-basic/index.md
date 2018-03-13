@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: c8f66ac8532d6926fe8280b5687135dc3df53289
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 978d9e569825e20b40e963f590049eaab1d4e752
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="portable-visual-basicnet"></a>Přenosné Visual Basic.NET
 
@@ -24,7 +24,8 @@ Podpora knihovny přenosných třída je přidaná do Xamarin.Android 4.10.1 Xam
 
 Vytvoření a kompilace jazyka Visual Basic knihovny přenosných tříd musíte použít Visual Studio v systému Windows (Visual Studio 2012 nebo novější).
 
-> ℹ️ **Poznámka:** knihovny jazyka Visual Basic lze vytvořit pouze a zkompilovat pomocí sady Visual Studio. Xamarin.iOS a Xamarin.Android nepodporují jazyka Visual Basic.
+> [!NOTE]
+> Knihovny jazyka Visual Basic lze vytvořit pouze a zkompilovat pomocí sady Visual Studio. Xamarin.iOS a Xamarin.Android nepodporují jazyka Visual Basic.
 >
 > Pokud pracujete výhradně v sadě Visual Studio můžete projektu jazyka Visual Basic odkazovat z projektů Xamarin.iOS a Xamarin.Android.
 >
@@ -44,15 +45,15 @@ Postup vytvoření PCL a vyberte jeho profil jsou:
 
 1.  V **nový projekt** obrazovku, vyberte **jazyka Visual Basic > knihovny tříd (přenositelností)** možnost:
 
-  [ ![](images/image1-sml.png "Vytvoření nové přenosné knihovny jazyka Visual Basic")](images/image1.png)
+    [![](images/image1-sml.png "Vytvoření nové přenosné knihovny jazyka Visual Basic")](images/image1.png#lightbox)
 
 1.  Visual Studio vyzve okamžitě s následující **přidat Přenosná knihovna tříd** dialogové okno tak, aby profil lze nakonfigurovat. Osové platformy, které potřebujete podporovat a stiskněte klávesu **OK**.
 
-  [ ![](images/image2-sml.png "Vyberte profil PCL výběrem platformy")](images/image2.png)
+    [![](images/image2-sml.png "Vyberte profil PCL výběrem platformy")](images/image2.png#lightbox)
 
 1.  Projekt Visual Basic PCL se zobrazí, jak je znázorněno **Průzkumníku řešení** podobné výjimky:
 
-  [ ![](images/image3-sml.png "Prázdný projekt Visual Studio PCL")](images/image3.png)
+    [![](images/image3-sml.png "Prázdný projekt Visual Studio PCL")](images/image3.png#lightbox)
 
 
 PCL je nyní připraven pro kód jazyka Visual Basic, který se má přidat. PCL projekty mohou odkazovat další projekty (aplikace projekty – projekty knihovny a i další projekty PCL).
@@ -61,7 +62,7 @@ PCL je nyní připraven pro kód jazyka Visual Basic, který se má přidat. PCL
 
 Profil PCL (který určuje platformy, na kterých PCL je kompatibilní s) můžete zobrazit a změnit tak, že kliknete pravým tlačítkem na projekt a výběr **vlastnosti > Knihovna > změnu...** . Výsledný dialogové okno se zobrazí na tomto snímku obrazovky:
 
- [ ![](images/image4-sml.png "Upravit profil PCL v okně Vlastnosti projektu")](images/image4.png)
+ [![](images/image4-sml.png "Upravit profil PCL v okně Vlastnosti projektu")](images/image4.png#lightbox)
 
 Pokud profil je po kód již byl přidán do PCL změnit, je možné, že knihovny nebudou nadále kompilovány, pokud kód odkazuje na funkce, které nejsou součástí nově vybraný profil.
 

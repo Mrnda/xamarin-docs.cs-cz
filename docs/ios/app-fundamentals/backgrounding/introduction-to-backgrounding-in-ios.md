@@ -6,11 +6,11 @@ ms.assetid: E214F2C7-E74E-46C7-B5BA-080B30D61250
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: e46520122b54fabfe27f73370e2ab736a349f7f4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c4eed99533ba1aca1bd5ba23078866909330b542
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-backgrounding-in-ios"></a>Úvod do Backgrounding v iOS
 
@@ -27,7 +27,7 @@ Před jsme ponořte do kód pro zpracování v iOS na pozadí, je potřeba pocho
 
 Životní cyklus aplikace iOS je kolekce stavy aplikace a metody pro přesun mezi nimi. Aplikaci přechodů mezi stavy na základě chování uživatele a požadavky na backgrounding aplikace. Přesun je zobrazená ve následující diagram:
 
- [ ![](introduction-to-backgrounding-in-ios-images/applicationlifecycle-.png "Diagram aplikace stavy a metody delegáta aplikace")](introduction-to-backgrounding-in-ios-images/applicationlifecycle-.png)
+ [![](introduction-to-backgrounding-in-ios-images/applicationlifecycle-.png "Diagram aplikace stavy a metody delegáta aplikace")](introduction-to-backgrounding-in-ios-images/applicationlifecycle-.png#lightbox)
 
 -  **Není spuštěna** – aplikace nebyla byla spuštěna ještě na zařízení.
 -  **Spuštění nebo aktivní** – aplikace se na obrazovce a spouští kód v popředí.
@@ -52,7 +52,7 @@ Při změně stavu aplikace iOS informuje prostřednictvím metody událostí v 
 
 Následující diagram znázorňuje, jak aplikaci stavy a životního cyklu metody zapadají:
 
- [ ![](introduction-to-backgrounding-in-ios-images/image2.png "Tento diagram znázorňuje, jak aplikaci stavy a životního cyklu metody zapadají")](introduction-to-backgrounding-in-ios-images/image2.png)
+ [![](introduction-to-backgrounding-in-ios-images/image2.png "Tento diagram znázorňuje, jak aplikaci stavy a životního cyklu metody zapadají")](introduction-to-backgrounding-in-ios-images/image2.png#lightbox)
 
 ## <a name="user-controls-for-backgrounding-in-ios"></a>Uživatelské ovládací prvky pro Backgrounding v iOS
 
@@ -62,7 +62,7 @@ iOS 7 se zavedl několik funkcí, které uživatelům umožňují větší kontr
 
 Přepínači aplikace je důležité řízení funkce byla zavedená v iOS 7. Spuštění jejíž **Domů** tlačítko a zobrazí aplikace, jejichž procesy jsou aktivní:
 
- [ ![](introduction-to-backgrounding-in-ios-images/app-switcher-.png "Přesouvání mezi aplikací pomocí aplikace přepínači")](introduction-to-backgrounding-in-ios-images/app-switcher-.png)
+ [![](introduction-to-backgrounding-in-ios-images/app-switcher-.png "Přesouvání mezi aplikací pomocí aplikace přepínači")](introduction-to-backgrounding-in-ios-images/app-switcher-.png#lightbox)
 
 Pomocí aplikace přepínači, uživatelé mohou posouvat snímky všech aplikací backgrounded a pozastavený. Klepnutím aplikace spustí na popředí. Až k načtení Odebere aplikaci ze na pozadí, jeho proces se ukončuje. Jsme bude trvat bližší pohled na přepínači aplikace v [iOS Ukázka životního cyklu aplikace](~/ios/app-fundamentals/backgrounding/application-lifecycle-demo.md) v další části.
 
@@ -77,7 +77,7 @@ iOS 7 zvyšuje kontrola uživatele nad životním cyklu aplikace tím, že uživ
 
 Uživatelé můžou změnit toto nastavení tak, že přejdete do <span class="uiitem">Nastavení > Obecné > aktualizace na pozadí aplikace</span> backgrounding oprávnění pro vybranou aplikaci a úpravy. Pokud aktualizace na pozadí aplikace je nastavena na vypnuto, aplikace pozastaveno okamžitě při vstupu na pozadí a vykonávat žádné zpracování na pozadí:
 
- [ ![](introduction-to-backgrounding-in-ios-images/settings-.png "Nastavení pozadí aktualizace aplikace")](introduction-to-backgrounding-in-ios-images/settings-.png)
+ [![](introduction-to-backgrounding-in-ios-images/settings-.png "Nastavení pozadí aktualizace aplikace")](introduction-to-backgrounding-in-ios-images/settings-.png#lightbox)
 
 Vývojářům můžete zkontrolovat stav aplikace aktualizovat pozadí se `BackgroundRefreshStatus` rozhraní API. Příklad najdete v části [zkontrolujte pozadí nastavení recepturách](https://developer.xamarin.com/recipes/ios/multitasking/check_background_refresh_setting/).
 

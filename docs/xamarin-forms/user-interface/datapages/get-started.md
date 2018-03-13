@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 79ce4a1393b2affade3422f73e1c3d4680d199df
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 1e65207e987dbdab8bf2fe5f48f0b0a500dd27bc
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="getting-started-with-datapages"></a>Začínáme s DataPages
 
@@ -23,7 +23,7 @@ ms.lasthandoff: 02/28/2018
 
 Abyste mohli začít vytváření stránky jednoduché datové jednotky pomocí verze Preview DataPages, postupujte podle následujících kroků. Tento ukázkový používá pevně zakódované styl ("události") ve verzi Preview sestavení, které lze použít pouze se konkrétní formátu JSON v kódu.
 
-[ ![](get-started-images/demo-sml.png "DataPages ukázkovou aplikaci")](get-started-images/demo.png "DataPages ukázkové aplikace")
+[![](get-started-images/demo-sml.png "DataPages ukázkovou aplikaci")](get-started-images/demo.png#lightbox "DataPages ukázkové aplikace")
 
 ## <a name="1-add-nuget-packages"></a>1. Přidání balíčků NuGet
 
@@ -134,7 +134,7 @@ Příklad dat JSON z [ukázkový zdroj](http://demo3143189.mockable.io/sessions)
 
 Výše uvedené kroky by měl mít za následek stránku pracovní dat:
 
-[ ![](get-started-images/demo-sml.png "DataPages ukázkovou aplikaci")](get-started-images/demo.png "DataPages ukázkové aplikace")
+[![](get-started-images/demo-sml.png "DataPages ukázkovou aplikaci")](get-started-images/demo.png#lightbox "DataPages ukázkové aplikace")
 
 Toto funguje, protože styl předem připravené **"Události"** na balíček Nuget motiv světlý existuje a má styly definované, které odpovídají zdroje dat (např. "title", "image", "přednášejícího").
 
@@ -163,7 +163,7 @@ Styl zděděné lze přepsat zadáním šablonu a pomocí datového zdroje vazby
 
 Tím, že poskytuje `DataTemplate` tento kód přepíše `StyleClass` a místo toho používá výchozí rozložení `ListItemControl`.
 
-[ ![](get-started-images/custom-sml.png "DataPages ukázkovou aplikaci")](get-started-images/custom.png "DataPages ukázkové aplikace")
+[![](get-started-images/custom-sml.png "DataPages ukázkovou aplikaci")](get-started-images/custom.png#lightbox "DataPages ukázkové aplikace")
 
 Vývojáři, dáváte přednost, C# do jazyka XAML můžete vytvořit datového zdroje vazby příliš (nezapomeňte zahrnout `using Xamarin.Forms.Pages;` příkaz):
 

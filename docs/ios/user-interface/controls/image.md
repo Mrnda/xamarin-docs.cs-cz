@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 71f3774c12add26e818b0859cf90c17ab6358538
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 716189fbf1518e9100a78cc5ae64e9e63a24c949
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="displaying-images"></a>Zobrazení obrázků
 
@@ -25,7 +25,7 @@ Visual Studio pro Mac také podporuje speciální adresář s názvem prostředk
 
 Tento snímek obrazovky ukazuje **akce sestavení** možnosti, které se zobrazí při otevření souboru je klepli pravým tlačítkem myši:
 
- [ ![](image-images/image30a.png "Nabídka Akce sestavení")](image-images/image30a.png)
+ [![](image-images/image30a.png "Nabídka Akce sestavení")](image-images/image30a.png#lightbox)
 
 Visual Studio pro Mac obvykle vyberte správný **akce sestavení** automaticky, ale byste měli vědět z těchto nastavení, zejména v případě, že můžete přesouvat soubory v projektu.
 
@@ -33,15 +33,15 @@ Visual Studio pro Mac obvykle vyberte správný **akce sestavení** automaticky,
 
 Chcete-li přidat do projektu soubor obrázku, nejprve klikněte pravým tlačítkem na projekt a zvolte **přidat soubory...**
 
- [ ![](image-images/image31a.png "Přidání souborů... nabídky")](image-images/image31a.png)
+ [![](image-images/image31a.png "Přidání souborů... nabídky")](image-images/image31a.png#lightbox)
 
 Vyberte bitovou kopii (nebo bitové kopie) chcete zahrnout v dialogovém okně standardní soubor. Výchozí akce sestavení pro bitové kopie bude **BundleResource** – nepotlačí tuto hodnotu, pokud nemáte konkrétní důvod, proč.
 
- [ ![](image-images/image32a.png "Přidat soubory – dialogové okno")](image-images/image32a.png)
+ [![](image-images/image32a.png "Přidat soubory – dialogové okno")](image-images/image32a.png#lightbox)
 
 Obrázek se přidá do projektu a k dispozici pro načtení a zobrazí v kódu. Tento snímek obrazovky ukazuje image přidat do projektu aplikace iOS:
 
- [ ![](image-images/image33a.png "Bitové kopie v projektu")](image-images/image33a.png)
+ [![](image-images/image33a.png "Bitové kopie v projektu")](image-images/image33a.png#lightbox)
 
 ### <a name="what-is-the-resources-directory"></a>Co je adresář prostředky?
 
@@ -61,11 +61,11 @@ Adresář prostředků musí mít název, a všechny soubory musí mít akce ses
 
 Zobrazíte bitovou kopii pomocí návrháře zobrazení obrazu slouží jako kontejner a zobrazit jedinou bitovou kopii nebo animace bitových kopií. **Image zobrazení** ikonu z panelu nástrojů je zobrazena níže:
 
- [ ![](image-images/image35a.png "ImageView v sadě nástrojů")](image-images/image35.png)
+ [![](image-images/image35a.png "ImageView v sadě nástrojů")](image-images/image35.png#lightbox)
 
 Přetáhněte **bitové kopie zobrazení** z **Toobox** do řadiče zobrazení. Potom v části ** Image zobrazení > Image ** rozevíracího seznamu vám poskytne seznam všech souborů bitové kopie k dispozici ve vašem projektu. Vyberte některé z těchto přidat do bitové kopie zobrazení.
 
- [ ![](image-images/image36a.png "ImageView v sadě nástrojů")](image-images/image36.png)
+ [![](image-images/image36a.png "ImageView v sadě nástrojů")](image-images/image36.png#lightbox)
 
 ### <a name="displaying-the-image-programmatically"></a>Zobrazení bitovou kopii prostřednictvím kódu programu
 

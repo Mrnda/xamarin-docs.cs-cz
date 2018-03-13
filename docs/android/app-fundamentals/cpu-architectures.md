@@ -7,12 +7,12 @@ ms.assetid: D4BC889D-9164-49BB-9B7B-F6C4E4E109F1
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 6139b5e27e9689da6366a2107acc14a6adcfc928
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 3df6dc72eaed74ad335596d55db8b1295b16f3c2
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="cpu-architectures"></a>Architektury procesoru
 
@@ -32,7 +32,7 @@ Obvykle je explicitně vybrat architekturu (nebo architektury) Pokud je vaše ap
 
 V sadě Visual Studio, klikněte dvakrát na **vlastnosti** pod projekt v **Průzkumníku řešení** a vyberte **Android možnosti** stránky. Klikněte na tlačítko **balení** kartě a ověřte, že **použití sdílených Runtime** vypnutá (vypnutí této funkce můžete explicitně vybrat které bis pro podporu). Klikněte **Upřesnit** kartě a v části **Upřesnit vlastnosti**, zkontrolujte architektury, které chcete podporovat:
 
-[ ![Výběr armeabi a armeabi v7a](cpu-architectures-images/vs/01-abi-selections-sml.png)](cpu-architectures-images/vs/01-abi-selections.png)
+[![Výběr armeabi a armeabi v7a](cpu-architectures-images/vs/01-abi-selections-sml.png)](cpu-architectures-images/vs/01-abi-selections.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -40,7 +40,7 @@ Obvykle je explicitně vybrat architekturu (nebo architektury) Pokud je vaše ap
 
 V sadě Visual Studio pro Mac, vyhledejte v projektu **řešení** odsadí, klikněte na ikonu ozubené kolečko vedle projekt a vyberte **možnosti**. V **možnosti projektu** dialogové okno, klikněte na tlačítko **Android sestavení**. Klikněte na tlačítko **Obecné** kartě a ověřte, že **využít sdílené Mono runtime** vypnutá (vypnutí této funkce můžete explicitně vybrat které bis k podpoře). Klikněte na tlačítko **Upřesnit** kartě a v části **podporované bis** , zkontrolujte bis architektur, které chcete podporovat:
 
-[ ![Výběr armeabi a armeabi v7a](cpu-architectures-images/xs/01-abi-selections-sml.png)](cpu-architectures-images/xs/01-abi-selections.png)
+[![Výběr armeabi a armeabi v7a](cpu-architectures-images/xs/01-abi-selections-sml.png)](cpu-architectures-images/xs/01-abi-selections.png#lightbox)
 
 -----
 
@@ -66,7 +66,7 @@ Pokud chcete zacílit víc architektur procesoru, můžete vybrat více než jed
 Nemáte vyberte **arm64 v8a** nebo **x86_64** cílit zařízení 64-bit; podpora 64bitových technologií není potřeba spustit aplikaci na 64bitovém hardwaru. Například 64-bit ARM zařízení (například [Nexus 9](http://www.google.com/nexus/9/)) můžete spustit aplikace nakonfigurované pro `armeabi-v7a`. Primární výhodou povolení podpory 64-bit je, aby bylo možné pro své aplikace a adresa více paměti.
 
 > [!NOTE]
-> **Poznámka:**: podpora 64bitový modul runtime je aktuálně experimentální funkce. Pamatujte, že jsou moduly runtime 64-bit *není* nutná k provozování vaší aplikace na 64bitových zařízeních. 
+> Podpora 64bitový modul runtime momentálně experimentální funkce. Pamatujte, že jsou moduly runtime 64-bit *není* nutná k provozování vaší aplikace na 64bitových zařízeních. 
 
 ## <a name="additional-information"></a>Další informace
 

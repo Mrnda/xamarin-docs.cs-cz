@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: 55d692fa92dd08dd9c0887ed10013589afc98ec6
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2276b67fc29f2752e4b178168a12e6e980b788d0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-watchos"></a>Úvod do watchOS
 
@@ -29,11 +29,11 @@ ms.lasthandoff: 02/27/2018
 
 V aplikacích watchOS 1 kód v rozšíření běží na iPhone – Apple Watch je efektivně externí zobrazení. zcela na Apple Watch spustit aplikace watchOS 2 a 3. Tento rozdíl je znázorněno na obrázku níže:
 
-[ ![](intro-to-watchos-images/arch-sml.png "Rozdíl mezi watchOS 1 a watchOS 2 (a vyšší) se zobrazí v tomto diagramu")](intro-to-watchos-images/arch.png)
+[ ![](intro-to-watchos-images/arch-sml.png "Rozdíl mezi watchOS 1 a watchOS 2 (a vyšší) se zobrazí v tomto diagramu")](intro-to-watchos-images/arch.png#lightbox)
 
 Bez ohledu na to, kterou verzi watchOS je určeno v sadě Visual Studio pro Mac je řešení Pad kompletního řešení bude vypadat přibližně takto:
 
-[ ![](intro-to-watchos-images/projectstructure-sml.png "Odsazení řešení")](intro-to-watchos-images/projectstructure.png)
+[![](intro-to-watchos-images/projectstructure-sml.png "Odsazení řešení")](intro-to-watchos-images/projectstructure.png#lightbox)
 
 *Nadřazená aplikace* v watchOS řešení je regulární iOS aplikace. Toto je pouze projekt v řešení, které se zobrazuje **v telefonu**. Případy použití pro tuto aplikaci bude zahrnovat kurzy, správu obrazovky a střední vrstvě filtrování, cacheing atd. Je však možné pro uživatele k instalaci a spuštění aplikace nebo rozšíření sledovat bez **někdy** otevření aplikace nadřazené proto pokud potřebujete nadřazené aplikaci spustit pro jednorázové inicializace nebo správy, budete muset programu vaší sledování aplikace nebo rozšíření říct uživatelům, který.
 
@@ -139,4 +139,4 @@ Projděte si dokumentaci od společnosti Apple:
 - [První aplikaci sledovat video](http://blog.xamarin.com/your-first-watch-kit-app/)
 - [Apple je vývoji pro průvodce sledováním Kit](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/index.html)
 - [Tipy WatchKit společnosti Apple](https://developer.apple.com/watchkit/tips/)
-- [Úvod do watchOS 3](~/ios/watchos/platform/introduction-to-watchos3/index.md)
+- [Úvod do watchOSu 3](~/ios/watchos/platform/introduction-to-watchos3/index.md)

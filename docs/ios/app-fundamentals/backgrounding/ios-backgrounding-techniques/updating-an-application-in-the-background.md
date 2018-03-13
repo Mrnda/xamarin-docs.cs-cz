@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: d878f922b74ea3e95fd0e1ebce9e7445063a2946
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f4a18bf8f35d1a6c615c819ea90433d1eb123422
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="updating-an-application-in-the-background"></a>Aktualizaci aplikace na pozadí
 
@@ -44,7 +44,7 @@ V iOS 6 potřeba aplikace zadávání popředí čas načíst nový obsah, uživ
 
 Chcete-li implementovat načítání na pozadí, upravte *Info.plist* a zkontrolujte **povolit režimy pozadí** a **načítání na pozadí** zaškrtávací políčka:
 
- [ ![](updating-an-application-in-the-background-images/fetch.png "Upravit Info.plist a zaškrtněte políčko Povolit režimy pozadí a načíst pozadí")](updating-an-application-in-the-background-images/fetch.png)
+ [![](updating-an-application-in-the-background-images/fetch.png "Upravit Info.plist a zaškrtněte políčko Povolit režimy pozadí a načíst pozadí")](updating-an-application-in-the-background-images/fetch.png#lightbox)
 
 Vedle `AppDelegate`, přepsat `FinishedLaunching` metodu a nastavit minimální načítání intervalu. V tomto příkladu jsme mohli rozhodnout, jak často se načíst nový obsah operačního systému:
 
@@ -106,7 +106,7 @@ Příchozí nabízená oznámení v iOS 6, říká systému upozornit uživatele
 
 Chcete-li implementovat vzdáleného oznámení, upravte *Info.plist* a zkontrolujte **povolit režimy pozadí** a **vzdáleného oznámení** zaškrtávací políčka:
 
- [ ![](updating-an-application-in-the-background-images/remote.png "Režim pozadí nastaven na možnost povolit režimy pozadí a vzdáleného oznámení")](updating-an-application-in-the-background-images/remote.png)
+ [![](updating-an-application-in-the-background-images/remote.png "Režim pozadí nastaven na možnost povolit režimy pozadí a vzdáleného oznámení")](updating-an-application-in-the-background-images/remote.png#lightbox)
 
 Dále nastavte `content-available` příznak na nabízené oznámení sám sebe na 1. To umožní aplikaci vědět, abyste mohli načíst nový obsah před zobrazením výstrahy:
 
@@ -153,7 +153,7 @@ Největší rozdíl mezi běžné a tichou oznámení z hlediska vývojáře je,
 
 APNs však vám umožní tichou oznámení "přilepí" spolu s normální vzdáleného oznámení nebo udržování odpovědi. Protože pravidelných oznámení není míra omezená, můžete používají pro nabízená oznámení uložené až tichou z APNs na zařízení, které jsou popsány v následujícím diagramu:
 
- [ ![](updating-an-application-in-the-background-images/silent.png "Pravidelných oznámení lze použít k replikaci uložené tichou oznámení z APNs na zařízení, které jsou popsány v tomto diagramu")](updating-an-application-in-the-background-images/silent.png)
+ [![](updating-an-application-in-the-background-images/silent.png "Pravidelných oznámení lze použít k replikaci uložené tichou oznámení z APNs na zařízení, které jsou popsány v tomto diagramu")](updating-an-application-in-the-background-images/silent.png#lightbox)
 
 > [!IMPORTANT]
 > **Poznámka:**: Apple umožňuje vývojářům odesílat tichou nabízená oznámení vždy, když aplikace vyžaduje, a umožňují APNs naplánovat jejich doručování.

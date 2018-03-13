@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 1967dea3b7f3a870950cdc7732292e9d4e24a1a8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 35665731fb0b8b669a850c06929dd951589e6bf6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="updating-existing-mac-apps"></a>Aktualizace stávající aplikace pro Mac
 
@@ -20,18 +20,17 @@ _Postupujte podle těchto kroků provedete aktualizaci existující aplikace Xam
 
 Aktualizace stávající aplikace pro použití unifikované API vyžaduje změny samotný soubor projektu také na obory názvů a rozhraní API používaná v kódu aplikace.
 
-# <a name="the-road-to-64-bits"></a>Silniční na 64 bitů
+## <a name="the-road-to-64-bits"></a>Silniční na 64 bitů
 
 Nová rozhraní API Unified jsou potřebné k podpoře 64bitové architektury zařízení z aplikace Xamarin.Mac. Od 1. února 2015 Apple vyžaduje, že všechna odeslání nové aplikace pro Mac App Storu podporovat 64bitové architektury.
 
 Xamarin poskytuje nástrojů pro Visual Studio pro Mac a Visual Studio automatizovat proces migrace z klasického rozhraní API do rozhraní API Unified nebo soubory projektu můžete převést ručně. Při použití automatické nástrojů vysoce navržený, tento článek se zabývá obě metody.
 
-## <a name="before-you-start"></a>Před zahájením...
+### <a name="before-you-start"></a>Před zahájením...
 
 Předtím, než můžete aktualizovat váš stávající kód unifikované API, důrazně doporučujeme odstranit všechny *upozornění kompilace*. Mnoho *upozornění* v klasické rozhraní API bude chyby po migraci na jednotné. Před zahájením jejich oprava je jednodušší, protože zpráv kompilátoru z rozhraní API Classic často poskytovat k tomu, co k aktualizaci.
 
-
-# <a name="automated-updating"></a>Automatické aktualizace
+## <a name="automated-updating"></a>Automatické aktualizace
 
 Jakmile bylo opraveno upozornění, vyberte existující projekt Mac v sadě Visual Studio pro Mac nebo Visual Studio a zvolte **migrace na rozhraní API Unified Xamarin.Mac** z **projektu** nabídky. Příklad:
 
@@ -50,11 +49,11 @@ Podrobné informace o cílové architektury a důsledky výběr specifické cíl
 
 Nástroj v podstatě automaticky podle kroků uvedených v **aktualizace ručně** níže uvedené části a je metodě navrhované převod existujícího projektu Xamarin.Mac jednotné rozhraní API.
 
-# <a name="steps-to-update-manually"></a>Postup aktualizace ručně
+## <a name="steps-to-update-manually"></a>Postup aktualizace ručně
 
 Znovu Jakmile bylo opraveno upozornění, použijte následující postup ručně aktualizovat Xamarin.Mac aplikace mohly používat nový unifikované API:
 
-## <a name="1-update-project-type--build-target"></a>1. Typ projektu aktualizace & cíl sestavení
+### <a name="1-update-project-type--build-target"></a>1. Typ projektu aktualizace & cíl sestavení
 
 Změnit příchuť projektu ve vaší **csproj** souborů z `42C0BBD9-55CE-4FC1-8D90-A7348ABAFB23` k `A3F8F2AB-B479-4A4A-A458-A89E7DC349F1`. Upravit **csproj** soubor v textovém editoru, nahraďte první položky `<ProjectTypeGuids>` element, jak je znázorněno:
 
@@ -76,8 +75,7 @@ Příklad:
 
 ![](updating-mac-apps-images/csproj3.png "Přidejte tyto řádky kódu po elementu < AssemblyName >")
 
-
-## <a name="2-update-project-references"></a>2. Aktualizace odkazů projektu
+### <a name="2-update-project-references"></a>2. Aktualizace odkazů projektu
 
 Rozbalte projekt aplikace Mac **odkazy** uzlu. Původně se zobrazí * porušený - **XamMac** odkaz zhruba takto (protože jsme právě změnit typ projektu):
 
@@ -91,28 +89,27 @@ Pak klikněte pravým tlačítkem na **odkazy** složky v **Průzkumníku řeše
 
 Stiskněte klávesu **OK** uložte projekt odkazuje na změny.
 
-## <a name="3-remove-monomac-from-namespaces"></a>3. Odebrání MonoMac obory názvů
+### <a name="3-remove-monomac-from-namespaces"></a>3. Odebrání MonoMac obory názvů
 
 Odeberte **MonoMac** předponu z oborů názvů v `using` příkazy nebo kdekoli classname má byla plně kvalifikovaný (např. `MonoMac.AppKit` právě se stane `AppKit`).
 
-## <a name="4-remap-types"></a>4. Přemapování typy
+### <a name="4-remap-types"></a>4. Přemapování typy
 
 [Nativní typy](~/cross-platform/macios/nativetypes.md) byly zavedeny, který nahradit některé typy, které byly dříve používány, jako je například instance `System.Drawing.RectangleF` s `CoreGraphics.CGRect` (například). Úplný seznam typů naleznete na [nativní typy](~/cross-platform/macios/nativetypes.md) stránky.
 
-## <a name="5-fix-method-overrides"></a>5. Opravte přepsání – metoda
+### <a name="5-fix-method-overrides"></a>5. Opravte přepsání – metoda
 
 Některé `AppKit` metody předtím podpis změnit tak, aby používal novou [nativní typy](~/cross-platform/macios/nativetypes.md) (například `nint`). Pokud vlastní podtřídy přepsat tyto metody podpisů bude shodovat s již a bude mít za následek chyby. Tato metoda přepsání vyřešte změnou podtřídy tak, aby odpovídala nové podpis použití nativních typů. 
 
-# <a name="considerations"></a>Důležité informace
+## <a name="considerations"></a>Důležité informace
 
 Následující aspekty měli vzít v úvahu při převodu existujícího projektu Xamarin.Mac klasické rozhraní API na nové rozhraní API Unified Pokud tuto aplikaci závisí na jeden nebo více součástí nebo balíček NuGet. 
 
-## <a name="components"></a>Součásti
+### <a name="components"></a>Součásti
 
 Všechny součásti, které se mají zahrnout do vaší aplikace bude také nutné aktualizovat tak, aby unifikované API nebo konflikt obdržíte při pokusu o zkompilovat. U všech součástí komponent nahradí aktuální verzi s novou verzí z úložišti součástí Xamarin, který podporuje unifikované API a proveďte nové čisté sestavení. Všechny součásti, který nebyl převeden ještě autorem, se zobrazí 32bitové pouze upozornění v úložišti součástí.
 
-
-## <a name="nuget-support"></a>Podpora NuGet
+### <a name="nuget-support"></a>Podpora NuGet
 
 Když jsme podílí změny NuGet pro práci s podporou unifikované API, nepřišla novou verzi balíčku nuget, takže jsme hodnocení jak získat NuGet rozpoznat nových rozhraní API. 
 
@@ -121,17 +118,13 @@ Do té doby, stejně jako komponenty budete potřebovat přepnout libovolný bal
 > [!IMPORTANT]
 > **Poznámka:** Pokud máte chybu ve formě _"Chyba 3 nesmí obsahovat 'monomac.dll' a"Xamarin.Mac.dll"ve stejném projektu Xamarin.Mac – 'Xamarin.Mac.dll' odkazuje explicitně, zatímco 'monomac.dll' odkazuje ' xxx, Verze = 0.0.000, Culture = neutral, PublicKeyToken = null. "_ po převedení aplikace jednotné rozhraní API, je obvykle kvůli s komponenta nebo balíček NuGet do projektu, která nebyla aktualizována jednotné rozhraní API. Budete muset odebrat existující součásti nebo NuGet, aktualizujte na verzi podporující rozhraní API Unified a provést čisté sestavení.
 
+## <a name="enabling-64-bit-builds-of-xamarinmac-apps"></a>Povolení 64bitové sestavení Xamarin.Mac aplikace
 
-
-
-# <a name="enabling-64-bit-builds-of-xamarinmac-apps"></a>Povolení 64bitové sestavení Xamarin.Mac aplikace
-
-Xamarin.Mac mobilní aplikace, který byl převeden na unifikované API musí vývojář stále umožňující vytvářet aplikace pro 64bitové počítače z možností aplikace. Najdete v tématu **povolení Bit 64 sestavení z Xamarin.Mac aplikace** z [32 nebo 64bitový platformy aspekty](~/cross-platform/macios/32-and-64.md) dokumentu podrobné pokyny k povolení 64bitové sestavení.
+Xamarin.Mac mobilní aplikace, který byl převeden na unifikované API musí vývojář stále umožňující vytvářet aplikace pro 64bitové počítače z možností aplikace. Najdete v tématu **povolení Bit 64 sestavení z Xamarin.Mac aplikace** z [32 nebo 64bitový platformy aspekty](~/cross-platform/macios/32-and-64/index.md) dokumentu podrobné pokyny k povolení 64bitové sestavení.
     
-# <a name="finishing-up"></a>Dokončování
+## <a name="finishing-up"></a>Dokončování
 
 Jestli chcete použít metodu automatický nebo ruční převést Xamarin.Mac aplikace z klasického jednotné rozhraní API, existuje několik instancí, které budou navíc vyžadují ruční zásah. Najdete v tématu naše [tipy pro aktualizaci kód unifikované API](~/cross-platform/macios/unified/updating-tips.md) dokumentu známých problémů a pracovní postupy.
-
 
 ## <a name="related-links"></a>Související odkazy
 

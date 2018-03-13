@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 66992aabdb98c83e52ab555dafa65ae8ac7fb47b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e958b4e48767e0c2246b9f237c681fbc362f6b00
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-xamarinios-for-visual-studio"></a>Úvod do Xamarin.iOS pro sadu Visual Studio
 
@@ -53,15 +53,15 @@ K vývoji s Xamarinem v sadě Visual Studio, je třeba použít **alespoň** Vis
 
 Můžete připojit k počítači Mac sestavení hostitele buď přes ikonu na panelu nástrojů Visual Studio (poskytuje aplikace pro iOS je otevřený):
 
-[ ![](introduction-to-xamarin-ios-for-visual-studio-images/xma1a.png "Připojení k ikonu Mac")](introduction-to-xamarin-ios-for-visual-studio-images/xma1a.png)
+[![](introduction-to-xamarin-ios-for-visual-studio-images/xma1a.png "Připojení k ikonu Mac")](introduction-to-xamarin-ios-for-visual-studio-images/xma1a.png#lightbox)
 
 Nebo procházením **nástroje > Možnosti** v sadě Visual Studio a výběrem **Xamarin > Nastavení iOS**:
 
- [ ![](introduction-to-xamarin-ios-for-visual-studio-images/xma-ios-options.png "iOS – možnost")](introduction-to-xamarin-ios-for-visual-studio-images/xma-ios-options.png)
+ [![](introduction-to-xamarin-ios-for-visual-studio-images/xma-ios-options.png "iOS – možnost")](introduction-to-xamarin-ios-for-visual-studio-images/xma-ios-options.png#lightbox)
 
 Sestavení hostitele Mac můžete změnit kliknutím **najít Xamarin Mac Agent** tlačítko. Aktualizovat hostitele sestavení Mac se zobrazí následující obrazovka:
 
-  [ ![](introduction-to-xamarin-ios-for-visual-studio-images/xma-dialog.png "Dialogové okno Xamarin Mac Agent")](introduction-to-xamarin-ios-for-visual-studio-images/xma-dialog.png)
+  [![](introduction-to-xamarin-ios-for-visual-studio-images/xma-dialog.png "Dialogové okno Xamarin Mac Agent")](introduction-to-xamarin-ios-for-visual-studio-images/xma-dialog.png#lightbox)
 
 
 ## <a name="visual-studio-toolbar-overview"></a>Přehled nástrojů Visual Studio
@@ -75,7 +75,7 @@ Funkce tyto panely nástrojů jsou vysvětleny níže.
 
 Ovládací prvky, které jsou relevantní pro vývoj na platformě Xamarin iOS se v kroužku červeně:
 
- [ ![](introduction-to-xamarin-ios-for-visual-studio-images/03.png "Ovládací prvky, které jsou relevantní pro vývoj na platformě Xamarin iOS se v kroužku červeně")](introduction-to-xamarin-ios-for-visual-studio-images/03.png "relevantní pro vývoj na platformě Xamarin iOS ovládací prvky jsou v kroužku červeně")
+ [![](introduction-to-xamarin-ios-for-visual-studio-images/03.png "Ovládací prvky, které jsou relevantní pro vývoj na platformě Xamarin iOS se v kroužku červeně")](introduction-to-xamarin-ios-for-visual-studio-images/03.png#lightbox "relevantní pro vývoj na platformě Xamarin iOS ovládací prvky jsou v kroužku červeně")
 
 -  **Spustit** – spuštění ladění nebo spuštění aplikace ve vybrané platformě. Musí být připojené Mac (viz indikátor stavu na panelu nástrojů iOS).
 -  **Konfigurace řešení** – umožňuje vybrat konfiguraci použít (například ladění, vydání).
@@ -86,7 +86,7 @@ Ovládací prvky, které jsou relevantní pro vývoj na platformě Xamarin iOS s
 
 IOS panelu nástrojů v sadě Visual Studio bude vypadat podobně jako v jednotlivých verzí sady Visual Studio. Všechny jsou zobrazena níže:
 
-[ ![](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png "iOS panelu nástrojů")](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png)
+[![](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png "iOS panelu nástrojů")](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png#lightbox)
 
 Každá položka je popsáno níže:
 
@@ -105,25 +105,25 @@ Jsou možnosti v *výstup* podokno, které můžete zobrazit a zjistit sestaven�
 
 Následující snímek obrazovky ukazuje windows k dispozici výstup, které se můžou lišit v závislosti na typu vašeho projektu:
 
-[ ![](introduction-to-xamarin-ios-for-visual-studio-images/output-sml.png "K dispozici výstupní windows")](introduction-to-xamarin-ios-for-visual-studio-images/output-large.png)
+[![](introduction-to-xamarin-ios-for-visual-studio-images/output-sml.png "K dispozici výstupní windows")](introduction-to-xamarin-ios-for-visual-studio-images/output-large.png#lightbox)
 
 - **Xamarin** – obsahuje informace týkající se výhradně Xamarin, jako je například připojení k Mac a aktivace stav.
 
-    [ ![](introduction-to-xamarin-ios-for-visual-studio-images/output3-sml.png "Informace týkající se výhradně Xamarin, jako je například připojení k stav Mac a aktivace")](introduction-to-xamarin-ios-for-visual-studio-images/output3-large.png)
+    [![](introduction-to-xamarin-ios-for-visual-studio-images/output3-sml.png "Informace týkající se výhradně Xamarin, jako je například připojení k stav Mac a aktivace")](introduction-to-xamarin-ios-for-visual-studio-images/output3-large.png#lightbox)
 
 - **Diagnostika Xamarin** – zobrazí podrobnější informace o váš projekt Xamarin, jako je například interakci s a pro Android.
 
-    [ ![](introduction-to-xamarin-ios-for-visual-studio-images/output4-sml.png "Podrobné informace o projektu Xamarin")](introduction-to-xamarin-ios-for-visual-studio-images/output3-large.png)
+    [![](introduction-to-xamarin-ios-for-visual-studio-images/output4-sml.png "Podrobné informace o projektu Xamarin")](introduction-to-xamarin-ios-for-visual-studio-images/output3-large.png#lightbox)
 
 Ostatní výchozí podokna výstup Visual Studio jako ladění a sestavení jsou stále k dispozici v zobrazení výstupu a slouží k ladění výstup a MSBuild výstup:
 
 -  **Ladění**
 
-    [ ![](introduction-to-xamarin-ios-for-visual-studio-images/output2-sml.png "Výstup ladění")](introduction-to-xamarin-ios-for-visual-studio-images/output2-large.png)
+    [![](introduction-to-xamarin-ios-for-visual-studio-images/output2-sml.png "Výstup ladění")](introduction-to-xamarin-ios-for-visual-studio-images/output2-large.png#lightbox)
 
 - **Sestavení** & **pořadí sestavení**
 
-    [ ![](introduction-to-xamarin-ios-for-visual-studio-images/output1-sml.png "Výstup nástroje MSBuild")](introduction-to-xamarin-ios-for-visual-studio-images/output1-large.png)
+    [![](introduction-to-xamarin-ios-for-visual-studio-images/output1-sml.png "Výstup nástroje MSBuild")](introduction-to-xamarin-ios-for-visual-studio-images/output1-large.png#lightbox)
 
 
 ## <a name="ios-project-properties"></a>Vlastnosti projektu iOS

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2017
-ms.openlocfilehash: 97ca114f1160168c7fd9439e31dc475bc37b0467
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 2ec783b6963fc4ae14166ebf1e56bf8a802ba8b4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="tabbed-page"></a>Na kartách stránky
 
@@ -97,7 +97,7 @@ public class MainPageCS : TabbedPage
 [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/) Se naplní dva podřízené [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) objekty. Je prvním podřízeným objektem [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) instance a druhé kartě [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) obsahující `ContentPage` instance.
 
 > [!NOTE]
-> **Poznámka:**: [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/) nepodporuje virtualizace uživatelského rozhraní. Proto být ovlivněn výkon, pokud `TabbedPage` obsahuje příliš mnoho podřízené elementy.
+> [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/) Nepodporuje virtualizace uživatelského rozhraní. Proto být ovlivněn výkon, pokud `TabbedPage` obsahuje příliš mnoho podřízené elementy.
 
 Tyto snímky obrazovky zobrazit `TodayPage` [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) instanci, která se zobrazí na *Dnes* karty:
 

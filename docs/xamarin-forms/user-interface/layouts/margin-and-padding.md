@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 7bab512ef11f8e0f553a00f0240d82f860fe2676
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 461430ba27b5d6008338019e5feaebed7b09d4cb
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="margin-and-padding"></a>Okraj a odsazení
 
@@ -27,7 +27,7 @@ Okraj a odsazení jsou související rozložení koncepty:
 
 Následující diagram znázorňuje dvěma konceptů:
 
-[![](margin-and-padding-images/margins-and-padding-sml.png "Okraje a odsazení koncepty")](margin-and-padding-images/margins-and-padding.png "okraje a odsazení koncepty")
+[![](margin-and-padding-images/margins-and-padding-sml.png "Okraje a odsazení koncepty")](margin-and-padding-images/margins-and-padding.png#lightbox "okraje a odsazení koncepty")
 
 Všimněte si, že [ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/) hodnoty jsou aditivní. Proto pokud dva elementy přiléhající zadat okraj 20 pixelů, vzdálenost mezi elementy, bude 40 pixelů. Kromě toho jsou okraj a odsazení doplňkové obě použité v, že vzdálenost mezi elementem a veškerý obsah, bude okraj a odsazení.
 
@@ -63,7 +63,7 @@ var stackLayout = new StackLayout {
 ```
 
 > [!NOTE]
-> **Poznámka:**: `Thickness` hodnoty mohou být záporná, což obvykle klipy nebo overdraws obsah.
+> `Thickness` hodnoty mohou být záporná, která obvykle klipy nebo overdraws obsah.
 
 ## <a name="summary"></a>Souhrn
 

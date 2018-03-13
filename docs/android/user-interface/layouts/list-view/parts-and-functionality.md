@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 08/21/2017
-ms.openlocfilehash: a963922dfdc07164b7c20f84be4f0b87440bff13
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4a7947c40d80c0ff8cb35dab54a11907280335d9
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="listview-parts-and-functionality"></a>ListView částí a funkce
 
-<a name="overview" />
 
 ## <a name="overview"></a>Přehled
 
@@ -31,41 +30,36 @@ A `ListView` se skládá z následujících částí:
 
 Tyto snímky obrazovky použijte základní `ListView` řízení zobrazit, jak jsou zpracovávány rychlého posouvání a Index oddílu:
 
-[![Snímky obrazovek aplikací pomocí prostý staré řádky, rychlé posouvání a index oddílu](parts-and-functionality-images/listviewparts.png)](parts-and-functionality-images/listviewparts.png)
+[![Snímky obrazovek aplikací pomocí prostý staré řádky, rychlé posouvání a index oddílu](parts-and-functionality-images/listviewparts.png)](parts-and-functionality-images/listviewparts.png#lightbox)
 
 Prvky, které tvoří `ListView` jsou podrobněji popsané v následující:
 
-<a name="Rows" />
 
 ## <a name="rows"></a>Řádky
 
 Každý řádek má svou vlastní `View`. Zobrazení může být buď z předdefinovaných zobrazení definovaná v `Android.Resources`, nebo vlastní zobrazení. Každý řádek můžete použít se stejné rozvržení zobrazení nebo se můžou být různé. V tomto dokumentu pomocí předdefinovaných rozložení a dalších informací, jak definovat vlastní rozložení jsou příklady.
 
-<a name="Adapter" />
 
 ## <a name="adapter"></a>Adaptér
 
 `ListView` Vyžaduje ovládací prvek `Adapter` k poskytování formátovaný `View` pro každý řádek. Android má integrovanou adaptéry a zobrazení, které lze použít, nebo můžete vytvořit vlastní třídy.
 
-<a name="Fast_Scrolling" />
 
 ## <a name="fast-scrolling"></a>Rychlé posouvání
 
 Když `ListView` obsahuje mnoho řádků dat posouvání fast lze povolit pomoct uživateli, přejděte na všechny části seznamu. Fast posouvání 'posuvníku, může být volitelně povoleno (a přizpůsobené na úrovni rozhraní API 11 a vyšší).
 
-<a name="Section_Index" />
 
 ## <a name="section-index"></a>Index oddílu
 
 Při procházení dlouhými seznamy, poskytuje index volitelné části uživatele s zpětnou vazbu na jaké části seznamu, se aktuálně prohlížíte. Jenom je vhodné na dlouhými seznamy, obvykle ve spojení s rychlé posouvání.
 
-<a name="Classes_Overview" />
 
 ## <a name="classes-overview"></a>Přehled třídy
 
 Primární třídy používané k zobrazení `ListViews` zde se zobrazují:
 
-[![UML diagram ilustrující vztahy mezi ListView a související třídy](parts-and-functionality-images/image2.png)](parts-and-functionality-images/image2.png)
+[![UML diagram ilustrující vztahy mezi ListView a související třídy](parts-and-functionality-images/image2.png)](parts-and-functionality-images/image2.png#lightbox)
 
 Účelem každá třída je popsán dále:
 

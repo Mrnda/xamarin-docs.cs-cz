@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: ef016d963f710ff54fc57b5e6e57181df030c8f6
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: e67646e5072f703af71fc3f0a7901fd8485f9710
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="implementing-a-hybridwebview"></a>Implementace HybridWebView
 
@@ -151,7 +151,7 @@ Proces pro vytvoření třídy vlastní zobrazovací jednotky vypadá takto:
 1. Přidat `ExportRenderer` atributu na vlastní zobrazovací jednotky třídu k určení, že bude použit k vykreslení vlastního ovládacího prvku Xamarin.Forms. Tento atribut slouží k registraci vlastní zobrazovací jednotky s Xamarin.Forms.
 
 > [!NOTE]
-> **Poznámka:**: pro většinu prvků Xamarin.Forms, je volitelný poskytnout vlastní zobrazovací jednotky v každém projektu platformy. Pokud vlastní zobrazovací jednotky není registrované, bude použit výchozí zobrazovací jednotky pro základní třídu ovládacího prvku. Však vlastní nástroji pro vykreslování se vyžadují v každém projektu platformy při vykreslování [zobrazení](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) elementu.
+> Pro většinu prvků Xamarin.Forms je volitelné poskytnout vlastní zobrazovací jednotky v každém projektu platformy. Pokud vlastní zobrazovací jednotky není registrované, bude použit výchozí zobrazovací jednotky pro základní třídu ovládacího prvku. Však vlastní nástroji pro vykreslování se vyžadují v každém projektu platformy při vykreslování [zobrazení](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) elementu.
 
 Následující diagram znázorňuje odpovědnosti jednotlivých projektů v ukázkové aplikace, spolu s jejich vzájemných vztahů:
 
@@ -316,7 +316,7 @@ Tato funkce je dosaženo následujícím způsobem:
   - Uvolnění prostředků.
 
 > [!NOTE]
-> **Poznámka:**: `WKWebView` třída je podporována pouze v iOS 8 a novější.
+> `WKWebView` Třída je podporována pouze v iOS 8 a novější.
 
 ### <a name="creating-the-custom-renderer-on-android"></a>Vytváření vlastní zobrazovací jednotky v systému Android
 
@@ -411,7 +411,7 @@ public class JSBridge : Java.Lang.Object
 Třída musí být odvozeny od `Java.Lang.Object`, a metody, které jsou zpřístupněny JavaScript musí být doplněny pomocí `[JavascriptInterface]` a `[Export]` atributy. Proto když `invokeCSharpAction` funkce JavaScript, která je vloženy do webové stránky a je proveden, bude volat `JSBridge.InvokeAction` metoda kvůli se označených pomocí `[JavascriptInterface]` a `[Export("invokeAction")]` atributy. Pak `InvokeAction` metoda vyvolá `HybridWebView.InvokeAction` metoda, která bude volána registrované akce k zobrazení místní nabídce.
 
 > [!NOTE]
-> **Poznámka:**: projekty využívající `[Export]` atributu musí obsahovat odkaz na `Mono.Android.Export`, nebo dojde k chybě kompilátoru.
+> Projekty využívající `[Export]` atributu musí obsahovat odkaz na `Mono.Android.Export`, nebo dojde k chybě kompilátoru.
 
 Všimněte si, že `JSBridge` třída udržuje `WeakReference` k `HybridWebViewRenderer` – třída. Toto je Vyhněte se vytváření cyklický odkaz mezi dvěma třídami. Další informace najdete v části [slabé odkazy](https://msdn.microsoft.com/library/ms404247(v=vs.110).aspx) na webu MSDN.
 

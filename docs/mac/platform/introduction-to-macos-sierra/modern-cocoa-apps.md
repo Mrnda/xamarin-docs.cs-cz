@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 9073d64c43c6817b45dca02b870fcfe093ebf46d
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 446db5c04849ac6fa320f3fe3b7e22b3d10bf9cf
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="building-modern-macos-apps"></a>Sestavení systému macOS moderní aplikace
 
@@ -24,7 +24,7 @@ _Tento článek se zabývá několik tipy, funkce a techniky, které vývojář 
 
 Moderní vzhled bude zahrnovat moderní vzhled okna a panelu nástrojů jako je například aplikace příklad vidíte níže:
 
-[ ![](modern-cocoa-apps-images/content08.png "Příkladem moderní aplikace Mac uživatelského rozhraní")](modern-cocoa-apps-images/content08.png)
+[![](modern-cocoa-apps-images/content08.png "Příkladem moderní aplikace Mac uživatelského rozhraní")](modern-cocoa-apps-images/content08.png#lightbox)
 
 <a name="Enabling-Full-Sized-Content-Views" />
 
@@ -64,7 +64,7 @@ namespace MacModern
 
 Tuto funkci lze také povolit v Xcode na rozhraní tvůrce výběrem okna a kontrola **úplné, velikost zobrazení obsahu**:
 
-[ ![](modern-cocoa-apps-images/content01.png "Úpravy hlavní storyboard v Tvůrci rozhraní na Xcode")](modern-cocoa-apps-images/content01.png)
+[![](modern-cocoa-apps-images/content01.png "Úpravy hlavní storyboard v Tvůrci rozhraní na Xcode")](modern-cocoa-apps-images/content01.png#lightbox)
 
 Při použití úplný přehled velikost obsahu, vývojář možná muset posunout obsah pod oblastí panelu nástroj a název tak, aby konkrétní obsah (například popisky) není Vysuňte pod nimi.
 
@@ -145,11 +145,11 @@ topConstraint.Active = true;
 
 Normální systému macOS okno obsahuje standardní záhlaví v spustí na horním okraji okna. Pokud okno také obsahuje panel nástrojů, zobrazí se v této oblasti záhlaví:
 
-[ ![](modern-cocoa-apps-images/content02.png "Standardním panelu nástrojů Mac")](modern-cocoa-apps-images/content02.png)
+[![](modern-cocoa-apps-images/content02.png "Standardním panelu nástrojů Mac")](modern-cocoa-apps-images/content02.png#lightbox)
 
 Když použijete možnosti efektivní panel nástrojů, zmizí oblasti nadpisu a panelu nástrojů se přesune do pozice v záhlaví, vložené pomocí tlačítka Zavřít okno, minimalizovat a maximalizovat:
 
-[ ![](modern-cocoa-apps-images/content03.png "Zjednodušená Mac panelu nástrojů")](modern-cocoa-apps-images/content03.png)
+[![](modern-cocoa-apps-images/content03.png "Zjednodušená Mac panelu nástrojů")](modern-cocoa-apps-images/content03.png#lightbox)
 
 Zjednodušená nástrojů se povolit přepsáním `ViewWillAppear` metodu `NSViewController` a díky tomu vypadat podobně jako následující:
 
@@ -171,7 +171,7 @@ Tomu se obvykle používá u _materiálů uložených aplikace_ (aplikace v jedn
 
 V závislosti na návrh aplikace vývojář také chtít doplnit záhlaví jsou oblasti s řadič zobrazení příslušenství, který se zobrazí vpravo pod oblastí panelu název nebo nástrojů zajistit závislé na kontextu ovládací prvky pro uživatele na základě aktivity se aktuálně zapojený do:
 
-[ ![](modern-cocoa-apps-images/content04.png "Příklad řadiče zobrazení příslušenství")](modern-cocoa-apps-images/content04.png)
+[![](modern-cocoa-apps-images/content04.png "Příklad řadiče zobrazení příslušenství")](modern-cocoa-apps-images/content04.png#lightbox)
 
 Řadiče zobrazení příslušenství bude automaticky hranice a po změně velikosti v systému bez zásahu vývojáře.
 
@@ -180,13 +180,13 @@ Pokud chcete přidat řadič zobrazení příslušenství, postupujte takto:
 1. V **Průzkumníku řešení**, dvakrát klikněte `Main.storyboard` soubor otevřete pro úpravy.
 2. Přetáhněte **vlastní View Controller** do okna hierarchie: 
 
-    [ ![](modern-cocoa-apps-images/content05.png "Přidávání nového řadiče zobrazení vlastní")](modern-cocoa-apps-images/content05.png)
+    [![](modern-cocoa-apps-images/content05.png "Přidávání nového řadiče zobrazení vlastní")](modern-cocoa-apps-images/content05.png#lightbox)
 3. Rozložení příslušenství zobrazení pro uživatelské rozhraní: 
 
-    [ ![](modern-cocoa-apps-images/content06.png "Navrhování nového zobrazení")](modern-cocoa-apps-images/content06.png)
+    [![](modern-cocoa-apps-images/content06.png "Navrhování nového zobrazení")](modern-cocoa-apps-images/content06.png#lightbox)
 4. Vystavení příslušenství zobrazení jako **výstupu** a všemi ostatními **akce** nebo **výstupy** pro jeho uživatelského rozhraní: 
 
-    [ ![](modern-cocoa-apps-images/content07.png "Přidání požadovaných výstupu")](modern-cocoa-apps-images/content07.png)
+    [![](modern-cocoa-apps-images/content07.png "Přidání požadovaných výstupu")](modern-cocoa-apps-images/content07.png#lightbox)
 5. Uložte změny.
 6. Vraťte se k Visual Studio pro Mac synchronizovat změny.
 
@@ -248,7 +248,7 @@ Protože teď je plně lokalizované systému macOS, `Left` a `Right` `NSLayoutA
 
 Kromě toho může v systému macOS přidat řadiče zobrazení příslušenství do okna aplikace. Chcete-li například vytvořit – záložkami Windows, kde některé aplikace Windows jsou sloučeny do jednoho virtuálního okna:
 
-[ ![](modern-cocoa-apps-images/content08.png "Příkladem okno s kartami Mac")](modern-cocoa-apps-images/content08.png)
+[![](modern-cocoa-apps-images/content08.png "Příkladem okno s kartami Mac")](modern-cocoa-apps-images/content08.png#lightbox)
 
 Obvykle vývojář bude nutné provést akci omezené použití Tabbed Windows ve svých aplikacích Xamarin.Mac, bude systém zpracovat automaticky následujícím způsobem:
 
@@ -430,7 +430,7 @@ Kromě toho Apple doporučuje použití vrstvu založenou na zobrazení a přid�
 
 Vrstvy zálohování se dá nastavit podle nastavení `WantsLayer` z `NSView` k `true` nebo uvnitř Tvůrce rozhraní Xcode společnosti v části **zobrazení důsledky Inspector** kontrolou **základní animace vrstvy**:
 
-[ ![](modern-cocoa-apps-images/content09.png "Inspector důsledky zobrazení")](modern-cocoa-apps-images/content09.png)
+[![](modern-cocoa-apps-images/content09.png "Inspector důsledky zobrazení")](modern-cocoa-apps-images/content09.png#lightbox)
 
 <a name="Redrawing-Views-with-Layers" />
 
@@ -792,7 +792,7 @@ Apple navrhnout, následujícím způsobem:
 
 Apple poskytl několik funkcí v Tvůrci rozhraní Xcode je, že vývojář použít při návrhu nebo úpravách aplikace uživatelského rozhraní pro podporu lokalizace. **Směr textové** části **atribut Inspector** umožňuje vývojáři poskytují pomocné parametry v tom, jak by měla použít a aktualizována v vyberte zobrazení založený na textu směr (například `NSTextField`):
 
-[ ![](modern-cocoa-apps-images/content10.png "Směr textové možnosti")](modern-cocoa-apps-images/content10.png)
+[![](modern-cocoa-apps-images/content10.png "Směr textové možnosti")](modern-cocoa-apps-images/content10.png#lightbox)
 
 Existují tři možné hodnoty pro **směr textové**:
 
@@ -851,7 +851,7 @@ var button2 = NSButton.CreateButton (myTitle, myImage, () => {
 
 Moderní systému macOS aplikace může přijmout nové tmavý vzhled rozhraní, která funguje dobře pro vytváření, úpravy nebo prezentační aplikace bitové kopie:
 
-[ ![](modern-cocoa-apps-images/content11.png "Příkladem tmavý okno uživatelského rozhraní Mac")](modern-cocoa-apps-images/content11.png)
+[![](modern-cocoa-apps-images/content11.png "Příkladem tmavý okno uživatelského rozhraní Mac")](modern-cocoa-apps-images/content11.png#lightbox)
 
 Tento krok můžete provést přidáním jeden řádek kódu, než se zobrazí okno. Příklad:
 
@@ -898,7 +898,7 @@ Scénářů umožňuje vývojářům nejen návrhu toku jednotlivé elementy, kt
 
 Řadiče umožňuje vývojářům shromažďovat elementy do jednotky složení a Segues abstraktní a odebrat typické "dohledání kód" pro přesunutí v celé hierarchii zobrazení potřeba:
 
-[ ![](modern-cocoa-apps-images/content12.png "Úpravy uživatelského rozhraní v Tvůrci rozhraní na Xcode")](modern-cocoa-apps-images/content12.png)
+[![](modern-cocoa-apps-images/content12.png "Úpravy uživatelského rozhraní v Tvůrci rozhraní na Xcode")](modern-cocoa-apps-images/content12.png#lightbox)
 
 Další informace najdete v tématu naše [Úvod do scénářů](~/mac/platform/storyboards/index.md) dokumentaci.
 

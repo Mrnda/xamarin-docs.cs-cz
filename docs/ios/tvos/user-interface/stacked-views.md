@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 2b16fd970e724228215fd0dd1c9022227ab84435
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c40e9291e81770435535de7b0c83d6c865cbed58
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-stacked-view"></a>Práce s skládaný zobrazení
 
@@ -23,7 +23,7 @@ Ovládací prvek zobrazení zásobníku (`UIStackView`) využívá sílu automat
 
 Rozložení všechny dílčích zobrazení připojené k zobrazení protokolů jsou spravovány podle vývojáře definované vlastnosti například osy, distribuci, zarovnání a mezery:
 
-[ ![](stacked-views-images/stacked01.png "Diagram rozložení dílčí zobrazení")](stacked-views-images/stacked01.png)
+[![](stacked-views-images/stacked01.png "Diagram rozložení dílčí zobrazení")](stacked-views-images/stacked01.png#lightbox)
 
 Při použití `UIStackView` v Xamarin.tvOS aplikaci, můžete definovat vývojář buď dílčích zobrazení buď uvnitř Storyboard v iOS Designer nebo přidávání a odebírání dílčích zobrazení v kódu jazyka C#.
 
@@ -103,21 +103,21 @@ Nejjednodušší způsob, jak pracovat se zobrazeními zásobníku v aplikaci Xa
 1. V **řešení Pad**, dvakrát kliknete na panel `Main.storyboard` souborů a otevřete pro úpravy.
 1. Návrh rozložení vaše jednotlivé elementy, které se chystáte přidat do zásobníku zobrazení: 
 
-    [ ![](stacked-views-images/layout01.png "Příklad rozložení – element")](stacked-views-images/layout01.png)
+    [![](stacked-views-images/layout01.png "Příklad rozložení – element")](stacked-views-images/layout01.png#lightbox)
 1. Přidejte všechny požadované omezení na elementy a zda že správně škálovat. Tento krok je důležitý, jakmile bude prvek přidán do zásobníku zobrazení.
 1. Ujistěte se, požadovaný počet kopií, (čtyři v tomto případě): 
 
-    [ ![](stacked-views-images/layout02.png "Požadovaný počet kopií")](stacked-views-images/layout02.png)
+    [![](stacked-views-images/layout02.png "Požadovaný počet kopií")](stacked-views-images/layout02.png#lightbox)
 1. Přetáhněte **zásobníku zobrazení** z **sada nástrojů** na zobrazení: 
 
-    [ ![](stacked-views-images/layout03.png "Zobrazení zásobníku")](stacked-views-images/layout03.png)
+    [![](stacked-views-images/layout03.png "Zobrazení zásobníku")](stacked-views-images/layout03.png#lightbox)
 1. Vyberte zobrazení zásobníku v **pomůcky karta** z **Pad vlastnosti** vyberte **vyplnění** pro **zarovnání**, **vyplnění Stejně** pro **distribuční** a zadejte `25` pro **mezery**: 
 
-    [ ![](stacked-views-images/layout04.png "Na kartě pomůcky")](stacked-views-images/layout04.png)
+    [![](stacked-views-images/layout04.png "Na kartě pomůcky")](stacked-views-images/layout04.png#lightbox)
 1. Pozice zobrazení zásobníku na obrazovce, kam chcete ho a přidat omezení udržovat ho v požadovaném umístění.
 1. Vyberte jednotlivé elementy a je přetáhněte do zobrazení zásobníku: 
 
-    [ ![](stacked-views-images/layout05.png "Jednotlivé prvky v zobrazení zásobníku")](stacked-views-images/layout05.png)
+    [![](stacked-views-images/layout05.png "Jednotlivé prvky v zobrazení zásobníku")](stacked-views-images/layout05.png#lightbox)
 1. Je nutné upravit rozložení a elementy se uspořádány v zásobníku zobrazení na základě atributů, které nastavíte výše.
 1. Přiřadit **názvy** v **pomůcky karta** z **Explorer vlastnosti** pro práci s ovládacími prvky uživatelského rozhraní v kódu jazyka C#.
 1. Uložte provedené změny.
@@ -127,21 +127,21 @@ Nejjednodušší způsob, jak pracovat se zobrazeními zásobníku v aplikaci Xa
 1. V **Průzkumníku řešení**, dvakrát kliknete na panel `Main.storyboard` souborů a otevřete pro úpravy.
 1. Návrh rozložení vaše jednotlivé elementy, které se chystáte přidat do zásobníku zobrazení: 
 
-    [ ![](stacked-views-images/layout01.png "Příklad element rozložení")](stacked-views-images/layout01.png)
+    [![](stacked-views-images/layout01.png "Příklad element rozložení")](stacked-views-images/layout01.png#lightbox)
 1. Přidejte všechny požadované omezení na elementy a zda že správně škálovat. Tento krok je důležitý, jakmile bude prvek přidán do zásobníku zobrazení.
 1. Ujistěte se, požadovaný počet kopií, (čtyři v tomto případě): 
 
-    [ ![](stacked-views-images/layout02.png "Požadovaný počet kopií")](stacked-views-images/layout02.png)
+    [![](stacked-views-images/layout02.png "Požadovaný počet kopií")](stacked-views-images/layout02.png#lightbox)
 1. Přetáhněte **zásobníku zobrazení** z **sada nástrojů** na zobrazení: 
 
-    [ ![](stacked-views-images/layout03-vs.png "Zobrazení zásobníku")](stacked-views-images/layout03-vs.png)
+    [![](stacked-views-images/layout03-vs.png "Zobrazení zásobníku")](stacked-views-images/layout03-vs.png#lightbox)
 1. Zásobník zobrazení, vyberte v **pomůcky karta** z **Explorer vlastnosti** vyberte **vyplnění** pro **zarovnání**, **vyplnění Stejně** pro **distribuční** a zadejte `25` pro **mezery**: 
 
-    [ ![](stacked-views-images/layout04-vs.png "Na kartě pomůcky")](stacked-views-images/layout04-vs.png)
+    [![](stacked-views-images/layout04-vs.png "Na kartě pomůcky")](stacked-views-images/layout04-vs.png#lightbox)
 1. Pozice zobrazení zásobníku na obrazovce, kam chcete ho a přidat omezení udržovat ho v požadovaném umístění.
 1. Vyberte jednotlivé elementy a je přetáhněte do zobrazení zásobníku: 
 
-    [ ![](stacked-views-images/layout05-vs.png "Jednotlivé prvky v zobrazení zásobníku")](stacked-views-images/layout05-vs.png)
+    [![](stacked-views-images/layout05-vs.png "Jednotlivé prvky v zobrazení zásobníku")](stacked-views-images/layout05-vs.png#lightbox)
 1. Je nutné upravit rozložení a elementy se uspořádány v zásobníku zobrazení na základě atributů, které nastavíte výše.
 1. Přiřadit **názvy** v **pomůcky karta** z **Explorer vlastnosti** pro práci s ovládacími prvky uživatelského rozhraní v kódu jazyka C#.
 1. Uložte provedené změny.
@@ -190,11 +190,11 @@ partial void PlayerCountChanged (Foundation.NSObject sender) {
 
 Při spuštění aplikace čtyři elementy stejně distribuované v našem zásobníku zobrazení:
 
-[ ![](stacked-views-images/layout06.png "Při spuštění aplikace čtyři elementy budou rovnoměrně distribuována v našem zobrazení zásobníku")](stacked-views-images/layout06.png)
+[![](stacked-views-images/layout06.png "Při spuštění aplikace čtyři elementy budou rovnoměrně distribuována v našem zobrazení zásobníku")](stacked-views-images/layout06.png#lightbox)
 
 Pokud je snížen počet přehrávačů, jsou skryté nepoužívané zobrazení a zobrazení zásobníku upravit rozložení podle:
 
-[ ![](stacked-views-images/layout07.png "Pokud je snížen počet přehrávačů, jsou skryté nepoužívané zobrazení a zobrazení zásobníku upravit rozložení podle")](stacked-views-images/layout07.png)
+[![](stacked-views-images/layout07.png "Pokud je snížen počet přehrávačů, jsou skryté nepoužívané zobrazení a zobrazení zásobníku upravit rozložení podle")](stacked-views-images/layout07.png#lightbox)
 
 <a name="Populate-a-Stack-View-from-Code" />
 

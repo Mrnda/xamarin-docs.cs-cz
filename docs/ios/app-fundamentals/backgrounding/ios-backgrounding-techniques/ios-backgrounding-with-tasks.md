@@ -6,11 +6,11 @@ ms.assetid: 205D230E-C618-4D69-96EE-4B91D7819121
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 0be4e7f1d8719fdd174d51399178eb1bc000c4b3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5e05cf0f13512478b3957070e7fa6329ea84337f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ios-backgrounding-with-tasks"></a>iOS Backgrounding s úlohami
 
@@ -114,11 +114,11 @@ Největší změnou v iOS 7 s ohledem na úlohy na pozadí je jak nejsou impleme
 
 Odvolat, že před iOS 7, úloha spuštěná na pozadí museli 600 sekund dokončit. Jedním z důvodů tento limit je, že úloha spuštěná na pozadí byste udržovali zařízení vzhůru po dobu trvání úlohy:
 
- [ ![](ios-backgrounding-with-tasks-images/ios6.png "Graf úlohy udržuje aplikace vzhůru starší než iOS 7")](ios-backgrounding-with-tasks-images/ios6.png)
+ [![](ios-backgrounding-with-tasks-images/ios6.png "Graf úlohy udržuje aplikace vzhůru starší než iOS 7")](ios-backgrounding-with-tasks-images/ios6.png#lightbox)
 
 zpracování na pozadí iOS 7 je optimalizovaná pro delší životností. IOS 7, stane backgrounding oportunistické: místo zachování zařízení vzhůru, respektují úlohy při zařízení přejde do režimu spánku a místo toho proveďte jejich zpracování v bloky dat, pokud zařízení probudí pro zpracování telefonní hovory, oznámení, příchozí e-maily a další běžné přerušení. Následující obrázek poskytuje přehled o tom, jak úloha může být poškozený nahoru:
 
- [ ![](ios-backgrounding-with-tasks-images/ios7.png "Graf úloh je rozděleno do bloků dat po iOS 7")](ios-backgrounding-with-tasks-images/ios7.png)
+ [![](ios-backgrounding-with-tasks-images/ios7.png "Graf úloh je rozděleno do bloků dat po iOS 7")](ios-backgrounding-with-tasks-images/ios7.png#lightbox)
 
 Protože úloha běh není již průběžné, musí být úlohy provádějí síťové přenosy zpracována jinak v iOS 7. Vývojáři se doporučuje použít `NSURlSession` rozhraní API pro zpracování síťové přenosy. V další části je přehled přenosy na pozadí.
 

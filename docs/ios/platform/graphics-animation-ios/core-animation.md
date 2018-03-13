@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 80fe298f3dd24aac7f84213aee96499dd369d16d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f0cb4e00abffead854c2590bde6df45c200ff0bb
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="core-animation"></a>Základní animace
 
@@ -23,12 +23,16 @@ Proveďte všechny vysoce smooth animace v iOS například posouvání tabulek a
 
 Základní animace a základní grafické rozhraní můžou spolupracovat a vytvořit Krásný, animovaný 2D grafiky. Ve skutečnosti základní animace můžete i transformace grafiky 2D v 3D prostoru vytváření úžasné, formou prostředí. Ale pokud chcete vytvořit true 3D grafiky, potřebovali byste pomocí něčeho jako OpenGL ES, nebo o hry zapnout do rozhraní API, jako je například MonoGame, i když 3D je nad rámec tohoto článku.
 
+<a name="Using_Core_Animation" />
+
 ## <a name="core-animation"></a>Základní animace
 
 iOS framework Core animace používá k vytvoření efekty animace například přechod mezi zobrazeními, klouzavé nabídky a posouvání efekty a další. Existují dva způsoby, jak pracovat s animace:
 
--  [Prostřednictvím UIKit](#Using_UIKit_Animation), což zahrnuje animace na základě zobrazení, jakož i animované přechody mezi řadiči.
--   [Prostřednictvím základní animace](#Using_Core_Animation), které vrstvy přímo, povolení pro řízení citlivější.
+- [Prostřednictvím UIKit](#Using_UIKit_Animation), což zahrnuje animace na základě zobrazení, jakož i animované přechody mezi řadiči.
+- [Prostřednictvím základní animace](#Using_Core_Animation), které vrstvy přímo, povolení pro řízení citlivější.
+
+<a name="Using_UIKit_Animation" />
 
 ## <a name="using-uikit-animation"></a>Pomocí UIKit animace
 
@@ -237,6 +241,6 @@ V tomto článku jsme se podívali na animace možnosti poskytované prostředni
 ## <a name="related-links"></a>Související odkazy
 
 - [Ukázka základní animace](https://developer.xamarin.com/samples/monotouch/GraphicsAndAnimation/)
-- [Základní grafiky](~/ios/platform/graphics-animation-ios/core-graphics.md)
+- [Core Graphics](~/ios/platform/graphics-animation-ios/core-graphics.md)
 - [Grafika a návod animace](~/ios/platform/graphics-animation-ios/graphics-animation-walkthrough.md)
-- [Základní animace](https://developer.xamarin.com/recipes/ios/animation/coreanimation)
+- [Core Animation](https://developer.xamarin.com/recipes/ios/animation/coreanimation)

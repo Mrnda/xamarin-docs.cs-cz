@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/23/2017
-ms.openlocfilehash: afbd2d8f25cdf51c7c7c33f72f10e3b5ce8762ef
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 29686b29a18fe409a1f778d54266cbeedea40eda
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="local-databases"></a>Místní databáze
 
@@ -24,7 +24,7 @@ Xamarin.Forms aplikace můžete použít [SQLite.NET PCL NuGet](https://www.nuge
 
 Doprovodných [ukázkové aplikace](https://github.com/xamarin/xamarin-forms-samples/tree/master/Todo) je jednoduchou aplikaci seznamu úkolů. Tyto snímky obrazovky ukazují, jak ukázka zobrazuje na jednotlivých platformách:
 
-[ ![Snímky obrazovky příklad databáze Xamarin.Forms](databases-images/todo-list-sml.png "TodoList první stránka snímky")](databases-images/todo-list.png "TodoList první stránka snímky") [ ![ Snímky obrazovky příklad databáze Xamarin.Forms](databases-images/todo-detail-sml.png "TodoList druhé stránce snímky")](databases-images/todo-detail.png "TodoList druhé stránce snímky obrazovky")
+[![Snímky obrazovky příklad databáze Xamarin.Forms](databases-images/todo-list-sml.png "TodoList první stránka snímky")](databases-images/todo-list.png#lightbox "TodoList první stránka snímky") [ ![ Snímky obrazovky příklad databáze Xamarin.Forms](databases-images/todo-list-sml.png "TodoList první stránka snímky")](databases-images/todo-list.png#lightbox "TodoList snímky obrazovky první stránka")
 
 <a name="Using_SQLite_with_PCL" />
 

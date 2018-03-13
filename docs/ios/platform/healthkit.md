@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 50684d82726a398aabe77d09ff62eac40e277f02
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4f85f208c12561b6db9800d963e2d7bf32c2a4d0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="healthkit"></a>HealthKit
 
@@ -32,7 +32,7 @@ Tento článek se nevztahuje na pokročilejším tématům, jako je například 
 
 V tomto článku budeme vytvářet ukázková aplikace k zaznamenání míra vysílat uživatele:
 
-[![](healthkit-images/image01.png "Ukázková aplikace k zaznamenání rychlost vysílat uživatelů")](healthkit-images/image01.png)
+[![](healthkit-images/image01.png "Ukázková aplikace k zaznamenání rychlost vysílat uživatelů")](healthkit-images/image01.png#lightbox)
 
 ## <a name="requirements"></a>Požadavky
 
@@ -72,22 +72,22 @@ Vaše aktuální **ID aplikace** jsou uvedeny v rámci [certifikáty, identifik�
 K vytvoření explicitního **ID aplikace**, klikněte na tlačítko  **+**  tlačítko v pravém horním provést, abyste **registrace iOS ID aplikace** stránky:
 
 
-[![](healthkit-images/image02.png "Registrace aplikace na portálu pro vývojáře Apple")](healthkit-images/image02.png)
+[![](healthkit-images/image02.png "Registrace aplikace na portálu pro vývojáře Apple")](healthkit-images/image02.png#lightbox)
 
 Jak je znázorněno na obrázku výš, po vytvoření popis aplikace, použijte **explicitní ID aplikace** části k vytvoření ID pro vaši aplikaci. V **App Services** část, zkontrolujte **stavu Kit** v **povolit služby** části.
 
 Až skončíte, stiskněte **pokračovat** tlačítko zaregistrovat **ID aplikace** ve vašem účtu. Je přesměrován zpět zpět **identifikátory, certifikátů a profilů** stránky. Klikněte na tlačítko **profily zřizování** můžete přejít na seznam vaše aktuální zřizovacích profilů, a klikněte na  **+**  tlačítko v pravém horním rohu provést, abyste **přidat iOS Profil pro zřizování** stránky. Vyberte **vývoj aplikací pro iOS** možnost a klikněte na tlačítko **pokračovat** zobrazíte **vyberte ID aplikace** stránky. Zde vyberte explicitní **ID aplikace** který jste dřív zadali:
 
 
-[![](healthkit-images/image03.png "Vyberte explicitní ID aplikace")](healthkit-images/image03.png)
+[![](healthkit-images/image03.png "Vyberte explicitní ID aplikace")](healthkit-images/image03.png#lightbox)
 
 Klikněte na tlačítko **pokračovat** , tak i pracovní prostřednictvím zbývající obrazovky, kde zadáte vaše **vývojáře autority**, **zařízení**a **název** pro tento **profil pro zřizování**:
 
-[![](healthkit-images/image04.png "Generování profilu pro zřizování")](healthkit-images/image04.png)
+[![](healthkit-images/image04.png "Generování profilu pro zřizování")](healthkit-images/image04.png#lightbox)
 
 Klikněte na tlačítko **generování** a operátoru await vytvoření vašeho profilu. Stáhněte si soubor a dvojím kliknutím na instalovat v Xcode. Můžete potvrdit, jeho instalace v části **Xcode > Předvolby > účty > Zobrazit podrobnosti...** Měli byste vidět nově nainstalovaného profilu zřizování a měl by mít na ikonu stavu Kit a všech dalších speciální služeb v jeho **oprávnění** řádek:
 
-[![](healthkit-images/image05.png "Zobrazení profil v Xcode")](healthkit-images/image05.png)
+[![](healthkit-images/image05.png "Zobrazení profil v Xcode")](healthkit-images/image05.png#lightbox)
 
 <a name="associating-appid" />
 
@@ -97,11 +97,11 @@ Jakmile jste vytvořili a nainstalovat odpovídající **profil zřizování** j
 
 Místo provede procesem vytvoření projektu Xamarin iOS 8 ručně, otevřete ukázkovou aplikaci připojit k tomuto článku (která zahrnuje předem scénáře a kód). Ukázkovou aplikaci přidružit vaší stavu Kit povoleno **profil zřizování**v **Pad řešení**, klikněte pravým tlačítkem na projekt a otevřete jeho **možnosti** dialogové okno. Přepnout **iOS aplikace** panelu a zadejte explicitní **ID aplikace** jste předtím vytvořili jako aplikace **identifikátor svazku**:
 
-[![](healthkit-images/image06.png "Zadejte explicitní ID aplikace")](healthkit-images/image06.png)
+[![](healthkit-images/image06.png "Zadejte explicitní ID aplikace")](healthkit-images/image06.png#lightbox)
 
 Nyní přepnout **iOS podepisování sady** panelu. Vaše-nainstalován v nedávné době **profil zřizování**, s jeho přidružení k explicitní **ID aplikace**, bude nyní k dispozici jako **profil zřizování**:
 
-[![](healthkit-images/image07.png "Vyberte profil zřizování")](healthkit-images/image07.png)
+[![](healthkit-images/image07.png "Vyberte profil zřizování")](healthkit-images/image07.png#lightbox)
 
 Pokud **profil zřizování** není k dispozici, zkontrolujte **identifikátor svazku** v **iOS aplikace** panely versus ve stanoveném **iOS Dev Center** a že **profil zřizování** je nainstalována (**Xcode > Předvolby > účty > Zobrazit podrobnosti...** ).
 
@@ -148,11 +148,11 @@ Data o stavu Kit je omezený na Apple zadané typy. Tyto typy jsou definovány v
 
 Typy uložitelného v úložišti dat stavu Kit jsou všechny měly podtřídy `HKObjectType`. `HKCharacteristicType` objekty ukládat biologické pohlaví, typ krve a datum narození. Další běžné jsou ale `HKSampleType` objekty, které představují data, která je vzorkovat v určitém čase nebo po určitou dobu. 
 
-[![](healthkit-images/image08.png "Graf objektů HKSampleType")](healthkit-images/image08.png)
+[![](healthkit-images/image08.png "Graf objektů HKSampleType")](healthkit-images/image08.png#lightbox)
 
 `HKSampleType` je abstraktní a má čtyři konkrétní podtřídy. Aktuálně je pouze jeden typ `HKCategoryType` data, která se analýza režimu spánku. Velká většina dat ve stavu Kit je typu `HKQuantityType` a ukládají data v `HKQuantitySample` objekty, které jsou vytvořeny pomocí známých vzoru návrhu Factory:
 
-[![](healthkit-images/image09.png "Velká většina dat v Kit stavu typu HKQuantityType a ukládají data v HKQuantitySample objekty")](healthkit-images/image09.png)
+[![](healthkit-images/image09.png "Velká většina dat v Kit stavu typu HKQuantityType a ukládají data v HKQuantitySample objekty")](healthkit-images/image09.png#lightbox)
 
 `HKQuantityType` typy v rozsahu od `HKQuantityTypeIdentifier.ActiveEnergyBurned` k `HKQuantityTypeIdentifier.StepCount`. 
 
@@ -162,11 +162,11 @@ Typy uložitelného v úložišti dat stavu Kit jsou všechny měly podtřídy `
 
 Koncoví uživatelé musí provést kladné postup, který umožňuje aplikaci číst nebo zapisovat data stavu Kit. To se provádí prostřednictvím stavu aplikace, která se dodává předem nainstalovaná na zařízeních s iOS 8. Při prvním spuštění Kit stavu aplikace, zobrazí se uživateli se systém řídí **stavu přístupu** dialogové okno:
 
-[![](healthkit-images/image10.png "Zobrazí se uživateli se systém řídí dialogové okno Stav přístupu")](healthkit-images/image10.png)
+[![](healthkit-images/image10.png "Zobrazí se uživateli se systém řídí dialogové okno Stav přístupu")](healthkit-images/image10.png#lightbox)
 
 Později, uživatel může změnit oprávnění pomocí aplikace stavu **zdroje** dialogové okno:
 
-[![](healthkit-images/image11.png "Uživatel může změnit oprávnění pomocí dialogu zdroje stavu aplikace")](healthkit-images/image11.png)
+[![](healthkit-images/image11.png "Uživatel může změnit oprávnění pomocí dialogu zdroje stavu aplikace")](healthkit-images/image11.png#lightbox)
 
 Vzhledem k tomu, že je velmi citlivé informace o stavu, vývojáři aplikace by měla zápis jejich programy obranu, s tím, že oprávnění odmítl se změnila. Přestože aplikace běží. Nejběžnější stylu se s žádostí o oprávnění v `UIApplicationDelegate.OnActivated` metoda a uživatelském rozhraní podle potřeby upravit.
 
@@ -413,12 +413,12 @@ Vývoj pro zařízení správně zřízený iOS 8 připojte k systému. Vyberte 
 Za předpokladu, že zřizuje byly správně nastaveny, spustí se vaše aplikace. Když se dosáhne jeho `OnActivated` metoda, bude vyžadovat stavu Kit autorizace. Při prvním zjistil se v operačním systému, uživatelů zobrazí se následující dialogové okno:
 
 
-[![](healthkit-images/image12.png "Zobrazí uživatele se toto dialogové okno")](healthkit-images/image12.png)
+[![](healthkit-images/image12.png "Zobrazí uživatele se toto dialogové okno")](healthkit-images/image12.png#lightbox)
 
 Povolit aplikaci, kterou chcete aktualizovat data vysílat rychlost a aplikace se znovu zobrazí. `ReactToHealthCarePermissions` Zpětného volání, aktivuje se asynchronně. To způsobí, že `HeartRateModel’s` `Enabled` vlastnosti chcete změnit, která bude vyvolána `EnabledChanged` událost, která způsobí, že `HKPermissionsViewController.OnEnabledChanged()` obslužné rutiny události spuštění, které umožňuje `StoreData` tlačítko. Následující diagram znázorňuje sekvenci:
 
 
-[![](healthkit-images/image13.png "Tento diagram zobrazuje posloupnost událostí")](healthkit-images/image13.png)
+[![](healthkit-images/image13.png "Tento diagram zobrazuje posloupnost událostí")](healthkit-images/image13.png#lightbox)
 
 Stiskněte **záznam** tlačítko. To způsobí, že `StoreData_TouchUpInside()` obslužná rutina spouštěla, který se bude snažit analyzovat hodnotu `heartRate` textové pole, převést do `HKQuantity` prostřednictvím dříve popsaných `HeartRateModel.HeartRateInBeatsPerMinute()` funkce a předejte daného množství `HeartRateModel.StoreHeartRate()`. Jak je popsáno dříve, to se pokusí o uložení dat a vyvolá buď `HeartRateStored` nebo `ErrorMessageChanged` událostí.
 
@@ -447,4 +447,4 @@ Nakonec jsme trvá podívejte se na jednoduchou implementaci Kit stavu pomocí d
 ## <a name="related-links"></a>Související odkazy
 
 - [HKWork (ukázka)](https://developer.xamarin.com/samples/monotouch/ios8/IntroToHealthKit/)
-- [Úvod do systému iOS 8](~/ios/platform/introduction-to-ios8.md)
+- [Úvod do iOSu 8](~/ios/platform/introduction-to-ios8.md)

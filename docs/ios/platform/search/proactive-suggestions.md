@@ -3,16 +3,16 @@ title: "Úvod do proaktivní návrhy"
 description: "Tento článek ukazuje způsob použití proaktivní návrhy v aplikaci Xamarin.iOS engagement disku tím, že systém proaktivně automaticky nabídne užitečné informace pro uživatele."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 4E1FF652-28F0-4566-B383-9D12664401A4
+ms.assetid: 8DDD084A-0D1E-4DF7-B686-6309DCEFF5D3
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 2762487d25befd15d8b57a002c5da4e9dcb15bb8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 15f649440b2a855189acff33afcef5e8272a0769
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="introduction-to-proactive-suggestions"></a>Úvod do proaktivní návrhy
 
@@ -63,7 +63,7 @@ Umožňuje aplikaci pro kontakty (a kontaktní údaje související), než se ob
 
 ## <a name="ride-sharing-based-suggestions"></a>Pravé sdílení na základě návrhy
 
-Pokud aplikace se pravé sdílení využívá [MKDirectionsRequest](https://developer.xamarin.com/api/type/MapKit.MKDirectionsRequest/) rozhraní API, iOS 10 nabídne ho jako možnost v přepínači aplikace v době, kdy uživatel je pravděpodobně vhodné pravé. Aplikace musí být také zaregistrovaný jako aplikaci sdílení pravé zadáním `MKDirectionsModeRideShare` pro [MKDirectionsApplicationSupportedModes](https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html#//apple_ref/doc/uid/TP40009252-SW33) klíče v jeho `Info.plist` souboru.
+Pokud aplikace se pravé sdílení využívá [MKDirectionsRequest](https://developer.xamarin.com/api/type/MapKit.MKDirectionsRequest/) rozhraní API, iOS 10 nabídne ho jako možnost v přepínači aplikace v době, kdy uživatel je pravděpodobně vhodné pravé. Aplikace musí být také zaregistrovaný jako aplikaci sdílení pravé zadáním `MKDirectionsModeRideShare` pro [MKDirectionsApplicationSupportedModes](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html) klíče v jeho `Info.plist` souboru.
 
 Pokud aplikace podporuje pouze pravé sdílení, by začínat návrhu systému *"Get pravé k..."*, pokud jsou podporovány další typy směrování směru (například vycházkové nebo kolo), bude používat systém *"Pokynů k zjištění..."*
 
@@ -95,7 +95,7 @@ Všechny tyto funkce mají jedno, že jsou všechny používané `NSUserActivity
 
 Jak jsme uvedli výše, `NSUserActivity` pomáhá pochopit, jaké informace uživatel aktuálně pracuje s na obrazovce systému. `NSUserActivity` je stav šedé – ukládání do mezipaměti mechanismus pro zachycení činnost uživatele procházet aplikace. Například prohlížení restaurace aplikace:
 
-[ ![](proactive-suggestions-images/activity02.png "Šedé – stav NSUserActivity mechanismus ukládání do mezipaměti")](proactive-suggestions-images/activity02.png)
+[![](proactive-suggestions-images/activity02.png "Šedé – stav NSUserActivity mechanismus ukládání do mezipaměti")](proactive-suggestions-images/activity02.png#lightbox)
 
 Pomocí následujících interakce:
 
@@ -105,7 +105,7 @@ Pomocí následujících interakce:
 
 Prohlédněte si blíže poslední obrazovky:
 
-[ ![](proactive-suggestions-images/activity03.png "Podrobnosti o NSUserActivity")](proactive-suggestions-images/activity03.png)
+[![](proactive-suggestions-images/activity03.png "Podrobnosti o NSUserActivity")](proactive-suggestions-images/activity03.png#lightbox)
 
 Zde je vytváření aplikace `NSUserActivity` a naplněné s informacemi o stavu znovu vytvořit později. Aplikace má také zahrnuty některé metadata, např. název a adresu umístění. K této aktivitě vytvořen umožňuje aplikaci iOS vědět, že reprezentuje aktuální stav uživatele.
 
@@ -324,7 +324,7 @@ Interakce kontaktu jsou implementované v aplikaci pomocí `NSUserActivity` a no
 
 Podívejte se na tom, jak můžete aplikaci darovat interakce:
 
-[ ![](proactive-suggestions-images/activity04.png "Mohou interakce – přehled")](proactive-suggestions-images/activity04.png)
+[![](proactive-suggestions-images/activity04.png "Mohou interakce – přehled")](proactive-suggestions-images/activity04.png#lightbox)
 
 Vytvoří aplikaci `INInteraction` objekt, který obsahuje **záměr** (`INIntent`), **účastníky** a **Metadata**. **Záměr** představuje akci uživatele jako video volání nebo odeslání textové zprávy. **Účastníky** zahrnují osoby přijímání komunikace. **Metadata** definuje informace například úspěšně odeslání zprávy atd.
 
@@ -334,7 +334,7 @@ Po úplném naplnění interakce volání `DonateInteraction` metoda informovat 
 
 Když uživatel pracuje s aplikace z karty kontaktu, získá dodávat interakci s `NSUserActivity`, který je pak použitý ke spuštění aplikace:
 
-[ ![](proactive-suggestions-images/activity05.png "Získá dodávat interakci s NSUserActivity, který se používá ke spuštění aplikace")](proactive-suggestions-images/activity05.png)
+[![](proactive-suggestions-images/activity05.png "Získá dodávat interakci s NSUserActivity, který se používá ke spuštění aplikace")](proactive-suggestions-images/activity05.png#lightbox)
 
 Podívejte se na následující příklad záměru odeslat zprávu:
 
@@ -449,7 +449,7 @@ Základní Schema.org:
 - Existuje více než 500 schémata představující různé koncepty, které jsou k dispozici.
 - Implementací ho na webu můžete získat vývojář některé z výhod použití `NSUserActivity` v nativní aplikaci.
 
-Schémata jsou uspořádány do stromové struktury jako struktura, kde konkrétní typy, jako *restaurace*, dědí více obecné typy, jako *místní obchodní*. Další informace najdete v tématu [Schema.org](#http://schema.org).
+Schémata jsou uspořádány do stromové struktury jako struktura, kde konkrétní typy, jako *restaurace*, dědí více obecné typy, jako *místní obchodní*. Další informace najdete v tématu [Schema.org](http://schema.org).
 
 Například, pokud webová stránka zahrnuty následující data:
 

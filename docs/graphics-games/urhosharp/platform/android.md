@@ -1,17 +1,17 @@
 ---
 title: Podpora UrhoSharp Android
-description: "Android – konkrétní nastavení a funkcí"
+description: "Android – konkrétní nastavení a funkcí pro UrhoSharp."
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 8409BD81-B1A6-4F5D-AE11-6BBD3F7C6327
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
-ms.openlocfilehash: 5100fd4ac573021e088a88446f5f6559d49c4972
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f99b8d2d9f779bc0cf14d76c110d9769ec49ad53
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="urhosharp-android-support"></a>Podpora UrhoSharp Android
 
@@ -21,11 +21,11 @@ Při Urho je knihovny přenosných tříd a umožňuje stejné rozhraní API pro
 
 Na stránkách předpokládat, že `MyGame` je podtřídou třídy `Application` třídy.
 
-# <a name="architectures"></a>Architektury
+## <a name="architectures"></a>Architektury
 
 **Podporované architektury**: x86, armeabi, armeabi v7a
 
-# <a name="create-a-project"></a>Vytvoření projektu
+## <a name="create-a-project"></a>Vytvoření projektu
 
 Vytvoření projektu Android a přidejte balíček UrhoSharp NuGet.
 
@@ -33,7 +33,7 @@ Přidat Data obsahující vaše prostředky se mají **prostředky** adresář a
 
 ![Projekt instalace](android-images/image-3.png "přidat Data obsahující prostředky, k adresáři prostředky")
 
-# <a name="configure-and-launching-urho"></a>Konfigurace a spuštění Urho
+## <a name="configure-and-launching-urho"></a>Konfigurace a spuštění Urho
 
 Přidání direktivy using pro příkazy `Urho` a `Urho.Android` obory názvů a poté přidejte tento kód pro inicializaci Urho, jakož i spuštění vaší aplikace.
 
@@ -45,7 +45,7 @@ UrhoSurface.RunInActivity<MyGame>();
 
 Tím otevřete aktivitu celá obrazovka s příslušnou hru jako obsahu.
 
-# <a name="custom-embedding-of-urho"></a>Vlastní vložení Urho
+## <a name="custom-embedding-of-urho"></a>Vlastní vložení Urho
 
 Vám může případně na situaci, kdy Urho převzít obrazovce celá aplikace, a pokud chcete použít jako součást vaší aplikace, můžete vytvořit `SurfaceView` prostřednictvím:
 

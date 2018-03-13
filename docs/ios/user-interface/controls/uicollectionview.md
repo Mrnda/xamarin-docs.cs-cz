@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 716555c2456663cb2be24498348240c571849c24
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7048eb9c478d7ae10787e158f18b764b258da171
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="collection-views"></a>Zobrazení kolekce
 
@@ -36,7 +36,7 @@ iOS poskytuje rozložení třídy s názvem `UICollectionViewFlowLayout` umožň
 
 Buňky jsou objekty, které představují jednu položku v sadě dat, která má problém v kolekci zobrazení. Každá buňka představuje instanci `UICollectionViewCell` třídy, která se skládá ze tří různých zobrazení, jak je znázorněno na obrázku níže:
 
- [ ![](uicollectionview-images/01-uicollectionviewcell.png "Každá buňka se skládá ze tří různých zobrazení, jak je vidět tady")](uicollectionview-images/01-uicollectionviewcell.png)
+ [![](uicollectionview-images/01-uicollectionviewcell.png "Každá buňka se skládá ze tří různých zobrazení, jak je vidět tady")](uicollectionview-images/01-uicollectionviewcell.png#lightbox)
 
 `UICollectionViewCell` Třída má následující vlastnosti pro každou z těchto zobrazení:
 
@@ -47,7 +47,7 @@ Buňky jsou objekty, které představují jednu položku v sadě dat, která má
 
 Nastavením `ContentView` tak, aby byla menší než `BackgroundView` a `SelectedBackgroundView`, `BackgroundView` slouží k vizuálně rámce obsahu, než `SelectedBackgroundView` se zobrazí, když je vybrána buňka, jak je uvedeno níže:
 
- [ ![](uicollectionview-images/02-cells.png "Elementy jinou buňku")](uicollectionview-images/02-cells.png)
+ [![](uicollectionview-images/02-cells.png "Elementy jinou buňku")](uicollectionview-images/02-cells.png#lightbox)
 
 V buňkách v výše uvedený snímek obrazovky jsou vytvořené pomocí dědění z `UICollectionViewCell` a nastavení `ContentView`, `SelectedBackgroundView` a `BackgroundView` vlastnosti, v uvedeném pořadí, jak je znázorněno v následujícím kódu:
 
@@ -92,7 +92,7 @@ Zobrazení, která představují informace spojené s každou část jsou doplň
 
 Například doplňující zobrazení může představovat hlavičku pro konkrétní část, jak je znázorněno na obrázku níže:
 
- [ ![](uicollectionview-images/02a-supplementary-view.png "Doplňující zobrazení používá se k předložení hlavičku pro konkrétní část, jak je vidět tady")](uicollectionview-images/02a-supplementary-view.png)
+ [![](uicollectionview-images/02a-supplementary-view.png "Doplňující zobrazení používá se k předložení hlavičku pro konkrétní část, jak je vidět tady")](uicollectionview-images/02a-supplementary-view.png#lightbox)
 
 Použití doplňující zobrazení, nejprve musí být zaregistrovaný v `ViewDidLoad` metoda:
 
@@ -122,7 +122,7 @@ Tyto můžete umístit kamkoli v zobrazení kolekce a může skládat z jakékol
 
 Jsou čistě visual zobrazení, které lze zobrazit v zobrazení decoration `UICollectionView`. Na rozdíl od buněk a doplňující zobrazení že nejsou řízené daty. Tyto jsou vždy vytvořeny v rámci podtřídami a rozložení a následně můžete změnit tak, jako obsah rozložení. Například Decoration zobrazení může představovat zobrazení pozadí se posouvá společně s obsahem v `UICollectionView`, jak je uvedeno níže:
 
- [ ![](uicollectionview-images/02c-decoration-view.png "Zobrazení decoration s červenou pozadí")](uicollectionview-images/02c-decoration-view.png)
+ [![](uicollectionview-images/02c-decoration-view.png "Zobrazení decoration s červenou pozadí")](uicollectionview-images/02c-decoration-view.png#lightbox)
 
  Následující fragment kódu změní na pozadí na červený v ukázkách `CircleLayout` třídy:
 
@@ -153,7 +153,7 @@ Pro usnadnění práce `UICollectionViewController` třída je k dispozici. To j
 Stejně jako u `UITableView`, `UICollectionView` třídu bude volat pouze zdrojem dat získat buněk pro položky, které jsou na obrazovce.
 Buněk, které posouvat z obrazovky jsou umístěny do fronty pro opakované použití, jak ukazuje následující obrázek:
 
- [ ![](uicollectionview-images/03-cell-reuse.png "Buněk, které posouvat z obrazovky jsou umístěny v do fronty pro opakované použití, jak je vidět tady")](uicollectionview-images/03-cell-reuse.png)
+ [![](uicollectionview-images/03-cell-reuse.png "Buněk, které posouvat z obrazovky jsou umístěny v do fronty pro opakované použití, jak je vidět tady")](uicollectionview-images/03-cell-reuse.png#lightbox)
 
 Opakované použití buněk je jednodušší s `UICollectionView` a `UITableView`. Už musíte vytvořit buňku přímo ve zdroji dat, pokud jeden není k dispozici ve frontě opakované použití a jak buněk jsou zaregistrována v systému. Pokud buňku není k dispozici při volání zrušte fronty buňky z fronty opakované použití, vytvoří se automaticky na základě typu nebo nib, který byl zaregistrován iOS.
 Stejný postup je také k dispozici pro doplňující zobrazení.
@@ -207,7 +207,7 @@ Stejně jako u zdroje dat, `UICollectionViewController` je ve výchozím nastave
 
 Při stisknutí buňku, přechody buňky do zvýrazněná stavu, a není vybraná dokud uživatel zruší jejich prstem z buňky. To umožňuje dočasných změn v vzhled buňky předtím, než je ve skutečnosti vybraná. Při výběru, buňky `SelectedBackgroundView` se zobrazí. Následující obrázek znázorňuje zvýrazněná stavu těsně před dojde k výběru:
 
- [ ![](uicollectionview-images/04-cell-highlight.png "Tento obrázek ukazuje stav zvýrazněná těsně před dojde k výběru")](uicollectionview-images/04-cell-highlight.png)
+ [![](uicollectionview-images/04-cell-highlight.png "Tento obrázek ukazuje stav zvýrazněná těsně před dojde k výběru")](uicollectionview-images/04-cell-highlight.png#lightbox)
 
 K implementaci zvýraznění, `ItemHighlighted` a `ItemUnhighlighted` metody `UICollectionViewDelegate` lze použít. Například následující kód použije žlutý pozadí `ContentView` při buňky zvýrazní a bílé pozadí při zrušení zvýrazněná, jak je znázorněno na obrázku výše:
 
@@ -257,7 +257,7 @@ Každá buňka `UICollectionView` umožňuje zobrazení nabídky, která umožň
 
 Následující snímek obrazovky zobrazit v nabídce při dlouho stisknutí buňku:
 
- [ ![](uicollectionview-images/04a-menu.png "Tento snímek obrazovky zobrazit v nabídce při dlouho stisknutí buňku")](uicollectionview-images/04a-menu.png)
+ [![](uicollectionview-images/04a-menu.png "Tento snímek obrazovky zobrazit v nabídce při dlouho stisknutí buňku")](uicollectionview-images/04a-menu.png#lightbox)
 
  <a name="Layout" />
 
@@ -303,7 +303,7 @@ simpleCollectionViewController = new SimpleCollectionViewController (layout);
 
 To je vše, který je potřebný pro rozložení obsahu v mřížce. Navíc pokud orientaci změní, `UICollectionViewFlowLayout` zpracovává Změna uspořádání obsahu odpovídajícím způsobem, jak je uvedeno níže:
 
- [ ![](uicollectionview-images/05-layout-orientation.png "Příklad změny orientace")](uicollectionview-images/05-layout-orientation.png)
+ [![](uicollectionview-images/05-layout-orientation.png "Příklad změny orientace")](uicollectionview-images/05-layout-orientation.png#lightbox)
 
  <a name="Section_Inset" />
 
@@ -319,7 +319,7 @@ layout.SectionInset = new UIEdgeInsets (50,50,50,50);
 
 Výsledkem je mezery okolo části, jak je uvedeno níže:
 
- [ ![](uicollectionview-images/06-sectioninset.png "Jak je vidět tady mezer kolem oddílu")](uicollectionview-images/06-sectioninset.png)
+ [![](uicollectionview-images/06-sectioninset.png "Jak je vidět tady mezer kolem oddílu")](uicollectionview-images/06-sectioninset.png#lightbox)
 
  <a name="Subclassing_UICollectionViewFlowLayout" />
 
@@ -328,7 +328,7 @@ Výsledkem je mezery okolo části, jak je uvedeno níže:
 
 V edici pomocí `UICollectionViewFlowLayout` přímo, ho můžete také být rozčlenění k dalšímu přizpůsobení rozložení obsahu podél řádku. Například může sloužit k vytvoření rozložení, který není zalomen buněk v mřížce, ale místo toho vytvoří jeden řádek s vodorovné posouvání platit, jak je uvedeno níže:
 
- [ ![](uicollectionview-images/07-line-layout.png "Jeden řádek s vodorovné efekt posouvání")](uicollectionview-images/07-line-layout.png)
+ [![](uicollectionview-images/07-line-layout.png "Jeden řádek s vodorovné efekt posouvání")](uicollectionview-images/07-line-layout.png#lightbox)
 
 Chcete-li tuto funkci implementovat pomocí vytváření podtříd `UICollectionViewFlowLayout` vyžaduje:
 
@@ -423,7 +423,7 @@ Klíče metody k přepsání jsou následující:
 
 Například stejný obsah mohou být uvedeny v cyklické rozložení, jak je uvedeno níže:
 
- [ ![](uicollectionview-images/08-circle-layout.png "Cyklické vlastní rozložení, jak je vidět tady")](uicollectionview-images/08-circle-layout.png)
+ [![](uicollectionview-images/08-circle-layout.png "Cyklické vlastní rozložení, jak je vidět tady")](uicollectionview-images/08-circle-layout.png#lightbox)
 
 Výkonné věc o rozložení je, že změna rozložení mřížky na vodorovném rozložení posouvání a následně do tohoto rozvržení cyklické vyžaduje pouze třída rozložení poskytnuté `UICollectionView` změnit. Nic v `UICollectionView`, jeho delegáta nebo zdroje dat změn kódu vůbec.
 
@@ -435,7 +435,7 @@ V systému iOS 9, zobrazení kolekce (`UICollectionView`) teď podporuje přetá
 
 Pomocí těchto nových metod, můžete snadno implementovat přetáhněte chcete změnit pořadí v zobrazení kolekce tak, aby možnost přizpůsobení vzhledu položky během jakékoli fázi způsob procesu.
 
-[ ![](uicollectionview-images/intro01.png "Příklad způsob procesu")](uicollectionview-images/intro01.png)
+[![](uicollectionview-images/intro01.png "Příklad způsob procesu")](uicollectionview-images/intro01.png#lightbox)
 
 V tomto článku provedeme podívejte se na implementace změnit přetáhněte pořadí v aplikace pro Xamarin.iOS a také některé změny, provedena iOS 9 do ovládacího prvku zobrazení kolekce:
 
@@ -468,7 +468,7 @@ public override void MoveItem (UICollectionView collectionView, NSIndexPath sour
 
 Jako v příkladu rychlé spuštění nového projektu Xamarin.iOS a upravit **Main.storyboard** souboru. Přetažení `UICollectionViewController` na návrhovou plochu:
 
-[ ![](uicollectionview-images/quick01.png "Přidání UICollectionViewController")](uicollectionview-images/quick01.png)
+[![](uicollectionview-images/quick01.png "Přidání UICollectionViewController")](uicollectionview-images/quick01.png#lightbox)
 
 Vyberte zobrazení kolekce (může být nejjednodušší provést ze Osnova dokumentu). Na kartě Rozložení panelu vlastností pro nastavení následující velikostí, jak ukazuje následující snímek obrazovky:
 
@@ -478,28 +478,28 @@ Vyberte zobrazení kolekce (může být nejjednodušší provést ze Osnova doku
 - **Minimální mezera**: pro buněk – 8 | Řádky – 8
 - **Část vsazení**: horní – 16 | Dolní – 16 | Vlevo – 16 | Pravé – 16
 
-[ ![](uicollectionview-images/quick04.png "Nastavení velikosti zobrazení kolekce")](uicollectionview-images/quick04.png)
+[![](uicollectionview-images/quick04.png "Nastavení velikosti zobrazení kolekce")](uicollectionview-images/quick04.png#lightbox)
 
 Potom upravte výchozí buňky:
     - Změnit barvu pozadí na modrou
     - Přidání popisku tak, aby fungoval jako název buňky
     - Nastavit identifikátor opakované použití na **buňky**
 
-[ ![](uicollectionview-images/quick02.png "Upravit výchozí buňky")](uicollectionview-images/quick02.png)
+[![](uicollectionview-images/quick02.png "Upravit výchozí buňky")](uicollectionview-images/quick02.png#lightbox)
 
 Přidáte omezení zachovat popisek zarovnaný na střed uvnitř buňky změnách velikost:
 
 V **Pad vlastnost** pro _CollectionViewCell_ a nastavte **třída** k `TextCollectionViewCell`:
 
-[ ![](uicollectionview-images/quick05.png "Nastavit třídy na TextCollectionViewCell")](uicollectionview-images/quick05.png)
+[![](uicollectionview-images/quick05.png "Nastavit třídy na TextCollectionViewCell")](uicollectionview-images/quick05.png#lightbox)
 
 Nastavte **opakovaně použitelné zobrazení kolekce** k `Cell`:
 
-[ ![](uicollectionview-images/quick06.png "Nastavení zobrazení opakovaně použitelné kolekce do buňky")](uicollectionview-images/quick06.png)
+[![](uicollectionview-images/quick06.png "Nastavení zobrazení opakovaně použitelné kolekce do buňky")](uicollectionview-images/quick06.png#lightbox)
 
 Nakonec vyberte štítek a pojmenujte ji `TextLabel`:
 
-[ ![](uicollectionview-images/quick07.png "Popisek názvu TextLabel")](uicollectionview-images/quick07.png)
+[![](uicollectionview-images/quick07.png "Popisek názvu TextLabel")](uicollectionview-images/quick07.png#lightbox)
 
 Upravit `TextCollectionViewCell` třídu a přidejte následující vlastnosti.:
 
@@ -695,7 +695,7 @@ Uložit změny provedené u uživatelského rozhraní a spuštění aplikace.
 Pokud uživatel vybere položka ze seznamu a nastavuje tažením ho do nového umístění, bude automaticky animace další položky, jako se přesouvají z cesty položky.
 Jakmile uživatel přesune položku do nového umístění, bude přilepit do tohoto umístění. Příklad:
 
-[ ![](uicollectionview-images/intro01.png "Příklad přetažení položky do nového umístění")](uicollectionview-images/intro01.png)
+[![](uicollectionview-images/intro01.png "Příklad přetažení položky do nového umístění")](uicollectionview-images/intro01.png#lightbox)
 
 <a name="Using-a-Custom-Gesture-Recognizer" />
 
@@ -1205,7 +1205,7 @@ To vytvoří instanci našeho vlastní rozložení, nastaví událost a poskytuj
 
 Pokud jsme spuštění aplikace Xamarin.iOS zobrazení kolekce bude nyní vypadat následovně:
 
-[ ![](uicollectionview-images/custom01.png "Zobrazení kolekce bude nyní vypadat například takto")](uicollectionview-images/custom01.png)
+[![](uicollectionview-images/custom01.png "Zobrazení kolekce bude nyní vypadat například takto")](uicollectionview-images/custom01.png#lightbox)
 
 Můžeme stále přetáhněte na-změnit pořadí položek jako před, ale položky bude nyní změnit velikost tak, aby vyhovoval jejich nové umístění, když budou vynechána.
 

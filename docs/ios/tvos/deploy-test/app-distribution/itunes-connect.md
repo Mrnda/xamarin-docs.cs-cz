@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 5db53bef0f62937f7be0a5e5fb6f64f1bf3ca007
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b6fad9eadbff272f86f9e426e3f6eb5d48847127
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="configure-your-tvos-app-in-itunes-connect"></a>Konfigurace vaší tvOS aplikace v iTunes Connect
 
@@ -39,11 +39,11 @@ Volitelně můžete také potřebovat:
 
 Se všemi výše uvedené kroky dokončení otevřete iTunes záznam připojit a vyberte, které chcete přidat podporu tvOS pomocí na bočním panelu vlevo vaší aplikace:
 
-[ ![](itunes-connect-images/connect01.png "Přidání podpory tvOS pomocí na bočním panelu vlevo")](itunes-connect-images/connect01.png)
+[![](itunes-connect-images/connect01.png "Přidání podpory tvOS pomocí na bočním panelu vlevo")](itunes-connect-images/connect01.png#lightbox)
 
 Obrazovky konkrétní informace tvOS pak budou k dispozici pro danou iTunes záznam připojení:
 
-[ ![](itunes-connect-images/connect02.png "Na obrazovce tvOS konkrétní informace")](itunes-connect-images/connect02.png)
+[![](itunes-connect-images/connect02.png "Na obrazovce tvOS konkrétní informace")](itunes-connect-images/connect02.png#lightbox)
 
 <a name="tvOS-Version-Information" />
 
@@ -51,7 +51,7 @@ Obrazovky konkrétní informace tvOS pak budou k dispozici pro danou iTunes záz
 
 Na bočním panelu vlevo vyberte **1.0 Příprava pro odeslání** části tvOS aplikace:
 
-[ ![](itunes-connect-images/connect03.png "tvOS informace o verzi")](itunes-connect-images/connect03.png)
+[![](itunes-connect-images/connect03.png "tvOS informace o verzi")](itunes-connect-images/connect03.png#lightbox)
 
 Na této obrazovce zadejte následující informace:
 
@@ -63,7 +63,7 @@ Na této obrazovce zadejte následující informace:
 
 Po zadání požadovaných informací klikněte na **Uložit** tlačítko v pravém horním rohu obrazovky a uložit provedené změny:
 
-[ ![](itunes-connect-images/connect04.png "tvOS připravené k odeslání informací o verzi")](itunes-connect-images/connect04.png)
+[![](itunes-connect-images/connect04.png "tvOS připravené k odeslání informací o verzi")](itunes-connect-images/connect04.png#lightbox)
 
 <a name="Submitting-for-Review" />
 
@@ -71,7 +71,7 @@ Po zadání požadovaných informací klikněte na **Uložit** tlačítko v prav
 
 Až budete připravení nakonec odeslat aplikace Xamarin.tvOS do App Storu Apple TV ke kontrole, vraťte se na aplikace iTunes záznam připojení a klikněte na **odeslat ke kontrole** tlačítko v pravém horním rohu obrazovky:
 
-[ ![](itunes-connect-images/connect05.png "Odeslat ke kontrole")](itunes-connect-images/connect05.png)
+[![](itunes-connect-images/connect05.png "Odeslat ke kontrole")](itunes-connect-images/connect05.png#lightbox)
 
 <a name="Summary" />
 

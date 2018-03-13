@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: bf9d292acf43bbbe3e4ba76b5a264a11288b7225
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 732f60a413077bc15018679fe8f8bc0a18227246
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ios-architecture"></a>iOS architektura
 
@@ -20,7 +20,7 @@ Aplikace Xamarin.iOS spustit v prostředí Mono provádění a použít úplnou 
 
 Následující diagram ukazuje základní přehled této architektury:
 
-[ ![](architecture-images/ios-arch-small.png "Tento diagram zobrazuje základní přehled o architektuře kompilace můžete některé z času (AOT)")](architecture-images/ios-arch.png)
+[ ![](architecture-images/ios-arch-small.png "Tento diagram zobrazuje základní přehled o architektuře kompilace můžete některé z času (AOT)")](architecture-images/ios-arch.png#lightbox)
 
 ## <a name="native-and-managed-code-an-explanation"></a>Nativního a spravovaného kódu: vysvětlení
 
@@ -36,7 +36,7 @@ Při kompilaci všechny platformy aplikace Xamarin kompilátoru Mono jazyka C# (
 Je však omezení zabezpečení v systému iOS, nastavte společností Apple, která zakáže spuštění dynamicky generovaném kódu na zařízení.
 Aby se zajistilo, že jsme splňovat tyto protokoly zabezpečení, Xamarin.iOS místo toho používá kompilátoru můžete některé z času (AOT) pro kompilaci spravovaného kódu. To vytváří nativní aplikace pro iOS binární, volitelně s LLVM optimalizované pro zařízení, které lze nasadit na bázi ARM procesoru společnosti Apple. Dole je zobrazená hrubý diagram jak to zapadá společně:
 
-[ ![](architecture-images/aot.png "Jak to zapadá společně hrubý diagram")](architecture-images/aot-large.png)
+[![](architecture-images/aot.png "Jak to zapadá společně hrubý diagram")](architecture-images/aot-large.png#lightbox)
 
 Pomocí AOT má několik omezení, které jsou podrobně popsané na [omezení](~/ios/internals/limitations.md) průvodce. Také poskytuje řadu vylepšení přes JIT prostřednictvím snížení čas spuštění a různé optimalizace výkonu
 
@@ -101,7 +101,7 @@ Existují dva typy registrátorů použít v Xamarin.iOS – dynamických a stat
 
 - **Statické registrátorů** – statické registrátora generuje kód jazyka Objective-C během vytváření sestavení, který je pak zkompiluje do statické knihovny a propojit do spustitelného souboru. To umožňuje rychlejší spouštění, ale během okamžiku sestavení trvá déle. Používá se ve výchozím nastavení pro zařízení sestavení. Statické registrátora lze také pomocí simulátoru iOS předáním `--registrar:static` jako `mtouch` atribut v projektu na sestavení možnosti, jak je uvedeno níže:
 
-    [ ![](architecture-images/image1.png "Nastavení další mtouch argumenty")](architecture-images/image1.png)
+    [![](architecture-images/image1.png "Nastavení další mtouch argumenty")](architecture-images/image1.png#lightbox)
 
 Další informace o jaké jsou specifikace iOS systém registrace typu používané Xamarin.iOS, najdete v části [typ registrátora](~/ios/internals/registrar.md) průvodce.
 
@@ -179,7 +179,7 @@ Tato příručka prohlédli AOT kompilace aplikace Xamarin.iOS a prozkoumané Xa
 ## <a name="related-links"></a>Související odkazy
 
 - [Omezení](~/ios/internals/limitations.md)
-- [Vazba Objective-C](~/cross-platform/macios/binding/overview.md)
+- [Vytváření vazeb Objective-C](~/cross-platform/macios/binding/overview.md)
 - [Selektory jazyka Objective-C](~/ios/internals/objective-c-selectors.md)
 - [Typ registrátora](~/ios/internals/registrar.md)
 - [Linker](~/ios/deploy-test/linker.md)

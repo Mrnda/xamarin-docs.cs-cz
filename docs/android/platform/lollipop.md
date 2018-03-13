@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 24d85d7be580f8db8621d91ebbb27c0b7881b4eb
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: de6829a0a698133ad9002ead1cd7c534a30b1f6c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="lollipop-features"></a>Funkce typu Lupa
 
@@ -54,8 +54,6 @@ Toto je potřeba použít nové funkce systému Android 5.0 v aplikace založen�
 Můžete dál používat [JDK 1.7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) Pokud vývoj speciálně pro úroveň rozhraní API 23 nebo starším.
 
 
-<a name="settingup" />
-
 ## <a name="setting-up-an-android-50-project"></a>Nastavení projektu pro Android 5.0
 
 Pokud chcete vytvořit projekt Android 5.0, je nutné nainstalovat nejnovější nástroje a balíčky SDK. Pro nastavení projektu Xamarin.Android s cílem Android 5.0 použijte následující postup:
@@ -66,11 +64,11 @@ Pokud chcete vytvořit projekt Android 5.0, je nutné nainstalovat nejnovější
 
 3. Spustit Android SDK Manager (v sadě Visual Studio pro Mac, použijte **nástroje &gt; otevřete Android SDK Manager&hellip;**) a nainstalujte nástroje pro Android SDK 23.0.5 nebo novější:
 
-    [![Nástroje pro výběr sady SDK pro Android v Android SDK Manager](lollipop-images/android-l-tools-sml.png)](lollipop-images/android-l-tools.png)
+    [![Nástroje pro výběr sady SDK pro Android v Android SDK Manager](lollipop-images/android-l-tools-sml.png)](lollipop-images/android-l-tools.png#lightbox)
 
    Také instalaci nejnovější sady SDK pro Android 5.0 balíčků (API 21 nebo novější):
 
-    [![Instalace sady SDK pro Android 5.0 balíčků v Android SDK Manager](lollipop-images/android-l-sdk-pkgs-sml.png)](lollipop-images/android-l-sdk-pkgs.png)
+    [![Instalace sady SDK pro Android 5.0 balíčků v Android SDK Manager](lollipop-images/android-l-sdk-pkgs-sml.png)](lollipop-images/android-l-sdk-pkgs.png#lightbox)
 
    Další informace o používání Android SDK Manager najdete v tématu [SDK Manager](http://developer.android.com/tools/help/sdk-manager.html).
 
@@ -87,14 +85,9 @@ Pokud chcete vytvořit projekt Android 5.0, je nutné nainstalovat nejnovější
 
 Poznámka: Pokud aktualizujete stávající projekt pro Android, který byl cílení na Android L Preview, musíte aktualizovat **cílové rozhraní** a **verzi systému Android** hodnoty popsané výše.
 
-
-<a name="changes" />
-
 ## <a name="important-changes"></a>Důležité změny
 
 Dříve publikované aplikace pro Android může mít vliv změny v systému Android 5.0. Konkrétně Android 5.0 používá nový modul runtime a formát značně změněné oznámení.
-
-<a name="runtime" />
 
 ### <a name="android-runtime"></a>Android Runtime
 
@@ -108,7 +101,6 @@ Android 5.0 používá jako výchozí runtime místo Dalvik nový Android Runtim
 
 Existující aplikace by měla fungovat bez změn v rámci obrázky &ndash; s výjimkou aplikace, které využívají techniky, které jsou jedinečné pro předchozí modul runtime Dalvik, který nemusí fungovat v části obrázky. Další informace o těchto změnách najdete v tématu [ověření chování aplikace na Android Runtime (obrázky)](http://developer.android.com/guide/practices/verifying-apps-art.html).
 
-<a name="notifchanges" />
 
 ### <a name="notification-changes"></a>Oznámení změn
 
@@ -136,29 +128,26 @@ Pokud vaše oznámení k dispozici přenos, ovládací prvky zobrazení média p
 
 Informace o vytváření oznámení v Android najdete v tématu [místního oznámení](~/android/app-fundamentals/notifications/local-notifications.md). [Kompatibility](~/android/app-fundamentals/notifications/local-notifications.md#compatibility) tohoto článku vysvětluje, jak vytvořit oznámení, které jsou klesající kompatibilní s předchozími verzemi systému Android.
 
-<a name="materialtheme" />
 
 ## <a name="material-theme"></a>Podstatným motiv
 
 Nový motiv materiálu Android 5.0 přináší obezřetností změny vzhledu a chování rozhraní Android. Vizuální prvky teď použít taktilní povrchy, které převezmou tučné obrázků, typografii a jasně barev návrhu na základě tisk. Příklady motivu materiálu jsou použité v ukázkách na následujících snímcích obrazovky:
 
-[![Snímky obrazovky materiálu motiv domovské obrazovce, obrazovky aplikace a nastavení obrazovky](lollipop-images/android-5-gallery-labeled-sml.png)](lollipop-images/android-5-gallery-labeled.png)
+[![Snímky obrazovky materiálu motiv domovské obrazovce, obrazovky aplikace a nastavení obrazovky](lollipop-images/android-5-gallery-labeled-sml.png)](lollipop-images/android-5-gallery-labeled.png#lightbox)
 
 Android 5.0 zobrazí přání s domovskou obrazovku zobrazený na levé straně. Snímek obrazovky center na první obrazovce seznam aplikací a je na snímku obrazovky na pravé straně **nastavení** obrazovky. Google [materiálu návrhu](https://material.io/guidelines/material-design/introduction.html) specifikace vysvětluje základní pravidla návrhu za nový motiv materiálu koncept.
 
 Podstatným motiv obsahuje tři předdefinované typů, které můžete použít ve vaší aplikaci: `Theme.Material` tmavým motivem (výchozí), `Theme.Material.Light` motiv a `Theme.Material.Light.DarkActionBar` motivu: 
 
-[![Snímky obrazovky tmavý, světlým a DarkActionBar motivů](lollipop-images/three-material-themes-sml.png)](lollipop-images/three-material-themes.png)
+[![Snímky obrazovky tmavý, světlým a DarkActionBar motivů](lollipop-images/three-material-themes-sml.png)](lollipop-images/three-material-themes.png#lightbox)
 
 Další informace o používání funkcí materiálu motiv v Xamarin.Android apps najdete v tématu [materiálu motiv](~/android/user-interface/material-theme.md).
 
-<a name="animations" />
 
 ## <a name="animations"></a>Animace
 
 Android 5.0 poskytuje animací touch zpětnou vazbu, aktivity přechod animace a zobrazení stavu přechodu animace do intuitivnější použít rozhraní aplikace. Navíc můžete použít aplikace Android 5.0 *odhalit vliv* animací pro skrytí nebo zobrazení odhalit. Můžete použít *zakřivené pohybu* nastavení pro konfiguraci jak rychle nebo pomalu animací vykreslují.
 
-<a name="touchanim" />
 
 ### <a name="touch-feedback-animations"></a>Touch animací zpětné vazby
 
@@ -170,7 +159,6 @@ Obraťte se na počáteční touch pomocí tlačítka provádí první obrázek 
 
 Další informace o touch zpětnou vazbu animace v systému Android 5.0, najdete v části [přizpůsobit Touch zpětné vazby](http://developer.android.com/training/material/animations.html#Touch).
 
-<a name="activityanim" />
 
 ### <a name="activity-transition-animations"></a>Aktivita přechod animace
 
@@ -184,7 +172,7 @@ Aktivita přechod animací uživatelům představu o visual kontinuity v přípa
 
 Například následující posloupnosti snímky obrazovky znázorňuje přechod sdílené element:
 
-[![Podle snímky obrazovky rámce sdílené elementu animace přechodu rámečku](lollipop-images/activity-transition-sml.png)](lollipop-images/activity-transition.png)
+[![Podle snímky obrazovky rámce sdílené elementu animace přechodu rámečku](lollipop-images/activity-transition-sml.png)](lollipop-images/activity-transition.png#lightbox)
 
 Sdílené element (fotografie pásy) je jedním z několika zobrazení v první aktivitu; se zvětšuje k zobrazení pouze v druhé aktivitu jako první aktivitu přechody na druhý.
 
@@ -220,7 +208,6 @@ Sdílené element přechody podporují více typy animací, například:
 
 Další informace o aktivity přechod animace v systému Android 5.0 najdete v tématu [přizpůsobit přechody aktivity](http://developer.android.com/training/material/animations.html#Transitions).
 
-<a name="viewstate" />
 
 ### <a name="view-state-transition-animations"></a>Zobrazení stavu přechodu animace
 
@@ -232,23 +219,21 @@ Android 5.0 umožňuje animací spustit, když se změní stav zobrazení. Pomoc
 
 Další informace o zobrazení stavu přechodu animace v systému Android 5.0 najdete v tématu [animace změny stavu zobrazení](http://developer.android.com/training/material/animations.html#ViewState).
 
-<a name="reveal" />
 
 ### <a name="reveal-effect"></a>Odhalit vliv
 
 *Odhalit vliv* je kruh výstřižek této změny radius odhalit nebo skrytí zobrazení. Tento efekt lze řídit nastavení počáteční a finální radius výstřižek kruhu. Následující posloupnosti snímky obrazovky znázorňuje animace zobrazení vliv z centra obrazovky:
 
-[![Rámce pomocí rámce snímky obrazovky animace zobrazení](lollipop-images/reveal-center-sml.png)](lollipop-images/reveal-center.png)
+[![Rámce pomocí rámce snímky obrazovky animace zobrazení](lollipop-images/reveal-center-sml.png)](lollipop-images/reveal-center.png#lightbox)
 
 Další pořadí znázorňuje vliv animace zobrazení, která se provádí z levého dolního rohu obrazovky:
 
-[![Rámce pomocí rámce snímky obrazovky výstřižek animace](lollipop-images/reveal-left-sml.png)](lollipop-images/reveal-left.png)
+[![Rámce pomocí rámce snímky obrazovky výstřižek animace](lollipop-images/reveal-left-sml.png)](lollipop-images/reveal-left.png#lightbox)
 
 Odhalit, že animace lze vrátit zpět; To znamená kruhu výstřižek můžete zmenšit skrytí zobrazení místo zvětšit na nich zobrazení.
 
 Další informace o zobrazení účinek Android 5.0 v, najdete v části [použijte efekt odhalit](http://developer.android.com/training/material/animations.html#Reveal).
 
-<a name="curvedmotion" />
 
 ### <a name="curved-motion"></a>Zakřivené pohybu
 
@@ -262,7 +247,6 @@ Kromě tyto funkce animace Android 5.0 také nabízí nová rozhraní API, kter�
 
 Můžete použít nové `PathInterpolator` třídu k určení, jak probíhá interpolace pohybu. `PathInterpolator` je interpolátor, který prochází skrz animace cesty podle zadaného kontrolních bodů a křivek pohybu. Další informace o tom, jak zadat nastavení zakřivené pohybu v systému Android 5.0 najdete v tématu [použití zakřivené pohybu](http://developer.android.com/training/material/animations.html#CurvedMotion).
 
-<a name="viewshadows" />
 
 ## <a name="view-shadows--elevation"></a>Zobrazení stínů & zvýšení oprávnění
 
@@ -270,13 +254,12 @@ V systému Android 5.0, můžete zadat *zvýšení* zobrazení nastavením nové
 
 Následující příklad ilustruje stínů přetypovat podle prázdnou `TextView` řízení, pokud jeho atribut zvýšení oprávnění nastavená na 2dp, 4dp a 6dp, v uvedeném pořadí:
 
-[![Snímky obrazovky progessively větší stínů zobrazení](lollipop-images/view-shadows-sml.png)](lollipop-images/view-shadows.png)
+[![Snímky obrazovky progessively větší stínů zobrazení](lollipop-images/view-shadows-sml.png)](lollipop-images/view-shadows.png#lightbox)
 
 Nastavení stínových zobrazení může být statická (jak je uvedeno výše) nebo jejich lze použít v animací, aby zobrazení zobrazí dočasně zvýšení výše pozadí zobrazení. Můžete použít `ViewPropertyAnimator` třídy animace zvýšení oprávnění zobrazení. Zvýšení úrovně zobrazení je součet hodnot jeho rozložení `elevation` nastavení plus `translationZ` vlastnost, která můžete nastavit prostřednictvím `ViewPropertyAnimator` volání metody.
 
 Další informace o zobrazení stínů v systému Android 5.0 najdete v tématu [výstřižek zobrazení a definování stínů](http://developer.android.com/training/material/shadows-clipping.html).
 
-<a name="colorfeatures" />
 
 ## <a name="color-features"></a>Barva funkce
 
@@ -286,7 +269,6 @@ Android 5.0 obsahuje dvě nové funkce pro správu barev v aplikacích:
 
 -   *Extrakce viditelného barva* umožňuje dynamicky přizpůsobit barevný motiv vaší aplikace pro koordinaci s paletu barev zobrazeného obrázku.
 
-<a name="tinting" />
 
 ### <a name="drawable-tinting"></a>Drawable barevný nádech
 
@@ -302,7 +284,6 @@ Jak je znázorněno v následujících příkladech, zobrazí se toto logo nad b
 
 Další informace o drawable barevný nádech v systému Android 5.0 najdete v tématu [Drawable barevný nádech](http://developer.android.com/training/material/drawables.html#DrawableTint).
 
-<a name="colorextract" />
 
 ### <a name="prominent-color-extraction"></a>Extrakce viditelného barev
 
@@ -322,13 +303,12 @@ Nové Android 5.0 `Palette` třída umožňuje extrahovat barvy z obrázku tak, 
 
 Na následujících snímcích obrazovky, například fotografie zobrazení aplikace extrahuje výrazné barvy z obrázku na zobrazení a přizpůsobit barevné schéma aplikace tak, aby odpovídaly bitovou kopii pomocí těchto barev:
 
-[![Snímky obrazovky extrakce barvu motivu zelené, růžové a modré](lollipop-images/prominent-color-extraction-sml.png)](lollipop-images/prominent-color-extraction.png)
+[![Snímky obrazovky extrakce barvu motivu zelené, růžové a modré](lollipop-images/prominent-color-extraction-sml.png)](lollipop-images/prominent-color-extraction.png#lightbox)
 
 Na snímcích obrazovky výše na panelu akcí nastavena na extrahované "živoucí light" barvy a pozadí nastavena na extrahované "živoucí světlý" barev. V příkladu výše každý řádek kvadratických malé barva je zahrnuta pro ilustraci barvy palety, které se extrahují z bitové kopie.
 
 Další informace o extrakce barev v systému Android 5.0 najdete v tématu [extrahování výrazné barvy z obrázku](http://developer.android.com/training/material/drawables.html#ColorExtract).
 
-<a name="newuiwidgets" />
 
 ## <a name="new-ui-widgets"></a>Nové widgety uživatelského rozhraní
 
@@ -340,11 +320,10 @@ Android 5.0 obsahuje dvě pomůcky nového uživatelského rozhraní:
 
 Obě pomůcky zahrnují podporu zaručená pro motiv materiálu funkce; například `RecyclerView` používá animací pro přidávání a odebírání zobrazení, a `CardView` používá zobrazení stínů aby každou kartu pravděpodobně float výše na pozadí. Na následujících snímcích obrazovky jsou uvedeny příklady tyto nové pomůcky:
 
-[![Snímky obrazovky aplikace vytvořené s RecyclerView](lollipop-images/recyclerview-cardview-sml.png)](lollipop-images/recyclerview-cardview.png)
+[![Snímky obrazovky aplikace vytvořené s RecyclerView](lollipop-images/recyclerview-cardview-sml.png)](lollipop-images/recyclerview-cardview.png#lightbox)
 
 Snímek obrazovky na levé straně je příkladem `RecyclerView` používá v e-mailovou aplikaci a na snímku obrazovky na právo je příkladem `CardView` jako použít v aplikaci rezervace cesta.
 
-<a name="recyclerview" />
 
 ### <a name="recyclerview"></a>RecyclerView
 
@@ -356,27 +335,25 @@ Při použití `RecyclerView` pomůcky, je nutné zadat `LayoutManager` a adapt�
 
 Na následujících snímcích obrazovky ilustraci `RecyclerView` obsahuje 100 položky (každá položka se skládá z `ImageView` a `TextView`):
 
-[![Snímky obrazovky aplikace RecyclerView posouvání pomocí bitové kopie](lollipop-images/recyclerview-scroll-sml.png)](lollipop-images/recyclerview-scroll.png)
+[![Snímky obrazovky aplikace RecyclerView posouvání pomocí bitové kopie](lollipop-images/recyclerview-scroll-sml.png)](lollipop-images/recyclerview-scroll.png#lightbox)
 
 `RecyclerView` zpracuje tento velké sady dat snadno &ndash; posouvání od začátku seznamu na konec seznamu v této ukázce aplikace trvá jenom pár sekund. `RecyclerView` podporuje také animací; ve skutečnosti animací pro přidávání a odebírání položek jsou povolené ve výchozím nastavení. Když je přidat položku do `RecyclerView`, je oznámení v, jak je znázorněno v tomto pořadí snímky obrazovky:
 
-[![Rámce pomocí rámce snímek obrazovky fotografie směrem položek v](lollipop-images/recyclerview-animation-sml.png)](lollipop-images/recyclerview-animation.png)
+[![Rámce pomocí rámce snímek obrazovky fotografie směrem položek v](lollipop-images/recyclerview-animation-sml.png)](lollipop-images/recyclerview-animation.png#lightbox)
 
 Další informace o `RecyclerView`, najdete v části [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md).
 
-<a name="cardview" />
 
 ### <a name="cardview"></a>Zobrazení karty aplikace
 
 `CardView` je jednoduché zobrazení, která simuluje plovoucí karet se zaoblenými hranami. Protože `CardView` má stínů předdefinovaných zobrazení, poskytuje snadný způsob můžete přidat hloubky do vaší aplikace. Na následujících snímcích obrazovky zobrazit tři orientované text příklady `CardView`:
 
-[![Příklad snímky obrazovky aplikace RecyclerView pomocí položky na základě zobrazení karty aplikace](lollipop-images/recyclerview-cardview-sml.png)](lollipop-images/recyclerview-cardview.png)
+[![Příklad snímky obrazovky aplikace RecyclerView pomocí položky na základě zobrazení karty aplikace](lollipop-images/recyclerview-cardview-sml.png)](lollipop-images/recyclerview-cardview.png#lightbox)
 
 Každý z karty ve výše uvedeném příkladu obsahuje `TextView`; barvu pozadí jsou nastavena pomocí `cardBackgroundColor` atribut.
 
 Další informace o `CardView`, najdete v části [zobrazení karty aplikace](~/android/user-interface/controls/card-view.md).
 
-<a name="enhanced" />
 
 ## <a name="enhanced-notifications"></a>Rozšířené oznámení
 
@@ -389,13 +366,13 @@ Při zobrazení velkých ikon v oznámení (jak je uvedeno v předchozím přík
 V systému Android 5.0 můžete také zobrazí oznámení na zamykací obrazovky zařízení.
 Zde je například příklad snímek obrazovky zamykací obrazovky při jednom oznámení:
 
-[![Snímek obrazovky oznámení na zamykací obrazovce](lollipop-images/lockscreen-notification-sml.png)](lollipop-images/lockscreen-notification.png)
+[![Snímek obrazovky oznámení na zamykací obrazovce](lollipop-images/lockscreen-notification-sml.png)](lollipop-images/lockscreen-notification.png#lightbox)
 
 Uživatelé mohou poklepání oznámení na zamykací obrazovky k odemknutí zařízení a přejít na aplikaci, která pochází oznámení, nebo prstem k zavření oznámení. Oznámení obsahovat nový *viditelnost* nastavení, která určuje, kolik obsahu lze zobrazit na zamykací obrazovky. Uživatelé mohou zvolit, jestli se má povolit citlivého obsahu, která se má zobrazit v oznámeních zamykací obrazovky.
 
 Android 5.0 zavádí nový formát prezentace oznámení s vysokou prioritou názvem *z pohotového*. Oznámení z pohotového posuňte se dolů z horní části obrazovky na několik sekund a pak retreat zpět na odstín oznámení v horní části obrazovky. Oznámení z pohotového umožňují systému uživatelského rozhraní pro umístění důležité informace u uživatele, a to bez přerušení probíhající aktivity. Následující příklad ukazuje jednoduchý z pohotového oznámení, že se zobrazí nad aplikace:
 
-[![Příklad heads-up oznámení](lollipop-images/heads-up-notification-sml.png)](lollipop-images/heads-up-notification.png)
+[![Příklad heads-up oznámení](lollipop-images/heads-up-notification-sml.png)](lollipop-images/heads-up-notification.png#lightbox)
 
 Oznámení z pohotového jsou obvykle používány pro následující události:
 
@@ -414,7 +391,6 @@ Kategorie oznámení jsou používány pro filtrování oznámení, která lze z
 
 Podrobné informace o vytváření a spouštění oznámení s nejnovější funkce systému Android 5.0 naleznete v tématu [místního oznámení](~/android/app-fundamentals/notifications/local-notifications.md).
 
-<a name="newapis" />
 
 ## <a name="new-apis"></a>Nová rozhraní API
 

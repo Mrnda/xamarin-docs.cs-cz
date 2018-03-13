@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/09/2016
-ms.openlocfilehash: 7e02c92f9c1aafeb97da4905c17898b02362c960
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ce2130985eb954abc4b4a1f4022eec97341eb902
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="icloud"></a>iCloud
 
@@ -48,7 +48,7 @@ Chcete-li správně nastavit aplikaci, aby přístup k serveru služby iCloud:
 
 -   **Vytvoření nového ID aplikace** – k vytvoření ID aplikace, postupujte podle kroků uvedených v [zřizování pro úložiště technologie část průvodce zřizování zařízení](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)a zkontrolujte **Icloudu** jako povolená služba:
 
- [ ![](introduction-to-icloud-images/icloud-sml.png "Zkontrolujte Icloudu jako povolené služby")](introduction-to-icloud-images/icloud.png)
+ [![](introduction-to-icloud-images/icloud-sml.png "Zkontrolujte Icloudu jako povolené služby")](introduction-to-icloud-images/icloud.png#lightbox)
 
 - **Vytvořit nový profil pro zřizování** – Pokud chcete vytvořit profil zřizování, postupujte podle kroků uvedených v [zřizování zařízení Průvodce](~/ios/get-started/installation/device-provisioning/index.md#Provisioning_Profile) .
 
@@ -83,7 +83,7 @@ Tento snímek obrazovky ukazuje ukázku používán. Při přijímání oznámen
 
 
 
- [ ![](introduction-to-icloud-images/icloud-kv-arrows.png "Tok zpráv mezi zařízeními")](introduction-to-icloud-images/icloud-kv-arrows.png)
+ [![](introduction-to-icloud-images/icloud-kv-arrows.png "Tok zpráv mezi zařízeními")](introduction-to-icloud-images/icloud-kv-arrows.png#lightbox)
 
 ### <a name="setting-and-retrieving-data"></a>Nastavení nebo načtení dat
 
@@ -151,13 +151,13 @@ Icloudu úložiště dokumentů je navržená ke správě dat, která je důlež
 
 Tento diagram znázorňuje, jak se všechny vešel společně. Každé zařízení má data uložená na místní úložiště (UbiquityContainer) a na Icloudu operačního systému, který má na starosti démon odesílat a přijímat data v cloudu. Přístup ke UbiquityContainer všech souborů je třeba provést prostřednictvím FilePresenter/FileCoordinator, aby se zabránilo souběžný přístup. `UIDocument` Třída implementuje těch, které pro vás; tento příklad ukazuje, jak používat UIDocument.
 
- [ ![](introduction-to-icloud-images/icloud-overview.png "V dokumentu úložiště – přehled")](introduction-to-icloud-images/icloud-overview.png)
+ [![](introduction-to-icloud-images/icloud-overview.png "V dokumentu úložiště – přehled")](introduction-to-icloud-images/icloud-overview.png#lightbox)
 
 Příklad iCloudUIDoc implementuje jednoduchou `UIDocument` podtřídami, který obsahuje jedno textové pole. Text je vykreslen v `UITextView` a úpravy rozšířeny pomocí Icloudu s jinými zařízeními s zprávu oznámení zobrazené červeně. Ukázkový kód není řešit pokročilejší funkce serveru služby iCloud jako řešení konfliktů.
 
 Tento snímek obrazovky ukazuje ukázkovou aplikaci - po změně textu a stisknutím klávesy **UpdateChangeCount** dokumentu se synchronizují prostřednictvím serveru služby iCloud s jinými zařízeními.
 
- [ ![](introduction-to-icloud-images/iclouduidoc.png "Tento snímek obrazovky ukazuje ukázkovou aplikaci po změně textu a stisknutím klávesy UpdateChangeCount")](introduction-to-icloud-images/iclouduidoc.png)
+ [![](introduction-to-icloud-images/iclouduidoc.png "Tento snímek obrazovky ukazuje ukázkovou aplikaci po změně textu a stisknutím klávesy UpdateChangeCount")](introduction-to-icloud-images/iclouduidoc.png#lightbox)
 
 Existují pět částí iCloudUIDoc ukázce:
 
@@ -403,15 +403,15 @@ doc.UpdateChangeCount (UIDocumentChangeKind.Done);
 
 Uživatelé mohou spravovat Icloudu dokumenty v **dokumenty** adresář všudypřítomnosti kontejner, mimo aplikaci prostřednictvím nastavení; mohou prohlížet seznam souborů a prstem odstranit. Kód aplikace by měl být schopna zpracovávat situaci, kde jsou dokumenty odstraněno uživatelem. Neukládejte interní aplikační data v **dokumenty** adresáře.
 
- [ ![](introduction-to-icloud-images/icloudstorage.png "Správa dokumentů serveru služby iCloud pracovního postupu")](introduction-to-icloud-images/icloudstorage.png)
+ [![](introduction-to-icloud-images/icloudstorage.png "Správa dokumentů serveru služby iCloud pracovního postupu")](introduction-to-icloud-images/icloudstorage.png#lightbox)
 
 
 
 Uživatelé obdrží upozornění na jiný, při pokusu o odebrání aplikace povoleno Icloudu z jejich zařízení, a informujte je o stavu serveru služby iCloud dokumenty související k dané aplikaci.
 
- [ ![](introduction-to-icloud-images/icloud-delete1.png "Ukázka dialogové okno, když se uživatel pokusí odebrat aplikaci povoleno Icloudu z jejich zařízení")](introduction-to-icloud-images/icloud-delete1.png)
+ [![](introduction-to-icloud-images/icloud-delete1.png "Ukázka dialogové okno, když se uživatel pokusí odebrat aplikaci povoleno Icloudu z jejich zařízení")](introduction-to-icloud-images/icloud-delete1.png#lightbox)
 
- [ ![](introduction-to-icloud-images/icloud-delete2.png "Ukázka dialogové okno, když se uživatel pokusí odebrat aplikaci povoleno Icloudu z jejich zařízení")](introduction-to-icloud-images/icloud-delete2.png)
+ [![](introduction-to-icloud-images/icloud-delete2.png "Ukázka dialogové okno, když se uživatel pokusí odebrat aplikaci povoleno Icloudu z jejich zařízení")](introduction-to-icloud-images/icloud-delete2.png#lightbox)
 
 ## <a name="icloud-backup"></a>Zálohování serveru služby iCloud
 

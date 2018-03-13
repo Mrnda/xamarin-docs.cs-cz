@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: d4446d30491ee796ca93eadf2e107fc9d74748df
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: e7f2ad9e94d68007b1b7d0cca212cd51515a0108
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="custom-video-positioning"></a>Vlastní umístění video
 
@@ -472,7 +472,7 @@ Proto `Position` vlastnost `VideoPlayer` mohou být vázány na `Position` vlast
 
 Skryje první třemi tečkami (···) `ActivityIndicator`; je stejný jako předchozí **vlastní přenos** stránky. Všimněte si, dva `Label` prvky zobrazení `Position` a `TimeToEnd` vlastnosti. Se třemi tečkami mezi těmito dvěma `Label` skryje dva elementy `Button` prvky zobrazené v **vlastní přenos** stránky pro Play, pozastavení a zastavit. Logika kódu je také stejné jako **vlastní přenos** stránky.
 
-[![Vlastní umístění](custom-positioning-images/custompositioning-small.png "vlastní umístění")](custom-positioning-images/custompositioning-large.png "vlastní umístění")
+[![Vlastní umístění](custom-positioning-images/custompositioning-small.png "vlastní umístění")](custom-positioning-images/custompositioning-large.png#lightbox "vlastní umístění")
 
 Tím končí diskuzi o `VideoPlayer`.
 

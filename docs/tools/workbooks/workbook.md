@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/30/2017
-ms.openlocfilehash: bd53074fcde25736d37544efc719ecef1110c364
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c111d2f873270eab78eee92edc3d884d1e92fdd8
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="interactive-workbooks"></a>Interaktivní sešity
 
@@ -30,7 +30,7 @@ Sešity můžete uložit a později znovu otevřít v aplikaci. Pak je můžete 
 
 Okně pro úpravu kódu poskytuje doplňování kódu, barevné zvýrazňování syntaxe, vložené diagnostiky za provozu a podpora příkaz víceřádkový.
 
-[ ![](workbook-images/inspector-0.6.0-repl-small.png "Okně pro úpravu kódu poskytuje doplňování kódu, barevné zvýrazňování syntaxe, vložené diagnostiky za provozu a podpora Víceřádkový – příkaz")](workbook-images/inspector-0.6.0-repl.png)
+[ ![](workbook-images/inspector-0.6.0-repl-small.png "Okně pro úpravu kódu poskytuje doplňování kódu, barevné zvýrazňování syntaxe, vložené diagnostiky za provozu a podpora Víceřádkový – příkaz")](workbook-images/inspector-0.6.0-repl.png#lightbox)
 
 Sešity Xamarin jsou uloženy ve `.workbook` souboru, který je soubor CommonMark se některá metadata v horní části (najdete v části [typy souborů sešitů](#Workbooks_Files_Types) další podrobnosti o tom, jak lze uložit sešity).
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: cbabaf36ba8bfaa74ec17b0af0cd97e29f72d270
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 996723db83a1f972cce26090d1253f97b6c818d3
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="contacts-and-contactsui"></a>Kontakty a ContactsUI
 
@@ -27,7 +27,7 @@ Dva nové architektury obsahují následující funkce:
 
 - [**ContactsUI** ](#contactsui) -prvky poskytuje uživatelského rozhraní Xamarin.iOS chcete zobrazit, upravit, vyberte a vytvořte kontakty na zařízeních s iOS.
 
-[ ![](contacts-images/add01.png "Příklad listu obraťte se na zařízení s iOS")](contacts-images/add01.png)
+[![](contacts-images/add01.png "Příklad listu obraťte se na zařízení s iOS")](contacts-images/add01.png#lightbox)
 
 > [!IMPORTANT]
 > **Poznámka:** existující `AddressBook` a `AddressBookUI` rozhraní používá iOS 8 (a před) jsou zastaralé v iOS 9 a by měla být nahrazená s novým `Contacts` a `ContactsUI` architektury co nejdříve pro jakékoli existující Xamarin.iOS aplikace. Nové aplikace by měla být napsaných pro nové architektury.
@@ -43,11 +43,13 @@ V následujících částech provedeme podívejte se na tyto nové architektury 
 
 Rozhraní Framework kontakty poskytuje Xamarin.iOS přístup ke kontaktní údaje uživatele. Protože většinu aplikací vyžadují jenom oprávnění jen pro čtení, toto rozhraní je optimalizován pro přístup z více vláken bezpečné, jen pro čtení přístup.
 
+<a name="Contact_Objects" />
+
 ### <a name="contact-objects"></a>Objekty kontaktů
 
 `CNContact` Třída poskytuje přístup z více vláken bezpečné, jen pro čtení přístup k vlastnostem a kontaktovat, jako je jméno, adresu nebo telefonní čísla. `CNContact` funguje jako `NSDictionary` a obsahuje více, jen pro čtení kolekcí vlastností (například adres nebo telefonních čísel):
 
-[ ![](contacts-images/contactobjects.png "Obraťte se na přehled objektů")](contacts-images/contactobjects.png)
+[![](contacts-images/contactobjects.png "Obraťte se na přehled objektů")](contacts-images/contactobjects.png#lightbox)
 
 Jakákoli vlastnost, která může mít více hodnot (například e-mailovou adresu nebo telefonní čísla), bude být reprezentován jako pole `NSLabeledValue` objekty. `NSLabeledValue` je vlákno bezpečné řazené kolekce členů skládající se z sadu popisky jen pro čtení a hodnoty, kde popisek definuje hodnotu pro uživatele (například domácí nebo pracovní e-mailu). Rozhraní framework kontakty poskytuje řadu předdefinovaných popisky (prostřednictvím `CNLabelKey` a `CNLabelPhoneNumberKey` statické třídy), můžete použít v aplikaci nebo máte možnost definovat vlastní popisky pro vaše potřeby.
 
@@ -111,7 +113,7 @@ else
 
 Pokud tento kód spustí na zařízení se systémem iOS 9, nový kontakt se zařadí do kolekce uživatele. Příklad:
 
-[ ![](contacts-images/add01.png "Nový kontakt přidat do kolekce uživatele")](contacts-images/add01.png)
+[![](contacts-images/add01.png "Nový kontakt přidat do kolekce uživatele")](contacts-images/add01.png#lightbox)
 
 ### <a name="contact-formatting-and-localization"></a>Kontaktujte formátování a lokalizace
 
@@ -194,7 +196,7 @@ if (!contact.IsKeyAvailable(CNContactOption.PostalAddresses)) {
 
 Uživatel může mít různé zdroje kontaktní informace pro jedna osoba v jejich kontaktní databázi (jako je iCloud, Facebook nebo Google e-mailu). V iOS a OS X aplikace, tyto kontaktní informace bude automaticky propojit dohromady a zobrazí uživateli, jako jedinou _Unified kontaktovat_:
 
-[ ![](contacts-images/unified01.png "Jednotná Přehled kontaktů")](contacts-images/unified01.png)
+[![](contacts-images/unified01.png "Jednotná Přehled kontaktů")](contacts-images/unified01.png#lightbox)
 
 Kontaktujte Unified je dočasný, v paměti zobrazení odkaz kontaktní informace, které budou mít svůj vlastní jedinečný identifikátor (která se má použít na znovu načíst kontakt v případě potřeby). Ve výchozím nastavení vrátí framework kontakty a Unified kontaktovat, pokud je to možné.
 
@@ -259,11 +261,11 @@ Vždy, když se mění a kontaktovat, obraťte se na úložiště odešle `CNCon
 
 Kontaktů uživatele může existovat buď místně na zařízení uživatele, nebo jako Kontakty synchronizované do zařízení z jednoho nebo více účtů serveru (jako je Facebook nebo Google). Každý fond kontaktů má svou vlastní _kontejneru_ a a obraťte se na danou může existovat pouze v jednom kontejneru.
 
-[ ![](contacts-images/containers01.png "Kontejnery a skupiny – přehled")](contacts-images/containers01.png)
+[![](contacts-images/containers01.png "Kontejnery a skupiny – přehled")](contacts-images/containers01.png#lightbox)
 
 Některé kontejnery umožňují kontakty, které mají být uspořádány do jedné nebo více _skupiny_ nebo _podskupin_. Toto chování je závislá na úložiště zálohování pro daný kontejner. Například Icloudu má jen jeden kontejner, ale může mít mnoho skupin (ale žádné dílčí skupiny). Microsoft Exchange na druhé straně nepodporuje skupiny, ale může mít více kontejnerů (jeden pro každou složku Exchange).
 
-[ ![](contacts-images/containers02.png "Nepřekrývá kontejnery a skupiny")](contacts-images/containers02.png)
+[![](contacts-images/containers02.png "Nepřekrývá kontejnery a skupiny")](contacts-images/containers02.png#lightbox)
 
 <a name="contactsui" />
 

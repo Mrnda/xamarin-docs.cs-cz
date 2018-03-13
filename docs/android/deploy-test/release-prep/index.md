@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 7f36a29b00e0393ac0a2d65e7ebe7d290bbdb89a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e440d5ab9f822277a8c0948a9795b9a030fa268c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="preparing-an-application-for-release"></a>Příprava aplikace pro vydání
 
-<a name="Compile_the_Application_for_Release" />
 
 Po aplikaci je programového a otestovat, je nezbytné pro přípravu balíček pro distribuci. První úlohou Příprava tento balíček je vytvořit aplikaci pro verzi, která především zahrnuje nastavení některých atributů aplikací.
 
@@ -53,13 +52,13 @@ Důrazně doporučujeme, aby každá aplikace Xamarin.Android určení ikony apl
 
 V sadě Visual Studio 2015 a novější, zadejte na ikonu aplikace prostřednictvím **Android Manifest** části projektu **vlastnosti**, jak je znázorněno na následujícím snímku obrazovky:
 
-[ ![Nastavit ikona aplikace](images/vs/01-application-icon-sml.png)](images/vs/01-application-icon.png)
+[![Nastavit ikona aplikace](images/vs/01-application-icon-sml.png)](images/vs/01-application-icon.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 V sadě Visual Studio pro Mac, je také možné zadat ikonu aplikace prostřednictvím **aplikace pro Android** části **možnosti projektu**, jak je znázorněno na následujícím snímku obrazovky:
 
-[ ![Nastavit ikona aplikace](images/xs/01-application-icon-sml.png)](images/xs/01-application-icon.png)
+[![Nastavit ikona aplikace](images/xs/01-application-icon-sml.png)](images/xs/01-application-icon.png#lightbox)
 
 -----
 
@@ -77,13 +76,13 @@ Správa verzí je důležité pro aplikace pro Android údržby a distribuci. Be
 
 V sadě Visual Studio, tyto hodnoty lze nastavit v **Android Manifest** části projektu **vlastnosti**, jak je znázorněno na následujícím snímku obrazovky:
 
-[ ![Nastavit číslo verze](images/vs/02-versioning-sml.png)](images/vs/02-versioning.png)
+[![Nastavit číslo verze](images/vs/02-versioning-sml.png)](images/vs/02-versioning.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 Tyto hodnoty lze nastavit prostřednictvím **sestavení > aplikace pro Android** části **možnosti projektu** jak je znázorněno na následujícím snímku obrazovky:
 
-[ ![Nastavit číslo verze](images/xs/02-versioning-sml.png)](images/xs/02-versioning.png)
+[![Nastavit číslo verze](images/xs/02-versioning-sml.png)](images/xs/02-versioning.png#lightbox)
 
 -----
 
@@ -93,7 +92,6 @@ Tyto hodnoty lze nastavit prostřednictvím **sestavení > aplikace pro Android*
 
 Můžete provést Xamarin.Android APKs menší pomocí kombinace linkeru Xamarin.Android, která odebere nepotřebné *spravované* kód a *ProGuard* nástroj ze sady Android SDK, který odebere nepoužívané *bajtového kódu Java*. Procesu sestavení nejprve používá linkeru Xamarin.Android za účelem optimalizace aplikace na úrovni spravovaného kódu (C#) a pak ho později používá ProGuard (Pokud je povoleno) k optimalizaci APK na úrovni bajtového kódu Java.
 
-<a name="Configure_the_Linker" />
 
 ### <a name="configure-the-linker"></a>Konfigurace Linkeru
 
@@ -107,7 +105,7 @@ Verze režimu vypne sdílený modul runtime a spustí propojení tak, aby aplika
 
 Nastavení možností linkeru prostřednictvím **Android možnosti** části projektu **vlastnosti**:
 
-[ ![Možnosti linkeru](images/vs/03-linking-sml.png)](images/vs/03-linking.png)
+[![Možnosti linkeru](images/vs/03-linking-sml.png)](images/vs/03-linking.png#lightbox)
 
 **Propojování** rozevírací nabídce poskytuje následující možnosti pro řízení linkeru:
 
@@ -122,7 +120,7 @@ Nastavení možností linkeru prostřednictvím **Android možnosti** části pr
 
 Nastavení možností linkeru prostřednictvím **Linkeru** ve **Android sestavení** části **možnosti projektu**, jak je znázorněno na následujícím snímku obrazovky:
 
-[ ![Možnosti linkeru](images/xs/03-linking-sml.png)](images/xs/03-linking.png)
+[![Možnosti linkeru](images/xs/03-linking-sml.png)](images/xs/03-linking.png#lightbox)
 
 Možnosti pro řízení linkeru jsou následující:
 
@@ -136,7 +134,6 @@ Možnosti pro řízení linkeru jsou následující:
 
 Propojování může vytvářet nezamýšleným vedlejší účinky, proto je důležité, aby aplikace znovu testovány v režimu vydání na fyzické zařízení.
 
-<a name="proguard" />
 
 ### <a name="proguard"></a>ProGuard
 
@@ -148,11 +145,11 @@ Když **povolit ProGuard** je zaškrtnuto, Xamarin.Android spustí nástroj ProG
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Akce proguard sestavení](images/vs/05-proguard-build-action-sml.png)](images/vs/05-proguard-build-action.png)
+[![Akce proguard sestavení](images/vs/05-proguard-build-action-sml.png)](images/vs/05-proguard-build-action.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Akce proguard sestavení](images/xs/05-proguard-build-action-sml.png)](images/xs/05-proguard-build-action.png)
+[![Akce proguard sestavení](images/xs/05-proguard-build-action-sml.png)](images/xs/05-proguard-build-action.png#lightbox)
 
 -----
 
@@ -228,7 +225,6 @@ Všimněte si, že **sady do nativního kódu** nemá možnost *není* znamená,
 
 **AOT kompilace** možnost vyžaduje licenci Enterprise nebo vyšší. **Kompilace AOT** je k dispozici pouze, když projekt je nakonfigurovaný pro režimu vydání, a ve výchozím nastavení vypnutá. Další informace o kompilace AOT najdete v tématu [AOT](http://www.mono-project.com/docs/advanced/aot/).
 
-<a name="llvm" />
 
 #### <a name="llvm-optimizing-compiler"></a>Optimalizace kompilátoru LLVM
 
@@ -246,31 +242,28 @@ _LLVM optimalizace kompilátoru_ vytvořit menší a rychlejší zkompilovaný k
 
 Balení vlastnosti lze nastavit v **Android možnosti** části projektu **vlastnosti**, jak je znázorněno na následujícím snímku obrazovky:
 
-[ ![Balení vlastnosti](images/vs/04-packaging-sml.png)](images/vs/04-packaging.png)
+[![Balení vlastnosti](images/vs/04-packaging-sml.png)](images/vs/04-packaging.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 Balení vlastnosti lze nastavit v **možnosti projektu**, jak je znázorněno na následujícím snímku obrazovky:
 
-[ ![Balení vlastnosti](images/xs/04-packaging-sml.png)](images/xs/04-packaging.png)
+[![Balení vlastnosti](images/xs/04-packaging-sml.png)](images/xs/04-packaging.png#lightbox)
 
 -----
 
 Mnoho z těchto vlastností, jako například **použití sdílených Runtime**, a **použití rychlého nasazení** jsou určené pro režim ladění. Pokud aplikace je nakonfigurovaná pro verzi režim, jsou ale další nastavení, které určují, jak je aplikace [optimalizované pro velikost a provádění rychlost](#shrink_apk), [jak je chráněná před neoprávněnou manipulací](#protect_app)a jak může být zabalené pro podporu různé architektury a omezení velikosti.
 
-<a name="Specify_Supported_Architectures" />
 
 ### <a name="specify-supported-architectures"></a>Zadat podporované architektury
 
 Příprava aplikace Xamarin.Android pro verzi, je nutné zadat architektury procesoru, které jsou podporovány. Jeden APK může obsahovat počítače kódu, které podporují víc různé architektury. V tématu [architektury procesoru](~/android/app-fundamentals/cpu-architectures.md) podrobnosti o podpoře více architekturami procesoru.
 
-<a name="multiabi" />
 
 ### <a name="generate-one-package-apk-per-selected-abi"></a>Generovat jeden balíček (. APK) podle vybrané ABI
 
 Pokud je tato možnost povolena, jeden APK se vytvoří pro každou z podporovaných ABI (vybrané na **Upřesnit** kartě, jak je popsáno v [architektury procesoru](~/android/app-fundamentals/cpu-architectures.md)) místo jedné, velké APK pro všechny podporované ABI společnosti. Tato možnost je dostupná, pouze pokud projekt je nakonfigurován pro režim vydání a ve výchozím nastavení vypnutá.
 
-<a name="multidex" />
 
 ### <a name="multi-dex"></a>Multi-Dex
 
@@ -305,30 +298,30 @@ Po dokončení všechny výše uvedené kroky kompilace aplikace (vyberte **sest
 
 Chcete-li zahájit proces publikování, klikněte pravým tlačítkem na projekt v **Průzkumníku řešení** a vyberte **archivu...**  položky kontextové nabídky:
 
-[ ![Archiv aplikace](images/vs/07-archive-for-publishing-sml.png)](images/vs/07-archive-for-publishing.png)
+[![Archiv aplikace](images/vs/07-archive-for-publishing-sml.png)](images/vs/07-archive-for-publishing.png#lightbox)
 
 **Archiv...**  spustí **Manager archivu** a zahájí se proces archivace sady prostředků aplikace, jak je vidět na tomto snímku obrazovky:
 
-[ ![Správce archivu](images/vs/08-archive-manager-sml.png)](images/vs/08-archive-manager.png)
+[![Správce archivu](images/vs/08-archive-manager-sml.png)](images/vs/08-archive-manager.png#lightbox)
 
 Jiný způsob, jak vytvořit archivu je pravým tlačítkem na řešení v **Průzkumníku řešení** a vyberte **archivu všechny...** , kde jsou vytvářeny řešení a archivy všechny projekty Xamarin, které mohou generovat archivu:
 
-[ ![Všechny archivu](images/vs/09-archive-all-sml.png)](images/vs/09-archive-all.png)
+[![Všechny archivu](images/vs/09-archive-all-sml.png)](images/vs/09-archive-all.png#lightbox)
 
 
 Obě **archivu** a **archivu všechny** automaticky spustit **Manager archivu**. Ke spuštění **Manager archivu** přímo, klikněte na tlačítko **nástroje > archivu Manager...**  položku nabídky:
 
-[ ![Spusťte správce archivu](images/vs/10-launch-archive-manager-sml.png)](images/vs/10-launch-archive-manager.png)
+[![Spusťte správce archivu](images/vs/10-launch-archive-manager-sml.png)](images/vs/10-launch-archive-manager.png#lightbox)
 
 Toto řešení archivy kdykoli kliknutím pravým tlačítkem **řešení** uzlu a výběrem **zobrazení archivy**:
 
-[ ![Zobrazit archivy](images/vs/11-view-archives-sml.png)](images/vs/11-view-archives.png)
+[![Zobrazit archivy](images/vs/11-view-archives-sml.png)](images/vs/11-view-archives.png#lightbox)
 
 ### <a name="the-archive-manager"></a>Správce archivu
 
 **Manager archivu** se skládá z **řešení seznamu** podokně **archivy seznamu**a **Panel podrobnosti o**:
 
-[ ![Podokna Manager archivu](images/vs/12-archive-manager-detail-sml.png)](images/vs/12-archive-manager-detail.png)
+[![Podokna Manager archivu](images/vs/12-archive-manager-detail-sml.png)](images/vs/12-archive-manager-detail.png#lightbox)
 
 **Řešení seznamu** zobrazí všechna řešení s projektem alespoň jeden archivovaný. **Řešení seznamu** obsahuje následující oddíly:
 
@@ -348,11 +341,11 @@ Toto řešení archivy kdykoli kliknutím pravým tlačítkem **řešení** uzlu
 
 Když archivované verze aplikace je připravena k publikování, vyberte archivu v **Manager archivu** a klikněte na tlačítko **distribuci...**  tlačítko:
 
-[ ![Tlačítko distribuovat](images/vs/13-distribute-sml.png)](images/vs/13-distribute.png)
+[![Tlačítko distribuovat](images/vs/13-distribute-sml.png)](images/vs/13-distribute.png#lightbox)
 
 **Distribuční kanál** dialogové okno zobrazuje informace o aplikaci, údaje o průběhu pracovního postupu distribuční a možnost výběru distribučních kanálů. Při prvním spuštění uvádíme dvě možnosti:
 
-[ ![Vyberte distribuční kanál](images/vs/14-distribution-channel-sml.png)](images/vs/14-distribution-channel.png)
+[![Vyberte distribuční kanál](images/vs/14-distribution-channel-sml.png)](images/vs/14-distribution-channel.png#lightbox)
 
 Je možné zvolit jednu z následujících distribučních kanálů:
 
@@ -364,15 +357,15 @@ Je možné zvolit jednu z následujících distribučních kanálů:
 
 Chcete-li zahájit proces publikování, vyberte **sestavení > archivu pro publikování**:
 
-[ ![Archiv pro publikování](images/xs/07-archive-for-publishing-sml.png)](images/xs/07-archive-for-publishing.png)
+[![Archiv pro publikování](images/xs/07-archive-for-publishing-sml.png)](images/xs/07-archive-for-publishing.png#lightbox)
 
 **Archiv pro publikování** vytvoří projekt a obsahuje ureitou ho do souboru archivu. **Archivu všechny** volbu nabídky archivy všechny archivovat projekty v řešení. Obě možnosti automaticky otevře **Manager archivu** při dokončení operace sestavení a sdružování:
 
-[ ![Zobrazení archivu](images/xs/08-archives-view-sml.png)](images/xs/08-archives-view.png)
+[![Zobrazení archivu](images/xs/08-archives-view-sml.png)](images/xs/08-archives-view.png#lightbox)
 
 V tomto příkladu **Manager archivu** uvádí jen jeden archivovat aplikace, **Moje aplikace**. Všimněte si, že pole Poznámka umožňuje krátký komentář uložit s archivu. K publikování archivované verze aplikace pro Xamarin.Android, vyberte aplikaci, v **Manager archivu** a klikněte na tlačítko **přihlášení a distribuci...**  jako v příkladu nahoře. Výsledná **přihlášení a distribuci** dialogové okno zobrazí dvě možnosti:
 
-[ ![Podepsání a distribuci](images/xs/09-sign-and-distribute-sml.png)](images/xs/09-sign-and-distribute.png)
+[![Podepsání a distribuci](images/xs/09-sign-and-distribute-sml.png)](images/xs/09-sign-and-distribute.png#lightbox)
 
 
 Zde je možné vybrat distribuční kanál:

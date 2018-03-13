@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: a113a386f1312253fda8913cea3cb608a65e1061
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f7c743bab2a6acb3dcd57ebca207957f983e0c0f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="unit-testing"></a>Testování částí
 
@@ -119,15 +119,15 @@ Ke spuštění tohoto projektu v řešení klikněte pravým tlačítkem na ho a
 
 Nástroj test runner vám umožní vidět testy, které jsou zaregistrované a vybrat jednotlivě, které testy mohou být provedeny.
 
-[ ![](touch.unit-images/02.png "Seznam registrovaných testů")](touch.unit-images/02.png) 
+[![](touch.unit-images/02.png "Seznam registrovaných testů")](touch.unit-images/02.png#lightbox) 
 
-[ ![](touch.unit-images/03.png "Jednotlivé textu")](touch.unit-images/03.png) 
+[![](touch.unit-images/03.png "Jednotlivé textu")](touch.unit-images/03.png#lightbox) 
 
-[ ![](touch.unit-images/04.png "Spuštění výsledky")](touch.unit-images/04.png)
+[![](touch.unit-images/04.png "Spuštění výsledky")](touch.unit-images/04.png#lightbox)
 
 Komunikací jednotlivé testy můžete spustit výběrem upínací z vnořené zobrazení, nebo můžete spustit všechny testy vším"spustit". Pokud spustíte test výchozí, který by měl obsahovat jeden předávání testů, jednou chybou a jeden ignorováno test. Toto je, jak vypadá sestavy, a můžete přímo do testů selhání k podrobnostem a získat další informace o selhání:
 
-[ ![](touch.unit-images/05.png "Ukázková sestava") ](touch.unit-images/05.png) [ ![ ] (touch.unit-images/06.png "je vzorová sestava") ](touch.unit-images/06.png) [ ![ ] (touch.unit-images/07.png "vzorku Sestava")](touch.unit-images/07.png)
+[![](touch.unit-images/05.png "Ukázková sestava") ](touch.unit-images/05.png#lightbox) [ ![ ] (touch.unit-images/05.png "je vzorová sestava") ](touch.unit-images/05.png#lightbox) [ ![ ] (touch.unit-images/05.png "vzorku Sestava")](touch.unit-images/05.png#lightbox)
 
 Můžete také prohlédnout v okně výstupu aplikace ve vaší IDE, pokud chcete zobrazit, které testy se spouštějí a jejich aktuální stav.
 

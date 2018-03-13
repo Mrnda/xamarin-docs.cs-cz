@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 90a2eb219ae1189e7a48e60cde9761e3e9e93e0b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ce51511c58d7d0f5a14e487b57897bfa0e0b20b3
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="graphics-and-animation"></a>Grafika a animace
 
 _Android poskytuje velmi bohatý a různých rozhraní pro podporu 2D grafiky a animace. Toto téma uvádí tyto architektury a popisuje, jak vytvořit vlastní grafika a animací pro použití v aplikaci Xamarin.Android._
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Přehled
 
@@ -61,7 +60,6 @@ Aplikace jsou více použitelné v těchto situacích, pokud byly navrženy s us
 Odkazovat na [Google usnadnění průvodce](http://developer.android.com/guide/topics/ui/accessibility/) Další informace o tom, jak využívat usnadnění Android na rozhraní API.
 
 
-<a name="2D_Graphics" />
 
 ## <a name="2d-graphics"></a>2D grafiky
 
@@ -71,7 +69,6 @@ Další techniku, pomocí [plátno](https://developer.xamarin.com/api/type/Andro
 
 Umožňuje prozkoumat Drawable prostředky. Jsou jednodušší a zahrnují nejběžnější případy vlastní vykreslení.
 
-<a name="Drawable Resources" />
 
 ### <a name="drawable-resources"></a>Drawable prostředky
 
@@ -153,7 +150,6 @@ Pokud chcete zjistit, jaké to bude vypadat, spusťte *AnimationsDemo* projektu 
 
 Další podrobnosti o syntaxi Drawable prostředků a elementy XML, najdete [Google dokumentaci](http://developer.android.com/guide/topics/resources/drawable-resource.html#Shape).
 
-<a name="Using the Canvas Drawing API" />
 
 ### <a name="using-the-canvas-drawing-api"></a>Pomocí rozhraní API pro kreslení plátno
 
@@ -183,7 +179,6 @@ Třída plátno zpřístupní metody jako prostřednictvím kódu programu kresl
 -   [Canvas.DrawText](https://developer.xamarin.com/api/member/Android.Graphics.Canvas.DrawText/p/System.String/System.Single/System.Single/Android.Graphics.Paint/) &ndash; nevykresluje text na plátně se zadanou barvou. Text je vykreslovat umístění `x,y` .
 
 
-<a name="Drawing with the Canvas API" />
 
 #### <a name="drawing-with-the-canvas-api"></a>Kreslení pomocí rozhraní API na plátno
 
@@ -218,7 +213,6 @@ Tento kód výše nejprve vytvoří red Malování a zelená Malování objektu.
 
 ![Obrazovky red Malování a objekty zelená Malování](graphics-and-animation-images/image3.png)
 
-<a name="Animation" />
 
 ## <a name="animation"></a>Animace
 
@@ -232,7 +226,6 @@ Uživatelé jako věcí, které přepínají ve svých aplikacích. Animace jsou
 
 Obecně platí vlastnost animace je upřednostňovaný systému použít, protože je flexibilnější a nabízí další funkce.
 
-<a name="View Animations" />
 
 ### <a name="view-animations"></a>Zobrazení animací
 
@@ -319,7 +312,6 @@ myImage.StartAnimation(myAnimation);
 
 Teď, když máme základní znalosti o fungování animace zobrazení, umožňuje přesunout na vlastnost animace.
 
-<a name="Property Animations" />
 
 ### <a name="property-animations"></a>Vlastnost animace
 
@@ -397,7 +389,6 @@ animator.Start();
 
 Jak je vidět na předchozím fragmentu kódu `ObjectAnimator` může snížit a zjednodušit kód, který je potřeba animace objekt.
 
-<a name="Drawable Animations" />
 
 ### <a name="drawable-animations"></a>Drawable animace
 
@@ -442,7 +433,6 @@ protected override void OnCreate(Bundle bundle)
 
 V tuto chvíli jsme mít zahrnutých základů animace rozhraní API dostupná v aplikaci pro Android.
 
-<a name="Summary" />
 
 ## <a name="summary"></a>Souhrn
 

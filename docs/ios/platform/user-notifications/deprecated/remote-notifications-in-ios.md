@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: c4a88f875b4082f85b1c5565de2a24548e7b8874
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8e90bc3974247066a714cb44b6648a83cdb58cf5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="push-notifications-in-ios"></a>Nabízená oznámení v iOS
 
@@ -45,37 +45,37 @@ Každá z prostředí uvedených v předchozí části vyžadovat vlastní certi
 
 1.  Chcete-li vytvořit certifikáty přejít na iOS Provisioning Portal na webu společnosti Apple, jak je znázorněno na následujícím snímku obrazovky (upozornění ID aplikace položky nabídky na levé straně):
 
-    [ ![](remote-notifications-in-ios-images/image5new.png "IOS Provisioning Portal na webu jablka")](remote-notifications-in-ios-images/image5new.png)
+    [![](remote-notifications-in-ios-images/image5new.png "IOS Provisioning Portal na webu jablka")](remote-notifications-in-ios-images/image5new.png#lightbox)
 
 2.  Dále přejděte do části ID aplikace a vytvořte nové ID aplikace, jak je znázorněno na následujícím snímku obrazovky:
 
-    [ ![](remote-notifications-in-ios-images/image6new.png "Přejděte do části ID aplikace a vytvoření nového ID aplikace")](remote-notifications-in-ios-images/image6new.png)
+    [![](remote-notifications-in-ios-images/image6new.png "Přejděte do části ID aplikace a vytvoření nového ID aplikace")](remote-notifications-in-ios-images/image6new.png#lightbox)
 
 3.  Po kliknutí na  **+**  tlačítko, nebudete moci zadat popis a identifikátor svazku pro dané ID aplikace, jak ukazuje následující snímek obrazovky:
 
-    [ ![](remote-notifications-in-ios-images/image7new.png "Zadejte popis a identifikátor svazku pro ID aplikace")](remote-notifications-in-ios-images/image7new.png)
+    [![](remote-notifications-in-ios-images/image7new.png "Zadejte popis a identifikátor svazku pro ID aplikace")](remote-notifications-in-ios-images/image7new.png#lightbox)
 
 4. Je nutné vybrat **explicitní ID aplikace** a zda není končí identifikátor svazku `*` . Tím se vytvoří identifikátor, který je vhodný pro více aplikací a nabízených oznámení certifikáty musí být pro jednu aplikaci.
 
 1. V části aplikační služby, vyberte **nabízená oznámení**:
 
-    [ ![](remote-notifications-in-ios-images/image8new.png "Vyberte nabízená oznámení")](remote-notifications-in-ios-images/image8new.png)
+    [![](remote-notifications-in-ios-images/image8new.png "Vyberte nabízená oznámení")](remote-notifications-in-ios-images/image8new.png#lightbox)
 
 2. A stiskněte klávesu **odeslání** k potvrzení registrace nové ID aplikace:
 
-    [ ![](remote-notifications-in-ios-images/image9new.png "Potvrzení registrace nové ID aplikace")](remote-notifications-in-ios-images/image9new.png)
+    [![](remote-notifications-in-ios-images/image9new.png "Potvrzení registrace nové ID aplikace")](remote-notifications-in-ios-images/image9new.png#lightbox)
 
 3.  Dále je třeba vytvořit certifikát pro ID aplikace. V levém navigačním panelu, přejděte do **certifikáty > všechny** a vyberte `+` tlačítko, jak je znázorněno na následujícím snímku obrazovky:
 
-    [ ![](remote-notifications-in-ios-images/image10new.png "Vytvořit certifikát pro ID aplikace")](remote-notifications-in-ios-images/image8.png)
+    [![](remote-notifications-in-ios-images/image10new.png "Vytvořit certifikát pro ID aplikace")](remote-notifications-in-ios-images/image8.png#lightbox)
 
 4.  Vyberte, zda chcete použít certifikát pro vývoj nebo produkčního prostředí:
 
-    [ ![](remote-notifications-in-ios-images/image11new.png "Vyberte certifikát, vývoj nebo produkčního prostředí")](remote-notifications-in-ios-images/image11new.png)
+    [![](remote-notifications-in-ios-images/image11new.png "Vyberte certifikát, vývoj nebo produkčního prostředí")](remote-notifications-in-ios-images/image11new.png#lightbox)
 
 5. A pak vyberte nové ID aplikace, kterou jsme právě vytvořili:
 
-    [ ![](remote-notifications-in-ios-images/image12new.png "Vyberte nové ID aplikace právě vytvořili")](remote-notifications-in-ios-images/image12new.png)
+    [![](remote-notifications-in-ios-images/image12new.png "Vyberte nové ID aplikace právě vytvořili")](remote-notifications-in-ios-images/image12new.png#lightbox)
 
 6.  Tato akce zobrazí pokyny, které vás provede procesem vytvoření *žádost o podepsání certifikátu* pomocí **přístup do řetězce klíčů** aplikace na vašem Mac.
 
@@ -85,11 +85,11 @@ Každá z prostředí uvedených v předchozí části vyžadovat vlastní certi
 
 9.  Po vytvoření profilu pro zřizování, otevře **Xcode organizátora** a jej aktualizovat. Když vytvoříte profil zřizování nezobrazí, že může být potřeba stáhnout profil z iOS Provisioning Portal a ji manuálně naimportovat. Následující snímek obrazovky ukazuje příklad Organizátoru s profilem zřídit přidán:
 
-    [ ![](remote-notifications-in-ios-images/image13new.png "Tento snímek obrazovky ukazuje příklad Organizátoru s profilem zřídit přidán")](remote-notifications-in-ios-images/image13new.png)
+    [![](remote-notifications-in-ios-images/image13new.png "Tento snímek obrazovky ukazuje příklad Organizátoru s profilem zřídit přidán")](remote-notifications-in-ios-images/image13new.png#lightbox)
 
 10.  V tomto okamžiku je potřeba nakonfigurovat Xamarin.iOS projekt, který používá to nově vytvořený profil pro zřizování. To se provádí v **možnosti projektu** dialogové okno, v části **iOS podepisování sady** karta jako zobrazující na následujícím snímku obrazovky:
 
-    [ ![](remote-notifications-in-ios-images/image11.png "Konfigurace projektu Xamarin.iOS využít nově vytvořený profil pro zřizování")](remote-notifications-in-ios-images/image11.png)
+    [![](remote-notifications-in-ios-images/image11.png "Konfigurace projektu Xamarin.iOS využít nově vytvořený profil pro zřizování")](remote-notifications-in-ios-images/image11.png#lightbox)
 
 
 

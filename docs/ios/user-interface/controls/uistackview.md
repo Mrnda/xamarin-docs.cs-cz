@@ -5,14 +5,15 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 20246E87-2A49-438A-9BD7-756A1B50A617
 ms.technology: xamarin-ios
+ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 4555906512ecc36e3387f1b2483753e7f50a51ae
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 82bcd29a201be01bc8123e313e5a76b82668cb85
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="stack-view"></a>Zobrazení zásobníku
 
@@ -25,11 +26,15 @@ Ovládací prvek zobrazení zásobníku (`UIStackView`) využívá sílu automat
 
 Rozložení všechny dílčích zobrazení připojené k zobrazení protokolů jsou spravovány podle vývojáře definované vlastnosti například osy, distribuci, zarovnání a mezery:
 
-[ ![](uistackview-images/stacked01.png "Diagram rozložení zobrazení zásobníku")](uistackview-images/stacked01.png)
+[![](uistackview-images/stacked01.png "Diagram rozložení zobrazení zásobníku")](uistackview-images/stacked01.png#lightbox)
 
 Při použití `UIStackView` v aplikaci Xamarin.iOS, můžete definovat vývojář buď dílčích zobrazení buď uvnitř Storyboard v iOS Designer nebo přidávání a odebírání dílčích zobrazení v kódu jazyka C#.
 
 Tento dokument se skládá ze dvou částí: rychlý start pomůže implementace zobrazit vaše první zásobník a potom některé další technické podrobnosti o tom, jak funguje.
+
+> [!VIDEO https://youtube.com/embed/p3po6507Ip8]
+
+**UIStackView, pomocí [univerzity Xamarin](https://university.xamarin.com/)**
 
 ## <a name="uistackview-quickstart"></a>UIStackView rychlý start
 
@@ -39,11 +44,11 @@ Jako rychlý úvod do `UIStackView` řízení, jsme se chystáte vytvořit jedno
 
 Spuštění nového projektu Xamarin.iOS a upravit **Main.storyboard** souboru v Xcode na rozhraní tvůrce. Nejdřív přetáhněte jeden **svislé zobrazení zásobníku** na **View Controller**:
 
-[ ![](uistackview-images/quick01.png "Přetáhněte jednoho svislé zásobníku zobrazení na řadiče zobrazení")](uistackview-images/quick01.png)
+[![](uistackview-images/quick01.png "Přetáhněte jednoho svislé zásobníku zobrazení na řadiče zobrazení")](uistackview-images/quick01.png#lightbox)
 
 V **atribut Inspector**, nastavte následující možnosti:
 
-[ ![](uistackview-images/quick02.png "Nastavit možnosti zobrazení zásobníku")](uistackview-images/quick02.png)
+[![](uistackview-images/quick02.png "Nastavit možnosti zobrazení zásobníku")](uistackview-images/quick02.png#lightbox)
 
 Kde:
 
@@ -61,17 +66,17 @@ Při práci se zobrazením zásobníku, si můžete představit **zarovnání** 
 
 Dál rozložení aplikace rozhraní přidáním štítek, ImageView, dvě tlačítka a vodorovné zásobníku zobrazení tak, aby vypadá přibližně takto:
 
-[ ![](uistackview-images/quick03.png "Rozložení uživatelského rozhraní zobrazení zásobníku")](uistackview-images/quick03.png)
+[![](uistackview-images/quick03.png "Rozložení uživatelského rozhraní zobrazení zásobníku")](uistackview-images/quick03.png#lightbox)
 
 Vodorovné zobrazení zásobníku nakonfigurujte následující možnosti:
 
-[ ![](uistackview-images/quick04.png "Konfigurovat možnosti vodorovné zobrazení zásobníku")](uistackview-images/quick04.png)
+[![](uistackview-images/quick04.png "Konfigurovat možnosti vodorovné zobrazení zásobníku")](uistackview-images/quick04.png#lightbox)
 
 Protože Neradi bychom ikonu, která představuje každý "místo" v hodnocení na dojít k roztažení když je přidán do vodorovné zásobníku zobrazení, jsme nastavili **zarovnání** k **Center** a  **Distribuce** k **vyplnění stejně**.
 
 Nakonec propojit si následující **výstupy** a **akce**:
 
-[ ![](uistackview-images/quick05.png "Výstupy zobrazení zásobníku a akcí")](uistackview-images/quick05.png)
+[![](uistackview-images/quick05.png "Výstupy zobrazení zásobníku a akcí")](uistackview-images/quick05.png#lightbox)
 
 ### <a name="populate-a-uistackview-from-code"></a>Naplnění UIStackView z kódu
 
@@ -168,7 +173,7 @@ S všechny požadované prvky uživatelského rozhraní a kódu v místě může
 
 Když uživatel klepnutím **zvýšit hodnocení** tlačítko jiné "hvězdičky" se přidá na obrazovku (až do maximálního počtu 5):
 
-[ ![](uistackview-images/intro01.png "Ukázková aplikace spustit")](uistackview-images/intro01.png)
+[![](uistackview-images/intro01.png "Ukázková aplikace spustit")](uistackview-images/intro01.png#lightbox)
 
 "Hvězdiček" bude automaticky zarovnaný na střed a rovnoměrně rozložena mezi vodorovné zobrazení zásobníku. Když uživatel klepnutím **snížit hodnocení** tlačítko "hvězdu" se odebere (dokud žádné nezbývají).
 

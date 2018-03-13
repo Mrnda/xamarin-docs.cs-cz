@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/30/2018
-ms.openlocfilehash: 4728b50446033c02d33ccf8273f1dc2e50d66906
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b8642a1c96ee525fbd6950616fbc6da0ad0e2337
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough---using-local-notifications-in-xamarinandroid"></a>Návod - použití místního oznámení v Xamarin.Android
 
 _Tento návod ukazuje, jak používat místní oznámení v aplikacích Xamarin.Android. Ukazuje základní informace o vytváření a publikování místního oznámení. Když uživatel klikne na oznámení v oznamovací oblasti, spuštění druhá aktivita._
 
-<a name="overview" />
 
 ## <a name="overview"></a>Přehled
 
@@ -26,16 +25,14 @@ V tomto návodu vytvoříme aplikace platformy Android, která vyvolává oznám
 
 Na následujících snímcích obrazovky ilustraci některé příklady této aplikace:
 
-[![Příklad snímky obrazovky s oznámení](local-notifications-walkthrough-images/1-overview-sml.png)](local-notifications-walkthrough-images/1-overview.png)
+[![Příklad snímky obrazovky s oznámení](local-notifications-walkthrough-images/1-overview-sml.png)](local-notifications-walkthrough-images/1-overview.png#lightbox)
 
 
-<a name="walkthrough" />
 
 ## <a name="walkthrough"></a>Návod
 
 Pokud chcete začít, vytvoříme nový projekt Android pomocí **aplikace pro Android** šablony. Umožňuje volání tento projekt **LocalNotifications**. (Pokud nejste obeznámeni s vytváření projektů Xamarin.Android, přečtěte si téma [Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md).)
 
-<a name="add-v4-support" />
 
 ### <a name="add-the-androidsupportv4app-component"></a>Přidat součást Android.Support.V4.App
 
@@ -53,7 +50,6 @@ Také jsme musíte ho nastavit zrušte pro kompilátor, který se používá `An
 using TaskStackBuilder = Android.Support.V4.App.TaskStackBuilder;
 ```
 
-<a name="define-id" />
 
 ### <a name="define-the-notification-id"></a>Zadejte ID oznámení
 
@@ -63,7 +59,6 @@ Potřebujeme bude jedinečné ID pro naše oznámení. Umožňuje upravit **Main
 private static readonly int ButtonClickNotificationId = 1000;
 ```
 
-<a name="add-code" />
 
 ### <a name="add-code-to-generate-the-notification"></a>Přidejte kód ke generování oznámení.
 
@@ -117,7 +112,6 @@ V `OnCreate` metoda, přiřaďte tento `ButtonOnClick` metodu `Click` události 
 button.Click += ButtonOnClick;
 ```
 
-<a name="second-activity" />
 
 ### <a name="create-a-second-activity"></a>Vytvořit druhý aktivitu
 
@@ -174,36 +168,33 @@ Také jsme musí vytvořit prostředek rozložení pro **SecondActivity**. Přid
 </LinearLayout>
 ```
 
-<a name="add-icon" />
 
 ### <a name="add-a-notification-icon"></a>Přidat ikonu oznámení
 
 Nakonec přidejte umožňuje malé ikony, které se zobrazí v oznamovací oblasti při spuštění naše oznámení. Můžete zkopírovat [ikonu](local-notifications-walkthrough-images/ic-stat-button-click.png) do projektu nebo vytvořit vlastní vlastní ikonu. Soubor ikony jsme budete název **vnitropodnikové\_stat\_tlačítko\_click.png** a zkopírujte ho do **prostředky/drawable** složky. Nezapomeňte použít **Přidat > existující položka...**  zahrnout tento soubor ikony ve vašem projektu.
 
-<a name="run-app" />
 
 ### <a name="run-the-application"></a>Spuštění aplikace
 
 Umožňuje sestavit a spustit aplikaci. By se měla zobrazit s první aktivitu, podobně jako na následujícím snímku obrazovky:
 
-[ ![Snímek obrazovky první aktivita](local-notifications-walkthrough-images/2-start-screen-sml.png)](local-notifications-walkthrough-images/2-start-screen.png)
+[![Snímek obrazovky první aktivita](local-notifications-walkthrough-images/2-start-screen-sml.png)](local-notifications-walkthrough-images/2-start-screen.png#lightbox)
 
 Jako kliknete na tlačítko, měli byste zaznamenat malé ikony pro oznámení se zobrazí v oznamovací oblasti:
 
-[ ![Zobrazí se ikona oznámení](local-notifications-walkthrough-images/3-notification-icon-sml.png)](local-notifications-walkthrough-images/3-notification-icon.png)
+[![Zobrazí se ikona oznámení](local-notifications-walkthrough-images/3-notification-icon-sml.png)](local-notifications-walkthrough-images/3-notification-icon.png#lightbox)
 
 Pokud potažením prstem přejděte dolů a vystavit panel oznámení, byste měli vidět oznámení:
 
-[ ![Zpráva upozornění](local-notifications-walkthrough-images/4-notifications-sml.png)](local-notifications-walkthrough-images/4-notifications.png)
+[![Zpráva upozornění](local-notifications-walkthrough-images/4-notifications-sml.png)](local-notifications-walkthrough-images/4-notifications.png#lightbox)
 
 Pokud kliknutím na oznámení, by měl zmizet a musí být spuštěna našich dalších aktivit &ndash; vyhledávání něco podobného jako na následujícím snímku obrazovky:
 
-[ ![Snímek obrazovky druhý aktivity](local-notifications-walkthrough-images/5-second-activity-sml.png)](local-notifications-walkthrough-images/5-second-activity.png)
+[![Snímek obrazovky druhý aktivity](local-notifications-walkthrough-images/5-second-activity-sml.png)](local-notifications-walkthrough-images/5-second-activity.png#lightbox)
 
 Blahopřejeme! V tomto okamžiku jste dokončili návod Android místního oznámení a máte pracovní vzorku, který mohou odkazovat na. Existuje mnoho další oznámení než nemůžeme tady zobrazit, pokud chcete další informace, podívejte se na [Google dokumentaci na oznámení](http://developer.android.com/guide/topics/ui/notifiers/notifications.html) a Android [oznámení](http://developer.android.com/design/patterns/notifications.html) Průvodce návrhem.
 
 
-<a name="summary" />
 
 ## <a name="summary"></a>Souhrn
 

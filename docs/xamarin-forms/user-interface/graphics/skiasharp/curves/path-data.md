@@ -4,14 +4,15 @@ description: "Zadejte cesty pomocí textové řetězce ve formátu Škálovateln
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 1D53067B-3502-4D74-B89D-7EC496901AE2
 author: charlespetzold
 ms.author: chape
 ms.date: 05/24/2017
-ms.openlocfilehash: feb4c5f4c7e7ad3fc5f762786001be9aa57ae718
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: cc21f789d96f9375655766916f80c6f3f524c29d
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="svg-path-data"></a>Data SVG cesty
 
@@ -216,7 +217,7 @@ public class PathDataHelloPage : ContentPage
 
 Cesta vyplní celé plátno, která vypadá přijatelnější při zobrazení na šířku:
 
-[![](path-data-images/pathdatahello-small.png "Trojitá snímek obrazovky stránky cesta Data Hello")](path-data-images/pathdatahello-large.png "Trojitá snímek obrazovky stránky cesta Data Hello")
+[![](path-data-images/pathdatahello-small.png "Trojitá snímek obrazovky stránky cesta Data Hello")](path-data-images/pathdatahello-large.png#lightbox "Trojitá snímek obrazovky stránky cesta Data Hello")
 
 **Cesta Data Cat** stránka je podobné. Oba objekty Malování a cesta jsou definovány jako pole v [ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs) třídy:
 
@@ -287,7 +288,7 @@ public class PathDataCatPage : ContentPage
 
 Tady je programy spuštěné na všech tří platformách:
 
-[![](path-data-images/pathdatacat-small.png "Trojitá snímek obrazovky stránky cesta Data Cat")](path-data-images/pathdatacat-large.png "Trojitá snímek obrazovky stránky cesta Data Cat")
+[![](path-data-images/pathdatacat-small.png "Trojitá snímek obrazovky stránky cesta Data Cat")](path-data-images/pathdatacat-large.png#lightbox "Trojitá snímek obrazovky stránky cesta Data Cat")
 
 Za normálních okolností, kdy `SKPath` objektu je definována jako pole, obrysy cesty musí být definován v konstruktoru nebo jiným způsobem. Při použití data SVG cesty, ale už víte, že zcela v definici pole lze zadat cestu.
 
@@ -424,7 +425,7 @@ public class PrettyAnalogClockPage : ContentPage
 
 Něco speciální provádí pomocí druhé straně, ale. Protože hodiny se aktualizuje každých 16 milisekund `Millisecond` vlastnost `DateTime` hodnotu lze potenciálně na druhé straně animace oblouku místo ten, který přesune v diskrétní skoků z druhého druhou. Ale tento kód neumožňuje přesun jako plynulé. Místo toho použije platformě Xamarin.Forms [ `SpringIn` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SpringIn/) a [ `SpringOut` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SpringOut/) animace usnadnění funkce pro jiný druh pohyb. Tyto funkce usnadnění způsobit druhé straně přesouvat v jerkier způsobem & #x 2014; stahování zpět malým před přesune ho a potom mírně překročením teploty svůj cíl, vliv to bohužel nelze reprodukovat v těchto statické snímky obrazovky:
 
-[![](path-data-images/prettyanalogclock-small.png "Trojitá snímek obrazovky stránky poměrně analogovým hodiny")](path-data-images/prettyanalogclock-large.png "Trojitá snímek obrazovky stránky poměrně analogovým hodiny")
+[![](path-data-images/prettyanalogclock-small.png "Trojitá snímek obrazovky stránky poměrně analogovým hodiny")](path-data-images/prettyanalogclock-large.png#lightbox "Trojitá snímek obrazovky stránky poměrně analogovým hodiny")
 
 
 ## <a name="related-links"></a>Související odkazy

@@ -8,21 +8,18 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 52b53618e23a47884bee6cb821d85b15d759968c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 48b8d1cf8e6242fde632bceec5d482f53037a954
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="updating-existing-xamarinforms-apps"></a>Aktualizace stávající aplikace Xamarin.Forms
 
 _Postupujte podle těchto kroků provedete aktualizaci existující aplikaci Xamarin.Forms pomocí unifikované API a aktualizovat verzi 1.3.1_
 
-
 > [!IMPORTANT]
 > Xamarin.Forms 1.3.1 je první verzi, který podporuje unifikované API, a proto by se používat nejnovější verzi ve stejnou dobu jako migrace aplikace pro iOS na Unified aktualizovat celé řešení. To znamená, že kromě aktualizace projektu iOS pro podporu Unified, také musíte upravit kód v _všechny_ projekty v řešení.
-
-
 
 Aktualizace se provádí ve dvou krocích:
 
@@ -44,12 +41,11 @@ Aktualizace se provádí ve dvou krocích:
 
     5. Aktualizace `MainPage` v projektu Windows Phone.
 
-
-# <a name="1-ios-app-unified-migration"></a>1. aplikace pro iOS (Unified migrace)
+## <a name="1-ios-app-unified-migration"></a>1. aplikace pro iOS (Unified migrace)
 
 Při migraci vyžaduje upgrade na verzi 1.3, která podporuje rozhraní API Unified Xamarin.Forms. Aby odkazy na sestavení správný má být vytvořen musíme nejdřív aktualizovat iOS projekt, který používá rozhraní API Unified.
 
-## <a name="migration-tool"></a>Nástroj pro migraci
+### <a name="migration-tool"></a>Nástroj pro migraci
 
 Klikněte na projekt pro iOS tak, že je vybraná, pak zvolte **Projekt > migrace do Xamarin.iOS unifikované API...**  a souhlasíte s nimi upozornění, které se zobrazí.
 
@@ -64,12 +60,11 @@ To bude automaticky:
 
 **Vyčištění** a **sestavení** projekt, který má zajistit nejsou žádné chyby opravit. Žádná další akce by měla být potřeba. Tyto kroky jsou podrobně podrobněji [unifikované API dokumentace](~/cross-platform/macios/unified/updating-ios-apps.md).
 
-## <a name="update-native-ios-apis-if-required"></a>Aktualizovat nativní aplikace pro iOS rozhraní API (v případě potřeby)
+### <a name="update-native-ios-apis-if-required"></a>Aktualizovat nativní aplikace pro iOS rozhraní API (v případě potřeby)
 
 Pokud jste přidali další iOS nativního kódu (například vlastní nástroji pro vykreslování nebo závislostí services) musíte provést další ruční kód opravy. Znovu kompilovat vaší aplikace a odkazovat na [iOS aktualizaci existující aplikace pokyny](~/cross-platform/macios/unified/updating-ios-apps.md) Další informace o změnách, které mohou být vyžadovány. [Tyto tipy](~/cross-platform/macios/unified/updating-tips.md) také pomůže identifikovat změny, které jsou požadovány.
 
-
-# <a name="2-xamarinforms-131-update"></a>2. Xamarin.Forms 1.3.1 Update
+## <a name="2-xamarinforms-131-update"></a>2. Xamarin.Forms 1.3.1 Update
 
 Jakmile je aplikace pro iOS je aktualizovaná tak, aby unifikované API, je třeba aktualizovat na platformě Xamarin.Forms verze 1.3.1 zbytek řešení. Sem patří:
 
@@ -78,22 +73,18 @@ Jakmile je aplikace pro iOS je aktualizovaná tak, aby unifikované API, je tře
 
 Tyto kroky jsou vysvětleny níže:
 
-
-## <a name="21-update-nuget-in-all-projects"></a>2.1 NuGet aktualizace ve všech projektech
+### <a name="21-update-nuget-in-all-projects"></a>2.1 NuGet aktualizace ve všech projektech
 
 Aktualizovat Xamarin.Forms 1.3.1 předběžné verze pomocí Správce balíčků NuGet pro všechny projekty v řešení: PCL (pokud existuje), iOS, Android a Windows Phone. Je doporučeno, které **odstranit a znovu přidejte** balíček Xamarin.Forms NuGet aktualizace na verzi 1.3.
 
 **Poznámka:** Xamarin.Forms verze 1.3.1 je aktuálně v *předběžné verze*. To znamená, že je nutné vybrat **předběžné verze** možnost NuGet prostřednictvím (značek – pole v sadě Visual Studio pro Mac) nebo vyřaďte nižší – seznam v sadě Visual Studio zobrazíte nejnovější verzi předběžné verze.
 
-
 > [!IMPORTANT]
 > Pokud používáte Visual Studio, ověřte, že je nainstalovaná nejnovější verze Správce balíčků NuGet. Starší verze NuGet v sadě Visual Studio není správně nainstalován Unified verzi Xamarin.Forms 1.3.1. Přejděte na **nástroje > rozšíření a aktualizace...**  a klikněte na **nainstalovaná** seznamu zkontroluje, jestli **Správce balíčků NuGet pro Visual Studio** je minimálně verze 2.8.5. Pokud je starší, klikněte na **aktualizace** seznamu ke stažení nejnovější verze.
 
-
-
 Jakmile na platformě Xamarin.Forms 1.3.1 aktualizujete balíček NuGet, proveďte následující změny v každém projektu pro upgrade na novou `Xamarin.Forms.Application` třídy.
 
-## <a name="22-portable-class-library-or-shared-project"></a>2.2 Přenosná knihovna tříd (nebo sdílený projekt)
+### <a name="22-portable-class-library-or-shared-project"></a>2.2 Přenosná knihovna tříd (nebo sdílený projekt)
 
 Změna **App.cs** souboru tak, aby:
 
@@ -116,15 +107,12 @@ Tento nový `Application` základní třída podporuje také `OnStart`, `OnSleep
 
 `App` Třída je předána na nový `LoadApplication` metoda do každého projektu aplikace, jak je popsáno níže:
 
-
-## <a name="23-ios-app"></a>2.3 aplikace pro iOS
-
+### <a name="23-ios-app"></a>2.3 aplikace pro iOS
 
 Změna **AppDelegate.cs** souboru tak, aby:
 
  - Třídy dědí z `FormsApplicationDelegate` (místo `UIApplicationDelegate` dříve).
  - `LoadApplication` je volána s novou instanci třídy `App`.
-
 
 ```csharp
 [Register ("AppDelegate")]
@@ -142,8 +130,7 @@ public partial class AppDelegate :
 }
 ```
 
-
-## <a name="23-android-app"></a>2.3 aplikace pro android
+### <a name="23-android-app"></a>2.3 aplikace pro android
 
 Změna **MainActivity.cs** souboru tak, aby:
 
@@ -167,8 +154,7 @@ public class MainActivity :
 }
 ```
 
-
-## <a name="24-windows-phone-app"></a>2.4 Windows Phone aplikace
+### <a name="24-windows-phone-app"></a>2.4 Windows Phone aplikace
 
 Je potřeba aktualizovat **MainPage** -XAML a codebehind.
 
@@ -186,7 +172,6 @@ Níže je uveden aktualizované příklad – byste měli mít jenom upravit tyt
     ...>
 </winPhone:FormsApplicationPage>
 ```
-
 
 Změna **MainPage.xaml.cs** souboru tak, aby:
 
@@ -207,7 +192,7 @@ public partial class MainPage : global::Xamarin.Forms.Platform.WinPhone.FormsApp
  }
 ```
 
-## <a name="troubleshooting"></a>Poradce při potížích
+### <a name="troubleshooting"></a>Poradce při potížích
 
 Někdy se zobrazí chyba podobná této po aktualizaci balíček Xamarin.Forms NuGet. Ho dochází, pokud aktualizační NuGet úplně odstraní odkazy na starší verze z vaší **csproj** soubory.
 
@@ -226,16 +211,15 @@ Chcete-li opravte tyto chyby, otevřete **csproj** soubor v textovém editoru a 
 
 Projekt má sestavit úspěšně odebraný tyto staré odkazy.
 
-# <a name="considerations"></a>Důležité informace
+## <a name="considerations"></a>Důležité informace
 
 Následující aspekty měli vzít v úvahu při převodu existujícího projektu Xamarin.Forms klasické rozhraní API na nové rozhraní API Unified Pokud tuto aplikaci závisí na jeden nebo více součástí nebo balíček NuGet.
 
-## <a name="components"></a>Součásti
+### <a name="components"></a>Součásti
 
 Všechny součásti, které se mají zahrnout do vaší aplikace bude také nutné aktualizovat tak, aby unifikované API nebo konflikt obdržíte při pokusu o zkompilovat. U všech součástí komponent nahradí aktuální verzi s novou verzí z úložišti součástí Xamarin, který podporuje unifikované API a proveďte nové čisté sestavení. Všechny součásti, který nebyl převeden ještě autorem, se zobrazí 32bitové pouze upozornění v úložišti součástí.
 
-
-## <a name="nuget-support"></a>Podpora NuGet
+### <a name="nuget-support"></a>Podpora NuGet
 
 Když jsme podílí změny NuGet pro práci s podporou unifikované API, nepřišla novou verzi balíčku nuget, takže jsme hodnocení jak získat NuGet rozpoznat nových rozhraní API.
 
@@ -244,19 +228,15 @@ Do té doby, stejně jako komponenty budete potřebovat přepnout libovolný bal
 > [!IMPORTANT]
 > **Poznámka:** Pokud máte chybu ve formě _"Chyba 3 nesmí obsahovat 'monotouch.dll' a"Xamarin.iOS.dll"ve stejném projektu Xamarin.iOS – 'Xamarin.iOS.dll' odkazuje explicitně, zatímco 'monotouch.dll' odkazuje ' xxx, Verze = 0.0.000, Culture = neutral, PublicKeyToken = null. "_ po převedení aplikace jednotné rozhraní API, je obvykle kvůli s komponenta nebo balíček NuGet do projektu, která nebyla aktualizována jednotné rozhraní API. Budete muset odebrat existující součásti nebo NuGet, aktualizujte na verzi podporující rozhraní API Unified a provést čisté sestavení.
 
+## <a name="enabling-64-bit-builds-of-xamarinios-apps"></a>Povolení 64bitové sestavení aplikace Xamarin.iOS
 
+Pro mobilní aplikace pro Xamarin.iOS, byl převeden na unifikované API musí vývojář stále umožňující vytvářet aplikace pro 64bitové počítače z možností aplikace. Najdete v tématu **povolení 64 Bit sestavení z aplikace na platformě Xamarin.iOS** z [32 nebo 64bitový platformy aspekty](~/cross-platform/macios/32-and-64/index.md#enable-64) dokumentu podrobné pokyny k povolení 64bitové sestavení.
 
-
-# <a name="enabling-64-bit-builds-of-xamarinios-apps"></a>Povolení 64bitové sestavení aplikace Xamarin.iOS
-
-Pro mobilní aplikace pro Xamarin.iOS, byl převeden na unifikované API musí vývojář stále umožňující vytvářet aplikace pro 64bitové počítače z možností aplikace. Najdete v tématu **povolení 64 Bit sestavení z aplikace na platformě Xamarin.iOS** z [32 nebo 64bitový platformy aspekty](~/cross-platform/macios/32-and-64.md#enable-64) dokumentu podrobné pokyny k povolení 64bitové sestavení.
-
-# <a name="summary"></a>Souhrn
+## <a name="summary"></a>Souhrn
 
 Aplikaci Xamarin.Forms se musí nyní aktualizovat na verze 1.3.1 a migrovat aplikace pro iOS na unifikované API (které podporuje 64bitové architektury na platformě iOS).
 
 Jak jsme uvedli výše, pokud vaše aplikace Xamarin.Forms zahrnuje nativního kódu, například vlastní nástroji pro vykreslování nebo závislosti služeb, pak tyto mohou také vyžadovat aktualizaci používat nové typy [byla zavedená v unifikované API](~/cross-platform/macios/index.md).
-
 
 ## <a name="related-links"></a>Související odkazy
 

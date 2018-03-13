@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/29/2018
-ms.openlocfilehash: 56fee71f2ed36b682d323bae1225430ff991f140
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: bff6d917fc4ce65daed329f15d6648bbfe0dd069
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="resource-qualifiers-and-visualization-options"></a>Kvalifikátory prostředků a možnosti vizualizace
 
 _Toto téma vysvětluje, jak definovat prostředky, které se použijí jenom v případě, že některé kvalifikátor hodnoty se shodují. Jednoduchý příklad je prostředek kvalifikovaný jazyk řetězec. Řetězec prostředku může být definováno jako výchozí, s další alternativní zdroje definované má být použit pro další jazyky. Může být kvalifikovaný všechny typy prostředků, včetně rozložení sám sebe._
 
-<a name="Custom_Device_Configurations" />
 
 ## <a name="custom-device-configurations"></a>Konfigurace vlastní zařízení
 
@@ -30,11 +29,11 @@ V dolní části modulu pro výběr zařízení je nabídka **přizpůsobit** mo
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Nabídka pro výběr zařízení](resource-qualifiers-images/vs/01-device-selector-sml.png)](resource-qualifiers-images/vs/01-device-selector.png)
+[![Nabídka pro výběr zařízení](resource-qualifiers-images/vs/01-device-selector-sml.png)](resource-qualifiers-images/vs/01-device-selector.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Nabídka pro výběr zařízení](resource-qualifiers-images/xs/01-device-selector-sml.png)](resource-qualifiers-images/xs/01-device-selector.png)
+[![Nabídka pro výběr zařízení](resource-qualifiers-images/xs/01-device-selector-sml.png)](resource-qualifiers-images/xs/01-device-selector.png#lightbox)
 
 -----
 
@@ -43,11 +42,11 @@ Výběr **přizpůsobit** zobrazí dialogové okno, které můžete použít k p
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Správce AVD](resource-qualifiers-images/vs/02-device-definitions-sml.png)](resource-qualifiers-images/vs/02-device-definitions.png)
+[![Správce AVD](resource-qualifiers-images/vs/02-device-definitions-sml.png)](resource-qualifiers-images/vs/02-device-definitions.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Správce AVD](resource-qualifiers-images/xs/02-device-definitions-sml.png)](resource-qualifiers-images/xs/02-device-definitions.png)
+[![Správce AVD](resource-qualifiers-images/xs/02-device-definitions-sml.png)](resource-qualifiers-images/xs/02-device-definitions.png#lightbox)
 
 -----
 
@@ -57,11 +56,11 @@ Například výběr **Nexus 5** definice a kliknutím na **klon...**  uvede nás
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Klonování zařízení](resource-qualifiers-images/vs/03-clone-sml.png)](resource-qualifiers-images/vs/03-clone.png)
+[![Klonování zařízení](resource-qualifiers-images/vs/03-clone-sml.png)](resource-qualifiers-images/vs/03-clone.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Klonování zařízení](resource-qualifiers-images/xs/03-clone-sml.png)](resource-qualifiers-images/xs/03-clone.png)
+[![Klonování zařízení](resource-qualifiers-images/xs/03-clone-sml.png)](resource-qualifiers-images/xs/03-clone.png#lightbox)
 
 -----
 
@@ -70,11 +69,11 @@ Na snímku obrazovky další název se změní na **Nexus 5 vlastní** a paramet
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Vlastní zařízení](resource-qualifiers-images/vs/04-custom-sml.png)](resource-qualifiers-images/vs/04-custom.png)
+[![Vlastní zařízení](resource-qualifiers-images/vs/04-custom-sml.png)](resource-qualifiers-images/vs/04-custom.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Vlastní zařízení](resource-qualifiers-images/xs/04-custom-sml.png)](resource-qualifiers-images/xs/04-custom.png)
+[![Vlastní zařízení](resource-qualifiers-images/xs/04-custom-sml.png)](resource-qualifiers-images/xs/04-custom.png#lightbox)
 
 -----
 
@@ -83,11 +82,11 @@ Kliknutím na tlačítko **klon zařízení** vytvoří nové definice zařízen
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Definice aktualizované zařízení](resource-qualifiers-images/vs/05-updated-device-definitions-sml.png)](resource-qualifiers-images/vs/05-updated-device-definitions.png)
+[![Definice aktualizované zařízení](resource-qualifiers-images/vs/05-updated-device-definitions-sml.png)](resource-qualifiers-images/vs/05-updated-device-definitions.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Definice aktualizované zařízení](resource-qualifiers-images/xs/05-updated-device-definitions-sml.png)](resource-qualifiers-images/xs/05-updated-device-definitions.png)
+[![Definice aktualizované zařízení](resource-qualifiers-images/xs/05-updated-device-definitions-sml.png)](resource-qualifiers-images/xs/05-updated-device-definitions.png#lightbox)
 
 -----
 
@@ -96,11 +95,11 @@ Všimněte si, se zelenou ikonou se zobrazí každý definice vytvořené uživa
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Vlastní zařízení se zobrazí v seznamu zařízení](resource-qualifiers-images/vs/06-nexus-5-custom-sml.png)](resource-qualifiers-images/vs/06-nexus-5-custom.png)
+[![Vlastní zařízení se zobrazí v seznamu zařízení](resource-qualifiers-images/vs/06-nexus-5-custom-sml.png)](resource-qualifiers-images/vs/06-nexus-5-custom.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Vlastní zařízení se zobrazí v seznamu zařízení](resource-qualifiers-images/xs/06-nexus-5-custom-sml.png)](resource-qualifiers-images/xs/06-nexus-5-custom.png)
+[![Vlastní zařízení se zobrazí v seznamu zařízení](resource-qualifiers-images/xs/06-nexus-5-custom-sml.png)](resource-qualifiers-images/xs/06-nexus-5-custom.png#lightbox)
 
 -----
 
@@ -109,16 +108,15 @@ Výběrem této konfiguraci zařízení upraví rozložení tak, aby odpovídala
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Vlastní zařízení používá](resource-qualifiers-images/vs/07-custom-in-use-sml.png)](resource-qualifiers-images/vs/07-custom-in-use.png)
+[![Vlastní zařízení používá](resource-qualifiers-images/vs/07-custom-in-use-sml.png)](resource-qualifiers-images/vs/07-custom-in-use.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Vlastní zařízení používá](resource-qualifiers-images/xs/07-custom-in-use-sml.png)](resource-qualifiers-images/xs/07-custom-in-use.png)
+[![Vlastní zařízení používá](resource-qualifiers-images/xs/07-custom-in-use-sml.png)](resource-qualifiers-images/xs/07-custom-in-use.png#lightbox)
 
 -----
 
 
-<a name="resource_qualifier_options" />
 
 ## <a name="resource-qualifier-options"></a>Možnosti kvalifikátoru prostředků
 
@@ -126,11 +124,11 @@ Výběrem této konfiguraci zařízení upraví rozložení tak, aby odpovídala
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Možnosti kvalifikátoru prostředků](resource-qualifiers-images/vs/08-resource-qual-opt-sml.png)](resource-qualifiers-images/vs/08-resource-qual-opt.png)
+[![Možnosti kvalifikátoru prostředků](resource-qualifiers-images/vs/08-resource-qual-opt-sml.png)](resource-qualifiers-images/vs/08-resource-qual-opt.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Možnosti kvalifikátoru prostředků](resource-qualifiers-images/xs/08-resource-qual-opt-sml.png)](resource-qualifiers-images/xs/08-resource-qual-opt.png)
+[![Možnosti kvalifikátoru prostředků](resource-qualifiers-images/xs/08-resource-qual-opt-sml.png)](resource-qualifiers-images/xs/08-resource-qual-opt.png#lightbox)
 
 -----
 
@@ -144,7 +142,6 @@ Toto dialogové okno zobrazí rozevírací nabídky pro následující kvalifik�
 Každá z těchto rozevírací nabídky otevře nové dialogových oken, kde můžete vybrat a nakonfigurovat prostředek kvalifikátory (jak je popsáno dále).
 
 
-<a name="Language_and_Region" />
 
 ### <a name="language"></a>Jazyk
 
@@ -152,11 +149,11 @@ Každá z těchto rozevírací nabídky otevře nové dialogových oken, kde mů
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Přidat jazyk nebo oblast](resource-qualifiers-images/vs/09-add-language-region-sml.png)](resource-qualifiers-images/vs/09-add-language-region.png)
+[![Přidat jazyk nebo oblast](resource-qualifiers-images/vs/09-add-language-region-sml.png)](resource-qualifiers-images/vs/09-add-language-region.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Přidat jazyk nebo oblast](resource-qualifiers-images/xs/09-add-language-region-sml.png)](resource-qualifiers-images/xs/09-add-language-region.png)
+[![Přidat jazyk nebo oblast](resource-qualifiers-images/xs/09-add-language-region-sml.png)](resource-qualifiers-images/xs/09-add-language-region.png#lightbox)
 
 -----
 
@@ -169,7 +166,7 @@ Když kliknete na tlačítko **přidat jazyk nebo oblast...** , **vybrat jazyk**
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Seznam jazyků](resource-qualifiers-images/xs/10-languages-sml.png)](resource-qualifiers-images/xs/10-languages.png)
+[![Seznam jazyků](resource-qualifiers-images/xs/10-languages-sml.png)](resource-qualifiers-images/xs/10-languages.png#lightbox)
 
 -----
 
@@ -182,7 +179,7 @@ V tomto příkladu jsme vybrali **fr (francouzština)** pro jazyk a **BE** (Belg
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Jazyk a vybrat oblast](resource-qualifiers-images/xs/11-language-region-added-sml.png)](resource-qualifiers-images/xs/11-language-region-added.png)
+[![Jazyk a vybrat oblast](resource-qualifiers-images/xs/11-language-region-added-sml.png)](resource-qualifiers-images/xs/11-language-region-added.png#lightbox)
 
 -----
 
@@ -190,7 +187,6 @@ V tomto příkladu jsme vybrali **fr (francouzština)** pro jazyk a **BE** (Belg
 Všimněte si, že pokud přidáte nový jazyk, ale nelze vytvořit nové prostředky pro se už přidané jazykově budou zobrazovat při příštím otevření projektu.
 
 
-<a name="ui_mode" />
 
 ### <a name="ui-mode"></a>Režim uživatelského rozhraní
 
@@ -198,7 +194,7 @@ Když kliknete **režimu uživatelského rozhraní** se zobrazí rozevírací na
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Nabídky režimu uživatelského rozhraní](resource-qualifiers-images/vs/12-ui-mode-sml.png)](resource-qualifiers-images/vs/12-ui-mode.png)
+[![Nabídky režimu uživatelského rozhraní](resource-qualifiers-images/vs/12-ui-mode-sml.png)](resource-qualifiers-images/vs/12-ui-mode.png#lightbox)
 
 Níže tohoto seznamu jsou režimů noc **není noc** a **noc**, za nímž následují pokynů rozložení **zleva doprava** a **zprava doleva** (pro informace o **zleva doprava** a **zprava doleva** najdete v části Možnosti [metodu LayoutDirection](https://developer.xamarin.com/api/type/Android.Util.LayoutDirection/).
 Poslední položky v **prostředků kvalifikátor možnosti** se dialogové okno **zaokrouhlit obrazovky** (pro použití se systémem Android nosit) nebo **není zaokrouhlit obrazovky** (informace o zaokrouhlit a najdete v části obrazovky bez ZAOKROUHLIT [rozložení](https://developer.android.com/training/wearables/ui/layouts.html)).
@@ -206,7 +202,7 @@ Další informace o režimech Android uživatelského rozhraní najdete v témat
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Nabídky režimu uživatelského rozhraní](resource-qualifiers-images/xs/12-ui-mode-sml.png)](resource-qualifiers-images/xs/12-ui-mode.png)
+[![Nabídky režimu uživatelského rozhraní](resource-qualifiers-images/xs/12-ui-mode-sml.png)](resource-qualifiers-images/xs/12-ui-mode.png#lightbox)
 
 Níže tohoto seznamu jsou režimů noc **není noc** a **noc**, za nímž následují pokynů rozložení **zleva doprava** a **zprava doleva**. Další informace o režimech Android uživatelského rozhraní najdete v tématu [UiModeManager](https://developer.xamarin.com/api/type/Android.App.UiModeManager/).
 Informace o **zleva doprava** a **zprava doleva** najdete v části Možnosti [metodu LayoutDirection](https://developer.xamarin.com/api/type/Android.Util.LayoutDirection/).
@@ -215,12 +211,11 @@ Informace o **zleva doprava** a **zprava doleva** najdete v části Možnosti [m
 
 Poslední položky v **prostředků kvalifikátor možnosti** dialogové okno je **zaokrouhlí obrazovky** nabídky. Tato nabídka umožňuje vybrat buď **zaokrouhlit obrazovky** (pro použití se systémem Android nosit) nebo **obdélníková obrazovky**:
 
-[ ![Zaokrouhlí obrazovky nabídky](resource-qualifiers-images/xs/13-round-screen-sml.png)](resource-qualifiers-images/xs/13-round-screen.png)
+[![Zaokrouhlí obrazovky nabídky](resource-qualifiers-images/xs/13-round-screen-sml.png)](resource-qualifiers-images/xs/13-round-screen.png#lightbox)
 
 -----
 
 
-<a name="Action_Bar" />
 
 ## <a name="action-bar-settings"></a>Nastavení panelu akcí
 
@@ -232,7 +227,7 @@ Poslední položky v **prostředků kvalifikátor možnosti** dialogové okno je
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Nastavení panelu akcí](resource-qualifiers-images/xs/13b-action-bar-sml.png)](resource-qualifiers-images/xs/13b-action-bar.png)
+[![Nastavení panelu akcí](resource-qualifiers-images/xs/13b-action-bar-sml.png)](resource-qualifiers-images/xs/13b-action-bar.png#lightbox)
 
 -----
 
@@ -246,7 +241,6 @@ Tato ikona otevře dialogové okno popover, který poskytuje způsob, jak vybert
 -   **Karty** &ndash; karta navigační režimu. Tento režim místo statické nadpisu, uvede řadu karty pro navigaci v rámci aktivity.
 
 
-<a name="Themes" />
 
 ## <a name="themes"></a>Motivy
 
@@ -254,11 +248,11 @@ Tato ikona otevře dialogové okno popover, který poskytuje způsob, jak vybert
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Další motivy seznamu](resource-qualifiers-images/vs/15-theme-menu-sml.png "seznamu víc motivů")](resource-qualifiers-images/vs/15-theme-menu.png)
+[![Další motivy seznamu](resource-qualifiers-images/vs/15-theme-menu-sml.png "seznamu víc motivů")](resource-qualifiers-images/vs/15-theme-menu.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Další motivy seznamu](resource-qualifiers-images/xs/14-theme-menu-sml.png)](resource-qualifiers-images/xs/14-theme-menu.png)
+[![Další motivy seznamu](resource-qualifiers-images/xs/14-theme-menu-sml.png)](resource-qualifiers-images/xs/14-theme-menu.png#lightbox)
 
 -----
 
@@ -271,12 +265,11 @@ Pokud je vybraná motiv, návrhovou plochu, která je aktualizována na účinku
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Motiv světlý je nyní k dispozici](resource-qualifiers-images/xs/15-light-theme-sml.png)](resource-qualifiers-images/xs/15-light-theme.png)
+[![Motiv světlý je nyní k dispozici](resource-qualifiers-images/xs/15-light-theme-sml.png)](resource-qualifiers-images/xs/15-light-theme.png#lightbox)
 
 -----
 
 
-<a name="Android_Version" />
 
 ## <a name="android-version"></a>Verzi systému Android
 
@@ -293,7 +286,7 @@ Sada pomůcky, které jsou k dispozici v sadě nástrojů je určena cílová ve
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Seznam verzí systému Android](resource-qualifiers-images/xs/16-android-version-sml.png)](resource-qualifiers-images/xs/16-android-version.png)
+[![Seznam verzí systému Android](resource-qualifiers-images/xs/16-android-version-sml.png)](resource-qualifiers-images/xs/16-android-version.png#lightbox)
 
 Cílová verze framework lze nastavit v nastavení projektu v části **možnosti projektu > sestavení > Obecné** části. Další informace o cílové verze framework najdete v tématu [Principy Android API úrovně](~/android/app-fundamentals/android-api-levels.md).
 

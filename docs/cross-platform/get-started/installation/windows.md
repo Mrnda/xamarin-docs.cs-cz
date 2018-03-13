@@ -7,27 +7,19 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 09/29/2017
-ms.openlocfilehash: b68e03251b83192bdc5836af6ea54446ddaad24a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: bffc6bb1bc6537745fe9603906b5938fc3c34fe1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="installing-xamarin-in-visual-studio-on-windows"></a>Nainstalovat Xamarin v sadě Visual Studio v systému Windows
 
 Vzhledem k tomu, že je nyní součástí Xamarin všechny edice sady Visual Studio bez jakýchkoli nákladů a nevyžaduje samostatné licence, instalační program sady Visual Studio můžete použít ke stažení a instalaci nástrojů pro Xamarin.
 
--   [Požadavky](#requirements)
--   [Instalace](#installation)
--   [Přidání Xamarin pro Visual Studio 2017](#vs2017)
--   [Přidání Xamarin pro Visual Studio 2015](#vs2015)
--   [Ověření instalace](#verifying)
--   [Další kroky](#nextsteps)
-
-
 <a name="requirements" />
 
-# <a name="requirements"></a>Požadavky
+## <a name="requirements"></a>Požadavky
 
 Tady jsou požadované pro instalaci nástrojů Visual Studio tools pro Xamarin:
 
@@ -44,7 +36,7 @@ Další informace o požadavcích pro instalaci a použití Xamarin najdete v t�
 
 <a name="installation" />
 
-# <a name="installation"></a>Instalace
+## <a name="installation"></a>Instalace
 
 Xamarin lze nainstalovat jako součást nové instalace sady Visual Studio.
 Chcete-li dosáhnout, použijte následující kroky:
@@ -55,7 +47,7 @@ Chcete-li dosáhnout, použijte následující kroky:
 
 3. Vyberte **pro vývoj mobilních řešení s .NET** zatížení na obrazovce instalace: 
 
-    [![Mobilní vývoj s .NET výběrem na obrazovce úlohy](windows-images/01-mobile-dev-workload-sml.png)](windows-images/01-mobile-dev-workload.png)
+    [![Mobilní vývoj s .NET výběrem na obrazovce úlohy](windows-images/01-mobile-dev-workload-sml.png)](windows-images/01-mobile-dev-workload.png#lightbox)
 
 4. Při **pro vývoj mobilních řešení s .NET** je vybrána, podívejte se na **Souhrn** panely na pravé straně. Zde zrušte výběr možnosti pro vývoj mobilních řešení, které nechcete instalovat. Ve výchozím nastavení, jsou nainstalované všechny možnosti uvedené v následující snímek obrazovky (**Xamarin sešity**, **Xamarin profileru**, **používat vzdáleně simulátoru Xamarin**,  **Android NDK**, **sady SDK pro Android**, **Java SE Development Kit**, **emulátor Google Android**, **F # podpora**, a **Intel HAXM**):
 
@@ -76,7 +68,7 @@ Chcete-li dosáhnout, použijte následující kroky:
 
 <a name="vs2017" />
 
-## <a name="adding-xamarin-to-visual-studio-2017"></a>Přidání Xamarin pro Visual Studio 2017
+### <a name="adding-xamarin-to-visual-studio-2017"></a>Přidání Xamarin pro Visual Studio 2017
 
 Pokud Visual Studio 2017 je již nainstalován, můžete přidat Xamarin znovu opětovným spuštěním instalačního programu sady Visual Studio k úpravě úlohy (viz [upravit Visual Studio](https://docs.microsoft.com/visualstudio/install/modify-visual-studio) podrobnosti). Potom postupujte podle kroků uvedených výše, chcete-li nainstalovat Xamarin.
 
@@ -85,7 +77,7 @@ Další informace o stažení a instalaci Visual Studio 2017 najdete v tématu [
 
 <a name="vs2015" />
 
-## <a name="adding-xamarin-to-visual-studio-2015"></a>Přidání Xamarin pro Visual Studio 2015
+### <a name="adding-xamarin-to-visual-studio-2015"></a>Přidání Xamarin pro Visual Studio 2015
 
 Chcete-li Xamarin.Android přidat do existující instalace sady Visual Studio 2015, použijte následující kroky:
 
@@ -104,7 +96,7 @@ Chcete-li Xamarin.Android přidat do existující instalace sady Visual Studio 2
 
 <a name="verifying" />
 
-## <a name="verifying-installation"></a>Ověření instalace
+### <a name="verifying-installation"></a>Ověření instalace
 
 Visual Studio 2017, můžete ověřit, nainstalovaný Xamarin kliknutím **pomoci** nabídky. Pokud je nainstalovaná Xamarin, měli byste vidět **Xamarin** položky nabídky, jak je vidět na tomto snímku obrazovky:
 
@@ -118,11 +110,11 @@ Další informace o vyhledání informací o verzi najdete v tématu [kde najdu 
 
 <a name="nextsteps" />
 
-# <a name="next-steps"></a>Další kroky
+## <a name="next-steps"></a>Další kroky
 
 Instalace Visual Studio Tools pro Xamarin umožňuje zahájit zápis kódu pro aplikace, ale nevyžaduje další nastavení pro vytváření a nasazování aplikací simulátoru, emulátoru a zařízení. Navštivte následující příručky k dokončení instalace a začít vytvářet aplikace pro kombinované platformy.
 
-## <a name="ios"></a>iOS
+### <a name="ios"></a>iOS
 
 Podrobnější informace najdete v článku [Xamarin.iOS instalace v systému Windows](~/ios/get-started/installation/windows/index.md) průvodce. 
 
@@ -131,13 +123,13 @@ Podrobnější informace najdete v článku [Xamarin.iOS instalace v systému Wi
 3. [iOS Developer instalace](~/ios/get-started/installation/windows/index.md#developersetup) (ke spuštění aplikace na zařízení).
 4. [Připojení k hostiteli Mac sestavení sady Visual Studio](~/ios/get-started/installation/windows/index.md#connectingtomac)
 5. [Používat vzdáleně simulátoru iOS](~/tools/ios-simulator.md)
-6. [Úvod do Xamarin.iOS pro sadu Visual Studio](~/ios/get-started/installation/windows/introduction-to-xamarin-ios-for-visual-studio.md)
+6. [Úvod k Xamarin.iOSu pro Visual Studio](~/ios/get-started/installation/windows/introduction-to-xamarin-ios-for-visual-studio.md)
 
-## <a name="android"></a>Android
+### <a name="android"></a>Android
 
 Podrobnější informace najdete v článku [Xamarin.Android instalace v systému Windows](~/android/get-started/installation/windows.md) průvodce.
 
 1. [Konfigurace Xamarin.Android](~/android/get-started/installation/windows.md#configuration)
 2. [Pomocí Xamarin Android SDK Manager](~/android/get-started/installation/android-sdk.md?ide=vs)
-3. [Emulátor sady SDK pro Android](~/android/get-started/installation/android-emulator/index.md)
-4. [Nastavit zařízení pro vývoj](~/android/get-started/installation/set-up-device-for-development.md)
+3. [Emulátor sady Android SDK](~/android/get-started/installation/android-emulator/index.md)
+4. [Nastavení zařízení pro vývoj](~/android/get-started/installation/set-up-device-for-development.md)

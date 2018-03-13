@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: bac9402df544a57cceb98e816e268eb2dcb99c72
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8eed2d6b825a6e6dd7e956bf901246b9a630081a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="hello-wear"></a>Hello, opotřebení
 
@@ -30,11 +30,11 @@ Vytvořte novou **aplikace pro Android nosit**:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Vytvoření nové nosit aplikace pro Android v dialogu Nový projekt](hello-wear-images/vs/new-solution-sml.png)](hello-wear-images/vs/new-solution.png)
+[![Vytvoření nové nosit aplikace pro Android v dialogu Nový projekt](hello-wear-images/vs/new-solution-sml.png)](hello-wear-images/vs/new-solution.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Vytvoření nové nosit aplikace pro Android v dialogovém okně nové řešení](hello-wear-images/xs/new-solution-sml.png)](hello-wear-images/xs/new-solution.png)
+[![Vytvoření nové nosit aplikace pro Android v dialogovém okně nové řešení](hello-wear-images/xs/new-solution-sml.png)](hello-wear-images/xs/new-solution.png#lightbox)
 
 -----
 
@@ -47,13 +47,13 @@ Tato šablona automaticky zahrne **Xamarin Android Wearable knihovny** NuGet (a 
 
 Ujistěte se, že **minimální Android k cíli** je nastaven na **Android 5.0 (typu Lupa)** nebo novější: 
 
-[![Nastavení rozhraní Target Framework na Android 5.0 v sadě Visual Studio](hello-wear-images/vs/target-framework-sml.png)](hello-wear-images/vs/target-framework.png)
+[![Nastavení rozhraní Target Framework na Android 5.0 v sadě Visual Studio](hello-wear-images/vs/target-framework-sml.png)](hello-wear-images/vs/target-framework.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 Zkontrolujte cílový framework je nastavená na **Android 5.0 (typu Lupa)** nebo novější:
 
-[ ![Nastavení rozhraní Target Framework na Android 5.0 v sadě Visual Studio pro Mac](hello-wear-images/xs/target-framework-sml.png)](hello-wear-images/xs/target-framework.png)
+[![Nastavení rozhraní Target Framework na Android 5.0 v sadě Visual Studio pro Mac](hello-wear-images/xs/target-framework-sml.png)](hello-wear-images/xs/target-framework.png#lightbox)
 
 -----
 
@@ -144,11 +144,11 @@ Zařízení Android nosit objevit v rozevírací nabídku zařízení. Nezapome�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Výběr AVD se nosit v nabídce zařízení sady Visual Studio](hello-wear-images/vs/choose-wear-sim.png)](hello-wear-images/vs/choose-wear-sim.png)
+[![Výběr AVD se nosit v nabídce zařízení sady Visual Studio](hello-wear-images/vs/choose-wear-sim.png)](hello-wear-images/vs/choose-wear-sim.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Výběr AVD se nosit v sadě Visual Studio pro Mac zařízení nabídky](hello-wear-images/xs/choose-wear-sim.png)](hello-wear-images/xs/choose-wear-sim.png)
+[![Výběr AVD se nosit v sadě Visual Studio pro Mac zařízení nabídky](hello-wear-images/xs/choose-wear-sim.png)](hello-wear-images/xs/choose-wear-sim.png#lightbox)
 
 -----
 
@@ -160,11 +160,11 @@ Pokud používáte emulátor sledovat, může trvat nějakou dobu pro spuštěn�
 
 Po aplikaci úspěšně nasadí, by měl obrazovce opotřebení ze zařízení zobrazí obrazovka takto:
 
-[![Úvodní obrazovka opotřebení aplikace](hello-wear-images/mainactivity-screen.png)](hello-wear-images/mainactivity-screen.png)
+[![Úvodní obrazovka opotřebení aplikace](hello-wear-images/mainactivity-screen.png)](hello-wear-images/mainactivity-screen.png#lightbox)
 
 Klepněte **klikněte na tlačítko Poslat mi!** tlačítko na přední opotřebení ze zařízení a zjistit, o počtu přírůstek s každou klepněte na:
 
-[![Snímek obrazovky nosit aplikace po kliknutí na 3](hello-wear-images/mainactivity-counts.png)](hello-wear-images/mainactivity-counts.png)
+[![Snímek obrazovky nosit aplikace po kliknutí na 3](hello-wear-images/mainactivity-counts.png)](hello-wear-images/mainactivity-counts.png#lightbox)
 
 
 ## <a name="next-steps"></a>Další kroky

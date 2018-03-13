@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: f02c5cfd75fd9d9cd97d28ca276b32808f7a45ae
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f1ce6b62ef13d24148048253700d7b3bff805fad
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="path-basics"></a>Základy cesta
 
@@ -99,7 +99,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 První obrysem se skládá z volání [ `MoveTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.MoveTo/p/System.Single/System.Single/) pomocí souřadnice X a Y místo `SKPoint` hodnotu následovanou tří volání [ `LineTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.LineTo/p/System.Single/System.Single/) k vykreslení tři stranách trojúhelníku. Druhý obrysem má jenom dvě volání `LineTo` ale dokončením obrysem pomocí volání [ `Close` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.Close()/), který zavře Kontury. Rozdíl je důležité:
 
-[![](paths-images/twotrianglecontours-small.png "Trojitá snímek obrazovky stránky dva profily okrajů trojúhelníček")](paths-images/twotrianglecontours-large.png "Trojitá snímek obrazovky stránky dva profily trojúhelníček okrajů")
+[![](paths-images/twotrianglecontours-small.png "Trojitá snímek obrazovky stránky dva profily okrajů trojúhelníček")](paths-images/twotrianglecontours-large.png#lightbox "Trojitá snímek obrazovky stránky dva profily trojúhelníček okrajů")
 
 Jak můžete vidět, první obrysem je samozřejmě řadu tři řádky připojené, ale end není připojení k začátku. Dva řádky překrývat v horní části. Druhý obrysem je samozřejmě uzavřený a dosáhlo s jedním méně `LineTo` volá, protože `Close` metoda automaticky přidá poslední řádek zavřete Kontury.
 
@@ -189,7 +189,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Tady je program běžící na třech platformách:
 
-[![](paths-images/strokejoins-small.png "Trojitá snímek obrazovky stránky připojí tahu")](paths-images/strokejoins-large.png "Trojitá snímek obrazovky stránky tahu spojení")
+[![](paths-images/strokejoins-small.png "Trojitá snímek obrazovky stránky připojí tahu")](paths-images/strokejoins-large.png#lightbox "Trojitá snímek obrazovky stránky tahu spojení")
 
 Pokosové spojení se skládá z sharp bodu, kde řádky připojit. Když dva řádky v malých úhlu, se může stát pokosové spojení poměrně dlouho. Aby nadměrně dlouhá pokosové spojení, je omezena délka pokosové spojení hodnotu [ `StrokeMiter` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeMiter/) vlastnost `SKPaint`. Pokosové spojení delší, než tato délka je chopped vypnout stane zkosení spojení.
 

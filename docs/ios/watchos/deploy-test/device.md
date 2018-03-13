@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: fab2092837f9b9ca8ada53274c9644f131fb5659
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 211f8c7066e86dac3a8351b913da0185093dcb70
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="testing-on-watch-devices"></a>Testování v sledování zařízení
 
@@ -32,7 +32,7 @@ Testování aplikací pro iOS na skutečné iPhone nebo iPad vždy vyžaduje za�
 
 Sleduje se neliší – nyní je třeba přidat zařízení Apple Watch před nasazením aplikace k němu. Najít pomocí sledování UDID **Xcode** (**Windows > zařízení** seznamu). Při připojení spárované telefonu sledovat informace se zobrazí také:
 
-[ ![](device-images/xcode-devices-sml.png "Informace o spárované sledování")](device-images/xcode-devices.png)
+[![](device-images/xcode-devices-sml.png "Informace o spárované sledování")](device-images/xcode-devices.png#lightbox)
 
 Pokud víte, sledovat UDID, přidejte do seznamu zařízení na webu Dev Center:
 
@@ -99,12 +99,12 @@ K tomu může dojít při sestavování v režimu ladění k nasazení na zaří
 
 K *dočasně* tento problém obejít, zakažte **přírůstková sestavení** v rozšíření sledovat **možnosti projektu > sestavení > watchOS sestavení** okno:
 
-[ ![](device-images/disable-incremental-sml.png "Zaškrtávací políčko přírůstková sestavení")](device-images/disable-incremental.png)
+[![](device-images/disable-incremental-sml.png "Zaškrtávací políčko přírůstková sestavení")](device-images/disable-incremental.png#lightbox)
 
 Tento problém bude vyřešený v příští verzi, po jejímž uplynutí přírůstkové sestavení se dá znovu povolit využívat výhod sestavení rychlejší.
 
 
-#<a name="3-watch-app-fails-to-start-while-debugging-on-device"></a>Sledování aplikace selže 3# spustit při ladění na zařízení
+### <a name="watch-app-fails-to-start-while-debugging-on-device"></a>Podívejte se, že aplikace se nepodaří spustit při ladění na zařízení
 
 Jakmile se zobrazí při pokusu o ladění aplikace sledovat na fyzické zařízení, ikona & načítání Číselník (a nakonec časový limit). To bude vyřešen v budoucí verzi; alternativní řešení je spustit sestavení pro vydání (který neumožní ladění).
 

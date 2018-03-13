@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 0c79e982e7f6543c6dc34885b0afcd7056989a96
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9b76376bdbcf10bf35768cfdb79b6823388e303c
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="handling-multiple-resolutions-in-cocossharp"></a>Zpracování více řešení v CocosSharp
 
@@ -22,33 +22,12 @@ CocosSharp poskytuje metody pro standardizace rozměry objektu ve hře bez ohled
 
 Výchozí chování řešení CocosSharp je tak, aby odpovídala fyzické pixelů s ve hře souřadnice. Následující tabulka ukazuje, jak různá zařízení by vykreslení pozadí pohyblivý symbol prostředí s šířka a výška 368 x 240. První řádek je technicky není skutečné zařízení, ale spíš očekávané vykreslování pohyblivý symbol, bez ohledu na zařízení řešení:
 
-<table>
-    <thead>
-        <tr>
-            <th>Zařízení</th>
-            <th>Rozlišení obrazovky</th>
-            <th>Příklad – snímek obrazovky</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Požadované zobrazení</td>
-            <td>368 x 240 (s černým řádky poměru stran)</td>
-            <td><img src="resolutions-images/image1.png" title="368 x 240 (s černým řádky poměru stran)" /></td>
-        </tr>
-        <tr>
-            <td>iPhone 4s</td>
-            <td>960x640</td>
-            <td><img src="resolutions-images/image2.png" title="iPhone 4s 960x640" /></td>
-        </tr>
-        <tr>
-            <td>iPhone 6 Plus</td>
-            <td>1920x1080</td>
-            <td><img src="resolutions-images/image3.png" title="iPhone 6 Plus 1920x1080" /></td>
-        </tr>
-    </tbody>
-</table>
 
+| **Zařízení** | **Rozlišení obrazovky** | **Příklad – snímek obrazovky** |
+|--- | --- |--- |
+|Požadované zobrazení|368 x 240 (s černým řádky poměru stran)| ![368 x 240 (s černým řádky poměru stran)](resolutions-images/image1.png) |
+|iPhone 4s|960x640| ![iPhone 4s 960x640](resolutions-images/image2.png) |
+|iPhone 6 Plus|1920x1080| ![iPhone 6 Plus 1920x1080](resolutions-images/image3.png) |
 
 Tento dokument popisuje, jak používat CocosSharp k opravě problému uvedené v předchozí tabulce. To znamená, že jsme zaměříme jak provádět jakékoli zařízení vykreslení, jak je znázorněno v prvním řádku – bez ohledu na rozlišení obrazovky.
 

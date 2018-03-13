@@ -7,17 +7,17 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 8e0f5b24ff6790aa3bf63eb9112790e0a62ce0a3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 302bb1225067ad401f97ee6bad88b4cd16c6dc95
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="in-app-purchase-basics-and-configuration"></a>Základní informace o nákupy v aplikaci a konfigurace
 
 Implementace nákupy v aplikaci vyžaduje, aby aplikace využívat rozhraní API StoreKit na zařízení. StoreKit spravuje veškerou komunikaci se servery společnosti Apple iTunes k získání informací o produktu a provádění transakcí. Profil zřizování musí být nakonfigurované k nákupu v aplikaci a informace o produktu je třeba zadat v iTunes připojit.
 
- [ ![](in-app-purchase-basics-and-configuration-images/image1.png "StoreKit spravuje veškerou komunikaci s společnosti Apple, jak je znázorněno v tomto grafu")](in-app-purchase-basics-and-configuration-images/image1.png)
+ [![](in-app-purchase-basics-and-configuration-images/image1.png "StoreKit spravuje veškerou komunikaci s společnosti Apple, jak je znázorněno v tomto grafu")](in-app-purchase-basics-and-configuration-images/image1.png#lightbox)
 
 Použití obchodu s aplikacemi pro poskytnutí nákupu v aplikaci vyžaduje následující nastavení a konfiguraci:
 
@@ -58,11 +58,11 @@ Před psaní jakéhokoli kódu by měly být dokončené tyto tři kroky:
 
 Vytváření a distribuci bezplatných aplikací vyžaduje velmi malé konfigurace v nástroji [iTunes Connect](https://itunesconnect.apple.com), ale prodávat placené aplikace nebo nákupy v aplikaci, musíte poskytnout informace o bankovnictví a zdanění Apple. Klikněte na **smlouvy, daň a bankovnictví** z hlavní nabídky znázorněno zde:
 
- [ ![](in-app-purchase-basics-and-configuration-images/image2.png "Klikněte na smlouvy, daň a bankovnictví z hlavní nabídky")](in-app-purchase-basics-and-configuration-images/image2.png)
+ [![](in-app-purchase-basics-and-configuration-images/image2.png "Klikněte na smlouvy, daň a bankovnictví z hlavní nabídky")](in-app-purchase-basics-and-configuration-images/image2.png#lightbox)
 
 By měl mít vývojářského účtu **aplikace pro iOS placené** smlouvy platit, jak je vidět na tomto snímku obrazovky:
 
- [ ![](in-app-purchase-basics-and-configuration-images/image3.png "Vývojářský účet by měl mít iOS, které platí smlouvy placené aplikace")](in-app-purchase-basics-and-configuration-images/image3.png)
+ [![](in-app-purchase-basics-and-configuration-images/image3.png "Vývojářský účet by měl mít iOS, které platí smlouvy placené aplikace")](in-app-purchase-basics-and-configuration-images/image3.png#lightbox)
 
 Nebudete moci testovat žádné funkce StoreKit, dokud nebudete mít **placené aplikace pro iOS** kontrakt – volání StoreKit ve vašem kódu se nezdaří, dokud zpracovala Apple vaší **smlouvy, daň a bankovnictví** informace.
 
@@ -75,7 +75,7 @@ Formulář pro vytváření nových **ID aplikace**
 
  vypadá takto:
 
- [ ![](in-app-purchase-basics-and-configuration-images/image4.png "Formulář pro vytvoření nového ID aplikace")](in-app-purchase-basics-and-configuration-images/image4.png)
+ [![](in-app-purchase-basics-and-configuration-images/image4.png "Formulář pro vytvoření nového ID aplikace")](in-app-purchase-basics-and-configuration-images/image4.png#lightbox)
 
 Zadejte něco vhodné pro *popis*, abyste mohli snadno identifikovat toto ID aplikace v seznamu. Pro *předponu ID aplikace*, vyberte tým ID.
 
@@ -90,7 +90,7 @@ Můžete použít libovolný řetězec, který chcete pro vaše **identifikátor
 
 Všimněte si, že **nákupy v aplikaci** automaticky povolí v seznamu služeb:
 
- [ ![](in-app-purchase-basics-and-configuration-images/image5.png "Nákupy v aplikaci se automaticky povolí v seznamu služeb")](in-app-purchase-basics-and-configuration-images/image5.png)
+ [![](in-app-purchase-basics-and-configuration-images/image5.png "Nákupy v aplikaci se automaticky povolí v seznamu služeb")](in-app-purchase-basics-and-configuration-images/image5.png#lightbox)
 
 #### <a name="provisioning-profiles"></a>Profily zřizování
 
@@ -100,16 +100,16 @@ Vytváření profilů zřizování produkční a vývoj, jako za normálních ok
 
 Klikněte na tlačítko **Moje aplikace** v iTunes připojit k vytvoření nebo úprava položky aplikace iOS. Zobrazí se zde Přehled stránky aplikace:
 
- [ ![](in-app-purchase-basics-and-configuration-images/image6.png "Přehled stránky aplikace")](in-app-purchase-basics-and-configuration-images/image6.png)
+ [![](in-app-purchase-basics-and-configuration-images/image6.png "Přehled stránky aplikace")](in-app-purchase-basics-and-configuration-images/image6.png#lightbox)
 
 Klikněte na tlačítko **nákupy v aplikaci** vytváření nebo editace vaši produktů pro prodej. Tento snímek obrazovky znázorňuje ukázkové aplikace s několika produkty již přidán:
 
- [ ![](in-app-purchase-basics-and-configuration-images/image7.png "Ukázkové aplikace s několika produkty již přidán.")](in-app-purchase-basics-and-configuration-images/image7.png)
+ [![](in-app-purchase-basics-and-configuration-images/image7.png "Ukázkové aplikace s několika produkty již přidán.")](in-app-purchase-basics-and-configuration-images/image7.png#lightbox)
 
 Postup přidání nové produkty má dva kroky:
 
-1.   Zvolte typ produktu: [ ![ ] (in-app-purchase-basics-and-configuration-images/image8.png "zvolte typ produktu")](in-app-purchase-basics-and-configuration-images/image8.png) 
-2.   Zadejte atributy produktu, včetně Id produktu, cenová úroveň a lokalizované popisy: [ ![ ] (in-app-purchase-basics-and-configuration-images/image9.png "zadání atributů produktů")](in-app-purchase-basics-and-configuration-images/image9.png)
+1.   Zvolte typ produktu: [ ![ ] (in-app-purchase-basics-and-configuration-images/image8.png "zvolte typ produktu")](in-app-purchase-basics-and-configuration-images/image8.png#lightbox) 
+2.   Zadejte atributy produktu, včetně Id produktu, cenová úroveň a lokalizované popisy: [ ![ ] (in-app-purchase-basics-and-configuration-images/image9.png "zadání atributů produktů")](in-app-purchase-basics-and-configuration-images/image9.png#lightbox)
 
 Pole, vyžaduje se pro každý produkt nákupy v aplikaci jsou následující:
 
@@ -158,13 +158,13 @@ App Store neumožňuje zvolte libovolné ceny pro vaše produkty – Apple posky
 
 Apple poskytuje matici cena vám pomohou vybrat správnou úroveň měna/cenu, který chcete. Zobrazí se zde výňatek matice ceny (srpen 2012):
 
- [ ![](in-app-purchase-basics-and-configuration-images/image10.png "Výňatek matice cena srpen 2012")](in-app-purchase-basics-and-configuration-images/image10.png)
+ [![](in-app-purchase-basics-and-configuration-images/image10.png "Výňatek matice cena srpen 2012")](in-app-purchase-basics-and-configuration-images/image10.png#lightbox)
 
 V době psaní (článku červen 2013) jsou 87 vrstev z USD 0,99 k 999,99 USD. Ceny matice zobrazí cenu, budou platit vašim zákazníkům a také dobu, který obdržíte od společnosti Apple – to je méně za 30 % a také všechny místní daně jsou požadována ke shromažďování (Všimněte si v příkladu, že USA a Kanadě prodejci příjem 70 c pro 99 p c roduct, zatímco australské prodejci přijímat pouze 63 c kvůli ' zboží &amp; služby daň se uloženo na prodejní ceny).
 
 Ceny svůj produkt lze aktualizovat kdykoli, včetně změn naplánované ceny, které se projeví na budoucí datum. Tento snímek obrazovky ukazuje, jak přidat změnu s datem budoucí cena – ceny dočasně mění se z vrstvy 1 do vrstvy 3 pro měsíc září pouze:
 
- [ ![](in-app-purchase-basics-and-configuration-images/image11.png "Kde cenu dočasně mění se z vrstvy 1 do vrstvy 3 pro měsíc září pouze změnu s datem budoucí cena")](in-app-purchase-basics-and-configuration-images/image11.png)
+ [![](in-app-purchase-basics-and-configuration-images/image11.png "Kde cenu dočasně mění se z vrstvy 1 do vrstvy 3 pro měsíc září pouze změnu s datem budoucí cena")](in-app-purchase-basics-and-configuration-images/image11.png#lightbox)
 
 ### <a name="free-products-not-supported"></a>Volné produkty není podporován
 
@@ -174,7 +174,7 @@ I když Apple poskytl speciální možnost bezplatné předplatné pro Newsstand
 
 V iTunes připojení můžete zadat jiný název a popis text pro libovolný počet podporovaných jazyků. Jednotlivé jazyky lze přidat nebo upravit v prostřednictvím místní okno:
 
- [ ![](in-app-purchase-basics-and-configuration-images/image12.png "Jednotlivé jazyky lze přidat nebo upravit v prostřednictvím místní okno")](in-app-purchase-basics-and-configuration-images/image12.png)   
+ [![](in-app-purchase-basics-and-configuration-images/image12.png "Jednotlivé jazyky lze přidat nebo upravit v prostřednictvím místní okno")](in-app-purchase-basics-and-configuration-images/image12.png#lightbox)   
    
    
    
@@ -186,7 +186,7 @@ Stejné jako aplikace – každý produkt je zkontrolovat společností Apple d�
 
 Prvním aplikace je odeslána s v aplikaci zakoupení povolené (ať už je novou aplikaci nebo funkci se přidal do některého ze stávajících), musíte také zvolit některé produkty odeslat s ním. Na portálu Connect iTunes vás vyzve k tomu, jak je vidět na tomto snímku obrazovky:
 
- [ ![](in-app-purchase-basics-and-configuration-images/image13.png "Na portálu Connect iTunes vás vyzve k odeslání některé produkty, i")](in-app-purchase-basics-and-configuration-images/image13.png)   
+ [![](in-app-purchase-basics-and-configuration-images/image13.png "Na portálu Connect iTunes vás vyzve k odeslání některé produkty, i")](in-app-purchase-basics-and-configuration-images/image13.png#lightbox)   
    
    
    

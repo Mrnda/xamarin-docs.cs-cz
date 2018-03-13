@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2016
-ms.openlocfilehash: 84450527a1301cf95c93a5dc2796a2cf76f4ae2b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3a66ec9f935159e4854a12584a6c9f70ab805abb
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-an-effect"></a>Vytváření efekt
 
@@ -29,7 +29,7 @@ Proces vytvoření vliv v každém projektu specifické pro platformu vypadá ta
 Účinek pak určené pro připojení k vhodný ovládací prvek.
 
 > [!NOTE]
-> **Poznámka:**: zadání je volitelné zajistit vliv v každém projektu platformy. Pokus o použití vliv, pokud jeden není registrován vrátí nenulovou hodnotu, která se nic nestane.
+> Zadání je volitelné zajistit vliv v každém projektu platformy. Pokus o použití vliv, pokud jeden není registrován vrátí nenulovou hodnotu, která se nic nestane.
 
 Představuje ukázkovou aplikaci `FocusEffect` , změní barvu pozadí ovládacího prvku, kdy získá fokus. Následující diagram znázorňuje odpovědnosti jednotlivých projektů v ukázkové aplikace, spolu s jejich vzájemných vztahů:
 
@@ -195,7 +195,7 @@ Proces pro použití vliv z Xamarin.Forms přenosných třída knihovny PCL () n
 1. Připojte účinek do ovládacího prvku přidáním do ovládacího prvku [ `Effects` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.Effects/) kolekce.
 
 > [!NOTE]
-> **Poznámka:**: instance vliv lze připojit pouze jeden ovládací prvek. Proto je třeba vyřešit vliv dvakrát pro použití na dvou ovládacích prvků.
+> Instance vliv lze připojit pouze k jeden ovládací prvek. Proto je třeba vyřešit vliv dvakrát pro použití na dvou ovládacích prvků.
 
 ## <a name="consuming-the-effect-in-xaml"></a>Využívání účinek v jazyce XAML
 

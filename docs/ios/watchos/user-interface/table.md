@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 4887b9a42c5a855353b5a4e422559aafcdc68173
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0b8d8d08db15959a47093f255a891605a089ea00
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="table-control"></a>Ovládací prvek tabulky
 
@@ -24,7 +24,7 @@ WatchOS `WKInterfaceTable` ovládací prvek je mnohem jednodušší než jeho pr
 
 Přetáhněte **tabulky** ovládacího prvku do scény. Ve výchozím nastavení bude vypadat jako tento (zobrazující rozložení neurčené jeden řádek):
 
-[ ![](table-images/add-table-sml.png "Přidání tabulky")](table-images/add-table.png)
+[![](table-images/add-table-sml.png "Přidání tabulky")](table-images/add-table.png#lightbox)
 
 Zadejte název tabulky **vlastnosti** pad na **název** pole, takže může být uvedené v kódu.
 
@@ -34,7 +34,7 @@ Tabulka automaticky obsahuje jeden řádek, reprezentována řadič řádek, kte
 
 Nastavit **třída** pro řadič řádek, vyberte řádek v **Osnova dokumentu** a zadejte název třídy v **vlastnosti** odsazení:
 
-[ ![](table-images/add-row-controller-sml.png "V poli vlastnosti pro zadávání názvu – třída")](table-images/add-row-controller.png)
+[![](table-images/add-row-controller-sml.png "V poli vlastnosti pro zadávání názvu – třída")](table-images/add-row-controller.png#lightbox)
 
 Po nastavení třídy pro řádku řadič IDE vytvoří odpovídající soubor C# v projektu. Přetáhněte ovládací prvky (například popisky) na řádku a přiřaďte jim názvy, takže se může být uvedené v kódu.
 

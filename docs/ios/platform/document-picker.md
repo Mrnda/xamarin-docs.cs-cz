@@ -7,11 +7,11 @@ ms.assetid: 89539D79-BC6E-4A3E-AEC6-69D9A6CC6818
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: a10dcbbdcd7792cb7c54c883566911264b6d81e6
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4a8f1632076a12b1737ba8294ac8b2f28f19dc77
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="document-picker"></a>Výběr dokumentu.
 
@@ -54,7 +54,7 @@ Předtím, než začnete je kód potřebný k pomocí nástroje pro výběr doku
 
 Vzhledem k tomu, že soubor můžete upravit z několika různých místech, použije koordinaci předchází se tak ztrátě dat.
 
- [ ![](document-picker-images/image1.png "Pomocí souboru spolupráce")](document-picker-images/image1.png)
+ [![](document-picker-images/image1.png "Pomocí souboru spolupráce")](document-picker-images/image1.png#lightbox)
 
 Podívejme se na obrázku výše:
 
@@ -193,7 +193,7 @@ Je způsob, jak zjistit a seznam dokumentů pomocí stávající `NSMetadataQuer
 
 Před iOS 8 `NSMetadataQuery` bylo pomalé v sítích na změny ve výstupní místního souboru jako například: Odstraní, vytvoří a přejmenuje.
 
- [ ![](document-picker-images/image2.png "Přehled změny NSMetadataQuery místního souboru")](document-picker-images/image2.png)
+ [![](document-picker-images/image2.png "Přehled změny NSMetadataQuery místního souboru")](document-picker-images/image2.png#lightbox)
 
 V diagramu:
 
@@ -208,7 +208,7 @@ Z důvodu zpoždění při vytváření `NSMetadata` záznamu, aplikace měla m�
 
 V iOS 8 `NSMetadataQuery` je jednodušší použít přímo s novou funkci s názvem Stitching:
 
- [ ![](document-picker-images/image3.png "NSMetadataQuery pomocí nové funkce volá Stitching")](document-picker-images/image3.png)
+ [![](document-picker-images/image3.png "NSMetadataQuery pomocí nové funkce volá Stitching")](document-picker-images/image3.png#lightbox)
 
 Pomocí Stitching v diagramu:
 
@@ -824,7 +824,7 @@ Před iOS 8 se velmi obtížné přístup k dokumentům z jiné aplikace, proto�
 
 ### <a name="existing-behavior"></a>Chování existující
 
- [ ![](document-picker-images/image31.png "Existující chování – přehled")](document-picker-images/image31.png)
+ [![](document-picker-images/image31.png "Existující chování – přehled")](document-picker-images/image31.png#lightbox)
 
 Podívejme se na přístup k externím dokumentu před iOS 8:
 
@@ -839,7 +839,7 @@ Zde je k dispozici pro druhý aplikace otevírat a upravovat v dokumentu.
 
 Aplikace v iOS 8, je moct snadno přístup k dokumentům mimo svůj vlastní aplikace kontejneru:
 
- [ ![](document-picker-images/image32.png "Zjišťování dokumenty mimo kontejner aplikace")](document-picker-images/image32.png)
+ [![](document-picker-images/image32.png "Zjišťování dokumenty mimo kontejner aplikace")](document-picker-images/image32.png#lightbox)
 
 Použití nového serveru služby iCloud výběr dokumentu ( `UIDocumentPickerViewController`), aplikace pro iOS můžete přímo zjistit a využít mimo jeho kontejneru aplikace. `UIDocumentPickerViewController` Poskytuje mechanismus pro uživatele a udělit přístup k upravit ty zjištěna dokumentů prostřednictvím oprávnění.
 
@@ -910,16 +910,16 @@ Tady je příklad, jakým způsobem se výše uvedený kód by zobrazení dokume
 
 1.  Uživatel spustí aplikaci, a zobrazí se hlavní rozhraní:   
  
-    [ ![](document-picker-images/image33.png "Zobrazí se hlavní rozhraní")](document-picker-images/image33.png)
+    [![](document-picker-images/image33.png "Zobrazí se hlavní rozhraní")](document-picker-images/image33.png#lightbox)
 1.  Odposlouchávání uživatele **akce** tlačítka v horní části obrazovky a se zobrazí výzva k výběru **dokumentu zprostředkovatele** ze seznamu dostupných zprostředkovatelů:   
  
-    [ ![](document-picker-images/image34.png "Vyberte zprostředkovatele dokumentu ze seznamu dostupných zprostředkovatelů")](document-picker-images/image34.png)
+    [![](document-picker-images/image34.png "Vyberte zprostředkovatele dokumentu ze seznamu dostupných zprostředkovatelů")](document-picker-images/image34.png#lightbox)
 1.  **Dokumentu výběr View Controller** se zobrazí pro vybrané **dokumentu zprostředkovatele**:   
  
-    [ ![](document-picker-images/image35.png "Výběr řadiče zobrazení dokumentu se zobrazí.")](document-picker-images/image35.png)
+    [![](document-picker-images/image35.png "Výběr řadiče zobrazení dokumentu se zobrazí.")](document-picker-images/image35.png#lightbox)
 1.  Uživatel klepnutím na **složku dokumentů** zobrazíte její obsah:   
  
-    [ ![](document-picker-images/image36.png "Obsah dokumentu složky")](document-picker-images/image36.png)
+    [![](document-picker-images/image36.png "Obsah dokumentu složky")](document-picker-images/image36.png#lightbox)
 1.  Uživatel vybere **dokumentu** a **dokumentu výběr** je uzavřený.
 1.  Hlavní rozhraní se zobrazí znovu, **dokumentu** se načtou z externí kontejneru a její obsah zobrazí.
 
@@ -930,7 +930,7 @@ Skutečné zobrazení řadiče zobrazení dokumentu výběr závisí na poskytov
 
 Jak je popsáno výše, před iOS 8, aplikace by mohla přístup jenom k dokumenty, které byly součástí jeho kontejneru aplikace. V iOS 8 aplikace můžete přístup k dokumentům z externích zdrojů:
 
- [ ![](document-picker-images/image37.png "Externí dokumenty přehled správy")](document-picker-images/image37.png)
+ [![](document-picker-images/image37.png "Externí dokumenty přehled správy")](document-picker-images/image37.png#lightbox)
 
 Když uživatel vybere dokumentu z externího zdroje, referenční dokument je zapsán do kontejneru aplikace, který odkazuje na původního dokumentu.
 
@@ -1021,10 +1021,10 @@ Výběr řadiče zobrazení dokumentu funkce dvou různých režimech:
 
 1.  **Otevřete režimu** – v tomto režimu při uživatel vybere a externí dokumentu, nástroje pro výběr dokumentu vytvořte záložku obor zabezpečení v kontejneru aplikace.   
  
-    [ ![](document-picker-images/image37.png "Záložku v kontejneru aplikace obor zabezpečení")](document-picker-images/image37.png)
+    [![](document-picker-images/image37.png "Záložku v kontejneru aplikace obor zabezpečení")](document-picker-images/image37.png#lightbox)
 1.  **Režim import** – v tomto režimu, když uživatel vybere a externí dokumentu, nástroje pro výběr dokumentu nebude vytvořte záložku, ale místo toho zkopírujte soubor do dočasného umístění a poskytnout přístup k aplikaci v dokumentu v tomto umístění:   
  
-    [ ![](document-picker-images/image38.png "Nástroje pro výběr dokumentu bude zkopírujte soubor do dočasného umístění a poskytují přístup k aplikaci v dokumentu v tomto umístění")](document-picker-images/image38.png)   
+    [![](document-picker-images/image38.png "Nástroje pro výběr dokumentu bude zkopírujte soubor do dočasného umístění a poskytují přístup k aplikaci v dokumentu v tomto umístění")](document-picker-images/image38.png#lightbox)   
  Jakmile se aplikace ukončí z jakéhokoli důvodu, vyprázdnění dočasného umístění a odebrat soubor. Pokud aplikace potřebuje k získání přístupu k souboru, měl by vytvořit kopii a jeho následné uložení do své aplikace kontejneru.
 
 
@@ -1069,7 +1069,7 @@ Tato možnost je implementovaná pomocí dvou různých rozšíření:
 
 Následující diagram znázorňuje tok typické dat při práci s dokumentu poskytovatele rozšíření:
 
- [ ![](document-picker-images/image39.png "Tento diagram zobrazuje tok typické dat při práci s dokumentu poskytovatele rozšíření")](document-picker-images/image39.png)
+ [![](document-picker-images/image39.png "Tento diagram zobrazuje tok typické dat při práci s dokumentu poskytovatele rozšíření")](document-picker-images/image39.png#lightbox)
 
 Spustí následující proces:
 
@@ -1095,7 +1095,7 @@ Z bezpečnostních důvodů má iOS 8 izolační vrstvy, které ukládá informa
 
 Následující diagram znázorňuje tok dat při práci s záložky a přípona zprostředkovatele:
 
- [ ![](document-picker-images/image40.png "Tento diagram zobrazuje tok dat při práci s záložky a příponu zprostředkovatele dokumentu")](document-picker-images/image40.png)
+ [![](document-picker-images/image40.png "Tento diagram zobrazuje tok dat při práci s záložky a příponu zprostředkovatele dokumentu")](document-picker-images/image40.png#lightbox)
 
 Spustí následující proces:
 

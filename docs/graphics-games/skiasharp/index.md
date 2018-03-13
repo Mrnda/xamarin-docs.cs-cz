@@ -8,17 +8,17 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 09/14/2017
-ms.openlocfilehash: 03089e4760ebf19849cd4d34cafb7047d8915a4d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ee0625f22062fef3c27a697ce33488274abc24d9
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="2d-drawing"></a>2D kreslení
 
 SkiaSharp poskytuje výkonné API jazyka C# pro provádění 2D grafiky. Používá technologii [Google Skia knihovny](http://skia.org), stejnou knihovnu, která pohání grafické zásobníky Google Chrome, Firefox a pro Android.
 
-[ ![](images/ide-sml.png "SkiaSharp poskytuje výkonné C# rozhraní API pro provádění 2D grafiky")](images/ide.png)
+[![](images/ide-sml.png "SkiaSharp poskytuje výkonné C# rozhraní API pro provádění 2D grafiky")](images/ide.png#lightbox)
 
 SkiaSharp je přenosné knihovny a nemusí se dodává jako [balíček NuGet napříč platformami](https://www.nuget.org/packages/SkiaSharp)a podporuje tyto platformy ihned: systému macOS, Xamarin.Android, Xamarin.iOS a Windows Desktop.
 
@@ -32,7 +32,7 @@ Naučte se pracovat s křížové grafiky platformu, která vykreslit v Xamarin.
 
 - [Základy kreslení](~/xamarin-forms/user-interface/graphics/skiasharp/basics/index.md)
   * [Kreslení jednoduché kruhu.](~/xamarin-forms/user-interface/graphics/skiasharp/basics/circle.md)
-  * [Integrace s Xamarin.Forms](~/xamarin-forms/user-interface/graphics/skiasharp/basics/integration.md)
+  * [Integrace se Xamarin.Forms](~/xamarin-forms/user-interface/graphics/skiasharp/basics/integration.md)
   * [Pixelů a jednotky nezávislé na zařízení](~/xamarin-forms/user-interface/graphics/skiasharp/basics/pixels.md)
   * [Základní animace](~/xamarin-forms/user-interface/graphics/skiasharp/basics/animation.md)
   * [Integrace textu a obrázků](~/xamarin-forms/user-interface/graphics/skiasharp/basics/text.md)
@@ -56,11 +56,11 @@ Naučte se pracovat s křížové grafiky platformu, která vykreslit v Xamarin.
 - [Cesty a křivek](~/xamarin-forms/user-interface/graphics/skiasharp/curves/index.md)
   * [Tři způsoby, jak nakreslit oblouk](~/xamarin-forms/user-interface/graphics/skiasharp/curves/arcs.md)
   * [Tři typy Bézierových křivek](~/xamarin-forms/user-interface/graphics/skiasharp/curves/beziers.md)
-  * [Data SVG cesty](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md)
-  * [Výstřižek se cesty a oblasti](~/xamarin-forms/user-interface/graphics/skiasharp/curves/clipping.md)
-  * [Cesta efekty](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md)
-  * [Cesty a Text.](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md)
-  * [Informace o cestě a – výčet](~/xamarin-forms/user-interface/graphics/skiasharp/curves/information.md)
+  * [Data cesty SVG](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md)
+  * [Ořezy cestami a oblastmi](~/xamarin-forms/user-interface/graphics/skiasharp/curves/clipping.md)
+  * [Efekty cest](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md)
+  * [Cesty a text](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md)
+  * [Informace o cestě a výčet](~/xamarin-forms/user-interface/graphics/skiasharp/curves/information.md)
 
 ## <a name="platform-specific-notesgraphics-gamesskiasharpplatformmd"></a>[Poznámky pro konkrétní platformu](~/graphics-games/skiasharp/platform.md)
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 8de7b91e5854e5c660788cdca055860b2ba0139e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: adc08009de308598041adb79dc02bf83bcf4a2f2
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="using-testflight"></a>Pomocí TestFlight
 
@@ -43,7 +43,7 @@ Chcete-li otestovat buildy s TestFlight, bude muset vytvořit *profil distribuce
 
 Můžete zkontrolujte, jestli váš profil distribuce obsahuje beta nároku při [ověřování buildu v Xcode](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md), jak je uvedeno dále:
 
-[ ![](testflight-images/validate-build.png "Odesílání aplikaci Apple")](testflight-images/validate-build.png)
+[![](testflight-images/validate-build.png "Odesílání aplikaci Apple")](testflight-images/validate-build.png#lightbox)
 
 
 ## <a name="testflight-workflow"></a>Pracovní postup TestFlight
@@ -66,7 +66,7 @@ Následující pracovní postup popisuje kroky potřebné k použití TestFlight
 1.  Přihlášení k [iTunes Connect portál](https://itunesconnect.apple.com/) pomocí svých přihlašovacích údajů vývojáře Apple.
 2.  Vyberte **Moje aplikace**:
 
-    [ ![](testflight-images/my-apps.png "Vybrat Moje aplikace")](testflight-images/my-apps.png)
+    [![](testflight-images/my-apps.png "Vybrat Moje aplikace")](testflight-images/my-apps.png#lightbox)
 
 
 3.  Na **Moje aplikace** obrazovky, klikněte na  **+**  tlačítko v levého horního rohu obrazovky, přidejte novou aplikaci. Pokud máte Mac a iOS vývojářským účtům, vyzve k zvolte zde nový typ aplikace.
@@ -81,8 +81,8 @@ Další informace o vytvoření nové iTunes připojit záznam, najdete v část
 
 Formulář by odrážet přesně informace v souboru Info.plist vaší aplikace, jak je uvedeno dále:
 
-[ ![](testflight-images/infoplist.png "Info.plist aplikace") ](testflight-images/infoplist.png) 
- [ ![ ] (testflight-images/newiosapp.png "formuláře na iTunes Connect")](testflight-images/newiosapp.png)
+[![](testflight-images/infoplist.png "Info.plist aplikace")](testflight-images/infoplist.png#lightbox)
+[![](testflight-images/newiosapp.png "formuláře na iTunes Connect")](testflight-images/newiosapp.png#lightbox)
 
 -  **Název** – popisný název, který použil při nastavování sady prostředků aplikace. Tato hodnota musí být přesnou shodou **název aplikace** položku v vaší `Info.plist`.
 -  **Primární jazyk** – základní jazyk použitý v aplikaci. Obvykle se jedná o kterémkoli jazyce, který ovládáte.
@@ -104,7 +104,7 @@ Nejprve vytvoříte vaše [konečné distribuovatelného](~/ios/deploy-test/app-
 
  K vytvoření binární v sadě Visual Studio pro Mac, budete muset použít _archivu_ funkce. Klikněte pravým tlačítkem na projekt a vyberte **archivu pro publikování**, jak je uvedeno dále:
 
- [ ![](testflight-images/new-archive.png "Vyberte archivu pro publikování")](testflight-images/new-archive.png)
+ [![](testflight-images/new-archive.png "Vyberte archivu pro publikování")](testflight-images/new-archive.png#lightbox)
 
 
  Odkazovat [vytváření Distributable](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md) Průvodce pro další informace.
@@ -113,11 +113,11 @@ Nejprve vytvoříte vaše [konečné distribuovatelného](~/ios/deploy-test/app-
 
  Vytváření archiv se automaticky otevře **archivy zobrazení**, zobrazení všech archivovaný projekty seskupené podle řešení. Chcete-li podepište aplikaci a jeho přípravu pro distribuci, vyberte **přihlášení a distribuci...** , vidíte níže:
 
-[ ![](testflight-images/archive-view.png "Vytváření archiv se automaticky otevře zobrazení archivy")](testflight-images/archive-view.png)
+[![](testflight-images/archive-view.png "Vytváření archiv se automaticky otevře zobrazení archivy")](testflight-images/archive-view.png#lightbox)
 
  Otevře se Průvodce přidáním publikování. Vyberte **obchod** distribuční kanál vytvořit balíček a otevřete zavaděč aplikací. Na obrazovce profil zřizování vyberte podpisovou identitu a profil zřizování nebo znovu podepsat pomocí jiné identity. Zkontrolujte podrobnosti vašeho balíčku a klikněte na tlačítko **publikovat** uložit vaše `.ipa`
 
-[ ![](testflight-images/group.png "Vyberte podpisový identity a profil pro zřizování, nebo znovu podepsat pomocí jiné identity")](testflight-images/group.png)
+[![](testflight-images/group.png "Vyberte podpisový identity a profil pro zřizování, nebo znovu podepsat pomocí jiné identity")](testflight-images/group.png#lightbox)
 
  Odkazovat [odeslání vaší aplikace pro Apple](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md) části Další informace o těchto kroků.
 
@@ -156,11 +156,11 @@ Po návratu **Moje aplikace** části z iTunes připojit, byste měli najít ús
 
 Chcete-li začít používat TestFlight, procházejte k **předběžné verze** kartě vaší aplikace. Tři karty zobrazující seznam sestavení, testery interní a externí Testerů, byste měli vidět, jak je uvedeno dále:
 
-[ ![](testflight-images/app-uploaded.png "Sestavení, testery interní a externí testerům, sada karet")](testflight-images/app-uploaded.png)
+[![](testflight-images/app-uploaded.png "Sestavení, testery interní a externí testerům, sada karet")](testflight-images/app-uploaded.png#lightbox)
 
 Chcete-li přidat metadata do aplikace, klikněte na číslo sestavení a poté TestFlight:
 
-[ ![](testflight-images/metadata.png "Přidání metadat")](testflight-images/metadata.png)
+[![](testflight-images/metadata.png "Přidání metadat")](testflight-images/metadata.png#lightbox)
 
 V části **testovací informace**, testery můžete poskytnout důležité informace týkající se aplikace, například:
 
@@ -178,11 +178,11 @@ Všimněte si, že tato metadata **není** požadované pro interní testerů, a
 
 Pokud jste připravení zahájit testování vaší aplikace, zapněte **testování Beta TestFlight** přepínač pro vaši verzi:
 
-[ ![](testflight-images/turn-on-testing.png "Zapněte přepínač TestFlight Beta testování")](testflight-images/turn-on-testing.png)
+[![](testflight-images/turn-on-testing.png "Zapněte přepínač TestFlight Beta testování")](testflight-images/turn-on-testing.png#lightbox)
 
 Je aktivní pro každé sestavení **60 dnů** od data jste zapnuli přepínačem TestFlight Beta. Uvidíte, jak dlouho existuje jsou ponechána pro každé sestavení na **testovací informace** stránky:
 
-[ ![](testflight-images/daysleft.png "Informace o testovací stránka")](testflight-images/daysleft.png)
+[![](testflight-images/daysleft.png "Informace o testovací stránka")](testflight-images/daysleft.png#lightbox)
 
 Testování může být vypnuto kdykoli.
 
@@ -198,25 +198,25 @@ Každé sestavení je možné sdílet s maximálně 25 členy.
 
 Chcete-li přidat testery, procházejte k **uživatelů a rolí** na obrazovce připojení hlavní iTunes:
 
-[ ![](testflight-images/users-and-roles.png "Uživatelé a role na obrazovce připojení hlavní iTunes")](testflight-images/users-and-roles.png)
+[![](testflight-images/users-and-roles.png "Uživatelé a role na obrazovce připojení hlavní iTunes")](testflight-images/users-and-roles.png#lightbox)
 
 Existující iTunes uživatelům připojit se zobrazí v seznamu. Vyberte, klikněte na jeho název, zapněte **interní testování** přepínače a klikněte na tlačítko **Uložit**:
 
-[ ![](testflight-images/internal-tester.png "Zapněte přepínač interní testování")](testflight-images/internal-tester.png)
+[![](testflight-images/internal-tester.png "Zapněte přepínač interní testování")](testflight-images/internal-tester.png#lightbox)
 
 Chcete-li přidat uživatele, který není v seznamu, vyberte  **+**  vedle položky *uživatelé*a zadejte první jméno, příjmení a e-mailovou adresu k vytvoření účtu. Uživatel bude muset potvrďte e-mailu k aktivaci účtu:
 
-[ ![](testflight-images/add-new-user.png "Přidání uživatele")](testflight-images/add-new-user.png)
+[![](testflight-images/add-new-user.png "Přidání uživatele")](testflight-images/add-new-user.png#lightbox)
 
 Pokud se vraťte ke **Moje aplikace > předběžné verze > interní testery**, uvidíte nyní jiní uživatelé, které byly přidány pro TestFlight interní testování beta:
 
-[ ![](testflight-images/select-users.png "Seznam uživatelů, které byly přidány pro TestFlight interní testování beta")](testflight-images/select-users.png)
+[![](testflight-images/select-users.png "Seznam uživatelů, které byly přidány pro TestFlight interní testování beta")](testflight-images/select-users.png#lightbox)
 
 Tyto testery můžete pozvat jména výběrem a kliknutím na **pozvat** tlačítko. Uživatelé obdrží e-mail s pozvánka k testování aplikace.
 
 Zobrazí se stav jejich pozvánku ve sloupci Stav vnitřní testery stránky:
 
-[ ![](testflight-images/status-added.png "Stav žádosti")](testflight-images/status-added.png)
+[![](testflight-images/status-added.png "Stav žádosti")](testflight-images/status-added.png#lightbox)
 
 
 ### <a name="external-testers"></a>Externí testery
@@ -225,13 +225,13 @@ Vyzve externí testery beta testování vaší aplikace, se musí projít Beta a
 
 Chcete-li odeslat aplikace ke kontrole, klikněte na tlačítko **odeslání beta verzi aplikace v tématu** text vedle sestavení, jak je znázorněno na obrázku níže:
 
-[ ![](testflight-images/beta-app-review.png "Odeslat ke kontrole beta verze aplikace")](testflight-images/beta-app-review.png)
+[![](testflight-images/beta-app-review.png "Odeslat ke kontrole beta verze aplikace")](testflight-images/beta-app-review.png#lightbox)
 
 Pro aplikaci předat kontrola je nutné zadat všechna požadovaná metadata na stránce informace o TestFlight Beta.
 
 Nyní můžete spustit můžete připravit pozvánek a přidat až 2000 externí testery prostřednictvím kartě externí testery, zadejte jejich e-mailu, křestní jméno a příjmení, jak ukazuje následující snímek obrazovky. E-mailu, které zadáte nemusí být jejich Apple ID; Toto je pouze e-mailu uživatelé obdrží pozvánku.
 
-[ ![](testflight-images/add-external.png "Pozvěte testerům, sada")](testflight-images/add-external.png)
+[![](testflight-images/add-external.png "Pozvěte testerům, sada")](testflight-images/add-external.png#lightbox)
 
 Pokud máte velký počet externí testery, můžete použít **importovat soubor** odkaz k importu `CSV` souboru na každý řádek v následujícím formátu:
 
@@ -243,7 +243,7 @@ Můžete také přidat externí testery na různé skupiny zajistit, aby byl vá
 
 Po zadání podrobností o externí testery, klikněte na tlačítko **přidat** a máte uživatele souhlas pozváním:
 
-[ ![](testflight-images/confirm-consent.png "Potvrďte, že máte uživatele vyzve je vyjádřit souhlas.")](testflight-images/confirm-consent.png)
+[![](testflight-images/confirm-consent.png "Potvrďte, že máte uživatele vyzve je vyjádřit souhlas.")](testflight-images/confirm-consent.png#lightbox)
 
 Až po kontrolu úspěšné beta verze aplikace se nebudete moct odeslat pozvánky pro externí testery. V tomto okamžiku se text pod **externí** na sestavení stránky se změní na **odesílání žádostí**. Klepněte sem a odeslání pozvánky pro všechny testery, že jste už přidali.
 
@@ -253,13 +253,13 @@ Pokud vaše aplikace byla odmítnuta, budete muset opravte problémy uvedené v 
 
 Jakmile můžete pozvat vaší tester, uživatelé obdrží e-mail podobná na tomto snímku obrazovky:
 
-[ ![](testflight-images/tester-email.png "Příklad pozvání e-mailu")](testflight-images/tester-email.png)
+[![](testflight-images/tester-email.png "Příklad pozvání e-mailu")](testflight-images/tester-email.png#lightbox)
 
 Po kliknutí na **otevřete v TestFlight** tlačítko vaše aplikace se otevře v aplikaci TestFlight nebo pokud nebyl již stažen, bude směrovat na obchod s aplikacemi a povolit, aby ho stáhnout.
 
 Jednou vaše aplikace se otevře v TestFlight, se zobrazí podrobnosti o co chcete otestovat a zobrazí výzvu tester k instalaci aplikace na jejich iOS 8.0 (nebo vyšší) zařízení:
 
-[ ![](testflight-images/install-app.png "TestFlight zobrazí podrobnosti o k testování pro")](testflight-images/install-app.png)
+[![](testflight-images/install-app.png "TestFlight zobrazí podrobnosti o k testování pro")](testflight-images/install-app.png#lightbox)
 
 Test sestavení, označeno na domovskou obrazovku zařízení oranžové tečkou předcházející název aplikace.
 
@@ -269,7 +269,7 @@ Testery můžete poskytnout zpětnou vazbu prostřednictvím TestFlight aplikace
 
 Po dokončení testování verze beta můžete nyní odeslat aplikace pro App Store kontrolní společností Apple. Tento proces se provádí velmi jednoznačně v iTunes připojení kliknutím **odeslat ke kontrole** tlačítko, jak je uvedeno dále:
 
-[ ![](testflight-images/submit-for-review.png "Klikněte na adresu odeslání pro tlačítko Kontrola")](testflight-images/submit-for-review.png)
+[![](testflight-images/submit-for-review.png "Klikněte na adresu odeslání pro tlačítko Kontrola")](testflight-images/submit-for-review.png#lightbox)
 
 ## <a name="summary"></a>Souhrn
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: d4da50dac901628b9baf10a07650d232a977a653
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f77eac8179f9e368e767bb4b586ccaa3f93e40a3
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-page-control"></a>Práce s ovládací prvek stránky
 
@@ -20,7 +20,7 @@ _Tento článek se zabývá navrhování a práce s ovládací prvek stránku uv
 
 Někdy je třeba zobrazit řadu stránky nebo bitové kopie v aplikaci Xamarin.tvOS. Ovládací prvek stránku byla navržená tak, aby jasně zobrazení stránky, které je uživatel na mimo maximální počet stránek. Ovládací prvek stránky se zobrazuje řada teček proti tmavý, oval ve tvaru pozadí. Na aktuální stránce se zobrazí vyplněný bod, všechny ostatní stránky zobrazit jako dutý tečky. Ovládací prvek stránky bude oříznutí vnější většina tečky, pokud jsou moc, aby se vešla do jeho pozadí oblasti.
 
-[ ![](page-controls-images/page01.png "Ukázkové stránky ovládací prvek")](page-controls-images/page01.png)
+[![](page-controls-images/page01.png "Ukázkové stránky ovládací prvek")](page-controls-images/page01.png#lightbox)
 
 Ovládací prvek stránku v neinteraktivním elementu navržený tak, aby váš názor jenom uživateli. Musíte přidat další ovládací prvky, chcete-li změnit aktuální číslo stránky (například gesta nebo tlačítek).
 
@@ -41,14 +41,14 @@ Nejjednodušší způsob, jak pracovat s ovládacími prvky stránky v aplikaci 
 1. V **řešení Pad**, dvakrát klikněte `Main.storyboard` souborů a otevřete pro úpravy.
 1. Přetáhněte **ovládací prvek stránku** z **sada nástrojů** na zobrazení: 
 
-    [ ![](page-controls-images/page02.png "Ovládací prvek stránky")](page-controls-images/page02.png)
+    [![](page-controls-images/page02.png "Ovládací prvek stránky")](page-controls-images/page02.png#lightbox)
 1. V **pomůcky karta** z **vlastnosti Pad**, můžete upravit několik vlastností ovládacího prvku stránky, jako jeho **aktuální stránku** a **počet stránek**: 
 
-    [ ![](page-controls-images/page03.png "Na kartě pomůcky")](page-controls-images/page03.png)
+    [![](page-controls-images/page03.png "Na kartě pomůcky")](page-controls-images/page03.png#lightbox)
 1. Ovládací prvky nebo gesta v dalším kroku přidejte do zobrazení přesunout zpátky a předávání prostřednictvím kolekce stránek.
 1. Nakonec přiřadit **názvy** pro ovládací prvky, aby mohli odpovídat na ně v kódu jazyka C#. Příklad: 
 
-    [ ![](page-controls-images/page04.png "Název ovládacího prvku")](page-controls-images/page04.png)
+    [![](page-controls-images/page04.png "Název ovládacího prvku")](page-controls-images/page04.png#lightbox)
 1. Uložte provedené změny.
     
 
@@ -58,14 +58,14 @@ Nejjednodušší způsob, jak pracovat s ovládacími prvky stránky v aplikaci 
 1. V **Průzkumníku řešení**, dvakrát klikněte `Main.storyboard` souborů a otevřete pro úpravy.
 1. Přetáhněte **ovládací prvek stránku** z **sada nástrojů** na zobrazení: 
 
-    [ ![](page-controls-images/page02-vs.png "Ovládací prvek stránky")](page-controls-images/page02-vs.png)
+    [![](page-controls-images/page02-vs.png "Ovládací prvek stránky")](page-controls-images/page02-vs.png#lightbox)
 1. V **pomůcky karta** z **Explorer vlastnosti**, můžete upravit několik vlastností ovládacího prvku stránky, jako jeho **aktuální stránku** a **počet stránek**: 
 
-    [ ![](page-controls-images/page03-vs.png "Na kartě pomůcky")](page-controls-images/page03-vs.png)
+    [![](page-controls-images/page03-vs.png "Na kartě pomůcky")](page-controls-images/page03-vs.png#lightbox)
 1. Ovládací prvky nebo gesta v dalším kroku přidejte do zobrazení přesunout zpátky a předávání prostřednictvím kolekce stránek.
 1. Nakonec přiřadit **názvy** pro ovládací prvky, aby mohli odpovídat na ně v kódu jazyka C#. Příklad: 
 
-    [ ![](page-controls-images/page04-vs.png "Název ovládacího prvku")](page-controls-images/page04-vs.png)
+    [![](page-controls-images/page04-vs.png "Název ovládacího prvku")](page-controls-images/page04-vs.png#lightbox)
 1. Uložte provedené změny.
     
 

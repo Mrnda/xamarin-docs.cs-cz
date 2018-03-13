@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/07/2018
-ms.openlocfilehash: 66b956eddc48699c6fd61e9cb52a7fbc3fa70a51
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9fac4a233cecd9332602047bc83830d145b5fb08
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-a-custom-contentprovider"></a>Vytváření vlastních ContentProvider
 
@@ -28,7 +28,6 @@ Třída poskytovateli obsahu musí dědit z `ContentProvider`. By měla obsahova
 
 Mono pro Android, by měl mít třídě poskytovateli obsahu `[ContentProvider]` atributu zadejte identifikátor Uri (nebo identifikátory URI) musí být přidaní do **AndroidManifest.xml**.
 
-<a name="Mime_Type" />
 
 ### <a name="mime-type"></a>Typ MIME
 
@@ -40,7 +39,6 @@ Typický formát pro typy MIME se skládá ze dvou částí. Android `ContentPro
 
 Druhá část typ MIME je specifický pro vaši aplikaci a měli používat standardní zpětného DNS s `vnd.` předponu. Ukázkový kód používá `vnd.com.xamarin.sample.Vegetables`.
 
-<a name="Data_Model_Metadata" />
 
 ### <a name="data-model-metadata"></a>Datový Model metadat
 
@@ -50,7 +48,6 @@ Aby se zajistilo, že jsou pouze dotazy na platný identifikátor Uri vytvořen�
 
 V předchozím příkladu `android.provider.ContactsContract` třída vystavena metadata pro kontakty data. Pro naše vlastní `ContentProvider` zveřejňujeme bude pouze konstanty na vlastní třídy.
 
-<a name="Implementation" />
 
 ## <a name="implementation"></a>Implementace
 
@@ -64,7 +61,6 @@ Existují tři kroky k vytvoření a použití vlastní `ContentProvider`:
 
 Dřív popsané, `ContentProviders` z aplikací, než kde jsou definovány, mohou být využívány. V tomto příkladu je využívat data ve stejné aplikaci, ale mějte na paměti, která jiné aplikace taky k němu přístup, dokud vědí, identifikátor Uri a informace o schématu (který je obvykle zveřejňují jako konstantní hodnoty).
 
-<a name="Create_a_database" />
 
 ## <a name="create-a-database"></a>Vytvoření databáze
 
@@ -98,13 +94,11 @@ class VegetableDatabase  : SQLiteOpenHelper {
 
 Implementace databáze samotné nemusí žádná zvláštní opatření, které mají být exponovány s `ContentProvider`, ale pokud chcete vytvořit vazbu `ContentProvider's` dat `ListView` řízení pak celé číslo jedinečný sloupec s názvem `_id` musí být součástí Sada výsledků dotazu. Najdete v článku [ListViews a adaptéry](~/android/user-interface/layouts/list-view/index.md) dokumentu pro další podrobnosti o použití `ListView` ovládacího prvku.
 
-<a name="Create_the_ContentProvider" />
 
 ## <a name="create-the-contentprovider"></a>Vytvořte ContentProvider
 
 Zbytek Tato část obsahuje podrobné pokyny o jak **SimpleContentProvider/VegetableProvider.cs** Ukázka třídy byl sestaven.
 
-<a name="Initialize_the_Database" />
 
 ### <a name="initialize-the-database"></a>Inicializace databáze
 
@@ -124,7 +118,6 @@ public class VegetableProvider : ContentProvider
 
 Zbytek kód budou formovat implementace skutečné obsahu zprostředkovatele, který umožňuje data, která mají být zjištěny a dotaz.
 
-<a name="Add_Metadata_for_Consumers" />
 
 
 ## <a name="add-metadata-for-consumers"></a>Přidání metadat pro příjemce
@@ -165,7 +158,6 @@ public class VegetableProvider : ContentProvider
 }
 ```
 
-<a name="Implement_the_URI_Parsing_Helper" />
 
 ## <a name="implement-the-uri-parsing-helper"></a>Implementace identifikátor URI analýza pomocné rutiny
 
@@ -195,7 +187,6 @@ static UriMatcher BuildUriMatcher()
 
 Tento kód je pro všechny privátní `ContentProvider` třídy. Odkazovat na [Google UriMatcher dokumentace](https://developer.xamarin.com/api/type/Android.Content.UriMatcher/) Další informace.
 
-<a name="Implement_the_QueryMethod" />
 
 ## <a name="implement-the-querymethod"></a>Implementace QueryMethod
 
@@ -241,7 +232,6 @@ public override String GetType(Android.Net.Uri uri)
 }
 ```
 
-<a name="Implement_the_Other_Overrides" />
 
 ## <a name="implement-the-other-overrides"></a>Implementace dalších přepsání
 
@@ -264,13 +254,11 @@ public override int Update(Android.Net.Uri uri, ContentValues values, string sel
 
 Která se dokončí základní `ContentProvider` implementace. Po instalaci aplikace, budou k dispozici data zpřístupňuje jak uvnitř aplikace, ale také na všechny aplikace, které zná identifikátor Uri na něj odkazovat.
 
-<a name="Access_the_ContentProvider" />
 
 ## <a name="access-the-contentprovider"></a>Přístup ContentProvider
 
 Jednou `VegetableProvider` byla implementována, k ní přistupují se provádí stejným způsobem jako zprostředkovatel kontakty na začátku tohoto dokumentu: získat kurzoru pomocí zadaný identifikátor Uri a potom pomocí adaptéru pro přístup k datům.
 
-<a name="Bind_a_ListView_to_a_ContentProvider" />
 
 ## <a name="bind-a-listview-to-a-contentprovider"></a>Vytvořit vazbu ContentProvider prvku ListView
 
@@ -296,10 +284,9 @@ listView.Adapter = adapter;
 
 Výsledné aplikace vypadá takto:
 
-[![Snímek obrazovky aplikace seznam zelenina, ovoce, poupat, luskovin, žárovky, hlízy](custom-contentprovider-images/api11-contentprovider2.png)](custom-contentprovider-images/api11-contentprovider2.png)
+[![Snímek obrazovky aplikace seznam zelenina, ovoce, poupat, luskovin, žárovky, hlízy](custom-contentprovider-images/api11-contentprovider2.png)](custom-contentprovider-images/api11-contentprovider2.png#lightbox)
 
 
-<a name="Retrieve_a_Single_Item_from_a_ContentProvider" />
 
 ## <a name="retrieve-a-single-item-from-a-contentprovider"></a>Načíst jednu položku z ContentProvider
 

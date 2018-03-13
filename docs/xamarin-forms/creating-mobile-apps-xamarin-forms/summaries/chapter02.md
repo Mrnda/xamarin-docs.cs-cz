@@ -3,14 +3,15 @@ title: Souhrn kapitoly 2. Anatomie aplikace
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 8764EB7D-8331-4CF7-9BE1-26D0DEE9E0BB
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 893030170175403c7f7d6885e924e425b4f73c05
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f1569911eb47f28ea6aee2313d01e07c801746df
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-2-anatomy-of-an-app"></a>Souhrn kapitoly 2. Anatomie aplikace
 
@@ -186,7 +187,7 @@ Tyto vlastnosti nejsou obvykle použít přímo. Místo toho kombinace těchto d
 
 Tady je výsledků `HorizontalOptions` a `VerticalOptions` vlastnosti `Label` obě nastaveny na `LayoutOptions.Center`:
 
-[![Trojitá snímek obrazovky pozdrav program](images/ch02fg05-small.png "vodorovně a svisle na střed popisku")](images/ch02fg05-large.png "vodorovně a svisle na střed popisku")
+[![Trojitá snímek obrazovky pozdrav program](images/ch02fg05-small.png "vodorovně a svisle na střed popisku")](images/ch02fg05-large.png#lightbox "vodorovně a svisle na střed popisku")
 
 ## <a name="solution-5-center-the-text-within-the-label"></a>Řešení 5. Center textu v rámci popisku
 

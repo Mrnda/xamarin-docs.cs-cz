@@ -3,14 +3,15 @@ title: "Shrnutí kapitoly 25. Stránka typy"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: D1D348F2-6A44-4781-ADCE-A0B7BB9AEF89
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: bbe960357d9180df90a4423d6acfdf3f869d1b77
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 30642709519fc809d30da9a437728112f56a64d6
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-25-page-varieties"></a>Shrnutí kapitoly 25. Stránka typy
 
@@ -54,7 +55,7 @@ Platformy Windows 8.1 a Windows Phone 8.1 vyžadují, aby rastrový obrázek nas
 
 Také nastaví souboru XAML [ `IsPresented` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.IsPresented/) vlastnost `MasterDetailPage` k `True`. To způsobí, že hlavní stránky, který se má zobrazit při spuštění; ve výchozím nastavení se zobrazí stránka podrobností. [SchoolAndDetailPage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/SchoolAndDetail/SchoolAndDetail/SchoolAndDetail/SchoolAndDetailPage.xaml.cs) souboru nastaví `IsPresented` k `false` když se vybere položka ze `ListView` na hlavní stránce. Stránka Podrobnosti se následně zobrazí:
 
-[![Trojitá snímek obrazovky a podrobností školní](images/ch25fg09-small.png "stránku s podrobnostmi od MasterDetailPage")](images/ch25fg09-large.png "stránku s podrobnostmi od MasterDetailPage")
+[![Trojitá snímek obrazovky a podrobností školní](images/ch25fg09-small.png "stránku s podrobnostmi od MasterDetailPage")](images/ch25fg09-large.png#lightbox "stránku s podrobnostmi od MasterDetailPage")
 
 ### <a name="your-own-user-interface"></a>Vlastní uživatelské rozhraní
 
@@ -98,7 +99,7 @@ Tento přístup však nebude fungovat i na iOS když kolekce obsahuje větší p
 
 Pro jednotlivé stránky, které se zobrazí v `TabbedPage`, `Title` vlastnost je nutný zadejte text, na kartě, a Apple Store taky použít ikonu proto `Icon` je nastavena pro iOS:
 
-[![Trojitá snímek obrazovky diskrétní barvy – záložkami](images/ch25fg13-small.png "TabbedPage")](images/ch25fg13-large.png "TabbedPage")
+[![Trojitá snímek obrazovky diskrétní barvy – záložkami](images/ch25fg13-small.png "TabbedPage")](images/ch25fg13-large.png#lightbox "TabbedPage")
 
 [ **StudentNotes** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25/StudentNotes) ukázka má domovskou stránku, která obsahuje seznam všech studentů. Po klepnutí student přejde na `TabbedPage` odvozených, [ `StudentNotesDataPage` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/StudentNotes/StudentNotes/StudentNotes/StudentNotesDataPage.xaml), který zahrnuje tři `ContentPage` objekty v jeho vizuálním stromu, díky čemuž zadání tohoto student některé poznámky.
 

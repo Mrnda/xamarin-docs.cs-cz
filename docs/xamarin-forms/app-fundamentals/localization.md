@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: ad9129e06f43eea69518c4d876edc7cfd462f4e0
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: ffde89558495c4b9ccb9ec41761b5fc7ca53db38
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="localization"></a>Lokalizace
 
@@ -71,7 +71,7 @@ Prvním krokem při globalizace Xamarin.Forms PCL aplikace je přidání soubory
 
 Zvolte smysluplný název, jako **AppResources** a stiskněte klávesu **OK**.
 
-[ ![Přidání souboru prostředků](localization-images/resx-new-file-sml.png "dialogové okno Nový soubor")](localization-images/resx-new-file.png "dialogové okno Nový soubor")
+[![Přidání souboru prostředků](localization-images/resx-new-file-sml.png "dialogové okno Nový soubor")](localization-images/resx-new-file.png#lightbox "dialogové okno Nový soubor")
 
 Dva soubory budou přidány do projektu:
 
@@ -88,32 +88,32 @@ Ve výchozím nastavení při generování silně typované odkazy na řetězce,
 
 Vyberte **AppResources.resx** souboru a zobrazit **vlastnosti** konfigurace pad zobrazíte, kde je tento nástroj pro sestavení. Na snímku obrazovky níže ukazuje **Custom Tool: ResXFileCodeGenerator**.
 
-[[ide name="xs]]
 
-[ ![](localization-images/xs-resx-internal-sml.png "Odsazení vlastnosti pro AppResources.Resx")](localization-images/xs-resx-internal.png)
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[[/ide]]
+[![](localization-images/vs-resx-internal-sml.png "Vlastnosti – okno pro AppResources.Resx")](localization-images/vs-resx-internal.png#lightbox)
 
-[[ide name="vs]]
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![](localization-images/vs-resx-internal-sml.png "Vlastnosti – okno pro AppResources.Resx")](localization-images/vs-resx-internal.png)
+[![](localization-images/xs-resx-internal-sml.png "Odsazení vlastnosti pro AppResources.Resx")](localization-images/xs-resx-internal.png#lightbox)
 
-[[/ide]]
+-----
 
 Chcete-li vlastnosti silného typu řetězec `public`, musíte je ručně změnit konfiguraci **Custom Tool: PublicResXFileCodeGenerator**, jak ukazuje následující snímek obrazovky:
 
 
-[[ide name="xs]]
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](localization-images/xs-resx-public-sml.png "Odsazení vlastnosti pro AppResources.Resx")](localization-images/xs-resx-public.png)
+[![](localization-images/vs-resx-public-sml.png "Vlastnosti – okno pro AppResources.Resx")](localization-images/vs-resx-public.png#lightbox)
 
-[[/ide]]
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[[ide name="vs]]
+[![](localization-images/xs-resx-internal-sml.png "Odsazení vlastnosti pro AppResources.Resx")](localization-images/xs-resx-internal.png#lightbox)
 
-[ ![](localization-images/vs-resx-public-sml.png "Vlastnosti – okno pro AppResources.Resx")](localization-images/vs-resx-public.png)
 
-[[/ide]]
+[![](localization-images/xs-resx-public-sml.png "Odsazení vlastnosti pro AppResources.Resx")](localization-images/xs-resx-public.png#lightbox)
+
+-----
 
 Tuto změnu je volitelný a je jenom potřeba, pokud chcete odkazovat lokalizovaných řetězců v různých sestavení (například když vložíte soubory RESX v jiném sestavení kódu). Ukázka pro toto téma opustí řetězce `internal` vzhledem k tomu, že jsou definované ve stejném sestavení Xamarin.Forms PCL, kdy se používá.
 
@@ -605,13 +605,13 @@ Pokud tato nastavení nejsou aktualizovány lokalizované prostředky RESX se ne
 
 Klikněte pravým tlačítkem na projekt Windows Phone a vyberte **vlastnosti**. V **aplikace** kartě značek **podporované jazykové verze** podporující aplikaci:
 
-[ ![](localization-images/winphone-projectproperties-sml.png "Vlastnosti – podporované jazykové verze projektu")](localization-images/winphone-projectproperties.png "projektu – vlastnosti – podporované jazykové verze")
+[![](localization-images/winphone-projectproperties-sml.png "Vlastnosti – podporované jazykové verze projektu")](localization-images/winphone-projectproperties.png#lightbox "projektu – vlastnosti – podporované jazykové verze")
 
 ##### <a name="wmappmanifestxml"></a>WMAppManifest.xml
 
 Rozbalte uzel vlastnosti v projektu Windows Phone a dvakrát klikněte na **WMAppManifest.xml** souboru. Klikněte na **balení** kartě a osové všech jazyků podporovaných aplikací.
 
-[ ![](localization-images/winphone-wmappmanifest-sml.png "WMAppManifest.xml – podporované jazyky")](localization-images/winphone-wmappmanifest.png "WMAppManifest.xml – podporované jazyky")
+[![](localization-images/winphone-wmappmanifest-sml.png "WMAppManifest.xml – podporované jazyky")](localization-images/winphone-wmappmanifest.png#lightbox "WMAppManifest.xml – podporované jazyky")
 
 ##### <a name="assemblyinfocs"></a>AssemblyInfo.cs
 

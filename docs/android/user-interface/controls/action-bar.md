@@ -7,28 +7,26 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: cdbdf7195daf9add01052df8fc0f0cf4c7a0cb0e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 64a5ac7e0c448205da66f9790a506ca34a944140
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="actionbar"></a>Nadřízených členů.
 
-<a name="overview" />
 
 ## <a name="overview"></a>Přehled
 
 Při použití `TabActivity`, kód k vytvoření ikony karta nemá žádný vliv, pokud spouštění rozhraní Android 4.0. I když funkčně funguje stejně jako ve verzích Android před 2.3, `TabActivity` vlastní třídy se již nepoužívá v 4.0. Nový způsob, jak vytvořit rozhraní s kartami je zavedený používající panelu akcí, který probereme Další.
 
-<a name="Action_Bar_Tabs" />
 
 ## <a name="action-bar-tabs"></a>Karty panelu akcí
 
 Na panelu akcí zahrnuje podporu pro přidání záložkách rozhraní v Android 4.0.
 Následující snímek obrazovky ukazuje příklad takového rozhraní.
 
-[![Snímek obrazovky aplikace spuštěna v emulátoru; Zobrazí se dvě karty](action-bar-images/25-actionbartabs.png)](action-bar-images/25-actionbartabs.png)
+[![Snímek obrazovky aplikace spuštěna v emulátoru; Zobrazí se dvě karty](action-bar-images/25-actionbartabs.png)](action-bar-images/25-actionbartabs.png#lightbox)
 
 K vytvoření karty na panelu akcí, musíme nejprve nastavte její `NavigationMode` vlastnost pro podporu karty. V systému Android 4 `ActionBar` vlastnost je k dispozici na třídu aktivity, které jsme můžete použít k nastavení `NavigationMode` podobné výjimky:
 
@@ -84,26 +82,23 @@ this.ActionBar.AddTab (tab);
 
 Úplný příklad najdete v tématu *HelloTabsICS* projekt v ukázkový kód pro tento dokument.
 
-<a name="ShareActionProvider" />
 
 ## <a name="shareactionprovider"></a>ShareActionProvider
 
 `ShareActionProvider` Třída umožňuje sdílení akce od zobrazí panel Akce. Se postará o vytvoření zobrazení akce seznam aplikací, které může zpracovat sdílení záměr a uchovává historii dříve používané aplikace pro snadný přístup k nim později z panelu akcí. To umožňuje aplikacím sdílet data prostřednictvím činnost koncového uživatele, který je konzistentní v rámci Android.
 
-<a name="Image_Sharing_Example" />
 
 ### <a name="image-sharing-example"></a>Příklad sdílení bitové kopie
 
 Například dole je snímek obrazovky panelu akcí s položka nabídky sdílet bitovou kopii (převzaty z [ShareActionProvider](https://developer.xamarin.com/samples/monodroid/ShareActionProviderDemo/) ukázkové). Když uživatel klepnutím položku nabídky na panelu akcí, ShareActionProvider načte aplikaci zpracovávat záměrem, který je spojen s `ShareActionProvider`. V tomto příkladu aplikace zasílání zpráv dříve použilo, takže se zobrazí na panelu akcí.
 
-[![Snímek obrazovky aplikace ikonu na panelu akcí pro zasílání zpráv](action-bar-images/09-shareactionprovider.png)](action-bar-images/09-shareactionprovider.png)
+[![Snímek obrazovky aplikace ikonu na panelu akcí pro zasílání zpráv](action-bar-images/09-shareactionprovider.png)](action-bar-images/09-shareactionprovider.png#lightbox)
 
 
 Když uživatel klikne na položku na panelu akcí, je spuštění aplikace zasílání zpráv, který obsahuje sdílenou bitovou kopii, jak je uvedeno níže:
 
-[![Snímek obrazovky zobrazení opic image zasílání zpráv aplikace](action-bar-images/10-messagewithimage.png)](action-bar-images/10-messagewithimage.png)
+[![Snímek obrazovky zobrazení opic image zasílání zpráv aplikace](action-bar-images/10-messagewithimage.png)](action-bar-images/10-messagewithimage.png#lightbox)
 
-<a name="Specifying_the_action_Provider_Class" />
 
 ### <a name="specifying-the-action-provider-class"></a>Určení akce zprostředkovatele – třída
 
@@ -119,7 +114,6 @@ Použít `ShareActionProvider`, nastavte `android:actionProviderClass` atribut n
 </menu>
 ```
 
-<a name="Inflating_the_Menu" />
 
 ### <a name="inflating-the-menu"></a>Nafouknutí v nabídce
 
@@ -137,7 +131,6 @@ public override bool OnCreateOptionsMenu (IMenu menu)
 }
 ```
 
-<a name="Creating_the_Intent" />
 
 ### <a name="creating-the-intent"></a>Vytváření záměr
 

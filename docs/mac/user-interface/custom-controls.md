@@ -3,16 +3,16 @@ title: "Vytváření vlastních ovládacích prvků"
 description: "Tento článek popisuje, jak vytvořit vlastní ovládací prvky a pracovat s nimi v Tvůrci rozhraní."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 675B9405-D9A7-49F0-94AD-417F10A71D11
+ms.assetid: 004534B1-5AEE-452C-BBBE-8C2673FD49B7
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: f3d6301bc2c0237a268669fff437801bfb2657d1
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 3ea88810384dfe8b1a08080953db19caddf25d6a
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="creating-custom-controls"></a>Vytváření vlastních ovládacích prvků
 
@@ -22,7 +22,7 @@ Při práci s C# a rozhraní .NET v aplikaci Xamarin.Mac, máte přístup ke ste
 
 Zatímco systému macOS poskytuje širokou řadu předdefinovaných uživatelské ovládací prvky, může být pokusů, které je potřeba vytvořit vlastní ovládací prvek zajistit, že funkce není zadaný se na pole nebo tak, aby odpovídaly vlastní motiv uživatelského rozhraní (například herní rozhraní).
 
-[ ![](custom-controls-images/intro01.png "Příklad vlastního ovládacího prvku uživatelského rozhraní")](custom-controls-images/intro01.png)
+[![](custom-controls-images/intro01.png "Příklad vlastního ovládacího prvku uživatelského rozhraní")](custom-controls-images/intro01.png#lightbox)
 
 V tomto článku vám nabídneme základní informace o vytváření opakovaně použitelných vlastní uživatelské rozhraní ovládací prvky v aplikaci Xamarin.Mac. Vysoce navržený na spolupracovat [Hello, Mac](~/mac/get-started/hello-mac.md) článek nejprve, konkrétně [Úvod do Xcode a rozhraní tvůrce](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) a [výstupy a akce](~/mac/get-started/hello-mac.md#Outlets_and_Actions) oddíly, jak se popisuje klíčové koncepty a techniky, které budeme používat v tomto článku.
 
@@ -50,7 +50,7 @@ Vzhledem k tomu, že vlastní ovládací prvek vytváříme bude reagovat na vst
 
 V sadě Visual Studio pro Mac otevřete projekt Xamarin.Mac, který chcete vytvořit vlastní ovládací prvek uživatelského rozhraní pro (nebo vytvořte novou). Přidání nové třídy a pojmenujte ji `NSFlipSwitch`:
 
-[ ![](custom-controls-images/custom01.png "Přidání nové třídy")](custom-controls-images/custom01.png)
+[![](custom-controls-images/custom01.png "Přidání nové třídy")](custom-controls-images/custom01.png#lightbox)
 
 Potom upravte `NSFlipSwitch.cs` třídy a nastavit jej vypadat třeba takto:
 
@@ -336,19 +336,19 @@ Pomocí našeho vlastního ovládacího prvku plně definována můžete buď p�
 
 Přidání ovládacího prvku pomocí rozhraní tvůrce, nejprve provést čisté sestavení projektu Xamarin.Mac, a poté dvakrát klikněte `Main.storyboard` soubor otevřete v Tvůrci rozhraní pro úpravy:
 
-[ ![](custom-controls-images/custom02.png "Úpravy storyboard v Xcode")](custom-controls-images/custom02.png)
+[![](custom-controls-images/custom02.png "Úpravy storyboard v Xcode")](custom-controls-images/custom02.png#lightbox)
 
 V dalším kroku přetáhněte `Custom View` do návrhu uživatelské rozhraní:
 
-[ ![](custom-controls-images/custom03.png "Výběr vlastních zobrazení z knihovny")](custom-controls-images/custom03.png)
+[![](custom-controls-images/custom03.png "Výběr vlastních zobrazení z knihovny")](custom-controls-images/custom03.png#lightbox)
 
 S vlastní zobrazení stále vybrán, přepněte do **Identity Inspector** a změnit zobrazení **třída** k `NSFlipSwitch`:
 
-[ ![](custom-controls-images/custom04.png "Nastavení zobrazení – třída")](custom-controls-images/custom04.png)
+[![](custom-controls-images/custom04.png "Nastavení zobrazení – třída")](custom-controls-images/custom04.png#lightbox)
 
 Přepnout **pomocníka Editor** a vytvořit **výstupu** pro vlastní ovládací prvek (a zkontrolujte, zda vazby v `ViewControler.h` souboru a není `.m` souboru):
 
-[ ![](custom-controls-images/custom05.png "Konfigurace nového výstupu")](custom-controls-images/custom05.png)
+[![](custom-controls-images/custom05.png "Konfigurace nového výstupu")](custom-controls-images/custom05.png#lightbox)
 
 Uložte změny, vraťte se na Visual Studio pro Mac a umožnit synchronizaci změn. Upravit `ViewController.cs` souboru a nastavit `ViewDidLoad` metoda vypadá takto:
 
@@ -369,7 +369,7 @@ Zde jsme reagovat na `ValueChanged` jsme definovali výše na události `NSFlipS
 
 Volitelně můžete jsme vrátit do Tvůrce rozhraní a definovat **akce** na ovládací prvek:
 
-[ ![](custom-controls-images/custom06.png "Konfigurace nové akce")](custom-controls-images/custom06.png)
+[![](custom-controls-images/custom06.png "Konfigurace nové akce")](custom-controls-images/custom06.png#lightbox)
 
 Znovu upravit `ViewController.cs` souboru a přidejte následující metodu:
 

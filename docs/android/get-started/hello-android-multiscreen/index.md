@@ -3,16 +3,16 @@ title: Hello, Android Multiobrazovka
 description: "V této příručce dvě části, rozbalíte Phoneword aplikace, kterou jste vytvořili v Hello, Android Průvodce pro zpracování druhý obrazovky. Tato příručka na cestě vás seznámí základní Android aplikace stavební bloky a ponořit hlouběji do Android architektury když budete vyvíjet lépe porozumět struktura aplikace pro Android a funkce."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 9D08DBB7-B07E-4795-82FB-D794DB867D13
+ms.assetid: D82EC193-2CB7-44C3-8688-0CEBDF60C3D6
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 12/02/2016
-ms.openlocfilehash: bcb808803cae553f81f76575fd4ee4c5b555bd71
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c61e3dfd76f077d36d4bf6f8f43e3aa794e31644
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="hello-android-multiscreen"></a>Hello, Android Multiobrazovka
 

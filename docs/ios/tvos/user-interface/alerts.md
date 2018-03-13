@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 593e17096d92d9a9764545149991817fa616e2fc
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6dabba30c5242d6e7e9ef42a4025f87826a5b89e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-alerts"></a>Práce s výstrahami
 
@@ -21,7 +21,7 @@ _Tento článek se zabývá práci s UIAlertController chcete uživateli v Xamar
 
 Pokud potřebujete získat pozornost tvOS uživatele nebo se zeptejte oprávnění k provedení destruktivní akce (například odstranění souboru), může znamenat k upozornění pomocí `UIAlertViewController`:
 
-[ ![](alerts-images/alert01.png "Příklad UIAlertViewController")](alerts-images/alert01.png)
+[![](alerts-images/alert01.png "Příklad UIAlertViewController")](alerts-images/alert01.png#lightbox)
 
 Pokud navíc k zobrazení zprávy můžete přidat tlačítka a textová pole na výstrahu umožňující uživateli reagovat na akce a poskytnout zpětnou vazbu.
 
@@ -31,7 +31,7 @@ Pokud navíc k zobrazení zprávy můžete přidat tlačítka a textová pole na
 
 Jak jsme uvedli výše, výstrah se používají k získat pozornost uživatele a informujte je stav vaší aplikace nebo žádosti o zpětnou vazbu. Výstrahy musí představovat název, můžete volitelně může mít zprávu a jeden nebo více tlačítek nebo textové pole.
 
-[ ![](alerts-images/alert04.png "Příklad výstrahy")](alerts-images/alert04.png)
+[![](alerts-images/alert04.png "Příklad výstrahy")](alerts-images/alert04.png#lightbox)
 
 Společnost Apple má následující návrhy pro práci s výstrahami:
 
@@ -118,11 +118,11 @@ UIAlertAction.Create ("Button Title", UIAlertActionStyle.Default, _ =>
 
 Kromě přidání akce (tlačítka) výstrahy, můžete přidat textové pole na výstrahu, kterou chcete povolit uživatelům vyplňte informace, jako je ID a heslo uživatele:
 
-[ ![](alerts-images/alert02.png "Textové pole ve výstraze")](alerts-images/alert02.png)
+[![](alerts-images/alert02.png "Textové pole ve výstraze")](alerts-images/alert02.png#lightbox)
 
 Pokud uživatel vybere textové pole, klávesnice standardní tvOS zobrazí což jim umožní zadejte hodnotu pro pole:
 
-[ ![](alerts-images/alert03.png "Zadávání textu")](alerts-images/alert03.png)
+[![](alerts-images/alert03.png "Zadávání textu")](alerts-images/alert03.png#lightbox)
 
 Následující kód zobrazuje výstrahy OK nebo zrušit pomocí jedné textové pole pro zadání hodnotu:
 

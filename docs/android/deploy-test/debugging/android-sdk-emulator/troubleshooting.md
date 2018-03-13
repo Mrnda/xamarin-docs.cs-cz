@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 51cc7a4700e8cb3ece556b0ada841d70d5f2bb8b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 486df3bbee3f8af511140e2d287f9f95571c7b3d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="android-sdk-emulator-troubleshooting"></a>Řešení potíží s emulátoru sady SDK pro Android
 
@@ -83,7 +83,7 @@ Chcete-li tuto chybu vyřešit, přečtěte si téma [jak používat Správce sp
 
 Pokud nechcete zobrazovat upozornění výkonu, můžete je zakázat. V sadě Visual Studio, klikněte na tlačítko **nástroje > Možnosti > Xamarin > Nastavení Androidu** a zakázat **varování, pokud AVD akcelerace není podporované (HAXM)** možnost:
 
-[![Zakázání AVD akcelerace upozornění](troubleshooting-images/win/06-disable-perf-warnings-sml.png)](troubleshooting-images/win/06-disable-perf-warnings.png)
+[![Zakázání AVD akcelerace upozornění](troubleshooting-images/win/06-disable-perf-warnings-sml.png)](troubleshooting-images/win/06-disable-perf-warnings.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -110,13 +110,11 @@ Toto dialogové okno se zobrazí, pokud emulátoru nepodaří spustit z neznám�
 
 -----
 
-<a name="solutions" />
 
 ## <a name="solutions-to-common-problems"></a>Řešení běžných potíží
 
 Mnoho běžných problémů emulátoru Android SDK lze vyřešit tak, že změny konfigurace v počítači nebo po instalaci další software. Následující části popisují tyto problémy a poskytují řešení.
 
-<a name="deployment" />
 
 ### <a name="deployment-issues"></a>Problémy při nasazení
 
@@ -142,7 +140,6 @@ Pokud dojde k chybě o selhání instalace APK na emulátoru nebo selhání při
 5. Pokud v tomto seznamu nezobrazí emulátoru, spusťte **Android SDK Manager**, všechny aktualizace a pak se pokuste spustit v emulátoru znovu.
 
 
-<a name="haxm-issues" />
 
 ### <a name="haxm-issues"></a>HAXM problémy
 
@@ -162,7 +159,6 @@ HAXM může dojít ke konfliktu s jinými technologiemi, které používají vir
 
 - **Antivirový Software** &ndash; Pokud máte spuštěný antivirový software, který používá virtualizace s hardwarovým řízením (například Avast), zakažte nebo odinstalujte tento software, restartování a opakovat emulátoru Android SDK.
 
-<a name="bios" />
 
 #### <a name="incorrect-bios-settings"></a>Nastavení nesprávný systému BIOS
 

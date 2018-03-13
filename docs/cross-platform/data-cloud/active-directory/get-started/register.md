@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 52d06dc6125f91f98e8f3ee8b4f91ad7b52347a3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 776a60701e01a81856b0a85e7136c57b97cff101
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="step-1-register-an-app-to-use-azure-active-directory"></a>Krok 1. Zaregistrovat aplikaci používat Azure Active Directory
 
@@ -19,11 +19,11 @@ ms.lasthandoff: 02/27/2018
 
 2. Po přihlášení, přejděte na **služby Active Directory** (1) oddílu a vyberte adresář, ve které chcete zaregistrovat aplikaci (2)
 
-  [ ![](register-images/01.-active-directory-in-azure-portal-sml.jpg "část a vyberte adresář, ve které chcete zaregistrovat aplikaci")](register-images/01.-active-directory-in-azure-portal.jpg)
+  [ ![](register-images/01.-active-directory-in-azure-portal-sml.jpg "část a vyberte adresář, ve které chcete zaregistrovat aplikaci")](register-images/01.-active-directory-in-azure-portal.jpg#lightbox)
 
 3. Klikněte na tlačítko **přidat** Pokud chcete vytvořit novou aplikaci, pak vyberte **přidat aplikaci, kterou vyvíjí Moje organizace**
 
-  [ ![](register-images/02.-add-new-application-sml.jpg "Přidat aplikaci, kterou vyvíjí Moje organizace")](register-images/02.-add-new-application.jpg)
+  [ ![](register-images/02.-add-new-application-sml.jpg "Přidat aplikaci, kterou vyvíjí Moje organizace")](register-images/02.-add-new-application.jpg#lightbox)
 
 4. Na další obrazovce pojmenujte aplikace (např. XAM-DEMO).
   Zkontrolujte, zda jste vybrali **nativní klientská aplikace** jako typ aplikace.

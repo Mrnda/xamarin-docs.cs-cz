@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 0486b9e4371a1bcab02921da42bcb929f00a782f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8595ecb63e49a4768120e98f41826b74c2dd43e4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="fragments"></a>Fragmenty
 
@@ -28,13 +28,13 @@ Podpora balíčky byly původně názvem *kompatibility knihovny* a povoleno fra
 
 Například následující obrázek znázorňuje, jak jednu aplikaci používá fragmenty napříč různými velikostem zařízení.
 
-[![Diagram použití fragmenty v tabletů a telefonů](images/00.png)](images/00.png)
+[![Diagram použití fragmenty v tabletů a telefonů](images/00.png)](images/00.png#lightbox)
 
 *Fragment A* obsahuje seznam, zatímco *Fragment B* obsahuje podrobnosti o položce zvolené v tomto seznamu. Když aplikace běží na tablet, zobrazí každém z obou fragmentů na stejné aktivity. Pokud stejná aplikace běží v telefonu (s menší obrazovky velikost), fragmenty hostovaným ve dvou samostatných aktivit. Fragment A a Fragment B jsou stejné u obou velikostem, ale liší se aktivity, které budou jejich hostiteli.
 
 Chcete-li aktivita koordinaci a spravovat všechny tyto fragmenty, Android zavedly novou třídu s názvem *FragmentManager*. Každá aktivita má svou vlastní instanci `FragmentManager` pro přidání, odstranění a hledání hostované fragmenty. Následující diagram znázorňuje vztah mezi fragmenty a aktivity:
 
-[![Diagram ilustrující vztahy mezi aktivity, Fragment správce a fragmenty](images/01.png)](images/01.png)
+[![Diagram ilustrující vztahy mezi aktivity, Fragment správce a fragmenty](images/01.png)](images/01.png#lightbox)
 
 V některých namapoval fragmenty můžete představit jako složené ovládací prvky nebo jako malé aktivity. Jejich sady až částí uživatelského rozhraní do opakovatelně použitelných moduly, které lze nezávisle vývojáři v aktivitách. Fragment mít hierarchii zobrazení – stejně jako aktivita – ale na rozdíl od aktivity, ho můžete sdílet mezi obrazovky. Zobrazení se liší od fragmentů, že fragmenty mají své vlastní životního cyklu; zobrazení nepodporují.
 
@@ -51,11 +51,11 @@ Tato příručka obsahuje komplexní přehled o tom, jak používat fragmenty, v
 
 Fragmenty jsou k dispozici v systému Android SDK počínaje úroveň rozhraní API 11 (Android 3.0), jak je znázorněno na následujícím snímku obrazovky:
 
-[![Vyberte úroveň rozhraní API v Android SDK Manager](images/02.png)](images/02.png)
+[![Vyberte úroveň rozhraní API v Android SDK Manager](images/02.png)](images/02.png#lightbox)
 
 Fragmenty jsou k dispozici v Xamarin.Android 4.0 a vyšší. Aplikace pro Xamarin.Android musí být alespoň úroveň rozhraní API 11 (Android 3.0) nebo vyšší, aby bylo možné používat fragmenty. Cílovém Frameworku, který může být nastavena v možnostech projektu, jak je uvedeno níže:
 
-[![Nastavení úrovně rozhraní Target Framework API v možnosti projektu](images/03.png)](images/03.png)
+[![Nastavení úrovně rozhraní Target Framework API v možnosti projektu](images/03.png)](images/03.png#lightbox)
 
 Je možné použít fragmenty ve starších verzích systému Android pomocí balíček Android podporu a Xamarin.Android 4.2 nebo novější. Jak na to je podrobněji popsány v dokumentech v této části.
 

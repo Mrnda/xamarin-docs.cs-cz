@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 3b54ed876857f0cd04d7a304ff05b9710fbd9e04
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 6735e9c03bee981f048231b53539c3b239f64484
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="string-formatting"></a>Řetězec formátování
 
@@ -121,7 +121,7 @@ Poslední část nastaví `BindingContext` na hodnotu `Math.PI` a zobrazí se v�
 
 Tady je programy spuštěné na všech tří platformách:
 
-[![Řetězec formátování](string-formatting-images/stringformatting-small.png "řetězec formátování")](string-formatting-images/stringformatting-large.png "řetězec formátování")
+[![Řetězec formátování](string-formatting-images/stringformatting-small.png "řetězec formátování")](string-formatting-images/stringformatting-large.png#lightbox "řetězec formátování")
 
 ## <a name="viewmodels-and-string-formatting"></a>ViewModels a formátování řetězce
 
@@ -174,7 +174,7 @@ Tento postup je uveden v **lepší výběr barvy** vzorku, který používá ste
 
 Existují tři páry `Slider` a `Label` prvky, které jsou vázány na stejnou vlastnost v zdroje `HslColorViewModel` objektu. Jediným rozdílem je, že `Label` má `StringFormat` vlastnost zobrazíte všechny `Slider` hodnotu.
 
-[![Lépe barvu selektor](string-formatting-images/bettercolorselector-small.png "lépe barvu selektor")](string-formatting-images/bettercolorselector-large.png "lépe barvu selektor")
+[![Lépe barvu selektor](string-formatting-images/bettercolorselector-small.png "lépe barvu selektor")](string-formatting-images/bettercolorselector-large.png#lightbox "lépe barvu selektor")
 
 Možná se ptáte, jak můžete zobrazit (červená, zelená, modré) hodnoty RGB v šestnáctkovém formátu tradiční dvou číslic. Tyto celočíselné hodnoty nejsou přímo dostupné z `Color` struktura. Jedno řešení by vypočítat celočíselné hodnoty součástí barev v rámci ViewModel a umístěte je jako vlastnosti. Může pak naformátovat pomocí `X2` formátování specifikace.
 

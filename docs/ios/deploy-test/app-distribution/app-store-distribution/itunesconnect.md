@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 71d13166bf047f6e645172a18cb5b24c3bc9f811
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2552538c4d586e9471c42aaf7d696955a0908d1b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="configuring-an-app-in-itunes-connect"></a>Konfigurace aplikace v iTunes Connect
 
@@ -32,13 +32,13 @@ iTunes připojení lze použít pro následující:
 - Vyberte prodejní cenu nebo určit, že aplikace budou vydány zdarma.
 - Nakonfigurujte volitelné obchodu s aplikacemi technologie jako herním centru a nákupy v aplikaci.
 
-Kromě toho aplikace musí být také kresby na atraktivní, s vysokým rozlišením, které jsou k dispozici v případě, že Apple rozhodne funkci v úložišti aplikací. Další informace najdete v tématu společnosti Apple [iTunes Příručka vývojáře Connect](#https://developer.apple.com/library/ios/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/About.html#//apple_ref/doc/uid/TP40011225-CH1-SW1).
+Kromě toho aplikace musí být také kresby na atraktivní, s vysokým rozlišením, které jsou k dispozici v případě, že Apple rozhodne funkci v úložišti aplikací. Další informace najdete v tématu společnosti Apple [iTunes Příručka vývojáře Connect](https://developer.apple.com/support/itunes-connect/).
 
 ## <a name="managing-agreements-tax-and-banking"></a>Správa smluv, daně a bankovnictví
 
 **Smlouvy, daň a bankovnictví** části iTunes Connect se používá k poskytování požadované finanční informace týkající se plateb vývojáře iTunes a daň withholdings a sledovat stav veškeré smlouvy máte zavedenou s Apple. Před vydáním aplikace pro iOS v App Storu (zdarma nebo pro prodej), budete muset zavedené správné smlouvy a uzavřeli na veškeré úpravy existující smlouvy.
 
-[ ![](itunesconnect-images/agreement01.png "Správa smluv, daně a bankovnictví")](itunesconnect-images/agreement01.png)
+[![](itunesconnect-images/agreement01.png "Správa smluv, daně a bankovnictví")](itunesconnect-images/agreement01.png#lightbox)
 
 Odsud můžete:
 
@@ -61,13 +61,13 @@ Proveďte [iTunes Connect](https://itunesconnect.apple.com/WebObjects/iTunesConn
 
 1. Klikněte na **Moje aplikace**:
 
-    [ ![](itunesconnect-images/add01.png "Klikněte na Moje aplikace")](itunesconnect-images/add01.png)
+    [![](itunesconnect-images/add01.png "Klikněte na Moje aplikace")](itunesconnect-images/add01.png#lightbox)
 2. Klikněte  **+**  v horní levé dolním rohu a vyberte možnost **nové aplikace pro iOS**:
 
-    [ ![](itunesconnect-images/add02.png "Přidání nové aplikace pro iOS")](itunesconnect-images/add02.png)
+    [![](itunesconnect-images/add02.png "Přidání nové aplikace pro iOS")](itunesconnect-images/add02.png#lightbox)
 3. iTunes Connect se zobrazí **nové aplikace pro iOS** dialogové okno:
 
-    [ ![](itunesconnect-images/add03.png "Dialogové okno nové aplikace iOS")](itunesconnect-images/add03.png)
+    [![](itunesconnect-images/add03.png "Dialogové okno nové aplikace iOS")](itunesconnect-images/add03.png#lightbox)
 4. Zadejte **název** a **číslo verze** pro aplikaci tak, jak by měla být zobrazena v úložišti aplikací.
 5. Vyberte **primární jazyk**.
 6. Zadejte **SKU** číslo, toto je jedinečný, konstanta, identifikátor, který bude použit sledování aplikace. Se nezobrazí pro koncové uživatele a jeho _nelze_ změnit po vytvoření aplikace.
@@ -76,7 +76,7 @@ Proveďte [iTunes Connect](https://itunesconnect.apple.com/WebObjects/iTunesConn
 
 Nová aplikace budou vytvořeny v iTunes připojit a budou připraveny k zadejte požadované informace, například popis, cena, kategorií, hodnocení atd.:
 
-[ ![](itunesconnect-images/add04.png "Vytvoří se nová aplikace v iTunes Connect")](itunesconnect-images/add04.png)
+[![](itunesconnect-images/add04.png "Vytvoří se nová aplikace v iTunes Connect")](itunesconnect-images/add04.png#lightbox)
 
 <a name="managing" />
 
@@ -110,7 +110,7 @@ Proveďte [iTunes Connect](https://itunesconnect.apple.com/WebObjects/iTunesConn
 4. Přejděte k položce **snímky obrazovky** části.
 5. Vyberte **velikost bitové kopie** a přetáhněte ji do požadované bitových kopií (až 5 na velikost obrazovky):
 
-    [ ![](itunesconnect-images/screenshot01.png "Vyberte velikost bitové kopie a přetáhněte ji do požadované bitových kopií")](itunesconnect-images/screenshot01.png)
+    [![](itunesconnect-images/screenshot01.png "Vyberte velikost bitové kopie a přetáhněte ji do požadované bitových kopií")](itunesconnect-images/screenshot01.png#lightbox)
 6. Opakujte pro všechny požadované obrazovky velikosti.
 7. Klikněte **Uložit** tlačítka v horní části obrazovky a uložit provedené změny.
 
@@ -183,7 +183,7 @@ Proveďte [iTunes Connect](https://itunesconnect.apple.com/WebObjects/iTunesConn
 4. Přejděte k položce **název** části.
 5. Zadejte všechny požadované informace:
 
-    [ ![](itunesconnect-images/name01.png "Úprava názvu, popisu, co je nového, klíčová slova a adresy URL v iTunes Connect")](itunesconnect-images/name01.png)
+    [![](itunesconnect-images/name01.png "Úprava názvu, popisu, co je nového, klíčová slova a adresy URL v iTunes Connect")](itunesconnect-images/name01.png#lightbox)
 6. Klikněte **Uložit** tlačítka v horní části obrazovky a uložit provedené změny.
 
 > [!IMPORTANT]
@@ -248,10 +248,10 @@ Proveďte [iTunes Connect](https://itunesconnect.apple.com/WebObjects/iTunesConn
 4. Přejděte k položce **obecné informace o aplikaci** části.
 5. Zadejte všechny požadované informace:
 
-    [ ![](itunesconnect-images/general01.png "Úpravy v iTunes Connect obecné informace o aplikaci.")](itunesconnect-images/general01.png)
+    [![](itunesconnect-images/general01.png "Úpravy v iTunes Connect obecné informace o aplikaci.")](itunesconnect-images/general01.png#lightbox)
 6. Klikněte na **upravit** tlačítko podle **hodnocení** nastavení informací o hodnocení:
 
-    [ ![](itunesconnect-images/general02.png "Úpravy hodnocení")](itunesconnect-images/general02.png)
+    [![](itunesconnect-images/general02.png "Úpravy hodnocení")](itunesconnect-images/general02.png#lightbox)
 6. Klikněte **Uložit** tlačítka v horní části obrazovky a uložit provedené změny.
 
 > [!NOTE]
@@ -274,14 +274,14 @@ Proveďte [iTunes Connect](https://itunesconnect.apple.com/WebObjects/iTunesConn
 5. Překlopit přepínač podle **herní Centrum** části k **na** pozici.
 5. Zadejte všechny požadované informace:
 
-    [ ![](itunesconnect-images/gamecenter01.png "Úpravy herní Centrum informace v iTunes Connect")](itunesconnect-images/gamecenter01.png)
+    [![](itunesconnect-images/gamecenter01.png "Úpravy herní Centrum informace v iTunes Connect")](itunesconnect-images/gamecenter01.png#lightbox)
 6. Klikněte **Uložit** tlačítka v horní části obrazovky a uložit provedené změny.
 
 Použití **herní Centrum** aktivovat herním centru a spravovat všechny dostupné **tabulky** nebo **herních bonusů** pro tuto aplikaci:
 
-[ ![](itunesconnect-images/gamecenter02.png "Aktivovat herní Centrum")](itunesconnect-images/gamecenter02.png)
+[![](itunesconnect-images/gamecenter02.png "Aktivovat herní Centrum")](itunesconnect-images/gamecenter02.png#lightbox)
 
-[ ![](itunesconnect-images/gamecenter03.png "Spravovat všechny dostupné tabulky nebo herních bonusů pro tuto aplikaci")](itunesconnect-images/gamecenter03.png)
+[![](itunesconnect-images/gamecenter03.png "Spravovat všechny dostupné tabulky nebo herních bonusů pro tuto aplikaci")](itunesconnect-images/gamecenter03.png#lightbox)
 
 ## <a name="maintaining-app-review-information"></a>Údržba aplikace zkontrolujte informace
 
@@ -297,10 +297,10 @@ Proveďte [iTunes Connect](https://itunesconnect.apple.com/WebObjects/iTunesConn
 4. Přejděte k položce **aplikace zkontrolujte informace** části.
 5. Zadejte všechny požadované informace:
 
-    [ ![](itunesconnect-images/review01.png "Úpravy aplikace zkontrolujte informace v iTunes Connect")](itunesconnect-images/review01.png)
+    [![](itunesconnect-images/review01.png "Úpravy aplikace zkontrolujte informace v iTunes Connect")](itunesconnect-images/review01.png#lightbox)
 6. Vyberte, jakým způsobem chcete aplikaci k uvolnění do App Storu po byly úspěšně zkontrolovány:
 
-    [ ![](itunesconnect-images/review02.png "Úprava informací o verzi v iTunes Connect")](itunesconnect-images/review02.png)
+    [![](itunesconnect-images/review02.png "Úprava informací o verzi v iTunes Connect")](itunesconnect-images/review02.png#lightbox)
 6. Klikněte **Uložit** tlačítka v horní části obrazovky a uložit provedené změny.
 
 
@@ -308,7 +308,7 @@ Proveďte [iTunes Connect](https://itunesconnect.apple.com/WebObjects/iTunesConn
 
 Pokud máte v plánu na vydání aplikace pro prodej, budete muset nastavit prodejní ceny výběrem jedné z dostupné cenové úrovně společnosti Apple a datum, danou cenovou vstoupí v platnost. Například od verze době psaní tohoto textu **vrstvy 1** ceny vypadá takto:
 
-[ ![](itunesconnect-images/price01.png "Zachování informace o cenách")](itunesconnect-images/price01.png)
+[![](itunesconnect-images/price01.png "Zachování informace o cenách")](itunesconnect-images/price01.png#lightbox)
 
 ### <a name="educational-discount"></a>Výukových slevu
 
@@ -328,7 +328,7 @@ Proveďte [iTunes Connect](https://itunesconnect.apple.com/WebObjects/iTunesConn
 2. Klikněte na vaší aplikace **ikonu**.
 3. Vyberte **cenová** karty:
 
-    [ ![](itunesconnect-images/price02.png "Úpravy informace o cenách v iTunes Connect")](itunesconnect-images/price02.png)
+    [![](itunesconnect-images/price02.png "Úpravy informace o cenách v iTunes Connect")](itunesconnect-images/price02.png#lightbox)
 4. Vyberte **datum dostupnosti**.
 5. Vyberte požadovanou cenu, než **úroveň ceny** rozevíracího seznamu.
 5. Volitelně můžete povolit **výukových slevy**.
@@ -341,7 +341,7 @@ Proveďte [iTunes Connect](https://itunesconnect.apple.com/WebObjects/iTunesConn
 
 Pokud plánujete prodávané virtuální, produkty z vaší aplikace (například nové herní úrovně nebo funkce aplikací) budete používat v této části vytvořit a udržovat ty zakoupit položky.
 
-[ ![](itunesconnect-images/inapp01.png "Uchovávání informací nákupy v aplikaci")](itunesconnect-images/inapp01.png)
+[![](itunesconnect-images/inapp01.png "Uchovávání informací nákupy v aplikaci")](itunesconnect-images/inapp01.png#lightbox)
 
 Další informace o práci s nákupy v aplikaci v aplikaci Xamarin.iOS, najdete v tématu naše [nákupu v aplikaci](~/ios/platform/in-app-purchasing/index.md) dokumentaci.
 
@@ -349,7 +349,7 @@ Další informace o práci s nákupy v aplikaci v aplikaci Xamarin.iOS, najdete 
 
 Jakmile aplikace byla vydána k obchodu s aplikacemi, uživatelé, kteří zakoupit či stáhnout zdarma aplikaci můžete napsat recenze aplikace a nechte hodnocení hvězdičkami. Pomocí této části najdete v těchto recenze. Příklad:
 
-[ ![](itunesconnect-images/reviews01.png "Zobrazení recenze aplikace")](itunesconnect-images/reviews01.png)
+[![](itunesconnect-images/reviews01.png "Zobrazení recenze aplikace")](itunesconnect-images/reviews01.png#lightbox)
 
 ## <a name="summary"></a>Souhrn
 

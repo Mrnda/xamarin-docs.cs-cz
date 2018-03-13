@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 55a9e56585521a0a7b89a7b881dfecd4e1c14b08
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b970ff3570079c0e9fba10718ddcd75fbe857f2c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="new-user-interface-styles"></a>Nové uživatelské rozhraní styly
 
@@ -29,11 +29,11 @@ Jak jsme uvedli výše, tvOS 10 nyní podporuje motiv světlý i Light uživatel
 
 Může uživatel přepínat tento motiv přechodem na **nastavení** > **Obecné** > **vzhled** a přepínání mezi **světlý**  a **tmavý**:
 
-[ ![](user-interface-styles-images/theme01.png "Nastavení aplikace")](user-interface-styles-images/theme01.png)
+[![](user-interface-styles-images/theme01.png "Nastavení aplikace")](user-interface-styles-images/theme01.png#lightbox)
 
 Když **tmavý** motiv je vybraná, všechny prvky uživatelského rozhraní se změní světla text na tmavý pozadí:
 
-[ ![](user-interface-styles-images/theme02.png "Tmavý motiv")](user-interface-styles-images/theme02.png)
+[![](user-interface-styles-images/theme02.png "Tmavý motiv")](user-interface-styles-images/theme02.png#lightbox)
 
 Uživatel má možnost přepnutí motivu kdykoli a třeba udělat, tak na základě aktuální aktivita, kde se nachází Apple TV nebo denní dobu.
 
@@ -51,10 +51,10 @@ Opt-in tmavý a světlý motiv podpory, postupujte takto:
 2. Vyberte **zdroj** zobrazení (od dolní části editoru).
 3. Přidejte nový klíč a pojmenujte ji `UIUserInterfaceStyle`: 
 
-    [ ![](user-interface-styles-images/theme03.png "Klíč UIUserInterfaceStyle")](user-interface-styles-images/theme03.png)
+    [![](user-interface-styles-images/theme03.png "Klíč UIUserInterfaceStyle")](user-interface-styles-images/theme03.png#lightbox)
 4. Ponechat typ nastavena na `String` a zadejte hodnotu `Automatic`: 
 
-    [ ![](user-interface-styles-images/theme04.png "Zadejte automaticky")](user-interface-styles-images/theme04.png)
+    [![](user-interface-styles-images/theme04.png "Zadejte automaticky")](user-interface-styles-images/theme04.png#lightbox)
 5. Uložte změny do souboru.
 
 Existují tři možné hodnoty pro `UIUserInterfaceStyle` klíč:
@@ -173,13 +173,13 @@ Povolení podpory znak kolekce, postupujte takto:
 
 1. Klikněte pravým tlačítkem na soubor Storyboard v **Průzkumníku řešení** a vyberte **otevřít v** > **Xcode rozhraní tvůrce**: 
 
-    [ ![](user-interface-styles-images/theme05.png "Otevřít v aplikaci Tvůrce Xcode rozhraní")](user-interface-styles-images/theme05.png) 
+    [![](user-interface-styles-images/theme05.png "Otevřít v aplikaci Tvůrce Xcode rozhraní")](user-interface-styles-images/theme05.png#lightbox) 
 2. Chcete-li povolit podporu znak kolekce, přepněte na **souboru Inspector** a zkontrolujte **použijte znak variace** vlastnost v **rozhraní tvůrce dokumentu** části: 
 
-    [ ![](user-interface-styles-images/theme06.png "Povolit podporu znak kolekce")](user-interface-styles-images/theme06.png)
+    [![](user-interface-styles-images/theme06.png "Povolit podporu znak kolekce")](user-interface-styles-images/theme06.png#lightbox)
 3. Potvrzení změny použít znak rozdíly: 
 
-    [ ![](user-interface-styles-images/theme07.png "Použití variace znak upozornění")](user-interface-styles-images/theme07.png)
+    [![](user-interface-styles-images/theme07.png "Použití variace znak upozornění")](user-interface-styles-images/theme07.png#lightbox)
 4. Uložte změny do souboru scénáře.
 
 Při úpravě tvOS scénářů v Tvůrci rozhraní, Apple byl přidán následující možnosti:
@@ -188,20 +188,20 @@ Při úpravě tvOS scénářů v Tvůrci rozhraní, Apple byl přidán následuj
     
     * Teď máte několik vlastností  **+**  vedle položky, která sloužící k přidání na konkrétní verzi motiv uživatelského rozhraní: 
 
-        [ ![](user-interface-styles-images/theme08.png "Přidat na konkrétní verzi motiv uživatelského rozhraní")](user-interface-styles-images/theme08.png) 
+        [![](user-interface-styles-images/theme08.png "Přidat na konkrétní verzi motiv uživatelského rozhraní")](user-interface-styles-images/theme08.png#lightbox) 
     
     * Vývojář může zadat novou vlastnost nebo klikněte na tlačítko **x** tlačítko jej odeberte: 
 
-        [ ![](user-interface-styles-images/theme09.png "Zadejte novou vlastnost, nebo klikněte na tlačítko x ho odebrat")](user-interface-styles-images/theme09.png)
+        [![](user-interface-styles-images/theme09.png "Zadejte novou vlastnost, nebo klikněte na tlačítko x ho odebrat")](user-interface-styles-images/theme09.png#lightbox)
 * Vývojář může zobrazit náhled návrh uživatelského rozhraní v světlý nebo tmavý motiv z v rámci rozhraní Tvůrce:
     
     * Dolní části návrhovou plochu, která umožňuje vývojáři přepnout aktuální motiv uživatelského rozhraní: 
 
-        [ ![](user-interface-styles-images/theme10.png "Dolní části návrhové plochy")](user-interface-styles-images/theme10.png)
+        [![](user-interface-styles-images/theme10.png "Dolní části návrhové plochy")](user-interface-styles-images/theme10.png#lightbox)
         
     * Nový motiv se zobrazí v Tvůrci rozhraní a žádné úpravy konkrétní kolekce znak zobrazí: 
 
-        [ ![](user-interface-styles-images/theme11.png "Motiv zobrazí v Tvůrci rozhraní")](user-interface-styles-images/theme11.png)
+        [![](user-interface-styles-images/theme11.png "Motiv zobrazí v Tvůrci rozhraní")](user-interface-styles-images/theme11.png#lightbox)
 
 Kromě toho tvOS simulátoru teď má klávesové zkratky umožňující vývojář snadno přepínat mezi tmavý a světlý motivy při ladění aplikace tvOS. Použití **příkaz-Shift-D** klávesové pořadí k přepnutí mezi tmavý a světlý.
 

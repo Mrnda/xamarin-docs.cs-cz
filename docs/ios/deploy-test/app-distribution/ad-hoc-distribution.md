@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 423240949daf45d8d179a3ca9f89677f490cc24d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3d01130989336ada855e936a6597b517fab5ee69
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ad-hoc-distribution"></a>Distribuce Ad-Hoc
 
@@ -51,15 +51,15 @@ V další části se popisují, jak získat nastavit distribuční certifikát a
 3. Klikněte  **+**  tlačítko Vytvořit nový certifikát.
 4. V části *produkční* záhlaví, vyberte **interní a Ad Hoc**, nebo **App Store a Ad Hoc**, v závislosti na vaší členství v programu:
 
-  [ ![](ad-hoc-distribution-images/cert-first-small.png "Vyberte interní a Ad Hoc nebo obchodu s aplikacemi a Ad Hoc")](ad-hoc-distribution-images/cert-first-large.png)
+  [![](ad-hoc-distribution-images/cert-first-small.png "Vyberte interní a Ad Hoc nebo obchodu s aplikacemi a Ad Hoc")](ad-hoc-distribution-images/cert-first-large.png#lightbox)
 
 5. Klikněte na tlačítko Pokračovat a postupujte podle pokynů vytvořte žádost o podepsání certifikátu prostřednictvím přístup do řetězce klíčů:
 
-  [ ![](ad-hoc-distribution-images/createcertmanually02.png "Vytvoření žádost o podepsání certifikátu prostřednictvím přístup do řetězce klíčů")](ad-hoc-distribution-images/createcertmanually02.png)
+  [![](ad-hoc-distribution-images/createcertmanually02.png "Vytvoření žádost o podepsání certifikátu prostřednictvím přístup do řetězce klíčů")](ad-hoc-distribution-images/createcertmanually02.png#lightbox)
 
 6. Po vytvoření zástupce podle pokynů, klikněte na tlačítko Pokračovat a nahrát zástupce do centra pro:
 
-  [ ![](ad-hoc-distribution-images/createcertmanually03.png "Nahrát oddělení služeb zákazníkům do centra")](ad-hoc-distribution-images/createcertmanually03.png)
+  [![](ad-hoc-distribution-images/createcertmanually03.png "Nahrát oddělení služeb zákazníkům do centra")](ad-hoc-distribution-images/createcertmanually03.png#lightbox)
 
 7. Klikněte na tlačítko Generovat vytvořit certifikát.
 8. Nakonec stažení dokončené certifikátu a poklikejte na soubor k její instalaci.
@@ -67,9 +67,9 @@ V další části se popisují, jak získat nastavit distribuční certifikát a
 
 Případně je možné žádost o certifikát pomocí dialogu Předvolby v Xcode. Chcete-li to provést, postupujte následujícím způsobem:
 
-1.   Vyberte váš tým a klikněte na **spravovat certifikáty...** : [ ![ ] (ad-hoc-distribution-images/selectteam.png "Výběr týmu")](ad-hoc-distribution-images/selectteam.png)
+1.   Vyberte váš tým a klikněte na **spravovat certifikáty...** : [ ![ ] (ad-hoc-distribution-images/selectteam.png "Výběr týmu")](ad-hoc-distribution-images/selectteam.png#lightbox)
 
-2.   Klikněte na tlačítko **plus (+)** tlačítko a vyberte **iOS App Storu**: [ ![ ] (ad-hoc-distribution-images/selectcert.png "výběr iOS App Storu")](ad-hoc-distribution-images/selectcert.png)
+2.   Klikněte na tlačítko **plus (+)** tlačítko a vyberte **iOS App Storu**: [ ![ ] (ad-hoc-distribution-images/selectcert.png "výběr iOS App Storu")](ad-hoc-distribution-images/selectcert.png#lightbox)
 
 <a name="createprofile" />
 
@@ -91,23 +91,23 @@ Jako všechny ostatní zřizování profilu vytvoříte, ID aplikace bude nutné
 
 Jakmile máte požadované součásti potřebné pro vytváření profil distribuce, použijte následující postup k jeho vytvoření:
 
-1. Vraťte se na portál Apple zřizování a vyberte **zřizování > distribuce**: [ ![ ] (ad-hoc-distribution-images/distribute01.png "vyberte zřizování > Distribuce")](ad-hoc-distribution-images/distribute01.png)
+1. Vraťte se na portál Apple zřizování a vyberte **zřizování > distribuce**: [ ![ ] (ad-hoc-distribution-images/distribute01.png "vyberte zřizování > Distribuce")](ad-hoc-distribution-images/distribute01.png#lightbox)
 
 2. Klikněte  **+**  tlačítko a vyberte typ profil distribuce, kterou chcete vytvořit jako **Ad-Hoc**:
 
-    [ ![](ad-hoc-distribution-images/distribute02.png "Vytvořit typ distribuční Ad-Hoc")](ad-hoc-distribution-images/distribute02.png)
+    [![](ad-hoc-distribution-images/distribute02.png "Vytvořit typ distribuční Ad-Hoc")](ad-hoc-distribution-images/distribute02.png#lightbox)
 
 3. Klikněte **pokračovat** tlačítko a vyberte z rozevíracího seznamu, který chcete vytvořit profil distribuce pro ID aplikace:
 
-    [ ![](ad-hoc-distribution-images/distribute03.png "Z rozevíracího seznamu vyberte ID aplikace")](ad-hoc-distribution-images/distribute03.png)
+    [![](ad-hoc-distribution-images/distribute03.png "Z rozevíracího seznamu vyberte ID aplikace")](ad-hoc-distribution-images/distribute03.png#lightbox)
 
 4. Klikněte **pokračovat** tlačítko a certifikát vybrat distribuční vyžaduje k podepisování aplikace:
 
-    [ ![](ad-hoc-distribution-images/distribute04.png "Vybrat distribuční certifikát vyžadovaný k podepsání aplikace")](ad-hoc-distribution-images/distribute04.png)
+    [![](ad-hoc-distribution-images/distribute04.png "Vybrat distribuční certifikát vyžadovaný k podepsání aplikace")](ad-hoc-distribution-images/distribute04.png#lightbox)
 
 6. Klikněte **pokračovat** tlačítko a zadejte **název** pro nový profil distribuce:
 
-    [ ![](ad-hoc-distribution-images/distribute06.png "Zadejte název nového profilu distribuce")](ad-hoc-distribution-images/distribute06.png)
+    [![](ad-hoc-distribution-images/distribute06.png "Zadejte název nového profilu distribuce")](ad-hoc-distribution-images/distribute06.png#lightbox)
 
 7. Klikněte **generování** tlačítko pro vytvoření nového profilu a dokončení procesu.
 

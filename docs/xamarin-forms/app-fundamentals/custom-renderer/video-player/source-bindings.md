@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: d0842a54f725e5a9504668f977ba06648a96ee6d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 209b301c44da9bbb52ad8bf7fe867811a9b7617f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="binding-video-sources-to-the-player"></a>Vytvoření vazby zdroje videa na player
 
@@ -72,7 +72,7 @@ namespace VideoPlayerDemos
 
 Při prvním načtení stránky, není vybrána žádná položka v `ListView`, takže je třeba vybrat jednu zahájíte přehrávání videa:
 
-[![Vyberte Web Video](source-bindings-images/selectwebvideo-small.png "vyberte Web Video")](source-bindings-images/selectwebvideo-large.png "vyberte Web Video")
+[![Vyberte Web Video](source-bindings-images/selectwebvideo-small.png "vyberte Web Video")](source-bindings-images/selectwebvideo-large.png#lightbox "vyberte Web Video")
 
 `Source` Vlastnost `VideoPlayer` je zálohovaný díky vazbu vlastnosti, která znamená, že může být cílem datová vazba. Tento postup je znázorněn pomocí **vytvořit vazbu na VideoPlayer** stránky. Kód v **BindToVideoPlayer.xaml** podporuje následující třídy, který zapouzdřuje název video a odpovídající soubor `VideoSource` objektu:
 

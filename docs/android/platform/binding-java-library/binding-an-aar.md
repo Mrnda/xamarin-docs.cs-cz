@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 92cacd7ca5ff52a2bfe9060f47332b57d637609e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ae209f8099925cc160e16cb5365625e48e6c384d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="binding-an-aar"></a>Vazba. AAR
 
@@ -35,7 +35,6 @@ V této příručce jsme projdete kroky základní informace o vytvoření vazby
 > [!IMPORTANT]
 > Vazba projektu může obsahovat jenom jeden. Soubor AAR. Pokud. AAR závislosti na druhé. AAR a pak tyto závislosti by měl být obsažené v projektu vlastní vazby a pak odkazuje. V tématu [chyb 44573](https://bugzilla.xamarin.com/show_bug.cgi?id=44573).
 
-<a name="walkthrough" />
 
 ## <a name="walkthrough"></a>Návod
 
@@ -72,12 +71,11 @@ public class TextCounter
 
 Kromě toho se tato ukázková aplikace načíst a zobrazit prostředek obrázku, který je součástí **textanalyzer.aar**:
 
-[ ![Obrázek opic Xamarin](binding-an-aar-images/00-monkey-sml.png)](binding-an-aar-images/00-monkey.png)
+[![Obrázek opic Xamarin](binding-an-aar-images/00-monkey-sml.png)](binding-an-aar-images/00-monkey.png#lightbox)
 
 Tento zdroj obrázku se nachází v **res/drawable/monkey.png** v **textanalyzer.aar**.
 
 
-<a name="creating" />
 
 ### <a name="creating-the-bindings-library"></a>Vytvoření vazby knihovny
 
@@ -85,36 +83,35 @@ Před zahájením pomocí následujících kroků, stáhněte si prosím tento p
 
 1.  Vytvoření nového projektu knihovny vazby od verze šablony knihovna pro Android vazby. Můžete použít Visual Studio pro Mac nebo Visual Studio (na následujících snímcích obrazovky zobrazit Visual Studio, ale je velmi podobný jako Visual Studio pro Mac). Název řešení **AarBinding**:
 
-    [ ![Vytvoření projektu AarBindings](binding-an-aar-images/01-new-bindings-library-vs-sml.png)](binding-an-aar-images/01-new-bindings-library-vs.png)
+    [![Vytvoření projektu AarBindings](binding-an-aar-images/01-new-bindings-library-vs-sml.png)](binding-an-aar-images/01-new-bindings-library-vs.png#lightbox)
 
 2.  Šablona obsahuje **Jars** složku, kde můžete přidat vaše. AAR(s) na projekt knihovny vazby. Klikněte pravým tlačítkem myši **Jars** složky a vyberte **Přidat > existující položka**:
 
-    [ ![Přidat existující položku](binding-an-aar-images/02-add-existing-item-vs-sml.png)](binding-an-aar-images/02-add-existing-item-vs.png)
+    [![Přidat existující položku](binding-an-aar-images/02-add-existing-item-vs-sml.png)](binding-an-aar-images/02-add-existing-item-vs.png#lightbox)
 
 
 3.  Přejděte na **textanalyzer.aar** předtím stáhli soubor, vyberte ho a klikněte na tlačítko **přidat**:
 
-    [ ![Přidat textanalayzer.aar](binding-an-aar-images/03-select-aar-file-vs-sml.png)](binding-an-aar-images/03-select-aar-file-vs.png)
+    [![Přidat textanalayzer.aar](binding-an-aar-images/03-select-aar-file-vs-sml.png)](binding-an-aar-images/03-select-aar-file-vs.png#lightbox)
 
 
 4.  Ověřte, zda **textanalyzer.aar** soubor byl úspěšně přidán do projektu:
 
-    [ ![Přidání souboru textanalyzer.aar](binding-an-aar-images/04-aar-added-vs-sml.png)](binding-an-aar-images/04-aar-added-vs.png)
+    [![Přidání souboru textanalyzer.aar](binding-an-aar-images/04-aar-added-vs-sml.png)](binding-an-aar-images/04-aar-added-vs.png#lightbox)
 
 5.  Nastavení akce sestavení pro **textanalyzer.aar** k `LibraryProjectZip`. V sadě Visual Studio pro Mac, klikněte pravým tlačítkem na **textanalyzer.aar** nastavení akce sestavení. V sadě Visual Studio, akce sestavení může být nastavena v **vlastnosti** podokně):
 
-    [ ![Nastavení akce sestavení textanalyzer.aar LibraryProjectZip](binding-an-aar-images/05-embedded-aar-vs-sml.png)](binding-an-aar-images/05-embedded-aar-vs.png)
+    [![Nastavení akce sestavení textanalyzer.aar LibraryProjectZip](binding-an-aar-images/05-embedded-aar-vs-sml.png)](binding-an-aar-images/05-embedded-aar-vs.png#lightbox)
 
 6.  Otevřete projekt k nastavení vlastnosti *cílové rozhraní*. Pokud. AAR používá žádné rozhraní Android API, nastavte cílové rozhraní API úrovně. Očekává se AAR. (Další informace o nastavení cílové rozhraní a úrovně rozhraní API systému Android v obecné najdete v tématu [Principy Android API úrovně](~/android/app-fundamentals/android-api-levels.md).)
 
     Nastavte cíl úroveň rozhraní API pro knihovnu vazby. V tomto příkladu jsme jsou volně používat nejnovější platformu úroveň rozhraní API (API úrovně 23), protože naše **textanalyzer** nemá závislost na rozhraní Android API:
 
-    [ ![Nastavení úrovně cíl na rozhraní API 23](binding-an-aar-images/06-set-target-framework-vs-sml.png)](binding-an-aar-images/06-set-target-framework-vs.png)
+    [![Nastavení úrovně cíl na rozhraní API 23](binding-an-aar-images/06-set-target-framework-vs-sml.png)](binding-an-aar-images/06-set-target-framework-vs.png#lightbox)
 
 7.  Sestavení knihovny vazby. Projektu knihovny vazby musí úspěšně sestavení a vytvoření výstupu. Knihovny DLL v následujícím umístění: **AarBinding/bin/Debug/AarBinding.dll**
 
 
-<a name="using" />
 
 ### <a name="using-the-bindings-library"></a>Použití knihovny vazby
 
@@ -122,29 +119,28 @@ To využívat. Knihovny DLL v aplikaci Xamarin.Android, je nejprve nutno přidat
 
 1.  Vytváříme tuto aplikaci ve stejném řešení jako knihovně vazby ke zjednodušení tohoto návodu. (Aplikaci, která využívá knihovně vazby může také nacházet v jiné řešení.) Vytvoření nové aplikace Xamarin.Android: klikněte pravým tlačítkem na řešení a vyberte **přidat nový projekt**. Název nového projektu **BindingTest**:
 
-    [ ![Vytvoření nového projektu BindingTest](binding-an-aar-images/07-add-new-project-vs-sml.png)](binding-an-aar-images/07-add-new-project-vs.png)
+    [![Vytvoření nového projektu BindingTest](binding-an-aar-images/07-add-new-project-vs-sml.png)](binding-an-aar-images/07-add-new-project-vs.png#lightbox)
 
 2.  Klikněte pravým tlačítkem myši **odkazy** uzlu **BindingTest** projektu a vyberte **přidat odkaz na...** :
 
-    [ ![Klikněte na tlačítko Přidat odkaz](binding-an-aar-images/08-add-reference-vs-sml.png)](binding-an-aar-images/08-add-reference-vs.png)
+    [![Klikněte na tlačítko Přidat odkaz](binding-an-aar-images/08-add-reference-vs-sml.png)](binding-an-aar-images/08-add-reference-vs.png#lightbox)
 
 3.  Vyberte **AarBinding** projektu dříve vytvořili a klikněte na tlačítko **OK**:
 
-    [ ![Zkontrolujte AAR vazby projektu](binding-an-aar-images/09-choose-aar-binding-vs-sml.png)](binding-an-aar-images/09-choose-aar-binding-vs.png)
+    [![Zkontrolujte AAR vazby projektu](binding-an-aar-images/09-choose-aar-binding-vs-sml.png)](binding-an-aar-images/09-choose-aar-binding-vs.png#lightbox)
 
 4.  Otevřete **odkazy** uzlu **BindingTest** projektu a ověřte, zda **AarBinding** nachází odkaz:
 
-    [ ![AarBinding je uveden v části odkazy](binding-an-aar-images/10-references-shows-aarbinding-vs-sml.png)](binding-an-aar-images/10-references-shows-aarbinding-vs.png)
+    [![AarBinding je uveden v části odkazy](binding-an-aar-images/10-references-shows-aarbinding-vs-sml.png)](binding-an-aar-images/10-references-shows-aarbinding-vs.png#lightbox)
 
 
 Pokud chcete zobrazit obsah projektu vazby knihovny, můžete dvakrát kliknete na odkaz otevřít v **Prohlížeč objektů**. Můžete zobrazit namapované obsah `Com.Xamarin.Textcounter` obor názvů (namapovaný z Java `com.xamarin.textanalyzezr` balíčku) a lze je zobrazit členy `TextCounter` – třída:
 
-[ ![Zobrazení Prohlížeč objektů](binding-an-aar-images/11-object-browser-vs-sml.png)](binding-an-aar-images/11-object-browser-vs.png)
+[![Zobrazení Prohlížeč objektů](binding-an-aar-images/11-object-browser-vs-sml.png)](binding-an-aar-images/11-object-browser-vs.png#lightbox)
 
 Výše uvedený snímek obrazovky označuje dva `TextAnalyzer` metody, které bude volat aplikaci příklad: `NumConsonants` (který zabalí základní Java `numConsonants` metoda), a `NumVowels` (který zabalí základní Java `numVowels` metoda).
 
 
-<a name="accessing_types" />
 
 ### <a name="accessing-aar-types"></a>Přístup k. Typy AAR
 
@@ -264,12 +260,11 @@ namespace BindingTest
 
 Zkompilování a spuštění **BindingTest** projektu. Aplikace spustí a k dispozici na snímku obrazovky na levé straně ( `EditText` inicializován s textem, ale můžete klepněte na něj ho můžete změnit). Když klepnete **počet SAMOHLÁSKY**, oznámení zobrazí počet samohlásky, jak je znázorněno na pravé straně:
 
-[ ![Snímky obrazovky ve spuštění BindingTest](binding-an-aar-images/12-count-vowels.png)](binding-an-aar-images/12-count-vowels.png)
+[![Snímky obrazovky ve spuštění BindingTest](binding-an-aar-images/12-count-vowels.png)](binding-an-aar-images/12-count-vowels.png#lightbox)
 
 Zkuste klepnout na **počet SOUHLÁSKY** tlačítko. Také můžete upravit řádek textu a klepněte na tato tlačítka znovu k testování pro různé samohláskou a souhláska počty.
 
 
-<a name="accessing_resources" />
 
 ### <a name="accessing-aar-resources"></a>Přístup k. AAR prostředky
 
@@ -305,13 +300,12 @@ Upravit **BindingTest** rozložení (**Main.axml**) a přidejte `ImageView` na k
 
 Zkompilování a spuštění **BindingTest** projektu. Aplikace spustí a k dispozici na snímku obrazovky na levé straně &ndash; když klepnete **počet SOUHLÁSKY**, výsledky se zobrazí, jak je znázorněno na pravé straně:
 
-[ ![BindingTest zobrazení souladu počet](binding-an-aar-images/13-count-consonants.png)](binding-an-aar-images/13-count-consonants.png)
+[![BindingTest zobrazení souladu počet](binding-an-aar-images/13-count-consonants.png)](binding-an-aar-images/13-count-consonants.png#lightbox)
 
 
 Blahopřejeme! Úspěšně jste vázaný knihovna Java. AAR!
 
 
-<a name="summary" />
 
 ## <a name="summary"></a>Souhrn
 

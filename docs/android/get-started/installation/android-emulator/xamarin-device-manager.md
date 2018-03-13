@@ -7,12 +7,12 @@ ms.assetid: ECB327F3-FF1C-45CC-9FA6-9C11032BD5EF
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 01/25/2018
-ms.openlocfilehash: 20c7c5a9aaaf13cd9f4050254c7234ada78d926d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 447657d6f8509623272f37c48c7aecbdfd4cbaad
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="xamarin-android-device-manager"></a>Xamarin Android Device Manager
 
@@ -20,7 +20,6 @@ _Správce zařízení Android Xamarin, momentálně ve verzi preview, nahradí G
 
 ![Momentálně ve verzi preview](~/media/shared/preview.png)
 
-<a name="overview" />
  
 ## <a name="overview"></a>Přehled
 
@@ -34,16 +33,16 @@ Od verze nástroje pro Android SDK 26.0.1 Google má odebranou podporu architekt
 
 Tato příručka vysvětluje, jak nainstalovat a pomocí Správce zařízení Android Xamarin pro Visual Studio v systému Windows (nebo [pro Mac](?tabs=vsmac)):
 
-[![Snímek obrazovky Správce zařízení Android Xamarin na kartě zařízení](xamarin-device-manager-images/win/01-devices-dialog-sml.png)](xamarin-device-manager-images/win/01-devices-dialog.png)
+[![Snímek obrazovky Správce zařízení Android Xamarin na kartě zařízení](xamarin-device-manager-images/win/01-devices-dialog-sml.png)](xamarin-device-manager-images/win/01-devices-dialog.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 Tato příručka vysvětluje, jak nainstalovat a pomocí Správce zařízení Android Xamarin pro Visual Studio pro Mac (nebo [pro systém Windows](?tabs=vswin)):
 
-[![Snímek obrazovky Správce zařízení Android Xamarin na kartě zařízení](xamarin-device-manager-images/mac/01-devices-dialog-sml.png)](xamarin-device-manager-images/mac/01-devices-dialog.png)
+[![Snímek obrazovky Správce zařízení Android Xamarin na kartě zařízení](xamarin-device-manager-images/mac/01-devices-dialog-sml.png)](xamarin-device-manager-images/mac/01-devices-dialog.png#lightbox)
 
 > [!NOTE]
-> **Poznámka:** Tento průvodce se týká pouze pro Visual Studio for Mac.
+> Tento průvodce se týká pouze pro Visual Studio for Mac.
 Xamarin Studio není kompatibilní s Správce zařízení Android Xamarin.
 
 -----
@@ -52,9 +51,6 @@ Můžete vytvořit a nakonfigurovat pomocí Správce zařízení Android Xamarin
 Každý AVD je konfigurace aplikace emulátoru, která simuluje fyzického zařízení s Androidem. To umožňuje spuštění a testování vaší aplikace v různých konfiguracích, které simulují různé fyzické zařízení se systémem Android. Správce zařízení Xamarin Android nahrazuje Google samostatné správce AVD (která se už nepoužívá).
 
 V tomto průvodci se dozvíte, jak nainstalovat a spustit Správce zařízení Android. Se dozvíte, jak vytvářet, duplicitní, přizpůsobit a spustit virtuální zařízení. Tento průvodce také vysvětluje, jak konfigurovat vlastnosti pro každý virtuální zařízení (například úroveň rozhraní API, procesoru, paměti a řešení), povolit nebo zakázat simulované senzorů, například zrychlení, GPS, orientaci a senzoru světla a konfigurace typu hardwaru akcelerace používá virtuální zařízení.
-
-
-<a name="requirements" />
 
 ## <a name="requirements"></a>Požadavky
 
@@ -99,11 +95,10 @@ Při instalaci Správce zařízení Xamarin Android použijte následující kro
 
 2. Klikněte dvakrát na **AndroidDevices.pkg** a postupujte podle pokynů k instalaci: 
 
-    [![Průvodce instalací Správce zařízení Xamarin Android](xamarin-device-manager-images/mac/30-installer-sml.png)](xamarin-device-manager-images/mac/30-installer.png)
+    [![Průvodce instalací Správce zařízení Xamarin Android](xamarin-device-manager-images/mac/30-installer-sml.png)](xamarin-device-manager-images/mac/30-installer.png#lightbox)
 
 -----
 
-<a name="dev-manager" /> 
  
 ## <a name="launching-the-device-manager"></a>Spuštění Správce zařízení
 
@@ -111,7 +106,7 @@ Při instalaci Správce zařízení Xamarin Android použijte následující kro
 
 V sadě Visual Studio 15,6 operací Preview 3 nebo novější, můžete spustit Správce Xamarin Android zařízení z **nástroje** nabídky. Pokud používáte Visual Studio 15,6 operací Preview 3 nebo novější, spusťte Správce zařízení kliknutím **nástroje > Správce emulátoru Android**:
 
-[![Spouštění z nabídky Nástroje](xamarin-device-manager-images/win/04-tools-menu-sml.png)](xamarin-device-manager-images/win/04-tools-menu.png)
+[![Spouštění z nabídky Nástroje](xamarin-device-manager-images/win/04-tools-menu-sml.png)](xamarin-device-manager-images/win/04-tools-menu.png#lightbox)
 
 Pokud používáte starší verze sady Visual Studio, správce Xamarin Android zařízení musí být spuštěn z Windows **spustit** nabídky.
 
@@ -125,11 +120,11 @@ Klikněte pravým tlačítkem na **Správce zařízení Xamarin Android** a vybe
 
 V sadě Visual Studio pro Mac 7.6 Preview 3 (aktuálně v alfa kanálu) nebo novější, můžete spustit Správce zařízení Xamarin Android výběrem **nástroje > Správce emulátorů**:
 
-[![Spouštění z nabídky Nástroje](xamarin-device-manager-images/mac/16-tools-menu-sml.png)](xamarin-device-manager-images/mac/16-tools-menu.png)
+[![Spouštění z nabídky Nástroje](xamarin-device-manager-images/mac/16-tools-menu-sml.png)](xamarin-device-manager-images/mac/16-tools-menu.png#lightbox)
 
 Pokud používáte starší verze sady Visual Studio pro Mac, správce Xamarin Android zařízení musí být spuštěn nezávisle. Vyhledejte **zařízení se systémem Android** v **aplikace** složku a dvojím kliknutím ho spusťte:
 
-[![Správce zařízení Xamarin Android umístění v nástroji hledání](xamarin-device-manager-images/mac/31-location-in-finder-sml.png)](xamarin-device-manager-images/mac/31-location-in-finder.png)
+[![Správce zařízení Xamarin Android umístění v nástroji hledání](xamarin-device-manager-images/mac/31-location-in-finder-sml.png)](xamarin-device-manager-images/mac/31-location-in-finder.png#lightbox)
 
 
 -----
@@ -151,17 +146,16 @@ Pokud se zobrazí toto dialogové okno chyby, klikněte na tlačítko **OK** ote
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Instalace sady SDK pro Android nástrojů 26.0](xamarin-device-manager-images/win/03-sdk-tools-sml.png)](xamarin-device-manager-images/win/03-sdk-tools.png)
+[![Instalace sady SDK pro Android nástrojů 26.0](xamarin-device-manager-images/win/03-sdk-tools-sml.png)](xamarin-device-manager-images/win/03-sdk-tools.png#lightbox)
 
 Po instalaci těchto balíčků, můžete SDK Manager zavřete a znovu spusťte Správce zařízení Android.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Instalace sady SDK pro Android nástrojů 26.0](xamarin-device-manager-images/mac/03-sdk-tools-sml.png)](xamarin-device-manager-images/mac/03-sdk-tools.png)
+[![Instalace sady SDK pro Android nástrojů 26.0](xamarin-device-manager-images/mac/03-sdk-tools-sml.png)](xamarin-device-manager-images/mac/03-sdk-tools.png#lightbox)
 
 -----
 
-<a name="devices" />
  
 ## <a name="main-screen"></a>Hlavní obrazovky
 
@@ -169,13 +163,13 @@ Po instalaci těchto balíčků, můžete SDK Manager zavřete a znovu spusťte 
 
 Jakmile poprvé spustíte Správce zařízení Android, uvede k obrazovce, která se zobrazí všechny aktuálně nakonfigurované virtuální zařízení. Pro každé zařízení **název**, **operačního systému** (Android API úrovně) **procesoru**, **paměti** velikost a rozlišení obrazovky se zobrazí:
 
-[![Seznam nainstalovaných zařízení a jejich parametrů](xamarin-device-manager-images/win/05-installed-list-sml.png)](xamarin-device-manager-images/win/05-installed-list.png)
+[![Seznam nainstalovaných zařízení a jejich parametrů](xamarin-device-manager-images/win/05-installed-list-sml.png)](xamarin-device-manager-images/win/05-installed-list.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 Jakmile poprvé spustíte Správce zařízení Android, uvede k obrazovce, která se zobrazí všechny aktuálně nakonfigurované virtuální zařízení. Pro každé zařízení **název**, **bitovou kopii systému** (Android API úrovně) **procesoru**, **paměti** velikost a rozlišení obrazovky se zobrazí:
 
-[![Seznam nainstalovaných zařízení a jejich parametrů](xamarin-device-manager-images/mac/05-devices-list-sml.png)](xamarin-device-manager-images/mac/05-devices-list.png)
+[![Seznam nainstalovaných zařízení a jejich parametrů](xamarin-device-manager-images/mac/05-devices-list-sml.png)](xamarin-device-manager-images/mac/05-devices-list.png#lightbox)
 
 -----
 
@@ -183,13 +177,13 @@ Jakmile poprvé spustíte Správce zařízení Android, uvede k obrazovce, kter�
 
 Po kliknutí na tlačítko zařízení v seznamu **spustit** tlačítko se zobrazí na pravé straně. Můžete kliknout na **spustit** tlačítko spusťte emulátor s tímto virtuálním zařízením:
 
-[![Tlačítko Start pro obrázku zařízení](xamarin-device-manager-images/win/06-start-button-sml.png)](xamarin-device-manager-images/win/06-start-button.png)
+[![Tlačítko Start pro obrázku zařízení](xamarin-device-manager-images/win/06-start-button-sml.png)](xamarin-device-manager-images/win/06-start-button.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 Klikněte na tlačítko **přehrání** tlačítko spusťte emulátor s virtuálním zařízením podle vašeho výběru:
  
-[![Tlačítko Start pro obrázku zařízení](xamarin-device-manager-images/mac/06-start-button-sml.png)](xamarin-device-manager-images/mac/06-start-button.png)
+[![Tlačítko Start pro obrázku zařízení](xamarin-device-manager-images/mac/06-start-button-sml.png)](xamarin-device-manager-images/mac/06-start-button.png#lightbox)
  
 -----
 
@@ -197,17 +191,16 @@ Klikněte na tlačítko **přehrání** tlačítko spusťte emulátor s virtuál
 
 Po emulátoru začíná vybrané virtuální zařízení, **spustit** tlačítko se změní **Zastavit** tlačítko, které slouží k zastavení emulátoru:
 
-[![Zastavit tlačítko spuštěné zařízení](xamarin-device-manager-images/win/07-stop-button-sml.png)](xamarin-device-manager-images/win/07-stop-button.png)
+[![Zastavit tlačítko spuštěné zařízení](xamarin-device-manager-images/win/07-stop-button-sml.png)](xamarin-device-manager-images/win/07-stop-button.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 Po emulátoru začíná vybrané virtuální zařízení, **přehrání** tlačítko se změní **Zastavit** tlačítko, které slouží k zastavení emulátoru:
  
-[![Zastavit tlačítko spuštěné zařízení](xamarin-device-manager-images/mac/07-stop-button-sml.png)](xamarin-device-manager-images/mac/07-stop-button.png)
+[![Zastavit tlačítko spuštěné zařízení](xamarin-device-manager-images/mac/07-stop-button-sml.png)](xamarin-device-manager-images/mac/07-stop-button.png#lightbox)
  
 -----
 
-<a name="device-new" />
  
 ### <a name="new-device"></a>Nové zařízení
 
@@ -215,13 +208,13 @@ Po emulátoru začíná vybrané virtuální zařízení, **přehrání** tlač�
 
 Chcete-li vytvořit nové zařízení, klikněte na tlačítko **nový** tlačítko (nachází se v pravé horní části obrazovky):
 
-[![Nové tlačítko pro vytvoření nového zařízení](xamarin-device-manager-images/win/08-new-button-sml.png)](xamarin-device-manager-images/win/08-new-button.png)
+[![Nové tlačítko pro vytvoření nového zařízení](xamarin-device-manager-images/win/08-new-button-sml.png)](xamarin-device-manager-images/win/08-new-button.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 Chcete-li vytvořit nové zařízení, klikněte na tlačítko **nové zařízení** tlačítko (nachází se v pravé horní části obrazovky):
  
-[![Nové tlačítko pro vytvoření nového zařízení](xamarin-device-manager-images/mac/08-new-button-sml.png)](xamarin-device-manager-images/mac/08-new-button.png)
+[![Nové tlačítko pro vytvoření nového zařízení](xamarin-device-manager-images/mac/08-new-button-sml.png)](xamarin-device-manager-images/mac/08-new-button.png#lightbox)
  
 -----
 
@@ -229,27 +222,27 @@ Chcete-li vytvořit nové zařízení, klikněte na tlačítko **nové zařízen
 
 Kliknutím na tlačítko **nový** spustí **nové zařízení** obrazovky:
 
-[![Nové zařízení obrazovky Správce zařízení](xamarin-device-manager-images/win/09-new-device-editor-sml.png)](xamarin-device-manager-images/win/09-new-device-editor.png)
+[![Nové zařízení obrazovky Správce zařízení](xamarin-device-manager-images/win/09-new-device-editor-sml.png)](xamarin-device-manager-images/win/09-new-device-editor.png#lightbox)
 
 Konfigurace nového zařízení v **nové zařízení** obrazovky, použijte následující postup:
 
 1. Vyberte fyzické zařízení emulovat kliknutím **zařízení** rozevírací nabídce:
 
-    [![Zařízení rozevírací nabídky](xamarin-device-manager-images/win/10-device-menu-sml.png)](xamarin-device-manager-images/win/10-device-menu.png)
+    [![Zařízení rozevírací nabídky](xamarin-device-manager-images/win/10-device-menu-sml.png)](xamarin-device-manager-images/win/10-device-menu.png#lightbox)
 
 2. Vybrat bitovou kopii systému pro použití s tímto virtuálním zařízením kliknutím **bitovou kopii systému** rozevírací nabídce. Tato nabídka uvádí nainstalovaný systém obrázky v části **nainstalovaná**. **Stáhnout** části je uveden seznam bitové kopie systému, které jsou nyní k dispozici ve svém vývojovém počítači, ale mohou být automaticky nainstalovány:
 
-    [![Rozevírací nabídce bitové kopie systému](xamarin-device-manager-images/win/11-system-image-menu-sml.png)](xamarin-device-manager-images/win/11-system-image-menu.png)
+    [![Rozevírací nabídce bitové kopie systému](xamarin-device-manager-images/win/11-system-image-menu-sml.png)](xamarin-device-manager-images/win/11-system-image-menu.png#lightbox)
 
 3. Zadejte nový název zařízení. V následujícím příkladu je název nové zařízení **25 rozhraní API 5 Nexus**:
 
-    [![Pojmenování nové zařízení](xamarin-device-manager-images/win/12-device-name-sml.png)](xamarin-device-manager-images/win/12-device-name.png)
+    [![Pojmenování nové zařízení](xamarin-device-manager-images/win/12-device-name-sml.png)](xamarin-device-manager-images/win/12-device-name.png#lightbox)
 
 4. Upravte všechny vlastnosti, které budete muset upravit. Změnit vlastnosti, najdete v části [vlastnosti profilu](#properties) dál v této příručce.
 
 5. Přidáte žádné další vlastnosti, které je potřeba explicitně nastaven. **Nové zařízení** obrazovky jsou uvedeny pouze vlastnosti nejvíce změnil, ale můžete kliknout na **přidat vlastnost** rozevírací nabídky (v levém dolním) Chcete-li přidat další vlastnosti. V následujícím příkladu `hw.lcd.backlight` se přidává vlastnost:
 
-    [![Přidat vlastnost rozevírací nabídky](xamarin-device-manager-images/win/13-add-property-menu-sml.png)](xamarin-device-manager-images/win/13-add-property-menu.png)
+    [![Přidat vlastnost rozevírací nabídky](xamarin-device-manager-images/win/13-add-property-menu-sml.png)](xamarin-device-manager-images/win/13-add-property-menu.png#lightbox)
 
 6. Klikněte **vytvořit** tlačítko (pravém dolním) k vytvoření nového zařízení:
 
@@ -261,37 +254,37 @@ Konfigurace nového zařízení v **nové zařízení** obrazovky, použijte ná
 
 8. Správce zařízení Android přidá do seznamu nainstalovaných virtuální zařízení s nové zařízení **vytváření** indikátor průběhu, když dojde k zařízení:
 
-    [![Průběh vytváření ukazatele](xamarin-device-manager-images/win/16-creating-the-device-sml.png)](xamarin-device-manager-images/win/16-creating-the-device.png)
+    [![Průběh vytváření ukazatele](xamarin-device-manager-images/win/16-creating-the-device-sml.png)](xamarin-device-manager-images/win/16-creating-the-device.png#lightbox)
 
 9. Po dokončení procesu vytváření nového zařízení se zobrazí v seznamu nainstalovaných virtuální zařízení s **spustit** tlačítko připraven ke spuštění:
 
-   [![Nově vytvořený připraven ke spuštění zařízení](xamarin-device-manager-images/win/17-created-device-sml.png)](xamarin-device-manager-images/win/17-created-device.png)
+   [![Nově vytvořený připraven ke spuštění zařízení](xamarin-device-manager-images/win/17-created-device-sml.png)](xamarin-device-manager-images/win/17-created-device.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 Kliknutím na tlačítko **nové zařízení** spustí **nové zařízení** obrazovky:
 
-[![Nové zařízení obrazovky Správce zařízení](xamarin-device-manager-images/mac/09-new-device-editor-sml.png)](xamarin-device-manager-images/mac/09-new-device-editor.png)
+[![Nové zařízení obrazovky Správce zařízení](xamarin-device-manager-images/mac/09-new-device-editor-sml.png)](xamarin-device-manager-images/mac/09-new-device-editor.png#lightbox)
 
 Použijte následující postup ke konfiguraci nové zařízení na **nové zařízení** obrazovky:
 
 1. Vyberte fyzické zařízení emulovat kliknutím **zařízení** rozevírací nabídce:
 
-    [![Zařízení rozevírací nabídky](xamarin-device-manager-images/mac/10-device-menu-sml.png)](xamarin-device-manager-images/mac/10-device-menu.png)
+    [![Zařízení rozevírací nabídky](xamarin-device-manager-images/mac/10-device-menu-sml.png)](xamarin-device-manager-images/mac/10-device-menu.png#lightbox)
 
 2. Vybrat bitovou kopii systému pro použití s tímto virtuálním zařízením kliknutím **bitovou kopii systému** rozevírací nabídce. Tato nabídka uvádí nainstalovaný systém obrázky v části **nainstalovaná**. **Stáhnout** části (Pokud zobrazené) jsou uvedené bitové kopie systému, které jsou nyní k dispozici ve svém vývojovém počítači, ale mohou být automaticky nainstalovány:
 
-    [![Rozevírací nabídce bitové kopie systému](xamarin-device-manager-images/mac/11-system-image-menu-sml.png)](xamarin-device-manager-images/mac/11-system-image-menu.png)
+    [![Rozevírací nabídce bitové kopie systému](xamarin-device-manager-images/mac/11-system-image-menu-sml.png)](xamarin-device-manager-images/mac/11-system-image-menu.png#lightbox)
 
 3. Zadejte nový název zařízení. V následujícím příkladu je název nové zařízení **API Nexus 5 X 25**:
 
-    [![Pojmenování nové zařízení](xamarin-device-manager-images/mac/12-device-name-sml.png)](xamarin-device-manager-images/mac/12-device-name.png)
+    [![Pojmenování nové zařízení](xamarin-device-manager-images/mac/12-device-name-sml.png)](xamarin-device-manager-images/mac/12-device-name.png#lightbox)
 
 4. Upravte všechny vlastnosti, které budete muset upravit. Změnit vlastnosti, najdete v části [vlastnosti profilu](#properties) dál v této příručce.
 
 5. Přidáte žádné další vlastnosti, které je potřeba explicitně nastaven. **Nové zařízení** obrazovky jsou uvedeny pouze vlastnosti nejvíce změnil, ale můžete kliknout na **přidat vlastnost** rozevírací nabídky (v levém dolním) Chcete-li přidat další vlastnosti:
 
-    [![Přidat vlastnost rozevírací nabídky](xamarin-device-manager-images/mac/13-add-property-menu-sml.png)](xamarin-device-manager-images/mac/13-add-property-menu.png)
+    [![Přidat vlastnost rozevírací nabídky](xamarin-device-manager-images/mac/13-add-property-menu-sml.png)](xamarin-device-manager-images/mac/13-add-property-menu.png#lightbox)
 
 6. Můžete také kliknout na **vlastní** definovat nové vlastnosti pro zařízení:
 
@@ -305,11 +298,11 @@ Použijte následující postup ke konfiguraci nové zařízení na **nové zař
 
 9. Když dojde k zařízení, Správce zařízení Android přidá do seznamu zařízení s nové zařízení **vytváření** indikátor průběhu:
 
-    [![Průběh vytváření ukazatele](xamarin-device-manager-images/mac/17-creating-the-device-sml.png)](xamarin-device-manager-images/mac/17-creating-the-device.png)
+    [![Průběh vytváření ukazatele](xamarin-device-manager-images/mac/17-creating-the-device-sml.png)](xamarin-device-manager-images/mac/17-creating-the-device.png#lightbox)
 
 10. Po dokončení procesu vytváření nového zařízení se zobrazí v seznamu zařízení s **přehrání** tlačítko připraven ke spuštění:
 
-   [![Nově vytvořený připraven ke spuštění zařízení](xamarin-device-manager-images/mac/18-created-device-sml.png)](xamarin-device-manager-images/mac/18-created-device.png)
+   [![Nově vytvořený připraven ke spuštění zařízení](xamarin-device-manager-images/mac/18-created-device-sml.png)](xamarin-device-manager-images/mac/18-created-device.png#lightbox)
 
 -----
 
@@ -322,13 +315,13 @@ Použijte následující postup ke konfiguraci nové zařízení na **nové zař
 
 Chcete-li upravit stávající virtuální zařízení, vyberte zařízení a klikněte na tlačítko **upravit** tlačítko (umístěný v pravém horním rohu obrazovky):
 
-[![Tlačítko pro úpravy nového zařízení upravit](xamarin-device-manager-images/win/19-edit-button-sml.png)](xamarin-device-manager-images/win/19-edit-button.png)
+[![Tlačítko pro úpravy nového zařízení upravit](xamarin-device-manager-images/win/19-edit-button-sml.png)](xamarin-device-manager-images/win/19-edit-button.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 Chcete-li upravit stávající virtuální zařízení, vyberte **další možnosti** rozevírací nabídky (ikona ozubené kolečko) a vyberte **upravit**:
  
-[![Upravit výběr nabídky Úpravy nové zařízení](xamarin-device-manager-images/mac/19-edit-button-sml.png)](xamarin-device-manager-images/mac/19-edit-button.png)
+[![Upravit výběr nabídky Úpravy nové zařízení](xamarin-device-manager-images/mac/19-edit-button-sml.png)](xamarin-device-manager-images/mac/19-edit-button.png#lightbox)
  
 -----
 
@@ -336,11 +329,11 @@ Kliknutím na tlačítko **upravit** spustí Editor zařízení pro vybrané vir
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Editor zařízení obrazovky](xamarin-device-manager-images/win/20-device-editor-sml.png)](xamarin-device-manager-images/win/20-device-editor.png)
+[![Editor zařízení obrazovky](xamarin-device-manager-images/win/20-device-editor-sml.png)](xamarin-device-manager-images/win/20-device-editor.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
  
-[![Editor zařízení obrazovky](xamarin-device-manager-images/mac/20-device-editor-sml.png)](xamarin-device-manager-images/mac/20-device-editor.png)
+[![Editor zařízení obrazovky](xamarin-device-manager-images/mac/20-device-editor-sml.png)](xamarin-device-manager-images/mac/20-device-editor.png#lightbox)
  
 -----
 
@@ -350,13 +343,13 @@ Kliknutím na tlačítko **upravit** spustí Editor zařízení pro vybrané vir
 
 Například v následujícím snímku obrazovky `hw.lcd.density` mění se vlastnost z **420** k **240**:
 
-[![Příklad úpravy zařízení](xamarin-device-manager-images/win/21-device-editing-sml.png)](xamarin-device-manager-images/win/21-device-editing.png)
+[![Příklad úpravy zařízení](xamarin-device-manager-images/win/21-device-editing-sml.png)](xamarin-device-manager-images/win/21-device-editing.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 Například v následujícím snímku obrazovky `hw.lcd.density` změnit vlastnost z **320** k **240** a `hw.ramSize` vlastnost se změní na **768**:
  
-[![Příklad úpravy zařízení](xamarin-device-manager-images/mac/21-device-editing-sml.png)](xamarin-device-manager-images/mac/21-device-editing.png)
+[![Příklad úpravy zařízení](xamarin-device-manager-images/mac/21-device-editing-sml.png)](xamarin-device-manager-images/mac/21-device-editing.png#lightbox)
  
 -----
 
@@ -364,7 +357,6 @@ Po provedení změn nezbytné konfigurace, klikněte na tlačítko **Uložit** t
 Další informace o změně vlastnosti virtuální zařízení najdete v tématu [vlastnosti profilu](#properties) dál v této příručce.
 
 
-<a name="addopt" />
  
 ### <a name="additional-options"></a>Další možnosti
 
@@ -372,13 +364,13 @@ Další informace o změně vlastnosti virtuální zařízení najdete v tématu
 
 Další možnosti pro práci s zařízení jsou dostupné z &hellip; nabídky v horním pravém rohu:
 
-[![Umístění další možnosti nabídky](xamarin-device-manager-images/win/22-overflow-menu-sml.png)](xamarin-device-manager-images/win/22-overflow-menu.png)
+[![Umístění další možnosti nabídky](xamarin-device-manager-images/win/22-overflow-menu-sml.png)](xamarin-device-manager-images/win/22-overflow-menu.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 Další možnosti pro práci se zařízením jsou k dispozici v rozevírací nabídce nachází na levé straně **přehrání** tlačítko:
 
-[![Umístění další možnosti nabídky](xamarin-device-manager-images/mac/22-overflow-menu-sml.png)](xamarin-device-manager-images/mac/22-overflow-menu.png)
+[![Umístění další možnosti nabídky](xamarin-device-manager-images/mac/22-overflow-menu-sml.png)](xamarin-device-manager-images/mac/22-overflow-menu.png#lightbox)
 
 -----
 
@@ -388,11 +380,11 @@ V nabídce Další možnosti obsahuje následující položky:
 
 -   **Duplicitní a upravit** &ndash; duplikuje aktuálně vybrané zařízení a otevře ji v **nové zařízení** obrazovky s jiný jedinečný název. Například výběr **VisualStudio_android 23_x86_phone** a kliknutím na **duplicitní a upravit** připojí k název čítače:
 
-    [![Duplicitní a úpravy obrazovky](xamarin-device-manager-images/win/23-dupe-and-edit-sml.png)](xamarin-device-manager-images/win/23-dupe-and-edit.png)
+    [![Duplicitní a úpravy obrazovky](xamarin-device-manager-images/win/23-dupe-and-edit-sml.png)](xamarin-device-manager-images/win/23-dupe-and-edit.png#lightbox)
 
 -   **V Průzkumníku odhalit** &ndash; otevře okno Průzkumníka Windows ve složce, která obsahuje soubory pro virtuální zařízení. Například výběr **API Nexus 5 X 25** a kliknutím na **odhalit v Průzkumníku** otevře okno takto:
 
-    [![Výsledky kliknutím na zobrazení v Průzkumníku](xamarin-device-manager-images/win/24-reveal-in-explorer-sml.png)](xamarin-device-manager-images/win/24-reveal-in-explorer.png)
+    [![Výsledky kliknutím na zobrazení v Průzkumníku](xamarin-device-manager-images/win/24-reveal-in-explorer-sml.png)](xamarin-device-manager-images/win/24-reveal-in-explorer.png#lightbox)
 
 -   **Obnovení továrního nastavení** &ndash; vybrané zařízení obnoví výchozí nastavení, aktualizovat je, vymazat všechny uživatele provedené vnitřní stav zařízení byl spuštěn. Tato změna nezmění úpravy, které provedete virtuálního zařízení během vytváření a úpravy. Zobrazí se dialogové okno s připomenutím tento resetování nelze vrátit zpět. Klikněte na tlačítko **vymazat data** potvrďte vynulování.
 
@@ -408,11 +400,11 @@ V nabídce Další možnosti obsahuje následující položky:
 -   **Duplicitní a upravit** &ndash; duplikuje aktuálně vybrané zařízení a otevře ji v **nové zařízení** obrazovky s jiný jedinečný název.
     Například výběr **API Nexus 5 X 25** a kliknutím na **duplicitní a upravit** připojí k název čítače:
 
-    [![Duplicitní a úpravy obrazovky](xamarin-device-manager-images/mac/23-dupe-and-edit-sml.png)](xamarin-device-manager-images/mac/23-dupe-and-edit.png)
+    [![Duplicitní a úpravy obrazovky](xamarin-device-manager-images/mac/23-dupe-and-edit-sml.png)](xamarin-device-manager-images/mac/23-dupe-and-edit.png#lightbox)
 
 -   **Odhalit v hledání** &ndash; otevře okno vyhledávací systému macOS ve složce, která obsahuje soubory pro virtuální zařízení. Například výběr **API Nexus 5 X 25** a kliknutím na **odhalit v hledání** otevře okno takto:
 
-    [![Výsledky kliknutím na zobrazení v Průzkumníku](xamarin-device-manager-images/mac/24-reveal-in-finder-sml.png)](xamarin-device-manager-images/mac/24-reveal-in-finder.png)
+    [![Výsledky kliknutím na zobrazení v Průzkumníku](xamarin-device-manager-images/mac/24-reveal-in-finder-sml.png)](xamarin-device-manager-images/mac/24-reveal-in-finder.png#lightbox)
 
 -   **Obnovení továrního nastavení** &ndash; vybrané zařízení obnoví výchozí nastavení, aktualizovat je, vymazat všechny uživatele provedené vnitřní stav zařízení byl spuštěn. Tato změna nezmění úpravy, které provedete virtuálního zařízení během vytváření a úpravy. Zobrazí se dialogové okno s připomenutím tento resetování nelze vrátit zpět. Klikněte na tlačítko **vymazat data** potvrďte vynulování.
 
@@ -497,7 +489,7 @@ Chcete-li vyřešit tento problém, postupujte takto:
 
 2. Dvojitým kliknutím otevřete jeden ze souborů protokolu a vyhledejte **cesta k souboru konfigurace**. Příklad:
 
-    [![Cesta k souboru konfigurace v souboru protokolu](xamarin-device-manager-images/win/34-config-file-path-sml.png)](xamarin-device-manager-images/win/34-config-file-path.png)
+    [![Cesta k souboru konfigurace v souboru protokolu](xamarin-device-manager-images/win/34-config-file-path-sml.png)](xamarin-device-manager-images/win/34-config-file-path.png#lightbox)
 
 3. Přejděte do tohoto umístění a poklikejte na soubor **user.config** ho otevřete. 
 
@@ -528,7 +520,6 @@ Pokud narazíte na potíže, kliknutím na prosím soubor sestavy chyb **pomoci 
 -----
 
  
-<a name="summary" />
  
 ## <a name="summary"></a>Souhrn
 

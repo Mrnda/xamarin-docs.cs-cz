@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: 7441fbe1fc686dc4fa5cb67cbfc5ae6353f32c93
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e5c058f173f64efe4a5c777872e9ea67120115f0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough"></a>Návod
 
@@ -21,7 +21,7 @@ V následujících krocích se vytvoří základní aplikaci s fragmenty. První
 
 Vytvoření nového projektu Xamarin.Android názvem **FragmentSample**. **Minimální Android** musí být verze nastavená na Android 3.1 nebo novější, jak je znázorněno na obrázku níže:
 
-[![Nastavení minimální verzi systému Android](walkthrough-images/00.png)](walkthrough-images/00.png)
+[![Nastavení minimální verzi systému Android](walkthrough-images/00.png)](walkthrough-images/00.png#lightbox)
 
 
 ## <a name="2-create-the-mainactivity"></a>2. Vytvořte MainActivity
@@ -47,7 +47,7 @@ public class MainActivity : Activity
 
 Dvou různých obrazovek velikosti vyžadují dva různé rozložení soubory. Proto vytvoříme novou složku, **prostředky nebo rozložení-Large**a vytvořit nové rozložení názvem **activity_main.axml**. Také jsme budete přejmenovat soubor výchozí rozložení jako **Resources/Layout/activity_main.axml**. Po provedení těchto změn by měl vypadat rozložení složky na následujícím snímku obrazovky:
 
-[![Snímek obrazovky rozložení složek v prostředí IDE](walkthrough-images/01.png)](walkthrough-images/01.png)
+[![Snímek obrazovky rozložení složek v prostředí IDE](walkthrough-images/01.png)](walkthrough-images/01.png#lightbox)
 
 
 Všechna zařízení se načíst a použít na soubor rozložení v **prostředky, rozvržení**.
@@ -92,7 +92,7 @@ Android 3.2 zavedl nový způsob, jak zadat rozložení obrazovky. Tyto nové kv
 
 `TitlesFragment` bude zobrazit názvy různé plní, proto umožňuje přidat nové fragment k projektu názvem `TitlesFragment`:
 
-[![Přidávání nových fragment k TitlesFragment projektu](walkthrough-images/02.png)](walkthrough-images/02.png)
+[![Přidávání nových fragment k TitlesFragment projektu](walkthrough-images/02.png)](walkthrough-images/02.png#lightbox)
 
 Po `TitlesFragment` byla přidána, třída jsme musí změnit tak, aby dědila z `Android.App.ListFragment`. `ListFragment` je specializovaná fragment typ, který zahrnuje funkci seznamu.
 `TitlesFragment` bude také přepsat `OnActivityCreated` (jiná metoda fragment životního cyklu) a zadejte `Adapter` , `ListFragment` bude používat k naplnění seznamu:
@@ -162,7 +162,6 @@ private void ShowDetails(int playId)
 
 Kód ze zařízení určuje, jak pro formátování a zobrazení uvozovky z vybraných play. V případě tablety `_isDualPane` příznak bude nastavena pro `true`, a proto nabídky se zobrazí vedle `TitlesFragment`. Pokud vybraný play `id` není zobrazena, pak nový `DetailsFragment` se vytvoří a pak načten do `FrameLayout` na aktivity. Pro další zařízení, které nemají velké zobrazení &ndash; telefony, například &ndash; `isDualPane` bude nastavena pro `false` tak novou `DetailsActivity` bude spuštěn.
 
-<a name="5. Create_the_DetailsActivity" />
 
 ## <a name="5-create-the-detailsactivity"></a>5. Vytvořte DetailsActivity
 
@@ -187,7 +186,6 @@ public class DetailsActivity : Activity
 
 Všimněte si, že žádný soubor rozložení je načtena pro `DetailsActivity`. Místo toho `DetailsFragment` je načten do kořenové zobrazení aktivity. Toto zobrazení kořenové má speciální ID `Android.Resource.Id.Content`. Nový `DetailFragment` se vytvoří a pak přidá do této kořenové zobrazení uvnitř `FragmentTransaction` vytvořené aktivity `FragmentManager`.
 
-<a name="6. Create_the_DetailsFragment" />
 
 ## <a name="6-create-the-detailsfragment"></a>6. Vytvořte DetailsFragment
 

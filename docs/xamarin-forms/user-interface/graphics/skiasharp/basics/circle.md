@@ -4,14 +4,15 @@ description: "Seznámíte se základy kreslení SkiaSharp, včetně plátna a Ma
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: E3A4E373-F65D-45C8-8E77-577A804AC3F8
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 63314efdd29c8da0273459de2d12f7b807968a04
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5b09621f1d3a24f8061e5cd6551dd85ce93e36e3
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="drawing-a-simple-circle"></a>Kreslení kruh jednoduché
 
@@ -139,7 +140,7 @@ Tentokrát `DrawCircle` volání doplní kruhu pomocí nové vlastnosti `SKPaint
 
 Tady je program spuštěný v iOS, Android a univerzální platformu Windows:
 
-[![](circle-images/simplecircle-small.png "Trojitá snímek obrazovky stránky Jednoduchý kruh")](circle-images/simplecircle-large.png "Trojitá snímek obrazovky stránky jednoduché kruhu.")
+[![](circle-images/simplecircle-small.png "Trojitá snímek obrazovky stránky Jednoduchý kruh")](circle-images/simplecircle-large.png#lightbox "Trojitá snímek obrazovky stránky jednoduché kruhu.")
 
 Při spuštění programu, můžete zapnout telefon nebo simulátoru ze strany najdete v části jak bude překreslen na obrázku. Pokaždé, když na obrázku musí být překreslen, `PaintSurface` obslužné rutiny události je volán znovu.
 

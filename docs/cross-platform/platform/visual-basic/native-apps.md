@@ -8,17 +8,17 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: dc107ee865ea93cdc12148a5498cf3d512f1dae9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 95817c2ec22c4c27f0f4a933db54105614e54030
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="visual-basicnet-in-xamarin-ios-and-android"></a>Visual Basic.NET v Xamarin iOS a Android
 
 [TaskyPortable](/samples/mobile/VisualBasic/TaskyPortableVB/) ukázkovou aplikaci ukazuje, jak kód jazyka Visual Basic zkompilovat do knihovny přenosných tříd může být použita s funkcí Xamarin. Tady jsou některé snímky obrazovky výsledná aplikace běžící v systému iOS, Android a Windows Phone:
 
- [ ![](native-apps-images/image5.png "iOS, Android a Windows telefony spuštění aplikace vytvořené s nástroji Visual Basic")](native-apps-images/image5.png)
+ [![](native-apps-images/image5.png "iOS, Android a Windows telefony spuštění aplikace vytvořené s nástroji Visual Basic")](native-apps-images/image5.png#lightbox)
 
 IOS, Android a Windows Phone, které všechny projekty v příkladu jsou napsané v C#. Je uživatelské rozhraní pro jednotlivé aplikace vytvořené s nativní technologie (scénářů, Xml a jazyk Xaml v uvedeném pořadí), zatímco `TodoItem` správu zajišťuje knihovny přenosných tříd jazyka Visual Basic pomocí `IXmlStorage` implementace poskytovaná nativní projektu.
 
@@ -26,7 +26,8 @@ IOS, Android a Windows Phone, které všechny projekty v příkladu jsou napsan�
 
 Tato příručka popisuje, jak byl implementován jazyka Visual Basic v [TaskyPortableVB](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/TaskyPortableVB) ukázka Xamarin pro iOS a Android.
 
-> ⚠️ Přečtěte si pokyny na [Visual PCLs pro](/guides/cross-platform/application_fundamentals/pcl/portable_visual_basic_net/) než budete pokračovat v této příručce.
+> [!NOTE]
+> Přečtěte si pokyny na [Visual PCLs pro](/guides/cross-platform/application_fundamentals/pcl/portable_visual_basic_net/) než budete pokračovat v této příručce.
 
 ## <a name="visualbasicportablelibrary"></a>VisualBasicPortableLibrary
 
@@ -158,9 +159,9 @@ Public Class TodoItemRepositoryXML
 End Class
 ```
 
-> ℹ️ **Poznámka:** tento kód je příkladem mechanismus velmi základní úložiště dat je.
-> Je poskytována k předvedení toho, jak můžete přenosné knihovny tříd code proti rozhraní pro přístup k funkce specifické pro platformu (v tomto případě načítání a ukládání soubor Xml).
-> Ho ho nemají být alternativní databáze produkční kvality.
+> [!NOTE]
+> Tento kód je je příklad velmi základní úložiště dat mechanismu.
+> Je poskytována k předvedení toho, jak můžete přenosné knihovny tříd code proti rozhraní pro přístup k funkce specifické pro platformu (v tomto případě načítání a ukládání soubor Xml). Ho ho nemají být alternativní databáze produkční kvality.
 
 ## <a name="ios-android-and-windows-phone-application-projects"></a>iOS, Androidem a s projekty aplikací pro Windows Phone
 
@@ -263,7 +264,7 @@ TodoMgr = new TodoItemManager(filename, xmlStorage);
 
 Zbývající aplikace Windows Phone se skládá z Xaml a C# k vytvoření uživatelského rozhraní a používat `TodoMgr` třídy k načtení a uložení `TodoItem` objekty.
 
-# <a name="visual-basic-pcl-in-visual-studio-for-mac"></a>Visual Basic PCL v sadě Visual Studio pro Mac
+## <a name="visual-basic-pcl-in-visual-studio-for-mac"></a>Visual Basic PCL v sadě Visual Studio pro Mac
 
 Visual Studio pro Mac nepodporuje jazyk Visual Basic – nelze vytvořit nebo zkompilovat projekty Visual Basic pomocí sady Visual Studio for Mac.
 
@@ -271,58 +272,58 @@ Visual Studio pro Mac na podporu pro knihovny přenosných tříd znamená, že 
 
 Tato část vysvětluje, jak pro kompilaci PCL sestavení v sadě Visual Studio a pak se ujistěte, že bude uložen v systému správy verzí a odkazují jiné projekty.
 
-## <a name="keeping-the-pcl-output-from-visual-studio"></a>Zachování PCL výstup ze sady Visual Studio
+### <a name="keeping-the-pcl-output-from-visual-studio"></a>Zachování PCL výstup ze sady Visual Studio
 
 Ve výchozím nastavení bude ignorovat nakonfigurován většina systémů řízení verze (včetně sady TFS a Git) **/bin/** adresáře, což znamená kompilované PCL sestavení se neuloží. To znamená, že by musíte ručně zkopírovat do všech počítačů se systémem Visual Studio pro Mac se přidat odkaz na něj.
 
 K zajištění, že váš systém správy verzí můžete uložit výstup sestavení PCL, můžete vytvořit skript po sestavení, který se zkopíruje do kořenu projektu. Tento krok po sestavení pomáhá zajistit sestavení lze snadno přidat do správy zdrojového kódu a sdílet s jinými projekty.
 
-### <a name="visual-studio-2017"></a>Visual Studio 2017
+#### <a name="visual-studio-2017"></a>Visual Studio 2017
 
 1. Klikněte pravým tlačítkem na projekt a zvolte **vlastnosti > události sestavení** části.
 
 2. Přidat _po sestavení_ skript, který kopíruje výstupní knihovnu DLL z tohoto projektu do kořenového adresáře projektu (což je mimo **/bin/**). V závislosti na konfiguraci řízení verze knihovny DLL teď by mohli být přidán do správy zdrojového kódu.
 
-  [ ![](native-apps-images/image6-vs-sml.png "Události sestavení skriptu buildu post zkopírovat knihovnu DLL jazyka Visual Basic")](native-apps-images/image6-vs.png)
+  [![](native-apps-images/image6-vs-sml.png "Události sestavení skriptu buildu post zkopírovat knihovnu DLL jazyka Visual Basic")](native-apps-images/image6-vs.png#lightbox)
 
-### <a name="visual-studio-2015"></a>Visual Studio 2015
+#### <a name="visual-studio-2015"></a>Visual Studio 2015
 
 1.  Klikněte pravým tlačítkem na projekt a zvolte **vlastnosti > zkompilovat** , pak zkontrolujte všechny konfigurace je vybraný v levém horním hřeben poli. Klikněte **události sestavení...**  tlačítka na vpravo dole.
 
-  [ ![](native-apps-images/image6.png "V části Vlastnosti kompilace projektu")](native-apps-images/image6.png)
+    [![](native-apps-images/image6.png "V části Vlastnosti kompilace projektu")](native-apps-images/image6.png#lightbox)
 
 1.  Přidejte skript po sestavení, který kopíruje výstupní knihovnu DLL z tohoto projektu do kořenového adresáře projektu (což je mimo **/bin/** ). V závislosti na konfiguraci řízení verze knihovny DLL teď by mohli být přidán do správy zdrojového kódu.
 
-  [ ![](native-apps-images/image7.png "Okno události sestavení")](native-apps-images/image7.png)
+    [![](native-apps-images/image7.png "Okno události sestavení")](native-apps-images/image7.png#lightbox)
 
-### <a name="all-versions"></a>Všechny verze
+#### <a name="all-versions"></a>Všechny verze
 
 Příště sestavení projektu, sestavení přenosné knihovny tříd se zkopírují do kořenového adresáře projektu a kontrola v a potvrzení/nabízenou změny knihovnou DLL budete uložené (tak, aby ho můžete stáhnout na Mac pomocí sady Visual Studio pro Mac).
 
-  [ ![](native-apps-images/image8-sml.png "Umístění souboru Visual Basic sestavení výstupu")](native-apps-images/image8.png)
+  [![](native-apps-images/image8-sml.png "Umístění souboru Visual Basic sestavení výstupu")](native-apps-images/image8.png#lightbox)
 
 
 Toto sestavení potom přidáním do Xamarin projektů v sadě Visual Studio pro Mac, i když samotné jazyka Visual Basic nepodporuje Xamarin iOS nebo Android projekty.
 
-## <a name="referencing-the-pcl-in-visual-studio-for-mac"></a>Odkazování na PCL v sadě Visual Studio pro Mac
+### <a name="referencing-the-pcl-in-visual-studio-for-mac"></a>Odkazování na PCL v sadě Visual Studio pro Mac
 
 Protože Xamarin jazyka Visual Basic nepodporuje ho nelze načíst projekt PCL (ani aplikace Windows Phone), jak je vidět na tomto snímku obrazovky:
 
- [ ![](native-apps-images/image9.png "Visual Studio pro Mac řešení")](native-apps-images/image9.png)
+ [![](native-apps-images/image9.png "Visual Studio pro Mac řešení")](native-apps-images/image9.png#lightbox)
 
 V projektech Xamarin.iOS a Xamarin.Android jsme stále může zahrnovat sestavení jazyka Visual Basic PCL knihovny DLL:
 
 1.  Klikněte pravým tlačítkem na **odkazy** uzel a vyberte možnost **upravit odkazy...**
 
-  [ ![](native-apps-images/image10.png "Projekt upravit odkazy nabídky")](native-apps-images/image10.png)
+    [![](native-apps-images/image10.png "Projekt upravit odkazy nabídky")](native-apps-images/image10.png#lightbox)
 
 1.  Vyberte **.Net sestavení** kartě a přejděte do výstupní knihovnu DLL v adresáři projektu jazyka Visual Basic. Přestože projekt nelze otevřít v sadě Visual Studio pro Mac, všechny soubory musí být došlo od správy zdrojového kódu. Klikněte na tlačítko **přidat** pak **OK** přidat toto sestavení pro iOS a Android aplikace.
 
-  [ ![](native-apps-images/image11-sml.png "Klikněte na tlačítko Přidat pak OK přidat toto sestavení pro iOS a Android aplikace")](native-apps-images/image11.png)
+    [![](native-apps-images/image11-sml.png "Klikněte na tlačítko Přidat pak OK přidat toto sestavení pro iOS a Android aplikace")](native-apps-images/image11.png#lightbox)
 
 1.  IOS a Android aplikace můžete nyní zahrnují aplikační logiku poskytované knihovny přenosných tříd jazyka Visual Basic. Tento snímek obrazovky ukazuje aplikace pro iOS, která odkazuje na PCL Visual Basic a má kód, který používá funkce z této knihovny.
 
-  [ ![](native-apps-images/image12-sml.png "Upravit odkazy přidejte okno sestavení rozhraní .NET")](native-apps-images/image12.png)
+    [![](native-apps-images/image12-sml.png "Upravit odkazy přidejte okno sestavení rozhraní .NET")](native-apps-images/image12.png#lightbox)
 
 
 Pokud provedete změny do projektu jazyka Visual Basic v sadě Visual Studio nezapomeňte sestavení projektu, uložte výsledné sestavení knihovny DLL ve správě zdrojového kódu a pak pro vyžádání obsahu této nová knihovna DLL od správy zdrojového kódu na počítači Mac, aby sestavení v sadě Visual Studio pro Mac obsahují nejnovější funkce.

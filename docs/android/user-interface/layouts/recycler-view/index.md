@@ -3,16 +3,16 @@ title: RecyclerView
 description: "RecyclerView je skupina zobrazení pro zobrazení kolekcí; je určený flexibilnější náhrada za starší zobrazení skupin jako je například ListView a GridView.  Tato příručka vysvětluje, jak používat a přizpůsobit RecyclerView v aplikacích Xamarin.Android."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: CF12FE85-D03A-4E64-95D2-D7115061A500
+ms.assetid: 91EF0BD2-3306-47E1-9B39-627A1787762F
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/03/2018
-ms.openlocfilehash: ec8b3a4655c8e8d9e492c9f7a1807dd64ecc6ae7
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 028520742a84e717e28147f2fa1fafacfef34028
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="recyclerview"></a>RecyclerView
 
@@ -23,7 +23,7 @@ _RecyclerView je skupina zobrazení pro zobrazení kolekcí; je určený flexibi
 Mnoho aplikací se třeba zobrazit kolekce stejného typu (například zpráv, kontaktů, obrázky nebo skladeb); Tato kolekce je často příliš velká na obrazovce, takže kolekce se zobrazí v malém okně, které lze hladce procházet všechny položky v kolekci.
 `RecyclerView` je Android pomůcky, který se zobrazuje kolekce položek v seznamu nebo Mřížka, povolíte uživatelům procházet kolekce. Tady je snímek obrazovky příklad aplikaci, která používá `RecyclerView` zobrazit obsah složky Doručená pošta e-mailu v svislé posouvání seznamu:
 
-[ ![Příklad aplikace pomocí RecyclerView do seznamu doručených zpráv](images/01-recyclerview-example-sml.png)](images/01-recyclerview-example.png)
+[![Příklad aplikace pomocí RecyclerView do seznamu doručených zpráv](images/01-recyclerview-example-sml.png)](images/01-recyclerview-example.png#lightbox)
 
 `RecyclerView` nabízí dvě poutavé funkce:
 

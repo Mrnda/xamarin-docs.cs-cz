@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/05/2017
-ms.openlocfilehash: f7e511d7f0a933ab7f29369e5e5f0aa46607c8f8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c423c9bf49c735673793f8e61134f7e705816d54
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="installation"></a>Instalace
 
@@ -55,19 +55,19 @@ Nelze vytvořit nové "sledovat řešení"... místo sledování aplikace může
 
 1. Pokud nemáte existující projekt, nejprve vyberte **soubor > Nový řešení** a vytvoření aplikace pro iOS (například **jediné zobrazení aplikace**):
 
-    [ ![](installation-images/cycle8-2-sml.png "Zvolte Soubor > Nový řešení a vytvoření aplikace pro iOS")](installation-images/cycle8-2.png)
+    [![](installation-images/cycle8-2-sml.png "Zvolte Soubor > Nový řešení a vytvoření aplikace pro iOS")](installation-images/cycle8-2.png#lightbox)
 
 2. Po vytvoření aplikace iOS (nebo plánujete používat své stávající aplikace pro iOS), klikněte pravým tlačítkem na řešení a vyberte **Přidat > Přidat nový projekt...** . V **nový projekt** okno Vyberte **watchOS > aplikace > WatchKit aplikace**:
 
-    [ ![](installation-images/cycle8-6-sml.png "Vyberte watchOS > aplikace > WatchKit aplikace")](installation-images/cycle8-6.png)
+    [![](installation-images/cycle8-6-sml.png "Vyberte watchOS > aplikace > WatchKit aplikace")](installation-images/cycle8-6.png#lightbox)
 
 3. Na další obrazovce umožňuje zvolit, které projektu iOS aplikace by měla obsahovat sledování aplikace:
 
-    [ ![](installation-images/cycle8-7-sml.png "Zvolte, které projektu iOS aplikace by měla obsahovat sledování aplikace")](installation-images/cycle8-7.png)
+    [![](installation-images/cycle8-7-sml.png "Zvolte, které projektu iOS aplikace by měla obsahovat sledování aplikace")](installation-images/cycle8-7.png#lightbox)
 
 4. Nakonec vyberte umístění pro uložení projektu (a volitelně povolena Správa zdrojového kódu):
 
-    [ ![](installation-images/cycle8-8-sml.png "Vyberte umístění k uložení projektu")](installation-images/cycle8-8.png)
+    [![](installation-images/cycle8-8-sml.png "Vyberte umístění k uložení projektu")](installation-images/cycle8-8.png#lightbox)
 
 5. Visual Studio pro Mac se automaticky nakonfiguruje [projektu odkazy a **Info.plist** nastavení](~/ios/watchos/get-started/project-references.md) za vás.
 
@@ -81,11 +81,11 @@ Dvakrát klikněte na aplikaci sledovat **Interface.storyboard** upravit pomocí
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![](installation-images/iosdesigner-sml.png "Scénáře v Návrháři")](installation-images/iosdesigner.png)
+[![](installation-images/iosdesigner-sml.png "Scénáře v Návrháři")](installation-images/iosdesigner.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![](installation-images/iosdesigner-sml-vs.png "Scénáře v Návrháři")](installation-images/iosdesigner-vs.png)
+[![](installation-images/iosdesigner-sml-vs.png "Scénáře v Návrháři")](installation-images/iosdesigner-vs.png#lightbox)
 
 -----
 
@@ -152,7 +152,7 @@ Existují dva režimy pro spouštění WatchKit aplikace:
 Po instalaci Xcode 8 (nebo novější) jsou oddělené od iOS simulátorů Apple Watch simulátorů (na rozdíl od [Xcode 6](#xcode6), kde jsou uvedeny jako *externí zobrazení*).
 Když vyberete projekt sledovat aplikace a nastavit jej projekt po spuštění, se zobrazí v seznamu simulátoru *iOS simulátorů* zvolit (viz následující obrázek).
 
-[ ![](installation-images/xs-xcode8-watchos3-sml.png "Výběr typu simulátoru")](installation-images/xs-xcode8-watchos3.png)
+[![](installation-images/xs-xcode8-watchos3-sml.png "Výběr typu simulátoru")](installation-images/xs-xcode8-watchos3.png#lightbox)
 
 Při spuštění ladění, *dva* simulátorů by se měl spustit - simulátoru iOS *a* simulátoru Apple Watch. Použít **příkaz + Shift + H** přejděte do nabídky a hodiny tučné sledovat; a používat **hardwaru** nabídky nastavit **Force Touch přetížení**. Posouvání na trackpadu nebo myš simulovat pomocí digitální Crown.
 
@@ -195,13 +195,13 @@ Visual Studio pro Mac můžete aplikaci sledovat začínat oznámení _spuštěn
 Klikněte pravým tlačítkem na projekt aplikace sledování a zvolte **spustit s > Vlastní konfigurace...** :
 
 
-[![](installation-images/runwith-customparams-sml.png "Spuštění vlastní konfigurace")](installation-images/runwith-customparams.png)
+[![](installation-images/runwith-customparams-sml.png "Spuštění vlastní konfigurace")](installation-images/runwith-customparams.png#lightbox)
 
 
 Tím se otevře **vlastní parametry** okno, kde můžete vybrat **oznámení** (a zadejte datovou část JSON), stiskněte **spustit** a spusťte aplikaci sledovat v simulátoru:
 
 
-[![](installation-images/runwith-execargs-sml.png "Nastavení oznámení a datovou část")](installation-images/runwith-execargs.png)
+[![](installation-images/runwith-execargs-sml.png "Nastavení oznámení a datovou část")](installation-images/runwith-execargs.png#lightbox)
 
 
 

@@ -8,21 +8,21 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: effa527b330fb6ca75800392e557289a326f17aa
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 388744d48799e84587a4f554a4eb67cd677d8c9a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="storyboards"></a>Scénáře
 
 Scénář definuje všechny uživatelské rozhraní pro danou aplikaci rozdělit do funkční přehled jeho zobrazení řadičů. V Tvůrci rozhraní Xcode na každý z těchto řadičů žije v jeho vlastní scény.
 
-[ ![](indepth-images/intro01.png "Scénáře v Tvůrci rozhraní na Xcode")](indepth-images/intro01.png)
+[![](indepth-images/intro01.png "Scénáře v Tvůrci rozhraní na Xcode")](indepth-images/intro01.png#lightbox)
 
 Scénář je souboru prostředků (s příponami z `.storyboard`), získá součástí sady prostředků aplikace Xamarin.Mac, když je zkompilovat a dodaný. Definovat výchozí scénáře pro vaši aplikaci, upravit jej na `Info.plist` soubor a vyberte **hlavní rozhraní** z rozevíracího pole: 
 
-[ ![](indepth-images/sb01.png "Info.plist editor")](indepth-images/sb01.png)
+[![](indepth-images/sb01.png "Info.plist editor")](indepth-images/sb01.png#lightbox)
 
 <a name="Loading-from-Code" />
 
@@ -41,11 +41,11 @@ controller.ShowWindow(this);
 
 `FromName` Načte Storyboard soubor se zadaným názvem, který byl součástí sady aplikace. `InstantiateControllerWithIdentifier` Vytvoří instanci řadiče zobrazení s danou identitu. Při navrhování uživatelského rozhraní nastavíte v Xcode na rozhraní tvůrce Identity:
 
-[ ![](indepth-images/sb02.png "Nastavení ID scénáře")](indepth-images/sb02.png)
+[![](indepth-images/sb02.png "Nastavení ID scénáře")](indepth-images/sb02.png#lightbox)
 
 Volitelně můžete `InstantiateInitialController` metodu pro zatížení řadiče zobrazení, který byl přiřazen počáteční řadiče v Tvůrci rozhraní:
 
-[ ![](indepth-images/sb03.png "Nastavení počáteční řadiče")](indepth-images/sb03.png)
+[![](indepth-images/sb03.png "Nastavení počáteční řadiče")](indepth-images/sb03.png#lightbox)
 
 Je označena kvalifikátorem **Storyboard vstupní bod** a na šipku otevřete skončila výše.
 
@@ -76,7 +76,7 @@ Několik nových metod jsou přidané do `NSViewController` třídy pro podporu 
 
 Kromě toho `NSViewControllers` jsou teď součástí okna _respondér řetězu_:
 
-[ ![](indepth-images/vc01.png "Řetězu respondér")](indepth-images/vc01.png)
+[![](indepth-images/vc01.png "Řetězu respondér")](indepth-images/vc01.png#lightbox)
 
 A jako takový jsou drátové up přijmout a reakce na události, jako je vyjmutí, kopírování a vložení výběr položky nabídky. Toto automatické View Controller navázání dochází pouze na aplikace běžící v systému macOS Sierra (10.12) a větší.
 
@@ -86,13 +86,13 @@ A jako takový jsou drátové up přijmout a reakce na události, jako je vyjmut
 
 V scénářů, můžete nyní implementovat řadiče zobrazení (například řadiče zobrazení rozdělení a karta View Controller) _omezení_, tak, aby mohly "obsahovat" ostatní dílčí řadiče zobrazení:
 
-[ ![](indepth-images/vc02.png "Příklad zahrnutí řadiče zobrazení")](indepth-images/vc02.png)
+[![](indepth-images/vc02.png "Příklad zahrnutí řadiče zobrazení")](indepth-images/vc02.png#lightbox)
 
 Podřízené zobrazení řadiče obsahují metody a vlastnosti, které chcete je propojují zpátky na jejich nadřazené řadič zobrazení a pracovat s zobrazení a odebrání zobrazení na obrazovce.
 
 Mají všechny řadiče zobrazení kontejneru integrovaná v systému macOS konkrétní rozložení, který Apple navrhnout provedením Pokud vytvoření vlastní vlastní zobrazení řadičů kontejneru:
 
-[ ![](indepth-images/vc03.png "Rozložení řadiče zobrazení")](indepth-images/vc03.png)
+[![](indepth-images/vc03.png "Rozložení řadiče zobrazení")](indepth-images/vc03.png#lightbox)
 
 Řadiče zobrazení kolekce obsahuje pole kolekce zobrazit položky, z nichž každý obsahuje jeden nebo více řadičů zobrazení, které obsahují vlastní zobrazení.
 
@@ -131,7 +131,7 @@ PerformSegue("MyNamedSegue", this);
 
 Segue ID je definován v Xcode na rozhraní tvůrce při jsou rozložení uživatelském rozhraní aplikace:
 
-[ ![](indepth-images/sg02.png "Zadávání Segue název")](indepth-images/sg02.png)
+[![](indepth-images/sg02.png "Zadávání Segue název")](indepth-images/sg02.png#lightbox)
 
 V Kontroleru zobrazení, která funguje jako zdroj Segue, by měly přepsat `PrepareForSegue` metoda a proveďte všechny inicializace požadované předtím, než se spustí Segue a zadaný kontroler zobrazení se zobrazí:
 
@@ -215,7 +215,7 @@ Několik věcí, které si zde:
 
 V Xcode na rozhraní tvůrce použít tento nový typ Segue, musíme nejprve kompilace aplikace potom přepnout na Xcode a přidat nové Segue mezi dvěma scény. Nastavte **styl** k **vlastní** a **Segue třída** k `ReplaceViewSegue` (název naše vlastní třídy Segue):
 
-[ ![](indepth-images/sg01.png "Nastavení Segue – třída")](indepth-images/sg01.png)
+[![](indepth-images/sg01.png "Nastavení Segue – třída")](indepth-images/sg01.png#lightbox)
 
 <a name="Triggered-Segues" />
 
@@ -271,21 +271,21 @@ Pokud chcete přidat odkaz na externí Storyboard, postupujte takto:
 
 1. V **Průzkumníku řešení**, klikněte pravým tlačítkem na název projektu a vyberte **přidat** > **nový soubor...**   >  **Mac** > **Storyboard**. Zadejte **název** pro nové scénáře a klikněte na **nový** tlačítko: 
 
-    [ ![](indepth-images/ref01.png "Přidání nové scénáře")](indepth-images/ref01.png)
+    [![](indepth-images/ref01.png "Přidání nové scénáře")](indepth-images/ref01.png#lightbox)
 2. V **Průzkumníku**, dvakrát klikněte na nový název Storyboard otevřete pro úpravy v Tvůrci rozhraní pro Xcode.
 2. Návrh rozložení scény nové scénáře, jako za normálních okolností byste a uložte změny: 
 
-    [ ![](indepth-images/ref02.png "Navrhování rozhraní")](indepth-images/ref02.png)
+    [![](indepth-images/ref02.png "Navrhování rozhraní")](indepth-images/ref02.png#lightbox)
 3. Umožňuje přepnout do scénáře, který budete přidávat odkaz na v Tvůrci rozhraní.
 4. Přetáhněte **scénáře odkaz** z **objektu knihovny** na návrhovou plochu: 
 
-    [ ![](indepth-images/ref03.png "Výběr Storyboard odkaz v knihovně")](indepth-images/ref03.png)
+    [![](indepth-images/ref03.png "Výběr Storyboard odkaz v knihovně")](indepth-images/ref03.png#lightbox)
 5. V **atribut Inspector**, vyberte název **Storyboard** kterou jste vytvořili výše: 
 
-    [ ![](indepth-images/ref04.png "Konfigurace odkazu")](indepth-images/ref04.png)
+    [![](indepth-images/ref04.png "Konfigurace odkazu")](indepth-images/ref04.png#lightbox)
 6. Ovládací prvek, klikněte na Widget uživatelského rozhraní (např. tlačítka) na existující scény a vytvořit nové Segue k **Storyboard odkaz** kterou jste právě vytvořili.  V místní nabídce vyberte **zobrazit** k dokončení Segue: 
 
-    [ ![](indepth-images/ref06.png "Nastavení typu Segue")](indepth-images/ref06.png) 
+    [![](indepth-images/ref06.png "Nastavení typu Segue")](indepth-images/ref06.png#lightbox) 
 8. Uložte změny do scénáře.
 9. Vraťte se k Visual Studio pro Mac na synchronizaci změn.
 
@@ -300,20 +300,20 @@ Chcete-li přidat odkaz na konkrétní scény externí Storyboard (a ne počáte
 1. V **Průzkumníku**, dvakrát klikněte na externí Storyboard otevřete pro úpravy v Tvůrci rozhraní pro Xcode.
 2. Přidejte nové scény a návrh jeho rozložení běžným způsobem: 
 
-    [ ![](indepth-images/ref07.png "Navrhování rozložení v Xcode")](indepth-images/ref07.png)
+    [![](indepth-images/ref07.png "Navrhování rozložení v Xcode")](indepth-images/ref07.png#lightbox)
 3. V **Identity Inspector**, zadejte **Storyboard ID** pro řadič nové scény okno: 
 
-    [ ![](indepth-images/ref08.png "Nastavení ID scénáře")](indepth-images/ref08.png)
+    [![](indepth-images/ref08.png "Nastavení ID scénáře")](indepth-images/ref08.png#lightbox)
 3. Otevřete scénáře, který budete přidávat odkaz na v Tvůrci rozhraní.
 4. Přetáhněte **scénáře odkaz** z **objektu knihovny** na návrhovou plochu: 
 
-    [ ![](indepth-images/ref03.png "Výběr Storyboard odkaz z knihovny")](indepth-images/ref03.png)
+    [![](indepth-images/ref03.png "Výběr Storyboard odkaz z knihovny")](indepth-images/ref03.png#lightbox)
 5. V **Identity Inspector**, vyberte název **Storyboard** a **ID odkazu** (Storyboard ID) scény, kterou jste vytvořili výše: 
 
-    [ ![](indepth-images/ref09.png "Nastavení ID odkazu")](indepth-images/ref09.png)
+    [![](indepth-images/ref09.png "Nastavení ID odkazu")](indepth-images/ref09.png#lightbox)
 6. Ovládací prvek, klikněte na Widget uživatelského rozhraní (např. tlačítka) na existující scény a vytvořit nové Segue k **Storyboard odkaz** kterou jste právě vytvořili. V místní nabídce vyberte **zobrazit** k dokončení Segue: 
 
-    [ ![](indepth-images/ref06.png "Nastavení typu Segue")](indepth-images/ref06.png) 
+    [![](indepth-images/ref06.png "Nastavení typu Segue")](indepth-images/ref06.png#lightbox) 
 8. Uložte změny do scénáře.
 9. Vraťte se k Visual Studio pro Mac na synchronizaci změn.
 
@@ -328,19 +328,19 @@ Pokud chcete přidat odkaz na konkrétní scény stejné Storyboard, postupujte 
 1. V **Průzkumníku**, dvakrát klikněte na scénáři otevřete pro úpravy.
 2. Přidejte nové scény a návrh jeho rozložení běžným způsobem: 
 
-    [ ![](indepth-images/ref11.png "Úpravy storyboard v Xcode")](indepth-images/ref11.png)
+    [![](indepth-images/ref11.png "Úpravy storyboard v Xcode")](indepth-images/ref11.png#lightbox)
 3. V **Identity Inspector**, zadejte **Storyboard ID** pro řadič nové scény okno: 
 
-    [ ![](indepth-images/ref12.png "Nastavení ID scénáře")](indepth-images/ref12.png)
+    [![](indepth-images/ref12.png "Nastavení ID scénáře")](indepth-images/ref12.png#lightbox)
 3. Přetáhněte **scénáře odkaz** z **sada nástrojů** na návrhovou plochu: 
 
-    [ ![](indepth-images/ref03.png "Výběr Storyboard odkaz z knihovny")](indepth-images/ref03.png)
+    [![](indepth-images/ref03.png "Výběr Storyboard odkaz z knihovny")](indepth-images/ref03.png#lightbox)
 5. V **atribut Inspector**, vyberte **ID odkazu** (Storyboard ID) scény, kterou jste vytvořili výše: 
 
-    [ ![](indepth-images/ref13.png "Nastavení ID odkazu")](indepth-images/ref13.png)
+    [![](indepth-images/ref13.png "Nastavení ID odkazu")](indepth-images/ref13.png#lightbox)
 6. Ovládací prvek, klikněte na Widget uživatelského rozhraní (např. tlačítka) na existující scény a vytvořit nové Segue k **Storyboard odkaz** kterou jste právě vytvořili. V místní nabídce vyberte **zobrazit** k dokončení Segue: 
 
-    [ ![](indepth-images/ref06.png "Výběr typu Segue")](indepth-images/ref06.png) 
+    [![](indepth-images/ref06.png "Výběr typu Segue")](indepth-images/ref06.png#lightbox) 
 8. Uložte změny do scénáře.
 9. Vraťte se k Visual Studio pro Mac na synchronizaci změn.
 

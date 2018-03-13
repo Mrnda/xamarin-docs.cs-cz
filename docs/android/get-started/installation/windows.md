@@ -7,18 +7,17 @@ ms.assetid: 2BE4D5AD-D468-B177-8F96-837D084E7DE1
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: 10cfb790fca30b67faaa8f7720a358ec34c25663
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 7cf21e75c9ae2f3c27b07cb20f1044779b42b06b
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="windows-installation"></a>Instalace systému Windows
 
 _Tento průvodce popisuje kroky pro instalaci Xamarin.Android pro sadu Visual Studio v systému Windows, a vysvětluje postup konfigurace Xamarin.Android pro vytvoření vaší první aplikace Xamarin.Android._
 
-<a name="overview" />
 
 ## <a name="overview"></a>Přehled
 
@@ -39,7 +38,6 @@ Na konci tohoto průvodce, budete mít funkční Xamarin.Android instalace integ
 
 Podrobné informace o instalaci Xamarin pro použití s Visual Studio v systému Windows najdete v tématu [nainstalovat Windows](~/cross-platform/get-started/installation/windows.md) průvodce.
 
-<a name="configuration" />
 
 ## <a name="configuration"></a>Konfigurace
 
@@ -52,16 +50,15 @@ Pro většinu uživatelů tyto výchozí umístění bude fungovat bez další z
 Používá Xamarin.Android [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html), což je vyžadováno, pokud jste pro úroveň rozhraní API 24 vývoj nebo větší (JDK 8 také podporuje úrovně rozhraní API starší než 24). Můžete dál používat [JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) Pokud vývoj speciálně pro úroveň rozhraní API 23 nebo starším.
 
 > [!IMPORTANT]
-> **Poznámka:** Xamarin.Android nepodporuje JDK 9.
+> Xamarin.Android nepodporuje JDK 9.
 
-<a name="sdk_manager" />
 
 ### <a name="android-sdk-manager"></a>Správce sady Android SDK
 
 Android používá více nastavení úrovně rozhraní API systému Android určete kompatibilitu aplikace v různých verzích Android (Další informace o úrovních rozhraní API systému Android, najdete v části [Principy Android API úrovně](~/android/app-fundamentals/android-api-levels.md)).
 V závislosti na tom, jaké rozhraní API systému Android (úrovní) chcete zacílit musíte stáhnout a nainstalovat další součásti sady SDK pro Android. Kromě toho musíte k instalaci volitelných nástrojů a bitové kopie emulátoru součástí sady SDK pro Android. Chcete-li to provést, použijte **Android SDK Manager**. Můžete spustit **Android SDK Manager** kliknutím **nástroje > Android > Android SDK Manager**:
 
-[![Postup spuštění Android SDK Manager](windows-images/08-sdk-manager-sml.png)](windows-images/08-sdk-manager.png)
+[![Postup spuštění Android SDK Manager](windows-images/08-sdk-manager-sml.png)](windows-images/08-sdk-manager.png#lightbox)
 
 Ve výchozím nastavení nainstaluje Visual Studio Google Android SDK Manager:
 
@@ -71,7 +68,6 @@ Google Android SDK Manager můžete použít k instalaci verze balíčku nástro
 
 Další informace o používání nástroje Xamarin Android SDK Manager najdete v tématu [Android SDK instalace](~/android/get-started/installation/android-sdk.md).
 
-<a name="emulator" />
 
 ### <a name="android-emulator"></a>Emulátoru systému Android
 
@@ -94,8 +90,6 @@ Protože vývojovém počítači procesoru může podporovat pouze jeden virtual
 Pokud máte fyzické zařízení Android má použít pro testování, to je vhodná doba na nastavit pro použití vývoj. V tématu [nastavit zařízení pro vývoj](~/android/get-started/installation/set-up-device-for-development.md) konfigurace zařízení s Androidem pro vývoj, připojte jej k počítači pro spouštění a ladění aplikací Xamarin.Android.
 
 
-<a name="create_app" />
-
 ## <a name="create-an-application"></a>Vytvoření aplikace
 
 Teď, když jste nainstalovali Xamarin.Android, můžete spustit Visual Studio vytvořte nový projekt. Klikněte na tlačítko **soubor > Nový > projekt** zahajte proces vytváření aplikace:
@@ -104,12 +98,10 @@ Teď, když jste nainstalovali Xamarin.Android, můžete spustit Visual Studio v
 
 V **nový projekt** dialogovém okně, vyberte **Android** pod **šablony** a klikněte na tlačítko **prázdná aplikace (Android)** v pravém podokně. Zadejte název pro vaši aplikaci (na tomto snímku obrazovky je aplikace volána **Moje aplikace**), pak klikněte na tlačítko **OK**:
 
-[![Dialogové okno snímek obrazovky nový projekt, vytvořit prázdnou aplikaci pro Android](windows-images/11-first-app-sml.png)](windows-images/11-first-app.png)
+[![Dialogové okno snímek obrazovky nový projekt, vytvořit prázdnou aplikaci pro Android](windows-images/11-first-app-sml.png)](windows-images/11-first-app.png#lightbox)
 
 Je to! Nyní jste připraveni vytvořit aplikace pro Android pomocí Xamarin.Android!
 
-
-<a name="summary" />
 
 ## <a name="summary"></a>Souhrn
 

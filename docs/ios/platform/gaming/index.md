@@ -3,16 +3,16 @@ title: "iOS herní rozhraní API"
 description: "Tento článek se zabývá novými rozšířeními herní poskytované iOS 9, která můžete použít ke zlepšení vaší Xamarin.iOS herní grafiky a zvukové funkce."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 0E2217F1-FC96-4D0A-ABAB-D40AD8F96502
+ms.assetid: 958D38FD-9240-482E-9A42-D6671ED8F2B0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 6c735c68ee61032d8dfe3a74e6858bc058c6fa47
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d0a66d4cfdb3050c7ad791d24e24d6917a031ee1
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="ios-gaming-apis"></a>iOS herní rozhraní API
 
@@ -21,7 +21,7 @@ _Tento článek se zabývá novými rozšířeními herní poskytované iOS 9, k
 Apple má provedli několik zlepšení technologické k herní rozhraní API v iOS 9, které usnadňují implementaci herní grafiky a zvuku v aplikaci pro Xamarin.iOS.
 Mezi ně patří i usnadnění vývoje prostřednictvím základní architektury a využití možností GPU zařízení s iOS pro vylepšené rychlost a grafické dalo.
 
-[ ![](images/flocking01.png "Příklad aplikace spuštěna vločkování")](images/flocking01.png)
+[![](images/flocking01.png "Příklad aplikace spuštěna vločkování")](images/flocking01.png#lightbox)
 
 To společně s novou, rozšířené funkce operačního systému, SceneKit a SpriteKit zahrnuje GameplayKit, ReplayKit, Model vstupně-výstupních operací, MetalKit a shadery výkonu operačního systému.
 
@@ -56,7 +56,7 @@ Například 2D enemy hledání skrze bludiště nebo 3D znak prostřednictvím g
 
 Vezměte v úvahu následující mapa:
 
-[ ![](images/gkpathfindpath.png "Příklad pathfinding mapování")](images/gkpathfindpath.png)
+[![](images/gkpathfindpath.png "Příklad pathfinding mapování")](images/gkpathfindpath.png#lightbox)
 
 Pomocí pathfinding tento kód C# můžete najít způsob, jak pomocí mapy:
 
@@ -367,7 +367,7 @@ public override void ViewWillLayoutSubviews ()
 
 Při spuštění, trochu animovaný _"Boids"_ bude hejno kolem naše odposlouchávání prstu:
 
-[ ![](images/flocking01.png "Trochu animovaný Boids bude hejno kolem odposlouchávání prstu")](images/flocking01.png)
+[![](images/flocking01.png "Trochu animovaný Boids bude hejno kolem odposlouchávání prstu")](images/flocking01.png#lightbox)
 
 ### <a name="other-apple-examples"></a>Další příklady Apple
 

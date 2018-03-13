@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: f1f420641691e700894687fef8ea3bd44fd60ff2
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: d7f7e031d91cd1505ee255bbf0d25198bd9ae82a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="customizing-a-contentpage"></a>Přizpůsobení ContentPage
 
@@ -99,7 +99,7 @@ Proces pro vytvoření třídy vlastní zobrazovací jednotky vypadá takto:
 1. Přidat `ExportRenderer` atribut třídy vykreslení stránky k určení, že bude použit k vykreslení stránky Xamarin.Forms. Tento atribut slouží k registraci vlastní zobrazovací jednotky s Xamarin.Forms.
 
 > [!NOTE]
-> **Poznámka:**: zadání je volitelné zajistit vykreslení stránky v každém projektu platformy. Pokud není registrované vykreslení stránky, se používá výchozí zobrazovací jednotky pro stránku.
+> Zadání je volitelné zajistit vykreslení stránky v každém projektu platformy. Pokud není registrované vykreslení stránky, se používá výchozí zobrazovací jednotky pro stránku.
 
 Následující diagram znázorňuje odpovědnosti jednotlivých projektů v ukázkové aplikace, společně s vztah mezi nimi:
 
@@ -248,7 +248,7 @@ Na platformě Windows Phone typu odkaz na stránku nativní používá na platfo
 Při implementaci vlastní zobrazovací jednotky, která je odvozena z `PageRenderer` v prostředí Windows Runtime `ArrangeOverride` by také být implementována metoda uspořádat ovládací prvky stránky, protože základní zobrazovací jednotky nebude vědět, co dělat s nimi. Prázdná stránka výsledků, jinak hodnota. Proto v tomto příkladu `ArrangeOverride` volání metod `Arrange` metodu `Page` instance.
 
 > [!NOTE]
-> **Poznámka:**: je potřeba zastavit a uvolnění objektů, které poskytují přístup k fotoaparátu v aplikaci Windows Phone 8.1 WinRT. Tak neučiníte, může narušovat jiné aplikace, které se pokoušejí o přístup k fotoaparátu zařízení. Další informace najdete v tématu `CleanUpCaptureResourcesAsync` metoda v projektu Windows Phone v ukázkové řešení a [rychlý start: Digitalizace videa pomocí rozhraní API MediaCapture](https://msdn.microsoft.com/library/windows/apps/xaml/dn642092.aspx).
+> Je důležité k zastavení a uvolnění objektů, které poskytují přístup k fotoaparátu v aplikaci Windows Phone 8.1 WinRT. Tak neučiníte, může narušovat jiné aplikace, které se pokoušejí o přístup k fotoaparátu zařízení. Další informace najdete v tématu `CleanUpCaptureResourcesAsync` metoda v projektu Windows Phone v ukázkové řešení a [rychlý start: Digitalizace videa pomocí rozhraní API MediaCapture](https://msdn.microsoft.com/library/windows/apps/xaml/dn642092.aspx).
 
 ### <a name="creating-the-page-renderer-on-uwp"></a>Vytváření vykreslení stránky na UWP
 
@@ -297,7 +297,7 @@ Volání základní třídy `OnElementChanged` metoda vytvoří instanci `Framew
 Při implementaci vlastní zobrazovací jednotky, která je odvozena z `PageRenderer` na UPW, `ArrangeOverride` by také být implementována metoda uspořádat ovládací prvky stránky, protože základní zobrazovací jednotky nebude vědět, co dělat s nimi. Prázdná stránka výsledků, jinak hodnota. Proto v tomto příkladu `ArrangeOverride` volání metod `Arrange` metodu `Page` instance.
 
 > [!NOTE]
-> **Poznámka:**: je potřeba zastavit a uvolnění objektů, které poskytují přístup k fotoaparátu v aplikaci UWP. Tak neučiníte, může narušovat jiné aplikace, které se pokoušejí o přístup k fotoaparátu zařízení. Další informace najdete v tématu [zobrazení náhledu fotoaparátu](https://msdn.microsoft.com/windows/uwp/audio-video-camera/simple-camera-preview-access).
+> Je důležité k zastavení a uvolnění objektů, které poskytují přístup k fotoaparátu v aplikaci UWP. Tak neučiníte, může narušovat jiné aplikace, které se pokoušejí o přístup k fotoaparátu zařízení. Další informace najdete v tématu [zobrazení náhledu fotoaparátu](https://msdn.microsoft.com/windows/uwp/audio-video-camera/simple-camera-preview-access).
 
 ## <a name="summary"></a>Souhrn
 

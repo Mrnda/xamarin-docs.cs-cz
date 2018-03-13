@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/27/2017
-ms.openlocfilehash: d1d91804c11d2e944bb618fadb3d659b512c5905
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fb7ca216978e4c890349a44b07d5a383e9ca2384
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="simple-animations"></a>Jednoduché animace
 
@@ -130,7 +130,7 @@ Na následujících snímcích obrazovky zobrazit překlad probíhá na jednotli
 ![](simple-images/translateto.png "Překlad animace")
 
 > [!NOTE]
-> **Poznámka:**: Pokud element původně nastíněny vypnout obrazovky a pak přeložit na obrazovku, po překladu element vstup rozložení zůstane mimo obrazovku a uživatel nemůže komunikovat s ním. Proto se doporučuje, že zobrazení by měl být nastíněny v konečné polohy, a pak potřebné překlady provést.
+> Pokud element původně nastíněny vypnout obrazovky a pak přeložit na obrazovku, po překladu vstupní rozložení elementu zůstane mimo obrazovku a uživatel nemůže komunikovat s ním. Proto se doporučuje, že zobrazení by měl být nastíněny v konečné polohy, a pak potřebné překlady provést.
 
 ### <a name="fading"></a>Pozvolného vysouvání
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 73b0a3292d7b1681b4086e8366e8b813194969a9
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 8901bb57ace4f05e8c26fdc43dfe8c476927903a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="alerts"></a>Upozornění
 
@@ -22,7 +22,7 @@ Při práci s C# a rozhraní .NET v aplikaci Xamarin.Mac, máte přístup ke ste
 
 Výstraha je zvláštní druh dialog, který se zobrazí, když dojde k vážný problém (například chybu) nebo jako upozornění (například příprava k odstranění souboru). Vzhledem k tomu, že výstraha je dialogové okno, taky vyžaduje odpověď uživatele předtím, než je možné uzavřít.
 
-[ ![](alert-images/alert06.png "Příklad výstrahy")](alert-images/alert06.png)
+[![](alert-images/alert06.png "Příklad výstrahy")](alert-images/alert06.png#lightbox)
 
 V tomto článku vám nabídneme základní informace o práci s výstrahami v aplikaci Xamarin.Mac. 
 
@@ -60,7 +60,7 @@ alert.RunModal ();
 
 Výše uvedený kód zobrazí výstrahu s ikonou aplikace přes ikony upozornění, název, upozornění a jedinou **OK** tlačítko:
 
-[ ![](alert-images/alert01.png "Výstraha s tlačítko OK")](alert-images/alert01.png)
+[![](alert-images/alert01.png "Výstraha s tlačítko OK")](alert-images/alert01.png#lightbox)
 
 Apple poskytuje několik vlastností, které lze použít k přizpůsobení výstrahu:
 
@@ -92,7 +92,7 @@ alert.RunModal ();
 ```
 Pokud tento kód běží, se zobrazí následující:
 
-[ ![](alert-images/alert02.png "Upozornění na jednoduchý")](alert-images/alert02.png)
+[![](alert-images/alert02.png "Upozornění na jednoduchý")](alert-images/alert02.png#lightbox)
 
 Následující kód zobrazí stejné výstrahu jako list:
 
@@ -107,7 +107,7 @@ alert.BeginSheet (this);
 
 Pokud tento kód běží, následující se zobrazí:
 
-[ ![](alert-images/alert03.png "Zobrazí jako list upozornění")](alert-images/alert03.png)
+[![](alert-images/alert03.png "Zobrazí jako list upozornění")](alert-images/alert03.png#lightbox)
 
 
 <a name="Working_with_Alert_Buttons" />
@@ -136,7 +136,7 @@ var result = alert.RunModal ();
 
 Pokud jsme spustit kód, následující se zobrazí:
 
-[ ![](alert-images/alert04.png "Výstraha s tři možnosti tlačítko")](alert-images/alert04.png)
+[![](alert-images/alert04.png "Výstraha s tři možnosti tlačítko")](alert-images/alert04.png#lightbox)
 
 Tady je kód pro stejnou výstrahu jako list:
 
@@ -155,7 +155,7 @@ alert.BeginSheetForResponse (this, (result) => {
 ```
 Pokud tento kód běží, následující se zobrazí:
 
-[ ![](alert-images/alert05.png "Upozornění na tři tlačítko zobrazí jako list")](alert-images/alert05.png)
+[![](alert-images/alert05.png "Upozornění na tři tlačítko zobrazí jako list")](alert-images/alert05.png#lightbox)
 
 > [!IMPORTANT]
 > Měli byste nikdy přidat více než tři tlačítka na výstrahu.
@@ -184,7 +184,7 @@ Pokud hodnota `alert.SuppressionButton.State` je `NSCellStateValue.On`, uživate
 
 Pokud je kód spuštěn, následující se zobrazí:
 
-[ ![](alert-images/alert06.png "Výstraha s potlačit tlačítko")](alert-images/alert06.png)
+[![](alert-images/alert06.png "Výstraha s potlačit tlačítko")](alert-images/alert06.png#lightbox)
 
 Tady je kód pro stejnou výstrahu jako list:
 
@@ -205,7 +205,7 @@ alert.BeginSheetForResponse (this, (result) => {
 
 Pokud tento kód běží, následující se zobrazí:
 
-[ ![](alert-images/alert07.png "Výstraha s potlačit tlačítko Zobrazit jako list")](alert-images/alert07.png)
+[![](alert-images/alert07.png "Výstraha s potlačit tlačítko Zobrazit jako list")](alert-images/alert07.png#lightbox)
 
 <a name="Adding_a_Custom_SubView" />
 
@@ -235,7 +235,7 @@ Klíče řádky představují `var input = new NSTextField (new CGRect (0, 0, 30
 
 Pokud jsme spustit kód, následující se zobrazí:
 
-[ ![](alert-images/alert08.png "Pokud jsme spustit kód, následující se zobrazí")](alert-images/alert08.png)
+[![](alert-images/alert08.png "Pokud jsme spustit kód, následující se zobrazí")](alert-images/alert08.png#lightbox)
 
 Tady je stejná výstraha jako list:
 
@@ -260,7 +260,7 @@ alert.BeginSheetForResponse (this, (result) => {
 
 Pokud jsme spustit tento kód, následující se zobrazí:
 
-[ ![](alert-images/alert09.png "Výstraha s vlastní zobrazení")](alert-images/alert09.png)
+[![](alert-images/alert09.png "Výstraha s vlastní zobrazení")](alert-images/alert09.png#lightbox)
 
 <a name="Summary" />
 

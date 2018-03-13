@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 1cc74fb30e59ecd5f6be3cf3e1c84f60cd5ca0a6
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 1fba2219a10a83043097d1b5ca6fb293de4d6c70
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="source-lists"></a>Zdroj seznamy
 
@@ -22,7 +22,7 @@ Při práci s C# a rozhraní .NET v aplikaci Xamarin.Mac, máte přístup do ste
 
 Seznam zdrojů je zvláštní druh zobrazení osnovy používá k zobrazení, zdroj akce, jako je na straně panelu v vyhledávací nebo iTunes.
 
-[ ![](source-list-images/source05.png "Seznam zdrojů příklad")](source-list-images/source05.png)
+[![](source-list-images/source05.png "Seznam zdrojů příklad")](source-list-images/source05.png#lightbox)
 
 V tomto článku vám nabídneme základní informace o práci s uvádí zdroje v aplikaci Xamarin.Mac. Vysoce navržený na spolupracovat [Hello, Mac](~/mac/get-started/hello-mac.md) článek nejprve, konkrétně [Úvod do Xcode a rozhraní tvůrce](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) a [výstupy a akce](~/mac/get-started/hello-mac.md#Outlets_and_Actions) oddíly, jak se popisuje klíčové koncepty a techniky, které budeme používat v tomto článku.
 
@@ -50,7 +50,7 @@ Seznam zdrojů je zvláštní druh zobrazení osnovy používá k zobrazení, zd
 
 Nejdříve vytvoříme nový `SourceListItem` třída pro uložení dat pro naše zdrojového seznamu. V **Průzkumníku řešení**, klikněte pravým tlačítkem na projekt a vyberte **přidat** > **nový soubor...** Vyberte **Obecné** > **prázdné třídy**, zadejte `SourceListItem` pro **název** a klikněte na tlačítko **nový** tlačítko:
 
-[ ![](source-list-images/source01.png "Přidání prázdný – třída")](source-list-images/source01.png)
+[![](source-list-images/source01.png "Přidání prázdný – třída")](source-list-images/source01.png#lightbox)
 
 Ujistěte se, `SourceListItem.cs` soubor vypadá takto: 
 
@@ -532,19 +532,19 @@ Tím se vytvoří vlastní, opakovaně použitelné podtřídou třídy `NSOutli
 
 Teď umožňuje návrh naše seznam zdrojů v Tvůrci rozhraní. Dvakrát klikněte na `Main.storyboard` soubor otevřete pro úpravy v Tvůrci rozhraní a přetáhněte ji rozdělení zobrazení z **knihovny Inspector**, přidejte ji do řadiče zobrazení a nastavte ji ke změně velikosti s zobrazení v **omezení editoru** :
 
-[ ![](source-list-images/source00.png "Úpravy omezení")](source-list-images/source00.png)
+[![](source-list-images/source00.png "Úpravy omezení")](source-list-images/source00.png#lightbox)
 
 V dalším kroku přetáhněte seznam zdrojů z **knihovny Inspector**, přidejte ho na levé straně zobrazení rozdělení a nastavte ji ke změně velikosti s zobrazení v **omezení Editor**:
 
-[ ![](source-list-images/source02.png "Úpravy omezení")](source-list-images/source02.png)
+[![](source-list-images/source02.png "Úpravy omezení")](source-list-images/source02.png#lightbox)
 
 Potom přepnout **zobrazení Identity**vyberte zdrojového seznamu a změňte ji na **– třída** k `SourceListView`:
 
-[ ![](source-list-images/source03.png "Nastavení názvu – třída")](source-list-images/source03.png)
+[![](source-list-images/source03.png "Nastavení názvu – třída")](source-list-images/source03.png#lightbox)
 
 Nakonec vytvořte **výstupu** pro naše zdrojového seznamu názvem `SourceList` v `ViewController.h` souboru:
 
-[ ![](source-list-images/source04.png "Konfigurace výstupu")](source-list-images/source04.png)
+[![](source-list-images/source04.png "Konfigurace výstupu")](source-list-images/source04.png#lightbox)
 
 Uložte změny a vrátit k sadě Visual Studio pro Mac k synchronizaci s Xcode.
 
@@ -614,7 +614,7 @@ public override void DidFinishLaunching (NSNotification notification)
 
 Pokud jsme spuštění aplikace, následující se zobrazí:
 
-[ ![](source-list-images/source05.png "Příklad aplikace spustit")](source-list-images/source05.png)
+[![](source-list-images/source05.png "Příklad aplikace spustit")](source-list-images/source05.png#lightbox)
 
 <a name="Summary" />
 

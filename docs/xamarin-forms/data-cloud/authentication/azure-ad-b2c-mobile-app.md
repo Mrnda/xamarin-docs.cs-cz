@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 3a7d89d9b0f383d365b18364e5d902ee0642f395
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: c28ddc09b07066de67f5c974cf5c2128726c6932
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="integrating-azure-active-directory-b2c-with-azure-mobile-apps"></a>Integrace s Azure Mobile Apps služby Azure Active Directory B2C
 
@@ -21,7 +21,7 @@ _Azure Active Directory B2C je cloudové řešení správy identity pro určený
 ![](~/media/shared/preview.png "Toto rozhraní API je aktuálně předběžné verze")
 
 > [!NOTE]
-> **Poznámka:**: [knihovny pro ověřování Microsoft](https://www.nuget.org/packages/Microsoft.Identity.Client) je stále ve verzi preview, ale je vhodná pro použití v provozním prostředí. Ale existuje může být narušující změny na rozhraní API, formát vnitřní mezipaměti a další mechanismy knihovny, která může mít vliv na vaše aplikace.
+> [Knihovny pro ověřování Microsoft](https://www.nuget.org/packages/Microsoft.Identity.Client) je stále ve verzi preview, ale je vhodná pro použití v provozním prostředí. Ale existuje může být narušující změny na rozhraní API, formát vnitřní mezipaměti a další mechanismy knihovny, která může mít vliv na vaše aplikace.
 
 ## <a name="overview"></a>Přehled
 
@@ -72,7 +72,7 @@ Pro ověřování klienta spravovat pracovního postupu by měl být klienta Azu
 
 Následující snímek obrazovky ukazuje tuto konfiguraci:
 
-[![](azure-ad-b2c-mobile-app-images/client-flow-config-sml.png "Konfigurace Azure Active Directory B2C")](azure-ad-b2c-mobile-app-images/client-flow-config.png "konfigurace Azure Active Directory B2C")
+[![](azure-ad-b2c-mobile-app-images/client-flow-config-sml.png "Konfigurace Azure Active Directory B2C")](azure-ad-b2c-mobile-app-images/client-flow-config.png#lightbox "konfigurace Azure Active Directory B2C")
 
 Zásady používané v Azure Active Directory B2C klienta by měl být nakonfigurovaný také tak, aby adresa URL odpovědi je nastaven na stejnou vlastní schéma adresy URL, za nímž následuje `://auth/`. Následující snímek obrazovky ukazuje tuto konfiguraci:
 
@@ -158,7 +158,7 @@ Pro spravovaný server ověřování pracovního postupu by měl být klienta Az
 
 Následující snímek obrazovky ukazuje tuto konfiguraci:
 
-[![](azure-ad-b2c-mobile-app-images/server-flow-config-sml.png "Konfigurace Azure Active Directory B2C")](azure-ad-b2c-mobile-app-images/server-flow-config.png "konfigurace Azure Active Directory B2C")
+[![](azure-ad-b2c-mobile-app-images/server-flow-config-sml.png "Konfigurace Azure Active Directory B2C")](azure-ad-b2c-mobile-app-images/server-flow-config.png#lightbox "konfigurace Azure Active Directory B2C")
 
 Zásady používané v Azure Active Directory B2C klienta by měl být nakonfigurovaný také tak, aby adresa URL odpovědi je nastavena na adresu mobilní aplikace Azure, za nímž následuje `/.auth/login/aad/callback`. Následující snímek obrazovky ukazuje tuto konfiguraci:
 

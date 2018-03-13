@@ -8,23 +8,21 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: d1cb0f6a329604dcac4943eaf39f838bcba38793
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 956b9e4e280545c8e11925697fced4b9d4e40693
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="android-sdk-emulator"></a>Emulátor sady SDK pro Android
 
 _Tato příručka vysvětluje, jak používat emulátor Google Android SDK pomocí sady Visual Studio._
 
-<a name="overview" />
 
 ## <a name="overview"></a>Přehled
 
 Emulátor Google Android SDK Android můžete spustit v různých konfiguracích k simulaci různých zařízení. Každé z nich tyto konfigurace je vytvořen jako _virtuální zařízení_. V tomto průvodci se dozvíte, jak spusťte emulátor ze sady Visual Studio a jak řešit běžné problémy.
 
-<a name="sections" />
 
 ## <a name="sections"></a>Oddíly
 
@@ -39,7 +37,6 @@ Jak identifikovat a řešit běžné problémy emulátoru sady SDK pro Android.
 Informace o konfiguraci emulátoru Android SDK a vytvoření nové virtuální zařízení najdete v tématu [Android – nastavení emulátoru](~/android/get-started/installation/android-emulator/index.md).
 
 
-<a name="summary" />
 
 ## <a name="summary"></a>Souhrn
 

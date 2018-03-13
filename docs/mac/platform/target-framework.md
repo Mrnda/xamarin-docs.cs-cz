@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 11/10/2017
-ms.openlocfilehash: ac4644f65486d70fcbb7da1a03574fb238348313
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f657fc3dd87d5c39d442a863e4acc00ac320b00d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="target-framework"></a>Cílová architektura
 
@@ -44,7 +44,7 @@ Chcete-li změnit typ cílové rozhraní pro projekt Xamarin.Mac, postupujte tak
 2. V **Průzkumníku řešení**, poklikejte na soubor projektu otevřete **možnosti projektu** dialogové okno.
 3. Z **Obecné** , vyberte typ **cílové rozhraní** která vyhovuje potřebám vaší aplikace:
 
-  [![Používání okna Možnosti projektu zvolte cílové rozhraní](target-framework-images/select-target-full.png "pomocí okna Možnosti projektu zvolte cílové rozhraní")](target-framework-images/select-target-full-large.png)
+  [![Používání okna Možnosti projektu zvolte cílové rozhraní](target-framework-images/select-target-full.png "pomocí okna Možnosti projektu zvolte cílové rozhraní")](target-framework-images/select-target-full-large.png#lightbox)
 
 4. Klikněte **OK** tlačítko uložte provedené změny.
 

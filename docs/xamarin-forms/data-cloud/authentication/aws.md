@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 85413cf223e794ad2fda093601f9221d0261af39
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ac4c788b4bd48991d7628d892ad1ece3d2451228
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="authenticating-users-with-an-amazon-simpledb-service"></a>Ověřování uživatelů pomocí služby Amazon SimpleDB
 
@@ -61,7 +61,7 @@ public async Task<List<TodoItem>> RefreshDataAsync ()
 `SelectAsync` Metoda vrátí odpověď obsahující kolekci položek a přidružených atributů, které odpovídají výrazu dotazu. Výraz dotazu zajistí, že bude načten jen ty položky, které odpovídají e-mailovou adresu uživatele. Další informace o výrazy dotazů najdete v tématu [pomocí vyberte vytvořit dotazy SimpleDB Amazon](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/UsingSelect.html) na webu Amazon společnosti.
 
 > [!NOTE]
-> **Poznámka:**: buďte opatrní při sestavování výrazu dotazu sledovat z hlediska stylu citací pravidla. Další informace najdete v tématu [vyberte citací pravidla](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/QuotingRulesSelect.html) na webu Amazon společnosti.
+> Pečlivě dodržujte z hlediska stylu citací pravidla při sestavování výrazu dotazu. Další informace najdete v tématu [vyberte citací pravidla](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/QuotingRulesSelect.html) na webu Amazon společnosti.
 
 ## <a name="summary"></a>Souhrn
 

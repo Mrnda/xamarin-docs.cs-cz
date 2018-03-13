@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 75a8e807a68a3fccfa76fc7ba1f260818b25174d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: bf93744914a0caf4f6599fc333ae200468d66e48
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="quick-interaction-techniques-for-watchos-3"></a>Rychlé interakce techniky pro watchOS 3
 
@@ -77,7 +77,7 @@ V kódu reagovat na akci pro rozpoznávání pro zpracování gesto se aktivuje 
 
 Pro diskrétní gesta akce je volána při gesta se rozpozná a stavu (`WKGestureRecognizerState`) je přiřazen jako:
 
-[ ![](quick-interaction-techniques-images/quick01.png "Diskrétní gesto stavy")](quick-interaction-techniques-images/quick01.png)
+[![](quick-interaction-techniques-images/quick01.png "Diskrétní gesto stavy")](quick-interaction-techniques-images/quick01.png#lightbox)
 
 Všechny diskrétní gesta spustí `Possible` stavu a přejít na buď `Failed` nebo `Recognized` stavu. Při použití diskrétní gesta, vývojáři obvykle není přímo se týkají stavu. Místo toho spoléhají na akci volána po gesta pouze rozpoznání.
 
@@ -85,7 +85,7 @@ Všechny diskrétní gesta spustí `Possible` stavu a přejít na buď `Failed` 
 
 Průběžné gesta se mírně liší od diskrétní gesta, kde akce je volat vícekrát, jako je právě rozpoznat gesta:
 
-[ ![](quick-interaction-techniques-images/quick02.png "Průběžné gesto stavy")](quick-interaction-techniques-images/quick02.png)
+[![](quick-interaction-techniques-images/quick02.png "Průběžné gesto stavy")](quick-interaction-techniques-images/quick02.png#lightbox)
 
 Znovu spustí průběžné gesta `Possible` stavu, ale průběhu přes více aktualizací. Zde bude vývojář musíte vzít v úvahu rozpoznávání rukopisu na stav a aktualizovat uživatelském rozhraní aplikace během `Changed` fáze dokud gesta nakonec `Recognized` nebo `Canceled`.
 
@@ -168,7 +168,7 @@ Apple opustil až vývojáře k určení, jak počty otočení odpovídají citl
 
 Znaménko (`+/-`) otáčení rozdílové Určuje směr, že uživatel je vypnutí digitální Crown:
 
-[ ![](quick-interaction-techniques-images/quick03.png "Znaménko otáčení Delta Určuje směr, že uživatel je vypnutí digitální Crown")](quick-interaction-techniques-images/quick03.png)
+[![](quick-interaction-techniques-images/quick03.png "Znaménko otáčení Delta Určuje směr, že uživatel je vypnutí digitální Crown")](quick-interaction-techniques-images/quick03.png#lightbox)
 
 
 Pokud uživatel je posouvání nahoru, WatchKit vrátí kladné rozdílů a pokud posouvání dolů, pak záporné rozdílů, bude vrácen, bez ohledu na to, jaké orientaci uživatele je používání sledovat v.
@@ -189,15 +189,15 @@ Je vývojáře k určení, kdy jejich vlastní rozhraní element musí být foku
 
 Standardním způsobem, že uživatel přejde zobrazení tabulky v aplikaci watchOS je přejděte na požadovanou část dat, klepněte na konkrétní řádek zobrazit v podrobném zobrazení, klepněte na tlačítko zpět po dokončení zobrazení podrobností a opakujte postup pro všechny ostatní informace, které y mají zájem z tabulky:
 
-[ ![](quick-interaction-techniques-images/quick04.png "Přesouvání mezi tabulky a zobrazení podrobností")](quick-interaction-techniques-images/quick04.png)
+[![](quick-interaction-techniques-images/quick04.png "Přesouvání mezi tabulky a zobrazení podrobností")](quick-interaction-techniques-images/quick04.png#lightbox)
 
 Nové watchOS 3 Vývojář můžete povolit svislé stránkování na jejich ovládací prvky zobrazení tabulky. Tato funkce povolena může uživatel posuňte najde řádek tabulky zobrazení a klepněte na řádek zobrazíte její podrobnosti jako před. Však budou můžete nyní prstem si vyberte na další řádek v tabulce nebo dolů vyberte na předchozí řádek (nebo použijte digitální Crown), všechny bez nutnosti vrátit zobrazení tabulky nejprve:
 
-[ ![](quick-interaction-techniques-images/quick05.png "Přesouvání mezi tabulky a zobrazení podrobností a k načtení nahoru a dolů přecházet mezi další řádky")](quick-interaction-techniques-images/quick05.png)
+[![](quick-interaction-techniques-images/quick05.png "Přesouvání mezi tabulky a zobrazení podrobností a k načtení nahoru a dolů přecházet mezi další řádky")](quick-interaction-techniques-images/quick05.png#lightbox)
 
 Tento režim povolit, otevřete aplikaci watchOS Storyboard v Xcode pro úpravy, zvolte zobrazení tabulky a zkontrolujte **svislé stránkování podrobností** políčko:
 
-[ ![](quick-interaction-techniques-images/quick06.png "Zaškrtnutím políčka svislé stránkování podrobností")](quick-interaction-techniques-images/quick06.png)
+[![](quick-interaction-techniques-images/quick06.png "Zaškrtnutím políčka svislé stránkování podrobností")](quick-interaction-techniques-images/quick06.png#lightbox)
 
 Zajistěte, že v tabulce používá Segues pro zobrazení v podrobném zobrazení a uložit změny do scénáře a návrat na Visual Studio pro Mac k synchronizaci.
 
@@ -313,7 +313,7 @@ Dobře navrženým rychlé interakce prostředí bude uživateli přidělit vyř
 
 Kde to konkrétně stane je problém při sledování aplikace je to jakýkoli typ síťového připojení nebo sdílení informací s jeho doprovodné iPhone aplikací. To může často vést k čekání indikátor během transakce probíhající, která není žádoucí během rychlé interakce. Proveďte v následujícím příkladu:
 
-[ ![](quick-interaction-techniques-images/quick07.png "Diagram aplikace sledovat provádění síťové připojení a sdílení informací s jeho doprovodné iPhone aplikací")](quick-interaction-techniques-images/quick07.png)
+[![](quick-interaction-techniques-images/quick07.png "Diagram aplikace sledovat provádění síťové připojení a sdílení informací s jeho doprovodné iPhone aplikací")](quick-interaction-techniques-images/quick07.png#lightbox)
 
 1. Uživatel vybere položku, kterou chcete zakoupit na hodinek.
 2. Jejich klepněte na tlačítko Koupit.
@@ -325,7 +325,7 @@ Od doby, uživatel klepnutím na tlačítko Koupit až do dokončení transakce 
 
 Pomocí modelu navrhované společnosti Apple, podívejte se na stejné rychlé interakce znovu:
 
-[ ![](quick-interaction-techniques-images/quick08.png "Diagram jablka navrhované modelu")](quick-interaction-techniques-images/quick08.png)
+[![](quick-interaction-techniques-images/quick08.png "Diagram jablka navrhované modelu")](quick-interaction-techniques-images/quick08.png#lightbox)
 
 1. Uživatel vybere položku, kterou chcete zakoupit na hodinek.
 2. Jejich klepněte na tlačítko Koupit.

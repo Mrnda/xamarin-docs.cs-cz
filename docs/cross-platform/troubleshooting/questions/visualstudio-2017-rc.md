@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 745e532a9543029f13e5fdffcc15153d780278ec
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 6144a422b9c01279ce345eccf9830bcd335597a7
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="can-i-use-visual-studio-2017-release-candidate-with-xamarin"></a>Můžete použít Visual Studio 2017 Release Candidate s Xamarinem?
 
@@ -30,7 +30,7 @@ Při týmem je aktuálně vyhledávání do způsoby, jak Nepoužívat toto oče
 
 * Vyberte **Xamarin** součásti jako součást nové **instalační program Visual Studio**
 
-  [ ![](visualstudio-2017-rc-images/install1-sml.png "Visual Studio 2017 RC instalační obrazovky")](visualstudio-2017-rc-images/install1-orig.png)
+  [![](visualstudio-2017-rc-images/install1-sml.png "Visual Studio 2017 RC instalační obrazovky")](visualstudio-2017-rc-images/install1-orig.png#lightbox)
 
 Dojde k instalaci rozšíření sady Visual Studio pro vývoj Xamarin.iOS a Xamarin.Android.
 
@@ -40,26 +40,26 @@ Dojde k instalaci rozšíření sady Visual Studio pro vývoj Xamarin.iOS a Xama
 
 1. Hledat aplikace Instalační program Visual Studio
 
-  [ ![](visualstudio-2017-rc-images/reinstall1-sml.png "Výsledky hledání pro aplikaci instalačního programu sady Visual Studio")](visualstudio-2017-rc-images/reinstall1-orig.png)
+  [![](visualstudio-2017-rc-images/reinstall1-sml.png "Výsledky hledání pro aplikaci instalačního programu sady Visual Studio")](visualstudio-2017-rc-images/reinstall1-orig.png#lightbox)
 
 2. Vyberte:. **Mobilní vývoj pomocí rozhraní .NET (Preview)** na kartě úlohy nebo
 
-  [ ![](visualstudio-2017-rc-images/reinstall2-sml.png "Karta úlohy instalační program VS") ](visualstudio-2017-rc-images/reinstall2-orig.png) b. **Xamarin** v **jednotlivých součástí** karta
+  [![](visualstudio-2017-rc-images/reinstall2-sml.png "Karta úlohy instalační program VS") ](visualstudio-2017-rc-images/reinstall2-orig.png#lightbox) b. **Xamarin** v **jednotlivých součástí** karta
 
-  [ ![](visualstudio-2017-rc-images/reinstall3-sml.png "Karta součásti Instalační program VS")](visualstudio-2017-rc-images/reinstall3-orig.png)
+  [![](visualstudio-2017-rc-images/reinstall3-sml.png "Karta součásti Instalační program VS")](visualstudio-2017-rc-images/reinstall3-orig.png#lightbox)
 
 #### <a name="using-the-visual-studio-installer-within-visual-studio"></a>Pomocí instalačního programu sady Visual Studio v sadě Visual Studio:
 1. Přejděte na úvodní stránce 2017 Visual Studio
 2. Klikněte na **více šablony projektu** pod **nový projekt** části
 
-    [ ![](visualstudio-2017-rc-images/reinstall4-sml.png "Visual Studio úvodní stránky")](visualstudio-2017-rc-images/reinstall4-orig.png)
+    [![](visualstudio-2017-rc-images/reinstall4-sml.png "Visual Studio úvodní stránky")](visualstudio-2017-rc-images/reinstall4-orig.png#lightbox)
 3. Klikněte na `Open Visual Studio Installer` v levém podokně
 
-    [ ![](visualstudio-2017-rc-images/reinstall5-sml.png "Nové obrazovky projektu")](visualstudio-2017-rc-images/reinstall5-orig.png)
+    [![](visualstudio-2017-rc-images/reinstall5-sml.png "Nové obrazovky projektu")](visualstudio-2017-rc-images/reinstall5-orig.png#lightbox)
 4. Vyberte:
     
     a. **Mobilní vývoj pomocí rozhraní .NET (Preview)** na kartě úlohy nebo
 
-    [ ![](visualstudio-2017-rc-images/reinstall2-sml.png "Karta úlohy instalační program VS") ](visualstudio-2017-rc-images/reinstall2-orig.png) b. **Xamarin** v **jednotlivých součástí** karta
+    [![](visualstudio-2017-rc-images/reinstall2-sml.png "Karta úlohy instalační program VS") ](visualstudio-2017-rc-images/reinstall2-orig.png#lightbox) b. **Xamarin** v **jednotlivých součástí** karta
 
-    [ ![](visualstudio-2017-rc-images/reinstall3-sml.png "Karta součásti Instalační program VS")](visualstudio-2017-rc-images/reinstall3-orig.png)
+    [![](visualstudio-2017-rc-images/reinstall3-sml.png "Karta součásti Instalační program VS")](visualstudio-2017-rc-images/reinstall3-orig.png#lightbox)

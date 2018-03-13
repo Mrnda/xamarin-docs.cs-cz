@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: 83ba2df0c50d37476ae5c06b4234cdc0ad063332
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 174d1cf974c39420b932d494d5b28c62d7fd1eb1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="troubleshooting"></a>Poradce při potížích
 
@@ -22,7 +22,7 @@ Podepisování kódu & zřizování s iOS může být poměrně nevhodných, a p
 
 * Velkými týmy neměly by pomocí tlačítka "Opravit problém" v Xcode, znázorněno zde:
 
-    [![](troubleshooting-images/fixissue.png "Dialogové okno vyřešit problémy")](troubleshooting-images/fixissue.png)
+    [![](troubleshooting-images/fixissue.png "Dialogové okno vyřešit problémy")](troubleshooting-images/fixissue.png#lightbox)
 
     Tím se vytvoří nový zajišťování profilů a certifikátů. Na nejvyšší tím se vytvoří profil pro zřizování pokaždé, když se člen týmu na něj klikne, způsobuje disorganization pomocí profilů. V nejhorším případě odvolává certifikáty pro všechny ostatní ve společnosti, způsobuje svoje aplikace přestane fungovat.
 

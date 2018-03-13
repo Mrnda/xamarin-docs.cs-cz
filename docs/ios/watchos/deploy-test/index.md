@@ -1,5 +1,5 @@
 ---
-title: "Nasazení a testování"
+title: "Nasazování a testování"
 description: "Testování v zařízeních a nahrávání do obchodu s aplikacemi"
 ms.topic: article
 ms.prod: xamarin
@@ -8,13 +8,13 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: fdd4311072efd5571724fbe00d12a96921054fa2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4c5b9fcbfaabbfc78da1064396dc3fec2d3fde8d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
-# <a name="deployment-and-testing"></a>Nasazení a testování
+# <a name="deployment-and-testing"></a>Nasazování a testování
 
 ## <a name="deployment-checklist"></a>Kontrolní seznam nasazení
 
@@ -23,7 +23,7 @@ Ať už jsou nasazení do testu sledovat nebo chcete nahrát do obchodu s aplika
 - V **iOS Dev Center**:
   - [ID aplikace](#App_IDs) byly vytvořeny.
   - [Skupiny aplikací](#App_Groups) nakonfigurované (v případě potřeby).
-  - [*Distribuce* profily zřizování](#Provisioning_Profiles) vytvořili.
+  - Zřizování profily distribuce, který je vytvořen
 
 - Ve vašem řešení:
 
@@ -36,6 +36,7 @@ Ať už jsou nasazení do testu sledovat nebo chcete nahrát do obchodu s aplika
   - [Nasazení do Apple Watch pro testování](~/ios/watchos/deploy-test/device.md), nebo
   - [Nahrajte do obchodu s aplikacemi](~/ios/watchos/deploy-test/appstore.md).
 
+<a name="App_IDs"/>
 
 ## <a name="app-ids"></a>ID aplikace
 
@@ -65,7 +66,7 @@ Všimněte si, že některé funkce nelze použít s zástupný znak ID aplikace
 
 Pro distribuci jenom musíte vytvořit jeden distribuční profil zřizování pro zástupný znak ID aplikace.
 
-<a name="app-groups" />
+<a name="App_Groups" />
 
 ## <a name="app-groups"></a>Skupiny aplikací
 
@@ -102,8 +103,6 @@ Dvojitým kliknutím na Upravit **Entitlements.plist** souboru v těchto projekt
 .![Entitlements.plist editor](images/entitlements-plist-sml.png)
 
 Proveďte **není** povolte oprávnění v aplikaci sledování projektu. Není potřeba povolit pro sledování, sám sebe.
-
-
 
 ## <a name="related-links"></a>Související odkazy
 

@@ -7,12 +7,12 @@ ms.assetid: D3FDEA1C-F076-406F-BCC3-2A55D2C6ADEE
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/07/2018
-ms.openlocfilehash: ae6b89e48005ca028db5d13f1a55f237888ae08b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 8fbb3f73fdc09f953ad5f7134020c1555d000d28
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="kitkat-features"></a>Funkce KitKat
 
@@ -37,7 +37,7 @@ Tato příručka obsahuje pokyny k migraci stávající aplikace Xamarin.Android
 
 K vývoji aplikací Xamarin.Android pomocí KitKat, je nutné *Xamarin.Android 4.11.0* nebo vyšší a Android 4.4 (API úrovně 19), nainstalovaný prostřednictvím Android SDK Manager vidíte na následujícím snímku obrazovky:
 
-[![Výběr Android 4.4 ve správci sady SDK pro Android](kitkat-images/api19.png)](kitkat-images/api19.png)
+[![Výběr Android 4.4 ve správci sady SDK pro Android](kitkat-images/api19.png)](kitkat-images/api19.png#lightbox)
 
 <a name="Migrating_Your_App_to_KitKat" />
 
@@ -84,7 +84,7 @@ Externí úložiště je nyní rozdělit do dvou typů - úložiště, které js
 -  Pokud vám přístup k vlastnosti nebo volání metody na cestu k souboru nebo adresáře `Environment` , jako například [ `GetExternalStorageDirectory` ](https://developer.xamarin.com/api/property/Android.OS.Environment.ExternalStorageDirectory/) nebo [ `GetExternalStoragePublicDirectory` ](https://developer.xamarin.com/api/member/Android.OS.Environment.GetExternalStoragePublicDirectory/p/System.String/) , vaše aplikace vyžaduje `READ_EXTERNAL_STORAGE` nebo `WRITE_EXTERNAL_STORAGE` oprávnění.
 
 > [!NOTE]
-> **Poznámka:** `WRITE_EXTERNAL_STORAGE` znamená `READ_EXTERNAL_STORAGE` oprávnění, takže vždy jen by měl třeba nastavit jedno oprávnění.
+> `WRITE_EXTERNAL_STORAGE` znamená `READ_EXTERNAL_STORAGE` oprávnění, takže vždy jen by měl třeba nastavit jedno oprávnění.
 
 ### <a name="sms-consolidation"></a>Konsolidace SMS
 
@@ -147,11 +147,11 @@ V předchozím příkladu používá rozhraní přechod k vytvoření automatick
 
 Následující snímek obrazovky ukazuje aplikace před animace:
 
-[![Snímek obrazovky aplikace před spuštěním animace](kitkat-images/trans-before.png)](kitkat-images/trans-before.png)
+[![Snímek obrazovky aplikace před spuštěním animace](kitkat-images/trans-before.png)](kitkat-images/trans-before.png#lightbox)
 
 Následující snímek obrazovky ukazuje aplikace po animace:
 
-[![Snímek obrazovky aplikace po dokončení animace](kitkat-images/trans-after.png)](kitkat-images/trans-after.png)
+[![Snímek obrazovky aplikace po dokončení animace](kitkat-images/trans-after.png)](kitkat-images/trans-after.png#lightbox)
 
 Můžete získat větší kontrolu nad přechodu se děje to, které jsou popsané v další části.
 
@@ -161,7 +161,7 @@ Můžete získat větší kontrolu nad přechodu se děje to, které jsou popsan
 
 Statické element uživatelského rozhraní nachází dynamický obsah je názvem *kontejneru* nebo *scény základní*. Následující příklad používá návrháře Android k vytvoření `RelativeLayout` názvem `container`:
 
-[![Vytvořte kontejner RelativeLayout pomocí návrháře Android](kitkat-images/container.png)](kitkat-images/container.png)
+[![Vytvořte kontejner RelativeLayout pomocí návrháře Android](kitkat-images/container.png)](kitkat-images/container.png#lightbox)
 
 Ukázka rozložení také definuje tlačítka nazvaného `sceneButton` níže `container`. Toto tlačítko aktivují přechodu.
 
@@ -237,22 +237,22 @@ sceneButton.Click += (o, e) => {
 
 Následující snímek obrazovky ukazuje scény před animace:
 
-[![Snímek obrazovky aplikace před spuštěním animace](kitkat-images/trans-after.png)](kitkat-images/trans-after.png)
+[![Snímek obrazovky aplikace před spuštěním animace](kitkat-images/trans-after.png)](kitkat-images/trans-after.png#lightbox)
 
 Následující snímek obrazovky ukazuje scény po animace:
 
-[![Snímek obrazovky aplikace po dokončení animace](kitkat-images/scene.png)](kitkat-images/scene.png)
+[![Snímek obrazovky aplikace po dokončení animace](kitkat-images/scene.png)](kitkat-images/scene.png#lightbox)
 
 
 > [!NOTE]
-> **Poznámka:** je [známého problému](https://code.google.com/p/android/issues/detail?id=62450) v Android přechody knihovny, která způsobí, že scény vytvořený `GetSceneForLayout` pro přerušení, když uživatel přejde aktivitu na druhém. Alternativní řešení java je popsán [zde](http://www.doubleencore.com/2013/11/new-transitions-framework/).
+> Je [známého problému](https://code.google.com/p/android/issues/detail?id=62450) v Android přechody knihovny, která způsobí, že scény vytvořený `GetSceneForLayout` pro přerušení, když uživatel přejde aktivitu na druhém. Alternativní řešení java je popsán [zde](http://www.doubleencore.com/2013/11/new-transitions-framework/).
 
 
 ##### <a name="custom-transitions-in-scenes"></a>Vlastní přechody v scény
 
 V souboru xml prostředků v lze definovat vlastní přechod `transition` adresář, ve `Resources`, které jsou popsány v následující snímek obrazovky:
 
-[![Umístění souboru transition.xml v adresáři prostředky nebo přechod](kitkat-images/resources.png)](kitkat-images/resources.png)
+[![Umístění souboru transition.xml v adresáři prostředky nebo přechod](kitkat-images/resources.png)](kitkat-images/resources.png#lightbox)
 
 Následující ukázka kódu definuje přechod, který animuje 5 sekund a používá [překročení interpolator](http://developer.android.com/reference/android/views/animation/OvershootInterpolator.html):
 
@@ -307,7 +307,7 @@ Následující kód definuje motiv s průhledná stav a navigační panely:
 
 Následující snímek obrazovky ukazuje motiv výše se stavem průhledné a navigační panely:
 
-[![Příklad snímek obrazovky aplikace s průhledná stav a navigační panely](kitkat-images/theme.png)](kitkat-images/theme.png)
+[![Příklad snímek obrazovky aplikace s průhledná stav a navigační panely](kitkat-images/theme.png)](kitkat-images/theme.png#lightbox)
 
 <a name="user_content" />
 
@@ -338,7 +338,7 @@ StartActivityForResult (intent, save_request_code);
 
 Volání metody `StartActivityForResult` spustí SAF uživatelského rozhraní, které uživatel může vybrat bitovou kopii vyhledejte:
 
-[![Příklad snímek obrazovky aplikace pomocí rozhraní úložiště přístup pro procházení do obrázku](kitkat-images/saf-ui.png)](kitkat-images/saf-ui.png)
+[![Příklad snímek obrazovky aplikace pomocí rozhraní úložiště přístup pro procházení do obrázku](kitkat-images/saf-ui.png)](kitkat-images/saf-ui.png#lightbox)
 
 Po výběru image, uživatelem `OnActivityResult` vrátí `Android.Net.Uri` zvolené souboru. Následující ukázka kódu zobrazuje výběr image uživatele:
 
@@ -368,7 +368,7 @@ StartActivityForResult (intentCreate, write_request_code);
 
 Výše uvedený ukázkový kód načte rozhraní SAF, takže uživatel změňte název souboru a vyberte adresář, který bude obsahovat nový soubor:
 
-[![Snímek obrazovky uživatele Změna názvu souboru na NewDoc v adresáři stahování](kitkat-images/saf-save.png)](kitkat-images/saf-save.png)
+[![Snímek obrazovky uživatele Změna názvu souboru na NewDoc v adresáři stahování](kitkat-images/saf-save.png)](kitkat-images/saf-save.png#lightbox)
 
 Když uživatel stiskne **Uložit**, `OnActivityResult` předána `Android.Net.Uri` z nově vytvořený soubor, který lze přistupovat pomocí `data.Data`. Identifikátor uri lze použít na datový proud dat do nového souboru:
 
@@ -396,11 +396,11 @@ Další informace o načítání, vytváření a úpravy obsahu s přístup rozh
 Tisk obsahu je zjednodušené KitKat se zavedením [tiskové služby](https://developer.xamarin.com/api/namespace/Android.PrintServices/) a `PrintManager`. KitKat je také první verze rozhraní API můžete plně využít [API Google Cloud tiskové služby](https://developers.google.com/cloud-print/) pomocí [aplikace Google Cloud tiskových](https://play.google.com/store/apps/details?id=com.google.android.apps.cloudprint).
 Většina zařízení, které se dodávají spolu s KitKat automaticky stáhnout aplikaci pro Google Cloud tisku a [modul plug-in služby tiskových HP](https://play.google.com/store/apps/details?id=com.hp.android.printservice)při prvním připojení k Wi-Fi. Uživatele můžete zkontrolovat nastavení tisku své zařízení tak, že přejdete do **Nastavení > Systém > Tisk**:
 
-[![Příklad snímek obrazovky nastavení tisku](kitkat-images/printing.png)](kitkat-images/printing.png)
+[![Příklad snímek obrazovky nastavení tisku](kitkat-images/printing.png)](kitkat-images/printing.png#lightbox)
 
 
 > [!NOTE]
-> **Poznámka:** i když tisk rozhraní API pro práci s Google Cloud tisku se nastaví ve výchozím nastavení, Android stále umožňuje vývojářům připravte tiskové obsahu pomocí nových rozhraní API a odeslat do jiných aplikací ke zpracování tisku.
+> I když tisk rozhraní API pro práci s Google Cloud tisku se nastaví ve výchozím nastavení, Android stále umožňuje vývojářům připravte tiskové obsahu pomocí nových rozhraní API a odeslat do jiných aplikací ke zpracování tisku.
 
 
 
@@ -410,14 +410,14 @@ KitKat automaticky vytvoří [ `PrintDocumentAdapter` ](https://developer.xamari
 
 Všimněte si, že načtení a tisk webového obsahu vyžaduje oprávnění k Internetu:
 
-[![Nastavení oprávnění Internetu v možnostech aplikace](kitkat-images/internet.png)](kitkat-images/internet.png)
+[![Nastavení oprávnění Internetu v možnostech aplikace](kitkat-images/internet.png)](kitkat-images/internet.png#lightbox)
 
 ##### <a name="print-menu-item"></a>Tisk položky nabídky
 
 Možnosti tisku se obvykle zobrazuje v rámci aktivity [nabídka možnosti](http://developer.android.com/guide/topics/ui/menus.html#options-menu).
 V nabídce Možnosti mohou uživatelé provádět akce na aktivitu. V pravém horním rohu obrazovky a vypadá takto:
 
-[![Příklad snímek obrazovky dispalyed položky nabídky tisku v pravém horním rohu obrazovky](kitkat-images/menu.png)](kitkat-images/menu.png)
+[![Příklad snímek obrazovky dispalyed položky nabídky tisku v pravém horním rohu obrazovky](kitkat-images/menu.png)](kitkat-images/menu.png#lightbox)
 
 
 Položky nabídky dalších lze definovat v *nabídky*adresář, ve *prostředky*. Následující kód definuje nabídky ukázkové položky názvem [tiskových](https://developer.xamarin.com/api/type/Android.Print.PrintManager/):
@@ -500,9 +500,9 @@ void PrintPage ()
 
 Volání metody `Print` načte tiskové uživatelské rozhraní, které je uveden seznam možností pro tiskové úlohy. Uživatelské rozhraní nabízí uživatelům možnost tisku nebo ukládání obsah HTML, který do PDF, které jsou popsány v následujících snímcích obrazovky:
 
-[![Snímek obrazovky PrintHtmlActivity nabídce Tisk zobrazení](kitkat-images/print1.png)](kitkat-images/print1.png)
+[![Snímek obrazovky PrintHtmlActivity nabídce Tisk zobrazení](kitkat-images/print1.png)](kitkat-images/print1.png#lightbox)
 
-[![Snímek obrazovky PrintHtmlActivity zobrazení uložit jako PDF nabídky](kitkat-images/print2.png)](kitkat-images/print2.png)
+[![Snímek obrazovky PrintHtmlActivity zobrazení uložit jako PDF nabídky](kitkat-images/print2.png)](kitkat-images/print2.png#lightbox)
 
 <a name="hardware" />
 
@@ -524,7 +524,7 @@ HCE vyžaduje, aby funkci HCE a `Nfc` oprávnění zaregistrovat u aplikace `And
 <uses-feature android:name="android.hardware.nfc.hce" />
 ```
 
-[![Nastavení oprávnění NFC v možnostech aplikace](kitkat-images/nfc.png)](kitkat-images/nfc.png)
+[![Nastavení oprávnění NFC v možnostech aplikace](kitkat-images/nfc.png)](kitkat-images/nfc.png#lightbox)
 
 Pro práci, musí být možné spustit na pozadí HCE a má spustit, když uživatel provede transakci NFC i v případě, že aplikace pomocí HCE není spuštěna. Nemůžeme se dá dosáhnout vytvořením kód HCE jako `Service`. Implementuje služby HCE `HostApduService` rozhraní, která implementuje následujících metod:
 
@@ -588,7 +588,7 @@ KitKat také dodává s dva nové typy senzor pro sledování kroky uživatele. 
 
 Následující snímek obrazovky znázorňuje čítač krok v akci:
 
-[![Snímek obrazovky aplikace SensorsActivity zobrazení čítač krok](kitkat-images/stepcounter.png)](kitkat-images/stepcounter.png)
+[![Snímek obrazovky aplikace SensorsActivity zobrazení čítač krok](kitkat-images/stepcounter.png)](kitkat-images/stepcounter.png#lightbox)
 
 Můžete vytvořit `SensorManager` voláním `GetSystemService(SensorService)` a přetypování výsledek v podobě `SensorManager`. Chcete-li používat čítač krok, volejte `GetDeafultSensor` na `SensorManager`. Můžete zaregistrovat senzoru a naslouchání na změny v počtu krok pomocí [ `ISensorEventListener` ](https://developer.xamarin.com/api/type/Android.Hardware.ISensorEventListener/) rozhraní, které jsou popsány v následující ukázka kódu:
 
@@ -637,11 +637,10 @@ Krok počet restartování zařízení resetuje na hodnotu 0. Vaše aplikace bud
 
 
 > [!NOTE]
-> **Poznámka:** při rozhraní API pro detekci kroku a poté se dodává s KitKat jsou outfitted ne všechny telefony s senzoru. Můžete zkontrolovat, zda senzoru je k dispozici spuštěním `PackageManager.HasSystemFeature(PackageManager.FeatureSensorStepCounter);`, nebo zkontrolovat zajistit vrácená hodnota z `GetDefaultSensor` není `null`.
+> Ne všechny telefony jsou při rozhraní API pro detekci kroku a poté se dodává s KitKat outfitted s senzoru. Můžete zkontrolovat, zda senzoru je k dispozici spuštěním `PackageManager.HasSystemFeature(PackageManager.FeatureSensorStepCounter);`, nebo zkontrolovat zajistit vrácená hodnota z `GetDefaultSensor` není `null`.
 
 
- <a name="developer_tools" />
-
+<a name="developer_tools" />
 
 ## <a name="developer-tools"></a>Nástroje pro vývojáře
 
@@ -664,7 +663,6 @@ adb shell screenrecord --bit-rate 8000000 --time-limit 60 /sdcard/screencast.mp4
 
 Můžete najít videa na vašem zařízení – se objeví v galerii po dokončení záznamu.
 
-<a name="other_kitkat_additions" />
 
 ## <a name="other-kitkat-additions"></a>Přidání dalších KitKat
 

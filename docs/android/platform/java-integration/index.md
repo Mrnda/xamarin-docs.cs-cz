@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/18/2017
-ms.openlocfilehash: 88e8c66d36956649f0a996046f038d89a7267cf5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 213702d289adefe966f07c3ad0174156cbc69ee1
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="java-integration-overview"></a>Přehled integrace Java
 
 _Ekosystému Java obsahuje kolekci různých a enormním způsobem součástí. Mnoho z těchto součástí lze zkrátit čas potřebný k vyvíjet aplikace pro Android. Tento dokument se zavést a poskytují souhrnné informace o některých způsobech, vývojáři mohou použít tyto existující součásti Java k lepší využití vývoj aplikace Xamarin.Android._
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Přehled
 
@@ -41,7 +40,6 @@ Druhý způsob spočívá pomocí JNI, funguje na mnohem nižší úrovni, ale m
 Třetí technika je výrazně liší od předchozí dva: portování kódu z prostředí Java do jazyka C#. Portování kódu z jednoho jazyka do druhého, může být velmi pracné proces, ale je možné snížit, že volá úsilí pomocí nástroje *Zostřit*. Zostřit je nástroj s otevřeným zdrojem, který je Java-na-C# převaděč. 
 
 
-<a name="Summary" />
 
 ## <a name="summary"></a>Souhrn
 

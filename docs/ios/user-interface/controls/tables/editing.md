@@ -7,30 +7,22 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 1ea4489cd6f9839d5d32c97aa7ded41e4f15538a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: eb8bae676a4b5c682cdb204c6d38ffc1112b483a
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="editing"></a>Úpravy
 
 Úpravy funkce tabulky jsou povolit přepsáním metody v `UITableViewSource` podtřídy. Nejjednodušší úprav chování je prstem odstranění gesta, která může být implementováno s přepsání jedné metody.
 Složitější úpravy (včetně přesunutí řádky) lze provádět pomocí tabulky v režimu úprav.
 
-Tato příručka vypadá na následující:
-
-- [Prstem odstranit](#Swipe_to_Delete)
-- [Režim úprav](#Edit_Mode)
-- [Úpravy stylu vložení řádku](#row_insertion_editing_style)
-
-<a name="Swipe_to_delete" />
-
 ## <a name="swipe-to-delete"></a>Prstem k odstranění
 
 Prstem odstranit funkce je gesto přirozené v iOS, která uživatelé očekávají, že. 
 
- [ ![](editing-images/image10.png "Příklad prstem k odstranění")](editing-images/image10.png)
+ [![](editing-images/image10.png "Příklad prstem k odstranění")](editing-images/image10.png#lightbox)
 
 Existují tři metoda přepsání, které ovlivňují gesto prstem zobrazíte **odstranit** tlačítko v buňce:
 
@@ -68,14 +60,13 @@ public override string TitleForDeleteConfirmation (UITableView tableView, NSInde
 
 V tomto příkladu `UITableViewSource` se aktualizovalo a použít `List<TableItem>` (namísto pole řetězců) jako zdroj dat, protože ji podporuje přidávání a odstraňování položek z kolekce.
 
-<a name="Edit_mode" />
 
 ## <a name="edit-mode"></a>Režim úprav
 
 Pokud je tabulka umístěna v režimu úprav uživateli se zobrazí widget red 'zastavit' na každý řádek, který objeví tlačítko odstranění, když dotýkal. Tabulce také 'popisovač, ikona označující, zda řádek přetažením lze změnit pořadí.
 **TableEditMode** ukázka implementuje tyto funkce, jak je vidět.
 
- [ ![](editing-images/image11.png "Ukázka TableEditMode implementuje tyto funkce, jak je znázorněno")](editing-images/image11.png)
+ [![](editing-images/image11.png "Ukázka TableEditMode implementuje tyto funkce, jak je znázorněno")](editing-images/image11.png#lightbox)
 
 Existuje několik různých metod na `UITableViewSource` které ovlivnit chování režimu úprav tabulky:
 
@@ -136,13 +127,12 @@ a po dokončení uživatel upravuje, **provádí** tlačítko měli vypnout rež
 table.SetEditing (false, true);
 ```
 
-<a name="Edit_mode_–_row_insertion_editing_style" />
 
 ## <a name="row-insertion-editing-style"></a>Úpravy stylu vložení řádku
 
 Vložení řádků z tabulky je neobvyklé uživatelské rozhraní – hlavní příklad v aplikacích iOS standardní **upravit kontakt** obrazovky. Tento snímek obrazovky ukazuje, jak funkce vložení řádku funguje – v upravit režimu je další řádek, (při kliknutí na), vloží do data další řádky. Po dokončení úprav, dočasný **(Přidat nové)** řádek je odebrat.
 
- [ ![](editing-images/image12.png "Po dokončení úprav dočasný přidat nový řádek je odebrat.")](editing-images/image12.png)
+ [![](editing-images/image12.png "Po dokončení úprav dočasný přidat nový řádek je odebrat.")](editing-images/image12.png#lightbox)
 
 Existuje několik různých metod na `UITableViewSource` které ovlivnit chování režimu úprav tabulky. Tyto metody je implementovaná takto v příkladu kódu:
 

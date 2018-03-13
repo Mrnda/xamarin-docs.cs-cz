@@ -3,14 +3,15 @@ title: "Souhrn kapitoly 1. Jak se uplatní Xamarin.Forms?"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: F3F864FF-EE70-49D0-90D1-388889037625
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: c0f3313fa3c4d1075be7deeb871e303006c533e8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9b60a45cc998743d34d5cadb7750f35e7b965579
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>Souhrn kapitoly 1. Jak se uplatní Xamarin.Forms?
 
@@ -44,7 +45,7 @@ Aktuální šablony řešení Xamarin.Forms nezahrnují šablony projektů pro p
 
 Hromadné programu Xamarin.Forms existuje PCL nebo SAP. Každý z platformy se skládá z stub malá aplikace, která volá do PCL. Rozhraní API Xamarin.Forms mapování na nativní ovládací prvky na každou platformu, tak, aby každá platforma udržuje jeho charakteristik vzhled a chování:
 
-[![Trojitá snímek obrazovky platformy vizuály sdílení](images/ch01fg03-small.png "Xamarin.Forms ovládacích prvků na každou platformu")](images/ch01fg03-large.png "Xamarin.Forms ovládacích prvků na každou platformu")
+[![Trojitá snímek obrazovky platformy vizuály sdílení](images/ch01fg03-small.png "Xamarin.Forms ovládacích prvků na každou platformu")](images/ch01fg03-large.png#lightbox "Xamarin.Forms ovládacích prvků na každou platformu")
 
 Snímky obrazovky zleva doprava zobrazit zařízení typu iPhone, Android phone a Windows 10 Mobile phone. Na každé obrazovce, tato stránka obsahuje platformě Xamarin.Forms [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) pro zobrazení textu, [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) za inicializaci akce, [ `Switch` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/) pro Výběr hodnotou zapnout nebo vypnout a [ `Slider` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/) pro zadání hodnotu nepřetržitá rozsahu. Všechny čtyři těchto zobrazení jsou podřízené objekty [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) na [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/).
 

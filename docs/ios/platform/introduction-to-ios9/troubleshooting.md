@@ -3,16 +3,16 @@ title: "Poradce při potížích"
 description: "Tento článek obsahuje několik tipy k řešení potíží pro práci s iOS 9 v aplikacích pro Xamarin.iOS."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 4D71BBD9-B948-4B59-9AF5-F199C51CBEB3
+ms.assetid: DCE83E36-CBD9-4D96-8E7F-384CB8A54563
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 6ea274ca198a4ca76a87198b02b6229e0e1c88b2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ca3697b355a45e06f941a6dfd610cd19f922ca75
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="troubleshooting"></a>Poradce při potížích
 
@@ -32,7 +32,7 @@ Pokud jste nainstalovali Xcode 7 (nebo vyšší) se automaticky nahradí všechn
 
 V Xcode, vyberte **Xcode** nabídce pak **předvolby...**   >  **Stáhne**:
 
-[ ![](troubleshooting-images/ios8.png "Stáhne simulátoru iOS 8")](troubleshooting-images/ios8.png)
+[![](troubleshooting-images/ios8.png "Stáhne simulátoru iOS 8")](troubleshooting-images/ios8.png#lightbox)
 
 Klikněte **kontroly a instalovat nyní** tlačítko Přeinstalovat simulátoru iOS 8.
 
@@ -139,26 +139,26 @@ Dyld Message: no cach image with name (/System/Library/PrivateFrameworks/JavaScr
 
 Při pokusu o spuštění aplikace Xamarin.iOS verze iOS 9 na skutečné iOS hardwaru, získáte může zprávu oznamující, že vývojářský účet není na zařízení důvěryhodný. Příklad:
 
-[ ![](troubleshooting-images/untrusted01.png "Výstraha nedůvěryhodné Enterprise Developer")](troubleshooting-images/untrusted01.png)
+[![](troubleshooting-images/untrusted01.png "Výstraha nedůvěryhodné Enterprise Developer")](troubleshooting-images/untrusted01.png#lightbox)
 
 Chcete-li tento problém vyřešit, postupujte takto:
 
 1. Spusťte Xcode (nejnovější verze beta) na vývoj Mac.
 2. Vyberte **zařízení** z **okno** nabídky a otevřete okno zařízení: 
 
-    [ ![](troubleshooting-images/untrusted02.png "Okno zařízení")](troubleshooting-images/untrusted02.png)
+    [![](troubleshooting-images/untrusted02.png "Okno zařízení")](troubleshooting-images/untrusted02.png#lightbox)
 3. V části **zařízení** straně panelu, vyberte zařízení, klikněte pravým tlačítkem a vyberte **Zobrazit profily zřizování...** : 
 
-    [ ![](troubleshooting-images/untrusted03.png "Profily zřizování SShow")](troubleshooting-images/untrusted03.png)
+    [![](troubleshooting-images/untrusted03.png "Profily zřizování SShow")](troubleshooting-images/untrusted03.png#lightbox)
 4. Vyberte každý profil zřizování aktuálně na zařízení a klikněte na  **-**  tlačítko Odstranit: 
 
-    [ ![](troubleshooting-images/untrusted04.png "Odstraňuje se profil pro zřizování")](troubleshooting-images/untrusted04.png)
+    [![](troubleshooting-images/untrusted04.png "Odstraňuje se profil pro zřizování")](troubleshooting-images/untrusted04.png#lightbox)
 5. Z **Xcode** nabídce vyberte možnost **předvolby...**  a **účty**: 
 
-    [ ![](troubleshooting-images/untrusted05.png "Předvolby účtu Xcode")](troubleshooting-images/untrusted05.png)
+    [![](troubleshooting-images/untrusted05.png "Předvolby účtu Xcode")](troubleshooting-images/untrusted05.png#lightbox)
 6. Klikněte **zobrazit podrobnosti...**  tlačítko a pak klikněte na **stáhnete všechny** tlačítko: 
 
-    [ ![](troubleshooting-images/untrusted06.png "Stáhnout všechny profily")](troubleshooting-images/untrusted06.png)
+    [![](troubleshooting-images/untrusted06.png "Stáhnout všechny profily")](troubleshooting-images/untrusted06.png#lightbox)
 7. Po dokončení aktualizace seznamu klikněte **provádí** tlačítko a zavřete okno Předvolby.
 8. Odeberte stávající verzi aplikaci Xamarin.iOS, která chcete otestovat ze zařízení s iOS.
 9. Vrátí k sadě Visual Studio pro Mac, provést čisté sestavení a pokuste se znovu spusťte aplikaci v zařízení.

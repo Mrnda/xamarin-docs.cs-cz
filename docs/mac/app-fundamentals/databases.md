@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: c3de0150bd34667a9310b796bf98a6bff6c07a67
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 39186735749174884646a72871accfa051d2901c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="databases"></a>Databáze
 
@@ -27,7 +27,7 @@ V tomto článku jsme se pokrývajících dva způsoby, jak získat přístup k 
 1. **Přímý přístup** – přímým přístupem k databázi SQLite, můžeme použít data z databáze pro klíč hodnota kódování a vytvoření datové vazby s prvky uživatelského rozhraní vytvořili v Xcode na rozhraní tvůrce. Pomocí kódování a datové vazby v aplikaci Xamarin.Mac techniky klíč hodnota, může výrazně snížit množství kód, který máte k zápisu a udržovat naplnit a pracovat s prvky uživatelského rozhraní. Máte také výhodou další oddělení zálohování dat (_datový Model_) z vaší přední ukončení uživatelské rozhraní (_Model-View-Controller_), tečka na začátku k snadněji provádět údržbu, flexibilnější aplikace návrh.
 2. **SQLite.NET ORM** – pomocí open source [SQLite.NET](http://www.sqlite.org) vztah Manager ORM (Object) jsme může výrazně snížit množství kód potřebný k čtení a zápisu dat z databáze SQLite. Tato data pak slouží k naplnění položku uživatelského rozhraní například zobrazení tabulky.
 
-[![Příkladem spuštěné aplikaci](databases-images/intro01.png "příklad spuštěné aplikaci")](databases-images/intro01-large.png)
+[![Příkladem spuštěné aplikaci](databases-images/intro01.png "příklad spuštěné aplikaci")](databases-images/intro01-large.png#lightbox)
 
 V tomto článku vám nabídneme základní informace o práci s klíč hodnota kódování a datové vazby v aplikaci Xamarin.Mac s databáze SQLite. Vysoce navržený na spolupracovat [Hello, Mac](~/mac/get-started/hello-mac.md) článek nejprve, konkrétně [Úvod do Xcode a rozhraní tvůrce](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) a [výstupy a akce](~/mac/get-started/hello-mac.md#Outlets_and_Actions) oddíly, jak se popisuje klíčové koncepty a techniky, které budeme používat v tomto článku.
 
@@ -52,7 +52,7 @@ Postupujte takto:
 1. V **řešení Pad**, klikněte pravým tlačítkem na **odkazy** složky a vyberte **upravit odkazy**.
 2. Vyberte **Mono.Data.Sqlite** a **System.Data** sestavení: 
 
-    [![Přidání odkazů požadované](databases-images/reference01.png "přidání požadované odkazy")](databases-images/reference01-large.png)
+    [![Přidání odkazů požadované](databases-images/reference01.png "přidání požadované odkazy")](databases-images/reference01-large.png#lightbox)
 3. Klikněte **OK** tlačítko a uložte změny a přidejte odkazy na.
 
 ### <a name="modifying-the-data-model"></a>Úprava datový model
@@ -1019,7 +1019,7 @@ Ovládací prvky nabídky, která je k dispozici v systému macOS (například p
 
 Jako příklad upravit jednoduchá vazba výše uvedených příkladech v Tvůrci rozhraní přidat pole se seznamem a vystavit pomocí výstupu s názvem `EmployeeSelector`:
 
-[![Vystavení výstupu pole se seznamem](databases-images/combo01.png "vystavení výstupu pole se seznamem")](databases-images/combo01-large.png)
+[![Vystavení výstupu pole se seznamem](databases-images/combo01.png "vystavení výstupu pole se seznamem")](databases-images/combo01-large.png#lightbox)
 
 V **atributy Inspector**, zkontrolujte **Autocompletes** a **zdroj dat používá** vlastnosti:
 
@@ -1924,7 +1924,7 @@ Udělejte k přidání balíčku:
 1. V **řešení Pad**, klikněte pravým tlačítkem myši **balíčky** složky a vyberte **přidat balíčky...**
 2. Zadejte `SQLite.net` v **vyhledávacího pole** a vyberte **sqlite net** položku:
 
-    [![Probíhá přidávání balíčku SQLite NuGet](databases-images/nuget01.png "přidat balíček SQLite NuGet")](databases-images/nuget01-large.png)
+    [![Probíhá přidávání balíčku SQLite NuGet](databases-images/nuget01.png "přidat balíček SQLite NuGet")](databases-images/nuget01-large.png#lightbox)
 3. Klikněte **přidat balíček** tlačítko Dokončit.
 
 ### <a name="creating-the-data-model"></a>Vytvoření datového modelu
@@ -2063,7 +2063,7 @@ conn.Insert (Occupation);
 
 Jako příklad použití přidáme naše uživatelské rozhraní v Xcode na rozhraní tvůrce zobrazení tabulky. Budete zveřejňujeme Tato tabulka zobrazení prostřednictvím výstupu (`OccupationTable`), můžeme k němu přístup prostřednictvím kódu C#:
 
-[![Vystavení tabulka zobrazení výstupu](databases-images/table01.png "vystavení tabulka zobrazení výstupu")](databases-images/table01-large.png)
+[![Vystavení tabulka zobrazení výstupu](databases-images/table01.png "vystavení tabulka zobrazení výstupu")](databases-images/table01-large.png#lightbox)
 
 Potom přidáme vlastní třídy naplnila Tato tabulka s daty z databáze SQLite.NET.
 

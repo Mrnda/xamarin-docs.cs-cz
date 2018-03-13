@@ -4,14 +4,15 @@ description: "Použití SkiaSharp k vykreslení krychlový, kvadratické a conic
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
 author: charlespetzold
 ms.author: chape
 ms.date: 05/25/2017
-ms.openlocfilehash: 8fdebd00b0b33c184337eacd0836dd81a19f161b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2b48667d90bf994deca5c41080e002974b0ded91
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="three-types-of-bzier-curves"></a>Tři typy Bézierových křivek
 
@@ -88,7 +89,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Zde je spuštěn na všechny tři platformy:
 
-[![](beziers-images/beziercurve-small.png "Trojitá snímek obrazovky stránky Bézierovu křivku")](beziers-images/beziercurve-large.png "Trojitá snímek obrazovky stránky Bézierovu křivku")
+[![](beziers-images/beziercurve-small.png "Trojitá snímek obrazovky stránky Bézierovu křivku")](beziers-images/beziercurve-large.png#lightbox "Trojitá snímek obrazovky stránky Bézierovu křivku")
 
 Matematický křivka je krychlový polynomu. Křivku maximálně protíná přímku na tři body. U počáteční bod křivka je vždy tečný chcete a ve stejném směru jako přímka od začátku, přejděte na první kontrolního bodu. Na koncový bod křivka je vždy tečný chcete a ve stejném směru jako přímka z ovládacího prvku druhý přejděte na koncový bod.
 
@@ -206,7 +207,7 @@ Počáteční a koncový bod (`point0` a `point3`) se vypočítává podle norm�
 
 Tady je programy spuštěné na tři platforem pomocí tří různých úhlů:
 
-[![](beziers-images/beziercirculararc-small.png "Trojitá snímek obrazovky stránky kruhový oblouk na Bézierovu")](beziers-images/beziercirculararc-large.png "Trojitá snímek obrazovky stránky Bézierovy kruhový oblouk")
+[![](beziers-images/beziercirculararc-small.png "Trojitá snímek obrazovky stránky kruhový oblouk na Bézierovu")](beziers-images/beziercirculararc-large.png#lightbox "Trojitá snímek obrazovky stránky Bézierovy kruhový oblouk")
 
 Úzce podívejte se na obrazovce Windows Mobile a uvidíte, že Bézierovy křivky zejména odchylují od polokruhu když úhel je 180 stupňů, ale na obrazovce iOS ukazuje, že nejspíš vyhovoval čtvrtletí kruh stejně dobře, když úhel je 90 stupňů.
 
@@ -288,7 +289,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Body interpolace podle sinusoidally provozních hodnotu `t`. Interpolované body se pak používají k vytvoření řadu čtyři připojené Bézierových křivek. Tady je animace spuštěna na tři platformách zobrazující průběh z kruhu na čtverce:
 
-[![](beziers-images/squaringthecircle-small.png "Trojitá snímek obrazovky Squaring stránce kruh")](beziers-images/squaringthecircle-large.png "Trojitá snímek obrazovky Squaring stránce kruhu.")
+[![](beziers-images/squaringthecircle-small.png "Trojitá snímek obrazovky Squaring stránce kruh")](beziers-images/squaringthecircle-large.png#lightbox "Trojitá snímek obrazovky Squaring stránce kruhu.")
 
 Takové animace bude možné bez křivek, které jsou algorithmically dostatečně flexibilní, aby se vykresluje jako Kruhové oblouky a rovné čáry.
 
@@ -337,7 +338,7 @@ Může to být dobrým cvičení k vykreslení tyto souřadnice na graf dokument
 
 Tady je přihlašovací infinity na všech tří platformách:
 
-[![](beziers-images/bezierinfinity-small.png "Trojitá snímek obrazovky stránky Bézierovy Infinity")](beziers-images/bezierinfinity-large.png "Trojitá snímek obrazovky stránky Bézierovy Infinity")
+[![](beziers-images/bezierinfinity-small.png "Trojitá snímek obrazovky stránky Bézierovy Infinity")](beziers-images/bezierinfinity-large.png#lightbox "Trojitá snímek obrazovky stránky Bézierovy Infinity")
 
 Je poněkud hladší směrem k centru než infinity přihlašovací poskytnutý **oblouk Infinity** stránku z [ **tři způsoby nakreslit oblouk** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/arcs.md) článku.
 
@@ -400,7 +401,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 A zde je spuštěn na všechny tři platformy:
 
-[![](beziers-images/quadraticcurve-small.png "Trojitá snímek obrazovky stránky kvadratické křivky")](beziers-images/quadraticcurve-large.png "Trojitá snímek obrazovky stránky kvadratické křivky")
+[![](beziers-images/quadraticcurve-small.png "Trojitá snímek obrazovky stránky kvadratické křivky")](beziers-images/quadraticcurve-large.png#lightbox "Trojitá snímek obrazovky stránky kvadratické křivky")
 
 Čáry s koncovými body jsou tangens na křivku na počáteční a koncový bod a splňují okamžiku ovládacího prvku.
 
@@ -478,7 +479,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Zde je spuštěn na všechny tři platformy:
 
-[![](beziers-images/coniccurve-small.png "Trojitá snímek obrazovky stránky Conic křivky")](beziers-images/coniccurve-large.png "Trojitá snímek obrazovky stránky Conic křivky")
+[![](beziers-images/coniccurve-small.png "Trojitá snímek obrazovky stránky Conic křivky")](beziers-images/coniccurve-large.png#lightbox "Trojitá snímek obrazovky stránky Conic křivky")
 
 Jak vidíte, řídicí bod zdá se, že když vyšší váhou pro vyžádání obsahu křivky směrem ho Další. Když váhu nulová, stane se křivku přímky z počáteční bod pro koncový bod.
 
@@ -542,7 +543,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Jak můžete vidět, není žádný visual rozdíl mezi `ConicTo` cestu zobrazené červeně a základní kruhu zobrazí pro referenci:
 
-[![](beziers-images/coniccirculararc-small.png "Trojitá snímek obrazovky stránky Conic kruhového oblouku")](beziers-images/coniccirculararc-large.png "Trojitá snímek obrazovky stránky Conic kruhový oblouk")
+[![](beziers-images/coniccirculararc-small.png "Trojitá snímek obrazovky stránky Conic kruhového oblouku")](beziers-images/coniccirculararc-large.png#lightbox "Trojitá snímek obrazovky stránky Conic kruhový oblouk")
 
 Ale nastavit úhel 180 stupňů a matematika selhání.
 

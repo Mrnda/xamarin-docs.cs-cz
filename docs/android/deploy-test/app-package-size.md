@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/05/2018
-ms.openlocfilehash: 0fff4de7420bceda8c15ae33b03886eb6b332aeb
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 430b07918b13878e3561b55ff841a64855183fa7
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="application-package-size"></a>Velikost balíčku aplikace
 
@@ -28,13 +28,13 @@ Xamarin.Android používá celou řadu mechanismy na minimální velikost balí�
 
 Pro odeslání plně obsažený aplikace, musí zahrnovat balíček aplikace, přidružené knihovny, obsah, Mono runtime a požadovaná sestavení základní třídy knihovny (BCL). Například pokud jsme využít výchozí šablony "Hello World", obsah balíčku dokončení sestavení by vypadat takto:
 
-[ ![Velikost balíčku před linkeru](app-package-size-images/hello-world-package-size-before-linker.png)](app-package-size-images/hello-world-package-size-before-linker.png)
+[![Velikost balíčku před linkeru](app-package-size-images/hello-world-package-size-before-linker.png)](app-package-size-images/hello-world-package-size-before-linker.png#lightbox)
 
 Je větší velikost stažení než rádi bychom znali 15,8 MB. Problém je v knihovnách BCL, protože obsahují mscorlib, systém a Mono.Android, které poskytují spoustu komponenty potřebné ke spuštění vaší aplikace. Však také obsahují funkce, které je možné, že používáte ve vaší aplikaci, tak může být vhodnější než vyloučit těchto součástí.
 
 Když jsme sestavení aplikace pro distribuci, jsme spuštění procesu, se říká propojení, která hledá aplikace a odebere kód, který se nepoužívá přímo. Tento proces je podobný s funkcemi, [uvolňování paměti](~/android/internals/garbage-collection.md) poskytuje pro přidělené halda paměti. Ale namísto operační přes objekty, propojení funguje přes kódu. Například celý obor názvů je v System.dll pro odesílání a příjmu e-mailu, ale pokud vaše aplikace neprovede použití této funkce kód je právě plýtvání místa. Po spuštění linkeru na aplikace Hello World, naše balíček nyní vypadat třeba takto:
 
-[ ![Velikost balíčku po linkeru](app-package-size-images/hello-world-package-size-after-linker.png)](app-package-size-images/hello-world-package-size-after-linker.png)
+[![Velikost balíčku po linkeru](app-package-size-images/hello-world-package-size-after-linker.png)](app-package-size-images/hello-world-package-size-after-linker.png#lightbox)
 
 Jak jsme vidět, tím se odeberou významné množství BCL, který nebyl používán. Všimněte si, že konečné velikosti BCL je závislá na jaké aplikace ve skutečnosti používá. Například pokud jsme si prohlédněte mnohem vyšší ukázkové aplikaci s názvem ApiDemo, vidíme, že komponentu BCL zvýšilo velikost, protože ApiDemo používá více BCL než Hello, World nemá:
 
@@ -51,7 +51,7 @@ Android je relativně pomalé kopírování a instalace balíčku, takže chceme
 
 Při prvním jsme ladění na zařízení, jsme zkopírujte dvě velkých balíčků názvem *sdílený modul Runtime* a *sdílené platformě*. Sdílený modul Runtime obsahuje Mono Runtime a BCL, při sdílené platformě obsahuje rozhraní API systému Android úrovně konkrétní sestavení:
 
-[ ![Sdílený modul runtime velikost balíčku](app-package-size-images/shared-runtime-package-size.png)](app-package-size-images/shared-runtime-package-size.png)
+[![Sdílený modul runtime velikost balíčku](app-package-size-images/shared-runtime-package-size.png)](app-package-size-images/shared-runtime-package-size.png#lightbox)
 
 Kopírování tyto základní součásti se provádí jenom jednou jako trvá poměrně kousek čas, ale umožňuje všechny následné aplikacím spuštění v režimu ladění je využívají. Nakonec jsme zkopírujte skutečné aplikace, která je malé a rychlé:
 

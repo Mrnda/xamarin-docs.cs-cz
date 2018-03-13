@@ -7,12 +7,12 @@ ms.assetid: A6090101-67C6-4BDD-9416-F2FB74805A87
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 36cabddc2439d64ad2d1135bbd0d453a7f411750
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: d8b44fb7f0e60db407271fd84899489bf8e65694
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough---saving-the-activity-state"></a>Návod - ukládají stav aktivity
 
@@ -22,7 +22,7 @@ _Budeme mít zahrnutých teoreticky za uložení stavu v Průvodci životního c
 
 Umožňuje otevřít **ActivityLifecycle_Start** projektu (v [ActivityLifecycle](https://developer.xamarin.com/samples/monodroid/ActivityLifecycle) ukázkové), jej sestavit a spustit. Toto je velmi jednoduchý projekt, který má dvě aktivity k předvedení životního cyklu aktivity a jak se nazývají různé metody životního cyklu. Při spuštění aplikace, na obrazovce `MainActivity` se zobrazí: 
 
-[ ![Aktivity A obrazovky](saving-state-images/01-activity-a-sml.png)](saving-state-images/01-activity-a.png)
+[![Aktivity A obrazovky](saving-state-images/01-activity-a-sml.png)](saving-state-images/01-activity-a.png#lightbox)
 
 ### <a name="viewing-state-transitions"></a>Přechody stavu zobrazení.
 
@@ -48,7 +48,7 @@ Když kliknete na **spuštění aktivity B** tlačítko vidíme *aktivity A* poz
 
 V důsledku toho *aktivity B* spustit a zobrazit místě *aktivity A*: 
 
-[ ![Obrazovka aktivitě B](saving-state-images/02-activity-b-sml.png)](saving-state-images/02-activity-b.png)
+[![Obrazovka aktivitě B](saving-state-images/02-activity-b-sml.png)](saving-state-images/02-activity-b.png#lightbox)
 
 Když kliknete na **zpět** tlačítko *aktivity B* zničena a *aktivity A* obnovení: 
 
@@ -62,7 +62,7 @@ Když kliknete na **zpět** tlačítko *aktivity B* zničena a *aktivity A* obno
 ```
 ### <a name="adding-a-click-counter"></a>Přidání čítačů klikněte na
 
-V dalším kroku vytvoříme tak, aby jsme tlačítka, který sleduje a zobrazuje počet, který po kliknutí na změnit aplikace. Nejprve přidejme `_counter` proměnnou instance `MainActivity`: 
+V dalším kroku vytvoříme tak, aby jsme tlačítka, který sleduje a zobrazuje počet, který po kliknutí na změnit aplikace. Nejprve přidejme `_counter` proměnnou instance `MainActivity`:
 
 ```csharp
 int _counter = 0;
@@ -105,11 +105,11 @@ clickbutton.Click += (object sender, System.EventArgs e) =>
 
 Když jsme sestavení a znovu spusťte aplikaci, nové tlačítko se zobrazuje, který zvýší a zobrazí hodnotu `_counter` na každou klikněte na:
 
-[![Přidat počet dotykového ovládání](saving-state-images/03-touched-sml.png)](saving-state-images/03-touched.png)
+[![Přidat počet dotykového ovládání](saving-state-images/03-touched-sml.png)](saving-state-images/03-touched.png#lightbox)
 
 Ale pokud jsme otočení zařízení do režimu na šířku, dojde ke ztrátě tento počet:
 
-[ ![Otáčení na šířku nastaví počet zpět na nulu](saving-state-images/05-rotate-nosave-sml.png)](saving-state-images/05-rotate-nosave.png)
+[![Otáčení na šířku nastaví počet zpět na nulu](saving-state-images/05-rotate-nosave-sml.png)](saving-state-images/05-rotate-nosave.png#lightbox)
 
 Zkoumání výstupu aplikace, jsme to vidět *aktivity A* byla pozastavena, byla zastavena, zničen, znovu vytvořit, restartovat a pak obnovit během otočení z na výšku do režimu na šířku: 
 
@@ -152,7 +152,7 @@ if (bundle != null)
 
 Sestavení a znovu spusťte aplikaci a pak klikněte na tlačítko druhý několikrát. Když jsme otočení zařízení do režimu na šířku, se zachová, i počet!
 
-[ ![Otočení obrazovky zobrazuje počet čtyři zachovaná](saving-state-images/06-rotate-save-sml.png)](saving-state-images/06-rotate-save.png)
+[![Otočení obrazovky zobrazuje počet čtyři zachovaná](saving-state-images/06-rotate-save-sml.png)](saving-state-images/06-rotate-save.png#lightbox)
 
 
 Podívejme se na okno výstupu a zobrazit, co se stalo:

@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: ba460bee067162f8e42f84f230f93cb1cf98ba98
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b10894d6b18d78d682825000726c5ef2cbe5ba6b
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="walkthrough---using-background-location"></a>Návod - pomocí umístění pozadí
 
@@ -31,55 +31,55 @@ Tento návod popisuje některé klíč backgrounding koncepty, včetně registra
 
     V sadě Visual Studio pro Mac bude vypadat přibližně takto:
 
-    [![](location-walkthrough-images/image7.png "Toto políčko zaškrtněte režimy pozadí povolit i umístění aktualizace zaškrtávací políčka")](location-walkthrough-images/image7.png)
+    [![](location-walkthrough-images/image7.png "Toto políčko zaškrtněte režimy pozadí povolit i umístění aktualizace zaškrtávací políčka")](location-walkthrough-images/image7.png#lightbox)
 
     V sadě Visual Studio **Info.plist** je nutné ručně aktualizovat přidáním následující dvojice klíč/hodnota:
 
-        ```csharp
-        <key>UIBackgroundModes</key>
-        <array>
-            <string>location</string>
-        </array>
-        ```
+    ```xml
+    <key>UIBackgroundModes</key>
+    <array>
+        <string>location</string>
+    </array>
+    ```
 
 1. Teď, když je zaregistrován aplikace, ho můžete získat data o umístění ze zařízení. V iOS `CLLocationManager` třída se používá pro přístup k informace o umístění a může vygenerovat události, které poskytují aktualizace umístění.
 
 1. V kódu, vytvořte novou třídu s názvem `LocationManager` poskytuje jednotné místo pro různé obrazovky a kód přihlásit k odběru aktualizací umístění. V `LocationManager` třídy, ujistěte se o instanci `CLLocationManager` názvem `LocMgr`:
 
-```csharp
-        public class LocationManager
-        {
-          protected CLLocationManager locMgr;
+    ```csharp
+    public class LocationManager
+    {
+        protected CLLocationManager locMgr;
 
-          public LocationManager (){
+        public LocationManager () {
             this.locMgr = new CLLocationManager();
             this.locMgr.PausesLocationUpdatesAutomatically = false;
 
             // iOS 8 has additional permissions requirements
             if (UIDevice.CurrentDevice.CheckSystemVersion (8, 0)) {
-              locMgr.RequestAlwaysAuthorization (); // works in background
-              //locMgr.RequestWhenInUseAuthorization (); // only in foreground
+                locMgr.RequestAlwaysAuthorization (); // works in background
+                //locMgr.RequestWhenInUseAuthorization (); // only in foreground
             }
 
             if (UIDevice.CurrentDevice.CheckSystemVersion (9, 0)) {
-               locMgr.AllowsBackgroundLocationUpdates = true;
+                locMgr.AllowsBackgroundLocationUpdates = true;
             }
-          }
-
-          public CLLocationManager LocMgr{
-            get { return this.locMgr; }
-          }
         }
-```
 
-    The code above sets a number of properties and permissions on the [CLLocationManager](https://developer.xamarin.com/api/type/CoreLocation.CLLocationManager/) class:
+        public CLLocationManager LocMgr {
+            get { return this.locMgr; }
+        }
+    }
+    ```
+
+    Výše uvedený kód nastaví počet vlastností a oprávnění [CLLocationManager](https://developer.xamarin.com/api/type/CoreLocation.CLLocationManager/) třídy:
 
     - `PausesLocationUpdatesAutomatically` – To je logická hodnota, která můžete nastavit v závislosti na tom, jestli je dovoleno systému pozastavit aktualizace umístění. Na některých zařízeních je standardně `true`, což může způsobit zařízení zastavit získávání pozadí aktualizace umístění přibližně za 15 minut.
     - `RequestAlwaysAuthorization` -By měla předávat tato metoda poskytuje aplikaci uživateli možnost Povolit umístění přístup na pozadí. `RequestWhenInUseAuthorization` Můžete také předat Pokud chcete uživateli přidělit možnost Povolit umístění přístup jenom v případě, že aplikace je v popředí.
     - `AllowsBackgroundLocationUpdates` – To je vlastnost typu Boolean, zavedená v iOS 9, která může být nastaven na povolit aplikaci dostávat aktualizace umístění, pokud byla pozastavena.
 
     > [!IMPORTANT]
-> **UPOZORNĚNÍ**: iOS 8 (a vyšší) taky vyžaduje položku v **Info.plist** souboru se uživateli zobrazí jako součást požadavek ověřování.
+    > **UPOZORNĚNÍ**: iOS 8 (a vyšší) taky vyžaduje položku v **Info.plist** souboru se uživateli zobrazí jako součást požadavek ověřování.
 
 1. Přidá klíč `NSLocationAlwaysUsageDescription` nebo `NSLocationWhenInUseUsageDescription` řetězcem, který se zobrazí se uživateli na výstrahy, které vyžadují přístup k datům umístění.
 
@@ -89,25 +89,25 @@ Tento návod popisuje některé klíč backgrounding koncepty, včetně registra
 1. Uvnitř `LocationManager` třídy, vytvořte metodu s názvem `StartLocationUpdates` následujícím kódem. Tento kód ukazuje na začít přijímat aktualizace umístění z `CLLocationManager`:
 
     ```csharp
-        if (CLLocationManager.LocationServicesEnabled) {
-          //set the desired accuracy, in meters
-          LocMgr.DesiredAccuracy = 1;
-          LocMgr.LocationsUpdated += (object sender, CLLocationsUpdatedEventArgs e) =>
-          {
-              // fire our custom Location Updated event
-              LocationUpdated (this, new LocationUpdatedEventArgs (e.Locations [e.Locations.Length - 1]));
-          };
-          LocMgr.StartUpdatingLocation();
-        }
-        ```
+    if (CLLocationManager.LocationServicesEnabled) {
+        //set the desired accuracy, in meters
+        LocMgr.DesiredAccuracy = 1;
+        LocMgr.LocationsUpdated += (object sender, CLLocationsUpdatedEventArgs e) =>
+        {
+            // fire our custom Location Updated event
+            LocationUpdated (this, new LocationUpdatedEventArgs (e.Locations [e.Locations.Length - 1]));
+        };
+        LocMgr.StartUpdatingLocation();
+    }
+    ```
 
-    There are several important things happening in this method. First, we perform a check to see if the application has access to location data on the device. We verify this by calling `LocationServicesEnabled` on the `CLLocationManager`. This method will return **false** if the user has denied the application access to location information.
+    Existuje několik důležitých věcí děje u této metody. Nejprve můžeme provést kontrola ověří, zda má aplikace přístup k umístění dat na zařízení. Jsme to ověřit pomocí volání `LocationServicesEnabled` na `CLLocationManager`. Tato metoda vrátí **false** Pokud uživatel má odepřené aplikaci přístup k informace o umístění.
 
-1. Next, tell the location manager how often to update. `CLLocationManager` provides many options for filtering and configuring location data, including the frequency of updates. In this example, set the `DesiredAccuracy` to update whenever the location changes by a meter. For more information on configuring location update frequency and other preferences, refer to the [CLLocationManager Class Reference](http://developer.apple.com/library/ios/#documentation/CoreLocation/Reference/CLLocationManager_Class/CLLocationManager/CLLocationManager.html) in the Apple documentation.
+1. Dále určete do správce k umístění, jak často k aktualizaci. `CLLocationManager` poskytuje mnoho možností pro filtrování a konfigurace data o umístění, včetně četnosti aktualizací. V tomto příkladu nastavený `DesiredAccuracy` aktualizovat vždy, když se změní umístění měřidla. Další informace o konfiguraci frekvence aktualizace umístění a další předvolby, najdete v části [referenci třídy CLLocationManager](http://developer.apple.com/library/ios/#documentation/CoreLocation/Reference/CLLocationManager_Class/CLLocationManager/CLLocationManager.html) v dokumentaci Apple.
 
-1. Finally, call `StartUpdatingLocation` on the `CLLocationManager` instance. This tells the location manager to get an initial fix on the current location, and to start sending updates
+1. Nakonec volání `StartUpdatingLocation` na `CLLocationManager` instance. Tato hodnota informuje správce umístění, abyste získali počáteční opravu na aktuální umístění a zahájit odesílání aktualizací
 
-So far, the location manager has been created, configured with the kinds of data we want to receive, and has determined the initial location. Now the code needs to render the location data to the user interface. We can do this with a custom event that takes a `CLLocation` as an argument:
+Pokud správce umístění má byly vytvořeny, konfigurovány s typů dat chceme přijímat, a bylo zjištěno počáteční umístění. Teď je potřeba kód k vykreslení musí data o umístění do uživatelského rozhraní. Jsme to lze provést pomocí vlastní události, která přijímá `CLLocation` jako argument:
 
 ```csharp
 // event for the location changing
@@ -146,45 +146,47 @@ public class LocationUpdatedEventArgs : EventArgs
 1. V panelu pro řešení, dvakrát klikněte na `ViewController.cs` soubor a upravit ho vytvořit novou instanci třídy LocationManager a volání `StartLocationUpdates`na něm.
   Změňte kód, který vypadat následovně:
 
-        #region Computed Properties
-        public static bool UserInterfaceIdiomIsPhone {
-                    get { return UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Phone; }
-                }
+    ```csharp
+    #region Computed Properties
+    public static bool UserInterfaceIdiomIsPhone {
+                get { return UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Phone; }
+            }
 
-        public static LocationManager Manager { get; set;}
-        #endregion
+    public static LocationManager Manager { get; set;}
+    #endregion
 
-        #region Constructors
-        public ViewController (IntPtr handle) : base (handle)
-        {
-        // As soon as the app is done launching, begin generating location updates in the location manager
-            Manager = new LocationManager();
-            Manager.StartLocationUpdates();
-        }
+    #region Constructors
+    public ViewController (IntPtr handle) : base (handle)
+    {
+    // As soon as the app is done launching, begin generating location updates in the location manager
+        Manager = new LocationManager();
+        Manager.StartLocationUpdates();
+    }
 
-        #endregion
+    #endregion
+    ```
 
     Aktualizace umístění tím se spustí při spuštění aplikace, i když se nezobrazí žádná data.
 
 1. Teď, když se aktualizace umístění přijme, aktualizujte na obrazovce s informace o umístění. Následující metoda získá umístění z našich `LocationUpdated` událostí a zobrazí v uživatelském rozhraní:
 
-        #region Public Methods
-        public void HandleLocationChanged (object sender, LocationUpdatedEventArgs e)
-        {
-            // Handle foreground updates
-            CLLocation location = e.Location;
+    ```csharp
+    #region Public Methods
+    public void HandleLocationChanged (object sender, LocationUpdatedEventArgs e)
+    {
+        // Handle foreground updates
+        CLLocation location = e.Location;
 
-            LblAltitude.Text = location.Altitude + " meters";
-            LblLongitude.Text = location.Coordinate.Longitude.ToString ();
-            LblLatitude.Text = location.Coordinate.Latitude.ToString ();
-            LblCourse.Text = location.Course.ToString ();
-            LblSpeed.Text = location.Speed.ToString ();
+        LblAltitude.Text = location.Altitude + " meters";
+        LblLongitude.Text = location.Coordinate.Longitude.ToString ();
+        LblLatitude.Text = location.Coordinate.Latitude.ToString ();
+        LblCourse.Text = location.Course.ToString ();
+        LblSpeed.Text = location.Speed.ToString ();
 
-            Console.WriteLine ("foreground updated");
-        }
-
-        #endregion
-
+        Console.WriteLine ("foreground updated");
+    }
+    #endregion
+    ```
 
 Musíme přihlášení k odběru `LocationUpdated` událost v našich AppDelegate a volání nové metody aktualizace uživatelského rozhraní. Přidejte následující kód v `ViewDidLoad,` hned po `StartLocationUpdates` volání:
 
@@ -203,43 +205,47 @@ public override void ViewDidLoad ()
 
 Teď když se aplikace spustí, by měla vypadat nějak takto:
 
-[![](location-walkthrough-images/image5.png "Příklad aplikace spustit")](location-walkthrough-images/image5.png)
+[![](location-walkthrough-images/image5.png "Příklad aplikace spustit")](location-walkthrough-images/image5.png#lightbox)
 
 ## <a name="handling-active-and-background-states"></a>Zpracování stavů aktivní a pozadí
 
 1. Aplikace je výstup vytvořeného aktualizace umístění, i když je aktivní a aktivní. K předvedení, co se stane, když aplikace přejde na pozadí, přepsat `AppDelegate` metody, které sledují aplikace změny stavu, takže aplikace se zapíše do konzoly při přechází mezi popředí a na pozadí:
 
-        public override void DidEnterBackground (UIApplication application)
-        {
-          Console.WriteLine ("App entering background state.");
-        }
+    ```csharp
+    public override void DidEnterBackground (UIApplication application)
+    {
+        Console.WriteLine ("App entering background state.");
+    }
 
-        public override void WillEnterForeground (UIApplication application)
-        {
-          Console.WriteLine ("App will enter foreground");
-        }
+    public override void WillEnterForeground (UIApplication application)
+    {
+        Console.WriteLine ("App will enter foreground");
+    }
+    ```
 
     Přidejte následující kód v `LocationManager` nepřetržitě tisku aktualizované umístění data na výstupní aplikace, pro ověření informací o umístění je stále k dispozici na pozadí:
 
-        public class LocationManager
+    ```csharp
+    public class LocationManager
+    {
+        public LocationManager ()
         {
-          public LocationManager ()
-          {
-            ...
-            LocationUpdated += PrintLocation;
-          }
-          ...
-
-          //This will keep going in the background and the foreground
-          public void PrintLocation (object sender, LocationUpdatedEventArgs e) {
-            CLLocation location = e.Location;
-            Console.WriteLine ("Altitude: " + location.Altitude + " meters");
-            Console.WriteLine ("Longitude: " + location.Coordinate.Longitude);
-            Console.WriteLine ("Latitude: " + location.Coordinate.Latitude);
-            Console.WriteLine ("Course: " + location.Course);
-            Console.WriteLine ("Speed: " + location.Speed);
-          }
+        ...
+        LocationUpdated += PrintLocation;
         }
+        ...
+
+        //This will keep going in the background and the foreground
+        public void PrintLocation (object sender, LocationUpdatedEventArgs e) {
+        CLLocation location = e.Location;
+        Console.WriteLine ("Altitude: " + location.Altitude + " meters");
+        Console.WriteLine ("Longitude: " + location.Coordinate.Longitude);
+        Console.WriteLine ("Latitude: " + location.Coordinate.Latitude);
+        Console.WriteLine ("Course: " + location.Course);
+        Console.WriteLine ("Speed: " + location.Speed);
+        }
+    }
+    ```
 
 1. Existuje jedna zbývající problém s kódem: Pokus o aktualizaci uživatelského rozhraní, když je aplikace backgrounded bude příčina iOS bude ho ukončit. Pokud aplikace přejde do na pozadí, musí kód odhlásit z umístění aktualizace a přestanou aktualizovat uživatelského rozhraní.
 
@@ -247,9 +253,11 @@ Teď když se aplikace spustí, by měla vypadat nějak takto:
 
     Následující fragment kódu ukazuje, jak pokud chcete, aby zobrazení vědět, kdy zastavit aktualizace uživatelského rozhraní použijte oznámení. To bude přejděte `ViewDidLoad`:
 
-        UIApplication.Notifications.ObserveDidEnterBackground ((sender, args) => {
-          Manager.LocationUpdated -= HandleLocationChanged;
-        });
+    ```csharp
+    UIApplication.Notifications.ObserveDidEnterBackground ((sender, args) => {
+        Manager.LocationUpdated -= HandleLocationChanged;
+    });
+    ```
 
     Když aplikace běží, výstup bude vypadat přibližně takto:
 

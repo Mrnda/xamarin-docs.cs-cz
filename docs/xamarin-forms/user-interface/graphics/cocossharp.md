@@ -8,19 +8,19 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 05/03/2016
-ms.openlocfilehash: 04268f38e558d438a4c84069400e4dc6be213009
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 395defa300da7b8f68746162d877a4fdb17ded9e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="using-cocossharp-in-xamarinforms"></a>Použití CocosSharp v Xamarin.Forms
 
 _CocosSharp slouží k přidání do aplikace pro pokročilé vizualizaci přesné tvaru, image a vykreslování textu_
 
-[ ![Kokosové # v Xamarin.Forms](cocossharp-images/evolve-mike-cocossharp-sml.png "CocosSharp v Xamarin.Forms")](https://evolve.xamarin.com/session/56e210d1bad314273ca4d81e)
+> [!VIDEO https://youtube.com/embed/eYCx63FeqVU]
 
-[Momentální 2016: Kokosové # v Xamarin.Forms](https://evolve.xamarin.com/session/56e210d1bad314273ca4d81e)
+**Momentální 2016: Kokosové # v Xamarin.Forms**
 
 ## <a name="overview"></a>Přehled
 

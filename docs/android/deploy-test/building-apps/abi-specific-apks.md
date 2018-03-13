@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: 3bc53a8230b66b88319f729d7effe8ed75f0176b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cf2f62929df63d08add76b7fb6de404d2780b2b3
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="building-abi-specific-apks"></a>Sestavování specifických ABI APKs
 
@@ -42,7 +42,6 @@ Tato příručka vyřeší postup vytvoření skriptu více APKs pro aplikace pr
 Na konci tohoto průvodce je návod, který popisuje, jak tyto kroky, pomocí skriptu [převislým](http://martinfowler.com/articles/rake.html).
 
 
-<a name="Setting_android_versionCode" />
 
 ### <a name="creating-the-version-code-for-the-apk"></a>Vytváření kódu verze pro APK
 
@@ -67,7 +66,7 @@ Rozbalením této verze schématu kódu na osm číslic, je možné obsahovala n
 
 Následující diagram znázorňuje pozici každý kód popsané v seznamu výše:
 
-[![Diagram formát kódu osm číslice verze programového pomocí barev](abi-specific-apks-images/image00.png)](abi-specific-apks-images/image00.png)
+[![Diagram formát kódu osm číslice verze programového pomocí barev](abi-specific-apks-images/image00.png)](abi-specific-apks-images/image00.png#lightbox)
 
 
 Google Play zajistí, že je správný APK doručit do zařízení na základě `versionCode` a APK konfigurace. APK nejvyšší kódem bude doručen do zařízení. Například aplikace může mít tři APKs s následujícími kódy verze:
@@ -88,7 +87,6 @@ Nyní Představte si, že x86 verze obdrží některé aktualizace nebo chyb opr
 Zachování tyto kódy verze ručně, může být významné zátěž vývojář. Proces výpočtu správného `android:versionCode` a pak vytváření APK dobré automatizovat.
 Příklad toho, jak to udělat, se budeme v tomto návodu na konci tohoto dokumentu.
 
-<a name="CreatingAndroidManifest" />
 
 ### <a name="create-a-temporary-androidmanifestxml"></a>Vytvořit dočasný AndroidManifest.XML
 
@@ -123,7 +121,6 @@ Následující seznam popisuje jednotlivé parametry příkazového řádku:
 -   `<CS_PROJ FILE>` &ndash; To je cesta k `.csproj` soubor projektu Xamarin.Android.
 
 
-<a name="SignAndZipAlign" />
 
 ### <a name="sign-and-zipalign-the-apk"></a>Přihlášení a Zipalign APK
 
@@ -139,7 +136,6 @@ Všechny aplikace Xamarin.Android musí být zip zarovnaný ještě před jejich
 zipalign -f -v 4 <SIGNED_APK_TO_ZIPALIGN> <PATH/TO/ZIP_ALIGNED.APK>
 ```
 
-<a name="Automating_APK_Creation_With_Rake" />
 
 ## <a name="automating-apk-creation-with-rake"></a>Automatizace vytváření APK s převislým
 
@@ -174,11 +170,11 @@ $ rake build
 
 Po dokončení úlohy převislým, bude tři `bin` složky se souborem `xamarin.helloworld.apk`. Další snímek obrazovky ukazuje každou z těchto složek s jejich obsah:
 
-[![Umístění složky specifické pro platformu obsahující xamarin.helloworld.apk](abi-specific-apks-images/image01.png)](abi-specific-apks-images/image01.png)
+[![Umístění složky specifické pro platformu obsahující xamarin.helloworld.apk](abi-specific-apks-images/image01.png)](abi-specific-apks-images/image01.png#lightbox)
 
 
 > [!NOTE]
-> **Poznámka:** procesu sestavení uvedených v této příručce mohou být prováděny v jeden z mnoha různých sestavení systémů. I když nemáme předem napsané příklad, je také třeba umožnit s [prostředí Powershell](http://technet.microsoft.com/en-ca/scriptcenter/powershell.aspx) / [psake](https://github.com/psake/psake) nebo [zfalšovat](http://fsharp.github.io/FAKE/).
+> Proces sestavení uvedených v této příručce mohou být prováděny v jednom z mnoha různých sestavení systémy. I když nemáme předem napsané příklad, je také třeba umožnit s [prostředí Powershell](http://technet.microsoft.com/en-ca/scriptcenter/powershell.aspx) / [psake](https://github.com/psake/psake) nebo [zfalšovat](http://fsharp.github.io/FAKE/).
 
 
 ## <a name="summary"></a>Souhrn

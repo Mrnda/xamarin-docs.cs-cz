@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: ba5249a275d3aa695ccc6527805c56907bbda0ae
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a5dbd65cc32ed63c0fa6f8abe3a13ffee4e9df63
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="enhanced-user-notifications"></a>Rozšířené uživatelská oznámení
 
@@ -168,11 +168,11 @@ K poskytování požadované nárok, postupujte takto:
 1. Dvakrát klikněte `Entitlements.plist` souboru v **řešení Pad** otevřete pro úpravy.
 2. Přepnout **zdroj** zobrazení: 
 
-    [ ![](enhanced-user-notifications-images/setup01.png "Zobrazení zdroje")](enhanced-user-notifications-images/setup01.png)
+    [![](enhanced-user-notifications-images/setup01.png "Zobrazení zdroje")](enhanced-user-notifications-images/setup01.png#lightbox)
 3. Klikněte  **+**  tlačítko přidejte nový klíč.
 4. Zadejte `aps-environment` pro **vlastnost**, ponechte **typ** jako `String` a zadejte buď `development` nebo `production` pro **hodnotu**: 
 
-    [ ![](enhanced-user-notifications-images/setup02.png "Vlastnost přístupových bodů prostředí")](enhanced-user-notifications-images/setup02.png)
+    [![](enhanced-user-notifications-images/setup02.png "Vlastnost přístupových bodů prostředí")](enhanced-user-notifications-images/setup02.png#lightbox)
 5. Uložte změny do souboru.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -181,7 +181,7 @@ K poskytování požadované nárok, postupujte takto:
 3. Klikněte  **+**  tlačítko přidejte nový klíč.
 4. Zadejte `aps-environment` pro **vlastnost**, ponechte **typ** jako `String` a zadejte buď `development` nebo `production` pro **hodnotu**: 
 
-    [ ![](enhanced-user-notifications-images/setup02w.png "Vlastnost přístupových bodů prostředí")](enhanced-user-notifications-images/setup02.png)
+    [![](enhanced-user-notifications-images/setup02w.png "Vlastnost přístupových bodů prostředí")](enhanced-user-notifications-images/setup02.png#lightbox)
 5. Uložte změny do souboru.
 
 -----
@@ -190,7 +190,7 @@ K poskytování požadované nárok, postupujte takto:
 
 Pokud aplikace bude odesílání a příjem vzdáleného oznámení, bude stále nutné udělat _tokenu registrace_ pomocí stávající `UIApplication` rozhraní API. Tato registrace vyžaduje, aby zařízení tak, aby měl přístup k živé síti připojení služby APN, které způsobí vygenerování nezbytné token, který se odesílají do aplikace. Aplikace potřebuje pak předávat tento token do aplikace straně serveru pro vývojáře k registraci pro vzdálené oznamování událostí:
 
-[ ![](enhanced-user-notifications-images/token01.png "Přehled tokenu registrace")](enhanced-user-notifications-images/token01.png)
+[![](enhanced-user-notifications-images/token01.png "Přehled tokenu registrace")](enhanced-user-notifications-images/token01.png#lightbox)
 
 Použijte následující kód k inicializaci požadované registrace:
 
@@ -200,7 +200,7 @@ UIApplication.SharedApplication.RegisterForRemoteNotifications ();
 
 Token, který se odešlou do aplikace pro vývojáře server straně muset být zahrnuty jako součást oznámení datové části tohoto get na odeslaných ze serveru pro služby APN při odesílání oznámení o vzdálené:
 
-[ ![](enhanced-user-notifications-images/token02.png "Token, jsou součástí datová část oznámení")](enhanced-user-notifications-images/token02.png)
+[![](enhanced-user-notifications-images/token02.png "Token, jsou součástí datová část oznámení")](enhanced-user-notifications-images/token02.png#lightbox)
 
 Token funguje jako klíčem, který přiřazuje společně oznámení a aplikace použít k otevření nebo reakce na oznámení.
 
@@ -519,7 +519,7 @@ Předaný v `UNNotificationResponse` třída má `ActionIdentifier` vlastnost, k
 
 Při práci se službou vzdálené oznámení _rozšíření služeb_ poskytují způsob, jak povolit šifrování klient server uvnitř datová část oznámení. Rozšíření služeb jsou (k dispozici v iOS 10) uživatelské rozhraní příponu, která běží na pozadí s hlavním účelem rozšířit nebo výměna viditelný obsah oznámení předtím, než se zobrazí uživateli. 
 
-[ ![](enhanced-user-notifications-images/extension01.png "Služby rozšíření – přehled")](enhanced-user-notifications-images/extension01.png)
+[![](enhanced-user-notifications-images/extension01.png "Služby rozšíření – přehled")](enhanced-user-notifications-images/extension01.png#lightbox)
 
 Rozšíření služeb, která jsou určená ke spuštění rychle a jsou uvedeny pouze za krátkou dobu doba provádění v systému. V případě, že rozšíření služby selže a dokončení úkolu v přiděleném množství času, bude mít název záložní metodu. V případě selhání záložního obsahu původní oznámení se zobrazí uživateli.
 
@@ -538,13 +538,13 @@ Pokud chcete implementovat rozšíření služby v aplikaci Xamarin.iOS, postupu
 2. Klikněte pravým tlačítkem na název řešení v **řešení Pad** a vyberte **přidat** > **přidat nový projekt**.
 3. Vyberte **iOS** > **rozšíření** > **rozšíření služeb oznámení** a klikněte na **Další** tlačítko: 
 
-    [ ![](enhanced-user-notifications-images/extension02.png "Vyberte rozšíření služeb oznámení")](enhanced-user-notifications-images/extension02.png)
+    [![](enhanced-user-notifications-images/extension02.png "Vyberte rozšíření služeb oznámení")](enhanced-user-notifications-images/extension02.png#lightbox)
 4. Zadejte **název** pro rozšíření a klikněte na **Další** tlačítko: 
 
-    [ ![](enhanced-user-notifications-images/extension03.png "Zadejte název pro rozšíření")](enhanced-user-notifications-images/extension03.png)
+    [![](enhanced-user-notifications-images/extension03.png "Zadejte název pro rozšíření")](enhanced-user-notifications-images/extension03.png#lightbox)
 5. Upravit **název projektu** nebo **název řešení** dle potřeby **vytvořit** tlačítko: 
 
-    [ ![](enhanced-user-notifications-images/extension04.png "Nastavte název projektu nebo název řešení")](enhanced-user-notifications-images/extension04.png) 
+    [![](enhanced-user-notifications-images/extension04.png "Nastavte název projektu nebo název řešení")](enhanced-user-notifications-images/extension04.png#lightbox) 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -552,7 +552,7 @@ Pokud chcete implementovat rozšíření služby v aplikaci Xamarin.iOS, postupu
 2. Klikněte pravým tlačítkem na název řešení v **Průzkumníku řešení** a vyberte **přidat** > **přidat nový projekt**.
 3. Vyberte **iOS** > **rozšíření** > **rozšíření služeb oznámení**: 
 
-    [ ![](enhanced-user-notifications-images/extension01w.png "Vyberte rozšíření služeb oznámení")](enhanced-user-notifications-images/extension01w.png)
+    [![](enhanced-user-notifications-images/extension01w.png "Vyberte rozšíření služeb oznámení")](enhanced-user-notifications-images/extension01w.png#lightbox)
 4. Zadejte **název** pro rozšíření a klikněte na **OK** tlačítko.
 
 -----

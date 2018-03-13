@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: 92a11ebe983840270d3679fd11f5faa0b8222cfe
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 956fa919ef9aa994fea92a9a64ca1325819f3ffc
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="fast-renderers"></a>Pro rychlé vykreslování
 
@@ -40,7 +40,7 @@ Forms.SetFlags("FastRenderers_Experimental");
 ```
 
 > [!NOTE]
-> **Poznámka:**: rychlé nástroji pro vykreslování se vztahují jenom k aplikaci compat Android back-end, toto nastavení bude proto ignorován u aplikace před compat aktivit.
+> Rychlé nástroji pro vykreslování platí pouze pro aplikace compat Android back-end, toto nastavení bude proto ignorován u aktivit compat aplikace před.
 
 Vylepšení výkonu se budou lišit pro každou aplikaci, v závislosti na složitosti rozložení. Vylepšení výkonu x2 je například možné, pokud posouvání [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) obsahující tisíce řádky dat, kde buněk v jednotlivých řádcích probíhají ovládacích prvků, které používají pro rychlé vykreslování, výsledkem viditelně hladší posouvání.
 

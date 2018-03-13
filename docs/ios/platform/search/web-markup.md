@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 63bc1f0ed13fe65b36e95978da9ccc2ea8d4481c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8812c6a234e05e4d651effbeb83a7bcad38dc683
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="search-with-web-markup"></a>Hledání se webové značek
 
@@ -20,12 +20,12 @@ Pro aplikace, které poskytují přístup k obsahu prostřednictvím webového s
 
 Pokud vaše aplikace iOS již podporuje mobilní přímé propojení a webu uvedené přímé odkazy na obsah v rámci vaší aplikace, Apple _Applebot_ webový prohledávací modul indexu tento obsah, který se automaticky přidají do svého indexu cloudu:
 
-[ ![](web-markup-images/webmarkup01.png "Přehled Index cloudu")](web-markup-images/webmarkup01.png)
+[![](web-markup-images/webmarkup01.png "Přehled Index cloudu")](web-markup-images/webmarkup01.png#lightbox)
 
 Apple bude surface těchto výsledků ve výsledcích vyhledávání Spotlight a Safari vyhledávání.
 Pokud uživatel klepnutím na jednu z těchto výsledků (a mají nainstalované aplikace) pak budete přesměrováni na obsah ve vaší aplikaci:
 
-[ ![](web-markup-images/webmarkup02.png "Přímý odkaz z webu ve výsledcích hledání")](web-markup-images/webmarkup02.png)
+[![](web-markup-images/webmarkup02.png "Přímý odkaz z webu ve výsledcích hledání")](web-markup-images/webmarkup02.png#lightbox)
 
 ## <a name="enabling-web-content-indexing"></a>Povolení webového obsahu indexování
 
@@ -154,7 +154,7 @@ Stejné informace může být reprezentován ve formátu JSON-LD schema.org na:
 
 Na obrázku je příkladem metadata z vašeho webu, který poskytuje bohaté výsledků pro koncového uživatele:
 
-[ ![](web-markup-images/deeplink01.png "Rozšířené možnosti hledání výsledků prostřednictvím strukturovaných dat značek")](web-markup-images/deeplink01.png)
+[![](web-markup-images/deeplink01.png "Rozšířené možnosti hledání výsledků prostřednictvím strukturovaných dat značek")](web-markup-images/deeplink01.png#lightbox)
 
 Apple aktuálně podporuje následující typy schémat ze schema.org:
 

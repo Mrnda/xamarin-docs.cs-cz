@@ -4,14 +4,15 @@ description: "Zjistit transformace škálování SkiaSharp pro škálování obj
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 54A43F3D-9DA8-44A7-9AE4-7E3025129A0B
 author: charlespetzold
 ms.author: chape
 ms.date: 03/23/2017
-ms.openlocfilehash: 3ea498b3672c0b9ef4efeff7ec5981dca5a36912
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: feecfc923903a20332bf3a1a188ab9d7cd2ce1c0
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="the-scale-transform"></a>Transformace škálování
 
@@ -103,7 +104,7 @@ Může vás zajímat: jak škálování faktory ovlivňují hodnota vrácená z 
 
 Jak vidíte, vše, co vykreslovat po `Scale` volání zvyšuje úměrně:
 
-[![](scale-images/basicscale-small.png "Trojitá snímek obrazovky stránky základní škálování")](scale-images/basicscale-large.png "Trojitá snímek obrazovky stránky základní měřítka")
+[![](scale-images/basicscale-small.png "Trojitá snímek obrazovky stránky základní škálování")](scale-images/basicscale-large.png#lightbox "Trojitá snímek obrazovky stránky základní měřítka")
 
 Text, šířka přerušovanou čáru, délka pomlčky v daného řádku zaokrouhlení rozích a 10 pixelů okraje mezi horní a levé hrany na plátno a Zaoblený obdélník platí všechny stejné škálování faktorů.
 
@@ -165,7 +166,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Je umístěný levém horním rohu obdélníku zaokrouhlené `margin` pixelů z nalevo od plátna a `margin` pixelů shora. Poslední dva argumenty, které mají `Scale` metoda jsou nastavena na tyto hodnoty a šířka a Výška textu, což je také šířka a výška zaokrouhlené rámečku. To znamená, že všechny škálování je relativní vzhledem ke středu obdélníku:
 
-[![](scale-images/centeredscale-small.png "Trojitá snímek obrazovky stránky zarovnaný na střed škálování")](scale-images/centeredscale-large.png "Trojitá snímek obrazovky stránky škálování zarovnaný na střed")
+[![](scale-images/centeredscale-small.png "Trojitá snímek obrazovky stránky zarovnaný na střed škálování")](scale-images/centeredscale-large.png#lightbox "Trojitá snímek obrazovky stránky škálování zarovnaný na střed")
 
 `Slider` Elementy v tento program mít rozsah & #x 2013; 10 až 10. Jak vidíte, záporné hodnoty Vertical škálování (například na Android obrazovky v centru) způsobit, že objekty kolem vodorovné osy, které procházejí středu škálování. Záporné hodnoty vodorovných škálování (například obrazovce Windows na pravé straně) způsobit, že objekty kolem svislé osy, které procházejí středu škálování.
 
@@ -246,7 +247,7 @@ using (SKPaint strokePaint = new SKPaint
 
 `pathBounds` Obdélníku získat v horní části tento kód a později se používá s šířka a výška na plátno v `Scale` volání. Volání samostatně škálovaly souřadnice cesty je vykreslen pomocí `DrawPath` volání ale hvězdičkou bude zarovnaný na střed v pravém horním rohu na plátno. Je třeba přesunout dolů a doleva. Toto je úkolem `Translate` volání. Tyto dvě vlastnosti `pathBounds` jsou přibližně – 100, takže překlad faktory jsou přibližně 100. Protože `Translate` po volání `Scale` volat, tyto hodnoty jsou efektivně škálovat škálování faktory, takže se přesouvají středu hvězdy na střed plátna:
 
-[![](scale-images/anisotropicscaling-small.png "Trojitá snímek obrazovky stránky volba škálování")](scale-images/anisotropicscaling-large.png "Trojitá snímek obrazovky stránky volba škálování")
+[![](scale-images/anisotropicscaling-small.png "Trojitá snímek obrazovky stránky volba škálování")](scale-images/anisotropicscaling-large.png#lightbox "Trojitá snímek obrazovky stránky volba škálování")
 
 Jiný způsob, jak se dá chápat `Scale` a `Translate` volání je pro ověření účinnosti zásad v opačném pořadí: `Translate` volání posune cestu, takže se zcela zobrazí ale orientované v levém horním rohu na plátno. `Scale` Metoda pak díky této hvězdičky větší relativně k levého horního rohu.
 
@@ -289,7 +290,7 @@ using (SKPaint textPaint = new SKPaint
 
 Je podobné logiku a text zasahuje do velikosti stránky založené na vrácená z hranice obdélník text `MeasureText` (což je o něco větší než skutečná text):
 
-[![](scale-images/anisotropictext-small.png "Trojitá snímek obrazovky stránky volba Test")](scale-images/anisotropictext-large.png "Trojitá snímek obrazovky stránky volba testu")
+[![](scale-images/anisotropictext-small.png "Trojitá snímek obrazovky stránky volba Test")](scale-images/anisotropictext-large.png#lightbox "Trojitá snímek obrazovky stránky volba testu")
 
 Pokud potřebujete zachová poměr stran grafické objekty, budete chtít použít isotropic škálování. **Isotropic škálování** stránky to ukazuje pro hvězdičky odkazoval 11. Kroky pro zobrazení grafického objektu v centru stránku s isotropic škálování koncepčně, jsou:
 
@@ -338,7 +339,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Kód zobrazí také hvězdičkou deset vícekrát, pokaždé, když snížení škálování zohlednit 10 % a progresivně Změna barvy z červené na modrou:
 
-[![](scale-images/isotropicscaling-small.png "Trojitá snímek obrazovky stránky Isotropic škálování")](scale-images/isotropicscaling-large.png "Trojitá snímek obrazovky stránky Isotropic škálování")
+[![](scale-images/isotropicscaling-small.png "Trojitá snímek obrazovky stránky Isotropic škálování")](scale-images/isotropicscaling-large.png#lightbox "Trojitá snímek obrazovky stránky Isotropic škálování")
 
 
 ## <a name="related-links"></a>Související odkazy

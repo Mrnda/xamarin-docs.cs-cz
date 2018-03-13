@@ -3,14 +3,15 @@ title: "Shrnutí kapitoly 12. Styly"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 3EAE6BDC-8EFB-464B-A87B-1C35B8387BB3
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 168ad0bc2f59f0afd5b457dba38ae39cfa148c89
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9563bc811250038e8932067280a8e5292a379077
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-12-styles"></a>Shrnutí kapitoly 12. Styly
 
@@ -30,7 +31,7 @@ Můžete zadat `Value` nastavení pomocí elementu vlastnost `<Setter.Value>`. T
 
 [ **BasicStyle** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12/BasicStyle) program ukazuje základní syntaxe a ukazuje, jak odkazovat `Style` s `StaticResource` – rozšíření značek:
 
-[![Trojitá snímek obrazovky základní styl](images/ch12fg01-small.png "základní styly")](images/ch12fg01-large.png "základní styly")
+[![Trojitá snímek obrazovky základní styl](images/ch12fg01-small.png "základní styly")](images/ch12fg01-large.png#lightbox "základní styly")
 
 `Style` Objekt a libovolného objektu vytvořeny v `Style` objekt jako `Value` nastavení jsou sdílena mezi všechny zobrazení odkazující na, který `Style`. `Style` Nemůže obsahovat nic, které nemohou být sdíleny, například `View` odvozených.
 

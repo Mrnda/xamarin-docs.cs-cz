@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 29b405c61b745c26c74318243f75e5809ecfdd7d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5a33993bdef16191b66127dcc68c57661636c0f8
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="native-references"></a>Nativní odkazy
 
@@ -78,13 +78,13 @@ Postupujte podle kroku jsou nezbytné pro vložení rozhraní v projektu Xamarin
 1. Vytvoření nového nebo otevření existujícího projektu Xamarin.iOS, Xamarin.Mac nebo vazby.
 2. V **Průzkumníku řešení**, klikněte pravým tlačítkem na název projektu a vyberte **přidat** > **přidat nativní referenční dokumentace**: 
 
-    [ ![](native-references-images/ref01.png "V Průzkumníku řešení klikněte pravým tlačítkem na název projektu a vyberte přidat nativní referenční dokumentace")](native-references-images/ref01.png)
+    [![](native-references-images/ref01.png "V Průzkumníku řešení klikněte pravým tlačítkem na název projektu a vyberte přidat nativní referenční dokumentace")](native-references-images/ref01.png#lightbox)
 3. Z **otevřete** dialogové okno, vyberte název nativní Framework, který chcete vložit a klikněte na tlačítko **otevřete** tlačítko: 
 
-    [ ![](native-references-images/ref02.png "Vyberte název nativní Framework vložení a klikněte na tlačítko Otevřít")](native-references-images/ref02.png)
+    [![](native-references-images/ref02.png "Vyberte název nativní Framework vložení a klikněte na tlačítko Otevřít")](native-references-images/ref02.png#lightbox)
 4. Rozhraní framework budou přidány do stromu projektu: 
 
-    [ ![](native-references-images/ref03.png "Rozhraní framework budou přidány do stromu projekty")](native-references-images/ref03.png)
+    [![](native-references-images/ref03.png "Rozhraní framework budou přidány do stromu projekty")](native-references-images/ref03.png#lightbox)
 
 Při kompilaci projektu nativní Framework budou vloženy do aplikace sady.
 

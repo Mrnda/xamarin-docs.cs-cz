@@ -5,14 +5,15 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 0F2266D7-21FF-404D-A148-0CFDE76B12AA
 ms.technology: xamarin-ios
+ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 8e5bb4747811729adf5363b0a893b0f85108b220
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 39c699b10280218223b6f6022d419f77aba875dc
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="multitasking-for-ipad"></a>Multitasking pro iPad
 
@@ -35,6 +36,11 @@ Existuje několik věcí, které je třeba zvážit při [podpora multitasking v
 Jako vývojář aplikace můžete také [výslovný nesouhlas multitasking](#Opting-Out-of-Multitasking), včetně [zakázání přehrávání videa PIP](#Disabling-PIP-Video-Playback).
 
 Tento článek popisuje kroky potřebné k zajistit, aby vaše aplikace Xamarin.iOS běží správně zvládl a postupy pro vyjádření výslovného nesouhlasu multitasking, pokud není dobrou přizpůsobit pro vaši aplikaci.
+
+> [!VIDEO https://youtube.com/embed/GctYAozoLr8]
+
+**Multitasking pro iPad, podle [univerzity Xamarin](https://university.xamarin.com)**
+
 
 <a name="Multitasking-QuickStart" />
 
@@ -59,7 +65,7 @@ iOS 9 nabízí nové možnosti multitasking na iPad se zavedením _Vysuňte pře
 
 Funkci Vysuňte přes umožňuje uživateli vyberte druhý aplikace a zobrazit ji panelu malé posuvné zajistit rychlé interakce. Vysuňte přes panelu je dočasný a bude uzavřít, když uživatel přejde zpět do práce v hlavní aplikaci znovu.
 
-[ ![](multitasking-images/about01.png "Vysuňte přes panelu")](multitasking-images/about01.png)
+[![](multitasking-images/about01.png "Vysuňte přes panelu")](multitasking-images/about01.png#lightbox)
 
 Hlavní mít na paměti je, že se uživatel rozhodne, které dvě aplikace bude používat souběžně sdílená a že vývojář nemá žádnou kontrolu nad tento proces. V důsledku toho existují pár věcí, které budete muset udělat, aby Ujistěte se, že vaše aplikace Xamarin.iOS běží správně panelu Vysuňte přes:
 
@@ -74,7 +80,7 @@ Vysuňte přes je k dispozici pouze na iPad Pro, iPad letecké, iPad letecké 2,
 
 Uživatel můžete na hardwaru podporované iPad (iPad letecké 2, 4 malé iPad a profesionál pouze iPad), vyberte druhý aplikace a spouštět souběžně sdílená s aktuálně spuštěné aplikaci v režimu obrazovky rozdělení. Uživatele můžete řídit procento hlavní obrazovky, který bude zabírat každou aplikaci tak, že přetáhnete obrazovce oddělovač.
 
-[ ![](multitasking-images/about02.png "Rozdělení zobrazení")](multitasking-images/about02.png)
+[![](multitasking-images/about02.png "Rozdělení zobrazení")](multitasking-images/about02.png#lightbox)
 
 Jako Vysuňte přes uživatel rozhodne, které dvě aplikace bude používat souběžně sdílená a znovu vývojář nemá žádnou kontrolu nad tento proces. V důsledku toho rozděleným zobrazením umístí podobné požadavky na aplikace Xamarin.iOS:
 
@@ -89,7 +95,7 @@ Další informace o přípravě k rozdělení zobrazení vaší aplikace, najdet
 
 Nový obrázek ve funkci obrázek (také označované jako _PIP_) umožňuje uživatelům přehrát video, v okně malé, plovoucí, které uživatel můžete umístit kamkoli na obrazovce výše ostatní spuštěné aplikace.
 
-[ ![](multitasking-images/about03.png "Příklad obrázek v obrázku plovoucího okna")](multitasking-images/about03.png)
+[![](multitasking-images/about03.png "Příklad obrázek v obrázku plovoucího okna")](multitasking-images/about03.png#lightbox)
 
 Jako se posuňte přes a rozdělení zobrazení, má plnou kontrolu nad sledování videa na obrázku v režimu obrázek. Pokud vaše aplikace hlavní funkce si chcete přehrát video, bude je nutné některé změny v režimu PIP se chovat správně. Pro podporu PIP, jinak se nevyžadují žádné změny.
 
@@ -111,44 +117,27 @@ Chcete-li podporují iOS 9 multitasking žádné nové aplikace Xamarin.iOS, zno
 
 ### <a name="screen-size-and-orientation-considerations"></a>Obrazovka velikost a orientaci aspekty
 
-Než iOS 9 může návrh aplikace proti virům určité zařízení obrazovky velikosti a orientace. Vzhledem k tomu, že aplikaci lze spustit nyní panelu posuňte se nebo v režimu zobrazení rozdělení, můžete najít běhu v buď třídu compact nebo běžné vodorovné velikost na Ipadu, bez ohledu na velikost fyzické orientace obrazovky zařízení.
+Než iOS 9 může návrh vaší aplikace s určitým zařízením obrazovky velikosti a orientace. Vzhledem k tomu, že aplikaci lze spustit nyní panelu posuňte se nebo v režimu zobrazení rozdělení, můžete najít běhu v buď třídu compact nebo běžné vodorovné velikost na Ipadu, bez ohledu na velikost fyzické orientace obrazovky zařízení.
 
-[ ![](multitasking-images/sizeclasses01.png "Obrazovka velikost a orientaci aspekty")](multitasking-images/sizeclasses01.png)
+[![](multitasking-images/sizeclasses01.png "Obrazovka velikost a orientaci aspekty")](multitasking-images/sizeclasses01.png#lightbox)
 
 Na Ipadu má aplikace na celé obrazovce regulární vodorovného a svislého velikost tříd. Všechny Iphony, ale pro iPhone 6 Plus a iPhone 6s Plus, mají Compact velikost třídy v obou směrech v jakékoli orientaci. Pro iPhone 6 Plus a iPhone 6s Plus v režimu na šířku mít běžné třídy vodorovné velikost a Compact svislé velikost třídu (podobně jako iPad malé).
 
 Na Ipady, které podporují Vysuňte přes a rozdělení zobrazení můžou se skončit s následující kombinace:
 
-<table width=100% border="1px">
-    <tr>
-        <td><b>orientace</b></td>
-        <td><b>Primární aplikace</b></td>
-        <td><b>Sekundární aplikace</b></td>
-    </tr>
-    <tr>
-        <td><b>Na výšku</b></td>
-        <td>75 % obrazovky<br/>Vodorovných Compact<br/>Regulární Vertical</td>
-        <td>25 % obrazovky<br/>Vodorovných Compact<br/>Regulární Vertical</td>
-    </tr>
-    <tr>
-        <td><b>na šířku</b></td>
-        <td>75 % obrazovky<br/>Regulární vodorovných<br/>Regulární Vertical</td>
-        <td>25 % obrazovky<br/>Vodorovných Compact<br/>Regulární Vertical</td>
-    </tr>
-    <tr>
-        <td><b>na šířku</b></td>
-        <td>50 % obrazovky<br/>Vodorovných Compact<br/>Regulární Vertical</td>
-        <td>50 % obrazovky<br/>Vodorovných Compact<br/>Regulární Vertical</td>
-    </tr>
-</table>
+| **orientace** | **Primární aplikace** | **Sekundární aplikace** |
+|--- |--- |--- |
+| **Na výšku** |75 % obrazovky<br />Vodorovných Compact<br />Regulární Vertical|25 % obrazovky<br />Vodorovných Compact<br />Regulární Vertical|
+| **na šířku** |75 % obrazovky<br />Regulární vodorovných<br />Regulární Vertical|25 % obrazovky<br />Vodorovných Compact<br />Regulární Vertical|
+| **na šířku** |50 % obrazovky<br />Vodorovných Compact<br />Regulární Vertical|50 % obrazovky<br />Vodorovných Compact<br />Regulární Vertical|
 
 V příkladu [MuliTask](https://developer.xamarin.com/samples/monotouch/ios9/MultiTask/) aplikace, pokud je spuštěn celé obrazovky na Ipadu v režimu na šířku, se bude k dispozici v seznamu a zobrazení podrobností ve stejnou dobu:
 
-[ ![](multitasking-images/sizeclasses03.png "V seznamu a zobrazení podrobností, které jsou uvedené ve stejnou dobu")](multitasking-images/sizeclasses03.png)
+[![](multitasking-images/sizeclasses03.png "V seznamu a zobrazení podrobností, které jsou uvedené ve stejnou dobu")](multitasking-images/sizeclasses03.png#lightbox)
 
 Pokud stejná aplikace běží v panelu Vysuňte přes, rozložená jako Compact vodorovné třída velikost a zobrazí se pouze seznam:
 
-[ ![](multitasking-images/sizeclasses04.png "Pouze seznamu zobrazí, když je zařízení vodorovné")](multitasking-images/sizeclasses04.png)
+[![](multitasking-images/sizeclasses04.png "Pouze seznamu zobrazí, když je zařízení vodorovné")](multitasking-images/sizeclasses04.png#lightbox)
 
 Aby se zajistilo, že vaše aplikace správně chová v těchto situacích, by měl přijmou znak kolekce společně s velikost třídy a odpovídat `IUIContentContainer` a `IUITraitEnvironment` rozhraní. Najdete v článku společnosti Apple [referenci třídy UITraitCollection](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UITraitCollection_ClassReference/index.html#//apple_ref/doc/uid/TP40014202) a na našem [Úvod do Unified scénářů](~/ios/user-interface/storyboards/unified-storyboards.md) Průvodce pro další informace.
 
@@ -166,11 +155,11 @@ Nyní s iOS 9, aplikace můžete vytvořit své vlastní vlastní klávesové zk
 
 **Příkaz – karta** zobrazíte přepínači aplikace, která umožňuje uživatelům rychlé přepínání mezi aplikací z klávesnice, podobně jako Mac OS:
 
-[ ![](multitasking-images/keyboard01.png "Aplikace přepínači")](multitasking-images/keyboard01.png)
+[![](multitasking-images/keyboard01.png "Aplikace přepínači")](multitasking-images/keyboard01.png#lightbox)
 
 Obsahuje-li aplikaci pro iOS 9 klávesové zkratky, můžete podržet uživatele **příkaz**, **možnost** nebo **řízení** klíče k jejich zobrazení v místní okno:
 
-[ ![](multitasking-images/keyboard02.png "Automaticky otevřeném okně. klávesové zkratky")](multitasking-images/keyboard02.png)
+[![](multitasking-images/keyboard02.png "Automaticky otevřeném okně. klávesové zkratky")](multitasking-images/keyboard02.png#lightbox)
 
 #### <a name="defining-custom-keyboard-shortcuts"></a>Definování vlastní klávesové zkratky
 
@@ -206,7 +195,7 @@ V dalším kroku jsme přepsat `KeyCommands` vlastnost a vytvořte novou `UIKeyC
 
 Pokud jsme spouštět tuto aplikaci v zařízení iPad s připojenou klávesnicí hardwaru a typy uživatelů **příkaz N**, bude možné přidat novou položku do seznamu. Pokud uživatel obsahuje **příkaz** klíče, seznam zástupců se zobrazí:
 
-[ ![](multitasking-images/keyboard03.png "Automaticky otevřeném okně. klávesové zkratky")](multitasking-images/keyboard03.png)
+[![](multitasking-images/keyboard03.png "Automaticky otevřeném okně. klávesové zkratky")](multitasking-images/keyboard03.png#lightbox)
 
 Podrobnosti najdete v ukázkovém [MultiTask aplikace](http://developer.xamarin.com/samples/monotouch/ios9/MultiTask/) příklad implementace.
 
@@ -240,7 +229,7 @@ Zatímco Apple naznačuje, že všechny aplikace systému iOS 9 podporují multi
 
 Pro aplikaci Xamarin.iOS výslovný nesouhlas s spuštěn v buď posuňte na panelu nebo v režimu rozdělení zobrazení, úpravy projektu **Info.plist** soubor a zkontrolujte **vyžaduje celé obrazovky**:
 
-[ ![](multitasking-images/fullscreen01.png "Vyjádření výslovného Out multitasking")](multitasking-images/fullscreen01.png)
+[![](multitasking-images/fullscreen01.png "Vyjádření výslovného Out multitasking")](multitasking-images/fullscreen01.png#lightbox)
 
 > [!IMPORTANT]
 > **Poznámka:** při Opting-Out multitasking zabrání aplikace spuštěna v posuňte se nebo rozdělení zobrazení, nemá **není** zabránit spouštění v posuňte se nebo obrázku v video obrázek ze zobrazení spolu s jinou aplikací vaší aplikace.

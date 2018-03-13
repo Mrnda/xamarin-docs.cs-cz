@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: 88db45135104f14ca3a4b18e466e95288853a6df
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cc2c12ce2826f0b66cdf49a9a4df84d7f67f7713
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="apple-pay-capabilities"></a>Možnosti platím Apple
 
@@ -79,8 +79,8 @@ ID obchodní slouží umožníte dotykový identifikátor vědět, může přijm
 7.  Přejděte do dolní části této rozšířené části a klikněte na **upravit**.
 8.  Přejděte dolů v seznamu dotykový identifikátor a kliknutím **upravit** tlačítko:  
     
-    
     ![Upravit podrobnosti Apple ID aplikace platit](apple-pay-capabilities-images/image39.png)
+
 9.  Vyberte obchodní ID použít s tímto ID aplikace a klikněte na tlačítko **pokračovat**:  
     
     ![Vyberte obchodní ID pro ID aplikace](apple-pay-capabilities-images/image40.png)

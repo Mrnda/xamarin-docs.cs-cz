@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 6e8a37816e28120392f550376807e91fb3b5d458
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cee93f082386e78a643b8c07dd48d0196e8ecd6c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="the-path-fill-types"></a>Typy výplně cesta
 
@@ -164,7 +164,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Za normálních okolností typ výplně cesty by měl mít vliv pouze výplněmi a není tahy, ale dva `Inverse` režimy ovlivnit výplně a tahy. Pro výplně, dva `Inverse` typy vyplnit oblasti oppositely tak, aby se naplní oblasti mimo hvězdičkou. Pro tahy, dva `Inverse` typy barvu všechno kromě tahu. Pomocí těchto typů inverzní výplně může vytvořit některé liché důsledky, jako ukazuje na snímku obrazovky iOS:
 
-[![](fill-types-images/fivepointedstar-small.png "Trojitá snímek obrazovky stránky hvězdičky Five-Pointed")](fill-types-images/fivepointedstar-large.png "Trojitá snímek obrazovky stránky Five-Pointed hvězdičkou")
+[![](fill-types-images/fivepointedstar-small.png "Trojitá snímek obrazovky stránky hvězdičky Five-Pointed")](fill-types-images/fivepointedstar-large.png#lightbox "Trojitá snímek obrazovky stránky Five-Pointed hvězdičkou")
 
 Mobilní snímky obrazovky Android a Windows zobrazit typické lichý a vinutí důsledky, ale pořadí tahu a výplně ovlivní také výsledky.
 
@@ -217,7 +217,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Jedná se o zajímavých obrázek vytvořen s minimální kódu:
 
-[![](fill-types-images/overlappingcircles-small.png "Trojitá snímek obrazovky stránky kruhy překrývajících se")](fill-types-images/overlappingcircles-large.png "Trojitá snímek obrazovky stránky kruhy překrývajících se")
+[![](fill-types-images/overlappingcircles-small.png "Trojitá snímek obrazovky stránky kruhy překrývajících se")](fill-types-images/overlappingcircles-large.png#lightbox "Trojitá snímek obrazovky stránky kruhy překrývajících se")
 
 
 ## <a name="related-links"></a>Související odkazy

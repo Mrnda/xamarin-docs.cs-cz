@@ -4,14 +4,15 @@ description: "Způsob animace SkiaSharp grafiky"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 31C96FD6-07E4-4473-A551-24753A5118C3
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: c91cb064ea3973294c3a9dd8e07f3c4b0627fe34
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e18ef7c77c1d5c93d53882233c65a56e5567fcd7
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="basic-animation"></a>Základní animace
 
@@ -141,7 +142,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Metoda vypočítá maximální radius na základě velikosti oblasti zobrazení a minimální radius podle maximální radius. `scale` Hodnota je animované mezi 0 a 1 a zpět na hodnotu 0, aby metoda používá k výpočtu `xRadius` a `yRadius` , je v rozsahu `minRadius` a `maxRadius`. Kreslení a vyplňte elipsy se používají tyto hodnoty:
 
-[![](animation-images/pulsatingellipse-small.png "Trojitá snímek obrazovky stránky blikající elipsy")](animation-images/pulsatingellipse-large.png "Trojitá snímek obrazovky stránky blikající třemi tečkami")
+[![](animation-images/pulsatingellipse-small.png "Trojitá snímek obrazovky stránky blikající elipsy")](animation-images/pulsatingellipse-large.png#lightbox "Trojitá snímek obrazovky stránky blikající třemi tečkami")
 
 Všimněte si, že `SKPaint` objekt se vytvoří v `using` bloku. Jako mnoho tříd SkiaSharp `SKPaint` je odvozena z `SKObject`, která je odvozena z `SKNativeObject`, který implementuje [ `IDisposable` ](https://developer.xamarin.com/api/type/System.IDisposable/) rozhraní. `SKPaint` přepsání `Dispose` metodu pro uvolnění nespravovaných prostředků.
 
@@ -244,7 +245,7 @@ public class ExpandingCirclesPage : ContentPage
 
 Výsledkem je, že obrázek vypadá stejné při `t` rovná 0, jako když `t` rovná 1 a kroužky zdá se, že chcete-li pokračovat, navždy rozšíření:
 
-[![](animation-images/expandingcircles-small.png "Trojitá snímek obrazovky stránky rozšiřování kroužky")](animation-images/expandingcircles-large.png "Trojitá snímek obrazovky stránky rozšiřování kroužky")
+[![](animation-images/expandingcircles-small.png "Trojitá snímek obrazovky stránky rozšiřování kroužky")](animation-images/expandingcircles-large.png#lightbox "Trojitá snímek obrazovky stránky rozšiřování kroužky")
 
 
 ## <a name="related-links"></a>Související odkazy

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: 28c8ecc77aaeb00eff6f343ad41fed1c653362db
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 78832c396f8968769f3134728cd435555aecbc8f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="checking-battery-status"></a>Kontrola stavu baterie
 
@@ -70,7 +70,7 @@ namespace DependencyServiceSample
 Kódování proti tomuto rozhraní v sdíleného kódu vám umožní aplikaci Xamarin.Forms pro přístup k řízení spotřeby rozhraní API na každou platformu.
 
 > [!NOTE]
-> **Poznámka:**: třídy implementující rozhraní musí mít konstruktor bez parametrů pro práci s `DependencyService`. Konstruktory nelze definovat pomocí rozhraní.
+> Třídy implementující rozhraní musí mít konstruktor bez parametrů pro práci s `DependencyService`. Konstruktory nelze definovat pomocí rozhraní.
 
 <a name="iOS_Implementation" />
 
@@ -547,4 +547,4 @@ Spuštění této aplikace v iOS, Android nebo platformy systému Windows a stis
 
 - [DependencyService (ukázka)](https://developer.xamarin.com/samples/DependencyService)
 - [Pomocí DependencyService (ukázka)](https://developer.xamarin.com/samples/UsingDependencyService/)
-- [Xamarin.Forms Samples](https://github.com/xamarin/xamarin-forms-samples)
+- [Ukázky Xamarin.Forms](https://github.com/xamarin/xamarin-forms-samples)

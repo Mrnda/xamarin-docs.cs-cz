@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/07/2017
-ms.openlocfilehash: 05a162dab3b427ec345f22818b6c6d9df82c498b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4b2a470d7fe2a1f9d4b8df40836c934547adf614
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-buttons"></a>Práce s tlačítka
 
@@ -21,7 +21,7 @@ _Tento článek se zabývá navrhování a práce s tlačítka uvnitř Xamarin.t
 
 Použít instanci systému `UIButton` třídy za účelem vytvoření může získat fokus, které lze vybírat tlačítka v okně tvOS. Když uživatel vybere tlačítko, odešle zprávu akce na objekt cíle povolit vstup vaší Xamarin.tvOS reakce aplikace pro uživatele.
 
-[ ![](buttons-images/buttons01.png "Příklad tlačítka")](buttons-images/buttons01.png)
+[![](buttons-images/buttons01.png "Příklad tlačítka")](buttons-images/buttons01.png#lightbox)
 
 Další informace o práci s fokusem a navigaci se vzdálenými Siri, najdete v tématu naše [práce s navigační a výběr](~/ios/tvos/app-fundamentals/navigation-focus.md) a [Siri vzdálené a Bluetooth řadiče](~/ios/tvos/platform/remote-bluetooth.md) dokumentaci.
 
@@ -31,7 +31,7 @@ Další informace o práci s fokusem a navigaci se vzdálenými Siri, najdete v 
 
 Tlačítka v tvOS, se používají pro akce specifické pro aplikace a může obsahovat název, ikonou nebo obojí. Jako uživatel přejde aplikace pomocí uživatelského rozhraní [Siri vzdálené](~/ios/tvos/platform/remote-bluetooth.md#The-Siri-Remote), deaktivaci k dané tlačítko díky tomu změnit barvu textu a pozadí. Stín platí také pro tlačítko přidáním 3D efektu proto to vypadá, zvýšení výše zbytek uživatelské rozhraní.
 
-[ ![](buttons-images/buttons01.png "Příklad tlačítka")](buttons-images/buttons01.png)
+[![](buttons-images/buttons01.png "Příklad tlačítka")](buttons-images/buttons01.png#lightbox)
 
 Společnost Apple má následující návrhy pro práci s tlačítka:
 
@@ -70,19 +70,19 @@ Nejjednodušší způsob, jak pracovat s tlačítka v aplikaci Xamarin.tvOS je c
 1. V **Průzkumníku řešení**, dvakrát klikněte `Main.storyboard` souborů a otevřete pro úpravy.
 1. Přetáhněte **tlačítko** z **knihovny** na zobrazení: 
 
-    [ ![](buttons-images/storyboard01.png "Tlačítko")](buttons-images/storyboard01.png)
+    [![](buttons-images/storyboard01.png "Tlačítko")](buttons-images/storyboard01.png#lightbox)
 1. V **Explorer vlastnosti**, můžete upravit několik vlastností tlačítka jeho **název** a **barvy**: 
 
-    [ ![](buttons-images/storyboard02.png "Vlastnosti tlačítka")](buttons-images/storyboard02.png)
+    [![](buttons-images/storyboard02.png "Vlastnosti tlačítka")](buttons-images/storyboard02.png#lightbox)
 1. V dalším kroku přepnout **kartu události** a navázání **událostí** z **tlačítko** a pojmenujte ji `ButtonPressed`: 
 
-    [ ![](buttons-images/storyboard03.png "Na kartě události")](buttons-images/storyboard03.png)
+    [![](buttons-images/storyboard03.png "Na kartě události")](buttons-images/storyboard03.png#lightbox)
 1. Se bude automaticky přepnout do `ViewController.cs` zobrazení, kde můžete umístit nová akce kódu pomocí **až** a **dolů** klávesy se šipkami: 
 
-    [ ![](buttons-images/storyboard04.png "Uvedení Nová akce kódu")](buttons-images/storyboard04.png)
+    [![](buttons-images/storyboard04.png "Uvedení Nová akce kódu")](buttons-images/storyboard04.png#lightbox)
 1. Stiskněte **Enter** a vyberte umístění: 
 
-    [ ![](buttons-images/storyboard05.png "Editor kódu")](buttons-images/storyboard05.png)
+    [![](buttons-images/storyboard05.png "Editor kódu")](buttons-images/storyboard05.png#lightbox)
 1. Uložte změny do všechny soubory.
 
 
@@ -91,13 +91,13 @@ Nejjednodušší způsob, jak pracovat s tlačítka v aplikaci Xamarin.tvOS je c
 1. V **Průzkumníku řešení**, dvakrát klikněte `Main.storyboard` souborů a otevřete pro úpravy.
 1. Přetáhněte **tlačítko** z **knihovny** na zobrazení: 
 
-    [ ![](buttons-images/storyboard01vs.png "Tlačítko")](buttons-images/storyboard01vs.png)
+    [![](buttons-images/storyboard01vs.png "Tlačítko")](buttons-images/storyboard01vs.png#lightbox)
 1. V **Explorer vlastnosti**, můžete upravit několik vlastností tlačítka jeho **název** a **barvy**: 
 
-    [ ![](buttons-images/storyboard02vs.png "Průzkumník vlastnosti")](buttons-images/storyboard02vs.png)
+    [![](buttons-images/storyboard02vs.png "Průzkumník vlastnosti")](buttons-images/storyboard02vs.png#lightbox)
 1. V dalším kroku přepnout **kartu události** a navázání **událostí** z **tlačítko** a pojmenujte ji `ButtonPressed`: 
 
-    [ ![](buttons-images/storyboard03vs.png "Na kartě události")](buttons-images/storyboard03vs.png)
+    [![](buttons-images/storyboard03vs.png "Na kartě události")](buttons-images/storyboard03vs.png#lightbox)
 1. Uložte změny do všechny soubory.
 
 
@@ -270,7 +270,7 @@ Tento článek má zahrnutých navrhování a práce s tlačítka uvnitř Xamari
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Ukázky tvOS](https://developer.xamarin.com/samples/tvos/all/)
+- [Ukázky pro tvOS](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS lidské rozhraní příručky](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [Průvodce programováním aplikace pro tvOS](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

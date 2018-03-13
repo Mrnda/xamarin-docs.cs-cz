@@ -2,27 +2,29 @@
 title: "Pomocí SQLite.NET"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 3447B7EE-A320-489E-AF02-E5721097760A
+ms.assetid: 79813B09-42D7-47DD-AE71-A605E6B9EF24
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/18/2018
-ms.openlocfilehash: d18fe5960a44153626fbf0bda30e3485faf5b9fe
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2b29826f1a7acc6bb8dcd0594c69a5cb7ff6db42
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="using-sqlitenet"></a>Pomocí SQLite.NET
 
 SQLite.NET knihovny, která doporučuje Xamarin je základní ORM, který umožňuje ukládání a načítání objektů v místní databázi SQLite na zařízení s iOS.
 ORM je zkratka pro objekt relační mapování – rozhraní API, které vám umožní uložit a načíst "objekty" z databáze bez nutnosti psaní příkazů SQL.
 
-## <a name="using-sqlitenet"></a>Pomocí SQLite.NET
+<a name="Usage"/>
+
+## <a name="usage"></a>Použití
 
 Přidat [balíček SQLite.net PCL NuGet](https://www.nuget.org/packages/sqlite-net-pcl/), do projektu - podporuje mnoha různých platforem včetně iOS, Android a Windows.
 
-  [ ![](using-sqlite-orm-images/image1a-sml.png "Balíček SQLite.NET NuGet")](using-sqlite-orm-images/image1a.png)
+  [![](using-sqlite-orm-images/image1a-sml.png "Balíček SQLite.NET NuGet")](using-sqlite-orm-images/image1a.png#lightbox)
 
 Až budete mít k dispozici SQLite.NET knihovny, postupujte podle tyto tři kroky ji používat pro přístup k databázi:
 
@@ -68,7 +70,7 @@ Budete muset zahrnují tyto obory názvů:
 using SQLite; // from the github SQLite.cs class
 ```
 
-To vyžaduje, že jste přidali do projektu, jak je znázorněno SQLite [zde](#Using_SQLite.NET). Všimněte si, že v tabulce databáze SQLite je definována přidáním atributy třídy ( `Stock` třída) místo příkazu CREATE TABLE.
+To vyžaduje, že jste přidali do projektu, jak je znázorněno SQLite [zde](#Usage). Všimněte si, že v tabulce databáze SQLite je definována přidáním atributy třídy ( `Stock` třída) místo příkazu CREATE TABLE.
 
 ```csharp
 [Table("Items")]

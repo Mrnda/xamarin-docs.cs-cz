@@ -3,16 +3,16 @@ title: SiriKit
 description: "Tento článek ukazuje, jak používat SiriKit v aplikaci Xamarin.iOS k poskytování služeb, které jsou dostupné pro uživatele používání Siri na zařízení s iOS."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 4E1FF652-28F0-4566-B383-9D12664401A4
+ms.assetid: 84E5681A-F557-4967-AA99-F831169157AA
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: c4fdf61b35ca28af82e3890242d54a75e50d2f82
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9d7773be1244b0ba4e1a57c8a1efbddf02396138
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="sirikit"></a>SiriKit
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 722bedd039a53d1244972ac9f0b98d87cc5d386a
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: eb4cf0285585351db5c45dc34a382236e6805c99
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="customizing-a-listview"></a>Přizpůsobení prvku ListView
 
@@ -149,7 +149,7 @@ Proces pro vytvoření třídy vlastní zobrazovací jednotky vypadá takto:
 1. Přidat `ExportRenderer` atributu na vlastní zobrazovací jednotky třídu k určení, že bude použit k vykreslení vlastního ovládacího prvku Xamarin.Forms. Tento atribut slouží k registraci vlastní zobrazovací jednotky s Xamarin.Forms.
 
 > [!NOTE]
-> **Poznámka:**: zadání je volitelné poskytnout vlastní zobrazovací jednotky v každém projektu platformy. Pokud není registrované vlastní zobrazovací jednotky, pak výchozí zobrazovací jednotky pro základní třídu z buňky použít.
+> Zadání je volitelné poskytnout vlastní zobrazovací jednotky v každém projektu platformy. Pokud není registrované vlastní zobrazovací jednotky, pak výchozí zobrazovací jednotky pro základní třídu z buňky použít.
 
 Následující diagram znázorňuje odpovědnosti jednotlivých projektů v ukázkové aplikace, spolu s jejich vzájemných vztahů:
 
@@ -461,7 +461,7 @@ protected override void OnElementPropertyChanged (object sender, System.Componen
   base.OnElementPropertyChanged (sender, e);
 
   if (e.PropertyName == NativeListView.ItemsProperty.PropertyName) {
-    Control.Adapter = new NativeAndroidListViewAdapter (Forms.Context as Android.App.Activity, Element as NativeListView);
+    Control.Adapter = new NativeAndroidListViewAdapter (_context as Android.App.Activity, Element as NativeListView);
   }
 }
 ```

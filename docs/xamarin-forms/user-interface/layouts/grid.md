@@ -8,17 +8,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 4d074dce06d5737bd6589efbc559c611425e5f19
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 18df6082f634d633d3f1ca8ea1e8d3f493532f47
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="grid"></a>Mřížka
 
 [`Grid`](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/) podporuje uspořádání zobrazení do řádků a sloupců. Řádků a sloupců můžete nastavit tak, aby měl přímo úměrná velikosti nebo absolutní velikosti. `Grid` Rozložení by neměly zaměňovat s tradiční tabulky a není určena pro tabulková data k dispozici. `Grid` Koncept řádek, sloupec nebo buňka formátování není k dispozici. Na rozdíl od tabulek HTML `Grid` je určený výhradně pro vytvoření rozložení obsahu.
 
-[ ![](grid-images/layouts-sml.png "Rozložení Xamarin.Forms")](grid-images/layouts.png "Xamarin.Forms rozložení")
+[![](grid-images/layouts-sml.png "Rozložení Xamarin.Forms")](grid-images/layouts.png#lightbox "Xamarin.Forms rozložení")
 
 Tento článek se zabývá:
 
@@ -54,7 +54,7 @@ Na rozdíl od tradičních tabulky `Grid` nelze odvodit počtu a velikosti řád
 - **Absolutní** &ndash; velikosti sloupce a řádky s konkrétní, pevné hodnoty výškou a šířkou. Stanovená jako hodnota a `GridUnitType.Absolute` v jazyce C# a jako `#` v jazyce XAML, s `#` se požadovanou hodnotu.
 
 > [!NOTE]
-> **Poznámka:**: šířka hodnoty pro sloupce jsou nastavené jako "*" ve výchozím nastavení v Xamarin.Forms, což zajistí, že sloupec bude vyplňování dostupného místa.
+> Šířka hodnoty pro sloupce jsou nastavené jako "*" ve výchozím nastavení v Xamarin.Forms, což zajistí, že sloupec bude vyplňování dostupného místa.
 
 Zvažte aplikaci, která potřebuje tři řádky a dva sloupce. Dolní řádek musí být přesně 200 px výšku a na začátek řádku musí být dvakrát tak vysoký jako střední řádek. V levém sloupci musí být dost široké, a přizpůsobit obsah a pravém sloupci potřebuje k vyplnění zbývající místo.
 

@@ -3,16 +3,16 @@ title: "Zabezpečení přenosu aplikace"
 description: "Zabezpečení přenosu aplikace (ATS) vynucuje zabezpečené připojení mezi prostředků z Internetu (třeba server back-end aplikace) a aplikací."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 0E2217F1-FC96-4D0A-ABAB-D40AD8F96502
+ms.assetid: F8C5E444-2D05-4D9B-A2EF-EB052CD6F007
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/13/2017
-ms.openlocfilehash: 60858e05e222725f05eb67bd7aaa4e56d2ff3880
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a4491f550369bbb8515635ecbb7c1c2b74de48cf
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="app-transport-security"></a>Zabezpečení přenosu aplikace
 
@@ -69,7 +69,7 @@ Další informace o práci s iOS internetové komunikace třídy, najdete v tém
 
 Protože ATS je povoleno ve výchozím nastavení v iOS 9 a OS X El Capitan, pokud vaše aplikace Xamarin.iOS nebo všechny knihovny nebo službu, která používá vytvoří připojení k Internetu, budete muset provést některé akce nebo připojení bude mít za následek výjimku hlášeny.
 
-Pro existující aplikace, Apple naznačuje, které podporujete `HTTPS` protokolu co nejdříve. Pokud jste buď nelze vzhledem k tomu, že se připojujete k 3. stran webová služba, která nepodporuje `HTTPS` nebo pokud podporujete `HTTPS` by bylo nepraktické, můžete můžete odhlásit ATS. Najdete v článku [Opting mimo ATS](#Opting-Out-of-ATS) části níže další podrobnosti.
+Pro existující aplikace, Apple naznačuje, které podporujete `HTTPS` protokolu co nejdříve. Pokud jste buď nelze vzhledem k tomu, že se připojujete k 3. stran webová služba, která nepodporuje `HTTPS` nebo pokud podporujete `HTTPS` by bylo nepraktické, můžete můžete odhlásit ATS. Najdete v článku [Opting mimo ATS](#optout) části níže další podrobnosti.
 
 Pro novou aplikaci Xamarin.iOS, měli byste použít `HTTPS` výhradně při komunikaci s internetovým prostředkům. Znovu, můžou nastat situace (např. pomocí 3. stran webová služba) kde to není možné a budete muset odhlásit ATS.
 
@@ -144,7 +144,7 @@ Zabezpečení přenosu aplikace (ATS) v iOS9, vynucuje zabezpečené připojení
 
 Vzhledem k tomu, že je ve výchozím nastavení v aplikacích, které jsou vytvořené pro iOS 9 a OS X 10.11 (El Capitan), všechna připojení pomocí povolené ATS `NSURLConnection`, `CFURL` nebo `NSURLSession` budou platit ATS požadavky na zabezpečení. Pokud vaše připojení těchto požadavků nesplňuje, budou se nezdaří s výjimkou.
 
-Apple také poskytuje [TLSTool ukázkovou aplikaci](https://developer.apple.com/library/mac/samplecode/sc1236/Introduction/Intro.html#//apple_ref/doc/uid/DTS40014927-Intro-DontLinkElementID_2) mohou být zkompilovány (nebo volitelně převodu na Xamarinu a C#) a používá k diagnostikování problémů ATS/TLS. Najdete v tématu [Opting mimo ATS](#Opting-Out_of_ATS) části níže informace o tom, jak tento problém vyřešit.
+Apple také poskytuje [TLSTool ukázkovou aplikaci](https://developer.apple.com/library/mac/samplecode/sc1236/Introduction/Intro.html#//apple_ref/doc/uid/DTS40014927-Intro-DontLinkElementID_2) mohou být zkompilovány (nebo volitelně převodu na Xamarinu a C#) a používá k diagnostikování problémů ATS/TLS. Najdete v tématu [Opting mimo ATS](#optout) části níže informace o tom, jak tento problém vyřešit.
 
 
 <a name="config" />
@@ -215,7 +215,7 @@ Pokud vaše aplikace Xamarin.iOS musíte provést žádost na nezabezpečené do
 
 V sadě Visual Studio pro Mac, dvakrát klikněte na `Info.plist` souboru v **Průzkumníku řešení**, přepnout **zdroj** zobrazení a přidat výše klíče:
 
-[ ![](ats-images/ats01.png "Zobrazení zdroje souboru Info.plist")](ats-images/ats01.png)
+[![](ats-images/ats01.png "Zobrazení zdroje souboru Info.plist")](ats-images/ats01.png#lightbox)
 
 
 Pokud aplikace potřebuje k načtení a zobrazuje webového obsahu z nezabezpečeného lokalit, přidejte následující do vaší aplikace **Info.plist** souboru umožnit webové stránky načíst správně, je stále povolena ochrana zabezpečení přenosu Apple (ATS) pro zbývající při aplikace:
@@ -240,7 +240,7 @@ Volitelně můžete provést následující změny do vaší aplikace **Info.pli
 
 V sadě Visual Studio pro Mac, dvakrát klikněte na `Info.plist` souboru v **Průzkumníku řešení**, přepnout **zdroj** zobrazení a přidat výše klíče:
 
-[ ![](ats-images/ats02.png "Zobrazení zdroje souboru Info.plist")](ats-images/ats02.png)
+[![](ats-images/ats02.png "Zobrazení zdroje souboru Info.plist")](ats-images/ats02.png#lightbox)
 
 > [!IMPORTANT]
 > **Poznámka:** Pokud vaše aplikace vyžaduje připojení k nezabezpečené webové stránky, měli byste **vždy** zadejte doménu jako výjimky pomocí `NSExceptionDomains` místo vypnutí úplně pomocí ATS `NSAllowsArbitraryLoads`. `NSAllowsArbitraryLoads` lze používat pouze v případě extrémně nouze.

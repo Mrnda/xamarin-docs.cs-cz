@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 1665168344a1e1da4f5b07909a8119d77ef2583a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 540a459be24296c8446c2136773ddde59f9d4dd7
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="maps"></a>Mapy
 
@@ -234,6 +234,8 @@ Pokud chcete provést místní vyhledávání, musí aplikace postupujte takto:
 
 
 Místní vyhledávání rozhraní API, samotné poskytuje žádné uživatelské rozhraní. Nevyžaduje i mapu, která použije. Chcete-li praktická použití místní vyhledávání, však aplikace musí zajistit některé způsob, jak zadejte vyhledávací dotaz a zobrazit výsledky. Navíc vzhledem k tomu, že výsledky budou obsahovat data o umístění, ji budou často smysl je zobrazit na mapě.
+
+<a name="Adding_a_Local_Search_UI"/>
 
 ### <a name="adding-a-local-search-ui"></a>Přidání místní vyhledávání uživatelského rozhraní
 

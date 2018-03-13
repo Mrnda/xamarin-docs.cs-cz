@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/17/2017
-ms.openlocfilehash: e26fcb81bb99e5a49d16731777171b4efa4163c6
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 739ee4ebeb3176d23ab1eb911baaab31a26252c4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="android-platform-specifics"></a>Android platformy – podrobnosti
 
@@ -54,7 +54,7 @@ App.Current.On<Android>().UseWindowSoftInputModeAdjust(WindowSoftInputModeAdjust
 
 Výsledkem je, že softwarová klávesnice vstupní oblast, kterou provozním režimu můžete nastavit, pokud má právě fokus, vstupního ovládacího prvku:
 
-[![](android-images/pan-resize.png "Softwarová klávesnice provozní režim specifické pro platformu")](android-images/pan-resize-large.png "Soft Keyboard Operating Mode Plaform-Specific")
+[![](android-images/pan-resize.png "Softwarová klávesnice provozní režim specifické pro platformu")](android-images/pan-resize-large.png#lightbox "Soft Keyboard Operating Mode Plaform-Specific")
 
 <a name="fastscroll" />
 
@@ -98,7 +98,7 @@ listView.On<Android>().SetIsFastScrollEnabled(!listView.On<Android>().IsFastScro
 
 Výsledkem je, že rychlé procházení dat v [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) lze povolit, které změní velikost úchytu posuvníku:
 
-[![](android-images/fastscroll.png "ListView FastScroll specifických pro platformy")](android-images/fastscroll-large.png "ListView FastScroll Plaform-Specific")
+[![](android-images/fastscroll.png "ListView FastScroll specifických pro platformy")](android-images/fastscroll-large.png#lightbox "ListView FastScroll Plaform-Specific")
 
 <a name="enable_swipe_paging" />
 
@@ -244,7 +244,7 @@ Xamarin.Forms.Application.Current.On<Android>()
 
 Výsledkem je, že [ `Disappearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) a [ `Appearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) události stránky nebude aktivováno u aplikace pozastavení a obnovení v uvedeném pořadí a že pokud byl logicky klávesnice zobrazí, když aplikace byla pozastavena, také se zobrazí po návratu aplikace:
 
-[![](android-images/keyboard-on-resume.png "Životní cyklus události specifické pro platformu")](android-images/keyboard-on-resume-large.png "životního cyklu události specifické pro platformu")
+[![](android-images/keyboard-on-resume.png "Životní cyklus události specifické pro platformu")](android-images/keyboard-on-resume-large.png#lightbox "životního cyklu události specifické pro platformu")
 
 ## <a name="summary"></a>Souhrn
 
@@ -253,7 +253,7 @@ Tento článek ukázal, jak využívat jsou Android platformy – specifikace in
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Vytváření specifika platformy](~/xamarin-forms/platform/platform-specifics/creating.md)
+- [Vytváření specifik platforem](~/xamarin-forms/platform/platform-specifics/creating.md)
 - [PlatformSpecifics (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
 - [AndroidSpecific](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/)
 - [AndroidSpecific.AppCompat](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat/)

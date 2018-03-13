@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/22/2017
-ms.openlocfilehash: 605374c0f2bfe656e564e48d14ffe18ce5b7dfe5
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: c6d10025ccc038ba160fe3c09f6ce92e97d916d2
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="files"></a>Soubory
 
@@ -40,18 +40,18 @@ Chcete-li vložit soubor do **PCL** sestavení, vytvořit nebo přidat soubor a 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Konfigurace vložených akce sestavení prostředku](files-images/vs-embeddedresource-sml.png "nastavení EmbeddedResource BuildAction")](files-images/vs-embeddedresource.png "EmbeddedResource BuildAction nastavení")
+[![Konfigurace vložených akce sestavení prostředku](files-images/vs-embeddedresource-sml.png "nastavení EmbeddedResource BuildAction")](files-images/vs-embeddedresource.png#lightbox "EmbeddedResource BuildAction nastavení")
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Textový soubor vložených v PCL, konfigurace akce sestavení vložený prostředek](files-images/xs-embeddedresource-sml.png "nastavení EmbeddedResource BuildAction")](files-images/xs-embeddedresource.png "EmbeddedResource BuildAction nastavení")
+[![Textový soubor vložených v PCL, konfigurace akce sestavení vložený prostředek](files-images/xs-embeddedresource-sml.png "nastavení EmbeddedResource BuildAction")](files-images/xs-embeddedresource.png#lightbox "EmbeddedResource BuildAction nastavení")
 
 -----
 
 `GetManifestResourceStream` slouží k přístupu ke vloženého souboru pomocí jeho **ID prostředku**. Ve výchozím nastavení je název souboru s předponou výchozí obor názvů pro projekt je integrovaný v - ID prostředku v tomto případě sestavení je **WorkingWithFiles** a název souboru je **PCLTextResource.txt**, Proto je ID prostředku `WorkingWithFiles.PCLTextResource.txt`.
 
 ```csharp
-var assembly = typeof(LoadResourceText).GetTypeInfo().Assembly;
+var assembly = IntrospectionExtensions.GetTypeInfo(typeof(LoadResourceText)).Assembly;
 Stream stream = assembly.GetManifestResourceStream("WorkingWithFiles.PCLTextResource.txt");
 string text = "";
 using (var reader = new System.IO.StreamReader (stream)) {
@@ -61,12 +61,12 @@ using (var reader = new System.IO.StreamReader (stream)) {
 
 `text` Proměnná pak lze zobrazit text nebo v opačném případě ho používat v kódu. Tento snímek obrazovky [ukázkovou aplikaci](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithFiles/) zobrazí text v `Label` ovládacího prvku.
 
- [ ![Textový soubor vložených v PCL](files-images/pcltext-sml.png "Embedded textového souboru v PCL zobrazují v aplikaci")](files-images/pcltext.png "Embedded textového souboru v PCL zobrazují v aplikaci")
+ [![Textový soubor vložených v PCL](files-images/pcltext-sml.png "Embedded textového souboru v PCL zobrazují v aplikaci")](files-images/pcltext.png#lightbox "Embedded textového souboru v PCL zobrazují v aplikaci")
 
 Načítání a deserializaci XML je stejně jednoduché. Následující kód ukazuje soubor XML se načíst a deserializovat z prostředku, pak vázána `ListView` pro zobrazení. Soubor XML obsahuje pole `Monkey` objekty (je třída definovaná v ukázkovém kódu).
 
 ```csharp
-var assembly = typeof(LoadResourceText).GetTypeInfo().Assembly;
+var assembly = IntrospectionExtensions.GetTypeInfo(typeof(LoadResourceText)).Assembly;
 Stream stream = assembly.GetManifestResourceStream("WorkingWithFiles.PCLXmlResource.xml");
 List<Monkey> monkeys;
 using (var reader = new System.IO.StreamReader (stream)) {
@@ -77,7 +77,7 @@ var listView = new ListView ();
 listView.ItemsSource = monkeys;
 ```
 
- [ ![Soubor XML vložené do PCL, zobrazí v ListView](files-images/pclxml-sml.png "vloženého souboru XML v PCL zobrazí v ListView")](files-images/pclxml.png "vloženého souboru XML v PCL zobrazí v ListView")
+ [![Soubor XML vložené do PCL, zobrazí v ListView](files-images/pclxml-sml.png "vloženého souboru XML v PCL zobrazí v ListView")](files-images/pclxml.png#lightbox "vloženého souboru XML v PCL zobrazí v ListView")
 
 <a name="Embedding_in_Shared_Projects" />
 
@@ -106,7 +106,7 @@ var resourcePrefix = "WorkingWithFiles.WinPhone.";
 
 Debug.WriteLine("Using this resource prefix: " + resourcePrefix);
 // note that the prefix includes the trailing period '.' that is required
-var assembly = typeof(SharedPage).GetTypeInfo().Assembly;
+var assembly = IntrospectionExtensions.GetTypeInfo(typeof(SharedPage)).Assembly;
 Stream stream = assembly.GetManifestResourceStream
     (resourcePrefix + "SharedTextResource.txt");
 ```
@@ -129,7 +129,7 @@ Vzhledem k tomu, že je někdy složité pochopit, proč k určitému prostředk
 using System.Reflection;
 // ...
 // use for debugging, not in released app code!
-var assembly = typeof(SharedPage).GetTypeInfo().Assembly;
+var assembly = IntrospectionExtensions.GetTypeInfo(typeof(SharedPage)).Assembly;
 foreach (var res in assembly.GetManifestResourceNames()) {
     System.Diagnostics.Debug.WriteLine("found resource: " + res);
 }
@@ -141,7 +141,7 @@ foreach (var res in assembly.GetManifestResourceNames()) {
 
 Vzhledem k platformě Xamarin.Forms běží na více platforem, každou s vlastním systému souborů, neexistuje žádný jeden přístup pro načítání a ukládání souborů vytvořený uživatelem. Abychom ukázali, jak pro uložení a načtení textových souborů ukázková aplikace zahrnuje k obrazovce, která uloží a načte některé uživatelský vstup - dokončení obrazovky je zobrazena níže:
 
- [ ![Ukládání a načítání textu](files-images/saveandload-sml.png "ukládání a načítání souborů v aplikaci")](files-images/saveandload.png "ukládání a načítání souborů v aplikaci")
+ [![Ukládání a načítání textu](files-images/saveandload-sml.png "ukládání a načítání souborů v aplikaci")](files-images/saveandload.png#lightbox "ukládání a načítání souborů v aplikaci")
 
 Každá platforma má mírně odlišné adresářovou strukturu a možnosti různých filesystem – například Xamarin.iOS a Xamarin.Android podporují většinu `System.IO` funkce ale Windows Phone podporuje pouze `IsolatedStorage` a [ `Windows.Storage` ](http://msdn.microsoft.com/library/windowsphone/develop/jj681698(v=vs.105).aspx) Rozhraní API.
 

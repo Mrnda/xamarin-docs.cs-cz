@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 1ad3c193261bf22b7ee344aa1ccabb226533b907
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: dc6146670c4b5f7d29491335b4719e032487dcce
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="debug-android-wear-on-an-emulator"></a>Ladění Android opotřebení v emulátoru
 
@@ -28,14 +28,14 @@ Ke spouštění vaší aplikace a opotřebením motoru na emulátoru, musíte na
 
 Když vytvoříte virtuální zařízení a opotřebením motoru, vyberte profil zařízení Android nosit (například **Android opotřebení hranaté**). Pro lepší výkon použijte opotřebení **x86** CPU/ABI, jak je vidět v tomto příkladu:
 
-[![Příklad opotřebení virtuální zařízení konfigurace](debug-on-emulator-images/01-wear-avd-example-sml.png)](debug-on-emulator-images/01-wear-avd-example.png)
+[![Příklad opotřebení virtuální zařízení konfigurace](debug-on-emulator-images/01-wear-avd-example-sml.png)](debug-on-emulator-images/01-wear-avd-example.png#lightbox)
 
 
 ## <a name="launch-the-wear-virtual-device"></a>Spusťte opotřebení virtuálního zařízení 
 
 Po vytvoření virtuálního zařízení s Androidem nosit, můžete zvolit z rozevírací nabídky zařízení v prostředí IDE před zahájením ladění. Pokud virtuální zařízení není k dispozici v zařízení v rozevíracím seznamu, ověřte, zda je váš projekt Android *nosit* projekt aplikace (ne projekt aplikace pro Android) a že jejím cílem úroveň rozhraní API je nastavená na rozhraní API stejné úrovni jako virtuální zařízení. Příklad:
 
-[ ![Výběr AVD se nosit v nabídce zařízení sady Visual Studio](debug-on-emulator-images/vs/choose-wear-sim.png)](debug-on-emulator-images/vs/choose-wear-sim.png)
+[![Výběr AVD se nosit v nabídce zařízení sady Visual Studio](debug-on-emulator-images/vs/choose-wear-sim.png)](debug-on-emulator-images/vs/choose-wear-sim.png#lightbox)
 
 Po spuštění emulátoru systému Android, Xamarin.Android nasadí aplikaci opotřebení na emulátoru. Na emulátoru běží aplikace s bitovou kopií nakonfigurované virtuální zařízení.
 

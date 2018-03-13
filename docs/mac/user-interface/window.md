@@ -3,16 +3,16 @@ title: Windows
 description: "Tento článek se zabývá práci s windows a panely v Xamarin.Mac aplikace. Popisuje vytváření windows a panely v Xcode a rozhraní tvůrce, jejich načtení ze scénářů a .xib souborů a práce s nimi prostřednictvím kódu programu."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: F1DB93A1-7549-4540-AD5E-D7605CCD8435
+ms.assetid: 4F6C67E9-BBFF-44F7-B29E-AB47D7F44287
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: bcf95bf481d58f21e4adce6039c3eb02ce24b938
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: f483fcfa9dfca1eb476ceab2b67e7a03bf4b6354
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="windows"></a>Windows
 
@@ -29,7 +29,7 @@ Windows může být použité v nemodální stavu (třeba textový editor, kter�
 
 Panely jsou zvláštní druh okno (podtřídou třídy základní `NSWindow` – třída), která obvykle obsluhují pomocné funkce v aplikaci, například nástroj windows jako textový formát kontroly a systému volby barev.
 
-[ ![](window-images/intro01.png "Úpravy okna v Xcode")](window-images/intro01.png)
+[![](window-images/intro01.png "Úpravy okna v Xcode")](window-images/intro01.png#lightbox)
 
 V tomto článku vám nabídneme základní informace o práci s Windows a panelů v aplikaci Xamarin.Mac. Vysoce navržený na spolupracovat [Hello, Mac](~/mac/get-started/hello-mac.md) článek nejprve, konkrétně [Úvod do Xcode a rozhraní tvůrce](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) a [výstupy a akce](~/mac/get-started/hello-mac.md#Outlets_and_Actions) oddíly, jak se popisuje klíčové koncepty a techniky, které budeme používat v tomto článku.
 
@@ -96,7 +96,7 @@ Další informace najdete v tématu [Windows přes celou obrazovku](https://deve
 
 Panelu je pomocného okna, který obsahuje ovládací prvky a možnosti, které mají vliv na aktivní dokument nebo výběr (například systém volby barev):
 
-[ ![](window-images/panel01.png "Panel barvy")](window-images/panel01.png)
+[![](window-images/panel01.png "Panel barvy")](window-images/panel01.png#lightbox)
 
 Panely může být buď _konkrétní aplikaci_ nebo _systémové_. Konkrétní aplikaci panelů float v horní části okna dokumentu aplikace a zmizí, když je aplikace na pozadí. Systémové panelů (například **písem** panely), float nad všechna otevřená okna bez ohledu na to aplikace. 
 
@@ -112,7 +112,7 @@ Apple navrhuje podle následujících pokynů:
 
 Většina moderních aplikací systému macOS prezentovat pomocného ovládacích prvků a možnosti, které mají vliv na aktivní dokument nebo výběr jako _inspektoři_ které jsou součástí hlavní okno (jako **stránky** aplikace, viz následující obrázek), místo použití panelu Windows:
 
-[ ![](window-images/panel02.png "Kontrolor příklad")](window-images/panel02.png)
+[![](window-images/panel02.png "Kontrolor příklad")](window-images/panel02.png#lightbox)
 
 Další informace najdete v tématu [panelů](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/WindowPanels.html#//apple_ref/doc/uid/20000957-CH42-SW1) části společnosti Apple [OS X Human Interface Guidelines](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/) a na našem [MacInspector](https://developer.xamarin.com/samples/mac/MacInspector/) ukázková aplikace pro úplnou implementaci daného **Inspector rozhraní** v Xamarin.Mac aplikaci.
 
@@ -122,11 +122,11 @@ Další informace najdete v tématu [panelů](https://developer.apple.com/librar
 
 Když vytvoříte novou aplikaci Xamarin.Mac kakao, zobrazí okno Standardní prázdné, ve výchozím nastavení. Toto systému windows je definována v `.storyboard` automaticky zahrnutý v projektu. Chcete-li upravit návrh vašeho systému windows v **Průzkumníku řešení**, dvakrát klikněte `Main.storyboard` souboru:
 
-[ ![](window-images/edit01.png "Výběr hlavní storyboard")](window-images/edit01.png)
+[![](window-images/edit01.png "Výběr hlavní storyboard")](window-images/edit01.png#lightbox)
 
 Otevře se okno návrhu v Xcode na rozhraní Tvůrce:
 
-[ ![](window-images/edit02.png "Úpravy uživatelského rozhraní v Xcode")](window-images/edit02.png)
+[![](window-images/edit02.png "Úpravy uživatelského rozhraní v Xcode")](window-images/edit02.png#lightbox)
 
 V **atribut Inspector**, nejsou k dispozici několik vlastnosti, které můžete definovat a ovládat okně aplikace:
 
@@ -160,7 +160,7 @@ Najdete v článku společnosti Apple [Úvod do Windows](https://developer.apple
 
 Chcete-li nastavit počáteční umístění vaší okna a řídit její velikost, přepněte do **velikost Inspector**:
 
-[ ![](window-images/edit07.png "Výchozí velikost a umístění")](window-images/edit07.png)
+[![](window-images/edit07.png "Výchozí velikost a umístění")](window-images/edit07.png#lightbox)
 
 Zde můžete nastavit počáteční velikost okna, poskytněte minimální a maximální velikost, nastavit počáteční umístění na obrazovce a řídit ohraničení kolem okna.
 
@@ -176,15 +176,15 @@ Postupujte takto:
 2. Vyberte `NSWindowController` v návrhovou plochu.
 3. Přepnout **Identity Inspector** zobrazení a zadejte `WindowController` jako **název třídy**: 
 
-    [ ![](window-images/windowcontroller01.png "Nastavení názvu – třída")](window-images/windowcontroller01.png)
+    [![](window-images/windowcontroller01.png "Nastavení názvu – třída")](window-images/windowcontroller01.png#lightbox)
 4. Uložte změny a vrátit k sadě Visual Studio pro Mac k synchronizaci.
 5. A `WindowController.cs` soubor bude přidán do projektu v **Průzkumníku řešení** v sadě Visual Studio pro Mac: 
 
-    [ ![](window-images/windowcontroller02.png "Výběr řadiče systému windows")](window-images/windowcontroller02.png)
+    [![](window-images/windowcontroller02.png "Výběr řadiče systému windows")](window-images/windowcontroller02.png#lightbox)
 6. Znovu otevřete Storyboard v Tvůrci rozhraní pro Xcode.
 7. `WindowController.h` Soubor bude k dispozici pro použití: 
 
-    [ ![](window-images/windowcontroller03.png "Úpravy souboru WindowController.h")](window-images/windowcontroller03.png)
+    [![](window-images/windowcontroller03.png "Úpravy souboru WindowController.h")](window-images/windowcontroller03.png#lightbox)
 
 <a name="Adding_UI_Elements" />
 
@@ -194,21 +194,21 @@ Definovat obsah časového období, přetáhněte ovládací prvky z **knihovny 
 
 Například můžeme přetáhněte panelu nástrojů **knihovny Inspector** do okna v **rozhraní editoru**:
 
-[ ![](window-images/edit03.png "Výběr panelu nástrojů v knihovně")](window-images/edit03.png)
+[![](window-images/edit03.png "Výběr panelu nástrojů v knihovně")](window-images/edit03.png#lightbox)
 
 Dalším kroku přetáhněte **textového zobrazení** a velikost, aby vyplnil celou oblast v panelu nástrojů:
 
-[ ![](window-images/edit04.png "Přidání zobrazení textu")](window-images/edit04.png)
+[![](window-images/edit04.png "Přidání zobrazení textu")](window-images/edit04.png#lightbox)
 
 Vzhledem k tomu, že chceme, aby **textového zobrazení** zmenšit a růst jako změny velikosti okna, umožňuje přepnout do **Editor omezení** a přidejte následující omezení:
 
-[ ![](window-images/edit05.png "Úpravy omezení")](window-images/edit05.png)
+[![](window-images/edit05.png "Úpravy omezení")](window-images/edit05.png#lightbox)
 
 Kliknutím pro **Red I světla** v horní části editoru a kliknutím na **přidat omezení 4**, jsme informace o tom textového zobrazení pro danou X, Y přilepit souřadnice a zvětšení nebo zmenšení vodorovně a svisle jako se změnila velikost okna.
 
 Nakonec umožňuje vystavit **textového zobrazení** k programování s využitím **výstupu** (a zkontrolujte, zda vyberte `ViewController.h` souborů):
 
-[ ![](window-images/edit06.png "Konfigurace výstupu")](window-images/edit06.png)
+[![](window-images/edit06.png "Konfigurace výstupu")](window-images/edit06.png#lightbox)
 
 Uložte změny a přepněte zpět na Visual Studio pro Mac k synchronizaci s Xcode.
 
@@ -237,17 +237,17 @@ Teď, když máme základní okna vytvořeného, podíváme procesů, které jso
 
 Ve výchozím nastavení, bude nová aplikace Xamarin.Mac automaticky zobrazení okna definovaný v `MainWindow.xib` souborů při spuštění:
 
-[ ![](window-images/display01.png "Okno s příklad systémem")](window-images/display01.png)
+[![](window-images/display01.png "Okno s příklad systémem")](window-images/display01.png#lightbox)
 
 Vzhledem k tomu, že jsme změnit návrh toto okno výše, teď obsahuje výchozí panelu nástrojů a **textového zobrazení** ovládacího prvku. Následující části v `Info.plist` soubor je odpovědná za zobrazování toto okno:
 
-[ ![](window-images/display00.png "Úpravy Info.plist")](window-images/display00.png)
+[![](window-images/display00.png "Úpravy Info.plist")](window-images/display00.png#lightbox)
 
 **Hlavní rozhraní** rozevírací slouží k výběru scénáře, který se použije jako hlavní aplikace uživatelského rozhraní (v tomto případě `Main.storyboard`).
 
 Řadič zobrazení je automaticky přidá do projektu řídit tento hlavní Windows, který se zobrazí (spolu s jeho primární zobrazení). Je definována v `ViewController.cs` souboru a připojeny k **vlastník souboru** v Tvůrci rozhraní v části **Identity Inspector**:
 
-[ ![](window-images/display02.png "Nastavení vlastník souboru")](window-images/display02.png)
+[![](window-images/display02.png "Nastavení vlastník souboru")](window-images/display02.png#lightbox)
 
 Pro naše okno rádi bychom znali mohla mít název z `untitled` při prvním otevření můžeme přepsání `ViewWillAppear` metoda v `ViewController.cs` , aby vypadala jako následující:
 
@@ -313,11 +313,11 @@ By zavřete `MyWindow` `NSWindow` instance.
 
 V systému macOS, Apple poskytl způsob, jak informovat uživatele, který obsah okno (`NSWindow`) byl upraven uživatelem a je nutné uložit. Pokud okno obsahuje změněný obsah, malé černý bod se zobrazí v jeho **Zavřít** pomůcky:
 
-[ ![](window-images/close01.png "Okno s upravené značky")](window-images/close01.png)
+[![](window-images/close01.png "Okno s upravené značky")](window-images/close01.png#lightbox)
 
 Pokud se uživatel pokusí zavřete okno nebo ukončení aplikace Mac, protože existují neuložené změny okně obsah, měli reprezentovat [dialogové okno](~/mac/user-interface/dialog.md) nebo [modální list](~/mac/user-interface/dialog.md) a uživateli umožňují uložit jejich změny první:
 
-[ ![](window-images/close02.png "A uložte stylů se zobrazí při zavření okna")](window-images/close02.png)
+[![](window-images/close02.png "A uložte stylů se zobrazí při zavření okna")](window-images/close02.png#lightbox)
 
 ### <a name="marking-a-window-as-modified"></a>Označení okno jako upravené
 
@@ -485,11 +485,11 @@ void NewDocument (NSObject sender) {
 
 Tento kód vytvoří novou verzi kontroleru okno, načte nové okno, díky hlavní a klíč okna a jeho nastaví název. Nyní když jsme spuštění aplikace a vyberte **nový** z **souboru** nabídky nové okno editor otevřít, který se zobrazí:
 
-[ ![](window-images/display04.png "Byla přidána nové okno bez názvu")](window-images/display04.png)
+[![](window-images/display04.png "Byla přidána nové okno bez názvu")](window-images/display04.png#lightbox)
 
 Pokud jsme otevřít **Windows** nabídky, můžete zobrazit aplikace je automaticky sledování a zpracování naše otevřete windows:
 
-[ ![](window-images/display05.png "V nabídce Windows")](window-images/display05.png)
+[![](window-images/display05.png "V nabídce Windows")](window-images/display05.png#lightbox)
 
 Další informace o práci s nabídkami v aplikaci Xamarin.Mac, najdete v tématu naše [práce s nabídkami](~/mac/user-interface/menu.md) dokumentaci.
 
@@ -559,7 +559,7 @@ Je možné časy potřebujete-li sledovat změny v velikost okna uvnitř Xamarin
 
 Pokud chcete monitorovat změny velikosti, nejdříve se ujistěte, zda jste přiřadili vlastní třídu pro okno řadič v Tvůrci rozhraní pro Xcode. Například `MasterWindowController` v následujícím:
 
-[ ![](window-images/resize01.png "Nástroj Inspector Identity")](window-images/resize01.png)
+[![](window-images/resize01.png "Nástroj Inspector Identity")](window-images/resize01.png#lightbox)
 
 Potom upravte vlastní třídy Kontroleru okno a monitorování `DidResize` událostí v okně Kontroleru k upozornění na změny velikosti za provozu. Příklad:
 
@@ -643,11 +643,11 @@ public override void AwakeFromNib ()
 
 Můžeme také monitorování `WillClose` událostí na okno a kontrolu stavu `DocumentEdited` vlastnost. Pokud je `true` musíme uživateli přidělit možnost uložit změny do souboru. Pokud jsme spuštění vaší aplikace a zadání nějakého textu, zobrazí se tečky:
 
-[ ![](window-images/file01.png "Změněné okna")](window-images/file01.png)
+[![](window-images/file01.png "Změněné okna")](window-images/file01.png#lightbox)
 
 Pokud jsme Zkuste zavřít okno, se nám získat výstrahu:
 
-[ ![](window-images/file02.png "Zobrazení uložení dialogové okno")](window-images/file02.png)
+[![](window-images/file02.png "Zobrazení uložení dialogové okno")](window-images/file02.png#lightbox)
 
 Pokud jsme se načítají ze souboru dokumentu jsme můžete nastavit v záhlaví okna na soubor název pomocí `window.SetTitleWithRepresentedFilename (Path.GetFileName(path));` – metoda (oznámeno, že `path` je řetězec představující soubor otevíráte). Kromě toho jsme nastavit adresu URL souboru pomocí `window.RepresentedUrl = url;` metoda.
 
@@ -690,11 +690,11 @@ void OpenDialog (NSObject sender)
 
 Nyní když jsme spuštění vaší aplikace, vyberte **otevřete...**  z **soubor** nabídce vyberte možnost textový soubor ze **otevřete** dialogové okno pole a otevřete jej:
 
-[ ![](window-images/file03.png "Otevřené dialogové okno")](window-images/file03.png)
+[![](window-images/file03.png "Otevřené dialogové okno")](window-images/file03.png#lightbox)
 
 Zobrazí se souboru a název bude nastavena s ikonou souboru:
 
-[ ![](window-images/file04.png "Načíst obsah souboru")](window-images/file04.png)
+[![](window-images/file04.png "Načíst obsah souboru")](window-images/file04.png#lightbox)
 
 <a name="Adding_a_New_Window_to_a_Project" />
 
@@ -707,22 +707,22 @@ Pokud chcete přidat nové okno, postupujte takto:
 1. V **Průzkumníku řešení**, dvakrát klikněte `Main.storyboard` soubor otevřete pro úpravy v Xcode na rozhraní tvůrce.
 2. Přetáhněte novou **okno řadiče** z **knihovny** na **návrhová plocha**:
 
-    [ ![](window-images/new01.png "Výběr nového okna řadiče v knihovně")](window-images/new01.png)
+    [![](window-images/new01.png "Výběr nového okna řadiče v knihovně")](window-images/new01.png#lightbox)
 3. V **Identity Inspector**, zadejte `PreferencesWindow` pro **Storyboard ID**: 
 
-    [ ![](window-images/new02.png "Nastavení ID scénáře")](window-images/new02.png)
+    [![](window-images/new02.png "Nastavení ID scénáře")](window-images/new02.png#lightbox)
 5. Vaše rozhraní návrhu: 
 
-    [ ![](window-images/new03.png "Návrh uživatelského rozhraní")](window-images/new03.png)
+    [![](window-images/new03.png "Návrh uživatelského rozhraní")](window-images/new03.png#lightbox)
 6. Otevřete nabídku aplikace (`MacWindows`), vyberte **předvolby...** , Řízení klikněte a přetáhněte do nového okna: 
 
-    [ ![](window-images/new05.png "Vytváření segue")](window-images/new05.png)
+    [![](window-images/new05.png "Vytváření segue")](window-images/new05.png#lightbox)
 7. Vyberte **zobrazit** z místní nabídky.
 6. Uložte změny a vrátit k sadě Visual Studio pro Mac k synchronizaci s Xcode.
 
 Pokud jsme spustit kód a vybrat **předvolby...**  z **nabídku aplikace**, zobrazí se okno:
 
-[ ![](window-images/new04.png "Ukázka předvolby nabídky")](window-images/new04.png)
+[![](window-images/new04.png "Ukázka předvolby nabídky")](window-images/new04.png#lightbox)
 
 <a name="Working_with_Panels" />
 
@@ -742,7 +742,7 @@ Stejně jako jakýkoli jiný typ okno, které vytvoříte a pracovat v aplikaci 
 
 V **atribut Inspector**, máte následující možnosti, které jsou specifické pro panelů:
 
-[ ![](window-images/panel03.png "Atribut Inspector")](window-images/panel03.png)
+[![](window-images/panel03.png "Atribut Inspector")](window-images/panel03.png#lightbox)
 
 - **Styl** – umožňují upravit styl panelu z: regulární Panel (vypadá jako standardní okno), nástroj Panel (má menší záhlaví), HUD Panel (jsou průhledné a záhlaví je součástí na pozadí).
 - **Bez aktivace** -Určuje, v okně klíče se změní na panelu.
@@ -754,20 +754,20 @@ Pokud chcete přidat nový Panel, postupujte takto:
 1. V **Průzkumníku řešení**, klikněte pravým tlačítkem na projekt a vyberte **přidat** > **nový soubor...** .
 2. V dialogovém okně Nový soubor vyberte **Xamarin.Mac** > **kakao okno s řadiče**:
 
-    [ ![](window-images/panels00.png "Přidávání nového řadiče okna")](window-images/panels00.png)
+    [![](window-images/panels00.png "Přidávání nového řadiče okna")](window-images/panels00.png#lightbox)
 3. Zadejte `DocumentPanel` pro **název** a klikněte na **nový** tlačítko.
 4. Dvakrát klikněte `DocumentPanel.xib` soubor otevřete pro úpravy v Tvůrci rozhraní: 
 
-    [ ![](window-images/new02.png "Úpravy panel")](window-images/new02.png)
+    [![](window-images/new02.png "Úpravy panel")](window-images/new02.png#lightbox)
 5. Odstranit existující okna a přetáhněte ji z panelu **knihovny Inspector** v **rozhraní editoru**: 
 
-    [ ![](window-images/panels01.png "Odstranění existující okna")](window-images/panels01.png)
+    [![](window-images/panels01.png "Odstranění existující okna")](window-images/panels01.png#lightbox)
 6. Propojte panelu až **vlastník souboru*-**okno*- **výstupu**: 
 
-    [ ![](window-images/panels02.png "Přetahování k přenosu do panelu")](window-images/panels02.png)
+    [![](window-images/panels02.png "Přetahování k přenosu do panelu")](window-images/panels02.png#lightbox)
 7. Přepnout **Identity Inspector** a nastavte třídy panelu na `DocumentPanel`: 
 
-    [ ![](window-images/panels03.png "Nastavení panelu – třída")](window-images/panels03.png)
+    [![](window-images/panels03.png "Nastavení panelu – třída")](window-images/panels03.png#lightbox)
 6. Uložte změny a vrátit k sadě Visual Studio pro Mac k synchronizaci s Xcode.
 7. Upravit `DocumentPanel.cs` soubor a změňte definici třídy na následující: 
 
@@ -788,7 +788,7 @@ public override void DidFinishLaunching (NSNotification notification)
 
 Pokud jsme spuštění aplikace, zobrazí se na panelu:
 
-[ ![](window-images/panels04.png "V panelu ve spuštěné aplikaci")](window-images/panels04.png)
+[![](window-images/panels04.png "V panelu ve spuštěné aplikaci")](window-images/panels04.png#lightbox)
 
 > [!IMPORTANT]
 > Panel Windows jsou zastaralé společností Apple a měl by být nahrazen **Inspector rozhraní**. Úplný příklad vytvoření **Inspector** v aplikaci Xamarin.Mac, najdete v tématu naše [MacInspector](https://developer.xamarin.com/samples/mac/MacInspector/) ukázkovou aplikaci.

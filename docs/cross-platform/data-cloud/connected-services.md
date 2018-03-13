@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: cc2deb11d544bc4e933e690d6089eb001a186c79
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5c9ae8d65a2bfdd035cccb6b911448ea047f8c40
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="connected-services-walkthrough"></a>Návod připojených služeb
 
@@ -24,22 +24,22 @@ Tento návod ukazuje, jak přidat Azure back-end službu, která přináší dat
 1.  Spusťte dvojitým kliknutím na **připojené služby** uzlu v řešení, které se otevře **služby Galerie**.
   Toto je seznam všech služeb, které jsou k dispozici pro tento typ aplikace. Vyberte službu (například **mobilního back-endu službou Azure App Service**) kliknutím na.
 
-  [ ![](connected-services-images/image001-sml.png "Připojené uzel služeb v sadě Visual Studio pro Mac")](connected-services-images/image001.png)
+  [![](connected-services-images/image001-sml.png "Připojené uzel služeb v sadě Visual Studio pro Mac")](connected-services-images/image001.png#lightbox)
 
 2. Stránce s podrobnostmi o službu má popis služby a závislosti k instalaci.
   Klikněte **přidat** tlačítko přidejte závislosti do aplikace:
 
-  [ ![](connected-services-images/image002-sml.png "Mobilní back-end v Azure")](connected-services-images/image002.png)
+  [![](connected-services-images/image002-sml.png "Mobilní back-end v Azure")](connected-services-images/image002.png#lightbox)
 
 3. Závislosti nutné přidat PCL a specifické pro platformu projekty fungovat.
   Vyberte zaškrtávací políčka pro přidání služby pro každý projekt, který bude odkazovat ho (přímo ani nepřímo):
 
-  [ ![](connected-services-images/image003-sml.png "Zkontrolujte všechny projekty, které by měla odkazovat služby")](connected-services-images/image003.png)
+  [![](connected-services-images/image003-sml.png "Zkontrolujte všechny projekty, které by měla odkazovat služby")](connected-services-images/image003.png#lightbox)
 
 4. Zvolte **přijmout** na **přijetí licence** dialogová okna pro balíčky NuGet.
   Mohou existovat dvě dialogová okna tak, aby přijímal, jeden pro MobileClient a závislosti a druhý pro SQLiteStore, což je vyžadováno pro synchronizaci dat offline:
 
-  [ ![](connected-services-images/image004-sml.png "Přijměte licenční smlouvy")](connected-services-images/image004.png)
+  [![](connected-services-images/image004-sml.png "Přijměte licenční smlouvy")](connected-services-images/image004.png#lightbox)
 
   ![](connected-services-images/image005.png "Okno přijetí licence")
 
@@ -48,7 +48,7 @@ Tento návod ukazuje, jak přidat Azure back-end službu, která přináší dat
 
 6. Vyberte aplikační službu ze seznamu. Tato hodnota se vyplní kód šablony pro `MobileServiceClient` objekt se adresa URL odpovídajícího v Azure app service:
 
-  [ ![](connected-services-images/image006-sml.png "Vyberte ze seznamu služby app service")](connected-services-images/image006.png)
+  [![](connected-services-images/image006-sml.png "Vyberte ze seznamu služby app service")](connected-services-images/image006.png#lightbox)
 
   Pokud neexistují uvedené služby, klikněte **nový** tlačítko (viz krok 9.)
 
@@ -59,12 +59,12 @@ Tento návod ukazuje, jak přidat Azure back-end službu, která přináší dat
 
 8. Postupujte podle dokumentace v **další kroky** přidat data, offline synchronizace, ověřování a nabízená oznámení do vaší aplikace:
 
-  [ ![](connected-services-images/image008-sml.png "Projít pokyny pro další kroky")](connected-services-images/image008.png)
+  [![](connected-services-images/image008-sml.png "Projít pokyny pro další kroky")](connected-services-images/image008.png#lightbox)
 
 10. Pokud nemáte žádné existující služby, aplikace, můžete vytvořit nové služby z v sadě Visual Studio for Mac.
   Klikněte na tlačítko **nový** tlačítko v levé dolní části seznamu služeb otevřete **nové služby App Service** dialogové okno:
 
-  [ ![](connected-services-images/image009-sml.png "Vytvoření nové aplikace služby v sadě Visual Studio pro Mac")](connected-services-images/image009.png)
+  [![](connected-services-images/image009-sml.png "Vytvoření nové aplikace služby v sadě Visual Studio pro Mac")](connected-services-images/image009.png#lightbox)
 
 Nová služba vyžaduje následující parametry:
 

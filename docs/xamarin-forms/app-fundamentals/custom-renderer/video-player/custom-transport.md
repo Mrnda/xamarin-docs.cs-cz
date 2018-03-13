@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: d37c2c9dbb12668680b5813e9e083d2ebb184c66
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
-ms.translationtype: HT
+ms.openlocfilehash: b0d871068f42a03b2aba3c1482a9236b19fe0db9
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="custom-video-transport-controls"></a>Ovládací prvky vlastní video přenosu
 
@@ -646,11 +646,11 @@ namespace VideoPlayerDemos
 
 Protože `AutoPlay` je nastaven na `false` v **CustomTransport.xaml** soubor, budete muset stiskněte **přehrání** když nepovolíte zahájíte videa. Tlačítka jsou definovány tak, aby znaky znakové sady Unicode výše popsané se předěl doprovází jejich ekvivalenty u textu. Při přehrávání videa tlačítka mají Konzistentnějšího vzhledu na jednotlivých platformách:
 
-[![Přehrávání vlastní přenos](custom-transport-images/customtransportplaying-small.png "vlastní přenos přehrávání")](custom-transport-images/customtransportplaying-large.png "vlastní přenos přehrávání")
+[![Přehrávání vlastní přenos](custom-transport-images/customtransportplaying-small.png "vlastní přenos přehrávání")](custom-transport-images/customtransportplaying-large.png#lightbox "vlastní přenos přehrávání")
 
 Ale pro Android a UPW **přehrání** tlačítko vypadá příliš neliší, když je pozastaven na video:
 
-[![Vlastní přenos pozastaven](custom-transport-images/customtransportpaused-small.png "vlastní přenos pozastaven")](custom-transport-images/customtransportpaused-large.png "vlastní přenos pozastaven")
+[![Vlastní přenos pozastaven](custom-transport-images/customtransportpaused-small.png "vlastní přenos pozastaven")](custom-transport-images/customtransportpaused-large.png#lightbox "vlastní přenos pozastaven")
 
 V případě produkční aplikace budete pravděpodobně chtít používat vlastní Image rastrový obrázek pro tlačítka zajistit jednotnost visual.
 

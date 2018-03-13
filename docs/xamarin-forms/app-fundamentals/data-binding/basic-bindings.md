@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 500ad02d79cea79f59b1aca91b0312c9a9d6bac3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b82c0471985306962133c3bf7b084b49d5588bb6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="basic-bindings"></a>Základní vazby
 
@@ -94,7 +94,7 @@ Včetně název třídy je však dobré připomenutí cílového objektu.
 
 Při manipulaci s `Slider`, `Label` otočí odpovídajícím způsobem:
 
-[![Kód Basice vazby](basic-bindings-images/basiccodebinding-small.png "základní kódu vazby")](basic-bindings-images/basiccodebinding-large.png "základní vazby")
+[![Kód Basice vazby](basic-bindings-images/basiccodebinding-small.png "základní kódu vazby")](basic-bindings-images/basiccodebinding-large.png#lightbox "základní vazby")
 
 **Základní vazby Xaml** stránky je stejný jako **základní vazby kód** s tím rozdílem, že definuje celé datové vazby v jazyce XAML:
 
@@ -190,7 +190,7 @@ public partial class AlternativeCodeBindingPage : ContentPage
 
 Spuštění tohoto programu, může být trochu překvapivé:
 
-[![Vazba alternativní kód](basic-bindings-images/alternativecodebinding-small.png "alternativní kód vazby")](basic-bindings-images/alternativecodebinding-large.png "alternativní kód vazby")
+[![Vazba alternativní kód](basic-bindings-images/alternativecodebinding-small.png "alternativní kód vazby")](basic-bindings-images/alternativecodebinding-large.png#lightbox "alternativní kód vazby")
 
 Na obrazovce iOS na levé straně ukazuje, jak vypadá obrazovky po první zobrazení stránky. Kde je `Label`? 
 
@@ -319,7 +319,7 @@ Jak zjistíte, to může být velmi užitečný pro zjednodušenou výrazy vazby
 
 `BindingContext` Vlastnost `StackLayout` je nastaven na `slider` objektu. Tento kontext vazby zdědí i `Label` a `BoxView`, které mít jejich `Rotation` vlastnosti nastavit na `Value` vlastnost `Slider`: 
 
-[![Vazba kontextu dědičnosti](basic-bindings-images/bindingcontextinheritance-small.png "vazby kontextu dědičnosti")](basic-bindings-images/bindingcontextinheritance-large.png "vazby kontextu dědičnosti")
+[![Vazba kontextu dědičnosti](basic-bindings-images/bindingcontextinheritance-small.png "vazby kontextu dědičnosti")](basic-bindings-images/bindingcontextinheritance-large.png#lightbox "vazby kontextu dědičnosti")
 
 V [následující článek](binding-mode.md), uvidíte jak *vazby režimu* tok dat mezi zdrojové a cílové objekty, můžete změnit.
 

@@ -3,14 +3,15 @@ title: "Shrnutí kapitoly 24. Navigace stránky"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: DDCDB49C-6008-4F72-B095-463EE21D7C23
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: b8eac45c52093dea23c08a19d219fa0bbd8d55ab
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3390a298cd8d9967f0aea2bd9fb5a90830714ba5
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-24-page-navigation"></a>Shrnutí kapitoly 24. Navigace stránky
 
@@ -99,7 +100,7 @@ Pokud konkrétní modální stránky můžete přesměrováni do více než jedn
 
 [ **ViewGalleryType** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/ViewGalleryType) příklad ukazuje použití `TableView` do seznamu položek nabídky. Každá položka je přidružena `Type` objekt pro konkrétní stránky. Pokud je vybraná tato položka, program vytvoří stránky a přejde k němu.
 
-[![Trojitá snímek obrazovky zobrazení galerie typ](images/ch24fg21-small.png "položky nabídky výpis zobrazení Tabulka")](images/ch24fg21-large.png "zobrazení Tabulka výpis položky nabídky")
+[![Trojitá snímek obrazovky zobrazení galerie typ](images/ch24fg21-small.png "položky nabídky výpis zobrazení Tabulka")](images/ch24fg21-large.png#lightbox "zobrazení Tabulka výpis položky nabídky")
 
 [ **ViewGalleryInst** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/ViewGalleryInst) ukázka je mírně liší v nabídce obsahuje instance každé stránky, nikoli typy. To pomůže uchovávat informace z každé stránce, ale všechny stránky musí být vytvořena instance při spuštění programu.
 

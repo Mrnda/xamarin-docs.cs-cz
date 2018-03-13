@@ -7,15 +7,14 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/05/2018
-ms.openlocfilehash: 0f270111ad4e10f035a3cb695564d789f40097fd
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: aa2d2ce6cabe9c394b9807ca3d6328da5b4ba311
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-the-android-manifest"></a>Práce s manifestu systému Android.
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Přehled
 
@@ -24,7 +23,6 @@ ms.lasthandoff: 02/27/2018
 **AndroidManifest.xml** se vygeneruje jako součást procesu sestavení a XML v rámci nalezen **Properties/AndroidManifest.xml** je sloučen s XML, které se generují z vlastních atributů. Výsledná sloučit **AndroidManifest.xml** se nachází v **obj** podadresáři; například se nachází v **obj/Debug/android/AndroidManifest.xml** pro sestavení pro ladění . Proces slučovat je jednoduchá: používá vlastní atributy v rámci kód ke generování elementů XML a *vloží* tyto elementy do **AndroidManifest.xml**. 
 
 
-<a name="The_Basics" />
 
 ## <a name="the-basics"></a>Základní informace
 
@@ -60,7 +58,6 @@ Tento příklad způsobí, že následující fragment kódu xml mají být při
 `[Activity]` Atribut nemá žádný vliv `abstract` typy; `abstract` typy jsou ignorovány.
 
 
-<a name="Activity_Name" />
 
 ### <a name="activity-name"></a>Název aktivity
 
@@ -83,7 +80,6 @@ Tento příklad vytvoří následující fragment kódu xml:
 
 *Poznámka:*: měli byste použít `Name` vlastnosti pouze z důvodů zpětné kompatibility, jako například přejmenování může zpomalit vyhledávání typu za běhu. Pokud máte starší kód, který předpokládá, že výchozí název typu aktivity na vycházet z malého obor názvů a název třídy, najdete v části [Android s obálku pojmenování](https://developer.xamarin.com/releases/android/xamarin.android_5/xamarin.android_5.1/#Android_Callable_Wrapper_Naming) pro tipy k zachování kompatibility. 
 
-<a name="Activity_Title_Bar" />
 
 ### <a name="activity-title-bar"></a>Aktivita záhlaví
 
@@ -104,7 +100,6 @@ Tento příklad vytvoří následující fragment kódu xml:
           android:name="md5a7a3c803e481ad8926683588c7e9031b.MainActivity" />
 ```
 
-<a name="Launchable_from_Application_Chooser" />
 
 ### <a name="launchable-from-application-chooser"></a>Launchable z výběru aplikace
 
@@ -130,7 +125,6 @@ Tento příklad vytvoří následující fragment kódu xml:
 ```
 
 
-<a name="Activity_Icon" />
 
 ### <a name="activity-icon"></a>Ikona aktivity
 
@@ -155,7 +149,6 @@ Tento příklad vytvoří následující fragment kódu xml:
 </activity>
 ```
 
-<a name="Permissions" />
 
 ### <a name="permissions"></a>Oprávnění
 
@@ -178,11 +171,9 @@ Verze sestavení verze manifestu (v **obj/Debug/android/AndroidManifest.xml**), 
 
 
 
-<a name="Advanced_Features" />
 
 ## <a name="advanced-features"></a>Pokročilé funkce
 
-<a name="Intent_Actions_and_Features" />
 
 ### <a name="intent-actions-and-features"></a>Záměrné akce a funkce
 
@@ -214,7 +205,6 @@ Tento příklad vytvoří následující fragment kódu xml:
 </activity>
 ```
 
-<a name="Application_Element" />
 
 ### <a name="application-element"></a>Element aplikace
 
@@ -243,7 +233,6 @@ V tomto příkladu všechny aktivity v aplikaci, je výchozí nastavení `Theme.
 Existuje mnoho atributů celou aplikaci, která můžete konfigurovat v `<application>` element; Další informace o těchto nastaveních najdete v tématu [veřejné vlastnosti](https://developer.xamarin.com/api/type/Android.App.ApplicationAttribute/#Public_Properties) části [ApplicationAttribute](https://developer.xamarin.com/api/type/Android.App.ApplicationAttribute/). 
 
 
-<a name="List_of_Custom_Attributes" />
 
 ## <a name="list-of-custom-attributes"></a>Seznam vlastních atributů
 

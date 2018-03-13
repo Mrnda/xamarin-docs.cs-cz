@@ -6,18 +6,17 @@ ms.assetid: 3D17DE45-115C-7192-5685-44F8EEE07DCC
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 10/12/2017
-ms.openlocfilehash: aeb7115e3c7521f6679e8802eb759d7e56ba1cfe
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: fcd77d97d492baee441cfd428e58ea83525f927e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-resources-for-varying-screens"></a>Vytváření prostředků pro různých obrazovky
 
 Android samotné běží na mnoha různých zařízení, každý s širokou škálu řešení, velikosti obrazovky a hustoty obrazovky. Android provede škálování a změna velikosti, aby vaše aplikace fungovat v těchto zařízeních, ale to může mít za následek neoptimálním průběhem uživatelské prostředí. Například může se zobrazit rozmazaně bitové kopie, bitové kopie může zabírat příliš mnoho (nebo není dostatek) obrazovky prostor, který spustí pozici prvků uživatelského rozhraní v rozložení bude překrývat nebo je příliš daleko od sebe.
 
-<a name="Concepts" />
 
 ## <a name="concepts"></a>Koncepty
 
@@ -39,7 +38,6 @@ Všimněte si, že první tři tyto koncepty souvisejí mezi &ndash; zvýšení 
 
 Pomoc při řešení této složitost, upřednostňuje použití rozhraní Android *nezávislé na hustotě pixelů (dp)* pro rozložení obrazovky. Pomocí nezávislé pixelů hustotu prvky uživatelského rozhraní se zobrazí uživateli, aby mít stejnou velikost fyzické na obrazovkách s jinou densities –.
 
-<a name="Supporting_Various_Screen_Sizes_and_Densities" />
 
 ## <a name="supporting-various-screen-sizes-and-densities"></a>Podpora různých velikost obrazovky a densities –
 
@@ -49,7 +47,6 @@ Ve většině případů zajistit hustotu nezávislost stačí použití nezávi
 Android bude škálovat drawables za běhu na správnou velikost.
 Je však možné, že tento škálování způsobí, že bitmap zobrazí rozmazaně. Abyste tomu předešli, může být nutné zadat alternativní zdroje pro různé densities –. Při navrhování zařízení pro více řešení a densities – obrazovky bude prokázat jednodušší začínat vyšší řešení nebo hustotu Image a pak vertikálně snížit kapacitu. To zabrání žádné stírá ani narušení, který může být důsledkem změnu velikosti.
 
-<a name="Declare_the_Screen_Size_the_Application_Supports" />
 
 ### <a name="declare-the-screen-size-the-application-supports"></a>Deklarovat velikosti obrazovky aplikace podporuje
 
@@ -59,29 +56,21 @@ Chcete-li to provést v Xamarin.Android, je nutné nejprve přidat **AndroidMani
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Manifestu systému Android.](resources-for-varying-screens-images/01-android-manifest-vs-sml.png)](resources-for-varying-screens-images/01-android-manifest-vs.png)
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-[![Manifestu systému Android.](resources-for-varying-screens-images/01-android-manifest-xs-sml.png)](resources-for-varying-screens-images/01-android-manifest-xs.png)
-
------
-
+[![Manifestu systému Android.](resources-for-varying-screens-images/01-android-manifest-vs-sml.png)](resources-for-varying-screens-images/01-android-manifest-vs.png#lightbox)
 
 **AndroidManifest.xml** je přidán do **vlastnosti** adresáře. Soubor je pak upravit zahrnout [podporuje obrazovky](http://developer.android.com/guide/topics/manifest/supports-screens-element.html):
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-[![Přidání podporuje obrazovky](resources-for-varying-screens-images/02-adding-supports-screens-vs-sml.png)](resources-for-varying-screens-images/02-adding-supports-screens-vs.png)
+[![Přidání podporuje obrazovky](resources-for-varying-screens-images/02-adding-supports-screens-vs-sml.png)](resources-for-varying-screens-images/02-adding-supports-screens-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Přidání podporuje obrazovky](resources-for-varying-screens-images/02-adding-supports-screens-xs-sml.png)](resources-for-varying-screens-images/02-adding-supports-screens-xs.png)
+[![Manifestu systému Android.](resources-for-varying-screens-images/01-android-manifest-xs-sml.png)](resources-for-varying-screens-images/01-android-manifest-xs.png#lightbox)
+
+**AndroidManifest.xml** je přidán do **vlastnosti** adresáře. Soubor je pak upravit zahrnout [podporuje obrazovky](http://developer.android.com/guide/topics/manifest/supports-screens-element.html):
+
+[![Přidání podporuje obrazovky](resources-for-varying-screens-images/02-adding-supports-screens-xs-sml.png)](resources-for-varying-screens-images/02-adding-supports-screens-xs.png#lightbox)
 
 -----
-
-
-<a name="Provide_Alternate_Layouts_for_Different_Screen_Sizes" />
 
 ### <a name="provide-alternate-layouts-for-different-screen-sizes"></a>Zadejte alternativní rozložení pro jiné velikosti obrazovky
 
@@ -148,7 +137,6 @@ Pro aplikace, které bude span starý a nový úrovně rozhraní API může být
 -----
 
 
-<a name="Provide_Different_Bitmaps_for_Different_Screen_Densities" />
 
 ### <a name="provide-different-bitmaps-for-different-screen-densities"></a>Zadejte jiný bitmap pro densities – různých obrazovek
 
@@ -162,17 +150,15 @@ Výsledky porovnejte s rozložení, které je navrženo s velkou hustotou konkr�
 
 ![Snímky obrazovky s hustotu specifické prostředky](resources-for-varying-screens-images/07-density-specific-resources.png)
 
-<a name="Create_Varying_Density_Resources_with_Android_Asset_Studio" />
 
 ### <a name="create-varying-density-resources-with-android-asset-studio"></a>Vytvořit různých hustotu prostředky s Android Asset Studio
 
 Vytvoření těchto bitmap různé densities – může to být trochu zdlouhavé. Jako takový Google vytvořil online nástroj, můžete tak omezit některé nebylo nutné pracně zabývajících se vytváření těchto bitmap volat [ **Android Asset Studio**](https://romannurik.github.io/AndroidAssetStudio/).
 
-[![Android Asset Studio](resources-for-varying-screens-images/08-android-asset-studio-sml.png)](resources-for-varying-screens-images/08-android-asset-studio.png)
+[![Android Asset Studio](resources-for-varying-screens-images/08-android-asset-studio-sml.png)](resources-for-varying-screens-images/08-android-asset-studio.png#lightbox)
 
 Tento web vám pomůže s vytváření bitové mapy, které cílí na čtyři běžné obrazovky densities – tím, že poskytuje jednu image. Android Asset Studio bude poté vytvořte rastrových obrázků s určitá vlastní nastavení a pak mohly stáhnout jako soubor zip.
 
-<a name="Tips_for_Multiple_Screens" />
 
 ## <a name="tips-for-multiple-screens"></a>Tipy pro více obrazovky
 
@@ -189,7 +175,6 @@ Android běží na nepřeberné počet zařízení, a může to vypadat čtená�
 
 - **Použít LayoutParams výška a šířka** – při definování prvky uživatelského rozhraní v souboru XML rozložení aplikace Android pomocí **wrap_content** a **fill_parent** hodnoty budou mít další úspěch Zajistěte správné podívejte se na různých zařízeních než použití pixelu nebo hustotu nezávislých jednotek. Tyto hodnoty dimenze způsobit Android k prostředkům rastrový obrázek škálování podle potřeby. Z tohoto důvodu stejné jednotky nezávislé na hustotu jsou nejlépe rezervovány pro při zadání pravého okraje a odsazení prvků uživatelského rozhraní.
 
-<a name="Testing_Multiple_Screens" />
 
 ## <a name="testing-multiple-screens"></a>Testování více obrazovek
 

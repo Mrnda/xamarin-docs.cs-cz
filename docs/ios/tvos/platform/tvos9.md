@@ -3,16 +3,16 @@ title: "Úvod do tvOS 9"
 description: "Tento článek představuje všechny nové a změněné rozhraní API a funkce dostupné v tvOS 9 pro vývojáře Xamarin.tvOS."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: A2DA4347-0563-4C72-A8D7-5B9DE9E28712
+ms.assetid: A7E738E1-9F94-489B-918F-7DF8F0810987
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: c1fafe85fb7f5c30dca0dff6fe3dff5172e0b9aa
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 55e83658e09bc7e5c12bb3ef3f508497651ec46c
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="introduction-to-tvos-9"></a>Úvod do tvOS 9
 
@@ -91,7 +91,7 @@ Vzdálené Siri je aktuálně k dispozici v těchto zemích:
 
 Dalších zemích, se zobrazí Apple TV vzdáleného, nahradí tlačítko Siri tlačítko vyhledávání, které se vyvolá na výchozí obrazovce vyhledávání se vstupem text pro vyhledávání:
 
-[ ![](tvos9-images/remote02.png "Vzdálené Siri")](tvos9-images/remote02.png)
+[![](tvos9-images/remote02.png "Vzdálené Siri")](tvos9-images/remote02.png#lightbox)
 
 Další informace najdete v tématu naše [Siri vzdálené a Bluetooth řadiče](~/ios/tvos/platform/remote-bluetooth.md) dokumentaci.
 
@@ -155,7 +155,7 @@ Další informace najdete v tématu naše [práce s navigační a výběr](~/ios
 
 Na obrazovce Apple TV Domů se zobrazí všechny aplikace, které jsou nainstalované a poskytuje přístup k uživatelské předvolby:
 
-[ ![](tvos9-images/home01.png "Na domovskou obrazovku")](tvos9-images/home01.png)
+[![](tvos9-images/home01.png "Na domovskou obrazovku")](tvos9-images/home01.png#lightbox)
 
 Uživatel přejde mřížku ikony aplikaci pomocí touch gesta na vzdáleném Siri pomocí fokus vyberte aplikaci a spusťte ho. Ikona aplikace je první šance, aby skvělé dojem na potenciální uživatelů a měli komunikovat účel vaší aplikace na první pohled.
 
@@ -169,7 +169,7 @@ Další informace najdete v tématu naše [práce s ikony a bitové kopie](~/ios
 
 Pokud uživatel má umístit aplikace Xamarin.tvOS na začátek řádku na obrazovce Apple TV Domů, velký obrázek police horní zobrazí, pokud vaše aplikace je vybraná uživatelem. Tuto bitovou kopii měli zvýrazněte funkcí aplikace nebo zadejte přímé odkazy na jeho obsah.
 
-[ ![](tvos9-images/topshelf01.png "Horní police")](tvos9-images/topshelf01.png)
+[![](tvos9-images/topshelf01.png "Horní police")](tvos9-images/topshelf01.png#lightbox)
 
 Bitovou kopii police horní lze zadat buď jako jednu statickou `.png` nebo `.lsr` , nebo se dá dynamicky vytvořit za běhu jako jeden řádek položek může získat fokus.
 

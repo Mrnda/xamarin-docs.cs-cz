@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 02/17/2018
-ms.openlocfilehash: 6aee83cd07a52d667c24c3e70fced2e291ed99c8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b076c7a71d81a474ca80ac32771d5512c21c167c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough---working-with-wcf"></a>Návod - práce s použitím technologie WCF
 
@@ -158,7 +158,7 @@ Musíte znát IP adresu pracovní stanici. Pro účely tohoto příkladu budeme 
 
 1. Začněme tím, že nakonfigurujete službu IIS Express k naslouchání požadavkům externí. Jsme můžete to provést úpravou konfiguračního souboru pro službu IIS Express na `[solutiondirectory]\.vs\config\applicationhost.config`, jak je znázorněno na následujícím snímku obrazovky:
 
-    [![](walkthrough-working-with-wcf-images/image05.png "Jsme můžete to provést úpravou konfiguračního souboru pro službu IIS Express na solutiondirectory.vsconfigapplicationhost.config, jak je vidět na tomto snímku obrazovky")](walkthrough-working-with-wcf-images/image05.png)
+    [![](walkthrough-working-with-wcf-images/image05.png "Jsme můžete to provést úpravou konfiguračního souboru pro službu IIS Express na solutiondirectory.vsconfigapplicationhost.config, jak je vidět na tomto snímku obrazovky")](walkthrough-working-with-wcf-images/image05.png#lightbox)
 
 
     Vyhledejte `site` element s názvem `HelloWorldWcfHost`. Měl by vypadat nějak podobně jako následující fragment kódu XML:
@@ -270,7 +270,7 @@ Proxy server služby WCF mohou být spotřebovávána aplikace pro Xamarin.Andro
 
     Na následujících snímcích obrazovky zobrazuje uživatelské rozhraní v Návrháři:
 
-    [![](walkthrough-working-with-wcf-images/image09.png "Toto je snímek obrazovky co toto uživatelské rozhraní vypadá v Návrháři")](walkthrough-working-with-wcf-images/image09.png)
+    [![](walkthrough-working-with-wcf-images/image09.png "Toto je snímek obrazovky co toto uživatelské rozhraní vypadá v Návrháři")](walkthrough-working-with-wcf-images/image09.png#lightbox)
 
 1. V **Průzkumníku řešení**, otevřete `Resources/values/Strings.xml` a přidejte následující kód XML:
 
@@ -382,7 +382,7 @@ Proxy server služby WCF mohou být spotřebovávána aplikace pro Xamarin.Andro
 
 1. Spusťte aplikaci, zkontrolujte, zda je spuštěna služby WCF a klikněte na dvě tlačítka. Aplikace bude volat WCF asynchronně, za předpokladu, že `Endpoint` je správně nastaveno:
 
-  [![](walkthrough-working-with-wcf-images/image08.png "V rámci 30 sekund by měl být přijata odpověď z každé metody WCF a naše aplikace by měla vypadat podobně jako tento snímek obrazovky")](walkthrough-working-with-wcf-images/image08.png)
+  [![](walkthrough-working-with-wcf-images/image08.png "V rámci 30 sekund by měl být přijata odpověď z každé metody WCF a naše aplikace by měla vypadat podobně jako tento snímek obrazovky")](walkthrough-working-with-wcf-images/image08.png#lightbox)
 
 <a name="Creating_a_Xamarin_iOS_Application" />
 
@@ -428,7 +428,7 @@ Proxy server služby WCF mohou být spotřebovávána aplikace pro Xamarin.iOS, 
 
     Po přidání ovládacích prvků, by měl vypadat uživatelského rozhraní na následujícím snímku obrazovky:
 
-    [![](walkthrough-working-with-wcf-images/image12.png "Po přidání ovládacích prvků, uživatelské rozhraní by měla vypadat přibližně takto")](walkthrough-working-with-wcf-images/image12.png)
+    [![](walkthrough-working-with-wcf-images/image12.png "Po přidání ovládacích prvků, uživatelské rozhraní by měla vypadat přibližně takto")](walkthrough-working-with-wcf-images/image12.png#lightbox)
 
 1. V **Průzkumníku řešení**, otevřete `ViewController.cs` a přidejte následující kód:
 
@@ -515,7 +515,7 @@ Proxy server služby WCF mohou být spotřebovávána aplikace pro Xamarin.iOS, 
 
 1. Spusťte aplikaci, zkontrolujte, zda je spuštěna služby WCF a klikněte na dvě tlačítka. Aplikace bude volat WCF asynchronně, za předpokladu, že `Endpoint` je správně nastaveno:
 
-    [![](walkthrough-working-with-wcf-images/image10.png "V rámci 30 sekund by měl být přijata odpověď z každé metody WCF a naše aplikace by měl vypadat jako tento snímek obrazovky")](walkthrough-working-with-wcf-images/image10.png)
+    [![](walkthrough-working-with-wcf-images/image10.png "V rámci 30 sekund by měl být přijata odpověď z každé metody WCF a naše aplikace by měl vypadat jako tento snímek obrazovky")](walkthrough-working-with-wcf-images/image10.png#lightbox)
 
 <a name="Summary" />
 

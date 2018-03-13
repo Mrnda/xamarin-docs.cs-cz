@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: eb310b13a97e345bab68bf4e878f81a6187da691
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c31dbfeea3134de95f3275a7fa79c508a94d6a91
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="handling-rotation"></a>Zpracování otočení
 
 _Toto téma popisuje, jak zpracovat změny orientace zařízení v Xamarin.Android. Vysvětluje způsob práce se systémem Android prostředků automaticky načíst prostředky pro orientaci určitého zařízení, jak programově zpracování orientaci změny._
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Přehled
 
@@ -30,7 +29,6 @@ Tato příručka prozkoumá v následujících tématech orientaci:
 
 -   **Programová otočení rozložení** &ndash; přidání ovládacích prvků prostřednictvím kódu programu, jakož i způsob zpracování orientaci změny ručně.
 
-<a name="Handling_Rotation_Declaratively_with_Layouts" />
 
 ## <a name="handling-rotation-declaratively-with-layouts"></a>Zpracování otočení deklarativně s rozložení
 
@@ -41,13 +39,12 @@ To zahrnuje podporu pro:
 
 -   *Drawable prostředky* &ndash; určující, které drawables jsou načtena pro každý orientace.
 
-<a name="Layout_Resources" />
 
 ### <a name="layout-resources"></a>Rozložení prostředky
 
 Ve výchozím nastavení, soubory XML Android (AXML) součástí **prostředky, rozvržení** složky se používá pro vykreslování zobrazení pro aktivitu. Tato složka prostředků slouží pro orientaci na výšku a šířku, pokud jsou k dispozici žádné další rozložení prostředky speciálně pro šířku. Vezměte v úvahu strukturu projektu vytvořen výchozí šablona projektu:
 
-[ ![Výchozí projekt šablony struktury](handling-rotation-images/00.png)](handling-rotation-images/00.png)
+[![Výchozí projekt šablony struktury](handling-rotation-images/00.png)](handling-rotation-images/00.png#lightbox)
 
 Tento projekt vytvoříte jednoduchou **Main.axml** v soubor **prostředky, rozvržení** složky. Když aktivity `OnCreate` metoda je volána, je zvýšení kapacity zobrazení definované v **Main.axml,** který deklaruje tlačítka, jak je znázorněno v následující soubor XML:
 
@@ -67,9 +64,8 @@ Tento projekt vytvoříte jednoduchou **Main.axml** v soubor **prostředky, rozv
 
 Pokud zařízení otočen na šířku, aktivity na `OnCreate` metoda je volána znovu a stejné **Main.axml** zvětšený souboru, jak ukazuje následující snímek obrazovky:
 
-[ ![Stejné obrazovky, ale v orientaci na šířku](handling-rotation-images/01-sml.png)](handling-rotation-images/01.png)
+[![Stejné obrazovky, ale v orientaci na šířku](handling-rotation-images/01-sml.png)](handling-rotation-images/01.png#lightbox)
 
-<a name="Orientation-Specific_Layouts" />
 
 #### <a name="orientation-specific-layouts"></a>Specifické pro orientaci rozložení
 
@@ -105,9 +101,8 @@ Pokud do složky s názvem rozložení krajině, který obsahuje další **Main.
 
 Spuštění tohoto kódu a otáčení zařízení z výšky na šířku nové načítání XML, ukazuje, jak je uvedeno níže:
 
-[ ![Snímky obrazovky na výšku a šířku tisk na výšku režimu](handling-rotation-images/02.png)](handling-rotation-images/02.png)
+[![Snímky obrazovky na výšku a šířku tisk na výšku režimu](handling-rotation-images/02.png)](handling-rotation-images/02.png#lightbox)
 
-<a name="Drawable_Resources" />
 
 ### <a name="drawable-resources"></a>Drawable prostředky
 
@@ -126,15 +121,13 @@ Předpokládejme například, že projekt zahrnuje obrázek s názvem Monkey.png
 
 Další Předpokládejme, že jinou verzi **Monkey.png** je zahrnuta v části **prostředky/drawable krajině**. Jenom jako se soubory rozložení, když je zařízení otáčet, drawable změn pro danou orientaci, jak je uvedeno níže:
 
-[ ![Jinou verzi Monkey.png ukazuje na výšku a šířku režimy](handling-rotation-images/03.png)](handling-rotation-images/03.png)
+[![Jinou verzi Monkey.png ukazuje na výšku a šířku režimy](handling-rotation-images/03.png)](handling-rotation-images/03.png#lightbox)
 
-<a name="Handling_Rotation_Programmatically" />
 
 ## <a name="handling-rotation-programmatically"></a>Zpracování otočení prostřednictvím kódu programu
 
 Někdy jsme definovali rozložení v kódu. Tato situace může nastat z různých důvodů, včetně technická omezení, developer předvoleb atd. Když jsme přidání ovládacích prvků prostřednictvím kódu programu, aplikace musí ručně účtu pro orientace zařízení, které se zpracovávají automaticky, když budeme používat prostředky XML.
 
-<a name="Adding_Controls_in_Code" />
 
 ### <a name="adding-controls-in-code"></a>Přidání ovládacích prvků v kódu
 
@@ -178,9 +171,8 @@ protected override void OnCreate (Bundle bundle)
 
 Tento kód vytvoří instanci `RelativeLayout` třídy a nastaví její `LayoutParameters` vlastnost. `LayoutParams` Třída představuje způsob pro Android zapouzdřením, jak jsou opakovaně použitelné způsobem umístěný ovládací prvky. Po vytvoření instance rozložení ovládací prvky můžete vytvořit a přidat k němu. Ovládací prvky mít také `LayoutParameters`, například `TextView` v tomto příkladu. Po `TextView` je vytvořen, jejím přidáním do `RelativeLayout` a nastavení `RelativeLayout` jako výsledky zobrazení obsahu v zobrazení aplikace `TextView` znázorněné:
 
-[ ![Tlačítko čítač přírůstek zobrazené v režimech na výšku a šířku](handling-rotation-images/04.png)](handling-rotation-images/04.png)
+[![Tlačítko čítač přírůstek zobrazené v režimech na výšku a šířku](handling-rotation-images/04.png)](handling-rotation-images/04.png#lightbox)
 
-<a name="Detecting_Orientation_in_Code" />
 
 ### <a name="detecting-orientation-in-code"></a>Zjišťování orientaci v kódu
 
@@ -226,9 +218,8 @@ protected override void OnCreate (Bundle bundle)
 
 Nastaví tento kód `TextView` být umístěné 100 pixelů z horní pravé obrazovce automaticky animace do nového rozložení, když otočen na šířku, jak je vidět tady:
 
-[ ![Zobrazení stavu se zachová, i mezi režimy na výšku a šířku](handling-rotation-images/05.png)](handling-rotation-images/05.png)
+[![Zobrazení stavu se zachová, i mezi režimy na výšku a šířku](handling-rotation-images/05.png)](handling-rotation-images/05.png#lightbox)
 
-<a name="Preventing_Activity_Restart" />
 
 ### <a name="preventing-activity-restart"></a>Brání restartování aktivity
 
@@ -292,7 +283,6 @@ Zde `TextView's` rozložení parametry jsou inicializovány pro na šířku i na
 
 Když jsme aplikaci spustit, načte Android změny uživatelského rozhraní, jak probíhá otáčení zařízení a nerestartuje aktivity.
 
-<a name="Preventing_Activity_Restart_for_Declarative_Layouts" />
 
 ## <a name="preventing-activity-restart-for-declarative-layouts"></a>Brání restartování aktivity pro deklarativní rozložení
 
@@ -300,7 +290,6 @@ Aktivita restartování způsobené otáčení zařízení je možné zabránit 
 
 K tomu, jsme postupujte stejným způsobem, který používáme programový rozložení. Jednoduše nastavit `ConfigurationChanges` v `ActivityAttribute`, jako jsme to udělali `CodeLayoutActivity` dříve. Kód, který potřebuje ke spuštění pro změnu orientace lze implementovat znovu `OnConfigurationChanged` metoda.
 
-<a name="Maintaining_State_During_Orientation_Changes" />
 
 ## <a name="maintaining-state-during-orientation-changes"></a>Zachování stavu během změny orientace
 
@@ -308,7 +297,6 @@ Zda zpracování otočení deklarativně nebo programově, by měla implementova
 
 Další informace o zachování stavu v Android, najdete v části [životního cyklu aktivity](~/android/app-fundamentals/activity-lifecycle/index.md) průvodce.
 
-<a name="Summary" />
 
 ## <a name="summary"></a>Souhrn
 

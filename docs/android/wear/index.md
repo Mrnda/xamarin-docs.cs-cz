@@ -1,5 +1,5 @@
 ---
-title: "Android opotřebení"
+title: Android Wear
 description: "Vytváření aplikací pro zařízení se systémem Android wearable."
 ms.topic: article
 ms.prod: xamarin
@@ -8,15 +8,13 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 1dad5e859efdf69e7003b45724f718b16faffd62
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ac83b74f39497333de7aa80079784adf61bf2e65
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
-# <a name="android-wear"></a>Android opotřebení
-
-## <a name="android-wear"></a>Android opotřebení
+# <a name="android-wear"></a>Android Wear
 
 Android opotřebení je verze systému Android, která je určená pro wearable zařízení, jako jsou Chytré sleduje. Tato část obsahuje pokyny k instalaci a konfiguraci nástroje potřebné pro vývoj a opotřebením motoru, podrobný návod pro vytvoření vaší první opotřebení ze zařízení a seznam vzorků, které může být pro vytvoření vlastního nosit aplikace.
 
@@ -28,11 +26,11 @@ Zavádí Android nosit, popisuje postup instalace a konfigurace počítače pro 
 
 Vysvětluje Android opotřebení specifické pro ovládací prvky a poskytuje odkazy na vzorků, které ukazují, jak používat tyto ovládací prvky.
 
-##  <a name="platform-featuresandroidwearplatformindexmd"></a>[Funkce](~/android/wear/platform/index.md)
+##  <a name="platform-featuresandroidwearplatformindexmd"></a>[Funkce platformy](~/android/wear/platform/index.md)
 
 Dokumenty v této části se týkají funkcí, které jsou specifické pro Android nosit. Najdete v tématu, která popisuje, jak vytvořit WatchFace.
 
-##  <a name="screen-sizesandroidwearscreen-sizesmd"></a>[Velikost obrazovky](~/android/wear/screen-sizes.md)
+##  <a name="screen-sizesandroidwearscreen-sizesmd"></a>[Velikosti obrazovky](~/android/wear/screen-sizes.md)
 
 Zobrazte náhled a optimalizovat uživatelského rozhraní pro velikost dostupné obrazovky.
 
@@ -41,7 +39,6 @@ Zobrazte náhled a optimalizovat uživatelského rozhraní pro velikost dostupn�
 Vysvětluje, jak nasadit aplikace pro Android nosit do zařízení se systémem Android nosit nebo emulátoru Android, které jsou nakonfigurované pro opotřebením motoru. Zahrnuje také ladění tipy a informace o tom, jak nastavit Bluetooth připojení mezi vaším počítačem vývoj a zařízení se systémem Android.
 
 
-<a name="Samples" />
 
 ## <a name="samples"></a>Ukázky kódu
 
@@ -137,21 +134,21 @@ Zkontrolujte si toto video podporu odkazy, které popisují Xamarin.Android s op
 <table align="center" border="0" cellpadding="1" cellspacing="1">
     <tr>
         <td>
-        <a href="http://blog.xamarin.com/webinar-recording-android-l-and-so-much-more/"><img src="Images/video-android-l.png" border="0"/ /></td>
+        <a href="http://blog.xamarin.com/webinar-recording-android-l-and-so-much-more/"><img src="Images/video-android-l.png" border="0" /></td>
         <td><a href="http://blog.xamarin.com/webinar-recording-android-l-and-so-much-more/">Android L a mnoho dalších</a>
         <br />
 Android Developer L Preview zavedl nadbytku nových rozhraní API pro vývojáře, abyste mohli využívat, včetně návrhu materiálu, oznámení a nové animace a další.</td>
     </tr>
     <tr>
         <td>
-        <a href="https://www.youtube.com/watch?v=80H8tXByZQc"><img src="Images/video-eyes-ears.png" border="0" / /></td>
+        <a href="https://www.youtube.com/watch?v=80H8tXByZQc"><img src="Images/video-eyes-ears.png" border="0" /></td>
         <td><a href="https://www.youtube.com/watch?v=80H8tXByZQc">C# je v slyšíme a Moje očí: pohotovostní Google a Android opotřebení</a>
         <br />
 Wearable computing jevily jako něco z budoucí (nebo miniaplikaci Inspector díl), ale mnoho uživatelů jsou již osvojují budoucí ještě dnes! C# vývojáři vědět toto a již nástroje a dovednosti pro plně využívat wearable zařízení (z měnícím 2014).</td>
     </tr>
     <tr>
         <td>
-        <a href="https://www.youtube.com/watch?v=Gpqc2XZIQfU"><img src="Images/video-whats-new.png" border="0" / /></td>
+        <a href="https://www.youtube.com/watch?v=Gpqc2XZIQfU"><img src="Images/video-whats-new.png" border="0" /></td>
         <td><a href="https://www.youtube.com/watch?v=Gpqc2XZIQfU">Co je nového v Xamarin.Android</a>
         <br />
         <i>Android L, Android a opotřebením motoru, Android TV, Android automaticky, podstatným návrhu a obrázky; Co znamená to pro vás jako vývojář Xamarin? </i> z momentální 2014.</td>

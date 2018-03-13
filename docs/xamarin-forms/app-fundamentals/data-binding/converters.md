@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: aaa4c93eda9edb0eb5d568b3470c02352bdb7467
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: df6a0afe18b6929f8e03ce4d9bf35198034508bf
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="binding-value-converters"></a>Převodníky hodnot vazby
 
@@ -95,7 +95,7 @@ Pokud hodnota převaděč slouží na různých stránkách aplikace, můžete v
 
 **Povolit tlačítka** stránky ukazuje běžné potřebují, kdy `Button` provádí operace založené na text, který uživatel zadá do `Entry` zobrazení. Pokud nic zadali do `Entry`, `Button` by mělo být zakázáno. Každý `Button` obsahuje datová vazba na jeho `IsEnabled` vlastnost. Zdroj datové vazby `Length` vlastnost `Text` vlastnosti k odpovídající položce `Entry`. Pokud tento `Length` vlastnost není převaděč hodnoty 0, vrátí `true` a `Button` zapnutá:
 
-[![Povolit tlačítka](converters-images/enablebuttons-small.png "povolit tlačítka")](converters-images/enablebuttons-large.png "povolit tlačítka")
+[![Povolit tlačítka](converters-images/enablebuttons-small.png "povolit tlačítka")](converters-images/enablebuttons-large.png#lightbox "povolit tlačítka")
 
 Všimněte si, že `Text` vlastnost v každé `Entry` je inicializován na prázdný řetězec. `Text` Vlastnost je `null` ve výchozím nastavení a data vazba nebude fungovat v takovém případě.
 
@@ -236,7 +236,7 @@ public class BoolToObjectConverter<T> : IValueConverter
 
 Během posledních tří `Switch` a `Label` páry obecné argument je nastaven na `Style`a celý `Style` objekty jsou k dispozici pro hodnoty `TrueObject` a `FalseObject`. Toto přepsání implicitní styl pro `Label` nastavit slovník prostředků, takže vlastnosti v daném stylu explicitně přiřazené k `Label`. Přepnutím `Switch` způsobí, že odpovídající `Label` , aby odrážely změny:
 
-[![Přepnout indikátory](converters-images/switchindicators-small.png "Přepnout indikátory")](converters-images/switchindicators-large.png "přepínač ukazatele")
+[![Přepnout indikátory](converters-images/switchindicators-small.png "Přepnout indikátory")](converters-images/switchindicators-large.png#lightbox "přepínač ukazatele")
 
 Je také možné použít [ `Triggers` ](~/xamarin-forms/app-fundamentals/triggers.md) při implementaci podobné změn v uživatelském rozhraní založené na jiné zobrazení.
 
@@ -460,7 +460,7 @@ Hodnoty `Red` a `Green` s se zobrazí vlastnosti `Binding` – rozšíření zna
 
 Tady je výsledek:
 
-[![Výběr barvy RGB](converters-images/rgbcolorselector-small.png "selektor barva RGB")](converters-images/rgbcolorselector-large.png "selektor barva RGB")
+[![Výběr barvy RGB](converters-images/rgbcolorselector-small.png "selektor barva RGB")](converters-images/rgbcolorselector-large.png#lightbox "selektor barva RGB")
 
 
 ## <a name="related-links"></a>Související odkazy

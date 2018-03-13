@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/16/2017
-ms.openlocfilehash: a95b49fa3f090339773233dada46a14e69c8bb43
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 798bb2b15534a620acbe76080e171af1a548ac25
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ios-platform-specifics"></a>iOS specifika platformy
 
@@ -180,10 +180,10 @@ On<iOS>().SetUseSafeArea(true);
 
 Výsledkem je, že obsah stránky je možné umístit na oblast obrazovky, který je bezpečný pro všechny Iphony:
 
-[![](ios-images/safe-area-layout.png "Bezpečné oblasti rozložení průvodce")](ios-images/safe-area-layout-large.png "Průvodce oblast pro rozložení")
+[![](ios-images/safe-area-layout.png "Bezpečné oblasti rozložení průvodce")](ios-images/safe-area-layout-large.png#lightbox "Průvodce oblast pro rozložení")
 
 > [!NOTE]
-> **Poznámka:**: bezpečné oblasti určené Apple se používá v Xamarin.Forms nastavit [ `Page.Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Padding/) vlastnost a potlačí všechny předchozí hodnoty této vlastnosti, které byly nastaveny.
+> K nastavení je použit v Xamarin.Forms bezpečné oblasti určené Apple [ `Page.Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Padding/) vlastnost a potlačí všechny předchozí hodnoty této vlastnosti, které byly nastaveny.
 
 Bezpečné oblasti lze přizpůsobit načtením jeho [ `Thickness` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Thickness/) hodnotu s `Page.SafeAreaInsets` metoda z [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/) oboru názvů. Potom ji můžete upravit jako požadované a znovu přiřazen `Padding` vlastnost v konstruktoru stránky nebo [ `OnAppearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnAppearing()/) přepsání:
 
@@ -385,7 +385,7 @@ switch (picker.On<iOS>().UpdateMode())
 
 Výsledkem je, že zadané `UpdateMode` se použije na [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/), který určuje, kdy dojde k výběr položek:
 
-[![](ios-images/picker-updatemode.png "Výběr UpdateMode specifické pro platformu")](ios-images/picker-updatemode-large.png "Picker UpdateMode Plaform-Specific")
+[![](ios-images/picker-updatemode.png "Výběr UpdateMode specifické pro platformu")](ios-images/picker-updatemode-large.png#lightbox "Picker UpdateMode Plaform-Specific")
 
 <a name="set_status_bar_visibility" />
 
@@ -468,7 +468,7 @@ scrollView.On<iOS>().SetShouldDelayContentTouches(!scrollView.On<iOS>().ShouldDe
 
 Výsledkem je, že [ `ScrollView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) můžete zakázat zpozdit přijetí úpravy obsahu, takže v tomto scénáři [ `Slider` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/) obdrží gesta místo [ `Detail` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Detail/) stránky [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/):
 
-[![](ios-images/scrollview-delay-content-touches.png "Obsah ScrollView zpoždění dotykem specifické pro platformu")](ios-images/scrollview-delay-content-touches-large.png "ScrollView Delay Content Touches Plaform-Specific")
+[![](ios-images/scrollview-delay-content-touches.png "Obsah ScrollView zpoždění dotykem specifické pro platformu")](ios-images/scrollview-delay-content-touches-large.png#lightbox "ScrollView Delay Content Touches Plaform-Specific")
 
 ## <a name="summary"></a>Souhrn
 
@@ -477,6 +477,6 @@ Tento článek ukázal, jak používat iOS platformy – podrobnosti, které jso
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Vytváření specifika platformy](~/xamarin-forms/platform/platform-specifics/creating.md)
+- [Vytváření specifik platforem](~/xamarin-forms/platform/platform-specifics/creating.md)
 - [PlatformSpecifics (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
 - [iOSSpecific](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/)

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: d0234cad243e523716d95f467e3fe44c50a182d5
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: c60927593f062c8ac9694d889ffbf581c09bab82
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="connecting-to-the-mac"></a>Připojení k počítači Mac
 
@@ -36,7 +36,7 @@ Připojení k počítači Mac se skládá z několika procesů pro různé čás
 
 Následující diagram ukazuje jednoduchý přehled pracovní postup vývoje Xamarin.iOS:
 
-[![pracovní postup vývoje pro iOS](images/xma2.png)](images/xma2.png)
+[![pracovní postup vývoje pro iOS](images/xma2.png)](images/xma2.png#lightbox)
 
 > [!IMPORTANT]
 >  Visual Studio ve skutečnosti spouští samostatný proces MSBuild k sestavení projektů. Tento proces vytvoří nové připojení k počítači Mac, což znamená, že se ve skutečnosti dvě připojení SSH ze systému Windows pro Mac při sestavení sady Visual Studio. Sestavování z [příkazového řádku](#commandline) pouze vytvoří jeden proces MSBuild. Pro jednoduchost tohoto diagramu jsou reprezentované pomocí jedné šipku jednoduše všechna připojení.
@@ -70,11 +70,11 @@ Pokud chcete nastavit hostitele Mac, je nutné povolit komunikaci mezi rozšíř
 
 1. Otevřete *Spotlight* (**⌘ místo**) a vyhledejte *vzdálené přihlášení* a pak vyberte *sdílení* výsledek. Otevře se *předvolbách systému* na *sdílení* panelu:
 
-   [![Pomocí vyhledávání Spotlight pro vzdálené přihlášení](images/spotlight.png)](images/spotlight.png)
+   [![Pomocí vyhledávání Spotlight pro vzdálené přihlášení](images/spotlight.png)](images/spotlight.png#lightbox)
 
 2. Značky *vzdálené přihlášení* možnost *služby* seznamu na levé straně umožňující Xamarin pro Visual Studio pro připojení k počítači Mac:
 
-   [![Značky v seznamu služeb možnost pro vzdálené přihlášení](images/sharing.png)](images/sharing.png)
+   [![Značky v seznamu služeb možnost pro vzdálené přihlášení](images/sharing.png)](images/sharing.png#lightbox)
 
 3. Ujistěte se, že *vzdálené přihlášení* je nastaveno na úroveň přístupu pro *všechny* uživatele nebo že vaše uživatelské jméno Mac nebo skupina je obsažena v seznamu povolených uživatelů v seznamu na pravé straně.
 
@@ -94,21 +94,21 @@ Existují dva způsoby, jak se připojit k hostiteli sestavení Mac:
 
 Na panelu nástrojů iOS:
 
-[![Panel nástrojů iOS](images/image1.png)](images/image1.png)
+[![Panel nástrojů iOS](images/image1.png)](images/image1.png#lightbox)
 
 Nebo procházením **nástroje > Možnosti** v sadě Visual Studio, výběr **Xamarin > Nastavení iOS** a kliknutím na **najít Xamarin Mac Agent** tlačítko:
 
-[![Hledání Xamarin Mac Agent](images/image2.png)](images/image2.png)
+[![Hledání Xamarin Mac Agent](images/image2.png)](images/image2.png#lightbox)
 
 Navigace v obou případech povede k **Mac Agent** dialogovém okně, které jsou znázorněné dole:
 
-[![Dialogové okno Mac Agent](images/image3.png)](images/image3.png)
+[![Dialogové okno Mac Agent](images/image3.png)](images/image3.png#lightbox)
 
 To se zobrazí seznam všech počítačů, které mají buď byl dříve připojen a ukládají jako známé počítače nebo počítače, které jsou k dispozici pro *vzdálené přihlášení*.
 
 Vyberte Macu dvojím kliknutím na připojení k němu. Při prvním připojení k Mac, zobrazí se výzva k zadáním svých přihlašovacích údajů uživatele Mac povolit vzdálené připojení:
 
-[![Zadejte přihlašovací údaje pro Mac](images/image4.png)](images/image4.png)
+[![Zadejte přihlašovací údaje pro Mac](images/image4.png)](images/image4.png#lightbox)
 
 Agent použije tyto přihlašovací údaje k vytvoření nového připojení SSH pro Mac. Pokud se aktivace podaří, vytvoří se klíč SSH a bude [zaregistrován](#commandline) v `authorized_keys` soubor na tomto Mac. V následných připojeních bude používat agent soubor uživatelského jména a klíče pro připojení k hostiteli naposledy připojených známé sestavení.
 
@@ -119,13 +119,13 @@ Agent použije tyto přihlašovací údaje k vytvoření nového připojení SSH
 
 Při připojení byl úspěšně proveden, se zobrazí v dialogovém okně pro výběr hostitele s **připojené** Ikona vedle sebe, jak je uvedeno dále:
 
-[![Dialogové okno pro výběr hostitele připojené Ikona vedle sebe](images/image6.png)](images/image6.png)
+[![Dialogové okno pro výběr hostitele připojené Ikona vedle sebe](images/image6.png)](images/image6.png#lightbox)
 
 V jednom okamžiku může být pouze jeden připojený Mac.
 
 Každý počítač v seznamu, zda připojeno nebo, jinak se zobrazí z kontextové nabídky na klikněte pravým tlačítkem, což umožňuje **připojit**, **odpojení**, nebo **zapomněli Mac** jako potřeba:
 
-[![Připojení, odpojení nebo Zapomenout Tento Mac kontextové nabídky](images/image7.png)](images/image7.png)
+[![Připojení, odpojení nebo Zapomenout Tento Mac kontextové nabídky](images/image7.png)](images/image7.png#lightbox)
 
 Pokud zvolíte možnost **zapomněli Tento Mac**, budete muset znovu zadat pověření pro připojení k němu znovu.
 
@@ -137,23 +137,23 @@ V některých případech můžete chtít ručně přidat algoritmu Mac, pokud n
 
 1. Najít IP adresu počítače Mac procházením buď **předvolbách systému > Sdílení > vzdálené přihlášení** na počítači Mac:
 
-   [![IP adresa Mac je v předvolbách systému](images/image8.png)](images/image8.png)
+   [![IP adresa Mac je v předvolbách systému](images/image8.png)](images/image8.png#lightbox)
 
    Nebo, pokud byste radši chtěli použít příkazového řádku můžete získat IP adresu zadáním `ipconfig getifaddr en0` do Terminálové (Všimněte si, že v závislosti na typu připojení proměnná může být `en1`, `en2` atd.):
 
-   [![IP adresa v terminálu aplikaci](images/image9.png)](images/image9.png)
+   [![IP adresa v terminálu aplikaci](images/image9.png)](images/image9.png#lightbox)
 
 2. Návratový k sadě Visual Studio a v dialogovém okně Výběr hostitele, vyberte **Mac. přidat...** :
 
-   [![Dialogové okno pro výběr hostitele](images/image10.png)](images/image10.png)
+   [![Dialogové okno pro výběr hostitele](images/image10.png)](images/image10.png#lightbox)
 
 3. Zadejte IP adresu můžete Mac do dialogu přidat Mac a klikněte na tlačítko **přidat**:
 
-   [![Zadejte IP adresu Mac do dialogu přidat Mac](images/image11.png)](images/image11.png)
+   [![Zadejte IP adresu Mac do dialogu přidat Mac](images/image11.png)](images/image11.png#lightbox)
 
 4. Nakonec zadejte uživatelské jméno (ne celé jméno) účtu správce Mac a odpovídající heslo:
 
-   [![Zadejte uživatelské jméno a heslo](images/image12.png)](images/image12.png)
+   [![Zadejte uživatelské jméno a heslo](images/image12.png)](images/image12.png#lightbox)
 
 Po kliknutí na tlačítko **přihlášení**, Visual Studio se přihlásit do počítače Mac pomocí protokolu SSH a přidá tento Mac jako známé počítače.
 

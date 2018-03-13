@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 4e640979305a568649c59f6c75033296153b99de
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 838a11f078d735759eda1d45a082ccbad51e2779
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="touch-in-ios"></a>Touch v iOS
 
@@ -23,7 +23,7 @@ Ovládací prvky v `UIKit` – tyto rozčleněné z UIControl – jsou tak závi
 
 Ale řadu zobrazení `UIKit` nemají dotykového ovládání, které jsou ve výchozím nastavení povolené. Existují dva způsoby, jak povolit dotykového ovládání v ovládacím prvku. První způsob je zaškrtnutím políčka Povolit interakci uživatele v panelu pro vlastnost IOS Designer, jak je znázorněno na následujícím snímku obrazovky:
 
- [ ![](touch-in-ios-images/image1.png "Zaškrtněte políčko Povolit interakci uživatele v vlastnost pro IOS návrháře")](touch-in-ios-images/image1.png)
+ [![](touch-in-ios-images/image1.png "Zaškrtněte políčko Povolit interakci uživatele v vlastnost pro IOS návrháře")](touch-in-ios-images/image1.png#lightbox)
 
 Používáme řadič můžete také nastavit `UserInteractionEnabled` vlastnost na hodnotu true na `UIView` třídy. To je potřeba, pokud uživatelské rozhraní se vytvoří v kódu.
 
@@ -81,7 +81,7 @@ public override void TouchesBegan (NSSet touches, UIEvent evt)
 
 Na ovládací prvky ve výchozím nastavení není povoleno více touch. Více touch lze povolit v iOS Designer, jak vidíte na následujícím snímku obrazovky:
 
- [ ![](touch-in-ios-images/image2.png "Více touch povolené v iOS návrháře")](touch-in-ios-images/image2.png)
+ [![](touch-in-ios-images/image2.png "Více touch povolené v iOS návrháře")](touch-in-ios-images/image2.png#lightbox)
 
 Je také možné nastavit více touch prostřednictvím kódu programu nastavením `MultipleTouchEnabled` vlastnost, jak je znázorněno na následujícím řádku kódu:
 

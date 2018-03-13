@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: f0201e114f55e0610aceb68f98fae60a801afc68
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f943d6b88d2fd7f38759fb32ecb612e102266657
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-collection-views"></a>Práce se zobrazeními kolekce
 
@@ -20,7 +20,7 @@ _Tento článek se zabývá navrhování a práce se zobrazeními kolekce uvnit�
 
 Zobrazení kolekce povolit pro skupinu obsahu, který se má zobrazit pomocí libovolného rozložení. Pomocí integrovanou podporu, umožňují pro snadné vytváření rozložení mřížky nebo lineární zároveň také podporuje vlastní rozložení.
 
-[ ![](collection-views-images/collection01.png "Ukázkové zobrazení kolekce")](collection-views-images/collection01.png)
+[![](collection-views-images/collection01.png "Ukázkové zobrazení kolekce")](collection-views-images/collection01.png#lightbox)
 
 Zobrazení kolekce udržuje kolekce položek použití delegáta a zdroj dat k zajištění interakce s uživatelem a obsah, kolekce. Vzhledem k tomu, že zobrazení kolekce je založena na subsystému rozložení, která je nezávislá samotném zobrazení, poskytuje rozložení můžete snadno změnit prezentaci zobrazení kolekce dat na průběžně.
 
@@ -103,36 +103,36 @@ Pojďme postupujte takto:
 1. V **Průzkumníku řešení**, dvakrát klikněte `Main.storyboard` souboru a otevře ji v iOS Designer.
 1. Přidání zobrazení bitové kopie, štítek a tlačítko pro existující zobrazit a nakonfigurovat je pro vypadat následovně: 
 
-    [ ![](collection-views-images/collection02.png "Ukázka rozložení")](collection-views-images/collection02.png)
+    [![](collection-views-images/collection02.png "Ukázka rozložení")](collection-views-images/collection02.png#lightbox)
 1. Přiřazení **název** k zobrazení bitové kopie a název v **pomůcky karta** z **Explorer vlastnosti**. Příklad: 
 
-    [ ![](collection-views-images/collection03.png "Název nastavení")](collection-views-images/collection03.png)
+    [![](collection-views-images/collection03.png "Název nastavení")](collection-views-images/collection03.png#lightbox)
 1. V dalším kroku přetažením řadič zobrazení kolekce na scénáři: 
 
-    [ ![](collection-views-images/collection04.png "Řadič zobrazení kolekce")](collection-views-images/collection04.png)
+    [![](collection-views-images/collection04.png "Řadič zobrazení kolekce")](collection-views-images/collection04.png#lightbox)
 1. Ovládací prvek přetažení z tlačítka řadiče zobrazení kolekcí a vyberte **Push** z místní nabídce: 
 
-    [ ![](collection-views-images/collection05.png "Vyberte nabízené automaticky otevřeném okně.")](collection-views-images/collection05.png)
+    [![](collection-views-images/collection05.png "Vyberte nabízené automaticky otevřeném okně.")](collection-views-images/collection05.png#lightbox)
 1. Když se aplikace spustí, bude zobrazení kolekce se zobrazí pokaždé, když uživatel klikne na tlačítko.
 1. Vyberte zobrazení kolekce a zadejte následující hodnoty v **kartu rozložení** z **Explorer vlastnosti**: 
 
-    [ ![](collection-views-images/collection06.png "Průzkumník vlastnosti")](collection-views-images/collection06.png)
+    [![](collection-views-images/collection06.png "Průzkumník vlastnosti")](collection-views-images/collection06.png#lightbox)
 1. Tato volba určuje velikost jednotlivých buněk a mezi buněk a zobrazení kolekce vnějšího okraje ohraničení.
 1. Vyberte řadiče zobrazení kolekce a nastavte své třídy na `CityCollectionViewController` v **pomůcky karta**: 
 
-    [ ![](collection-views-images/collection07.png "Nastavit třídy na CityCollectionViewController")](collection-views-images/collection07.png)
+    [![](collection-views-images/collection07.png "Nastavit třídy na CityCollectionViewController")](collection-views-images/collection07.png#lightbox)
 1. Vyberte zobrazení kolekce a nastavte své třídy na `CityCollectionView` v **pomůcky karta**: 
 
-    [ ![](collection-views-images/collection08.png "Nastavit třídy na CityCollectionView")](collection-views-images/collection08.png)
+    [![](collection-views-images/collection08.png "Nastavit třídy na CityCollectionView")](collection-views-images/collection08.png#lightbox)
 1. Vyberte buňku zobrazení kolekce a nastavte své třídy na `CityCollectionViewCell` v **pomůcky karta**: 
 
-    [ ![](collection-views-images/collection09.png "Nastavit třídy na CityCollectionViewCell")](collection-views-images/collection09.png)
+    [![](collection-views-images/collection09.png "Nastavit třídy na CityCollectionViewCell")](collection-views-images/collection09.png#lightbox)
 1. V **pomůcky karta** Ujistěte se, že **rozložení** je `Flow` a **směr posouvání** je `Vertical` pro zobrazení kolekce: 
 
-    [ ![](collection-views-images/collection10.png "Na kartě pomůcky")](collection-views-images/collection10.png)
+    [![](collection-views-images/collection10.png "Na kartě pomůcky")](collection-views-images/collection10.png#lightbox)
 1. Vyberte buňku zobrazení kolekce a nastavte její **Identity** k `CityCell` v **pomůcky karta**: 
 
-    [ ![](collection-views-images/collection11.png "Nastavení Identity pro CityCell")](collection-views-images/collection11.png)
+    [![](collection-views-images/collection11.png "Nastavení Identity pro CityCell")](collection-views-images/collection11.png#lightbox)
 1. Uložte provedené změny.
     
 
@@ -143,34 +143,34 @@ Pojďme postupujte takto:
 1. V **Průzkumníku řešení**, dvakrát klikněte `Main.storyboard` souboru a otevře ji v iOS Designer.
 1. Přidání zobrazení bitové kopie, štítek a tlačítko pro existující zobrazit a nakonfigurovat je pro vypadat následovně: 
 
-    [ ![](collection-views-images/collection02vs.png "Konfigurovat jeho rozložení")](collection-views-images/collection02vs.png)
+    [![](collection-views-images/collection02vs.png "Konfigurovat jeho rozložení")](collection-views-images/collection02vs.png#lightbox)
 1. Přiřazení **název** k zobrazení bitové kopie a název v **pomůcky karta** z **Explorer vlastnosti**. Příklad: 
 
-    [ ![](collection-views-images/collection03vs.png "Průzkumník vlastnosti")](collection-views-images/collection03vs.png)
+    [![](collection-views-images/collection03vs.png "Průzkumník vlastnosti")](collection-views-images/collection03vs.png#lightbox)
 1. V dalším kroku přetažením řadič zobrazení kolekce na scénáři: 
 
-    [ ![](collection-views-images/collection04vs.png "Řadič zobrazení kolekce")](collection-views-images/collection04vs.png)
+    [![](collection-views-images/collection04vs.png "Řadič zobrazení kolekce")](collection-views-images/collection04vs.png#lightbox)
 1. Ovládací prvek přetažení z tlačítka řadiče zobrazení kolekcí a vyberte **Push** z místní nabídce: 
 
-    [ ![](collection-views-images/collection05vs.png "Vyberte nabízené automaticky otevřeném okně.")](collection-views-images/collection05vs.png)
+    [![](collection-views-images/collection05vs.png "Vyberte nabízené automaticky otevřeném okně.")](collection-views-images/collection05vs.png#lightbox)
 1. Když se aplikace spustí, bude zobrazení kolekce se zobrazí pokaždé, když uživatel klikne na tlačítko.
 1. Vyberte zobrazení, kolekce a v **kartu rozložení** z **Explorer vlastnosti** zadejte **šířka** jako _361_ a  **Výška** jako _256_ 
 1. Tato volba určuje velikost jednotlivých buněk a mezi buněk a zobrazení kolekce vnějšího okraje ohraničení.
 1. Vyberte řadiče zobrazení kolekce a nastavte své třídy na `CityCollectionViewController` v **pomůcky karta**: 
 
-    [ ![](collection-views-images/collection07vs.png "Nastavit třídy na CityCollectionViewController")](collection-views-images/collection07vs.png)
+    [![](collection-views-images/collection07vs.png "Nastavit třídy na CityCollectionViewController")](collection-views-images/collection07vs.png#lightbox)
 1. Vyberte zobrazení kolekce a nastavte své třídy na `CityCollectionView` v **pomůcky karta**: 
 
-    [ ![](collection-views-images/collection08vs.png "Nastavit třídy na CityCollectionView")](collection-views-images/collection08vs.png)
+    [![](collection-views-images/collection08vs.png "Nastavit třídy na CityCollectionView")](collection-views-images/collection08vs.png#lightbox)
 1. Vyberte buňku zobrazení kolekce a nastavte své třídy na `CityCollectionViewCell` v **pomůcky karta**: 
 
-    [ ![](collection-views-images/collection09vs.png "Nastavit třídy na CityCollectionViewCell")](collection-views-images/collection09vs.png)
+    [![](collection-views-images/collection09vs.png "Nastavit třídy na CityCollectionViewCell")](collection-views-images/collection09vs.png#lightbox)
 1. V **pomůcky karta** Ujistěte se, že **rozložení** je `Flow` a **směr posouvání** je `Vertical` pro zobrazení kolekce: 
 
-    [ ![](collection-views-images/collection10vs.png "Karta Tnelze pomůcky")](collection-views-images/collection10vs.png)
+    [![](collection-views-images/collection10vs.png "Karta Tnelze pomůcky")](collection-views-images/collection10vs.png#lightbox)
 1. Vyberte buňku zobrazení kolekce a nastavte její **Identity** k `CityCell` v **pomůcky karta**: 
 
-    [ ![](collection-views-images/collection11vs.png "Nastavení Identity pro CityCell")](collection-views-images/collection11vs.png)
+    [![](collection-views-images/collection11vs.png "Nastavení Identity pro CityCell")](collection-views-images/collection11vs.png#lightbox)
 1. Uložte provedené změny.
     
 
@@ -806,17 +806,17 @@ public override void ViewWillAppear (bool animated)
 
 S vše na místě, pokud je sestavení a spuštění aplikace, hlavní je zobrazeno zobrazení s města výchozí:
 
-[ ![](collection-views-images/run01.png "Hlavní obrazovky")](collection-views-images/run01.png)
+[![](collection-views-images/run01.png "Hlavní obrazovky")](collection-views-images/run01.png#lightbox)
 
 Pokud uživatel kliknutím na **vyberte zobrazení** tlačítko zobrazení kolekce se zobrazí:
 
-[ ![](collection-views-images/run02.png "Zobrazení kolekce")](collection-views-images/run02.png)
+[![](collection-views-images/run02.png "Zobrazení kolekce")](collection-views-images/run02.png#lightbox)
 
 Všechny města, který má jeho `CanSelect` vlastnost nastavena na hodnotu `false` se zobrazí neaktivní a uživatel nebude moci zaměřit se na ni. Když uživatel označuje položku (ujistěte se, je vybraný) se zobrazuje název a používají paralaxy efekt subtlety náklon bitovou kopii v 3D.
 
 Když uživatel klikne vyberte bitovou kopii, zobrazení kolekce se zavře a hlavního zobrazení se zobrazí znovu s novou bitovou kopii:
 
-[ ![](collection-views-images/run03.png "Novou bitovou kopii na domovské obrazovce")](collection-views-images/run03.png)
+[![](collection-views-images/run03.png "Novou bitovou kopii na domovské obrazovce")](collection-views-images/run03.png#lightbox)
 
 <a name="Creating-Custom-Layout-and-Reordering-Items" />
 
@@ -837,7 +837,7 @@ Tento článek má zahrnutých navrhování a práce se zobrazeními kolekce uvn
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Ukázky tvOS](https://developer.xamarin.com/samples/tvos/all/)
+- [Ukázky pro tvOS](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS lidské rozhraní příručky](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [Průvodce programováním aplikace pro tvOS](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

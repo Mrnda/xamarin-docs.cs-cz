@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/07/2018
-ms.openlocfilehash: c1dd3495b0d7f76197126094cfd10e50d0ca760d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 415c3a5e9446c5db545b62272f3b90a9ac73e401
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="creating-a-fragment"></a>Vytváření Fragment
 
@@ -28,7 +28,7 @@ Výše uvedený kód bude narůstat zobrazení `Resource.Layout.Example_Fragment
 
 
 > [!NOTE]
-> **Poznámka:** Fragment dílčí třídy musí mít výchozí veřejný konstruktor bez argumentů.
+> Fragment dílčí třídy musí mít výchozí veřejný konstruktor bez argumentů.
 
 ## <a name="adding-a-fragment-to-an-activity"></a>Přidání fragmentu k aktivitě
 
@@ -108,7 +108,7 @@ NEBO
 Fragmenty mají své vlastní životního cyklu, který je poněkud nezávislé, ale stále ovlivněných, [životního cyklu hostování aktivity](~/android/app-fundamentals/activity-lifecycle/index.md).
 Například když aktivita pozastaví, všechny její přidružené fragmenty jsou pozastavena. Následující diagram popisuje životní cyklus Fragment.
 
-[![Vývojový diagram ilustrující Fragment životního cyklu](creating-a-fragment-images/fragment-lifecycle.png)](creating-a-fragment-images/fragment-lifecycle.png)
+[![Vývojový diagram ilustrující Fragment životního cyklu](creating-a-fragment-images/fragment-lifecycle.png)](creating-a-fragment-images/fragment-lifecycle.png#lightbox)
 
 
 ### <a name="fragment-creation-lifecycle-methods"></a>Fragment vytvoření životního cyklu metody
@@ -238,4 +238,4 @@ public override void OnCreate(Bundle savedState)
 
 Následující obrazovka ukazuje, jak tato nabídka vypadat:
 
-[![Příklad snímek obrazovky aplikace My služebních cest zobrazení položky nabídky](creating-a-fragment-images/fragment-menu-example.png)](creating-a-fragment-images/fragment-menu-example.png)
+[![Příklad snímek obrazovky aplikace My služebních cest zobrazení položky nabídky](creating-a-fragment-images/fragment-menu-example.png)](creating-a-fragment-images/fragment-menu-example.png#lightbox)

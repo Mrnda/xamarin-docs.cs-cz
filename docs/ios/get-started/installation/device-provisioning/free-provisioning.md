@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: baf1ae7d4cc533af0db482e8d7c31fc3c8b4edbf
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4e93696f8eef44030ffacbdbaa8ebcd860a402f6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="free-provisioning"></a>Volné zřizování
 
@@ -43,29 +43,29 @@ Při použití volné zřizování pro nasazení aplikace do zařízení se pomo
 2. Otevřete Xcode a přejděte do **Xcode > Předvolby**.
 3. V části **účty**, použijte  **+**  tlačítko Přidat existující ID Apple. By měl vypadat podobně jako tento snímek obrazovky:
 
-  [ ![](free-provisioning-images/launchapp1.png "Xcode předvolby účty")](free-provisioning-images/launchapp1.png)
+  [![](free-provisioning-images/launchapp1.png "Xcode předvolby účty")](free-provisioning-images/launchapp1.png#lightbox)
 
 4. Připojte zařízení iOS, které chcete nasadit do a vytvořte nový projekt iOS prázdné zobrazení jedním v Xcode. Nastavte **Team** rozevírací seznam pro Apple ID, který jste právě přidali. Musí být v podobném formátu `your name (Personal Team - your Apple ID)`:
 
-  [ ![](free-provisioning-images/launchapp2.png "Vytvořit identitu podepisování")](free-provisioning-images/launchapp2.png)
+  [![](free-provisioning-images/launchapp2.png "Vytvořit identitu podepisování")](free-provisioning-images/launchapp2.png#lightbox)
 
 5. V části **Obecné > Identity** Ujistěte se, že identifikátor balíčku shoduje _přesně_ identifikátor balíku aplikace Xamarin.iOS a ujistěte se, cíl nasazení odpovídá nebo je nižší než zařízení s iOS připojené. Tento krok je velmi důležité, protože Xcode pouze vytvoří profil pro zřizování s explicitní ID aplikace:
 
-  [![](free-provisioning-images/launchapp5.png "Vytvořit profil pro zřizování s explicitní ID aplikace")](free-provisioning-images/launchapp5.png)
+  [![](free-provisioning-images/launchapp5.png "Vytvořit profil pro zřizování s explicitní ID aplikace")](free-provisioning-images/launchapp5.png#lightbox)
 
 6. V části podpisování vyberte **automaticky spravovat podepisování** a z rozevíracího seznamu vyberte váš tým:
 
-  [![](free-provisioning-images/launchapp6.png "Vyberte automaticky spravovat podepisování a z rozevíracího seznamu vyberte váš tým")](free-provisioning-images/launchapp6.png)
+  [![](free-provisioning-images/launchapp6.png "Vyberte automaticky spravovat podepisování a z rozevíracího seznamu vyberte váš tým")](free-provisioning-images/launchapp6.png#lightbox)
 
 7. V předchozím kroku automaticky generovat zřizovací profil a podpisové identity pro vás. To můžete zobrazit kliknutím na ikonu informace vedle profilu pro zřizování:
 
-  [![](free-provisioning-images/launchapp7.png "Zobrazení profilu pro zřizování")](free-provisioning-images/launchapp7.png)
+  [![](free-provisioning-images/launchapp7.png "Zobrazení profilu pro zřizování")](free-provisioning-images/launchapp7.png#lightbox)
 
 8. K testování v Xcode, nasazení prázdné aplikace na zařízení kliknutím na tlačítko spustit.
 
 9. Vraťte se do integrovaného vývojového prostředí, se stejným zařízením napájen ze sítě a klikněte pravým tlačítkem na název projektu Xamarin.iOS otevřete **možnosti projektu** dialogové okno. Přejděte do části podepisování sady iOS a explicitně nastavit podepisování identity a profil pro zřizování:
 
-  [![](free-provisioning-images/launchapp8.png "Nastavte podepisování identity a profil pro zřizování")](free-provisioning-images/launchapp8.png)
+  [![](free-provisioning-images/launchapp8.png "Nastavte podepisování identity a profil pro zřizování")](free-provisioning-images/launchapp8.png#lightbox)
 
 Pokud nevidíte podpisové identity nebo správný profil zřizování ve vašem IDE, musíte jej restartovat.
 

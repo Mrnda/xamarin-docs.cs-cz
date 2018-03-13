@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 848db0af436ad43e07e68de4d278f641ab83136d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c806eb51be5f585f2c94b438f6ca31a70aaa7551
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough--using-touch-in-ios"></a>Návod – pomocí Touch v iOS
 
@@ -24,9 +24,11 @@ Tento návod ukazuje, jak napsat kód, který reaguje na různé druhy událost�
 Každá část obsahuje pokyny pro zápis kódu od začátku.
 [Spuštění ukázkového kódu](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/Touch_start) již obsahuje kompletní scénáře a nabídky obrazovky:
 
- [ ![](ios-touch-walkthrough-images/image3.png "Ukázka zahrnuje obrazovky nabídky")](ios-touch-walkthrough-images/image3.png)
+ [![](ios-touch-walkthrough-images/image3.png "Ukázka zahrnuje obrazovky nabídky")](ios-touch-walkthrough-images/image3.png#lightbox)
 
 Postupujte podle pokynů níže přidejte kód do scénáře a další informace o různých typech touch události, které jsou k dispozici v iOS. Můžete taky otevřít [dokončení ukázkové](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/Touch_final) zobrazíte vše funguje.
+
+<a name="Touch_Samples"/>
 
 ## <a name="touch-samples"></a>Touch – ukázky
 
@@ -35,7 +37,7 @@ V této ukázce jsme se ukazují některé touch rozhraní API. Použijte násle
 
 1. Otevřete projekt **Touch_Start**. Nejprve spusťte projekt zajistěte, aby vše, co je v pořádku a touch **Touch ukázky** tlačítko. (I když bude fungovat žádné tlačítek) byste měli vidět obrazovky, který je podobný následujícímu:
     
-    [![](ios-touch-walkthrough-images/image4.png "Ukázkovou aplikaci spustit s mimo pracovní tlačítka")](ios-touch-walkthrough-images/image4.png)
+    [![](ios-touch-walkthrough-images/image4.png "Ukázkovou aplikaci spustit s mimo pracovní tlačítka")](ios-touch-walkthrough-images/image4.png#lightbox)
 
 
 1. Upravte soubor **TouchViewController.cs** a přidejte následující proměnné na dvě instance do třídy `TouchViewController`:
@@ -166,9 +168,9 @@ V této ukázce jsme se ukazují některé touch rozhraní API. Použijte násle
 
 1. Na obrazovce Touch ukázky v tomto okamžiku je dokončena. Všimněte si, jak na obrazovce změní, když budete používat s jednotlivými bitové kopie, jak je znázorněno na následujícím snímku obrazovky:
         
-    [![](ios-touch-walkthrough-images/image4.png "Počáteční obrazovky aplikace")](ios-touch-walkthrough-images/image4.png)
+    [![](ios-touch-walkthrough-images/image4.png "Počáteční obrazovky aplikace")](ios-touch-walkthrough-images/image4.png#lightbox)
     
-    [![](ios-touch-walkthrough-images/image5.png "Na obrazovce po uživatel nastavuje tažením tlačítka")](ios-touch-walkthrough-images/image5.png)
+    [![](ios-touch-walkthrough-images/image5.png "Na obrazovce po uživatel nastavuje tažením tlačítka")](ios-touch-walkthrough-images/image5.png#lightbox)
  
 
 <a name="Gesture_Recognizer_Samples" />
@@ -183,7 +185,7 @@ V této části jsme se zbavit touch události a ukazují, jak použít následu
 
 Pokud spustíte [spuštění ukázkového kódu](https://developer.xamarin.com/samples/monotouch/ApplicationFundamentals/Touch_start) a klikněte na **ukázky pro rozpoznávání gesto** tlačítko, byste měli vidět následující obrazovka:
 
- [ ![](ios-touch-walkthrough-images/image6.png "Kliknutím na tlačítko ukázky pro rozpoznávání gesto zobrazí tuto obrazovku")](ios-touch-walkthrough-images/image6.png)
+ [![](ios-touch-walkthrough-images/image6.png "Kliknutím na tlačítko ukázky pro rozpoznávání gesto zobrazí tuto obrazovku")](ios-touch-walkthrough-images/image6.png#lightbox)
 
 Postupujte podle těchto kroků k implementaci gesto rozpoznávání:
 
@@ -305,15 +307,17 @@ Všimněte si, jsme přiřadit cíl gesto ve formě metodu `HandleDrag` – tato
 1. Spusťte aplikaci a interakci s dvě bitové kopie.
 Na následujícím snímku obrazovky je příkladem tyto akce:
     
-    [![](ios-touch-walkthrough-images/image7.png "Tento snímek obrazovky ukazuje interakce přetažení")](ios-touch-walkthrough-images/image7.png)
+    [![](ios-touch-walkthrough-images/image7.png "Tento snímek obrazovky ukazuje interakce přetažení")](ios-touch-walkthrough-images/image7.png#lightbox)
 
 
+
+<a name="Custom_Gesture_Recognizer"/>
 
 ## <a name="custom-gesture-recognizer"></a>Pro vlastní gesto rozpoznávání
 
 V této části použijeme koncepty z předchozí části k sestavení pro rozpoznávání vlastní gesto. Pro vlastní gesto rozpoznávání bude podtřídy `UIGestureRecognizer`, bude rozpoznat když uživatel nakreslí "V" na obrazovce a potom přepněte rastrový obrázek. Na následujícím snímku obrazovky je příklad této obrazovce:
 
- [ ![](ios-touch-walkthrough-images/image8.png "Aplikaci rozpozná, když uživatel na obrazovce nakreslí "V"")](ios-touch-walkthrough-images/image8.png)
+ [![](ios-touch-walkthrough-images/image8.png "Aplikaci rozpozná, když uživatel na obrazovce nakreslí "V"")](ios-touch-walkthrough-images/image8.png#lightbox)
 
 Postupujte podle těchto kroků můžete vytvořit vlastní gesto rozpoznávání:
 
@@ -490,9 +494,9 @@ Třída teď můžete začít pracovat, při příštím uživatel pracuje s apl
 
 1. Spusťte aplikaci a zkuste kreslení "V" na obrazovce. Měli byste vidět, že se obrázek zobrazuje změny, jak je vidět na následujících snímcích obrazovky:
     
-    [![](ios-touch-walkthrough-images/image9.png "Tlačítko zaškrtnutí")](ios-touch-walkthrough-images/image9.png)
+    [![](ios-touch-walkthrough-images/image9.png "Tlačítko zaškrtnutí")](ios-touch-walkthrough-images/image9.png#lightbox)
     
-    [![](ios-touch-walkthrough-images/image10.png "Tlačítko nezaškrtnuto")](ios-touch-walkthrough-images/image10.png)
+    [![](ios-touch-walkthrough-images/image10.png "Tlačítko nezaškrtnuto")](ios-touch-walkthrough-images/image10.png#lightbox)
 
 
 

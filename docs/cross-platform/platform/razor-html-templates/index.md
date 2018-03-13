@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 02/18/2018
-ms.openlocfilehash: 7e4d1cab532a5c81da1dfc47df33aa0628c7f6c6
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5c69b8e71cac5d9f0385728ca75a5f311cb24fc0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="building-html-views-using-razor-templates"></a>Vytváření zobrazení HTML pomocí šablon Razor
 
@@ -34,7 +34,7 @@ Xamarin poskytuje úplný přístup k základní platformu rozhraní API na iOS 
 
 Zobrazení HTML v ovládacím prvku UIWebView v Xamarin.iOS trvá i po zadání několika řádků kódu:
 
-```
+```csharp
 var webView = new UIWebView (View.Bounds);
 View.AddSubview(webView);
 string contentDirectoryPath = Path.Combine (NSBundle.MainBundle.BundlePath, "Content/");
@@ -48,7 +48,7 @@ Najdete v článku [iOS UIWebView](http://docs.xamarin.com/recipes/ios/content_c
 
 Zobrazení HTML ve webovém zobrazení ovládacího prvku s použitím Xamarin.Android se provádí v několika řádků kódu:
 
-```
+```csharp
 // webView is declared in an AXML layout file
 var webView = FindViewById<WebView> (Resource.Id.webView);
 var html = "<html><h1>Hello</h1><p>World</p></html>";
@@ -61,19 +61,19 @@ Najdete v článku [Android webové zobrazení](http://docs.xamarin.com/recipes/
 
 V obou platformy je parametr, který určuje základní adresář pro stránku HTML. Toto je umístění v systému souborů zařízení, která se používá k překladu relativní odkazy na prostředky, jako jsou bitové kopie a souborů CSS. Jako jsou například značky
 
-
-    <link rel="stylesheet" href="style.css" />
-    <img src="monkey.jpg" />
-    <script type="text/javascript" src="jscript.js">
-
+```html
+<link rel="stylesheet" href="style.css" />
+<img src="monkey.jpg" />
+<script type="text/javascript" src="jscript.js">
+```
 
 odkazují na tyto soubory: **style.css**, **monkey.jpg** a **jscript.js**. Nastavení základního adresáře informuje webového zobrazení, kde jsou tyto soubory umístěny aby mohly být načtena do stránky.
 
 #### <a name="ios"></a>iOS
 
-Výstup šablony je vykreslen v iOS s následujícím kódem C ##:
+Výstup šablony je vykreslen v iOS pomocí následujícího kódu C#:
 
-```
+```csharp
 webView.LoadHtmlString (page, NSBundle.MainBundle.BundleUrl);
 ```
 
@@ -89,7 +89,7 @@ Akce sestavení pro všechny statické soubory obsahu by měla být **BundleReso
 
 Android vyžaduje taky základního adresáře mají být předány jako parametr, pokud řetězce html se zobrazí ve webovém zobrazení.
 
-```
+```csharp
 webView.LoadDataWithBaseURL("file:///android_asset/", page, "text/html", "UTF-8", null);
 ```
 
@@ -101,30 +101,30 @@ Akce sestavení pro všechny statické soubory obsahu by měla být **AndroidAss
 
  ![Akce sestavení projektu pro Android: AndroidAsset](images/image4_250x71.png)
 
-### <a name="calling-c-from-html-and-javascript"></a>Volání C ## z HTML a Javascript
+### <a name="calling-c-from-html-and-javascript"></a>Volání jazyka C# z HTML a Javascript
 
 Když stránku html je načten do webové zobrazení, se zpracuje odkazy a formuláře jako kdyby stránky byl načten ze serveru. To znamená, že pokud uživatel klikne na odkaz nebo odešle formulář webového zobrazení se pokusí o přejděte do zadaného cíle.
 
 Pokud je odkaz k externímu serveru (například google.com) webové zobrazení se pokusí načíst externí web (za předpokladu, že existuje připojení k Internetu).
 
-```
+```html
 <a href="http://google.com/">Google</a>
 ```
 
 Pokud je relativní odkaz webové zobrazení se pokusí načíst tento obsah ze základního adresáře. Samozřejmě není nutné pro tento postup, žádné síťové připojení, protože obsah se ukládá v aplikaci na zařízení.
 
-```
+```html
 <a href="somepage.html">Local content</a>
 ```
 
 Akce formuláře podle stejného pravidla.
 
-```
+```html
 <form method="get" action="http://google.com/"></form>
 <form method="get" action="somepage.html"></form>
 ```
 
-Nebudete k hostování webový server na straně klienta; ale můžete použít stejné techniky komunikaci serveru v dnešních přizpůsobivý návrh vzory volat služby prostřednictvím metody GET protokolu HTTP a zpracování odpovědi asynchronně emitování Javascript (nebo volání Javascript už hostovaný ve webovém zobrazení). To umožňuje snadno předat data z HTML zpět do kódu C ## pro zpracování a zobrazení výsledků zpět na stránku HTML.
+Nebudete k hostování webový server na straně klienta; ale můžete použít stejné techniky komunikaci serveru v dnešních přizpůsobivý návrh vzory volat služby prostřednictvím metody GET protokolu HTTP a zpracování odpovědi asynchronně emitování Javascript (nebo volání Javascript už hostovaný ve webovém zobrazení). To umožňuje snadno předat data z HTML zpět do kódu jazyka C# pro zpracování a zobrazení výsledků zpět na stránku HTML.
 
 IOS a Android poskytují mechanismus pro kód aplikace zachytávat tyto události navigace, aby mohl kód aplikace odpovídat (v případě potřeby). Tato funkce je nezbytné k vytváření hybridní aplikace, protože umožňuje pracovat s webového zobrazení nativního kódu.
 
@@ -132,7 +132,7 @@ IOS a Android poskytují mechanismus pro kód aplikace zachytávat tyto událost
 
 Povolit aplikaci kód pro zpracování požadavku navigace (například klikněte na odkaz) může být přepsána ShouldStartLoad událostí na webové zobrazení v iOS. Parametry metody zadejte všechny informace
 
-```
+```csharp
 bool HandleShouldStartLoad (UIWebView webView, NSUrlRequest request, UIWebViewNavigationType navigationType) {
     // return true if handled in code
     // return false to let the web view follow the link
@@ -141,7 +141,7 @@ bool HandleShouldStartLoad (UIWebView webView, NSUrlRequest request, UIWebViewNa
 
 a pak mu přiřaďte obslužné rutiny události:
 
-```
+```csharp
 webView.ShouldStartLoad += HandleShouldStartLoad;
 ```
 
@@ -149,7 +149,7 @@ webView.ShouldStartLoad += HandleShouldStartLoad;
 
 V systému Android jednoduše podtřídami WebViewClient a pak implementace kód pro požadavek na navigace.
 
-```
+```csharp
 class HybridWebViewClient : WebViewClient {
     public override bool ShouldOverrideUrlLoading (WebView webView, string url) {
         // return true if handled in code
@@ -160,19 +160,19 @@ class HybridWebViewClient : WebViewClient {
 
 a pak nastavte klienta ve webovém zobrazení:
 
-```
+```csharp
 webView.SetWebViewClient (new HybridWebViewClient ());
 ```
 
 ### <a name="calling-javascript-from-c"></a>Volání jazyka Javascript z jazyka C#
 
-Kromě informuje webové zobrazení načíst novou stránku HTML, můžete kód C ## také spouštět Javascript v rámci aktuálně zobrazenou stránku. Celý bloky kódu Javascript lze vytvořit pomocí jazyka C ## řetězce a spouštět, nebo může vytvořit volání metod pro jazyk Javascript, která je již k dispozici na stránce prostřednictvím `script` značky.
+Kromě informuje webové zobrazení načíst novou stránku HTML, C# – kód můžete spustit i Javascript v rámci aktuálně zobrazenou stránku. Celý bloky kódu Javascript lze vytvořit pomocí jazyka C# řetězce a spouštět, nebo může vytvořit volání metod pro jazyk Javascript, která je již k dispozici na stránce prostřednictvím `script` značky.
 
 #### <a name="android"></a>Android
 
 Vytvoření kódu jazyka Javascript provést, a pak ho pomocí předpony "javascript:" a vyzvat webové zobrazení načíst tento řetězec:
 
-```
+```csharp
 var js = "alert('test');";
 webView.LoadUrl ("javascript:" + js);
 ```
@@ -181,7 +181,7 @@ webView.LoadUrl ("javascript:" + js);
 
 webové zobrazení iOS poskytovat metodu konkrétně k volání jazyka Javascript:
 
-```
+```csharp
 var js = "alert('test');";
 webView.EvaluateJavascript (js);
 ```
@@ -192,8 +192,8 @@ V této části obsahuje zavedla funkce ovládací prvky webového zobrazení pr
 
 -  Umožňuje načíst z řetězce vygenerované v kódu HTML
 -  Možnost, chcete-li místní soubory (šablon stylů CSS, Javascript, obrázky a další soubory HTML),
--  Možnost za účelem zachycení požadavků navigace v kódu C ##
--  Možnost Javascript volat z kódu C ##.
+-  Možnost za účelem zachycení požadavků navigace v kódu jazyka C#
+-  Možnost Javascript volat z kódu jazyka C#.
 
 
 V další části zavádí Razor, který umožňuje snadno vytvářet HTML k použití v hybridní aplikace.
@@ -202,7 +202,7 @@ V další části zavádí Razor, který umožňuje snadno vytvářet HTML k pou
 
 Syntaxe Razor je modul ukázka, která byla zavedená s architekturou ASP.NET MVC, původně ke spuštění na serveru a generují kód HTML ke zpracování do webových prohlížečů.
 
-Ukázka modul Razor rozšiřuje standardní syntaxi HTML pomocí C ##, aby mohli express rozložení a snadno začlenit šablony stylů CSS a Javascript. Šablony můžete odkazovat třídu modelu, které mohou být jakéhokoli typu vlastní a jejíž vlastnosti lze přistupovat přímo z šablony. Jeden z jeho hlavní výhody je schopnost snadno kombinovat HTML a C ## syntaxe.
+Ukázka modul Razor rozšiřuje standardní syntaxi HTML pomocí jazyka C#, aby mohli express rozložení a snadno začlenit šablony stylů CSS a Javascript. Šablony můžete odkazovat třídu modelu, které mohou být jakéhokoli typu vlastní a jejíž vlastnosti lze přistupovat přímo z šablony. Jeden z jeho hlavní výhody je schopnost snadno kombinovat syntaxe HTML a C#.
 
 Šablon Razor nejsou omezeny na straně serveru pomocí, můžete je také zařadit do aplikace Xamarin. Pomocí šablon Razor spolu se schopností pro práci s webové zobrazení prostřednictvím kódu programu umožňuje sofistikované napříč platformami hybridní aplikace má být sestaven s funkcí Xamarin.
 
@@ -214,7 +214,7 @@ Soubory šablon Razor **.cshtml** příponu souboru. Mohou být přidány do pro
 
 Jednoduchou šablonu Razor ( **RazorView.cshtml**) jsou uvedeny níže.
 
-```
+```html
 @model string
 <html>
     <body>
@@ -225,18 +225,18 @@ Jednoduchou šablonu Razor ( **RazorView.cshtml**) jsou uvedeny níže.
 
 Všimněte si následující rozdíly proti regulární soubor HTML:
 
--  `@` Symbol má zvláštní význam v rámci šablon Razor – znamená, že následující výraz jde C ## k vyhodnocení.
+-  `@` Symbol má zvláštní význam v rámci šablon Razor – znamená, že následující výraz jde C# k vyhodnocení.
 - `@model` Direktiva vždy zobrazí jako první řádek souboru šablony Razor.
 -  `@model` – Direktiva by měl následovat typu. V tomto příkladu je jednoduchý řetězec předávány do šablony, ale to může být vlastní třídy.
 -  Když `@Model` se odkazuje v rámci šablony poskytuje odkaz na objekt předaný šablony, když se vygeneruje (v tomto příkladu je řetězec).
 -  Prostředí IDE automaticky vygeneruje třídu pro šablony (soubory s **.cshtml** rozšíření). Tento kód můžete zobrazit, ale by neměla být upravována.
- ![RazorView.cshtml](images/image6_125x34.png) třídu jmenuje RazorView tak, aby odpovídaly .cshtml název souboru šablony. Je tento název, který slouží k odkazování na šabloně v kódu C ##.
+ ![RazorView.cshtml](images/image6_125x34.png) třídu jmenuje RazorView tak, aby odpovídaly .cshtml název souboru šablony. Je tento název, který slouží k odkazování na šabloně v kódu jazyka C#.
 - `@using` příkazy může být také součástí v horní části Razor šablonu, která má obsahovat další obory názvů.
 
 
-Finální výstup HTML lze vygenerovat pak následujícím kódem C ##. Všimněte si, že určíme modelu, který má být řetězec "Hello, World", které se začlení do výstup vykreslené šablony.
+Finální výstup HTML lze vygenerovat pak pomocí následujícího kódu C#. Všimněte si, že určíme modelu, který má být řetězec "Hello, World", které se začlení do výstup vykreslené šablony.
 
-```
+```csharp
 var template = new RazorView () { Model = "Hello World" };
 var page = template.GenerateString ();
 ```
@@ -249,7 +249,7 @@ Toto je výstup zobrazí ve webovém zobrazení v systému iOS simulátoru a emu
 
 V této části, které vytvoříme zavádět některé základní syntaxe Razor vám pomůže začít používat ho. Příklady v této části naplnit následující třídy s daty a zobrazit ji pomocí syntaxe Razor:
 
-```
+```csharp
 public class Monkey {
     public string Name { get; set; }
     public DateTime Birthday { get; set; }
@@ -259,7 +259,7 @@ public class Monkey {
 
 Všechny příklady použít následující kód inicializace dat
 
-```
+```csharp
 var animal = new Monkey {
     Name = "Rupert",
     Birthday=new DateTime(2011, 04, 01),
@@ -272,7 +272,7 @@ var animal = new Monkey {
 
 Když je model třídu s vlastnostmi, že je možné snadno najít v šabloně Razor jak ukazuje tento příklad šablony:
 
-```
+```html
 @model Monkey
 <html>
     <body>
@@ -284,7 +284,7 @@ Když je model třídu s vlastnostmi, že je možné snadno najít v šabloně R
 
 To může být vykreslen na řetězec pomocí následujícího kódu:
 
-```
+```csharp
 var template = new RazorView () { Model = animal };
 var page = template.GenerateString ();
 ```
@@ -293,11 +293,11 @@ Finální výstup je tady uvedené v webové zobrazení v systému iOS simuláto
 
  ![Rupert](images/image8_516x160.png)
 
-#### <a name="c-statements"></a>Příkazy jazyka C ##
+#### <a name="c-statements"></a>Příkazy jazyka C#
 
-Složitější C ## můžete zahrnout do šablony, například aktualizace vlastností modelu a výpočet stáří v tomto příkladu:
+Složitější C# můžete zahrnout do šablony, například aktualizace vlastností modelu a výpočet stáří v tomto příkladu:
 
-```
+```html
 @model Monkey
 <html>
     <body>
@@ -312,15 +312,15 @@ Složitější C ## můžete zahrnout do šablony, například aktualizace vlast
 </html>
 ```
 
-Můžete napsat složité jeden řádek C ## výrazy (např. formátování stáří) tím, že kód s `@()`.
+Můžete napsat složité jeden řádek C# výrazy (např. formátování stáří) tím, že kód s `@()`.
 
-Vícenásobné příkazy C ## může být napsán tím, že je s `@{}`.
+Vícenásobné příkazy jazyka C# lze zapsat tím, že je s `@{}`.
 
 #### <a name="if-else-statements"></a>If-else – příkazy
 
 Kód větví rozdíl lze vyjádřit pomocí `@if` jak je znázorněno v tomto příkladu šablony.
 
-```
+```html
 @model Monkey
 <html>
     <body>
@@ -341,7 +341,7 @@ Kód větví rozdíl lze vyjádřit pomocí `@if` jak je znázorněno v tomto p�
 
 Ve smyčce konstrukce jako `foreach` lze také přidat. `@` Předponu lze použít na proměnnou smyčky ( `@food` v tomto případě) k vykreslení ve formátu HTML.
 
-```
+```html
 @model Monkey
 <html>
     <body>
@@ -372,9 +372,9 @@ Tato část obsahuje zahrnutých základy používání šablon Razor k vykresle
 
 Tato část vysvětluje, jak používat sestavení hybridní aplikace pomocí šablony řešení v sadě Visual Studio for Mac. Nejsou k dispozici ze tří šablony **soubor > Nový > řešení...**  okno:
 
--  Android > aplikace > aplikace Android webového zobrazení
--  iOS > aplikace > aplikace webového zobrazení
-- Projektu ASP.NET MVC
+- **Android > aplikace > aplikace Android webového zobrazení**
+- **iOS > aplikace > aplikace webového zobrazení**
+- **Projektu ASP.NET MVC**
 
 
 
@@ -382,7 +382,7 @@ Tato část vysvětluje, jak používat sestavení hybridní aplikace pomocí š
 
  ![Vytváření iPhone a řešení pro Android](images/image13_1139x959.png)
 
-Všimněte si, že můžete snadno přidat **.cshtml** Razor šablona *žádné* existující projekt Xamarin, není potřeba použít tyto šablony řešení. iOS projekty nevyžadují scénáře použití syntaxe Razor buď; jednoduše přidání ovládacího prvku UIWebView všechna zobrazení prostřednictvím kódu programu a šablon Razor může vykreslit celý v kódu C ##.
+Všimněte si, že můžete snadno přidat **.cshtml** Razor šablona *žádné* existující projekt Xamarin, není potřeba použít tyto šablony řešení. iOS projekty nevyžadují scénáře použití syntaxe Razor buď; jednoduše přidání ovládacího prvku UIWebView všechna zobrazení prostřednictvím kódu programu a šablon Razor může vykreslit celý v kódu jazyka C#.
 
 Níže jsou uvedeny výchozí šablony řešení obsah pro iPhone a Android projekty:
 
@@ -406,7 +406,7 @@ Statický obsah zahrnuje šablony stylů CSS, bitové kopie, soubory Javascript 
 
 Šablony projektů zahrnují minimální šablony stylů na ukazují, jak ve vaší aplikaci hybridní zahrnout statický obsah. Šablony stylů CSS je odkazováno v šabloně takto:
 
-```
+```html
 <link rel="stylesheet" href="style.css" />
 ```
 
@@ -414,7 +414,7 @@ Můžete přidat libovolnou šablony stylů a soubory Javascript budete potřebo
 
 ### <a name="razor-cshtml-templates"></a>Syntaxe Razor cshtml šablony
 
-Šablona obsahuje Razor **.cshtml** soubor, který byl předem zápis kódu ke komunikaci dat mezi HTML/Javascript a C#. To vám umožní sestavení sofistikované hybridní aplikace, které není právě zobrazení jen pro čtení dat z modelu, ale také přijímají vstup uživatele v kódu HTML a předejte ji zpět na C ## kód pro zpracování nebo úložiště.
+Šablona obsahuje Razor **.cshtml** soubor, který byl předem zápis kódu ke komunikaci dat mezi HTML/Javascript a C#. To vám umožní sestavení sofistikované hybridní aplikace, které není právě zobrazení jen pro čtení dat z modelu, ale také přijímají vstup uživatele v kódu HTML a předejte ji zpět do kódu jazyka C# pro zpracování nebo úložiště.
 
 #### <a name="rendering-the-template"></a>Vykreslování šablony
 
@@ -422,23 +422,23 @@ Volání `GenerateString` na šabloně vykreslí připravené pro zobrazení ve 
 
  ![Vývojový diagram syntaxe Razor](images/image12_700x421.png)
 
-#### <a name="calling-c-code-from-the-template"></a>Volání kódu C ## ze šablony
+#### <a name="calling-c-code-from-the-template"></a>Volání kódu jazyka C# ze šablony
 
-Komunikace z vykreslené webové zobrazení zpětné volání C ## se provádí nastavením adresu URL pro webové zobrazení, a pak brání požadavku v C ## nativní žádost zpracovat. bez opětovného načtení webové zobrazení.
+Komunikace z vykreslené webové zobrazení zpětné volání jazyka C# se provádí nastavením adresu URL pro webové zobrazení, a pak brání žádosti v jazyce C# nativní žádost zpracovat. bez opětovného načtení webové zobrazení.
 
 Příklad si můžete prohlédnout ve zpracování RazorView na tlačítko. Tlačítko má následující HTML:
 
-```
+```html
 <input type="button" name="UpdateLabel" value="Click" onclick="InvokeCSharpWithFormValues(this)" />
 ```
 
 `InvokeCSharpWithFormValues` Funkce Javascript, která čte všechny hodnoty z formuláře HTML a nastaví `location.href` pro webové zobrazení:
 
-```
+```javascript
 location.href = "hybrid:" + elm.name + "?" + qs;
 ```
 
-To se pokusí přejděte webové zobrazení na adresu URL pomocí vlastní schéma, které jsme provedli jsme si (`hybrid:`)
+To se pokusí přejděte webové zobrazení na adresu URL pomocí vlastní schéma (např. `hybrid:`)
 
 ```
 hybrid:UpdateLabel?textbox=SomeValue&UpdateLabel=Click
@@ -448,31 +448,31 @@ Nativní webové zobrazení zpracuje požadavek tato navigační, máme možnost
 
 Interní položky tyto dvě sběrače navigace je v podstatě stejné.
 
-Nejdřív jsme zkontrolujte adresu URL, kterou webové zobrazení je pokus o načtení, a pokud nezačíná naše vlastní schéma (`hybrid:`), jsme povolit navigační proběhnout jako normální.
+Nejdřív zkontrolujte adresu URL, kterou webové zobrazení je pokus o načtení, a pokud nezačíná vlastní schéma (`hybrid:`), povolit navigační proběhnout jako normální.
 
-Pro naše vlastní schéma URL všechno jednáme v adrese URL mezi schéma a "?" jako název metody pro zpracování (v tomto případě "UpdateLabel"). Vše v řetězci dotazu jednal jako parametry pro volání metody:
+Pro vlastní schéma adresy URL, vše, co je v adrese URL mezi schéma a "?" je název metody pro zpracování (v tomto případě "UpdateLabel"). Vše v řetězci dotazu jednal jako parametry pro volání metody:
 
-```
+```csharp
 var resources = url.Substring(scheme.Length).Split('?');
 var method = resources [0];
 var parameters = System.Web.HttpUtility.ParseQueryString(resources[1]);
 ```
 
-UpdateLabel v této ukázce neodpovídá minimální množství zacházení s řetězci v parametru textbox (předřazení "C ## uvádí '" řetězec) a potom zavolá zpět do webového zobrazení.
+`UpdateLabel` v této ukázce nepodporuje minimální množství zacházení s řetězci v parametru textbox (předřazení "C# říká" řetězec) a pak zavolá zpátky do webové zobrazení.
 
-Na konci naše zpracování adresy URL jsme abort navigaci, tak, aby webové zobrazení nebude pokoušet o Dokončit přejdete na našem vlastní adresu URL.
+Po zpracování adresy URL, metodu zruší navigaci, tak, aby webové zobrazení nebude pokoušet o navigaci na adresu URL vlastní dokončit.
 
 #### <a name="manipulating-the-template-from-c"></a>Manipulace s šablony C#
 
-Je potřeba komunikaci vykreslené webové zobrazení HTML z C ## volání jazyka Javascript ve webovém zobrazení. V systému iOS, to se provádí volání `EvaluateJavascript` na UIWebView:
+Volání metody Javascript ve webovém zobrazení je potřeba komunikaci vykreslené webové zobrazení HTML z jazyka C#. V systému iOS, to se provádí volání `EvaluateJavascript` na UIWebView:
 
-```
+```csharp
 webView.EvaluateJavascript (js);
 ```
 
 V systému Android, Javascript může vyvolat ve webovém zobrazení Načítání Javascript jako adresu URL pomocí `"javascript:"` schéma adresy URL:
 
-```
+```csharp
 webView.LoadUrl ("javascript:" + js);
 ```
 

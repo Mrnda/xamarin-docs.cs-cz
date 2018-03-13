@@ -1,5 +1,6 @@
 ---
 title: "Referenční dokumentace ovládacích prvků"
+description: "Popis všech vizuálních prvků použitý k vytvoření aplikace Xamarin.Forms."
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: F2A02DEE-7137-42F4-9C0A-4E1CF75EA08F
@@ -7,33 +8,31 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: 0e348759164668a223e19fb6355b3b8d758395a4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e1e6234f0eadcbcbecc8d58a4774db88606be290
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="controls-reference"></a>Referenční dokumentace ovládacích prvků
 
-Používá Xamarin.Forms pomocí nativní ovládacích prvků každé cílové platformy.
-To znamená, že aplikace, můžou používat [přenosné knihovny tříd](~/cross-platform/app-fundamentals/pcl.md) nebo [sdílených projektů](~/cross-platform/app-fundamentals/shared-projects.md) levné tento sdílený kód a proveďte platformy konkrétní aplikace, které bude využívat sdílené kódu.
+_Popis všech vizuálních prvků použitý k vytvoření aplikace Xamarin.Forms._
 
-Existují čtyři hlavní řízení skupiny použít k vytvoření uživatelského rozhraní aplikace Xamarin.Forms:
+Rozhraní visual Xamarin.Forms aplikace vytvořená objektů, které mapují na nativní ovládací prvky pro každou platformu cíl. Díky tomu mohou použít kód Xamarin.Forms obsažené v specifické pro platformu aplikace pro iOS, Android a univerzální platformu Windows [Přenosná knihovna tříd](~/cross-platform/app-fundamentals/pcl.md), [standardní knihovny .NET](~/cross-platform/app-fundamentals/net-standard.md), nebo [ Sdílený projekt](~/cross-platform/app-fundamentals/shared-projects.md).
+
+Čtyři hlavní řízení skupiny použít k vytvoření uživatelského rozhraní aplikace Xamarin.Forms se zobrazuje tyto čtyři články:
 
 - [**Stránky**](pages.md)
 - [**Rozložení**](layouts.md)
 - [**zobrazení**](views.md)
 - [**Cells**](cells.md)
 
-Za běhu, které každý ovládací prvek budou mapována na ekvivalentní nativní, který je co bude vykreslen.
+Na stránce Xamarin.Forms obecně zabírá celou obrazovku. Tato stránka obsahuje obvykle rozložení, který obsahuje zobrazení a případně dalších rozložení. Buňky jsou specializované součásti používán ve spojení s [ `TableView` ](views.md#tableView) a [ `ListView` ](views.md#listView).
 
-Tato část slouží jako odkaz zobrazující řadu ovládacích prvků uživatelského rozhraní, která je k dispozici pro použití s Xamarin.Forms a se sadou [FormsGallery ukázkové](https://developer.xamarin.com/samples/FormsGallery/), která představuje základní použití každý ovládací prvek.
-Každý popis taky obsahuje odkazy na [dokumentaci k rozhraní API](https://developer.xamarin.com/api/namespace/Xamarin.Forms/).
-
-
+V čtyři článcích na [ **stránky**](pages.md), [ **rozložení**](layouts.md), [ **zobrazení** ](views.md), a [ **buněk**](cells.md), každý typ ovládacího prvku je popsán s odkazy na jeho dokumentace rozhraní API, článek popisující jeho použití (pokud existuje) a jeden nebo více ukázka programů (pokud existují). Každý typ ovládacího prvku je také přiložena snímek obrazovky zobrazující stránku z [ **FormsGallery** ](https://developer.xamarin.com/samples/FormsGallery/) ukázka systémem iOS, Android a UWP zařízení. Pod každý snímek obrazovky jsou odkazy na zdrojového kódu pro C# stránku, na stejnou stránku XAML a (Pokud vhodné) souboru kódu C# pro stránku XAML.
 
 ## <a name="related-links"></a>Související odkazy
 
 - [Úvod k platformě Xamarin.Forms](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
-- [Galerie Xamarin.Forms (ukázka)](https://developer.xamarin.com/samples/FormsGallery/)
-- [Dokumentaci k rozhraní API](https://developer.xamarin.com/api/namespace/Xamarin.Forms/)
+- [Ukázka Xamarin.Forms FormsGallery](https://developer.xamarin.com/samples/FormsGallery/)
+- [Dokumentaci k rozhraní API](https://developer.xamarin.com/api/root/Xamarin.Forms/)

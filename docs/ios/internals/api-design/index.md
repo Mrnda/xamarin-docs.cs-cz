@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 5fab7579be256e478c69b76b5e41b8c1b0568ba6
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
-ms.translationtype: HT
+ms.openlocfilehash: 9bebc33affef4a1a25667039dfcdbe345dbd2cd6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="api-design"></a>Rozhraní API návrhu
 
@@ -25,7 +25,6 @@ Probíhá nízké úrovně runtime ke komunikaci s kódem jazyka Objective-C [Mo
 ## <a name="design-principles"></a>Principy návrhu
 
 Toto jsou některé z našich návrhu zásady pro Xamarin.iOS vazbu (Toto také platí pro Xamarin.Mac Mono vazby pro Objective-C v OS X):
-
 
 - Postupujte podle pokynů pro návrh Framework
 - Umožňují vývojářům jazyka Objective-C podtřídou třídy:
@@ -78,15 +77,14 @@ Xamarin.iOS zahrnuje několik sestavení, které tvoří *Xamarin.iOS profil*. [
 
 ### <a name="major-namespaces"></a>Hlavní obory názvů 
 
- <a name="MonoTouch.ObjCRuntime" />
+<a name="MonoTouch.ObjCRuntime" />
 
 #### <a name="objcruntime"></a>ObjCRuntime
 
 [ObjCRuntime](https://developer.xamarin.com/api/namespace/ObjCRuntime/) obor názvů umožňuje vývojářům přemostění světů mezi C# a Objective-c
 Toto je novou vazbu, určený speciálně pro iOS, na základě zkušeností z kakao # a Gtk #.
 
- <a name="MonoTouch.Foundation" />
-
+<a name="MonoTouch.Foundation" />
 
 #### <a name="foundation"></a>Foundation
 
@@ -100,10 +98,7 @@ I když tento obor názvů poskytuje vazby pro základní typy jazyka Objective-
 
 - Různé pomocná rozhraní API tady jsou vystaveny umožňují vývojářům vazby třetích stran rozhraní API jazyka Objective-C, ostatní iOS rozhraní API nebo rozhraní API, která nejsou aktuálně vázány Xamarin.iOS.
 
-
 Další informace o vytvoření vazby rozhraní API, najdete v článku [Xamarin.iOS vazby generátor](~/cross-platform/macios/binding/binding-types-reference.md) části.
-
- <a name="NSObject" />
 
 
 ##### <a name="nsobject"></a>NSObject
@@ -116,7 +111,6 @@ Při Mono zajistí uvolňování paměti pro všechny objekty, `Foundation.NSObj
 
 Pokud váš typ potřebuje provést deterministické dokončení, mají přednost před [NSObject.Dispose(bool) metoda](https://developer.xamarin.com/api/type/Foundation.NSObject/%2fM%2fDispose) parametr pro uvolnění "bool vyřazuje", a pokud nastavena na hodnotu true, je znamená, že metodu Dispose je volána, protože uživatel explicitně volané uvolnění () u objektu. Pokud je hodnota false, to znamená, že metodu Dispose (bool uvolnění) je volána z finalizační metodu ve vlákně finalizační metodu. []()
 
-<a name="Categories" />
 
 ##### <a name="categories"></a>Kategorie
 
@@ -185,7 +179,6 @@ class Rotation_IOS6 {
 }
 ```
 
-<a name="PreserveAttribute" />
 
 ##### <a name="preserveattribute"></a>PreserveAttribute
 
@@ -197,8 +190,7 @@ Například pokud vytvoříte instanci typy dynamicky, můžete zachovat výchoz
 
 Na každý člen typu nebo na vlastní typ, můžete použít tento atribut. Pokud chcete zachovat celý typ, můžete použít syntaxi [zachovat (AllMembers = true)] typu.
 
- <a name="MonoTouch.UIKit" />
-
+<a name="MonoTouch.UIKit" />
 
 #### <a name="uikit"></a>UIKit
 
@@ -206,8 +198,7 @@ Na každý člen typu nebo na vlastní typ, můžete použít tento atribut. Pok
 
 C# Delegáti jsou k dispozici pro běžné operace. Najdete v článku [delegáti](#Delegates) části Další informace.
 
- <a name="OpenGLES" />
-
+<a name="OpenGLES" />
 
 #### <a name="opengles"></a>OpenGLES
 
@@ -219,8 +210,6 @@ Funkce OpenGLES 2.0 je k dispozici prostřednictvím ES20.GL typu, zdokumentovan
 
 Funkce OpenGLES 3.0 je k dispozici prostřednictvím ES30.GL typu, zdokumentované [sem](https://developer.xamarin.com/api/type/OpenTK.Graphics.ES30.GL/) typu.
 
- <a name="Binding_Design" />
-
 
 ### <a name="binding-design"></a>Vazba návrhu
 
@@ -230,8 +219,6 @@ Stejně jako P/Invoke je užitečným nástrojem pro vyvolání nativní knihovn
 
 Diskusní v další části několik není nutné pro uživatele, kteří jsou vytvoření aplikace Xamarin.iOS, ale bude pomoci vývojářům při pochopit, jak věcí hotovi a pomáhají při vytváření složitějších aplikací.
 
-
- <a name="Types" />
 
 
 #### <a name="types"></a>Typy
@@ -254,16 +241,13 @@ Existuje několik metod, které jsou zveřejněné v `NSArray`, pro náročněj�
 
 Kromě toho **klasické rozhraní API** místo vystavení `CGRect`, `CGPoint` a `CGSize` z rozhraní API CoreGraphics jsme ty s nahradit `System.Drawing` implementace `RectangleF`, `PointF`a `SizeF` jako by umožňují vývojářům zachovat stávající OpenGL kód, který používá OpenTK. Při použití nové 64-bit **unifikované API**, rozhraní API CoreGraphics by měl použít.
 
- <a name="Inheritance" />
-
+<a name="Inheritance" />
 
 #### <a name="inheritance"></a>Dědičnost
 
 Návrh Xamarin.iOS API umožňuje vývojářům rozšířit nativní typy jazyka Objective-C stejným způsobem, že se bude rozšiřovat C# typu, pomocí klíčového slova "přepsání" v odvozené třídě, jakož i řetězení pro základní implementaci klíčové slovo "základní" C#.
 
 Tento návrh vývojářům umožňuje vyhnout se nutnosti řešit s selektory jazyka Objective-C jako součást procesu jejich vývoj, protože celý systém jazyka Objective-C je už zabalená uvnitř knihovny Xamarin.iOS.
-
- <a name="Types_and_Interface_Builder" />
 
 
 #### <a name="types-and-interface-builder"></a>Typy a rozhraní tvůrce
@@ -279,8 +263,7 @@ public partial class void MyView : UIView {
 }
 ```
 
-
- <a name="Delegates" />
+<a name="Delegates" />
 
 
 #### <a name="delegates"></a>Delegáty
@@ -302,15 +285,13 @@ Ve třídách jazyka Objective-C, uvidíte, že třídy, které používají ten
 
 V Xamarin.iOS tři vzájemně se vylučuje mechanismy pro vazbu na tyto delegáty nabízí:
 
-1.  [Prostřednictvím události](#Events) .
-2.  [Silného typu prostřednictvím `Delegate`vlastnost](#StrongDelegate) .
-3.  [Volně zadali prostřednictvím `WeakDelegate`vlastnost](#WeakDelegate) .
-
+1.  [Prostřednictvím události](#Via_Events).
+2.  [Silného typu prostřednictvím `Delegate` vlastnost](#StrongDelegate)
+3.  [Volně zadali prostřednictvím `WeakDelegate` vlastnost](#WeakDelegate)
 
 Představte si třeba [UIWebView](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebView_Class/Reference/Reference.html) třídy. To se odešle zprávu do [UIWebViewDelegate](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html) instanci, která je přiřazená [delegovat](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebView_Class/Reference/Reference.html#//apple_ref/occ/instp/UIWebView/delegate) vlastnost.
 
- <a name="Via_Events" />
-
+<a name="Via_Events" />
 
 ##### <a name="via-events"></a>Prostřednictvím události
 
@@ -320,7 +301,6 @@ Pro mnoho typů Xamarin.iOS automaticky vytvoří odpovídající delegáta, kte
 -  [WebViewDidFinishLoad](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidFinishLoad:) metoda je namapována na [UIWebView.LoadFinished](https://developer.xamarin.com/api/event/UIKit.UIWebView.LoadFinished/) událostí.
 -  [WebView:didFailLoadWithError](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webView:didFailLoadWithError:) metoda je namapována na [UIWebView.LoadError](https://developer.xamarin.com/api/event/UIKit.UIWebView.LoadError/) událostí.
 
-
 Tento jednoduchý program například zaznamenává počáteční a koncový čas při načítání webové zobrazení:
 
 ```csharp
@@ -329,8 +309,6 @@ var web = new UIWebView (new CGRect (0, 0, 200, 200));
 web.LoadStarted += (o, e) => startTime = DateTime.Now;
 web.LoadFinished += (o, e) => endTime = DateTime.Now;
 ```
-
- <a name="Via_Properties" />
 
 
 ##### <a name="via-properties"></a>Prostřednictvím vlastnosti
@@ -353,6 +331,7 @@ void SetupTextField (UITextField tf)
 
 `UITextField`Na `ShouldReturn` vlastnost v tomto případě přijímá jako argument delegáta, který vrátí hodnotu bool a určuje, zda TextField měli dělat něco s návratovým se stisknutí tlačítka. V našem metoda vrátíme *true* volajícího, ale také jsme odebrat klávesnice na obrazovce (to se stane, když volá textfield `ResignFirstResponder`).
 
+<a name="StrongDelegate"/>
 
 ##### <a name="strongly-typed-via-a-delegate-property"></a>Silného typu přes vlastnost delegáta
 
@@ -389,8 +368,9 @@ Tento vzor se také používá k řízení chování některých ovládacích pr
 
 Vzor slouží také k poskytování dat na vyžádání pro několik ovládací prvky. Například [UITableView](https://developer.xamarin.com/api/type/UIKit.UITableView/) je výkonný ovládací prvek vykreslování tabulky – a vzhled a obsah se řídí instanci [UITableViewDataSource](https://developer.xamarin.com/api/type/UIKit.UITableView/DataSource)
 
+<a name="WeakDelegate"/>
 
-@### Přes vlastnost WeakDelegate volného typu
+### <a name="loosely-typed-via-the-weakdelegate-property"></a>Přes vlastnost WeakDelegate volného typu
 
 Kromě vlastnost silného typu je zde také slabé typem delegáta, který umožňuje vývojáři vazby věci jinak, v případě potřeby.
 Everywhere silného typu `Delegate` je vlastnost k dispozici ve vazbě pro Xamarin.iOS odpovídající `WeakDelegate` vlastnost je také k dispozici.
@@ -423,7 +403,7 @@ web.WeakDelegate = new Notifier ();
 Všimněte si, že jednou `WeakDelegate` vlastnost byl přiřazen, `Delegate` vlastnost nebude použita. Kromě toho pokud budete implementovat metodu zděděné základní třídy, který chcete [Export], musíte ho nastavit veřejná metoda.
 
 
-## <a name="mapping-of-the-objective-c-delegate-pattern-to-c35"></a>Mapování delegáta vzor jazyka Objective-C C &#35;
+## <a name="mapping-of-the-objective-c-delegate-pattern-to-c35"></a>Mapování tohoto vzoru delegáta jazyka Objective-C c&#35;
 
 Až se zobrazí ukázky jazyka Objective-C, které vypadají takto:
 
@@ -440,7 +420,7 @@ foo.Delegate = new SomethingDelegate ();
 V Xamarin.iOS uvádíme silně typované třídy, které mapují do jazyka Objective-C delegovat třídy. Je Pokud chcete použít, vám bude vytvoření podtřídy a přepsání metody definované implementací pro Xamarin.iOS. Další informace o tom, jak fungují najdete v části "modely" níže.
 
 
-##### <a name="mapping-delegates-to-c35"></a>Mapování delegáti na C &#35;
+##### <a name="mapping-delegates-to-c35"></a>Delegáti mapování c&#35;
 
 UIKit obecně používá delegáti jazyka Objective-C ve dvou formách.
 
@@ -575,12 +555,12 @@ public class AppController : UIApplicationDelegate {
 Přináší výhody, není nutné a dostanete se do soubory hlaviček jazyka Objective-C k vyhledání modulu pro výběr, typy argumentů nebo mapování na C# a že dostanete intellisense ze sady Visual Studio pro Mac, spolu se silnými typy
 
 
-#### <a name="xib-outlets-and-c35"></a>Výstupy XIB a C &#35;
+#### <a name="xib-outlets-and-c35"></a>Výstupy XIB a C&#35;
 
 > [!IMPORTANT]
 > Tato část vysvětluje IDE integraci s výstupy při použití XIB souborů. Při použití návrháře Xamarin pro iOS, to je všechny nahradit tím, že zadáte název, pod **Identity > název** v části Vlastnosti IDE, jak je uvedeno níže:
 >
-> [![](images/designeroutlet.png "Zadat název položky v iOS návrháře")](images/designeroutlet.png)
+> [![](images/designeroutlet.png "Zadat název položky v iOS návrháře")](images/designeroutlet.png#lightbox)
 >
 >Další informace o návrháři iOS, přečtěte si [Úvod do systému iOS Návrhář](~/ios/user-interface/designer/introduction.md#how-it-works) dokumentu.
 

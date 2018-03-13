@@ -8,17 +8,17 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 4af76a37e5fd42ff1d6344f60642425c73e9d733
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: f5383465f7bc5c4529eebefca02718c83a653e9f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-opentk"></a>Úvod do OpenTK
 
 OpenTK (sada nástrojů otevřete) je k rozšířené, nízké úrovně C# knihovny, která usnadňuje práci s OpenGL a OpenCL OpenAL. OpenTK lze použít pro hry, vědecké aplikace nebo jiné projekty, které vyžadují 3D grafiky, zvuk nebo výpočetní funkce. Tento článek poskytuje stručný úvod do používání OpenTK v Xamarin.Mac aplikace.
 
-[ ![](opentk-images/intro01.png "Příklad aplikace spustit")](opentk-images/intro01.png)
+[![](opentk-images/intro01.png "Příklad aplikace spustit")](opentk-images/intro01.png#lightbox)
 
 V tomto článku vám nabídneme základy OpenTK v aplikaci Xamarin.Mac. Vysoce navržený na spolupracovat [Hello, Mac](~/mac/get-started/hello-mac.md) článek nejprve, konkrétně [Úvod do Xcode a rozhraní tvůrce](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) a [výstupy a akce](~/mac/get-started/hello-mac.md#Outlets_and_Actions) oddíly, jak se popisuje klíčové koncepty a techniky, které budeme používat v tomto článku.
 
@@ -54,11 +54,11 @@ Jako rychlý úvod do používání OpenTK v aplikaci Xamarin.Mac jsme se chyst�
 
 Spuštění sady Visual Studio pro Mac a vytvořte nové řešení Xamarin.Mac. Vyberte **Mac** > **aplikace** > **Obecné** > **kakao aplikace**:
 
-[ ![](opentk-images/sample01.png "Přidání nové aplikace kakao")](opentk-images/sample01.png)
+[![](opentk-images/sample01.png "Přidání nové aplikace kakao")](opentk-images/sample01.png#lightbox)
 
 Zadejte `MacOpenTK` pro **projektu název**:
 
-[ ![](opentk-images/sample02.png "Nastavení názvu projektu")](opentk-images/sample02.png)
+[![](opentk-images/sample02.png "Nastavení názvu projektu")](opentk-images/sample02.png#lightbox)
 
 Klikněte **vytvořit** tlačítko k vytvoření nového projektu.
 
@@ -70,7 +70,7 @@ Než otevřete TK můžete použít v aplikaci Xamarin.Mac, budete muset obsahov
 
 Zaškrtněte podle `OpenTK` a klikněte na **OK** tlačítko:
 
-[ ![](opentk-images/sample03.png "Úpravy odkazů projektu")](opentk-images/sample03.png)
+[![](opentk-images/sample03.png "Úpravy odkazů projektu")](opentk-images/sample03.png#lightbox)
 
 <a name="Using_OpenTK" />
 
@@ -296,7 +296,7 @@ Jsme předat požadované obnovovací frekvence které chceme herní zobrazení 
 
 Umožňuje spuštění vaší aplikace a zobrazí se výstup:
 
-[ ![](opentk-images/intro01.png "Ukázkový výstup aplikace")](opentk-images/intro01.png)
+[![](opentk-images/intro01.png "Ukázkový výstup aplikace")](opentk-images/intro01.png#lightbox)
 
 Pokud jsme velikost naše okno, herní zobrazení bude také nacházet a trojúhelníku budou po změně velikosti a aktualizovat také v reálném čase.
 

@@ -7,27 +7,24 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 8075473464472c5a830f62ebfc91c00ad54d1b98
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9b744f4c8582aa9295645b2bdc22e6fddf2bedc3
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="calendar"></a>Kalendář
 
-<a name="Calendar_API" />
 
 ## <a name="calendar-api"></a>Kalendář rozhraní API
 
 Novou sadu kalendáře rozhraní API byla zavedená v systému Android 4 podporuje aplikace, které jsou určeny pro čtení nebo zápisu dat do kalendáře zprostředkovatele. Tato rozhraní API podporují širokou řadu možností interakce s kalendářní data, včetně možnost číst a zapisovat události, účastníci a připomenutí. Pomocí zprostředkovatele kalendáře v aplikaci se zobrazí data, která přidáte prostřednictvím rozhraní API v předdefinované kalendáře aplikaci, která se dodává se systémem Android 4.
 
-<a name="Adding_Permissions" />
 
 ## <a name="adding-permissions"></a>Přidání oprávnění
 
 Při práci s kalendáři nové rozhraní API v aplikaci, je první věcí, kterou je potřeba udělat, přidejte příslušná oprávnění k manifestu systému Android. Je nutné přidat oprávnění jsou `android.permisson.READ_CALENDAR` a `android.permission.WRITE_CALENDAR`, v závislosti na tom, jestli jsou čtení a zápis dat kalendáře.
 
-<a name="Using_the_Calendar_Contract" />
 
 ## <a name="using-the-calendar-contract"></a>Použití kontraktů kalendáře
 
@@ -35,7 +32,6 @@ Jakmile jednou nastavíte oprávnění, můžete pracovat s kalendářních dat 
 
 Podívejme se na příklad, který používá rozhraní API kalendáře. V tomto příkladu se podíváme, jak vytvořit výčet kalendáře a jejich událostí, jakož i postup přidání nové události do kalendáře.
 
-<a name="Listing_Calendars" />
 
 ## <a name="listing-calendars"></a>Výpis kalendáře
 
@@ -122,10 +118,9 @@ Ve výše uvedeném kódu adaptér trvá sloupce zadané ve `sourceColumns` pole
 
 Zde je snímek obrazovky zobrazující konečný výsledek s informace o kalendáři zobrazí v `ListView`:
 
-[![CalendarDemo spuštěna v emulátoru, zobrazení dvě položky kalendáře](calendar-images/11-calendar.png)](calendar-images/11-calendar.png)
+[![CalendarDemo spuštěna v emulátoru, zobrazení dvě položky kalendáře](calendar-images/11-calendar.png)](calendar-images/11-calendar.png#lightbox)
 
 
-<a name="Listing_Calendar_Events" />
 
 ## <a name="listing-calendar-events"></a>Výpis kalendář události
 
@@ -221,10 +216,9 @@ class ViewBinder : Java.Lang.Object, SimpleCursorAdapter.IViewBinder
 
 Zobrazí seznam událostí, jak je uvedeno níže:
 
-[![Snímek obrazovky aplikace příklad zobrazení tři události kalendáře](calendar-images/12-events.png)](calendar-images/12-events.png)
+[![Snímek obrazovky aplikace příklad zobrazení tři události kalendáře](calendar-images/12-events.png)](calendar-images/12-events.png#lightbox)
 
 
-<a name="Adding_a_Calendar_Event" />
 
 ## <a name="adding-a-calendar-event"></a>Přidání události kalendáře
 
@@ -280,11 +274,11 @@ long GetDateTimeMS (int yr, int month, int day, int hr, int min)
 
 Pokud jsme přidání tlačítka do seznamu těchto událostí uživatelského rozhraní a spustit ve výše uvedeném kódu na tlačítku klikněte na obslužnou rutinu události, události je přidat do kalendáře a aktualizovat na našem seznamu, jak je uvedeno níže:
 
-[![Snímek obrazovky aplikace příklad s událostmi kalendáře následuje událost vzorku pro přidání tlačítka](calendar-images/13.png)](calendar-images/13.png)
+[![Snímek obrazovky aplikace příklad s událostmi kalendáře následuje událost vzorku pro přidání tlačítka](calendar-images/13.png)](calendar-images/13.png#lightbox)
 
 Pokud jsme otevřete aplikaci kalendář, pak zjistíme, zda je událost zapsána existuje také:
 
-[![Snímek obrazovky aplikace kalendáře zobrazení událostí vybraného kalendáře](calendar-images/14.png)](calendar-images/14.png)
+[![Snímek obrazovky aplikace kalendáře zobrazení událostí vybraného kalendáře](calendar-images/14.png)](calendar-images/14.png#lightbox)
 
 Jak vidíte, Android umožní efektivní a snadný přístup k načtení a zachovat kalendářní data, aplikace bez problémů integrují schopnosti kalendáře.
 

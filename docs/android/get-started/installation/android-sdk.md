@@ -7,12 +7,12 @@ ms.assetid: 9A857F52-2EC1-414F-8010-CEE67B60A4B4
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 01/24/2018
-ms.openlocfilehash: 66ed0965f1ed01be129f22996e50bdea89a95287
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 585bcac193d6824bc7c96092c14e40fd7971b0e2
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="android-sdk-setup"></a>Instalační program sady SDK pro Android
 
@@ -30,7 +30,7 @@ Tato příručka vysvětluje, jak nainstalovat a používat Xamarin Android SDK 
 Tato příručka vysvětluje, jak nainstalovat a používat Xamarin Android SDK Manager pro sadu Visual Studio pro Mac (nebo [pro systém Windows](?tabs=vswin)).
 
 > [!NOTE]
-> **Poznámka:** Tento průvodce se týká pouze pro Visual Studio 2017 a Visual Studio for Mac.  
+> Tento průvodce se týká pouze pro Visual Studio 2017 a Visual Studio for Mac.  
 
 -----
 
@@ -38,8 +38,6 @@ Xamarin Android SDK Manager vám pomůže stáhnout nejnovější Android souč�
 Nahradí Google samostatný správce sady SDK, která se už nepoužívá.
 
 Proč by chcete použít místo správce SDK, který je součástí sady Android SDK Xamarin Android SDK Manager? Ve verzi 25.2.3 balíček nástroje pro Android SDK Google zavedl nový nástroj pro údržbu SDK pro Android. Tento nový nástroj  **[sdkmanager](https://developer.android.com/studio/command-line/sdkmanager.html)**, je nástroj příkazového řádku, který nahrazuje správce samostatné uživatelského rozhraní pro Android SDK. Proto pokud aktualizujete na verzi sady SDK nástroje 26.0.1 (povinné pro Android 8.0) nebo novější a chcete pokračovat ke správě Android SDK prostřednictvím uživatelského rozhraní, musíte použít Xamarin Android SDK Manager.
-
-<a name="requirements" />
 
 ## <a name="requirements"></a>Požadavky
 
@@ -64,10 +62,8 @@ Xamarin Android SDK Manager taky vyžaduje Java Development Kit (která je autom
 Používá Xamarin.Android [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html), což je vyžadováno, pokud jste pro úroveň rozhraní API 24 vývoj nebo větší (JDK 8 také podporuje úrovně rozhraní API starší než 24). Můžete dál používat [JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) Pokud vývoj speciálně pro úroveň rozhraní API 23 nebo starším.
 
 > [!IMPORTANT]
-> **Poznámka:** Xamarin.Android nepodporuje JDK 9.
+> Xamarin.Android nepodporuje JDK 9.
 
-
-<a name="installation" />
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -86,7 +82,6 @@ Když kliknete na tlačítko **nástroje > Android > Android SDK Manager** (jak 
  
 -----
 
-<a name="sdk-manager" /> 
  
 ## <a name="sdk-manager"></a>SDK Manager 
 
@@ -94,11 +89,11 @@ Když kliknete na tlačítko **nástroje > Android > Android SDK Manager** (jak 
 
 Chcete-li spustit Správce SDK v sadě Visual Studio, klikněte na tlačítko **nástroje > Android > Android SDK Manager**:
 
-[![Umístění položky nabídky Android SDK Manager](android-sdk-images/win/02-sdk-manager-menu-item-sml.png)](android-sdk-images/win/02-sdk-manager-menu-item.png)
+[![Umístění položky nabídky Android SDK Manager](android-sdk-images/win/02-sdk-manager-menu-item-sml.png)](android-sdk-images/win/02-sdk-manager-menu-item.png#lightbox)
 
 **Xamarin Android SDK Manager** se otevře v **sady Android SDK a nástroje** obrazovky. Tato obrazovka má dvě karty &ndash; **platformy** a **nástroje**:
 
-[![Snímek obrazovky Android SDK Manager otevřete na kartě platformy](android-sdk-images/win/03-sdk-manager-platforms-sml.png)](android-sdk-images/win/03-sdk-manager-platforms.png)
+[![Snímek obrazovky Android SDK Manager otevřete na kartě platformy](android-sdk-images/win/03-sdk-manager-platforms-sml.png)](android-sdk-images/win/03-sdk-manager-platforms.png#lightbox)
 
 **Sady Android SDK a nástroje** obrazovky je podrobně popsaná v další v následujících částech.
 
@@ -117,7 +112,6 @@ Karty nástroje Xamarin Android SDK Manager jsou popsány v následujících č�
 -----
 
 
-<a name="sdkmanager-locations" /> 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -151,7 +145,6 @@ Obvykle se používá **umístění** a změňte umístění sady Android SDK a 
 
 -----
 
-<a name="sdkmanager-tools" /> 
 
 ### <a name="tools-tab"></a>Na kartě nástroje
 
@@ -162,7 +155,7 @@ Navíc můžete nainstalovat Android emulátoru, nízké úrovně ladicího prog
 
 Například ke stažení balíčku emulátor Google Android, zaškrtněte políčko vedle **emulátoru Android** a klikněte na tlačítko **použít změny** tlačítko:
 
-[![Instalace Android emulátor na kartě nástrojů](android-sdk-images/win/06-install-emulator-sml.png)](android-sdk-images/win/06-install-emulator.png)
+[![Instalace Android emulátor na kartě nástrojů](android-sdk-images/win/06-install-emulator-sml.png)](android-sdk-images/win/06-install-emulator.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -188,7 +181,6 @@ Může zobrazit dialogové okno se zprávou, _lze aktualizovat některé součá
 Klikněte na tlačítko **přijmout** Pokud souhlasíte s podmínkami a ujednáními. V dolní části okna označuje indikátor průběhu stahování a instalace probíhá. Po dokončení instalace **nástroje** karta se zobrazí, zda byly nainstalovány vybrané nástroje a funkce.
 
 
-<a name="xvs-platforms" /> 
 
 ### <a name="platforms-tab"></a>Karta platformy
 
@@ -196,7 +188,7 @@ Klikněte na tlačítko **přijmout** Pokud souhlasíte s podmínkami a ujednán
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Snímek obrazovky podokna platformy](android-sdk-images/win/08-platforms-pane-sml.png)](android-sdk-images/win/08-platforms-pane.png)
+[![Snímek obrazovky podokna platformy](android-sdk-images/win/08-platforms-pane-sml.png)](android-sdk-images/win/08-platforms-pane.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -224,7 +216,7 @@ Pokud chcete přidat jiné platformě k sadě SDK, klikněte na políčko vedle 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Příklad přidávání Android cukrovinkách typu nugát 7.1 součástí do sady SDK pro Android](android-sdk-images/win/09-adding-a-platform-sml.png)](android-sdk-images/win/09-adding-a-platform.png)
+[![Příklad přidávání Android cukrovinkách typu nugát 7.1 součástí do sady SDK pro Android](android-sdk-images/win/09-adding-a-platform-sml.png)](android-sdk-images/win/09-adding-a-platform.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -236,7 +228,7 @@ K instalaci pouze sadu SDK jedním klepnutím políčko vedle platformu. Pak mů
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Příklad přidání některé součásti Android 7.1](android-sdk-images/win/10-adding-some-components-sml.png)](android-sdk-images/win/10-adding-some-components.png)
+[![Příklad přidání některé součásti Android 7.1](android-sdk-images/win/10-adding-some-components-sml.png)](android-sdk-images/win/10-adding-some-components.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -270,7 +262,6 @@ Klikněte na tlačítko **přijmout** Pokud souhlasíte s podmínkami a ujednán
 Teď můžete začít vyvíjet aplikace pro nejnovější, nejvyšší úroveň rozhraní API systému Android.
 
 
-<a name="summary" />
  
 ## <a name="summary"></a>Souhrn
 

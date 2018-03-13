@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 22a0b0f5df5a44f2409a59b26eb841b97c920d8b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 771e1607bc4e6be8f0991e159b5d34f6d4ea9c02
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="fonts"></a>Písma
 
@@ -181,7 +181,7 @@ Při zadávání řez vlastní písma, vždycky je vhodné použít `OnPlatform`
 
 Použití písem než předdefinované řezů písma vyžaduje některé specifické pro platformu kódování. Tento snímek obrazovky ukazuje vlastní písmo **severského** z [Google open-source písem](https://www.google.com/fonts) vykreslen v systému iOS, Android a Windows Phone pomocí Xamarin.Forms.
 
- [ ![Vlastní písma na iOS a Android](fonts-images/custom-sml.png "vlastní písem příklad")](fonts-images/custom.png "příklad vlastní písem")
+ [![Vlastní písma na iOS a Android](fonts-images/custom-sml.png "vlastní písem příklad")](fonts-images/custom.png#lightbox "příklad vlastní písem")
 
 Níže jsou uvedeny kroky potřebné pro každou platformu. Při zahrnutí souborů vlastní písma s aplikací, ujistěte se, že jste ověřte, jestli písma licence poskytuje pro distribuci.
 

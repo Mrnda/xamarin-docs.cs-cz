@@ -7,18 +7,17 @@ ms.assetid: 42E5379F-B0F4-4B87-A314-BF3DE405B0C8
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: d81f897fb7af39334cec4ea9f806533f09754079
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 9c30cf9d76498e95aba6f9a003bc40c7d14e21de
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="viewpager-with-views"></a>ViewPager se zobrazeními
 
 _ViewPager je rozložení správce, který umožňuje implementovat posunkové navigace. Posunkové navigační umožňuje uživateli prstem levé a pravé krok prostřednictvím stránky data. Tato příručka vysvětluje, jak implementovat swipeable uživatelského rozhraní s ViewPager a PagerTabStrip, pomocí zobrazení jako stránky dat (následné průvodce popisuje postup použití fragmenty pro stránky)._
 
-<a name="overview" />
  
 ## <a name="overview"></a>Přehled
 
@@ -27,18 +26,16 @@ Tato příručka je návod, který poskytuje podrobný ukázkový postup použí
 I když `ViewPager`-aplikací jsou často implementováno s `Fragment`s, jsou poměrně jednoduché použití případy, kde další složitosti `Fragment`s není nutné. Například aplikace Galerie základní bitové kopie v tomto návodu nevyžaduje použití `Fragment`s. Protože je statický obsah a pouze swipes uživatel přepínat mezi různými obrázky implementaci je možné mít jednodušší pomocí standardní Android zobrazení a rozložení. 
 
 
-<a name="start" />
 
 ## <a name="start-an-app-project"></a>Spusťte projekt aplikace
 
 Vytvořit nový projekt Android s názvem **TreePager** (viz [Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md) Další informace o vytváření nových projektů Android). Potom spusťte Správce balíčků NuGet. (Další informace o instalaci balíčků NuGet najdete v tématu [návod: včetně NuGet ve vašem projektu](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)). Najít a nainstalovat **podporu knihovna pro Android v4**: 
 
-[![Snímek obrazovky podporu v4 Nuget vybrané Správce balíčků NuGet](viewpager-and-views-images/01-install-support-lib-sml.png)](viewpager-and-views-images/01-install-support-lib.png)
+[![Snímek obrazovky podporu v4 Nuget vybrané Správce balíčků NuGet](viewpager-and-views-images/01-install-support-lib-sml.png)](viewpager-and-views-images/01-install-support-lib.png#lightbox)
 
 Dojde také k instalaci žádné další balíčky reaquired podle **podporu knihovna pro Android v4**.
 
 
-<a name="datasource" />
 
 ## <a name="add-an-example-data-source"></a>Přidat k příklad zdroji dat
 
@@ -58,7 +55,6 @@ int imageId = treeCatalog[2].imageId;
 Protože podrobnosti implementace `TreeCatalog` nejsou důležité k porozumění `ViewPager`, `TreeCatalog` kód není tady. Zdrojový kód a `TreeCatalog` je k dispozici na [TreeCatalog.cs](https://github.com/xamarin/monodroid-samples/blob/master/UserInterface/TreePager/TreePager/TreeCatalog.cs). Stáhněte si tento zdrojový soubor (nebo zkopírujte a vložte kód do nové **TreeCatalog.cs** souboru) a přidejte ji do projektu. Také, stáhněte a rozbalte [soubory obrázků](https://github.com/xamarin/monodroid-samples/blob/master/UserInterface/TreePager/Resources/tree-images.zip?raw=true) do vaší **prostředky/drawable** složky a zahrnout je do projektu. 
 
 
-<a name="layout" />
 
 ## <a name="create-a-viewpager-layout"></a>Vytvoření ViewPager rozložení
 
@@ -82,8 +78,6 @@ available only from
 [Android Support Library v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/);
 it is not available in the Android SDK. 
 
-
-<a name="setup" />
 
 ## Set up ViewPager
 
@@ -115,12 +109,10 @@ Tento kód provede následující akce:
 
 Když sestavíte a spustíte tento kód, byste měli vidět zobrazení, která se podobá následující snímek obrazovky: 
 
-[![Snímek obrazovky aplikace zobrazení prázdný ViewPager](viewpager-and-views-images/02-initial-screen-sml.png)](viewpager-and-views-images/02-initial-screen.png)
+[![Snímek obrazovky aplikace zobrazení prázdný ViewPager](viewpager-and-views-images/02-initial-screen-sml.png)](viewpager-and-views-images/02-initial-screen.png#lightbox)
 
 V tomto okamžiku `ViewPager` je prázdná, protože adaptér je nedostatečná pro přístup k obsahu v **TreeCatalog**. V další části **PagerAdapter** se vytvoří pro připojení `ViewPager` k **TreeCatalog**. 
 
-
-<a name="adapter" />
 
 ## <a name="create-the-adapter"></a>Vytvoření adaptéru
 
@@ -178,7 +170,6 @@ namespace TreePager
 Tento kód zástupných procedur se jejich hlavních `PagerAdapter` implementace. V následujících částech každá z těchto metod se nahradí funkční kód. 
 
 
-<a name="ctor" />
 
 ### <a name="implement-the-constructor"></a>Implementace konstruktoru
 
@@ -198,7 +189,6 @@ public TreePagerAdapter (Context context, TreeCatalog treeCatalog)
 Účelem tento konstruktor je k uložení kontextu a `TreeCatalog` instanci `TreePagerAdapter` bude používat. 
 
 
-<a name="count" />
 
 ### <a name="implement-count"></a>Počet implementací
 
@@ -214,7 +204,6 @@ public override int Count
 `NumTrees` Vlastnost `TreeCatalog` vrátí počet stromů (počet stránek) v datové sadě.
 
 
-<a name="instantiateitem" />
 
 ### <a name="implement-instantiateitem"></a>Implementace InstantiateItem
 
@@ -247,7 +236,6 @@ Tento kód provede následující akce:
 Když `ViewPager` zobrazí obrázek v `position`, zobrazí se tato `ImageView`. Na začátku `InstantiateItem` nazývá dvakrát k naplnění první dvě stránky se zobrazeními. Jako uživatel posune, nazývá se znovu k udržování zobrazení pouze za a před aktuálně zobrazené položky. 
 
 
-<a name="destroyitem" />
 
 ### <a name="implement-destroyitem"></a>Implementace DestroyItem
 
@@ -272,7 +260,6 @@ Tento kód provede následující akce:
 3.  Odebere z pohledu `ViewPager`. 
 
 
-<a name="isviewfromobject" />
 
 ### <a name="implement-isviewfromobject"></a>Implementace IsViewFromObject
 
@@ -287,7 +274,6 @@ public override bool IsViewFromObject(View view, Java.Lang.Object obj)
 }
 ```
 
-<a name="addadapter" />
 
 ## <a name="add-the-adapter-to-the-viewpager"></a>Přidejte do ViewPager adaptéru
 
@@ -301,10 +287,9 @@ Tento kód vytvoří `TreePagerAdapter`a předejte `MainActivity` jako kontext (
 
 Základní implementace je nyní dokončen &ndash; sestavení a spuštění aplikace. Měli byste vidět první obrázek katalogu stromu zobrazují na obrazovce, jak je znázorněno na levé straně na další snímku obrazovky. Prstem zleva najdete v části Další stromové zobrazení, pak prstem práva k přechod na předchozí katalogu stromové struktury: 
 
-[![Snímky obrazovky TreePager aplikace prostřednictvím stromu bitové kopie k načtení](viewpager-and-views-images/03-example-views-sml.png)](viewpager-and-views-images/03-example-views.png)
+[![Snímky obrazovky TreePager aplikace prostřednictvím stromu bitové kopie k načtení](viewpager-and-views-images/03-example-views-sml.png)](viewpager-and-views-images/03-example-views.png#lightbox)
 
 
-<a name="pagetabstrip" />
 
 ## <a name="add-a-pager-indicator"></a>Přidat na Pager ukazatel
 
@@ -333,10 +318,9 @@ Otevřete **Resources/layout/Main.axml** a přidejte `PagerTabStrip` k rozložen
 
 `ViewPager` a `PagerTabStrip` jsou navržené tak, aby spolu spolupracovaly. Když je deklarovat `PagerTabStrip` uvnitř `ViewPager` rozložení, `ViewPager` bude automaticky vyhledá `PagerTabStrip` a připojte ho k adaptéru. Při sestavení a spuštění aplikace, měli byste vidět prázdné `PagerTabStrip` zobrazí v horní části každé obrazovky: 
 
-[![Closeup snímek obrazovky prázdný PagerTabStrip](viewpager-and-views-images/04-empty-pagetabstrip-cap-sml.png)](viewpager-and-views-images/04-empty-pagetabstrip-cap.png)
+[![Closeup snímek obrazovky prázdný PagerTabStrip](viewpager-and-views-images/04-empty-pagetabstrip-cap-sml.png)](viewpager-and-views-images/04-empty-pagetabstrip-cap.png#lightbox)
 
 
-<a name="title" />
 
 ### <a name="display-a-title"></a>Zobrazí nadpis
 
@@ -351,23 +335,21 @@ public override Java.Lang.ICharSequence GetPageTitleFormatted(int position)
 
 Tento kód načte řetězec titulek stromu ze zadané stránky (umístění) v katalogu stromu, převede ji Java `String`a vrátí ji do `ViewPager`. Při spuštění aplikace s Tato nová metoda, každé stránce zobrazuje titulek stromu v `PagerTabStrip`. Název větve v horní části obrazovky bez podtržení, které byste měli vidět: 
 
-[![Snímky obrazovky stránky vyplněno text PagerTabStrip karty](viewpager-and-views-images/05-final-pagetabstrip-sml.png)](viewpager-and-views-images/05-final-pagetabstrip.png)
+[![Snímky obrazovky stránky vyplněno text PagerTabStrip karty](viewpager-and-views-images/05-final-pagetabstrip-sml.png)](viewpager-and-views-images/05-final-pagetabstrip.png#lightbox)
 
 Potažením prstem přejděte a zpět k zobrazení každé titulky stromu bitové kopie v katalogu. 
 
 
-<a name="pagertitlestrip" />
 
 ### <a name="pagertitlestrip-variation"></a>PagerTitleStrip Variation
 
 `PagerTitleStrip` je velmi podobné `PagerTabStrip` s tím rozdílem, že `PagerTabStrip` přidá podtržení, které aktuálně vybrané karty. Můžete nahradit `PagerTabStrip` s `PagerTitleStrip` na výše uvedené rozložení a spusťte aplikaci znovu vidět, jak vypadá s `PagerTitleStrip`: 
 
-[![PagerTitleStrip s podtržení odebrat z textu](viewpager-and-views-images/06-pagetitlestrip-example-sml.png)](viewpager-and-views-images/06-pagetitlestrip-example.png)
+[![PagerTitleStrip s podtržení odebrat z textu](viewpager-and-views-images/06-pagetitlestrip-example-sml.png)](viewpager-and-views-images/06-pagetitlestrip-example.png#lightbox)
 
 Všimněte si, že podtržení odebrána při převodu do `PagerTitleStrip`. 
 
 
-<a name="summary" />
  
 ## <a name="summary"></a>Souhrn
 

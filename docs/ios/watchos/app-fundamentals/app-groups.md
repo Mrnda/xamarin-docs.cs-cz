@@ -3,14 +3,15 @@ title: "Práce se skupinami aplikace"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-ios
+ms.assetid: 6968606B-C287-424F-A321-2492E12BC0BB
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 27ce6c48c5bca69605773eb5ef5637201b9ce6c5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9365bc2707876816419bb5d136a6a1011cf129d7
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="working-with-app-groups"></a>Práce se skupinami aplikace
 
@@ -29,18 +30,18 @@ Sdílené umístění je konfigurován pomocí [aplikace skupiny](https://develo
 
 Identifikátor, který je obvykle vaše ID sady prostředků bude mít skupina aplikací s `group.` předponu. Můžeme použít například ID sady `com.xamarin.WatchSettings` a skupině aplikace `group.com.xamarin.WatchSettings`.
 
-[ ![](app-groups-images/app-group-sml.png "Pomocí ID sady com.xamarin.WatchSettings a group.com.xamarin.WatchSettings skupiny aplikací")](app-groups-images/app-group.png)
+[![](app-groups-images/app-group-sml.png "Pomocí ID sady com.xamarin.WatchSettings a group.com.xamarin.WatchSettings skupiny aplikací")](app-groups-images/app-group.png#lightbox)
 
 ### <a name="entitlementsplist"></a>Entitlements.plist
 
 A také konfigurace profilu pro zřizování, **povolit skupiny aplikací** v **Entitlements.plist** a zadejte ID, které jste zvolili:
 
-[ ![](app-groups-images/entitlements-sml.png "Nakonfigurujte plist a zadejte ID")](app-groups-images/entitlements.png)
+[![](app-groups-images/entitlements-sml.png "Nakonfigurujte plist a zadejte ID")](app-groups-images/entitlements.png#lightbox)
 
 
 ### <a name="deployment"></a>Nasazení
 
-Zkontrolujte konfiguraci správně v aplikaci skupiny vaše [nasazení](~/ios/watchos/deploy-test/index.md#app-groups) zřizování.
+Zkontrolujte konfiguraci správně v aplikaci skupiny vaše [nasazení](~/ios/watchos/deploy-test/index.md#App_Groups) zřizování.
 
 
 Další informace najdete v tématu [možnosti skupiny aplikace](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md) dokumentaci.

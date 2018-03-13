@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: fbf18bad2dbe227575f4d820a121eab6e91655a0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
-ms.translationtype: HT
+ms.openlocfilehash: 5263d32ace14eb803bfd65b6a9b2ea5992ee1413
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="connection-troubleshooting"></a>Odstraňování problémů s připojením
 
@@ -45,15 +45,15 @@ Už je vyžadován hostitel sestavení Xamarin ze starších verzí Xamarin.iOS.
 
 2. Ujistěte se, že **vzdálené přihlášení** je zapnuta Mac. Nastavení přístupu pro **pouze tito uživatelé**a zajistěte, aby uživatel Mac je zahrnuta v seznamu nebo skupině:
 
-    [ ![](troubleshooting-images/troubleshooting-image1.png "Nastavit přístup jenom pro tyto uživatele")](troubleshooting-images/troubleshooting-image1.png)
+    [![](troubleshooting-images/troubleshooting-image1.png "Nastavit přístup jenom pro tyto uživatele")](troubleshooting-images/troubleshooting-image1.png#lightbox)
 
 3. Zkontrolujte, že brána firewall umožňuje příchozí připojení přes port 22 – výchozí nastavení pro SSH:
 
-    [ ![](troubleshooting-images/troubleshooting-image2.png "Zkontrolujte, že brána firewall umožňuje příchozí připojení přes port 22")](troubleshooting-images/troubleshooting-image2.png)
+    [![](troubleshooting-images/troubleshooting-image2.png "Zkontrolujte, že brána firewall umožňuje příchozí připojení přes port 22")](troubleshooting-images/troubleshooting-image2.png#lightbox)
 
     Pokud je zakázána **automaticky povolit podepsané software přijímat příchozí připojení**, OS X, bude během párování s dotazem, aby zobrazení dialogu `mono-sgen` nebo `mono-sgen32` příchozích připojení. Ujistěte se, klikněte na **povolit** v tomto dialogovém okně:
 
-    [ ![](troubleshooting-images/troubleshooting-image4a.png "V tomto dialogovém okně klikněte na tlačítko Povolit")](troubleshooting-images/troubleshooting-image4a.png)
+    [![](troubleshooting-images/troubleshooting-image4a.png "V tomto dialogovém okně klikněte na tlačítko Povolit")](troubleshooting-images/troubleshooting-image4a.png#lightbox)
 
 4. Potvrďte, že jste přihlášeni k uživatelskému účtu v tomto systému Mac a mít aktivní relaci grafickým uživatelským rozhraním.
 
@@ -63,12 +63,12 @@ Už je vyžadován hostitel sestavení Xamarin ze starších verzí Xamarin.iOS.
 
     Například z na následující snímek obrazovky, název účtu budou **amyb** a není **Amy popáleniny**:
 
-    [ ![](troubleshooting-images/troubleshooting-image5a.png "Při získávání názvu účtu z terminálu aplikace")](troubleshooting-images/troubleshooting-image5a.png)
+    [![](troubleshooting-images/troubleshooting-image5a.png "Při získávání názvu účtu z terminálu aplikace")](troubleshooting-images/troubleshooting-image5a.png#lightbox)
 
 
 6. Zkontrolujte správnost IP adresu, kterou používáte pro Mac. Můžete najít IP adresu s **předvolbách systému > Sdílení > vzdálené přihlášení** na Mac.
 
-    [ ![](troubleshooting-images/troubleshooting-image17.png "IP adresa v aplikaci předvolbách systému")](troubleshooting-images/troubleshooting-image17.png)
+    [![](troubleshooting-images/troubleshooting-image17.png "IP adresa v aplikaci předvolbách systému")](troubleshooting-images/troubleshooting-image17.png#lightbox)
 
 7. Jakmile ověříte IP adresu Mac, zkuste `ping` na tuto adresu v `cmd.exe` v systému Windows:
 
@@ -80,7 +80,7 @@ Už je vyžadován hostitel sestavení Xamarin ze starších verzí Xamarin.iOS.
 
         ssh amyb@10.1.8.95
 
-<a name="stepnine">
+<a name="stepnine" />
 
 9. Pokud **krok 8 úspěšné**, můžete zkusit spustit jednoduchý příkaz jako `ls` přes připojení:
 
@@ -129,7 +129,7 @@ Známé příčina:
 
 - **Chyb [#52264](https://bugzilla.xamarin.com/show_bug.cgi?id=52264)**  – tento problém se může stát při Xamarin 4.1, pokud **prostředí přihlášení** v **pokročilé možnosti** kontextové nabídky pro uživatele Mac v  **Předvolbách systému &gt; uživatelé &amp; skupiny** nastavena na hodnotu s výjimkou **/bin/bash**. (Počínaje Xamarin 4.2, tento scénář místo vede k chybová zpráva "Nelze se připojit".) **Alternativní řešení**: Změna **prostředí přihlášení** zpět na původní výchozí **/bin/bash**.
 
-<a name="tryagain">
+<a name="tryagain" />
 
 ### <a name="couldnt-connect-to-macbuildhostlocal-please-try-again"></a>"Nelze se připojit k MacBuildHost.local. Zkuste to prosím znovu."
 
@@ -153,7 +153,7 @@ Hlášené příčiny:
 
     1. Potvrďte umístění **sshd\_konfigurace** souboru spuštěním `ls /etc/ssh/sshd_config` a `ls /etc/sshd_config` v terminálu příkazového řádku. Pro všechny zbývající kroky, nezapomeňte použít tak umístění, nemá _není_ vrátit "podobný soubor nebo adresář".
 
-        [ ![](troubleshooting-images/troubleshooting-image18.png "Spouštění 'ls /etc/ssh/sshd_config' a "/etc/sshd_config ls" v terminálu")](troubleshooting-images/troubleshooting-image18.png)
+        [![](troubleshooting-images/troubleshooting-image18.png "Spouštění 'ls /etc/ssh/sshd_config' a "/etc/sshd_config ls" v terminálu")](troubleshooting-images/troubleshooting-image18.png#lightbox)
 
     3. Spustit `cp /etc/ssh/sshd_config "$HOME/Desktop/"` v terminálu se zkopírovat soubor na pracovní plochu.
 
@@ -171,7 +171,7 @@ Hlášené příčiny:
 
     9. Zakažte a znovu povolte **vzdálené přihlášení** pod **předvolbách systému &gt; sdílení &gt; vzdálené přihlášení** restartování serveru SSH.
 
-<a name="clearing">
+<a name="clearing" />
 
 ### <a name="clearing-the-broker-idb-build-and-designer-agents-on-the-mac"></a>Vymazání zprostředkovatele, IDB, sestavení a návrháře agenty na Mac
 
@@ -183,7 +183,7 @@ Pokud vaše soubory protokolu zobrazit problém během "Instalace", "Nahrát", n
 
 2. Klepněte **XMA** složky a vyberte **přesunout do Koš**:
 
-    [ ![](troubleshooting-images/troubleshooting-image8.png "Přesuňte složku XMA Koš")](troubleshooting-images/troubleshooting-image8.png)
+    [![](troubleshooting-images/troubleshooting-image8.png "Přesuňte složku XMA Koš")](troubleshooting-images/troubleshooting-image8.png#lightbox)
 
 3. Neexistuje mezipaměť v systému Windows a které mohou pomoci zrušte. Otevřete příkazový řádek jako správce v systému Windows:
 
@@ -221,7 +221,7 @@ Ve výstupním okně je nejlepší místo k spuštění. Zobrazuje zprávy o k c
 2. Klikněte **zobrazit výstup z** rozevírací nabídce.
 3. Vyberte **Xamarin**.
 
-[ ![](troubleshooting-images/troubleshooting-image11.png "Vyberte na kartě výstup Xamarin")](troubleshooting-images/troubleshooting-image11.png)
+[![](troubleshooting-images/troubleshooting-image11.png "Vyberte na kartě výstup Xamarin")](troubleshooting-images/troubleshooting-image11.png#lightbox)
 
 ### <a name="log-files"></a>Soubory protokolu
 
@@ -236,18 +236,18 @@ Pokud ve výstupním okně neobsahuje dostatek informací, aby mohli problém di
 
 3. Po Visual Studio dotkne Chyba připojení, shromážděte protokoly z **pomoci > Xamarin > Zip protokoly**:
 
-    [ ![](troubleshooting-images/troubleshooting-image12.png "Shromážděte protokoly z nápovědy > Xamarin > Zip protokoly")](troubleshooting-images/troubleshooting-image12.png)
+    [![](troubleshooting-images/troubleshooting-image12.png "Shromážděte protokoly z nápovědy > Xamarin > Zip protokoly")](troubleshooting-images/troubleshooting-image12.png#lightbox)
 
 4. Když otevřete soubor .zip, zobrazí se seznam souborů, podobně jako v příkladu níže. Chyby připojení, jsou nejdůležitější soubory **\*Ide.log** a **\*Ide.svclog** soubory. Tyto soubory obsahují stejné zprávy ve dvou mírně odlišné formáty. **.Svclog** XML a je užitečné, pokud chcete procházet zprávy. **.Log** je prostý text a je užitečné, pokud chcete filtrovat zprávy pomocí nástroje příkazového řádku.
 
 
     Procházet všechny zprávy, vyberte a otevřete **.svclog** souboru:
 
-    [ ![](troubleshooting-images/troubleshooting-image13.png "Vyberte soubor svclog")](troubleshooting-images/troubleshooting-image13.png)
+    [![](troubleshooting-images/troubleshooting-image13.png "Vyberte soubor svclog")](troubleshooting-images/troubleshooting-image13.png#lightbox)
 
 5. **.Svclog** soubor se otevře v **prohlížeče trasování služeb Microsoft**. Můžete procházet zprávy vlákno zobrazíte související skupiny zpráv. Procházet vlákno, vyberte nejdřív **grafu** a potom klikněte na tlačítko **rozložení režimu** rozevírací nabídky a vyberte **přístup z více vláken**:
 
-    [ ![](troubleshooting-images/troubleshooting-image14.png "Klikněte na rozevírací nabídku režimu rozložení a vyberte přístup z více vláken")](troubleshooting-images/troubleshooting-image14.png)
+    [![](troubleshooting-images/troubleshooting-image14.png "Klikněte na rozevírací nabídku režimu rozložení a vyberte přístup z více vláken")](troubleshooting-images/troubleshooting-image14.png#lightbox)
 
 <a name="verboselogs" />
 
@@ -307,7 +307,7 @@ související chyb: [#36195](https://bugzilla.xamarin.com/show_bug.cgi?id=36195)
 
 Spusťte Xcode na Mac a zajistěte, aby vaše Apple je přihlášení vývojářského účtu a iOS, které je stažen profil vývoj:
 
-[ ![](troubleshooting-images/troubleshooting-image7.png "Stažení zajistí, že je přihlášen účet Apple developer a vývoj profil iOS")](troubleshooting-images/troubleshooting-image7.png)
+[![](troubleshooting-images/troubleshooting-image7.png "Stažení zajistí, že je přihlášen účet Apple developer a vývoj profil iOS")](troubleshooting-images/troubleshooting-image7.png#lightbox)
 
 ### <a name="a-socket-operation-was-attempted-to-an-unreachable-network"></a>"Operace soketu došlo k pokusu síť nedostupný"
 
@@ -323,7 +323,7 @@ Tento problém může dojít, když se nepodaří aktualizovat mezipaměť MEF s
 
 Tímto dojde k vymazání mezipaměti součást Visual Studio MEF o vyřešení problémů s poškození mezipaměti.
 
-<a name="errors">
+<a name="errors" />
 
 ### <a name="errors-due-to-existing-build-host-processes-on-the-mac"></a>Chyby z důvodu existující sestavení hostitelské procesy na Mac
 
@@ -333,7 +333,7 @@ Procesy z předchozího připojení hostitele sestavení může někdy narušova
 ps -A | grep mono
 ```
 
-[ ![](troubleshooting-images/troubleshooting-image10.png "Spuštění příkazů v terminálu na Mac")](troubleshooting-images/troubleshooting-image10.png)
+[![](troubleshooting-images/troubleshooting-image10.png "Spuštění příkazů v terminálu na Mac")](troubleshooting-images/troubleshooting-image10.png#lightbox)
 
 Ukončit stávající procesy, použijte následující příkaz:
 
@@ -353,7 +353,7 @@ Pokud řešíte problém sestavení a ujistěte se, že chování nemá relaci k
 
 2. Klepněte **MTB** složky a vyberte **přesunout do Koš**:
 
-    [ ![](troubleshooting-images/troubleshooting-image9.png "Přesuňte složku MTB Koš")](troubleshooting-images/troubleshooting-image9.png)
+    [![](troubleshooting-images/troubleshooting-image9.png "Přesuňte složku MTB Koš")](troubleshooting-images/troubleshooting-image9.png#lightbox)
 
 
 ## <a name="related-links"></a>Související odkazy

@@ -8,25 +8,24 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 99a35705c408d16f5b4b0e71e53dd453ae377341
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2dd397e824ce7735be4421c3f258852de3f77ecb
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="walkthrough---creating-a-tabbed-ui-with-tabhost"></a>Návod – vytvoření s TabHost záložkách uživatelského rozhraní
 
 _Tento článek provede procesem vytvoření záložkách uživatelského rozhraní v Xamarin.Android pomocí rozhraní API TabHost._
 
 > [!NOTE]
-> **Poznámka:** `TabHost` je starý rozhraní API, které se už nepoužívá Google. Vývojáři se doporučuje vytvořit záložkách aplikací pomocí [nadřízených členů](~/android/user-interface/controls/action-bar.md). `ActionBar` Je k dispozici ve všech verzí systému Android. To bylo poprvé dostupné ve Android 3.0 (API úrovně 11) a byl přesně zpět do Android 2.2 (úroveň rozhraní API 8) a Android 2.3 (API úrovně 10) v [V7 kompatibility aplikace knihovny](http://developer.android.com/tools/support-library/features.html#v7-appcompat), což je k dispozici pro Xamarin.Android prostřednictvím [Xamarin Knihovna pro Android podporu - V7](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/) balíčku.
+> `TabHost` je starý rozhraní API, které se už nepoužívá Google. Vývojáři se doporučuje vytvořit záložkách aplikací pomocí [nadřízených členů](~/android/user-interface/controls/action-bar.md). `ActionBar` Je k dispozici ve všech verzí systému Android. To bylo poprvé dostupné ve Android 3.0 (API úrovně 11) a byl přesně zpět do Android 2.2 (úroveň rozhraní API 8) a Android 2.3 (API úrovně 10) v [V7 kompatibility aplikace knihovny](http://developer.android.com/tools/support-library/features.html#v7-appcompat), což je k dispozici pro Xamarin.Android prostřednictvím [Xamarin Knihovna pro Android podporu - V7](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/) balíčku.
 
 Tento článek provede procesem vytvoření záložkách uživatelského rozhraní v Xamarin.Android pomocí `TabHost` rozhraní API. Toto je starší rozhraní API, která je k dispozici ve všech verzích systémů Android. Tento příklad vytvoří aplikace s tři karty s logiku pro každé kartě se zapouzdřené v aktivitě.
 Na následujícím snímku obrazovky je příklad aplikace, která vytvoříme:
 
 ![Příklad snímek obrazovky aplikace s více kartami](creating-a-tabbed-ui-images/image02.png)
 
-<a name="Creating_the_Application" />
 
 ## <a name="creating-the-application"></a>Vytvoření aplikace
 
@@ -61,7 +60,7 @@ První můžeme aktualizovat soubor rozložení **Resources/Layout/Main.axml** k
 
 Následující snímek obrazovky ukazuje rozložení v Návrháři Xamarin:
 
-[![Snímek obrazovky TabHost rozložení v Návrháři Xamarin](creating-a-tabbed-ui-images/image04-sml.png)](creating-a-tabbed-ui-images/image04.png)
+[![Snímek obrazovky TabHost rozložení v Návrháři Xamarin](creating-a-tabbed-ui-images/image04-sml.png)](creating-a-tabbed-ui-images/image04.png#lightbox)
 
 TabHost musí mít dva podřízené zobrazení je uvnitř: `TabWidget` a `FrameLayout`. Na pozici `TabWidget` a `FrameLayout` svisle uvnitř `TabHost`, `LinearLayout` se používá. FrameLayout je, kde obsah pro každé kartě proběhne, což je prázdný protože `TabHost` bude automaticky vložení každou aktivitu v době běhu. Existuje několik pravidel, která musí být dodržen, pokud jde o vytváření rozložení pro záložkách uživatelského rozhraní:
 
@@ -203,7 +202,6 @@ Spusťte aplikaci. Aplikace by měla vypadat podobně jako snímek obrazovky uka
 Je to! Vytvořili jsme záložkách aplikaci, která umožňuje uživateli snadný způsob přejděte do různých částí aplikace.
 
 
-<a name="Summary" />
 
 ## <a name="summary"></a>Souhrn
 

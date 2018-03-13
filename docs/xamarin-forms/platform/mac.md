@@ -5,14 +5,15 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: EEC549E0-F182-4F9C-B2BA-B31D19569AA5
 ms.technology: xamarin-forms
+ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/03/2017
-ms.openlocfilehash: bda207796d1019f8188176acce055d782cb9e32d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e8487dc06b3512a0ec0bb1b30393faeab506df60
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="mac-platform-setup"></a>Instalační program platformy Mac
 
@@ -20,6 +21,10 @@ ms.lasthandoff: 02/27/2018
 
 Než začnete, vytvořit (nebo použijte existující) Xamarin.Forms projektu.
 Můžete přidat pouze Mac aplikace pomocí sady Visual Studio for Mac.
+
+> [!VIDEO https://youtube.com/embed/mvQ7jzaNseM]
+
+**Přidání systému macOS projektu do Xamarin.Forms, pomocí [univerzity Xamarin](https://university.xamarin.com/)**
 
 ## <a name="adding-a-mac-app"></a>Přidání aplikace Mac
 
@@ -92,7 +97,7 @@ Postupujte podle těchto pokynů můžete přidat aplikaci Mac, který se spust�
 
 9. Klikněte dvakrát na **Main.storyboard** upravit v Xcode. Vyberte **okno** a _zrušte zaškrtnutí políčka_ **je počáteční řadiče** políčko (totiž výše uvedený kód vytvoří okno):
 
-  [ ![Zrušte zaškrtnutí políčka je počáteční řadiče v Xcode](mac-images/xcode-init-controller-sml.png)](mac-images/xcode-init-controller.png)
+  [![Zrušte zaškrtnutí políčka je počáteční řadiče v Xcode](mac-images/xcode-init-controller-sml.png)](mac-images/xcode-init-controller.png#lightbox)
 
   Můžete upravit systém nabídek ve scénáři, odebrat položky nežádoucí.
 

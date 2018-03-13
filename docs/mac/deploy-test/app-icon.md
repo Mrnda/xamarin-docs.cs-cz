@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 742780ad87672bd8a3e2bb3cb66ca582a680d44f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 28218bcbf6527c818fdf2988375d1c353e9f1d27
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="application-icon"></a>Ikona aplikace
 
@@ -122,7 +122,7 @@ Postupujte takto:
     ![Úpravy AppIcons.appiconset](app-icon-images/intro01.png "úpravy AppIcons.appiconset")
 2. Pro každou vyžaduje velikost ikony klikněte na ikonu a vyberte odpovídající soubor bitové kopie, které se vytvořily výše: 
 
-    [![Výběr obrázku ikony](app-icon-images/intro02.png "výběr obrázku ikony")](app-icon-images/intro02-large.png)
+    [![Výběr obrázku ikony](app-icon-images/intro02.png "výběr obrázku ikony")](app-icon-images/intro02-large.png#lightbox)
 3. Uložte provedené změny.
 
 
@@ -135,7 +135,7 @@ Postupujte takto:
 1. Dvakrát klikněte **Info.plist** v **řešení Pad** otevřete **možnosti projektu**.
 2. V **Mac OS X aplikace cíl** části a klikněte na tlačítko **ikony aplikace** vyberte `AppIcons.appiconset` souboru: 
 
-    [![Nastavení sady ikonu](app-icon-images/icon01.png "nastavení Ikona sady")](app-icon-images/icon01-large.png)
+    [![Nastavení sady ikonu](app-icon-images/icon01.png "nastavení Ikona sady")](app-icon-images/icon01-large.png#lightbox)
 3. Uložte změny.
 
 Když se aplikace spustí, zobrazí se v ukotvení na ikonu nový:

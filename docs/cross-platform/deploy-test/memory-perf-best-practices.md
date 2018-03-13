@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: 56d868f64de009d01930ec34ee2cb436276006ef
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 287f564ba74050aa8a06e5a582ae8db6657e440e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="cross-platform-performance"></a>Napříč platformami výkonu
 
@@ -20,23 +20,6 @@ _Existuje mnoho postupů pro zvýšení výkonu aplikace vytvořené pomocí pla
 
 Výkon nízký aplikace prezentuje mnoha způsoby. Aplikace může díky pravděpodobně reagovat, může způsobit pomalé posouvání a může snížit z baterie. Ale optimalizace výkonu zahrnuje více než jen implementace efektivní kódu. Musíte také zvážit možnosti pro uživatele s výkonem aplikace. Například zajistíte, že operace spustit bez blokování uživatele z jiné aktivity vám může pomoct vylepšit možnosti pro uživatele.
 
-Existuje několik postupů pro zvýšení výkonu a dosahovaný výkon aplikace vytvořené pomocí platformy Xamarin. Mezi ně patří:
-
-- [Použití profileru](#profiler)
-- [Uvolnění prostředků IDisposable](#idisposable)
-- [Odhlášení odběru událostí](#events)
-- [Použít slabé odkazy, abyste zabránili Immortal objekty](#weakreferences)
-- [Zpoždění náklady na vytváření objektů](#lazy)
-- [Implementovat asynchronní operace](#async)
-- [Používá systém uvolňování SGen](#sgen)
-- [Snížení velikosti aplikace](#linker)
-- [Optimalizovat prostředky obrázků](#optimizeimages)
-- [Zkrátit dobu aktivace aplikace](#activationperiod)
-- [Snižte komunikace webové služby](#webservicecommunication)
-
-Tuto bezplatnou [Xamarin univerzity video](https://university.xamarin.com/guestlectures/avoiding-common-pitfalls-in-xamarin-apps) také obsahuje užitečné tipy pro navrhování aplikace Xamarin.
-
-[ ![](memory-perf-best-practices-images/clancey-sml.png "Zdarma video Xamarin univerzity předcházení běžné nástrahy")](https://university.xamarin.com/guestlectures/avoiding-common-pitfalls-in-xamarin-apps)
 
 <a name="profiler" />
 
@@ -399,6 +382,6 @@ Tento článek popisuje a popsané techniky pro zvýšení výkonu aplikace vytv
 - [Výkon Xamarin.Android](~/android/deploy-test/performance.md)
 - [Úvod do Xamarin profileru](~/tools/profiler/index.md)
 - [Xamarin.Forms Performance](~/xamarin-forms/deploy-test/performance.md)
-- [Přehled asynchronních podpory](~/cross-platform/platform/async.md)
+- [Přehled podpory asynchronních operací](~/cross-platform/platform/async.md)
 - [Rozhraní IDisposable](https://developer.xamarin.com/api/type/System.IDisposable/)
 - [Zamezení běžné nástrahy aplikace Xamarin (video)](https://university.xamarin.com/guestlectures/avoiding-common-pitfalls-in-xamarin-apps)

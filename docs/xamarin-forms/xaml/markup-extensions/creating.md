@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: eb7189226e4f5d7eb2b55bf61728e65db44ba57b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 737c55aea087094ceb5e6070261d0a3d724e8a01
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="creating-xaml-markup-extensions"></a>Vytváření rozšíření značek pro jazyk XAML
 
@@ -117,7 +117,7 @@ Protože `IMarkupExtension<T>` je odvozena z `IMarkupExtension`, třída musí o
 
 Všimněte si, že když `HslColorExtension` je značky XML, jako atributy jsou nastavené čtyři vlastnosti, ale když se objeví mezi složené závorky, čtyři vlastnosti se oddělují čárkami bez uvozovek. Výchozí hodnoty pro `H`, `S`, a `L` je 0, výchozí hodnota `A` je 1, takže tyto vlastnosti lze vynechat, pokud chcete nastavit výchozí hodnoty. Poslední příklad ukazuje příklad, kdy Světelnost je 0, což obvykle vede k černé, ale alfa kanálu je 0,5, takže je půl transparentní a zobrazí se šedé proti bílé pozadí stránky:
 
-[![HSL – barva ukázkový](creating-images/hslcolordemo-small.png "HSL barva ukázkový")](creating-images/hslcolordemo-large.png "HSL barva Demo")
+[![HSL – barva ukázkový](creating-images/hslcolordemo-small.png "HSL barva ukázkový")](creating-images/hslcolordemo-large.png#lightbox "HSL barva Demo")
 
 ## <a name="a-markup-extension-for-accessing-bitmaps"></a>Rozšíření značek pro přístup k rastrové obrázky
 
@@ -180,7 +180,7 @@ I když `ImageResourceExtension` vyžaduje `Source` vlastnost, která má být n
 
 Tady je programy spuštěné na všech tří platformách:
 
-[![Obrázek ukázkové prostředků](creating-images/imageresourcedemo-small.png "obrázek ukázkové prostředků")](creating-images/imageresourcedemo-large.png "obrázek ukázkové prostředků")
+[![Obrázek ukázkové prostředků](creating-images/imageresourcedemo-small.png "obrázek ukázkové prostředků")](creating-images/imageresourcedemo-large.png#lightbox "obrázek ukázkové prostředků")
 
 ## <a name="service-providers"></a>Poskytovatelé služeb
 

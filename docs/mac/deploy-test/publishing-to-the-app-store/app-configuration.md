@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/12/2017
-ms.openlocfilehash: 8f9294c10f8d3287a2985ede9aadf84ce663c38a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0bc64d0b03aa4f80b19ea098904dc1e2155313f6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="mac-app-configuration"></a>Konfigurace aplikací pro Mac
 
@@ -32,7 +32,7 @@ Chcete-li změnit nastavení aplikace aplikace Xamarin.Mac, dvakrát klikněte n
 
 Tato akce zobrazí možnosti k dispozici pro aplikaci:
 
- [![Úpravy souboru Info.plist](app-configuration-images/config01.png "úprav souboru Info.plist")](app-configuration-images/config01-large.png)
+ [![Úpravy souboru Info.plist](app-configuration-images/config01.png "úprav souboru Info.plist")](app-configuration-images/config01-large.png#lightbox)
 
 Spuštěné aplikace systému Mac, které jsou vytvořené pomocí Xamarin.Mac mají následující požadavky:
 
@@ -43,7 +43,7 @@ Spuštěné aplikace systému Mac, které jsou vytvořené pomocí Xamarin.Mac m
 
 **Podepisování Mac** části **možnosti projektu** dialogové okno umožňuje vývojáři k podepsání aplikace Xamarin.Mac pro testování, pro vlastní verzi nebo verzi prostřednictvím Apple App Store:
 
-[![Editor podepisování Mac](app-configuration-images/config02.png "podepisování Mac okna")](app-configuration-images/config02-large.png)
+[![Editor podepisování Mac](app-configuration-images/config02.png "podepisování Mac okna")](app-configuration-images/config02-large.png#lightbox)
 
 Z sem vyberte identitu, profil zřizování a jakékoli vlastní oprávnění používat k podepsání aplikace, když je přeložen. Vývojář může volitelně přihlaste instalačního programu používaného k instalaci aplikace na jiných macu.
 
@@ -52,7 +52,7 @@ Z sem vyberte identitu, profil zřizování a jakékoli vlastní oprávnění po
 
 **Sestavení Mac** části **možnosti projektu** dialogové okno umožňuje vývojáři vyberte architekturu Xamarin.Mac aplikace k řízení, jaká verze systému macOS bude aplikace podporovat a volitelně vytvořit balíček instalace, pokud je aplikace je úspěšně zkompilovány:
 
- [![Úprava nastavení sestavení](app-configuration-images/config03.png "úpravy nastavení sestavení")](app-configuration-images/config03-large.png)
+ [![Úprava nastavení sestavení](app-configuration-images/config03.png "úpravy nastavení sestavení")](app-configuration-images/config03-large.png#lightbox)
 
 
 ## <a name="related-links"></a>Související odkazy

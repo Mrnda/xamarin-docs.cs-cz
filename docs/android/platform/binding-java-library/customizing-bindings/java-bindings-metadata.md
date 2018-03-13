@@ -7,18 +7,17 @@ ms.assetid: 27CB3C16-33F3-F580-E2C0-968005A7E02E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/15/2018
-ms.openlocfilehash: 91e27fcaef0ef1b262eceecd4d3c71bac34e328d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/09/2018
+ms.openlocfilehash: edf25ebd089994c01b2fa45e77b35fad9a51e350
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="java-bindings-metadata"></a>Metadata vazby Java
 
 _Kód jazyka C# v Xamarin.Android volá Java knihovny prostřednictvím vazby, které jsou mechanismus, který abstrahuje nízké úrovně podrobnosti, které jsou uvedeny v jazyce Java nativní rozhraní (JNI). Xamarin.Android poskytuje nástroj, který generuje těchto vazeb. Tato nástrojů umožňuje ovládacího prvku vývojáře vytváření vazby na základě metadat, která umožňuje postupy, jako je například úprava obory názvů a přejmenování členy. Tento dokument popisuje, jak funguje metadata, shrnuje atributy, aby metadata podporuje a vysvětluje, jak vyřešit problémy vazby úpravou těchto metadat._
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Přehled
 
@@ -74,7 +73,6 @@ Tyto soubory XML mapování lze nalézt v **transformuje** složky projektu:
 
 Umožňuje přejít k popisují **Metadata.xml** podrobněji.
 
-<a name="Metadata.xml_Transform_File" />
 
 ## <a name="metadataxml-transform-file"></a>Soubor metadata.XML transformace
 
@@ -114,7 +112,6 @@ Následuje seznam některé z nejčastěji používaných elementy jazyka XPath 
 -   `parameter` &ndash; Identifikaci parametru pro metodu. Například `/parameter[@name='p0']`
 
 
-<a name="ADDING_TYPES" />
 
 ### <a name="adding-types"></a>Přidání typů
 
@@ -129,7 +126,6 @@ Následuje seznam některé z nejčastěji používaných elementy jazyka XPath 
 </add-node>
 ```
 
-<a name="REMOVING_TYPES" />
 
 ### <a name="removing-types"></a>Odebrání typy
 
@@ -138,8 +134,6 @@ Je možné dáte pokyn, aby generátor vazby Xamarin.Android ignorovat typu Java
 ```xml
 <remove-node path="/api/package[@name='{package_name}']/class[@name='{name}']" />
 ```
-
-<a name="Renaming_Members" />
 
 ### <a name="renaming-members"></a>Přejmenování členy
 
@@ -169,6 +163,8 @@ Chcete-li změnit správně spravované název zabalené typu (nebo metoda), je 
     name="managedName">NewName</attr>
 ```
 
+<a name="Renaming_EventArg_Wrapper_Classes" />
+
 #### <a name="renaming-eventarg-wrapper-classes"></a>Přejmenování `EventArg` Obálka – třídy
 
 Pokud generátor vazby Xamarin.Android identifikuje `onXXX` metodu setter _typ naslouchací proces_, událostí jazyka C# a `EventArgs` podtřídami se budou generovat pro podporu .NET ochucené rozhraní API pro naslouchací proces založený na jazyce Java vzor. Jako příklad zvažte následující třídy Java a metoda:
@@ -193,7 +189,6 @@ Nejedná se o právní název třídy jazyka C#. Chcete-li tento problém, musí
 ```
 
  
-<a name="Supported_Attributes" />
 
 ## <a name="supported-attributes"></a>Podporovaných atributů
 
@@ -341,7 +336,6 @@ Se všemi těchto změn v místě, můžete použít kód postupujte podle krok�
 realReachSettings.MeasurementUnit = SKMeasurementUnit.Second;
 ```
 
-<a name="Summary" />
 
 ## <a name="summary"></a>Souhrn
 

@@ -8,23 +8,21 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/29/2018
-ms.openlocfilehash: b199e4370e93712211db125e427fb61da39cb296
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c9ec0d3bc9c3278f097b925ccb755323df950c62
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="using-the-android-designer"></a>Pomocí Android návrháře
 
 _Toto téma je návod, návrháře Xamarin.Android. Ukazuje, jak vytvořit uživatelské rozhraní pro aplikaci prohlížeče malé barva; Toto uživatelské rozhraní se vytvoří zcela v návrháři._
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Přehled
 
 Android uživatelského rozhraní lze vytvořit deklarativně pomocí souborů XML nebo prostřednictvím kódu programu psaní kódu. Návrhář Xamarin.Android umožňuje vývojářům vytvářet a upravovat deklarativní rozložení vizuálně, aniž byste museli řešit nebylo nutné pracně ručních úprav souborů XML. Návrhář také poskytuje v reálném čase zpětnou vazbu, která umožňuje vývojáři vyhodnotit změny uživatelské rozhraní bez nutnosti nasazení aplikace do zařízení nebo emulátor. To může urychlit vytváření vyžadovalo nadměrné provádění vývoj pro Android uživatelského rozhraní. V tomto článku jsme k dispozici návod, který ukazuje, jak vizuálně vytvořit uživatelské rozhraní pomocí návrháře Xamarin.Android.
 
-<a name="Walkthrough" />
 
 ## <a name="walkthrough"></a>Návod
 
@@ -32,7 +30,6 @@ Cílem tohoto návodu je použít k vytvoření uživatelského rozhraní pro ap
 
 Můžeme začít!
 
-<a name="Creating_a_New_Project" />
 
 ### <a name="creating-a-new-project"></a>Vytvoření nového projektu
 
@@ -42,13 +39,13 @@ Prvním krokem je vytvoření nového projektu Xamarin.Android.
 
 Spusťte sadu Visual Studio a klikněte na tlačítko **nový projekt...**  zvolte **Visual C\# > Android > prázdná aplikace (Android)** šablony:
 
-[ ![Prázdnou aplikaci pro Android](designer-walkthrough-images/vs/01-android-app-sml.png)](designer-walkthrough-images/vs/01-android-app.png)
+[![Prázdnou aplikaci pro Android](designer-walkthrough-images/vs/01-android-app-sml.png)](designer-walkthrough-images/vs/01-android-app.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 Spusťte sadu Visual Studio pro Mac a klikněte na tlačítko **nové řešení...** . Vyberte **aplikace pro Android** šablonu a klikněte na tlačítko **Další**:
 
-[ ![Prázdnou aplikaci pro Android](designer-walkthrough-images/xs/01-android-app-sml.png)](designer-walkthrough-images/xs/01-android-app.png)
+[![Prázdnou aplikaci pro Android](designer-walkthrough-images/xs/01-android-app-sml.png)](designer-walkthrough-images/xs/01-android-app.png#lightbox)
 
 -----
 
@@ -56,20 +53,19 @@ Spusťte sadu Visual Studio pro Mac a klikněte na tlačítko **nové řešení.
 
 Název nové aplikace **DesignerWalkthrough** a klikněte na tlačítko **OK**.
 
-[ ![Název aplikace](designer-walkthrough-images/vs/02-name-app-sml.png)](designer-walkthrough-images/vs/02-name-app.png)
+[![Název aplikace](designer-walkthrough-images/vs/02-name-app-sml.png)](designer-walkthrough-images/vs/02-name-app.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 Název nové aplikace **DesignerWalkthrough**. V části **cílových platforem**, vyberte **nejnovější a největšího** a klikněte na tlačítko **Další**:
 
-[ ![Název aplikace](designer-walkthrough-images/xs/02-designer-walkthrough-sml.png)](designer-walkthrough-images/xs/02-designer-walkthrough.png)
+[![Název aplikace](designer-walkthrough-images/xs/02-designer-walkthrough-sml.png)](designer-walkthrough-images/xs/02-designer-walkthrough.png#lightbox)
 
 Na další obrazovce dialogové okno, klikněte na tlačítko **vytvořit**.
 
 -----
 
 
-<a name="Adding_a_Layout" />
 
 ### <a name="adding-a-layout"></a>Přidání rozložení
 
@@ -79,38 +75,37 @@ Umožňuje vytvořit **LinearLayout** budeme používat pro naše uživatele prv
 
 V sadě Visual Studio, klikněte pravým tlačítkem na **prostředky, rozvržení** v **Průzkumníku řešení** a vyberte **Přidat > novou položku...** . V **přidat novou položku** dialogovém okně, vyberte **Android rozložení**. Název souboru **ListItem.axml** a klikněte na tlačítko **přidat**:
 
-[ ![Nové rozložení](designer-walkthrough-images/vs/03-new-layout-sml.png)](designer-walkthrough-images/vs/03-new-layout.png)
+[![Nové rozložení](designer-walkthrough-images/vs/03-new-layout-sml.png)](designer-walkthrough-images/vs/03-new-layout.png#lightbox)
 
 Nové **ListItem** rozložení se zobrazí v Návrháři:
 
-[ ![Návrhář zobrazení](designer-walkthrough-images/vs/04-designer-view-sml.png)](designer-walkthrough-images/vs/04-designer-view.png)
+[![Návrhář zobrazení](designer-walkthrough-images/vs/04-designer-view-sml.png)](designer-walkthrough-images/vs/04-designer-view.png#lightbox)
 
 Klikněte **zdroj** karta v dolní části návrháře zobrazení zdroje XML pro toto rozložení:
 
-[ ![Návrhář XML](designer-walkthrough-images/vs/05-designer-xml-sml.png)](designer-walkthrough-images/vs/05-designer-xml.png)
+[![Návrhář XML](designer-walkthrough-images/vs/05-designer-xml-sml.png)](designer-walkthrough-images/vs/05-designer-xml.png#lightbox)
 
 Z **zobrazení** nabídky, klikněte na tlačítko **ostatní okna > Osnova dokumentu** otevřete **Osnova dokumentu**. **Osnova dokumentu** ukazuje, že rozložení aktuálně obsahuje jeden **LinearLayout** pomůcky:
 
-[ ![Osnova dokumentu](designer-walkthrough-images/vs/06-document-outline-sml.png)](designer-walkthrough-images/vs/06-document-outline.png)
+[![Osnova dokumentu](designer-walkthrough-images/vs/06-document-outline-sml.png)](designer-walkthrough-images/vs/06-document-outline.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 V sadě Visual Studio pro Mac, klikněte pravým tlačítkem na **prostředky, rozvržení** v **řešení** odsadí a vyberte **Přidat > Nový soubor...** . V **nový soubor** dialogovém okně, vyberte **Android > rozložení**. Název souboru **ListItem** a klikněte na tlačítko **nový**:
 
-[ ![Nové rozložení](designer-walkthrough-images/xs/03-new-layout-sml.png)](designer-walkthrough-images/xs/03-new-layout.png)
+[![Nové rozložení](designer-walkthrough-images/xs/03-new-layout-sml.png)](designer-walkthrough-images/xs/03-new-layout.png#lightbox)
 
 Nové **ListItem** rozložení se zobrazí v Návrháři:
 
-[ ![Návrhář zobrazení](designer-walkthrough-images/xs/04-designer-view-sml.png)](designer-walkthrough-images/xs/04-designer-view.png)
+[![Návrhář zobrazení](designer-walkthrough-images/xs/04-designer-view-sml.png)](designer-walkthrough-images/xs/04-designer-view.png#lightbox)
 
 Klikněte **zdroj** karta v dolní části návrháře zobrazení zdroje XML pro toto rozložení. Když kliknete **Osnova dokumentu** karty na pravé straně, se zobrazí, že rozložení aktuálně obsahuje jeden **LinearLayout** pomůcky:
 
-[ ![Návrhář XML](designer-walkthrough-images/xs/05-designer-xml-sml.png)](designer-walkthrough-images/xs/05-designer-xml.png)
+[![Návrhář XML](designer-walkthrough-images/xs/05-designer-xml-sml.png)](designer-walkthrough-images/xs/05-designer-xml.png#lightbox)
 
 -----
 
 
-<a name="Creating_the_List_Item_User_Interface" />
 
 ### <a name="creating-the-list-item-user-interface"></a>Vytváření uživatelské rozhraní položky seznamu
 
@@ -120,11 +115,11 @@ V **sada nástrojů**, přejděte dolů k položce **bitové kopie & média** č
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Vyhledejte ImageView](designer-walkthrough-images/vs/07-locate-imageview-sml.png)](designer-walkthrough-images/vs/07-locate-imageview.png)
+[![Vyhledejte ImageView](designer-walkthrough-images/vs/07-locate-imageview-sml.png)](designer-walkthrough-images/vs/07-locate-imageview.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Vyhledejte ImageView](designer-walkthrough-images/xs/06-locate-imageview-sml.png)](designer-walkthrough-images/xs/06-locate-imageview.png)
+[![Vyhledejte ImageView](designer-walkthrough-images/xs/06-locate-imageview-sml.png)](designer-walkthrough-images/xs/06-locate-imageview.png#lightbox)
 
 -----
 
@@ -132,11 +127,11 @@ Alternativně můžete zadat *ImageView* do panelu Hledat najít `ImageView` pom
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![ImageView vyhledávání](designer-walkthrough-images/vs/08-imageview-search-sml.png)](designer-walkthrough-images/vs/08-imageview-search.png)
+[![ImageView vyhledávání](designer-walkthrough-images/vs/08-imageview-search-sml.png)](designer-walkthrough-images/vs/08-imageview-search.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![ImageView vyhledávání](designer-walkthrough-images/xs/07-imageview-search-sml.png)](designer-walkthrough-images/xs/07-imageview-search.png)
+[![ImageView vyhledávání](designer-walkthrough-images/xs/07-imageview-search-sml.png)](designer-walkthrough-images/xs/07-imageview-search.png#lightbox)
 
 -----
 
@@ -144,11 +139,11 @@ Přetáhněte to `ImageView` na návrhovou plochu:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![ImageView na plátno](designer-walkthrough-images/vs/09-imageview-on-canvas-sml.png)](designer-walkthrough-images/vs/09-imageview-on-canvas.png)
+[![ImageView na plátno](designer-walkthrough-images/vs/09-imageview-on-canvas-sml.png)](designer-walkthrough-images/vs/09-imageview-on-canvas.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![ImageView na plátno](designer-walkthrough-images/xs/08-imageview-on-canvas-sml.png)](designer-walkthrough-images/xs/08-imageview-on-canvas.png)
+[![ImageView na plátno](designer-walkthrough-images/xs/08-imageview-on-canvas-sml.png)](designer-walkthrough-images/xs/08-imageview-on-canvas.png#lightbox)
 
 -----
 
@@ -158,11 +153,11 @@ V dalším kroku přetáhněte `LinearLayout (Vertical)` widget **sada nástroj�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Modré obrysu](designer-walkthrough-images/vs/10-blue-outline-sml.png)](designer-walkthrough-images/vs/10-blue-outline.png)
+[![Modré obrysu](designer-walkthrough-images/vs/10-blue-outline-sml.png)](designer-walkthrough-images/vs/10-blue-outline.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Modré obrysu](designer-walkthrough-images/xs/10-blue-outline-sml.png)](designer-walkthrough-images/xs/10-blue-outline.png)
+[![Modré obrysu](designer-walkthrough-images/xs/10-blue-outline-sml.png)](designer-walkthrough-images/xs/10-blue-outline.png#lightbox)
 
 -----
 
@@ -170,11 +165,11 @@ Když vyberete `ImageView` v Návrháři blue obrys přesune do obklopit `ImageV
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Vyberte ImageView](designer-walkthrough-images/vs/11-select-imageview-sml.png)](designer-walkthrough-images/vs/11-select-imageview.png)
+[![Vyberte ImageView](designer-walkthrough-images/vs/11-select-imageview-sml.png)](designer-walkthrough-images/vs/11-select-imageview.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Vyberte ImageView](designer-walkthrough-images/xs/11-select-imageview-sml.png)](designer-walkthrough-images/xs/11-select-imageview.png)
+[![Vyberte ImageView](designer-walkthrough-images/xs/11-select-imageview-sml.png)](designer-walkthrough-images/xs/11-select-imageview.png#lightbox)
 
 -----
 
@@ -182,11 +177,11 @@ V dalším kroku přetáhněte `Text (Large)` widget **sada nástrojů** do nov�
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Označuje zelená](designer-walkthrough-images/vs/12-green-highlight-sml.png)](designer-walkthrough-images/vs/12-green-highlight.png)
+[![Označuje zelená](designer-walkthrough-images/vs/12-green-highlight-sml.png)](designer-walkthrough-images/vs/12-green-highlight.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Označuje zelená](designer-walkthrough-images/xs/12-green-highlight-sml.png)](designer-walkthrough-images/xs/12-green-highlight.png)
+[![Označuje zelená](designer-walkthrough-images/xs/12-green-highlight-sml.png)](designer-walkthrough-images/xs/12-green-highlight.png#lightbox)
 
 -----
 
@@ -194,11 +189,11 @@ Dál přidejte `Text (Small)` pomůcky níže `Text (Large)` pomůcky:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Přidání malé textové pomůcky](designer-walkthrough-images/vs/13-add-small-text-sml.png)](designer-walkthrough-images/vs/13-add-small-text.png)
+[![Přidání malé textové pomůcky](designer-walkthrough-images/vs/13-add-small-text-sml.png)](designer-walkthrough-images/vs/13-add-small-text.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Přidání malé textové pomůcky](designer-walkthrough-images/xs/13-add-small-text-sml.png)](designer-walkthrough-images/xs/13-add-small-text.png)
+[![Přidání malé textové pomůcky](designer-walkthrough-images/xs/13-add-small-text-sml.png)](designer-walkthrough-images/xs/13-add-small-text.png#lightbox)
 
 -----
 
@@ -206,18 +201,17 @@ Návrhář v tomto okamžiku by měla vypadat přibližně následující sníme
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Návrhář rozložení](designer-walkthrough-images/vs/14-raw-layout-sml.png)](designer-walkthrough-images/vs/14-raw-layout.png)
+[![Návrhář rozložení](designer-walkthrough-images/vs/14-raw-layout-sml.png)](designer-walkthrough-images/vs/14-raw-layout.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Návrhář rozložení](designer-walkthrough-images/xs/14-raw-layout-sml.png)](designer-walkthrough-images/xs/14-raw-layout.png)
+[![Návrhář rozložení](designer-walkthrough-images/xs/14-raw-layout-sml.png)](designer-walkthrough-images/xs/14-raw-layout.png#lightbox)
 
 -----
 
 Pokud dva `textView` pomůcky nejsou uvnitř `linearLayout1`, můžete přetáhnout jejich `linearLayout1` v **Osnova dokumentu** a umístit je, aby se zobrazovaly, jak je uvedeno v předchozím snímku obrazovky (s odsazením pod `linearLayout1`).
 
 
-<a name="Arranging_The_User_Interface" />
 
 ### <a name="arranging-the-user-interface"></a>Uspořádání uživatelského rozhraní
 
@@ -241,13 +235,13 @@ Pojďme upravit uživatelské rozhraní k zobrazení `ImageView` na levé stran�
 
 3.  Přejděte dolů k položce **skupinu ViewGroup** a změňte `Width` nastavení `wrap_content`:
 
-[ ![Wrap obsah sady](designer-walkthrough-images/xs/15-wrap-content-sml.png)](designer-walkthrough-images/xs/15-wrap-content.png)
+[![Wrap obsah sady](designer-walkthrough-images/xs/15-wrap-content-sml.png)](designer-walkthrough-images/xs/15-wrap-content.png#lightbox)
 
 -----
 
 Jiný způsob, jak změnit `Width` nastavení je na pravé straně widgetu k jeho nastavení šířky k přepnutí klepněte na trojúhelník `wrap_content`:
 
-[ ![Přetáhněte nastavit šířku](designer-walkthrough-images/xs/16-width-arrow-sml.png)](designer-walkthrough-images/xs/16-width-arrow.png)
+[![Přetáhněte nastavit šířku](designer-walkthrough-images/xs/16-width-arrow-sml.png)](designer-walkthrough-images/xs/16-width-arrow.png#lightbox)
 
 Kliknutím na tlačítko trojúhelníku vrátí `Width` nastavení `match_parent`.
 
@@ -255,11 +249,11 @@ V dalším kroku přepnout **Osnova dokumentu** a vyberte kořenovou `LinearLayo
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Vybrat kořenový LinearLayout](designer-walkthrough-images/vs/16-root-linearlayout-sml.png)](designer-walkthrough-images/vs/16-root-linearlayout.png)
+[![Vybrat kořenový LinearLayout](designer-walkthrough-images/vs/16-root-linearlayout-sml.png)](designer-walkthrough-images/vs/16-root-linearlayout.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Vybrat kořenový LinearLayout](designer-walkthrough-images/xs/17-root-linearlayout-sml.png)](designer-walkthrough-images/xs/17-root-linearlayout.png)
+[![Vybrat kořenový LinearLayout](designer-walkthrough-images/xs/17-root-linearlayout-sml.png)](designer-walkthrough-images/xs/17-root-linearlayout.png#lightbox)
 
 -----
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -272,7 +266,7 @@ S kořenovým `LinearLayout` vybrána, vraťte do **vlastnosti** okně klikněte
 
 S kořenovým `LinearLayout` vybrána, vrátit **vlastnosti** a klikněte na **pomůcky**. Změna `Orientation` nastavení `horizontal`:
 
-[ ![Vyberte vodorovné orientaci](designer-walkthrough-images/xs/18-horizontal-orientation-sml.png)](designer-walkthrough-images/xs/18-horizontal-orientation.png)
+[![Vyberte vodorovné orientaci](designer-walkthrough-images/xs/18-horizontal-orientation-sml.png)](designer-walkthrough-images/xs/18-horizontal-orientation.png#lightbox)
 
 -----
 
@@ -280,15 +274,14 @@ Návrhář v tomto okamžiku by měla vypadat přibližně následující sníme
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![Návrhář rozložení](designer-walkthrough-images/vs/18-designer-layout-sml.png)](designer-walkthrough-images/vs/18-designer-layout.png)
+[![Návrhář rozložení](designer-walkthrough-images/vs/18-designer-layout-sml.png)](designer-walkthrough-images/vs/18-designer-layout.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Návrhář rozložení](designer-walkthrough-images/xs/19-designer-layout-sml.png)](designer-walkthrough-images/xs/19-designer-layout.png)
+[![Návrhář rozložení](designer-walkthrough-images/xs/19-designer-layout-sml.png)](designer-walkthrough-images/xs/19-designer-layout.png#lightbox)
 
 -----
 
-<a name="Modifying_the_Spacing" />
 
 ### <a name="modifying-the-spacing"></a>Úprava mezery
 
@@ -296,13 +289,13 @@ Návrhář v tomto okamžiku by měla vypadat přibližně následující sníme
 
 V dalším kroku upravíme nastavení odsazení a okrajů v uživatelském rozhraní získat další prostor mezi widgetů. Vyberte `ImageView`, klikněte na tlačítko **Categorized** ikonu hledání v **vlastnosti** okno a přejděte dolů k **rozložení** části. Změna `Min Height` k `70dp`, `Min Width` k `50dp`a `padding` k `10dp`. To platí výplně kolem ze všech stran `ImageView` a jeho svisle elongates:
 
-[ ![Nastavení odsazení](designer-walkthrough-images/vs/19-padding-widths-sml.png)](designer-walkthrough-images/vs/19-padding-widths.png)
+[![Nastavení odsazení](designer-walkthrough-images/vs/19-padding-widths-sml.png)](designer-walkthrough-images/vs/19-padding-widths.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 V dalším kroku upravíme nastavení odsazení a okrajů v uživatelském rozhraní získat další prostor mezi widgetů. Vyberte `ImageView` a klikněte na **rozložení** v části **vlastnosti**. Změna `Padding` k `10dp`, `Min Width` k `50dp`a `Min Height` k `70dp`. To platí výplně kolem ze všech stran `ImageView` a jeho svisle elongates:
 
-[ ![Nastavení odsazení](designer-walkthrough-images/xs/20-padding-widths-sml.png)](designer-walkthrough-images/xs/20-padding-widths.png)
+[![Nastavení odsazení](designer-walkthrough-images/xs/20-padding-widths-sml.png)](designer-walkthrough-images/xs/20-padding-widths.png#lightbox)
 
 -----
 
@@ -311,13 +304,13 @@ V dalším kroku upravíme nastavení odsazení a okrajů v uživatelském rozhr
 Dolní levý doprava a horní odsazení nastavení můžete nastavit samostatně zadáním hodnoty do `paddingBottom`, `paddingLeft`, `paddingRight`, a `paddingTop` polí v uvedeném pořadí.
 Například nastavit `paddingLeft` do `5dp` a `paddingBottom`, `paddingRight`, a `paddingTop` polí k `10dp`:
 
-[ ![Nastavení vlastní odsazení](designer-walkthrough-images/vs/20-custom-padding-sml.png)](designer-walkthrough-images/vs/20-custom-padding.png)
+[![Nastavení vlastní odsazení](designer-walkthrough-images/vs/20-custom-padding-sml.png)](designer-walkthrough-images/vs/20-custom-padding.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 Horní, pravé, dolní a levé straně odsazení nastavení můžete nastavit samostatně zadáním hodnoty do `Top`, `Right`, `Bottom`, a `Left` odsazení pole, v uvedeném pořadí. Například nastavit `Left` hodnota k odsazení `5dp` a `Top`, `Right`, a `Bottom` odsazení hodnot `10dp`. Všimněte si, že `Padding` nastavení se změní na čárkami oddělený seznam tyto hodnoty:
 
-[ ![Nastavení vlastní odsazení](designer-walkthrough-images/xs/21-custom-padding-sml.png)](designer-walkthrough-images/xs/21-custom-padding.png)
+[![Nastavení vlastní odsazení](designer-walkthrough-images/xs/21-custom-padding-sml.png)](designer-walkthrough-images/xs/21-custom-padding.png#lightbox)
 
 -----
 
@@ -325,18 +318,17 @@ Horní, pravé, dolní a levé straně odsazení nastavení můžete nastavit sa
 
 V dalším kroku vylepšení pozici `LinearLayout` pomůcku, která obsahuje dva `TextView` pomůcky. V **Osnova dokumentu**, vyberte `linearLayout1`. V **vlastnosti** okno, posuňte se **rozložení - skupinu ViewGroup** části. Nastavit `layout_marginBottom`, `layout_marginLeft`, `layout_marginRight`, a `layout_marginTop` k `5dp`, `5dp`, `0dp`, a `5dp` v uvedeném pořadí:
 
-[ ![Nastavení okrajů](designer-walkthrough-images/vs/21-margins-sml.png)](designer-walkthrough-images/vs/21-margins.png)
+[![Nastavení okrajů](designer-walkthrough-images/vs/21-margins-sml.png)](designer-walkthrough-images/vs/21-margins.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 V dalším kroku vylepšení pozici `LinearLayout` pomůcku, která obsahuje dva `TextView` pomůcky. V **Osnova dokumentu**, vyberte `linearLayout1`. V **vlastnosti** podokně, vyberte **rozložení** kartě. Přejděte dolů k položce **skupinu ViewGroup** tématu a nastavte `Left`, `Top`, `Right`, a `Bottom` marže k `5dp`, `5dp`, `0dp`, a `5dp` v uvedeném pořadí:
 
-[ ![Nastavení okrajů](designer-walkthrough-images/xs/22-margins-sml.png)](designer-walkthrough-images/xs/22-margins.png)
+[![Nastavení okrajů](designer-walkthrough-images/xs/22-margins-sml.png)](designer-walkthrough-images/xs/22-margins.png#lightbox)
 
 -----
 
 
-<a name="Removing_the_Default_Image" />
 
 ### <a name="removing-the-default-image"></a>Odebrání výchozí Image
 
@@ -360,11 +352,10 @@ Vzhledem k tomu, že používáme `ImageView` zobrazení barvy (nikoli Image), u
 
 3.  Vymazat `Src` nastavení tak, aby je prázdné:
 
-[ ![Vymazat nastavení src ImageView](designer-walkthrough-images/xs/23-clear-src-sml.png)](designer-walkthrough-images/xs/23-clear-src.png)
+[![Vymazat nastavení src ImageView](designer-walkthrough-images/xs/23-clear-src-sml.png)](designer-walkthrough-images/xs/23-clear-src.png#lightbox)
 
 -----
 
-<a name="Adding_a_ListView" />
 
 ### <a name="adding-a-listview-container"></a>Přidávání kontejneru ListView
 
@@ -377,7 +368,7 @@ V **sada nástrojů**, vyhledejte `ListView` pomůcky a přetáhněte ji na náv
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Nové ListView](designer-walkthrough-images/xs/24-new-listview-sml.png)](designer-walkthrough-images/xs/24-new-listview.png)
+[![Nové ListView](designer-walkthrough-images/xs/24-new-listview-sml.png)](designer-walkthrough-images/xs/24-new-listview.png#lightbox)
 
 -----
 
@@ -390,14 +381,13 @@ Otevřete **pomůcky** v části **vlastnosti** a změňte `Id` k `@+id/myListVi
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![Přejmenujte id myListView](designer-walkthrough-images/xs/25-change-id-sml.png)](designer-walkthrough-images/xs/25-change-id.png)
+[![Přejmenujte id myListView](designer-walkthrough-images/xs/25-change-id-sml.png)](designer-walkthrough-images/xs/25-change-id.png#lightbox)
 
 -----
 
 V tomto okamžiku naše uživatelské rozhraní je připravený k použití.
 
 
-<a name="Running_the_Application" />
 
 ### <a name="running-the-application"></a>Spuštění aplikace
 
@@ -490,10 +480,9 @@ Tento kód používá vlastní `ListView` adaptéru načíst informace o barva a
 
 Sestavte a spusťte aplikaci. Na následujícím snímku obrazovky je příklad, jak aplikace se zobrazí při spuštění v zařízení:
 
-[ ![Poslední snímek obrazovky](designer-walkthrough-images/xs/26-final-screenshot-sml.png)](designer-walkthrough-images/xs/26-final-screenshot.png)
+[![Poslední snímek obrazovky](designer-walkthrough-images/xs/26-final-screenshot-sml.png)](designer-walkthrough-images/xs/26-final-screenshot.png#lightbox)
 
 
-<a name="Summary" />
 
 ## <a name="summary"></a>Souhrn
 

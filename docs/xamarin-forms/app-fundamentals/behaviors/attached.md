@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 9751b39987819428f93e09d4bfb6bee261604bb5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 84e60e8ce698e3d87db3e1bdc61613325ad831c8
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="attached-behaviors"></a>Připojené chování
 
@@ -101,10 +101,10 @@ NumericValidationBehavior.SetAttachBehavior (entry, true);
 
 V době běhu chování bude reagovat na interakci s ovládacím prvkem podle chování implementace. Tyto snímky obrazovky ukazují připojené chování neodpovídá na požadavky neplatný vstup:
 
-[ ![](attached-images/screenshots-sml.png "Ukázkové aplikace s připojené chování")](attached-images/screenshots.png "ukázkové aplikace s připojené chování")
+[![](attached-images/screenshots-sml.png "Ukázkové aplikace s připojené chování")](attached-images/screenshots.png#lightbox "ukázkové aplikace s připojené chování")
 
 > [!NOTE]
-> **Poznámka:**: připojené chování jsou určeny pro konkrétní ovládací prvek typu (nebo nadřazenou třídu, která můžete použít pro mnoho ovládací prvky) a musí být pouze přidaní do ovládacího prvku kompatibilní. Probíhá pokus o připojení chování do ovládacího prvku nekompatibilní výsledkem bude Neznámý chování a závisí na implementaci chování.
+> Připojené chování jsou určeny pro konkrétní ovládací prvek typu (nebo nadřazenou třídu, která můžete použít pro mnoho ovládací prvky) a musí být pouze přidaní do ovládacího prvku kompatibilní. Probíhá pokus o připojení chování do ovládacího prvku nekompatibilní výsledkem bude Neznámý chování a závisí na implementaci chování.
 
 ### <a name="removing-an-attached-behavior-from-a-control"></a>Odebrání připojené chování z ovládacího prvku
 

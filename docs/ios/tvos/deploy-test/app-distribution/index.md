@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: c0cfe437b03a1f0dea05a506b1dfce62a4658bb4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3e96e98f90c7f4c849a9f679b2de819ccaabfec0
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="app-distribution-overview"></a>Přehled distribuce aplikace
 
@@ -22,7 +22,7 @@ _Tento dokument poskytuje přehled distribuční technik, které jsou k dispozic
 Po byla vyvinuta Xamarin.tvOS aplikace, je dalším krokem v životního cyklu softwaru distribuovat aplikace pro uživatele, jak je uvedeno v části zvýrazněných v následujícím diagramu:
 
 
-[![Přehled životního cyklu vývoje softwaru](images/publishingdiagram.png)](images/publishingdiagram.png)
+[![Přehled životního cyklu vývoje softwaru](images/publishingdiagram.png)](images/publishingdiagram.png#lightbox)
 
 
 Apple nabízí tyto způsoby distribuovat tvOS aplikace, které jsou podporovány Xamarin.tvOS:
@@ -70,7 +70,7 @@ Někdy označuje jako *distribuční Enterprise*, interní distribuční umožň
 
 Další informace o získávání nastavení a jak se bude distribuovat aplikace interně, naleznete [interní distribuční průvodce](~/ios/deploy-test/app-distribution/in-house-distribution.md). Tento dokument je specifické pro iOS, ale používají se stejné techniky pro tvOS aplikace.
 
-<a name="Ad-Hoc-Distribution" />
+<a name="Ad_Hoc_Distribution"/>
 
 ## <a name="ad-hoc-distribution"></a>Ad Hoc distribuce
 

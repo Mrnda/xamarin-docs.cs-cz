@@ -7,100 +7,93 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: c09dcefb97a5edafcd03394e5ae3146b69a40745
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 37e38ddd84b50709bec147c54cdfa9f79404a39f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="manually-uploading-the-apk"></a>Ručně odesílání APK
 
-<a name="Uploading_the_APK" />
 
 Prvním je odeslána APK Google Play (nebo pokud se používá starší verzi aplikace Xamarin.Android) musí být ručně nahrát APK prostřednictvím [vývojářské konzole Google Play](https://play.google.com/apps/publish). Tato příručka vysvětluje kroky potřebné pro tento proces. 
 
-<a name="devconsole" />
 
 ## <a name="google-play-developer-console"></a>Vývojářské konzole Google Play
 
 Poté, co byl zkompilován APK a propagační prostředky připravený, aplikace, musí se nahrát na web Google Play. K tomu je potřeba k přihlašujete [vývojářské konzole Google Play](https://play.google.com/apps/publish), rozevíracích Další. Klikněte **publikování aplikace pro Android na webu Google Play** tlačítko inicializovat proces distribuce aplikace.
 
-[ ![Vývojářské konzole Google Play](manually-uploading-the-apk-images/00-google-play-developer-console-sml.png)](manually-uploading-the-apk-images/00-google-play-developer-console.png)
+[![Vývojářské konzole Google Play](manually-uploading-the-apk-images/00-google-play-developer-console-sml.png)](manually-uploading-the-apk-images/00-google-play-developer-console.png#lightbox)
 
 Pokud již máte existující aplikaci zaregistrována Google Play, klikněte **přidejte novou aplikaci** tlačítko:
 
-[ ![Přidat nové tlačítko aplikace](manually-uploading-the-apk-images/01-existing-app-sml.png)](manually-uploading-the-apk-images/01-existing-app.png)
+[![Přidat nové tlačítko aplikace](manually-uploading-the-apk-images/01-existing-app-sml.png)](manually-uploading-the-apk-images/01-existing-app.png#lightbox)
 
 Když **přidat novou aplikaci** se zobrazí dialogové okno, zadejte název aplikace a klikněte na tlačítko **nahrát APK**:
 
-[ ![Nahrát tlačítko APK](manually-uploading-the-apk-images/02-add-new-application-sml.png)](manually-uploading-the-apk-images/02-add-new-application.png)
+[![Nahrát tlačítko APK](manually-uploading-the-apk-images/02-add-new-application-sml.png)](manually-uploading-the-apk-images/02-add-new-application.png#lightbox)
 
 Na další obrazovce umožňuje publikovat alfa testování, testování verze beta nebo produkční aplikaci. V následujícím příkladu **ALPHA testování** vybraná karta. Protože **Moje aplikace** nepoužívá licenční služby, **Get licenční klíč** tlačítko nemusí být kliknutí na tomto příkladu. Zde **nahrát váš první APK do Alpha** po kliknutí na tlačítko Publikovat do kanálu alfa:
 
-[ ![Nahrát váš první APK pro tlačítko Alpha](manually-uploading-the-apk-images/03-upload-to-alpha-sml.png)](manually-uploading-the-apk-images/03-upload-to-alpha.png)
+[![Nahrát váš první APK pro tlačítko Alpha](manually-uploading-the-apk-images/03-upload-to-alpha-sml.png)](manually-uploading-the-apk-images/03-upload-to-alpha.png#lightbox)
 
 **NAHRÁT nový APK k ALPHA** se zobrazí dialogové okno. APK lze odeslat buď kliknutím **Procházet soubory** tlačítko nebo přetažení a uvolnění APK: 
 
-[ ![Nahrát nový APK do dialogového okna Alpha](manually-uploading-the-apk-images/04-upload-dialog-sml.png)](manually-uploading-the-apk-images/04-upload-dialog.png)
+[![Nahrát nový APK do dialogového okna Alpha](manually-uploading-the-apk-images/04-upload-dialog-sml.png)](manually-uploading-the-apk-images/04-upload-dialog.png#lightbox)
 
 Ujistěte se, že nahrát APK připravené pro verzi, která je distribuována.
 Dialogové okno Další označuje průběh nahrávání APK:
 
-[ ![Nahrát indikace průběhu](manually-uploading-the-apk-images/05-upload-progress-sml.png)](manually-uploading-the-apk-images/05-upload-progress.png)
+[![Nahrát indikace průběhu](manually-uploading-the-apk-images/05-upload-progress-sml.png)](manually-uploading-the-apk-images/05-upload-progress.png#lightbox)
 
 Po odeslání APK je možné vybrat testování metodu:
 
-[ ![Zvolte dialogové okno testování – metoda](manually-uploading-the-apk-images/06-select-testing-method-sml.png)](manually-uploading-the-apk-images/06-select-testing-method.png)
+[![Zvolte dialogové okno testování – metoda](manually-uploading-the-apk-images/06-select-testing-method-sml.png)](manually-uploading-the-apk-images/06-select-testing-method.png#lightbox)
 
 Další informace o testování aplikace najdete v tématu Google [nastavit alpha nebo beta testy](https://support.google.com/googleplay/android-developer/answer/3131213?hl=en) průvodce.
 
 Po odeslání APK se uloží jako koncept. Nelze publikovat, dokud nebudou další podrobnosti k dispozici na webu Google Play, jak je popsáno dále.
 
-<a name="Listing_Details" />
 
 ## <a name="store-listing"></a>Výpis úložiště
 
 Klikněte na tlačítko **výpis úložiště** v **vývojářské konzole Google Play** zadat informace, které Google Play se zobrazí uživatelům možností aplikace: 
 
-[ ![Dialogové okno výpis úložiště](manually-uploading-the-apk-images/07-store-listing-sml.png)](manually-uploading-the-apk-images/07-store-listing.png)
+[![Dialogové okno výpis úložiště](manually-uploading-the-apk-images/07-store-listing-sml.png)](manually-uploading-the-apk-images/07-store-listing.png#lightbox)
 
-<a name="Upload_Assets" />
 
 ### <a name="graphics-assets"></a>Grafické prostředky
 
 Přejděte dolů k položce **grafické prostředky** části **výpis úložiště** stránky:
 
-[ ![Grafické prostředky části](manually-uploading-the-apk-images/08-graphic-assets-sml.png)](manually-uploading-the-apk-images/08-graphic-assets.png)
+[![Grafické prostředky části](manually-uploading-the-apk-images/08-graphic-assets-sml.png)](manually-uploading-the-apk-images/08-graphic-assets.png#lightbox)
 
 V této části jsou odeslány všechny propagační prostředky, které byly dříve připravené. Pokyny se, jaký propagační prostředky je třeba zadat a jaký formát by měl být součástí.
 
-<a name="categorization" />
 
 ### <a name="categorization"></a>Kategorizaci
 
 Po **grafické prostředky** oddíl **KATEGORIZACI** vyberte typ aplikace a kategorie:
 
-[ ![Část kategorizaci](manually-uploading-the-apk-images/09-categorization-sml.png)](manually-uploading-the-apk-images/09-categorization.png)
+[![Část kategorizaci](manually-uploading-the-apk-images/09-categorization-sml.png)](manually-uploading-the-apk-images/09-categorization.png#lightbox)
 
 Hodnocení obsahu je zahrnuté po další části.
 
-<a name="contact_details" />
 
 ### <a name="contact-details"></a>Kontaktní údaje
 
 Je v poslední části této stránky **podrobnosti kontaktu** části. Tento oddíl je používán ke sběru informací o vývojář aplikace:
 
-[ ![Obraťte se na v části Podrobnosti o](manually-uploading-the-apk-images/10-contact-details-sml.png)](manually-uploading-the-apk-images/10-contact-details.png)
+[![Obraťte se na v části Podrobnosti o](manually-uploading-the-apk-images/10-contact-details-sml.png)](manually-uploading-the-apk-images/10-contact-details.png#lightbox)
 
 Je možné zadat adresu URL pro zásady ochrany osobních údajů aplikace ve **zásady ochrany osobních údajů** části, jak je uvedeno výše.
 
-<a name="content_rating" />
 
 ## <a name="content-rating"></a>Hodnocení obsahu
 
 Klikněte na tlačítko **hodnocení obsahu** v **vývojářské konzole Google Play**. Na této stránce zadejte hodnocení obsahu pro vaši aplikaci. Google Play vyžaduje, aby všechny aplikace zadejte hodnocení obsahu. Klikněte **pokračovat** tlačítko Dotazník pro hodnocení obsahu dokončení:
 
-[ ![Část hodnocení obsahu](manually-uploading-the-apk-images/11-content-rating-sml.png)](manually-uploading-the-apk-images/11-content-rating.png)
+[![Část hodnocení obsahu](manually-uploading-the-apk-images/11-content-rating-sml.png)](manually-uploading-the-apk-images/11-content-rating.png#lightbox)
 
 Všechny aplikace na webu Google Play musí být hodnoceny podle systému hodnocení Google Play. Kromě hodnocení obsahu, musí splňovat všechny aplikace na Google [vývojáře obsah zásad](http://www.android.com/us/developer-content-policy.html).
 
@@ -118,7 +111,6 @@ Následující uvádí čtyři úrovně v našem systému Google Play a obsahuje
 
 Položky v seznamu střední vyspělosti jsou subjektivní, jako takový je možné, postup, který se zdá se, že stanovují střední vyspělosti hodnocení můžou být dostatečně velký pro vlastní vyspělosti vysoké hodnocení. 
 
-<a name="pricing_and_distribution" />
 
 ## <a name="pricing-amp-distribution"></a>Ceny &amp; distribuce
 
@@ -128,40 +120,36 @@ Google Play neumožní aplikace, která je bezplatná změnit tak, aby cenou apl
 
 Obchodní účet je potřeba před publikováním placené aplikace. Chcete-li to provést, klikněte na tlačítko **nastavit obchodní účet** a postupujte podle pokynů.
 
-[ ![Ceny a distribuci dialogové okno](manually-uploading-the-apk-images/12-pricing-sml.png)](manually-uploading-the-apk-images/12-pricing.png)
+[![Ceny a distribuci dialogové okno](manually-uploading-the-apk-images/12-pricing-sml.png)](manually-uploading-the-apk-images/12-pricing.png#lightbox)
 
-<a name="manage_countries" />
 
 ### <a name="manage-countries"></a>Spravovat jednotlivé země
 
 V další části **spravovat zemích**, umožňuje řídit kterých zemích aplikace může být distibuted na:
 
-[ ![Dialogové okno zemích spravovat](manually-uploading-the-apk-images/13-manage-countries-sml.png)](manually-uploading-the-apk-images/13-manage-countries.png)
+[![Dialogové okno zemích spravovat](manually-uploading-the-apk-images/13-manage-countries-sml.png)](manually-uploading-the-apk-images/13-manage-countries.png#lightbox)
 
-<a name="other_information" />
 
 ### <a name="other-information"></a>Další informace
 
 Přejděte dolů další a určete, zda aplikace obsahuje reklamy. Navíc **kategorie zařízení** části nabízí možnosti pro volitelně distribuovat aplikace pro Android nosit, Android TV nebo Android automaticky:
 
-[ ![Obsahuje části služby Active Directory](manually-uploading-the-apk-images/14-contains-ads-sml.png)](manually-uploading-the-apk-images/14-contains-ads.png)
+[![Obsahuje části služby Active Directory](manually-uploading-the-apk-images/14-contains-ads-sml.png)](manually-uploading-the-apk-images/14-contains-ads.png#lightbox)
 
 Po této části se další možnosti, které může být vybraný, jako je například vyjádření výslovného do **určený pro řady** a distribuci aplikace prostřednictvím webu Google Play pro vzdělávací organizace.
 
-<a name="consent" />
 
 ### <a name="consent"></a>Vyjádřit souhlas.
 
 V dolní části **cenová &amp; distribuční** stránka je **souhlas** části.
 Toto je povinné oddíl a deklarovat, že splňuje aplikace [Android obsahu pokyny](http://www.android.com/market/terms/developer-content-policy.html#hl=us) a potvrzení, které aplikace se řídí zákony USA:
 
-[ ![Část souhlasu](manually-uploading-the-apk-images/15-consent-sml.png)](manually-uploading-the-apk-images/15-consent.png)
+[![Část souhlasu](manually-uploading-the-apk-images/15-consent-sml.png)](manually-uploading-the-apk-images/15-consent.png#lightbox)
 
 Je mnohem víc k publikování aplikace Xamarin.Android, než může být součástí této příručky.
 Další informace o publikování aplikace na Google Play najdete v tématu [Vítejte v Centru pro nápovědu konzoly Google Play vývojáře](https://support.google.com/googleplay/android-developer#topic=3450769).
 
 
-<a name="Google_Play_Filters" />
 
 ## <a name="google-play-filters"></a>Filtry Google Play
 

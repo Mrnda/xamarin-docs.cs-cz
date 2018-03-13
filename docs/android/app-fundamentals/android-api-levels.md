@@ -7,18 +7,17 @@ ms.assetid: 58CB7B34-3140-4BEB-BE2E-209928C1878C
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 5a8b51f6c63d8632e71d1cddabb0c37758ee02f0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 907af0948e9d081f05cc201c49f94629a513c935
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="understanding-android-api-levels"></a>Principy úrovní rozhraní API systému Android
 
 _Xamarin.Android má několik nastavení úrovně rozhraní API systému Android, které určete kompatibilitu aplikace s více verzemi systému Android. Tato příručka vysvětluje, co toto nastavení znamená, způsob jejich konfigurace a jaký vliv mají vaše aplikace za běhu._
 
-<a name="quick" />
 
 ## <a name="quick-start"></a>Rychlý Start
 
@@ -37,30 +36,30 @@ Než budete moct nakonfigurovat úroveň rozhraní API pro svůj projekt, musít
 Za normálních okolností jsou všechny tři úrovně rozhraní API Xamarin.Android nastavené na stejnou hodnotu. Na **aplikace** nastavte **zkompilovat pomocí verzi systému Android (cílový Framework)** nejnovější stabilní verzi rozhraní API (nebo minimálně na verzi systému Android, která obsahuje všechny funkce, které potřebujete).
 Na následujícím snímku obrazovky rozhraní Target Framework nastavena na **Android 7.1 (API úrovně 25 – cukrovinkách typu nugát)**:
 
-[![Cíl Framework výchozí hodnota je verze kompilace pomocí verzi systému Android](android-api-levels-images/vs-defaults-sml.png)](android-api-levels-images/vs-defaults.png)
+[![Cíl Framework výchozí hodnota je verze kompilace pomocí verzi systému Android](android-api-levels-images/vs-defaults-sml.png)](android-api-levels-images/vs-defaults.png#lightbox)
 
 Na **Android Manifest** nastavte minimální verzi systému Android **použití zkompilovat pomocí sady SDK verze** a nastavte verzi systému Android cíl na stejnou hodnotu jako je verze cílové rozhraní (v následujícím snímek obrazovky, cílové rozhraní Android je nastaven na **Android 7.1 (cukrovinkách typu nugát)**):
 
-[![Minimální a cílové Android verze nastavte na verzi cílové rozhraní](android-api-levels-images/vs-manifest-defaults-sml.png)](android-api-levels-images/vs-manifest-defaults.png)
+[![Minimální a cílové Android verze nastavte na verzi cílové rozhraní](android-api-levels-images/vs-manifest-defaults-sml.png)](android-api-levels-images/vs-manifest-defaults.png#lightbox)
 
 Pokud chcete pro zachování zpětné kompatibility se starší verzí systému Android, nastavte **minimální verzi systému Android k cíli** nejstarší verzi Androidu, které chcete aplikaci, kterou chcete podporovat. (Upozorňujeme, že 14 úroveň rozhraní API je minimální úroveň API požadované pro [služby Google Play a podporu Firebase](https://android-developers.googleblog.com/2016/11/google-play-services-and-firebase-for-android-will-support-api-level-14-at-minimum.html).) Následující příklad konfigurace podporuje verze Android API 14 úroveň přispívají úroveň rozhraní API 25:
 
-[![Kompilace pomocí rozhraní API úroveň 25 cukrovinkách typu nugát, minimální verzi systému Android nastavit na úrovni rozhraní API 14](android-api-levels-images/vs-minimum-sml.png)](android-api-levels-images/vs-minimum.png)
+[![Kompilace pomocí rozhraní API úroveň 25 cukrovinkách typu nugát, minimální verzi systému Android nastavit na úrovni rozhraní API 14](android-api-levels-images/vs-minimum-sml.png)](android-api-levels-images/vs-minimum.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 Za normálních okolností jsou všechny tři úrovně rozhraní API Xamarin.Android nastavené na stejnou hodnotu. Nastavit **cílové rozhraní** nejnovější stabilní verzi rozhraní API (nebo minimálně na verzi systému Android, která obsahuje všechny funkce, které potřebujete). Chcete-li nastavit **cílové rozhraní**, přejděte na **sestavení > Obecné** v **možnosti projektu**. Na následujícím snímku obrazovky rozhraní Target Framework nastavena na **použít nejnovější nainstalované platformy (8.0)**:
 
-[![Cílové rozhraní, jako výchozí bude použit pro použití nejnovější nainstalované platformu](android-api-levels-images/xs-default-target-sml.png)](android-api-levels-images/xs-default-target.png)
+[![Cílové rozhraní, jako výchozí bude použit pro použití nejnovější nainstalované platformu](android-api-levels-images/xs-default-target-sml.png)](android-api-levels-images/xs-default-target.png#lightbox)
 
 Nastavení minimální a cílové Android verze naleznete v části **sestavení > aplikace pro Android** v **možnosti projektu**. Nastavte minimální Android verzi **automatické - použití cílová verze framework** a nastavte verzi systému Android cíl na stejnou hodnotu jako verzi rozhraní Target Framework. Na následujícím snímku obrazovky cílové rozhraní Android nastavena na **Android 8.0 (API úrovně 26)** tak, aby odpovídaly nastavení cílové rozhraní výše:
 
-[![Nastavení úrovně cíle a framework v možnosti projektu](android-api-levels-images/xs-default-app-sml.png)](android-api-levels-images/xs-default-app.png)
+[![Nastavení úrovně cíle a framework v možnosti projektu](android-api-levels-images/xs-default-app-sml.png)](android-api-levels-images/xs-default-app.png#lightbox)
 
 Pokud chcete zachovat zpětné kompatibility se starší verzí systému Android, změňte **minimální verzi systému Android** nejstarší verzi Androidu, které chcete aplikaci, kterou chcete podporovat. Upozorňujeme, že 14 úroveň rozhraní API je minimální úroveň API požadované pro [služby Google Play a podporu Firebase](https://android-developers.googleblog.com/2016/11/google-play-services-and-firebase-for-android-will-support-api-level-14-at-minimum.html).
 Například následující konfigurace podporuje časná 14 úroveň rozhraní API systému Android verze:
 
-[ ![Minimální a cílové verze nastavená na hodnotu automaticky - používají cílová verze framework](android-api-levels-images/xs-minimum-sml.png)](android-api-levels-images/xs-minimum.png)
+[![Minimální a cílové verze nastavená na hodnotu automaticky - používají cílová verze framework](android-api-levels-images/xs-minimum-sml.png)](android-api-levels-images/xs-minimum.png#lightbox)
 
 -----
 
@@ -68,13 +67,11 @@ Například následující konfigurace podporuje časná 14 úroveň rozhraní A
 Pokud vaše aplikace podporuje několik verzí systému Android, kódu musí obsahovat runtime kontroly, aby se zajistilo, že aplikace funguje s nastavením minimální Android verze (najdete v části [Runtime zkontroluje, zda verze Android](#runtimechecks) níže podrobnosti). Pokud se využívají nebo vytvoření knihovny, přečtěte si téma [úrovně rozhraní API a knihovny](#libraries) pod úroveň pro osvědčené postupy v rozhraní API pro konfiguraci nastavení pro knihovny.
 
 
-<a name="verslevels" />
 
 ## <a name="android-versions-and-api-levels"></a>Android verze a úrovně rozhraní API
 
 Jako platformu Android zpracovaní a jsou vydávány nové verze Android, každou verzi systému Android je přiřazen jedinečný celé číslo identifikátor s názvem *úroveň rozhraní API*. Proto každou verzi systému Android odpovídá jedné úrovni rozhraní API systému Android. Protože uživatelé nainstalují aplikace ve starších verzích také jako poslední Android, musí být aplikace pro Android reálného navrženy pro práci s více úrovní rozhraní API systému Android.
 
-<a name="versions" />
 
 ### <a name="android-versions"></a>Android verze
 
@@ -145,7 +142,6 @@ Kromě toho Xamarin.Android definuje *sestavení verze kódy* , mapování na ak
 
 Jak uvádí tento seznam, jsou často vydávány nové verze Android &ndash; někdy několik verzí za jeden rok. V důsledku toho zahrnuje veškerý zařízení Android, která může spuštění aplikace z široké škály verze Android starší a novější. Jak může zaručit, že vaše aplikace poběží konzistentně a spolehlivě v mnoho různých verzích systému Android? Úrovně rozhraní API pro Android můžete spravovat tento problém.
 
-<a name="apilevels" />
 
 ### <a name="android-api-levels"></a>Úrovně rozhraní API systému Android
 
@@ -159,13 +155,11 @@ Když je integrovaná aplikace, obsahuje následující informace o úrovni rozh
 
 Toto nastavení slouží k zajištění, že funkce potřebné pro správné fungování aplikace je k dispozici na zařízení s Androidem v průběhu instalace. Pokud ne, aplikace je blokováno v spuštěné na daném zařízení. Například pokud úroveň rozhraní API zařízení se systémem Android je nižší než minimální úroveň API, který zadáte pro vaši aplikaci, zařízení s Androidem zabrání uživateli v instalaci vaší aplikace.
 
-<a name="settings" />
 
 ## <a name="project-api-level-settings"></a>Nastavení projektu úroveň rozhraní API
 
 Následující části popisují způsob použití sady SDK Manager Příprava vývojového prostředí pro úrovně rozhraní API, kterou chcete zacílit, za nímž následuje podrobné vysvětlení, jak nakonfigurovat *cílové rozhraní*, *minimální Verzi systému Android*, a *cílovou verzi systému Android* nastavení v Xamarin.Android.
 
-<a name="sdk" />
 
 ### <a name="android-sdk-platforms"></a>Platformy Android SDK
 
@@ -182,7 +176,7 @@ Cílovém Frameworku, který identifikuje jaké verze knihovny aplikace je propo
 Doporučujeme vám, že je vždy kompilovat s *nejnovější* dostupná verze cílové rozhraní. Díky tomu vám poskytne užitečné zprávy upozornění pro zastaralé rozhraní API, která může být volána vašeho kódu. Pomocí nejnovější verze cílové rozhraní je obzvláště důležité, pokud používáte nejnovější verze knihovny podporu &ndash; jednotlivých knihoven očekává vaší aplikace na kompilované minimální úroveň API knihovní podporu nebo vyšší. 
 
 > [!NOTE]
-> **Poznámka:** počínaje srpen 2018, Google Play Console bude vyžadovat, nové aplikace cílí úroveň rozhraní API 26 (Android 8.0) nebo vyšší.
+> Počínaje srpen 2018, Google Play Console bude vyžadovat, nové aplikace cílí úroveň rozhraní API 26 (Android 8.0) nebo vyšší.
 Existující aplikace, bude nutné cílit na úrovni rozhraní API 26 nebo vyšší od listopadu 2018. Další informace najdete v tématu [zlepšení aplikace zabezpečení a výkonu na webu Google Play let pocházet](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
 
 
@@ -190,7 +184,7 @@ Existující aplikace, bude nutné cílit na úrovni rozhraní API 26 nebo vyš�
 
 Pro přístup k nastavení cílové rozhraní v sadě Visual Studio, otevřete vlastnosti projektu v **Průzkumníku řešení** a vyberte **aplikace** stránky:
 
-[![Aplikace na stránce vlastností projektu](android-api-levels-images/vs-target-framework-sml.png)](android-api-levels-images/vs-target-framework.png)
+[![Aplikace na stránce vlastností projektu](android-api-levels-images/vs-target-framework-sml.png)](android-api-levels-images/vs-target-framework.png#lightbox)
 
 Nastavte cílové rozhraní, vyberte úroveň rozhraní API v rozevírací nabídce v části **zkompilovat pomocí Android verze** jako v příkladu nahoře.
 
@@ -198,7 +192,7 @@ Nastavte cílové rozhraní, vyberte úroveň rozhraní API v rozevírací nabí
 
 Pro přístup k nastavení cílové rozhraní v sadě Visual Studio pro Mac, klikněte pravým tlačítkem na název projektu a vyberte **možnosti**; tento otevře **možnosti projektu** dialogové okno. V tomto dialogovém okně, přejděte na **sestavení > Obecné** jak je vidět tady:
 
-[![Sestavení obecné části na stránce Možnosti projektu](android-api-levels-images/xs-target-framework-sml.png)](android-api-levels-images/xs-target-framework.png)
+[![Sestavení obecné části na stránce Možnosti projektu](android-api-levels-images/xs-target-framework-sml.png)](android-api-levels-images/xs-target-framework.png#lightbox)
 
 Nakonfigurujte rozhraní Target Framework výběrem úroveň rozhraní API v rozevírací nabídce vpravo od **cílové rozhraní** jako v příkladu nahoře.
 
@@ -219,7 +213,7 @@ I když vaše aplikace může úspěšně sestavení a nainstalovat na tento roz
 
 Pro přístup k systému Android minimální verze nastavení v sadě Visual Studio, otevřete vlastnosti projektu v **Průzkumníku řešení** a vyberte **Android Manifest** stránky. V rozevírací nabídce v části **minimální verzi systému Android** minimální verzi systému Android můžete vybrat pro aplikaci:
 
-[![Minimální Android – možnost cílové nastavit zkompilovat pomocí verze sady SDK](android-api-levels-images/vs-minimum-version-sml.png)](android-api-levels-images/vs-minimum-version.png)
+[![Minimální Android – možnost cílové nastavit zkompilovat pomocí verze sady SDK](android-api-levels-images/vs-minimum-version-sml.png)](android-api-levels-images/vs-minimum-version.png#lightbox)
 
 Pokud vyberete **použití zkompilovat pomocí sady SDK verze**, Android minimální verze bude stejné jako nastavení cílové rozhraní.
 
@@ -228,7 +222,7 @@ Pokud vyberete **použití zkompilovat pomocí sady SDK verze**, Android minimá
 Pro přístup k nastavení cílové rozhraní v sadě Visual Studio pro Mac, klikněte pravým tlačítkem na název projektu a vyberte **možnosti**; tento otevře **možnosti projektu** dialogové okno. Přejděte na **sestavení > aplikace pro Android**.
 Pomocí rozevíracího seznamu nabídky napravo od **minimální verzi systému Android**, můžete nastavit minimální verzi systému Android pro aplikaci:
 
-[ ![Minimální verze Android nastavená na hodnotu automaticky - použití cílová verze framework](android-api-levels-images/xs-minimum-version-sml.png)](android-api-levels-images/xs-minimum-version.png)
+[![Minimální verze Android nastavená na hodnotu automaticky - použití cílová verze framework](android-api-levels-images/xs-minimum-version-sml.png)](android-api-levels-images/xs-minimum-version.png#lightbox)
 
 Pokud vyberete **automatické &ndash; použít cílová verze framework**, Android minimální verze bude stejné jako nastavení cílové rozhraní.
 
@@ -247,7 +241,7 @@ Cílová architektura a cílovou verzi systému Android, přitom má velmi podob
 
 Pro přístup k toto nastavení v sadě Visual Studio, otevřete vlastnosti projektu v **Průzkumníku řešení** a vyberte **Android Manifest** stránky. V rozevírací nabídce v části **cílovou verzi systému Android** můžete vybrat verzi systému Android cíl pro vaši aplikaci:
 
-[![Cílová verze Android nastavit zkompilovat pomocí verze sady SDK](android-api-levels-images/vs-target-version-sml.png)](android-api-levels-images/vs-target-version.png)
+[![Cílová verze Android nastavit zkompilovat pomocí verze sady SDK](android-api-levels-images/vs-target-version-sml.png)](android-api-levels-images/vs-target-version.png#lightbox)
 
 Doporučujeme, abyste explicitně nastavit cílovou verzi systému Android na nejnovější verzi Androidu, který používáte k testování aplikace. V ideálním případě by měla být nastavena na nejnovější verzi sady SDK pro Android &ndash; to umožňuje pomocí nových rozhraní API před projdete změny chování. Pro většinu vývojáře jsme *nepodporují* doporučujeme nastavení cílovou verzi systému Android **použití zkompilovat pomocí sady SDK verze**.
 
@@ -256,7 +250,7 @@ Doporučujeme, abyste explicitně nastavit cílovou verzi systému Android na ne
 Pro přístup k nastavení cílové rozhraní v sadě Visual Studio pro Mac, klikněte pravým tlačítkem na název projektu a vyberte **možnosti**; tento otevře **možnosti projektu** dialogové okno. Přejděte na **sestavení > aplikace pro Android**.
 Pomocí rozevíracího seznamu nabídky napravo od **cílovou verzi systému Android**, můžete nastavit cílovou verzi systému Android pro aplikaci:
 
-[![Cílová verze Android nastavená na hodnotu automaticky - použití cílová verze framework](android-api-levels-images/xs-target-version-sml.png)](android-api-levels-images/xs-target-version.png)
+[![Cílová verze Android nastavená na hodnotu automaticky - použití cílová verze framework](android-api-levels-images/xs-target-version-sml.png)](android-api-levels-images/xs-target-version.png#lightbox)
 
 Doporučujeme, abyste explicitně nastavit cílovou verzi systému Android na nejnovější verzi Androidu, který používáte k testování aplikace. V ideálním případě by měla být nastavena na nejnovější dostupné verzi sady SDK pro Android &ndash; to umožňuje pomocí nových rozhraní API před projdete změny chování. Většina vývojářů, není doporučeno nastavení cílovou verzi systému Android **automatické - použití target framework verze**.
 
@@ -311,14 +305,14 @@ Neexistuje žádné rychlé a jednoduché pravidlo, které vysvětluje, jak sní
 
 Když vytvoříte projekt Xamarin.Android knihovny (například knihovny tříd nebo knihovnu vazby), můžete nakonfigurovat jenom nastavení cílové rozhraní &ndash; cíl Android nastavení verze a minimální verzi systému Android nejsou k dispozici. Důvodem je, že neexistuje žádná **Android Manifest** stránky:
 
-[![Je k dispozici pouze kompilace pomocí možnosti verzi systému Android](android-api-levels-images/vs-library-options-sml.png)](android-api-levels-images/vs-library-options.png)
+[![Je k dispozici pouze kompilace pomocí možnosti verzi systému Android](android-api-levels-images/vs-library-options-sml.png)](android-api-levels-images/vs-library-options.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 Když vytvoříte projekt Xamarin.Android knihovny, je žádné **aplikace pro Android** stránky, kde můžete konfigurovat cílový Android a Android minimální verze &ndash; minimální verzi systému Android a cíle Nastavení verzi systému Android nejsou k dispozici.
 Důvodem je, že neexistuje žádná **sestavení > aplikace pro Android** stránky):
 
-[ ![Obecná stránka bez možnosti minimální a cílové verze sestavení](android-api-levels-images/xs-library-options-sml.png)](android-api-levels-images/xs-library-options.png)
+[![Obecná stránka bez možnosti minimální a cílové verze sestavení](android-api-levels-images/xs-library-options-sml.png)](android-api-levels-images/xs-library-options.png#lightbox)
 
 -----
 

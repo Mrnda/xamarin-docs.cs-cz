@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 5a5072d7f07fa7e426a14d3ac841e775d872acff
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: cb87593b63e28c01beacdea479cc9d6ec4aceb9b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="validation"></a>Ověřování
 
@@ -19,7 +19,7 @@ Jakékoli aplikaci, která přijímá vstup od uživatele zkontrolujte, že vstu
 
 V kontextu systému Model ViewModel Model (modelem MVVM) vzor, zobrazení model nebo model bude často nutné provést ověření dat a signál všechny chyby ověření do zobrazení, takže uživatel může opravte je. Mobilní aplikace eShopOnContainers provede synchronní ověřování na straně klienta vlastností modelu zobrazení a upozorní uživatele všechny chyby ověření zvýraznění ovládací prvek, který obsahuje neplatná data a zobrazení chybové zprávy, které informovat uživatele Proč dat je neplatný. Obrázek 6-1 ukazuje třídy účastnících se provádění ověření v eShopOnContainers mobilní aplikace.
 
-[![](validation-images/validation.png "Ověření třídy v mobilní aplikaci eShopOnContainers")](validation-images/validation-large.png "ověření třídy v mobilní aplikaci eShopOnContainers")
+[![](validation-images/validation.png "Ověření třídy v mobilní aplikaci eShopOnContainers")](validation-images/validation-large.png#lightbox "ověření třídy v mobilní aplikaci eShopOnContainers")
 
 **Obrázek 6-1**: ověření třídy v mobilní aplikaci eShopOnContainers
 

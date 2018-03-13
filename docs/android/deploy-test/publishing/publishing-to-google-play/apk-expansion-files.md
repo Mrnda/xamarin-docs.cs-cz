@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: d118eb5e9f875c5480105d1596ef1318112fb53e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3431791d51858df2013634e1594ee960a10728da
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="apk-expansion-files"></a>Soubory rozšíření APK
 
@@ -26,14 +26,13 @@ Na většinu zařízení při instalaci aplikace soubory rozšíření se stáhn
 
 Rozšíření soubory jsou považovány za *neprůhledného binární objekty BLOB (obb)* a může být až do velikosti 2 GB. Android neprovádí žádné speciální zpracování na tyto soubory, po stažení &ndash; souborů může být v libovolném formátu, který je vhodný pro aplikaci. Doporučeným přístupem k rozšíření soubory koncepčně, vypadá takto:
 
--   **Hlavní rozšíření** &ndash; tento soubor je soubor primární rozšíření prostředky a prostředky, které nebudou vyhovovat APK limit velikosti.   Soubor hlavní rozšíření by měl obsahovat primární prostředky, které aplikace potřebuje a zřídka by měly být aktualizovány.
--   **Oprava rozšíření** &ndash; slouží pro malých aktualizací souborů hlavní rozšíření.   Tento soubor můžete aktualizovat. Je zodpovědností aplikace provést všechny potřebné opravy nebo aktualizace z tohoto souboru.
+-   **Hlavní rozšíření** &ndash; tento soubor je soubor primární rozšíření prostředky a prostředky, které nebudou vyhovovat APK limit velikosti. Soubor hlavní rozšíření by měl obsahovat primární prostředky, které aplikace potřebuje a zřídka by měly být aktualizovány.
+-   **Oprava rozšíření** &ndash; slouží pro malých aktualizací souborů hlavní rozšíření. Tento soubor můžete aktualizovat. Je zodpovědností aplikace provést všechny potřebné opravy nebo aktualizace z tohoto souboru.
 
 
 Rozšíření soubory musí být odeslán ve stejnou dobu jako APK je načtený.
 Google play neumožňuje soubor rozšíření k odeslání do existující APK nebo pro existující APKs aktualizovat. Pokud je nutné aktualizovat soubor rozšíření, pak se musí se nahrát nový APK `versionCode` aktualizovat.
 
-<a name="Expansion_File_Storage" />
 
 ## <a name="expansion-file-storage"></a>Rozšíření úložiště
 
@@ -51,7 +50,6 @@ Pokud je nutné rozbalte soubor rozšíření, by měly být rozbalené soubory 
 
 Alternativu k extrahování souborů ze souboru rozšíření je čtení prostředků nebo prostředky přímo ze souboru rozšíření. Soubor rozšíření není nic jiného než soubor zip, který lze použít s odpovídajícími `ContentProvider`. [Android.Play.ExpansionLibrary](https://github.com/mattleibow/Android.Play.ExpansionLibrary) obsahuje sestavení, [System.IO.Compression.Zip](https://github.com/mattleibow/Android.Play.ExpansionLibrary/tree/master/System.IO.Compression.Zip), což zahrnuje `ContentProvider` který umožňuje přístup k některé soubory médií přímé souboru. Pokud jsou se soubory médií zabalené do souboru zip, může volání přehrávání média přímo použít bez nutnosti rozbalte soubor zip soubory v souboru zip. Přidá do souboru zip by neměl komprimovány mediálních souborů. 
 
-<a name="FileName_Format" />
 
 ### <a name="filename-format"></a>Název souboru formátu
 
@@ -68,19 +66,18 @@ Jsou tři součásti toto schéma:
 
 Například pokud je verze APK 21 a názvu balíčku se `mono.samples.helloworld`, bude mít název souboru hlavní rozšíření **main.21.mono.samples.helloworld**.
 
-<a name="Download_Process" />
 
 ## <a name="download-process"></a>Proces stahování
 
 Při instalaci aplikace z obchodu Google Play soubory rozšíření by měl stáhli a uložili společně s APK. V některých situacích tomu nemusí dojít nebo rozšíření soubory budou odstraněny. Zpracování tohoto stavu, je potřeba zkontrolovat, zda rozšíření soubory existují a pak stáhnout, v případě potřeby aplikace. Následující vývojový diagram zobrazuje doporučenou pracovního postupu tohoto procesu:
 
-[ ![Vývojový diagram rozšíření APK](apk-expansion-files-images/apkexpansion.png)](apk-expansion-files-images/apkexpansion.png)
+[![Vývojový diagram rozšíření APK](apk-expansion-files-images/apkexpansion.png)](apk-expansion-files-images/apkexpansion.png#lightbox)
 
 Při spuštění aplikace, měli zkontrolovat Pokud chcete zobrazit, pokud příslušná rozšíření soubory existují v aktuální zařízení. Pokud ne, pak aplikace musíte provést žádost na webu Google Play [licencování aplikace](http://developer.android.com/google/play/licensing/index.html). Tato kontrola se provádí pomocí *licence ověření knihovny (úroveň)*a musí být provedeny pro volné a licencované aplikace. ÚROVEŇ se primárně používají placené aplikace vynutit licenční omezení. Google však má rozšířené úroveň, tak, aby se dá použít s také rozšíření knihovny. Volné aplikací mít k provedení kontroly úroveň, ale můžete ignorovat licenční omezení. Žádost o úroveň zodpovídá za poskytování následující informace o rozšíření soubory, které aplikace vyžaduje: 
 
--   **Velikost souboru** &ndash; velikosti souboru rozšíření soubory se používají v rámci kontroly, které určuje, zda již byly staženy soubory správné rozšíření.  
--   **Názvy souborů** &ndash; Toto je název souboru (na aktuální zařízení) které musí být uloženy sady rozšíření.  
--   **Adresa URL pro stahování** &ndash; adresa URL, který se má použít ke stažení sady rozšíření.   Toto je jedinečný pro každé stahování a krátce po je poskytována vypršení platnosti.
+-   **Velikost souboru** &ndash; velikosti souboru rozšíření soubory se používají v rámci kontroly, které určuje, zda již byly staženy soubory správné rozšíření.
+-   **Názvy souborů** &ndash; Toto je název souboru (na aktuální zařízení) které musí být uloženy sady rozšíření.
+-   **Adresa URL pro stahování** &ndash; adresa URL, který se má použít ke stažení sady rozšíření. Toto je jedinečný pro každé stahování a krátce po je poskytována vypršení platnosti.
 
 
 Poté, co byla provedena kontrola úroveň, aplikace by měla stáhnout soubory rozšíření, vezměte v úvahu následující body v rámci stahování:
@@ -92,7 +89,6 @@ Poté, co byla provedena kontrola úroveň, aplikace by měla stáhnout soubory 
 -  Chyb vzniklých při stahování jsou řádně zpracovávaný a obnovitelný.
 
 
-<a name="Architectural_Overview" />
 
 ## <a name="architectural-overview"></a>Přehled architektury
 
@@ -102,9 +98,9 @@ Pokud nebyly staženy soubory rozšíření nebo pokud jsou soubory jsou neplatn
 
 K usnadnění náročnost integrovat soubory rozšíření do aplikace, Google vytvořit několik knihovny v jazyce Java. Knihovny dotyčném jsou:
 
--   **Stažení programu knihovna** &ndash; jde knihovnu, která snižuje náročnost integrovat rozšíření soubory v aplikaci.   Knihovny se stáhnout soubory rozšíření ve službě pozadí, zobrazovat uživatelská oznámení, zpracování problémy se síťovým připojením, obnovení souborů ke stažení, atd.
--   **Licence ověření knihovny (úroveň)** &ndash; knihovnu pro vytváření a zpracování volání do služby licencování aplikace.   Ho lze také provést licencování zkontroluje, jestli aplikace je autorizovaný pro použití v zařízení.
--   **Knihovna Zip APK rozšíření (volitelné)** &ndash; Pokud jsou soubory rozšíření v souboru zip, tuto knihovnu bude fungovat jako poskytovateli obsahu a umožňuje aplikaci číst prostředky a prostředky přímo ze souboru zip bez nutnosti rozšířit souboru zip soubor.  
+-   **Stažení programu knihovna** &ndash; jde knihovnu, která snižuje náročnost integrovat rozšíření soubory v aplikaci. Knihovny se stáhnout soubory rozšíření ve službě pozadí, zobrazovat uživatelská oznámení, zpracování problémy se síťovým připojením, obnovení souborů ke stažení, atd.
+-   **Licence ověření knihovny (úroveň)** &ndash; knihovnu pro vytváření a zpracování volání do služby licencování aplikace. Ho lze také provést licencování zkontroluje, jestli aplikace je autorizovaný pro použití v zařízení.
+-   **Knihovna Zip APK rozšíření (volitelné)** &ndash; Pokud jsou soubory rozšíření v souboru zip, tuto knihovnu bude fungovat jako poskytovateli obsahu a umožňuje aplikaci číst prostředky a prostředky přímo ze souboru zip bez nutnosti rozšířit souboru zip soubor.
 
 
 Tyto knihovny přenesené C# a jsou dostupné v rámci Apache 2.0 licence. Rychle integrovat rozšíření soubory do existující aplikace, můžete tyto knihovny přidat do existující aplikace Xamarin.Android. Kód je k dispozici na [Android.Play.ExpansionLibrary](https://github.com/mattleibow/Android.Play.ExpansionLibrary) na Githubu.

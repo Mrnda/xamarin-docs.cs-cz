@@ -7,19 +7,15 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/11/2017
-ms.openlocfilehash: 695d02c5fa0477053cd95d73e1b738332d14f0f9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0fdeecc4465aa5709b452ef0b591ec4e5c262e3d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="labels"></a>Popisky
 
-`UILabel` Řízení se používá pro zobrazení jeden a více řádků číst pouze text. Tento článek obsahuje následující témata:
-
-- [Implementace štítek](#Implementing_a_Label)
-- [Zkracování a zabalení](#Truncating_and_Wrapping)
-- [Formátování textu a popisku](#Formatting_Text_and_Label)
+`UILabel` Řízení se používá pro zobrazení jeden a více řádků číst pouze text. 
 
 ## <a name="implementing-a-label"></a>Implementace štítek
 
@@ -52,6 +48,8 @@ Na panelu pro vlastnosti lze upravit následující vlastnosti:
 ## <a name="truncating-and-wrapping"></a>Zkracování a zabalení
 
 Informace o používání řádku dělí na iOS, naleznete na [zkrátit a zalamování řádků](https://developer.xamarin.com/recipes/ios/standard_controls/labels/uilabel-truncate-wrap-text/) recepturách.
+
+<a name="Formatting_Text_and_Label"/>
 
 ## <a name="formatting-text-and-label"></a>Formátování textu a popisku
 

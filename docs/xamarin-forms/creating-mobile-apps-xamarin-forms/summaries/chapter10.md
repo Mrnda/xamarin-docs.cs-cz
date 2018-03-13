@@ -3,14 +3,15 @@ title: "Souhrn kapitoly 10. XAML – rozšíření značek"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 575EAE55-BD4D-470F-A583-3D065FA102E2
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 8ded1dba0e1d4d1a9062d0f75935b3d748a83370
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3e9f630fbfc9f7a1d6346b6dd8308504a6806e1a
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-10-xaml-markup-extensions"></a>Souhrn kapitoly 10. XAML – rozšíření značek
 
@@ -57,7 +58,7 @@ S další deklarace oboru názvů XML, můžete odkazovat veřejné statické vl
 
 Ve většině případů budete používat [ `StaticResource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.StaticResourceExtension/) – rozšíření značek k odkazování položku ze slovníku prostředků, jak je předvedeno pomocí [ **ResourceSharing** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/ResourceSharing) ukázka . Můžete použít `StaticResourceExtension` element nebo `StaticResource` v rámci složené závorky:
 
-[![Trojitá snímek obrazovky sdílení prostředků](images/ch10fg03-small.png "sdílení prostředků")](images/ch10fg03-large.png "sdílení prostředků")
+[![Trojitá snímek obrazovky sdílení prostředků](images/ch10fg03-small.png "sdílení prostředků")](images/ch10fg03-large.png#lightbox "sdílení prostředků")
 
 Nezaměňujte `x:Static` – rozšíření značek a `StaticResource` – rozšíření značek.
 

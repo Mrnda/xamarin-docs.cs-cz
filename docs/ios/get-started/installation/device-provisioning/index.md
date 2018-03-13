@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/15/2017
-ms.openlocfilehash: 1a5120f088fca6997eef3a1bc27126b442380cac
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b54adc28e318b263052bb6073390556a198cffe7
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="device-provisioning"></a>Zřizování zařízení
 
@@ -22,7 +22,7 @@ Při vývoji aplikace pro Xamarin.iOS je nezbytné pro testování pomocí nasaz
 
 Zvýrazněná části na obrázku níže zobrazit kroky potřebné k jejich nastavení pro zřizování iOS:
 
-[![](images/provisioningdiagram.png "Zvýrazněná části na tomto obrázku zobrazit kroky potřebné k jejich nastavení pro zřizování iOS")](images/provisioningdiagram.png)
+[![](images/provisioningdiagram.png "Zvýrazněná části na tomto obrázku zobrazit kroky potřebné k jejich nastavení pro zřizování iOS")](images/provisioningdiagram.png#lightbox)
 
 Po této dalším krokem je distribuce aplikace. Další informace o nasazení naleznete [distribuce aplikací](~/ios/deploy-test/app-distribution/index.md) příručky.
 
@@ -81,7 +81,7 @@ Apple poskytuje výběr speciální aplikační služby, označované taky jako 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Volné zřizování](~/ios/get-started/installation/device-provisioning/free-provisioning.md)
-- [Distribuce aplikací](~/ios/deploy-test/app-distribution/index.md)
+- [Bezplatné zřizování](~/ios/get-started/installation/device-provisioning/free-provisioning.md)
+- [Distribuce aplikace](~/ios/deploy-test/app-distribution/index.md)
 - [Odstraňování potíží](~/ios/deploy-test/troubleshooting.md)
 - [Apple – průvodci distribucí aplikace](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)

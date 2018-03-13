@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 7da0f52816d4efc102e830411589e0ac38a73574
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d9b6b5a778e0e4d5092d1036109f82896acf639b
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="message-app-extension-basics"></a>Základní informace o rozšíření aplikace zpráv
 
@@ -121,13 +121,13 @@ K vytváření vlastních štítku prostředí, postupujte takto:
 2. Otevřete řešení přidat příponu aplikace zprávy na. 
 3. Vyberte **iOS** > **rozšíření** > **iMessage rozšíření** a klikněte na **Další** tlačítko: 
 
-    [ ![](intro-to-message-app-extensions-images/message01.png "Vyberte iMessage rozšíření")](intro-to-message-app-extensions-images/message01.png)
+    [![](intro-to-message-app-extensions-images/message01.png "Vyberte iMessage rozšíření")](intro-to-message-app-extensions-images/message01.png#lightbox)
 4. Zadejte **název rozšíření** a klikněte na **Další** tlačítko: 
 
-    [ ![](intro-to-message-app-extensions-images/message02.png "Zadejte název rozšíření")](intro-to-message-app-extensions-images/message02.png)
+    [![](intro-to-message-app-extensions-images/message02.png "Zadejte název rozšíření")](intro-to-message-app-extensions-images/message02.png#lightbox)
 5. Klikněte **vytvořit** tlačítko k sestavení rozšíření: 
 
-    [ ![](intro-to-message-app-extensions-images/message03.png "Klikněte na tlačítko Vytvořit")](intro-to-message-app-extensions-images/message03.png)
+    [![](intro-to-message-app-extensions-images/message03.png "Klikněte na tlačítko Vytvořit")](intro-to-message-app-extensions-images/message03.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -135,7 +135,7 @@ K vytváření vlastních štítku prostředí, postupujte takto:
 2. Otevřete řešení přidat příponu aplikace zprávy na. 
 3. Vyberte **iOS** > **rozšíření** > **iMessage rozšíření** a klikněte na **Další** tlačítko: 
 
-    [ ![](intro-to-message-app-extensions-images/message01w.png "Vyberte iMessage rozšíření")](intro-to-message-app-extensions-images/message01.png)
+    [![](intro-to-message-app-extensions-images/message01w.png "Vyberte iMessage rozšíření")](intro-to-message-app-extensions-images/message01.png#lightbox)
 4. Zadejte **název rozšíření** a klikněte na **OK** tlačítko
 
 -----
@@ -159,7 +159,7 @@ Postupujte takto:
 1. V **řešení Pad**, klikněte pravým tlačítkem na název projektu rozšíření a vyberte **přidat** > **nový soubor...**   >  **iOS | Apple Watch** > **řadič rozhraní**.
 2. Zadejte `StickerBrowserViewController` pro **název** a klikněte na **nový** tlačítko: 
 
-    [ ![](intro-to-message-app-extensions-images/browser01.png "Zadejte pro název StickerBrowserViewController")](intro-to-message-app-extensions-images/browser01.png)
+    [![](intro-to-message-app-extensions-images/browser01.png "Zadejte pro název StickerBrowserViewController")](intro-to-message-app-extensions-images/browser01.png#lightbox)
 3. Otevřete `StickerBrowserViewController.cs` soubor pro úpravy.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -167,7 +167,7 @@ Postupujte takto:
 1. V **Průzkumníku řešení**, klikněte pravým tlačítkem na název projektu rozšíření a vyberte **přidat** > **nový soubor...**   >  **iOS | Apple Watch** > **řadič rozhraní**.
 2. Zadejte `StickerBrowserViewController` pro **název** a klikněte na **nový** tlačítko: 
 
-    [ ![](intro-to-message-app-extensions-images/browser01w.png "Zadejte pro název StickerBrowserViewController")](intro-to-message-app-extensions-images/browser01.png)
+    [![](intro-to-message-app-extensions-images/browser01w.png "Zadejte pro název StickerBrowserViewController")](intro-to-message-app-extensions-images/browser01.png#lightbox)
 3. Otevřete `StickerBrowserViewController.cs` soubor pro úpravy.
 
 -----

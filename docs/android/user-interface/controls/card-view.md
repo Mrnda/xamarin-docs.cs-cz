@@ -7,18 +7,17 @@ ms.assetid: CF12FE85-D03A-4E64-95D2-D7115061A500
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/05/2018
-ms.openlocfilehash: b8f643c8158c5a3a849a3d8ee3dd8d0e7e30addf
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 46eec10bbabec74719affabce1e8033a083680be
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="cardview"></a>Zobrazení karty aplikace
 
 _Pomůcka zobrazení karty aplikace je součást uživatelského rozhraní, která uvede textových a obrázkových obsah v zobrazení, které se podobají karty. Tato příručka vysvětluje, jak používat a přizpůsobit zobrazení karty aplikace v aplikacích Xamarin.Android při zachování zpětné kompatibility s předchozími verzemi systému Android._
 
-<a name="overview" />
 
 ## <a name="overview"></a>Přehled
 
@@ -59,7 +58,6 @@ Chcete-li přidat `Xamarin.Android.Support.v7.CardView` balíčku v sadě Visual
 Naučte se konfigurovat projekt aplikace Android 5.0, najdete v tématu [nastavení nahoru Android 5.0 projektu](~/android/platform/lollipop.md).
 Další informace o instalaci balíčků NuGet najdete v tématu [návod: včetně NuGet ve vašem projektu](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough).
 
-<a name="basic" />
 
 ## <a name="introducing-cardview"></a>Představení zobrazení karty aplikace
 
@@ -94,11 +92,10 @@ Pokud použijete tento XML nahradit existující obsah **Main.axml**, nezapomeň
 
 Tento příklad rozložení vytvoří výchozí `CardView` s jedním řádkem textu, jak je znázorněno na následujícím snímku obrazovky:
 
-[![Snímek obrazovky ze zobrazení karty aplikace s bílým pozadím a řádku textu](card-view-images/02-basic-cardview-sml.png)](card-view-images/02-basic-cardview.png)
+[![Snímek obrazovky ze zobrazení karty aplikace s bílým pozadím a řádku textu](card-view-images/02-basic-cardview-sml.png)](card-view-images/02-basic-cardview.png#lightbox)
 
 V tomto příkladu je nastaven styl aplikace světlý motiv materiálu (`Theme.Material.Light`) tak, aby `CardView` stíny a okrajů je snazší zjistit. Další informace o aplikacích motivů Android 5.0 najdete v tématu [materiálu motiv](~/android/user-interface/material-theme.md). V další části, jsme získáte informace, jak přizpůsobit `CardView` pro aplikaci.
 
-<a name="customizing" />
 
 ## <a name="customizing-cardview"></a>Přizpůsobení zobrazení karty aplikace
 
@@ -159,30 +156,28 @@ Tento obor názvů můžete volat `card_view` nebo i `myapp` Pokud se rozhodnete
 
 Když v tomto příkladu rozložení se používá k zobrazení obrázku v aplikaci zobrazení fotografií, `CardView` má vzhled fotografie snímek, jak je znázorněno na následujícím snímku obrazovky:
 
-[![Zobrazení karty aplikace s bitové kopie a titulku pod obrázkem](card-view-images/03-photo-cardview-sml.png)](card-view-images/03-photo-cardview.png)
+[![Zobrazení karty aplikace s bitové kopie a titulku pod obrázkem](card-view-images/03-photo-cardview-sml.png)](card-view-images/03-photo-cardview.png#lightbox)
 
 Tento snímek obrazovky jsou převzaty z [RecyclerViewer](https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer) ukázkovou aplikaci, která používá `RecyclerView` pomůcky nabídne posouvání seznam `CardView` bitových kopií pro zobrazení fotografií. Další informace o `RecyclerView`, najdete v článku [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md) průvodce.
 
 Všimněte si, že `CardView` více než jeden podřízené zobrazení můžete zobrazit v oblasti jeho obsahu. Ve výše uvedené fotografii zobrazení příklad aplikace, například oblast obsahu se skládá z `ListView` obsahující `ImageView` a `TextView`. I když `CardView` instance jsou často svisle uspořádané, můžete také uspořádat je vodorovně (najdete v části [vytváření vlastní styl zobrazení](~/android/user-interface/material-theme.md#customview) pro – snímek obrazovky příkladu).
 
-<a name="layout" />
 
 ### <a name="cardview-layout-options"></a>Možnosti zobrazení karty aplikace rozložení
 
 `CardView` rozložení lze přizpůsobit pomocí nastavení jeden nebo více atributů, které ovlivňují jeho odsazení, zvýšení oprávnění, rohu radius a barvu pozadí:
 
-[![Diagram zobrazení karty aplikace atributů](card-view-images/04-attributes-sml.png)](card-view-images/04-attributes.png)
+[![Diagram zobrazení karty aplikace atributů](card-view-images/04-attributes-sml.png)](card-view-images/04-attributes.png#lightbox)
 
 Každý atribut lze také změnit dynamicky voláním protějšek `CardView` – metoda (Další informace o `CardView` metody, najdete v článku [referenci třídy zobrazení karty aplikace](https://developer.android.com/reference/android/support/v7/widget/CardView.html)).
 Všimněte si, že tyto atributy (s výjimkou barvu pozadí) přijměte hodnotu dimenze, která je desetinné číslo následuje jednotka. Například `11.5dp` určuje 11.5 nezávislé na hustotě pixelů.
 
-<a name="padding" />
 
 #### <a name="padding"></a>Odsazení
 `
 CardView` nabízí pěti atributů odsazení pro umístění obsahu v rámci kartu. Můžete je nastavit v rozvržení XML nebo volat metody podobá ve vašem kódu:
 
-[![Diagram zobrazení karty aplikace odsazení atributy](card-view-images/05-padding-sml.png)](card-view-images/05-padding.png)
+[![Diagram zobrazení karty aplikace odsazení atributy](card-view-images/05-padding-sml.png)](card-view-images/05-padding.png#lightbox)
 
 Odsazení atributy jsou vysvětleny takto:
 
@@ -200,13 +195,12 @@ Atributy obsahu odsazení jsou relativní vzhledem k hranici oblasti obsahu, mí
 Například pokud `contentPadding` byly dostatečně vyšší v aplikaci zobrazení fotografií `CardView` by oříznout bitové kopie a text zobrazený na kartě.
 
 
-<a name="elevation" />
 
 #### <a name="elevation"></a>Zvýšení oprávnění
 
 `CardView` nabízí dva atributy zvýšení oprávnění k řízení zvýšení jeho oprávnění a v důsledku toho velikost jeho stín:
 
-[![Diagram zobrazení karty aplikace zvýšení atributů](card-view-images/06-elevation-sml.png)](card-view-images/06-elevation.png)
+[![Diagram zobrazení karty aplikace zvýšení atributů](card-view-images/06-elevation-sml.png)](card-view-images/06-elevation.png#lightbox)
 
 Atributy zvýšení oprávnění jsou vysvětleny takto:
 
@@ -217,13 +211,12 @@ Atributy zvýšení oprávnění jsou vysvětleny takto:
 Vyšší hodnoty z `cardElevation` zvýšit velikost stínu aby `CardView` se zdá, že float vyšší výše na pozadí. `cardElevation` Atribut také určuje pořadí vykreslování překrývajících se oblastí zobrazení; který je, `CardView` budou vykreslovat pod jinou překrývající se zobrazením s vyšší nastavení zvýšení oprávnění a vyšší žádné překrývající se zobrazení s nižší nastavení zvýšení oprávnění.
 `cardMaxElevation` Nastavení je užitečné pro když aplikace pro zvýšení oprávnění se dynamicky mění &ndash; stín zabrání rozšíření za limit definující s tímto nastavením.
 
-<a name="radius" />
 
 #### <a name="corner-radius-and-background-color"></a>Rohu Radius a barvu pozadí
 
 `CardView` nabízí atributy, které můžete použít k řízení jeho rohu radius a jeho barvu pozadí. Tyto dvě vlastnosti povolit, změňte celkové styl `CardView`:
 
-[![Diagram zobrazení karty aplikace rohu radious a atributy Barva pozadí](card-view-images/07-radius-bgcolor-sml.png)](card-view-images/07-radius-bgcolor.png)
+[![Diagram zobrazení karty aplikace rohu radious a atributy Barva pozadí](card-view-images/07-radius-bgcolor-sml.png)](card-view-images/07-radius-bgcolor.png#lightbox)
 
 Tyto atributy jsou vysvětleny takto:
 
@@ -233,8 +226,6 @@ Tyto atributy jsou vysvětleny takto:
 
 V tomto diagramu `cardCornerRadius` je nastaven na více zaokrouhlené 10dp a `cardBackgroundColor` je nastaven na `"#FFFFCC"` (světle žlutý).
 
-
-<a name="compatibility" />
 
 ## <a name="compatibility"></a>Kompatibilita
 
@@ -255,7 +246,6 @@ Abyste při správě tyto rozdíly kompatibility `CardView` poskytuje několik d
 
 Další informace o zachování kompatibility s předchozími verzemi systému Android, najdete v části [zachování kompatibility](https://developer.android.com/training/material/compatibility.html).
 
-<a name="summary" />
 
 ## <a name="summary"></a>Souhrn
 

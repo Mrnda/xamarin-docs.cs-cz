@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/05/2018
-ms.openlocfilehash: ee98e19ce59b8a61040941d9851b8fbf965c3b17
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 55d72a49f90095a33577279d018e1696dda8fc42
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="gdb"></a>GDB
 
@@ -20,7 +20,7 @@ ms.lasthandoff: 02/27/2018
 Xamarin.Android 4.10 zavedená částečná podpora pro použití `gdb` pomocí `_Gdb` MSBuild cíl. 
 
 > [!NOTE]
-> **Poznámka:** `gdb` podporu vyžaduje nainstalované Android NDK.
+> `gdb` podpora vyžaduje nainstalované Android NDK.
 
 Existují tři způsoby, jak používat `gdb`:
 
@@ -59,7 +59,7 @@ $ /Library/Frameworks/Mono.framework/Commands/xbuild /t:_Gdb *.csproj
 
 
 > [!NOTE]
-> **Poznámka:** obsah `gdb-symbols` , jsou svázané s Android cíl jste nasadili do adresáře a nebude automaticky nahradit by se měl můžete změnit cíl. (Zvažte to chyby.) Pokud změníte Android cílových zařízení, musíte ručně odstranit tento adresář.
+> Obsah `gdb-symbols` , jsou svázané s Android cíl jste nasadili do adresáře a nebude automaticky nahradit by se měl můžete změnit cíl. (Zvažte to chyby.) Pokud změníte Android cílových zařízení, musíte ručně odstranit tento adresář.
 
 Nakonec zkopírujte vygenerovaného `gdb` příkazů a spustit ve vašem prostředí:
 

@@ -8,17 +8,15 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 044dc0f3c0b5a86944fc852cdd97f8affcb8e874
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e7289d92043bdbe9e4ec55776835530f8ccec526
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="sharing-code-options"></a>Možnosti sdílení kódu
 
 _Tento dokument porovná s různými způsoby sdílení kódu mezi napříč platformami projekty: sdílených projektů, přenosné knihovny tříd a Standard .NET, včetně výhod a nevýhod._
-
-## <a name="overview"></a>Přehled
 
 Existují tři alternativní metody pro sdílení kódu mezi aplikacemi a platformy:
 
@@ -34,9 +32,9 @@ Tento článek obsahuje tři metody, které vám pomohou zvolit typ správné pr
 
 <a name="Shared_Projects" />
 
-# <a name="shared-projects"></a>Sdílení projektů
+## <a name="shared-projects"></a>Sdílení projektů
 
-Nejjednodušším přístupem při sdílení soubory kódu se má používat sdílené projektu (počínaje Xamarin Studio 5 a Visual Studio 2013 Update 2). Sdílení projektů jsou [podrobněji zde](~/cross-platform/app-fundamentals/shared-projects.md).
+Nejjednodušším přístupem při sdílení soubory kódu se má používat [sdílený projekt](~/cross-platform/app-fundamentals/shared-projects.md).
 
 Tento snímek obrazovky ukazuje soubor řešení (pro Android, iOS a Windows Phone), který obsahuje tři projekty aplikací s **sdílené** projekt, který obsahuje běžné C# soubory zdrojového kódu:
 
@@ -47,7 +45,7 @@ Konceptuální architektura je znázorněno v následujícím diagramu, kde kaž
  ![](code-sharing-images/sharedassetproject.png "Sdílené diagram projektu")
 
 
-## <a name="example"></a>Příklad
+### <a name="example"></a>Příklad
 
 Křížové platformy aplikace, která podporuje iOS, Android a Windows Phone by vyžadovaly projekt aplikace pro každou platformu. Společný kód žije v projektu sdíleného.
 
@@ -62,7 +60,7 @@ Příklad řešení by obsahovat následující složky a projektů (názvy proj
 Tímto způsobem projektů tři aplikace sdílejí stejné zdrojový kód (C# soubory ve sdílených). Veškeré úpravy sdíleného kódu budou sdílet všechny tři projekty.
 
 
-## <a name="benefits"></a>Výhody
+### <a name="benefits"></a>Výhody
 
 -  Umožňuje sdílet kódu ve více projektech.
 -  Sdílené kódu můžete vytvořit větve, podle platformy, pomocí direktivy kompilátoru (např. pomocí `#if __ANDROID__` , jak je popsáno v [vytváření křížové platformy aplikací](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md) dokumentu).
@@ -70,7 +68,7 @@ Tímto způsobem projektů tři aplikace sdílejí stejné zdrojový kód (C# so
 
 
 
-## <a name="disadvantages"></a>Nevýhody
+### <a name="disadvantages"></a>Nevýhody
 
 -  Na rozdíl od většiny jiné typy projektů sdílený projekt má žádné sestavení za "výstupní". Soubory během kompilace, jsou považovány za součást odkazující projektu a zkompilovat do tohoto sestavení. Pokud chcete sdílet kódu jako sestavení potom přenosné knihovny tříd nebo .NET Standard je lepší řešení.
 -  Refaktoring, které by ovlivnily kód direktivy kompilátoru 'neaktivní, nebude aktualizovat kód.
@@ -78,14 +76,14 @@ Tímto způsobem projektů tři aplikace sdílejí stejné zdrojový kód (C# so
 
  <a name="Shared_Remarks" />
 
-## <a name="remarks"></a>Poznámky
+### <a name="remarks"></a>Poznámky
 
 Dobré řešení pro vývojáře aplikací psaní kódu, který je určený jenom pro sdílení ve své aplikaci (a není rozdělení jinými vývojářů).
 
  <a name="Portable_Class_Libraries" />
 
 
-# <a name="portable-class-libraries"></a>Knihovny přenosných tříd
+## <a name="portable-class-libraries"></a>Knihovny přenosných tříd
 
 
 Knihovny přenosných tříd jsou [podrobněji zde](~/cross-platform/app-fundamentals/pcl.md).
@@ -93,19 +91,19 @@ Knihovny přenosných tříd jsou [podrobněji zde](~/cross-platform/app-fundame
  ![](code-sharing-images/portableclasslibrary.png "Diagram knihovny přenosných tříd")
 
 
-## <a name="benefits"></a>Výhody
+### <a name="benefits"></a>Výhody
 
 -  Umožňuje sdílet kódu ve více projektech.
 -  Operace refaktoringu kdykoli aktualizovat všechny příslušné odkazy.
 
 
-## <a name="disadvantages"></a>Nevýhody
+### <a name="disadvantages"></a>Nevýhody
 
 -  Direktivy kompilátoru nelze použít.
 -  Pouze podmnožinu rozhraní .NET framework je k dispozici pro použití, určuje vybraný profil (viz [Úvod do PCL](~/cross-platform/app-fundamentals/pcl.md) Další informace).
 
 
-## <a name="remarks"></a>Poznámky
+### <a name="remarks"></a>Poznámky
 
 Dobrým řešením, pokud budete chtít sdílet výsledné sestavení s jinými vývojáři.
 
@@ -113,29 +111,29 @@ Dobrým řešením, pokud budete chtít sdílet výsledné sestavení s jinými 
 
 <a name="Net_Standard" />
 
-# <a name="net-standard-libraries"></a>Standardní knihovny .NET
+## <a name="net-standard-libraries"></a>Standardní knihovny .NET
 
 .NET standard je [podrobněji zde](~/cross-platform/app-fundamentals/net-standard.md).
 
 ![](code-sharing-images/netstandard.png "Diagram .NET standard")
 
-## <a name="benefits"></a>Výhody
+### <a name="benefits"></a>Výhody
 
 -  Umožňuje sdílet kódu ve více projektech.
 -  Operace refaktoringu kdykoli aktualizovat všechny příslušné odkazy.
 -  O větší ploše knihovny pro třídy Base .NET (BCL) je k dispozici než PCL profily.
 
-## <a name="disadvantages"></a>Nevýhody
+### <a name="disadvantages"></a>Nevýhody
 
  -  Direktivy kompilátoru nelze použít.
 
-## <a name="remarks"></a>Poznámky
+### <a name="remarks"></a>Poznámky
 
 .NET standard je podobný PCL, ale s modelem jednodušší pro podporu platformy a větší počet tříd z BCL.
 
 
 
-# <a name="summary"></a>Souhrn
+## <a name="summary"></a>Souhrn
 
 Platformy, které se zaměříte se bude týkat kód sdílení strategie, které zvolíte. Zvolte metodu, která je nejvhodnější pro váš projekt.
 
@@ -151,4 +149,3 @@ PCL nebo .NET Standard se velmi dobře hodí pro vytvoření knihovny lze sdíle
 - [Případová studie: Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)
 - [Ukázka tasky (githubu)](https://github.com/xamarin/mobile-samples/tree/master/Tasky)
 - [Tasky ukázku pomocí PCL (githubu)](https://github.com/xamarin/mobile-samples/tree/master/TaskyPortable)
-- [Sdílené správce odkazů projektu pro Visual Studio 2013](http://visualstudiogallery.msdn.microsoft.com/315c13a7-2787-4f57-bdf7-adae6ed54450)

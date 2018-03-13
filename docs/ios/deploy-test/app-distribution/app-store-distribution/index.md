@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: e19949c3a2efa4a5ddb17393d58c4430662254eb
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2ee98b48feb8bc1e3431d796a7ca07a6c2e74790
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="app-store-distribution"></a>Distribuce obchodu s aplikacemi
 
@@ -48,13 +48,13 @@ Můžete vybrat stejné **ID aplikace** a **zařízení** které jste použili p
 3. Klikněte  **+**  tlačítko Vytvořit nový certifikát.
 4. V části *produkční* záhlaví, vyberte **App Store a Ad Hoc**:
 
-    [ ![](images/createcertmanually01.png "Vyberte obchodu s aplikacemi a Ad Hoc")](images/createcertmanually01.png)
+    [![](images/createcertmanually01.png "Vyberte obchodu s aplikacemi a Ad Hoc")](images/createcertmanually01.png#lightbox)
 5. Klikněte na tlačítko **pokračovat**a postupujte podle pokynů vytvořte žádost o podepsání certifikátu prostřednictvím přístup do řetězce klíčů:
 
-    [ ![](images/createcertmanually02.png "Vytvoření žádost o podepsání certifikátu prostřednictvím přístup do řetězce klíčů")](images/createcertmanually02.png)
+    [![](images/createcertmanually02.png "Vytvoření žádost o podepsání certifikátu prostřednictvím přístup do řetězce klíčů")](images/createcertmanually02.png#lightbox)
 6. Po vytvoření zástupce podle pokynů, klikněte na tlačítko **pokračovat**a odešlete zástupce do centra pro:
 
-    [ ![](images/createcertmanually03.png "Nahrát oddělení služeb zákazníkům do centra")](images/createcertmanually03.png)
+    [![](images/createcertmanually03.png "Nahrát oddělení služeb zákazníkům do centra")](images/createcertmanually03.png#lightbox)
 
 7. Klikněte na tlačítko **generování** k vytvoření certifikátu.
 8. Nakonec **Stáhnout** dokončené certifikátu a poklikejte na soubor k její instalaci.
@@ -62,11 +62,11 @@ Můžete vybrat stejné **ID aplikace** a **zařízení** které jste použili p
 
 Případně je možné žádost o certifikát pomocí dialogu Předvolby v Xcode. Chcete-li to provést, postupujte následujícím způsobem:
 
-1.   Vyberte váš tým a klikněte na **spravovat certifikáty...** : [ ![ ] (images/selectteam.png "Vyberte tým a zobrazit podrobnosti")](images/selectteam.png)
+1.   Vyberte váš tým a klikněte na **spravovat certifikáty...** : [ ![ ] (images/selectteam.png "Vyberte tým a zobrazit podrobnosti")](images/selectteam.png#lightbox)
 
-2.   Klikněte na tlačítko **vytvořit** vedle položky **iOS certifikátu distribučního**: [ ![ ] (images/selectcert.png "vytvořit certifikát pro distribuční pro iOS")](images/selectcert.png)
+2.   Klikněte na tlačítko **vytvořit** vedle položky **iOS certifikátu distribučního**: [ ![ ] (images/selectcert.png "vytvořit certifikát pro distribuční pro iOS")](images/selectcert.png#lightbox)
 
-3.   V závislosti na vaší team oprávnění, podpisové identity se budou generovat, jak je uvedeno níže, nebo možná budete muset počkat do týmu agenta nebo jej schválí správce: [ ![ ] (images/generated.png "podpisové identity se budou generovat a Zobrazí dialogové okno")](images/generated.png)
+3.   V závislosti na vaší team oprávnění, podpisové identity se budou generovat, jak je uvedeno níže, nebo možná budete muset počkat do týmu agenta nebo jej schválí správce: [ ![ ] (images/generated.png "podpisové identity se budou generovat a Zobrazí dialogové okno")](images/generated.png#lightbox)
 
 
 <a name="creatingprofile" />
@@ -95,27 +95,27 @@ Jakmile máte požadované součásti potřebné pro vytváření profil distrib
 
 1. Vraťte se na portál Apple zřizování a vyberte **zřizování** > **distribuční**:
 
-    [ ![](images/distribute01.png "Zřizování RSelect > Distribuce")](images/distribute01.png)
+    [![](images/distribute01.png "Zřizování RSelect > Distribuce")](images/distribute01.png#lightbox)
 
 2. Klikněte  **+**  tlačítko a vyberte typ profil distribuce, kterou chcete vytvořit jako **obchod**:
 
-    [ ![](images/distribute02.png "Vytvoření profilu distribuční obchodu s aplikacemi")](images/distribute02.png)
+    [![](images/distribute02.png "Vytvoření profilu distribuční obchodu s aplikacemi")](images/distribute02.png#lightbox)
 
 3. Klikněte **pokračovat** tlačítko a vyberte z rozevíracího seznamu, který chcete vytvořit profil distribuce pro ID aplikace:
 
-    [ ![](images/distribute03.png "Z rozevíracího seznamu vyberte ID aplikace")](images/distribute03.png)
+    [![](images/distribute03.png "Z rozevíracího seznamu vyberte ID aplikace")](images/distribute03.png#lightbox)
 
 4. Klikněte **pokračovat** tlačítko a vyberte certifikát nutný k podepsání aplikace:
 
-    [ ![](images/distribute04.png "Vyberte certifikát, který vyžaduje k podepisování aplikace")](images/distribute04.png)
+    [![](images/distribute04.png "Vyberte certifikát, který vyžaduje k podepisování aplikace")](images/distribute04.png#lightbox)
 
 5. Klikněte **pokračovat** tlačítko a vyberte zařízení iOS, které aplikace pro Xamarin.iOS bude možné spustit:
 
-    [ ![](images/distribute05.png "Vyberte iOS zařízení aplikaci bude možné spouštět na")](images/distribute05.png)
+    [![](images/distribute05.png "Vyberte iOS zařízení aplikaci bude možné spouštět na")](images/distribute05.png#lightbox)
 
 6. Klikněte **pokračovat** tlačítko a zadejte **název** pro nový profil distribuce:
 
-    [ ![](images/distribute06.png "Zadejte název nového profilu distribuce")](images/distribute06.png)
+    [![](images/distribute06.png "Zadejte název nového profilu distribuce")](images/distribute06.png#lightbox)
 
 7. Klikněte **generování** tlačítko pro vytvoření nového profilu a dokončení procesu.
 

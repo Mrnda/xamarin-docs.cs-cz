@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 2088ae055fb18b3b00712f063d2178f759021088
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9710e322460058902d89ec1a57c374b93beb82fb
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="dynamic-styles"></a>Dynamické styly
 
@@ -81,8 +81,8 @@ public partial class DynamicStylesPage : ContentPage
 
 Když `OnButtonClicked` obslužné rutiny události proveden, `searchBarStyle` bude přepínat mezi `blueSearchBarStyle` a `greenSearchBarStyle`. Výsledkem je vidět na následujících snímcích obrazovky vzhled:
 
-[![](dynamic-images/dynamic-style-blue.png "Modrá dynamické styl příklad")](dynamic-images/dynamic-style-blue-large.png "modrá dynamické styl příklad")
-[![](dynamic-images/dynamic-style-green.png "zelená dynamické styl příklad") ] (dynamic-images/dynamic-style-green-large.png "Zelená příklad dynamické styl")
+[![](dynamic-images/dynamic-style-blue.png "Modrá dynamické styl příklad")](dynamic-images/dynamic-style-blue-large.png#lightbox "modrá dynamické styl příklad")
+[![](dynamic-images/dynamic-style-green.png "zelená dynamické styl příklad") ] (dynamic-images/dynamic-style-green-large.png#lightbox "Zelená příklad dynamické styl")
 
 Následující příklad kódu ukazuje na stejnou stránku v jazyce C#:
 
@@ -162,8 +162,8 @@ Následující příklad kódu ukazuje *dynamické* styl dědičnosti na stránc
 
 V souboru kódu na pozadí konstruktoru vytvoří [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) položka s klíčem `searchBarStyle`, jak na předchozí příklad, který ukázky dynamické stylů. Když `OnButtonClicked` obslužné rutiny události proveden, `searchBarStyle` bude přepínat mezi `blueSearchBarStyle` a `greenSearchBarStyle`. Výsledkem je vidět na následujících snímcích obrazovky vzhled:
 
-[![](dynamic-images/dynamic-style-inheritance-blue.png "Modrá dynamické styl dědičnosti příklad")](dynamic-images/dynamic-style-inheritance-blue-large.png "modrá dynamické styl dědičnosti příklad")
-[![](dynamic-images/dynamic-style-inheritance-green.png "zelená dynamické styl Příklad dědičnosti")](dynamic-images/dynamic-style-inheritance-green-large.png "zelená příklad dynamické styl dědičnosti")
+[![](dynamic-images/dynamic-style-inheritance-blue.png "Modrá dynamické styl dědičnosti příklad")](dynamic-images/dynamic-style-inheritance-blue-large.png#lightbox "modrá dynamické styl dědičnosti příklad")
+[![](dynamic-images/dynamic-style-inheritance-green.png "zelená dynamické styl Příklad dědičnosti")](dynamic-images/dynamic-style-inheritance-green-large.png#lightbox "zelená příklad dynamické styl dědičnosti")
 
 Následující příklad kódu ukazuje na stejnou stránku v jazyce C#:
 

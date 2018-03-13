@@ -3,16 +3,16 @@ title: "Vzdálené Siri a řadiče Bluetooth."
 description: "Tento článek se zabývá podpora nové řadiče herní Siri Remote a Bluetooth v Xamarin.tvOS aplikací."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: A2DA4347-0563-4C72-A8D7-5B9DE9E28712
+ms.assetid: BDB9894A-236B-424B-9032-ACD12A6C5720
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 5d74479e995c5c6ba6f6fd9fd23fbca78718ee31
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cef717a727b3b018b9eec3e8a402ae4f927f7cb8
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="siri-remote-and-bluetooth-controllers"></a>Vzdálené Siri a řadiče Bluetooth.
 
@@ -23,7 +23,7 @@ Uživatele vaší aplikace Xamarin.tvOS nebude interakci s jeho rozhraní přím
 
 Pokud je vaše aplikace hry, můžete volitelně vytvořit v podpora pro 3. stran provedené pro iOS (MFI s Připojením) [herní zařízení Bluetooth](#Bluetooth-Game-Controllers) ve vaší aplikaci také.
 
-[ ![](remote-bluetooth-images/intro01.png "Bluetooth Remote a herní zařízení")](remote-bluetooth-images/intro01.png)
+[![](remote-bluetooth-images/intro01.png "Bluetooth Remote a herní zařízení")](remote-bluetooth-images/intro01.png#lightbox)
 
 Tento článek popisuje [Siri vzdálené](#The-Siri-Remote), [Touch gesta prostor](#Touch-Surface-Gestures) a [vzdáleného tlačítka Siri](#Siri-Remote-Buttons) a ukazuje, jak pracovat s nimi prostřednictvím [gesta a Scénářů](#Gestures-and-Storyboards), [gesta a kód](#Gestures-and-Code) a [zpracování nízké úrovně událostí](#Low-Level-Event-Handling). Nakonec popisuje [práce s herní zařízení](#Working-with-Game-Controllers) v Xamarin.tvOS aplikaci.
 
@@ -35,7 +35,7 @@ Hlavní způsobu, jakým uživatelé budou interakci s Apple TV a aplikace Xamar
 
 Vaše výzvy jako vývojář aplikace tvOS je rychlý, snadno použitelný a vizuálně poutavé uživatelské rozhraní, které využívá vzdálené Siri touch prostor, zrychlení, tlačítka a volný setrvačník vytvořit.
 
-[ ![](remote-bluetooth-images/remote01.png "Vzdálené Siri")](remote-bluetooth-images/remote01.png)
+[![](remote-bluetooth-images/remote01.png "Vzdálené Siri")](remote-bluetooth-images/remote01.png#lightbox)
 
 Vzdálené Siri má následující funkce a očekávané použití aplikace pro tvOS:
 
@@ -128,14 +128,14 @@ Pokud chcete přidat funkce rozpoznávání gesta, postupujte takto:
 1. V **Průzkumníku řešení**, dvakrát klikněte `Main.storyboard` souborů a otevřete pro úpravy návrháři rozhraní.
 2. Přetáhněte **klepněte na rozpoznávání rukopisu gesto** z **knihovny** na zobrazení: 
 
-    [ ![](remote-bluetooth-images/storyboard01.png "Pro rozpoznávání klepněte na gesto")](remote-bluetooth-images/storyboard01.png)
+    [![](remote-bluetooth-images/storyboard01.png "Pro rozpoznávání klepněte na gesto")](remote-bluetooth-images/storyboard01.png#lightbox)
 3. Zkontrolujte **vyberte** v **tlačítko** části **atribut Inspector**: 
 
-    [ ![](remote-bluetooth-images/storyboard02.png "Zkontrolujte vyberte")](remote-bluetooth-images/storyboard02.png)
+    [![](remote-bluetooth-images/storyboard02.png "Zkontrolujte vyberte")](remote-bluetooth-images/storyboard02.png#lightbox)
 4. **Vyberte** znamená bude odpovídat gesto uživatele kliknutím **Touch prostor** na vzdáleném Siri. Máte také možnost neodpovídá na požadavky **nabídky**, **přehrát či pozastavit**, **až**, **dolů**, **doleva** a **Vpravo** tlačítka.
 5. V dalším kroku se propojit **akce** z **klepněte na rozpoznávání rukopisu gesto** a pojmenujte ji `TouchSurfaceClicked`: 
 
-    [ ![](remote-bluetooth-images/storyboard03.png "Akce z rozpoznávání rukopisu gesto klepněte na")](remote-bluetooth-images/storyboard03.png)
+    [![](remote-bluetooth-images/storyboard03.png "Akce z rozpoznávání rukopisu gesto klepněte na")](remote-bluetooth-images/storyboard03.png#lightbox)
 6. Uložte změny a vrátit k sadě Visual Studio for Mac.
 
 Upravit View Controller (například `FirstViewController.cs`) souboru a přidejte následující kód pro zpracování gesto se spustí:
@@ -314,7 +314,7 @@ Stejně jako u `UITouch` událostí, pokud potřebujete implementovat některé 
 
 Kromě standardní vzdálené Siri, který se dodává s Apple TV, 3. stran, provedené pro iOS můžete spárovaný s Apple TV (MFI s Připojením) Bluetooth herní zařízení a používat k ovládání Xamarin.tvOS aplikace.
 
-[ ![](remote-bluetooth-images/game01.png "Herní Bluetooth zařízení")](remote-bluetooth-images/game01.png)
+[![](remote-bluetooth-images/game01.png "Herní Bluetooth zařízení")](remote-bluetooth-images/game01.png#lightbox)
 
 Herní zařízení slouží k vylepšení hraní her a poskytnout představu o záchranných ve hře. Můžete také používají k řízení standardní rozhraní Apple TV, takže použití nemá přepínat mezi vzdálených a řadič.
 
@@ -425,7 +425,7 @@ Apple má několik specifické požadavky, které musí být splněny, pokud va�
 
 Chcete-li povolit podporu řadiče herní ve vaší aplikaci Xamarin.tvOS, dvakrát klikněte na `Info.plist` v soubor **Průzkumníku řešení** otevřete pro úpravy:
 
-[ ![](remote-bluetooth-images/game02.png "Info.plist editor")](remote-bluetooth-images/game02.png)
+[![](remote-bluetooth-images/game02.png "Info.plist editor")](remote-bluetooth-images/game02.png#lightbox)
 
 V části **herní řadič** část, zaškrtněte podle **Povolit herní zařízení**, zkontrolujte všechny typy herní řadiče, které bude podporovat aplikace.
 

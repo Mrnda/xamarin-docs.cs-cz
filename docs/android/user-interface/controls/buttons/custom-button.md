@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: f77a9b8d3bb69bb47d973a56aed5ad1d49f9a02d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5131b4d09f01af6a6e8bed28a2df27bc801dfb80
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="custom-button"></a>Vlastní tlačítka
 
@@ -19,7 +19,7 @@ V této části vytvoříte tlačítko s vlastní image místo textu, pomocí [ 
 
 Klikněte pravým tlačítkem myši a stáhněte si následující tři Image a pak zkopírujte je do **prostředky/drawable** adresáři projektu. Ty se použije pro jiné tlačítko stavy.
 
- [![Android zelená ikona normálním stavu](custom-button-images/android-normal.png)](custom-button-images/android-normal.png) [ ![Orange Android ikonu pro stav cílených](custom-button-images/android-focused.png)](custom-button-images/android-focused.png) [ ![žlutý Android ikona stavu při stisknutí tlačítka](custom-button-images/android-pressed.png)](custom-button-images/android-pressed.png)
+ [![Android zelená ikona normálním stavu](custom-button-images/android-normal.png)](custom-button-images/android-normal.png#lightbox) [ ![Orange Android ikonu pro stav cílených](custom-button-images/android-focused.png)](custom-button-images/android-focused.png#lightbox) [ ![žlutý Android ikona stavu při stisknutí tlačítka](custom-button-images/android-pressed.png)](custom-button-images/android-pressed.png#lightbox)
 
 Vytvořte nový soubor v **prostředky/drawable** adresář s názvem **android_button.xml**. Vložte následující kód XML:
 
@@ -38,7 +38,7 @@ Definuje jediném drawable prostředku, který se změní jeho image na základ�
 
 
 > [!NOTE]
-> **Poznámka:** pořadí `<item>` je důležité elementy. Při tomto drawable se odkazuje, `<item>`jsou s v pořadí k určení, která je vhodná pro aktuální stav tlačítko Procházet.
+> Pořadí `<item>` je důležité elementy. Při tomto drawable se odkazuje, `<item>`jsou s v pořadí k určení, která je vhodná pro aktuální stav tlačítko Procházet.
 > Vzhledem k tomu "normální" image je poslední, je pouze platí, když podmínky `android:state_pressed` a `android:state_focused` mají obě vyhodnotit hodnotu false.
 
 Otevřete **Resources/layout/Main.axml** souboru a přidejte [ `Button` ](https://developer.xamarin.com/api/type/Android.Widget.Button/) element:

@@ -8,15 +8,15 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/03/2016
-ms.openlocfilehash: b6054b4037b14a73cb5bfe50b619e805fdcf1737
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: caee0d685838f7c0a54e19611fdf72df5730c037
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="creating-mobile-apps-with-xamarinforms-book-first-edition"></a>Vytváření mobilních aplikací s Xamarin.Forms kniha první vydání
 
-<p><img src="Images/Cover-sml.png" title="Vytváření mobilních aplikací s Xamarin.Forms adresáře" align="left"/>Nejnovější kniha Charlese Petzold - <i>vytváření mobilních aplikací s Xamarin.Forms</i> - byl odeslán do (ať už elektronicky) stisknutím a nyní je k dispozici ke stažení!</p>
+<p><img src="Images/Cover-sml.png" title="Vytváření mobilních aplikací s Xamarin.Forms adresáře" align="left" />Nejnovější kniha Charlese Petzold - <i>vytváření mobilních aplikací s Xamarin.Forms</i> - byl odeslán do (ať už elektronicky) stisknutím a nyní je k dispozici ke stažení!</p>
 
 To *první vydání* má 27 kapitolám a věnuje se Xamarin.Forms&nbsp;2.x včetně animace, rozhraní MVVM, aktivační události, chování, vlastní rozložení, pro vlastní vykreslování a mnohé další.
 Kapitola 28 je také k dispozici online mezi jednotlivé kapitolám uvedené níže.

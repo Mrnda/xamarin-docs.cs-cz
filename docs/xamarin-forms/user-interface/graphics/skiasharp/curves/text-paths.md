@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 08/01/2017
-ms.openlocfilehash: bf382f380876e85db46226fb3586382f20d630f2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b22cebf8ca5804884c559da687fe90236c7af44d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="paths-and-text"></a>Cesty a Text.
 
@@ -44,7 +44,7 @@ public SKPath GetTextPath (String text, Single x, Single y)
 
 Jeden z těchto úloh je výstřižek. **Výstřižek Text** stránky vytvoří výstřižek cestu podle jsou podrobněji popsány dále znak slova "Kód." Tato cesta je roztažen tak, aby velikost stránky oříznutí rastrového obrázku, který obsahuje bitovou kopii **výstřižek Text** zdrojový kód:
 
-[![](text-paths-images/clippingtext-small.png "Trojitá snímek obrazovky stránky výstřižek Text")](text-paths-images/clippingtext-large.png "Trojitá snímek obrazovky stránky výstřižek textu")
+[![](text-paths-images/clippingtext-small.png "Trojitá snímek obrazovky stránky výstřižek Text")](text-paths-images/clippingtext-large.png#lightbox "Trojitá snímek obrazovky stránky výstřižek textu")
 
 [ `ClippingTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ClippingTextPage.cs) Konstruktoru třídy načte bitovou mapu, která je uložena jako vložený prostředek v **média** složku řešení:
 
@@ -125,7 +125,7 @@ Po nastavení cesty výstřižek bitmapy lze zobrazit a bude oříznuto obrysy z
 
 **Efektu cesta Text** stránky převádí znak znak ampersand na cestu k vytvoření efektu cesta 1 D. Objekt Malování s efektu tato cesta se pak použije k obtažení obrys větší verze tento stejný znak:
 
-[![](text-paths-images/textpatheffect-small.png "Trojitá snímek obrazovky stránky efektu cesta Text")](text-paths-images/textpatheffect-large.png "Trojitá snímek obrazovky stránky efekt cesta textu")
+[![](text-paths-images/textpatheffect-small.png "Trojitá snímek obrazovky stránky efektu cesta Text")](text-paths-images/textpatheffect-large.png#lightbox "Trojitá snímek obrazovky stránky efekt cesta textu")
 
 Velká část práce při [ `TextPathEffectPath` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/TextPathEffectPage.cs) třída dojde v pole a konstruktor. Dva `SKPaint` objekty definované jako pole se používají pro dva různé účely: první (s názvem `textPathPaint`) se používá k převodu ampersand s `TextSize` 50 na cestu k efektu cesta 1 D. Druhý (`textPaint`) se používá k zobrazení větší verze ampersand s platnost této cesty. Z tohoto důvodu `Style` z této druhé Malování objektu na hodnotu `Stroke`, ale `StrokeWidth` není nastavena vlastnost, protože tuto vlastnost není nezbytné při použití efektu cesta 1 D:
 
@@ -270,7 +270,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 `PaintSurface` Obslužná rutina vytvoří novou cestu s názvem `outlinePath`. To se stane cílovou cestu ve volání `GetFillPath`. `StrokeWidth` Vlastnost 25 příčiny `outlinePath` k popisu obrys 25. pixelů celou cestu vytažení textových znaků. Tato cesta se následně zobrazí červeně s šířku tahu 5:
 
-[![](text-paths-images/characteroutlineoutlines-small.png "Trojitá snímek obrazovky stránky jsou podrobněji popsány dále znak Outline")](text-paths-images/characteroutlineoutlines-large.png "Trojitá snímek obrazovky stránky jsou podrobněji popsány dále znak obrysu")
+[![](text-paths-images/characteroutlineoutlines-small.png "Trojitá snímek obrazovky stránky jsou podrobněji popsány dále znak Outline")](text-paths-images/characteroutlineoutlines-large.png#lightbox "Trojitá snímek obrazovky stránky jsou podrobněji popsány dále znak obrysu")
 
 Podrobněji a uvidíte překrytí, kde obrysu cesty díky sharp rohu. Jedná se o normální artefakty tohoto procesu.
 
@@ -323,7 +323,7 @@ public class CircularTextPage : ContentPage
 
 `TextSize` Vlastnost `textPaint` se pak upraví tak, aby odpovídalo obvodu kruhu šířka textu:
 
-[![](text-paths-images/circulartext-small.png "Trojitá snímek obrazovky stránky cyklické Text")](text-paths-images/circulartext-large.png "Trojitá snímek obrazovky stránky cyklické textu")
+[![](text-paths-images/circulartext-small.png "Trojitá snímek obrazovky stránky cyklické Text")](text-paths-images/circulartext-large.png#lightbox "Trojitá snímek obrazovky stránky cyklické textu")
 
 Vlastní text jste vybrali bude poněkud cyklické: slova "Kruh" je předmět věty i objekt prepositional frázi. 
 

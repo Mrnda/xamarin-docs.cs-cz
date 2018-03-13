@@ -6,12 +6,12 @@ ms.assetid: 54F999BE-2732-4BC7-A466-D17373961C48
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: b1ddcca25fd83a806e8383a5717462b518b46d0b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 89679f7d825422ab34dd77b31a7a3fde60f36e99
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="recyclerview-parts-and-functionality"></a>RecyclerView částí a funkce
 
@@ -57,7 +57,7 @@ Pokud nerozšíříte `ItemDecoration` a `ItemAnimator`, `RecyclerView` použív
 
 `RecyclerView` pro každou položku ve zdroji dat nepřidělí zobrazení položek. Místo toho se přiděluje jenom počet položek zobrazení, která vejít na obrazovce a ho znovu použije tyto položky rozložení jako viditelné pro uživatele. Při zobrazení nejdřív posunu mimo nebyl zřejmý, prochází recyklace procesu zobrazené na následujícím obrázku:
 
-[ ![Diagram ilustrující šest kroků recyklace zobrazení](parts-and-functionality-images/02-view-recycling-sml.png)](parts-and-functionality-images/02-view-recycling.png)
+[![Diagram ilustrující šest kroků recyklace zobrazení](parts-and-functionality-images/02-view-recycling-sml.png)](parts-and-functionality-images/02-view-recycling.png#lightbox)
 
 1.  Když zobrazení posune mimo nebyl zřejmý a se už nezobrazuje, stane se *vyřadit zobrazení*.
 
@@ -75,7 +75,6 @@ Pokud nerozšíříte `ItemDecoration` a `ItemAnimator`, `RecyclerView` použív
 Kromě zobrazení položek opakované použití `RecyclerView` také používá jiný optimalizaci efektivity: Zobrazit držitele. A *zobrazení držitel* je jednoduchý třída, mezipamětí zobrazit odkazy. Pokaždé, když je adaptér zvýšení kapacity soubor rozložení položky, také vytvoří odpovídající držitel zobrazení. Držitel zobrazení používá `FindViewById` získat odkazy na zobrazení v souboru zvýšeným rozložení položky. Tyto odkazy se používají k načtení nová data do zobrazení pokaždé, když dojde k recyklování zobrazíte nová data rozložení.
  
 
-<a name="layoutmanager" />
 
 ### <a name="the-layout-manager"></a>Správce rozložení
 
@@ -96,7 +95,6 @@ Pokud chcete zadat Správce rozložení, vytvoření instance vašeho správce z
 
 Další informace o správci rozložení najdete v tématu [referenci třídy RecyclerView.LayoutManager](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.LayoutManager.html).
 
-<a name="viewholder" />
 
 ### <a name="the-view-holder"></a>Držitel zobrazení
 
@@ -109,7 +107,6 @@ Držitel zobrazení je třída, která definujete pro ukládání do mezipaměti
 Podrobný příklad `ViewHolder` implementace jsou poskytovány [A základní příklad RecyclerView](~/android/user-interface/layouts/recycler-view/recyclerview-example.md).
 Další informace o `RecyclerView.ViewHolder`, najdete v článku [referenci třídy RecyclerView.ViewHolder](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html).
 
-<a name="adapter" />
 
 ### <a name="the-adapter"></a>Adaptér
 
@@ -118,7 +115,7 @@ Protože zdroj dat je specifický pro aplikace, je nutné implementovat adaptér
 
 Následující ilustrace jak adaptér mapuje obsah ve zdroji dat prostřednictvím držitelé zobrazení jednotlivých zobrazení v rámci každého řádku položky v `RecyclerView`:
 
-[ ![Diagram ilustrující adaptér připojení zdroje dat k ViewHolders](parts-and-functionality-images/03-recyclerviewer-adapter-sml.png)](parts-and-functionality-images/03-recyclerviewer-adapter.png)
+[![Diagram ilustrující adaptér připojení zdroje dat k ViewHolders](parts-and-functionality-images/03-recyclerviewer-adapter-sml.png)](parts-and-functionality-images/03-recyclerviewer-adapter.png#lightbox)
 
 Adaptér načte každý `RecyclerView` řádek s daty pro položku konkrétního řádku. Pro pozice řádku *P*, například adaptér vyhledá přidružená data na pozici *P* v rámci zdroj dat a zkopíruje položky tato data na řádek na pozici *P* v `RecyclerView` kolekce.
 Ve výše uvedené výkresu, například adaptér používá držitele zobrazení pro odkazy pro vyhledání `ImageView` a `TextView` na této pozici, takže nemusí opakovaně volat `FindViewById` pro tyto zobrazení jako uživatel posune prostřednictvím kolekce a opětovně používá zobrazení.
@@ -134,7 +131,6 @@ Pokud implementujete adaptér, je nutné přepsat následující `RecyclerView.A
 Správce rozložení volání těchto metod, přičemž se je umístění položky v rámci `RecyclerView`. 
 
 
-<a name="datachanges" />
 
 ### <a name="notifying-recyclerview-of-data-changes"></a>Upozornění RecyclerView změny dat
 

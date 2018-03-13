@@ -8,17 +8,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: ad621fa093379d5ad2dd81c81ce42dcaaa9bd923
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3d915191e24b5238d5165237f6ede74635b31e08
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="relativelayout"></a>RelativeLayout
 
 `RelativeLayout` slouží k pozice a velikosti zobrazení relativně k vlastnosti zobrazení rozložení nebo na stejné úrovni. Na rozdíl od `AbsoluteLayout`, `RelativeLayout` nemá koncept přesunutí ukotvení a nemá zařízení pro umístění prvků relativně k dolní a pravé hrany rozložení. `RelativeLayout` podporuje umísťovací elementy mimo svůj vlastní rozsah.
 
-[ ![](relative-layout-images/layouts-sml.png "Rozložení Xamarin.Forms")](relative-layout-images/layouts.png "Xamarin.Forms rozložení")
+[![](relative-layout-images/layouts-sml.png "Rozložení Xamarin.Forms")](relative-layout-images/layouts.png#lightbox "Xamarin.Forms rozložení")
 
 ## <a name="purpose"></a>Účel
 
@@ -76,7 +76,7 @@ Všimněte si následujících charakteristik ve výše uvedené rozložení:
 - Do pole `y` souřadnice je definován jako polovině výšky nadřazeného objektu, -100.
 
 > [!NOTE]
-> **Poznámka:**: z důvodu způsob omezení jsou definovány, je možné, aby složitější rozložení v jazyce C# než lze určit XAML.
+> Kvůli způsobu, kterým jsou definovány omezení je možné, aby složitější rozložení v jazyce C# než lze určit XAML.
 
 Obě výše uvedených příkladech definují omezení jako `RelativeToParent` &ndash; tedy jejich hodnoty jsou relativní vzhledem k nadřazeného elementu. Je také možné definovat omezení jako relativně k jiné zobrazení. To umožňuje intuitivnější (pro vývojáře) rozložení a provádět záměr kódu rozložení snadněji zřejmá.
 

@@ -1,24 +1,24 @@
 ---
-title: "Základy aplikací"
+title: "Principy aplikací"
 description: "Základní koncepty aplikace"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: DBBAA086-BB0F-8161-DF44-632F4F5DFE5D
+ms.assetid: 7D179ACF-09A6-46EE-B49D-E27AB5F09CD4
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 02/18/2018
-ms.openlocfilehash: 9e4e7705e1ca29b6abf716a48ae3fa0e7c1a19ec
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c5b823370e5b65fbcf9ba366cb89c05e003b1a89
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
-# <a name="application-fundamentals"></a>Základy aplikací
+# <a name="application-fundamentals"></a>Principy aplikací
 
 Tato část poskytuje návod na některých běžných úloh věcí nebo koncepty, které vývojáři potřeba myslet při vývoji mobilních aplikací.
 
-##  <a name="building-cross-platform-applicationscross-platformapp-fundamentalsbuilding-cross-platform-applicationsindexmd"></a>[Sestavení pro různé platformy aplikace](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)
+##  <a name="building-cross-platform-applicationscross-platformapp-fundamentalsbuilding-cross-platform-applicationsindexmd"></a>[Vytváření multiplatformních aplikací](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)
 
 Výběr Xamarin a zachování pár věcí na paměti, když návrh a vývoj mobilních aplikací, můžete mějte na paměti strávíte kód sdílení různé mobilní platformy, zkrátit dobu uvedení na trh, využít existující talentu, splňují poptávka pro mobilní přístup a snížit složitost a platformy. &nbsp;Tento dokument popisuje klíčové pokyny k porozumění tyto výhody pro nástroj a kancelářské aplikace.
 
@@ -37,11 +37,11 @@ Tipy pro vytváření aplikací dostupné.
 Pokyny pro zajištění deklaracemi národního prostředí aplikací, které by bylo možné převést do různých jazyků.
 
 
-##  <a name="portable-class-librariescross-platformapp-fundamentalspclmd"></a>[Knihovny přenosných tříd](~/cross-platform/app-fundamentals/pcl.md)
+##  <a name="portable-class-librariescross-platformapp-fundamentalspclmd"></a>[Přenosné knihovny tříd](~/cross-platform/app-fundamentals/pcl.md)
 
 Přenosná knihovna tříd projekty umožňují vytvářet a distribuovat sestavení, které obsahují sdílené kód pro spuštění ve více platformách. K vytvoření přenosné knihovny tříd (nebo "PCL") vyberte nejdřív platforem, které cíle a napsat kód pro dílčí sadu rozhraní .NET Framework, která je k dispozici v profilu definované pro tyto platformy. Tento dokument popisuje, jak vytvořit a používat PCLs s funkcí Xamarin.
 
-##  <a name="shared-projectscross-platformapp-fundamentalsshared-projectsmd"></a>[Sdílení projektů](~/cross-platform/app-fundamentals/shared-projects.md)
+##  <a name="shared-projectscross-platformapp-fundamentalsshared-projectsmd"></a>[Sdílené projekty](~/cross-platform/app-fundamentals/shared-projects.md)
 
 Sdílení projektů umožňují zápisu společný kód, který je odkazován počet projekty jinou aplikaci. Kód kompiluje v rámci každého odkazující projektu a může obsahovat direktivy kompilátoru pomohou začlenit funkce specifické pro platformu v základu sdíleného kódu. Tento článek popisuje, jak fungují sdílených projektů a jak vytvořit a použít je s projekty Xamarin.
 

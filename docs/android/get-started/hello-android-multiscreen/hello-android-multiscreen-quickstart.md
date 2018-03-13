@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: 4c61a588eafdf0a86f4124d264c41cabef3e7a14
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 159bd2435a1d2b5252e0fd1b9d525cdf6cfa7207
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="hello-android-multiscreen-quickstart"></a>Hello, Android Multiobrazovka: rychlý start
 
@@ -22,7 +22,7 @@ _Tato příručka dvě části rozšíří Phoneword aplikaci zpracovávat druh�
 
 V části návod v této příručce přidáte druhý obrazovky [Phoneword](https://developer.xamarin.com/samples/monodroid/Phoneword/) aplikace ke sledování historie čísel přeložit pomocí aplikace. [Konečné aplikace](https://developer.xamarin.com/samples/monodroid/PhonewordMultiscreen/) bude mít druhý obrazovky, který zobrazuje čísla, která měla "přeložit", které jsou popsány v na snímku obrazovky na pravé straně:
 
-[![Snímky obrazovky příklad aplikace](hello-android-multiscreen-quickstart-images/screenshot-sml.png)](hello-android-multiscreen-quickstart-images/screenshot.png)
+[![Snímky obrazovky příklad aplikace](hello-android-multiscreen-quickstart-images/screenshot-sml.png)](hello-android-multiscreen-quickstart-images/screenshot.png#lightbox)
 
 Doprovodných [podrobné informace](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-deepdive.md) zkontroluje, co byla vytvořena a popisuje architekturu, navigace a dalších nových Android konceptů došlo na cestě.
 
@@ -44,15 +44,15 @@ Začněte otevřením **Phoneword** aplikace v sadě Visual Studio a úpravy **M
 
 Z **sada nástrojů**, přetáhněte ji **tlačítko** na návrh surface a umístěte ji níže **TranslatedPhoneWord** TextView. V **vlastnosti** podokně změňte tlačítko **Id** na `@+id/TranslationHistoryButton` 
 
-[![Přetáhněte nového tlačítka](hello-android-multiscreen-quickstart-images/vs/02-new-button-sml.png)](hello-android-multiscreen-quickstart-images/vs/02-new-button.png)
+[![Přetáhněte nového tlačítka](hello-android-multiscreen-quickstart-images/vs/02-new-button-sml.png)](hello-android-multiscreen-quickstart-images/vs/02-new-button.png#lightbox)
 
 Nastavte **Text** vlastnost tlačítko pro `@string/translationHistory`. Android návrháře bude interpretovat to oznámena, ale se chystáte provést několik změn, aby na tlačítko text se zobrazí správně:
 
-[![Nastavit text tlačítka historie překlad](hello-android-multiscreen-quickstart-images/vs/03-translation-history-string-sml.png)](hello-android-multiscreen-quickstart-images/vs/03-translation-history-string.png)
+[![Nastavit text tlačítka historie překlad](hello-android-multiscreen-quickstart-images/vs/03-translation-history-string-sml.png)](hello-android-multiscreen-quickstart-images/vs/03-translation-history-string.png#lightbox)
 
 Rozbalte **hodnoty** pod uzlem **prostředky** složky v **Průzkumníku řešení** a dvakrát klikněte na soubor prostředků řetězec **Strings.xml**:
 
-[![Open Strings.xml](hello-android-multiscreen-quickstart-images/vs/04-strings-resources-file-sml.png)](hello-android-multiscreen-quickstart-images/vs/04-strings-resources-file.png)
+[![Open Strings.xml](hello-android-multiscreen-quickstart-images/vs/04-strings-resources-file-sml.png)](hello-android-multiscreen-quickstart-images/vs/04-strings-resources-file.png#lightbox)
 
 Přidat `translationHistory` řetězec název a hodnotu **Strings.xml** souboru a uložte jej:
 
@@ -66,17 +66,17 @@ Přidat `translationHistory` řetězec název a hodnotu **Strings.xml** souboru 
 
 **Překlad historie** tlačítko text by měl aktualizovat tak, aby odrážely novou řetězcovou hodnotu:
 
-[![Tlačítko odráží novou řetězcovou hodnotu](hello-android-multiscreen-quickstart-images/vs/05-new-string-value.png)](hello-android-multiscreen-quickstart-images/vs/05-new-string-value.png)
+[![Tlačítko odráží novou řetězcovou hodnotu](hello-android-multiscreen-quickstart-images/vs/05-new-string-value.png)](hello-android-multiscreen-quickstart-images/vs/05-new-string-value.png#lightbox)
 
 S **překlad historie** tlačítko vybrané na návrhovou plochu, vyhledejte `enabled` nastavení v **vlastnosti** podokně a jeho hodnotu nastavte `false` zakázat tlačítko. To způsobí, že na tlačítko se na návrhovou plochu tmavšího:
 
-[![Zakázat tlačítko historie překlad](hello-android-multiscreen-quickstart-images/vs/06-enabled-false-sml.png)](hello-android-multiscreen-quickstart-images/vs/06-enabled-false.png)
+[![Zakázat tlačítko historie překlad](hello-android-multiscreen-quickstart-images/vs/06-enabled-false-sml.png)](hello-android-multiscreen-quickstart-images/vs/06-enabled-false.png#lightbox)
 
 ### <a name="creating-the-second-activity"></a>Vytváření druhé aktivity
 
 Vytvořte druhý aktivitu zapnutí druhý obrazovky. V **Průzkumníku řešení**, klikněte pravým tlačítkem myši **Phoneword** projektu a zvolte **Přidat > novou položku...** :
 
-[![Přidat nový soubor](hello-android-multiscreen-quickstart-images/vs/07-add-new-file-sml.png)](hello-android-multiscreen-quickstart-images/vs/07-add-new-file.png)
+[![Přidat nový soubor](hello-android-multiscreen-quickstart-images/vs/07-add-new-file-sml.png)](hello-android-multiscreen-quickstart-images/vs/07-add-new-file.png#lightbox)
 
 V **přidat novou položku** dialogovém okně, vyberte **Visual C# > aktivity** a název souboru aktivity **TranslationHistoryActivity.cs**.
 
@@ -171,7 +171,7 @@ Uložte a sestavte aplikaci a ujistěte se, že nejsou žádné chyby.
 
 Nasazení aplikace na emulátoru nebo zařízení. Na následujících snímcích obrazovky ilustraci spuštění **Phoneword** aplikace:
 
-[![Příklad snímky obrazovky](hello-android-multiscreen-quickstart-images/screenshot-sml.png)](hello-android-multiscreen-quickstart-images/screenshot.png)
+[![Příklad snímky obrazovky](hello-android-multiscreen-quickstart-images/screenshot-sml.png)](hello-android-multiscreen-quickstart-images/screenshot.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -181,16 +181,16 @@ Začněte otevřením **Phoneword** projektu v sadě Visual Studio pro Mac a úp
 
 Z **sada nástrojů**, přetáhněte ji **tlačítko** na návrh surface a umístěte ji níže **TranslatedPhoneWord** TextView. V **vlastnosti** odsadí, změňte tlačítko **Id** na `@+id/TranslationHistoryButton` 
 
-[![Přetáhněte nového tlačítka](hello-android-multiscreen-quickstart-images/xs/02-new-button-sml.png)](hello-android-multiscreen-quickstart-images/xs/02-new-button.png)
+[![Přetáhněte nového tlačítka](hello-android-multiscreen-quickstart-images/xs/02-new-button-sml.png)](hello-android-multiscreen-quickstart-images/xs/02-new-button.png#lightbox)
 
 Nastavte **Text** vlastnost tlačítko pro `@string/translationHistory`. Android návrháře bude interpretovat to oznámena, ale se chystáte provést několik změn, aby na tlačítko text se zobrazí správně:
 
-[![Nastavit text tlačítka historie překlad](hello-android-multiscreen-quickstart-images/xs/03-call-history-string-sml.png)](hello-android-multiscreen-quickstart-images/xs/03-call-history-string.png)
+[![Nastavit text tlačítka historie překlad](hello-android-multiscreen-quickstart-images/xs/03-call-history-string-sml.png)](hello-android-multiscreen-quickstart-images/xs/03-call-history-string.png#lightbox)
 
 
 Rozbalte položku **hodnoty** pod uzlem **prostředky** složky v **Pad řešení** a dvakrát klikněte na soubor prostředků řetězec **Strings.xml**:
 
-[![Otevřete řetězce](hello-android-multiscreen-quickstart-images/xs/04-strings-resources-file-sml.png)](hello-android-multiscreen-quickstart-images/xs/04-strings-resources-file.png)
+[![Otevřete řetězce](hello-android-multiscreen-quickstart-images/xs/04-strings-resources-file-sml.png)](hello-android-multiscreen-quickstart-images/xs/04-strings-resources-file.png#lightbox)
 
 
 Přidat `translationHistory` řetězec název a hodnotu **Strings.xml** souboru a uložte jej:
@@ -205,12 +205,12 @@ Přidat `translationHistory` řetězec název a hodnotu **Strings.xml** souboru 
 
 **Překlad historie** tlačítko text by měl aktualizovat tak, aby odrážely novou řetězcovou hodnotu:
 
-[![Tlačítko odráží novou řetězcovou hodnotu](hello-android-multiscreen-quickstart-images/xs/05-new-string-value-sml.png)](hello-android-multiscreen-quickstart-images/xs/05-new-string-value.png)
+[![Tlačítko odráží novou řetězcovou hodnotu](hello-android-multiscreen-quickstart-images/xs/05-new-string-value-sml.png)](hello-android-multiscreen-quickstart-images/xs/05-new-string-value.png#lightbox)
 
 
 S **překlad historie** tlačítko vybrané na návrhovou plochu, otevřete **chování** ve **vlastnosti Pad** a dvakrát klikněte na **povoleno**  zaškrtávací políčko Zakázat tlačítko. To způsobí, že na tlačítko se na návrhovou plochu tmavšího:
 
-[![Zakázat tlačítko historie překlad](hello-android-multiscreen-quickstart-images/xs/06-enabled-false-sml.png)](hello-android-multiscreen-quickstart-images/xs/06-enabled-false.png)
+[![Zakázat tlačítko historie překlad](hello-android-multiscreen-quickstart-images/xs/06-enabled-false-sml.png)](hello-android-multiscreen-quickstart-images/xs/06-enabled-false.png#lightbox)
 
 ### <a name="creating-the-second-activity"></a>Vytváření druhé aktivity
 
@@ -304,7 +304,7 @@ translateButton.Click += (sender, e) =>
 
 Nasazení aplikace na emulátoru nebo zařízení. Na následujících snímcích obrazovky ilustraci spuštění **Phoneword** aplikace:
 
-[![Příklad snímky obrazovky](hello-android-multiscreen-quickstart-images/screenshot.png)](hello-android-multiscreen-quickstart-images/screenshot.png)
+[![Příklad snímky obrazovky](hello-android-multiscreen-quickstart-images/screenshot.png)](hello-android-multiscreen-quickstart-images/screenshot.png#lightbox)
 
 -----
 

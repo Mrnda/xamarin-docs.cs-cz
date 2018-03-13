@@ -4,14 +4,15 @@ description: "Prozkoumat rozdíly mezi SkiaSharp souřadnice a souřadnice Xamar
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 26C25BB8-FBE8-4B77-B01D-16A163A16890
 author: charlespetzold
 ms.author: chape
 ms.date: 02/09/2017
-ms.openlocfilehash: 2643e06474ffe0fd60830db3f315bf525c2f84eb
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5e07377584996694aa8597af79317957c51050ec
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="pixels-and-device-independent-units"></a>Pixelů a jednotky nezávislé na zařízení
 
@@ -98,7 +99,7 @@ Metoda zahájí první řádek textu souřadnici X 20 (pro malé okraje v levém
 
 Tady je programy spuštěné na všech tří platformách:
 
-[![](pixels-images/surfacesize-small.png "Trojitá snímek obrazovky stránky prostor velikost")](pixels-images/surfacesize-large.png "Trojitá snímek obrazovky stránky prostor pro velikost")
+[![](pixels-images/surfacesize-small.png "Trojitá snímek obrazovky stránky prostor velikost")](pixels-images/surfacesize-large.png#lightbox "Trojitá snímek obrazovky stránky prostor pro velikost")
 
 Jak je vidět `CanvasSize` vlastnost `SKCanvasView` a `Size` vlastnost `SKImageInfo` hodnota jsou konzistentní v sestavách dimenze pixelů. `Height` a `Width` vlastnosti `SKCanvasView` jsou vlastnosti Xamarin.Forms a zobrazit zprávu velikost zobrazení v definované platformou jednotky nezávislé na zařízení.
 
@@ -141,7 +142,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Zde je spuštěn na tři platformy:
 
-[![](pixels-images/ellipsefill-small.png "Trojitá snímek obrazovky stránky prostor velikost")](pixels-images/ellipsefill-large.png "Trojitá snímek obrazovky stránky prostor pro velikost")
+[![](pixels-images/ellipsefill-small.png "Trojitá snímek obrazovky stránky prostor velikost")](pixels-images/ellipsefill-large.png#lightbox "Trojitá snímek obrazovky stránky prostor pro velikost")
 
 [Jiných `DrawOval` metoda](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawOval/p/SkiaSharp.SKRect/SkiaSharp.SKPaint/) má [ `SGRect` ](https://developer.xamarin.com/api/type/SkiaSharp.SKRect/) argument, který je definována v souřadnice X a Y jeho levém horním a pravém dolním rohu obdélníku. Elipsy doplní obdélníku, což naznačuje, že je pravděpodobně možné ho použít **vyplnění elipsy** stránky takto:
 

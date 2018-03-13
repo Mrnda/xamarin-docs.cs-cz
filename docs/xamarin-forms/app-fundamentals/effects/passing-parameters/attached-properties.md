@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/05/2016
-ms.openlocfilehash: df1287d2389d7645ee3f17b166af790f79aa70e1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 585d0422b4dc2b35fc8ba50ed82d2d34e53a784e
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="passing-effect-parameters-as-attached-properties"></a>Předávání parametrů účinek jako připojené vlastnosti
 
@@ -29,7 +29,7 @@ Proces vytváření vliv parametrů, které reagují na změny v modulu runtime 
 Parametry lze předat pak účinek přidáním přidružené vlastnosti a hodnoty vlastností, do vhodný ovládací prvek. Kromě toho parametry lze za běhu změnit zadáním nové hodnoty přidružená vlastnost.
 
 > [!NOTE]
-> **Poznámka:**: přidružená vlastnost je zvláštním typem vazbu vlastnosti, které jsou definované v jedné třídy ale připojené k ostatním objektům a rozpoznatelném v jazyce XAML jako atributy, které obsahují třídy a název vlastnosti odděleny tečkou. Další informace najdete v tématu [připojené vlastnosti](~/xamarin-forms/xaml/attached-properties.md).
+> – Přidružená vlastnost je zvláštní druh vazbu vlastnosti, které jsou definované v jedné třídy ale připojené k ostatním objektům a rozpoznatelném v jazyce XAML jako atributy, které obsahují třídy a název vlastnosti odděleny tečkou. Další informace najdete v tématu [připojené vlastnosti](~/xamarin-forms/xaml/attached-properties.md).
 
 Představuje ukázkovou aplikaci `ShadowEffect` , přidá stín textu zobrazovaného [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) ovládacího prvku. Kromě toho lze změnit barvu stínu za běhu. Následující diagram znázorňuje odpovědnosti jednotlivých projektů v ukázkové aplikace, spolu s jejich vzájemných vztahů:
 

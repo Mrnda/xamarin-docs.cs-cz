@@ -3,14 +3,15 @@ title: "Shrnutí kapitoly 7. XAML oproti kódu"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: E91F387B-CE90-481C-8D90-CB25519BFD2B
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 1263328a748ac0bacd368da361aeaff57c4cfa20
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1104f7576cabfed9988154f3b6a8beb429136fb3
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-7-xaml-vs-code"></a>Shrnutí kapitoly 7. XAML oproti kódu
 
@@ -68,7 +69,7 @@ Vlastnost element `Label` je `Text`.
 
  Když je řetězec Víceřádkový nastavená na `Text` vlastnost, konec řádku znaky jsou převedeny na znaky, ale konec řádku znaky se zachová, i když řetězec Víceřádkový se zobrazí jako obsah `Label` nebo `Label.Text` značky:
 
- [![Trojitá snímek obrazovky text variace sdílení](images/ch07fg03-small.png "formátovaný Text variace")](images/ch07fg03-large.png "variace formátovaný Text")
+ [![Trojitá snímek obrazovky text variace sdílení](images/ch07fg03-small.png "formátovaný Text variace")](images/ch07fg03-large.png#lightbox "variace formátovaný Text")
 
 
 

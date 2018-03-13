@@ -8,17 +8,17 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 04/07/2017
-ms.openlocfilehash: 707ba5874c939fbd25f4e25a7cefd3dc5fc75131
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0ea6528ce3523ab5d829342e99ccf35ca3d69aa2
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="remoted-ios-simulator-for-windows"></a>Používat vzdáleně iOS simulátoru (pro Windows)
 
 _Test a ladění aplikací pro iOS zcela v sadě Visual Studio v systému Windows_
 
-[ ![](ios-simulator-images/hero-sml.png "simulátoru iOS systémem Windows")](ios-simulator-images/hero.png)
+[![](ios-simulator-images/hero-sml.png "simulátoru iOS systémem Windows")](ios-simulator-images/hero.png#lightbox)
 
 ## <a name="download-and-install"></a>Stáhnout a nainstalovat
 
@@ -36,7 +36,7 @@ Použití simulátoru vzdálené iOS:
 
 Můžete zakázat simulátoru iOS vzdálené z **nástroje > Možnosti > Xamarin > Nastavení iOS** zrušením zaškrtnutí políčka **vzdáleného simulátoru Windows** znázorněno zde:
 
-[ ![](ios-simulator-images/options-sml.png "Chcete-li použít simulátoru")](ios-simulator-images/options.png)
+[![](ios-simulator-images/options-sml.png "Chcete-li použít simulátoru")](ios-simulator-images/options.png#lightbox)
 
 Připojeného počítače Mac bude poté otevřete simulátoru iOS. Když zaškrtnete tuto možnost simulátoru iOS vzdálené znovu zapnout.
 
@@ -54,14 +54,14 @@ Panelu nástrojů okna zahrnuje několik tlačítek pro interakci s simulátoru:
 - [**Nastavení** ](#settings) – konfigurace klávesnici a k umístění.
  - Další [ **možnosti** ](#options) – celou řadu možností simulátoru jsou k dispozici jako je například otočení, zatřesením nebo vyvolání jiných stavů v simulátoru. Pokud některé možnosti jsou skryté, lze k nim ze tří teček ikonu, která se zobrazí na panelu nástrojů nebo kliknutím pravým tlačítkem na obrazovce.
 
-    [ ![](ios-simulator-images/maps-app-sml.png "příklad mapuje simulátoru iOS")](ios-simulator-images/maps-app.png)
+    [![](ios-simulator-images/maps-app-sml.png "příklad mapuje simulátoru iOS")](ios-simulator-images/maps-app.png#lightbox)
 
 
 ### <a name="settings"></a>Nastavení
 
 Ikona "zařízení" se otevře **nastavení** okno:
 
-[ ![](ios-simulator-images/settings-sml.png "nastavení simulátoru iOS")](ios-simulator-images/settings.png)
+[![](ios-simulator-images/settings-sml.png "nastavení simulátoru iOS")](ios-simulator-images/settings.png#lightbox)
 
 To umožňuje povolit klávesnice hardwaru v simulátoru a vyberte, jaké umístění je hlášených zařízení (včetně statické umístění nebo jiné možnosti přesunutí umístění).
 
@@ -71,7 +71,7 @@ To umožňuje povolit klávesnice hardwaru v simulátoru a vyberte, jaké umíst
 
 Klikněte pravým tlačítkem na libovolné místo v okně simulátoru zobrazíte všechny možnosti, které jsou k dispozici v simulátoru, jako je například otočení, spouštění gesto zatřesením a restartování simulátoru:
 
-[ ![](ios-simulator-images/more-sml.png "Další nastavení simulátoru iOS")](ios-simulator-images/more.png)
+[![](ios-simulator-images/more-sml.png "Další nastavení simulátoru iOS")](ios-simulator-images/more.png#lightbox)
 
 ### <a name="touchscreen-support"></a>Podpora dotykovou obrazovku
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: d18cf055bb206099eecea0d9f417af571f3819e0
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 8b266640bb0e1aa2bc584197e5fd7cbf4ab48e88
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="device-orientation"></a>Orientace zařízení
 
@@ -31,7 +31,7 @@ Tento článek vás provede vytvořením aplikace, které využít výhod funkc�
 Při použití Xamarin.Forms, podporovaná metoda řízení orientace zařízení je možné použít nastavení pro každý projekt.
 
 > [!NOTE]
-> **Poznámka:**: od Xamarin.Forms 1.5.0 je chyba, což zabraňuje vlastní zobrazovací jednotky pokusům o řízení orientaci selhání. V tématu [toto pojednání](https://forums.xamarin.com/discussion/46653/forcing-landscape-for-a-single-page-in-ios#latest)Tato diskuse ve fórech Xamarin pro další informace.
+> Od verze Xamarin.Forms 1.5.0, které je chyba, což zabraňuje vlastní zobrazovací jednotky na základě pokusí řízení orientaci selhání. V tématu [toto pojednání](https://forums.xamarin.com/discussion/46653/forcing-landscape-for-a-single-page-in-ios#latest)Tato diskuse ve fórech Xamarin pro další informace.
 
 ### <a name="ios"></a>iOS
 
@@ -123,7 +123,7 @@ Mějte na paměti, že Windows Phone podporuje zobrazení na šířku v obou (ja
 Xamarin.Forms nenabízí žádné nativní události pro upozornění aplikace orientaci změny v sdíleného kódu. Ale `SizeChanged` události `Page` aktivuje se při buď šířka nebo výška `Page` změny. Když šířku `Page` je větší než výška, zařízení je v režimu na šířku. Další informace najdete v tématu [zobrazte obrázek podle orientace obrazovky](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/controls/screen-orientation/).
 
 > [!NOTE]
-> **Poznámka:**: je bezplatná existující NuGet balíček pro příjem oznámení změn orientace v sdíleného kódu. Najdete v článku [úložiště GitHub](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation) Další informace.
+> Není k dispozici bezplatná existující NuGet balíčku pro příjem oznámení změn orientace v sdíleného kódu. Najdete v článku [úložiště GitHub](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation) Další informace.
 
 Případně je možné přepsat [ `OnSizeAllocated` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnSizeAllocated(System.Double,System.Double)/) metodu `Page`, vkládání žádné rozložení změnit logiku existuje. `OnSizeAllocated` Metoda je volána vždy, když `Page` je přidělen novou velikost, která se dělá whenver zařízení otočen. Všimněte si, že základní implementace `OnSizeAllocated` provádí funkce důležité rozložení, takže je potřeba volat základní implementaci v přepsání:
 
@@ -176,7 +176,7 @@ Je možné rozhraní návrhu pomocí předdefinovaných rozložení, aby se eleg
 Výše uvedené pravidla platí i při implementaci rozhraní pro více velikost obrazovky a jsou obecně považuje za osvědčené postupy. Zbývající části této příručky se popisují konkrétní příklady v každé primární rozložení Xamarin.Forms přizpůsobivé rozložení.
 
 > [!NOTE]
-> **Poznámka:**: pro přehlednost, následující části ukazují, jak implementovat přizpůsobivé rozložení pomocí jenom jeden typ `Layout` najednou. V praxi, je často jednodušší kombinovat `Layout`s k dosažení požadované rozložení pomocí jednodušší nebo nejvíce intuitivní `Layout` pro každou součást.
+> Pro přehlednost, následující části ukazují, jak implementovat přizpůsobivé rozložení pomocí jenom jeden typ `Layout` najednou. V praxi, je často jednodušší kombinovat `Layout`s k dosažení požadované rozložení pomocí jednodušší nebo nejvíce intuitivní `Layout` pro každou součást.
 
 ### <a name="stacklayout"></a>StackLayout
 

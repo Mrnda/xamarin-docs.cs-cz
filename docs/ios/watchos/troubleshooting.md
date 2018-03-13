@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 9c9032b3206fa35d264bd69c94b7882e877b334f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ce850b7890265b82774534ca0daaf25bed7e0c2d
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="watchos-troubleshooting"></a>watchOS Poradce při potížích
 
@@ -61,7 +61,7 @@ Tato stránka obsahuje další informace a řešení pro funkce stále ve vývoj
 - Nelze přidat dva `WKNotificationControllers` do scénáře.
     Alternativní řešení: `notificationCategory` element ve scénáři, XML je vždy vložený se stejným `id`. Chcete-li vyřešit tento problém můžete přidat dva (nebo více) oznámení řadiče, v textovém editoru otevřete soubor scénáře a pak ručně změnit `id` element být jedinečný.
 
-    [ ![](troubleshooting-images/duplicate-id-sml.png "Otevírání scénáři soubor v textovém editoru a ručně změnit id elementu, který chcete být jedinečné.")](troubleshooting-images/duplicate-id.png)
+    [![](troubleshooting-images/duplicate-id-sml.png "Otevírání scénáři soubor v textovém editoru a ručně změnit id elementu, který chcete být jedinečné.")](troubleshooting-images/duplicate-id.png#lightbox)
 
 - Může zobrazit chyba "aplikace nebyl sestaven" při pokusu o spuštění aplikace. K tomu dochází po **Vyčistit** Pokud je projekt po spuštění nastavená na projekt sledovat.
     Oprava je výběr **sestavení > znovu vytvořit všechny** a poté znovu spusťte aplikaci.

@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 1e3139eb4c94264c91307f6f8a69b183f3bf7fa6
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f4917eafff020bb0e2d14a27d3c1a44d1d4087d7
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="layout-options"></a>Možnosti rozložení
 
@@ -25,11 +25,11 @@ Existují dva různé mechanismy pro řízení rozložení, když je zobrazení 
 
 Pokud uživatel zmenší okno, například při otočení zařízení a orientaci změn, systém bude automatická změna velikosti zobrazení v dané okno podle jejich Automatická změna velikosti pravidel. Tato pravidla lze nastavit v C# pomocí `AutoresizingMask` vlastnost `UIView` nebo v **vlastnosti Pad** IOS Designer, jak je uvedeno dále:
 
- [ ![](layout-options-images/image41.png "Visual Studio pro Mac Designer")](layout-options-images/image41.png)
+ [![](layout-options-images/image41.png "Visual Studio pro Mac Designer")](layout-options-images/image41.png#lightbox)
 
 Pokud je vybraná ovládacího prvku, můžete ručně zadat umístění a dimenze ovládacího prvku, a také výběr **Automatická změna velikosti** chování. Jak ukazuje následující snímek obrazovky, můžeme zadat jeho nadřazený vztah vybrané zobrazení v ovládacím prvku Automatická změna velikosti použít pružiny a struts:
 
- [ ![](layout-options-images/image42.png "Visual Studio pro Mac Designer")](layout-options-images/image42.png)
+ [![](layout-options-images/image42.png "Visual Studio pro Mac Designer")](layout-options-images/image42.png#lightbox)
 
 Úprava *pružiny* způsobí, že ke změně velikosti zobrazení na základě šířky nebo výšky jeho nadřazeném zobrazení. Úprava *strut* bude udržovat konstantní vzdálenost mezi samostatně a jeho nadřazeném zobrazení, že konkrétní hranu zobrazení.
 
@@ -43,7 +43,7 @@ textfield1.AutoresizingMask = UIViewAutoresizing.FlexibleRightMargin | UIViewAut
 
 Chcete-li otestovat nastavení Automatická změna velikosti, povolte různých **podporované orientace zařízení** v projektu možnosti:
 
- [ ![](layout-options-images/image43a.png "Nastavení Automatická změna velikosti")](layout-options-images/image43a.png)
+ [![](layout-options-images/image43a.png "Nastavení Automatická změna velikosti")](layout-options-images/image43a.png#lightbox)
 
 V kódu můžeme použít následující kód, což způsobí, že ke změně velikosti vodorovně ovládacích prvků textu:
 
@@ -56,11 +56,11 @@ imageview1.AutoresizingMask = UIViewAutoresizing.FlexibleTopMargin | UIViewAutor
 
 Také jsme můžete upravit ovládacích prvků pomocí návrháře. Výběr struts jako vystavených níže způsobí, že obrázek, který má zůstat zarovnaný doprava bez oříznutí spodní část zobrazení:
 
- [ ![](layout-options-images/autoresize.png "Při automatické rotace")](layout-options-images/autoresize.png)
+ [![](layout-options-images/autoresize.png "Při automatické rotace")](layout-options-images/autoresize.png#lightbox)
 
 Tyto snímky obrazovky ukazují, jak ovládací prvky změnit velikost nebo umístění sami při otočení obrazovky:
 
- [ ![](layout-options-images/image44a.png "Při automatické rotace")](layout-options-images/image44a.png)
+ [![](layout-options-images/image44a.png "Při automatické rotace")](layout-options-images/image44a.png#lightbox)
 
 Všimněte si, že textového zobrazení a textové pole roztáhnou tak, aby zachovat stejné zbývajících i pravým okraje, kvůli `FlexibleWidth` nastavení. Bitová kopie je horní a levé okraj flexibilní, což znamená, že uchovává dolní a pravé okraje – udržování bitovou kopii v zobrazení při otočení obrazovky. Komplexní rozložení obvykle vyžaduje kombinaci těchto nastavení u každého viditelné ovládacího prvku zachovat konzistentní uživatelského rozhraní a zabránit překrývající se při změně rozsah zobrazení (z důvodu otočení nebo jiná událost změny velikosti) ovládacích prvků.
 

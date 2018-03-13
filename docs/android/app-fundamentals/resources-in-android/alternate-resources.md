@@ -6,12 +6,12 @@ ms.assetid: AE5A864E-192D-475E-C731-99249C2E7D9E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: e421a52b1ae97b0beef59352a756401ed661051e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 7ebbf2a9215c8472ae2f286728cb2f819e8331cb
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="alternate-resources"></a>Alternativní prostředky
 
@@ -142,7 +142,7 @@ Android určuje základní prostředky podle iterování přes test následujíc
 
 Tato pravidla jsou také znázorněné v následujícím diagramu:
 
-[![Vývojový diagram prostředky](alternate-resources-images/flowchart-sml.png)](alternate-resources-images/flowchart.png)
+[![Vývojový diagram prostředky](alternate-resources-images/flowchart-sml.png)](alternate-resources-images/flowchart.png#lightbox)
 
 Když systém hledá hustotu specifických prostředků a nemůžete je najít, pokusí se najít další hustotu konkrétní prostředky a škálování je. Android nemusí nezbytně použít výchozí prostředky.
 Například může Android při vyhledávání pro prostředek s nízkou hustotou a není k dispozici, vyberte v podobě výkonných verzi prostředku nad výchozí hodnotu nebo střední hustotu prostředky. Dělá to, protože v podobě výkonných prostředků je možné rozšířit faktorem 0,5, což bude mít za následek méně viditelnost problémy než škálování dolů střední hustotu prostředků, která by vyžadovala faktor 0,75.
@@ -196,4 +196,4 @@ Dále je kvalifikátor pro hustotě, `ldpi`, výsledkem vyloučení jednoho dal�
 V důsledku tohoto procesu Android používat drawable prostředků v adresáři prostředků `drawable-en-port-ldpi` pro zařízení.
 
 > [!NOTE]
-> **Poznámka:** kvalifikátory velikost obrazovce zadejte jedinou výjimkou tohoto procesu výběru. Je možné pro Android vyberte prostředky, které jsou určené pro obrazovky menší než poskytuje jaké aktuální zařízení. Například velké obrazovce zařízení mohou používat prostředky poskytovat normální velikosti obrazovky. Ale zpětného to není pravda: do stejného zařízení promítat obrazovku nebude používat zdroje uvedené obrazovce xlarge. Pokud Android nelze najít sadu prostředků, které odpovídá dané obrazovku o velikosti, dojde k chybě aplikace.
+> Kvalifikátory velikost obrazovce zadejte jedinou výjimkou tohoto procesu výběru. Je možné pro Android vyberte prostředky, které jsou určené pro obrazovky menší než poskytuje jaké aktuální zařízení. Například velké obrazovce zařízení mohou používat prostředky poskytovat normální velikosti obrazovky. Ale zpětného to není pravda: do stejného zařízení promítat obrazovku nebude používat zdroje uvedené obrazovce xlarge. Pokud Android nelze najít sadu prostředků, které odpovídá dané obrazovku o velikosti, dojde k chybě aplikace.

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 30b7e322d618492164fac5e439c5187616d61717
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 32326eb472b1bb8b4fbaf4066edc36255f5948ca
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="dots-and-dashes"></a>Tečky a pomlčky
 
@@ -155,7 +155,7 @@ float[] GetPickerArray(Picker picker)
 
 Na následujících snímcích obrazovky obrazovce iOS zcela vlevo znázorňuje tečkovaná čára:
 
-[![](dots-images/dotsanddashes-small.png "Trojitá snímek obrazovky stránky tečky a pomlčky")](dots-images/dotsanddashes-large.png "Trojitá snímek obrazovky stránky tečky a pomlčky")
+[![](dots-images/dotsanddashes-small.png "Trojitá snímek obrazovky stránky tečky a pomlčky")](dots-images/dotsanddashes-large.png#lightbox "Trojitá snímek obrazovky stránky tečky a pomlčky")
 
 Však obrazovce Android také má zobrazit tečkovaná čára pomocí pole {10, 10}, ale místo toho řádek je plná. Co se stalo? Problém je, že obrazovce Android také má nastavení tahu CAP k vzdálené ploše `Square`. Tato zásada rozšiřuje všechny pomlčky podle poloviční šířku tahu způsobuje zaplnit mezer.
 
@@ -213,7 +213,7 @@ protected override void OnAppearing()
 
 Samozřejmě budete muset skutečně program animace:
 
-[![](dots-images/animatedspiral-small.png "Trojitá snímek obrazovky stránky animovaný Spirála")](dots-images/animatedspiral-large.png "Trojitá snímek obrazovky stránky animovaný Spirála")
+[![](dots-images/animatedspiral-small.png "Trojitá snímek obrazovky stránky animovaný Spirála")](dots-images/animatedspiral-large.png#lightbox "Trojitá snímek obrazovky stránky animovaný Spirála")
 
 Nyní jste viděli kreslení čar a křivek pomocí čištění vzorce definovat. Část později publikování se bude zabývat různými typy křivek který `SKPath` podporuje.
 

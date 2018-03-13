@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: ca3afa892176a11c4688b4f4d8d34e59d1758585
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 18f9814941c4cd7d2719f23b6102361f013ba8a9
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="debugging"></a>Ladění
 
@@ -34,11 +34,11 @@ Když budete chtít spustit ladění aplikace prvním krokem je [nastavit zará�
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![](debugging-in-xamarin-ios-images/debugging1.png "Nastavení zarážek")](debugging-in-xamarin-ios-images/debugging1.png)
+[![](debugging-in-xamarin-ios-images/debugging1.png "Nastavení zarážek")](debugging-in-xamarin-ios-images/debugging1.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](debugging-in-xamarin-ios-images/debugging1a.png "Nastavení zarážek")](debugging-in-xamarin-ios-images/debugging1a.png)
+[![](debugging-in-xamarin-ios-images/debugging1a.png "Nastavení zarážek")](debugging-in-xamarin-ios-images/debugging1a.png#lightbox)
 
 -----
 
@@ -46,13 +46,13 @@ Můžete zobrazit všechny zarážky, které byly nastaveny ve vašem kódu pře
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![](debugging-in-xamarin-ios-images/image0a.png "Odsazení zarážky")](debugging-in-xamarin-ios-images/image0a.png)
+[![](debugging-in-xamarin-ios-images/image0a.png "Odsazení zarážky")](debugging-in-xamarin-ios-images/image0a.png#lightbox)
 
  Pokud pad zarážky nezobrazí automaticky, můžete u ní nastavit viditelné výběrem _zobrazení > ladění Windows > zarážky_
  
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](debugging-in-xamarin-ios-images/image0.png "Odsazení zarážky")](debugging-in-xamarin-ios-images/image0.png)
+[![](debugging-in-xamarin-ios-images/image0.png "Odsazení zarážky")](debugging-in-xamarin-ios-images/image0.png#lightbox)
 
  Pokud pad zarážky nezobrazí automaticky, můžete u ní nastavit viditelné výběrem _ladění > Windows > zarážky_
  
@@ -62,13 +62,13 @@ Než začnete ladění jakékoli aplikace, vždy zajistěte, že konfigurace je 
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![](debugging-in-xamarin-ios-images/debugging7.png "Ladění na simulátoru") ](debugging-in-xamarin-ios-images/debugging7.png) 
- [ ![ ] (debugging-in-xamarin-ios-images/debugging7a.png "ladění na fyzické zařízení")](debugging-in-xamarin-ios-images/debugging7a.png)
+[![](debugging-in-xamarin-ios-images/debugging7.png "Ladění na simulátoru")](debugging-in-xamarin-ios-images/debugging7.png#lightbox)
+[![](debugging-in-xamarin-ios-images/debugging7a.png "ladění na fyzické zařízení")](debugging-in-xamarin-ios-images/debugging7a.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](debugging-in-xamarin-ios-images/debugging7c.png "Ladění na simulátoru") ](debugging-in-xamarin-ios-images/debugging7c.png) 
- [ ![ ] (debugging-in-xamarin-ios-images/debugging7d.png "ladění na fyzické zařízení")](debugging-in-xamarin-ios-images/debugging7d.png)
+[![](debugging-in-xamarin-ios-images/debugging7c.png "Ladění na simulátoru")](debugging-in-xamarin-ios-images/debugging7c.png#lightbox)
+[![](debugging-in-xamarin-ios-images/debugging7d.png "ladění na fyzické zařízení")](debugging-in-xamarin-ios-images/debugging7d.png#lightbox)
 
 -----
 
@@ -77,11 +77,11 @@ Spustit ladění, vyberte cílové zařízení nebo podobné ve vaší IDE:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![](debugging-in-xamarin-ios-images/debugging7b.png "Vyberte cílové zařízení")](debugging-in-xamarin-ios-images/debugging7b.png)
+[![](debugging-in-xamarin-ios-images/debugging7b.png "Vyberte cílové zařízení")](debugging-in-xamarin-ios-images/debugging7b.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](debugging-in-xamarin-ios-images/debugging7e.png "Vyberte cílové zařízení")](debugging-in-xamarin-ios-images/debugging7e.png)
+[![](debugging-in-xamarin-ios-images/debugging7e.png "Vyberte cílové zařízení")](debugging-in-xamarin-ios-images/debugging7e.png#lightbox)
 
 -----
 
@@ -91,11 +91,11 @@ Potom nasaďte aplikaci stisknutím **přehrání** tlačítko.
 
 Při zásahu zarážku kód bude zvýrazněná žlutý:
 
-[ ![](debugging-in-xamarin-ios-images/image2.png "Kód bude zvýrazněná žlutý")](debugging-in-xamarin-ios-images/image2.png)
+[![](debugging-in-xamarin-ios-images/image2.png "Kód bude zvýrazněná žlutý")](debugging-in-xamarin-ios-images/image2.png#lightbox)
 
 Ladicí nástroje, jako je například zkontrolujete hodnoty objektů, lze použít v tomto okamžiku získat další informace o co se děje ve vašem kódu:
 
-[ ![](debugging-in-xamarin-ios-images/image3.png "Zobrazení hodnoty barev")](debugging-in-xamarin-ios-images/image3.png)
+[![](debugging-in-xamarin-ios-images/image3.png "Zobrazení hodnoty barev")](debugging-in-xamarin-ios-images/image3.png#lightbox)
 
 ## <a name="conditional-breakpoints"></a>Podmíněné zarážky
 
@@ -108,26 +108,26 @@ Pro nastavení podmíněné zarážky, přístup **zarážku – vlastnosti – 
 
 - Pokud chcete přidat nový podmíněné zarážky, klikněte pravým tlačítkem na editor okrajem, nalevo od číslo řádku pro kód, který chcete nastavit zarážky a vyberte nové zarážek:
 
-    [ ![](debugging-in-xamarin-ios-images/image4.png "Vyberte nové zarážek")](debugging-in-xamarin-ios-images/image4.png)
+    [![](debugging-in-xamarin-ios-images/image4.png "Vyberte nové zarážek")](debugging-in-xamarin-ios-images/image4.png#lightbox)
 
 - Pokud chcete přidat do existující zarážek podmínku, klikněte pravým tlačítkem na zarážek a vyberte **zarážek vlastnosti** nebo v **zarážky Pad** vyberte tlačítko Vlastnosti, které jsou znázorněné dole:
 
-    [ ![](debugging-in-xamarin-ios-images/image5.png "Odsazení zarážky")](debugging-in-xamarin-ios-images/image5.png)
+    [![](debugging-in-xamarin-ios-images/image5.png "Odsazení zarážky")](debugging-in-xamarin-ios-images/image5.png#lightbox)
 
 
 Potom můžete zadat podmínky, pod kterým chcete zarážku proběhnout:
 
-[ ![](debugging-in-xamarin-ios-images/image6.png "Zadejte podmínku pro zarážek proběhnout")](debugging-in-xamarin-ios-images/image6.png)
+[![](debugging-in-xamarin-ios-images/image6.png "Zadejte podmínku pro zarážek proběhnout")](debugging-in-xamarin-ios-images/image6.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 Pro nastavení podmíněné zarážky v sadě Visual Studio 2015, nejprve [regulární zarážku](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/set_a_breakpoint/). Klikněte pravým tlačítkem myši na zarážce zobrazíte její místní nabídce:
 
- [ ![](debugging-in-xamarin-ios-images/image4vs.png "Místní nabídky zarážek")](debugging-in-xamarin-ios-images/image4vs.png)
+ [![](debugging-in-xamarin-ios-images/image4vs.png "Místní nabídky zarážek")](debugging-in-xamarin-ios-images/image4vs.png#lightbox)
 
 Vyberte **podmínky...**  zobrazíte _nastavení zarážek_ nabídky:
 
- [ ![](debugging-in-xamarin-ios-images/image6vs.png "V nabídce nastavení zarážek")](debugging-in-xamarin-ios-images/image6vs.png)
+ [![](debugging-in-xamarin-ios-images/image6vs.png "V nabídce nastavení zarážek")](debugging-in-xamarin-ios-images/image6vs.png#lightbox)
 
 Zde můžete zadat podmínky, za kterých mají zarážek proběhnout
 
@@ -143,7 +143,7 @@ Pokud bylo dosaženo zarážky, nástroje pro ladění umožňují získat kontr
 
 V sadě Visual Studio pro Mac bude vypadat takto:
 
- [ ![](debugging-in-xamarin-ios-images/image7.png "Nástroje pro ladění povolit vývojáři získat kontrolu nad spuštění programu")](debugging-in-xamarin-ios-images/image7.png)
+ [![](debugging-in-xamarin-ios-images/image7.png "Nástroje pro ladění povolit vývojáři získat kontrolu nad spuštění programu")](debugging-in-xamarin-ios-images/image7.png#lightbox)
 
 Jsou to:
 
@@ -156,7 +156,7 @@ Jsou to:
 
 V sadě Visual Studio bude vypadat takto:
 
-[ ![](debugging-in-xamarin-ios-images/image7vs.png "Nástroje pro ladění povolit vývojáři získat kontrolu nad spuštění programu")](debugging-in-xamarin-ios-images/image7vs.png)
+[![](debugging-in-xamarin-ios-images/image7vs.png "Nástroje pro ladění povolit vývojáři získat kontrolu nad spuštění programu")](debugging-in-xamarin-ios-images/image7vs.png#lightbox)
 
 Jsou to:
 
@@ -224,13 +224,13 @@ Vzhledem k tomu, že tato funkce vyžaduje další paměť během ladění, to j
 
 Chcete-li povolit tuto funkci, ujistěte se, **ladění projektu kódu pouze; není kroku do kódu framework** možnost není vybraná pod _Visual Studio pro Mac > Předvolby > ladicí program_ nabídky, jak ukazuje následující níže:
 
-[ ![](debugging-in-xamarin-ios-images/debugging6.png "Ladění na Mono knihovny tříd")](debugging-in-xamarin-ios-images/debugging6.png)
+[![](debugging-in-xamarin-ios-images/debugging6.png "Ladění na Mono knihovny tříd")](debugging-in-xamarin-ios-images/debugging6.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 Chcete-li ladit knihovny tříd v sadě Visual Studio, je nutné zakázat **pouze můj kód** pod _ladění > Možnosti_ nabídky. V _ladění > Obecné_ uzlu, zrušte **povolit volbu pouze vlastní kód** políčko:
 
-[ ![](debugging-in-xamarin-ios-images/debugging6vs.png "Ladění na Mono knihovny tříd")](debugging-in-xamarin-ios-images/debugging6vs.png)
+[![](debugging-in-xamarin-ios-images/debugging6vs.png "Ladění na Mono knihovny tříd")](debugging-in-xamarin-ios-images/debugging6vs.png#lightbox)
 
 -----
 

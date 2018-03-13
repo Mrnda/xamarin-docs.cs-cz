@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/11/2016
-ms.openlocfilehash: f55620720bb986142a56de7e8602be56280006d4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2c48ae5386fda63aed43c24c09c10cfb87b93637
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="cloudkit"></a>CloudKit
 
@@ -34,7 +34,7 @@ Pokud chcete provést kroky uvedené v tomto článku se vyžaduje následujíc�
 
 CloudKit je způsob, jak poskytnout vývojáře přístup k serveru služby iCloud servery. Poskytuje základ pro Icloudu jednotky a fotografie knihovny serveru služby iCloud. CloudKit je podporována v zařízení s Mac OS X a Apple iOS.
 
- [ ![](intro-to-cloudkit-images/image1.png "Jak CloudKit je podporována v zařízení Apple iOS i Mac OS X")](intro-to-cloudkit-images/image1.png)
+ [![](intro-to-cloudkit-images/image1.png "Jak CloudKit je podporována v zařízení Apple iOS i Mac OS X")](intro-to-cloudkit-images/image1.png#lightbox)
 
 CloudKit používá infrastrukturu účet serveru služby iCloud. Pokud je uživatel přihlášen serveru služby iCloud účet na zařízení, bude CloudKit pomocí ID k identifikaci uživatele. Pokud není k dispozici žádný účet, bude poskytnuta omezený přístup jen pro čtení.
 
@@ -55,11 +55,11 @@ Předtím, než aplikace Xamarin můžete využít rozhraní CloudKit, aplikace 
 1.  Otevřete projekt v sadě Visual Studio pro Mac nebo Visual Studio.
 2.  V **Průzkumníku řešení**, otevřete **Info.plist** soubor a zkontrolujte **identifikátor svazku** odpovídá ten, který byl definován v **ID aplikace**vytvořen jako součást zajišťování nastavení:
  
-    [ ![](intro-to-cloudkit-images/image26a.png "Zadejte identifikátor balíku")](intro-to-cloudkit-images/image26a-orig.png "Info.plist file displaying Bundle Identifier")
+    [![](intro-to-cloudkit-images/image26a.png "Zadejte identifikátor balíku")](intro-to-cloudkit-images/image26a-orig.png#lightbox "Info.plist file displaying Bundle Identifier")
 
 3.  Přejděte do dolní části **Info.plist** soubor a vyberte **povolit režimy pozadí**, **aktualizace umístění** a **vzdáleného oznámení**:
 
-    [ ![](intro-to-cloudkit-images/image27a.png "Vyberte povolený režimy pozadí, aktualizace umístění a vzdálené oznámení")](intro-to-cloudkit-images/image27a-orig.png "Info.plist file displaying background modes")
+    [![](intro-to-cloudkit-images/image27a.png "Vyberte povolený režimy pozadí, aktualizace umístění a vzdálené oznámení")](intro-to-cloudkit-images/image27a-orig.png#lightbox "Info.plist file displaying background modes")
 4.  Klikněte pravým tlačítkem na projekt pro iOS v řešení a vyberte **možnosti**.
 5.  Vyberte **iOS podepisování sady**, vyberte **vývojáře Identity** a **profil zřizování** vytvořili výše.
 6.  Ujistěte se, **Entitlements.plist** zahrnuje **povolit Icloudu** , **klíč hodnota úložiště** a **CloudKit** .
@@ -95,7 +95,7 @@ Koncept vyjmutí klientskou aplikaci a spuštění oddělené z jiných klientů
 
 CloudKit byl navržen stejné výhody zajistit i uvedených výše, a použít je pro práci s informacemi o cloudových:
 
- [ ![](intro-to-cloudkit-images/image31.png "CloudKit aplikace komunikovat pomocí kontejnery")](intro-to-cloudkit-images/image31.png)
+ [![](intro-to-cloudkit-images/image31.png "CloudKit aplikace komunikovat pomocí kontejnery")](intro-to-cloudkit-images/image31.png#lightbox)
 
 Stejně jako se aplikace z více spuštěné na zařízení, takže je aplikace komunikace s Icloudem z více. Každý z těchto různých komunikačních sila, se nazývají kontejnery.
 
@@ -117,13 +117,13 @@ Kontejnery jsou sice, ve výchozím nastavení vázán 1: 1 na danou aplikaci, m
 
 Jedním z primární funkce CloudKit je trvat aplikace datový model a replikace tento model až servery serveru služby iCloud. Některé informace je určené pro uživatele, která ho vytvořila, další informace je veřejná data, která by bylo možné vytvořit uživatelem pro veřejné použití (např. Zkontrolujte restaurace) nebo může být informace, které vývojář byla publikována pro aplikaci. V obou případech cílová skupina není pouze jednoho uživatele, ale je komunita uživatelů.
 
- [ ![](intro-to-cloudkit-images/image32.png "Diagram CloudKit kontejneru")](intro-to-cloudkit-images/image32.png)
+ [![](intro-to-cloudkit-images/image32.png "Diagram CloudKit kontejneru")](intro-to-cloudkit-images/image32.png#lightbox)
 
 V rámci kontejneru především je veřejný databáze. To je, kde všechny informace o veřejném žije a společně mingles. Kromě toho jsou několik jednotlivé privátní databáze pro každého uživatele aplikace.
 
 Při spuštění v zařízení s iOS, aplikace budou mít pouze přístup k informacím Icloudu aktuálně přihlášeného uživatele. Zobrazení aplikace kontejneru tak bude vypadat takto:
 
- [ ![](intro-to-cloudkit-images/image33.png "Zobrazení aplikací kontejneru")](intro-to-cloudkit-images/image33.png)
+ [![](intro-to-cloudkit-images/image33.png "Zobrazení aplikací kontejneru")](intro-to-cloudkit-images/image33.png#lightbox)
 
 Můžete zobrazit pouze databázi veřejné a privátní databázi asociované s Icloudem aktuálně přihlášeného uživatele.
 
@@ -186,7 +186,7 @@ Zde jsou rozdíly mezi typy databáze:
 
 Kontejnery uložení databáze a uvnitř databáze jsou záznamy. Záznamy jsou mechanismus, ve kterém je přesunout strukturovaných dat do a z CloudKit:
 
- [ ![](intro-to-cloudkit-images/image34.png "Kontejnery uložení databáze a uvnitř databáze jsou záznamy")](intro-to-cloudkit-images/image34.png)
+ [![](intro-to-cloudkit-images/image34.png "Kontejnery uložení databáze a uvnitř databáze jsou záznamy")](intro-to-cloudkit-images/image34.png#lightbox)
 
 Záznamy jsou viditelné v rámci CloudKit prostřednictvím `CKRecord` třídy, která zabalí páry klíč hodnota. Instance objektu v aplikaci je ekvivalentní `CKRecord` v CloudKit. Kromě toho každý `CKRecord` má typ záznamu, který je ekvivalentem třídy objektu.
 
@@ -227,11 +227,11 @@ await CloudManager.SaveAsync (newRecord);
 
 Zaznamenává neexistují samy o sobě v rámci na danou databázi – existují skupiny záznamů v zóně záznam společně. Záznam zóny můžete představit jako tabulky v tradičních relačních databází:
 
- [ ![](intro-to-cloudkit-images/image35.png "Existují skupiny záznamů společně uvnitř zónu záznam")](intro-to-cloudkit-images/image35.png)
+ [![](intro-to-cloudkit-images/image35.png "Existují skupiny záznamů společně uvnitř zónu záznam")](intro-to-cloudkit-images/image35.png#lightbox)
 
 Může být více záznamů v rámci daného záznamu zóny a více záznamů zóny v rámci na danou databázi. Každá databáze obsahuje výchozí zónu záznam:
 
- [ ![](intro-to-cloudkit-images/image36.png "Každá databáze obsahuje výchozí záznam zóna a vlastní zóny")](intro-to-cloudkit-images/image36.png)
+ [![](intro-to-cloudkit-images/image36.png "Každá databáze obsahuje výchozí záznam zóna a vlastní zóny")](intro-to-cloudkit-images/image36.png#lightbox)
 
 Toto je, kde jsou uloženy záznamy ve výchozím nastavení. Kromě toho lze vytvořit vlastní záznam zóny. Zaznamenejte představují zóny se provádí základní členitosti, na které Atomic potvrzení a sledování změn.
 
@@ -258,7 +258,7 @@ var recordID =  new CKRecordID("My Record");
 
 Referenční materiály poskytují vztahů mezi související záznamy v rámci na danou databázi:
 
- [ ![](intro-to-cloudkit-images/image37.png "Referenční materiály poskytují vztahů mezi související záznamy v rámci na danou databázi")](intro-to-cloudkit-images/image37.png)
+ [![](intro-to-cloudkit-images/image37.png "Referenční materiály poskytují vztahů mezi související záznamy v rámci na danou databázi")](intro-to-cloudkit-images/image37.png#lightbox)
 
 V předchozím příkladu nadřazené položky vlastní podřízené objekty tak, aby dítě na podřízený záznam nadřazeného záznamu. Relace přejde z podřízeného záznamu na nadřazený záznam a se označuje jako *zpět odkaz*.
 
@@ -283,7 +283,7 @@ var reference = new CKReference(newRecord, new CKReferenceAction());
 
 Prostředky povolit pro soubor velký, nestrukturovaných dat nahrán do Icloudu a přidružené daného záznamu:
 
- [ ![](intro-to-cloudkit-images/image38.png "Prostředky povolit pro soubor velký, nestrukturovaných dat nahrán do Icloudu a přidružené daného záznamu")](intro-to-cloudkit-images/image38.png)
+ [![](intro-to-cloudkit-images/image38.png "Prostředky povolit pro soubor velký, nestrukturovaných dat nahrán do Icloudu a přidružené daného záznamu")](intro-to-cloudkit-images/image38.png#lightbox)
 
 Na straně klienta `CKRecord` se vytvoří soubor, který se budou odesílat na serveru služby iCloud server, který popisuje. A `CKAsset` je vytvořen tak, aby obsahovala soubor a je propojený s záznam popisující ho.
 
@@ -594,7 +594,7 @@ Odběry jsou viditelné v rámci CloudKit prostřednictvím `CKSubscription` tř
 
 Před implementací předplatného v kódu jazyka C#, podívejme rychlý přehled o fungování odběry:
 
- [ ![](intro-to-cloudkit-images/image39.png "Přehled o fungování odběrů")](intro-to-cloudkit-images/image39.png)
+ [![](intro-to-cloudkit-images/image39.png "Přehled o fungování odběrů")](intro-to-cloudkit-images/image39.png#lightbox)
 
 Výše uvedené graf zobrazuje proces typické předplatné následujícím způsobem:
 
@@ -697,7 +697,7 @@ V dalším kroku se podíváme na tato témata podrobně.
 
 Jak jsme uvedli výše, CloudKit poskytuje způsob, jak aplikace, který jednoznačně identifikuje daného uživatele:
 
- [ ![](intro-to-cloudkit-images/image40.png "Jednoznačně identifing daného uživatele")](intro-to-cloudkit-images/image40.png)
+ [![](intro-to-cloudkit-images/image40.png "Jednoznačně identifing daného uživatele")](intro-to-cloudkit-images/image40.png#lightbox)
 
 Není spuštěna v zařízení uživatele a všechny konkrétní uživatel privátní databáze uvnitř kontejneru CloudKit klientské aplikace. Klientská aplikace bude propojit s jedním z těchto konkrétních uživatelů. To je založené na uživatele, který je přihlášen Icloudu místně na zařízení.
 
@@ -732,7 +732,7 @@ Ve výše uvedeném kódu je žádostí kontejneru CloudKit poskytnout ID aktuá
 
 Každý uživatel v CloudKit má konkrétní Metadata, která popisuje je. Tato Metadata je reprezentován jako záznam CloudKit:
 
- [ ![](intro-to-cloudkit-images/image41.png "Každý uživatel v CloudKit má konkrétní Metadata, která popisuje je")](intro-to-cloudkit-images/image41.png)
+ [![](intro-to-cloudkit-images/image41.png "Každý uživatel v CloudKit má konkrétní Metadata, která popisuje je")](intro-to-cloudkit-images/image41.png#lightbox)
 
 Vyhledávání v databázi privátní pro konkrétního uživatele existuje kontejner je jeden záznam, který definuje tohoto uživatele. Existuje mnoho záznamů uživatele v databázi veřejné, jednu pro každého uživatele kontejneru. Jedním z nich bude mít ID záznamu, který odpovídá aktuálně přihlášeného uživatele ID záznamu.
 
@@ -768,7 +768,7 @@ V těchto případech aplikace požádat, aby uživatel poskytnout tyto informac
 
 Za předpokladu, že se uživatel přihlásí k povolení aplikace omezený přístup k jejich informace o uživatelském účtu, mohou být zjistitelný jiným uživatelům aplikace:
 
- [ ![](intro-to-cloudkit-images/image42.png "Uživatel může být zjistitelný jiným uživatelům aplikace")](intro-to-cloudkit-images/image42.png)
+ [![](intro-to-cloudkit-images/image42.png "Uživatel může být zjistitelný jiným uživatelům aplikace")](intro-to-cloudkit-images/image42.png#lightbox)
 
 Klientská aplikace je rozhovoru na kontejner a kontejner je rozhovoru Icloudu na informace o uživateli přístup. Uživatel může poskytnout e-mailovou adresu a zjišťování můžete použít k získání informací o uživateli zpět. Volitelně ID uživatele lze také ke zjišťování informací o uživateli.
 
@@ -849,40 +849,40 @@ Postupujte takto:
 
 1. V sadě Visual Studio pro Ma, kompilace aplikace pro **verze** > **zařízení iOS**: 
 
-    [![](intro-to-cloudkit-images/shipping01.png "Kompilace aplikace pro vydání")](intro-to-cloudkit-images/shipping01.png)
+    [![](intro-to-cloudkit-images/shipping01.png "Kompilace aplikace pro vydání")](intro-to-cloudkit-images/shipping01.png#lightbox)
 
 2. Z **sestavení** nabídce vyberte možnost **archivu**: 
 
-    [![](intro-to-cloudkit-images/shipping02.png "Vyberte archivu")](intro-to-cloudkit-images/shipping02.png)
+    [![](intro-to-cloudkit-images/shipping02.png "Vyberte archivu")](intro-to-cloudkit-images/shipping02.png#lightbox)
 
 3. **Archivu** bude vytvořen a zobrazí v sadě Visual Studio pro Mac: 
 
-    [![](intro-to-cloudkit-images/shipping03.png "Archiv se vytvoří a zobrazí")](intro-to-cloudkit-images/shipping03.png)
+    [![](intro-to-cloudkit-images/shipping03.png "Archiv se vytvoří a zobrazí")](intro-to-cloudkit-images/shipping03.png#lightbox)
 
 4. Spustit **Xcode**.
 5. Z **okno** nabídce vyberte možnost **organizátora**: 
 
-    [![](intro-to-cloudkit-images/shipping04.png "Vyberte organizátoru.")](intro-to-cloudkit-images/shipping04.png)
+    [![](intro-to-cloudkit-images/shipping04.png "Vyberte organizátoru.")](intro-to-cloudkit-images/shipping04.png#lightbox)
 
 6. Vyberte archivu aplikace a klikněte na **exportovat...**  tlačítko: 
 
-    [![](intro-to-cloudkit-images/shipping05.png "Aplikace archivu")](intro-to-cloudkit-images/shipping05.png)
+    [![](intro-to-cloudkit-images/shipping05.png "Aplikace archivu")](intro-to-cloudkit-images/shipping05.png#lightbox)
     
 7. Vyberte metodu pro export a klikněte na **Další** tlačítko: 
 
-    [![](intro-to-cloudkit-images/shipping06.png "Vyberte metodu pro export")](intro-to-cloudkit-images/shipping06.png)
+    [![](intro-to-cloudkit-images/shipping06.png "Vyberte metodu pro export")](intro-to-cloudkit-images/shipping06.png#lightbox)
 
 8. Vyberte **vývojový tým** z rozevíracího seznamu a klikněte na **zvolte** tlačítko: 
 
-    [![](intro-to-cloudkit-images/shipping07.png "Z rozevíracího seznamu vyberte vývojový tým")](intro-to-cloudkit-images/shipping07.png)
+    [![](intro-to-cloudkit-images/shipping07.png "Z rozevíracího seznamu vyberte vývojový tým")](intro-to-cloudkit-images/shipping07.png#lightbox)
 
 9. Vyberte **produkční** z rozevíracího seznamu a klikněte na **Další** tlačítko: 
 
-    [![](intro-to-cloudkit-images/shipping08.png "Z rozevíracího seznamu vyberte produkční")](intro-to-cloudkit-images/shipping08.png)
+    [![](intro-to-cloudkit-images/shipping08.png "Z rozevíracího seznamu vyberte produkční")](intro-to-cloudkit-images/shipping08.png#lightbox)
 
 10. Zkontrolujte nastavení a klikněte na **exportovat** tlačítko: 
 
-    [![](intro-to-cloudkit-images/shipping09.png "Zkontrolujte nastavení")](intro-to-cloudkit-images/shipping09.png)
+    [![](intro-to-cloudkit-images/shipping09.png "Zkontrolujte nastavení")](intro-to-cloudkit-images/shipping09.png#lightbox)
 
 11. Vyberte umístění pro generování výsledné aplikace `.ipa` souboru.
 

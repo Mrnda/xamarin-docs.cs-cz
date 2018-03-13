@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: d2298cf3edcadcc8a4d781e3e121852886fbf1d2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 05443bb341b2355c9e7a72f46b70214fb169e598
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="garbage-collection"></a>Kolekce paměti
 
@@ -21,7 +21,7 @@ Xamarin.Android používá na Mono [uvolňování jednoduché generační](http:
 -   Hlavní kolekce (shromažďuje Gen1 a velkého objektu místo haldách). 
 
 > [!NOTE]
-> **Poznámka:** chybí kolekci explicitní prostřednictvím [GC. Collect()](https://developer.xamarin.com/api/member/System.GC.Collect/) kolekce jsou *na vyžádání*, závislosti na rozsahu přidělení haldy. *Toto není odkaz počítání systému*; objekty *nebudou shromažďovány co nejrychleji, pokud nejsou žádné nevyřízené odkazy*, nebo když byl ukončen obor. Globální Katalog se spustí při menší haldy nemá dostatek paměti pro nové přidělení. Pokud neexistují žádné přidělení, se nespustí.
+> Chybí kolekci explicitní prostřednictvím [GC. Collect()](https://developer.xamarin.com/api/member/System.GC.Collect/) kolekce jsou *na vyžádání*, závislosti na rozsahu přidělení haldy. *Toto není odkaz počítání systému*; objekty *nebudou shromažďovány co nejrychleji, pokud nejsou žádné nevyřízené odkazy*, nebo když byl ukončen obor. Globální Katalog se spustí při menší haldy nemá dostatek paměti pro nové přidělení. Pokud neexistují žádné přidělení, se nespustí.
 
 
 Menší kolekce jsou levných a časté a slouží ke shromažďování objekty nedávno přidělené a neaktivní. Méně závažné kolekce jsou prováděny po každých několik MB přidělené objektů. Menších kolekcí může ručně provést volání [GC. Shromažďovat (0)](https://developer.xamarin.com/api/member/System.GC.Collect/p/System.Int32/) 
@@ -29,7 +29,6 @@ Menší kolekce jsou levných a časté a slouží ke shromažďování objekty 
 Hlavní kolekce jsou nákladné a méně častá a slouží k uvolnění neaktivní všechny objekty. Hlavní kolekce jsou prováděny po vyčerpání paměti pro aktuální velikost haldy (před změnou velikosti halda). Hlavní kolekce může ručně provést volání [GC. Shromažďovat ()](https://developer.xamarin.com/api/member/System.GC.Collect/) nebo voláním [GC. Shromažďovat (int)](https://developer.xamarin.com/api/member/System.GC.Collect/p/System.Int32) s argumentem [GC. MaxGeneration](https://developer.xamarin.com/api/property/System.GC.MaxGeneration/). 
 
 
-<a name="Cross-VM_Object_Collections" />
 
 ## <a name="cross-vm-object-collections"></a>Kolekce objektů mezi VM
 
@@ -67,7 +66,6 @@ Monofonní kolekce jsou, kde se stane fun. Obvykle se shromažďují spravovaný
 
 Konečný výsledek všechny Toto je, že instance objektu sdílené bude za provozu, dokud se odkazuje buď spravovaný kód (například uložené v `static` proměnné) nebo odkazovaná kódu v jazyce Java. Kromě toho bude životnost nativní partnerské uzly rozšířen nad rámec jejich by jinak live, nativní sdílené nebudou collectible, dokud jsou collectible sdílené nativní a spravovaná partnerem.
 
-<a name="Object_Cycles" />
 
 ## <a name="object-cycles"></a>Objekt cyklů
 
@@ -77,7 +75,6 @@ Všechny objekty, které mají reprezentaci v oba virtuální počítače bude m
 
 Tak, aby zkrátil doba života objektu, [Java.Lang.Object.Dispose()](https://developer.xamarin.com/api/member/Java.Lang.Object.Dispose/) by měla být volána. To bude ručně "server" připojení na objekt mezi dvěma virtuálními počítači pomocí uvolnění globální odkaz, což umožňuje objekty, které se mají shromažďovat rychlejší. 
 
-<a name="Automatic_Collections" />
 
 ## <a name="automatic-collections"></a>Automatické kolekce
 
@@ -135,7 +132,6 @@ Ve výchozím nastavení je **Tarjan**. Pokud zjistíte regrese, možná bude po
 Abyste GC ke snížení doby použití a shromažďování paměti několika způsoby.
 
 
-<a name="Disposing_of_Peer_instances" />
 
 ### <a name="disposing-of-peer-instances"></a>Uvolnění sdílené instance
 
@@ -148,7 +144,7 @@ Je často potřeba pomoci globální Katalog. Bohužel *GC. AddMemoryPressure()*
 
 
 > [!NOTE]
-> **Poznámka:** musí být *velmi* opatrní při uvolnění `Java.Lang.Object` instancích podtřída.
+> Musí být *velmi* opatrní při uvolnění `Java.Lang.Object` instancích podtřída.
 
 Chcete-li minimalizovat možnost poškození paměti, sledovat následující pokyny při volání metody `Dispose()`.
 
@@ -243,7 +239,6 @@ class MyClass : Java.Lang.Object, ISomeInterface
 }
 ```
 
-<a name="Reduce_Referenced_Instances" />
 
 ### <a name="reduce-referenced-instances"></a>Snižte odkazované instancí
 
@@ -316,7 +311,6 @@ class BetterActivity : Activity {
 }
 ```
 
-<a name="Minor_Collections" />
 
 ## <a name="minor-collections"></a>Méně závažné kolekce
 
@@ -329,7 +323,6 @@ Pokud vaše aplikace má "pracovní cyklus" ve kterém se samé provádí opakov
 -  Skupina síťové požadavky pro obnovení nebo synchronizaci dat aplikací.
 
 
-<a name="Major_Collections" />
 
 ## <a name="major-collections"></a>Hlavní kolekce
 
@@ -344,14 +337,12 @@ Hlavní kolekce by měla být ručně volána, pouze, pokud někdy:
 -   V rámci překryté [Android.App.Activity.OnLowMemory()](https://developer.xamarin.com/api/member/Android.App.Activity.OnLowMemory/) metoda. 
 
 
-<a name="Diagnostics" />
 
 ## <a name="diagnostics"></a>Diagnostika
 
 Pokud chcete sledovat, kdy se vytváří a zničen globální odkazy, můžete nastavit [debug.mono.log](~/android/troubleshooting/index.md) vlastnost systému tak, aby obsahovala [ *gref* ](~/android/troubleshooting/index.md) nebo [ *gc*](~/android/troubleshooting/index.md). 
 
 
-<a name="Configuration" />
 
 ## <a name="configuration"></a>Konfigurace
 

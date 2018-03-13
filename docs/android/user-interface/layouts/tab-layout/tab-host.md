@@ -3,27 +3,26 @@ title: "Karta rozložení s TabHost"
 description: "Tento článek poskytuje podrobný přehled TabHost, starší API používá k vytvoření záložkách rozložení v aplikaci Xamarin.Android."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 1CFF590A-AC86-C3B3-36CA-A70248BC7F97
+ms.assetid: 77B890A4-27A6-41DF-81BA-22C6116A8FB2
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 10/25/2017
-ms.openlocfilehash: ff61ca0a2bca466da3e33c93a17944915328b70c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e27557c65d2b3049457640a3492d090c5fa26a43
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="tab-layout-with-tabhost"></a>Karta rozložení s TabHost
 
 _Tento článek poskytuje podrobný přehled TabHost, starší API používá k vytvoření záložkách rozložení v aplikaci Xamarin.Android._
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Přehled
 
 > [!NOTE]
-> **Poznámka:** `TabHost` je starý rozhraní API, které se už nepoužívá Google. Vývojáři se doporučuje vytvořit záložkách aplikací pomocí [nadřízených členů](~/android/user-interface/controls/action-bar.md). `ActionBar` Je k dispozici ve všech verzí systému Android. To bylo poprvé dostupné ve Android 3.0 (API úrovně 11) a byl přesně zpět do Android 2.2 (úroveň rozhraní API 8) a Android 2.3 (API úrovně 10) v [V7 kompatibility aplikace knihovny](http://developer.android.com/tools/support-library/features.html#v7-appcompat), což je k dispozici pro Xamarin.Android prostřednictvím [Xamarin Knihovna pro Android podporu - V7](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/) balíčku.
+> `TabHost` je starý rozhraní API, které se už nepoužívá Google. Vývojáři se doporučuje vytvořit záložkách aplikací pomocí [nadřízených členů](~/android/user-interface/controls/action-bar.md). `ActionBar` Je k dispozici ve všech verzí systému Android. To bylo poprvé dostupné ve Android 3.0 (API úrovně 11) a byl přesně zpět do Android 2.2 (úroveň rozhraní API 8) a Android 2.3 (API úrovně 10) v [V7 kompatibility aplikace knihovny](http://developer.android.com/tools/support-library/features.html#v7-appcompat), což je k dispozici pro Xamarin.Android prostřednictvím [Xamarin Knihovna pro Android podporu - V7](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/) balíčku.
 
 `TabHost` Je starší, původní rozhraní API pro vytváření interfacesIt záložkách uživatele je nejvhodnější pro aplikace Xamarin.Android, která musí podporovat Android 2.2 a Android 2.3 a nemůžete použít **ActionBarSherlock**.
 Následujících pět součástí jsou všechny spojené s `TabHost` rozhraní API:
@@ -44,7 +43,6 @@ Následující diagram znázorňuje, jak všechny tyto součásti vztahují spol
 
 Karta obsah může být aktivity nebo zobrazení. Zobrazení jsou poměrně jednoduché a jednoduchý, ale může vést k velkému množství co habitating nesouvisejícími kód v aktivitě. Tato akce způsobí nízký oddělit otázky a opakovaném třídu, která je obtížné spravovat. Naproti tomu aktivity vyžadují systémových prostředků, ale povolit pro více modulární přístup s logiku pro každé kartě zapouzdřené v odlišné třída vlastní.
 
-<a name="Summary" />
 
 ## <a name="summary"></a>Souhrn
 

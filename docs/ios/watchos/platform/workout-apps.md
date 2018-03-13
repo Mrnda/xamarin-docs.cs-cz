@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: f375f58215fbef13298e31b03b969c9388d2bfa2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 77bad4c31ad0cb11476c656aa495707d2a94aa8f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="workout-apps"></a>Cvičení aplikace
 
@@ -29,7 +29,7 @@ Uživatelé vhodnosti a cvičení aplikací může být vysoce vyhrazené devoti
 
 Dobře navrženým vhodnosti nebo cvičení aplikace pomáhá uživatelům grafu jejich aktivity k dosažení jejich vhodnosti cíle. Pomocí Apple Watch vhodnosti a cvičení aplikací mít okamžitý přístup na rychlost vysílat Kalorie zápis na disk a aktivitu zjištění.
 
-[ ![](workout-apps-images/workout01.png "Vhodnosti a cvičení příklad aplikace")](workout-apps-images/workout01.png)
+[![](workout-apps-images/workout01.png "Vhodnosti a cvičení příklad aplikace")](workout-apps-images/workout01.png#lightbox)
 
 Nový watchOS 3, _pozadí systémem_ cvičení poskytuje možnost spustit na pozadí na Apple Watch a získat přístup k datům HealthKit související aplikace.
 
@@ -60,20 +60,20 @@ Pokud chcete povolit spuštění pozadí, postupujte takto:
 1. V **Průzkumníku řešení**, dvakrát klikněte na rozšíření sledovat doprovodné iPhone aplikace `Info.plist` soubor otevřete pro úpravy.
 2. Přepnout **zdroj** zobrazení: 
 
-    [ ![](workout-apps-images/plist01.png "Zobrazení zdroje")](workout-apps-images/plist01.png)
+    [![](workout-apps-images/plist01.png "Zobrazení zdroje")](workout-apps-images/plist01.png#lightbox)
 3. Přidejte nový klíč s názvem `WKBackgroundModes` a nastavte **typ** k `Array`: 
 
-    [ ![](workout-apps-images/plist02.png "Přidejte nový klíč s názvem WKBackgroundModes")](workout-apps-images/plist02.png)
+    [![](workout-apps-images/plist02.png "Přidejte nový klíč s názvem WKBackgroundModes")](workout-apps-images/plist02.png#lightbox)
 4. Přidat novou položku do pole s **typ** z `String` a hodnota `workout-processing`: 
 
-    [ ![](workout-apps-images/plist03.png "Přidat novou položku do pole s řetězec typ a hodnotu cvičení zpracování")](workout-apps-images/plist03.png)
+    [![](workout-apps-images/plist03.png "Přidat novou položku do pole s řetězec typ a hodnotu cvičení zpracování")](workout-apps-images/plist03.png#lightbox)
 5. Uložte změny do souboru.
 
 ## <a name="starting-a-workout-session"></a>Spuštění relace cvičení
 
 Spuštění relace cvičení tři hlavní kroky:
 
-[ ![](workout-apps-images/workout02.png "Tři hlavní kroky pro spuštění relace cvičení")](workout-apps-images/workout02.png)
+[![](workout-apps-images/workout02.png "Tři hlavní kroky pro spuštění relace cvičení")](workout-apps-images/workout02.png#lightbox)
 
 1. Aplikace musí požádat o autorizaci pro přístup k datům v HealthKit.
 2. Vytvořte objekt konfigurace cvičení pro typ cvičení spuštění.
@@ -97,7 +97,7 @@ Postupujte takto:
 1. V **Průzkumníku řešení**, dvakrát klikněte `Entitlements.plist` soubor otevřete pro úpravy.
 2. Přejděte do dolní a zkontrolujte **povolit HealthKit**: 
 
-    [ ![](workout-apps-images/auth01.png "Kontrola povolení HealthKit")](workout-apps-images/auth01.png)
+    [![](workout-apps-images/auth01.png "Kontrola povolení HealthKit")](workout-apps-images/auth01.png#lightbox)
 3. Uložte změny do souboru.
 4. Postupujte podle pokynů [explicitní ID aplikace a profil zřizování](~/ios/platform/healthkit.md) a [přidružení ID aplikace a zřizování profilu se vaše aplikace Xamarin.iOS](~/ios/platform/healthkit.md) části [Úvod do HealthKit](~/ios/platform/healthkit.md) článku správně zřídit aplikaci.
 5. Nakonec, postupujte podle pokynů v [programování Kit stavu](~/ios/platform/healthkit.md) a [žádají o oprávnění z pole uživatelské](~/ios/platform/healthkit.md) části [Úvod do HealthKit](~/ios/platform/healthkit.md) článek na žádost oprávnění pro přístup k úložišti dat HealthKit uživatele.
@@ -273,7 +273,7 @@ private void StartOutdoorRun ()
 
 Pokud tuto relaci cvičení spuštění aplikace a uživatel přepíná zpět na jejich vzhled sledovat, zobrazí se jen nepatrnou zelené ikony "spuštění man" výše písmo:
 
-[ ![](workout-apps-images/workout03.png "Malá velikost zelené spuštěné man ikony zobrazují nad písmo")](workout-apps-images/workout03.png)
+[![](workout-apps-images/workout03.png "Malá velikost zelené spuštěné man ikony zobrazují nad písmo")](workout-apps-images/workout03.png#lightbox)
 
 Pokud uživatel klepne na tuto ikonu, že budete přesměrováni zpět do aplikace.
 
@@ -281,7 +281,7 @@ Pokud uživatel klepne na tuto ikonu, že budete přesměrováni zpět do aplika
 
 Jakmile relaci cvičení byla nakonfigurována a spuštěna, aplikace bude nutné shromažďovat data o relaci (například rychlost vysílat uživatele) a řízení stavu relace:
 
-[ ![](workout-apps-images/workout04.png "Shromažďování dat a Diagram řízení")](workout-apps-images/workout04.png)
+[![](workout-apps-images/workout04.png "Shromažďování dat a Diagram řízení")](workout-apps-images/workout04.png#lightbox)
 
 1. **Sledování ukázky** -aplikaci bude nutné načíst informace z HealthKit, která se zobrazí uživateli a reagovali na ni.
 2. **Sledování události** – aplikace bude muset reakce na události, které jsou generovány při HealthKit, nebo uživatelském rozhraní aplikace (například uživatel pozastavení cvičení).
@@ -502,7 +502,7 @@ Cvičení, které zahrnují energie ukázky nebo aktualizuje uživatele přesuno
 
 Následující kroky jsou nezbytné pro ukončení a uložení cvičení relace:
 
-[ ![](workout-apps-images/workout05.png "Ukončení a ukládání Diagram relace cvičení")](workout-apps-images/workout05.png)
+[![](workout-apps-images/workout05.png "Ukončení a ukládání Diagram relace cvičení")](workout-apps-images/workout05.png#lightbox)
 
 1. Aplikace se nejprve ukončit relaci cvičení.
 2. Cvičení relace je uložena do HealthKit.
@@ -642,7 +642,7 @@ Při spuštěné aplikaci watchOS použitím WatchConnectivity pro zasílání z
 
 Podívejte se na tom, jak tento proces funguje:
 
-[ ![](workout-apps-images/workout06.png "iPhone a Apple Watch komunikace diagram")](workout-apps-images/workout06.png)
+[![](workout-apps-images/workout06.png "iPhone a Apple Watch komunikace diagram")](workout-apps-images/workout06.png#lightbox)
 
 1. Vytvoří aplikace iPhone `HKWorkoutConfiguration` objektu a nastaví cvičení typ a umístění.
 2. `HKWorkoutConfiguration` Objektu je odeslán Apple Watch verze aplikace, a pokud ještě není spuštěná, je spuštěna v systému.

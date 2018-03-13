@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 015bce612f369797f0540a0cb55f71f420f007a2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d5a8baec164eb5c70f6dae5b2fa4fd5271afbd1c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="walkthrough---using-background-transfer-service-and-nsurlsession"></a>Návod - pomocí služba přenosu na pozadí a NSURLSession
 
@@ -20,7 +20,7 @@ _V tomto návodu používáme služba přenosu na pozadí a rozhraní API NSURLS
 
 Inicializuje přenosu na pozadí v konfiguraci na pozadí `NSURLSession` a enqueuing odeslání nebo stažení úlohy. Pokud úkoly dokončí, zatímco aplikace backgrounded, pozastaveno nebo byla ukončena, iOS oznámí aplikace voláním obslužná rutina dokončení v aplikačním *AppDelegate*. Následující diagram ukazuje to, v akci:
 
- [ ![](background-transfer-walkthrough-images/transfer.png "Inicializuje konfiguraci pozadí NSURLSession přenosu na pozadí a enqueuing odeslání nebo stažení úlohy")](background-transfer-walkthrough-images/transfer.png)
+ [![](background-transfer-walkthrough-images/transfer.png "Inicializuje konfiguraci pozadí NSURLSession přenosu na pozadí a enqueuing odeslání nebo stažení úlohy")](background-transfer-walkthrough-images/transfer.png#lightbox)
 
 Podívejme se, jak to vypadá v kódu.
 

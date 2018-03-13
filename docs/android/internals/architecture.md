@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 9579acc6c070bf692b0db1bd444a31c9ea4aa7ca
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 47f90af1ed68e6c3aea5710b7181b4787fc0895c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="architecture"></a>Architektura
 
@@ -22,13 +22,12 @@ Můžete použít [systému](http://msdn.microsoft.com/en-us/library/system.aspx
 
 V systému Android, nejsou k dispozici přímo do nativních aplikací většinu systémová zařízení jako zvuk, obrázky, OpenGL a telefonii, jsou přístupné pouze prostřednictvím rozhraní Android API Java Runtime umístěný v jednom z [Java](https://developer.xamarin.com/api/namespace/Java.Lang/). * obory názvů nebo [Android](https://developer.xamarin.com/api/namespace/Android/). * obory názvů. Architektura je přibližně takto:
 
-[![Diagram Mono a obrázky nad jádra a pod .NET/Java + vazby](architecture-images/architecture1.png)](architecture-images/architecture1.png)
+[![Diagram Mono a obrázky nad jádra a pod .NET/Java + vazby](architecture-images/architecture1.png)](architecture-images/architecture1.png#lightbox)
 
 Vývojáři Xamarin.Android přístup k různým funkcím v operačním systému buď volání do rozhraní API technologie .NET, které znají (pro přístup k nízké úrovně) nebo pomocí třídy v obory názvů systému Android, která poskytuje mostu k rozhraním API Java, které jsou vystavené Android modulu Runtime.
 
 Další informace o způsobu třídy Android komunikují s třídy Android modulu Runtime najdete [rozhraní API návrhu](~/android/internals/api-design.md) dokumentu.
 
-<a name="Application_Packages" />
 
 ## <a name="application-packages"></a>Balíčky aplikací
 
@@ -44,7 +43,6 @@ Balíčky aplikace pro Android jsou kontejnery ZIP s *.apk* příponu souboru. B
 Aplikace Xamarin.Android také obsahují *Android obálky s možností* umožňující Android provést volání do spravovaného kódu.
 
 
-<a name="Android_Callable_Wrappers" />
 
 ## <a name="android-callable-wrappers"></a>Android – obálky s možností
 
@@ -67,7 +65,6 @@ Globální odkazy mohou být explicitně uvolněna voláním [Java.Lang.Object.D
 Pozor musí provést při uvolnění spravované obálky s možností, pokud lze instanci nechtěně sdílet mezi vlákny jako uvolnění instance ovlivní odkazy z jakékoliv jiné vlákno. Pro maximální zabezpečení pouze `Dispose()` instancí, které byly přiděleny prostřednictvím `new` *nebo* z metod které *vědět* vždy přidělit nové instance a není v mezipaměti instance, které mohou způsobit náhodných instance sdílení mezi vlákny.
 
 
-<a name="Managed_Callable_Wrapper_Subclasses" />
 
 ## <a name="managed-callable-wrapper-subclasses"></a>Spravovaná obálka volatelná aplikacemi podtřídy
 
@@ -76,7 +73,6 @@ Spravovaná obálka volatelná aplikacemi podtřídy jsou může bydlišti všec
 Jako spravované obálky s možností spravovaná obálka volatelná aplikacemi podtřídy také obsahovat globální odkaz, přístupný prostřednictvím [Java.Lang.Object.Handle](https://developer.xamarin.com/api/property/Java.Lang.Object.Handle/) vlastnost. Stejně jako s spravované obálky s možností, může být explicitně uvolněno globální odkazy voláním [Java.Lang.Object.Dispose()](https://developer.xamarin.com/api/member/Java.Lang.Object.Dispose/).
 Na rozdíl od spravované obálky s možností *pozor* by měla být provedena před uvolnění těchto instancí jako *Dispose()*ing instance poruší mapování mezi Java instanci (instance Android obálka volatelná aplikacemi) a spravované instance.
 
-<a name="Java_Activation" />
 
 ### <a name="java-activation"></a>Aktivace Java
 
@@ -182,7 +178,6 @@ I/mono-stdout( 2993): [Managed: Value=]
 Pouze *Dispose()* z spravovaná obálka volatelná aplikacemi podtřídy, když víte, že objekt Java se nepoužijí už nebo podtřídy neobsahuje žádná data instance a *(IntPtr, JniHandleOwnership)* bylo zadáno konstruktor.
 
 
-<a name="Application_Startup" />
 
 ## <a name="application-startup"></a>Spuštění aplikace
 

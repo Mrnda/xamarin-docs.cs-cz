@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2017
-ms.openlocfilehash: 2acaef5fd42b867e88fb9b81d401ea752480124a
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 81d4aec3153a4cb7bbb0f3577c5a67acd430f279
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="listview-performance"></a>Výkon ListView
 
@@ -45,7 +45,7 @@ public enum ListViewCachingStrategy
 ```
 
 > [!NOTE]
-> **Poznámka:**: ignoruje The univerzální platformu Windows (UWP) [ `RetainElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RetainElement/) ukládání do mezipaměti strategie, protože vždy používá ukládání do mezipaměti ke zlepšení výkonu. Proto ve výchozím nastavení se chová jako kdyby [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) ukládání do mezipaměti strategie platí.
+> Ignoruje univerzální platformu Windows (UWP) [ `RetainElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RetainElement/) ukládání do mezipaměti strategie, protože vždy používá ukládání do mezipaměti ke zlepšení výkonu. Proto ve výchozím nastavení se chová jako kdyby [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) ukládání do mezipaměti strategie platí.
 
 ### <a name="retainelement"></a>RetainElement
 
@@ -101,14 +101,14 @@ Na iOS a Android když buněk použít vlastní nástroji pro vykreslování, se
 Když [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) používá [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) vybrat [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/), [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) ukládání do mezipaměti strategie neukládá do mezipaměti `DataTemplate`s. Místo toho `DataTemplate` pro každou položku dat v seznamu je vybrána.
 
 > [!NOTE]
-> **Poznámka:**: [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) ukládání do mezipaměti strategie je nezbytné, počínaje Xamarin.Forms 2.4, který po [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) se zobrazí výzva k výběru [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) že každý `DataTemplate` musí vracet stejné [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) typu. Pokud například chcete, [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) s `DataTemplateSelector` , může vrátit buď `MyDataTemplateA` (kde `MyDataTemplateA` vrátí `ViewCell` typu `MyViewCellA`), nebo `MyDataTemplateB` (kde `MyDataTemplateB`vrátí `ViewCell` typu `MyViewCellB`), když `MyDataTemplateA` je vrácen musí vracet `MyViewCellA` nebo k výjimce.
+> [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) Ukládání do mezipaměti strategie je nezbytné, počínaje Xamarin.Forms 2.4, který po [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) se zobrazí výzva k výběru [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/)že každý `DataTemplate` musí vracet stejné [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) typu. Pokud například chcete, [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) s `DataTemplateSelector` , může vrátit buď `MyDataTemplateA` (kde `MyDataTemplateA` vrátí `ViewCell` typu `MyViewCellA`), nebo `MyDataTemplateB` (kde `MyDataTemplateB`vrátí `ViewCell` typu `MyViewCellB`), když `MyDataTemplateA` je vrácen musí vracet `MyViewCellA` nebo k výjimce.
 
 ### <a name="recycleelementanddatatemplate"></a>RecycleElementAndDataTemplate
 
 [ `RecycleElementAndDataTemplate` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElementAndDataTemplate/) Ukládání do mezipaměti strategie vychází [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) ukládání do mezipaměti strategie podle kromě zajistit, že pokud [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) používá [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) vybrat [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/), `DataTemplate`v mezipaměti s typem položky v seznamu. Proto `DataTemplate`s jsou vybrané jednou za typ položky, namísto jednou za instance položky.
 
 > [!NOTE]
-> **Poznámka:**: [ `RecycleElementAndDataTemplate` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElementAndDataTemplate/) ukládání do mezipaměti strategie má předpoklad, `DataTemplate`s vrácený [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) musí používat [ `DataTemplate` ](https://developer.xamarin.com/api/constructor/Xamarin.Forms.DataTemplate.DataTemplate/p/System.Type/) konstruktor, který přebírá `Type`.
+> [ `RecycleElementAndDataTemplate` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElementAndDataTemplate/) Ukládání do mezipaměti strategie má předpoklad, `DataTemplate`s vrácený [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) musí používat [ `DataTemplate` ](https://developer.xamarin.com/api/constructor/Xamarin.Forms.DataTemplate.DataTemplate/p/System.Type/) konstruktor, který přebírá `Type`.
 
 ### <a name="setting-the-caching-strategy"></a>Nastavení ukládání do mezipaměti strategie
 

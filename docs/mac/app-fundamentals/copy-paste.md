@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 115f3340c5678c0ead06cf773e193fbdc4ba3d07
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ba937a6eae7f0f74bcf044f1248d49a421e82de5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="copy-and-paste"></a>Kopírování a vkládání
 
@@ -27,7 +27,7 @@ V tomto článku jsme se pokrývajících dva hlavní způsoby použití s praco
 1. **Standardní typy dat** -vzhledem k tomu, že pracovní ploše činnosti obvykle provádí mezi dvěma aplikacemi nesouvisejícími, ani aplikace zná typy dat, která dalších podporuje. Pokud chcete maximalizovat potenciální pro sdílení, pracovní plocha pojme více reprezentace daná položka (pomocí standardní sadu běžné typy dat), to umožní spotřebitelskou aplikaci vyberte verzi, která je nejvhodnější pro své potřeby.
 2. **Vlastní Data** – pro podporu kopírování a vkládání komplexní dat v rámci vaší Xamarin.Mac můžete definovat vlastní datový typ, který bude zpracován adresou pracovní plocha. Například aplikaci kreslení pomocí vektoru umožňující uživateli kopírování a vkládání obrazců komplexní, které se skládají z více datových typů a body.
 
-[![Příklad spuštěné aplikaci](copy-paste-images/intro01.png "příklad spuštěné aplikaci")](copy-paste-images/intro01-large.png)
+[![Příklad spuštěné aplikaci](copy-paste-images/intro01.png "příklad spuštěné aplikaci")](copy-paste-images/intro01-large.png#lightbox)
 
 V tomto článku vám nabídneme základní informace o práci s pracovní plochou v aplikaci Xamarin.Mac podporu kopírování a vložení operations. Vysoce navržený na spolupracovat [Hello, Mac](~/mac/get-started/hello-mac.md) článek nejprve, konkrétně [Úvod do Xcode a rozhraní tvůrce](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) a [výstupy a akce](~/mac/get-started/hello-mac.md#Outlets_and_Actions) oddíly, jak se popisuje klíčové koncepty a techniky, které budeme používat v tomto článku.
 
@@ -50,14 +50,14 @@ Postupujte takto:
 1. Spuštění sady Visual Studio pro Mac a kliknutím **nový projekt...**  odkaz.
 2. Vyberte **Mac** > **aplikace** > **kakao aplikace**, klikněte **Další** tlačítko: 
 
-    [![Vytvoření nového projektu aplikace kakao](copy-paste-images/sample01.png "vytvoření nového projektu aplikace kakao")](copy-paste-images/sample01-large.png)
+    [![Vytvoření nového projektu aplikace kakao](copy-paste-images/sample01.png "vytvoření nového projektu aplikace kakao")](copy-paste-images/sample01-large.png#lightbox)
 3. Zadejte `MacCopyPaste` pro **název projektu** a všem ostatním jako výchozí. Klikněte na tlačítko Další: 
 
-    [![Nastavení názvu projektu](copy-paste-images/sample01a.png "nastavení názvu projektu")](copy-paste-images/sample01a-large.png)
+    [![Nastavení názvu projektu](copy-paste-images/sample01a.png "nastavení názvu projektu")](copy-paste-images/sample01a-large.png#lightbox)
 
 4. Klikněte **vytvořit** tlačítko: 
 
-    [![Potvrzení nová nastavení projektu](copy-paste-images/sample02.png "potvrzení nová nastavení projektu")](copy-paste-images/sample02-large.png)
+    [![Potvrzení nová nastavení projektu](copy-paste-images/sample02.png "potvrzení nová nastavení projektu")](copy-paste-images/sample02-large.png#lightbox)
 
 ### <a name="add-an-nsdocument"></a>Přidat NSDocument
 
@@ -265,7 +265,7 @@ Tento dokument na místě vytvoříme uživatelské rozhraní pro aplikaci Xamar
 
 Dvakrát klikněte **Main.storyboard** soubor otevřete v Xcode. V dalším kroku dobře přidat panelu nástrojů a bitovou kopii a nakonfigurovat je následujícím způsobem:
 
-[![Úpravy panelu nástrojů](copy-paste-images/sample04.png "úpravy panelu nástrojů")](copy-paste-images/sample04-large.png)
+[![Úpravy panelu nástrojů](copy-paste-images/sample04.png "úpravy panelu nástrojů")](copy-paste-images/sample04-large.png#lightbox)
 
 Přidat kopírování a vkládání **položka panelu nástrojů Image** na levé straně panelu nástrojů. Budeme používat tyto zástupce pro kopírování a vkládání v nabídce Upravit. Dál přidejte čtyři **položek panelu nástrojů obrázků** na pravé straně panelu nástrojů. Použijeme tyto k naplnění bitovou kopii s některé výchozí Image.
 
@@ -273,7 +273,7 @@ Další informace o práci s panely nástrojů, najdete v tématu naše [panely 
 
 Dále umožňuje vystavit následující akce pro naše položky panelu nástrojů a bitovou kopii a výstupy dobře:
 
-[![Vytváření výstupy a akce](copy-paste-images/sample05.png "vytváření výstupy a akce")](copy-paste-images/sample05-large.png)
+[![Vytváření výstupy a akce](copy-paste-images/sample05.png "vytváření výstupy a akce")](copy-paste-images/sample05-large.png#lightbox)
 
 Další informace o práci s výstupy a akce, najdete v tématu [výstupy a akce](~/mac/get-started/hello-mac.md#Outlets_and_Actions) části našich [Hello, Mac](~/mac/get-started/hello-mac.md) dokumentaci.
 

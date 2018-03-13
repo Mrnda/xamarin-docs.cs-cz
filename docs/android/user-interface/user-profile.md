@@ -2,16 +2,16 @@
 title: "Profil uživatele"
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 1C58E12B-4634-4691-BF59-D5A3F6B0E6F7
+ms.assetid: 6BB01F75-5E98-49A1-BBA0-C2680905C59D
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/21/2017
-ms.openlocfilehash: 53ac30abea05095583fcac5ddc315f93ce7024f2
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cf8230c5832104fd17b14532f1d32822a1fc0097
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="user-profile"></a>Profil uživatele
 
@@ -38,13 +38,11 @@ if (cursor.MoveToFirst ()) {
 
 Se systémem Android 4 (14 úroveň rozhraní API) nový `ContactsContact.Profile` třída je k dispozici prostřednictvím poskytovatele ContactsContract. `ContactsContact.Profile` Poskytuje přístup k osobním profilu pro vlastníka zařízení, která zahrnuje kontaktní údaje, jako je vlastník zařízení název a telefonní číslo.
 
-<a name="Required_Permissions" />
 
 ## <a name="required-permissions"></a>Požadovaná oprávnění
 
 Čtení a zápis kontaktů dat, aplikace musí požádat o `Read_Contacts` a `Write_Contacts` oprávnění, v uvedeném pořadí. Kromě toho pokud chcete přečíst a upravit profil uživatele, aplikace musíte požádat o `Read_Profile` a `Write_Profile` oprávnění.
 
-<a name="Updating_Profile_Data" />
 
 ## <a name="updating-profile-data"></a>Aktualizace dat profilu
 
@@ -60,7 +58,6 @@ ContentResolver.Update (ContactsContract.Profile.ContentRawContactsUri,
     values, null, null);
 ```
 
-<a name="Reading_Profile_Data" />
 
 ## <a name="reading-profile-data"></a>Čtení dat profilu
 
@@ -78,7 +75,6 @@ if (cursor.MoveToFirst ()) {
 }
 ```
 
-<a name="Navigating_to_the_People_App" />
 
 ## <a name="navigating-to-the-people-app"></a>Navigace na aplikaci uživatelé
 
@@ -92,7 +88,7 @@ StartActivity (intent);
 
 Při spuštění ve výše uvedeném kódu, osoby aplikace se načte do profilu uživatele, jak je znázorněno na následujícím snímku obrazovky:
 
-[![Zobrazení profil uživatele John Doe aplikace – snímek obrazovky osoby](user-profile-images/15-people-app.png)](user-profile-images/15-people-app.png)
+[![Zobrazení profil uživatele John Doe aplikace – snímek obrazovky osoby](user-profile-images/15-people-app.png)](user-profile-images/15-people-app.png#lightbox)
 
 Práce s profil uživatele je nyní podobná interakci s ostatními daty v Android a poskytuje další úroveň individuální nastavení zařízení.
 

@@ -7,18 +7,17 @@ ms.assetid: BB81FCCF-F7BF-4C78-884E-F02C49AA819A
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/05/2018
-ms.openlocfilehash: 84ef87f5ed84fcd0a9aa2504c52a0fec17404e1f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 6d31e2a22c63f8d46893dd1928b561e1a06b19b4
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="troubleshooting-bindings"></a>Řešení potíží s vazby
 
 _Tento článek obsahuje souhrn ke schválení běžné chyby, které mohou nastat při vytváření vazby, spolu s možné příčiny a navrhované způsoby, jak je vyřešit._
 
-<a name="OVERVIEW" />
 
 ## <a name="overview"></a>Přehled
 
@@ -38,7 +37,6 @@ Po povolení výstup diagnostiky, Xamarin.Android vazby projekt znovu sestavte a
 
 Může být také užitečná dekompilaci knihovna pro Android a podívejte se na typy a metody, které Xamarin.Android se pokouší vytvořit vazbu. To je podrobněji později v tomto průvodci.
 
-<a name="DECOMPILING_AN_ANDROID_LIBRARY" />
 
 ## <a name="decompiling-an-android-library"></a>Decompiling knihovna pro Android
 
@@ -59,9 +57,8 @@ Jakmile budete mít decompiled knihovna pro Android, zkontrolujte zdrojový kód
 - **`import` příkazy pro neregistrované knihovny** &ndash; Identifikujte neregistrované knihovny a přidejte do projektu Xamarin.Android vazba s těchto závislostí **akce sestavení** z **ReferenceJar**  nebo **EmbedddedReferenceJar**.
 
 > [!NOTE]
-> **Poznámka:** Decompiling knihovna Java mohou být zakázáno nebo vztahují právní omezení podle místních zákonů nebo licenci, ve kterém byla publikována knihovna Java. V případě potřeby zahrnovat služby právní professional před pokusem o dekompilaci knihovna Java a prozkoumejte zdrojový kód.
+> Knihovna Java decompiling může zakázáno nebo vztahují právní omezení podle místních zákonů nebo licenci, ve kterém byla publikována knihovna Java. V případě potřeby zahrnovat služby právní professional před pokusem o dekompilaci knihovna Java a prozkoumejte zdrojový kód.
 
-<a name="INSPECTING_API_XML" />
 
 ## <a name="inspect-apixml"></a>Kontrola rozhraní API. XML
 
@@ -71,19 +68,16 @@ Jako součást sestavení projektu vazby, Xamarin.Android vygeneruje název soub
 
 Tento soubor obsahuje seznam všech rozhraní API Java, Xamarin.Android se pokouší vazby. Obsah tohoto souboru může pomoci identifikovat všechny chybějící typy nebo metod, duplicitní vazbu. I když kontroly tohoto souboru je zdlouhavé a časově náročné, může poskytovat pro různá vodítka na co může způsobovat problémy vazby. Například **api.xml** může odhalit to, že vlastnost vrací typ nevhodný nebo jsou dva typy tato sdílená složka se stejným názvem spravované.
 
-<a name="KNOWN_ISSUES" />
 
 ## <a name="known-issues"></a>Známé problémy
 
 Této části jsou uvedeny některé běžné chybové zprávy nebo příznaky, Moje dojít při pokusu o navázání knihovna pro Android.
 
-<a name="PROBLEM_JAVA_VERSION_MISMATCH" />
 
 ### <a name="problem-java-version-mismatch"></a>Problém: Java verze.
 
 Někdy se nevygeneruje typy nebo dojde k neočekávané chybě může dojít, protože používáte buď novější nebo starší verzi ve srovnání s co knihovny bylo kompilováno s Java. Znovu zkompiluje knihovna pro Android se stejnou verzí JDK, který používá projekt Xamarin.Android.
 
-<a name="PROBLEM_AT_LEAST_ONE_JAVA_LIBRARY_IS_REQUIRED" />
 
 ### <a name="problem-at-least-one-java-library-is-required"></a>Problém: alespoň jeden Java vyžaduje se knihovna
 
@@ -93,7 +87,6 @@ Se zobrazí chyba "nejméně jedna knihovna Java je povinné," Přestože. JAR b
 
 Ujistěte se, že akce sestavení je nastavena na `EmbeddedJar`. Vzhledem k tomu, že existují různé akce sestavení pro. JAR soubory (například `InputJar`, `EmbeddedJar`, `ReferenceJar` a `EmbeddedReferenceJar`), generátor vazby nelze snadno uhodnout automaticky používané ve výchozím nastavení. Další informace o akcích sestavení najdete v tématu [akce sestavení](~/android/platform/binding-java-library/index.md).
 
-<a name="PROBLEM_BINDING_TOOLS_CANNOT_LOAD_THE_JAR_LIBRARY" />
 
 ### <a name="problem-binding-tools-cannot-load-the-jar-library"></a>Problém: Vytvoření vazby nástroje nelze načíst. Knihovna JAR
 
@@ -104,7 +97,6 @@ Generátor knihovny vazby nepodaří načíst. Knihovna JAR.
 Některé. JAR knihoven, které použít kód maskováním (prostřednictvím nástrojů, jako je Proguard), nelze načíst pomocí nástroje Java. Vzhledem k tomu, že naše nástroj umožňuje použití reflexe Java a kód bajtů ASM technici knihovny, může tyto závislé nástroje odmítnout zkomolené knihovny, zatímco Android runtime nástrojů může předat. Alternativní řešení pro tuto je ruční bind tyto knihovny místo použití generátor vazby.
 
 
-<a name="PROBLEM_MISSING_C_TYPES_IN_GENERATED_OUTPUT_" />
 
 ### <a name="problem-missing-c-types-in-generated-output"></a>Problém: Chybí typy C# v generovaný výstup.
 
@@ -253,8 +245,6 @@ To je ručně načíst **.so** knihovny pomocí volání `Java.Lang.JavaSystem.L
 ```csharp
 Java.Lang.JavaSystem.LoadLibrary("pocketsphinx_jni");
 ```
-
-<a name=summary />
 
 ## <a name="summary"></a>Souhrn
 

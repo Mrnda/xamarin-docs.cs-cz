@@ -7,18 +7,17 @@ ms.assetid: 29C0E850-3A49-4618-9078-D59BE0284D5A
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 50666708bde2f2e7a61c30c6c9b383541e7ae9d5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 10744d7c4fbcc5a8935a1fe1e60b6c96ec828815
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="proguard"></a>ProGuard
 
 _ProGuard je knihovnu shrinker souboru Třída Java, optimalizátor, obfuscator a předběžné ověřovatele. Rozpozná a odebere nepoužívané kódu, analyzuje a optimalizuje bajtového kódu potom zastírá třídy a jejich členové. Tato příručka vysvětluje, jak funguje ProGuard, jak povolit ve vašem projektu a jeho konfiguraci. Je také několik příkladů ProGuard konfigurace._
 
-<a name="overview" />
 
 ## <a name="overview"></a>Přehled
 
@@ -38,13 +37,12 @@ ProGuard procesy vstup na APK pomocí následujících kroků:
 Každý z těchto kroků je *volitelné*. Jak bude vysvětleno v další části, používá Xamarin.Android ProGuard pouze podmnožinu těchto kroků. 
 
 
-<a name="xa_proguard" />
 
 ## <a name="proguard-in-xamarinandroid"></a>ProGuard v Xamarin.Android
 
 Xamarin.Android ProGuard konfigurace není obfuskováním APK. Ve skutečnosti není možné povolit maskováním prostřednictvím ProGuard (i prostřednictvím vlastní konfigurační soubory). Proto je Xamarin.Android ProGuard provádí pouze **zmenšení** a **optimalizace** kroky: 
 
-[ ![Postup zmenšení a optimalizace](proguard-images/01-xa-chain-sml.png)](proguard-images/01-xa-chain.png)
+[![Postup zmenšení a optimalizace](proguard-images/01-xa-chain-sml.png)](proguard-images/01-xa-chain.png#lightbox)
 
 Jednu položku důležité předem znát před použitím ProGuard je, jak to funguje v rámci `Xamarin.Android` proces sestavení. Tento proces používá dva samostatné kroky: 
 
@@ -55,7 +53,6 @@ Jednu položku důležité předem znát před použitím ProGuard je, jak to fu
 Každý z těchto kroků je popsána dále.
 
 
-<a name="linker" />
 
 ### <a name="linker-step"></a>Krok linkeru
 
@@ -70,21 +67,18 @@ Linkeru Xamarin.Android využívá statické analýzu aplikace určit následuj�
 Linkeru se vždy spustit před spuštěním kroku ProGuard. Z toho důvodu může linkeru pruhu sestavení nebo typ/člen, který by se dalo očekávat ProGuard ke spuštění na. (Další informace o propojení v Xamarin.Android najdete v tématu [propojení v systému Android](~/android/deploy-test/linker.md).)
 
 
-<a name="proguard_step" />
 
 ### <a name="proguard-step"></a>ProGuard krok
 
 Po úspěšném dokončení kroku linkeru ProGuard běží odebrat nepoužité bajtového kódu Java. Toto je krok, který optimalizuje APK. 
 
 
-<a name="using" />
 
 ## <a name="using-proguard"></a>Pomocí ProGuard
 
 Pokud chcete používat ProGuard v projektu aplikace, musíte nejdřív povolit ProGuard. Dále můžete buď nechat Xamarin.Android sestavení pomocí procesu výchozí ProGuard konfigurační soubor, nebo můžete vytvořit svůj vlastní soubor vlastní konfigurace pro ProGuard používat. 
 
 
-<a name="enabling" />
 
 ### <a name="enabling-proguard"></a>Povolení ProGuard
 
@@ -92,22 +86,21 @@ Použijte následující postup pro povolení ProGuard v projektu aplikace:
 
 1.  Ujistěte se, že váš projekt je nastavená na **verze** konfigurace (to je důležité, protože linkeru musí běžet v pořadí pro ProGuard ke spuštění): 
 
-    [ ![Vyberte možnost konfigurace verze](proguard-images/02-set-release-sml.png)](proguard-images/02-set-release.png)
+    [![Vyberte možnost konfigurace verze](proguard-images/02-set-release-sml.png)](proguard-images/02-set-release.png#lightbox)
    
 2.  Povolit ProGuard kontrolou **povolit ProGuard** možnost pod **balení** kartě **vlastnosti > Android možnosti**: 
 
-    [ ![Povolit Proguard možnost](proguard-images/03-enable-proguard-sml.png)](proguard-images/03-enable-proguard.png)
+    [![Povolit Proguard možnost](proguard-images/03-enable-proguard-sml.png)](proguard-images/03-enable-proguard.png#lightbox)
 
 Pro většinu aplikací Xamarin.Android, bude výchozí ProGuard konfigurační soubor poskytl Xamarin.Android dostatečná k odebrání všech (a pouze) nepoužívané kódu. Pokud chcete zobrazit výchozí konfigurace ProGuard, otevřete soubor v **obj\\verze\\proguard\\proguard_xamarin.cfg**. Další část popisuje, jak vytvořit vlastní ProGuard konfigurační soubor. 
 
 
-<a name="customizing" />
 
 ### <a name="customizing-proguard"></a>Přizpůsobení ProGuard
 
 Volitelně můžete přidat vlastní ProGuard konfiguračního souboru získat větší kontrolu nad ProGuard nástrojů. Můžete například explicitně říct ProGuard třídy, které chcete zachovat. K tomuto účelu vytvořte nový **.cfg** souboru a použít `ProGuardConfiguration` akce sestavení **vlastnosti** podokně **Průzkumníku řešení**: 
 
-[ ![Vybrané akce ProguardConfiguration sestavení](proguard-images/04-build-action-sml.png)](proguard-images/04-build-action.png)
+[![Vybrané akce ProguardConfiguration sestavení](proguard-images/04-build-action-sml.png)](proguard-images/04-build-action.png#lightbox)
 
 Mějte na paměti, že tento konfigurační soubor nenahrazuje Xamarin.Android **proguard_xamarin.cfg** souboru vzhledem k tomu, jak jsou používány ProGuard. 
 
@@ -156,8 +149,6 @@ V tomto příkladu `MyClass` nastavena na skutečný název třídy, která chce
 Můžete také registrovat vlastní názvy s `[Register]` poznámky a použijte tyto názvy přizpůsobit ProGuard pravidla. Můžete zaregistrovat názvy pro adaptéry, zobrazení, BroadcastReceivers, služby, ContentProviders, aktivity a fragmenty. Další informace o používání `[Register]` vlastních atributů, najdete v části [práce s JNI](~/android/platform/java-integration/working-with-jni.md).
 
 
-<a name="options" />
-
 ### <a name="proguard-options"></a>ProGuard možnosti
 
 ProGuard nabízí řadu možností, které je možné nakonfigurovat a poskytují lepší kontrolu nad jeho provoz. [ProGuard ruční](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/index.html#manual/introduction.html) poskytuje úplný referenční dokumentaci pro použití ProGuard. 
@@ -196,7 +187,6 @@ Jsou následující možnosti *Ignorovat* podle Xamarin.Android:
 -    [Preverification možnosti](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/manual/usage.html#preverificationoptions)
 
 
-<a name="nougat" />
 
 ## <a name="proguard-and-android-nougat"></a>Cukrovinkách typu nugát proGuard a Android
 
@@ -207,7 +197,6 @@ Můžete to použít [balíček NuGet](https://www.nuget.org/packages/name.atsus
 Můžete najít všechny verze ProGuard na [SourceForge stránky](https://sourceforge.net/projects/proguard/files/). 
 
 
-<a name="examples" />
 
 ## <a name="example-proguard-configurations"></a>Příklad ProGuard konfigurace
 
@@ -272,7 +261,6 @@ Následující příklad ilustruje konfigurace pro dokončení Android:
     public static <fields>;
     }
 
-<a name="build" />
 
 ## <a name="proguard-and-the-xamarinandroid-build-process"></a>ProGuard a procesu sestavení Xamarin.Android
 
@@ -325,12 +313,7 @@ Další příklad ukazuje typické ProGuard příkaz, který je spuštěn z pros
 C:\Program Files (x86)\Java\jdk1.8.0_92\\bin\java.exe -jar C:\Android\android-sdk\tools\proguard\lib\proguard.jar -include obj\Release\proguard\proguard_xamarin.cfg -include obj\Release\proguard\proguard_project_references.cfg -include obj\Release\proguard\proguard_project_primary.cfg "-injars 'obj\Release\proguard\__proguard_input__.jar';'C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\MonoAndroid\v7.0\mono.android.jar'" "-libraryjars 'C:\Android\android-sdk\platforms\android-25\android.jar'" -outjars "obj\Release\proguard\__proguard_output__.jar" -optimizations !code/allocation/variable
 ```
 
-
-<a name="troubleshoot" />
-
 ## <a name="troubleshooting"></a>Poradce při potížích
-
-<a name="files" />
 
 ### <a name="file-issues"></a>Soubor problémy
 
@@ -351,13 +334,10 @@ K tomuto problému předešli, uložte soubor vlastní konfigurace z textového 
 -----
 
 
-<a name="other" />
-
 ### <a name="other-issues"></a>Další problémy
 
 ProGuard [Poradce při potížích s](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/index.html#manual/troubleshooting.html) stránka popisuje běžné problémy, se můžete setkat (a řešení) při použití ProGuard.
 
-<a name="summary" />
 
 ## <a name="summary"></a>Souhrn
 

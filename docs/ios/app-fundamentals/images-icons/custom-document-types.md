@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/23/2017
-ms.openlocfilehash: 582fcbacbf1959e05773babb1219817ba319a937
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e14cfb8d3c09d17bdee4b60786f434ff94ef31dc
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="custom-document-icons"></a>Ikony vlastní šablony dokumentů
 
@@ -20,7 +20,7 @@ _Tento článek obsahuje včetně a správu prostředek bitové kopie v aplikaci
 
 Pokud aplikace Xamarin.iOS podporuje načítání typu určitému dokumentu, vývojář může poskytnout ikony, které systém použije při výskytu tohoto typu dokumentu, například když uživatel obsahuje dolů přílohy v *aplikaci Mail* jako Zde se zobrazují:
 
- [ ![](custom-document-types-images/17.png "Příklad ikony typu dokumentu")](custom-document-types-images/17.png)
+ [![](custom-document-types-images/17.png "Příklad ikony typu dokumentu")](custom-document-types-images/17.png#lightbox)
 
 Vývojář může přidat informace o typu dokumentu pro formátu souboru aplikace je schopen otevírání zahrnutím položky slovníku pro `CFBundleTypeName` řetězec a `LSItemContentTypes` pole v dané aplikaci `Info.plist`. Ikony typu dokumentu v přejděte `CFBundleTypeIconFiles` pole. Pokud není k dispozici ikona dokumentu, odvodí z části ikonu pro aplikace iOS.
 Ikony můžete zadat několik velikostí, optimalizovaný pro rozlišení různých zařízení. 
@@ -29,7 +29,7 @@ Ikony můžete zadat několik velikostí, optimalizovaný pro rozlišení různ�
 
 K přiřazení tyto hodnoty v sadě Visual Studio pro Mac, použijte **typů dokumentů** oddílu pod **Upřesnit** na kartě `Info.plist` editoru přidejte typ dokumentu a přiřadit ikony bitové kopie. Například zde je snímek obrazovky zobrazující registrace pro podporu PDF:
 
- [ ![](custom-document-types-images/18.png "V části typů dokumentů na kartě Upřesnit v editoru 'Info.plist.")](custom-document-types-images/18.png)
+ [![](custom-document-types-images/18.png "V části typů dokumentů na kartě Upřesnit v editoru 'Info.plist.")](custom-document-types-images/18.png#lightbox)
  
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/29/2017
-ms.openlocfilehash: bd6d47f98435cc68ecf4156423526c31dbac09da
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c923208b7ca4d41914504b4b0aa0687db1d49f01
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="inspecting-live-applications"></a>Probíhá kontrola aplikací pro živé
 
@@ -27,11 +27,11 @@ Kontroly za provozu aplikace je k dispozici pro podnikové zákazníky.
 
 
 
-[ ![](inspect-images/mac-heres-the-button.png "Kliknutím na tlačítko Zkontrolovat na panelu nástrojů IDE")](inspect-images/mac-heres-the-button.png)
+[![](inspect-images/mac-heres-the-button.png "Kliknutím na tlačítko Zkontrolovat na panelu nástrojů IDE")](inspect-images/mac-heres-the-button.png#lightbox)
 
 Otevře se nové okno Xamarin Inspector klienta s novou REPL řádku.
 
-[ ![](inspect-images/inspector-0.7.0-map-inspect-small.png "Se otevře nové okno klienta Xamarin Inspector, s novou REPL řádku")](inspect-images/inspector-0.7.0-map-inspect.png)
+[![](inspect-images/inspector-0.7.0-map-inspect-small.png "Se otevře nové okno klienta Xamarin Inspector, s novou REPL řádku")](inspect-images/inspector-0.7.0-map-inspect.png#lightbox)
 
 Až toto okno se zobrazí, budete mít interaktivní C# řádku, můžete použít ke spouštění a vyhodnocení C# příkazy a výrazy. Co je tato možnost jedinečné je, že kód vyhodnotí v rámci tento cílový proces. V takovém případě jsme zobrazují kód spuštěný iOS aplikace zobrazí.
 

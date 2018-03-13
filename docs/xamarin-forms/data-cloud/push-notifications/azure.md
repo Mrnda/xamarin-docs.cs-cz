@@ -5,32 +5,35 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: A1EF400F-73F4-43E9-A0C3-1569A0F34A3B
 ms.technology: xamarin-forms
+ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/02/2017
-ms.openlocfilehash: cccbe64f69b926ced77403bcf85540ef1060dbac
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: f0f767179a9280d7a6c6d7ce8125696d5e664cba
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="sending-push-notifications-from-azure-mobile-apps"></a>Odesílání nabízených oznámení z Azure Mobile Apps
 
 _Azure Notification Hubs poskytuje infrastrukturu škálovatelné nabízených pro odesílání mobilní nabízená oznámení z jakéhokoli back-endu na libovolnou mobilní platformu, přičemž složitost back-end museli komunikovat s různých systémů oznámení platforem. Tento článek vysvětluje, jak používat Azure Notification Hubs k odesílání nabízených oznámení z instance Azure Mobile Apps na platformě Xamarin.Forms aplikaci._
 
-## <a name="overview"></a>Přehled
+> [!VIDEO https://youtube.com/embed/le2lDY22xwM]
+
+**Azure Push pomocí centra oznámení a Xamarin.Forms, [univerzity Xamarin](https://university.xamarin.com/)**
 
 Nabízená oznámení se používá k poskytování informací, jako je například zprávu, ze systému back-end aplikace na mobilní zařízení zvýšit využití a zapojení aplikace. Oznámení můžete odeslat na kdykoli, i když se uživatel není aktivně používá cílové aplikace.
 
 Back-end systémy odesílání nabízených oznámení do mobilních zařízení prostřednictvím platformy oznámení systémy (PNS), jak je znázorněno v následujícím diagramu:
 
-[![](azure-images/pns.png "Systémy oznámení platforem")](azure-images/pns-large.png "systémy oznámení platforem")
+[![](azure-images/pns.png "Systémy oznámení platforem")](azure-images/pns-large.png#lightbox "systémy oznámení platforem")
 
 K odesílání nabízených oznámení, back-end systém kontaktuje systém PNS specifické pro platformu odeslat oznámení do instance aplikace klienta. To výrazně zvyšuje složitost back-end napříč platformami nabízená oznámení jsou povinné, protože back-end musíte použít každý specifické pro platformu rozhraní API systému PNS a protokolu.
 
 Azure Notification Hubs eliminovat této složitost podle detailním různých systémů oznámení platforem, což napříč platformami oznámení k odeslání na základě jednoho volání rozhraní API, jak je znázorněno v následujícím diagramu:
 
-[![](azure-images/notification-hub.png)](azure-images/notification-hub-large.png)
+[![](azure-images/notification-hub.png)](azure-images/notification-hub-large.png#lightbox)
 
 K odesílání nabízených oznámení, back-end systému jenom kontakty do centra oznámení Azure, která dále komunikuje se různých systémů oznámení platforem, proto snížení složitosti back-end kódu této odesílá nabízená oznámení.
 
@@ -44,7 +47,7 @@ Azure Mobile Apps mít integrovanou podporu pro nabízená oznámení pomocí ce
 
 Ukázkovou aplikaci ukazuje, jejichž data jsou uložena v instanci Azure Mobile Apps aplikaci seznamu úkolů. Pokaždé, když se k instanci Azure Mobile Apps při přidání nové položky, nabízených oznámení se posílá aplikaci Xamarin.Forms. Na následujících snímcích obrazovky zobrazit jednotlivé platformy zobrazení přijaté nabízených oznámení:
 
-[![](azure-images/screenshots.png "Ukázková aplikace příjem nabízených oznámení")](azure-images/screenshots-large.png "ukázkové aplikace příjem nabízených oznámení")
+[![](azure-images/screenshots.png "Ukázková aplikace příjem nabízených oznámení")](azure-images/screenshots-large.png#lightbox "ukázkové aplikace příjem nabízených oznámení")
 
 Další informace o Azure Notification Hubs najdete v tématu [Azure Notification Hubs](https://azure.microsoft.com/documentation/articles/notification-hubs-push-notification-overview/) a [přidat nabízená oznámení do vaší aplikace na platformě Xamarin.Forms](/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-push/).
 
@@ -118,7 +121,7 @@ public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 Když aplikace pro iOS zaregistruje u služby APN musí určit typy nabízená oznámení, které se chcete dostávat. `RegisterUserNotificationSettings` Metoda registruje typy oznámení, které aplikace může přijímat, pomocí `RegisterForRemoteNotifications` metoda registrace přijímat nabízená oznámení ze služby APN.
 
 > [!NOTE]
-> **Poznámka:**: selhání volání `RegisterUserNotificationSettings` metoda bude mít za následek nabízená oznámení se bezobslužně přijatých aplikací.
+> Nedaří se volání `RegisterUserNotificationSettings` metoda bude mít za následek nabízená oznámení se bezobslužně přijatých aplikací.
 
 <a name="ios_registration_response" />
 
@@ -146,7 +149,7 @@ public override void RegisteredForRemoteNotifications(UIApplication application,
 Tato metoda vytvoří šablonu oznámení jednoduché zprávy jako JSON a zaregistruje zařízení přijímat šablony oznámení z centra oznámení.
 
 > [!NOTE]
-> **Poznámka:**: `FailedToRegisterForRemoteNotifications` přepsání by měla být implementována pro řešení situací jako chybějící síťové připojení. To je důležité, protože uživatelé mohou spustit aplikaci při offline.
+> `FailedToRegisterForRemoteNotifications` Přepsání by měla být implementována pro řešení situací jako chybějící síťové připojení. To je důležité, protože uživatelé mohou spustit aplikaci při offline.
 
 <a name="ios_process_incoming" />
 
@@ -177,7 +180,7 @@ public override void DidReceiveRemoteNotification(
 `userInfo` Slovník obsahuje `aps` klíč, jehož hodnota je `alert` slovníku pomocí zbývající data oznámení. Tento adresář se načítají, s `string` oznámení se zobrazí v dialogovém okně.
 
 > [!NOTE]
-> **Poznámka:**: Pokud aplikace není spuštěn, když dorazí nabízených oznámení, spustí se aplikace ale `DidReceiveRemoteNotification` metoda nezpracuje oznámení. Místo toho získat datová část oznámení a reagují odpovídajícím způsobem z `WillFinishLaunching` nebo `FinishedLaunching` přepsání.
+> Pokud aplikace není spuštěn, když dorazí nabízených oznámení, spustí se aplikace ale `DidReceiveRemoteNotification` metoda nezpracuje oznámení. Místo toho získat datová část oznámení a reagují odpovídajícím způsobem z `WillFinishLaunching` nebo `FinishedLaunching` přepsání.
 
 Další informace o APNS najdete v tématu [nabízených oznámení v iOS](~/ios/platform/user-notifications/deprecated/remote-notifications-in-ios.md).
 
@@ -330,7 +333,7 @@ public class FirebaseNotificationService : FirebaseMessagingService
         intent.AddFlags(ActivityFlags.ClearTop);
         var pendingIntent = PendingIntent.GetActivity(this, 0, intent, PendingIntentFlags.OneShot);
 
-        var notificationBuilder = new Notification.Builder(this)
+        var notificationBuilder = new NotificationCompat.Builder(this)
             .SetSmallIcon(Resource.Drawable.ic_stat_ic_notification)
             .SetContentTitle("New Todo Item")
             .SetContentText(messageBody)

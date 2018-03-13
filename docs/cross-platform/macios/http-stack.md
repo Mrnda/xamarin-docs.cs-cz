@@ -8,13 +8,15 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 06/12/2017
-ms.openlocfilehash: d4fce635b26b0c367e836e4ec41d4f51a10b9c35
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: eff096b1dca15b9b11038a599987f632bca2352f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
-# <a name="httpclient-stack-selector"></a>Výběr zobrazení HttpClient
+# <a name="httpclient-stack-and-ssltls-implementation-selector-for-iosmacos"></a>Zásobník HttpClient a SSL/TLS implementace selektor pro iOS/systému macOS
+
+## <a name="httpclient-stack-selector"></a>Výběr zobrazení HttpClient
 
 K dispozici pro Xamarin.iOS, Xamarin.tvOS a Xamarin.Mac: Tato volba určuje, které `HttpClient` implementace používat. Výchozí hodnota je stále HttpClient, který používá technologii `HttpWebRequest`, zatímco lze nyní volitelně přepnout implementace, která používá iOS, tvOS nebo systému macOS nativní přenosy (`NSUrlSession` nebo `CFNetwork` v závislosti na operačním systémem). Vzhůru je menší binární soubory a rychlejší stahování, nevýhodou je, že vyžaduje smyčky událostí, aby byl spuštěn pro spouštění asynchronních operací.
 
@@ -22,7 +24,7 @@ Projekty musí odkazovat **System.Net.Http** sestavení.
 
 <a name="Selecting-a-HttpClient-Stack" />
 
-## <a name="selecting-a-httpclient-stack"></a>Výběr HttpClient zásobníku
+### <a name="selecting-a-httpclient-stack"></a>Výběr HttpClient zásobníku
 
 Chcete-li upravit HttpClient používá aplikaci:
 
@@ -30,19 +32,19 @@ Chcete-li upravit HttpClient používá aplikaci:
 2. Přepnout **sestavení** nastavení pro svůj projekt (například **iOS sestavení** pro aplikace Xamarin.iOS).
 3. Z **implementace HttpClient** rozevíracího seznamu, vyberte HttpClient zadejte jako jednu z následujících: **spravované**, **CFNetwork** nebo **NSUrlSession**.
 
-[ ![Implementace HttpClient vybírat spravované, CFNetwork nebo NSUrlSession](http-stack-images/http-xs-sml.png)](http-stack-images/http-xs.png)
+[![Implementace HttpClient vybírat spravované, CFNetwork nebo NSUrlSession](http-stack-images/http-xs-sml.png)](http-stack-images/http-xs.png#lightbox)
 
 <a name="Managed" />
 
-## <a name="managed-default"></a>Spravované (výchozí)
+### <a name="managed-default"></a>Spravované (výchozí)
 
 Spravované obslužné rutiny je plně spravovaná HttpClient obslužná rutina, která je dodávána se předchozí verze nástroje Xamarin.
 
-### <a name="pros"></a>Odborníci na:
+#### <a name="pros"></a>Odborníci na:
 
  - Obsahuje funkci nejvíce kompatibilní nastavit pomocí rozhraní Microsoft .NET a starší verze Xamarin.
 
-### <a name="cons"></a>Cons:
+#### <a name="cons"></a>Cons:
 
  - Ji není plně integrována operační systémy Apple a je omezený na TLS 1.0.
  - Je obvykle výrazně zpomalit na třeba šifrování než nativních rozhraní API.
@@ -50,16 +52,16 @@ Spravované obslužné rutiny je plně spravovaná HttpClient obslužná rutina,
 
 <a name="CFNetwork" />
 
-## <a name="cfnetwork"></a>CFNetwork
+### <a name="cfnetwork"></a>CFNetwork
 
 Obslužné rutiny na základě CFNetwork je založena na nativního `CFNetwork` framework k dispozici v iOS 6 nebo novější.
 
-### <a name="pros"></a>Odborníci na:
+#### <a name="pros"></a>Odborníci na:
 
  - Používá nativních rozhraní API pro lepší výkon a menší velikost spustitelný soubor.
  - Podporuje pro novější standardy, jako je protokol TLS 1.2.
 
-### <a name="cons"></a>Cons:
+#### <a name="cons"></a>Cons:
 
  - Vyžaduje iOS 6 nebo novější.
  - Není k dispozici v watchOS.
@@ -67,22 +69,21 @@ Obslužné rutiny na základě CFNetwork je založena na nativního `CFNetwork` 
 
 <a name="NSUrlSession" />
 
-## <a name="nsurlsession"></a>NSUrlSession
+### <a name="nsurlsession"></a>NSUrlSession
 
 Obslužné rutiny na základě NSURLSession je založena na nativního `NSURLSession` framework k dispozici v iOS 7 a novější.
 
-### <a name="pros"></a>Odborníci na:
+#### <a name="pros"></a>Odborníci na:
 
  - Používá nativních rozhraní API pro lepší výkon a menší velikost spustitelný soubor.
  - Zajišťuje podporu pro nejnovější standardy, jako je protokol TLS 1.2.
 
-### <a name="cons"></a>Cons:
+#### <a name="cons"></a>Cons:
 
  - Vyžaduje iOS 7 nebo novější.
  - Některé funkce nebo možnosti HttpClient nejsou k dispozici.
 
-
-## <a name="programmatically-setting-the-httpmessagehandler"></a>Objekt HttpMessageHandler prostřednictvím kódu programu nastavení
+### <a name="programmatically-setting-the-httpmessagehandler"></a>Objekt HttpMessageHandler prostřednictvím kódu programu nastavení
 
 Kromě konfigurace projektu celou uvedené výše, můžete také vytvořit instanci `HttpClient` a vložit požadovanou `HttpMessageHandler` pomocí konstruktoru, jak je předvedeno v tyto fragmenty kódu:
 
@@ -104,7 +105,7 @@ Díky tomu je možné použít jiné `HttpMessageHandler` z co je v deklarována
 <a name="Selecting-a-SSL-TLS-implementation" />
 <a name="Apple-TLS" />
 
-# <a name="ssltls-implementation-build"></a>Implementace protokolu SSL/TLS sestavení
+## <a name="ssltls-implementation-build"></a>Implementace protokolu SSL/TLS sestavení
 
 Protokol SSL (Secure Socket Layer) a jeho následníka TLS (Transport Layer Security) poskytuje podporu pro protokol HTTP a jiných síťových připojení prostřednictvím `System.Net.Security.SslStream`. Xamarin.iOS, Xamarin.tvOS nebo na Xamarin.Mac `System.Net.Security.SslStream` implementace zavolá společnosti Apple nativní implementaci protokolu SSL/TLS místo použití spravovaných implementace poskytované Mono. Nativní implementaci společnosti Apple podporuje TLS 1.2.
 
@@ -114,7 +115,7 @@ Protokol SSL (Secure Socket Layer) a jeho následníka TLS (Transport Layer Secu
 
 <a name="App-Transport-Security" />
 
-# <a name="app-transport-security"></a>Zabezpečení přenosu aplikace
+## <a name="app-transport-security"></a>Zabezpečení přenosu aplikace
 
 Společnosti Apple _zabezpečení přenosu aplikace_ (ATS) vynucuje zabezpečené připojení mezi prostředků z Internetu (třeba server back-end aplikace) a aplikací. ATS zajišťuje shodu všechny internetové komunikace s zabezpečené připojení osvědčených postupů, a zabrání náhodného zpřístupnění citlivých informací, buď přímo prostřednictvím aplikace nebo knihovny, které je využívají.
 
@@ -141,10 +142,8 @@ Následující fragment kódu je příkladem co `MtouchTlsProvider` nastavení v
 ```xml
 <MtouchTlsProvider>Default</MtouchTlsProvider>
 ```
-s
-
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Transport Layer Security (TLS)](~/cross-platform/app-fundamentals/transport-layer-security.md)
-- [Zabezpečení přenosu aplikace](~/ios/app-fundamentals/ats.md)
+- [Protokol TLS (Transport Layer Security)](~/cross-platform/app-fundamentals/transport-layer-security.md)
+- [Zabezpečení přenosu aplikací](~/ios/app-fundamentals/ats.md)

@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 12314e6ec5951a5a094ed8b0a5536b450853c5fb
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4a3f8ca8f4502b9585536815aef81f66cacd214f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="customizing-a-tables-appearance"></a>Přizpůsobení vzhledu tabulky
 
@@ -29,7 +29,7 @@ Existují čtyři integrované styly:
 
 Tyto snímky obrazovky ukazují, jak se zobrazí každý styl:
 
- [ ![](customizing-table-appearance-images/image7.png "Tyto snímky obrazovky ukazují, jak se zobrazí každý styl")](customizing-table-appearance-images/image7.png)
+ [![](customizing-table-appearance-images/image7.png "Tyto snímky obrazovky ukazují, jak se zobrazí každý styl")](customizing-table-appearance-images/image7.png#lightbox)
 
 Ukázka **CellDefaultTable** obsahuje kód k vytvoření těchto obrazovky. Styl buněk je nastavena v `UITableViewCell` konstruktor takto:
 
@@ -60,7 +60,7 @@ Buněk může mít následující příslušenství přidat napravo od zobrazen�
 
 Toto je, jak vypadají:
 
- [ ![](customizing-table-appearance-images/image8.png "Ukázka příslušenství")](customizing-table-appearance-images/image8.png)
+ [![](customizing-table-appearance-images/image8.png "Ukázka příslušenství")](customizing-table-appearance-images/image8.png#lightbox)
 
 Chcete-li zobrazit jednu z těchto příslušenství můžete nastavit `Accessory` vlastnost v `GetCell` metoda:
 
@@ -119,7 +119,7 @@ Chcete-li změnit vizuální styl tabulky budete muset zadat vlastní buňky zob
 
 Příklad CellCustomTable implementuje `UITableViewCell` podtřídami, která definuje vlastní rozložení `UILabel`s a `UIImage` s různá písma a barvy. Výsledný buněk vypadat takto:
 
- [ ![](customizing-table-appearance-images/image9.png "Vlastní buňky rozložení")](customizing-table-appearance-images/image9.png)
+ [![](customizing-table-appearance-images/image9.png "Vlastní buňky rozložení")](customizing-table-appearance-images/image9.png#lightbox)
 
 Třída vlastní buněk se skládá z jenom tři metody:
 

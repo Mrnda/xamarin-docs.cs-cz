@@ -3,14 +3,15 @@ title: "Souhrn kapitoly 9. Volání rozhraní API podle platformy"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 4FFA1BD4-B3ED-461C-9B00-06ABF70D471D
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 637096d3ebb7fb90321f7f459e0ca9e51572d935
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 84650c930445172d27520129123d493253851642
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-9-platform-specific-api-calls"></a>Souhrn kapitoly 9. Volání rozhraní API podle platformy
 
@@ -20,7 +21,7 @@ Někdy je nutné spouštět nějaký kód, který se liší podle platformy. Tat
 
 Xamarin.Forms sdílený prostředek projektu může spustit jinou kód pro každou platformu pomocí jazyka C# direktivy preprocesoru `#if`, `#elif`, a `endif`. Tento postup je znázorněn v [ **PlatInfoSap1**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter09/PlatInfoSap1):
 
-[![Trojitá snímek proměnné formátu odstavce](images/ch09fg01-small.png "Model zařízení a operační systém")](images/ch09fg01-large.png "Model zařízení a operační systém")
+[![Trojitá snímek proměnné formátu odstavce](images/ch09fg01-small.png "Model zařízení a operační systém")](images/ch09fg01-large.png#lightbox "Model zařízení a operační systém")
 
 Kód výsledné však může být ugly a obtížné číst.
 

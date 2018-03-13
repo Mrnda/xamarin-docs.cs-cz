@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 09/25/2017
-ms.openlocfilehash: e71d497201cc2d8f2b3e2b8b252e5f963806a75b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 14372c3ca42d1ba4a8ade1248f3c5f3210cc7e46
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="customizing-bindings"></a>Přizpůsobení vazby
 
 _Vazbu Xamarin.Android můžete přizpůsobit úpravou metadata, která řídí proces vytváření vazby. Tyto ruční úpravy jsou často potřebné pro řešení chyb při sestavení a pro úpravu výsledné rozhraní API, tak, aby byly víc konzistentní s C# nebo .NET. Tyto příručky popisují strukturu tato metadata, jak upravit metadata a jak JavaDoc obnovení pomocí pro názvy parametrů metody._
 
-<a name="overview" />
 
 ## <a name="overview"></a>Přehled
  
@@ -34,7 +33,6 @@ Xamarin.Android automatizuje velkou část procesu vázání; ale v některých 
 
 Některé nebo všechny tyto změny můžete provést změnou metadata, která řídí proces vytváření vazby.
 
-<a name="guides" />
 
 ## <a name="guides"></a>Příručky
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 11/17/2017
-ms.openlocfilehash: 0c2765551c16be605bc78d9ef32a91fd2c4ead8c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9602e4d99e8f5c004fe75ab724bb3746aca46003
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="resource-dictionaries"></a>Slovnících prostředků
 
@@ -83,10 +83,10 @@ Každý prostředek mít klíč, který je zadán pomocí `x:Key` atribut, kter�
 
 První [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) instance načte a zpracuje `LabelPageHeadingStyle` prostředků, které jsou definované na úrovni aplikace [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/), s druhou `Label` instance načítání a využívají `LabelNormalStyle` prostředků, které jsou definované na úrovni řízení `ResourceDictionary`. Podobně [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) instance načte a zpracuje `NormalTextColor` prostředků, které jsou definované na úrovni aplikace `ResourceDictionary`a `MediumBoldText` prostředků, které jsou definované na úrovni řízení `ResourceDictionary`. Výsledkem je vidět na následujících snímcích obrazovky vzhled:
 
-[![](resource-dictionaries-images/screenshots-sml.png "Využívání prostředků ResourceDictionary")](resource-dictionaries-images/screenshots.png "spotřebovávat ResourceDictionary prostředků")
+[![](resource-dictionaries-images/screenshots-sml.png "Využívání prostředků ResourceDictionary")](resource-dictionaries-images/screenshots.png#lightbox "spotřebovávat ResourceDictionary prostředků")
 
 > [!NOTE]
-> **Poznámka:**: prostředky, které jsou specifické pro jednu stránku by neměly být obsažené ve slovníku prostředků s úrovní aplikace, jako například prostředky se pak analyzovat při spuštění aplikace místo Pokud to vyžaduje na stránce. Další informace najdete v tématu [snížit velikost slovník prostředků aplikace](~/xamarin-forms/deploy-test/performance.md).
+> Prostředky, které jsou specifické pro jednu stránku by neměly být obsažené v aplikaci prostředků s úrovní slovníku, jako například prostředků bude analyzovat poté při spuštění aplikace místo, pokud to vyžaduje na stránce. Další informace najdete v tématu [snížit velikost slovník prostředků aplikace](~/xamarin-forms/deploy-test/performance.md).
 
 ## <a name="overriding-resources"></a>Přepsání prostředky
 
@@ -118,7 +118,7 @@ Když [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Fo
 
 Původní `PageBackgroundColor` a `NormalTextColor` instance, které jsou definované na úrovni aplikace, jsou přepsány `PageBackgroundColor` a `NormalTextColor` instance definované na úrovni stránky. Proto se stane modrou barvu pozadí stránky a text na této stránce se změní na žlutý, jak je předvedeno na následujících snímcích obrazovky:
 
-[![](resource-dictionaries-images/overridding-screenshots-sml.png "Přepsání ResourceDictionary prostředky")](resource-dictionaries-images/overridding-screenshots.png "přepsání ResourceDictionary prostředky")
+[![](resource-dictionaries-images/overridding-screenshots-sml.png "Přepsání ResourceDictionary prostředky")](resource-dictionaries-images/overridding-screenshots.png#lightbox "přepsání ResourceDictionary prostředky")
 
 Všimněte si však, že na pozadí panelu [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) stále žlutý, protože [ `BarBackgroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.NavigationPage.BarBackgroundColor/) je nastavena na hodnotu `PageBackgroundColor` prostředků, které jsou definované v aplikaci úroveň [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/).
 
@@ -175,7 +175,7 @@ Při slučování [ `ResourceDictionary` ](https://developer.xamarin.com/api/typ
 1. Prostředky obsažené ve slovnících prostředků, které byly slučovány prostřednictvím `MergedDictionaries` kolekce, v pořadí uvedeném v `MergedDictionaries` vlastnost.
 
 > [!NOTE]
-> **Poznámka:**: vyhledávání slovnících prostředků může být výpočetně náročné úlohy, pokud aplikace obsahuje více slovnících velké prostředků. Proto zajistěte, aby každé stránce v aplikaci jenom používala slovnících prostředků, které jsou vhodné na stránku, aby se zabránilo zbytečným vyhledávání.
+> Hledání slovnících prostředků může být výpočetně náročné úlohy, pokud aplikace obsahuje více slovnících velké prostředků. Proto zajistěte, aby každé stránce v aplikaci jenom používala slovnících prostředků, které jsou vhodné na stránku, aby se zabránilo zbytečným vyhledávání.
 
 ## <a name="summary"></a>Souhrn
 

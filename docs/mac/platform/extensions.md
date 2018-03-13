@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 5ce20322b576b12ff9dfe56ef0bc9d2e1ca27792
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 530e53230e9f0dea165b083fa6795558025a293f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarinmac-extension-support"></a>Podpora Xamarin.Mac rozšíření
 
@@ -42,7 +42,7 @@ Při práci s rozšířením Xamarin.Mac, může být užitečné následující
 - Jakékoli výjimky nezachycená dojde k chybě proces rozšíření, poskytuje jenom malé množství užitečné informace v **protokolu systému**. Zabalení problémových kód `try/catch` (výjimek) blokovat, `NSLog`je předtím, než znovu vyvolání můžou být užitečné.
 - **Protokolu systému** lze přistupovat z **konzoly** aplikací v **aplikace** > **nástroje**:
 
-    [ ![](extensions-images/extension02.png "Protokol systému")](extensions-images/extension02.png)
+    [![](extensions-images/extension02.png "Protokol systému")](extensions-images/extension02.png#lightbox)
 - Jak jsme uvedli výše, spuštění rozšíření hostitelskou aplikaci bude registraci ji v systému. Odstranění sady aplikací se zrušit registraci. 
 - Pokud jsou registrované "stray" verze rozšíření aplikace, použijte následující příkaz je najít, (, můžete je odstranit): `plugin kit -mv`
 

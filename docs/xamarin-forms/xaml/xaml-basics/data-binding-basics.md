@@ -4,14 +4,15 @@ description: "Datové vazby povolit vlastnosti dvou objektů propojení tak, aby
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: 46e0c1f9b2aff52c1d31774a15e818c78a70056a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: dbbbe051aab065a5b71905459f577fcacefd8bc5
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="part-4-data-binding-basics"></a>Část 4. Základy vazba dat
 
@@ -99,7 +100,7 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 
 Tady je spuštěným programem:
 
-[ ![](data-binding-basics-images/sliderbinding.png "Zobrazení zobrazení vazby")](data-binding-basics-images/sliderbinding-large.png "vazby zobrazení – zobrazení ")
+[![](data-binding-basics-images/sliderbinding.png "Zobrazení zobrazení vazby")](data-binding-basics-images/sliderbinding-large.png#lightbox "vazby zobrazení – zobrazení ")
 
 ## <a name="the-binding-mode"></a>Režim vazby 
 
@@ -197,7 +198,7 @@ Vazby na tři `Slider` zobrazení jsou `OneWayToSource`znamená, `Slider` hodnot
 
 Ale vazby pro `Scale` vlastnost je `TwoWay`. Důvodem je, že `Scale` vlastnost má výchozí hodnotu 1 a pomocí `TwoWay` vazby příčiny `Slider` počáteční hodnota, která má být nastavena na 1 a nikoli na 0. Pokud byly vazbou `OneWayToSource`, `Scale` vlastnost by původně nastavena na hodnotu 0 z `Slider` výchozí hodnota. `Label` Nebudou viditelné a který může být úplně jasné uživateli.
 
- [ ![](data-binding-basics-images/slidertransforms.png "Zpětné vazby")](data-binding-basics-images/slidertransforms-large.png "zpětné vazby")
+ [![](data-binding-basics-images/slidertransforms.png "Zpětné vazby")](data-binding-basics-images/slidertransforms-large.png#lightbox "zpětné vazby")
 
 ## <a name="bindings-and-collections"></a>Vazby a kolekce
 
@@ -227,7 +228,7 @@ Nastavení statické `NamedColor.All` vlastnost, která má `ItemsSource` z `Lis
 
 Výsledné zobrazení vytváří skutečně jsou položky typu `XamlSamples.NamedColor`:
 
-[ ![](data-binding-basics-images/listview1.png "Vazby ke kolekci")](data-binding-basics-images/listview1-large.png "vazby ke kolekci")
+[![](data-binding-basics-images/listview1.png "Vazby ke kolekci")](data-binding-basics-images/listview1-large.png#lightbox "vazby ke kolekci")
 
 Není velkého množství informací, ale `ListView` posouvatelného a které lze vybírat.
 
@@ -249,7 +250,7 @@ Definování šablon pro položky, budete chtít přerušení `ItemTemplate` vla
 
 `Label` Element je nastaven na hodnotu `View` vlastnost `ViewCell`. ( `ViewCell.View` Značky nejsou potřebné, protože `View` vlastnost je vlastnost obsahu `ViewCell`.) Tento kód zobrazí `FriendlyName` vlastnost jednotlivých `NamedColor` objektu:
 
-[ ![](data-binding-basics-images/listview2.png "Vytvoření vazby na kolekci s šablonu DataTemplate")](data-binding-basics-images/listview2-large.png "vazby ke kolekci s šablonu DataTemplate")
+[![](data-binding-basics-images/listview2.png "Vytvoření vazby na kolekci s šablonu DataTemplate")](data-binding-basics-images/listview2-large.png#lightbox "vazby ke kolekci s šablonu DataTemplate")
 
 Mnohem lepší. Nyní všechno, co je potřeba je smrk až šablony položky s další informace a skutečný barvu. Pro podporu této šablony, byly některé hodnoty a objekty definovány v slovník prostředků stránky:
 
@@ -385,7 +386,7 @@ Tři datové vazby odkazovat na tuto jediné instance. Všimněte si, že `Bindi
 
 Tady je výsledek:
 
-[ ![](data-binding-basics-images/listview3.png "Vytvoření vazby na kolekci s šablonu DataTemplate a převaděče")](data-binding-basics-images/listview3-large.png "vazby ke kolekci s šablonu DataTemplate a převaděče")
+[![](data-binding-basics-images/listview3.png "Vytvoření vazby na kolekci s šablonu DataTemplate a převaděče")](data-binding-basics-images/listview3-large.png#lightbox "vazby ke kolekci s šablonu DataTemplate a převaděče")
 
 `ListView` Je poměrně složité při zpracování změn, které můžou nastat dynamicky v základní data, ale jenom v případě provést určité kroky. Pokud kolekce položek přiřazen k `ItemsSource` vlastnost `ListView` změny během doby běhu –, pokud položky můžete přidat do nebo z kolekce odebrán – použijte `ObservableCollection` třídu pro tyto položky. `ObservableCollection` implementuje `INotifyCollectionChanged` rozhraní, a `ListView` nainstaluje obslužnou rutinu pro `CollectionChanged` událostí.
 

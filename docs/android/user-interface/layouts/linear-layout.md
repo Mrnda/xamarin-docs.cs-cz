@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 3cc5db39280c72f0de9dbdae07a49b56416c90a5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fc6bc9e1d4625f8f45887b0a144a31383046b296
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="linearlayout"></a>LinearLayout
 
@@ -116,11 +116,10 @@ protected override void OnCreate (Bundle savedInstanceState)
 
 Spusťte aplikaci. Měli byste vidět následující:
 
-[ ![Snímek obrazovky aplikace první LinearLayout vodorovně uspořádané druhé svisle](linear-layout-images/helloviews1.png)](linear-layout-images/helloviews1.png)
+[![Snímek obrazovky aplikace první LinearLayout vodorovně uspořádané druhé svisle](linear-layout-images/helloviews1.png)](linear-layout-images/helloviews1.png#lightbox)
 
 Všimněte si, jak definuje chování jednotlivých zobrazení v atributy XML. Zkuste stisknout různé hodnoty pro `android:layout_weight` najdete v části Jak nemovitosti obrazovky je distribuován na základě váhu jednotlivých prvků. Najdete v článku [běžně používané objekty rozložení](http://developer.android.com/guide/topics/ui/declaring-layout.html) dokumentu další informace o [ `LinearLayout` ](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/) obslužné rutiny `android:layout_weight` atribut.
 
-<a name="References" />
 
 ## <a name="references"></a>Odkazy
 

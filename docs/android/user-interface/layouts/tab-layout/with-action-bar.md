@@ -8,17 +8,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 14abb7a4b85b493bb0ab96a982d989fad783fabd
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: afaa02168dcac54115e8fca53683725926e4baed
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="tabbed-layouts-with-the-actionbar"></a>Na kartách rozložení s nadřízených členů.
 
 _Tento průvodce uvádí a vysvětluje, jak vytvořit záložkách uživatelské rozhraní v aplikaci Xamarin.Android pomocí rozhraní API nadřízených členů._
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Přehled
 
@@ -27,7 +26,6 @@ Na panelu akcí je Android uživatelského rozhraní vzor, který slouží k pos
 Všimněte si, že `Toolbar` je součástí panelu novější a více zobecněný akce, která byste měli používat místo z `ActionBar` (`Toolbar` byla navržená tak, aby nahradit `ActionBar`). Další informace najdete v tématu [nástrojů](~/android/user-interface/controls/tool-bar/index.md). 
 
 
-<a name="Requirements" />
 
 ## <a name="requirements"></a>Požadavky
 
@@ -36,7 +34,6 @@ Jakékoli aplikace Xamarin.Android, která cílí úroveň rozhraní API 11 (And
 Některé z rozhraní API nadřízených členů zpět přenesené úroveň rozhraní API 7 (Android 2.1) a jsou dostupné prostřednictvím [V7 kompatibility aplikace knihovny](http://developer.android.com/tools/support-library/features.html#v7-appcompat), který je k dispozici aplikace Xamarin.Android přes [Xamarin Android Support Library - V7 ](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/) balíčku.
 
 
-<a name="Introducing_tabs_in_the_ActionBar" />
 
 ## <a name="introducing-tabs-in-the-actionbar"></a>Představení karty v nadřízených členů.
 
@@ -63,7 +60,6 @@ Zabalí Xamarin.Android `ActionBar.ITabListener` s událostmi na `ActionBar.Tab`
 -  TabUnselected
 
 
-<a name="Adding_Tabs_to_the_ActionBar" />
 
 ### <a name="adding-tabs-to-the-actionbar"></a>Přidání karet do nadřízených členů.
 
@@ -111,7 +107,6 @@ protected override void OnCreate(Bundle bundle)
 }
 ```
 
-<a name="Event_Handlers_vs_ActionBar.ITabListener" />
 
 #### <a name="event-handlers-vs-actionbaritablistener"></a>Vs obslužné rutiny události ActionBar.ITabListener
 
@@ -120,7 +115,6 @@ Aplikace by měly používat obslužné rutiny událostí a `ActionBar.ITabListe
 Při plánování práce s mnoha karty, nebo sdílení běžné funkce mezi kartami nadřízených členů, může být efektivnější z hlediska paměti a výkon pro vytvoření vlastní třídy, který implementuje `ActionBar.ITabListener`a sdílení jedné instance třídy. Tím se sníží počet GREF společnosti, který používá aplikace pro Xamarin.Android. 
 
 
-<a name="Backwards_Compatibility_for_Older_Devices" />
 
 ### <a name="backwards-compatibility-for-older-devices"></a>Zpětné kompatibility pro starší zařízení
 
@@ -177,7 +171,6 @@ public class MainActivity : ActionBarActivity, ActionBar.ITabListener
 }
 ```
 
-<a name="Summary" />
 
 ## <a name="summary"></a>Souhrn
 

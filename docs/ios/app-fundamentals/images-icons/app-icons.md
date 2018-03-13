@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/22/2017
-ms.openlocfilehash: 6de57e9523ff336c2e06e39903280db9c9ab95fa
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: df9059b0e64b4a05b554f25b5f9d7f6031406633
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="application-icons"></a>Ikony aplikace
 
@@ -32,13 +32,13 @@ Stejným způsobem, aplikace Xamarin.iOS můžete použít image prostředky pro
 
 - **Ikona aplikace** – všechny aplikace pro iOS musí definovat ikony aplikace. Toto je ikona, která bude uživatel klepnout na domovské obrazovce iOS spusťte aplikaci. Kromě toho tato ikona je použita herní centrum, pokud je k dispozici. Příklad: 
 
-    [ ![](app-icons-images/000.png "Ikona aplikace")](app-icons-images/000-full.png)
+    [![](app-icons-images/000.png "Ikona aplikace")](app-icons-images/000-full.png#lightbox)
 - **Bodové ikonu** – vždy, když uživatel zadá název aplikace v rámci vyhledávání Spotlight tato ikona se zobrazí. Příklad: 
 
-    [ ![](app-icons-images/000a.png "Ikona Spotlight")](app-icons-images/000a-full.png)
+    [![](app-icons-images/000a.png "Ikona Spotlight")](app-icons-images/000a-full.png#lightbox)
 - **Ikona nastavení** – Pokud uživatel zadá **nastavení** aplikace na svém zařízení s iOS, tato ikona se zobrazí na konci **nastavení** seznamu pro aplikaci. Příklad: 
 
-    [ ![](app-icons-images/000b.png "Ikona nastavení")](app-icons-images/000b-full.png)
+    [![](app-icons-images/000b.png "Ikona nastavení")](app-icons-images/000b-full.png#lightbox)
 
 Následující obrázek asset velikosti a řešení bude potřeba k podporovat všechny typy ikon vyžaduje aplikaci Xamarin.iOS cílení na systém iOS 5 prostřednictvím iOS 9 (nebo vyšší):
 

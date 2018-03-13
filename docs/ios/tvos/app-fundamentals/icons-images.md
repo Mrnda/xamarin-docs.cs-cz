@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 670c990fb4f2e4d2a01ada83ea98e8e589b5c473
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d1052695bb7337a18d1a2f1f7015e9079f86f6f5
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-icons-and-images"></a>Práce s ikony a obrázků
 
@@ -67,13 +67,13 @@ Pokud chcete nastavit pro bitovou kopii spusťte projekt tvOS, postupujte podle 
 
 1. V **Průzkumníku řešení**, dvakrát klikněte na `Assets.xcassets` otevřete pro úpravy: 
 
-    [ ![](icons-images-images/asset01.png "Soubor Assets.xcassets")](icons-images-images/asset01.png)
+    [![](icons-images-images/asset01.png "Soubor Assets.xcassets")](icons-images-images/asset01.png#lightbox)
 2. V **Asset Editor**, klikněte na `LaunchImages` asset: 
 
-    [ ![](icons-images-images/asset02.png "LaunchImages asset")](icons-images-images/asset02.png)
+    [![](icons-images-images/asset02.png "LaunchImages asset")](icons-images-images/asset02.png#lightbox)
 3. Klikněte na **1 x Apple TV** položku a vyberte bitovou kopii spustit nebo volitelně přetáhněte novou bitovou kopii ze systému souborů: 
 
-    [ ![](icons-images-images/asset03.png "Vybrat bitovou spouštěcí kopii")](icons-images-images/asset03.png)
+    [![](icons-images-images/asset03.png "Vybrat bitovou spouštěcí kopii")](icons-images-images/asset03.png#lightbox)
 4. Uložte provedené změny.
 
 <a name="Layered-Images" />
@@ -84,7 +84,7 @@ Nový Apple TV, pracují na základě bitové kopie s paralaxy účinek účelem
 
 Vrstvený Image obsahují z dva (2) do pěti (5) samostatných vrstev, které společně tvoří úplnou bitovou kopii. S výjimkou vrstva pozadí každou vrstvu používá jeho pořadí Z-order společně s průhlednost k vytvoření dojem hloubky. Když uživatel pracuje s bitovou kopii vrstvu, jsou vyšší seřazené Z vrstvy škálovat a překryté k vytvoření této vliv.
 
-[ ![](icons-images-images/layered01.png "Diagram vrstev seřazené Z bitové kopie")](icons-images-images/layered01.png)
+[![](icons-images-images/layered01.png "Diagram vrstev seřazené Z bitové kopie")](icons-images-images/layered01.png#lightbox)
 
 > [!IMPORTANT]
 > **Poznámka:** Layered Image jsou požadovány pro ikony vaší aplikace a jsou volitelné pro ostatní [může získat fokus položky](~/ios/tvos/app-fundamentals/navigation-focus.md#Focus-and-Selection) (například obrázek police Top). Apple navrhuje pomocí na základě bitové kopie pro žádný obrázek, který můžete získat fokus ve vaší aplikaci.
@@ -109,7 +109,7 @@ Pokud je to možné, byste měli vždycky používat integrované `UIKit` ovlád
 
 Je důležité si nezapomeňte zahrnout _bezpečné zóny_ ohraničení do každou vrstvu, která bude tvoří vrstvu Image. Protože jednotlivých vrstvách můžete škálovat a oříznout během paralaxy účinek, můžete obsah vrstvy oříznout vypnout, pokud je příliš zavřete okraj vrstvy:
 
-[ ![](icons-images-images/layered02.png "ohraničení 35 pixelů")](icons-images-images/layered02.png)
+[![](icons-images-images/layered02.png "ohraničení 35 pixelů")](icons-images-images/layered02.png#lightbox)
 
 <a name="Creating-Layered-Images" />
 
@@ -128,7 +128,7 @@ tvOS funguje s vrstvami obrázky v následujících formátech:
 
 Apple vytvořili [paralaxy Náhled](http://itunespartner.apple.com/assets/downloads/Parallax%20Previewer.dmg) preview a vytvořený na základě bitové kopie potřebné pro ikon aplikace a může získat fokus nepovinných položek. Náhledu zobrazí všechny vrstvy, která tvoří dokončené bitové kopie na základě:
 
-[ ![](icons-images-images/layered03.png "Náhled paralaxy dokumentu")](icons-images-images/layered03.png)
+[![](icons-images-images/layered03.png "Náhled paralaxy dokumentu")](icons-images-images/layered03.png#lightbox)
 
 Při zobrazení náhledu bitovou kopii vrstvu, můžete pomocí myši otočit bitovou kopii a náhled paralaxy účinek. Použití  **+**  (plus) a  **-**  (tlačítka přidávat a odebírat vrstvy minus).
 
@@ -142,7 +142,7 @@ Další informace o vytváření a zobrazování náhledu na základě bitové k
 
 Aplikace Xamarin.tvOS bude vyžadovat nejen ikony aplikace pro Apple TV Domů obrazovky, ale také ikonu pro obchod s aplikacemi. Ikona aplikace je první změňte zajistit skvělé dojem na potenciální uživatelů a měli komunikovat účel vaší aplikace na první pohled.
 
-[ ![](icons-images-images/icon01.png "Ikona aplikace")](icons-images-images/icon01.png)
+[![](icons-images-images/icon01.png "Ikona aplikace")](icons-images-images/icon01.png#lightbox)
 
 Každé aplikace musíte zadat malá a velká verzi jeho ikona aplikace. Malé ikony se použije na obrazovce Apple TV Domů, když je aplikace nainstalovaná. Velké verze je používána obchodu s aplikacemi. Velké ikony aplikace by měl napodobovat vzhledu a chování verze malé ikony.
 
@@ -202,16 +202,16 @@ Pokud chcete nastavit ikony aplikace vyžaduje pro svůj projekt tvOS, postupujt
 
 1. V **Průzkumníku řešení**, dvakrát klikněte na `Assets.xcassets` otevřete pro úpravy: 
 
-    [ ![](icons-images-images/asset01.png "Assets.xcassets fileg")](icons-images-images/asset01.png)
+    [![](icons-images-images/asset01.png "Assets.xcassets fileg")](icons-images-images/asset01.png#lightbox)
 2. V **Asset Editor**, rozbalte `App Icon & Top Shelf Image` asset: 
 
-    [ ![](icons-images-images/asset04.png "Rozbalte asset horní police Image")](icons-images-images/asset04.png)
+    [![](icons-images-images/asset04.png "Rozbalte asset horní police Image")](icons-images-images/asset04.png#lightbox)
 3. Potom rozbalte položku `App Icon - Small` asset: 
 
-    [ ![](icons-images-images/asset05.png "Rozbalte ikona aplikace – malé asset")](icons-images-images/asset05.png)
+    [![](icons-images-images/asset05.png "Rozbalte ikona aplikace – malé asset")](icons-images-images/asset05.png#lightbox)
 4. Potom rozbalte `Back` asset a klikněte na `Contents` položku: 
 
-    [ ![](icons-images-images/asset06.png "Potom rozbalte asset zpět")](icons-images-images/asset06.png)
+    [![](icons-images-images/asset06.png "Potom rozbalte asset zpět")](icons-images-images/asset06.png#lightbox)
 5. Klikněte na **1 x Apple TV položka** a vyberte soubor obrazu.
 6. Zopakujte výše uvedené kroky pro `Front` a `Middle` prostředky.
 7. Opakujte stejný postup můžete definovat `App Icon - Large` asset.
@@ -223,7 +223,7 @@ Pokud chcete nastavit ikony aplikace vyžaduje pro svůj projekt tvOS, postupujt
 
 Pokud uživatel má umístit aplikace Xamarin.tvOS na začátek řádku na obrazovce Apple TV Domů, velký obrázek police horní zobrazí, pokud vaše aplikace je vybraná uživatelem. Tuto bitovou kopii měli zvýrazněte funkcí aplikace nebo zadejte přímé odkazy na jeho obsah.
 
-[ ![](icons-images-images/topshelf01.png "Horní obrázek police – příklad")](icons-images-images/topshelf01.png)
+[![](icons-images-images/topshelf01.png "Horní obrázek police – příklad")](icons-images-images/topshelf01.png#lightbox)
 
 Bitovou kopii police horní lze zadat buď jako jednu statickou `.png` nebo `.lsr` souboru (v tématu [vytváření bitových kopií vrstvený](#Creating-Layered-Images)) nebo ji dynamicky vytvoří za běhu jako jeden řádek může získat fokus položek (najdete v části [ Dynamické nejvyšší police obsah](#Dynamic-Top-Shelf-Content) níže).
 
@@ -253,13 +253,13 @@ Pokud chcete nastavit horní obrázek police požadované pro svůj projekt tvOS
 
 1. V **Průzkumníku řešení**, dvakrát klikněte na `Assets.xcassets` otevřete pro úpravy: 
 
-    [ ![](icons-images-images/asset01.png "Soubor Assets.xcassets")](icons-images-images/asset01.png)
+    [![](icons-images-images/asset01.png "Soubor Assets.xcassets")](icons-images-images/asset01.png#lightbox)
 2. V **Asset Editor**, rozbalte `App Icon & Top Shelf Image` asset: 
 
-    [ ![](icons-images-images/asset04.png "Rozbalte asset horní police Image")](icons-images-images/asset04.png)
+    [![](icons-images-images/asset04.png "Rozbalte asset horní police Image")](icons-images-images/asset04.png#lightbox)
 3. Klikněte na `Top Shelf Image` asset: 
 
-    [ ![](icons-images-images/asset07.png "Zdroj obrázku police horní")](icons-images-images/asset07.png)
+    [![](icons-images-images/asset07.png "Zdroj obrázku police horní")](icons-images-images/asset07.png#lightbox)
 5. Klikněte na **1 x Apple TV položka** a vyberte soubor obrazu.
 6. Uložte provedené změny.
 
@@ -423,10 +423,10 @@ Postupujte takto:
 
 1. V **Průzkumníku řešení**, dvakrát klikněte `Info.plist` otevřete pro úpravy: 
 
-    [ ![](icons-images-images/info01.png "Soubor Info.plist")](icons-images-images/info01.png)
+    [![](icons-images-images/info01.png "Soubor Info.plist")](icons-images-images/info01.png#lightbox)
 2. V **Info.Plist Editor**, vyberte katalog prostředků (nakonfigurované výše v [nastavení ikony aplikace](#Setting-the-App-Icons) část) pro **ikony aplikace**: 
 
-    [ ![](icons-images-images/info02.png "Info.Plist Editor")](icons-images-images/info02.png)
+    [![](icons-images-images/info02.png "Info.Plist Editor")](icons-images-images/info02.png#lightbox)
 3. Potom vyberte katalog prostředků (nakonfigurované výše v [nastavení bitovou kopii spusťte](#Setting-the-Launch-Image) část) pro **spuštění bitové kopie**.
 4. Uložte provedené změny.
 

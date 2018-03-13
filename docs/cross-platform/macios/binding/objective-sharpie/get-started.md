@@ -7,23 +7,20 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 10/11/2017
-ms.openlocfilehash: 01c390af08e59f3b10888a183df7fa6758c2609c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5d1de42a398affc1b6b6c9b863df5bc86a016c08
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="getting-started"></a>Začínáme
-
-<style type="text/css"> .Terminal blue {color: rgb(10,96,254);} .terminal zelená {barva: rgb(12,156,26);} .terminal purpurová {barva: rgb(152,12,103);} </style>
-
 
 > [!IMPORTANT]
 > **Upozornění:** cíle Sharpie je nástroj pro zkušeného Xamarin vývojářům pokročilou znalost jazyka Objective-C (a rozšíření, C). Před pokusem o vytvořit vazbu knihovna jazyka Objective-C byste měli mít solidní znalosti, jak vytvářet nativní knihovny na příkazovém řádku (a dostatečné povědomí o tom, jak funguje nativní knihovny).
 
 <a name="installing" />
 
-# <a name="installing-objective-sharpie"></a>Instalace cíle Sharpie
+## <a name="installing-objective-sharpie"></a>Instalace cíle Sharpie
 
 Aktuálně je samostatný nástroj příkazového řádku pro Mac OS X 10.10 a novějších cíle Sharpie a _není plně podporované produktu Xamarin_. Tato by měla použít jen pokročilé vývojáři 3rd straně knihovna jazyka Objective-C jako pomůcku při vytváření vazby projektu.
 
@@ -34,9 +31,10 @@ Spusťte instalační program a postupujte podle všech na obrazovce zobrazí v�
   - [Stáhněte si nejnovější verzi](https://dl.xamarin.com/objective-sharpie/ObjectiveSharpie.pkg)
   - [Fórum oznámení](https://forums.xamarin.com/discussion/104800/objective-sharpie-3-4)
 
-> 💡 **Tip:** použít `sharpie update` příkaz k aktualizaci na nejnovější verzi.
+> [!TIP]
+> Použití `sharpie update` příkaz k aktualizaci na nejnovější verzi.
 
-# <a name="basic-walkthrough"></a>Základní postup
+## <a name="basic-walkthrough"></a>Základní postup
 
 Cíle Sharpie je nástroj příkazového řádku zadaný pomocí Xamarin, který pomáhá při vytváření definice potřebné k vytvoření vazby. 3. stran jazyka Objective-C knihovny jazyka C#.
 I když se používá Sharpie cíl, Vývojář *bude* muset upravit generované soubory po dokončení Sharpie cíl, chcete-li vyřešit potíže, které nelze zpracovat automaticky nástrojem.

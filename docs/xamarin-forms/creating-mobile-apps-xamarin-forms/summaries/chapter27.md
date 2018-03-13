@@ -3,14 +3,15 @@ title: "Souhrn kapitoly 27. Vlastní nástroji pro vykreslování"
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 49961953-9336-4FD4-A42F-6D9B05FF52E7
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 0c1dc9ba5cf382551a1142110c68d16421db07e4
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 6d7c2b17e9596b7d2dd26aaf77cf13f7f8086cd5
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="summary-of-chapter-27-custom-renderers"></a>Souhrn kapitoly 27. Vlastní nástroji pro vykreslování
 
@@ -66,7 +67,7 @@ Při zápisu vykreslovací modul, můžete se být odvození třídy z `View`a p
 
 Všechny `ViewRenderer` obsahovat odvozené konfigurace `ExportRenderer` atribut na úrovni sestavení, které přidružuje `HelloView` se konkrétní `HelloViewRenderer` třídy. Toto je, jak Xamarin.Forms vyhledává nástroji pro vykreslování v projektech pro jednotlivé platformy:
 
-[![Trojitá snímek obrazovky zobrazení Hello](images/ch27fg02-small.png "nástroji pro vykreslování vlastní")](images/ch27fg02-large.png "vlastní nástroji pro vykreslování")
+[![Trojitá snímek obrazovky zobrazení Hello](images/ch27fg02-small.png "nástroji pro vykreslování vlastní")](images/ch27fg02-large.png#lightbox "vlastní nástroji pro vykreslování")
 
 ## <a name="renderers-and-properties"></a>Nástroji pro vykreslování a vlastnosti
 
@@ -89,7 +90,7 @@ Obecné parametry, které určuje typy těchto vlastností `ViewRenderer`. V tom
 
 [ **EllipseDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter27/EllipseDemo) třída zobrazí několik z těchto `EllipseView` objekty:
 
-[![Trojitá snímek obrazovky ukázkové elipsy](images/ch27fg03-small.png "EllipseView vlastní nástroji pro vykreslování")](images/ch27fg03-large.png "EllipseView vlastní nástroji pro vykreslování")
+[![Trojitá snímek obrazovky ukázkové elipsy](images/ch27fg03-small.png "EllipseView vlastní nástroji pro vykreslování")](images/ch27fg03-large.png#lightbox "EllipseView vlastní nástroji pro vykreslování")
 
 [ **BouncingBall** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter27/BouncingBall) nedoručitelných zpráv `EllipseView` vypnout strany obrazovky.
 
@@ -113,4 +114,4 @@ Nástroji pro vykreslování detekovat změny do ovládacího prvku nativní a p
 
 - [Úplný text 27 kapitoly (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch27-Apr2016.pdf)
 - [Ukázky kapitoly 27](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter27)
-- [Vlastní nástroji pro vykreslování](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)
+- [Vlastní renderery](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)

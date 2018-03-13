@@ -8,23 +8,22 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: ebb53398edba64e255f1a534556836df8734ba6f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2ed67eac51f6edcfda16caf73e4667c49124082c
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="implementing-with-fragments"></a>Implementace fragmenty
 
 _Android 3.0 zavedla fragmenty. Fragmenty jsou samostatné modulární komponenty, které pomáhají řešit obtíže při psaní aplikací, které můžou běžet na obrazovkách různých velikostí. Tento článek vás provede jak vyvíjet aplikace Xamarin.Android pomocí fragmentů a jak podporovat fragmenty na zařízeních s předem Androidem 3.0._
 
-<a name="Overview" />
 
 ## <a name="overview"></a>Přehled
 
 V této části se budeme zabývat jak vytvořit aplikaci, která se zobrazí seznam plní Shakespeare na a z každé vybrané play v uvozovkách. Naše aplikace bude využívat fragmenty tak, aby jsme definovat naše součásti uživatelského rozhraní na jednom místě, ale používat na různých faktorech. Například následující snímek obrazovky zobrazit aplikace běžící na tablet 10", a také na phone:
 
-[![Snímky obrazovky příklad aplikaci spuštěnou na tablet a phone](images/intro-screenshot-sml.png)](images/intro-screenshot.png)
+[![Snímky obrazovky příklad aplikaci spuštěnou na tablet a phone](images/intro-screenshot-sml.png)](images/intro-screenshot.png#lightbox)
 
 Tato část popisuje v následujících tématech:
 
@@ -34,13 +33,11 @@ Tato část popisuje v následujících tématech:
 
 - **Pomocí Android balíčku pro podporu** &ndash; implementuje balíček Android podporu a potom provede menšími změnami aktivity v aplikaci, díky kterému jej spustit na starší verze systému Android.
 
-<a name="Requirements" />
 
 ## <a name="requirements"></a>Požadavky
 
 Tento postup vyžaduje Xamarin.Android 4.0 nebo vyšší. Bude také nutné instalovat balíček Android podporu, jak je uvedeno v dokumentaci k fragmenty.
 
-<a name="Introduction" />
 
 ## <a name="introduction"></a>Úvod
 

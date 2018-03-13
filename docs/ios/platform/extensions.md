@@ -5,18 +5,23 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 3DEB3D43-3E4A-4099-8331-93C1E7A77095
 ms.technology: xamarin-ios
+ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: f6e80b21c76089c0f3f7ac655584b7e18400307e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 017f3c1b5fc14bf22a5ad85d1017bc8125b04038
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="ios-extensions"></a>iOS rozšíření
 
 _Zavádí v iOS 8, jsou rozšíření pomůcky, které jsou prezentované podle iOS v standardní kontextech, například v centru oznámení, když uživatel požádá vlastní klávesnice, nebo když jsou fotografie úpravy. Všechna rozšíření jsou nainstalovány ve spojení s aplikací kontejneru a aktivují z určitého bodu rozšíření v hostiteli aplikace._
+
+> [!VIDEO https://youtube.com/embed/Sd0-ch9Udmk]
+
+**Vytváření rozšíření v iOS, pomocí [univerzity Xamarin](https://university.xamarin.com/)**
 
 Rozšíření, jako byla zavedená v iOS 8, se specializují `UIViewControllers` , jsou prezentované podle iOS uvnitř standardní kontexty například v rámci **centru oznámení**, jak se specializuje vlastní klávesové typy, které požadoval uživatel k provedení vstup nebo jiných kontextech, například úpravy fotografií, kde můžete rozšíření poskytnout filtry zvláštní efekt.
 
@@ -183,7 +188,7 @@ Konkrétní typy rozšíření může mít větší požadavky: Například **Dn
 
 V následujícím návodu vytvoříte příklad **Dnes** pomůcku, která vypočítá den a počet dnů zbývajících v roce:
 
-[ ![](extensions-images/carpediemscreenshot-sm.png "Pomůcka dnes příklad, která by vypočítala den a počet dnů zbývajících v roce")](extensions-images/carpediemscreenshot.png)
+[![](extensions-images/carpediemscreenshot-sm.png "Pomůcka dnes příklad, která by vypočítala den a počet dnů zbývajících v roce")](extensions-images/carpediemscreenshot.png#lightbox)
 
 <a name="Creating-the-Solution" />
 
@@ -193,26 +198,26 @@ Pokud chcete vytvořit požadované řešení, postupujte takto:
 
 1. Nejprve vytvořte nový iOS, **jediné zobrazení aplikace** projektu a klikněte na tlačítko **Další** tlačítko: 
 
-    [ ![](extensions-images/today01.png "Nejprve vytvořte nový iOS, projekt jediné zobrazení aplikace a klikněte na tlačítko Další")](extensions-images/today01.png)
+    [![](extensions-images/today01.png "Nejprve vytvořte nový iOS, projekt jediné zobrazení aplikace a klikněte na tlačítko Další")](extensions-images/today01.png#lightbox)
 2. Volání projektu `TodayContainer` a klikněte na **Další** tlačítko: 
 
-    [ ![](extensions-images/today02.png "Volání TodayContainer projektu a klikněte na tlačítko Další")](extensions-images/today02.png)
+    [![](extensions-images/today02.png "Volání TodayContainer projektu a klikněte na tlačítko Další")](extensions-images/today02.png#lightbox)
 3. Ověřte **název projektu** a **název řešení SolutionName** a klikněte na tlačítko **vytvořit** tlačítko pro vytvoření řešení: 
 
-    [ ![](extensions-images/today03.png "Ověřte název projektu a název řešení SolutionName a klikněte na tlačítko Vytvořit k vytvoření řešení")](extensions-images/today03.png)
+    [![](extensions-images/today03.png "Ověřte název projektu a název řešení SolutionName a klikněte na tlačítko Vytvořit k vytvoření řešení")](extensions-images/today03.png#lightbox)
 4. Vedle **Průzkumníku řešení**, klikněte pravým tlačítkem na řešení a přidejte nový **iOS rozšíření** projekt **dnes rozšíření** šablony: 
 
-    [ ![](extensions-images/today04.png "V dalším kroku v Průzkumníku řešení klikněte pravým tlačítkem na řešení a přidat nový projekt iOS rozšíření ze šablony dnes rozšíření")](extensions-images/today04.png)
+    [![](extensions-images/today04.png "V dalším kroku v Průzkumníku řešení klikněte pravým tlačítkem na řešení a přidat nový projekt iOS rozšíření ze šablony dnes rozšíření")](extensions-images/today04.png#lightbox)
 5. Volání projektu `DaysRemaining` a klikněte na **Další** tlačítko: 
 
-    [ ![](extensions-images/today05.png "Volání DaysRemaining projektu a klikněte na tlačítko Další")](extensions-images/today05.png)
+    [![](extensions-images/today05.png "Volání DaysRemaining projektu a klikněte na tlačítko Další")](extensions-images/today05.png#lightbox)
 6. Zkontrolujte projekt a klikněte na **vytvořit** tlačítko k jeho vytvoření: 
 
-    [ ![](extensions-images/today06.png "Zkontrolujte projekt a klikněte na tlačítko Vytvořit k jeho vytvoření")](extensions-images/today06.png)
+    [![](extensions-images/today06.png "Zkontrolujte projekt a klikněte na tlačítko Vytvořit k jeho vytvoření")](extensions-images/today06.png#lightbox)
 
 Výsledný řešení teď měli mít dva projekty, jak je vidět tady:
 
-[ ![](extensions-images/today07.png "Výsledný řešení teď by mělo obsahovat dva projekty, jak je vidět tady")](extensions-images/today07.png)
+[![](extensions-images/today07.png "Výsledný řešení teď by mělo obsahovat dva projekty, jak je vidět tady")](extensions-images/today07.png#lightbox)
 
 <a name="Creating-the-Extension-User-Interface" />
 
@@ -228,10 +233,10 @@ K vytvoření uživatelského rozhraní s scénáře, postupujte takto:
 
 1. V **Průzkumníku řešení**, dvakrát klikněte na projekt rozšíření `Main.storyboard` soubor otevřete pro úpravy: 
 
-    [ ![](extensions-images/today08.png "Poklikejte na soubor rozšíření projekty Main.storyboard otevřete pro úpravy")](extensions-images/today08.png)
+    [![](extensions-images/today08.png "Poklikejte na soubor rozšíření projekty Main.storyboard otevřete pro úpravy")](extensions-images/today08.png#lightbox)
 2. Vyberte štítek, který byl automaticky přidán do rozhraní šablony a pojmenujte ho **název** `TodayMessage` v **pomůcky** kartě **Explorer vlastnosti**: 
 
-    [ ![](extensions-images/today09.png "Vyberte štítek, který byl automaticky přidán do rozhraní šablony a poskytněte název TodayMessage na kartě pomůcky Průzkumníku vlastnosti")](extensions-images/today09.png)
+    [![](extensions-images/today09.png "Vyberte štítek, který byl automaticky přidán do rozhraní šablony a poskytněte název TodayMessage na kartě pomůcky Průzkumníku vlastnosti")](extensions-images/today09.png#lightbox)
 3. Uložte změny do scénáře.
 
 <a name="Using-Code" />
@@ -242,16 +247,16 @@ K vytvoření uživatelského rozhraní v kódu, postupujte takto:
 
 1. V **Průzkumníku řešení**, vyberte **DaysRemaining** projekt, přidejte novou třídu a pojmenujte ji `CodeBasedViewController`: 
 
-    [ ![](extensions-images/code01.png "Aelect DaysRemaining projekt, přidejte novou třídu a pojmenujte ji CodeBasedViewController")](extensions-images/code01.png)
+    [![](extensions-images/code01.png "Aelect DaysRemaining projekt, přidejte novou třídu a pojmenujte ji CodeBasedViewController")](extensions-images/code01.png#lightbox)
 2. Znovu, za **Průzkumníku řešení**, dvakrát klikněte na rozšíření `Info.plist` soubor otevřete pro úpravy: 
 
-    [ ![](extensions-images/code02.png "Poklikejte na soubor Info.plist rozšíření otevřete pro úpravy")](extensions-images/code02.png)
+    [![](extensions-images/code02.png "Poklikejte na soubor Info.plist rozšíření otevřete pro úpravy")](extensions-images/code02.png#lightbox)
 3. Vyberte **zobrazení zdroje** (od dolní části obrazovky) a otevřete `NSExtension` uzlu: 
 
-    [ ![](extensions-images/code03.png "Vyberte zobrazení zdroje v dolní části obrazovky a otevřete NSExtension uzlu")](extensions-images/code03.png)
+    [![](extensions-images/code03.png "Vyberte zobrazení zdroje v dolní části obrazovky a otevřete NSExtension uzlu")](extensions-images/code03.png#lightbox)
 4. Odeberte `NSExtensionMainStoryboard` klíče a přidejte `NSPrincipalClass` s hodnotou `CodeBasedViewController`: 
 
-    [ ![](extensions-images/code04.png "Odeberte NSExtensionMainStoryboard klíč a přidejte NSPrincipalClass s hodnotou CodeBasedViewController")](extensions-images/code04.png)
+    [![](extensions-images/code04.png "Odeberte NSExtensionMainStoryboard klíč a přidejte NSPrincipalClass s hodnotou CodeBasedViewController")](extensions-images/code04.png#lightbox)
 5. Uložte provedené změny.
 
 Potom upravte `CodeBasedViewController.cs` souboru a nastavit jej vypadat třeba takto:
@@ -327,7 +332,7 @@ Všimněte si, jak podobně jako tento proces je normální proces vytváření 
 
 V tomto návodu aplikace kontejneru jednoduše slouží jako metody k odeslání a nainstalovat rozšíření a poskytuje žádné funkce. Upravit TodayContainer `Main.storyboard` souboru a přidejte text definování rozšíření funkce a jak ji nainstalovat:
 
-[ ![](extensions-images/today10.png "Upravte soubor TodayContainers Main.storyboard a přidejte text definování rozšíření funkce a k jeho instalaci")](extensions-images/today10.png)
+[![](extensions-images/today10.png "Upravte soubor TodayContainers Main.storyboard a přidejte text definování rozšíření funkce a k jeho instalaci")](extensions-images/today10.png#lightbox)
 
 Uložte změny do scénáře.
 
@@ -337,19 +342,19 @@ Uložte změny do scénáře.
 
 Chcete-li otestovat rozšíření v simulátoru iOS, spusťte **TodayContainer** aplikace. Zobrazí se hlavní zobrazení kontejneru:
 
-[ ![](extensions-images/run01.png "Zobrazí se zobrazení hlavní kontejnery")](extensions-images/run01.png)
+[![](extensions-images/run01.png "Zobrazí se zobrazení hlavní kontejnery")](extensions-images/run01.png#lightbox)
 
 Další, stiskněte tlačítko **Domů** tlačítko v simulátoru prstem směrem dolů z horní části obrazovky, otevřete **centru oznámení**, vyberte **Dnes** a klikněte **Upravit** tlačítko:
 
-[ ![](extensions-images/run02.png "Stiskněte tlačítko Domů v simulátoru prstem směrem dolů z horní části obrazovky, otevřete Centrum oznámení, vyberte kartu dnes a klikněte na tlačítko Upravit")](extensions-images/run02.png)
+[![](extensions-images/run02.png "Stiskněte tlačítko Domů v simulátoru prstem směrem dolů z horní části obrazovky, otevřete Centrum oznámení, vyberte kartu dnes a klikněte na tlačítko Upravit")](extensions-images/run02.png#lightbox)
 
 Přidat **DaysRemaining** rozšíření **Dnes** zobrazení a klikněte na tlačítko **provádí** tlačítko:
 
-[ ![](extensions-images/run03.png "Přidejte rozšíření DaysRemaining do zobrazení dnes a klikněte na tlačítko Hotovo")](extensions-images/run03.png)
+[![](extensions-images/run03.png "Přidejte rozšíření DaysRemaining do zobrazení dnes a klikněte na tlačítko Hotovo")](extensions-images/run03.png#lightbox)
 
 Přidá nový widget **Dnes** zobrazení a výsledky se zobrazí:
 
-[ ![](extensions-images/run04.png "Přidá nový widget zobrazení dnes a zobrazí výsledky")](extensions-images/run04.png)
+[![](extensions-images/run04.png "Přidá nový widget zobrazení dnes a zobrazí výsledky")](extensions-images/run04.png#lightbox)
 
 <a name="Communicating-with-the-Host-App" />
 

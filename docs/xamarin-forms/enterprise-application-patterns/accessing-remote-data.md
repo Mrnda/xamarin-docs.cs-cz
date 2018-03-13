@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: a219a5ed4045bff639f29fd49ef5288139140135
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 0eec51a6c95894482a57bfe3bb1f95aec2045af4
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="accessing-remote-data"></a>Přístup k vzdálených dat
 
@@ -52,7 +52,7 @@ Použití mobilní aplikace eShopOnContainers `HttpClient` třída provádět po
 
 Obrázek 10-1 ukazuje interakce tříd, které čtou data katalogu z katalogu mikroslužbu pro zobrazení pomocí `CatalogView`.
 
-[![](accessing-remote-data-images/catalogdata.png "Načítání dat z katalogu mikroslužbu")](accessing-remote-data-images/catalogdata-large.png "načítání dat z mikroslužbu katalogu")
+[![](accessing-remote-data-images/catalogdata.png "Načítání dat z katalogu mikroslužbu")](accessing-remote-data-images/catalogdata-large.png#lightbox "načítání dat z mikroslužbu katalogu")
 
 **Obrázek 10-1**: načítání dat z mikroslužbu katalogu
 
@@ -157,7 +157,7 @@ Tato metoda načítá data katalogu z databáze SQL s využitím objektu EntityF
 
 Obrázek 10-2 ukazuje interakce tříd, které odesílají data košík zobrazuje `BasketView`, do nákupního košíku mikroslužby.
 
-[![](accessing-remote-data-images/basketdata.png "Odesílání dat do košíku mikroslužbu")](accessing-remote-data-images/basketdata-large.png "odesílání dat do mikroslužbu nákupní košík")
+[![](accessing-remote-data-images/basketdata.png "Odesílání dat do košíku mikroslužbu")](accessing-remote-data-images/basketdata-large.png#lightbox "odesílání dat do mikroslužbu nákupní košík")
 
 **Obrázek 10-2**: odesílání dat do mikroslužbu nákupní košík
 

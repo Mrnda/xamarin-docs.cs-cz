@@ -3,16 +3,16 @@ title: "Hello, Android: Podrobné informace"
 description: "V této příručce dvě části sestavíte svoji první aplikaci Xamarin.Android a pochopili základy vývoje aplikace pro Android pomocí Xamarinu. Na této cestě bude nutné zavést nástrojů, koncepty a kroky potřebné k sestavení a nasazení aplikace pro Xamarin.Android."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: AD3BAE9A-963C-4CF7-9733-111033034289
+ms.assetid: EF0E110B-20EA-43F6-9476-1A0F41AFD298
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/07/2018
-ms.openlocfilehash: de6037b9cfeb66ee1c26c12c2e81913a4a2f1e79
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e9e554da80218d2e89ff79c6e89886d707b1ed95
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="hello-android-deep-dive"></a>Hello, Android: Podrobné informace
 
@@ -83,13 +83,13 @@ Visual Studio pro Mac následuje postup sadě Visual Studio uspořádání kód 
 
 Následující snímek obrazovky uvádí obsah na řešení. Toto je Průzkumníku řešení, která obsahuje strukturu adresáře a všechny soubory přidružené k řešení:
 
-[![Průzkumník řešení](hello-android-deepdive-images/vs/02-solution-structure-sml.png )](hello-android-deepdive-images/vs/02-solution-structure.png)
+[![Průzkumník řešení](hello-android-deepdive-images/vs/02-solution-structure-sml.png)](hello-android-deepdive-images/vs/02-solution-structure.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 Následující snímek obrazovky uvádí obsah na řešení. Toto je panelu pro řešení, která obsahuje strukturu adresáře a všechny soubory přidružené k řešení:
 
-[![Odsazení řešení](hello-android-deepdive-images/xs/02-solution-structure-sml.png)](hello-android-deepdive-images/xs/02-solution-structure.png)
+[![Odsazení řešení](hello-android-deepdive-images/xs/02-solution-structure-sml.png)](hello-android-deepdive-images/xs/02-solution-structure.png#lightbox)
 
 -----
 
@@ -135,11 +135,11 @@ Tato jedinečná funkce systému Android může být velmi užitečné při navr
 
 Když otevřete **Phoneword** aplikaci poprvé v emulátoru nebo zařízení, operační systém vytvoří první *aktivity*. Aktivita je speciální Android třídu, která odpovídá jedné aplikace obrazovky a je odpovědná za kreslení a pohánějící uživatelské rozhraní. Když Android vytváří aplikace první aktivitu, načte bude celá aplikace:
 
-[![Aktivita zatížení](hello-android-deepdive-images/01-activity-load-sml.png)](hello-android-deepdive-images/01-activity-load.png)
+[![Aktivita zatížení](hello-android-deepdive-images/01-activity-load-sml.png)](hello-android-deepdive-images/01-activity-load.png#lightbox)
 
 Vzhledem k tomu, že neexistuje žádná lineární rozšiřování prostřednictvím aplikace platformy Android (můžete spustit aplikace z několika bodů), Android má jedinečný způsob udržování přehledu o třídy a soubory se skládá aplikace. V **Phoneword** příkladu všechny části, které tvoří aplikace jsou registrovány speciální soubor XML s názvem **Android Manifest**. Role **Android Manifest** je ke sledování obsah aplikace, vlastnosti a oprávnění a je zveřejnit pro operační systém Android. Si můžete představit **Phoneword** aplikace jako jednu aktivitu (obrazovky) a kolekce souborů prostředků a pomocné rutiny svázané společně v souboru Android Manifest, které jsou popsány v následujícím diagramu:
 
-[![Pomocníci prostředků](hello-android-deepdive-images/02-resources-helpers-sml.png)](hello-android-deepdive-images/02-resources-helpers.png)
+[![Pomocníci prostředků](hello-android-deepdive-images/02-resources-helpers-sml.png)](hello-android-deepdive-images/02-resources-helpers.png#lightbox)
 
 V dalších oddílech několik prozkoumat vztahy mezi různé součásti **Phoneword** aplikace; to vám měl sdělit, abyste lépe porozumět diagramu výše. Tato zkoumání začíná uživatelské rozhraní popisuje Android soubory designer a rozložení.
 
@@ -150,11 +150,11 @@ V dalších oddílech několik prozkoumat vztahy mezi různé součásti **Phone
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Android Návrhář](hello-android-deepdive-images/vs/03-android-designer-sml.png "Android návrháře")](hello-android-deepdive-images/vs/03-android-designer.png)
+[![Android Návrhář](hello-android-deepdive-images/vs/03-android-designer-sml.png "Android návrháře")](hello-android-deepdive-images/vs/03-android-designer.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Android návrháře](hello-android-deepdive-images/xs/03-android-designer-sml.png)](hello-android-deepdive-images/xs/03-android-designer.png)
+[![Android návrháře](hello-android-deepdive-images/xs/03-android-designer-sml.png)](hello-android-deepdive-images/xs/03-android-designer.png#lightbox)
 
 -----
 
@@ -162,11 +162,11 @@ V **Phoneword** aplikace, **TranslateButton**na ID je nastaven na `@+id/Translat
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Nastavení id TranslateButton](hello-android-deepdive-images/vs/04-translatebutton-sml.png "TranslateButton id nastavení")](hello-android-deepdive-images/vs/04-translatebutton.png)
+[![Nastavení id TranslateButton](hello-android-deepdive-images/vs/04-translatebutton-sml.png "TranslateButton id nastavení")](hello-android-deepdive-images/vs/04-translatebutton.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Nastavení id TranslateButton](hello-android-deepdive-images/xs/04-translatebutton-sml.png)](hello-android-deepdive-images/xs/04-translatebutton.png)
+[![Nastavení id TranslateButton](hello-android-deepdive-images/xs/04-translatebutton-sml.png)](hello-android-deepdive-images/xs/04-translatebutton.png#lightbox)
 
 -----
 
@@ -179,11 +179,11 @@ Všechno, co jsou definovány na návrhovou plochu, která je přeložit na XML 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Zobrazení zdroje návrháře](hello-android-deepdive-images/vs/05-source-view-sml.png "návrháře zobrazení zdroje")](hello-android-deepdive-images/vs/05-source-view.png)
+[![Zobrazení zdroje návrháře](hello-android-deepdive-images/vs/05-source-view-sml.png "návrháře zobrazení zdroje")](hello-android-deepdive-images/vs/05-source-view.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Zobrazení zdroje návrháře](hello-android-deepdive-images/xs/05-source-view-sml.png)](hello-android-deepdive-images/xs/05-source-view.png)
+[![Zobrazení zdroje návrháře](hello-android-deepdive-images/xs/05-source-view-sml.png)](hello-android-deepdive-images/xs/05-source-view.png#lightbox)
 
 -----
 
@@ -223,7 +223,7 @@ Teď, když Základy `MainActivity` byly zahrnuté, je čas se můžete ponořit
 
 V systému Android se aktivity projít různých fázích životního cyklu v závislosti na jejich interakce s uživatelem. Lze vytvořit aktivity, spuštěn a pozastavený, obnovit a zničení a tak dále. `Activity` Třída obsahuje metody, které systém volá v určitých bodech, v průběhu životního cyklu na obrazovce. Následující diagram znázorňuje typické životnosti aktivity a také některé odpovídající životního cyklu metody:
 
-[![Životní cyklus aktivity](hello-android-deepdive-images/04-lifecycle-sml.png)](hello-android-deepdive-images/04-lifecycle.png)
+[![Životní cyklus aktivity](hello-android-deepdive-images/04-lifecycle-sml.png)](hello-android-deepdive-images/04-lifecycle.png#lightbox)
 
 Přepsáním `Activity` metody životního cyklu, můžete řídit, jak aktivity načte, jak odpovědí na uživatele a dokonce i co se stane po dané zařízení zmizí z obrazovky zařízení. Například můžete přepsat životního cyklu metody v diagramu výše a provádět některé důležité úkoly:
 
@@ -320,21 +320,20 @@ Po dokončení konfigurace zařízení, můžete nasadit do ní zapojením v vý
 
 Po dokončení konfigurace zařízení, můžete nasadit do ní zapojením v stiskněte **spuštění (Play)**, výběr z **vybrat zařízení** dialogové okno a stiskněte **OK**:
 
-[![Vyberte možnost ladění zařízení](hello-android-deepdive-images/xs/06-select-device-sml.png)](hello-android-deepdive-images/xs/06-select-device.png)
+[![Vyberte možnost ladění zařízení](hello-android-deepdive-images/xs/06-select-device-sml.png)](hello-android-deepdive-images/xs/06-select-device.png#lightbox)
 
 -----
 
 Spustí se aplikace na zařízení:
 
-[![Zadejte Phoneword](hello-android-deepdive-images/05-enter-phoneword-sml.png)](hello-android-deepdive-images/05-enter-phoneword.png)
+[![Zadejte Phoneword](hello-android-deepdive-images/05-enter-phoneword-sml.png)](hello-android-deepdive-images/05-enter-phoneword.png#lightbox)
 
-<a name="densities" />
 
 ### <a name="set-icons-for-different-screen-densities"></a>Nastavení ikon pro densities – různých obrazovek
 
 Zařízení se systémem Android mají jiné velikosti obrazovky a řešení, a ne všechny bitové kopie vypadat dobře na všechny obrazovky. Například zde je snímek obrazovky s nízkou hustotou ikonu v podobě výkonných Nexus 5. Všimněte si, jak rozmazaně, se porovnává se okolního ikony:
 
-[![Ikona rozmazaně](hello-android-deepdive-images/06-blurry-icon-sml.png)](hello-android-deepdive-images/06-blurry-icon.png)
+[![Ikona rozmazaně](hello-android-deepdive-images/06-blurry-icon-sml.png)](hello-android-deepdive-images/06-blurry-icon.png#lightbox)
 
 Aby se zohlednily to, je dobrým zvykem přidat ikony různá řešení pro **prostředky** složky. Android poskytuje různé verze **mipmap** složku pro zpracování Spouštěče ikony různých hustoty *mdpi* pro střední, *hdpi* pro horní, a  *xhdpi*, *xxhdpi*, *xxxhdpi* pro velmi vysokou hustotou obrazovky. Ikony různých velikostí jsou uložené v příslušné **mipmap -** složky:
 
@@ -344,13 +343,13 @@ Aby se zohlednily to, je dobrým zvykem přidat ikony různá řešení pro **pr
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Složkách Mipmap](hello-android-deepdive-images/xs/07-mipmap-folders-sml.png)](hello-android-deepdive-images/xs/07-mipmap-folders.png)
+[![Složkách Mipmap](hello-android-deepdive-images/xs/07-mipmap-folders-sml.png)](hello-android-deepdive-images/xs/07-mipmap-folders.png#lightbox)
 
 -----
 
 Android bude vyberte ikonu s odpovídající hustotu:
 
-[![Ikony na příslušné hustotu](hello-android-deepdive-images/07-appropriate-density-sml.png)](hello-android-deepdive-images/07-appropriate-density.png)
+[![Ikony na příslušné hustotu](hello-android-deepdive-images/07-appropriate-density-sml.png)](hello-android-deepdive-images/07-appropriate-density.png#lightbox)
 
 ### <a name="generate-custom-icons"></a>Generovat vlastní ikony
 
@@ -393,15 +392,15 @@ Dřív, byly pro všechny knihovny služby Google Play vazby poskytované Xamari
 
 Chcete-li přidat jeden nebo více knihovny služby Google Play, klikněte pravým tlačítkem **balíčky** uzel ve stromu projektu a klikněte na tlačítko **přidat služby Google Play...** :
 
-[![Přidání služby Google Play](hello-android-deepdive-images/xs/08-add-google-play-services-sml.png)](hello-android-deepdive-images/xs/08-add-google-play-services.png)
+[![Přidání služby Google Play](hello-android-deepdive-images/xs/08-add-google-play-services-sml.png)](hello-android-deepdive-images/xs/08-add-google-play-services.png#lightbox)
 
 Když **přidat služby Google Play** se zobrazí dialogové okno, vyberte balíčky (nugets), které chcete přidat do projektu:
 
-[![Vyberte balíčky](hello-android-deepdive-images/xs/09-add-dialog-sml.png)](hello-android-deepdive-images/xs/09-add-dialog.png)
+[![Vyberte balíčky](hello-android-deepdive-images/xs/09-add-dialog-sml.png)](hello-android-deepdive-images/xs/09-add-dialog.png#lightbox)
 
 Když vyberete služby a klikněte na tlačítko **přidat balíček**, Visual Studio pro Mac stáhne a nainstaluje balíček vyberete a také všechny závislé služby Google Play balíčky, které vyžaduje. V některých případech se může zobrazit **přijetí licence** dialog, který vyžaduje, abyste klikněte na tlačítko **přijmout** předtím, než jsou nainstalované balíčky:
 
-[![Přijetí licence](hello-android-deepdive-images/xs/10-license-acceptance-sml.png)](hello-android-deepdive-images/xs/10-license-acceptance.png)
+[![Přijetí licence](hello-android-deepdive-images/xs/10-license-acceptance-sml.png)](hello-android-deepdive-images/xs/10-license-acceptance.png#lightbox)
 
 -----
 

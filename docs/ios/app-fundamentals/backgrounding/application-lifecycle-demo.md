@@ -7,19 +7,19 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 56310bb538d9abf850c40ebfb0b0bf551fbb104c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3d68b1e38ecb5b1833b818dd2a9fb7a5c84f9206
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="application-lifecycle-demo"></a>Ukázka životního cyklu aplikací
 
 V této části jsme se chystáte vyhledejte aplikaci, která popisuje čtyři stavy aplikace a role `AppDelegate` metody v upozornění o při získání stavy změně aplikace. Aplikace bude tisku aktualizace do konzoly vždy, když se změní stav aplikace:
 
- [ ![](application-lifecycle-demo-images/image3.png "Ukázková aplikace")](application-lifecycle-demo-images/image3.png)
+ [![](application-lifecycle-demo-images/image3.png "Ukázková aplikace")](application-lifecycle-demo-images/image3.png#lightbox)
 
- [ ![](application-lifecycle-demo-images/image4.png "Aplikace bude tisku aktualizace konzoly, vždy, když aplikace změní stav")](application-lifecycle-demo-images/image4.png)
+ [![](application-lifecycle-demo-images/image4.png "Aplikace bude tisku aktualizace konzoly, vždy, když aplikace změní stav")](application-lifecycle-demo-images/image4.png#lightbox)
 
 ## <a name="walkthrough"></a>Návod
 

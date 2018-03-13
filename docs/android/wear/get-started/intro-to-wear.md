@@ -7,18 +7,17 @@ ms.assetid: EAEF99F0-8FBE-47E4-8644-E7244CFAF464
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: c334e78793f90b4f349f87e12e6b0093fe5cacf8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 4f6cfe61b5f91fb6703fdcdd20513ce6bc2dc161
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-android-wear"></a>Úvod do Android opotřebení
 
 _Se zavedením Google Android nosit už nejste právě telefony a tablety s omezeným přístupem při rozhodování o vývoji kvalitních aplikací pro Android. Podpora pro Xamarin.Android pro Android nosit umožňuje spustit na zápěstí kód C#! Tento úvod poskytuje základní přehled Android nosit, popisuje hlavní funkce a nabízí přehled funkcí, které jsou k dispozici v systému Android nosit 2.0. Vypíše některé oblíbenější Android nosit zařízení a poskytuje odkazy na základní Google Android nosit dokumentaci pro další čtení._
 
-<a name="overview" />
 
 ## <a name="overview"></a>Přehled
 
@@ -29,47 +28,40 @@ Android opotřebení běží na různých zařízení, včetně first-generation
 Podpora Xamarin.Android 5.0 a novější podporuje Android nosit prostřednictvím našich Android 4.4W (rozhraní API 20) a balíčku NuGet, který přidá další prvky uživatelského rozhraní a opotřebením motoru specifické. Xamarin.Android 5.0 a novější také zahrnuje funkce pro zabalení aplikace a opotřebením motoru. Balíčky NuGet jsou také k dispozici pro Android nosit 2.0 jak je popsáno v této příručce.
 
 
-<a name="basics" />
-
 ## <a name="android-wear-basics"></a>Základní informace o opotřebení Android
 
 Android opotřebení má zlepší rozhraní uživatele, který se liší od kapesních aplikací pro Android. První wave opotřebení aplikací byly navržené k rozšíření doprovodné kapesních aplikace v některé způsobem, ale od verze Android opotřebení 2.0, opotřebení aplikace lze použít samostatné. Při nasazení aplikace a opotřebením motoru, se zabalí a doprovodné kapesních aplikaci. Protože nosit většinu aplikací závisí na kapesních doprovodné aplikace, potřebují nějakým způsobem ke komunikaci s kapesních aplikace. Následující části popisují tyto scénáře použití a popisují základní Android nosit funkce. 
 
 
-<a name="scenarios" />
 
 ### <a name="usage-scenarios"></a>Scénáře použití
 
 První verze součásti Android nosit se zaměřuje především na rozšíření aktuální kapesních aplikace s rozšířenou oznámení a synchronizaci dat mezi wearable aplikace a kapesních aplikace. Tyto scénáře jsou proto relativně jednoduché k implementaci.
 
-<a name="notifications" />
 
 #### <a name="wearable-notifications"></a>Wearable oznámení
 
 Nejjednodušší způsob, jak podporují Android nosit je využít sdílené povaha oznámení mezi přenosného terminálu a wearable zařízení. Pomocí oznámení v4 podporu rozhraní API a `WearableExtender` – třída (k dispozici v [Xamarin Android podporují knihovny](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)), můžete klepněte do nativní funkce platformy, jako jsou karty styl doručené pošty nebo hlasový vstup. [RecipeAssistant](https://developer.xamarin.com/samples/monodroid/wear/RecipeAssistant/) ukázka poskytuje ukázkový kód, který ukazuje, jak poslat seznam oznámení do zařízení se systémem Android nosit. 
 
 
-<a name="companion" />
 
 #### <a name="companion-applications"></a>Doprovodné aplikace
 
 Další strategie je vytvoření kompletní aplikaci, která běží nativně na wearable zařízení a páry a doprovodné kapesních aplikaci. Dobrým příkladem tohoto přístupu je [kvízu s časovým limitem](https://developer.xamarin.com/samples/monodroid/wear/Quiz/) ukázkovou aplikaci, která ukazuje, jak vytvořit kvízu, který běží v kapesních zařízeních a vás kvízu s časovým limitem ptát na wearable zařízení. 
 
 
-<a name="ui" />
 
 ### <a name="user-interface"></a>Uživatelské rozhraní
 
 Primární navigační vzor pro opotřebení je řadu karty ve svislém uspořádání. Každý z těchto karet můžete mít přidružené akce, které jsou na základě limitu na stejný řádek. `GridViewPager` Třída poskytuje tuto funkci; dodržuje stejný adaptér koncept jako `ListView`. Obvykle přidružíte `GridViewPager` s `FragmentGridPagerAdaptor` (nebo `GridPagerAdaptor`), která umožňuje představovat jednotlivých řádků a sloupců buňky jako `Fragment`: 
 
-[ ![Nosit navigační](intro-to-wear-images/2d-picker-sml.png "nosit navigace")](intro-to-wear-images/2d-picker.png)
+[![Nosit navigační](intro-to-wear-images/2d-picker-sml.png "nosit navigace")](intro-to-wear-images/2d-picker.png#lightbox)
 
 Nosit díky použití tlačítka akce, která se skládá z big barevné kroužkem malé popisný text pod ním (jako ilustrované výše).  [GridViewPager](https://developer.xamarin.com/samples/monodroid/wear/GridViewPager/) příklad ukazuje způsob použití `GridViewPager` a `GridPagerAdapter` v aplikaci a opotřebením motoru.
 
 Android nosit 2.0 přidá zásuvce navigace, nástroj drawer akce a vložené akce tlačítka s uživatelským rozhraním a opotřebením motoru. Další informace o prvky uživatelského rozhraní Android nosit 2.0, naleznete v části pro Android [Anatomy](https://www.google.com/design/spec-wear/system-overview/anatomy.html) tématu. 
 
 
-<a name="comm" />
 
 ### <a name="communications"></a>Komunikace
 
@@ -86,7 +78,6 @@ Tato služba bude automaticky vytvořena instance pomocí Android nosit.
 [FindMyPhone](https://developer.xamarin.com/samples/monodroid/wear/FindMyPhoneSample/) sample ukazuje, jak implementovat `WearableListenerService`.
 
 
-<a name="deploy" />
 
 ### <a name="deployment"></a>Nasazení
 
@@ -94,7 +85,6 @@ Každé wearable aplikace se nasazuje s vlastního souboru APK vložená do hlav
 [Práce s balení](~/android/wear/deploy-test/packaging.md) vysvětluje nasazení ve více podrobností. 
 
 
-<a name="further" />
 
 ## <a name="going-further"></a>Budete pokračovat 
 
@@ -114,34 +104,30 @@ Po vytvoření první aplikace a opotřebením motoru, můžete chtít zkuste je
 [Vytváření řez sledovat](~/android/wear/platform/creating-a-watchface.md) poskytuje podrobné pokyny a příklady kódu pro vývoj odřapíkovaného dolů služby vzhled digitální sledovat, za nímž následuje další kód, který rozšiřuje na analogovým stylu sledovat setkávají s další funkce. 
 
 
-<a name="wear2" />
 
 ## <a name="android-wear-20"></a>Android opotřebení 2.0
 
 Android nosit 2.0 přináší řadu nových funkcí a možností, jako například *komplikace*, zakřivené rozložení, navigace a akce zásobníky a rozbalených oznámeních. Navíc nosit 2.0 umožňuje můžete vytvářet samostatná aplikace, které pracují nezávisle na kapesních aplikace. Nové *zápěstí gesta* funkce umožňuje pohybového interakce s vaší aplikací. V následujících částech zvýrazněte tyto funkce a poskytuje odkazy vám pomohou začít s použitím jejich ve vaší aplikaci.
 
 
-<a name="install2" />
 
 ### <a name="install-wear-20-packages"></a>Instalace nosit 2.0 balíčky
 
 Chcete-li sestavit aplikaci 2.0 nosit s Xamarin.Android, je nutné přidat **Xamarin.Android.Wear v2.0** balíčku do projektu (klikněte na tlačítko **kartu Procházet**):
 
-[![Xamarin.Android.Wear v2.0](intro-to-wear-images/wear-nuget-2.0-sml.png "nainstalovat Xamarin.Android.Wear v2.0 NuGet")](intro-to-wear-images/wear-nuget-2.0.png)
+[![Xamarin.Android.Wear v2.0](intro-to-wear-images/wear-nuget-2.0-sml.png "nainstalovat Xamarin.Android.Wear v2.0 NuGet")](intro-to-wear-images/wear-nuget-2.0.png#lightbox)
 
 Balíček NuGet obsahuje vazby pro Android podporu Wearable i nosit Compat knihovny.
 
 Kromě **Xamarin.Android.Wear**, doporučujeme vám nainstalovat **Xamarin.GooglePlayServices.Wearable** NuGet: 
 
-[![Xamarin.GooglePlayServices.Wearable](intro-to-wear-images/gpsw-nuget-sml.png "nainstalovat Xamarin.GooglePlayServices.Wearable NuGet")](intro-to-wear-images/gpsw-nuget.png)
+[![Xamarin.GooglePlayServices.Wearable](intro-to-wear-images/gpsw-nuget-sml.png "nainstalovat Xamarin.GooglePlayServices.Wearable NuGet")](intro-to-wear-images/gpsw-nuget.png#lightbox)
 
-<a name="wear2feat" />
 
 ### <a name="key-features-of-wear-20"></a>Klíčové funkce opotřebení 2.0
 
 Android nosit 2.0 je největších aktualizace Android nosit od jeho spuštění počáteční 2014. V následujících částech klíčové funkce Android nosit 2.0 a jsou uvedeny odkazy na pomoci můžete začít používat tyto nové funkce ve vaší aplikaci. 
 
-<a name="compl" />
 
 #### <a name="complications"></a>Komplikace
 
@@ -152,7 +138,6 @@ Android nosit 2.0 je největších aktualizace Android nosit od jeho spuštění
 Další informace o komplikace najdete v tématu Android [sledovat vzhled komplikace](https://developer.android.com/wear/preview/features/complications.html) tématu. 
 
 
-<a name="drawers" />
 
 #### <a name="navigation-and-action-drawers"></a>Navigační a zásobníky akce 
 
@@ -163,7 +148,6 @@ Dva nové zásobníky jsou součástí nosit 2.0. *Nástroj navigační drawer*,
 Další informace o těchto dvou nové interaktivní zásobníky najdete v tématu Android [nosit navigaci a akce](https://developer.android.com/wear/preview/features/ui-nav-actions.html) tématu. 
 
 
-<a name="curved" />
 
 #### <a name="curved-layouts"></a>Zakřivené rozložení 
 
@@ -174,14 +158,12 @@ Opotřebení 2.0 přináší nové funkce pro zobrazení zakřivené rozložení
 `WearableRecyclerView` rozšiřuje `RecyclerView` třídy pro podporu zakřivené rozložení a cyklické gesta posouvání. Další informace najdete v tématu Android [WearableRecyclerView](https://developer.android.com/reference/android/support/wearable/view/WearableRecyclerView.html) dokumentaci k rozhraní API. 
 
 
-<a name="standalone" />
 
 #### <a name="standalone-apps"></a>Samostatné aplikace 
 
 Aplikace pro Android nosit 2.0 můžete pracovat nezávisle na kapesních aplikace. To znamená, že, například inteligentní sledování můžete pokračovat i v případě, že v doprovodném kapesní zařízení je vypnutý nebo daleko od wearable zařízení nabízí plnou funkčnost. Další informace o této funkci najdete v tématu Android [samostatné aplikace](https://developer.android.com/wear/preview/features/standalone-apps.html) tématu.
 
 
-<a name="wrist" />
 
 #### <a name="wrist-gestures"></a>Zápěstí gesta 
 
@@ -196,7 +178,6 @@ Další informace najdete v tématu Android [zápěstí gesta](https://developer
 Existuje mnoho funkcí další nosit 2.0 například vložené akce, inteligentní odpovědět, vzdálené vstup, rozbalených oznámeních a nový přemostění režim pro oznámení. Další informace o nových funkcích nosit 2.0, naleznete v části pro Android [přehled rozhraní API](https://developer.android.com/wear/preview/api-overview.html). 
 
 
-<a name="devices" />
 
 ## <a name="devices"></a>Zařízení
 
@@ -210,7 +191,6 @@ Tady jsou některé příklady zařízení, které můžou běžet Android nosit
 * [ASUS ZenWatch](http://www.asus.com/us/Phones/ASUS_ZenWatch_WI500Q/)
 
 
-<a name="reading" />
 
 ## <a name="further-reading"></a>Další čtení
 
@@ -222,7 +202,6 @@ Podívejte se na Google Android nosit dokumentaci:
 * [Android Wear 2.0](https://developer.android.com/wear/preview/index.html)
 
 
-<a name="summary" />
 
 ## <a name="summary"></a>Souhrn
 

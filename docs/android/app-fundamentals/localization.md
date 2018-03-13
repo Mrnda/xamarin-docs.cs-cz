@@ -7,12 +7,12 @@ ms.assetid: D1277939-A1E8-468E-B136-820D816AF853
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/15/2018
-ms.openlocfilehash: adfc0da404c6b9df79c3b2be51f8cafa302a6bc3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: c4800c1fe844a03c20b28079640a5ddab8046b1f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="android-localization"></a>Android lokalizace
 
@@ -81,7 +81,7 @@ Většina vývojářů obeznámeni s používáním **dpi** přípony na **drawa
 ![Snímek obrazovky drawable nebo prostředky a prostředky nebo hodnotami složek pro více kulturního identifikátory](localization-images/resources.png)
 
 > [!NOTE]
-> **Poznámka:** při zadávání nejvyšší úrovně jazyka jako `es` pouze dva znaky jsou požadovány; ale při zadávání úplné národního prostředí, formát názvu adresáře vyžaduje dash a malá **r** k oddělení dvou části, například **pt rBR** nebo **zh-rCN**. Porovnat hodnotu, vrátí kód, který nemá dostatečná oprávnění (např. `pt_BR`). Obě tyto se liší na hodnotu .NET `CultureInfo` třídy používá, který má pomlčkou pouze (např. `pt-BR`). Ponechat tyto rozdíly v úvahu při práci na platformách Xamarin.
+> Při zadávání nejvyšší úrovně jazyka jako `es` pouze dva znaky jsou požadovány; ale při zadávání úplné národního prostředí, formát názvu adresáře vyžaduje dash a malá **r** k oddělení dvou částí, například **pt rBR** nebo **zh-rCN**. Porovnat hodnotu, vrátí kód, který nemá dostatečná oprávnění (např. `pt_BR`). Obě tyto se liší na hodnotu .NET `CultureInfo` třídy používá, který má pomlčkou pouze (např. `pt-BR`). Ponechat tyto rozdíly v úvahu při práci na platformách Xamarin.
 
 #### <a name="stringsxml-file-format"></a>Formát souboru Strings.XML
 
@@ -164,13 +164,13 @@ V **Strings.xml**
 
 ```xml
 <plurals name="numberOfTasks">
-         <!--
-                    As a developer, you should always supply "one" and "other"
-                    strings. Your translators will know which strings are actually
-                    needed for their language.
-             -->
-         <item quantity="one">There is %d task left.</item>
-         <item quantity="other">There are %d tasks still to do.</item>
+   <!--
+      As a developer, you should always supply "one" and "other"
+      strings. Your translators will know which strings are actually
+      needed for their language.
+    -->
+   <item quantity="one">There is %d task left.</item>
+   <item quantity="other">There are %d tasks still to do.</item>
  </plurals>
 ```
 
@@ -229,15 +229,13 @@ Pokud používáte Android 4.2 (API úrovně 17) a novější, aligment hodnot j
 
 Následující snímek obrazovky ukazuje [lokalizované **Tasky** ukázka](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n) v arabské:
 
-[![Snímek obrazovky Tasky aplikace v arabština](localization-images/rtl-ar-sml.png)](localization-images/rtl-ar.png) 
+[![Snímek obrazovky Tasky aplikace v arabština](localization-images/rtl-ar-sml.png)](localization-images/rtl-ar.png#lightbox) 
 
 Další snímek obrazovky ukazuje [lokalizované **Tasky** ukázka](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n) v hebrejštině:
 
-[![Snímek obrazovky Tasky aplikace v hebrejštině](localization-images/rtl-he-sml.png)](localization-images/rtl-he.png)
+[![Snímek obrazovky Tasky aplikace v hebrejštině](localization-images/rtl-he-sml.png)](localization-images/rtl-he.png#lightbox)
 
 RTL text je lokalizované pomocí **Strings.xml** soubory stejným způsobem jako text zleva doprava.
-
-<a name="testing" />
 
 ## <a name="testing"></a>Testování
 

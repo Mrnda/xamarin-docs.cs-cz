@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 5df7c2bbc7be1089795c94b6f639bd4556b49366
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 69296992c503d536a4160f172022c7ce5578812f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="events-protocols-and-delegates"></a>Události, protokoly a delegáti
 
@@ -32,7 +32,7 @@ V tomto článku se dozvíte o těchto tématech, která poskytuje sice solidní
 
 Pro ilustraci protokoly a delegáti, využijeme jednoduché mapy aplikace, která přidá poznámky na mapu, jak je vidět tady:
 
- [ ![](delegates-protocols-and-events-images/01-map.png "Příklad jednoduchého mapy aplikace, které přidá poznámky mapy") ](delegates-protocols-and-events-images/01-map.png) [ ![ ] (delegates-protocols-and-events-images/04-annotation-with-callout.png "příklad poznámky přidat na mapu")](delegates-protocols-and-events-images/04-annotation-with-callout.png)
+ [![](delegates-protocols-and-events-images/01-map.png "Příklad jednoduchého mapy aplikace, které přidá poznámky mapy") ](delegates-protocols-and-events-images/01-map.png#lightbox) [ ![ ] (delegates-protocols-and-events-images/04-annotation-with-callout.png "příklad poznámky přidat na mapu")](delegates-protocols-and-events-images/04-annotation-with-callout.png#lightbox)
 
 Před boji se této aplikace, můžeme začít pohledem na události UIKit .NET.
 
@@ -59,15 +59,15 @@ aButton.TouchUpInside += delegate {
 
 Předchozí kód je drátové nahoru v metodě ViewDidLoad UIViewContoller. Proměnná aButton odkazuje tlačítko, které můžete přidat v iOS Designer nebo s kódem. Následující obrázek znázorňuje toto tlačítko, který je přidán v iOS Designer převzat ze vzorku, který doprovází v tomto článku:
 
- [ ![](delegates-protocols-and-events-images/02-interface-builder-outlet.png "Tlačítko Přidat v iOS návrháře")](delegates-protocols-and-events-images/02-interface-builder-outlet.png)
+ [![](delegates-protocols-and-events-images/02-interface-builder-outlet.png "Tlačítko Přidat v iOS návrháře")](delegates-protocols-and-events-images/02-interface-builder-outlet.png#lightbox)
 
 Xamarin.iOS taky podporuje připojení kódu k interakci, ke kterému dochází s ovládacím prvkem styl cíl akce. Pokud chcete vytvořit cíl akce pro tlačítko Hello, na ni dvakrát kliknete na iOS Designer. Zobrazí souboru kódu UIViewController a vývojář se výzva k vyberte umístění, kam chcete vložit připojování metoda:
 
- [ ![](delegates-protocols-and-events-images/03-interface-builder-action.png "Soubor UIViewControllers kódu")](delegates-protocols-and-events-images/03-interface-builder-action.png)
+ [![](delegates-protocols-and-events-images/03-interface-builder-action.png "Soubor UIViewControllers kódu")](delegates-protocols-and-events-images/03-interface-builder-action.png#lightbox)
 
 Po výběru umístění se nová metoda je vytvořen a drátové až do ovládacího prvku. V následujícím příkladu zprávy se zapíšou do konzole při kliknutí na tlačítko:
 
- [ ![](delegates-protocols-and-events-images/05-interface-builder-action.png "Zprávu se zapíšou do konzole při kliknutí na tlačítko")](delegates-protocols-and-events-images/05-interface-builder-action.png)
+ [![](delegates-protocols-and-events-images/05-interface-builder-action.png "Zprávu se zapíšou do konzole při kliknutí na tlačítko")](delegates-protocols-and-events-images/05-interface-builder-action.png#lightbox)
 
 Další podrobnosti o vzoru cíl akce iOS, najdete v části cíl-Action " [základní možnosti aplikací pro iOS](http://developer.apple.com/library/ios/#DOCUMENTATION/General/Conceptual/Devpedia-CocoaApp/TargetAction.html)" v společnosti Apple iOS Developer Library.
 
@@ -170,7 +170,7 @@ Podívejme se na příklad protokol jazyka Objective-C z Xamarin.iOS. V tomto p�
 
 Tímto způsobem `MKAnnotation` protokol slouží k poskytování relevantním údajem, který doprovází poznámky. Skutečné zobrazení pro poznámku samotné vychází z dat v objektu, která přijme `MKAnnotation` protokolu. Například v textu popisku, který se zobrazí, když uživatel klepnutím na poznámku (jak je znázorněno na tomto snímku obrazovky) pochází z `Title` vlastnost ve třídě, která implementuje protokol:
 
- [ ![](delegates-protocols-and-events-images/04-annotation-with-callout.png "Příklad text popisku, když uživatel klepnutím na ni")](delegates-protocols-and-events-images/04-annotation-with-callout.png)
+ [![](delegates-protocols-and-events-images/04-annotation-with-callout.png "Příklad text popisku, když uživatel klepnutím na ni")](delegates-protocols-and-events-images/04-annotation-with-callout.png#lightbox)
 
 Jak je popsáno v části Další podrobné informace protokoly, Xamarin.iOS připojí protokoly na abstraktní třídy. Pro `MKAnnotation` protokol, název vázané třída C# `MKAnnotation` tak, aby napodoboval název protokolu ale je podtřídou třídy `NSObject`, kořenová základní třída pro CocoaTouch. Protokol vyžaduje metody getter a setter k implementaci pro souřadnice; Nadpis a podnadpis však jsou volitelné. Proto v `MKAnnotation` třídy, `Coordinate` vlastnost je *abstraktní*, nutnosti jeho implementaci a `Title` a `Subtitle` vlastnosti jsou označeny *virtuální* , přitom volitelné, jak je uvedeno níže:
 

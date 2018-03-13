@@ -7,21 +7,20 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 013db64add615e94ef3494f14bc82fc17ec2dca1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a8a9735845139da700959caf3639defa6594f307
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="gridlayout"></a>GridLayout
 
 `GridLayout` Je nová `ViewGroup` podtřídami, který podporuje rozložení zobrazení v 2D mřížky, podobně jako tabulky HTML, jak je uvedeno níže:
 
- [ ![Oříznout GridLayout zobrazení čtyři buněk](grid-layout-images/21-gridlayoutcropped.png)](grid-layout-images/21-gridlayoutcropped.png)
+ [![Oříznout GridLayout zobrazení čtyři buněk](grid-layout-images/21-gridlayoutcropped.png)](grid-layout-images/21-gridlayoutcropped.png#lightbox)
 
  `GridLayout` funguje s dvojrozměrném zobrazení hierarchie, kde podřízené zobrazení nastavit jejich umístění v mřížce zadáním řádky a sloupce, které by měl být ve. Tímto způsobem *GridLayout* je možné nastavit bez nutnosti, že všechny zprostředkující zobrazení poskytovat struktura tabulky, tak jak je vidět v řádky tabulky, které jsou používány TableLayout zobrazení v mřížce. Udržováním hierarchie ploché *GridLayout* je schopen více rychle rozložení jeho podřízené zobrazení. Podívejme se na příklad k objasnění, co tento koncept ve skutečnosti rozumí v kódu.
 
-<a name="Creating_a_Grid_Layout" />
 
 ## <a name="creating-a-grid-layout"></a>Vytváření rozložení mřížky
 
@@ -51,13 +50,12 @@ Následující kód XML přidá několik `TextView` prvky *GridLayout*.
 
 Rozložení se upraví velikosti řádků a sloupců, aby buněk vejde na jejich obsah, které jsou popsány v následujícím diagramu:
 
- [ ![Diagram zobrazující dvě buňky na levé straně menší než na pravé straně rozložení](grid-layout-images/gridlayout-cells.png)](grid-layout-images/gridlayout-cells.png)
+ [![Diagram zobrazující dvě buňky na levé straně menší než na pravé straně rozložení](grid-layout-images/gridlayout-cells.png)](grid-layout-images/gridlayout-cells.png#lightbox)
 
 Výsledkem je následující uživatelské rozhraní při spuštění v aplikaci:
 
- [ ![Aplikace – snímek obrazovky GridLayoutDemo zobrazení čtyři buněk](grid-layout-images/01-gridlayout.png)](grid-layout-images/01-gridlayout.png)
+ [![Aplikace – snímek obrazovky GridLayoutDemo zobrazení čtyři buněk](grid-layout-images/01-gridlayout.png)](grid-layout-images/01-gridlayout.png#lightbox)
 
- <a name="Specifying_Orientation" />
 
 
 ## <a name="specifying-orientation"></a>Zadání orientace
@@ -76,13 +74,12 @@ Všimněte si v souboru XML výše, každý `TextView` neurčuje sloupce či ř�
 
 Nyní `GridLayout` bude umístit buněk shora dolů v jednotlivých sloupcích, nikoli zleva doprava, jak je uvedeno níže:
 
- [ ![Diagram ilustrující, jak jsou buněk umístěn ve svislém orientace](grid-layout-images/gridlayoutorientation.png)](grid-layout-images/gridlayoutorientation.png)
+ [![Diagram ilustrující, jak jsou buněk umístěn ve svislém orientace](grid-layout-images/gridlayoutorientation.png)](grid-layout-images/gridlayoutorientation.png#lightbox)
 
 Výsledkem je následující uživatelské rozhraní za běhu:
 
- [ ![Snímek obrazovky GridLayoutDemo s buňkami umístěný ve svislém orientace](grid-layout-images/02-gridlayout.png)](grid-layout-images/02-gridlayout.png)
+ [![Snímek obrazovky GridLayoutDemo s buňkami umístěný ve svislém orientace](grid-layout-images/02-gridlayout.png)](grid-layout-images/02-gridlayout.png#lightbox)
 
- <a name="Specifying_Explicit_Position" />
 
 
 ### <a name="specifying-explicit-position"></a>Určení explicitní pozice
@@ -119,7 +116,6 @@ Pokud chceme explicitně řízení pozice zobrazení podřízených `GridLayout`
 </GridLayout>
 ```
 
- <a name="Specifying_spacing" />
 
 
 ### <a name="specifying-spacing"></a>Určení mezery
@@ -176,11 +172,10 @@ Například následující kód XML přidá další řádek, abyste `GridLayout`
 
 Tato konfigurace XML vytvoří mezery v `GridLayout` jak je uvedeno níže:
 
- [ ![Snímek obrazovky GridLayoutDemo ilustrující větší buněk s mezery](grid-layout-images/03-gridlayout.png)](grid-layout-images/03-gridlayout.png)
+ [![Snímek obrazovky GridLayoutDemo ilustrující větší buněk s mezery](grid-layout-images/03-gridlayout.png)](grid-layout-images/03-gridlayout.png#lightbox)
 
 Výhodou použití nové `Space` zobrazení je, že umožňuje mezery a nevyžaduje nám nastavit atributy u každé podřízené zobrazení.
 
- <a name="Spanning_Columns_and_Rows" />
 
 
 ### <a name="spanning-columns-and-rows"></a>Rozložení řádků a sloupců
@@ -230,7 +225,7 @@ Výhodou použití nové `Space` zobrazení je, že umožňuje mezery a nevyžad
 
 Výsledkem bude první sloupec `GridLayout` je roztažen tak, aby dokázala pojmout velikost tlačítko, jak vidíte zde:
 
-[ ![Snímek obrazovky GridLayoutDemo s tlačítkem pokrývání uzlů pouze první sloupec](grid-layout-images/04-gridlayout.png)](grid-layout-images/04-gridlayout.png)
+[![Snímek obrazovky GridLayoutDemo s tlačítkem pokrývání uzlů pouze první sloupec](grid-layout-images/04-gridlayout.png)](grid-layout-images/04-gridlayout.png#lightbox)
 
 Chcete-li zabránit roztažení první sloupec, jsme nastavit tlačítko zahrnovat dva sloupce nastavením jeho columnspan takto:
 
@@ -245,7 +240,7 @@ Chcete-li zabránit roztažení první sloupec, jsme nastavit tlačítko zahrnov
 
 To má za následek rozložení pro `TextViews` který je podobný rozložení jsme měli dříve, pomocí tlačítka Přidat do dolní části `GridLayout` jak je uvedeno níže:
 
- [ ![Snímek obrazovky GridLayoutDemo s tlačítkem pokrývání uzlů oba sloupce](grid-layout-images/05-gridlayout.png)](grid-layout-images/05-gridlayout.png)
+ [![Snímek obrazovky GridLayoutDemo s tlačítkem pokrývání uzlů oba sloupce](grid-layout-images/05-gridlayout.png)](grid-layout-images/05-gridlayout.png#lightbox)
 
 
 ## <a name="related-links"></a>Související odkazy

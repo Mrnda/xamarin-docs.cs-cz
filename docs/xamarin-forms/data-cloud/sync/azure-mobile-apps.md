@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/02/2017
-ms.openlocfilehash: b7756c63901d3b4fbfea70587b3fdf8e5cf9df72
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 965d4987c154acc5a2f95d4ca622266ebdc2a1c2
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="synchronizing-offline-data-with-azure-mobile-apps"></a>Synchronizace Offline dat s Azure Mobile Apps
 
@@ -133,7 +133,7 @@ public async Task SyncAsync()
 Vyžádání obsahu se provádí pomocí `IMobileServiceSyncTable.PullAsync` metoda na jednu tabulku. První parametr `PullAsync` metoda je název dotazu, který se používá pouze v mobilním zařízení. Poskytnutí dotazu nesmí být nulová název výsledky při provádění Azure Mobile klienta SDK *přírůstkové synchronizace*, kde pokaždé, když vyžádanou operaci vrátí výsledky, nejnovější `updatedAt` časové razítko z výsledků je uložený v místním systémové tabulky. Operace následné stažení pak jen načítají záznamy po této časové razítko. Alternativně *úplné synchronizace* lze dosáhnout pomocí předání `null` jako název dotazu, výsledkem všechny záznamy načítány na každou vyžádanou operaci. Následující všechny synchronizační operace je přijatá data vloží do místního úložiště.
 
 > [!NOTE]
-> **Poznámka:**: Pokud je u tabulku, která má čekající místní aktualizace spustit vyžádání obsahu, vyžádání obsahu nejprve spustit push v kontextu synchronizace. Tím se minimalizují konflikty mezi změny, které jsou již zařazeny do fronty a nová data z instance Azure Mobile Apps.
+> Pokud je u tabulku, která má čekající místní aktualizace spustit vyžádání obsahu, vyžádání obsahu nejprve spustit push na kontext synchronizace. Tím se minimalizují konflikty mezi změny, které jsou již zařazeny do fronty a nová data z instance Azure Mobile Apps.
 
 `SyncAsync` Metoda zahrnuje také základní implementace pro zpracování konfliktů při stejné záznamu došlo ke změně v místním úložišti a v instanci Azure Mobile Apps. Při konfliktu, aby data byla aktualizována v místním úložišti a v instanci Azure Mobile Apps `SyncAsync` metoda aktualizuje data v místním úložišti od dat uložených v instanci Azure Mobile Apps. Když dojde k jakékoli jiné konfliktu, `SyncAsync` metoda zahodí místní změny. To zpracovává scénář, kde existuje místní změny dat, který je odstraněný z Azure Mobile Apps instance.
 
@@ -150,7 +150,7 @@ await todoTable.PurgeAsync(todoTable.Where(item => item.Done));
 Volání `PurgeAsync` také aktivuje operace push. Proto všechny položky, které jsou označeny jako dokončené místně odešle do instance Azure Mobile Apps než jsou odstraněny z místního úložiště. Ale pokud existují operace čekající na vyřízení synchronizace s instancí Azure Mobile Apps, k vyprázdnění vyvolá výjimku `InvalidOperationException` Pokud `force` parametr je nastaven na `true`. Alternativní strategie je prozkoumat `IMobileServiceSyncContext.PendingOperations` vlastnosti, která vrátí počet čekajících operací, které nebyly se nabídne k instanci Azure Mobile Apps a k vyprázdnění provádět pouze pokud je vlastnost nula.
 
 > [!NOTE]
-> **Poznámka:**: vyvolání `PurgeAsync` s `force` parametr nastaven na `true` všechny neuložené změny budou ztraceny.
+> Vyvolání `PurgeAsync` s `force` parametr nastaven na `true` všechny neuložené změny budou ztraceny.
 
 ## <a name="initiating-synchronization"></a>Inicializace synchronizace
 

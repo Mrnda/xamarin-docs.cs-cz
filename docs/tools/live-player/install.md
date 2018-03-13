@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/22/2017
-ms.openlocfilehash: f3fa2502f55ad7ebf59d015923ff4008103b08bd
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 9b801af77eceaf94b0ede98b6af51d55d6029fe6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="xamarin-live-player-setup"></a>Instalační program za provozu Player Xamarin
 
@@ -88,7 +88,7 @@ Přehrávač Xamarin za provozu vyžaduje:
 2. Přejděte na **sady Visual Studio > Předvolby...**  a vyberte **projekty > Xamarin Live Player (Preview)** kartě.
 3. Značky **povolit za provozu Player Xamarin**:
 
-  [ ![Zaškrtněte políčko Povolit Player Xamarin za provozu v okně Možnosti](install-images/vsmac-options-sml.png)](install-images/vsmac-options.png)
+  [![Zaškrtněte políčko Povolit Player Xamarin za provozu v okně Možnosti](install-images/vsmac-options-sml.png)](install-images/vsmac-options.png#lightbox)
 
 2. Vytvoření nebo otevření projektu Xamarin (nebo [ukázka](~/tools/live-player/samples.md)).
 3. Zvolte **Live Player** v seznamu zařízení.

@@ -7,16 +7,16 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: a5f98fc351c879be55475808b5ab412449dadc7d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 11b693193b36a80b55a61308d98b76f4f6984e8a
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="how-do-i-automate-an-android-nunit-test-project"></a>Jak mohu automatizovat projektu Android testovací NUnit?
 
 > [!NOTE]
-> **Poznámka:** Tento průvodce popisuje kroky pro nastavení testovacího projektu Android NUnit, není Xamarin.UITest projektu. Příručky Xamarin.UITest můžete najít [zde](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest).
+> Tento průvodce popisuje kroky pro nastavení testovacího projektu Android NUnit, není Xamarin.UITest projektu. Příručky Xamarin.UITest můžete najít [zde](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest).
 
 Při vytváření Android projektu testování částí [Visual Studio pro Mac] nebo jednotka testování aplikace (Android) [Visual Studio], ve výchozím nastavení se nespustí automaticky testy.
 K automatizaci android Test jednotky: ke spuštění testů NUnit na cílovém zařízení, používáme `Android.App.Instrumentation` podtřídami, které lze vytvořit a spustit pomocí `adb shell am instrument` příkaz.

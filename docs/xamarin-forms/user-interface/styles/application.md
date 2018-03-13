@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: d258d993d8452c0c93c53d875d81683a294f80d3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: dc728e5817a7d1d61d7745120bca7f05641ce76f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="global-styles"></a>Globální styly
 
@@ -60,7 +60,7 @@ Následující příklad kódu ukazuje použití stránky XAML `buttonStyle` na 
 
 Výsledkem je vidět na následujících snímcích obrazovky vzhled:
 
-[![](application-images/application-styles-1.png "Příklad globální styly")](application-images/application-styles-1-large.png "příklad globální styly")
+[![](application-images/application-styles-1.png "Příklad globální styly")](application-images/application-styles-1-large.png#lightbox "příklad globální styly")
 
 Informace o vytváření stylů na stránce [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/), najdete v části [explicitní styly](~/xamarin-forms/user-interface/styles/explicit.md) a [implicitní styly](~/xamarin-forms/user-interface/styles/implicit.md).
 
@@ -98,9 +98,9 @@ Styly níže v hierarchii zobrazení mají přednost před nastavením definovan
 
 Původní `buttonStyle`, definované na úrovni aplikace, přepíše se `buttonStyle` instance definované na úrovni stránky. Kromě toho přepsat úroveň řízení úrovně styl stránky `buttonStyle`. Proto [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) instance jsou zobrazeny s modrý text, jak je vidět na následujících snímcích obrazovky:
 
-[![](application-images/application-styles-2.png "Přepsání styly příklad")](application-images/application-styles-2-large.png "přepsání příklad styly")
+[![](application-images/application-styles-2.png "Přepsání styly příklad")](application-images/application-styles-2-large.png#lightbox "přepsání příklad styly")
 
-## <a name="creating-a-global-style-in-c35"></a>Vytvoření globální styl C &#35;
+## <a name="creating-a-global-style-in-c35"></a>Vytvoření globální styl v jazyce C&#35;
 
 [`Style`](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) instance lze přidat do aplikace [ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Resources/) kolekce v jazyce C# tak, že vytvoříte novou [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)a pak přidáním `Style` instance k `ResourceDictionary`, jako Zobrazuje následující příklad kódu:
 

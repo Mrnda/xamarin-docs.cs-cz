@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 3ff8800f4e8690069f5394193d11552d917baffe
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3e699fdc2092d17834c348c07f2440e40441ad86
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="working-with-settings"></a>Práce s nastavením
 
@@ -27,7 +27,7 @@ V **iPhone aplikace** ve vašem řešení (*není* sledování aplikace nebo roz
 
 1. Klikněte pravým tlačítkem na **Přidat > Nový soubor...**  a zvolte **Settings.bundle** (nelze upravit název v **nový soubor** dialogové okno):
 
-   [ ![](settings-images/settings-add-sml.png "Přidat novou sadu nastavení")](settings-images/settings-add.png)
+   [![](settings-images/settings-add-sml.png "Přidat novou sadu nastavení")](settings-images/settings-add.png#lightbox)
 
 2. Změňte název **nastavení Watch.bundle** (vyberte a zadejte **příkaz + R** přejmenovat):
 
@@ -35,12 +35,12 @@ V **iPhone aplikace** ve vašem řešení (*není* sledování aplikace nebo roz
 
 3. Přidejte nový klíč `ApplicationGroupContainerIdentifier` k **Root.plist** hodnota nastavena na skupinu aplikací jste nakonfigurovali, (např. `group.com.xamarin.WatchSettings` v ukázce):
 
-   [ ![](settings-images/settings-appgroup-sml.png "Přidá klíč ApplicationGroupContainerIdentifier do Root.plist")](settings-images/settings-appgroup.png)
+   [ ![](settings-images/settings-appgroup-sml.png "Přidá klíč ApplicationGroupContainerIdentifier do Root.plist")](settings-images/settings-appgroup.png#lightbox)
 
 4. Upravit **Settings-Watch.bundle/Root.plist** obsahuje možnosti, které chcete použít – soubor šablony obsahuje skupinu.
   TextField, přepnutí přepínače a posuvníku ve výchozím nastavení (která může odstranit nebo nahradit vlastním nastavením):
 
-  [ ![](settings-images/rootplist-sml.png "Upravit Settings-Watch.bundle/Root.plist")](settings-images/rootplist.png)
+  [![](settings-images/rootplist-sml.png "Upravit Settings-Watch.bundle/Root.plist")](settings-images/rootplist.png#lightbox)
 
 
 ## <a name="use-settings-in-the-watch-app"></a>Použít nastavení v aplikaci sledování
@@ -58,7 +58,7 @@ var userName = shared.StringForKey ("name_preference");
 
 ## <a name="apple-watch-app"></a>Apple Watch aplikace
 
-[ ![](settings-images/settings-app-sml.png "Novou aplikaci Apple Watch na iPhone")](settings-images/settings-app.png)
+[![](settings-images/settings-app-sml.png "Novou aplikaci Apple Watch na iPhone")](settings-images/settings-app.png#lightbox)
 
 Uživatelé budou komunikovat s nastavením přes nové **Apple Watch** aplikace na jejich zařízení iPhone. Tato aplikace umožňuje uživatelům zobrazit či skrýt aplikace sledovat a také upravit nastavení vystavené pomocí **nastavení Watch.bundle**.
 

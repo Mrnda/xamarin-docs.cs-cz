@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 7366a4ce5cbb6a3026a7445a03f03b45d89d9210
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3e5875249d7a84412b1c30580c3a8038cb53892f
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="purchasing-consumable-products"></a>Zakoupení použití produktů
 
@@ -21,7 +21,7 @@ Nejjednodušší implementovat, protože není potřeba, obnovení, jsou použit
 
 Ukázkový kód doplňujícími tento dokument ukazuje předdefinované produkty – ID produktu jsou pevně zakódované do aplikace, protože jsou úzce spojeny kód, který 'odemkne' funkci po platebních. Procesu nákupu můžete vizualizovat takto:   
    
-[ ![Nákupní proces vizualizaci](purchasing-consumable-products-images/image26.png)](purchasing-consumable-products-images/image26.png)     
+[![Nákupní proces vizualizaci](purchasing-consumable-products-images/image26.png)](purchasing-consumable-products-images/image26.png#lightbox)     
    
  Je základní pracovní postup:   
    
@@ -49,7 +49,7 @@ Neexistuje jiný typ pracovního postupu – *Server-Delivered produkty* – to 
    
    
    
- [ ![Každý nákupu přidá další kredity opic vyrovnávání uživatelů](purchasing-consumable-products-images/image27.png)](purchasing-consumable-products-images/image27.png)   
+ [![Každý nákupu přidá další kredity opic vyrovnávání uživatelů](purchasing-consumable-products-images/image27.png)](purchasing-consumable-products-images/image27.png#lightbox)   
    
    
    
@@ -57,7 +57,7 @@ Neexistuje jiný typ pracovního postupu – *Server-Delivered produkty* – to 
    
    
    
- [ ![Interakce mezi vlastní třídy, StoreKit a obchodu s aplikacemi](purchasing-consumable-products-images/image28.png)](purchasing-consumable-products-images/image28.png)
+ [![Interakce mezi vlastní třídy, StoreKit a obchodu s aplikacemi](purchasing-consumable-products-images/image28.png)](purchasing-consumable-products-images/image28.png#lightbox)
 
 &nbsp;
 
@@ -214,7 +214,7 @@ public void CompleteTransaction (SKPaymentTransaction transaction)
 
 Když uživatel uzavře více, bude výstraha potvrzení StoreKit odrážet množství, do jednotkové ceny a celková cena, které vám budou účtovat, jak je znázorněno na následujícím snímku obrazovky:
 
-[ ![Potvrzení nákup](purchasing-consumable-products-images/image30.png)](purchasing-consumable-products-images/image30.png)
+[![Potvrzení nákup](purchasing-consumable-products-images/image30.png)](purchasing-consumable-products-images/image30.png#lightbox)
 
 ## <a name="handling-network-outages"></a>Zpracování výpadky sítě
 
@@ -328,7 +328,7 @@ K otestování tuto metodu použijte **omezení** funkce iOS zakázat **nákupy 
    
    
    
- [ ![Chcete-li zakázat nákupy v aplikaci použít funkci omezení systému iOS](purchasing-consumable-products-images/image31.png)](purchasing-consumable-products-images/image31.png)   
+ [![Chcete-li zakázat nákupy v aplikaci použít funkci omezení systému iOS](purchasing-consumable-products-images/image31.png)](purchasing-consumable-products-images/image31.png#lightbox)   
    
    
    
@@ -352,7 +352,7 @@ Aplikace vypadá jako při **nákupy v aplikaci** funkce je omezená – tlačí
    
    
    
- [ ![Aplikace bude mít tento tvar při nákupy v aplikaci, funkce je omezena nákupu, které jsou zakázány tlačítka](purchasing-consumable-products-images/image32.png)](purchasing-consumable-products-images/image32.png)   
+ [![Aplikace bude mít tento tvar při nákupy v aplikaci, funkce je omezena nákupu, které jsou zakázány tlačítka](purchasing-consumable-products-images/image32.png)](purchasing-consumable-products-images/image32.png#lightbox)   
    
    
    
@@ -361,7 +361,7 @@ Informace o produktu může být vyžadováno při `CanMakePayments` je nastaven
    
    
    
- [ ![Nákupy v aplikaci nejsou povoleny.](purchasing-consumable-products-images/image33.png)](purchasing-consumable-products-images/image33.png)   
+ [![Nákupy v aplikaci nejsou povoleny.](purchasing-consumable-products-images/image33.png)](purchasing-consumable-products-images/image33.png#lightbox)   
    
    
    

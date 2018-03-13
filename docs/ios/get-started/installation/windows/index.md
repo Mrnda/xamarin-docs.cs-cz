@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/29/2017
-ms.openlocfilehash: e3416b0551bafcd7ab87b21eafbe56b733f359a4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cfbe2df23317ee3ad11c9970ab892ddcc251b9d6
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="installing-xamarinios-on-windows"></a>Instalace Xamarin.iOS v systému Windows
 
@@ -34,7 +34,7 @@ Tento článek popisuje kroky pro instalaci a konfiguraci nástroje pro Xamarin.
 
 Následující diagram ukazuje jednoduchý přehled pracovní postup vývoje Xamarin.iOS:
 
-[![Pracovní postup vývoje Xamarin.iOS](images/xma2.png)](images/xma2.png)
+[![Pracovní postup vývoje Xamarin.iOS](images/xma2.png)](images/xma2.png#lightbox)
 
 > [!IMPORTANT]
 >  Visual Studio ve skutečnosti spouští samostatný proces MSBuild k sestavení projektů. Tento proces vytvoří nové připojení k počítači Mac, což znamená, že se ve skutečnosti dvě připojení SSH ze systému Windows pro Mac při sestavení sady Visual Studio. Sestavování z [příkazového řádku](~/ios/get-started/installation/windows/connecting-to-mac/index.md) pouze vytvoří jeden proces MSBuild. Pro jednoduchost tohoto diagramu jsou reprezentované pomocí jedné šipku jednoduše všechna připojení.
@@ -44,7 +44,7 @@ Následující diagram ukazuje jednoduchý přehled pracovní postup vývoje Xam
 Xamarin.iOS pro sadu Visual Studio provede úžasné feat: umožňuje vývojářům vytvářet, sestavení a ladění aplikací iOS na počítač se systémem Windows pomocí prostředí Visual Studio IDE. Nelze-li provést tuto samostatně – iOS aplikace nelze vytvořit bez kompilátoru společnosti Apple a nemůže být nasazena bez certifikáty společnosti Apple a nástroje pro podepisování kódu. To znamená, že Xamarin.iOS pro instalaci sady Visual Studio vyžaduje připojení k síti počítači Mac OS X k provedení těchto úloh. Po nakonfigurování nástroje pro Xamarin budou proces jako bezproblémové nejblíže.
 
 
-<a name="system-requirements">
+<a name="system-requirements"/>
 
 ### <a name="system-requirements"></a>Požadavky na systém
 
@@ -72,13 +72,9 @@ Nástroje Xamarin nelze použít s edice Express sady Visual Studio z důvodu ne
 
 **Počítač se systémem Windows musí být schopný dosáhnout Mac přes síť.**
 
-<a name="appleaccount" />
-
 ### <a name="apple-developer-account"></a>Účet pro vývojáře Apple
 
 K nasazení aplikace na zařízení, nebo jejich odeslání na obchod s aplikacemi, je požadován účet vývojáře Apple. Relevantní vývojáře certifikátů a profilů zřizování musí být vytvořen a nainstalovat na síťově připojeného počítače Mac, aby Xamarin.iOS pro sadu Visual Studio můžete pracovat. Najdete v článku [zřizování zařízení](~/ios/get-started/installation/device-provisioning/index.md) najdete v článku kroky k získání certifikátu, vývoj a zřídit zařízení.
-
-<a name="features" />
 
 ## <a name="features"></a>Funkce 
 
@@ -100,6 +96,7 @@ Xamarin.iOS pro sadu Visual Studio umožňuje vytváření, úpravy, vytvářen�
 
 ## <a name="configuring-your-mac"></a>Konfigurace počítače Mac
 
+<a name="installation"/>
 
 ### <a name="installation"></a>Instalace
 
@@ -148,7 +145,7 @@ Vývoj pro iOS je důležité, že počítač Mac má nakonfigurovanou relevantn
 
 Po nakonfigurování počítače Mac je čas k nastavení počítače se systémem Windows.
 
-<a name="windowsinstallation">
+<a name="windowsinstallation"/>
 
 ## <a name="windows-installation"></a>Instalace systému Windows
 
@@ -159,7 +156,7 @@ Xamarin lze nainstalovat v rámci vaší Visual Studio 2017 nebo instalace 2015.
 Po dokončení procesu instalace jsou stále několik další kroky potřebné k všechno funguje:
 
 - [Visual Studio se připojit k počítači Mac](#connectingtomac) – Visual Studio musí být připojen k hostiteli sestavení Mac předtím, než ho mohou vytvářet projekty Xamarin.iOS.
-- [Konfigurace nástrojů Visual Studio](#Visual_Studio_Toolbar_Overview) – to vám umožní snadný přístup k Xamarin.iOS funkce v sadě Visual Studio.
+- [Konfigurace nástrojů Visual Studio](#toolbar) – to vám umožní snadný přístup k Xamarin.iOS funkce v sadě Visual Studio.
 
 <a name="connectingtomac" /> 
 
@@ -171,19 +168,19 @@ Pro připojení počítače Mac, postupujte podle následujících kroků:
 
 - Přejděte do **nástroje > Možnosti** a v části **Xamarin** vyberte **nastavení iOS**:
 
-  [![Na obrazovce nastavení iOS](images/image2.png)](images/image2.png)
+  [![Na obrazovce nastavení iOS](images/image2.png)](images/image2.png#lightbox)
 
 - Zadaný Mac bylo správně [nakonfigurované](#configuration) umožňující **vzdálené přihlášení**, byste měli mít v seznamu vyberte počítače Mac:
 
-  [![Dialogové okno vzdáleného hostitele](images/xma3.png)](images/xma3.png)
+  [![Dialogové okno vzdáleného hostitele](images/xma3.png)](images/xma3.png#lightbox)
 
 - Zobrazí se výzva pro pověření pro správu hostitele vaší Mac:
 
-  [![Dialogové okno přihlášení](images/xma4.png)](images/xma4.png)
+  [![Dialogové okno přihlášení](images/xma4.png)](images/xma4.png#lightbox)
 
 - Když připojíte, zobrazí se připojení úspěšně Ikona vedle názvu počítače:
 
-  [![Vzdálené má dialogové okno zobrazení úspěšné připojení ikona vedle názvu počítače](images/image6.png)](images/image6.png)
+  [![Vzdálené má dialogové okno zobrazení úspěšné připojení ikona vedle názvu počítače](images/image6.png)](images/image6.png#lightbox)
 
 Bude znovu při každém spuštění sady Visual Studio.
 
@@ -197,7 +194,7 @@ Následující postup lze použít, pokud panelu nástrojů iOS nezobrazí.
 
 Ke konfiguraci prvním otevření panelu nástrojů **zobrazení > Panely nástrojů** nabídky a ujistěte se, že **iOS** je vybraná položka. Zvolte položky nabídky, jak je vidět na tomto snímku obrazovky – měla být zaškrtnuta k označení, že je viditelná panelu nástrojů:
 
-[![Zvolte panely nástrojů > iOS](images/image31.png)](images/image31.png)
+[![Zvolte panely nástrojů > iOS](images/image31.png)](images/image31.png#lightbox)
 
 ### <a name="visual-studio-2015"></a>Visual Studio 2015
 
@@ -208,11 +205,11 @@ Klikněte na tlačítko nabídky na pravé straně panelu Standardní:
 - Zvolte **přidat nebo odebrat tlačítka**
 - Vyberte **řešení platformy**
 
-[![Vyberte platformu řešení](images/image35.png)](images/image35.png)
+[![Vyberte platformu řešení](images/image35.png)](images/image35.png#lightbox)
 
 **Standardní** a **iOS** panely nástrojů by měl nyní vypadat takto:
 
-[![Panely nástrojů Standard a iOS by měl nyní vypadat na tomto snímku obrazovky](images/image36.png)](images/image36.png)
+[![Panely nástrojů Standard a iOS by měl nyní vypadat na tomto snímku obrazovky](images/image36.png)](images/image36.png#lightbox)
 
 Po dokončení konfigurace nástrojů jste připraveni začít používat Xamarin iOS pro sadu Visual Studio.
 

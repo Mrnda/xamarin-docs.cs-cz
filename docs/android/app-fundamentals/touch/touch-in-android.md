@@ -6,12 +6,12 @@ ms.assetid: 405A1FA0-4EFA-4AEB-B672-F36307B9CF16
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 83997018f4e08567a9150bf1e21374a98c8ddb4e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/01/2018
+ms.openlocfilehash: 1d9cf345aa971c40f4132cc7970ed1244640da14
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="touch-in-android"></a>Touch v Android
 
@@ -33,7 +33,7 @@ Podobně jako iOS, Android vytvoří objekt, který uchovává data o fyzické i
 
 
 > [!NOTE]
-> **Poznámka:** ne všechna zařízení se systémem Android, podporují dotykové obrazovky. 
+> Ne všechna zařízení se systémem Android podporují dotykové obrazovky. 
 
 Přidání následující značky k souboru manifestu způsobí, že Google Play k zobrazení pouze taková zařízení, která jsou povolena touch v aplikaci:
 
@@ -90,11 +90,11 @@ Gesta jsou skvělý způsob, jak uživatelům interakci s aplikací. Rozhraní A
 
 Od verze Android 1.6 SDK pro Android dodává s předinstalovaným v emulátoru názvem gesta Tvůrce aplikací. Tato aplikace umožňuje vývojáři k vytvoření předem definované gesta, která může být vložen do aplikace. Následující snímek obrazovky ukazuje příklad gesta Tvůrce:
 
-[![Snímek obrazovky gesta Tvůrce gest příklad](touch-in-android-images/image11.png)](touch-in-android-images/image11.png)
+[![Snímek obrazovky gesta Tvůrce gest příklad](touch-in-android-images/image11.png)](touch-in-android-images/image11.png#lightbox)
 
 Vylepšené verzi této aplikaci s názvem gesto nástroj lze nalézt Google Play. Gesto nástroj je hodně podobá gesta Tvůrce s tím rozdílem, že ji můžete otestovat gesta po jejich vytvoření. Tato další snímek obrazovky ukazuje gesta Tvůrce:
 
-[![Snímek obrazovky gesto nástroj gest příklad](touch-in-android-images/image12.png)](touch-in-android-images/image12.png)
+[![Snímek obrazovky gesto nástroj gest příklad](touch-in-android-images/image12.png)](touch-in-android-images/image12.png#lightbox)
 
 Nástroj gesto bitu užitečnější pro vytváření vlastních gest jako umožňuje gesta, která má být testována jako během vytváření a je snadno dostupné prostřednictvím webu Google Play.
 

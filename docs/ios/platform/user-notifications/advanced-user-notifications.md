@@ -3,16 +3,16 @@ title: "Oznámení pro pokročilé uživatele"
 description: "Tento článek trvá hlubší pohled na nové architektury uživatelská oznámení a postup plně využít výhod ho v aplikaci pro Xamarin.iOS."
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: 4e1ff652-28f0-4566-b383-9d12664401a4
+ms.assetid: 4E0C60AE-6F54-4098-8FA0-AADF9AC86805
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 6408f3b45f93413fa814e410f07e7b71179b7338
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: e20c9f068fe92e0dd711e0c20d31d713a0d03f0d
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="advanced-user-notifications"></a>Oznámení pro pokročilé uživatele
 
@@ -81,7 +81,7 @@ Pro vzdálené oznámení upravit rozšíření služby musí být označen jeho
 
 Podívejte se na následující přehled procesu:
 
-[ ![](advanced-user-notifications-images/extension02.png "Přidávání příloh média procesu")](advanced-user-notifications-images/extension02.png)
+[![](advanced-user-notifications-images/extension02.png "Přidávání příloh média procesu")](advanced-user-notifications-images/extension02.png#lightbox)
 
 Jakmile vzdáleného oznámení je doručit do zařízení (přes APNs), rozšíření služby můžete pak stáhnout požadované bitovou kopii prostřednictvím jakýmkoli způsobem potřeby (například `NSURLSession`) a po přijetí bitovou kopii, můžete upravovat obsah oznámení a zobrazení je pro uživatele.
 
@@ -157,7 +157,7 @@ Pro podporu interakce uživatele s oznámení pro uživatele, vlastní akce by m
 
 Když se oznámení pro uživatele s vlastní uživatelské rozhraní pro uživatele, bude mít následující prvky:
 
-[ ![](advanced-user-notifications-images/customui01.png "Oznámení pro uživatele pomocí uživatelského rozhraní pro vlastní elementy")](advanced-user-notifications-images/customui01.png)
+[![](advanced-user-notifications-images/customui01.png "Oznámení pro uživatele pomocí uživatelského rozhraní pro vlastní elementy")](advanced-user-notifications-images/customui01.png#lightbox)
 
 Pokud uživatel pracuje s vlastní akcí (uvedené níže oznámení), uživatelské rozhraní můžete aktualizovat tak, aby zpětnou vazbu od uživatelů jako co se stalo při jejich vyvolání danou akci.
 
@@ -171,13 +171,13 @@ Pokud chcete implementovat uživatelského rozhraní pro oznámení uživatele v
 2. Klikněte pravým tlačítkem na název řešení v **řešení Pad** a vyberte **přidat** > **přidat nový projekt**.
 3. Vyberte **iOS** > **rozšíření** > **obsahu rozšíření oznámení** a klikněte na **Další** tlačítko: 
 
-    [ ![](advanced-user-notifications-images/notify01.png "Vyberte oznámení obsahu rozšíření")](advanced-user-notifications-images/notify01.png)
+    [![](advanced-user-notifications-images/notify01.png "Vyberte oznámení obsahu rozšíření")](advanced-user-notifications-images/notify01.png#lightbox)
 4. Zadejte **název** pro rozšíření a klikněte na **Další** tlačítko: 
 
-    [ ![](advanced-user-notifications-images/notify02.png "Zadejte název pro rozšíření")](advanced-user-notifications-images/notify02.png)
+    [![](advanced-user-notifications-images/notify02.png "Zadejte název pro rozšíření")](advanced-user-notifications-images/notify02.png#lightbox)
 5. Upravit **název projektu** nebo **název řešení** dle potřeby **vytvořit** tlačítko: 
 
-    [ ![](advanced-user-notifications-images/notify03.png "Nastavte název projektu nebo název řešení")](advanced-user-notifications-images/notify03.png)
+    [![](advanced-user-notifications-images/notify03.png "Nastavte název projektu nebo název řešení")](advanced-user-notifications-images/notify03.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -185,7 +185,7 @@ Pokud chcete implementovat uživatelského rozhraní pro oznámení uživatele v
 2. Klikněte pravým tlačítkem na název řešení v **Průzkumníku řešení** a vyberte **přidat** > **přidat nový projekt**.
 3. Vyberte **iOS** > **rozšíření** > **obsahu rozšíření oznámení**: 
 
-    [ ![](advanced-user-notifications-images/notify01w.png "Vyberte oznámení obsahu rozšíření")](advanced-user-notifications-images/notify01w.png)
+    [![](advanced-user-notifications-images/notify01w.png "Vyberte oznámení obsahu rozšíření")](advanced-user-notifications-images/notify01w.png#lightbox)
 4. Zadejte **název** pro rozšíření a klikněte na **OK** tlačítko.
 
 -----
@@ -254,7 +254,7 @@ V systému musí být informováni o tom, jak najít rozšíření obsahu oznám
 3. Rozbalte `NSExtension` klíč.
 4. Přidat `UNNotificationExtensionCategory` klíče jako typ **řetězec** s hodnotou rozšíření patří do kategorie (v tomto příkladu se události pozvání): 
 
-    [ ![](advanced-user-notifications-images/customui02.png "Přidejte klíč UNNotificationExtensionCategory")](advanced-user-notifications-images/customui02.png)
+    [![](advanced-user-notifications-images/customui02.png "Přidejte klíč UNNotificationExtensionCategory")](advanced-user-notifications-images/customui02.png#lightbox)
 5. Uložte provedené změny.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -263,7 +263,7 @@ V systému musí být informováni o tom, jak najít rozšíření obsahu oznám
 3. Rozbalte `NSExtension` klíč.
 4. Přidat `UNNotificationExtensionCategory` klíče jako typ **řetězec** s hodnotou rozšíření patří do kategorie (v tomto příkladu se události pozvání): 
 
-    [ ![](advanced-user-notifications-images/customui02w.png "Přidejte klíč UNNotificationExtensionCategory")](advanced-user-notifications-images/customui02w.png)
+    [![](advanced-user-notifications-images/customui02w.png "Přidejte klíč UNNotificationExtensionCategory")](advanced-user-notifications-images/customui02w.png#lightbox)
 5. Uložte provedené změny.
 
 -----
@@ -272,11 +272,11 @@ Oznámení obsahu rozšíření kategorií (`UNNotificationExtensionCategory`) p
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![](advanced-user-notifications-images/customui03.png "Oznámení obsahu rozšíření kategorií")](advanced-user-notifications-images/customui03.png)
+[![](advanced-user-notifications-images/customui03.png "Oznámení obsahu rozšíření kategorií")](advanced-user-notifications-images/customui03.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](advanced-user-notifications-images/customui03w.png "Oznámení obsahu rozšíření kategorií")](advanced-user-notifications-images/customui03w.png)
+[![](advanced-user-notifications-images/customui03w.png "Oznámení obsahu rozšíření kategorií")](advanced-user-notifications-images/customui03w.png#lightbox)
 
 -----
 
@@ -286,11 +286,11 @@ V situaci, kdy rozhraní vlastní oznámení zobrazovat stejný obsah jako vých
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![](advanced-user-notifications-images/customui04.png "Výchozí informace o hledání")](advanced-user-notifications-images/customui04.png)
+[![](advanced-user-notifications-images/customui04.png "Výchozí informace o hledání")](advanced-user-notifications-images/customui04.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](advanced-user-notifications-images/customui04w.png "Výchozí informace o hledání")](advanced-user-notifications-images/customui04w.png)
+[![](advanced-user-notifications-images/customui04w.png "Výchozí informace o hledání")](advanced-user-notifications-images/customui04w.png#lightbox)
 
 -----
 
@@ -367,11 +367,11 @@ Chcete-li odstranit tento vliv, upravte `Info.plist` soubor pro rozšíření a 
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[ ![](advanced-user-notifications-images/customui05.png "Klíč UNNotificationExtensionInitialContentSizeRatio")](advanced-user-notifications-images/customui05.png)
+[![](advanced-user-notifications-images/customui05.png "Klíč UNNotificationExtensionInitialContentSizeRatio")](advanced-user-notifications-images/customui05.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[ ![](advanced-user-notifications-images/customui05w.png "Klíč UNNotificationExtensionInitialContentSizeRatio")](advanced-user-notifications-images/customui05w.png)
+[![](advanced-user-notifications-images/customui05w.png "Klíč UNNotificationExtensionInitialContentSizeRatio")](advanced-user-notifications-images/customui05w.png#lightbox)
 
 -----
 
