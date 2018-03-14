@@ -8,17 +8,17 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 0d08b2ff5131996984dbe41862ad1d6aac33b3d0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e1232c96f5ea978c8adc640160a1e9b7e42663d8
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="introduction-to-ios-6"></a>Úvod do systému iOS 6
 
 _iOS 6 zahrnuje celou řadu nových technologií pro vývoj aplikací, které přináší Xamarin.iOS 6 pro vývojáře jazyka C#._
 
-[ ![](images/ios6-large.jpg "Logo iOS 6")](images/ios6-large.jpg)
+[ ![](images/ios6-large.jpg "Logo iOS 6")](images/ios6-large.jpg#lightbox)
 
 IOS 6 a Xamarin.iOS 6 vývojáři teď mají k dispozici pro vytvoření aplikace pro iOS, včetně těch, které jsou tento cíl iPhone 5 širokou řadu schopnosti.
 Tento dokument uvádí některé více zajímavé nové funkce, které jsou k dispozici a odkazy na články pro každého tématu. Kromě toho dotýká na několik změn, které mají být důležité, protože vývojáři přesunout do iOS 6 a nového řešení iPhone 5.
@@ -92,11 +92,11 @@ Pro případ uložení stavu aplikace můžete provádět v `ViewWillDisappear` 
 
 zařízení iPhone 5 mít 640 x 1136 řešení. Aplikace, které cílí předchozích verzí systému iOS se zobrazí letterboxed při spuštění v zařízení typu iPhone 5, jak je uvedeno níže:
 
- [ ![](images/01-letterboxed.png "Aplikace, které cílí předchozích verzí systému iOS se zobrazí letterboxed při spuštění v zařízení iPhone 5")](images/01-letterboxed.png)
+ [![](images/01-letterboxed.png "Aplikace, které cílí předchozích verzí systému iOS se zobrazí letterboxed při spuštění v zařízení iPhone 5")](images/01-letterboxed.png#lightbox)
 
 Aby aplikace se objeví přes celou obrazovku na zařízení iPhone 5, jednoduše přidat bitovou kopii s názvem `Default-568h@2x.png` s rozlišením 640 x 1136. Následující snímek obrazovky ukazuje aplikace běžící po zahrnuté tuto bitovou kopii:
 
- [ ![](images/02-fullscreen.png "Tento snímek obrazovky ukazuje aplikace běžící po zahrnuté tuto bitovou kopii")](images/02-fullscreen.png)
+ [![](images/02-fullscreen.png "Tento snímek obrazovky ukazuje aplikace běžící po zahrnuté tuto bitovou kopii")](images/02-fullscreen.png#lightbox)
 
 ### <a name="subclassing-uinavigationbar"></a>Vytvoření podtřídy UINavigationBar
 
@@ -130,7 +130,7 @@ navController = new UINavigationController (typeof(CustomNavBar), typeof(UIToolb
 
 Pomocí této `UINavigationBar` podtřídami výsledkem image zobrazení se zobrazuje, jak je znázorněno na následujícím snímku obrazovky:
 
- [ ![](images/03-navbar.png "Pomocí této UINavigationBar podtřídami výsledky v zobrazení bitové kopie se zobrazuje, jak je vidět na tomto snímku obrazovky")](images/03-navbar.png)
+ [![](images/03-navbar.png "Pomocí této UINavigationBar podtřídami výsledky v zobrazení bitové kopie se zobrazuje, jak je vidět na tomto snímku obrazovky")](images/03-navbar.png#lightbox)
 
 ### <a name="interface-orientation"></a>Orientace rozhraní
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 1c24b1faf7b108466d6e93ffae8112d0dea6d844
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 282a4cb59545703c5172f8747cb5b633e7b648dc
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="sliders-switches-and-segmented-controls"></a>Posuvníky, přepínače a Segmentovaným ovládací prvky
 
@@ -22,11 +22,11 @@ ms.lasthandoff: 02/27/2018
 
 V ovládacím prvku posuvník umožňuje jednoduché výběr číselnou hodnotu v rozsahu. Ovládací prvek výchozí hodnotu mezi 0 a 1, ale tato omezení lze přizpůsobit.
 
- [ ![](slider-switch-segmented-controls-images/image25a.png "Posuvník")](slider-switch-segmented-controls-images/image25a.png)
+ [![](slider-switch-segmented-controls-images/image25a.png "Slider")](slider-switch-segmented-controls-images/image25a.png#lightbox)
 
 Následující snímek obrazovky ukazuje vlastnosti, které lze upravit v designeru:
 
- [ ![](slider-switch-segmented-controls-images/image26a.png "Vlastnosti posuvníku")](slider-switch-segmented-controls-images/image25a.png)
+ [![](slider-switch-segmented-controls-images/image26a.png "Vlastnosti posuvníku")](slider-switch-segmented-controls-images/image25a.png#lightbox)
 
 Tyto hodnoty lze nastavit v kódu, jak je uvedeno níže, včetně kabeláž až obslužnou rutinu pro aktuálně vybranou hodnotu v zobrazení `UILabel` ovládacího prvku:
 
@@ -47,7 +47,7 @@ slider1.MaximumTrackTintColor = UIColor.Green;
 
 Přizpůsobené posuvníku vypadá takto:
 
- [ ![](slider-switch-segmented-controls-images/image27a.png "Vlastní posuvníku")](slider-switch-segmented-controls-images/image28a.png)
+ [![](slider-switch-segmented-controls-images/image27a.png "Vlastní posuvníku")](slider-switch-segmented-controls-images/image28a.png#lightbox)
 
 > [!IMPORTANT]
 > V současné době není [chyb](http://stackoverflow.com/a/19496179) způsobuje `ThumbTint` k vykreslení není v době běhu podle očekávání. Můžete přidat následující řádek kódu **před** kód výše jako alternativní řešení. [[Zdroj](http://stackoverflow.com/a/21396794)]:
@@ -62,11 +62,11 @@ Přizpůsobené posuvníku vypadá takto:
 
 používá iOS `UISwitch` jako logická hodnota vstupu, který může být reprezentována přepínač na jiných platformách. Uživatele můžete upravit ovládacího prvku přesunutím *jezdec* mezi **zapnutí nebo vypnutí** pozic.
 
- [ ![](slider-switch-segmented-controls-images/image28a.png "přepínače")](slider-switch-segmented-controls-images/image28a.png)
+ [![](slider-switch-segmented-controls-images/image28a.png "Switch")](slider-switch-segmented-controls-images/image28a.png#lightbox)
 
 Lze přizpůsobit vzhled přepínače v **vlastnosti Pad** návrháře, což vám umožní řídit výchozí stav, **zapnutí nebo vypnutí TINT –** barvy a **samostatnými Image**. To je znázorněno na obrázku níže:
 
- [ ![](slider-switch-segmented-controls-images/image29a.png "Vlastnosti přepínače")](slider-switch-segmented-controls-images/image29a.png)
+ [![](slider-switch-segmented-controls-images/image29a.png "Vlastnosti přepínače")](slider-switch-segmented-controls-images/image29a.png#lightbox)
 
 V kódu můžete také nastavit vlastnosti přepínače, například následující kód zobrazí přepínač se na výchozí hodnotu `On`:
 
@@ -81,15 +81,15 @@ switch1.On = true;
 
 Segmentovaným řízení je lze snadno povolit uživatelům interakci s malý počet možností. Je vodorovně nastíněny a každý segment funkce jako samostatný tlačítka. Při použití návrháře, Segmentovaným řízení najdete v části **sada nástrojů > ovládací prvky**a by měl vypadat jako na následujícím obrázku:
 
- [ ![](slider-switch-segmented-controls-images/segmentedcontrol.png "Segmentovaným ovládací prvek")](slider-switch-segmented-controls-images/segmentedcontrol.png)
+ [![](slider-switch-segmented-controls-images/segmentedcontrol.png "Segmentovaným ovládací prvek")](slider-switch-segmented-controls-images/segmentedcontrol.png#lightbox)
 
 Jedinečné funkce návrháře umožňuje každý segment, který se na návrhovou plochu, vybrat jednotlivě, jak je uvedeno dále:
 
- [ ![](slider-switch-segmented-controls-images/segmentedcontrolselection.png "Segmentovaným ovládací prvek")](slider-switch-segmented-controls-images/segmentedcontrolselection.png)
+ [![](slider-switch-segmented-controls-images/segmentedcontrolselection.png "Segmentovaným ovládací prvek")](slider-switch-segmented-controls-images/segmentedcontrolselection.png#lightbox)
 
 To umožňuje panelu Vlastnosti pro které bude použito ke přesněji řídit vlastnosti každého segmentu. Můžete zjistit upravovat vlastnosti na tomto snímku obrazovky:
 
- [ ![](slider-switch-segmented-controls-images/segmentedcontrolproperties.png "Segmentovaným ovládací prvek")](slider-switch-segmented-controls-images/segmentedcontrolproperties.png)
+ [![](slider-switch-segmented-controls-images/segmentedcontrolproperties.png "Segmentovaným ovládací prvek")](slider-switch-segmented-controls-images/segmentedcontrolproperties.png#lightbox)
 
 Je potřeba poznamenat, že styl Segmentovaným ovládací prvek se již nepoužívá v systému IOS 7 a proto úpravě možnosti pro tento v ios7 nespustí aplikaci nebude mít žádný vliv.
 

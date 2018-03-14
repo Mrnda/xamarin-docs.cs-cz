@@ -4,14 +4,15 @@ description: "Zjištění různých cesta účinky, které umožňují cesty, kt
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
+ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
 author: charlespetzold
 ms.author: chape
 ms.date: 07/29/2017
-ms.openlocfilehash: 4344559c85ad637ad198b3afc28b17e694a14f82
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 60d60939c0f7bd3961400a3e8d769fdfa17184a2
+ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="path-effects"></a>Cesta efekty
 
@@ -48,7 +49,7 @@ Konců pomlček se vztahuje `StrokeCap` vlastnost `SKPaint`. Pro celou tahu ší
 
 **Animovaný s tečkami Text** je podobná stránce **uvedených Text** stránky, které jsou popsané v článku [ **integrace textu a obrázků** ](~/xamarin-forms/user-interface/graphics/skiasharp/basics/text.md) v že zobrazuje uvedených textových znaků nastavením `Style` vlastnost `SKPaint` do objektu `SKPaintStyle.Stroke`. Kromě toho **animovaný s tečkami Text** používá `SKPathEffect.CreateDash` umožnit to popisují desítkovém vzhled a také animuje program `phase` argument `SKPathEffect.CreateDash` metoda aby tečky se zdá, že cestují kolem textu znaky. Zde je stránka v režimu na šířku:
 
-[![](effects-images/animateddottedtext-small.png "Trojitá snímek obrazovky stránky animovaný s tečkami Text")](effects-images/animateddottedtext-large.png "Trojitá snímek obrazovky stránky animovaný s tečkami textu")
+[![](effects-images/animateddottedtext-small.png "Trojitá snímek obrazovky stránky animovaný s tečkami Text")](effects-images/animateddottedtext-large.png#lightbox "Trojitá snímek obrazovky stránky animovaný s tečkami textu")
 
 [ `AnimatedDottedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs) Třídy začne definováním některé konstanty a také přepsání `OnAppearing` a `OnDisappearing` metody pro animace:
 
@@ -156,7 +157,7 @@ Je možné upravit délku v čárkovém vzoru podle délka cesty, ale který vy�
 
 **Dot a pomlčka způsobů** program animuje v čárkovém vzoru sám sebe, tak, aby pomlčky zdá se, že k rozdělení na tečky, které se kombinují a pomlčky formulář znovu:
 
-[![](effects-images/dotdashmorph-small.png "Trojitá snímek obrazovky stránky tečkou Dash způsobů")](effects-images/dotdashmorph-large.png "Trojitá snímek obrazovky stránky způsobů Dash tečku")
+[![](effects-images/dotdashmorph-small.png "Trojitá snímek obrazovky stránky tečkou Dash způsobů")](effects-images/dotdashmorph-large.png#lightbox "Trojitá snímek obrazovky stránky způsobů Dash tečku")
 
 [ `DotDashMorphPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs) Třídy přepsání `OnAppearing` a `OnDisappearing` metody stejně jako předchozí aplikace nebyla, ale definuje třídu `SKPaint` objektu jako pole:
 
@@ -396,7 +397,7 @@ public partial class OneDimensionalPathEffectPage : ContentPage
 
 `PaintSurface` Obslužná rutina vytvoří Bézierovy křivky, který kolem sám v cyklu a přistupuje k výběru zjistíte, které `PathEffect` by měl být použité k obtažení ho. Tři možnosti – `Translate`, `Rotate`, a `Morph` – jsou uvedeny zleva doprava:
 
-[![](effects-images/1dpatheffect-small.png "Trojitá snímek obrazovky stránky efektu cesta 1D")](effects-images/1dpatheffect-large.png "Trojitá snímek obrazovky stránky efektu cesta 1 D")
+[![](effects-images/1dpatheffect-small.png "Trojitá snímek obrazovky stránky efektu cesta 1D")](effects-images/1dpatheffect-large.png#lightbox "Trojitá snímek obrazovky stránky efektu cesta 1 D")
 
 Cesta zadaná v `SKPathEffect.Create1DPath` metoda je vždy vyplněna. Cesta zadaná v `DrawPath` metoda je vždy vytažený, pokud `SKPaint` objekt má jeho `PathEffect` vlastnost nastavena na hodnotu efekt cesta 1 D. Všimněte si, že `pathPaint` objekt nemá žádné `Style` normálně výchozí nastavení pro `Fill`, ale cesta je vytažený bez ohledu na to.
 
@@ -408,7 +409,7 @@ Tvar rámečku v `Morph` příklad je 50 pixelů s `advance` nastavení 55, aby 
 
 Pokud `advance` argument je menší než velikost cesty, pak může dojít k překrytí replikované cesty. Výsledkem může být zajímavých efektů. **Propojené řetězu** stránka se zobrazuje řada překrývajících se oblastí kroužky, které pravděpodobně tak, aby připomínaly propojené řetězec, který je přestane reagovat v rozlišovací tvar trolejového vedení:
 
-[![](effects-images/linkedchain-small.png "Trojitá snímek obrazovky stránky propojené řetězu")](effects-images/linkedchain-large.png "Trojitá snímek obrazovky stránky propojený řetězec")
+[![](effects-images/linkedchain-small.png "Trojitá snímek obrazovky stránky propojené řetězu")](effects-images/linkedchain-large.png#lightbox "Trojitá snímek obrazovky stránky propojený řetězec")
 
 Podívejte se velmi zavřít a uvidíte, že těch, které nejsou ve skutečnosti kroužky. Každé propojení v řetězci je dva oblouky, velikosti a umístěný, takže se pro připojení s sousedících odkazy.
 
@@ -418,7 +419,7 @@ y = · COSH(x / a)
 
 *Cosh* hyperbolický kosinus funkcí. Pro *x* rovná 0, *cosh* rovná nule a *y* rovná *a*. To je center trolejového. Podobně jako *kosinus* funkce, *cosh* se říká, že *i*, to znamená, že *cosh(–x)* rovná *cosh(x)*, a hodnoty zvyšují pro zvýšení kladné a záporné argumenty. Tyto hodnoty popisují křivek, které vytvářejí postranní trolejového.
 
-Hledání správnou hodnotu *podle* trolejového vedení dimenzím, na stránce telefonu není přímé výpočtu. Pokud *w* a *h* jsou šířky a výšky obdélníku, optimální hodnotu *a* splňuje následující rovnice:
+Hledání správnou hodnotu *a* podle trolejového vedení dimenzím, na stránce telefonu není přímé výpočtu. Pokud *w* a *h* jsou šířky a výšky obdélníku, optimální hodnotu *a* splňuje následující rovnice:
 
 COSH (w/2/a) = 1 + h / a
 
@@ -547,7 +548,7 @@ Tento program definuje cestu použitou v `Create1DPath` tak, aby měl jeho (0, 0
 
 **Běžícím pásu** stránky vytvoří cestu podlouhlá běžícím pásu s zakřivené horní a dolní to je velikost okna rozměrům tvaru. Tato cesta je vytažené jednoduchou `SKPaint` objektu 20 pixelů a barevnou šedé a pak vytažený znovu s jinou `SKPaint` objektu s `SKPathEffect` objekt odkazující na cestu tvaru malé sady:
 
-[![](effects-images/conveyorbelt-small.png "Trojitá snímek obrazovky stránky běžícím pásu")](effects-images/conveyorbelt-large.png "Trojitá snímek obrazovky stránky běžícím pásu")
+[![](effects-images/conveyorbelt-small.png "Trojitá snímek obrazovky stránky běžícím pásu")](effects-images/conveyorbelt-large.png#lightbox "Trojitá snímek obrazovky stránky běžícím pásu")
 
 (0, 0) bod sady cesty je popisovač, takže pokud `phase` je animovaný argument, kbelíků se zdá, že základem běžícím pásu, případně vybírání rozsahu adres až horních dole a vypsání ho v horní části.
 
@@ -796,7 +797,7 @@ Pokud jste pečlivě si prohlédněte výsledky, uvidíte, že řádky červená
 
 `PaintSurface` Obslužná rutina se ukončí pomocí volání jednoduše obtažení zaokrouhlené obdélníku, abyste viděli nesoulad mezi databází červená a modrá šrafování řádků:
 
-[![](effects-images/hatchfill-small.png "Trojitá snímek obrazovky stránky šrafování výplně")](effects-images/hatchfill-large.png "Trojitá snímek obrazovky stránky šrafování výplně")
+[![](effects-images/hatchfill-small.png "Trojitá snímek obrazovky stránky šrafování výplně")](effects-images/hatchfill-large.png#lightbox "Trojitá snímek obrazovky stránky šrafování výplně")
 
 Android obrazovky nevypadá skutečně jako je například: škálování na snímku obrazovky způsobila dynamické red čar a dynamické konsolidovat do zdánlivě širší červené čáry a širší mezer.
 
@@ -850,7 +851,7 @@ public class PathTileFillPage : ContentPage
 
 V `PaintSurface` obslužnou rutinu, `SKPathEffect.Create2DPath` volání nastaví mezery vodorovného a svislého 64 způsobí odmocnina dlaždice 80 pixelů překrytí. Naštěstí cesta se podobá stavebnice část, výborně meshing s přiléhající dlaždice:
 
-[![](effects-images/pathtilefill-small.png "Trojitá snímek obrazovky stránky zadejte cestu dlaždice")](effects-images/pathtilefill-large.png "Trojitá snímek obrazovky stránky zadejte cestu dlaždice")
+[![](effects-images/pathtilefill-small.png "Trojitá snímek obrazovky stránky zadejte cestu dlaždice")](effects-images/pathtilefill-large.png#lightbox "Trojitá snímek obrazovky stránky zadejte cestu dlaždice")
 
 Škálování z původní snímek způsobí, že některé narušení, zvláště na obrazovce Android.
 
@@ -923,7 +924,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Můžete použít tento efekt vytažení nebo naplnění na základě `Style` vlastnost `SKPaint` objektu. Tady je na všech tří platformách:
 
-[![](effects-images/anotherroundedheptagon-small.png "Trojitá snímek obrazovky stránky pro jiné zaokrouhlené sedmiúhelník")](effects-images/anotherroundedheptagon-large.png "Trojitá snímek obrazovky stránky pro jiné zaokrouhlené sedmiúhelník")
+[![](effects-images/anotherroundedheptagon-small.png "Trojitá snímek obrazovky stránky pro jiné zaokrouhlené sedmiúhelník")](effects-images/anotherroundedheptagon-large.png#lightbox "Trojitá snímek obrazovky stránky pro jiné zaokrouhlené sedmiúhelník")
 
 Uvidíte, že tento zaokrouhlené pro sedmiúhelník je stejný jako starší programu. Pokud potřebujete další přesvědčit poloměr je skutečně 100 spíše než 50 zadaný v `SKPathEffect.CreateCorner` volání, která vám může zrušte komentář u poslední příkaz v programu a najdete kruh 100 radius přes rohu.
 
@@ -942,7 +943,7 @@ Konečný argument je základní hodnota používá ke generování pseudonáhod
 
 **Zmenší se Experiment** stránce můžete experimentovat s různými hodnotami v vytažení obdélníku:
 
-[![](effects-images/jitterexperiment-small.png "Trojitá snímek obrazovky stránky zmenší experimentu")](effects-images/jitterexperiment-large.png "Triple screenshot of the JitterExperiment page")
+[![](effects-images/jitterexperiment-small.png "Trojitá snímek obrazovky stránky zmenší experimentu")](effects-images/jitterexperiment-large.png#lightbox "Triple screenshot of the JitterExperiment page")
 
 Tento program je straightfoward. [ **JitterExperimentPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/JitterExperimentPage.xaml) soubor vytvoří dvě instance `Slider` elementy a `SKCanvasView`:
 
@@ -1068,7 +1069,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Zde je spuštěna v režimu na šířku na všech tří platformách:
 
-[![](effects-images/jittertext-small.png "Trojitá snímek obrazovky stránky zmenší Text")](effects-images/jittertext-large.png "Triple screenshot of the JitterText page")
+[![](effects-images/jittertext-small.png "Trojitá snímek obrazovky stránky zmenší Text")](effects-images/jittertext-large.png#lightbox "Triple screenshot of the JitterText page")
 
 ## <a name="path-outlining"></a>Osnova cesta
 
@@ -1169,11 +1170,11 @@ public partial class TapToOutlineThePathPage : ContentPage
 
 Kruhu je vyplněno a vytažený podle předpokladů:
 
-[![](effects-images/taptooutlinethepathnormal-small.png "Trojitá snímek obrazovky stránky normální klepněte na obrys Path")](effects-images/taptooutlinethepathnormal-large.png "Trojitá snímek obrazovky normální klepněte na obrys Path stránky")
+[![](effects-images/taptooutlinethepathnormal-small.png "Trojitá snímek obrazovky stránky normální klepněte na obrys Path")](effects-images/taptooutlinethepathnormal-large.png#lightbox "Trojitá snímek obrazovky normální klepněte na obrys Path stránky")
 
 Když klepnete na obrazovce `outlineThePath` je nastaven na `true`a `PaintSurface` obslužná rutina vytvoří čerstvou `SKPath` objektu a použije tento jako cílová cesta ve volání `GetFillPath` na `redThickStroke` Malování objektu. Že cílová cesta se pak vyplněno a vytažené `redThinStroke`, což je následující:
 
-[![](effects-images/taptooutlinethepathoutlined-small.png "Trojitá snímek obrazovky stránky popsané klepněte na obrys Path")](effects-images/taptooutlinethepathoutlined-large.png "Trojitá snímek obrazovky popsané klepněte na obrys Path stránky")
+[![](effects-images/taptooutlinethepathoutlined-small.png "Trojitá snímek obrazovky stránky popsané klepněte na obrys Path")](effects-images/taptooutlinethepathoutlined-large.png#lightbox "Trojitá snímek obrazovky popsané klepněte na obrys Path stránky")
 
 Na dva červeném kroužku jasně označuje, že původní cyklická cesta byl převeden do dvou cyklické rozvrhů.
 
@@ -1237,7 +1238,7 @@ Už jste viděli jak `GetFillPath` metodu `SKPaint` můžete převést jednu ces
 
 Jedno zřejmé použití `CreateSum` je definovat `SKPaint` objekt, který vyplní cestu s jednu cestu účinek a tahy cestu s jinou cestu vliv. Tento postup je znázorněn v **kočky rámce** vzorku, který zobrazí pole kočky v rámci s vlnkovatý okraje:
 
-[![](effects-images/catsinframe-small.png "Trojitá snímek obrazovky stránky kočky v rámečku")](effects-images/catsinframe-large.png "Trojitá snímek obrazovky stránky kočky v rámečku")
+[![](effects-images/catsinframe-small.png "Trojitá snímek obrazovky stránky kočky v rámečku")](effects-images/catsinframe-large.png#lightbox "Trojitá snímek obrazovky stránky kočky v rámečku")
 
 [ `CatsInFramePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/CatsInFramePage.cs) Třída začne definováním několik polí. Může rozpoznat první pole z [ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs) třídy z [ **Data cesty SVG** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md) článku. Druhý cesta je založená na řádku a oblouk pro vzor svatojakubská rámečku:
 
@@ -1405,7 +1406,7 @@ public class DashedHatchLinesPage : ContentPage
 
 Jak jsme už zjištěný, řádky šrafování nejsou přesněji omezen na uvnitř oblasti a v tomto příkladu, bylo vždycky počítač v levém celou pomlčkou:
 
-[![](effects-images/dashedhatchlines-small.png "Trojitá snímek obrazovky stránky přerušovanou řádky šrafování")](effects-images/dashedhatchlines-large.png "Trojitá snímek obrazovky stránky přerušovanou šrafování řádky")
+[![](effects-images/dashedhatchlines-small.png "Trojitá snímek obrazovky stránky přerušovanou řádky šrafování")](effects-images/dashedhatchlines-large.png#lightbox "Trojitá snímek obrazovky stránky přerušovanou šrafování řádky")
 
 Teď, když jste viděli účinky cesty, které v rozsahu od jednoduchého tečky a pomlčky na neobvyklé kombinace, použijte vaši představivost a najdete, co můžete vytvořit.
 
