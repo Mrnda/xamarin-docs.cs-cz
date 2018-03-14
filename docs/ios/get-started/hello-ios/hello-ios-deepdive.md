@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: bc89450a5c9a00ab9f088ca9fff345ebbf7b6c4c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d7a458a0a0c2da1dbb40ae7222fcd35cf7172953
+ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="hello-ios-deep-dive"></a>Hello, iOS podrobné informace
 
@@ -102,7 +102,7 @@ Předtím, než aplikace pro iOS můžete načíst uživatelské rozhraní, mus�
 
 Tato část studie vztahy znázorněné v následujícím diagramu:
 
-[ ![](hello-ios-deepdive-images/image32.png "Architektura a aplikace základy vztahy jsou zobrazené v tomto diagramu")](hello-ios-deepdive-images/image32.png)
+[![](hello-ios-deepdive-images/image32.png "Architektura a aplikace základy vztahy jsou zobrazené v tomto diagramu")](hello-ios-deepdive-images/image32.png#lightbox)
 
 Můžeme začít na začátku a zjistěte, co se stane při spuštění aplikace.
 
@@ -197,7 +197,7 @@ _Zobrazení_ lze vybrat kliknutím uvnitř bílé část scény. Zobrazení je i
 
 Nalevo od scény je šedé šipka s ikonou vlajky, které jsou popsány v následující snímek obrazovky:
 
- [ ![](hello-ios-deepdive-images/image37.png "Šedé šipka doplněná ikonou vlajky")](hello-ios-deepdive-images/image37.png)
+ [![](hello-ios-deepdive-images/image37.png "Šedé šipka doplněná ikonou vlajky")](hello-ios-deepdive-images/image37.png#lightbox)
 
 Šedé šipku představuje přechod Storyboard názvem *Segue* (vyslovováno "seg – způsob"). Vzhledem k tomu, že tento Segue nemá žádné původu, se nazývá *Sourceless Segue*. Sourceless Segue odkazuje na první scény, jejichž zobrazení bude načten do okna naše aplikace při spuštění aplikace. Scény a zobrazení v jeho bude první věc, kterou uživatel uvidí, když aplikace načte.
 
@@ -243,7 +243,7 @@ Dojde-li hierarchii obsahu zobrazení reprezentována tento scény v další č�
 
 A _obsahu zobrazení hierarchie_ je zásobník zobrazení a dílčích zobrazení spravuje jeden řadič zobrazení, které jsou popsány v následujícím diagramu:
 
- [ ![](hello-ios-deepdive-images/image41.png "Hierarchie zobrazení obsahu")](hello-ios-deepdive-images/image41.png)
+ [![](hello-ios-deepdive-images/image41.png "Hierarchie zobrazení obsahu")](hello-ios-deepdive-images/image41.png#lightbox)
 
 Můžeme provádět hierarchii zobrazení obsahu naše `ViewController` snazší zjistit tak, že dočasně změníte barvu pozadí kořenové zobrazení na žlutou v sekci zobrazení z **vlastnosti Pad**, které jsou popsány v následující snímek obrazovky:
 
@@ -259,7 +259,7 @@ Můžeme provádět hierarchii zobrazení obsahu naše `ViewController` snazší
 
 Následující obrázek znázorňuje vztahy mezi oken, zobrazení, dílčích zobrazení a View Controller, které přinášejí uživatelského rozhraní na obrazovce zařízení:
 
- [ ![](hello-ios-deepdive-images/image43.png "Vztahy mezi oken, zobrazení, dílčích zobrazení a View Controller")](hello-ios-deepdive-images/image43.png)
+ [![](hello-ios-deepdive-images/image43.png "Vztahy mezi oken, zobrazení, dílčích zobrazení a View Controller")](hello-ios-deepdive-images/image43.png#lightbox)
 
 V další část popisuje, jak pracovat se zobrazeními v kódu a naučte se programovat pro interakci s uživatelem pomocí řadiče zobrazení a zobrazení životního cyklu.
 
@@ -331,7 +331,7 @@ Nejdůležitější roli řadiče zobrazení reaguje na interakci s uživatelem,
 Teď, když je mít lepší představu o zobrazeních a řadičích, zobrazení, podíváme, jak to funguje.
 V `Phoneword_iOS` projektu, tlačítko byl přidán volané `TranslateButton` obsahu zobrazení hierarchie:
 
- [ ![](hello-ios-deepdive-images/image1.png "Tlačítko přidala volané TranslateButton obsahu zobrazení hierarchie")](hello-ios-deepdive-images/image1.png)
+ [![](hello-ios-deepdive-images/image1.png "Tlačítko přidala volané TranslateButton obsahu zobrazení hierarchie")](hello-ios-deepdive-images/image1.png#lightbox)
 
 Při **název** je přiřazena k **tlačítko** řídit ve **vlastnosti Pad**, návrháře iOS automaticky mapují do ovládacího prvku v  **ViewController.designer.cs**, které `TranslateButton` dostupné uvnitř `ViewController` třídy. Ovládací prvky nejdříve k dispozici ve `ViewDidLoad` fáze životního cyklu zobrazení, takže tato metoda životního cyklu se používá reagovat na touch uživatele:
 
@@ -432,7 +432,7 @@ Po zřízení zařízení můžete nasadit do ní zapojením do změna cíl v pa
 
 Aplikace nasadí na zařízení s iOS:
 
-[ ![](hello-ios-deepdive-images/image1.png "Aplikace nasadí na zařízení s iOS a spustit")](hello-ios-deepdive-images/image1.png)
+[![](hello-ios-deepdive-images/image1.png "Aplikace nasadí na zařízení s iOS a spustit")](hello-ios-deepdive-images/image1.png#lightbox)
 
 ### <a name="generate-custom-icons-and-launch-images"></a>Generovat vlastními ikonami a spuštění bitové kopie
 
