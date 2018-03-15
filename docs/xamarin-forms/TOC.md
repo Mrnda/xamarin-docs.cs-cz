@@ -266,7 +266,7 @@
 #### [Proč Návrhář XAML v sadě Visual Studio nefunguje pro soubory XAML Xamarin.Forms?](troubleshooting/questions/forms-xaml-designer.md)
 #### [Chyba sestavení Androidu: Úloha LinkAssemblies neočekávaně selhala.](troubleshooting/questions/android-linkassemblies-error.md)
 #### [Proč můj projekt Androidu Xamarin.Forms.Maps není úspěšný kvůli následující chybě: COMPILETODALVIK : UNEXPECTED TOP-LEVEL ERROR](troubleshooting/questions/maps-compiletodalvik-error.md)
-## [Zpráva k vydání verze](https://developer.xamarin.com/releases/mac/)
+## [Zpráva k vydání verze](https://developer.xamarin.com/releases/xamarin-forms/)
 ## [Ukázky](samples/index.yml)
 ## [Kniha Creating Mobile Apps with Xamarin.Forms](creating-mobile-apps-xamarin-forms/index.md)
 ## [Elektronická kniha Enterprise Application Patterns](enterprise-application-patterns/index.md)
