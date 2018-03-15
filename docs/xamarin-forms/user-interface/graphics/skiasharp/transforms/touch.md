@@ -8,11 +8,11 @@ ms.assetid: A0B8DD2D-7392-4EC5-BFB0-6209407AD650
 author: charlespetzold
 ms.author: chape
 ms.date: 04/12/2017
-ms.openlocfilehash: 16e9423c84e591e15a703b4d5bb204a8b642bb40
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 90be80d42c20ca7509037b5f59b34cc1bddde6de
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="touch-manipulations"></a>Manipulace dotykového ovládání
 
@@ -193,7 +193,7 @@ public partial class TouchManipulationPage : ContentPage
 }
 ```
 
-Pokud `HitTest` metoda vrátí `true` & #x 2014; význam, prstem má dotýkal obrazovky v oblasti obsazena rastrový obrázek & #x 2014; potom touch ID je přidán do `TouchIds` kolekce. Toto ID představuje posloupnost událostí dotykového ovládání pro tento prstu, dokud prstu zruší na obrazovce. Pokud více prsty touch rastrového obrázku, pak se `touchIds` kolekce obsahuje touch ID pro každý prstu.
+Pokud `HitTest` metoda vrátí `true` &mdash; znamená, že má prstem dotýkal obrazovky v oblasti obsazena bitovou mapu &mdash; pak touch ID je přidán do `TouchIds` kolekce. Toto ID představuje posloupnost událostí dotykového ovládání pro tento prstu, dokud prstu zruší na obrazovce. Pokud více prsty touch rastrového obrázku, pak se `touchIds` kolekce obsahuje touch ID pro každý prstu.
 
 `TouchAction` Obslužná rutina také voláním `ProcessTouchEvent` třídy v `TouchManipulationBitmap`. To je, kdy některé (ale ne všechny) z reálného touch zpracování probíhá.
 
@@ -404,7 +404,7 @@ class TouchManipulationManager
 
 Vždy, když byla vybrána otočení, zpracovat manipulaci jeden prstem a dva prstem metody je oběh nejprve. Pokud se detekuje všechny otočení komponentu otočení efektivně odebrat. Co je ještě interpretována jako posouvání a změna měřítka.
 
-Tady je `OneFingerManipulate` metoda. Pokud jeden prstem otočení není povolený, pak logika je jednoduchý & #x 2014; jednoduše používá předchozího bodu a nový bod vytvořit vektor s názvem `delta` odpovídající přesněji překlad. S jedním prstem otočení povolené metoda použije úhly z bodu pivot (center bitmapy) do předchozího bodu a nový bod k vytvoření matice otočení:
+Tady je `OneFingerManipulate` metoda. Pokud jeden prstem otočení není povolená, pak je jednoduchá logiku &mdash; jednoduše používá předchozího bodu a nový bod vytvořit vektor s názvem `delta` odpovídající přesněji překlad. S jedním prstem otočení povolené metoda použije úhly z bodu pivot (center bitmapy) do předchozího bodu a nový bod k vytvoření matice otočení:
 
 ```csharp
 class TouchManipulationManager

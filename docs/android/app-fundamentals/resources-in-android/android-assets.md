@@ -6,12 +6,12 @@ ms.assetid: 70ECDDC9-FA40-03B4-BF04-E7CFFFE4260D
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/30/2017
-ms.openlocfilehash: 83e58625438a0b50d89ca8dac3e940c8742e5aec
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/13/2018
+ms.openlocfilehash: e1890575f5c3a5bd2e0c0de0712ba459607e6139
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="using-android-assets"></a>Pomocí Android prostředky
 
@@ -44,7 +44,7 @@ Výběr správného **BuildAction** zajistí, že soubor budou zabalené do APK 
 
 ## <a name="reading-assets"></a>Načítání prostředků
 
-Prostředky se načítají pomocí [AssetManager](https://developer.xamarin.com/api/type/Android.Content.Res.AssetManager/). Instance `AssetManager` je k dispozici přístup [prostředky](https://developer.xamarin.com/api/property/Android.Content.Context.Assets/) vlastnost `Android.Contet.Context`, například aktivitu.
+Prostředky se načítají pomocí [AssetManager](https://developer.xamarin.com/api/type/Android.Content.Res.AssetManager/). Instance `AssetManager` je k dispozici přístup k [prostředky](https://developer.xamarin.com/api/property/Android.Content.Context.Assets/) vlastnost `Android.Content.Context`, například aktivitu.
 V následujícím kódu, jsme otevřít naše **read_asset.txt** asset, přečíst obsah a zobrazit ji pomocí TextView.
 
 ```csharp

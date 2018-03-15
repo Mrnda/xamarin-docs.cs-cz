@@ -1,6 +1,6 @@
 ---
 title: "Bezdrátová nasazení"
-description: "Tato funkce preview umožňuje pro nasazení do systému iOS nebo zařízení Apple TV přes síťová připojení"
+description: "Tato funkce umožňuje pro nasazení do systému iOS nebo zařízení Apple TV přes síťová připojení"
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 5AB4C5A9-4FBB-4DCB-BD72-0022D5439E65
@@ -8,47 +8,40 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 02/09/2018
-ms.openlocfilehash: 11961a21a7c4188c505c822a35531036fd953405
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7566669fb7d607ca6616b88cb32b770537146c94
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="wireless-deployment"></a>Bezdrátová nasazení
 
-_Tato funkce preview umožňuje pro nasazení do systému iOS nebo zařízení Apple TV přes síťová připojení_
-
-![Verze Preview](~/media/shared/preview.png)
-
-Důležitou součástí pracovního postupu vývojáře nasazuje do zařízení. Xcode 9 zavedla možnost nasazení na zařízení s iOS nebo Apple TV prostřednictvím sítě, místo nutnosti pevně připojené zařízení pokaždé, když chcete nasazení a ladění aplikace. Tato funkce je zavedený v sadě Visual Studio pro Mac a Visual Studio 15,6 operací verzi, která je aktuálně ve verzi preview.
+Důležitou součástí pracovního postupu vývojáře nasazuje do zařízení. Xcode 9 zavedla možnost nasazení na zařízení s iOS nebo Apple TV prostřednictvím sítě, místo nutnosti pevně připojené zařízení pokaždé, když chcete nasazení a ladění aplikace. Tato funkce je zavedený v sadě Visual Studio pro Mac 7.4 a Visual Studio 15,6 operací verzi.
 
 Tento průvodce detailně spárujte a nasazení do zařízení v síti.
 
 ## <a name="requirements"></a>Požadavky
 
-Bezdrátová nasazení je k dispozici jako **preview** funkce v sadě Visual Studio pro Mac a Visual Studio.
-
+Bezdrátová nasazení je k dispozici jako funkce v sadě Visual Studio pro Mac a Visual Studio.
 
 Pokud chcete použít bezdrátové nasazení, musíte mít následující:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 - macOS 10.12.4
-- Nejnovější verzi preview sady Visual Studio pro Mac 
-    - Chcete-li nainstalovat tento přepínač tak, aby [kanálu alfa nebo Beta](https://docs.microsoft.com/en-us/visualstudio/mac/update) v sadě Visual Studio for Mac.
+- Nejnovější verze sady Visual Studio pro Mac
 - Xcode 9.0 nebo novější
 - Zařízení s iOS 11.0 nebo tvOS 11.0 nebo novější
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-- Nejnovější [verze preview](https://www.visualstudio.com/vs/preview/) sady Visual Studio
+- Nejnovější verze sady Visual Studio
 - Zařízení s iOS 11.0 nebo tvOS 11.0 nebo novější
 
 Na hostiteli sestavení Mac by měly být nainstalovány následující součásti:
 
 - macOS 10.12.4
-- Visual Studio for Mac Preview
-    - Chcete-li nainstalovat přepínač tak, aby [kanálu alfa nebo Beta](https://docs.microsoft.com/en-us/visualstudio/mac/update) v sadě Visual Studio for Mac.
+- Visual Studio for Mac
 - Xcode 9.0 nebo novější
 
 -----

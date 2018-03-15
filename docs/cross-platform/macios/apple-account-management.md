@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 04/05/2017
-ms.openlocfilehash: 465ba4822a1004100160703f1607d99199f28a16
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: c0d328e784b0a12b0df1a6b2bf5b990ffa461da5
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="apple-account-management"></a>Správa účtů Apple
 
@@ -41,7 +41,7 @@ Musí mít účet Apple Developer, který chcete tuto funkci používat. Další
 
 - Zkontrolujte, zda že jste připojeni k Internetu. To je proto fastlane komunikuje přímo s portál pro vývojáře Apple.
 - Zajistěte, abyste měli [nainstalované nástroje fastlane](~/ios/deploy-test/provisioning/fastlane/index.md#Installation).
-- Zajistěte, abyste měli nejnovější nástroje fastlane z [https://download.fastlane.tools](https://download.fastlane.tools).
+- Zajistěte, abyste měli nejnovější nástroje fastlane z [ https://download.fastlane.tools ](https://download.fastlane.tools).
 - Než začnete, ujistěte se, přijměte licenční smlouvy všechny uživatele v [portál pro vývojáře](https://developer.apple.com/account/).
 
 ## <a name="adding-an-apple-developer-account"></a>Přidání účtu vývojáře Apple
@@ -50,7 +50,7 @@ Musí mít účet Apple Developer, který chcete tuto funkci používat. Další
 
     ![Možnosti účtu vývojáře Apple](apple-account-management-images/image1.png)
 
-2. Stiskněte  **+**  tlačítko zobrazíte přihlášení v dialogovém okně, jak je znázorněno níže: 
+2. Stiskněte ** + ** tlačítko zobrazíte přihlášení v dialogovém okně, jak je znázorněno níže: 
 
     ![Dialogové okno fastlane.](apple-account-management-images/image2.png)
 
@@ -69,8 +69,7 @@ Musí mít účet Apple Developer, který chcete tuto funkci používat. Další
     ![](apple-account-management-images/image6.png)
 
 
-<a name="managing"/>
-    
+<a name="managing" />
 
 
 ## <a name="managing-signing-identities-and-provisioning-profiles"></a>Správa identit pro podepisování a profily zřizování

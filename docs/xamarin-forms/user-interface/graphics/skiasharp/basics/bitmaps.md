@@ -8,17 +8,17 @@ ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
 author: charlespetzold
 ms.author: chape
 ms.date: 04/03/2017
-ms.openlocfilehash: facdcb6231b77714d6f5d0c7d496db12f75b1d08
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 921697657397662e92fb72c32e6efcc31745d7f1
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="bitmap-basics"></a>Bitmap Basics
 
 _Načíst rastrové obrázky z různých zdrojů a jejich zobrazení._
 
-Podpora rastrových obrázků v SkiaSharp je poměrně rozsáhlé. Tento článek se týká pouze základy & #x 2014; jak načíst rastrové obrázky a jejich zobrazení:
+Podpora rastrových obrázků v SkiaSharp je poměrně rozsáhlé. Tento článek se týká pouze Základy &mdash; jak načíst rastrové obrázky a jejich zobrazení:
 
 ![](bitmaps-images/bitmapssample.png "Zobrazení dvě bitové mapy")
 
@@ -207,7 +207,7 @@ Rastrový obrázek je roztažen tak, aby dimenze obdélníku, proto opic vodorov
 
 [![](bitmaps-images/basicbitmaps-small.png "Trojitá snímek obrazovky stránky základní bitmap")](bitmaps-images/basicbitmaps-large.png#lightbox "Trojitá snímek obrazovky stránky základní rastrové obrázky")
 
-Třetí image & #x 2014; které lze zobrazit pouze pokud spuštění programu a načíst fotografie z vlastní knihovny obrázků & #x 2014; je také zobrazit v rámci obdélníku, ale obdélníku pozice a velikosti upraveny tak, aby zachovat poměr stran rastrového obrázku. Tohoto výpočtu je trochu složitější, protože vyžaduje výpočet měřítko podle velikosti bitovou mapu a rámeček cílové a zarovnání obdélníku v této oblasti:
+Bitovou kopii třetí &mdash; které lze zobrazit pouze pokud spuštění programu a načíst fotografie z vlastní knihovny obrázků &mdash; se zobrazí také v obdélníku, ale obdélníku pozice a velikosti upraveny tak, aby zachovat poměr stran rastrového obrázku. Tohoto výpočtu je trochu složitější, protože vyžaduje výpočet měřítko podle velikosti bitovou mapu a rámeček cílové a zarovnání obdélníku v této oblasti:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

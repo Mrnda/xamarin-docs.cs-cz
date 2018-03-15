@@ -7,11 +7,11 @@ ms.assetid: F6E20077-687C-45C4-A375-31D4F49BBFA4
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 0968270f657d3195855a752da311b4855283e971
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: d7a75ce0303030d53315b5e698fc604a910c969c
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-28-location-and-maps"></a>Shrnutí kapitoly 28. Umístění a mapy
 
@@ -29,7 +29,7 @@ Hlavní kružnice volat `equator` je uprostřed mezi dvěma hole, pomocí který
 
 ### <a name="longitude-and-meridians"></a>Zeměpisná délka a poledníků zeměpisné
 
-Polovina velké kroužky od Severního k pólu jsou řádky stejné zeměpisné délky, také známé jako *poledníků zeměpisné*. Toto jsou relativní vzhledem k základního poledníku v Greenwich v Anglii. Podle konvence, délka východ od základního poledníku jsou kladné hodnoty od 0 stupňů do 180 stupňů, a délka západně od základního poledníku záporné hodnoty od 0 stupňů & #x 2013; 180 stupňů.
+Polovina velké kroužky od Severního k pólu jsou řádky stejné zeměpisné délky, také známé jako *poledníků zeměpisné*. Toto jsou relativní vzhledem k základního poledníku v Greenwich v Anglii. Podle konvence, délka východ od základního poledníku jsou kladné hodnoty od 0 stupňů do 180 stupňů, a délka západně od základního poledníku záporné hodnoty od 0 stupňů &ndash;180 stupňů.
 
 ### <a name="the-equirectangular-projection"></a>Projekce equirectangular
 

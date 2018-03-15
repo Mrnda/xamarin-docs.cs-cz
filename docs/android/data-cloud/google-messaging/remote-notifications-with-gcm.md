@@ -7,12 +7,12 @@ ms.assetid: 4FC3C774-EF93-41B2-A81E-C6A08F32C09B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 64961e9c45c28ede4cc84f7b978da565be4426d9
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/13/2018
+ms.openlocfilehash: 823fad163e837adab5490446c23ab2f492679114
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="remote-notifications-with-google-cloud-messaging"></a>Vzdálená oznámení s zasílání zpráv cloudu Google
 
@@ -507,32 +507,12 @@ Ve výše uvedené XML, změňte *YOUR_PACKAGE_NAME* na název balíčku pro pro
 
 Podívejme se na jaké každé nastavení v této kódu XML:
 
-<table>
-    <thead>
-        <tr>
-            <th>Nastavení</th>
-            <th>Popis</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><code>com.google.android.gms.gcm.GcmReceiver</code></td>
-            <td>Deklaruje, že naše aplikace implementuje GCM příjemce, který zachytí a zpracuje příchozí nabízené oznámení zprávy.</td>
-        </tr>
-        <tr>
-            <td><code>com.google.android.c2dm.permission.SEND</code></td>
-            <td>Deklaruje, že pouze servery, GCM mohou zasílat zprávy přímo do aplikace.</td>
-        </tr>
-        <tr>
-            <td><code>com.google.android.c2dm.intent.RECEIVE</code></td> 
-            <td>Záměrné filtr inzerování, že naše aplikace zpracovává zprávy všesměrového vysílání ze služby GCM.</td>
-        </tr>
-        <tr>
-            <td><code>com.google.android.c2dm.intent.REGISTRATION</code></td>
-            <td>Záměrné filtru inzerování, že naše aplikace zpracovává nové registrace tříd Intent (to znamená, že jsme byla implementována naslouchací proces služby ID Instance).</td>
-        </tr>
-    </tbody>
-</table>
+|Nastavení|Popis|
+|---|---|
+|`com.google.android.gms.gcm.GcmReceiver`|Deklaruje, že naše aplikace implementuje GCM příjemce, který zachytí a zpracuje příchozí nabízené oznámení zprávy.|
+|`com.google.android.c2dm.permission.SEND`|Deklaruje, že pouze servery, GCM mohou zasílat zprávy přímo do aplikace.|
+|`com.google.android.c2dm.intent.RECEIVE`|Záměrné filtr inzerování, že naše aplikace zpracovává zprávy všesměrového vysílání ze služby GCM.|
+|`com.google.android.c2dm.intent.REGISTRATION`|Záměrné filtru inzerování, že naše aplikace zpracovává nové registrace tříd Intent (to znamená, že jsme byla implementována naslouchací proces služby ID Instance).|
 
 Alternativně můžete uspořádání `GcmListenerService` s tyto atributy, nikoli jejich zadáním v XML; zde jsme zadejte je v **AndroidManifest.xml** tak, aby se snadněji postupujte podle ukázky kódu. 
 

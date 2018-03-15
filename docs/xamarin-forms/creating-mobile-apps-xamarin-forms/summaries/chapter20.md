@@ -7,11 +7,11 @@ ms.assetid: D595862D-64FD-4C0D-B0AD-C1F440564247
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 86ae56fc2baac3eab0fbf375c5f67f7b2327721a
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 0ac316bc2cef04a80958c047427845dbdcc4137f
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-20-async-and-file-io"></a>Souhrn kapitoly 20. Asynchronní a soubor vstupně-výstupních operací
 
@@ -65,7 +65,7 @@ Obvyklým .NET [ `System.IO` ](https://developer.xamarin.com/api/namespace/Syste
 
 ### <a name="good-news-and-bad-news"></a>Dobrá zpráva a chybný zprávy
 
-Všechny platformy nepodporuje místní úložiště Xamarin.Forms podporu aplikací & #x 2014; úložiště, které je privátní k aplikaci.
+Všechny platformy nepodporuje místní úložiště Xamarin.Forms podporu aplikací &mdash; úložiště, které je privátní k aplikaci.
 
 Knihovny Xamarin.iOS a Xamarin.Android zahrnují verzi rozhraní .NET, která má Xamarin výslovně přizpůsobit pro těchto dvou platforem. Patří mezi ně třídy z `System.IO` můžete provádět vstupně-výstupní soubor s místním úložištěm aplikace v těchto dvou platforem.
 
@@ -111,13 +111,13 @@ Všechny projekty obsahují statického `Toolkit.Init` metodou, jak zajistit, ž
 
 **Xamarin.FormsBook.Platform** projekt obsahuje také [ `FileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/FileHelper.cs) třídu, která usnadňuje použití `DependencyService` objektu.
 
-Pokud chcete použít tyto knihovny, řešení aplikace musí obsahovat všechny projekty v **Xamarin.FormsBook.Platform** řešení a všechny projekty aplikací musí mít odkaz na knihovnu odpovídající v  **Xamarin.FormsBook.Platform**.
+Pokud chcete použít tyto knihovny, řešení aplikace musí obsahovat všechny projekty v **Xamarin.FormsBook.Platform** řešení a všechny projekty aplikací musí mít odkaz na knihovnu odpovídající v ** Xamarin.FormsBook.Platform**.
 
 [ **TextFileAsync** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/TextFileAsync) řešení ukazuje, jak používat **Xamarin.FormsBook.Platform** knihovny. Všechny projekty má volání `Toolkit.Init`. Aplikace využívá asynchronní vstupně funkce.
 
 ### <a name="keeping-it-in-the-background"></a>Zachování na pozadí
 
-Metody v knihovny, které provádět volání do více asynchronních metod & #x 2014; například `WriteFileAsync` a `ReadFileASync` metody v prostředí Windows Runtime [ `FileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/FileHelper.cs) třída & #x 2014; poněkud efektivnější může být vytvořen pomocí [ `ConfigureAwait` ](https://developer.xamarin.com/api/member/System.Threading.Tasks.Task%3CTResult%3E.ConfigureAwait/p/System.Boolean/) metody Vyhněte se přepnutím zpět vlákna uživatelského rozhraní.
+Metody v knihovny, které provádět volání do více asynchronních metod &mdash; , jako `WriteFileAsync` a `ReadFileASync` metody v prostředí Windows Runtime [ `FileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/FileHelper.cs) třída &mdash; můžete provedeny poněkud efektivnější pomocí [ `ConfigureAwait` ](https://developer.xamarin.com/api/member/System.Threading.Tasks.Task%3CTResult%3E.ConfigureAwait/p/System.Boolean/) metoda zrušení přepnutím zpět vlákna uživatelského rozhraní.
 
 ### <a name="dont-block-the-ui-thread"></a>Nedošlo k blokování vlákna uživatelského rozhraní!
 

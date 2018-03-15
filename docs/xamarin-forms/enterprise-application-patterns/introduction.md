@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 5334465905817336df91f5816596dc5723071811
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d5d5de21c4f397f203b4da5ea86e1f9a0e4714e9
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="introduction"></a>Úvod
 
@@ -118,48 +118,16 @@ Testování částí kromě toho jsou k dispozici pro některé třídy eShopOnC
 
 Řešení eShopOnContainers mobilních aplikací slouží k uspořádání zdrojového kódu a další prostředky do projektů. Všechny projekty složky použít k uspořádání zdrojového kódu a další prostředky do kategorií. Následující tabulka popisuje projektů, které tvoří eShopOnContainers mobilní aplikace:
 
-<table>
-<thead>
-<tr class="header">
-<th>Projekt</th>
-<th>Popis</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>eShopOnContainers.Core</td>
-<td>Tento projekt je projekt přenosných tříd knihovny (PCL), který obsahuje sdíleného kódu a sdíleného uživatelského rozhraní.</td>
-</tr>
-<tr class="even">
-<td>eShopOnContainers.Droid</td>
-<td>Tento projekt obsahuje konkrétní kódu pro systém Android a vstupní bod pro aplikace pro Android.</td>
-</tr>
-<tr class="odd">
-<td>eShopOnContainers.iOS</td>
-<td>Tento projekt obsahuje iOS konkrétního kódu a je vstupní bod pro aplikace pro iOS.</td>
-</tr>
-<tr class="even">
-<td>eShopOnContainers.UWP</td>
-<td>Tento projekt obsahuje konkrétní kód univerzální platformu Windows (UWP) a je vstupní bod pro aplikaci pro Windows.</td>
-</tr>
-<tr class="odd">
-<td>eShopOnContainers.TestRunner.Droid</td>
-<td>Tento projekt je nástroj Android test runner eShopOnContainers.UnitTests projektu.</td>
-</tr>
-<tr class="even">
-<td>eShopOnContainers.TestRunner.iOS</td>
-<td>Tento projekt je nástroj test runner iOS eShopOnContainers.UnitTests projektu.</td>
-</tr>
-<tr class="odd">
-<td>eShopOnContainers.TestRunner.Windows</td>
-<td>Tento projekt je nástroj test runner univerzální platformu Windows eShopOnContainers.UnitTests projektu.</td>
-</tr>
-<tr class="even">
-<td>eShopOnContainers.UnitTests</td>
-<td>Tento projekt obsahuje testování částí pro projekt eShopOnContainers.Core.</td>
-</tr>
-</tbody>
-</table>
+|Projekt|Popis|
+|--- |--- |
+|eShopOnContainers.Core|Tento projekt je projekt přenosných tříd knihovny (PCL), který obsahuje sdíleného kódu a sdíleného uživatelského rozhraní.|
+|eShopOnContainers.Droid|Tento projekt obsahuje konkrétní kódu pro systém Android a vstupní bod pro aplikace pro Android.|
+|eShopOnContainers.iOS|Tento projekt obsahuje iOS konkrétního kódu a je vstupní bod pro aplikace pro iOS.|
+|eShopOnContainers.UWP|Tento projekt obsahuje konkrétní kód univerzální platformu Windows (UWP) a je vstupní bod pro aplikaci pro Windows.|
+|eShopOnContainers.TestRunner.Droid|Tento projekt je nástroj Android test runner eShopOnContainers.UnitTests projektu.|
+|eShopOnContainers.TestRunner.iOS|Tento projekt je nástroj test runner iOS eShopOnContainers.UnitTests projektu.|
+|eShopOnContainers.TestRunner.Windows|Tento projekt je nástroj test runner univerzální platformu Windows eShopOnContainers.UnitTests projektu.|
+|eShopOnContainers.UnitTests|Tento projekt obsahuje testování částí pro projekt eShopOnContainers.Core.|
 
 Třídy z mobilní aplikace eShopOnContainers je možné opětovně využít v jakékoli aplikaci Xamarin.Forms se žádné nebo téměř žádné změny.
 
@@ -167,76 +135,23 @@ Třídy z mobilní aplikace eShopOnContainers je možné opětovně využít v j
 
 Projekt PCL eShopOnContainers.Core obsahuje následující složky:
 
-<table>
-<thead>
-<tr class="header">
-<th>Folder</th>
-<th>Popis</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Animace</td>
-<td>Obsahuje třídy, které umožňují animací, který se má používat v jazyce XAML.</td>
-</tr>
-<tr class="even">
-<td>Chování</td>
-<td>Obsahuje chování, které jsou umístěny do zobrazení třídy.</td>
-</tr>
-<tr class="odd">
-<td>Ovládací prvky</td>
-<td>Obsahuje vlastní ovládací prvky používané aplikace.</td>
-</tr>
-<tr class="even">
-<td>Převaděče</td>
-<td>Obsahuje převodníky hodnot, které platí vlastní logiky pro vazbu.</td>
-</tr>
-<tr class="odd">
-<td>Účinek</td>
-<td>Obsahuje <code>EntryLineColorEffect</code> třídy, která se používá k změnit barvu ohraničení konkrétní <code>Entry</code> ovládací prvky.</td>
-</tr>
-<tr class="even">
-<td>Výjimky</td>
-<td>Obsahuje vlastní <code>ServiceAuthenticationException</code>.</td>
-</tr>
-<tr class="odd">
-<td>Rozšíření</td>
-<td>Obsahuje rozšiřující metody pro <code>VisualElement</code> a <code>rozhraní IEnumerable<T> </code> třídy.</td>
-</tr>
-<tr class="even">
-<td>Pomocné rutiny</td>
-<td>Obsahuje pomocné třídy pro aplikaci.</td>
-</tr>
-<tr class="odd">
-<td>Modely</td>
-<td>Obsahuje třídy modelu pro aplikace.</td>
-</tr>
-<tr class="even">
-<td>Vlastnosti</td>
-<td>Obsahuje <code>AssemblyInfo.cs</code>, soubor metadat sestavení rozhraní .NET.</td>
-</tr>
-<tr class="odd">
-<td>Služby</td>
-<td>Obsahuje rozhraní a třídy, které implementují služby, které jsou k dispozici na aplikaci.</td>
-</tr>
-<tr class="even">
-<td>Aktivační procedury</td>
-<td>Obsahuje <code>BeginAnimation</code> aktivační událost, která se použije k vyvolání animace v jazyce XAML.</td>
-</tr>
-<tr class="odd">
-<td>Ověření</td>
-<td>Obsahuje třídy, které se účastní ověřování vstupu data.</td>
-</tr>
-<tr class="even">
-<td>ViewModels</td>
-<td>Obsahuje logiku aplikace, který je zveřejněný na stránky.</td>
-</tr>
-<tr class="odd">
-<td>zobrazení</td>
-<td>Obsahuje stránky pro aplikaci.</td>
-</tr>
-</tbody>
-</table>
+|Folder|Popis|
+|--- |--- |
+|Animace|Obsahuje třídy, které umožňují animací, který se má používat v jazyce XAML.|
+|Chování|Obsahuje chování, které jsou umístěny do zobrazení třídy.|
+|Ovládací prvky|Obsahuje vlastní ovládací prvky používané aplikace.|
+|Převaděče|Obsahuje převodníky hodnot, které platí vlastní logiky pro vazbu.|
+|Účinek|Obsahuje `EntryLineColorEffect` třídy, která se používá k změnit barvu ohraničení konkrétní `Entry` ovládací prvky.|
+|Výjimky|Obsahuje vlastní `ServiceAuthenticationException`.|
+|Rozšíření|Obsahuje rozšiřující metody pro `VisualElement` a `IEnumerable` třídy.|
+|Pomocné rutiny|Obsahuje pomocné třídy pro aplikaci.|
+|Modely|Obsahuje třídy modelu pro aplikace.|
+|Vlastnosti|Obsahuje `AssemblyInfo.cs`, soubor metadat sestavení rozhraní .NET.|
+|Služby|Obsahuje rozhraní a třídy, které implementují služby, které jsou k dispozici na aplikaci.|
+|Aktivační procedury|Obsahuje `BeginAnimation` aktivační událost, která se použije k vyvolání animace v jazyce XAML.|
+|Ověření|Obsahuje třídy, které se účastní ověřování vstupu data.|
+|ViewModels|Obsahuje logiku aplikace, který je zveřejněný na stránky.|
+|zobrazení|Obsahuje stránky pro aplikaci.|
 
 ##### <a name="platform-projects"></a>Projekty platformy
 

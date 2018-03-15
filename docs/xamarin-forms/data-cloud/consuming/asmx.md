@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 3ddf481a2356d49f11b96f5a8a6b7f7a492fefc9
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: a095dbbb78ad1517791356ae0b7cbeaa94d1336f
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="consuming-an-aspnet-web-service-asmx"></a>Využívání ASP.NET webové služby (ASMX)
 
@@ -39,37 +39,12 @@ Pokyny k nastavení služby ASMX naleznete v souboru readme, který doprovází 
 
 Služba ASMX poskytuje následující operace:
 
-<table>
-  <thead>
-    <tr>
-      <th>Operace</th>
-      <th>Popis</th>
-      <th>Parametry</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>GetTodoItems</td>
-      <td>Získat seznam položek úkolů</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>CreateTodoItem</td>
-      <td>Vytvořit novou položku seznamu úkolů</td>
-      <td>XML serializovat <code>TodoItem</code></td>
-    </tr>
-    <tr>
-      <td>EditTodoItem</td>
-      <td>Aktualizujte položku seznamu úkolů</td>
-      <td>XML serializovat <code>TodoItem</code></td>
-    </tr>
-    <tr>
-      <td>DeleteTodoItem</td>
-      <td>Odstranit položku seznamu úkolů</td>
-      <td>XML serializovat <code>TodoItem</code></td>
-    </tr>
-  </tbody>
-</table>
+|Operace|Popis|Parametry|
+|--- |--- |--- |
+|GetTodoItems|Získat seznam položek úkolů|
+|CreateTodoItem|Vytvořit novou položku seznamu úkolů|XML serializovat TodoItem|
+|EditTodoItem|Aktualizujte položku seznamu úkolů|XML serializovat TodoItem|
+|DeleteTodoItem|Odstranit položku seznamu úkolů|XML serializovat TodoItem|
 
 Další informace o modelu dat používaných v aplikaci najdete v tématu [modelování data](~/xamarin-forms/data-cloud/walkthrough.md).
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 08/28/2017
-ms.openlocfilehash: 024e73ddfe517f6fe9766607fa17efbd5703234c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2a2b5a1135a4d08c2a89caf0fbf4b2cdb1ac624c
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="system-requirements"></a>Požadavky na systém
 
@@ -32,7 +32,7 @@ Přejděte [pokyny k instalaci](#install) Další informace o získávání soft
 
 Tato tabulka obsahuje platformy, na kterých mohou být vytvořeny vývoj pro různé kombinace nástroj & operační systém:
 
-[!include[](~/cross-platform/includes/development-environment.html)]
+[!include[](~/cross-platform/includes/development-environment.md)]
 
 
 > [!NOTE]
@@ -44,7 +44,7 @@ Tato tabulka obsahuje platformy, na kterých mohou být vytvořeny vývoj pro r�
 
 Použití počítači Mac pro vývoj na platformě Xamarin vyžaduje následující verze softwaru/SDK. Zkontrolujte verzi operačního systému a postupujte podle pokynů [instalační program Xamarin](#install).
 
-[!include[](~/cross-platform/includes/macos-requirements.html)]
+[!include[](~/cross-platform/includes/macos-requirements.md)]
 
 > [!NOTE]
 > Poznámka: Xcode může být nainstalované (a aktualizovat) na [developer.apple.com](https://developer.apple.com/xcode/download/) nebo prostřednictvím Mac App Storu.
@@ -53,7 +53,7 @@ Použití počítači Mac pro vývoj na platformě Xamarin vyžaduje následují
 
 Mobilní aplikace Xamarin mohou být nasazeny na fyzických zařízení prostřednictvím USB pro testování a ladění (Xamarin.Mac aplikace může být testována přímo na vývojovém počítači; Apple Watch aplikace jsou nasazeny nejprve spárované iPhone).
 
-[!include[](~/cross-platform/includes/macos-testing.html)]
+[!include[](~/cross-platform/includes/macos-testing.md)]
 
 
 <a name="windows" />
@@ -64,7 +64,7 @@ Použití počítači se systémem Windows pro vývoj na platformě Xamarin vyž
 Zkontrolujte verzi operačního systému (a potvrďte, že nepoužíváte *Express* verze sady Visual Studio – Pokud ano, zvažte aktualizaci na *komunity* edition).
 Visual Studio 2015 a instalační programy 2017 zahrnují možnost automaticky nainstalovat Xamarin.
 
-[!include[](~/cross-platform/includes/windows-requirements.html)]
+[!include[](~/cross-platform/includes/windows-requirements.md)]
 
 
 > [!NOTE]
@@ -78,7 +78,7 @@ Visual Studio 2015 a instalační programy 2017 zahrnují možnost automaticky n
 
 Mobilní aplikace Xamarin můžete nasadit do fyzického zařízení prostřednictvím USB pro testování a ladění (iOS, které zařízení musí být připojen k počítači Mac, není v počítači je spuštění sady Visual Studio).
 
-[!include[](~/cross-platform/includes/windows-testing.html)]
+[!include[](~/cross-platform/includes/windows-testing.md)]
 
 
 > [!NOTE]

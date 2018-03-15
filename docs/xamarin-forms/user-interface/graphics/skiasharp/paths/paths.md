@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: f1ce6b62ef13d24148048253700d7b3bff805fad
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 6d2e600ccc85f6e72e7f913e7ffb501bf62ff69a
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="path-basics"></a>Základy cesta
 
@@ -115,7 +115,7 @@ Jak můžete vidět, první obrysem je samozřejmě řadu tři řádky připojen
 - `AddPath` Chcete-li přidat jiné cesty pro aktuální cestu
 - [`AddPathReverse`](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.AddPathReverse/p/SkiaSharp.SKPath/) Chcete-li přidat jiné cesty v zpětného
 
-Mějte na paměti, že `SKPath` objekt definuje pouze geometrie & #x 2014; řadu body a připojení. Pouze tehdy, když `SKPath` je kombinováno se `SKPaint` objektu je cesta vykreslují konkrétní barvu, šířku tahu a tak dále. Navíc mějte na paměti, `SKPaint` byl předán objekt `DrawPath` metoda definuje vlastnosti celou cestu. Pokud chcete k vykreslení něco nutnosti několik barvy, musíte použít samostatné cestu pro jednotlivé barvy.
+Mějte na paměti, že `SKPath` objekt definuje pouze geometrie &mdash; řadu body a připojení. Pouze tehdy, když `SKPath` je kombinováno se `SKPaint` objektu je cesta vykreslují konkrétní barvu, šířku tahu a tak dále. Navíc mějte na paměti, `SKPaint` byl předán objekt `DrawPath` metoda definuje vlastnosti celou cestu. Pokud chcete k vykreslení něco nutnosti několik barvy, musíte použít samostatné cestu pro jednotlivé barvy.
 
 Stejně jako vzhled začátku a konci řádku je definované zakončení tahu, je definována vzhled připojení mezi dvěma čárami *tahu spojení*. Toto určíte nastavením [ `StrokeJoin` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeJoin/) vlastnost `SKPaint` k členem [ `SKStrokeJoin` ](https://developer.xamarin.com/api/type/SkiaSharp.SKStrokeJoin/) výčtu:
 

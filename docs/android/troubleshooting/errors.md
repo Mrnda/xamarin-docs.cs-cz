@@ -6,12 +6,12 @@ ms.assetid: 7EBE4C01-8EFC-4B7E-97BA-D879994F59AB
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 1c9284f3db1c503b5c88f0d310f916f4c9e3363d
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/13/2018
+ms.openlocfilehash: d113e7747f656eda2bedb88574f4b2027616add8
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="xamarinandroid-errors-matrix"></a>Xamarin.Android Errors Matrix
 
@@ -19,196 +19,155 @@ ms.lasthandoff: 03/12/2018
 
 Tento dokument obsahuje některé informace o různých kódy chyb z Xamarin.
 
-<table>
-    <thead>
-        <tr>
-            <td>Kategorie</td>
-            <td>Popis</td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td>XA0xxx</td><td><code>mandroid</code> Chyby</td></tr>
-        <tr><td>XA1xxx</td><td>Kopírování souboru nebo symbolických odkazů (projekt související) chyby</td></tr>
-        <tr><td>XA2xxx</td><td>Chybami linkeru</td></tr>
-        <tr><td>XA3xxx</td><td>AOT chyby</td></tr>
-        <tr><td>XA4xxx</td><td>Chyby generování kódu</td></tr>
-        <tr><td>XA5xxx</td><td>RSZ a nástrojů chyb</td></tr>
-        <tr><td>XA6xxx</td><td><code>mandroid</code> Interní nástroje pro chyby</td></tr>
-        <tr><td>XA7xxx</td><td>Vyhrazené</td></tr>
-        <tr><td>XA8xxx</td><td>Vyhrazené</td></tr>
-        <tr><td>XA9xxx</td><td>Chyb při správě licencí</td></tr>
-    </tbody>
-</table>
+|Kategorie|Popis|
+|--- |--- |
+|XA0xxx|mandroid chyby|
+|XA1xxx|Kopírování souboru nebo symbolických odkazů (projekt související) chyby|
+|XA2xxx|Chybami linkeru|
+|XA3xxx|AOT chyby|
+|XA4xxx|Chyby generování kódu|
+|XA5xxx|RSZ a nástrojů chyb|
+|XA6xxx|Interní nástroje pro chyby mandroid|
+|XA7xxx|Vyhrazené|
+|XA8xxx|Vyhrazené|
+|XA9xxx|Chyb při správě licencí|
+
 
 ## <a name="error-codes"></a>Kódy chyb
 
 ### <a name="xa0xxx-errors"></a>XA0xxx chyby
 
-<table>
-    <thead>
-        <tr><td>Kód chyby</td><td>Popis</td></tr>
-    </thead>
-    <tbody>
-        <tr><td>XA0000</td><td>Neočekávaná chyba – vyplňte sestavu chyb na <a href="http://bugzilla.xamarin.com">http://bugzilla.xamarin.com</a></td></tr>
-        <tr><td>XA0001</td><td>'-devname bylo zadáno bez jakékoli akce specifické pro zařízení</td></tr>
-        <tr><td>XA0002</td><td>Nebylo možné rozložit proměnnou prostředí: {0}.</td></tr>
-        <tr><td>XA0003</td><td>'{0} .exe, název aplikace je v konfliktu s SDK nebo produktu, název sestavení (.dll).</td></tr>
-        <tr><td>XA0004</td><td>Nové refcounting logiku vyžaduje sgen příliš povolení.</td></tr>
-        <tr><td>XA0005</td><td>Výstupní adresář: {0} neexistuje.</td></tr>
-        <tr><td>XA0006</td><td>V {0}' neexistuje žádný devel platformy, použijte – platforma = PLAT k určení sady SDK</td></tr>
-        <tr><td>XA0007</td><td>Sestavení kořenové: {0} neexistuje.</td></tr>
-        <tr><td>XA0008</td><td>Měli byste jim poskytnout jenom jeden kořenový sestavení</td></tr>
-        <tr><td>XA0009</td><td>Při načítání sestavení došlo k chybě: {0}</td></tr>
-        <tr><td>XA0010</td><td>Nebylo možné rozložit argumenty příkazového řádku: {0}</td></tr>
-        <tr><td>XA0011</td><td>{0} byl sestaven s novější runtime ({1}), než MonoTouch podporuje</td></tr>
-        <tr><td>XA0012</td><td>Neúplná data je k dispozici k dokončení `{0}`.</td></tr>
-        <tr><td>XA0013</td><td>Profilace podporu vyžaduje sgen příliš povolení</td></tr>
-        <tr><td>XA0014</td><td>iOS {0} nepodporuje vytváření aplikací cílení ARMv6</td></tr>
-        <tr><td>XA0020</td><td>Nepodařilo se určit cestu mandroid.</td></tr>
-        <tr><td>XA0100</td><td>EmbeddedNativeLibrary: {0} je neplatný v projektu aplikace pro Android. Místo toho použijte AndroidNativeLibrary.</td></tr>
-    </tbody>
-</table>
+|Kód chyby|Popis|
+|--- |--- |
+|XA0000|Neočekávaná chyba – vyplňte [Sestava chyb](http://bugzilla.xamarin.com).|
+|XA0001|'-devname bylo zadáno bez jakékoli akce konkrétní zařízení.|
+|XA0002|Nebylo možné rozložit proměnnou prostředí: {0}.|
+|XA0003|'{0} .exe, název aplikace je v konfliktu s SDK nebo produktu, název sestavení (.dll).|
+|XA0004|Nové refcounting logiku vyžaduje sgen příliš povolení.|
+|XA0005|Výstupní adresář: {0} neexistuje.|
+|XA0006|V {0}' neexistuje žádný devel platformy, použijte – platforma = PLAT k určení sady SDK|
+|XA0007|Sestavení kořenové: {0} neexistuje.|
+|XA0008|Měl by poskytnout jenom jeden kořenový sestavení.|
+|XA0009|Při načítání sestavení došlo k chybě: {0}.|
+|XA0010|Nebylo možné rozložit argumenty příkazového řádku: {0}.|
+|XA0011|{0} byl sestaven s novější runtime ({1}), než MonoTouch podporuje.|
+|XA0012|K dokončení {0}' je k dispozici neúplná data.|
+|XA0013|SGen – povolení příliš profilace podporu vyžaduje.|
+|XA0014|iOS {0} nepodporuje vytváření aplikací cílení ARMv6.|
+|XA0020|Nepodařilo se určit cestu mandroid.|
+|XA0100|EmbeddedNativeLibrary: {0} je neplatný v projektu aplikace pro Android. Místo toho použijte AndroidNativeLibrary.|
 
 ### <a name="xa1xxx-errors"></a>XA1xxx chyby
 
-<table>
-    <thead>
-        <tr><td>Kód chyby</td><td>Popis</td></tr>
-    </thead>
-    <tbody>
-        <tr><td>XA1001</td><td>Nelze nalézt aplikaci na zadaný adresář</td></tr>
-        <tr><td>XA1002</td><td>Nepodařilo se vytvořit symbolických odkazů, soubory byly zkopírovány.</td></tr>
-        <tr><td>XA1003</td><td>Nelze ukončit aplikace: {0}. Možná budete muset ručně ukončit aplikaci.</td></tr>
-        <tr><td>XA1004</td><td>Nelze získat seznam nainstalovaných aplikací.</td></tr>
-        <tr><td>XA1005</td><td>Nelze ukončit aplikaci {0}' na zařízení objekt {1}.: {2}. Možná budete muset ručně ukončit aplikaci.</td></tr>
-        <tr><td>XA1006</td><td>Aplikace: {0} nelze nainstalovat na zařízení objekt {1}.: {2}.</td></tr>
-        <tr><td>XA1007</td><td>Spuštění aplikace: {0} na objekt {1}' zařízení se nezdařilo: {2}. Aplikace můžete pořád spustit ručně klepnutím na něm.</td></tr>
-        <tr><td>XA1008</td><td>Nepodařilo se spustit simulátoru: {0}</td></tr>
-        <tr><td>XA1009</td><td>Sestavení: {0} nelze zkopírovat do objekt {1}.: {2}</td></tr>
-        <tr><td>XA1010</td><td>Nebylo možné načíst sestavení '{0}': {1}</td></tr>
-        <tr><td>XA1011</td><td>Nelze přidat chybí soubor prostředků: {0}.</td></tr>
-        <tr><td>XA1101</td><td>Nelze spustit aplikaci</td></tr>
-        <tr><td>XA1102</td><td>Se nepodařilo připojit k aplikaci (pro příkaz kill ji): {0}</td></tr>
-        <tr><td>XA1103</td><td>Se nepodařilo odpojit</td></tr>
-        <tr><td>XA1104</td><td>Nepodařilo se odeslat paket: {0}</td></tr>
-        <tr><td>XA1105</td><td>Neočekávaná odezva typu</td></tr>
-        <tr><td>XA1106</td><td>Nelze získat seznam aplikací na zařízení: Vypršel časový limit požadavku.</td></tr>
-        <tr><td>XA1107</td><td>Spuštění aplikace se nezdařilo.</td></tr>
-        <tr><td>XA1201</td><td>Nepodařilo se načíst simulátoru: {0}</td></tr>
-        <tr><td>XA1301</td><td>Nativní knihovny `{0}` ({1}) byl ignorován, protože neodpovídá aktuální architecture(s) sestavení ({2})</td></tr>
-    </tbody>
-</table>
+|Kód chyby|Popis|
+|--- |--- |
+|XA1001|Nelze najít aplikace v určeném adresáři.|
+|XA1002|Nepodařilo se vytvořit symbolických odkazů, soubory byly zkopírovány.|
+|XA1003|Nelze ukončit aplikace: {0}. Možná budete muset ručně ukončit aplikaci.|
+|XA1004|Nelze získat seznam nainstalovaných aplikací.|
+|XA1005|Nelze ukončit aplikaci {0}' na zařízení objekt {1}.: {2}. Možná budete muset ručně ukončit aplikaci.|
+|XA1006|Aplikace: {0} nelze nainstalovat na zařízení objekt {1}.: {2}.|
+|XA1007|Spuštění aplikace: {0} na objekt {1}' zařízení se nezdařilo: {2}. Aplikace můžete pořád spustit ručně klepnutím na něm.|
+|XA1008|Nepodařilo se spustit simulátoru: {0}.|
+|XA1009|Sestavení: {0} nelze zkopírovat do objekt {1}.: {2}.|
+|XA1010|Nebylo možné načíst sestavení '{0}': {1}.|
+|XA1011|Nelze přidat chybí soubor prostředků: {0}.|
+|XA1101|Nelze spustit aplikaci.|
+|XA1102|Se nepodařilo připojit k aplikaci (pro příkaz kill ji): {0}.|
+|XA1103|Nelze odpojit.|
+|XA1104|Nepodařilo se odeslat paket: {0}.|
+|XA1105|Typ neočekávanou odpověď.|
+|XA1106|Nelze získat seznam aplikací na zařízení: Vypršel časový limit požadavku.|
+|XA1107|Aplikaci se nepodařilo spustit.|
+|XA1201|Nepodařilo se načíst simulátoru: {0}.|
+|XA1301|Nativní knihovny {0}. ({1}) byl ignorován, protože neodpovídá aktuální architecture(s) sestavení ({2}).|
 
 ### <a name="xa2xxx-errors"></a>XA2xxx chyby
 
-<table>
-    <thead>
-        <tr><td>Kód chyby</td><td>Popis</td></tr>
-    </thead>
-    <tbody>
-        <tr><td>XA2001</td><td>Nelze propojit sestavení</td></tr>
-        <tr><td>XA2002</td><td>Nelze přeložit odkaz: {0}</td></tr>
-        <tr><td>XA2003</td><td>Možnost {0}' bude ignorován, protože propojení je zakázán.</td></tr>
-        <tr><td>XA2004</td><td>Nebyl nalezen soubor definice navíc linkeru: {0}.</td></tr>
-        <tr><td>XA2005</td><td>Definice z {0}' nebylo možné analyzovat.</td></tr>
-        <tr><td>XA2006</td><td>Odkaz na položka metadat {0}. (definovanou v objekt {1}.) z '{2}' nebylo možné přeložit.</td></tr>
-    </tbody>
-</table>
+|Kód chyby|Popis|
+|--- |--- |
+|XA2001|Sestavení nelze propojit.|
+|XA2002|Nelze přeložit odkaz: {0}.|
+|XA2003|Možnost {0}' bude ignorován, protože propojení je zakázán.|
+|XA2004|Nebyl nalezen soubor definice navíc linkeru: {0}.|
+|XA2005|Definice z {0}' nebylo možné analyzovat.|
+|XA2006|Odkaz na položka metadat {0}. (definovanou v objekt {1}.) z '{2}' nebylo možné přeložit.|
 
 ### <a name="xa3xxx-errors"></a>XA3xxx chyby
 
 Toto jsou AOT chyby.
 
-<table>
-    <thead>
-        <tr><td>Kód chyby</td><td>Popis</td></tr>
-    </thead>
-    <tbody>
-        <tr><td>XA3001</td><td>Může AOT sestavení {0}.</td></tr>
-        <tr><td>XA3002</td><td>Omezení AOT: {0}' musí být nastavena metoda statické vzhledem k tomu, že je upravena pomocí [MonoPInvokeCallback].</td></tr>
-        <tr><td>XA3003</td><td>Konfliktní – ladění a--llvm možnosti. Ladění soft je zakázána.</td></tr>
-    </tbody>
-</table>
+|Kód chyby|Popis|
+|--- |--- |
+|XA3001|Může AOT sestavení: {0}.|
+|XA3002|Omezení AOT: {0}' musí být nastavena metoda statické vzhledem k tomu, že je upravena pomocí [MonoPInvokeCallback].|
+|XA3003|Konfliktní – ladění a--llvm možnosti. Ladění soft je zakázána.|
+
 
 ### <a name="xa4xxx-errors"></a>XA4xxx chyby
 
 Toto jsou chyby generování kódu.
 
-<table>
-    <thead>
-        <tr><td>Kód chyby</td><td>Popis</td></tr>
-    </thead>
-    <tbody>
-        <tr><td>XA4001</td><td>Hlavní šablonu nebylo možné expansed k `{0}`.</td></tr>
-        <tr><td>XA4101</td><td>Registrátora nemůže vytvořit podpis pro typ `{0}`.</td></tr>
-        <tr><td>XA4102</td><td>Registrátora byl nalezen neplatný typ `{0}` v podpis pro metodu `{2}`. Místo nich se používá `{1}`.</td></tr>
-        <tr><td>XA4103</td><td>Registrátora byl nalezen neplatný typ `{0}` v podpis pro metodu `{2}`: typ implementuje INativeObject, ale nemá konstruktor, který přebírá dva (IntPtr, bool) argumenty</td></tr>
-        <tr><td>XA4104</td><td>Registrátora nelze zařazování návratovou hodnotu pro typ `{0}` v podpis pro metodu `{1}`.</td></tr>
-        <tr><td>XA4105</td><td>Registrátora nelze zařazování s parametrem typu `{0}` v podpis pro metodu `{1}`.</td></tr>
-        <tr><td>XA4106</td><td>Registrátora nelze zařazování návratovou hodnotu pro strukturu `{0}` v podpis pro metodu `{1}`.</td></tr>
-        <tr><td>XA4107</td><td>Registrátora nelze zařazování s parametrem typu `{0}` v podpis pro metodu `{1}`.</td></tr>
-        <tr><td>XA4108</td><td>Registrátora nelze získat typ ObjectiveC pro spravovaný typ `{0}`.</td></tr>
-        <tr><td>XA4109</td><td>Kompilace kódu generovaného registrátora se nezdařila. Prosím soubor sestavy chyb v <a href="http://bugzilla.xamarin.com">http://bugzilla.xamarin.com</a></td></tr>
-        <tr><td>XA4110</td><td>Registrátora nelze zařazování výstupní parametr typu `{0}` v podpis pro metodu `{1}`.</td></tr>
-        <tr><td>XA4111</td><td>Registrátora nemůže vytvořit podpis pro typ `{0}' in method `{1}'.</td></tr>
-        <tr><td>XA4200</td><td>Na ACW můžete generovat jenom pro typy 'claas'.</td></tr>
-        <tr><td>XA4201</td><td>Nelze určit název JNI typu {0}.</td></tr>
-        <tr><td>XA4203</td><td>Musí být plně kvalifikovaný název zadaného typu.</td></tr>
-        <tr><td>XA4204</td><td>Nelze vyřešit typ rozhraní: {0}. Nechybí odkaz na sestavení?</td></tr>
-        <tr><td>XA4205</td><td>[ExportField] lze použít pouze v metody s 0 parametry.</td></tr>
-        <tr><td>XA4206</td><td>[Export] nelze použít na obecného typu.</td></tr>
-        <tr><td>XA4207</td><td>[ExportField] nelze použít na obecného typu.</td></tr>
-        <tr><td>XA4208</td><td>[Java.Interop.ExportFieldAttribute] nelze použít na metodu vrácení void.</td></tr>
-        <tr><td>XA4209</td><td>Nepodařilo se vytvořit JavaTypeInfo pro třídu: {0} z důvodu {1}</td></tr>
-        <tr><td>XA4210</td><td>Budete muset přidat odkaz na Mono.Android.Export.dll při použití ExportAttribute nebo ExportFieldAttribute.</td></tr>
-        <tr><td>XA4211</td><td>AndroidManifest.xml //uses-sdk/@android:targetSdkVersion {0}' je menší než $(TargetFrameworkVersion) objekt {1}. Pomocí rozhraní API-\ {1\} ACW kompilace.</td></tr>
-    </tbody>
-</table>
+|Kód chyby|Popis|
+|--- |--- |
+|XA4001|Hlavní šablonu nebylo možné expansed k: {0}.|
+|XA4101|Registrátora nemůže vytvořit podpis pro typ: {0}.|
+|XA4102|Registrátora nalezen neplatný typ {0}' v podpisu pro metodu '{2}'. Objekt {1}' použijte místo toho.|
+|XA4103|Registrátora nalezen neplatný typ {0}' v podpis pro metodu '{2}': typ implementuje INativeObject, ale nemá konstruktor, který přebírá dva (IntPtr, bool) argumenty.|
+|XA4104|Registrátora nelze zařazování návratovou hodnotu pro typ {0}' v podpis pro metodu objekt {1}.|
+|XA4105|Parametr typu {0}' v podpis pro metodu objekt {1}' nelze zařazování registrátora.|
+|XA4106|Registrátora nelze zařazování návratovou hodnotu pro strukturu {0}' v podpis pro metodu objekt {1}.|
+|XA4107|Parametr typu {0}' v podpis pro metodu objekt {1}' nelze zařazování registrátora.|
+|XA4108|Registrátora nelze získat typ ObjectiveC pro spravovaný typ: {0}.|
+|XA4109|Kompilace kódu generovaného registrátora se nezdařila. Prosím soubor [Sestava chyb](http://bugzilla.xamarin.com).|
+|XA4110|Registrátora nelze v podpis pro metodu objekt {1}' zařazování výstupní parametr typu: {0}.|
+|XA4111|Registrátora nemůže vytvořit podpis pro typ {0}' v metodě objekt {1}.|
+|XA4200|Na ACW můžete generovat jenom pro typy 'claas'.|
+|XA4201|Nelze určit název JNI typu {0}.|
+|XA4203|Musí být plně kvalifikovaný název zadaného typu.|
+|XA4204|Nelze vyřešit typ rozhraní: {0}. Nechybí odkaz na sestavení?|
+|XA4205|[ExportField] lze použít pouze v metody s 0 parametry.|
+|XA4206|[Export] nelze použít na obecného typu.|
+|XA4207|[ExportField] nelze použít na obecného typu.|
+|XA4208|[Java.Interop.ExportFieldAttribute] nelze použít na metodu vrácení void.|
+|XA4209|Nepodařilo se vytvořit JavaTypeInfo pro třídu: {0} z důvodu {1}.|
+|XA4210|Budete muset přidat odkaz na Mono.Android.Export.dll při použití ExportAttribute nebo ExportFieldAttribute.|
+|XA4211|AndroidManifest.xml //uses-sdk/@android:targetSdkVersion {0}' je menší než $(TargetFrameworkVersion) objekt {1}. Pomocí rozhraní API-\ {1\} ACW kompilace.|
+
 
 ### <a name="xa5xxx-errors"></a>XA5xxx chyby
 
-<table>
-    <thead>
-        <tr><td>Kód chyby</td><td>Popis</td></tr>
-    </thead>
-    <tbody>
-        <tr><td>XA5101</td><td>Chybějící {0}' kompilátoru. Nainstalujte Android NDK.</td></tr>
-        <tr><td>XA5102</td><td>Převod z sestavení do nativního kódu se nezdařil. Prosím soubor sestavy chyb v <a href="http://bugzilla.xamarin.com">http://bugzilla.xamarin.com</a></td></tr>
-        <tr><td>XA5103</td><td>Kompilace souboru: {0} se nezdařila. Prosím soubor sestavy chyb v <a href="http://bugzilla.com">http://bugzilla.xamarin.com</a></td></tr>
-        <tr><td>XA5201</td><td>Nativní propojení se nezdařilo. Přečtěte si uživatel příznaky poskytované RSZ: {0}</td></tr>
-        <tr><td>XA5202</td><td>Nativní propojení se nezdařilo. Zkontrolujte protokol sestavení.</td></tr>
-        <tr><td>XA5303</td><td>Nativní propojení upozornění: {0}</td></tr>
-        <tr><td>XA5300</td><td>Sady SDK pro Android nebylo nalezeno nebo není zcela nainstalovat.</td></tr>
-        <tr><td>XA5301</td><td>Chybí nástroj 'pruhu'. Nainstalujte Xcode součásti, nástroje příkazového řádku.</td></tr>
-        <tr><td>XA5302</td><td>Chybí nástroj 'dsymutil'. Nainstalujte Xcode součásti, nástroje příkazového řádku.</td></tr>
-        <tr><td>XA5203</td><td>Nepodařilo se vygenerovat symboly ladění (dSYM adresář). Zkontrolujte protokol sestavení.</td></tr>
-        <tr><td>XA5204</td><td>Nepodařilo se odstranit poslední binárního souboru. Zkontrolujte protokol sestavení.</td></tr>
-        <tr><td>XA5205</td><td>Chybí nástroj 'aapt'. Nainstalujte balíček Android SDK – nástroje pro vytváření.</td></tr>
-        <tr><td>XA5206</td><td>{0}. Android prostředků {1} adresář neexistuje.</td></tr>
-        <tr><td>XA5207</td><td>{0}. Java knihovny souboru {1} neexistuje.</td></tr>
-        <tr><td>XA5208</td><td>Stahování se nezdařilo. Stáhnout {0} a umístí jej do adresáře {1}.</td></tr>
-        <tr><td>XA5209</td><td>Rozbalení se nezdařilo. {0} stáhněte a rozbalte ho do adresáře {1}.</td></tr>
-        <tr><td>XA5210</td><td>{0}. Nativní knihovny {1} soubor neexistuje.</td></tr>
-    </tbody>
-</table>
+|Kód chyby|Popis|
+|--- |--- |
+|XA5101|Chybějící {0}' kompilátoru. Nainstalujte Android NDK.|
+|XA5102|Převod z sestavení do nativního kódu se nezdařil. Prosím soubor [Sestava chyb](http://bugzilla.xamarin.com).|
+|XA5103|Kompilace souboru: {0} se nezdařila. Prosím soubor [Sestava chyb](http://bugzilla.xamarin.com).|
+|XA5201|Nativní propojení se nezdařilo. Přečtěte si uživatel příznaky poskytované RSZ: {0}|
+|XA5202|Nativní propojení se nezdařilo. Zkontrolujte protokol sestavení.|
+|XA5303|Nativní propojení upozornění: {0}.|
+|XA5300|Sady SDK pro Android nebylo nalezeno nebo není zcela nainstalovat.|
+|XA5301|Chybí nástroj 'pruhu'. Nainstalujte Xcode součásti, nástroje příkazového řádku'.|
+|XA5302|Chybí nástroj 'dsymutil'. Nainstalujte Xcode součásti, nástroje příkazového řádku'.|
+|XA5203|Nepodařilo se vygenerovat symboly ladění (dSYM adresář). Zkontrolujte protokol sestavení.|
+|XA5204|Nepodařilo se odstranit poslední binárního souboru. Zkontrolujte protokol sestavení.|
+|XA5205|Chybí nástroj 'aapt'. Nainstalujte balíček Android SDK – nástroje pro vytváření.|
+|XA5206|{0}. Android prostředků {1} adresář neexistuje.|
+|XA5207|{0}. Java knihovny souboru {1} neexistuje.|
+|XA5208|Stahování se nezdařilo. Stáhnout {0} a umístí jej do adresáře {1}.|
+|XA5209|Rozbalení se nezdařilo. {0} stáhněte a rozbalte ho do adresáře {1}.|
+|XA5210|{0}. Nativní knihovny {1} soubor neexistuje.|
 
 ### <a name="xa6xxx-errors"></a>XA6xxx chyby
 
-<table>
-    <thead>
-        <tr><td>Kód chyby</td><td>Popis</td></tr>
-    </thead>
-    <tbody>
-        <tr><td>XA6001</td><td>Spuštěná verze Cecil nepodporuje odstraňování sestavení</td></tr>
-        <tr><td>XA6002</td><td>Nelze odstranit sestavení `{0}`.</td></tr>
-        <tr><td>XA6003</td><td>UnauthorizedAccessException zpráv]</td></tr>
-    </tbody>
-</table>
+|Kód chyby|Popis|
+|--- |--- |
+|XA6001|Spuštěná verze Cecil nepodporuje odstraňování sestavení.|
+|XA6002|Nelze odstranit sestavení: {0}.|
+|XA6003|UnauthorizedAccessException zpráva.|
 
 ### <a name="xa9xxx-errors"></a>XA9xxx chyby
 
-Tato kódy chyb jsou chyby licencování a aktivace.
-
+Tyto kódy chyb jsou chyby licencování a aktivace.
 
 
 #### <a name="xa9000"></a>XA9000
@@ -217,27 +176,9 @@ Tato kódy chyb jsou chyby licencování a aktivace.
 
  **Zaškrtnutí během:** sestavení
 
-<table>
-    <thead>
-        <tr>
-            <th>Spuštění</th>
-            <th>Indie</th>
-            <th>Business(Trial)</th>
-            <th>Firmy</th>
-            <th>Enterprise</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>UPOZORNĚNÍ</td>
-            <td>UPOZORNĚNÍ</td>
-            <td>UPOZORNĚNÍ</td>
-            <td>UPOZORNĚNÍ</td>
-            <td>UPOZORNĚNÍ</td>
-        </tr>
-    </tbody>
-</table>
-
+|Spuštění|Indie|Business(Trial)|Firmy|Enterprise|
+|--- |--- |--- |--- |--- |
+|UPOZORNĚNÍ|UPOZORNĚNÍ|UPOZORNĚNÍ|UPOZORNĚNÍ|UPOZORNĚNÍ|
 
 
 #### <a name="xa9001"></a>XA9001
@@ -246,26 +187,9 @@ Tato kódy chyb jsou chyby licencování a aktivace.
 
  **Zaškrtnutí během:** sestavení
 
-<table>
-    <thead>
-        <tr>
-            <th>Spuštění</th>
-            <th>Indie</th>
-            <th>Business(Trial)</th>
-            <th>Firmy</th>
-            <th>Enterprise</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>UPOZORNĚNÍ</td>
-            <td>UPOZORNĚNÍ</td>
-            <td>UPOZORNĚNÍ</td>
-            <td>UPOZORNĚNÍ</td>
-            <td>UPOZORNĚNÍ</td>
-        </tr>
-    </tbody>
-</table>
+|Spuštění|Indie|Business(Trial)|Firmy|Enterprise|
+|--- |--- |--- |--- |--- |
+|UPOZORNĚNÍ|UPOZORNĚNÍ|UPOZORNĚNÍ|UPOZORNĚNÍ|UPOZORNĚNÍ|
 
 
 
@@ -275,51 +199,17 @@ Tato kódy chyb jsou chyby licencování a aktivace.
 
  **Zaškrtnutí během:** sestavení
 
-<table>
-    <thead>
-        <tr>
-            <th>Spuštění</th>
-            <th>Indie</th>
-            <th>Business(Trial)</th>
-            <th>Firmy</th>
-            <th>Enterprise</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>CHYBA</td>
-            <td>OK</td>
-            <td>OK</td>
-            <td>OK</td>
-            <td>OK</td>
-        </tr>
-    </tbody>
-</table>
+|Spuštění|Indie|Business(Trial)|Firmy|Enterprise|
+|--- |--- |--- |--- |--- |
+|CHYBA|OK|OK|OK|OK|
 
  **Příčina:** AndroidJavaLibrary
 
  **Zaškrtnutí během:** sestavení
 
-<table>
-    <thead>
-        <tr>
-            <th>Spuštění</th>
-            <th>Indie</th>
-            <th>Business(Trial)</th>
-            <th>Firmy</th>
-            <th>Enterprise</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>CHYBA</td>
-            <td>OK</td>
-            <td>OK</td>
-            <td>OK</td>
-            <td>OK</td>
-        </tr>
-    </tbody>
-</table>
+|Spuštění|Indie|Business(Trial)|Firmy|Enterprise|
+|--- |--- |--- |--- |--- |
+|CHYBA|OK|OK|OK|OK|
 
  **Má-li vazba sestavení .jar vložených, pak tato zasekne během balíčku, není čase vytvoření buildu.**
 
@@ -327,27 +217,9 @@ Tato kódy chyb jsou chyby licencování a aktivace.
 
  **Zaškrtnutí během:** sestavení
 
-<table>
-    <thead>
-        <tr>
-            <th>Spuštění</th>
-            <th>Indie</th>
-            <th>Business(Trial)</th>
-            <th>Firmy</th>
-            <th>Enterprise</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>CHYBA</td>
-            <td>OK</td>
-            <td>OK</td>
-            <td>OK</td>
-            <td>OK</td>
-        </tr>
-    </tbody>
-</table>
-
+|Spuštění|Indie|Business(Trial)|Firmy|Enterprise|
+|--- |--- |--- |--- |--- |
+|CHYBA|OK|OK|OK|OK|
 
 
 #### <a name="xa9003"></a>XA9003
@@ -356,76 +228,25 @@ Tato kódy chyb jsou chyby licencování a aktivace.
 
  **Zaškrtnutí během:** balíčku
 
-<table>
-    <thead>
-        <tr>
-            <th>Spuštění</th>
-            <th>Indie</th>
-            <th>Business(Trial)</th>
-            <th>Firmy</th>
-            <th>Enterprise</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>CHYBA</td>
-            <td>CHYBA</td>
-            <td>OK</td>
-            <td>OK</td>
-            <td>OK</td>
-        </tr>
-    </tbody>
-</table>
+|Spuštění|Indie|Business(Trial)|Firmy|Enterprise|
+|--- |--- |--- |--- |--- |
+|CHYBA|CHYBA|OK|OK|OK|
 
  **Cause:** System.ServiceModel.Web
 
  **Zaškrtnutí během:** balíčku
 
-<table>
-    <thead>
-        <tr>
-            <th>Spuštění</th>
-            <th>Indie</th>
-            <th>Business(Trial)</th>
-            <th>Firmy</th>
-            <th>Enterprise</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>CHYBA</td>
-            <td>CHYBA</td>
-            <td>OK</td>
-            <td>OK</td>
-            <td>OK</td>
-        </tr>
-    </tbody>
-</table>
+|Spuštění|Indie|Business(Trial)|Firmy|Enterprise|
+|--- |--- |--- |--- |--- |
+|CHYBA|CHYBA|OK|OK|OK|
 
  **Příčina:** Mono.Data.Tds
 
  **Zaškrtnutí během:** sestavení
 
-<table>
-    <thead>
-        <tr>
-            <th>Spuštění</th>
-            <th>Indie</th>
-            <th>Business(Trial)</th>
-            <th>Firmy</th>
-            <th>Enterprise</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>CHYBA</td>
-            <td>CHYBA</td>
-            <td>OK</td>
-            <td>OK</td>
-            <td>OK</td>
-        </tr>
-    </tbody>
-</table>
+|Spuštění|Indie|Business(Trial)|Firmy|Enterprise|
+|--- |--- |--- |--- |--- |
+|CHYBA|CHYBA|OK|OK|OK|
 
  **To je odkazován objektem System.Data.dll, které je povoleno**
 
@@ -433,26 +254,9 @@ Tato kódy chyb jsou chyby licencování a aktivace.
 
  **Zaškrtnutí během:** sestavení
 
-<table>
-    <thead>
-        <tr>
-            <th>Spuštění</th>
-            <th>Indie</th>
-            <th>Business(Trial)</th>
-            <th>Firmy</th>
-            <th>Enterprise</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>CHYBA</td>
-            <td>OK</td>
-            <td>OK</td>
-            <td>OK</td>
-            <td>OK</td>
-        </tr>
-    </tbody>
-</table>
+|Spuštění|Indie|Business(Trial)|Firmy|Enterprise|
+|--- |--- |--- |--- |--- |
+|CHYBA|OK|OK|OK|OK|
 
 
 
@@ -462,204 +266,80 @@ Tato kódy chyb jsou chyby licencování a aktivace.
 
  **Zaškrtnutí během:** balíčku
 
-<table>
-    <thead>
-        <tr>
-            <th>Spuštění</th>
-            <th>Indie</th>
-            <th>Business(Trial)</th>
-            <th>Firmy</th>
-            <th>Enterprise</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>CHYBA</td>
-            <td>CHYBA</td>
-            <td>OK</td>
-            <td>OK</td>
-            <td>OK</td>
-        </tr>
-    </tbody>
-</table>
+|Spuštění|Indie|Business(Trial)|Firmy|Enterprise|
+|--- |--- |--- |--- |--- |
+|CHYBA|CHYBA|OK|OK|OK|
 
 
 
 #### <a name="xa9005"></a>XA9005
 
- **Příčina:** omezení velikosti (32 kb)
+ **Příčina:** omezení velikosti (32 kb).
 
  **Zaškrtnutí během:** balíčku
 
-<table>
-    <thead>
-        <tr>
-            <th>Spuštění</th>
-            <th>Indie</th>
-            <th>Business(Trial)</th>
-            <th>Firmy</th>
-            <th>Enterprise</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>CHYBA</td>
-            <td>OK</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-        </tr>
-    </tbody>
-</table>
+|Spuštění|Indie|Business(Trial)|Firmy|Enterprise|
+|--- |--- |--- |--- |--- |
+|CHYBA|OK|-|-|-|
 
 
 
 #### <a name="xa9006"></a>XA9006
 
- **Příčina:** System.Data.SqlClient obor názvů
+ **Cause:** System.Data.SqlClient namespace.
 
  **Zaškrtnutí během:** balíčku
 
-<table>
-    <thead>
-        <tr>
-            <th>Spuštění</th>
-            <th>Indie</th>
-            <th>Business(Trial)</th>
-            <th>Firmy</th>
-            <th>Enterprise</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>CHYBA</td>
-            <td>CHYBA</td>
-            <td>OK</td>
-            <td>OK</td>
-            <td>OK</td>
-        </tr>
-    </tbody>
-</table>
-
+|Spuštění|Indie|Business(Trial)|Firmy|Enterprise|
+|--- |--- |--- |--- |--- |
+|CHYBA|CHYBA|OK|OK|OK|
 
 
 #### <a name="xa9008"></a>XA9008
 
- **Příčina:** sestavení z příkazového řádku
+ **Příčina:** sestavení z příkazového řádku.
 
  **Zaškrtnutí během:** sestavení
 
-<table>
-    <thead>
-        <tr>
-            <th>Spuštění</th>
-            <th>Indie</th>
-            <th>Business(Trial)</th>
-            <th>Firmy</th>
-            <th>Enterprise</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>CHYBA</td>
-            <td>CHYBA</td>
-            <td>OK</td>
-            <td>OK</td>
-            <td>OK</td>
-        </tr>
-    </tbody>
-</table>
-
+|Spuštění|Indie|Business(Trial)|Firmy|Enterprise|
+|--- |--- |--- |--- |--- |
+|CHYBA|CHYBA|OK|OK|OK|
 
 
 #### <a name="xa9009"></a>XA9009
 
- **Příčina:** chybí sériové číslo
+ **Příčina:** chybí sériové číslo.
 
  **Zaškrtnutí během:** Untestable
 
-<table>
-    <thead>
-        <tr>
-            <th>Spuštění</th>
-            <th>Indie</th>
-            <th>Business(Trial)</th>
-            <th>Firmy</th>
-            <th>Enterprise</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>CHYBA</td>
-            <td>CHYBA</td>
-            <td>CHYBA</td>
-            <td>CHYBA</td>
-            <td>CHYBA</td>
-        </tr>
-    </tbody>
-</table>
-
+|Spuštění|Indie|Business(Trial)|Firmy|Enterprise|
+|--- |--- |--- |--- |--- |
+|CHYBA|CHYBA|CHYBA|CHYBA|CHYBA|
 
 
 #### <a name="xa9010"></a>XA9010
 
- **Příčina:** neplatný ProductId
+ **Příčina:** neplatný ProductId.
 
  **Zaškrtnutí během:** sestavení
 
-<table>
-    <thead>
-        <tr>
-            <th>Spuštění</th>
-            <th>Indie</th>
-            <th>Business(Trial)</th>
-            <th>Firmy</th>
-            <th>Enterprise</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>CHYBA</td>
-            <td>CHYBA</td>
-            <td>CHYBA</td>
-            <td>CHYBA</td>
-            <td>CHYBA</td>
-        </tr>
-    </tbody>
-</table>
+|Spuštění|Indie|Business(Trial)|Firmy|Enterprise|
+|--- |--- |--- |--- |--- |
+|CHYBA|CHYBA|CHYBA|CHYBA|CHYBA|
 
-Ekvivalent XA9018
+Ekvivalent XA9018.
 
 
 
 #### <a name="xa9011"></a>XA9011
 
- **Příčina:** se nepodařilo aktualizovat licenční soubor (do nového formátu souboru)
+ **Příčina:** se nepodařilo aktualizovat licenční soubor (do nového formátu souboru).
 
  **Zaškrtnutí během:** aktivace
 
-<table>
-    <thead>
-        <tr>
-            <th>Spuštění</th>
-            <th>Indie</th>
-            <th>Business(Trial)</th>
-            <th>Firmy</th>
-            <th>Enterprise</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>CHYBA</td>
-            <td>CHYBA</td>
-            <td>CHYBA</td>
-            <td>CHYBA</td>
-            <td>CHYBA</td>
-        </tr>
-    </tbody>
-</table>
-
-
+|Spuštění|Indie|Business(Trial)|Firmy|Enterprise|
+|--- |--- |--- |--- |--- |
+|CHYBA|CHYBA|CHYBA|CHYBA|CHYBA|
 
 #### <a name="xa9012"></a>XA9012
 
@@ -667,27 +347,9 @@ Ekvivalent XA9018
 
  **Zaškrtnutí během:** aktivace
 
-<table>
-    <thead>
-        <tr>
-            <th>Spuštění</th>
-            <th>Indie</th>
-            <th>Business(Trial)</th>
-            <th>Firmy</th>
-            <th>Enterprise</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>CHYBA</td>
-            <td>CHYBA</td>
-            <td>CHYBA</td>
-            <td>CHYBA</td>
-            <td>CHYBA</td>
-        </tr>
-    </tbody>
-</table>
-
+|Spuštění|Indie|Business(Trial)|Firmy|Enterprise|
+|--- |--- |--- |--- |--- |
+|CHYBA|CHYBA|CHYBA|CHYBA|CHYBA|
 
 
 #### <a name="xa9013"></a>XA9013
@@ -696,27 +358,9 @@ Ekvivalent XA9018
 
  **Zaškrtnutí během:** aktivace
 
-<table>
-    <thead>
-        <tr>
-            <th>Spuštění</th>
-            <th>Indie</th>
-            <th>Business(Trial)</th>
-            <th>Firmy</th>
-            <th>Enterprise</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>CHYBA</td>
-            <td>CHYBA</td>
-            <td>CHYBA</td>
-            <td>CHYBA</td>
-            <td>CHYBA</td>
-        </tr>
-    </tbody>
-</table>
-
+|Spuštění|Indie|Business(Trial)|Firmy|Enterprise|
+|--- |--- |--- |--- |--- |
+|CHYBA|CHYBA|CHYBA|CHYBA|CHYBA|
 
 
 #### <a name="xa9014"></a>XA9014
@@ -725,55 +369,20 @@ Ekvivalent XA9018
 
  **Zaškrtnutí během:** aktivace
 
-<table>
-    <thead>
-        <tr>
-            <th>Spuštění</th>
-            <th>Indie</th>
-            <th>Business(Trial)</th>
-            <th>Firmy</th>
-            <th>Enterprise</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>CHYBA</td>
-            <td>CHYBA</td>
-            <td>CHYBA</td>
-            <td>CHYBA</td>
-            <td>CHYBA</td>
-        </tr>
-    </tbody>
-</table>
-
+|Spuštění|Indie|Business(Trial)|Firmy|Enterprise|
+|--- |--- |--- |--- |--- |
+|CHYBA|CHYBA|CHYBA|CHYBA|CHYBA|
 
 
 #### <a name="xa9017"></a>XA9017
 
- **Příčina:** aktivační server nevrací platnou licenci
+ **Příčina:** aktivační server nevrací platnou licenci.
 
  **Zaškrtnutí během:** aktivace
 
-<table>
-    <thead>
-        <tr>
-            <th>Spuštění</th>
-            <th>Indie</th>
-            <th>Business(Trial)</th>
-            <th>Firmy</th>
-            <th>Enterprise</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>CHYBA</td>
-            <td>CHYBA</td>
-            <td>CHYBA</td>
-            <td>CHYBA</td>
-            <td>CHYBA</td>
-        </tr>
-    </tbody>
-</table>
+|Spuštění|Indie|Business(Trial)|Firmy|Enterprise|
+|--- |--- |--- |--- |--- |
+|CHYBA|CHYBA|CHYBA|CHYBA|CHYBA|
 
 
 #### <a name="xa9018"></a>XA9018
@@ -782,23 +391,7 @@ Ekvivalent XA9018
 
 **Zaškrtnutí během:** sestavení
 
-<table>
-    <thead>
-        <tr>
-            <th>Spuštění</th>
-            <th>Indie</th>
-            <th>Business(Trial)</th>
-            <th>Firmy</th>
-            <th>Enterprise</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>-</td>
-            <td>-</td>
-            <td>CHYBA</td>
-            <td>-</td>
-            <td>-</td>
-        </tr>
-    </tbody>
-</table>
+|Spuštění|Indie|Business(Trial)|Firmy|Enterprise|
+|--- |--- |--- |--- |--- |
+|-|-|CHYBA|-|-|
+

@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/06/2018
-ms.openlocfilehash: d1c4c46b62b95d70dd2832c96ffd2686163990a5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: f0e8dabc47352213d18d079ee9f8abb3e557b868
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="binding-objective-c-libraries"></a>Vazba knihoven jazyka Objective-C
 
@@ -1514,6 +1514,6 @@ Od verze Xamarin.iOS v3.2 podporujeme dědění z protokolů, které byly označ
 
 V minulosti vyžádali jsme si kopírování protokol pro každou implementaci, ale v těchto případech nyní jsme může mít `MKShape` třídy dědí `MKOverlay` protokolu a vygeneruje všechny požadované metody automaticky.
 
-### <a name="related-links"></a>Související odkazy
+## <a name="related-links"></a>Související odkazy
 
 - [Ukázka vazby](https://developer.xamarin.com/samples/BindingSample/)

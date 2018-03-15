@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 650f8dceebb088b3601c21c1f5373fc4ae8c76dc
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: c309fb6936296dc181e499c91770ab8891121e9c
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="adding-intelligence-with-cognitive-services"></a>Přidání Intelligence kognitivní službou
 
@@ -52,51 +52,20 @@ Klepnutím na tlačítko smilies na `TodoListPage` přejde `RateAppPage`, který
 
 Projekt přenosných třída knihovny PCL () pro ukázkovou aplikaci se skládá z pěti hlavních složek:
 
-<table>
-    <thead>
-        <tr><td><strong>Složka</strong></td><td><strong>Účel</strong></td></tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><strong>Modely</strong></td>
-            <td>Obsahuje třídy modelu dat pro aplikaci. To zahrnuje <code>TodoItem</code> třídy, která modelů jednu položku dat používá aplikace. Složka také obsahuje třídy používané k odpovědím modelu JSON vrácená z různých Microsoft kognitivní služby rozhraní API.</td>
-        </tr>
-        <tr>
-            <td><strong>Úložiště</strong></td>
-                        <td>Obsahuje <code>ITodoItemRepository</code> rozhraní a <code>TodoItemRepository</code> třídu, která se používá k provádění operací databáze.</td>
-        </tr>
-        <tr>
-            <td><strong>Služby</strong></td>
-                        <td>Obsahuje rozhraní a třídy, které se používají pro přístup k jiné Microsoft kognitivní služby rozhraní API, společně s rozhraní, které jsou používány <code>DependencyService</code> třída vyhledat třídy, které implementují rozhraní v projektech platformy.</td>
-        </tr>
-        <tr>
-            <td><strong>Utils</strong></td>
-            <td>Obsahuje <code>Timer</code> třídy, která je používána <code>AuthenticationService</code> třída obnovit přístupový token JWT každých 9 minut.</td>
-        </tr>
-        <tr>
-            <td><strong>Zobrazení</strong></td>
-            <td>Obsahuje stránky pro aplikaci.</td>
-        </tr>
-    </tbody>
-</table>
+|Folder|Účel|
+|--- |--- |
+|Modely|Obsahuje třídy modelu dat pro aplikaci. To zahrnuje `TodoItem` třídy, která modelů jednu položku dat používá aplikace. Složka také obsahuje třídy používané k odpovědím modelu JSON vrácená z různých Microsoft kognitivní služby rozhraní API.|
+|Úložiště|Obsahuje `ITodoItemRepository` rozhraní a `TodoItemRepository` třídu, která se používá k provádění operací databáze.|
+|Služby|Obsahuje rozhraní a třídy, které se používají pro přístup k jiné Microsoft kognitivní služby rozhraní API, společně s rozhraní, které jsou používány `DependencyService` třída vyhledat třídy, které implementují rozhraní v projektech platformy.|
+|Utils|Obsahuje `Timer` třídy, která je používána `AuthenticationService` třída obnovit přístupový token JWT každých 9 minut.|
+|zobrazení|Obsahuje stránky pro aplikaci.|
 
 Projekt PCL také obsahuje některé důležité soubory:
 
-<table>
-    <thead>
-      <tr><td><strong>Soubor</strong></td><td><strong>Účel</strong></td></tr>
-    <thead>
-    <tbody>
-        <tr>
-            <td><strong>Constants.cs</strong></td>
-            <td><code>Constants</code> Třídy, která určuje pro Microsoft kognitivní služby rozhraní API, která jsou vyvolány klíče rozhraní API a koncové body. Konstanty klíče rozhraní API vyžadovat aktualizace pro přístup k jiné kognitivní rozhraní API služby.
-        </tr>
-        <tr>
-          <td><strong>App.xaml.cs</strong></td>
-          <td><code>App</code> Třída je odpovědná za vytváření instancí i na první stránku, která se zobrazí v aplikaci na každou platformu, a <code>TodoManager</code> třídu, která se použije k vyvolání operace databáze.</td>
-        </tr>
-    </tbody>
-</table>
+|Soubor|Účel|
+|--- |--- |
+|Constants.cs|`Constants` Třídy, která určuje pro Microsoft kognitivní služby rozhraní API, která jsou vyvolány klíče rozhraní API a koncové body. Konstanty klíče rozhraní API vyžadovat aktualizace pro přístup k jiné kognitivní rozhraní API služby.|
+|App.xaml.cs|`App` Třída je odpovědná za vytváření instancí i na první stránku, která se zobrazí v aplikaci na každou platformu, a `TodoManager` třídu, která se použije k vyvolání operace databáze.|
 
 ### <a name="nuget-packages"></a>Balíčky NuGet
 

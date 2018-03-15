@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 861d47d001c10c14a0294536c6122cafb33a93ac
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e930004a91133f391f68221473f212b7caaf1b07
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="3d-coordinates-in-monogame"></a>3D souřadnic v MonoGame
 
@@ -47,7 +47,7 @@ Tento názorný postup se zaměřuje na přesouvání objektů v 3D prostoru. Za
 
 Než začneme přesunutí naše robot kolem, vytvoříme `Robot` třída obsahuje logiku pro vykreslování a pohyb. Herní vývojáři odkazovat na tuto zapouzdření logiku a data jako *entity*.
 
-Přidat nový soubor prázdné třídy k **MonoGame3D** Přenosná knihovna tříd (ne ModelAndVerts.Android specifické pro platformu). Název it ** Robot ** a klikněte na tlačítko **nový**:
+Přidat nový soubor prázdné třídy k **MonoGame3D** Přenosná knihovna tříd (ne ModelAndVerts.Android specifické pro platformu). Pojmenujte ji **Robot** a klikněte na tlačítko **nový**:
 
 ![](part3-images/image3.png "Název Robot a klikněte na nový")
 

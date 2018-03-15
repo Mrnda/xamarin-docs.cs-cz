@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/22/0201
-ms.openlocfilehash: c5f6e6ef61e3705920770d317e4d5f680d4c8fbe
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 95d4bfd78ee77f9afafce61f52b7874299df543d
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="troubleshooting"></a>Poradce při potížích
 
@@ -207,7 +207,7 @@ Tento problém je velmi výjimečných a velmi obtížné reprodukujte – je ob
 
 
 
-Připojte prosím protokoly XS **~/Library/Logs/XamarinStudio-{VERSION}/Ide-{TIMESTAMP}.log**, **AndroidTools-{časové razítko} .log**, a ** součásti-{časové razítko} .log ** (ve starších verzích XS / MonoDevelop, jenom odeslání **~/Library/Logs/MonoDevelop-(3.0|2.8|2.6)/MonoDevelop.log**).
+Připojte prosím protokoly XS **~/Library/Logs/XamarinStudio-{VERSION}/Ide-{TIMESTAMP}.log**, **AndroidTools-{časové razítko} .log**, a **součásti-{časové razítko} .log**(ve starších verzích XS/MonoDevelop právě odeslat **~/Library/Logs/MonoDevelop-(3.0|2.8|2.6)/MonoDevelop.log**).
 
  **Poznámka: Výše uvedený problém byl opraven v XS 2.2 konečné**
 
@@ -225,7 +225,7 @@ Mono a Xamarin.iOS instalační programy zablokuje, pokud máte spuštěný simu
 
 Zajistěte, aby po ukončení simulátoru zařízení iPhone a opakujte instalaci.
 
-<a name="trampolines"/>
+<a name="trampolines" />
 
 ## <a name="ran-out-of-trampolines-of-type-0"></a>Nemá dostatek trampolines typu 0
 

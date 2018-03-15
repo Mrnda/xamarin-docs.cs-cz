@@ -5,14 +5,14 @@ ms.topic: article
 ms.prod: xamarin
 ms.assetid: 81FCB2ED-687C-40BC-ABF1-FB4303034D01
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: asb3993
+ms.author: amburns
 ms.date: 11/17/2017
-ms.openlocfilehash: d7532d052c57ad46caca0cd6d6ce26d0e77dc05f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a411c214e35f78ff9d3dd8d4e9122702d66a2156
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="automatic-provisioning"></a>Automatické zřizování
 
@@ -34,23 +34,15 @@ Automaticky podepsání vaší aplikace pro nasazení na zařízení s iOS, post
 
 1. Otevřete projekt pro iOS v sadě Visual Studio for Mac.
 
-2. Otevřete **Info.plist** souboru:
+2. Otevřete **Info.plist** souboru.
 
-    ![Soubor info.plist](automatic-provisioning-images/image1.png)
-
-3. V **podpisování** vyberte váš tým z **Team** rozevíracího seznamu:
+3. V **podpisování** část, vyberte **automatické zřizování**:
 
     ![Rozevírací seznam pro výběr Team](automatic-provisioning-images/image2.png)
 
-4. Vyberte **automaticky spravovat podepisování** zaškrtávací políčko, jak je uvedeno dále. Tento počáteční automatický proces podepisování, kde se Visual Studio pro Mac pokusí generování ID aplikace, profil pro zřizování a podpisovou identitu a nastavte tyto artefakty, který se má použít pro podepisování. Pokud políčko zaškrtnuto, ruční ovládací prvky pro výběr podpisového identity jsou zakázány.
+4. Vyberte váš tým z **Team** rozevíracího seznamu.
 
-    ![automaticky spravovat možnost týmy](automatic-provisioning-images/image3.png)
-
-5. Následující dialogové okno bude pop, radí, že soubor projektu upraví tak, aby použít nově vygenerovaný certifikát a profil pro zřizování:
-
-    ![Dialogové okno, které informuje o tom, soubor projektu bude upraveno.](automatic-provisioning-images/image4.png)
-
-6. Za několik sekund podpisový certifikát a zřizování profilu vytvoří a zobrazí:
+6. Za několik sekund se vytvoří podpisový certifikát a zřizování profilu:
 
     ![úspěšně vytvořit certifikát a profil](automatic-provisioning-images/image5.png)
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 9a4b8ac68da7bcb25ea55906e8fe060b7c7fdee9
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 92ca65409dd82806278885bb03efd7b04ab1827d
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="xib-files"></a>.XIb soubory
 
@@ -67,7 +67,7 @@ Otevřete soubor .xib pro úpravy v Xcode, Visual Studio pro Mac vytvoří soubo
 
 #### <a name="properties--utilities"></a>Vlastnosti & Nástroje
 
-**Vlastnosti & Nástroje** část je devided na dvě hlavní části, které pracujeme, **vlastnosti** (také nazývané inspektoři) a **knihovny**:
+**Vlastnosti & Nástroje** část je rozdělena na dvě hlavní části, které pracujeme, **vlastnosti** (také nazývané inspektoři) a **knihovny**:
 
 ![Vlastnost Inspector](xib-images/xcode04.png "Inspector vlastnost")
 
@@ -375,7 +375,7 @@ partial void ClickedButton (Foundation.NSObject sender) {
 
 Tento kód se připojí k akci, kterou jste vytvořili v Xcode a Tvůrce rozhraní a bude volána vždy, když uživatel klikne na tlačítko.
 
-Některé prvky uživatelského rozhraní automaticky jste vytvořili v akce, například položky v panelu nabídek výchozí, jako **otevřete...**  položku nabídky (`openDocument:`). V **řešení Pad**, dvakrát klikněte na `AppDelegate.CS` soubor otevřete pro úpravy a přidejte následující kód níže `DidFinishLaunching` metoda:
+Některé prvky uživatelského rozhraní automaticky jste vytvořili v akce, například položky v panelu nabídek výchozí, jako **otevřete...**  položku nabídky (`openDocument:`). V **řešení Pad**, dvakrát klikněte na **AppDelegate.cs** soubor otevřete pro úpravy a přidejte následující kód níže `DidFinishLaunching` metoda:
 
 ```csharp
 [Export ("openDocument:")]

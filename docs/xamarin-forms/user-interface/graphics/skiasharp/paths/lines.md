@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: abcda680f6cfbde802f7b666cf2aade2c6e11093
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 341d850709ff27f4dc397cee3bb2fc5f73c0ec3c
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="lines-and-stroke-caps"></a>Řádky a tahu CAP k vzdálené ploše
 
@@ -30,7 +30,7 @@ canvas.DrawLine (x0, y0, x1, y1, paint);
 
 Ve výchozím nastavení `StrokeWidth` vlastnost nově vytvořenou instanci `SKPaint` objekt je 0, který má stejný účinek jako hodnota 1 v vykreslování řádek jednoho pixelu ve tloušťka. To se zobrazí velmi tenké na zařízení s vysokým rozlišením, jako jsou telefony, takže budete pravděpodobně chtít nastavit `StrokeWidth` na větší hodnotu. Jakmile začnete kreslení čar značné množství tloušťka, který vyvolá jinému problému, ale: jak se mají spuštění a ukončení čar tyto silných Generovat?
 
-Je volána vzhled spuštění a ukončení čar *zakončení čáry* nebo v Skia, *tahu cap*. Slovo "cap" v tomto kontextu odkazuje na druh hat & #x 2014; něco, která se nachází na konci řádku. Nastavíte [ `StrokeCap` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeCap/) vlastnost `SKPaint` objektu na jednu z následujících členů [ `SKStrokeCap` ](https://developer.xamarin.com/api/type/SkiaSharp.SKStrokeCap/) výčtu:
+Je volána vzhled spuštění a ukončení čar *zakončení čáry* nebo v Skia, *tahu cap*. Slovo "cap" v tomto kontextu odkazuje na druh hat &mdash; něco, která se nachází na konci řádku. Nastavíte [ `StrokeCap` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeCap/) vlastnost `SKPaint` objektu na jednu z následujících členů [ `SKStrokeCap` ](https://developer.xamarin.com/api/type/SkiaSharp.SKStrokeCap/) výčtu:
 
 - [`Butt`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeCap.Butt/) (výchozí)
 - [`Square`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeCap.Round/)

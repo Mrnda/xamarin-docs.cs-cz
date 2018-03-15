@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 04/12/2017
-ms.openlocfilehash: f448a3ee9c018aa475775a5ac2c614f3e7ddc324
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ab22881f383e00a67fda8d3e8ffc5d9a4f7f993e
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="net-standard"></a>Standardní rozhraní .NET
 
@@ -25,20 +25,7 @@ Je jediná knihovna s jednotné rozhraní API pro všechny platformy .NET, včet
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-## <a name="xamarin-studio"></a>Xamarin Studio
-
-.NET standard projektů knihovny lze vytvořit v Xamarin Studio 6.2, první vytvořením projektu přenosné knihovny:
-
-[![](net-standard-images/xs01-sml.png "Vytvoření nového projektu přenosné knihovny")](net-standard-images/xs01.png#lightbox)
-
-Po vytvoření projektu klikněte pravým tlačítkem a otevřete **možnosti projektu** okno.
-V **Obecné** části projektu můžete převést na rozhraní .NET standardní a nastavení používá ve na konkrétní verzi **platformy** rozevíracího seznamu:
-
-[![](net-standard-images/xs02-sml.png "Převést na rozhraní .NET standardní Obecné možnosti")](net-standard-images/xs02.png#lightbox)
-
-Pak můžete [vytvořit balíček NuGet](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/existing-library.md) sdílení knihovny s jinými vývojáři.
-
-## <a name="visual-studio-for-mac-walkthrough"></a>Visual Studio pro Mac návod
+## <a name="visual-studio-for-mac"></a>Visual Studio for Mac
 
 Tato část vás provede postup vytvoření a použití standardní knihovny .NET pomocí sady Visual Studio for Mac. Informace naleznete v sekci Příklad standardní knihovny .NET pro dokončení implementace.
 
@@ -68,7 +55,7 @@ Můžete změnit ve vaší verzi `netstandard` změnou `Target Framework` hodnot
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-## <a name="visual-studio-windows-walkthrough"></a>Návod pro Visual Studio (Windows)
+## <a name="visual-studio-2017-windows"></a>Visual Studio 2017 (Windows)
 
 Tato část vás provede postup vytvoření a použití standardní knihovny .NET pomocí sady Visual Studio. Informace naleznete v sekci Příklad standardní knihovny .NET pro dokončení implementace.
 
@@ -104,7 +91,3 @@ Po vytvoření standardní knihovny .NET, můžete přidat odkaz na jeho ze žá
 
 -----
 
-
-## <a name="related-links"></a>Související odkazy
-
-- [Zpráva k vydání verze](https://developer.xamarin.com/releases/studio/xamarin.studio_6.2/xamarin.studio_6.2/#.NET_Standard_Support)

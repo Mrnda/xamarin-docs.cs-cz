@@ -8,11 +8,11 @@ ms.assetid: 288224F1-7AEE-4148-A88D-A70C03F83D7A
 author: charlespetzold
 ms.author: chape
 ms.date: 02/09/2017
-ms.openlocfilehash: c938e5ef836904c42f3349c66d48a9b13cb335ca
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: aa6011c783228848212c633c1c8059c402fdaa3f
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="integrating-with-xamarinforms"></a>Integrace s Xamarin.Forms
 
@@ -23,7 +23,7 @@ Grafika SkiaSharp můžete integrovat s ostatními Xamarin.Forms několika způs
 ![](integration-images/integrationexample.png "Výběr barvy s posuvníky")
 
 Další postup pro vytváření interaktivních SkiaSharp grafiky v Xamarin.Forms je prostřednictvím dotykového ovládání.
-Na druhou stránku [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/) nárok program **klepněte na přepnutí vyplnění**. Nakreslí jednoduchou v kruhu dva způsoby & #x 2014; bez výplně a s výplně & #x 2014; Klepněte na přepínat stav. [ `TapToggleFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml.cs) Třída ukazuje, jak změnit SkiaSharp grafiky v reakci na vstup uživatele.
+Na druhou stránku [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/) nárok program **klepněte na přepnutí vyplnění**. Nakreslí Jednoduchý kruh dva způsoby, jak &mdash; bez výplně a s výplní &mdash; přepínat stav klepněte na. [ `TapToggleFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml.cs) Třída ukazuje, jak změnit SkiaSharp grafiky v reakci na vstup uživatele.
 
 Pro tuto stránku `SKCanvasView` vytvoření instance třídy v [TapToggleFill.xaml](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml) souboru, který také nastaví platformě Xamarin.Forms [ `TapGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/) v zobrazení:
 

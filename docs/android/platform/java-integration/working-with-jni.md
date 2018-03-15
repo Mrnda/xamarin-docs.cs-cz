@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/09/2018
-ms.openlocfilehash: e9a6f44637b77bf53c3cab00ac5051e6a2f27386
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: f14d456cba66142c51e0755cdfd3c6795bd1cf73
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="working-with-jni"></a>Práce s JNI
 
@@ -154,7 +154,7 @@ Všimněte si, že se zachová základní třídy a nativní metoda deklarace js
 
 Obvykle Xamarin.Android automaticky generuje kód Java, která tvoří ACW; generování je založena na názvy třídy a metody, pokud třída odvozená z třídy jazyka Java a přepíše existující metody Java. Ale v některých scénářích generování kódu není dostatečné, jak je uvedeno níže:
 
--   Podpora pro Android akce názvy v rozložení atributy xml, třeba [android: onClick](https://developer.xamarin.com/api/member/Android.Views.View+IOnClickListener.OnClick/p/Android.Views.View/) atribut XML. Pokud není zadán, pokusí se zvýšeným zobrazení instance vyhledat metodu Java.
+-   Android podporuje názvy akcí v rozložení atributy XML, třeba [android: onClick](https://developer.xamarin.com/api/member/Android.Views.View+IOnClickListener.OnClick/p/Android.Views.View/) atribut XML. Pokud není zadán, zvýšeným zobrazení instance se pokusí vyhledat metodu Java.
 
 -   [Java.io.Serializable](http://developer.android.com/reference/java/io/Serializable.html) vyžaduje rozhraní `readObject` a `writeObject` metody. Vzhledem k tomu, že nejsou členy tohoto rozhraní, nevystavuje naše odpovídající spravované implementaci těchto metod kódu v jazyce Java.
 

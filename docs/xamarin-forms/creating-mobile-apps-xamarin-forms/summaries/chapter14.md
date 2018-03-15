@@ -7,11 +7,11 @@ ms.assetid: 88882A48-3226-42D1-96ED-241250B64A84
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 394e1722c79bac5f034e9ad88eb1fed7e5090f8c
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: a3980c63c31f4fdf0297fdc9b05da3590f0cac54
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-14-absolute-layout"></a>Shrnutí kapitoly 14. Absolutní rozložení
 
@@ -25,7 +25,7 @@ Tato kapitola také představuje důležitou součást *přidružené vazbu vlas
 
 Můžete přidat podřízené `Children` kolekce `AbsoluteLayout` přes standardní [ `Add` ](https://developer.xamarin.com/api/member/System.Collections.Generic.ICollection%3CT%3E.Add/p/T/) metoda, ale `AbsoluteLayout` také poskytuje rozšířená [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.AbsoluteLayout+IAbsoluteList%3CT%3E.Add/p/Xamarin.Forms.View/Xamarin.Forms.Rectangle/Xamarin.Forms.AbsoluteLayoutFlags/) Metoda, která umožňuje určit [ `Rectangle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Rectangle/). Jiné [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.AbsoluteLayout+IAbsoluteList%3CT%3E.Add/p/Xamarin.Forms.View/Xamarin.Forms.Point/) metoda vyžaduje, jenom [ `Point` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Point/), v takovém případě neomezeným podřízený objekt a velikosti sám sebe.
 
-Můžete vytvořit `Rectangle` hodnotu s [konstruktor](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Rectangle.Rectangle/p/System.Double/System.Double/System.Double/System.Double/) čtyři hodnoty & #x 2014; které vyžaduje první dvě označující pozice levého horního rohu podřízených relativně k nadřazenému a další dva označující velikost dítěte. Nebo můžete použít [konstruktor](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Rectangle.Rectangle/p/Xamarin.Forms.Point/Xamarin.Forms.Size/) vyžadující `Point` a [ `Size` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Size/) hodnotu.
+Můžete vytvořit `Rectangle` hodnotu s [konstruktor](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Rectangle.Rectangle/p/System.Double/System.Double/System.Double/System.Double/) vyžadující čtyři hodnoty &mdash; první dvě označující pozice levého horního rohu podřízených relativně k nadřazenému a další dva označující velikost dítěte. Nebo můžete použít [konstruktor](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Rectangle.Rectangle/p/Xamarin.Forms.Point/Xamarin.Forms.Size/) vyžadující `Point` a [ `Size` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Size/) hodnotu.
 
 Tyto `Add` metody je ukázán v [ **AbsoluteDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/AbsoluteDemo), které pozic `BoxView` elementů pomocí `Rectangle` hodnoty a `Label` elementu s použitím právě `Point` hodnotu.
 

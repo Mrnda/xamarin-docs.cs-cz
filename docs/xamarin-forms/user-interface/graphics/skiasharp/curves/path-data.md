@@ -8,11 +8,11 @@ ms.assetid: 1D53067B-3502-4D74-B89D-7EC496901AE2
 author: charlespetzold
 ms.author: chape
 ms.date: 05/24/2017
-ms.openlocfilehash: cc21f789d96f9375655766916f80c6f3f524c29d
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 7d50e5a33020de822f96a8bf2f713a8c5b9d3020
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="svg-path-data"></a>Data SVG cesty
 
@@ -423,7 +423,7 @@ public class PrettyAnalogClockPage : ContentPage
 }
 ```
 
-Něco speciální provádí pomocí druhé straně, ale. Protože hodiny se aktualizuje každých 16 milisekund `Millisecond` vlastnost `DateTime` hodnotu lze potenciálně na druhé straně animace oblouku místo ten, který přesune v diskrétní skoků z druhého druhou. Ale tento kód neumožňuje přesun jako plynulé. Místo toho použije platformě Xamarin.Forms [ `SpringIn` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SpringIn/) a [ `SpringOut` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SpringOut/) animace usnadnění funkce pro jiný druh pohyb. Tyto funkce usnadnění způsobit druhé straně přesouvat v jerkier způsobem & #x 2014; stahování zpět malým před přesune ho a potom mírně překročením teploty svůj cíl, vliv to bohužel nelze reprodukovat v těchto statické snímky obrazovky:
+Něco speciální provádí pomocí druhé straně, ale. Protože hodiny se aktualizuje každých 16 milisekund `Millisecond` vlastnost `DateTime` hodnotu lze potenciálně na druhé straně animace oblouku místo ten, který přesune v diskrétní skoků z druhého druhou. Ale tento kód neumožňuje přesun jako plynulé. Místo toho použije platformě Xamarin.Forms [ `SpringIn` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SpringIn/) a [ `SpringOut` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SpringOut/) animace usnadnění funkce pro jiný druh pohyb. Tyto funkce usnadnění způsobit druhé straně přesunout jerkier způsobem &mdash; stahování zpět malým před přesune ho a potom mírně překročením teploty svůj cíl, vliv to bohužel nelze reprodukovat v těchto statické snímky obrazovky:
 
 [![](path-data-images/prettyanalogclock-small.png "Trojitá snímek obrazovky stránky poměrně analogovým hodiny")](path-data-images/prettyanalogclock-large.png#lightbox "Trojitá snímek obrazovky stránky poměrně analogovým hodiny")
 

@@ -8,11 +8,11 @@ ms.assetid: 31C96FD6-07E4-4473-A551-24753A5118C3
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: e18ef7c77c1d5c93d53882233c65a56e5567fcd7
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 347ecf72356915714200835263e38519c1ad8a13
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="basic-animation"></a>Základní animace
 
@@ -107,7 +107,7 @@ async Task AnimationLoop()
 
 ```
 
-`while` Smyčky začíná získáním času cyklu od `Slider`. Toto je čas v sekundách, například 5. Druhý příkaz vypočítá hodnotu `t` pro *čas*. Pro `cycleTime` 5, `t` zvyšuje od 0 do 1 každých 5 sekund. Argument `Math.Sin` funkce v druhý příkaz rozsahu od 0 do 2π každých 5 sekund. `Math.Sin` Funkce vrátí hodnotu v rozsahu od 0 do 1 zpět na hodnotu 0 a pak na & #x 2013; 1 a 0 každých 5 sekund, ale s hodnotami, které pomaleji změnit, pokud je hodnota téměř 1 nebo -1. Hodnota 1 je přidáván, takže jsou vždy aktivní kladné hodnoty a pak je rozdělený podle 2, takže hodnoty v rozsahu od ½ na 1 ½ 0 ½, ale pomalu, pokud hodnota je přibližně 1 a 0. Toto je uloženo v `scale` pole a `SKCanvasView` je zrušena.
+`while` Smyčky začíná získáním času cyklu od `Slider`. Toto je čas v sekundách, například 5. Druhý příkaz vypočítá hodnotu `t` pro *čas*. Pro `cycleTime` 5, `t` zvyšuje od 0 do 1 každých 5 sekund. Argument `Math.Sin` funkce v druhý příkaz rozsahu od 0 do 2π každých 5 sekund. `Math.Sin` Funkce vrátí hodnotu v rozsahu od 0 do 1 zpět na hodnotu 0 a pak na &ndash;1 a 0 každých 5 sekund, ale s hodnotami, které pomaleji změnit, pokud je hodnota téměř 1 nebo -1. Hodnota 1 je přidáván, takže jsou vždy aktivní kladné hodnoty a pak je rozdělený podle 2, takže hodnoty v rozsahu od ½ na 1 ½ 0 ½, ale pomalu, pokud hodnota je přibližně 1 a 0. Toto je uloženo v `scale` pole a `SKCanvasView` je zrušena.
 
 `PaintSurface` Tato metoda používá `scale` hodnotě k výpočtu dvěma osami elipsy:
 

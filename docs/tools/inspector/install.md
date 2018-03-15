@@ -1,5 +1,6 @@
 ---
-title: "Instalace a požadavky"
+title: "Kontrola instalace a požadavky"
+description: "Jak chcete stáhnout, nainstalovat a používat nástroj Xamarin Inspector."
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
@@ -7,35 +8,28 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/29/2017
-ms.openlocfilehash: a587935e35882ed1dc68817fbbe1ae3e91200f29
-ms.sourcegitcommit: 0bdcd00b64d581d4c5179bc39ded4018c9374229
+ms.openlocfilehash: a2e6f254c77ac099b5700543db5763b8bbb44fef
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="installation-and-requirements"></a>Instalace a požadavky
-
-<script> var inspectorOnLoad = (funkce) {var primaryTextBase = "Xamarin sešity & Inspector pro" var secondaryTextBase = "nebo stáhnout pro"; var inspectorDownloadUrlMac = "https://dl.xamarin.com/interactive/XamarinInteractive.pkg"; var inspectorDownloadUrlWin = "https://dl.xamarin.com/interactive/XamarinInteractive.msi";
-
-  var aPrimary = document.getElementById("inspector-download-primary"); var aSecondary = document.getElementById("inspector-download-secondary");
-
-  var aMac = aPrimary; var aWin = aSecondary; var macTextBase = primaryTextBase; var winTextBase = secondaryTextBase;
-
-  Pokud (/win/i.test(navigator.platform.toLowerCase())) {aMac = aSecondary; aWin = aPrimary; macTextBase = secondaryTextBase; winTextBase = primaryTextBase;}
-
-  aMac.href = inspectorDownloadUrlMac; aMac.text = macTextBase + " Mac"; aWin.href = inspectorDownloadUrlWin; aWin.text = winTextBase + " Windows"; };
-
-document.addEventListener ("DOMContentLoaded", inspectorOnLoad);
-</script>
+# <a name="inspector-installation-and-requirements"></a>Kontrola instalace a požadavky
 
 ## <a name="download-and-installation"></a>Stažení a instalaci
 
-<ol>
-  <li>Stáhněte a nainstalujte <a href="https://dl.xamarin.com/interactive/XamarinInteractive.pkg" id="inspector-download-primary">Xamarin sešity & Kontrola pro Mac</a> (<a href="https://dl.xamarin.com/interactive/XamarinInteractive.msi" id="inspector-download-secondary">nebo ke stažení pro Windows</a>).
-  </li>
-  <li><a href="~/tools/inspector/inspect.md"> Zkontrolujte vlastní aplikace!</a>
-    </li>
-</ol>
+
+# <a name="windowstabvswin"></a>[Windows](#tab/vswin)
+
+1. Stáhněte a nainstalujte [Xamarin sešity & Inspector pro systém Windows](https://dl.xamarin.com/interactive/XamarinInteractive.msi).
+2. [Zkontrolujte vlastní aplikace!](~/tools/inspector/inspect.md)
+
+# <a name="macostabvsmac"></a>[macOS](#tab/vsmac)
+
+1. Stáhněte a nainstalujte [Xamarin sešity & Kontrola pro Mac](https://dl.xamarin.com/interactive/XamarinInteractive.pkg).
+2. [Zkontrolujte vlastní aplikace!](~/tools/inspector/inspect.md)
+
+-----
 
 ## <a name="requirements"></a>Požadavky
 
@@ -57,43 +51,13 @@ Kontroly za provozu aplikace je k dispozici pro podnikové zákazníky.
 
 ### <a name="supported-app-platforms"></a>Platformy podporované aplikace
 
-<table>
-<thead>
-  <tr>
-    <th>Aplikace platformy</th>
-    <th>Podpora rozhraní IDE</th>
-    <th>Poznámky</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td>Mac (Unified)</td>
-    <td>Podporováno pouze v systému Mac</td>
-    <td/>
-  </tr>
-  <tr>
-    <td>iOS (Unified)</td>
-    <td>Podporované v XS a Visual Studio</td>
-    <td>Kontroly aplikací pro iOS ze systému Windows vyžaduje stejnou verzi nástroje Inspector taky nainstalovat na hostiteli Mac sestavení.</td>
-  </tr>
-  <tr>
-    <td>Android</td>
-    <td>Podporované v XS a Visual Studio</td>
-    <td>
-      <ul>
-        <li>Android musí být > = 4.0.3</li>
-        <li>Musí mít fastdev povolen</li>
-        <li>Musíte použít emulátorů Google, Visual Studio a Xamarin Android. Android 7 emulátorů nemusí umožňovat kontroly v tuto chvíli.</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td>WPF</td>
-    <td>Podporuje jenom v sadě Visual Studio v systému Windows</td>
-    <td/>
-  </tr>
-</tbody>
-</table>
+|Aplikace platformy|Podpora rozhraní IDE|Poznámky|
+|--- |--- |--- |
+|Mac (Unified)|Podporováno pouze v systému Mac|
+|iOS (Unified)|Podporované v XS a Visual Studio|Kontroly aplikací pro iOS ze systému Windows vyžaduje stejnou verzi nástroje Inspector taky nainstalovat na hostiteli Mac sestavení.|
+|Android|Podporované v XS a Visual Studio|Android musí být > = 4.0.3, s **fastdev** povolena.<br />Musíte použít emulátorů Google, Visual Studio a Xamarin Android. Android 7 emulátorů nemusí umožňovat kontroly v tuto chvíli.|
+|WPF|Podporuje jenom v sadě Visual Studio v systému Windows|
+
 
 <a name="reporting-bugs" />
 
@@ -101,7 +65,7 @@ Kontroly za provozu aplikace je k dispozici pro podnikové zákazníky.
 
 Chyby by měly být uvedeny přímo pomocí sady Visual Studio:
 
-- **Pomůže → odeslat zpětnou vazbu → hlášení problému**
+- **Nápověda > váš názor > nahlásit problém**
 
 Uveďte všechny následující informace:
 
@@ -111,12 +75,12 @@ Tyto informace je důležité.
 
 Visual Studio pro Mac
 
-- **Visual Studio → o kopírování informace o sadě Visual Studio → zobrazení podrobností →**
+- **Visual Studio > o sadě Visual Studio > Zobrazit podrobnosti > zkopírujte informace**
 - Vložte do sestavy chyb
 
 Xamarin Studio
 
-- **Xamarin Studio → o Xamarin Studio → zobrazit podrobnosti kopie →**
+- **Xamarin Studio > o Xamarin Studio > Zobrazit podrobnosti > zkopírujte informace**
 - Vložte do sestavy chyb
 
 Visual Studio
@@ -135,7 +99,7 @@ Kontrola klienta
 
 1.4.x funkce také umožňuje vybrat soubor protokolu v vyhledávací (macOS) nebo v Průzkumníku (Windows) přímo z hlavní nabídky:
 
-- **Soubor protokolu zobrazení nápovědy →**
+- **Nápověda > odhalit souboru protokolu**
 
 Visual Studio pro Mac
 
@@ -148,11 +112,11 @@ Xamarin Studio
 Visual Studio
 
 - `%LOCALAPPDATA%\Xamarin\Logs\{VS version}\Inspector {date}.log`
-- Obsah sady Visual Studio `Output` podokně je také možné informativní.
+- Obsah sady Visual Studio **výstup** podokně je také možné informativní.
 
 ### <a name="project-settings"></a>Nastavení projektu
 
-Pokud se můžete připojit `.csproj` pro projekt, který chcete zkontrolovat, je velmi užitečné. Toto je jednodušší než žádostí o jednotlivých nastavení.
+Pokud se můžete připojit **.csproj** pro projekt, který chcete zkontrolovat, je velmi užitečné. Toto je jednodušší než žádostí o jednotlivých nastavení.
 
 Také potvrďte, že jste v konfiguraci ladění.
 
@@ -177,13 +141,13 @@ V závislosti na tom, jak jste získali sešity & Kontrola možná budete muset 
 
 #### <a name="visual-studio-installer"></a>Instalační program sady Visual Studio
 
-Pokud máte Visual Studio 2017, otevřete "Instalační program Visual Studio" a vyhledejte "Xamarin sešity" v "Jednotlivých součástí". Pokud je zaškrtnuto, zrušte jeho zaškrtnutí a poté klikněte na "Upravit" odinstalovat.
+Pokud máte Visual Studio 2017, otevřete **instalační program Visual Studio**a vyhledejte v **jednotlivých součástí** pro **Xamarin sešity**. Pokud je zaškrtnuto, zrušte jeho zaškrtnutí a poté klikněte na "Upravit" odinstalovat.
 
 #### <a name="system-uninstall"></a>Odinstalace systému
 
 Pokud jste nainstalovali sešity & Kontrola sami s stažený instalační program, ji budou muset odinstalovat přes **aplikace a funkce** stránka nastavení systému Windows 10 nebo prostřednictvím **přidat nebo odebrat programy**v Ovládacích panelech ve starších verzích systému Windows.
 
-> **Spustit → nastavení → systému → aplikace a funkce**
+> **Spustit > Nastavení > Systém > aplikace a funkce**
 
 ![](install-images/windows-remove.png "Sešity Xamarin a Inspector, jak je uvedeno v, aplikace a funkce.")
 

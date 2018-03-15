@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: f8b748ad1b57218d1e8aab11bdc1037cf3cfa14c
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 98c38001ea7751c419d4be5b0f68339b06ec656f
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="consuming-a-restful-web-service"></a>Využívání RESTful webová služba
 
@@ -49,42 +49,12 @@ Pokyny k nastavení služby REST naleznete v souboru readme, který doprovází 
 
 Službu REST je určena pomocí ASP.NET Core a poskytuje následující operace:
 
-<table>
-  <thead>
-    <tr>
-      <th>Operace</th>
-      <th>Metoda HTTP</th>
-      <th>Relativní identifikátor URI</th>
-      <th>Parametry</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Získat seznam položek úkolů</td>
-      <td>GET</td>
-      <td>/API/todoitems /</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Vytvořit novou položku seznamu úkolů</td>
-      <td>POST</td>
-      <td>/API/todoitems /</td>
-      <td>Formátu JSON <code>TodoItem</code></td>
-    </tr>
-    <tr>
-      <td>Aktualizujte položku seznamu úkolů</td>
-      <td>PUT</td>
-      <td>/API/todoitems /</td>
-      <td>Formátu JSON <code>TodoItem</code></td>
-    </tr>
-    <tr>
-      <td>Odstranit položku seznamu úkolů</td>
-      <td>DELETE</td>
-      <td>/API/todoitems / {id}</td>
-      <td></td>
-    </tr>
-  </tbody>
-</table>
+|Operace|Metoda HTTP|Relativní identifikátor URI|Parametry|
+|--- |--- |--- |--- |
+|Získat seznam položek úkolů|GET|/API/todoitems /|
+|Vytvořit novou položku seznamu úkolů|POST|/API/todoitems /|TodoItem formátu JSON|
+|Aktualizujte položku seznamu úkolů|PUT|/API/todoitems /|TodoItem formátu JSON|
+|Odstranit položku seznamu úkolů|DELETE|/API/todoitems / {id}|
 
 Patří většina identifikátory URI `TodoItem` ID v cestě. Chcete-li například odstranit `TodoItem` jehož ID je `6bb8a868-dba1-4f1a-93b7-24ebce87e243`, klient odešle požadavek na odstranění `http://hostname/api/todoitems/6bb8a868-dba1-4f1a-93b7-24ebce87e243`. Další informace o modelu dat použít v ukázkové aplikaci najdete v tématu [modelování data](~/xamarin-forms/data-cloud/walkthrough.md).
 

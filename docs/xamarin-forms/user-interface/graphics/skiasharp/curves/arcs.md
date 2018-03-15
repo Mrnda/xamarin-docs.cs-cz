@@ -8,11 +8,11 @@ ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
 author: charlespetzold
 ms.author: chape
 ms.date: 05/10/2017
-ms.openlocfilehash: 390c8f4634ea38ecb93e3f21175db00fef27b8e4
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 739efa994f172a7a1de82ac02d1c10b0d80f4c30
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="three-ways-to-draw-an-arc"></a>Tři způsoby, jak nakreslit oblouk
 
@@ -238,7 +238,7 @@ Tyto tři body definovat připojené dva řádky:
 
 ![](arcs-images/tangentarcconnectinglines.png "Řádky připojení tři body tečný oblouk")
 
-Pokud jsou tři body jsou colinear & #x 2014; To znamená, pokud jsou v na stejném řádku přímých & #x 2014; žádné oblouk budou vykreslovat.
+Pokud jsou tři body colinear &mdash; to znamená, pokud jsou na stejné přímce v &mdash; žádné oblouk budou vykreslovat.
 
 `ArcTo` Metoda také zahrnuje `radius` parametr. Definuje vlastnosti radius kruh:
 

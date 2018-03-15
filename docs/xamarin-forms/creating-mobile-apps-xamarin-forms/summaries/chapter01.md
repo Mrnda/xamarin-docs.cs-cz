@@ -7,11 +7,11 @@ ms.assetid: F3F864FF-EE70-49D0-90D1-388889037625
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 9b60a45cc998743d34d5cadb7750f35e7b965579
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: e1d246ea65e88bde07c3d527c18b7850aa09e08b
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>Souhrn kapitoly 1. Jak se uplatní Xamarin.Forms?
 
@@ -21,7 +21,7 @@ Mezi nejvíce nepříjemným úlohy při programování je portování kód zák
 
 Tento problém je běžné, pokud je cílem mobilní platformy. V současné době existují dvě hlavní mobilní platformy, Apple řadu Iphony a Ipady spuštěn operační systém iOS a Android operačního systému, který běží na různých druhů telefonů a tabletů. Jiné významné platformě je Microsoftu pro univerzální platformu Windows (UWP), který umožňuje jednu aplikaci pro Windows 10 a Windows 10 Mobile.
 
-Dodavatele softwaru, který chce tyto tři platformy musí řešit vzorů různých uživatelského rozhraní, tři různé vývojových prostředí, tři různé programovací rozhraní, a & #x 2014; možná většinu nepohodlně & #x 2014; tři různých programovacích jazycích: jazyka Objective-C pro iPhone a iPad, Java pro Android a C# pro systém Windows.
+Dodavatele softwaru, který chce tyto tři platformy musí řešit vzorů různých uživatelského rozhraní, tři různé vývojových prostředí, tři různé programovací rozhraní, a&mdash;možná nejvíce nepohodlně&mdash; třech různých programovacích jazycích: jazyka Objective-C pro iPhone a iPad, Java pro Android a C# pro systém Windows.
 
 ## <a name="the-c-and-net-solution"></a>Řešení C# a rozhraní .NET
 

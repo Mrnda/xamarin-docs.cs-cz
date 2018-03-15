@@ -7,11 +7,11 @@ ms.assetid: 2B7F4346-414E-49FF-97FB-B85E92D98A21
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 9447f9fb47a3de0f278a89d45d657158be9b70b9
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: b17924ee2ee7c944b3924ec79568f07feb4449a7
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-26-custom-layouts"></a>Shrnutí kapitoly 26. Vlastní rozložení
 
@@ -44,7 +44,7 @@ Volání `Layout` je vyžadována pro element se objeví na obrazovce a způsob�
 - [`Width`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Width/) typu `double`
 - [`Height`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Height/) typu `double`
 
-Před verzí `Layout` volat, `Height` a `Width` mít imitované hodnoty & #x 2013; 1.
+Před verzí `Layout` volat, `Height` a `Width` mít imitované hodnoty &ndash;1.
 
 Volání `Layout` také aktivuje volání následující chráněné metody:
 

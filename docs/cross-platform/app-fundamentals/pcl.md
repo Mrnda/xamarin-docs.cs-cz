@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: e81ecd10f4dfc101cf63ba9d052d15b51a367ee5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 5dd77232dc992880b18393c740b54c7784e4d049
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="introduction-to-portable-class-libraries"></a>Úvod do knihovny přenosných tříd
 
@@ -39,94 +39,13 @@ Když vytvoříte přenosné knihovny tříd, ale můžete kombinaci platformy, 
 
 Následující tabulka uvádí některé funkce, které se liší podle platformy .NET. Zápis PCL sestavení, který zaručeně běžet na určité zařízení nebo platformách jednoduše zvolíte podpory, které je potřeba při vytvoření projektu.
 
-<table border="1" cellpadding="1" cellspacing="1">
-  <tbody>
-    <tr>
-      <td>
-Funkce </td>
-      <td>
-.NET Framework </td>
-      <td>
-Aplikace UWP </td>
-      <td>
-Silverlight </td>
-      <td>
-Windows Phone </td>
-      <td>
-Xamarin </td>
-    </tr>
-    <tr>
-      <td>
-Jádro </td>
-      <td>
-A </td>
-      <td>
-A </td>
-      <td>
-A </td>
-      <td>
-A </td>
-      <td>
-A </td>
-    </tr>
-    <tr>
-      <td>
-LINQ </td>
-      <td>
-A </td>
-      <td>
-A </td>
-      <td>
-A </td>
-      <td>
-A </td>
-      <td>
-A </td>
-    </tr>
-    <tr>
-      <td>
-IQueryable </td>
-       <td>
-A </td>
-      <td>
-A </td>
-      <td>
-A </td>
-      <td>
-7.5 + </td>
-      <td>
-A </td>
-    </tr>
-    <tr>
-      <td>
-Serializace </td>
-      <td>
-A </td>
-      <td>
-A </td>
-      <td>
-A </td>
-      <td>
-A </td>
-      <td>
-A </td>
-    </tr>
-    <tr>
-      <td>
-Datových poznámek </td>
-      <td>
-4.0.3 + </td>
-      <td>
-A </td>
-      <td>
-A </td>
-      <td>
-      </td>
-      <td>
-A </td>
-    </tr>
-  </tbody>
-</table>
+|Funkce|.NET Framework|Aplikace UWP|Silverlight|Windows Phone|Xamarin|
+|---|---|---|---|---|---|
+|Jádro|A|A|A|A|A|
+|LINQ|A|A|A|A|A|
+|IQueryable|A|A|A|7.5 +|A|
+|Serializace|A|A|A|A|A|
+|Datových poznámek|4.0.3 +|A|A||A|
 
 Sloupec Xamarin odráží fakt, že Xamarin.iOS a Xamarin.Android podporuje všechny profily, které jsou součástí sady Visual Studio a dostupnost funkcí ve vytvořené knihovny bude omezena pouze jiné platformy, které zvolíte pro podporu.
 

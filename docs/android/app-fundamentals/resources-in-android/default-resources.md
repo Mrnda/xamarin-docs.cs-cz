@@ -6,12 +6,12 @@ ms.assetid: 762572F0-173A-D994-0510-8F36BEF3D487
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: 3d9c747cdf8e43f33b9310ac1156550066b400eb
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/13/2018
+ms.openlocfilehash: 5cf5bd38612f0f763e30456b0dd42198a3c0ff06
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="default-resources"></a>Výchozí prostředky
 
@@ -31,7 +31,7 @@ Na předchozím obrázku projekt má výchozí hodnoty pro drawable prostředků
 -  **anim** &ndash; soubory XML, které popisují *doplnění* animace. Animace doplnění jsou řadu animace pokyny k provádění transformací na obsah zobrazení objektu nebo například otočení bitovou kopii nebo ročně zvýší velikost textu. Animace doplnění jsou omezené jenom zobrazit objekty.
 
 -  **Barva** &ndash; soubory XML, které popisují stavu seznam barev. Pochopit seznamy stavu barvu, zvažte widget uživatelského rozhraní, jako je tlačítko.
-   Může být, mají různé stavy, jako například stisknutí tlačítka nebo zakázána a tlačítko může změnit barvu s každou změny ve stavu. V seznamu je vyjádřeno v seznamu stavu.
+   Může mít různé stavy, jako například stisknutí tlačítka nebo zakázána a tlačítko může změnit barvu s každou změny ve stavu. V seznamu je vyjádřeno v seznamu stavu.
 
 -  **drawable** &ndash; Drawable prostředky jsou obecné koncept pro obrázky, které může být zkompilovány do aplikace a přístup volání rozhraní API nebo odkazují jiné prostředky XML.
    Některé příklady drawables jsou soubory rastrový obrázek (GIF, PNG, JPG), speciální s možností změny velikosti rastrové obrázky, které jsou známé jako [devět opravy](https://developer.android.com/guide/topics/graphics/2d-graphics.html#nine-patch), stavu uvádí obecný tvary definované v XML atd.

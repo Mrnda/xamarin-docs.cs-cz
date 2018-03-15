@@ -7,11 +7,11 @@ ms.assetid: 71EDEF9C-4220-4D2E-A235-43F1EC8746C1
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 09f63dd418ea1fb523c028edb02c28c22bfdccd1
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 4f76b1060ee8a672319683525470aee00e3db001
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-17-mastering-the-grid"></a>Shrnutí kapitoly 17. Ovládnutí koncepcí mřížky
 
@@ -29,16 +29,16 @@ Definice `Grid` v jazyce XAML obvykle začíná naplnění [ `RowDefinitions` ](
 
 V jazyce XAML [ `GridLengthTypeConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GridLengthTypeConverter/) převede jednoduché textové řetězce do `GridLength` hodnoty. Na pozadí [ `GridLength` konstruktor](https://developer.xamarin.com/api/constructor/Xamarin.Forms.GridLength.GridLength/p/System.Double/Xamarin.Forms.GridUnitType/) vytvoří `GridLength` hodnota založená na číslo a hodnota typu [ `GridUnitType` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GridUnitType/), výčet se tři členy:
 
-- [`Absolute`](https://developer.xamarin.com/api/field/Xamarin.Forms.GridUnitType.Absolute/) & #x 2014; šířky nebo výšky je zadána v jednotkách nezávislé na zařízení (číslo v jazyce XAML)
-- [`Auto`](https://developer.xamarin.com/api/field/Xamarin.Forms.GridUnitType.Auto/) & #x 2014; výška nebo šířka je autosized podle obsahu buňky ("Auto" v jazyce XAML)
-- [`Star`](https://developer.xamarin.com/api/field/Xamarin.Forms.GridUnitType.Star/) & #x 2014; velikost zbývajícího výšky a šířky je přidělena úměrně (číslo s "\*", volané *hvězdičkami*, v jazyce XAML)
+- [`Absolute`](https://developer.xamarin.com/api/field/Xamarin.Forms.GridUnitType.Absolute/) &mdash; šířky nebo výšky je zadána v jednotkách nezávislé na zařízení (číslo v jazyce XAML)
+- [`Auto`](https://developer.xamarin.com/api/field/Xamarin.Forms.GridUnitType.Auto/) &mdash; výška nebo šířka je autosized podle obsahu buňky ("Auto" v jazyce XAML)
+- [`Star`](https://developer.xamarin.com/api/field/Xamarin.Forms.GridUnitType.Star/) &mdash; velikost zbývajícího výšky a šířky je přidělena úměrně (číslo s "\*", volané *hvězdičkami*, v jazyce XAML)
 
-Každou podřízenou `Grid` zapotřebí také přiřazení řádků a sloupců (explicitně nebo implicitně). Zahrnuje řádek a sloupec rozsahy jsou volitelné. Tyto jsou všechny zadaný pomocí připojený vazbu vlastnosti & #x 2014; vlastnosti, které jsou definovány `Grid` ale nastavený na podřízené objekty `Grid`. `Grid` definuje čtyři statické připojené vazbu vlastnosti:
+Každou podřízenou `Grid` zapotřebí také přiřazení řádků a sloupců (explicitně nebo implicitně). Zahrnuje řádek a sloupec rozsahy jsou volitelné. Tyto jsou určeny všechny připojené vlastnosti vazbu pomocí &mdash; vlastnosti, které jsou definovány `Grid` ale nastavený na podřízené objekty `Grid`. `Grid` definuje čtyři statické připojené vazbu vlastnosti:
 
-- [`RowProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.RowProperty/) & #x 2014; počítaný od nuly řádek; Výchozí hodnota je 0
-- [`ColumnProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.ColumnProperty/) & #x 2014; počítaný od nuly sloupec; Výchozí hodnota je 0
-- [`RowSpanProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.RowSpanProperty/) & #x 2014; počet řádků podřízená zahrnuje; Výchozí hodnota je 1
-- [`ColumnSpanProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.ColumnSpanProperty/) & #x 2014; počet sloupců podřízených zahrnuje; Výchozí hodnota je 1
+- [`RowProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.RowProperty/) &mdash; počítaný od nuly řádek; Výchozí hodnota je 0
+- [`ColumnProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.ColumnProperty/) &mdash; počítaný od nuly sloupec; Výchozí hodnota je 0
+- [`RowSpanProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.RowSpanProperty/) &mdash; počet řádků podřízená zahrnuje; Výchozí hodnota je 1
+- [`ColumnSpanProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.ColumnSpanProperty/) &mdash; počet sloupců podřízených zahrnuje; Výchozí hodnota je 1
 
 V kódu programu, můžete použít osm statických metod nastavit a získat tyto hodnoty:
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
-ms.openlocfilehash: 6625edc1f661e5f9769de82ec48367e9f900e567
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: ab44cb7a065164bb5b7501ac63bd0321b612b7ca
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="understanding-the-sample"></a>Principy vzorku
 
@@ -38,47 +38,19 @@ V každém tématu v této příručce najdete odkaz ke stažení *různých* ve
 
 Projekt PCL pro každou ukázkovou aplikaci zahrnuje tři hlavní složky:
 
-<table>
-    <thead>
-        <tr><td><strong>Složka</strong></td><td><strong>Účel</strong></td></tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><strong>Data</strong></td>
-                        <td>Obsahuje třídy a rozhraní používá ke správě datové položky a komunikovat s webovou službou. Minimálně to zahrnuje <code>TodoItemManager</code> třídy, která je k dispozici prostřednictvím na vlastnost ve <code>App</code> třída k vyvolání operace webové služby.</td>
-        </tr>
-        <tr>
-            <td><strong>Modely</strong></td>
-                        <td>Obsahuje třídy modelu dat pro aplikaci. Minimálně to zahrnuje <code>TodoItem</code> třídy, která modelů jednu položku dat používá aplikace. Složka může zahrnovat žádné další třídy používané k uživatelským datům modelu.</td>
-        </tr>
-        <tr>
-            <td><strong>Zobrazení</strong></td>
-                        <td>Obsahuje stránky pro aplikaci. To obvykle se skládá z <code>TodoListPage</code> a <code>TodoItemPage</code> třídy a všechny další třídy používané pro účely ověření.</td>
-                </tr>
-    </tbody>
-</table>
+|Folder|Účel|
+|--- |--- |
+|Data|Obsahuje třídy a rozhraní používá ke správě datové položky a komunikovat s webovou službou. Minimálně to zahrnuje `TodoItemManager` třídy, která je k dispozici prostřednictvím na vlastnost ve `App` třída k vyvolání operace webové služby.|
+|Modely|Obsahuje třídy modelu dat pro aplikaci. Minimálně to zahrnuje `TodoItem` třídy, která modelů jednu položku dat používá aplikace. Složka může zahrnovat žádné další třídy používané k uživatelským datům modelu.|
+|zobrazení|Obsahuje stránky pro aplikaci. To obvykle se skládá z `TodoListPage` a `TodoItemPage` třídy a všechny další třídy používané pro účely ověření.|
 
 Projekt PCL pro každou aplikaci se skládá z několika důležitých souborů:
 
-<table>
-    <thead>
-      <tr><td><strong>Soubor</strong></td><td><strong>Účel</strong></td></tr>
-    <thead>
-    <tbody>
-        <tr>
-            <td><strong>Constants.cs</strong></td>
-            <td><code>Constants</code> Třídy, která určuje všechny konstanty aplikace používá ke komunikaci s webovou službou. Tyto konstanty vyžadují aktualizaci k přístupu ke službě back-end osobní vytvořena na zprostředkovatele.
-        </tr>
-        <tr>
-            <td><strong>ITextToSpeech.cs</strong></td>
-            <td><code>ITextToSpeech</code> Rozhraní, které určuje, že <code>Speak</code> metoda musí být poskytnuta žádnou implementující třídu.</td>
-        </tr>
-        <tr>
-          <td><strong>Todo.cs</strong></td>
-          <td><code>App</code> Třídu, která zodpovídá za vytvoření instance obou na první stránku, která se zobrazí v aplikaci na každou platformu, a <code>TodoItemManager</code> třídu, která se použije k vyvolání operace webové služby.</td>
-        </tr>
-    </tbody>
-</table>
+|Soubor|Účel|
+|--- |--- |
+|Constants.cs|`Constants` Třídy, která určuje všechny konstanty aplikace používá ke komunikaci s webovou službou. Tyto konstanty vyžadují aktualizaci k přístupu ke službě back-end osobní vytvořena na zprostředkovatele.|
+|ITextToSpeech.cs|`ITextToSpeech` Rozhraní, které určuje, že `Speak` metoda musí být poskytnuta žádnou implementující třídu.|
+|Todo.cs|`App` Třídu, která zodpovídá za vytvoření instance obou na první stránku, která se zobrazí v aplikaci na každou platformu, a `TodoItemManager` třídu, která se použije k vyvolání operace webové služby.|
 
 ### <a name="viewing-pages"></a>Zobrazení stránky
 

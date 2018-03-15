@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: df3692777eaa0791385c9ef3d114fbc8a9ab752e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5c489aab66a0aaafeaaeadad0e8b95d451ec1592
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="using-the-monogame-pipeline-tool"></a>Pomocí nástroje MonoGame kanálu
 
@@ -70,7 +70,7 @@ Po vytvoření projektu jsme budete spouštět na ověřte, zda je sestavení a 
 
 # <a name="creating-a-content-project"></a>Vytvoření obsahu projektu
 
-Teď, když máme herní projektu, můžeme vytvořit kanál MonoGame projektu. To uděláte, v vyberte nástroj MonoGame kanálu **soubor > Nový...**  a přejděte do složky obsahu vašeho projektu. Pro Android, se nachází ve složce **[projektu root]\BouncingGame.Android\Assets\Content\**. Pro iOS, se nachází ve složce **[projektu root]\BouncingGame.iOS\Content\**.
+Teď, když máme herní projektu, můžeme vytvořit kanál MonoGame projektu. To uděláte, v vyberte nástroj MonoGame kanálu **soubor > Nový... ** a přejděte do složky obsahu vašeho projektu. Pro Android, se nachází ve složce **[projektu root]\BouncingGame.Android\Assets\Content\**. Pro iOS, se nachází ve složce **[projektu root]\BouncingGame.iOS\Content\**.
 
 Změna **název souboru** k **ContentProject** a klikněte na tlačítko **Uložit** tlačítko:
 
@@ -85,7 +85,7 @@ Podívejme se na některé z vašich nejdůležitějších možnosti obsahu proj
 
 ## <a name="output-folder"></a>Výstupní složky
 
-Toto je složka (relativní vůči samotného obsahu projektu) kde výstup **.xnb** budou uloženy soubory. Pro zjednodušení použijeme složce držet naše vstupní a výstupní soubory. Jinými slovy Změníme **výstupní složky** být **.\**  :
+Toto je složka (relativní vůči samotného obsahu projektu) kde výstup **.xnb** budou uloženy soubory. Pro zjednodušení použijeme složce držet naše vstupní a výstupní soubory. Jinými slovy Změníme **výstupní složky** být **.\* * :
 
 ![](walkthrough-images/image10.png "")
 
@@ -113,7 +113,7 @@ Chcete-li přidat **.png** souboru do projektu, jsme budete nejdříve zkopírov
 
 ![](walkthrough-images/image12.png "Přidejte do projektu soubor PNG")
 
-Potom přidáme soubor do projektu kanálu. Chcete-li to provést v nástroji MonoGame kanálu, vyberte **Upravit > Přidat položku...** , vyberte **ball.png** souboru a klikněte na tlačítko **otevřete**. Soubor bude nyní součástí obsahu projektu a pokud vyberete, zobrazí se jeho vlastnosti:
+Potom přidáme soubor do projektu kanálu. Chcete-li to provést v nástroji MonoGame kanálu, vyberte **Upravit > Přidat položku... **, vyberte **ball.png** souboru a klikněte na tlačítko **otevřete**. Soubor bude nyní součástí obsahu projektu a pokud vyberete, zobrazí se jeho vlastnosti:
 
 ![](walkthrough-images/image13.png "Soubor bude nyní součástí obsahu projektu a pokud vyberete, zobrazí se jeho vlastnosti")
 
@@ -124,18 +124,18 @@ Jsme vám právě ponechat všechny hodnoty výchozích hodnot, jako je potřeba
 
 ## <a name="adding-a-spritefont-file"></a>Přidání souboru .spritefont
 
-Můžeme vytvořit soubor .spritefont pomocí nástroje MonoGame kanálu. CocosSharp vyžaduje písem v **písem** složky a šablony CocosSharp automaticky automaticky vytvořit složku písem. Jsme tuto složku přidat do nástroje MonoGame kanálu výběrem **Upravit > Přidat > existující složku...** . Vyhledejte **obsahu** složky a vyberte **písem** složky a klikněte na tlačítko **OK**:
+Můžeme vytvořit soubor .spritefont pomocí nástroje MonoGame kanálu. CocosSharp vyžaduje písem v **písem** složky a šablony CocosSharp automaticky automaticky vytvořit složku písem. Jsme tuto složku přidat do nástroje MonoGame kanálu výběrem **Upravit > Přidat > existující složku... **. Vyhledejte **obsahu** složky a vyberte **písem** složky a klikněte na tlačítko **OK**:
 
 ![](walkthrough-images/browsetofonts.png "Přejděte do složky obsahu a vyberte složku, písem a klikněte na tlačítko OK")
 
-Chcete-li přidat nový soubor .sprintefont, klikněte pravým tlačítkem na složku písma a vyberte **Přidat > novou položku...** , vyberte **SpriteFont popis** možnost, zadejte název **arial 36**a klikněte na tlačítko **Ok**. CocosSharp vyžaduje velmi konkrétní názvy souborů písem – musí být ve formátu [FontType]-[velikost písma]. Pokud písmo neodpovídá tento formát názvů, nebude možné načíst CocosSharp za běhu.
+Chcete-li přidat nový soubor .sprintefont, klikněte pravým tlačítkem na složku písma a vyberte **Přidat > novou položku... **, vyberte **SpriteFont popis** možnost, zadejte název **arial 36**a klikněte na tlačítko **Ok**. CocosSharp vyžaduje velmi konkrétní názvy souborů písem – musí být ve formátu [FontType]-[velikost písma]. Pokud písmo neodpovídá tento formát názvů, nebude možné načíst CocosSharp za běhu.
 
 ![](walkthrough-images/image15.png "Pokud písmo neodpovídá tento formát názvů, nebude možné načíst CocosSharp za běhu")
 
 Soubor .spritefont je ve skutečnosti soubor XML, který lze upravovat v každém textovém editoru, včetně sady Visual Studio for Mac. Nejběžnější proměnné upravit v souboru .spritefont jsou `FontName` a `Size` vlastnost:
 
 
-```csharp
+```xml
     <!-- Modify this string to change the font that will be imported. -->
     <FontName>Arial</FontName>
 
@@ -147,7 +147,7 @@ Soubor .spritefont je ve skutečnosti soubor XML, který lze upravovat v každé
 Jsme budete v každém textovém editoru otevřete soubor. Jako naše **arial 36.spritefont** naznačuje název, necháme `FontName` jako `Arial` však změnit `Size` hodnotu `36`:
 
 
-```csharp
+```xml
     <!-- Modify this string to change the font that will be imported. -->
     <FontName>Arial</FontName>   
   
@@ -170,7 +170,7 @@ Nejprve přidáme soubory do našich projektu. V sadě Visual Studio pro Mac, js
 
 ## <a name="adding-gamescenecs"></a>Přidání GameScene.cs
 
-Vytvoříme třídu s názvem `GameScene,` který bude obsahovat naše objekty pohyblivý symbol a text. Chcete-li to provést, klikněte pravým tlačítkem na **BouncingGame** (ne BouncingGame.Android) projektu a vyberte **Přidat > Nový soubor...** . Vyberte **Obecné** kategorie, vyberte **prázdné třídy** možnost a pak zadejte název **GameScene**.
+Vytvoříme třídu s názvem `GameScene,` který bude obsahovat naše objekty pohyblivý symbol a text. Chcete-li to provést, klikněte pravým tlačítkem na **BouncingGame** (ne BouncingGame.Android) projektu a vyberte **Přidat > Nový soubor... **. Vyberte **Obecné** kategorie, vyberte **prázdné třídy** možnost a pak zadejte název **GameScene**.
 
 Po vytvoření upravíme `GameScene.cs` souboru tak, aby obsahovala následující kód:
 

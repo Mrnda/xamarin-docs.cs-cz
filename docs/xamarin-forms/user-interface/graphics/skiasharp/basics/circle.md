@@ -8,11 +8,11 @@ ms.assetid: E3A4E373-F65D-45C8-8E77-577A804AC3F8
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 5b09621f1d3a24f8061e5cd6551dd85ce93e36e3
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 10f741e853603ef22cd45004a6c726ae579f3675
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="drawing-a-simple-circle"></a>Kreslení kruh jednoduché
 
@@ -146,7 +146,7 @@ Při spuštění programu, můžete zapnout telefon nebo simulátoru ze strany n
 
 `SKPaint` Objekt je trochu déle, než kolekce grafiky kreslení vlastnosti. Tyto objekty jsou velmi jednoduché. Můžete opakovaně použít `SKPaint` objekty nemá tohoto programu, nebo můžete vytvořit více `SKPaint` objekty pro různé kombinace kreslení vlastnosti. Můžete vytvořit a inicializaci tyto objekty mimo `PaintSurface` obslužná rutina události a je uložit jako pole ve třídě stránky.
 
-Šířka obrysu na kruh se sice zadává jako 25 pixelů & #x 2014; nebo jeden čtvrtletí úhlu kruh & #x 2014; zdá být užší a je dobré důvod k tomu: poloviční šířky řádku je zakrytý modrý kruh. Argumenty, které mají `DrawCircle` metoda definovat abstraktní geometrickou souřadnice kruh. Modré interior velikost tak, aby daná dimenze na nejbližší pixelů, ale obrys 25. pixelů celou přechází geometrickou kruh & #x 2014; polovinu na uvnitř a polovina na povrchu.
+Šířka obrysu na kruh se sice zadává jako 25 pixelů &mdash; nebo jeden čtvrtletí poloměru kruhu &mdash; zdá být užší a je dobré důvod k tomu: poloviční šířky řádku je zakrytý modrý kruh. Argumenty, které mají `DrawCircle` metoda definovat abstraktní geometrickou souřadnice kruh. Modré interior velikost tak, aby daná dimenze na nejbližší pixelů, ale obrys 25. pixelů celou přechází geometrickou kruhu &mdash; polovinu na uvnitř a polovina na povrchu.
 
 Další vzorek v [integrace s Xamarin.Forms](~/xamarin-forms/user-interface/graphics/skiasharp/basics/integration.md) vizuálně článek to ukazuje.
 

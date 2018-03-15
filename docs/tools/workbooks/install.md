@@ -1,43 +1,37 @@
 ---
-title: "Instalace a požadavky"
+title: "Sešity instalace a požadavky"
+description: "Jak chcete stáhnout, nainstalovat a používat sešity Xamarin."
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: abc9f9402b55a11e313b9938f07f37e5329b55b6
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: abd6ac7d4bce5a180db087488b32c878ed0a416b
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="installation-and-requirements"></a>Instalace a požadavky
-
-<script> var inspectorOnLoad = (funkce) {var primaryTextBase = "Xamarin sešity pro;" var secondaryTextBase = "nebo stáhnout pro"; var inspectorDownloadUrlMac = "https://dl.xamarin.com/interactive/XamarinInteractive.pkg"; var inspectorDownloadUrlWin = " https://DL.xamarin.com/Interactive/XamarinInteractive.msi";
-
-  var aPrimary = document.getElementById("inspector-download-primary"); var aSecondary = document.getElementById("inspector-download-secondary");
-
-  var aMac = aPrimary; var aWin = aSecondary; var macTextBase = primaryTextBase; var winTextBase = secondaryTextBase;
-
-  Pokud (/win/i.test(navigator.platform.toLowerCase())) {aMac = aSecondary; aWin = aPrimary; macTextBase = secondaryTextBase; winTextBase = primaryTextBase;}
-
-  aMac.href = inspectorDownloadUrlMac; aMac.text = macTextBase + " Mac"; aWin.href = inspectorDownloadUrlWin; aWin.text = winTextBase + " Windows"; };
-
-document.addEventListener ("DOMContentLoaded", inspectorOnLoad);
-</script>
+# <a name="workbooks-installation-and-requirements"></a>Sešity instalace a požadavky
 
 <a name="install" />
 
 ## <a name="download-and-install"></a>Stáhnout a nainstalovat
 
-<ol>
-  <li>Zkontrolujte <a href="#Requirements"> požadavky</a> níže.</li>
-  <li>Stáhněte a nainstalujte <a href="https://dl.xamarin.com/interactive/XamarinInteractive.pkg" id="inspector-download-primary">sešity Xamarin pro Mac</a> (<a href="https://dl.xamarin.com/interactive/XamarinInteractive.msi" id="inspector-download-secondary">nebo ke stažení pro Windows</a>).
-  </li>
-  <li>Spustit <a href="~/tools/workbooks/workbook.md"> přehrávání</a> s sešity nebo zkuste si <a href="https://developer.xamarin.com/workbooks/">ukázky</a>.
-    </li>
-</ol>
+# <a name="windowstabvswin"></a>[Windows](#tab/vswin)
+
+1. Zkontrolujte [požadavky](#requirements) níže.
+2. Stáhněte a nainstalujte [sešity Xamarin pro systém Windows](https://dl.xamarin.com/interactive/XamarinInteractive.msi).
+3. Spustit [přehrávání](~/tools/workbooks/workbook.md) se sešity nebo vyzkoušet [ukázky](https://developer.xamarin.com/workbooks)
+
+# <a name="macostabvsmac"></a>[macOS](#tab/vsmac)
+
+1. Zkontrolujte [požadavky](#Requirements) níže.
+2. Stáhněte a nainstalujte [sešity Xamarin pro Mac](https://dl.xamarin.com/interactive/XamarinInteractive.pkg).
+3. Spustit [přehrávání](~/tools/workbooks/workbook.md) se sešity nebo vyzkoušet [ukázky](https://developer.xamarin.com/workbooks)
+
+-----
 
 ## <a name="requirements"></a>Požadavky
 
@@ -48,52 +42,15 @@ document.addEventListener ("DOMContentLoaded", inspectorOnLoad);
 
 #### <a name="supported-app-platforms"></a>Platformy podporované aplikace
 
-<table>
-<thead>
-  <tr>
-    <th>Aplikace platformy</th>
-    <th>Podpora operačního systému</th>
-    <th>Poznámky</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td>Mac (Unified)</td>
-    <td>Podporováno pouze v systému Mac</td>
-    <td/>
-  </tr>
-  <tr>
-    <td>iOS (Unified)</td>
-    <td>Podporované na Mac a Windows</td>
-    <td>
-      <ul>
-        <li>Xamarin.iOS 11.0 a Xcode 9.0 nebo vyšší musí být nainstalován na macu.</li>
-        <li>Sešity iOS systémem Windows vyžaduje Mac sestavení hostitele se systémem všechny výše uvedené a <a href="~/tools/ios-simulator.md">používat vzdáleně simulátoru iOS</a> nainstalovaná v systému Windows.</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td>Android</td>
-    <td>Podporované na Mac a Windows</td>
-    <td>Google, Visual Studio nebo Xamarin Android emulátoru, musíte použít s virtuálního zařízení > = 5.0</td>
-  </tr>
-  <tr>
-    <td>WPF</td>
-    <td>Podporováno pouze v systému Windows</td>
-    <td/>
-  </tr>
-  <tr>
-    <td>Konzole (rozhraní .NET Framework)</td>
-    <td>Podporované na Mac a Windows</td>
-    <td/>
-  </tr>
-  <tr>
-    <td>Konzole (.NET Core)</td>
-    <td>Podporované na Mac a Windows</td>
-    <td/>
-  </tr>
-</tbody>
-</table>
+|Aplikace platformy|Podpora operačního systému|Poznámky|
+|--- |--- |--- |
+|Mac (Unified)|Podporováno pouze v systému Mac|
+|iOS (Unified)|Podporované na Mac a Windows|Xamarin.iOS 11.0 a Xcode 9.0 nebo vyšší musí být nainstalován na macu. Sešity iOS systémem Windows vyžaduje Mac sestavení hostitele se systémem všechny výše uvedené a [používat vzdáleně simulátoru iOS](~/tools/ios-simulator.md) nainstalovaná v systému Windows.|
+|Android|Podporované na Mac a Windows|Google, Visual Studio nebo Xamarin Android emulátoru, musíte použít s virtuálního zařízení > = 5.0|
+|WPF|Podporováno pouze v systému Windows|
+|Konzole (rozhraní .NET Framework)|Podporované na Mac a Windows|
+|Konzole (.NET Core)|Podporované na Mac a Windows|
+
 
 ## <a name="reporting-bugs"></a>Zasílání zpráv o chybách
 
@@ -108,7 +65,7 @@ Vždy připojte soubory protokolů klienta sešity:
 
 1.4.x funkce také umožňuje vybrat soubor protokolu v vyhledávací (macOS) nebo v Průzkumníku (Windows) přímo z hlavní nabídky:
 
-- **Soubor protokolu zobrazení nápovědy →**
+- **Nápověda > odhalit souboru protokolu**
 
 #### <a name="log-paths-for-workbooks-13-and-earlier"></a>Pro sešity 1.3 a starší protokolu cesty:
 
@@ -121,23 +78,23 @@ Je velmi užitečné zjistit podrobnosti o operačním systému a nainstalovaný
 
 Z hlavní nabídky v sešitech:
 
-* **Pomoct informace o verzi kopie →**
+* **Nápověda > zkopírujte informace o verzi**
 
 #### <a name="instructions-for-workbooks-13-and-earlier"></a>Pokyny pro sešity 1.3 a starší:
 
 Visual Studio pro Mac
 
-- **Visual Studio → o kopírování informace o sadě Visual Studio → zobrazení podrobností →**
+- **Visual Studio > o sadě Visual Studio > Zobrazit podrobnosti > zkopírujte informace**
 - Vložte do sestavy chyb
 
 Visual Studio
 
-- **Nápověda o sadě Visual Studio → kopírovat informace →**
+- **Nápověda > o sadě Visual Studio > zkopírujte údaje**
 - Dejte nám vědět verze vašeho operačního systému a zda používáte 32bitové nebo 64bitové verze systému Windows.
 
 ### <a name="samples"></a>Ukázky kódu
 
-Pokud se můžete připojit nebo odkaz `.workbooks` máte potíže s, soubor, který vám může pomoci vyřešit vaše chyb rychleji.
+Pokud se můžete připojit nebo odkaz **.workbooks** máte potíže s, soubor, který vám může pomoci vyřešit vaše chyb rychleji.
 
 ### <a name="devices"></a>Zařízení
 
@@ -148,7 +105,7 @@ Pokud jsou potíže s připojením zařízení s iOS nebo Android sešitu a jste
 - Android: Ověřte, že používáte x86 emulátoru
 - Android: Platformě emulátoru používáte? Google Emulator?
   Visual Studio emulátoru Android? Přehrávač Xamarin Android?
-- iOS v systému Windows: Jaká verze simulátoru iOS Xamarin vzdálené instalaci (zkontrolujte `Add/Remove Programs` v `Control Panel`)?
+- iOS v systému Windows: Jaká verze simulátoru iOS Xamarin vzdálené instalaci (zkontrolujte **přidat nebo odebrat programy** v **ovládací panely**)?
 - iOS v systému Windows: uveďte také informace o verzi platformy pro svého hostitele Mac sestavení
 - Zařízení mít připojení k síti (kontrola prostřednictvím webového prohlížeče)?
 
@@ -168,7 +125,7 @@ Pokud máte Visual Studio 2017, otevřete **instalační program Visual Studio**
 
 Pokud jste nainstalovali sešity & Kontrola sami s stažený instalační program, ji budou muset odinstalovat přes **aplikace a funkce** stránka nastavení systému Windows 10 nebo prostřednictvím **přidat nebo odebrat programy**v Ovládacích panelech ve starších verzích systému Windows.
 
-> **Spustit → nastavení → systému → aplikace a funkce**
+> **Spustit > Nastavení > Systém > aplikace a funkce**
 
 ![](install-images/windows-remove.png "Sešity Xamarin a Inspector, jak je uvedeno v &quot;aplikace &amp; funkce&quot;")
 
@@ -197,7 +154,7 @@ Pro starší verze musíte ručně odebrat následující:
 
 ## <a name="downgrading"></a>Přechod na starší verzi
 
-Identifikátor sady pro `/Applications/Xamarin Workbooks.app` se změnil z `com.xamarin.Inspector` k `com.xamarin.Workbooks` ve verzi 1.4 pro usnadnění budoucí rozdělení instalační programy Xamarin sešity & Kontrola.
+Identifikátor sady pro **aplikace nebo Xamarin Workbooks.app** se změnil z `com.xamarin.Inspector` k `com.xamarin.Workbooks` ve verzi 1.4 pro usnadnění budoucí rozdělení instalační programy Xamarin sešity & Kontrola.
 
 Z důvodu chyby v starší instalační programy není možné přejít na starší verzi 1,4 nebo novější verze pomocí 1.3.2 nebo starší instalační programy.
 

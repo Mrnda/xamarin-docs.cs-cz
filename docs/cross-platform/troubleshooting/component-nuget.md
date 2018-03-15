@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 11/22/2017
-ms.openlocfilehash: f3dbfb52d4fbcb4dd65f695a862f6b041d2b22c0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4de4517c960395e5d7d5a8fb2c537576e15fc007
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="updating-component-references-to-nuget"></a>Aktualizace komponenty odkazů na NuGet
 
@@ -27,6 +27,82 @@ Většina komponent spadat do jednoho z výše uvedených kategorií.
 Pokud používáte komponenty, která vypadá to, že máte ekvivalentní balíček NuGet, přečtěte si [součásti bez cesty migrace NuGet](#require-update) části níže.
 
 Odkazovat na těchto stránkách podrobnější pokyny pro přidání balíčků NuGet v [Windows](https://docs.microsoft.com/nuget/quickstart/use-a-package) nebo [Mac](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough).
+
+## <a name="opening-a-project-containing-a-component"></a>Otevření projektu, který obsahuje komponentu
+
+V listopadu 2017 byla [oznámeno](https://blog.xamarin.com/hello-nuget-new-home-xamarin-components/) , úložišti součástí Xamarin by zastaveny. Ve snaze jak urychlit sunsetting součástí 15.6 verze sady Visual Studio a 7.4 verze sady Visual Studio pro Mac už nebude podporovat komponenty ve vašem projektu. 
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+Při načítání projektu do sady Visual Studio, zobrazí se následující dialogové okno, která vysvětluje, že je třeba odebrat všechny komponenty ze svého projektu ručně:
+
+![Upozornění, že komponentu v projektu nebyl nalezen a musí být odstraněn, která vysvětluje dialogové okno](component-nuget-images/component-alert-vs.png)
+
+K vyloučení komponenty ze svého projektu:
+
+1. Otevřete soubor .csproj. Chcete-li to provést, klikněte pravým tlačítkem na název projektu a vyberte **uvolnit projekt**. 
+
+2. Znovu klikněte pravým tlačítkem na odpojen projekt a vyberte **upravit {vaše projektu name} .csproj**.
+
+3. Najít všechny odkazy v souboru na `XamarinComponentReference`. By měl vypadat podobně jako v následujícím příkladu:
+
+    ```xml
+    <ItemGroup>
+      <XamarinComponentReference Include="advancedcolorpicker">
+        <Version>2.0.1</Version>
+        <Visible>False</Visible>
+      </XamarinComponentReference>
+      <XamarinComponentReference Include="gunmetaltheme">
+        <Version>1.4.1</Version>
+        <Visible>False</Visible>
+      </XamarinComponentReference>
+      <XamarinComponentReference Include="signature-pad">
+        <Version>2.2.0</Version>
+        <Visible>False</Visible>
+      </XamarinComponentReference>
+    </ItemGroup>
+    ```
+
+4. Odebrat odkazy na `XamarinComponentReference` a soubor uložte. V předchozím příkladu je bezpečné odeberte celý `ItemGroup`.
+
+5. Jakmile se soubor byla uložena, klikněte pravým tlačítkem na název projektu a vyberte **znovu načíst projekt**.
+
+6. Opakujte předchozí kroky pro každý projekt ve vašem řešení.
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+
+Při načítání projektu do sady Visual Studio pro Mac, zobrazí se následující dialogové okno, která vysvětluje, že je třeba odebrat všechny komponenty ze svého projektu ručně:
+
+![Upozornění, že komponentu v projektu nebyl nalezen a musí být odstraněn, která vysvětluje dialogové okno](component-nuget-images/component-alert.png)
+
+K vyloučení komponenty ze svého projektu:
+
+1. Otevřete soubor .csproj. Chcete-li to provést, klikněte pravým tlačítkem na název projektu a vyberte **nástroje > Upravit soubor**.
+
+2. Najít všechny odkazy v souboru na `XamarinComponentReference`. By měl vypadat podobně jako v následujícím příkladu:
+
+    ```xml
+    <ItemGroup>
+      <XamarinComponentReference Include="advancedcolorpicker">
+        <Version>2.0.1</Version>
+        <Visible>False</Visible>
+      </XamarinComponentReference>
+      <XamarinComponentReference Include="gunmetaltheme">
+        <Version>1.4.1</Version>
+        <Visible>False</Visible>
+      </XamarinComponentReference>
+      <XamarinComponentReference Include="signature-pad">
+        <Version>2.2.0</Version>
+        <Visible>False</Visible>
+      </XamarinComponentReference>
+    </ItemGroup>
+    ```
+
+3. Odebrat odkazy na `XamarinComponentReference` a soubor uložte. V předchozím příkladu je bezpečné odeberte celý `ItemGroup`
+
+4. Opakujte předchozí kroky pro každý projekt ve vašem řešení. 
+
+-----
 
 <a name="contain" />
 

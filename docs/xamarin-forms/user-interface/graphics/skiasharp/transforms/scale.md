@@ -8,11 +8,11 @@ ms.assetid: 54A43F3D-9DA8-44A7-9AE4-7E3025129A0B
 author: charlespetzold
 ms.author: chape
 ms.date: 03/23/2017
-ms.openlocfilehash: feecfc923903a20332bf3a1a188ab9d7cd2ce1c0
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 39e2084bf9ca888d6e39fc5f02a455d3500e568c
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="the-scale-transform"></a>Transformace škálování
 
@@ -44,7 +44,7 @@ Výchozí hodnoty přeložit faktory jsou 0; výchozí hodnoty měřítka faktor
 public void Scale (Single s)
 ```
 
-To se označuje jako *isotropic* škálování & #x 2014; škálování tedy stejné v obou směrech. Isotropic škálování zachová poměr stran objektu.
+To se označuje jako *isotropic* škálování &mdash; škálování tedy stejné v obou směrech. Isotropic škálování zachová poměr stran objektu.
 
 Druhý [ `Scale` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Scale/p/System.Single/System.Single/) metoda umožňuje určit různé hodnoty vodorovného a svislého škálování:
 
@@ -168,7 +168,7 @@ Je umístěný levém horním rohu obdélníku zaokrouhlené `margin` pixelů z 
 
 [![](scale-images/centeredscale-small.png "Trojitá snímek obrazovky stránky zarovnaný na střed škálování")](scale-images/centeredscale-large.png#lightbox "Trojitá snímek obrazovky stránky škálování zarovnaný na střed")
 
-`Slider` Elementy v tento program mít rozsah & #x 2013; 10 až 10. Jak vidíte, záporné hodnoty Vertical škálování (například na Android obrazovky v centru) způsobit, že objekty kolem vodorovné osy, které procházejí středu škálování. Záporné hodnoty vodorovných škálování (například obrazovce Windows na pravé straně) způsobit, že objekty kolem svislé osy, které procházejí středu škálování.
+`Slider` Elementy v tento program mít řadu &ndash;10 až 10. Jak vidíte, záporné hodnoty Vertical škálování (například na Android obrazovky v centru) způsobit, že objekty kolem vodorovné osy, které procházejí středu škálování. Záporné hodnoty vodorovných škálování (například obrazovce Windows na pravé straně) způsobit, že objekty kolem svislé osy, které procházejí středu škálování.
 
 Tato verze čtvrtý `Scale` metoda je ve skutečnosti zástupce. Můžete chtít zjistit, jak to funguje tak, že nahradíte `Scale` metoda v tento kód následujícím kódem:
 

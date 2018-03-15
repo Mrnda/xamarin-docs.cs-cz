@@ -8,11 +8,11 @@ ms.assetid: A0B5AC82-7736-4AD8-AA16-FE43E18D203C
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 1cb6b6fcd8a9d02910842eb3eba966fce281d977
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 1d174e441cd46255d62283521e7db2802b49072f
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="integrating-text-and-graphics"></a>Integrace textu a obrázků
 
@@ -61,13 +61,13 @@ Druhý [ `MeasureText` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPa
 `Left` a `Top` vlastnosti `SKRect` struktura oznámení souřadnice levého horního rohu vykresleného textu, zda text se zobrazí při `DrawText` volání s X a Y pozice 0. Například pokud tento program běží na simulátor pro zařízení iPhone 7 `TextSize` přiřazena hodnota 90.6254 v důsledku výpočtu následující první volání `MeasureText`. `SKRect` Hodnoty získané z druhé volání `MeasureText` má následující hodnoty vlastností:
 
 - `Left` = 6
-- `Top` = &#x2013;68
+- `Top` = &ndash;68
 - `Width` = 664.8214
 - `Height` = 88;
 
-Mějte na paměti, že souřadnice X a Y můžete předat `DrawText` metoda zadejte levé části textu v směrného plánu. `Top` Hodnota znamená, že text rozšiřuje 68 pixelů nad tohoto směrného plánu a (odečtením 68 it z 88) 20 pixelů níže směrného plánu. `Left` Hodnota 6 značí, zda text začíná 6 pixelů pravé hodnoty X ve `DrawText` volání. To umožňuje normální mezery mezi znaky. Pokud chcete zobrazit text správně zapojena v levém horním rohu obrazovky, předat negativy těchto `Left` a `Top` hodnoty jako souřadnice X a Y `DrawText`, tento příklad & #x 2013; 6 a 68.
+Mějte na paměti, že souřadnice X a Y můžete předat `DrawText` metoda zadejte levé části textu v směrného plánu. `Top` Hodnota znamená, že text rozšiřuje 68 pixelů nad tohoto směrného plánu a (odečtením 68 it z 88) 20 pixelů níže směrného plánu. `Left` Hodnota 6 značí, zda text začíná 6 pixelů pravé hodnoty X ve `DrawText` volání. To umožňuje normální mezery mezi znaky. Pokud chcete zobrazit text správně zapojena v levém horním rohu obrazovky, předat negativy těchto `Left` a `Top` hodnoty jako souřadnice X a Y `DrawText`, v tomto příkladu &ndash;6 a 68.
 
-`SKRect` Struktura definuje několik užitečný vlastnosti a metody, z nichž některé jsou použité ve zbývající části `PaintSurface` obslužné rutiny. `MidX` a `MidY` hodnoty stanovují souřadnice středu rámeček. (V příkladu iPhone 7 tyto hodnoty jsou 338.4107 a & #x 2013; 24.) Následující kód používá tyto hodnoty pro nejjednodušší výpočtu souřadnice na střed text na displeji:
+`SKRect` Struktura definuje několik užitečný vlastnosti a metody, z nichž některé jsou použité ve zbývající části `PaintSurface` obslužné rutiny. `MidX` a `MidY` hodnoty stanovují souřadnice středu rámeček. (V příkladu iPhone 7 tyto hodnoty jsou 338.4107 a &ndash;24.) Následující kód používá tyto hodnoty pro nejjednodušší výpočtu souřadnice na střed text na displeji:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

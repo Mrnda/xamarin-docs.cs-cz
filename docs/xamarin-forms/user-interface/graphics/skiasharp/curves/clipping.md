@@ -8,11 +8,11 @@ ms.assetid: 8022FBF9-2208-43DB-94D8-0A4E9A5DA07F
 author: charlespetzold
 ms.author: chape
 ms.date: 06/16/2017
-ms.openlocfilehash: bb99984f93f494cfb5ad3d37ccb25f0b91d0b489
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: e84bce5d4280ded801ed58999a2570d3c6bd327e
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="clipping-with-paths-and-regions"></a>Výstřižek se cesty a oblasti
 
@@ -267,7 +267,7 @@ Ale přetížení `ClipPath` a `ClipRect` s `SKRegionOperation` parametry jsou z
 
 Můžete dál používat `SKRegionOperation` výčtu, ale vyžaduje definování oblasti výstřižek z hlediska [ `SKRegion` ](https://developer.xamarin.com/api/type/SkiaSharp.SKRegion/) objektu.
 
-Nově vytvořená `SKRegion` objekt popisuje na prázdnou oblast. Obvykle je první volání objektu [ `SetRect` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.SetRect/p/SkiaSharp.SKRectI/) tak, aby oblast popisují obdélníkovou oblast. Parametr pro `SetRect` je `SKRectI` hodnotu & #x 2014; hodnota obdélníku s vlastnostmi celé číslo. Potom můžete volat [ `SetPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.SetPath/p/SkiaSharp.SKPath/SkiaSharp.SKRegion/) s `SKPath` objektu. Tím se vytvoří oblasti, která je stejná jako vnitřní cesty, ale oříznuto počáteční obdélníkovou oblast.
+Nově vytvořená `SKRegion` objekt popisuje na prázdnou oblast. Obvykle je první volání objektu [ `SetRect` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.SetRect/p/SkiaSharp.SKRectI/) tak, aby oblast popisují obdélníkovou oblast. Parametr pro `SetRect` je `SKRectI` hodnota &mdash; hodnota obdélníku s vlastnostmi celé číslo. Potom můžete volat [ `SetPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.SetPath/p/SkiaSharp.SKPath/SkiaSharp.SKRegion/) s `SKPath` objektu. Tím se vytvoří oblasti, která je stejná jako vnitřní cesty, ale oříznuto počáteční obdélníkovou oblast.
 
 `SKRegionOperation` Výčtu pochází jenom do play při volání jednoho z [ `Op` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.Op/p/SkiaSharp.SKRegion/SkiaSharp.SKRegionOperation/) přetížení metody, jako je tato:
 

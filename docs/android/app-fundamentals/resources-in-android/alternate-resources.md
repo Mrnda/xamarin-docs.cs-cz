@@ -6,12 +6,12 @@ ms.assetid: AE5A864E-192D-475E-C731-99249C2E7D9E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: 7ebbf2a9215c8472ae2f286728cb2f819e8331cb
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/13/2018
+ms.openlocfilehash: 230c26c2537987f7ca09e28e05ec96186e5f7882
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="alternate-resources"></a>Alternativní prostředky
 
@@ -44,7 +44,7 @@ Následující pravidla platí při přidávání kvalifikátory pro typ prostř
 Možné kvalifikátory jsou uvedené dole pro referenci:
 
 - **MCC a MNC** &ndash; [mobilní směrové číslo země](http://en.wikipedia.org/wiki/List_of_mobile_country_codes) (MCC) a volitelně [kódu mobilní sítě](http://en.wikipedia.org/wiki/Mobile_Network_Code) (MNC). SIM karta poskytne MCC, zatímco zařízení je připojené k síti se poskytují MNC. Přestože je možné cíl národní prostředí pomocí kód země mobilní, doporučujeme možných přístupů je použít jazyk kvalifikátor níže uvedené. Chcete-li například cílové prostředky k Německo, kvalifikátor by `mcc262`. Pro cílové prostředky T-Mobile v USA kvalifikátor je `mcc310-mnc026`.
-  Úplný seznam kódy mobilních země a kódy mobilní sítě najdete v části <http://mcclist.com/>.
+  Úplný seznam kódy mobilních země a kódy mobilní sítě najdete v části <http://mcc-mnc.com/>.
 
 - **Jazyk** &ndash; dvou písmen [kód ISO 639-1 jazyka](http://en.wikipedia.org/wiki/ISO_639-1) a volitelně následované dvěma písmeno [kód oblasti ISO-3166-alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). 
   Pokud jsou k dispozici obě kvalifikátory, pak jsou odděleny `-r`. Například pro cílový hovořícího anglicky francouzština národní prostředí poté kvalifikátor z `fr` se používá. Chcete cílit French-Canadian národní prostředí, `fr-rCA` se použije. Úplný seznam kódů a kódy oblastí, najdete v části [kódy pro reprezentaci názvy jazyků](http://www.loc.gov/standards/iso639-2/php/English_list.php) a [názvy země a elementy kódu](http://www.iso.org/iso/country_codes/iso_3166_code_lists/country_names_and_code_elements.htm).

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: a37773b666e015277d2fecc103066e82b6f7f108
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: ec91a7c100f294437bb1498fcd56a35f5b19c399
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="navigation"></a>Navigace
 
@@ -51,36 +51,13 @@ public interface INavigationService
 
 Toto rozhraní určuje, že implementující třídu musí poskytnout následující metody:
 
-<table>
-<thead>
-<tr class="header">
-<th>Metoda</th>
-<th>Účel</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>InitializeAsync</code></td>
-<td>Navigace na jednu z dvě stránky provede při spuštění aplikace.</td>
-</tr>
-<tr class="even">
-<td><code>NavigateToAsync<T></code></td>
-<td>Provede hierarchické navigační určenou stránku.</td>
-</tr>
-<tr class="odd">
-<td><code>NavigateToAsync<T>(parameter)</code></td>
-<td>Provede hierarchické navigace na určenou stránku předání parametru.</td>
-</tr>
-<tr class="even">
-<td><code>RemoveLastFromBackStackAsync</code></td>
-<td>Odebere zásobník navigace na předchozí stránku.</td>
-</tr>
-<tr class="odd">
-<td><code>RemoveBackStackAsync</code></td>
-<td>Odebere všechny předchozí stránky v zásobníku navigace.</td>
-</tr>
-</tbody>
-</table>
+|Metoda|Účel|
+|--- |--- |
+|`InitializeAsync`|Navigace na jednu z dvě stránky provede při spuštění aplikace.|
+|`NavigateToAsync`|Provede hierarchické navigační určenou stránku.|
+|`NavigateToAsync(parameter)`|Provede hierarchické navigace na určenou stránku předání parametru.|
+|`RemoveLastFromBackStackAsync`|Odebere zásobník navigace na předchozí stránku.|
+|`RemoveBackStackAsync`|Odebere všechny předchozí stránky v zásobníku navigace.|
 
 Kromě toho `INavigationService` rozhraní určuje, že musíte zadat implementující třídu `PreviousPageViewModel` vlastnost. Tato vlastnost vrátí typ modelu zobrazení související s v zásobníku navigace na předchozí stránku.
 

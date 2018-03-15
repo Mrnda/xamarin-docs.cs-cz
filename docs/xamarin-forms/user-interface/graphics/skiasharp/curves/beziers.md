@@ -8,11 +8,11 @@ ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
 author: charlespetzold
 ms.author: chape
 ms.date: 05/25/2017
-ms.openlocfilehash: 2b48667d90bf994deca5c41080e002974b0ded91
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: dcfcf43c89f26b4e721c9752b9cbad1f4a30cfc2
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="three-types-of-bzier-curves"></a>Tři typy Bézierových křivek
 
@@ -20,7 +20,7 @@ _Použití SkiaSharp k vykreslení krychlový, kvadratické a conic Bézierovýc
 
 Bézierovy křivky jmenuje po Pierre Bézierovy (1910 – 1999), francouzštině pracovníkem v automobilu společnosti Renault, kdo používá křivku návrh s asistencí počítače car subjektů.
 
-Bézierovy křivky se ví, že pro se dobře hodí pro interaktivní návrhu: jejich jsou dobře se choval & #x 2014; jinými slovy nejsou k dispozici singularities, které způsobí křivky k nekonečné nebo nepraktické & #x 2014; a jsou obecně vkusnou. Obsahuje přehled znak na počítači, jaká písma jsou obvykle definovány s Bézierových křivek:
+Bézierovy křivky se ví, že pro se dobře hodí pro interaktivní návrhu: jsou dobře behaved &mdash; jinými slovy, nejsou k dispozici singularities, které způsobí křivku k nekonečné nebo nepraktické &mdash; a jsou obecně vkusnou . Obsahuje přehled znak na počítači, jaká písma jsou obvykle definovány s Bézierových křivek:
 
 ![](beziers-images/beziersample.png "Ukázka Bézierovy křivky")
 
@@ -411,7 +411,7 @@ Ale obrazec kvadratické Bézierovy křivky není eliptické, proto více kvadra
 
 ## <a name="the-conic-bzier-curve"></a>Conic Bézierovy křivky
 
-Conic Bézierovy křivky & #x 2014; také označuje jako rozumné kvadratické Bézierovy křivky & #x 2014; je poměrně poslední přidání do rodiny Bézierových křivek. Jako kvadratické Bézierovy křivky rozumné kvadratické Bézierovy křivky zahrnuje počáteční bod, koncový bod a bod jeden prvek. Ale je potřeba rozumné kvadratické Bézierovy křivky *váhy* hodnotu. Je volána *rozumné* kvadratické totiž čištění vzorce poměry.
+Conic Bézierovy křivky &mdash; také označované jako rozumné kvadratické Bézierovy křivky &mdash; je poměrně poslední přidání do rodiny Bézierových křivek. Jako kvadratické Bézierovy křivky rozumné kvadratické Bézierovy křivky zahrnuje počáteční bod, koncový bod a bod jeden prvek. Ale je potřeba rozumné kvadratické Bézierovy křivky *váhy* hodnotu. Je volána *rozumné* kvadratické totiž čištění vzorce poměry.
 
 Čištění vzorce pro X a Y jsou poměr, které sdílejí stejnou jmenovatel. Tady je vztah pro jmenovatel pro *t* rozsahu od 0 do 1 a hodnota váhy *w*:
 
@@ -425,7 +425,7 @@ x(t) = ((1 – t) ²x₀ + 2wt (1 – t) x₁ + t²x₂)) ÷ d(t)
 
 y(t) = ((1 – t) ²y₀ + 2wt (1 – t) y₁ + t²y₂)) ÷ d(t)
 
-Rozumné kvadratických Bézierových křivek se také označují jako *conics* protože mohou přesně reprezentovat segmentů všechny části conic & #x 2014; hyperboly, paraboly, tři tečky a kroužky.
+Rozumné kvadratických Bézierových křivek se také označují jako *conics* protože mohou přesně reprezentovat segmenty každé části conic &mdash; hyperboly, paraboly, tři tečky a kroužky.
 
 Chcete-li přidat rozumné kvadratické Bézierovy křivky na cestu, použijte [ `ConicTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ConicTo/p/SkiaSharp.SKPoint/SkiaSharp.SKPoint/System.Single/) metoda nebo [ `ConicTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ConicTo/p/System.Single/System.Single/System.Single/System.Single/System.Single/) přetížení s samostatné `x` a `y` souřadnice:
 

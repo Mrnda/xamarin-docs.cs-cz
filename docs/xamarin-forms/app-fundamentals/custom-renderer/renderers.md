@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/15/2016
-ms.openlocfilehash: 95518d9b23db68cc972549c730deeea968512444
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 06887e6c1a39dd695fdaddb2fade8a463d9d4580
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="renderer-base-classes-and-native-controls"></a>Základní třídy zobrazovací jednotky a nativní ovládací prvky
 
@@ -23,449 +23,85 @@ S výjimkou produktů `MapRenderer` třídy pro vykreslování specifických pro
 - **iOS** – Xamarin.Forms.Platform.iOS
 - **Android** – Xamarin.Forms.Platform.Android
 - **Android (kompatibility aplikace)** – Xamarin.Forms.Platform.Android.AppCompat
-- **Windows Phone 8** – Xamarin.Forms.Platform.WinPhone
-- **WinRT** – Xamarin.Forms.Platform.WinRT
 - **Universal Windows Platform (UWP)** – Xamarin.Forms.Platform.UWP
 
 `MapRenderer` Třída naleznete v následujících oborů názvů:
 
 - **iOS** – Xamarin.Forms.Maps.iOS
 - **Android** – Xamarin.Forms.Maps.Android
-- **Windows Phone 8** – Xamarin.Forms.Maps.WP8
-- **WinRT** – Xamarin.Forms.Maps.WinRT
 - **Universal Windows Platform (UWP)** – Xamarin.Forms.Maps.UWP
 
 ## <a name="pages"></a>Stránky
 
 Následující tabulka uvádí zobrazovací jednotky a nativní řízení třídy, které implementují každý Xamarin.Forms [stránky](~/xamarin-forms/user-interface/controls/pages.md) typu:
 
-<table>
- <thead>
-   <tr>
-     <td><strong>Stránka</strong></td>
-     <td><strong>Renderer</strong></td>
-     <td><strong>iOS</strong></td>
-     <td><strong>Android</strong></td>
-     <td><strong>Android (kompatibility aplikace)</strong></td>
-     <td><strong>Windows Phone 8 < / strong</td>
-     <td><strong>WinRT / UWP</strong></td>
-   </tr>
- </thead>
- <tbody>
-   <tr>
-     <td><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/">ContentPage</a></td>
-     <td><a href="~/xamarin-forms/app-fundamentals/custom-renderer/contentpage.md">PageRenderer</a></td>
-     <td>UIViewController</td>
-     <td>Skupinu ViewGroup</td>
-     <td></td>
-     <td>Panel</td>
-     <td>FrameworkElement</td>
-   </tr>
-   <tr>
-     <td><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/">MasterDetailPage</a></td>
-     <td><p>PhoneMasterDetailRenderer (iOS – Phone)</p><p>TabletMasterDetailPageRenderer (iOS – Tablet)</p><p>MasterDetailRenderer (Android)</p><p>MasterDetailPageRenderer (Android kompatibility aplikace)</p><p>MasterDetailRenderer (Windows Phone)</p><p>MasterDetailPageRenderer (WinRT)</p></td>
-     <td><p>UIViewController (Phone)</p><p>UISplitViewController (Tablet)</p></td>
-     <td>DrawerLayout (v4)</td>
-     <td>DrawerLayout (v4)</td>
-     <td>FrameworkElement</td>
-     <td>FrameworkElement (vlastní kontrola)</td>
-   </tr>
-   <tr>
-     <td><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/">NavigationPage</a></td>
-     <td><p>NavigationRenderer (iOS a Android)</p><p>NavigationPageRenderer (Android kompatibility aplikace)</p><p>NavigationPageRenderer (Windows Phone 8 a WinRT)</p></td>
-     <td>UIToolbar</td>
-     <td>Skupinu ViewGroup</td>
-     <td>Skupinu ViewGroup</td>
-     <td>FrameworkElement</td>
-     <td>FrameworkElement (vlastní kontrola)</td>
-   </tr>
-   <tr>
-     <td><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/">TabbedPage</a></td>
-     <td><p>TabbedRenderer (iOS a Android)</p><p>TabbedPageRenderer (Android kompatibility aplikace)</p><p>TabbedPageRenderer (Windows Phone 8 a WinRT)</p></td>
-     <td>UIView</td>
-     <td>ViewPager</td>
-     <td>ViewPager</td>
-     <td>Prvků uživatelského rozhraní (Pivot)</td>
-     <td>FrameworkElement (Pivot)</td>
-   </tr>
-   <tr>
-     <td><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.TemplatedPage/">TemplatedPage</a></td>
-     <td>PageRenderer</td>
-     <td>UIViewController</td>
-     <td>Skupinu ViewGroup</td>
-     <td></td>
-     <td>Panel</td>
-     <td>FrameworkElement</td>
-   </tr>
-   <tr>
-     <td><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/">CarouselPage<a/></td>
-     <td>CarouselPageRenderer</td>
-     <td>UIScrollView</td>
-     <td>ViewPager</td>
-     <td>ViewPager</td>
-     <td>Prvků uživatelského rozhraní (– Panorama)</td>
-     <td>FrameworkElement (FlipView)</td>
-   </tr>
- </tbody>
-</table>
+|Stránka|Zobrazovací jednotky|iOS|Android|Android (kompatibility aplikace)|UWP|
+|--- |--- |--- |--- |--- |--- |
+|[`ContentPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)|[PageRenderer](~/xamarin-forms/app-fundamentals/custom-renderer/contentpage.md)|UIViewController|Skupinu ViewGroup||FrameworkElement|
+|[`MasterDetailPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/)|PhoneMasterDetailRenderer (iOS – telefon), TabletMasterDetailPageRenderer (iOS – Tablet), MasterDetailRenderer (Android), MasterDetailPageRenderer (Android kompatibility aplikace), MasterDetailPageRenderer (UWP)|UIViewController (telefon), (Tablet) UISplitViewController|DrawerLayout (v4)|DrawerLayout (v4)|FrameworkElement (vlastní kontrola)|
+|[`NavigationPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/)|NavigationRenderer (iOS a Android), NavigationPageRenderer (Android kompatibility aplikace), NavigationPageRenderer (UWP)|UIToolbar|Skupinu ViewGroup|Skupinu ViewGroup|FrameworkElement (vlastní kontrola)|
+|[`TabbedPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/)|TabbedRenderer (iOS a Android), TabbedPageRenderer (Android kompatibility aplikace), TabbedPageRenderer (UWP)|UIView|ViewPager|ViewPager|FrameworkElement (Pivot)|
+|[`TemplatedPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplatedPage/)|PageRenderer|UIViewController|Skupinu ViewGroup||FrameworkElement|
+|[`CarouselPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/)|CarouselPageRenderer|UIScrollView|ViewPager|ViewPager|FrameworkElement (FlipView)|
 
 ## <a name="layouts"></a>Rozložení
 
 Následující tabulka uvádí zobrazovací jednotky a nativní řízení třídy, které implementují každý Xamarin.Forms [rozložení](~/xamarin-forms/user-interface/controls/layouts.md) typu:
 
-<table>
- <thead>
-   <tr>
-     <td><strong>Rozložení</strong></td>
-     <td><strong>Renderer</strong></td>
-     <td><strong>iOS</strong></td>
-     <td><strong>Android</strong></td>
-     <td><strong>Windows Phone 8</strong></td>
-     <td><strong>WinRT / UWP</strong></td>
-   </tr>
- </thead>
- <tbody>
-   <tr>
-     <td><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPresenter/">ContentPresenter</a></td>
-     <td>ViewRenderer</td>
-     <td>UIView</td>
-     <td>Zobrazit</td>
-     <td>FrameworkElement</td>
-     <td>FrameworkElement</td>
-   </tr>
-   <tr>
-     <td><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/">ContentView</a></td>
-     <td>ViewRenderer</td>
-     <td>UIView</td>
-     <td>Zobrazit</td>
-     <td>FrameworkElement</td>
-     <td>FrameworkElement</td>
-   </tr>
-   <tr>
-     <td><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Frame/">Rámec</a></td>
-     <td>FrameRenderer</td>
-     <td>UIView</td>
-     <td>Skupinu ViewGroup</td>
-     <td>Ohraničení</td>
-     <td>Ohraničení</td>
-   </tr>
-   <tr>
-     <td><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/">ScrollView</a></td>
-     <td>ScrollViewRenderer</td>
-     <td>UIScrollView</td>
-     <td>ScrollView</td>
-     <td>ScrollViewer</td>
-     <td>ScrollViewer</td>
-   </tr>
-   <tr>
-     <td><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.TemplatedView/">TemplatedView</a></td>
-     <td>ViewRenderer</td>
-     <td>UIView</td>
-     <td>Zobrazit</td>
-     <td>FrameworkElement</td>
-     <td>FrameworkElement</td>
-   </tr>
-   <tr>
-     <td><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayout/">AbsoluteLayout</a></td>
-     <td>ViewRenderer</td>
-     <td>UIView</td>
-     <td>Zobrazit</td>
-     <td>FrameworkElement</td>
-     <td>FrameworkElement</td>
-   </tr>
-   <tr>
-     <td><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/">Mřížka</a></td>
-     <td>ViewRenderer</td>
-     <td>UIView</td>
-     <td>Zobrazit</td>
-     <td>FrameworkElement</td>
-     <td>FrameworkElement</td>
-   </tr>
-   <tr>
-     <td><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/">RelativeLayout</a></td>
-     <td>ViewRenderer</td>
-     <td>UIView</td>
-     <td>Zobrazit</td>
-     <td>FrameworkElement</td>
-     <td>FrameworkElement</td>
-   </tr>
-   <tr>
-     <td><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/">StackLayout</a></td>
-     <td>ViewRenderer</td>
-     <td>UIView</td>
-     <td>Zobrazit</td>
-     <td>FrameworkElement</td>
-     <td>FrameworkElement</td>
-   </tr>
- </tbody>
-</table>
+|Rozložení|Zobrazovací jednotky|iOS|Android|UWP|
+|--- |--- |--- |--- |--- |
+|[`ContentPresenter`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPresenter/)|ViewRenderer|UIView|Zobrazit|FrameworkElement|
+|[`ContentView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/)|ViewRenderer|UIView|Zobrazit|FrameworkElement|
+|[`Frame`](https://developer.xamarin.com/api/type/Xamarin.Forms.Frame/)|FrameRenderer|UIView|Skupinu ViewGroup|Ohraničení|
+|[`ScrollView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/)|ScrollViewRenderer|UIScrollView|ScrollView|ScrollViewer|
+|[`TemplatedView`](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplatedView/)|ViewRenderer|UIView|Zobrazit|FrameworkElement|
+|[`AbsoluteLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayout/)|ViewRenderer|UIView|Zobrazit|FrameworkElement|
+|[`Grid`](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/)|ViewRenderer|UIView|Zobrazit|FrameworkElement|
+|[`RelativeLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/)|ViewRenderer|UIView|Zobrazit|FrameworkElement|
+|[`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/)|ViewRenderer|UIView|Zobrazit|FrameworkElement|
 
 ## <a name="views"></a>zobrazení
 
 Následující tabulka uvádí zobrazovací jednotky a nativní řízení třídy, které implementují každý Xamarin.Forms [zobrazení](~/xamarin-forms/user-interface/controls/views.md) typu:
 
-<table>
- <thead>
-   <tr>
-     <td><strong>Zobrazení</strong></td>
-     <td><strong>Renderer</strong></td>
-     <td><strong>iOS</strong></td>
-     <td><strong>Android</strong></td>
-     <td><strong>Android (kompatibility aplikace)</strong></td>
-     <td><strong>Windows Phone 8</strong></td>
-     <td><strong>WinRT / UWP</strong></td>
-   </tr>
- </thead>
- <tbody>
-   <tr>
-     <td><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.ActivityIndicator/">ActivityIndicator</a></td>
-     <td>ActivityIndicatorRenderer</td>
-     <td>UIActivityIndicator</td>
-     <td>ProgressBar</td>
-     <td></td>
-     <td>ProgressBar</td>
-     <td>ProgressBar</td>
-   </tr>
-   <tr>
-     <td><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/">BoxView</a></td>
-     <td><p>BoxRenderer (iOS a Android)</p><p>BoxViewRenderer (Windows Phone a WinRT)</p></td>
-     <td>UIView</td>
-     <td>Skupinu ViewGroup</td>
-     <td></td>
-     <td>rámeček</td>
-     <td>rámeček</td>
-   </tr>
-   <tr>
-     <td><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Button/">Tlačítko</a></td>
-     <td>ButtonRenderer</td>
-     <td>UIButton</td>
-     <td>Tlačítko</td>
-     <td>AppCompatButton</td>
-     <td>Tlačítko</td>
-     <td>Tlačítko</td>
-   </tr>
-   <tr>
-     <td><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselView/">CarouselView</a></td>
-     <td>CarouselViewRenderer</td>
-     <td>UIScrollView</td>
-     <td>RecyclerView</td>
-     <td></td>
-     <td>FlipView</td>
-     <td>FlipView</td>
-   </tr>   
-   <tr>
-     <td><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/">DatePicker</a></td>
-     <td>DatePickerRenderer</td>
-     <td>UITextField</td>
-     <td>EditText</td>
-     <td></td>
-     <td>DatePicker</td>
-     <td>DatePicker</td>
-   </tr>
-   <tr>
-     <td><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Editor/">Editor</a></td>
-     <td>EditorRenderer</td>
-     <td>UITextView</td>
-     <td>EditText</td>
-     <td></td>
-     <td>TextBox</td>
-     <td>TextBox</td>
-   </tr>
-   <tr>
-     <td><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/">Položka</a></td>
-     <td><a href="~/xamarin-forms/app-fundamentals/custom-renderer/entry.md">EntryRenderer</a></td>
-     <td>UITextField</td>
-     <td>EditText</td>
-     <td></td>
-     <td>Položka PhoneTextBox/PasswordBox</td>
-     <td>TextBox</td>
-   </tr>
-   <tr>
-     <td><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Image/">Obrázek</a></td>
-     <td>ImageRenderer</td>
-     <td>UIImageView</td>
-     <td>ImageView</td>
-     <td></td>
-     <td>Image</td>
-     <td>Image</td>
-   </tr>
-   <tr>
-     <td><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Label/">Popisek</a></td>
-     <td>LabelRenderer</td>
-     <td>UILabel</td>
-     <td>TextView</td>
-     <td></td>
-     <td>TextBlock</td>
-     <td>TextBlock</td>
-   </tr>
-   <tr>
-     <td><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/">ListView</a></td>
-     <td><a href="~/xamarin-forms/app-fundamentals/custom-renderer/listview.md">ListViewRenderer</a></td>
-     <td>UITableView</td>
-     <td>ListView</td>
-     <td></td>
-     <td>LongListSelector</td>
-     <td>ListView</td>
-   </tr>
-   <tr>
-     <td><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/">Map</a></td>
-     <td><a href="~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md">MapRenderer</a></td>
-     <td>MKMapView</td>
-     <td>MapView</td>
-     <td></td>
-     <td>mapy</td>
-     <td>MapControl</td>
-   </tr>
-   <tr>
-     <td><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/">Výběr</a></td>
-     <td>PickerRenderer</td>
-     <td>UITextField</td>
-     <td>EditText</td>
-     <td>EditText</td>
-     <td>FrameworkElement</td>
-     <td>ComboBox</td>
-   </tr>
-   <tr>
-     <td><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.ProgressBar/">ProgressBar</a></td>
-     <td>ProgressBarRenderer</td>
-     <td>UIProgressView</td>
-     <td>ProgressBar</td>
-     <td></td>
-     <td>ProgressBar</td>
-     <td>ProgressBar</td>
-   </tr>
-   <tr>
-     <td><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/">SearchBar</a></td>
-     <td>SearchBarRenderer</td>
-     <td>UISearchBar</td>
-     <td>SearchView</td>
-     <td></td>
-     <td>PhoneTextBox</td>
-     <td><p>SearchBox (WinRT)</p><p>AutoSuggestBox (UWP)</p></td>
-   </tr>
-   <tr>
-     <td><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/">Posuvník</a></td>
-     <td>SliderRenderer</td>
-     <td>UISlider</td>
-     <td>SeekBar</td>
-     <td></td>
-     <td>Posuvník</td>
-     <td>Posuvník</td>
-   </tr>
-   <tr>
-     <td><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Stepper/">Stepper</a></td>
-     <td>StepperRenderer</td>
-     <td>UIStepper</td>
-     <td>LinearLayout</td>
-     <td></td>
-     <td>Ohraničení s StackPanel a dvě tlačítka</td>
-     <td><p>UserControl (WinRT)</p><p>Ovládací prvek (UWP)</p></td>
-   </tr>
-   <tr>
-     <td><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/">Přepínač</a></td>
-     <td>SwitchRenderer</td>
-     <td>UISwitch</td>
-     <td>přepínače</td>
-     <td>SwitchCompat</td>
-     <td>Ohraničení s ToggleSwitchButton</td>
-     <td>ToggleSwitch</td>
-   </tr>
-   <tr>
-     <td><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.TableView/">TableView</a></td>
-     <td>TableViewRenderer</td>
-     <td>UITableView</td>
-     <td>ListView</td>
-     <td></td>
-     <td>Mřížka s TextBlock a ListBox</td>
-     <td>ListView</td>
-   </tr>
-   <tr>
-     <td><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.TimePicker/">TimePicker</a></td>
-     <td>TimePickerRenderer</td>
-     <td>UITextField</td>
-     <td>EditText</td>
-     <td></td>
-     <td>TimePicker</td>
-     <td>TimePicker</td>
-   </tr>
-   <tr>
-     <td><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.WebView/">WebView</a></td>
-     <td>WebViewRenderer</td>
-     <td>UIWebView</td>
-     <td>WebView</td>
-     <td></td>
-     <td>WebBrowser</td>
-     <td>WebView</td>
-   </tr>
- </tbody>
-</table>
+|zobrazení|Zobrazovací jednotky|iOS|Android|Android (kompatibility aplikace)|UWP|
+|--- |--- |--- |--- |--- |--- |
+|[`ActivityIndicator`](https://developer.xamarin.com/api/type/Xamarin.Forms.ActivityIndicator/)|ActivityIndicatorRenderer|UIActivityIndicator|ProgressBar||ProgressBar|
+|[`BoxView`](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/)|BoxRenderer (iOS a Android), BoxViewRenderer (Windows Phone a WinRT)|UIView|Skupinu ViewGroup||rámeček|
+|[`Button`](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/)|ButtonRenderer|UIButton|Tlačítko|AppCompatButton|Tlačítko|
+|[`CarouselView`](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselView/)|CarouselViewRenderer|UIScrollView|RecyclerView||FlipView|
+|[`DatePicker`](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/)|DatePickerRenderer|UITextField|EditText||DatePicker|
+|[`Editor`](https://developer.xamarin.com/api/type/Xamarin.Forms.Editor/)|EditorRenderer|UITextView|EditText||TextBox|
+|[`Entry`](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)|[EntryRenderer](~/xamarin-forms/app-fundamentals/custom-renderer/entry.md)|UITextField|EditText||TextBox|
+|[`Image`](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/)|ImageRenderer|UIImageView|ImageView||Image|
+|[`Label`](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)|LabelRenderer|UILabel|TextView||TextBlock|
+|[`ListView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)|[ListViewRenderer](~/xamarin-forms/app-fundamentals/custom-renderer/listview.md)|UITableView|ListView||ListView|
+|[`Map`](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/)|[MapRenderer](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)|MKMapView|MapView||MapControl|
+|[`Picker`](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/)|PickerRenderer|UITextField|EditText|EditText|ComboBox|
+|[`ProgressBar`](https://developer.xamarin.com/api/type/Xamarin.Forms.ProgressBar/)|ProgressBarRenderer|UIProgressView|ProgressBar||ProgressBar|
+|[`SearchBar`](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/)|SearchBarRenderer|UISearchBar|SearchView||AutoSuggestBox|
+|[`Slider`](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/)|SliderRenderer|UISlider|SeekBar||Posuvník|
+|[`Stepper`](https://developer.xamarin.com/api/type/Xamarin.Forms.Stepper/)|StepperRenderer|UIStepper|LinearLayout||Ovládací prvek|
+|[`Switch`](https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/)|SwitchRenderer|UISwitch|přepínače|SwitchCompat|ToggleSwitch|
+|[`TableView`](https://developer.xamarin.com/api/type/Xamarin.Forms.TableView/)|TableViewRenderer|UITableView|ListView||ListView|
+|[`TimePicker`](https://developer.xamarin.com/api/type/Xamarin.Forms.TimePicker/)|TimePickerRenderer|UITextField|EditText||TimePicker|
+|[`WebView`](https://developer.xamarin.com/api/type/Xamarin.Forms.WebView/)|WebViewRenderer|UIWebView|WebView||WebView|
 
 ## <a name="cells"></a>Buněk
 
 Následující tabulka uvádí zobrazovací jednotky a nativní řízení třídy, které implementují každý Xamarin.Forms [buňky](~/xamarin-forms/user-interface/controls/cells.md) typu:
 
-<table>
- <thead>
-   <tr>
-     <td><strong>Buňky</strong></td>
-     <td><strong>Renderer</strong></td>
-     <td><strong>iOS</strong></td>
-     <td><strong>Android</strong></td>
-     <td><strong>Windows Phone 8</strong></td>
-     <td><strong>WinRT / UWP</strong></td>
-   </tr>
- </thead>
- <tbody>
- <tr>
-   <td><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.EntryCell/">EntryCell</a></td>
-   <td>EntryCellRenderer</td>
-   <td>UITableViewCell s UITextField</td>
-   <td>LinearLayout s TextView a EditText</td>
-   <td>DataTemplate mřížku obsahující TextBlock a PhoneTextBox</td>
-   <td>DataTemplate s textové pole</td>
- </tr>
- <tr>
-   <td><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.SwitchCell/">SwitchCell</a></td>
-   <td>SwitchCellRenderer</td>
-   <td>UITableViewCell s UISwitch</td>
-   <td>přepínače</td>
-   <td>DataTemplate s ToggleSwitch</td>
-   <td>DataTemplate mřížku obsahující TextBlock a ToggleSwitch</td>
- </tr>
- <tr>
-   <td><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.TextCell/">TextCell</a></td>
-   <td>TextCellRenderer</td>
-   <td>UITableViewCell</td>
-   <td>LinearLayout s dvěma TextViews</td>
-   <td>DataTemplate s tlačítkem obsahující StackPanel s dva objekty TextBlocks</td>
-   <td>DataTemplate s StackPanel, který obsahuje dva objekty TextBlocks</td>
- </tr>
- <tr>
-   <td><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.ImageCell/">ImageCell</a></td>
-   <td>ImageCellRenderer</td>
-   <td>UITableViewCell s UIImage</td>
-   <td>LinearLayout s dvěma TextViews a ImageView</td>
-   <td>DataTemplate s tlačítkem obsahující mřížka s bitovou kopii a StackPanel, který obsahuje dva objekty TextBlocks</td>
-   <td>DataTemplate mřížku obsahující bitovou kopii a dva objekty TextBlocks</td>  
-   </td>
- </tr>
- <tr>
-   <td><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/">ViewCell</a></td>
-   <td><a href="~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md">ViewCellRenderer</a></td>
-   <td>UITableViewCell</td>
-   <td>Zobrazit</td>
-   <td>DataTemplate s ContentPresenter</td>
-   <td>DataTemplate s ContentPresenter</td>  
-   </td>
- </tr>
- </tbody>
-</table>
+|Buněk|Zobrazovací jednotky|iOS|Android|UWP|
+|--- |--- |--- |--- |--- |
+|[`EntryCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.EntryCell/)|EntryCellRenderer|UITableViewCell s UITextField|LinearLayout s TextView a EditText|DataTemplate s textové pole|
+|[`SwitchCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.SwitchCell/)|SwitchCellRenderer|UITableViewCell s UISwitch|přepínače|DataTemplate mřížku obsahující TextBlock a ToggleSwitch|
+|[`TextCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.TextCell/)|TextCellRenderer|UITableViewCell|LinearLayout s dvěma TextViews|DataTemplate s StackPanel, který obsahuje dva objekty TextBlocks|
+|[`ImageCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageCell/)|ImageCellRenderer|UITableViewCell s UIImage|LinearLayout s dvěma TextViews a ImageView|DataTemplate mřížku obsahující bitovou kopii a dva objekty TextBlocks|
+|[`ViewCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/)|[ViewCellRenderer](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md)|UITableViewCell|Zobrazit|DataTemplate s ContentPresenter|
 
 ## <a name="summary"></a>Souhrn
 
 Tento článek uvádí zobrazovací jednotky a nativní řízení třídy, které implementují každou stránku Xamarin.Forms, rozložení, zobrazení a buňky. Každý prvek Xamarin.Forms musí doprovodné zobrazovací jednotky pro každou platformu, která vytvoří instanci nativní ovládacího prvku.
-
-
 
 ## <a name="related-links"></a>Související odkazy
 

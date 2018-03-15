@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 04/07/2017
-ms.openlocfilehash: 0ea6528ce3523ab5d829342e99ccf35ca3d69aa2
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 20e8d843b73fca5eb49da21a7f834ebbb52f4aa9
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="remoted-ios-simulator-for-windows"></a>Používat vzdáleně iOS simulátoru (pro Windows)
 
@@ -52,7 +52,7 @@ Panelu nástrojů okna zahrnuje několik tlačítek pro interakci s simulátoru:
 - **Zámek** – uzamkne simulátoru (můžete prstem odemkněte).
 - **Snímek obrazovky** – snímek obrazovky simulátoru uloží na disk.
 - [**Nastavení** ](#settings) – konfigurace klávesnici a k umístění.
- - Další [ **možnosti** ](#options) – celou řadu možností simulátoru jsou k dispozici jako je například otočení, zatřesením nebo vyvolání jiných stavů v simulátoru. Pokud některé možnosti jsou skryté, lze k nim ze tří teček ikonu, která se zobrazí na panelu nástrojů nebo kliknutím pravým tlačítkem na obrazovce.
+- Další [ **možnosti** ](#options) – celou řadu možností simulátoru jsou k dispozici jako je například otočení, zatřesením nebo vyvolání jiných stavů v simulátoru. Pokud některé možnosti jsou skryté, lze k nim ze tří teček ikonu, která se zobrazí na panelu nástrojů nebo kliknutím pravým tlačítkem na obrazovce.
 
     [![](ios-simulator-images/maps-app-sml.png "příklad mapuje simulátoru iOS")](ios-simulator-images/maps-app.png#lightbox)
 

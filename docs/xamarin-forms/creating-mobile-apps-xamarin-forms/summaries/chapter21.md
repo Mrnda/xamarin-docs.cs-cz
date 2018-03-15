@@ -7,11 +7,11 @@ ms.assetid: 3642F112-C7FA-4A74-9000-F9087BA89AD9
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: afb8e2fff58583dc8648c55839649c96cb68b6ba
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: a40b4f00fd2a0dd3f61c4882a2ef25b8eb68a3a5
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-21-transforms"></a>Shrnutí kapitoly 21. Transformace
 
@@ -19,9 +19,9 @@ Xamarin.Forms se zobrazí na obrazovce v umístění a velikost dáno jeho nadř
 
 Xamarin.Forms podporuje tři základní typy transformací:
 
-- *Překlad* & #x 2014; posunutí elementu vodorovně nebo svisle
-- *Škálování* & #x 2014; změnit velikost elementu
-- *Otočení* & #x 2014; zapnout element kolem bodu nebo osy
+- *Překlad* &mdash; posunutí elementu vodorovně nebo svisle
+- *Škálování* &mdash; změnit velikost elementu
+- *Otočení* &mdash; zapnout element kolem bodu nebo osy
 
 Xamarin.Forms je škálování isotropic; ovlivňuje šířku a výšku jednotně. Otočení je podporováno jak na povrchu dvourozměrná obrazovky a v 3D prostoru. Neexistuje žádná transformace zkosení (nebo velkému) a žádná transformace zobecněný matice.
 

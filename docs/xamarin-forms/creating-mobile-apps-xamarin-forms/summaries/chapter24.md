@@ -7,11 +7,11 @@ ms.assetid: DDCDB49C-6008-4F72-B095-463EE21D7C23
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 3390a298cd8d9967f0aea2bd9fb5a90830714ba5
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: db950915decd2bba216c7dcd6031797037a7c8e0
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-24-page-navigation"></a>Shrnutí kapitoly 24. Navigace stránky
 
@@ -118,7 +118,7 @@ Pokud konkrétní modální stránky můžete přesměrováni do více než jedn
 
 ## <a name="patterns-of-data-transfer"></a>Vzory přenosu dat
 
-Často je nezbytné pro sdílení dat mezi stránky & #x 2014; přenos dat na navigated stránku a pro stránku vrátit data na stránku, která je volána. Existuje několik postupů tohoto postupu.
+Často je nutné sdílet data mezi stránkami &mdash; k přenosu dat navigated stránky a stránky vrátit data na stránku, která je volána. Existuje několik postupů tohoto postupu.
 
 ### <a name="constructor-arguments"></a>Argumenty konstruktoru
 

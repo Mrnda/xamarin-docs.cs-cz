@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 07/10/2017
-ms.openlocfilehash: b0afba90dab5cba4bad385f8d6447d8b83c1de3d
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 55b83151e9c345096aeb0bfdd686d50c5fde62fd
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="xaml-namespaces"></a>Obory názvů jazyka XAML
 
@@ -38,40 +38,14 @@ XAML používá předpony deklarovat jiné než výchozí obory názvů, s před
 
 V následující tabulce jsou podrobněji popsány dále `x` nepodporuje Xamarin.Forms atributy oboru názvů:
 
-<table>
- <thead>
-   <tr>
-     <td><strong>konstrukce</strong></td>
-     <td><strong>Popis</strong></td>
-   </tr>
- </thead>
- <tbody>
-   <tr>
-     <td><code>x:Arguments</code></td>
-     <td>Určuje argumenty konstruktoru pro jiné než výchozí konstruktor, nebo na prohlášení metoda objektu factory.</td>
-   </tr>
-   <tr>
-     <td><code>x:Class</code></td>
-     <td>Určuje název oboru názvů a třídy pro třídy definované v jazyce XAML. Název třídy musí odpovídat názvu třídy souboru kódu na pozadí. Všimněte si, že tento konstruktor může vyskytovat pouze v kořenovém elementu souboru XAML.</td>
-   </tr>
-   <tr>
-     <td><code>x:FactoryMethod</code></td>
-     <td>Určuje metoda factory, která slouží k inicializaci objektu.</td>
-   </tr>
-   <tr>
-     <td><code>x:Key</code></td>
-     <td>Určuje jedinečný klíč uživatelem definované pro každý zdroj v <code>ResourceDictionary</code>. Hodnota klíče se používá k načtení prostředek XAML a obvykle se používá jako argument pro <code>StaticResource</code> – rozšíření značek.</td>
-   </tr>
-   <tr>
-     <td><code>x:Name</code></td>
-     <td>Určuje název objektu modulu runtime pro XAML element. Nastavení <code>x:Name</code> je podobná deklarace proměnné v kódu.</td>
-   </tr>
-   <tr>
-     <td><code>x:TypeArguments</code></td>
-     <td>Určuje argumenty obecného typu do konstruktoru objektu obecného typu.</td>
-   </tr>
- </tbody>
-</table>
+|Konstrukce|Popis|
+|--- |--- |
+|`x:Arguments`|Určuje argumenty konstruktoru pro jiné než výchozí konstruktor, nebo na prohlášení metoda objektu factory.|
+|`x:Class`|Určuje název oboru názvů a třídy pro třídy definované v jazyce XAML. Název třídy musí odpovídat názvu třídy souboru kódu na pozadí. Všimněte si, že tento konstruktor může vyskytovat pouze v kořenovém elementu souboru XAML.|
+|`x:FactoryMethod`|Určuje metoda factory, která slouží k inicializaci objektu.|
+|`x:Key`|Určuje jedinečný klíč uživatelem definované pro každý zdroj v `ResourceDictionary`. Hodnota klíče se používá k načtení prostředek XAML a obvykle se používá jako argument pro `StaticResource` – rozšíření značek.|
+|`x:Name`|Určuje název objektu modulu runtime pro XAML element. Nastavení `x:Name` je podobná deklarace proměnné v kódu.|
+|`x:TypeArguments`|Určuje argumenty obecného typu do konstruktoru objektu obecného typu.|
 
 Další informace o `x:Arguments`, `x:FactoryMethod`, a `x:TypeArguments` atributy, najdete v části [předání argumentů v jazyce XAML](~/xamarin-forms/xaml/passing-arguments.md).
 

@@ -6,12 +6,12 @@ ms.assetid: 3BE5EE1E-3FF6-4E95-7C9F-7B443EE3E94C
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/09/2018
-ms.openlocfilehash: 51caebb86cb72b11ced70522fc253e608f5ccab0
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/14/2018
+ms.openlocfilehash: 30cfb1c8bbd65ec8ef69d2d9bc22906a8726ae62
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="build-process"></a>Proces sestavení
 
@@ -106,7 +106,7 @@ Vlastnosti instalace řídí chování `Install` a `Uninstall` cíle.
 
     ```bash
     # Install package onto emulator via -e
-    # Use `/Library/Frameworks/Mono.framework/Commands/xbuild` on OS X
+    # Use `/Library/Frameworks/Mono.framework/Commands/msbuild` on OS X
     MSBuild /t:Install ProjectName.csproj /p:AdbTarget=-e
     ```
 

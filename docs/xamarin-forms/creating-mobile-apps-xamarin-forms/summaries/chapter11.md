@@ -7,11 +7,11 @@ ms.assetid: 34671C48-0ED4-4B76-A33D-D6505390DC5B
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 6e0f1abf04695dfb5348b631a9fbdbd2c81bc431
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: ccae97021e86eb1375f948c5ad126253c6088037
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-11-the-bindable-infrastructure"></a>Souhrn kapitoly 11. Vazbu infrastruktury
 
@@ -47,9 +47,9 @@ Ve skutečnosti `Text` vlastnost CLR je zcela implementovaná pomocí `SetValue`
 
 Vždy, když vlastnosti, která je zálohovaný díky vazbu vlastnosti změny, `BindableObject` aktivuje [ `PropertyChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.BindableObject.PropertyChanged/) událostí identifikující vlastnosti, která se změnila. Tato událost není aktivována, jestliže je vlastnost nastavena na stejnou hodnotu.
 
-Některé vlastnosti není podporovaný vazbu vlastnosti a některé Xamarin.Forms třídy & #x 2014; například `Span` & #x 2014; není odvozena od `BindableObject`. Pouze třídu odvozenou z `BindableObject` může podporovat vlastnosti vazbu, protože `BindableObject` definuje `SetValue` a `GetValue` metody.
+Některé vlastnosti není podporovaný některé Xamarin.Forms třídy a vlastnosti vazbu &mdash; například `Span` &mdash; není odvozena od `BindableObject`. Pouze třídu odvozenou z `BindableObject` může podporovat vlastnosti vazbu, protože `BindableObject` definuje `SetValue` a `GetValue` metody.
 
-Protože `Span` není odvozena od `BindableObject`, žádné jeho vlastnosti & #x 2014; například `Text` & #x 2014; jsou zajišťované vazbu vlastnosti. To je důvod, proč `DynamicResource` nastavení na `Text` vlastnost `Span` vyvolá výjimku v [ **DynamicVsStatic** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/DynamicVsStatic) ukázku v předchozích kapitol. [ **DynamicVsStaticCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11/DynamicVsStaticCode) příklad ukazuje, jak nastavit dynamické prostředky v kódu pomocí [ `SetDynamicResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Element.SetDynamicResource/p/Xamarin.Forms.BindableProperty/System.String/) metoda definované `Element`. První argument je objekt typu `BindableProperty`.
+Protože `Span` není odvozena od `BindableObject`, žádný z jeho vlastnosti &mdash; například `Text` &mdash; jsou zajišťované vazbu vlastnosti. To je důvod, proč `DynamicResource` nastavení na `Text` vlastnost `Span` vyvolá výjimku v [ **DynamicVsStatic** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/DynamicVsStatic) ukázku v předchozích kapitol. [ **DynamicVsStaticCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11/DynamicVsStaticCode) příklad ukazuje, jak nastavit dynamické prostředky v kódu pomocí [ `SetDynamicResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Element.SetDynamicResource/p/Xamarin.Forms.BindableProperty/System.String/) metoda definované `Element`. První argument je objekt typu `BindableProperty`.
 
 Podobně [ `SetBinding` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.SetBinding/p/Xamarin.Forms.BindableProperty/Xamarin.Forms.BindingBase/) metoda definované `BindableObject` má první argument typu `BindableProperty`.
 

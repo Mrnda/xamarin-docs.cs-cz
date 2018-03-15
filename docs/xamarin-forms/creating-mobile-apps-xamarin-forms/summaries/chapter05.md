@@ -7,11 +7,11 @@ ms.assetid: 486800E9-C09F-4B95-9AC2-C0F8FE563BCF
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 1df1751c55c6a031bf9f26d774b739f4ca83fa91
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 0c61727e90a03d618a7423e5b865a7fcc9e0b399
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-5-dealing-with-sizes"></a>Souhrn kapitoly 5. Práci s velikostí
 
@@ -42,7 +42,7 @@ V souhrnu Xamarin.Forms programátorem cílení na telefonů a tabletů Předpok
 - 160 jednotky pro palec, ekvivalentní
 - 64 jednotky pro centimetr
 
-Jen pro čtení [ `Width` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Width/) a [ `Height` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Height/) vlastnosti definované `VisualElement` mít výchozí "model" hodnoty & #x 2013; 1. Jenom v případě, že element má velikost a shromáždit v rozložení se tyto vlastnosti projeví skutečná velikost element v jednotky nezávislé na zařízení. Tato velikost obsahuje jakoukoliv `Padding` nastavené u elementu, ale ne `Margin`.
+Jen pro čtení [ `Width` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Width/) a [ `Height` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Height/) vlastnosti definované `VisualElement` mají výchozí hodnoty "model" &ndash;1. Jenom v případě, že element má velikost a shromáždit v rozložení se tyto vlastnosti projeví skutečná velikost element v jednotky nezávislé na zařízení. Tato velikost obsahuje jakoukoliv `Padding` nastavené u elementu, ale ne `Margin`.
 
 Aktivuje se vizuální prvek [ `SizeChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.VisualElement.SizeChanged/) události při jeho `Width` nebo `Height` došlo ke změně. [ **WhatSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/WhatSize) ukázce se používá tato událost Pokud chcete zobrazit velikost obrazovky programu.
 
@@ -75,7 +75,7 @@ Je možné, aby vyhovovaly blok textu v obdélníku konkrétní pomocí výpočt
 
 ## <a name="empirically-fitting-text"></a>Empirically přizpůsobování textu
 
-Dalším způsobem podle textu do obdélníku je empirically vypočítat velikost vykresleného textu a upravit ho nahoru nebo dolů. Program volání kniha [ `GetSizeRequest` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.GetSizeRequest/p/System.Double/System.Double/) na vizuální prvek získat požadovaná velikost elementu. Že metoda je zastaralá a programy by měly volat místo [`Measure`] (nebo api/member/Xamarin.Forms.VisualElement.Measure/p/System.Double/System.Double/Xamarin.Forms.MeasureFlags/).
+Dalším způsobem podle textu do obdélníku je empirically vypočítat velikost vykresleného textu a upravit ho nahoru nebo dolů. Program volání kniha [ `GetSizeRequest` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.GetSizeRequest/p/System.Double/System.Double/) na vizuální prvek získat požadovaná velikost elementu. Že metoda je zastaralá a místo toho by měly volat programy [ `Measure` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.Measure/p/System.Double/System.Double/Xamarin.Forms.MeasureFlags/).
 
 Pro `Label`prvního argumentu musí být Šířka kontejneru (aby bylo možné zabalení), zatímco druhý argument by měl být nastaven na `Double.PositiveInfinity` aby neomezeného výšku. [ **EmpiricalFontSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/EmpiricalFontSize) příklad znázorňuje tento postup.
 

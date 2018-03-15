@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 5263d32ace14eb803bfd65b6a9b2ea5992ee1413
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: ffa61004bdaaaaf400f5e0d5ed90b4e6b1dcb7e7
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="connection-troubleshooting"></a>Odstraňování problémů s připojením
 
@@ -240,7 +240,6 @@ Pokud ve výstupním okně neobsahuje dostatek informací, aby mohli problém di
 
 4. Když otevřete soubor .zip, zobrazí se seznam souborů, podobně jako v příkladu níže. Chyby připojení, jsou nejdůležitější soubory **\*Ide.log** a **\*Ide.svclog** soubory. Tyto soubory obsahují stejné zprávy ve dvou mírně odlišné formáty. **.Svclog** XML a je užitečné, pokud chcete procházet zprávy. **.Log** je prostý text a je užitečné, pokud chcete filtrovat zprávy pomocí nástroje příkazového řádku.
 
-
     Procházet všechny zprávy, vyberte a otevřete **.svclog** souboru:
 
     [![](troubleshooting-images/troubleshooting-image13.png "Vyberte soubor svclog")](troubleshooting-images/troubleshooting-image13.png#lightbox)
@@ -319,7 +318,7 @@ Hlášené příčiny:
 
 Relevantní chyb [#40781](https://bugzilla.xamarin.com/show_bug.cgi?id=40781).
 
-Tento problém může dojít, když se nepodaří aktualizovat mezipaměť MEF součást Visual Studio. Pokud je to tento případ, může pomoci instalaci toto rozšíření sady Visual Studio: [https://visualstudiogallery.msdn.microsoft.com/22b94661-70c7-4a93-9ca3-8b6dd45f47cd](https://visualstudiogallery.msdn.microsoft.com/22b94661-70c7-4a93-9ca3-8b6dd45f47cd)
+Tento problém může dojít, když se nepodaří aktualizovat mezipaměť MEF součást Visual Studio. Pokud je to tento případ, instalace toto rozšíření sady Visual Studio může pomoct: [https://visualstudiogallery.msdn.microsoft.com/22b94661-70c7-4a93-9ca3-8b6dd45f47cd](https://visualstudiogallery.msdn.microsoft.com/22b94661-70c7-4a93-9ca3-8b6dd45f47cd)
 
 Tímto dojde k vymazání mezipaměti součást Visual Studio MEF o vyřešení problémů s poškození mezipaměti.
 

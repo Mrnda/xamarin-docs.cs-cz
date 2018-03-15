@@ -7,11 +7,11 @@ ms.assetid: 7A39FD4F-15AD-4F94-960E-9FEEB63FFD44
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 5ad53d7bc8c4ee54a47c4b327fb6f07bc1906ab9
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 5559f9e6a4baf9d3f82701b5e3f341900ba83bae
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-4-scrolling-the-stack"></a>Shrnutí kapitole 4. Procházení zásobníku
 
@@ -67,9 +67,9 @@ Pro svislé `StackLayout`, `HorizontalOptions` nastavení určuje, jak je podř�
 
 Pro svislé `StackLayout`, je svisle neomezeným jednotlivých podřízených a získá svislou pozici v závislosti na výšku dítěte, v takovém případě `VerticalOptions` nastavení je důležité.
 
-Pokud svislice `StackLayout` sám o sobě představuje neomezeným & #x 2014; je-li jeho `VerticalOptions` nastavení je `Start`, `Center`, nebo `End`, pak výšku `StackLayout` je celková výška jeho podřízených položek.
+Pokud svislice `StackLayout` sám o sobě představuje neomezeným&mdash;tedy pokud jeho `VerticalOptions` nastavení je `Start`, `Center`, nebo `End`, pak výšku `StackLayout` je celková výška jeho podřízených položek.
 
-Ale pokud svislice `StackLayout` je svisle omezené & #x 2014; pokud jeho `VerticalOptions` nastavení je `Fill`& #x 2014; potom výšku `StackLayout` bude výšku jeho kontejneru, který může být větší než celková výška své podřízené objekty. Pokud je to tento případ, který má alespoň jednu podřízenou `VerticalOptions` nastavení se `Expands` příznak `true`, pak volné místo v `StackLayout` je přidělen rovnoměrně mezi všechny podřízené s `Expands` příznak `true`. Celková výška podřízených rovnat výšku `StackLayout`a `Alignment` součástí `VerticalOptions` nastavení určuje, jak je podřízená ve svislém směru umístěn v jeho slot.
+Ale pokud svislice `StackLayout` je svisle omezené&mdash;pokud jeho `VerticalOptions` nastavení je `Fill` &mdash;pak výšku `StackLayout` bude výšku jeho kontejneru, který může být větší než celkový počet výška jeho podřízených položek. Pokud je to tento případ, který má alespoň jednu podřízenou `VerticalOptions` nastavení se `Expands` příznak `true`, pak volné místo v `StackLayout` je přidělen rovnoměrně mezi všechny podřízené s `Expands` příznak `true`. Celková výška podřízených rovnat výšku `StackLayout`a `Alignment` součástí `VerticalOptions` nastavení určuje, jak je podřízená ve svislém směru umístěn v jeho slot.
 
 Tento postup je znázorněn v [ **VerticalOptionsDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/VerticalOptionsDemo) ukázka.
 

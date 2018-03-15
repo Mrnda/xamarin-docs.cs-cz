@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/09/2018
-ms.openlocfilehash: 7c38ebb6b482f4097a4977accecc4a230d3f3ed3
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: e8e56afbdf0b68ecc49a89b08b2e67a9715f2aef
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="android-speech"></a>Android Speech
 
@@ -128,11 +128,11 @@ Do značné míry, zařízení se systémem Android jsou součástí výchozí n
 
 ### <a name="step-1---instantiating-texttospeech"></a>Krok 1 – konkretizujete TextToSpeech
 
-`TextToSpeech` může trvat až 3 parametry, jsou požadovány s třetí první dvě je nepovinná (`AppContext`, `IOnInitListener`, `engine`). Naslouchací proces se používá k vytvoření vazby služby a testování pro selhání s modulem probíhá libovolný počet modulů dostupných Android převod textu na řeč, minimálně, zařízení bude mít Google vlastní modul.
+`TextToSpeech` může trvat až 3 parametry, jsou požadovány s třetí první dvě je nepovinná (`AppContext`, `IOnInitListener`, `engine`). Naslouchací proces se používá k vytvoření vazby služby a testování pro selhání s modulem probíhá libovolný počet dostupných Android převod textu na řeč moduly. Zařízení bude mít minimálně, Google vlastní modul.
 
 ### <a name="step-2---finding-the-languages-available"></a>Krok 2 – vyhledání dostupných jazyků
 
-`Java.Util.Locale` Obor názvů obsahuje užitečné metodu s názvem `GetAvailableLocales()`. Tento seznam jazyků podporovaných v modulu řeči můžete pak porovnávaný nainstalované jazyky.
+`Java.Util.Locale` Třída obsahuje užitečné metodu s názvem `GetAvailableLocales()`. Tento seznam jazyků podporovaných v modulu řeči můžete pak porovnávaný nainstalované jazyky.
 
 Záleží jen trivial vygenerovat seznam jazyků "rozumí". Bude vždy výchozí jazyk (jazyk uživatel nastavit, když se nejprve nastavte své zařízení), tak v tomto příkladu `List<string>` má "Výchozí" jako první parametr, zbývající část seznamu bude vyplněno na základě výsledku `textToSpeech.IsLanguageAvailable(locale)`.
 
@@ -186,7 +186,7 @@ protected override void OnActivityResult(int req, Result res, Intent data)
 
 ### <a name="step-5---the-ioninitlistener"></a>Krok 5 – IOnInitListener
 
-Pro aktivitu mohli převod textu na řeč, metodu rozhraní `OnInit` je potřeba vytvořit (Toto je druhý parametr zadaný pro instance `TextToSpeech` třídy). Tím se inicializuje naslouchací proces a testy výsledek.
+Pro aktivitu mohli převod textu na řeč, metodu rozhraní `OnInit` musí být implementována (Toto je druhý parametr zadaný pro instance `TextToSpeech` třídy). Tím se inicializuje naslouchací proces a testy výsledek.
 
 Naslouchací proces měli otestovat pro obě `OperationResult.Success` a `OperationResult.Failure` minimálně.
 Následující příklad ukazuje, který právě:

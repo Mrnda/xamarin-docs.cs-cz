@@ -7,11 +7,11 @@ ms.assetid: F54E86F4-1CDA-474E-9B09-242060C2C13D
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 37bbbf2b89048db175ddc1b3b1a24cea92b898a7
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 09b999771ec500409e40dc2aef671045bf9f5565
+ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="summary-of-chapter-15-the-interactive-interface"></a>Shrnutí kapitoly 15. Interaktivní rozhraní
 
@@ -30,37 +30,12 @@ Xamarin.Forms obsahuje 20 instantiable třídy, které jsou odvozeny od `View` a
 
 Osm zobrazení v této kapitole efektivně povolit uživatelům interakci s základní datové typy .NET:
 
-<table>
-  <tr>
-    <th>Datový typ</th>
-    <th>zobrazení</th>
-  </tr>
-  <tr>
-    <td>`Double`</td>
-    <td
-      <code><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/">Slider</a></code>,
-      <code><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Stepper/">Stepper</a></code>
-    </td>
-  </tr>
-  <tr>
-    <td>`Boolean`</td>
-    <td>
-      <code><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/">Switch</a></code>
-    </td>
-  </tr>
-  <tr>
-    <td>`String`</td>
-    <td>
-      <code><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/">Entry</a></code>, <code><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.Editor/">Editor</a></code>, <code><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/">SearchBar</a></code>
-    </td>
-  </tr>
-  <tr>
-    <td>`DateTime`</td>
-    <td>
-      <code><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/">DatePicker</a></code>, <code><a href="https://developer.xamarin.com/api/type/Xamarin.Forms.TimePicker/">TimePicker</a></code>
-    </td>
-  </tr>
-</table>
+|Datový typ|zobrazení|
+|--- |--- |
+|`Double`|[`Slider`](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/), [`Stepper`](https://developer.xamarin.com/api/type/Xamarin.Forms.Stepper/)|
+|`Boolean`|[`Switch`](https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/)|
+|`String`|[`Entry`](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/), [`Editor`](https://developer.xamarin.com/api/type/Xamarin.Forms.Editor/), [`SearchBar`](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/)|
+|`DateTime`|[`DatePicker`](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/), [`TimePicker`](https://developer.xamarin.com/api/type/Xamarin.Forms.TimePicker/)|
 
 Tato zobrazení si můžete představit jako interaktivní vizuální reprezentace základní datové typy. Tento koncept je více prozkoumali v další kapitoly [ **kapitoly 16. Datová vazba**](chapter16.md).
 
@@ -116,7 +91,7 @@ Inicializace `Slider` může způsobit vlastnosti `Value` vlastnosti chcete změ
 
 - [`Increment`](https://developer.xamarin.com/api/property/Xamarin.Forms.Stepper.Increment/) typu `double`, inicializovaného 1
 
-Vizuální `Stepper` se skládá ze dvou tlačítka označená **& #x 2013;** a  **+** . Stisknutím **& #x 2013;** snižuje `Value` podle `Increment` minimálně na `Minimum`. Stisknutím  **+**  zvyšuje `Value` podle `Increment` maximálně `Maximum`.
+Vizuální `Stepper` se skládá ze dvou tlačítka označená  **&ndash;**  a  **+** . Stisknutím  **&ndash;**  snižuje `Value` podle `Increment` minimálně na `Minimum`. Stisknutím  **+**  zvyšuje `Value` podle `Increment` maximálně `Maximum`.
 
 Tento postup je znázorněn pomocí [ **StepperDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/StepperDemo) ukázka.
 
