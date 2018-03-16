@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: b50c4bbef1510b739c4f7da7d732a4f4c66f13f3
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d53dea1a46c6b42f901beb217eb00b3a3fa0fd92
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="creating-ios-user-interfaces-in-code"></a>Vytváření iOS uživatelského rozhraní v kódu
 
@@ -69,7 +69,7 @@ Prázdná šablona projektu přidá 4 soubory do projektu:
 ## <a name="ios-templates"></a>iOS šablony
 
 
-Visual Studio pro Mac neposkytuje prázdné šablony. Součástí všech šablon scénáře podpory, které Apple doporučuje jako primární způsob, jak vytvořit uživatelského rozhraní. Nicméně je možné vytvořit uživatelské rozhraní v zcela v kódu. 
+Visual Studio pro Mac neposkytuje prázdné šablony. Součástí všech šablon scénáře podpory, které Apple doporučuje jako primární způsob, jak vytvořit uživatelského rozhraní. Nicméně je možné vytvořit uživatelské rozhraní zcela v kódu. 
 
 Následující postup vás provede odebrání scénáři z aplikace: 
 
@@ -316,7 +316,7 @@ V předchozím příkladu jsme začala vytvářet uživatelské rozhraní v kód
 
 iOS uživatelského rozhraní se skládají z hierarchie zobrazení. Další zobrazení, jako je například popisky tlačítek, posuvníků, atd., jsou přidány jako dílčích zobrazení některých nadřazeného zobrazení.
 
-Například můžeme upravit za účelem `CustomViewController` vytvořit přihlašovací obrazovku, kde může uživatel zadat uživatelské jméno a heslo. Na obrazovce bude obsahovat dvě textové pole a tlačítko.
+Umožňuje upravit, například `CustomViewController` vytvořit přihlašovací obrazovku, kde může uživatel zadat uživatelské jméno a heslo. Na obrazovce bude obsahovat dvě textové pole a tlačítko.
 
 ### <a name="adding-the-text-fields"></a>Přidání textová pole
 
@@ -433,7 +433,7 @@ View.AddSubviews(new UIView[] { usernameField, passwordField, submitButton });
 
 ## <a name="adding-button-functionality"></a>Přidání tlačítka funkce
 
-Při kliknutí na tlačítko vaši uživatelé budou očekávat něco stane, zda tato výstraha nebo přejdete na další obrazovce. 
+Při kliknutí na tlačítko vaši uživatelé budou očekávají, že určitou akci. Například se zobrazí výstraha nebo navigace se provede na další obrazovce. 
 
 Přidejme nějaký kód, který má být umístěn v zásobníku navigační druhého řadiče zobrazení.
 
@@ -497,7 +497,7 @@ Kromě použití ovládacích prvků, které jsou součástí UIKit, můžete ta
 
 ### <a name="inheriting-from-uiview"></a>Dědění z UIView
 
-První věc, kterou je potřeba udělat je vytvoření třídy pro vlastní zobrazení. Provedeme to pomocí **třída** šablony v sadě Visual Studio lze přidat prázdný třídu s názvem `CircleView`. Základní třída musí být nastavena na `UIView`, které odvolání je v `UIKit` oboru názvů. Budete také potřebovat `System.Drawing` i obor názvů. Další různých `System.*` obory názvů nemusí být použité v tomto příkladu, takže můžete bez obav odstranit je.
+První věc, kterou je potřeba udělat je vytvoření třídy pro vlastní zobrazení. Provedeme to pomocí **třída** šablony v sadě Visual Studio lze přidat prázdný třídu s názvem `CircleView`. Základní třída musí být nastavena na `UIView`, který jsme odvolat je v `UIKit` obor názvů. Budete také potřebovat `System.Drawing` i obor názvů. Další různých `System.*` obory názvů nemusí být použité v tomto příkladu, takže můžete bez obav odstranit je.
 
 Třída by měla vypadat takto:
 

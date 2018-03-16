@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 3871955f723d1b3aec6245bba0502ca4f955d64c
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 825b566ed45e8c337a1a452ec2c76a23e6a16462
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="xamarinandroid-performance"></a>Xamarin.Android Performance
 
@@ -156,7 +156,7 @@ public override View GetView(int position, View convertView, ViewGroup parent)
 
 Jako uživatel posune, [ `ListView` ](https://developer.xamarin.com/api/type/Android.Widget.ListView/) volání `GetView` přepsat požádat o nový pohledů pro zobrazení – Pokud je k dispozici předává nepoužívané zobrazení v `convertView` parametr. Pokud je tato hodnota `null` pak kód vytvoří novou [ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/) instanci, jinak `convertView` vlastnosti můžete obnovit a znovu použít.
 
-Další informace najdete v tématu [řádek zobrazení znovu použít](~/android/user-interface/layouts/list-view/populating.md) v [naplnění ListView s daty](~/android/user-interface/layouts/list-view/populating.md).
+Další informace najdete v tématu [řádek zobrazení znovu použít](~/android/user-interface/layouts/list-view/populating.md#row-view-re-use) v [naplnění ListView s daty](~/android/user-interface/layouts/list-view/populating.md).
 
 <a name="removeeventhandlers" />
 
@@ -225,7 +225,7 @@ Pro příjem oznámení při ukončení uživatelem uživatelského rozhraní, i
 
 ## <a name="optimize-image-resources"></a>Optimalizovat prostředky obrázků
 
-Bitové kopie jsou některé nejnákladnější prostředky, které aplikace používají, a jsou často zaznamenané v vysoké řešení. Proto když zobrazení bitovou kopii ji zobrazí v řešení vyžaduje obrazovky zařízení. Pokud bitová kopie je vyšší než obrazovky řešení, by měl být škálovat.
+Bitové kopie jsou některé nejnákladnější prostředky, které aplikace používají, a jsou často zaznamenané v vysoké řešení. Proto při zobrazení bitovou kopii, zobrazte ho v řešení vyžaduje obrazovky zařízení. Pokud bitová kopie je vyšší než obrazovky řešení, by měl být škálovat.
 
 Další informace najdete v tématu [optimalizovat prostředky obrázků](~/cross-platform/deploy-test/memory-perf-best-practices.md#optimizeimages) v [napříč platformami výkonu](~/cross-platform/deploy-test/memory-perf-best-practices.md) průvodce.
 

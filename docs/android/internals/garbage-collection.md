@@ -6,12 +6,12 @@ ms.assetid: 298139E2-194F-4A58-BC2D-1D22231066C4
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/15/2018
-ms.openlocfilehash: 05443bb341b2355c9e7a72f46b70214fb169e598
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/15/2018
+ms.openlocfilehash: db277f20e63a59690ffaa8a8544ff9540578d3f5
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="garbage-collection"></a>Kolekce paměti
 
@@ -21,12 +21,12 @@ Xamarin.Android používá na Mono [uvolňování jednoduché generační](http:
 -   Hlavní kolekce (shromažďuje Gen1 a velkého objektu místo haldách). 
 
 > [!NOTE]
-> Chybí kolekci explicitní prostřednictvím [GC. Collect()](https://developer.xamarin.com/api/member/System.GC.Collect/) kolekce jsou *na vyžádání*, závislosti na rozsahu přidělení haldy. *Toto není odkaz počítání systému*; objekty *nebudou shromažďovány co nejrychleji, pokud nejsou žádné nevyřízené odkazy*, nebo když byl ukončen obor. Globální Katalog se spustí při menší haldy nemá dostatek paměti pro nové přidělení. Pokud neexistují žádné přidělení, se nespustí.
+> Chybí kolekci explicitní prostřednictvím [GC. Collect()](xref:System.GC.Collect) kolekce jsou *na vyžádání*, závislosti na rozsahu přidělení haldy. *Toto není odkaz počítání systému*; objekty *nebudou shromažďovány co nejrychleji, pokud nejsou žádné nevyřízené odkazy*, nebo když byl ukončen obor. Globální Katalog se spustí při menší haldy nemá dostatek paměti pro nové přidělení. Pokud neexistují žádné přidělení, se nespustí.
 
 
-Menší kolekce jsou levných a časté a slouží ke shromažďování objekty nedávno přidělené a neaktivní. Méně závažné kolekce jsou prováděny po každých několik MB přidělené objektů. Menších kolekcí může ručně provést volání [GC. Shromažďovat (0)](https://developer.xamarin.com/api/member/System.GC.Collect/p/System.Int32/) 
+Menší kolekce jsou levných a časté a slouží ke shromažďování objekty nedávno přidělené a neaktivní. Méně závažné kolekce jsou prováděny po každých několik MB přidělené objektů. Menších kolekcí může ručně provést volání [GC. Shromažďovat (0)](/dotnet/api/system.gc.collect#System_GC_Collect_System_Int32_) 
 
-Hlavní kolekce jsou nákladné a méně častá a slouží k uvolnění neaktivní všechny objekty. Hlavní kolekce jsou prováděny po vyčerpání paměti pro aktuální velikost haldy (před změnou velikosti halda). Hlavní kolekce může ručně provést volání [GC. Shromažďovat ()](https://developer.xamarin.com/api/member/System.GC.Collect/) nebo voláním [GC. Shromažďovat (int)](https://developer.xamarin.com/api/member/System.GC.Collect/p/System.Int32) s argumentem [GC. MaxGeneration](https://developer.xamarin.com/api/property/System.GC.MaxGeneration/). 
+Hlavní kolekce jsou nákladné a méně častá a slouží k uvolnění neaktivní všechny objekty. Hlavní kolekce jsou prováděny po vyčerpání paměti pro aktuální velikost haldy (před změnou velikosti halda). Hlavní kolekce může ručně provést volání [GC. Shromažďovat ()](xref:System.GC.Collect) nebo voláním [GC. Shromažďovat (int)](/dotnet/api/system.gc.collect#System_GC_Collect_System_Int32_) s argumentem [GC. MaxGeneration](xref:System.GC.MaxGeneration). 
 
 
 
@@ -34,7 +34,7 @@ Hlavní kolekce jsou nákladné a méně častá a slouží k uvolnění neaktiv
 
 Existují tři kategorie typy objektů.
 
--   **Spravované objekty**: typy, které se *není* dědí [Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/) , například [System.String](https://developer.xamarin.com/api/type/System.String/). 
+-   **Spravované objekty**: typy, které se *není* dědí [Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/) , například [System.String](xref:System.String). 
     Tyto jsou shromažďována normálně globální Katalog. 
 
 -   **Objekty Java**: typy Java, které jsou k dispozici v rámci Android runtime virtuálního počítače, ale nejsou viditelné na Mono virtuální počítač. Tyto jsou boring a nebude popsané dál. Tyto jsou shromažďována normálně Android runtime virtuálního počítače. 
@@ -71,7 +71,7 @@ Konečný výsledek všechny Toto je, že instance objektu sdílené bude za pro
 
 Sdílené objekty nejsou logicky v Androidu runtime a Mono Virtuálního počítače. Například [Android.App.Activity](https://developer.xamarin.com/api/type/Android.App.Activity/) spravované sdílené instance bude mít odpovídající [android.app.Activity](http://developer.android.com/reference/android/app/Activity.html) framework sdílené Java instance. Všechny objekty, které dědí od [Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/) je možné očekávat tak, aby měl reprezentace v rámci oba virtuální počítače. 
 
-Všechny objekty, které mají reprezentaci v oba virtuální počítače bude mít životnosti, které jsou rozšířené ve srovnání s objekty, které jsou k dispozici pouze v rámci jednoho virtuálního počítače (například [ `System.Collections.Generic.List<int>` ](https://developer.xamarin.com/api/type/System.Collections.Generic.List%601/)). Volání metody [GC. Shromažďovat](https://developer.xamarin.com/api/member/System.GC.Collect/) nebude shromažďovat nutně tyto objekty, jako globální Katalog Xamarin.Android musí zajistit, že objekt neodkazuje buď virtuálního počítače před jeho shromažďování. 
+Všechny objekty, které mají reprezentaci v oba virtuální počítače bude mít životnosti, které jsou rozšířené ve srovnání s objekty, které jsou k dispozici pouze v rámci jednoho virtuálního počítače (například [ `System.Collections.Generic.List<int>` ](xref:System.Collections.Generic.List%601)). Volání metody [GC. Shromažďovat](xref:System.GC.Collect) nebude shromažďovat nutně tyto objekty, jako globální Katalog Xamarin.Android musí zajistit, že objekt neodkazuje buď virtuálního počítače před jeho shromažďování. 
 
 Tak, aby zkrátil doba života objektu, [Java.Lang.Object.Dispose()](https://developer.xamarin.com/api/member/Java.Lang.Object.Dispose/) by měla být volána. To bude ručně "server" připojení na objekt mezi dvěma virtuálními počítači pomocí uvolnění globální odkaz, což umožňuje objekty, které se mají shromažďovat rychlejší. 
 
@@ -140,7 +140,7 @@ Globální Katalog je neúplná zobrazení proces a nespustí může při nedost
 Například instance [Java.Lang.Object](https://developer.xamarin.com/api/type/Java.Lang.Object/) typu nebo odvozený typ je minimálně 20 bajtů velikost (mohou změnit bez předchozího upozornění atd., atd.). 
 [Spravované obálky s možností](~/android/internals/architecture.md) Nepřidávejte další instanci členy, takže pokud máte [Android.Graphics.Bitmap](https://developer.xamarin.com/api/type/Android.Graphics.Bitmap/) instanci, která odkazuje na objekt blob 10MB paměti, pro Xamarin.Android GC nebude vědět, že &ndash; globální Katalog Zobrazí objekt 20bajtová a bude schopen určit, že je propojený na Android přidělené runtime objekty, které je uchovávání 10MB paměti zachování připojení. 
 
-Je často potřeba pomoci globální Katalog. Bohužel *GC. AddMemoryPressure()* a *GC. RemoveMemoryPressure()* nepodporuje, takže když jste *vědět* právě uvolnila velkého objektu přidělené Java grafu, budete muset ručně volání [GC. Collect()](https://developer.xamarin.com/api/member/System.GC.Collect/) výzvu globální Katalog k uvolnění Java straně paměti, nebo můžete explicitně odstranění *Java.Lang.Object* podtřídy, porušení mapování mezi spravovaná obálka volatelná aplikacemi a Java instance. Například v tématu [chyb 1084](http://bugzilla.xamarin.com/show_bug.cgi?id=1084#c6). 
+Je často potřeba pomoci globální Katalog. Bohužel *GC. AddMemoryPressure()* a *GC. RemoveMemoryPressure()* nepodporuje, takže když jste *vědět* právě uvolnila velkého objektu přidělené Java grafu, budete muset ručně volání [GC. Collect()](xref:System.GC.Collect) výzvu globální Katalog k uvolnění Java straně paměti, nebo můžete explicitně odstranění *Java.Lang.Object* podtřídy, porušení mapování mezi spravovaná obálka volatelná aplikacemi a Java instance. Například v tématu [chyb 1084](http://bugzilla.xamarin.com/show_bug.cgi?id=1084#c6). 
 
 
 > [!NOTE]
@@ -314,7 +314,7 @@ class BetterActivity : Activity {
 
 ## <a name="minor-collections"></a>Méně závažné kolekce
 
-Menších kolekcí může ručně provést volání [GC. Collect(0)](https://developer.xamarin.com/api/member/System.GC.Collect/p/System.Int32). Méně závažné kolekce jsou levných (ve srovnání s hlavní kolekce), ale mají významným vlivem pevné náklady, takže nechcete spouštět je příliš často a by měl mít vždycky pozastavit několik milisekund. 
+Menších kolekcí může ručně provést volání [GC. Collect(0)](xref:System.GC.Collect). Méně závažné kolekce jsou levných (ve srovnání s hlavní kolekce), ale mají významným vlivem pevné náklady, takže nechcete spouštět je příliš často a by měl mít vždycky pozastavit několik milisekund. 
 
 Pokud vaše aplikace má "pracovní cyklus" ve kterém se samé provádí opakovaně, může být doporučuje ručně či menší kolekci po pracovní cyklus skončila. Příklad cla cykly patří: 
 
@@ -326,7 +326,7 @@ Pokud vaše aplikace má "pracovní cyklus" ve kterém se samé provádí opakov
 
 ## <a name="major-collections"></a>Hlavní kolekce
 
-Hlavní kolekce může ručně provést volání [GC. Collect()](https://developer.xamarin.com/api/member/System.GC.Collect/) nebo `GC.Collect(GC.MaxGeneration)`. 
+Hlavní kolekce může ručně provést volání [GC. Collect()](xref:System.GC.Collect) nebo `GC.Collect(GC.MaxGeneration)`. 
 
 Je třeba provést jen zřídka a může mít čas pozastavení sekundy na zařízení se systémem Android stylu při shromažďování haldy 512MB. 
 

@@ -7,15 +7,15 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 09/29/2017
-ms.openlocfilehash: bffc6bb1bc6537745fe9603906b5938fc3c34fe1
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: b15c9b05a4e476353322c6d29e94267313460bfe
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="installing-xamarin-in-visual-studio-on-windows"></a>Nainstalovat Xamarin v sadě Visual Studio v systému Windows
 
-Vzhledem k tomu, že je nyní součástí Xamarin všechny edice sady Visual Studio bez jakýchkoli nákladů a nevyžaduje samostatné licence, instalační program sady Visual Studio můžete použít ke stažení a instalaci nástrojů pro Xamarin.
+Xamarin je zdarma a zahrnuta ve všech edicích sady Visual Studio.
 
 <a name="requirements" />
 
@@ -25,7 +25,7 @@ Tady jsou požadované pro instalaci nástrojů Visual Studio tools pro Xamarin:
 
 1. Windows 7 nebo vyšší.
 
-2. Visual Studio 2015 nebo 2017 (Community, Professional a Enterprise).
+2. Visual Studio 2017 (Community, Professional a Enterprise).
 
 3. Xamarin for Visual Studio.
 
@@ -74,27 +74,6 @@ Pokud Visual Studio 2017 je již nainstalován, můžete přidat Xamarin znovu o
 
 Další informace o stažení a instalaci Visual Studio 2017 najdete v tématu [nainstalovat Visual Studio 2017](https://docs.microsoft.com/visualstudio/install/install-visual-studio).
 
-
-<a name="vs2015" />
-
-### <a name="adding-xamarin-to-visual-studio-2015"></a>Přidání Xamarin pro Visual Studio 2015
-
-Chcete-li Xamarin.Android přidat do existující instalace sady Visual Studio 2015, použijte následující kroky:
-
-1. Klikněte pravým tlačítkem na Windows **spustit** tlačítko a vyberte **programy a funkce**.
-
-2. Klikněte pravým tlačítkem na **Microsoft Visual Studio** a klikněte na tlačítko **změnu**.
-
-3. Když se zobrazí dialogové okno Instalační program Visual Studio, klikněte **upravit** tlačítko.
-
-4. V **funkce** kartě, přejděte dolů k položce **vývoj pro různé platformy Mobile**. Klikněte na zaškrtávací políčko vedle **C# nebo rozhraní .NET (Xamarin)**:
-
-    ![Přidání C# nebo Xamarin .NET pro Visual Studio 2015](windows-images/06-add-xamarin.png)
-
-5. Klikněte **aktualizace** tlačítko Přidat Xamarin pro Visual Studio.
-
-
-<a name="verifying" />
 
 ### <a name="verifying-installation"></a>Ověření instalace
 

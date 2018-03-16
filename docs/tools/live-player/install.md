@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/22/2017
-ms.openlocfilehash: 9b801af77eceaf94b0ede98b6af51d55d6029fe6
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ddc16dc1faaf623098aad5bca340c15f943223ba
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="xamarin-live-player-setup"></a>Instalační program za provozu Player Xamarin
 
@@ -68,7 +68,7 @@ Přehrávač Xamarin za provozu vyžaduje:
 
   Pokud není žádné zařízení je spárován, zobrazí se s pokyny, jak kód QR spárovat zařízení:
 
-    ![Pár okno zařízení](install-images/manage-empty-windows.png)
+  ![Pár okno zařízení](install-images/manage-empty-windows.png)
 
   Pokud se pro párování nelze kontaktovat zařízení, může zobrazovat chybu.
 
@@ -111,11 +111,11 @@ Přehrávač Xamarin za provozu vyžaduje:
 
   Pokud je spárován žádné zařízení, se zobrazí kód QR s pokyny, jak spárovat zařízení:
 
-    ![Pár okno zařízení](install-images/manage-empty.png)
+  ![Pár okno zařízení](install-images/manage-empty.png)
 
   Pokud se pro párování nelze kontaktovat zařízení, zobrazí se chyba:
 
-    ![Nelze se připojit k zařízení chybová zpráva](install-images/error-cannot-connect.png)
+  ![Nelze se připojit k zařízení chybová zpráva](install-images/error-cannot-connect.png)
 
 
 -----

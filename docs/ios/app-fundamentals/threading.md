@@ -6,21 +6,20 @@ ms.assetid: 50BCAF3B-1020-DDC1-0339-7028985AAC72
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 8be599f5b6541ef738ffa47a01374fd7f90044a4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 693ada611dc24d3bb22de7c51efe378939a732ad
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="threading"></a>Dělení na vlákna
 
-Modul runtime Xamarin.iOS poskytuje přístup k vývojářům .NET dělení na vlákna rozhraní API, i explicitní použijte vláken ( `System.Threading.Thread, System.Threading.ThreadPool`), implicitně při použití vzory asynchronního delegáta nebo metody BeginXXX stejně jako úplnou sadu rozhraní API podporující úlohu Parallel Library.
+Modul runtime Xamarin.iOS poskytuje vývojářům přístup k .NET dělení na vlákna rozhraní API, i explicitně při použití vláken (`System.Threading.Thread, System.Threading.ThreadPool`) a implicitně při použití vzory asynchronního delegáta nebo metody BeginXXX, jakož i úplné rozsahu z rozhraní API, která podporují Task Parallel Library.
 
 
 
-Xamarin důrazně doporučuje používat [Task Parallel Library](http://msdn.microsoft.com/en-us/library/dd460717.aspx)
-
- (TPL) pro vytváření aplikací mít několik důvodů:-Plánovač TPL výchozí budou delegovat to provedení úlohy do fondu vláken, který pak bude dynamicky zvětšovat počet vláken, které jsou potřeba, protože probíhá proces, při vyloučení scénář, kde příliš mnoho vláken ukončení až neslučitelných pro čas procesoru. 
+Xamarin důrazně doporučuje používat [Task Parallel Library](http://msdn.microsoft.com/en-us/library/dd460717.aspx) (TPL) pro vytváření aplikací mít několik důvodů:
+-  Plánovač TPL výchozí budou delegovat to provedení úlohy do fondu vláken, který naopak se dynamicky zvýší počet vláken, které jsou potřeba, protože probíhá proces, při vyloučení scénář, kde skončili neslučitelných pro doba využití procesoru příliš mnoho vláken. 
 -  Je snazší vezměte v úvahu operace z hlediska TPL úlohy. Můžete snadno s nimi manipulovat, k jejich plánování, serializaci jejich spuštění nebo spuštění mnoho paralelně s bohatou sadu rozhraní API. 
 -  Je základem pro programování s novou C# asynchronní jazyk rozšíření. 
 
@@ -41,7 +40,6 @@ MyThreadedRoutine ()
 {  
     var result = DoComputation ();  
 
-    //
     // we want to update an object that is managed by the main
     // thread; To do so, we need to ensure that we only access
     // this from the main thread:
@@ -77,4 +75,4 @@ Poznámka: Od verze Xamarin.iOS 5.2 nemáte poskytnout vlastní `NSAutoReleasePo
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Práce z vlákna uživatelského rozhraní](~/ios/user-interface/ios-ui/ui-thread.md)
+- [Práce s vláknem uživatelského rozhraní](~/ios/user-interface/ios-ui/ui-thread.md)

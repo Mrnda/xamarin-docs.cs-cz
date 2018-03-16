@@ -6,12 +6,12 @@ ms.assetid: 56137ACA-4811-B312-6860-E16D0FA123F7
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: 145c8507ca5ebea6197fa8827b93f58fbc9bb078
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/15/2018
+ms.openlocfilehash: 015fff63c612c3acf29681b90c1e945c5e460034
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="troubleshooting-tips"></a>Tipy pro odstraňování potíží
 
@@ -333,7 +333,7 @@ Pokud aplikace potřebuje dobré výkonu s plovoucí desetinnou čárkou (např�
 Nejsou k dispozici z Google Android SDK pro Windows 2 stahování.
 Pokud si zvolíte instalační program .exe, zapíše klíče registru, které informují Xamarin.Android, kam se nainstaloval. Zvolíte-li soubor .zip a rozbalte ho sami, Xamarin.Android nebude vědět, kde má být vyhledán sady SDK. Můžete zjistit Xamarin.Android kde sady SDK je v sadě Visual Studio přechodem na **nástroje > Možnosti > Xamarin > Nastavení Androidu**:
 
-[![Umístění sady SDK pro Android v nastavení Xamarin Android](troubleshooting-images/01a.png)](troubleshooting-images/01a.png#lightbox)
+[![Umístění sady SDK pro Android v nastavení Xamarin Android](troubleshooting-images/01.png)](troubleshooting-images/01.png#lightbox)
 
 
 
@@ -728,7 +728,7 @@ Pokud chcete použít C\# dynamické v aplikaci nebo knihovny, musíte přidat S
 
     -   Mějte na paměti této dynamický kód vždy náklady. Pokud potřebujete efektivní kódu, zvažte, není použití dynamický kód.
 
--   V první verzi preview byly vyloučeny tyto sestavení, pokud kód aplikace jsou explicitně použít typy v každé sestavení. Následující témata alternativní řešení: [http://lists.ximian.com/pipermail/mo...il/009798.html](http://lists.ximian.com/pipermail/monodroid/2012-April/009798.html)
+-   V první verzi preview byly vyloučeny tyto sestavení, pokud kód aplikace jsou explicitně použít typy v každé sestavení. Viz následující alternativní řešení: [http://lists.ximian.com/pipermail/mo...il/009798.html](http://lists.ximian.com/pipermail/monodroid/2012-April/009798.html)
 
 
 ## <a name="projects-built-with-aotllvm-crash-on-x86-devices"></a>Projekty vytvořené pomocí AOT + LLVM havárií na x86 zařízení

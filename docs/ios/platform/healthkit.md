@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 4f85f208c12561b6db9800d963e2d7bf32c2a4d0
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 3e21794c9f1d8f010ec323774bc93987f4b89e1d
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="healthkit"></a>HealthKit
 
@@ -67,7 +67,7 @@ Chcete-li získat další informace o zřizování aplikace pro iOS, [zřizován
 
 Vytvoření explicitního **ID aplikace** a odpovídající **profil zřizování** se provádí v rámci společnosti Apple [iOS Dev Center](https://developer.apple.com/devcenter/ios/index.action). 
 
-Vaše aktuální **ID aplikace** jsou uvedeny v rámci [certifikáty, identifikátory a profily](https://developer.apple.com/account/ios/identifiers/bundle/bundleList.action) části webu Dev Center. Často se zobrazí tento seznam **ID** hodnoty `*`, která udává, **ID aplikace*- **název** lze použít s libovolným počtem přípony. Takové *ID aplikace zástupné* nelze použít s Kit stavu.
+Vaše aktuální **ID aplikace** jsou uvedeny v rámci [certifikáty, identifikátory a profily](https://developer.apple.com/account/ios/identifiers/bundle/bundleList.action) části webu Dev Center. Často se zobrazí tento seznam **ID** hodnoty `*`, která udává, **ID aplikace** - **název** lze použít s libovolným počtem přípony. Takové *ID aplikace zástupné* nelze použít s Kit stavu.
  
 K vytvoření explicitního **ID aplikace**, klikněte na tlačítko  **+**  tlačítko v pravém horním provést, abyste **registrace iOS ID aplikace** stránky:
 

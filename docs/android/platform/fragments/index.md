@@ -7,12 +7,12 @@ ms.assetid: 1AFB4242-A337-F8E0-83D9-B8D850D7F384
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 8595ecb63e49a4768120e98f41826b74c2dd43e4
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/15/2018
+ms.openlocfilehash: 0a9a1f41810fe113ac3d88d2533411ac537840ab
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="fragments"></a>Fragmenty
 
@@ -53,9 +53,9 @@ Fragmenty jsou k dispozici v systému Android SDK počínaje úroveň rozhraní 
 
 [![Vyberte úroveň rozhraní API v Android SDK Manager](images/02.png)](images/02.png#lightbox)
 
-Fragmenty jsou k dispozici v Xamarin.Android 4.0 a vyšší. Aplikace pro Xamarin.Android musí být alespoň úroveň rozhraní API 11 (Android 3.0) nebo vyšší, aby bylo možné používat fragmenty. Cílovém Frameworku, který může být nastavena v možnostech projektu, jak je uvedeno níže:
+Fragmenty jsou k dispozici v Xamarin.Android 4.0 a vyšší. Aplikace pro Xamarin.Android musí být alespoň úroveň rozhraní API 11 (Android 3.0) nebo vyšší, aby bylo možné používat fragmenty. Cílové rozhraní lze nastavit v projektu vlastnosti, jak je uvedeno níže:
 
-[![Nastavení úrovně rozhraní Target Framework API v možnosti projektu](images/03.png)](images/03.png#lightbox)
+[![Nastavení úrovně rozhraní Target Framework API v možnosti projektu](images/03-sml.png)](images/03.png#lightbox)
 
 Je možné použít fragmenty ve starších verzích systému Android pomocí balíček Android podporu a Xamarin.Android 4.2 nebo novější. Jak na to je podrobněji popsány v dokumentech v této části.
 

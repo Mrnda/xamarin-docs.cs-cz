@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/12/2017
-ms.openlocfilehash: 670ec465843bbe819b41a53fff71b01ab78b0059
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: f09aae1445cfcf9f4225af3de37b65ebb5a1b6b2
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="providing-backwards-compatibility-with-the-android-support-package"></a>Poskytnutí zpětné kompatibility s balíčkem podpora pro Android
 
@@ -25,13 +25,13 @@ Užitečnost fragmenty by omezené bez zpětné kompatibility předem 3.0 (11 ú
 
 Balíček Android podporu není automaticky přidat do aplikace pro Xamarin.Android. Poskytuje Xamarin [balíček NuGet v4 knihovna pro Android podporují](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) zjednodušit přidání podpory knihovny do aplikace pro Xamarin.Android. K přidání podpory balíčky do vašeho Xamarin.Android aplikace obsahovat [knihovna pro Android podporují v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) komponentu do projektu Xamarin.Android, jak je znázorněno na následujícím snímku obrazovky: 
 
-[![Snímek obrazovky z podpory knihovna pro Android v4 balíčku se přidává do projektu](providing-backwards-compatibility-images/02.png)](providing-backwards-compatibility-images/02.png#lightbox)
+[![Snímek obrazovky z podpory knihovna pro Android v4 balíčku se přidává do projektu](providing-backwards-compatibility-images/02-sml.png)](providing-backwards-compatibility-images/02.png#lightbox)
 
 Po provedení těchto kroků, bude možné použít fragmenty v dřívějších verzích systému Android. Rozhraní API Fragment bude fungovat stejným nyní ve tyto starší verze, s následujícími výjimkami: 
 
 -   **Změnit minimální verze Android** &ndash; aplikace se už nepotřebuje pro Android 3.0 nebo vyšší, jak je uvedeno níže: 
 
-    [![Snímek obrazovky z aplikaci minimální Android cíl se nastavuje v části Vlastnosti aplikace](providing-backwards-compatibility-images/03.png)](providing-backwards-compatibility-images/03.png#lightbox)
+    [![Snímek obrazovky z aplikaci minimální Android cíl se nastavuje v části Android Manifest](providing-backwards-compatibility-images/03-sml.png)](providing-backwards-compatibility-images/03.png#lightbox)
 
 -   **Rozšíření FragmentActivity** &ndash; aktivit, které jsou hostiteli fragmenty teď musí dědit z `Android.Support.V4.App.FragmentActivity` a nikoli z `Android.App.Activity` . 
 

@@ -6,38 +6,33 @@ ms.assetid: DACD0C14-5DDF-7BDE-6844-80550D301307
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/15/2018
-ms.openlocfilehash: 242adc94f04b3bda40238370ca924c1807a0c787
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/15/2018
+ms.openlocfilehash: 109c1e0f16d3a288160b64ec6ff833e5b31c4efd
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="supporting-pre-honeycomb-android-using-support-packages"></a>Podpora předběžné voštinový Android pomocí podpůrných balíčků
 
 *Balíček Android podporu* se skládá z knihovny, které zpět portu některé nové rozhraní API &ndash; například fragmenty &ndash; na starší verze systému Android. Proto přidáním podpory balíček Android jsme můžete spustit aplikace v zařízeních se systémem Android 2.3 jak ukazují následující obrazovky:
 
-![Fragmenty návod – snímek obrazovky](supporting-pre-honeycomb-images/00.png)
-
-![Podrobnosti aktivity – snímek obrazovky](supporting-pre-honeycomb-images/01.png)
-
+[![Fragmenty návod a podrobnosti aktivity snímky obrazovky](supporting-pre-honeycomb-images/01-sml.png)](supporting-pre-honeycomb-images/01.png#lightbox)
 
 ## <a name="adding-the-support-package"></a>Probíhá přidávání balíčku podpory
 
 Balíček Android podporu není automaticky přidat do aplikace pro Xamarin.Android. Poskytuje Xamarin [balíček NuGet v4 knihovna pro Android podporují](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) zjednodušit přidání podpory knihovny do aplikace pro Xamarin.Android.
 K přidání podpory balíčky do vašeho Xamarin.Android aplikace obsahovat [knihovna pro Android podporují v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) komponentu do projektu Xamarin.Android, jak je znázorněno na následujícím snímku obrazovky:
 
-![Probíhá přidávání balíčku v4 podporu knihovna pro Android](supporting-pre-honeycomb-images/02.png)
+[![Probíhá přidávání balíčku v4 podporu knihovna pro Android](supporting-pre-honeycomb-images/02-sml.png)](supporting-pre-honeycomb-images/02.png#lightbox)
 
 Po přidání balíčku, změňte cílový framework Android 2.2 nebo vyšší:
 
-![Snímek obrazovky Změna úrovně rozhraní Target Framework API](supporting-pre-honeycomb-images/03.png)
+[![Snímek obrazovky Změna úrovně rozhraní Target Framework API](supporting-pre-honeycomb-images/03-sml.png)](supporting-pre-honeycomb-images/03.png#lightbox)
 
 Také se ujistěte, že cílem minimální verze Android stejnou úroveň rozhraní API:
 
-![Snímek obrazovky nastavení minimální verzi systému Android](supporting-pre-honeycomb-images/04.png)
-
-
+[![Snímek obrazovky nastavení minimální verzi systému Android](supporting-pre-honeycomb-images/04-sml.png)](supporting-pre-honeycomb-images/04.png#lightbox)
 
 ### <a name="change-mainactivity-to-derive-from-fragmentactivity"></a>Změnit MainActivity k odvozování z FragmentActivity
 

@@ -8,20 +8,20 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: c4b2a103821bb18da4878cd37335faa899e910be
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ee79c79d7b3226f23851a3157e5a609d7cfc4cf4
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="working-with-user-defaults"></a>Práce s výchozí nastavení uživatele
 
-_Tento článek se zabývá práci s NSUserDefault uložit výchozí nastavení v Xamarin iOS aplikace nebo rozšíření._
+_Tento článek se zabývá práci s NSUserDefault se uložit nastavení výchozí v aplikaci Xamarin.iOS nebo rozšíření._
 
 
-`NSUserDefaults` Třída poskytuje způsob, jak pro iOS aplikace a rozšíření prostřednictvím kódu programu interakci se systémem výchozí systémové. Když použijete výchozí nastavení systému, můžete nakonfigurovat uživatele chování aplikace nebo práce se styly ke splnění jejich předvoleb (podle návrhu aplikace). Chcete-li například prezentují data v sadě vs metriky měření britské nebo vyberte daný motiv uživatelského rozhraní.
+`NSUserDefaults` Třída poskytuje způsob, jak pro iOS aplikace a rozšíření prostřednictvím kódu programu interakci s systémové výchozí nastavení systému. Když použijete výchozí nastavení systému, můžete nakonfigurovat uživatele chování aplikace nebo práce se styly ke splnění jejich předvoleb (podle návrhu aplikace). Chcete-li například prezentují data v sadě vs metriky měření britské nebo vyberte daný motiv uživatelského rozhraní.
 
-Pokud používá skupin aplikací, `NSUserDefaults` také poskytuje způsob, jak komunikovat mezi aplikace (nebo rozšíření) v rámci dané skupiny.
+Při použití s skupin aplikací, `NSUserDefaults` také poskytuje způsob, jak komunikovat mezi aplikace (nebo rozšíření) v rámci dané skupiny.
 
 <a name="About-User-Defaults" />
 
@@ -32,7 +32,7 @@ Jak jsme uvedli výše, výchozí uživatelská nastavení (`NSUserDefaults`) m�
 Když aplikace nejprve provede, `NSUserDefaults` čte klíče a hodnoty z výchozí databázi uživatele aplikace a ukládá je do paměti aby se zabránilo otevírání a čtení databáze pokaždé, když je vyžadována hodnota. 
 
 > [!IMPORTANT]
-> **Poznámka:**: Apple už naznačují, že vývojář volání `Synchronize` metoda přímo synchronizovat mezipaměť v paměti s databází. Místo toho bude automaticky zavolána v pravidelných intervalech, aby synchronizovaná s výchozí databázi uživatele mezipaměť v paměti.
+> **Poznámka:**: Apple už doporučuje vývojáře volání `Synchronize` metoda přímo synchronizovat mezipaměť v paměti s databází. Místo toho bude automaticky zavolána v pravidelných intervalech, aby synchronizovaná s výchozí databázi uživatele mezipaměť v paměti.
 
 `NSUserDefaults` Třída obsahuje několik usnadňující metody pro čtení a zápis hodnoty předvoleb pro běžné typy dat, jako například: řetězec, celé číslo, float, logické a adresy URL. Jiné typy dat mohou být archivovány pomocí `NSData`, číst nebo zapisovat do výchozí databázi uživatele. Další informace najdete v tématu společnosti Apple [průvodci programováním nastavení a předvolby](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/UserDefaults/Introduction/Introduction.html#//apple_ref/doc/uid/10000059i).
 
@@ -46,7 +46,7 @@ Sdílené uživatelské výchozí Instance poskytuje přístup k výchozí uživ
 - Identifikátor svazku domény aplikace.
 - `NSGlobalDomain` Skládající se z výchozí hodnoty sdílí všechny aplikace.
 - Samostatné doméně pro jednotlivé jazyky upřednostňované uživatele.
-- `NSRegistationDomain` Sadu dočasné výchozí hodnoty, které je možné upravit aplikace k zajištění hledání jsou vždy úspěšné.
+- `NSRegistrationDomain` Sadu dočasné výchozí hodnoty, které je možné upravit aplikace k zajištění hledání jsou vždy úspěšné.
 
 Pro přístup k sdílené uživatelské výchozí Instance, použijte následující kód:
 
@@ -59,11 +59,11 @@ var plist = NSUserDefaults.StandardUserDefaults;
 
 ## <a name="accessing-an-app-group-nsuserdefaults-instance"></a>Přístup k instanci NSUserDefaults skupiny aplikací
 
-Jak jsme uvedli výše, a to pomocí skupin aplikací, `NSUserDefaults` lze použít ke komunikaci mezi aplikací (nebo rozšíření) v rámci dané skupiny. Nejprve budete muset zajistit, že skupiny aplikace a vyžaduje ID aplikace byly správně nakonfigurovány v **certifikáty, identifikátory a profily** části na [iOS Dev Center](https://developer.apple.com/devcenter/ios/) a nainstalovány na ve vývojovém prostředí.
+Jak jsme uvedli výše, a to pomocí skupin aplikací, `NSUserDefaults` lze použít ke komunikaci mezi aplikací (nebo rozšíření) v rámci dané skupiny. Nejprve budete muset zajistit, že skupiny aplikace a vyžaduje ID aplikace byly správně nakonfigurovány v **certifikáty, identifikátory a profily** části na [iOS Dev Center](https://developer.apple.com/devcenter/ios/) a nainstalovány ve vývojovém prostředí.
 
-V dalším kroku projekty, aplikace nebo rozšíření muset mít jednu z platné ID aplikace vytvořili výše, který `Entitlements.plist` soubor má skupin aplikací povoleno a zadaný a že získat je součástí sady prostředků aplikace.
+Dále je nutné mít jeden z platné ID aplikace vytvořili výše, aplikace nebo rozšíření projekty a `Entitlements.plist` musí být součástí sady prostředků aplikace pomocí skupin aplikací povoleno a zadaný soubor.
 
-Pomocí této vše na místě sdílené výchozí nastavení aplikace skupiny uživatelů je přístupná pomocí následujícího kódu:
+Pomocí této vše na místě sdílené aplikaci skupiny výchozí uživatelská nastavení je přístupná pomocí následujícího kódu:
 
 ```csharp
 // Get App Group User Defaults

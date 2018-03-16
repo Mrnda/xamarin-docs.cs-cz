@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: b75bc7e4ccf53e82ff107c867c5ba01813960ea5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 0456742ca30257670375e3ae781dcdc49707e2ce
+ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="the-command-interface"></a>Rozhraní příkazového
 
@@ -22,7 +22,7 @@ Rozhraní řídicího poskytuje alternativní způsob implementace příkazy, je
 
 Umožňuje vytvoření vazby dat mezi `Button` a ViewModel, `Button` definuje dvě vlastnosti:
 
-- [`Command`](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.Command/) typu [`ICommand`](https://developer.xamarin.com/api/type/System.Windows.Input.ICommand/)
+- [`Command`](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.Command/) typu <xref:System.Windows.Input.ICommand>
 - [`CommandParameter`](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.CommandParameter/) typu `Object`
 
 Pokud chcete používat rozhraní příkazového, definujete vazbu dat, která je cílena `Command` vlastnost `Button` Pokud je zdrojem na vlastnost ve ViewModel typu `ICommand`. ViewModel obsahuje kód, který přidružené `ICommand` vlastnost, která se spustí, až po kliknutí na tlačítko. Můžete nastavit `CommandParameter` na libovolná data k rozlišení mezi více tlačítek, pokud jsou všechny vázán ke stejné `ICommand` vlastnost ViewModel.
@@ -39,7 +39,7 @@ Všechny tyto příkazy lze zpracovat v rámci ViewModel způsobem, který nezá
 
 ## <a name="the-icommand-interface"></a>Rozhraní ICommand
 
-[ `ICommand` ](https://developer.xamarin.com/api/type/System.Windows.Input.ICommand/) Rozhraní není součástí Xamarin.Forms. Je definována místo v [ `System.Windows.Input` ](https://developer.xamarin.com/api/namespace/System.Windows.Input/) obor názvů a se skládá ze dvou metod a jedna událost:
+<xref:System.Windows.Input.ICommand> Rozhraní není součástí Xamarin.Forms. Je definována místo v [System.Windows.Input](xref:System.Windows.Input) obor názvů a se skládá ze dvou metod a jedna událost:
 
 ```csharp
 public interface ICommand
