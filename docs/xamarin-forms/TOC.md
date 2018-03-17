@@ -121,6 +121,7 @@
 ### [DataPages](user-interface/datapages/index.md)
 #### [Začínáme](user-interface/datapages/get-started.md)
 #### [Referenční informace o ovládacích prvcích](user-interface/datapages/controls.md)
+### [DatePicker](user-interface/datepicker.md)
 ### [Grafika](user-interface/graphics/index.md)
 #### [Používání CocosSharpu v Xamarin.Forms](user-interface/graphics/cocossharp.md)
 #### [Používání SkiaSharpu v Xamarin.Forms](user-interface/graphics/skiasharp/index.md)
