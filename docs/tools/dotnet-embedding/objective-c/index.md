@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: f6d19f0f6573b17dfb3feb6bf131686413d4e68f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 047f7d7497a114bf4b7c94e50bdf09862b882794
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="objective-c-support"></a>Podpora jazyka Objective-C
 
@@ -201,13 +201,11 @@ Z důvodu `NSDate` referenční datum, všechny převody mezi ho a `DateTime` je
 
 Při převodu z `DateTime` k `NSDate` data a času `Kind` vlastnost je vzít v úvahu.
 
-<table>
-<tr><th> Typ         </th><th> Výsledky                                                                                            </th></tr>
-<!--tr><td> ------------ </td><td> -------------------------------------------------------------------------------------------------- </td></tr-->
-<tr><td> Čas UTC          </td><td> Převod se provádí pomocí zadaného objektu data a času, jako je.                                  </td></tr>
-<tr><td> místní        </td><td> Výsledek volání `ToUniversalTime ()` v zadané datum a čas objekt se používá pro převod. </td></tr>
-<tr><td> Tento parametr  </td><td> Zadané datum a čas objektu předpokládá se, že UTC, takže stejné chování jako typ == Utc.                </td></tr>
-</table>
+|Typ|Výsledky                                                                                            |
+|---|---|
+|Čas UTC|Převod se provádí pomocí poskytnutého `DateTime` objektů, jako je.|
+|místní|Výsledek volání `ToUniversalTime()` v zadaných `DateTime` objekt se používá pro převod.|
+|Tento parametr|Poskytnutého `DateTime` objektu předpokládá se, že UTC, takže stejné chování jako typ == Utc.|
 
 Převod se provádí pomocí tohoto vzorce:
 

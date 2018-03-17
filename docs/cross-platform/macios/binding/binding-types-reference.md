@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/06/2018
-ms.openlocfilehash: 6042ab9aa861a08da421140857459b02a78f7c70
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 568650a850b9db1fa22deef55eebb6a437e7e0b7
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="binding-types-reference-guide"></a>Vazby typů referenční příručka
 
@@ -1987,70 +1987,20 @@ interface MyColoringKeys {
 
 Jsou podporovány následující typy dat v `StrongDictionary` definice:
 
-<table border="1" cellpadding="1" cellspacing="1" width="80%">
-<tbody>
-  <tr>
-    <td>Typ rozhraní jazyka C#</td>
-    <td>Typ NSDictionary úložiště</td>
-  </tr>
-  <tr>
-    <td>bool</td>
-    <td>Logická hodnota, které jsou uložené v NSNumber</td>
-  </tr>
-  <tr>
-    <td>Hodnoty výčtu</td>
-    <td>celé číslo, které jsou uložené v NSNumber</td>
-  </tr>
-  <tr>
-    <td>int</td>
-    <td>32bitové celé číslo uložené v NSNumber</td>
-  </tr>
-  <tr>
-    <td>uint</td>
-    <td>32bitové celé číslo bez znaménka uložené v NSNumber</td>
-  </tr>
-  <tr>
-    <td>nint</td>
-    <td>NSInteger uložené v NSNumber</td>
-  </tr>
-  <tr>
-    <td>nuint</td>
-    <td>NSUInteger uložené v NSNumber</td>
-  </tr>
-  <tr>
-    <td>long</td>
-    <td>64bitové celé číslo uložené v NSNumber</td>
-  </tr>
-  <tr>
-    <td>float</td>
-    <td>32bitové celé číslo uložené jako NSNumber</td>
-  </tr>
-  <tr>
-    <td>double</td>
-    <td>64bitové celé číslo uložené jako NSNumber</td>
-  </tr>
-  <tr>
-    <td>NSObject a podtřídy</td>
-    <td>NSObject</td>
-  </tr>
-  <tr>
-    <td>NSDictionary</td>
-    <td>NSDictionary</td>
-  </tr>
-  <tr>
-    <td>odkazy řetězců</td>
-    <td>NSString</td>
-  </tr>
-  <tr>
-    <td>NSString</td>
-    <td>NSString</td>
-  </tr>
-  <tr>
-    <td>C# pole NSObject</td>
-    <td>NSArray</td>
-  </tr>
-  <tr>
-    <td>Výčty pole jazyka C#</td>
-    <td>NSArray obsahující NSNumbers s hodnotou</td>
-  </tr>
-</tbody>
+|Typ rozhraní jazyka C#|`NSDictionary` Typ úložiště|
+|---|---|
+|`bool`|`Boolean` uložené v `NSNumber`|
+|Hodnoty výčtu|celé číslo uložené v `NSNumber`|
+|`int`|32bitové celé číslo uložené v `NSNumber`|
+|`uint`|32bitové celé číslo bez znaménka uložené v `NSNumber`|
+|`nint`|`NSInteger` uložené v `NSNumber`|
+|`nuint`|`NSUInteger` uložené v `NSNumber`|
+|`long`|64bitové celé číslo uložené v `NSNumber`|
+|`float`|32bitové celé číslo uložené jako `NSNumber`|
+|`double`|64bitové celé číslo uložené jako `NSNumber`|
+|`NSObject` a podtřídy|`NSObject`|
+|`NSDictionary`|`NSDictionary`|
+|`string`|`NSString`|
+|`NSString`|`NSString`|
+|C# `Array` z `NSObject`|`NSArray`|
+|C# `Array` výčtů|`NSArray` obsahující `NSNumber` hodnoty|

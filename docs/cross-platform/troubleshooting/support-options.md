@@ -6,11 +6,11 @@ ms.assetid: E4EF7E0F-ED86-44C9-9F98-38ECF881C7E2
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 6ca5b4d70669909b952752f7d600fcac37e9f557
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 68b420f98461ee42862726a658d721b36326c203
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="what-support-options-are-available-for-xamarin"></a>Jaké možnosti podpory jsou k dispozici pro Xamarin?
 
@@ -18,28 +18,13 @@ ms.lasthandoff: 03/09/2018
 
 Jak je znázorněno na [podpora pro Xamarin stránky](https://www.xamarin.com/support), jsou k dispozici několik možností.  Tady jsou některé rychlé počáteční doporučení [INSPIROVANÉ Stack Overflow](http://stackoverflow.com/help/product-support) o tom, jak vybrat nejlepší možnost:
 
-<table>
-    <tr>
-        <td>"Co tato chyba znamená?" nebo "Jak se dá...?"</td>
-        <td><a href="http://stackoverflow.com/questions/ask?tags=xamarin">Přetečení zásobníku</a> pod <em>xamarin</em> značky</td>
-    </tr>
-    <tr>
-        <td>I myslet, že tento problém je způsoben vadu ve zdrojovém kódu Xamarin.</td>
-        <td><a href="https://bugzilla.xamarin.com/page.cgi?id=bug-writing.html">Xamarin Bugzilla</a></td>
-    </tr>
-    <tr>
-        <td>Používám představu, žádost o funkce nebo nový požadavek na dokumentaci.</td>
-        <td><a href="https://xamarin.uservoice.com">Stránku Xamarin UserVoice</a></td>
-    </tr>
-    <tr>
-        <td>Jaké prostředky, architektury nebo nástroje jiných uživatelů doporučujeme pro...? (a další zprostředkovává diskusí)</td>
-        <td><a href="https://forums.xamarin.com/">Fóra Xamarin</a></td>
-    </tr>
-    <tr>
-        <td>Dotaz o předplatných, je nutné licenčních smluv, nebo ceny.</td>
-        <td>E-mailu nebo volat pomocí kontaktní údaje na <a href="https://www.xamarin.com/faq">– nejčastější dotazy</a></td>
-    </tr>
-</table>
+|   |   |
+|---|---|
+|"Co tato chyba znamená?" nebo "Jak se dá...?"|[Přetečení zásobníku](http://stackoverflow.com/questions/ask?tags=xamarin) pod *xamarin* značky|
+|I myslet, že tento problém je způsoben vadu ve zdrojovém kódu Xamarin.|[Xamarin Bugzilla](https://bugzilla.xamarin.com/page.cgi?id=bug-writing.html)|
+|Používám představu, žádost o funkce nebo nový požadavek na dokumentaci.|[Stránku Xamarin UserVoice](https://xamarin.uservoice.com)|
+|Jaké prostředky, architektury nebo nástroje jiných uživatelů doporučujeme pro...? (a další zprostředkovává diskusí)|[Fóra Xamarin](https://forums.xamarin.com)|
+|Dotaz o předplatných, je nutné licenčních smluv, nebo ceny.|E-mailu nebo volat pomocí kontaktní údaje na [– nejčastější dotazy](https://www.xamarin.com/faq)|
 
 Tým podpory Xamarin pomáhá monitorovat každá z těchto možností.  Doporučujeme všem uživatelům přispět jejich žádný jazyk dotazy a sestavy, výhod a pomáhá rozšiřovat zkušení komunity vývojářů Xamarin.  Možného poškození je nutné odesílat sestavy chyb, pokud je to možné zajistit, že jsou problémy oficiálně sledovanými technického týmu Xamarin.
 

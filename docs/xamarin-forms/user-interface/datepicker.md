@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/12/2018
-ms.openlocfilehash: d47499c1e309fbc67c85b55cacbbba3942188f54
-ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
+ms.openlocfilehash: 5c214fe4124b900ea63399b97084d1ce0e181d4a
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="using-datepicker"></a>Pomocí ovládací prvek DatePicker
 
@@ -48,7 +48,7 @@ DatePicker datePicker = new DatePicker
 };
 ```
 
-Při `DateTime` hodnota v zadané v jazyce XAML, používá analyzátor XAML `DateTime.Parse` metoda s `CultureInfo.InvariantCulture` argument převést řetězec, který má `DateTime` hodnotu. Kalendářní data musí být zadán v přesné formátu: letopočty měsíců, dnů letopočty a čtyřciferné letopočty oddělených lomítka:
+Při `DateTime` je zadaná hodnota v jazyce XAML, používá analyzátor XAML `DateTime.Parse` metoda s `CultureInfo.InvariantCulture` argument převést řetězec, který má `DateTime` hodnotu. Kalendářní data musí být zadán v přesné formátu: letopočty měsíců, dnů letopočty a čtyřciferné letopočty oddělených lomítka:
 
 ```xaml
 <DatePicker MinimumDate="01/01/2018"
@@ -78,7 +78,7 @@ Je možné použít možnost neomezeným vodorovném rozložení, jako je `Cente
             ··· />
 ```
 
-Ale toto se nedoporučuje. V závislosti na nastavení jazyka `Format` vybrané vlastnosti kalendářních dat může vyžadovat jiným zobrazením šířky. Například způsobí, že řetězec formátu "D" `DateTime` zobrazení dat ve formátu dlouhé a "Středa, 12 září 2018" vyžaduje větší šířka zobrazení než "Pátek, 4 může 2018". V závislosti na platformě, může dojít k tomuto rozdílu `DateTime` zobrazení změnit šířku v rozložení, nebo pro displej tak, aby se zkrátila.
+Ale toto se nedoporučuje. V závislosti na nastavení jazyka `Format` vybrané vlastnosti kalendářních dat může vyžadovat jiným zobrazením šířky. Například způsobí, že řetězec formátu "D" `DateTime` zobrazení dat ve formátu dlouhé a "Středa, 12 září 2018" vyžaduje větší šířka zobrazení než "Pátek, 4 může 2018." V závislosti na platformě, může dojít k tomuto rozdílu `DateTime` zobrazení změnit šířku v rozložení, nebo pro displej tak, aby se zkrátila.
 
 > [!TIP]
 > Je nejvhodnější použít výchozí `HorizontalOptions` nastavení `Fill` s `DatePicker`a nepoužívat šířka `Auto` při uvedení `DatePicker` v `Grid` buňky.
@@ -139,7 +139,7 @@ Tady je souboru XAML:
 </ContentPage>
 ```
 
-Každý `DatePicker` je přiřazen `Format` vlastnost "D" pro formát dlouhého data. Všimněte si také, že `endDatePicker` objekt má vazbu, která je cílena jeho `MinimumDate` vlastnost. Je vybraný zdroj vazby `Date` vlastnost `startDatePicker` objektu. Tím se zajistí, že koncové datum je vždy později než nebo rovna počáteční datum. Kromě dva `DatePicker` objekty, `Switch` označením "Zahrnout i den celkem". 
+Každý `DatePicker` je přiřazen `Format` vlastnost "D" pro formát dlouhého data. Všimněte si také, že `endDatePicker` objekt má vazbu, která je cílena jeho `MinimumDate` vlastnost. Je vybraný zdroj vazby `Date` vlastnost `startDatePicker` objektu. Tím se zajistí, že koncové datum je vždy později než nebo rovna počáteční datum. Kromě dva `DatePicker` objekty, `Switch` označením "Zahrnout i dny celkem." 
 
 Dva `DatePicker` zobrazení mají obslužné rutiny, které jsou připojené k `DateSelected` události a `Switch` má obslužná rutina připojené k jeho `Toggled` událostí. Tyto obslužné rutiny událostí v souboru kódu na pozadí a aktivovat nový výpočet dní mezi dvěma kalendářními:
 

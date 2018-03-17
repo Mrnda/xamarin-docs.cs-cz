@@ -9,11 +9,11 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 017f3c1b5fc14bf22a5ad85d1017bc8125b04038
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 6e0eebef2404ce3f117fe897d456f3ef78a8f585
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="ios-extensions"></a>iOS rozšíření
 
@@ -44,63 +44,14 @@ Tento článek obsahuje následující témata:
 
 ## <a name="extension-points"></a>Rozšíření body
 
-Existuje několik typů rozšíření, která se dají vytvořit v iOS 8 (a vyšší):
-
-<table>
-<colgroup>
-<col />
-<col />
-<col />
-</colgroup>
-
-<thead>
-<tr>
-    <th >Typ</th>
-    <th >Popis</th>
-    <th >Rozšíření bodu</th>
-    <th >Hostitele aplikace</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-    <td >Akce</td>
-    <td >Specializované editor nebo prohlížeč pro určitý typ média</td>
-    <td ><code>com.apple.ui-services</code></td>
-    <td >všechny</td>
-</tr>
-<tr>
-    <td >Zprostředkovatel dokumentu</td>
-    <td >Umožňuje aplikaci, aby používala dokumentu vzdáleného úložiště</td>
-    <td ><code>com.apple.fileprovider-ui</code></td>
-    <td >Aplikace používající <a href="https://developer.xamarin.com/api/type/UIKit.UIDocumentPickerViewController/">UIDocumentPickerViewController</a></td>
-</tr>
-<tr>
-    <td >Klávesnice</td>
-    <td >Alternativní klávesnice</td>
-    <td ><code>com.apple.keyboard-service</code></td>
-    <td >všechny</td>
-</tr>
-<tr>
-    <td >Úpravy fotografií</td>
-    <td >Fotografie manipulaci a úpravy</td>
-    <td ><code>com.apple.photo-editing</code></td>
-    <td >Photos.App editor</td>
-</tr>
-<tr>
-    <td >Sdílené složky</td>
-    <td >Sdílí data se sociálními sítěmi, zasílání zpráv služby atd.</td>
-    <td ><code>com.apple.share-services</code></td>
-    <td >všechny</td>
-</tr>
-<tr>
-    <td >Dnes</td>
-    <td >"Zařízení", které zobrazí na obrazovce Dnes nebo centra oznámení</td>
-    <td ><code>com.apple.widget-extensions</code></td>
-    <td >Centrum oznámení a dnešek</td>
-</tr>
-</tbody>
-</table>
+|Typ|Popis|Rozšíření bodu|Hostitele aplikace|
+|--- |--- |--- |--- |
+|Akce|Specializované editor nebo prohlížeč pro určitý typ média|`com.apple.ui-services`|všechny|
+|Zprostředkovatel dokumentu|Umožňuje aplikaci, aby používala dokumentu vzdáleného úložiště|`com.apple.fileprovider-ui`|Aplikace používající [UIDocumentPickerViewController](https://developer.xamarin.com/api/type/UIKit.UIDocumentPickerViewController/)|
+|Klávesnice|Alternativní klávesnice|`com.apple.keyboard-service`|všechny|
+|Úpravy fotografií|Fotografie manipulaci a úpravy|`com.apple.photo-editing`|Photos.App editor|
+|Sdílené složky|Sdílí data se sociálními sítěmi, zasílání zpráv služby atd.|`com.apple.share-services`|všechny|
+|Dnes|"Zařízení", které zobrazí na obrazovce Dnes nebo centra oznámení|`com.apple.widget-extensions`|Centrum oznámení a dnešek|
 
 [Další rozšíření body](~/ios/platform/introduction-to-ios10/index.md#app-extensions) byly přidány v iOS 10.
 

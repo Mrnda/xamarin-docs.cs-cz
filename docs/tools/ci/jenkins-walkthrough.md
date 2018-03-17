@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/23/2017
-ms.openlocfilehash: 8d23211e28cb1b1dae13d67e32462888c66ff065
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ff754a690627e7e2f0a5cd39dd669a4c9ddd47fb
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="using-jenkins-with-xamarin"></a>Použití volaných s Xamarin
 
@@ -343,40 +343,14 @@ Podpisování a zipaligning APK jsou technicky dvou samostatných úloh proveden
 
 Obě tyto příkazy vyžadují parametry příkazového řádku, které se může lišit od projekt na projekt. Kromě toho některé z těchto parametrů příkazového řádku jsou hesla, které by se neměla ve výstupu konzoly po spuštění sestavení. Uložíme některé z těchto parametrů příkazového řádku v seznamu proměnných prostředí. Proměnné prostředí, které jsou potřebné pro podepisování a zarovnání zip jsou popsané v následující tabulce:
 
-<table>
-    <thead>
-        <tr>
-            <td>Proměnné prostředí</td>
-            <td>Popis</td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>KEYSTORE_FILE</td>
-            <td>To je cesta k úložiště klíčů pro podpis APK</td>
-        </tr>
-        <tr>
-            <td>KEYSTORE_ALIAS</td>
-            <td>Klíč v úložišti klíčů, který se použije pro přihlášení APK.</td>
-        </tr>
-        <tr>
-            <td>INPUT_APK</td>
-            <td>APK, který byl vytvořený `xbuild`.</td>
-        </tr>
-        <tr>
-            <td>SIGNED_APK</td>
-            <td>Podepsaný APK vyprodukované `jarsigner`.</td>
-        </tr>
-        <tr>
-            <td>FINAL_APK</td>
-            <td>Toto je souboru zip zarovnán APK, který je produkovaný `zipalign`.</td>
-        </tr>
-        <tr>
-            <td>STORE_PASS</td>
-            <td>Toto je heslo, které se používá pro přístup k obsahu úložiště klíčů pro singing soubor.</td>
-        </tr>
-    </tbody>
-</table>
+|Proměnné prostředí|Popis|
+|--- |--- |
+|KEYSTORE_FILE|To je cesta k úložiště klíčů pro podpis APK|
+|KEYSTORE_ALIAS|Klíč v úložišti klíčů, který se použije pro přihlášení APK.|
+|INPUT_APK|APK, který byl vytvořený `xbuild`.|
+|SIGNED_APK|Podepsaný APK vyprodukované `jarsigner`.|
+|FINAL_APK|Toto je souboru zip zarovnán APK, který je produkovaný `zipalign`.|
+|STORE_PASS|Toto je heslo, které se používá pro přístup k obsahu úložiště klíčů pro singing soubor.|
 
 Jak je popsáno v části požadavky, můžete během build pomocí modulu plug-in EnvInject hodnotu těchto proměnných prostředí. Úloha by měl mít nového sestavení krok přidány na základě proměnných prostředí Inject, jak ukazuje následující snímek obrazovky:
 

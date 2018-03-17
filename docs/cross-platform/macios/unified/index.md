@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 6d6e4f7a60468090797c61fc78119d759f57b728
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 68ea5c700efaaf007718cae3ec8b8f7875385b07
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="unified-api"></a>Jednotné rozhraní API
 
@@ -67,36 +67,14 @@ To umožňuje jednodušší sdílet mezi platformami Mac a iOS bez nutnosti Podm
 
 Rozhraní API Unified odebere zastaralé metody a existuje několik instancí tam, kde existuje byla překlepům v názvech rozhraní API, pokud byly vázány na původní MonoTouch a MonoMac obory názvů v klasické rozhraní API. Tyto instance byla opravena v nových rozhraní API Unified a bude potřeba aktualizovat v součásti, iOS a Mac aplikace. Tady je seznam nejčastějších ty, které můžete narazit na:
 
-<table width="100%" border="1">
-<tr>
-    <th>Název metody klasické rozhraní API</th>
-    <th>Název metody jednotné rozhraní API</th>
-</tr>
-<tr>
-    <td>UINavigationController.PushViewControllerAnimated()</td>
-    <td>UINavigationController.PushViewController()</td>
-</tr>
-<tr>
-    <td>UINavigationController.PopViewControllerAnimated()</td>
-    <td>UINavigationController.PopViewController()</td>
-</tr>
-<tr>
-    <td>CGContext.SetRGBFillColor()</td>
-    <td>CGContext.SetFillColor()</td>
-</tr>
-<tr>
-    <td>NetworkReachability.SetCallback()</td>
-    <td>NetworkReachability.SetNotification()</td>
-</tr>
-<tr>
-    <td>CGContext.SetShadowWithColor</td>
-    <td>CGContext.SetShadow</td>
-</tr>
-<tr>
-    <td>UIView.StringSize</td>
-    <td>UIKit.UIStringDrawing.StringSize</td>
-</tr>
-</table>
+|Název metody klasické rozhraní API|Název metody jednotné rozhraní API|
+|--- |--- |
+|`UINavigationController.PushViewControllerAnimated()`|`UINavigationController.PushViewController()`|
+|`UINavigationController.PopViewControllerAnimated()`|`UINavigationController.PopViewController()`|
+|`CGContext.SetRGBFillColor()`|`CGContext.SetFillColor()`|
+|`NetworkReachability.SetCallback()`|`NetworkReachability.SetNotification()`|
+|`CGContext.SetShadowWithColor`|`CGContext.SetShadow`|
+|`UIView.StringSize`|`UIKit.UIStringDrawing.StringSize`|
 
 Úplný seznam změny přepnutím z klasického unifikované API, najdete v tématu naše [vs Classic (monotouch.dll) rozhraní API Unified (Xamarin.iOS.dll) rozdíly](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/) dokumentaci.
 

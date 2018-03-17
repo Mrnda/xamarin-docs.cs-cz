@@ -7,12 +7,12 @@ ms.assetid: 3BE4A128-2D88-4500-9E48-20375EA99A49
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/13/2018
-ms.openlocfilehash: 5db4c735205753810466c26535ba9e2f525709a8
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.date: 03/16/2018
+ms.openlocfilehash: 31114df0b631aea909e82f3a8b836d5ef922d2c1
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="android-wear"></a>Android Wear
 
@@ -37,6 +37,10 @@ Zobrazte náhled a optimalizovat uživatelského rozhraní pro velikost dostupn�
 ##  <a name="deployment--testingandroidweardeploy-testindexmd"></a>[Nasazení a testování](~/android/wear/deploy-test/index.md)
 
 Vysvětluje, jak nasadit aplikace pro Android nosit do zařízení se systémem Android nosit nebo emulátoru Android, které jsou nakonfigurované pro opotřebením motoru. Zahrnuje také ladění tipy a informace o tom, jak nastavit Bluetooth připojení mezi vaším počítačem vývoj a zařízení se systémem Android.
+
+##  <a name="wear-apishttpsdeveloperandroidcomreferenceandroidsupportwearable"></a>[Nosit rozhraní API](https://developer.android.com/reference/android/support/wearable)
+
+Lokality Android Developer poskytuje podrobné informace o klíči nosit rozhraní API, jako [Wearable aktivity](https://developer.android.com/reference/android/support/wearable/activity/package-summary.html), [záměry](https://developer.android.com/reference/com/google/android/wearable/intent/package-summary.html), [ověřování](https://developer.android.com/reference/android/support/wearable/authentication/package-summary.html), [ Komplikace](https://developer.android.com/reference/android/support/wearable/complications/package-summary.html), [komplikace vykreslování](https://developer.android.com/reference/android/support/wearable/complications/rendering/package-summary.html), [oznámení](https://developer.android.com/reference/android/support/wearable/notifications/package-summary.html), [zobrazení](https://developer.android.com/reference/android/support/wearable/view/package-summary.html), a [WatchFace](https://developer.android.com/reference/android/support/wearable/watchface/package-summary.html).
 
 
 

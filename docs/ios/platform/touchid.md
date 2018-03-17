@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: a2378cb439ceed94751e61fd44b54aae3a65bebd
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 3564b4f7d41822fdd9ab167fb3e756f26678a17b
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="touch-id"></a>Touch ID
 
@@ -39,11 +39,8 @@ Každá položka řetězce klíčů je chráněn hesla uživatele a jedinečné 
 
 Aplikace by měla nejprve dotaz do řetězce klíčů se, zda existuje heslo. Pokud neexistuje, musíte na výzvu k zadání hesla, uživateli se zobrazí výzva průběžně. Pokud je třeba aktualizovat heslo, zobrazí výzva k zadání nového hesla a předat aktualizované hodnoty v řetězci klíčů.
 
-
-> ℹ️ **Poznámka:**: obsahující všechny tajné údaje přijímat z databáze, není právě osvědčený postup, ale očekává, že žádné tajné klíče budou zachovány v paměti. Tajný klíč pro byste měli mít pouze, jak dlouho je nutné a absolutně nepřiřazujte ji na globální proměnnou!
-
-
-
+> [!NOTE]
+> Po použití tajného klíče načteny z řetězci klíčů, musí být všechny odkazy na data odstraněn z paměti. Nikdy přiřaďte ji k globální proměnné.
 
 ## <a name="keychain-acl-and-touch-id"></a>Seznam ACL řetězce klíčů a Touch ID
 
@@ -53,32 +50,11 @@ Seznam řízení přístupu je nový atribut položku řetězce klíčů v iOS 8
 
 Od verze iOS 8, je nyní nové zásady přítomnosti uživatele, `SecAccessControl`, což je vynucené zabezpečené enclave pro zařízení typu iPhone 5s a vyšší. Vidíme v následující tabulce, právě způsob konfigurace zařízení mohou mít vliv na vyhodnocení zásad:
 
-<table width="100%" border="1px">
-<thead>
-<tr>
-    <td>Konfigurace zařízení</td>
-    <td>Vyhodnocení zásad</td>
-    <td>Zálohovací mechanismus</td>
-</tr>
-</thead>
-<tbody>
-<tr>
-    <td>Zařízení bez hesla</td>
-    <td>Žádný přístup</td>
-    <td>Žádné</td>
-</tr>
-<tr>
-    <td>Zařízení s heslem</td>
-    <td>Vyžaduje heslo</td>
-    <td>Žádné</td>
-</tr>
-<tr>
-    <td>Zařízení s Touch ID</td>
-    <td>Upřednostní Touch ID</td>
-    <td>Umožňuje hesla</td>
-</tr>
-</tbody>
-</table>
+|Konfigurace zařízení|Vyhodnocení zásad|Zálohovací mechanismus|
+|--- |--- |--- |
+|Zařízení bez hesla|Žádný přístup|Žádné|
+|Zařízení s heslem|Vyžaduje heslo|Žádné|
+|Zařízení s Touch ID|Upřednostní Touch ID|Umožňuje hesla|
 
 Všechny operace uvnitř Enclave zabezpečení můžete navzájem důvěřují. To znamená, že používáme výsledek ověřování Touch ID autorizovat dešifrování položka řetězce klíčů. Enclave zabezpečení také udržuje čítač selhání shod Touch ID, ve kterých bude muset vrátit zpět k používání hesla případ uživatele.
 Nové rozhraní v iOS 8, nazývá _místní ověřování_, podporuje tento proces ověřování v zařízení. Se podíváme na to v další části.

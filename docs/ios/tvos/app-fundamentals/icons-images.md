@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: d1052695bb7337a18d1a2f1f7015e9079f86f6f5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 3e3d1663e07b16721d1aa7253e7d0150a609718e
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="working-with-icons-and-images"></a>Práce s ikony a obrázků
 
@@ -40,17 +40,9 @@ Spuštění bitové kopie se zobrazí rychle a vyvolává dojem, že aplikace je
 
 Spouštěcí bitové kopie nejsou příležitost, reklamy nebo uměleckého výraz, existují pouze k vyvolají dojem, že vaše aplikace spustí rychle a je připravený k použití.
 
-<table width="100%" border="1px">
-<tr>
-    <td colspan="2"><b>Spuštění bitové kopie</b></td>
-</tr>
-<tr>
-    <td><b>Velikost</b></td>
-    <td>1920px x 1080px
-
-    Non-layered `.png` files only</td>
-</tr>
-</table>
+|Spusťte velikost bitové kopie|Poznámky|
+|---|---|
+|1920x1080px|Pouze soubory bez vrstvený PNG|
 
 Apple umožňuje následující návrhy pro návrh obrázek spuštění vaší aplikace:
 
@@ -146,39 +138,15 @@ Aplikace Xamarin.tvOS bude vyžadovat nejen ikony aplikace pro Apple TV Domů ob
 
 Každé aplikace musíte zadat malá a velká verzi jeho ikona aplikace. Malé ikony se použije na obrazovce Apple TV Domů, když je aplikace nainstalovaná. Velké verze je používána obchodu s aplikacemi. Velké ikony aplikace by měl napodobovat vzhledu a chování verze malé ikony.
 
-<table width="100%" border="1px">
-<tr>
-    <td colspan="2"><b>Malé ikony</b></td>
-    <td colspan="2"><b>Velkých ikon.</b></td>
-</tr>
-<tr>
-    <td><b>Skutečná velikost</b></td>
-    <td>400px x 240px</td>
-    <td><b>Velikost</b></td>
-    <td>1280px x 768px</td>
-</tr>
-<tr>
-    <td><b>Velikost bezpečné zóny</b></td>
-    <td>370px x 222px</td>
-    <td></td>
-    <td></td>
-</tr>
-<tr>
-    <td><b>Nezaostřená velikost</b></td>
-    <td>300px x 180px</td>
-    <td></td>
-    <td></td>
-</tr>
-<tr>
-    <td><b>Cílených velikost</b></td>
-    <td>370px x 222px</td>
-    <td></td>
-    <td></td>
-</tr>
-</table>
+|Malé ikony||Velkých ikon.||
+|---|---|---|---|
+|Skutečná velikost|400x240px|Velikost|1280x768px|
+|Velikost bezpečné zóny|370x222px|||
+|Nezaostřená velikost|300x180px|||
+|Cílených velikost|370x222px|||
 
 > [!IMPORTANT]
-> **Poznámka:** ikony aplikace musí být uvedeny jako **na základě bitové kopie**. Najdete v tématu [na základě bitové kopie](#Layered-Images) části výše další podrobnosti.
+> Ikony aplikace musí být uvedeny jako **na základě bitové kopie**. Najdete v tématu [na základě bitové kopie](#Layered-Images) části výše další podrobnosti.
 
 
 
@@ -227,17 +195,9 @@ Pokud uživatel má umístit aplikace Xamarin.tvOS na začátek řádku na obraz
 
 Bitovou kopii police horní lze zadat buď jako jednu statickou `.png` nebo `.lsr` souboru (v tématu [vytváření bitových kopií vrstvený](#Creating-Layered-Images)) nebo ji dynamicky vytvoří za běhu jako jeden řádek může získat fokus položek (najdete v části [ Dynamické nejvyšší police obsah](#Dynamic-Top-Shelf-Content) níže).
 
-<table width="100%" border="1px">
-<tr>
-    <td colspan="2"><b>Horní police Image</b></td>
-</tr>
-<tr>
-    <td><b>Velikost</b></td>
-    <td>1920px x 720px
-
-    Static `.png` or layered `.lsr` file</td>
-</tr>
-</table>
+|Velikost bitové kopie nejvyšší police|Poznámky|
+|---|---|
+|1920x720px|Statický soubor ve formátu PNG nebo vrstveného .lsr souboru|
 
 Apple poskytuje následující návrhy pro vytváření obrázků police horní:
 
@@ -279,38 +239,12 @@ Obsah je zobrazen jako jeden a vodorovného posouvání seznamu obsahu s popiske
 
 Následující velikosti obsahu se bude vyžadovat:
 
-<table width="100%" border="1px">
-<tr>
-    <td><b>&nbsp;</b></td>
-    <td><b>Plakát (2:3)</b></td>
-    <td><b>Hranaté (1:1)</b></td>
-    <td><b>HDTV (16:9)</b></td>
-</tr>
-<tr>
-    <td><b>Skutečná velikost</b></td>
-    <td>404px x 608px</td>
-    <td>608px x 608px</td>
-    <td>908px x 512px</td>
-</tr>
-<tr>
-    <td><b>Velikost bezpečné zóny</b></td>
-    <td>380px x 570px</td>
-    <td>570px x 570px</td>
-    <td>852px x 479px</td>
-</tr>
-<tr>
-    <td><b>Nezaostřená velikost</b></td>
-    <td>333px x 500px</td>
-    <td>500px x 500px</td>
-    <td>782px x 440px</td>
-</tr>
-<tr>
-    <td><b>Cílených velikost</b></td>
-    <td>380px x 570px</td>
-    <td>570px x 570px</td>
-    <td>852px x 479px</td>
-</tr>
-</table>
+||Plakát (2:3)|Hranaté (1:1)|HDTV (16:9)|
+|---|---|---|---|
+|Skutečná velikost|404x608px|608x608px|908x512px|
+|Velikost bezpečné zóny|380x570px|570x570px|852x479px|
+|Nezaostřená velikost|333x500px|500x500px|782x440px|
+|Cílených velikost|380x570px|570x570px|852x479px|
 
 Apple poskytuje následující návrhy pro rozdělenou obsahu řádek:
 
@@ -325,27 +259,14 @@ Volitelně může být aplikace Xamarin.tvOS jeho obsah v horní části police 
 
 Kromě automatické posouvání, může uživatel převzít kontrolu nad do hlaviček a posuňte se v obou směrech pomocí vzdáleného Siri. Provedení malá, cyklické gesto na vzdáleném Siri, když banner se nezvýrazní aktivují účinek paralaxy pro tento informační zpráva.
 
-<table width="100%" border="1px">
-<tr>
-    <td colspan="2"><b>Obrázek hlavičky (navíc široký)</b></td>
-</tr>
-<tr>
-    <td><b>Skutečná velikost</b></td>
-    <td>1940px x 624px</td>
-</tr>
-<tr>
-    <td><b>Velikost bezpečné zóny</b></td>
-    <td>1740px x 620px</td>
-</tr>
-<tr>
-    <td><b>Nezaostřená velikost</b></td>
-    <td>1740px x 560px</td>
-</tr>
-<tr>
-    <td><b>Cílených velikost</b></td>
-    <td>1740px x 620px</td>
-</tr>
-</table>
+**Obrázek hlavičky (navíc široký)**
+
+|   |   |
+|---|---|
+|Skutečná velikost|1940x624px|
+|Velikost bezpečné zóny|1740x620px|
+|Nezaostřená velikost|1740x560px|
+|Cílených velikost|1740x620px|
 
 Posouvání Inset hlaviček můžete buď zadat jako statického `.png` nebo vrstvený `.lsr` souboru.
 
@@ -366,44 +287,13 @@ Pokud je vaše aplikace Xamarin.tvOS hry a jste zahrnuli herním centru podpory,
 - **Řídicí panel kresby** -volitelné bitové kopie může být zadaný, který se zobrazí v horní části řídicího panelu vaší aplikace v herním centru. Tyto Image jsou bez může získat fokus.
 - **Kresby žebříček** -je nutné zadat mezi jedna (1) do tří (3) poměr stran 16:9 bitových kopií pro každý žebříček, který podporuje aplikace. To může být buď statické `.png` nebo vrstvený `.lsr` soubory. Kresby žebříček je může získat fokus.
 
-<table width="100%" border="1px">
-<tr>
-    <td><b>&nbsp;</b></td>
-    <td><b>Dosažení ikony</b></td>
-    <td><b>Řídicí panel kresby</b></td>
-    <td><b>Žebříček kresby</b></td>
-</tr>
-<tr>
-    <td><b>Zobrazené velikosti</b></td>
-    <td>200px x 200px</td>
-    <td>923px x 150px</td>
-    <td>není k dispozici</td>
-</tr>
-<tr>
-    <td><b>Skutečná velikost</b></td>
-    <td>320px x 320px</td>
-    <td>není k dispozici</td>
-    <td>659px x 371px</td>
-</tr>
-<tr>
-    <td><b>Velikost bezpečné zóny</b></td>
-    <td>není k dispozici</td>
-    <td>není k dispozici</td>
-    <td>618px x 348px</td>
-</tr>
-<tr>
-    <td><b>Nezaostřená velikost</b></td>
-    <td>není k dispozici</td>
-    <td>není k dispozici</td>
-    <td>548px x 309px</td>
-</tr>
-<tr>
-    <td><b>Cílených velikost</b></td>
-    <td>není k dispozici</td>
-    <td>není k dispozici</td>
-    <td>618px x 348px</td>
-</tr>
-</table>
+||Dosažení ikony|Řídicí panel kresby|Žebříček kresby|
+|---|---|---|---|
+|Zobrazené velikosti|200x200px|923x150px|není k dispozici|
+|Skutečná velikost|320x320px|není k dispozici|659x371px|
+|Velikost bezpečné zóny|není k dispozici|není k dispozici|618x348px|
+|Nezaostřená velikost|není k dispozici|není k dispozici|548x309px|
+|Cílených velikost|není k dispozici|není k dispozici|618x348px|
 
 Další informace o práci s herním centru, najdete v tématu společnosti Apple [Průvodce programováním v herním centru](https://developer.apple.com/library/prerelease/tvos/documentation/NetworkingInternet/Conceptual/GameKit_Guide/Introduction/Introduction.html).
 

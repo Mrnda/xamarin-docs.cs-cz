@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: cef717a727b3b018b9eec3e8a402ae4f927f7cb8
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: ca3dd71c3da316e467d8c388efbbded3d9778bf0
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="siri-remote-and-bluetooth-controllers"></a>Vzdálené Siri a řadiče Bluetooth.
 
@@ -39,43 +39,14 @@ Vaše výzvy jako vývojář aplikace tvOS je rychlý, snadno použitelný a viz
 
 Vzdálené Siri má následující funkce a očekávané použití aplikace pro tvOS:
 
-<table width="100%" border="1px">
-<tr>
-    <td><b>Funkce</b></td>
-    <td><b>Obecné využití aplikací</b></td>
-    <td><b>Herní využití aplikací</b></td>
-</tr>
-<tr>
-    <td valign="top"><b>Prostor dotykového ovládání</b><br/>Prstem přejděte, stiskněte a vyberte přidržte kontextové nabídky.</td>
-    <td valign="top"><b>Klepněte na nebo prstem:</b><br/>Uživatelské rozhraní navigace mezi položkami může získat fokus.<br/><br/><b>Klikněte na:</b><br/>Aktivuje vybrané položky (vybraný).</td>
-    <td valign="top"><b>Klepněte na nebo prstem:</b><br/>Závisí na herní návrhu a může sloužit jako D-Pad klepnutím na okrajích.<br/><br/><b>Klikněte na:</b><br/>Provedení funkce primární tlačítko.</td>
-</tr>
-<tr>
-    <td valign="top"><b>Nabídka</b><br/>Stisknutím vrátit na předchozí obrazovce nebo nabídku.</td>
-    <td valign="top">Vrátí předchozí obrazovku a ukončí Apple TV Domů obrazovku na obrazovce hlavní aplikace.</td>
-    <td valign="top">Pozastavení a obnovení hraní her, vrátí na předchozí obrazovku a ukončí Apple TV Domů obrazovku na obrazovce hlavní aplikace.</td>
-</tr>
-<tr>
-    <td valign="top"><b>Siri nebo vyhledávání</b><br/>V zemích s Siri stiskněte a podržte pro řízení hlasové, ve všech dalších zemích, zobrazí obrazovky vyhledávání.</td>
-    <td valign="top">není k dispozici</td>
-    <td valign="top">není k dispozici</td>
-</tr>
-<tr>
-    <td valign="top"><b>Přehrát či pozastavit</b><br/>Přehrávání a pozastavení média nebo poskytuje sekundární funkce v aplikacích.</td>
-    <td valign="top">Spustí přehrávání médií a přehrávání pozastavení nebo obnovení.</td>
-    <td valign="top">Provede funkci sekundární tlačítka nebo přeskočí video úvod (pokud existuje).</td>
-</tr>
-<tr>
-    <td valign="top"><b>domácí</b><br/>Stisknutím klávesy se vraťte na domovskou obrazovku, dvakrát klikněte na Zobrazit spuštěné aplikace, stiskněte a podržte do režimu spánku zařízení.</td>
-    <td valign="top">není k dispozici</td>
-    <td valign="top">není k dispozici</td>
-</tr>
-<tr>
-    <td valign="top"><b>Svazek</b><br/>Ovládací prvky připojit zařízení zvuku a videa svazku.</td>
-    <td valign="top">není k dispozici</td>
-    <td valign="top">není k dispozici</td>
-</tr>
-</table>
+|Funkce|Obecné využití aplikací|Herní využití aplikací|
+|---|---|---|
+|**Prostor dotykového ovládání**<br />Prstem přejděte, stiskněte a vyberte přidržte kontextové nabídky.|**Tap/Swipe**<br />Uživatelské rozhraní navigace mezi položkami může získat fokus.<br /><br />**Klikněte na**<br />Aktivuje vybrané položky (vybraný).|**Tap/Swipe**<br />Závisí na herní návrhu a může sloužit jako D-Pad klepnutím na okrajích.<br /><br />**Klikněte na**<br />Provedení funkce primární tlačítko.|
+|**Nabídka**<br />Stisknutím vrátit na předchozí obrazovce nebo nabídku.|Vrátí předchozí obrazovku a ukončí Apple TV Domů obrazovku na obrazovce hlavní aplikace.|Pozastavení a obnovení hraní her, vrátí na předchozí obrazovku a ukončí Apple TV Domů obrazovku na obrazovce hlavní aplikace.|
+|**Siri nebo vyhledávání**<br />V zemích s Siri stiskněte a podržte pro řízení hlasové, ve všech dalších zemích, zobrazí obrazovky vyhledávání.|není k dispozici|není k dispozici|
+|**Přehrát či pozastavit**<br />Přehrávání a pozastavení média nebo poskytuje sekundární funkce v aplikacích.|Spustí přehrávání médií a přehrávání pozastavení nebo obnovení.|Provede funkci sekundární tlačítka nebo přeskočí video úvod (pokud existuje).|
+|**domácí**<br />Stisknutím klávesy se vraťte na domovskou obrazovku, dvakrát klikněte na Zobrazit spuštěné aplikace, stiskněte a podržte do režimu spánku zařízení.|není k dispozici|není k dispozici|
+|**Svazek**<br />Ovládací prvky připojit zařízení zvuku a videa svazku.|není k dispozici|není k dispozici|
 
 <a name="Touch-Surface-Gestures" />
 
@@ -83,18 +54,10 @@ Vzdálené Siri má následující funkce a očekávané použití aplikace pro 
 
 Vzdálené Siri Touch prostor je schopna zjistit celou řadu gesta jedním prstem, které mohou reagovat na ve vaší aplikaci Xamarin.tvOS:
 
-<table width="100%">
-<tr>
-    <td valign="top" width="30%"><img src="remote-bluetooth-images/Gesture01.png"></td>
-    <td valign="top" width="30%"><img src="remote-bluetooth-images/Gesture02.png"></td>
-    <td valign="top" width="30%"><img src="remote-bluetooth-images/Gesture03.png"></td>
-</tr>
-<tr>
-    <td valign="top"><b>Prstem:</b><br/>Přesune výběr (aktivní) mezi elementy uživatelského rozhraní na obrazovce (nahoru, dolů vlevo, vpravo). Procházejte velké seznam obsahu rychle pomocí nečinnosti lze použít k načtení.</td>
-    <td valign="top"><b>Klikněte na:</b><br/>Aktivuje vybrané položky (vybraný) nebo funguje jako primární tlačítko ve hře. Kliknutím a podržením můžete aktivovat kontextové nabídky nebo sekundární funkce.</td>
-    <td valign="top"><b>Klepněte na:</b><br/>Lehce klepnutím na povrch Touch na okrajích funguje jako směrovou tlačítka na D-list, Přesun zaměření nahoru, dolů, doleva nebo doprava v závislosti na oblasti stisknuté. V závislosti na aplikaci můžete použít na nich skrytý ovládací prvky.</td>
-</tr>
-</table>
+|Prstem|Klikněte na...|Klepněte na|
+|---|---|---|
+|![](remote-bluetooth-images/Gesture01.png)|![](remote-bluetooth-images/Gesture02.png)|![](remote-bluetooth-images/Gesture03.png)|
+|Přesune výběr (aktivní) mezi elementy uživatelského rozhraní na obrazovce (nahoru, dolů vlevo, vpravo). Procházejte velké seznam obsahu rychle pomocí nečinnosti lze použít k načtení.|Aktivuje vybrané položky (vybraný) nebo funguje jako primární tlačítko ve hře. Kliknutím a podržením můžete aktivovat kontextové nabídky nebo sekundární funkce.|Lehce klepnutím na povrch Touch na okrajích funguje jako směrovou tlačítka na D-list, Přesun zaměření nahoru, dolů, doleva nebo doprava v závislosti na oblasti stisknuté. V závislosti na aplikaci můžete použít na nich skrytý ovládací prvky.|
 
 Apple poskytuje následující návrhy pro práci s gesta Touch prostor:
 
@@ -112,7 +75,7 @@ Kromě gesta na povrchu Touch můžete aplikaci reagovat na uživatel kliknutím
 Kromě toho stisknutí tlačítka nabídky můžete zjistit pomocí standard pro rozpoznávání gesto `UIKit` elementy. Pokud je zachytit se stisknutí tlačítka nabídky, budete mít na starost zavření aktuálního zobrazení a View Controller a vrátit k předchozí.
 
 > [!IMPORTANT]
-> **Poznámka:** byste měli **vždy** přiřadit tlačítko Přehrát či pozastavit na vzdáleném funkce. S funkční tlačítko můžete nastavit aplikaci vypadat porušený pro koncového uživatele. Pokud nemáte platnou funkcí pro toto tlačítko, přiřadíte stejnou funkci jako primární tlačítko (Touch prostor kliknutím).
+> Měli byste **vždy** přiřadit tlačítko Přehrát či pozastavit na vzdáleném funkce. S funkční tlačítko můžete nastavit aplikaci vypadat porušený pro koncového uživatele. Pokud nemáte platnou funkcí pro toto tlačítko, přiřadíte stejnou funkci jako primární tlačítko (Touch prostor kliknutím).
 
 
 
@@ -319,77 +282,24 @@ Kromě standardní vzdálené Siri, který se dodává s Apple TV, 3. stran, pro
 Herní zařízení slouží k vylepšení hraní her a poskytnout představu o záchranných ve hře. Můžete také používají k řízení standardní rozhraní Apple TV, takže použití nemá přepínat mezi vzdálených a řadič.
 
 > [!IMPORTANT]
-> **Poznámka:** Bluetooth herní zařízení jsou volitelné nákupu, které by mohly způsobit koncovým uživatelům, aplikace nemůže vynutit uživateli zakoupit. Pokud vaše aplikace podporuje herní zařízení se musí taky podporovat vzdálené Siri tak, aby hra funkční všichni uživatelé Apple TV.
-
+> Bluetooth herní zařízení jsou volitelné nákupu, které by mohly způsobit koncovým uživatelům, aplikace nemůže vynutit uživateli zakoupit. Pokud vaše aplikace podporuje herní zařízení se musí taky podporovat vzdálené Siri tak, aby hra funkční všichni uživatelé Apple TV.
 
 Řadič herní má následující funkce a očekávané použití aplikace pro tvOS:
-<table width="100%" border="1px">
-<tr>
-    <td><b>Funkce</b></td>
-    <td><b>Obecné využití aplikací</b></td>
-    <td><b>Herní využití aplikací</b></td>
-</tr>
-<tr>
-    <td valign="top"><b>D-Pad</b></td>
-    <td valign="top">Přejde na prvky uživatelského rozhraní (fokus změny).</td>
-    <td valign="top">Závisí na hra.</td>
-</tr>
-<tr>
-    <td valign="top"><b>A</b></td>
-    <td valign="top">Aktivuje vybrané položky (vybraný).</td>
-    <td valign="top">Provede funkci primární tlačítka a potvrdí, dialogové okno akce.</td>
-</tr>
-<tr>
-    <td valign="top"><b>B</b></td>
-    <td valign="top">Vrátí na předchozí obrazovku nebo ji opustí na domovské obrazovce, pokud na obrazovce hlavní aplikace.</td>
-    <td valign="top">Provede funkci sekundární tlačítko nebo vrátí na předchozí obrazovku.</td>
-</tr>
-<tr>
-    <td valign="top"><b>X</b></td>
-    <td valign="top">Spustí přehrávání médií nebo pozastavení nebo obnoví přehrávání.</td>
-    <td valign="top">Závisí na hra.</td>
-</tr>
-<tr>
-    <td valign="top"><b>Y</b></td>
-    <td valign="top">není k dispozici</td>
-    <td valign="top">Závisí na hra.</td>
-</tr>
-<tr>
-    <td valign="top"><b>Nabídka</b></td>
-    <td valign="top">Vrátí na předchozí obrazovku nebo ji opustí na domovské obrazovce, pokud na obrazovce hlavní aplikace.</td>
-    <td valign="top">Pozastavení nebo obnovení hraní her, vrátí na předchozí obrazovku nebo ukončí na domovské obrazovce Pokud na obrazovce hlavní aplikace.</td>
-</tr>
-<tr>
-    <td valign="top"><b>Levé osazení tlačítko</b></td>
-    <td valign="top">Přejde na levé straně.</td>
-    <td valign="top">Závisí na hra.</td>
-</tr>
-<tr>
-    <td valign="top"><b>Levé aktivační události</b></td>
-    <td valign="top">Přejde na levé straně.</td>
-    <td valign="top">Závisí na hra.</td>
-</tr>
-<tr>
-    <td valign="top"><b>Tlačítko správné osazení</b></td>
-    <td valign="top">Přejde vpravo.</td>
-    <td valign="top">Závisí na hra.</td>
-</tr>
-<tr>
-    <td valign="top"><b>Pravé aktivační události</b></td>
-    <td valign="top">Přejde vpravo</td>
-    <td valign="top">Závisí na hra.</td>
-</tr>
-<tr>
-    <td valign="top"><b>Levé Thumbstick</b></td>
-    <td valign="top">Přejde na prvky uživatelského rozhraní (fokus změny).</td>
-    <td valign="top">Závisí na hra.</td>
-</tr>
-<tr>
-    <td valign="top"><b>Pravé Thumbstick</b></td>
-    <td valign="top">není k dispozici</td>
-    <td valign="top">Závisí na hra.</td>
-</tr>
-</table>
+
+|Funkce|Obecné využití aplikací|Herní využití aplikací|
+|---|---|---|
+|**D-Pad**|Přejde na prvky uživatelského rozhraní (fokus změny).|Závisí na hra.|
+|**A**|Aktivuje vybrané položky (vybraný).|Provede funkci primární tlačítka a potvrdí, dialogové okno akce.|
+|**B**|Vrátí na předchozí obrazovku nebo ji opustí na domovské obrazovce, pokud na obrazovce hlavní aplikace.|Provede funkci sekundární tlačítko nebo vrátí na předchozí obrazovku.|
+|**X**|Spustí přehrávání médií nebo pozastavení nebo obnoví přehrávání.|Závisí na hra.|
+|**Y**|není k dispozici|Závisí na hra.|
+|**Nabídka**|Vrátí na předchozí obrazovku nebo ji opustí na domovské obrazovce, pokud na obrazovce hlavní aplikace.|Pozastavení nebo obnovení hraní her, vrátí na předchozí obrazovku nebo ukončí na domovské obrazovce Pokud na obrazovce hlavní aplikace.|
+|**Levé osazení tlačítko**|Přejde na levé straně.|Závisí na hra.|
+|**Levé aktivační události**|Přejde na levé straně.|Závisí na hra.|
+|**Tlačítko správné osazení**|Přejde vpravo.|Závisí na hra.|
+|**Pravé aktivační události**|Přejde vpravo|Závisí na hra.|
+|**Levé Thumbstick**|Přejde na prvky uživatelského rozhraní (fokus změny).|Závisí na hra.|
+|**Pravé Thumbstick**|není k dispozici|Závisí na hra.|
 
 Apple poskytuje následující návrhy pro práci s herní zařízení:
 

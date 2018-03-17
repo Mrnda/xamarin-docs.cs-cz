@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 01/25/2016
-ms.openlocfilehash: b78ade19efed92ab3b2d8ba790f2d7334472bab4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 09858bd7902b44bbedd96f1be9c9c827131ee16f
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="native-types"></a>Nativní typy
 
@@ -27,28 +27,11 @@ Pomocí těchto nových typů dat je ze stejného zdrojového kódu zkompilovan�
 
 Následující tabulka uvádí změny v našich typů dat tak, aby tento nový world 32 nebo 64bitový:
 
-<table>
-        <tr>
-            <th>Nativním typu</th>
-            <th>32-bit základní typ</th> 
-            <th>64bitová verze základní typ</th>
-        </tr>
-        <tr>
-            <td><code>System.nint</code></td>
-        <td><code>System.Int32</code> (<code>int</code>)</td>
-        <td><code>System.Int64</code> (<code>long</code>)</td>
-        </tr>
-        <tr>
-            <td><code>System.nuint</code></td>
-        <td><code>System.UInt32</code> (<code>uint</code>)</td>
-        <td><code>System.UInt64</code> (<code>ulong</code>)</td>
-        </tr>
-        <tr>
-            <td><code>System.nfloat</code></td>
-        <td><code>System.Single</code> (<code>float</code>)</td>
-        <td><code>System.Double</code> (<code>double</code>)</td>
-        </tr>
-    </table>
+|Nativním typu|32-bit základní typ|64bitová verze základní typ|
+|--- |--- |--- |
+|`System.nint`|`System.Int32` (`int`)|`System.Int64` (`long`)|
+|`System.nuint`|`System.UInt32` (`uint`)|`System.UInt64` (`ulong`)|
+|`System.nfloat`|`System.Single` (`float`)|`System.Double` (`double`)|
 
 Jsme zvolili tyto názvy umožňující kód C# a vyšší nebo nižší vypadat stejným způsobem, který bude dnes výsledek.
 
@@ -76,32 +59,15 @@ Bod, velikost a obdélníku typy dat, které se používají s CoreGraphics pou�
 
 Při přesunu na **Unified**, budete muset nahraďte výskyty `System.Drawing` s jejich `CoreGraphics` svými protějšky, jak je znázorněno v následující tabulce:
 
-<table>
-        <tr>
-            <th>Starý typ v System.Drawing</th>
-            <th>Nový typ CoreGraphics dat</th> 
-            <th>Popis</th>
-        </tr>
-        <tr>
-        <td><code>RectangleF</code></td>
-        <td><code>CGRect</code></td>
-        <td>Blokování plovoucí bodu obdélníku informace.  </td>
-        </tr>
-        <tr>
-        <td><code>SizeF</code></td>
-        <td><code>CGSize</code></td>
-        <td>Blokování plovoucí bodu informace o velikosti (šířka a výška)</td>
-        </tr>
-        <tr>
-        <td><code>PointF</code></td>
-        <td><code>CGPoint</code></td>
-        <td>Obsahuje plovoucí desetinné čárky bodu informace (X, Y)</td>
-        </tr>
-    </table>
+|Starý typ v System.Drawing|Nový typ CoreGraphics dat|Popis|
+|--- |--- |--- |
+|`RectangleF`|`CGRect`|Blokování plovoucí bodu obdélníku informace.|
+|`SizeF`|`CGSize`|Blokování plovoucí bodu informace o velikosti (šířka a výška)|
+|`PointF`|`CGPoint`|Obsahuje plovoucí desetinné čárky bodu informace (X, Y)|
 
 Při nové jeden používá starý omezena data typy používané k uložení elementy datové struktury `System.nfloat`.
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Práce s nativní typy v aplikací pro různé platformy](~/cross-platform/macios/native-types-cross-platform.md)
-- [Classic vs rozdíly unifikované API](http://developer.xamarin.comhttps://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)
+- [Práce s nativní typy v multiplatformních aplikacích](~/cross-platform/macios/native-types-cross-platform.md)
+- [Classic vs rozdíly unifikované API](https://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/)

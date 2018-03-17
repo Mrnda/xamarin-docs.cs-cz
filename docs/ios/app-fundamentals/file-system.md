@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 36c793e7a9b7b30bcb0cdf2c7959fd2df36c8775
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: fd6aa66a7e5e788babc0df3e94b8f3677a7625f0
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="working-with-the-file-system"></a>Práce s systému souborů
 
@@ -238,78 +238,14 @@ Tyto adresáře a jejich účely jsou uvedeny níže:
 
 &nbsp;
 
-<table>
-  <tbody>
-    <tr>
-      <td>
-Adresář </td>
-      <td>
-Popis </td>
-    </tr>
-    <tr>
-      <td>
-        <p>[ApplicationName] .app nebo</p>
-      </td>
-      <td>
-        <p><b>V iOS 7 a starší</b> jde <code>ApplicationBundle</code> adresáři, kde se ukládají vaše spustitelný soubor aplikace. Strukturu adresáře, který vytvoříte v aplikaci existuje v tomto adresáři (například obrázky a další typy souborů, které jste označili jako prostředky ve vaší sadě Visual Studio pro Mac projekt).</p>
-        <p>Pokud potřebujete přístup k obsahu souborům uvnitř vaší aplikace sady, cesta k tento adresář je k dispozici prostřednictvím <code>NSBundle.MainBundle.BundlePath</code> vlastnost.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>Dokumenty nebo</p>
-      </td>
-      <td>
-        <p>Použijte tento adresář k uložení dokumenty uživatele a datové soubory aplikace.</p>
-        <p>Obsah tohoto adresáře může být dostupné pro uživatele prostřednictvím (i když je toto zakázáno ve výchozím nastavení) pro sdílení souborů iTunes. Přidat <code>UIFileSharingEnabled</code> Boolean klíč do souboru Info.plist umožníte uživatelům přístup k těmto souborům.</p>
-        <p>I když aplikaci okamžitě neumožňuje sdílení souborů, neměli byste umístění souborů, které by měl být skrytá. uživatelé v tomto adresáři (například soubory databáze, pokud máte v úmyslu je sdílet). Tak dlouho, dokud citlivé soubory zůstávají skryté, tyto soubory nebude zveřejněné (a potenciálně přesunout, modified nebo deleted podle iTunes) Pokud je povoleno sdílení souborů v budoucí verzi.</p>
-        <p>Můžete použít <code>Environment.GetFolderPath
-(Environment.SpecialFolder.MyDocuments)</code> metodu za účelem získání cesty k adresáři dokumenty pro vaši aplikaci.</p>
-        <p>Obsah tohoto adresáře jsou zálohovány pomocí iTunes.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>Knihovna /</p>
-      </td>
-      <td>
-        <p>Adresář knihovny je vhodná k uložení souborů, které nebyly vytvořeny přímo pomocí uživatele, například databáze nebo jiné soubory generované aplikací.
-Obsah tohoto adresáře se nikdy zveřejňují pro uživatele na základě iTunes.</p>
-        <p>Můžete vytvořit vlastní podadresáře v knihovně; Existují však již některé systém vytvořil adresáře tady, byste měli vědět, včetně předvoleb a mezipaměti.</p>
-        <p>Obsah tohoto adresáře (s výjimkou mezipamětí podadresáři) jsou zálohovány pomocí iTunes. Vlastní adresáře, které vytvoříte v knihovně, budou zálohovány.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>Knihovna/Předvolby /</p>
-      </td>
-      <td>
-        <p>Soubory specifické pro aplikaci předvoleb jsou uloženy v tomto adresáři. Přímo nevytvářejte tyto soubory. Místo toho použijte <code>NSUserDefaults</code> třídy.</p>
-        <p>Obsah tohoto adresáře jsou zálohovány pomocí iTunes.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>Knihovna/mezipamětí /</p>
-      </td>
-      <td>
-        <p>Adresář mezipaměti je vhodná k ukládají datové soubory, které mohou pomoci aplikaci spustit, ale který lze snadno znovu vytvořit v případě potřeby. Aplikace by měl vytvořit a odstraňte tyto soubory podle potřeby a nebude moci v případě potřeby znovu vytvořit tyto soubory. systém iOS 5 může také odstranit tyto soubory (v situacích, velmi nízkou úložiště), ale nebudou ji tak učinit, když aplikace běží.</p>
-        <p>Obsah tohoto adresáře není zálohované serverem iTunes, což znamená, že nebudou přítomen, pokud uživatel na zařízení obnoví, a nemusí být dispozici po nainstalování aktualizovanou verzi vaší aplikace.</p>
-        <p>Například v případě, že aplikace nemůže připojit k síti, můžete použít k adresáři mezipaměti pro ukládání dat a souborů a poskytuje dobrý offline prostředí. Můžete uložit a tato data načíst rychle při čekání na odezvu síťové aplikace, ale ji není třeba zálohovat a lze snadno obnovit nebo znovu vytvořit po dokončení obnovení nebo verzi aktualizace.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>tmp/</p>
-      </td>
-      <td>
-        <p>Aplikace může ukládat dočasné soubory, které jsou vyžadovány pouze na krátkou dobu v tomto adresáři. Kvůli úspoře místa mají být odstraněny soubory, pokud už je potřeba. Operační systém může také odstranit soubory z tohoto adresáře Pokud aplikace není spuštěna.</p>
-        <p>Obsah tohoto adresáře není zálohované serverem iTunes.</p>
-        <p>Například může být adresáři tmp použít k ukládání dočasných souborů, které se stáhnou pro zobrazení pro uživatele (například avatarů Twitter nebo přílohy e-mailu), ale který může odstranit po jejich jste se zobrazit (a znovu stáhnout, pokud je v budoucnu potřebovat ).</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+|Adresář|Popis|
+|---|---|
+|[ApplicationName] .app nebo|**V iOS 7 a starší** jde `ApplicationBundle` adresáři, kde se ukládají vaše spustitelný soubor aplikace. Strukturu adresáře, který vytvoříte v aplikaci existuje v tomto adresáři (například obrázky a další typy souborů, které jste označili jako prostředky ve vaší sadě Visual Studio pro Mac projekt).<br /><br />Pokud potřebujete přístup k obsahu souborům uvnitř vaší aplikace sady, cesta k tento adresář je k dispozici prostřednictvím `NSBundle.MainBundle.BundlePath` vlastnost.|
+|Dokumenty nebo|Použijte tento adresář k uložení dokumenty uživatele a datové soubory aplikace.<br /><br />Obsah tohoto adresáře může být dostupné pro uživatele prostřednictvím (i když je toto zakázáno ve výchozím nastavení) pro sdílení souborů iTunes. Přidat `UIFileSharingEnabled` Boolean klíč do souboru Info.plist umožníte uživatelům přístup k těmto souborům.<br /><br />I když aplikaci okamžitě neumožňuje sdílení souborů, neměli byste umístění souborů, které by měl být skrytá. uživatelé v tomto adresáři (například soubory databáze, pokud máte v úmyslu je sdílet). Tak dlouho, dokud citlivé soubory zůstávají skryté, tyto soubory nebude zveřejněné (a potenciálně přesunout, modified nebo deleted podle iTunes) Pokud je povoleno sdílení souborů v budoucí verzi.<br /><br /> Můžete použít `Environment.GetFolderPath (Environment.SpecialFolder.MyDocuments)` metodu za účelem získání cesty k adresáři dokumenty pro vaši aplikaci.<br /><br />Obsah tohoto adresáře jsou zálohovány pomocí iTunes.|
+|Knihovna /|Adresář knihovny je vhodná k uložení souborů, které nebyly vytvořeny přímo pomocí uživatele, například databáze nebo jiné soubory generované aplikací. Obsah tohoto adresáře se nikdy zveřejňují pro uživatele na základě iTunes.<br /><br />Můžete vytvořit vlastní podadresáře v knihovně; Existují však již některé systém vytvořil adresáře tady, byste měli vědět, včetně předvoleb a mezipaměti.<br /><br />Obsah tohoto adresáře (s výjimkou mezipamětí podadresáři) jsou zálohovány pomocí iTunes. Vlastní adresáře, které vytvoříte v knihovně, budou zálohovány.|
+|Knihovna/Předvolby /|Soubory specifické pro aplikaci předvoleb jsou uloženy v tomto adresáři. Přímo nevytvářejte tyto soubory. Místo toho použijte `NSUserDefaults` třídy.<br /><br />Obsah tohoto adresáře jsou zálohovány pomocí iTunes.|
+|Knihovna/mezipamětí /|Adresář mezipaměti je vhodná k ukládají datové soubory, které mohou pomoci aplikaci spustit, ale který lze snadno znovu vytvořit v případě potřeby. Aplikace by měl vytvořit a odstraňte tyto soubory podle potřeby a nebude moci v případě potřeby znovu vytvořit tyto soubory. systém iOS 5 může také odstranit tyto soubory (v situacích, velmi nízkou úložiště), ale nebudou ji tak učinit, když aplikace běží.<br /><br />Obsah tohoto adresáře není zálohované serverem iTunes, což znamená, že nebudou přítomen, pokud uživatel na zařízení obnoví, a nemusí být dispozici po nainstalování aktualizovanou verzi vaší aplikace.<br /><br />Například v případě, že aplikace nemůže připojit k síti, můžete použít k adresáři mezipaměti pro ukládání dat a souborů a poskytuje dobrý offline prostředí. Můžete uložit a tato data načíst rychle při čekání na odezvu síťové aplikace, ale ji není třeba zálohovat a lze snadno obnovit nebo znovu vytvořit po dokončení obnovení nebo verzi aktualizace.|
+|tmp/|Aplikace může ukládat dočasné soubory, které jsou vyžadovány pouze na krátkou dobu v tomto adresáři. Kvůli úspoře místa mají být odstraněny soubory, pokud už je potřeba. Operační systém může také odstranit soubory z tohoto adresáře Pokud aplikace není spuštěna.<br /><br />Obsah tohoto adresáře není zálohované serverem iTunes.<br /><br />Například může být adresáři tmp použít k ukládání dočasných souborů, které se stáhnou pro zobrazení pro uživatele (například avatarů Twitter nebo přílohy e-mailu), ale který může odstranit po jejich jste se zobrazit (a znovu stáhnout, pokud je v budoucnu potřebovat ).|
 
 Tento snímek obrazovky ukazuje strukturu adresáře v okně Vyhledávací:
 

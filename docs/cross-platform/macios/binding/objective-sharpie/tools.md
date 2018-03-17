@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 10/05/2015
-ms.openlocfilehash: 0d6e953a6a45b78d470c7ff73e1d6faa7444a683
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 4985d67f74d54644cbc033d6c76148f88d741ee1
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="tools--commands"></a>Nástroje a příkazy
 
@@ -53,19 +53,14 @@ Available Tools:
 
 Cíle Sharpie obsahuje následující nástroje:
 
-<table>
-  <thead>
-    <tr><td>Nástroj</td><td>Popis</td>
-  </thead>
-  <tbody>
-    <tr><td><b>xcode</b></td><td>Poskytuje informace o aktuální instalaci Xcode a verze iOS a Mac sady SDK, které jsou k dispozici. Použijeme tyto informace později při se vygeneruje naše vazby.</td></tr>
-    <tr><td><b>pod</b></td><td>Hledat, nakonfiguruje, nainstaluje (v místním adresáři) a sváže jazyka Objective-C <a href="https://cocoapods.org">CocoaPod</a> knihovny k dispozici z hlavní specifikace úložiště. Tento nástroj vyhodnotí nainstalované CocoaPod automaticky odvodit správnou vstup předat <code>bind</code> nástroj níže. <em><strong>Nové ve 3.0!</strong></em></td></tr>
-    <tr><td><b>Vazby</b></td><td>Analyzuje hlavičkových souborů (<code>*.h</code>) v knihovně jazyka Objective-C do <a href="~/cross-platform/macios/binding/objective-sharpie/platform/apidefinitions-structsandenums.md">počáteční <i>ApiDefinition.cs</i> a <i>StructsAndEnums.cs</i> soubory</a>.</td></tr>
-    <tr><td><b>update</b></td><td>Kontroluje novější verze Sharpie cíl a stáhne a spustí instalační program, pokud je k dispozici.</td></tr>
-    <tr><td><b>verify-docs</b></td><td>Obsahuje podrobné informace o <code>[Verify]</code> atributy.</td></tr>
-    <tr><td><b>Dokumentace</b></td><td>Přejde na tento dokument ve webovém prohlížeči výchozí.</td></tr>
-  </tbody>
-</table>
+|Nástroj|Popis|
+|--- |--- |
+|**xcode**|Poskytuje informace o aktuální instalaci Xcode a verze iOS a Mac sady SDK, které jsou k dispozici. Použijeme tyto informace později při se vygeneruje naše vazby.|
+|**pod**|Hledat, nakonfiguruje, nainstaluje (v místním adresáři) a sváže jazyka Objective-C [CocoaPod](https://cocoapods.org/) knihovny k dispozici z hlavní specifikace úložiště. Tento nástroj vyhodnotí nainstalované CocoaPod automaticky odvodit správnou vstup předat `bind` nástroj níže. Nové ve 3.0!|
+|**Vazby**|Analyzuje hlavičkových souborů (`*.h`) v knihovně jazyka Objective-C do počáteční [ApiDefinition.cs a StructsAndEnums.cs](~/cross-platform/macios/binding/objective-sharpie/platform/apidefinitions-structsandenums.md) soubory.|
+|**update**|Kontroluje novější verze Sharpie cíl a stáhne a spustí instalační program, pokud je k dispozici.|
+|**verify-docs**|Obsahuje podrobné informace o `[Verify]` atributy.|
+|**Dokumentace**|Přejde na tento dokument ve webovém prohlížeči výchozí.|
 
 Potřebujete pomoc na konkrétní nástroj Sharpie cíl, zadejte název tohoto nástroje a `-help` možnost. Například `sharpie xcode -help` vrátí následující výstup:
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 202df615f1b35504f1fe5c9fd64c9c4b4db77a2d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 67635b6a04579246467184cdff8d9f277b36ecc4
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="understanding-sirikit-concepts"></a>Principy SiriKit koncepty
 
@@ -65,108 +65,33 @@ Existuje mnoho způsobů, může tento uživatel spustit interakci s aplikací, 
 
 Například pokud uživatel chtěli odeslat zprávu o jejich friend Bobo, mohou mít následující konverzace s Siri:
 
-<table width="100%" border="1px">
-<tr>
-    <td width="50%"><b>Siri</b></td>
-    <td width="50%"><b>Uživatel</b></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"Hey Siri, odeslání a MonkeyChat zpráva"</td>
-</tr>
-<tr>
-    <td>"Komu?"</td>
-    <td></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"Bobo"</td>
-</tr>
-<tr>
-    <td>"Zadejte tedy na Bobo?"</td>
-    <td></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"Pošlete prosím další banánů"</td>
-</tr>
-</table>
+_Uživatel: Hey Siri, odeslat zprávu MonkeyChat._<br />
+_Siri: pro kterého?_<br />
+_Uživatel: Bobo._<br />
+_Siri: Co chcete tedy na Bobo?_<br />
+_Uživatel: Pošlete prosím další banánů._<br />
 
 Jinou osobu může být stejné odeslán požadavek s jinou konverzace:
 
-<table width="100%" border="1px">
-<tr>
-    <td width="50%"><b>Siri</b></td>
-    <td width="50%"><b>Uživatel</b></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"Odeslání zprávy do Bobo na MonkeyChat"</td>
-</tr>
-<tr>
-    <td>"Zadejte tedy na Bobo?"</td>
-    <td></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"Pošlete prosím další banánů"</td>
-</tr>
-</table>
+_Uživatel: Odeslání zprávy do Bobo na MonkeyChat._<br />
+_Siri: Co chcete tedy na Bobo?_<br />
+_Uživatel: Pošlete prosím další banánů._<br />
 
 A jiný uživatel může nastavit i kratší žádost:
 
-<table width="100%" border="1px">
-<tr>
-    <td width="50%"><b>Siri</b></td>
-    <td width="50%"><b>Uživatel</b></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"MonkeyChat Bobo prosím odeslat další banánů"</td>
-</tr>
-<tr>
-    <td>"Ok odesílání zprávy prosím poslat další banánů Bobo na Monkeychat"</td>
-    <td></td>
-</tr>
-</table>
+_Uživatel: MonkeyChat Bobo pošlete prosím další banánů._<br />
+_Siri: Ok odesílání zprávy prosím odesílejte další banánů Bobo na Monkeychat._<br />
 
 Nebo můžete vytvořit stejném požadavku v jiném jazyce:
 
-<table width="100%" border="1px">
-<tr>
-    <td width="50%"><b>Siri</b></td>
-    <td width="50%"><b>Uživatel</b></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"MonkeyChat Bobo s'il vous plaît envoyer plus de bananes"</td>
-</tr>
-<tr>
-    <td>"Oui, envoi zpráva s'il vous plaît envoyer plus de bananes ve Bobo sur Monkeychat"</td>
-    <td></td>
-</tr>
-</table>
+_Uživatel: MonkeyChat Bobo s'il vous plaît envoyer plus de bananes._<br />
+_Siri: Oui, envoi zpráva s'il vous plaît envoyer plus de bananes ve Bobo sur Monkeychat._<br />
 
 Ještě jiný uživatel může být velmi podrobné v jejich konverzace:
 
-<table width="100%" border="1px">
-<tr>
-    <td width="50%"><b>Siri</b></td>
-    <td width="50%"><b>Uživatel</b></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"Hey Siri, můžete prosím nemáte mi upřednostnit a spusťte aplikaci MonkeyChat odesílat text se zprávou, pošlete prosím další banánů"</td>
-</tr>
-<tr>
-    <td>"Komu?"</td>
-    <td></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"Bobo Moje nejlepší pal"</td>
-</tr>
-</table>
+_Uživatel: Hey Siri, můžete prosím nemáte mi upřednostnit a spusťte aplikaci MonkeyChat odesílat text se zprávou, pošlete prosím další banánů._<br />
+_Siri: pro kterého?_<br />
+_Uživatel: Moje nejlepší pal Bobo._<br />
 
 Kromě toho existuje mnoho způsobů, které může Siri odpověď na žádost, některé závislosti na tom, jak byl požadavek:
 
@@ -198,24 +123,9 @@ Existují tři hlavní způsoby, které aplikace lze použít při uživatele ko
 
 Výše uvedené informace, zkontrolujte, jak by následující konverzace komunikovat s MonkeyChat aplikace:
 
-<table width="100%" border="1px">
-<tr>
-    <td width="50%"><b>Siri</b></td>
-    <td width="50%"><b>Uživatel</b></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"Hey Siri, send a zprávy Bobo na MonkeyChat"</td>
-</tr>
-<tr>
-    <td>"Zadejte tedy na Bobo?"</td>
-    <td></td>
-</tr>
-<tr>
-    <td></td>
-    <td>"Pošlete prosím další banánů"</td>
-</tr>
-</table>
+_Uživatel: Hey Siri, send a zprávy Bobo na MonkeyChat._<br />
+_Siri: Co chcete tedy na Bobo?_<br />
+_Uživatel: Pošlete prosím další banánů._<br />
 
 První role, která přebírá aplikace konverzace je pomoct Siri pochopit řeči uživatele:
 

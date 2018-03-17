@@ -9,11 +9,11 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 39c699b10280218223b6f6022d419f77aba875dc
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 34b51f784b549caa0dda2eeda066bb39dfc13020
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="multitasking-for-ipad"></a>Multitasking pro iPad
 
@@ -260,7 +260,7 @@ Tento článek má popsané kroky potřebné k zkontrolujte, zda bude aplikace X
 ## <a name="related-links"></a>Související odkazy
 
 - [Ukázky iOS 9](https://developer.xamarin.com/samples/ios/iOS9/)
-- [Vykonávat několik úkolů současně (ukázka)](http://developer.xamarin.comhttps://developer.xamarin.com/samples/monotouch/ios9/MultiTask/)
+- [Vykonávat několik úkolů současně (ukázka)](https://developer.xamarin.com/samples/monotouch/ios9/MultiTask/)
 - [Úvod do jednotná scénářů](~/ios/user-interface/storyboards/unified-storyboards.md)
 - [iOS 9 pro vývojáře](https://developer.apple.com/ios/pre-release/)
 - [iOS 9.0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)

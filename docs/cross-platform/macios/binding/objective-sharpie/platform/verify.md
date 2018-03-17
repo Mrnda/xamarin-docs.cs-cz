@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 01/15/2016
-ms.openlocfilehash: cda523cd9d762c3a3c1570e2abd0acb8a264d5dd
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 10fb2e2824a05954e19f9b483884061b217be683
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="verify-attributes"></a>Ověřte atributy
 
@@ -29,32 +29,12 @@ Jakmile si ověříte, že vazba platí opravte nebo mít pevnou správné, _ode
 
 Pomocný parametr argument zadaný do atribut může být křížové odkazuje níže naleznete v dokumentaci. Dokumentace pro žádné vytvořeného `[Verify]` atributy bude poskytnuta v konzole také po dokončení vazby.
 
-<table>
-  <thead>
-  <tr>
-    <th>Ověřte pomocný parametr</th>
-    <th>Popis</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <td>InferredFromPreceedingTypedef</td>
-    <td>Název tohoto prohlášení, byla vyvozena na základě běžných konvencí z přímo předcházejícího <code>typedef</code> v původní nativní zdrojového kódu. Ověřte, že název odvozené správné jako touto konvencí je nejednoznačný.</td>
-  </tr>
-  <tr>
-    <td>ConstantsInterfaceAssociation</td>
-    <td>Neexistuje způsob ověření fool k určení, které rozhraní jazyka Objective-C může být přidružený extern deklarace proměnné. Tyto instance jsou svázané s jako <code>[Field]</code> vlastnosti částečné rozhraní do téměř podle konkrétní rozhraní k vytváření intuitivnější rozhraní API, může být odstranění konstanty rozhraní úplně.</td>
-  </tr>
-  <tr>
-    <td>MethodToProperty</td>
-    <td>Metody jazyka Objective-C byla vázána jako vlastnost C# z důvodu konvence například trvá žádné parametry a vrátí hodnotu (bez void vrácení). Často metody takovéto svázání jako vlastnosti prezentovat nicer rozhraní API, ale někdy může dojít k přijetí false a vazba by měla být ve skutečnosti metodu.</td>
-  </tr>
-  <tr>
-    <td>StronglyTypedNSArray</td>
-    <td>Nativní <code>NSArray*</code> byla vázána jako <code>NSObject[]</code>. Je možné více silného typu pole vazba podle očekávání, nastavit pomocí dokumentaci k rozhraní API (např. komentáře v hlavičkový soubor) nebo tak, že prověří obsah pole prostřednictvím testování. Například NSArray * obsahující pouze NSNumber * instancescan navázat jako <code>NSNumber[]</code> místo <code>NSObject[]</code>.</td>
-  </tr>
-  </tbody>
-</table>
+|Ověřte pomocný parametr|Popis|
+|---|---|
+|InferredFromPreceedingTypedef|Název tohoto prohlášení, byla vyvozena na základě běžných konvencí z přímo předcházejícího `typedef` v původní nativní zdrojového kódu. Ověřte, že název odvozené správné jako touto konvencí je nejednoznačný.|
+|ConstantsInterfaceAssociation|Neexistuje způsob ověření fool k určení, které rozhraní jazyka Objective-C může být přidružený extern deklarace proměnné. Tyto instance jsou svázané s jako `[Field]` vlastnosti částečné rozhraní do téměř podle konkrétní rozhraní k vytváření intuitivnější rozhraní API, může být odstranění konstanty rozhraní úplně.|
+|MethodToProperty|Metody jazyka Objective-C byla vázána jako vlastnost C# z důvodu konvence například trvá žádné parametry a vrátí hodnotu (bez void vrácení). Často metody takovéto svázání jako vlastnosti prezentovat nicer rozhraní API, ale někdy může dojít k přijetí false a vazba by měla být ve skutečnosti metodu.|
+|StronglyTypedNSArray|Nativní `NSArray*` byla vázána jako `NSObject[]`. Je možné více silného typu pole vazba podle očekávání, nastavit pomocí dokumentaci k rozhraní API (např. komentáře v hlavičkový soubor) nebo tak, že prověří obsah pole prostřednictvím testování. Například NSArray * obsahující pouze NSNumber * instancescan navázat jako `NSNumber[]` místo `NSObject[]`.|
 
 Můžete také rychle přijímat dokumentace pro nápovědu pomocí `sharpie verify-docs` nástroje, například:
 

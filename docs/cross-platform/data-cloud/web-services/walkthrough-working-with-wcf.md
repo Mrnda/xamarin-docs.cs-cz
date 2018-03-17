@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 02/17/2018
-ms.openlocfilehash: b076c7a71d81a474ca80ac32771d5512c21c167c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: b4705bc9c8fdb1a671c7de2453ea088bf2afe424
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="walkthrough---working-with-wcf"></a>Návod - práce s použitím technologie WCF
 
@@ -394,37 +394,12 @@ Proxy server služby WCF mohou být spotřebovávána aplikace pro Xamarin.iOS, 
 1. V `HelloWorld.iOS` projekt, přidejte odkaz na `HelloWorldServiceProxy` projekt a odkaz na `System.ServiceModel` oboru názvů.
 1. V **Průzkumníku řešení**, dvakrát klikněte na `Main.storyboard` k otevření souboru v Návrháři iOS. Pak přidejte následující `UIButton` a `UITextView` ovládacích prvků:
 
-    <table>
-        <thead>
-            <tr>
-                <td></td>
-                <td>Název</td>
-                <td>Název</td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><code>UIButton</code></td>
-                <td><code>sayHelloWorldButton</code></td>
-                <td>Řekněme "Hello, World"</td>
-            </tr>
-            <tr>
-                <td><code>UITextView</code></td>
-                <td><code>sayHelloWorldText</code></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td><code>UIButton</code></td>
-                <td><code>getHelloWorldDataButton</code></td>
-                <td>Získat "Hello, World" dat</td>
-            </tr>
-            <tr>
-                <td><code>UITextView</code></td>
-                <td><code>getHelloWorldDataText</code></td>
-                <td></td>
-            </tr>
-        </tbody>
-    </table>
+    ||Název|Název|
+    |--- |--- |--- |
+    |`UIButton`|`sayHelloWorldButton`|Řekněme "Hello, World"|
+    |`UITextView`|`sayHelloWorldText`||
+    |`UIButton`|`getHelloWorldDataButton`|Získat "Hello, World" dat|
+    |`UITextView`|`getHelloWorldDataText`||
 
     Po přidání ovládacích prvků, by měl vypadat uživatelského rozhraní na následujícím snímku obrazovky:
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 342e8189d9dec6eaa60a999d56a7891da845d247
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: a0b0ca9857e706a9a84f1c661f7f6ff294e112c1
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="introduction-to-storyboards"></a>Úvod do scénářů
 
@@ -84,32 +84,12 @@ Všechny aplikace pomocí třídy velikost také použít novou [ *adaptivní Se
 
 [![](images/adaptivesegue.png "Adaptivní Segues rozevíracího seznamu")](images/adaptivesegue.png#lightbox)
 
-<table>
-    <thead>
-        <tr>
-            <th>Segue</th>
-            <th>Popis</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Zobrazit</td>
-            <td>To je velmi podobné Push segue, ale obsah obrazovky bere v úvahu. </td>
-        </tr>
-        <tr>
-            <td>Zobrazit podrobnosti</td>
-            <td>Pokud aplikace zobrazí zobrazení seznamu a podrobností (například v kontroleru zobrazení rozdělení na Ipadu), nahradí obsah podrobné zobrazení. Pokud aplikace zobrazí pouze hlavní <strong>nebo</strong> podrobností, nahradí obsah horní části zásobníku řadiče zobrazení.</td>
-        </tr>
-        <tr>
-            <td>Prezentace</td>
-            <td>To je podobná modální segue a umožňuje výběr prezentace a přechod stylů.</td>
-        </tr>
-        <tr>
-            <td>Popover prezentace</td>
-            <td>To představuje obsah jako popover</td>
-        </tr>
-    </tbody>
-</table>
+|Segue|Popis|
+|--- |--- |
+|Zobrazit|To je velmi podobné Push segue, ale obsah obrazovky bere v úvahu.|
+|Zobrazit podrobnosti|Pokud aplikace zobrazí zobrazení seznamu a podrobností (například v kontroleru zobrazení rozdělení na Ipadu), nahradí obsah podrobné zobrazení. Pokud aplikace zobrazí, jenom na hlavní server nebo podrobností, nahradí obsah horní části zásobníku řadiče zobrazení.|
+|Prezentace|To je podobná modální segue a umožňuje výběr prezentace a přechod stylů.|
+|Popover prezentace|To představuje obsah jako popover|
 
 ### <a name="transferring-data-with-segues"></a>Přenos dat pomocí Segues
 

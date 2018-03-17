@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 30a952bf0df4db34c749de3d6198877b7a9766b9
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 77808ae03f5801dd3628b8966e05a574b8501f37
+ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="unified-storyboards"></a>Jednotná scénářů
 
@@ -116,63 +116,23 @@ Tato část obsahuje typické typy znak kolekce, které budou uživatele při pr
 
 Toto je typické znak kolekce, která vývojář může zobrazit v zařízení iPhone:
 
-<table width="100%" border="1px">
-<thead>
-<tr>
-    <td>Vlastnost</td>
-    <td>Hodnota</td>
-</tr>
-</thead>
-<tbody>
-<tr>
-    <td><code>HorizontalSizeClass</code></td>
-    <td>Compact</td>
-</tr>
-<tr>
-    <td><code>VerticalSizeClass</code></td>
-    <td>Regulární</td>
-</tr>
-<tr>
-    <td><code>UserInterfaceIdom</code></td>
-    <td>Telefon</td>
-</tr>
-<tr>
-    <td><code>DisplayScale</code></td>
-    <td>2.0</td>
-</tr>
-</tbody>
-</table>
+|Vlastnost|Hodnota|
+|--- |--- |
+|`HorizontalSizeClass`|Compact|
+|`VerticalSizeClass`|Regulární|
+|`UserInterfaceIdom`|Telefon|
+|`DisplayScale`|2.0|
 
 Sada výše by představují plně kvalifikovaný znak kolekce, jako má hodnoty pro všechny vlastnosti jeho výšku.
 
 Je také možné, že znak kolekce, která chybí některé z jeho hodnoty (které Apple označuje jako *nespecifikovaný*):
 
-<table width="100%" border="1px">
-<thead>
-<tr>
-    <td>Vlastnost</td>
-    <td>Hodnota</td>
-</tr>
-</thead>
-<tbody>
-<tr>
-    <td><code>HorizontalSizeClass</code></td>
-    <td>Compact</td>
-</tr>
-<tr>
-    <td><code>VerticalSizeClass</code></td>
-    <td>{neurčené}</td>
-</tr>
-<tr>
-    <td><code>UserInterfaceIdom</code></td>
-    <td>{neurčené}</td>
-</tr>
-<tr>
-    <td><code>DisplayScale</code></td>
-    <td>{neurčené}</td>
-</tr>
-</tbody>
-</table>
+|Vlastnost|Hodnota|
+|--- |--- |
+|`HorizontalSizeClass`|Compact|
+|`VerticalSizeClass`|Tento parametr|
+|`UserInterfaceIdom`|Tento parametr|
+|`DisplayScale`|Tento parametr|
 
 Obecně platí ale když vývojář požaduje prostředí znak jeho výšku kolekce, vrátí kolekci plně kvalifikovaný jak je vidět v předchozím příkladu.
 
@@ -216,7 +176,6 @@ Další funkce, která vývojář můžete provádět na výšku kolekce má dva
 
 Jak jsme uvedli výše, pokud žádné z jsou vlastnosti je Nespecifikovaná v jedné z kolekcí znak a je uveden v jiné, hodnota se nastaví na zadanou verzi. Ale pokud existuje více verzí dané hodnoty zadané, hodnotu z poslední znak kolekce bude hodnotu, která se používá.
 
-
 ## <a name="adaptive-view-controllers"></a>Adaptivní zobrazení řadičů
 
 Tato část se bude zabývat podrobnosti o tom, jak iOS zobrazení a zobrazení řadičů přijaly koncepty velikost třídy a vlastnosti automaticky být více adaptivní v aplikacích pro vývojáře.
@@ -259,58 +218,11 @@ Nejprve iOS 8 nepodporuje některé instalace přípravy přechod proběhla. V d
 
 iOS 8 obsahuje několik zpětná volání, které vývojář můžete použít k účasti na změnu znak, jak je vidět v následující tabulce:
 
-<table width="100%" border="1px">
-<thead>
-<tr>
-    <td>Phase</td>
-    <td>Zpětné volání</td>
-    <td>Popis</td>
-</tr>
-</thead>
-<tbody>
-<tr>
-    <td>Instalace</td>
-    <td>
-        <ul>
-        <li><code>WillTransitionToTraitCollection</code></li>
-        <li><code>TraitCollectionDidChange</code></li>
-        </ul>
-    </td>
-    <td>
-        <ul>
-        <li>Tato metoda je volána na začátku změnu znak předtím, než získá kolekci znak nastavena na novou hodnotu.</li>
-        <li>Metoda volána při změně hodnoty kolekce znak, ale před provedením jakékoli animace.</li>
-        </ul>
-    </td>
-</tr>
-<tr>
-    <td>Animace</td>
-    <td>
-        <ul>
-        <li><code>WillTransitionToTraitCollection</code></li>
-        </ul>
-    </td>
-    <td>
-        <ul>
-        <li>Koordinátor přechodu, který získá předaná této metodě má <code>AnimateAlongside</code> vlastnost, která umožňuje vývojáři přidat animace, které bude spuštěn společně s výchozí animace.</li>
-        </ul>
-    </td>
-</tr>
-<tr>
-    <td>Čištění</td>
-    <td>
-        <ul>
-        <li><code>WillTransitionToTraitCollection</code></li>
-        </ul>
-    </td>
-    <td>
-        <ul>
-        <li>Poskytuje metodu pro vývojáře zahrnout vlastní kód čištění po provedení přechodu.</li>
-        </ul>
-    </td>
-</tr>
-</tbody>
-</table>
+|Phase|Zpětné volání|Popis|
+|--- |--- |--- |
+|Instalace|<ul><li>`WillTransitionToTraitCollection`</li><li>`TraitCollectionDidChange`</li></ul>|<ul><li>Tato metoda je volána na začátku změnu znak předtím, než získá kolekci znak nastavena na novou hodnotu.</li><li>Metoda volána při změně hodnoty kolekce znak, ale před provedením jakékoli animace.</li></ul>|
+|Animace|`WillTransitionToTraitCollection`|Koordinátor přechodu, který získá předaná této metodě má `AnimateAlongside` vlastnost, která umožňuje vývojáři přidat animace, které bude spuštěn společně s výchozí animace.|
+|Čištění|`WillTransitionToTraitCollection`|Poskytuje metodu pro vývojáře zahrnout vlastní kód čištění po provedení přechodu.|
 
 `WillTransitionToTraitCollection` Metoda je skvělá pro animace řadiče zobrazení spolu s změny znak kolekce. `WillTransitionToTraitCollection` Metoda je dostupná pouze na zobrazení řadičů ( `UIViewController`) a ne na jiných znak prostředích, jako je `UIViews`.
 
