@@ -6,24 +6,44 @@ ms.assetid: C10FD999-7A91-4708-B642-0C1B0901BD24
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
-ms.date: 03/09/2018
-ms.openlocfilehash: 96e8d1a3658a515b6b1d37cf0fdd93157954c01d
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/19/2018
+ms.openlocfilehash: d1267bc4a530deb6dfb6eb2e30bee2facabd8fed
+ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="foreground-services"></a>Služby popředí
 
-Některé služby fungují některé úlohy, které jsou uživatelé aktivně vědět, tyto služby se označují jako _popředí služby_. Příklad služby popředí je aplikace, která poskytuje uživatele pokynů při řízení nebo procházení. I v případě, že aplikace je na pozadí, je však důležité, zda má služba dostatek prostředků ke fungovat správně a zda má uživatel rychlý a snadný způsob, jak přístup k aplikaci. Pro aplikace pro Android, to znamená, že popředí služby by měly dostávat vyšší prioritu než "Regulérní" služba a služba popředí musíte zadat `Notification` který Android se zobrazí, dokud je služba spuštěná.
+Služba popředí je speciální typu vázané služby nebo spuštěná služba. Příležitostně služby bude provádět úlohy, které uživatelé musí být aktivně vědět, tyto služby se označují jako _popředí služby_. Příklad služby popředí je aplikace, která poskytuje uživatele pokynů při řízení nebo procházení. I v případě, že aplikace je na pozadí, je však důležité, zda má služba dostatek prostředků ke fungovat správně a zda má uživatel rychlý a snadný způsob, jak přístup k aplikaci. Pro aplikace pro Android, to znamená, že popředí služby by měly dostávat vyšší prioritu než "Regulérní" služba a služba popředí musíte zadat `Notification` který Android se zobrazí, dokud je služba spuštěná.
  
-Popředí služby je vytvořena a spuštěna stejně jako jakoukoli jinou službu. Při spuštění služby, bude sám zaregistruje v Android jako služba popředí.
- 
-Tato příručka popisuje další kroky, které musí být přijata zaregistrovat službu popředí a zastavit službu, pokud se provádí.
+Chcete-li spustit službu popředí, musí aplikace odesílání záměrem s informacemi o Android se spustit službu. Potom služba musí se registrovat jako služba popředí s Android. Aplikace, které jsou spuštěny na Android 8.0 (nebo vyšší) by měl používat `Context.StartForegroundService` se spustit službu, při by měl používat aplikace, které jsou spuštěny na zařízení se starší verzí systému Android – metoda `Context.StartService`
+
+Tato metoda rozšíření C# je příklad toho, jak spustit službu popředí. Na Android 8.0 a vyšší se bude používat `StartForegroundService` metoda, jinak hodnota starší `StartService` metoda se použije.  
+
+```csharp
+public static void StartForegroundServiceComapt<T>(this Context context, Bundle args = null) where T : Service
+{
+    var intent = new Intent(context, typeof(T));
+    if (args != null) 
+    {
+        intent.PutExtras(args);
+    }
+
+    if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.O)
+    {
+        context.StartForegroundService(intent);
+    }
+    else
+    {
+        context.StartService(intent);
+    }
+}
+```
 
 ## <a name="registering-as-a-foreground-service"></a>Registrace jako služba popředí
 
-Služba popředí je speciální typu vázané služby nebo spuštěná služba. Služby, pokud již bylo spuštěno, zavolá [ `StartForeground` ](https://developer.xamarin.com/api/member/Android.App.Service.StartForeground/p/System.Int32/Android.App.Notification/) metoda k registraci v Android jako služba popředí.   
+Po zahájení popředí služby, se musí se registrovat s Android vyvoláním [ `StartForeground` ](https://developer.xamarin.com/api/member/Android.App.Service.StartForeground/p/System.Int32/Android.App.Notification/). Pokud je služba spuštěna s `Service.StartForegroundService` metoda ale nezaregistruje samostatně, pak bude Android zastavit službu a příznak aplikace jako přestane reagovat.
 
 `StartForeground` přebírá dva parametry, které jsou povinné:
  
@@ -78,8 +98,7 @@ Oznámení o panelu stavu, který se zobrazí může být odebrán také předá
 StopForeground(true);
 ```
 
-Pokud je službu zastavit pomocí volání `StopSelf` nebo `StopService`, pak oznámení panelu Stav se taky odeberou.
-
+Pokud je službu zastavit pomocí volání `StopSelf` nebo `StopService`, odeberou se panelu oznámení o stavu.
 
 ## <a name="related-links"></a>Související odkazy
 

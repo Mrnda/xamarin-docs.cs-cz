@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/13/2018
-ms.openlocfilehash: c38a0a7f6897cd90f81c92348280539b33524b9c
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 75dc51b5372ae4d8a322c29e39a585a547ab1963
+ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="xamarin-android-device-manager"></a>Xamarin Android Device Manager
 
@@ -308,7 +308,8 @@ Použijte následující postup ke konfiguraci nové zařízení na **nové zař
 
 
 <a name="device-edit" />
- 
+
+
 ### <a name="edit-device"></a>Upravit zařízení
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -415,6 +416,7 @@ V nabídce Další možnosti obsahuje následující položky:
 
 <a name="properties" />
  
+
 ## <a name="profile-properties"></a>Vlastnosti profilu
 
 **Nové zařízení** a **zařízení upravit** obrazovky seznam vlastností virtuálního zařízení z prvního sloupce s odpovídajícími hodnotami každé vlastnosti v druhém sloupci. Když vyberete vlastnost, podrobný popis této vlastnosti se zobrazí na pravé straně. Můžete upravit jeho *vlastnosti profilu hardwaru* a jeho *AVD vlastnosti*.

@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 09/14/2017
-ms.openlocfilehash: 50f99c48d0f53bd6a2dfaf42284137ce1e424b30
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 747c158460b23b91e4c2986d212802528cdd3979
+ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="an-introduction-to-skiasharp"></a>Úvod do SkiaSharp
 
@@ -20,7 +20,7 @@ _To poskytuje stručný úvod do Principy SkiaSharp_
 
 SkiaSharp poskytuje bohatý a výkonné 2D grafického rozhraní API, které můžete použít k vykreslení do 2D vyrovnávací paměti.  Ty můžete použít k implementaci vlastních prvků uživatelského rozhraní a 2D obrázky, které lze začlenit do vaší aplikace.  SkiaSharp je rozhraní .NET vazbu ke [Skia](https://skia.org) knihovny a dědí funkcí a výkonu v této knihovně.
 
-Knihovny je aktuálně k dispozici jako napříč platformami [balíček NuGet](https://www.nuget.org/packages/SkiaSharp), můžete do projektu přidáním odkazu NuGet.
+Knihovny je aktuálně k dispozici jako napříč platformami [balíček NuGet](https://www.nuget.org/packages/SkiaSharp), můžete ho přidat do projektu přidáním odkazu NuGet.
 
 Kreslení, vytvoří kód `SkCanvas` který popisuje prostor, kde bude probíhat kreslení operace.
 

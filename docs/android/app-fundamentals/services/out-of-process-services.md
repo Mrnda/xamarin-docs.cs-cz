@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 02/16/2018
-ms.openlocfilehash: 0f018aa666f08792a1693a79e22da150f82712f6
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: ebbb4b527b27b87bb6357723978e730304658720
+ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="running-android-services-in-remote-processes"></a>Spuštění Android služeb ve vzdálených procesů
 
@@ -415,7 +415,7 @@ Zjednodušený příklad vytvoření vlastní `normal` oprávnění budou popsan
 
 Pokud chcete používat vlastní oprávnění, ho není deklarovaná služby při klientovi výslovně požaduje tato oprávnění.
 
-K vytvoření oprávnění v rámci služby APK, `permission` prvek přidán `manifest` element v**AndroidManifest.xml**. Musí mít toto oprávnění `name`, `protectionLevel`, a `label` sady atributů. `name` Musí být nastaven na řetězec, který jednoznačně identifikuje oprávnění. Název se zobrazí v **informace o aplikaci** zobrazení **nastavení Androidu** (jak je znázorněno v následujícím oddílu).
+K vytvoření oprávnění v rámci služby APK, `permission` prvek přidán `manifest` element v **AndroidManifest.xml**. Musí mít toto oprávnění `name`, `protectionLevel`, a `label` sady atributů. `name` Musí být nastaven na řetězec, který jednoznačně identifikuje oprávnění. Název se zobrazí v **informace o aplikaci** zobrazení **nastavení Androidu** (jak je znázorněno v následujícím oddílu).
 
 `protectionLevel` Musí být nastaven na jednu z čtyři řetězcové hodnoty, které bylo popsáno výše.  `label` a `description` musí odkazovat na prostředky řetězce a používají se pro uživatelsky přívětivý název a popis pro uživatele.
 

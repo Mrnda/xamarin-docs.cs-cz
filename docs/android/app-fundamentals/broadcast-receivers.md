@@ -7,12 +7,12 @@ ms.assetid: B2727160-12F2-43EE-84B5-0B15C8FCF4BD
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
-ms.date: 03/09/2018
-ms.openlocfilehash: b2da136ddfa6aab4121ba21d0e6f83b2390ba10b
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/19/2018
+ms.openlocfilehash: 67b150650c21c781b7081de4e1f3b095c0ea560f
+ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="broadcast-receivers-in-xamarinandroid"></a>Příjemci všesměrového vysílání v Xamarin.Android
 
@@ -23,14 +23,14 @@ _Tato část popisuje postup použití příjemce všesměrového vysílání._
 
 A _všesměrového vysílání příjemce_ je Android součásti, které umožní aplikaci reagovat na zprávy (Android [ `Intent` ](https://developer.xamarin.com/api/type/Android.Content.Intent/)), jsou vysílání Android operačního systému nebo aplikace. Postupujte podle všesměrové _publikování a odběru_ modelu &ndash; událost způsobí, že vysílání na publikovat a přijatých ty součásti, které jsou máte zájem o události. 
 
-Android identifikuje dvě kategorie vysílání:
+Android identifikuje dva typy vysílání:
 
-* **Normální vysílání** &ndash; normální všesměrové vysílání, budou směrovány všechny registrované všesměrového vysílání příjemcům v neurčitém pořadí. Každý příjemce obdrží záměr nedefinované pořadí. 
-* **Seřazené vysílání** &ndash; seřazené všesměrové vysílání jeden po druhém doručuje registrované příjemcům. Po přijetí záměr všesměrového vysílání příjemce můžete upravit záměr nebo jej můžete ukončit vysílání.
+* **Explicitní vysílání** &ndash; tyto typy vysílání zacílit na konkrétní aplikaci. Explicitní všesměrové vysílání slouží nejčastěji spuštění aktivity. Příkladem explicitní všesměrové vysílání když aplikace potřebuje k vytočte telefonní číslo; se bude odesílat záměrem zacílený telefonní aplikaci pro Android a předejte podél telefonní číslo chcete vytočit. Android pak směrovat záměr telefonní aplikace.
+* **Implicitní broadcase** &ndash; tyto vysílání se odesílají na všechny aplikace na zařízení. Je například implicitní všesměrové vysílání `ACTION_POWER_CONNECTED` záměr. Tento záměr je publikován pokaždé, když Android zjistí, zda je ukládání baterie na zařízení. Android bude směrovat tato záměr na všechny aplikace, která byla zaregistrovaná pro tuto událost.
 
-Příjemce všesměrového vysílání je podtřídou třídy `BroadcastReceiver` třídy a je nutné přepsat [ `OnReceive` ](https://developer.xamarin.com/api/member/Android.Content.BroadcastReceiver.OnReceive/p/Android.Content.Context/Android.Content.Intent/) metoda. Android, budou spuštěny `OnReceive` na hlavní vlákno, takže tato metoda by se měly navrhovat rychle provést. Potřeba dát pozor, pokud při vytváření kopie vlákna v `OnReceive` protože Android může po dokončení metody ukončit proces. Pokud příjemce všesměrového vysílání, musíte provést dlouhotrvající pracovní, pak se doporučuje naplánovat _úlohy_ pomocí `JobScheduler` nebo _Firebase úlohy dispečera_. Plánování práce s úlohou budou popsané v samostatné průvodce.
+Příjemce všesměrového vysílání je podtřídou třídy `BroadcastReceiver` typu a musí přepsat [ `OnReceive` ](https://developer.xamarin.com/api/member/Android.Content.BroadcastReceiver.OnReceive/p/Android.Content.Context/Android.Content.Intent/) metoda. Android, budou spuštěny `OnReceive` na hlavní vlákno, takže tato metoda by se měly navrhovat rychle provést. Potřeba dát pozor, pokud při vytváření kopie vlákna v `OnReceive` protože Android může po dokončení metody ukončit proces. Pokud příjemce všesměrového vysílání, musíte provést dlouhotrvající pracovní, pak se doporučuje naplánovat _úlohy_ pomocí `JobScheduler` nebo _Firebase úlohy dispečera_. Plánování práce s úlohou budou popsané v samostatné průvodce.
 
-_Záměrné filtru_ slouží k registraci všesměrového vysílání přijímač tak, aby Android může správně směrovat zprávy. Záměrné filtru lze zadat v době běhu (to se někdy označuje jako _kontextu registrovaný příjemce_ nebo jako _dynamickou registraci_) nebo může být staticky definovaných v Android Manifest ( _zaregistrován manifest příjemce_). Poskytuje atribut C# Xamarin.Android `IntentFilterAttribute`, který bude staticky registrovat záměrné filtru (to bude popsané podrobněji dál v této příručce). 
+_Záměrné filtru_ slouží k registraci všesměrového vysílání přijímač tak, aby Android může správně směrovat zprávy. Záměrné filtru lze zadat v době běhu (to se někdy označuje jako _kontextu registrovaný příjemce_ nebo jako _dynamickou registraci_) nebo může být staticky definovaných v Android Manifest ( _zaregistrován manifest příjemce_). Poskytuje atribut C# Xamarin.Android `IntentFilterAttribute`, který bude staticky registrovat záměrné filtru (to bude popsané podrobněji dál v této příručce). Od verze Android 8.0, není možné pro aplikaci staticky zaregistrovat pro implicitní všesměrové vysílání.
 
 Základní rozdíl mezi zaregistrován manifest příjemce a příjemce kontextu registrovaný je, že příjemce kontextu registrovaný bude reagovat jen na všesměrové když aplikace běží, zatímco zaregistrován manifest příjemce může reagovat na vysílá, i když není aplikace spuštěna.  
 
@@ -68,7 +68,7 @@ Když Xamarin.Android kompiluje třídy, bude se také aktualizovat AndroidManif
 
 `OnReceive` Metoda získá odkaz na `Intent` který byl odeslán k příjemce všesměrového vysílání. Tato díky je možné pro odesílatele záměru předat hodnoty všesměrového vysílání příjemce.
 
-### <a name="statically-registering-a-broadcast-receiver-with-an-intent-filter"></a>Staticky registrace všesměrového vysílání příjemce s úmyslem filtru
+### <a name="statically-registering-a-broadcast-receiver-with-an-intent-filter"></a>Filtr záměr staticky registrace příjemce všesměrového vysílání
 
 Když `BroadcastReceiver` opatřen s [ `IntentFilterAttribute` ](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/), Xamarin.Android přidá nezbytné `<intent-filter>` elementu, který chcete pro Android manifestu v době kompilace. Následující fragment kódu je příkladem všesměrového vysílání příjemce, který se spustí po dokončení spuštění (Pokud je uživatel byla udělena příslušná oprávnění Android) zařízení:
 
@@ -98,9 +98,11 @@ public class MySampleBroadcastReceiver : BroadcastReceiver
 }
 ```
 
+Aplikace, které cílí na Android 8.0 (API úrovně 26) nebo vyšší nemusí staticky zaregistrovat pro implicitní všesměrové vysílání. Aplikace může stále staticky zaregistrovat explicitní všesměrové vysílání. Existuje malé seznam implicitní vysílání, které jsou vyloučené z tohoto omezení. Tyto výjimky jsou popsány v [implicitní vysílání výjimky](https://developer.android.com/guide/components/broadcast-exceptions.html) průvodce v Android dokumentaci. Aplikace, které zajímá implicitní všesměrové vysílání, musíte udělat proto dynamicky pomocí `RegisterReceiver` metoda. To je popsána dále.  
+
 ### <a name="context-registering-a-broadcast-receiver"></a>Kontext registrace všesměrového vysílání příjemce 
 
-Registrace kontextu příjemce provádí volání `RegisterReceiver` metoda a všesměrového vysílání příjemce musí neregistrované pomocí volání `UnregisterReceiver` metoda. Pokud chcete zabránit unikající prostředky, je potřeba zrušit registraci příjemce, když už není relevantní pro daný kontext. Služba může například vysílání záměrem k informování aktivitu, která jsou k dispozici, který se má zobrazit uživateli aktualizace. Při spuštění aktivity by zaregistrovat pro tyto záměry. Při aktivity se přesune do na pozadí a již nebude viditelná pro uživatele, se musí zrušit příjemce protože uživatelské rozhraní pro zobrazení aktualizací již není viditelný. Následující fragment kódu je příklad toho, jak se zaregistrovat a zrušit příjemce všesměrového vysílání v rámci aktivity:
+Kontext – registrace (také označované jako dynamické registraci) příjemce provádí volání `RegisterReceiver` metoda a všesměrového vysílání příjemce musí neregistrované pomocí volání `UnregisterReceiver` metoda. Aby se zabránilo unikající prostředky, je potřeba zrušit registraci příjemce, když už není relevantní pro daný kontext (aktivity nebo služby). Služba může například vysílání záměrem k informování aktivitu, která jsou k dispozici, který se má zobrazit uživateli aktualizace. Při spuštění aktivity by zaregistrovat pro tyto záměry. Při aktivity se přesune do na pozadí a již nebude viditelná pro uživatele, se musí zrušit příjemce protože uživatelské rozhraní pro zobrazení aktualizací již není viditelný. Následující fragment kódu je příklad toho, jak se zaregistrovat a zrušit příjemce všesměrového vysílání v rámci aktivity:
 
 ```csharp
 [Activity(Label = "MainActivity", MainLauncher = true, Icon = "@mipmap/icon")]
@@ -136,19 +138,10 @@ V předchozím příkladu aktivity vycházejí do popředí, se zaregistruje vš
 
 ## <a name="publishing-a-broadcast"></a>Publikování vysílání
 
-Vysílání je publikována serverem zapouzdřením _akce_ v záměrem a odeslání ji můžete jedním dvě rozhraní API: 
+Vysílání může být publikována do všechny aplikace nainstalované v zařízení vytvoření záměrné objektu a její odeslání `SendBroadcast` nebo `SendOrderedBroadcast` metoda.  
 
-1. **[`LocalBroadcastManager`](https://developer.android.com/reference/android/support/v4/content/LocalBroadcastManager.html#sendBroadcast(android.content.Intent))** &ndash; Záměry, které jsou publikovány pomocí `LocalBroadcastManager` bude přijímat pouze v aplikaci; proto nebudou směrovány do jiných aplikací. Měl by to být upřednostňované, poskytuje další úroveň zabezpečení udržováním záměry v aktuální aplikaci, a vzhledem k tomu, že je vše v rámci procesu není žádná režijní náklady spojené s volání mezi procesy. Tento fragment kódu ukazuje, jak může aktivitu odesílání záměrné pomocí `LocalBroadcastManager`:
-
-   ```csharp
-   Intent message = new Intent("com.xamarin.example.TEST");
-   // If desired, pass some values to the broadcast receiver.
-   intent.PutExtra("key", "value");
-   Android.Support.V4.Content.LocalBroadcastManager.GetInstance(this).SendBroadcast(message);
-   ```
-
-2. **[`Context.SendBroadcast`](https://developer.xamarin.com/api/member/Android.Content.Context.SendBroadcast/p/Android.Content.Intent/) metody** &ndash; existuje několik implementace této metody.
-   Tyto metody se vysílání cílem celý systém. To zajišťuje značnou flexibilitu ale znamená, že jiné aplikace může zaregistrovat pro příjem aplikace. To může představovat možné bezpečnostní riziko. Aplikace je nutné implementovat přidání zabezpečení zajistit neoprávněného přístupu k záměr. Tento fragment kódu je jedním z příkladů jak dispatch záměrem pomocí jedné z `SendBroadcast` metody:
+1. **Metody Context.SendBroadcast** &ndash; existuje několik implementace této metody.
+   Tyto metody se vysílání cílem celý systém. Thatwill všesměrového vysílání příjemci dostávat záměr v neurčitém pořadí. To zajišťuje značnou flexibilitu ale znamená, že je možné pro jiné aplikace při registraci a přijímat záměr. To může představovat možné bezpečnostní riziko. Aplikace je nutné implementovat přidání zabezpečení před neoprávněným přístupem. Jedním z možných řešení je použití `LocalBroadcastManager` kterého bude pouze odeslání zprávy v prostoru soukromé aplikace. Tento fragment kódu je jedním z příkladů jak dispatch záměrem pomocí jedné z `SendBroadcast` metody:
 
    ```csharp
    Intent message = new Intent("com.xamarin.example.TEST");
@@ -156,20 +149,30 @@ Vysílání je publikována serverem zapouzdřením _akce_ v záměrem a odeslá
    intent.PutExtra("key", "value");
    SendBroadcast(intent);
    ```
-        
-> [!NOTE]
-> Je k dispozici prostřednictvím LocalBroadcastManager [knihovna podpory Xamarin v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) balíček NuGet. 
 
-Tento fragment kódu je další příklad odesílání vysílání pomocí `Intent.SetAction` metodu, jak identifikovat akce:
+    Tento fragment kódu je další příklad odesílání vysílání pomocí `Intent.SetAction` metodu, jak identifikovat akce:
+    
+    ```csharp 
+    Intent intent = new Intent();
+    intent.SetAction("com.xamarin.example.TEST");
+    intent.PutExtra("key", "value");
+    SendBroadcast(intent);
+    ```
+   
+2. **Context.SendOrderedBroadcast** &ndash; metodu je velmi podobné `Context.SendBroadcast`, s rozdílem je, že bude záměr publikované jeden v čase k příjemce, v pořadí, recievers registraci.
+   
+### <a name="localbroadcastmanager"></a>LocalBroadcastManager
 
-```csharp 
-Intent intent = new Intent();
-intent.SetAction("com.xamarin.example.TEST");
+[V4 knihovna podpory Xamarin](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) poskytuje třídu pomocníka názvem [ `LocalBroadcastManager` ](https://developer.android.com/reference/android/support/v4/content/LocalBroadcastManager.html). `LocalBroadcastManager` Je určený pro aplikace, které nechcete odeslat nebo přijmout vysílání z jiných aplikací na zařízení. `LocalBroadcastManager` Bude publikovat pouze zprávy v rámci této aplikace. Jiné aplikace na zařízení nemůže přijímat zprávy, které jsou publikovány pomocí `LocalBroadcastManager`. 
+
+Tento fragment kódu ukazuje, jak odeslat záměrné pomocí `LocalBroadcastManager`:
+
+```csharp
+Intent message = new Intent("com.xamarin.example.TEST");
+// If desired, pass some values to the broadcast receiver.
 intent.PutExtra("key", "value");
-SendBroadcast(intent);
-```
-
-
+Android.Support.V4.Content.LocalBroadcastManager.GetInstance(this).SendBroadcast(message);
+``` 
 
 ## <a name="related-links"></a>Související odkazy
 

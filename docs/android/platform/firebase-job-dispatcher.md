@@ -7,12 +7,12 @@ ms.assetid: 3DB9C7A3-D351-481D-90C5-BEC25D1B9910
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/09/2018
-ms.openlocfilehash: fd5b2f8c758d8e1e9bb9276da96a410c61478d4a
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/19/2018
+ms.openlocfilehash: c542237523b934cb8616fda6cefdcd969b7700bd
+ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="firebase-job-dispatcher"></a>Dispečer firebase úlohy
 
@@ -27,7 +27,7 @@ Doporučené způsoby zachovat přizpůsobivý uživateli aplikace pro Android j
 Android již poskytuje několik rozhraní API usnadní provede práci na pozadí, ale žádná z nich jsou komplexní řešení:
 
 * **[Záměrné služby](~/android/app-fundamentals/services/creating-a-service/intent-services.md)**  &ndash; záměr služby jsou skvěle hodí k provedení práce, ale poskytují způsob, jak plánování práce.
-* **[AlarmManager](https://developer.android.com/reference/android/app/AlarmManager)**  &ndash; tyto rozhraní API pouze povolit, aby se naplánovaná, ale poskytují způsob, jak skutečně provést nějakou práci. Také AlarmManager umožňuje pouze čas na základě omezení, což znamená, že vyvolat alarm v určitém čase nebo po uplynutí určité doby. 
+* **[AlarmManager](https://developer.android.com/reference/android/app/AlarmManager.html)**  &ndash; tyto rozhraní API pouze povolit, aby se naplánovaná, ale poskytují způsob, jak skutečně provést nějakou práci. Také AlarmManager umožňuje pouze čas na základě omezení, což znamená, že vyvolat alarm v určitém čase nebo po uplynutí určité doby. 
 * **[JobScheduler](https://developer.android.com/reference/android/app/job/JobScheduler.html)**  &ndash; The plán úlohy je skvělé rozhraní API, která funguje s operačním systémem při plánování úloh. Je však pouze k dispozici pro tyto Android aplikací, které se zaměřují úroveň rozhraní API 21 nebo vyšší. 
 * **[Vysílání příjemci](~/android/app-fundamentals/broadcast-receivers.md)**  &ndash; Android aplikace se dá nastavit všesměrového vysílání příjemci pro práci v reakci na události široké systému nebo tříd Intent. Ale všesměrového vysílání příjemci neposkytují žádné kontrolu nad spuštění úlohy. Také se omezí změny v operační systém Android když bude fungovat všesměrového vysílání příjemci nebo druhy práci, kterou může reagovat. 
 * **Správce sítě zpráv cloudu Google** &ndash; po dlouhou dobu to bylo pravděpodobně, nejlepší způsob, jak inteligentně plán pozadí fungovat. Ale GCMNetworkManager od již nepoužívá. 

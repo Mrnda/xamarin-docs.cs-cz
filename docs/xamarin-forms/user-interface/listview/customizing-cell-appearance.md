@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 62ac3ab4b3114447f0c67d86c601a688bb8ff1a7
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 551a0de8cd4965815c67a795fb5723d4261a173c
+ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="cell-appearance"></a>Vzhledu buněk
 
@@ -73,11 +73,9 @@ Všimněte si, že pokud je cílem Windows Phone 8.1, `ImageCell` nelze škálov
 <a name="customcells" />
 
 ## <a name="custom-cells"></a>Vlastní buněk
-Při integrované buněk neposkytují na požadované rozložení, implementovat vlastní buněk na požadované rozložení. Můžete například představovat buňku dva popisky, které mají stejnou váhu. A `LabelCell` by dostatek protože `LabelCell` má jeden štítek, který je menší.
+Při integrované buněk neposkytují na požadované rozložení, implementovat vlastní buněk na požadované rozložení. Můžete například představovat buňku dva popisky, které mají stejnou váhu. A `LabelCell` by dostatek protože `LabelCell` má jeden štítek, který je menší. Většina přizpůsobení buněk přidat další data jen pro čtení (například další popisky, obrázky nebo jiné zobrazované informace).
 
 Všechny vlastní buňky musí být odvozeny od [ `ViewCell` ](http://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/), že všechny buňky předdefinované typy použijte stejnou základní třídu.
-
-Většina přizpůsobení buněk přidat další data jen pro čtení (například další popisky, obrázky nebo jiné zobrazované informace). Pokud tlačítka nebo jiných ovládacích prvků, které může být zaměřuje přidají, nemusí být v systému Android můžete kliknout na buňku. Níže naleznete způsob, jak překonání tohoto omezení.
 
 Xamarin.Forms 2 zavedl nový [chování ukládání do mezipaměti](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy) na `ListView` řídit, která může být nastaven na posouvání výkon pro některé typy vlastní buněk.
 
@@ -261,30 +259,6 @@ var listView = new ListView {
 ```
 
 Na iOS a Android Pokud [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) je recyklace elementy a vlastní buňky používá vlastní zobrazovací jednotky, vlastní zobrazovací jednotky musí správně implementovat oznámení o změně vlastností. Když jsou opakovaně buněk jejich hodnoty vlastností se změní při aktualizaci kontextu vazby na k dispozici buňky, který se `PropertyChanged` událostí vyvolaných. Další informace najdete v tématu [přizpůsobení ViewCell](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md). Další informace o buňky recyklace najdete v tématu [ukládání do mezipaměti strategie](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy).
-
-### <a name="enabling-row-selection-on-android"></a>Povolení výběru řádku v systému Android
-
-Umožňuje výběr řádků pro buněk, které také obsahují vstupní prvky, jako tlačítka, jednoduchou [ `custom renderer` ](~/xamarin-forms/app-fundamentals/custom-renderer/index.md) je vyžadován. V společný kód, vytvořte podtřídu `Button` tak, aby vlastní zobrazovací jednotky lze přidat v projektech platformy:
-
-```csharp
-public class ListButton : Button { }
-```
-
-Implementace zobrazovací jednotky pro Android jednoduše nastaví `Focusable` vlastnost, která umožňuje řádku, který má být volitelný a také můžete kliknout hostitele tlačítka. Tento kód se přidá do projektu aplikace pro Android:
-
-```csharp
-[assembly: ExportRenderer (typeof (ListButton), typeof (ListButtonRenderer))]
-// ...
-public class ListButtonRenderer : ButtonRenderer {
-    protected override void OnElementChanged (ElementChangedEventArgs<ListButton> e) {
-        base.OnElementChanged (e);
-        Control.Focusable = false;
-    }
-}
-```
-
-Jak jsme uvedli výše, vyžaduje pouze Android `ButtonRenderer` k implementaci. iOS a platformy Windows Phone povolit tlačítko pro kliknout bez implementace vlastní zobrazovací jednotky.
-
 
 ## <a name="related-links"></a>Související odkazy
 

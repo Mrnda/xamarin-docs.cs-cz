@@ -7,12 +7,12 @@ ms.assetid: BA371A59-6F7A-F62A-02FC-28253504ACC9
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
-ms.date: 02/16/2018
-ms.openlocfilehash: 5dc1fb0fb02014e123b3a161394155bde725f288
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/19/2018
+ms.openlocfilehash: 08392872037783e0caaef4f2b19127adbe95151b
+ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="creating-android-services"></a>Vytváření Android služeb
 
@@ -43,7 +43,7 @@ Práce pozadí můžete rozdělit na dvě obecné klasifikace:
 
 Existují čtyři různé typy Android služeb:
 
-* **Vázaný služby** &ndash; A _vázaný služby_ je služba, která má některé další součást (obvykle aktivitu) na něj navázaná. Vázané služba poskytuje rozhraní, které umožňuje vázané součásti a služba dojít ke vzájemné interakci. Jakmile neexistují žádné další klienty svázaná se službou, Android vypne službu.
+* **Vázaný služby** &ndash; A _vázaný služby_ je služba, která má některé další součást (obvykle aktivitu) na něj navázaná. Vázané služba poskytuje rozhraní, které umožňuje vázané součásti a služba dojít ke vzájemné interakci. Jakmile neexistují žádné další klienty svázaná se službou, Android vypne službu. 
 
 * **`IntentService`** &ndash;  _`IntentService`_  Je podtřídou specializované `Service` třídu, která zjednodušuje vytváření služby a využití. `IntentService` Je určená ke zpracování jednotlivých autonomního volání. Na rozdíl od služby, která dokáže zpracovat souběžně více volání, `IntentService` se víc podobá _pracovní fronty procesoru_ &ndash; pracovní zařazen do fronty a `IntentService` zpracuje každou úlohu, jeden současně na jednom pracovní vlákno. Obvykle`IntentService` není vázán na aktivitu nebo Fragment. 
 
@@ -57,4 +57,26 @@ Zatímco většina služby spuštěné na pozadí, je speciální podkategorie �
 
 Je také možné spustit službu vlastní proces na stejném zařízení, to se někdy označuje jako _vzdálené služby_ nebo jako _mimo proces služby_. To vyžadovat další úsilí, které chcete vytvořit, ale může být užitečná pro když aplikace potřebuje funkce sdílení s jinými aplikacemi a, v některých případech vylepšit uživatelské prostředí aplikace. 
 
-Každý z těchto služeb má svou vlastní vlastnosti a jednání a proto se budeme podrobněji v příručkách pro své vlastní.
+### <a name="background-execution-limits-in-android-80"></a>Omezení provádění pozadí v Android 8.0
+
+Od verze Android 8.0 (API úrovně 26), už aplikace platformy Android mít možnost spustit volně na pozadí. V popředí, můžete aplikaci spustit a spusťte služby, bez omezení. Pokud se aplikace přesune do na pozadí, bude se Android udělit aplikaci určitou dobu spuštění a použití služby. Po uplynutí této doby, aplikace již možné spustit žádné služby a služby, které byly spuštěny bude ukončen. Na tomto bodu je není možné aplikaci provádět jakékoli práce. Android zvažuje aplikaci, která bude v popředí, pokud jsou splněna jedna z následujících podmínek:
+
+* Není viditelné aktivity (spuštěna nebo pozastavena).
+* Aplikace byla spuštěna služba popředí.
+* Jiné aplikaci je aktivní a používá součásti z aplikace, které by jinak na pozadí. Příkladem je, pokud A aplikace, která je v popředí, je vázána na služby poskytované aplikace B. aplikaci B pak by také považována za v popředí a není ukončen Android pro probíhá na pozadí.
+
+Existují některé situacích, kdy, i když je aplikace na pozadí, Android bude probuzení aplikace a uvolnění těchto omezení pro několik minut, umožňuje aplikaci k provedení některých pracovních:
+* S vysokou prioritou Firebase cloudové zpráva se přijaté aplikací.
+* Aplikace obdrží všesměrové vysílání, jako například 
+* Aplikace obdrží provede `PendingIntent` v reakci na oznámení.
+
+Chcete-li změnit, jak fungují práce pozadí, aby se zabránilo všechny problémy, které by mohly nastat na Android 8.0 může mít stávající aplikace Xamarin.Android. Zde jsou některé praktické alterantives Android služby:
+
+* **Plánování práce ke spuštění na pozadí pomocí Android plánovače úloh nebo [dispečera úloh Firebase](~/android/platform/firebase-job-dispatcher.md)**  &ndash; tyto dvě knihovny poskytují rozhraní pro aplikace oddělit pozadí práce v _úlohy_, samostatná jednotka práce. Aplikace můžete pak naplánovat úlohu s operačním systémem společně s některé kritéria o při můžete spustit úlohu.
+* **Spusťte službu v popředí** &ndash; popředí služby je vhodný pro když aplikace potřebuje provést některé úlohy na pozadí a pravidelně interakci s tím může uživatel potřebovat. Službu popředí zobrazí trvalé oznámení tak, aby uživatel si je vědoma, že aplikace běží úlohy na pozadí a také poskytuje způsob, jak monitorovat nebo interakci s úlohu. Příkladem může být podcasting aplikaci, která je pravděpodobně stahování podcastu díl tak, aby můžete později líbilo nebo přehrávání podcastu uživateli. 
+* **Použít s vysokou prioritou Firebase cloudu zprávy (FCM)** &ndash; při Android dostane vysokou prioritu FCM pro aplikaci, bude možné tuto aplikaci ke spouštění služeb na pozadí na krátkou dobu. To může být dobrou alternativou na situaci, kdy služba na pozadí, který získává informace o aplikaci na pozadí. 
+* **Odložení práci pro kdy aplikaci stává popředí** &ndash; Pokud žádná z předchozích řešení jsou navíc nefungovalo, tak aplikace musí vyvíjet vlastní způsob pozastavení a obnovení práce, když aplikace je teď dostupná popředí.
+
+## <a name="related-links"></a>Související odkazy
+
+* [Omezení provádění Android Oreo pozadí](https://www.youtube.com/watch?v=Pumf_4yjTMc)
