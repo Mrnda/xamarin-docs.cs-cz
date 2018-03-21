@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/06/2018
-ms.openlocfilehash: 568650a850b9db1fa22deef55eebb6a437e7e0b7
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: 0d58a8ab15a7b2d598aa8fd45a9b4d0c3d9e440b
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="binding-types-reference-guide"></a>Vazby typů referenční příručka
 
@@ -30,7 +30,7 @@ interface MyType [: Protocol1, Protocol2] {
 }
 ```
 
-Každé rozhraní v vaše definici kontraktu, který má `[BaseType]` atribut, který deklaruje základní typ pro generovaný objekt. Ve výše uvedené deklaraci `MyType` – třída typu C# se budou generovat, vazby na typ jazyka Objective-C názvem **MyType**.
+Každé rozhraní v vaše definici kontraktu, který má [ `[BaseType]` ](#BaseTypeAttribute) atribut, který deklaruje základní typ pro generovaný objekt. Ve výše uvedené deklaraci `MyType` – třída typu C# se budou generovat, vazby na typ jazyka Objective-C názvem `MyType`.
 
 Pokud zadáte všechny typy po typename (v ukázce výše `Protocol1` a `Protocol2`) pomocí syntaxe dědičnosti rozhraní obsah těchto rozhraní bude vloženou obslužnou, jak je, pokud by byly součástí kontraktu pro `MyType`.
 Způsob, jakým je Xamarin.iOS povrchy, že typ přijme protokol vložené všechny metody a vlastnosti, které byly deklarované v protokolu do samotného typu.
@@ -51,12 +51,12 @@ interface UITextField : UITextInput {
 }
 ```
 
-Použití dalších atributů rozhraní a také konfigurace atribut BaseType lze řídit mnoho dalších aspektů generování kódu.
+Mnoho dalších aspektů generování kódu lze řídit použití dalších atributů rozhraní a také konfigurace [ `[BaseType]` ](#BaseTypeAttribute) atribut.
 
 
 ### <a name="generating-events"></a>Generování událostí
 
-Jedna z funkcí Xamarin.iOS a rozhraní API Xamarin.Mac návrhu je jsme mapovat delegát třídy jazyka Objective-C jako událostí jazyka C# a zpětná volání. Uživatelé mohou v základě instance, jestli chtějí přijmout vzoru programovacího jazyka Objective-C přiřazením vlastnosti, například **delegáta** instance třídy, který implementuje různé metody, Objective-C modul runtime by volat, nebo výběrem jazyka C# – styl události a vlastnosti.
+Jedna z funkcí Xamarin.iOS a rozhraní API Xamarin.Mac návrhu je jsme mapovat delegát třídy jazyka Objective-C jako událostí jazyka C# a zpětná volání. Uživatelé mohou v základě instance, jestli chtějí přijmout vzoru programovacího jazyka Objective-C přiřazením vlastnosti, například `Delegate` instance třídy, která implementuje různé metody, které volají modul runtime jazyka Objective-C nebo podle Výběr jazyka C# – styl události a vlastnosti.
 
 Dejte nám najdete jedním z příkladů použití modelu jazyka Objective-C:
 
@@ -86,7 +86,7 @@ class MyScrollViewDelegate : UIScrollViewDelegate {
 }
 ```
 
-V předchozím příkladu vidíte, že jsme se rozhodli přepsat dvě metody, jeden oznámení, že posouvání událostí trvá místní a druhý, je zpětné volání, které musí vrátit logickou hodnotu scrollView instruující, zda se má posouvat na začátek nebo není.
+V předchozím příkladu vidíte, že jsme se rozhodli přepsat dvě metody, jeden oznámení, že posouvání událostí trvá místní a druhý, je zpětné volání, které by měla vrátit logickou hodnotu instruující `scrollView` zda by měl přejděte k TOP nebo ne.
 
 Model C# umožňuje uživateli knihovny pro naslouchání na oznámení pomocí syntaxe událostí jazyka C# nebo vlastnost syntaxe spojit zpětná volání, které se očekává, že návratové hodnoty.
 
@@ -110,11 +110,11 @@ Vzhledem k tomu, že události nevrátí hodnoty (budou mít typ vrácené hodno
 public delegate bool UIScrollViewCondition (UIScrollView scrollView);
 ```
 
-Vrátí hodnotu bool, v takovém případě syntaxe lambda umožňuje právě návratová hodnota z `MakeDecision` funkce.
+Vrátí `bool` hodnotu, v takovém případě syntaxe lambda umožňuje právě návratová hodnota z `MakeDecision` funkce.
 
-Generátor vazba podporuje generování událostí a vlastnosti, které odkazují třídy, jako třeba `UIScrollView` s jeho `UIScrollViewDelegate` (dobře volat tyto třídy modelu), k tomu je potřeba zadávání poznámek k vaší `BaseType` definice s `Events` a `Delegates`parametry (popsaný níže). Kromě zadávání poznámek k `BaseType` s těmito parametry je třeba informovat o tom, generátor několik další součásti.
+Generátor vazba podporuje generování událostí a vlastnosti, které odkazují třídy, jako třeba `UIScrollView` s jeho `UIScrollViewDelegate` (dobře volat tyto třídy modelu), k tomu je potřeba zadávání poznámek k vaší [ `[BaseType]` ](#BaseTypeAttribute) definice se `Events` a `Delegates` parametry (popsaný níže). Kromě zadávání poznámek k [ `[BaseType]` ](#BaseTypeAttribute) s těmito parametry je třeba informovat o tom, generátor několik další součásti.
 
-Pro události, které trvat víc než jeden parametr (v Objective-C konvence je, že první parametr v třídě delegáta je instanci objektu odesílatele) je nutné zadat název, který chcete pro generovaná třída EventArgs být. To lze provést pomocí `EventArgs` atribut deklarace metody ve třídě modelu. Příklad:
+Pro události, které trvat víc než jeden parametr (v Objective-C konvence je, že první parametr v třídě delegáta je instanci objektu odesílatele) je nutné zadat název, který chcete pro vygenerovaného `EventArgs` třída být. To lze provést pomocí [ `[EventArgs]` ](#EventArgsAttribute) atribut deklarace metody ve třídě modelu. Příklad:
 
 ```csharp
 [BaseType (typeof (UINavigationControllerDelegate))]
@@ -135,7 +135,7 @@ public partial class UIImagePickerImagePickedEventArgs : EventArgs {
 }
 ```
 
-Pak zpřístupňuje v třídě UIImagePickerController následující kroky:
+Potom zpřístupňuje následující `UIImagePickerController` třídy:
 
 ```csharp
 public event EventHandler<UIImagePickerImagePickedEventArgs> FinishedPickingImage { add; remove; }
@@ -154,8 +154,9 @@ public interface UIScrollViewDelegate {
 
 Vytvoří výše `UIScrollViewCondition` delegovat s podpisem byla výše uvedeném, a pokud uživatel neposkytne implementace, budou návratovou hodnotu true.
 
-Kromě `DefaultValue` atribut, můžete použít také `DefaultValueFromArgument` , přesměruje generátoru pro vrátí hodnotu zadaného parametru ve volání nebo `NoDefaultValue` parametr, který se dá pokyn generátor, že neexistuje žádná výchozí hodnota.
+Kromě [ `[DefaultValue]` ](#DefaultValueAttribute) atribut, můžete použít také [ `[DefaultValueFromArgument]` ](#DefaultValueFromArgumentAttribute) atribut, který přesměruje generátoru pro vrátí hodnotu zadaného parametru v volání nebo [ `[NoDefaultValue]` ](#NoDefaultValueAttribute) parametr, který se dá pokyn generátor, že neexistuje žádná výchozí hodnota.
 
+<a name="BaseTypeAttribute" />
 
 ### <a name="basetypeattribute"></a>BaseTypeAttribute
 
@@ -186,13 +187,13 @@ interface NSUrlConnection {
 }
 ```
 
-Zadaný název je zadán slouží jako hodnota pro vygenerovaného `[Register]` atribut vazba. Pokud `Name` není zadán název typu slouží jako hodnota `Register` atribut v generovaný výstup.
+Zadaný název se používá jako hodnotu pro vygenerovaného `[Register]` atribut vazba. Pokud `Name` není zadán název typu slouží jako hodnota `[Register]` atribut v generovaný výstup.
 
 #### <a name="basetypeevents-and-basetypedelegates"></a>BaseType.Events a BaseType.Delegates
 
-Tyto vlastnosti se používá k řízení generování jazyka C# – styl události v vygenerované třídy. Používají se propojit danou třídu pomocí jeho delegát třídy jazyka Objective-C. Můžete narazit mnoha případech, kde třídu používá třídu delegáta k odesílání oznámení a události. Například `BarcodeScanner` by měla mít doprovodné `BardodeScannerDelegate` třídy. `BarcodeScanner` Třída by měly mít vlastnost "delegáta", která bude přiřazen instanci `BarcodeScannerDelegate` k při toto funguje, můžete chtít zpřístupnit uživatelům C# – jako rozhraní ve stylu události a v těchto případech byste použili `Events` a `Delegates` vlastnosti `BaseType` atribut.
+Tyto vlastnosti se používá k řízení generování jazyka C# – styl události v vygenerované třídy. Používají se propojit danou třídu pomocí jeho delegát třídy jazyka Objective-C. Můžete narazit mnoha případech, kde třídu používá třídu delegáta k odesílání oznámení a události. Například `BarcodeScanner` by měla mít doprovodné `BardodeScannerDelegate` třídy. `BarcodeScanner` Třída by měly mít `Delegate` vlastnost, která bude přiřazen instanci `BarcodeScannerDelegate` k při toto funguje, můžete chtít zpřístupnit uživatelům C# – jako rozhraní ve stylu události a v těchto případech použijete `Events`a `Delegates` vlastnosti [ `[BaseType]` ](#BaseTypeAttribute) atribut.
 
-Tyto vlastnosti jsou vždy nastavené současně a musí mít stejný počet elementů a sesynchronizovávat. `Delegates` Pole obsahuje řetězec, jeden pro každou slabě typované delegáta, který chcete zabalit a pole události obsahuje jeden typ pro každý typ, který chcete přidružit ho.
+Tyto vlastnosti jsou vždy nastavené současně a musí mít stejný počet elementů a sesynchronizovávat. `Delegates` Pole obsahuje řetězec, jeden pro každou slabě typované delegáta, který chcete zabalit, a `Events` pole obsahuje jeden typ pro každý typ, který chcete přidružit ho.
 
 ```csharp
 [BaseType (typeof (NSObject),
@@ -210,7 +211,7 @@ public interface UIAccelerometerDelegate {
 
 #### <a name="basetypekeeprefuntil"></a>BaseType.KeepRefUntil
 
-Pokud použijete tento atribut při vytvoření nové instance této třídy, instance tohoto objektu se zachová kolem dokud metoda odkazuje `KeepRefUntil` metoda byla volána. To je užitečné pro zlepšení použitelnost vaše rozhraní API, když nechcete, aby vaše uživatele chcete zachovat odkaz na objekt kolem použít kód. Hodnota této vlastnosti je název metody v `Delegate` třídy, takže je nutné použít v kombinaci s události a `Delegates` také vlastnosti.
+Pokud použijete tento atribut při vytvoření nové instance této třídy, instance tohoto objektu se zachová kolem dokud metoda odkazuje `KeepRefUntil` metoda byla volána. To je užitečné pro zlepšení použitelnost vaše rozhraní API, když nechcete, aby vaše uživatele chcete zachovat odkaz na objekt kolem použít kód. Hodnota této vlastnosti je název metody v `Delegate` třídy, takže je nutné použít v kombinaci s `Events` a `Delegates` také vlastnosti.
 
 Následující příklad ukazuje, jak toto je používáno `UIActionSheet` v Xamarin.iOS:
 
@@ -243,6 +244,7 @@ Tento atribut použijte, když potřebujete objekt, který má být inicializov�
 
 Když tento atribut se používá k definici rozhraní se budou jako privátní příznak výchozí konstruktor. To znamená, že můžete přesto vytvořit instanci objektu této třídy interně ze souboru rozšíření, ale je právě nebude mít přístup k uživatelům vaší třídy.
 
+<a name="CategoryAttribute" />
 
 ### <a name="categoryattribute"></a>CategoryAttribute
 
@@ -258,9 +260,9 @@ Toto je, jak by kategorii vypadat v cíl C:
 @end
 ```
 
-Výše uvedeném příkladu Pokud na nalezena knihovnu by rozšířit instancí `UIView` s metodou `makeBackgroundRed`.
+Výše uvedený příklad nachází na knihovnu, která bude rozšiřovat instancí `UIView` s metodou `makeBackgroundRed`.
 
-Chcete-li vytvořit vazbu ty, můžete použít `[Category]` atribut definice rozhraní.   Při použití `Category` atribut význam `[BaseType]` atribut se změní z používá k určení základní třídy pro rozšíření, jako typ rozšíření.
+Chcete-li vytvořit vazbu ty, můžete použít [ `[Category]` ](#CategoryAttribute) atribut definice rozhraní.   Při použití [ `[Category]` ](#CategoryAttribute) atribut význam [ `[BaseType]` ](#BaseTypeAttribute) atribut se změní z používá k určení rozšířit, je typ rozšíření základní třídy.
 
 Následující ukazuje jak `UIView` rozšíření jsou vázán a převedena na rozšiřující metody C#:
 
@@ -273,7 +275,7 @@ interface MyUIViewExtension {
 }
 ```
 
-Vytvoří výše `MyUIViewExtension` třídu, která obsahuje `MakeBackgroundRed` metoda rozšíření.   To znamená, že teď můžete volat "MakeBackgroundRed" na kterémkoliv `UIView` podtřídami, která poskytuje stejné funkce, které byste získali na Objective-c
+Vytvoří výše `MyUIViewExtension` třídu, která obsahuje `MakeBackgroundRed` metoda rozšíření.   To znamená, že teď můžete volat `MakeBackgroundRed` na žádném `UIView` podtřídami, která poskytuje stejné funkce, které byste získali na Objective-c
 
 V některých případech zjistíte **statické** členy uvnitř kategorie, jako v následujícím příkladu:
 
@@ -317,12 +319,13 @@ interface FooObject {
 }
 ```
 
-Můžeme vás upozorní, (BI1117) vždy, když se nám najít `[Static]` člen uvnitř `[Category]` definice. Pokud Opravdu chcete mít `[Static]` členy uvnitř vaší `[Category]` definice upozornění můžete silence pomocí `[Category (allowStaticMembers: true)]` nebo architekturu buď vaše člen nebo `[Category]` definici s rozhraní `[Internal]`.
+Můžeme vás upozorní, (BI1117) vždy, když se nám najít [ `[Static]` ](#StaticAttribute) člen uvnitř [ `[Category]` ](#CategoryAttribute) definice. Pokud chcete skutečně mít [ `[Static]` ](#StaticAttribute) členy uvnitř vaší [ `[Category]` ](#CategoryAttribute) definice upozornění můžete silence pomocí `[Category (allowStaticMembers: true)]` nebo architekturu člen nebo [ `[Category]` ](#CategoryAttribute) rozhraní definice s [ `[Internal]` ](#InternalAttribute).
 
+<a name="StaticAttribute_Class" />
 
 ### <a name="staticattribute"></a>StaticAttribute
 
-Když tento atribut je použit na třídu vygeneruje právě statická třída, ten, který není odvozen od `NSObject` proto `[BaseType]` atribut je ignorován. Statické třídy budou použity k hostování C veřejné proměnné, které chcete vystavit.
+Když tento atribut je použit na třídu vygeneruje právě statická třída, ten, který není odvozen od `NSObject`, proto [ `[BaseType]` ](#BaseTypeAttribute) atribut je ignorován. Statické třídy budou použity k hostování C veřejné proměnné, které chcete vystavit.
 
 Příklad:
 
@@ -341,8 +344,7 @@ public partial class CBAdvertisement  {
 }
 ```
 
-
-## <a name="protocol-definitionsmodel"></a>Protokol definice nebo modelu
+## <a name="protocolmodel-definitions"></a>Definice protokolu nebo modelu
 
 Modely jsou obvykle používány implementace protokolu.
 Liší se v tom, že se modul runtime pouze zaregistrovat pomocí jazyka Objective-C metody, které ve skutečnosti být přepsán.
@@ -350,12 +352,13 @@ Metoda, jinak nebude registrována.
 
 To obecně znamená, že když podtřídou třídy, která má označené `ModelAttribute`, by neměla volat základní metodu.   Voláním této metody vyvolá výjimku, kterou máte implementaci celý chování na vaše podtřída pro všechny metody, které můžete přepsat.
 
+<a name="AbstractAttribute" />
 
 ### <a name="abstractattribute"></a>AbstractAttribute
 
-Ve výchozím nastavení nejsou členy, které jsou součástí protokol povinné. To umožňuje uživatelům vytvářet podtřídou třídy `Model` objekt jenom odvozování od třídy v jazyce C# a přepsání pouze metod, které jsou pro ně důležité. Někdy kontrakt jazyka Objective-C vyžaduje, aby uživatel poskytuje implementaci pro tuto metodu (těch, které jsou označené @required direktivy v Objective-C). V takových případech by měl příznak tyto metody s `Abstract` atribut.
+Ve výchozím nastavení nejsou členy, které jsou součástí protokol povinné. To umožňuje uživatelům vytvářet podtřídou třídy `Model` objekt jenom odvozování od třídy v jazyce C# a přepsání pouze metod, které jsou pro ně důležité. Někdy kontrakt jazyka Objective-C vyžaduje, aby uživatel poskytuje implementaci pro tuto metodu (těch, které jsou označené `@required` direktivy v Objective-C). V takových případech by měl příznak tyto metody s `[Abstract]` atribut.
 
-`Abstract` Atributu můžete použít u metody nebo vlastnosti a způsobí, že generátoru pro příznak generovaného členem, jako "abstraktní" a třídy jako abstraktní třídu.
+`[Abstract]` Atributu můžete použít u metody nebo vlastnosti a způsobí, že generátoru pro příznak generovaného člena jako abstraktní a třídy, která má být abstraktní třídu.
 
 Toto jsou převzaty z Xamarin.iOS:
 
@@ -402,7 +405,7 @@ var camera = new Camera ();
 camera.ShouldUploadToServer = (camera, action) => return SomeDecision ();
 ```
 
-Viz také: [NoDefaultValueAttribute](#NoDefaultValueAttribute), [DefaultValueFromArgumentAttribute](#DefaultValueFromArgumentAttribute).
+Viz také: [ `[NoDefaultValue]` ](#NoDefaultValueAttribute), [ `[DefaultValueFromArgument]` ](#DefaultValueFromArgumentAttribute).
 
 <a name="DefaultValueFromArgumentAttribute" />
 
@@ -432,7 +435,7 @@ public interface NSAnimationDelegate {
 
 Ve výše uvedené případ nastane, pokud uživatel `NSAnimation` třídy rozhodli používat jakékoli vlastnosti C# události nebo a nenastavili `NSAnimation.ComputeAnimationCurve` metoda nebo lambda, návratovou hodnotou je hodnota zadaná v parametru průběh.
 
-Viz také: [NoDefaultValueAttribute](#NoDefaultValueAttribute), [DefaultValueAttribute –](#DefaultValueAttribute)
+Viz také: [ `[NoDefaultValue]` ](#NoDefaultValueAttribute), [`[DefaultValue]`](#DefaultValueAttribute)
 
 ### <a name="ignoredindelegateattribute"></a>IgnoredInDelegateAttribute
 
@@ -494,9 +497,11 @@ Na výše uvedené definici vytvoří generátor následující veřejné deklar
 public Func<NSAnimation, float, float> ComputeAnimationCurve { get; set; }
 ```
 
+<a name="EventArgsAttribute" />
+
 ### <a name="eventargsattribute"></a>EventArgsAttribute
 
-Pro události, které trvat víc než jeden parametr (v Objective-C konvence je, že první parametr v třídě delegáta je instanci objektu odesílatele) je nutné zadat název, který chcete pro generovaná třída EventArgs být. To lze provést pomocí `EventArgs` atribut deklarace metody v vaší `Model` – třída.
+Pro události, které trvat víc než jeden parametr (v Objective-C konvence je, že první parametr v třídě delegáta je instanci objektu odesílatele) je nutné zadat název, který chcete pro generovaná třída EventArgs být. To lze provést pomocí `[EventArgs]` atribut deklarace metody v vaší `Model` – třída.
 
 Příklad:
 
@@ -519,7 +524,7 @@ public partial class UIImagePickerImagePickedEventArgs : EventArgs {
 }
 ```
 
-Pak zpřístupňuje v třídě UIImagePickerController následující kroky:
+Potom zpřístupňuje následující `UIImagePickerController` třídy:
 
 ```csharp
 public event EventHandler<UIImagePickerImagePickedEventArgs> FinishedPickingImage { add; remove; }
@@ -528,7 +533,7 @@ public event EventHandler<UIImagePickerImagePickedEventArgs> FinishedPickingImag
 
 ### <a name="eventnameattribute"></a>EventNameAttribute
 
-Tento atribut slouží k povolení generátor chcete změnit název události nebo vlastnost generovaná ve třídě. Někdy je užitečné, když název `Model` metody třídy smysl pro třídu modelu, ale vypadat liché ve třídě původní jako událost nebo vlastnost.
+Tento atribut slouží k povolení generátor chcete změnit název události nebo vlastnost generovaná ve třídě. Někdy je užitečné, pokud název metody třídy modelu má smysl pro třídu modelu, ale vypadat jako událost nebo vlastnost liché ve třídě původní.
 
 Například `UIWebView` používat následující bit z `UIWebViewDelegate`:
 
@@ -544,10 +549,11 @@ var webView = new UIWebView (...);
 webView.LoadFinished += delegate { Console.WriteLine ("done!"); }
 ```
 
+<a name="ModelAttribute" />
 
 ### <a name="modelattribute"></a>ModelAttribute
 
-Pokud použijete `Model` atribut do definice typu v smlouva rozhraní API, modul runtime vygeneruje speciální kód, který bude volání pouze surface pro metody ve třídě, pokud uživatel má přepsat metodu v třídě. Tento atribut se obvykle používá pro všechna rozhraní API, které balí třídu jazyka Objective-C delegáta.
+Pokud použijete `[Model]` atribut do definice typu v smlouva rozhraní API, modul runtime vygeneruje speciální kód, který bude volání pouze surface pro metody ve třídě, pokud uživatel má přepsat metodu v třídě. Tento atribut se obvykle používá pro všechna rozhraní API, které balí třídu jazyka Objective-C delegáta.
 
 <a name="NoDefaultValueAttribute" />
 
@@ -555,7 +561,7 @@ Pokud použijete `Model` atribut do definice typu v smlouva rozhraní API, modul
 
 Určuje, že metoda na modelu nenabízí výchozí návratovou hodnotu.
 
-To funguje s modulem runtime jazyka Objective-C tak, že "Nepravda" neodpovídá na požadavek modulu runtime jazyka Objective-C k určení, pokud je zadaný selektor implementovaný v této třídě.
+To funguje s modulem runtime jazyka Objective-C tak, že neodpovídá `false` na požadavek modulu runtime jazyka Objective-C k určení, pokud je zadaný selektor implementovaný v této třídě.
 
 ```csharp
 [BaseType (typeof (NSObject))]
@@ -566,13 +572,15 @@ interface CameraDelegate {
 }
 ```
 
-Viz také: [DefaultValueAttribute –](#DefaultValueAttribute) a [DefaultValueAttribute –](#DefaultValueAttribute).
+Viz také: [ `[DefaultValue]` ](#DefaultValueAttribute), [`[DefaultValueFromArgument]`](#DefaultValueFromArgumentAttribute)  
+
+<a name="ProtocolAttribute" />
 
 ## <a name="protocols"></a>protokoly
 
 Koncept protokol jazyka Objective-C skutečně neexistuje v jazyce C#. Protokoly jsou podobná rozhraní jazyka C#, ale liší se v tom, že ne všechny metody a vlastnosti, které jsou deklarované v protokolu musí implementovat třídu, která přijímá ho. Místo toho některé metody a vlastnosti jsou volitelné.
 
-Některé protokoly se obvykle používá jako třídy modelu, ty by měla být vázána, pomocí atributu modelu.
+Některé protokoly se obvykle používá jako třídy modelu, ty by měla být vázána, pomocí [ `[Model]` ](#ModelAttribute) atribut.
 
 ```csharp
 [BaseType (typeof (NSObject))]
@@ -589,7 +597,7 @@ interface MyProtocol {
 }
 ```
 
-Od verze MonoTouch 7.0 nových a vylepšených protokol vazby funkce byla zahrnuta.  Všechny definice, který obsahuje `[Protocol]` atribut ve skutečnosti vygeneruje tři podpůrných tříd, které významně zlepšit způsobem, že můžete využívat protokoly:
+Od verze Xamarin.iOS 7.0 nových a vylepšených protokol vazby funkce byla zahrnuta.  Všechny definice, který obsahuje `[Protocol]` atribut ve skutečnosti vygeneruje tři podpůrných tříd, které významně zlepšit způsobem, že můžete využívat protokoly:
 
 ```csharp
 // Full method implementation, contains all methods
@@ -673,7 +681,7 @@ Pokud rozhraní je implementováno implicitně nebo explicitně nezáleží.
 
 ### <a name="protocol-inlining"></a>Protokol vložené
 
-Při vytvoření vazby existující typy jazyka Objective-C, které byly prohlášeny za přijetí protokol, budete chtít vložený protokol přímo. K tomu jenom deklarovat protokolu sítě jako rozhraní bez `[BaseType]` seznam protokol v seznamu základní rozhraní pro vaše rozhraní a atribut.
+Při vytvoření vazby existující typy jazyka Objective-C, které byly prohlášeny za přijetí protokol, budete chtít vložený protokol přímo. K tomu jenom deklarovat protokolu sítě jako rozhraní bez [ `[BaseType]` ](#BaseTypeAttribute) seznam protokol v seznamu základní rozhraní pro vaše rozhraní a atribut.
 
 Příklad:
 
@@ -712,9 +720,9 @@ public interface GLKBaseEffect {
 
 ### <a name="appearanceattribute"></a>AppearanceAttribute
 
-`Appearance` Atribut je omezený na iOS5 kde byla zavedena vzhled správce.
+`[Appearance]` Atribut je omezený na iOS 5, kde byla zavedena vzhled správce.
 
-`Appearance` Atribut lze použít k žádné metody nebo vlastnosti, které se začlení `UIAppearance` framework. Když tento atribut se použije k metody nebo vlastnosti ve třídě, odkazem generátoru vazby pro vytvoření silného typu vzhled třídu, která slouží k úpravě stylu všechny instance této třídy nebo instance, které splňují určitá kritéria.
+`[Appearance]` Atribut lze použít k žádné metody nebo vlastnosti, které se začlení `UIAppearance` framework. Když tento atribut se použije k metody nebo vlastnosti ve třídě, odkazem generátoru vazby pro vytvoření silného typu vzhled třídu, která slouží k úpravě stylu všechny instance této třídy nebo instance, které splňují určitá kritéria.
 
 Příklad:
 
@@ -747,7 +755,7 @@ public partial class UIToolbar {
 
 ### <a name="autoreleaseattribute-xamarinios-54"></a>AutoReleaseAttribute (Xamarin.iOS 5.4)
 
-Použití `AutoReleaseAttribute` na metody a vlastnosti zalomení volání metody metodu v `NSAutoReleasePool`.
+Použití `[AutoReleaseAttribute]` na metody a vlastnosti zalomení volání metody metodu v `NSAutoReleasePool`.
 
 V Objective-C jsou některé metody, které návratové hodnoty, které jsou přidány do výchozí `NSAutoReleasePool`. Ve výchozím nastavení, tyto přejde do vašeho vlákna `NSAutoReleasePool`, ale vzhledem k tomu, že Xamarin.iOS také udržuje odkaz k objektům, tak dlouho, dokud žije spravovaný objekt, možná nebudete chtít mějte odkaz na další `NSAutoReleasePool` kterého bude pouze získat nečekaně dokud vaše přístup z více vláken vrátí řízení další vlákno nebo přejděte zpět do hlavní smyčky.
 
@@ -755,7 +763,7 @@ Tento atribut se používá například v případě velkého vlastnosti (např�
 
 ### <a name="forcedtypeattribute"></a>ForcedTypeAttribute
 
-`ForcedTypeAttribute` Se používá k vynucení vytvoření spravovaného typu, i když vráceného objektu nespravované neodpovídá typu popsané v definici vazby.
+`[ForcedTypeAttribute]` Se používá k vynucení vytvoření spravovaného typu, i když vráceného objektu nespravované neodpovídá typu popsané v definici vazby.
 
 To je užitečné, když typ popsané v hlavičce neodpovídá typ vrácený nativní metody, třeba provést následující definice jazyka Objective-C z `NSURLSession`:
 
@@ -763,7 +771,7 @@ To je užitečné, když typ popsané v hlavičce neodpovídá typ vrácený nat
 
 Jasně definovat, jestli se vrátit `NSURLSessionDownloadTask` instanci, ale ještě ho **vrátí** `NSURLSessionTask`, což je supertřídou a proto není převoditelná na `NSURLSessionDownloadTask`. Vzhledem k tomu, že jsme se v kontextu bezpečnost typů `InvalidCastException` bude provedena.
 
-V souladu s popisem záhlaví a zamezit tak `InvalidCastException`, `ForcedTypeAttribute` se používá.
+V souladu s popisem záhlaví a zamezit tak `InvalidCastException`, `[ForcedTypeAttribute]` se používá.
 
 ```csharp
 [BaseType (typeof (NSObject), Name="NSURLSession")]
@@ -775,15 +783,17 @@ interface NSUrlSession {
 }
 ```
 
-`ForcedTypeAttribute` Také přijímá logickou hodnotu s názvem `Owns` tedy `false` ve výchozím nastavení `[ForcedType (owns: true)]`. Vlastní parametr se používá k postupujte podle [zásadám vlastnictví](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html) pro **základní Foundation** objekty.
+`[ForcedTypeAttribute]` Také přijímá logickou hodnotu s názvem `Owns` tedy `false` ve výchozím nastavení `[ForcedType (owns: true)]`. Vlastní parametr se používá k postupujte podle [zásadám vlastnictví](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html) pro **základní Foundation** objekty.
 
-`ForcedTypeAttribute` Je platné jenom pro `parameters`, `properties` a `return value`.
+`[ForcedTypeAttribute]` Je platné jenom pro parametry, vlastnosti a návratovou hodnotu.
+
+<a name="BindAsAttribute" />
 
 ### <a name="bindasattribute"></a>BindAsAttribute
 
-`BindAsAttribute` Umožňuje vazby `NSNumber`, `NSValue` a `NSString`(výčty) do přesnější typy C#. Atribut slouží k vytvoření lepší, přesnější, .NET API přes nativní rozhraní API.
+`[BindAsAttribute]` Umožňuje vazby `NSNumber`, `NSValue` a `NSString`(výčty) do přesnější typy C#. Atribut slouží k vytvoření lepší, přesnější, .NET API přes nativní rozhraní API.
 
-Můžete uspořádání metody (na návratovou hodnotu), parametry a vlastnosti s `BindAs`. Pouze omezení je, že vaše člen **musí není** uvnitř `[Protocol]` nebo `[Model]` rozhraní.
+Můžete uspořádání metody (na návratovou hodnotu), parametry a vlastnosti s `BindAs`. Pouze omezení je, že vaše člen **musí není** uvnitř `[Protocol]` nebo [ `[Model]` ](#ModelAttribute) rozhraní.
 
 Příklad:
 
@@ -852,7 +862,7 @@ Jsou podporovány následující typy dat C# zapouzdřit z/do `NSNumber`:
 
 #### <a name="nsstring"></a>NSString
 
-`[BindAs]` funguje ve spojení s [výčty zajišťoval konstanta NSString](#enum-attributes) lepší .NET API, které můžete vytvořit třeba:
+[`[BindAs]`](#BindAsAttribute) funguje ve spojení s [výčty zajišťoval konstanta NSString](#enum-attributes) lepší .NET API, které můžete vytvořit třeba:
 
 ```csharp
 [BindAs (typeof (CAScroll))]
@@ -867,11 +877,11 @@ By výstup:
 CAScroll SupportedScrollMode { get; set; }
 ```
 
-Bude `enum`  <->  `NSString` převod pouze v případě, že je zadaný výčet typ, který má `[BindAs]` je [zajišťoval konstanta NSString](#enum-attributes).
+Bude `enum`  <->  `NSString` převod pouze v případě, že je zadaný výčet typ, který má [ `[BindAs]` ](#BindAsAttribute) je [zajišťoval konstanta NSString](#enum-attributes).
 
 #### <a name="arrays"></a>Pole
 
-`[BindAs]` také podporuje pole libovolného podporovaného typu, může mít následující definice rozhraní API jako příklad:
+[`[BindAs]`](#BindAsAttribute) také podporuje pole libovolného podporovaného typu, může mít následující definice rozhraní API jako příklad:
 
 ```csharp
 [return: BindAs (typeof (CAScroll []))]
@@ -888,11 +898,13 @@ CAScroll? [] GetScrollModes (CGRect [] rects) { ... }
 
 `rects` Parametr budou zapouzdřené do `NSArray` obsahující `NSValue` pro každou `CGRect` a budete mít na oplátku pole `CAScroll?` který byl vytvořen pomocí hodnoty vrácené `NSArray` obsahující `NSStrings`.
 
+<a name="BindAttribute" />
+
 ### <a name="bindattribute"></a>BindAttribute
 
-`Bind` Atribut má dva používá jeden při použití metody nebo vlastnosti deklarace a jiné jeden při použití jednotlivých mechanismu získání nebo nastavení ve vlastnosti.
+`[Bind]` Atribut má dva používá jeden při použití metody nebo vlastnosti deklarace a jiné jeden při použití jednotlivých mechanismu získání nebo nastavení ve vlastnosti.
 
-Pokud se použije pro metody nebo vlastnosti, účinek atribut vazby je ke generování metodu, která vyvolá zadaný selektor. Ale výsledné generovaného metoda není označených pomocí `[Export]` atributů, což znamená, že se nemůže účastnit metoda přepsání. To se obvykle používá v kombinaci s `Target` atribut pro implementaci jazyka Objective-C rozšiřující metody.
+Pokud se používá pro metody nebo vlastnosti, účinku `[Bind]` atribut je ke generování metodu, která vyvolá zadaný selektor. Ale výsledné generovaného metoda není označených pomocí [ `[Export]` ](#ExportAttribute) atributů, což znamená, že se nemůže účastnit metoda přepsání. To se obvykle používá v kombinaci s `[Target]` atribut pro implementaci jazyka Objective-C rozšiřující metody.
 
 Příklad:
 
@@ -903,7 +915,7 @@ public interface UIView {
 }
 ```
 
-Při použití v mechanismu získání nebo nastavení, `Bind` atribut slouží ke změně výchozí hodnoty odvodit generátorem kódu při generování názvů pro výběr metody getter a setter jazyka Objective-C pro vlastnost. Ve výchozím nastavení při příznak vlastnost s názvem "fooBar", generátor by generovat "fooBar" export pro metoda getter a "setFooBar:" pro nastavovací metoda. V určitých případech jazyka Objective-C nedodrží touto konvencí, obvykle se změní, metoda getter název, který má být "isFooBar".
+Při použití v mechanismu získání nebo nastavení, `[Bind]` atribut slouží ke změně výchozí hodnoty odvodit generátorem kódu při generování názvů pro výběr metody getter a setter jazyka Objective-C pro vlastnost. Ve výchozím nastavení při příznak vlastnost s názvem `fooBar`, by generátor generovat `fooBar` exportovat pro metoda getter a `setFooBar:` pro nastavovací metoda. V určitých případech jazyka Objective-C nedodrží touto konvencí, obvykle se změní, metoda getter název, který má být `isFooBar`.
 Tento atribut byste použili k informování generátor tohoto objektu.
 
 Příklad:
@@ -918,6 +930,7 @@ bool Active { get; set; }
 bool Visible { [Bind ("isVisible")] get; set; }
 ```
 
+<a name="AsyncAttribute" />
 
 ### <a name="asyncattribute"></a>AsyncAttribute
 
@@ -925,7 +938,7 @@ Pouze k dispozici na Xamarin.iOS 6.3 a novější.
 
 Tento atribut lze použít k metod, které berou obslužná rutina dokončení jako jejich poslední argument.
 
-Můžete použít `[Async]` atribut u metod, jejichž poslední argument je zpětné volání.  Použijete-li to na metodu, generátor vazby vygeneruje verze této metody s příponou `Async`.  Pokud zpětné volání nepřijímá žádné parametry, budou návratovou hodnotu `Task`, pokud zpětné volání přebírá parametr, výsledkem bude úloha&lt;T&gt;.
+Můžete použít `[Async]` atribut u metod, jejichž poslední argument je zpětné volání.  Použijete-li to na metodu, generátor vazby vygeneruje verze této metody s příponou `Async`.  Pokud zpětné volání nepřijímá žádné parametry, budou návratovou hodnotu `Task`, pokud zpětné volání přebírá parametr, výsledkem bude `Task<T>`.
 
 ```csharp
 [Export ("upload:complete:")]
@@ -949,7 +962,7 @@ delegate void OnComplete (string [] files, nint byteCount);
 void LoadFiles (string file, OnComplete complete)
 ```
 
-Následující vygeneruje tuto asynchronní metody, kde `FileLoading` obsahuje vlastnosti pro přístup k "files" a "byteCount":
+Následující vygeneruje tuto asynchronní metody, kde `FileLoading` obsahuje vlastnosti pro přístup k obě `files` a `byteCount`:
 
 ```csharp
 Task<FileLoading> LoadFile (string file);
@@ -988,7 +1001,7 @@ Pomocí této vlastnosti můžete upravit název vygenerovaný asynchronní meto
 Tento atribut se použije pro parametry řetězec nebo vlastnosti řetězce a nastaví generátor kódu nechcete použít nula kopírování řetězec kódování pro tento parametr a místo toho vytvořte novou instanci NSString z řetězce C#.
 Tento atribut je vyžadováno pouze u řetězců, pokud dáte pokyn generátoru pro kopírování nula řetězec zařazování buď pomocí `--zero-copy` možnost příkazového řádku nebo nastavením atributu na úrovni sestavení `ZeroCopyStringsAttribute`.
 
-To je nezbytné v případech, kde je v Objective-C na deklarována vlastnost být vlastnost "zachovat" nebo "přiřadit" místo "kopie" vlastnost. To obvykle dojít v knihovnách třetích stran, které byly nesprávně "optimalizovány" vývojáři. Obecně platí, "zachovat" nebo "přiřadit" `NSString` vlastnosti jsou nesprávná od `NSMutableString` nebo uživatele odvozené třídy `NSString` může změnit obsah řetězce bez informací o kód knihovny trochu nejnovější aplikace. Obvykle k tomu dochází z důvodu předčasné optimalizace.
+To je nezbytné v případech, kde je v Objective-C být deklarována vlastnost `retain` nebo `assign` vlastnost místo `copy` vlastnost. To obvykle dojít v knihovnách třetích stran, které byly nesprávně "optimalizovány" vývojáři. Obecně platí `retain` nebo `assign` `NSString` vlastnosti jsou nesprávná od `NSMutableString` nebo uživatele odvozené třídy `NSString` může změnit obsah řetězce bez informací o kód knihovny trochu nejnovější aplikace. Obvykle k tomu dochází z důvodu předčasné optimalizace.
 
 Následující příklad zobrazuje tyto dvě vlastnosti v cíl – C:
 
@@ -1000,9 +1013,9 @@ Následující příklad zobrazuje tyto dvě vlastnosti v cíl – C:
 
 ### <a name="disposeattribute"></a>DisposeAttribute
 
-Když použijete `DisposeAttribute` na třídu, zadejte fragment kódu, který bude přidán do `Dispose()` implementace metod třídy.
+Když použijete `[DisposeAttribute]` na třídu, zadejte fragment kódu, který bude přidán do `Dispose()` implementace metod třídy.
 
-Vzhledem k tomu, `Dispose` metoda je automaticky generován `bmac-native` a `btouch-native` nástrojů, budete muset použít `Dispose` atribut vložení některé kódu v vygenerovaného `Dispose` implementace metod.
+Vzhledem k tomu, `Dispose` metoda je automaticky generován `bmac-native` a `btouch-native` nástrojů, budete muset použít `[Dispose]` atribut vložení některé kódu v vygenerovaného `Dispose` implementace metod.
 
 Příklad:
 
@@ -1013,10 +1026,11 @@ interface DatabaseConnection {
 }
 ```
 
+<a name="ExportAttribute" />
 
 ### <a name="exportattribute"></a>ExportAttribute
 
-`Export` Atribut se používá k příznak metody nebo vlastnosti mají být exponovány do jazyka Objective-C runtime. Tento atribut je sdílena mezi nástroj vazby a skutečný Xamarin.iOS a Xamarin.Mac moduly runtime. Pro metody, je předaná typu verbatim pro generovaný kód parametr pro vlastnosti, metody getter a setter exportuje jsou generované na základní deklaraci základě (naleznete v části na `BindAttribute` informace o tom, jak změnit chování vazby nástroj).
+`[Export]` Atribut se používá k příznak metody nebo vlastnosti mají být exponovány do jazyka Objective-C runtime. Tento atribut je sdílena mezi nástroj vazby a skutečný Xamarin.iOS a Xamarin.Mac moduly runtime. Pro metody, je předaná typu verbatim pro generovaný kód parametr pro vlastnosti, metody getter a setter exportuje jsou generované na základní deklaraci základě (naleznete v části na [ `[BindAttribute]` ](#BindAttribute) informace o tom, jak změnit chování vazby nástroje).
 
 Syntaxe:
 
@@ -1035,11 +1049,11 @@ public class ExportAttribute : Attribute {
 }
 ```
 
-[Selektor](http://developer.apple.com/library/ios/#documentation/cocoa/conceptual/objectivec/Chapters/ocSelectors.html) a představuje základní název jazyka Objective-C metody nebo vlastnosti, který je právě vázaný.
-
+[Selektor](https://developer.apple.com/library/content/documentation/General/Conceptual/DevPedia-CocoaCore/Selector.html) představuje název základní jazyka Objective-C metody nebo vlastnosti, který je právě vázaný.
 
 #### <a name="exportattributeargumentsemantic"></a>ExportAttribute.ArgumentSemantic
 
+<a name="FieldAttribute" />
 
 ### <a name="fieldattribute"></a>FieldAttribute
 
@@ -1056,7 +1070,7 @@ public class FieldAttribute : Attribute {
 }
 ```
 
-`symbolName` Je symbol jazyka C pro propojení. Ve výchozím nastavení to bude načten z knihovny jehož název je odvodit z oboru názvů kde je tento typ definovaný. Pokud to není knihovny, kde se hledá symbol, by měla předávat `libraryName` parametr. Jestliže propojujete statickou knihovnu, použijte "__Internal" jako `libraryName` parametr.
+`symbolName` Je symbol jazyka C pro propojení. Ve výchozím nastavení to bude načten z knihovny jehož název je odvodit z oboru názvů kde je tento typ definovaný. Pokud to není knihovny, kde se hledá symbol, by měla předávat `libraryName` parametr. Pokud vytváříte odkaz statickou knihovnu, použijte `__Internal` jako `libraryName` parametr.
 
 Vygenerovaný vlastnosti jsou vždy statické.
 
@@ -1084,9 +1098,11 @@ interface CameraEffects {
 }
 ```
 
+<a name="InternalAttribute" />
+
 ### <a name="internalattribute"></a>InternalAttribute
 
-`Internal` Atribut lze použít metody nebo vlastnosti a má účinek označování generovaný kód s "internal" zpřístupnění kód pouze pro kód v generovaném sestavení klíčové slovo C#. To se obvykle používá k skrýt rozhraní API, která jsou příliš nízké úrovně nebo zadejte zhoršené veřejné rozhraní API, který chcete vylepšit při nebo pro rozhraní API, které nejsou podporované generátorem a vyžadují některé ruční kódování.
+`[Internal]` Atribut lze použít metody nebo vlastnosti a má účinek označování generovaný kód s `internal` C# – klíčové slovo zpřístupnění kód pouze pro kód v generovaném sestavení. To se obvykle používá k skrýt rozhraní API, která jsou příliš nízké úrovně nebo zadejte zhoršené veřejné rozhraní API, který chcete vylepšit při nebo pro rozhraní API, které nejsou podporované generátorem a vyžadují některé ruční kódování.
 
 Při návrhu vazby, by obvykle skrýt metody nebo vlastnosti pomocí tohoto atributu a zadejte jiný název pro metody nebo vlastnosti a poté by v souboru C# doplňkové podpory, přidejte obálku silného typu, který zveřejňuje základní funkce.
 
@@ -1094,7 +1110,7 @@ Příklad:
 
 ```csharp
 [Internal]
-[Export ("setValue:forKey:");
+[Export ("setValue:forKey:")]
 void _SetValueForKey (NSObject value, NSObject key);
 
 [Internal]
@@ -1115,13 +1131,15 @@ public NSObject this [NSObject idx] {
 }
 ```
 
+<a name="IsThreadStaticAttribute" />
+
 ### <a name="isthreadstaticattribute"></a>IsThreadStaticAttribute
 
 Tento atribut flags základní pole pro vlastnost, která má být označený poznámkou s .NET `[ThreadStatic]` atribut. To je užitečné, pokud je datové pole vlákna statické proměnné.
 
 ### <a name="marshalnativeexceptions-xamarinios-606"></a>MarshalNativeExceptions (Xamarin.iOS 6.0.6)
 
-Tento atribut bude nativní (ObjectiveC) výjimky podporu metoda.
+Tento atribut bude nativní (Objective-C) výjimky podporu metoda.
 Místo volání `objc_msgSend` přímo, bude volání projít vlastní trampoline, který zachytí ObjectiveC výjimky a je zařazuje do spravované výjimky.
 
 Aktuálně jen několik `objc_msgSend` podpisy jsou podporovány (najdete Pokud podpis není podporováno, když nativní propojení aplikaci, která používá vazba se nezdaří s chybějící monotouch_*_objc_msgSend* symbol), ale může být více Přidat na žádost.
@@ -1129,16 +1147,17 @@ Aktuálně jen několik `objc_msgSend` podpisy jsou podporovány (najdete Pokud 
 
 ### <a name="newattribute"></a>NewAttribute
 
-Tento atribut je použít metody a vlastnosti, které chcete mít generátor generovat "new" – klíčové slovo před deklaraci.
+Tento atribut se používá pro metody a vlastnosti, které chcete mít generátor generování `new` – klíčové slovo před deklaraci.
 
 Umožňuje vyhnout upozornění kompilátoru při stejnou metodu nebo název vlastnosti byla zavedená v podtřídy, který již existuje v základní třídě.
 
+<a name="NotificationAttribute" />
 
 ### <a name="notificationattribute"></a>NotificationAttribute
 
 Do pole tak, aby měl generátor produktu silného typu pomocná třída oznámení můžete použít tento atribut.
 
-Tento atribut lze použít bez argumentů pro oznámení, které zajišťují žádné datové části, nebo můžete zadat `System.Type` který odkazuje na jiné rozhraní v definici rozhraní API, obvykle s názvem konče "EventArgs". Generátor zapnout rozhraní do tříd této podtřídy `EventArgs` a bude obsahovat všechny vlastnosti nezobrazí. `[Export]` v by měl být použit atribut `EventArgs` třída seznam název klíč používaný k vyhledání slovníku jazyka Objective-C načíst hodnotu.
+Tento atribut lze použít bez argumentů pro oznámení, které zajišťují žádné datové části, nebo můžete zadat `System.Type` který odkazuje na jiné rozhraní v definici rozhraní API, obvykle s názvem konče "EventArgs". Generátor zapnout rozhraní do tříd této podtřídy `EventArgs` a bude obsahovat všechny vlastnosti nezobrazí. [ `[Export]` ](#ExportAttribute) v by měl být použit atribut `EventArgs` třída seznam název klíč používaný k vyhledání slovníku jazyka Objective-C načíst hodnotu.
 
 Příklad:
 
@@ -1207,7 +1226,7 @@ interface MyScreenChangedEventArgs {
 }
 ```
 
-Vygeneruje výše `MyScreenChangedEventArgs` třídy s `ScreenX` a `ScreenY` vlastnosti, které se načíst data z [NSNotification.UserInfo](https://developer.xamarin.com/api/property/Foundation.NSNotification.UserInfo/) pomocí klíče slovníku **ScreenXKey** a **ScreenYKey** v uvedeném pořadí a použít správné převody. `[ProbePresence]` Atribut se používá pro generátor testovat, pokud je klíč v nastavený `UserInfo`, namísto pokusu o získání hodnoty. Používá se pro případy, kdy přítomnost klíče hodnotu (obvykle pro logické hodnoty).
+Vygeneruje výše `MyScreenChangedEventArgs` třídy s `ScreenX` a `ScreenY` vlastnosti, které se načíst data z [NSNotification.UserInfo](https://developer.xamarin.com/api/property/Foundation.NSNotification.UserInfo/) pomocí klíče slovníku `ScreenXKey` a `ScreenYKey` v uvedeném pořadí a použít správné převody. `[ProbePresence]` Atribut se používá pro generátor testovat, pokud je klíč v nastavený `UserInfo`, namísto pokusu o získání hodnoty. Používá se pro případy, kdy přítomnost klíče hodnotu (obvykle pro logické hodnoty).
 
 Můžete napsat kód takto:
 
@@ -1217,11 +1236,11 @@ var token = MyClass.NotificationsObserveScreenChanged ((notification) => {
 });
 ```
 
-V některých případech je žádná konstanta asociovaná s hodnotou předán ve slovníku.  Apple někdy používá veřejnou symbol konstanty a někdy používá řetězcové konstanty.  Ve výchozím nastavení `[Export]` atribut v vaše zadané `EventArgs` třída bude použít zadaný název jako veřejné symbol prohledávat za běhu.  Pokud tomu tak není, a místo toho by měla být prohledávat jako řetězcová konstanta pak předejte `ArgumentSemantic.Assign` hodnotu pro atribut Export.
+V některých případech je žádná konstanta asociovaná s hodnotou předán ve slovníku.  Apple někdy používá veřejnou symbol konstanty a někdy používá řetězcové konstanty.  Ve výchozím nastavení [ `[Export]` ](#ExportAttribute) atribut v vaše zadané `EventArgs` třída bude použít zadaný název jako veřejné symbol prohledávat za běhu.  Pokud tomu tak není, a místo toho by měla být prohledávat jako řetězcová konstanta pak předejte `ArgumentSemantic.Assign` hodnotu pro atribut Export.
 
 **Novinka v Xamarin.iOS 8.4**
 
-V některých případech oznámení bude zahájena životnosti bez argumentů, takže použití `[Notification]` bez argumentů je přijatelná.  Ale v některých případech bude nutné zavést parametry pro oznámení.  Pro podporu tohoto scénáře, může být atribut použít více než jednou.
+V některých případech oznámení bude zahájena životnosti bez argumentů, takže použití [ `[Notification]` ](#NotificationAttribute) bez argumentů je přijatelná.  Ale v některých případech bude nutné zavést parametry pro oznámení.  Pro podporu tohoto scénáře, může být atribut použít více než jednou.
 
 Pokud vyvíjíte vazbu, a chcete vyhnout pozastavení existující uživatelského kódu, vypnete by existující oznámení z:
 
@@ -1244,13 +1263,15 @@ interface MyClass {
 }
 ```
 
+<a name="NullAllowedAttribute" />
+
 ### <a name="nullallowedattribute"></a>NullAllowedAttribute
 
-Při použití tohoto na vlastnost příznaky vlastnost tak, aby umožňoval hodnota null pro přiřazení k němu. To platí pouze pro odkazové typy.
+Při použití tohoto na vlastnost označila vlastnost tak, aby umožňoval hodnota `null` pro přiřazení k němu. To platí pouze pro odkazové typy.
 
-Při použití tohoto parametru v podpis metody označuje, že zadaný parametr může mít hodnotu null a že by měl provedena žádná kontrola pro předání hodnoty null.
+Když to se použije pro parametr v podpis metody, znamená to, že zadaný parametr může mít hodnotu null a že pro předávání by měla být provedena žádná kontrola `null` hodnoty.
 
-Pokud typ odkazu nemá tento atribut, vazba nástroj vygeneruje kontrolu pro přiřazené před jeho odesláním jazyka Objective-C a zkontrolujte, zda vyvolá výjimku, vydá `ArgumentNullException` Pokud hodnotu přiřazenou hodnotu null.
+Pokud typ odkazu nemá tento atribut, vazba nástroj vygeneruje kontrolu pro přiřazené před jeho odesláním jazyka Objective-C a zkontrolujte, zda vyvolá výjimku, vydá `ArgumentNullException` Pokud je hodnota přiřazená `null`.
 
 Příklad:
 
@@ -1264,16 +1285,15 @@ UIImage IconFile { get; set; }
 void SetImage ([NullAllowed] UIImage image, State forState);
 ```
 
-<a name="OverrideAttribute"/>
+<a name="OverrideAttribute" />
 
 ### <a name="overrideattribute"></a>OverrideAttribute
 
-Pomocí tohoto atributu dáte pokyn, aby generátor vazby, vazby pro u této metody by měla označené – klíčové slovo "přepsání".
-
+Pomocí tohoto atributu dáte pokyn, aby vazba generátor vazby pro u této metody by měla označené `override` – klíčové slovo.
 
 ### <a name="presnippetattribute"></a>PreSnippetAttribute
 
-Tento atribut slouží k vložení některé kódu má být vložen po ověření vstupní parametry, ale před kód volání do jazyka Objective-C
+Tento atribut slouží k vložení některé kódu má být vložen po ověření vstupní parametry, ale před kód volání do Objective-c
 
 Příklad:
 
@@ -1282,7 +1302,6 @@ Příklad:
 [PreSnippet ("var old = ViewController;")]
 void Demo ();
 ```
-
 
 ### <a name="prologuesnippetattribute"></a>PrologueSnippetAttribute
 
@@ -1295,7 +1314,6 @@ Příklad:
 [Prologue ("Trace.Entry ();")]
 void Demo ();
 ```
-
 
 ### <a name="postgetattribute"></a>PostGetAttribute
 
@@ -1322,7 +1340,6 @@ public interface NSOperation {
 
 V takovém případě `Dependencies` vlastnosti bude vyvolán po přidání nebo odebrání závislostí z `NSOperation` objekt, zajistíte, že máme graf, který představuje skutečnou načíst objekty, které brání nevracení paměti jak poškození paměti.
 
-
 ### <a name="postsnippetattribute"></a>PostSnippetAttribute
 
 Tento atribut slouží k vložení některé zdrojový kód C# má být vložen za kód má vyvolat metodu základního jazyka Objective-C
@@ -1335,11 +1352,9 @@ Příklad:
 void Demo ();
 ```
 
-
 ### <a name="proxyattribute"></a>ProxyAttribute
 
 Tento atribut se používá k vrácení hodnoty pro příznak je, že objekty proxy. Některé objekty návratový proxy rozhraní API jazyka Objective-C, které nelze rozlišené z vazby uživatele. Důsledkem tohoto atributu je příznak objekt jako `DirectBinding` objektu. Scénáři Xamarin.Mac, uvidíte [zabývat této chyby](https://bugzilla.novell.com/show_bug.cgi?id=670844).
-
 
 ### <a name="retainlistattribute"></a>RetainListAttribute
 
@@ -1353,7 +1368,7 @@ public class RetainListAttribute: Attribute {
 }
 ```
 
-Pokud je hodnota "doAdd" true, pak parametr je přidán do `__mt_{0}_var List<NSObject>;`. Kde `{0}` se nahradí danou `listName`. Je potřeba deklarovat toto pole Základní ve vašem doplňkové třídu rozhraní API.
+Pokud hodnota `doAdd` má hodnotu true, pak parametr je přidán do `__mt_{0}_var List<NSObject>;`. Kde `{0}` se nahradí danou `listName`. Je potřeba deklarovat toto pole Základní ve vašem doplňkové třídu rozhraní API.
 
 Příklad naleznete v části [foundation.cs](https://github.com/mono/maccore/blob/master/src/foundation.cs) a [NSNotificationCenter.cs](https://github.com/mono/maccore/blob/master/src/Foundation/NSNotificationCenter.cs)
 
@@ -1376,22 +1391,24 @@ Kromě toho tento atribut rozšířena do generovaného kódu tak, aby modul run
 
 Dá pokyn generátoru pro příznak metodu vygenerovaný jako zapečetěné. Pokud se tento atribut nezadá, výchozí hodnota je ke generování virtuální metodu (virtuální metodu, abstraktní metodu nebo přepsání v závislosti na tom, jak se používají další atributy).
 
+<a name="StaticAttribute" />
 
 ### <a name="staticattribute"></a>StaticAttribute
 
-Když `Static` atribut se používá pro metody nebo vlastnosti Množí se tak o statickou metodu nebo vlastnost. Pokud tento atribut nezadá, generátor vznikne instance metody nebo vlastnosti.
+Když `[Static]` je použit atribut metody nebo vlastnosti, tím se vygeneruje o statickou metodu nebo vlastnost. Pokud tento atribut nezadá, generátor vznikne instance metody nebo vlastnosti.
 
 
 ### <a name="transientattribute"></a>TransientAttribute
 
-Pomocí tohoto atributu na vlastnosti příznak jehož hodnoty jsou tedy přechodný, a objekty, které jsou dočasně vytvořené iOS, ale nejsou dlouhodobě. Když tento atribut se používá na vlastnost, generátor nevytvoří základní pole pro tuto vlastnost, což znamená, že spravované třídy nezachovat odkaz na objekt.
+Pomocí tohoto atributu na vlastnosti příznak jehož hodnoty jsou tedy přechodný, a objekty, které jsou dočasně vytvořené iOS, ale nejsou dlohotrvající. Když tento atribut se používá na vlastnost, generátor nevytvoří základní pole pro tuto vlastnost, což znamená, že spravované třídy nezachovat odkaz na objekt.
 
+<a name="WrapAttribute" />
 
 ### <a name="wrapattribute"></a>WrapAttribute
 
-V návrhu Xamarin.iOS/Xamarin.Mac vazeb `Wrap` atribut slouží k zabalení objekt slabě typované s objektem silného typu. Příčinou do play většinou se "delegovat" objekty jazyka Objective-C, které jsou obvykle deklarovány jako typu `id` nebo `NSObject`. Konvence používané Xamarin.iOS a Xamarin.Mac je ke zveřejnění těchto delegáti nebo zdrojů dat, že je typu `NSObject` a s názvem pomocí konvencí "Weak" + název vystavení. Ve vlastnosti "id delegáta" z jazyka Objective-C by zveřejněné jako `NSObject WeakDelegate { get; set; }` vlastnost v souboru kontrakt rozhraní API.
+V návrhu Xamarin.iOS/Xamarin.Mac vazeb `[Wrap]` atribut slouží k zabalení objekt slabě typované s objektem silného typu. Příčinou do play většinou s objekty jazyka Objective-C delegáta, které jsou obvykle deklarovány jako typu `id` nebo `NSObject`. Konvence používané Xamarin.iOS a Xamarin.Mac je ke zveřejnění těchto delegáti nebo zdrojů dat, že je typu `NSObject` a s názvem pomocí konvencí "Weak" + název vystavení. `id delegate` Vlastnost z jazyka Objective-C by být k dispozici jako `NSObject WeakDelegate { get; set; }` vlastnost v souboru kontrakt rozhraní API.
 
-Ale obvykle hodnotu, která je přiřazena k tento delegát je silného typu, takže jsme surface silného typu a použít `Wrap` atribut, to znamená, že uživatelé mohou používat slabé typy, pokud potřebují některé jemnou – ovládací prvek nebo pokud potřebují uchýlit k tric nízké úrovně lokálně, nebo můžete použít vlastnost silného typu pro většinu práci.
+Ale obvykle hodnotu, která je přiřazena k tento delegát je silného typu, takže jsme surface silného typu a použít `[Wrap]` atribut, to znamená, že uživatelé mohou používat slabé typy, pokud potřebují některé jemnou – ovládací prvek nebo pokud potřebují uchýlit k tric nízké úrovně lokálně, nebo můžete použít vlastnost silného typu pro většinu práci.
 
 Příklad:
 
@@ -1427,7 +1444,7 @@ var demo = new Demo ();
 demo.WeakDelegate = new SomeObject ();
 ```
 
-A to je způsob, jakým by uživatel použít verzi silného typu, Všimněte si, že uživatel využívá C# pro systém typů a je pomocí klíčového slova přepsání deklarovat svůj záměr, a že mu není nutné ručně uspořádání metodu s `Export`, protože jsme se, fungovat ve vazbě pro uživatele:
+A to je způsob, jakým by uživatel použít verzi silného typu, Všimněte si, že uživatel využívá C# pro systém typů a je pomocí klíčového slova přepsání deklarovat svůj záměr, a že mu není nutné ručně uspořádání metodu s `[Export]`, protože jsme se, fungovat ve vazbě pro uživatele:
 
 ```csharp
 // This is the strong case,
@@ -1439,8 +1456,7 @@ var strongDemo = new Demo ();
 demo.Delegate = new MyDelegate ();
 ```
 
-
-Další používání `Wrap` atribut je na podporu silného typu verze metod.   Příklad:
+Další používání `[Wrap]` atribut je na podporu silného typu verze metod.  Příklad:
 
 ```csharp
 [BaseType (typeof (NSObject))]
@@ -1468,7 +1484,7 @@ interface FooExplorer {
 
 ## <a name="parameter-attributes"></a>Atributy parametru
 
-Tato část popisuje atributy, které můžete použít pro parametry v definici metoda společně s `NullAttribute` , platí pro vlastnost jako celek.
+Tato část popisuje atributy, které můžete použít pro parametry v definici metoda společně s `[NullAttribute]` , platí pro vlastnost jako celek.
 
 <a name="BlockCallback" />
 
@@ -1492,7 +1508,9 @@ Tento atribut se používá pro typy parametrů v C# delegáta deklarace oznámi
 
 To se obvykle používá u zpětná volání, které jsou definovány takto v cíl – C:
 
-    typedef returnType (*SomeTypeDefinition) (int parameter1, NSString *parameter2);
+```objc
+typedef returnType (*SomeTypeDefinition) (int parameter1, NSString *parameter2);
+```
 
 Viz také: [BlockCallback](#BlockCallback).
 
@@ -1502,13 +1520,17 @@ Můžete použít `[Params]` atribut na poslední parametr pole definici metoda 
 
 Například následující definice:
 
-    [Export ("loadFiles:")]
-    void LoadFiles ([Params]NSUrl [] files);
+```csharp
+[Export ("loadFiles:")]
+void LoadFiles ([Params]NSUrl [] files);
+```
 
 Umožňuje následující kód k zapsání:
 
-    foo.LoadFiles (new NSUrl (url));
-    foo.LoadFiles (new NSUrl (url1), new NSUrl (url2), new NSUrl (url3));
+```csharp
+foo.LoadFiles (new NSUrl (url));
+foo.LoadFiles (new NSUrl (url1), new NSUrl (url2), new NSUrl (url3));
+```
 
 To má výhodu, nevyžaduje uživatelům vytvářet pole výhradně pro předávání elementy.
 
@@ -1538,10 +1560,9 @@ void SetText (string theText);
 void LogMessage ([PlainString] string theText);
 ```
 
-
 ### <a name="retainattribute"></a>RetainAttribute
 
-Dá pokyn generátor zachovat odkaz na zadaný parametr. Generátor poskytovat úložiště zálohování pro toto pole nebo je můžete zadat název ( `WrapName`) k uložení hodnoty v. To je užitečné k uložení odkazu na spravovaného objektu, který je předán jako parametr jazyka Objective-C a když znáte jazyka Objective-C se zachová jen této kopie objektu. Pro instanci rozhraní API jako `SetDisplay (SomeObject)` využije tento atribut, jako je pravděpodobné, že SetDisplay může zobrazit pouze jeden objekt v čase. Pokud budete potřebovat k udržování přehledu o více než jeden objekt (například pro API jako zásobníku) byste použili `RetainList` atribut.
+Dá pokyn generátor zachovat odkaz na zadaný parametr. Generátor poskytovat úložiště zálohování pro toto pole nebo je můžete zadat název ( `WrapName`) k uložení hodnoty v. To je užitečné k uložení odkazu na spravovaného objektu, který je předán jako parametr jazyka Objective-C a když znáte jazyka Objective-C se zachová jen této kopie objektu. Pro instanci rozhraní API jako `SetDisplay (SomeObject)` využije tento atribut, jako je pravděpodobné, že SetDisplay může zobrazit pouze jeden objekt v čase. Pokud budete potřebovat k udržování přehledu o více než jeden objekt (například pro API jako zásobníku) byste použili `[RetainList]` atribut.
 
 Syntaxe:
 
@@ -1566,14 +1587,14 @@ public class RetainListAttribute: Attribute {
 }
 ```
 
-Pokud je hodnota "doAdd" true, pak parametr je přidán do `__mt_{0}_var List<NSObject>`. Kde `{0}` se nahradí danou `listName`. Je potřeba deklarovat toto pole Základní ve vašem doplňkové třídu rozhraní API.
+Pokud hodnota `doAdd` má hodnotu true, pak parametr je přidán do `__mt_{0}_var List<NSObject>`. Kde `{0}` se nahradí danou `listName`. Je potřeba deklarovat toto pole Základní ve vašem doplňkové třídu rozhraní API.
 
 Příklad naleznete v části [foundation.cs](https://github.com/mono/maccore/blob/master/src/foundation.cs) a [NSNotificationCenter.cs](https://github.com/mono/maccore/blob/master/src/Foundation/NSNotificationCenter.cs)
 
 
 ### <a name="transientattribute"></a>TransientAttribute
 
-Tento atribut se použije pro parametry a používá se pouze při přechodu z jazyka Objective-C do jazyka C#.  Parametry jsou během těchto přechodů mezi různými NSObjects jazyka Objective-C zabalené do spravovaných reprezentaci objektu.
+Tento atribut se použije pro parametry a používá se pouze při přechodu z jazyka Objective-C do jazyka C#.  Během těchto přechodů mezi různými jazyka Objective-C `NSObject` parametry jsou zabalené do spravovaných reprezentaci objektu.
 
 Modul runtime bude trvat odkaz na objekt nativní a zachovat odkaz, dokud poslední spravovaný odkaz na objekt již neexistuje a globální Katalog je možné spustit.
 
@@ -1587,6 +1608,8 @@ Pokud nebyl vytvořen předaný objekt, nebo pokud byl již zbývající spravov
 
 
 ## <a name="property-attributes"></a>Vlastnost atributy
+
+<a name="NotImplementedAttribute" />
 
 ### <a name="notimplementedattribute"></a>NotImplementedAttribute
 
@@ -1621,7 +1644,7 @@ interface MyMutableString {
 }
 ```
 
-<a name="enum-attributes"/>
+<a name="enum-attributes" />
 
 ## <a name="enum-attributes"></a>Enum – atributy
 
@@ -1714,8 +1737,9 @@ Pokud žádné `null` není zadána hodnota pak `ArgumentNullException` bude vyv
 
 ## <a name="global-attributes"></a>Globální atributy
 
-Globálními atributy použijí buď pomocí `[assembly:]` modifikátor atribut jako `LinkWithAttribute` nebo může být odkudkoli, jako je třeba použít `Lion` a `Since` atributy.
+Globálními atributy použijí buď pomocí `[assembly:]` modifikátor atribut jako [ `[LinkWithAttribute]` ](#LinkWithAttribute) nebo může být odkudkoli, jako je třeba použít [ `[Lion]` ](#SinceAndLionAttributes) a [ `[Since]` ](#SinceAndLionAttributes) atributy.
 
+<a name="LinkWithAttribute" />
 
 ### <a name="linkwithattribute"></a>LinkWithAttribute
 
@@ -1757,20 +1781,19 @@ Tento atribut se používá na úrovni sestavení, například to znamená, co [
 [assembly: LinkWith ("libCorePlot-CocoaTouch.a", LinkTarget.ArmV7 | LinkTarget.ArmV7s | LinkTarget.Simulator, Frameworks = "CoreGraphics QuartzCore", ForceLoad = true)]
 ```
 
-Při použití `LinkWith` atribut zadaný `libraryName` se vloží do výsledné sestavení, což umožňuje uživatelům dodávat jednu knihovnu DLL, kterou obsahuje nespravované závislosti jak potřeba správně využívat příkazového řádku příznaky Knihovna z Xamarin.iOS.
+Při použití `[LinkWith]` atribut zadaný `libraryName` se vloží do výsledné sestavení, což umožňuje uživatelům dodávat jednu knihovnu DLL, kterou obsahuje nespravované závislosti jak potřeba správně využívat příkazového řádku příznaky Knihovna z Xamarin.iOS.
 
 Je také možné neposkytuje `libraryName`, v takovém případě `LinkWith` atributu lze specifikovat pouze příznaky linkeru Další:
 
- ``` csharp
+``` csharp
 [assembly: LinkWith (LinkerFlags = "-lsqlite3")]
- ```
-
+```
 
 #### <a name="linkwithattribute-constructors"></a>LinkWithAttribute konstruktory
 
 Tyto konstruktory umožňují zadejte knihovnu, která se propojení a vložit do výsledné sestavení podporované cíle, které podporuje knihovny a všechny knihovny volitelné příznaky, které jsou potřeba propojit s knihovnou.
 
-Všimněte si, že LinkTarget argument je vyvozena na základě Xamarin.iOS a není potřeba nastavit.
+Všimněte si, že `LinkTarget` argument je vyvozena na základě Xamarin.iOS a není potřeba nastavit.
 
 Příklady:
 
@@ -1788,21 +1811,17 @@ Příklady:
 [assembly: LinkWith ("libDemo.a", LinkTarget.Thumb | LinkTarget.Simulator, SmartLink = true, ForceLoad = true, IsCxx = true);
 ```
 
-
 #### <a name="linkwithattributeforceload"></a>LinkWithAttribute.ForceLoad
 
 `ForceLoad` Vlastnost se používá k určení, jestli `-force_load` odkaz příznak se používá pro propojování nativní knihovny. Prozatím se toto by měl vždycky platit.
-
 
 #### <a name="linkwithattributeframeworks"></a>LinkWithAttribute.Frameworks
 
 Pokud knihovna je svázán, má pevný požadavek v žádném rozhraní (jiné než `Foundation` a `UIKit`), byste měli nastavit `Frameworks` vlastnost představuje řetězec obsahující seznam rozhraní potřebné oddělených mezerami. Například pokud vytváříte vazbu knihovnu, která vyžaduje `CoreGraphics` a `CoreText`, byste měli nastavit `Frameworks` vlastnost `"CoreGraphics CoreText"`.
 
-
 #### <a name="linkwithattributeiscxx"></a>LinkWithAttribute.IsCxx
 
 Nastavte tuto vlastnost na hodnotu true, pokud výsledný spustitelný soubor musí být zkompilovány pomocí kompilátoru C++ místo výchozí, což je kompilátor C. Použijte, pokud knihovnu, která jsou vazby byla zapsána v jazyce C++.
-
 
 #### <a name="linkwithattributelibraryname"></a>LinkWithAttribute.LibraryName
 
@@ -1810,13 +1829,11 @@ Název sady nespravované knihovny. Toto je soubor s příponou ".a" a může ob
 
 Zaškrtnutí dřívějších verzích Xamarin.iOS `LinkTarget` vlastnosti k určení knihovnu podporované platformy, ale to je nyní zjištěn automaticky a `LinkTarget` vlastnost je ignorována.
 
-
 #### <a name="linkwithattributelinkerflags"></a>LinkWithAttribute.LinkerFlags
 
 `LinkerFlags` Řetězec poskytuje způsob, jak vazby autorům specifikovat žádné příznaky linkeru další potřebné při propojování nativní knihovny do aplikace.
 
 Například pokud nativní knihovny vyžaduje libxml2 a zlib, nastavíte `LinkerFlags` řetězec k `"-lxml2 -lz"`.
-
 
 #### <a name="linkwithattributelinktarget"></a>LinkWithAttribute.LinkTarget
 
@@ -1826,11 +1843,9 @@ Zaškrtnutí dřívějších verzích Xamarin.iOS `LinkTarget` vlastnosti k urč
 
 Nastavte tuto vlastnost na hodnotu true, pokud knihovnu, která se připojujete vyžaduje knihovny RSZ zpracování výjimek (gcc_eh)
 
-
 #### <a name="linkwithattributesmartlink"></a>LinkWithAttribute.SmartLink
 
 `SmartLink` Musí být vlastnost nastavena na hodnotu true, umožníte Xamarin.iOS určit, zda `ForceLoad` je vyžadován, nebo ne.
-
 
 #### <a name="linkwithattributeweakframeworks"></a>LinkWithAttribute.WeakFrameworks
 
@@ -1840,9 +1855,11 @@ Nastavte tuto vlastnost na hodnotu true, pokud knihovnu, která se připojujete 
 
 Může být vhodné pro slabé propojení `Frameworks` jako účty, `CoreBluetooth`, `CoreImage`, `GLKit`, `NewsstandKit` a `Twitter` vzhledem k tomu, že jsou dostupné jenom v iOS 5.
 
+<a name="SinceAndLionAttributes" />
+
 ### <a name="sinceattribute-ios-and-lionattribute-macos"></a>SinceAttribute (iOS) a LionAttribute (macOS)
 
-Můžete použít `Since` atribut příznak rozhraní API tak, že má uvedena v určitém místě v čase. Atribut by měl použít pouze pro příznak typy a metody, které by mohly způsobit runtime problém, pokud základní třídy, metody nebo vlastnosti není k dispozici.
+Můžete použít `[Since]` atribut příznak rozhraní API tak, že má uvedena v určitém místě v čase. Atribut by měl použít pouze pro příznak typy a metody, které by mohly způsobit runtime problém, pokud základní třídy, metody nebo vlastnosti není k dispozici.
 
 Syntaxe:
 
@@ -1880,8 +1897,7 @@ public interface UITableViewController {
     bool ClearsSelectionOnViewWillAppear { get; set; }
 ```
 
-`Lion` Stejným způsobem, ale pro typy zavedené Lion je použit atribut. Z důvodu používat `Lion` a další specifické číslo verze, který se používá v iOS je, že iOS je velmi často, revize, hlavní verze OS X dochází zřídka a je jednodušší mějte na paměti operačního systému podle jejich kódové označení než podle jejich číslo verze
-
+`[Lion]` Stejným způsobem, ale pro typy zavedené Lion je použit atribut. Z důvodu používat `[Lion]` a další specifické číslo verze, který se používá v iOS je, že iOS je velmi často, revize, hlavní verze OS X dochází zřídka a je jednodušší mějte na paměti operačního systému podle jejich kódové označení než podle jejich číslo verze
 
 ### <a name="adviceattribute"></a>AdviceAttribute
 
@@ -1895,7 +1911,7 @@ Pouze k dispozici v Xamarin.iOS 5.4 a novější.
 
 Tento atribut nastaví generátor, vazba této konkrétní knihovny (Pokud se s `[assembly:]`) nebo typ měli použít funkce rychlého kopírování nula řetězec kódování. Tento atribut je ekvivalentní k předání možnost příkazového řádku `--zero-copy` k generátor.
 
-Při použití nula kopie řetězce, generátor efektivně používá stejný řetězec jazyka C# jako řetězec, který využívá jazyka Objective-C, aniž by docházelo k vytvoření nové `NSString` objekt a vyhnout kopírování dat z řetězců C# jazyka Objective-C řetězec. Pouze nevýhodou použití nula kopírování řetězců je, že je nutné zajistit, že má vlastnost řetězec, který zabalením a která se stane označen jako "zachovat" nebo "zkopírovat" `DisableZeroCopy` nastaven atribut. To je vyžadovat, protože popisovač pro kopírování nula řetězce je přidělená v zásobníku a je neplatný při návratový funkce.
+Při použití nula kopie řetězce, generátor efektivně používá stejný řetězec jazyka C# jako řetězec, který využívá jazyka Objective-C, aniž by docházelo k vytvoření nové `NSString` objekt a vyhnout kopírování dat z řetězců C# jazyka Objective-C řetězec. Je pouze nevýhodou použití řetězců nula kopie, musíte zajistit, aby vlastnosti řetězce, který zabalením a který se stane s příznakem `retain` nebo `copy` má `[DisableZeroCopy]` nastaven atribut. To je vyžadovat, protože popisovač pro kopírování nula řetězce je přidělená v zásobníku a je neplatný při návratový funkce.
 
 Příklad:
 
@@ -1918,7 +1934,9 @@ interface MyBinding {
 
 Můžete taky použít atribut na úrovni sestavení a bude platit pro všechny typy sestavení:
 
-    [assembly:ZeroCopyStrings]
+```csharp
+[assembly:ZeroCopyStrings]
+```
 
 ## <a name="strongly-typed-dictionaries"></a>Slovník silného typu
 
@@ -1926,6 +1944,7 @@ S Xamarin.iOS 8.0 zavedli jsme podporu pro snadné vytváření silně typované
 
 Při vždy bylo možné použít [DictionaryContainer](https://developer.xamarin.com/api/type/Foundation.DictionaryContainer/) datový typ společně s ruční rozhraní API, je nyní k tomu mnohem jednodušší.  Další informace najdete v tématu [zpřístupnění silné typy](~/cross-platform/macios/binding/objective-c-libraries.md#Surfacing_Strong_Types).
 
+<a name="StrongDictionary" />
 
 ### <a name="strongdictionary"></a>StrongDictionary
 

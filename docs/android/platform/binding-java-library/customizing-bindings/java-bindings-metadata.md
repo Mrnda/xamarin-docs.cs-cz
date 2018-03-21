@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/09/2018
-ms.openlocfilehash: edf25ebd089994c01b2fa45e77b35fad9a51e350
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 70f17b6bc8dc991534cdf4dd065c813aa0e27e96
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="java-bindings-metadata"></a>Metadata vazby Java
 
@@ -313,7 +313,7 @@ Existují případy, kde Android knihovny používat konstanty typu integer pře
 </mapping>
 ```
 
-Zde jsme provedli třída jazyka Java `SKRealReachSettings` a definované výčtu jazyka C# názvem `SKRealReachSettings` v oboru názvů `Skobbler.Ngx.Map.RealReach`. `field` Položky definuje název konstanta Java (například `UNIT\_SECOND`), název položky výčtu (příklad `Second`) a celočíselná hodnota reprezentována obě entity (příklad `0`). 
+Zde jsme provedli třída jazyka Java `SKRealReachSettings` a definované výčtu jazyka C# názvem `SKMeasurementUnit` v oboru názvů `Skobbler.Ngx.Map.RealReach`. `field` Položky definuje název konstanta Java (například `UNIT_SECOND`), název položky výčtu (příklad `Second`) a celočíselná hodnota reprezentována obě entity (příklad `0`). 
 
 ### <a name="defining-gettersetter-methods-using-enummethodsxml"></a>Definování metod Getter/Setter pomocí EnumMethods.xml
 
@@ -328,7 +328,7 @@ Zadané `SKRealReachSettings` výčet definovaný nad tímto **EnumMethods.xml**
 </mapping>
 ```
 
-První `method` řádku mapuje návratovou hodnotu Java `getMeasurementUnit` metodu `SKRealReachSettings` výčtu. Druhý `method` řádku mapuje první parametr `setMeasurementUnit` stejné výčtu.
+První `method` řádku mapuje návratovou hodnotu Java `getMeasurementUnit` metodu `SKMeasurementUnit` výčtu. Druhý `method` řádku mapuje první parametr `setMeasurementUnit` stejné výčtu.
 
 Se všemi těchto změn v místě, můžete použít kód postupujte podle kroků v Xamarin.Android nastavit `MeasurementUnit`: 
 

@@ -8,33 +8,32 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/19/2018
-ms.openlocfilehash: c542237523b934cb8616fda6cefdcd969b7700bd
-ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
+ms.openlocfilehash: fbcb0190f609efc4396429a7961c2d49ab82576f
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="firebase-job-dispatcher"></a>Dispečer firebase úlohy
 
 _Tato příručka popisuje, jak při plánování práce na pozadí pomocí knihovny dispečera úloh Firebase z Google._
 
-## <a name="firebase-job-dispatcher-overview"></a>Přehled dispečera úloh firebase
+## <a name="overview"></a>Přehled
 
 Doporučené způsoby zachovat přizpůsobivý uživateli aplikace pro Android je zajistit, že komplexní nebo dlouhotrvající pracovních probíhá na pozadí. Je ale důležité, aby práce pozadí nebude negativní dopad na možnosti pro uživatele se zařízením. 
 
-Úloha na pozadí například může dotazovat na web každých několik minut na dotaz pro změny konkrétní datové sady. Vypadá to neškodný, ale může mít katastrofální dopad na zařízení. Aplikace se ukončí probouzení zařízení, zvýšit procesoru na s vyšší spotřebou, napájený kombinace, provedení síťové požadavky a pak zpracování výsledků. Bude hůř, protože zařízení není ihned vypněte a vrátit do nečinného stavu snížené spotřeby. Práce špatně naplánované pozadí může nechtěně zachovat zařízení ve stavu s požadavky na nepotřebné a nadměrné spotřeby. Prakticky této seeming nevinnosti aktivity (dotazování web) bude nepoužitelná zařízení v poměrně krátké době.
+Úlohu na pozadí například může dotazovat webu každé tři nebo čtyři minut dotazu pro změny konkrétní datové sady. Vypadá to neškodný, ale by mít katastrofální dopad na výdrž baterie. Aplikace bude opakovaně probuzení zařízení, zvýšit procesoru s vyšší spotřebou, napájení kombinace, síťové požadavky a pak zpracování výsledků. Bude hůř, protože zařízení není ihned vypněte a vrátit do nečinného stavu snížené spotřeby. Práce špatně naplánované pozadí může nechtěně zachovat zařízení ve stavu s požadavky na nepotřebné a nadměrné spotřeby. Tato zdánlivě nevinnosti aktivita (dotazování web) bude nepoužitelná zařízení v poměrně krátké době.
 
-Android již poskytuje několik rozhraní API usnadní provede práci na pozadí, ale žádná z nich jsou komplexní řešení:
+Android poskytuje následující rozhraní API, které pomáhají při provádění práce na pozadí, ale samotné nejsou dostatečná pro plánování inteligentního úloh. 
 
 * **[Záměrné služby](~/android/app-fundamentals/services/creating-a-service/intent-services.md)**  &ndash; záměr služby jsou skvěle hodí k provedení práce, ale poskytují způsob, jak plánování práce.
 * **[AlarmManager](https://developer.android.com/reference/android/app/AlarmManager.html)**  &ndash; tyto rozhraní API pouze povolit, aby se naplánovaná, ale poskytují způsob, jak skutečně provést nějakou práci. Také AlarmManager umožňuje pouze čas na základě omezení, což znamená, že vyvolat alarm v určitém čase nebo po uplynutí určité doby. 
 * **[JobScheduler](https://developer.android.com/reference/android/app/job/JobScheduler.html)**  &ndash; The plán úlohy je skvělé rozhraní API, která funguje s operačním systémem při plánování úloh. Je však pouze k dispozici pro tyto Android aplikací, které se zaměřují úroveň rozhraní API 21 nebo vyšší. 
-* **[Vysílání příjemci](~/android/app-fundamentals/broadcast-receivers.md)**  &ndash; Android aplikace se dá nastavit všesměrového vysílání příjemci pro práci v reakci na události široké systému nebo tříd Intent. Ale všesměrového vysílání příjemci neposkytují žádné kontrolu nad spuštění úlohy. Také se omezí změny v operační systém Android když bude fungovat všesměrového vysílání příjemci nebo druhy práci, kterou může reagovat. 
-* **Správce sítě zpráv cloudu Google** &ndash; po dlouhou dobu to bylo pravděpodobně, nejlepší způsob, jak inteligentně plán pozadí fungovat. Ale GCMNetworkManager od již nepoužívá. 
+* **[Vysílání příjemci](~/android/app-fundamentals/broadcast-receivers.md)**  &ndash; Android aplikace se dá nastavit všesměrového vysílání příjemci pro práci v reakci na systémové události nebo tříd Intent. Ale všesměrového vysílání příjemci neposkytují žádné kontrolu nad spuštění úlohy. Také se omezí změny v operační systém Android když bude fungovat všesměrového vysílání příjemci nebo druhy práci, kterou může reagovat. 
 
-Existují dvě klíčové funkce efektivně provádět práce pozadí (někdy označovány jako _úloha na pozadí_ nebo _úlohy_):
+Existují dvě klíčové funkce pro efektivní provádění práce pozadí (někdy označovány jako _úloha na pozadí_ nebo _úlohy_):
 
-1. **Inteligentně plánování práce** &ndash; je důležité, když aplikace pracuje na pozadí, dělá to tak, jako dobrý občanem. V ideálním případě by neměl aplikace potřebují spustit úlohu. Místo toho by měla aplikace zadejte podmínky, které musí být splněné při úlohu můžete spustit a pak plánování, které fungují spustit, když ke splnění podmínek. To umožňuje Android pro inteligentně práci. Například síťové požadavky může zpracovat v dávce ke spuštění všech ve stejnou dobu, aby maximální využití režijní náklady spojené s prací v síti.
+1. **Inteligentně plánování práce** &ndash; je důležité, když aplikace pracuje na pozadí, dělá to tak, jako dobrý občanem. V ideálním případě by neměl aplikace potřebují spustit úlohu. Místo toho by měla aplikace zadat podmínky, které musí být splněné, když úlohu můžete spustit a naplánujte svou práci spustit, když ke splnění podmínek. To umožňuje Android pro inteligentně práci. Například síťové požadavky může zpracovat v dávce ke spuštění všech ve stejnou dobu, aby maximální využití režijní náklady spojené s prací v síti.
 2. **Zapouzdření prací** &ndash; kód k provedení práce na pozadí by měl být zapouzdřené v diskrétní komponenty, která lze spustit nezávisle na uživatelské rozhraní a bude je poměrně snadné ho přeplánovat práce selže-li dokončit z nějakého důvodu.
 
 Dispečera Firebase úlohy je knihovna z Google, který poskytuje rozhraní fluent API zjednodušit plánování práce na pozadí. Je určena k nahrazení pro Google Cloud Manager být. Dispečera Firebase úlohy se skládá z následujících rozhraní API:
@@ -66,7 +65,7 @@ Chcete-li začít pracovat s dispečera Firebase úlohy, nejprve přidejte [bal�
 
 Po přidání knihovně dispečera úloh Firebase, vytvoření `JobService` třídy a potom ji spustit s instancí naplánovat `FirebaseJobDispatcher`.
 
-### <a name="creating-a-jobservice"></a>Vytváření `JobService`
+### <a name="creating-a-jobservice"></a>Vytváření JobService
 
 Všechny pracovní provádí knihovně Firebase dispečera úloh je třeba provést v typu, který rozšiřuje `Firebase.JobDispatcher.JobService` abstraktní třídy. Vytváření `JobService` je velmi podobný vytváření `Service` s Androidem framework: 
 
@@ -74,7 +73,7 @@ Všechny pracovní provádí knihovně Firebase dispečera úloh je třeba prov�
 2. Uspořádání podtřídy s `ServiceAttribute`. I když není nezbytně nutné, doporučuje se explicitně nastavit `Name` parametru pomáhají s laděním `JobService`. 
 3. Přidat `IntentFilter` deklarovat `JobService` v **AndroidManifest.xml**. Také to pomůže knihovně dispečera úloh Firebase vyhledejte a vyvolání `JobService`.
 
-Následující kód je příkladem nejjednodušším `JobService` pro aplikaci:
+Následující kód je příkladem nejjednodušším `JobService` pro aplikaci, asynchronně k práci pomocí TPL:
 
 ```csharp
 [Service(Name = "com.xamarin.fjdtestapp.DemoJob")]
@@ -85,11 +84,14 @@ public class DemoJob : JobService
 
     public override bool OnStartJob(IJobParameters jobParameters)
     {
-        Log.Debug(TAG, "DemoJob::OnStartJob");
-        // Note: This runs on the main thread. Anything that takes longer than 16 milliseconds
-         // should be run on a seperate thread.
-        
-        return false; // return false because there is no more work to do.
+        Task.Run(() =>
+        {
+            // Work is happening asynchronously (code omitted)
+                       
+        });
+
+        // Return true because of the asynchronous work
+        return true;  
     }
 
     public override bool OnStopJob(IJobParameters jobParameters)
@@ -101,7 +103,7 @@ public class DemoJob : JobService
 }
 ```
 
-### <a name="creating-a-firebasejobdispatcher"></a>Vytváření `FirebaseJobDispatcher`
+### <a name="creating-a-firebasejobdispatcher"></a>Vytváření FirebaseJobDispatcher
 
 Předtím, než bude naplánována veškerou práci, je nutné vytvořit `Firebase.JobDispatcher.FirebaseJobDispatcher` objektu. `FirebaseJobDispatcher` Zodpovídá za plánování `JobService`. Následující fragment kódu je možné vytvořit instanci `FirebaseJobDispatcher`: 
  
@@ -121,7 +123,7 @@ FirebaseJobDispatcher dispatcher = context.CreateJobDispatcher();
 
 Jednou `FirebaseJobDispatcher` byla vytvořena instance, je možné vytvořit `Job` a spouští kód v `JobService` – třída. `Job` Je vytvořený `Job.Builder` objektu a budou popsané v další části.
 
-### <a name="creating-a-firebasejobdispatcherjob-with-the-jobbuilder"></a>Vytváření `Firebase.JobDispatcher.Job` pomocí `Job.Builder`
+### <a name="creating-a-firebasejobdispatcherjob-with-the-jobbuilder"></a>Vytvoření Firebase.JobDispatcher.Job pomocí Job.Builder
 
 `Firebase.JobDispatcher.Job` Třída je odpovědná za zapouzdřením meta-data potřebné ke spuštění `JobService`. A`Job` obsahuje informace, například žádné omezení, které je nutné splnit před spuštěním úlohy, pokud `Job` je periodický, nebo žádné aktivační události, které způsobí, že tato úloha se spustila.  Úplné alespoň `Job` musí mít _značky_ (jedinečného řetězce, který identifikuje úlohy `FirebaseJobDispatcher`) a typ `JobService` by měl být spuštěn. Vytvoří instanci dispečera úloh Firebase `JobService` když je na čase spuštění úlohy.  A `Job` je vytvořená pomocí instance `Firebase.JobDispatcher.Job.JobBuilder` třídy. 
 
@@ -140,7 +142,7 @@ Job myJob = dispatcher.NewJobBuilder()
 * A `Job` bude naplánována s co nejdříve spustit.
 * Výchozí strategie opakování pro `Job` , je použít _exponenciálního omezení rychlosti_ (popsané v podrobněji níže v části [nastavení RetryStrategy](#Setting_a_RetryStrategy))
 
-### <a name="scheduling-a-job"></a>Plánování `Job`
+### <a name="scheduling-a-job"></a>Plánování úlohy
 
 Po vytvoření `Job`, je nutné naplánovat `FirebaseJobDispatcher` před jeho spuštěním. Existují dvě metody pro plánování `Job`:
 
@@ -173,7 +175,7 @@ Každý z těchto témat se být uvedeny další informace v následujících č
 
 <a name="Passing_Parameters_to_a_Job" />
 
-#### <a name="passing-parameters-to-a-job"></a>Předávání parametrů do úlohy
+#### <a name="passing-jarameters-to-a-job"></a>Předávání jarameters do úlohy
 
 Parametry jsou předány do úlohy tak, že vytvoříte `Bundle` předá spolu s `Job.Builder.SetExtras` metoda:
 
@@ -219,8 +221,6 @@ Job myJob = dispatcher.NewJobBuilder()
 ```
 
 <a name="Setting_Job_Triggers" />
-
-#### <a name="setting-job-triggers"></a>Nastavení úloh aktivační události
 
 `JobTrigger` Obsahuje pokyny, které operační systém o zahájení úlohy. A `JobTrigger` má _provádění okno_ , který definuje naplánovaném čase, kdy `Job` měly být spuštěny. Provádění okna _spustit okno_ hodnotu a _end okno_ hodnotu. Okno spuštění je počet sekund, po který zařízení čekat před spuštěním úlohy a koncová hodnota okno je maximální počet sekund čekání před spuštěná `Job`. 
 
@@ -283,7 +283,7 @@ Buď metoda vrátí celočíselnou hodnotu:
 
 ## <a name="summary"></a>Souhrn
 
-Tato příručka popsané, jak používat dispečera úloh Firebase inteligentně provádět práce na pozadí. Ho popsané postupy zapouzdření práce, kterou je možné provést, protože `JobService` a jak `FirebaseJobDispatcher` při plánování práce, zadáte kritéria s `JobTrigger` a způsob zpracování chyb s `RetryStrategy`.
+Tato příručka popsané, jak používat dispečera úloh Firebase inteligentně provádět práce na pozadí. Je popsané postupy zapouzdření práce, kterou je možné provést, protože `JobService` a jak používat `FirebaseJobDispatcher` při plánování práce, zadáte kritéria s `JobTrigger` a způsob zpracování chyb s `RetryStrategy`.
 
 
 ## <a name="related-links"></a>Související odkazy

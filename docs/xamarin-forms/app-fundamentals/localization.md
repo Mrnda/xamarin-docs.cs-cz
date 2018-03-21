@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: ffde89558495c4b9ccb9ec41761b5fc7ca53db38
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e04ea24883bdf1e29a538aaff92c555df8e1755f
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="localization"></a>Lokalizace
 
@@ -21,22 +21,6 @@ _Xamarin.Forms aplikace je možné lokalizovat pomocí souborů prostředků .NE
 ## <a name="overview"></a>Přehled
 
 Předdefinované mechanismus pro lokalizace používá aplikace .NET [RESX – soubory](http://msdn.microsoft.com/library/ekyft91f(v=vs.90).aspx) a třídy v `System.Resources` a `System.Globalization` obory názvů. Soubory RESX obsahující přeloženými řetězci, které jsou součástí sestavení Xamarin.Forms, společně s generované kompilátorem třídu, která poskytuje přístup k překlady s silného typu. Pak je možné načíst překlad text v kódu.
-
-Tento dokument obsahuje následující části:
-
-**Globalizace Xamarin.Forms kódu**
-
-* Přidání a pomocí řetězcové prostředky v aplikaci Xamarin.Forms PCL.
-* Povolení zjišťování jazyka v každé z nativní aplikace.
-
-**Lokalizace XAML**
-
-* Lokalizace XAML pomocí `IMarkupExtension`.
-* Povolení rozšíření značek v nativní aplikace.
-
-**Lokalizace elementů specifické pro platformu**
-
-* Lokalizace Image a název aplikace v nativní aplikace.
 
 ### <a name="sample-code"></a>Ukázkový kód
 
@@ -651,15 +635,17 @@ using Xamarin.Forms.Xaml;
 
 namespace UsingResxLocalization
 {
-    // You exclude the 'Extension' suffix when using in Xaml markup
-    [ContentProperty ("Text")]
+    // You exclude the 'Extension' suffix when using in XAML
+    [ContentProperty("Text")]
     public class TranslateExtension : IMarkupExtension
     {
-        readonly CultureInfo ci;
+        readonly CultureInfo ci = null;
         const string ResourceId = "UsingResxLocalization.Resx.AppResources";
 
-        private static readonly Lazy<ResourceManager> ResMgr = new Lazy<ResourceManager>(()=> new ResourceManager(ResourceId
-                                                                                                                  , typeof(TranslateExtension).GetTypeInfo().Assembly));
+        static readonly Lazy<ResourceManager> ResMgr = new Lazy<ResourceManager>(
+            () => new ResourceManager(ResourceId, IntrospectionExtensions.GetTypeInfo(typeof(TranslateExtension)).Assembly));
+
+        public string Text { get; set; }
 
         public TranslateExtension()
         {
@@ -669,24 +655,21 @@ namespace UsingResxLocalization
             }
         }
 
-        public string Text { get; set; }
-
-        public object ProvideValue (IServiceProvider serviceProvider)
+        public object ProvideValue(IServiceProvider serviceProvider)
         {
             if (Text == null)
-                return "";
+                return string.Empty;
 
             var translation = ResMgr.Value.GetString(Text, ci);
-
             if (translation == null)
             {
-                #if DEBUG
+#if DEBUG
                 throw new ArgumentException(
-                    String.Format("Key '{0}' was not found in resources '{1}' for culture '{2}'.", Text, ResourceId, ci.Name),
+                    string.Format("Key '{0}' was not found in resources '{1}' for culture '{2}'.", Text, ResourceId, ci.Name),
                     "Text");
-                #else
-                translation = Text; // returns the key, which GETS DISPLAYED TO THE USER
-                #endif
+#else
+                translation = Text; // HACK: returns the key, which GETS DISPLAYED TO THE USER
+#endif
             }
             return translation;
         }
@@ -699,7 +682,7 @@ Následující odrážek popisují důležité elementy ve výše uvedeném kód
 * Název třídy `TranslateExtension`, ale podle konvence můžete označujeme je jako **přeložit** v našem značek.
 * Třída implementuje `IMarkupExtension`, které je požadované Xamarin.Forms pro něj fungovat.
 * `"UsingResxLocalization.Resx.AppResources"` je identifikátor prostředku pro naše RESX prostředky. Tvořená naše výchozí obor názvů, složku, kde jsou umístěny soubory prostředků a výchozí název souboru RESX.
-* `ResourceManager` Třída je vytvořený pomocí `typeof(TranslateExtension)` k určení aktuální sestavení načíst prostředky z.
+* `ResourceManager` Třída je vytvořený pomocí `IntrospectionExtensions.GetTypeInfo(typeof(TranslateExtension)).Assembly)` k určení aktuální sestavení načíst prostředky z a v mezipaměti v statických `ResMgr` pole. Je vytvořen jako `Lazy` zadejte tak, aby vytvořila je odložení, dokud se nejprve používá v `ProvideValue` metoda.
 * `ci` závislosti služby se používá k získání zvolený jazyk pro uživatele z nativní operačního systému.
 * `GetString` je metoda, která načte skutečné přeložené řetězce z souborů prostředků. Ve Windows Phone 8.1 a univerzální platformu Windows `ci` bude mít hodnotu null. protože `ILocalize` rozhraní není implementovaný pro tyto platformy. Jde o ekvivalent volání `GetString` metodu se pouze první parametr. Místo toho rozhraní prostředky automaticky rozpozná národní prostředí a načte přeložené řetězce z příslušné souboru RESX.
 * Zpracování chyb byl pro lepší ladění chybějící prostředky, které došlo k výjimce (v `DEBUG` jenom na režim).

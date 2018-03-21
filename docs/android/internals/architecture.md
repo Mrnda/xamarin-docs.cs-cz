@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 47f90af1ed68e6c3aea5710b7181b4787fc0895c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 9834da444032622cc3547e7c99ca3de0e41bb603
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="architecture"></a>Architektura
 
@@ -33,7 +33,7 @@ Další informace o způsobu třídy Android komunikují s třídy Android modul
 
 Balíčky aplikace pro Android jsou kontejnery ZIP s *.apk* příponu souboru. Balíčky aplikací Xamarin.Android mít stejnou strukturu a rozložení jako normální Android balíčky s těmito přídavky:
 
--   Sestavení aplikace (obsahující IL) jsou *uložené* nekomprimované v rámci *sestavení* složky. Během procesu spuštění ve verzi sestavení *.apk* je *mmap()* ed do procesu a sestavení jsou načteny z paměti. To umožňuje rychlejší spouštění aplikace, jako sestavení nemusí být rozbalena před spuštění. - *Poznámka:* sestavení informace o umístění, jako [Assembly.Location](https://developer.xamarin.com/api/property/System.Reflection.Assembly.Location/) a [Assembly.CodeBase](https://developer.xamarin.com/api/property/System.Reflection.Assembly.CodeBase/)
+-   Sestavení aplikace (obsahující IL) jsou *uložené* nekomprimované v rámci *sestavení* složky. Během procesu spuštění ve verzi sestavení *.apk* je *mmap()* ed do procesu a sestavení jsou načteny z paměti. To umožňuje rychlejší spouštění aplikace, protože sestavení není potřeba extrahovat před spuštění. - *Poznámka:* sestavení informace o umístění, jako [Assembly.Location](https://developer.xamarin.com/api/property/System.Reflection.Assembly.Location/) a [Assembly.CodeBase](https://developer.xamarin.com/api/property/System.Reflection.Assembly.CodeBase/)
     *nelze spoléhat* verze sestavení. Neexistují jako odlišné filesystem položky a mají žádné použitelné umístění.
 
 

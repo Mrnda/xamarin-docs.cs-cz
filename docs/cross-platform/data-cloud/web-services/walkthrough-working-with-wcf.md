@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 02/17/2018
-ms.openlocfilehash: b4705bc9c8fdb1a671c7de2453ea088bf2afe424
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: ee39851070be2f302125162400d2214c732faeec
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="walkthrough---working-with-wcf"></a>Návod - práce s použitím technologie WCF
 
@@ -40,10 +40,11 @@ První úlohou před nám je vytvoření služby WCF pro mobilní aplikace komun
 1. Spusťte Visual Studio 2017 a vytvoření nového projektu.
 1. V **nový projekt** dialogovém okně, vyberte **WCF > knihovny služby WCF** šablony a názvu řešení `HelloWorldService`:
 
-  ![](walkthrough-working-with-wcf-images/new-wcf-service.png "Vytvořit novou knihovnu služby WCF")
+    ![](walkthrough-working-with-wcf-images/new-wcf-service.png "Vytvořit novou knihovnu služby WCF")
 
 1. V **Průzkumníku řešení**, přidejte novou třídu s názvem `HelloWorldData` do projektu:
 
+    ```csharp
         using System.Runtime.Serialization;
 
         namespace HelloWorldService
@@ -64,10 +65,13 @@ První úlohou před nám je vytvoření služby WCF pro mobilní aplikace komun
                 }
             }
         }
+    ```
+
 
 1. V **Průzkumníku řešení**, přejmenujte `IService1.cs` k `IHelloWorldService.cs`a přejmenujte `Service1.cs` k `HelloWorldService.cs`.
 1. V **Průzkumníku řešení**, otevřete `IHelloWorldService.cs` a kódu nahraďte následujícím kódem:
 
+    ```csharp
         using System.ServiceModel;
 
         namespace HelloWorldService
@@ -82,11 +86,13 @@ První úlohou před nám je vytvoření služby WCF pro mobilní aplikace komun
                 HelloWorldData GetHelloData(HelloWorldData helloWorldData);
             }
         }
-
+    ```
+  
     Tato služba nabízí dvě metody – ten, který přebírá řetězec pro parametr a druhou, která přebírá objekt .NET.
 
 1. V **Průzkumníku řešení**, otevřete `HelloWorldService.cs` a kódu nahraďte následujícím kódem:
 
+    ```csharp
         using System;
 
         namespace HelloWorldService
@@ -110,9 +116,11 @@ První úlohou před nám je vytvoření služby WCF pro mobilní aplikace komun
                 }
             }
         }
+    ```
 
 1. V **Průzkumníku řešení**, otevřete `App.config`, aktualizovat `name` atribut `<service>` uzlu, `contract` atribut `<endpoint>` uzel a `baseAddress` atribut `<add>` uzlu:
 
+    ```xml
         <?xml version="1.0" encoding="utf-8"?>
         <configuration>
             ...
@@ -133,17 +141,18 @@ První úlohou před nám je vytvoření služby WCF pro mobilní aplikace komun
             </services>
             ...
         </configuration>
+    ```
 
 1. Sestavte a spusťte službu WCF. Služba se bude hostovat pomocí testovacího klienta WCF:
 
-  ![](walkthrough-working-with-wcf-images/hosted-wcf-service.png "Služby WCF, které jsou spuštěné v testovacího klienta")
+    ![](walkthrough-working-with-wcf-images/hosted-wcf-service.png "Služby WCF, které jsou spuštěné v testovacího klienta")
 
 1. Pomocí klienta WCF testu, spuštění spustí prohlížeč a přejděte ke koncovému bodu služby WCF:
 
-  ![](walkthrough-working-with-wcf-images/wcf-service-browser.png "Stránka informace o prohlížeči služby WCF")
+    ![](walkthrough-working-with-wcf-images/wcf-service-browser.png "Stránka informace o prohlížeči služby WCF")
 
 > [!IMPORTANT]
-> **Poznámka:** v následující části je nutné pouze v případě je nutné přijmout vzdálená připojení na pracovní stanici Windows 10. V části můžete ignorovat, pokud má alternativní platformu pro nasazení služby WCF.
+> V následující části je nezbytné pouze pokud je nutné přijmout vzdálená připojení na pracovní stanici Windows 10. V části můžete ignorovat, pokud má alternativní platformu pro nasazení služby WCF.
 
 <a name="Allow_Remote_Access_to_IIS_Express" />
 
@@ -154,7 +163,7 @@ Hostování místně WCF je dostačující, pokud připojení pouze vycházejí 
 1.  **Konfiguraci služby IIS Express na přijmout vzdálená připojení** – tento krok zahrnuje úpravy do konfiguračního souboru pro službu IIS Express tak, aby přijímal vzdálená připojení na určitém portu a potom nastavením pravidla pro službu IIS Express přijmout příchozí provoz.
 1.  **Přidat výjimku do brány Windows Firewall** -je nutné otevřít až na port přes bránu Windows Firewall, vzdálené aplikace můžete použít ke komunikaci se službou WCF.
 
-Musíte znát IP adresu pracovní stanici. Pro účely tohoto příkladu budeme předpokládat, že naše pracovní stanice má IP adresu 192.168.1.143.
+    Musíte znát IP adresu pracovní stanici. Pro účely tohoto příkladu budeme předpokládat, že naše pracovní stanice má IP adresu 192.168.1.143.
 
 1. Začněme tím, že nakonfigurujete službu IIS Express k naslouchání požadavkům externí. Jsme můžete to provést úpravou konfiguračního souboru pro službu IIS Express na `[solutiondirectory]\.vs\config\applicationhost.config`, jak je znázorněno na následujícím snímku obrazovky:
 
@@ -163,6 +172,7 @@ Musíte znát IP adresu pracovní stanici. Pro účely tohoto příkladu budeme 
 
     Vyhledejte `site` element s názvem `HelloWorldWcfHost`. Měl by vypadat nějak podobně jako následující fragment kódu XML:
 
+    ```xml
         <site name="HelloWorldWcfHost" id="2">
             <application path="/" applicationPool="Clr4IntegratedAppPool">
                 <virtualDirectory path="/" physicalPath="\\vmware-host\Shared Folders\tom\work\xamarin\code\private-samples\webservices\HelloWorld\HelloWorldWcfHost" />
@@ -171,13 +181,17 @@ Musíte znát IP adresu pracovní stanici. Pro účely tohoto příkladu budeme 
                 <binding protocol="http" bindingInformation="*:8733:localhost" />
             </bindings>
         </site>
-
+    ```
+ 
     Budeme muset přidat další `binding` otevřete port 8734 mimo provoz. Přidejte následující XML tak, aby `bindings` elementu, nahraďte vlastní IP adresu IP adresu:
 
-        <binding protocol="http" bindingInformation="*:8734:192.168.1.143" />
-
+    ```xml
+    <binding protocol="http" bindingInformation="*:8734:192.168.1.143" />
+    ```
+    
     Tím nakonfigurujete službu IIS Express tak, aby přijímal provoz protokolu HTTP z libovolné vzdálené IP adresy na portu 8734 na externí adresu IP počítače. To výše fragment kódu předpokládá, že je IP adresa počítače se systémem, IIS Express 192.168.1.143. Po provedení změn `bindings` element by měl vypadat třeba takto:
 
+    ```xml
         <site name="HelloWorldWcfHost" id="2">
             <application path="/" applicationPool="Clr4IntegratedAppPool">
                 <virtualDirectory path="/" physicalPath="\\vmware-host\Shared Folders\tom\work\xamarin\code\private-samples\webservices\HelloWorld\HelloWorldWcfHost" />
@@ -187,6 +201,7 @@ Musíte znát IP adresu pracovní stanici. Pro účely tohoto příkladu budeme 
                 <binding protocol="http" bindingInformation="*:8734:192.168.1.143" />
             </bindings>
         </site>
+    ```
 
 1. V dalším kroku musíme konfiguraci služby IIS Express přijímala příchozí připojení na portu 8734. Spuštění až příkazového řádku pro správu a spusťte tento příkaz:
 
@@ -215,7 +230,7 @@ Proxy server webové služby musí být vytvořeny pro službu WCF, než aplikac
 1. Sestavení `HelloWorldServiceProxy` projektu.
 
 > [!NOTE]
-> **Poznámka:**: alternativu k vytvoření proxy server pomocí zprostředkovatele služby Microsoft WCF webové služby odkaz v Visual Studio 2017 je použití ServiceModel Metadata Utility Tool (svcutil.exe). Další informace najdete v tématu [ServiceModel Metadata Utility Tool (Svcutil.exe)](https://docs.microsoft.com/en-us/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe).
+> Alternativu k vytvoření proxy server pomocí zprostředkovatele služby Microsoft WCF webové služby odkaz v Visual Studio 2017 je použití ServiceModel Metadata Utility Tool (svcutil.exe). Další informace najdete v tématu [ServiceModel Metadata Utility Tool (Svcutil.exe)](https://docs.microsoft.com/en-us/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe).
 
 <a name="Creating_a_Xamarin_Android_Application" />
 
@@ -227,6 +242,7 @@ Proxy server služby WCF mohou být spotřebovávána aplikace pro Xamarin.Andro
 1. V `HelloWorld.Android` projekt, přidejte odkaz na `HelloWorldServiceProxy` projekt a odkaz na `System.ServiceModel` oboru názvů.
 1. V **Průzkumníku řešení**, otevřete `Resources/layout/main.axml` a nahradit existující soubor XML s následující kód XML:
 
+    ```xml
         <?xml version="1.0" encoding="utf-8"?>
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                   android:orientation="vertical"
@@ -267,18 +283,22 @@ Proxy server služby WCF mohou být spotřebovávána aplikace pro Xamarin.Andro
                         android:id="@+id/getHelloWorldDataTextView" />
             </LinearLayout>
         </LinearLayout>
-
+    ```
+    
     Na následujících snímcích obrazovky zobrazuje uživatelské rozhraní v Návrháři:
 
     [![](walkthrough-working-with-wcf-images/image09.png "Toto je snímek obrazovky co toto uživatelské rozhraní vypadá v Návrháři")](walkthrough-working-with-wcf-images/image09.png#lightbox)
-
+    
 1. V **Průzkumníku řešení**, otevřete `Resources/values/Strings.xml` a přidejte následující kód XML:
 
-        <string name="say_hello_world">Say Hello World</string>
-        <string name="get_hello_world_data">Get Hello World data</string>
-
+    ```xml
+    <string name="say_hello_world">Say Hello World</string>
+    <string name="get_hello_world_data">Get Hello World data</string>
+    ```
+    
 1. V **Průzkumníku řešení**, otevřete `MainActivity.cs` a existujícího kódu nahraďte následujícím kódem:
 
+    ```csharp
         [Activity(Label = "HelloWorld.Android", MainLauncher = true)]
         public class MainActivity : Activity
         {
@@ -291,11 +311,13 @@ Proxy server služby WCF mohou být spotřebovávána aplikace pro Xamarin.Andro
             TextView _sayHelloWorldTextView;
             ...
         }
+    ```
 
     Nahraďte `<insert_WCF_service_endpoint_here>` s adresou koncový bod služby WCF.
 
 1. V `MainActivity.cs`, změnit `OnCreate` metody, které obsahuje následující kód:
 
+    ```csharp
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(bundle);
@@ -314,11 +336,13 @@ Proxy server služby WCF mohou být spotřebovávána aplikace pro Xamarin.Andro
             _sayHelloWorldButton.Click += SayHelloWorldButtonOnClick;
             _sayHelloWorldTextView = FindViewById<TextView>(Resource.Id.sayHelloWorldTextView);
         }
-
+    ```
+    
     Výše uvedený kód inicializuje proměnné instance pro třídu a sváže některé obslužné rutiny událostí.
 
 1. V `MainActivity.cs`, vytvořit instanci třídy proxy serveru klienta přidáním následujících dvou metod:
 
+    ```csharp
         void InitializeHelloWorldServiceClient()
         {
             BasicHttpBinding binding = CreateBasicHttpBinding();
@@ -340,11 +364,13 @@ Proxy server služby WCF mohou být spotřebovávána aplikace pro Xamarin.Andro
             binding.ReceiveTimeout = timeout;
             return binding;
         }
-
+    ```
+    
     Výše uvedený kód vytvoří a inicializuje `HelloWorldServiceClient` objektu.
 
 1. V `MainActivity.cs`, přidejte i obslužné rutiny pro dvě tlačítka v `Activity`:
 
+    ```csharp
         async void GetHelloWorldDataButtonOnClick(object sender, EventArgs e)
         {
             var data = new HelloWorldData
@@ -379,10 +405,11 @@ Proxy server služby WCF mohou být spotřebovávána aplikace pro Xamarin.Andro
                 Console.WriteLine(ex.Message);
             }
         }
-
+    ```
+  
 1. Spusťte aplikaci, zkontrolujte, zda je spuštěna služby WCF a klikněte na dvě tlačítka. Aplikace bude volat WCF asynchronně, za předpokladu, že `Endpoint` je správně nastaveno:
 
-  [![](walkthrough-working-with-wcf-images/image08.png "V rámci 30 sekund by měl být přijata odpověď z každé metody WCF a naše aplikace by měla vypadat podobně jako tento snímek obrazovky")](walkthrough-working-with-wcf-images/image08.png#lightbox)
+    [![](walkthrough-working-with-wcf-images/image08.png "V rámci 30 sekund by měl být přijata odpověď z každé metody WCF a naše aplikace by měla vypadat podobně jako tento snímek obrazovky")](walkthrough-working-with-wcf-images/image08.png#lightbox)
 
 <a name="Creating_a_Xamarin_iOS_Application" />
 
@@ -407,17 +434,20 @@ Proxy server služby WCF mohou být spotřebovávána aplikace pro Xamarin.iOS, 
 
 1. V **Průzkumníku řešení**, otevřete `ViewController.cs` a přidejte následující kód:
 
+    ```xml
         public partial class ViewController : UIViewController
         {
             static readonly EndpointAddress Endpoint = new EndpointAddress("<insert_WCF_service_endpoint_here>");
             HelloWorldServiceClient _client;
             ...
         }
-
+    ```
+  
     Nahraďte `<insert_WCF_service_endpoint_here>` s adresou koncový bod služby WCF.
 
 1. V `ViewController.cs`, aktualizovat `ViewDidLoad` metody, které se podobá následující zprávě:
 
+    ```csharp
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
@@ -426,9 +456,11 @@ Proxy server služby WCF mohou být spotřebovávána aplikace pro Xamarin.iOS, 
             getHelloWorldDataButton.TouchUpInside += GetHelloWorldDataButton_TouchUpInside;
             sayHelloWorldButton.TouchUpInside += SayHelloWorldButton_TouchUpInside;
         }
-
+    ```
+  
 1. V `ViewController.cs`, přidejte `InitializeHelloWorldServiceClient` a `CreateBasicHttpBinding` metody:
 
+    ```csharp
         void InitializeHelloWorldServiceClient()
         {
             BasicHttpBinding binding = CreateBasicHttpBinding();
@@ -450,9 +482,11 @@ Proxy server služby WCF mohou být spotřebovávána aplikace pro Xamarin.iOS, 
             binding.ReceiveTimeout = timeout;
             return binding;
         }
-
+    ```
+  
 1. V `ViewController.cs`, přidejte obslužné rutiny události pro `TouchUpInside` událostí na dva `UIButton` instancí:
 
+    ```csharp
         async void GetHelloWorldDataButton_TouchUpInside(object sender, EventArgs e)
         {
             getHelloWorldDataText.Text = "Waiting for WCF...";
@@ -487,6 +521,7 @@ Proxy server služby WCF mohou být spotřebovávána aplikace pro Xamarin.iOS, 
                 Console.WriteLine(ex.Message);
             }
         }
+    ```
 
 1. Spusťte aplikaci, zkontrolujte, zda je spuštěna služby WCF a klikněte na dvě tlačítka. Aplikace bude volat WCF asynchronně, za předpokladu, že `Endpoint` je správně nastaveno:
 

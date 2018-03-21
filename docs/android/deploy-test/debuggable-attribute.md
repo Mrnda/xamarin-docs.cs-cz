@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/05/2018
-ms.openlocfilehash: 65037029d01d499421fd825f72347ae1bebd9966
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: fe516a9780b8b1cdc478a49fe3b6963097649a80
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="debuggable-attribute"></a>Debuggable atribut
 
@@ -22,12 +22,12 @@ Chcete-li ladění možné, podporuje Android jazyce Java ladění přenosu prot
 JDWP může být hodnota `android:debuggable` atribut v aplikaci pro Android. Xamarin.Android nabízí tyto způsoby nastavte tento atribut:
 
 1.  Vytvoření `AndroidManifext.xml` souborů a nastavení `android:debuggable` atribut existuje.
-1.  Včetně `ApplicationAttribute` v `.CS` souboru takto: `[assembly: Application(Debuggable=false)]` .
+2.  Včetně `ApplicationAttribute` v `.CS` souboru takto: `[assembly: Application(Debuggable=false)]` .
 
 
 Pokud `AndroidManifest.xml` a `ApplicationAttribute` jsou k dispozici, obsah `AndroidManifest.xml` mají přednost před co je zadána `ApplicationAttribute`.
 
-Pokud ani `AndroidManifest.xml` a `ApplicationAttribute`, pak výchozí hodnota `android:debuggable` atribut závisí na tom, jestli jsou generovány symboly ladění. Pokud jsou k dispozici symboly ladění, pak nastaví Xamarin.Android `android:debuggable` atribut `true`.
+Pokud `AndroidManifest.xml` ani `ApplicationAttribute` nachází, je výchozí hodnota `android:debuggable` atribut závisí na tom, jestli jsou generovány symboly ladění. Pokud jsou k dispozici symboly ladění, pak nastaví Xamarin.Android `android:debuggable` atribut `true`.
 
 Všimněte si, že hodnota `android:debuggable` atribut nemusí záviset na konfiguraci sestavení. Je možné pro verzi sestavení tak, aby měl `android:debuggable` nastaven atribut na hodnotu true.
 

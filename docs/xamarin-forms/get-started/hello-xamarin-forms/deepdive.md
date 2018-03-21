@@ -7,33 +7,15 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/06/2018
-ms.openlocfilehash: 3259e9b2bc9be52e8c19acce2dd031ad9046019b
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: ea02b4329d5a27e47a89f21b475bb5f6d9dea175
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="xamarinforms-deep-dive"></a>Xamarin.Forms Deep Dive
 
 V [rychlý start Xamarin.Forms](~/xamarin-forms/get-started/hello-xamarin-forms/quickstart.md), Phoneword byla vytvořena. Tento článek zkontroluje, co byla vytvořena získat představu o základní informace o fungování Xamarin.Forms aplikace.
-
-V následujících tématech se zkontrolují:
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-- Úvod k sadě Visual Studio – úvodní informace o sadě Visual Studio a vytvoření nové aplikace Xamarin.Forms.
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-- Úvod k sadě Visual Studio pro Mac – Úvod k sadě Visual Studio pro Mac a vytvořit novou aplikaci Xamarin.Forms.
-
------
-
-- Anatomie aplikaci Xamarin.Forms – nezbytné součásti aplikace Xamarin.Forms.
-- Architektura a aplikace základy – jak je aplikace spuštěna na každé platformě.
-- Uživatelské rozhraní (UI) – vytvoření uživatelského rozhraní v Xamarin.Forms.
-- Další koncepty zavedená v Phoneword – stručný popis další koncepty používané v aplikaci Phoneword.
-- Testování a nasazení – dokončení aplikace s Rady k testování, nasazení, generování kresby a další.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -52,6 +34,14 @@ Projekty jsou:
 - Phoneword.iOS – tento projekt obsahuje iOS konkrétního kódu a vstupní bod pro aplikace systému iOS.
 - Phoneword.UWP – tento projekt obsahuje konkrétní kód univerzální platformu Windows (UWP) a je vstupní bod pro aplikace pro UPW.
 
+## <a name="anatomy-of-a-xamarinforms-application"></a>Anatomie aplikaci na platformě Xamarin.Forms
+
+Následující snímek obrazovky ukazuje Phoneword .NET Standard projektu knihovny obsahu v sadě Visual Studio:
+
+![](deepdive-images/vs/net-standard-project.png "Obsah standardní projektu Phoneword rozhraní .NET")
+
+Tento projekt **závislosti** uzlu, který obsahuje **NuGet** a **SDK** uzlů. **NuGet** uzel obsahuje balíček Xamarin.Forms NuGet, který byl přidán do projektu a **SDK** uzel obsahuje `NETStandard.Library` metapackage, který odkazuje na kompletní sadu balíčků NuGet které definují .NET Standard.
+
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 ## <a name="introduction-to-visual-studio-for-mac"></a>Úvod k sadě Visual Studio pro Mac
@@ -68,19 +58,7 @@ Projekty jsou:
 - Phoneword.Droid – tento projekt obsahuje konkrétní kódu pro systém Android a vstupní bod pro aplikace pro Android.
 - Phoneword.iOS – tento projekt obsahuje iOS konkrétního kódu a je vstupní bod pro aplikace pro iOS.
 
------
-
 ## <a name="anatomy-of-a-xamarinforms-application"></a>Anatomie aplikaci na platformě Xamarin.Forms
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-Následující snímek obrazovky ukazuje Phoneword .NET Standard projektu knihovny obsahu v sadě Visual Studio:
-
-![](deepdive-images/vs/net-standard-project.png "Obsah standardní projektu Phoneword rozhraní .NET")
-
-Tento projekt **závislosti** uzlu, který obsahuje **NuGet** a **SDK** uzlů. **NuGet** uzel obsahuje balíček Xamarin.Forms NuGet, který byl přidán do projektu a **SDK** uzel obsahuje `NETStandard.Library` metapackage, který odkazuje na kompletní sadu balíčků NuGet které definují .NET Standard.
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 Následující snímek obrazovky ukazuje obsah Phoneword PCL projektu v sadě Visual Studio pro Mac:
 
@@ -202,8 +180,6 @@ namespace Phoneword.Droid
 
 ## <a name="universal-windows-platform"></a>Univerzální platforma pro Windows
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
 V aplikacích pro univerzální platformu Windows (UWP) `Init` metoda, která inicializuje rozhraní Xamarin.Forms se volá z `App` třídy:
 
 ```csharp
@@ -230,13 +206,11 @@ namespace Phoneword.UWP
     }
 }
 ```
+
 Xamarin.Forms aplikace je načtena s `LoadApplication` metoda.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-Univerzální aplikace pro platformu Windows (UWP) může být vytvořené s Xamarin.Forms, ale pouze pomocí sady Visual Studio v systému Windows.
-
------
+> [!NOTE]
+> Univerzální aplikace pro platformu Windows (UWP) může být vytvořené s Xamarin.Forms, ale pouze pomocí sady Visual Studio v systému Windows.
 
 ## <a name="user-interface"></a>Uživatelské rozhraní
 
@@ -302,43 +276,52 @@ Aplikace Phoneword pro Xamarin.Forms obsahuje zavedla několik konceptů, které
 
 - Povolení a zákaz tlačítek. A [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) můžete zapnout nebo vypnout tak, že změníte jeho [ `IsEnabled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsEnabled/) vlastnost. Například následující kód například zakáže `callButton`:
 
-        callButton.IsEnabled = false;
+    ```csharp
+    callButton.IsEnabled = false;
+    ```
 
 - Zobrazení dialogového okna výstrah. Když uživatel stiskne volání **tlačítko** ukazuje aplikace Phoneword *dialogového okna výstrah* s možností umístit nebo zrušit volání. [ `DisplayAlert` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayAlert/p/System.String/System.String/System.String/System.String/) Metoda se používá k vytvoření tohoto dialogového okna, jak je znázorněno v následujícím příkladu kódu:
 
-        await this.DisplayAlert (
-                "Dial a Number",
-                "Would you like to call " + translatedNumber + "?",
-                "Yes",
-                "No");
+    ```csharp
+    await this.DisplayAlert (
+            "Dial a Number",
+            "Would you like to call " + translatedNumber + "?",
+            "Yes",
+            "No");
+    ```
 
 - Přístup k nativní funkce prostřednictvím [ `DependencyService` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyService/) třídy. Aplikace Phoneword používá `DependencyService` třída přeložit `IDialer` rozhraní pro vytáčení implementace phone specifické pro platformu, jak je znázorněno v následujícím příkladu kódu z projektu Phoneword:
 
-        async void OnCall (object sender, EventArgs e)
-        {
-            ...
-            var dialer = DependencyService.Get<IDialer> ();
-            ...
-        }
+    ```csharp
+    async void OnCall (object sender, EventArgs e)
+    {
+        ...
+        var dialer = DependencyService.Get<IDialer> ();
+        ...
+    }
+    ```
 
   Další informace o [ `DependencyService` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyService/) třídy najdete v tématu [přístup k nativní funkce prostřednictvím DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md).
 
 - Umístění telefonního hovoru s adresou URL. Aplikace Phoneword používá `OpenURL` spustit aplikaci na telefonu systému. Adresa URL se skládá z `tel:` předponou následuje telefonní číslo, která se má volat, jak je znázorněno v následujícím příkladu kódu z projektu pro iOS:
 
-        return UIApplication.SharedApplication.OpenUrl (new NSUrl ("tel:" + number));
+    ```csharp
+    return UIApplication.SharedApplication.OpenUrl (new NSUrl ("tel:" + number));
+    ```
 
 - Postupně je upravujte rozložení platformy. [ `Device` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Device/) Třída umožňuje vývojářům přizpůsobit rozložení aplikace a funkce na základě podle platformy, jak je znázorněno v následujícím příkladu kódu, který používá jiný [ `Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/)hodnoty na různých platformách správně zobrazíte každé stránce:
 
-        <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-                     ...>
-            <ContentPage.Padding>
-                <OnPlatform x:TypeArguments="Thickness">
-                    <On Platform="iOS" Value="20, 40, 20, 20" />
-                    <On Platform="Android, WinPhone, Windows" Value="20" />
-                </OnPlatform>
-            </ContentPage.Padding>
-            ...
-        </ContentPage>
+    ```xaml
+    <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" ... >
+        <ContentPage.Padding>
+            <OnPlatform x:TypeArguments="Thickness">
+                <On Platform="iOS" Value="20, 40, 20, 20" />
+                <On Platform="Android, WinPhone, Windows" Value="20" />
+            </OnPlatform>
+        </ContentPage.Padding>
+        ...
+    </ContentPage>
+    ```
 
   Další informace o vylepšení platformy najdete v tématu [třídu zařízení](~/xamarin-forms/platform/device.md).
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/06/2018
-ms.openlocfilehash: 8674a8b846573c27e54660ae3bc065e07561f411
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: 29b846453396d37adc689fe49e80299e8f35bbe2
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="binding-objective-c-libraries"></a>Vazba knihoven jazyka Objective-C
 
@@ -93,7 +93,7 @@ namespace Cocos2D {
 
 Ukázka výše definuje třídu s názvem `Cocos2D.Camera` odvozený z `NSObject` základní typ (Tento typ pochází z `Foundation.NSObject`) a která definuje pomocí statické vlastnosti (`ZEye`), dvě metody, které trvat bez argumentů a metodu, která přijímá tři argumenty.
 
-Podrobné informace o formátu souboru rozhraní API a atributy, které můžete použít, najdete v článku [soubor definice rozhraní API](~/cross-platform/macios/binding/objective-c-libraries.md) části níže.
+Podrobné informace o formátu souboru rozhraní API a atributy, které můžete použít, najdete v článku [soubor definice rozhraní API](~/cross-platform/macios/binding/objective-c-libraries.md#The_API_definition_file) části níže.
 
 Chcete-li vytvořit vazbu dokončení, bude obvykle zabývat čtyři součásti:
 
@@ -106,7 +106,7 @@ Tento graf znázorňuje vztah mezi soubory:
 
  [![](objective-c-libraries-images/screen-shot-2012-02-08-at-3.33.07-pm.png "Tento graf znázorňuje vztah mezi soubory")](objective-c-libraries-images/screen-shot-2012-02-08-at-3.33.07-pm.png#lightbox)
 
-Soubor definice rozhraní API: bude obsahovat pouze definice rozhraní a obory názvů (s žádné členy, které mohou obsahovat rozhraní) a nesmí obsahovat třídy, výčty, delegáti nebo struktury. Soubor definice rozhraní API je jenom kontrakt, který se použije k vygenerování rozhraní API.
+Soubor definice rozhraní API bude obsahovat pouze definice rozhraní a obory názvů (s žádné členy, kteří mohou obsahovat rozhraní) a nesmí obsahovat třídy, výčty, delegáti nebo struktury. Soubor definice rozhraní API je jenom kontrakt, který se použije k vygenerování rozhraní API.
 
 Žádný další kód, třeba jako výčty nebo pomocných tříd by měla být hostované na samostatný soubor v příkladu výše "CameraMode" je hodnota výčtu, která neexistuje v souboru CS a hostovat v samostatném souboru, například `StructsAndEnums.cs` :
 
@@ -133,7 +133,7 @@ public partial class Camera {
 Sestavení knihovny způsobí, že vaše nativní vazby.
 
 Chcete-li dokončit tuto vazbu, měli byste přidat nativní knihovny do projektu.  To provedete tak, že přidáte nativní knihovny do projektu, buď pomocí přetahování nativní knihovny z vyhledávací na projekt v Průzkumníku řešení, nebo pravým tlačítkem na projekt a zvolením **přidat**  >  **Přidat soubory** vyberte nativní knihovny.
-Nativní knihovny pomocí konvence začínat slovem "lib" a končit příponou ".a". Když to uděláte, Visual Studio pro Mac přidá dva soubory: `.a` soubor a automaticky zadané C# soubor, který obsahuje informace o co obsahuje nativní knihovny:
+Nativní knihovny pomocí konvence začínat slovem "lib" a končit příponou ".a". Když to uděláte, Visual Studio pro Mac přidá dva soubory: soubor .a a automaticky zadané C# soubor, který obsahuje informace o co obsahuje nativní knihovny:
 
  [![](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png "Nativní knihovny pomocí konvence word lib začínat a končit .a rozšíření")](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png#lightbox)
 
@@ -146,17 +146,17 @@ using ObjCRuntime;
 [assembly: LinkWith ("libMagicChord.a", SmartLink = true, ForceLoad = true)]
 ```
 
-Úplné podrobnosti o tom, jak pomocí atributu LinkWith jsou popsané v našem [vazby typy referenční příručka](~/cross-platform/macios/binding/binding-types-reference.md).
+Úplné podrobnosti o použití [ `[LinkWith]` ](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute) atribut jsou dokumentovány v článku [vazby typy referenční příručka](~/cross-platform/macios/binding/binding-types-reference.md).
 
 Teď při sestavování projektu se ukončí se `MagicChords.dll` soubor, který obsahuje vazbu a nativní knihovny. Můžete distribuovat tento projekt nebo použijte výsledné knihovnu DLL k jinými vývojáři pro své vlastní.
 
 V některých případech je možné, je nutné, několik hodnot výčtu, delegát definice nebo jiných typů. Neumísťujte těch v souboru definice rozhraní API, protože se jedná pouze kontraktu
 
- <a name="The_API_definition_file" />
+<a name="The_API_definition_file" />
 
 ## <a name="the-api-definition-file"></a>Soubor definice rozhraní API
 
-Soubor definice rozhraní API se skládá z řady rozhraní. Rozhraní v definici rozhraní API bude převedena na deklaraci třídy a musí být doplněny pomocí [[BaseType]](~/cross-platform/macios/binding/binding-types-reference.md) atributu zadejte základní třídu pro třídy.
+Soubor definice rozhraní API se skládá z řady rozhraní. Rozhraní v definici rozhraní API bude převedena na deklaraci třídy a musí být doplněny pomocí [ `[BaseType]` ](~/cross-platform/macios/binding/binding-types-reference.md#BaseTypeAttribute) atributu zadejte základní třídu pro třídy.
 
 Možná se ptáte proč jsme nepoužili pro definici kontraktu třídy místo rozhraní. Jsme zachyceny rozhraní, protože nám zapsán smlouvu pro metodu, aniž by museli zadat metoda textu v souboru definice rozhraní API nebo nutnosti zadání textu, který měl způsobí výjimku nebo vrátí hodnotu smysluplný povoleno.
 
@@ -166,7 +166,7 @@ Ale vzhledem k tomu, že používáme rozhraní kostru ke generování třídu, 
 
 ### <a name="binding-methods"></a>Metody vazby
 
-Nejjednodušší vazby, které může provádět je pro navázání metody. Stačí deklarovat metoda v rozhraní s zásady vytváření názvů jazyka C# a uspořádání metodu s [[Export]](~/cross-platform/macios/binding/binding-types-reference.md) atribut. Atribut [Export] je co odkazuje název jazyka C# s názvem jazyka Objective-C v modulu runtime Xamarin.iOS. Parametr exportu atributu je název selektor jazyka Objective-C, několik příkladů:
+Nejjednodušší vazby, které může provádět je pro navázání metody. Stačí deklarovat metoda v rozhraní s zásady vytváření názvů jazyka C# a uspořádání metodu s [ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) atribut. [ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) Atribut je co odkazuje název jazyka C# s názvem jazyka Objective-C v modulu runtime Xamarin.iOS. Parametr [ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) atribut je název modulu pro výběr jazyka Objective-C. Příklady:
 
 ```csharp
 // A method, that takes no arguments
@@ -182,7 +182,7 @@ nint Add (nint a, nint b);
 void Draw (string text, nint column, nint row);
 ```
 
-Výše uvedené ukázky ukazují, jak můžete vytvořit vazbu instance metody. Chcete-li vytvořit vazbu statické metody, je nutné použít `[Static]` atribut takto:
+Výše uvedené ukázky ukazují, jak můžete vytvořit vazbu instance metody. Chcete-li vytvořit vazbu statické metody, je nutné použít [ `[Static]` ](~/cross-platform/macios/binding/binding-types-reference.md#StaticAttribute) atribut takto:
 
 ```csharp
 // A static method, that takes no arguments
@@ -190,26 +190,26 @@ Výše uvedené ukázky ukazují, jak můžete vytvořit vazbu instance metody. 
 void Beep ();
 ```
 
-To je potřeba, protože kontrakt je součástí rozhraní a rozhraní k dispozici žádná znalost problematicky statické vs instance deklarace, proto je nezbytné znovu použít atributy. Pokud chcete skrýt z vazby konkrétní metodu, můžete uspořádání metodu s [[interní]](~/cross-platform/macios/binding/binding-types-reference.md) atribut.
+To je potřeba, protože kontrakt je součástí rozhraní a rozhraní k dispozici žádná znalost problematicky statické vs instance deklarace, proto je nezbytné znovu použít atributy. Pokud chcete skrýt z vazby konkrétní metodu, můžete uspořádání metodu s [ `[Internal]` ](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute) atribut.
 
-`btouch-native` Příkaz zavedete kontroluje parametry odkaz není mít hodnotu null. Pokud chcete povolit hodnoty null pro konkrétní parametr, použijte [[NullAllowed]](~/cross-platform/macios/binding/binding-types-reference.md) atribut na parametru takto:
+`btouch-native` Příkaz zavedete kontroluje parametry odkaz není mít hodnotu null. Pokud chcete povolit hodnoty null pro konkrétní parametr, použijte [ `[NullAllowed]` ](~/cross-platform/macios/binding/binding-types-reference.md#NullAllowedAttribute) atribut na parametru takto:
 
 ```csharp
 [Export ("setText:")]
 string SetText ([NullAllowed] string text);
 ```
 
-Při exportu typu odkazu s `[Export]` – klíčové slovo můžete také zadat sémantiku přidělení. To je nutné zajistit, že došlo k úniku žádná data.
+Při exportu typu odkazu s [ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) – klíčové slovo můžete také zadat sémantiku přidělení. To je nutné zajistit, že došlo k úniku žádná data.
 
 <a name="Binding_Properties" />
 
 ### <a name="binding-properties"></a>Vlastnosti vazby
 
-Stejně jako metody, vlastnosti jazyka Objective-C vázaných pomocí [[Export]](~/cross-platform/macios/binding/binding-types-reference.md) atribut a mapovat přímo na vlastnosti jazyka C#. Stejně jako metody, vlastnosti může být doplněny pomocí [[Static]](~/cross-platform/macios/binding/binding-types-reference.md) a [[interní]](~/cross-platform/macios/binding/binding-types-reference.md) atributy.
+Stejně jako metody, vlastnosti jazyka Objective-C vázaných pomocí [ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) atribut a mapovat přímo na vlastnosti jazyka C#. Stejně jako metody, vlastnosti může být doplněny pomocí [ `[Static]` ](~/cross-platform/macios/binding/binding-types-reference.md#StaticAttribute) a [ `[Internal]` ](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute) atributy.
 
-Při použití `[Export]` atribut u vlastnosti zahrnuje btouch-nativního váže ve skutečnosti dvě metody: metoda getter a setter metody. Název, který zadáte pro export je **basename** a nastavovací metoda je počítaný předponou slovo "set" vypnutí první písmeno **basename** do velká a provádění selektor trvat argument. To znamená, že `[Export ("label")]` použity na vlastnost ve skutečnosti váže "Popisek" a "setLabel:" jazyka Objective-C metody.
+Při použití [ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) atribut u vlastnosti zahrnuje btouch-nativního váže ve skutečnosti dvě metody: metoda getter a setter metody. Název, který zadáte pro export je **basename** a nastavovací metoda je počítaný předponou slovo "set" vypnutí první písmeno **basename** do velká a provádění selektor trvat argument. To znamená, že `[Export ("label")]` použity na vlastnost ve skutečnosti váže "Popisek" a "setLabel:" jazyka Objective-C metody.
 
-Někdy vlastnosti jazyka Objective-C nepostupujte podle vzoru popsané výše a název je ručně přepsána. V těchto případech můžete řídit způsobem, že vazba je generována pomocí `[Bind]` atribut na mechanismu získání nebo nastavení, například:
+Někdy vlastnosti jazyka Objective-C nepostupujte podle vzoru popsané výše a název je ručně přepsána. V těchto případech můžete řídit způsobem, že vazba je generována pomocí [ `[Bind]` ](~/cross-platform/macios/binding/binding-types-reference.md#BindAttribute) atribut na mechanismu získání nebo nastavení, například:
 
 ```csharp
 [Export ("menuVisible")]
@@ -232,21 +232,21 @@ interface UIView_MyIn
 
 Kde metody getter a setter jsou explicitně definovány jako v `name` a `setName` vazby výše.
 
-Kromě podpory pro statické vlastnosti pomocí `[Static]`, můžete uspořádání vlákno statické vlastnosti se [[IsThreadStatic]](~/cross-platform/macios/binding/binding-types-reference.md), například:
+Kromě podpory pro statické vlastnosti pomocí [ `[Static]` ](~/cross-platform/macios/binding/binding-types-reference.md#StaticAttribute), můžete uspořádání vlákno statické vlastnosti se [ `[IsThreadStatic]` ](~/cross-platform/macios/binding/binding-types-reference.md#IsThreadStaticAttribute), například:
 
 ```csharp
 [Export ("currentRunLoop")][Static][IsThreadStatic]
 NSRunLoop Current { get; }
 ```
 
-Stejně jako metody povolit některé parametry označen příznakem [[NullAllowed]](~/cross-platform/macios/binding/binding-types-reference.md), můžete použít [[NullAllowed]](~/cross-platform/macios/binding/binding-types-reference.md) pro vlastnost označující, že null je platnou hodnotu pro vlastnost, například:
+Stejně jako metody povolit některé parametry označen příznakem [ `[NullAllowed]` ](~/cross-platform/macios/binding/binding-types-reference.md#NullAllowedAttribute), můžete použít [ `[NullAllowed]` ](~/cross-platform/macios/binding/binding-types-reference.md#NullAllowedAttribute) pro vlastnost označující, že null je platnou hodnotu pro vlastnost, například:
 
 ```csharp
 [Export ("text"), NullAllowed]
 string Text { get; set; }
 ```
 
-[[NullAllowed]](~/cross-platform/macios/binding/binding-types-reference.md) parametr lze zadat také přímo na nastavovací metoda:
+[ `[NullAllowed]` ](~/cross-platform/macios/binding/binding-types-reference.md#NullAllowedAttribute) Parametr lze zadat také přímo na nastavovací metoda:
 
 ```csharp
 [Export ("text")]
@@ -257,8 +257,8 @@ string Text { get; [NullAllowed] set; }
 
 Následující upozornění považovat za při nastavování vazby pro vlastního ovládacího prvku:
 
-1. **Vytvoření vazby vlastnosti musí být statické** – při definování vazby vlastnosti, `Static` musí být použit atribut.
-2. **Názvy vlastností se musí přesně shodovat** -název použitý k vytvoření vazby vlastnost musí přesně shodovat název vlastnosti v vlastního ovládacího prvku.
+1. **Vytvoření vazby vlastnosti musí být statické** – při definování vazby vlastnosti, [ `[Static]` ](~/cross-platform/macios/binding/binding-types-reference.md#StaticAttribute) musí být použit atribut.
+ 2. **Názvy vlastností se musí přesně shodovat** -název použitý k vytvoření vazby vlastnost musí přesně shodovat název vlastnosti v vlastního ovládacího prvku.
 3. **Typy vlastností se musí přesně shodovat** -proměnné typu použitého k vytvoření vazby vlastnost musí přesně shodovat s typem vlastnosti v vlastního ovládacího prvku.
 4. **Zarážky a metoda getter/setter** – zarážky umístit do metoda getter nebo metoda setter vlastnosti se nikdy se setkají.
 5. **Sledovat zpětná volání** -budete muset použít zpětná volání pozorování k upozornění na změny v hodnotách vlastnosti vlastních ovládacích prvků.
@@ -269,13 +269,13 @@ Nedodržení některé z výše uvedených upozornění může způsobit vazby b
 
 #### <a name="objective-c-mutable-pattern-and-properties"></a>Měnitelný vzor jazyka Objective-C a vlastnosti
 
-Rozhraní jazyka Objective-C použití stylu, kde jsou některé třídy neměnné s měnitelnou podtřídy.   Například `NSString` je neměnné verze, zatímco `NSMutableString` je podtřídou, která umožňuje mutace.
+Rozhraní jazyka Objective-C použití stylu, kde jsou některé třídy neměnné s měnitelnou podtřídy. Například `NSString` je neměnné verze, zatímco `NSMutableString` je podtřídou, která umožňuje mutace.
 
-V těchto tříd je běžné zobrazíte neměnné základní třída obsahovat vlastnosti příjemce, ale žádné nastavení.   A pro měnitelný verzi zavádět nastavovací metoda.   Vzhledem k tomu, že to není skutečně možné pomocí C#, jsme měli mapovat tuto stylu stylu, které by fungovat pro C#.
+V těchto tříd je běžné zobrazíte neměnné základní třída obsahovat vlastnosti příjemce, ale žádné nastavení. A pro měnitelný verzi zavádět nastavovací metoda. Vzhledem k tomu, že to není skutečně možné pomocí C#, jsme měli mapovat tuto stylu stylu, které by fungovat pro C#.
 
-Způsobem, že to je namapována na C# je přidání metoda getter a setter metody na základní třídy, ale označování setter s `[NotImplemented]` atribut.
+Způsobem, že to je namapována na C# je přidání metoda getter a setter metody na základní třídy, ale označování setter s [ `[NotImplemented]` ](~/cross-platform/macios/binding/binding-types-reference.md#NotImplementedAttribute) atribut.
 
-Potom použít na měnitelný podtřídami `[Override]` atributu pro vlastnost zajistit, že vlastnost je ve skutečnosti přepsání nastavení nadřazeného objektu.
+Potom použít na měnitelný podtřídami [ `[Override]` ](~/cross-platform/macios/binding/binding-types-reference.md#OverrideAttribute) atributu pro vlastnost zajistit, že vlastnost je ve skutečnosti přepsání nastavení nadřazeného objektu.
 
 Příklad:
 
@@ -292,11 +292,11 @@ interface MyMutableTree {
 }
 ```
 
- <a name="Binding_Constructors" />
+<a name="Binding_Constructors" />
 
 ### <a name="binding-constructors"></a>Vazba konstruktory
 
-**Btouch nativní** nástroj automaticky vygeneruje fours konstruktorů ve třídě, pro danou třídu `Foo`, vygeneruje:
+`btouch-native` Nástroj automaticky vygeneruje fours konstruktorů ve třídě, pro danou třídu `Foo`, vygeneruje:
 
 -  `Foo ()`: výchozí konstruktor (mapy do konstruktoru "init –" Objective-C)
 -  `Foo (NSCoder)`: konstruktor použít při deserializaci NIB soubory (mapuje Objective-C "initWithCoder:" konstruktor).
@@ -310,11 +310,11 @@ Pro konstruktory, které definujete, které potřebují deklarovat pomocí násl
 IntPtr Constructor (CGRect frame);
 ```
 
- <a name="Binding_Protocols" />
+<a name="Binding_Protocols" />
 
 ### <a name="binding-protocols"></a>Vytvoření vazby protokolů
 
-Jak je popsáno v dokumentu návrhu rozhraní API, v části [pojednávající o modely a protokoly](~/ios/internals/api-design/index.md), Xamarin.iOS mapy do třídy, které jsou opatření příznakem s protokoly jazyka Objective-C [[Model]](~/cross-platform/macios/binding/binding-types-reference.md) atribut. To se obvykle používá při implementaci třídy jazyka Objective-C delegáta.
+Jak je popsáno v dokumentu návrhu rozhraní API, v části [pojednávající o modely a protokoly](~/ios/internals/api-design/index.md#Models), Xamarin.iOS mapy do třídy, které jsou opatření příznakem s protokoly jazyka Objective-C [ `[Model]` ](~/cross-platform/macios/binding/binding-types-reference.md#ModelAttribute) atribut. To se obvykle používá při implementaci třídy jazyka Objective-C delegáta.
 
 Velký rozdíl mezi běžné vázané třídy a třídy delegáta je, že třída delegáta může mít jednu nebo více metod volitelné.
 
@@ -329,11 +329,11 @@ interface UIAccelerometerDelegate {
 }
 ```
 
-Vzhledem k tomu, že toto je volitelná metoda na definici `UIAccelerometerDelegate` není nic jiného udělat. Pokud se požadovaná metoda na protokol, měli byste ale přidat [[abstraktní]](~/cross-platform/macios/binding/binding-types-reference.md) atribut do metody. Tato akce vynutí uživatele implementace ve skutečnosti zadat text pro metodu.
+Vzhledem k tomu, že toto je volitelná metoda na definici `UIAccelerometerDelegate` není nic jiného udělat. Pokud se požadovaná metoda na protokol, měli byste ale přidat [ `[Abstract]` ](~/cross-platform/macios/binding/binding-types-reference.md#AbstractAttribute) atribut do metody. Tato akce vynutí uživatele implementace ve skutečnosti zadat text pro metodu.
 
 Protokoly se obecně používají v třídy, které reagují na zprávy. To se obvykle provádí v Objective-C přiřazením "delegáta" vlastnosti instance objektu, který reaguje na metody v protokolu.
 
-Konvence v Xamarin.iOS je pro podporu obou Objective-C volně doplněná styl v případech, kdy instanci `NSObject` lze přiřadit delegáta a také zveřejněte silného typu verzi. Z tohoto důvodu poskytujeme obvykle "Delegáta" vlastnost, která je silného typu a "WeakDelegate" volně zadaný. Jsme obvykle vazby volného typu verze pomocí exportu a používáme [[zabalení]](~/cross-platform/macios/binding/binding-types-reference.md) atribut zajistit verzi silného typu.
+Konvence v Xamarin.iOS je pro podporu obou jazyka Objective-C volně vázány styl v případech, kdy instanci `NSObject` lze přiřadit delegáta a také zveřejněte silného typu verzi ho. Z tohoto důvodu jsme obvykle poskytují jak `Delegate` vlastnost, která je silného typu a `WeakDelegate` která je volného typu. Jsme obvykle bind verze volného typu s [ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute), a používáme [ `[Wrap]` ](~/cross-platform/macios/binding/binding-types-reference.md#WrapAttribute) atribut zajistit verzi silného typu.
 
 Ukazuje to, jak jsme vázaný `UIAccelerometer` třídy:
 
@@ -354,7 +354,7 @@ interface UIAccelerometer {
 }
 ```
 
- <a name="iOS7ProtocolSupport" />
+<a name="iOS7ProtocolSupport" />
 
 **Novinka v MonoTouch 7.0**
 
@@ -362,10 +362,10 @@ Od verze MonoTouch 7.0 nových a vylepšených protokol vazby funkce byla zahrnu
 
 Pro každý protokol definici `MyProtocol` v Objective-C, je nyní `IMyProtocol` rozhraní, které jsou uvedeny všechny požadované metody oproti protokolu, jakož i třídu rozšíření, která poskytuje všechny metody, volitelné.  Výše uvedeného kombinovat s nové podpory v Xamarin studiu editor umožňuje vývojářům implementovat metody protokolu bez nutnosti použití samostatných podtřídy předchozí modelu abstraktní třídy.
 
-Všechny definice, který obsahuje `[Protocol]` atribut ve skutečnosti vygeneruje tři podpůrných tříd, které významně zlepšit způsobem, že můžete využívat protokoly:
+Všechny definice, který obsahuje [ `[Protocol]` ](~/cross-platform/macios/binding/binding-types-reference.md#ProtocolAttribute) atribut ve skutečnosti vygeneruje tři podpůrných tříd, které významně zlepšit způsobem, že můžete využívat protokoly:
 
 ```csharp
-// Full method implementation, contains all methods
+    // Full method implementation, contains all methods
     class MyProtocol : IMyProtocol {
         public void Say (string msg);
         public void Listen (string msg);
@@ -388,7 +388,7 @@ Všechny definice, který obsahuje `[Protocol]` atribut ve skutečnosti vygeneru
 
 Generovaný objekt **definici rozhraní** odeslán.  Je rozhraní, které má všechny požadované metody oproti protokolu.  To umožňuje vývojáři, kteří mají k provedení vaší protokolu jenom implementace rozhraní.  Modul runtime automaticky zaregistruje typ jako přijetí protokol.
 
-Všimněte si, že rozhraní pouze uvádí požadované metody a vystavit volitelné metody.  To znamená, že získá úplné kontroly pro požadované metody typu třídy, které přijmou protokol, ale bude mít uchýlit k slabé zadáním (ručně pomocí exportu atributů a odpovídající podpis) pro volitelné protokol metody.
+Všimněte si, že rozhraní pouze uvádí požadované metody a vystavit volitelné metody.  To znamená, že bude získat úplný typ kontrola požadované metody třídy, které přijmou protokol, ale bude mít uchýlit k slabé zadáním (ručně pomocí [ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) atributy a odpovídající podpis) pro volitelné metody protokolu.
 
 Chcete-li vhodné používat rozhraní API, které používá protokoly, nástroj vazba také vytvoří třídu – metoda rozšíření, která zveřejňuje všechny volitelné metody.  To znamená, že tak dlouho, dokud se využívají rozhraní API, nebudete schopni s nimi zacházet protokoly tak, že má všechny metody.
 
@@ -448,26 +448,7 @@ Pokud rozhraní je implementováno implicitně nebo explicitně nezáleží.
 
 ### <a name="binding-class-extensions"></a>Rozšíření třídy vazby
 
-<!--In Objective-C it is possible to extend classes with new methods,
-similar in spirit to C#'s extension methods. When one of these methods
-is present, you can use the `[Target]` attribute to flag the first
-parameter of a method as being the receiver of the Objective-C
-message.
-
-For example, in Xamarin.iOS we bound the extension methods that are defined on
-`NSString` when `UIKit` is imported as methods in the `UIView`, like this:
-
-```csharp
-[BaseType (typeof (UIResponder))]
-interface UIView {
-    [Bind ("drawAtPoint:withFont:")]
-    SizeF DrawString ([Target] string str, CGPoint point, UIFont font);
-}
-```
-
--->
-
-V Objective C je možné rozšířit pomocí nových metod, podobně jako v smyslu C# na rozšiřující metody třídy. Pokud jeden z těchto metod, můžete použít `BaseType` atribut příznak metodu jako příjemce zprávy jazyka Objective-C.
+V Objective C je možné rozšířit pomocí nových metod, podobně jako v smyslu C# na rozšiřující metody třídy. Pokud jeden z těchto metod, můžete použít [ `[BaseType]` ](~/cross-platform/macios/binding/binding-types-reference.md#BaseTypeAttribute) atribut příznak metodu jako příjemce zprávy jazyka Objective-C.
 
 Například v Xamarin.iOS, jsme vázaný rozšiřující metody, které jsou definovány na `NSString` při `UIKit` importuje jako metody v `NSStringDrawingExtensions`, podobné výjimky:
 
@@ -479,15 +460,13 @@ interface NSStringDrawingExtensions {
 }
 ```
 
- <a name="Binding_Objective-C_Argument_Lists" />
+<a name="Binding_Objective-C_Argument_Lists" />
 
 ### <a name="binding-objective-c-argument-lists"></a>Seznamy argumentů jazyka Objective-C vazby
 
-Jazyka Objective-C podporuje variadická argumenty, můžete použít takto popsané Zach Gris pro [tento příspěvek](http://forums.monotouch.net/yaf_postst311_SOLVED-Binding-ObjectiveC-Argument-Lists.aspx).
+Jazyka Objective-C podporuje variadická argumenty. Příklad:
 
-Zprávu jazyka Objective-C vypadá takto:
-
-```csharp
+```objc
 - (void) appendWorkers:(XWorker *) firstWorker, ...
   NS_REQUIRES_NIL_TERMINATION ;
 ```
@@ -520,7 +499,7 @@ public void AppendWorkers(params Worker[] workers)
 }
 ```
 
- <a name="Binding_Fields" />
+<a name="Binding_Fields" />
 
 ### <a name="binding-fields"></a>Vazba polí
 
@@ -528,14 +507,14 @@ Někdy budete chtít přístup veřejná pole, které byly deklarované v knihov
 
 Tato pole obvykle obsahují hodnoty řetězce nebo celá čísla, které musí odkazovat. Běžně se používají jako řetězec, který představuje konkrétní oznámení a jako klíče ve slovnících.
 
-Chcete-li vytvořit vazbu na pole, přidání vlastnosti do souboru definice rozhraní a uspořádání vlastnost s [[Field]](~/cross-platform/macios/binding/binding-types-reference.md) atribut. Tento atribut přijímá jeden parametr: název C na symbol vyhledávání. Příklad:
+Chcete-li vytvořit vazbu na pole, přidání vlastnosti do souboru definice rozhraní a uspořádání vlastnost s [ `[Field]` ](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute) atribut. Tento atribut přijímá jeden parametr: název C na symbol vyhledávání. Příklad:
 
 ```csharp
 [Field ("NSSomeEventNotification")]
 NSString NSSomeEventNotification { get; }
 ```
 
-Pokud chcete zabalit různých polí v statické třídy, která není odvozena od `NSObject`, můžete použít `[Static]` atribut na třídu, například takto:
+Pokud chcete zabalit různých polí v statické třídy, která není odvozena od `NSObject`, můžete použít [ `[Static]` ](~/cross-platform/macios/binding/binding-types-reference.md#StaticAttribute_Class) atribut na třídu, například takto:
 
 ```csharp
 [Static]
@@ -548,7 +527,7 @@ interface LonelyClass {
 Vygeneruje výše `LonelyClass` který není odvozen od `NSObject` a bude obsahovat vazbu ke `NSSomeEventNotification` 
  `NSString` zveřejněné jako `NSString`.
 
-`[Field]` Atribut lze použít pro následující typy dat:
+[ `[Field]` ](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute) Atribut lze použít pro následující typy dat:
 
 -  `NSString` odkazy (pouze vlastnosti jen pro čtení)
 -  `NSArray` odkazy (pouze vlastnosti jen pro čtení)
@@ -624,17 +603,17 @@ interface MyType {
 }
 ```
 
-V tomto příkladu může rozhodnete uspořádání `void Perform (NSString mode);` s `[Internal]` atribut. Tím se **skrýt** na základě konstanta rozhraní API z vazby uživatele.
+V tomto příkladu může rozhodnete uspořádání `void Perform (NSString mode);` s [ `[Internal]` ](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute) atribut. Tím se **skrýt** na základě konstanta rozhraní API z vazby uživatele.
 
-Ale omezí vytvoření podtřídy typ jako nicer alternativní používá rozhraní API `[Wrap]` atribut. Tyto metody generované nejsou `virtual`, tj. můžete nebude potlačit je – které mohou, nebo Ne, být vhodný.
+Ale omezí vytvoření podtřídy typ jako nicer alternativní používá rozhraní API [ `[Wrap]` ](~/cross-platform/macios/binding/binding-types-reference.md#WrapAttribute) atribut. Tyto metody generované nejsou `virtual`, tj. můžete nebude potlačit je – které mohou, nebo Ne, být vhodný.
 
 Alternativou je označit původní, `NSString`– na základě definice `[Protected]`. To vám umožní vytváření podtříd pracovat, v případě potřeby, a verze wrap'ed bude stále fungovat a volání metody elementem.
 
-### <a name="binding-nsvalue-nsnumber-and-nsstring-to-a-better-type"></a>Vytváření vazby NSValue, NSNumber a NSString lepší typ
+### <a name="binding-nsvalue-nsnumber-and-nsstring-to-a-better-type"></a>Vazba `NSValue`, `NSNumber`, a `NSString` typu lepší
 
-[[BindAs]](~/cross-platform/macios/binding/binding-types-reference.md) atribut umožňuje vazby `NSNumber`, `NSValue` a `NSString`(výčty) do přesnější typy C#. Atribut slouží k vytvoření lepší, přesnější, .NET API přes nativní rozhraní API.
+[ `[BindAs]` ](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute) Atribut umožňuje vazby `NSNumber`, `NSValue` a `NSString`(výčty) do přesnější typy C#. Atribut slouží k vytvoření lepší, přesnější, .NET API přes nativní rozhraní API.
 
-Můžete uspořádání metody (na návratovou hodnotu), parametry a vlastnosti s [[BindAs]](~/cross-platform/macios/binding/binding-types-reference.md). Pouze omezení je, že vaše člen **musí není** uvnitř `[Protocol]` nebo `[Model]` rozhraní.
+Můžete uspořádání metody (na návratovou hodnotu), parametry a vlastnosti s [ `[BindAs]` ](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute). Pouze omezení je, že vaše člen **musí není** uvnitř [ `[Protocol]` ](~/cross-platform/macios/binding/binding-types-reference.md#ProtocolAttribute) nebo [ `[Model]` ](~/cross-platform/macios/binding/binding-types-reference.md#ModelAttribute) rozhraní.
 
 Příklad:
 
@@ -653,7 +632,7 @@ bool? ShouldDraw (CGRect rect) { ... }
 
 Interně uděláme `bool?`  <->  `NSNumber` a `CGRect`  <->  `NSValue` převody.
 
-[[BindAs] ](~/cross-platform/macios/binding/binding-types-reference.md) také podporuje pole `NSNumber` `NSValue` a `NSString`(výčty).
+[`[BindAs]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute) také podporuje pole `NSNumber` `NSValue` a `NSString`(výčty).
 
 Příklad:
 
@@ -672,17 +651,17 @@ CAScroll [] SupportedScrollModes { get; set; }
 
 `CAScroll` je `NSString` zálohovaný výčtu, jsme se načíst právo `NSString` hodnotu a zpracovat převod typů.
 
-Najdete v tématu [dokumentace [BindAs]](~/cross-platform/macios/binding/binding-types-reference.md) zobrazíte podporované typy převod.
+Podrobnosti najdete [ `[BindAs]` ](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute) v dokumentaci k převodu podporované typy.
 
- <a name="Binding_Notifications" />
+<a name="Binding_Notifications" />
 
 ### <a name="binding-notifications"></a>Vazba oznámení
 
 Oznámení jsou zprávy, které jsou odeslány na `NSNotificationCenter.DefaultCenter` a slouží jako mechanismus k vysílání zprávy z jedné části aplikace do jiné. Vývojáři přihlášení k odběru oznámení obvykle pomocí [NSNotificationCenter](https://developer.xamarin.com/api/type/Foundation.NSNotificationCenter/)na [AddObserver](https://developer.xamarin.com/api/type/Foundation.NSNotificationCenter/M/AddObserver/) metoda. Když aplikace odešle zprávu do centra oznámení, obvykle obsahuje uložené v datové části [NSNotification.UserInfo](https://developer.xamarin.com/api/property/Foundation.NSNotification.UserInfo/) slovníku. Je slabě typované tohoto slovníku a získávání informací mimo ho je chyba náchylné k chybám, jako jsou uživatelé obvykle musí přečíst v dokumentaci, která klíče jsou k dispozici v slovníku a typy hodnot, které mohou být uloženy ve slovníku. Přítomnost klíče někdy se používá jako logická hodnota také.
 
-Generátor vazby Xamarin.iOS poskytuje podporu pro vývojáře pro vazbu oznámení. K tomuto účelu můžete nastavit [[Upozornění]](~/cross-platform/macios/binding/binding-types-reference.md) atribut u vlastnosti, která také byla označené [[Field]](~/cross-platform/macios/binding/binding-types-reference.md) vlastnost (může být veřejné nebo soukromé).
+Generátor vazby Xamarin.iOS poskytuje podporu pro vývojáře pro vazbu oznámení. K tomuto účelu můžete nastavit [ `[Notification]` ](~/cross-platform/macios/binding/binding-types-reference.md#NotificationAttribute) atribut u vlastnosti, která také byla označené [ `[Field]` ](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute) vlastnost (může být veřejné nebo soukromé).
 
-Tento atribut lze použít bez argumentů pro oznámení, které zajišťují žádné datové části, nebo můžete zadat `System.Type` který odkazuje na jiné rozhraní v definici rozhraní API, obvykle s názvem konče "EventArgs". Generátor zapnout rozhraní do tříd této podtřídy `EventArgs` a bude obsahovat všechny vlastnosti nezobrazí. `[Export]` Atribut by měl použít v třídě EventArgs seznam název klíč používaný k vyhledání slovníku jazyka Objective-C načíst hodnotu.
+Tento atribut lze použít bez argumentů pro oznámení, které zajišťují žádné datové části, nebo můžete zadat `System.Type` který odkazuje na jiné rozhraní v definici rozhraní API, obvykle s názvem konče "EventArgs". Generátor zapnout rozhraní do tříd této podtřídy `EventArgs` a bude obsahovat všechny vlastnosti nezobrazí. [ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) Atribut by měl použít v třídě EventArgs seznam název klíč používaný k vyhledání slovníku jazyka Objective-C načíst hodnotu.
 
 Příklad:
 
@@ -752,7 +731,7 @@ var token = MyClass.NotificationsObserveScreenChanged ((notification) => {
 });
 ```
 
- <a name="Binding_Categories" />
+<a name="Binding_Categories" />
 
 ### <a name="binding-categories"></a>Kategorie vazby
 
@@ -766,7 +745,7 @@ Kategorie jsou mechanismus jazyka Objective-C slouží k rozšíření sadu meto
 
 Výše uvedeném příkladu Pokud na nalezena knihovnu by rozšířit instancí `UIView` s metodou `makeBackgroundRed`.
 
-Chcete-li vytvořit vazbu ty, můžete použít `[Category]` atribut definice rozhraní.  Při použití kategorie atributů, význam `[BaseType]` atribut se změní z používá k určení základní třídy pro rozšíření, jako typ rozšíření.
+Chcete-li vytvořit vazbu ty, můžete použít [ `[Category]` ](~/cross-platform/macios/binding/binding-types-reference.md#CategoryAttribute) atribut definice rozhraní.  Při použití [ `[Category]` ](~/cross-platform/macios/binding/binding-types-reference.md#CategoryAttribute) atribut význam [ `[BaseType]` ](~/cross-platform/macios/binding/binding-types-reference.md#BaseTypeAttribute) atribut se změní z používá k určení základní třídy pro rozšíření, jako typ rozšíření.
 
 Následující ukazuje jak `UIView` rozšíření jsou vázán a převedena na rozšiřující metody C#:
 
@@ -792,7 +771,7 @@ picture;
 @end
 ```
 
-Přestože je možné použít `Category` atribut také pro tento styl decoration deklarací, může také právě přidáte do definice třídy.  Obě tyto by dosáhnout stejné:
+Přestože je možné použít [ `[Category]` ](~/cross-platform/macios/binding/binding-types-reference.md#CategoryAttribute) atribut také pro tento styl decoration deklarací, může také právě přidáte do definice třídy.  Obě tyto by dosáhnout stejné:
 
 ```csharp
 [BaseType (typeof (NSObject))]
@@ -827,7 +806,7 @@ interface SocialNetworking {
 }
 ```
 
- <a name="Binding_Blocks" />
+<a name="Binding_Blocks" />
 
 ### <a name="binding-blocks"></a>Vazba bloky
 
@@ -837,7 +816,7 @@ Bloky jsou nové konstrukce zaváděné Apple aby ekvivalentní C# anonymní met
 - (void) enumerateObjectsUsingBlock:(void (^)(id obj, BOOL *stop) block
 ```
 
-Výše uvedený popis deklaruje metodu s názvem "*enumerateObjectsUsingBlock:*", která má jeden argument s názvem *bloku*. Tento blok je podobná anonymní metodu C#, v tom, že obsahuje podporu pro zaznamenání aktuální prostředí ("Tento" ukazatele, přístup k místní proměnné a parametry). Metodu výše v `NSSet` vyvolá blok s dva parametry `NSObject` (část "id obj") a ukazatel na logickou hodnotu ("BOOL * zastavit") část.
+Výše uvedený popis deklaruje metodu s názvem `enumerateObjectsUsingBlock:` , která má jeden argument s názvem `block`. Tento blok je podobná anonymní metodu C#, v tom, že obsahuje podporu pro zaznamenání aktuální prostředí ("Tento" ukazatele, přístup k místní proměnné a parametry). Metodu výše v `NSSet` vyvolá blok s dva parametry `NSObject` ( `id obj` část) a ukazatel na logickou hodnotu ( `BOOL *stop`) část.
 
 Pokud chcete vytvořit vazbu tento druh rozhraní API s btouch, musíte nejprve deklarovat podpis typ bloku jazyka C# delegovat a pak na ni odkazujte z rozhraní API vstupního bodu, například takto:
 
@@ -872,13 +851,13 @@ s.Enumerate ((obj, stop) => {
 });
 ```
 
- <a name="GeneratingAsync" />
+<a name="GeneratingAsync" />
 
 ### <a name="asynchronous-methods"></a>Asynchronní metody
 
 Generátor vazby můžete zapnout některých tříd metody do popisný asynchronní metody (metody, které vracejí úlohy nebo úkolu&lt;T&gt;).
 
-Můžete použít `[Async]` atribut u metody, která vracet typ void a jejichž poslední argument je zpětné volání.  Použijete-li to na metodu, generátor vazby vygeneruje verze této metody s příponou `Async`.  Pokud zpětné volání nepřijímá žádné parametry, budou návratovou hodnotu `Task`, pokud zpětné volání přebírá parametr, výsledkem bude `Task<T>`.  Pokud zpětné volání přijímá několik parametrů, byste měli nastavit `ResultType` nebo `ResultTypeName` zadat požadovaný název vygenerovaný typ, který bude obsahovat všechny vlastnosti.
+Můžete použít [ `[Async]` ](~/cross-platform/macios/binding/binding-types-reference.md#AsyncAttribute) atribut u metody, která vracet typ void a jejichž poslední argument je zpětné volání.  Použijete-li to na metodu, generátor vazby vygeneruje verze této metody s příponou `Async`.  Pokud zpětné volání nepřijímá žádné parametry, budou návratovou hodnotu `Task`, pokud zpětné volání přebírá parametr, výsledkem bude `Task<T>`.  Pokud zpětné volání přijímá několik parametrů, byste měli nastavit `ResultType` nebo `ResultTypeName` zadat požadovaný název vygenerovaný typ, který bude obsahovat všechny vlastnosti.
 
 Příklad:
 
@@ -901,9 +880,9 @@ Task<string> LoadFileAsync (string file);
 
 Na mnoha místech v rozhraní API jazyka Objective-C parametry se jí předávají jako slabě typované `NSDictionary` rozhraní API s konkrétní klíče a hodnoty, ale ty jsou náchylný (můžete předat neplatné klíče a získat žádná varování; můžete předat neplatné hodnoty a získat žádné upozornění) a frustrující Chcete-li použít, protože vyžadují více cest k dokumentaci pro vyhledání možné názvy klíčů a hodnot.
 
-Řešením je zajistit, že silného typu verze, která poskytuje silného typu verze rozhraní API a na pozadí mapuje různé základní klíče a hodnoty.
+Řešení je poskytnout verzi silného typu, který zajišťuje, že silného typu verze rozhraní API a na pozadí mapuje různé základní klíče a hodnoty.
 
-Tak například, pokud rozhraní API jazyka Objective-C přijata `NSDictionary` a jsou uvedené jako trvá klíč "XyzVolumeKey", který přebírá `NSNumber` s hodnotou svazku od 0,0 1.0 a "XyzCaptionKey" která přebírá řetězec by mají vaši uživatelé mají dobrý Rozhraní API, které vypadá takto:
+Tak například, pokud rozhraní API jazyka Objective-C přijata `NSDictionary` a jsou uvedené jako trvá klíč `XyzVolumeKey` které trvá `NSNumber` s hodnotou svazku od 0,0 do 1,0 a `XyzCaptionKey` která přebírá řetězec, by mají vaši uživatelé mají dobrý rozhraní API který vypadá takto:
 
 ```csharp
 public class  XyzOptions {
@@ -916,10 +895,10 @@ public class  XyzOptions {
 
 Chcete-li to provést, musíte udělat několik věcí:
 
-* Vytvoření silného typu třídy, která je podtřídou [DictionaryContainer](https://developer.xamarin.com/api/type/Foundation.DictionaryContainer/) a poskytuje různé mechanismy získání a nastavení pro každou vlastnost.
+* Vytvoření třídy silného typu, která je podtřídou [DictionaryContainer](https://developer.xamarin.com/api/type/Foundation.DictionaryContainer/) a poskytuje různé mechanismy získání a nastavení pro každou vlastnost.
 * Deklarovat přetížení pro metody trvá `NSDictionary` provést na novou verzi silného typu.
 
-Můžete vytvořit třída silného typu buď ručně, nebo pomocí generátoru udělají tuto práci za vás.  Nám nejdřív prozkoumejte, jak to provést ručně, takže víte, co se děje a pak automatické přístup.
+Můžete vytvořit silně typované třídy buď ručně, nebo pomocí generátoru udělají tuto práci za vás.  Nám nejdřív prozkoumejte, jak to provést ručně, takže víte, co se děje a pak automatické přístup.
 
 Je potřeba vytvořit podpůrných souborů pro tento, nepřejde do smlouva rozhraní API.  Toto je, co jste k zápisu pro vytvoření vlastní třídy XyzOptions:
 
@@ -954,12 +933,11 @@ interface XyzPanel {
 }
 ```
 
-Pokud vaše rozhraní API není nutné přepsat, můžete bezpečně skrýt NSDictionary rozhraní API pomocí [interní](~/cross-platform/macios/binding/binding-types-reference.md) atribut.
+Pokud vaše rozhraní API není nutné přepsat, můžete bezpečně skrýt NSDictionary rozhraní API pomocí [ `[Internal]` ](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute) atribut.
 
-Jak vidíte, použijeme `[Wrap]` atribut prezentovat nový vstupní bod rozhraní API a jsme surface pomocí našich XyzOptions tříd se silnými typy.
-Metoda obálku taky umožňuje hodnotu null, který se bude předávat.
+Jak vidíte, používáme [ `[Wrap]` ](~/cross-platform/macios/binding/binding-types-reference.md#WrapAttribute) atribut prezentovat nový vstupní bod rozhraní API a jsme surface pomocí našich silného typu `XyzOptions` třídy.  Metoda obálku taky umožňuje hodnotu null, který se bude předávat.
 
-Nyní je jedna z věcí, které jsme není zmínili, kdy `XyzOptionsKeys` hodnoty pochází.  Obvykle byste skupiny klíče, který rozhraní API povrchy statické třídy jako XyzOptionsKeys, jako to:
+Nyní je jedna z věcí, které jsme není zmínili, kdy `XyzOptionsKeys` hodnoty pochází.  Obvykle byste skupiny klíčů, které poskytuje rozhraní API v statické třídy, jako třeba `XyzOptionsKeys`, podobné výjimky:
 
 ```csharp
 [Static]
@@ -974,9 +952,9 @@ class XyzOptionKeys {
 
 Dejte nám se podívejte na Automatická podpora pro vytváření těchto slovníků silného typu.  Tím předejdete hodně standardní a přímo v smlouva rozhraní API, místo použití externího souboru můžete definovat slovníku.
 
-K vytvoření silného typu slovníku, rozhraní v rozhraní API a její uspořádání [StrongDictionary](~/cross-platform/macios/binding/binding-types-reference.md) atribut.  Tato hodnota informuje generátor, by měl vytvořit třídu se stejným názvem jako vaše rozhraní, které bude pocházejí z `DictionaryContainer` a poskytne přistupující objekty silného typu pro ni.
+K vytvoření silného typu slovníku, rozhraní v rozhraní API a její uspořádání [StrongDictionary](~/cross-platform/macios/binding/binding-types-reference.md#StrongDictionary) atribut.  Tato hodnota informuje generátor, by měl vytvořit třídu se stejným názvem jako vaše rozhraní, které bude pocházejí z `DictionaryContainer` a poskytne přistupující objekty silného typu pro ni.
 
-`StrongDictionary` Atribut přijímá jeden parametr, který je název statické třídy, který obsahuje klíče slovníku.  Každou vlastnost rozhraní se pak stane silného typu přístupového objektu.  Ve výchozím nastavení použije kód název vlastnosti s příponou "Klíč" v statická třída k vytvoření přistupujícího objektu.
+[ `[StrongDictionary]` ](~/cross-platform/macios/binding/binding-types-reference.md#StrongDictionary) Atribut přijímá jeden parametr, který je název statické třídy, který obsahuje klíče slovníku.  Každou vlastnost rozhraní se pak stane přistupujícím objektem silného typu.  Ve výchozím nastavení použije kód název vlastnosti s příponou "Klíč" v statická třída k vytvoření přistupujícího objektu.
 
 To znamená, že vytváření vašeho silného typu přístupového objektu už vyžaduje externí soubor, ani s ručně vytvořit mechanismy získání a nastavení pro každou vlastnost či museli vyhledat klíče ručně sami.
 
@@ -1007,9 +985,9 @@ interface XyzPanel {
 }
 ```
 
-V případě, že je třeba odkazovat ve vaší `XyzOption` členy jiné pole (tedy ne název vlastnost s příponou `Key`), můžete uspořádání vlastnost s `Export` atribut s názvem, který chcete použít.
+V případě, že je třeba odkazovat ve vaší `XyzOption` členy jiné pole (tedy ne název vlastnost s příponou `Key`), můžete uspořádání vlastnost s [ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) atribut s názvem, který jste Chcete použít.
 
- <a name="Type_mappings" />
+<a name="Type_mappings" />
 
 ## <a name="type-mappings"></a>Mapování typu
 
@@ -1027,8 +1005,8 @@ Následující tabulka ukazuje, jak by měla být mapována typy z jazyka Object
 |`NSInteger`|`nint`|
 |`NSUInteger`|`nuint`|
 |`CFTimeInterval` / `NSTimeInterval`|`double`|
-|`NSString` ([Další informace o vazby `NSString` ](~/ios/internals/api-design/nsstring.md))|`string`|
-|`char *`|`string` (viz také: [PlainString atribut](~/cross-platform/macios/binding/binding-types-reference.md#plainstring))|
+|`NSString` ([Další informace o vytvoření vazby NSString](~/ios/internals/api-design/nsstring.md))|`string`|
+|`char *`|`string` (viz také: [ `[PlainString]` ](~/cross-platform/macios/binding/binding-types-reference.md#plainstring))|
 |`CGRect`|`CGRect`|
 |`CGPoint`|`CGPoint`|
 |`CGSize`|`CGSize`|
@@ -1047,7 +1025,7 @@ Následující tabulka ukazuje, jak by měla být mapována typy z jazyka Object
 |`CFIndex`|`nint`|
 |`NSGlyph`|`nuint`|
 
- <a name="Arrays" />
+<a name="Arrays" />
 
 ### <a name="arrays"></a>Pole
 
@@ -1071,15 +1049,15 @@ UIView [] GetPeerViews ();
 void SetViews (UIView [] views);
 ```
 
-Cílem je, používat silného typu pole jazyka C#, což umožní IDE zajistit dokončení správného kódu se skutečným typem bez vynucení uživateli snadno uhodnout nebo vyhledat v dokumentaci a zjistěte, skutečný typ objekty obsažené v poli.
+Cílem je, používat silného typu C# pole, jako to vám umožní IDE zajistit dokončení správného kódu se skutečným typem bez vynucení uživateli snadno uhodnout nebo vyhledat v dokumentaci a zjistěte, skutečný typ objekty obsažené v poli.
 
 V případech, kdy nelze sledovat skutečný typ nejodvozenějších obsažené v poli, můžete použít `NSObject []` jako návratová hodnota.
 
- <a name="Selectors" />
+<a name="Selectors" />
 
 ### <a name="selectors"></a>Selektory
 
-Selektory se zobrazí na rozhraní API jazyka Objective-C jako speciální typ "Samoobslužné". Při vytváření vazby selektor, by namapujete typ, který má `ObjCRuntime.Selector`.  Selektory se obvykle zveřejňují v rozhraní API s objekt, cílový objekt a selektor má být vyvolán v cílový objekt. Obě tyto poskytování v podstatě odpovídá delegáta C#: něco, který zapouzdřuje metody vyvolání jak objekt k vyvolání metody v.
+Selektory zobrazí na rozhraní API jazyka Objective-C jako speciální typ `SEL`. Při vytváření vazby selektor, by namapujete typ, který má `ObjCRuntime.Selector`.  Selektory se obvykle zveřejňují v rozhraní API s objekt, cílový objekt a selektor má být vyvolán v cílový objekt. Obě tyto poskytování v podstatě odpovídá delegáta C#: něco, který zapouzdřuje metody vyvolání jak objekt k vyvolání metody v.
 
 Toto je vazba, která bude vypadat takto:
 
@@ -1107,7 +1085,7 @@ class DialogPrint : UIViewController {
 }
 ```
 
-Chcete-li vazba nicer pro vývojáře jazyka C#, je obvykle bude zadat metodu, která přebírá `NSAction` parametr, který umožňuje delegáti C# a lambdas, který se má použít místo `Target+Selector`. K tomu by obvykle skrýt metodu "SetTarget" tak, že označování s atributem "Interní" a pak by vystavit novou metodu helper, například takto:
+Chcete-li vazba nicer pro vývojáře jazyka C#, je obvykle bude zadat metodu, která přebírá `NSAction` parametr, který umožňuje delegáti C# a lambdas, který se má použít místo `Target+Selector`. K tomu by obvykle skrýt `SetTarget` metoda označíte se s příznakem [ `[Internal]` ](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute) atribut a poté by vystavit novou metodu helper, například takto:
 
 ```csharp
 // API.cs
@@ -1145,7 +1123,7 @@ class DialogPrint : UIViewController {
 }
 ```
 
- <a name="Strings" />
+<a name="Strings" />
 
 ### <a name="strings"></a>Řetězce
 
@@ -1155,13 +1133,13 @@ Pouze případě, když chcete použít `NSString` přímo je při řetězec se 
 
 Ve výjimečných případech, rozhraní API mohou být vystaveny C jako řetězec (`char *`) namísto řetězec jazyka Objective-C (`NSString *`). V takových případech může opatřit poznámkami parametr pomocí [ `[PlainString]` ](~/cross-platform/macios/binding/binding-types-reference.md#plainstring) atribut.
 
- <a name="outref_parameters" />
+<a name="outref_parameters" />
 
 ### <a name="outref-parameters"></a>limit nebo parametry ref
 
 Některé rozhraní API návratové hodnoty v jejich parametrů a předat parametry odkazem.
 
-Obvykle bude mít tento tvar podpis::
+Podpis obvykle vypadá takto:
 
 ```csharp
 - (void) someting:(int) foo withError:(NSError **) retError
@@ -1179,11 +1157,11 @@ void Something (nint foo, out NSError error);
 void SomeString (ref NSObject byref);
 ```
 
- <a name="Memory_management_attributes" />
+<a name="Memory_management_attributes" />
 
 ### <a name="memory-management-attributes"></a>Atributy správy paměti
 
-Při použití `[Export]` atribut a jsou předávání dat, která bude zachována zavolat metodu, můžete zadat argument sémantiku předání jako druhý parametr, například:
+Při použití [ `[Export]` ](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) atribut a jsou předávání dat, která bude zachována zavolat metodu, můžete zadat argument sémantiku předání jako druhý parametr, například:
 
 ```csharp
 [Export ("method", ArgumentSemantic.Retain)]
@@ -1191,23 +1169,23 @@ Při použití `[Export]` atribut a jsou předávání dat, která bude zachová
 
 Výše by příznak hodnotu tak, že má sémantiku "Zachovat". Sémantika k dispozici je:
 
--  Přiřadíte:
--  Zkopírujte:
--  Zachovat:
+-  Přiřazení
+-  Kopírovat
+-  Zachovat
 
- <a name="Style_Guidelines" />
+<a name="Style_Guidelines" />
 
 ### <a name="style-guidelines"></a>Styl pokyny
 
- <a name="Using_[Internal]" />
+<a name="Using_[Internal]" />
 
 #### <a name="using-internal"></a>Použití [vnitřní]
 
-Můžete použít [[interní]](~/cross-platform/macios/binding/binding-types-reference.md) atribut ke skrytí metoda z veřejné rozhraní API. Můžete to udělat v případech, kdy zveřejněné rozhraní API je příliš nízké úrovně a chcete k zajištění vysoké úrovně implementace v samostatném souboru podle této metody.
+Můžete použít [ `[Internal]` ](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute) atribut ke skrytí metoda z veřejné rozhraní API. Můžete to udělat v případech, kdy zveřejněné rozhraní API je příliš nízké úrovně a chcete k zajištění vysoké úrovně implementace v samostatném souboru podle této metody.
 
 Můžete taky to když spustíte do omezení v generátoru vazby, například mohou být některé pokročilé scénáře vystaveny typy, které nejsou vázané a chcete vytvořit vazbu vlastní způsobem a chcete zabalit tyto typy vlastní způsobem.
 
- <a name="Event_Handlers_and_Callbacks" />
+<a name="Event_Handlers_and_Callbacks" />
 
 ## <a name="event-handlers-and-callbacks"></a>Obslužné rutiny událostí a zpětná volání
 
@@ -1248,7 +1226,8 @@ interface MyClassDelegate {
 
 Zalomení třídy, na kterou je potřeba:
 
--  Ve třídě hostitele přidat do vaší `[BaseType]` zveřejněné deklarace typu, který funguje jako jeho delegáta a jazyka C# název. V našem příkladu výše těch, které jsou "typeof (MyClassDelegate)" a "WeakDelegate" v uvedeném pořadí.
+-  Ve třídě hostitele přidat do vašeho [`[BaseType]`](~/cross-platform/macios/binding/binding-types-reference.md#BaseTypeAttribute)  
+   deklarace typu, který funguje jako jeho delegáta a který je zveřejněný název jazyka C#. V našem příkladu výše těch, které jsou `typeof (MyClassDelegate)` a `WeakDelegate` v uvedeném pořadí.
 -  Ve třídě delegáta na každou metodu, která má více než dva parametry je třeba zadat typ, který chcete použít pro automaticky generované třídy EventArgs.
 
 Generátor vazba není omezeno na zabalení pouze jedna událost cíl, je možné, že delegovat některé třídy jazyka Objective-C pro vydávání zpráv, které mají více než jeden, tak budete muset zadat pole na podporu této instalace. Většina nastavení nepotřebují, ale generátor je připravený pro podporu těchto případech.
@@ -1274,7 +1253,7 @@ interface MyClassDelegate {
 }
 ```
 
-`EventArgs` Slouží k určení názvu `EventArgs` třída má být vygenerován. Je vhodné použít jednu za podpis (v tomto příkladu `EventArgs` bude obsahovat vlastnost typu nint "S").
+`EventArgs` Slouží k určení názvu `EventArgs` třída má být vygenerován. Měli byste použít jeden na každý podpis (v tomto příkladu `EventArgs` bude obsahovat `With` vlastnost typu nint).
 
 S definicemi výše vytvoří generátor následující událost v generované MyClass:
 
@@ -1298,35 +1277,36 @@ c.Loaded += delegate (sender, args){
 };
 ```
 
-Zpětná volání jsou stejně jako událost volání, rozdílem je, že místo s více odběrateli potenciální (například několik metod můžete připojit do událostí "Místní" nebo "Stáhnout dokončení" událost) zpětná volání může mít pouze jednoho odběratele.
+Zpětná volání jsou stejně jako událost volání, rozdílem je, že místo s více odběrateli potenciální (například může do připojení více metod `Clicked` událostí nebo `DownloadFinished` událostí) zpětná volání může mít pouze jednoho odběratele.
 
-Je stejný jako proces, jediným rozdílem je, že místo vystavení název třídy EventArgs, která se budou generovat, EventArgs ve skutečnosti se používá k pojmenování výsledný název delegáta C#.
+Proces je stejný jako, je jediným rozdílem je, že místo vystavení název `EventArgs` třídu, která se budou generovat, EventArgs ve skutečnosti se používá k pojmenování výsledný název delegáta C#.
 
-Pokud metoda v třídě delegáta vrátí hodnotu, generátor vazby to mapovat do metody delegáta v nadřazené třídě místo událost. V těchto případech budete muset zadat výchozí hodnotu, která má být vrácena metodou pokud uživatel není spojit do delegáta. To provedete pomocí `[DefaultValue]` nebo `[DefaultValueFromArgument]` atributy.
+Pokud metoda v třídě delegáta vrátí hodnotu, generátor vazby to mapovat do metody delegáta v nadřazené třídě místo událost. V těchto případech budete muset zadat výchozí hodnotu, která má být vrácena metodou pokud uživatel není spojit do delegáta. To provedete pomocí [ `[DefaultValue]` ](~/cross-platform/macios/binding/binding-types-reference.md#DefaultValueAttribute) nebo [ `[DefaultValueFromArgument]` ](~/cross-platform/macios/binding/binding-types-reference.md#DefaultValueFromArgumentAttribute) atributy.
 
-Výchozí hodnota bude používat pevné kódování návratovou hodnotu, při `[DefaultValueFromArgument]` slouží k určení, které vstupní argument bude vrácen.
+[`[DefaultValue]`](~/cross-platform/macios/binding/binding-types-reference.md#DefaultValueAttribute) budou používat pevné kódování návratovou hodnotu, při [ `[DefaultValueFromArgument]` ](~/cross-platform/macios/binding/binding-types-reference.md#DefaultValueFromArgumentAttribute) slouží k určení, které vstupní argument bude vrácen.
 
- <a name="Enumerations_and_Base_Types" />
+<a name="Enumerations_and_Base_Types" />
 
 ## <a name="enumerations-and-base-types"></a>Základní typy a výčty
 
 Můžete taky odkazovat výčty nebo základních typů, které nejsou podporované přímo btouch systému definice rozhraní. K tomuto účelu vložit do samostatného souboru výčty a základní typy a být v rámci jednoho z dalších souborů, které poskytnete btouch.
 
- <a name="Linking_the_Dependencies" />
+<a name="Linking_the_Dependencies" />
 
 ## <a name="linking-the-dependencies"></a>Propojování závislosti
 
 Pokud vytváříte vazbu rozhraní API, které nejsou součástí vaší aplikace, musíte zajistit, že vaše spustitelný soubor je propojený na tyto knihovny.
 
-Je nutné informovat Xamarin.iOS způsob propojení vašich knihovnách, to můžete provést buď změnou konfiguraci sestavení na vyvolat příkaz mtouch s některé argumenty navíc sestavení, které určují způsob propojení s novou knihoven pomocí "-gcc_flags" možnost, a potom podle řetězec obsahující uvozovky, který obsahuje další knihovny, které jsou potřeba k aplikaci, například takto:
+Je nutné informovat Xamarin.iOS způsob propojení vašich knihovnách, to můžete provést buď změnou konfiguraci sestavení k vyvolání `mtouch` sestavení příkaz s některé další argumenty, které určují způsob propojení s novou knihoven pomocí "-gcc_flags" možnost, následuje řetězec obsahující uvozovky, který obsahuje další knihovny, které jsou potřeba k aplikaci, například takto:
 
-```csharp
+```bash
 -gcc_flags "-L${ProjectDir} -lMylibrary -force_load -lSystemLibrary -framework CFNetwork -ObjC"
 ```
 
 Odkaz výše uvedeném příkladu `libMyLibrary.a`, `libSystemLibrary.dylib` a `CFNetwork` framework – knihovna do konečné spustitelného souboru.
 
-Nebo můžete využít výhod úrovně sestavení `LinkWithAttribute`, které můžete vložit do kontrakt souborů (například `AssemblyInfo.cs`). Při použití `LinkWithAttribute`, budete muset mít své nativní knihovny k dispozici v okamžiku, zkontrolujte vaši vazby, jak to bude vložení nativní knihovny s vaší aplikací. Příklad:
+Nebo můžete využít výhod úrovně sestavení [ `[LinkWithAttribute]` ](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute), které můžete vložit do kontrakt souborů (například `AssemblyInfo.cs`).
+Při použití [ `[LinkWithAttribute]` ](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute), budete muset mít své nativní knihovny k dispozici v okamžiku, zkontrolujte vaši vazby, jak to bude vložení nativní knihovny s vaší aplikací. Příklad:
 
 ```csharp
 // Specify only the library name as a constructor argument and specify everything else with properties:
@@ -1336,15 +1316,15 @@ Nebo můžete využít výhod úrovně sestavení `LinkWithAttribute`, které m�
 [assembly: LinkWith ("libMyLibrary.a", LinkTarget.ArmV6 | LinkTarget.ArmV7 | LinkTarget.Simulator, ForceLoad = true, IsCxx = true)]
 ```
 
-Možná se ptáte, proč potřebujete příkaz "force_load" a z důvodu je příznak - ObjC, i když se zkompiluje kód v nezachovává metadata potřebné k podpoře kategorií (odstranění neaktivní kód linkeru/kompilátoru odstraní ji), které budete potřebovat v době běhu pro Xamarin.iOS.
+Možná se ptáte, proč potřebujete `-force_load` příkazu a proč je příznak - ObjC, i když se zkompiluje kód v nezachovává metadata potřebné k podpoře kategorií (odstranění neaktivní kód linkeru/kompilátoru odstraní ji) které pro Xamarin.iOS potřebovat za běhu.
 
- <a name="Assisted_References" />
+<a name="Assisted_References" />
 
 ## <a name="assisted-references"></a>Odbornou odkazy
 
 Některé přechodný objekty, jako jsou seznamy akce a výstrah polí jsou náročná ke sledování pro vývojáře a generátor vazby pomůžou chvíli sem.
 
-Pro příklad, pokud jste měli třídu, která vám ukázal, zprávu a pak generované "Done" události, tradičním způsobem, jakým zpracovávat to by byl:
+Například pokud jste měli třídu, která vám ukázal, zprávu a pak vygeneruje `Done` událostí, tradičním způsobem, jakým zpracovávat to bude:
 
 ```csharp
 class Demo {
@@ -1372,7 +1352,7 @@ class Demo {
 
 Všimněte si, jak je již k zachování proměnnou v instanci, že bude fungovat s místní proměnné a že není potřeba zrušte odkaz, po kterou objekt.
 
-Umožní využít této třídě by měl mít vlastnost události nastavit `[BaseType]` deklarace a také `KeepUntilRef` proměnná nastavena na název metody, která je volána, když objekt dokončí svou práci takto:
+Umožní využít této třídě by měl mít vlastnost události nastavit [ `[BaseType]` ](~/cross-platform/macios/binding/binding-types-reference.md#BaseTypeAttribute) deklarace a také `KeepUntilRef` proměnná nastavena na název metody, která je volána, když objekt dokončí svou práci, jako je třeba Toto:
 
 ```csharp
 [BaseType (typeof (NSObject), KeepUntilRef="Dismiss"), Delegates=new string [] { "WeakDelegate" }, Events=new Type [] { typeof (SomeDelegate) }) ]
@@ -1382,11 +1362,11 @@ class Demo {
 }
 ```
 
- <a name="Inheriting_Protocols" />
+<a name="Inheriting_Protocols" />
 
 ## <a name="inheriting-protocols"></a>Dědění protokoly
 
-Od verze Xamarin.iOS v3.2 podporujeme dědění z protokolů, které byly označeny pomocí `[Model]` vlastnost. To je užitečné v určité vzorce rozhraní API, například jako v `MapKit` kde `MKOverlay` protokolu, dědí z `MKAnnotation` protokolu a je přijat několik tříd, které dědí `NSObject`.
+Od verze Xamarin.iOS v3.2 podporujeme dědění z protokolů, které byly označeny pomocí [ `[Model]` ](~/cross-platform/macios/binding/binding-types-reference.md#ModelAttribute) vlastnost. To je užitečné v určité vzorce rozhraní API, například jako v `MapKit` kde `MKOverlay` protokolu, dědí z `MKAnnotation` protokolu a je přijat několik tříd, které dědí `NSObject`.
 
 V minulosti vyžádali jsme si kopírování protokol pro každou implementaci, ale v těchto případech nyní jsme může mít `MKShape` třídy dědí `MKOverlay` protokolu a vygeneruje všechny požadované metody automaticky.
 

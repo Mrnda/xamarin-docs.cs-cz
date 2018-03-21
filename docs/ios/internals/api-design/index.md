@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 9bebc33affef4a1a25667039dfcdbe345dbd2cd6
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 8c336799a4d46359a78432837101dad43b572aea
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="api-design"></a>Rozhraní API návrhu
 
@@ -494,6 +494,7 @@ Názvy C# pro metody nejsou důležité. všechny, které záleží jsou řetěz
 
 Pokud používáte tento styl programování, zajistěte, aby odpovídaly parametry C# skutečná typy, které modul runtime předá.
 
+<a name="Models" />
 
 #### <a name="models"></a>Modely
 

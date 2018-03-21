@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: ee612d4a8982a6ae505b4d329b9abbc84624a1e0
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 66f4dcf14cd179795e9a23bccabe4289d74c7c5b
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="xamarinandroid-environment"></a>Xamarin.Android Environment
 
@@ -36,7 +36,7 @@ Komentáře jsou řádky, které začínat `#`. Prázdné řádky budou ignorov�
 
 Pokud *klíč* začíná velkým písmenem, pak *klíč* je považován za proměnné prostředí a **setenv**(3) se používá k nastavení proměnné prostředí pro zadaný *hodnotu* během spuštění procesu.
 
-Pokud *klíč* začíná malým písmenem, pak *klíč* je považován za ve vlastnosti systému Android a *hodnotu* je *výchozí hodnota*: Vlastnosti systému Android, které řídí chování při spuštění Xamarin.Android se hledá první ze serveru vlastnost systému Android, a pokud není zadána hodnota z hodnoty zadané v souboru prostředí použít. Toto nastavení slouží k povolení `adb shell setprop` který se má použít k přepsání hodnoty, které pocházejí z prostředí soubor k diagnostickým účelům.
+Pokud *klíč* začíná malým písmenem, pak *klíč* je považován za ve vlastnosti systému Android a *hodnotu* je *výchozí hodnota*: Vlastnosti systému Android, které řídí chování při spuštění Xamarin.Android jsou prohledávat první z úložiště vlastností systému Android, a pokud není zadána hodnota z hodnoty zadané v souboru prostředí použít. Toto nastavení slouží k povolení `adb shell setprop` který se má použít k přepsání hodnoty, které pocházejí z prostředí soubor k diagnostickým účelům.
 
 ## <a name="xamarinandroid-environment-variables"></a>Proměnné prostředí Xamarin.Android
 
@@ -45,9 +45,9 @@ Podporuje Xamarin.Android `XA_HTTP_CLIENT_HANDLER_TYPE` proměnné, které můž
 
 ### `XA_HTTP_CLIENT_HANDLER_TYPE`
 
-Sestavení kvalifikovaný typu, který musí dědit z [HttpMessageHandler](https://msdn.microsoft.com/en-us/library/system.net.http.httpmessagehandler(v=vs.118).aspx) a je vytvořený z [ `HttpClient()` výchozí konstruktor](https://msdn.microsoft.com/en-us/library/hh138077(v=vs.118).aspx).
+Sestavení kvalifikovaný typu, který musí dědit z [HttpMessageHandler](https://docs.microsoft.com/dotnet/api/system.net.http.httpmessagehandler?view=xamarinandroid-7.1) a je vytvořený z [ `HttpClient()` výchozí konstruktor](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient.-ctor?view=xamarinandroid-7.1#System_Net_Http_HttpClient__ctor).
 
-V Xamarin.Android 6.1, tato proměnná prostředí není nastavena ve výchozím nastavení, a [HttpClientHandler](https://msdn.microsoft.com/en-us/library/system.net.http.httpclienthandler(v=vs.118).aspx) se použije.
+V Xamarin.Android 6.1, tato proměnná prostředí není nastavena ve výchozím nastavení, a [HttpClientHandler](https://docs.microsoft.com/dotnet/api/system.net.http.httpclienthandler?view=xamarinandroid-7.1) se použije.
 
 Alternativně hodnota `Xamarin.Android.Net.AndroidClientHandler` může být určen používat [ `java.net.URLConnection` ](https://developer.xamarin.com/api/type/Java.Net.URLConnection/) pro přístup k síti, která *může* povolení použití protokolu TLS 1.2, pokud ji podporuje Android.
 

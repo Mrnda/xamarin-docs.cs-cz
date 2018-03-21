@@ -6,12 +6,12 @@ ms.assetid: 9C8145B3-FCF1-4649-8C6A-49672DDA4159
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: e440d5ab9f822277a8c0948a9795b9a030fa268c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/19/2018
+ms.openlocfilehash: e26c855133d0b32676aa2d0a6084754a80055e30
+ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="preparing-an-application-for-release"></a>Příprava aplikace pro vydání
 
@@ -40,13 +40,7 @@ Každá z těchto kroků je popsána níže podrobněji.
 
 ## <a name="specify-the-application-icon"></a>Zadejte ikona aplikace
 
-Důrazně doporučujeme, aby každá aplikace Xamarin.Android určení ikony aplikace. Některé aplikace tržišť neumožní aplikace platformy Android k publikování bez jeden.
-
-`Icon` Vlastnost `Application` atribut slouží k určení ikony aplikace pro Xamarin.Android projekt. Tento atribut lze deklarovat v souboru **Properties\AssemblyInfo.cs**, jak je znázorněno v této ukázkové fragmentu kódu:
-
-```csharp
-[assembly: Application(Icon = "@drawable/icon")]
-```
+Důrazně doporučujeme, aby každá aplikace Xamarin.Android určení ikony aplikace. Některé aplikace tržišť neumožní aplikace platformy Android k publikování bez jeden. `Icon` Vlastnost `Application` atribut slouží k určení ikony aplikace pro Xamarin.Android projekt.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -61,6 +55,12 @@ V sadě Visual Studio pro Mac, je také možné zadat ikonu aplikace prostředni
 [![Nastavit ikona aplikace](images/xs/01-application-icon-sml.png)](images/xs/01-application-icon.png#lightbox)
 
 -----
+
+V těchto příkladech `@drawable/icon` odkazuje na soubor ikony, který se nachází v **Resources/drawable/icon.png** (Všimněte si, že **.png** rozšíření není součástí názvu prostředku). Tento atribut lze deklarovat také v souboru **Properties\AssemblyInfo.cs**, jak je znázorněno v této ukázkové fragmentu kódu:
+
+```csharp
+[assembly: Application(Icon = "@drawable/icon")]
+```
 
 <a name="Versioning" />
 
