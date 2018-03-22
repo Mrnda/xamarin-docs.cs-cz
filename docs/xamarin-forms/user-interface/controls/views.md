@@ -1,6 +1,6 @@
 ---
 title: Xamarin.Forms Views
-description: "Zobrazení Xamarin.Forms jsou jako stavební bloky pro různé platformy mobilních uživatelská rozhraní."
+description: Zobrazení Xamarin.Forms jsou jako stavební bloky pro různé platformy mobilních uživatelská rozhraní.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: AC070686-A423-4A98-8BB6-0B9F94C062CC
@@ -8,8 +8,8 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: f7d27c5226741ec2b105633206ebaa0ac73d9a7b
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 45dc110104d7bb064aff1c883f65d894cbe6402f
+ms.sourcegitcommit: c3abb91d1a944de07d1b2b0878b02752c768d722
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 03/22/2018
@@ -100,7 +100,7 @@ Zobrazení jsou objekty uživatelského rozhraní, jako je například popisky, 
 
 |     |     |
 | --- | --- |
-| [`Switch`](https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/) má podobu přepínač zapnout nebo vypnout umožňuje uživateli vybrat logickou hodnotu. [ `IsToggled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Switch.IsToggled/) Vlastnost je stav přepínače a [ `Toggled` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Switch.Toggled/) událost je aktivována například při změně stavu.<br /><br />[Dokumentaci k rozhraní API](https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/) | [![Příklad přepínače](views-images/Switch.png "přepínač příklad")](views-images/Stepper-Large.png#lightbox "přepínač příklad")<br />[Kód jazyka C# pro tuto stránku](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SwitchDemoPage.cs) / [XAML – stránka](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwitchDemoPage.xaml) |
+| [`Switch`](https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/) má podobu přepínač zapnout nebo vypnout umožňuje uživateli vybrat logickou hodnotu. [ `IsToggled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Switch.IsToggled/) Vlastnost je stav přepínače a [ `Toggled` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Switch.Toggled/) událost je aktivována například při změně stavu.<br /><br />[Dokumentaci k rozhraní API](https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/) | [![Příklad přepínače](views-images/Switch.png "přepínač příklad")](views-images/Switch-Large.png#lightbox "přepínač příklad")<br />[Kód jazyka C# pro tuto stránku](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SwitchDemoPage.cs) / [XAML – stránka](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwitchDemoPage.xaml) |
 |     |     |
 
 ### <a name="datepicker"></a>DatePicker
