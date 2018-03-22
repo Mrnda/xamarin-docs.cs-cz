@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: d9e38f055414ff0eca70df4a4e38aa959b7d7237
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ff19048504ee76db614306adebb71b7237139091
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>Automatické rozložení pomocí návrháře Xamarin pro iOS
 
@@ -88,7 +88,7 @@ Pokud chcete vytvořit omezení, vyberte popisovač a přetáhněte jej někde n
 Všimněte si tři přerušované čáry zelená mezi dvě tlačítka. Zelená řádky označují *oblasti přetažení*, nebo jiných prvků, do kterých jsme omezit atributy. Na snímku obrazovky výše, nabízí dvě tlačítka 3 oblastí svislé přetažení ( *dolní*, *centerY*, *horní*) Chcete-li omezit naše tlačítko. Zelená přerušovaná čára v horní části zobrazení znamená řadiče zobrazení nabízí omezení v horní části zobrazení a plnou zelené pole znamená, že řadiče zobrazení nabízí omezení níže v Průvodci nejvyšší rozložení.
 
 > [!IMPORTANT]
-> **Poznámka:**: vodítka jsou speciální typy omezení cílů, které umožňují vytvořit horní a dolní omezení, která vezměte v úvahu přítomnost systému řádky, například stavové řádky nebo panely nástrojů. Jedním z hlavní využití je mít mezi iOS 6 a iOS 7 kompatibilní aplikace, protože nejnovější verze je kontejner zobrazení rozšíření pod stavový řádek. Další informace o Průvodci nejvyšší rozložení, najdete v části [dokumentaci od společnosti Apple](https://developer.apple.com/library/ios/documentation/userexperience/conceptual/transitionguide/AppearanceCustomization.html#//apple_ref/doc/uid/TP40013174-CH15-SW2).
+> Vodítka rozložení jsou speciální typy omezení cíle, které umožňují vytvořit horní a dolní omezení, které vzít v úvahu přítomnost systému řádky, například stavové řádky nebo panely nástrojů. Jedním z hlavní využití je mít mezi iOS 6 a iOS 7 kompatibilní aplikace, protože nejnovější verze je kontejner zobrazení rozšíření pod stavový řádek. Další informace o Průvodci nejvyšší rozložení, najdete v části [dokumentaci od společnosti Apple](https://developer.apple.com/library/ios/documentation/userexperience/conceptual/transitionguide/AppearanceCustomization.html#//apple_ref/doc/uid/TP40013174-CH15-SW2).
 
 
 

@@ -7,11 +7,11 @@ ms.assetid: 89539D79-BC6E-4A3E-AEC6-69D9A6CC6818
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 4a8f1632076a12b1737ba8294ac8b2f28f19dc77
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 25b9d6c0eebd51a7b47b31c35fb3d5b56e45c3b3
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="document-picker"></a>Výběr dokumentu.
 
@@ -221,7 +221,7 @@ Pomocí Stitching v diagramu:
 Pomocí Stitching aplikace už má otevřít zdroj dat pro monitorování místní a cloudové na základě změn souborů. Teď můžete aplikaci spoléhají na `NSMetadataQuery` přímo.
 
 > [!IMPORTANT]
-> **Poznámka:**: ve hřbetu funguje jenom v případě aplikace používá soubor koordinaci uvedenou výše v části. Pokud soubor koordinaci není používán, rozhraní API výchozí chování pro iOS 8 existující před.
+> Ve hřbetu funguje jenom v případě aplikace používá soubor koordinaci uvedenou výše v části. Pokud soubor koordinaci není používán, rozhraní API výchozí chování pro iOS 8 existující před.
 
 
 
@@ -465,7 +465,7 @@ Postupujte takto:
 6.  Klikněte pravým tlačítkem na `Entitlements.plist` v **Průzkumníku řešení** a otevře se v editoru.
 
     > [!IMPORTANT]
-> **Poznámka:**: V sadě Visual Studio budete muset otevřít editor oprávnění kliknutím pravým tlačítkem myši, vyberte **otevřít v programu...** a výběrem Editor seznamu vlastností
+    > V sadě Visual Studio budete muset otevřít editor oprávnění kliknutím pravým tlačítkem myši, vyberte **otevřít v programu...** a výběrem Editor seznamu vlastností
 
 7.  Zkontrolujte **povolit Icloudu** , **Icloudu dokumenty** , **klíč hodnota úložiště** a **CloudKit** .
 8.  Ujistěte se, **kontejneru** existuje pro aplikaci (jak vytvořili výše). Příklad: `iCloud.com.your-company.AppName`
@@ -793,7 +793,7 @@ namespace DocPicker
 ```
 
 > [!IMPORTANT]
-> **Poznámka:**: ve výše uvedeném kódu obsahuje kód z výše uvedené části Discovering a výpis dokumentů. Zobrazí se zde jako celek, jak se objevuje v aplikaci skutečný. Pro jednoduchost, tento příklad funguje jeden, pevně souborem (`test.txt`) jenom.
+> Ve výše uvedeném kódu obsahuje kód z výše uvedené části Discovering a výpis dokumentů. Zobrazí se zde jako celek, jak se objevuje v aplikaci skutečný. Pro jednoduchost, tento příklad funguje jeden, pevně souborem (`test.txt`) jenom.
 
 Výše uvedený kód zpřístupňuje několik zástupce serveru služby iCloud jednotky je mohli snadněji pracovat ve zbývající části aplikace.
 
@@ -902,7 +902,7 @@ if (presentationPopover!=null) {
 ```
 
 > [!IMPORTANT]
-> **Poznámka:**: vývojář musí volat `StartAccessingSecurityScopedResource` metodu `NSUrl` můžete získat přístup k externím dokumentu. `StopAccessingSecurityScopedResource` Musí být volána metoda uvolnit zámek zabezpečení při načtení dokumentu.
+> Vývojář musí volat `StartAccessingSecurityScopedResource` metodu `NSUrl` můžete získat přístup k externím dokumentu. `StopAccessingSecurityScopedResource` Musí být volána metoda uvolnit zámek zabezpečení při načtení dokumentu.
 
 ### <a name="sample-output"></a>Vzorový výstup
 
@@ -1134,7 +1134,7 @@ Na Mac OS X Yosemite, Apple neposkytuje zpětné kompatibility, je potřeba migr
 Po migraci uživatelský účet na serveru služby iCloud jednotky pouze zařízení pomocí Icloudu disku bude moct rozšířit změny na dokumenty v těchto zařízeních.
 
 > [!IMPORTANT]
-> **Poznámka:**: vývojáři měli vědět, že nové funkce popsaná v tomto článku jsou k dispozici pouze pokud účet uživatele se migroval na serveru služby iCloud jednotky. 
+> Vývojáři měli vědět, že nové funkce popsaná v tomto článku jsou k dispozici pouze pokud účet uživatele se migroval na serveru služby iCloud jednotky. 
 
 ## <a name="summary"></a>Souhrn
 

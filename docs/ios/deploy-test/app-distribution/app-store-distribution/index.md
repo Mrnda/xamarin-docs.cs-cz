@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: 2ee98b48feb8bc1e3431d796a7ca07a6c2e74790
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 25c4cb980f77880ae690916ec45be3cd12a3cf10
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="app-store-distribution"></a>Distribuce obchodu s aplikacemi
 
@@ -37,7 +37,7 @@ Bez ohledu na to, jak budete chtít verzi aplikace pro Xamarin.iOS, budete potř
 Můžete vybrat stejné **ID aplikace** a **zařízení** které jste použili pro váš vývojový profil pro zřizování, ale pokud jste již nemáte, budete muset vytvořit certifikát distribuční k identifikaci vaší organizace při odesílání aplikace k obchodu s aplikacemi. Kroky k vytvoření certifikátu distribučního jsou popsané v následující části.
 
 > [!NOTE]
->  Poznámka: Pouze agenty týmu a správci můžete vytvořit distribuce certifikátů a profilů zřizování.
+> Distribuce certifikátů a profilů zřizování, můžete vytvořit pouze agenty týmu a správci.
 
 <a name="creatingcertificate" />
 

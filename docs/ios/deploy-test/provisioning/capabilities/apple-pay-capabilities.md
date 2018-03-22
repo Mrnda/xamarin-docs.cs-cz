@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: cc2c12ce2826f0b66cdf49a9a4df84d7f67f7713
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 655e9fc81d7079c355998f0da7b41ea7cc778c3f
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="apple-pay-capabilities"></a>Možnosti platím Apple
 
@@ -116,7 +116,7 @@ Vytvoření certifikátu, postupujte podle následujících kroků:
     ![Vytvoření žádosti o podepsání certifikátu](apple-pay-capabilities-images/image45.png)
     
     > [!IMPORTANT]
-> Pokud používáte poskytovatele platebních služeb pro dotykový identifikátor, takové JudoPay nebo Stripe, budou vám může poskytnout správně formátovaný CSR, který můžete použít v tomto okamžiku. Informace o vyžádání to nachází na [JudoPay](https://www.judopay.com/docs/version-52/apple-pay/getting-started/#create-an-apple-pay-certificate) a [Stripe](https://stripe.com/docs/apple-pay/apps#csr) lokalit. Pokud chcete vytvořit vlastní CSR, postupujte podle kroků 5 až 8 níže. Jakmile máte CSR, přejděte ke kroku 9.
+    > Pokud používáte poskytovatele platebních služeb pro dotykový identifikátor, takové JudoPay nebo Stripe, budou vám může poskytnout správně formátovaný CSR, který můžete použít v tomto okamžiku. Informace o vyžádání to nachází na [JudoPay](https://www.judopay.com/docs/version-52/apple-pay/getting-started/#create-an-apple-pay-certificate) a [Stripe](https://stripe.com/docs/apple-pay/apps#csr) lokalit. Pokud chcete vytvořit vlastní CSR, postupujte podle kroků 5 až 8 níže. Jakmile máte CSR, přejděte ke kroku 9.
 
 5.  Otevřete aplikaci přístup do řetězce klíčů a přejděte do **přístup do řetězce klíčů > certifikací > žádosti o certifikát od certifikační autority:** 
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 33e27043c3738c5213b17786e5a88fb30a7fc017
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e868c0ee71688e208c5217d9f5a89ea3acec988c
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="speech-recognition"></a>Rozpoznávání řeči
 
@@ -127,7 +127,7 @@ K poskytování požadované `NSSpeechRecognitionUsageDescription` klíče v `In
 -----
 
 > [!IMPORTANT]
-> **Poznámka:** nedaří zadejte některý z výše uvedeného `Info.plist` klíče (`NSSpeechRecognitionUsageDescription` nebo `NSMicrophoneUsageDescription`) může způsobit selhání bez upozornění při pokusu o přístup k rozpoznávání řeči nebo mikrofon za provozu Audio aplikace.
+> Nedaří se zadat buď z výše uvedených `Info.plist` klíče (`NSSpeechRecognitionUsageDescription` nebo `NSMicrophoneUsageDescription`) může způsobit selhání bez upozornění při pokusu o přístup k rozpoznávání řeči nebo mikrofon za provozu Audio aplikace.
 
 
 
@@ -186,7 +186,7 @@ namespace MonkeyTalk
 A `SFSpeechRecognizerAuthorizationStatus` se vrátí výsledek `RequestAuthorization` rutina zpětného volání metody, které je možné provádět akci podle oprávnění uživatele. 
 
 > [!IMPORTANT]
-> **Poznámka:** Apple naznačuje, počkejte, až uživatel bylo spuštěno akce v aplikaci, která vyžaduje rozpoznávání řeči před vyžádáním toto oprávnění.
+> Apple navrhuje, počkejte, až uživatel bylo spuštěno akce v aplikaci, která vyžaduje rozpoznávání řeči před vyžádáním toto oprávnění.
 
 ### <a name="recognizing-pre-recorded-speech"></a>Rozpozná předem zaznamenané řeči
 
@@ -373,7 +373,7 @@ RecognitionTask.Cancel ();
 Je důležité k volání `RecognitionTask.Cancel` Pokud uživatel zruší překlad pro uvolnění paměti a procesoru v zařízení.
 
 > [!IMPORTANT]
-> **Poznámka:** selhání zajistit `NSSpeechRecognitionUsageDescription` nebo `NSMicrophoneUsageDescription` `Info.plist` klíče může způsobit selhání bez upozornění při pokusu o přístup k rozpoznávání řeči nebo mikrofon za provozu Audio aplikace (`var node = AudioEngine.InputNode;`). Najdete v tématu **poskytuje popis využití** části výše pro další informace.
+> Nedaří se poskytují `NSSpeechRecognitionUsageDescription` nebo `NSMicrophoneUsageDescription` `Info.plist` klíče může způsobit selhání bez upozornění při pokusu o přístup k rozpoznávání řeči nebo mikrofon za provozu Audio aplikace (`var node = AudioEngine.InputNode;`). Najdete v tématu **poskytuje popis využití** části výše pro další informace.
 
 ## <a name="speech-recognition-limits"></a>Omezení rozpoznávání řeči
 

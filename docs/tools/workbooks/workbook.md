@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/30/2017
-ms.openlocfilehash: c111d2f873270eab78eee92edc3d884d1e92fdd8
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 69c4b25e17c31d57701f99e84f6f686c65dc7028
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="interactive-workbooks"></a>Interaktivní sešity
 
@@ -32,7 +32,7 @@ Okně pro úpravu kódu poskytuje doplňování kódu, barevné zvýrazňování
 
 [ ![](workbook-images/inspector-0.6.0-repl-small.png "Okně pro úpravu kódu poskytuje doplňování kódu, barevné zvýrazňování syntaxe, vložené diagnostiky za provozu a podpora Víceřádkový – příkaz")](workbook-images/inspector-0.6.0-repl.png#lightbox)
 
-Sešity Xamarin jsou uloženy ve `.workbook` souboru, který je soubor CommonMark se některá metadata v horní části (najdete v části [typy souborů sešitů](#Workbooks_Files_Types) další podrobnosti o tom, jak lze uložit sešity).
+Sešity Xamarin jsou uloženy ve `.workbook` souboru, který je soubor CommonMark se některá metadata v horní části (najdete v části [typy souborů sešitů](#workbooks-files-types) další podrobnosti o tom, jak lze uložit sešity).
 
 ### <a name="nuget-package-support"></a>Balíček NuGet podpory
 
@@ -132,7 +132,7 @@ Musí obsahovat adresář `index.workbook` souboru, který je sešit skutečným
 Pokud jako prostý text `.workbook` soubor, který odkazuje na prostředky z jeho stejný adresář je otevřen v sešitech 0.99.3 nebo novější, při jeho uložení, se převede do `.workbook` balíčku. To platí na Mac a Windows.
 
 > [!NOTE]
-> **Poznámka:** uživatele Windows se otevře `package.workbook\index.workbook` souboru přímo, ale balíček budou chovat jinak stejně jako na macu.
+> Uživatelé s Windows se otevře `package.workbook\index.workbook` souboru přímo, ale balíček budou chovat jinak stejně jako na macu.
 
 ### <a name="archives"></a>Archivy
 

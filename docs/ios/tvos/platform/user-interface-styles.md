@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: b970ff3570079c0e9fba10718ddcd75fbe857f2c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e400a72f4c759662e70bfecc372134f8fda05ad6
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="new-user-interface-styles"></a>Nové uživatelské rozhraní styly
 
@@ -101,7 +101,7 @@ Kromě toho znak kolekce mají následující funkce v tvOS 10:
 - TvOS aplikace dokáže zpracovat změny znak kolekce přepsáním `TraitCollectionDidChange` metodu `UIView` nebo `UIViewController` třídy.
 
 > [!IMPORTANT]
-> **Poznámka:** časná Preview Xamarin.tvOS pro tvOS 10 nepodporuje plně `UIUserInterfaceStyle` pro `UITraitCollection` ještě. Plná podpora bude přidána v budoucí verzi.
+> Časná Preview Xamarin.tvOS pro tvOS 10 nepodporuje plně `UIUserInterfaceStyle` pro `UITraitCollection` ještě. Plná podpora bude přidána v budoucí verzi.
 
 
 
@@ -124,7 +124,7 @@ button.ForTraitCollection(dark).SetTitleColor (UIColor.White, UIControlState.Nor
 ```
 
 > [!IMPORTANT]
-> **Poznámka:** bohužel Preview Xamarin.tvOS pro tvOS 10 nepodporuje plně `UIUserInterfaceStyle` pro `UITraitCollection`, takže tento typ přizpůsobení dosud nejsou k dispozici. Plná podpora bude přidána v budoucí verzi.
+> Bohužel Preview Xamarin.tvOS pro tvOS 10 nepodporuje plně `UIUserInterfaceStyle` pro `UITraitCollection`, takže tento typ přizpůsobení dosud nejsou k dispozici. Plná podpora bude přidána v budoucí verzi.
 
 <a name="Responding-to-Theme-Changes-Directly" />
 

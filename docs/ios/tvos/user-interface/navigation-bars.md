@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 9c6bbf27d4c8227d96e372e91e1ccf2c9e841ff8
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 0f59e8f5e732a45f7e6148a08de80fffc56dbb26
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-navigation-controllers"></a>Práce s navigační řadiče
 
@@ -25,7 +25,7 @@ Navigační panely mohou být přidány do horní části pohledů pro zobrazen�
 Kromě toho k titulu (který se zobrazí v centru), navigační panely může obsahovat jeden nebo více tlačítek navigačního panelu (`UIBarButtonItem`) na levé a pravé straně panelu.
 
 > [!IMPORTANT]
-> **Poznámka:** navigační panely jsou ve výchozím nastavení zcela transparentní. Potřeba dát pozor zajistit, že obsah navigačního panelu zůstane čitelný přes obsah pod ním. Například když obsah v zobrazení tabulky nebo kolekce se posouvá společně v něm.
+> Navigační panely jsou ve výchozím nastavení zcela transparentní. Potřeba dát pozor zajistit, že obsah navigačního panelu zůstane čitelný přes obsah pod ním. Například když obsah v zobrazení tabulky nebo kolekce se posouvá společně v něm.
 
 
 
@@ -77,7 +77,7 @@ Nejjednodušší způsob, jak pracovat s navigační panely v aplikaci Xamarin.t
 -----
 
 > [!IMPORTANT]
-> **Poznámka:** , když je možné přiřadit události, jako `TouchUpInside` element uživatelského rozhraní v iOS návrháře (například UIButton), se nebude nikdy volat protože Apple TV nemá touch obrazovky nebo podporují touch události. Je třeba použít `Primary Action` události při vytváření obslužných rutin událostí pro tvOS prvky uživatelského rozhraní.
+> Když je možné přiřadit události, jako `TouchUpInside` element uživatelského rozhraní v iOS návrháře (například UIButton), se nebude nikdy volat protože Apple TV nemá touch obrazovky nebo podporují touch události. Je třeba použít `Primary Action` události při vytváření obslužných rutin událostí pro tvOS prvky uživatelského rozhraní.
 
 
 

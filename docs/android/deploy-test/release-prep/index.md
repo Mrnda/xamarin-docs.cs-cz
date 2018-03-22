@@ -6,12 +6,12 @@ ms.assetid: 9C8145B3-FCF1-4649-8C6A-49672DDA4159
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/19/2018
-ms.openlocfilehash: e26c855133d0b32676aa2d0a6084754a80055e30
-ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
+ms.date: 03/21/2018
+ms.openlocfilehash: baaa40bc89a1ca6728189563c8350f9c9f011762
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/21/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="preparing-an-application-for-release"></a>Příprava aplikace pro vydání
 
@@ -61,6 +61,9 @@ V těchto příkladech `@drawable/icon` odkazuje na soubor ikony, který se nach
 ```csharp
 [assembly: Application(Icon = "@drawable/icon")]
 ```
+
+Za normálních okolností `using Android.App` je deklarován v horní části **AssemblyInfo.cs** (obor názvů `Application` atribut je `Android.App`), ale, budete muset přidat to `using` příkaz, pokud již není přítomen.
+
 
 <a name="Versioning" />
 

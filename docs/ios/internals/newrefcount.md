@@ -6,11 +6,11 @@ ms.assetid: 0221ED8C-5382-4C1C-B182-6C3F3AA47DB1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 43b357eecb0974884db645a0b2e5c8467ddf3b5d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 723a9c4a052f7f432ba0f32ec501af3221b2696f
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="new-reference-counting-system"></a>Nový odkaz počítání systém
 
@@ -46,7 +46,7 @@ Všimněte si, že tyto možnosti, že byla odebrána v novějších verzích sa
 
     
 > [!IMPORTANT]
-> **Poznámka:** starší verzi této funkce je k dispozici, protože MonoTouch 5.2 ale byla dostupná jenom pro **sgen** jako experimentální preview. Tato verze nové a vylepšené je nyní dostupná také pro **Boehm** systém uvolňování paměti.
+> Starší verzi této funkce je k dispozici, protože MonoTouch 5.2 ale byla dostupná jenom pro **sgen** jako experimentální preview. Tato verze nové a vylepšené je nyní dostupná také pro **Boehm** systém uvolňování paměti.
 
 
 Existuje upřednostňovaly dva typy objektů, které spravuje Xamarin.iOS: ty, které byly jenom obálku kolem objekt nativní (objektů na stejné úrovni) a rozšířené nebo začlenit i metodu nové funkce (odvozené objekty) – které obvykle tak stav velmi paměti. Dříve bylo možné, že jsme může objekt sdílené s stavu posílení (například přidáním obslužnou rutinu události C#), ale, že jsme nechat objekt přejděte neregistrované a pak shromáždění. To může způsobit selhání později (například pokud modul runtime jazyka Objective-C zpětné volání do spravovaného objektu).

@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 0b8d8d08db15959a47093f255a891605a089ea00
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c55ba4fb90181aaa1aa8ec52e2fcb3e2b2cc76d0
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="table-control"></a>Ovládací prvek tabulky
 
@@ -51,7 +51,8 @@ myTable.SetNumberOfRows ((nint)rows.Count, "default");
 ```
 
 > [!IMPORTANT]
-> **Poznámka:**: řádky tabulky nejsou Virtualizovat, jako jsou v iOS. Pokuste se omezit počet řádků (Apple doporučuje méně než 20).
+> Řádky tabulky nejsou virtualizovaného, jako jsou v iOS. Pokuste se omezit počet řádků (Apple doporučuje méně než 20).
+
 Po vytvoření řádky potřebujete k naplnění jednotlivých buněk (jako je `GetCell` by se v iOS). Tento fragment kódu z [WatchTables příklad](https://developer.xamarin.com/samples/monotouch/watchOS/WatchTables/) aktualizuje popisek v jednotlivých řádcích
 
 ```csharp
@@ -62,7 +63,7 @@ for (var i = 0; i < rows.Count; i++) {
 ```
 
 > [!IMPORTANT]
-> **Poznámka:** pomocí `SetNumberOfRows` a potom ve smyčce přes pomocí `GetRowController` způsobí, že k odeslání do hodinek celou tabulku. Na další zobrazení tabulky, pokud potřebujete přidat nebo odebrat pomocí konkrétní řádky `InsertRowsAt` a `RemoveRowsAt` pro dosažení vyššího výkonu.
+> Pomocí `SetNumberOfRows` a potom ve smyčce přes pomocí `GetRowController` způsobí, že k odeslání do hodinek celou tabulku. Na další zobrazení tabulky, pokud potřebujete přidat nebo odebrat pomocí konkrétní řádky `InsertRowsAt` a `RemoveRowsAt` pro dosažení vyššího výkonu.
 
 
 ## <a name="respond-to-taps"></a>Reakce na odposlouchávání
@@ -148,7 +149,7 @@ watchOS 3 zavedla nová funkce pro tabulky: možnost Procházet stránky podrobn
 ![](table-images/table-scroll-sml.png "Příklad svislé podrobností stránkování") ![](table-images/table-detail-sml.png)
 
 > [!IMPORTANT]
-> **Upozornění:** tato funkce je aktuálně k dispozici pouze úpravou storyboard v Xcode rozhraní tvůrce.
+> Tato funkce je aktuálně k dispozici pouze úpravou storyboard v Xcode rozhraní tvůrce.
 
 Chcete-li povolit tuto funkci, vyberte `WKInterfaceTable` na návrhovou plochu a značek **svislé stránkování podrobností** možnost:
 

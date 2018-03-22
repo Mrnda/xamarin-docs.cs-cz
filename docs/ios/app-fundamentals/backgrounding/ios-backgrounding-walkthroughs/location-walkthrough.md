@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: b10894d6b18d78d682825000726c5ef2cbe5ba6b
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: dfae07d36c67c12d254cd70c22acb01b2fc1c9b0
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="walkthrough---using-background-location"></a>Návod - pomocí umístění pozadí
 
@@ -79,7 +79,7 @@ Tento návod popisuje některé klíč backgrounding koncepty, včetně registra
     - `AllowsBackgroundLocationUpdates` – To je vlastnost typu Boolean, zavedená v iOS 9, která může být nastaven na povolit aplikaci dostávat aktualizace umístění, pokud byla pozastavena.
 
     > [!IMPORTANT]
-    > **UPOZORNĚNÍ**: iOS 8 (a vyšší) taky vyžaduje položku v **Info.plist** souboru se uživateli zobrazí jako součást požadavek ověřování.
+    > iOS 8 (a vyšší) taky vyžaduje položku v **Info.plist** souboru se uživateli zobrazí jako součást požadavek ověřování.
 
 1. Přidá klíč `NSLocationAlwaysUsageDescription` nebo `NSLocationWhenInUseUsageDescription` řetězcem, který se zobrazí se uživateli na výstrahy, které vyžadují přístup k datům umístění.
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: ef4de2d544f3bcfb661b29dd90de738ae0442373
-ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
+ms.openlocfilehash: f7d27c5226741ec2b105633206ebaa0ac73d9a7b
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/21/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms Views
 
@@ -86,7 +86,7 @@ Zobrazení jsou objekty uživatelského rozhraní, jako je například popisky, 
 
 |     |     |
 | --- | --- |
-| [`Slider`](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/) Umožňuje uživateli vybrat `double` hodnotu nepřetržitá rozsah zadaný [ `Minimum` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Minimum/) a [ `Maximum` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Maximum/) vlastnosti.<br /><br />[Dokumentaci k rozhraní API](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/) | [![Příklad posuvníku](views-images/Slider.png "posuvníku příklad")](views-images/Slider-Large.png#lightbox "Příklad posuvníku")<br />[Kód jazyka C# pro tuto stránku](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SliderDemoPage.cs) / [XAML – stránka](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SliderDemoPage.xaml) |
+| [`Slider`](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/) Umožňuje uživateli vybrat `double` hodnotu nepřetržitá rozsah zadaný [ `Minimum` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Minimum/) a [ `Maximum` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Maximum/) vlastnosti.<br /><br />[Dokumentaci k rozhraní API](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/) / [průvodce](~/xamarin-forms/user-interface/slider.md) / [vzorku](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos) | [![Příklad posuvníku](views-images/Slider.png "posuvníku příklad")](views-images/Slider-Large.png#lightbox "Příklad posuvníku")<br />[Kód jazyka C# pro tuto stránku](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SliderDemoPage.cs) / [XAML – stránka](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SliderDemoPage.xaml) |
 |     |     |
 
 ### <a name="stepper"></a>Krokovač

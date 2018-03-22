@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 996723db83a1f972cce26090d1253f97b6c818d3
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 0a9b9651a735ef4300e19f5ccb231a616850d970
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="contacts-and-contactsui"></a>Kontakty a ContactsUI
 
@@ -30,7 +30,7 @@ Dva nové architektury obsahují následující funkce:
 [![](contacts-images/add01.png "Příklad listu obraťte se na zařízení s iOS")](contacts-images/add01.png#lightbox)
 
 > [!IMPORTANT]
-> **Poznámka:** existující `AddressBook` a `AddressBookUI` rozhraní používá iOS 8 (a před) jsou zastaralé v iOS 9 a by měla být nahrazená s novým `Contacts` a `ContactsUI` architektury co nejdříve pro jakékoli existující Xamarin.iOS aplikace. Nové aplikace by měla být napsaných pro nové architektury.
+> Existující `AddressBook` a `AddressBookUI` rozhraní používá iOS 8 (a před) jsou zastaralé v iOS 9 a by měla být nahrazená s novým `Contacts` a `ContactsUI` architektury co nejdříve pro jakékoli existující aplikaci Xamarin.iOS. Nové aplikace by měla být napsaných pro nové architektury.
 
 
 
@@ -144,7 +144,7 @@ var predicate = CNContact.GetPredicateForContacts("Appleseed");
 ```
 
 > [!IMPORTANT]
-> **Poznámka:** obecné a složené predikáty nepodporuje rozhraní kontakty.
+> Obecné a složené predikáty nepodporuje rozhraní kontakty.
 
 Například pro limit načtení jenom **GivenName** a **FamilyName** vlastnosti kontaktu, použijte následující kód:
 
@@ -190,7 +190,7 @@ if (!contact.IsKeyAvailable(CNContactOption.PostalAddresses)) {
 ```
 
 > [!IMPORTANT]
-> **Poznámka:** `GetUnifiedContact` a `GetUnifiedContacts` metody `CNContactStore` třída _pouze_ vrátit a částečné obraťte se na jiné vlastnosti vyžádaný z načítání klíče zadané.
+> `GetUnifiedContact` a `GetUnifiedContacts` metody `CNContactStore` třída _pouze_ vrátit a částečné obraťte se na jiné vlastnosti vyžádaný z načítání klíče zadané.
 
 ### <a name="unified-contacts"></a>Jednotná kontaktů
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/19/2018
-ms.openlocfilehash: 54ec41636f491708ea72585d3889fbbca85c8eb1
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: e07a6b72f2821e8cc65e0b0d690dbadf1a6713b6
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="launch-screens"></a>Spusťte obrazovky
 
@@ -179,7 +179,7 @@ V iOS 8 (nebo novější) můžete vytvořit vývojář speciální Unified Stor
 -----
 
 > [!NOTE]
-> **Poznámka:**: scénáře A použít jako obrazovky spusťte _musí_ zahrnout pouze jednoduché, integrované prvky uživatelského rozhraní a **nelze** všechny výpočty nemusí být odvozen od třídy, vlastní.
+> Scénáře, použít jako obrazovky spusťte _musí_ zahrnout pouze jednoduché, integrované prvky uživatelského rozhraní a **nelze** všechny výpočty nemusí být odvozeny od vlastní třídy.
 
 Další informace o vytvoření obrazovky spustit s scénáře se Unified, najdete v tématu [dynamické spusťte obrazovky](~/ios/user-interface/storyboards/unified-storyboards.md#dynamic-launch-screens) části [Unified scénářů](~/ios/user-interface/storyboards/unified-storyboards.md) průvodce.
 

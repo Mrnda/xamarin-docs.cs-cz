@@ -8,16 +8,16 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: dfbc976da109a3813b8d7abd85adafbc9bb94fa0
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c5b89570fdd3df80d39c6621fcd12a23babed9ee
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="deploying-to-the-app-store"></a>Nasazení do obchodu s aplikacemi
 
 > [!IMPORTANT]
->  Nezapomeňte si přečíst [společnosti Apple sledovat Kit odeslání průvodce](https://developer.apple.com/app-store/watch/)a zobrazit [Poradce při potížích s](#Troubleshooting) oddíl pro všechny problémy, může mít.
+> Nezapomeňte si přečíst [společnosti Apple sledovat Kit odeslání průvodce](https://developer.apple.com/app-store/watch/)a zobrazit [Poradce při potížích s](#Troubleshooting) oddíl pro všechny problémy, může mít.
 
 - Ujistěte se, že máte:
   - [**Profily zřizování distribuční** ](#provisioning) vytvořené pro projekty.
@@ -177,7 +177,7 @@ is missing icon with name pattern '*44x44@2x.png' (Home Screen 42mm).
 Zajistěte, abyste měli nejnovější verzi sady Visual Studio pro Mac a že vaše **AppIcons.appiconset** obsahuje kompletní sadu bitové kopie. Pokud tato chyba se přesto zobrazuje, zobrazte si zdroj **Contents.json** a ověřit tak obsahuje položku pro všechny požadované obrázky. Případně, zkontrolujte, že používáte nejnovější verzi Xamarin, odstranit a znovu vytvořit **AppIcons.appiconset**.
 
 > [!IMPORTANT]
-> Poznámka: Je známého problému v sadě Visual Studio pro podporu ikonu Sledování pro Mac: očekává, že obrázek 88 x 88 pixelů pro  **29x29@3x**  bitové kopie (což by měl být pixelů 87 x 87).
+> Není známého problému v sadě Visual Studio pro podporu ikonu Sledování pro Mac: očekává, že obrázek 88 x 88 pixelů pro  **29x29@3x**  bitové kopie (což by měl být pixelů 87 x 87).
 
 
 Nelze vyřešit v sadě Visual Studio pro Mac – buď upravit zdroj obrázku v Xcode nebo ručně upravit, pokud **Contents.json** souboru (tak, aby odpovídaly [této ukázce](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132)).
@@ -196,7 +196,7 @@ Může se zobrazit tato během ověření a odeslání, nebo automatizované e-m
 Ensure you are using the latest version of Xcode and Xamarin's tools.
 -->
 > [!IMPORTANT]
-> Poznámka: Je potřeba **archivu** vaší aplikace v sadě Visual Studio pro Mac a potom přepnout na Xcode 6.2 + ověření a odeslat do iTunes připojit.
+> Je nutné **archivu** vaší aplikace v sadě Visual Studio pro Mac a potom přepnout na Xcode 6.2 + ověření a odeslat do iTunes připojit.
 
 
 Použijte kanál stabilní Xamarin a Xcode 6.2 +.

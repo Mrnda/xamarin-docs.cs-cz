@@ -9,11 +9,11 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 82bcd29a201be01bc8123e313e5a76b82668cb85
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: b8d3fc920610b357520dfebddb79492c44d4781c
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="stack-view"></a>Zobrazení zásobníku
 
@@ -62,7 +62,7 @@ Kde:
 Při práci se zobrazením zásobníku, si můžete představit **zarovnání** jako **X** a **Y** umístění dílčí zobrazení a **distribuční** jako **Výška** a **šířka**.
 
 > [!IMPORTANT]
-> **Poznámka:** `UIStackView` slouží jako kontejner bez vykreslování zobrazení a jako takový není vykreslován na plátno, jako ostatní měly podtřídy `UIView`. Nastavení vlastností, jako například `BackgroundColor` nebo přepsání `DrawRect` nebude mít žádný vliv visual.
+> `UIStackView` slouží jako kontejner bez vykreslování zobrazení a jako takový není vykreslován na plátno, jako ostatní měly podtřídy `UIView`. Nastavení vlastností, jako například `BackgroundColor` nebo přepsání `DrawRect` nebude mít žádný vliv visual.
 
 Dál rozložení aplikace rozhraní přidáním štítek, ImageView, dvě tlačítka a vodorovné zásobníku zobrazení tak, aby vypadá přibližně takto:
 
@@ -209,7 +209,7 @@ Pokud `BaselineRelativeArrangement` vlastnost je `true`, dílčích zobrazení j
  - Vodorovné zobrazení zásobníku použije pro první a poslední základní jeho nejvyšší dílčí zobrazení. Pokud je nejvyšší zobrazení také zobrazení zásobníku, použije jeho nejvyšší dílčí zobrazení jako směrného plánu.
 
 > [!IMPORTANT]
-> **Poznámka:** zarovnání účaří nefunguje roztažené nebo komprimovaných dílčí zobrazení velikostí směrného plánu budou vypočítány na nesprávné umístění. Pro zarovnání směrného plánu, zkontrolujte, zda dílčí zobrazení **výška** odpovídá vnitřní zobrazení obsahu **výška**.
+> Zarovnání účaří nefunguje velikostí roztažené nebo komprimovaných dílčí zobrazení, jako směrného plánu budou vypočítány na nesprávné umístění. Pro zarovnání směrného plánu, zkontrolujte, zda dílčí zobrazení **výška** odpovídá vnitřní zobrazení obsahu **výška**.
 
 ### <a name="common-stack-view-uses"></a>Běžná použití zobrazení zásobníku
 

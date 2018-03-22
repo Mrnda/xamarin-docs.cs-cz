@@ -9,11 +9,11 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 34b51f784b549caa0dda2eeda066bb39dfc13020
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: 0783372cd36d5a4984d09ee055257d525e7becb1
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="multitasking-for-ipad"></a>Multitasking pro iPad
 
@@ -33,7 +33,7 @@ Existuje několik věcí, které je třeba zvážit při [podpora multitasking v
 - [Vlastní Hardware klávesové zkratky](#Custom-Hardware-Keyboard-Shortcuts)
 - [Správa prostředků](#Resource-Management-Considerations)
 
-Jako vývojář aplikace můžete také [výslovný nesouhlas multitasking](#Opting-Out-of-Multitasking), včetně [zakázání přehrávání videa PIP](#Disabling-PIP-Video-Playback).
+Jako vývojář aplikace můžete také [vyjádření výslovného nesouhlasu multitasking](#Opting-Out-of-Multitasking), včetně [zakázání přehrávání videa PIP](#Disabling-PIP-Video-Playback).
 
 Tento článek popisuje kroky potřebné k zajistit, aby vaše aplikace Xamarin.iOS běží správně zvládl a postupy pro vyjádření výslovného nesouhlasu multitasking, pokud není dobrou přizpůsobit pro vaši aplikaci.
 
@@ -205,7 +205,7 @@ Podrobnosti najdete v ukázkovém [MultiTask aplikace](http://developer.xamarin.
 
 I pro aplikace, které už používáte iOS 8 na průvodci návrhu a osvědčené postupy Správa efektivní prostředků stále může být problém. Aplikace v iOS 9, nebudou mít výhradní použití procesoru nebo paměti, jiné systémové prostředky.
 
-V důsledku toho musí systém doladit efektivně využívat systémové prostředky v aplikaci Xamarin.iOS nebo podstupuje ukončení v situacích nedostatku paměti. To platí stejnou měrou aplikací, které výslovný nesouhlas multitasking, od druhý může aplikace stále spustit v panelu Vysuňte přes nebo obrázek v okně Obrázek vyžadujících další prostředky nebo způsobuje obnovovací frekvence klesne pod 60 snímků za sekundu.
+V důsledku toho musí systém doladit efektivně využívat systémové prostředky v aplikaci Xamarin.iOS nebo podstupuje ukončení v situacích nedostatku paměti. To platí stejnou měrou aplikací, které vyjádření výslovného nesouhlasu multitasking, od druhý může aplikace stále spustit v panelu Vysuňte přes nebo obrázek v okně Obrázek vyžadujících další prostředky nebo způsobuje obnovovací frekvence klesne pod 60 snímků za sekundu.
 
 Vezměte v úvahu následující akce uživatele a jejich důsledky:
 
@@ -223,19 +223,16 @@ Najdete v článku společnosti Apple [Průvodce efektivitu energie pro aplikace
 
 <a name="Opting-Out-of-Multitasking" />
 
-## <a name="opting-out-of-multitasking"></a>Vyjádření výslovného Out multitasking
+## <a name="opting-out-of-multitasking"></a>Zrušení Multitasking
 
 Zatímco Apple naznačuje, že všechny aplikace systému iOS 9 podporují multitasking, existuje může být velmi konkrétní důvody pro aplikaci není příliš, například hry nebo fotoaparát aplikací, které vyžadují na celé obrazovce fungovala správně.
 
-Pro aplikaci Xamarin.iOS výslovný nesouhlas s spuštěn v buď posuňte na panelu nebo v režimu rozdělení zobrazení, úpravy projektu **Info.plist** soubor a zkontrolujte **vyžaduje celé obrazovky**:
+Pro aplikace Xamarin.iOS pro vyjádření výslovného nesouhlasu spuštěn v buď posuňte na panelu nebo v režimu zobrazení rozdělení úpravy projektu **Info.plist** soubor a zkontrolujte **vyžaduje celé obrazovky**:
 
-[![](multitasking-images/fullscreen01.png "Vyjádření výslovného Out multitasking")](multitasking-images/fullscreen01.png#lightbox)
+[![](multitasking-images/fullscreen01.png "Zrušení Multitasking")](multitasking-images/fullscreen01.png#lightbox)
 
 > [!IMPORTANT]
-> **Poznámka:** při Opting-Out multitasking zabrání aplikace spuštěna v posuňte se nebo rozdělení zobrazení, nemá **není** zabránit spouštění v posuňte se nebo obrázku v video obrázek ze zobrazení spolu s jinou aplikací vaší aplikace.
-
-
-
+> Při zrušení multitasking zabrání aplikace spuštěna v posuňte se nebo rozdělení zobrazení, se nezabrání jiné aplikace spuštěná v posuňte se nebo obrázek obrázku videa z zobrazení spolu s vaší aplikace.
 
 <a name="Disabling-PIP-Video-Playback" />
 
@@ -243,7 +240,7 @@ Pro aplikaci Xamarin.iOS výslovný nesouhlas s spuštěn v buď posuňte na pan
 
 Ve většině případů by měla aplikace povolí uživateli hrát žádné video obsah, který se zobrazí v obrázku v obrázku plovoucího okna. Může však nastat situace, kde to nemusí být žádoucí, jako je například herní vyjmutý scény videa.
 
-Pokud chcete odhlásit přehrávání videa PIP, proveďte následující ve vaší aplikaci:
+Pro vyjádření výslovného nesouhlasu přehrávání videa PIP, proveďte následující ve vaší aplikaci:
 
  - Pokud používáte `AVPlayerViewController` zobrazit video, nastavte `AllowsPictureInPicturePlayback` vlastnost `false`.
  - Pokud používáte `AVPlayerLayer` zobrazíte video nemáte doložit `AVPictureInPictureController`.

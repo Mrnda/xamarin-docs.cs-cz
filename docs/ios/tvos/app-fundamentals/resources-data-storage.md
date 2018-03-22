@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 768ee4a2f33475b5327bf9c0fd006f1da580d836
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e72c013516de5bcf97e2e9f58a7a4f5cd87c730b
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="resources-and-data-storage"></a>Prostředky a úložiště dat
 
@@ -35,7 +35,7 @@ Dočasné mezipaměti adresáře, který jeho další prostředky a prostředky 
 Aplikaci nelze v důsledku toho spoléhají na stažený obsah, který je k dispozici při příštím jeho spuštění. Aplikace Xamarin.tvOS vždy zkontrolujte existenci požadované prostředky a podle potřeby je stáhnout.
 
 > [!IMPORTANT]
-> **Poznámka:** při stahování další prostředky a prostředky podle potřeby, Apple varuje před využívání veškeré místo v mezipaměti vaší aplikace, protože může vést k neočekávaným výsledkům.
+> Při stahování další prostředky a prostředky podle potřeby, Apple varuje proti využívání veškeré místo v mezipaměti vaší aplikace, protože může vést k neočekávaným výsledkům.
 
 
 
@@ -70,7 +70,7 @@ Tyto prostředky mohou nadále do mezipaměti na Apple TV v rámci více spustí
 Xcode použijete k vytvoření sady související obsah (například všechny prostředky pro herní úroveň 2) přidružené k udělení značky prostředku. Později vaše aplikace bude požadovat na vyžádání prostředků tak, že zadáte tuto značku prostředků. Aplikace by měl k dispozici uživatelského rozhraní pro uživatele s oznámením, že obsah se stahuje. Další informace najdete v tématu společnosti Apple [Průvodce prostředky na vyžádání](https://developer.apple.com/library/prerelease/tvos/documentation/FileManagement/Conceptual/On_Demand_Resources_Guide/index.html#//apple_ref/doc/uid/TP40015083).
 
 > [!IMPORTANT]
-> **Poznámka:** byste měli věnovat narazila na rovnováhu mezi počet, kolikrát má aplikace ke stažení na vyžádání prostředky a velikosti jednotlivých souborů ke stažení. Uživatel může Pochopením s vaší aplikací, pokud hraní her přerušení neustále stáhnout nový obsah, nebo pokud jeden stahování trvá příliš dlouho.
+> Potřeba dát pozor narazila na rovnováhu mezi počet, kolikrát má aplikace ke stažení na vyžádání prostředky a velikosti jednotlivých souborů ke stažení. Uživatel může Pochopením s vaší aplikací, pokud hraní her přerušení neustále stáhnout nový obsah, nebo pokud jeden stahování trvá příliš dlouho.
 
 
 
@@ -85,7 +85,7 @@ Tento článek má zahrnutých umístit do aplikace Xamarin.tvOS systémem tvOS 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Ukázky tvOS](https://developer.xamarin.com/samples/tvos/all/)
+- [Ukázky pro tvOS](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS lidské rozhraní příručky](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [Průvodce programováním aplikace pro tvOS](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

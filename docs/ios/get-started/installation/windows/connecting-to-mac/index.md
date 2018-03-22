@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: c60927593f062c8ac9694d889ffbf581c09bab82
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e4f7b55fa859473e84298151bc08878bc2161192
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="connecting-to-the-mac"></a>Připojení k počítači Mac
 
@@ -39,7 +39,7 @@ Následující diagram ukazuje jednoduchý přehled pracovní postup vývoje Xam
 [![pracovní postup vývoje pro iOS](images/xma2.png)](images/xma2.png#lightbox)
 
 > [!IMPORTANT]
->  Visual Studio ve skutečnosti spouští samostatný proces MSBuild k sestavení projektů. Tento proces vytvoří nové připojení k počítači Mac, což znamená, že se ve skutečnosti dvě připojení SSH ze systému Windows pro Mac při sestavení sady Visual Studio. Sestavování z [příkazového řádku](#commandline) pouze vytvoří jeden proces MSBuild. Pro jednoduchost tohoto diagramu jsou reprezentované pomocí jedné šipku jednoduše všechna připojení.
+> Visual Studio ve skutečnosti spouští samostatný proces MSBuild k sestavení projektů. Tento proces vytvoří nové připojení k počítači Mac, což znamená, že se ve skutečnosti dvě připojení SSH ze systému Windows pro Mac při sestavení sady Visual Studio. Sestavování z [příkazového řádku](#commandline) pouze vytvoří jeden proces MSBuild. Pro jednoduchost tohoto diagramu jsou reprezentované pomocí jedné šipku jednoduše všechna připojení.
 
 ## <a name="requirements"></a>Požadavky
 
@@ -53,7 +53,7 @@ Požadavky na systém najdete v [Xamarin.iOS instalace v systému Windows](~/ios
 #### <a name="compatibility"></a>Kompatibilita
 
 > [!IMPORTANT]
->  Počítače Windows musí používat stejnou verzi nástroje Xamarin.iOS jako Mac, k němuž je připojen. K zajištění, že to platí:                                                    
+> Počítače Windows musí používat stejnou verzi nástroje Xamarin.iOS jako Mac, k němuž je připojen. K zajištění, že to platí:                                                    
 >                                                                                                                 
 > - **Visual Studio 2015 a starší**: Ujistěte se, že jste ve stejném [kanálu aktualizace](https://developer.xamarin.com/recipes/cross-platform/ide/change_updates_channel/) jako Visual Studio for Mac.
 >                                                                                                                 
@@ -113,7 +113,7 @@ Vyberte Macu dvojím kliknutím na připojení k němu. Při prvním připojení
 Agent použije tyto přihlašovací údaje k vytvoření nového připojení SSH pro Mac. Pokud se aktivace podaří, vytvoří se klíč SSH a bude [zaregistrován](#commandline) v `authorized_keys` soubor na tomto Mac. V následných připojeních bude používat agent soubor uživatelského jména a klíče pro připojení k hostiteli naposledy připojených známé sestavení.
 
 > [!NOTE]
->  **Poznámka:**: je nutné použít _uživatelské jméno_ a ne _celý název_ při zadávání přihlašovacích údajů.  Je toto můžete zjistit pomocí `whoami` v terminálu.  Například z na následující snímek obrazovky, název účtu budou **amyb** a není **Amy popáleniny**:
+> Je nutné použít _uživatelské jméno_ a ne _celý název_ při zadávání přihlašovacích údajů.  Je toto můžete zjistit pomocí `whoami` v terminálu.  Například z na následující snímek obrazovky, název účtu budou **amyb** a není **Amy popáleniny**:
 >
 > ![Hledání uživatelské jméno v terminálu aplikace](images/image5.png)
 

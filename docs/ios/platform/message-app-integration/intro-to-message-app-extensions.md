@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: d9b6b5a778e0e4d5092d1036109f82896acf639b
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 083920aba3c8dc83b157b591e194c43935dcc566
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="message-app-extension-basics"></a>Základní informace o rozšíření aplikace zpráv
 
@@ -87,7 +87,7 @@ Obrázek, který má být zahrnut v sadě štítku musí splňovat následujíc�
 - Bitové kopie nemůže být menší než 100 x 100 bodů nebo větší této 206 x 206 body.
 
 > [!IMPORTANT]
-> **Poznámka:** štítku Image by měla být vždy uvedených v `@3x` řešení v rozsahu 300 x 300 k 618 x 618 pixelů. Systém automaticky vygeneruje `@2x` a `@1x` verze za běhu podle potřeby.
+> Obrázky štítku by měl být vždy uvedených v `@3x` řešení v rozsahu 300 x 300 k 618 x 618 pixelů. Systém automaticky vygeneruje `@2x` a `@1x` verze za běhu podle potřeby.
 
 Apple navrhuje testování prostředky Image štítku proti různých jiné barevnou pozadí (například prázdné, černé, red, žlutý a více stejné barvy) a více fotografie, zajistit, že vypadat nejlépe ve všech situacích možné.
 

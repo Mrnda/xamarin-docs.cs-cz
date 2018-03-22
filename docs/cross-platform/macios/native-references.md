@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 5a33993bdef16191b66127dcc68c57661636c0f8
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ea635dfd5b7946c6d394d72bffbb328255b56b97
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="native-references"></a>Nativní odkazy
 
@@ -22,7 +22,7 @@ _Nativní odkazy vám dává možnost pro vložení nativní rozhraní do projek
 Od sady iOS 8.0 ji bylo možné vytvořit představuje embedded rozhraní sdílet kód mezi přípony aplikace a hlavní aplikace v Xcode. Pomocí funkce nativní referenční dokumentace ho bude možné využívat tyto vložené architektury (vytvořeny s Xcode) v Xamarin.iOS.
  
 > [!IMPORTANT]
-> **Poznámka:** nebude možné vytvořit vložený rozhraní z jakéhokoli typu Xamarin.iOS nebo Xamarin.Mac projektů, nativní odkazy Povolit jenom pro používání existující nativní rozhraní (Objective-C).
+> Nebude možné vytvořit vložený rozhraní z jakéhokoli typu Xamarin.iOS nebo Xamarin.Mac projektů, nativní odkazy Povolit jenom pro používání existující nativní rozhraní (Objective-C).
 
 
 

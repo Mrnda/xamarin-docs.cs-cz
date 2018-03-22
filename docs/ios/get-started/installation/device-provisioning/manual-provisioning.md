@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 07/15/2017
-ms.openlocfilehash: e42b9d0b5eb64c17c96b66c9dbae7582551a06a0
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: ecda5823636a1b2d7e31a39e29f1d46cdf7118b6
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="manual-provisioning"></a>Ruční zřizování
 
@@ -85,7 +85,7 @@ Profil vývojáře obsahuje certifikáty, jejich přidružených klíčů a vše
 -----
 
 > [!WARNING]
-> **Poznámka:** ztráty certifikát a přidružené klíče může být velmi rušivým zásahům, bude vyžadovat odvolání existujících certifikátů a znovu zřizování všechny přidružené zařízení, včetně těch, které registrované pro ad-hoc nasazení. Po nastavení úspěšně vývoj certifikáty, exportujte záložní kopii a jejich uložení na bezpečné místo. Další informace o tom, jak to udělat, najdete v sekci Export a import certifikátů a profilů [zachování certifikáty](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/MaintainingCertificates/MaintainingCertificates.html) průvodce v dokumentaci společnosti Apple.
+> Došlo ke ztrátě certifikát a přidružené klíče může být velmi rušivým zásahům, bude vyžadovat odvolání existujících certifikátů a znovu zřizování všechny přidružené zařízení, včetně těch, které registrované pro ad-hoc nasazení. Po nastavení úspěšně vývoj certifikáty, exportujte záložní kopii a jejich uložení na bezpečné místo. Další informace o tom, jak to udělat, najdete v sekci Export a import certifikátů a profilů [zachování certifikáty](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/MaintainingCertificates/MaintainingCertificates.html) průvodce v dokumentaci společnosti Apple.
 
 <a name="provisioning" />
 
@@ -209,12 +209,12 @@ Nové certifikáty nebo zřizovacích profilů budou k dispozici v sadě Visual 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 > [!IMPORTANT]
-> **Poznámka:** může být nutné zastavit a restartovat Visual Studio pro Mac, než ho bude vidět žádné nové nebo upravené certifikáty nebo profily aktualizovat Xcode.
+> Může být potřeba zastavte a restartujte Visual Studio pro Mac, než ho bude vidět žádné nové nebo upravené certifikáty nebo profily aktualizovat Xcode.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 > [!IMPORTANT]
-> **Poznámka:** může být nutné zastavit a restartovat Visual Studio, než ho bude vidět žádné nové nebo upravené certifikáty nebo profily aktualizovat Xcode.
+> Může být potřeba zastavte a restartujte Visual Studio, než ho bude vidět žádné nové nebo upravené certifikáty nebo profily aktualizovat Xcode.
 
 -----
 

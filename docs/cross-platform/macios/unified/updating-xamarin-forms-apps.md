@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 48b8d1cf8e6242fde632bceec5d482f53037a954
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d2f14510e5968ebe24bd297365416fa8aa5a0c59
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="updating-existing-xamarinforms-apps"></a>Aktualizace stávající aplikace Xamarin.Forms
 
@@ -196,7 +196,7 @@ public partial class MainPage : global::Xamarin.Forms.Platform.WinPhone.FormsApp
 
 Někdy se zobrazí chyba podobná této po aktualizaci balíček Xamarin.Forms NuGet. Ho dochází, pokud aktualizační NuGet úplně odstraní odkazy na starší verze z vaší **csproj** soubory.
 
->VAŠE\_PROJECT.csproj: Chyba: Tento projekt odkazuje na balíčky NuGet, které nejsou v tomto počítači. Povolte obnovení balíčků NuGet je chcete stáhnout.  Další informace najdete v tématu http://go.microsoft.com/fwlink/?LinkID=322105. Chybí soubor je... /.. /Packages/Xamarin.Forms.1.2.3.6257/Build/Portable-Win+net45+wp80+MonoAndroid10+MonoTouch10/Xamarin.Forms.TARGETS. (VÁŠ\_PROJEKTU)
+>VAŠE\_PROJECT.csproj: Chyba: Tento projekt odkazuje na balíčky NuGet, které nejsou v tomto počítači. Povolte obnovení balíčků NuGet je chcete stáhnout.  Další informace naleznete v tématu http://go.microsoft.com/fwlink/?LinkID=322105. Chybí soubor je... /.. /Packages/Xamarin.Forms.1.2.3.6257/Build/Portable-Win+net45+wp80+MonoAndroid10+MonoTouch10/Xamarin.Forms.TARGETS. (VÁŠ\_PROJEKTU)
 
 Chcete-li opravte tyto chyby, otevřete **csproj** soubor v textovém editoru a vyhledejte `<Target` elementy, které odkazují na starší verze Xamarin.Forms, jako je například níže uvedeného prvku. Měli byste ručně odstranit tento celý element z **csproj** souboru a uložte změny.
 
@@ -226,7 +226,7 @@ Když jsme podílí změny NuGet pro práci s podporou unifikované API, nepři�
 Do té doby, stejně jako komponenty budete potřebovat přepnout libovolný balíček NuGet jste zahrnuli ve vašem projektu a na verzi podporující rozhraní API Unified a provádět nové čisté sestavení později.
 
 > [!IMPORTANT]
-> **Poznámka:** Pokud máte chybu ve formě _"Chyba 3 nesmí obsahovat 'monotouch.dll' a"Xamarin.iOS.dll"ve stejném projektu Xamarin.iOS – 'Xamarin.iOS.dll' odkazuje explicitně, zatímco 'monotouch.dll' odkazuje ' xxx, Verze = 0.0.000, Culture = neutral, PublicKeyToken = null. "_ po převedení aplikace jednotné rozhraní API, je obvykle kvůli s komponenta nebo balíček NuGet do projektu, která nebyla aktualizována jednotné rozhraní API. Budete muset odebrat existující součásti nebo NuGet, aktualizujte na verzi podporující rozhraní API Unified a provést čisté sestavení.
+> Pokud máte chybu ve formě _"Chyba 3 nesmí obsahovat 'monotouch.dll' a"Xamarin.iOS.dll"ve stejném projektu Xamarin.iOS – 'Xamarin.iOS.dll' odkazuje explicitně, zatímco 'monotouch.dll' odkazuje ' xxx, verze = 0.0.000, Culture = neutral, PublicKeyToken = null. "_ po převedení aplikace jednotné rozhraní API, je obvykle kvůli s komponenta nebo balíček NuGet do projektu, která nebyla aktualizována jednotné rozhraní API. Budete muset odebrat existující součásti nebo NuGet, aktualizujte na verzi podporující rozhraní API Unified a provést čisté sestavení.
 
 ## <a name="enabling-64-bit-builds-of-xamarinios-apps"></a>Povolení 64bitové sestavení aplikace Xamarin.iOS
 

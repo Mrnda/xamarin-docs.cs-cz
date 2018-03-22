@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 15ee039fbfa339a9246b2a4234f37caf685c80c6
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 4bba92180e77accaa42b70843fb5dbf12c94d632
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="introduction-to-fastlane-for-ios"></a>Úvod do fastlane pro iOS
 
@@ -44,10 +44,10 @@ Obsah můžete použít jako odrazový můstek na podporu s distribuce aplikací
     error: command line tools are already installed, use "Software Update" to install updates
     ```
 
-2. Stažení nástroje fastlane z [https://download.fastlane.tools](https://download.fastlane.tools). 
+2. Stažení nástroje fastlane z [ https://download.fastlane.tools ](https://download.fastlane.tools). 
 
     > [!NOTE]
-> Je možné nainstalovat nástroje fastlane pomocí Homebrew `brew cask install fastlane` nebo prostřednictvím Rubygems (2.0 nebo novější) pomocí `sudo gem install fastlane –NV`. Ale pomocí Instalační služby zajistí, že jsou k dispozici správnými závislostmi. 
+    > Je možné nainstalovat nástroje fastlane pomocí Homebrew `brew cask install fastlane` nebo prostřednictvím Rubygems (2.0 nebo novější) pomocí `sudo gem install fastlane –NV`. Ale pomocí Instalační služby zajistí, že jsou k dispozici správnými závislostmi. 
 
 3. Nainstalovat fastlane tak, že bylo nutné je rozbalit soubor a dvakrát klikněte na `install` spustitelný soubor. Pokud dojde k chybě, který radí v souboru "nelze otevřít, protože je z neidentifikovaný vývojáře", klikněte na tlačítko OK a postupujte takto:
     - CTRL + klikněte na `install` spustitelný soubor. To se zobrazí dialogové okno níže:

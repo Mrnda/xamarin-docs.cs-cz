@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 9892577d7e0ed3d3f622f881cc51db09eb44a8fd
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 7a190014abd3386a3a675d50ce6a89101d0588a7
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="social-framework"></a>Sociální Framework
 
@@ -22,7 +22,7 @@ _Sociální Framework poskytuje jednotné rozhraní API pro interakci se sociál
 Pomocí rozhraní sociálních umožňuje aplikacím komunikovat se sociálními sítěmi z jediného rozhraní API bez nutnosti ke správě ověřování. Obsahuje systém poskytuje řadiče zobrazení pro vytváření příspěvků, jakož i abstrakci, která umožňuje využívání rozhraní API každý sociální sítě prostřednictvím protokolu HTTP.
 
 > [!IMPORTANT]
-> **Poznámka:** pro různé platformy API pro připojení k různým sociálních sítí, najdete v článku [Xamarin.Social](http://components.xamarin.com/view/xamarin.social/) součásti v úložišti součástí Xamarin.
+> Rozhraní API a platformy pro připojení k různým sociálních sítí, najdete v článku [Xamarin.Social](http://components.xamarin.com/view/xamarin.social/) součásti v úložišti součástí Xamarin.
 
 ## <a name="connecting-to-twitter"></a>Připojování ke službě Twitter
 

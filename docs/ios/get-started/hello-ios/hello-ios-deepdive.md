@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: d7a458a0a0c2da1dbb40ae7222fcd35cf7172953
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 500c3d1c6f38427a921097a0c3104254ec5cb263
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="hello-ios-deep-dive"></a>Hello, iOS podrobné informace
 
@@ -306,7 +306,7 @@ public partial class ViewController : UIViewController
 `ViewController` Nyní jednotky interakce obsahu zobrazení hierarchie přiřazených k tomuto Kontroleru zobrazení ve scénáři. Dále získáte informace o řadiče zobrazení role ve správě zobrazení zavedením procesu označovaného jako životního cyklu zobrazení.
 
 > [!NOTE]
-> **Poznámka:** pro jen visual obrazovky, která nevyžaduje zásah uživatele, **třída** vlastnost může být ponecháno prázdné v **Pad vlastnosti**. To nastaví základní třídu řadiče zobrazení jako výchozí implementaci `UIViewController`, což je vhodné, pokud neplánujete na přidání vlastní kód.
+> Pro jen visual obrazovky, která nevyžaduje zásah uživatele **třída** vlastnost může být ponecháno prázdné v **Pad vlastnosti**. To nastaví základní třídu řadiče zobrazení jako výchozí implementaci `UIViewController`, což je vhodné, pokud neplánujete na přidání vlastní kód.
 
 ### <a name="view-lifecycle"></a>Životní cyklus zobrazení
 
@@ -416,7 +416,7 @@ Simulátoru iOS je rychlý způsob, jak testovat aplikaci. Simulátor má počet
 Zařízení trvá určitou dobu zřídit a vyžaduje účet pro vývojáře Apple. [Zřizování zařízení](~/ios/get-started/installation/device-provisioning/index.md) nabízí podrobný návod na Příprava zařízení pro vývoj.
 
 > [!NOTE]
-> **Poznámka:** v současné době z důvodu požadavku od společnosti Apple, je potřeba mít vývojový certifikát nebo _podepisování identity_ sestavení kódu pro zařízení ani simulátor. Postupujte podle kroků v [zřizování zařízení Průvodce](~/ios/get-started/installation/device-provisioning/manual-provisioning.md) chcete nastavit tuto možnost.
+> V současné době z důvodu požadavku od společnosti Apple, je potřeba mít vývojový certifikát nebo _podepisování identity_ sestavení kódu pro zařízení ani simulátor. Postupujte podle kroků v [zřizování zařízení Průvodce](~/ios/get-started/installation/device-provisioning/manual-provisioning.md) chcete nastavit tuto možnost.
 
 Po zřízení zařízení můžete nasadit do ní zapojením do změna cíl v panelu nástrojů sestavení na zařízení iOS a stisknutím klávesy **spustit** ( **přehrání**) vidíte na následujícím snímku obrazovky:
 

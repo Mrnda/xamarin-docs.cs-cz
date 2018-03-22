@@ -9,11 +9,11 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 6e0eebef2404ce3f117fe897d456f3ef78a8f585
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: ccd83f4b31da555aa9c8ec34501a8656ce0a5032
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="ios-extensions"></a>iOS rozšíření
 
@@ -131,7 +131,7 @@ Kromě toho rozšíření projektu má následující požadavky:
 Konkrétní typy rozšíření může mít větší požadavky: Například **Dnes** nebo **centru oznámení** rozšíření hlavní třída musí implementovat [INCWidgetProviding](https://developer.xamarin.com/api/type/NotificationCenter.INCWidgetProviding/).
 
 > [!IMPORTANT]
-> **Poznámka:** -li spustit projekt pomocí jedné rozšíření šablon, které aplikace Visual Studio pro Mac, bude většina (Pokud se vše) tyto požadavky zadaný a splní pro vás automaticky šablony.
+> Pokud spustíte projekt pomocí jedné rozšíření šablon, které aplikace Visual Studio pro Mac, většina (Pokud se vše) tyto požadavky bude zadaný a splněny pro vás automaticky šablonou.
 
 <a name="Walkthrough" />
 

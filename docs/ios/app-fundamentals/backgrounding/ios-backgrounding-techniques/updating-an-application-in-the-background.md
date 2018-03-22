@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: f4a18bf8f35d1a6c615c819ea90433d1eb123422
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 7f7cfcd320fcb38a9b08dfd8fe7e0fae7ff808ec
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="updating-an-application-in-the-background"></a>Aktualizaci aplikace na pozadí
 
@@ -79,7 +79,7 @@ Když máme Hotovo aktualizace obsahu, nám umožní vědět voláním dokončen
 Aplikace, které používají načíst pozadí můžete provádět volání aktualizace uživatelského rozhraní z na pozadí. Když uživatel otevře aplikaci, uživatelské rozhraní bude až datum a zobrazení nového obsahu. Tím dojde také k aktualizaci aplikace aplikace přepínači snímek, uživatel uvidí, když aplikace má nový obsah.
 
 > [!IMPORTANT]
-> **Poznámka:**: jednou `PerformFetch` je volána, aplikace má ji stáhnout nový obsah a volání obslužné rutiny blok dokončení přibližně 30 sekund. Pokud to trvá příliš dlouho, aplikace se ukončí. Zvažte použití pozadí načíst pomocí _služba přenosu na pozadí_ při stahování média nebo další velké soubory.
+> Jednou `PerformFetch` je volána, aplikace má ji stáhnout nový obsah a volání obslužné rutiny blok dokončení přibližně 30 sekund. Pokud to trvá příliš dlouho, aplikace se ukončí. Zvažte použití pozadí načíst pomocí _služba přenosu na pozadí_ při stahování média nebo další velké soubory.
 
 
 ### <a name="backgroundfetchinterval"></a>BackgroundFetchInterval
@@ -132,7 +132,7 @@ public override void DidReceiveRemoteNotification (UIApplication application, NS
 Vzdálená oznámení je třeba použít jen zřídka aktualizací s obsahem, který je zásadní význam pro funkce aplikace. Další informace o vzdálené oznámení najdete v tématu Xamarin [nabízených oznámení v iOS](~/ios/platform/user-notifications/deprecated/remote-notifications-in-ios.md) průvodce.
 
 > [!IMPORTANT]
-> **Poznámka:**: protože mechanismus aktualizace v vzdáleného oznámení je založen na pozadí načíst, musíte ji stáhnout nový obsah a volání obslužné rutiny blok dokončení během 30 sekund pro příjem oznámení aplikace nebo iOS bude Ukončete aplikaci. Vezměte v úvahu párování vzdáleného oznámení s _služba přenosu na pozadí_ při stahování média nebo další velké soubory na pozadí.
+> Protože mechanizmus aktualizací v vzdáleného oznámení je založena na pozadí načíst, musí ji stáhnout nový obsah a volání obslužné rutiny blok dokončení během 30 sekund pro příjem oznámení aplikace, nebo iOS bude ukončen aplikace. Vezměte v úvahu párování vzdáleného oznámení s _služba přenosu na pozadí_ při stahování média nebo další velké soubory na pozadí.
 
 
 ### <a name="silent-remote-notifications"></a>Tichou vzdáleného oznámení
@@ -156,7 +156,7 @@ APNs však vám umožní tichou oznámení "přilepí" spolu s normální vzdál
  [![](updating-an-application-in-the-background-images/silent.png "Pravidelných oznámení lze použít k replikaci uložené tichou oznámení z APNs na zařízení, které jsou popsány v tomto diagramu")](updating-an-application-in-the-background-images/silent.png#lightbox)
 
 > [!IMPORTANT]
-> **Poznámka:**: Apple umožňuje vývojářům odesílat tichou nabízená oznámení vždy, když aplikace vyžaduje, a umožňují APNs naplánovat jejich doručování.
+> Apple umožňuje vývojářům odesílat tichou nabízená oznámení pokaždé, když aplikace vyžaduje a umožní služby APN, naplánovat jeho doručení.
 
 
 V této části jsme jste popsané různé možnosti pro aktualizaci obsahu na pozadí ke spuštění úlohy, které se nehodí do pozadí potřeby kategorie. Nyní se podívejme se některé z těchto rozhraní API v akci.

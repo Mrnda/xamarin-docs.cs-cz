@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: ee79c79d7b3226f23851a3157e5a609d7cfc4cf4
-ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
+ms.openlocfilehash: 73f3beb87fffcb37ef3e36d54f634c3bc62da538
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-user-defaults"></a>Práce s výchozí nastavení uživatele
 
@@ -32,7 +32,7 @@ Jak jsme uvedli výše, výchozí uživatelská nastavení (`NSUserDefaults`) m�
 Když aplikace nejprve provede, `NSUserDefaults` čte klíče a hodnoty z výchozí databázi uživatele aplikace a ukládá je do paměti aby se zabránilo otevírání a čtení databáze pokaždé, když je vyžadována hodnota. 
 
 > [!IMPORTANT]
-> **Poznámka:**: Apple už doporučuje vývojáře volání `Synchronize` metoda přímo synchronizovat mezipaměť v paměti s databází. Místo toho bude automaticky zavolána v pravidelných intervalech, aby synchronizovaná s výchozí databázi uživatele mezipaměť v paměti.
+> Apple už doporučuje vývojáře volání `Synchronize` metoda přímo synchronizovat mezipaměť v paměti s databází. Místo toho bude automaticky zavolána v pravidelných intervalech, aby synchronizovaná s výchozí databázi uživatele mezipaměť v paměti.
 
 `NSUserDefaults` Třída obsahuje několik usnadňující metody pro čtení a zápis hodnoty předvoleb pro běžné typy dat, jako například: řetězec, celé číslo, float, logické a adresy URL. Jiné typy dat mohou být archivovány pomocí `NSData`, číst nebo zapisovat do výchozí databázi uživatele. Další informace najdete v tématu společnosti Apple [průvodci programováním nastavení a předvolby](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/UserDefaults/Introduction/Introduction.html#//apple_ref/doc/uid/10000059i).
 
@@ -127,7 +127,7 @@ plist.SetBool(useHeader, "UseHeader");
 ```
 
 > [!IMPORTANT]
-> **Poznámka:** když aplikace nejprve provede, `NSUserDefaults` čte klíče a hodnoty z výchozí databázi uživatele aplikace a ukládá je do paměti aby se zabránilo otevírání a čtení databáze pokaždé, když je vyžadována hodnota.
+> Když aplikace nejprve provede, `NSUserDefaults` čte klíče a hodnoty z výchozí databázi uživatele aplikace a ukládá je do paměti aby se zabránilo otevírání a čtení databáze pokaždé, když je vyžadována hodnota.
 
 
 

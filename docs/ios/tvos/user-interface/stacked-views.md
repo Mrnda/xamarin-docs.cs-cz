@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: c40e9291e81770435535de7b0c83d6c865cbed58
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: efc0da0b0f0a800069efb00a402361a8b0cd7f1d
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-stacked-view"></a>Práce s skládaný zobrazení
 
@@ -76,7 +76,7 @@ Pokud `BaselineRelativeArrangement` vlastnost je `true`, dílčích zobrazení j
 * Vodorovné zobrazení zásobníku použije pro první a poslední základní jeho nejvyšší dílčí zobrazení. Pokud je nejvyšší zobrazení také zobrazení zásobníku, použije jeho nejvyšší dílčí zobrazení jako směrného plánu.
 
 > [!IMPORTANT]
-> **Poznámka:** zarovnání účaří nefunguje roztažené nebo komprimovaných dílčí zobrazení velikostí směrného plánu budou vypočítány na nesprávné umístění. Pro zarovnání směrného plánu, zkontrolujte, zda dílčí zobrazení **výška** odpovídá vnitřní zobrazení obsahu **výška**.
+> Zarovnání účaří nefunguje velikostí roztažené nebo komprimovaných dílčí zobrazení, jako směrného plánu budou vypočítány na nesprávné umístění. Pro zarovnání směrného plánu, zkontrolujte, zda dílčí zobrazení **výška** odpovídá vnitřní zobrazení obsahu **výška**.
 
 
 
@@ -149,7 +149,7 @@ Nejjednodušší způsob, jak pracovat se zobrazeními zásobníku v aplikaci Xa
 -----
 
 > [!IMPORTANT]
-> **Poznámka:** Poznámka: I když je možné přiřadit akce, jako `TouchUpInside` k prvku uživatelského rozhraní (například `UIButton`) v iOS Návrhář při vytváření obslužné rutiny události ho nebude nikdy volat protože Apple TV nemá dotykovou obrazovku nebo podporu touch události. Je třeba použít výchozí `Action Type` při vytváření akcí pro tvOS prvky uživatelského rozhraní.
+> I když je možné přiřadit akce, jako `TouchUpInside` k prvku uživatelského rozhraní (například `UIButton`) v iOS Návrhář při vytváření obslužné rutiny události ho nebude nikdy volat protože Apple TV nemá touch obrazovky nebo podporují touch události. Je třeba použít výchozí `Action Type` při vytváření akcí pro tvOS prvky uživatelského rozhraní.
 
 Další informace o práci s scénářů, najdete v tématu naše [Hello, tvOS úvodní příručce](~/ios/tvos/get-started/hello-tvos.md).
 

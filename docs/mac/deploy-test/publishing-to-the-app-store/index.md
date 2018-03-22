@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 86514dbd6b40e9d59ea9a598395cf6f0a3f4889a
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e4c7b0913d43d9db3b5414c831864dae8d0b4d61
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="publishing-to-the-app-store"></a>Publikování do obchodu s aplikacemi
 
@@ -37,7 +37,7 @@ Po připojení [programu pro vývojáře Mac](https://developer.apple.com/devcen
 Vyberte typ správné registrace pro vaši situaci.
 
 > [!NOTE]
-> **Poznámka:**: volby provedené v tomto poli ovlivní způsob, jak zobrazit některé obrazovky při konfiguraci vývojářského účtu. Popisy a snímky obrazovky v tomto dokumentu se provádějí z perspektivy **jednotlivých** vývojářský účet. V **společnosti**, jenom některé možnosti, bude k dispozici pro **Team správce** uživatele.
+> Volby provedené v tomto poli ovlivní způsob, jakým některé obrazovky se zobrazí při konfiguraci vývojářského účtu. Popisy a snímky obrazovky v tomto dokumentu se provádějí z perspektivy **jednotlivých** vývojářský účet. V **společnosti**, jenom některé možnosti, bude k dispozici pro **Team správce** uživatele.
 
 
 ### <a name="certificates-and-identifiersmacdeploy-testpublishing-to-the-app-storecertificates-identifiersmd"></a>[Certifikáty a identifikátory](~/mac/deploy-test/publishing-to-the-app-store/certificates-identifiers.md)

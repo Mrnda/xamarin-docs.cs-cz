@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 9cf9cb2e4773b90ecdd9321c6627003be3fa1b8b
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 71f076bb0dc7d552a041d48a6ce531dcff444de6
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="sandboxing-a-xamarinmac-app"></a>Sandboxing Xamarin.Mac aplikace
 
@@ -174,7 +174,7 @@ Dále je potřeba v našem Xamarin.Mac projektu vyberte nové ID aplikace a prof
 6. Klikněte **provádí** tlačítko.
 
 > [!IMPORTANT]
-> **Poznámka:** bude pravděpodobně nutné ukončit a restartovat Visual Studio pro Mac, aby ho rozpoznat nové ID aplikace a profil zřizování, který jste nainstalovali Xcode.
+> Můžete chtít ukončete a restartujte Visual Studio pro Mac, aby ho rozpoznat nové ID aplikace a profil zřizování, který jste nainstalovali Xcode.
 
 #### <a name="troubleshooting-provisioning-issues"></a>Řešení potíží s problémy se zřizováním
 
@@ -308,7 +308,7 @@ Adresář kontejneru aplikace Xamarin.Mac aplikace má následující vlastnosti
 - Pro _materiálů uložených_ typů aplikace (třeba společnosti Apple fotografií), obsah uživatele přejde do kontejneru.
 
 > [!IMPORTANT]
-> **Poznámka:** bohužel Xamarin.Mac nemá 100 % pokrytí rozhraní API ještě (na rozdíl od Xamarin.iOS), výsledkem `NSHomeDirectory` v aktuální verzi Xamarin.Mac nebyl mapován rozhraní API.
+> Bohužel Xamarin.Mac nemá 100 % pokrytí rozhraní API ještě (na rozdíl od Xamarin.iOS), výsledkem `NSHomeDirectory` v aktuální verzi Xamarin.Mac nebyl mapován rozhraní API.
 
 Jako dočasné řešení můžete použít následující kód:
 
@@ -413,7 +413,7 @@ Když uživatel naimportuje soubor prostředků do projektu (prostřednictvím `
 Záložku Document-Scoped lze vyřešit jakékoli aplikace, která můžete otevřít záložku data a samotného dokumentu. To podporuje přenositelnost, které uživateli umožňují odesílat soubory projektu pro jiného uživatele, které mají všechny záložky fungovat také pro ně.
 
 > [!IMPORTANT]
-> **Poznámka:** Document-Scoped Bookman můžete _pouze_ přejděte do jednoho souboru a nikoliv složka a tento soubor nemůže být v umístění používá systém (například `/private` nebo `/Library`).
+> Můžete záložku Document-Scoped _pouze_ přejděte do jednoho souboru a nikoliv složka a tento soubor nemůže být v umístění používá systém (například `/private` nebo `/Library`).
 
 #### <a name="using-security-scoped-bookmarks"></a>Použití záložek obor zabezpečení
 
@@ -428,7 +428,7 @@ Pomocí jednoho z typů Security-Scoped záložku, vyžaduje, abyste proveďte n
 Po můžete opustit přístup k prostředku, budete muset vraťte se ke kroku 4 znovu a znovu vytvořit tak přístup. Pokud je restartován Xamarin.Mac aplikace, musíte vraťte se ke kroku 3 a znovu vyřešit záložky.
 
 > [!IMPORTANT]
-> **Poznámka:** chyby k uvolnění přístup k prostředkům Security-Scoped URL způsobí, že aplikace Xamarin.Mac pronikly jádra prostředky. V důsledku toho aplikace už nebude moct přidávat umístění systému souborů k jejímu kontejneru, dokud se nerestartuje.
+> Chyby k uvolnění přístup k prostředkům Security-Scoped URL způsobí, že aplikace Xamarin.Mac pronikly jádra prostředky. V důsledku toho aplikace už nebude moct přidávat umístění systému souborů k jejímu kontejneru, dokud se nerestartuje.
 
 ### <a name="the-app-sandbox-and-code-signing"></a>Izolovaný prostor aplikace a podepisování kódu
 
@@ -493,7 +493,7 @@ Návrh aplikace Xamarin.Mac pro izolovaný prostor aplikace obvykle se skládá 
 6. Implementujte strategie migrace.
 
 > [!IMPORTANT]
-> **Poznámka:** musíte nejen izolovaného prostoru hlavní spustitelný soubor aplikace sady, ale také každých zahrnuté pomocné rutiny aplikace nebo nástroj v této sady. To je potřeba pro všechny aplikace distribuované z Mac App Storu a pokud je to možné, by mělo být provedeno pro jakoukoli jinou formu distribuce aplikací.
+> Musíte nejen izolovaného prostoru hlavní spustitelný soubor aplikace sady, ale také každých zahrnuté pomocné rutiny aplikace nebo nástroj v této sady. To je potřeba pro všechny aplikace distribuované z Mac App Storu a pokud je to možné, by mělo být provedeno pro jakoukoli jinou formu distribuce aplikací.
 
 Seznam všech spustitelné binární soubory aplikace Xamarin.Mac sady zadejte následující příkaz v terminálu:
 

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: 837a18fa09b7b1da3cf2d16d6e3e350250ae0829
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 8b5c88f4af3087f980b586113c274016935585c0
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-entitlements"></a>Práce s oprávnění
 
@@ -32,7 +32,7 @@ Soubor Entitlements.plist slouží k určení oprávnění a se používá k pod
 Některé další zřizování je však vyžaduje pro zajištění toho, že je aplikace správně podepsaný kód. Použít profil zřizování musí obsahovat ID aplikace, který má povolené požadované možnosti. Informace o tom, jak to udělat, najdete [práce s možností](~/ios/deploy-test/provisioning/capabilities/index.md) průvodce.
 
 > [!IMPORTANT]
-> Poznámka: Soubor Entitlements.plist pomáhá vyplňte správné vlastnosti pro aplikace pomocí možnosti, ale nemůže generovat profil pro zřizování, protože nejsou propojená k účtu vývojáře Apple. Musíte se stále ke generování profil pro zřizování pomocí portálu pro vývojáře k nasazení a distribuce aplikace.
+> Soubor Entitlements.plist pomůže vyplňte správné vlastnosti pro aplikace pomocí možnosti, ale nemůže generovat profil pro zřizování, protože nejsou propojená k účtu vývojáře Apple. Musíte se stále ke generování profil pro zřizování pomocí portálu pro vývojáře k nasazení a distribuce aplikace.
 
 ## <a name="set-entitlements-in-a-xamarinios-project"></a>Nastavit oprávnění v projektu Xamarin.iOS
 

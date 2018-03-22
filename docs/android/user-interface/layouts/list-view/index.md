@@ -7,12 +7,12 @@ ms.assetid: C2BA2705-9B20-01C2-468D-860BDFEDC157
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: 2d5a83b9f6278406e9b643277357df253f5fd524
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/21/2018
+ms.openlocfilehash: 4225e45ecfe4a4a2cdb7e75b94823fc8fcd29fc4
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="listview"></a>ListView
 
@@ -56,10 +56,10 @@ Vytvořte soubor XML s názvem **list_item.xml** a uložit v rámci **prostředk
 
 Tento soubor definuje rozložení pro každou položku, která bude uložena v umístění [ `ListView` ](https://developer.xamarin.com/api/type/Android.Widget.ListView/).
 
-Otevřete `HelloListView.cs` a ujistěte se, třída rozšířit [ `ListActivity` ](https://developer.xamarin.com/api/type/Android.App.ListActivity/) (místo [ `Activity` ](https://developer.xamarin.com/api/type/Android.App.Activity/)):
+Otevřete `MainActivity.cs` a upravit třídy pro rozšíření [ `ListActivity` ](https://developer.xamarin.com/api/type/Android.App.ListActivity/) (místo [ `Activity` ](https://developer.xamarin.com/api/type/Android.App.Activity/)):
 
 ```csharp
-public class HelloListView : ListActivity
+public class MainActivity : ListActivity
 {
 ```
 
@@ -74,9 +74,9 @@ protected override void OnCreate (Bundle bundle)
 
     ListView.TextFilterEnabled = true;
 
-    ListView.ItemClick += delegate (object sender, ItemEventArgs args) {
-        // When clicked, show a toast with the TextView text
-        Toast.MakeText (Application, ((TextView)args.View).Text, ToastLength.Short).Show ();
+    ListView.ItemClick += delegate (object sender, AdapterView.ItemClickEventArgs args)
+    {
+        Toast.MakeText(Application, ((TextView)args.View).Text, ToastLength.Short).Show();
     };
 }
 ```
@@ -93,7 +93,12 @@ Tato metoda přebírá [ `ArrayAdapter<T>` ](https://developer.xamarin.com/api/t
 Můžete použít návrhy položky seznamu poskytované platformou místo definování vlastní rozložení souboru [ `ListAdapter` ](https://developer.xamarin.com/api/property/Android.App.ListActivity.ListAdapter/).
 Například použijte `Android.Resource.Layout.SimpleListItem1` místo `Resource.Layout.list_item`.
 
-Po [ `OnCreate()` ](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/(Android.OS.Bundle)) metody přidat pole řetězců:
+Přidejte následující `using` příkaz:
+
+```csharp
+using System;
+```
+Dál přidejte následující pole řetězců jako člen skupiny `MainActivity`:
 
 ```csharp
 static readonly string[] countries = new String[] {
@@ -145,22 +150,23 @@ Toto je pole řetězce, které budou umístěny do [ `ListView` ](https://develo
 
 Spusťte aplikaci. Můžete posuňte se v seznamu nebo zadejte vyfiltrujete ho a pak klikněte na položku Zobrazit zprávu. Měli byste vidět zhruba takhle:
 
-[![Příklad snímek obrazovky ListView s názvy země](images/helloviews6.png)](images/helloviews6.png#lightbox)
+[![Příklad snímek obrazovky ListView s názvy země](images/01-listview-example-sml.png)](images/01-listview-example.png#lightbox)
 
 Všimněte si, že pomocí pole řetězců pevně není doporučený postup návrhu. V tomto kurzu pro jednoduchost, jeden se používá k předvedení [ `ListView` ](https://developer.xamarin.com/api/type/Android.Widget.ListView/) pomůcky. Lepší postupem je odkazovat na pole řetězců definované externí zdroj, například s `string-array` prostředků ve vašem projektu **Resources/Values/Strings.xml** souboru. Příklad:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="countries_array">
-        <item>Bahrain</item>
-        <item>Bangladesh</item>
-        <item>Barbados</item>
-        <item>Belarus</item>
-        <item>Belgium</item>
-        <item>Belize</item>
-        <item>Benin</item>
-    </string-array>
+  <string name="app_name">HelloListView</string>
+  <string-array name="countries_array">
+    <item>Bahrain</item>
+    <item>Bangladesh</item>
+    <item>Barbados</item>
+    <item>Belarus</item>
+    <item>Belgium</item>
+    <item>Belize</item>
+    <item>Benin</item>
+  </string-array>
 </resources>
 ```
 
@@ -170,6 +176,9 @@ Použít tyto řetězce prostředků pro [ `ArrayAdapter` ](https://developer.xa
 string[] countries = Resources.GetStringArray (Resource.Array.countries_array);
 ListAdapter = new ArrayAdapter<string> (this, Resource.Layout.list_item, countries);
 ```
+Spusťte aplikaci. Měli byste vidět zhruba takhle:
+
+[![Příklad snímek obrazovky ListView s menší seznam názvů](images/02-smaller-example-sml.png)](images/02-smaller-example.png#lightbox)
 
 
 ## <a name="going-further-with-listview"></a>Budete pokračovat s ListView

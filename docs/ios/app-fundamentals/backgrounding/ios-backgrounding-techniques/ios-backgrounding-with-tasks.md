@@ -6,11 +6,11 @@ ms.assetid: 205D230E-C618-4D69-96EE-4B91D7819121
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 5e05cf0f13512478b3957070e7fa6329ea84337f
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ad75dfac55add7e03ffbdb910e0e62ebd0fd6c18
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="ios-backgrounding-with-tasks"></a>iOS Backgrounding s úlohami
 
@@ -43,7 +43,7 @@ UIApplication.SharedApplication.EndBackgroundTask(taskID);
 Proces registrace páry úlohu s jedinečným identifikátorem `taskID`a pak ho zabalí odpovídajícím `BeginBackgroundTask` a `EndBackgroundTask` volání. Generovat identifikátor, zajišťujeme, volání `BeginBackgroundTask` metodu `UIApplication` objektu, a pak spusťte dlouhotrvající úlohy, obvykle na nové vlákno. Po dokončení úlohy říkáme `EndBackgroundTask` a předat stejný identifikátor. To je důležité, protože iOS bude ukončen aplikace, pokud `BeginBackgroundTask` volání nemá odpovídající `EndBackgroundTask`.
 
 > [!IMPORTANT]
-> **Poznámka:**: pozadí bezpečných úlohy můžete spustit na hlavního vlákna nebo vlákna na pozadí, v závislosti na potřebách aplikace.
+> Pozadí bezpečných úlohy můžete spustit na hlavního vlákna nebo vlákna na pozadí, v závislosti na potřebách aplikace.
 
 
 ## <a name="performing-tasks-during-didenterbackground"></a>Provádění úloh během DidEnterBackground
@@ -65,7 +65,7 @@ public override void DidEnterBackground (UIApplication application) {
 Začneme přepsáním `DidEnterBackground` metoda v `AppDelegate`, kdy se nám zaregistrovat naše úloh prostřednictvím `BeginBackgroundTask` jako jsme to udělali v předchozím příkladu. V dalším kroku vytvořit nové vlákno a provedení naše dlouho běžící úlohy. Všimněte si, že `EndBackgroundTask` nyní z přišla uvnitř dlouhodobou úlohu, protože `DidEnterBackground` metoda bude již vráceny.
 
 > [!IMPORTANT]
-> **Poznámka:**: používá iOS [sledovací zařízení mechanismus](http://developer.apple.com/library/ios/qa/qa1693/_index.html) zajistit, že uživatelského rozhraní aplikace stále poměrně rychle reaguje. Aplikace, která stráví příliš mnoho času v `DidEnterBackground` bude reagovat v uživatelském rozhraní. Zahájena úlohy ke spuštění na pozadí umožňuje `DidEnterBackground` vrátit v časovém limitu, udržování reagující uživatelské rozhraní a brání sledovací zařízení ukončení aplikace.
+> používá iOS [sledovací zařízení mechanismus](http://developer.apple.com/library/ios/qa/qa1693/_index.html) zajistit, že uživatelského rozhraní aplikace stále poměrně rychle reaguje. Aplikace, která stráví příliš mnoho času v `DidEnterBackground` bude reagovat v uživatelském rozhraní. Zahájena úlohy ke spuštění na pozadí umožňuje `DidEnterBackground` vrátit v časovém limitu, udržování reagující uživatelské rozhraní a brání sledovací zařízení ukončení aplikace.
 
 
 ## <a name="handling-background-task-time-limits"></a>Zpracování pozadí úloh časových limitů
@@ -153,7 +153,7 @@ else {
 ```
 
 > [!IMPORTANT]
-> **Poznámka:**: Vyhněte se volání aktualizace uživatelského rozhraní z na pozadí v iOS 6vyhovující kódu, iOS 6 nepodporuje pozadí uživatelského rozhraní aktualizace a aplikace se ukončí.
+> Vyhněte se volání aktualizace uživatelského rozhraní z na pozadí v iOS 6vyhovující kódu, iOS 6 nepodporuje pozadí uživatelského rozhraní aktualizace a aplikace se ukončí.
 
 
 `NSURLSession` Rozhraní API obsahuje bohatou sadu funkcí pro zpracovávat ověřování, správu neúspěšné přenosy a zprávy o chybách klientské – ale ne server na straně -. Pomáhá most? víc informací, které přerušení v úloze běh zavedená v iOS 7 a také poskytuje podporu pro přenos velkých souborů rychle a spolehlivě. Jsou zde popsány v další části této druhé funkce.

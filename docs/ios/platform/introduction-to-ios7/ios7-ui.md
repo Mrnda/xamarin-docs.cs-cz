@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 1ad37cb4a794ac47e0e2f184a730949f14e85572
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 3d70aff4df91120402e2987598b8973172b46245
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="ios-7-user-interface-overview"></a>iOS 7 přehled uživatelského rozhraní
 
@@ -173,7 +173,7 @@ Odkazovat [ImageViewer](https://developer.xamarin.com/samples/mobile/iOS7-ui-upd
 Hodnota posunutí je generována dynamicky po přidání zobrazení do hierarchie, takže pokusu o čtení `TopLayoutGuide` a `BottomLayoutGuide` hodnoty v `ViewDidLoad` vrátí 0. Po zobrazení načetl – například v vypočítat hodnotu `ViewDidLayoutSubviews`.
 
 > [!IMPORTANT]
-> **Poznámka:**: `TopLayoutGuide` a `BottomLayoutGuide` jsou zastaralé v iOS 11 považuje nové rozložení bezpečné oblasti. Apple uvedli, že je kompatibilní s verzí iOS starší než iOS 11 pomocí bezpečné oblasti. Další informace najdete v tématu [aktualizace aplikace pro iOS 11](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md#fullscreen) průvodce.
+> `TopLayoutGuide` a `BottomLayoutGuide` jsou zastaralé v iOS 11 považuje nové rozložení bezpečné oblasti. Apple uvedli, že je kompatibilní s verzí iOS starší než iOS 11 pomocí bezpečné oblasti. Další informace najdete v tématu [aktualizace aplikace pro iOS 11](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md#fullscreen) průvodce.
 
 #### <a name="edgesforextendedlayout"></a>EdgesForExtendedLayout
 
@@ -252,7 +252,7 @@ Například následující snímek obrazovky ukazuje účinek změna odstín bar
 Odstín barvy lze použít pro bitové kopie i když `RenderingMode` je nastaven na `UIImageRenderingMode.AlwaysTemplate`.
 
 > [!IMPORTANT]
-> Poznámka: Odstín barvy se nedají nastavit pomocí `UIAppearance`.
+> Odstín barvy se nedají nastavit pomocí `UIAppearance`.
 
 
 ### <a name="dynamic-type"></a>Dynamic Type

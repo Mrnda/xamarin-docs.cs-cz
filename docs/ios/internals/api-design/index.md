@@ -8,68 +8,72 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 8c336799a4d46359a78432837101dad43b572aea
-ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
+ms.openlocfilehash: c333fd18e306c50bbfd41377638470cb45954883
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/21/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="api-design"></a>Rozhraní API návrhu
 
 Kromě základních základní knihovny tříd, které jsou součástí Mono [Xamarin.iOS](http://www.xamarin.com/iOS) se dodává s vazby pro různé iOS rozhraní API umožňuje vývojářům vytvářet nativní aplikace pro iOS aplikace s Mono.
 
-Jádrem Xamarin.iOS je modul spolupráce propojující world C# s world jazyka Objective-C jako, a taky vazby pro iOS na základě C rozhraní API jako CoreGraphics a [OpenGLES](#OpenGLES).
+Jádrem Xamarin.iOS je modul spolupráce propojující world C# s world jazyka Objective-C, jakož i vazby pro iOS na základě C rozhraní API jako CoreGraphics a [OpenGL ES](#OpenGLES).
 
-Probíhá nízké úrovně runtime ke komunikaci s kódem jazyka Objective-C [MonoTouch.ObjCRuntime](#MonoTouch.ObjCRuntime). Nad se vazby pro [Foundation](#MonoTouch.Foundation), CoreFoundation a [UIKit](#MonoTouch.UIKit) jsou k dispozici.
+Nízké úrovně runtime ke komunikaci s kódem jazyka Objective-C je v [MonoTouch.ObjCRuntime](#MonoTouch.ObjCRuntime). Nad se vazby pro [Foundation](#MonoTouch.Foundation), CoreFoundation, a [UIKit](#MonoTouch.UIKit) jsou k dispozici.
 
 ## <a name="design-principles"></a>Principy návrhu
 
-Toto jsou některé z našich návrhu zásady pro Xamarin.iOS vazbu (Toto také platí pro Xamarin.Mac Mono vazby pro Objective-C v OS X):
+Toto jsou některé z našich návrhu zásad pro Xamarin.iOS vazby (také vztahují se k Xamarin.Mac Mono vazby pro Objective-C v systému macOS):
 
-- Postupujte podle pokynů pro návrh Framework
+- Postupujte podle [pokynů pro návrh Framework](https://docs.microsoft.com/dotnet/standard/design-guidelines)
 - Umožňují vývojářům jazyka Objective-C podtřídou třídy:
 
   - Odvozena z existující třídy
-  - Základní konstruktor volání do řetězce
+  - Volat základní konstruktor do řetězce
   - Přepsání metody by mělo být provedeno pomocí jazyka C# na přepsání systému
+  - Vytváření podtříd by měly spolupracovat s standardní konstrukce jazyka C#
 
-- Podtřídy by měly spolupracovat s standardní konstrukce jazyka C#
 - Nevystavujte vývojářům jazyka Objective-C selektorů.
 - Poskytněte mechanismus k volání libovolné knihovny jazyka Objective-C
 - Zkontrolujte běžné úlohy jazyka Objective-C snadný a pevné možné úlohy jazyka Objective-C
 - Vystavení vlastností jazyka Objective-C jako vlastnosti jazyka C#
-- Vystavení silného typu rozhraní API:
-- Zvýšení zabezpečení typů
-- Minimalizovat chyby za běhu
-- Získat IDE intellisense pro návratové typy
-- Umožňuje pro dokumentaci překryvné okno IDE
+- Vystavit rozhraní API silného typu:
+
+  - Zvýšení zabezpečení typů
+  - Minimalizovat chyby za běhu
+  - Získat IDE IntelliSense pro návratové typy
+  - Umožňuje pro dokumentaci překryvné okno IDE
+
 - Podporují v IDE zkoumání rozhraní API:
+
+  - Například místo vystavení slabě typovaná pole takto:
+    
+    ```objc
+    NSArray *getViews
+    ```
+    Vystavení silného typu, například takto:
+    
+    ```csharp
+    NSView [] Views { get; set; }
+    ```
+    
+    To dává možnost provést automatické dokončování během procházení webových stránek rozhraní API sady Visual Studio pro Mac, ke všem `System.Array` operací dostupných na vrácené hodnoty a umožňuje návratovou hodnotu k účasti v technologii LINQ.
+
 - Nativní typy C#:
 
-    - Příklad: místo vystavení slabě typovaná pole takto:
-        ```
-        NSArray *getViews
-        ```
-        je zveřejňujeme se silnými typy takto:
-    
-        ```
-        NSView [] Views { get; set; }
-        ```
-    
-    To dává možnost provést automatické dokončování během procházení webových stránek rozhraní API sady Visual Studio pro Mac a zároveň umožňuje všechny `System.Array` operace, které mají být k dispozici na vrácené hodnoty a umožňuje návratovou hodnotu k účasti v technologii LINQ
+  - [`NSString` změní `string`](~/ios/internals/api-design/nsstring.md)
+  - Zapnout `int` a `uint` parametry, které by byly výčty do výčty jazyka C# a výčty jazyka C# s `[Flags]` atributy
+  - Místo typu jazykově neutrální `NSArray` objekty, vystavit pole jako pole silného typu.
+  - Pro události a upozornění uživatelům udělit volba mezi:
 
-- [NSString se změní na řetězec](~/ios/internals/api-design/nsstring.md)
-- Zapnout int a celé_číslo Parametry, které by byly výčty jako výčty jazyka C# a výčty jazyka C# s atributy [příznaky]
-- Místo objekty typu jazykově neutrální NSArray vystavit pole jako pole silného typu.
-- Události a upozornění, uživatelům udělit volba mezi:
-
-    - Výchozí hodnota je silného typu verze
-    - Slabě typovaná verze pro případy použití zálohy
+    - Ve výchozím nastavení verzi silného typu
+    - Slabě typované verze pro případy použití pokročilých
 
 - Vzor delegáta pro podporu jazyka Objective-C:
 
     - Systém událostí jazyka C#
-    - Vystavení C# delegáti (lambdas, anonymní metody a System.Delegate) pro rozhraní API jazyka Objective-C jako "bloky"
+    - Vystavení C# delegáti (lambdas, anonymní metody a `System.Delegate`) pro rozhraní API jazyka Objective-C jako bloky
 
 ### <a name="assemblies"></a>Sestavení
 

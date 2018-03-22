@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: c038aba3989046e6df062e97ae7f777ae6238ade
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ffc694e2f513d61cf32e94d8dc3bae17c887521b
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-capabilities"></a>Práce s možností
 
@@ -58,7 +58,7 @@ Tato část vysvětluje, jak pomocí prostředí Visual Studio pro Mac je automa
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 > [!IMPORTANT]
-> **Poznámka:**: Ne všechny funkce lze přidat a spravovat v sadě Visual Studio for Mac. Následující seznam obsahuje podporované funkce:
+> Ne všechny funkce lze přidat a spravovat v sadě Visual Studio for Mac. Následující seznam obsahuje podporované funkce:
 >
 >* HealthKit 
 >* HomeKit 
@@ -198,7 +198,7 @@ Teď vytvořte profil pro zřizování, který obsahuje číslem ID této aplika
     ![Visual Studio pro Mac možnosti projektu](images/image16.png)
 
 > [!IMPORTANT]
-> Poznámka: Může také musíte nastavit nárocích klíčích v souboru Entitlement.plist a ochrany osobních údajů v souboru Info.plist. Další informace o těchto oprávnění je součástí [práce oprávnění](~/ios/deploy-test/provisioning/entitlements.md) průvodce.
+> Můžete také nastavit nárocích klíčích v souboru Entitlement.plist a ochrany osobních údajů v souboru Info.plist. Další informace o těchto oprávnění je součástí [práce oprávnění](~/ios/deploy-test/provisioning/entitlements.md) průvodce.
 
 <a name="nextsteps" />
 
@@ -220,7 +220,7 @@ Podrobnosti o níže uvedeného seznamu, některé z nejběžnějších problém
 -   Ujistěte se, zda byly nainstalovány profily zřizování a ID aplikace a aplikace **Info.plist** (v projektu Xamarin) používá jednu z výše nakonfigurovaných ID aplikace.
 -   Ujistěte se, že aplikace **Entitlements.plist** soubor (v projektu Xamarin) má správné služby povolena.
 -   Ujistěte se, že odpovídající ochrany osobních údajů klíče se nastavují v info.plist
--   V dané aplikaci **iOS podepisování sady**, ujistěte se, že **vlastní oprávnění** je nastaven na **Entitlements.plist**. **Poznámka:** jde _není_ sestavení výchozí nastavení pro ladění a simulátoru iOS.
+-   V dané aplikaci **iOS podepisování sady**, ujistěte se, že **vlastní oprávnění** je nastaven na **Entitlements.plist**. Toto je _není_ sestavení výchozí nastavení pro ladění a simulátoru iOS.
 
 <a name="summary" />
 

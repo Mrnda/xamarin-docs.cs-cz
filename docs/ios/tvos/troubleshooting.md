@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 7b6d0901f8b01668626fc3b6a70a091e99e2287e
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c72d0dd89593002dbb6ea8ac9369666b811f3a73
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="troubleshooting"></a>Poradce při potížích
 
@@ -173,7 +173,7 @@ _Neplatný sady – Apple TV aplikací pomocí rozhraní herní musíte zahrnout
 ```
 
 > [!IMPORTANT]
-> **Poznámka:** Bluetooth herní zařízení jsou volitelné nákupu, které by mohly způsobit koncovým uživatelům, aplikace nemůže vynutit uživateli zakoupit. Pokud vaše aplikace podporuje herní zařízení se musí taky podporovat vzdálené Siri tak, aby hra funkční všichni uživatelé Apple TV.
+> Bluetooth herní zařízení jsou volitelné nákupu, které by mohly způsobit koncovým uživatelům, aplikace nemůže vynutit uživateli zakoupit. Pokud vaše aplikace podporuje herní zařízení se musí taky podporovat vzdálené Siri tak, aby hra funkční všichni uživatelé Apple TV.
 
 Další informace najdete v tématu naše [práce s herní zařízení](~/ios/tvos/platform/remote-bluetooth.md#Working-with-Game-Controllers) části našich [Siri vzdálené a Bluetooth řadiče](~/ios/tvos/platform/remote-bluetooth.md) dokumentaci.
 

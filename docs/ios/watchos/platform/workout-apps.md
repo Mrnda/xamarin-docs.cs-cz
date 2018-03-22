@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 77bad4c31ad0cb11476c656aa495707d2a94aa8f
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 2282a340811d9932f9df3a1343b22ffc35247e54
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="workout-apps"></a>Cvičení aplikace
 
@@ -472,7 +472,7 @@ Také nové watchOS 3, je pozastavená pohybu (`HKWorkoutEventType.MotionPaused`
 Aplikace obdrží o událost pohybu pozastavena, měla by zastavit shromažďování dat, dokud uživatel obnoví pohybu a obnoví pohybu události. Aplikace aplikace by neměl pozastavit cvičení relace v reakci na událost pohybu pozastavena.
 
 > [!IMPORTANT]
-> **Poznámka:** pohybu pozastavit a obnovit pohybu události jsou podporovány pouze pro typ aktivity RunningWorkout (`HKWorkoutActivityType.Running`).
+> Události pohybu pozastavit a obnovit pohybu jsou podporovány pouze pro typ aktivity RunningWorkout (`HKWorkoutActivityType.Running`).
 
 Tyto události znovu, mohou být zpracovány přepsáním `DidGenerateEvent` metodu `HKWorkoutSessionDelegate`:
 
@@ -649,7 +649,7 @@ Podívejte se na tom, jak tento proces funguje:
 3. Pomocí předaný v cvičení konfiguraci, spuštění aplikace watchOS 3 novou relaci cvičení (`HKWorkoutSession`).
 
 > [!IMPORTANT]
-> **Poznámka:** v pořadí pro nadřazené iPhone aplikaci spustit cvičení na Apple Watch watchOS 3 aplikace musí mít pozadí systémem povolena. Najdete v tématu [povolení spuštění pozadí](#Enabling-Background-Running) výše další podrobnosti.
+> Aby aplikace nadřazené iPhone spustit cvičení na Apple Watch watchOS 3 aplikace musí mít pozadí systémem povolena. Najdete v tématu [povolení spuštění pozadí](#Enabling-Background-Running) výše další podrobnosti.
 
 Tento proces je velmi podobný proces spouštění relaci cvičení přímo v aplikaci watchOS 3. Na zařízení iPhone použijte následující kód:
 
@@ -764,7 +764,7 @@ Všechny informace uvedené v tomto dokumentu trvá, může aplikace na základ�
 3. **watchOS 3 `OutdoorRunDelegate.cs`**  – vlastní `HKWorkoutSessionDelegate` zpracovat události pro cvičení.
 
 > [!IMPORTANT]
-> **Poznámka:** kód uvedené v následující části obsahují jenom části nutné implementovat nové a vylepšené funkce, které jsou zadané aplikace cvičení v watchOS 3. Všechny podpůrné kód a kód k dispozici a aktualizaci uživatelského rozhraní nezahrnuje ale můžete snadno vytvořit pomocí následujících naší watchOS dokumentaci.<p/>
+> Kód uvedené v následující části obsahují jenom části nutné implementovat nové a vylepšené funkce, které jsou zadané aplikace cvičení v watchOS 3. Všechny podpůrné kód a kód k dispozici a aktualizaci uživatelského rozhraní nezahrnuje ale můžete snadno vytvořit pomocí následujících naší watchOS dokumentaci.<p/>
 
 
 

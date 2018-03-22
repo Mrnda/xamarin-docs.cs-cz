@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: f77eac8179f9e368e767bb4b586ccaa3f93e40a3
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: b1b53fefdd72c36bdffd3c5ade0b8d86da225b14
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-page-control"></a>Práce s ovládací prvek stránky
 
@@ -72,7 +72,7 @@ Nejjednodušší způsob, jak pracovat s ovládacími prvky stránky v aplikaci 
 -----
 
 > [!IMPORTANT]
-> **Poznámka:** , když je možné přiřadit události, jako `TouchUpInside` element uživatelského rozhraní v iOS návrháře (například UIButton), se nebude nikdy volat protože Apple TV nemá touch obrazovky nebo podporují touch události. Je třeba použít `Primary Action` události při vytváření obslužných rutin událostí pro tvOS prvky uživatelského rozhraní.
+> Když je možné přiřadit události, jako `TouchUpInside` element uživatelského rozhraní v iOS návrháře (například UIButton), se nebude nikdy volat protože Apple TV nemá touch obrazovky nebo podporují touch události. Je třeba použít `Primary Action` události při vytváření obslužných rutin událostí pro tvOS prvky uživatelského rozhraní.
 
 
 

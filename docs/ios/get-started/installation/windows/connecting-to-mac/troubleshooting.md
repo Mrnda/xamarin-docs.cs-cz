@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: ffa61004bdaaaaf400f5e0d5ed90b4e6b1dcb7e7
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: d33f4ba5512985d62575885d44fdcebced8b61ed
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="connection-troubleshooting"></a>Odstraňování problémů s připojením
 
@@ -72,26 +72,34 @@ Už je vyžadován hostitel sestavení Xamarin ze starších verzí Xamarin.iOS.
 
 7. Jakmile ověříte IP adresu Mac, zkuste `ping` na tuto adresu v `cmd.exe` v systému Windows:
 
-        ping 10.1.8.95
-
+    ```
+    ping 10.1.8.95
+    ```
+    
     Pokud příkazem ping nezdaří, pak Mac není _směrovatelné_ z počítače se systémem Windows. Tohoto problému bude třeba vyřešit na úrovni konfiguraci místní sítě mezi 2 počítače. Ujistěte se, že oba počítače jsou ve stejné místní síti.
 
 8. V dalším kroku testů, pokud `ssh` klienta z OpenSSH můžete úspěšně připojit k počítači Mac ze systému Windows. Je možné nainstalovat tento program nainstalovat [Git pro Windows](https://git-for-windows.github.io/). Potom můžete spustit **Git Bash** příkazový řádek a pokus o `ssh` v Mac s vaše uživatelské jméno a IP adres:
 
-        ssh amyb@10.1.8.95
-
+    ```bash
+    ssh amyb@10.1.8.95
+    ```
+    
 <a name="stepnine" />
 
 9. Pokud **krok 8 úspěšné**, můžete zkusit spustit jednoduchý příkaz jako `ls` přes připojení:
 
-        ssh amyb@10.1.8.95 'ls'
-
+    ```bash
+    ssh amyb@10.1.8.95 'ls'
+    ```
+    
     To by měl zobrazit obsah domovského adresáře na Mac. Pokud `ls` příkaz funguje správně, ale připojení k sadě Visual Studio stále selže, můžete zkontrolovat [známé problémy a omezení](#knownissues) části o komplikace, které jsou specifické pro Xamarin. Pokud žádný z nich neodpovídá váš problém, [souboru nové sestavy chyb](https://bugzilla.xamarin.com/newbug) a připojte protokoly popsané v části [zkontrolujte podrobné soubory protokolu](#verboselogs).
 
 10. Pokud **krok 8 selže**, spuštěním následujícího příkazu v terminálu v systému Mac, zda je SSH server přijímá _žádné_ připojení:
 
-        ssh localhost
-
+    ```bash
+    ssh localhost
+    ```
+    
 11. Pokud krok 8 nezdaří, ale **úspěšné krok 10**, pak problém je velmi pravděpodobné, že port 22 na hostiteli sestavení Mac není přístupný ze systému Windows z důvodu konfigurace sítě. Případné problémy s konfigurací patří:
 
     - Nastavení brány firewall OS X jsou zakazuje připojení. Ujistěte se, že zkontrolujte krok 3.
@@ -161,8 +169,10 @@ Hlášené příčiny:
 
     5. V dolní části souboru přidejte následující řádek:
 
-            UseDNS no
-
+        ```
+        UseDNS no
+        ```
+        
     6. Odeberte všechny řádky, které říkají, `UseDNS yes` a ujistěte se, zda se nové nastavení projevilo.
 
     7. Uložte soubor.
@@ -179,16 +189,20 @@ Pokud vaše soubory protokolu zobrazit problém během "Instalace", "Nahrát", n
 
 1. Spusťte následující příkaz v terminálu na Mac:
 
-        open "$HOME/Library/Caches/Xamarin"
-
+    ```bash
+    open "$HOME/Library/Caches/Xamarin"
+    ```
+    
 2. Klepněte **XMA** složky a vyberte **přesunout do Koš**:
 
     [![](troubleshooting-images/troubleshooting-image8.png "Přesuňte složku XMA Koš")](troubleshooting-images/troubleshooting-image8.png#lightbox)
 
 3. Neexistuje mezipaměť v systému Windows a které mohou pomoci zrušte. Otevřete příkazový řádek jako správce v systému Windows:
 
-        del %localappdata%\Temp\Xamarin\XMA
-
+    ```
+    del %localappdata%\Temp\Xamarin\XMA
+    ```
+    
 ## <a name="warning-messages"></a>Zprávy upozornění
 
 Tato část popisuje několik zprávy, které se mohou objevit v oknech výstupu a protokoly, které obvykle můžete ignorovat.
@@ -230,7 +244,7 @@ Pokud ve výstupním okně neobsahuje dostatek informací, aby mohli problém di
 1. Spuštění sady Visual Studio.
 
     > [!IMPORTANT]
->  Všimněte si, že **.svclogs** nejsou ve výchozím nastavení povolené. Pro přístup k nim budete muset spuštění sady Visual Studio s podrobné protokoly, jak je popsáno v [verze protokoly](~/cross-platform/troubleshooting/questions/version-logs.md#visual-studio-startup-verbose-logs) průvodce. Další informace najdete v části [rozšíření řešení potíží s protokol aktivit](https://blogs.msdn.microsoft.com/visualstudio/2010/02/24/troubleshooting-extensions-with-the-activity-log/) blogu.
+    > Všimněte si, že **.svclogs** nejsou ve výchozím nastavení povolené. Pro přístup k nim budete muset spuštění sady Visual Studio s podrobné protokoly, jak je popsáno v [verze protokoly](~/cross-platform/troubleshooting/questions/version-logs.md#visual-studio-startup-verbose-logs) průvodce. Další informace najdete v části [rozšíření řešení potíží s protokol aktivit](https://blogs.msdn.microsoft.com/visualstudio/2010/02/24/troubleshooting-extensions-with-the-activity-log/) blogu.
 
 2. Pokus o připojení k hostiteli sestavení.
 
@@ -272,7 +286,7 @@ Pokud soubory normální protokolu není dostatečné informace k diagnostice pr
 
     ```bash
     grep sshd /var/log/system.log > "$HOME/Desktop/sshd.log"
-    ```
+   ```
 
 Pokud tyto soubory podrobného protokolování neposkytuje dost možné problém vyřešit přímo, [souboru nové sestavy chyb](https://bugzilla.xamarin.com/newbug) a připojte soubor .zip z kroku 5 a soubor .log v kroku 6.
 

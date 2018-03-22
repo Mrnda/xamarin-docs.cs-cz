@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/07/2016
-ms.openlocfilehash: be005f62c914fe5f59696c5ef9b608a73a45d269
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 348f84533974d1434dd0c7e5045c20e16b57057b
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="deprecated-notification-technologies"></a>Zastaralé oznámení technologie
 
 V této části ukazuje, jak implementovat místních a nabízených oznámení v Xamarin.iOS. Bude popisují různé prvky uživatelského rozhraní oznámení iOS a popisují rozhraní API je zahrnuta s vytváření a zobrazování oznámení.
 
 > [!IMPORTANT]
-> **Poznámka:** informace v této části se vztahují na iOS 9 a předchozí, ho byla ponechána zde k podpoře starší verze iOS. IOS 10 a novější, najdete v tématu [uživatele oznámení Framework – průvodce](~/ios/platform/user-notifications/index.md) pro podporu místní i vzdálené oznámení na zařízení s iOS.
+> Informace v této části se vztahují na iOS 9 a předchozí, ho byla ponechána zde k podpoře starší verze iOS. IOS 10 a novější, najdete v tématu [uživatele oznámení Framework – průvodce](~/ios/platform/user-notifications/index.md) pro podporu místní i vzdálené oznámení na zařízení s iOS.
 
 
 
@@ -33,7 +33,7 @@ V této části se popisují postup implementovat místní oznámení v Xamarin.
 
 <a name="Local Notifications Walkthrough" />
 
-##  <a name="walkthrough---using-local-notifications-in-xamarinioslocal-notifications-in-ios-walkthroughmd"></a>[Návod - použití místního oznámení v Xamarin.iOS](local-notifications-in-ios-walkthrough.md)
+##  <a name="walkthrough---using-local-notifications-in-xamarinioslocal-notifications-in-ios-walkthroughmd"></a>[Návod – Používání místních oznámení v Xamarin.iOSu](local-notifications-in-ios-walkthrough.md)
 
 V této části projdeme použití místního oznámení aplikace pro Xamarin.iOS. Popisuje základní informace o vytváření a publikování oznámení, že se objeví se upozornění, když přijaté aplikací.
 

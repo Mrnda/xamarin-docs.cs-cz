@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: b53f98206c100ed76f601937844bf182a6dc146c
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 8d7c942e0be52ed12fc20bc838e693af81dd989f
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="using-adonet"></a>Použitím technologie ADO.NET
 
@@ -43,7 +43,7 @@ Budeme používat `Mono.Data.Sqlite.SqliteConnection` třídy za účelem vytvo�
     `Mono.Data.Sqlite.SqliteConnection.CreateFile (dbPath);`
 
     > [!NOTE]
-> **Poznámka:** proměnnou dbPath by měly být stanoveny podle pravidla popsané dříve v tomto dokumentu.
+    > `dbPath` Proměnná by měla určit podle pravidla popsané dříve v tomto dokumentu.
 
 2. **Vytvoření připojení k databázi** – po vytvoření souboru databáze SQLite můžete vytvořit objekt připojení pro přístup k datům. Připojení je vytvořený pomocí připojovací řetězec, který má formu `Data Source=file_path`, jak je vidět tady:
 

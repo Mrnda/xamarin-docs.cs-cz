@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/29/2017
-ms.openlocfilehash: cfbe2df23317ee3ad11c9970ab892ddcc251b9d6
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 08bf8b2b7c56983c43cf1ae080ab112e81851fbb
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="installing-xamarinios-on-windows"></a>Instalace Xamarin.iOS v systému Windows
 
@@ -37,7 +37,7 @@ Následující diagram ukazuje jednoduchý přehled pracovní postup vývoje Xam
 [![Pracovní postup vývoje Xamarin.iOS](images/xma2.png)](images/xma2.png#lightbox)
 
 > [!IMPORTANT]
->  Visual Studio ve skutečnosti spouští samostatný proces MSBuild k sestavení projektů. Tento proces vytvoří nové připojení k počítači Mac, což znamená, že se ve skutečnosti dvě připojení SSH ze systému Windows pro Mac při sestavení sady Visual Studio. Sestavování z [příkazového řádku](~/ios/get-started/installation/windows/connecting-to-mac/index.md) pouze vytvoří jeden proces MSBuild. Pro jednoduchost tohoto diagramu jsou reprezentované pomocí jedné šipku jednoduše všechna připojení.
+> Visual Studio ve skutečnosti spouští samostatný proces MSBuild k sestavení projektů. Tento proces vytvoří nové připojení k počítači Mac, což znamená, že se ve skutečnosti dvě připojení SSH ze systému Windows pro Mac při sestavení sady Visual Studio. Sestavování z [příkazového řádku](~/ios/get-started/installation/windows/connecting-to-mac/index.md) pouze vytvoří jeden proces MSBuild. Pro jednoduchost tohoto diagramu jsou reprezentované pomocí jedné šipku jednoduše všechna připojení.
 
 ## <a name="requirements"></a>Požadavky
 
@@ -105,7 +105,7 @@ Instalace nástrojů pro Xamarin.iOS na hostiteli mac musíte [instalaci sady Vi
 Jakmile je software nainstalován, postupujte podle kroků v následujících částech konfigurace Xamarin.iOS v systému macOS umožňující Xamarin pro Visual Studio k připojení k tomuto.
 
 > [!IMPORTANT]
->  Počítače Windows musí používat stejnou verzi nástroje Xamarin.iOS jako Mac, k němuž je připojen. K zajištění, že to platí:
+> Počítače Windows musí používat stejnou verzi nástroje Xamarin.iOS jako Mac, k němuž je připojen. K zajištění, že to platí:
 >
 > - **Visual Studio 2015 a starší**: Ujistěte se, že jste ve stejném [kanálu aktualizace](https://developer.xamarin.com/recipes/cross-platform/ide/change_updates_channel/) jako Visual Studio for Mac.
 >

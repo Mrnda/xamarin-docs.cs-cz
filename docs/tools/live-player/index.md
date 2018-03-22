@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 05/10/2017
-ms.openlocfilehash: 1fea2e2f7210e282fa1e27ad3a1203da2216791e
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c636e706e702afa23c36a3d6c618f3e02c2582f1
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="xamarin-live-player"></a>Xamarin Live Player
 
@@ -20,8 +20,8 @@ Xamarin Live Player umožňuje provádět úpravy za provozu do vaší aplikace 
 
 [![Xamarin Player za provozu: Kódu, kontrolovat, Test](images/xamarin-live.png)](images/xamarin-live-sml.png#lightbox)
 
-1. Povolit *Xamarin Live Player* v **Předvolby**, vyberte z **zařízení** seznamu.
-2. Ladění nebo spuštění a pak prohledávání pár QRCodeto zařízení.
+1. Povolit *Xamarin Live Player* v **Předvolby**, pak vyberte zařízení z **zařízení** seznamu.
+2. Ladění nebo spuštění a pak naskenujte kód QR spárovat zařízení.
 3. Spuštění aplikace přímo na telefonu nebo tabletu.
 
 ## <a name="xamarin-live-player-setupinstallmd"></a>[Instalační program za provozu Player Xamarin](install.md)

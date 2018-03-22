@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 35665731fb0b8b669a850c06929dd951589e6bf6
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 46118b5879589c963898ab7f60c61bd8e38f3900
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="updating-existing-mac-apps"></a>Aktualizace stávající aplikace pro Mac
 
@@ -116,7 +116,7 @@ Když jsme podílí změny NuGet pro práci s podporou unifikované API, nepři�
 Do té doby, stejně jako komponenty budete potřebovat přepnout libovolný balíček NuGet jste zahrnuli ve vašem projektu a na verzi podporující rozhraní API Unified a provádět nové čisté sestavení později.
 
 > [!IMPORTANT]
-> **Poznámka:** Pokud máte chybu ve formě _"Chyba 3 nesmí obsahovat 'monomac.dll' a"Xamarin.Mac.dll"ve stejném projektu Xamarin.Mac – 'Xamarin.Mac.dll' odkazuje explicitně, zatímco 'monomac.dll' odkazuje ' xxx, Verze = 0.0.000, Culture = neutral, PublicKeyToken = null. "_ po převedení aplikace jednotné rozhraní API, je obvykle kvůli s komponenta nebo balíček NuGet do projektu, která nebyla aktualizována jednotné rozhraní API. Budete muset odebrat existující součásti nebo NuGet, aktualizujte na verzi podporující rozhraní API Unified a provést čisté sestavení.
+> Pokud máte chybu ve tvaru _"Chyba 3 nesmí obsahovat 'monomac.dll' a"Xamarin.Mac.dll"ve stejném projektu Xamarin.Mac – 'Xamarin.Mac.dll' odkazuje explicitně, zatímco"monomac.dll"odkazuje ' xxx, verze = 0.0.000, Culture = neutral, PublicKeyToken = null. "_ po převedení aplikace jednotné rozhraní API, je obvykle kvůli s komponenta nebo balíček NuGet do projektu, která nebyla aktualizována jednotné rozhraní API. Budete muset odebrat existující součásti nebo NuGet, aktualizujte na verzi podporující rozhraní API Unified a provést čisté sestavení.
 
 ## <a name="enabling-64-bit-builds-of-xamarinmac-apps"></a>Povolení 64bitové sestavení Xamarin.Mac aplikace
 

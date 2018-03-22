@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: d544647a2718d6b511551f4341dee51b2c68941f
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c5cd2671bb66aa89117012fe394bb724f7e22e1a
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="introduction-to-3d-touch"></a>Úvod do 3D dotykového ovládání
 
@@ -65,7 +65,7 @@ public override void TouchesMoved (NSSet touches, UIEvent evt)
 `MaximumPossibleForce` Vrátí nejvyšší možná hodnota pro vlastnost `Force` vlastnost [UITouch](https://developer.xamarin.com/api/type/UIKit.UITouch/) na zařízení s iOS, která aplikace běží na základě.
 
 > [!IMPORTANT]
-> **Poznámka:** způsobí, že změny v tlak `TouchesMoved` událost, která má být vyvolána, i v případě X / Souřadnice Y nezměnily. Z důvodu této změny v chování, by měly být připraveny aplikace pro iOS `TouchesMoved` událost, která má být volána častěji a pro X / Y koordinuje být stejný jako poslední `TouchesMoved` volání.
+> Způsobí, že změny v tlak `TouchesMoved` událost, která má být vyvolána, i v případě X / Souřadnice Y nezměnily. Z důvodu této změny v chování, by měly být připraveny aplikace pro iOS `TouchesMoved` událost, která má být volána častěji a pro X / Y koordinuje být stejný jako poslední `TouchesMoved` volání.
 
 
 
@@ -281,7 +281,7 @@ Zde jsme se definování dvě statické položky rychlé akce pomocí následuj�
 * `UIApplicationShortcutItemType` -Je řetězcová hodnota, kterou budeme používat k identifikaci položky v naší aplikaci. Další informace naleznete v následující části.
 
 > [!IMPORTANT]
-> **Poznámka:** položky místní rychlé akce, které jsou nastavené `Info.plist` nelze otevřít soubor s `Application.ShortcutItems` vlastnost. Jejich pouze předaná do `HandleShortcutItem` obslužné rutiny události. 
+> Rychlé položky místní akce, které jsou nastavené `Info.plist` nelze otevřít soubor s `Application.ShortcutItems` vlastnost. Jejich pouze předaná do `HandleShortcutItem` obslužné rutiny události. 
 
 
 

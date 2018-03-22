@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 48489ca7dc28dcc14a7810b15dc1ffa1fd4f7cf4
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: f619123fec036dfe919e977b4f218e8d235f0b82
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="introduction-to-web-services"></a>Úvod k webovým službám
 
@@ -29,8 +29,8 @@ Tento článek popisuje v následujících tématech:
 Pro zákazníky používající Xamarin.Forms, jsou dokončení příklady použití každé z těchto technologií v [Xamarin.Forms webové služby](~/xamarin-forms/data-cloud/index.md) dokumentaci.
 
 > [!IMPORTANT]
-> **Poznámka: pro Xamarin.iOS:** v iOS 9, zabezpečení přenosu aplikace (ATS) vynucuje zabezpečené připojení mezi prostředků z Internetu (třeba server back-end aplikace) a aplikace, a tím prevence náhodného zpřístupnění citlivých informací. Protože ATS je povolené ve výchozím nastavení v aplikacích pro iOS 9, všechna připojení budou platit ATS požadavky na zabezpečení. Pokud připojení těchto požadavků nesplňuje, budou se nezdaří s výjimkou.
-
+> Zabezpečení přenosu aplikace (ATS) vynucuje v iOS 9, zabezpečené připojení mezi prostředků z Internetu (třeba server back-end aplikace) a aplikace, a tím prevence náhodného zpřístupnění citlivých informací.
+> Protože ATS je povolené ve výchozím nastavení v aplikacích pro iOS 9, všechna připojení budou platit ATS požadavky na zabezpečení. Pokud připojení těchto požadavků nesplňuje, budou se nezdaří s výjimkou.
 
 Vám může odhlásit ATS pokud není možné použít `HTTPS` protokolu a zabezpečení komunikace pro prostředků z Internetu. Toho lze dosáhnout aktualizací aplikace **Info.plist** souboru. Další informace najdete v části [zabezpečení přenosu aplikace](~/ios/app-fundamentals/ats.md).
 
@@ -191,7 +191,7 @@ client.GetAsync<CustomersResponse>("",
 ```
 
 > [!IMPORTANT]
-> **Poznámka:** při nástroje jako ServiceStack a RestSharp usnadňují volání a využívat REST služby, je někdy netriviální využívat XML nebo formátu JSON, který není v souladu s standardní _kontraktu_ serializace konvence. V případě potřeby vyvolání žádosti a zpracování příslušné serializace explicitně pomocí knihovny ServiceStack.Text popsané níže.
+> I když se nástroje jako ServiceStack a RestSharp usnadňují volání a využívat REST služby, je někdy netriviální využívat XML nebo formátu JSON, který není v souladu s standardní _kontraktu_ konvence serializace. V případě potřeby vyvolání žádosti a zpracování příslušné serializace explicitně pomocí knihovny ServiceStack.Text popsané níže.
 
 
 <a name="Options_for_consuming_RESTful_data" />

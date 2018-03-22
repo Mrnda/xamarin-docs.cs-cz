@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 11/17/2017
-ms.openlocfilehash: a411c214e35f78ff9d3dd8d4e9122702d66a2156
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 271d9e3f7ae04f03a132ae2fd0ebf531fe52578c
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="automatic-provisioning"></a>Automatické zřizování
 
@@ -24,7 +24,7 @@ _Po úspěšné instalaci Xamarin.iOS na další krok v vývoj pro iOS je ke zř
 - Xcode 9 nebo vyšší
 
 > [!IMPORTANT]
->  Tato příručka ukazuje, jak používat Visual Studio pro Mac k nastavení zařízení se systémem Apple pro nasazení a nasazení aplikace. Pro ruční postup k tomu nebo chcete-li to provést pomocí sady Visual Studio v systému Windows, je doporučeno, postupujte podle podrobných pokynů v [ručního zřizování](~/ios/get-started/installation/device-provisioning/manual-provisioning.md) průvodce.
+> Tato příručka ukazuje, jak používat Visual Studio pro Mac k nastavení zařízení se systémem Apple pro nasazení a nasazení aplikace. Pro ruční postup k tomu nebo chcete-li to provést pomocí sady Visual Studio v systému Windows, je doporučeno, postupujte podle podrobných pokynů v [ručního zřizování](~/ios/get-started/installation/device-provisioning/manual-provisioning.md) průvodce.
 
 ## <a name="enabling-automatic-signing"></a>Povolení automatické přihlašování
 

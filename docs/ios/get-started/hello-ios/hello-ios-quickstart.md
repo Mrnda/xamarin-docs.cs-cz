@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/23/2017
-ms.openlocfilehash: 7b1d56c62fe54d5b1e196e20e1a6989b542da1be
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 6a26bb42ee0abcec70d17633152dd12bd200a737
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="helloios-quickstart"></a>Hello.iOS Quickstart
 
@@ -90,7 +90,7 @@ Na obrazovce spustit, klikněte na tlačítko **nový projekt...**  k vytvořen�
   ![](hello-ios-quickstart-images/image8new.png "Přetáhněte na návrhovou plochu oblasti v Centru pro štítek")
 
   > [!NOTE]
-> **Poznámka:** lze provést **vlastnosti Pad** nebo **sada nástrojů** kdykoli přechodem na **zobrazení > dotyková zařízení**.
+  > Lze provést **vlastnosti Pad** nebo **sada nástrojů** kdykoli přechodem na **zobrazení > dotyková zařízení**.
 
 9. Získat popisovačů systému *přetáhněte ovládací prvky* (kroužky okolo ovládacího prvku) a ujistěte se, širší popisek:
 
@@ -268,9 +268,8 @@ Na obrazovce spustit, klikněte na tlačítko **nový projekt...**  k vytvořen�
 
   ![](hello-ios-quickstart-images/image27new.png "Stiskněte klávesu Start")
 
-
   > [!NOTE]
-> **Poznámka:** v současné době z důvodu požadavku od společnosti Apple, bude pravděpodobně potřeba mít vývojový certifikát nebo *podepisování identity* sestavení kódu pro zařízení ani simulátor. Postupujte podle kroků v [zřizování zařízení Průvodce](~/ios/get-started/installation/device-provisioning/manual-provisioning.md) chcete nastavit tuto možnost.
+  > V současné době z důvodu požadavku od společnosti Apple, bude pravděpodobně potřeba mít vývojový certifikát nebo *podepisování identity* sestavení kódu pro zařízení ani simulátor. Postupujte podle kroků v [zřizování zařízení Průvodce](~/ios/get-started/installation/device-provisioning/manual-provisioning.md) chcete nastavit tuto možnost.
 
 28. Tím spustíte aplikaci v simulátoru iOS:
 
@@ -289,7 +288,7 @@ Tento návod popisuje, jak vytvořit aplikaci s názvem Phoneword, který překl
 **Poznámka:**: Tento návod používá Visual Studio Enterprise 2017 na 10 virtuálního počítače s Windows. Vaše nastavení se liší od toho, dokud splňuje požadavky na výše uvedené, ale mějte na paměti, že některé snímky obrazovky se mohou lišit na vaše nastavení.
 
 > [!NOTE]
-> **Než budete pokračovat v tomto návodu** jste _musí_ je již připojen k počítači Mac ze sady Visual Studio. To je proto Xamarin.iOS spoléhá na společnosti Apple nástrojů pro sestavení a spusťte iOS Designer a aplikace. Pokud chcete získat nastavit, postupujte podle kroků v [připojení k Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) průvodce.
+> Než budete pokračovat v tomto průvodci, musíte mít již připojení k počítači Mac ze sady Visual Studio. To je proto Xamarin.iOS spoléhá na společnosti Apple nástrojů pro sestavení a spusťte iOS Designer a aplikace. Pokud chcete získat nastavit, postupujte podle kroků v [připojení k Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) průvodce.
 
 1. Spusťte sadu Visual Studio z **spustit** nabídky:
 
@@ -333,7 +332,7 @@ Tento návod popisuje, jak vytvořit aplikaci s názvem Phoneword, který překl
   ![](hello-ios-quickstart-images/vs-image10.png "Změňte vlastnost Text popisku, zadat Phoneword.")
 
   > [!NOTE]
-> **Poznámka:** lze provést **vlastnosti** nebo **sada nástrojů** kdykoli přechodem na **zobrazení** nabídky.
+  > Lze provést **vlastnosti** nebo **sada nástrojů** kdykoli přechodem na **zobrazení** nabídky.
 
 
 9. Vyhledejte "textové pole" uvnitř sady nástrojů a přetáhněte **textové pole** z **sada nástrojů** na návrh surface a umístěte ji pod **popisek**. Umožňuje upravit šířku až **textové pole** stejnou délku jako **popisek**:
@@ -377,7 +376,7 @@ Tento návod popisuje, jak vytvořit aplikaci s názvem Phoneword, který překl
   ![](hello-ios-quickstart-images/vs-image19.png "Přidejte novou třídu s názvem PhoneTranslator")
 
   > [!IMPORTANT]
-> Ujistěte se, že vyberete šablonu 'class', která obsahuje C# v ikonu. Jinak nebudete moci odkazovat na tato nová třída.
+  > Ujistěte se, že vyberete šablonu 'class', která obsahuje C# v ikonu. Jinak nebudete moci odkazovat na tato nová třída.
 
 
 17. Tím se vytvoří novou třídu C#. Odeberte všechny kód šablony a nahraďte ji následujícím kódem:

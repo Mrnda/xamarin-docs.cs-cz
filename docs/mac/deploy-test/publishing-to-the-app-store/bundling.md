@@ -8,18 +8,18 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 77365d5ed62b2ef2e81407ab1fa5aef55c592d0b
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c3f94b448539b2e4073c7d8a1092df066e484dfc
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="bundle-for-mac-app-store"></a>Sada pro Mac App Storu
 
 Tato část popisuje základní informace o vytváření aplikace pro verzi v Mac App Storu pomocí sady Visual Studio for Mac. Podle další funkce, (například přístup a nabízenými oznámeními Icloudu), další instalační program může být nutný, přejde beyon rámec tohoto článku.
 
 > [!NOTE]
->  **Poznámka:**: před zahájením této části, musí vývojář vytvořili provozní zřizování profilu k sestavení pro Mac App Storu. Postupujte podle pokynů v tomto dokumentu o vytváření požadované profily zřizování.
+> Před zahájením této části, musí vývojář vytvořili provozní zřizování profilu k sestavení pro Mac App Storu. Postupujte podle pokynů v tomto dokumentu o vytváření požadované profily zřizování.
 
 ## <a name="code-signing-options"></a>Možnosti pro podpis kódu
 

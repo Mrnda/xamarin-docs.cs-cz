@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/13/2017
-ms.openlocfilehash: a4491f550369bbb8515635ecbb7c1c2b74de48cf
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 357528c559de36329ca4bf12ab2597247a17222d
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="app-transport-security"></a>Zabezpečení přenosu aplikace
 
@@ -82,7 +82,7 @@ Při nemusí být obeznámeni s TLS ([Transport Layer Security](https://en.wikip
 V závislosti na serveru, mluvení do (zejména pokud jde o 3. stran službu), bude pravděpodobně nutné zakázat přeposílání nebo vyberte nižší úroveň protokolu TLS. Najdete v článku [možnosti konfigurace ATS](#Configuring-ATS-Options) části níže další podrobnosti.
 
 > [!IMPORTANT]
-> **Poznámka:** zabezpečení přenosu aplikace se nevztahuje na pomocí aplikace Xamarin **implementace HTTPClient spravované**. Platí pro připojení pomocí CFNetwork **implementace HTTPClient** nebo **implementace NSURLSession HTTPClient** pouze.
+> Zabezpečení přenosu aplikace se nevztahuje na pomocí aplikace Xamarin **implementace HTTPClient spravované**. Platí pro připojení pomocí CFNetwork **implementace HTTPClient** nebo **implementace NSURLSession HTTPClient** pouze.
 
 ### <a name="setting-the-httpclient-implementation"></a>Nastavení implementace HTTPClient
 
@@ -138,7 +138,7 @@ Cons:
 
 Při pokusu o připojení k Internetu, buď přímo, nebo z webového zobrazení v iOS 9, může být ve tvaru dojde k chybě:
 
-> Zabezpečení přenosu aplikaci zablokoval zatížení prostředků HTTP (http://www.-the-blocked-domain.com) ve formě prostého textu, vzhledem k tomu, že není zabezpečený. Dočasné výjimky se dá nakonfigurovat pomocí souboru Info.plist vaší aplikace.
+> Zabezpečení přenosu aplikaci zablokoval HTTP, ve formě prostého textu (http://www.-the-blocked-domain.com) zatížení prostředků, protože je nezabezpečené. Dočasné výjimky se dá nakonfigurovat pomocí souboru Info.plist vaší aplikace.
 
 Zabezpečení přenosu aplikace (ATS) v iOS9, vynucuje zabezpečené připojení mezi prostředků z Internetu (třeba server back-end aplikace) a aplikací. Kromě toho ATS vyžaduje komunikaci pomocí `HTTPS` protokolu a nejdůležitější komunikace rozhraní API k šifrování pomocí protokolu TLS verze 1.2 přeposílání.
 
@@ -243,7 +243,7 @@ V sadě Visual Studio pro Mac, dvakrát klikněte na `Info.plist` souboru v **Pr
 [![](ats-images/ats02.png "Zobrazení zdroje souboru Info.plist")](ats-images/ats02.png#lightbox)
 
 > [!IMPORTANT]
-> **Poznámka:** Pokud vaše aplikace vyžaduje připojení k nezabezpečené webové stránky, měli byste **vždy** zadejte doménu jako výjimky pomocí `NSExceptionDomains` místo vypnutí úplně pomocí ATS `NSAllowsArbitraryLoads`. `NSAllowsArbitraryLoads` lze používat pouze v případě extrémně nouze.
+> Pokud vaše aplikace vyžaduje připojení k nezabezpečené webové stránky, měli byste **vždy** zadejte doménu jako výjimky pomocí `NSExceptionDomains` místo vypnutí úplně pomocí ATS `NSAllowsArbitraryLoads`. `NSAllowsArbitraryLoads` lze používat pouze v případě extrémně nouze.
 
 
 

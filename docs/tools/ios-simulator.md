@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 04/07/2017
-ms.openlocfilehash: 20e8d843b73fca5eb49da21a7f834ebbb52f4aa9
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 6d1401728c1063ce09c5848865e4c9b3fe7687d7
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="remoted-ios-simulator-for-windows"></a>Používat vzdáleně iOS simulátoru (pro Windows)
 
@@ -25,7 +25,7 @@ _Test a ladění aplikací pro iOS zcela v sadě Visual Studio v systému Window
 Stažení [instalační program](https://dl.xamarin.com/xamarin-simulator/Xamarin.Simulator.Installer.msi) a nainstalovat na počítače se systémem Windows. Nástroje sady Visual Studio pro Xamarin by měl být již nainstalován.
 
 > [!NOTE]
-> Použití vzdáleného iOS simulátoru vyžaduje síťově připojeného počítače Mac pomocí Xamarinu nainstalované sady Visual Studio.
+> Použití vzdáleného simulátoru iOS v sadě Visual Studio vyžaduje síťově připojeného počítače Mac pomocí Xamarinu nainstalována.
 
 ## <a name="getting-started"></a>Začínáme
 

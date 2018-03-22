@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 77808ae03f5801dd3628b8966e05a574b8501f37
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: 60b2e6fa65226631fe2d2c847a56852ac9ae63d2
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="unified-storyboards"></a>Jednotná scénářů
 
@@ -581,7 +581,7 @@ IOS Designer bude tak jasné, že vývojář chce převést formát scénáři p
  [![](unified-storyboards-images/sizeclass02.png "Použití třídy velikost výstrahy")](unified-storyboards-images/sizeclass02.png#lightbox)
 
 > [!IMPORTANT]
-> **Poznámka:**: Automatické rozložení také musí být kontrolované velikost třídy fungovala správně.
+> Automatické rozložení, musí být kontrolované také velikost třídy fungovala správně.
 
 ### <a name="generic-device-types"></a>Typy Obecné zařízení
 
@@ -630,7 +630,7 @@ Najdete v části třídy velikost tohoto článku informace na velikost třídy
 Pokud vývojář použila scénářů před, pak budou obeznámeni s existující typy segue **Push**, **modální** a **Popover**. Pokud velikost třídy jsou povolené na soubor Unified Storyboard, jsou dostupné následující adaptivní Segue typy (které odpovídají nového zobrazení řadiče rozhraní API popsané výše): **zobrazit** a **zobrazit detaily** .
 
 > [!IMPORTANT]
-> **Poznámka:**: když velikost třídy jsou povolené, jakékoli existující segues bude možné převést na nové typy.
+> Pokud velikost třídy jsou povolené, jakékoli existující segues bude možné převést na nové typy.
 
 Trvat příklad iOS 8 aplikace, která používá scénáře se Unified s řadičem rozdělení zobrazení, který má jednoduché herní navigační nabídky v zobrazení předlohy. Pokud uživatel klikne na tlačítko nabídky, řadiče zobrazení vybrané položky se mají v sekci podrobností řadiče zobrazení rozdělení při spuštění v zařízení iPad. V zařízení iPhone by měl být řadiče zobrazení položky vloženy do zásobníku navigace.
 

@@ -6,12 +6,12 @@ ms.assetid: 01A715FE-9E9D-9B85-8A59-6568D8A09CA5
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/19/2018
-ms.openlocfilehash: ec6536ee9bdd5f25a7f9ef90e5cf052717b23143
-ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
+ms.date: 03/21/2018
+ms.openlocfilehash: 2e3225c0b0f984e52507ac472e26c4aee6a76909
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="android-debug-log"></a>Protokol pro Android ladění
 
@@ -19,13 +19,15 @@ Jeden velmi běžné efektu vývojáři použít k ladění aplikací je pro vol
 
 ## <a name="android-debug-log-overview"></a>Přehled protokolu Android ladění
 
-**Protokol ladění** nástroj poskytuje způsob, jak zobrazit výstup protokolu při ladění aplikace. Protokol ladění podporuje následující zařízení:
+**Protokol ladění** nástroj poskytuje způsob, jak zobrazit výstup protokolu při ladění aplikace pomocí sady Visual Studio. Protokol ladění podporuje následující zařízení:
 
 -   Fyzické Android telefony, tablety a wearables.
 -   Zařízení s Androidem virtuální systémem emulátor Google Android. 
 
 > [!NOTE]
 > **Protokol ladění** nástroj není kompatibilní s Xamarin Player za provozu.
+
+**Protokol ladění** nezobrazí zprávy protokolu, které jsou generovány, když aplikace běží samostatné na zařízení (tj. když je odpojený ze sady Visual Studio).
 
 
 ## <a name="accessing-the-debug-log-from-visual-studio"></a>Přístup k protokolu ladění ze sady Visual Studio

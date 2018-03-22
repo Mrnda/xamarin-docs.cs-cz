@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 3e21794c9f1d8f010ec323774bc93987f4b89e1d
-ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
+ms.openlocfilehash: e7075b67db94b6bf603bd96c637c9f7724ae1519
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="healthkit"></a>HealthKit
 
@@ -43,7 +43,7 @@ K dokončení kroky uvedené v tomto článku se vyžadují následující text:
 - **iOS 8 (nebo vyšší) zařízení** – zařízení s iOS s nejnovější verzí iOS 8 nebo novější pro testování.
 
 > [!IMPORTANT]
-> **Poznámka:** stavu Kit byla zavedena v systému iOS 8. V současné době Kit stavu není k dispozici v simulátoru iOS a ladění vyžaduje připojení na fyzickém zařízení iOS.
+> Stav Kit byla zavedena v systému iOS 8. V současné době Kit stavu není k dispozici v simulátoru iOS a ladění vyžaduje připojení na fyzickém zařízení iOS.
 
 
 
@@ -216,7 +216,7 @@ Všechny kód tyto metody lze provést vložené `OnActivated`, ale ukázková a
 `ReactToHealthCarePermissions()` Zpětného volání bude volána poté, co uživatel má zpracoval s dialogové okno oprávnění a je předán dva údaje: `bool` hodnotu, která bude `true` Pokud má uživatel zpracoval se dialogové okno oprávnění a `NSError`, což jinou hodnotu než null, pokud naznačuje nějaký druh chyby související s zobrazení dialogu oprávnění.
 
 > [!IMPORTANT]
-> **Poznámka:** mít o argumentů této funkci: _úspěch_ a _chyba_ parametry neoznačují, zda uživatel má uděleno oprávnění k přístupu data stavu Kit! Pouze indikují, že uživatel nebyla zadána možnost povolit přístup k datům.
+> Mít o argumentů této funkci: _úspěch_ a _chyba_ parametry neoznačují, zda uživatel má uděleno oprávnění k přístupu data stavu Kit! Pouze indikují, že uživatel nebyla zadána možnost povolit přístup k datům.
 
 Potvrďte, zda má aplikace přístup k datům, `HKHealthStore.GetAuthorizationStatus()` se používá předávání v `HKQuantityTypeIdentifierKey.HeartRate`. Na základě stavu vrátil, aplikace povolí nebo zakáže možnost zadat data. Neexistuje žádné standardní uživatelské prostředí pro práci s odepření přístupu a celá řada možných možností. V příkladu aplikaci, je stav nastaven na `HeartRateModel` objekt typu singleton, která zase, vyvolá relevantní události.
 
@@ -404,7 +404,7 @@ Simulátoru iOS nepodporuje Kit stavu. Ladění, je třeba provést na fyzickéh
 Vývoj pro zařízení správně zřízený iOS 8 připojte k systému. Vyberte jako cíl nasazení v sadě Visual Studio pro Mac a z nabídky zvolte **spustit > ladění**.
 
 > [!IMPORTANT]
-> **Poznámka:** bude v tomto okamžiku surface chyby týkající se zřizování. Chcete-li vyřešit chyby, zkontrolujte vytváření a zřizování výše uvedené části stavu Kit aplikace. Komponenty jsou: 
+> V tomto okamžiku se surface chyby týkající se zřizování. Chcete-li vyřešit chyby, zkontrolujte vytváření a zřizování výše uvedené části stavu Kit aplikace. Komponenty jsou: 
 >
 > - **iOS Dev Center** -explicitní ID aplikace a stavu sady povolené profil zřizování. 
 > - **Možnosti projektu** -identifikátor svazku (explicitní ID aplikace) a profil zřizování.

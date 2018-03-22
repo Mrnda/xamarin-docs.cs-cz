@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: dc21b21e28de155aa7a0e7b5cf9734e752cce9a2
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 3d5c84aee12c374317a797aa41446630a441f6df
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="configuring-an-app-in-itunes-connect"></a>Konfigurace aplikace v iTunes Connect
 
@@ -198,7 +198,7 @@ Tato část iTunes připojit aplikace záznam poskytuje jedinečné ID aplikace 
 ### <a name="app-icon"></a>Ikona aplikace
 
 > [!IMPORTANT]
->  **Poznámka:**: ikony aplikace jsou již odeslány prostřednictvím iTunes připojit. Musí být odeslána prostřednictvím **AppIcon** bitovou kopii sady ve vašem projektu **Assets.xcassets** souboru. Další informace najdete v tématu [App Store ikonu](~/ios/app-fundamentals/images-icons/app-store-icon.md) průvodce.
+>  Ikony aplikace jsou již odeslány prostřednictvím iTunes připojit. Musí být odeslána prostřednictvím **AppIcon** bitovou kopii sady ve vašem projektu **Assets.xcassets** souboru. Další informace najdete v tématu [App Store ikonu](~/ios/app-fundamentals/images-icons/app-store-icon.md) průvodce.
 
 Ikona aplikace je písmo aplikace uživatelům, takže musí být snadno zapamatovatelný a zobrazení dobře na malou velikost. Čistá, jednoduchý a okamžitě rozpoznatelném jsou snadno zapamatovatelný ikony.
 

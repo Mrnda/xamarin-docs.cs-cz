@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 0e271fb78cfd225f9ccdae9a515685e89bfd7ac2
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 76787ecda1c2cd043b81482dcdbe3751d012ef74
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="implementing-sirikit"></a>Implementace SiriKit
 
@@ -211,7 +211,7 @@ Vzhledem k striktní zabezpečení, které Apple umístěno kolem rozhraní Siri
 
 Proveďte v počítači Mac:
 
-1. Ve webovém prohlížeči, přejděte na [http://developer.apple.com](http://developer.apple.com) a přihlaste se k účtu.
+1. Ve webovém prohlížeči, přejděte na [ http://developer.apple.com ](http://developer.apple.com) a přihlaste se k účtu.
 2. Klikněte na **certifikáty**, **identifikátory** a **profily**.
 3. Vyberte **profily zřizování** a vyberte **ID aplikace**, klikněte  **+**  tlačítko.
 4. Zadejte **název** nového profilu.
@@ -246,7 +246,7 @@ Proveďte v počítači Mac:
 22. Klikněte **OK** tlačítko a uložte změny.
 
 > [!IMPORTANT]
-> **Poznámka:** testování SiriKit funguje pouze na skutečné iOS 10 hardwarové zařízení a nikoli v iOS 10 simulátoru. Pokud problémy instalace SiriKit s povolené aplikace Xamarin.iOS na skutečné hardwaru, ujistěte se, že požadovaná oprávnění, ID aplikace, identifikátor podepisování a profil zřizování byly správně nakonfigurovány v portálu pro vývojáře Apple i Visual Studio for Mac.
+> Testování SiriKit funguje pouze na skutečné iOS 10 hardwarové zařízení a nikoli v iOS 10 simulátoru. Pokud problémy instalace SiriKit s povolené aplikace Xamarin.iOS na skutečné hardwaru, ujistěte se, že požadovaná oprávnění, ID aplikace, identifikátor podepisování a profil zřizování byly správně nakonfigurovány v portálu pro vývojáře Apple i Visual Studio for Mac.
 
 ### <a name="requesting-siri-authorization"></a>Požaduje autorizaci Siri
 
@@ -432,7 +432,7 @@ namespace MonkeyChat
 ```
 
 > [!IMPORTANT]
-> **Poznámka:** Siri zpracovává vlastní slovník jako pomocné parametry a bude obsahovat co nejvíc terminologie míře. Však místo pro vlastní slovník je omezená, takže je potřeba zaregistrovat _pouze_ technologiím, které může být matoucí, proto zachování celkový počet registrovaných podmínky na minimum.
+> Siri zpracovává vlastní slovník jako pomocné parametry a bude obsahovat co nejvíc terminologie nejblíže. Však místo pro vlastní slovník je omezená, takže je potřeba zaregistrovat _pouze_ technologiím, které může být matoucí, proto zachování celkový počet registrovaných podmínky na minimum.
 
 Další informace najdete v tématu naše [termínů odkaz na konkrétní uživatele](~/ios/platform/sirikit/understanding-sirikit.md) a společnosti Apple [zadání odkazu termínů vlastní](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/SpecifyingCustomVocabulary.html#//apple_ref/doc/uid/TP40016875-CH6-SW1).
 
@@ -587,7 +587,7 @@ Chcete-li přidat `AppIntentVocabulary.plist` souboru do projektu aplikace, post
 -----
 
 > [!IMPORTANT]
-> **Poznámka:** `AppIntentVocabulary.plist` bude zaregistrována s Siri na testovací zařízení během vývoje a může trvat nějakou dobu Siri začlenit vlastní slovník. V důsledku toho tester muset Počkejte několik minut před pokusem o k testování aplikace konkrétní termínů, když se aktualizovala.
+> `AppIntentVocabulary.plist` Bude zaregistrována s Siri na testovací zařízení během vývoje a může trvat nějakou dobu Siri začlenit vlastní slovník. V důsledku toho tester muset Počkejte několik minut před pokusem o k testování aplikace konkrétní termínů, když se aktualizovala.
 
 Další informace najdete v tématu naše [aplikace konkrétní termínů odkaz](~/ios/platform/sirikit/understanding-sirikit.md) a společnosti Apple [zadání odkazu termínů vlastní](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/SpecifyingCustomVocabulary.html#//apple_ref/doc/uid/TP40016875-CH6-SW1).
 
@@ -1013,7 +1013,7 @@ Siri, projdou také v dokončení obslužná rutina, která aplikaci zapotřebí
 Rozložení uživatelského rozhraní rozšíření tříd Intent uživatelské rozhraní v iOS návrháře. Dvakrát klikněte na rozšíření `MainInterface.storyboard` v soubor **Průzkumníku řešení** otevřete pro úpravy. Přetáhněte všechny požadované prvky uživatelského rozhraní pro sestavení se uživatelské rozhraní a uložte změny.
 
 > [!IMPORTANT]
-> **Poznámka:** , když je možné přidat interaktivní prvky, jako `UIButtons` nebo `UITextFields` do uživatelského rozhraní rozšíření záměr `UIViewController`, jsou výhradně zakázané jako rozhraní záměr v neinteraktivním a uživatel nebude moci pracovat s nimi.
+> Když je možné přidat interaktivní prvky, jako `UIButtons` nebo `UITextFields` do uživatelského rozhraní rozšíření záměr `UIViewController`, jsou výhradně zakázané jako rozhraní záměr v neinteraktivním a uživatel nebude moci komunikovat s nimi.
 
 ### <a name="wire-up-the-user-interface"></a>Navázání uživatelského rozhraní
 

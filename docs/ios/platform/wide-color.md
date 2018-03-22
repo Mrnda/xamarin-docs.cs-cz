@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 95098cd5c97ccc8357531feb79e55600f53a4be5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 34f2e249c5474997b2e2e179285f455c425739cf
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="wide-color"></a>Široké barev
 
@@ -191,7 +191,7 @@ Společnost Apple má následující návrhy pro formáty souborů a profilů ba
 - Obrázek prostředky exportujte jako soubory PNG 16 bitů s vloženým "Zobrazení P3" ICC profilem.
 
 > [!IMPORTANT]
-> **Poznámka:** pomocí **uložit pro Web** nebo **exportovat prostředky** funkce nalézt v nejoblíbenější image úpravy softwaru _není_ pracovní pro bitové kopie široké barva od Tyto funkce pro podporu specifikace formátu požadovaný soubor ještě nebyly aktualizovány.
+> Pomocí **uložit pro Web** nebo **exportovat prostředky** funkce nalézt v nejoblíbenější image úpravy softwaru _nikoli_ pracovní pro celou barev obrázků vzhledem k tomu, že tyto funkce nebyly aktualizovat o podporu specifikace formátu požadovaný soubor ještě.
 
 ### <a name="supporting-wide-color-with-asset-catalogs"></a>Podpora široké barvy s Asset katalogů
 

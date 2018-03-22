@@ -8,18 +8,18 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 2a8ae55f9cc3e2dd4818dec96a35017c76cc9623
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: f1b36d3ba8601d125d0a17173efb12c249224e78
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="notifications-in-xamarinios"></a>Oznámení v Xamarin.iOS
 
 _V této části ukazuje, jak implementovat místní oznámení v Xamarin.iOS. Bude popisují různé prvky uživatelského rozhraní oznámení iOS a popisují rozhraní API je zahrnuta s vytváření a zobrazování oznámení._
 
 > [!IMPORTANT]
-> **Poznámka:** informace v této části se vztahují na iOS 9 a předchozí, ho byla ponechána zde k podpoře starší verze iOS. IOS 10 a novější, najdete v tématu [uživatele oznámení Framework – průvodce](~/ios/platform/user-notifications/index.md) pro podporu místní i vzdálené oznámení na zařízení s iOS.
+> Informace v této části se vztahují na iOS 9 a předchozí, ho byla ponechána zde k podpoře starší verze iOS. IOS 10 a novější, najdete v tématu [uživatele oznámení Framework – průvodce](~/ios/platform/user-notifications/index.md) pro podporu místní i vzdálené oznámení na zařízení s iOS.
 
 iOS má tři způsoby, jak oznámení uživateli, aby bylo přijato oznámení:
 
@@ -78,7 +78,7 @@ notification.SoundName = UILocalNotification.DefaultSoundName;
 Podle dokumentu Apple Human Interface Guidelines Pokud oznámení přehrát zvuk, ho měli také doprovázet Odznáček nebo uživatelům pomoci identifikovat aplikace, který výstrahu vyvolal výstrahu. Navíc pokud zvuk je delší než 30 sekund, iOS bude přehrát výchozí zvuk místo.
 
 > [!IMPORTANT]
-> **Poznámka:**: je chyba v simulátoru iOS, které bude platit oznámení delegáta dvakrát. Tento problém by nemělo dojít při spuštění aplikace na zařízení.
+> Je chyba v simulátoru iOS, které bude platit oznámení delegáta dvakrát. Tento problém by nemělo dojít při spuštění aplikace na zařízení.
 
 ## <a name="handling-notifications"></a>Zpracování oznámení
 

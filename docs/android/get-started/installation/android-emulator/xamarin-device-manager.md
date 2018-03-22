@@ -7,12 +7,12 @@ ms.assetid: ECB327F3-FF1C-45CC-9FA6-9C11032BD5EF
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/13/2018
-ms.openlocfilehash: 75dc51b5372ae4d8a322c29e39a585a547ab1963
-ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
+ms.date: 03/20/2018
+ms.openlocfilehash: 01fb21729e919872935fd63af28a13642a11fa4b
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="xamarin-android-device-manager"></a>Xamarin Android Device Manager
 
@@ -469,9 +469,9 @@ Další informace o těchto vlastnostech najdete v tématu [vlastnosti profilu h
 
 ## <a name="troubleshooting"></a>Poradce při potížích
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
 Následující část popisuje běžné problémy Správce zařízení Xamarin Android a alternativní řešení:
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 ### <a name="android-sdk-in-non-standard-location"></a>Sady SDK pro Android v nestandardním umístění
 
@@ -503,19 +503,64 @@ Chcete-li vyřešit tento problém, postupujte takto:
 
 Po provedení této změny na **user.config**, byste měli spustit Správce zařízení Xamarin Android.
 
+### <a name="snapshot-disables-wifi-on-android-oreo"></a>Snímek zakáže Wi-Fi na Android Oreo
+
+Pokud máte AVD nakonfigurovaný pro Android Oreo simulované Wi-Fi přístup, restartování AVD po snímku může způsobit Wi-Fi přístup zakázat.
+
+Chcete-li vyřešit tento problém
+
+1. Vyberte AVD ve Správci zařízení Xamarin.
+
+2. V nabídce Další možnosti, klikněte na tlačítko **odhalit v Průzkumníku**.
+
+3. Přejděte na **snímky > default_boot**.
+
+4. Odstranit **snapshot.pb** souboru:
+
+    [![Umístění souboru snapshot.pb](xamarin-device-manager-images/win/36-delete-snapshot-sml.png)](xamarin-device-manager-images/win/36-delete-snapshot.png#lightbox)
+
+5. Restartujte AVD. 
+
+Po provedení těchto změn AVD restartuje ve stavu, který umožňuje Wi-Fi znovu fungovat.
+
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+
+### <a name="snapshot-disables-wifi-on-android-oreo"></a>Snímek zakáže Wi-Fi na Android Oreo
+
+Pokud máte AVD nakonfigurovaný pro Android Oreo simulované Wi-Fi přístup, restartování AVD po snímku může způsobit Wi-Fi přístup zakázat.
+
+Chcete-li vyřešit tento problém
+
+1. Vyberte AVD ve Správci zařízení Xamarin.
+
+2. V nabídce Další možnosti, klikněte na tlačítko **odhalit v hledání**.
+
+3. Přejděte na **snímky > default_boot**.
+
+4. Odstranit **snapshot.pb** souboru:
+
+    [![Umístění souboru snapshot.pb](xamarin-device-manager-images/mac/36-delete-snapshot-sml.png)](xamarin-device-manager-images/mac/36-delete-snapshot.png#lightbox)
+
+5. Restartujte AVD. 
+
+Po provedení těchto změn AVD restartuje ve stavu, který umožňuje Wi-Fi znovu fungovat.
+
+-----
+
+
 ### <a name="generating-a-bug-report"></a>Generování sestavy chyb
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 Pokud narazíte na potíže s Xamarin Android Správce zařízení které nelze vyřešit pomocí výše uvedených tipy k řešení potíží, kliknutím pravým tlačítkem myši na záhlaví okna a výběrem prosím soubor sestavy chyb **Generovat sestavy chyb**:
 
 ![Umístění položky nabídky pro vyplnění sestavy chyb](xamarin-device-manager-images/win/35-bug-report.png)
 
+
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-V současné době nejsou žádné známé problémy nebo řešení pro Xamarin Android Správce zařízení v sadě Visual Studio for Mac. 
-
-### <a name="generating-a-bug-report"></a>Generování sestavy chyb
-
-Pokud narazíte na potíže, kliknutím na prosím soubor sestavy chyb **pomoci > Generovat sestavy chyb**:
+Pokud narazíte na potíže s Xamarin Android Správce zařízení které nelze vyřešit pomocí výše uvedených tipy k řešení potíží, kliknutím na prosím soubor sestavy chyb **pomoci > Generovat sestavy chyb**:
 
 ![Umístění položky nabídky pro vyplnění sestavy chyb](xamarin-device-manager-images/mac/35-bug-report.png)
 

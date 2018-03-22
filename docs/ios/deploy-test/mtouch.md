@@ -6,11 +6,11 @@ ms.assetid: BCA491DA-E4C1-8689-3EC9-E4C72495A798
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: b1b61e7ce1bae413f132cfe1e6c051a53b786f98
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: bd9be12ee1d67c7c071cf8fcfb49b4d888258dae
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="mtouch"></a>mtouch
 
@@ -24,6 +24,22 @@ Proces zapnutí spustitelný soubor rozhraní .NET do aplikace většinou vychá
 
 Zkontrolujte naše [mtouch(1)](http://docs.go-mono.com/?link=man%3amtouch(1)) ruční stránka s všechny možné používá mtouch nástroje.
 
+## <a name="installation"></a>Instalace
+
+V systému Mac `mtouch` je instalován s Xamarin.iOS. Se nachází v následujícím adresáři:
+
+**/Library/Frameworks/Xamarin.IOS.Framework/versions/Current/Bin**
+
+Chcete-li `mtouch` vhodnější použít, přidejte její adresář nadřazené do vašeho systému `PATH` proměnné prostředí.  
+
+Například k tomu v Bash, přidejte následující řádek na konec vaší **~/.bash_profile** souboru:
+
+```bash
+export PATH=$PATH:/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/bin
+```
+
+> [!WARNING]
+> Chcete-li použít `mtouch`, nespoléhejte na existenci **/Developer/MonoTouch/usr/bin**, symbolický odkaz, který odkazuje na **/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/bin**. Tento symbolický odkaz existuje pouze udržovat kompatibilitu s MonoTouch starší verze, které nebyly nainstalovány v **/Library/Frameworks/...** , a může zmizet v budoucí verzi.
 
 ## <a name="building"></a>Sestavování
 

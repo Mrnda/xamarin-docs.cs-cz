@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 3e3d1663e07b16721d1aa7253e7d0150a609718e
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: 927a77d5671e877e93e5375b61220ac595891179
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-icons-and-images"></a>Práce s ikony a obrázků
 
@@ -28,7 +28,7 @@ Vytváření poutavé ikony a obrazů jsou důležitou součástí vývoj dokona
 - [Nastavení obrázků projektu Xamarin.tvOS](#Setting-Xamarin.tvOS-Project-Images) -popisuje kroky potřebné ke spuštění bitové kopie a ikona aplikace pro vaši aplikaci Xamarin.tvOS.
 
 > [!IMPORTANT]
-> **Poznámka:** všechny bitové kopie na Apple TV jsou v řešení 1 x (`@1x`) a měli byste _pouze_ pomocí bitových kopií této velikosti. Včetně větší, vyšší rozlišení grafiky nejen časově stáhnout a použít více paměti a velikost úložiště, ale musí být dynamicky změní měřítko obrázku za běhu a bude mít negativní vliv kreslení výkon.
+> Všechny bitové kopie na Apple TV jsou v řešení 1 x (`@1x`) a měli byste _pouze_ pomocí bitových kopií této velikosti. Včetně větší, vyšší rozlišení grafiky nejen časově stáhnout a použít více paměti a velikost úložiště, ale musí být dynamicky změní měřítko obrázku za běhu a bude mít negativní vliv kreslení výkon.
 
 <a name="Launch-Image" />
 
@@ -79,7 +79,7 @@ Vrstvený Image obsahují z dva (2) do pěti (5) samostatných vrstev, které sp
 [![](icons-images-images/layered01.png "Diagram vrstev seřazené Z bitové kopie")](icons-images-images/layered01.png#lightbox)
 
 > [!IMPORTANT]
-> **Poznámka:** Layered Image jsou požadovány pro ikony vaší aplikace a jsou volitelné pro ostatní [může získat fokus položky](~/ios/tvos/app-fundamentals/navigation-focus.md#Focus-and-Selection) (například obrázek police Top). Apple navrhuje pomocí na základě bitové kopie pro žádný obrázek, který můžete získat fokus ve vaší aplikaci.
+> Vrstvený bitové kopie je vyžadována ikony vaší aplikace a jsou volitelné pro ostatní [může získat fokus položky](~/ios/tvos/app-fundamentals/navigation-focus.md#Focus-and-Selection) (například obrázek police Top). Apple navrhuje pomocí na základě bitové kopie pro žádný obrázek, který můžete získat fokus ve vaší aplikaci.
 
 
 

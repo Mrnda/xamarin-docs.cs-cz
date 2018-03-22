@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 06/12/2017
-ms.openlocfilehash: eff096b1dca15b9b11038a599987f632bca2352f
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 01b316e296f78ea2739e2f3ed1bd8d8ec112fca8
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="httpclient-stack-and-ssltls-implementation-selector-for-iosmacos"></a>Zásobník HttpClient a SSL/TLS implementace selektor pro iOS/systému macOS
 
@@ -110,6 +110,7 @@ Díky tomu je možné použít jiné `HttpMessageHandler` z co je v deklarována
 Protokol SSL (Secure Socket Layer) a jeho následníka TLS (Transport Layer Security) poskytuje podporu pro protokol HTTP a jiných síťových připojení prostřednictvím `System.Net.Security.SslStream`. Xamarin.iOS, Xamarin.tvOS nebo na Xamarin.Mac `System.Net.Security.SslStream` implementace zavolá společnosti Apple nativní implementaci protokolu SSL/TLS místo použití spravovaných implementace poskytované Mono. Nativní implementaci společnosti Apple podporuje TLS 1.2.
 
 <a name="Mono" />
+
 > [!WARNING]
 > **Mono nebo spravované** TLS zprostředkovatele je omezen na SSL v3 a TLS v1. Tento zprostředkovatel TLS je zastaralá a již není k dispozici pro aplikace Xamarin.iOS. 
 

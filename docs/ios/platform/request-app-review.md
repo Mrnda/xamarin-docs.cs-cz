@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/29/2017
-ms.openlocfilehash: 469a63a990b1adb108284cfb88ee54e05218a8a9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2e63f2c47bbcd6da0f0d5370ebfc231d19a10e7d
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="request-app-review"></a>Zkontrolujte žádost o aplikaci
 
@@ -57,7 +57,7 @@ namespace iOSTenThree
 ```
 
 > [!NOTE]
-> **Poznámka:** volání `RequestReview()` v snížení vývoj aplikace bude vždy zobrazovat hodnocení a zkontrolujte dialogové okno, může být testována. To neplatí pro aplikace, které byly distribuovány prostřednictvím TestFlight, kde volání metody, které budou ignorovány.
+> Volání metody `RequestReview()` v snížení vývoj aplikace bude vždy zobrazovat hodnocení a zkontrolujte dialogové okno, může být testována. To neplatí pro aplikace, které byly distribuovány prostřednictvím TestFlight, kde volání metody, které budou ignorovány.
 
 Když `RequestReview()` metoda je volána v přesouvání aplikaci, která uživatel nainstaloval z webu App Store, iOS 10 zpracuje celý proces hodnocení a zkontrolujte pro vývojáře. Znovu protože tento proces se řídí zásadami obchodu s aplikacemi, může výstrahu nebo se nemusí zobrazit.
 

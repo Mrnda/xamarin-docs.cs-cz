@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 540a459be24296c8446c2136773ddde59f9d4dd7
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 3fecf17a4f70e44ca169c825bf0dd34a5127cec8
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="maps"></a>Mapy
 
@@ -404,8 +404,8 @@ Implementace výše přidá poznámky mapy je vybranou položku z výsledků, ja
 
  ![](images/08-search-results.png "Poznámky přidat do mapy, když je vybrána položka z výsledků")
  
- > [!IMPORTANT]
-> **Poznámka:** `UISearchController` byl implementován v iOS 8. Pokud chcete podporovat zařízení dříve, než to, pak budete muset použít `UISearchDisplayController`.
+> [!IMPORTANT]
+> `UISearchController` byla implementována v iOS 8. Pokud chcete podporovat zařízení dříve, než to, pak budete muset použít `UISearchDisplayController`.
 
 
 

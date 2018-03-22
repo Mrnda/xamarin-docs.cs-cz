@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/02/2016
-ms.openlocfilehash: a7d4af1563cb5fe5166c289c4ee5dca6ad3ffb00
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 0c21fbd86fc9069d52f5f5935f66500e9477ca02
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="hello-ios-multiscreen-deep-dive"></a>Hello, iOS Multiobrazovka podrobné informace
 
@@ -40,7 +40,7 @@ Je model-View-Controller *vzoru návrhu* – opakovaně použitelné architektur
 Vzor MVC je užitečné, protože poskytuje logického oddělení mezi různými částmi aplikace grafickým uživatelským rozhraním a je jednodušší, abychom mohli znovu použít kódu a zobrazení. Umožňuje přejít v a podívejte se na všech tří rolí podrobněji.
 
 > [!NOTE]
-> **Poznámka:**: vzor MVC je volně podobná struktury stránek ASP.NET nebo aplikace WPF. Zobrazení v těchto příkladech je součást, která je ve skutečnosti zodpovědná za popisující uživatelského rozhraní a odpovídá stránky ASPX (HTML) technologie ASP.NET nebo XAML v aplikaci WPF. Řadičem je součást, která je zodpovědná za správu zobrazení, která odpovídá kódu ASP.NET nebo WPF.
+> Vzor MVC je volně podobná struktury stránek ASP.NET nebo aplikace WPF. Zobrazení v těchto příkladech je součást, která je ve skutečnosti zodpovědná za popisující uživatelského rozhraní a odpovídá stránky ASPX (HTML) technologie ASP.NET nebo XAML v aplikaci WPF. Řadičem je součást, která je zodpovědná za správu zobrazení, která odpovídá kódu ASP.NET nebo WPF.
 
 
 ### <a name="model"></a>Model
@@ -52,7 +52,7 @@ MVC je zcela lhostejné z *trvalosti dat* a *přístup* modelu. Jinými slovy, M
 V některých případech může být část modelu MVC prázdný. Například může vybereme možnost přidat některé statické stránky do vaší aplikace vysvětlením fungování překladač telefon, proč jsme vytvořili a jak můžeme kontaktovat nás na zprávu chyby. Tyto aplikace obrazovky by vytvořily stále pomocí zobrazeních a řadičích, ale nebude mít žádná skutečná data modelu.
 
 > [!NOTE]
-> **Poznámka:**: V některé dokumentaci najdete části modelu vzor MVC celá aplikace back-end, ne jenom data, která se zobrazí v Uživatelském rozhraní. V této příručce použijeme moderní výklad modelu, ale rozdíl není zvlášť důležité.
+> V některé dokumentaci najdete části modelu vzor MVC celá aplikace back-end, ne jenom data, která se zobrazí v Uživatelském rozhraní. V této příručce použijeme moderní výklad modelu, ale rozdíl není zvlášť důležité.
 
 
 ### <a name="view"></a>Zobrazit

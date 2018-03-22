@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: e20c9f068fe92e0dd711e0c20d31d713a0d03f0d
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 46a0920efc8d80db7f3783654630f65086907f50
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="advanced-user-notifications"></a>Oznámení pro pokročilé uživatele
 
@@ -145,7 +145,7 @@ Kromě vzdáleného oznámení popsané výše, média přílohy jsou podporová
 Oznámení v iOS 10 podporují média přílohy bitových kopií (statické a obrázky GIF), zvuk nebo video a systém se automaticky zobrazí správný vlastní uživatelské rozhraní pro každou z těchto typů přílohy při oznámení pro uživatele.
 
 > [!NOTE]
-> **Poznámka:** byste měli věnovat k optimalizaci velikosti média a doby potřebné ke stažení média ze vzdáleného serveru (nebo ke kompilaci média pro místního oznámení) jako systém ukládá striktní limity pro obě při spuštění služby aplikace Rozšíření. Představte si třeba odesílání škálovat dolů verze bitové kopie nebo jen nepatrnou klip videa prezentovány v oznámení.
+> Byste měli věnovat k optimalizaci velikosti média a době potřebné ke stažení média ze vzdáleného serveru (nebo ke kompilaci média pro místního oznámení) jako systém ukládá striktní limity pro obě při spuštění rozšíření aplikace služby. Představte si třeba odesílání škálovat dolů verze bitové kopie nebo jen nepatrnou klip videa prezentovány v oznámení.
 
 ## <a name="creating-custom-user-interfaces"></a>Vytvoření vlastního uživatelského rozhraní
 
@@ -299,7 +299,7 @@ V situaci, kdy rozhraní vlastní oznámení zobrazovat stejný obsah jako vých
 K návrhu obsahu rozšíření oznámení vlastní uživatelské rozhraní, dvakrát klikněte na `MainInterface.storyboard` soubor otevřete pro úpravy v iOS Designer, přetáhněte v elementech, které potřebujete k vytvoření požadované rozhraní (například `UILabels` a `UIImageViews`).
 
 > [!NOTE]
-> **Poznámka:** rozhraní oznámení nemá _není_ podporu interaktivní ovládací prvky, jako je například textových polí nebo tlačítek v obsahu rozšíření oznámení. Při mohou být přidány do scénáře, uživatel nebude moci komunikovat s nimi. Chcete-li přidat do vlastní uživatelské rozhraní oznámení interakci s uživatelem, použijte vlastní akce.
+> Rozhraní oznámení nemá _není_ podporu interaktivní ovládací prvky, jako je například textových polí nebo tlačítek v obsahu rozšíření oznámení. Při mohou být přidány do scénáře, uživatel nebude moci komunikovat s nimi. Chcete-li přidat do vlastní uživatelské rozhraní oznámení interakci s uživatelem, použijte vlastní akce.
 
 Jakmile byl nastíněny uživatelského rozhraní a příslušných ovládacích prvků viditelné na kód C#, otevřete `NotificationViewController.cs` pro úpravy a upravovat `DidReceiveNotification` metoda k vyplnění uživatelského rozhraní, když uživatel rozšíří oznámení. Příklad:
 

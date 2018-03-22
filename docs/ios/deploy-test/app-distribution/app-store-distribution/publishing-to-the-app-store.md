@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: dfa3d1f89d813f2e57863e615c701cd78c655ac0
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ef8fafb923dcad936ce0a049e715cdd163ea7222
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="publishing-to-the-app-store"></a>Publikování do obchodu s aplikacemi
 
@@ -185,7 +185,7 @@ Pomocí aplikace Xamarin.iOS správně nakonfigurovány nyní jste připraveni u
 
 
 > [!NOTE]
-> Poznámka: Při starý _obchod_ a _Ad Hoc_ konfigurace teď byly odebrány ze všech pro Mac šablony projektů sady Visual Studio, můžete zjistit, že starší projekty stále zahrnuje tyto konfigurace . Pokud je to tento případ, můžete nadále používat **App Store | Zařízení** konfigurace v kroku 1 seznamu výše.
+> Při starý _obchod_ a _Ad Hoc_ konfigurace teď byly odebrány ze všech pro Mac šablony projektů sady Visual Studio, můžete zjistit, že starší projekty stále zahrnuje tyto konfigurace. Pokud je to tento případ, můžete nadále používat **App Store | Zařízení** konfigurace v kroku 1 seznamu výše.
 
 ### <a name="sign-and-distribute-your-app"></a>Podepisování a distribuce aplikace
 
@@ -309,7 +309,7 @@ S distribuční vytvořit sestavení a archivovat, nyní jste připraveni k odes
 ## <a name="submitting-your-app-to-apple"></a>Odeslání vaší aplikace pro Apple
 
 > [!NOTE]
-> Poznámka: Apple nedávno změnila její proces ověření pro aplikace pro iOS a může odmítnout aplikací pomocí `iTunesMetadata.plist` součástí soubor IPA. Pokud dojde k chybě `ERROR: ERROR ITMS-90047: "Disallowed paths ( "iTunesMetadata.plist" ) found at: Payload/iPhoneApp1.app"`popsané řešení [sem](https://forums.xamarin.com/discussion/40388/disallowed-paths-itunesmetadata-plist-found-at-when-submitting-to-app-store/p1) má problém vyřešit.
+> Apple nedávno změnila její proces ověření pro aplikace pro iOS a může odmítnout aplikací pomocí `iTunesMetadata.plist` součástí soubor IPA. Pokud dojde k chybě `ERROR: ERROR ITMS-90047: "Disallowed paths ( "iTunesMetadata.plist" ) found at: Payload/iPhoneApp1.app"`popsané řešení [sem](https://forums.xamarin.com/discussion/40388/disallowed-paths-itunesmetadata-plist-found-at-when-submitting-to-app-store/p1) má problém vyřešit.
 
 S distribuční sestavení dokončit jste připraveni k odeslání vaší aplikace pro iOS Apple ke kontrole a uvolněte na webu App Store.
 

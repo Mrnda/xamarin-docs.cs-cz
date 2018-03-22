@@ -8,18 +8,18 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 8e90bc3974247066a714cb44b6648a83cdb58cf5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 3af74fb9d93e22e361f2e3db00961d7955eda689
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="push-notifications-in-ios"></a>Nabízená oznámení v iOS
 
 _Tato část se bude zabývat nabízená oznámení v iOS. Zavádí službu Apple Push brány oznámení a roli, které splňuje při publikování oznámení pro aplikace iOS. Se vysvětluje, jak vytvořit potřeba povolte nabízená oznámení a popisují certifikáty zabezpečení. Nakonec bude v této části popisují některé housekeeping úlohy, které můžete sledovat mobilní zařízení klientů musí provést aplikační servery._
 
 > [!IMPORTANT]
-> **Poznámka:** informace v této části se vztahují na iOS 9 a předchozí, ho byla ponechána zde k podpoře starší verze iOS. IOS 10 a novější, najdete v tématu [uživatele oznámení Framework – průvodce](~/ios/platform/user-notifications/index.md) pro podporu místní i vzdálené oznámení na zařízení s iOS.
+> Informace v této části se vztahují na iOS 9 a předchozí, ho byla ponechána zde k podpoře starší verze iOS. IOS 10 a novější, najdete v tématu [uživatele oznámení Framework – průvodce](~/ios/platform/user-notifications/index.md) pro podporu místní i vzdálené oznámení na zařízení s iOS.
 
 Nabízená oznámení by měly být udržovány stručný a obsahovat pouze dostatek dat oznámení mobilní aplikace, jestli ho měli kontaktovat serverová aplikace pro aktualizaci. Například při doručení nových e-mailů, je serverová aplikace by upozornit pouze mobilních aplikací, který byl doručen nových e-mailů. Oznámení nebude obsahovat nových e-mailů sám sebe. Mobilní aplikace by pak nové e-maily ze serveru načíst, že je vhodné
 

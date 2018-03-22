@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: bee3480fc90c2eac5629e336c57daa90adf9c346
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: fa0986141a44bbe7100268c629e606a5857e2699
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="ipa-support"></a>Podpora IPA
 
@@ -151,7 +151,7 @@ Jakmile profilu pro zřizování byl vytvořen a vybrán, volitelné **iTunesMet
     ![](ipa-support-images/imagevs02.png "Vyberte z rozevíracího seznamu konfigurace Ad-Hoc")
 
     > [!NOTE]
-> Konfigurace aplikace Ad-Hoc nemusí být dostupné pro projekty novější Xamarin.iOS. Pokud není k dispozici, vyberte **verze** konfigurace.
+    > Konfigurace aplikace Ad-Hoc nemusí být dostupné pro projekty novější Xamarin.iOS. Pokud není k dispozici, vyberte **verze** konfigurace.
 
 3. Chcete-li zahrnout možnost **iTunesMetadata.plist** souboru, klikněte **...**  tlačítko, vyberte ho ze seznamu a klikněte **otevřete** tlačítko:
 

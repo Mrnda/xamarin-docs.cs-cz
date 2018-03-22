@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/07/2017
-ms.openlocfilehash: 4b2a470d7fe2a1f9d4b8df40836c934547adf614
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 5da834e7e77fb8ab080c124bd09653bc840be3b0
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="working-with-buttons"></a>Práce s tlačítka
 
@@ -130,7 +130,7 @@ namespace tvRemote
 Tak dlouho, dokud na tlačítko `Enabled` vlastnost je `true` a není předmětem jiného ovládacího prvku nebo zobrazení, můžete provedeny položce vybraný pomocí vzdáleného Siri. Pokud uživatel vybere tlačítko a klikne na povrch Touch `ButtonPressed` by byl proveden akce definovaná výše.
 
 > [!IMPORTANT]
-> **Poznámka:** , když je možné přiřadit akce, jako `TouchUpInside` k `UIButton` v iOS Návrhář při vytváření **obslužné rutiny události**, ho nebude nikdy volat protože Apple TV nemá dotykovou obrazovku nebo podporu touch události. Je třeba použít výchozí **typ akce** při vytváření **akce** pro tvOS prvky uživatelského rozhraní.
+> I když je možné přiřadit akce, jako `TouchUpInside` k `UIButton` v iOS Návrhář při vytváření **obslužné rutiny události**, ho nebude nikdy volat protože Apple TV nemá touch obrazovky nebo podporují touch události. Je třeba použít výchozí **typ akce** při vytváření **akce** pro tvOS prvky uživatelského rozhraní.
 
 
 
@@ -191,7 +191,7 @@ View.AddSubview (button);
 ```
 
 > [!IMPORTANT]
-> **Poznámka:** , když je možné přiřadit akce, jako `TouchUpInside` k `UIButton`, se nebude nikdy volat protože Apple TV nemá touch obrazovky nebo podporují touch události. Je třeba použít události, jako **AllEvents** nebo **PrimaryActionTriggered**.
+> I když je možné přiřadit akce, jako `TouchUpInside` k `UIButton`, se nebude nikdy volat protože Apple TV nemá touch obrazovky nebo podporují touch události. Je třeba použít události, jako **AllEvents** nebo **PrimaryActionTriggered**.
 
 
 

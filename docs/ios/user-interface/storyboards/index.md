@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: a0b0ca9857e706a9a84f1c661f7f6ff294e112c1
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: 85c05145ce2490468ac5d5fb9b8524853d46a9e3
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="introduction-to-storyboards"></a>Úvod do scénářů
 
@@ -60,7 +60,7 @@ Na myši nahoru nabídky se zobrazí upozornění vyberte akci pro naše segue. 
 [![](images/16new.png "Akce Segue rozevírací seznam s třídami velikost")](images/16new.png#lightbox)
 
 > [!IMPORTANT]
-> **Poznámka:** Pokud používáte VMWare pro virtuální počítač se systémem Windows, jako je namapovaný Ctrl + kliknutí _klikněte pravým tlačítkem na_ tlačítko myši ve výchozím nastavení. Pokud chcete vytvořit Segue, upravit upřednostňovaných klávesnice prostřednictvím **Předvolby** > **klávesnice a myš** > **zkratky myši** a přemapovat vaší **Sekundární tlačítko** jak je uvedeno dále:
+> Pokud používáte VMWare pro virtuální počítač se systémem Windows, jako je namapovaný Ctrl + kliknutí _klikněte pravým tlačítkem na_ tlačítko myši ve výchozím nastavení. Pokud chcete vytvořit Segue, upravit upřednostňovaných klávesnice prostřednictvím **Předvolby** > **klávesnice a myš** > **zkratky myši** a přemapovat vaší **Sekundární tlačítko** jak je uvedeno dále:
 > 
 > [![](images/image22.png "Nastavení předvoleb klávesnici a myš")](images/image22.png#lightbox)
 > 

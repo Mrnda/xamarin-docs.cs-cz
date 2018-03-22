@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: a5dbd65cc32ed63c0fa6f8abe3a13ffee4e9df63
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 50553cb1dc5f7ea782c0f13e32f60d7b6ce3e181
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="enhanced-user-notifications"></a>Rozšířené uživatelská oznámení
 
@@ -558,7 +558,7 @@ Pokud chcete implementovat rozšíření služby v aplikaci Xamarin.iOS, postupu
 -----
 
 > [!IMPORTANT]
-> Poznámka: Identifikátor balíku rozšíření služby by měl odpovídat identifikátor balíku hlavní aplikace pomocí `.appnameserviceextension` připojen na konec. Například pokud aplikace hlavní měli identifikátor svazku z `com.xamarin.monkeynotify`, rozšíření služby by měl mít identifikátor svazku z `com.xamarin.monkeynotify.monkeynotifyserviceextension`. Měla by být nastavena automaticky při přidání rozšíření do řešení. 
+> Identifikátor sady pro rozšíření služby by měl odpovídat identifikátor balíku hlavní aplikace pomocí `.appnameserviceextension` připojen na konec. Například pokud aplikace hlavní měli identifikátor svazku z `com.xamarin.monkeynotify`, rozšíření služby by měl mít identifikátor svazku z `com.xamarin.monkeynotify.monkeynotifyserviceextension`. Měla by být nastavena automaticky při přidání rozšíření do řešení. 
 
 V rozšíření služby oznámení, který bude potřeba upravit tak, aby požadované funkce, které je jeden hlavní třídy. Příklad:
 

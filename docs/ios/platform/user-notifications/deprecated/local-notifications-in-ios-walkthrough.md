@@ -8,18 +8,18 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 72a66fae7a1d4554643c1b52796256cc0b3dbd31
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 846b292aed73a4980f4ce711ecefe4382fa7a321
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="walkthrough---using-local-notifications-in-xamarinios"></a>Návod - použití místního oznámení v Xamarin.iOS
 
 _V této části projdeme použití místního oznámení aplikace pro Xamarin.iOS. Popisuje základní informace o vytváření a publikování oznámení, že se objeví se upozornění, když přijaté aplikací._
 
 > [!IMPORTANT]
-> **Poznámka:** informace v této části se vztahují na iOS 9 a předchozí, ho byla ponechána zde k podpoře starší verze iOS. IOS 10 a novější, najdete v tématu [uživatele oznámení Framework – průvodce](~/ios/platform/user-notifications/index.md) pro podporu místní i vzdálené oznámení na zařízení s iOS.
+> Informace v této části se vztahují na iOS 9 a předchozí, ho byla ponechána zde k podpoře starší verze iOS. IOS 10 a novější, najdete v tématu [uživatele oznámení Framework – průvodce](~/ios/platform/user-notifications/index.md) pro podporu místní i vzdálené oznámení na zařízení s iOS.
 
 ## <a name="walkthrough"></a>Návod
 

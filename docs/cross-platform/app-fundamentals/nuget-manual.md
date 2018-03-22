@@ -8,22 +8,20 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 76f35819b00302f4a586643798afbd27416d3997
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 1a77dcc8ae1c698e1f1ef40757ab03558f329719
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="manually-creating-nuget-packages-for-xamarin"></a>Ruční vytvoření balíčků NuGet pro Xamarin
 
 _Tato stránka obsahuje některé tipy k sestavení balíčky NuGet, které cílí na platformě Xamarin._
 
 > [!NOTE]
-> Xamarin Studio 6.2 (a Visual Studio pro Mac) zahrnuje schopnost _automaticky_ generování balíčků NuGet z PCL, .NET Standard nebo sdílených projektů.
-> Odkazovat [Multiplatform knihovny pro sdílení kódu](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/index.md) průvodce další podrobnosti.
+> Xamarin Studio 6.2 (a Visual Studio pro Mac) zahrnuje schopnost _automaticky_ generování balíčků NuGet z PCL, .NET Standard nebo sdílených projektů. Odkazovat [Multiplatform knihovny pro sdílení kódu](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/index.md) průvodce další podrobnosti.
 
 ## <a name="nuget-package-xamarin-profiles"></a>Balíček NuGet Xamarin profily
-
 
 Web NuGet [podpora více verzí rozhraní .NET Framework a profily](https://docs.nuget.org/create/enforced-package-conventions) popisuje, jak pro podporu různých architektury Microsoft a profilů, ale nezahrnuje názvy cílový framework používané Xamarin.
 

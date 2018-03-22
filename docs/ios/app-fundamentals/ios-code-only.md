@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: d53dea1a46c6b42f901beb217eb00b3a3fa0fd92
-ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
+ms.openlocfilehash: 24fc64d1bd04cb1ebefb9bf9a359efb395b45074
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="creating-ios-user-interfaces-in-code"></a>Vytváření iOS uživatelského rozhraní v kódu
 
@@ -620,7 +620,7 @@ Další informace o vytvoření obrazovky spustit najdete v dokumentech níže:
 - [Správa spuštění obrazovky s scénářů](~/ios/app-fundamentals/images-icons/launch-screens.md)
 
 > [!IMPORTANT]
-> **Poznámka:** od verze iOS 9, Apple doporučuje, aby scénářů má být použit jako primární metodou pro vytvoření obrazovky spustit.
+> Od verze iOS 9 Apple doporučuje, aby scénářů má být použit jako primární metodou pro vytvoření obrazovky spustit.
 
 ### <a name="creating-a-launch-image-for-pre-ios-8-applications"></a>Vytváření obrazem spustit pro starší než iOS 8 aplikací
 
@@ -629,7 +629,7 @@ Statický obrázek lze použít kromě .xib nebo Storyboard úvodní obrazovka, 
 Tento statický obrázek lze nastavit v souboru Info.plist nebo katalog Asset (pro iOS 7) ve vaší aplikaci. Musíte zajistit samostatné Image pro každé zařízení velikost (320 x 480, 640 x 960, 640 x 1136), které aplikace může být na. Další informace na velikost obrazovky spustit [spuštění bitové kopie obrazovky](~/ios/app-fundamentals/images-icons/launch-screens.md) průvodce.
 
 > [!IMPORTANT]
-> **Poznámka:** Pokud má vaše aplikace bez spuštění obrazovky, můžete si všimnout, že se nevejde plně na obrazovce. Pokud je to tento případ, musí si nezapomeňte zahrnout alespoň, 640 x 1136 obrázek s názvem `Default-568@2x.png` k vaší Info.plist. 
+> Pokud má vaše aplikace bez spuštění obrazovky, můžete si všimnout, že nevejdou plně na obrazovce. Pokud je to tento případ, musí si nezapomeňte zahrnout alespoň, 640 x 1136 obrázek s názvem `Default-568@2x.png` k vaší Info.plist. 
 
 
 

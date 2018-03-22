@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/13/2017
-ms.openlocfilehash: 83841e62d863bf4be4edef5c0b6b7d486f192f4d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 8fd2b5069e175a68ff7609e75775db1929507582
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="background-tasks"></a>Úlohy na pozadí
 
@@ -143,7 +143,7 @@ Znovu, bude vydávat systému `WKSnapshotRefreshBackgroundTask` tak, aby aplikac
 Když aplikaci označí `WKSnapshotRefreshBackgroundTask` dokončit, systém bude automaticky pořízení snímku uživatelském rozhraní aplikace.
 
 > [!IMPORTANT]
-> **Poznámka:** je důležité vždy naplánovat ` WKSnapshotRefreshBackgroundTask` po obdržel nová data a aktualizovat svoje uživatelské rozhraní aplikace nebo uživatele, se nezobrazí upravené informace.
+> Je důležité vždy naplánovat ` WKSnapshotRefreshBackgroundTask` po obdržel nová data a aktualizovat svoje uživatelské rozhraní aplikace nebo uživatele, se nezobrazí upravené informace.
 
 
 
@@ -630,7 +630,7 @@ Aplikace, které mají připnutá na ukotvení můžete očekávat následujíc�
 Poslední aplikaci spustili uživatele bude považovat za _nedávno použité_ aplikace a bude zabírat poslední slot v ukotvení. Zde, že uživatel trvale připnout na ukotvení. Naposledy použitých bude zacházeno, jako kterákoli jiná oblíbených položek aplikace uživatel má již připnuli k ukotvení.
 
 > [!IMPORTANT]
-> **Poznámka:** aplikace, které byly přidány pouze k obrazovce Domů nebude mít regulární plánování. Pro příjem regulární plánování a pozadí aktualizací, aplikace _musí_ přidat do ukotvení.
+> Aplikace, které byly přidány pouze k obrazovce Domů nebude mít regulární plánování. Pro příjem regulární plánování a pozadí aktualizací, aplikace _musí_ přidat do ukotvení.
 
 Jak jsme uvedli dříve v tomto dokumentu, snímky jsou velmi důležité pro watchOS 3 vzhledem k tomu, že fungovat jako obrázky verzi preview a spuštění aplikace. Pokud uživatel vyrovná v aplikaci v ukotvení, bude rozšíření na celou obrazovku, zadejte popředí a spustit, takže je nutné, že se snímek aktuální.
 

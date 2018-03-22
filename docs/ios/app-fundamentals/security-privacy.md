@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 4747fb73358a60d10832a1e650acd90a5a4274d1
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 5e4bbc22403c6c0bfa5c8dc7ac4e3a39545051d4
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="ios-security-and-privacy-features"></a>iOS zabezpečení a ochrany osobních údajů funkce
 
@@ -44,7 +44,7 @@ Následující obecné změny provedly k zabezpečení a ochrana osobních údaj
 Aplikace běžící v systému iOS 10 (nebo novější), musí deklarovat staticky jejich záměr přístupu konkrétním funkcím nebo informace o uživateli zadáním jeden či více klíčů o ochraně osobních údajů v jejich `Info.plist` soubory, které vysvětlují, uživateli, proč aplikace chce získat přístup.
 
 > [!IMPORTANT]
-> **Poznámka:** aplikace, které neposkytl požadované klíče bude bezobslužně ukončena systémem při pokusu o přístup k jedné ze omezené funkce nebo informace o uživateli, _bez chyby_! Pokud se aplikace spustí, neočekávaně selhání v systému iOS 10, zajistěte, aby všechny požadované `Info.plist` bylo zadáno.
+> Aplikace, které neposkytl požadované klíče bude bezobslužně ukončena systémem při pokusu o přístup k jedné ze omezené funkce nebo informace o uživateli, _bez chyby_! Pokud se aplikace spustí, neočekávaně selhání v systému iOS 10, zajistěte, aby všechny požadované `Info.plist` bylo zadáno.
 
 Klíče jsou k dispozici související s následující o ochraně osobních údajů:
 
@@ -109,7 +109,7 @@ Pokud chcete nastavit některého z klíčů o ochraně osobních údajů, postu
 -----
 
 > [!IMPORTANT]
-> **Poznámka:** v příkladu výše, nepodařilo se nastavit uvedené `NSHomeKitUsageDescription` klíče v `Info.plist` souboru by způsobilo aplikace _bezobslužně chybě_ (dochází k uzavření systému za běhu) bez chyby při spuštění v iOS 10 (nebo větší).
+> V příkladu výše, nepodařilo se nastavit uvedené `NSHomeKitUsageDescription` klíče v `Info.plist` souboru by způsobilo aplikace _bezobslužně chybě_ (dochází k uzavření systému za běhu) bez chyby při spuštění v iOS 10 (nebo vyšší).
 
 <a name="Summary" />
 

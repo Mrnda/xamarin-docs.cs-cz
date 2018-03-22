@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/11/2016
-ms.openlocfilehash: e231043b1c4b0fa7ba72f2a371545036ffb21164
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: c4ee5c0457dd1faea74cbbc30dd2d0f42087a8d0
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="cloudkit"></a>CloudKit
 
@@ -43,7 +43,7 @@ CloudKit podporuje koncept veřejné a privátní databází. Veřejné databáz
 CloudKit podporuje strukturovaná i hromadně data. Je umožňuje zpracovávat bezproblémově přenosech velkých souborů. CloudKit postará efektivně přenos velkých souborů do a z Icloudu servery na pozadí, uvolnění vývojáři zaměřit se na jiné úlohy.
 
 > [!NOTE]
-> **Poznámka:** je důležité si uvědomit, že je CloudKit _přenosu technologie_. Neposkytuje žádné trvalost; pouze umožňuje aplikaci posílat a přijímat informace ze serverů efektivně.
+> Je důležité si uvědomit, že je CloudKit _přenosu technologie_. Neposkytuje žádné trvalost; pouze umožňuje aplikaci posílat a přijímat informace ze serverů efektivně.
 
 Době psaní tohoto textu Apple původně poskytuje CloudKit zdarma vysoké limit šířky pásma a úložiště kapacity. Pro větší projekty nebo aplikací na bázi velké uživatele s má instrukcemi Apple bude poskytována cenově dostupné cenové škálování.
 
@@ -239,7 +239,7 @@ Odkazy jsou viditelné v rámci CloudKit prostřednictvím `CKReference` třídy
 Referenční materiály poskytují mechanismus za kaskádových odstraní. Je-li nadřazený záznam odstraněna z databáze, všechny podřízené záznamy (jak je uvedeno v relaci) automaticky odstraní z databáze také.
 
 > [!NOTE]
-> **Poznámka:**: nepropojená ukazatele jsou možnost při použití CloudKit. Například v době aplikace načtených seznam záznamů ukazatele, vybrán záznam a poté požádat pro záznam záznam již neexistuje v databázi. Aplikace musí být napsané tak pohodlné zpracování této situace.
+> Při používání CloudKit nepropojená ukazatele se možnost. Například v době aplikace načtených seznam záznamů ukazatele, vybrán záznam a poté požádat pro záznam záznam již neexistuje v databázi. Aplikace musí být napsané tak pohodlné zpracování této situace.
 
 Není požadováno zpět odkazy jsou upřednostněny při práci s CloudKit Framework. Apple má upřesnění systému se nejúčinnější typ odkazu.
 
@@ -395,7 +395,7 @@ Tři věci, které je třeba o ve výše uvedeném kódu:
 
 
 > [!NOTE]
-> **Poznámka:**: z důvodu "míru ztrát" paketů mobilní síťové komunikace, kde připojení jsou neustále vyřazována nebo přerušit, jedno z první rozhodnutí při vývojář musí udělat při práci s CloudKit je zpracování chyb.
+> Z důvodu "míru ztrát" paketů mobilní síťové komunikace, kde připojení jsou neustále vyřazována nebo přerušit, jedním z první aspekty, které má vývojář musí při práci s CloudKit je zpracování chyb.
 
 ### <a name="fetching-a-record"></a>Načítání záznamu
 
@@ -560,7 +560,7 @@ Nakonec nabízených oznámení by měly být odeslány na každé zařízení p
 Odběry jsou viditelné v rámci CloudKit prostřednictvím `CKSubscription` třídy. Že kombinují typu záznamu ( `RecordType`), predikátu ( `NSPredicate`) a Apple Push Notification ( `Push`).
 
 > [!NOTE]
-> **Poznámka:**: CloudKit oznámení jsou mírně rozšířen jako obsahují datové části obsahující CloudKit konkrétní informace, jako je například co způsobilo nabízené provést.
+> CloudKit oznámení jsou mírně rozšířen jako obsahují datové části obsahující CloudKit konkrétní informace, jako je například co způsobilo nabízené provést.
 
 #### <a name="how-subscriptions-work"></a>Jak fungují odběrů
 
@@ -678,7 +678,7 @@ Protože to pochází ze serveru služby iCloud je s formátováním zálohován
 Na základě kontejneru podle kontejneru je jedinečný, náhodně vygenerované ID uživatele vytvořena a přidružena účtem Icloudu uživatele (e-mailová adresa). Toto ID uživatele se vrátí do aplikace a je možné libovolným způsobem vývojář považuje za vhodné.
 
 > [!NOTE]
-> **Poznámka:**: různé aplikace spuštěné na stejném zařízení pro stejného uživatele Icloudu bude mít jiné ID uživatele, protože jsou připojeny k různé CloudKit kontejnery.
+> Různé aplikace spuštěné na stejném zařízení pro stejného uživatele Icloudu bude mít jiné ID uživatele, protože jsou připojeny k různé CloudKit kontejnery.
 
 Následující kód získá ID uživatele CloudKit pro aktuálně přihlášeného v Icloudu uživatele na zařízení:
 
@@ -810,7 +810,7 @@ Vývojáři mohou pomocí této funkce lze provést změny schématu během výv
 Před nasazením aplikace, vývojáře můžete migrovat jejich schéma a data do produkčního prostředí pomocí **řídicí panel CloudKit**. Při spuštění v provozním prostředí, server zabrání aplikaci ve změně schématu prostřednictvím kódu programu. Vývojáři stále provádět změny s **řídicí panel CloudKit** , ale pokusí přidat pole do záznamu v provozním prostředí následek chyby.
 
 > [!NOTE]
-> **Poznámka:** simulátoru pracuje pouze s iOS **vývojového prostředí**. Když je připraven k testování aplikace v Vývojář **provozním prostředí**, fyzickém zařízení iOS se vyžaduje.
+> Simulátor pracuje pouze s iOS **vývojového prostředí**. Když je připraven k testování aplikace v Vývojář **provozním prostředí**, fyzickém zařízení iOS se vyžaduje.
 
 
 ## <a name="shipping-a-cloudkit-enabled-app"></a>Aplikace s povoleným přesouvání CloudKit

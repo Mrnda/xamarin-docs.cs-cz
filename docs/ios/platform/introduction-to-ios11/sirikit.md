@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/07/2017
-ms.openlocfilehash: 557521bc3bce41b9023acbf31a344a57cb63d2a1
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 6331912eedcd52df45c0d25d83a5b599c55ca7d2
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="sirikit"></a>SiriKit
 
@@ -146,12 +146,10 @@ public partial class IntentHandler : INExtension, IINNotebookDomainHandling
 Třída musí dědit z `INExtension`, a protože vzorku bude zpracování seznamy a poznámky k záměry, také implementuje `IINNotebookDomainHandling`.
 
 > [!NOTE]
-> **Poznámka o pojmenování:** je v rozhraní .NET pro rozhraní obsahovat předponu na velké konvence `I`, které dodržuje Xamarin při vytváření vazby protokolů z iOS SDK.
->
-> Xamarin také zachovává názvy typů z iOS, a Apple používá první dva znaky v názvech typ tak, aby odrážela rozhraní, které patří typu.
->
-> Pro `Intents` framework, typy jsou předponou `IN*` (např. `INExtension`), ale toto jsou _není_ rozhraní.
-> Také vyplývá, že protokoly (které stát rozhraní v jazyce C#) skončili se dvěma `I`s, jako například `IINAddTasksIntentHandling`.
+> - Je v rozhraní .NET pro rozhraní obsahovat předponu na velké konvence `I`, které dodržuje Xamarin při vytváření vazby protokolů z iOS SDK.
+> - Xamarin také zachovává názvy typů z iOS, a Apple používá první dva znaky v názvech typ tak, aby odrážela rozhraní, které patří typu.
+> - Pro `Intents` framework, typy jsou předponou `IN*` (např. `INExtension`), ale toto jsou _není_ rozhraní.
+> - Také vyplývá, že protokoly (které stát rozhraní v jazyce C#) skončili se dvěma `I`s, jako například `IINAddTasksIntentHandling`.
 
 #### <a name="handling-intents"></a>Zpracování záměry
 

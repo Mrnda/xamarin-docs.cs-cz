@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 04/08/2017
-ms.openlocfilehash: 1b998628efc133590a543dd45730070a457d61d5
-ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
+ms.openlocfilehash: 2c2ba84167924916c3bec27379d33c47e8dab360
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/21/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="uninstalling-xamarin"></a>Odinstalace Xamarin
 
@@ -69,7 +69,7 @@ rm -rf ~/Library/XamarinStudio-*
 Mono je implementace s otevřeným zdrojem společnosti Microsoft .NET Framework a umožňuje Xamarin Products—Xamarin.iOS, Xamarin.Android a Xamarin.Mac vývoj těchto platforem v jazyce C#.
 
 > [!IMPORTANT]
-> Poznámka: K dispozici jsou další aplikace mimo Xamarin, které také využívají Mono, jako je například Unity. Ujistěte se, že neexistují žádné další závislosti na Mono před odinstalací jej.
+> Existují další aplikace mimo Xamarin, které také používají Mono, jako je například Unity. Ujistěte se, že neexistují žádné další závislosti na Mono před odinstalací jej.
 
 Rozhraní Framework Mono odebrat z počítače, spusťte následující příkazy v terminálu:
 
@@ -258,7 +258,7 @@ Odinstalovat jednotlivých součástí Xamarin (například profileru nebo seši
 [![](uninstalling-xamarin-images/vs2017-uninstall-sml.png "Úplně odinstalujte Visual Studio")](uninstalling-xamarin-images/vs2017-uninstall.png#lightbox)
 
 > [!IMPORTANT]
-> **Upozornění:** Pokud máte nainstalovanou sadu Visual Studio – souběžného (SxS) – například verze a verze Preview – dva (nebo více) instancí odinstalace jedna instance může odstranit některé funkce Xamarin z jiné instance Visual Studio včetně:
+> Pokud máte dva (nebo více) instancí sady Visual Studio nainstalována souběžného (SxS) – například verze a verze Preview – odinstalaci jedna instance může odstranit některé funkce Xamarin z jiné sady Visual Studio instance, včetně:
 >
 > - Xamarin Profiler
 > - Xamarin sešity nebo Inspector

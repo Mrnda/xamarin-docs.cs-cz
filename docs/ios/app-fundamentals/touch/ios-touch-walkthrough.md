@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: c806eb51be5f585f2c94b438f6ca31a70aaa7551
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 04c7a7235665e14fd128a3a70951168c1914c112
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="walkthrough--using-touch-in-ios"></a>Návod – pomocí Touch v iOS
 
@@ -92,12 +92,12 @@ V této ukázce jsme se ukazují některé touch rozhraní API. Použijte násle
         }
     }
     ```
+    
     Tato metoda funguje tak, že kontrola `UITouch` objektu a pokud existuje provedení několika akcí podle kde stiskem došlo k chybě:
 
     * _Uvnitř TouchImage_ – zobrazit text `Touches Began` v popisku a změňte bitovou kopii.
     * _Uvnitř DoubleTouchImage_ – změnit obrázek, pokud byla gesta poklepání zobrazí.
     * _Uvnitř DragImage_ – nastavte příznak označující, že byla spuštěna dotykového ovládání. Metoda `TouchesMoved` použije tento příznak k určení, zda `DragImage` by měl pohybovat po obrazovce, nebo Ne, jak jsme je vidět v dalším kroku.
-
 
     Ve výše uvedeném kódu pouze zabývá jednotlivé úpravy, je stále žádné chování Pokud uživatel přechází jejich prstem na obrazovce. Reagovat na přesun, implementovat `TouchesMoved` jak je znázorněno v následujícím kódu:
 
@@ -192,7 +192,7 @@ Postupujte podle těchto kroků k implementaci gesto rozpoznávání:
 
 1. Upravte soubor **GestureViewController.cs** a přidejte následující proměnnou instance:
 
-    ```chsarp
+    ```csharp
     #region Private Variables
     private bool imageHighlighted = false;
     private RectangleF originalImageFrame = RectangleF.Empty;
@@ -204,7 +204,7 @@ Budou používat pro rozpoznávání gesto panoramování `originalImageFrame` h
 
 1. Přidejte následující metodu k řadiči:
 
-    ```chsarp
+    ```csharp
     private void WireUpDragGestureRecognizer()
     {
         // Create a new tap gesture
@@ -223,7 +223,7 @@ Všimněte si, jsme přiřadit cíl gesto ve formě metodu `HandleDrag` – tato
 
 1. Pokud chcete implementovat HandleDrag, přidejte následující kód k řadiči:
 
-    ```chsarp
+    ```csharp
     private void HandleDrag(UIPanGestureRecognizer recognizer)
     {
         // If it's just began, cache the location of the image
@@ -250,7 +250,7 @@ Všimněte si, jsme přiřadit cíl gesto ve formě metodu `HandleDrag` – tato
 
 1. Přidat `UITapGestureRecognizer` , změní se zobrazuje v DoubleTouchImage image. Přidejte následující metodu do `GestureViewController` řadiče:
 
-    ```chsarp
+    ```csharp
     private void WireUpTapGestureRecognizer()
     {
         // Create a new tap gesture
@@ -286,7 +286,7 @@ Všimněte si, jsme přiřadit cíl gesto ve formě metodu `HandleDrag` – tato
 
 1. Poslední věcí, je potřeba udělat, je upravit `ViewDidLoad` tak, aby volá metody, kterou jsme právě přidali. Změna ViewDidLoad, takže je podobná následující kód:
 
-    ```chsarp
+    ```csharp
     public override void ViewDidLoad()
     {
         base.ViewDidLoad();
@@ -324,7 +324,7 @@ Postupujte podle těchto kroků můžete vytvořit vlastní gesto rozpoznáván�
 
 1. Přidejte novou třídu do projektu s názvem `CheckmarkGestureRecognizer`, vypadá podobně jako následující kód:
 
-    ```chsarp
+    ```csharp
     using System;
     using CoreGraphics;
     using Foundation;
@@ -444,7 +444,7 @@ Třída teď můžete začít pracovat, při příštím uživatel pracuje s apl
 
 1. Teď, když jsme jste definovali pro rozpoznávání vlastní gesto (`CheckmarkGestureRecognizer`) upravit **CustomGestureViewController.cs** souboru a přidejte následující dvě instance proměnné:
 
-    ```chsarp
+    ```csharp
     #region Private Variables
     private bool isChecked = false;
     private CheckmarkGestureRecognizer checkmarkGesture;
@@ -453,7 +453,7 @@ Třída teď můžete začít pracovat, při příštím uživatel pracuje s apl
 
 1. Vytváření instancí a nakonfigurovat pro naše gesto rozpoznávání, přidejte k řadiči následující metodu:
 
-    ```chsarp
+    ```csharp
     private void WireUpCheckmarkGestureRecognizer()
     {
         // Create the recognizer
@@ -482,7 +482,7 @@ Třída teď můžete začít pracovat, při příštím uživatel pracuje s apl
 
 1. Upravit `ViewDidLoad` tak, aby zavolá `WireUpCheckmarkGestureRecognizer`, jak ukazuje následující fragment kódu:
 
-    ```chsarp
+    ```csharp
     public override void ViewDidLoad()
     {
         base.ViewDidLoad();

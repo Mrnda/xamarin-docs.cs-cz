@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: ea51dc2c7dadc5cc430df990c9ce79eac6e941da
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 02116e8e11cb6ff050e2c885338777e1fd25c4cb
+ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="homekit"></a>HomeKit
 
@@ -77,7 +77,7 @@ Postupujte takto:
 S těmito nastaveními zavedené aplikace je nyní připraven pro přístup k rozhraní API HomeKit Framework. Podrobné informace o zřizování, najdete v tématu naše [zřizování zařízení](~/ios/get-started/installation/device-provisioning/index.md) a [zřizování aplikace](~/ios/get-started/installation/device-provisioning/index.md) příručky.
 
 > [!IMPORTANT]
-> **Poznámka:** testování HomeKit povolené aplikace vyžaduje zařízení skutečné iOS, který správně zřízený pro vývoj. HomeKit nelze testovat z simulátoru iOS.
+> Testování aplikace HomeKit povoleno vyžaduje skutečné iOS zařízení, který správně zřízený pro vývoj. HomeKit nelze testovat z simulátoru iOS.
 
 ## <a name="the-homekit-accessory-simulator"></a>Simulátor HomeKit příslušenství
 
@@ -143,7 +143,7 @@ Pokud chcete nastavit tento klíč, postupujte takto:
 6. Uložte změny do souboru.
 
 > [!IMPORTANT]
-> **Poznámka:** Nepodařilo se nastavit `NSHomeKitUsageDescription` klíče v `Info.plist` soubor bude mít za následek aplikace _bezobslužně chybě_ (dochází k uzavření systému za běhu) bez chyby při spuštění v iOS 10 (nebo vyšší).
+> Nepodařilo se nastavit `NSHomeKitUsageDescription` klíče v `Info.plist` soubor bude mít za následek aplikace _bezobslužně chybě_ (dochází k uzavření systému za běhu) bez chyby při spuštění v iOS 10 (nebo vyšší).
 
 ## <a name="connecting-to-homekit"></a>Připojení k HomeKit
 
@@ -265,7 +265,7 @@ Pokud se na domovské stránce úspěšně vytvořil, je třeba volat `UpdatePri
 Je třeba rovněž sledovat Domů manažera `DidAddHome` a `DidRemoveHome` události a aktualizace aplikace uživatelské rozhraní podle potřeby.
 
 > [!IMPORTANT]
-> **Poznámka:** `AlertView.PresentOKAlert` metoda použitá ve výše uvedeném ukázkovém kódu je pomocná třída v HomeKitIntro aplikace, která vytvořila práce s iOS výstrahy jednodušší.
+> `AlertView.PresentOKAlert` Metoda použitá ve výše uvedeném ukázkovém kódu je pomocná třída v HomeKitIntro aplikace, která vytvořila práce s iOS výstrahy jednodušší.
 
 
 ## <a name="finding-new-accessories"></a>Hledání nové příslušenství
@@ -275,7 +275,7 @@ Jakmile primární domovské byla definována nebo načíst ze domácí správce
 Volání `StartSearchingForNewAccessories` metoda spusťte hledání nové příslušenství a `StopSearchingForNewAccessories` metoda po dokončení.
 
 > [!IMPORTANT]
-> **Poznámka:** `StartSearchingForNewAccessories` by nemělo být ponecháno systémem pro dlouhou dobu, protože budou mít nepříznivý vliv výdrž i výkon zařízení s iOS. Apple navrhuje volání `StopSearchingForNewAccessories` za minutu nebo pouze vyhledávání při rozhraní příslušenství najít pro uživatele.
+> `StartSearchingForNewAccessories` by nemělo být ponecháno systémem pro dlouhou dobu, protože budou mít nepříznivý vliv výdrž i výkon zařízení s iOS. Apple navrhuje volání `StopSearchingForNewAccessories` za minutu nebo pouze vyhledávání při rozhraní příslušenství najít pro uživatele.
 
 `DidFindNewAccessory` Událostí bude volána, když se zjistí nové příslušenství a budou přidány do `DiscoveredAccessories` seznamu v prohlížeči příslušenství.
 
