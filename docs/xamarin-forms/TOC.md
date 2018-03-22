@@ -180,6 +180,7 @@
 ### [Výběr](user-interface/picker/index.md)
 #### [Nastavení vlastnosti ItemsSource výběru](user-interface/picker/populating-itemssource.md)
 #### [Přidání dat do kolekce položek výběru](user-interface/picker/populating-items.md)
+### [Posuvník](user-interface/slider.md)
 ### [Styly](user-interface/styles/index.md)
 #### [Úvod](user-interface/styles/introduction.md)
 #### [Explicitní styly](user-interface/styles/explicit.md)
