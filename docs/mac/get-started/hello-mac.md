@@ -1,6 +1,6 @@
 ---
 title: Hello, Mac
-description: "Tento průvodce vás provede kroky k vytvoření první aplikace Xamarin.Mac a v procesu zavádí vývoj nástrojů, včetně sady Visual Studio pro Mac, Xcode a rozhraní tvůrce. Také zavádí výstupy a akcí, které zveřejňují ovládacích prvků uživatelského rozhraní na kód, a nakonec ho ukazuje, jak pro vytvoření, spuštění a testování Xamarin.Mac aplikace."
+description: Tento průvodce vás provede kroky k vytvoření první aplikace Xamarin.Mac a v procesu zavádí vývoj nástrojů, včetně sady Visual Studio pro Mac, Xcode a rozhraní tvůrce. Také zavádí výstupy a akcí, které zveřejňují ovládacích prvků uživatelského rozhraní na kód, a nakonec ho ukazuje, jak pro vytvoření, spuštění a testování Xamarin.Mac aplikace.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 37D0E9E6-979B-7069-B3BE-C5F0AF99BA72
@@ -8,19 +8,19 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/23/2017
-ms.openlocfilehash: fdf5d1236c0d8f797bc53d01eada1777b1d92373
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 635577bbc35d9e80147ecf7e1a59540099f85b9d
+ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="hello-mac"></a>Hello, Mac
 
 Xamarin.Mac umožňuje vývoj aplikace plně nativní Mac v C# a .NET pomocí stejné knihovny OS X a ovládací prvky rozhraní, které se používají při vývoji v *jazyka Objective-C* a *Xcode*. Vzhledem k tomu, že Xamarin.Mac integruje přímo s Xcode, vývojáři použít na Xcode _rozhraní tvůrce_ vytvořit uživatelské rozhraní aplikace (nebo je můžete také vytvořit přímo v kódu jazyka C#).
 
-Navíc vzhledem k tomu, že Xamarin.Mac aplikace jsou napsané v C# a rozhraní .NET, běžné, back-end kód je možné sdílet s Xamarin.iOS a Xamarin.Android mobilní aplikace; všechny při doručování nativním prostředím na každou platformu.
+Navíc vzhledem k tomu, že aplikace Xamarin.Mac jsou napsané v C# a rozhraní .NET, společný kód back-end je možné sdílet s Xamarin.iOS a Xamarin.Android mobilní aplikace; všechny při doručování nativním prostředím na každou platformu.
 
-Tento článek vás seznámí klíčové koncepty jsou potřeba k vytvoření aplikace pro Mac pomocí Xamarin.Mac, Visual Studio pro Mac a na Xcode rozhraní tvůrce rámci prostřednictvím procesu vytváření jednoduše **Hello, Mac** aplikaci, která vrátí počet časy tlačítko bylo stisknuto:
+Tento článek vás seznámí klíčové koncepty jsou potřeba k vytvoření aplikace pro Mac pomocí Xamarin.Mac, Visual Studio pro Mac a na Xcode rozhraní tvůrce rámci provede procesem vytváření jednoduchou **Hello, Mac** aplikaci, která vrátí počet časy tlačítko bylo stisknuto:
 
 [![](hello-mac-images/run02.png "Příklad Hello, Mac aplikaci spuštěnou")](hello-mac-images/run02.png#lightbox)
 
@@ -89,7 +89,7 @@ V případě potřeby vývojář vytvořit jeden nebo více kód projektů kniho
 
 ## <a name="anatomy-of-a-xamarinmac-application"></a>Anatomie Xamarin.Mac aplikace
 
-Pokud znáte iOS programování, je celá řada podobnosti sem. Ve skutečnosti iOS používá CocoaTouch rozhraní, které je slimmed nižší verze kakao, používá Mac, tak bude překřížila mnoho konceptů.
+Pokud jste obeznámeni s iOS programování, je celá řada podobnosti. Ve skutečnosti iOS používá CocoaTouch rozhraní, které je slimmed nižší verze kakao, používá Mac, tak bude překřížila mnoho konceptů.
 
 Podívejte se na soubory v projektu:
 
@@ -97,7 +97,7 @@ Podívejte se na soubory v projektu:
 -   `AppDelegate.cs` – Tento soubor obsahuje třídu hlavní aplikace, která je zodpovědná za naslouchá událostem z operačního systému.
 -   `Info.plist` – Tento soubor obsahuje vlastnosti aplikace, jako je například název aplikace, ikony, atd.
 -   `Entitlements.plist` – Tato soubory obsahuje oprávnění pro aplikaci a umožňuje přístup k objektům, jako je podpora Sandboxing a na Icloudu.
--  `Main.storyboard` – Definuje uživatelské rozhraní (Windows a nabídky) pro aplikaci a rozložen propojení mezi Windows prostřednictvím Segues. Scénářů jsou soubory formátu XML, které obsahují definice zobrazení (elementy uživatelského rozhraní). Tento soubor můžete vytvářené a udržované pomocí Tvůrce rozhraní v Xcode.
+-  `Main.storyboard` – Definuje uživatelské rozhraní (Windows a nabídky) pro aplikaci a rozložen propojení mezi Windows prostřednictvím Segues. Scénářů jsou soubory formátu XML, které obsahují definice zobrazení (prvky uživatelského rozhraní). Tento soubor můžete vytvářené a udržované pomocí Tvůrce rozhraní v Xcode.
 -   `ViewController.cs` – To je ovladač pro hlavní okno. Řadiče se budeme podrobně v jiném článku, ale prozatím se může považovat řadič modul hlavní žádné konkrétní zobrazení.
 -   `ViewController.designer.cs` – Tento soubor obsahuje kód pro vložení, který pomáhá integrovat s uživatelským rozhraním hlavní obrazovky.
 
@@ -163,7 +163,7 @@ namespace Hello_Mac
 
 Tento kód je pravděpodobně obeznámeni, pokud vývojář aplikace pro iOS před vytvořila, ale je velmi jednoduché.
 
-`FinishedLaunching` Metoda se spouští po po vytvoření instance aplikace a je odpovědná za ve skutečnosti vytváření okna aplikace a od proces zobrazení zobrazení v ní.
+`DidFinishLaunching` Metoda se spouští po po vytvoření instance aplikace a je odpovědná za ve skutečnosti vytváření okna aplikace a od proces zobrazení zobrazení v ní.
 
 `WillTerminate` Metoda bude volána, když uživatel nebo systém má vytvořena instance vypnutí aplikace. Vývojář musí tuto metodu použijte pro dokončení aplikace předtím, než ho ukončí (například ukládání předvoleb uživatelů nebo velikost okna a umístění).
 
@@ -171,7 +171,7 @@ Tento kód je pravděpodobně obeznámeni, pokud vývojář aplikace pro iOS př
 
 ### <a name="viewcontrollercs"></a>ViewController.cs
 
-Kakao (a odvození, CocoaTouch) používá, která se označuje jako *Model View Controller* vzor (MVC). `ViewController` Deklarace představuje ovládací prvky objektu okna skutečné aplikace. Obecně platí pro každý okna vytvořeného (a pro mnoho dalších položek v rámci systému windows), není kontroler, který je zodpovědný za okna životní cyklus, například zobrazení, přidání nové zobrazení (ovládací prvky) Chcete-li ji, atd.
+Kakao (a odvození, CocoaTouch) používá, která se označuje jako *Model View Controller* vzor (MVC). `ViewController` Deklarace představuje objekt, který řídí okna skutečné aplikace. Obecně platí pro každý okna vytvořeného (a pro mnoho dalších položek v rámci systému windows), není kontroler, který je zodpovědný za okna životního cyklu, jako je například zobrazení, přidání nové zobrazení (ovládací prvky) Chcete-li ji, atd.
 
 `ViewController` Třída je hlavním okně řadiče. To znamená, že je zodpovědná za životní cyklus hlavního okna. To bude podrobně později, pro provést nyní rychle zobrazit ho:
 
@@ -213,7 +213,7 @@ namespace Hello_Mac
 
 ### <a name="viewcontrollerdesignercs"></a>ViewController.Designer.cs
 
-Návrháře soubor pro třídu hlavní okno je teď prázdný, ale jej bude automaticky vyplňovat Visual Studio pro Mac jako uživatelské rozhraní je vytvořena s rozhraní tvůrce uvnitř Xcode:
+Návrháře soubor pro třídu hlavní okno je teď prázdný, ale jej bude automaticky vyplňovat Visual Studio pro Mac při vytváření uživatelského rozhraní pomocí rozhraní tvůrce uvnitř Xcode:
 
 ```csharp
 // WARNING
@@ -236,7 +236,7 @@ namespace Hello_Mac
 }
 ```
 
-Vývojáři obvykle není nevadí návrháře souborů, protože jste automaticky prováděna nástrojem Visual Studio pro Mac a zadejte požadavků pluming kód, který umožňuje přístup k ovládacím prvkům, které jsou přidané do jakékoli okno nebo zobrazení v aplikaci.
+Vývojář není obvykle nevadí návrháře souborů, protože jste automaticky prováděna nástrojem Visual Studio pro Mac a zadejte kód požadavků vložení, který umožňuje přístup k ovládacím prvkům, které jsou přidané do jakékoli okno nebo zobrazení v aplikaci.
 
 Projekt aplikace Xamarin.Mac vytvořen a základní znalosti o jeho komponenty přepněte do Xcode k vytvoření uživatelského rozhraní pomocí rozhraní tvůrce.
 
@@ -248,7 +248,7 @@ Projekt aplikace Xamarin.Mac vytvořen a základní znalosti o jeho komponenty p
 
 [![](hello-mac-images/infoplist01.png "Visual Studio pro Mac editor plist.")](hello-mac-images/infoplist01.png#lightbox)
 
-A definuje _Storyboard_ který se použije k zobrazení uživatelského rozhraní pro aplikaci Xamarin.Mac pod **hlavní rozhraní** rozevíracího seznamu. V případě příkladu nahoře `Main` v rozevírací nabídce má vztah k `Main.storyboard` ve stromu zdroje projektu v **Průzkumníku řešení**. Také definuje ikon aplikace tak, že zadáte *katalog Asset* obsahující je (v tomto případě AppIcons).
+Definuje také _Storyboard_ který se použije k zobrazení uživatelského rozhraní pro aplikaci Xamarin.Mac pod **hlavní rozhraní** rozevíracího seznamu. V případě příkladu nahoře `Main` v rozevírací nabídce má vztah k `Main.storyboard` ve stromu zdroje projektu v **Průzkumníku řešení**. Také definuje ikon aplikace tak, že zadáte *katalog Asset* obsahující je (v tomto případě AppIcons).
 
 ### <a name="entitlementsplist"></a>Entitlements.plist
 
@@ -300,7 +300,7 @@ Při otevírání `.storyboard` souboru pro úpravy v Xcode, Visual Studio pro M
 
 ### <a name="interface-hierarchy"></a>Rozhraní hierarchie
 
-**Rozhraní hierarchie** části umožňuje vývojáři snadný přístup k několika klíčové vlastnosti uživatelského rozhraní, jako má **zástupné symboly** a hlavní **okno**. V této části můžete použít pro přístup k jednotlivé elementy (zobrazení), které tvoří uživatelské rozhraní a upravit tak, že se nejedná o vnořené jejich kolem přetažením v rámci hierarchie.
+**Rozhraní hierarchie** části umožňuje vývojáři snadno přístupu několik klíčových vlastností uživatelského rozhraní, jako například jeho **zástupné symboly** a hlavní **okno**. V této části můžete použít pro přístup k jednotlivé elementy (zobrazení), které tvoří uživatelské rozhraní a upravit způsob, jakým jsou vnořeny jejich kolem přetažením v rámci hierarchie.
 
 <a name="Interface_Editor" />
 
@@ -318,7 +318,7 @@ Při otevírání `.storyboard` souboru pro úpravy v Xcode, Visual Studio pro M
 
 Zpočátku je v této části téměř prázdný, ale pokud vývojář vybere element v **rozhraní editoru** nebo **rozhraní hierarchie**, **vlastnosti** bude oddíl obsahuje informace o daného elementu a vlastnosti, které se můžete upravit.
 
-V rámci **vlastnosti** části, se liší 8 *Inspector karty*, jak je znázorněno na následujícím obrázku:
+V rámci **vlastnosti** část, existují osm různých *Inspector karty*, jak je znázorněno na následujícím obrázku:
 
 [![](hello-mac-images/xcode05.png "Přehled všechny kontroly")](hello-mac-images/xcode05.png#lightbox)
 
@@ -407,14 +407,14 @@ S uživatelským rozhraním, vytvořit bude třeba vývojář vystavit položky 
 
 ### <a name="outlets-and-actions"></a>Výstupy a akcí
 
-Proto co jsou **výstupy** a **akce**? Na tradiční programování uživatelské rozhraní .NET, je ovládací prvek v uživatelském rozhraní automaticky přístup jako vlastnost při jejím přidání. Věcí pracují různě v systému Mac, jednoduše přidání ovládacího prvku zobrazení není usnadňují kódu. Vývojář musí explicitně vystavit element uživatelského rozhraní pro kód. Aby to udělat, Apple nabízí dvě možnosti:
+Proto co jsou **výstupy** a **akce**? Na tradiční programování rozhraní uživatele .NET je ovládací prvek v uživatelském rozhraní automaticky přístup jako vlastnost při jejím přidání. Věcí pracují různě v systému Mac, jednoduše přidání ovládacího prvku zobrazení není usnadňují kódu. Vývojář musí explicitně vystavit element uživatelského rozhraní pro kód. Aby to udělat, Apple nabízí dvě možnosti:
 
 -   **Výstupy** – výstupy jsou podobná vlastnosti. Pokud vývojář sváže ovládacího prvku výstupu, je vystaven na kód prostřednictvím vlastnosti, tak mohou provádět akce, jako je připojení obslužné rutiny událostí volat metody pro jeho atd.
 -   **Akce** – akce jsou obdobou příkazu vzor v grafickém subsystému WPF. Například při provádění akce v ovládacím prvku, například klikněte na tlačítko, ovládacího prvku automaticky volání metody v kódu. Akce jsou výkonný a pohodlný, protože vývojář se může připojit až mnoho ovládacích prvků na stejné akce.
 
 V Xcode **výstupy** a **akce** přidají přímo v kódu pomocí *přetahování řízení*. Přesněji řečeno, to znamená, že k vytvoření **výstupu** nebo **akce**, vývojář vybere elementu ovládacího prvku, který chcete přidat **výstupu** nebo **akce** pro podržení **řízení** klíče na klávesnici a přetáhněte ji tuto kontrolu přímo do kódu.
 
-Pro vývojáře Xamarin.Mac, to znamená, že vývojář bude přetáhněte do souborů se zakázaným inzerováním jazyka Objective-C, které odpovídají požadované k vytvoření souboru C# **výstupu** nebo **akce**. Visual Studio pro Mac vytvořit soubor s názvem `ViewController.h` jako součást shim projektu Xcode vygeneroval Tvůrce rozhraní:
+Pro vývojáře Xamarin.Mac, to znamená, že vývojář bude přetáhněte do souborů se zakázaným inzerováním jazyka Objective-C, které odpovídají požadované k vytvoření souboru C# **výstupu** nebo **akce**. Visual Studio pro Mac vytvořit soubor s názvem `ViewController.h` jako součást shim projektu Xcode vygeneroval použít Tvůrce rozhraní:
 
 [![](hello-mac-images/xcode16.png "Zobrazení zdroje v Xcode")](hello-mac-images/xcode16.png#lightbox)
 
@@ -490,7 +490,7 @@ Postupujte takto:
 S uživatelským rozhraním přes drátové sítě up a viditelné na kód C# přepněte zpět na Visual Studio pro Mac a nechat ji synchronizovat změny provedené v Xcode a rozhraní tvůrce.
 
 > [!NOTE]
-> Pravděpodobně trvalo dlouhou dobu na vytváření uživatelského rozhraní a **výstupy** a **akce** pro tento první aplikaci ale může jevit jako velké množství práce, ale byly zavedeny mnoho nových konceptů a byl stráven mnoho času pokrývá nové základů. Po určitou dobu cvičení práce rozhraní tvůrce, toto rozhraní a všechny jeho **výstupy** a **akce** lze vytvořit v právě minutu nebo dvě.
+> Pravděpodobně trvalo dlouhou dobu na vytváření uživatelského rozhraní a **výstupy** a **akce** pro tento první aplikaci ale může jevit jako velké množství práce, ale byly zavedeny mnoho nových konceptů a byl stráven mnoho času pokrývá nové základů. Po cvičení nějakou dobu a práci s rozhraní tvůrce, toto rozhraní a všechny jeho **výstupy** a **akce** lze vytvořit v právě minutu nebo dvě.
 
 <a name="Synchronizing_Changes_with_Xcode" />
 
@@ -498,7 +498,7 @@ S uživatelským rozhraním přes drátové sítě up a viditelné na kód C# p�
 
 Když vývojáři přejde zpět do Visual Studio pro Mac z Xcode, všechny změny provedené v Xcode automaticky synchronizovat s projektem Xamarin.Mac.
 
-Vybere **ViewController.designer.cs** v **Průzkumníku řešení** zobrazíte jak **výstupu** a **akce** byla drátové nahoru v C # kód:
+Vyberte **ViewController.designer.cs** v **Průzkumníku řešení** zobrazíte jak **výstupu** a **akce** byla drátové nahoru v jazyce C# kód:
 
 [![](hello-mac-images/sync01.png "Synchronizace změn s Xcode")](hello-mac-images/sync01.png#lightbox)
 
@@ -524,13 +524,13 @@ Visual Studio pro Mac čeká na změny **.h** souboru a poté tyto změny v př�
 Za normálních okolností vývojář nikdy muset otevřít **ViewController.designer.cs**, se zobrazí jako sem pro vzdělávací účely.
 
 > [!NOTE]
-> Ve většině případů se Visual Studio pro Mac automaticky najdete v části veškeré změny provedené v Xcode a synchronizovat je do projektu Xamarin.Mac. Ve vypnutém výskyt, který se synchronizace nedojde automaticky přepněte zpět na Xcode a je zpět do Visual Studio pro Mac znovu. To se obvykle ji synchronizační cyklus.
+> Ve většině případů se Visual Studio pro Mac automaticky najdete v části veškeré změny provedené v Xcode a synchronizovat je do projektu Xamarin.Mac. Ve vypnutém výskyt, který se synchronizace nedojde automaticky přepněte zpět na Xcode a pak zpátky na Visual Studio pro Mac znovu. To se obvykle ji synchronizační cyklus.
 
 <a name="Writing_the_Code" />
 
 ## <a name="writing-the-code"></a>Psaní kódu
 
-Uživatelské rozhraní pro vytvoření a je prvky uživatelského rozhraní, které jsou zpřístupněny kódu prostřednictvím **výstupy** a **akce**, jsme připraveni nakonec napsat kód pro Oživte program.
+S uživatelským rozhraním, vytvořit a jeho prvky uživatelského rozhraní, které jsou zpřístupněny kódu prostřednictvím **výstupy** a **akce**, jsme připraveni nakonec napsat kód pro Oživte program.
 
 V této ukázkové aplikaci pokaždé, když se po kliknutí na první tlačítko, popisek zaktualizuje a zobrazí počet kliknutí na tlačítko. Chcete-li dosáhnout, otevřete `ViewController.cs` soubor pro úpravy poklepáním v **Průzkumníku řešení**:
 
@@ -559,9 +559,9 @@ public override void ViewDidLoad ()
 }
 ```
 
-Použití `ViewDidLoad`, místo jiné metody, jako `Initialize`, protože `ViewDidLoad` nazývá *po* má načíst a vytvoření instance uživatelské rozhraní z operačního systému **.storyboard** souboru. Pokud vývojář se pokusila přistoupit k prvku popisek před **.storyboard** soubor má plně načíst a vytvořit instance, bude `NullReferenceException` chyba protože ovládací prvek popisek by dosud vytvořena.
+Použití `ViewDidLoad`, místo jiné metody, jako `Initialize`, protože `ViewDidLoad` nazývá *po* má načíst a vytvoření instance uživatelské rozhraní z operačního systému **.storyboard** souboru. Pokud vývojář se pokusila přistoupit k prvku popisek před **.storyboard** soubor má plně načíst a vytvořit instance, bude `NullReferenceException` chyba protože ovládací prvek popisek by ještě neexistuje.
 
-Dál přidejte kód reagovat na uživatel klepnutím na tlačítko. Přidejte následující třídu k `ViewController` třídy:
+Dál přidejte kód reagovat na uživatel klepnutím na tlačítko. Přidejte následující metodu částečné do `ViewController` třídy:
 
 ```csharp
 partial void ClickedButton (Foundation.NSObject sender) {
@@ -606,7 +606,7 @@ Existují tři způsoby, jak spustit aplikaci:
 -  Z **spustit** nabídce zvolte **ladění**.
 -  Klikněte na tlačítko **přehrání** tlačítko v sadě Visual Studio pro Mac panelu nástrojů (právě vyšší **Průzkumníku řešení**).
 
-Aplikace bude sestavení (pokud nebyl již vytvořen), spusťte v režimu ladění a zobrazí rozhraní hlavní okno:
+Aplikace bude sestavení (pokud nebyl již vytvořen), spusťte v režimu ladění a zobrazí její okno hlavní rozhraní:
 
 [![](hello-mac-images/run02.png "Spuštění aplikace")](hello-mac-images/run02.png#lightbox)
 

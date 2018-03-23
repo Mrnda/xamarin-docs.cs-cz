@@ -1,6 +1,6 @@
 ---
-title: "Obrázky"
-description: "Bitové kopie lze sdílet napříč platformami s Xamarin.Forms, může se jednat o načíst speciálně pro každou platformu nebo si můžete stáhnout pro zobrazení."
+title: Obrázky
+description: Bitové kopie lze sdílet napříč platformami s Xamarin.Forms, může se jednat o načíst speciálně pro každou platformu nebo si můžete stáhnout pro zobrazení.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: C025AB53-05CC-49BA-9815-75D6DF9E40B7
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 440ee997b075b5c89504dcf20171fa3c8713e1ce
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: b2cc302cf45527319bb22a4942290e0b0ac414d7
+ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="images"></a>Obrázky
 
@@ -24,7 +24,7 @@ Specifické pro platformu Image jsou také vyžaduje ikony a úvodní obrazovky;
 
 Tento dokument obsahuje následující témata:
 
-- [ **Místní image** ](#Local_Images) -zobrazení obrázků součástí aplikace, včetně řešení nativní řešení, jako je iOS sítnice nebo Android vysokou hodnotou DPI verze bitové kopie.
+- [ **Místní image** ](#Local_Images) -zobrazení obrázků součástí aplikace, včetně řešení nativní řešení, jako je iOS sítnice, Android nebo UWP vysokou hodnotou DPI verze bitové kopie.
 - [ **Vložené obrázky** ](#Embedded_Images) -zobrazení obrázků vložených jako prostředek sestavení.
 - [ **Stažení bitové kopie** ](#Downloading_Images) – stahování a zobrazení obrázků.
 - [ **Ikony a splashscreens** ](#Icons_and_splashscreens) -ikony specifické pro platformu a spuštění bitové kopie.
@@ -94,15 +94,17 @@ image.Source = Device.RuntimePlatform == Device.Android ? ImageSource.FromFile("
 
 ### <a name="native-resolutions-retina-and-high-dpi"></a>Nativní řešení (sítnice a vysokou hodnotou DPI)
 
-IOS a Android platformy zahrnují podporu pro řešení jinou bitovou kopii, kde operační systém zvolí příslušné bitové kopie v době běhu podle možností určitého zařízení. Xamarin.Forms pomocí nativní platformy rozhraní API pro načítání místní Image, takže ji automaticky podporuje alternativní řešení, pokud jsou soubory správně s názvem a umístěný v projektu.
+iOS, Android, Windows Phone a UWP zahrnují podporu pro řešení jinou bitovou kopii, kde operační systém zvolí příslušné bitové kopie v době běhu podle možností určitého zařízení. Xamarin.Forms pomocí nativní platformy rozhraní API pro načítání místní Image, takže ji automaticky podporuje alternativní řešení, pokud jsou soubory správně s názvem a umístěný v projektu.
 
 Přetáhněte bitových kopií pro každé řešení vyžaduje sadu odpovídající asset katalogu bitové kopie je upřednostňovaný způsob, jak spravovat obrázky od sady iOS 9. Další informace najdete v tématu [přidání bitových kopií do skupiny pro bitovou kopii Asset Catalog](~/ios/app-fundamentals/images-icons/displaying-an-image.md).
 
-Před iOS 9, může ji umístit sítnice verze bitové kopie **prostředky** složky - dva a tři krát řešení s  **@2x**  nebo  **@3x** přípony v názvu před příponu (např. **myimage@2x.png**). Tato metoda práce s obrázky v aplikaci pro iOS je však zastaralá společností Apple. Další informace najdete v tématu [velikosti obrázků a názvy souborů](~/ios/app-fundamentals/images-icons/displaying-an-image.md).
+Před iOS 9, může ji umístit sítnice verze bitové kopie **prostředky** složky - dva a tři krát řešení s **@2x** nebo **@3x**přípony v názvu před příponu (např. **myimage@2x.png**). Tato metoda práce s obrázky v aplikaci pro iOS je však zastaralá společností Apple. Další informace najdete v tématu [velikosti obrázků a názvy souborů](~/ios/app-fundamentals/images-icons/displaying-an-image.md).
 
 Android alternativní řešení obrázků musí být umístěny v [speciálně názvem adresáře](http://developer.android.com/guide/practices/screens_support.html) v projektu pro Android, jak je znázorněno na následujícím snímku obrazovky:
 
 [![Umístění bitové kopie Android více řešení](images-images/xs-highdpisolution-sml.png "umístění bitové kopie Android více řešení")](images-images/xs-highdpisolution.png#lightbox "umístění Android více rozlišení obrázku")
+
+Názvy souborů bitové kopie UWP a Windows Phone [může být na konci s `.scale-xxx` před příponu souboru](https://docs.microsoft.com/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast), kde `xxx` je procento škálování u prostředku, například **myimage.scale-200.png**. Bitové kopie lze pak odkazovat v kódu nebo XAML bez modifikátor škálování, například právě **myimage.png**. Platforma Vybere nejbližší odpovídající asset škálování podle aktuální DPI v zobrazení.
 
 ### <a name="additional-controls-that-display-images"></a>Další ovládací prvky, které zobrazení obrázků
 
@@ -168,7 +170,7 @@ Na následujících snímcích obrazovky zobrazit výsledek zobrazení vložený
 Protože neexistuje žádný převaděč předdefinovaný typ z `string` k `ResourceImageSource`, tyto typy obrázků nelze načíst nativně podle XAML. Místo toho je možné zapsat jednoduché vlastního rozšíření značek XAML načíst pomocí bitové kopie **ID prostředku** zadaný v jazyce XAML:
 
 ```csharp
-[ContentProperty ("Source")]
+[ContentProperty (nameof(Source))]
 public class ImageResourceExtension : IMarkupExtension
 {
  public string Source { get; set; }
@@ -179,6 +181,7 @@ public class ImageResourceExtension : IMarkupExtension
    {
      return null;
    }
+   
    // Do your translation lookup here, using whatever method you require
    var imageSource = ImageSource.FromResource(Source);
 

@@ -1,6 +1,6 @@
 ---
-title: "Ověřování uživatelů s databází Azure Cosmos DB dokumentu"
-description: "Databáze dokumentů Azure Cosmos DB podporují dělené kolekce, které může mít rozsah více serverů a oddíly, spolu s podporou neomezené úložiště a propustnosti. Tento článek vysvětluje, jak spojovat řízení přístupu se dělené kolekce tak, aby uživatel přístup jenom k své vlastní dokumenty v aplikaci Xamarin.Forms."
+title: Ověřování uživatelů s databází Azure Cosmos DB dokumentu
+description: Databáze dokumentů Azure Cosmos DB podporují dělené kolekce, které může mít rozsah více serverů a oddíly, spolu s podporou neomezené úložiště a propustnosti. Tento článek vysvětluje, jak spojovat řízení přístupu se dělené kolekce tak, aby uživatel přístup jenom k své vlastní dokumenty v aplikaci Xamarin.Forms.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 11ED4A4C-0F05-40B2-AB06-5A0F2188EF3D
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 10c4a1e3355263722d170dff0a5e2707eb794818
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 8de64d6489b4022e43bcf694f3b13d6f7eaaecbd
+ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="authenticating-users-with-an-azure-cosmos-db-document-database"></a>Ověřování uživatelů s databází Azure Cosmos DB dokumentu
 
@@ -22,12 +22,12 @@ _Databáze dokumentů Azure Cosmos DB podporují dělené kolekce, které může
 
 Klíč oddílu je nutné zadat při vytváření oddílů kolekcí a dokumenty se stejným klíčem oddílu budou ukládat do stejného oddílu. Proto zadání identitu uživatele jako klíč oddílu způsobí dělenou kolekci, které se uloží pouze dokumenty pro daného uživatele. To také zajistí bude škálovat databáze dokumentů Azure Cosmos DB jako počet uživatelů, a zvýšit položky.
 
-Udělit přístup, musí všechny kolekce a model řízení přístupu DocumentDB API definuje dva typy konstrukce přístup:
+Udělit přístup, musí všechny kolekce a model řízení přístupu rozhraní SQL API definuje dva typy konstrukce přístup:
 
 - **Hlavní klíče** povolit plný přístup správce ke všem prostředkům v rámci účtu Cosmos DB a vytvářejí, když je vytvořen účet Cosmos DB.
 - **Tokeny prostředků** zaznamenat vztah mezi uživateli databáze a tato oprávnění má uživatel pro konkrétní prostředek Cosmos DB, jako jsou kolekce nebo dokumentu.
 
-Vystavení hlavní klíč otevře účet Cosmos DB možnost škodlivý nebo nedbalosti použití. Ale Cosmos DB prostředků tokeny poskytovat nouzový mechanismus, který umožňuje klientům číst, zapisovat a odstranit konkrétní prostředky v účtu Cosmos DB podle udělená oprávnění.
+Vystavení hlavní klíč otevře účet Cosmos DB možnost škodlivý nebo nedbalosti použití. Ale tokeny prostředků Azure Cosmos DB poskytovat nouzový mechanismus, který umožňuje klientům číst, zapisovat a odstranit konkrétní prostředky v účtu Azure Cosmos DB podle udělená oprávnění.
 
 Typické přístup na vyžádání, generování a dodáte tokeny prostředků do mobilní aplikace je použití tokenu zprostředkovatele prostředků. Následující diagram znázorňuje souhrnné informace o tom, jak ukázková aplikace používá token zprostředkovatele prostředků ke správě přístupu k datům databáze dokumentu:
 
@@ -44,7 +44,7 @@ Token zprostředkovatele prostředků je služba webového rozhraní API středn
 > [!NOTE]
 > Když vyprší platnost token prostředku, obdrží požadavků databáze následné dokumentu 401 neoprávněný výjimka. V tomto okamžiku by měl Xamarin.Forms aplikace opětovné zřízení identity a požádat o nový token prostředku.
 
-Další informace o vytváření oddílů Cosmos DB najdete v tématu [postup oddílu a škálování v Azure Cosmos DB](/azure/cosmos-db/partition-data/). Další informace o řízení přístupu Cosmos DB najdete v tématu [zabezpečení přístupu k datům databáze Cosmos](/azure/cosmos-db/secure-access-to-data/) a [řízení přístupu v rozhraní API DocumentDB](/rest/api/documentdb/access-control-on-documentdb-resources/).
+Další informace o vytváření oddílů Cosmos DB najdete v tématu [postup oddílu a škálování v Azure Cosmos DB](/azure/cosmos-db/partition-data/). Další informace o řízení přístupu Cosmos DB najdete v tématu [zabezpečení přístupu k datům databáze Cosmos](/azure/cosmos-db/secure-access-to-data/) a [řízení přístupu v rozhraní SQL API](/rest/api/documentdb/access-control-on-documentdb-resources/).
 
 ## <a name="setup"></a>Instalace
 
@@ -58,11 +58,11 @@ Proces pro integraci tokenu zprostředkovatele prostředků do aplikace Xamarin.
 
 <a name="cosmosdb_configuration" />
 
-### <a name="cosmos-db-configuration"></a>Konfigurace cosmos DB
+### <a name="azure-cosmos-db-configuration"></a>Konfigurace Azure Cosmos DB
 
 Proces vytvoření Cosmos DB účet, který bude používat řízení přístupu je následující:
 
-1. Vytvořte účet Cosmos DB. Další informace najdete v tématu [vytvořit účet Cosmos DB](/azure/cosmos-db/documentdb-dotnetcore-get-started#step-1-create-a-documentdb-account).
+1. Vytvořte účet Cosmos DB. Další informace najdete v tématu [vytvoření účtu Azure Cosmos DB](/azure/cosmos-db/sql-api-dotnetcore-get-started#step-1-create-an-azure-cosmos-db-account).
 1. V účtu Cosmos DB vytvořit novou kolekci s názvem `UserItems`, zadávání klíče oddílu z `/userid`.
 
 <a name="app_service_configuration" />
@@ -269,10 +269,10 @@ Tento článek vysvětlení najdete postup kombinace řízení přístupu s děl
 
 ## <a name="related-links"></a>Související odkazy
 
-- [TodoDocumentDBAuth (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoDocumentDBAuth/)
+- [TODO Azure Cosmos DB Auth (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoDocumentDBAuth/)
 - [Používání databáze dokumentů Azure Cosmos DB](~/xamarin-forms/data-cloud/cosmosdb/consuming.md)
 - [Zabezpečení přístupu k datům v Azure Cosmos DB](/azure/cosmos-db/secure-access-to-data/)
-- [Řízení přístupu v rozhraní API DocumentDB](/rest/api/documentdb/access-control-on-documentdb-resources/).
+- [Řízení přístupu v rozhraní SQL API](/rest/api/documentdb/access-control-on-documentdb-resources/).
 - [Vytvoření oddílů a škálování v Azure Cosmos DB](/azure/cosmos-db/partition-data/)
-- [DocumentDB Client Library](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core)
+- [Klientská knihovna pro Azure Cosmos DB](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core)
 - [Rozhraní API Azure Cosmos DB](https://msdn.microsoft.com/library/azure/dn948556.aspx)

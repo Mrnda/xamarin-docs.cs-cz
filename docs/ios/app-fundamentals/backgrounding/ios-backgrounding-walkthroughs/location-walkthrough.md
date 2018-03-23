@@ -1,5 +1,5 @@
 ---
-title: "Návod - pomocí umístění pozadí"
+title: Návod - pomocí umístění pozadí
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: F8EEA0FD-5614-47FE-ADAC-80A5BCA6EB5F
@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: dfae07d36c67c12d254cd70c22acb01b2fc1c9b0
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: efdabc5450b186c89785ee3cb19a3decdd6c2064
+ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="walkthrough---using-background-location"></a>Návod - pomocí umístění pozadí
 
@@ -28,7 +28,6 @@ Tento návod popisuje některé klíč backgrounding koncepty, včetně registra
 
     V Průzkumníku řešení klikněte dvakrát klikněte na **Info.plist** soubor otevřít, a přejděte do dolní části seznamu. Zaškrtněte oběma **povolit režimy pozadí** a **aktualizace umístění** zaškrtávací políčka.
 
-
     V sadě Visual Studio pro Mac bude vypadat přibližně takto:
 
     [![](location-walkthrough-images/image7.png "Toto políčko zaškrtněte režimy pozadí povolit i umístění aktualizace zaškrtávací políčka")](location-walkthrough-images/image7.png#lightbox)
@@ -38,7 +37,7 @@ Tento návod popisuje některé klíč backgrounding koncepty, včetně registra
     ```xml
     <key>UIBackgroundModes</key>
     <array>
-        <string>location</string>
+      <string>location</string>
     </array>
     ```
 

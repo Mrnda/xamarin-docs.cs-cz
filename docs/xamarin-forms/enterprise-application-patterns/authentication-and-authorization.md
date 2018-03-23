@@ -1,5 +1,5 @@
 ---
-title: "Ověřování a autorizace"
+title: Ověřování a autorizace
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: e3f27b4c-f7f5-4839-a48c-30bcb919c59e
@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/08/2017
-ms.openlocfilehash: 5f27c1acefa63ee26184b8997594630e24cb0acc
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 16cd5571a8c3b0e179046351e9996e55b040a9de
+ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="authentication-and-authorization"></a>Ověřování a autorizace
 
@@ -21,7 +21,7 @@ Existuje mnoho přístupů k integraci do aplikace na platformě Xamarin.Forms, 
 
 ## <a name="authentication"></a>Ověřování
 
-Požaduje se ověření, když aplikace potřebuje znát identitu aktuálního uživatele. Primární mechanismus ASP.NET Core identifikace uživatelů je systém členství ASP.NET Core Identity, která uchovává informace o uživateli v úložišti dat konfigurovat tak, že vývojář. Tohle úložiště dat obvykle bude úložišti objektu EntityFramework, i když se balíčky třetích stran nebo vlastní úložiště můžete použít k ukládání informací o identitě úložiště Azure, DocumentDB nebo jiné umístění.
+Požaduje se ověření, když aplikace potřebuje znát identitu aktuálního uživatele. Primární mechanismus ASP.NET Core identifikace uživatelů je systém členství ASP.NET Core Identity, která uchovává informace o uživateli v úložišti dat konfigurovat tak, že vývojář. Tohle úložiště dat obvykle bude úložišti objektu EntityFramework, i když se balíčky třetích stran nebo vlastní úložiště můžete použít k ukládání informací o identitě úložiště Azure, Azure Cosmos DB nebo jiné umístění.
 
 Pro scénáře ověřování, které využívají úložiště dat místních uživatelů a který zachování informací o identitě mezi požadavky pomocí souborů cookie (jako je typické v webových aplikací ASP.NET MVC), ASP.NET Core Identity je vhodné řešení. Soubory cookie jsou však není vždy fyzické prostředky k uchování a přenosu dat. Například webovou aplikaci ASP.NET Core, který zveřejňuje RESTful koncové body, které jsou přístupné z mobilní aplikace bude obvykle nutné použít ověřování tokenu nosiče, protože soubory cookie nelze použít v tomto scénáři. Nosné tokeny však snadno můžete být načtena a zahrnuty v hlavičce autorizace webové požadavky z mobilní aplikace.
 

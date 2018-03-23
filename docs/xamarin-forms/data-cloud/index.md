@@ -1,18 +1,18 @@
 ---
-title: "Datové a cloudové služby"
-description: "Xamarin.Forms aplikace můžete využívání webových služeb, které jsou implementované pomocí různých technologií, a tato příručka se prozkoumat jak na to."
+title: Datové a cloudové služby
+description: Xamarin.Forms aplikace můžete využívání webových služeb, které jsou implementované pomocí různých technologií, a tato příručka se prozkoumat jak na to.
 ms.topic: article
 ms.prod: xamarin
-ms.assetid: "0601D9D0-C8D2-4C3B-A749-A340BDBF64A4ß"
+ms.assetid: 0601D9D0-C8D2-4C3B-A749-A340BDBF64A4ß
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
-ms.openlocfilehash: 28007ee702c66f3b819430b544465d3470d571d9
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 54313c3e8808ee9e563d6b55e3bf034c543a48e5
+ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="data--cloud-services"></a>Datové a cloudové služby
 
@@ -50,7 +50,7 @@ Tento článek ukazuje, jak integrovat Azure Search na aplikaci Xamarin.Forms po
 
 ## <a name="storing-data-in-a-document-databasecosmosdbindexmd"></a>[Ukládání dat v databázi dokumentů](cosmosdb/index.md)
 
-Tato příručka ukazuje, jak integrovat databázi dokumentů Azure Cosmos DB do Xamarin.Forms aplikací pomocí Microsoft Azure DocumentDB Client Library. Databázi dokumentů Azure Cosmos DB je databáze NoSQL, která poskytuje přístup s nízkou latencí k dokumentů JSON, nabízí rychlý, vysoce dostupných, škálovatelných databázová služba pro aplikace, které vyžadují bezproblémové škálování a globální replikace.
+Tato příručka ukazuje, jak používat Azure Cosmos DB .NET standardní klientské knihovny pro integraci databázi dokumentů Azure Cosmos DB na aplikaci Xamarin.Forms. Databázi dokumentů Azure Cosmos DB je databáze NoSQL, která poskytuje přístup s nízkou latencí k dokumentů JSON, nabízí rychlý, vysoce dostupných, škálovatelných databázová služba pro aplikace, které vyžadují bezproblémové škálování a globální replikace.
 
 ## <a name="adding-intelligence-with-cognitive-servicescognitive-servicesindexmd"></a>[Zvyšování sofistikovanosti službami Cognitive Services](cognitive-services/index.md)
 

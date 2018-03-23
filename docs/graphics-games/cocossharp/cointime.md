@@ -1,6 +1,6 @@
 ---
-title: "Podrobnosti implementace mince času"
-description: "Tato příručka popisuje podrobnosti implementace mince čas hry, včetně práce s dlaždice map, vytváření entit, animace Sprite a implementace efektivní kolizí."
+title: Podrobnosti implementace mince času
+description: Tato příručka popisuje podrobnosti implementace mince čas hry, včetně práce s dlaždice map, vytváření entit, animace Sprite a implementace efektivní kolizí.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 5D285684-0417-4E16-BD14-2D1F6DEFBB8B
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: b3827d05ae9e563ae04dd4ab1e303577f6c9d82a
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 80250ca9fae98fae653c9b2837b2b1a96fb02203
+ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="coin-time-implementation-details"></a>Podrobnosti implementace mince času
 
@@ -61,10 +61,7 @@ Dlaždice je možné použít kliknutím v **mastersheet** tileset a kliknutím 
 1. Klikněte na dlaždici kreslení
 1. Klikněte na tlačítko nebo push a přetáhněte ji přes mapy pro malování dlaždice
 
-
     ![](cointime-images/image2.png "Klikněte na dlaždici k vykreslení 1")
-
- 
 
 Vlevo nahoře tileset obsahuje všechny geologické struktury v čase mince. Zahrnuje geologické struktury, což je plná, **SolidCollision** vlastnost, jak je vidět ve vlastnostech dlaždice na levé straně obrazovky:
 
@@ -97,15 +94,11 @@ Proces přidávání úrovně mince čas vyžaduje beze změn kódu a pouze něk
 1. Přejmenujte soubor nové .tmx tak, aby pokračuje úrovně číslo pořadí s existující úrovně, jako například **level8.tmx**
 1. V sadě Visual Studio nebo Visual Studio pro Mac přidejte nový soubor .tmx ke složce Android úrovně. Ověřte, že soubor používá **AndroidAsset** akce sestavení.
 
-
     ![](cointime-images/image8.png "Ověřte, že soubor používá AndroidAsset akce sestavení")
-
 
 1. Přidáte nový soubor .tmx do složky úrovně iOS. Nezapomeňte propojení souboru z původního umístění a ověřte, že používá **BundleResource** akce sestavení.
 
-
     ![](cointime-images/image9.png "Nezapomeňte propojení souboru z původního umístění a ověřte, že používá akci BundleResource sestavení")
-
 
 Novou úroveň měly být zobrazeny na obrazovce vyberte úroveň na úroveň 9 (úroveň názvy souborů začínají hodnotou 0, ale tlačítka úrovně začínat číslem 1):
 

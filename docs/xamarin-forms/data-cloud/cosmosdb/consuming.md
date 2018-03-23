@@ -1,6 +1,6 @@
 ---
-title: "Využívání dokumentu databázi Azure Cosmos DB"
-description: "Databázi dokumentů Azure Cosmos DB je databáze NoSQL, která poskytuje přístup s nízkou latencí k dokumentů JSON, nabízí rychlý, vysoce dostupných, škálovatelných databázová služba pro aplikace, které vyžadují bezproblémové škálování a globální replikace. Tento článek vysvětluje, jak pomocí Microsoft Azure DocumentDB Client Library integrovat do aplikace Xamarin.Forms databázi dokumentů Azure Cosmos DB."
+title: Využívání dokumentu databázi Azure Cosmos DB
+description: Databázi dokumentů Azure Cosmos DB je databáze NoSQL, která poskytuje přístup s nízkou latencí k dokumentů JSON, nabízí rychlý, vysoce dostupných, škálovatelných databázová služba pro aplikace, které vyžadují bezproblémové škálování a globální replikace. Tento článek vysvětluje, jak pomocí Azure Cosmos DB .NET standardní klientské knihovny integrovat do aplikace Xamarin.Forms databázi dokumentů Azure Cosmos DB.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 7C0605D9-9B7F-4002-9B60-2B5DAA3EA30C
@@ -9,15 +9,15 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 5013b35828cecc2e38600839f306f3c0fc1366b9
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e2fa5ae12531069e1ad1bc19e110e4dcffe23a02
+ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="consuming-an-azure-cosmos-db-document-database"></a>Využívání dokumentu databázi Azure Cosmos DB
 
-_Databázi dokumentů Azure Cosmos DB je databáze NoSQL, která poskytuje přístup s nízkou latencí k dokumentů JSON, nabízí rychlý, vysoce dostupných, škálovatelných databázová služba pro aplikace, které vyžadují bezproblémové škálování a globální replikace. Tento článek vysvětluje, jak pomocí Microsoft Azure DocumentDB Client Library integrovat do aplikace Xamarin.Forms databázi dokumentů Azure Cosmos DB._
+_Databázi dokumentů Azure Cosmos DB je databáze NoSQL, která poskytuje přístup s nízkou latencí k dokumentů JSON, nabízí rychlý, vysoce dostupných, škálovatelných databázová služba pro aplikace, které vyžadují bezproblémové škálování a globální replikace. Tento článek vysvětluje, jak pomocí Azure Cosmos DB .NET standardní klientské knihovny integrovat do aplikace Xamarin.Forms databázi dokumentů Azure Cosmos DB._
 
 > [!VIDEO https://youtube.com/embed/BoVH12igmbg]
 
@@ -33,23 +33,20 @@ Pro účely vývoje mohou být také využívány databázi dokumentů prostřed
 
 V tomto článku a doplňujícími ukázkovou aplikaci, ukazuje, kde jsou uloženy úkoly v databázi dokumentů Azure Cosmos DB aplikaci seznamu úkolů. Další informace o ukázkovou aplikaci najdete v tématu [pochopení vzorku](~/xamarin-forms/data-cloud/walkthrough.md).
 
-> [!NOTE]
-> DocumentDB Client Library momentálně není kompatibilní s aplikací pro univerzální platformu Windows (UWP). Databázi dokumentů Azure Cosmos DB můžete však použít z aplikace UWP vytvořením střední vrstvy webové služby, který používá klientské knihovny DocumentDB a vyvolání tuto službu z aplikace pro UPW.
-
 Další informace o databázi Cosmos Azure najdete v tématu [dokumentaci k Azure Cosmos DB](/azure/cosmos-db/).
 
 ## <a name="setup"></a>Instalace
 
 Proces pro integraci databázi dokumentů Azure Cosmos DB na aplikaci Xamarin.Forms vypadá takto:
 
-1. Vytvořte účet Cosmos DB. Další informace najdete v tématu [vytvořit účet Cosmos DB](/azure/cosmos-db/documentdb-dotnetcore-get-started#step-1-create-a-documentdb-account).
-1. Přidat [DocumentDB Client Library](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core) balíček NuGet, abyste platformy projekty v řešení Xamarin.Forms.
+1. Vytvořte účet Cosmos DB. Další informace najdete v tématu [vytvoření účtu Azure Cosmos DB](/azure/cosmos-db/sql-api-dotnetcore-get-started#step-1-create-an-azure-cosmos-db-account).
+1. Přidat [Azure Cosmos DB .NET Standard klientské knihovny](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core) balíček NuGet, abyste platformy projekty v řešení Xamarin.Forms.
 1. Přidat `using` direktivy pro `Microsoft.Azure.Documents`, `Microsoft.Azure.Documents.Client`, a `Microsoft.Azure.Documents.Linq` obory názvů do třídy, které bude přístup k účtu Cosmos DB.
 
-Po provedení těchto kroků, klientské knihovny DocumentDB slouží ke konfiguraci a spuštění požadavky DHCP proti databázi dokumentů.
+Po provedení těchto kroků, Azure Cosmos DB .NET Standard klientské knihovny slouží ke konfiguraci a spuštění požadavky DHCP proti databázi dokumentů.
 
 > [!NOTE]
-> Azure DocumentDB Client Library lze nainstalovat pouze do projektů platformy a ne do projektu přenosných třída knihovny PCL (). Ukázkové aplikace je proto sdílený přístup k projektu (SAP) Chcete-li zabránit zdvojení kódu. Ale `DependencyService` třídy lze použít v projektu PCL k vyvolání Azure DocumentDB Client Library kód obsažené v projektech pro příslušnou platformu.
+> Azure Cosmos DB .NET Standard klientské knihovny lze nainstalovat pouze do projektů platformy a ne do projektu přenosných třída knihovny PCL (). Ukázkové aplikace je proto sdílený přístup k projektu (SAP) Chcete-li zabránit zdvojení kódu. Ale `DependencyService` třídy lze použít v projektu PCL k vyvolání obsažené v projektech specifické pro platformu Azure Cosmos DB .NET standardní kód knihovny klienta.
 
 ## <a name="consuming-the-azure-cosmos-db-account"></a>Použití účtu Azure Cosmos DB
 
@@ -59,7 +56,7 @@ Po provedení těchto kroků, klientské knihovny DocumentDB slouží ke konfigu
 DocumentClient client = new DocumentClient(new Uri(Constants.EndpointUri), Constants.PrimaryKey);
 ```
 
-Je třeba zadat Cosmos DB Uri a primární klíč k `DocumentClient` konstruktor. To je možné získat na portálu Azure. Další informace najdete v tématu [připojit k účtu Azure Cosmos DB](/azure/cosmos-db/documentdb-dotnetcore-get-started#a-idconnectastep-3-connect-to-an-azure-cosmos-db-account).
+Je třeba zadat Cosmos DB Uri a primární klíč k `DocumentClient` konstruktor. To je možné získat na portálu Azure. Další informace najdete v tématu [připojit k účtu Azure Cosmos DB](/azure/cosmos-db/sql-api-dotnetcore-get-started#Connect).
 
 ### <a name="creating-a-database"></a>Vytvoření databáze
 
@@ -226,12 +223,12 @@ await client.DeleteDatabaseAsync(UriFactory.CreateDatabaseUri(Constants.Database
 
 ## <a name="summary"></a>Souhrn
 
-Tento článek vysvětluje jak integrovat databázi dokumentů Azure Cosmos DB do Xamarin.Forms aplikací pomocí Microsoft Azure DocumentDB Client Library. Databázi dokumentů Azure Cosmos DB je databáze NoSQL, která poskytuje přístup s nízkou latencí k dokumentů JSON, nabízí rychlý, vysoce dostupných, škálovatelných databázová služba pro aplikace, které vyžadují bezproblémové škálování a globální replikace.
+Tento článek vysvětlení, jak používat Azure Cosmos DB .NET standardní klientské knihovny pro integraci databázi dokumentů Azure Cosmos DB na aplikaci Xamarin.Forms. Databázi dokumentů Azure Cosmos DB je databáze NoSQL, která poskytuje přístup s nízkou latencí k dokumentů JSON, nabízí rychlý, vysoce dostupných, škálovatelných databázová služba pro aplikace, které vyžadují bezproblémové škálování a globální replikace.
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [TodoDocumentDB (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoDocumentDB/)
-- [Dokumentace cosmos DB](/azure/cosmos-db/)
-- [DocumentDB Client Library](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core)
-- [Rozhraní API Azure Cosmos DB](https://msdn.microsoft.com/library/azure/dn948556.aspx)
+- [TODO Azure Cosmos DB (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoDocumentDB/)
+- [Dokumentace Azure Cosmos DB](/azure/cosmos-db/)
+- [Klientská knihovna pro Azure Cosmos DB .NET Standard](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core)
+- [Rozhraní API Azure Cosmos DB](https://docs.microsoft.com/en-us/dotnet/api/overview/azure/cosmosdb/client?view=azure-dotnet)

@@ -1,6 +1,6 @@
 ---
-title: "Vyhledávání dat s Azure Search"
-description: "Vyhledávání systému Azure je Cloudová služba, která poskytuje indexování a dotazování možnosti pro odeslaná data. Touto akcí odeberete, požadavky na infrastrukturu a vyhledávací algoritmus složité kroky tradičně spojené s implementací funkce vyhledávání v aplikaci. Tento článek ukazuje, jak integrovat Azure Search na aplikaci Xamarin.Forms pomocí knihovnu Microsoft Azure Search."
+title: Vyhledávání dat s Azure Search
+description: Vyhledávání systému Azure je Cloudová služba, která poskytuje indexování a dotazování možnosti pro odeslaná data. Touto akcí odeberete, požadavky na infrastrukturu a vyhledávací algoritmus složité kroky tradičně spojené s implementací funkce vyhledávání v aplikaci. Tento článek ukazuje, jak integrovat Azure Search na aplikaci Xamarin.Forms pomocí knihovnu Microsoft Azure Search.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: A4AEF233-3672-4174-9DBA-15BEE3030C0B
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/05/2016
-ms.openlocfilehash: bf6b9f8aaa07e934a1e707b85ecaa24e4f3d99bf
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 24db1404e218eea86356f9bbc004e7d5850c2e7a
+ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="searching-data-with-azure-search"></a>Vyhledávání dat s Azure Search
 
@@ -119,7 +119,7 @@ searchClient.Indexes.Delete(Constants.Index);
 
 Po definování indexu, je možné uložit data do jednou ze dvou modelů:
 
-- **Model pro vyžádání obsahu** – data je pravidelně konzumována z Azure DocumentDB, databázi SQL Azure, Azure Blob Storage nebo SQL Server hostované v virtuální počítač Azure.
+- **Model pro vyžádání obsahu** – data je pravidelně konzumována z Azure Cosmos DB, Azure SQL Database, úložiště objektů Blob Azure nebo SQL Server hostované v virtuální počítač Azure.
 - **Push model** – data je prostřednictvím kódu programu odeslat do indexu. Jedná se o model přijaté v tomto článku.
 
 A `SearchIndexClient` instance musí být vytvořený importovat data do indexu. Můžete to provést pomocí volání `SearchServiceClient.Indexes.GetClient` metoda, jak je ukázáno v následujícím příkladu kódu:
