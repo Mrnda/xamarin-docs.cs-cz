@@ -1,5 +1,5 @@
 ---
-title: "Jak mohu automatizovat projektu Android testovací NUnit?"
+title: Jak mohu automatizovat projektu Android testovací NUnit?
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: EA3CFCC4-2D2E-49D6-A26C-8C0706ACA045
@@ -7,19 +7,19 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 11b693193b36a80b55a61308d98b76f4f6984e8a
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: acb213e8c73013bc9b2482afb45296c4e1f61ab5
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="how-do-i-automate-an-android-nunit-test-project"></a>Jak mohu automatizovat projektu Android testovací NUnit?
 
 > [!NOTE]
 > Tento průvodce popisuje kroky pro nastavení testovacího projektu Android NUnit, není Xamarin.UITest projektu. Příručky Xamarin.UITest můžete najít [zde](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest).
 
-Při vytváření Android projektu testování částí [Visual Studio pro Mac] nebo jednotka testování aplikace (Android) [Visual Studio], ve výchozím nastavení se nespustí automaticky testy.
-K automatizaci android Test jednotky: ke spuštění testů NUnit na cílovém zařízení, používáme `Android.App.Instrumentation` podtřídami, které lze vytvořit a spustit pomocí `adb shell am instrument` příkaz.
+Když vytvoříte Android projektu testů jednotek v sadě Visual Studio pro Mac nebo jednotka testovací aplikace (Android) v sadě Visual Studio, ve výchozím nastavení se nespustí automaticky testy.
+Ke spuštění testů NUnit na cílovém zařízení, používáme `Android.App.Instrumentation` podtřídami, které lze vytvořit a spustit pomocí `adb shell am instrument` příkaz.
 
 Nejdříve vytvoříme **TestInstrumentation.cs** souboru, který vytvoří podtřídou třídy `Xamarin.Android.NUnitLite.TestSuiteInstrumentation` (deklarované v `Xamarin.Android.NUnitLite.dll`). `TestInstrumentation(IntPtr, JniHandleOwnership)` Konstruktor _musí_ je třeba zadat a virtuální `AddTests()` metoda se musí přepsat.
 `AddTests()` ovládací prvky, které testy jsou skutečně proveden. Tento soubor je z velké části standardní.
@@ -40,7 +40,9 @@ adb shell am instrument -w @PACKAGE_NAME@/app.tests.TestInstrumentation
 
 Nahraďte `@PACKAGE\_NAME@` to vhodné, je hodnota, které jsou součástí **AndroidManifest.xml** `/manifest/@package` atribut.
 
-*Důležitá poznámka*: pomocí [Xamarin.Android 5.0](https://developer.xamarin.com/releases/android/xamarin.android_5/xamarin.android_5.1/#Android_Callable_Wrapper_Naming) vydání, výchozí názvy balíčku pro Android – obálky s možností budou založeny na MD5SUM sestavení kvalifikovaný název typu, která je exportována. To umožňuje stejný plně kvalifikovaný název a je třeba zadat ze dvou různých sestavení není získat balení chyby. Proto se ujistěte, že používáte \`název\` vlastnost \`instrumentace\` atribut ke generování čitelný název ACW/třídy.
+
+> [!NOTE]
+> *Důležité*: pomocí [Xamarin.Android 5.0](https://developer.xamarin.com/releases/android/xamarin.android_5/xamarin.android_5.1/#Android_Callable_Wrapper_Naming) vydání, výchozí názvy balíčku pro Android – obálky s možností budou založeny na MD5SUM sestavení kvalifikovaný název typu, která je exportována. To umožňuje stejný plně kvalifikovaný název a je třeba zadat ze dvou různých sestavení není získat balení chyby. Proto se ujistěte, že používáte \`název\` vlastnost \`instrumentace\` atribut ke generování čitelný název ACW/třídy.
 
 _Musí použít název ACW `adb` příkaz_. Přejmenování nebo refaktoring tříd jazyka C# proto vyžaduje změny `RunTests` správný název ACW pomocí příkazu.
 

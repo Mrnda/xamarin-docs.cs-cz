@@ -1,20 +1,19 @@
 ---
-title: "Na panelu akcí nahrazení"
+title: Na panelu akcí nahrazení
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 5341D28E-B203-478D-8464-6FAFDC3A4110
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: e71c6ea816b8b732d21148db32fd9395732dd4c0
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/27/2018
+ms.openlocfilehash: f02f77eb45086d1d568b367b28163a4773dcd80d
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="replacing-the-action-bar"></a>Na panelu akcí nahrazení
-
 
 ## <a name="overview"></a>Přehled
 
@@ -38,7 +37,7 @@ Následující části popisují tento proces podrobně. Vytvoření jednoduché
 
 ## <a name="start-an-app-project"></a>Spusťte projekt aplikace
 
-Vytvořit nový projekt Android s názvem **ToolbarFun** (viz [Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md) Další informace o vytvoření nového projektu Android). Po vytvoření tohoto projektu nastavit cíle a minimální úrovně rozhraní API systému Android **Android 5.0 (API úrovně 21 - typu Lupa)**. Další informace o úrovních verzi systému Android nastavení najdete v tématu [Principy Android API úrovně](~/android/app-fundamentals/android-api-levels.md). Při vytvořené a spuštění aplikace zobrazí na panelu akcí výchozí, jak je vidět na tomto snímku obrazovky: 
+Vytvořit nový projekt Android s názvem **ToolbarFun** (viz [Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md) Další informace o vytvoření nového projektu Android). Po vytvoření tohoto projektu nastavit cíle a minimální úrovně rozhraní API systému Android **Android 5.0 (API úrovně 21 - typu Lupa)** nebo novější. Další informace o úrovních verzi systému Android nastavení najdete v tématu [Principy Android API úrovně](~/android/app-fundamentals/android-api-levels.md). Při vytvořené a spuštění aplikace zobrazí na panelu akcí výchozí, jak je vidět na tomto snímku obrazovky:
 
 [![Snímek obrazovky výchozí akce panelu](replacing-the-action-bar-images/01-before-sml.png)](replacing-the-action-bar-images/01-before.png#lightbox)
 
@@ -76,6 +75,8 @@ Olive-green `colorPrimary` nastavení se používá pro barvu pozadí panelu ná
 ```xml
 <item name="android:colorPrimary">#5A8622</item>
 ```
+
+## <a name="apply-the-custom-theme"></a>Použít vlastní motiv
 
 Upravit **Properties/AndroidManifest.xml** a přidejte následující `android:theme` atribut `<application>` element tak, aby aplikace používá `MyTheme` vlastní motiv: 
 
@@ -136,12 +137,6 @@ Upravte soubor rozložení **Resources/layout/Main.axml** a nahraďte jeho obsah
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar" />
-    <Button
-        android:id="@+id/MyButton"
-        android:layout_below="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Hello World, Click Me!" />
 </RelativeLayout>
 ```
 
@@ -171,6 +166,7 @@ Tento kód vyhledá `Toolbar` a volání `SetActionBar` tak, aby `Toolbar` bude 
 
 Všimněte si, že `Toolbar` je navržen tak, nezávisle na `Theme.Material.Light.DarkActionBar` motiv, který se použije pro zbývající aplikace. 
 
+Pokud dojde k výjimce při spuštění aplikace, najdete v článku [Poradce při potížích s](#troubleshooting) části níže.
 
  
 ## <a name="add-menu-items"></a>Přidání položek nabídky 
@@ -193,7 +189,7 @@ Následující části ukazují tento proces podrobně přidáním **upravit** a
 
 ### <a name="install-menu-icons"></a>Nainstalujte nabídky ikony
 
-Budete pokračovat `ToolbarFun` aplikace příklad ikony nabídky přidat do projektu aplikace. Stáhněte si [nástrojů icons.zip](https://github.com/xamarin/monodroid-samples/blob/master/Supportv7/AppCompat/Toolbar/Resources/toolbar-icons.zip?raw=true) a rozbalte ho. Zkopírujte obsah extrahované *mipmap -* složky do projektu *mipmap -* složek **ToolbarFun nebo prostředky** a zahrnout každý soubor ikony přidané do projektu.
+Budete pokračovat `ToolbarFun` aplikace příklad ikony nabídky přidat do projektu aplikace. Stáhnout [ikon na panelu nástrojů](https://github.com/xamarin/monodroid-samples/blob/master/Supportv7/AppCompat/Toolbar/Resources/toolbar-icons-plus.zip?raw=true), rozbalte a zkopírujte obsah extrahované *mipmap -* složky do projektu *mipmap -* složek **ToolbarFun / Prostředky** a zahrnout každý soubor ikony přidané do projektu.
 
 
 ### <a name="define-a-menu-resource"></a>Definici zdroje nabídky
@@ -277,6 +273,19 @@ Když uživatel klepnutím nabídce přetečení **Předvolby** položky nabídk
 Další informace o Android nabídky najdete v tématu Android Developer [nabídky](https://developer.android.com/guide/topics/ui/menus.html) tématu. 
  
 
+## <a name="troubleshooting"></a>Poradce při potížích
+
+Následující tipy mohou pomoci pro ladění problémů, které mohou nastat při nahrazení panelu akcí panelu nástrojů.
+
+### <a name="activity-already-has-an-action-bar"></a>Aktivita již má panelu akcí
+
+Pokud aplikace není správně nakonfigurovaný na použití vlastní motiv, jak je popsáno v [použít vlastní motiv](#apply-the-custom-theme), následující výjimce může dojít při spuštění aplikace:
+
+![Chyba, která může dojít, když se nepoužívá vlastní motiv](replacing-the-action-bar-images/03-theme-not-defined.png)
+
+Kromě toho chybové zprávy, jako je následující může dojít k vážným: _Java.Lang.IllegalStateException: Tato aktivita již má panelu akcí poskytl vnitřní okno._ 
+
+Chcete-li tuto chybu, ověřte, že `android:theme` atribut pro vlastní motiv bude přidán do `<application>` (v **Properties/AndroidManifest.xml**) jak je popsáno výše v [vlastní motiv](#apply-the-custom-theme). Kromě toho tato chyba může být způsobeno, pokud `Toolbar` rozložení nebo vlastní motiv není správně nakonfigurována.
 
 
 ## <a name="related-links"></a>Související odkazy

@@ -1,84 +1,98 @@
 ---
-title: "Profil uživatele"
+title: Profil uživatele
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 6BB01F75-5E98-49A1-BBA0-C2680905C59D
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 06/21/2017
-ms.openlocfilehash: cf8230c5832104fd17b14532f1d32822a1fc0097
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/22/2018
+ms.openlocfilehash: 1407266f987b36b72e32a82c8f6f43b4a734af5d
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="user-profile"></a>Profil uživatele
 
-Android obsahoval podporované výčet kontakty s `ContactsContract` zprostředkovatele od 5 úroveň rozhraní API. Například do seznamu kontaktů je jednoduché, pomocí `ContactContracts.Contacts` třídy, jak je znázorněno v následujícím kódu:
+Android obsahoval podporované výčet kontakty s [ContactsContract](https://developer.xamarin.com/api/type/Android.Provider.ContactsContract/) zprostředkovatele od 5 úroveň rozhraní API. Například výpis kontakty je jednoduché, pomocí [ContactContracts.Contacts](https://developer.xamarin.com/api/type/Android.Provider.ContactsContract+Contacts/) třídy, jak je znázorněno v následujícím příkladu kódu:
 
 ```csharp
+// Get the URI for the user's contacts:
 var uri = ContactsContract.Contacts.ContentUri;
-           
+
+// Setup the "projection" (columns we want) for only the ID and display name:
 string[] projection = {
-    ContactsContract.Contacts.InterfaceConsts.Id,
+    ContactsContract.Contacts.InterfaceConsts.Id, 
     ContactsContract.Contacts.InterfaceConsts.DisplayName };
-           
-var cursor = ManagedQuery (uri, projection, null, null, null);
-           
-if (cursor.MoveToFirst ()) {
-    do {
-        Console.WriteLine ("Contact ID: {0}, Contact Name: {1}",
-            cursor.GetString (cursor.GetColumnIndex (projection [0])),
-            cursor.GetString (cursor.GetColumnIndex (projection [1])));
-                   
-    } while (cursor.MoveToNext());
+
+// Use a CursorLoader to retrieve the user's contacts data:
+CursorLoader loader = new CursorLoader(this, uri, projection, null, null, null);
+ICursor cursor = (ICursor)loader.LoadInBackground();
+
+// Print the contact data to the console if reading back succeeds:
+if (cursor != null)
+{
+    if (cursor.MoveToFirst())
+    {
+        do
+        {
+            Console.WriteLine("Contact ID: {0}, Contact Name: {1}",
+                               cursor.GetString(cursor.GetColumnIndex(projection[0])),
+                               cursor.GetString(cursor.GetColumnIndex(projection[1])));
+        } while (cursor.MoveToNext());
+    }
 }
 ```
 
-Se systémem Android 4 (14 úroveň rozhraní API) nový `ContactsContact.Profile` třída je k dispozici prostřednictvím poskytovatele ContactsContract. `ContactsContact.Profile` Poskytuje přístup k osobním profilu pro vlastníka zařízení, která zahrnuje kontaktní údaje, jako je vlastník zařízení název a telefonní číslo.
+Od verze Android 4 (14 úroveň rozhraní API), [ContactsContact.Profile](https://developer.xamarin.com/api/type/Android.Provider.ContactsContract+Profile/) třída je k dispozici prostřednictvím `ContactsContract` zprostředkovatele. `ContactsContact.Profile` Poskytuje přístup k osobním profilem pro vlastníka zařízení, která zahrnuje kontaktní údaje, jako je vlastník zařízení název a telefonní číslo.
 
 
 ## <a name="required-permissions"></a>Požadovaná oprávnění
 
-Čtení a zápis kontaktů dat, aplikace musí požádat o `Read_Contacts` a `Write_Contacts` oprávnění, v uvedeném pořadí. Kromě toho pokud chcete přečíst a upravit profil uživatele, aplikace musíte požádat o `Read_Profile` a `Write_Profile` oprávnění.
+Čtení a zápis kontaktů dat, aplikace musí požádat o `READ_CONTACTS` a `WRITE_CONTACTS` oprávnění, v uvedeném pořadí.
+Kromě toho pokud chcete přečíst a upravit profil uživatele, aplikace musíte požádat o `READ_PROFILE` a `WRITE_PROFILE` oprávnění.
 
 
 ## <a name="updating-profile-data"></a>Aktualizace dat profilu
 
-Jakmile nastavili tato oprávnění aplikace můžete použít běžné techniky Android k interakci s daty uživatelský profil. Například aktualizovat zobrazovaný název profilu by říkáme `ContentResolver.Update` s `Uri` načteny prostřednictvím `ContactsContract.Profile.ContentRawContactsUri` vlastnost, jak je uvedeno níže:
+Jakmile nastavili tato oprávnění aplikace můžete použít běžné techniky Android k interakci s daty uživatelský profil. Například k aktualizaci profilu zobrazovaný název, volání [ContentResolver.Update](https://developer.xamarin.com/api/member/Android.Content.ContentResolver.Update) s `Uri` načteny prostřednictvím [ContactsContract.Profile.ContentRawContactsUri](https://developer.xamarin.com/api/property/Android.Provider.ContactsContract+Profile.ContentRawContactsUri/) vlastnost, jak je znázorněno níže:
 
 ```csharp
 var values = new ContentValues ();
-          
-values.Put (ContactsContract.Contacts.InterfaceConsts.DisplayName,
-    "John Doe");
-           
-ContentResolver.Update (ContactsContract.Profile.ContentRawContactsUri,
-    values, null, null);
-```
+values.Put (ContactsContract.Contacts.InterfaceConsts.DisplayName, "John Doe");
 
+// Update the user profile with the name "John Doe":
+ContentResolver.Update (ContactsContract.Profile.ContentRawContactsUri, values, null, null);
+```
 
 ## <a name="reading-profile-data"></a>Čtení dat profilu
 
-Zadání dotazu na `ContactsContact.Profile.ContentUri` zpět čte data profilu. Například následující kód bude číst profil uživatele zobrazovaný název:
+Zadání dotazu na [ContactsContact.Profile.ContentUri](https://developer.xamarin.com/api/property/Android.Provider.ContactsContract+Profile.ContentUri/) zpět čte data profilu. Například následující kód bude číst profil uživatele zobrazovaný název:
 
 ```csharp
+// Read the profile
+var uri = ContactsContract.Profile.ContentUri;
+
+// Setup the "projection" (column we want) for only the display name:
 string[] projection = {
     ContactsContract.Contacts.InterfaceConsts.DisplayName };
-           
-var cursor = ManagedQuery (uri, projection, null, null, null);
 
-if (cursor.MoveToFirst ()) {
-    Console.WriteLine(
-        cursor.GetString (cursor.GetColumnIndex (projection [0])));
+// Use a CursorLoader to retrieve the data:
+CursorLoader loader = new CursorLoader(this, uri, projection, null, null, null);
+ICursor cursor = (ICursor)loader.LoadInBackground();
+if (cursor != null)
+{
+    if (cursor.MoveToFirst ())
+    {
+        Console.WriteLine(cursor.GetString (cursor.GetColumnIndex (projection [0])));
+    }
 }
 ```
 
+## <a name="navigating-to-the-user-profile"></a>Navigace k profilu uživatele
 
-## <a name="navigating-to-the-people-app"></a>Navigace na aplikaci uživatelé
-
-Nakonec, přejděte na uživatelský profil v nové aplikaci osoby, která se dodává se systémem Android 4, stačí vytvořit záměrem s `ActionView` akce a `ContactsContract.Profile.ContentUri`, možností a předejte ji do `StartActivity` metoda takto:
+Nakonec přejděte na uživatelský profil, vytvořte záměrem s `ActionView` akce a `ContactsContract.Profile.ContentUri` pak předejte jej `StartActivity` metoda takto:
 
 ```csharp
 var intent = new Intent (Intent.ActionView,
@@ -86,11 +100,11 @@ var intent = new Intent (Intent.ActionView,
 StartActivity (intent);
 ```
 
-Při spuštění ve výše uvedeném kódu, osoby aplikace se načte do profilu uživatele, jak je znázorněno na následujícím snímku obrazovky:
+Při spuštění ve výše uvedeném kódu, se zobrazí profil uživatele, jak je znázorněno na následujícím snímku obrazovky:
 
-[![Zobrazení profil uživatele John Doe aplikace – snímek obrazovky osoby](user-profile-images/15-people-app.png)](user-profile-images/15-people-app.png#lightbox)
+[![Snímek obrazovky zobrazení profilu uživatele John Doe profilu](user-profile-images/01-profile-screen-sml.png)](user-profile-images/01-profile-screen.png#lightbox)
 
-Práce s profil uživatele je nyní podobná interakci s ostatními daty v Android a poskytuje další úroveň individuální nastavení zařízení.
+Práce s profil uživatele je podobná interakci s ostatními daty v Android a poskytuje další úroveň individuální nastavení zařízení.
 
 
 

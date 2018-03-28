@@ -1,6 +1,6 @@
 ---
-title: "Návod: Vytvoření vazby iOS knihovna jazyka Objective-C"
-description: "Tento článek obsahuje praktických návod, jak vytvořit vazbu Xamarin.iOS pro existující knihovnu jazyka Objective-C, InfColorPicker. Pokrývá oblastech, jako je kompilování statické knihovny jazyka Objective-C, jeho vazby a vazbu pomocí aplikace pro Xamarin.iOS."
+title: 'Návod: Vytvoření vazby iOS knihovna jazyka Objective-C'
+description: Tento článek obsahuje praktických návod, jak vytvořit vazbu Xamarin.iOS pro existující knihovnu jazyka Objective-C, InfColorPicker. Pokrývá oblastech, jako je kompilování statické knihovny jazyka Objective-C, jeho vazby a vazbu pomocí aplikace pro Xamarin.iOS.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: D3F6FFA0-3C4B-4969-9B83-B6020B522F57
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: e4619f5b1d3f888b2557cf894aaa83106504766f
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 44ed651413d66866f131a294158525440278b291
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>Návod: Vytvoření vazby iOS knihovna jazyka Objective-C
 
@@ -94,7 +94,7 @@ Pomocí nástroje příkazového řádku nainstalované jsme připraveni pokrač
 V tomto návodu nabídneme následující kroky:
 
 - **[Vytvořte statické knihovny](#Creating_A_Static_Library)**  – tento krok zahrnuje vytvoření statické knihovny **InfColorPicker** kód jazyka Objective-C. Statické knihovny bude mít `.a` příponu souboru a budou vloženy do sestavení .NET projektu knihovny.
-- **[Vytvoření vazby projektu Xamarin.iOS](#Create_a_Xamarin.iOS_Binding_Project)**  – když máme statickou knihovnu, budeme ji používat k vytvoření vazby projektu Xamarin.iOS. Vazba projektu se skládá z statickou knihovnu, kterou jsme právě vytvořili a metadata ve formě kód C#, která vysvětluje, jak můžete použít rozhraní API jazyka Objective-C. Tato metadata se obvykle označuje jako definice rozhraní API. Použijeme  **[cíl Sharpie](#Using_Objective_Sharpie)**  a pomoci tak s vytvoření definice rozhraní API.
+- **[Vytvoření vazby projektu Xamarin.iOS](#Create_a_Xamarin.iOS_Binding_Project)**  – když máme statickou knihovnu, budeme ji používat k vytvoření vazby projektu Xamarin.iOS. Vazba projektu se skládá z statickou knihovnu, kterou jsme právě vytvořili a metadata ve formě kód C#, která vysvětluje, jak můžete použít rozhraní API jazyka Objective-C. Tato metadata se obvykle označuje jako definice rozhraní API. Použijeme **[cíl Sharpie](#Using_Objective_Sharpie)** a pomoci tak s vytvoření definice rozhraní API.
 - **[Normalizuje definice rozhraní API](#Normalize_the_API_Definitions)**  – cíl Sharpie nemá úlohu skvělé nám pomoci, ale nemůže dělat všechno, co. Probereme některé změny, které je potřeba před použitím provést definice rozhraní API.
 - **[Použití knihovny vazby](#Using_the_Binding)**  – nakonec vytvoříme aplikace pro Xamarin.iOS k ukazují, jak používat naše projektu nově vytvořená vazba.
 
@@ -159,7 +159,7 @@ Prvním krokem je pro nás přidání InfoColorPicker zdrojový kód do se stati
 
     [![](walkthrough-images/image16b.png "Rozbalte část odkaz binárních souborů a knihoven")](walkthrough-images/image16b.png#lightbox)
 
-13. Použití  **+**  tlačítko otevřete dialogové okno umožňuje přidat požadované rámce architektury uvedené výše:
+13. Použití **+** tlačítko otevřete dialogové okno umožňuje přidat požadované rámce architektury uvedené výše:
 
     [![](walkthrough-images/image16c.png "Přidejte že požadované rámce architektury uvedené výše")](walkthrough-images/image16c.png#lightbox)
 
@@ -183,7 +183,7 @@ Vytvoření fat binární je třech krocích:
 
 Když jsou tyto tři kroky místo jednoduché a může být nutné je opakovat v budoucnu, když knihovna jazyka Objective-C získává aktualizace, nebo pokud je nutné opravy chyb. Pokud se rozhodnete automatizovat tyto kroky, zjednoduší budoucí údržby a podpory vazby projektu iOS.
 
-Existují celou řadu nástrojů, které jsou k dispozici pro automatizaci takových úloh - skript prostředí, [převislým](http://rake.rubyforge.org/), [xbuild](http://www.mono-project.com/Microsoft.Build), a [zkontrolujte](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/make.1.html). Když jsme nainstalovány nástroje pro příkazový řádek Xcode, jsme nainstalovali také zkontrolujte, tak, že se systému, který se použije v tomto návodu. Tady je **Makefile** , můžete použít k vytvoření více architektura sdílenou knihovnu, která bude fungovat na zařízení s iOS a simulátor pro všechny knihovny:
+Existují celou řadu nástrojů, které jsou k dispozici pro automatizaci takových úloh - skript prostředí, [převislým](http://rake.rubyforge.org/), [xbuild](http://www.mono-project.com/docs/tools+libraries/tools/xbuild/), a [zkontrolujte](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/make.1.html). Když jsme nainstalovány nástroje pro příkazový řádek Xcode, jsme nainstalovali také zkontrolujte, tak, že se systému, který se použije v tomto návodu. Tady je **Makefile** , můžete použít k vytvoření více architektura sdílenou knihovnu, která bude fungovat na zařízení s iOS a simulátor pro všechny knihovny:
 
 ```bash
 XBUILD=/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild

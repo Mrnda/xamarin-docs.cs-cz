@@ -1,6 +1,6 @@
 ---
-title: "Úvod do životního cyklu mobilní Software"
-description: "Tento článek popisuje životního cyklu softwaru s ohledem na mobilní aplikace a popisuje některé aspekty při vytváření mobilních projekty vyžaduje. Pro vývojáře, kteří chtějí stačí přejít přímo na a spusťte vytváření může tento průvodce přeskočí a čtení později podrobnější vysvětlení nástroje pro vývoj mobilních řešení."
+title: Úvod do životního cyklu mobilní Software
+description: Tento článek popisuje životního cyklu softwaru s ohledem na mobilní aplikace a popisuje některé aspekty při vytváření mobilních projekty vyžaduje. Pro vývojáře, kteří chtějí stačí přejít přímo na a spusťte vytváření může tento průvodce přeskočí a čtení později podrobnější vysvětlení nástroje pro vývoj mobilních řešení.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 420c5fdf-4610-4e71-9db5-fe894c961924
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 11/22/2016
-ms.openlocfilehash: 7a344ce211a025176c2b40540ce8337802dd347b
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 144e71677ad5477c7e1cfb5211cc5860995642bb
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="introduction-to-the-mobile-software-development-lifecycle"></a>Úvod do životního cyklu mobilní Software
 
@@ -25,7 +25,7 @@ V tomto dokumentu vytvoříme trvat důkladné úvodní posouzení vytváření 
 1.   **Proces** – proces vývoje softwaru se nazývá životního cyklu vývoj softwaru (SDLC). Podíváme všech fázích SDLC s ohledem na vývoj mobilních aplikací, včetně: inspiraci, návrh, vývoj, ustálení, nasazení a údržby.
 1.   **Aspekty** – existuje několik aspektů při vytváření mobilních aplikací, hlavně na rozdíl od tradičních webových nebo desktopových aplikací. Podíváme těchto aspektů a jejich vliv na vývoj mobilních řešení.
 
-Tento dokument je určený k odpovědi na základní dotazy týkající se vývoje mobilní aplikace, pro vývojáře aplikací nové a zkušenosti agentem. Představení většinu koncepty, které je potřeba spustit do během celý softwaru vývoj životního cyklu (SDLC) trvá poměrně komplexní přístup. Tento dokument nemusí být pro všechny uživatele, pokud jste právě začněte sestavovat aplikace itching, doporučujeme však přechod dopředu na buď [Úvod do vývoj mobilních řešení pro](~/cross-platform/get-started/introduction-to-mobile-development.md), [Hello, Android](~/android/get-started/hello-android/index.md) nebo [Hello, iPhone](~/ios/get-started/hello-ios/index.md) kurzy a pak vracející se zpět k tomuto dokumentu později.
+Tento dokument je určený k odpovědi na základní dotazy týkající se vývoje mobilní aplikace, pro vývojáře aplikací nové a zkušenosti agentem. Představení většinu koncepty, které je potřeba spustit do během celý softwaru vývoj životního cyklu (SDLC) trvá poměrně komplexní přístup. Tento dokument nemusí být pro všechny uživatele, pokud jste právě začněte sestavovat aplikace itching, doporučujeme však přejít na bod dále [Úvod do vývoj mobilních řešení](~/cross-platform/get-started/introduction-to-mobile-development.md) průvodce a potom vracející se zpět k tomuto dokumentu později.
 
 ## <a name="mobile-development-sdlc"></a>Mobilní vývoj SDLC
 
@@ -73,19 +73,17 @@ Po byly určeny funkce a funkce aplikace, v dalším kroku se snažíte vyřeši
 
 #### <a name="ux-design"></a>Návrh UX
 
-UX se obvykle provádí prostřednictvím wireframes nebo modelování pomocí nástrojů, jako [Balsamiq](http://www.balsamiq.com/), [Mockingbird](https://gomockingbird.com/), [Visio](http://office.microsoft.com/en-us/visio/), nebo jen prostý ol' pera a dokumentu. Modelování UX povolit UX třeba navrhnout bez nutnosti starat o aktuální návrh uživatelského rozhraní:
+UX se obvykle provádí prostřednictvím wireframes nebo modelování pomocí jedné z dalších [návrh sadách](https://docs.microsoft.com/windows/uwp/design/downloads/). Modelování UX povolit UX třeba navrhnout bez nutnosti starat o aktuální návrh uživatelského rozhraní:
 
  [![](introduction-to-mobile-sdlc-images/balsamiq.png "UX se obvykle provádí prostřednictvím wireframes nebo pomocí nástrojů, jako je Balsamiq modelování")](introduction-to-mobile-sdlc-images/balsamiq.png#lightbox)
 
-Při vytváření UX modelování, je důležité vzít v úvahu rozhraní pokyny pro různé platformy, které se zaměří na aplikaci. Aplikace by měla "pohodlné" na každou platformu. Pokyny návrhu oficiálního pro každou platformu jsou:
+Při vytváření UX modelování, je důležité vzít v úvahu rozhraní pokyny pro různé platformy, které se zaměří na aplikaci. Aplikace by měla "pohodlné" na každou platformu. Oficiální návrhu pokyny pro každou platformu jsou:
 
-1.   **Apple** -  [lidské Interface Guidelines](http://developer.apple.com/library/ios/#DOCUMENTATION/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html)
+1.   **Apple** -  [lidské Interface Guidelines](https://developer.apple.com/ios/human-interface-guidelines/overview/themes/)
 1.   **Android** – [pokyny návrhu](http://developer.android.com/design/index.html)
-1.   **Windows Phone** – [návrhu knihovna pro Windows Phone](http://msdn.microsoft.com/en-US/library/windowsphone/design/fa00461b-abe1-41d1-be87-0b0fe3d3389d(v=vs.105).aspx)
+1.   **UWP** – [základy UWP návrhu](https://docs.microsoft.com/windows/uwp/design/basics/)
 
-Například každá aplikace má jedná pro přepínání mezi oddílů v aplikaci. iOS používá karta panelu v dolní části obrazovky, Android používá pás karet v horní části obrazovky a zobrazení – Panorama používá Windows Phone:
-
- ![](introduction-to-mobile-sdlc-images/38.png "Každá aplikace má jedná pro přepínání mezi oddílů v aplikaci")
+Například každá aplikace má jedná pro přepínání mezi oddílů v aplikaci. iOS používá karta panelu v dolní části obrazovky, Android používá pás karet v horní části obrazovky a UWP [Pivot či kartě](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/tabs-pivot) zobrazení.
 
 Kromě toho samotného hardwaru také určuje UX rozhodnutí. Například zařízení s iOS mít žádné fyzické *zpět* tlačítko a proto znamenat jedná navigační řadiče:
 
@@ -104,15 +102,6 @@ Jakmile je určena UX, dalším krokem je vytvoření návrhu uživatelského ro
 Stejně jako u UX, je důležité si uvědomit, že každá platforma má ho je vlastní návrh jazyka, takže dobře navržených aplikace přesto může dojít vypadají na každou platformu:
 
  [![](introduction-to-mobile-sdlc-images/multiplatform-1.png "Dobře navržených aplikace může stále vypadají na každou platformu")](introduction-to-mobile-sdlc-images/multiplatform-1.png#lightbox)
-
-Pro dobrý inspiraci návrh uživatelského rozhraní projděte si následující weby:
-
-1.   [pttrns.com](http://pttrns.com) – (jenom iOS)
-1.   [androidpttrns.com](http://androidpttrns.com) -(jen Android)
-1.   [lovelyui.com](http://lovelyui.com) – (iOS, Android a Windows Phone)
-1.   [mobiledesignpatterngallery.com](http://mobiledesignpatterngallery.com) – (iOS, Android a Windows Phone)
-
-Kromě toho je možné zobrazit portfolií grafické návrháře v lokalitách, jako [Behance.com](http://behance.com) a [Dribbble.com](http://dribbble.com). Návrháři z po celém světě lze nalézt zde častým místech, kde je směnným kurzem uspokojivým, takže nemusí mít funkční grafické návrhy nákladovým mnoho.
 
 ### <a name="development"></a>Vývoj
 
@@ -135,12 +124,7 @@ Má obvykle při přesunu aplikace v průběhu životního cyklu, dále na Otev�
 
 Časná testování a nasazení na relativně malý počet zařízení je obvykle nasazení přímo z vývojovém počítači dostatečná. Však jako cílová skupina rozšiřuje, to může být náročná. Jako takový existuje řada možností testovací nasazení odhlašování došlo které jednodušší tento proces tím, že se vám umožňuje vyzvat uživatele k testování fondu, verze sestavení prostřednictvím webu a poskytují nástroje, které umožňují pro zpětnou vazbu od uživatelů.
 
-Některé z nejčastěji používané ty, které jsou:
-
-1.   **Testflight** – jedná se o produkt iOS, která umožňuje distribuovat aplikace pro testování a také přijímat zprávy o chybách a informace o využití od zákazníků. Toto je zahrnuta jako součást iTunes připojit a není k dispozici, pokud jsou součástí členství podnikové vývojáře Apple.
-2.   **LaunchPad (launchpadapp.com)** – navržený pro Android, tato služba je velmi podobné TestFlight.
-3.   **Plavidla (vessel.io)** – služby pro iOS a Android, která vám umožní sledovat využití, sledovat zákazníků a i provést A / B testování z uvnitř vaší aplikace.
-4.  **hockeyapp.com** -poskytuje testování služby pro iOS, Android a Windows Phone.
+Pro účely testování a nasazení, můžete použít [aplikace Center](https://appcenter.ms/) pro nepřetržitě vytváření, testování, verzi a monitorování aplikací.
 
 ### <a name="distribution"></a>Distribuce
 
@@ -170,9 +154,9 @@ To umožňuje vývojářům potenciálně větší ještě složitější distri
 1.  [Handango](http://www.handango.com/)
 1.  [GetJar](http://www.getjar.com/)
 
-#### <a name="windows"></a>Windows 
+#### <a name="uwp"></a>UWP 
 
-Aplikace systému Windows se distribuují prostřednictvím Microsoft Store. Vývojáři odesílat své aplikace na schválení, po jejímž uplynutí se objeví v úložišti.
+Aplikace UWP jsou distribuovány prostřednictvím Microsoft Store. Vývojáři odesílat své aplikace na schválení, po jejímž uplynutí se objeví v úložišti. Další informace o publikování aplikací pro Windows, najdete v článku na UWP [publikovat](https://docs.microsoft.com/windows/uwp/publish/) dokumentaci.
 
 ## <a name="mobile-development-considerations"></a>Důležité informace pro vývoj mobilních řešení
 
@@ -237,9 +221,9 @@ Multitasking v Android má dvě součásti; První je životní cyklus aktivity.
 Druhá součást, kterou multitasking v Android je použití služby.
 Služby jsou dlouho běžící procesy, které existují nezávisle na aplikaci a se používají ke spouštění procesů sice aplikace na pozadí. Další informace najdete v článku [vytváření služeb](~/android/app-fundamentals/services/index.md) průvodce.
 
-#### <a name="many-devices-amp-many-form-factors"></a>Mnoho zařízení &amp; mnoho formuláři faktory
+#### <a name="many-devices-and-many-form-factors"></a>Mnoho zařízení a mnoha faktorech formuláře
 
-Na rozdíl od iOS, která má malého zařízení nebo i Windows Phone, které lze spustit pouze v schválené zařízení, které splňují minimální sadu požadavky na platformu, není Google uložit žádné omezení na zařízení, která můžete spustit operační systém Android. Tento otevřený zlepší výsledků v prostředí produktu nenaplnil velkého počtu různých zařízení s velmi jiný hardware, rozlišení obrazovky a poměr, zařízení funkce a možnosti.
+Google nemá uložit žádné omezení na zařízení, která můžete spustit operační systém Android. Tento otevřený zlepší výsledků v prostředí produktu nenaplnil velkého počtu různých zařízení s velmi jiný hardware, rozlišení obrazovky a poměr, zařízení funkce a možnosti.
 
 Z důvodu extrémně fragmentaci zařízení se systémem Android se většina lidí zvolte nejoblíbenější 5 nebo 6 zařízení k navrhování a testování pro a určit jejich prioritu ty.
 
@@ -252,25 +236,17 @@ To je základním krokem v modelu Android distribuční kvůli otevřete aplikac
 
 #### <a name="multitasking"></a>Multitasking
 
-Multitasking ve Windows Phone také má dvě části: životního cyklu pro stránky a aplikace a procesy na pozadí. Každý obrazovky v aplikaci je instance třídy stránky, která má události související s prováděné aktivní nebo neaktivní (s zvláštní pravidla pro zpracování neaktivního stavu, nebo se "neplatné"). 
+Multitasking v UWP má dvě části: životního cyklu pro stránky a aplikace a procesy na pozadí. Každý obrazovky v aplikaci je instance třídy stránky, která má události související s prováděné aktivní nebo neaktivní (s zvláštní pravidla pro zpracování neaktivního stavu, nebo se "neplatné"). 
 
 Druhá část poskytuje agentů na pozadí pro zpracování úloh, i v případě, že aplikace není spuštěná v popředí. 
 
 #### <a name="device-capabilities"></a>Možnosti zařízení
 
-I když hardware Windows Phone je poměrně homogenní kvůli striktní pokynů poskytovaných společností Microsoft, jsou stále součásti, které jsou volitelné a proto vyžaduje speciální zvažování při kódování. Volitelné hardwaru schopnosti zahrnují fotoaparát, kompas a volný setrvačník. Je taky speciální třídu nedostatku paměti (256MB) vyžadující obzvláštní pozornost, nebo vývojáři mohou výslovný nesouhlas s podpory nedostatku paměti.
-
-#### <a name="database"></a>Databáze
-
-IOS a Android zahrnují SQLite databázový stroj, který umožňuje sofistikované dat úložiště, které také funguje napříč platformami. Windows Phone 7 nezahrnuli do databáze, zatímco Windows Phone 7.1 a 8 obsahují [místní databázový stroj](http://msdn.microsoft.com/en-us/library/windowsphone/develop/hh202860(v=vs.105).aspx) , může být pouze dotazován s [technologie LINQ to SQL](http://msdn.microsoft.com/en-us/library/windowsphone/develop/hh202872(v=vs.105).aspx) a dotazy jazyka Transact-SQL nepodporuje. Došlo [open-source port SQLite](http://code.google.com/p/csharp-sqlite/) k dispozici, můžete přidat do aplikace Windows Phone k zajištění kompatibility podporu a napříč platformami známé Transact-SQL.
+I když je poměrně homogenní UWP hardware, jsou stále součásti, které jsou volitelné a proto vyžaduje speciální zvažování při kódování. Volitelné hardwaru schopnosti zahrnují fotoaparát, kompas a volný setrvačník. Je taky speciální třídu nedostatku paměti (256MB) vyžadující obzvláštní pozornost, nebo vývojáři mohou výslovný nesouhlas s podpory nedostatku paměti.
 
 #### <a name="security-considerations"></a>Důležité informace o zabezpečení
 
-Aplikace Windows Phone jsou spouštěny s omezenou sadu oprávnění, která izoluje je od sebe navzájem a omezuje operace, které mohou provádět.
-Přístup k síti se musí provádět prostřednictvím rozhraní API pro konkrétní a komunikaci mezi aplikacemi lze provést pouze prostřednictvím řízené mechanismy. Přístup k systému souborů je také omezen; rozhraní API izolované úložiště poskytuje úložiště dvojice klíč hodnota a schopnost vytvářet soubory a složky kontrolovaným způsobem (odkazovat [izolované úložiště – přehled](http://msdn.microsoft.com/en-us/library/ff402541(v=vs.92).aspx) Další informace).
-
-Aplikace přístup k hardwaru a operačního systému funkce se řídí možnosti uvedené v jeho soubor manifestu (podobně jako Android).
-Manifest musí deklarovat funkce vyžaduje, aby uživatelé mohli najdete v části a souhlas s těmito oprávnění aplikace a také tak, aby operační systém umožňuje přístup k rozhraní API. Aplikace musí požádat o přístup k funkcím jako data kontakty nebo událostí, fotoaparát, umístění, média knihovny a další. Najdete v článku společnosti Microsoft [soubor manifestu aplikace](http://msdn.microsoft.com/en-us/library/windowsphone/develop/ff769509(v=vs.92).aspx) Další informace naleznete v dokumentaci.
+Informace o důležité informace o zabezpečení v UPW, najdete v části [zabezpečení](https://docs.microsoft.com/windows/uwp/security/) dokumentaci.
 
 ## <a name="summary"></a>Souhrn
 

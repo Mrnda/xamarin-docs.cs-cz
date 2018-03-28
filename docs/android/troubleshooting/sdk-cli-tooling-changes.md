@@ -1,6 +1,6 @@
 ---
-title: "Změny nástrojů sady SDK pro Android"
-description: "Jak spravuje SDK pro Android nainstalovaná úrovně rozhraní API a AVDs změny."
+title: Změny nástrojů sady SDK pro Android
+description: Jak spravuje SDK pro Android nainstalovaná úrovně rozhraní API a AVDs změny.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 5AC61C00-0FF6-4C2D-80E7-D67A3EE30A5A
@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: 69e9f08870a01c056951700978d07277af5edfa8
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a16aa3704d9e0a63cfabde4b620452e7e2a5bf57
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="changes-to-the-android-sdk-tooling"></a>Změny nástrojů sady SDK pro Android
 
@@ -20,7 +20,7 @@ _Jak spravuje SDK pro Android nainstalovaná úrovně rozhraní API a AVDs změn
 
 ## <a name="changes-to--android-sdk-tooling"></a>Změny nástrojů sady SDK pro Android
 
-V moderním verzích nástroje SDK pro Android, Google odebral stávající správce AVD a sady SDK pro nové _rozhraní příkazového řádku_ nástrojů (CLI). První **android** odebrala program a správci grafickým uživatelským rozhraním (grafické uživatelské rozhraní) v sadě Visual Studio pro Mac a starší verze Xamarin pro Visual Studio přestane fungovat po verze nástroje pro Android SDK.
+V moderní verzích nástroje SDK pro Android se odebrala Google existující správce AVD a sady SDK pro nové nástrojů rozhraní příkazového řádku (rozhraní příkazového řádku). První **android** program byl odebrán, a správci grafickým uživatelským rozhraním (grafické uživatelské rozhraní) v sadě Visual Studio pro Mac a starší verze Xamarin pro Visual Studio přestane fungovat po 25.2.5 verzi nástroje pro Android SDK.
 
 
 ![Android nabídky IDE v sadě Visual Studio](sdk-cli-tooling-changes-images/android-ide-menu.png)
@@ -50,7 +50,7 @@ Je nový program s názvem **sdkmanager** v **nástroje/bin** složky Android SD
 
 **Přidáno v:** Android SDK Tools 25.3.0 (březen 2017) a vyšší.
 
-Je nový program s názvem **avdmanager** v **nástroje/bin** složky Android SDK. Tento nástroj se používá k udržování AVD pro emulátor Google Android. Další informace o použití tohoto nástroje najdete v tématu [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html).
+Je nový program s názvem **avdmanager** v **nástroje/bin** složky Android SDK. Tento nástroj se používá k udržování AVDs pro emulátor Google Android. Další informace o použití tohoto nástroje najdete v tématu [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html).
 
 ### <a name="downgrading"></a>Přechod na starší verzi
 
@@ -65,6 +65,6 @@ Můžete dál používat původní grafického uživatelského rozhraní tak, ž
 
 - [Instalace sady Android SDK](~/android/get-started/installation/android-sdk.md)
 - [Principy úrovní rozhraní API systému Android](~/android/app-fundamentals/android-api-levels.md)
-- [Sady SDK nástroje poznámky k verzi (Google)](https://developer.android.com/studiohttps://developer.xamarin.com/releases/sdk-tools.html)
+- [Sady SDK nástroje poznámky k verzi (Google)](https://developer.android.com/studio/releases/sdk-tools.html)
 - [sdkmanager](https://developer.android.com/studio/command-line/sdkmanager.html)
-- [avdmanager](https://developer.android.com/studio/command-line/sdkmanager.html)
+- [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html)

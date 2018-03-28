@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/06/2018
-ms.openlocfilehash: 5ee36d63e2751eb5d09ee526755d62dda4ef537e
-ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
+ms.openlocfilehash: 7c90b5bcca5a6b8d2a4b52c166ae6884646a61d2
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/21/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="xamarinforms-quickstart"></a>Xamarin.Forms Quickstart
 
@@ -31,7 +31,7 @@ Vytvoření aplikace Phoneword následujícím způsobem:
 
     ![](quickstart-images/vs/new-solution.png "Nový projekt")
 
-3. V **nový projekt** dialogové okno, klikněte na tlačítko **napříč platformami**, vyberte **křížové platformy aplikace (Xamarin.Forms)** šablony, nastavte název název a řešení na `Phoneword`, Vyberte vhodný umístění projektu a klikněte na **OK** tlačítko:
+3. V **nový projekt** dialogové okno, klikněte na tlačítko **napříč platformami**, vyberte **mobilní aplikace (Xamarin.Forms)** šablony, nastavte název název a řešení na `Phoneword`, vyberte vhodné umístění projektu a klikněte na **OK** tlačítko:
 
     ![](quickstart-images/vs/new-project.png "Šablony projektů a platformy")
 

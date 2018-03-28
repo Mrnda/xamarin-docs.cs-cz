@@ -1,5 +1,5 @@
 ---
-title: "Ladění více procesů"
+title: Ladění více procesů
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 852F8AB1-F9E2-4126-9C8A-12500315C599
@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: 9454c65298dbb5417f91765f541d22ae1d6137d7
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7bc230b43d0b50746a6076ffb2633e7fad0283d9
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="multi-process-debugging"></a>Ladění více procesů
 
@@ -31,7 +31,7 @@ Což vývojářům s více procesu ladění, Visual Studio pro Mac prošla někt
 
 Ve výchozím nastavení, zobrazí Visual Studio pro Mac jednotlivých projektů v **konfigurace řešení** oblast panelu nástrojů ladění. Když je zahájena ladicí relace, a je to projekt, který spustí a připojit ladicí program k sadě Visual Studio pro Mac.
 
-Spuštění a ladění více procesů v sadě Visual Studio pro Mac, je nutné vytvořit _konfigurace řešení_. Konfigurace řešení popisuje, co by měl být projekty v řešení zahrnuty při zahájení relace ladění s kliknutím **spustit** tlačítko nebo kdy &#8984; &#8617; (**Zadejte Cmd**) je stisknutí tlačítka. Na následujícím snímku obrazovky je příklad řešení v sadě Visual Studio pro Mac, který má více konfigurace řešení:
+Spuštění a ladění více procesů v sadě Visual Studio pro Mac, je nutné vytvořit _konfigurace řešení_. Konfigurace řešení popisuje, co by měl být projekty v řešení zahrnuty při zahájení relace ladění s kliknutím **spustit** tlačítko nebo když &#8984; &#8617; (**zadejte Cmd**) je stisknutí tlačítka. Na následujícím snímku obrazovky je příklad řešení v sadě Visual Studio pro Mac, který má více konfigurace řešení:
 
 ![](multi-process-debugging-images/mpd01-xs.png "Řešení s konfigurací s více řešení")
 
@@ -60,7 +60,7 @@ Při spuštění více řešení konfigurace, některé sady Visual Studio pro M
 
 Když zarážku došlo v jednom procesu, že proces se pozastaví provádění, zatímco jiné procesy dál běžet. Ve scénáři jeden procesu Visual Studio pro Mac můžete snadno zobrazit informace, jako je vláken, místní proměnné, výstupní aplikace v jedné sady dotyková zařízení. Ale pokud je více procesů pomocí více zarážky a potenciálně více vláken, může prokázat, čtenáře vývojáře zvládnout informacemi z relace ladění, který se snaží zobrazení všech informací z všechna vlákna (a procesy) najednou.
 
-K řešení tohoto problému, Visual Studio pro Mac zobrazí pouze informace z jednoho vlákna současně, to se označuje jako _aktivních vláken_. První podproces, který pozastavuje na zarážce považuje za _aktivních vláken_. Aktivních vláken je podproces, který je zaměřen vývojáře pozornost. Ladění příkazy, jako například **Krokovat s přeskočením** &#8679; &#8984; O (Shift-Cmd-O), budou vydané aktivních vláken.
+K řešení tohoto problému, Visual Studio pro Mac zobrazí pouze informace z jednoho vlákna současně, to se označuje jako _aktivních vláken_. První podproces, který pozastavuje na zarážce považuje za _aktivních vláken_. Aktivních vláken je podproces, který je zaměřen vývojáře pozornost. Ladění příkazy, jako například **Krokovat s přeskočením** &#8679; &#8984;O (Shift-Cmd-O), budou vydané aktivních vláken.
 
 **Vlákno Pad** budou zobrazovat informace pro všechny procesy a vláken, které jsou v části kontroly v konfiguraci řešení a poskytují vizuální upozornění, co je aktivních vláken:
 
@@ -104,7 +104,7 @@ Je také možné ladění projektu pro druhý, jakmile se spustí první projekt
 
 ## <a name="creating-a-solution-configuration"></a>Vytvoření konfigurace řešení
 
-A _konfigurace řešení_ informuje Visual Studio pro Mac, jaké projektu spustit, když je relace ladění intiated s **spustit** tlačítko. Může existovat více než jednu konfiguraci řešení za řešení. Díky tomu je možné k určení, jaké projekty jsou spuštěny při ladění projektu.
+A _konfigurace řešení_ informuje Visual Studio pro Mac, jaké projektu spustit, když je relace ladění iniciovala s **spustit** tlačítko. Může existovat více než jednu konfiguraci řešení za řešení. Díky tomu je možné k určení, jaké projekty jsou spuštěny při ladění projektu.
 
 Chcete-li vytvořit novou konfiguraci řešení v sadě Xamaring Studio:
 

@@ -1,16 +1,16 @@
 ---
-title: "Omezení"
+title: Omezení
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 5AC28F21-4567-278C-7F63-9C2142C6E06A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 43b099e8ddd6acc3e8cc4ce94580313a39a0c686
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c099797f0687f198ed220c1bd366bd93ab6c6e99
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="limitations"></a>Omezení
 
@@ -25,7 +25,7 @@ Toto jsou omezení Xamarin.iOS ve srovnání s plochy Mono:
 
 Na rozdíl od tradičních Mono/.NET staticky předem místo se zkompilují na vyžádání kompilátoru JIT kompilace kódu na iPhone.
 
-Na mono [úplné AOT](http://www.mono-project.com/AOT#Full_AOT) technologie má několik omezení s ohledem na obecné typy, tyto se nezdařila, protože nemusí být vždy možné obecné konkretizaci lze určit předem v době kompilace. To není problém pro regulární .NET nebo Mono moduly runtime, jak kód je vždy kompilované za běhu pomocí pouze v kompilátoru čas. Ale to ale představuje výzvu pro statické kompilátoru jako Xamarin.iOS.
+Na mono [úplné AOT](http://www.mono-project.com/docs/advanced/aot/#full-aot) technologie má několik omezení s ohledem na obecné typy, tyto se nezdařila, protože nemusí být vždy možné obecné konkretizaci lze určit předem v době kompilace. To není problém pro regulární .NET nebo Mono moduly runtime, jak kód je vždy kompilované za běhu pomocí pouze v kompilátoru čas. Ale to ale představuje výzvu pro statické kompilátoru jako Xamarin.iOS.
 
 Mezi běžné problémy, které vývojáři spustit do, patří:
 
@@ -117,13 +117,10 @@ Standardní mono je možné předat nespravovaného kódu místo ukazatel na fun
 
 Mono jsou tyto mostů implementované pouze v době kompilátoru. Při použití kompilátoru napřed předčasné vyžadovanou pro iPhone, že v tomto okamžiku se dvě důležité omezení:
 
--  Musí všechny vaše zpětné volání metody s příznak [MonoPInvokeCallbackAttribute](https://developer.xamarin.com/api/type/MonoPInvokeCallbackAttribute/) 
+-  Musí všechny vaše zpětné volání metody s příznak [MonoPInvokeCallbackAttribute](https://developer.xamarin.com/api/type/ObjCRuntime.MonoPInvokeCallbackAttribute) 
 -  Metody musí být statické metody, neexistuje žádná podpora pro instanci metody. 
-
-
  
- <a name="No_Remoting" />
-
+<a name="No_Remoting" />
 
 ## <a name="no-remoting"></a>Žádné vzdálené komunikace
 

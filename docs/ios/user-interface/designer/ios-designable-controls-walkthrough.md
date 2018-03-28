@@ -1,6 +1,6 @@
 ---
-title: "Návod - použití vlastních ovládacích prvků pomocí návrháře Xamarin pro iOS"
-description: "Tento článek obsahuje podrobný postup znázorňující postup vytvoření vlastního ovládacího prvku a použít jej v Návrháři Xamarin pro iOS. Ukazuje, jak zpřístupnit ovládacího prvku v panelu nástrojů návrháře, přetáhněte nebo vyřazením do zobrazení. Kromě toho ukazuje, jak implementovat ovládacího prvku, vykreslí správně v době návrhu a prostředí runtime, jakož i vytvoření vlastnosti, které lze nastavit v době návrhu."
+title: Návod - použití vlastních ovládacích prvků pomocí návrháře Xamarin pro iOS
+description: Tento článek obsahuje podrobný postup znázorňující postup vytvoření vlastního ovládacího prvku a použít jej v Návrháři Xamarin pro iOS. Ukazuje, jak zpřístupnit ovládacího prvku v panelu nástrojů návrháře, přetáhněte nebo vyřazením do zobrazení. Kromě toho ukazuje, jak implementovat ovládacího prvku, vykreslí správně v době návrhu a prostředí runtime, jakož i vytvoření vlastnosti, které lze nastavit v době návrhu.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 9032B32E-97BD-4DA6-9955-811B84682578
@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 3e12e33b254e58759043ed838d5c34dd7bd024fd
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 4138ba0da1dd2174c53e6e35105c3199ea941f7f
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="walkthrough---using-custom-controls-with-the-xamarin-designer-for-ios"></a>Návod - použití vlastních ovládacích prvků pomocí návrháře Xamarin pro iOS
 
@@ -32,15 +32,11 @@ Tato příručka předpokládá znalost obsahu zahrnutého v [Začínáme proved
 
 1. Vytvořte nové řešení z **iOS > aplikace > jediné zobrazení aplikace > C#** šablony, pojmenujte ji `ScratchTicket`a pokračujte v průvodci Nový projekt:
 
-
     [![](ios-designable-controls-walkthrough-images/01new.png "Vytvořte nové řešení")](ios-designable-controls-walkthrough-images/01new.png#lightbox)
-
 
 1. Vytvoření nového souboru prázdné třídy s názvem `ScratchTicketView`:
 
-
     [![](ios-designable-controls-walkthrough-images/02new.png "Vytvořte novou třídu ScratchTicketView")](ios-designable-controls-walkthrough-images/02new.png#lightbox)
-
 
 1. Přidejte následující kód pro `ScratchTicketView` třídy:
 

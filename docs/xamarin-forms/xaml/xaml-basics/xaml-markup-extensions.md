@@ -1,18 +1,18 @@
 ---
-title: "Část 3. XAML – rozšíření značek"
-description: "XAML – rozšíření značek tvoří důležitou součást v jazyce XAML, které umožní vlastnosti, které chcete nastavit na objekty nebo hodnoty, které jsou nepřímo odkazované z jiných zdrojů. XAML – rozšíření značek jsou obzvláště důležité pro sdílení objekty a odkazování na konstanty používají v rámci aplikace, ale v datových vazeb najdou jejich největší nástroj."
+title: Část 3. XAML – rozšíření značek
+description: XAML – rozšíření značek tvoří důležitou součást v jazyce XAML, které umožní vlastnosti, které chcete nastavit na objekty nebo hodnoty, které jsou nepřímo odkazované z jiných zdrojů. XAML – rozšíření značek jsou obzvláště důležité pro sdílení objekty a odkazování na konstanty používají v rámci aplikace, ale v datových vazeb najdou jejich největší nástroj.
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: charlespetzold
 ms.author: chape
-ms.date: 10/25/2017
-ms.openlocfilehash: 1c5c4c30a7e506e19fc4dc0728fb55851ec4911f
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 3/27/2018
+ms.openlocfilehash: cd881b79945c2b9c10e9bb1bc85fce98acb71026
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="part-3-xaml-markup-extensions"></a>Část 3. XAML – rozšíření značek
 
@@ -45,7 +45,7 @@ Některé stránky XAML obsahovat několik zobrazení s nastaveny na stejné hod
                 BorderWidth="3"
                 Rotation="-15"
                 TextColor="Red"
-                FontSize="Large" />
+                FontSize="24" />
 
         <Button Text="Do that!"
                 HorizontalOptions="Center"
@@ -53,7 +53,7 @@ Některé stránky XAML obsahovat několik zobrazení s nastaveny na stejné hod
                 BorderWidth="3"
                 Rotation="-15"
                 TextColor="Red"
-                FontSize="Large" />
+                FontSize="24" />
 
         <Button Text="Do the other thing!"
                 HorizontalOptions="Center"
@@ -61,7 +61,7 @@ Některé stránky XAML obsahovat několik zobrazení s nastaveny na stejné hod
                 BorderWidth="3"
                 Rotation="-15"
                 TextColor="Red"
-                FontSize="Large" />
+                FontSize="24" />
 
     </StackLayout>
 </ContentPage>
@@ -136,7 +136,7 @@ Nyní je nutné nastavit `HorizontalOptions` a `VerticalOptions` vlastnosti z t�
         BorderWidth="3"
         Rotation="-15"
         TextColor="Red"
-        FontSize="Large" />
+        FontSize="24" />
 ```
 
 `StaticResource` – Rozšíření značek jsou vždy odděleny složené závorky a obsahuje klíče slovníku.
@@ -192,7 +192,7 @@ Tyto dva prostředky, může být odkazován stejným způsobem jako `LayoutOpti
         BorderWidth="{StaticResource borderWidth}"
         Rotation="{StaticResource rotationAngle}"
         TextColor="Red"
-        FontSize="Large" />
+        FontSize="24" />
 ```
 
 Pro prostředky typu `Color`, můžete použít stejné řetězcové vyjádření, které používáte při přiřazování přímo atributy z těchto typů. Převaděče typů jsou volána, když je vytvořen prostředek. Zde je prostředek typu `Color`:
@@ -201,14 +201,10 @@ Pro prostředky typu `Color`, můžete použít stejné řetězcové vyjádřen�
 <Color x:Key="textColor">Red</Color>
 ```
 
-`FontSize` Vlastnost představuje menší problém. Vlastnost je definována jako typu `double`. Když nastavíte vlastnost členem `NamedSize` výčtu, jako `Large`, `FontSizeConverter` třídy funguje na pozadí a převeďte ho na hodnotu závislé na platformě pomocí `Device.GetNamedSized` metoda.
-
-Ale nelze definovat prostředku pro velikost písma jako `double` a nastavit hodnotu "Velké". V době, zda analyzátor XAML zpracovává prostředku neví, že hodnota se použije jako velikost písma. 
-
-Řešení je k definování prostředků jako `string` pomocí `x:String` typu:
+Často programy sady `FontSize` vlastnost členem `NamedSize` výčtu jako `Large`. `FontSizeConverter` Třídy funguje na pozadí a převeďte ho na hodnotu závislé na platformě pomocí `Device.GetNamedSized` metoda. Ale při definování prostředek velikost písma, je vhodnější použít číselnou hodnotu, zobrazí jako `x:Double` typu:
 
 ```xaml
-<x:String x:Key="fontSize">Large</x:String>
+<x:Double x:Key="fontSize">24</x:Double>
 ```
 
 Nyní všechny vlastnosti s výjimkou `Text` jsou definovány nastavení prostředků:
@@ -275,7 +271,7 @@ Tady je poslední dokončení souboru XAML s tři tlačítka přístup k šesti 
                 BorderWidth="{StaticResource borderWidth}"
                 Rotation="{StaticResource rotationAngle}"
                 TextColor="{StaticResource textColor}"
-                FontSize"{StaticResource fontSize}" />
+                FontSize="{StaticResource fontSize}" />
 
         <Button Text="Do that!"
                 HorizontalOptions="{StaticResource horzOptions}"

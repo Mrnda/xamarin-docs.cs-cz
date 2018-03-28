@@ -1,5 +1,5 @@
 ---
-title: "Odkazování na nativní knihovny"
+title: Odkazování na nativní knihovny
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 1DA80280-E78A-EC4B-8673-C249C8425CF5
@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/28/2016
-ms.openlocfilehash: 9299d2b37825298d3defa18a9f5137e11b29f6ce
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 99e565c2268bec6d80c4976e604333cbd2f160a3
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="referencing-native-libraries"></a>Odkazování na nativní knihovny
 
@@ -105,7 +105,7 @@ Pokud vaše knihovna nativní obsahuje C++ – kód je třeba předat také př�
 
 <a name="Accessing_C_Methods_from_C#" />
 
-## <a name="accessing-c-methods-from-c35"></a>Přístup k metodám C z C &#35;
+## <a name="accessing-c-methods-from-c35"></a>Přístup k C metody z C&#35;
 
 V systému iOS jsou k dispozici dva druhy nativní knihovny:
 
@@ -114,7 +114,7 @@ V systému iOS jsou k dispozici dva druhy nativní knihovny:
 -  Statické knihovny dodávané s vaší aplikací.
 
 
-Chcete-li získat přístup k metody definované v kterékoli z nich, použijte [na Mono P/Invoke funkce](http://www.mono-project.com/Interop_with_Native_Libraries) což je technologie, kterou použijete v rozhraní .NET, která je přibližně:
+Chcete-li získat přístup k metody definované v kterékoli z nich, použijte [na Mono P/Invoke funkce](http://www.mono-project.com/docs/advanced/pinvoke/) což je technologie, kterou použijete v rozhraní .NET, která je přibližně:
 
 -  Určení C funkci, která má k vyvolání
 -  Určení podpis

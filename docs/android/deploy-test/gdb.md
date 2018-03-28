@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/05/2018
-ms.openlocfilehash: 55d72a49f90095a33577279d018e1696dda8fc42
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 246dd135b8a6e8a60bca9ba38e91ca8fd2d43674
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="gdb"></a>GDB
 
@@ -163,7 +163,7 @@ Jeden zkrabacení: `_Gdb` MSBuild cíl bude ukončit všechny dříve spuštěn�
 
 ### <a name="monopmip-doesnt-work"></a>`mono_pmip` nefunguje
 
-`mono_pmip` – Funkce (užitečné pro [získání rámce zásobníku spravované](http://www.mono-project.com/Debugging#Debugging_with_GDB)) exportují z `libmonosgen-2.0.so`, což `_Gdb` target není aktuálně stáhněte dolů. (Tento problém bude vyřešený v příští verzi.)
+`mono_pmip` – Funkce (užitečné pro [získání rámce zásobníku spravované](http://www.mono-project.com/docs/debug+profile/debug/#debugging-with-gdb)) exportují z `libmonosgen-2.0.so`, což `_Gdb` target není aktuálně stáhněte dolů. (Tento problém bude vyřešený v příští verzi.)
 
 Chcete-li povolit volání funkcí, které jsou umístěné v `libmonosgen-2.0.so`, zkopírujte jej z cílového zařízení do `gdb-symbols` directory:
 

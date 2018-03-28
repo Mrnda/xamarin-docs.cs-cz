@@ -1,6 +1,6 @@
 ---
-title: "Přidání Intelligence kognitivní službou"
-description: "Kognitivní služby společnosti Microsoft se sadu rozhraní API, sady SDK a službách, které jsou k dispozici pro vývojáře k jejich aplikacím inteligentnější přidáním funkce, jako je rozpoznávání obličeje, rozpoznávání řeči a znalosti jazyka. Tento článek obsahuje úvod do ukázkovou aplikaci, která ukazuje, jak má být vyvolán některé z rozhraní API kognitivní služby společnosti Microsoft."
+title: Přidání Intelligence kognitivní službou
+description: Kognitivní služby společnosti Microsoft se sadu rozhraní API, sady SDK a službách, které jsou k dispozici pro vývojáře k jejich aplikacím inteligentnější přidáním funkce, jako je rozpoznávání obličeje, rozpoznávání řeči a znalosti jazyka. Tento článek obsahuje úvod do ukázkovou aplikaci, která ukazuje, jak má být vyvolán některé z rozhraní API kognitivní služby společnosti Microsoft.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 74121ADB-1322-4C1E-A103-F37257BC7CB0
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: c309fb6936296dc181e499c91770ab8891121e9c
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: fd67629b9e8d0057ccf3b95b9e84ff1d16acbd7b
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="adding-intelligence-with-cognitive-services"></a>Přidání Intelligence kognitivní službou
 
@@ -23,12 +23,12 @@ _Kognitivní služby společnosti Microsoft se sadu rozhraní API, sady SDK a sl
 Doprovodné ukázka je aplikaci seznamu úkolů, která poskytuje funkce, které:
 
 - Zobrazení seznamu úloh.
-- Přidávání a úprava úloh prostřednictvím softwarová klávesnice, nebo provedením rozpoznávání řeči s rozhraním API pro rozpoznávání řeči Bing. Další informace o provádění rozpoznávání řeči najdete v tématu [rozpoznávání řeči pomocí rozhraní API pro rozpoznávání řeči Bing](speech-recognition.md).
+- Přidávání a úprava úloh prostřednictvím softwarová klávesnice, nebo provedením rozpoznávání řeči s rozhraním API pro rozpoznávání řeči společnosti Microsoft. Další informace o provádění rozpoznávání řeči najdete v tématu [rozpoznávání řeči pomocí rozhraní API pro rozpoznávání řeči Microsoft](speech-recognition.md).
 - Pomocí rozhraní API zkontrolujte služby Bing pravopisu úlohy kontroly pravopisu. Další informace najdete v tématu [pomocí Bingu pravopisu zkontrolujte rozhraní API pro kontrolu pravopisu](spell-check.md).
 - Převede úlohy z angličtina, němčina, pomocí rozhraní API překladač. Další informace najdete v tématu [překlad Text pomocí rozhraní API překladač](text-translation.md).
 - Odstraňování úkolů.
 - Nastavte stav úkolu, udělat'.
-- Hodnocení aplikace s rozpoznáním rozpoznávání emocí úrovně, pomocí rozhraní API pro rozpoznávání emocí úrovně. Další informace najdete v tématu [rozpoznávání emocí úrovně rozpoznávání pomocí rozhraní API pro rozpoznávání emocí úrovně](emotion-recognition.md).
+- Hodnocení aplikace s rozpoznáním rozpoznávání emocí úrovně, pomocí rozhraní API řez. Další informace najdete v tématu [rozpoznávání emocí úrovně rozpoznávání pomocí rozhraní API vzhled](emotion-recognition.md).
 
 Úlohy jsou uloženy v místní databázi SQLite. Další informace o použití místní databáze SQLite najdete v tématu [práci s místní databází](~/xamarin-forms/app-fundamentals/databases.md).
 
@@ -36,7 +36,7 @@ Doprovodné ukázka je aplikaci seznamu úkolů, která poskytuje funkce, které
 
 ![](images/sample-application-1.png "TodoListPage")
 
-Nové položky můžete vytvořit kliknutím na  *+*  tlačítko, která přejde `TodoItemPage`. Na této stránce můžete také tak, že vyberete úlohu přesměrováni do:
+Nové položky můžete vytvořit kliknutím na *+* tlačítko, která přejde `TodoItemPage`. Na této stránce můžete také tak, že vyberete úlohu přesměrováni do:
 
 ![](images/sample-application-2.png "TodoItemPage")
 
@@ -46,7 +46,7 @@ Klepnutím na tlačítko smilies na `TodoListPage` přejde `RateAppPage`, který
 
 ![](images/sample-application-3.png "RateAppPage")
 
-`RateAppPage` Umožňuje uživateli fotografie z jejich setkávají, která je odeslána do rozhraní API pro rozpoznávání emocí úrovně s vrácený rozpoznávání emocí úrovně se zobrazuje.
+`RateAppPage` Umožňuje uživateli fotografie z jejich setkávají, která je odeslána do rozhraní API setkávají s vrácený rozpoznávání emocí úrovně se zobrazuje.
 
 ## <a name="understanding-the-application-anatomy"></a>Principy Anatomy aplikace
 
@@ -73,7 +73,7 @@ Ukázková aplikace používá následující balíčky NuGet:
 
 - `Microsoft.Net.Http` – poskytuje `HttpClient` třídu pro zasílání požadavků prostřednictvím protokolu HTTP.
 - `Newtonsoft.Json` – poskytuje pro rozhraní .NET JSON framework.
-- `Microsoft.ProjectOxford.Emotion` – Klientská knihovna pro přístup k rozhraní API pro rozpoznávání emocí úrovně.
+- `Microsoft.ProjectOxford.Face` – Klientská knihovna pro přístup k rozhraní API řez.
 - `PCLStorage` – poskytuje sadu napříč platformami místního souboru vstupně-výstupní operace rozhraní API.
 - `sqlite-net-pcl` – poskytuje úložiště databáze SQLite.
 - `Xam.Plugin.Media` – poskytuje fotografií vezme napříč platformami a výběr rozhraní API.
@@ -117,11 +117,10 @@ public class TodoItem
 
 Ukázkovou aplikaci vyvolá následující kognitivní služby společnosti Microsoft:
 
-- Rozpoznávání řeči Bing rozhraní API. Další informace najdete v tématu [rozpoznávání řeči pomocí rozhraní API pro rozpoznávání řeči Bing](speech-recognition.md).
+- Microsoft řeči rozhraní API. Další informace najdete v tématu [rozpoznávání řeči pomocí rozhraní API pro rozpoznávání řeči Microsoft](speech-recognition.md).
 - Kontrola pravopisu v Bingu rozhraní API. Další informace najdete v tématu [pomocí Bingu pravopisu zkontrolujte rozhraní API pro kontrolu pravopisu](spell-check.md).
 - Převede rozhraní API. Další informace najdete v tématu [překlad Text pomocí rozhraní API překladač](text-translation.md).
-- Rozpoznávání emocí úrovně rozhraní API. Další informace najdete v tématu [rozpoznávání emocí úrovně rozpoznávání pomocí rozhraní API pro rozpoznávání emocí úrovně](emotion-recognition.md).
-
+- Vzhled rozhraní API. Další informace najdete v tématu [rozpoznávání emocí úrovně rozpoznávání pomocí rozhraní API vzhled](emotion-recognition.md).
 
 ## <a name="related-links"></a>Související odkazy
 

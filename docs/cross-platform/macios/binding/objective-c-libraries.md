@@ -7,17 +7,17 @@ ms.technology: xamarin-cross-platform
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/06/2018
-ms.openlocfilehash: 29b846453396d37adc689fe49e80299e8f35bbe2
-ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
+ms.openlocfilehash: 3b1894555c27e368fc80cc4ebaa1f6b40446e2aa
+ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/21/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="binding-objective-c-libraries"></a>Vazba knihoven jazyka Objective-C
 
 Při práci s Xamarin.iOS nebo Xamarin.Mac se můžete setkat případy, ve které chcete používat knihovnu jazyka Objective-C třetích stran. V těchto situacích můžete Xamarin vazby projekty k vytvoření vazby C# do nativních knihoven jazyka Objective-C. Projekt využívá stejné nástroje, které jsou používány za účelem přidání iOS a Mac rozhraní API jazyka C#.
 
-Tento dokument popisuje, jak vytvořit vazbu rozhraní API jazyka Objective-C, pokud vytváříte vazbu jenom rozhraní API jazyka C, měli byste použít standardní mechanismus .NET v takovém případě [framework P/Invoke](http://mono-project.com/Dllimport).
+Tento dokument popisuje, jak vytvořit vazbu rozhraní API jazyka Objective-C, pokud vytváříte vazbu jenom rozhraní API jazyka C, měli byste použít standardní mechanismus .NET v takovém případě [framework P/Invoke](http://www.mono-project.com/docs/advanced/pinvoke/).
 Podrobnosti o tom, jak staticky propojením C knihovny jsou k dispozici na [propojení nativní knihovny](~/ios/platform/native-interop.md) stránky.
 
 V tématu naše doprovodné [vazby typy referenční příručka](~/cross-platform/macios/binding/binding-types-reference.md).
