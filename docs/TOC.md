@@ -11,7 +11,7 @@
 ### [Simulátor iOSu pro Windows](tools/ios-simulator.md)
 ### [Vkládání technologie .NET](tools/dotnet-embedding/index.md)
 ### [Xamarin Inspector](tools/inspector/index.md)
-### [Xamarin Live Player](tools/live-player/index.md)
+### [Live Player pro Xamarin.Forms](tools/live-player/index.md)
 ### [Xamarin Profiler](tools/profiler/index.md)
 ### [Sešity ke Xamarinu](tools/workbooks/index.md)
 ## [Grafika a hry](graphics-games/index.yml)
