@@ -2,7 +2,6 @@
 ## [Live Player](live-player/index.md)
 ### [Instalace a nastavení](live-player/install.md)
 ### [Aplikace Xamarin Live Player](live-player/player.md)
-### [Dynamický náhled XAML](live-player/live-view.md)
 ### [Ukázky](live-player/samples.md)
 ### [Omezení](live-player/limitations.md)
 ### [Odstraňování potíží](live-player/troubleshooting.md)
