@@ -1,6 +1,6 @@
 ---
-title: "Hello, Android Multiobrazovka: rychlý start"
-description: "Tato příručka dvě části rozšíří Phoneword aplikaci zpracovávat druhý obrazovky. Na této cestě základní stavební bloky Android aplikace jsou zavedené o podrobnější prohlídku do Android architektury."
+title: 'Hello, Android Multiobrazovka: rychlý start'
+description: Tato příručka dvě části rozšíří Phoneword aplikaci zpracovávat druhý obrazovky. Na této cestě základní stavební bloky Android aplikace jsou zavedené o podrobnější prohlídku do Android architektury.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: ED99584A-BA3B-429A-AEE5-CF3CB0116762
@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: 159bd2435a1d2b5252e0fd1b9d525cdf6cfa7207
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 2913508159787f6d369f5e55f879addfc1b2ba4f
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="hello-android-multiscreen-quickstart"></a>Hello, Android Multiobrazovka: rychlý start
 
@@ -126,7 +126,7 @@ public class MainActivity : Activity
 }
 ```
 
-V `MainActivity` třídy, přidejte následující kód k registraci **překlad historie** tlačítko (umístit tento řádek po `translationHistory` deklarace):
+V `MainActivity` třídy, přidejte následující kód k registraci **překlad historie** tlačítko (umístit tento řádek po `translateButton` deklarace):
 
 ```csharp
 Button translationHistoryButton = FindViewById<Button> (Resource.Id.TranslationHistoryButton);

@@ -1,6 +1,6 @@
 ---
-title: "Ovládací prvky XAML Standard (Preview)"
-description: "Jak začít seznamovat se standardní Preview XAML v Xamarin.Forms"
+title: Ovládací prvky XAML Standard (Preview)
+description: Jak začít seznamovat se standardní Preview XAML v Xamarin.Forms
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 287E6631-D1C5-46C5-8905-AB53D34E365D
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 11/15/2017
-ms.openlocfilehash: b044cb849f9a8e591a8db5907211a55f77d6e45f
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 084da9cbb06c7ec9bbab6ea4dc6a1a7b15ffe692
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="xaml-standard-preview-controls"></a>Ovládací prvky XAML Standard (Preview)
 
@@ -38,7 +38,7 @@ Je také seznam ovládacích prvků, které mají nové vlastnosti a výčet ná
 
 ## <a name="properties-and-enumerations"></a>Vlastnosti a výčty
 
-|Xamarin.FormsControls aktualizované vlastnostmi|Xamarin.FormsProperty nebo výčtu|XAML StandardEquivalent|
+|Ovládací prvky Xamarin.Forms aktualizované vlastnostmi|Vlastnost Xamarin.Forms nebo výčtu|Ekvivalentní standardní XAML|
 |--- |--- |--- |
 |Tlačítko, záznamu, popisek, ovládací prvek DatePicker, Editor, SearchBar, TimePicker|TextColor|Popředí|
 |VisualElement|BackgroundColor|Pozadí *|

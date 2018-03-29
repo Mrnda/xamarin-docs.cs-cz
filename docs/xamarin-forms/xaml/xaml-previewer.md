@@ -1,6 +1,6 @@
 ---
-title: "Náhled XAML pro Xamarin.Forms"
-description: "V tématu vaše Xamarin.Forms rozložení se vykresluje jako zadáte!"
+title: Náhled XAML pro Xamarin.Forms
+description: V tématu vaše Xamarin.Forms rozložení se vykresluje jako zadáte!
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 84769ff1-72fd-4c44-8251-dd6d5bf8c7b2
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 02/24/2017
-ms.openlocfilehash: 8f4d8253d56708f77ede7b5173f3dd771e1da0ea
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: a7a9c4fed92cb4ed8c8c12e97129bc8379037acb
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="xaml-previewer-for-xamarinforms"></a>Náhled XAML pro Xamarin.Forms
 
@@ -26,17 +26,19 @@ Další informace naleznete v [poznámky k verzi](https://developer.xamarin.com/
 
 ## <a name="getting-started"></a>Začínáme
 
-### <a name="visual-studio-for-mac-on-mac"></a>Visual Studio pro Mac v systému Mac
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+Použití **zobrazení > ostatní okna > Náhled Xamarin.Forms** nabídky v sadě Visual Studio otevřete okno náhledu. Použití **okno > nové svislém kartě skupiny** nabídky na místo, vedle sebe.
+
+[![Náhled ovládacího prvku ListView v sadě Visual Studio](xaml-previewer-images/xamlp-list-vs-sml.png "prohlížeč formulářů v sadě Visual Studio")](xaml-previewer-images/xamlp-list-vs.png#lightbox "prohlížeč formulářů v sadě Visual Studio")
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 **Preview** tlačítko lze zobrazit v editoru pravým tlačítkem myši na soubor XAML a výběrem **otevřít v > prohlížeče XAML**. V podokně náhledu pak můžete zobrazen nebo skryt stisknutím **Preview** tlačítko v pravém horním rohu okna dokumentu žádné XAML:
 
 [![Náhled ovládacího prvku ListView v sadě Visual Studio pro Mac](xaml-previewer-images/xamlp-list-sml.png "prohlížeč formulářů v sadě Visual Studio pro Mac")](xaml-previewer-images/xamlp-list.png#lightbox "prohlížeč formulářů v sadě Visual Studio pro Mac")
 
-### <a name="visual-studio-on-windows"></a>Visual Studio v systému Windows
-
-Použití **zobrazení > ostatní okna > Náhled Xamarin.Forms** nabídky v sadě Visual Studio otevřete okno náhledu. Použití **okno > nové svislém kartě skupiny** nabídky na místo, vedle sebe.
-
-[![Náhled ovládacího prvku ListView v sadě Visual Studio](xaml-previewer-images/xamlp-list-vs-sml.png "prohlížeč formulářů v sadě Visual Studio")](xaml-previewer-images/xamlp-list-vs.png#lightbox "prohlížeč formulářů v sadě Visual Studio")
+-----
 
 ## <a name="xaml-preview-options"></a>Možnosti Preview XAML
 

@@ -1,6 +1,6 @@
 ---
-title: "Předávání argumentů v jazyce XAML"
-description: "Tento článek ukazuje použití XAML atributy, které slouží k předání argumentů do jiné než výchozí konstruktory, volání metod vytváření a k určení typu Obecné argumentu."
+title: Předávání argumentů v jazyce XAML
+description: Tento článek ukazuje použití XAML atributy, které slouží k předání argumentů do jiné než výchozí konstruktory, volání metod vytváření a k určení typu Obecné argumentu.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 8F3B267F-499E-4D79-9193-FCA99F199519
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2016
-ms.openlocfilehash: a30dd9b33466ac6907322f8c6b586c012452a44f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 232f60bb7afca7acf73e63bd7e11e1b6ec47fbd2
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="passing-arguments-in-xaml"></a>Předávání argumentů v jazyce XAML
 
@@ -135,7 +135,7 @@ Metody vytváření lze volat v jazyce XAML zadáním metody název pomocí `x:F
 </BoxView>
 ```
 
-Počet elementů v rámci `x:Arguments` značky a typy tyto prvky, musí odpovídat argumenty volaná metoda objektu factory. [ `FromRgba` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromRgba/p/System.Int32/System.Int32/System.Int32/System.Int32/) Metoda factory vyžaduje čtyři [ `Int32` ](https://developer.xamarin.com/api/type/System.Int32/) parametry, které představují červené, zelené, modré a alfa hodnot rozsahu od 0 do 255 v uvedeném pořadí. [ `FromHsla` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromHsla/p/System.Double/System.Double/System.Double/System.Double/) Metoda factory vyžaduje čtyři [ `Double` ](https://developer.xamarin.com/api/type/System.Double/) parametry, které představují hue, sytost, světlost a hodnoty alfa rozsahu od 0 do 1 v uvedeném pořadí. [ `FromHex` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromHex/p/System.String/) Vyžaduje metoda factory [ `String` ](https://developer.xamarin.com/api/type/System.String/) představující šestnáctkový (A) barva RGB.
+Počet elementů v rámci `x:Arguments` značky a typy tyto prvky, musí odpovídat argumenty volaná metoda objektu factory. [ `FromRgba` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromRgba/p/System.Int32/System.Int32/System.Int32/System.Int32/) Metoda factory vyžaduje čtyři [ `Int32` ](https://docs.microsoft.com/dotnet/api/system.int32) parametry, které představují červené, zelené, modré a alfa hodnot rozsahu od 0 do 255 v uvedeném pořadí. [ `FromHsla` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromHsla/p/System.Double/System.Double/System.Double/System.Double/) Metoda factory vyžaduje čtyři [ `Double` ](https://docs.microsoft.com/dotnet/api/system.double) parametry, které představují hue, sytost, světlost a hodnoty alfa rozsahu od 0 do 1 v uvedeném pořadí. [ `FromHex` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromHex/p/System.String/) Vyžaduje metoda factory [ `String` ](https://docs.microsoft.com/dotnet/api/system.string) představující šestnáctkový (A) barva RGB.
 
 Na následujících snímcích obrazovky zobrazit na výsledek volání každý [ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/) metoda factory zadaného argumentu hodnotami:
 

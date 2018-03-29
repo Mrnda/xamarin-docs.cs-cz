@@ -1,6 +1,6 @@
 ---
-title: Xamarin Live Player
-description: "Testování změny kódu aplikace v reálném čase na systému iOS nebo zařízení se systémem Android"
+title: Za provozu Player pro Xamarin.Forms
+description: Spusťte Xamarin učení rychle, sestavovat a spouštět aplikace na zařízení Android nebo iOS.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 19B1F126-866E-4672-92D2-BE2B70ACF0F1
@@ -8,37 +8,38 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 05/10/2017
-ms.openlocfilehash: c636e706e702afa23c36a3d6c618f3e02c2582f1
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: bd594204c90fb020f089fefc0e1341ee441caf63
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 03/29/2018
 ---
-# <a name="xamarin-live-player"></a>Xamarin Live Player
+# <a name="xamarin-live-player-for-xamarinforms"></a>Za provozu Player Xamarin pro Xamarin.Forms
 
-Xamarin Live Player umožňuje provádět úpravy za provozu do vaší aplikace a mají tyto změny projeví za provozu na vašem zařízení. Váš kód běží v rámci aplikace Xamarin Live Player – není potřeba nastavit emulátorů nebo nasazení kód pomocí kabelů!
+Přehrávač Live Xamarin vám pomůže začít pracovat s vývoj s Xamarin.Forms pomocí učení k vytvoření mobilní aplikace, které můžete testovat na zařízení Android nebo iOS. Váš kód běží v rámci aplikace Xamarin Live Player – není potřeba nastavit emulátorů nebo nasazení kód pomocí kabelů! Abyste mohli začít, stáhnout přehrávač Live Xamarin, spárujte ho k sadě Visual Studio a nasadíte tak svůj kód a testování aplikace. 
+
+Přehrávač Live Xamarin je navržený tak, jak Začínáme izolovaného prostoru pro vývojáře k získání své nápady rychle vizualizována na zařízení. Vzhledem k tomu, že zdrojový kód interpretována může dosáhnout [omezení](limitations.md) po čas a nutnosti plně kompilace aplikace pro zařízení nebo emulátor.
+
+## <a name="get-started-with-xamarin-live-player"></a>Začínáme s Xamarin Live Player
 
 [![Xamarin Player za provozu: Kódu, kontrolovat, Test](images/xamarin-live.png)](images/xamarin-live-sml.png#lightbox)
 
-1. Povolit *Xamarin Live Player* v **Předvolby**, pak vyberte zařízení z **zařízení** seznamu.
-2. Ladění nebo spuštění a pak naskenujte kód QR spárovat zařízení.
+1. Stáhnout aplikaci pomocí toku [instalaci Xamarin Live Player](install.md) pokyny.
+2. Povolit *Xamarin Live Player* v **Předvolby**, pak vyberte zařízení z **zařízení** seznamu.
+2. Spravovat zařízení za provozu Player naskenovat kód QR spárovat zařízení pro Visual Studio.
 3. Spuštění aplikace přímo na telefonu nebo tabletu.
 
-## <a name="xamarin-live-player-setupinstallmd"></a>[Instalační program za provozu Player Xamarin](install.md)
+## <a name="xamarin-live-player-setupinstallmd"></a>[Instalační program Xamarin Live Player](install.md)
 
-Konfigurace vaší IDE pro použijte přehrávač Xamarin za provozu na Visual Studio 2017 nebo Visual Studio for Mac. Přehrávač Live Xamarin podporuje Android, iOS a Xamarin.Forms projekty.
+Stáhnout přehrávač Xamarin za provozu a nakonfigurovat vaše IDE pro použití s aplikacemi Xamarin.Forms z Visual Studio 2017 nebo Visual Studio for Mac. 
 
 ## <a name="xamarin-live-player-appplayermd"></a>[Aplikace Xamarin Live Player](player.md)
 
 Pomocí Xamarin Live Player aplikace.
 
-## <a name="xaml-live-previewinglive-viewmd"></a>[Dynamický náhled XAML](live-view.md)
-
-Pomocí funkce "Live spustit aktuální zobrazení".
-
 ## <a name="samples-to-try-with-xamarin-live-playersamplesmd"></a>[Ukázky a akci s Xamarin Live Player](samples.md)
 
-Ukázky pro použití s aplikace Xamarin Player za provozu.
+Odkazy na ukázky pro použití s aplikace Xamarin Player za provozu.
 
 ## <a name="limitationslimitationsmd"></a>[Omezení](limitations.md)
 
@@ -51,6 +52,5 @@ Hledání pomoci, pokud dojde k potížím.
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Přehled za provozu Player Xamarin](https://xamarin.com/live)
 - [příspěvek blogu](https://blog.xamarin.com/live-player/)
 - [Ukázky za provozu Player Xamarin](https://developer.xamarin.com/samples/xamarin-live-player/all/)

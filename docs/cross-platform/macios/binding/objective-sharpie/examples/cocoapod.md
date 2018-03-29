@@ -1,28 +1,31 @@
 ---
-title: "Příklad reálného pomocí CocoaPods"
+title: Příklad reálného pomocí CocoaPods
+description: Tento dokument ukazuje, jak používat cíl Sharpie automaticky generovat z CocoaPod vazby definice jazyka C#.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 233B781D-5841-4250-9F63-0585231D2112
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.date: 03/29/2017
-ms.openlocfilehash: ae92b491e6186371f1fc1ead835f918a94f18f86
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/28/2018
+ms.openlocfilehash: 24c796cb258578fdfc68c5b4aa1079d3c589da0f
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="real-world-example-using-cocoapods"></a>Příklad reálného pomocí CocoaPods
 
+> [!NOTE]
+> Tento příklad používá [AFNetworking CocoaPod](https://cocoapods.org/pods/AFNetworking).
 
-**Tento příklad používá [AFNetworking CocoaPod](https://cocoapods.org/pods/AFNetworking).**
+Nové ve verzi 3.0 podporuje vazby CocoaPods Sharpie cíl a i obsahuje příkaz, (`sharpie pod`), aby stahování, konfigurace a vytváření CocoaPods velmi snadné. Měli byste [Seznamte se s CocoaPods](https://cocoapods.org) obecně před použitím této funkce.
 
-Nové ve verzi 3.0 podporuje vazby CocoaPods Sharpie cíl a i má příkaz front-endu (`sharpie pod`), aby stahování, konfigurace a vytváření CocoaPods velmi snadné. Měli byste [faimilarize sami pomocí CocoaPods](https://cocoapods.org) obecně před použitím této funkce.
+## <a name="creating-a-binding-for-a-cocoapod"></a>Vytváření vazby pro CocoaPod
 
 `sharpie pod` Příkaz má jednu možnost globální a dvě dílčích příkazů:
 
-```csharp
+```bash
 $ sharpie pod -help
 usage: sharpie pod [OPTIONS] COMMAND [COMMAND_OPTIONS]
 
@@ -37,7 +40,7 @@ Available Commands:
 
 `init` Podpříkaz je také užitečné pomoc:
 
-```csharp
+```bash
 $ sharpie pod init -help
 usage: sharpie pod init [INIT_OPTIONS] TARGET_SDK POD_SPEC_NAMES
 
@@ -48,34 +51,48 @@ Init Options:
 
 Více CocoaPod názvy a subspec lze zadat do `init`.
 
-<pre>$ <b>sharpie pod init ios AFNetworking</b>
-<span class="terminal-green">**</span> Setting up CocoaPods master repo ...
+```bash
+$ sharpie pod init ios AFNetworking
+** Setting up CocoaPods master repo ...
    (this may take a while the first time)
-<span class="terminal-green">**</span> Searching for requested CocoaPods ...
-<span class="terminal-green">**</span> Working directory:
-<span class="terminal-green">**</span>   - Writing Podfile ...
-<span class="terminal-green">**</span>   - Installing CocoaPods ...
-<span class="terminal-green">**</span>     (running `<span class="terminal-blue">pod install --no-integrate --no-repo-update</span>`)
+** Searching for requested CocoaPods ...
+** Working directory:
+**   - Writing Podfile ...
+**   - Installing CocoaPods ...
+**     (running `pod install --no-integrate --no-repo-update`)
 Analyzing dependencies
 Downloading dependencies
 Installing AFNetworking (2.6.0)
 Generating Pods project
 Sending stats
-<span class="terminal-green">**</span> 🍻 Success! You can now use other `<span class="terminal-green">sharpie pod</span>`  commands.</pre>
+** 🍻 Success! You can now use other `sharpie podn`  commands.
+```
 
 Po vaší CocoaPod nyní můžete vytvořit vazbu:
 
-<pre>$ <b>sharpie pod bind</b></pre>
+```bash
+$ sharpie pod bind
+```
 
 Tato akce způsobí projektu CocoaPod Xcode právě vytvořené a pak vyhodnotit a analyzovat podle Sharpie cíl. Mnoho výstup konzoly se budou generovat, ale má za následek definici vazby na konci:
 
-<pre><em>(... lots of build output ...)</em>
+```bash
+(... lots of build output ...)
 
-<span class="terminal-blue">Parsing 19 header files...</span>
+Parsing 19 header files...
 
-<span class="terminal-magenta">Binding...</span>
-  <span class="terminal-magenta">[write]</span> ApiDefinitions.cs
-  <span class="terminal-magenta">[write]</span> StructsAndEnums.cs
+Binding...
+  [write] ApiDefinitions.cs
+  [write] StructsAndEnums.cs
 
-<span class="terminal-green">Done.</span></pre>
+Done.
+```
+
+## <a name="next-steps"></a>Další kroky
+
+Po generování **ApiDefinitions.cs** a **StructsAndEnums.cs** soubory, prohlédněte si následující dokumentaci ke generování sestavení, které chcete používat ve svých aplikacích:
+
+- [Přehled jazyka Objective-C vazby](~/cross-platform/macios/binding/overview.md)
+- [Vazba knihoven jazyka Objective-C](~/cross-platform/macios/binding/objective-c-libraries.md)
+- [Návod: Vytvoření vazby iOS knihovna jazyka Objective-C](~/ios/platform/binding-objective-c/walkthrough.md)
 

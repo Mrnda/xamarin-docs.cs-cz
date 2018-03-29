@@ -1,6 +1,6 @@
 ---
-title: "Poradce při potížích"
-description: "Známé problémy s Xamarin přehrávač za provozu a jejich řešení."
+title: Poradce při potížích
+description: Známé problémy s Xamarin přehrávač za provozu a jejich řešení.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 29A97ADA-80E0-40A1-8B26-C68FFABE7D26
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 05/17/2017
-ms.openlocfilehash: d7c5bedb03d7c869be65e3c704bac58a9cdfcbbd
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ab075cad0c3f3456ed23f3eb175dcdb3aa493510
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="troubleshooting"></a>Poradce při potížích
 
@@ -35,12 +35,92 @@ Nastane, když mobilní zařízení se systémem Xamarin Live Player není ve st
 
 **"IOException: Nelze číst data z připojení pro přenos: operace soketem neblokující by blokovat"**
 
-Tato chyba je často došlo, pokud mobilní zařízení se systémem Xamarin Live Player není ve stejné síti jako počítač spuštěný IDE; často se to stane, když připojení k zařízení, který byl dříve úspěšně spárovat.
+Tato chyba je často došlo, pokud mobilní zařízení se systémem Xamarin Live Player není ve stejné síti jako počítač, ke spuštění sady Visual Studio; často se to stane, když připojení k zařízení, který byl dříve úspěšně spárovat.
 
 * Zkontrolujte, jestli zařízení i počítače jsou ve stejné síti Wi-Fi.
 * Síť může být úzce zabezpečené (například některých podnikových sítích), blokování porty vyžadované Player Xamarin za provozu. Následující porty jsou povinné pro Xamarin přehrávač za provozu:
   * 37847 – přístup k interní síti 
   * 8090 – přístup k externí síti
+
+## <a name="manually-configure-device"></a>Ručně nakonfigurovat nastavení zařízení
+
+Pokud se nemůže připojit k zařízení přes Wi-Fi můžete zkusit ruční konfigurace do zařízení pomocí konfiguračního souboru pomocí následujících kroků:
+
+**Krok 1: Otevřete konfigurační soubor**
+
+Přejděte do složky data aplikací:
+
+* Windows: **%userprofile%\AppData\Roaming**
+* macOS: **~/Users/$USER/.config**
+
+V této složce zjistíte **PlayerDeviceList.xml** Pokud neexistuje, je nutné ji vytvořit.
+
+**Krok 2: Získání IP adresy**
+
+V aplikaci Xamarin Live Player, přejděte na **o > Test připojení > spustit Test připojení**.
+
+Všimněte si IP adresy, je nutné s IP adresou uvedenou při konfiguraci zařízení.
+
+**Krok 3: Získání párování kódu**
+
+Uvnitř klepnutí Xamarin Live Player **pár** nebo **pár znovu**, stiskněte **zadejte ručně**. Číselný kód se zobrazí, které budete muset aktualizovat konfigurační soubor.
+
+**Krok 4: Generovat identifikátor GUID**
+
+Přejděte na: https://www.guidgenerator.com/online-guid-generator.aspx a vygenerovat nový identifikátor guid a zkontrolujte, zda je velká na.
+
+
+**Krok 5: Konfigurace zařízení**
+
+Otevřete **PlayerDeviceList.xml** až v editoru, jako je například Visual Studio nebo Visual Studio Code. Budete muset ručně nakonfigurovat zařízení v tomto souboru. Ve výchozím nastavení, soubor by měl obsahovat následující prázdný `Devices` – element XML:
+
+```xml
+<DeviceList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<Devices>
+
+</Devices>
+</DeviceList>
+```
+
+**Přidejte zařízení iOS:**
+
+```xml
+<PlayerDevice>
+<SecretCode>ENTER-PAIR-CODE-HERE</SecretCode>
+<UniqueIdentifier>ENTER-GUID-HERE</UniqueIdentifier>
+<Name>iPhone Player</Name>
+<Platform>iOS</Platform>
+<AndroidApiLevel>0</AndroidApiLevel>
+<DebuggerEndPoint>ENTER-IP-HERE:37847</DebuggerEndPoint>
+<HostEndPoint />
+<NeedsAppInstall>false</NeedsAppInstall>
+<IsSimulator>false</IsSimulator>
+<SimulatorIdentifier />
+<LastConnectTimeUtc>2018-01-08T20:36:03.9492291Z</LastConnectTimeUtc>
+</PlayerDevice>
+```
+
+
+**Přidejte zařízení s Androidem:**
+
+```xml
+<PlayerDevice>
+<SecretCode>ENTER-PAIR-CODE-HERE</SecretCode>
+<UniqueIdentifier>ENTER-GUID-HERE</UniqueIdentifier>
+<Name>Android Player</Name>
+<Platform>Android</Platform>
+<AndroidApiLevel>24</AndroidApiLevel>
+<DebuggerEndPoint>ENTER-IP-HERE:37847</DebuggerEndPoint>
+<HostEndPoint />
+<NeedsAppInstall>false</NeedsAppInstall>
+<IsSimulator>false</IsSimulator>
+<SimulatorIdentifier />
+<LastConnectTimeUtc>2018-01-08T20:34:42.2332328Z</LastConnectTimeUtc>
+</PlayerDevice>
+```
+
+**Zavřete a znovu otevřete Visual Studio.** Zařízení musí zobrazí v seznamu.
+
 
 ## <a name="type-or-namespace-cannot-be-found-message-in-ide"></a>Zpráva "nelze nalézt typ nebo oboru názvů" v integrovaném vývojovém prostředí
 

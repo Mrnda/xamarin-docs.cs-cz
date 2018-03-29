@@ -1,6 +1,6 @@
 ---
 title: Aplikace Xamarin za provozu Player
-description: "Upravit a testování aplikací v reálném čase na systému iOS nebo zařízení se systémem Android"
+description: Upravit a testování aplikací v reálném čase na systému iOS nebo zařízení se systémem Android
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: A7EB73C1-38D7-46C5-9AF6-4C571C168BE7
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 05/10/2017
-ms.openlocfilehash: 6b0d62a9026c1248a66166e75ed41bb0148547a6
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: d666bb9a7749845265d50b86e46ef78e2036cb69
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="xamarin-live-player-app"></a>Aplikace Xamarin za provozu Player
 
@@ -20,17 +20,19 @@ ms.lasthandoff: 03/12/2018
 
 ## <a name="get-the-app"></a>Získat aplikaci
 
-### <a name="xamarin-live-player-for-android"></a>Za provozu Player Xamarin pro Android
+# <a name="androidtabandroid"></a>[Android](#tab/android)
+
 Přehrávač Xamarin za provozu je k dispozici pro Android z Google Play:
 
 [ ![K dispozici na webu Google Play](images/google-play-badge.png)](https://play.google.com/store/apps/details?id=com.xamarin.live)
 
 Pro zařízení s Androidem bez Google Play je k dispozici prostřednictvím Xamarin Live Player [HockeyApp](https://aka.ms/xlp-hockeyapp) distribuce. Kromě toho časné sestavení pro Android může nainstalovat přímo na webu Google Play vyjádření výslovného souhlasu s [otevřete beta programu](https://play.google.com/apps/testing/com.xamarin.live)
 
-### <a name="xamarin-live-player-for-ios"></a>Přehrávač Live Xamarin pro iOS
+# <a name="iostabios"></a>[iOS](#tab/ios)
+
 Doporučujeme, aby uživatelé pro připojení [aplikace Xamarin Live Player _iOS Preview_ ](https://aka.ms/liveplayeralpha) rychlý přístup k nejnovější vylepšení prostřednictvím TestFlight.
 
-
+-----
 
 ## <a name="using-the-app"></a>Pomocí aplikace
 
@@ -44,7 +46,7 @@ Po stisknutí klávesy **pár k sadě Visual Studio**, použít fotoaparát ke s
 
 ![Snímek obrazovky čárových iOS](player-images/scan-iphone-sml.png) ![Snímek obrazovky Android čárových](player-images/scan-android-sml.png)
 
-Pokud je připojení úspěšné, by měl kód spouštět v zařízení téměř okamžitě (například ukázka kalkulačku):
+Pokud připojení úspěšné, kód by měl téměř okamžité spuštění v zařízení (například [ukázka kalkulačku](https://developer.xamarin.com/samples/mobile/LivePlayer/BasicCalculator)):
 
 ![Ukázka kalkulačku aplikaci spuštěnou na zařízení](player-images/basic-calculator-iphone-sml.png)
 
@@ -52,7 +54,7 @@ Pokud je připojení úspěšné, by měl kód spouštět v zařízení téměř
 
 Klikněte na tlačítko informace **(i)** v dolní části aplikaci odhalit **možnosti** nabídky:
 
-![Snímek obrazovky možností nabídky](player-images/options.png)
+[ ![Snímek obrazovky možností nabídky](player-images/options-sml.png)](player-images/options.png#lightbox)
 
 ### <a name="logs"></a>Protokoly
 
@@ -64,13 +66,13 @@ Zobrazit protokoly k diagnostikování problémů.
 * Informace o verzi.
 * Odešlete zpětnou vazbu.
 
-![Snímek obrazovky nastavení](player-images/settings.png)
+[ ![Snímek obrazovky nastavení](player-images/settings-sml.png)](player-images/settings.png#lightbox)
 
 ## <a name="managing-devices"></a>Správa zařízení
 
 Chcete-li připojit zařízení poprvé, postupujte podle pokynů v [nastavení & požadavky](~/tools/live-player/install.md). Můžete spárujte více zařízení (třeba iOS a Android) a spravovat je přes rozhraní IDE.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 V sadě Visual Studio, vyberte **nástroje > Xamarin Live Player > Správa zařízení...**
 
@@ -84,7 +86,7 @@ Toto okno umožňuje postupujte takto:
 
 Toto okno se dostanete ze seznamu zařízení.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 V sadě Visual Studio pro Mac, zvolte **nástroje > Správa zařízení (Xamarin Live přehrávač)...**
 

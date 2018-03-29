@@ -4,14 +4,10 @@ Title: "Část 6 – testování a App Store schválení" ms.topic: article ms.p
 
 # <a name="part-6---testing-and-app-store-approvals"></a>Část 6 – testování a schválení obchodu s aplikacemi
 
-<a name="Testing" />
-
 
 ## <a name="testing"></a>Testování
 
 Mnoho aplikací (i aplikace pro Android, na některé obchody) bude mít k předávání proces schvalování před publikováním; testování je důležité zajistit aplikace dosáhne trhu (let alone úspěšné s vašimi zákazníky). Testování mohou mít mnoho forem z jednotky úrovni developer testování pro správu testování verze beta napříč celou řadu hardwaru.
-
- <a name="Test_on_All_Platforms" />
 
 
 ### <a name="test-on-all-platforms"></a>Test na všech platformách.
@@ -22,16 +18,12 @@ Vždycky je dobrým zvykem pomocí emulátoru/simulátoru otestovat více verzí
 
 Byste měli také otestovat na zařízeních jako v mnoha různých fyzický hardware jako.
 
- <a name="Devices_in_cloud" />
-
 
 #### <a name="devices-in-cloud"></a>Zařízení v cloudu
 
 Mobilní telefon i tablet ekosystém roste vždy, takže je možné otestovat na stále rostoucí počet zařízení, které jsou k dispozici. Pokud chcete tento problém vyřešit několik služeb nabízí možnost vzdáleně řídit mnoha různých zařízení tak, aby aplikace lze nainstalovat a otestovat, aniž by museli přímo investovat do mnoha hardwaru.
 
 [Testovací aplikace Center](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest) nabízí snadný způsob, jak otestovat iOS a Android aplikace na stovky různých zařízení.
-
- <a name="Test_Management" />
 
 
 ### <a name="test-management"></a>Správa testů
@@ -44,10 +36,8 @@ Při testování aplikací v rámci vaší organizace nebo správě beta program
 
 Existuje řada nápovědy služby tyto problémy řeší poskytuje infrastrukturu, která je integrovaná do vaší aplikace při úklidu a sestav o využití a chyb a také zjednodušení procesu zřizování, které vám pomůžou registrace a správa testery a jejich zařízení .
 
-[Xamarin Insights Preview](http://xamarin.com/insights) nabízí řešení tohoto problému, poskytuje havárií reporting sofistikované aplikace informace o využití a druhá část.
+[Centrum aplikace Visual Studio](/appcenter/) nabízí řešení těchto problémů, zadáním distribučních zkušební verze, hlášení chyb a informace o využití sofistikované aplikace.
 
-
- <a name="Test_Automation" />
 
 
 ### <a name="test-automation"></a>Test automatizace
@@ -55,12 +45,10 @@ Existuje řada nápovědy služby tyto problémy řeší poskytuje infrastruktur
 Xamarin [UITest](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest) slouží k vytváření automatizovaných uživatelského rozhraní test skripty, které můžete spustit místně nebo nahrán do [testovací aplikace Center](https://docs.microsoft.com/appcenter/test-cloud/).
 
 
- <a name="Unit_Testing" />
 
 
 ## <a name="unit-testing"></a>Testování částí
 
- <a name="Touch.Unit" />
 
 
 #### <a name="touchunit"></a>Touch.Unit
@@ -69,29 +57,13 @@ Xamarin.iOS zahrnuje testování částí rozhraní nazývá Touch.Unit, který 
 
 Odkazovat na našem [jednotkové testování v Xamarin.iOS](~/ios/deploy-test/touch.unit.md) dokumentaci podrobné informace o zápis testů a systémem Touch.Unit.
 
- <a name="Andr.Unit" />
 
 
 #### <a name="andrunit"></a>Andr.Unit
 
 Je ekvivalentní open source nástroje Touch.Unit pro Android názvem Andr.Unit. Si můžete stáhnout z [githubu](https://github.com/spouliot/Andr.Unit) a přečtěte si o tomto nástroji [ @spouliotna blogu](http://spouliot.wordpress.com/2011/10/30/andr-unit-joins-the-family/).
 
- <a name="Windows_Phone" />
 
-
-#### <a name="windows-phone"></a>Windows Phone
-
-Zde jsou některé odkazy, které pomohou nastavená jednotka testování pro Windows Phone:
-
--   [http://www.jeff.wilcox.name/2010/05/sl3-utf-bits/](http://www.jeff.wilcox.name/2010/05/sl3-utf-bits/)
--   [http://www.jeff.wilcox.name/2011/06/updated-ut-mango-bits/](http://www.jeff.wilcox.name/2011/06/updated-ut-mango-bits/)
--   [http://www.smartypantscoding.com/a-cheat-sheet-for-unit-testing-silverlight-apps-on-windows-phone-7](http://www.smartypantscoding.com/a-cheat-sheet-for-unit-testing-silverlight-apps-on-windows-phone-7)
--   [http://mobile.dzone.com/articles/unit-testing-your-windows](http://mobile.dzone.com/articles/unit-testing-your-windows)
-
-
-&nbsp;
-
- <a name="App_Store_Approvals" />
 
 
 ## <a name="app-store-approvals"></a>Schválení obchodu s aplikacemi
@@ -100,7 +72,6 @@ Apple a Microsoft fungovat pouze úložiště na jejich platformy: na App Storu 
 
 Čekání na aplikace mají být zkontrolovány může být velmi stressful – firmy vlivů často znamená to, že v žádostech o schválení s velmi malé okraj došlo k chybě před datem "cílové" spuštění. Samotný proces může trvat až dva týdny a není nutně transparentní: je omezená zpětnou vazbu na průběh vaší aplikace. dokud nebude nakonec odmítl nebo schválení. Odmítání může zahrnovat chybí marketing okno příležitost, zejména v případě, že se stane více než jednou a týdny předat mezi původní data spuštění a, když je aplikace nakonec schváleny.
 
- <a name="Be_prepared" />
 
 
 ### <a name="be-prepared"></a>Připravte se
@@ -117,7 +88,6 @@ Jakmile schválí svůj účet, jste připravení odeslat aplikace. Samotný pro
 
 Zbytek této části popisuje věcí, které byste měli vzít v úvahu zajistit, že aplikace je schválená bez jakékoli hiccups.
 
- <a name="Quality" />
 
 
 ### <a name="quality"></a>Kvalita
@@ -127,8 +97,6 @@ Vyznívá zřejmé, ale aplikace bude získat často odmítnuta, protože nespl�
 Dojde k chybě jsou běžné důvod zamítnutí. Pokud je velmi snadné, aby vaše aplikace havárií, má zaručit zamítnutí. Většina vývojářů nemáte odesílat své aplikace s tím, který se bude k chybě, ale často dělají. Testování aplikace důkladně před odesláním ji, zaměřením, ne jenom na tak, že vše funguje, ale také, které zpracování běžných scénářů mobilní chyba například problémy se sítí a omezení prostředků, jako je paměť nebo úložný prostor. Pomocí simulátoru i fyzického zařízení k testování – bez ohledu na to, jak dobře spuštění kódu v simulátoru, můžete pouze zařízení ukazují skutečné výkonu aplikace. Použijte jako v mnoha různých zařízení, jak můžete najít a zařazení tým beta testery, pokud můžete – služeb třetích stran můžou usnadnit správu beta rozdělení a zpětné vazby.
 
 Všechny mobilní operační systémy se ukončit aplikaci, která není dostatečně rychle začít. Délka dobu povolenou se liší, ale obecně by měla aplikace zaměřte přizpůsobivý za několik sekund a pomocí úlohy na pozadí provádět veškerou práci, kterou bude trvat déle. Aplikace, které trvá příliš dlouho načíst nebo jsou není dostatečně přizpůsobivý běžně používané budou odmítnuty. Pokud něco se děje na pozadí nebo aplikace se zobrazí selhání a znovu získat odmítl vždy poskytovat zpětnou vazbu od uživatelů.
-
- <a name="Check_Your_Edge_Cases" />
 
 
 ### <a name="check-your-edge-cases"></a>Zkontrolujte vaše případy Edge
@@ -143,7 +111,6 @@ V následujícím seznamu je to dobrý výchozí bod pro kontrolu edge případ�
 -   **Hardwaru se liší** – nezapomeňte otestovat na nejstarší, nejpomalejší hardwaru, které chcete podporovat. Existují dva aspekty, které mohou ovlivnit vaše aplikace: výkon, což může být v nepoužitelném na starší zařízení a podpora pro funkce hardwaru, jako je například fotoaparátu, mikrofon, GPS, volný setrvačník nebo jiné volitelné součásti. Aplikace by měla snížit řádně (a ne zhroutí) není k dispozici při komponentu.
 
 
- <a name="Guidelines_are_more_than_just_a_‘guide’" />
 
 
 ### <a name="guidelines-are-more-than-just-a-guide"></a>Pokyny jsou více než jen 'průvodce.
@@ -158,7 +125,6 @@ Vývojáři Windows by měla být podobně opatrní; Obvyklou chybou se nedaří
 
 Doporučte vaší Designer ke čtení a postupujte podle pokynů návrhu pro každou platformu.
 
- <a name="Implementing_Platform-Specific_Features" />
 
 
 ### <a name="implementing-platform-specific-features"></a>Implementace funkce specifické pro platformu
@@ -171,7 +137,6 @@ Co jsou trochu přísnější při rozhodování o implementaci služby specific
 -   **Mapuje** – je stále chcete přidat do mobilních mapy překryvy a další funkce, ale buďte opatrní není nesrozumitelné mapy, kredity' informace (jako je logo Google v iOS5) jako tak bude mít za následek odmítnutí.
 
 
- <a name="Manage_Your_Metadata" />
 
 
 ### <a name="manage-your-metadata"></a>Spravovat Metadata
@@ -185,7 +150,6 @@ Kromě zřejmé technických problémů, které mohou způsobovat v aplikaci odm
 
 Uveďte tolik úsilí do metadat aplikace do vývoje a testování. Aplikace získat zamítnuto menších porušení v metadatech tak, aby byl smysl, čas, získat správné.
 
- <a name="App_Stores:_Not_For_Everyone" />
 
 
 ### <a name="app-stores-not-for-everyone"></a>Obchody s aplikacemi: Není pro všechny uživatele
@@ -198,8 +162,6 @@ Android nabízí flexibilitu nejvíce v tomto ohledu: aplikace je možné nainst
 Apple nabízí možnost interní nasazení pro vývojáře, které jsou zaregistrované v knihovně iOS Developer Enterprise Program, který obchází procesu schvalování App Store a umožňuje společnostem distribuovat interní aplikace pro své zaměstnance.
 Bohužel tuto licenci neřeší potřebu distribuce aplikací extranetu jako do jiných skupin uzavřené zákazníků nebo dodavatelů. [Enterprise (a Ad Hoc) nasazení](~/ios/deploy-test/app-distribution/ipa-support.md)
 
-
- <a name="App_Store_Summary" />
 
 
 ### <a name="app-store-summary"></a>Souhrn obchodu s aplikacemi

@@ -1,24 +1,24 @@
 ---
-title: "Začínáme s Android"
+title: Začínáme s Android
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 870F0C18-A794-4C5D-881B-64CC78759E30
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.date: 11/14/2017
-ms.openlocfilehash: cb74a814db8d2ca8549ae292bbff880ca9383aa4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.date: 03/28/2018
+ms.openlocfilehash: 713f182e3139933484d3185cc0226bf6758c23c3
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="getting-started-with-android"></a>Začínáme s Android
 
 
 Kromě požadavků z našich [Začínáme s Java](~/tools/dotnet-embedding/get-started/java/index.md) Průvodce také budete potřebovat:
 
-* Xamarin.Android 7.4.99 nebo novější (sestavit z [volaných](https://jenkins.mono-project.com/view/Xamarin.Android/job/xamarin-android/lastSuccessfulBuild/Azure/))
+* [Xamarin.Android 7.5](https://www.visualstudio.com/xamarin/) nebo novější
 * [Android Studio 3.x](https://developer.android.com/studio/index.html) s Javou 1.8
 
 Jako přehled provedeme následující:

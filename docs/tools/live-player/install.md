@@ -1,6 +1,6 @@
 ---
-title: "Instalační program za provozu Player Xamarin"
-description: "Upravit a testování aplikací v reálném čase na systému iOS nebo zařízení se systémem Android"
+title: Instalační program za provozu Player Xamarin
+description: Upravit a testování aplikací v reálném čase na systému iOS nebo zařízení se systémem Android
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 5DDF9203-8826-4B04-93F5-B8D07EDE3873
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/22/2017
-ms.openlocfilehash: ddc16dc1faaf623098aad5bca340c15f943223ba
-ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
+ms.openlocfilehash: 05d6a679f318406d1ee5c6893ae4d01452a79723
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="xamarin-live-player-setup"></a>Instalační program za provozu Player Xamarin
 
@@ -22,25 +22,28 @@ Xamarin Live Player umožňuje provádět úpravy za provozu do vaší aplikace 
 
 ## <a name="1-get-the-app"></a>1. Získat aplikaci
 
-### <a name="xamarin-live-player-for-android"></a>Za provozu Player Xamarin pro Android
+# <a name="androidtabandroid"></a>[Android](#tab/android)
+
 Přehrávač Xamarin za provozu je k dispozici pro Android z Google Play:
 
 [ ![K dispozici na webu Google Play](install-images/google-play-badge.png)](https://play.google.com/store/apps/details?id=com.xamarin.live)
 
 Pro zařízení s Androidem bez Google Play je k dispozici prostřednictvím Xamarin Live Player [HockeyApp](https://aka.ms/xlp-hockeyapp) distribuce. Kromě toho časné sestavení pro Android může nainstalovat přímo na webu Google Play vyjádření výslovného souhlasu s [otevřete beta programu](https://play.google.com/apps/testing/com.xamarin.live)
 
-### <a name="xamarin-live-player-for-ios"></a>Přehrávač Live Xamarin pro iOS
+# <a name="iostabios"></a>[iOS](#tab/ios)
+
 Doporučujeme, aby uživatelé pro připojení [aplikace Xamarin Live Player _iOS Preview_ ](https://aka.ms/liveplayeralpha) rychlý přístup k nejnovější vylepšení prostřednictvím TestFlight.
 
+-----
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-## <a name="2-get-visual-studio-2017-preview-on-windows-or-for-mactabsvsmac"></a>2. Získání sady Visual Studio 2017 Preview v systému Windows (nebo [pro Mac](?tabs=vsmac))
+## <a name="2-get-visual-studio-2017"></a>2. Získat Visual Studio 2017
 
 Přehrávač Xamarin za provozu vyžaduje:
 
-- Visual Studio 2017 [15.4](https://developer.xamarin.com/recipes/cross-platform/ide/change_updates_channel/#visualstudio2017) nebo novější.
-- Visual Studio počítače a zařízení ve stejné síti Wi-Fi
+- Visual Studio 2017 15.4 nebo novější.
+- Visual Studio počítače a zařízení ve stejné síti Wi-Fi.
 
 ## <a name="3-using-xamarin-live-player-for-the-first-time"></a>3. Pomocí Xamarin Player za provozu poprvé
 
@@ -72,9 +75,9 @@ Přehrávač Xamarin za provozu vyžaduje:
 
   Pokud se pro párování nelze kontaktovat zařízení, může zobrazovat chybu.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-## <a name="2-get-visual-studio-for-mac-or-for-windowstabsvswin"></a>2. Získání sady Visual Studio pro Mac (nebo [pro systém Windows](?tabs=vswin))
+## <a name="2-get-visual-studio-for-mac"></a>2. Získání sady Visual Studio pro Mac
 
 Přehrávač Xamarin za provozu vyžaduje:
 
@@ -120,7 +123,7 @@ Přehrávač Xamarin za provozu vyžaduje:
 
 -----
 
-Pokud máte problémy, projděte si téma [omezení a řešení potíží s](~/tools/live-player/troubleshooting.md).
+Pokud dojde k potížím, nebo se nemůže připojit, najdete v části [omezení a řešení potíží s](~/tools/live-player/troubleshooting.md).
 
 
 ## <a name="related-links"></a>Související odkazy

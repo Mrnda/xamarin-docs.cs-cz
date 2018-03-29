@@ -1,6 +1,6 @@
 ---
-title: "Ukázky za provozu Player Xamarin"
-description: "Tady jsou některé ukázky můžete vyzkoušet na s Xamarin Live Player"
+title: Ukázky za provozu Player Xamarin
+description: Tady jsou některé ukázky můžete vyzkoušet na s Xamarin Player za provozu.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: C71D34AD-747B-4826-838D-5138F5DCD7EF
@@ -8,32 +8,34 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 06/20/2017
-ms.openlocfilehash: 6f4ccfb70e3e8e4db0bfb692e63208b5fc89ffac
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0e624568a86b08522d68b923b2d60a86144870da
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="xamarin-live-player-samples"></a>Ukázky za provozu Player Xamarin
 
-_Tady jsou některé ukázky můžete vyzkoušet na s Xamarin Live Player_
-
-## <a name="xamarinforms"></a>Xamarin.Forms
+## <a name="get-started-with-xamarinforms"></a>Začínáme s Xamarin.Forms
 
 Přejděte [ukázka Galerie](https://developer.xamarin.com/samples/xamarin-live-player/all/) pro Xamarin.Forms ukázky, které pracují s Xamarin Player za provozu.
 
-<a name="colorcontrol"/>
+## <a name="featured-samples"></a>Doporučenou ukázky
 
-## <a name="color-control-ios"></a>Ovládací prvek barvy (iOS)
+### <a name="basic-calculatorhttpsdeveloperxamarincomsamplesmobileliveplayerbasiccalculator"></a>[Základní kalkulačky](https://developer.xamarin.com/samples/mobile/LivePlayer/BasicCalculator/)
 
-Na základě [recepturách](https://developer.xamarin.com/recipes/ios/media/coreimage/adjust_contrast_and_brightness_of_an_image/), ukázka řízení barva umožňuje načíst fotografie na vašem zařízení iPhone a upravit úrovně barev:
+Tuto aplikaci Xamarin.Forms poskytuje jednoduché kalkulačky, které můžete použít na zařízení Android nebo iOS.
 
-![Barva řízení ukázkové aplikace – snímek obrazovky](samples-images/color-control-sml.png)
+![Základní snímek ukázka kalkulačku](samples-images/basic-calculator-sml.png)
 
-[Stažení ukázky](https://developer.xamarin.com/samples/mobile/LivePlayer/ColorControl/)
+### <a name="bugsweeperhttpsdeveloperxamarincomsamplesmobileliveplayerbugsweeperlp"></a>[BugSweeper](https://developer.xamarin.com/samples/mobile/LivePlayer/BugSweeperLP/)
+
+Toto je známá hra s novým prvkem. V poli 9 x 9 je skryto 10 chyb. Abyste vyhráli, musíte najít a označit všech 10 chyb.
+
+![BugSweeper aplikace v systému Android](samples-images/bugsweeper-sml.png)
+
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Ovládací prvek barvy (iOS) (ukázka)](https://developer.xamarin.com/samples/mobile/LivePlayer/ColorControl/)
-- [Ukázky Xamarin.Forms](https://developer.xamarin.com/samples/xamarin-live-player/all/)
+- [Ukázky za provozu Player Xamarin.Forms](https://developer.xamarin.com/samples/xamarin-live-player/all/)

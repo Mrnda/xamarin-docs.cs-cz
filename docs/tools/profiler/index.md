@@ -1,6 +1,6 @@
 ---
 title: Xamarin Profiler
-description: "Tato příručka popisuje klíčové funkce profileru Xamarin. Ji vyhledat v profilery, profilace a kdy by měly být použity a v pracovním postupu standardní profily – aplikace Xamarin."
+description: Tato příručka popisuje klíčové funkce profileru Xamarin. Ji vyhledat v profilery, profilace a kdy by měly být použity a v pracovním postupu standardní profily – aplikace Xamarin.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 10/27/2017
-ms.openlocfilehash: e5c17c53c154eb4da4ec76e567c1c73695de7e35
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 7c44541c56d7b1a00a704cfc66812d5537ec83c4
+ms.sourcegitcommit: 17a9cf246a4d33cfa232016992b308df540c8e4f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 03/29/2018
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -48,7 +48,7 @@ Tato příručka prozkoumá běžné scénáře profilování a zavádí profile
 ## <a name="download-and-install"></a>Stáhnout a nainstalovat
 
 > [!NOTE]
-> **Poznámka:** bude muset být předplatitele Visual Studio Enterprise odemknout tuto funkci v buď Visual Studio Enterprise v systému Windows nebo Visual Studio pro Mac v počítačích Mac.
+> **Poznámka:** bude muset být [Visual Studio Enterprise](https://www.visualstudio.com/vs/compare/) odběratele odemknout tuto funkci v buď Visual Studio Enterprise v systému Windows nebo Visual Studio pro Mac v počítačích Mac.
 
 Xamarin profileru je samostatná aplikace a je integrována s Visual Studio pro Mac a Visual Studio, chcete-li povolit profilace z prostředí IDE.
 
@@ -60,10 +60,6 @@ Stáhněte si balíček instalace pro vaši platformu:
 - [**Windows**](https://dl.xamarin.com/profiler/profiler-windows.msi)
 
 Po stažení, spusťte instalační program pro přidání do systému profileru Xamarin.
-
-Integrace rozhraní IDE je k dispozici ve všech verzích verze Xamarin.
-Ale [Visual Studio Enterprise](https://www.xamarin.com/compare-visual-studio) je vyžadována pro profilace.
-
 
 
 ## <a name="profilers-and-profiling"></a>Profilery a profilace
