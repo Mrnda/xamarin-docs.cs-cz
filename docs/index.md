@@ -1,8 +1,8 @@
 ---
 layout: HubPage
-hide_bc: 
+hide_bc: true
 title: Dokumentace pro Xamarin
-description: "Xamarin umožňuje vytvářet nativní aplikace pro Android, iOS a macOS pomocí kódu technologie .NET a uživatelských rozhraní specifických pro danou platformu. Xamarin.Forms umožňuje vytvářet nativní aplikace se sdíleným kódem uživatelského rozhraní napsané v jazycích C# nebo XAML."
+description: Xamarin umožňuje vytvářet nativní aplikace pro Android, iOS a macOS pomocí kódu technologie .NET a uživatelských rozhraní specifických pro danou platformu. Xamarin.Forms umožňuje vytvářet nativní aplikace se sdíleným kódem uživatelského rozhraní napsané v jazycích C# nebo XAML.
 featureFlags:
 - clicktale
 ms.openlocfilehash: d73b8165fc1a71fbfe3202f694c4653788ccfb28
