@@ -1,6 +1,6 @@
 ---
 title: Windows
-description: "Tento článek se zabývá práci s windows a panely v Xamarin.Mac aplikace. Popisuje vytváření windows a panely v Xcode a rozhraní tvůrce, jejich načtení ze scénářů a .xib souborů a práce s nimi prostřednictvím kódu programu."
+description: Tento článek se zabývá práci s windows a panely v Xamarin.Mac aplikace. Popisuje vytváření windows a panely v Xcode a rozhraní tvůrce, jejich načtení ze scénářů a .xib souborů a práce s nimi prostřednictvím kódu programu.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 4F6C67E9-BBFF-44F7-B29E-AB47D7F44287
@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: f483fcfa9dfca1eb476ceab2b67e7a03bf4b6354
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 4b8de30cecb738fecb13616a3b796c0b4fa5a51a
+ms.sourcegitcommit: 7b88081a979381094c771421253d8a388b2afc16
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/30/2018
 ---
 # <a name="windows"></a>Windows
 
@@ -20,7 +20,7 @@ _Tento článek se zabývá práci s windows a panely v Xamarin.Mac aplikace. Po
 
 Při práci s C# a rozhraní .NET v aplikaci Xamarin.Mac, máte přístup do stejné Windows a panely, které vývojář práce *jazyka Objective-C* a *Xcode* nepodporuje. Protože Xamarin.Mac integruje přímo s Xcode, můžete na Xcode _rozhraní tvůrce_ vytvořit a udržovat Windows a panelů (nebo je můžete také vytvořit přímo v kódu jazyka C#).
 
-Podle jeho účel, Xamarin.Mac aplikace může být jeden nebo více okně na obrazovce pro správu a koordinovat informace zobrazí a funguje s. Hlavní funkce systému windows jsou:
+Podle jeho účel, Xamarin.Mac aplikace může být jeden nebo více Windows na obrazovce pro správu a koordinovat informace zobrazí a funguje s. Hlavní funkce okna jsou:
 
 1. K zajištění oblast, ve kterém může být zobrazení a ovládací prvky umístěny a spravované.
 2. Přijmout a reakce na události v reakci na interakce uživatele s klávesnici a myš.

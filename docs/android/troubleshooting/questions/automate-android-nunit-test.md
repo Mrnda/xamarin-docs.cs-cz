@@ -6,86 +6,92 @@ ms.assetid: EA3CFCC4-2D2E-49D6-A26C-8C0706ACA045
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: acb213e8c73013bc9b2482afb45296c4e1f61ab5
-ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
+ms.date: 03/29/2018
+ms.openlocfilehash: 4d8ea267ef3a6bdea2db805725d5dd4220ab73c4
+ms.sourcegitcommit: 7b88081a979381094c771421253d8a388b2afc16
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 03/30/2018
 ---
 # <a name="how-do-i-automate-an-android-nunit-test-project"></a>Jak mohu automatizovat projektu Android testovací NUnit?
 
 > [!NOTE]
-> Tento průvodce popisuje kroky pro nastavení testovacího projektu Android NUnit, není Xamarin.UITest projektu. Příručky Xamarin.UITest můžete najít [zde](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest).
+> Tato příručka vysvětluje postup automatizace testovacího projektu Android NUnit, není Xamarin.UITest projektu. Příručky Xamarin.UITest můžete najít [zde](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest).
 
-Když vytvoříte Android projektu testů jednotek v sadě Visual Studio pro Mac nebo jednotka testovací aplikace (Android) v sadě Visual Studio, ve výchozím nastavení se nespustí automaticky testy.
-Ke spuštění testů NUnit na cílovém zařízení, používáme `Android.App.Instrumentation` podtřídami, které lze vytvořit a spustit pomocí `adb shell am instrument` příkaz.
-
-Nejdříve vytvoříme **TestInstrumentation.cs** souboru, který vytvoří podtřídou třídy `Xamarin.Android.NUnitLite.TestSuiteInstrumentation` (deklarované v `Xamarin.Android.NUnitLite.dll`). `TestInstrumentation(IntPtr, JniHandleOwnership)` Konstruktor _musí_ je třeba zadat a virtuální `AddTests()` metoda se musí přepsat.
-`AddTests()` ovládací prvky, které testy jsou skutečně proveden. Tento soubor je z velké části standardní.
-
-Dále `.csproj` musí upravit, aby přidat `TestInstrumentation.cs`.
-
-Volitelně můžete `.csproj` může upravit tak, aby přidat `RunTests` MSBuild cíl, který by umožnil vyvolání testování částí jako:
+Při vytváření **jednotky testování aplikace (Android)** projektu v sadě Visual Studio (nebo **Android testování částí** projektu v sadě Visual Studio pro Mac), tím projekt se automaticky spustit testy ve výchozím nastavení.
+Chcete-li spustit testy NUnit na cílovém zařízení, můžete vytvořit [Android.App.Instrumentation](https://developer.xamarin.com/api/type/Android.App.Instrumentation/) podtřídami, který je spuštěn s použitím následujícího příkazu: 
 
 ```shell
-msbuild /t:RunTests Project.csproj
+adb shell am instrument 
 ```
 
-Pomocí nové cílové není vyžadován. Místo toho může použít příkaz odpovídající adb:
+Následující kroky vysvětlují tento proces:
 
-```shell
-adb shell am instrument -w @PACKAGE_NAME@/app.tests.TestInstrumentation
-```
+1.  Vytvořte nový soubor s názvem **TestInstrumentation.cs**: 
 
-Nahraďte `@PACKAGE\_NAME@` to vhodné, je hodnota, které jsou součástí **AndroidManifest.xml** `/manifest/@package` atribut.
+    ```cs 
+    using System;
+    using System.Reflection;
+    using Android.App;
+    using Android.Content;
+    using Android.Runtime;
+    using Xamarin.Android.NUnitLite;
+     
+    namespace App.Tests {
+     
+        [Instrumentation(Name="app.tests.TestInstrumentation")]
+        public class TestInstrumentation : TestSuiteInstrumentation {
+     
+            public TestInstrumentation (IntPtr handle, JniHandleOwnership transfer) : base (handle, transfer)
+            {
+            }
+     
+            protected override void AddTests ()
+            {
+                AddTest (Assembly.GetExecutingAssembly ());
+            }
+        }
+    }
+    ```
+    V tomto souboru [Xamarin.Android.NUnitLite.TestSuiteInstrumentation](https://developer.xamarin.com/api/type/Xamarin.Android.NUnitLite.TestSuiteInstrumentation/) (z **Xamarin.Android.NUnitLite.dll**) podtřídou třídy pro vytvoření `TestInstrumentation`.
+
+2.  Implementace [TestInstrumentation](https://developer.xamarin.com/api/constructor/Xamarin.Android.NUnitLite.TestSuiteInstrumentation.TestSuiteInstrumentation/p/System.IntPtr/Android.Runtime.JniHandleOwnership/) konstruktor a [AddTests](https://developer.xamarin.com/api/member/Xamarin.Android.NUnitLite.TestSuiteInstrumentation.AddTests%28%29) metoda. `AddTests` Metoda ovládací prvky, které testy jsou spouštěny ve skutečnosti.
+
+3.  Změnit `.csproj` přidejte **TestInstrumentation.cs**. Příklad:
+
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+        ...
+        <ItemGroup>
+            <Compile Include="TestInstrumentation.cs" />
+        </ItemGroup>
+        <Target Name="RunTests" DependsOnTargets="_ValidateAndroidPackageProperties">
+            <Exec Command="&quot;$(_AndroidPlatformToolsDirectory)adb&quot; $(AdbTarget) $(AdbOptions) shell am instrument -w $(_AndroidPackage)/app.tests.TestInstrumentation" />
+        </Target>
+        ...
+    </Project>
+    ```
+
+3.  Použijte následující příkaz ke spuštění testů jednotek. Nahraďte `PACKAGE_NAME` s názvem balíčku aplikace (název balíčku naleznete v dané aplikaci `/manifest/@package` atribut umístěný v **AndroidManifest.xml**):
+
+    ```shell
+    adb shell am instrument -w PACKAGE_NAME/app.tests.TestInstrumentation
+    ```
+
+4.  Volitelně můžete upravit `.csproj` soubor, abyste přidali `RunTests` MSBuild cíl. To umožňuje vyvolání testování částí pomocí příkazu takto:
+
+    ```shell
+    msbuild /t:RunTests Project.csproj
+    ```
+    (Všimněte si, že pomocí této nové cílové nevyžaduje; dříve `adb` příkaz lze použít místo `msbuild`.)
+
+Další informace o používání `adb shell am instrument` příkaz spouštění testování částí, najdete v článku Android Developer [spouštění testů pomocí ADB](https://developer.android.com/studio/test/command-line.html#RunTestsDevice) tématu.
 
 
 > [!NOTE]
-> *Důležité*: pomocí [Xamarin.Android 5.0](https://developer.xamarin.com/releases/android/xamarin.android_5/xamarin.android_5.1/#Android_Callable_Wrapper_Naming) vydání, výchozí názvy balíčku pro Android – obálky s možností budou založeny na MD5SUM sestavení kvalifikovaný název typu, která je exportována. To umožňuje stejný plně kvalifikovaný název a je třeba zadat ze dvou různých sestavení není získat balení chyby. Proto se ujistěte, že používáte \`název\` vlastnost \`instrumentace\` atribut ke generování čitelný název ACW/třídy.
+> Pomocí [Xamarin.Android 5.0](https://developer.xamarin.com/releases/android/xamarin.android_5/xamarin.android_5.1/#Android_Callable_Wrapper_Naming) vydání, výchozí názvy balíčku pro Android – obálky s možností budou založeny na MD5SUM sestavení kvalifikovaný název typu, která je exportována. To umožňuje stejný plně kvalifikovaný název a je třeba zadat ze dvou různých sestavení není získat balení chyby. Proto se ujistěte, že používáte `Name` vlastnost `Instrumentation` atribut ke generování čitelný název ACW/třídy.
 
-_Musí použít název ACW `adb` příkaz_. Přejmenování nebo refaktoring tříd jazyka C# proto vyžaduje změny `RunTests` správný název ACW pomocí příkazu.
-
-Přidání do souboru .csproj:
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    <ItemGroup>
-        <Compile Include="TestInstrumentation.cs" />
-    </ItemGroup>
-    <Target Name="RunTests" DependsOnTargets="_ValidateAndroidPackageProperties">
-        <Exec Command="&quot;$(_AndroidPlatformToolsDirectory)adb&quot; $(AdbTarget) $(AdbOptions) shell am instrument -w $(_AndroidPackage)/app.tests.TestInstrumentation" />
-    </Target>
-</Project>
-```
-
-**TestInstruments.cs**:
-
-```cs 
-using System;
-using System.Reflection;
- 
-using Android.App;
-using Android.Content;
-using Android.Runtime;
- 
-using Xamarin.Android.NUnitLite;
- 
-namespace App.Tests {
- 
-    [Instrumentation(Name="app.tests.TestInstrumentation")]
-    public class TestInstrumentation : TestSuiteInstrumentation {
- 
-        public TestInstrumentation (IntPtr handle, JniHandleOwnership transfer) : base (handle, transfer)
-        {
-        }
- 
-        protected override void AddTests ()
-        {
-            AddTest (Assembly.GetExecutingAssembly ());
-        }
-    }
-}
-```
+_Musí použít název ACW `adb` nahoře na příkaz_.
+Přejmenování nebo refaktoring tříd jazyka C# proto vyžaduje změny `RunTests` správný název ACW pomocí příkazu.
 
