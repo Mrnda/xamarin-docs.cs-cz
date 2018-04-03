@@ -1,6 +1,6 @@
 ---
-title: "Použití CocosSharp v Xamarin.Forms"
-description: "CocosSharp slouží k přidání do aplikace pro pokročilé vizualizaci přesné tvaru, image a vykreslování textu"
+title: Použití CocosSharp v Xamarin.Forms
+description: CocosSharp slouží k přidání do aplikace pro pokročilé vizualizaci přesné tvaru, image a vykreslování textu
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: E0F404D5-5C6B-4288-92EC-78996C674E4E
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 05/03/2016
-ms.openlocfilehash: 395defa300da7b8f68746162d877a4fdb17ded9e
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 83852b6b2d7324ae6aaf6b1dbf86a6ef7f9ac509
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="using-cocossharp-in-xamarinforms"></a>Použití CocosSharp v Xamarin.Forms
 
@@ -197,7 +197,7 @@ Následující graf může pomoct vizualizovat typické CocosSharp hierarchie:
 
 ![](cocossharp-images/image4.png "Typical CocosSharp Hierarchy")
 
-Pouze jeden `CCScene` může být aktivní v jednom okamžiku. Většina her používá více `CCLayer` instance řazení obsahu, ale naše aplikace používá jenom jeden. Podobně Většina her používat víc vizuální objekty, ale nemůžeme budete mít pouze jednu v naší aplikaci. Podrobnější diskuzi o CocosSharp visual hierarchie lze nalézt v [skákání herní návod](~/graphics-games/cocossharp/first-game/index.md).
+Pouze jeden `CCScene` může být aktivní v jednom okamžiku. Většina her používá více `CCLayer` instance řazení obsahu, ale naše aplikace používá jenom jeden. Podobně Většina her používat víc vizuální objekty, ale nemůžeme budete mít pouze jednu v naší aplikaci. Podrobnější diskuzi o CocosSharp visual hierarchie lze nalézt v [BouncingGame návod](~/graphics-games/cocossharp/bouncing-game.md).
 
 Zpočátku `GameScene` třída bude téměř prázdný – stačí vytvoříme ji vyhovět odkaz v `HomePage`. Přidejte novou třídu do vaší PCL s názvem `GameScene`. Musí dědit z `CCScene` třídy následujícím způsobem:
 

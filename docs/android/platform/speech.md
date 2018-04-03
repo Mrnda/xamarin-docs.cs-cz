@@ -1,18 +1,18 @@
 ---
 title: Android Speech
-description: "Tento článek popisuje základní informace o použití velmi silné Android.Speech obor názvů. Od počátku Android byl schopen rozpoznat řeči a výstup jako text. Je poměrně jednoduché procesu. Pro převod textu na řeč, ale proces je složitější, ne jenom modul rozpoznávání řeči musí vzít v úvahu, ale také jazyky dostupné a nainstalované ze systému převod textu na řeč (převod textu na ŘEČ)."
+description: Tento článek popisuje základní informace o použití velmi silné Android.Speech obor názvů. Od počátku Android byl schopen rozpoznat řeči a výstup jako text. Je poměrně jednoduché procesu. Pro převod textu na řeč, ale proces je složitější, ne jenom modul rozpoznávání řeči musí vzít v úvahu, ale také jazyky dostupné a nainstalované ze systému převod textu na řeč (převod textu na ŘEČ).
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: FA3B8EC4-34D2-47E3-ACEA-BD34B28115B9
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/09/2018
-ms.openlocfilehash: e8e56afbdf0b68ecc49a89b08b2e67a9715f2aef
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.date: 04/02/2018
+ms.openlocfilehash: acc64fee37e1a6046991355389a09a29e1889993
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="android-speech"></a>Android Speech
 
@@ -158,15 +158,21 @@ foreach (var locale in localesAvailable)
 langAvailable = langAvailable.OrderBy(t => t).Distinct().ToList();
 ```
 
+Tento kód zavolá [TextToSpeech.IsLanguageAvailable](https://developer.xamarin.com/api/member/Android.Speech.Tts.TextToSpeech.IsLanguageAvailable/p/Java.Util.Locale/) k testování Pokud jazykovou sadu pro dané národní prostředí se již v zařízení. Tato metoda vrátí hodnotu [LanguageAvailableResult](https://developer.xamarin.com/api/type/Android.Speech.Tts.LanguageAvailableResult/), která určuje, zda je k dispozici jazyk pro předaný národní prostředí. Pokud `LanguageAvailableResult` označuje, že je jazyk `NotSupported`, pak je k dispozici (i ke stažení) žádné hlasové balíčku pro požadovaný jazyk. Pokud `LanguageAvailableResult` je nastaven na `MissingData`, pak je možné stáhnout novou jazykovou sadu, jak je popsáno níže v kroku 4.
+
 ### <a name="step-3---setting-the-speed-and-pitch"></a>Krok 3: nastavení rychlosti a výšky
 
 Android umožňuje uživatelům změnit změnou zvuk Řeč `SpeechRate` a `Pitch` (počet rychlostí a zaznění signálu řeč). To má význam od 0 do 1, s "normální" řeči se 1 pro obojí.
 
 ### <a name="step-4---testing-and-loading-new-languages"></a>Krok 4 – testování a načítání nové jazyky
 
-To se provádí pomocí `Intent` s výsledkem interpretaci v `OnActivityResult`. Na rozdíl od příkladu řeči na text, který používá `RecognizerIntent` jako `PutExtra` parametru `Intent`, instalace záměr používá `Action`.
+Stahuje se o nový jazyk se provádí pomocí `Intent`. Výsledek této záměr způsobí, že [OnActivityResult](https://developer.xamarin.com/api/member/Android.App.Activity.OnActivityResult/) metoda má být volána. Na rozdíl od příkladu řeči na text (který používá [RecognizerIntent](https://developer.xamarin.com/api/type/Android.Speech.RecognizerIntent/) jako `PutExtra` parametru `Intent`), testování a načítání `Intent`jsou s `Action`– na základě:
 
-Je možné nainstalovat nový jazyk z Google pomocí následujícího kódu. Výsledkem `Activity` kontroluje, pokud je zapotřebí jazyk, a pokud se jedná, nainstaluje jazyk po zobrazení výzvy ke stažení proběhnout.
+-   [TextToSpeech.Engine.ActionCheckTtsData](https://developer.xamarin.com/api/field/Android.Speech.Tts.TextToSpeech+Engine.ActionCheckTtsData/) &ndash; spustí aktivita od platformy `TextToSpeech` modul ověření správné instalace a dostupnost prostředků jazyka v zařízení.
+
+-   [TextToSpeech.Engine.ActionInstallTtsData](https://developer.xamarin.com/api/field/Android.Speech.Tts.TextToSpeech+Engine.ActionInstallTtsData/) &ndash; spustí aktivitu, která uživatele vyzve ke stažení potřebné jazyky.
+
+Následující příklad kódu ukazuje, jak použít k testování pro jazyk prostředky a stáhnout o nový jazyk tyto akce:
 
 ```csharp
 var checkTTSIntent = new Intent();
@@ -183,6 +189,19 @@ protected override void OnActivityResult(int req, Result res, Intent data)
     }
 }
 ```
+
+`TextToSpeech.Engine.ActionCheckTtsData` testy dostupnosti prostředků jazyk. `OnActivityResult` je volána po dokončení tento test. Pokud jazyk prostředky nutné stáhnout, `OnActivityResult` vyvolá `TextToSpeech.Engine.ActionInstallTtsData` akce spuštění aktivity, která umožňuje uživatelům stáhnout potřebné jazyky. Poznámka: který tato `OnActivityResult` implementace nekontroluje `Result` kódu, protože v tomto příkladu zjednodušené stanovení již byl změněn, jazykovou sadu musí být stažena.
+
+`TextToSpeech.Engine.ActionInstallTtsData` Příčiny akce **Google převod textu na ŘEČ hlasové data** aktivity předkládané uživatele pro výběr jazyky ke stažení:
+
+![Převod textu na ŘEČ Google hlasové Data aktivity](speech-images/01-google-tts-voice-data.png)
+
+Jako příklad může uživatel vybrat francouzština a klikněte na ikonu stahování ke stahování dat francouzštině hlasové:
+
+![Příklad stahování francouzštinu](speech-images/02-selecting-french.png)
+
+Instalace těchto dat se stane automaticky po dokončení stahování.
+
 
 ### <a name="step-5---the-ioninitlistener"></a>Krok 5 – IOnInitListener
 

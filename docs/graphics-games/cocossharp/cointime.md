@@ -1,5 +1,5 @@
 ---
-title: Podrobnosti implementace mince času
+title: Mince herní podrobnosti času
 description: Tato příručka popisuje podrobnosti implementace mince čas hry, včetně práce s dlaždice map, vytváření entit, animace Sprite a implementace efektivní kolizí.
 ms.topic: article
 ms.prod: xamarin
@@ -8,13 +8,13 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: 80250ca9fae98fae653c9b2837b2b1a96fb02203
-ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
+ms.openlocfilehash: 8c33b74af80a14df1626ab39ba8c055a81259194
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/03/2018
 ---
-# <a name="coin-time-implementation-details"></a>Podrobnosti implementace mince času
+# <a name="coin-time-game-details"></a>Mince herní podrobnosti času
 
 _Tato příručka popisuje podrobnosti implementace mince čas hry, včetně práce s dlaždice map, vytváření entit, animace Sprite a implementace efektivní kolizí._
 
@@ -24,27 +24,27 @@ _Tato příručka popisuje podrobnosti implementace mince čas hry, včetně pr�
 
 Tato příručka popisuje podrobnosti implementace v průběhu času mince, která obsahuje následující témata:
 
-- [Práce se soubory TMX](#Working_with_TMX_Files)
-- [Načítání na úrovni](#Level_Loading)
-- [Přidání nové entity](#Adding_New_Entities)
-- [Animovaný entity](#Animated_Entities)
+- [Práce se soubory tmx](#working-with-tmx-files)
+- [Načítání na úrovni](#level-loading)
+- [Přidání nové entity](#adding-new-entities)
+- [Animovaný entity](#animated-entities)
 
 
-# <a name="content-in-coin-time"></a>V čase mince obsahu
+## <a name="content-in-coin-time"></a>V čase mince obsahu
 
 Čas mince je ukázkový projekt, který představuje může uspořádání úplné CocosSharp projektu. Mince časové struktury cílem zjednodušit přidání a správa obsahu. Používá **.tmx** soubory vytvořené serverem [vedle sebe](http://www.mapeditor.org) pro úrovně a soubory XML k definování animace. Úprava nebo přidání nového obsahu lze dosáhnout s minimálním úsilím. 
 
 Když tento přístup může dobu mince projektu efektivní pro učení a experimentování, také odráží jak professional hry jsou vytvářeny. Tato příručka vysvětluje některé přístupů zjednodušena přidání a úpravy obsahu.
 
 
-# <a name="working-with-tmx-files"></a>Práce se soubory TMX
+## <a name="working-with-tmx-files"></a>Práce se soubory tmx
 
 Mince čas úrovně jsou definovány pomocí .tmx formát souboru, který je výstupem [vedle sebe](http://www.mapeditor.org) dlaždice map editor. Podrobnou diskuzi o práci s vedle sebe, najdete v článku [pomocí rozložen formou dlaždic s Kokosové Sharp průvodce](~/graphics-games/cocossharp/tiled.md). 
 
 Každá úroveň je definována v vlastního souboru .tmx obsažené v **CoinTime nebo prostředky nebo obsah nebo úrovně** složky. Všechny úrovně mince čas sdílet jeden soubor tileset, která je definována v **mastersheet.tsx** souboru. Tento soubor definuje vlastní vlastnosti pro každou dlaždici, například jestli dlaždici má plnou kolizí nebo jestli by měla být nahrazená dlaždici instance entity. Soubor mastersheet.tsx umožňuje vlastnosti, které chcete být definovaný jenom jednou a použít napříč všechny úrovně. 
 
 
-## <a name="editing-a-tile-map"></a>Úpravy dlaždice Map
+### <a name="editing-a-tile-map"></a>Úpravy dlaždice map
 
 Chcete-li upravit mapu dlaždice, otevřete soubor .tmx v vedle sebe dvojitým kliknutím na soubor .tmx nebo ho otevřít pomocí nabídky souboru v vedle sebe. Čas mince úrovně dlaždice map obsahovat tři vrstvy: 
 
@@ -54,7 +54,8 @@ Chcete-li upravit mapu dlaždice, otevřete soubor .tmx v vedle sebe dvojitým k
 
 Jak se podíváme na později, kód úroveň načítání předpokládá, že tyto tři vrstvy na všech úrovních mince čas.
 
-### <a name="editing-terrain"></a>Úpravy geologické struktury
+#### <a name="editing-terrain"></a>Úpravy geologické struktury
+
 Dlaždice je možné použít kliknutím v **mastersheet** tileset a kliknutím na dlaždici mapy. Chcete-li například malovat nové geologické struktury v úrovní:
 
 1. Vyberte vrstvu, geologické struktury
@@ -67,7 +68,8 @@ Vlevo nahoře tileset obsahuje všechny geologické struktury v čase mince. Zah
 
 ![](cointime-images/image3.png "Geologické struktury, což je plná, zahrnuje vlastnost SolidCollision, jak je vidět ve vlastnostech dlaždice na levé straně obrazovky")
 
-### <a name="editing-entities"></a>Úpravy entit
+#### <a name="editing-entities"></a>Úpravy entit
+
 Entity můžete přidat nebo odebrat z úrovně – stejně jako geologické struktury. **Mastersheet** tileset obsahuje všechny entity umístit o polovině vzdálenosti ve vodorovném směru, takže nemusí být zobrazeny bez posunutí doprava:
 
 ![](cointime-images/image4.png "Mastersheet tileset obsahuje všechny entity umístit o polovině vzdálenosti ve vodorovném směru, takže nemusí být zobrazeny bez posunutí doprava")
@@ -85,7 +87,7 @@ Jakmile soubor má byla upravena a uložili, změny se automaticky zobrazí-li p
 ![](cointime-images/image7.png "Jakmile se soubor má byla upravena a uložili, změny se automaticky zobrazí vytvořené a spusťte projekt")
 
 
-## <a name="adding-new-levels"></a>Přidání nové úrovně
+### <a name="adding-new-levels"></a>Přidání nové úrovně
 
 Proces přidávání úrovně mince čas vyžaduje beze změn kódu a pouze několik malých změn do projektu. Chcete-li přidat novou úroveň:
 
@@ -105,7 +107,7 @@ Novou úroveň měly být zobrazeny na obrazovce vyberte úroveň na úroveň 9 
 ![](cointime-images/image10.png "Novou úroveň měly být zobrazeny na obrazovce vyberte úroveň na úroveň 9 úrovni souboru názvy start na 0, ale tlačítka úrovně začínat číslem 1")
 
 
-# <a name="level-loading"></a>Načítání na úrovni
+## <a name="level-loading"></a>Načítání na úrovni
 
 Jak je uvedeno výše, nové úrovně vyžadují žádné změny v kódu – hra automaticky rozpozná úrovně, pokud jsou správně s názvem a přidat do **úrovně** složku s akce správná sestavení (**BundleResource**nebo **AndroidAsset**).
 
@@ -201,7 +203,7 @@ private void GoToLevel(int levelNumber)
 Další provedeme podívejte se na metody volal v `GoToLevel`.
 
 
-## <a name="loadlevel"></a>LoadLevel
+### <a name="loadlevel"></a>LoadLevel
 
 `LoadLevel` Metoda zodpovídá za načítání souboru .tmx a jejím přidáním do `GameScene`. Tato metoda nevytvoří žádné objekty interaktivní třeba kolizí nebo entity – jednoduše vytvoří vizuály úrovně, které jsou také označovány jako *prostředí*.
 
@@ -227,7 +229,7 @@ private void LoadLevel(int levelNumber)
 V současné době CocosSharp nepovoluje změny pořadí vrstev bez odebrání a znovu je přidáte do své nadřazené `CCScene` (což je `GameScene` v tomto případě), takže posledních několika řádků metody jsou potřeba změnit pořadí vrstev.
 
 
-## <a name="createcollision"></a>CreateCollision
+### <a name="createcollision"></a>CreateCollision
 
 `CreateCollision` Metoda konstrukce `LevelCollision` instanci, která se používá k provádění *plnou kolizí* mezi player a prostředí.
 
@@ -245,7 +247,7 @@ Bez této kolizí přehrávač by přejít na úrovni a hra by možné přehrát
 Kolizí v čase mince lze přidat s žádný další kód – pouze změny vedle sebe soubory. 
 
 
-## <a name="processtileproperties"></a>ProcessTileProperties
+### <a name="processtileproperties"></a>ProcessTileProperties
 
 Jakmile je načten úrovní a kolizí je vytvořen, `ProcessTileProperties` je volána k provedení logiku podle vlastnosti dlaždice. Zahrnuje mince čas `PropertyLocation` struktura k definování vlastností a souřadnice dlaždici s těmito vlastnostmi:
 
@@ -343,7 +345,7 @@ private bool TryCreateEntity(string entityType, float worldX, float worldY)
 ```
 
 
-# <a name="adding-new-entities"></a>Přidání nové entity
+## <a name="adding-new-entities"></a>Přidání nové entity
 
 Čas mince využívá vzor entity pro jeho herní objekty (která je popsaná v [Průvodce entity v CocosSharp](~/graphics-games/cocossharp/entities.md)). Dědí všechny entity `CCNode`, což znamená, mohou být přidány jako podřízené objekty `gameplayLayer`.
 
@@ -352,19 +354,19 @@ Každému typu entity, se taky odkazuje přímo prostřednictvím seznamu nebo j
 Existující kód poskytuje několik typů entit jako příklady, jak vytvořit nové entity. Následující postup slouží k vytvoření nové entity:
 
 
-## <a name="1---define-a-new-class-using-the-entity-pattern"></a>1 - definujte novou třídu pomocí vzoru entity
+### <a name="1---define-a-new-class-using-the-entity-pattern"></a>1 - definujte novou třídu pomocí vzoru entity
 
 Jediný požadavek pro vytvoření entity se má vytvořit třídu, která dědí z `CCNode`. Většina entity, jako mají některé visual `CCSprite`, který má být přidán jako podřízený entity v jeho konstruktoru.
 
-Poskytuje CoinTime `AnimatedSpriteEntity` třída, která zjednodušuje vytváření animovaný entit. Animace se budeme v podrobněji [animovaný entity části](#Animated_Entities).
+Poskytuje CoinTime `AnimatedSpriteEntity` třída, která zjednodušuje vytváření animovaný entit. Animace se budeme v podrobněji [animovaný entity části](#animated-entities).
 
 
-## <a name="2--add-a-new-entry-to-the-trycreateentity-switch-statement"></a>2 – přidáte novou položku do TryCreateEntity příkaz switch
+### <a name="2--add-a-new-entry-to-the-trycreateentity-switch-statement"></a>2 – přidáte novou položku do TryCreateEntity příkaz switch
 
 Instance nové entity by měla být vytvořena instance v `TryCreateEntity`. Pokud entita vyžaduje každých rámce logiku jako kolizí, AI nebo čtení vstup, pak se `GameScene` musí zachovat odkaz na objekt. Potřeby více instancí (například `Coin` nebo `Enemy` instance), pak nový `List` musí být přidaní do `GameScene` – třída.
 
 
-## <a name="3--modify-tile-properties-for-the-new-entity"></a>3 – upravte vlastnosti dlaždice pro novou entitu
+### <a name="3--modify-tile-properties-for-the-new-entity"></a>3 – upravte vlastnosti dlaždice pro novou entitu
 
 Po kód podporuje vytváření nové entity, musí být přidán do tileset novou entitu. Tileset lze upravit tak, že otevřete všechny úrovně `.tmx` souboru. 
 
@@ -389,7 +391,7 @@ Tileset měli přepsat existující **mastersheet.tsx** tileset:
 ![](cointime-images/image15.png "Použí tileset měli přepsat existující tileset mastersheet.tsx")
 
 
-# <a name="entity-tile-removal"></a>Odebrání dlaždice entity
+## <a name="entity-tile-removal"></a>Odebrání dlaždice entity
 
 Pokud dlaždice map je načten do hry, jsou jednotlivé dlaždice statické objekty. Vzhledem k tomu, že entity vyžadují vlastní chování, například přesun, kódu v době mince odebere dlaždice při vytvoření entity.
 
@@ -453,7 +455,7 @@ private void ProcessTileProperties()
 ```
 
 
-# <a name="entity-offsets"></a>Posuny entity
+## <a name="entity-offsets"></a>Posuny entity
 
 Entity vytvořené z dlaždice jsou umístěny podle zarovnání na střed dlaždici centru entity. Větší entity, jako například `Door`, použijte další vlastnosti a logiku správně umístit. 
 
@@ -493,12 +495,12 @@ private void ProcessTileProperties()
 ```
 
 
-# <a name="animated-entities"></a>Animovaný entity
+## <a name="animated-entities"></a>Animovaný entity
 
 Čas mince obsahuje několik animovaný entity. `Player` a `Enemy` entity přehrávat animace procházení a `Door` entity hraje animace otevírání po všech mincí byly shromážděny.
 
 
-## <a name="achx-files"></a>.achx soubory
+### <a name="achx-files"></a>.achx soubory
 
 Animace čas mince jsou definovány v .achx soubory. Každý animace je definována mezi `AnimationChain` značky, jak je znázorněno v následujícím animace definované v **propanimations.achx**:
 
@@ -533,7 +535,7 @@ Rámce definovat která image zobrazíte v `TextureName` parametr a souřadnice 
 Všechny ostatní vlastnosti AnimationChain v souboru .achx ignorují mince doby.
 
 
-## <a name="animatedspriteentity"></a>AnimatedSpriteEntity
+### <a name="animatedspriteentity"></a>AnimatedSpriteEntity
 
 Animace logiku, je součástí `AnimatedSpriteEntity` třídy, která slouží jako základní třída pro většiny entit používané v `GameScene`. Poskytuje následující funkce:
 
@@ -562,7 +564,7 @@ walkRightAnimation = animations.Find (item => item.Name == "WalkRight");
 ```
 
 
-# <a name="summary"></a>Souhrn
+## <a name="summary"></a>Souhrn
 
 Tento průvodce popisuje podrobnosti implementace mince času. Mince čas je vytvořen jako dokončení hry, avšak je také projekt, který lze snadno upravit a rozšířit. Přidání nové úrovně a vytvoření nové entity, abyste pochopili, jak je implementována mince času se doporučuje tráví čas provedení změny úrovně čtečky.
 

@@ -1,6 +1,6 @@
 ---
 title: Entity v CocosSharp
-description: "Vzor entity je efektivní způsob, jak uspořádat herní kódu. Ho zlepšuje čitelnost, usnadňuje kódu, které chcete zachovat a využívá funkce integrované nadřazený podřízený."
+description: Vzor entity je efektivní způsob, jak uspořádat herní kódu. Ho zlepšuje čitelnost, usnadňuje kódu, které chcete zachovat a využívá funkce integrované nadřazený podřízený.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 1D3261CE-AC96-4296-8A53-A76A42B927A8
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: fe722ce75f0322ab60bb6fd967ff2c498b2e7b20
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: bb4af0f76f6b266cad4eb969d987a346b7396aa9
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="entities-in-cocossharp"></a>Entity v CocosSharp
 
@@ -34,7 +34,7 @@ Dokončení herní bude vypadat takto:
 ![](entities-images/image1.png "Dokončení herní bude vypadat například takto")
 
 
-# <a name="introduction-to-game-entities"></a>Úvod do herní entity
+## <a name="introduction-to-game-entities"></a>Úvod do herní entity
 
 Herní entity jsou třídy, které definují objekty vykreslování, kolizí, fyziky nebo umělé intelligence logiku, která potřebuje. Naštěstí entity, které jsou součástí základu kódu herní často odpovídat koncepční objekty ve hře. Pokud je hodnota true, identifikace entity, které je potřeba v hry lze snadněji provést. 
 
@@ -51,7 +51,7 @@ Například místo motivu [em čistou zálohu herní](http://en.wikipedia.org/wi
 Tyto entity by vlastní třídy ve hře a každá instance by vyžadovaly žádné nebo téměř žádné nastavení nad rámec vytváření instancí.
 
 
-# <a name="general-vs-specific-entity-types"></a>Obecné vs. Typy konkrétní entit
+## <a name="general-vs-specific-entity-types"></a>Obecné oproti typy konkrétní entit
 
 Jedním ze základních otázek herní vývojáře, kteří používají systému entity, jimž je kolik ke generalizaci jejich entity. Většina konkrétní implementace nadefinovat třídy pro každý typ entity, i když se liší podle několik vlastností. Další obecné systémy budou kombinovat skupiny entit do jedné třídy a povolit instance, které chcete přizpůsobit.
 
@@ -84,7 +84,7 @@ Tato obecná většina systémů se často označuje jako *součásti systému*.
 Z důvodu zjednodušení budeme používat konkrétní založené na třídě přístup s jednou entitou lodě a odrážek pro účely tohoto kurzu.
 
 
-# <a name="project-setup"></a>Nastavení projektu
+## <a name="project-setup"></a>Nastavení projektu
 
 Než začneme implementace naše entity, je potřeba vytvořit projekt. Budeme ke zjednodušení vytváření projektu používat šablony projektů CocosSharp. [Zkontrolujte tento příspěvek](http://forums.xamarin.com/discussion/26822/cocossharp-project-templates-for-xamarin-studio) informace o vytvoření projektu CocosSharp ze sady Visual Studio pro Mac šablony. Zbytek tohoto průvodce použije název projektu **EntityProject**.
 
@@ -110,14 +110,14 @@ public override void ApplicationDidFinishLaunching (CCApplication application, C
 Další informace o práci s CocosSharp řešení najdete v tématu naše [příručce na zpracování více řešení v CocosSharp](~/graphics-games/cocossharp/resolutions.md).
 
 
-# <a name="adding-content-to-the-project"></a>Přidávání obsahu do projektu
+## <a name="adding-content-to-the-project"></a>Přidávání obsahu do projektu
 
 Po vytvoření naše projektu přidáme soubory obsažené v [tento soubor zip obsahu](https://github.com/xamarin/mobile-samples/blob/master/BouncingGame/Resources/Entities.zip?raw=true). K tomu, stáhněte si soubor zip a rozbalte ho. Přidejte **ship.png** a **bullet.png** k **obsahu** složky. **Obsahu** uvnitř, bude složka **prostředky** složku v systému Android a bude v kořenovém adresáři projektu v systému iOS. Jakmile přidali, bychom měli vidět oba soubory v **obsahu** složky:
 
 ![](entities-images/image2.png "Po přidání, musí být oba soubory ve složce obsahu")
 
 
-# <a name="creating-the-ship-entity"></a>Vytvoření příjemce Entity
+## <a name="creating-the-ship-entity"></a>Vytvoření příjemce entity
 
 `Ship` Třída bude naše herní první entity. Chcete-li přidat `Ship` třídy, nejprve vytvořte složku s názvem **entity** na kořenové úrovni projektu. Přidejte novou třídu v **entity** složku s názvem `Ship`:
 
@@ -179,16 +179,16 @@ Pokud jsme naše herní zobrazí naše lodě entity:
 ![](entities-images/image4.png "Při spuštění hry, zobrazí se lodě entity")
 
 
-## <a name="why-inherit-from-ccnode-instead-of-ccsprite"></a>Proč dědí CCNode místo CCSprite?
+### <a name="why-inherit-from-ccnode-instead-of-ccsprite"></a>Proč dědí CCNode místo CCSprite?
 
 V tomto okamžiku naše `Ship` třída je jednoduchý obálku pro `CCSprite` instance. Vzhledem k tomu `CCSprite` také dědí z `CCNode`, jsme může mít zděděno přímo z `CCSprite`, který by omezuje, kód v `Ship.cs`. Kromě toho, která dědí přímo z `CCSprite` snižuje počet objektů v paměti a můžete vylepšit výkon tím, že menší strom závislosti.
 
 I přes tyto výhody jsme zděděno z `CCNode` ke skrytí některé `CCSprite` vlastnosti z každé instance. Například `Texture` vlastnosti by neměly být změněna mimo `Ship` třídy a, která dědí z `CCNode` umožňuje skrýt tuto vlastnost. Veřejné členy naše entit stát zvlášť důležité větší s růstem hry a další vývojáři jsou přidány do týmu.
 
 
-# <a name="adding-input-to-the-ship"></a>Přidává se vstup do lodě
+## <a name="adding-input-to-the-ship"></a>Přidává se vstup do lodě
 
-Teď, když je viditelný na obrazovce naše lodě přidáme vstup. Náš přístup bude vypadat podobně jako přístup prováděné v [Úvod k příručce CocosSharp](~/graphics-games/cocossharp/first-game/part2.md)kromě toho, že jsme umístění kód pro přesun `Ship` třída spíše než v obsahující `CCLayer` nebo `CCScene`.
+Teď, když je viditelný na obrazovce naše lodě přidáme vstup. Náš přístup bude vypadat podobně jako přístup použitý [BouncingGame průvodce](~/graphics-games/cocossharp/bouncing-game.md)kromě toho, že jsme umístění kód pro přesun `Ship` třída spíše než v obsahující `CCLayer` nebo `CCScene`.
 
 Přidejte kód, který `Ship` pro podporu ani ji přesunout do všude, kde je uživatel klepnou na obrazovce:
 
@@ -230,7 +230,7 @@ public class Ship : CCNode
 Mnoho čistou em až hry implementace maximální rychlost, mimicking tradiční založené na řadiči pohyb. Ale nutné dodat, budete jednoduše implementaci okamžitou přesun naše kód kratší.
 
 
-# <a name="creating-the-bullet-entity"></a>Vytváření odrážka Entity
+## <a name="creating-the-bullet-entity"></a>Vytváření odrážka entity
 
 Druhý entity v našem jednoduchá hra je entita pro zobrazení odrážek. Stejně jako `Ship` entity, `Bullet` bude obsahovat entity `CCSprite` tak, aby se na obrazovce. Logika pro přesun se liší v tom, že není závislý na vstupu uživatele pro přesun; Místo toho `Bullet` instance přesune v přímce pomocí vlastnosti rychlosti.
 
@@ -288,7 +288,7 @@ Kromě zajištění dostatečného změna soubor použitý pro `CCSprite` k `bul
 `Schedule` Metoda umožňuje přidání delegátů k volání každých rámce. V takovém případě je právě přidávána `ApplyVelocity` metoda tak, aby naše odrážka přesune podle jeho hodnoty rychlosti. `Schedule` Metoda trvá `Action<float>`, kde parametr float určuje množství času (v sekundách) od poslední rámce, který používáme k implementaci přesun založené na čase. Od čas se měří hodnota v sekundách, pak naše rychlosti hodnoty představují přesun *pixelů za sekundu*.
 
 
-# <a name="adding-bullets-to-gamelayer"></a>Přidávání do GameLayer odrážek
+## <a name="adding-bullets-to-gamelayer"></a>Přidávání do GameLayer odrážek
 
 Před přidáme některé `Bullet` instance na našem herní budeme kontejner, konkrétně `List<Bullet>`. Upravit `GameLayer` tak, aby zahrnovala seznam odrážek:
 
@@ -422,14 +422,14 @@ Můžete spustit hru a najdete v části teď `Ship` čistá `Bullet` instancí:
 ![](entities-images/image1.png "Spuštění hry a lodě bude čistá odrážka instancí")
 
 
-# <a name="why-gamelayer-has-ship-and-bullets-members"></a>Proč GameLayer má členy lodě a odrážek
+## <a name="why-gamelayer-has-ship-and-bullets-members"></a>Proč GameLayer má členy lodě a odrážek
 
 Naše `GameLayer` třída definuje dvě pole k udržení odkazů na našem instancí entit (`ship` a `bullets`), ale neprovede žádnou akci s nimi. Kromě toho jsou zodpovědní za vlastní chování, například přesun a čistá entity. Proto proč přidáme `ship` a `bullets` polí k `GameLayer`?
 
 Z důvodu jsme přidali tito členové totiž úplné herní implementace by vyžadovaly logiky `GameLayer` pro interakci mezi různými entitami. Například tato hra mohou vyvíjet zahrnout nepřátel, které může být zničený přehrávače. Tyto nepřátel by být obsažená v `List` v `GameLayer`, logiky k testování a zda `Bullet` instancí v konfliktu s nepřátel by se provedla v `GameLayer` také. Jinými slovy `GameLayer` je kořenový adresář *vlastníka* všechny entity instance a je zodpovědná za interakce mezi instancí entit.
 
 
-# <a name="bullet-destruction-considerations"></a>Důležité informace o odstraňování odrážka
+## <a name="bullet-destruction-considerations"></a>Důležité informace o odstraňování odrážka
 
 Naše herní aktuálně chybí kód pro odstraňování `Bullet` instance. Každý `Bullet` instance má logiku pro přesun na obrazovce, ale jsme nepřidali žádný kód žádné mimo obrazovku a zrušení `Bullet` instance.
 
@@ -437,8 +437,7 @@ Kromě toho zničení `Bullet` instancí nemusí patřit v `GameLayer`. Napřík
 
 Nejjednodušší řešením je rozbalte odpovědnost třídy objektu pro vytváření pro podporu odstraňování. Pak objektu pro vytváření oznámení o instanci entity zničen, který může zpracovávat jiné objekty, jako `GameLayer` odebrání entity instance z jeho seznamy. 
 
-
-# <a name="summary"></a>Souhrn
+## <a name="summary"></a>Souhrn
 
 Tato příručka ukazuje, jak vytvořit CocosSharp entity, která dědí z `CCNode` třídy. Tyto entity jsou samostatný objekty, zpracování vytvářet své vlastní vizuály a vlastní logiky. Tato příručka označí kód, který patří do entity (pohyb a vytvoření ostatní entity) z kódu, který je součástí v kořenovém kontejneru entit (kolizí a logiku interakce ostatní entity).
 

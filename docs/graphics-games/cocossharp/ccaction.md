@@ -1,6 +1,6 @@
 ---
 title: Animace s CCAction
-description: "Třída CCAction zjednodušuje přidání animace do CocosSharp hry. Tyto animací lze použít k implementaci funkce nebo vylepšení."
+description: Třída CCAction zjednodušuje přidání animace do CocosSharp hry. Tyto animací lze použít k implementaci funkce nebo vylepšení.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 74DBD02A-6F10-4104-A61B-08CB49B733FB
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: 2852cf0e141e8239cee8dbe580576f4571c919a3
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7e64789f4e86dbcd47fc760fd9d4d7fb61c76121
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="animating-with-ccaction"></a>Animace s CCAction
 
@@ -23,7 +23,7 @@ _Třída CCAction zjednodušuje přidání animace do CocosSharp hry. Tyto anima
 Tato příručka používá projekt s názvem **ActionProject** který [Zde si můžete stáhnout](https://developer.xamarin.com/samples/mobile/CCAction). Tato příručka používá `CCDrawNode` třídy, která je popsaná v [geometrie kreslení pomocí CCDrawNode](~/graphics-games/cocossharp/ccdrawnode.md) průvodce.
 
 
-# <a name="running-the-actionproject"></a>Spuštění ActionProject
+## <a name="running-the-actionproject"></a>Spuštění ActionProject
 
 **ActionProject** je CocosSharp řešení, které se dají vytvářet pro iOS a Android. Funguje i jako ukázka kódu pro použití `CCAction` třídy a jako v reálném čase ukázku běžné `CCAction` implementace.
 
@@ -39,8 +39,7 @@ Kliknutím na popisky na levé straně změny typu `CCAction` provádí na kruhu
 
 ![](ccaction-images/image3.gif "Kliknutím na popisek pozice cyklovat mezi různé hodnoty, které mohou být změněny")
 
-
-# <a name="common-variable-changing-ccactions"></a>Běžné CCActions změna proměnné 
+## <a name="common-variable-changing-ccaction-classes"></a>Společné třídy CCAction změna proměnné
 
 **ActionProject** používá následující `CCAction`-dědění třídy, které jsou součástí CocosSharp:
 
@@ -94,13 +93,13 @@ Každý typ uvedené výše zakončení slovem *k* to znamená `CCAction` uprav�
 Každý "Na" Třída také má verzi "Službou", které bude přidat hodnota argumentu aktuální hodnota na `CCNode`. Například vytváření `CCMoveBy` s pozice X = 100 a Y = 200 způsobí `CCNode` instance přesouvání jednotky vpravo 100 až 200 jednotky od pozice bylo na po spuštění akce.
 
 
-# <a name="easing-actions"></a>Usnadnění akce
+## <a name="easing-actions"></a>Usnadnění akce
 
 Ve výchozím nastavení, změna proměnné akce provede *lineární interpolace* – akce přesune směrem požadovanou hodnotu konstantní rychlostí. Pokud interpolace *pozice* lineárně, přesunutí objektu bude okamžitě spustit a zastavit Přesun na začátku a konci akce a jeho rychlost zůstanou konstantní jako akci provádí. 
 
 Bez lineární interpolace méně jarring a přidá element polština, takže CocosSharp nabízí celou řadu zmírnit akce, které se dají použít k úpravě změna proměnné akce.
 
-V **ActionProject** ukázce jsme můžete přepínat mezi tyto typy akcí nejvýraznější kliknutím na druhý popisek (což výchozí nastavení  **<None>** ):
+V **ActionProject** ukázce jsme můžete přepínat mezi tyto typy akcí nejvýraznější kliknutím na druhý popisek (což výchozí nastavení **<None>**):
 
 ![](ccaction-images/image4.gif "Může uživatel přepínat mezi tyto typy akcí nejvýraznější kliknutím na druhý popisek")
 
@@ -128,35 +127,35 @@ Jak je znázorněno v aplikaci, přesně stejnou zmírnit lze použít pro dalš
 ![](ccaction-images/image5.gif "Přesně stejnou zmírnit lze použít na jiných nastavení proměnné akce, jako je například CCRotateTo")
 
 
-# <a name="easing-in-out-and-inout"></a>Usnadnění In, Out a InOut
+## <a name="easing-in-out-and-inout"></a>Usnadnění In, Out a InOut
 
 Mají všechny nejvýraznější akce `In`, `Out`, nebo `InOut` připojenou k nejvýraznější typu. Tyto termíny označují při použití usnadnění: `In` znamená zmírnit, se použijí na začátku, `Out` znamená na konci, a `InOut` znamená jak na začátek a konec.
 
 `In` Zmírnit akce bude mít vliv na způsob použití proměnné v rámci celého interpolace, (i na začátku a konci), ale obvykle nejvíce rozpoznatelném charakteristiky nejvýraznější akce bude probíhat na začátku. Podobně `Out` nejvýraznější akce jsou charakteristické jejich chování na konci interpolace. Například `CCEaseBounceOut` bude mít za následek objekt skákání na konci akce.
 
 
-## <a name="out"></a>Out
+### <a name="out"></a>Out
 
 `Out` usnadnění obecně platí nejvíce patrné změny na konci interpolace. Například `CCEaseExponentialOut` zpomalí změna změna proměnné, jak se blíží hodnota cíle:
 
 ![](ccaction-images/image6.gif "CCEaseExponentialOut zpomalí změna změna proměnné, jak se blíží hodnota cíle")
 
 
-## <a name="in"></a>V
+### <a name="in"></a>V
 
 `In` usnadnění obecně použije nejvíce patrné změnu na začátku interpolace. Například `CCEaseExponentialIn` pomaleji přesune na začátku akce:
 
 ![](ccaction-images/image7.gif "CCEaseExponentialIn pomaleji přesune na začátku akce")
 
 
-## <a name="inout"></a>InOut
+### <a name="inout"></a>InOut
 
 `InOut` Obecně platí změny nejvíce patrné jak na začátek a konec. `InOut` usnadnění je obvykle symetrický. Například `CCEaseExponentialInOut` pomalu přesune na začátku a konci akce:
 
 ![](ccaction-images/image8.gif "CCEaseExponentialInOut pomalu přesune na začátku a konci akce")
 
 
-# <a name="implementing-a-custom-ccaction"></a>Implementace vlastních CCAction
+## <a name="implementing-a-custom-ccaction"></a>Implementace vlastních CCAction
 
 Všechny třídy, které jsme probrali, pokud jsou součástí CocosSharp poskytuje běžné funkce. Vlastní `CCAction` implementace můžete poskytovat větší flexibilita. Například `CCAction` který určuje vyplněný poměr zobrazí panel prostředí je možné, aby panelu prostředí zvětší bez problémů vždy, když uživatel mírou prostředí.
 
@@ -226,7 +225,7 @@ LineWidthAction je možné kombinovat s žádnou nejvýraznější akci, chcete-
 ![](ccaction-images/image9.gif "LineWidthAction je možné kombinovat s žádnou nejvýraznější akci, chcete-li změnit šířku čáry různými způsoby, jak je znázorněno v této animace")
 
 
-## <a name="interpolation-and-the-update-method"></a>Interpolace a aktualizační metody
+### <a name="interpolation-and-the-update-method"></a>Interpolace a aktualizační metody
 
 Pouze logiku, kromě zajištění dostatečného ukládání hodnot v třídách výše, je umístěn v `LineWidthState.Update` metoda. `startWidth` Proměnná ukládá šířku cíle `LineNode` při zahájení akce a `deltaWidth` proměnná ukládá, kolik hodnota se změní v průběhu akce.
 
@@ -247,7 +246,7 @@ castedTarget.Width = startWidth + deltaWidth * 1;
 `time` Hodnota se obvykle být mezi 0 a 1 – ale ne vždy - a `Update` implementace by neměl předpokládají tyto hranice. Některé metody nejvýraznější (například `CCEaseBackIn` a `CCEaseBackOut`) bude poskytovat hodnotu čas mimo rozsah od 0 do 1.
 
 
-# <a name="conclusion"></a>Závěr
+## <a name="conclusion"></a>Závěr
 
 Interpolace a zmírnit jsou důležitou součástí vytvoření dokonalý hry, zejména při vytváření uživatelského rozhraní. Tento průvodce popisuje, jak používat `CCActions` promítnout standardních hodnot, jako je například pozici a oběh i vlastní hodnoty. `LineWidthState` a `LineWidthAction` třídy ukazují, jak implementovat vlastní akce.
 

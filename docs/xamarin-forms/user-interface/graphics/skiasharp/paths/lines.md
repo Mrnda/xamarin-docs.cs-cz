@@ -1,6 +1,6 @@
 ---
-title: "Řádky a tahu CAP k vzdálené ploše"
-description: "Další informace o použití SkiaSharp kreslení čar pomocí různých tahu CAP k vzdálené ploše"
+title: Řádky a tahu CAP k vzdálené ploše
+description: Další informace o použití SkiaSharp kreslení čar pomocí různých tahu CAP k vzdálené ploše
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 1F854DDD-5D1B-4DE4-BD2D-584439429FDB
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 341d850709ff27f4dc397cee3bb2fc5f73c0ec3c
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 96b8a990f4644d5e4c9c8ffe6cdb6c173c50657c
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="lines-and-stroke-caps"></a>Řádky a tahu CAP k vzdálené ploše
 
@@ -36,7 +36,7 @@ Je volána vzhled spuštění a ukončení čar *zakončení čáry* nebo v Skia
 - [`Square`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeCap.Round/)
 - [`Round`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeCap.Round/)
 
-Tyto jsou zobrazené nejlépe s ukázka programu. Druhá část domovské stránce [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/) program začíná na stránce s názvem **tahu CAP k vzdálené ploše** na základě [ `StrokeCapsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/StrokeCapsPage.cs) třídy. Tuto stránku definuje `PaintSurface` obslužné rutiny události, který prochází tři členy `SKStrokeCap` výčtu, zobrazovat název člena výčtu a kreslení pomocí cap tahu řádek:
+Tyto jsou zobrazené nejlépe s ukázka programu. Druhá část domovské stránce [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) program začíná na stránce s názvem **tahu CAP k vzdálené ploše** na základě [ `StrokeCapsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/StrokeCapsPage.cs) třídy. Tuto stránku definuje `PaintSurface` obslužné rutiny události, který prochází tři členy `SKStrokeCap` výčtu, zobrazovat název člena výčtu a kreslení pomocí cap tahu řádek:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -244,4 +244,4 @@ Zda jsou řádky připojen nebo nebude připojený je velmi důležitý aspekt p
 ## <a name="related-links"></a>Související odkazy
 
 - [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)
+- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

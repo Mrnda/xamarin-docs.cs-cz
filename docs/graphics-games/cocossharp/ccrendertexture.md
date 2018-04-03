@@ -1,17 +1,17 @@
 ---
-title: "Výkon a vizuální efekty s CCRenderTexture"
-description: "CCRenderTexture vývojářům umožňuje zvýšit výkon jejich CocosSharp hry snížením kreslení volání a slouží k vytváření vizuálních efektů. Tato příručka doprovází ukázka CCRenderTexture zajistit praktických příklad toho, jak efektivně používat tuto třídu."
+title: Výkon a vizuální efekty s CCRenderTexture
+description: CCRenderTexture vývojářům umožňuje zvýšit výkon jejich CocosSharp hry snížením kreslení volání a slouží k vytváření vizuálních efektů. Tato příručka doprovází ukázka CCRenderTexture zajistit praktických příklad toho, jak efektivně používat tuto třídu.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: F02147C2-754B-4FB4-8BE0-8261F1C5F574
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
-ms.openlocfilehash: 8283c299d0e6529ef4cf8c285ec47b4d42fc682a
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 36661344fc0f4b9e132e3f721c50f82f3a8db057
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="performance-and-visual-effects-with-ccrendertexture"></a>Výkon a vizuální efekty s CCRenderTexture
 
@@ -24,7 +24,7 @@ Tato příručka prozkoumá postup použití `CCRenderTexture` objekt, který ch
 ![](ccrendertexture-images/image1.png "Tato příručka odkazuje CCRenderTexture ukázkový projekt")
 
 
-# <a name="card--a-typical-entity"></a>Karta – typické Entity
+## <a name="card--a-typical-entity"></a>Karta – typické entity
 
 Před hledáním na tom, jak používat `CCRenderTexture` objektu, nejprve jsme budete Seznamte označována s `Card` entity, který Pokud chcete prozkoumat použijeme v rámci tohoto projektu `CCRenderTexture` – třída. `Card` Třída je typické entity, vzoru entity uvedených v následující [Entity průvodce](~/graphics-games/cocossharp/entities.md). Karta třída má všechny jeho součásti visual (instance `CCSprite` a `CCLabel`) uveden jako pole:
 
@@ -65,7 +65,7 @@ Ukázka je zakódovaný vystavit dva problémy, které může dojít, když se v
 - Některé vizuální efekty, jako je například transparentnosti, nelze implementovat přesně, jak se podíváme na novější
 
 
-## <a name="card-draw-calls"></a>Karta kreslení volání
+### <a name="card-draw-calls"></a>Karta kreslení volání
 
 Naše kód je zjednodušení co může nacházet ve úplnou *shromážditelného hru* (CCG) jako je například "The shromažďování: Magic" nebo "Hearthstone". Naše herní pouze zobrazuje tři karty najednou a má malý počet možných jednotky (modrá, zelená a oranžová). Naopak úplné hru může na obrazovce mají více než 20 karty v daném okamžiku a přehrávače může mít stovky karty lze vybírat při vytváření svých balíčky. I když naše herní nezpůsobuje žádné aktuálně problémy s výkonem, může být úplné hry s podobné implementace.
 
@@ -76,7 +76,7 @@ CocosSharp poskytuje určitý pohled na vykreslování výkonu vystavení volán
 Všimněte si, že bez ohledu na obrazovce s tří karet, se musí devatenáct volání kreslení (Kreslení každý karty má za následek šest volání, textu zobrazení účty informace o výkonu pro další). Kreslení volání mají významný dopad na výkon hra, takže CocosSharp poskytuje několik způsobů, jak je snížit. Jednoho technika je podrobněji popsaná [CCSpriteSheet průvodce](~/graphics-games/cocossharp/ccspritesheet.md). Jiné technik je použít `CCRenderTexture` ke snížení každé entity do jednoho volání, jako podíváme v této příručce.
 
 
-## <a name="card-transparency"></a>Karta průhlednosti
+### <a name="card-transparency"></a>Karta průhlednosti
 
 Naše `Card` zahrnuje entity `Opacity` vlastnosti do ovládacího prvku průhlednosti, jak je znázorněno v následující fragment kódu:
 
@@ -143,7 +143,7 @@ Pomoc při vizualizovat, proč k tomu dojde, musíme mějte na paměti, že je j
 Použití `CCRenderTexture` umožňuje, aby celá karta transparentní bez dopadu na vykreslování jednotlivých součástí v rámci karty, protože jsme se zobrazí v této příručce.
 
 
-# <a name="using-ccrendertexture"></a>Pomocí CCRenderTexture
+## <a name="using-ccrendertexture"></a>Pomocí CCRenderTexture
 
 Teď, když jste si myslíme, problémy s jednotlivě vykreslování jednotlivé komponenty, jsme vám zapnout vykreslování na `CCRenderTexture` a porovnání chování.
 
@@ -159,7 +159,7 @@ protected override void AddedToScene ()
 ```
 
 
-## <a name="card-draw-calls"></a>Karta kreslení volání
+### <a name="card-draw-calls"></a>Karta kreslení volání
 
 Pokud jsme teď spustit hru, uvidíme volání kreslení omezený ze devatenáct čtyři (každou kartu omezený ze šest pro jednu):
 
@@ -168,7 +168,7 @@ Pokud jsme teď spustit hru, uvidíme volání kreslení omezený ze devatenáct
 Jak jsme uvedli může tento typ snížení mít významný dopad na hry s další visual entity na obrazovce.
 
 
-## <a name="card-transparency"></a>Karta průhlednosti
+### <a name="card-transparency"></a>Karta průhlednosti
 
 Jednou `useRenderTextures` je nastaven na `true`, jinak vykreslí transparentní karty:
 
@@ -181,7 +181,7 @@ Umožňuje porovnat kartu transparentní robot pomocí textury vykreslení (vlev
 Nejobvyklejší rozdíly jsou podrobnosti text (černé místo světla šedá) a pohyblivý robot symbol (tmavý místo lehký a odbarvený).
 
 
-# <a name="ccrendertexture-details"></a>Podrobnosti o CCRenderTexture
+## <a name="ccrendertexture-details"></a>Podrobnosti o CCRenderTexture
 
 Teď, když jste viděli výhody použití `CCRenderTexture`, Podívejme se na tom, jak se používá v `Card` entity.
 
@@ -256,7 +256,7 @@ private void SwitchToRenderTexture()
 V následujících částech prozkoumat `SwitchToRenderTexture` metoda. 
 
 
-## <a name="ccrendertexture-size"></a>Velikost CCRenderTexture
+### <a name="ccrendertexture-size"></a>Velikost CCRenderTexture
 
 Konstruktor CCRenderTexture vyžaduje dvě sady dimenzí. První řídí velikost `CCRenderTexture` při kreslení a druhý určuje pixelů šířka a výška její obsah. `Card` Vytvoří instanci entity jeho `CCRenderTexture` pomocí na pozadí [ContentSize](https://developer.xamarin.com/api/property/CocosSharp.CCSprite.ContentSize/). Naše herní má `DesignResolution` z 512 podle 384, jak je znázorněno v `ViewController.LoadGame` na iOS a `MainActivity.LoadGame` v systému Android:
 
@@ -293,7 +293,7 @@ renderTexture = new CCRenderTexture(unitResolution, pixelResolution);
 ![](ccrendertexture-images/image9.png "Chcete porovnat, můžete změnit hodnotu pixelResolution tak, aby odpovídala na pozadí. ContentSize bez probíhá se používají a porovnání výsledek")
 
 
-## <a name="rendering-to-a-ccrendertexture"></a>Vykreslování CCRenderTexture
+### <a name="rendering-to-a-ccrendertexture"></a>Vykreslování CCRenderTexture
 
 Vizuální objekty v CocosSharp obvykle se nevykreslí explicitně. Místo toho visual objekty jsou přidány na `CCLayer` který je součástí `CCScene`. CocosSharp automaticky vykreslí `CCScene` a jeho visual hierarchie v každém snímku bez jakékoli vykreslování kódu volána. 
 
@@ -355,7 +355,7 @@ foreach (var component in visualComponents)
 this.AddChild(renderTexture.Sprite);
 ```
 
-# <a name="summary"></a>Souhrn
+## <a name="summary"></a>Souhrn
 
 Tato příručka zahrnutých `CCRenderTexture` pomocí `Card` entity, který může být použit ve hře collectible karty. Je vám ukázal, jak používat `CCRenderTexture` třída zlepšit obnovovací frekvence a správně implementovat průhlednost celou entity.
 

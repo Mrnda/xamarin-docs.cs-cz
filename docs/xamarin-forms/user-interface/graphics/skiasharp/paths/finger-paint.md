@@ -1,6 +1,6 @@
 ---
-title: "Malování prstem"
-description: "Pomocí prstů k vyplnění na plátně."
+title: Malování prstem
+description: Pomocí prstů k vyplnění na plátně.
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
@@ -8,11 +8,11 @@ ms.assetid: 56929D74-8F2C-44C6-90E6-3FBABCDC0A4B
 author: charlespetzold
 ms.author: chape
 ms.date: 04/05/2017
-ms.openlocfilehash: b4213d71c2eca6c2552ac674a0203d7a2cc36e1b
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: dacb9f399ad044d2d5e9c960bce398092766020c
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="finger-painting"></a>Malování prstem
 
@@ -24,7 +24,7 @@ _Pomocí prstů k vyplnění na plátně._
 
 Podpora touch v Xamarin.Forms neumožňuje sledování jednotlivé prsty, které na obrazovce, tak mít nežádoucí vliv touch sledování Xamarin.Forms byla vyvinuta poskytovat podporu dalších touch. Tento efekt je popsána v článku [ **vyvolání události z důsledky**](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md). Ukázka programu [ **Touch sledování účinku ukázky** ](https://developer.xamarin.com/samples/xamarin-forms/Effects/TouchTrackingEffectDemos/) obsahuje dvě stránky, které používají SkiaSharp, včetně finger-painting program.
 
-[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/) řešení zahrnuje tato událost sledování dotykového ovládání. Přenosná knihovna tříd projekt zahrnuje `TouchEffect` třídy, `TouchActionType` výčtu, `TouchActionEventHandler` delegovat a `TouchActionEventArgs` – třída. Všechny projekty platformy zahrnout `TouchEffect` třídy pro platformu; také obsahuje projekt pro iOS `TouchRecognizer` třídy.
+[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) řešení zahrnuje tato událost sledování dotykového ovládání. Přenosná knihovna tříd projekt zahrnuje `TouchEffect` třídy, `TouchActionType` výčtu, `TouchActionEventHandler` delegovat a `TouchActionEventArgs` – třída. Všechny projekty platformy zahrnout `TouchEffect` třídy pro platformu; také obsahuje projekt pro iOS `TouchRecognizer` třídy.
 
 **Malování prstem** stránky v **SkiaSharpFormsDemos** je zjednodušená implementace Malování prstem. Nebudou povolit výběr barvy a obtažení šířka, nemá žádný způsob, jak vymazat na plátno a samozřejmě nelze uložit kresby.
 
@@ -169,6 +169,6 @@ Vaše prstem malby jsou omezena pouze vašemu talentu:
 ## <a name="related-links"></a>Související odkazy
 
 - [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)
+- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 - [Ukázky vliv touch sledování (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/Effects/TouchTrackingEffectDemos/)
 - [Vyvolání událostí z efekty](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)

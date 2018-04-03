@@ -1,127 +1,110 @@
 ---
 title: CocosSharp
+description: Tento dokument obsahuje odkazy na různé články o vývoj her s CocosSharp.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 5E72869D-3541-408B-AB64-D34C777AFB79
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
-ms.openlocfilehash: 5a1e28bc9a8a17b4b06ec45746a6ce60ddd129ad
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.date: 03/29/2018
+ms.openlocfilehash: d61f74aefad09935b957b15ebb0daafb61dab8d5
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="cocossharp"></a>CocosSharp
 
-CocosSharp je snadno použitelný knihovna pro 2D hry s použitím jazyka C# a F #. Je port .NET oblíbených Cocos2D stroje.
+_CocosSharp je knihovna pro vytváření 2D hry s použitím jazyka C# a F #. Je port .NET oblíbených Cocos2D stroje._
 
 ## <a name="introduction-to-cocossharp"></a>Úvod do CocosSharp
 
-###  <a name="developing-cross-platform-2d-games-in-c-and-cocossharp-video"></a>Vývoj napříč platformami 2D hry v C# a CocosSharp Video
+Modul 2D herní CocosSharp poskytuje technologie pro vytváření hry napříč platformami. Úplný seznam podporovaných platforem najdete v článku [CocosSharp wiki na Githubu](https://github.com/mono/CocosSharp/wiki).
+Tyto příručky pomocí jazyka C# pro ukázky kódu, i když CocosSharp je také plně funkční a F #.
 
-Toto praktické video ukazuje, jak vytvořit jednoduché CocosSharp napříč platformami herní.
+Poskytuje základní CocosSharp [MonoGame framework](http://www.monogame.net/), který je sám napříč platformami, hardwaru accelerated rozhraní API poskytuje grafiky, zvuk, herní stavu správy, vstup a obsahu kanálu pro import prostředky.
+CocosSharp je efektivní abstraktní vrstvu vhodný pro 2D hry.
+Větší hry kromě toho může provádět vlastní optimalizace mimo jejich základní knihovny se růstem složitosti hry. Jinými slovy poskytuje CocosSharp směs snadné použití a výkonu, umožňuje vývojářům rychle začít bez omezení herní velikost nebo složitost.
+
+Toto praktické video ukazuje, jak vytvořit jednoduché CocosSharp napříč platformami herní:
 
 > [!Video https://channel9.msdn.com/Shows/Visual-Studio-Toolbox/Developing-Cross-platform-2D-Games-in-C-and-CocosSharp/player]
 
-###  <a name="introduction-to-game-development-with-cocossharpgraphics-gamescocossharpfirst-gameindexmd"></a>[Úvod do vývoje her pomocí CocosSharpu](~/graphics-games/cocossharp/first-game/index.md)
+## <a name="bouncinggamegraphics-gamescocossharpbouncing-gamemd"></a>[BouncingGame](~/graphics-games/cocossharp/bouncing-game.md)
 
-![](images/first-game.png "Jednoduché 2D hry s použitím CocosSharp")
+![BouncingGame](images/bouncing-game.png "BouncingGame")
 
-Tento vícedílné názorný postup ukazuje, jak vytvořit jednoduché 2D hry s použitím CocosSharp. Týká se běžných herní koncepty programování například grafiky, vstup a fyziky.
+Tato příručka popisuje BouncingGame, včetně toho, jak pracovat s herní obsah, různé vizuální prvky sloužící k vytvoření hry, přidání logiky herní a další.
 
+## <a name="fruity-falls-gamegraphics-gamescocossharpfruity-fallsmd"></a>[Herní ovocný spadá](~/graphics-games/cocossharp/fruity-falls.md)
 
+![Snímek obrazovky her ovocný spadá](images/fruity-falls.png "ovocný spadá her – snímek obrazovky")
 
-##  <a name="fruity-falls-game-detailsgraphics-gamescocossharpfruity-fallsmd"></a>[Podrobnosti o hře Fruity Falls](~/graphics-games/cocossharp/fruity-falls.md)
+Tato příručka popisuje hra Fruity spadá pokrývajících běžné CocosSharp a vývoj her koncepty například fyziky, správy obsahu, herní stavu a herní návrhu.  
 
-![](images/fruity-falls.png "Tento průvodce zkontroluje Fruity spadá hry")
+## <a name="coin-time-gamegraphics-gamescocossharpcointimemd"></a>[Herní mince čas](~/graphics-games/cocossharp/cointime.md)
 
-Tento průvodce zkontroluje hra Fruity spadá pokrývajících běžné CocosSharp a vývoj her koncepty například fyziky, správy obsahu, herní stavu a herní návrhu.  
-
-
-
-## <a name="coin-timegraphics-gamescocossharpcointimemd"></a>[Mince čas](~/graphics-games/cocossharp/cointime.md)
-
-![](images/cointime.png "Čas mince je úplné platformer herní pro iOS a Android")
+![Mince herní snímek čas](images/cointime.png "mince čas herní – snímek obrazovky")
 
 Čas mince je úplné platformer herní pro iOS a Android. Cílem hry je pak oslovit dvířek ukončení a snižuje nepřátel a překážek a shromažďovat všechny mincí v úrovní.
 
-
-
 ## <a name="drawing-geometry-with-ccdrawnodegraphics-gamescocossharpccdrawnodemd"></a>[Kreslení geometrie pomocí CCDrawNode](~/graphics-games/cocossharp/ccdrawnode.md)
 
-![](images/ccdrawnode.png "CCDrawNode poskytuje metody pro kreslení primitivní objekty, například řádky, kružnice a trojúhelníčky")
+![Tvary s CCDrawNode](images/ccdrawnode.png "vykreslené s CCDrawNode tvarů")
 
 CCDrawNode poskytuje metody pro kreslení primitivní objekty, například řádky, kružnice a trojúhelníčky.
 
-
-
 ## <a name="animating-with-ccactiongraphics-gamescocossharpccactionmd"></a>[Animace v CCAction](~/graphics-games/cocossharp/ccaction.md)
 
-![](images/ccaction.png "CCAction je základní třída, která slouží k animace CocosSharp objektů")
+![Animace CCAction](images/ccaction.png "A CCAction animace")
 
-`CCAction` je základní třídu, která slouží k animace CocosSharp objektů. Tento průvodce obsahuje integrovanou `CCAction` implementace pro běžné úkoly jako umístění, škálování a otáčení. Vypadá také o tom, jak vytvořit vlastní implementace, která dědí z `CCAction`.
-
-
+`CCAction` je základní třída, která slouží k animace CocosSharp objektů. Tento průvodce obsahuje integrovanou `CCAction` implementace pro běžné úkoly jako umístění, škálování a otáčení. Vypadá také o tom, jak vytvořit vlastní implementace, která dědí z `CCAction`.
 
 ## <a name="using-tiled-with-cocossharpgraphics-gamescocossharptiledmd"></a>[Používání Tiled v CocosSharpu](~/graphics-games/cocossharp/tiled.md)
 
-![](images/tiled.png "Na dlaždicích je efektivní, flexibilní a mapování vyspělá aplikací pro vytvoření dlaždice ortogonální a Izometrické pro hry") rozložen formou dlaždic je efektivní, flexibilní a mapování vyspělá aplikací pro vytvoření dlaždice ortogonální a Izometrické pro hry. CocosSharp poskytuje integraci pro vedle sebe na nativní formát souborů.
+![Úroveň ve hře](images/tiled.png "úroveň ve hře")
 
+Na dlaždicích je efektivní, flexibilní a mapování vyspělá aplikací pro vytvoření dlaždice ortogonální a Izometrické pro hry. CocosSharp poskytuje integraci pro vedle sebe na nativní formát souborů.
 
+## <a name="entities-in-cocossharpgraphics-gamescocossharpentitiesmd"></a>[Entity v CocosSharpu](~/graphics-games/cocossharp/entities.md)
 
-##  <a name="entities-in-cocossharpgraphics-gamescocossharpentitiesmd"></a>[Entity v CocosSharpu](~/graphics-games/cocossharp/entities.md)
-
-![](images/entities.png "Vzor entity je efektivní způsob, jak uspořádat herní kódu")
+![Kosmické lodě z hru](images/entities.png "kosmické lodě z hry")
 
 Vzor entity je efektivní způsob, jak uspořádat herní kódu. Ho zlepšuje čitelnost, usnadňuje kódu, které chcete zachovat a využívá funkce integrované nadřazený podřízený.
 
+## <a name="handling-multiple-resolutions-in-cocossharpgraphics-gamescocossharpresolutionsmd"></a>[Zpracování více řešení v CocosSharp](~/graphics-games/cocossharp/resolutions.md)
 
-
-##  <a name="handling-multiple-resolutions-in-cocossharpgraphics-gamescocossharpresolutionsmd"></a>[Řešení více rozlišení v CocosSharpu](~/graphics-games/cocossharp/resolutions.md)
-
-![](images/resolutions.png "Tato příručka ukazuje, jak pracovat s CocosSharp pro vývoj her, které zobrazí správně v zařízeních různých řešení")
+![Mřížka představující rozlišení obrazovky](images/resolutions.png "mřížka představující rozlišení obrazovky")
 
 Tato příručka ukazuje, jak pracovat s CocosSharp pro vývoj her, které zobrazí správně v zařízeních různých řešení.
 
+## <a name="cocossharp-content-pipelinegraphics-gamescocossharpcontent-pipelineindexmd"></a>[Kanál obsahu CocosSharpu](~/graphics-games/cocossharp/content-pipeline/index.md)
 
-
-##  <a name="cocossharp-content-pipelinegraphics-gamescocossharpcontent-pipelineindexmd"></a>[Kanál obsahu CocosSharpu](~/graphics-games/cocossharp/content-pipeline/index.md)
-
-![](images/content-pipeline.png "Kanály obsahu se často používají v vývoj her k optimalizaci obsahu a formátu")
+![XNB](images/content-pipeline.png "XNB")
 
 Obsahu kanály se často používají v vývoj her pro optimalizaci obsahu a naformátujte ho tak, aby jej můžete načíst na určitém hardwaru nebo s určitým vývoj her pro rozhraní.
 
+## <a name="improving-frame-rate-with-ccspritesheetgraphics-gamescocossharpccspritesheetmd"></a>[Vylepšení obnovovací frekvence s CCSpriteSheet](~/graphics-games/cocossharp/ccspritesheet.md)
 
-
-## <a name="improving-framerate-with-ccspritesheetgraphics-gamescocossharpccspritesheetmd"></a>[Zvyšování počtu snímků pomocí CCSpriteSheetu](~/graphics-games/cocossharp/ccspritesheet.md)
-
-![](images/ccspritesheet.png "CCSpriteSheet poskytuje funkce pro kombinování a používání mnoho souborů bitové kopie v jedné textury")
+![Strom z CCSpriteSheet](images/ccspritesheet.png "stromu z CCSpriteSheet")
 
 `CCSpriteSheet` poskytuje funkce pro kombinování a používání mnoho souborů bitové kopie v jedné texture. Snižuje počet texture zlepšit časů načítání herní a kmitočet snímků.
 
+## <a name="texture-caching-using-cctexturecachegraphics-gamescocossharptexture-cachemd"></a>[Texture CCTextureCache pomocí ukládání do mezipaměti.](~/graphics-games/cocossharp/texture-cache.md)
 
+![Reprezentace jak CocosSharp ukládá do mezipaměti bitové kopie](images/texture-cache.png "reprezentace jak CocosSharp ukládá do mezipaměti bitové kopie")
 
-## <a name="texture-caching-using-cctexturecachegraphics-gamescocossharptexture-cachemd"></a>[Texture ukládání do mezipaměti pomocí CCTextureCache](~/graphics-games/cocossharp/texture-cache.md)
+Na CocosSharp `CCTextureCache` třída poskytuje standardní způsob, jak uspořádat do mezipaměti a uvolnit obsah. 
 
-![](images/texture-cache.png "Třída CCTextureCache na CocosSharp poskytuje standardní způsob, jak uspořádat, mezipaměť a uvolnit obsahu")
+## <a name="2d-math-with-cocossharpgraphics-gamescocossharpmathmd"></a>[2D matematické s CocosSharp](~/graphics-games/cocossharp/math.md)
 
-Třída CCTextureCache na CocosSharp poskytuje standardní způsob, jak uspořádat, mezipaměť a uvolnit obsah. 
-
-
-
-## <a name="2d-math-with-cocossharpgraphics-gamescocossharpmathmd"></a>[2D matematika s CocosSharpem](~/graphics-games/cocossharp/math.md)
-
-![](images/math.png "Tento průvodce popisuje 2D Matematika pro vývoj her")
+![Obrázek se otáčet](images/math.png "bitovou kopii se otočen")
 
 Tento průvodce pokrývá 2D Matematika pro vývoj her. Pomocí CocosSharp ukazují, jak provádět běžné úkoly vývoj her a vysvětluje výpočty za tyto úlohy.
 
-
-
 ## <a name="performance-and-visual-effects-with-ccrendertexturegraphics-gamescocossharpccrendertexturemd"></a>[Výkon a vizuální efekty s CCRenderTexture](~/graphics-games/cocossharp/ccrendertexture.md)
 
-![](images/ccrendertexture.png "Třída CCRenderTexture poskytuje funkce pro vykreslování více objektů CocosSharp do jednoho textury")
+![Pohyblivý symbol z hru](images/ccrendertexture.png "pohyblivý symbol z hry")
 
 `CCRenderTexture` Třída poskytuje funkce pro vykreslování více objektů CocosSharp do jednoho texture. Po vytvoření, `CCRenderTexture` instance lze použít k vykreslení grafiky efektivně a implementovat vizuálních efektů.
-
- 

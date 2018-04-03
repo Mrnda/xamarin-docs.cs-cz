@@ -1,6 +1,6 @@
 ---
-title: "Kreslení geometrie pomocí CCDrawNode"
-description: "CCDrawNode poskytuje metody pro kreslení primitivní objekty, například řádky, kružnice a trojúhelníčky."
+title: Kreslení geometrie pomocí CCDrawNode
+description: CCDrawNode poskytuje metody pro kreslení primitivní objekty, například řádky, kružnice a trojúhelníčky.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 46A3C3CE-74CC-4A3A-AB05-B694AE182ADB
@@ -8,20 +8,20 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: a7b62b131db3fc224ef59bdb9189b96d61129f30
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5a2471981f2e88ff8af9a803ff8f5a99e5b9266f
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="drawing-geometry-with-ccdrawnode"></a>Kreslení geometrie pomocí CCDrawNode
 
-_CCDrawNode poskytuje metody pro kreslení primitivní objekty, například řádky, kružnice a trojúhelníčky._
+_`CCDrawNode` poskytuje metody pro kreslení primitivní objekty, například řádky, kružnice a trojúhelníčky._
 
 `CCDrawNode` Třída v CocosSharp poskytuje několik metod pro kreslení běžné geometrické obrazce. Dědí z `CCNode` třídy a obvykle se přidá `CCLayer` instance. Tento průvodce popisuje, jak používat `CCDrawNode` instance k provedení vlastní vykreslení. Také poskytuje kompletní seznam funkcí dostupných kreslení se snímky obrazovky a příklady kódu.
 
 
-# <a name="creating-a-ccdrawnode"></a>Vytváření CCDrawNode
+## <a name="creating-a-ccdrawnode"></a>Vytváření CCDrawNode
 
 `CCDrawNode` Třídu lze použít k vykreslení geometrické objekty, například kružnice, obdélníky a řádky. Například následující ukázkový kód ukazuje, jak vytvořit `CCDrawNode` instanci, která je v nakreslí `CCLayer` implementace třídy:
 
@@ -52,12 +52,12 @@ Tento kód vytvoří následující kruhu za běhu:
 ![](ccdrawnode-images/image1.png "Tento kód vytvoří tento kruh za běhu")
 
 
-# <a name="draw-method-details"></a>Kreslení podrobnosti o metodě
+## <a name="draw-method-details"></a>Kreslení podrobnosti o metodě
 
 Podívejme se na několik podrobnosti související s vykreslením s `CCDrawNode`:
 
 
-## <a name="draw-methods-positions-are-relative-to-the-ccdrawnode"></a>Kreslení metody pozic jsou vzhledem k CCDrawNode
+### <a name="draw-methods-positions-are-relative-to-the-ccdrawnode"></a>Kreslení metody, které jsou pozice relativně k CCDrawNode
 
 Všechny metody kreslení vyžadují alespoň jeden pozice hodnotu pro vykreslování. Tato hodnota pozice je vzhledem k `CCDrawNode` instance. To znamená, že `CCDrawNode` sám má pozice a všechny kreslení volání na `CCDrawNode` také trvat jednu nebo více hodnot pozice. Chcete-li pochopit, jak tyto hodnoty sloučit, podíváme se na několik příkladů.
 
@@ -94,7 +94,7 @@ Po zavolání metody kreslení, vykresleného objekt nelze upravit, pokud `CCDra
 Objekty, které jsou vykreslovány pomocí `CCNodes` jsou také vliv `CCNode` instance `Rotation` a `Scale` vlastnosti.
 
 
-## <a name="draw-methods-do-not-need-to-be-called-every-frame"></a>Kreslení metody nemusí být volána každých rámce
+### <a name="draw-methods-do-not-need-to-be-called-every-frame"></a>Kreslení metody nemusí být volána každý snímek
 
 Zakreslit potřeba metody lze volat pouze jednou k vytvoření trvalého visual. V příkladu výše, volání `DrawCircle` v konstruktoru `GameLayer` – `DrawCircle` nemusí být volána každých rámce znovu kreslení kruhu, když se aktualizuje na obrazovce.
 
@@ -103,7 +103,7 @@ To se liší od metody kreslení v MonoGame, což obvykle vykreslí něco na obr
 Pokud jsou volány kreslení metody každý snímek pak objekty budou se hromadit nakonec uvnitř volání `CCDrawNode` instance, výsledkem pokles v kmitočet snímků, jako jsou vykreslovány další objekty.
 
 
-## <a name="each-ccdrawnode-supports-multiple-draw-calls"></a>Každý CCDrawNode podporuje více volání kreslení
+### <a name="each-ccdrawnode-supports-multiple-draw-calls"></a>Každý CCDrawNode podporuje více volání kreslení
 
 `CCDrawNode` instance slouží k vykreslení více tvarů. To umožňuje komplexní vizuální objekty na být uzavřeny v jednoho objektu. Například následující kód slouží k vykreslení více kroužky s jedním `CCDrawNode`:
 
@@ -123,25 +123,25 @@ Výsledkem je na následujícím obrázku:
 ![](ccdrawnode-images/image2.png "Výsledkem této grafiky")
 
 
-# <a name="draw-call-examples"></a>Kreslení příklady volání
+## <a name="draw-call-examples"></a>Kreslení příklady volání
 
 Následující volání kreslení jsou k dispozici v `CCDrawNode`:
 
-- [DrawCatmullRom](#DrawCatmullRom)
-- [DrawCircle](#DrawCircle)
-- [DrawCubicBezier](#DrawCubicBezier)
-- [DrawEllipse](#DrawEllipse)
-- [DrawLineList](#DrawLineList)
-- [DrawPolygon](#DrawPolygon)
-- [DrawQuadBezier](#DrawQuadBezier)
-- [DrawRect](#DrawRect)
-- [DrawSegment](#DrawSegment)
-- [DrawSolidArc](#DrawSolidArc)
-- [DrawSolidCircle](#DrawSolidCircle)
-- [DrawTriangleList](#DrawTriangleList)
+- [`DrawCatmullRom`](#drawcatmullrom)
+- [`DrawCircle`](#drawcircle)
+- [`DrawCubicBezier`](#drawcubicbezier)
+- [`DrawEllipse`](#drawellipse)
+- [`DrawLineList`](#drawlinelist)
+- [`DrawPolygon`](#drawpolygon)
+- [`DrawQuadBezier`](#drawquadbezier)
+- [`DrawRect`](#drawrect)
+- [`DrawSegment`](#drawsegment)
+- [`DrawSolidArc`](#drawsolidarc)
+- [`DrawSolidCircle`](#drawsolidcircle)
+- [`DrawTriangleList`](#drawtrianglelist)
 
 
-## <a name="drawcardinalspline"></a>DrawCardinalSpline
+### <a name="drawcardinalspline"></a>DrawCardinalSpline
 
 `DrawCardinalSpline` vytvoří křivka prostřednictvím proměnné počet bodů. 
 
@@ -171,7 +171,7 @@ drawNode.DrawCardinalSpline (
 ![](ccdrawnode-images/image3.png "Parametr segmenty řídí, kolik segmentuje sloužící k vykreslení křivky")
 
 
-## <a name="drawcatmullrom"></a>DrawCatmullRom
+### <a name="drawcatmullrom"></a>DrawCatmullRom
 
 `DrawCatmullRom` vytvoří křivka prostřednictvím proměnné počet bodů, podobně jako `DrawCardinalLine`. Tato metoda nezahrnuje pnutí parametr.
 
@@ -192,7 +192,7 @@ drawNode.DrawCatmullRom (
 ![](ccdrawnode-images/image4.png "DrawCatmullRom vytvoří křivka prostřednictvím proměnné počet bodů, podobně jako DrawCardinalLine")
 
 
-## <a name="drawcircle"></a>DrawCircle
+### <a name="drawcircle"></a>DrawCircle
 
 `DrawCircle` Vytvoří hraniční kruhu systému daného `radius`.
 
@@ -208,7 +208,7 @@ drawNode.DrawCircle (
 ![](ccdrawnode-images/image5.png "DrawCircle vytvoří hraniční kruhu daného úhlu")
 
 
-## <a name="drawcubicbezier"></a>DrawCubicBezier
+### <a name="drawcubicbezier"></a>DrawCubicBezier
 
 `DrawCubicBezier` Nakreslí zakřivenou mezi dva body, pomocí kontrolních bodů nastavení cesty mezi dva body.
 
@@ -228,7 +228,7 @@ drawNode.DrawCubicBezier (
  ![](ccdrawnode-images/image6.png "DrawCubicBezier nakreslí křivka mezi dva body.")
 
 
-## <a name="drawellipse"></a>DrawEllipse
+### <a name="drawellipse"></a>DrawEllipse
 
 `DrawEllipse` Vytvoří obrys *elipsy*, což se často označuje jako oval (i když nejsou dva geometricky identické). Určeny obrazec se třemi tečkami `CCRect` instance.
 
@@ -245,7 +245,7 @@ drawNode.DrawEllipse (
 ![](ccdrawnode-images/image8.png "DrawEllipse vytvoří obrys elipsy, který se často označuje jako oval")
 
 
-## <a name="drawline"></a>DrawLine
+### <a name="drawline"></a>DrawLine
 
 `DrawLine` připojí se ke body řádku dané šířky. Tato metoda je podobná `DrawSegment`, s výjimkou vytvoří ploché koncových bodů a zaokrouhlí koncové body.
 
@@ -263,7 +263,7 @@ drawNode.DrawLine (
 ![](ccdrawnode-images/image9.png "DrawLine připojí k body řádku dané šířky")
 
 
-## <a name="drawlinelist"></a>DrawLineList
+### <a name="drawlinelist"></a>DrawLineList
 
 `DrawLineList` vytvoří více řádků připojením každý pár bodů určených `CCV3F_C4B` pole. `CCV3F_C4B` Struktura obsahuje hodnoty pro pozici a barvu. `verts` Parametru by měla vždycky obsahovat sudý počet bodů, jako je každý řádek definované dva body.
 
@@ -288,7 +288,7 @@ drawNode.DrawLineList (verts);
 
 
 
-## <a name="drawpolygon"></a>DrawPolygon
+### <a name="drawpolygon"></a>DrawPolygon
 
 `DrawPolygon` Vytvoří mnohoúhelníku vyplněné s tou druhou je proměnné šířky a barvy.
 
@@ -315,7 +315,7 @@ drawNode.DrawPolygon (verts,
 ![](ccdrawnode-images/image11.png "DrawPolygon vytvoří mnohoúhelníku vyplněné s tou druhou je proměnné šířky a barvy")
 
 
-## <a name="drawquadbezier"></a>DrawQuadBezier
+### <a name="drawquadbezier"></a>DrawQuadBezier
 
 `DrawQuadBezier` dva body se připojí pomocí řádku. Se chová podobně jako `DrawCubicBezier` , ale podporuje pouze jeden řídicí bod.
 
@@ -335,7 +335,7 @@ drawNode.DrawQuadBezier (
 ![](ccdrawnode-images/image12.png "DrawQuadBezier připojí řádek dva body.")
 
 
-## <a name="drawrect"></a>DrawRect
+### <a name="drawrect"></a>DrawRect
 
 `DrawRect` Vytvoří obdélník vyplněné s tou druhou je proměnné šířky a barvy.
 
@@ -354,7 +354,7 @@ drawNode.DrawRect(shape,
 ![](ccdrawnode-images/image13.png "DrawRect vytvoří obdélník vyplněné s tou druhou je proměnné šířky a barvy")
 
 
-## <a name="drawsegment"></a>DrawSegment
+### <a name="drawsegment"></a>DrawSegment
 
 `DrawSegment` dva body se připojí pomocí řádku proměnné šířky a barvy. Je podobná `DrawLine`, s výjimkou vytvoří zaokrouhlí koncových bodů, nikoli ploché koncové body.
 
@@ -371,7 +371,7 @@ drawNode.DrawSegment (from: new CCPoint (0, 0),
 ![](ccdrawnode-images/image14.png "DrawSegment připojí dva body řádku proměnné šířky a barvy")
 
 
-## <a name="drawsolidarc"></a>DrawSolidArc
+### <a name="drawsolidarc"></a>DrawSolidArc
 
 `DrawSolidArc` Vytvoří wedge vyplněné dané barvy a protokolu radius.
 
@@ -390,7 +390,7 @@ drawNode.DrawSolidArc(
 ![](ccdrawnode-images/image15.png "DrawSolidArc vytvoří wedge vyplněné dané barvy a protokolu radius")
 
 
-## <a name="drawsolidcircle"></a>DrawSolidCircle
+### <a name="drawsolidcircle"></a>DrawSolidCircle
 
 `DrawCircle` Vytvoří kruh vyplněné daného úhlu.
 
@@ -407,7 +407,7 @@ drawNode.DrawSolidCircle(
 ![](ccdrawnode-images/image16.png "DrawCircle vytvoří kruh vyplněné daného úhlu")
 
 
-## <a name="drawtrianglelist"></a>DrawTriangleList
+### <a name="drawtrianglelist"></a>DrawTriangleList
 
 `DrawTriangleList` Vytvoří seznam trojúhelníčky. Každý trojúhelníček je definována tři `CCV3F_C4B` instancí v matici. Počet vrcholy v poli předaných `verts` parametr musí být násobkem tři. Všimněte si, že pouze informace obsažené v `CCV3F_C4B` je pozice verts a jejich barva – `DrawTriangleList` metoda nepodporuje kreslení trojúhelníčky s textury.
 
@@ -432,7 +432,7 @@ drawNode.DrawTriangleList (verts);
 ![](ccdrawnode-images/image17.png "Vytvoří seznam trojúhelníčky DrawTriangleList")
 
 
-# <a name="summary"></a>Souhrn
+## <a name="summary"></a>Souhrn
 
 Tato příručka vysvětluje, jak vytvořit `CCDrawNode` a provádět na základě primitivní vykreslování. Poskytuje příklad jednotlivých volání kreslení.
 

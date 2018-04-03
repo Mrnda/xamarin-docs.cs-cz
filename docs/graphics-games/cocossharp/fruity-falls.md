@@ -1,6 +1,6 @@
 ---
-title: "Ovocný spadá her podrobnosti"
-description: "Tento průvodce zkontroluje hra Fruity spadá pokrývajících běžné CocosSharp a vývoj her koncepty například fyziky, správy obsahu, herní stavu a herní návrhu."
+title: Herní podrobnosti ovocný spadá
+description: Tento průvodce zkontroluje hra Fruity spadá pokrývajících běžné CocosSharp a vývoj her koncepty například fyziky, správy obsahu, herní stavu a herní návrhu.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: A5664930-F9F0-4A08-965D-26EF266FED24
@@ -8,13 +8,13 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: 307fdec697f2b94ddfdfe0c380e02fd69e197132
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: d37b289249e5c9e2c23b45c998d1e24960637ba6
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/03/2018
 ---
-# <a name="fruity-falls-game-details"></a>Ovocný spadá her podrobnosti
+# <a name="fruity-falls-game-details"></a>Herní podrobnosti ovocný spadá
 
 _Tento průvodce zkontroluje hra Fruity spadá pokrývajících běžné CocosSharp a vývoj her koncepty například fyziky, správy obsahu, herní stavu a herní návrhu._
 
@@ -22,7 +22,7 @@ Ovocný spadá je jednoduché, na základě fyziky hra, ve kterém přehrávač 
 
 ![](fruity-falls-images/image1.png "Cílem hry je získat tolik bodů bez upozornění pokles výsledek do nesprávného bin ukončení hry")
 
-Ovocný spadá rozšiřuje koncepty představené v [BouncingGame průvodce](~/graphics-games/cocossharp/first-game/index.md) přidáním následující:
+Ovocný spadá rozšiřuje koncepty představené v [BouncingGame průvodce](~/graphics-games/cocossharp/bouncing-game.md) přidáním následující:
 
  - Obsah ve formátu PNG
  - Pokročilé fyziky
@@ -32,20 +32,20 @@ Ovocný spadá rozšiřuje koncepty představené v [BouncingGame průvodce](~/g
  - Kód organizace pomocí herní entity
  - Herní zaměřuje na fun a opětovného přehrání hodnotou
 
-Při BouncingGame zaměřuje na základní koncepty CocosSharp představení, Fruity spadá ukazuje, jak a převeďte ho do všech společně do dokončení herní produktu. Vzhledem k tomu, že tato příručka odkazuje BouncingGame, čteček by se měli nejdřív seznámit [BouncingGame průvodce](~/graphics-games/cocossharp/first-game/index.md) před přečtení tohoto průvodce.
+Když [BouncingGame průvodce](~/graphics-games/cocossharp/bouncing-game.md) zaměřuje na základní koncepty CocosSharp představení, Fruity spadá ukazuje, jak a převeďte ho do všech společně do dokončení herní produktu. Vzhledem k tomu, že tato příručka odkazuje BouncingGame, čteček by se měli nejdřív seznámit [BouncingGame průvodce](~/graphics-games/cocossharp/bouncing-game.md) před přečtení tohoto průvodce.
 
 Tento průvodce pokrývá implementaci a návrhu Fruity spadá do nabízejí přehled, který vám pomůže provádět vlastní herní. Pokrývá v následujících tématech:
 
 
-- [Herní – třída](#GameController_Class)
-- [Herní entity](#Game_Entities)
-- [Výsledek grafiky](#Fruit_Graphics)
-- [Fyziky](#Physics)
-- [Herní obsah](#Game_Content)
-- [GameCoefficients](#GameCoefficients)
+- [Herní – třída](#gamecontroller-class)
+- [Herní entity](#game-entities)
+- [Výsledek grafiky](#fruit-graphics)
+- [Fyziky](#physics)
+- [Herní obsah](#game-content)
+- [GameCoefficients](#gamecoefficients)
 
 
-# <a name="gamecontroller-class"></a>Herní – třída
+## <a name="gamecontroller-class"></a>Herní – třída
 
 Tento projekt ovocný spadá PCL zahrnuje `GameController` třída, která je odpovědná za vytváření instancí hry a přesun mezi scény. Tato třída se používá k iOS a Android projekty k vyloučení duplicitní kódu.
 
@@ -79,7 +79,7 @@ GameView.DesignResolution = new CCSizeI (width, height);
 Nakonec `GameController` třída poskytuje statickou metodu, která lze volat žádné `CCGameScene` pro přechod na jiný `CCScene`. Tato metoda se používá k přesunu mezi `TitleScene` a `GameScene`.
 
 
-# <a name="game-entities"></a>Herní entity
+## <a name="game-entities"></a>Herní entity
 
 Ovocný spadá využívá vzor entity pro většinu herní objektů. Podrobné vysvětlení tohoto vzoru lze nalézt v [Průvodce entity v CocosSharp](~/graphics-games/cocossharp/entities.md).
 
@@ -107,7 +107,7 @@ public Fruit ()
 ```
 
 
-## <a name="fruit-graphics"></a>Výsledek grafiky
+### <a name="fruit-graphics"></a>Výsledek grafiky
 
 `CreateFruitGraphic` Metoda vytvoří `CCSprite` instance a přidává ji k `Fruit`. `IsAntialiased` Je nastavena na hodnotu false umožnit hra pixelován vzhled. Tato hodnota nastavena na hodnotu false na všech `CCSprite` a `CCLabel` instance hodnota hry:
 
@@ -179,7 +179,7 @@ První příkaz if v `UpdateGraphics` aktualizuje ladění grafiky, které se po
 ![](fruity-falls-images/image4.png "Barva extraPointsLabel objektů je upravena zachovat kontrast výsledek Image a jeho PositionY hodnota je upravena na střed CCLabel na plodů CCSprite")
 
 
-## <a name="collision"></a>Kolizí
+### <a name="collision"></a>Kolizí
 
 Ovocný spadá implementuje pomocí objekty ve složce geometrie vlastní kolizí řešení:
 
@@ -218,17 +218,17 @@ private void CreateCollision()
 }
 ```
 
-Je zahrnuté logiky kolizí [dál v této příručce](#Collision).
+Je zahrnuté logiky kolizí [dál v této příručce](#collision).
 
 
-# <a name="physics"></a>Fyziky
+## <a name="physics"></a>Fyziky
 
 Je možné oddělit fyziky v Fruity spadá do dvou kategorií: pohyb a kolizí. 
 
 
-## <a name="movement-using-velocity-and-acceleration"></a>Přesun pomocí rychlost a akcelerace
+### <a name="movement-using-velocity-and-acceleration"></a>Přesun pomocí rychlost a akcelerace
 
-Používá ovocný spadá `Velocity` a `Acceleration` hodnoty k ovládání jeho entit, podobně jako [BouncingGame](~/graphics-games/cocossharp/first-game/index.md). Entity implementovat logiku jejich přesun metodu s názvem `Activity`, která je vyvolána jednou za snímek. Například uvidíme implementace přesun `Fruit` třída `Activity` metoda:
+Používá ovocný spadá `Velocity` a `Acceleration` hodnoty k ovládání jeho entit, podobně jako [BouncingGame](~/graphics-games/cocossharp/bouncing-game.md). Entity implementovat logiku jejich přesun metodu s názvem `Activity`, která je vyvolána jednou za snímek. Například uvidíme implementace přesun `Fruit` třída `Activity` metoda:
 
 ```csharp
 public void Activity(float frameTimeInSeconds)
@@ -274,7 +274,7 @@ public void HandleInput(CCPoint touchPoint)
 }
 ```
 
-## <a name="collision"></a>Kolizí
+### <a name="collision"></a>Kolizí
 
 Ovocný spadá implementuje polovičním realistické kolizí mezi výsledek a jiné collidable objekty, jako `Paddle` a `GameScene.Splitter`. Pomoc při ladění kolizí, Fruity spadá kolizí oblasti lze zviditelnit změnou `GameCoefficients.ShowDebugInfo` v `GameCoefficients.cs` souboru:
 
@@ -330,7 +330,8 @@ private void PerformCollision()
 }
 ```
 
-### <a name="fruitvsborders"></a>FruitVsBorders
+#### <a name="fruitvsborders"></a>FruitVsBorders
+
 `FruitVsBorders` kolizí provede vlastní logiky kolizí namísto spoléhání na logiku obsažené v jinou třídu. Tento rozdíl existuje, protože není perfektně plné kolizí mezi výsledek a na obrazovce ohraničení – je možné pro výsledek na poslat vypnout okraje obrazovky podle pečlivě desku pohyb. Výsledek bude kolísají z obrazovky při průchodu s desku, ale pokud přehrávač pomalu nabízených oznámení výsledek se přesune okraj a z obrazovky:
 
 
@@ -352,7 +353,8 @@ private void FruitVsBorders(Fruit fruit)
 }
 ```
 
-### <a name="fruitvsbins"></a>FruitVsBins
+#### <a name="fruitvsbins"></a>FruitVsBins
+
 `FruitVsBins` Metoda odpovídá za kontrole, jestli se všechny výsledek klesla do jedné ze dvou přihrádky. Pokud ano, přehrávač poskytnut body (Pokud je výsledek/bin barvy shoda) nebo hra končí (Pokud barvy neshodují):
 
 
@@ -380,7 +382,8 @@ private void FruitVsBins(Fruit fruit)
 }
 ```
 
-### <a name="fruitvspaddle-and-fruitpolygoncollision"></a>FruitVsPaddle a FruitPolygonCollision
+#### <a name="fruitvspaddle-and-fruitpolygoncollision"></a>FruitVsPaddle a FruitPolygonCollision
+
 Výsledek, oproti desku a výsledek oproti rozdělovače (oblasti oddělujících dvě přihrádek) kolizí oba tyto nástroje spoléhají na `FruitPolygonCollision` metoda. Tato metoda má tři části:
 
 1. Otestovat, zda je v konfliktu objekty
@@ -419,7 +422,7 @@ Výpočty za logice kolizí součástí `Polygon` a `CollisionResponse` třídy 
  
 
 
-# <a name="game-content"></a>Herní obsah
+## <a name="game-content"></a>Herní obsah
 
 Obrázky v Fruity spadá okamžitě odlišuje od BouncingGame příslušnou hru. Herní návrhů jsou podobné, přehrávače se okamžitě zobrazí rozdíl v vzhled dvě hry. Hráči často rozhodněte, jestli pokusit hry s jeho vizuály. Proto je životně důležité, aby vývojáři investovat prostředky při vytvoření přitažlivé herní.
 
@@ -432,7 +435,7 @@ Obrázky pro Fruity spadá byl vytvořen sledovat tyto cíle:
  - Schopnost vytvářet jednoduché vizuálních efektů bez zdroj těžký animace
 
 
-## <a name="content-location"></a>Umístění obsahu
+### <a name="content-location"></a>Umístění obsahu
 
 Ovocný spadá zahrnuje veškerý jeho obsah ve složce bitové kopie v projektu pro Android:
 
@@ -445,9 +448,9 @@ Tyto stejné soubory, které jsou propojeny v projektu iOS předejdete duplikace
 Je vhodné poznamenat, že obsah není obsažen v rámci **Ld** nebo **Hd** složkách, které jsou součástí výchozí šablony CocosSharp. **Ld** a **Hd** složky jsou určena k použití pro hry, které poskytují dvě sady obsahu – jeden pro zařízení s nízkým rozlišením, jako jsou telefony a jeden pro zařízení, vyšší řešení, jako jsou tablety. Obrázky Fruity spadá je záměrně vytvořen s pixelován estetické, takže není nutné pro poskytování obsahu pro jiné velikosti obrazovky. Proto **Ld** a **Hd** složky byla úplně odebraná z projektu.
 
 
-## <a name="gamescene-layering"></a>GameScene vrstvení
+### <a name="gamescene-layering"></a>GameScene vrstvení
 
-Jak je uvedeno výše v této příručce, GameScene zodpovídá za všechny herní objekt konkretizaci, umisťování a logiku mezi objekty (například kolizí). Všechny objekty jsou přidány do jednoho z čtyři `CCLayer` instancí:
+Jak je uvedeno výše v této příručce `GameScene` zodpovídá za všechny herní objekt konkretizaci, umisťování a logiku mezi objekty (například kolizí). Všechny objekty jsou přidány do jednoho z čtyři `CCLayer` instancí:
 
 
 ```csharp
@@ -488,7 +491,7 @@ private void CreateBackground()
 ```
 
 
-## <a name="vine-entity"></a>Révy Entity
+### <a name="vine-entity"></a>Révy entity
 
 `Vine` Entity jednoznačně slouží pro obsah – nemá žádný vliv na hraní her. Skládá se z dvacet `CCSprite` instance, číslo vybraná omyl a zajistit révový vždy dosáhne horní části obrazovky:
 
@@ -557,7 +560,7 @@ public void Activity(float frameTimeInSeconds)
 Všimněte si, zda je přidána malé množství otočení zpět do révy prostřednictvím `vineAngle` koeficient. Tuto hodnotu můžete změnit na upravit, kolik keřů otočit.
 
 
-# <a name="gamecoefficients"></a>GameCoefficients
+## <a name="gamecoefficients"></a>GameCoefficients
 
 Každých dobré hry je produkt iterace, takže Fruity spadá zahrnuje třídy s názvem `GameCoefficients` který určuje, jak se přehrávají hra. Tato třída obsahuje výrazovou proměnné, které se používají v rámci HRA do ovládacího prvku fyziky, rozložení, například a vyhodnocování.
 
@@ -606,7 +609,7 @@ public static class GameCoefficients
 ```
 
 
-# <a name="conclusion"></a>Závěr
+## <a name="conclusion"></a>Závěr
 
 Tato příručka prozkoumali herní Fruity spadá. Koncepty, včetně obsahu, fyziky a správy stavu herní o něm zmínka.
 

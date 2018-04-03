@@ -1,6 +1,6 @@
 ---
-title: "Kreslení kruh jednoduché"
-description: "Seznámíte se základy kreslení SkiaSharp, včetně plátna a Malování"
+title: Kreslení kruh jednoduché
+description: Seznámíte se základy kreslení SkiaSharp, včetně plátna a Malování
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
@@ -8,11 +8,11 @@ ms.assetid: E3A4E373-F65D-45C8-8E77-577A804AC3F8
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 10f741e853603ef22cd45004a6c726ae579f3675
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 402470c3a27ba4327afa6e77336d60748abad436
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="drawing-a-simple-circle"></a>Kreslení kruh jednoduché
 
@@ -20,7 +20,7 @@ _Seznámíte se základy kreslení SkiaSharp, včetně plátna a Malování_
 
 Tento článek představuje koncepty kreslení grafiky v Xamarin.Forms pomocí SkiaSharp, včetně vytváření `SKCanvasView` objektu k hostování zpracování grafiky `PaintSurface` událostí a používání `SKPaint` objekt, který chcete zadat barvy a další kreslení atributy.
 
-[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/) program obsahuje ukázkový kód pro tuto řadu SkiaSharp články. Nárok na první stránku **Jednoduchý kruh** a vyvolá třídy stránky [ `SimpleCirclePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs). Tento kód ukazuje, jak k vykreslení kruh v centru stránky se serverem radius 100 pixelů. Obrys kruhu je red a je blue vnitřek kruhu.
+[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) program obsahuje ukázkový kód pro tuto řadu SkiaSharp články. Nárok na první stránku **Jednoduchý kruh** a vyvolá třídy stránky [ `SimpleCirclePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs). Tento kód ukazuje, jak k vykreslení kruh v centru stránky se serverem radius 100 pixelů. Obrys kruhu je red a je blue vnitřek kruhu.
 
 ![](circle-images/circleexample.png "Modré kruh označeno červeně")
 
@@ -154,4 +154,4 @@ Další vzorek v [integrace s Xamarin.Forms](~/xamarin-forms/user-interface/grap
 ## <a name="related-links"></a>Související odkazy
 
 - [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)
+- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

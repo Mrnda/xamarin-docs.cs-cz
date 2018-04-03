@@ -1,6 +1,6 @@
 ---
 title: ListView
-description: "Prezentace dat v seznamech Krásný, interaktivní."
+description: Prezentace dat v seznamech Krásný, interaktivní.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: FEFDF7E0-720F-4BD1-863F-4477226AA695
@@ -8,11 +8,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2015
-ms.openlocfilehash: 3c12ccd5dc77dd7dff9d4eab07eeaf04c6b2c161
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 494c69700ed0b12b4c9151b9a1b04ea091ebfa57
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="listview"></a>ListView
 
@@ -40,7 +40,7 @@ ListView má počet součásti jsou k dispozici vykonávat funkci nativní pro k
 
 ![](images/grouping-depth.png "ListView seskupené daty")
 
-- **[Buněk](customizing-cell-appearance.md)**  &ndash; Data v prvku ListView se zobrazí v buňkách. Řádek dat odpovídá jednotlivých buněk. Zde buněk arebuilt-in můžete vybírat, nebo můžete definovat vlastní vlastní buňky. Předdefinované a vlastní buněk se dá použít nebo definován v jazyce XAML nebo kódu.
+- **[Buněk](customizing-cell-appearance.md)**  &ndash; Data v prvku ListView se zobrazí v buňkách. Řádek dat odpovídá jednotlivých buněk. Existují vybrat z předdefinovaných buněk, nebo můžete definovat vlastní vlastní buňky. Předdefinované a vlastní buněk se dá použít nebo definován v jazyce XAML nebo kódu.
   - **[Předdefinované](customizing-cell-appearance.md#Built_in_Cells)**  &ndash; vytvořené v buňkách, zejména TextCell a funkce ImageCell, může být ideální pro výkon, protože tyto hodnoty odpovídají nativní ovládací prvky na každou platformu.
     - **[TextCell](customizing-cell-appearance.md#TextCell)**  &ndash; zobrazí řetězec textu, volitelně s textem podrobností. Podrobnosti o text je reprezentován jako druhý řádek menší velikosti se zvýrazněnou barvou.
     - **[Funkce ImageCell](customizing-cell-appearance.md#ImageCell)**  &ndash; zobrazí obrázek s textem. Zobrazí se jako TextCell s bitovou kopií na levé straně.

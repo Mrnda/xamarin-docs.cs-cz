@@ -1,6 +1,6 @@
 ---
-title: "Zpracování více řešení v CocosSharp"
-description: "Tato příručka ukazuje, jak pracovat s CocosSharp pro vývoj her, které zobrazí správně v zařízeních různých řešení."
+title: Zpracování více řešení v CocosSharp
+description: Tato příručka ukazuje, jak pracovat s CocosSharp pro vývoj her, které zobrazí správně v zařízeních různých řešení.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 859ABF98-2646-431A-A4A8-3E7E48DA5A43
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 9b76376bdbcf10bf35768cfdb79b6823388e303c
-ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
+ms.openlocfilehash: 772b0d6408a5ba438c5eb0be04a9b549e29b40f9
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/21/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="handling-multiple-resolutions-in-cocossharp"></a>Zpracování více řešení v CocosSharp
 
@@ -32,7 +32,7 @@ Výchozí chování řešení CocosSharp je tak, aby odpovídala fyzické pixel�
 Tento dokument popisuje, jak používat CocosSharp k opravě problému uvedené v předchozí tabulce. To znamená, že jsme zaměříme jak provádět jakékoli zařízení vykreslení, jak je znázorněno v prvním řádku – bez ohledu na rozlišení obrazovky.
 
 
-# <a name="working-with-setdesignresolutionsize"></a>Práce s SetDesignResolutionSize
+## <a name="working-with-setdesignresolutionsize"></a>Práce s SetDesignResolutionSize
 
 `CCScene` Třída obvykle slouží jako Kořenový kontejner pro všechny objekty visual, ale také poskytuje statickou metodu s názvem `SetDesignResolutionSize` pro zadání výchozí velikost pro všechny scény. Jinými slovy `SetDesignResolutionSize` metoda umožňuje vývojářům vývoj her, které se zobrazí správně na celou řadu řešení hardwaru. Šablony projektů CocosSharp použití této metody nastavit výchozí velikost projektu na 1024 × 768, jak je znázorněno v následujícím kódu:
 
@@ -77,7 +77,7 @@ public override void ApplicationDidFinishLaunching (CCApplication application, C
 ```
 
 
-# <a name="ccsceneresolutionpolicy"></a>CCSceneResolutionPolicy
+## <a name="ccsceneresolutionpolicy"></a>CCSceneResolutionPolicy
 
 `SetDesignResolutionSize` Umožňuje zadat, jak okně hry přizpůsobí požadované rozlišení. Následující části ukazují zobrazení bitovou kopii 500 x 500 jiné `CCSceneResolutonPolicy` hodnoty předaný `SetDesignResolutionSize` metoda. Následující hodnoty jsou poskytovány `CCSceneResolutionPolicy` výčtu:
 
@@ -93,7 +93,7 @@ Všechny snímky obrazovky vytváří iPhone 4s rozlišením (960 x 640) v orien
 ![](resolutions-images/image4.png "Všechny snímky obrazovky vytváří v řešení iPhone 4s 960 x 640 v orientaci na šířku a použít tuto bitovou kopii")
 
 
-## <a name="ccsceneresolutionpolicyshowall"></a>CCSceneResolutionPolicy.ShowAll
+### <a name="ccsceneresolutionpolicyshowall"></a>CCSceneResolutionPolicy.ShowAll
 
 `ShowAll` Určuje, že se nebude zobrazovat na obrazovce celý herní řešení, ale může zobrazovat *letterboxing* (černé pruhů), abyste nastavili pro jiné poměrům stran. Tato zásada se často používá jako zaručuje, že celá herní zobrazení se zobrazí na obrazovce bez narušení.
 
@@ -109,7 +109,7 @@ Letterboxing je viditelná vlevo a vpravo od bitovou kopii k účtu pro fyzické
 ![](resolutions-images/image5.png "Letterboxing je viditelná vlevo a vpravo od bitovou kopii k účtu pro fyzické poměr stran se širší než požadované rozlišení")
 
 
-## <a name="ccsceneresolutionpolicyexactfit"></a>CCSceneResolutionPolicy.ExactFit
+### <a name="ccsceneresolutionpolicyexactfit"></a>CCSceneResolutionPolicy.ExactFit
 
 `ExactFit` Určuje, že celý herní řešení se nebude zobrazovat na obrazovce s žádné letterboxing. Může být narušena oblasti zobrazitelné (nemusí být zachována poměr stran) podle poměr stran hardwaru.
 
@@ -125,7 +125,7 @@ CCScene.SetDesignResolutionSize (500.0f, 500.0f, CCSceneResolutionPolicy.ExactFi
 ![](resolutions-images/image6.png "Žádné letterboxing je viditelná, ale vzhledem k tomu, že je obdélníková řešení zařízení je poškozený, herní zobrazení")
 
 
-## <a name="ccsceneresolutionpolicyfixedwidth"></a>CCSceneResolutionPolicy.FixedWidth
+### <a name="ccsceneresolutionpolicyfixedwidth"></a>CCSceneResolutionPolicy.FixedWidth
 
 `FixedWidth` Určuje, že šířka zobrazení bude odpovídat hodnotě šířka předaný `SetDesignResolutionSize`, ale zobrazitelné výška podléhá poměr stran fyzického zařízení. Hodnota height předaný `SetDesignResolutionSize` se ignoruje, protože se vypočítají za běhu na základě poměru stran fyzického zařízení. To znamená, že počítané výška může být nižší než požadovanou výšku (což vede k části herní zobrazení se mimo obrazovku) nebo počítané výšky může být větší než na požadovanou výšku (což vede k více herní zobrazení se zobrazuje). Vzhledem k tomu, že to může být více hra se zobrazuje, pak může zdát, jako kdyby došlo k letterboxing; ale místo navíc nebudou nutně černé, pokud se zobrazí všechny vizuální objekt existuje. 
 
@@ -141,7 +141,7 @@ Pro iPhone 4s má poměr stran 3:2, takže počítané výšku je přibližně 3
 ![](resolutions-images/image7.png "Pro iPhone 4s má poměr stran 3:2, takže počítané výšku je přibližně 333 jednotky")
 
 
-## <a name="ccsceneresolutionpolicyfixedheight"></a>CCSceneResolutionPolicy.FixedHeight
+### <a name="ccsceneresolutionpolicyfixedheight"></a>CCSceneResolutionPolicy.FixedHeight
 
 Koncepčně `FixedHeight` se chová podobně jako `FixedWidth` – hra se orientují hodnota height předaný `SetDesignResolutionSize,` , ale bude vypočítat šířku za běhu na základě fyzické rozlišení. Jak je uvedeno výše, to znamená, že zobrazené šířka být vypnuto menší nebo větší než požadovanou šířku, výsledkem je součástí herní se obrazovky nebo více hra se zobrazuje v uvedeném pořadí.
 
@@ -157,7 +157,7 @@ Vzhledem k tomu na následujícím snímku obrazovky byla vytvořená aplikace s
 ![](resolutions-images/image8.png "Tato zásada uchovává hodnotu 0 X vlevo zarovnaný, tak další řešení jsou viditelná na pravé straně obrazovky")
 
 
-## <a name="ccsceneresolutionpolicynoborder"></a>CCSceneResolutionPolicy.NoBorder
+### <a name="ccsceneresolutionpolicynoborder"></a>CCSceneResolutionPolicy.NoBorder
 
 `NoBorder` pokusy o zobrazení aplikace s žádné letterboxing při zachování původního poměru stran (bez narušení). Pokud požadovaný řešení poměr odpovídá poměr stran fyzické zařízení, žádný výstřižek dojde. Pokud poměrům stran neshodují, pak výstřižek se provedou.
 
@@ -173,7 +173,7 @@ Na následujícím snímku obrazovky zobrazuje horní a dolní části zobrazen�
 ![](resolutions-images/image9.png "Horní a dolní části zobrazení oříznut, když se zobrazí všechny 500 pixelů Šířka zobrazení zobrazí tento snímek obrazovky")
 
 
-## <a name="ccsceneresolutionpolicycustom"></a>CCSceneResolutionPolicy.Custom
+### <a name="ccsceneresolutionpolicycustom"></a>CCSceneResolutionPolicy.Custom
 
 `Custom` Umožňuje každý `CCScene` zadat vlastní vlastní zobrazení relativně k rozlišení určené ve `SetDesignResolutionSize`.
 
@@ -207,7 +207,7 @@ Kód výše má za následek následující:
 ![](resolutions-images/image10.png "Výše uvedený kód výsledků na tomto snímku obrazovky")
 
 
-# <a name="defaulttexeltocontentsizeratio"></a>DefaultTexelToContentSizeRatio
+## <a name="defaulttexeltocontentsizeratio"></a>DefaultTexelToContentSizeRatio
 
 `DefaultTexelToContentSizeRatio` Zjednodušuje použití textury vyšší řešení v zařízeních s vyšší rozlišení obrazovky. Konkrétně tato vlastnost umožňuje hry použití vyšší rozlišení prostředky bez nutnosti ke změně velikosti nebo umístění vizuální prvky. 
 
@@ -249,7 +249,7 @@ public override void ApplicationDidFinishLaunching (CCApplication application, C
 ```
 
 
-## <a name="defaulttexeltocontentsizeratio-example"></a>Příklad DefaultTexelToContentSizeRatio
+### <a name="defaulttexeltocontentsizeratio-example"></a>Příklad DefaultTexelToContentSizeRatio
 
 Chcete-li zobrazit jak `DefaultTexelToContentSizeRatio` má vliv na velikost visual prvky, zvažte kód uvedený výše:
 
@@ -278,7 +278,7 @@ Teď Pokud jsme spustit hru texture 1 000 × 1 000 budou plně viditelné:
 ![](resolutions-images/image12.png "Teď Pokud jsme spustit hru texture 1 000 × 1 000 budou plně viditelné")
 
 
-## <a name="defaulttexeltocontentsizeratio-details"></a>Podrobnosti o DefaultTexelToContentSizeRatio
+### <a name="defaulttexeltocontentsizeratio-details"></a>Podrobnosti o DefaultTexelToContentSizeRatio
 
 `DefaultTexelToContentSizeRatio` Vlastnost je `static,` což znamená, že všechny Sprite v aplikaci budou sdílet stejnou hodnotu. Typické přístup pro hry s prostředky, které jsou vytvořené pro různá řešení bude obsahovat úplnou sadu prostředků pro jednotlivé kategorie řešení. Ve výchozím nastavení CocosSharp sady Visual Studio pro Mac šablony zadejte **ld** a **hd** složek pro prostředky, které by byly užitečné pro hry podpora dvě sady textury. Ukázkové obsahu složky s obsahem může vypadat podobně jako:
 
@@ -313,11 +313,11 @@ backgroundSprite  = new CCSprite ("background");
 ```
 
 
-# <a name="summary"></a>Souhrn
+## <a name="summary"></a>Souhrn
 
 Tento článek popisuje postup vytvoření hry, které budou zobrazovat správně bez ohledu na zařízení řešení. Zobrazuje příklady použití různých `CCSceneResolutionPolicy` hodnoty pro změnu velikosti herní podle řešení zařízení. Také poskytuje příklad `DefaultTexelToContentSizeRatio` slouží k přizpůsobení několik sad obsahu bez nutnosti vizuální prvky na změnu velikosti jednotlivě.
 
 ## <a name="related-links"></a>Související odkazy
 
-- [CocosSharp Introduction](~/graphics-games/cocossharp/first-game/index.md)
+- [CocosSharp Introduction](~/graphics-games/cocossharp/index.md)
 - [Dokumentace CocosSharp rozhraní API](https://developer.xamarin.com/api/namespace/CocosSharp/)

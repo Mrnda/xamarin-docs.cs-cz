@@ -1,6 +1,6 @@
 ---
-title: "Texture ukládání do mezipaměti pomocí CCTextureCache"
-description: "Třída CCTextureCache na CocosSharp poskytuje standardní způsob, jak uspořádat, mezipaměť a uvolnit obsah. Je užitečné zejména pro velké hry, které nemusí zcela do paměti RAM, zjednodušuje proces seskupování a uvolnění textury vhodné."
+title: Texture ukládání do mezipaměti pomocí CCTextureCache
+description: Třída CCTextureCache na CocosSharp poskytuje standardní způsob, jak uspořádat, mezipaměť a uvolnit obsah. Je užitečné zejména pro velké hry, které nemusí zcela do paměti RAM, zjednodušuje proces seskupování a uvolnění textury vhodné.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 1B5F3F85-9E68-42A7-B516-E90E54BA7102
@@ -8,13 +8,13 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 365e343a55a208b63f4dc52999e8857b5f0ec1f4
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 350a454bc94c796b34cfeeb319481919b18d334f
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/03/2018
 ---
-# <a name="texture-caching-using-cctexturecache"></a>Texture ukládání do mezipaměti pomocí CCTextureCache
+# <a name="texture-caching-using-cctexturecache"></a>Texture CCTextureCache pomocí ukládání do mezipaměti.
 
 _Třída CCTextureCache na CocosSharp poskytuje standardní způsob, jak uspořádat, mezipaměť a uvolnit obsah. Je užitečné zejména pro velké hry, které nemusí zcela do paměti RAM, zjednodušuje proces seskupování a uvolnění textury vhodné._
 
@@ -29,7 +29,7 @@ Tento průvodce popisuje `CCTextureCache` a proto je důležité pro vývoj her.
  - Uvolnění textury
 
 
-# <a name="why-texture-caching-matters"></a>Proč Texture záleží ukládání do mezipaměti
+## <a name="why-texture-caching-matters"></a>Proč texture záleží ukládání do mezipaměti
 
 Texture ukládání do mezipaměti je důležitý faktor v vývoj her pro načítání texture je časově náročná operace a textury vyžadovat značné množství paměti RAM při spuštění.
 
@@ -38,7 +38,7 @@ Stejně jako u jakékoli operace souboru načítání textury z disku může bý
 Jak je uvedeno nahoře, textury také zabírají velké množství paměti modulu runtime. Obrázek na pozadí, velikost, aby překlad zařízení typu iPhone 6 (1344 x 750) by například zabírají 4 MB paměti RAM – i když je soubor PNG pouze několika kilobajtů událostí velikost. Ukládání do mezipaměti Texture poskytuje způsob, jak sdílet texture odkazy v aplikaci a také snadný způsob, jak uvolnit veškerý obsah, když přechod mezi různých herní stavů.
 
 
-# <a name="texture-lifespan"></a>Texture životnost
+## <a name="texture-lifespan"></a>Texture životnost
 
 CocosSharp textury může uchovávat v paměti pro celou délku spuštění aplikace, nebo mohou být zkrátí. Chcete-li minimalizovat paměti by měla využití aplikace odstranění textury, když už nepotřebují. Samozřejmě to znamená, že může textury zrušen a znovu načíst na pozdější dobu, která můžete zvýšit časů načtení nebo narušit výkon při zatížení. 
 
@@ -58,7 +58,7 @@ Pokud hra byla velká dostatečně ho by nakonec načíst dostatek textury k vyp
 Na obrázku výše uvedeném označuje texture využití paměti může snížit uvolnění, že pokud se rozhodne přehrávač opakování úrovní to může vyžadovat další načítání časy. Je také vhodné poznamenat, že jsou textury UITexture a MainCharacter načíst a nikdy odpojeno. To znamená, že tyto textury jsou potřebné na všech úrovních, takže se vždycky nacházejí v paměti. 
 
 
-# <a name="using-sharedtexturecache"></a>Pomocí SharedTextureCache
+## <a name="using-sharedtexturecache"></a>Pomocí SharedTextureCache
 
 CocosSharp automaticky ukládá do mezipaměti textury při načítání je prostřednictvím `CCSprite` konstruktor. Například následující kód vytvoří pouze jedna instance texture:
 
@@ -84,7 +84,7 @@ CCSprite starSprite = new CCSprite ();
 `AddImage` ověří, zda soubor argument (v tomto případě `star.png`) již byla načtena. Pokud ano, se vrátí instanci uloženou v mezipaměti. Pokud není, pak je načíst ze systému souborů, a odkaz na textury je uložen interně pro následné `AddImage` volání. Jinými slovy `star.png` bitové kopie je načteny pouze jednou a následující volání vyžadují žádné další disk přístupu nebo další texture paměti.
 
 
-# <a name="lazy-loading-vs-pre-loading-with-addimage"></a>Opožděného načítání vs. Předběžné načítání s AddImage
+## <a name="lazy-loading-vs-pre-loading-with-addimage"></a>Opožděného načítání oproti předběžné načítání s AddImage
 
 `AddImage` Umožňuje kód, který má být zapsán stejné zda požadovaný texture už je načtený, nebo ne. To znamená, že obsahu nebudou načteny, dokud ho nepotřebují; To však může také způsobit problémy s výkonem za běhu z důvodu nepředvídatelným obsah načítání.
 
@@ -114,12 +114,12 @@ void PreLoadImages()
 Toto předběžné načítání může mít za následek nevyužité paměti a může prodloužit dobu spuštění. Například Přehrávač může získat nikdy skutečně zapnutí reprezentována `powerup3.png` texture, takže bude možné zbytečně načíst. Samozřejmě to může být nutné náklady platit, aby se zabránilo potenciální pop v hraní her, takže je většinou nejlepší předběžného načítání obsahu, pokud se vejde do paměti RAM.
 
 
-# <a name="disposing-textures"></a>Uvolnění textury
+## <a name="disposing-textures"></a>Uvolnění textury
 
 Pokud hra nevyžaduje další texture paměti, než je k dispozici na minimální specifikace zařízení pak textury nemusí být zrušen. Na druhé straně větší hry muset uvolnění paměti texture, aby uvolnil prostor pro nový obsah. Hry mohou například používat velké množství paměti ukládání textury pro prostředí. Když v prostředí se používá pouze v konkrétní úroveň pak měla by být uvolněn při ukončení úroveň.
 
 
-## <a name="disposing-a-single-texture"></a>Uvolnění jeden textury
+### <a name="disposing-a-single-texture"></a>Uvolnění jeden textury
 
 Odebrání jednoho texture nejprve vyžaduje volání `Dispose` metoda ručního odebrání z a `CCTextureCache`.
 
@@ -187,7 +187,7 @@ Metoda Dispose bude dispose všechny interní textury vymazání se množství p
 
 
 
-# <a name="summary"></a>Souhrn
+## <a name="summary"></a>Souhrn
 
 Tato příručka ukazuje, jak používat `CCTextureCache` třídy vyrovnávání výkonu modulu runtime a využití paměti. `CCTexturCache.SharedTextureCache` může být explicitně nebo implicitně používá k načtení a textury po celou dobu životnosti aplikace do mezipaměti, když `CCTextureCache` instance slouží k uvolnění textury ke snížení využití paměti.
 

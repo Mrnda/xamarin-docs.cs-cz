@@ -1,6 +1,6 @@
 ---
-title: "Úvod do obsahu kanálů"
-description: "Obsah kanálů jsou aplikací nebo součástí aplikace, který slouží k převedení souborů do formátu, který lze načíst herní projekty. Kanál MonoGame obsah je implementace konkrétní obsahu kanálu pro převod souborů pro CocosSharp a MonoGame projekty."
+title: Úvod do obsahu kanálů
+description: Obsah kanálů jsou aplikací nebo součástí aplikace, který slouží k převedení souborů do formátu, který lze načíst herní projekty. Kanál MonoGame obsah je implementace konkrétní obsahu kanálu pro převod souborů pro CocosSharp a MonoGame projekty.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 40628B5F-FAF7-4FA7-A929-6C3FEA83F8EC
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: d51852924a4d909857659d38f8c19d520bb4c589
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7394ae5ddacb20a10e603fa50376799b82d2a3dc
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="introduction-to-content-pipelines"></a>Úvod do obsahu kanálů
 
@@ -21,7 +21,7 @@ _Obsah kanálů jsou aplikací nebo součástí aplikace, který slouží k pře
 Tento článek obsahuje rámcové informace o obsahu kanály, především zaměřené na *MonoGame obsahu kanálu*, což je použít s CocosSharp a MonoGame implementace obsahu kanálu.
 
 
-# <a name="what-is-a-content-pipeline"></a>Co je obsahu kanálu?
+## <a name="what-is-a-content-pipeline"></a>Co je obsahu kanálu?
 
 Termín *obsahu kanálu* je obecný termín pro proces převodu soubor z jednoho formátu do druhého. *Vstupní* obsahu kanálu je obvykle soubor výstupem nástroje pro vytváření, jako jsou například soubory bitové kopie z aplikace Photoshop. Vytvoří obsahu kanálu *výstup* soubor ve formátu, který můžete načíst přímo pomocí herní projektu. Výstupní soubory obvykle jsou optimalizované pro rychlé načítání a snížit velikost disku.
 
@@ -31,32 +31,32 @@ Jsme můžete vizualizovat cestu, která soubor přebírá z vývojového do na�
 
 ![](introduction-images/image1.png "V tomto diagramu jsou vizualizována cestu, která přebírá soubor z vývojového do načítá za běhu")
 
-# <a name="why-use-a-content-pipeline"></a>Proč používat obsahu kanálu?
+## <a name="why-use-a-content-pipeline"></a>Proč používat obsahu kanálu?
 
 Kanály obsahu zavést krok navíc mezi vytváření aplikace a hry, které můžete zvýšit dobu kompilace a přidání složitosti do procesu vývoje. Bez ohledu na těchto aspektů obsahu kanálů představit vývoj her pro řadu výhod:
 
 
-## <a name="converting-to-a-format-understood-by-the-game"></a>Převod do formátu rozumí hry
+### <a name="converting-to-a-format-understood-by-the-game"></a>Převod do formátu rozumí hry
 
 CocosSharp a MonoGame poskytují metody pro načítání různých typů obsahu; ale obsah musí být ve správném formátu před načítá. Většina typů obsahu vyžadují nějaký typ převodu před načítá. Například zvuk efekty při **.wav** převést do formátu **.xnb** soubor má být načten za běhu, protože CocosSharp a MonoGame nepodporují načítání **.wav** Formát souboru.
 
 
-## <a name="converting-to-a-format-native-to-the-hardware"></a>Převod do formátu nativní na hardware.
+### <a name="converting-to-a-format-native-to-the-hardware"></a>Převod do formátu nativní na hardware.
 
 Jiný hardware mohou považovat obsah jinak za běhu. Například můžete CocosSharp hry načíst soubory obrázků při vytváření `CCSprite` instance. Stejný kód se dá použít k načtení souborů na iOS a Android, ukládá každou platformu jinak načíst soubor. V důsledku toho obsahu kanálu MonoGame formáty texture **.xnb** soubory odlišně v závislosti na cílové platformy.
 
 
-## <a name="reducing-size-on-disk"></a>Zmenšení velikosti na disku 
+### <a name="reducing-size-on-disk"></a>Zmenšení velikosti na disku 
 
 Obsah kanály lze použít k odebrání informací, což je užitečné v době autora, ale není nutné za běhu. Původní soubor (vstupu) může ukládat všechny informace, které pomáhají udržovat existující obsah tvůrci obsahu, ale výstupní soubor může být stripped-down ponechat malý celkové herní soubor. Tento faktor je užitečné zejména pro mobilní hry, které jsou staženy spíše než rozdělit na instalačním médiu.
 
 
-## <a name="reducing-load-time"></a>Snižuje čas načtení
+### <a name="reducing-load-time"></a>Snižuje čas načtení
 
 Hry může vyžadovat úpravy obsahu zlepšujících výkon modulu runtime, ke zlepšení vizuály nebo přidávání nových funkcí. Například mnoho 3D hry vypočítat osvětlení jednou a potom použít výsledek tohoto výpočtu při vykreslování komplexní scény. Od provádění tyto výpočty při načítání obsahu může být výtažkovými výpočet můžete místo toho provést, pokud je integrovaná hra. Výsledný výpočty můžou být součástí obsahu, povolení obsahu mnohem rychleji než v opačném případě by bylo možné ho načíst. 
 
 
-# <a name="xnb-file-extension"></a>Přípona souboru XNB
+## <a name="xnb-file-extension"></a>Přípona souboru xnb
 
 **.Xnb** přípona souboru je rozšíření pro všechny soubory, které jsou výstupem Monogame obsahu kanálu. To odpovídá rozšíření souborů výstupem Microsoft XNA obsahu kanálu.
 
@@ -65,7 +65,7 @@ Hry může vyžadovat úpravy obsahu zlepšujících výkon modulu runtime, ke z
 Soubory .xnb CocosSharp a MonoGame lze vytvořit pomocí nástroje Monogame kanál, kterému se věnujeme [v tomto návodu](~/graphics-games/cocossharp/content-pipeline/walkthrough.md).
 
 
-# <a name="summary"></a>Souhrn
+## <a name="summary"></a>Souhrn
 
 Tento článek poskytuje přehled a výhod obsahu kanálů obecně platí, a také Úvod do kanálu MonoGame obsah.
 

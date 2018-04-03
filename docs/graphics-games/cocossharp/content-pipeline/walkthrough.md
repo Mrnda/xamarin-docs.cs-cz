@@ -1,6 +1,6 @@
 ---
-title: "Pomocí nástroje MonoGame kanálu"
-description: "Nástroj MonoGame kanálu se používá k vytváření a správě obsahu projekty MonoGame. Soubory v obsahu projekty jsou Monogame kanálu nástroj zpracoval a výstupem jako soubory .xnb pro použití v aplikacích CocosSharp a MonoGame."
+title: Pomocí MonoGame PipelineTool
+description: Nástroj MonoGame kanálu se používá k vytváření a správě obsahu projekty MonoGame. Soubory v obsahu projekty jsou Monogame kanálu nástroj zpracoval a výstupem jako soubory .xnb pro použití v aplikacích CocosSharp a MonoGame.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: CACFBF5F-BBD4-4D46-8DDA-1F46466725FD
@@ -8,17 +8,17 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: 5c489aab66a0aaafeaaeadad0e8b95d451ec1592
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 37505b166488230be9d0e0690e415852506664f1
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="using-the-monogame-pipeline-tool"></a>Pomocí nástroje MonoGame kanálu
 
 _Nástroj MonoGame kanálu se používá k vytváření a správě obsahu projekty MonoGame. Soubory v obsahu projekty jsou Monogame kanálu nástroj zpracoval a výstupem jako soubory .xnb pro použití v aplikacích CocosSharp a MonoGame._
 
-Nástroj MonoGame kanálu poskytuje snadno použitelný prostředí pro převod souborů obsahu do **.xnb** souborů pro použití v aplikacích CocosSharp a MonoGame. Informace o obsahu kanálů a proč jsou užitečné v vývoj her, najdete v článku [tento úvod na obsah kanálů](~/graphics-games/cocossharp/content-pipeline/introduction.md)
+Tento nástroj kanálu MonoGame nabízí snadno použitelné prostředí pro převod souborů obsahu do **.xnb** souborů pro použití v aplikacích CocosSharp a MonoGame. Informace o obsahu kanálů a proč jsou užitečné v vývoj her, najdete v článku [tento úvod na obsahu kanálů](~/graphics-games/cocossharp/content-pipeline/introduction.md)
 
 Tento návod popisuje následující:
 
@@ -35,14 +35,14 @@ Dokončení aplikace se zobrazí zobrazení texture z jedné pohyblivý symbol *
 ![](walkthrough-images/image1.png "Dokončení aplikace se zobrazí jeden pohyblivý symbol zobrazení texture ze souboru .xnb")
 
 
-# <a name="monogame-pipeline-platform-discussion"></a>Diskusní platformy MonoGame kanálu
+## <a name="monogame-pipeline-tool-discussion"></a>Diskusní MonoGame kanálu nástroje
 
 Nástroj MonoGame kanálu je k dispozici v systému Windows, OS X a Linux. Tento názorný postup se spustí nástroj v systému Windows, ale bylo možné sledovat na Mac a Linux také. Informace o získávání nástroj nastavit maximální nebo Linux najdete v tématu [tuto stránku](http://www.monogame.net/2015/01/09/monogame-pipeline-tool-available-for-macos-and-linux/).
 
 Nástroj MonoGame kanálu je možné vytvořit obsah pro aplikace pro iOS i když běží v systému Windows, takže vývojáře, kteří používají [Xamarin Mac Agent](~/ios/get-started/installation/windows/connecting-to-mac/index.md) budou moci pokračovat ve vývoji v systému Windows.
 
 
-# <a name="installing-the-monogame-pipeline-tool"></a>Instalace nástroje MonoGame kanálu
+## <a name="installing-the-monogame-pipeline-tool"></a>Instalace nástroje MonoGame kanálu
 
 Začneme nainstalováním MonoGame, včetně MonoGame obsahu kanálu. Upozorňujeme, že MonoGame obsahu kanálu je samostatný soubor ke stažení pro Mac. Všechny instalační programy MonoGame naleznete na [MonoGame stáhne stránky](http://www.monogame.net/downloads/). Společnost Microsoft bude stahovat MonoGame pro sadu Visual Studio, ale po instalaci Vývojář můžete použít MonoGame v sadě Visual Studio pro Mac příliš:
 
@@ -50,7 +50,7 @@ Začneme nainstalováním MonoGame, včetně MonoGame obsahu kanálu. Upozorňuj
 
 Po stažení, můžeme budete spustit prostřednictvím Instalační program a přijměte výchozí možnosti. Po dokončení instalace, nástroj MonoGame kanálu je nainstalován a lze nalézt v hledání nabídky Start:
 
-![](walkthrough-images/image3.png "Po dokončení instalace je nainstalován nástroj MonoGame kanál a lze nalézt v hledání nabídky Start")
+![](walkthrough-images/image3.png "Po dokončení instalace je nainstalován nástroj MonoGame kanálu a lze nalézt v hledání nabídky Start")
 
 Spusťte nástroj MonoGame kanál:
 
@@ -59,18 +59,18 @@ Spusťte nástroj MonoGame kanál:
 Jakmile je spuštěný nástroj MonoGame kanálu, můžeme začít aby naše projekty herní a obsahu.
 
 
-# <a name="creating-an-empty-cocossharp-project"></a>Vytváření prázdného projektu CocosSharp
+## <a name="creating-an-empty-cocossharp-project"></a>Vytváření prázdného projektu CocosSharp
 
-Dalším krokem je vytvoření projektu CocosSharp. Je důležité o vytvoření projektu CocosSharp nejprve tak, aby naše obsahu projektu jsme můžete uložit ve struktuře složky vytvořené CocosSharp projektu. Informace o tom, jak vytvořit nový projekt najdete v tématu [průvodci BouncingGame](~/graphics-games/cocossharp/first-game/part1.md). Tato příručka jsme budete vytvářet projekt s názvem BouncingGame, ale žádné existující projekt CocosSharp bude pracovat správně. Pokud máte existující CocosSharp projekt, který chcete přidat obsah, můžete použít tento projekt místo BouncingGame projektu.
+Dalším krokem je vytvoření projektu CocosSharp. Je důležité o vytvoření projektu CocosSharp nejprve tak, aby naše obsahu projektu jsme můžete uložit ve struktuře složky vytvořené CocosSharp projektu. Pochopit strukturu CocosSharp projektu, podívejte se na [BouncingGame](~/graphics-games/cocossharp/bouncing-game.md), který bude používat v této příručce. Ale pokud máte existující projekt CocosSharp, který chcete přidat obsah, zaregistrované, můžete použít tento projekt místo BouncingGame.
 
 Po vytvoření projektu jsme budete spouštět na ověřte, zda je sestavení a všechno, co máme správně nastavit:
 
 ![](walkthrough-images/image5.png "Po vytvoření projektu, spuštění a ověřit, že sestavení a jestli všechno správně nastavit")
 
 
-# <a name="creating-a-content-project"></a>Vytvoření obsahu projektu
+## <a name="creating-a-content-project"></a>Vytvoření obsahu projektu
 
-Teď, když máme herní projektu, můžeme vytvořit kanál MonoGame projektu. To uděláte, v vyberte nástroj MonoGame kanálu **soubor > Nový... ** a přejděte do složky obsahu vašeho projektu. Pro Android, se nachází ve složce **[projektu root]\BouncingGame.Android\Assets\Content\**. Pro iOS, se nachází ve složce **[projektu root]\BouncingGame.iOS\Content\**.
+Teď, když máme herní projektu, můžeme vytvořit kanál MonoGame projektu. To uděláte, v vyberte nástroj kanálu MonoGame **soubor > Nový...**  a přejděte do složky obsahu vašeho projektu. Pro Android, se nachází ve složce **[projektu root]\BouncingGame.Android\Assets\Content\**. Pro iOS, se nachází ve složce **[projektu root]\BouncingGame.iOS\Content\**.
 
 Změna **název souboru** k **ContentProject** a klikněte na tlačítko **Uložit** tlačítko:
 
@@ -83,37 +83,37 @@ Po vytvoření projektu nástroj MonoGame kanálu se zobrazí informace o projek
 Podívejme se na některé z vašich nejdůležitějších možnosti obsahu projektu.
 
 
-## <a name="output-folder"></a>Výstupní složky
+### <a name="output-folder"></a>Výstupní složky
 
-Toto je složka (relativní vůči samotného obsahu projektu) kde výstup **.xnb** budou uloženy soubory. Pro zjednodušení použijeme složce držet naše vstupní a výstupní soubory. Jinými slovy Změníme **výstupní složky** být **.\* * :
+Toto je složka (relativní vůči samotného obsahu projektu) kde výstup **.xnb** budou uloženy soubory. Pro zjednodušení použijeme složce držet naše vstupní a výstupní soubory. Jinými slovy Změníme **výstupní složky** být **.\**  :
 
 ![](walkthrough-images/image10.png "")
 
 
-## <a name="platform"></a>Platforma
+### <a name="platform"></a>Platforma
 
 Definuje cílovou platformu pro obsah. Všimněte si, že toto je **Windows** ve výchozím nastavení, takže jsme budete chtít změňte na našem Cílová platforma, která je **Android** (nebo iOS Pokud podle společně s projektu iOS).
 
 ![](walkthrough-images/image11.png "Všimněte si, že toto je ve výchozím nastavení systému Windows, takže to změnit na cílovou platformu, která je Android nebo iOS, pokud podle společně s projektu iOS")
 
 
-# <a name="processing-files-in-the-monogame-pipelinetool"></a>Zpracování souborů v MonoGame PipelineTool
+## <a name="processing-files-in-the-monogame-pipeline-tool"></a>Zpracování souborů v nástroji MonoGame kanálu
 
 V dalším kroku jsme přidali obsah tak, aby naše **ContentProject**. Pro tento projekt jsme přidali soubory do kořenového adresáře projektu, ale větší projekty bude obvykle uspořádání obsah ve složkách.
 
 Přidáme do našich projektu dva soubory:
 
  - A **.png** soubor, který se použije k vykreslení pohyblivý symbol. Tento soubor můžete [stáhnout zde](https://github.com/xamarin/mobile-samples/blob/master/BouncingGame/Resources/ball.png?raw=true).
- - A **.spritefont** soubor, který se použije k vykreslení textu na obrazovce. Nástroj ContentPipeline podporuje vytváření nových souborů .spritefont, takže není žádný soubor ke stažení.
+ - A **.spritefont** soubor, který se použije k vykreslení textu na obrazovce. Nástroj obsahu kanálu podporuje vytváření nových souborů .spritefont, takže není žádný soubor ke stažení.
 
 
-## <a name="adding-a-png-file"></a>Přidání souboru .png
+### <a name="adding-a-png-file"></a>Přidání souboru .png
 
 Chcete-li přidat **.png** souboru do projektu, jsme budete nejdříve zkopírovat ho do stejného adresáře jako projektu kanálu, který má **.mgcb** rozšíření.
 
 ![](walkthrough-images/image12.png "Přidejte do projektu soubor PNG")
 
-Potom přidáme soubor do projektu kanálu. Chcete-li to provést v nástroji MonoGame kanálu, vyberte **Upravit > Přidat položku... **, vyberte **ball.png** souboru a klikněte na tlačítko **otevřete**. Soubor bude nyní součástí obsahu projektu a pokud vyberete, zobrazí se jeho vlastnosti:
+Potom přidáme soubor do projektu kanálu. Chcete-li to provést v nástroji MonoGame kanálu, vyberte **Upravit > Přidat položku...** , vyberte **ball.png** souboru a klikněte na tlačítko **otevřete**. Soubor bude nyní součástí obsahu projektu a pokud vyberete, zobrazí se jeho vlastnosti:
 
 ![](walkthrough-images/image13.png "Soubor bude nyní součástí obsahu projektu a pokud vyberete, zobrazí se jeho vlastnosti")
 
@@ -122,13 +122,13 @@ Jsme vám právě ponechat všechny hodnoty výchozích hodnot, jako je potřeba
 ![](walkthrough-images/image14.png "Ověřit, zda sestavení funguje správně kontrolou složku obsahu pro nový soubor ball.xnb")
 
 
-## <a name="adding-a-spritefont-file"></a>Přidání souboru .spritefont
+### <a name="adding-a-spritefont-file"></a>Přidání souboru .spritefont
 
-Můžeme vytvořit soubor .spritefont pomocí nástroje MonoGame kanálu. CocosSharp vyžaduje písem v **písem** složky a šablony CocosSharp automaticky automaticky vytvořit složku písem. Jsme tuto složku přidat do nástroje MonoGame kanálu výběrem **Upravit > Přidat > existující složku... **. Vyhledejte **obsahu** složky a vyberte **písem** složky a klikněte na tlačítko **OK**:
+Můžeme vytvořit soubor .spritefont pomocí nástroje MonoGame kanálu. CocosSharp vyžaduje písem v **písem** složky a šablony CocosSharp automaticky automaticky vytvořit složku písem. Jsme tuto složku přidat do nástroje kanálu MonoGame výběrem **Upravit > Přidat > existující složku...** . Vyhledejte **obsahu** složky a vyberte **písem** složky a klikněte na tlačítko **OK**:
 
 ![](walkthrough-images/browsetofonts.png "Přejděte do složky obsahu a vyberte složku, písem a klikněte na tlačítko OK")
 
-Chcete-li přidat nový soubor .sprintefont, klikněte pravým tlačítkem na složku písma a vyberte **Přidat > novou položku... **, vyberte **SpriteFont popis** možnost, zadejte název **arial 36**a klikněte na tlačítko **Ok**. CocosSharp vyžaduje velmi konkrétní názvy souborů písem – musí být ve formátu [FontType]-[velikost písma]. Pokud písmo neodpovídá tento formát názvů, nebude možné načíst CocosSharp za běhu.
+Chcete-li přidat nový soubor .sprintefont, klikněte pravým tlačítkem na složku písma a vyberte **Přidat > novou položku...** , vyberte **SpriteFont popis** možnost, zadejte název **arial 36**a klikněte na tlačítko **Ok**. CocosSharp vyžaduje velmi konkrétní názvy souborů písem – musí být ve formátu [FontType]-[velikost písma]. Pokud písmo neodpovídá tento formát názvů, nebude možné načíst CocosSharp za běhu.
 
 ![](walkthrough-images/image15.png "Pokud písmo neodpovídá tento formát názvů, nebude možné načíst CocosSharp za běhu")
 
@@ -156,21 +156,21 @@ Jsme budete v každém textovém editoru otevřete soubor. Jako naše **arial 36
     <Size>36</Size>
 ```
  
-# <a name="using-files-at-runtime"></a>Pomocí souborů za běhu
+## <a name="using-files-at-runtime"></a>Pomocí souborů za běhu
 
 .Xnb soubory jsou teď vytvořená a připravené pro použití v našem projektu. Jsme přidali soubory k sadě Visual Studio pro Mac potom přidáme kód pro naše `GameScene.cs` souboru k načtení těchto souborů a jejich zobrazení.
 
 
-## <a name="adding-xnb-files-to-visual-studio-for-mac"></a>Přidávání souborů .xnb k sadě Visual Studio pro Mac
+### <a name="adding-xnb-files-to-visual-studio-for-mac"></a>Přidávání souborů .xnb k sadě Visual Studio pro Mac
 
 Nejprve přidáme soubory do našich projektu. V sadě Visual Studio pro Mac, jsme budete rozbalte **BouncingGame.Android** projektu, rozbalte **prostředky** složku, klikněte pravým tlačítkem na **obsahu** složky a vyberte **Přidat > Přidat soubory...** Nejprve budete vyberte jsme **ball.xnb** jsme dříve vytvořené a klikněte na tlačítko **otevřete**. Potom zopakujte výše uvedené kroky, ale přidat **arial 36.xnb** souboru. Vybereme **ponechat soubor v jeho aktuálním podadresáři** Pokud Visual Studio pro Mac dotazem, jak přidat soubor. Po dokončení oba soubory musí být součástí našich projektu:
 
 ![](walkthrough-images/image20.png "Po dokončení oba soubory musí být součástí projektu")
 
 
-## <a name="adding-gamescenecs"></a>Přidání GameScene.cs
+### <a name="adding-gamescenecs"></a>Přidání **GameScene.cs**
 
-Vytvoříme třídu s názvem `GameScene,` který bude obsahovat naše objekty pohyblivý symbol a text. Chcete-li to provést, klikněte pravým tlačítkem na **BouncingGame** (ne BouncingGame.Android) projektu a vyberte **Přidat > Nový soubor... **. Vyberte **Obecné** kategorie, vyberte **prázdné třídy** možnost a pak zadejte název **GameScene**.
+Vytvoříme třídu s názvem `GameScene,` který bude obsahovat naše objekty pohyblivý symbol a text. Chcete-li to provést, klikněte pravým tlačítkem na **BouncingGame** (ne BouncingGame.Android) projektu a vyberte **Přidat > Nový soubor...** . Vyberte **Obecné** kategorie, vyberte **prázdné třídy** možnost a pak zadejte název **GameScene**.
 
 Po vytvoření upravíme `GameScene.cs` souboru tak, aby obsahovala následující kód:
 
@@ -214,7 +214,7 @@ namespace BouncingGame
 } 
 ```
 
-Jsme nebude možné hovoříte o výše uvedený kód vzhledem k tomu, že pracovat s objekty visual CocosSharp jako CCSprite a CCLabelTtf, najdete v článku [CocosSharp úvodní příručka](~/graphics-games/cocossharp/first-game/index.md).
+Jsme nebude možné hovoříte o výše uvedený kód vzhledem k tomu, že pracovat s objekty visual CocosSharp jako CCSprite a CCLabelTtf, najdete v článku [BouncingGame průvodce](~/graphics-games/cocossharp/bouncing-game.md).
 
 Také je potřeba přidat kód pro načtení naše nově vytvořené `GameScene`. K tomu otevřeme `GameAppDelegate.cs` souboru (který se nachází v **BouncingGame** PCL) a upravte `ApplicationDidFinishLaunching` metoda tak, aby vypadala jako:
 
@@ -236,9 +236,9 @@ Při spuštění, naše herní bude vypadat jako:
 ![](walkthrough-images/image1.png "Při spuštění, bude vypadat hry")
 
 
-# <a name="summary"></a>Souhrn
+## <a name="summary"></a>Souhrn
 
-Tento průvodce vám ukázal, jak používat nástroj MonoGame kanálu vytvořit .xnb soubory ze souboru vstupní soubor ve formátu PNG a také jak vytvořit nový soubor .xnb z .sprintefont nově vytvořený soubor. Také popsané, jak struktury CocosSharp projekty, aby používaly .xnb soubory a jak k načtení těchto souborů za běhu.
+Tento průvodce vám ukázal, jak používat nástroj MonoGame kanálu k vytvoření .xnb souborů ze souboru vstupní soubor ve formátu PNG a také jak vytvořit nový soubor .xnb z .sprintefont nově vytvořený soubor. Také popsané, jak struktury CocosSharp projekty, aby používaly .xnb soubory a jak k načtení těchto souborů za běhu.
 
 ## <a name="related-links"></a>Související odkazy
 

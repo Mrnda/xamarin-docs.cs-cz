@@ -1,17 +1,17 @@
 ---
-title: "Propojení v systému Android"
+title: Propojení v systému Android
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 3528E195-AA74-90AF-B5F3-3B65FB4F0BB8
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/13/2018
-ms.openlocfilehash: 971c663a93a837e40e82aa63e24ce4935c44c85a
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.date: 03/30/2018
+ms.openlocfilehash: 1354636c5190362e0782e5d7a42c4c2f8a9ef9cb
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="linking-on-android"></a>Propojení v systému Android
 
@@ -146,6 +146,8 @@ namespace Android.Runtime
     }
 }
 ```
+
+V uvedených příkladech `Preserve` atribut je deklarován v `Android.Runtime` obor názvů; však můžete použít `Preserve` atribut v obor názvů, protože linkeru vyhledá tento atribut název typu.
 
 
 

@@ -1,6 +1,6 @@
 ---
-title: "Pixelů a jednotky nezávislé na zařízení"
-description: "Prozkoumat rozdíly mezi SkiaSharp souřadnice a souřadnice Xamarin.Forms"
+title: Pixelů a jednotky nezávislé na zařízení
+description: Prozkoumat rozdíly mezi SkiaSharp souřadnice a souřadnice Xamarin.Forms
 ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
@@ -8,11 +8,11 @@ ms.assetid: 26C25BB8-FBE8-4B77-B01D-16A163A16890
 author: charlespetzold
 ms.author: chape
 ms.date: 02/09/2017
-ms.openlocfilehash: 5e07377584996694aa8597af79317957c51050ec
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 1698c18eafdce0585daa81c9462ee038c15586bd
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="pixels-and-device-independent-units"></a>Pixelů a jednotky nezávislé na zařízení
 
@@ -26,7 +26,7 @@ Pokud nějakou dobu, jste byla programování v Xamarin.Forms, může být chov�
 
 Tyto kroužky *jsou* malé ve srovnání s Xamarin.Forms velikosti. Ve výchozím nastavení se SkiaSharp získává v jednotkách pixelů, zatímco Xamarin.Forms základny souřadnice a velikosti na jednotce nezávislé na zařízení, vytvořit základní platformou. (Další informace o Xamarin.Forms souřadnicový systém naleznete v [kapitoly 5. Plánování práce s velikostí](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter05.md) knihy *vytváření mobilních aplikací s Xamarin.Forms*.)
 
-Na stránku [ **SkewSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/) program s názvem **prostor velikost** používá SkiaSharp textového výstupu zobrazuje velikost zobrazení plochy ze tří různých zdrojů:
+Na stránku [ **SkewSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) program s názvem **prostor velikost** používá SkiaSharp textového výstupu zobrazuje velikost zobrazení plochy ze tří různých zdrojů:
 
 - Normální Xamarin.Forms [ `Width` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Width/) a [ `Height` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Height/) vlastnosti `SKCanvasView` objektu.
 - [ `CanvasSize` ](https://developer.xamarin.com/api/property/SkiaSharp.Views.Forms.SKCanvasView.CanvasSize/) Vlastnost `SKCanvasView` objektu.
@@ -165,4 +165,4 @@ canvas.DrawOval(rect, paint);
 ## <a name="related-links"></a>Související odkazy
 
 - [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SkiaSharpFormsDemos/)
+- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

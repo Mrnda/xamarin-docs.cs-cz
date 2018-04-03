@@ -1,6 +1,6 @@
 ---
-title: "Začínáme"
-description: "Další informace pro vývoj mobilních aplikací od nuly do nasazení s tyto podrobné příručky."
+title: Začínáme
+description: Další informace pro vývoj mobilních aplikací od nuly do nasazení s tyto podrobné příručky.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 13FCAE14-E73D-C1A4-1D22-A433AD827C07
@@ -9,11 +9,11 @@ ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 04/10/2017
-ms.openlocfilehash: 8d9acbf5fa53c2fa94d1a15d51de9d3db48a16fe
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 8a8d7443a97cc3551226ef2e3aae193ca75f6bd9
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="getting-started"></a>Začínáme
 
@@ -23,11 +23,13 @@ Než začnete, podívejte se [požadavky na systém](requirements.md) a [pokyny 
 
 ## <a name="build-your-first-app"></a>Vytvoření první aplikace
 
-Chcete-li spustit okamžitou kódování, vyberte úvodní příručka pomohou sestavit svoji první aplikaci:
+> [!div class="nextstepaction"]
+> [Xamarin.Forms Quickstart](~/xamarin-forms/get-started/hello-xamarin-forms/quickstart.md)
+
+Pokud chcete k sestavení aplikace pomocí nativní technologie uživatelského rozhraní (jako je Android XML nebo Xcode scénářů), použijte jeden z těchto příruček specifických pro platformy:
 
 * [Android rychlý Start](~/android/get-started/hello-android/hello-android-quickstart.md)
 * [iOS – rychlý Start](~/ios/get-started/hello-ios/hello-ios-quickstart.md)
-* [Xamarin.Forms rychlý Start](~/xamarin-forms/get-started/hello-xamarin-forms/quickstart.md)
 * [Začínáme s Mac](~/mac/get-started/hello-mac.md)
 
 ## <a name="getting-started-with-mobile-development"></a>Začínáme se službou pro vývoj mobilních řešení
@@ -47,7 +49,7 @@ Tento článek popisuje životního cyklu softwaru s ohledem na mobilní aplikac
 Tento dokument obsahuje přehled sady Visual Studio pro Mac, integrované vývojové prostředí (IDE).
 
 
-## <a name="xamarin-university-video"></a>Xamarin University Video
+## <a name="get-started-with-xamarin-university"></a>Začínáme s Xamarin univerzity
 
 > [!VIDEO https://youtube.com/embed/NGvn-pGZFPA]
 

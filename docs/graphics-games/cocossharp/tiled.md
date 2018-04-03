@@ -1,6 +1,6 @@
 ---
-title: "Pomocí rozložen formou dlaždic s CocosSharp"
-description: "Na dlaždicích je efektivní, flexibilní a mapování vyspělá aplikací pro vytvoření dlaždice ortogonální a Izometrické pro hry. CocosSharp poskytuje integraci pro vedle sebe na nativní formát souborů."
+title: Pomocí rozložen formou dlaždic s CocosSharp
+description: Na dlaždicích je efektivní, flexibilní a mapování vyspělá aplikací pro vytvoření dlaždice ortogonální a Izometrické pro hry. CocosSharp poskytuje integraci pro vedle sebe na nativní formát souborů.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: 804C042C-F62A-4E6C-B10F-06528637F0E2
@@ -8,11 +8,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 5a469a372a9299712be7aef46c51f3d644946535
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 68afa9d175140fd5104e83282a2f72c47625d882
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="using-tiled-with-cocossharp"></a>Pomocí rozložen formou dlaždic s CocosSharp
 
@@ -30,7 +30,7 @@ Po dokončení bude máme následující ukázku:
 ![](tiled-images/image1.png "Ukázkovou aplikaci vytvořili podle pokynů v této příručce")
 
 
-# <a name="the-purpose-of-tile-maps"></a>Účelem dlaždice map
+## <a name="the-purpose-of-tile-maps"></a>Účelem dlaždice map
 
 Dlaždice map existují v vývoj her pro desetiletí ale stále běžně se používají v 2D hry po jejich efektivitu a esthetics. Dlaždice map jsou můžete dosáhnout velmi vysoký stupeň efektivitu prostřednictvím jejich použití sad dlaždice – Zdrojová bitová kopie používá dlaždice map. Dlaždice sada je kolekce zkombinované do jednoho souboru bitové kopie. I když dlaždice sady odkazují obrázků použitých v rámci služby maps dlaždice, soubory, které obsahují více bitových kopií menší se také nazývají pohyblivý symbol listy nebo pohyblivý symbol mapuje v vývoj her. Jsme můžete vizualizovat použití sady dlaždice přidáním mřížce do sady dlaždice, který budeme používat v naši ukázku:
 
@@ -43,7 +43,7 @@ Dlaždice map uspořádejte jednotlivé dlaždice ze sady dlaždice. Je třeba p
 ![](tiled-images/image4.png "Tento obrázek ukazuje možné uspořádání pomocí stejné sady dlaždice")
 
 
-# <a name="working-with-tmx-files"></a>Práce se soubory .tmx
+## <a name="working-with-tmx-files"></a>Práce se soubory .tmx
 
 Formát souboru .tmx je soubor XML vytvořené aplikací vedle sebe, což může být [stáhnout zdarma na webu vedle sebe](http://www.mapeditor.org/). Formát souboru .tmx ukládá informace o dlaždice map. Obvykle hry, bude mít jeden .tmx soubor pro každou oblast úrovně nebo samostatné.
 
@@ -80,7 +80,7 @@ Pokud jsme spustit hru, kterou jsme se zobrazí mapy dlaždice se objeví v lev�
 ![](tiled-images/image6.png "Pokud hra běží, zobrazí mapování dlaždice v okraje v levém dolním rohu obrazovky")
 
 
-# <a name="considerations-for-rendering-pixel-art"></a>Důležité informace pro vykreslování obrázky pixelů
+## <a name="considerations-for-rendering-pixel-art"></a>Důležité informace pro vykreslování obrázky pixelů
 
 Obrázky pixelů, v rámci video herní vývoje, odkazuje na 2D visual obrázky, která se obvykle vytvoří pomocí ruční a je často nízkým rozlišením. Obrázky pixelů může být restriktivně náročné vytvořit, tak často patří s nízkým rozlišením dlaždice, například 16 nebo 32 pixelů šířka a výška pixelů obrázky dlaždice sady času. Pokud není škálovat za běhu, je často příliš malá pro většina moderních telefonů a tabletů obrázky pixelů.
 
@@ -161,7 +161,7 @@ Nyní se nezobrazí naše dlaždice map rozmazaně:
 ![](tiled-images/image8.png "Nyní se nezobrazí dlaždice map rozmazaně")
 
 
-# <a name="using-tile-properties-at-runtime"></a>Pomocí dlaždice vlastnosti za běhu
+## <a name="using-tile-properties-at-runtime"></a>Pomocí dlaždice vlastnosti za běhu
 
 Pokud budeme mít `CCTileMap` načítání .tmx souboru a jeho, zobrazení, ale žádný způsob, jak pracovat s ním. Konkrétně některé dlaždice (například naše poklad hrudníku) musí být vlastní logiky. Jsme projdete kroky k zjištění vlastnosti vlastní dlaždice a různé způsoby, jak reagovat na tyto vlastnosti jednou identifikovat za běhu.
 
@@ -175,7 +175,7 @@ Pokud poklad hrudníku vlastností se nezobrazí, klikněte pravým tlačítkem 
 
 ![](tiled-images/image10.png "Pokud poklad hrudníku vlastností se nezobrazí, klikněte pravým tlačítkem na prsou poklad a vyberte dlaždici vlastnosti")
 
-Název a hodnotu s jsou implementované vlastnosti vedle sebe. Přidání vlastnosti, klikněte na tlačítko  **+**  tlačítko, zadejte název **IsTreasure**, klikněte na tlačítko **OK**, pak zadejte hodnotu **true**: 
+Název a hodnotu s jsou implementované vlastnosti vedle sebe. Přidání vlastnosti, klikněte na tlačítko **+** tlačítko, zadejte název **IsTreasure**, klikněte na tlačítko **OK**, pak zadejte hodnotu **true**: 
 
 ![](tiled-images/image11.png "Přidání vlastnosti, klikněte na tlačítko, zadejte název IsTreasure, klikněte na tlačítko OK a pak zadejte hodnotu true")
 
@@ -273,7 +273,7 @@ Většinu kódu je není potřeba vysvětlovat, ale probereme zpracování pokla
 Jinými slovy, bude prsou poklad těžit z se entity a místo se jednoduché dlaždice v `CCTileMap`. Další informace o herní entity, najdete v článku [Průvodce entity v CocosSharp](~/graphics-games/cocossharp/entities.md).
 
 
-# <a name="summary"></a>Souhrn
+## <a name="summary"></a>Souhrn
 
 Tento návod popisuje jak načíst .tmx soubory vytvořené serverem vedle sebe na CocosSharp aplikaci. Zobrazuje postup úpravy aplikace řešení, pokud je účet pro obrázky nízkým rozlišením pixelů a jak najít dlaždice podle jejich vlastností k provedení vlastní logiky, jako je vytváření instancí entit.
 

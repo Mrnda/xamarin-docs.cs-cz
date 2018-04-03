@@ -2,35 +2,35 @@
 documentType: LandingData
 title: Xamarin.Forms
 metadata:
-  description: "Xamarin.Forms zpřístupňuje vývojářům v technologii .NET úplnou sadu nástrojů pro multiplatformní uživatelské rozhraní, kterou můžou použít pro vytváření desktopových a mobilních aplikací."
+  description: Xamarin.Forms zpřístupňuje vývojářům v technologii .NET úplnou sadu nástrojů pro multiplatformní uživatelské rozhraní, kterou můžou použít pro vytváření desktopových a mobilních aplikací.
   author: conceptdev
   ms.author: crdun
   ms.date: 02/17/2018
   ms.topic: landing-page
-  ms.openlocfilehash: ff86846ded6ca9dffce616a4e0e3415b58fc20da
-  ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+  ms.openlocfilehash: ae192b3f07c4d6c180644871e48b6bc749a633c2
+  ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
   ms.translationtype: HT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 02/27/2018
+  ms.lasthandoff: 04/03/2018
 abstract:
-  description: "Xamarin.Forms zpřístupňuje vývojářům v technologii .NET úplnou sadu nástrojů pro multiplatformní uživatelské rozhraní. Vytvářejte plně nativní aplikace pro Android, iOS a Windows pomocí jazyka C# v sadě Visual Studio."
+  description: Xamarin.Forms zpřístupňuje vývojářům v technologii .NET úplnou sadu nástrojů pro multiplatformní uživatelské rozhraní. Vytvářejte plně nativní aplikace pro Android, iOS a Windows pomocí jazyka C# v sadě Visual Studio.
   menu:
     items:
     - href: ~/xamarin-forms/samples/
-      text: "Ukázky Xamarin.Forms"
+      text: Ukázky Xamarin.Forms
     - href: https://developer.xamarin.com/releases/xamarin-forms/
-      text: "Poznámky k vydané verzi"
+      text: Poznámky k vydané verzi
     - href: https://developers.google.com/
-      text: "Dokumentace Googlu pro vývojáře"
+      text: Dokumentace Googlu pro vývojáře
     - href: https://developer.apple.com/documentation/
-      text: "Dokumentace Applu pro vývojáře"
+      text: Dokumentace Applu pro vývojáře
     - href: /visualstudio/
       text: Visual Studio
 sections:
-- title: "Začínáme"
+- title: Začínáme
   items:
   - type: paragraph
-    text: "Informace o tom, jak pomocí Xamarinu a jazyka C# vytvořit svoji první aplikaci Xamarin.Forms, která cílí na Android, iOS a Windows"
+    text: Informace o tom, jak pomocí Xamarinu a jazyka C# vytvořit svoji první aplikaci Xamarin.Forms, která cílí na Android, iOS a Windows
   - type: list
     style: icon48
     items:
@@ -40,13 +40,13 @@ sections:
       href: ~/xamarin-forms/get-started/installation.md
     - image:
         src: https://docs.microsoft.com/media/common/i_mobileapp.svg
-      text: Hello, Xamarin.Forms
+      text: Rychlý start
       href: ~/xamarin-forms/get-started/hello-xamarin-forms/quickstart.md
     - image:
         src: https://docs.microsoft.com/media/common/i_mobileapp.svg
-      text: "Aplikace s více obrazovkami"
+      text: Aplikace s více obrazovkami
       href: ~/xamarin-forms/get-started/hello-xamarin-forms-multiscreen/quickstart.md
-- title: "Příručky"
+- title: Příručky
   items:
   - type: grid
     style: columns
@@ -57,68 +57,68 @@ sections:
       className: cardsB
       items:
       - href: ~/xamarin-forms/get-started/index.md
-        html: "Kurzy, které vám pomůžou začít pracovat se Xamarin.Forms Ujistěte se, že všechno je správně nainstalované, a vytvořte svoje první aplikace Xamarin.Forms."
+        html: Kurzy, které vám pomůžou začít pracovat se Xamarin.Forms Ujistěte se, že všechno je správně nainstalované, a vytvořte svoje první aplikace Xamarin.Forms.
         image:
           src: https://docs.microsoft.com/en-us/media/common/i_get-started.svg
           href: ~/xamarin-forms/get-started/index.md
-        title: "Začínáme"
+        title: Začínáme
       - href: ~/xamarin-forms/user-interface
-        html: "Informace o všech ovládacích prvcích uživatelského rozhraní dostupných v Xamarin.Forms XAML"
+        html: Informace o všech ovládacích prvcích uživatelského rozhraní dostupných v Xamarin.Forms XAML
         image:
           src: ~/media/icons/i_user-interface.svg
           href: ~/xamarin-forms/user-interface/
-        title: "Uživatelské rozhraní"
+        title: Uživatelské rozhraní
       - href: ~/xamarin-forms/deploy-test/
-        html: "Pokyny pro vytváření a nasazování aplikací a tipy, jak je s předstihem testovat!"
+        html: Pokyny pro vytváření a nasazování aplikací a tipy, jak je s předstihem testovat!
         image:
           src: ~/media/icons/i_deploy-test.svg
           href: ~/xamarin-forms/deploy-test/
-        title: "Nasazování a testování"
+        title: Nasazování a testování
       - href: ~/xamarin-forms/data-cloud/
-        html: "Místní a vzdálené ukládání a načítání dat a další cloudové služby"
+        html: Místní a vzdálené ukládání a načítání dat a další cloudové služby
         image:
           src: ~/media/icons/i_data-cloud.svg
           href: ~/xamarin-forms/data-cloud/
-        title: "Datové a cloudové služby"
+        title: Datové a cloudové služby
     - type: list
       style: cards
       className: cardsB
       items:
       - href: ~/xamarin-forms/app-fundamentals/
-        html: "Vše, co potřebujete vědět k vytváření aplikací Xamarin.Forms, třeba práce se soubory, obrázky, databázemi a dalšími prostředky"
+        html: Vše, co potřebujete vědět k vytváření aplikací Xamarin.Forms, třeba práce se soubory, obrázky, databázemi a dalšími prostředky
         image:
           src: ~/media/icons/i_app-build.svg
           href: ~/xamarin-forms/app-fundamentals/
-        title: "Principy aplikací"
+        title: Principy aplikací
       - href: ~/
-        html: "Práce s funkcemi platformy Xamarin.Forms, třeba vlastními renderery, a dalšími důležitými funkcemi každé vydané verze"
+        html: Práce s funkcemi platformy Xamarin.Forms, třeba vlastními renderery, a dalšími důležitými funkcemi každé vydané verze
         image:
           src: ~/media/icons/i_platform.svg
           href: ~/
         title: Funkce platformy
       - href: ~/xamarin-forms/xaml/
-        html: "Deklarativní vytváření uživatelských rozhraní a sdílení mezi mobilními a desktopovými platformami"
+        html: Deklarativní vytváření uživatelských rozhraní a sdílení mezi mobilními a desktopovými platformami
         image:
           src: ~/media/icons/i_xaml-forms.svg
           href: ~/xamarin-forms/xaml/
         title: XAML
       - href: ~/xamarin-forms/internals/
-        html: "Další informace o tom, jak Xamarin.Forms funguje uvnitř, a pomoc s funkcemi jako lokalizace a přístupnost"
+        html: Další informace o tom, jak Xamarin.Forms funguje uvnitř, a pomoc s funkcemi jako lokalizace a přístupnost
         image:
           src: https://docs.microsoft.com/en-us/media/common/i_config-tools.svg
           href: ~/xamarin-forms/internals/
-        title: "Pokročilé koncepty a vnitřní fungování"
+        title: Pokročilé koncepty a vnitřní fungování
 - title: Odkaz
   items:
   - type: list
     style: cards
     className: cardsD
     items:
-    - title: "rozhraní API"
-      html: "<p><a href=\"https://developer.xamarin.com/api/root/Xamarin.Forms/\">Dokumenty k rozhraní Xamarin.Forms API</a></p>"
-    - title: "Ukázky kódu"
-      html: "<p><a href=\"https://developer.xamarin.com/samples/xamarin-forms/all/\">Ukázky Xamarin.Forms</a></p>"
-    - title: "Sešity"
-      html: "<p><a href=\"https://developer.xamarin.com/workbooks#xamarin-forms\">Sešity k Xamarin.Forms</a></p>"
+    - title: rozhraní API
+      html: <p><a href="https://developer.xamarin.com/api/root/Xamarin.Forms/">Dokumenty k rozhraní Xamarin.Forms API</a></p>
+    - title: Ukázky kódu
+      html: <p><a href="https://developer.xamarin.com/samples/xamarin-forms/all/">Ukázky Xamarin.Forms</a></p>
+    - title: Sešity
+      html: <p><a href="https://developer.xamarin.com/workbooks#xamarin-forms">Sešity k Xamarin.Forms</a></p>
     - title: Knihy
-      html: "<p><a href=\"~/xamarin-forms/creating-mobile-apps-xamarin-forms\">Elektronická kniha Creating Mobile Apps</a></p><p><a href=\"~/xamarin-forms/enterprise-application-patterns\">Elektronická kniha Enterprise Application Patterns</a></p>"
+      html: <p><a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms">Elektronická kniha Creating Mobile Apps</a></p><p><a href="~/xamarin-forms/enterprise-application-patterns">Elektronická kniha Enterprise Application Patterns</a></p>

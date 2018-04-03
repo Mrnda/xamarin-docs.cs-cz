@@ -1,18 +1,18 @@
 ---
-title: "Android emulátor sady Visual Studio"
-description: "Tato příručka vysvětluje, jak konfigurovat a používat Android emulátor sady Visual Studio pro vývoj aplikací Xamarin.Android ve Visual Studiu 2015."
+title: Android emulátor sady Visual Studio
+description: Tato příručka vysvětluje, jak konfigurovat a používat Android emulátor sady Visual Studio pro vývoj aplikací Xamarin.Android ve Visual Studiu 2015.
 ms.topic: article
 ms.prod: xamarin
 ms.assetid: CD128CB9-499F-4558-B49F-77248824EFDF
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: a31d90e6d5abd574eb6187953082e1b70f66a113
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.date: 03/30/2018
+ms.openlocfilehash: 49ae82e1d2b72d7cdebd3ab91833be88a3e95424
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="visual-studio-android-emulator"></a>Android emulátor sady Visual Studio
 
@@ -21,6 +21,9 @@ _Tato příručka vysvětluje, jak konfigurovat a používat Android emulátor s
 ## <a name="visual-studio-android-emulator-overview"></a>Přehled Android emulátor sady Visual Studio
 
 Microsoft Visual Studio 2015 zahrnuje Android emulátoru, který lze použít jako cíl pro ladění aplikace Xamarin.Android: *Visual Studio Emulator for Android*. Tento emulátor používá technologie Hyper-V možnostech vývojovém počítači, výsledkem je rychlejší spuštění a časy spuštění než výchozí emulátor, která se dodává s SDK pro Android. Emulátor sady Visual Studio pro Android můžete použít jako alternativu k výchozí emulátor sady SDK pro Android, při vývoji aplikace pro Xamarin.Android.
+
+> [!NOTE]
+> Android emulátor sady Visual Studio jsou kompatibilní jenom s Visual Studio 2015 &ndash; nefunguje s Visual Studio 2017.
 
 Tato příručka vysvětluje, jak spustit v emulátoru Microsoft Android ze sady Visual Studio k testování aplikace, a popisuje různé funkce, které jsou k dispozici v emulátoru. Se dozvíte, jak vybrat *profily zařízení* (podobně jako definice zařízení v emulátoru výchozí sady SDK pro Android) k simulaci různé typy zařízení se systémem Android. Nakonec část s řešením potíží vysvětluje běžné nástrahy a alternativní řešení.
 
