@@ -53,6 +53,7 @@
 #### [Nahrát do obchodu Mac App Store](deploy-test/publishing-to-the-app-store/uploading.md)
 ## [Pokročilé koncepty a vnitřní fungování](internals/index.md)
 ### [AOT](internals/aot.md)
+### [Dostupná sestavení](~/cross-platform/internals/available-assemblies.md?context=xamarin/mac)
 ### [Architektura Mac](internals/architecture.md)
 ### [Jak funguje Xamarin.Mac](internals/how-it-works.md)
 ### [Architektury](internals/frameworks.md)
