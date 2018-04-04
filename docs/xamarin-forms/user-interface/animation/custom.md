@@ -1,18 +1,17 @@
 ---
-title: "Vlastní animace"
-description: "Třída animace je stavebním blokem všechny animace Xamarin.Forms, s rozšiřující metody ve třídě ViewExtensions vytváření jeden nebo více objektů animace. Tento článek ukazuje, jak používat třídu animace k vytváření a zrušit animací, synchronizovat více animací a vytvořit vlastní animace, které použije animaci vlastnosti, které nejsou animované existující metodami animace."
-ms.topic: article
+title: Vlastní animace
+description: Třída animace je stavebním blokem všechny animace Xamarin.Forms, s rozšiřující metody ve třídě ViewExtensions vytváření jeden nebo více objektů animace. Tento článek ukazuje, jak používat třídu animace k vytváření a zrušit animací, synchronizovat více animací a vytvořit vlastní animace, které použije animaci vlastnosti, které nejsou animované existující metodami animace.
 ms.prod: xamarin
 ms.assetid: 03B2E3FC-E720-4D45-B9A0-711081FC1907
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/14/2016
-ms.openlocfilehash: c582e0306bdc69570e3f8e8d35c7fa15b30523da
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 302aa784baad9afb703f88dcfba56b68fd3c9105
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="custom-animations"></a>Vlastní animace
 

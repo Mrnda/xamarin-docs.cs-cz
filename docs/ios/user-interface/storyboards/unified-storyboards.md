@@ -1,18 +1,17 @@
 ---
-title: "Jednotná scénářů"
-description: "Jednotná scénářů povolit iOS developer vytvoření uživatelského rozhraní pomocí jednoho storyboard, nikoli několik scénářů, tak, aby pokrývalo zvětšující rozsahu velikost obrazovky zařízení. Tento článek je navržená tak získali podrobnější přehled do operaci jednotná scénáře v rámci Xamarin.iOS."
-ms.topic: article
+title: Jednotná scénářů
+description: Jednotná scénářů povolit iOS developer vytvoření uživatelského rozhraní pomocí jednoho storyboard, nikoli několik scénářů, tak, aby pokrývalo zvětšující rozsahu velikost obrazovky zařízení. Tento článek je navržená tak získali podrobnější přehled do operaci jednotná scénáře v rámci Xamarin.iOS.
 ms.prod: xamarin
 ms.assetid: F6F70374-FC2A-4401-A712-A16D0F9B340F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 60b2e6fa65226631fe2d2c847a56852ac9ae63d2
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: d84afd0d33a6115d5d3ef9ea9b68d3370f9bb946
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="unified-storyboards"></a>Jednotná scénářů
 
@@ -680,7 +679,7 @@ A když se aplikace spustí na zařízení iPhone simulátoru, nebyl nalezen ele
 
  [![](unified-storyboards-images/exclude05.png "Element chybí při spuštěné aplikaci v simulátoru iPhone")](unified-storyboards-images/exclude05.png#lightbox)
 
-K odebrání případu vyloučení z elementu, jednoduše vyberte požadovaný prvek v **návrhová plocha**, přejděte do dolní části **vlastnost Explorer** a klikněte na tlačítko  **-** tlačítko vedle případ odebrat.
+K odebrání případu vyloučení z elementu, jednoduše vyberte požadovaný prvek v **návrhová plocha**, přejděte do dolní části **vlastnost Explorer** a klikněte na tlačítko **-**tlačítko vedle případ odebrat.
 
 Informace o implementaci Unified scénářů, podívejte se na `UnifiedStoryboard` ukázkové aplikace Xamarin iOS 8 připojené k tomuto dokumentu.
 

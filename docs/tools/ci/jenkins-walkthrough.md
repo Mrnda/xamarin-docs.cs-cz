@@ -1,18 +1,17 @@
 ---
-title: "Použití volaných s Xamarin"
-description: "Tato příručka ukazuje, jak nastavit volaných jako server průběžnou integraci a automatizaci kompilování mobilní aplikace vytvořené s funkcí Xamarin. Popisuje postup instalace volaných na OS X, konfiguraci a nastavení úlohy kompilace aplikace Xamarin.iOS a Xamarin.Android, když jsou změny potvrzeny systému správy zdrojového kódu."
-ms.topic: article
+title: Použití volaných s Xamarin
+description: Tato příručka ukazuje, jak nastavit volaných jako server průběžnou integraci a automatizaci kompilování mobilní aplikace vytvořené s funkcí Xamarin. Popisuje postup instalace volaných na OS X, konfiguraci a nastavení úlohy kompilace aplikace Xamarin.iOS a Xamarin.Android, když jsou změny potvrzeny systému správy zdrojového kódu.
 ms.prod: xamarin
 ms.assetid: 1E6825DF-1254-4FCB-B94D-ADD33D1B5309
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/23/2017
-ms.openlocfilehash: ff754a690627e7e2f0a5cd39dd669a4c9ddd47fb
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: f183eb487b49d60c896bef9c90c711cd3da846b7
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="using-jenkins-with-xamarin"></a>Použití volaných s Xamarin
 
@@ -103,7 +102,7 @@ V tomto okamžiku volaných byl nainstalován. Ale pokud nám chcete sestavení 
 
 ### <a name="installing-plugins"></a>Instalace modulů plug-in
 
-Po dokončení instalačního programu Jenkins.App bude spustit volaných a spustit webový prohlížeč s adresou URL adrese http://localhost: 8080, jak ukazuje následující snímek obrazovky:
+Po dokončení instalačního programu Jenkins.App bude spustit volaných a spustit webový prohlížeč s adresou URL http://localhost:8080, jak ukazuje následující snímek obrazovky:
 
  [![](jenkins-walkthrough-images/image10.png "8080, jak je vidět na tomto snímku obrazovky")](jenkins-walkthrough-images/image10.png#lightbox)
 

@@ -1,17 +1,16 @@
 ---
-title: "Úvod do MonoTouch.Dialog"
-description: "MonoTouch.Dialog (strojový překladů. D) Sada nástrojů je představuje nepostradatelné rozhraní pro aplikaci rychlý vývoj uživatelského rozhraní v Xamarin.iOS. STROJOVÝ PŘEKLADŮ. D umožňuje rychle a snadno definovat komplexní aplikace uživatelského rozhraní pomocí deklarativní způsob místo nebylo nutné pracně navigační řadiče, tabulek atd. Kromě toho strojový překladů. D má flexibilní sadu rozhraní API, která poskytne vývojářům úplnou kontrolu nebo rukou vypnout přístup a také další funkce, například obrázek pozadí-aktualizace obsahu, načtení, vyhledání podporu a dynamické generování uživatelského rozhraní pomocí JSON data. Tento průvodce uvádí různé způsoby, jak pracovat s strojový překladů. D a pak dives o pokročilé využití."
-ms.topic: article
+title: Úvod do MonoTouch.Dialog
+description: MonoTouch.Dialog (strojový překladů. D) Sada nástrojů je představuje nepostradatelné rozhraní pro aplikaci rychlý vývoj uživatelského rozhraní v Xamarin.iOS. STROJOVÝ PŘEKLADŮ. D umožňuje rychle a snadno definovat komplexní aplikace uživatelského rozhraní pomocí deklarativní způsob místo nebylo nutné pracně navigační řadiče, tabulek atd. Kromě toho strojový překladů. D má flexibilní sadu rozhraní API, která poskytne vývojářům úplnou kontrolu nebo rukou vypnout přístup a také další funkce, například obrázek pozadí-aktualizace obsahu, načtení, vyhledání podporu a dynamické generování uživatelského rozhraní pomocí JSON data. Tento průvodce uvádí různé způsoby, jak pracovat s strojový překladů. D a pak dives o pokročilé využití.
 ms.prod: xamarin
 ms.assetid: 52A35B24-C23B-8461-A8FF-5928A2128FB0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: b9bf4c5ee803aa60a2730703e64fcf73d07efdb5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: be979b35ffdd597dae74f1f661a381ae44433b10
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="introduction-to-monotouchdialog"></a>Úvod do MonoTouch.Dialog
 

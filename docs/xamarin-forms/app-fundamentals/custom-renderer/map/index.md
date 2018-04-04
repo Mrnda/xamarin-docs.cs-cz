@@ -1,18 +1,17 @@
 ---
-title: "Přizpůsobení mapy"
-description: "Xamarin.Forms.Maps poskytuje abstrakci a platformy pro zobrazení mapy, které používají nativní mapy rozhraní API na jednotlivých platformách zajistit mapu rychlého a známým prostředí pro uživatele."
-ms.topic: article
+title: Přizpůsobení mapy
+description: Xamarin.Forms.Maps poskytuje abstrakci a platformy pro zobrazení mapy, které používají nativní mapy rozhraní API na jednotlivých platformách zajistit mapu rychlého a známým prostředí pro uživatele.
 ms.prod: xamarin
 ms.assetid: CAF389DD-7AA8-4065-B56E-239A7E01CD1F
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 059bc512df83b87bbd142f3030a1ee806dc997ff
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 7dc77b1ea886718473f8cf03440fb604a0364cd1
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="customizing-a-map"></a>Přizpůsobení mapy
 

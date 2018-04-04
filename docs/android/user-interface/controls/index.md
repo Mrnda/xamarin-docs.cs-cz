@@ -1,18 +1,17 @@
 ---
-title: "Ovládací prvky"
-description: "Stavební bloky pro vytvoření Xamarin.Android uživatelského rozhraní"
-ms.topic: article
+title: Ovládací prvky
+description: Stavební bloky pro vytvoření Xamarin.Android uživatelského rozhraní
 ms.prod: xamarin
 ms.assetid: B7A82166-B920-4672-B7A2-20DD5E0B5AEF
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 25afd284fc88df4f23aaa3dfa1f47a3dc4fee551
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 8994a8988c0e32e85aedcd9110e3583195843862
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="controls"></a>Ovládací prvky
 
@@ -76,28 +75,28 @@ Tlačítka jsou prvky uživatelského rozhraní, které uživatel klepnutím k p
 ![Příklad navigační panel](images/navigation-bar.png)
 
 
-## <a name="pickersandroiduser-interfacecontrolspickersindexmd"></a>[Výběr](~/android/user-interface/controls/pickers/index.md)
+## <a name="pickersandroiduser-interfacecontrolspickersindexmd"></a>[Výběry](~/android/user-interface/controls/pickers/index.md)
 
 *Výběr* jsou prvky uživatelského rozhraní, které uživateli umožní vybrat datum nebo čas pomocí dialogová okna, které jsou k dispozici Android.
 
 ![Příklad výběru](images/picker.png)
 
 
-## <a name="popup-menuandroiduser-interfacecontrolspopup-menumd"></a>[Místní nabídky](~/android/user-interface/controls/popup-menu.md)
+## <a name="popup-menuandroiduser-interfacecontrolspopup-menumd"></a>[Místní nabídka](~/android/user-interface/controls/popup-menu.md)
 
 `PopupMenu` slouží k zobrazení místní nabídky, které jsou připojeny ke konkrétní zobrazení.
 
 ![Příklad místní nabídky](images/popup-menu.png)
 
 
-## <a name="spinnerandroiduser-interfacecontrolsspinnermd"></a>[Číselník](~/android/user-interface/controls/spinner.md)
+## <a name="spinnerandroiduser-interfacecontrolsspinnermd"></a>[Rotující indikátor průběhu](~/android/user-interface/controls/spinner.md)
 
 `Spinner` je element uživatelského rozhraní, která poskytuje rychlý způsob, jak vybrat jednu hodnotu ze sady. Je simmilar do rozevíracího seznamu. 
 
 ![Příklad číselník](images/spinner.png)
 
 
-## <a name="switchandroiduser-interfacecontrolsswitchmd"></a>[Switch](~/android/user-interface/controls/switch.md)
+## <a name="switchandroiduser-interfacecontrolsswitchmd"></a>[Přepínač](~/android/user-interface/controls/switch.md)
 
 `Switch` je element uživatelského rozhraní, která umožňuje uživatelům přepínat mezi dvěma stavy, například jako na nebo vypnout. `Switch` Výchozí hodnota je OFF.
 

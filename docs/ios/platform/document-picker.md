@@ -1,17 +1,16 @@
 ---
-title: "Výběr dokumentu."
-description: "Řadiče zobrazení dokumentu výběr udělí uživatelům přístup k souborům mimo izolovaného prostoru aplikace. Je jednoduchý mechanismus pro sdílení dokumentů mezi aplikacemi. Umožňuje také složitějších pracovních postupů, protože uživatelé mohou upravovat jednotlivý dokument s více aplikacemi. Tento článek obsahuje úvod do aplikace pro Xamarin.iOS pomocí nástroje pro výběr dokumentu a změny v dokumentech Icloudu nutné ho podporují."
-ms.topic: article
+title: Výběr dokumentu.
+description: Řadiče zobrazení dokumentu výběr udělí uživatelům přístup k souborům mimo izolovaného prostoru aplikace. Je jednoduchý mechanismus pro sdílení dokumentů mezi aplikacemi. Umožňuje také složitějších pracovních postupů, protože uživatelé mohou upravovat jednotlivý dokument s více aplikacemi. Tento článek obsahuje úvod do aplikace pro Xamarin.iOS pomocí nástroje pro výběr dokumentu a změny v dokumentech Icloudu nutné ho podporují.
 ms.prod: xamarin
 ms.assetid: 89539D79-BC6E-4A3E-AEC6-69D9A6CC6818
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 25b9d6c0eebd51a7b47b31c35fb3d5b56e45c3b3
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 33a6dc7294db74c3c8ab451f147c941124db8982
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="document-picker"></a>Výběr dokumentu.
 

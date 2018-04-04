@@ -1,18 +1,17 @@
 ---
-title: "Kopírování a vkládání"
-description: "Tento článek se zabývá práci s pracovní plochou poskytují kopírování a vložení v aplikaci Xamarin.Mac. Ukazuje, jak pracovat s standardní datovými typy, které můžete sdílet mezi více aplikacemi a jak pro podporu vlastních dat v rámci dané aplikace."
-ms.topic: article
+title: Kopírování a vkládání
+description: Tento článek se zabývá práci s pracovní plochou poskytují kopírování a vložení v aplikaci Xamarin.Mac. Ukazuje, jak pracovat s standardní datovými typy, které můžete sdílet mezi více aplikacemi a jak pro podporu vlastních dat v rámci dané aplikace.
 ms.prod: xamarin
 ms.assetid: 7E9C99FB-B7B4-4C48-B20F-84CB48543083
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: ba937a6eae7f0f74bcf044f1248d49a421e82de5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: cf81666403f687ce997e20f6f5f097dc9fcf1421
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="copy-and-paste"></a>Kopírování a vkládání
 

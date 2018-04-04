@@ -1,18 +1,17 @@
 ---
-title: "Práce s JNI"
-description: "Xamarin.Android umožňuje psaní aplikací pro Android v C# místo Java. Několik sestavení jsou k dispozici s Xamarin.Android která poskytnout vazby pro knihovny Java, včetně Mono.Android.dll a Mono.Android.GoogleMaps.dll. Ale vazby nejsou zadány všechny možné knihovny Java a vazby, které jsou k dispozici nemusí vazby každý Java typ nebo člen. Pokud chcete použít nevázaný Java typy a členy, mohou být použity Java nativní rozhraní (JNI). Tento článek ukazuje, jak používat JNI k interakci s Java typy a členy z aplikace Xamarin.Android."
-ms.topic: article
+title: Práce s JNI
+description: Xamarin.Android umožňuje psaní aplikací pro Android v C# místo Java. Několik sestavení jsou k dispozici s Xamarin.Android která poskytnout vazby pro knihovny Java, včetně Mono.Android.dll a Mono.Android.GoogleMaps.dll. Ale vazby nejsou zadány všechny možné knihovny Java a vazby, které jsou k dispozici nemusí vazby každý Java typ nebo člen. Pokud chcete použít nevázaný Java typy a členy, mohou být použity Java nativní rozhraní (JNI). Tento článek ukazuje, jak používat JNI k interakci s Java typy a členy z aplikace Xamarin.Android.
 ms.prod: xamarin
 ms.assetid: A417DEE9-7B7B-4E35-A79C-284739E3838E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/09/2018
-ms.openlocfilehash: f14d456cba66142c51e0755cdfd3c6795bd1cf73
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 4b5874a0f0e4289201f68299e2e37660cabc9ecf
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-jni"></a>Práce s JNI
 

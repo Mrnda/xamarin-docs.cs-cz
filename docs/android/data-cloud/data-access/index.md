@@ -1,18 +1,17 @@
 ---
-title: "Přístup k datům Xamarin.Android"
-description: "Většina aplikací mít některé požadavek k uložení dat v zařízení místně. Pokud je trivially malé množství dat, většinou je potřeba databáze a datové vrstvy v aplikaci pro správu přístupu k databázi.  Android má SQLite databázový stroj, součástí, a přístup k uložení a načtení dat se zjednodušilo díky Xamarin pro platformu. Tento dokument ukazuje, jak pro přístup k databázi SQLite způsobem napříč platformami."
-ms.topic: article
+title: Přístup k datům Xamarin.Android
+description: Většina aplikací mít některé požadavek k uložení dat v zařízení místně. Pokud je trivially malé množství dat, většinou je potřeba databáze a datové vrstvy v aplikaci pro správu přístupu k databázi.  Android má SQLite databázový stroj, součástí, a přístup k uložení a načtení dat se zjednodušilo díky Xamarin pro platformu. Tento dokument ukazuje, jak pro přístup k databázi SQLite způsobem napříč platformami.
 ms.prod: xamarin
 ms.assetid: 6B47E864-C6E7-4AA2-8DEF-2C8BF551D17C
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 301c4330afe6ff7808ca7b09f6cc5260517aae43
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 508a8f54723bfdd30b1c8ea8d4b6c1d422ae24e9
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="xamarinandroid-data-access"></a>Přístup k datům Xamarin.Android
 

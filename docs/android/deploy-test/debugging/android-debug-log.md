@@ -1,17 +1,16 @@
 ---
 title: Protokol pro Android ladění
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 01A715FE-9E9D-9B85-8A59-6568D8A09CA5
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/22/2018
-ms.openlocfilehash: 1b6b8ed99c3b2ccc9c39499c9bb9f585bd335c46
-ms.sourcegitcommit: 7b76c3d761b3ffb49541e2e2bcf292de6587c4e7
+ms.openlocfilehash: ce98e7d87a0159e8fa803549160bcf9123010da1
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="android-debug-log"></a>Protokol pro Android ladění
 

@@ -1,18 +1,17 @@
 ---
-title: "Nastavení vlastnosti ItemsSource výběr."
-description: "Výběr zobrazení je ovládací prvek pro výběr textu položky ze seznamu data. Tento článek vysvětluje, jak k naplnění výběr s daty nastavením vlastnosti ItemsSource a jak reagovat na výběr položek uživatelem."
-ms.topic: article
+title: Nastavení vlastnosti ItemsSource výběr.
+description: Výběr zobrazení je ovládací prvek pro výběr textu položky ze seznamu data. Tento článek vysvětluje, jak k naplnění výběr s daty nastavením vlastnosti ItemsSource a jak reagovat na výběr položek uživatelem.
 ms.prod: xamarin
 ms.assetid: 8ECF390C-9DB2-4441-B9A3-101AE7E5AEC5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/11/2017
-ms.openlocfilehash: 5e3d20ad213df9fd9331c71c84003c7738bd5a29
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: bf3940bc1bc0318bad4d785388f9dc9292af80ca
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="setting-a-pickers-itemssource-property"></a>Nastavení vlastnosti ItemsSource výběr.
 

@@ -1,17 +1,16 @@
 ---
-title: "Návod: Použití prvku JSON pro vytvoření uživatelského rozhraní"
-description: "MonoTouch.Dialog (strojový překladů. D) zahrnuje podporu pro dynamické generování uživatelského rozhraní pomocí JSON data. V tomto kurzu budeme zabývat použití JSONElement vytvořit uživatelské rozhraní z formátu JSON, který je buď součástí aplikace, nebo načíst z vzdálené adresy Url."
-ms.topic: article
+title: 'Návod: Použití prvku JSON pro vytvoření uživatelského rozhraní'
+description: MonoTouch.Dialog (strojový překladů. D) zahrnuje podporu pro dynamické generování uživatelského rozhraní pomocí JSON data. V tomto kurzu budeme zabývat použití JSONElement vytvořit uživatelské rozhraní z formátu JSON, který je buď součástí aplikace, nebo načíst z vzdálené adresy Url.
 ms.prod: xamarin
 ms.assetid: E353DF14-51D7-98E3-59EA-16683C770C23
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 1a5e4ab73c9090cbb743dc8cb339d6f50c5ff527
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 322857295383d17da03507bdd5ac78753f8c0619
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="walkthrough-using-a-json-element-to-create-a-user-interface"></a>Návod: Použití prvku JSON pro vytvoření uživatelského rozhraní
 

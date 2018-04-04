@@ -1,18 +1,17 @@
 ---
-title: "Možnosti peněženka"
-description: "Přidání funkcí do aplikace často vyžaduje další nastavení zřizování. Tato příručka vysvětluje potřebné pro Peněženka možnosti instalace."
-ms.topic: article
+title: Možnosti peněženka
+description: Přidání funkcí do aplikace často vyžaduje další nastavení zřizování. Tato příručka vysvětluje potřebné pro Peněženka možnosti instalace.
 ms.prod: xamarin
 ms.assetid: BD9475E6-F586-488C-93D4-8A2A1629B99B
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: 952fa7dfa93c1dcb45eafe4eec08c73d2a8571eb
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f41ba2b693b37f39ea49f62e322932537014a317
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="wallet-capabilities"></a>Možnosti peněženka
 
@@ -37,7 +36,7 @@ Pokud chcete vytvořit nový profil pro zřizování pro použití s Peněženka
     
     ![Výběr ID aplikace](wallet-capabilities-images/image17.png)
 
-3.  Klikněte  **+**  ikonu v horní pravé části stránky.
+3.  Klikněte **+** ikonu v horní pravé části stránky.
 4.  Tím, že ho zaregistrovat nové ID aplikace **název** a identifikátor svazku. (Všimněte si, že tento identifikátor svazku musí odpovídat ID sady prostředků ve vašem projektu):
    
     ![Přidáním podrobností o ID aplikace](wallet-capabilities-images/image18.png)

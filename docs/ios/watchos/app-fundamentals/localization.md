@@ -1,17 +1,16 @@
 ---
-title: "Práce s lokalizace"
-description: "Přizpůsobení aplikace watchOS více jazyků"
-ms.topic: article
+title: Práce s lokalizace
+description: Přizpůsobení aplikace watchOS více jazyků
 ms.prod: xamarin
 ms.assetid: 55834877-757B-4860-AF2F-933A948BE38D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 9ad3499a232e5f2b2ef362f772ed0197e71e6bee
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c765005491f55a1bdcadb1bc5aea97f693dc4570
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-localization"></a>Práce s lokalizace
 
@@ -86,13 +85,13 @@ Po vykreslení scénáři na hodinek správné hodnoty automaticky extrahována 
 
 #### <a name="storyboard-images"></a>Scénáře obrázků
 
-Obsahuje také příklad řešení  **gradient@2x.png**  obrázku v jednotlivých jazykovou složku. Tuto bitovou kopii mohou být různé pro jednotlivé jazyky (např. může mít vložený text, který potřebuje překladu nebo používat lokalizované používá).
+Obsahuje také příklad řešení **gradient@2x.png** obrázku v jednotlivých jazykovou složku. Tuto bitovou kopii mohou být různé pro jednotlivé jazyky (např. může mít vložený text, který potřebuje překladu nebo používat lokalizované používá).
 
 Jednoduše nastavit obrázku **Image** vlastnost ve scénáři a správné bitové kopie se zobrazí na sledování podle jazyka vybraný uživatelem.
 
 ![](localization-images/storyboard-image.png "Nastavte vlastnost bitové kopie bitové kopie ve scénáři")
 
-Poznámka: protože všechny sleduje Apple sítnice zobrazí, jenom  **@2x**  je vyžadována verze bitové kopie. Není potřeba zadat  **@2x**  ve scénáři.
+Poznámka: protože všechny sleduje Apple sítnice zobrazí, jenom **@2x** je vyžadována verze bitové kopie. Není potřeba zadat **@2x** ve scénáři.
 
 ### <a name="watch-extension"></a>Podívejte se na rozšíření
 
@@ -130,7 +129,7 @@ Bitové kopie, které jsou naplněny kódem můžete nastavit dvěma způsoby.
   displayImage.SetImage("gradient"); // image in Watch App (as shown above)
   ```
 
-2. Můžete přesunout bitovou kopii z rozšíření sledovat pomocí `FromBundle` a aplikace automaticky vybere správné bitové kopie pro výběr jazyka uživatele. V příkladu řešení je obrázek, který  **language@2x.png**  ve všech jazycích složku a její se zobrazí na `DetailController` pomocí následujícího kódu:
+2. Můžete přesunout bitovou kopii z rozšíření sledovat pomocí `FromBundle` a aplikace automaticky vybere správné bitové kopie pro výběr jazyka uživatele. V příkladu řešení je obrázek, který **language@2x.png** ve všech jazycích složku a její se zobrazí na `DetailController` pomocí následujícího kódu:
 
   ```csharp
   using (var image = UIImage.FromBundle ("language")) {
@@ -138,7 +137,7 @@ Bitové kopie, které jsou naplněny kódem můžete nastavit dvěma způsoby.
   }
   ```
 
-  Všimněte si, že není potřeba zadat  **@2x**  k odkazování na název souboru obrázku.
+  Všimněte si, že není potřeba zadat **@2x** k odkazování na název souboru obrázku.
 
 Druhý způsob je také použít, pokud je stáhnout bitovou kopii ze vzdáleného serveru pro vykreslení ve sledování; ale v takovém případě se ujistěte, že je obrázek, který si stáhnete správně lokalizované podle uživatelské předvolby.
 

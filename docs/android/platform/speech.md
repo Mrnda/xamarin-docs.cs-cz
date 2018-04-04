@@ -1,18 +1,17 @@
 ---
 title: Android Speech
 description: Tento článek popisuje základní informace o použití velmi silné Android.Speech obor názvů. Od počátku Android byl schopen rozpoznat řeči a výstup jako text. Je poměrně jednoduché procesu. Pro převod textu na řeč, ale proces je složitější, ne jenom modul rozpoznávání řeči musí vzít v úvahu, ale také jazyky dostupné a nainstalované ze systému převod textu na řeč (převod textu na ŘEČ).
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: FA3B8EC4-34D2-47E3-ACEA-BD34B28115B9
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 04/02/2018
-ms.openlocfilehash: acc64fee37e1a6046991355389a09a29e1889993
-ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
+ms.openlocfilehash: bdaa9bf09485c06551a2df15a2e3a4b410a53e75
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="android-speech"></a>Android Speech
 

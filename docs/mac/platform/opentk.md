@@ -1,18 +1,17 @@
 ---
-title: "Úvod do OpenTK"
-description: "Tento článek obsahuje úvod do práce s OpenTK v aplikaci Xamarin.Mac. Vysvětluje vytváření a údržbu okno hra, vykreslování jednoduchého objektu a zobrazení objektu pro uživatele."
-ms.topic: article
+title: Úvod do OpenTK
+description: Tento článek obsahuje úvod do práce s OpenTK v aplikaci Xamarin.Mac. Vysvětluje vytváření a údržbu okno hra, vykreslování jednoduchého objektu a zobrazení objektu pro uživatele.
 ms.prod: xamarin
 ms.assetid: BDE05645-7273-49D3-809B-8642347678D2
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: f5383465f7bc5c4529eebefca02718c83a653e9f
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d5f19dac8dc362e1ac4a36cbe5cf5db3e31ae363
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="introduction-to-opentk"></a>Úvod do OpenTK
 

@@ -1,18 +1,17 @@
 ---
-title: "Kvalifikátory prostředků a možnosti vizualizace"
-description: "Toto téma vysvětluje, jak definovat prostředky, které se použijí jenom v případě, že některé kvalifikátor hodnoty se shodují. Jednoduchý příklad je prostředek kvalifikovaný jazyk řetězec. Řetězec prostředku může být definováno jako výchozí, s další alternativní zdroje definované má být použit pro další jazyky. Může být kvalifikovaný všechny typy prostředků, včetně rozložení sám sebe."
-ms.topic: article
+title: Kvalifikátory prostředků a možnosti vizualizace
+description: Toto téma vysvětluje, jak definovat prostředky, které se použijí jenom v případě, že některé kvalifikátor hodnoty se shodují. Jednoduchý příklad je prostředek kvalifikovaný jazyk řetězec. Řetězec prostředku může být definováno jako výchozí, s další alternativní zdroje definované má být použit pro další jazyky. Může být kvalifikovaný všechny typy prostředků, včetně rozložení sám sebe.
 ms.prod: xamarin
 ms.assetid: 2111C18A-3EDA-3787-25E1-3869FF4BE441
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/29/2018
-ms.openlocfilehash: bff6d917fc4ce65daed329f15d6648bbfe0dd069
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: bc9eb145b6d9ed7bd441d625f533c5cbbd87fccd
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="resource-qualifiers-and-visualization-options"></a>Kvalifikátory prostředků a možnosti vizualizace
 

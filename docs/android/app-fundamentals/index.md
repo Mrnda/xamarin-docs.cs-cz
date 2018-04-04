@@ -1,20 +1,19 @@
 ---
-title: "Základy aplikací"
-description: "Základní koncepty aplikace"
-ms.topic: article
+title: Principy aplikací
+description: Základní koncepty aplikace
 ms.prod: xamarin
 ms.assetid: 935B8BFE-23B7-4239-5C87-F4A503B889CB
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 4abb8c823c62bc62fd2e6f717cc1b5bde9057e4e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cfb31fa6cac7c4848054cd58a1e144c2ac944262
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
-# <a name="application-fundamentals"></a>Základy aplikací
+# <a name="application-fundamentals"></a>Principy aplikací
 
 Tato část poskytuje návod na některých běžných úloh věcí nebo koncepty, které vývojáři muset mít na paměti při vývoji aplikací pro Android.
 
@@ -47,7 +46,7 @@ Tento článek vysvětluje, jak k lokalizaci Xamarin.Android do jiných jazyků 
 
 Tento článek se zabývá Android služeb, které jsou Android součásti, které umožňují práce na pozadí. Ho vysvětluje různé scénáře, které služby jsou vhodné pro a ukazuje, jak pro jejich implementaci pro provedení úlohy na pozadí dlouho běžící i umožňujícím rozhraní vzdáleného volání procedur.
 
-## <a name="broadcast-receiversandroidapp-fundamentalsbroadcast-receiversmd"></a>[Příjemci všesměrového vysílání](~/android/app-fundamentals/broadcast-receivers.md)
+## <a name="broadcast-receiversandroidapp-fundamentalsbroadcast-receiversmd"></a>[Přijímače všesměrového vysílání](~/android/app-fundamentals/broadcast-receivers.md)
 
 Tento průvodce obsahuje informace o vytváření a používání všesměrového vysílání příjemců, komponentu Android, která reaguje na systémové vysílání, v Xamarin.Android.
 
@@ -64,14 +63,14 @@ Podpora nástrojů integrovaná v sadě Visual Studio pro Mac nebo Visual Studio
 Android poskytuje velmi bohatý a různých rozhraní pro podporu 2D grafiky a animace. Tento dokument uvádí tyto architektury a popisuje, jak vytvořit vlastní grafiky a animace a použít ji v aplikaci Xamarin.Android.
 
 
-##  <a name="cpu-architecturesandroidapp-fundamentalscpu-architecturesmd"></a>[Architektury procesoru](~/android/app-fundamentals/cpu-architectures.md)
+##  <a name="cpu-architecturesandroidapp-fundamentalscpu-architecturesmd"></a>[Architektury procesorů](~/android/app-fundamentals/cpu-architectures.md)
 
 Xamarin.Android podporuje několik architektury procesoru, včetně zařízení, 32bitové a 64bitové verze. Tento článek vysvětluje, jak cílové aplikace na jeden nebo více architektury procesoru Android podporována.
 
 
 
 
-##  <a name="handling-rotationandroidapp-fundamentalshandling-rotationmd"></a>[Zpracování otočení](~/android/app-fundamentals/handling-rotation.md)
+##  <a name="handling-rotationandroidapp-fundamentalshandling-rotationmd"></a>[Zpracování otáčení](~/android/app-fundamentals/handling-rotation.md)
 
 Tento článek popisuje, jak zpracovat změny orientace zařízení v Xamarin.Android. Vysvětluje způsob práce se systémem Android prostředků automaticky načíst prostředky pro orientaci určitého zařízení, jak programově zpracování orientaci změny. Potom popisuje techniky pro zachování stavu při otočení zařízení.
 
@@ -96,7 +95,7 @@ Tato část vysvětluje že koncepty a podrobnosti implementace touch gesta v sy
 
 
 
-##  <a name="httpclient-stack-and-ssltlsandroidapp-fundamentalshttp-stackmd"></a>[Zásobník HttpClient a SSL/TLS.](~/android/app-fundamentals/http-stack.md)
+##  <a name="httpclient-stack-and-ssltlsandroidapp-fundamentalshttp-stackmd"></a>[Zásobník HttpClient a protokol SSL/TLS](~/android/app-fundamentals/http-stack.md)
 
 Tato část vysvětluje selektory zásobník HttpClient a SSL/TLS implementace pro Android. Tato nastavení určují implementace HttpClient a SSL/TLS, který bude používat aplikace pro Xamarin.Android.
 

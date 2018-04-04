@@ -1,18 +1,17 @@
 ---
 title: Lokalizace
-description: "Xamarin.Forms aplikace je možné lokalizovat pomocí souborů prostředků .NET."
-ms.topic: article
+description: Xamarin.Forms aplikace je možné lokalizovat pomocí souborů prostředků .NET.
 ms.prod: xamarin
 ms.assetid: 852B4ED3-2D2D-48A5-A759-A6591F6A1509
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: e04ea24883bdf1e29a538aaff92c555df8e1755f
-ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
+ms.openlocfilehash: 7cae53187c9bc35d55f34dca664e28280cdab062
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/21/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="localization"></a>Lokalizace
 
@@ -760,7 +759,7 @@ Tento snímek obrazovky ukazuje ukázkové aplikace iOS s konkrétní jazyk **.l
 
 ![](localization-images/ios-resources.png "iOS adresáře projektu lokalizace")
 
-Každý adresář jazyka obsahuje kopii **flag.png**, lokalizované pro daný jazyk. Pokud je zadaný žádný obrázek, bude použita výchozí operační systém bitovou kopii v adresáři výchozí jazyk. Pro plnou podporu sítnice, musí zadat  **@2x**  a  **@3x**  kopií každé bitové kopie.
+Každý adresář jazyka obsahuje kopii **flag.png**, lokalizované pro daný jazyk. Pokud je zadaný žádný obrázek, bude použita výchozí operační systém bitovou kopii v adresáři výchozí jazyk. Pro plnou podporu sítnice, musí zadat **@2x** a **@3x** kopií každé bitové kopie.
 
 #### <a name="app-name"></a>Název aplikace.
 

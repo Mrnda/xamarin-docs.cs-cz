@@ -1,18 +1,17 @@
 ---
 title: Android Designer
-description: "Tento článek popisuje funkce návrháře Xamarin.Android. Vysvětluje základy návrháře, jak používat návrháře k rozložení pomůcky vizuálně a úprava vlastností. Také ukazuje, jak používat návrháře pro práci s uživatelská rozhraní a prostředky v různých konfiguracích, jako je například motivy, jazyků a konfigurací zařízení, a také jak navrhnout alternativní zobrazení jako orientaci na výšku a."
-ms.topic: article
+description: Tento článek popisuje funkce návrháře Xamarin.Android. Vysvětluje základy návrháře, jak používat návrháře k rozložení pomůcky vizuálně a úprava vlastností. Také ukazuje, jak používat návrháře pro práci s uživatelská rozhraní a prostředky v různých konfiguracích, jako je například motivy, jazyků a konfigurací zařízení, a také jak navrhnout alternativní zobrazení jako orientaci na výšku a.
 ms.prod: xamarin
 ms.assetid: E38C9AD9-56AA-B983-8B21-E1F466C4DB36
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/09/2018
-ms.openlocfilehash: 90dc37612f36eb914c3aaa140200762945ac4516
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 20da09895bae759c77e96300d798267881a7cbfd
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="android-designer"></a>Android Designer
 

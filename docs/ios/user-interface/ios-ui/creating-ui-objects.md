@@ -1,17 +1,16 @@
 ---
-title: "Vytváření objektů uživatelského rozhraní"
-ms.topic: article
+title: Vytváření objektů uživatelského rozhraní
 ms.prod: xamarin
 ms.assetid: 4D6B136C-744A-4936-8655-A77E62BA7A60
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: e7a61dcf2cf2fabf575e30ef402121db3bea7912
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 5229beb7a882049daf58d3a3e62da6fed25a1f48
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="creating-user-interface-objects"></a>Vytváření objektů uživatelského rozhraní
 
@@ -28,11 +27,11 @@ Všechny ovládací prvky popsané v této kapitole jsou v oboru názvů UIKit a
 
 Můžete upravit ovládacích prvků uživatelského rozhraní a rozložení třemi způsoby:
 
--  **[Xamarin iOS Návrhář](~/ios/user-interface/designer/index.md)**  – Návrhář předdefinované rozložení pomocí Xamarin pro návrh obrazovky. Dvakrát klikněte na storyboard nebo soubory XIB upravit pomocí předdefinovaných návrháře.
+-  **[Xamarin iOS Návrhář](~/ios/user-interface/designer/index.md) ** – Návrhář předdefinované rozložení pomocí Xamarin pro návrh obrazovky. Dvakrát klikněte na storyboard nebo soubory XIB upravit pomocí předdefinovaných návrháře.
 -  **Xcode rozhraní tvůrce** – přetáhněte ovládací prvky na vaší obrazovce rozložení pomocí rozhraní tvůrce. Otevřít soubor XIB nebo storyboard v Xcode kliknutím pravým tlačítkem myši na soubor v **řešení Pad** a výběr **otevřít v > Xcode rozhraní tvůrce**.
 -  **Pomocí jazyka C#** – ovládací prvky lze také prostřednictvím kódu programu sestavený s kódem a přidat do zobrazení hierarchie.
 
-Pravým tlačítkem myši na projekt pro iOS a zvolením lze přidávat nové scénáře a XIB soubory **Přidat > Nový soubor...** .
+Pravým tlačítkem myši na projekt pro iOS a zvolením lze přidávat nové scénáře a XIB soubory **Přidat > Nový soubor... **.
 
 Bez ohledu na způsob, řídit vlastnosti a události smí uživatel manipulovat stále pomocí C# logiky aplikace.
 

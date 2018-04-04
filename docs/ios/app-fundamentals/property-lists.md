@@ -1,18 +1,17 @@
 ---
-title: "Práce s seznamů vlastností"
-description: "Toto téma představuje Visual Studio pro Mac na grafickém uživatelském rozhraní nebo rozšířené vlastnosti seznamu (.plist) editor pro práci s Info.plist a Entitlements.plist. Ilustruje ikony nastavení a spuštění bitové kopie pro aplikace pro iOS z v sadě Visual Studio for Mac."
-ms.topic: article
+title: Práce s seznamů vlastností
+description: Toto téma představuje Visual Studio pro Mac na grafickém uživatelském rozhraní nebo rozšířené vlastnosti seznamu (.plist) editor pro práci s Info.plist a Entitlements.plist. Ilustruje ikony nastavení a spuštění bitové kopie pro aplikace pro iOS z v sadě Visual Studio for Mac.
 ms.prod: xamarin
 ms.assetid: 5E687043-0443-377C-9A12-9C5A05958646
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 778e70f6817b71e5910aa85425d46261dfe9c803
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: f6ee7a606243f5d21d827546b528ca5d9d3f0281
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-property-lists"></a>Práce s seznamů vlastností
 

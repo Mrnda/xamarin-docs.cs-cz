@@ -1,18 +1,17 @@
 ---
 title: Moduly plug-in
-description: "Nativní funkce snadno přidat na platformě Xamarin.Forms aplikace"
-ms.topic: article
+description: Nativní funkce snadno přidat na platformě Xamarin.Forms aplikace
 ms.prod: xamarin
 ms.assetid: 8A06A420-A9D0-4BCB-B9AF-3AEA6A648A8B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/07/2016
-ms.openlocfilehash: ad338e655c1aeb475122c837ca5c805e491f84bc
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 5770d13c46998872752820b7a0cbb222a04c3ff8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="plugins"></a>Moduly plug-in
 
@@ -35,7 +34,7 @@ Je také možné vytvoření a publikování vlastní moduly plug-in jako balí�
 
 Například seznam modulů plug-in níže jsou všechny s otevřeným zdrojem, a odpovídají ukázky [ `DependencyService` ](~/xamarin-forms/app-fundamentals/dependency-service/index.md) části:
 
-- **Převod textu na řeč** podle James Montemagno &ndash; [Githubu](https://github.com/jamesmontemagno/Xamarin.Plugins/tree/master/TextToSpeech) a [NuGet  ](https://www.nuget.org/packages/Xam.Plugin.Battery)
+- **Převod textu na řeč** podle James Montemagno &ndash; [Githubu](https://github.com/jamesmontemagno/Xamarin.Plugins/tree/master/TextToSpeech) a [NuGet](https://www.nuget.org/packages/Xam.Plugin.Battery)
 - **Stav baterie** podle James Montemagno &ndash; [Githubu](https://github.com/jamesmontemagno/Xamarin.Plugins/tree/master/Battery) a [NuGet](https://www.nuget.org/packages/Xam.Plugins.TextToSpeech/)
 
 Tyto projekty Githubu poskytne to dobrý výchozí bod pro vytvoření vlastní moduly plug-in a platformy, stejně jako tyto pokyny pro [vytváření modulu plug-in pro Xamarin](https://github.com/xamarin/plugins#create-a-plugin-for-xamarin).

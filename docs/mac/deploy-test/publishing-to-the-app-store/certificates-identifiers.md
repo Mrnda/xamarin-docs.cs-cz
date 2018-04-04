@@ -1,18 +1,17 @@
 ---
-title: "Certifikáty a identifikátory"
-description: "Tento průvodce vás provede vytvořením potřebné certifikáty a identifikátory, které bude vyžadovat, aby publikování aplikace Xamarin.Mac."
-ms.topic: article
+title: Certifikáty a identifikátory
+description: Tento průvodce vás provede vytvořením potřebné certifikáty a identifikátory, které bude vyžadovat, aby publikování aplikace Xamarin.Mac.
 ms.prod: xamarin
 ms.assetid: 393d0066-7f6f-4ac3-a48d-4b5db65bc4cd
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: a1065fb91a23827c4876654470cda5022aa1d3b8
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d94819be2c014aec5edfae19959ce949ee8dcd4b
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="certificates-and-identifiers"></a>Certifikáty a identifikátory
 
@@ -32,7 +31,7 @@ Klikněte na tlačítko na **odkaz certifikáty** v části **Mac aplikace** č�
 
 [![Výběr odkaz certifikáty](certificates-identifiers-images/devcenter03.png "výběru certifikátů odkazu")](certificates-identifiers-images/devcenter03-large.png#lightbox)
 
-Klikněte na **všechny** propojit a klikněte na  **+**  tlačítko:
+Klikněte na **všechny** propojit a klikněte na **+** tlačítko:
 
 [![Výběrem možnosti všechny a přidání nové položky](certificates-identifiers-images/certif01.png "výběrem možnosti všechny a přidání nové položky")](certificates-identifiers-images/certif01-large.png#lightbox)
 
@@ -77,7 +76,7 @@ Odsud můžete nakonfigurovat vývojář databáze, které budete používat:
 
 Pokud chcete vytvořit profil pro zřizování pro testování, vývojář muset mít počítače Mac zaregistrované. Nesmí být delší než 100 počítačích pro testování svých aplikací pro Mac se můžete zaregistrovat.
 
-V Centru pro vývojáře Mac vyberte **všechny** z **zařízení** části a klikněte na tlačítko  **+**  tlačítko:
+V Centru pro vývojáře Mac vyberte **všechny** z **zařízení** části a klikněte na tlačítko **+** tlačítko:
 
 [![Přidání nového počítače](certificates-identifiers-images/devcenter10.png "přidání nového počítače")](certificates-identifiers-images/devcenter10-large.png#lightbox)
 
@@ -175,7 +174,7 @@ Samoobslužné uvolnění Xamarin.Mac aplikace (ne vydání prostřednictvím Ap
 
 Postupujte takto:
 
-1. Z **certifikáty** část, začněte tím, že klikněte na tlačítko  **+**  tlačítko a pak vyberte **vývojáře ID** přepínače: 
+1. Z **certifikáty** část, začněte tím, že klikněte na tlačítko **+** tlačítko a pak vyberte **vývojáře ID** přepínače: 
 
     [![Přidání vývojáře ID](certificates-identifiers-images/certif07.png "přidávání ID vývojáře")](certificates-identifiers-images/certif07-large.png#lightbox)
 2. Klikněte **pokračovat** tlačítko a vyberte typ ID vývojáře k vytvoření: 

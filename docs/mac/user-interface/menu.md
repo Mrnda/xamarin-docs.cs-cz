@@ -1,18 +1,17 @@
 ---
-title: "Nabídky"
-description: "Tento článek se zabývá práce s nabídkami v aplikaci Xamarin.Mac. Popisuje vytvoření a udržování nabídky a položek nabídky v Xcode a Tvůrce rozhraní a práce s nimi prostřednictvím kódu programu."
-ms.topic: article
+title: Nabídky
+description: Tento článek se zabývá práce s nabídkami v aplikaci Xamarin.Mac. Popisuje vytvoření a udržování nabídky a položek nabídky v Xcode a Tvůrce rozhraní a práce s nimi prostřednictvím kódu programu.
 ms.prod: xamarin
 ms.assetid: 5D367F8E-3A76-4995-8A89-488530FAD802
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 52a9fc206a2c303d13d80be4de743d98056f7684
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 50c9cf333ff7965bbdfbb964a2301e677eb6aa59
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="menus"></a>Nabídky
 
@@ -439,7 +438,7 @@ Potom poklikejte na soubor storyboard aplikace v **řešení Pad** otevřete pro
 
 ![Atributy Inspector](menu-images/action01.png "Inspector atributy")
 
-Klikněte na tlačítko  **+**  tlačítko v dolní části **atributy Inspector** přidat nové vlastní akce:
+Klikněte na tlačítko **+** tlačítko v dolní části **atributy Inspector** přidat nové vlastní akce:
 
 ![Přidání nové akce](menu-images/action02.png "přidání nové akce")
 

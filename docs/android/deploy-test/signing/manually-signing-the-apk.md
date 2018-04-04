@@ -1,17 +1,16 @@
 ---
-title: "Ručně podepisování APK"
-ms.topic: article
+title: Ručně podepisování APK
 ms.prod: xamarin
 ms.assetid: 08549E1C-7F04-4D20-9E7A-794B9D09FD12
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: f47fded9c09849f6d5f1329a4efd652df80816d5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 9e1b168b7212f093b50a36c40550fba2e7d63e77
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="manually-signing-the-apk"></a>Ručně podepisování APK
 
@@ -137,7 +136,7 @@ V tématu [Google dokumentaci](https://developer.android.com/studio/command-line
 > [!WARNING]
 > Tato část se týká pouze pokud je nececssary k podepsání APK s **jarsigner** nástroj. Vývojáři se doporučuje použít **apksigner** pro přihlášení APK.
 
-Tento postup zahrnuje podepisování pomocí souboru APK  **[jarsigner](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/jarsigner.html)**  příkaz sady Java SDK.  **Jarsigner** zajišťuje nástroj sady Java SDK. 
+Tento postup zahrnuje podepisování pomocí souboru APK **[jarsigner](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/jarsigner.html)** příkaz sady Java SDK.  **Jarsigner** zajišťuje nástroj sady Java SDK. 
 
 Následující ukazuje, jak se přihlásit APK pomocí **jarsigner** a klíč `publishingdoc` obsažená v souboru úložiště klíčů s názvem **xample.keystore** :
 

@@ -1,18 +1,17 @@
 ---
 title: HealthKit
-description: "HealthKit je zavedená v iOS 8, která poskytuje centralizovaný, koordinované a zabezpečené úložiště pro informace týkající se stavu rozhraní. Operační systém zajišťuje ochranu osobních údajů a zabezpečení s informacemi o stavu a stavu aplikace, řídicí panel pro uživatele. Aplikace s oprávněními uživatele lze číst a zapisovat širokou škálu informací o stavu."
-ms.topic: article
+description: HealthKit je zavedená v iOS 8, která poskytuje centralizovaný, koordinované a zabezpečené úložiště pro informace týkající se stavu rozhraní. Operační systém zajišťuje ochranu osobních údajů a zabezpečení s informacemi o stavu a stavu aplikace, řídicí panel pro uživatele. Aplikace s oprávněními uživatele lze číst a zapisovat širokou škálu informací o stavu.
 ms.prod: xamarin
 ms.assetid: E3927A21-507C-43BA-A2AD-957716BA9B52
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: e7075b67db94b6bf603bd96c637c9f7724ae1519
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: a569bcff3ac33d008788bb0b946bd027fa5c0ea8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="healthkit"></a>HealthKit
 
@@ -69,14 +68,14 @@ Vytvoření explicitního **ID aplikace** a odpovídající **profil zřizován�
 
 Vaše aktuální **ID aplikace** jsou uvedeny v rámci [certifikáty, identifikátory a profily](https://developer.apple.com/account/ios/identifiers/bundle/bundleList.action) části webu Dev Center. Často se zobrazí tento seznam **ID** hodnoty `*`, která udává, **ID aplikace** - **název** lze použít s libovolným počtem přípony. Takové *ID aplikace zástupné* nelze použít s Kit stavu.
  
-K vytvoření explicitního **ID aplikace**, klikněte na tlačítko  **+**  tlačítko v pravém horním provést, abyste **registrace iOS ID aplikace** stránky:
+K vytvoření explicitního **ID aplikace**, klikněte na tlačítko **+** tlačítko v pravém horním provést, abyste **registrace iOS ID aplikace** stránky:
 
 
 [![](healthkit-images/image02.png "Registrace aplikace na portálu pro vývojáře Apple")](healthkit-images/image02.png#lightbox)
 
 Jak je znázorněno na obrázku výš, po vytvoření popis aplikace, použijte **explicitní ID aplikace** části k vytvoření ID pro vaši aplikaci. V **App Services** část, zkontrolujte **stavu Kit** v **povolit služby** části.
 
-Až skončíte, stiskněte **pokračovat** tlačítko zaregistrovat **ID aplikace** ve vašem účtu. Je přesměrován zpět zpět **identifikátory, certifikátů a profilů** stránky. Klikněte na tlačítko **profily zřizování** můžete přejít na seznam vaše aktuální zřizovacích profilů, a klikněte na  **+**  tlačítko v pravém horním rohu provést, abyste **přidat iOS Profil pro zřizování** stránky. Vyberte **vývoj aplikací pro iOS** možnost a klikněte na tlačítko **pokračovat** zobrazíte **vyberte ID aplikace** stránky. Zde vyberte explicitní **ID aplikace** který jste dřív zadali:
+Až skončíte, stiskněte **pokračovat** tlačítko zaregistrovat **ID aplikace** ve vašem účtu. Je přesměrován zpět zpět **identifikátory, certifikátů a profilů** stránky. Klikněte na tlačítko **profily zřizování** můžete přejít na seznam vaše aktuální zřizovacích profilů, a klikněte na **+** tlačítko v pravém horním rohu provést, abyste **přidat iOS Profil pro zřizování** stránky. Vyberte **vývoj aplikací pro iOS** možnost a klikněte na tlačítko **pokračovat** zobrazíte **vyberte ID aplikace** stránky. Zde vyberte explicitní **ID aplikace** který jste dřív zadali:
 
 
 [![](healthkit-images/image03.png "Vyberte explicitní ID aplikace")](healthkit-images/image03.png#lightbox)

@@ -1,18 +1,17 @@
 ---
 title: Implementace fragmenty
-description: "Android 3.0 zavedla fragmenty. Fragmenty jsou samostatné modulární komponenty, které pomáhají řešit obtíže při psaní aplikací, které můžou běžet na obrazovkách různých velikostí. Tento článek vás provede jak vyvíjet aplikace Xamarin.Android pomocí fragmentů a jak podporovat fragmenty na zařízeních s předem Androidem 3.0."
-ms.topic: article
+description: Android 3.0 zavedla fragmenty. Fragmenty jsou samostatné modulární komponenty, které pomáhají řešit obtíže při psaní aplikací, které můžou běžet na obrazovkách různých velikostí. Tento článek vás provede jak vyvíjet aplikace Xamarin.Android pomocí fragmentů a jak podporovat fragmenty na zařízeních s předem Androidem 3.0.
 ms.prod: xamarin
 ms.assetid: A71E9D87-CB69-10AB-CE51-357A05C76BCD
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 2ed67eac51f6edcfda16caf73e4667c49124082c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 81f1f992de450ee62c4c1d2e80da858b024be594
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="implementing-with-fragments"></a>Implementace fragmenty
 

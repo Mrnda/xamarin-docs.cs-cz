@@ -1,18 +1,17 @@
 ---
-title: "Úvod do systému iOS 8"
-description: "S iOS 8 Apple poskytl nadbytku nové architektury a rozhraní API pro buzení a štěstím vývojáři. V této příručce jsme zavést tato nová rozhraní API a v tématu jak využívat iOS 8 vývojářům a uživatelům."
-ms.topic: article
+title: Úvod do systému iOS 8
+description: S iOS 8 Apple poskytl nadbytku nové architektury a rozhraní API pro buzení a štěstím vývojáři. V této příručce jsme zavést tato nová rozhraní API a v tématu jak využívat iOS 8 vývojářům a uživatelům.
 ms.prod: xamarin
 ms.assetid: 33AD66C0-3743-49FE-9DCE-88ED3A16BA63
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/14/2017
-ms.openlocfilehash: 8a4fabd5cc63434950f4646336b06676f6eb915b
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 2f57547356adcbafd01851bc54e42a14454ccd6a
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="introduction-to-ios-8"></a>Úvod do systému iOS 8
 
@@ -68,7 +67,7 @@ Rozšíření aplikace oversimplify, představují způsob a vzájemnou komunika
 
 Prvním krokem při vytváření rozšíření aplikace je k definování bodem správná přípona – to je důležité při zajišťování dostupnosti správné rozhraní API a chování. Pokud chcete vytvořit aplikaci rozšíření v sadě Visual Studio pro Mac, přidáte ji do existující aplikaci tak, že přidáte nový projekt pro vaše řešení.
 
-V **nový projekt** dialogové okno přejděte na **C#** > **iOS** > **unifikované API**  >   **Rozšíření**, jak ukazuje následující snímek obrazovky:
+V **nový projekt** dialogové okno přejděte na **C#** > **iOS** > **unifikované API**  >  ** Rozšíření**, jak ukazuje následující snímek obrazovky:
 
 ![](introduction-to-ios8-images/image2.png "Vytvoření nové rozšíření")
  
@@ -151,15 +150,15 @@ Další informace najdete v tématu naše [SpriteKit](~/ios/platform/gaming/spri
 ## <a name="other-changes"></a>Další změny
 A také hlavní změny v iOS 8, které jsou popsané výše Apple aktualizoval kromě mnoho existující rozhraní. Podrobnosti jsou níže:
 
-- **[Základní Image](https://developer.apple.com/library/prerelease/ios/documentation/GraphicsImaging/Reference/CoreImagingRef/index.html#//apple_ref/doc/uid/TP40001171)**  – Apple se rozšířila při jeho zpracování framework image přidáním lepší podporu pro zjišťování oblastí obdélníkový a kódy QR uvnitř bitové kopie. Jan Bluestein jsou zde popsány to v tomto blogu post nárok [detekce bitové kopie v iOS 8](http://blog.xamarin.com/image-detection-in-ios-8/)
+- **[Základní Image](https://developer.apple.com/library/prerelease/ios/documentation/GraphicsImaging/Reference/CoreImagingRef/index.html#//apple_ref/doc/uid/TP40001171) ** – Apple se rozšířila při jeho zpracování framework image přidáním lepší podporu pro zjišťování oblastí obdélníkový a kódy QR uvnitř bitové kopie. Jan Bluestein jsou zde popsány to v tomto blogu post nárok [detekce bitové kopie v iOS 8](http://blog.xamarin.com/image-detection-in-ios-8/)
 
 ## <a name="deprecated-apis"></a>Zastaralá rozhraní API
 Všechna vylepšení provedené v iOS 8 máte několik rozhraní API zastaralé. Některé z nich jsou podrobně popsány níže.
 
-- **[UIApplication](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIApplication_Class/index.html#//apple_ref/occ/cl/UIApplication)**  – mít zastaralé metody a vlastnosti používaná pro registraci vzdáleného oznámení. Jsou to registerForRemoteNotificationTypes a enabledRemoteNotificationTypes.
-- **[UIViewController](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIViewController_Class/index.html#//apple_ref/occ/cl/UIViewController)**  – velikost třídy a vlastnosti nahradit metody a vlastnosti, které používají k popisu rozhraní orientace. Odkazovat [Úvod do Unified scénářů](~/ios/user-interface/storyboards/unified-storyboards.md) Další informace o tom, jak použít.
+- **[UIApplication](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIApplication_Class/index.html#//apple_ref/occ/cl/UIApplication) ** – mít zastaralé metody a vlastnosti používaná pro registraci vzdáleného oznámení. Jsou to registerForRemoteNotificationTypes a enabledRemoteNotificationTypes.
+- **[UIViewController](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIViewController_Class/index.html#//apple_ref/occ/cl/UIViewController) ** – velikost třídy a vlastnosti nahradit metody a vlastnosti, které používají k popisu rozhraní orientace. Odkazovat [Úvod do Unified scénářů](~/ios/user-interface/storyboards/unified-storyboards.md) Další informace o tom, jak použít.
 
-- **[UISearchDisplayController](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UISearchDisplayController_Class/index.html#//apple_ref/occ/cl/UISearchDisplayController)**  – to v iOS8 nahradila UISearchController.
+- **[UISearchDisplayController](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UISearchDisplayController_Class/index.html#//apple_ref/occ/cl/UISearchDisplayController) ** – to v iOS8 nahradila UISearchController.
 
 ## <a name="summary"></a>Souhrn
 V tomto článku jsme se podívali na některé nové funkce, zavedená v iOS 8 společností Apple.

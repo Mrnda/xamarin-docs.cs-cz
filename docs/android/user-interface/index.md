@@ -1,32 +1,31 @@
 ---
-title: "Uživatelské rozhraní"
-description: "Vytvoření uživatelského rozhraní pro aplikace pro Xamarin.Android"
-ms.topic: article
+title: Uživatelské rozhraní
+description: Vytvoření uživatelského rozhraní pro aplikace pro Xamarin.Android
 ms.prod: xamarin
 ms.assetid: F67B7C33-BC53-2BB6-CDA7-16E4AB4A9EFB
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 08/18/2017
-ms.openlocfilehash: 40d02def5c0aae3334ae59cec78f6d22a1d5d772
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 152f5551e2f539e8ab93121c35c2acca7eb7f2e9
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="user-interface"></a>Uživatelské rozhraní
 
 Následující části popisují různé nástroje a stavební bloky, které se používají k vytváření uživatelského rozhraní v aplikacích pro Xamarin.Android.
 
-## <a name="android-designerandroiduser-interfaceandroid-designerindexmd"></a>[Android návrháře](~/android/user-interface/android-designer/index.md)
+## <a name="android-designerandroiduser-interfaceandroid-designerindexmd"></a>[Android Designer](~/android/user-interface/android-designer/index.md)
 
 Tato část vysvětluje, jak používat návrháře Android k vizuálně Rozvrhněte ovládací prvky a upravit vlastnosti. Také vysvětluje, jak používat návrháře pro práci s uživatelská rozhraní a prostředky v různých konfiguracích, jako je například motivy, jazyků a konfigurací zařízení, a také jak navrhnout alternativní zobrazení jako orientaci na výšku a.
 
-## <a name="material-themeandroiduser-interfacematerial-thememd"></a>[Podstatným motiv](~/android/user-interface/material-theme.md)
+## <a name="material-themeandroiduser-interfacematerial-thememd"></a>[Motiv Material](~/android/user-interface/material-theme.md)
 
 *Podstatným motiv* je styl rozhraní uživatele, který určuje vzhled a chování zobrazení a aktivit v Android. Podstatným motiv je integrovaná do Android, aby byl použit podle uživatelského rozhraní systému a aplikací. Tento průvodce představuje zásady designu materiálu a vysvětluje, jak motiv na aplikaci pomocí předdefinované motivy materiálu nebo vlastní motiv.
 
-## <a name="user-profileandroiduser-interfaceuser-profilemd"></a>[Profil uživatele](~/android/user-interface/user-profile.md)
+## <a name="user-profileandroiduser-interfaceuser-profilemd"></a>[Uživatelský profil](~/android/user-interface/user-profile.md)
 
 Tato příručka vysvětluje, jak získat přístup do osobního profilu pro vlastníka zařízení, včetně kontaktní údaje, jako je vlastník zařízení název a telefonní číslo.
 

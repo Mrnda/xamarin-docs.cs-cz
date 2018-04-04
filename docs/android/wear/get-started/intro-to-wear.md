@@ -1,18 +1,17 @@
 ---
-title: "Úvod do Android opotřebení"
-description: "Se zavedením Google Android nosit už nejste právě telefony a tablety s omezeným přístupem při rozhodování o vývoji kvalitních aplikací pro Android. Podpora pro Xamarin.Android pro Android nosit umožňuje spustit na zápěstí kód C#! Tento úvod poskytuje základní přehled Android nosit, popisuje hlavní funkce a nabízí přehled funkcí, které jsou k dispozici v systému Android nosit 2.0. Vypíše některé oblíbenější Android nosit zařízení a poskytuje odkazy na základní Google Android nosit dokumentaci pro další čtení."
-ms.topic: article
+title: Úvod do Android opotřebení
+description: Se zavedením Google Android nosit už nejste právě telefony a tablety s omezeným přístupem při rozhodování o vývoji kvalitních aplikací pro Android. Podpora pro Xamarin.Android pro Android nosit umožňuje spustit na zápěstí kód C#! Tento úvod poskytuje základní přehled Android nosit, popisuje hlavní funkce a nabízí přehled funkcí, které jsou k dispozici v systému Android nosit 2.0. Vypíše některé oblíbenější Android nosit zařízení a poskytuje odkazy na základní Google Android nosit dokumentaci pro další čtení.
 ms.prod: xamarin
 ms.assetid: EAEF99F0-8FBE-47E4-8644-E7244CFAF464
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 4f6cfe61b5f91fb6703fdcdd20513ce6bc2dc161
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 0ab166bb71c23d456cb70d35a2794717110642fd
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="introduction-to-android-wear"></a>Úvod do Android opotřebení
 

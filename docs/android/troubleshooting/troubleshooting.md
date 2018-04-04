@@ -1,17 +1,17 @@
 ---
-title: "Tipy pro odstraňování potíží"
-ms.topic: article
+title: Tipy pro odstraňování potíží
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 56137ACA-4811-B312-6860-E16D0FA123F7
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/15/2018
-ms.openlocfilehash: 015fff63c612c3acf29681b90c1e945c5e460034
-ms.sourcegitcommit: 028936cd2fe547963c1cf82343c3ee16f658089a
+ms.openlocfilehash: 961f9f38687790343f225d95c74e00e98f594c28
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="troubleshooting-tips"></a>Tipy pro odstraňování potíží
 
@@ -200,7 +200,7 @@ Existují čtyři hlášení o důsledků:
 -  Globální weak odkazovat odstraňování: Jedná se o řádky, které začínají *-w-* .
 
 
-Ve všech zprávách *grefc* hodnota je počet globální odkazy, které se má vytvořit Xamarin.Android, zatímco *grefwc* hodnota je počet slabé globální odkazy, které vytvořil Xamarin.Android. *Zpracování* nebo *obj popisovač* hodnota je hodnota popisovač JNI a znak po '  */* ' je typ hodnoty popisovač: */L* pro místní odkaz */G* pro globální odkazy a */W* pro slabé globální odkazy.
+Ve všech zprávách *grefc* hodnota je počet globální odkazy, které se má vytvořit Xamarin.Android, zatímco *grefwc* hodnota je počet slabé globální odkazy, které vytvořil Xamarin.Android. *Zpracování* nebo *obj popisovač* hodnota je hodnota popisovač JNI a znak po ' */*' je typ hodnoty popisovač: */L* pro místní odkaz */G* pro globální odkazy a */W* pro slabé globální odkazy.
 
 Jako součást procesu GC globální odkazy (+ g +) se převedou na slabé globální odkazy (způsobuje + w + a - g-), je spuštěna GC straně Java a kontroluje slabé globální odkaz zobrazit, pokud byl shromážděný. Pokud je stále aktivní, vytvoří se nový gref kolem slabé ref (+ g +, -w-), jinak zničena slabé ref (-w).
 
@@ -270,7 +270,7 @@ To by měl zprovoznění je. Pokud potíže potrvají, můžete pokusit [Offline
 
 ## <a name="receiving-activation-incomplete-error-message"></a>Přijetí ' aktivace neúplné chybová zpráva
 
-Tomuto problému může dojít při použití Xamarin.Android pro sadu Visual Studio. Chcete-li vyřešit tento problém, pošlete prosím protokoly z následujícího umístění na  *contact@xamarin.com* .
+Tomuto problému může dojít při použití Xamarin.Android pro sadu Visual Studio. Chcete-li vyřešit tento problém, pošlete prosím protokoly z následujícího umístění na *contact@xamarin.com*.
 
 -  Umístění protokolu: **LocalAppData %\\Xamarin\\protokoly**
 
@@ -301,7 +301,7 @@ K tomu, najít vaši platformu volba níže a postupujte podle kroků:
 5. Zadejte své přihlašovací údaje
 6. Kontrola aktualizací
 
-Pokud se tato chybová zpráva i nadále zobrazovat, prosím odesílání e-mailem  **contact@xamarin.com** .
+Pokud se tato chybová zpráva i nadále zobrazovat, prosím odesílání e-mailem **contact@xamarin.com**.
 
 
 

@@ -1,18 +1,17 @@
 ---
-title: "Nativní zobrazení v jazyce C#"
-description: "Nativní zobrazení z iOS, Android a UWP můžete přímo na něj odkazovat z Xamarin.Forms stránky vytvořené pomocí jazyka C#. Tento článek ukazuje, jak přidat nativní zobrazení na platformě Xamarin.Forms rozložení vytvořit pomocí jazyka C# a jak k přepsání rozložení vlastní zobrazení a opravte jejich měření využití rozhraní API."
-ms.topic: article
+title: Nativní zobrazení v jazyce C#
+description: Nativní zobrazení z iOS, Android a UWP můžete přímo na něj odkazovat z Xamarin.Forms stránky vytvořené pomocí jazyka C#. Tento článek ukazuje, jak přidat nativní zobrazení na platformě Xamarin.Forms rozložení vytvořit pomocí jazyka C# a jak k přepsání rozložení vlastní zobrazení a opravte jejich měření využití rozhraní API.
 ms.prod: xamarin
 ms.assetid: 230F937C-F914-4B21-8EA1-1A2A9E644769
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 0c4014ecda0501e9309a17901c439444e4b48e86
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 7979e43cdde60b1b0248118e591c096295847acb
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="native-views-in-c"></a>Nativní zobrazení v jazyce C#
 

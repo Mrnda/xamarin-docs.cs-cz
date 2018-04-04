@@ -1,18 +1,17 @@
 ---
-title: "Poradce při potížích"
-description: "Tento článek obsahuje několik tipy k řešení potíží pro práci s iOS 9 v aplikacích pro Xamarin.iOS."
-ms.topic: article
+title: Poradce při potížích
+description: Tento článek obsahuje několik tipy k řešení potíží pro práci s iOS 9 v aplikacích pro Xamarin.iOS.
 ms.prod: xamarin
 ms.assetid: DCE83E36-CBD9-4D96-8E7F-384CB8A54563
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: ca3697b355a45e06f941a6dfd610cd19f922ca75
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 1b335fc6b19d87a46059511baf866433691b1b4d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="troubleshooting"></a>Poradce při potížích
 
@@ -150,7 +149,7 @@ Chcete-li tento problém vyřešit, postupujte takto:
 3. V části **zařízení** straně panelu, vyberte zařízení, klikněte pravým tlačítkem a vyberte **Zobrazit profily zřizování...** : 
 
     [![](troubleshooting-images/untrusted03.png "Profily zřizování SShow")](troubleshooting-images/untrusted03.png#lightbox)
-4. Vyberte každý profil zřizování aktuálně na zařízení a klikněte na  **-**  tlačítko Odstranit: 
+4. Vyberte každý profil zřizování aktuálně na zařízení a klikněte na **-** tlačítko Odstranit: 
 
     [![](troubleshooting-images/untrusted04.png "Odstraňuje se profil pro zřizování")](troubleshooting-images/untrusted04.png#lightbox)
 5. Z **Xcode** nabídce vyberte možnost **předvolby...**  a **účty**: 

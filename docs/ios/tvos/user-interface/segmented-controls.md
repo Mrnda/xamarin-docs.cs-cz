@@ -1,18 +1,17 @@
 ---
-title: "Práce s Segmentovaným ovládací prvky"
-description: "Tento článek se zabývá navrhování a práce s ovládacími prvky Segmentovaným uvnitř Xamarin.tvOS aplikace."
-ms.topic: article
+title: Práce s Segmentovaným ovládací prvky
+description: Tento článek se zabývá navrhování a práce s ovládacími prvky Segmentovaným uvnitř Xamarin.tvOS aplikace.
 ms.prod: xamarin
 ms.assetid: 23AD94CC-E93A-40B1-8E2B-ECD21FA355BE
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 6561ff70997af05ed4df6b7bfe0ba6345fb44d9d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d4eac932c7fad628a0a65127bceb641f34ea5d79
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-segmented-controls"></a>Práce s Segmentovaným ovládací prvky
 
@@ -67,7 +66,7 @@ Nejjednodušší způsob, jak pracovat s ovládacími prvky segmentu v aplikaci 
 
     [![](segmented-controls-images/segment03.png "Na kartě pomůcky")](segmented-controls-images/segment03.png#lightbox)
 1. Použití **segmenty** pole k řízení počet segmentů v kontroleru.
-1. Vyberte daný Segment z **Segment rozevírací** upravit jeho jednotlivé vlastnosti, jako **název** nebo **Image** a kontrolu, pokud je daný Segment  **Povolit** nebo **vybrané** při zobrazení ovládacího prvku.
+1. Vyberte daný Segment z **Segment rozevírací** upravit jeho jednotlivé vlastnosti, jako **název** nebo **Image** a kontrolu, pokud je daný Segment ** Povolit** nebo **vybrané** při zobrazení ovládacího prvku.
 1. Nakonec přiřadit **názvy** pro ovládací prvky, aby mohli odpovídat na ně v kódu jazyka C#. Příklad: 
 
     [![](segmented-controls-images/segment04.png "Přiřadit název")](segmented-controls-images/segment04.png#lightbox)
@@ -83,7 +82,7 @@ Nejjednodušší způsob, jak pracovat s ovládacími prvky segmentu v aplikaci 
 
     [![](segmented-controls-images/segment03-vs.png "Na kartě pomůcky")](segmented-controls-images/segment03-vs.png#lightbox)
 1. Použití **segmenty** pole k řízení počet segmentů v kontroleru.
-1. Vyberte daný Segment z **Segment rozevírací** upravit jeho jednotlivé vlastnosti, jako **název** nebo **Image** a kontrolu, pokud je daný Segment  **Povolit** nebo **vybrané** při zobrazení ovládacího prvku.
+1. Vyberte daný Segment z **Segment rozevírací** upravit jeho jednotlivé vlastnosti, jako **název** nebo **Image** a kontrolu, pokud je daný Segment ** Povolit** nebo **vybrané** při zobrazení ovládacího prvku.
 1. Nakonec přiřadit **názvy** pro ovládací prvky, aby mohli odpovídat na ně v kódu jazyka C#. Příklad: 
 
     [![](segmented-controls-images/segment04-vs.png "Přiřadit název")](segmented-controls-images/segment04-vs.png#lightbox)

@@ -1,18 +1,17 @@
 ---
-title: "Publikování do obchodu s aplikacemi"
-description: "Tento článek ukazuje, jak nakonfigurovat, vytvářet a publikovat aplikace pro Xamarin.iOS pro distribuci přes obchod s aplikacemi. Obsahuje podrobný průvodce, který popisuje postup přípravy vaší aplikace pro distribuci, jak používat nástroje společnosti Apple k odeslání aplikace ke kontrole a, nakonec, jak publikovat aplikace k obchodu s aplikacemi."
-ms.topic: article
+title: Publikování do obchodu s aplikacemi
+description: Tento článek ukazuje, jak nakonfigurovat, vytvářet a publikovat aplikace pro Xamarin.iOS pro distribuci přes obchod s aplikacemi. Obsahuje podrobný průvodce, který popisuje postup přípravy vaší aplikace pro distribuci, jak používat nástroje společnosti Apple k odeslání aplikace ke kontrole a, nakonec, jak publikovat aplikace k obchodu s aplikacemi.
 ms.prod: xamarin
 ms.assetid: DFBCC0BA-D233-4DC4-8545-AFBD3768C3B9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: ef8fafb923dcad936ce0a049e715cdd163ea7222
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 5d78cb81f27ce7478719ff9f11f4eb38fddc3981
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="publishing-to-the-app-store"></a>Publikování do obchodu s aplikacemi
 
@@ -71,7 +70,7 @@ Apple poskytuje výběr speciální aplikační služby, označované taky jako 
 Vytvoření ID aplikace a volitelně vybrat oprávnění zahrnuje následující kroky pomocí společnosti Apple založené na webu iOS Provisioning Portal:
 
 1. V **certifikáty, identifikátory a profily** části vyberte **identifikátory** > **ID aplikace**.
-2. Klikněte  **+**  tlačítko a zadejte **název** a **ID sady** pro novou aplikaci.
+2. Klikněte **+** tlačítko a zadejte **název** a **ID sady** pro novou aplikaci.
 3. Přejděte do dolní části obrazovky a vyberte některou **App Services** , bude nutné ve vaší aplikace pro Xamarin.iOS.
 4. Klikněte **pokračovat** tlačítko a následující na obrazovce pokyny pro vytvoření nového ID aplikace.
 
@@ -109,7 +108,7 @@ používá iOS *profily zřizování* k řízení nasazení sestavení konkrétn
 Zřizování zahrnuje následující kroky pomocí společnosti Apple webové iOS Provisioning Portal:
 
 1.  Vyberte **zřizování** > **distribuční**.
-2.  Klikněte  **+**  tlačítko a vyberte typ profil distribuce, kterou chcete vytvořit jako **obchod**.
+2.  Klikněte **+** tlačítko a vyberte typ profil distribuce, kterou chcete vytvořit jako **obchod**.
 3.  Vyberte **ID aplikace** z rozevíracího seznamu, který chcete vytvořit profil distribuce pro.
 4.  Vyberte platný certifikát pro podepsání aplikace produkční (distribuce).
 5.  Zadejte **název** pro nové **profil distribuce** a generovat profil.

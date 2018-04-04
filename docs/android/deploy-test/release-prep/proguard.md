@@ -1,18 +1,17 @@
 ---
 title: ProGuard
-description: "ProGuard je knihovnu shrinker souboru Třída Java, optimalizátor, obfuscator a předběžné ověřovatele. Rozpozná a odebere nepoužívané kódu, analyzuje a optimalizuje bajtového kódu potom zastírá třídy a jejich členové. Tato příručka vysvětluje, jak funguje ProGuard, jak povolit ve vašem projektu a jeho konfiguraci. Je také několik příkladů ProGuard konfigurace."
-ms.topic: article
+description: ProGuard je knihovnu shrinker souboru Třída Java, optimalizátor, obfuscator a předběžné ověřovatele. Rozpozná a odebere nepoužívané kódu, analyzuje a optimalizuje bajtového kódu potom zastírá třídy a jejich členové. Tato příručka vysvětluje, jak funguje ProGuard, jak povolit ve vašem projektu a jeho konfiguraci. Je také několik příkladů ProGuard konfigurace.
 ms.prod: xamarin
 ms.assetid: 29C0E850-3A49-4618-9078-D59BE0284D5A
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 10744d7c4fbcc5a8935a1fe1e60b6c96ec828815
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e65c78633ae91318bd8e9cce949bac9cc12675c0
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="proguard"></a>ProGuard
 

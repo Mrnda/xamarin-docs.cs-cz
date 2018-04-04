@@ -1,18 +1,17 @@
 ---
-title: "Místní oznámení"
-description: "V této části ukazuje, jak implementovat místní oznámení v Xamarin.Android. To vysvětluje různé prvky uživatelského rozhraní Android oznámení a popisuje rozhraní API je zahrnuta s vytváření a zobrazování oznámení."
-ms.topic: article
+title: Místní oznámení
+description: V této části ukazuje, jak implementovat místní oznámení v Xamarin.Android. To vysvětluje různé prvky uživatelského rozhraní Android oznámení a popisuje rozhraní API je zahrnuta s vytváření a zobrazování oznámení.
 ms.prod: xamarin
 ms.assetid: 03E19D14-7C81-4D5C-88FC-C3A3A927DB46
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: f13515326bd75f2b2c15e2b6059e6f829814ea5c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 97c8372656f0cbfa5b8f7bb12d15b00feac4b5c3
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="local-notifications"></a>Místní oznámení
 

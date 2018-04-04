@@ -1,18 +1,17 @@
 ---
 title: Seznam vzhledu
-description: "Přizpůsobte ListViews pomocí záhlaví, zápatí, skupiny a proměnné výška buňky."
-ms.topic: article
+description: Přizpůsobte ListViews pomocí záhlaví, zápatí, skupiny a proměnné výška buňky.
 ms.prod: xamarin
 ms.assetid: DC8009B0-4371-4D60-885A-5362FC7EE3E5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 4e849cc034b8c77b84d1be8cb31cc1206f203ef6
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: ff36deff996a92fca512158252c64e5c29046be9
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="list-appearance"></a>Seznam vzhledu
 

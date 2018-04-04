@@ -1,18 +1,17 @@
 ---
 title: Kreslení geometrie pomocí CCDrawNode
 description: CCDrawNode poskytuje metody pro kreslení primitivní objekty, například řádky, kružnice a trojúhelníčky.
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 46A3C3CE-74CC-4A3A-AB05-B694AE182ADB
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: 5a2471981f2e88ff8af9a803ff8f5a99e5b9266f
-ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
+ms.openlocfilehash: 2a4278f97a69ef9eb705c6fedf1a5c7ec98875b8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="drawing-geometry-with-ccdrawnode"></a>Kreslení geometrie pomocí CCDrawNode
 

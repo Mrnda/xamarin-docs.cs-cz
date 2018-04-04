@@ -1,28 +1,27 @@
 ---
-title: Funkce
-description: "Funkce pro různé platformy aplikací a koncepty."
-ms.topic: article
+title: Funkce platformy
+description: Funkce pro různé platformy aplikací a koncepty.
 ms.prod: xamarin
 ms.assetid: CEE8C464-67D7-45F4-9614-EAEF5217CACC
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 02/18/2018
-ms.openlocfilehash: 26b33b1fbf546f734e6661380f63b574cccbcae5
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a1699c8bde336c040253a5560a2979de8b3fabf5
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
-# <a name="platform-features"></a>Funkce
+# <a name="platform-features"></a>Funkce platformy
 
 Tato část obsahuje dokumenty, které popisují některé pokročilejší funkce aplikace napříč platformami a koncepty.
 
-##  <a name="async-support-overviewcross-platformplatformasyncmd"></a>[Přehled asynchronních podpory](~/cross-platform/platform/async.md)
+##  <a name="async-support-overviewcross-platformplatformasyncmd"></a>[Přehled podpory asynchronních operací](~/cross-platform/platform/async.md)
 
 Verze 5 jazyka C# zavedená dvě nová klíčová slova a express asynchronních operací: async a operátoru await. Tato klíčová slova umožňuje psát jednoduché kód, který využívá Task Parallel Library provádět dlouhotrvající operace (například přístup k síti) v jiné vlákno a snadný přístup k výsledky při dokončení. Nejnovější verze Xamarin.iOS a Xamarin.Android podporu async a operátoru await – tento dokument obsahuje vysvětlení a příklady pomocí nové syntaxe s funkcí Xamarin.
 
-## <a name="c-6-language-featurescross-platformplatformcsharp-sixmd"></a>[Funkce 6 jazyka C#](~/cross-platform/platform/csharp-six.md)
+## <a name="c-6-language-featurescross-platformplatformcsharp-sixmd"></a>[Funkce jazyka C# 6](~/cross-platform/platform/csharp-six.md)
 
 Nejnovější verzi jazyka C# – verze 6 – stále vyvíjí jazyka, který má mít méně často používaný, lepší přehlednost a další konzistence. Čisticí inicializace syntaxe, možnost používat `await` v `catch/finally` bloky a null podmíněné `?` operátor jsou obzvláště užitečná.
 

@@ -1,18 +1,17 @@
 ---
 title: Vazba knihoven Mac
-description: "Tato příručka odkazy na jiné dokumenty, které popisují, jak vytvořit vazby pro librariesl jazyka Objective-C"
-ms.topic: article
+description: Tato příručka odkazy na jiné dokumenty, které popisují, jak vytvořit vazby pro librariesl jazyka Objective-C
 ms.prod: xamarin
 ms.assetid: 521707CD-79D3-488A-84CB-A37EBF93AC94
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/13/2017
-ms.openlocfilehash: 918c02542ee861b44411c29b01510a92659dee42
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: c70a34acbdac6339a96000a2f987d4ac4f3d6a45
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="binding-mac-libraries"></a>Vazba knihoven Mac
 
@@ -27,7 +26,7 @@ Další informace o vytvoření vazby knihovny jazyka Objective-C na Xamarin.Mac
   popisuje všechny atributy, které jsou k dispozici pro vazbu autorům jednotka proces vytváření vazby.
 
 
-<a name="objective-sharpiecross-platformmaciosbindingobjective-sharpieindexmd"></a>[Cíle Sharpie](~/cross-platform/macios/binding/objective-sharpie/index.md)
+<a name="objective-sharpiecross-platformmaciosbindingobjective-sharpieindexmd"></a>[Objective Sharpie](~/cross-platform/macios/binding/objective-sharpie/index.md)
 -------------------
 
 Cíle Sharpie je nástroj příkazového řádku, který pomůže bootstrap první fáze vazby.
@@ -41,5 +40,5 @@ Odkazovat [XMBindingExample Mac ukázka](https://github.com/xamarin/mac-samples/
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Vazba Objective-C](~/cross-platform/macios/binding/index.md)
+- [Vytváření vazeb Objective-C](~/cross-platform/macios/binding/index.md)
 - [Vazba knihoven iOS](~/ios/platform/binding-objective-c/index.md)

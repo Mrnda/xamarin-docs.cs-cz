@@ -1,24 +1,23 @@
 ---
-title: "Vložení chyby rozhraní .NET"
-ms.topic: article
+title: Vložení chyby rozhraní .NET
 ms.prod: xamarin
 ms.assetid: 932C3F0C-D968-42D1-BB14-D97C73361983
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: 90d30b92069bcd6a5c008fa8009c0392c4d26473
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 64caaf6610d9f9193a686d91b4731cd4d4953fa6
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="em0xxx-binding-error-messages"></a>EM0xxx: vazba chybové zprávy
 
 Například parametry, prostředí
 
 <!-- 0xxx: the generator itself, e.g. parameters, environment -->
-<h3><a name="EM0000"/>EM0000: Neočekávaná chyba – vyplňte sestavu chyb na https://github.com/mono/Embeddinator-4000/issues</h3>
+<h3><a name="EM0000"/>EM0000: Neočekávaná chyba – vyplňte sestavy chyb v https://github.com/mono/Embeddinator-4000/issues</h3>
 
 Došlo k neočekávané chybě. Prosím [souboru problém](https://github.com/mono/Embeddinator-4000/issues) s nejblíže tolik informací, včetně:
 
@@ -68,7 +67,7 @@ Jde o známý problém, který jsme v úmyslu opravit v budoucí verzi generáto
 
 Nástroj nelze sloučit architektury uvedený v chybové zprávě, protože je běžné souborů mezi nimi.
 
-To může znamenat chybu v Embeddinator-4000; prosím soubor sestavy chyb v [https://github.com/mono/Embeddinator-4000/issues](https://github.com/mono/Embeddinator-4000/issues) s testovacího případu.
+To může znamenat chybu v Embeddinator-4000; prosím soubor sestavy chyb v [ https://github.com/mono/Embeddinator-4000/issues ](https://github.com/mono/Embeddinator-4000/issues) s testovacího případu.
 
 <h3><a name="EM0011"/>EM0011: Sestavení `X` neexistuje.</h3>
 
@@ -104,7 +103,7 @@ Syntaxe pro možnost příkazového řádku zadané `A` nebylo možné analyzova
 
 Tato chybová zpráva se hlásí, když se nezdaří Kontrola interní konzistence v Embeddinator-4000.
 
-To ukazuje na chybu v Embeddinator-4000; prosím soubor sestavy chyb v [https://github.com/mono/Embeddinator-4000/issues](https://github.com/mono/Embeddinator-4000/issues) s testovacího případu.
+To ukazuje na chybu v Embeddinator-4000; prosím soubor sestavy chyb v [ https://github.com/mono/Embeddinator-4000/issues ](https://github.com/mono/Embeddinator-4000/issues) s testovacího případu.
 
 
 <!-- 1xxx: code processing -->

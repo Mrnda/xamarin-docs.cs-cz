@@ -1,18 +1,18 @@
 ---
-title: "Hello, Android: rychlý start"
-description: "V této příručce dvě části bude vytvoření vaší první aplikace Xamarin.Android (pomocí sady Visual Studio nebo Visual Studio pro Mac) a vytvořit si představu základy vývoje aplikace pro Android pomocí Xamarinu. Na této cestě bude nutné zavést nástrojů, koncepty a kroky potřebné k sestavení a nasazení aplikace pro Xamarin.Android."
-ms.topic: article
+title: 'Hello, Android: rychlý start'
+description: V této příručce dvě části bude vytvoření vaší první aplikace Xamarin.Android (pomocí sady Visual Studio nebo Visual Studio pro Mac) a vytvořit si představu základy vývoje aplikace pro Android pomocí Xamarinu. Na této cestě bude nutné zavést nástrojů, koncepty a kroky potřebné k sestavení a nasazení aplikace pro Xamarin.Android.
+ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: 44007FA1-3ABC-4935-BF52-4613AF0553A6
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: bbe243b108be6e0060ba9067db58a9875c7b5153
-ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
+ms.openlocfilehash: c5937cc86a8a1f8506b14774b0429bee3c8aa594
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="hello-android-quickstart"></a>Hello, Android: rychlý start
 
@@ -276,7 +276,7 @@ Dialogovém okně pro výběr, přejděte do adresáře rozbalené ikony AdApp X
 
 Tento postup opakujte pro každou z **mipmap -** složek, dokud nebude obsah **mipmap -** ikony aplikace Xamarin složky zkopírovaly do jejich protějškem **mipmap -** složek v **Phoneword** projektu.
 
-Po všech ikon se zkopírují do projektu Xamarin.Android, otevřete **možnosti projektu** dialogové okno kliknutím pravým tlačítkem na projekt v **řešení Pad**. Vyberte **sestavení > aplikace pro Android** a vyberte  **@mipmap/icon**  z **ikona aplikace** – pole se seznamem:
+Po všech ikon se zkopírují do projektu Xamarin.Android, otevřete **možnosti projektu** dialogové okno kliknutím pravým tlačítkem na projekt v **řešení Pad**. Vyberte **sestavení > aplikace pro Android** a vyberte **@mipmap/icon** z **ikona aplikace** – pole se seznamem:
 
 [![Nastavení ikonu projektu](hello-android-quickstart-images/vs/25-set-project-icon-sml.png)](hello-android-quickstart-images/vs/25-set-project-icon.png#lightbox)
 
@@ -518,7 +518,7 @@ V **přidat soubor do složky** dialogové okno, vyberte **zkopírujte soubor do
 
 Tento postup opakujte pro každou z **mipmap -** složek, dokud nebude obsah **mipmap -** ikony aplikace Xamarin složky zkopírovaly do jejich protějškem **mipmap -** složek v **Phoneword** projektu.
 
-Po všech ikon se zkopírují do projektu Xamarin.Android, otevřete **možnosti projektu** dialogové okno kliknutím pravým tlačítkem na projekt v **řešení Pad**. Vyberte **sestavení > aplikace pro Android** a vyberte  **@mipmap/icon**  z **ikona aplikace** – pole se seznamem:
+Po všech ikon se zkopírují do projektu Xamarin.Android, otevřete **možnosti projektu** dialogové okno kliknutím pravým tlačítkem na projekt v **řešení Pad**. Vyberte **sestavení > aplikace pro Android** a vyberte **@mipmap/icon** z **ikona aplikace** – pole se seznamem:
 
 [![Nastavení ikonu projektu](hello-android-quickstart-images/xs/28-set-project-icon-sml.png)](hello-android-quickstart-images/xs/28-set-project-icon.png#lightbox)
 

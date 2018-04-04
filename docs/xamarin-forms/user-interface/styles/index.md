@@ -1,18 +1,17 @@
 ---
 title: Styly
-description: "Přizpůsobení vzhledu pomocí styly"
-ms.topic: article
+description: Přizpůsobení vzhledu pomocí styly
 ms.prod: xamarin
 ms.assetid: 344A34AA-B19A-4765-BC8A-875D9A6B5EA8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 934948579e5f3fb19c7afe49f4e86a1ef255b77f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7a19f7597ee17282bc8b41e7f0e7e3ade2361a50
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="styles"></a>Styly
 
@@ -32,7 +31,7 @@ Xamarin.Forms aplikace často obsahují více ovládacích prvků, které mají 
 
 Styly může být k dispozici globálně jejich přidáním do aplikace [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/). To pomáhá zamezit duplicitních stylů stránky a ovládací prvky.
 
-## <a name="style-inheritanceinheritancemd"></a>[Styl dědičnosti](inheritance.md)
+## <a name="style-inheritanceinheritancemd"></a>[Dědičnost stylů](inheritance.md)
 
 Styly může dědit vlastnosti z jiných styly snížit duplikování a povolit opakované použití.
 

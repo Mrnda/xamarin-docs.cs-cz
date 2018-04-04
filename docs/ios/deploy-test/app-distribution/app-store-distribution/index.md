@@ -1,18 +1,17 @@
 ---
 title: Distribuce obchodu s aplikacemi
-description: "Tento dokument popisuje požadavky pro distribuci do společnosti Apple App Store."
-ms.topic: article
+description: Tento dokument popisuje požadavky pro distribuci do společnosti Apple App Store.
 ms.prod: xamarin
 ms.assetid: B07E2C1F-A6DF-43CB-BFB0-0252A5558467
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: 25c4cb980f77880ae690916ec45be3cd12a3cf10
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 7a38c77dde7a66f2db194cd8888a2c32a3529a9a
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="app-store-distribution"></a>Distribuce obchodu s aplikacemi
 
@@ -45,7 +44,7 @@ Můžete vybrat stejné **ID aplikace** a **zařízení** které jste použili p
 
 1. Vyhledejte *certifikáty, identifikátory a profily* části Apple Developer Member Center.
 2. V části *certifikáty*, vyberte **produkční**.
-3. Klikněte  **+**  tlačítko Vytvořit nový certifikát.
+3. Klikněte **+** tlačítko Vytvořit nový certifikát.
 4. V části *produkční* záhlaví, vyberte **App Store a Ad Hoc**:
 
     [![](images/createcertmanually01.png "Vyberte obchodu s aplikacemi a Ad Hoc")](images/createcertmanually01.png#lightbox)
@@ -81,7 +80,7 @@ Jako všechny ostatní profil zřizování vytvoříte, ID aplikace požadované
 
 
 1. V [Apple Developer Center](https://developer.apple.com/account/overview.action) vyhledejte *certifikát, identifikátory a profily* části. Vyberte **ID aplikace** pod **identifikátory**.
-2. Klikněte  **+**  tlačítko a zadejte **název** který bude identifikovat na portálu.
+2. Klikněte **+** tlačítko a zadejte **název** který bude identifikovat na portálu.
 3. Předpona aplikace musí být již nastavená jako ID vašeho týmu a nelze změnit. Vyberte buď explicitní nebo ID aplikace zástupný znak a zadejte ID sady v následujícím formátu zpětné DNS:
     - **Explicit**: com.[DomainName].[AppName]
     - **Wildcard**:com.[DomainName].*
@@ -97,7 +96,7 @@ Jakmile máte požadované součásti potřebné pro vytváření profil distrib
 
     [![](images/distribute01.png "Zřizování RSelect > Distribuce")](images/distribute01.png#lightbox)
 
-2. Klikněte  **+**  tlačítko a vyberte typ profil distribuce, kterou chcete vytvořit jako **obchod**:
+2. Klikněte **+** tlačítko a vyberte typ profil distribuce, kterou chcete vytvořit jako **obchod**:
 
     [![](images/distribute02.png "Vytvoření profilu distribuční obchodu s aplikacemi")](images/distribute02.png#lightbox)
 

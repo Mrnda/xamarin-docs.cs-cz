@@ -1,18 +1,17 @@
 ---
 title: Metadata vazby Java
-description: "Kód jazyka C# v Xamarin.Android volá Java knihovny prostřednictvím vazby, které jsou mechanismus, který abstrahuje nízké úrovně podrobnosti, které jsou uvedeny v jazyce Java nativní rozhraní (JNI). Xamarin.Android poskytuje nástroj, který generuje těchto vazeb. Tato nástrojů umožňuje ovládacího prvku vývojáře vytváření vazby na základě metadat, která umožňuje postupy, jako je například úprava obory názvů a přejmenování členy. Tento dokument popisuje, jak funguje metadata, shrnuje atributy, aby metadata podporuje a vysvětluje, jak vyřešit problémy vazby úpravou těchto metadat."
-ms.topic: article
+description: Kód jazyka C# v Xamarin.Android volá Java knihovny prostřednictvím vazby, které jsou mechanismus, který abstrahuje nízké úrovně podrobnosti, které jsou uvedeny v jazyce Java nativní rozhraní (JNI). Xamarin.Android poskytuje nástroj, který generuje těchto vazeb. Tato nástrojů umožňuje ovládacího prvku vývojáře vytváření vazby na základě metadat, která umožňuje postupy, jako je například úprava obory názvů a přejmenování členy. Tento dokument popisuje, jak funguje metadata, shrnuje atributy, aby metadata podporuje a vysvětluje, jak vyřešit problémy vazby úpravou těchto metadat.
 ms.prod: xamarin
 ms.assetid: 27CB3C16-33F3-F580-E2C0-968005A7E02E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/09/2018
-ms.openlocfilehash: 70f17b6bc8dc991534cdf4dd065c813aa0e27e96
-ms.sourcegitcommit: d450ae06065d8f8c80f3588bc5a614cfd97b5a67
+ms.openlocfilehash: 6dea13fcda43cad22b8bea9838bbcb23b97820c7
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/21/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="java-bindings-metadata"></a>Metadata vazby Java
 
@@ -246,7 +245,7 @@ Změní návratový typ metody. Atribut návratový nezmění (jako změny vrát
 
 ### <a name="obfuscated"></a>matoucí
 
-Nástroje, které obfuskováním Java knihovny může narušovat generátor vazby Xamarin.Android a schopnost vygenerovat obálku třídy jazyka C#. Zahrnout vlastnosti třídy zkomolené: * zahrnuje název třídy  **$** , tj. **$.class** * název třídy je zcela ohrožení zabezpečení z malých písmen, tj.  **a.class**
+Nástroje, které obfuskováním Java knihovny může narušovat generátor vazby Xamarin.Android a schopnost vygenerovat obálku třídy jazyka C#. Zahrnout vlastnosti třídy zkomolené: * zahrnuje název třídy **$**, tj. **$.class** * název třídy je zcela ohrožení zabezpečení z malých písmen, tj.  **a.class**
 
 Tento fragment kódu je příklad toho, jak vygenerovat "zrušení zkomolené" typ C#:
 

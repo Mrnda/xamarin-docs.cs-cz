@@ -1,17 +1,16 @@
 ---
-title: "Shrnutí kapitoly 15. Interaktivní rozhraní"
-ms.topic: article
+title: Shrnutí kapitoly 15. Interaktivní rozhraní
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F54E86F4-1CDA-474E-9B09-242060C2C13D
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 09b999771ec500409e40dc2aef671045bf9f5565
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: c5b2bc00c4337969322193966f26ce0e151f426e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="summary-of-chapter-15-the-interactive-interface"></a>Shrnutí kapitoly 15. Interaktivní rozhraní
 
@@ -91,7 +90,7 @@ Inicializace `Slider` může způsobit vlastnosti `Value` vlastnosti chcete změ
 
 - [`Increment`](https://developer.xamarin.com/api/property/Xamarin.Forms.Stepper.Increment/) typu `double`, inicializovaného 1
 
-Vizuální `Stepper` se skládá ze dvou tlačítka označená  **&ndash;**  a  **+** . Stisknutím  **&ndash;**  snižuje `Value` podle `Increment` minimálně na `Minimum`. Stisknutím  **+**  zvyšuje `Value` podle `Increment` maximálně `Maximum`.
+Vizuální `Stepper` se skládá ze dvou tlačítka označená **&ndash;** a **+**. Stisknutím **&ndash;** snižuje `Value` podle `Increment` minimálně na `Minimum`. Stisknutím **+** zvyšuje `Value` podle `Increment` maximálně `Maximum`.
 
 Tento postup je znázorněn pomocí [ **StepperDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/StepperDemo) ukázka.
 

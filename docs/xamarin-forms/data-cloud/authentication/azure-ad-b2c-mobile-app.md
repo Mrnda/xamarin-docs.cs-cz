@@ -1,18 +1,17 @@
 ---
-title: "Integrace s Azure Mobile Apps služby Azure Active Directory B2C"
-description: "Azure Active Directory B2C je cloudové řešení správy identity pro určených webové a mobilní aplikace. Tento článek ukazuje, jak používat Azure Active Directory B2C k ověřování a autorizace na instanci Azure Mobile Apps s Xamarin.Forms."
-ms.topic: article
+title: Integrace s Azure Mobile Apps služby Azure Active Directory B2C
+description: Azure Active Directory B2C je cloudové řešení správy identity pro určených webové a mobilní aplikace. Tento článek ukazuje, jak používat Azure Active Directory B2C k ověřování a autorizace na instanci Azure Mobile Apps s Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 53F52036-A997-4D0F-86B4-4302C6913136
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: c28ddc09b07066de67f5c974cf5c2128726c6932
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: cafc1e78779dc393fa0409daa08b3daa8948a1ee
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="integrating-azure-active-directory-b2c-with-azure-mobile-apps"></a>Integrace s Azure Mobile Apps služby Azure Active Directory B2C
 

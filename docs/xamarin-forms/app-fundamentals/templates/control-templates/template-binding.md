@@ -1,18 +1,17 @@
 ---
-title: "Vytvoření vazby ze ControlTemplate"
-description: "Vazby šablony umožňují vytvořit vazbu na veřejné vlastnosti ovládacích prvků v šabloně ovládacího prvku k datům povolení hodnot vlastností ovládacích prvků v šabloně řízení snadno změnit. Tento článek ukazuje použití šablony vazby k provedení vazby dat z šablony ovládacího prvku."
-ms.topic: article
+title: Vytvoření vazby ze ControlTemplate
+description: Vazby šablony umožňují vytvořit vazbu na veřejné vlastnosti ovládacích prvků v šabloně ovládacího prvku k datům povolení hodnot vlastností ovládacích prvků v šabloně řízení snadno změnit. Tento článek ukazuje použití šablony vazby k provedení vazby dat z šablony ovládacího prvku.
 ms.prod: xamarin
 ms.assetid: 794A663C-3A8D-438A-BD02-8E97C919B55F
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 5b330c448a135cbcf8fc2745debc48924e29c103
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 3b306c79aea9bd2192aa73eddcf95790a9b24353
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="binding-from-a-controltemplate"></a>Vytvoření vazby ze ControlTemplate
 
@@ -68,7 +67,7 @@ Výsledkem je vidět na následujících snímcích obrazovky vzhled:
 
 ![](template-binding-images/teal-theme.png "Pomocí šablony vazeb šedozelená šablony ovládacího prvku")
 
-## <a name="creating-a-templatebinding-in-c35"></a>Vytváření TemplateBinding C &#35;
+## <a name="creating-a-templatebinding-in-c35"></a>Vytváření TemplateBinding v jazyce C&#35;
 
 V jazyce C# [ `TemplateBinding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplateBinding/) je vytvořená pomocí `TemplateBinding` konstruktoru, jak je ukázáno v následujícím příkladu kódu:
 

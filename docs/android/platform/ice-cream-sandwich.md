@@ -1,18 +1,17 @@
 ---
-title: "Funkce Sandwichovy Zmrzlinová"
-description: "Tento článek popisuje některé z nových funkcí, které jsou k dispozici vývojářům aplikací pomocí rozhraní API systému Android 4 - Zmrzlinová Sandwichovy. Ho zahrnuje několik novou technologií, uživatelské rozhraní a pak prozkoumá celou řadu nových funkcích, které nabízí Android 4 pro sdílení dat mezi aplikacemi a mezi zařízeními."
-ms.topic: article
+title: Funkce Sandwichovy Zmrzlinová
+description: Tento článek popisuje některé z nových funkcí, které jsou k dispozici vývojářům aplikací pomocí rozhraní API systému Android 4 - Zmrzlinová Sandwichovy. Ho zahrnuje několik novou technologií, uživatelské rozhraní a pak prozkoumá celou řadu nových funkcích, které nabízí Android 4 pro sdílení dat mezi aplikacemi a mezi zařízeními.
 ms.prod: xamarin
 ms.assetid: 78E18A62-C12F-A699-37FA-44B9F6B44273
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/09/2018
-ms.openlocfilehash: c2e7f9fabd462faf813299021d5f84ef0a62f790
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 3c5412629f6dcd31fb0a82634ef530569eef459a
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="ice-cream-sandwich-features"></a>Funkce Sandwichovy Zmrzlinová
 

@@ -1,30 +1,29 @@
 ---
-title: "Základy Xamarin.Forms XAML"
-description: "Začínáme s značek a platformy pro mobilní zařízení"
-ms.topic: article
+title: Základy Xamarin.Forms XAML
+description: Začínáme s značek a platformy pro mobilní zařízení
 ms.prod: xamarin
 ms.assetid: 67CC2CD6-D10A-4B14-9696-1D3A410EFFBF
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: a3f3dbbe0f12cfa7cc1fc6606ec8bd48a96e407c
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: 991d928c2c58f05098a41c84aba295a31636ab96
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="xamarinforms-xaml-basics"></a>Základy Xamarin.Forms XAML
 
-XAML – eXtensible Application Markup Language – umožňuje vývojářům definování uživatelských rozhraní v aplikacích Xamarin.Forms pomocí značek, nikoli kódu. XAML v programu Xamarin.Forms nikdy požaduje, ale je často stručného a vizuálně souvislý než ekvivalentní kódu a potenciálně jazyk. XAML je zvlášť vhodné pro použití pomocí Oblíbené Architektura aplikace rozhraní MVVM (Model-View-ViewModel): XAML definuje zobrazení, které je spojené s kódem ViewModel prostřednictvím vazby dat založených na XAML.
+XAML – eXtensible Application Markup Language – umožňuje vývojářům definovat uživatelská rozhraní v aplikacích Xamarin.Forms pomocí značek namísto kódu. XAML v programu Xamarin.Forms nikdy požaduje, ale je často stručného a vizuálně souvislý než ekvivalentní kódu a potenciálně jazyk. XAML je zvlášť vhodné pro použití pomocí Oblíbené Architektura aplikace rozhraní MVVM (Model-View-ViewModel): XAML definuje zobrazení, které je spojené s kódem ViewModel prostřednictvím vazby dat založených na XAML.
 
 ## <a name="xaml-basics-contents"></a>Základní informace o obsahu XAML
 
 * [Přehled](#Overview)
-* [Část 1. Začínáme s XAML](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
-* [Část 2. Syntaxe nezbytné XAML](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
-* [Část 3. XAML – rozšíření značek](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-* [Část 4. Základy vazba dat](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)
+* [Část 1. Začínáme s jazykem XAML](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
+* [Část 2. Základní syntaxe jazyka XAML](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
+* [Část 3. Rozšíření značek XAML](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
+* [Část 4. Základy vytváření vazeb dat](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)
 * [Část 5. Z datové vazby k rozhraní MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)
 
 Kromě těchto článcích XAML základy si můžete stáhnout kapitolám knihy [vytváření mobilních aplikací s Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md):
@@ -112,4 +111,4 @@ Pokud jste obeznámeni s Xamarin.Forms a XML, začít číst [část 1. Začín�
 - [XamlSamples](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
 - [Úvod do Xamarin.Forms](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
 - [Vytvoření adresáře Mobile Apps](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)
-- [Xamarin.Forms Samples](https://developer.xamarin.com/samples/xamarin-forms/all/)
+- [Ukázky Xamarin.Forms](https://developer.xamarin.com/samples/xamarin-forms/all/)

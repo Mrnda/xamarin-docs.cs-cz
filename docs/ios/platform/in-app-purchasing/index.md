@@ -1,17 +1,16 @@
 ---
-title: "V aplikaci nákupu"
-description: "aplikace pro iOS můžete prodeje digitální produkty a služby pomocí rozhraní API úložiště Kit. Produkty jsou vytvořit a spravovat na portálu Connect iTunes. Apple spravuje zpracování transakcí a schválí všechny produkty, než může být prodaných a účtuje poplatek za jednotlivé transakce (aktuálně 30 %). Apple vyžaduje, aby používáte v aplikaci nákupu pro všechny digitální prodej ve vaší aplikaci, ale nemůžete je využít pro prodej fyzické zboží nebo služeb bez digitální. Aplikace, které nabízí možnosti alternativní platby pro digitální produkty a služby se pravděpodobně odmítnuty. Tento dokument vysvětluje postup konfigurace aplikace k používání úložiště Kit a obsahuje příklady Xamarin.iOS většiny běžných nákupu scénáře v aplikaci."
-ms.topic: article
+title: V aplikaci nákupu
+description: aplikace pro iOS můžete prodeje digitální produkty a služby pomocí rozhraní API úložiště Kit. Produkty jsou vytvořit a spravovat na portálu Connect iTunes. Apple spravuje zpracování transakcí a schválí všechny produkty, než může být prodaných a účtuje poplatek za jednotlivé transakce (aktuálně 30 %). Apple vyžaduje, aby používáte v aplikaci nákupu pro všechny digitální prodej ve vaší aplikaci, ale nemůžete je využít pro prodej fyzické zboží nebo služeb bez digitální. Aplikace, které nabízí možnosti alternativní platby pro digitální produkty a služby se pravděpodobně odmítnuty. Tento dokument vysvětluje postup konfigurace aplikace k používání úložiště Kit a obsahuje příklady Xamarin.iOS většiny běžných nákupu scénáře v aplikaci.
 ms.prod: xamarin
 ms.assetid: B41929D8-47E4-466D-1F09-6CC3C09C83B2
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: af8eb556215679bab2da8f54e8231f7d7d3ed418
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7a8dec6051caeba55c45df29c085ecfcddd160d2
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="in-app-purchasing"></a>V aplikaci nákupu
 

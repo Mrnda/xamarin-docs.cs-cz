@@ -1,20 +1,19 @@
 ---
-title: Funkce
-description: "Využití výhod funkcí specifických pro platformy s Xamarin.Forms"
-ms.topic: article
+title: Funkce platformy
+description: Využití výhod funkcí specifických pro platformy s Xamarin.Forms
 ms.prod: xamarin
 ms.assetid: 2C6CE42C-E380-4BB9-90CC-D0F4E60C4C03
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/20/2017
-ms.openlocfilehash: 950cc4a8611b05c22825ef89a85827fa0d3e5f7b
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 454969d8a59128423d632452033b8ba84ee0bc98
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
-# <a name="platform-features"></a>Funkce
+# <a name="platform-features"></a>Funkce platformy
 
 Xamarin.Forms rozšiřitelný a umožňuje vám začlenění specifické pro platformu funkcí s použitím [důsledky](~/xamarin-forms/app-fundamentals/effects/index.md), [vlastní nástroji pro vykreslování](~/xamarin-forms/app-fundamentals/custom-renderer/index.md), [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md), [MessagingCenter](~/xamarin-forms/app-fundamentals/messaging-center.md)a další.
 
@@ -22,11 +21,11 @@ Xamarin.Forms rozšiřitelný a umožňuje vám začlenění specifické pro pla
 
 Tato příručka popisuje, jak k implementaci návrhu materiálu při aktualizaci existující aplikace Xamarin.Forms Android.
 
-## <a name="application-indexing-and-deep-linkingdeep-linkingmd"></a>[Indexování aplikace a přímé propojení](deep-linking.md)
+## <a name="application-indexing-and-deep-linkingdeep-linkingmd"></a>[Indexování aplikací a přímé odkazování](deep-linking.md)
 
 Indexování aplikace umožňuje aplikacím, které by jinak zapomenete po pár používá zůstane relevantní, ve které jsou uvedeny ve výsledcích hledání. Přímé propojení umožňuje aplikacím reagovat na výsledek hledání, který obsahuje data aplikací, obvykle tak, že přejdete na stránku na něj odkazovat z přímý odkaz.
 
-## <a name="device-classdevicemd"></a>[Zařízení – třída](device.md)
+## <a name="device-classdevicemd"></a>[Třída zařízení](device.md)
 
 Postup použití `Device` třídy za účelem vytvoření specifické pro platformu chování v sdíleného kódu a uživatelského rozhraní (včetně pomocí XAML). Platí i pro `BeginInvokeOnMainThread` které je nezbytné při úpravě ovládacích prvků uživatelského rozhraní z vlákna na pozadí.
 
@@ -38,7 +37,7 @@ Některé stylů iOS je možné provádět prostřednictvím **Info.plist** a `U
 
 Xamarin.Forms má nyní preview podporu pro aplikace systému macOS.
 
-## <a name="native-formsnative-formsmd"></a>[Nativní formulářů](native-forms.md)
+## <a name="native-formsnative-formsmd"></a>[Nativní formuláře](native-forms.md)
 
 Nativní formuláře umožňují Xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-odvozené stránky, které se spotřebovávají nativní projekty Xamarin.iOS, Xamarin.Android a univerzální platformu Windows (UWP).
 

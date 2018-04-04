@@ -1,18 +1,17 @@
 ---
-title: "Nastavení hodnot usnadnění na elementy uživatelského rozhraní"
-description: "Xamarin.Forms umožňuje usnadnění hodnoty nastavení na elementy uživatelského rozhraní pomocí přidružené vlastnosti ze třídy AutomationProperties, které se v změní hodnoty nativní usnadnění přístupu sady. Tento článek vysvětluje, jak používat třídu AutomationProperties tak, aby čtečky obrazovky můžete prodiskutovat elementy na stránce."
-ms.topic: article
+title: Nastavení hodnot usnadnění na elementy uživatelského rozhraní
+description: Xamarin.Forms umožňuje usnadnění hodnoty nastavení na elementy uživatelského rozhraní pomocí přidružené vlastnosti ze třídy AutomationProperties, které se v změní hodnoty nativní usnadnění přístupu sady. Tento článek vysvětluje, jak používat třídu AutomationProperties tak, aby čtečky obrazovky můžete prodiskutovat elementy na stránce.
 ms.prod: xamarin
 ms.assetid: c0bb6893-fd26-47e7-88e5-3c333c9f786c
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: 4aeeea7f946a121b12741d2da217daf531935849
-ms.sourcegitcommit: 61f5ecc5a2b5dcfbefdef91664d7460c0ee2f357
+ms.openlocfilehash: cf9071684061b584e1cb75cfd50b33212f42bf79
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="setting-accessibility-values-on-user-interface-elements"></a>Nastavení hodnot usnadnění na elementy uživatelského rozhraní
 

@@ -1,18 +1,17 @@
 ---
-title: "Funkce podstatným návrhu"
-description: "Toto téma popisuje funkce Designer, které usnadňují vývojářům vytvářet podstatným návrhu vyhovující rozložení. Tato část uvádí a vysvětluje, jak použít materiálu mřížky, materiálu paletu barev, typografických škálování a Editor motivů."
-ms.topic: article
+title: Funkce podstatným návrhu
+description: Toto téma popisuje funkce Designer, které usnadňují vývojářům vytvářet podstatným návrhu vyhovující rozložení. Tato část uvádí a vysvětluje, jak použít materiálu mřížky, materiálu paletu barev, typografických škálování a Editor motivů.
 ms.prod: xamarin
 ms.assetid: AC55E1B2-C239-4019-B0C3-A16F6CF0D6E0
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: 9c1797398fba580ab7f34526b10e1da455eb2dc5
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: a764efe7f2cadd8c777f8427c0220e45eec662c9
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="material-design-features"></a>Funkce podstatným návrhu
 

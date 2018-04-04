@@ -1,18 +1,17 @@
 ---
 title: Aktualizace aplikace pro iOS 11
-description: "Zkoumání nové funkce systému iOS 11"
-ms.topic: article
+description: Zkoumání nové funkce systému iOS 11
 ms.prod: xamarin
 ms.assetid: EC809504-9CF6-4949-B6EE-36384297E744
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: cced7cc3d1b0579c36d598ef0d05da872478c8dc
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2581f729d85787021763f50f005e84d6bbb5db01
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="updating-your-app-to-ios-11"></a>Aktualizace aplikace pro iOS 11
 
@@ -20,17 +19,17 @@ _Zkoumání nové funkce systému iOS 11_
 
 V iOS 11 má společnost Apple vydala architektura aktualizací, nové visual změny a o proces připojení aktualizované iTunes. Tato příručka prozkoumá, každý z těchto změn, což pomáhá vaší aplikace Xamarin.iOS aktualizovat pro iOS 11.
 
-## <a name="architecture-changesarchitecture-changesmd"></a>[Architektura změny](architecture-changes.md)
+## <a name="architecture-changesarchitecture-changesmd"></a>[Změny architektury](architecture-changes.md)
 
 Jednou z největších změn, které byste měli vědět o s iOS 11 je 32-bit podpory pro aplikace, podle popisu v [společnosti Apple](https://developer.apple.com/news/?id=06282017b) stiskněte verze.
 
 Tento průvodce vás provede aktualizace pro 64bitovou verzi aplikace.
 
-## <a name="visual-design-updatesvisual-designmd"></a>[Visual Design Updates](visual-design.md)
+## <a name="visual-design-updatesvisual-designmd"></a>[Aktualizace vizuálního návrhu](visual-design.md)
 
 Společnost Apple vydala v iOS 11, nastavení nové visual změny, včetně aktualizací na navigačním panelu, panelu vyhledávání a zobrazení tabulek. Kromě toho vylepšily k povolení pro větší flexibilitu v okraje a obsah celé obrazovky. Tyto změny jsou popsané v této příručce.
 
-## <a name="app-store-changesapp-store-changesmd"></a>[Změny obchodu s aplikacemi](app-store-changes.md)
+## <a name="app-store-changesapp-store-changesmd"></a>[Změny obchodu App Store](app-store-changes.md)
 
 IOS App Store zaznamenala dokončení změna, která pouze umožňuje uživatelům efektivně přejděte úložiště, ale můžete taky, jako vývojář, zvýšení úrovně vaší aplikaci pro uživatele. Tyto úrovně celého čísla zahrnují aktualizace nákupy v aplikaci a aktualizace stránky produktu. iOS 11 také přidá aktualizace týkající se ke komunikaci s uživateli, jak přidat ikonu vaší aplikace a postup verze vaší aplikace na veřejnost.
 

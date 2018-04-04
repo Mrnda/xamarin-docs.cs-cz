@@ -1,18 +1,17 @@
 ---
-title: "Řešení potíží s vazby"
-description: "Tento článek obsahuje souhrn ke schválení běžné chyby, které mohou nastat při vytváření vazby, spolu s možné příčiny a navrhované způsoby, jak je vyřešit."
-ms.topic: article
+title: Řešení potíží s vazby
+description: Tento článek obsahuje souhrn ke schválení běžné chyby, které mohou nastat při vytváření vazby, spolu s možné příčiny a navrhované způsoby, jak je vyřešit.
 ms.prod: xamarin
 ms.assetid: BB81FCCF-F7BF-4C78-884E-F02C49AA819A
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 6d31e2a22c63f8d46893dd1928b561e1a06b19b4
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: da6286eed091114c117c723f462bbb8cac77034b
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="troubleshooting-bindings"></a>Řešení potíží s vazby
 
@@ -51,7 +50,7 @@ Jakmile budete mít decompiled knihovna pro Android, zkontrolujte zdrojový kód
 
 - **Třídy, které mají charakteristické vlastnosti třídy maskováním** &ndash; vlastnosti třídy zkomolené patří:
 
-    - Název třídy obsahuje  **$** , tj. **$.class**
+    - Název třídy obsahuje **$**, tj. **$.class**
     - Název třídy je zcela ohrožení zabezpečení z malých písmen, tj. **a.class**      
 
 - **`import` příkazy pro neregistrované knihovny** &ndash; Identifikujte neregistrované knihovny a přidejte do projektu Xamarin.Android vazba s těchto závislostí **akce sestavení** z **ReferenceJar**  nebo **EmbedddedReferenceJar**.

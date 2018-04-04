@@ -1,18 +1,17 @@
 ---
 title: PassKit
-description: "Peněženka je aplikace systému iOS, která uchovává a zobrazí čárové kódy a další informace o propojení transakce odběratele na svůj telefon s reálném světě."
-ms.topic: article
+description: Peněženka je aplikace systému iOS, která uchovává a zobrazí čárové kódy a další informace o propojení transakce odběratele na svůj telefon s reálném světě.
 ms.prod: xamarin
 ms.assetid: 74B9973B-C1E8-B727-3F6D-59C1F98BAB3A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 279b5bc1188c973fddc033f9b592e9acec703a59
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: f1c8ac92c5ff7eed5116587ed13755ddee74a877
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="passkit"></a>PassKit
 
@@ -238,7 +237,7 @@ Chcete-li vytvořit předat ID typu proveďte následující.
 
 Prvním krokem je nastavit a předat typ ID pro každý jiný _typ_ průchodu podporovaná. Předat ID (nebo identifikátor předat typu) vytvoří jedinečný identifikátor pro průchod. Toto ID budeme používat pro propojení průchodu vývojářského účtu pomocí certifikátu.
 
-1. V [identifikátory, certifikátů a profilů části IOS Provisioning Portal](https://developer.apple.com/account/overview.action), přejděte na **identifikátory** a vyberte **předat ID typu** . Vyberte  **+**  tlačítko pro vytvoření nového typu pass: [ ![ ] (passkit-images/passid.png "vytvoříte nový typ průchodu")](passkit-images/passid.png#lightbox)
+1. V [identifikátory, certifikátů a profilů části IOS Provisioning Portal](https://developer.apple.com/account/overview.action), přejděte na **identifikátory** a vyberte **předat ID typu** . Vyberte **+** tlačítko pro vytvoření nového typu pass: [ ![ ] (passkit-images/passid.png "vytvoříte nový typ průchodu")](passkit-images/passid.png#lightbox)
 
 2.   Zadejte **popis** (název) a **identifikátor** (jedinečného řetězce) pro průchod. Všimněte si, že všechna ID typu předat musí začínat řetězcem `pass.` v tomto příkladu používáme `pass.com.xamarin.coupon.banana` : [ ![ ] (passkit-images/register.png "zadejte popis a identifikátor")](passkit-images/register.png#lightbox)
 

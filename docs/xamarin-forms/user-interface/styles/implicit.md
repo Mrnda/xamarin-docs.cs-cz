@@ -1,18 +1,17 @@
 ---
-title: "Implicitní styly"
-description: "Implicitní styl je ten, který je používán všechny ovládací prvky typu stejné TargetType, bez nutnosti každý ovládací prvek tak, aby odkazovaly styl."
-ms.topic: article
+title: Implicitní styly
+description: Implicitní styl je ten, který je používán všechny ovládací prvky typu stejné TargetType, bez nutnosti každý ovládací prvek tak, aby odkazovaly styl.
 ms.prod: xamarin
 ms.assetid: 02A75F3B-4389-49D4-A2F4-AFD473A4A161
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: b96b306c882eb30aaf8c81604afb9b6a547d715b
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d9c9f8816ea45ac122829739ad5134cc740263df
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="implicit-styles"></a>Implicitní styly
 

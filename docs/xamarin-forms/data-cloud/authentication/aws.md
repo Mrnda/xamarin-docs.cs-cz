@@ -1,18 +1,17 @@
 ---
-title: "Ověřování uživatelů pomocí služby Amazon SimpleDB"
-description: "Amazon SimpleDB nenabízí svůj vlastní systém oprávnění na základě prostředků. Místo toho ověřování proti zprostředkovatele identity lze zajistit, že uživatelé v doméně SimpleDB mají jenom přístup k svá vlastní data. Tento článek vysvětluje, jak omezit přístup uživatelů k svá vlastní data SimpleDB."
-ms.topic: article
+title: Ověřování uživatelů pomocí služby Amazon SimpleDB
+description: Amazon SimpleDB nenabízí svůj vlastní systém oprávnění na základě prostředků. Místo toho ověřování proti zprostředkovatele identity lze zajistit, že uživatelé v doméně SimpleDB mají jenom přístup k svá vlastní data. Tento článek vysvětluje, jak omezit přístup uživatelů k svá vlastní data SimpleDB.
 ms.prod: xamarin
 ms.assetid: 797C91A5-9720-4DAC-89D8-5C85996584C8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: ac4c788b4bd48991d7628d892ad1ece3d2451228
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 592e957e0c64e7189d6f01f1ba0f23da074c4bec
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="authenticating-users-with-an-amazon-simpledb-service"></a>Ověřování uživatelů pomocí služby Amazon SimpleDB
 

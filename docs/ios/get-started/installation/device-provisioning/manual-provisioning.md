@@ -1,18 +1,17 @@
 ---
-title: "Ruční zřizování"
-description: "Po úspěšné instalaci Xamarin.iOS na další krok v vývoj pro iOS je ke zřízení zařízení s iOS. Tato příručka se prozkoumejte vyžádání vývoj certifikátů a profilů, práce s aplikační služby a nasazení aplikace na zařízení."
-ms.topic: article
+title: Ruční zřizování
+description: Po úspěšné instalaci Xamarin.iOS na další krok v vývoj pro iOS je ke zřízení zařízení s iOS. Tato příručka se prozkoumejte vyžádání vývoj certifikátů a profilů, práce s aplikační služby a nasazení aplikace na zařízení.
 ms.prod: xamarin
 ms.assetid: E26ACC94-F4A5-4FF5-B7D4-BE596745A665
 ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 07/15/2017
-ms.openlocfilehash: ecda5823636a1b2d7e31a39e29f1d46cdf7118b6
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 3f321366b3afc814aef1c586af2707b1caeef4c7
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="manual-provisioning"></a>Ruční zřizování
 
@@ -36,7 +35,7 @@ Vývojové týmy, certifikáty a profily se dají spravovat přímým přístupe
 
 Chcete vygenerovat podpisovou identitu, postupujte takto:
 
-1. Přihlášení k [identifikátory, certifikátů a profilů části portálu pro vývojáře](https://developer.apple.com/account/overview.action) a vyberte **certifikáty** tématu **aplikací iOS** sloupce. Pak stiskněte tlačítko  **+**  k vytvoření nového certifikátu:
+1. Přihlášení k [identifikátory, certifikátů a profilů části portálu pro vývojáře](https://developer.apple.com/account/overview.action) a vyberte **certifikáty** tématu **aplikací iOS** sloupce. Pak stiskněte tlačítko **+** k vytvoření nového certifikátu:
 
     [![](manual-provisioning-images/cert-plus.png "Klikněte + vytvořit nový certifikát.")](manual-provisioning-images/cert-plus.png#lightbox)
 
@@ -119,7 +118,7 @@ Při vytváření profilu pro zřizování pro vývoj, jsme musí stavu zaříze
 
   [![](manual-provisioning-images/add04.png "Klikněte na odkaz zařízení")](manual-provisioning-images/add04.png#lightbox)
 
-8. Klikněte  **+**  tlačítko:
+8. Klikněte **+** tlačítko:
 
   [![](manual-provisioning-images/add05.png "Klikněte tlačítko +")](manual-provisioning-images/add05.png#lightbox)
 
@@ -148,7 +147,7 @@ Před vytvořením profilu pro zřizování, *ID aplikace* musí být provedeny.
 ### <a name="app-id"></a>ID aplikace
 
 1. V [portál pro vývojáře](https://developer.apple.com/account/overview.action) vyhledejte *certifikát, identifikátory a profily* části v Apple Developer Center. Vyberte **ID aplikace** pod **identifikátory**.
-2. Klikněte  **+**  tlačítko a zadejte **název**:
+2. Klikněte **+** tlačítko a zadejte **název**:
 
     [![](manual-provisioning-images/appid05a.png "Zadejte název")](manual-provisioning-images/appid05a.png#lightbox)
 3. Předpona aplikace by měla přednastavení. Vyberte **ID aplikace zástupné** pro tuto příponu aplikace. Zadejte ID sady ve formátu `com.[DomainName].*`:
@@ -164,7 +163,7 @@ Po vytvoření ID aplikace, je možné vytvořit profil zřizování. Tento prof
 Chcete-li ručně vytvořit profil pro zřizování pro vývoj, postupujte takto:
 
 1. Používat prohlížeč Safari a přejděte do [centra pro vývojáře Apple](https://developer.apple.com/membercenter/index.action)a v části *certifikáty, identifikátory a profily* vyberte profily zřizování.
-2. Klikněte  **+**  tlačítko, v pravém horním rohu na vytvoření nového profilu.
+2. Klikněte **+** tlačítko, v pravém horním rohu na vytvoření nového profilu.
 3. Z **vývoj** vyberte přepínač vedle **vývoj aplikací pro iOS**a stiskněte klávesu **pokračovat**:
 
     [![](manual-provisioning-images/provisioning-profile01.png "Vyberte typ profilu k vytvoření")](manual-provisioning-images/provisioning-profile01.png#lightbox)

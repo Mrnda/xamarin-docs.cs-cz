@@ -1,17 +1,16 @@
 ---
-title: "Publikování na web Google Play"
-ms.topic: article
+title: Publikování na web Google Play
 ms.prod: xamarin
 ms.assetid: FB1CC234-3554-8566-48BD-2B9B3A28CC7F
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: cc6a5f3fe9ff63081936e5714dfb85058204ef33
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 571b5bb37ee10bb83dceef058613f955a8b7bff9
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="publishing-to-google-play"></a>Publikování na web Google Play
 
@@ -151,7 +150,7 @@ V **identitu podepisování** dialogovém okně, vyberte možnost identity vytvo
 
 [![Podepisování Identity dialogové okno](images/vs/02-select-identity-sml.png)](images/vs/02-select-identity.png#lightbox)
 
-V **Google Play účty** dialogové okno, klikněte na tlačítko  **+**  tlačítko Přidat nový účet Google Play účet:
+V **Google Play účty** dialogové okno, klikněte na tlačítko **+** tlačítko Přidat nový účet Google Play účet:
 
 [![Dialogové okno účty Google Play](images/vs/03-google-play-accounts-sml.png)](images/vs/03-google-play-accounts.png#lightbox)
 

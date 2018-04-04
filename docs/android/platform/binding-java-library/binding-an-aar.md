@@ -1,18 +1,17 @@
 ---
 title: Vazba. AAR
-description: "Tento názorný postup obsahuje podrobné pokyny pro vytvoření vazby knihovny Xamarin.Android Java z Android. Soubor AAR."
-ms.topic: article
+description: Tento názorný postup obsahuje podrobné pokyny pro vytvoření vazby knihovny Xamarin.Android Java z Android. Soubor AAR.
 ms.prod: xamarin
 ms.assetid: 380413B8-6A99-4BB8-B64C-3EAF9F359C22
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: ae209f8099925cc160e16cb5365625e48e6c384d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 101fb28add97749549de9c44292a1ef99a717dde
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="binding-an-aar"></a>Vazba. AAR
 
@@ -284,7 +283,7 @@ var a = new ArrayAdapter<string>(this, Resource.Layout.row_layout, ...);
 
 **Textanalyzer.aar** příklad obsahuje soubor obrázku, který se nachází v **res/drawable/monkey.png**. Umožňuje přístup k danému prostředku bitové kopie a použít ho v našem příkladu aplikace:
 
-Upravit **BindingTest** rozložení (**Main.axml**) a přidejte `ImageView` na konec `LinearLayout` kontejneru. To `ImageView` zobrazí obrázek nalezený na  **@drawable/monkey** ; tuto bitovou kopii budou načteny z oddílu prostředků **textanalyzer.aar**:
+Upravit **BindingTest** rozložení (**Main.axml**) a přidejte `ImageView` na konec `LinearLayout` kontejneru. To `ImageView` zobrazí obrázek nalezený na **@drawable/monkey**; tuto bitovou kopii budou načteny z oddílu prostředků **textanalyzer.aar**:
 
 ```xml
     ...

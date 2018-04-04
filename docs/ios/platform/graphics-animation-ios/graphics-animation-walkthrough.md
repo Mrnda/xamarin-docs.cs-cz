@@ -1,18 +1,17 @@
 ---
-title: "Návod - pomocí CoreGraphics a CoreAnimation"
-description: "Tento článek ukazuje krok za krokem, jak vytvořit aplikaci, která používá základní grafika a základní animace. Zobrazuje postup kreslení na obrazovce v reakci na touch uživatele a také jak animace obrázek cestují podél cesty."
-ms.topic: article
+title: Návod - pomocí CoreGraphics a CoreAnimation
+description: Tento článek ukazuje krok za krokem, jak vytvořit aplikaci, která používá základní grafika a základní animace. Zobrazuje postup kreslení na obrazovce v reakci na touch uživatele a také jak animace obrázek cestují podél cesty.
 ms.prod: xamarin
 ms.assetid: 4B96D5CD-1BF5-4520-AAA6-2B857C83815C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: c62601ff446c114e97e9d4c2ded3727d08220095
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f857accfcdec4cb60e781936d1d0836dbf8d6ffb
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="drawing-and-animating-along-a-path"></a>Kreslení a animace podél cesty
 
@@ -183,6 +182,6 @@ V tomto článku jsme provedl příklad, který je vázaný grafika a animace ko
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Základní animace](~/ios/platform/graphics-animation-ios/core-animation.md)
-- [Základní grafiky](~/ios/platform/graphics-animation-ios/core-graphics.md)
+- [Core Animation](~/ios/platform/graphics-animation-ios/core-animation.md)
+- [Core Graphics](~/ios/platform/graphics-animation-ios/core-graphics.md)
 - [Základní animace recepty](https://developer.xamarin.com/recipes/ios/animation/coreanimation)

@@ -1,18 +1,17 @@
 ---
-title: "Vytváření ControlTemplate"
-description: "Ovládací prvek šablony může být definováno na úrovni aplikace nebo na úrovni stránky. Tento článek ukazuje, jak vytvářet a využívat šablon ovládacích prvků."
-ms.topic: article
+title: Vytváření ControlTemplate
+description: Ovládací prvek šablony může být definováno na úrovni aplikace nebo na úrovni stránky. Tento článek ukazuje, jak vytvářet a využívat šablon ovládacích prvků.
 ms.prod: xamarin
 ms.assetid: A9AEB052-FBF5-4589-9BD4-6D6F62BED7F1
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 53309be2712f14c79b84c2eabb519b86dd73a404
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e8a0695969609a4b0bbeb38896adae9a7c16ed07
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="creating-a-controltemplate"></a>Vytváření ControlTemplate
 

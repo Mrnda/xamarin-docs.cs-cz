@@ -1,18 +1,17 @@
 ---
-title: "Datové vazby a klíč hodnota kódování"
-description: "Tento článek popisuje použití kódování a klíč hodnota sledování povolit pro datovou vazbu k elementům uživatelského rozhraní v Xcode na rozhraní tvůrce klíč hodnota."
-ms.topic: article
+title: Datové vazby a klíč hodnota kódování
+description: Tento článek popisuje použití kódování a klíč hodnota sledování povolit pro datovou vazbu k elementům uživatelského rozhraní v Xcode na rozhraní tvůrce klíč hodnota.
 ms.prod: xamarin
 ms.assetid: 72594395-0737-4894-8819-3E1802864BE7
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: b7ffd069a8c99c2cdfd0ecb58fe7ef762e5a46f3
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 48ee5d4e4a0a53de49fbba46d79424e03af6fe5c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="data-binding-and-key-value-coding"></a>Datové vazby a klíč hodnota kódování
 

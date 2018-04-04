@@ -1,7 +1,6 @@
 ---
-title: "Instalační program platformy Mac"
-description: "Xamarin.Forms má nyní preview podporu pro platformu Mac"
-ms.topic: article
+title: Instalační program platformy Mac
+description: Xamarin.Forms má nyní preview podporu pro platformu Mac
 ms.prod: xamarin
 ms.assetid: EEC549E0-F182-4F9C-B2BA-B31D19569AA5
 ms.technology: xamarin-forms
@@ -9,11 +8,11 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/03/2017
-ms.openlocfilehash: e8487dc06b3512a0ec0bb1b30393faeab506df60
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: de08e686fc07595b75016b9266f57b12831e9822
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="mac-platform-setup"></a>Instalační program platformy Mac
 
@@ -40,7 +39,7 @@ Postupujte podle těchto pokynů můžete přidat aplikaci Mac, který se spust�
 
   ![Animovaný pokyny znázorňující postup přidání kakao aplikace](mac-images/add-macos-proj.gif)
 
-5. V projektu Mac, klikněte pravým tlačítkem na **balíčků > přidat balíčky...**  přidat [Xamarin.Forms/2.3.5.235-pre2](https://www.nuget.org/packages/Xamarin.Forms/2.3.5.235-pre2) NuGet. Ostatní projekty by měl aktualizovat také na tuto verzi.
+5. V projektu Mac, klikněte pravým tlačítkem na **balíčků > přidat balíčky... ** přidat [Xamarin.Forms/2.3.5.235-pre2](https://www.nuget.org/packages/Xamarin.Forms/2.3.5.235-pre2) NuGet. Ostatní projekty by měl aktualizovat také na tuto verzi.
 
 6. V projektu Mac, klikněte pravým tlačítkem na **odkazy** a přidejte odkaz na projekt Xamarin.Forms (sdílených projektů nebo PCL).
 

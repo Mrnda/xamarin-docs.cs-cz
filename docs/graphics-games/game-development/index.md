@@ -1,18 +1,17 @@
 ---
-title: "Úvod do vývoj her pro Xamarin"
-description: "Povaha vývoj her pro se může značně lišit od vývoj jiné typy aplikací. Tento článek je úvodem do vývoj her s funkcí technologie, které lze použít s Xamarin.iOS a Xamarin.Android. Poskytuje nejvyšší úrovni diskuzi o tom, jak jsou vytvářeny hry a vzorkování technologií, které jsou k dispozici pro použití s Xamarin.iOS a Xamarin.Android."
-ms.topic: article
+title: Úvod do vývoj her pro Xamarin
+description: Povaha vývoj her pro se může značně lišit od vývoj jiné typy aplikací. Tento článek je úvodem do vývoj her s funkcí technologie, které lze použít s Xamarin.iOS a Xamarin.Android. Poskytuje nejvyšší úrovni diskuzi o tom, jak jsou vytvářeny hry a vzorkování technologií, které jsou k dispozici pro použití s Xamarin.iOS a Xamarin.Android.
 ms.prod: xamarin
 ms.assetid: 0E3CDCD2-FBE4-49F5-A70E-8A7B937BAF1D
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: 9d1ce2da87d6f169efb5431f734695f6876cf3f0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b2df6d431004bbfa140b6cae1d069404af92c1df
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="introduction-to-game-development-with-xamarin"></a>Úvod do vývoj her pro Xamarin
 
@@ -97,8 +96,8 @@ Některé kanály obsahu může být velmi rychlé a vyžadují žádné úsilí
 Vývoj her zavádí nové role a produktů pro jednotlivce, tento proces. Většina vývojářů herní nejsou vyhovět širokou škálu dovednosti potřebné k uvolnění úplné hry, tak počet disciplíně neexistuje. Mějte na paměti, že to není úplný seznam oblastí vývoj – jen některé z běžnějších ty.
 
 - **Programátory** – čtení v tomto článku bude spadat do této kategorie patří většina lidí. Role programátory v vývoj her je podobná role pro programátory v jiných herní aplikace. Odpovědnosti zahrnují zápis logiku pro řízení toku ve hře, vývoj systémy pro běžné úlohy v kontextu daného projektu, přidávání a zobrazování obsahu a – samozřejmě – oprava chyb.
-- **2D umělcem** – 2D umělci jsou zodpovědní za vytváření *2D prostředky*. Mezi ně patří soubory bitových kopií pro grafické uživatelské rozhraní ve hře, částice, prostředí a znaky. Pokud hra, které vyvíjíte 3D, nemusí být zodpovědná za prostředí a znaky 2D umělci. Můžete najít volné obrázky pro vaše hra na [http://opengameart.org/](http://opengameart.org/) .
-- **3D umělci** – 3D umělci jsou zodpovědní za vytváření *3D prostředky*. Mezi ně patří 3D modely pro prostředí, znaků a props (nábytku, zařízení a jiných inanimate objektů). Některé týmy rozlišit mezi 3D umělci a tvůrci 3D animací v závislosti na velikosti týmu. Můžete najít volné 3D obrázky pro vaše hra na [http://opengameart.org/](http://opengameart.org/) .
+- **2D umělcem** – 2D umělci jsou zodpovědní za vytváření *2D prostředky*. Mezi ně patří soubory bitových kopií pro grafické uživatelské rozhraní ve hře, částice, prostředí a znaky. Pokud hra, které vyvíjíte 3D, nemusí být zodpovědná za prostředí a znaky 2D umělci. Můžete najít volné obrázky pro vaše hra na [ http://opengameart.org/ ](http://opengameart.org/) .
+- **3D umělci** – 3D umělci jsou zodpovědní za vytváření *3D prostředky*. Mezi ně patří 3D modely pro prostředí, znaků a props (nábytku, zařízení a jiných inanimate objektů). Některé týmy rozlišit mezi 3D umělci a tvůrci 3D animací v závislosti na velikosti týmu. Můžete najít volné 3D obrázky pro vaše hra na [ http://opengameart.org/ ](http://opengameart.org/) .
 - **Her Návrhář** – herní Designer jsou zodpovědní za definování, jak se přehrávají hra. To může zahrnovat základní rozhodnutí, například nastavení hra, obecným cílem hry a jak přehrávač prochází hra. Herní Designer může být také účastnící se velmi podrobné rozhodnutí například mapování vstup na akce, definování koeficienty pro přesun nebo úroveň ups a návrhu úrovně rozložení. Mějte na paměti, termín *Návrhář* mohou odkazovat na herní designer nebo vizuálního návrháře v závislosti na kontextu.
 - **Zvukových Návrhář** – zvukové Designer jsou zodpovědní za prostředky zvuk hra. Některé týmy mohou rozlišovat mezi jednotlivce zodpovědný za vytváření zvukové efekty a autoři hudby, zatímco menší týmy může mít za všechny zvuk jeden uživatel.
 
@@ -171,9 +170,9 @@ Podívejte se [UrhoSharp příručky](~/graphics-games/urhosharp/index.md) zač�
 
 Technologie uvedených výše je jenom ukázka technologií, které jsou k dispozici. Další významné technologie patří:
 
-- **Pohyblivý symbol Kit** – Xamarin poskytuje podporu pro framework pohyblivý symbol Kit herní společnosti Apple, která umožňuje přístup ke všem funkci nativní rozhraní API. Vzhledem k tomu, že pohyblivý symbol Kit je technologie, které jsou vytvořené Apple, poskytuje těsná integrace se zbytkem ekosystému iOS. Samozřejmě pohyblivý symbol Kit není napříč platformami proto jej nelze použít v systému Android. Další informace o použití Kit pohyblivý symbol, najdete v tomto příspěvku: [http://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/](http://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/)
-- **Scény Kit** – Xamarin taky poskytuje podporu pro framework scény Kit společnosti Apple, který zjednodušuje implementace 3D grafický do aplikací pro iOS. Scény Kit je také technologie poskytovaných společností Apple, takže má integrace i požadavky specifické pro platformu uvedených výše pro pohyblivý symbol Kit. Další informace o Kit scény, najdete v tomto příspěvku: [http://blog.xamarin.com/3d-in-ios-8-with-scene-kit/](http://blog.xamarin.com/3d-in-ios-8-with-scene-kit/)
-- **OpenTK –** OpenTK (který zastupuje otevřete nástroj Kit) poskytuje nízké úrovně OpenGL přístup pro iOS, Apple a Mac hardwaru. Další informace o OpenTK najdete na hlavní stránce: [http://www.opentk.com/](http://www.opentk.com/)
+- **Pohyblivý symbol Kit** – Xamarin poskytuje podporu pro framework pohyblivý symbol Kit herní společnosti Apple, která umožňuje přístup ke všem funkci nativní rozhraní API. Vzhledem k tomu, že pohyblivý symbol Kit je technologie, které jsou vytvořené Apple, poskytuje těsná integrace se zbytkem ekosystému iOS. Samozřejmě pohyblivý symbol Kit není napříč platformami proto jej nelze použít v systému Android. Další informace o použití Kit pohyblivý symbol najdete v tomto blogu:  [http://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/](http://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/)
+- **Scény Kit** – Xamarin taky poskytuje podporu pro framework scény Kit společnosti Apple, který zjednodušuje implementace 3D grafický do aplikací pro iOS. Scény Kit je také technologie poskytovaných společností Apple, takže má integrace i požadavky specifické pro platformu uvedených výše pro pohyblivý symbol Kit. Další informace o scény Kit najdete v tomto blogu: [http://blog.xamarin.com/3d-in-ios-8-with-scene-kit/](http://blog.xamarin.com/3d-in-ios-8-with-scene-kit/)
+- **OpenTK –** OpenTK (který zastupuje otevřete nástroj Kit) poskytuje nízké úrovně OpenGL přístup pro iOS, Apple a Mac hardwaru. Další informace o OpenTK najdete na hlavní stránce:  [http://www.opentk.com/](http://www.opentk.com/)
 
 
 # <a name="summary"></a>Souhrn

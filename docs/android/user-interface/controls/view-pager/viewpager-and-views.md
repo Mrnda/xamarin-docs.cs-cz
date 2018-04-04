@@ -1,18 +1,17 @@
 ---
-title: "ViewPager se zobrazeními"
-description: "ViewPager je rozložení správce, který umožňuje implementovat posunkové navigace. Posunkové navigační umožňuje uživateli prstem levé a pravé krok prostřednictvím stránky data. Tato příručka vysvětluje, jak implementovat swipeable uživatelského rozhraní s ViewPager a PagerTabStrip, pomocí zobrazení jako stránky dat (následné průvodce popisuje postup použití fragmenty pro stránky)."
-ms.topic: article
+title: ViewPager se zobrazeními
+description: ViewPager je rozložení správce, který umožňuje implementovat posunkové navigace. Posunkové navigační umožňuje uživateli prstem levé a pravé krok prostřednictvím stránky data. Tato příručka vysvětluje, jak implementovat swipeable uživatelského rozhraní s ViewPager a PagerTabStrip, pomocí zobrazení jako stránky dat (následné průvodce popisuje postup použití fragmenty pro stránky).
 ms.prod: xamarin
 ms.assetid: 42E5379F-B0F4-4B87-A314-BF3DE405B0C8
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 9c30cf9d76498e95aba6f9a003bc40c7d14e21de
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 39251f7cf6bc287b76b7921278853158bdb14d66
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="viewpager-with-views"></a>ViewPager se zobrazeními
 

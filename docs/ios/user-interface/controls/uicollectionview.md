@@ -1,18 +1,17 @@
 ---
-title: "Zobrazení kolekce"
-description: "Zobrazení kolekce povolit obsah, který se má zobrazit pomocí libovolného rozložení. Umožňují snadno vytváření rozložení mřížky mimo pole a zároveň také podporuje vlastní rozložení."
-ms.topic: article
+title: Zobrazení kolekce
+description: Zobrazení kolekce povolit obsah, který se má zobrazit pomocí libovolného rozložení. Umožňují snadno vytváření rozložení mřížky mimo pole a zároveň také podporuje vlastní rozložení.
 ms.prod: xamarin
 ms.assetid: F4B85F25-0CB5-4FEA-A3B5-D22FCDC81AE4
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 7048eb9c478d7ae10787e158f18b764b258da171
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 75ad331a265c14892f101b1aa7956d2cde3beec8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="collection-views"></a>Zobrazení kolekce
 
@@ -140,7 +139,7 @@ Jsou čistě visual zobrazení, které lze zobrazit v zobrazení decoration `UIC
 
 ## <a name="data-source"></a>Zdroj dat
 
-Jako s dalšími částmi iOS, například `UITableView` a `MKMapView`, `UICollectionView` získává data ze *zdroj dat*, který je zveřejněný v Xamarin.iOS prostřednictvím  **`UICollectionViewDataSource`**  – třída. Tato třída zodpovídá za poskytování obsahu `UICollectionView` například:
+Jako s dalšími částmi iOS, například `UITableView` a `MKMapView`, `UICollectionView` získává data ze *zdroj dat*, který je zveřejněný v Xamarin.iOS prostřednictvím **`UICollectionViewDataSource`** – třída. Tato třída zodpovídá za poskytování obsahu `UICollectionView` například:
 
 -  **Buněk** – vrácená z `GetCell` metoda.
 -  **Doplňující zobrazení** – vrácená z `GetViewForSupplementaryElement` metoda.

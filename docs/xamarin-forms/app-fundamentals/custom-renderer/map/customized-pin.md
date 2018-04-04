@@ -1,18 +1,17 @@
 ---
-title: "Přizpůsobení Map kódu Pin"
-description: "Tento článek ukazuje, jak vytvořit vlastní zobrazovací jednotky pro mapový ovládací prvek, který zobrazí nativní mapa s vlastní kód pin a vlastní zobrazení dat PIN kódu na jednotlivých platformách."
-ms.topic: article
+title: Přizpůsobení Map kódu Pin
+description: Tento článek ukazuje, jak vytvořit vlastní zobrazovací jednotky pro mapový ovládací prvek, který zobrazí nativní mapa s vlastní kód pin a vlastní zobrazení dat PIN kódu na jednotlivých platformách.
 ms.prod: xamarin
 ms.assetid: C5481D86-80E9-4E3D-9FB6-57B0F93711A6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 312bda44a6b390c6ba486d5a3d60dfe4fb770a2e
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 353575bad91c9bade0207a0aa271d9de7ec50240
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="customizing-a-map-pin"></a>Přizpůsobení Map kódu Pin
 
@@ -33,7 +32,7 @@ Proces vykreslování lze použít k implementaci přizpůsobení specifické pr
 Každá položka teď probereme pak implementovat `CustomMap` zobrazovací jednotky, která zobrazuje nativní mapa s vlastní kód pin a vlastní zobrazení dat PIN kódu na jednotlivých platformách.
 
 > [!NOTE]
-> [`Xamarin.Forms.Maps`](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/) musí být inicializovaná a před použitím. Další informace najdete v tématu [ `Maps Control` ](~/xamarin-forms/user-interface/map.md).
+> [`Xamarin.Forms.Maps`](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/) musí být inicializovaná a před použitím. Další informace najdete na webu [`Maps Control`](~/xamarin-forms/user-interface/map.md).
 
 <a name="Creating_the_Custom_Map" />
 

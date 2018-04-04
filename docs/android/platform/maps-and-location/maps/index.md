@@ -1,18 +1,17 @@
 ---
 title: Mapy
-description: "Tento článek popisuje, jak používat mapy a umístění s Xamarin.Android. Vysvětluje všechno využívat integrované mapy aplikace přímo pomocí Google mapuje Android API V2."
-ms.topic: article
+description: Tento článek popisuje, jak používat mapy a umístění s Xamarin.Android. Vysvětluje všechno využívat integrované mapy aplikace přímo pomocí Google mapuje Android API V2.
 ms.prod: xamarin
 ms.assetid: 425E0ED2-5380-6EBE-7059-256B6E9128B8
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: bb166c78e15ea91408a2a52b4da78cfa884f7621
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: e57dc07aefbd1c80a53f4225f5f44fe72a9ddb9a
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="maps"></a>Mapy
 

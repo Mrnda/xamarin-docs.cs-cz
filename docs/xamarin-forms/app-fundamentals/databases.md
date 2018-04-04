@@ -1,18 +1,17 @@
 ---
-title: "Místní databáze"
-description: "Xamarin.Forms podporuje aplikací řízené databázi pomocí SQLite databázový stroj, takže je možné načíst objekty a uložit v sdíleného kódu. Tento článek popisuje, jak můžete Xamarin.Forms aplikace čtení a zápisu dat do místní databáze SQLite pomocí SQLite.Net."
-ms.topic: article
+title: Místní databáze
+description: Xamarin.Forms podporuje aplikací řízené databázi pomocí SQLite databázový stroj, takže je možné načíst objekty a uložit v sdíleného kódu. Tento článek popisuje, jak můžete Xamarin.Forms aplikace čtení a zápisu dat do místní databáze SQLite pomocí SQLite.Net.
 ms.prod: xamarin
 ms.assetid: F687B24B-7DF0-4F8E-A21A-A9BB507480EB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/23/2017
-ms.openlocfilehash: 29686b29a18fe409a1f778d54266cbeedea40eda
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 95c5f482e1bf3e55fa4c6fef18b1dbe6274f33e8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="local-databases"></a>Místní databáze
 

@@ -1,18 +1,17 @@
 ---
 title: iCloud
-description: "Společnost Apple vydala v iOS 5 Icloudu jako službu, která umožňují aplikacím ukládat data na servery společnosti Apple a mít jeho synchronizaci na všech zařízeních, která používá stejnou osoba (prostřednictvím jejich Apple ID). Je také zálohování součást, kde data v zařízeních se zálohovaná na servery společnosti Apple. Tento dokument popisuje, jak používat některé z na serveru služby iCloud poskytuje rozhraní API společností Apple k ukládání a načítání dat ze svých serverů s C# – ukázky pro uložení párů malá klíč hodnota data a pro ukládání dokumentů. Také popisuje, jak Icloudu zálohování mohou mít vliv na návrh vaší aplikace."
-ms.topic: article
+description: Společnost Apple vydala v iOS 5 Icloudu jako službu, která umožňují aplikacím ukládat data na servery společnosti Apple a mít jeho synchronizaci na všech zařízeních, která používá stejnou osoba (prostřednictvím jejich Apple ID). Je také zálohování součást, kde data v zařízeních se zálohovaná na servery společnosti Apple. Tento dokument popisuje, jak používat některé z na serveru služby iCloud poskytuje rozhraní API společností Apple k ukládání a načítání dat ze svých serverů s C# – ukázky pro uložení párů malá klíč hodnota data a pro ukládání dokumentů. Také popisuje, jak Icloudu zálohování mohou mít vliv na návrh vaší aplikace.
 ms.prod: xamarin
 ms.assetid: C6F3B87C-C195-4434-EF14-D66E63894F09
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/09/2016
-ms.openlocfilehash: ce2130985eb954abc4b4a1f4022eec97341eb902
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c9e7c920855d2002f52d05e28c5225f301cd62b1
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="icloud"></a>iCloud
 

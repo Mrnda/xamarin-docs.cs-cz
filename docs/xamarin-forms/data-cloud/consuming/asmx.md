@@ -1,18 +1,17 @@
 ---
-title: "Využívání ASP.NET webové služby (ASMX)"
-description: "ASMX poskytuje možnost vytvářet webové služby, které odesílat zprávy pomocí objekt přístup protokolu SOAP (Simple). SOAP je nezávislé na platformě a nezávislé na jazyku protokol pro vytváření a přístup k webovým službám. Příjemci služby ASMX není potřeba nic vědět o platformu, objektový model nebo programovací jazyk používaný k implementaci služby. Potřebují pouze pochopit, jak odesílat a přijímat zprávy protokolu SOAP. Tento článek ukazuje, jak používat služby ASMX protokolu SOAP z Xamarin.Forms aplikace."
-ms.topic: article
+title: Využívání ASP.NET webové služby (ASMX)
+description: ASMX poskytuje možnost vytvářet webové služby, které odesílat zprávy pomocí objekt přístup protokolu SOAP (Simple). SOAP je nezávislé na platformě a nezávislé na jazyku protokol pro vytváření a přístup k webovým službám. Příjemci služby ASMX není potřeba nic vědět o platformu, objektový model nebo programovací jazyk používaný k implementaci služby. Potřebují pouze pochopit, jak odesílat a přijímat zprávy protokolu SOAP. Tento článek ukazuje, jak používat služby ASMX protokolu SOAP z Xamarin.Forms aplikace.
 ms.prod: xamarin
 ms.assetid: D5533964-5528-4D35-9C2B-FAFB632472AC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: a095dbbb78ad1517791356ae0b7cbeaa94d1336f
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: c45f0de039abc3f98b7c269f183e2883a495910b
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="consuming-an-aspnet-web-service-asmx"></a>Využívání ASP.NET webové služby (ASMX)
 

@@ -1,7 +1,6 @@
 ---
-title: "Funkce C# 6 nové – přehled"
-description: "Nejnovější verzi jazyka C# – verze 6 – stále vyvíjí jazyka, který má mít méně často používaný, lepší přehlednost a další konzistence. Čisticí inicializace syntaxe, možnost používat await v bloky catch/finally a null podmíněné? operátor jsou obzvláště užitečná."
-ms.topic: article
+title: Funkce C# 6 nové – přehled
+description: Nejnovější verzi jazyka C# – verze 6 – stále vyvíjí jazyka, který má mít méně často používaný, lepší přehlednost a další konzistence. Čisticí inicializace syntaxe, možnost používat await v bloky catch/finally a null podmíněné? operátor jsou obzvláště užitečná.
 ms.prod: xamarin
 ms.assetid: 4B4E41A8-68BA-4E2B-9539-881AC19971B
 ms.technology: xamarin-cross-platform
@@ -9,11 +8,11 @@ ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 80456287c92913b048b73f40d2db6dcb16cc270d
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 2a189a19280576876e5d5a6a4fa34d2d00cab330
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="c-6-new-features-overview"></a>Funkce C# 6 nové – přehled
 
@@ -52,7 +51,7 @@ Visual Studio pro Mac se automaticky aktualizuje Mono instalace v systému.
 
 Uživatelé Windows musí mít [Visual Studio 2015 nebo 2017 ^](https://www.visualstudio.com/) nainstalován kompilace kódu C# 6 (i v případě, že zvolíte Xamarin Studio pro Windows jako vaše IDE).
 
-^ nebo  *[Microsoft sestavení nástroje 2015](http://www.microsoft.com/en-us/download/details.aspx?id=48159)*  pro příkazový řádek kompilace nebo sestavení servery, například.
+^ nebo *[Microsoft sestavení nástroje 2015](http://www.microsoft.com/en-us/download/details.aspx?id=48159)* pro příkazový řádek kompilace nebo sestavení servery, například.
 
 ## <a name="using-c-6"></a>Pomocí jazyka C# 6
 

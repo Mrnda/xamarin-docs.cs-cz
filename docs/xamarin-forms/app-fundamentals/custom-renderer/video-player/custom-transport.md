@@ -1,17 +1,16 @@
 ---
-title: "Ovládací prvky vlastní video přenosu"
-ms.topic: article
+title: Ovládací prvky vlastní video přenosu
 ms.prod: xamarin
 ms.assetid: CE9E955D-A9AC-4019-A5D7-6390D80DECA1
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: b0d871068f42a03b2aba3c1482a9236b19fe0db9
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 5463a91dba5840ebe655aa1509d9f98e73643d26
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="custom-video-transport-controls"></a>Ovládací prvky vlastní video přenosu
 
@@ -521,19 +520,19 @@ namespace FormsVideoLibrary.UWP
 
 Pomocí znaků Unicode symbolický **přehrání**, **pozastavení**, a **Zastavit** bitové kopie je problematické. [Různé technické](https://unicode-table.com/en/blocks/miscellaneous-technical/) části standardu Unicode definuje tři symbolů zdánlivě vhodné pro tento účel. Jsou to:
 
-- 0x23F5 (černý střední šipkou trojúhelník) nebo & #x23F5; pro **přehrávání**
-- 0x23F8 (dvojité svislá čára) nebo & #x23F8; pro **pozastavení**
-- 0x23F9 (černý čtvereček) nebo & #x23F9; pro **zastavit**
+- 0x23F5 (černý střední šipkou trojúhelník) nebo &#x23F5; pro **přehrávání**
+- 0x23F8 (dvojité svislá čára) nebo &#x23F8; pro **pozastavení**
+- 0x23F9 (černý čtvereček) nebo &#x23F9; pro **zastavit**
 
 Bez ohledu na to jak v prohlížeči se zobrazí tyto symboly (a různé prohlížeče zpracovávají různými způsoby), nejsou zobrazeny konzistentně na platformách podporovaných aplikací Xamarin.Forms. IOS a zařízení UWP **pozastavení** a **Zastavit** znaky mají grafické vzhled, modré 3D pozadí a bílé popředí. Tato akce není případ v systému Android, kde je jednoduše blue symbolu. Ale codepoint 0x23F5 pro **přehrání** nemá, že stejný vzhled na UPW a dokonce ani podporovaná na iOS a Android.
 
 Z tohoto důvodu nelze použít 0x23F5 codepoint pro **přehrání**. Je dobré náhrada:
 
-- 0x25B6 (černý trojúhelník směřující doprava) nebo & #x25B6; pro **přehrávání**
+- 0x25B6 (černý trojúhelník směřující doprava) nebo &#x25B6; pro **přehrávání**
 
 To je podporováno všemi tři platformami s tím rozdílem, že je prostý černý trojúhelník, který není vypadat 3D vzhled **pozastavení** a **Zastavit**. Jednou z možností je postupujte podle codepoint 0x25B6 variant kódem:
 
-- 0x25B6 následuje 0xFE0F (typ variant 16) nebo & #x25B6; & #xFE0F; pro **přehrávání**
+- 0x25B6 následuje 0xFE0F (typ variant 16) nebo &#x25B6; &#xFE0F; pro **přehrávání**
 
 Je to, co se používá v kódu vidíte níže. V systému iOS, nabízí **přehrání** symbolů stejné 3D vzhled jako **pozastavení** a **Zastavit** tlačítka, ale varianta nefunguje pro Android a UWP.
 

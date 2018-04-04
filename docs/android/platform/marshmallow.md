@@ -1,18 +1,17 @@
 ---
 title: Funkce marshmallow
-description: "Tento článek vám pomůže začít používat pomocí Xamarin.Android k vývoji aplikací pro Android 6.0 Marshmallow."
-ms.topic: article
+description: Tento článek vám pomůže začít používat pomocí Xamarin.Android k vývoji aplikací pro Android 6.0 Marshmallow.
 ms.prod: xamarin
 ms.assetid: E4D6F183-98D2-460A-9D65-937639A899E0
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: c9ff9eb0b8d013485f0437d470ec49f1c1795d7a
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d2150e18a377d61a2e79fabfc845f57cfab8a5c7
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="marshmallow-features"></a>Funkce marshmallow
 

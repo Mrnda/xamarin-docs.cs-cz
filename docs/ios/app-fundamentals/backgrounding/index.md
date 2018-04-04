@@ -1,17 +1,16 @@
 ---
 title: Backgrounding
-description: "Pozadí zpracování nebo backgrounding je proces, když je umožněno aplikace provádět úlohy na pozadí, zatímco jiná aplikace je spuštěná v popředí. Tato příručka slouží jako úvod ke zpracování v iOS na pozadí."
-ms.topic: article
+description: Pozadí zpracování nebo backgrounding je proces, když je umožněno aplikace provádět úlohy na pozadí, zatímco jiná aplikace je spuštěná v popředí. Tato příručka slouží jako úvod ke zpracování v iOS na pozadí.
 ms.prod: xamarin
 ms.assetid: F377440C-C5D9-4267-85D8-2C816E3A0300
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 2bba7c0908fb78ca199cc654adad645afaf47a02
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ae3e732008c6503f511dc4be9cad874ecfe1272d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="backgrounding"></a>Backgrounding
 
@@ -25,11 +24,11 @@ V této příručce a doplňujícími návody přidáme další úkoly aplikace 
 
 ## <a name="contents"></a>Obsah
 
-1.  [Úvod do Backgrounding v iOS](~/ios/app-fundamentals/backgrounding/introduction-to-backgrounding-in-ios.md)
-1.  [Ukázka životního cyklu aplikací](~/ios/app-fundamentals/backgrounding/application-lifecycle-demo.md)
-1.  [Techniky Backgrounding iOS](~/ios/app-fundamentals/backgrounding/ios-backgrounding-techniques/index.md)
-1.  [Návody: Backgrounding v iOS](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/index.md)
-1.  [iOS Backgrounding pokyny](~/ios/app-fundamentals/backgrounding/ios-backgrounding-guidance.md)
+1.  [Úvod do zpracovávání úloh na pozadí v iOSu](~/ios/app-fundamentals/backgrounding/introduction-to-backgrounding-in-ios.md)
+1.  [Ukázka životního cyklu aplikace](~/ios/app-fundamentals/backgrounding/application-lifecycle-demo.md)
+1.  [Techniky zpracování úloh na pozadí v iOSu](~/ios/app-fundamentals/backgrounding/ios-backgrounding-techniques/index.md)
+1.  [Návody: Zpracování úloh na pozadí v iOSu](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/index.md)
+1.  [Doprovodné materiály ke zpracování úloh na pozadí v iOSu](~/ios/app-fundamentals/backgrounding/ios-backgrounding-guidance.md)
 
 ## <a name="summary"></a>Souhrn
 

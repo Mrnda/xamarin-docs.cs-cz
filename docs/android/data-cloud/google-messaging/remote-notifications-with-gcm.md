@@ -1,18 +1,17 @@
 ---
-title: "Vzdálená oznámení s zasílání zpráv cloudu Google"
-description: "Tento názorný postup obsahuje podrobné vysvětlení způsobu implementace vzdáleného oznámení (také nazývané nabízená oznámení) pomocí služby Google Cloud Messaging v aplikaci Xamarin.Android. Popisuje různé třídy, které je nutné implementovat pro komunikaci s zasílání zpráv cloudu Google (GCM), vysvětluje, jak nastavit oprávnění ve Android Manifest pro přístup do služby GCM a ukazuje, s testovací ukázka programu zasílání zpráv začátku do konce."
-ms.topic: article
+title: Vzdálená oznámení s zasílání zpráv cloudu Google
+description: Tento názorný postup obsahuje podrobné vysvětlení způsobu implementace vzdáleného oznámení (také nazývané nabízená oznámení) pomocí služby Google Cloud Messaging v aplikaci Xamarin.Android. Popisuje různé třídy, které je nutné implementovat pro komunikaci s zasílání zpráv cloudu Google (GCM), vysvětluje, jak nastavit oprávnění ve Android Manifest pro přístup do služby GCM a ukazuje, s testovací ukázka programu zasílání zpráv začátku do konce.
 ms.prod: xamarin
 ms.assetid: 4FC3C774-EF93-41B2-A81E-C6A08F32C09B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/13/2018
-ms.openlocfilehash: 823fad163e837adab5490446c23ab2f492679114
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 969b1b36659ac52782d30a1840ba352524e5e3c6
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="remote-notifications-with-google-cloud-messaging"></a>Vzdálená oznámení s zasílání zpráv cloudu Google
 

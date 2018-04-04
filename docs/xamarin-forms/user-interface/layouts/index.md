@@ -1,7 +1,6 @@
 ---
-title: "Rozložení"
-description: "Rozložení zobrazení na obrazovce."
-ms.topic: article
+title: Rozložení
+description: Rozložení zobrazení na obrazovce.
 ms.prod: xamarin
 ms.assetid: 65030DA3-C7C1-4A02-B478-811073C39139
 ms.technology: xamarin-forms
@@ -9,11 +8,11 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 0ede9bbb47f398a82d6eae5d827122f469ad6ea4
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 24d9dd332275fd811c0ff60fc514ae0f84c6ee07
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="layouts"></a>Rozložení
 
@@ -25,18 +24,18 @@ Xamarin.Forms má několik rozložení a funkce pro uspořádání obsahu na obr
 
 Každý ovládací prvek rozložení je popsáno níže, a také podrobnosti o tom, jak zpracovat změny orientace obrazovky:
 
-* **[StackLayout](stack-layout.md)**  &ndash; použitá k uspořádání zobrazení lineárně, vodorovně nebo svisle. Zobrazení StackLayout může být zarovnaný na střed doleva nebo doprava na rozložení.
-* **[AbsoluteLayout](absolute-layout.md)**  &ndash; umožňuje uspořádat zobrazení podle nastavení souřadnic & velikost jako absolutní hodnoty nebo poměry. AbsoluteLayout slouží k zobrazení vrstvy a také je ukotvení vlevo, vpravo nebo center.
-* **[RelativeLayout](relative-layout.md)**  &ndash; použitá k uspořádání zobrazení nastavením omezení vzhledem k jejich nadřazené rozměry a umístění.
-* **[Mřížky](grid.md)**  &ndash; použitá k uspořádání zobrazení v mřížce. Řádků a sloupců lze zadat jako absolutní hodnoty nebo poměry.
-* **[ScrollView](scroll-view.md)**  &ndash; použitý k poskytnutí posouvání při zobrazení se nemůže vejít zcela v rámci hranice na obrazovce.
-* **[LayoutOptions](layout-options.md)**  &ndash; definovat zarovnání a rozšíření pro zobrazení, relativně k jeho nadřazený objekt.
-* **[Vstupní průhlednost](#input_transparency)**  &ndash; Určuje, jestli element obdrží vstup.
-* **[Okraj a odsazení](margin-and-padding.md)**  &ndash; ukazuje, jak můžete řídit chování rozložení po vykreslení elementu v uživatelském rozhraní.
-* **[Orientace zařízení](device-orientation.md)**  &ndash; vysvětluje, jak zpracovat změny orientace zařízení.
-* **[Rozložení v zařízení tablet a vzdálené ploše](tablet.md)**  &ndash; ukazuje, jak optimalizovat pro větší obrazovky na každou platformu.
-* **[Vytvoření vlastního rozložení](custom.md)**  &ndash; vysvětluje, jak vytvořit vlastní rozložení třídu.
-* **[Komprese rozložení](layout-compression.md)**  &ndash; Odebere zadaný ve snaze zvýšit výkon vykreslování stránky rozložení z vizuálním stromu.
+* **[StackLayout](stack-layout.md) ** &ndash; použitá k uspořádání zobrazení lineárně, vodorovně nebo svisle. Zobrazení StackLayout může být zarovnaný na střed doleva nebo doprava na rozložení.
+* **[AbsoluteLayout](absolute-layout.md) ** &ndash; umožňuje uspořádat zobrazení podle nastavení souřadnic & velikost jako absolutní hodnoty nebo poměry. AbsoluteLayout slouží k zobrazení vrstvy a také je ukotvení vlevo, vpravo nebo center.
+* **[RelativeLayout](relative-layout.md) ** &ndash; použitá k uspořádání zobrazení nastavením omezení vzhledem k jejich nadřazené rozměry a umístění.
+* **[Mřížky](grid.md) ** &ndash; použitá k uspořádání zobrazení v mřížce. Řádků a sloupců lze zadat jako absolutní hodnoty nebo poměry.
+* **[ScrollView](scroll-view.md) ** &ndash; použitý k poskytnutí posouvání při zobrazení se nemůže vejít zcela v rámci hranice na obrazovce.
+* **[LayoutOptions](layout-options.md) ** &ndash; definovat zarovnání a rozšíření pro zobrazení, relativně k jeho nadřazený objekt.
+* **[Vstupní průhlednost](#input_transparency) ** &ndash; Určuje, jestli element obdrží vstup.
+* **[Okraj a odsazení](margin-and-padding.md) ** &ndash; ukazuje, jak můžete řídit chování rozložení po vykreslení elementu v uživatelském rozhraní.
+* **[Orientace zařízení](device-orientation.md) ** &ndash; vysvětluje, jak zpracovat změny orientace zařízení.
+* **[Rozložení v zařízení tablet a vzdálené ploše](tablet.md) ** &ndash; ukazuje, jak optimalizovat pro větší obrazovky na každou platformu.
+* **[Vytvoření vlastního rozložení](custom.md) ** &ndash; vysvětluje, jak vytvořit vlastní rozložení třídu.
+* **[Komprese rozložení](layout-compression.md) ** &ndash; Odebere zadaný ve snaze zvýšit výkon vykreslování stránky rozložení z vizuálním stromu.
 
 Ovládací prvky platformy můžete taky použít přímo v Xamarin.Forms rozložení s [ **nativní vložení** ](~/xamarin-forms/platform/native-views/index.md) (nové v Xamarin.Forms 2.2), a můžete [ **vytvořit vlastní rozložení** ](custom.md) podle specifických požadavků.
 

@@ -1,18 +1,17 @@
 ---
 title: Xamarin.Forms Performance
-description: "Pro zvýšení výkonu aplikací Xamarin.Forms mnoha způsoby. Tyto postupy souhrnně může výrazně snížit objem práce využití procesoru a paměti spotřebovávají aplikace. Tento článek popisuje a tyto postupy."
-ms.topic: article
+description: Pro zvýšení výkonu aplikací Xamarin.Forms mnoha způsoby. Tyto postupy souhrnně může výrazně snížit objem práce využití procesoru a paměti spotřebovávají aplikace. Tento článek popisuje a tyto postupy.
 ms.prod: xamarin
 ms.assetid: 0be84c56-6698-448d-be5a-b4205f1caa9f
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: a750167cb9e6bde3a4a9abe11c5386497f9a12ae
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 5cc35dde80e4a0c28315589f4db127a922ba5a41
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="xamarinforms-performance"></a>Xamarin.Forms Performance
 

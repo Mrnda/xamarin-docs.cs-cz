@@ -1,18 +1,17 @@
 ---
-title: "Část 1 – Vytvoření MonoGame křížové platformy"
-description: "Tento návod ukazuje, jak vytvořit nový projekt pro iOS a Android pomocí MonoGame. Výsledkem je Visual Studio pro Mac řešení s projektu sdíleného kódu napříč platformami a také jeden projekt pro každou platformu. Tento projekt se zobrazí prázdnou obrazovku blue při spuštění."
-ms.topic: article
+title: Část 1 – Vytvoření MonoGame křížové platformy
+description: Tento návod ukazuje, jak vytvořit nový projekt pro iOS a Android pomocí MonoGame. Výsledkem je Visual Studio pro Mac řešení s projektu sdíleného kódu napříč platformami a také jeden projekt pro každou platformu. Tento projekt se zobrazí prázdnou obrazovku blue při spuštění.
 ms.prod: xamarin
 ms.assetid: FC69E69B-04D4-45DF-9BBF-2A6CDEAD9B2F
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 0d1352b4129dc1cf8be42e813787b9b73f80cd3e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0cd12f23f8cb269b2a41a08bf641db08e18fb82b
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="part-1--creating-a-cross-platform-monogame"></a>Část 1 – Vytvoření MonoGame křížové platformy
 

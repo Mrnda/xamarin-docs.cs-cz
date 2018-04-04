@@ -1,5 +1,5 @@
 #<a name="---"></a>---
-Title: "Část 6 – testování a App Store schválení" ms.topic: article ms.prod: xamarin ms.assetid: 46E0578A-7EB9-C105-ABB0-A043E501F36B ms.technology: xamarin a platformy Autor: asb3993 ms.author: amburns ms.date: 03, 23/2017
+title: "Part 6 - Testing and App Store Approvals" ms.prod: xamarin ms.assetid: 46E0578A-7EB9-C105-ABB0-A043E501F36B ms.technology: xamarin-cross-platform author: asb3993 ms.author: amburns ms.date: 03/23/2017
 ---
 
 # <a name="part-6---testing-and-app-store-approvals"></a>Část 6 – testování a schválení obchodu s aplikacemi

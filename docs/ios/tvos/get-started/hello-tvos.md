@@ -1,18 +1,17 @@
 ---
-title: "Hello, tvOS úvodní příručce"
-description: "Tento průvodce vás provede vytvoření první aplikace Xamarin.tvOS a jeho nástrojů pro vývoj. Také zavádí návrháře Xamarin, která zveřejňuje ovládacích prvků uživatelského rozhraní na kód a ukazuje, jak vytvářet, spustit a otestovat Xamarin.tvOS aplikace."
-ms.topic: article
+title: Hello, tvOS úvodní příručce
+description: Tento průvodce vás provede vytvoření první aplikace Xamarin.tvOS a jeho nástrojů pro vývoj. Také zavádí návrháře Xamarin, která zveřejňuje ovládacích prvků uživatelského rozhraní na kód a ukazuje, jak vytvářet, spustit a otestovat Xamarin.tvOS aplikace.
 ms.prod: xamarin
 ms.assetid: 6E0AFE58-A13B-492F-861E-D5D73EB1C4A3
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 02/02/2018
-ms.openlocfilehash: 5eccb36b3c6a437ddc1ec055e779d8f78460643e
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 0adf6e326dd29db15b6bd90626f424b803dc0bc9
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="hello-tvos-quick-start-guide"></a>Hello, tvOS úvodní příručce
 

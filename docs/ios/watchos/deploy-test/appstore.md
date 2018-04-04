@@ -1,18 +1,17 @@
 ---
-title: "Nasazení do obchodu s aplikacemi"
-description: "Nasazení aplikace sledovat do obchodu s aplikacemi"
-ms.topic: article
+title: Nasazení do obchodu s aplikacemi
+description: Nasazení aplikace sledovat do obchodu s aplikacemi
 ms.prod: xamarin
 ms.assetid: DBE16040-70D2-4F61-B5F3-C8D213DBC754
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: c5b89570fdd3df80d39c6621fcd12a23babed9ee
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: a3c68a0720fbe18f35731cf1a19248c00f748877
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="deploying-to-the-app-store"></a>Nasazení do obchodu s aplikacemi
 
@@ -177,7 +176,7 @@ is missing icon with name pattern '*44x44@2x.png' (Home Screen 42mm).
 Zajistěte, abyste měli nejnovější verzi sady Visual Studio pro Mac a že vaše **AppIcons.appiconset** obsahuje kompletní sadu bitové kopie. Pokud tato chyba se přesto zobrazuje, zobrazte si zdroj **Contents.json** a ověřit tak obsahuje položku pro všechny požadované obrázky. Případně, zkontrolujte, že používáte nejnovější verzi Xamarin, odstranit a znovu vytvořit **AppIcons.appiconset**.
 
 > [!IMPORTANT]
-> Není známého problému v sadě Visual Studio pro podporu ikonu Sledování pro Mac: očekává, že obrázek 88 x 88 pixelů pro  **29x29@3x**  bitové kopie (což by měl být pixelů 87 x 87).
+> Není známého problému v sadě Visual Studio pro podporu ikonu Sledování pro Mac: očekává, že obrázek 88 x 88 pixelů pro **29x29@3x** bitové kopie (což by měl být pixelů 87 x 87).
 
 
 Nelze vyřešit v sadě Visual Studio pro Mac – buď upravit zdroj obrázku v Xcode nebo ručně upravit, pokud **Contents.json** souboru (tak, aby odpovídaly [této ukázce](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132)).

@@ -1,17 +1,16 @@
 ---
 title: Grafika a animace v iOS
-description: "Základní koncepty aplikace"
-ms.topic: article
+description: Základní koncepty aplikace
 ms.prod: xamarin
 ms.assetid: 3FEF45F2-C0F0-4D66-8796-9674FFE6740F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: ece988f2ba29ec4656631d993e4c4b99a276b199
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 99c05efa13027aca4935425d2a731613f250ec93
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="graphics-and-animation-in-ios"></a>Grafika a animace v iOS
 
@@ -22,11 +21,11 @@ ms.lasthandoff: 02/27/2018
 
 CoreImage je novou architekturou, zavedená v iOS 5, který poskytuje řadu předdefinovaných filtrů a efekty uplatňovat na obrázky a videa, včetně detekce řez.
 
-##  <a name="core-graphicsiosplatformgraphics-animation-ioscore-graphicsmd"></a>[Základní grafiky](~/ios/platform/graphics-animation-ios/core-graphics.md)
+##  <a name="core-graphicsiosplatformgraphics-animation-ioscore-graphicsmd"></a>[Core Graphics](~/ios/platform/graphics-animation-ios/core-graphics.md)
 
 Tento článek popisuje rozhraní iOS základní grafické prvky, které poskytuje nízké úrovně kreslení podporu. Ukazuje, jak používat základní grafiky k vykreslení geometry, Image a soubory PDF.
 
-##  <a name="core-animationiosplatformgraphics-animation-ioscore-animationmd"></a>[Základní animace](~/ios/platform/graphics-animation-ios/core-animation.md)
+##  <a name="core-animationiosplatformgraphics-animation-ioscore-animationmd"></a>[Core Animation](~/ios/platform/graphics-animation-ios/core-animation.md)
 
 Tento článek prozkoumá základní animace framework, znázorňující, jak umožňuje vysoký výkon, plynulá animace v UIKit, dobře, jak používat přímo k ovládacího prvku animace nižší úrovně.
 

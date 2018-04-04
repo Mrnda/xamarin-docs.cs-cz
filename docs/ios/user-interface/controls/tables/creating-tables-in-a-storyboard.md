@@ -1,18 +1,17 @@
 ---
-title: "Práce s tabulkami v iOS návrháře"
-description: "V předchozí části jsme prozkoumali vývoj s použitím tabulky. V tomto části páté a finální jsme bude agregovat toho, co jsme naučili dosavadní a vytvořit základní aplikaci případě seznamu pomocí scénáře."
-ms.topic: article
+title: Práce s tabulkami v iOS návrháře
+description: V předchozí části jsme prozkoumali vývoj s použitím tabulky. V tomto části páté a finální jsme bude agregovat toho, co jsme naučili dosavadní a vytvořit základní aplikaci případě seznamu pomocí scénáře.
 ms.prod: xamarin
 ms.assetid: D8416E10-481A-0B6E-4081-B146E6358004
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: e46038b21327fe8847d2c04ee1ba16960f6a059b
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 869719b1d3514fee4b45f61dcdb34a0bcf54f7b2
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="working-with-tables-in-the-ios-designer"></a>Práce s tabulkami v iOS návrháře
 
@@ -115,7 +114,7 @@ Potom budete muset vytvořit tlačítko, které přidá nové úkoly, jak je uve
 Postupujte takto: 
 
 -  Přetáhněte **položka tlačítka panelu** z panelu nástrojů _pravé straně navigačního panelu_.
--  V **vlastnosti Pad**v části **položka tlačítka panelu** vyberte **identifikátor: Přidejte** (Chcete-li  *+*  plus tlačítko). 
+-  V **vlastnosti Pad**v části **položka tlačítka panelu** vyberte **identifikátor: Přidejte** (Chcete-li *+* plus tlačítko). 
 -  Pojmenujte ho tak, aby je možné zjistit v kódu v pozdější fázi. Všimněte si, že budete muset poskytnout název třídy řadiče kořenové zobrazení (například **ItemViewController**) a umožní vám nastavit název položky tlačítko panelu.
 
 

@@ -1,18 +1,17 @@
 ---
-title: "Interní distribuční"
-description: "Tento dokument poskytuje stručný přehled distribuce aplikací interně, jako je členem programu pro vývojáře Apple Enterprise."
-ms.topic: article
+title: Interní distribuční
+description: Tento dokument poskytuje stručný přehled distribuce aplikací interně, jako je členem programu pro vývojáře Apple Enterprise.
 ms.prod: xamarin
 ms.assetid: 9466E51E-303E-466E-85D7-D0525E16BB37
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 4da96f3119fb46fbeb22ad3d6c68b3099f6d0698
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c11148928ab0fa028f9cc4a9cb50b27a0e195847
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="in-house-distribution"></a>Interní distribuční
 
@@ -53,7 +52,7 @@ Je důležité si uvědomit, že certifikáty s vypršenou platností nelze obno
 
 1. Vyhledejte *certifikáty, identifikátory a profily* části Apple Developer Member Center.
 2. V části *certifikáty*, vyberte **produkční**.
-3. Klikněte  **+**  tlačítko Vytvořit nový certifikát.
+3. Klikněte **+** tlačítko Vytvořit nový certifikát.
 4. V části *produkční* záhlaví, vyberte **interní a Ad Hoc**:
 
    [![](in-house-distribution-images/createcertmanually01.png "Vyberte interní a Ad Hoc")](in-house-distribution-images/createcertmanually01.png#lightbox)
@@ -96,7 +95,7 @@ Jako všechny ostatní zřizování profilu vytvoříte, ID aplikace bude nutné
 
 
 1. V [Apple Developer Center](https://developer.apple.com/account/overview.action) vyhledejte *certifikát, identifikátory a profily* části. Vyberte **ID aplikace** pod **identifikátory**.
-2. Klikněte  **+**  tlačítko a zadejte **název** který bude identifikovat na portálu.
+2. Klikněte **+** tlačítko a zadejte **název** který bude identifikovat na portálu.
 3. Předpona aplikace musí být již nastavená jako ID vašeho týmu a nelze změnit. Vyberte buď explicitní nebo ID aplikace zástupný znak a zadejte ID sady v následujícím formátu zpětné DNS: **explicitní**: com. [DomainName].[AppName] **zástupné**: com. [DomainName]. *
 4. Vyberte některé [App Services](~/ios/get-started/installation/device-provisioning/index.md#appservices) vyžadující vaší aplikace.
 5. Klikněte **pokračovat** tlačítko a postupujte podle pokynů na obrazovce pro vytvoření nového ID aplikace.
@@ -107,7 +106,7 @@ Jakmile máte požadované součásti potřebné pro vytváření profil distrib
 
    [![](in-house-distribution-images/distribute01.png "Vyberte zřizování > Distribuce")](in-house-distribution-images/distribute01.png#lightbox)
 
-2. Klikněte  **+**  tlačítko a vyberte typ profil distribuce, kterou chcete vytvořit jako **interní**:
+2. Klikněte **+** tlačítko a vyberte typ profil distribuce, kterou chcete vytvořit jako **interní**:
 
    [![](in-house-distribution-images/distribute02.png "Vytvoření profilu interní distribuční")](in-house-distribution-images/distribute02.png#lightbox)
 

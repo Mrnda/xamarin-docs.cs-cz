@@ -1,18 +1,17 @@
 ---
-title: "Cíle Sharpie"
-description: "Tato část obsahuje úvod do cíle Sharpie, nástroj pro příkazový řádek pro Xamarin umožňuje automatizovat proces vytváření vazby do knihovny jazyka Objective-C"
-ms.topic: article
+title: Cíle Sharpie
+description: Tato část obsahuje úvod do cíle Sharpie, nástroj pro příkazový řádek pro Xamarin umožňuje automatizovat proces vytváření vazby do knihovny jazyka Objective-C
 ms.prod: xamarin
 ms.assetid: 9C0A932C-7601-4357-B3F7-62ABAC835019
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 10/11/2017
-ms.openlocfilehash: 08796d38301ba9c6ae15c3ddfe700b1cd2166ace
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 4341aa7d2ea0bec88e9c36c1804c5a909fd6fd5c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="objective-sharpie"></a>Cíle Sharpie
 

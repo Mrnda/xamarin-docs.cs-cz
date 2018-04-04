@@ -1,18 +1,17 @@
 ---
-title: "Zobrazení karty aplikace"
-description: "Pomůcka zobrazení karty aplikace je součást uživatelského rozhraní, která uvede textových a obrázkových obsah v zobrazení, které se podobají karty. Tato příručka vysvětluje, jak používat a přizpůsobit zobrazení karty aplikace v aplikacích Xamarin.Android při zachování zpětné kompatibility s předchozími verzemi systému Android."
-ms.topic: article
+title: Zobrazení karty aplikace
+description: Pomůcka zobrazení karty aplikace je součást uživatelského rozhraní, která uvede textových a obrázkových obsah v zobrazení, které se podobají karty. Tato příručka vysvětluje, jak používat a přizpůsobit zobrazení karty aplikace v aplikacích Xamarin.Android při zachování zpětné kompatibility s předchozími verzemi systému Android.
 ms.prod: xamarin
 ms.assetid: CF12FE85-D03A-4E64-95D2-D7115061A500
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 46eec10bbabec74719affabce1e8033a083680be
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 21e2a2e8ef04936664344cb4fb758bc2af3b4d05
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="cardview"></a>Zobrazení karty aplikace
 

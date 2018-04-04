@@ -1,18 +1,17 @@
 ---
-title: "Události, protokoly a delegáti"
-description: "Tento článek představuje klíče iOS technologií používaných pro příjem zpětná volání a k vyplnění ovládacích prvků uživatelského rozhraní s daty. Tyto technologie jsou události, protokoly a delegáti. Tento článek vysvětluje, co každý z nich je, a každé použití z jazyka C#. Ukazuje, jak Xamarin.iOS používá ovládací prvky iOS ke zveřejnění známé .NET události, a jak Xamarin.iOS poskytuje podporu pro koncepty jazyka Objective-C, jako jsou protokoly a delegáti (Objective-C delegáti by neměl být zaměňovat s delegáti C#). Tento článek také obsahuje příklady, které ukazují, jak se používají protokoly – jak jako základ pro delegáti jazyka Objective-C a na jiných delegáta scénáře."
-ms.topic: article
+title: Události, protokoly a delegáti
+description: Tento článek představuje klíče iOS technologií používaných pro příjem zpětná volání a k vyplnění ovládacích prvků uživatelského rozhraní s daty. Tyto technologie jsou události, protokoly a delegáti. Tento článek vysvětluje, co každý z nich je, a každé použití z jazyka C#. Ukazuje, jak Xamarin.iOS používá ovládací prvky iOS ke zveřejnění známé .NET události, a jak Xamarin.iOS poskytuje podporu pro koncepty jazyka Objective-C, jako jsou protokoly a delegáti (Objective-C delegáti by neměl být zaměňovat s delegáti C#). Tento článek také obsahuje příklady, které ukazují, jak se používají protokoly – jak jako základ pro delegáti jazyka Objective-C a na jiných delegáta scénáře.
 ms.prod: xamarin
 ms.assetid: 7C07F0B7-9000-C540-0FC3-631C29610447
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 69296992c503d536a4160f172022c7ce5578812f
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 4c2888eb2d0b1ae79e10ca764e7bf14a1afb6c59
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="events-protocols-and-delegates"></a>Události, protokoly a delegáti
 

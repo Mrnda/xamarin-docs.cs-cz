@@ -1,18 +1,17 @@
 ---
-title: "Obrázky"
-description: "Tento článek se zabývá práce s obrázky a ikony v aplikaci Xamarin.Mac. Popisuje vytváření a správa bitových kopií bylo nutné vytvořit ikona vaší aplikace a pomocí bitové kopie v kódu jazyka C# a rozhraní tvůrce pro Xcode."
-ms.topic: article
+title: Obrázky
+description: Tento článek se zabývá práce s obrázky a ikony v aplikaci Xamarin.Mac. Popisuje vytváření a správa bitových kopií bylo nutné vytvořit ikona vaší aplikace a pomocí bitové kopie v kódu jazyka C# a rozhraní tvůrce pro Xcode.
 ms.prod: xamarin
 ms.assetid: C6B539C2-FC6A-4C38-B839-32BFFB9B16A7
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: d8098afea87765166db8318b76adf250818a0a6f
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: dc33dc78c09c0b5b7cb7533afdd2f95b8ebd9c4e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="images"></a>Obrázky
 
@@ -46,7 +45,7 @@ Při přidávání obrazu pro použití v aplikaci Xamarin.Mac, existuje několi
 - **Hlavní projekt stromu [zastaralé]** -bitové kopie lze přidat přímo do stromu projekty. Při volání metody bitové kopie, které jsou uložené ve stromové struktuře hlavní projekt z kódu, je zadána žádná umístění složky. Příklad: `NSImage image = NSImage.ImageNamed("tags.png");`. 
 - **Složky zdrojů [zastaralé]** -speciální **prostředky** složka je pro všechny soubory, které se stane součástí aplikace je sady například ikonu, spusťte obrazovky nebo obecné bitové kopie (nebo všechny ostatní bitovou kopii nebo soubor vývojáře které chcete přidat). Při volání metody bitové kopie, které jsou uložené v **prostředky** složku z kódu jenom jako obrázky uložené ve stromové struktuře hlavní projekt, je-li zadána žádná umístění složky. Příklad: `NSImage.ImageNamed("tags.png")`.
 - **Vlastní složku nebo podsložku [zastaralé]** -Vývojář můžete přidat vlastní složku do stromu zdroj projekty a ukládání bitových kopií existuje. Umístění, kde se přidá soubor lze začlenit do podsložky, chcete-li další pomoc uspořádání projektu. Například, pokud vývojář přidat `Card` složku pro projekt a podsložkou `Hearts` do této složky, potom uložte bitovou kopii **Jack.png** v `Hearts` složky, `NSImage.ImageNamed("Card/Hearts/Jack.png")` by načíst bitové kopie modul runtime.
-- **Nastaví Image katalog Asset [preferované]** – přidané v OS X El Capitan **Asset katalogů bitovou kopii sady** obsahovat všechny verze nebo reprezentace bitové kopie, které jsou nezbytné pro podporu různých zařízení a škálovat faktory pro vaše aplikace. Aniž byste museli spoléhat na název souboru obrázku prostředky (**@1x**,  **@2x** ).
+- **Nastaví Image katalog Asset [preferované]** – přidané v OS X El Capitan **Asset katalogů bitovou kopii sady** obsahovat všechny verze nebo reprezentace bitové kopie, které jsou nezbytné pro podporu různých zařízení a škálovat faktory pro vaše aplikace. Aniž byste museli spoléhat na název souboru obrázku prostředky (**@1x**, **@2x**).
 
 <a name="asset-catalogs" />
 
@@ -68,7 +67,7 @@ Jak jsme uvedli výše, **Asset katalogů bitovou kopii sady** obsahovat všechn
 
     [![Název úpravy bitovou kopii sady](image-images/imageset04.png "název úpravy bitovou kopii sady.")](image-images/imageset04-large.png#lightbox)
     
-Speciální **vektoru** třídy jako přidané do **bitovou kopii sady** , umožňuje zahrnout _PDF_ formátu vektoru bitové kopie v casset místo včetně rastrový obrázek jednotlivých souborů v různá řešení. Tuto metodu použijete, zadáte soubor jednoho vektoru pro  **@1x**  řešení (ve formátu jako soubor PDF vektoru) a  **@2x**  a  **@3x**  verze souboru, bude vygenerována v době kompilace a součástí sady aplikace.
+Speciální **vektoru** třídy jako přidané do **bitovou kopii sady** , umožňuje zahrnout _PDF_ formátu vektoru bitové kopie v casset místo včetně rastrový obrázek jednotlivých souborů v různá řešení. Tuto metodu použijete, zadáte soubor jednoho vektoru pro **@1x** řešení (ve formátu jako soubor PDF vektoru) a **@2x** a **@3x** verze souboru, bude vygenerována v době kompilace a součástí sady aplikace.
 
 [![Obrázek nastavení rozhraní editoru](image-images/imageset05.png "bitovou kopii nastavit rozhraní editoru")](image-images/imageset05-large.png#lightbox)
 
@@ -142,7 +141,7 @@ V aplikaci Xamarin.Mac, můžete použít jakoukoli png, jpg nebo soubor pdf jak
 Při vytváření verze standard a ve vysokém rozlišení obrázku, postupujte při jejich zahrnutí do projektu Xamarin.Mac tyto zásady vytváření názvů pro dvojici bitové kopie:
 
 - **Standardní řešení**  - **ImageName.filename rozšíření** (Příklad: **tags.png**)
-- **S vysokým rozlišením**   -   **ImageName@2x.filename-extension**  (Příklad:  **tags@2x.png** )
+- **S vysokým rozlišením**   -  **ImageName@2x.filename-extension** (Příklad: **tags@2x.png**)
 
 Při přidání do projektu, by se následujícím způsobem:
 
@@ -150,7 +149,7 @@ Při přidání do projektu, by se následujícím způsobem:
 
 Když bitovou kopii je přiřazen k elementu uživatelského rozhraní v Tvůrci rozhraní budete jednoduše vyberte soubor v _ImageName_**.** _příponu názvu souboru_ formátu (Příklad: **tags.png**). Pro stejný využitím obrázku v kódu jazyka C#, budete vyberte soubor v _ImageName_**.** _příponu názvu souboru_ formátu.
 
-Pokud jste Xamarin.Mac aplikace běží v systému Mac, _ImageName_**.** _příponu názvu souboru_ formátu image se použije na standardní řešení zobrazí  **ImageName@2x.filename-extension**  image bude automaticky odebrána zobrazení sítnice základny Mac.
+Pokud jste Xamarin.Mac aplikace běží v systému Mac, _ImageName_**.** _příponu názvu souboru_ formátu image se použije na standardní řešení zobrazí **ImageName@2x.filename-extension** image bude automaticky odebrána zobrazení sítnice základny Mac.
 
 
 ## <a name="using-images-in-interface-builder"></a>Pomocí bitové kopie v Tvůrci rozhraní
@@ -176,7 +175,7 @@ V rozhraní tvůrce použít bitovou kopii, postupujte takto:
      ![Image se zobrazí v editoru panelu nástrojů](image-images/ib04.png "bitovou kopii se zobrazuje v editoru panelu nástrojů")
 6. Uložte změny a vrátit k sadě Visual Studio pro Mac k synchronizaci s Xcode.
 
-Výše uvedené kroky fungovat pro libovolný element uživatelského rozhraní, která umožňuje jejich vlastnost image v nastavit **atribut Inspector**. Znovu Pokud jste zahrnuli  **@2x**  verzi souboru bitové kopie, automaticky použije na sítnice zobrazení na základě Mac.
+Výše uvedené kroky fungovat pro libovolný element uživatelského rozhraní, která umožňuje jejich vlastnost image v nastavit **atribut Inspector**. Znovu Pokud jste zahrnuli **@2x** verzi souboru bitové kopie, automaticky použije na sítnice zobrazení na základě Mac.
 
 > [!IMPORTANT]
 > Pokud není k dispozici v bitovou kopii **název bitové kopie** rozevíracím projektu .storyboard v Xcode zavřete a znovu ho otevřete v sadě Visual Studio for Mac. Pokud image ještě není k dispozici, ověřte, že jeho **akce sestavení** je `BundleResource` a že byl přidán bitovou kopii do **prostředky** složky.
@@ -189,7 +188,7 @@ Při načítání do paměti pomocí C# – kód ve vaší aplikaci Xamarin.Mac 
 NSImage image = NSImage.ImageNamed("tags.png");
 ```
 
-Výše uvedený kód používá statickou `ImageNamed("...")` metodu `NSImage` třídy k načtení do paměti z daného bitové kopie **prostředky** složky, pokud nelze najít bitovou kopii, `null` bude vrácen. Jako bitové kopie přiřazené v Tvůrci rozhraní, pokud jste zahrnuli  **@2x**  verzi souboru bitové kopie, automaticky použije na sítnice zobrazení na základě Mac.
+Výše uvedený kód používá statickou `ImageNamed("...")` metodu `NSImage` třídy k načtení do paměti z daného bitové kopie **prostředky** složky, pokud nelze najít bitovou kopii, `null` bude vrácen. Jako bitové kopie přiřazené v Tvůrci rozhraní, pokud jste zahrnuli **@2x** verzi souboru bitové kopie, automaticky použije na sítnice zobrazení na základě Mac.
 
 Chcete-li načíst Image mimo aplikace sady (ze souboru systému Mac), použijte následující kód:
 

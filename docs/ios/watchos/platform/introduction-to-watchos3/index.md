@@ -1,18 +1,17 @@
 ---
-title: "Úvod do watchOS 3"
-description: "Tento článek představuje všechny nové a změněné rozhraní API a funkce dostupné v watchOS 3 pro vývojáře pro Xamarin."
-ms.topic: article
+title: Úvod do watchOS 3
+description: Tento článek představuje všechny nové a změněné rozhraní API a funkce dostupné v watchOS 3 pro vývojáře pro Xamarin.
 ms.prod: xamarin
 ms.assetid: B8ABE1E1-8688-4262-BE66-A16813C2D671
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/07/2017
-ms.openlocfilehash: f11db7496d132b742cb57b86ddea240712b09e34
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 506e3795538ceffc77301a608c504fc6ec2045a7
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="introduction-to-watchos-3"></a>Úvod do watchOS 3
 

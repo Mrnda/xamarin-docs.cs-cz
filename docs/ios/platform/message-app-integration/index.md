@@ -1,18 +1,17 @@
 ---
-title: "Integrace aplikace zpráv"
-description: "Tyto články Zobrazit jak obsahovat příponu zpráva aplikace Xamarin.iOS řešení, které se integruje se službou aplikace zprávy k dispozici nové funkce pro uživatele."
-ms.topic: article
+title: Integrace aplikace zpráv
+description: Tyto články Zobrazit jak obsahovat příponu zpráva aplikace Xamarin.iOS řešení, které se integruje se službou aplikace zprávy k dispozici nové funkce pro uživatele.
 ms.prod: xamarin
 ms.assetid: 00AF2D4C-9BA8-4265-A11F-989C93BDF723
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/29/2016
-ms.openlocfilehash: 4c583e147ef363062a026770f7d8a7549f402d55
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a0471ba7b6cd612ecf781233381550e6abf800ce
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="message-app-integration"></a>Integrace aplikace zpráv
 

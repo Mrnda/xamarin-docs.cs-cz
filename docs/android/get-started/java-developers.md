@@ -1,18 +1,17 @@
 ---
-title: "Xamarin pro vývojáře v jazyce Java"
-description: "Pokud jste vývojář Java, jste i na moct využívat znalosti a existující kód na platformě Xamarin při využívat kód znovu použít výhody jazyka C#. Zjistíte, že je velmi podobné Java syntaxe jazyka C# – syntaxe a že oba jazyky poskytují velmi podobné funkce. Kromě toho budete zjišťovat funkce, které jsou jedinečné pro C#, která se bude snazší vývoj webů."
-ms.topic: article
+title: Xamarin pro vývojáře v jazyce Java
+description: Pokud jste vývojář Java, jste i na moct využívat znalosti a existující kód na platformě Xamarin při využívat kód znovu použít výhody jazyka C#. Zjistíte, že je velmi podobné Java syntaxe jazyka C# – syntaxe a že oba jazyky poskytují velmi podobné funkce. Kromě toho budete zjišťovat funkce, které jsou jedinečné pro C#, která se bude snazší vývoj webů.
 ms.prod: xamarin
 ms.assetid: A3B6C041-4052-4E7D-999C-C4FA10BE3D67
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/13/2018
-ms.openlocfilehash: 7abcaa218c6755a58e6f35e982a1144060df0b3b
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 29fc698e6ed1cfe02ce329813342916d5e7a1651
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="xamarin-for-java-developers"></a>Xamarin pro vývojáře v jazyce Java
 

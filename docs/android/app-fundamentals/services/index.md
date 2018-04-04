@@ -1,18 +1,17 @@
 ---
-title: "Vytváření Android služeb"
-description: "Tato příručka popisuje Xamarin.Android služby, které jsou Android součásti, které umožňují práci, kterou jde provést bez rozhraní aktivního uživatele. Služby se velmi často používají pro úlohy, které se provádí na pozadí, jako je časově náročná výpočtů a stahování souborů, přehrávání hudby a tak dále. Ho vysvětluje různé scénáře, které služby jsou vhodné pro a ukazuje, jak pro jejich implementaci, k provedení úlohy na pozadí dlouho běžící i pro zajištění rozhraní vzdáleného volání procedur."
-ms.topic: article
+title: Vytváření Android služeb
+description: Tato příručka popisuje Xamarin.Android služby, které jsou Android součásti, které umožňují práci, kterou jde provést bez rozhraní aktivního uživatele. Služby se velmi často používají pro úlohy, které se provádí na pozadí, jako je časově náročná výpočtů a stahování souborů, přehrávání hudby a tak dále. Ho vysvětluje různé scénáře, které služby jsou vhodné pro a ukazuje, jak pro jejich implementaci, k provedení úlohy na pozadí dlouho běžící i pro zajištění rozhraní vzdáleného volání procedur.
 ms.prod: xamarin
 ms.assetid: BA371A59-6F7A-F62A-02FC-28253504ACC9
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 03/19/2018
-ms.openlocfilehash: 08392872037783e0caaef4f2b19127adbe95151b
-ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
+ms.openlocfilehash: 2e942d1085822fee935ae0f23f2253f23d49a43d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="creating-android-services"></a>Vytváření Android služeb
 
@@ -45,7 +44,7 @@ Existují čtyři různé typy Android služeb:
 
 * **Vázaný služby** &ndash; A _vázaný služby_ je služba, která má některé další součást (obvykle aktivitu) na něj navázaná. Vázané služba poskytuje rozhraní, které umožňuje vázané součásti a služba dojít ke vzájemné interakci. Jakmile neexistují žádné další klienty svázaná se službou, Android vypne službu. 
 
-* **`IntentService`** &ndash;  _`IntentService`_  Je podtřídou specializované `Service` třídu, která zjednodušuje vytváření služby a využití. `IntentService` Je určená ke zpracování jednotlivých autonomního volání. Na rozdíl od služby, která dokáže zpracovat souběžně více volání, `IntentService` se víc podobá _pracovní fronty procesoru_ &ndash; pracovní zařazen do fronty a `IntentService` zpracuje každou úlohu, jeden současně na jednom pracovní vlákno. Obvykle`IntentService` není vázán na aktivitu nebo Fragment. 
+* **`IntentService`** &ndash; _`IntentService`_ Je podtřídou specializované `Service` třídu, která zjednodušuje vytváření služby a využití. `IntentService` Je určená ke zpracování jednotlivých autonomního volání. Na rozdíl od služby, která dokáže zpracovat souběžně více volání, `IntentService` se víc podobá _pracovní fronty procesoru_ &ndash; pracovní zařazen do fronty a `IntentService` zpracuje každou úlohu, jeden současně na jednom pracovní vlákno. Obvykle`IntentService` není vázán na aktivitu nebo Fragment. 
 
 * **Spuštění služby** &ndash; A _spustila_ je služba, která byla spuštěna podle jiných Android součásti (například aktivitu) a běží průběžné na pozadí, dokud něco explicitně informuje zastavení služby. Na rozdíl od vázané služby spuštěná služba nemá žádné klienty přímo vázána. Z tohoto důvodu je důležité při návrhu spuštěné služby tak, aby mohl být řádně restartován podle potřeby.
 

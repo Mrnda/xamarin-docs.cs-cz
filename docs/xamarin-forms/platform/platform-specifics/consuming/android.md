@@ -1,18 +1,17 @@
 ---
-title: "Android platformy – podrobnosti"
-description: "Platforma specifika umožňují využívat funkce, která je dostupná pouze na konkrétní platformu, bez implementace vlastní nástroji pro vykreslování nebo účinky. Tento článek ukazuje, jak využívat jsou Android platformy – specifikace integrovaných do Xamarin.Forms."
-ms.topic: article
+title: Android platformy – podrobnosti
+description: Platforma specifika umožňují využívat funkce, která je dostupná pouze na konkrétní platformu, bez implementace vlastní nástroji pro vykreslování nebo účinky. Tento článek ukazuje, jak využívat jsou Android platformy – specifikace integrovaných do Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: C5D4AA65-9BAA-4008-8A1E-36CDB78A435D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/17/2017
-ms.openlocfilehash: 739ee4ebeb3176d23ab1eb911baaab31a26252c4
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: dfc46b5caa14c1c02d1c2afaffecc701fea59e2c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="android-platform-specifics"></a>Android platformy – podrobnosti
 

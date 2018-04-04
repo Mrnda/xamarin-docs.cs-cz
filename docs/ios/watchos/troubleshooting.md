@@ -1,18 +1,18 @@
 ---
-title: "watchOS Poradce při potížích"
-description: "Známé problémy a řešení problémů watchOS vývoj."
-ms.topic: article
+title: watchOS Poradce při potížích
+description: Známé problémy a řešení problémů watchOS vývoj.
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 27C31DB8-451E-4888-BBC1-CE0DFC2F9DEC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 4a6b916f991b337d8a28764f1482ddd837bad460
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 6e7a7dd09d65b88831136662d8718886aaf483c5
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="watchos-troubleshooting"></a>watchOS Poradce při potížích
 
@@ -35,7 +35,7 @@ Tato stránka obsahuje další informace a řešení pro funkce stále ve vývoj
 <a name="deploy" />
 
 - Dřívější verze sady Visual Studio pro Mac nesprávně zobrazit jednu z **AppleCompanionSettings** ikony jako 88 x 88 pixelů; následek **chybí ikona chyby** Pokud se pokusíte odeslat do aplikace Úložiště.
-    Tato ikona by měl být 87 x 87 pixelů (29 jednotky pro  **@3x**  sítnice obrazovky). Nelze vyřešit v sadě Visual Studio pro Mac – buď upravit zdroj obrázku v Xcode nebo ručně upravit, pokud **Contents.json** souboru (tak, aby odpovídaly [této ukázce](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132)).
+    Tato ikona by měl být 87 x 87 pixelů (29 jednotky pro **@3x** sítnice obrazovky). Nelze vyřešit v sadě Visual Studio pro Mac – buď upravit zdroj obrázku v Xcode nebo ručně upravit, pokud **Contents.json** souboru (tak, aby odpovídaly [této ukázce](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132)).
 
 - Pokud rozšíření projektu sledovat **Info.plist > ID sady WKApp** není [správně nastavit](~/ios/watchos/get-started/project-references.md) tak, aby odpovídaly aplikace sledovat **ID sady**, ladicího programu se nepodaří připojit a Visual Studio pro Mac vyčká se zprávou *"Čekat na připojení ladicího"*.
 

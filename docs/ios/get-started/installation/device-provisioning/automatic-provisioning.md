@@ -1,18 +1,17 @@
 ---
-title: "Automatické zřizování"
-description: "Po úspěšné instalaci Xamarin.iOS na další krok v vývoj pro iOS je ke zřízení zařízení s iOS. Tato příručka prozkoumá pomocí automatické přihlašování v sadě Visual Studio pro Mac požadavků vývoj certifikátů a profilů."
-ms.topic: article
+title: Automatické zřizování
+description: Po úspěšné instalaci Xamarin.iOS na další krok v vývoj pro iOS je ke zřízení zařízení s iOS. Tato příručka prozkoumá pomocí automatické přihlašování v sadě Visual Studio pro Mac požadavků vývoj certifikátů a profilů.
 ms.prod: xamarin
 ms.assetid: 81FCB2ED-687C-40BC-ABF1-FB4303034D01
 ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 11/17/2017
-ms.openlocfilehash: 271d9e3f7ae04f03a132ae2fd0ebf531fe52578c
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 01818d2870c7cf59a0f15385dbb3565f07400ff0
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="automatic-provisioning"></a>Automatické zřizování
 

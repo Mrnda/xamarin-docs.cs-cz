@@ -1,18 +1,17 @@
 ---
-title: "Spuštění Android služeb ve vzdálených procesů"
-description: "Obecně platí všechny součásti v aplikaci pro Android se spustí v rámci jednoho procesu. Android služby se upozorňují na důležité výjimkou, že mohou být nakonfigurovány na spouštění v vlastní procesy a sdílet s jinými aplikacemi, včetně těch, které z jiných vývojáře v systému Android. Tato příručka popisuje postup vytvoření a používání Android vzdálené služby, pomocí Xamarin."
-ms.topic: article
+title: Spuštění Android služeb ve vzdálených procesů
+description: Obecně platí všechny součásti v aplikaci pro Android se spustí v rámci jednoho procesu. Android služby se upozorňují na důležité výjimkou, že mohou být nakonfigurovány na spouštění v vlastní procesy a sdílet s jinými aplikacemi, včetně těch, které z jiných vývojáře v systému Android. Tato příručka popisuje postup vytvoření a používání Android vzdálené služby, pomocí Xamarin.
 ms.prod: xamarin
 ms.assetid: 27A2E972-A690-480B-B31D-5EF1F74F673C
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 02/16/2018
-ms.openlocfilehash: ebbb4b527b27b87bb6357723978e730304658720
-ms.sourcegitcommit: cc38757f56aab53bce200e40f873eb8d0e5393c3
+ms.openlocfilehash: 57be8187509ad7607c38ea17233e9ab5d25b41f1
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/20/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="running-android-services-in-remote-processes"></a>Spuštění Android služeb ve vzdálených procesů
 

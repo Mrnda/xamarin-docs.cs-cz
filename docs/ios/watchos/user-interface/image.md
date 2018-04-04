@@ -1,17 +1,16 @@
 ---
-title: "Obrázek ovládacího prvku"
-ms.topic: article
+title: Obrázek ovládacího prvku
 ms.prod: xamarin
 ms.assetid: B741C207-3427-46F3-9C90-A52BF8933FA4
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 4184d7babc396a6b6179e6876dced34b773474b4
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 370b9f2a57716de876c7e883afdaf445186fb577
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="image-control"></a>Obrázek ovládacího prvku
 
@@ -21,7 +20,7 @@ poskytuje watchOS [ `WKInterfaceImage` ](https://developer.xamarin.com/api/type/
 <!-- watch image courtesy of http://infinitapps.com/bezel/ -->
 
 Obrázky katalogu asset použijte k přidání bitové kopie do aplikace sledovat Kit.
-Pouze  **@2x**  verze jsou povinné, protože všechny podívejte se na zařízení zobrazí sítnice.
+Pouze **@2x** verze jsou povinné, protože všechny podívejte se na zařízení zobrazí sítnice.
 
 ![](image-images/asset-universal-sml.png "Pouze 2 x verze jsou povinné, protože všechny podívejte se na zařízení zobrazí sítnice")
 

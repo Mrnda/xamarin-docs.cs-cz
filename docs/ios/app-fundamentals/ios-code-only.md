@@ -1,18 +1,17 @@
 ---
-title: "Vytváření iOS uživatelského rozhraní v kódu"
-description: "Xamarin.iOS nabízí dvě metody vytvoření uživatelského rozhraní pro vaši aplikaci – pomocí návrháře Xamarin pro iOS nebo v kódu. Tento článek prověří vytvoření uživatelského rozhraní iOS zcela v kódu. Ukazuje, jak začít ze šablony projektu stavět obrazovce aplikace v řadiči tím, vytváření hierarchie zobrazení z UIKit. Potom popisuje, jak vytvořit vlastní zobrazení, které je možné načíst v kontroleru."
-ms.topic: article
+title: Vytváření iOS uživatelského rozhraní v kódu
+description: Xamarin.iOS nabízí dvě metody vytvoření uživatelského rozhraní pro vaši aplikaci – pomocí návrháře Xamarin pro iOS nebo v kódu. Tento článek prověří vytvoření uživatelského rozhraní iOS zcela v kódu. Ukazuje, jak začít ze šablony projektu stavět obrazovce aplikace v řadiči tím, vytváření hierarchie zobrazení z UIKit. Potom popisuje, jak vytvořit vlastní zobrazení, které je možné načíst v kontroleru.
 ms.prod: xamarin
 ms.assetid: 7CB1FEAE-0BB3-4CDC-9076-5BD555003F1D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 24fc64d1bd04cb1ebefb9bf9a359efb395b45074
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 7e8460d2c946159a9869322d6d4944d213d3d801
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="creating-ios-user-interfaces-in-code"></a>Vytváření iOS uživatelského rozhraní v kódu
 

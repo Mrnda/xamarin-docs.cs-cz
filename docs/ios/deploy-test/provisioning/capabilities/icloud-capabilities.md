@@ -1,18 +1,17 @@
 ---
-title: "Icloudu možnosti"
-description: "Přidání funkcí do aplikace často vyžaduje další nastavení zřizování. Tato příručka vysvětluje nastavení potřebná pro funkce serveru služby iCloud."
-ms.topic: article
+title: Icloudu možnosti
+description: Přidání funkcí do aplikace často vyžaduje další nastavení zřizování. Tato příručka vysvětluje nastavení potřebná pro funkce serveru služby iCloud.
 ms.prod: xamarin
 ms.assetid: 3CBAC982-D8DE-48DD-97CD-32B551D9DB85
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: 22a1cd8a300533560f617fd60fc99474922247d0
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 7e18bff7f32303cb0c5016e4ade4b39723921534
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="icloud-capabilities"></a>Icloudu možnosti
 
@@ -47,7 +46,7 @@ Následující postup vás provede tyto kroky:
     
      ![Hlavní stránka Apple Developer Center](icloud-capabilities-images/image22.png)
 
-2.  V části **identifikátory** vyberte **Icloudu kontejnery**a pak vyberte  **+**  vytvořit nový kontejner:  
+2.  V části **identifikátory** vyberte **Icloudu kontejnery**a pak vyberte **+** vytvořit nový kontejner:  
     
     ![obrazovka kontejneru Icloudu](icloud-capabilities-images/image23.png)
 
@@ -65,7 +64,7 @@ K vytvoření nového ID aplikace a přidat kontejner, postupujte takto:
     
     ![Identifikátor oddílu ve středisku pro vývojáře](icloud-capabilities-images/image26.png)
 
-2.  Vyberte  **+**  tlačítko pro přidání nové aplikace ID: 
+2.  Vyberte **+** tlačítko pro přidání nové aplikace ID: 
     
     ![Přidat nové tlačítko ID aplikace](icloud-capabilities-images/image27.png)
 

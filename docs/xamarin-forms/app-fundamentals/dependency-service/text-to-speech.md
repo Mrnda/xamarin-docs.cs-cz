@@ -1,18 +1,17 @@
 ---
-title: "Implementace převod textu na řeč"
-description: "Použití DependencyService provést volání do nativního je rozhraní API každou platformu"
-ms.topic: article
+title: Implementace převod textu na řeč
+description: Použití DependencyService provést volání do nativního je rozhraní API každou platformu
 ms.prod: xamarin
 ms.assetid: 1D6164F9-4ECE-43A6-B583-1F5D5EFC1DDF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/18/2017
-ms.openlocfilehash: 6ac9ca7bae517602c33729134eb0bd48359afbc7
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 67e392bb3672e54a1e2fe709af9cf5deb3dae5e8
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="implementing-text-to-speech"></a>Implementace převod textu na řeč
 

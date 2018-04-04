@@ -1,18 +1,18 @@
 ---
-title: "Řešení chyb instalace knihovny"
-description: "V některých případech může se zobrazit chyby při instalaci Android, podporují knihovny. Tato příručka obsahuje alternativní řešení pro některé běžné chyby."
-ms.topic: article
+title: Řešení chyb instalace knihovny
+description: V některých případech může se zobrazit chyby při instalaci Android, podporují knihovny. Tato příručka obsahuje alternativní řešení pro některé běžné chyby.
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 2AE68ACE-8496-445D-BF17-5E4097D4AE35
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/14/2018
-ms.openlocfilehash: 66555139cfaab2074e7461be737f997a9bb9c7a7
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 6f280a90994ff40ebd8a07d2cab49ddc2b3d6ca1
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="resolving-library-installation-errors"></a>Řešení chyb instalace knihovny
 
@@ -104,7 +104,7 @@ Pokud jste se pokusili pomocí automatického obnovení kroků výše a stále m
 
     -   [android\_m2repository\_r16.zip](https://dl-ssl.google.com/android/repository/android_m2repository_r16.zip) &ndash; 0595E577D19D31708195A83087881EE6
 
-    Pokud **m2repository** archivu není zobrazena v této tabulce, můžete vytvořit adresu URL pro stažení předřazení  **https://dl-ssl.google.com/android/repository/**  na název **m2repository** ke stažení. Například použít  **https://dl-ssl.google.com/android/repository/android \_m2repository\_r10.zip** ke stažení **android\_m2repository\_r10.zip**.
+    Pokud **m2repository** archivu není zobrazena v této tabulce, můžete vytvořit adresu URL pro stažení předřazení **https://dl-ssl.google.com/android/repository/** na název **m2repository** ke stažení. Například použít  **https://dl-ssl.google.com/android/repository/android \_m2repository\_r10.zip** ke stažení **android\_m2repository\_r10.zip**.
 
 2.  Přejmenujte soubor na odpovídající hodnotu hash MD5 adresa URL pro stahování jak je uvedeno v předchozí tabulce. Například, pokud jste si stáhli **android\_m2repository\_r25.zip**, přejmenujte ji na **0B3F1796C97C707339FB13AE8507AF50.zip**. Pokud hodnota hash MD5 pro adresu URL pro stažení staženého souboru není uvedené v tabulce, můžete použít [online generátor MD5](http://www.webconfs.com/online-md5-generator.php) adresu URL převést na řetězec hash MD5. 
 

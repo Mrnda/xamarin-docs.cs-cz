@@ -1,18 +1,17 @@
 ---
-title: "Úvod do tvOS 10"
-description: "Tento článek představuje všechny nové a změněné rozhraní API a funkce dostupné v tvOS 10 pro vývojáře Xamarin.tvOS."
-ms.topic: article
+title: Úvod do tvOS 10
+description: Tento článek představuje všechny nové a změněné rozhraní API a funkce dostupné v tvOS 10 pro vývojáře Xamarin.tvOS.
 ms.prod: xamarin
 ms.assetid: CB9C1EC8-6008-43AD-977E-976AE7C73DD8
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 8bc379e507287cd609dca8440b1210b7f1514114
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 642a851cbfc0450ee8f5f5c4d798c40778e3d3dd
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="introduction-to-tvos-10"></a>Úvod do tvOS 10
 
@@ -88,5 +87,5 @@ Další informace, najdete v tématu naše [další změny Framework](~/ios/tvos
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Ukázky tvOS](https://developer.xamarin.com/samples/tvos/all/)
+- [Ukázky pro tvOS](https://developer.xamarin.com/samples/tvos/all/)
 - [Co je nového v tvOS 10](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewinTVOS/Articles/tvOS10.html#//apple_ref/doc/uid/TP40017259-SW1)

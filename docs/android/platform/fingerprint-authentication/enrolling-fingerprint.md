@@ -1,18 +1,17 @@
 ---
 title: Registrace otisk prstu
-description: "Jak nastavit až zamykací obrazovka a registrovat otisk prstu na emulátoru nebo zařízení s Androidem."
-ms.topic: article
+description: Jak nastavit až zamykací obrazovka a registrovat otisk prstu na emulátoru nebo zařízení s Androidem.
 ms.prod: xamarin
 ms.assetid: 52092F63-00EE-4F8B-A49F-65C9CCBA7EF2
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 20e6d693f2a3eba54afaf1d3c7054ad75d7a7610
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 4faee5decb102d17d9a270b96cef4a12fc9dbef4
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="enrolling-a-fingerprint"></a>Registrace otisk prstu
 

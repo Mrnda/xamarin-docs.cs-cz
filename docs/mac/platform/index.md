@@ -1,25 +1,24 @@
 ---
-title: Funkce
-description: "Klíč je součástí systému macOS platformy"
-ms.topic: article
+title: Funkce platformy
+description: Klíč je součástí systému macOS platformy
 ms.prod: xamarin
 ms.assetid: 37451F65-672A-4512-8DDD-06CCDE9E5A12
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/19/2016
-ms.openlocfilehash: 3e18863ae91e76325a088c83fc2c11b9d6fa1125
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2bebc42cd3b5db7dba20066e90f294e621b1e4ac
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
-# <a name="platform-features"></a>Funkce
+# <a name="platform-features"></a>Funkce platformy
 
 Dokumenty v této části popisují práci s funkcí systému macOS v aplikaci Xamarin.Mac klíč, specifické pro platformu.
 
 
-## <a name="introduction-to-macos-sierramacplatformintroduction-to-macos-sierraindexmd"></a>[Úvod do systému macOS Sierra](~/mac/platform/introduction-to-macos-sierra/index.md)
+## <a name="introduction-to-macos-sierramacplatformintroduction-to-macos-sierraindexmd"></a>[Úvod do macOS Sierry](~/mac/platform/introduction-to-macos-sierra/index.md)
 
 systému macOS Sierra je nejnovější inkarnace společnosti Apple plochy operačního systému pro Mac. Tento dokument popisuje změny z Mac OS X El Capitan a jejich implementaci v Xamarin.Mac aplikaci.
 
@@ -37,7 +36,7 @@ OpenTK (sada nástrojů otevřete) je k rozšířené, nízké úrovně C# kniho
 
 Scénářů umožňují vývoj uživatelského rozhraní pro aplikaci Xamarin.Mac, ne jenom zahrnuje definice oken a ovládacích prvků, ale obsahuje taky odkazy mezi různé windows (prostřednictvím segues) a zobrazit stavy. Tento článek obsahuje úvod do používání scénářů v Xamarin.Mac aplikace.
 
-## <a name="xamarinmac-extension-supportmacplatformextensionsmd"></a>[Podpora Xamarin.Mac rozšíření](~/mac/platform/extensions.md)
+## <a name="xamarinmac-extension-supportmacplatformextensionsmd"></a>[Podpora rozšíření Xamarin.Mac](~/mac/platform/extensions.md)
 
 Ve verzi preview Xamarin.Mac 2.10 přidala se podpora pro více bodů rozšíření systému macOS:
 

@@ -1,18 +1,17 @@
 ---
-title: "Zobrazení osnovy"
-description: "Tento článek se zabývá práci s zobrazení osnovy v aplikaci Xamarin.Mac. Popisuje vytvoření a udržování zobrazení osnovy v Xcode a Tvůrce rozhraní a práce s nimi prostřednictvím kódu programu."
-ms.topic: article
+title: Zobrazení osnovy
+description: Tento článek se zabývá práci s zobrazení osnovy v aplikaci Xamarin.Mac. Popisuje vytvoření a udržování zobrazení osnovy v Xcode a Tvůrce rozhraní a práce s nimi prostřednictvím kódu programu.
 ms.prod: xamarin
 ms.assetid: 043248EE-11DA-4E96-83A3-08824A4F2E01
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: dbbd10af046c0a8421e06e675364f92405b2317f
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 82cb3afadf7615fdd92476371e9ab80cd1228b02
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="outline-views"></a>Zobrazení osnovy
 

@@ -1,17 +1,17 @@
 ---
-title: "Jak můžete zkopírovat soubor IPA výstupní soubory do složky, vyřaďte TFS?"
-ms.topic: article
+title: Jak můžete zkopírovat soubor IPA výstupní soubory do složky, vyřaďte TFS?
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: B0F1E09E-7315-45BA-B7FF-44D2063EE19C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: c89d81434cac43505c4f0341a10aaf4fc99407fe
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 2139be01b95a0a4287bba43b8a2ebad537ac7a4f
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="how-can-i-copy-ipa-output-files-to-the-tfs-drop-folder"></a>Jak můžete zkopírovat soubor IPA výstupní soubory do složky, vyřaďte TFS?
 
@@ -41,7 +41,7 @@ Otevřete `.csproj` souboru pro projekt aplikace pro iOS v textovém editoru a p
 
 -   Toto je obecná stejné techniky popsané v [můžete změnit výstupní cestu k souboru soubor IPA?](~/ios/troubleshooting/questions/ipa-output-path.md). Dva důležité body jsou nastavit `$(TF_BUILD_BINARIESDIRECTORY)` jako cílovou složku a přidat další podmínka tak `CopyIpa` lze spustit pouze pro sestavení sady TFS.
 
--   Popis `TF_BUILD_BINARIESDIRECTORY` najdete v části [https://msdn.microsoft.com/en-us/library/hh850448.aspx](https://msdn.microsoft.com/en-us/library/hh850448.aspx).
+-   Popis `TF_BUILD_BINARIESDIRECTORY` najdete v části [ https://msdn.microsoft.com/en-us/library/hh850448.aspx ](https://msdn.microsoft.com/en-us/library/hh850448.aspx).
 
 ## <a name="additional-references"></a>Další odkazy
 

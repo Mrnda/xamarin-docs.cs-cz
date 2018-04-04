@@ -1,18 +1,17 @@
 ---
 title: Funkce typu Lupa
-description: "Tento článek obsahuje podrobný přehled nových funkcí byla zavedená v systému Android 5.0 (typu Lupa). Tyto funkce patří názvem materiálu motiv, jakož i nové podpůrné funkce, jako třeba animací, zobrazení stíny a drawable barevný nádech nového stylu rozhraní uživatele. Android 5.0 také zahrnuje rozšířené oznámení, dvě nové uživatelské rozhraní pomůcky, nové plánovače úloh a několik nových rozhraní API ke zlepšení úložiště, sítě, připojení a multimediální možnosti."
-ms.topic: article
+description: Tento článek obsahuje podrobný přehled nových funkcí byla zavedená v systému Android 5.0 (typu Lupa). Tyto funkce patří názvem materiálu motiv, jakož i nové podpůrné funkce, jako třeba animací, zobrazení stíny a drawable barevný nádech nového stylu rozhraní uživatele. Android 5.0 také zahrnuje rozšířené oznámení, dvě nové uživatelské rozhraní pomůcky, nové plánovače úloh a několik nových rozhraní API ke zlepšení úložiště, sítě, připojení a multimediální možnosti.
 ms.prod: xamarin
 ms.assetid: 1CE99CFE-FAAC-49FC-AEDC-1A21FC6E946E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: de6829a0a698133ad9002ead1cd7c534a30b1f6c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: cdef611525abbe4f066959c0ac56380b1c617747
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="lollipop-features"></a>Funkce typu Lupa
 

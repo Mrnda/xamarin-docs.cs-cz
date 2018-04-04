@@ -1,18 +1,17 @@
 ---
-title: "Orientace zařízení"
-description: "Pochopit, jak k rozložení aplikace, které vypadají skvěle v orientaci na výšku a šířku."
-ms.topic: article
+title: Orientace zařízení
+description: Pochopit, jak k rozložení aplikace, které vypadají skvěle v orientaci na výšku a šířku.
 ms.prod: xamarin
 ms.assetid: 11A1D327-2DF3-4F3B-810D-6C95B71D27B2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: cb17c224fc6102d9e0dc25853c2222734299647a
-ms.sourcegitcommit: 5fc1c4d17cd9c755604092cf7ff038a6358f8646
+ms.openlocfilehash: 9d1b10925f1455c303950eff342764b1fbc9275d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="device-orientation"></a>Orientace zařízení
 
@@ -88,9 +87,9 @@ Xamarin.Android podporuje několik možností pro zadání orientaci:
 - **ReversePortrait** &ndash; způsobí, že aplikace pro používání orientaci na výšku, kterým čelí opačným směrem z obvyklé, která se zobrazí "obráceně."
 - **FullSensor** &ndash; způsobí, že aplikace využívají data snímačů a vyberte správnou orientaci (mimo možné 4).
 - **FullUser** &ndash; způsobí, že aplikace pro používání uživatelské předvolby orientace. Pokud je povoleno automatické střídání, můžete použít všechny 4 orientace.
-- **UserLandscape** &ndash;  _\[nepodporuje\]_  způsobí, že aplikace orientaci na šířku, pokud uživatel nemá automatické otočení povoleno, v takovém případě se bude používat senzor k určení orientace. Tato možnost by došlo k přerušení kompilace.
-- **UserPortrait** &ndash;  _\[nepodporuje\]_  způsobí, že aplikace pro používání orientaci na výšku, pokud uživatel nemá automatické otočení povoleno, v takovém případě se bude používat senzor k určení orientace. Tato možnost by došlo k přerušení kompilace.
-- **Uzamčení** &ndash;  _\[nepodporuje\]_  způsobí, že aplikace pro používání orientace obrazovky, ať je při spuštění, bez reagovat na změny v zařízení je fyzický orientace. Tato možnost by došlo k přerušení kompilace.
+- **UserLandscape** &ndash; _\[nepodporuje\]_ způsobí, že aplikace orientaci na šířku, pokud uživatel nemá automatické otočení povoleno, v takovém případě se bude používat senzor k určení orientace. Tato možnost by došlo k přerušení kompilace.
+- **UserPortrait** &ndash; _\[nepodporuje\]_ způsobí, že aplikace pro používání orientaci na výšku, pokud uživatel nemá automatické otočení povoleno, v takovém případě se bude používat senzor k určení orientace. Tato možnost by došlo k přerušení kompilace.
+- **Uzamčení** &ndash; _\[nepodporuje\]_ způsobí, že aplikace pro používání orientace obrazovky, ať je při spuštění, bez reagovat na změny v zařízení je fyzický orientace. Tato možnost by došlo k přerušení kompilace.
 
 Všimněte si, že nativní Android rozhraní API nabízejí spoustu ovládat, jak se spravuje orientaci, včetně možnosti, které explicitně rozporu uživatele vyjádřit předvolby.
 

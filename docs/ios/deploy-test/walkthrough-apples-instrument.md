@@ -1,18 +1,17 @@
 ---
-title: "Návod – pomocí nástroje Instruments společnosti Apple"
-description: "Tento článek vás provede použití společnosti Apple nástrojů nástroje pro diagnostiku problémů paměti v aplikaci pro systém iOS vytvořených pomocí Xamarinu. Ukazuje, jak spustit nástroje, pořizovat snímky haldy a analyzovat růstu paměti. Také ukazuje, jak používat nástroje k zobrazení a přesně určit přesnou řádky kódu, které způsobí problém paměti."
-ms.topic: article
+title: Návod – pomocí nástroje Instruments společnosti Apple
+description: Tento článek vás provede použití společnosti Apple nástrojů nástroje pro diagnostiku problémů paměti v aplikaci pro systém iOS vytvořených pomocí Xamarinu. Ukazuje, jak spustit nástroje, pořizovat snímky haldy a analyzovat růstu paměti. Také ukazuje, jak používat nástroje k zobrazení a přesně určit přesnou řádky kódu, které způsobí problém paměti.
 ms.prod: xamarin
 ms.assetid: 8f21db1d-7107-4158-8058-d47e417689a0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 949a2ea4d5838b664e19251e69a32efccc98d496
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 0142cf90fbe7eff5beacf58897d5b3672f6ff55b
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="walkthrough---using-apples-instruments-tool"></a>Návod – pomocí nástroje Instruments společnosti Apple
 

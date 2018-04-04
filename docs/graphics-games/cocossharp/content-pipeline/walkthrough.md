@@ -1,18 +1,17 @@
 ---
 title: Pomocí MonoGame PipelineTool
 description: Nástroj MonoGame kanálu se používá k vytváření a správě obsahu projekty MonoGame. Soubory v obsahu projekty jsou Monogame kanálu nástroj zpracoval a výstupem jako soubory .xnb pro použití v aplikacích CocosSharp a MonoGame.
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: CACFBF5F-BBD4-4D46-8DDA-1F46466725FD
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: 37505b166488230be9d0e0690e415852506664f1
-ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
+ms.openlocfilehash: 672c57aded149200b32501a6b48165ca88726ee1
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="using-the-monogame-pipeline-tool"></a>Pomocí nástroje MonoGame kanálu
 

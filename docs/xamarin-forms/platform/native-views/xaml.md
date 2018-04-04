@@ -1,18 +1,17 @@
 ---
-title: "Nativní zobrazení v jazyce XAML"
-description: "Nativní zobrazení z iOS, Android a univerzální platformu Windows můžete přímo na něj odkazovat z soubory Xamarin.Forms XAML. Vlastnosti a obslužné rutiny událostí můžete nastavit na nativní zobrazení, a mohou komunikovat s Xamarin.Forms zobrazení. Tento článek ukazuje, jak využívat nativní zobrazení z soubory Xamarin.Forms XAML."
-ms.topic: article
+title: Nativní zobrazení v jazyce XAML
+description: Nativní zobrazení z iOS, Android a univerzální platformu Windows můžete přímo na něj odkazovat z soubory Xamarin.Forms XAML. Vlastnosti a obslužné rutiny událostí můžete nastavit na nativní zobrazení, a mohou komunikovat s Xamarin.Forms zobrazení. Tento článek ukazuje, jak využívat nativní zobrazení z soubory Xamarin.Forms XAML.
 ms.prod: xamarin
 ms.assetid: 7A856D31-B300-409E-9AEB-F8A4DB99B37E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/24/2016
-ms.openlocfilehash: f4345e107a32c3a583c246fe5dbe24590960c870
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 6dbad7352a089f482fa3a396505507da58771cef
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="native-views-in-xaml"></a>Nativní zobrazení v jazyce XAML
 

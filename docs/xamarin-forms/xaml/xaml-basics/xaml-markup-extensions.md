@@ -1,18 +1,17 @@
 ---
 title: Část 3. XAML – rozšíření značek
 description: XAML – rozšíření značek tvoří důležitou součást v jazyce XAML, které umožní vlastnosti, které chcete nastavit na objekty nebo hodnoty, které jsou nepřímo odkazované z jiných zdrojů. XAML – rozšíření značek jsou obzvláště důležité pro sdílení objekty a odkazování na konstanty používají v rámci aplikace, ale v datových vazeb najdou jejich největší nástroj.
-ms.topic: article
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: charlespetzold
 ms.author: chape
 ms.date: 3/27/2018
-ms.openlocfilehash: cd881b79945c2b9c10e9bb1bc85fce98acb71026
-ms.sourcegitcommit: 20ca85ff638dbe3a85e601b5eb09b2f95bda2807
+ms.openlocfilehash: 104a3adb5d59bc7feafa3c993290247b749ce312
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="part-3-xaml-markup-extensions"></a>Část 3. XAML – rozšíření značek
 

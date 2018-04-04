@@ -1,18 +1,17 @@
 ---
-title: "Testování v sledování zařízení"
-description: "Nasazení aplikací k testování na vaše Apple Watch"
-ms.topic: article
+title: Testování v sledování zařízení
+description: Nasazení aplikací k testování na vaše Apple Watch
 ms.prod: xamarin
 ms.assetid: A72A7D38-FAE8-4DD2-843D-54B74C5078D7
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 211f8c7066e86dac3a8351b913da0185093dcb70
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: d1d00a4d561551435e7d2333520dc614a79dcad3
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="testing-on-watch-devices"></a>Testování v sledování zařízení
 
@@ -26,7 +25,7 @@ Po provedení [kroky nasazení](~/ios/watchos/deploy-test/index.md) k vytvořen�
 
 ## <a name="devices"></a>Zařízení
 
-Testování aplikací pro iOS na skutečné iPhone nebo iPad vždy vyžaduje zařízení k registraci na webu Dev Center. V seznamu zařízení vypadá takto (kliknutím na znaménko plus  **+**  pro přidání nové zařízení):
+Testování aplikací pro iOS na skutečné iPhone nebo iPad vždy vyžaduje zařízení k registraci na webu Dev Center. V seznamu zařízení vypadá takto (kliknutím na znaménko plus **+** pro přidání nové zařízení):
 
 ![](device-images/devices-sml.png "V seznamu zařízení bude mít tento tvar")
 

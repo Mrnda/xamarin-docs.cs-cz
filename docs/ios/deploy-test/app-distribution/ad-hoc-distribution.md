@@ -1,18 +1,17 @@
 ---
 title: Distribuce Ad-Hoc
-description: "Tento dokument poskytuje přehled o Ad Hoc distribuční technik, které se primárně používají pro testování aplikací Xamarin.iOS s celou skupinou uživatelů."
-ms.topic: article
+description: Tento dokument poskytuje přehled o Ad Hoc distribuční technik, které se primárně používají pro testování aplikací Xamarin.iOS s celou skupinou uživatelů.
 ms.prod: xamarin
 ms.assetid: 3B621CAD-103C-478A-97C3-829015F48D1A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: e0db9df11436cf1613ac5eacdf293245f99b8855
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 9b862a39d8fb8fe079b83b8842281fad5ec903e4
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="ad-hoc-distribution"></a>Distribuce Ad-Hoc
 
@@ -48,7 +47,7 @@ V další části se popisují, jak získat nastavit distribuční certifikát a
 
 1. Vyhledejte *certifikáty, identifikátory a profily* části Apple Developer Member Center.
 2. V části *certifikáty*, vyberte **produkční**.
-3. Klikněte  **+**  tlačítko Vytvořit nový certifikát.
+3. Klikněte **+** tlačítko Vytvořit nový certifikát.
 4. V části *produkční* záhlaví, vyberte **interní a Ad Hoc**, nebo **App Store a Ad Hoc**, v závislosti na vaší členství v programu:
 
   [![](ad-hoc-distribution-images/cert-first-small.png "Vyberte interní a Ad Hoc nebo obchodu s aplikacemi a Ad Hoc")](ad-hoc-distribution-images/cert-first-large.png#lightbox)
@@ -82,7 +81,7 @@ Jako všechny ostatní zřizování profilu vytvoříte, ID aplikace bude nutné
 
 
 1. V [Apple Developer Center](https://developer.apple.com/account/overview.action) vyhledejte *certifikát, identifikátory a profily* části. Vyberte **ID aplikace** pod **identifikátory**.
-2. Klikněte  **+**  tlačítko a zadejte **název** který bude identifikovat na portálu.
+2. Klikněte **+** tlačítko a zadejte **název** který bude identifikovat na portálu.
 3. Předpona aplikace musí být již nastavená jako ID vašeho týmu a nelze změnit. Vyberte buď explicitní nebo ID aplikace zástupný znak a zadejte ID sady v následujícím formátu zpětné DNS:
     - **Explicitní**: `com.[DomainName].[AppName]`
     - **Zástupný znak**: `com.[DomainName].*`
@@ -93,7 +92,7 @@ Jakmile máte požadované součásti potřebné pro vytváření profil distrib
 
 1. Vraťte se na portál Apple zřizování a vyberte **zřizování > distribuce**: [ ![ ] (ad-hoc-distribution-images/distribute01.png "vyberte zřizování > Distribuce")](ad-hoc-distribution-images/distribute01.png#lightbox)
 
-2. Klikněte  **+**  tlačítko a vyberte typ profil distribuce, kterou chcete vytvořit jako **Ad-Hoc**:
+2. Klikněte **+** tlačítko a vyberte typ profil distribuce, kterou chcete vytvořit jako **Ad-Hoc**:
 
     [![](ad-hoc-distribution-images/distribute02.png "Vytvořit typ distribuční Ad-Hoc")](ad-hoc-distribution-images/distribute02.png#lightbox)
 

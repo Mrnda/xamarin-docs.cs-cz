@@ -1,18 +1,17 @@
 ---
-title: "Přizpůsobení prvku ListView"
-description: "Xamarin.Forms ListView je zobrazení, které zobrazuje kolekce dat jako svislý seznam. Tento článek ukazuje, jak vytvořit vlastní zobrazovací jednotky zapouzdřující ovládací prvky seznamu specifické pro platformu a nativní buňky rozložení umožňuje větší kontrolu nad nativní seznamu řízení výkonu."
-ms.topic: article
+title: Přizpůsobení prvku ListView
+description: Xamarin.Forms ListView je zobrazení, které zobrazuje kolekce dat jako svislý seznam. Tento článek ukazuje, jak vytvořit vlastní zobrazovací jednotky zapouzdřující ovládací prvky seznamu specifické pro platformu a nativní buňky rozložení umožňuje větší kontrolu nad nativní seznamu řízení výkonu.
 ms.prod: xamarin
 ms.assetid: 2FBCB8C8-4F32-45E7-954F-63AD29D5F1B5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: eb4cf0285585351db5c45dc34a382236e6805c99
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 9d822444196479dabd19f43f45f289117f64c05e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="customizing-a-listview"></a>Přizpůsobení prvku ListView
 

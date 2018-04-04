@@ -1,16 +1,16 @@
 ---
-title: "Můžete přidat soubory do nebo odebrat soubory ze souboru soubor IPA po sestavení v sadě Visual Studio?"
-ms.topic: article
+title: Můžete přidat soubory do nebo odebrat soubory ze souboru soubor IPA po sestavení v sadě Visual Studio?
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 6C3082FB-C3F1-4661-BE45-64570E56DE7C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: be792c95de7aa66d64278e47b2ca6b354e611273
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: b8b61ba38491b2085233dd1b30a82bc57d2baaed
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="can-i-add-files-to-or-remove-files-from-an-ipa-file-after-building-it-in-visual-studio"></a>Můžete přidat soubory do nebo odebrat soubory ze souboru soubor IPA po sestavení v sadě Visual Studio?
 
@@ -86,4 +86,4 @@ file missing: /Users/macuser/Library/Caches/Xamarin/mtbs/builds/iPhoneApp1/cc530
 
 A proces ověření obchod oznámí podobná chybová zpráva:
 
-> Chyba ITMS-90035: "Neplatný podpis. Zapečetěné prostředků je chybějící nebo neplatná. Binární soubor v cestě [iPhoneApp1.app/iPhoneApp1] obsahuje neplatný podpis. Ujistěte se, že jste se zaregistrovali vaší aplikace pomocí certifikátu distribučního, není certifikát ad hoc nebo vývojový certifikát. Ověřte, zda jsou nastavení pro podepisování kódu v Xcode správné na cílové úrovni (který potlačí všechny hodnoty na úrovni projektu). Kromě toho Ujistěte se, že sady, které odesíláte bylo vytvořeno prostřednictvím cílovou verzi v Xcode, není simulátoru cíl. Pokud jste si jisti, že jsou správná nastavení pro podepisování kódu, zvolte "Vyčistit všechny" v Xcode, odstranit adresář "sestavení" v nástroji hledání a znovu sestavte cílových verze. Další informace, přečtěte si [https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html](https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html)"
+> Chyba ITMS-90035: "Neplatný podpis. Zapečetěné prostředků je chybějící nebo neplatná. Binární soubor v cestě [iPhoneApp1.app/iPhoneApp1] obsahuje neplatný podpis. Ujistěte se, že jste se zaregistrovali vaší aplikace pomocí certifikátu distribučního, není certifikát ad hoc nebo vývojový certifikát. Ověřte, zda jsou nastavení pro podepisování kódu v Xcode správné na cílové úrovni (který potlačí všechny hodnoty na úrovni projektu). Kromě toho Ujistěte se, že sady, které odesíláte bylo vytvořeno prostřednictvím cílovou verzi v Xcode, není simulátoru cíl. Pokud jste si jisti, že jsou správná nastavení pro podepisování kódu, zvolte "Vyčistit všechny" v Xcode, odstranit adresář "sestavení" v nástroji hledání a znovu sestavte cílových verze. Další informace, přečtěte si [ https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html ](https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html)"

@@ -1,17 +1,16 @@
 ---
 title: Propojení v systému Android
-ms.topic: article
 ms.prod: xamarin
 ms.assetid: 3528E195-AA74-90AF-B5F3-3B65FB4F0BB8
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/30/2018
-ms.openlocfilehash: 1354636c5190362e0782e5d7a42c4c2f8a9ef9cb
-ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
+ms.openlocfilehash: bcc9617553be425ab17050a1a6fb034f6d7f596d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="linking-on-android"></a>Propojení v systému Android
 

@@ -1,18 +1,17 @@
 ---
 title: tvOS Internals
-description: "Xamarin.tvOS sdílí stejné DNA jako náš produkt Xamarin.iOS tak pokročilé dokumenty, které jsme je tvořen pro náš produkt iOS jsou téměř stejné jako náš produkt tvOS."
-ms.topic: article
+description: Xamarin.tvOS sdílí stejné DNA jako náš produkt Xamarin.iOS tak pokročilé dokumenty, které jsme je tvořen pro náš produkt iOS jsou téměř stejné jako náš produkt tvOS.
 ms.prod: xamarin
 ms.assetid: 8C076FED-9C03-44DE-9723-0E20272DD16B
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: fee2843840f7f6dac461cd4e3426fb8b296b30bf
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 83b8d5b6dc4e73f05160960f0e2547284de57799
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="tvos-internals"></a>tvOS Internals
 

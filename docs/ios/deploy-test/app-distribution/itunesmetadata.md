@@ -1,18 +1,17 @@
 ---
 title: Soubor iTunesMetadata.plist
-description: "Tento článek se zabývá iTunesMetadata.plist soubor použitý k zadání informací pro službu iTunes o používání Ad Hoc distribuce pro testování nebo podnikové nasazení aplikace pro iOS."
-ms.topic: article
+description: Tento článek se zabývá iTunesMetadata.plist soubor použitý k zadání informací pro službu iTunes o používání Ad Hoc distribuce pro testování nebo podnikové nasazení aplikace pro iOS.
 ms.prod: xamarin
 ms.assetid: 70676eba-6a99-4a3a-bccc-84359fe9c2c3
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 3bdf00a9e50b2bf66f51c825306c2ba8e6365dd2
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 1b1b0c758126acb0c1e7953ea36e5ac871ee20ef
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="the-itunesmetadataplist-file"></a>Soubor iTunesMetadata.plist
 
@@ -306,7 +305,7 @@ Postupujte takto:
 4. Dvakrát klikněte `iTunesMetadata.plist` souboru v **Průzkumníku řešení** otevřete pro úpravy:
 
     ![](itunesmetadata-images/image02.png "ITunesMetadata.plist editor")
-5. Klikněte na tlačítko se zeleným  **+**  chcete vytvořit novou položku a zadejte `UIRequiredDeviceCapabilities` jako název klíče:
+5. Klikněte na tlačítko se zeleným **+** chcete vytvořit novou položku a zadejte `UIRequiredDeviceCapabilities` jako název klíče:
 
     ![](itunesmetadata-images/image03.png "Vytvořte novou položku a zadejte UIRequiredDeviceCapabilities jako název klíče")
 6. Klikněte na **řetězec** hodnota typu a vyberte **slovník** v automaticky otevřeném okně seznamu:
@@ -315,7 +314,7 @@ Postupujte takto:
 7. Klikněte na tlačítko turndown v levé části názvu vlastnosti a odhalit položky slovníku je:
 
     ![](itunesmetadata-images/image05.png "Odhalit položky slovníku")
-8. Klikněte na **přidat novou položku** text, pak klikněte na tlačítko zeleným  **+**  přidejte položku do slovníku:
+8. Klikněte na **přidat novou položku** text, pak klikněte na tlačítko zeleným **+** přidejte položku do slovníku:
 
     ![](itunesmetadata-images/image06.png "Přidat položku do slovníku")
 9. Zadejte `armv7` název klíče, vyberte typ **Boolean** a zadejte **Ano** jako hodnotu:

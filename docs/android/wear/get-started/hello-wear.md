@@ -1,18 +1,17 @@
 ---
-title: "Hello, opotřebení"
-description: "Vytvoření první aplikace Android nosit a spusťte ho na opotřebení emulátoru nebo zařízení. Tento názorný postup obsahuje podrobné pokyny pro vytvoření malé projekt Android nosit, který zpracovává kliknutí na tlačítko a zobrazí čítače kliknutím na zařízení a opotřebením motoru. Vysvětluje postup ladění aplikace pomocí emulátoru opotřebení nebo opotřebení ze zařízení, která je připojená přes Bluetooth na Android telefon. Také poskytuje sadu ladění tipy pro Android nosit."
-ms.topic: article
+title: Hello, opotřebení
+description: Vytvoření první aplikace Android nosit a spusťte ho na opotřebení emulátoru nebo zařízení. Tento názorný postup obsahuje podrobné pokyny pro vytvoření malé projekt Android nosit, který zpracovává kliknutí na tlačítko a zobrazí čítače kliknutím na zařízení a opotřebením motoru. Vysvětluje postup ladění aplikace pomocí emulátoru opotřebení nebo opotřebení ze zařízení, která je připojená přes Bluetooth na Android telefon. Také poskytuje sadu ladění tipy pro Android nosit.
 ms.prod: xamarin
 ms.assetid: 86BCD0E7-E9DC-40F1-9B44-887BC51BB48D
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 8eed2d6b825a6e6dd7e956bf901246b9a630081a
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 742a10ce0042d2bbf6d5690cb7a7a6eca529a57e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="hello-wear"></a>Hello, opotřebení
 

@@ -1,18 +1,17 @@
 ---
-title: "Propojení aplikace v Android"
-description: "Tato příručka popisuje jak Android 6.0 podporuje aplikace propojení, technika, který umožňuje mobilní aplikace reagovat na adresy URL na webech. Bude popisují, jaké aplikace propojení je, jak implementovat aplikaci propojení v aplikaci Android 6.0 a jak nakonfigurovat web, který chcete udělit oprávnění k mobilní aplikaci pro doménu."
-ms.topic: article
+title: Propojení aplikace v Android
+description: Tato příručka popisuje jak Android 6.0 podporuje aplikace propojení, technika, který umožňuje mobilní aplikace reagovat na adresy URL na webech. Bude popisují, jaké aplikace propojení je, jak implementovat aplikaci propojení v aplikaci Android 6.0 a jak nakonfigurovat web, který chcete udělit oprávnění k mobilní aplikaci pro doménu.
 ms.prod: xamarin
 ms.assetid: 48174E39-19FD-43BC-B54C-9AF11D4B1F91
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 78fef780728ba1c2a3b9978504058f7a386b0e7d
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 2ef6b8044387d759e26d05c1468caaad7efb9bdc
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="app-linking-in-android"></a>Propojení aplikace v Android
 
@@ -56,7 +55,7 @@ Nastavení aplikace – odkazy v Android 6.0 zahrnuje dva hlavní kroky:
 Je nutné konfigurovat záměrné filtr, který se mapuje identifikátor URI (nebo možné sadu identifikátory URI) z webu na aktivitu v aplikaci Android. V Xamarin.Android, je tento vztah zřízena adorning aktivitu [IntentFilterAttribute](https://developer.xamarin.com/api/type/Android.App.IntentFilterAttribute/). Záměrné filtru musí deklarovat následující informace:
 
 * **`Intent.ActionView`** &ndash; To se registrují záměrné filtr reagovat na požadavky zobrazení informací o
-* **`Categories`** &ndash;  Záměrné filtr měli zaregistrovat i  **[Intent.CategoryBrowsable](https://developer.xamarin.com/api/field/Android.Content.Intent.CategoryBrowsable/)**  a  **[Intent.CategoryDefault](https://developer.xamarin.com/api/field/Android.Content.Intent.CategoryDefault/)**  moct správně zpracování webu identifikátor URI.
+* **`Categories`** &ndash;  Záměrné filtr měli zaregistrovat i **[Intent.CategoryBrowsable](https://developer.xamarin.com/api/field/Android.Content.Intent.CategoryBrowsable/)** a **[Intent.CategoryDefault](https://developer.xamarin.com/api/field/Android.Content.Intent.CategoryDefault/)** moct správně zpracování webu identifikátor URI.
 * **`DataScheme`** &ndash; Je třeba deklarovat záměrné filtr `http` nebo `https`. Jsou to jenom dva platná schémata.
 * **`DataHost`** &ndash; Toto je doména, která identifikátory URI budou pocházet z.
 * **`DataPathPrefix`** &ndash; Toto je volitelná cesta k prostředkům na webu.

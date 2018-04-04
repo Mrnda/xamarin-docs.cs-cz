@@ -1,17 +1,16 @@
 ---
-title: "Návod – vytváření aplikací pomocí rozhraní API elementy"
-description: "Tento článek je založen na informace uvedené v Úvod do dialogu MonoTouch článku. Představuje návod, který ukazuje způsob použití MonoTouch.Dialog (strojový překladů. D) elementy rozhraní API rychle začít vytvářet aplikace s strojový překladů. D."
-ms.topic: article
+title: Návod – vytváření aplikací pomocí rozhraní API elementy
+description: Tento článek je založen na informace uvedené v Úvod do dialogu MonoTouch článku. Představuje návod, který ukazuje způsob použití MonoTouch.Dialog (strojový překladů. D) elementy rozhraní API rychle začít vytvářet aplikace s strojový překladů. D.
 ms.prod: xamarin
 ms.assetid: F1124734-DF44-F1F3-0832-46F52A788CDC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 19e1ab4000e473aa773bf75015ff520a1f9a96d8
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: e4fbf744c6f967d09e0033212024c2e2398fb768
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="walkthrough---creating-an-application-using-the-elements-api"></a>Návod – vytváření aplikací pomocí rozhraní API elementy
 

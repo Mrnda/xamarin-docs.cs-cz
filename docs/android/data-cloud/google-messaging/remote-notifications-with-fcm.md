@@ -1,18 +1,17 @@
 ---
-title: "Vzdálená oznámení s Firebase cloudu zasílání zpráv"
-description: "Tento názorný postup obsahuje podrobné vysvětlení způsobu implementace vzdáleného oznámení (také nazývané nabízená oznámení) pomocí služby zasílání zpráv cloudu Firebase v aplikaci Xamarin.Android. Ilustruje způsob implementace různých tříd, které jsou potřebné pro komunikaci s zasílání zpráv cloudu Firebase (FCM), obsahuje příklady, jak nakonfigurovat Android Manifest pro přístup k FCM a ukazuje podřízené zasílání zpráv pomocí Firebase Konzola."
-ms.topic: article
+title: Vzdálená oznámení s Firebase cloudu zasílání zpráv
+description: Tento názorný postup obsahuje podrobné vysvětlení způsobu implementace vzdáleného oznámení (také nazývané nabízená oznámení) pomocí služby zasílání zpráv cloudu Firebase v aplikaci Xamarin.Android. Ilustruje způsob implementace různých tříd, které jsou potřebné pro komunikaci s zasílání zpráv cloudu Firebase (FCM), obsahuje příklady, jak nakonfigurovat Android Manifest pro přístup k FCM a ukazuje podřízené zasílání zpráv pomocí Firebase Konzola.
 ms.prod: xamarin
 ms.assetid: 4D7C5F46-C997-49F6-AFDA-6763E68CDC90
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 7e107fc9ced62027bc793c97a388344d74becd66
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c6e1d36d871b4bb41a1e53d6e58ba8940813b29f
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="remote-notifications-with-firebase-cloud-messaging"></a>Vzdálená oznámení s Firebase cloudu zasílání zpráv
 

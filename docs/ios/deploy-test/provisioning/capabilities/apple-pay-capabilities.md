@@ -1,18 +1,17 @@
 ---
-title: "Možnosti platím Apple"
-description: "Přidání funkcí do aplikace často vyžaduje další nastavení zřizování. Tato příručka vysvětluje potřebné pro dotykový identifikátor možnosti instalace."
-ms.topic: article
+title: Možnosti platím Apple
+description: Přidání funkcí do aplikace často vyžaduje další nastavení zřizování. Tato příručka vysvětluje potřebné pro dotykový identifikátor možnosti instalace.
 ms.prod: xamarin
 ms.assetid: 735CC916-16A4-471B-87F7-0535E24288D7
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: 655e9fc81d7079c355998f0da7b41ea7cc778c3f
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: c389dc4831009d760e4a6a810b5b3c01637c822e
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="apple-pay-capabilities"></a>Možnosti platím Apple
 
@@ -38,7 +37,7 @@ ID obchodní slouží umožníte dotykový identifikátor vědět, může přijm
  
     ![Výběr ID obchodní centra pro vývojáře](apple-pay-capabilities-images/image57.png)
 
-2.  V části **identifikátory**, vyberte **obchodní ID**a pak vyberte  **+**  k vytvoření nové obchodní ID:  
+2.  V části **identifikátory**, vyberte **obchodní ID**a pak vyberte **+** k vytvoření nové obchodní ID:  
 
 3.  Vyplňte formulář, zobrazený dole, s nový popis a identifikátor. Popis umožňuje osobní ID pro vás a lze později změnit. Identifikátor musí být jedinečný pro vás a musí začínat řetězcem `merchant`. Apple doporučuje, aby identifikátor v následujícím formátu: `merchant.com.[Your-App-Name]`:
    
@@ -56,7 +55,7 @@ ID obchodní slouží umožníte dotykový identifikátor vědět, může přijm
     
     ![Vyberte ID aplikace ve středisku pro vývojáře](apple-pay-capabilities-images/image6.png)
 
-2.  Vyberte  **+**  tlačítko pro přidání nové aplikace ID: 
+2.  Vyberte **+** tlačítko pro přidání nové aplikace ID: 
    
     ![Přidat nové tlačítko ID aplikace](apple-pay-capabilities-images/image27.png)
 

@@ -1,18 +1,17 @@
 ---
 title: Funkce platformu Android
-description: "Přidání funkce specifické pro Android na platformě Xamarin.Forms aplikace"
-ms.topic: article
+description: Přidání funkce specifické pro Android na platformě Xamarin.Forms aplikace
 ms.prod: xamarin
 ms.assetid: E24168F3-0138-4814-86EA-B467F6B8A545
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/13/2016
-ms.openlocfilehash: 9b5e9a4c449bc99bd88fc415f5ebb969d2c2a08a
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 3648f6f5f576a77bf7887668352c4f3d11f3906d
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="android-platform-features"></a>Funkce platformu Android
 

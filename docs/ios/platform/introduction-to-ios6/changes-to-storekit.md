@@ -1,18 +1,17 @@
 ---
-title: "Změny StoreKit"
-description: "iOS 6 zavádí dvě změny do rozhraní API úložiště Kit: možnost zobrazit iTunes (a obchodu s aplikacemi nebo iBookstore) produkty z v rámci vaší aplikace a nové v aplikaci zakoupit možnost Apple kterých bude hostovat vaše soubory ke stažení. Tento dokument vysvětluje, jak implementovat tyto funkce s Xamarin.iOS."
-ms.topic: article
+title: Změny StoreKit
+description: 'iOS 6 zavádí dvě změny do rozhraní API úložiště Kit: možnost zobrazit iTunes (a obchodu s aplikacemi nebo iBookstore) produkty z v rámci vaší aplikace a nové v aplikaci zakoupit možnost Apple kterých bude hostovat vaše soubory ke stažení. Tento dokument vysvětluje, jak implementovat tyto funkce s Xamarin.iOS.'
 ms.prod: xamarin
 ms.assetid: 253D37D7-44C7-D012-3641-E15DC41C2699
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: ec83bc0f62ee195884cef2f59ba701fcbf15c1da
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 8a7a70c3f84518141cf44d630fb4137051d0c866
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="changes-to-storekit"></a>Změny StoreKit
 
@@ -143,7 +142,7 @@ Výsledky bude také obsahovat další metadata, včetně zobrazované informace
 
 Následuje několik příkladů:
 
--   **iBooks app*- [http://itunes.apple.com/search?term=ibooks&amp;entity=software&amp;country=us](http://itunes.apple.com/search?term=ibooks&amp;entity=software&amp;country=us) 
+-   **aplikace iBooks*- [http://itunes.apple.com/search?term=ibooks&amp;entity = softwaru&amp;země = us](http://itunes.apple.com/search?term=ibooks&amp;entity=software&amp;country=us) 
 -   **Dot a ibooks, který má Kangaroo*- [http://itunes.apple.com/search?term=dot+and+the+kangaroo&amp;entity = elektronická kniha&amp;země = us](http://itunes.apple.com/search?term=dot+and+the+kangaroo&amp;entity=ebook&amp;country=us) 
 
 

@@ -1,18 +1,17 @@
 ---
-title: "Ověřování přístupu k webovým službám"
-description: "Tato příručka vysvětluje, jak integrovat ověřovací služby do Xamarin.Forms aplikace umožňuje uživatelům sdílet back-end přitom jenom má přístup k svá vlastní data. Obsahuje následující témata Základní ověřování pomocí služby REST, pomocí součásti Xamarin.Auth k ověřování na základě poskytovatelů identit OAuth, a pomocí předdefinované ověřovací mechanismy, které nabízí zprostředkovatelé jiný."
-ms.topic: article
+title: Ověřování přístupu k webovým službám
+description: Tato příručka vysvětluje, jak integrovat ověřovací služby do Xamarin.Forms aplikace umožňuje uživatelům sdílet back-end přitom jenom má přístup k svá vlastní data. Obsahuje následující témata Základní ověřování pomocí služby REST, pomocí součásti Xamarin.Auth k ověřování na základě poskytovatelů identit OAuth, a pomocí předdefinované ověřovací mechanismy, které nabízí zprostředkovatelé jiný.
 ms.prod: xamarin
 ms.assetid: E6FCFAE1-4F83-4F93-9190-EC5290360C54
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 0139a7a921861b5d1c9a3639ee2c7e25ee6cf5fe
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: df0e188efd2791b03a63c31b715ed1da77079230
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="authenticating-access-to-web-services"></a>Ověřování přístupu k webovým službám
 

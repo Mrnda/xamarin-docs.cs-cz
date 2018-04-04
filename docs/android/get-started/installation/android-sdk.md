@@ -1,18 +1,17 @@
 ---
-title: "Instalační program sady SDK pro Android"
-description: "Visual Studio obsahuje Android SDK Manager, který nahrazuje Google samostatné sady SDK Manager. Tato příručka vysvětluje, jak používat ke stahování nástroje, platformy a další součásti, které potřebujete pro vývoj aplikací Xamarin.Android sady SDK pro Android SDK Manager."
-ms.topic: article
+title: Instalační program sady SDK pro Android
+description: Visual Studio obsahuje Android SDK Manager, který nahrazuje Google samostatné sady SDK Manager. Tato příručka vysvětluje, jak používat ke stahování nástroje, platformy a další součásti, které potřebujete pro vývoj aplikací Xamarin.Android sady SDK pro Android SDK Manager.
 ms.prod: xamarin
 ms.assetid: 9A857F52-2EC1-414F-8010-CEE67B60A4B4
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 585bcac193d6824bc7c96092c14e40fd7971b0e2
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 45ab1930300ac704da0a1fee25c08d40aa35ac5c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="android-sdk-setup"></a>Instalační program sady SDK pro Android
 
@@ -202,8 +201,8 @@ Pokud jsou nainstalovány všechny součásti platformy, zobrazí se vedle názv
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Můžete rozbalit platformy zobrazíte jeho součásti (a které součásti jsou nainstalovány) kliknutím  **+**  políčko nalevo od platformu.
-Klikněte na tlačítko  **-**  k unexpand komponentu výpis pro platformu.
+Můžete rozbalit platformy zobrazíte jeho součásti (a které součásti jsou nainstalovány) kliknutím **+** políčko nalevo od platformu.
+Klikněte na tlačítko **-** k unexpand komponentu výpis pro platformu.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 

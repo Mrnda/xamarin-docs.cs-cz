@@ -1,18 +1,17 @@
 ---
-title: "Životní cyklus aktivity"
-description: "Aktivity jsou základní stavební blok aplikací pro Android a může existovat v různých stavů. Životní cyklus aktivity začíná vytváření instancí a končí odstraňování a zahrnuje mnoho stavy v rozmezí. Při změně stavu aktivity je volána metoda události odpovídající životního cyklu, upozornění aktivity brzké změny stavu a umožní tak jeho ke spouštění kódu se tato změna přizpůsobit. Tento článek prozkoumá životního cyklu aktivit a vysvětluje zodpovědnost že aktivita má při každé z těchto změn stavu jako součást aplikace dobře behaved a spolehlivé."
-ms.topic: article
+title: Životní cyklus aktivity
+description: Aktivity jsou základní stavební blok aplikací pro Android a může existovat v různých stavů. Životní cyklus aktivity začíná vytváření instancí a končí odstraňování a zahrnuje mnoho stavy v rozmezí. Při změně stavu aktivity je volána metoda události odpovídající životního cyklu, upozornění aktivity brzké změny stavu a umožní tak jeho ke spouštění kódu se tato změna přizpůsobit. Tento článek prozkoumá životního cyklu aktivit a vysvětluje zodpovědnost že aktivita má při každé z těchto změn stavu jako součást aplikace dobře behaved a spolehlivé.
 ms.prod: xamarin
 ms.assetid: 05B34788-F2D2-4347-B66B-40AFD7B1D167
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/28/2018
-ms.openlocfilehash: 335e63ce5a36cbd0172744a35c82920853b82e5c
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: f35f3e59d8b669795ade3d370894e45866cea1ff
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="activity-lifecycle"></a>Životní cyklus aktivity
 

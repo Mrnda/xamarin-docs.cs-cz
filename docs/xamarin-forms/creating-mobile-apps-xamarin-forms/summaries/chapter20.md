@@ -1,17 +1,16 @@
 ---
-title: "Souhrn kapitoly 20. Asynchronní a soubor vstupně-výstupních operací"
-ms.topic: article
+title: Souhrn kapitoly 20. Asynchronní a soubor vstupně-výstupních operací
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: D595862D-64FD-4C0D-B0AD-C1F440564247
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 0ac316bc2cef04a80958c047427845dbdcc4137f
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: 521a8b18e74e078b9caafc6c79c7e418e1f5e08f
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="summary-of-chapter-20-async-and-file-io"></a>Souhrn kapitoly 20. Asynchronní a soubor vstupně-výstupních operací
 
@@ -111,7 +110,7 @@ Všechny projekty obsahují statického `Toolkit.Init` metodou, jak zajistit, ž
 
 **Xamarin.FormsBook.Platform** projekt obsahuje také [ `FileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/FileHelper.cs) třídu, která usnadňuje použití `DependencyService` objektu.
 
-Pokud chcete použít tyto knihovny, řešení aplikace musí obsahovat všechny projekty v **Xamarin.FormsBook.Platform** řešení a všechny projekty aplikací musí mít odkaz na knihovnu odpovídající v ** Xamarin.FormsBook.Platform**.
+Pokud chcete použít tyto knihovny, řešení aplikace musí obsahovat všechny projekty v **Xamarin.FormsBook.Platform** řešení a všechny projekty aplikací musí mít odkaz na knihovnu odpovídající v  **Xamarin.FormsBook.Platform**.
 
 [ **TextFileAsync** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/TextFileAsync) řešení ukazuje, jak používat **Xamarin.FormsBook.Platform** knihovny. Všechny projekty má volání `Toolkit.Init`. Aplikace využívá asynchronní vstupně funkce.
 

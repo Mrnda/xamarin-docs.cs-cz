@@ -1,18 +1,17 @@
 ---
-title: "Nabízená oznámení v iOS"
-description: "Tato část se bude zabývat nabízená oznámení v iOS. Zavádí službu Apple Push brány oznámení a roli, které splňuje při publikování oznámení pro aplikace iOS. Se vysvětluje, jak vytvořit potřeba povolte nabízená oznámení a popisují certifikáty zabezpečení. Nakonec bude v této části popisují některé housekeeping úlohy, které můžete sledovat mobilní zařízení klientů musí provést aplikační servery."
-ms.topic: article
+title: Nabízená oznámení v iOS
+description: Tato část se bude zabývat nabízená oznámení v iOS. Zavádí službu Apple Push brány oznámení a roli, které splňuje při publikování oznámení pro aplikace iOS. Se vysvětluje, jak vytvořit potřeba povolte nabízená oznámení a popisují certifikáty zabezpečení. Nakonec bude v této části popisují některé housekeeping úlohy, které můžete sledovat mobilní zařízení klientů musí provést aplikační servery.
 ms.prod: xamarin
 ms.assetid: 64B3BE6A-A3E2-4B1B-95ED-02D27A8FDAAC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 3af74fb9d93e22e361f2e3db00961d7955eda689
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 3a86ce5e61576faec41b5fcddf899d731d2cc57a
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="push-notifications-in-ios"></a>Nabízená oznámení v iOS
 
@@ -51,7 +50,7 @@ Každá z prostředí uvedených v předchozí části vyžadovat vlastní certi
 
     [![](remote-notifications-in-ios-images/image6new.png "Přejděte do části ID aplikace a vytvoření nového ID aplikace")](remote-notifications-in-ios-images/image6new.png#lightbox)
 
-3.  Po kliknutí na  **+**  tlačítko, nebudete moci zadat popis a identifikátor svazku pro dané ID aplikace, jak ukazuje následující snímek obrazovky:
+3.  Po kliknutí na **+** tlačítko, nebudete moci zadat popis a identifikátor svazku pro dané ID aplikace, jak ukazuje následující snímek obrazovky:
 
     [![](remote-notifications-in-ios-images/image7new.png "Zadejte popis a identifikátor svazku pro ID aplikace")](remote-notifications-in-ios-images/image7new.png#lightbox)
 

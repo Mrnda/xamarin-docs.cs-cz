@@ -1,18 +1,17 @@
 ---
-title: "iOS základy návrháře"
-description: "Tento průvodce představuje návrháře Xamarin pro iOS. Ukazuje, jak používat iOS Návrhář vizuálně Rozvrhněte ovládací prvky, jak získat přístup k tyto ovládací prvky v kódu a jak upravit vlastnosti."
-ms.topic: article
+title: iOS základy návrháře
+description: Tento průvodce představuje návrháře Xamarin pro iOS. Ukazuje, jak používat iOS Návrhář vizuálně Rozvrhněte ovládací prvky, jak získat přístup k tyto ovládací prvky v kódu a jak upravit vlastnosti.
 ms.prod: xamarin
 ms.assetid: E7045E41-0DEF-416B-BCDB-52502350F61C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/31/2018
-ms.openlocfilehash: a2445e49005175f62e4d7cd8aadccb5f596177bf
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 7e36a402619813214e821f3060e053d76c99cfb7
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="ios-designer-basics"></a>iOS základy návrháře
 

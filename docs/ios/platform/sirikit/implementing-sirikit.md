@@ -1,18 +1,17 @@
 ---
 title: Implementace SiriKit
-description: "Tento článek popisuje kroky nutné k implementaci SiriKit podpory v aplikacích pro Xamarin.iOS."
-ms.topic: article
+description: Tento článek popisuje kroky nutné k implementaci SiriKit podpory v aplikacích pro Xamarin.iOS.
 ms.prod: xamarin
 ms.assetid: 20FFB981-EB10-48BA-BF79-40F37F0291EB
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 76787ecda1c2cd043b81482dcdbe3751d012ef74
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 5fdc05de19799ce7b553428c23f860186909bcbb
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="implementing-sirikit"></a>Implementace SiriKit
 
@@ -213,14 +212,14 @@ Proveďte v počítači Mac:
 
 1. Ve webovém prohlížeči, přejděte na [ http://developer.apple.com ](http://developer.apple.com) a přihlaste se k účtu.
 2. Klikněte na **certifikáty**, **identifikátory** a **profily**.
-3. Vyberte **profily zřizování** a vyberte **ID aplikace**, klikněte  **+**  tlačítko.
+3. Vyberte **profily zřizování** a vyberte **ID aplikace**, klikněte **+** tlačítko.
 4. Zadejte **název** nového profilu.
 5. Zadejte **ID sady** následující Apple názvů prvku doporučení.
 6. Přejděte dolů k položce **App Services** vyberte **SiriKit** a klikněte na tlačítko **pokračovat** tlačítko: 
 
     [![](implementing-sirikit-images/setup03.png "Vyberte SiriKit")](implementing-sirikit-images/setup03.png#lightbox)
 7. Zkontrolujte všechna nastavení, pak **odeslání** ID aplikace.
-8. Vyberte **profily zřizování** > **vývoj**, klikněte  **+**  tlačítko, vyberte **Apple ID**, pak klikněte na tlačítko **pokračovat**.
+8. Vyberte **profily zřizování** > **vývoj**, klikněte **+** tlačítko, vyberte **Apple ID**, pak klikněte na tlačítko **pokračovat**.
 9. Klikněte na vybrat **všechny**, pak klikněte na tlačítko **pokračovat**.
 10. Klikněte na tlačítko **Vybrat vše** znovu, pak klikněte na tlačítko **pokračovat**.
 11. Zadejte **název profilu** názvů pomocí Apple prvku návrhy, pak klikněte na tlačítko **pokračovat**.
@@ -462,16 +461,16 @@ Chcete-li přidat `AppIntentVocabulary.plist` souboru do projektu aplikace, post
 
     [![](implementing-sirikit-images/plist01.png "Přidat seznam vlastností")](implementing-sirikit-images/plist01.png#lightbox) 
 2. Dvakrát klikněte `AppIntentVocabulary.plist` souboru v **Průzkumníku řešení** otevřete pro úpravy.
-3. Klikněte na tlačítko  **+**  přidat klíč, nastavte **název** k `ParameterVocabularies` a **typ** k `Array`:
+3. Klikněte na tlačítko **+** přidat klíč, nastavte **název** k `ParameterVocabularies` a **typ** k `Array`:
 
     [![](implementing-sirikit-images/plist02.png "Nastavte název na ParameterVocabularies a zadejte do pole")](implementing-sirikit-images/plist02.png#lightbox)
-4. Rozbalte položku `ParameterVocabularies` a klikněte na tlačítko  **+**  tlačítko a nastavte **typ** k `Dictionary`:
+4. Rozbalte položku `ParameterVocabularies` a klikněte na tlačítko **+** tlačítko a nastavte **typ** k `Dictionary`:
 
     [![](implementing-sirikit-images/plist03.png "Nastavte typ slovníku")](implementing-sirikit-images/plist03.png#lightbox)
-5. Klikněte na tlačítko  **+**  přidat nový klíč, nastavte **název** k `ParameterNames` a **typ** k `Array`:
+5. Klikněte na tlačítko **+** přidat nový klíč, nastavte **název** k `ParameterNames` a **typ** k `Array`:
 
     [![](implementing-sirikit-images/plist04.png "Nastavte název na ParameterNames a zadejte do pole")](implementing-sirikit-images/plist04.png#lightbox)
-6. Klikněte  **+**  přidat nový klíč s **typ** z `String` a hodnotu jako jeden z dostupných názvy parametrů. Například `INStartWorkoutIntent.workoutName`:
+6. Klikněte **+** přidat nový klíč s **typ** z `String` a hodnotu jako jeden z dostupných názvy parametrů. Například `INStartWorkoutIntent.workoutName`:
 
     [![](implementing-sirikit-images/plist05.png "Klíč INStartWorkoutIntent.workoutName")](implementing-sirikit-images/plist05.png#lightbox)
 7. Přidat `ParameterVocabulary` klíče k `ParameterVocabularies` klíč s **typ** z `Array`:
@@ -526,16 +525,16 @@ Chcete-li přidat `AppIntentVocabulary.plist` souboru do projektu aplikace, post
 
     [![](implementing-sirikit-images/plist01w.png "Přidat nové Info.plist")](implementing-sirikit-images/plist01w.png#lightbox) 
 2. Dvakrát klikněte `AppIntentVocabulary.plist` souboru v **Průzkumníku řešení** otevřete pro úpravy.
-3. Klikněte na tlačítko  **+**  přidat klíč, nastavte **název** k `ParameterVocabularies` a **typ** k `Array`:
+3. Klikněte na tlačítko **+** přidat klíč, nastavte **název** k `ParameterVocabularies` a **typ** k `Array`:
 
     [![](implementing-sirikit-images/plist02w.png "Nastavte název na ParameterVocabularies a zadejte do pole")](implementing-sirikit-images/plist02w.png#lightbox)
-4. Rozbalte položku `ParameterVocabularies` a klikněte na tlačítko  **+**  tlačítko a nastavte **typ** k `Dictionary`:
+4. Rozbalte položku `ParameterVocabularies` a klikněte na tlačítko **+** tlačítko a nastavte **typ** k `Dictionary`:
 
     [![](implementing-sirikit-images/plist03w.png "Nastavte typ slovníku")](implementing-sirikit-images/plist03w.png#lightbox)
-5. Klikněte na tlačítko  **+**  přidat nový klíč, nastavte **název** k `ParameterNames` a **typ** k `Array`:
+5. Klikněte na tlačítko **+** přidat nový klíč, nastavte **název** k `ParameterNames` a **typ** k `Array`:
 
     [![](implementing-sirikit-images/plist04w.png "Nastavte název na ParameterNames a zadejte do pole")](implementing-sirikit-images/plist04w.png#lightbox)
-6. Klikněte  **+**  přidat nový klíč s **typ** z `String` a hodnotu jako jeden z dostupných názvy parametrů. Například `INStartWorkoutIntent.workoutName`:
+6. Klikněte **+** přidat nový klíč s **typ** z `String` a hodnotu jako jeden z dostupných názvy parametrů. Například `INStartWorkoutIntent.workoutName`:
 
     [![](implementing-sirikit-images/plist05w.png "Klíč INStartWorkoutIntent.workoutName")](implementing-sirikit-images/plist05w.png#lightbox)
 7. Přidat `ParameterVocabulary` klíče k `ParameterVocabularies` klíč s **typ** z `Array`:

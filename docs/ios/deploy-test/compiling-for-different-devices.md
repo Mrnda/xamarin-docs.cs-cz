@@ -1,17 +1,16 @@
 ---
-title: "Kompilování pro různá zařízení"
-ms.topic: article
+title: Kompilování pro různá zařízení
 ms.prod: xamarin
 ms.assetid: 3B259248-887E-3E4F-E09C-7AD28C2A8CEE
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 12b8f51156c2ed750c59ef79522121c6c5d2c03c
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 039e0a931613ec79ccd6f2b13bc18ae6b80f5195
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="compiling-for-different-devices"></a>Kompilování pro různá zařízení
 
@@ -30,7 +29,7 @@ Vlastnosti sestavení vaší spustitelný soubor lze konfigurovat v projektu **i
 
 Kromě možností konfigurace k dispozici v Uživatelském rozhraní můžete předat také vlastní sadu možností příkazového řádku a [Xamarin.iOS sestavení nástroj (mtouch)](~/ios/deploy-test/mtouch.md).
 
-[http://iossupportmatrix.com/](http://iossupportmatrix.com/) je užitečné prostředků, které je možné zajistit, který chcete zahrnout všechny požadované zařízení, architektury a iOS verze.
+[http://iossupportmatrix.com/](http://iossupportmatrix.com/) je užitečné prostředek, který slouží k Ujistěte se, že jsou včetně požadovaná zařízení, architektury a verze iOS.
 
  <a name="SDK_Options" />
 

@@ -1,18 +1,17 @@
 ---
-title: "Dynamické styly"
-description: "Styly nezadávejte reagovat na změny vlastností a zůstanou nezměněny po dobu trvání aplikace. Například po přiřazení styl visual elementu, pokud jedna z instancí Setter změněna, odebrána nebo přidat novou instanci Setter, změny se nepoužije pro vizuální prvek. Ale aplikace reagovat na změny styl dynamicky za běhu pomocí dynamické prostředky."
-ms.topic: article
+title: Dynamické styly
+description: Styly nezadávejte reagovat na změny vlastností a zůstanou nezměněny po dobu trvání aplikace. Například po přiřazení styl visual elementu, pokud jedna z instancí Setter změněna, odebrána nebo přidat novou instanci Setter, změny se nepoužije pro vizuální prvek. Ale aplikace reagovat na změny styl dynamicky za běhu pomocí dynamické prostředky.
 ms.prod: xamarin
 ms.assetid: 13D4FA4B-DF10-42BF-B001-2C49367FC216
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 9710e322460058902d89ec1a57c374b93beb82fb
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c484bdc90ec039a8d70209deabbe283cf7100610
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="dynamic-styles"></a>Dynamické styly
 

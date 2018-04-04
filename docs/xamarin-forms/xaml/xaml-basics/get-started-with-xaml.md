@@ -1,18 +1,17 @@
 ---
-title: "Část 1. Začínáme s XAML"
-description: "V aplikaci Xamarin.Forms XAML nejčastěji používá k definování visual obsahu stránky. Soubor XAML je vždy přidružen souboru kódu C#, který poskytuje podporu kódu pro kód. Tyto dva soubory společně přispívat k nové definice třídy, obsahuje podřízené zobrazení a vlastnosti inicializace. V souboru XAML třídy a vlastnosti jsou odkazovány pomocí XML elementů a atributů, a jsou určeny propojení mezi značek a kódu."
-ms.topic: article
+title: Část 1. Začínáme s XAML
+description: V aplikaci Xamarin.Forms XAML nejčastěji používá k definování visual obsahu stránky. Soubor XAML je vždy přidružen souboru kódu C#, který poskytuje podporu kódu pro kód. Tyto dva soubory společně přispívat k nové definice třídy, obsahuje podřízené zobrazení a vlastnosti inicializace. V souboru XAML třídy a vlastnosti jsou odkazovány pomocí XML elementů a atributů, a jsou určeny propojení mezi značek a kódu.
 ms.prod: xamarin
 ms.assetid: 9073FA0E-BD5A-4492-8A93-54C466F6EDB9
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: 55c4fa73044b1c37e879ed7731161269bdbf8ba8
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: f1d347cc37ab065e09cb2627ee2122797280f3c1
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="part-1-getting-started-with-xaml"></a>Část 1. Začínáme s XAML
 

@@ -1,18 +1,17 @@
 ---
-title: "Instalace jako aplikaci systému Xamarin.Android"
-description: "Tato příručka popisuje rozdíly mezi aplikaci systému a aplikace uživatele a postup instalace aplikace pro Xamarin.Android jako systémová aplikace. Tento průvodce se týká autorům vlastní Android ROM bitových kopií. Ho nebude vysvětlují, jak vytvořit vlastní ROM."
-ms.topic: article
+title: Instalace jako aplikaci systému Xamarin.Android
+description: Tato příručka popisuje rozdíly mezi aplikaci systému a aplikace uživatele a postup instalace aplikace pro Xamarin.Android jako systémová aplikace. Tento průvodce se týká autorům vlastní Android ROM bitových kopií. Ho nebude vysvětlují, jak vytvořit vlastní ROM.
 ms.prod: xamarin
 ms.assetid: 0113143B-7D8D-4C4C-B2F5-B966A2E7CE1F
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/15/2018
-ms.openlocfilehash: ad2080c61c9cc7fb376997bc56668b6db135dbae
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 94f2108a55cea520782aa5eac959195be09929b5
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="installing-xamarinandroid-as-a-system-app"></a>Instalace jako aplikaci systému Xamarin.Android
 

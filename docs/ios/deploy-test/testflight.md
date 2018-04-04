@@ -1,18 +1,17 @@
 ---
-title: "Pomocí TestFlight"
-description: "TestFlight je nyní vlastněná společností Apple a je primární způsob, jak beta testování aplikace Xamarin.iOS. Tento článek vás provede všechny kroky procesu TestFlight – z vaší aplikace se nahrávají na práci s iTunes připojit."
-ms.topic: article
+title: Pomocí TestFlight
+description: TestFlight je nyní vlastněná společností Apple a je primární způsob, jak beta testování aplikace Xamarin.iOS. Tento článek vás provede všechny kroky procesu TestFlight – z vaší aplikace se nahrávají na práci s iTunes připojit.
 ms.prod: xamarin
 ms.assetid: BA880768-2BC8-41E4-B57E-A56F8EED4690
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: adc08009de308598041adb79dc02bf83bcf4a2f2
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 5a6e90aab3aae408d4daace81875e44f075818bd
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="using-testflight"></a>Pomocí TestFlight
 
@@ -69,7 +68,7 @@ Následující pracovní postup popisuje kroky potřebné k použití TestFlight
     [![](testflight-images/my-apps.png "Vybrat Moje aplikace")](testflight-images/my-apps.png#lightbox)
 
 
-3.  Na **Moje aplikace** obrazovky, klikněte na  **+**  tlačítko v levého horního rohu obrazovky, přidejte novou aplikaci. Pokud máte Mac a iOS vývojářským účtům, vyzve k zvolte zde nový typ aplikace.
+3.  Na **Moje aplikace** obrazovky, klikněte na **+** tlačítko v levého horního rohu obrazovky, přidejte novou aplikaci. Pokud máte Mac a iOS vývojářským účtům, vyzve k zvolte zde nový typ aplikace.
 
 Zobrazí se **nové aplikace pro iOS** okno odeslání, který se musí obsahovat přesně stejné informace jako Info.plist vaší aplikace
 
@@ -204,7 +203,7 @@ Existující iTunes uživatelům připojit se zobrazí v seznamu. Vyberte, klikn
 
 [![](testflight-images/internal-tester.png "Zapněte přepínač interní testování")](testflight-images/internal-tester.png#lightbox)
 
-Chcete-li přidat uživatele, který není v seznamu, vyberte  **+**  vedle položky *uživatelé*a zadejte první jméno, příjmení a e-mailovou adresu k vytvoření účtu. Uživatel bude muset potvrďte e-mailu k aktivaci účtu:
+Chcete-li přidat uživatele, který není v seznamu, vyberte **+** vedle položky *uživatelé*a zadejte první jméno, příjmení a e-mailovou adresu k vytvoření účtu. Uživatel bude muset potvrďte e-mailu k aktivaci účtu:
 
 [![](testflight-images/add-new-user.png "Přidání uživatele")](testflight-images/add-new-user.png#lightbox)
 

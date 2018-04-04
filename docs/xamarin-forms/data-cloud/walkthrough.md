@@ -1,18 +1,17 @@
 ---
 title: Principy vzorku
-description: "Toto téma obsahuje návod ukázkovou aplikaci Xamarin.Forms, která ukazuje, jak komunikovat s jinou webové služby. Při každém webová služba používá samostatné ukázkové aplikace, jsou funkčně podobné a sdílejí společné třídy."
-ms.topic: article
+description: Toto téma obsahuje návod ukázkovou aplikaci Xamarin.Forms, která ukazuje, jak komunikovat s jinou webové služby. Při každém webová služba používá samostatné ukázkové aplikace, jsou funkčně podobné a sdílejí společné třídy.
 ms.prod: xamarin
 ms.assetid: A3FEB262-0D79-42E6-8F8B-A565618C490B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
-ms.openlocfilehash: ab44cb7a065164bb5b7501ac63bd0321b612b7ca
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: e9738a766762dd64cdfbb034d4eaa54f76aca311
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="understanding-the-sample"></a>Principy vzorku
 
@@ -56,7 +55,7 @@ Projekt PCL pro každou aplikaci se skládá z několika důležitých souborů:
 
 Většina ukázkové aplikace obsahovat alespoň dvě stránky:
 
-- **TodoListPage** – Tato stránka zobrazuje seznam `TodoItem` instancí a ikona značek Pokud `TodoItem.Done` vlastnost je `true`. Kliknutím na položku přejde `TodoItemPage`. Kromě toho můžete kliknutím na vytvořit nové položky  *+*  symbol.
+- **TodoListPage** – Tato stránka zobrazuje seznam `TodoItem` instancí a ikona značek Pokud `TodoItem.Done` vlastnost je `true`. Kliknutím na položku přejde `TodoItemPage`. Kromě toho můžete kliknutím na vytvořit nové položky *+* symbol.
 - **TodoItemPage** – Tato stránka zobrazí podrobnosti pro vybranou `TodoItem`a umožňuje upravovat, uložit, odstranit a používá se.
 
 Kromě toho některé ukázkové aplikace obsahují další stránky, které se používají ke správě procesu ověřování uživatele.

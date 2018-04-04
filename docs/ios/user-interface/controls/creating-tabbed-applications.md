@@ -1,18 +1,17 @@
 ---
-title: "Karta řádky a řadiče posuvníku"
-description: "aplikace pro iOS pomocí uživatelského rozhraní navigace na kartě jsou vytvořené pomocí třídy UITabBarController. V tomto článku budeme zabývat postup nastavení na kartách aplikaci, která obsahuje několik kontrolery a zobrazení. Potom podíváme jak načíst UITabBarController, pokud není kořenový řadič, například po přihlašovací obrazovku."
-ms.topic: article
+title: Karta řádky a řadiče posuvníku
+description: aplikace pro iOS pomocí uživatelského rozhraní navigace na kartě jsou vytvořené pomocí třídy UITabBarController. V tomto článku budeme zabývat postup nastavení na kartách aplikaci, která obsahuje několik kontrolery a zobrazení. Potom podíváme jak načíst UITabBarController, pokud není kořenový řadič, například po přihlašovací obrazovku.
 ms.prod: xamarin
 ms.assetid: 7C772899-2900-F139-D642-F3C4F3F14DDC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 702a5986c9249eec38868895f55ef6f63b534b9b
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c3c57cceed7271ebbe707172db892a246003426b
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="tab-bars-and-tab-bar-controllers"></a>Karta řádky a řadiče posuvníku
 

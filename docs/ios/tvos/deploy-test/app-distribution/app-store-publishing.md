@@ -1,18 +1,17 @@
 ---
-title: "Publikování do App Storu Apple TV"
-description: "Tento článek ukazuje, jak nakonfigurovat, vytvářet a publikovat Xamarin.tvOS aplikace pro distribuci přes Apple TV App Store. Obsahuje podrobný průvodce, který popisuje postup přípravy vaší aplikace pro distribuci, jak odeslat aplikace ke kontrole pomocí nástroje Apple a, nakonec, jak publikovat aplikace pro Apple TV App Store."
-ms.topic: article
+title: Publikování do App Storu Apple TV
+description: Tento článek ukazuje, jak nakonfigurovat, vytvářet a publikovat Xamarin.tvOS aplikace pro distribuci přes Apple TV App Store. Obsahuje podrobný průvodce, který popisuje postup přípravy vaší aplikace pro distribuci, jak odeslat aplikace ke kontrole pomocí nástroje Apple a, nakonec, jak publikovat aplikace pro Apple TV App Store.
 ms.prod: xamarin
 ms.assetid: 52448C93-DC19-40FA-BF8C-608AE680FF49
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: abb8ee30828e5d9856b9fd72cca8adb669959818
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: c72b161845f6d8492a47d95e51a80cf0b4f30271
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="publishing-to-the-apple-tv-app-store"></a>Publikování do App Storu Apple TV
 
@@ -80,7 +79,7 @@ Apple poskytuje výběr speciální aplikační služby, označované taky jako 
 Vytvoření ID aplikace a volitelně vybrat oprávnění zahrnuje následující kroky pomocí společnosti Apple založené na webu iOS Provisioning Portal:
 
 1. Vyberte **zřizování** > **vývoj**.
-2. Klikněte  **+**  tlačítko a zadejte **název** a **ID sady** pro novou aplikaci.
+2. Klikněte **+** tlačítko a zadejte **název** a **ID sady** pro novou aplikaci.
 3. Přejděte do dolní části obrazovky a vyberte některou **App Services** , bude nutné Xamarin.tvOS aplikace.
 4. Klikněte **pokračovat** tlačítko a následující na obrazovce pokyny pro vytvoření nového ID aplikace.
 
@@ -114,7 +113,7 @@ používá tvOS *profily zřizování* k řízení nasazení sestavení konkrét
 Zřizování zahrnuje následující kroky pomocí společnosti Apple webové iOS Provisioning Portal:
 
 1.  Vyberte **zřizování** > **distribuční**.
-2.  Klikněte  **+**  tlačítko a vyberte typ profil distribuce, kterou chcete vytvořit jako **Apple TV App Store**.
+2.  Klikněte **+** tlačítko a vyberte typ profil distribuce, kterou chcete vytvořit jako **Apple TV App Store**.
 3.  Vyberte **ID aplikace** z rozevíracího seznamu, který chcete vytvořit profil distribuce pro.
 4.  Vyberte certifikát vyžadovaný k podepsání aplikace.
 5.  Zadejte **název** pro nové **profil distribuce** a generovat profil.

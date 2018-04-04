@@ -1,7 +1,6 @@
 ---
 title: Multitasking pro iPad
-description: "iOS 9 podporuje dvě aplikace běžící na stejnou dobu, pomocí snímku přes nebo rozděleným zobrazením. Podporuje také obraz v obraze přehrávání videa."
-ms.topic: article
+description: iOS 9 podporuje dvě aplikace běžící na stejnou dobu, pomocí snímku přes nebo rozděleným zobrazením. Podporuje také obraz v obraze přehrávání videa.
 ms.prod: xamarin
 ms.assetid: 0F2266D7-21FF-404D-A148-0CFDE76B12AA
 ms.technology: xamarin-ios
@@ -9,11 +8,11 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 0783372cd36d5a4984d09ee055257d525e7becb1
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 553fd6e45df897037d6ad90ef9211eef0bf27aae
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="multitasking-for-ipad"></a>Multitasking pro iPad
 
@@ -151,7 +150,7 @@ Nakonec, musí vaše aplikace používá soubor storyboard k jeho spuštění ob
 
 V systému iOS 9 spuštěna na Ipadu, Společnost Apple má rozšířenou podporu pro hardware klávesnice. Ipady mít vždy zahrnuje podporu základní externí klávesnice přes Bluetooth a některé klávesnice výrobců vytvořili klávesnice, které zahrnuty pevně integrované zkratky specifické pro iOS.
 
-Nyní s iOS 9, aplikace můžete vytvořit své vlastní vlastní klávesové zkratky. Kromě toho jsou k dispozici jako některé základní klávesové zkratky **příkaz C** (kopie), **příkaz X** (Vyjmout), **V příkazu** (Vložit) a **příkaz-Shift-H**  (domovskou), aniž by se konkrétně napsané reakce na ně aplikace.
+Nyní s iOS 9, aplikace můžete vytvořit své vlastní vlastní klávesové zkratky. Kromě toho jsou k dispozici jako některé základní klávesové zkratky **příkaz C** (kopie), **příkaz X** (Vyjmout), **V příkazu** (Vložit) a **příkaz-Shift-H ** (domovskou), aniž by se konkrétně napsané reakce na ně aplikace.
 
 **Příkaz – karta** zobrazíte přepínači aplikace, která umožňuje uživatelům rychlé přepínání mezi aplikací z klávesnice, podobně jako Mac OS:
 

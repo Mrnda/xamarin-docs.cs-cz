@@ -1,17 +1,17 @@
 ---
-title: "Je možné se připojit k Android emulátorů spuštěn na Macu z virtuálního počítače Windows?"
-ms.topic: article
+title: Je možné se připojit k Android emulátorů spuštěn na Macu z virtuálního počítače Windows?
+ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 7B6752BB-8E4C-4690-B275-7E425A051F45
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 2f0ef027d8a2d40ccf85e35d5a85eba4cd7c7ccc
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: a04258e6056b4572856d4ec05c40effec4e51910
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="is-it-possible-to-connect-to-android-emulators-running-on-a-mac-from-a-windows-vm"></a>Je možné se připojit k Android emulátorů spuštěn na Macu z virtuálního počítače Windows?
 
@@ -34,7 +34,7 @@ Pro připojení k Google Android emulátor na Macu spuštění z virtuálního p
     emulator6 94105 macuser   21u  IPv4 0xa8dacfb1d845a51f      0t0  TCP localhost:5554 (LISTEN)
     ```
 
-    Port lichých je používaný pro připojení k `adb`. Viz také [http://developer.android.com/tools/devices/emulator.html#emulatornetworking](http://developer.android.com/tools/devices/emulator.html#emulatornetworking).
+    Port lichých je používaný pro připojení k `adb`. Viz také [ http://developer.android.com/tools/devices/emulator.html#emulatornetworking ](http://developer.android.com/tools/devices/emulator.html#emulatornetworking).
 
 4.  _Možnost 1_: použití [ `nc` ](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/nc.1.html) příchozí forward TCP paketů přijatých externě na portu 5555 (nebo jiný port chcete) na port lichými čísly v rozhraní zpětné smyčky (**127.0.0.1 5555** v tomto příkladu), a předávat odchozí pakety zpět jiným způsobem:
 
@@ -92,13 +92,13 @@ Malé upozornění: Pokud používáte port `5555` pro místní port `adb` si bu
 
 ### <a name="alternate-technique-using-adb--h-is-not-yet-supported"></a>Pomocí alternativní postup `adb -H` zatím není podporován
 
-Teoreticky může být použití další přístup `adb`na integrované funkce pro připojení k `adb` server spuštěný ve vzdáleném počítači (viz například [http://stackoverflow.com/a/18551325](http://stackoverflow.com/a/18551325)).
+Teoreticky může být použití další přístup `adb`na integrované funkce pro připojení k `adb` server spuštěný ve vzdáleném počítači (viz například [ http://stackoverflow.com/a/18551325 ](http://stackoverflow.com/a/18551325)).
 Ale Xamarin.Android IDE rozšíření není aktuálně poskytují způsob, jak nakonfigurovat tuto možnost.
 
 ## <a name="contact-information"></a>Kontaktní informace
 
 Tento dokument popisuje aktuální chování od. března 2016. Podle postupu popsaného v tomto dokumentu není součástí stabilní testování suite pro Xamarin, takže může v budoucnu rozdělit.
 
-Pokud si všimnete, že už funguje techniku, nebo pokud si všimnete dalších chyby v dokumentu, libosti přidat do diskuse ve fóru vlákně, v následující: [http://forums.xamarin.com/discussion/33702/ Android-emulator-from-Host-Device-Inside-Windows-VM](http://forums.xamarin.com/discussion/33702/android-emulator-from-host-device-inside-windows-vm).
+Pokud si všimnete, že už funguje techniku, nebo pokud si všimnete dalších chyby v dokumentu, libosti přidat do diskuse ve fóru vlákně, v následující: [ http://forums.xamarin.com/discussion/33702/android-emulator-from-host-device-inside-windows-vm ](http://forums.xamarin.com/discussion/33702/android-emulator-from-host-device-inside-windows-vm).
 Dík!
 

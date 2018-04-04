@@ -1,26 +1,25 @@
 ---
-title: "Základy aplikací"
-description: "Zkoumání základy vývoj s Xamarin.Forms."
-ms.topic: article
+title: Principy aplikací
+description: Zkoumání základy vývoj s Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 7B516BBC-F7E1-4387-9779-7754E2E69723
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
-ms.openlocfilehash: afa3bf25b1448d98c49c95a66bd0f4dc55bde39e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: 5a53c15ebad6081dae2ebc4bd782bcc3644620fe
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
-# <a name="application-fundamentals"></a>Základy aplikací
+# <a name="application-fundamentals"></a>Principy aplikací
 
 ## <a name="accessibilityaccessibilityindexmd"></a>[Usnadnění](accessibility/index.md)
 
 Tipy pro začlenit přístupné funkce (jako je podpora nástrojů pro čtení obrazovky) s Xamarin.Forms.
 
-## <a name="app-classapplication-classmd"></a>[Aplikace – třída](application-class.md)
+## <a name="app-classapplication-classmd"></a>[Třída aplikace](application-class.md)
 
 `Application` Třída je výchozím bodem pro Xamarin.Forms – každé aplikace musí implementovat podtřídy `App` nastavit úvodní stránky. Také poskytuje `Properties` kolekci pro jednoduché datové úložiště. Může být definováno v C# nebo XAML.
 
@@ -32,7 +31,7 @@ Tipy pro začlenit přístupné funkce (jako je podpora nástrojů pro čtení o
 
 Ovládacích prvků uživatelského rozhraní lze snadno rozšířit bez vytváření podtříd pomocí chování přidat další funkce.
 
-## <a name="custom-rendererscustom-rendererindexmd"></a>[Vlastní nástroji pro vykreslování](custom-renderer/index.md)
+## <a name="custom-rendererscustom-rendererindexmd"></a>[Vlastní renderery](custom-renderer/index.md)
 
 Vlastní vykreslí umožňují vývojářům přepsat výchozí vykreslování Xamarin.Forms ovládací prvky pro přizpůsobení jejich vzhled a chování na každou platformu (s použitím nativních sad SDK v případě potřeby).
 
@@ -44,7 +43,7 @@ Datová vazba propojí vlastnosti dva objekty, povolení změn v jednu vlastnost
 
 `DependencyService` Poskytuje jednoduché lokátoru, takže může kód na rozhraní v sdíleného kódu a poskytovat implementace specifických pro platformy, které jsou automaticky vyřešeny, a usnadňuje tak, aby odkazovaly funkce specifické pro platformu v Xamarin.Forms.
 
-## <a name="effectseffectsindexmd"></a>[Účinky](effects/index.md)
+## <a name="effectseffectsindexmd"></a>[Efekty](effects/index.md)
 
 Účinky Povolit nativní ovládací prvky na každou platformu, která lze přizpůsobit a jsou obvykle používány pro malé stylů změny.
 
@@ -72,7 +71,7 @@ Poskytuje řadu prostředí navigační různé stránky, v závislosti na platf
 
 Šablon ovládacích prvků umožňují snadno motiv a opětovná motivu stránek aplikací za běhu, zatímco dat šablony poskytují možnost definovat prezentaci dat na podporované ovládací prvky.
 
-## <a name="triggerstriggersmd"></a>[Aktivační události](triggers.md)
+## <a name="triggerstriggersmd"></a>[Triggery](triggers.md)
 
 Aktualizujte ovládací prvky reagovat na změny vlastností a událostí v jazyce XAML.
 

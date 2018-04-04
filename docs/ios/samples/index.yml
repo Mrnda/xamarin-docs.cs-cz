@@ -1,23 +1,23 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: "Ukázky Xamarin.iOS"
+title: Ukázky Xamarin.iOS
 metadata:
-  description: "Multiplatformní ukázkové aplikace Xamarin.iOS pro vývojáře mobilních aplikací"
+  description: Multiplatformní ukázkové aplikace Xamarin.iOS pro vývojáře mobilních aplikací
   author: conceptdev
   ms.author: crdun
   ms.date: 02/17/2018
-  ms.topic: article
-  ms.openlocfilehash: b0c3efa12cbeb045104b2ce823cbf57cd1f56f75
-  ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+  ms.topic: sample
+  ms.openlocfilehash: 9a22147adbcd59fe7168af8e717d065d6d27b85e
+  ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
   ms.translationtype: HT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 03/12/2018
+  ms.lasthandoff: 04/04/2018
 abstract:
-  description: "Ukázkové aplikace a ukázky kódu Xamarin.iOS, které vám pomůžou začít vytvářet aplikace pomocí jazyka C# a Xamarinu"
+  description: Ukázkové aplikace a ukázky kódu Xamarin.iOS, které vám pomůžou začít vytvářet aplikace pomocí jazyka C# a Xamarinu
   menu:
     items:
     - href: https://developer.xamarin.com/samples/ios/all/
-      text: "Všechny ukázky Xamarin.iOS"
+      text: Všechny ukázky Xamarin.iOS
 sections:
 - title: 
   items:
@@ -26,44 +26,44 @@ sections:
     className: cardsW
     items:
     - href: https://developer.xamarin.com/samples/monotouch/ios11/ARKitPlacingObjects/
-      html: "Ukázka rozšířené reality ARKit, která umisťuje objekty na detekovaných površích."
+      html: Ukázka rozšířené reality ARKit, která umisťuje objekty na detekovaných površích.
       image:
         src: images/arkit.png
         href: https://developer.xamarin.com/samples/monotouch/ios11/ARKitPlacingObjects/
       title: ARKit (iOS 11)
     - href: https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/
-      html: "Nové funkce iOSu 11 v MapKitu: seskupování a rozdělování značek podle úrovně přiblížení"
+      html: 'Nové funkce iOSu 11 v MapKitu: seskupování a rozdělování značek podle úrovně přiblížení'
       image:
         src: images/mapkit.png
         href: https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/
       title: MapKit (iOS 11)
     - href: https://developer.xamarin.com/samples/monotouch/ios11/CoreMLAzureModel/
-      html: "Rozhraní iOS 11 Vision a CoreML, které používají model natrénovaný pomocí služby Custom Vision Service v Azure"
+      html: Rozhraní iOS 11 Vision a CoreML, které používají model natrénovaný pomocí služby Custom Vision Service v Azure
       image:
         src: images/coremlazure.png
         href: https://developer.xamarin.com/samples/monotouch/ios11/CoreMLAzureModel/
       title: CoreML & Azure (iOS 11)
     - href: https://developer.xamarin.com/samples/monotouch/ios9/QuickContacts/
-      html: "Jak používat kontrolery zobrazení a vlastnosti ContactsUI"
+      html: Jak používat kontrolery zobrazení a vlastnosti ContactsUI
       image:
         src: images/contacts.png
         href: https://developer.xamarin.com/samples/monotouch/ios9/QuickContacts/
       title: QuickContacts
     - href: https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/
-      html: "Sada ovládacích prvků uživatelského rozhraní dostupná ve watchOSu"
+      html: Sada ovládacích prvků uživatelského rozhraní dostupná ve watchOSu
       image:
         src: images/watchos.png
         href: https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/
       title: Katalog WatchKitu
     - href: https://developer.xamarin.com/samples/monotouch/tvos/UICatalog/
-      html: "Ukazuje, jak použít několik zobrazení a ovládacích prvků v rozhraní UIKit v tvOSu."
+      html: Ukazuje, jak použít několik zobrazení a ovládacích prvků v rozhraní UIKit v tvOSu.
       image:
         src: images/tvosui.png
         href: https://developer.xamarin.com/samples/monotouch/tvos/UICatalog/
-      title: "Katalog uživatelského rozhraní tvOSu"
+      title: Katalog uživatelského rozhraní tvOSu
     - href: https://developer.xamarin.com/samples/ios/all/
-      html: "Všechny ukázkové aplikace a ukázky kódů Xamarin.iOS"
+      html: Všechny ukázkové aplikace a ukázky kódů Xamarin.iOS
       image:
         src: ~/media/shared/sample-download.svg
         href: https://developer.xamarin.com/samples/ios/all/
-      title: "Všechny ukázky Xamarin.iOS"
+      title: Všechny ukázky Xamarin.iOS

@@ -1,17 +1,16 @@
 ---
-title: "Pomocí UrhoSharp"
-description: "Přehled UrhoSharp stroje"
-ms.topic: article
+title: Pomocí UrhoSharp
+description: Přehled UrhoSharp stroje
 ms.prod: xamarin
 ms.assetid: D9BEAD83-1D9E-41C3-AD4B-3D87E13674A0
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
-ms.openlocfilehash: cd30f17d631216a3ea119a262aca6d294394a77f
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: cdb32c0fe9aa1a267bda5768b9026667723d694c
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="using-urhosharp"></a>Pomocí UrhoSharp
 
@@ -497,7 +496,7 @@ Paměť rozpočty lze nastavit pro typ prostředku: Pokud prostředků vyžaduje
 
 Urho3D pokusí použít existující formáty souborů, kdykoli je to možné a definujte vlastních formátů souborů pouze v případě, že je nezbytně nutné, jako pro modely (*.mdl) a pro animace (*.ani). Pro tyto typy prostředků Urho poskytuje převaděč - [AssetImporter](http://urho3d.github.io/documentation/1.4/_tools.html) které můžou využívat mnoho oblíbených formátů 3D například fbx, dae, 3ds a obj atd.
 
-Existuje také užitečné add-in pro digestoru [https://github.com/reattiva/Urho3D-Blender](https://github.com/reattiva/Urho3D-Blender) , můžete exportovat vaše prostředky digestoru ve formátu, který je vhodný pro Urho3D.
+Existuje také užitečné add-in pro digestoru [ https://github.com/reattiva/Urho3D-Blender ](https://github.com/reattiva/Urho3D-Blender) , můžete exportovat vaše prostředky digestoru ve formátu, který je vhodný pro Urho3D.
 
 ## <a name="background-loading-of-resources"></a>Načítání na pozadí prostředků
 
@@ -529,7 +528,7 @@ soundSource.AutoRemove = true;
 
 # <a name="particles"></a>Částice
 
-Částice poskytují jednoduchý způsob přidání některé jednoduché a nenákladné efekty do vaší aplikace.  Můžete využívat částice uložený ve formátu nástroje PEX pomocí nástroje, například [http://onebyonedesign.com/flash/particleeditor/](http://onebyonedesign.com/flash/particleeditor/).
+Částice poskytují jednoduchý způsob přidání některé jednoduché a nenákladné efekty do vaší aplikace.  Můžete využívat částice uložený ve formátu nástroje PEX pomocí nástroje, například [ http://onebyonedesign.com/flash/particleeditor/ ](http://onebyonedesign.com/flash/particleeditor/).
 
 Částice jsou komponenty, které mohou být přidány do uzlu.  Je třeba volat uzlu `CreateComponent<ParticleEmitter2D>` metoda vytvoření částice a pak nastavte částice pomocí nastavení vlastnosti vliv na 2D vliv, který je načten z mezipaměti prostředků.
 

@@ -1,18 +1,17 @@
 ---
-title: "Možnosti skupiny aplikací"
-description: "Přidání funkcí do aplikace často vyžaduje další nastavení zřizování. Tato příručka vysvětluje nastavení potřebná pro funkce aplikace skupiny."
-ms.topic: article
+title: Možnosti skupiny aplikací
+description: Přidání funkcí do aplikace často vyžaduje další nastavení zřizování. Tato příručka vysvětluje nastavení potřebná pro funkce aplikace skupiny.
 ms.prod: xamarin
 ms.assetid: 0A61220B-BBAC-492B-9D3B-578986E64064
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: 687c894fbda8dc8b7c6aceb7eef73971b50de57e
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: f0c6cb1a080e05cfa60af72c4140f7109e3c37b4
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="app-group-capabilities"></a>Možnosti skupiny aplikací
 
@@ -34,7 +33,7 @@ Pokud chcete vytvořit novou skupinu aplikací, postupujte takto:
 
 1.  Navštivte společnosti Apple [iOS Developer Center](https://developer.apple.com/account/), otevřete váš **účet** a přihlaste se.
 2.  Vyberte **certifikáty, identifikátory a profily**.
-3.  V části **identifikátory** vyberte **skupin aplikací** a klikněte na tlačítko  **+**  tlačítko vytvořte novou skupinu.
+3.  V části **identifikátory** vyberte **skupin aplikací** a klikněte na tlačítko **+** tlačítko vytvořte novou skupinu.
 4.  Zadejte **název** a **identifikátor** pro nové skupiny a klikněte na **pokračovat** tlačítko: 
    
     ![Podrobnosti o přidání skupiny aplikací](app-groups-capabilities-images/image52.png)
@@ -49,7 +48,7 @@ Postupujte takto:
 
 1.  Navštivte společnosti Apple [iOS Developer Center](https://developer.apple.com/account/)a přihlaste se pomocí účtu vývojáře Apple.
 2.  Z **Program prostředky** nabídce vyberte možnost **certifikáty, identifikátory a profily**.
-3.  V části **identifikátory** vyberte **ID aplikace** a klikněte na  **+**  tlačítko pro vytvoření nového ID.
+3.  V části **identifikátory** vyberte **ID aplikace** a klikněte na **+** tlačítko pro vytvoření nového ID.
 4.  Zadejte název pro ID aplikace a pojmenujte ho ID explicitní aplikace.
 5.  V části **App Services** povolit **skupin aplikací**, klikněte na tlačítko Pokračovat:
 

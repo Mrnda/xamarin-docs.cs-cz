@@ -1,18 +1,17 @@
 ---
-title: "Související dokumentace"
-description: "Odkazy na další dokumentaci pro vývojáře v systému macOS."
-ms.topic: article
+title: Související dokumentace
+description: Odkazy na další dokumentaci pro vývojáře v systému macOS.
 ms.prod: xamarin
 ms.assetid: 0a282c58-1c37-4f73-8440-85de2daf454a
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/02/2016
-ms.openlocfilehash: 000061d8ed884f1eb248517c6131ec49134cb8a1
-ms.sourcegitcommit: 6cd40d190abe38edd50fc74331be15324a845a28
+ms.openlocfilehash: ff26747a395b48163dbabf0b058f28427182d41a
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="related-documentation"></a>Související dokumentace
 
@@ -31,10 +30,10 @@ Při práci s C# a rozhraní .NET v aplikaci Xamarin.Mac vývojář má přístu
 Příručky níže uvedené poskytnout podrobné informace o práci s systému macOS prvků v aplikaci Xamarin.Mac:
 
 - [Windows](~/mac/user-interface/window.md)
-- [Dialogová okna](~/mac/user-interface/dialog.md)
-- [Výstrahy](~/mac/user-interface/alert.md)
+- [Dialogy](~/mac/user-interface/dialog.md)
+- [Upozornění](~/mac/user-interface/alert.md)
 - [Nabídky](~/mac/user-interface/menu.md)
 - [Panely nástrojů](~/mac/user-interface/toolbar.md)
 - [Zobrazení tabulek](~/mac/user-interface/table-view.md)
-- [Zobrazení osnovy](~/mac/user-interface/outline-view.md)
-- [Zdroj seznamy](~/mac/user-interface/source-list.md)
+- [Zobrazení osnov](~/mac/user-interface/outline-view.md)
+- [Seznamy zdrojů](~/mac/user-interface/source-list.md)

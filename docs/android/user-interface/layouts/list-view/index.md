@@ -1,18 +1,17 @@
 ---
 title: ListView
-description: "ListView je důležitou součástí uživatelského rozhraní aplikace pro Android; Umožňuje everywhere z krátké seznamy možností v nabídce dlouhými seznamy kontaktů nebo Oblíbené položky. Poskytuje jednoduchý způsob, jak posouvání seznam řádků, které může být naformátovaný předdefinovaný styl, nebo podob, k dispozici."
-ms.topic: article
+description: ListView je důležitou součástí uživatelského rozhraní aplikace pro Android; Umožňuje everywhere z krátké seznamy možností v nabídce dlouhými seznamy kontaktů nebo Oblíbené položky. Poskytuje jednoduchý způsob, jak posouvání seznam řádků, které může být naformátovaný předdefinovaný styl, nebo podob, k dispozici.
 ms.prod: xamarin
 ms.assetid: C2BA2705-9B20-01C2-468D-860BDFEDC157
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/21/2018
-ms.openlocfilehash: 4225e45ecfe4a4a2cdb7e75b94823fc8fcd29fc4
-ms.sourcegitcommit: 73bd0c7e5f237f0a1be70a6c1384309bb26609d5
+ms.openlocfilehash: 8499b9f186c12df22518893b6677cab22f0a3568
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="listview"></a>ListView
 

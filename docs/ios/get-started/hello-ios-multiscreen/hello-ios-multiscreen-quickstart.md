@@ -1,18 +1,18 @@
 ---
 title: Hello, iOS Multiscreen
-description: "V této příručce dvě části jsme rozbalte Phoneword aplikaci, kterou jsme vytvořili v Hello, iOS Průvodce pro zpracování druhý obrazovky. Přitom zavedeme budete návrhový vzor Model-View-Controller implementovat naše první navigační iOS a vyvíjet lépe pochopili, struktury aplikace iOS a funkce."
-ms.topic: article
+description: V této příručce dvě části jsme rozbalte Phoneword aplikaci, kterou jsme vytvořili v Hello, iOS Průvodce pro zpracování druhý obrazovky. Přitom zavedeme budete návrhový vzor Model-View-Controller implementovat naše první navigační iOS a vyvíjet lépe pochopili, struktury aplikace iOS a funkce.
+ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: d72e6230-c9ee-4bee-90ec-877d256821aa
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/02/2016
-ms.openlocfilehash: d4b7439448d5c25aacf991c89a188086c95a44ac
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: 3b59b942b3c256418d60436a1c4ba8b4aea14aa4
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="helloios-multiscreen-quickstart"></a>Hello.iOS Multiobrazovka rychlý start
 
