@@ -5,17 +5,17 @@ title: Dokumentace pro Xamarin
 description: Xamarin umožňuje vytvářet nativní aplikace pro Android, iOS a macOS pomocí kódu technologie .NET a uživatelských rozhraní specifických pro danou platformu. Xamarin.Forms umožňuje vytvářet nativní aplikace se sdíleným kódem uživatelského rozhraní napsané v jazycích C# nebo XAML.
 featureFlags:
 - clicktale
-ms.openlocfilehash: d73b8165fc1a71fbfe3202f694c4653788ccfb28
-ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+ms.openlocfilehash: de03c1bd1b7874e6a837fbbb9e88a353f19afca5
+ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/03/2018
 ---
 <div id="main" class="v2">
     <div class="container">
         <ul class="cardsY panelContent featuredContent">
             <li>
-                <a href="~/cross-platform/get-started/index.md">
+                <a href="~/xamarin-forms/get-started/index.md">
                     <div class="cardSize">
                         <div class="cardPadding">
                             <div class="card">
@@ -80,10 +80,10 @@ ms.lasthandoff: 03/15/2018
                 <a href="#platforms">Platformy</a>
                 <ul id="platforms">
                     <li>
-                        <a data-default="true" href="#Cross-Platform">Pro různé platformy</a>
-                        <ul id="Cross-Platform" class="cardsC">
+                        <a data-default="true" href="#XamarinForms">Xamarin.Forms</a>
+                        <ul id="XamarinForms" class="cardsC">
                             <li>
-                                <a href="~/cross-platform/get-started/index.md">
+                                <a href="~/xamarin-forms/get-started/index.md">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -94,7 +94,7 @@ ms.lasthandoff: 03/15/2018
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Začínáme</h3>
-                                                    <p>Začněte vytvářet multiplatformní aplikace pro desktop a mobilní platformy pomocí Xamarinu pro Android, iOS, macOS, UPW a další.</p>
+                                                    <p>Kurzy, které vám pomůžou začít pracovat se Xamarin.Forms Ujistěte se, že všechno je správně nainstalované, a vytvořte svoji první aplikaci.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -102,18 +102,18 @@ ms.lasthandoff: 03/15/2018
                                 </a>
                             </li>
                             <li>
-                                <a href="~/cross-platform/app-fundamentals/index.md">
+                                <a href="~/xamarin-forms/app-fundamentals/index.md">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Application Fundamentals" src="~/media/index/xamarin-cross-platform-fundamentals.svg?branch=master" data-linktype="external">
+                                                        <img alt="Application Fundamentals" src="~/media/index/xamarin-forms-fundamentals.svg?branch=master" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Principy aplikací</h3>
-                                                    <p>Naučte se základy psaní kódu, který slouží pro základní úkoly, jako je zpracování souborů, obrázků apod., a dá se i sdílet.</p>
+                                                    <p>Vše, co potřebujete vědět k vytváření aplikací, třeba práce se soubory, obrázky, databázemi a dalšími prostředky</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -121,18 +121,18 @@ ms.lasthandoff: 03/15/2018
                                 </a>
                             </li>
                             <li>
-                                <a href="~/cross-platform/platform/index.md">
+                                <a href="~/xamarin-forms/user-interface/index.md">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Platform Features" src="~/media/index/xamarin-cross-platform-platform-features.svg?branch=master" data-linktype="external">
+                                                        <img alt="User Interface" src="~/media/index/xamarin-forms-ui.svg?branch=master" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Funkce platformy</h3>
-                                                    <p>Práce s funkcemi konkrétních platforem, jako je FaceID a ARKit a nejnovější funkce iOS</p>
+                                                    <h3>Uživatelské rozhraní</h3>
+                                                    <p>Další informace o ovládacích prvcích uživatelského rozhraní dostupných na platformách Android, iOS a Windows</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -140,7 +140,45 @@ ms.lasthandoff: 03/15/2018
                                 </a>
                             </li>
                             <li>
-                                <a href="~/cross-platform/deploy-test/index.md">
+                                <a href="~/xamarin-forms/xaml/index.md">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter x-hidden-focus">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img alt="Xamarin.Forms XAML" src="~/media/index/xamarin-forms-xaml.svg?branch=master" data-linktype="external">
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>XAML</h3>
+                                                    <p>Deklarativní vyjádření multiplatformních uživatelských rozhraní pomocí jazyka XAML</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="~/xamarin-forms/platform/index.md">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter x-hidden-focus">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img alt="Platform Features" src="~/media/index/xamarin-forms-platform-features.svg?branch=master" data-linktype="external">
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>Funkce platformy</h3>
+                                                    <p>Práce s funkcemi konkrétní platformy – Android, iOS a Windows</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="~/xamarin-forms/deploy-test/index.md">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -151,7 +189,7 @@ ms.lasthandoff: 03/15/2018
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Nasazení a testování</h3>
-                                                    <p>Vytváření a nasazování aplikací pro různé platformy</p>
+                                                    <p>Pokyny pro vytváření a nasazování aplikací a tipy, jak je s předstihem testovat</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -159,18 +197,18 @@ ms.lasthandoff: 03/15/2018
                                 </a>
                             </li>
                             <li>
-                                <a href="~/cross-platform/internals/index.md">
+                                <a href="~/xamarin-forms/internals/index.md">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Advanced Concepts and Internals" src="~/media/index/xamarin-cross-platform-advanced-topics.svg?branch=master" data-linktype="external">
+                                                        <img alt="Advanced Concepts and Internals" src="~/media/index/xamarin-forms-internals.svg?branch=master" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Pokročilé koncepty a vnitřní fungování</h3>
-                                                    <p>Další informace o tom, jak Xamarin funguje uvnitř, a pomoc s funkcemi jako lokalizace a přístupnost</p>
+                                                    <p>Jak funguje Xamarin.Forms</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -178,7 +216,26 @@ ms.lasthandoff: 03/15/2018
                                 </a>
                             </li>
                             <li>
-                                <a href="~/cross-platform/samples/index.yml">
+                                <a href="~/xamarin-forms/data-cloud/index.md">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter x-hidden-focus">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img alt="Data and Cloud Services" src="~/media/index/xamarin-forms-data-cloud.svg?branch=master" data-linktype="external">
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>Datové a cloudové služby</h3>
+                                                    <p>Úložiště dat a přístup ke cloudovým službám, jako je například Microsoft Azure</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="~/xamarin-forms/samples/index.yml">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -188,8 +245,46 @@ ms.lasthandoff: 03/15/2018
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Ukázky kódu</h3>
-                                                    <p>Multiplatformní předem připravené aplikace, které vám umožní vyzkoušet si Xamarin</p>
+                                                    <h3>Ukázkové aplikace</h3>
+                                                    <p>Hotové aplikace a ukázky kódů pro Xamarin.Forms, které se dají spustit na Androidu, iOS a ve Windows</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter x-hidden-focus">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img alt="Mobile Apps Book" src="~/media/index/xamarin-forms-ebook.svg?branch=master" data-linktype="external">
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>Kniha Mobile Apps</h3>
+                                                    <p>Pomocí této knihy a ukázkám se můžete naučit Xamarin.Forms krok za krokem.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="~/xamarin-forms/enterprise-application-patterns/index.md">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter x-hidden-focus">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img alt="Enterprise Patterns eBook" src="~/media/index/xamarin-forms-enterprise.svg?branch=master" data-linktype="external">
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>Elektronická kniha Enterprise</h3>
+                                                    <p>Informace o architektuře pro vývoj přizpůsobitelných, udržovatelných a testovatelných podnikových aplikací v Xamarin.Forms</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -250,7 +345,7 @@ ms.lasthandoff: 03/15/2018
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Uživatelské rozhraní</h3>
+                                                    <h3>Uživatelské rozhraní Androidu</h3>
                                                     <p>Informace o všech widgetech uživatelského rozhraní dostupných na Androidu</p>
                                                 </div>
                                             </div>
@@ -269,7 +364,7 @@ ms.lasthandoff: 03/15/2018
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Funkce platformy</h3>
+                                                    <h3>Funkce platformy Android</h3>
                                                     <p>Práce s funkcemi konkrétní platformy a nejnovějšími funkcemi Androidu</p>
                                                 </div>
                                             </div>
@@ -388,7 +483,7 @@ ms.lasthandoff: 03/15/2018
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Začínáme</h3>
+                                                    <h3>Začínáme s iOSem</h3>
                                                     <p>Kurzy, které vám pomůžou začít pracovat se Xamarin.iOSem Ujistěte se, že všechno je správně nainstalované, a vytvořte svoji první aplikaci.</p>
                                                 </div>
                                             </div>
@@ -426,7 +521,7 @@ ms.lasthandoff: 03/15/2018
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Uživatelské rozhraní</h3>
+                                                    <h3>Uživatelské rozhraní iOSu</h3>
                                                     <p>Informace o všech ovládacích prvcích UIKit dostupných v iOSu</p>
                                                 </div>
                                             </div>
@@ -445,7 +540,7 @@ ms.lasthandoff: 03/15/2018
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Funkce platformy</h3>
+                                                    <h3>Funkce platformy iOS</h3>
                                                     <p>Práce s funkcemi konkrétních platforem, jako je FaceID a ARKit a nejnovější funkce iOS</p>
                                                 </div>
                                             </div>
@@ -583,7 +678,7 @@ ms.lasthandoff: 03/15/2018
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Začínáme</h3>
+                                                    <h3>Začínáme s Macem</h3>
                                                     <p>Kurzy, které vám pomůžou začít pracovat se Xamarin.Macem Ujistěte se, že všechno je správně nainstalované, a vytvořte svoji první aplikaci.</p>
                                                 </div>
                                             </div>
@@ -621,7 +716,7 @@ ms.lasthandoff: 03/15/2018
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Uživatelské rozhraní</h3>
+                                                    <h3>Uživatelské rozhraní Macu</h3>
                                                     <p>Informace o všech ovládacích prvcích AppKit dostupných v macOSu</p>
                                                 </div>
                                             </div>
@@ -636,11 +731,11 @@ ms.lasthandoff: 03/15/2018
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Platform Features" src="~/media/index/xamarin-mac-platform-features.svg?branch=master" data-linktype="external">
+                                                        <img alt="Mac Platform Features" src="~/media/index/xamarin-mac-platform-features.svg?branch=master" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Funkce platformy</h3>
+                                                    <h3>Funkce platformy Mac</h3>
                                                     <p>Práce s funkcemi konkrétní platformy a nejnovějšími funkcemi macOSu</p>
                                                 </div>
                                             </div>
@@ -708,10 +803,10 @@ ms.lasthandoff: 03/15/2018
                         </ul>
                     </li>
                     <li>
-                        <a data-default="true" href="#XamarinForms">Xamarin.Forms</a>
-                        <ul id="XamarinForms" class="cardsC">
+                        <a data-default="true" href="#Cross-Platform">Pro různé platformy</a>
+                        <ul id="Cross-Platform" class="cardsC">
                             <li>
-                                <a href="~/xamarin-forms/get-started/index.md">
+                                <a href="~/cross-platform/get-started/index.md">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -722,7 +817,7 @@ ms.lasthandoff: 03/15/2018
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Začínáme</h3>
-                                                    <p>Kurzy, které vám pomůžou začít pracovat se Xamarin.Forms Ujistěte se, že všechno je správně nainstalované, a vytvořte svoji první aplikaci.</p>
+                                                    <p>Začněte vytvářet multiplatformní aplikace pro desktop a mobilní platformy pomocí Xamarinu pro Android, iOS, macOS, UPW a další.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -730,18 +825,18 @@ ms.lasthandoff: 03/15/2018
                                 </a>
                             </li>
                             <li>
-                                <a href="~/xamarin-forms/app-fundamentals/index.md">
+                                <a href="~/cross-platform/app-fundamentals/index.md">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Application Fundamentals" src="~/media/index/xamarin-forms-fundamentals.svg?branch=master" data-linktype="external">
+                                                        <img alt="Application Fundamentals" src="~/media/index/xamarin-cross-platform-fundamentals.svg?branch=master" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Principy aplikací</h3>
-                                                    <p>Vše, co potřebujete vědět k vytváření aplikací, třeba práce se soubory, obrázky, databázemi a dalšími prostředky</p>
+                                                    <p>Naučte se základy psaní kódu, který slouží pro základní úkoly, jako je zpracování souborů, obrázků apod., a dá se i sdílet.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -749,56 +844,18 @@ ms.lasthandoff: 03/15/2018
                                 </a>
                             </li>
                             <li>
-                                <a href="~/xamarin-forms/user-interface/index.md">
+                                <a href="~/cross-platform/platform/index.md">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="User Interface" src="~/media/index/xamarin-forms-ui.svg?branch=master" data-linktype="external">
-                                                    </div>
-                                                </div>
-                                                <div class="cardText">
-                                                    <h3>Uživatelské rozhraní</h3>
-                                                    <p>Další informace o ovládacích prvcích uživatelského rozhraní dostupných na všech podporovaných platformách</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="~/xamarin-forms/xaml/index.md">
-                                    <div class="cardSize">
-                                        <div class="cardPadding">
-                                            <div class="card">
-                                                <div class="cardImageOuter x-hidden-focus">
-                                                    <div class="cardImage bgdAccent1">
-                                                        <img alt="Xamarin.Forms XAML" src="~/media/index/xamarin-forms-xaml.svg?branch=master" data-linktype="external">
-                                                    </div>
-                                                </div>
-                                                <div class="cardText">
-                                                    <h3>XAML</h3>
-                                                    <p>Deklarativní vyjádření multiplatformních uživatelských rozhraní pomocí jazyka XAML</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="~/xamarin-forms/platform/index.md">
-                                    <div class="cardSize">
-                                        <div class="cardPadding">
-                                            <div class="card">
-                                                <div class="cardImageOuter x-hidden-focus">
-                                                    <div class="cardImage bgdAccent1">
-                                                        <img alt="Platform Features" src="~/media/index/xamarin-forms-platform-features.svg?branch=master" data-linktype="external">
+                                                        <img alt="Platform Features" src="~/media/index/xamarin-cross-platform-platform-features.svg?branch=master" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Funkce platformy</h3>
-                                                    <p>Práce s funkcemi konkrétní platformy – Android, iOS a Windows</p>
+                                                    <p>Práce s funkcemi konkrétních platforem, jako je FaceID a ARKit a nejnovější funkce iOS</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -806,7 +863,7 @@ ms.lasthandoff: 03/15/2018
                                 </a>
                             </li>
                             <li>
-                                <a href="~/xamarin-forms/deploy-test/index.md">
+                                <a href="~/cross-platform/deploy-test/index.md">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -817,7 +874,7 @@ ms.lasthandoff: 03/15/2018
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Nasazení a testování</h3>
-                                                    <p>Pokyny pro vytváření a nasazování aplikací a tipy, jak je s předstihem testovat</p>
+                                                    <p>Vytváření a nasazování aplikací pro různé platformy</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -825,45 +882,7 @@ ms.lasthandoff: 03/15/2018
                                 </a>
                             </li>
                             <li>
-                                <a href="~/xamarin-forms/internals/index.md">
-                                    <div class="cardSize">
-                                        <div class="cardPadding">
-                                            <div class="card">
-                                                <div class="cardImageOuter x-hidden-focus">
-                                                    <div class="cardImage bgdAccent1">
-                                                        <img alt="Advanced Concepts and Internals" src="~/media/index/xamarin-forms-internals.svg?branch=master" data-linktype="external">
-                                                    </div>
-                                                </div>
-                                                <div class="cardText">
-                                                    <h3>Pokročilé koncepty a vnitřní fungování</h3>
-                                                    <p>Jak funguje Xamarin.Forms</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="~/xamarin-forms/data-cloud/index.md">
-                                    <div class="cardSize">
-                                        <div class="cardPadding">
-                                            <div class="card">
-                                                <div class="cardImageOuter x-hidden-focus">
-                                                    <div class="cardImage bgdAccent1">
-                                                        <img alt="Data and Cloud Services" src="~/media/index/xamarin-forms-data-cloud.svg?branch=master" data-linktype="external">
-                                                    </div>
-                                                </div>
-                                                <div class="cardText">
-                                                    <h3>Datové a cloudové služby</h3>
-                                                    <p>Úložiště dat a přístup ke cloudovým službám</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="~/xamarin-forms/samples/index.yml">
+                                <a href="~/cross-platform/samples/index.yml">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -873,46 +892,8 @@ ms.lasthandoff: 03/15/2018
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Ukázkové aplikace</h3>
-                                                    <p>Hotové aplikace a ukázky kódů pro Xamarin.Forms, které se dají spustit na Androidu, iOS a ve Windows</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md">
-                                    <div class="cardSize">
-                                        <div class="cardPadding">
-                                            <div class="card">
-                                                <div class="cardImageOuter x-hidden-focus">
-                                                    <div class="cardImage bgdAccent1">
-                                                        <img alt="Mobile Apps Book" src="~/media/index/xamarin-forms-ebook.svg?branch=master" data-linktype="external">
-                                                    </div>
-                                                </div>
-                                                <div class="cardText">
-                                                    <h3>Kniha Mobile Apps</h3>
-                                                    <p>Pomocí této knihy a ukázkám se můžete naučit Xamarin.Forms krok za krokem.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="~/xamarin-forms/enterprise-application-patterns/index.md">
-                                    <div class="cardSize">
-                                        <div class="cardPadding">
-                                            <div class="card">
-                                                <div class="cardImageOuter x-hidden-focus">
-                                                    <div class="cardImage bgdAccent1">
-                                                        <img alt="Enterprise Patterns eBook" src="~/media/index/xamarin-forms-enterprise.svg?branch=master" data-linktype="external">
-                                                    </div>
-                                                </div>
-                                                <div class="cardText">
-                                                    <h3>Elektronická kniha Enterprise</h3>
-                                                    <p>Informace o architektuře pro vývoj přizpůsobitelných, udržovatelných a testovatelných podnikových aplikací v Xamarin.Forms</p>
+                                                    <h3>Ukázky kódu</h3>
+                                                    <p>Multiplatformní předem připravené aplikace, které vám umožní vyzkoušet si Xamarin</p>
                                                 </div>
                                             </div>
                                         </div>
