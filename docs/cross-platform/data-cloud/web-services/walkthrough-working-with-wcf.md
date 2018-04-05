@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 02/17/2018
-ms.openlocfilehash: 7f6885415e1b5e0c988d13fe331703213b9b8fb7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1b317c4c82ec736c7f4c8306036e43cf04086a82
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="walkthrough---working-with-wcf"></a>Návod - práce s použitím technologie WCF
 
@@ -167,7 +167,6 @@ Hostování místně WCF je dostačující, pokud připojení pouze vycházejí 
 1. Začněme tím, že nakonfigurujete službu IIS Express k naslouchání požadavkům externí. Jsme můžete to provést úpravou konfiguračního souboru pro službu IIS Express na `[solutiondirectory]\.vs\config\applicationhost.config`, jak je znázorněno na následujícím snímku obrazovky:
 
     [![](walkthrough-working-with-wcf-images/image05.png "Jsme můžete to provést úpravou konfiguračního souboru pro službu IIS Express na solutiondirectory.vsconfigapplicationhost.config, jak je vidět na tomto snímku obrazovky")](walkthrough-working-with-wcf-images/image05.png#lightbox)
-
 
     Vyhledejte `site` element s názvem `HelloWorldWcfHost`. Měl by vypadat nějak podobně jako následující fragment kódu XML:
 

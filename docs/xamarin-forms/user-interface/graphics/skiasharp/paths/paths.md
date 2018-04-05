@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 3a828baccda83822237d2564d771bcd89c9099e5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b2881148631435c9082b42cad0e784100b010b46
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="path-basics"></a>Základy cesta
 
@@ -50,7 +50,7 @@ Argument této metody je jediný bod, který můžete buď jako express `SKPoint
 
 Obrysem končí jiným voláním `MoveTo` nebo `RMoveTo`, začínající nové obrysem nebo volání `Close`, který zavře Kontury. `Close` Metoda automaticky připojí přímky z aktuální bodu první bodem Kontury a označí cestu jako zavřené, což znamená, že bude vykreslen bez jakékoli tahu CAP k vzdálené ploše.
 
-Rozdíl mezi otevřené a uzavřené rozvrhů je znázorněn na následujícím **dva profily okrajů trojúhelníček** stránky, které používá `SKPath` objekt s dva profily okrajů k vykreslení dvě trojúhelníčky. První obrysem je otevřený a druhý je uzavřený. Tady je [ `TwoTriangleContours` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/TwoTriangleContoursPage.cs) třídy:
+Rozdíl mezi otevřené a uzavřené rozvrhů je znázorněn na následujícím **dva profily okrajů trojúhelníček** stránky, které používá `SKPath` objekt s dva profily okrajů k vykreslení dvě trojúhelníčky. První obrysem je otevřený a druhý je uzavřený. Tady je [ `TwoTriangleContours` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/TwoTriangleContoursPage.cs) třídy:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -122,7 +122,7 @@ Stejně jako vzhled začátku a konci řádku je definované zakončení tahu, j
 - [`Round`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeJoin.Round/) pro zaokrouhlené spojení
 - [`Bevel`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeJoin.Bevel/) pro připojení k chopped vypnout
 
-**Tahu spojení** stránka zobrazuje tyto tři obtažení spojení s kódem podobně jako **tahu CAP k vzdálené ploše** stránky. Toto je `PaintSurface` obslužné rutiny událostí v [ `StrokeJoinsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/StrokeJoinsPage.cs) třídy:
+**Tahu spojení** stránka zobrazuje tyto tři obtažení spojení s kódem podobně jako **tahu CAP k vzdálené ploše** stránky. Toto je `PaintSurface` obslužné rutiny událostí v [ `StrokeJoinsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/StrokeJoinsPage.cs) třídy:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

@@ -7,11 +7,11 @@ ms.assetid: BD28ADA1-49F9-44E2-A548-46024A29882F
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 573848186a8f389ac18e22ea4c3b7d4fe1503449
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 98bf81df3eed951893c6bb717d933cfb61e029d3
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="the-translate-transform"></a>Transformace přeložit
 
@@ -35,7 +35,7 @@ Tyto argumenty může mít zápornou hodnotu. Druhý [ `Translate` ](https://dev
 public void Translate (SKPoint point)
 ```
 
-**Nahromadění převede** stránky [ **SkiaSharpForms** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) ukázka programu ukazuje, že více volá z `Translate` metoda jsou kumulativní. [ `AccumulatedTranslate` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/AccumulatedTranslatePage.cs) Třída zobrazí 20 verze stejné obdélníku, každé z nich posun z předchozí rámeček právě dostatek tak jejich funkce stretch společně diagonálních. Tady je `PaintSurface` obslužné rutiny události:
+**Nahromadění převede** stránky [ **SkiaSharpForms** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) ukázka programu ukazuje, že více volá z `Translate` metoda jsou kumulativní. [ `AccumulatedTranslate` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/AccumulatedTranslatePage.cs) Třída zobrazí 20 verze stejné obdélníku, každé z nich posun z předchozí rámeček právě dostatek tak jejich funkce stretch společně diagonálních. Tady je `PaintSurface` obslužné rutiny události:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -78,7 +78,7 @@ y' = y + dy
 
 Toto jsou známé jako *transformace vzorce* pro překlad. Výchozí hodnoty `dx` a `dy` pro novou `SKCanvas` mají hodnotu 0.
 
-Je běžné pro použití transformace přeložit pro stínové efekty a podobné techniky, jako **převede Text důsledky** ukazuje stránky. Tady je příslušné části `PaintSurface` obslužné rutiny v [ `TranslateTextEffectsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/TranslateTextEffectsPage.cs) třídy:
+Je běžné pro použití transformace přeložit pro stínové efekty a podobné techniky, jako **převede Text důsledky** ukazuje stránky. Tady je příslušné části `PaintSurface` obslužné rutiny v [ `TranslateTextEffectsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TranslateTextEffectsPage.cs) třídy:
 
 ```csharp
 float textSize = 150;
@@ -137,7 +137,7 @@ Třetí příklad uloží stav v z `SKCanvas` objekt s volání [ `Save` ](https
 
 Však nemusíte si dělat starosti o transformací přenesou z jednoho volání `PaintSurface` obslužné rutiny na další. Každé nové volání na `PaintSurface` přináší čerstvou `SKCanvas` objekt s výchozí transformace.
 
-Další běžné použití `Translate` transformace je pro vykreslování vizuální objekt, který byl původně vytvořen pomocí souřadnic, které jsou vhodné pro kreslení. Můžete například chtít zadat souřadnice analogovým hodiny center v bodě (0, 0). Potom můžete transformace můžete ho zobrazit požadované místo. Tento postup je znázorněn v [**Hendecagram pole**] stránky. [ `HendecagramArrayPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/HendecagramPage.cs) Třída začíná vytvořením `SKPath` objekt pro odkazoval 11 hvězdičky. `HendecagramPath` Objektu je definována jako veřejné statické a jen pro čtení tak, aby byla přístupná z jiných aplikací ukázka. Je vytvořen ve statického konstruktoru:
+Další běžné použití `Translate` transformace je pro vykreslování vizuální objekt, který byl původně vytvořen pomocí souřadnic, které jsou vhodné pro kreslení. Můžete například chtít zadat souřadnice analogovým hodiny center v bodě (0, 0). Potom můžete transformace můžete ho zobrazit požadované místo. Tento postup je znázorněn v [**Hendecagram pole**] stránky. [ `HendecagramArrayPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/HendecagramPage.cs) Třída začíná vytvořením `SKPath` objekt pro odkazoval 11 hvězdičky. `HendecagramPath` Objektu je definována jako veřejné statické a jen pro čtení tak, aby byla přístupná z jiných aplikací ukázka. Je vytvořen ve statického konstruktoru:
 
 ```csharp
 public class HendecagramArrayPage : ContentPage
@@ -211,7 +211,7 @@ Tady je výsledek:
 
 [![](translate-images/hendecagramarray-small.png "Trojitá snímek obrazovky stránky pole Hendecagram")](translate-images/hendecagramarray-large.png#lightbox "Trojitá snímek obrazovky stránky Hendecagram pole")
 
-Animace často zahrnuje transformací. **Hendecagram animace** stránky přesune hvězdičky odkazoval 11 v kruh. [ `HendecagramAnimationPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/HendecagramAnimationPage.cs) Třídy začíná některá pole a přepsání `OnAppearing` a `OnDisappearing` metody pro spuštění a zastavení Xamarin.Forms časovače:
+Animace často zahrnuje transformací. **Hendecagram animace** stránky přesune hvězdičky odkazoval 11 v kruh. [ `HendecagramAnimationPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/HendecagramAnimationPage.cs) Třídy začíná některá pole a přepsání `OnAppearing` a `OnDisappearing` metody pro spuštění a zastavení Xamarin.Forms časovače:
 
 ```csharp
 public class HendecagramAnimationPage : ContentPage

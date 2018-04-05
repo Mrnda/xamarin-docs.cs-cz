@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 09/12/2017
-ms.openlocfilehash: 998c804f02eed808c0a1493b054e754a7670aa70
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 82ac4ea49462c7520219e1a621ea3946297b1b45
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="path-information-and-enumeration"></a>Informace o cestě a – výčet
 
@@ -31,7 +31,7 @@ V článku [ **cesty a Text** ](~/xamarin-forms/user-interface/graphics/skiashar
 
 [ `SKPathMeasure` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathMeasure/) Může pomoci třídy. [Konstruktor](https://developer.xamarin.com/api/constructor/SkiaSharp.SKPathMeasure.SKPathMeasure/p/SkiaSharp.SKPath/System.Boolean/System.Single/) přijímá `SKPath` argument a [ `Length` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPathMeasure.Length/) vlastnost zjistí jeho délka.
 
-Tento postup je znázorněn v **délka cesty** ukázka, která je založena na **Bézierovu křivku** stránky. [ **PathLengthPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml) souboru je odvozena z `InteractivePage` a zahrnuje touch rozhraní:
+Tento postup je znázorněn v **délka cesty** ukázka, která je založena na **Bézierovu křivku** stránky. [ **PathLengthPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml) souboru je odvozena z `InteractivePage` a zahrnuje touch rozhraní:
 
 ```xaml
 <local:InteractivePage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -52,7 +52,7 @@ Tento postup je znázorněn v **délka cesty** ukázka, která je založena na *
 </local:InteractivePage>
 ```
 
-[ **PathLengthPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml.cs) souboru kódu umožňuje přesunout čtyři body touch definovat koncové body a body Bézierovy křivky krychlový ovládání. Tři pole definovat textového řetězce, `SKPaint` objekt a počítané šířka textu:
+[ **PathLengthPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml.cs) souboru kódu umožňuje přesunout čtyři body touch definovat koncové body a body Bézierovy křivky krychlový ovládání. Tři pole definovat textového řetězce, `SKPaint` objekt a počítané šířka textu:
 
 ```csharp
 public partial class PathLengthPage : InteractivePage
@@ -242,7 +242,7 @@ Některé z informací v `SKPoint` pole je redundantní. Například pokud `Move
 
 Problematické operace, je však `Close`. Tento příkaz vloží přímou čáru od aktuální pozice na začátek obrysem dříve nástrojem navázat `Move` příkaz. V ideálním případě `Close` operace by měl poskytovat tyto dva body spíše než jenom jeden bod. Co je zhoršení je, že bod doplňujícími `Close` je vždy (0, 0). To znamená, že při vytvoření výčtu prostřednictvím cestu, budete pravděpodobně muset zachovat `Move` bod a aktuální pozici.
 
-Statické [ `PathExtensions` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathExtensions.cs) třída obsahuje několik metod, které převést tři typy Bézierových křivek na řadu jen nepatrnou přímých řádky, které Přibližná křivku. (Čištění vzorce byly uvedené v článku [ **tři typy Bézierových křivek**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/beziers.md).) `Interpolate` Metoda rozpis přímku do mnoha krátké řádky, které jsou pouze jednu jednotku délka:
+Statické [ `PathExtensions` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathExtensions.cs) třída obsahuje několik metod, které převést tři typy Bézierových křivek na řadu jen nepatrnou přímých řádky, které Přibližná křivku. (Čištění vzorce byly uvedené v článku [ **tři typy Bézierových křivek**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/beziers.md).) `Interpolate` Metoda rozpis přímku do mnoha krátké řádky, které jsou pouze jednu jednotku délka:
 
 ```csharp
 static class PathExtensions
@@ -426,7 +426,7 @@ Všimněte si, že metoda zachová první bod každý obrysem v proměnné názv
 
 [![](information-images/globulartext-small.png "Trojitá snímek obrazovky stránky Globular Text")](information-images/globulartext-large.png#lightbox "Trojitá snímek obrazovky stránky Globular Text")
 
-[ `GlobularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/GlobularTextPage.cs) Konstruktoru třídy provede Tato transformace. Vytvoří `SKPaint` objekt pro text a pak získá `SKPath` objektu z `GetTextPath` metoda. Jedná se o cestu předaný `CloneWithTransform` metoda rozšíření spolu s transform funkce: 
+[ `GlobularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/GlobularTextPage.cs) Konstruktoru třídy provede Tato transformace. Vytvoří `SKPaint` objekt pro text a pak získá `SKPath` objektu z `GetTextPath` metoda. Jedná se o cestu předaný `CloneWithTransform` metoda rozšíření spolu s transform funkce: 
 
 ```csharp
 public class GlobularTextPage : ContentPage

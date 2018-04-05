@@ -7,11 +7,11 @@ ms.assetid: 8022FBF9-2208-43DB-94D8-0A4E9A5DA07F
 author: charlespetzold
 ms.author: chape
 ms.date: 06/16/2017
-ms.openlocfilehash: 0451653b4ee5c85b9bcf884b6b5609a251cf577c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 051ceec148a569d00048a661e6ba8dc3ce96fc81
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="clipping-with-paths-and-regions"></a>Výstřižek se cesty a oblasti
 
@@ -23,7 +23,7 @@ V některých případech je potřeba omezit vykreslování grafiky na určitou 
 
 *Výstřižek oblasti* je oblast na obrazovce, ve kterém jsou grafické vykresleny. Všechno, co se zobrazí mimo oblasti výstřižek není vykreslen. Oblasti výstřižek je obvykle definováno [ `SKPath` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath/) objektu, ale můžete taky definovat výstřižek oblasti pomocí [ `SKRegion` ](https://developer.xamarin.com/api/type/SkiaSharp.SKRegion/) objektu. Tyto dva typy objektů v první zdát související, protože oblast můžete vytvořit z cesty. Však možné vytvořit cestu z oblasti a jsou velmi odlišné interně: cesta se skládá z řady čar a křivek, při oblast je definována řadu vodorovné prohledávání řádků.
 
-Byl vytvořen na obrázku výše **opic prostřednictvím klíčové dírky** stránky. [ `MonkeyThroughKeyholePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/MonkeyThroughKeyholePage.cs) Třída definuje cestu pomocí SVG dat a používá konstruktoru načíst rastrový obrázek z programu prostředků:
+Byl vytvořen na obrázku výše **opic prostřednictvím klíčové dírky** stránky. [ `MonkeyThroughKeyholePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/MonkeyThroughKeyholePage.cs) Třída definuje cestu pomocí SVG dat a používá konstruktoru načíst rastrový obrázek z programu prostředků:
 
 ```csharp
 public class MonkeyThroughKeyholePage : ContentPage
@@ -118,7 +118,7 @@ K dispozici je také [ `ClipRect` ](https://developer.xamarin.com/api/member/Ski
 public Void ClipRect(SKRect rect, SKClipOperation operation = SKClipOperation.Intersect, Boolean antialias = false);
 ```
 
-Ve výchozím nastavení, je oblast výsledné výstřižek průnik oblasti existující výstřižek a `SKPath` nebo `SKRect` který je uveden v `ClipPath` nebo `ClipRect` metoda. Tento postup je znázorněn v **čtyři kroužky Intersect klip** stránky. `PaintSurface` Obslužné rutiny v [ `FourCircleInteresectClipPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/FourCircleIntersectClipPage.cs) třída opětovně používá stejný `SKPath` objekt, který chcete vytvořit čtyři překrývající se kruhy, z nichž každý snižuje oblasti výstřižek prostřednictvím následná volání `ClipPath`:
+Ve výchozím nastavení, je oblast výsledné výstřižek průnik oblasti existující výstřižek a `SKPath` nebo `SKRect` který je uveden v `ClipPath` nebo `ClipRect` metoda. Tento postup je znázorněn v **čtyři kroužky Intersect klip** stránky. `PaintSurface` Obslužné rutiny v [ `FourCircleInteresectClipPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/FourCircleIntersectClipPage.cs) třída opětovně používá stejný `SKPath` objekt, který chcete vytvořit čtyři překrývající se kruhy, z nichž každý snižuje oblasti výstřižek prostřednictvím následná volání `ClipPath`:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -183,7 +183,7 @@ Pokud nahradíte čtyři `SKClipOperation.Intersect` argumentů `FourCircleInter
 
 [![](clipping-images//clipoperations-small.png "Trojitá snímek obrazovky stránky klip operace")](clipping-images/clipoperations-large.png#lightbox "Trojitá snímek obrazovky stránky klip operace")
 
-[ `ClipOperationsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ClipOperationsPage.cs) Třída definuje dvě `SKPaint` objektů jako pole a pak rozdělí na obrazovce na dvě obdélníková oblasti. Tyto oblasti se liší v závislosti na tom, jestli je telefonu v režimu na výšku nebo na šířku. `DisplayClipOp` Třída pak zobrazí text a volání `ClipPath` s dvě kruh cesty k objasnění každou operaci klip:
+[ `ClipOperationsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ClipOperationsPage.cs) Třída definuje dvě `SKPaint` objektů jako pole a pak rozdělí na obrazovce na dvě obdélníková oblasti. Tyto oblasti se liší v závislosti na tom, jestli je telefonu v režimu na výšku nebo na šířku. `DisplayClipOp` Třída pak zobrazí text a volání `ClipPath` s dvě kruh cesty k objasnění každou operaci klip:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -286,7 +286,7 @@ Následující snímek obrazovky ukazuje výstřižek oblasti podle činnosti š
 
 Jsou tyto všechny možnosti kombinace těchto dvou kroužky? Vezměte v úvahu bitovou kopii výsledné jako kombinace tří součástí, která jsou zobrazená v samotné `Difference`, `Intersect`, a `ReverseDifference` operace. Celkový počet kombinací je dva třetí mocninu nebo osm. Jsou dva, které chybí oblasti původní (který výsledkem není volání `Op` vůbec) a oblast zcela prázdný.
 
-Je těžší používat oblasti pro výstřižek, protože je třeba nejprve vytvořit cestu a poté v oblasti z této cestě a kombinovat více oblastí. Celková struktura **oblast Operations** stránka je velmi podobné **klip Operations** ale [ `RegionOperationsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/RegionOperationsPage.cs) třída rozděluje obrazovky do šesti oblastí a Zobrazuje navíc práce potřebné pro tuto úlohu použít oblastí:
+Je těžší používat oblasti pro výstřižek, protože je třeba nejprve vytvořit cestu a poté v oblasti z této cestě a kombinovat více oblastí. Celková struktura **oblast Operations** stránka je velmi podobné **klip Operations** ale [ `RegionOperationsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RegionOperationsPage.cs) třída rozděluje obrazovky do šesti oblastí a Zobrazuje navíc práce potřebné pro tuto úlohu použít oblastí:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -370,7 +370,7 @@ To znamená, co je oblast: série vodorovné prohledávání řádků, která de
 
 Ale když je oblast snížen na řadu prohledávání řádků, tyto kontroly, které řádky jsou založeny na dimenzi pixelu. Oblast přesněji řečeno, není objekt vektorové grafiky. Je blíže ve své podstatě komprimované černobílý bitmapy než na cestu. Oblasti v důsledku toho nelze škálovat nebo otáčet bez ztráty věrnosti a z toho důvodu, že nejsou transformovat při použití pro výstřižek oblasti.
 
-Můžete však použít transformací oblasti pro účely Malování. **Oblast Malování** program vividly ukazuje vnitřní povaha oblasti. [ `RegionPaintPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/RegionPaintPage.cs) Třída vytvoří `SKRegion` na základě objektu `SKPath` kruhu 10 jednotky radius. Transformace potom rozšíří tohoto kroužku k zaplnění stránky:
+Můžete však použít transformací oblasti pro účely Malování. **Oblast Malování** program vividly ukazuje vnitřní povaha oblasti. [ `RegionPaintPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RegionPaintPage.cs) Třída vytvoří `SKRegion` na základě objektu `SKPath` kruhu 10 jednotky radius. Transformace potom rozšíří tohoto kroužku k zaplnění stránky:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -427,7 +427,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 Oblast je jasně řadu diskrétní souřadnice.
 
-Pokud nemusíte používat transformací souvislosti s vaší oblasti výstřižek, můžete použít oblasti pro výstřižek, jako **čtyři – listu jetel** ukazuje stránky. [ `FourLeafCloverPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/FourLeafCloverPage.cs) – Třída vytvoří složené oblast z čtyři cyklické oblastí, nastaví tento složený oblasti jako oblasti výstřižek a pak nevykresluje řadu 360 přímky ze středu stránky:
+Pokud nemusíte používat transformací souvislosti s vaší oblasti výstřižek, můžete použít oblasti pro výstřižek, jako **čtyři – listu jetel** ukazuje stránky. [ `FourLeafCloverPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/FourLeafCloverPage.cs) – Třída vytvoří složené oblast z čtyři cyklické oblastí, nastaví tento složený oblasti jako oblasti výstřižek a pak nevykresluje řadu 360 přímky ze středu stránky:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

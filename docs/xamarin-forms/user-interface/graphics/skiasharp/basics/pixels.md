@@ -7,11 +7,11 @@ ms.assetid: 26C25BB8-FBE8-4B77-B01D-16A163A16890
 author: charlespetzold
 ms.author: chape
 ms.date: 02/09/2017
-ms.openlocfilehash: dd9694a05632cd5f37cb583d15bc93311a49cfdc
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e01d3e228a0684865fb09dd7a4cbb0e2f0b49125
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="pixels-and-device-independent-units"></a>Pixelů a jednotky nezávislé na zařízení
 
@@ -31,7 +31,7 @@ Na stránku [ **SkewSharpFormsDemos** ](https://developer.xamarin.com/samples/xa
 - [ `CanvasSize` ](https://developer.xamarin.com/api/property/SkiaSharp.Views.Forms.SKCanvasView.CanvasSize/) Vlastnost `SKCanvasView` objektu.
 - [ `Size` ](https://developer.xamarin.com/api/property/SkiaSharp.SKImageInfo.Size/) Vlastnost `SKImageInfo` hodnotu, která je konzistentní s `Width` a `Height` vlastnosti používané ve dvou předchozí stránky.
 
-[ `SurfaceSizePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/SurfaceSizePage.cs) Třída ukazuje, jak zobrazit tyto hodnoty. Konstruktor uloží `SKCanvasView` objektu jako pole, aby byla přístupná v `PaintSurface` obslužné rutiny události:
+[ `SurfaceSizePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SurfaceSizePage.cs) Třída ukazuje, jak zobrazit tyto hodnoty. Konstruktor uloží `SKCanvasView` objektu jako pole, aby byla přístupná v `PaintSurface` obslužné rutiny události:
 
 ```csharp
 SKCanvasView canvasView;
@@ -114,7 +114,7 @@ Kromě `DrawCircle` metody `SKCanvas` také definuje dvě `DrawOval` metody, kte
 public void DrawOval (Single cx, Single cy, Single rx, Single ry, SKPaint paint)
 ```
 
-Je možné k vykreslení elipsy, který vyplní povrch zobrazení? **Vyplnění elipsy** stránky ukazuje, jak. `PaintSurface` Obslužné rutiny událostí v [ **EllipseFillPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/EllipseFillPage.xaml.cs) třída odečítá poloviční šířku tahu z `xRadius` a `yRadius` hodnoty přizpůsobit celou elipsy a jeho popisují se v rámci prostor pro zobrazení:
+Je možné k vykreslení elipsy, který vyplní povrch zobrazení? **Vyplnění elipsy** stránky ukazuje, jak. `PaintSurface` Obslužné rutiny událostí v [ **EllipseFillPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/EllipseFillPage.xaml.cs) třída odečítá poloviční šířku tahu z `xRadius` a `yRadius` hodnoty přizpůsobit celou elipsy a jeho popisují se v rámci prostor pro zobrazení:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

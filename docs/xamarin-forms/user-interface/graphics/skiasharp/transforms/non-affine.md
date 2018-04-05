@@ -7,11 +7,11 @@ ms.assetid: 785F4D13-7430-492E-B24E-3B45C560E9F1
 author: charlespetzold
 ms.author: chape
 ms.date: 04/14/2017
-ms.openlocfilehash: 52bed94724d330b74a9604c54fcfebad1e562267
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8c3d39038fbaf5ed6601102a0aa16860c7a5a7a6
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="non-affine-transforms"></a>Afinní transformace
 
@@ -95,7 +95,7 @@ Pokud x je 100 a potom z' jmenovatel je 2, takže souřadnice x a y je oproti ji
 
 `Persp` Součástí názvy těchto buněk odkazuje na "perspektivy", protože perspektivního zkreslení naznačuje, že pole se teď sklopí s pravé straně dále za prohlížeč.
 
-**Perspektivy testu** stránce můžete experimentovat s hodnotami `Persp0` a `Pers1` k podívat, jak pracují. Přiměřené hodnoty těchto buňkách matice jsou tak malá, který `Slider` v univerzální platformu Windows nemůže zpracovat správně je. Pro přizpůsobení UWP problém, dva `Slider` elementů v [ **TestPerspective.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/TestPerspectivePage.xaml) muset inicializována tak, aby rozsahu od -1 do 1:
+**Perspektivy testu** stránce můžete experimentovat s hodnotami `Persp0` a `Pers1` k podívat, jak pracují. Přiměřené hodnoty těchto buňkách matice jsou tak malá, který `Slider` v univerzální platformu Windows nemůže zpracovat správně je. Pro přizpůsobení UWP problém, dva `Slider` elementů v [ **TestPerspective.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TestPerspectivePage.xaml) muset inicializována tak, aby rozsahu od -1 do 1:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -149,7 +149,7 @@ Pokud x je 100 a potom z' jmenovatel je 2, takže souřadnice x a y je oproti ji
 </ContentPage>
 ```
 
-Obslužné rutiny události pro posuvníků v [ `TestPerspectivePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/TestPerspectivePage.xaml.cs) souboru kódu tak, aby se v rozsahu mezi –0.01 a 0,01 dělení hodnot po 100. Kromě toho konstruktoru načítat rastrový obrázek:
+Obslužné rutiny události pro posuvníků v [ `TestPerspectivePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TestPerspectivePage.xaml.cs) souboru kódu tak, aby se v rozsahu mezi –0.01 a 0,01 dělení hodnot po 100. Kromě toho konstruktoru načítat rastrový obrázek:
 
 ```csharp
 public partial class TestPerspectivePage : ContentPage
@@ -240,7 +240,7 @@ Jeden-afinní transformace je *Sbíhavost transformace*. Tento typ-afinní trans
 
 ![](non-affine-images/tapertransform.png "Pole podrobí Sbíhavost transformace")
 
-[ `TaperTransform` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/TaperTransform.cs) Třída provádí zobecněný výpočtu-afinní transformace na základě těchto parametrů:
+[ `TaperTransform` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TaperTransform.cs) Třída provádí zobecněný výpočtu-afinní transformace na základě těchto parametrů:
 
 - Obdélníková velikost bitové kopie transformace,
 - výčet, který označuje na straně, který zužuje, rámeček
@@ -349,7 +349,7 @@ static class TaperTransform
 }
 ```
 
-Tato třída se používá v **Sbíhavost transformace** stránky. Vytvoří dvě souboru XAML instance `Picker` elementy a vyberte hodnoty výčtu a `Slider` pro výběr Sbíhavost podílem. [ `PaintSurface` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/TaperTransformPage.xaml.cs#L55) Kombinuje obslužná rutina převede Sbíhavost transformace se dvěma transformací aby transformace relativně k levém horním rohu bitmapy:
+Tato třída se používá v **Sbíhavost transformace** stránky. Vytvoří dvě souboru XAML instance `Picker` elementy a vyberte hodnoty výčtu a `Slider` pro výběr Sbíhavost podílem. [ `PaintSurface` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TaperTransformPage.xaml.cs#L55) Kombinuje obslužná rutina převede Sbíhavost transformace se dvěma transformací aby transformace relativně k levém horním rohu bitmapy:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -398,7 +398,7 @@ Afinní transformace můžete převést obdélník do jakékoli konvexní čtyř
 
 [![](non-affine-images/shownonaffinematrix-small.png "Trojitá snímek obrazovky stránky zobrazit bez Afinní matici")](non-affine-images/shownonaffinematrix-large.png#lightbox "Trojitá snímek obrazovky stránky zobrazit bez Afinní matici")
 
-Tak dlouho, dokud není pokusí úhlu interior jednoho rozích bitmapy větší než 180 stupňů nebo dvě strany cross navzájem, program úspěšně vypočítá transformace pomocí této metody z [ `ShowNonAffineMatrixPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/ShowNonAffineMatrixPage.xaml.cs) třídy:
+Tak dlouho, dokud není pokusí úhlu interior jednoho rozích bitmapy větší než 180 stupňů nebo dvě strany cross navzájem, program úspěšně vypočítá transformace pomocí této metody z [ `ShowNonAffineMatrixPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowNonAffineMatrixPage.xaml.cs) třídy:
 
 ```csharp
 static SKMatrix ComputeMatrix(SKSize size, SKPoint ptUL, SKPoint ptUR, SKPoint ptLL, SKPoint ptLR)
@@ -459,7 +459,7 @@ Pro usnadnění výpočtu tato metoda získá celkový transformace jako produkt
 
 Poslední souřadnice vpravo jsou čtyři body přidružené k touch čtyři body. Jedná se o konečnou souřadnice rozích bitové mapy.
 
-W a H představují šířka a výška bitové mapy. První transformace (`S`) jednoduše škáluje rastrového obrázku na čtverce 1 pixel. Druhý transformace je – afinní transformace `N`, a třetí je afinní transformace `A`. Tento afinní transformace je založena na tři body, takže je stejně jako dříve afinní [ `ComputeMatrix` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml.cs#L68) metoda a nebude zahrnovat čtvrtý řádek s (bodu a, b).
+W a H představují šířka a výška bitové mapy. První transformace (`S`) jednoduše škáluje rastrového obrázku na čtverce 1 pixel. Druhý transformace je – afinní transformace `N`, a třetí je afinní transformace `A`. Tento afinní transformace je založena na tři body, takže je stejně jako dříve afinní [ `ComputeMatrix` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml.cs#L68) metoda a nebude zahrnovat čtvrtý řádek s (bodu a, b).
 
 `a` a `b` tak, aby třetí transformace afinní výpočtu hodnot. Kód získá inverzní afinní transformace a použije tento mapovat pravém dolním rohu. Je bod (a, b).
 

@@ -7,11 +7,11 @@ ms.assetid: 1D53067B-3502-4D74-B89D-7EC496901AE2
 author: charlespetzold
 ms.author: chape
 ms.date: 05/24/2017
-ms.openlocfilehash: 7ea99612f85a853bcd045b773df0a01f33427a89
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fe9699894224d9a33b3a79e9b5bcd4cd41c635dd
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="svg-path-data"></a>Data SVG cesty
 
@@ -147,7 +147,7 @@ Statické [ `SKPath.ParseSvgPathData` ](https://developer.xamarin.com/api/member
 
 [ `ToSvgPathData` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ToSvgPathData()/) Metoda je užitečný pro získávání dat cesta SVG z existující `SKPath` objekt pro přenos do jiného programu, nebo k ukládání ve formátu textového souboru například XML. ( `ToSvgPathData` Metoda není ukázáno v ukázkovém kódu v tomto článku.) Proveďte *není* očekávat `ToSvgPathData` vrátit řetězec odpovídající přesně volání metod, které vytvořili cestu. Zejména budete zjistíte, že oblouky se převedou na několika `QuadTo` příkazy, a jak se zobrazují v cestě data vrácená z `ToSvgPathData`.
 
-**Cesta Data Hello** stránky spells na slovo "HELLO" pomocí data cesty SVG. Jak `SKPath` a `SKPaint` objekty jsou definovány jako pole v [ `PathDataHelloPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathDataHelloPage.cs) třídy:
+**Cesta Data Hello** stránky spells na slovo "HELLO" pomocí data cesty SVG. Jak `SKPath` a `SKPaint` objekty jsou definovány jako pole v [ `PathDataHelloPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataHelloPage.cs) třídy:
 
 ```csharp
 public class PathDataHelloPage : ContentPage
@@ -218,7 +218,7 @@ Cesta vyplní celé plátno, která vypadá přijatelnější při zobrazení na
 
 [![](path-data-images/pathdatahello-small.png "Trojitá snímek obrazovky stránky cesta Data Hello")](path-data-images/pathdatahello-large.png#lightbox "Trojitá snímek obrazovky stránky cesta Data Hello")
 
-**Cesta Data Cat** stránka je podobné. Oba objekty Malování a cesta jsou definovány jako pole v [ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs) třídy:
+**Cesta Data Cat** stránka je podobné. Oba objekty Malování a cesta jsou definovány jako pole v [ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs) třídy:
 
 ```csharp
 public class PathDataCatPage : ContentPage
@@ -291,7 +291,7 @@ Tady je programy spuštěné na všech tří platformách:
 
 Za normálních okolností, kdy `SKPath` objektu je definována jako pole, obrysy cesty musí být definován v konstruktoru nebo jiným způsobem. Při použití data SVG cesty, ale už víte, že zcela v definici pole lze zadat cestu.
 
-Dříve **Ugly hodiny analogovým** ukázku v [ **transformace otočit** ](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/rotate.md) článek zobrazí jako jednoduchý řádky do nesprávných rukou hodiny. **Poměrně analogovým hodiny** uvedený program nahradí tyto řádky s `SKPath` objekty definované jako pole v [ `PrettyAnalogClockPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PrettyAnalogClockPage.cs) třídy spolu s `SKPaint` objekty:
+Dříve **Ugly hodiny analogovým** ukázku v [ **transformace otočit** ](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/rotate.md) článek zobrazí jako jednoduchý řádky do nesprávných rukou hodiny. **Poměrně analogovým hodiny** uvedený program nahradí tyto řádky s `SKPath` objekty definované jako pole v [ `PrettyAnalogClockPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PrettyAnalogClockPage.cs) třídy spolu s `SKPaint` objekty:
 
 ```csharp
 public class PrettyAnalogClockPage : ContentPage

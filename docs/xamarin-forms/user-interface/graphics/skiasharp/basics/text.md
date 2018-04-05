@@ -7,11 +7,11 @@ ms.assetid: A0B5AC82-7736-4AD8-AA16-FE43E18D203C
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 1e8ad47867fb1821df1e427aa777ead1a7da19a0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4ef9f1b634d2ecfa73a94bfd562a68593dfdc575
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="integrating-text-and-graphics"></a>Integrace textu a obrázků
 
@@ -23,7 +23,7 @@ Tento článek ukazuje, jak měřit text, pravděpodobně škálování text na 
 
 SkiaSharp `Canvas` třída také obsahuje metody pro kreslení obdélníku ([`DrawRect`](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawRect/p/SkiaSharp.SKRect/SkiaSharp.SKPaint/)) a obdélník se zaoblenými hranami ([`DrawRoundRect`](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawRoundRect/p/SkiaSharp.SKRect/System.Single/System.Single/SkiaSharp.SKPaint/)). Tyto metody vyžadují rámeček být definován jako `SKRect` hodnotu.
 
-**Rámcová Text** stránky centra krátký textový řetězec na stránce a její rámeček skládá z dvojice zaokrouhlené obdélníků okolí. [ `FramedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/FramedTextPage.cs) Třída ukazuje, jak se provádí.
+**Rámcová Text** stránky centra krátký textový řetězec na stránce a její rámeček skládá z dvojice zaokrouhlené obdélníků okolí. [ `FramedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/FramedTextPage.cs) Třída ukazuje, jak se provádí.
 
 V SkiaSharp použijete `SKPaint` třída sady text a atributy písma, ale můžete ji použít i k získání vykreslené velikost textu. Na začátek následující `PaintSurface` dvě obslužné rutiny události volá jinou `MeasureText` metody. První [ `MeasureText` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.MeasureText/p/System.String/) volání má jednoduchou `string` argument a vrátí šířku pixelů textu na základě aktuálního písma atributů. Program pak vypočítá nový `TextSize` vlastnost `SKPaint` objektu podle této vykreslené šířka aktuální `TextSize` vlastnost a šířku oblasti zobrazení. Slouží k nastavení `TextSize` tak, aby text řetězec k vykreslení na 90 % šířky obrazovky:
 

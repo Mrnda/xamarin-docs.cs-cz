@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 08/01/2017
-ms.openlocfilehash: 77005665d163e7f9f62325b94cc5c779a7873f78
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c0b793a495278d91429045d7e396917d02c1412e
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="paths-and-text"></a>Cesty a Text.
 
@@ -45,7 +45,7 @@ Jeden z těchto úloh je výstřižek. **Výstřižek Text** stránky vytvoří 
 
 [![](text-paths-images/clippingtext-small.png "Trojitá snímek obrazovky stránky výstřižek Text")](text-paths-images/clippingtext-large.png#lightbox "Trojitá snímek obrazovky stránky výstřižek textu")
 
-[ `ClippingTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ClippingTextPage.cs) Konstruktoru třídy načte bitovou mapu, která je uložena jako vložený prostředek v **média** složku řešení:
+[ `ClippingTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ClippingTextPage.cs) Konstruktoru třídy načte bitovou mapu, která je uložena jako vložený prostředek v **média** složku řešení:
 
 ```csharp
 public class ClippingTextPage : ContentPage
@@ -126,7 +126,7 @@ Po nastavení cesty výstřižek bitmapy lze zobrazit a bude oříznuto obrysy z
 
 [![](text-paths-images/textpatheffect-small.png "Trojitá snímek obrazovky stránky efektu cesta Text")](text-paths-images/textpatheffect-large.png#lightbox "Trojitá snímek obrazovky stránky efekt cesta textu")
 
-Velká část práce při [ `TextPathEffectPath` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/TextPathEffectPage.cs) třída dojde v pole a konstruktor. Dva `SKPaint` objekty definované jako pole se používají pro dva různé účely: první (s názvem `textPathPaint`) se používá k převodu ampersand s `TextSize` 50 na cestu k efektu cesta 1 D. Druhý (`textPaint`) se používá k zobrazení větší verze ampersand s platnost této cesty. Z tohoto důvodu `Style` z této druhé Malování objektu na hodnotu `Stroke`, ale `StrokeWidth` není nastavena vlastnost, protože tuto vlastnost není nezbytné při použití efektu cesta 1 D:
+Velká část práce při [ `TextPathEffectPath` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TextPathEffectPage.cs) třída dojde v pole a konstruktor. Dva `SKPaint` objekty definované jako pole se používají pro dva různé účely: první (s názvem `textPathPaint`) se používá k převodu ampersand s `TextSize` 50 na cestu k efektu cesta 1 D. Druhý (`textPaint`) se používá k zobrazení větší verze ampersand s platnost této cesty. Z tohoto důvodu `Style` z této druhé Malování objektu na hodnotu `Stroke`, ale `StrokeWidth` není nastavena vlastnost, protože tuto vlastnost není nezbytné při použití efektu cesta 1 D:
 
 ```csharp
 public class TextPathEffectPage : ContentPage
@@ -213,7 +213,7 @@ Obvykle [ `GetFillPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKP
 
 Můžete také volat `GetFillPath` na cestu, kterou vrátil `GetTextPath` ale zpočátku nemusí být zcela jisti jaké, který chcete vzhled.
 
-**Znak Outline jsou podrobněji popsány dále** stránky ukazuje techniku. Všechny relevantní kód je v `PaintSurface` obslužnou rutinu [ `CharacterOutlineOutlinesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/CharacterOutlineOutlinesPage.cs) třídy.
+**Znak Outline jsou podrobněji popsány dále** stránky ukazuje techniku. Všechny relevantní kód je v `PaintSurface` obslužnou rutinu [ `CharacterOutlineOutlinesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CharacterOutlineOutlinesPage.cs) třídy.
 
 Konstruktor začíná vytvořením `SKPaint` objekt s názvem `textPaint` s `TextSize` vlastností na základě velikosti stránky. To je převést na cestu pomocí `GetTextPath` metoda. Souřadnice argumenty, které mají `GetTextPath` efektivně center cestu na obrazovce:
 
@@ -287,7 +287,7 @@ Text zadaný v prvním argumentu Přišla žádost o spuštění v cestě zadan�
 
 Tato metoda nemá žádné zařízení pro poskytovat pokyny k nastavení `TextSize` vlastnost `SKPaint` Chcete-li text, velikost perfektně spustit od začátku cesty na konec. Někdy může rozmyslete si, že velikost textu sami. Jinou dobu, budete muset být popsané v článku na budoucí pomocí funkce měření cestu.
 
-**Cyklické Text** program obtéká text kruh. Je snadné tak, aby byl snadno velikost text, který se nevejde přesně určit obvodu kruhu. `PaintSurface` Obslužnou rutinu [ `CircularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/CircularTextPage.cs) třída vypočítá radius kruhu na základě velikosti stránky. Že kroužek se změní na `circularPath`:
+**Cyklické Text** program obtéká text kruh. Je snadné tak, aby byl snadno velikost text, který se nevejde přesně určit obvodu kruhu. `PaintSurface` Obslužnou rutinu [ `CircularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CircularTextPage.cs) třída vypočítá radius kruhu na základě velikosti stránky. Že kroužek se změní na `circularPath`:
 
 ```csharp
 public class CircularTextPage : ContentPage

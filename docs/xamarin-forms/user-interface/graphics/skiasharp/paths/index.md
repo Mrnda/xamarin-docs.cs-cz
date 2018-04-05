@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: f7c0fcc87253b1d5ae9d612c52ef3a32c5790c5e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 2f9941305f165ec04e5fc80e3c41e3150a21a9b7
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="skiasharp-lines-and-paths"></a>SkiaSharp čar a cesty
 
@@ -21,7 +21,7 @@ _Kreslení čar a grafiky cesty pomocí SkiaSharp_
 
 Cesty grafiky je nejobecnější přístup pro kreslení čar a křivek v SkiaSharp. Tato část popisuje používání `SKPath` objekt Kreslení úseček a použít kolekci jen nepatrnou přímky (nazývá *lomenou čáru*) kreslení křivek, které můžete definovat matematicky. Další části se věnuje různým druhům křivek nepodporuje `SKPath`.
 
-Všechny programy ukázka v této části se zobrazí v části **čar a cesty** na domovské stránce [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) programu a v [ **Cesty** ](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Paths) složce řešení.
+Všechny programy ukázka v této části se zobrazí v části **čar a cesty** na domovské stránce [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) programu a v [ **Cesty** ](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths) složce řešení.
 
 ## <a name="lines-and-stroke-capslinesmd"></a>[Čáry a zakončení tahů](lines.md)
 

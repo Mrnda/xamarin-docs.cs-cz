@@ -7,11 +7,11 @@ ms.assetid: 25141E3E-D22E-44B1-A647-7E6FA0C9737B
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: a6a1787b6bdb54f66aa5214bdd9193af354cebb1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d602a03d7ac5943e45fd502981b39aefc4e8bc06
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="skiasharp-drawing-basics"></a>Základy SkiaSharp kreslení
 
@@ -19,7 +19,7 @@ _Získejte základní informace o konceptech grafiky SkiaSharp a souřadnice_
 
 Po přidání balíčku SkiaSharp NuGet k vaší aplikaci Xamarin.Forms, můžete začít používat SkiaSharp grafiky. [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) řešení zahrnuje několik stránek, které ukazují SkiaSharp programování v progresivně pokročilejší lekce techniky.
 
-Všechny programy ukázka v této části se zobrazí v části **SkiaSharp Základy** na domovské stránce [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) programu a v [ **Základy** ](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics) složce řešení.
+Všechny programy ukázka v této části se zobrazí v části **SkiaSharp Základy** na domovské stránce [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) programu a v [ **Základy** ](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics) složce řešení.
 
 ## <a name="drawing-a-simple-circlecirclemd"></a>[Nakreslení jednoduchého kruhu](circle.md)
 

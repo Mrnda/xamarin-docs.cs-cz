@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 274c8e9a79fa3fadff14f1174d86aad04d902b05
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 46ab21aa5156a6deab5952f165917cc299b500ac
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="dots-and-dashes"></a>Tečky a pomlčky
 
@@ -29,7 +29,7 @@ Obecně platí budete chtít provést délky dash a mezery mezi násobkem šíř
 
 Ale `StrokeCap` nastavit `SKPaint` objekt ovlivní také tyto tečky a pomlčky. Jak se krátce zobrazí, který má vliv na prvky tohoto pole.
 
-S tečkami a přerušované čáry je ukázán na **tečky a pomlčky** stránky. [ **DotsAndDashesPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/DotsAndDashesPage.xaml) soubor vytvoří dvě instance `Picker` zobrazení, jeden pro umožňují vyberte zakončení tahu a druhou pro vyberte dash pole:
+S tečkami a přerušované čáry je ukázán na **tečky a pomlčky** stránky. [ **DotsAndDashesPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/DotsAndDashesPage.xaml) soubor vytvoří dvě instance `Picker` zobrazení, jeden pro umožňují vyberte zakončení tahu a druhou pro vyberte dash pole:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -92,7 +92,7 @@ S tečkami a přerušované čáry je ukázán na **tečky a pomlčky** stránky
 
 První tři položky v `dashArrayPicker` předpokládá, že šířku tahu je 10 pixelů. {10, 10} pole je pro tečkovaná čára {30, 10} je pro na přerušovanou čáru a {10, 10, 30, 10} je pro řádek tečky a pomlčky. (Další tři bude za chvíli popsané.)
 
-[ `DotsAndDashesPage` Souboru kódu](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/DotsAndDashesPage.xaml.cs) obsahuje `PaintSurface` obslužné rutiny události a několika pomocné rutiny pro přístup k `Picker` zobrazení:
+[ `DotsAndDashesPage` Souboru kódu](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/DotsAndDashesPage.xaml.cs) obsahuje `PaintSurface` obslužné rutiny události a několika pomocné rutiny pro přístup k `Picker` zobrazení:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -168,7 +168,7 @@ Zobrazí obrazovky systému Windows, které s tečkami a přerušovanou řádek 
 
 Pokud byl proveden žádné zmínky o druhý parametr `SKPathEffect.CreateDash` metoda. Tento parametr je s názvem `phase` odkazuje posun, tečky a pomlčky vzor pro začátek řádku. Například, pokud je pole dash {10, 10} a `phase` je 10 a pak na začátku řádku mezera spíše než tečku.
 
-Jeden zajímavé aplikaci `phase` parametr je v animace. **Animovaný Spirála** je podobná stránce **Archimedean Spirála** stránky, vyjma toho, že [ `AnimatedSpiralPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/AnimatedSpiralPage.cs) animuje – třída `phase` parametr. Stránky také ukazuje další způsob, jak animace. Z předchozího příkladu [ `PulsatingEllipsePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml.cs) použít `Task.Delay` metoda řídit animace. Tento příklad používá místo toho platformě Xamarin.Forms `Device.Timer` metoda:
+Jeden zajímavé aplikaci `phase` parametr je v animace. **Animovaný Spirála** je podobná stránce **Archimedean Spirála** stránky, vyjma toho, že [ `AnimatedSpiralPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/AnimatedSpiralPage.cs) animuje – třída `phase` parametr. Stránky také ukazuje další způsob, jak animace. Z předchozího příkladu [ `PulsatingEllipsePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml.cs) použít `Task.Delay` metoda řídit animace. Tento příklad používá místo toho platformě Xamarin.Forms `Device.Timer` metoda:
 
 
 ```csharp

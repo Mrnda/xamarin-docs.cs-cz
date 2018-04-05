@@ -7,11 +7,11 @@ ms.assetid: E3A4E373-F65D-45C8-8E77-577A804AC3F8
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: a718d051c2bf04e75c87b0e4a18aced4824802ba
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9e5b18bd6a565639e2ca22f4637a67c4f48717f6
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="drawing-a-simple-circle"></a>Kreslení kruh jednoduché
 
@@ -19,11 +19,11 @@ _Seznámíte se základy kreslení SkiaSharp, včetně plátna a Malování_
 
 Tento článek představuje koncepty kreslení grafiky v Xamarin.Forms pomocí SkiaSharp, včetně vytváření `SKCanvasView` objektu k hostování zpracování grafiky `PaintSurface` událostí a používání `SKPaint` objekt, který chcete zadat barvy a další kreslení atributy.
 
-[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) program obsahuje ukázkový kód pro tuto řadu SkiaSharp články. Nárok na první stránku **Jednoduchý kruh** a vyvolá třídy stránky [ `SimpleCirclePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs). Tento kód ukazuje, jak k vykreslení kruh v centru stránky se serverem radius 100 pixelů. Obrys kruhu je red a je blue vnitřek kruhu.
+[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) program obsahuje ukázkový kód pro tuto řadu SkiaSharp články. Nárok na první stránku **Jednoduchý kruh** a vyvolá třídy stránky [ `SimpleCirclePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs). Tento kód ukazuje, jak k vykreslení kruh v centru stránky se serverem radius 100 pixelů. Obrys kruhu je red a je blue vnitřek kruhu.
 
 ![](circle-images/circleexample.png "Modré kruh označeno červeně")
 
-[ `SimpleCirle` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs) Stránky třída odvozená z `ContentPage` a obsahuje dva `using` direktivy pro obory názvů SkiaSharp:
+[ `SimpleCirle` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs) Stránky třída odvozená z `ContentPage` a obsahuje dva `using` direktivy pro obory názvů SkiaSharp:
 
 ```csharp
 using SkiaSharp;

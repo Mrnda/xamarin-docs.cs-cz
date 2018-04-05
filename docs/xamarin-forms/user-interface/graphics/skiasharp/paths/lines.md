@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 32eefb0607bc06602098fdc5cfb11aa5e46c80d0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b9a5e7c15fd1105a9ca4661ff38e4eb2c92dd10f
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="lines-and-stroke-caps"></a>Řádky a tahu CAP k vzdálené ploše
 
@@ -35,7 +35,7 @@ Je volána vzhled spuštění a ukončení čar *zakončení čáry* nebo v Skia
 - [`Square`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeCap.Round/)
 - [`Round`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeCap.Round/)
 
-Tyto jsou zobrazené nejlépe s ukázka programu. Druhá část domovské stránce [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) program začíná na stránce s názvem **tahu CAP k vzdálené ploše** na základě [ `StrokeCapsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/StrokeCapsPage.cs) třídy. Tuto stránku definuje `PaintSurface` obslužné rutiny události, který prochází tři členy `SKStrokeCap` výčtu, zobrazovat název člena výčtu a kreslení pomocí cap tahu řádek:
+Tyto jsou zobrazené nejlépe s ukázka programu. Druhá část domovské stránce [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) program začíná na stránce s názvem **tahu CAP k vzdálené ploše** na základě [ `StrokeCapsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/StrokeCapsPage.cs) třídy. Tuto stránku definuje `PaintSurface` obslužné rutiny události, který prochází tři členy `SKStrokeCap` výčtu, zobrazovat název člena výčtu a kreslení pomocí cap tahu řádek:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -107,7 +107,7 @@ DrawPoints (SKPointMode mode, points, paint)
 - [`Lines`](https://developer.xamarin.com/api/field/SkiaSharp.SKPointMode.Lines/) pro každý pár body připojení
 - [`Polygon`](https://developer.xamarin.com/api/field/SkiaSharp.SKPointMode.Polygon/) pro připojení všech po sobě jdoucích bodů
 
-**Více řádků** stránky ukazuje tuto metodu. [ `MultipleLinesPage` Souboru XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/LinesAndPaths/MultipleLinesPage.xaml) vytvoří dvě instance `Picker` zobrazení, které vám umožní vybrat členem `SKPointMode` výčet a členem `SKStrokeCap` výčtu:
+**Více řádků** stránky ukazuje tuto metodu. [ `MultipleLinesPage` Souboru XAML](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/MultipleLinesPage.xaml) vytvoří dvě instance `Picker` zobrazení, které vám umožní vybrat členem `SKPointMode` výčet a členem `SKStrokeCap` výčtu:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

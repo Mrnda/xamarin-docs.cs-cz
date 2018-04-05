@@ -7,11 +7,11 @@ ms.assetid: 54A43F3D-9DA8-44A7-9AE4-7E3025129A0B
 author: charlespetzold
 ms.author: chape
 ms.date: 03/23/2017
-ms.openlocfilehash: 4c2650d4586f210b121c4c72b79e92ce72d135fe
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 09a81cd84f145512b9fbbf0db009335eac8a95a9
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="the-scale-transform"></a>Transformace škálování
 
@@ -60,7 +60,7 @@ public void Scale (SKPoint size)
 
 Čtvrtý `Scale` metoda najdete za chvíli.
 
-**Základní škálování** stránky ukazuje `Scale` metoda. [ **BasicScalePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/BasicScalePage.xaml) XAML soubor obsahuje dva `Slider` prvky, které vám umožní vybrat vodorovného a svislého škálování faktory mezi 0 a 10. [ **BasicScalePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/BasicScalePage.xaml.cs) souboru kódu na pozadí používá tyto hodnoty pro volání `Scale` před zobrazení zaoblený obdélník pouze tah přerušovanou čárou a přizpůsobí nějaký text v levé horní horním rohu na plátno:
+**Základní škálování** stránky ukazuje `Scale` metoda. [ **BasicScalePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicScalePage.xaml) XAML soubor obsahuje dva `Slider` prvky, které vám umožní vybrat vodorovného a svislého škálování faktory mezi 0 a 10. [ **BasicScalePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicScalePage.xaml.cs) souboru kódu na pozadí používá tyto hodnoty pro volání `Scale` před zobrazení zaoblený obdélník pouze tah přerušovanou čárou a přizpůsobí nějaký text v levé horní horním rohu na plátno:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -120,7 +120,7 @@ public void Scale (Single sx, Single sy, Single px, Single py)
 
 `px` a `py` parametry definovat bod, který se někdy označuje jako *škálování center* , ale v SkiaSharp dokumentace se označuje jako *bodu otáčení*. Toto je bod relativně k levém horním rohu na plátno, který nemá vliv škálování. Všechny škálování nastane relativně k této center.
 
-[ **Zarovnaný na střed škálování** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/CenteredScalePage.xaml.cs) stránka zobrazuje, jak to funguje. `PaintSurface` Obslužná rutina je podobná **základní škálování** programu vyjma toho, že `margin` hodnota je vypočítána na střed text ve vodorovném směru, což naznačuje, že program funguje nejlépe v režimu na výšku:
+[ **Zarovnaný na střed škálování** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/CenteredScalePage.xaml.cs) stránka zobrazuje, jak to funguje. `PaintSurface` Obslužná rutina je podobná **základní škálování** programu vyjma toho, že `margin` hodnota je vypočítána na střed text ve vodorovném směru, což naznačuje, že program funguje nejlépe v režimu na výšku:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -216,7 +216,7 @@ Když zkombinujete `Translate` a `Scale` volání, záleží na pořadí. Pokud 
 
 `SKPath` Třída definuje jen pro čtení [ `Bounds` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPath.Bounds/) vlastnost, která vrací `SKRect` definování rozsah souřadnice v cestě. Například, když `Bounds` vlastnost se získávají z cesty hendecagram vytvořili dříve, `Left` a `Top` vlastnosti obdélníku, jsou přibližně – 100, `Right` a `Bottom` vlastnosti přibližně 100 a `Width` a `Height` vlastnosti jsou přibližně 200. (Většina skutečnými hodnotami jsou malé méně, protože body hvězdiček jsou definovány kruh se serverem radius 100, ale pouze nejvyšší bod je paralelní s vodorovné nebo svislé osy.)
 
-Dostupnost tyto informace předpokládají, že by měl být možné odvozena škálování a převede faktory, které jsou vhodné pro škálování cestu k velikost na plátno. [ **Volba škálování** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/AnisotropicScalingPage.cs) stránky to ukazuje hvězdičkou odkazoval 11. *Volba* škálování znamená, že nerovné v vodorovného a svislého pokynů, což znamená, že hvězdičkou nezachovají jeho původní poměr stran. Zde je odpovídající kód v `PaintSurface` obslužné rutiny:
+Dostupnost tyto informace předpokládají, že by měl být možné odvozena škálování a převede faktory, které jsou vhodné pro škálování cestu k velikost na plátno. [ **Volba škálování** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/AnisotropicScalingPage.cs) stránky to ukazuje hvězdičkou odkazoval 11. *Volba* škálování znamená, že nerovné v vodorovného a svislého pokynů, což znamená, že hvězdičkou nezachovají jeho původní poměr stran. Zde je odpovídající kód v `PaintSurface` obslužné rutiny:
 
 ```csharp
 SKPath path = HendecagramPage.HendecagramPath;
@@ -261,7 +261,7 @@ pathBounds.Inflate(strokePaint.StrokeWidth / 2,
 
 Tím se zvyšuje `pathBounds` obdélníku 1,5 jednotkami na všechny čtyři strany. Jedná se o rozumné řešení jenom v případě, že se zaokrouhlí tahu spojení. Pokosové spojení, může být déle a je obtížné vypočítat.
 
-Podobným způsobem s textem, můžete použít také jako **volba Text** ukazuje stránky. Tady je příslušné části `PaintSurface` obslužnou rutinu na základě [ `AnisotropicTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/AnisotropicTextPage.cs) třídy:
+Podobným způsobem s textem, můžete použít také jako **volba Text** ukazuje stránky. Tady je příslušné části `PaintSurface` obslužnou rutinu na základě [ `AnisotropicTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/AnisotropicTextPage.cs) třídy:
 
 ```csharp
 using (SKPaint textPaint = new SKPaint
@@ -297,7 +297,7 @@ Pokud potřebujete zachová poměr stran grafické objekty, budete chtít použ�
 - Škálování objekt v závislosti na minimum vodorovného a svislého stránky rozměry dělený grafického objektu dimenze.
 - Převede center škálovat objektu k centru stránky.
 
-[ `IsotropicScalingPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/skia-sharp-forms/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/IsotropicScalingPage.cs) Před zobrazení hvězdičkou v obráceném pořadí provede tyto kroky:
+[ `IsotropicScalingPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/skia-sharp-forms/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/IsotropicScalingPage.cs) Před zobrazení hvězdičkou v obráceném pořadí provede tyto kroky:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

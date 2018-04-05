@@ -7,11 +7,11 @@ ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
 author: charlespetzold
 ms.author: chape
 ms.date: 05/10/2017
-ms.openlocfilehash: 668b1f437b78535bd4cdf3bb3f80154dbf281a02
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c6fd0f905aceb9dddc4047abc6ad2722adf2d8e9
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="three-ways-to-draw-an-arc"></a>Tři způsoby, jak nakreslit oblouk
 
@@ -73,7 +73,7 @@ path.ArcTo (oval, startAngle, sweepAngle, false);
 
 Tato verze `ArcTo` nevykresluje řádek na začátek oblouk z aktuální pozici. To znamená, že oblouk mohou být někde uprostřed větší obrysem.
 
-**Úhel oblouku** stránky umožňuje používat dvě posuvníky a určuje počáteční úhel oblouku. Vytvoří dvě souboru XAML instance `Slider` elementy a `SKCanvasView`. `PaintCanvas` Obslužné rutiny v [ **AngleArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/AngleArcPage.xaml.cs) souboru nevykresluje elipsy a oblouk pomocí dvou `SKPaint` objekty definované jako pole:
+**Úhel oblouku** stránky umožňuje používat dvě posuvníky a určuje počáteční úhel oblouku. Vytvoří dvě souboru XAML instance `Slider` elementy a `SKCanvasView`. `PaintCanvas` Obslužné rutiny v [ **AngleArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/AngleArcPage.xaml.cs) souboru nevykresluje elipsy a oblouk pomocí dvou `SKPaint` objekty definované jako pole:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -110,7 +110,7 @@ y = oval. MidY + (oval. Výška / 2) * sin(angle)
 
 `angle` Hodnota je buď `startAngle` nebo `startAngle + sweepAngle`.
 
-Použití dvou úhlů k definování oblouku je nejvhodnější pro případy, pokud víte, úhlová délka oblouk, který chcete k vykreslení, třeba, aby výsečového grafu. **v kolekci rozložen výsečového grafu** stránky ukazuje to. [ `ExplodedPieChartPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ExplodedPieChartPage.cs) Třída používá interní třída pro definování některé kovodělných dat a barev:
+Použití dvou úhlů k definování oblouku je nejvhodnější pro případy, pokud víte, úhlová délka oblouk, který chcete k vykreslení, třeba, aby výsečového grafu. **v kolekci rozložen výsečového grafu** stránky ukazuje to. [ `ExplodedPieChartPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ExplodedPieChartPage.cs) Třída používá interní třída pro definování některé kovodělných dat a barev:
 
 ```csharp
 class ChartData
@@ -259,7 +259,7 @@ Tady je poslední lineární a oblouk, který je přidán do Kontury:
 
 Kontury lze pokračovat z druhé tečný bodu.
 
-**Tangens oblouk** stránce můžete experimentovat s tečný oblouk. Toto je první několik stránek, které jsou odvozeny od [ `InteractivePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/InteractivePage.cs), která definuje několik užitečný `SKPaint` objekty a provádí `TouchPoint` zpracování:
+**Tangens oblouk** stránce můžete experimentovat s tečný oblouk. Toto je první několik stránek, které jsou odvozeny od [ `InteractivePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/InteractivePage.cs), která definuje několik užitečný `SKPaint` objekty a provádí `TouchPoint` zpracování:
 
 ```csharp
 public class InteractivePage : ContentPage
@@ -309,7 +309,7 @@ public class InteractivePage : ContentPage
 }
 ```
 
-`TangentArcPage` Třída odvozená z `InteractivePage`. Konstruktor v [ **TangentArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml.cs) souboru je odpovědná za vytváření instancí a inicializace `touchPoints` pole a nastavení `baseCanvasView` (v `InteractivePage`) do `SKCanvasView` vytvořena instance v objektu [ **TangentArcPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml) souboru:
+`TangentArcPage` Třída odvozená z `InteractivePage`. Konstruktor v [ **TangentArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml.cs) souboru je odpovědná za vytváření instancí a inicializace `touchPoints` pole a nastavení `baseCanvasView` (v `InteractivePage`) do `SKCanvasView` vytvořena instance v objektu [ **TangentArcPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml) souboru:
 
 ```csharp
 public partial class TangentArcPage : InteractivePage
@@ -419,7 +419,7 @@ Na zařízení Windows Mobile tři body jsou téměř colinear a oblouk je velmi
 
 Tečný oblouk je ideální pro vytváření zaoblenými hranami, jako je například zaoblený obdélník. Protože `SKPath` již obsahuje `AddRoundedRect` metoda, **zaokrouhlené pro sedmiúhelník** stránky demonstruje použití `ArcTo` pro zaokrouhlení rozích zachytávání sedm mnohoúhelníku. (Kód je zobecněn pro všechny regulární mnohoúhelníku.)
 
-`PaintSurface` Obslužnou rutinu [ `RoundedHeptagonPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/RoundedHeptagonPage.cs) třída obsahuje jednu `for` smyčky k výpočtu souřadnice sedm vrcholy pro sedmiúhelník a druhý k výpočtu střední sedm postranní z nich vrcholy. Tyto středních bodů jsou pak používány k vytváření cesta:
+`PaintSurface` Obslužnou rutinu [ `RoundedHeptagonPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RoundedHeptagonPage.cs) třída obsahuje jednu `for` smyčky k výpočtu souřadnice sedm vrcholy pro sedmiúhelník a druhý k výpočtu střední sedm postranní z nich vrcholy. Tyto středních bodů jsou pak používány k vytváření cesta:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -543,7 +543,7 @@ Pokud se třemi tečkami nakloněné není dostatečně velké na to, aby vyhovo
 
 I když tento přístup k definování oblouk vyznívá komplexní na první dojde, je jediným přístup, který umožňuje definovat oblouk s otočený elipsy a je často Nejsnadnějším když potřebujete integrovat s dalšími částmi Kontury oblouky.
 
-**Eliptické oblouk** stránky umožňuje interaktivně nastavit dva body a velikosti a oběh se třemi tečkami. `EllipticalArcPage` Třída odvozená z `InteractivePage`a `PaintSurface` obslužné rutiny v [ **EllipticalArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/EllipticalArcPage.xaml.cs) souboru kódu na pozadí nevykresluje čtyři oblouky:
+**Eliptické oblouk** stránky umožňuje interaktivně nastavit dva body a velikosti a oběh se třemi tečkami. `EllipticalArcPage` Třída odvozená z `InteractivePage`a `PaintSurface` obslužné rutiny v [ **EllipticalArcPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/EllipticalArcPage.xaml.cs) souboru kódu na pozadí nevykresluje čtyři oblouky:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -613,7 +613,7 @@ y = 112·sin(41.8) = 75
 
 ![](arcs-images/infinitycoordinates.png "Dva kruhy s tečný čar a souřadnice")
 
-`PaintSurface` Obslužné rutiny v [ `ArcInfinityPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ArcInfinityPage.cs) třída umisťuje přihlašovací infinity tak, aby (0, 0) bod je umístěný v Centru pro stránky a škáluje cestu na velikost obrazovky:
+`PaintSurface` Obslužné rutiny v [ `ArcInfinityPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ArcInfinityPage.cs) třída umisťuje přihlašovací infinity tak, aby (0, 0) bod je umístěný v Centru pro stránky a škáluje cestu na velikost obrazovky:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

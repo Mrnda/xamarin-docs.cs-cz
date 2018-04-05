@@ -7,11 +7,11 @@ ms.assetid: 781937AA-AA1C-469C-AA92-D42D08B58635
 author: charlespetzold
 ms.author: chape
 ms.date: 05/24/2017
-ms.openlocfilehash: 0bd13cc58d4f15b46edc03eda35f04d7ca866dec
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 2b730690e508c29e9bee45ccfdd05d5dd6e92d7b
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="skiasharp-curves-and-paths"></a>SkiaSharp křivek a cest
 
@@ -19,7 +19,7 @@ _Další informace o použití SkiaSharp používat funkce cestu a kreslení kř
 
 Průzkum [ `SKPath` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath/) metody a vlastnosti začal v [SkiaSharp čar a cesty](~/xamarin-forms/user-interface/graphics/skiasharp/paths/index.md) článku. Články v tomto poli pokračovat s metodami, které přidávají křivek na `SKPath` objekty a využívat další funkce, výkonné cestu. Uvidíte, jak můžete zadat celou cestu v stručným textového řetězce, jak použít cestu důsledky a jak a dostanete se do interní informace o cestě.
 
-Všechny programy ukázka v této části se zobrazí v části **křivek a více cest** na domovské stránce [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) programu a v [ **Křivek** ](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves) složce řešení.
+Všechny programy ukázka v této části se zobrazí v části **křivek a více cest** na domovské stránce [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) programu a v [ **Křivek** ](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves) složce řešení.
 
 ## <a name="three-ways-to-draw-an-arcarcsmd"></a>[Tři způsoby, jak nakreslit oblouk](arcs.md)
 

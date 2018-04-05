@@ -7,11 +7,11 @@ ms.assetid: B5894EA0-C415-41F9-93A4-BBF6EC72AFB9
 author: charlespetzold
 ms.author: chape
 ms.date: 04/14/2017
-ms.openlocfilehash: 47daca2ab94f718aeb5ce474c87edce3c3bd77a4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 2f5562475db17b7451fe7cb2ee8bbf4ccb782a87
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="3d-rotations"></a>3D otočení
 
@@ -221,7 +221,7 @@ Když 2D objekty otáčejí s kladný úhel okolo osy Y, pak kladné hodnoty X u
 
 Při použití `SKMatrix44`, provádění všech 3D otočení a operací perspektivy vynásobením různé `SKMatrix44` hodnoty. Pak můžete rozbalit dvourozměrná 3 3 matice 4 ve 4 matice pomocí [ `Matrix` ](https://developer.xamarin.com/api/property/SkiaSharp.SKMatrix44.Matrix/) vlastnost `SKMatrix44` třída. Tato vlastnost vrací známým `SKMatrix` hodnotu.
 
-**Natočení 3D** stránky umožňuje experimentovat s 3D otočení. [ **Rotation3DPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml) soubor vytvoří čtyřech posuvníky nastavit Otočení okolo osy X, Y a Z a nastavte hodnotu hloubky:
+**Natočení 3D** stránky umožňuje experimentovat s 3D otočení. [ **Rotation3DPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml) soubor vytvoří čtyřech posuvníky nastavit Otočení okolo osy X, Y a Z a nastavte hodnotu hloubky:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -302,7 +302,7 @@ Při použití `SKMatrix44`, provádění všech 3D otočení a operací perspek
 
 Všimněte si, že `depthSlider` inicializován s `Minimum` hodnotu 250. To znamená, že se tady otáčet 2D objekt obsahuje souřadnice X a Y omezen na kruh definovaný radius 250 pixelů kolem počátku. Výsledkem otočení tohoto objektu v 3D prostoru bude vždy souřadnic hodnoty menší než 250.
 
-[ **Rotation3DPage.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml.cs) souboru kódu se bude načítat rastrového obrázku, který je 300 pixelů odmocnina:
+[ **Rotation3DPage.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml.cs) souboru kódu se bude načítat rastrového obrázku, který je 300 pixelů odmocnina:
 
 ```csharp
 public partial class Rotation3DPage : ContentPage

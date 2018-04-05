@@ -5,12 +5,12 @@ ms.assetid: 01A715FE-9E9D-9B85-8A59-6568D8A09CA5
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/22/2018
-ms.openlocfilehash: ce98e7d87a0159e8fa803549160bcf9123010da1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/04/2018
+ms.openlocfilehash: e0e22fe35dc5042a7b3c895a250803e936611629
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="android-debug-log"></a>Protokol pro Android ladění
 
@@ -152,6 +152,18 @@ To vytváří výstup podobný následujícímu:
 I/myapp   (11103): this is an info message
 W/myapp   (11103): this is a warning message
 E/myapp   (11103): this is an error message
+```
+
+Je také možné použít `Console.WriteLine` k zápisu **protokol ladění** &ndash; tyto zprávy se zobrazují v logcat ve formátu mírně odlišný výstup (Tento postup je zvlášť užitečné při ladění aplikace Xamarin.Forms na Android):
+
+```csharp
+System.Console.WriteLine ("DEBUG - Button Clicked!");
+```
+
+To vytváří výstup podobný následujícímu v logcat:
+
+```
+Info (19543) / mono-stdout: DEBUG - Button Clicked!
 ```
 
 ## <a name="interesting-messages"></a>Zajímavé zprávy

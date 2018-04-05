@@ -7,11 +7,11 @@ ms.assetid: 288224F1-7AEE-4148-A88D-A70C03F83D7A
 author: charlespetzold
 ms.author: chape
 ms.date: 02/09/2017
-ms.openlocfilehash: 67c4330d8e446a407dec7792fe5f40cdd9d23c22
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3ebe153ead2bb62b19ad6b25bf0093e20bf15c04
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="integrating-with-xamarinforms"></a>Integrace s Xamarin.Forms
 
@@ -22,9 +22,9 @@ Grafika SkiaSharp můžete integrovat s ostatními Xamarin.Forms několika způs
 ![](integration-images/integrationexample.png "Výběr barvy s posuvníky")
 
 Další postup pro vytváření interaktivních SkiaSharp grafiky v Xamarin.Forms je prostřednictvím dotykového ovládání.
-Na druhou stránku [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) nárok program **klepněte na přepnutí vyplnění**. Nakreslí Jednoduchý kruh dva způsoby, jak &mdash; bez výplně a s výplní &mdash; přepínat stav klepněte na. [ `TapToggleFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml.cs) Třída ukazuje, jak změnit SkiaSharp grafiky v reakci na vstup uživatele.
+Na druhou stránku [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) nárok program **klepněte na přepnutí vyplnění**. Nakreslí Jednoduchý kruh dva způsoby, jak &mdash; bez výplně a s výplní &mdash; přepínat stav klepněte na. [ `TapToggleFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml.cs) Třída ukazuje, jak změnit SkiaSharp grafiky v reakci na vstup uživatele.
 
-Pro tuto stránku `SKCanvasView` vytvoření instance třídy v [TapToggleFill.xaml](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml) souboru, který také nastaví platformě Xamarin.Forms [ `TapGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/) v zobrazení:
+Pro tuto stránku `SKCanvasView` vytvoření instance třídy v [TapToggleFill.xaml](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml) souboru, který také nastaví platformě Xamarin.Forms [ `TapGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/) v zobrazení:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -99,7 +99,7 @@ public static SKColor FromHsv (Single h, Single s, Single v, Byte a)
 
 V obou případech `h` argument v rozmezí od 0 do 360. `s`, `l`, A `v` argumenty v rozsahu od 0 do 100. `a` (Alpha nebo krytí) argument rozmezí od 0 do 255.
 
-[ **ColorExplorePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/ColorExplorePage.xaml) soubor vytvoří dvě `SKCanvasView` objekty v `StackLayout` -souběžného s `Slider` a `Label` zobrazení, které umožňují uživateli vybrat HSL a HSV – hodnoty barev:
+[ **ColorExplorePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ColorExplorePage.xaml) soubor vytvoří dvě `SKCanvasView` objekty v `StackLayout` -souběžného s `Slider` a `Label` zobrazení, které umožňují uživateli vybrat HSL a HSV – hodnoty barev:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -181,7 +181,7 @@ V obou případech `h` argument v rozmezí od 0 do 360. `s`, `l`, A `v` argument
 
 Dva `SKCanvasView` prvky jsou v jednotlivých buněk `Grid` s `Label` uložený v horní části pro zobrazení výsledné hodnoty RGB barev.
 
-[ **ColorExplorePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Basics/ColorExplorePage.xaml.cs) souboru kódu je poměrně jednoduché. Sdílený `ValueChanged` obslužné rutiny pro tři `Slider` elementy jednoduše by způsobila neplatnost obě `SKCanvasView` elementy. `PaintSurface` Obslužné rutiny vymazat na plátno barvou indikován `Slider` prvky a také nastavit `Label` uložený na `SKCanvasView` prvky:
+[ **ColorExplorePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ColorExplorePage.xaml.cs) souboru kódu je poměrně jednoduché. Sdílený `ValueChanged` obslužné rutiny pro tři `Slider` elementy jednoduše by způsobila neplatnost obě `SKCanvasView` elementy. `PaintSurface` Obslužné rutiny vymazat na plátno barvou indikován `Slider` prvky a také nastavit `Label` uložený na `SKCanvasView` prvky:
 
 ```csharp
 public partial class ColorExplorePage : ContentPage

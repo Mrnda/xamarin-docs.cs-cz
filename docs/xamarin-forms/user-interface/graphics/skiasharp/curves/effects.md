@@ -7,11 +7,11 @@ ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
 author: charlespetzold
 ms.author: chape
 ms.date: 07/29/2017
-ms.openlocfilehash: 4097aea4079555b26b586db5ec63fa261d5e7946
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 47f5a6fdcfb6ee795f84ca8e19c0954b68a2fae9
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="path-effects"></a>Cesta efekty
 
@@ -50,7 +50,7 @@ Konců pomlček se vztahuje `StrokeCap` vlastnost `SKPaint`. Pro celou tahu ší
 
 [![](effects-images/animateddottedtext-small.png "Trojitá snímek obrazovky stránky animovaný s tečkami Text")](effects-images/animateddottedtext-large.png#lightbox "Trojitá snímek obrazovky stránky animovaný s tečkami textu")
 
-[ `AnimatedDottedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs) Třídy začne definováním některé konstanty a také přepsání `OnAppearing` a `OnDisappearing` metody pro animace:
+[ `AnimatedDottedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs) Třídy začne definováním některé konstanty a také přepsání `OnAppearing` a `OnDisappearing` metody pro animace:
 
 ```csharp
 public class AnimatedDottedTextPage : ContentPage
@@ -158,7 +158,7 @@ Je možné upravit délku v čárkovém vzoru podle délka cesty, ale který vy�
 
 [![](effects-images/dotdashmorph-small.png "Trojitá snímek obrazovky stránky tečkou Dash způsobů")](effects-images/dotdashmorph-large.png#lightbox "Trojitá snímek obrazovky stránky způsobů Dash tečku")
 
-[ `DotDashMorphPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs) Třídy přepsání `OnAppearing` a `OnDisappearing` metody stejně jako předchozí aplikace nebyla, ale definuje třídu `SKPaint` objektu jako pole:
+[ `DotDashMorphPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs) Třídy přepsání `OnAppearing` a `OnDisappearing` metody stejně jako předchozí aplikace nebyla, ale definuje třídu `SKPaint` objektu jako pole:
 
 ```csharp
 public class DotDashMorphPage : ContentPage
@@ -287,7 +287,7 @@ Obecně platí, cesta, která je předat do `Create1DPath` bude malé a zarovnan
 
 `Translate` Člen způsobí, že cesta k zůstat v orientaci stejné, jako je replikované podle řádku nebo křivky. Pro `Rotate`, cesta otočen podle tangens na křivku. Cesta obsahuje jeho normální orientaci pro vodorovné čáry. `Morph` je podobná `Rotate` s tím rozdílem, že samotná cesta je také zakřivené tak, aby odpovídaly zakřivení řádku probíhá vytažený.
 
-**Efektu cesta 1 D** stránky ukazuje tyto tři možnosti. [ **OneDimensionalPathEffectPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/OneDimensionalPathEffectPage.xaml) soubor definuje ovládací prvek obsahující tři položky odpovídající tři členy výčtu výběr:
+**Efektu cesta 1 D** stránky ukazuje tyto tři možnosti. [ **OneDimensionalPathEffectPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/OneDimensionalPathEffectPage.xaml) soubor definuje ovládací prvek obsahující tři položky odpovídající tři členy výčtu výběr:
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -323,7 +323,7 @@ Obecně platí, cesta, která je předat do `Create1DPath` bude malé a zarovnan
 </ContentPage>
 ```
 
-[ **OneDimensionalPathEffectPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/OneDimensionalPathEffectPage.xaml.cs) souboru kódu na pozadí definuje tři `SKPathEffect` objekty jako pole. Tyto soubory jsou všechny vytvořeny pomocí `SKPathEffect.Create1DPath` s `SKPath` objekty vytvořené pomocí `SKPath.ParseSvgPathData`. První je jednoduché pole, obrazce Kosočtverec je druhý a třetí je obdélníku. Ty se používají k předvedení styly tři vliv:
+[ **OneDimensionalPathEffectPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/OneDimensionalPathEffectPage.xaml.cs) souboru kódu na pozadí definuje tři `SKPathEffect` objekty jako pole. Tyto soubory jsou všechny vytvořeny pomocí `SKPathEffect.Create1DPath` s `SKPath` objekty vytvořené pomocí `SKPath.ParseSvgPathData`. První je jednoduché pole, obrazce Kosočtverec je druhý a třetí je obdélníku. Ty se používají k předvedení styly tři vliv:
 
 ```csharp
 public partial class OneDimensionalPathEffectPage : ContentPage
@@ -422,7 +422,7 @@ Hledání správnou hodnotu *a* podle trolejového vedení dimenzím, na stránc
 
 COSH (w/2/a) = 1 + h / a
 
-Následující metodu v [ `LinkedChainPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/LinkedChainPage.cs) třída zahrnuje tento rovnosti tím, že odkazuje na dvou výrazů vlevo a vpravo od rovná jako `left` a `right`. Pro malé hodnoty *a*, `left` je větší než `right`; pro velké hodnoty *a*, `left` je menší než `right`. `while` Smyčky zúží v na optimální hodnoty *a*:
+Následující metodu v [ `LinkedChainPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/LinkedChainPage.cs) třída zahrnuje tento rovnosti tím, že odkazuje na dvou výrazů vlevo a vpravo od rovná jako `left` a `right`. Pro malé hodnoty *a*, `left` je větší než `right`; pro velké hodnoty *a*, `left` je menší než `right`. `while` Smyčky zúží v na optimální hodnoty *a*:
 
 ```csharp
 float FindOptimumA(float width, float height)
@@ -551,7 +551,7 @@ Tento program definuje cestu použitou v `Create1DPath` tak, aby měl jeho (0, 0
 
 (0, 0) bod sady cesty je popisovač, takže pokud `phase` je animovaný argument, kbelíků se zdá, že základem běžícím pásu, případně vybírání rozsahu adres až horních dole a vypsání ho v horní části.
 
-[ `ConveyorBeltPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ConveyorBeltPage.cs) Třída implementuje animace s přepsáními `OnAppearing` a `OnDisappearing` metody. Cesta v bloku je definováno v konstruktoru stránky:
+[ `ConveyorBeltPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConveyorBeltPage.cs) Třída implementuje animace s přepsáními `OnAppearing` a `OnDisappearing` metody. Cesta v bloku je definováno v konstruktoru stránky:
 
 ```csharp
 public class ConveyorBeltPage : ContentPage
@@ -712,7 +712,7 @@ public static SKPathEffect Create2DLine (Single width, SKMatrix matrix)
 
 Šrafování řádky jsou ve výchozím nastavení, vodorovné. Pokud `matrix` parametr obsahuje otočení, řádky šrafování otáčejí po směru hodinových ručiček.
 
-**Šrafování výplně** stránky ukazuje platnost této cesty. [ `HatchFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/HatchFillPage.cs) Třída definuje tři důsledky cestu jako pole, první pro vodorovné šrafování řádky s šířka 3 pixelů se škálování označujícím Multi-Factor, které jsou rozmístěny 6 pixelů od sebe. Oddělení mezi řádky je proto 3 pixelů. Druhý efektu cesta je pro vertikální šrafování řádky s šířku 6 pixelů rozmístěny 24 pixelů od sebe (takže oddělení je 18 pixelů), a třetí je diagonálních šrafování řádků 12 pixelů celý rozmístěné 36 pixelů od sebe. 
+**Šrafování výplně** stránky ukazuje platnost této cesty. [ `HatchFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/HatchFillPage.cs) Třída definuje tři důsledky cestu jako pole, první pro vodorovné šrafování řádky s šířka 3 pixelů se škálování označujícím Multi-Factor, které jsou rozmístěny 6 pixelů od sebe. Oddělení mezi řádky je proto 3 pixelů. Druhý efektu cesta je pro vertikální šrafování řádky s šířku 6 pixelů rozmístěny 24 pixelů od sebe (takže oddělení je 18 pixelů), a třetí je diagonálních šrafování řádků 12 pixelů celý rozmístěné 36 pixelů od sebe. 
 
 ```csharp
 public class HatchFillPage : ContentPage
@@ -812,7 +812,7 @@ public static SKPathEffect Create2DPath (SKMatrix matrix, SKPath path)
 
 Replikovaná složka je obvykle zarovnán levého a horního okraje obrazovky, nikoli oblasti má číslo. Toto chování můžete přepsat zadáním faktory překlad mezi 0 a škálování faktorů k určení vodorovného a svislého posunutí z stran levého a horního.
 
-**Vyplnění dlaždice cesta** stránky ukazuje platnost této cesty. Cesty používanou pro dlaždice oblasti je definován jako pole v [ `PathFileFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathTileFillPage.cs) třídy. Souřadnice vodorovného a svislého rozsahu od –40 na 40, což znamená, že tato cesta je 80 pixelů odmocnina: 
+**Vyplnění dlaždice cesta** stránky ukazuje platnost této cesty. Cesty používanou pro dlaždice oblasti je definován jako pole v [ `PathFileFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathTileFillPage.cs) třídy. Souřadnice vodorovného a svislého rozsahu od –40 na 40, což znamená, že tato cesta je 80 pixelů odmocnina: 
 
 ```csharp
 public class PathTileFillPage : ContentPage
@@ -868,7 +868,7 @@ public static SKPathEffect CreateCorner (Single radius)
 
 I když je s názvem jeden argument `radius` ho musíte nastavit poloviční požadované rohu protokolu RADIUS. (Toto je typické pro Skia kódu).
 
-Tady je `PaintSurface` obslužné rutiny v [ `AnotherRoundedHeptagonPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/AnotherRoundedHeptagonPage.cs) třídy:
+Tady je `PaintSurface` obslužné rutiny v [ `AnotherRoundedHeptagonPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/AnotherRoundedHeptagonPage.cs) třídy:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -944,7 +944,7 @@ Konečný argument je základní hodnota používá ke generování pseudonáhod
 
 [![](effects-images/jitterexperiment-small.png "Trojitá snímek obrazovky stránky zmenší experimentu")](effects-images/jitterexperiment-large.png#lightbox "Triple screenshot of the JitterExperiment page")
 
-Tento program je straightfoward. [ **JitterExperimentPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/JitterExperimentPage.xaml) soubor vytvoří dvě instance `Slider` elementy a `SKCanvasView`:
+Tento program je straightfoward. [ **JitterExperimentPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/JitterExperimentPage.xaml) soubor vytvoří dvě instance `Slider` elementy a `SKCanvasView`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -1000,7 +1000,7 @@ Tento program je straightfoward. [ **JitterExperimentPage.xaml** ](https://githu
 </ContentPage>
 ```
 
-`PaintSurface` Obslužné rutiny v [ **JitterExperimentPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/JitterExperimentPage.xaml.cs) souboru kódu na pozadí se nazývá vždy, když `Slider` hodnotu změny. Zavolá `SKPathEffect.CreateDiscrete` použití dvou `Slider` hodnoty a použije ho k obtažení obdélníku:
+`PaintSurface` Obslužné rutiny v [ **JitterExperimentPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/JitterExperimentPage.xaml.cs) souboru kódu na pozadí se nazývá vždy, když `Slider` hodnotu změny. Zavolá `SKPathEffect.CreateDiscrete` použití dvou `Slider` hodnoty a použije ho k obtažení obdélníku:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -1031,7 +1031,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Tomu můžete použít pro naplnění také, v takovém případě obrys oblasti vyplněný podléhá tyto odchylky náhodné. **Zmenší Text** stránky ukazuje, jak pomocí efektu tato cesta k zobrazení textu. Většina kód `PaintSurface` obslužnou rutinu [ `JitterTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/JitterTextPage.cs) třída připadá na velikost a zarovnání textu:
+Tomu můžete použít pro naplnění také, v takovém případě obrys oblasti vyplněný podléhá tyto odchylky náhodné. **Zmenší Text** stránky ukazuje, jak pomocí efektu tato cesta k zobrazení textu. Většina kód `PaintSurface` obslužnou rutinu [ `JitterTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/JitterTextPage.cs) třída připadá na velikost a zarovnání textu:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -1086,7 +1086,7 @@ Jeden základní použití této metody nezahrnuje cesta důsledky vůbec. Pokud
 
 Například pokud `src` cesta je jednoduchý kruh poloměru 500 a `SKPaint` objektu určuje šířku tahu 100, pak se `dst` dvou soustředných kroužky, jeden s radius 450 a dalších se serverem radius 550 stane se cesta. Volání metody `GetFillPath` protože naplňování to `dst` cesta je stejný jako vytažení `src` cesta. Ale můžete také obtažení `dst` cesta zobrazíte obrysy cesty.
 
-**Klepněte sem a Outline cesta** ukazuje to. `SKCanvasView` a `TapGestureRecognizer` instance v [ **TapToOutlineThePathPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/TapToOutlineThePathPage.xaml) souboru. [ **TapToOutlineThePathPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/TapToOutlineThePathPage.xaml.cs) souboru kódu na pozadí definuje tři `SKPaint` objekty jako polí a dva jsou pro vytažení s obtažení šířky 100 a 20 a třetí pro naplnění:
+**Klepněte sem a Outline cesta** ukazuje to. `SKCanvasView` a `TapGestureRecognizer` instance v [ **TapToOutlineThePathPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TapToOutlineThePathPage.xaml) souboru. [ **TapToOutlineThePathPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TapToOutlineThePathPage.xaml.cs) souboru kódu na pozadí definuje tři `SKPaint` objekty jako polí a dva jsou pro vytažení s obtažení šířky 100 a 20 a třetí pro naplnění:
 
 ```csharp
 public partial class TapToOutlineThePathPage : ContentPage
@@ -1239,7 +1239,7 @@ Jedno zřejmé použití `CreateSum` je definovat `SKPaint` objekt, který vypln
 
 [![](effects-images/catsinframe-small.png "Trojitá snímek obrazovky stránky kočky v rámečku")](effects-images/catsinframe-large.png#lightbox "Trojitá snímek obrazovky stránky kočky v rámečku")
 
-[ `CatsInFramePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/CatsInFramePage.cs) Třída začne definováním několik polí. Může rozpoznat první pole z [ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs) třídy z [ **Data cesty SVG** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md) článku. Druhý cesta je založená na řádku a oblouk pro vzor svatojakubská rámečku:
+[ `CatsInFramePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CatsInFramePage.cs) Třída začne definováním několik polí. Může rozpoznat první pole z [ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs) třídy z [ **Data cesty SVG** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md) článku. Druhý cesta je založená na řádku a oblouk pro vzor svatojakubská rámečku:
 
 ```csharp
 public class CatsInFramePage : ContentPage
@@ -1353,7 +1353,7 @@ Algoritmy za důsledky cestu vždy způsobit celé cesty používanou pro vytaž
 
 Je běžné použití `SKPathEffect.CreateCompose` přidat některé kolísání do jiného efektu cestu. Určitě můžete vyzkoušet sami, ale tady je poněkud jiný příklad:
 
-**Přerušované čáry šrafování** doplní elipsy šrafování řádků, které jsou přerušovaná čára. Nejvíce práce v [ `DashedHatchLinesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/DashedHatchLinesPage.cs) třída provádí přímo do definice pole. Tato pole definovat efekt dash a šrafování vliv. Jsou definovány jako `static` vzhledem k tomu, že se pak odkazuje v `SKPathEffect.CreateCompose` volání v `SKPaint` definice:
+**Přerušované čáry šrafování** doplní elipsy šrafování řádků, které jsou přerušovaná čára. Nejvíce práce v [ `DashedHatchLinesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/DashedHatchLinesPage.cs) třída provádí přímo do definice pole. Tato pole definovat efekt dash a šrafování vliv. Jsou definovány jako `static` vzhledem k tomu, že se pak odkazuje v `SKPathEffect.CreateCompose` volání v `SKPaint` definice:
 
 ```csharp
 public class DashedHatchLinesPage : ContentPage

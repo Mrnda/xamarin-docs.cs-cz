@@ -7,11 +7,11 @@ ms.assetid: 9EDED6A0-F0BF-4471-A9EF-E0D6C5954AE4
 author: charlespetzold
 ms.author: chape
 ms.date: 04/12/2017
-ms.openlocfilehash: 87bddc8d541167cef350658ac69f8aaac6d6a2ee
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6f7de8724a16e8c9c900123ce7da79d33b51a08c
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="matrix-transforms"></a>Maticové transformace
 
@@ -321,7 +321,7 @@ SKMatrix.RotateDegrees(ref R, degrees, px, py);
 
 Tyto metody se *není* řetězení rotační transformace na existující transformace. Metody nastavit všechny buňkách matice. Jejich fungují stejně jako `MakeRotation` a `MakeRotationDegrees` metody s tím rozdílem, že nemáte v vytvořit instanci `SKMatrix` hodnotu.
 
-Předpokládejme, že máte `SKPath` objekt, který chcete zobrazit, ale si přejete, že mají poněkud jinou orientaci nebo jiné centrálního bodu. Všechny souřadnice této cestě můžete upravit pomocí volání [ `Transform` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.Transform/p/SkiaSharp.SKMatrix/) metodu `SKPath` s `SKMatrix` argument. **Cesta transformace** stránky ukazuje, jak to udělat. [ `PathTransform` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/PathTransformPage.cs) Třídy odkazy `HendecagramPath` objekt v poli, ale používá jeho konstruktoru použití transformace na této cestě:
+Předpokládejme, že máte `SKPath` objekt, který chcete zobrazit, ale si přejete, že mají poněkud jinou orientaci nebo jiné centrálního bodu. Všechny souřadnice této cestě můžete upravit pomocí volání [ `Transform` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.Transform/p/SkiaSharp.SKMatrix/) metodu `SKPath` s `SKMatrix` argument. **Cesta transformace** stránky ukazuje, jak to udělat. [ `PathTransform` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/PathTransformPage.cs) Třídy odkazy `HendecagramPath` objekt v poli, ale používá jeho konstruktoru použití transformace na této cestě:
 
 ```csharp
 public class PathTransformPage : ContentPage
@@ -438,15 +438,15 @@ Pokud použijete tento poslední metodu, mějte na paměti, že `SKRect` struktu
 
 Jedním ze způsobů podívat afinní transformace je interaktivně přesunutím tři rozích bitmapy kolem obrazovky a zobrazuje, jaké transformace výsledků. Toto je cílem **zobrazit Afinní matici** stránky. Tato stránka vyžaduje dvě třídy, které používá také v jiných ukázky:
 
-[ `TouchPoint` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/TouchPoint.cs) Zobrazí třída průhledná kruh, který lze přetáhnout po obrazovce. `TouchPoint` vyžaduje, aby `SKCanvasView` nebo element, který je nadřazeným objektem `SKCanvasView` mít [ `TouchEffect` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/TouchEffect.cs) připojen. Nastavte `Capture` vlastnost `true`. V `TouchAction` obslužné rutiny události, musí volat program `ProcessTouchEvent` metoda v `TouchPoint` pro každou `TouchPoint` instance. Vrátí metoda `true` Pokud událost touch vytvořily bod touch přesunutí. Navíc `PaintSurface` obslužné rutiny musí volat `Paint` metoda v každé `TouchPoint` instance, předávání do ní `SKCanvas` objekt.
+[ `TouchPoint` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/TouchPoint.cs) Zobrazí třída průhledná kruh, který lze přetáhnout po obrazovce. `TouchPoint` vyžaduje, aby `SKCanvasView` nebo element, který je nadřazeným objektem `SKCanvasView` mít [ `TouchEffect` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/TouchEffect.cs) připojen. Nastavte `Capture` vlastnost `true`. V `TouchAction` obslužné rutiny události, musí volat program `ProcessTouchEvent` metoda v `TouchPoint` pro každou `TouchPoint` instance. Vrátí metoda `true` Pokud událost touch vytvořily bod touch přesunutí. Navíc `PaintSurface` obslužné rutiny musí volat `Paint` metoda v každé `TouchPoint` instance, předávání do ní `SKCanvas` objekt.
 
 `TouchPoint` ukazuje běžné způsobem, že SkiaSharp visual můžete zapouzdřené v samostatné třídy. Třída můžete definovat vlastnosti pro zadání vlastnosti vizuál a metodu s názvem `Paint` s `SKCanvas` argument může vykreslit ho.
 
 `Center` Vlastnost `TouchPoint` Určuje umístění objektu. Tuto vlastnost lze nastavit inicializovat umístění; změny vlastností, když uživatel nastavuje tažením kruh kolem na plátno.
 
-**Zobrazit Afinní stránce matice** taky vyžaduje [ `MatrixDisplay` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/MatrixDisplay.cs) třídy. Tato třída zobrazí buňkách `SKMatrix` objektu. Má dvě veřejné metody: `Measure` získat dimenze vykreslené matice a `Paint` můžete ho zobrazit. Obsahuje třídy `MatrixPaint` vlastnost typu `SKPaint` , lze nahradit jinou velikost písma nebo barev.
+**Zobrazit Afinní stránce matice** taky vyžaduje [ `MatrixDisplay` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/MatrixDisplay.cs) třídy. Tato třída zobrazí buňkách `SKMatrix` objektu. Má dvě veřejné metody: `Measure` získat dimenze vykreslené matice a `Paint` můžete ho zobrazit. Obsahuje třídy `MatrixPaint` vlastnost typu `SKPaint` , lze nahradit jinou velikost písma nebo barev.
 
-[ **ShowAffineMatrixPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml) soubor vytvoří `SKCanvasView` a připojí `TouchEffect`. [ **ShowAffineMatrixPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml.cs) souboru kódu vytvoří tři `TouchPoint` objektů a potom je nastaví na pozic odpovídající tři rozích rastrového obrázku, který načte ze embedded prostředek:
+[ **ShowAffineMatrixPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml) soubor vytvoří `SKCanvasView` a připojí `TouchEffect`. [ **ShowAffineMatrixPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml.cs) souboru kódu vytvoří tři `TouchPoint` objektů a potom je nastaví na pozic odpovídající tři rozích rastrového obrázku, který načte ze embedded prostředek:
 
 ```csharp
 public partial class ShowAffineMatrixPage : ContentPage

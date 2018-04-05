@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/29/2018
-ms.openlocfilehash: 0068540ec385ab3be56865c7728eb3128154a2ea
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 43699e77bc8b7365c6d5f7fbf27e19a945e69e22
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="limitations"></a>Omezení
 
@@ -51,7 +51,7 @@ Existují některá omezení akcí, které můžete spustit Xamarin Live Player,
 - Omezenou podporu pro reflexi (ovlivňuje aktuálně některých oblíbených NuGets, jako je SQLite a Json.NET). Další NuGets může být stále podporovány.
 - Nebylo možné přepsat některé třídy systému (například nemůžete implementovat podtřídy).
 - Některé funkce platformy, které vyžadují zřizování nemůže pracovat v aplikaci Xamarin Live Player (ale byla nakonfigurována pro běžné operace, jako je přístup Galerie fotografií).
-- Vlastní cíle a kroků sestavení se ignorují. Například nástroje, například Fody, Retit, AutoFac a AutoMapper nelze vložit.
+- Vlastní cíle a kroků sestavení se ignorují. Například nástroje, například Fody, Refit, AutoFac a AutoMapper nelze vložit.
 - F # projekty nejsou podporované v systému Android a omezenou podporu v systému iOS
 - Složitější scénáře s vlastní obecné třídy a rozhraní nemusí být podporována.
 

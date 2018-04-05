@@ -7,11 +7,11 @@ ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
 author: charlespetzold
 ms.author: chape
 ms.date: 05/25/2017
-ms.openlocfilehash: 312d487111f8e36170c97ca7a29fb91556c72569
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c5142a3abcc6d461bc277faeb02e3aacd9727bca
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="three-types-of-bzier-curves"></a>Tři typy Bézierových křivek
 
@@ -46,7 +46,7 @@ Křivku začne k aktuálnímu bodu Kontury. Dokončení krychlový Bézierovy k�
 
 Výsledná křivky začíná na počáteční bod a končí na koncový bod. Křivku obecně nepředává prostřednictvím dvou kontrolních bodů; Místo toho fungují mnohem like magnets vyžádání křivky směrem je.
 
-Nejlepší způsob, jak podívat krychlový Bézierovy křivky je experimenty. Toto je účelem **Bézierovu křivku** stránky, která je odvozena z `InteractivePage`. [ **BezierCurvePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml) soubor vytvoří `SKCanvasView` a `TouchEffect`. [ **BezierCurvePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml.cs) souboru kódu vytvoří čtyři `TouchPoint` objekty v jeho konstruktoru. `PaintSurface` Vytvoří obslužnou rutinu události `SKPath` k vykreslení Bézierovy křivky založené na čtyři `TouchPoint` objektů a také nevykresluje desítkovém tečný řádky z kontrolních bodů do koncových bodů:
+Nejlepší způsob, jak podívat krychlový Bézierovy křivky je experimenty. Toto je účelem **Bézierovu křivku** stránky, která je odvozena z `InteractivePage`. [ **BezierCurvePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml) soubor vytvoří `SKCanvasView` a `TouchEffect`. [ **BezierCurvePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml.cs) souboru kódu vytvoří čtyři `TouchPoint` objekty v jeho konstruktoru. `PaintSurface` Vytvoří obslužnou rutinu události `SKPath` k vykreslení Bézierovy křivky založené na čtyři `TouchPoint` objektů a také nevykresluje desítkovém tečný řádky z kontrolních bodů do koncových bodů:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -128,7 +128,7 @@ L = 4 × tan(α / 4) / 3
 
 Na obrázku úhlu 45 stupňů, takže L rovná 0.265. V kódu by tato hodnota vynásobí požadované radius kruhu.
 
-**Kruhový oblouk na Bézierovu** stránce můžete experimentovat s definování Bézierovy křivky sblížit kruhového oblouku pro úhly rozsahu až o 180 stupňů. [ **BezierCircularArcPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/BezierCircularArcPage.xaml) soubor vytvoří `SKCanvasView` a `Slider` pro výběr úhel. `PaintSurface` Obslužné rutiny událostí v [ **BezierCircularArgPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/BezierCircularArcPage.xaml.cs) souboru kódu použije transformace pro nastavení bodu (0, 0) na střed plátna. Nakreslí zarovnaný na střed v tomto bodě pro porovnání a pak vypočítá dvě kontrolních bodů pro Bézierovy křivky:
+**Kruhový oblouk na Bézierovu** stránce můžete experimentovat s definování Bézierovy křivky sblížit kruhového oblouku pro úhly rozsahu až o 180 stupňů. [ **BezierCircularArcPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCircularArcPage.xaml) soubor vytvoří `SKCanvasView` a `Slider` pro výběr úhel. `PaintSurface` Obslužné rutiny událostí v [ **BezierCircularArgPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCircularArcPage.xaml.cs) souboru kódu použije transformace pro nastavení bodu (0, 0) na střed plátna. Nakreslí zarovnaný na střed v tomto bodě pro porovnání a pak vypočítá dvě kontrolních bodů pro Bézierovy křivky:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -216,7 +216,7 @@ Výpočet souřadnice dvě kontrolních bodů je poměrně snadné, když čtvrt
 
 Pokud radius kruhu je 100, *L* 55, a představuje počet snadno pamatovat.
 
-**Umocněním kruhu** stránky animuje obrázek až čtverce kruh. Kruhu je sblížit podle jehož souřadnice jsou uvedeny v první sloupec tuto definici pole v čtyři Bézierových křivek [ `SquaringTheCirclePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/SquaringTheCirclePage.cs) třídy:
+**Umocněním kruhu** stránky animuje obrázek až čtverce kruh. Kruhu je sblížit podle jehož souřadnice jsou uvedeny v první sloupec tuto definici pole v čtyři Bézierových křivek [ `SquaringTheCirclePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/SquaringTheCirclePage.cs) třídy:
 
 ```csharp
 public class SquaringTheCirclePage : ContentPage
@@ -292,7 +292,7 @@ Body interpolace podle sinusoidally provozních hodnotu `t`. Interpolované body
 
 Takové animace bude možné bez křivek, které jsou algorithmically dostatečně flexibilní, aby se vykresluje jako Kruhové oblouky a rovné čáry.
 
-**Bézierovy Infinity** stránky také využívá výhod možnost Bézierovy křivky Přibližná kruhového oblouku. Tady je `PaintSurface` obslužnou rutinu na základě [ `BezierInfinityPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/BezierInfinityPage.cs) třídy:
+**Bézierovy Infinity** stránky také využívá výhod možnost Bézierovy křivky Přibližná kruhového oblouku. Tady je `PaintSurface` obslužnou rutinu na základě [ `BezierInfinityPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierInfinityPage.cs) třídy:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -359,7 +359,7 @@ public void QuadTo (Single x1, Single y1, Single x2, Single y2)
 
 Metody přidat křivku z aktuální pozici k `point2` s `point1` jako řídicí bod.
 
-Můžete experimentovat s kvadratických Bézierových křivek **kvadratické křivky** stránky, což je velmi podobné **Bézierovu křivku** stránky s výjimkou má jenom tři body dotykového ovládání. Tady je `PaintSurface` obslužné rutiny v [ **QuadraticCurve.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/QuadraticCurvePage.xaml.cs) souboru kódu na pozadí:
+Můžete experimentovat s kvadratických Bézierových křivek **kvadratické křivky** stránky, což je velmi podobné **Bézierovu křivku** stránky s výjimkou má jenom tři body dotykového ovládání. Tady je `PaintSurface` obslužné rutiny v [ **QuadraticCurve.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/QuadraticCurvePage.xaml.cs) souboru kódu na pozadí:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -436,7 +436,7 @@ public void ConicTo (Single x1, Single y1, Single x2, Single y2, Single weight)
 
 Všimněte si, že posledních `weight` parametr.
 
-**Conic křivky** stránce můžete experimentovat s tyto křivky. `ConicCurvePage` Třída odvozená z `InteractivePage`. [ **ConicCurvePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml) vytvoří soubor `Slider` vyberte hodnotu váhy mezi – 2 a 2. [ **ConicCurvePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml.cs) souboru kódu vytvoří tři `TouchPoint` objekty a `PaintSurface` obslužná rutina jednoduše vykreslí výsledné křivky tečný řádků pro ovládací prvek body:
+**Conic křivky** stránce můžete experimentovat s tyto křivky. `ConicCurvePage` Třída odvozená z `InteractivePage`. [ **ConicCurvePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml) vytvoří soubor `Slider` vyberte hodnotu váhy mezi – 2 a 2. [ **ConicCurvePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml.cs) souboru kódu vytvoří tři `TouchPoint` objekty a `PaintSurface` obslužná rutina jednoduše vykreslí výsledné křivky tečný řádků pro ovládací prvek body:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -490,7 +490,7 @@ Je velmi snadné odvození kontrolního bodu a váhy používat `ConicTo` metoda
 
 Trigonometrické můžete použít k určení vzdálenost kontrolního bodu z centra na kruh: je radius dělený kosinus poloviční úhlu α kruhu. Kreslení kruhových oblouků mezi počáteční a koncový bod, nastavte váhu na tento stejný kosinus poloviční úhlu. Všimněte si, že pokud úhel 180 stupňů, pak tečný řádky nikdy nesplní a váhu je nulová. Ale pro úhly menší než 180 stupňů, výpočty funguje bez problémů.
 
-**Conic kruhového oblouku** stránky ukazuje to. [ **ConicCircularArc.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml) vytvoří soubor `Slider` pro výběr úhel. `PaintSurface` Obslužné rutiny v [ **ConicCircularArc.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml.cs) souboru kódu vypočítá kontrolního bodu a váhu:
+**Conic kruhového oblouku** stránky ukazuje to. [ **ConicCircularArc.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml) vytvoří soubor `Slider` pro výběr úhel. `PaintSurface` Obslužné rutiny v [ **ConicCircularArc.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml.cs) souboru kódu vypočítá kontrolního bodu a váhu:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

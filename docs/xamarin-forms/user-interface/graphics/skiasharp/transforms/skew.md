@@ -7,11 +7,11 @@ ms.assetid: FDD16186-E3B7-4FF6-9BC2-8A2974BFF616
 author: charlespetzold
 ms.author: chape
 ms.date: 03/20/2017
-ms.openlocfilehash: c9f5f9f20296b1c2443a8addeebd4d12ccaa1ab4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 39547ebaf301a9b6dca6a90cb5ede831b19862cf
+ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/05/2018
 ---
 # <a name="the-skew-transform"></a>Zkosení transformace
 
@@ -39,7 +39,7 @@ public void Skew (SKPoint skew)
 
 Je však nepravděpodobné, že budete používat jednu z těchto dvou metod v izolaci.
 
-**Zkreslit experimentovat** stránce lze experimentovat s zkosení hodnoty rozsahu – 10 až 10. Textový řetězec je umístěn v levém horním rohu stránky s zkosení hodnoty získané ze dvou `Slider` elementy. Tady je `PaintSurface` obslužné rutiny v [ `SkewExperimentPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/SkewExperimentPage.xaml.cs) třídy:
+**Zkreslit experimentovat** stránce lze experimentovat s zkosení hodnoty rozsahu – 10 až 10. Textový řetězec je umístěn v levém horním rohu stránky s zkosení hodnoty získané ze dvou `Slider` elementy. Tady je `PaintSurface` obslužné rutiny v [ `SkewExperimentPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SkewExperimentPage.xaml.cs) třídy:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -109,7 +109,7 @@ Může si myslíte pohodlnější zadání zkosení jako úhel Náklon, jako je 
 
 Poměr shift 150 pixelů na 100 pixelů svislou je tangens úhlu, v tomto příkladu 56.3 stupňů.
 
-Soubor XAML **zkreslit experimentu úhel** stránka je podobná **zkreslit úhel** stránky vyjma toho, že `Slider` elementy v rozsahu od –90 do 90 stupňů. [ `SkewAngleExperiment` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/SkewAngleExperimentPage.xaml.cs) Souboru kódu na pozadí Zarovná text na stránce na střed a používá `Translate` nastavit středu zkosení k centru stránky. Malou `SkewDegrees` metoda v dolní části kód převede úhly zkosení hodnoty:
+Soubor XAML **zkreslit experimentu úhel** stránka je podobná **zkreslit úhel** stránky vyjma toho, že `Slider` elementy v rozsahu od –90 do 90 stupňů. [ `SkewAngleExperiment` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SkewAngleExperimentPage.xaml.cs) Souboru kódu na pozadí Zarovná text na stránce na střed a používá `Translate` nastavit středu zkosení k centru stránky. Malou `SkewDegrees` metoda v dolní části kód převede úhly zkosení hodnoty:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -154,7 +154,7 @@ Jako úhlu blíží kladné a záporné 90 stupňů, tangens blíží infinity, 
 
 [![](skew-images/skewangleexperiment-small.png "Trojitá snímek obrazovky stránky zkreslit experimentu úhel")](skew-images/skewangleexperiment-large.png#lightbox "Trojitá snímek obrazovky stránky zkreslit úhel experimentu")
 
-Malé záporné vodorovné zkosení mohou napodobovat výběr kurzívy nebo nakloněného text, jako **nakloněné Text** ukazuje stránky. [ `ObliqueTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/SkiaSharpFormsDemos/SkiaSharpFormsDemos/SkiaSharpFormsDemos/Transforms/ObliqueTextPage.cs) Třída ukazuje, jak se provádí:
+Malé záporné vodorovné zkosení mohou napodobovat výběr kurzívy nebo nakloněného text, jako **nakloněné Text** ukazuje stránky. [ `ObliqueTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ObliqueTextPage.cs) Třída ukazuje, jak se provádí:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
