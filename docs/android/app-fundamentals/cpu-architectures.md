@@ -1,18 +1,17 @@
 ---
 title: Architektury procesoru
-description: "Xamarin.Android podporuje několik architektury procesoru, včetně zařízení, 32bitové a 64bitové verze. Tento článek vysvětluje, jak cílové aplikace na jeden nebo více architektury procesoru Android podporována."
-ms.topic: article
+description: Xamarin.Android podporuje několik architektury procesoru, včetně zařízení, 32bitové a 64bitové verze. Tento článek vysvětluje, jak cílové aplikace na jeden nebo více architektury procesoru Android podporována.
 ms.prod: xamarin
 ms.assetid: D4BC889D-9164-49BB-9B7B-F6C4E4E109F1
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 3df6dc72eaed74ad335596d55db8b1295b16f3c2
-ms.sourcegitcommit: 30055c534d9caf5dffcfdeafd6f08e666fb870a8
+ms.openlocfilehash: dea5aaa16891893f649d5ec56f3e6b1ee9a18683
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="cpu-architectures"></a>Architektury procesoru
 
@@ -38,7 +37,7 @@ V sadě Visual Studio, klikněte dvakrát na **vlastnosti** pod projekt v **Prů
 
 Obvykle je explicitně vybrat architekturu (nebo architektury) Pokud je vaše aplikace nakonfigurována pro **verze**. Pokud je vaše aplikace nakonfigurována pro **ladění**, **využít sdílené Mono runtime** a **rychlé nasazení sestavení** jsou povoleny možnosti, které zabraňují explicitní architektura výběr.
 
-V sadě Visual Studio pro Mac, vyhledejte v projektu **řešení** odsadí, klikněte na ikonu ozubené kolečko vedle projekt a vyberte **možnosti**. V **možnosti projektu** dialogové okno, klikněte na tlačítko **Android sestavení**. Klikněte na tlačítko **Obecné** kartě a ověřte, že **využít sdílené Mono runtime** vypnutá (vypnutí této funkce můžete explicitně vybrat které bis k podpoře). Klikněte na tlačítko **Upřesnit** kartě a v části **podporované bis** , zkontrolujte bis architektur, které chcete podporovat:
+V sadě Visual Studio pro Mac, vyhledejte v projektu **řešení** odsadí, klikněte na ikonu ozubené kolečko vedle projekt a vyberte **možnosti**. V **možnosti projektu** dialogové okno, klikněte na tlačítko **Android sestavení**. Klikněte na tlačítko **Obecné** kartě a ověřte, že **využít sdílené Mono runtime** vypnutá (vypnutí této funkce můžete explicitně vybrat které bis k podpoře). Klikněte na tlačítko **Upřesnit** kartě a v části **podporované bis**, zkontrolujte bis architektur, které chcete podporovat:
 
 [![Výběr armeabi a armeabi v7a](cpu-architectures-images/xs/01-abi-selections-sml.png)](cpu-architectures-images/xs/01-abi-selections.png#lightbox)
 
