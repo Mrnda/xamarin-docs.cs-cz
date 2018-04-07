@@ -189,7 +189,6 @@
 ##### [Odebírání oznámení](platform/user-notifications/deprecated/remote-notifications-in-ios.md)
 ### [Wide Color](platform/wide-color.md)
 ## [Datové a cloudové služby](data-cloud/index.md)
-### [Připojené služby Azure](~/cross-platform/data-cloud/connected-services.md?context=xamarin/ios)
 ### [Azure Active Directory](~/cross-platform/data-cloud/active-directory/index.md?context=xamarin/ios)
 #### [Začínáme](~/cross-platform/data-cloud/active-directory/get-started/index.md?context=xamarin/ios)
 ##### [Krok 1. Registrace](~/cross-platform/data-cloud/active-directory/get-started/register.md?context=xamarin/ios)

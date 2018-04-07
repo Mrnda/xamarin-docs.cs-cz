@@ -166,7 +166,6 @@
 ### [Používání nativních knihoven](platform/native-libraries.md)
 ### [Renderscript](platform/renderscript.md)
 ## [Datové a cloudové služby](data-cloud/index.md)
-### [Připojené služby Azure](~/cross-platform/data-cloud/connected-services.md?context=xamarin/android)
 ### [Azure Active Directory](~/cross-platform/data-cloud/active-directory/index.md?context=xamarin/android)
 #### [Začínáme](~/cross-platform/data-cloud/active-directory/get-started/index.md?context=xamarin/android)
 ##### [Krok 1. Registrace](~/cross-platform/data-cloud/active-directory/get-started/register.md?context=xamarin/android)
