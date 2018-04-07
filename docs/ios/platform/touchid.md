@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 6ec46a5e098ba14925102211a27fcce8c27970e9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d9d70c37de5cb91c4cd1fdc77e27942d851c346b
+ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="touch-id"></a>Touch ID
 
@@ -121,47 +121,46 @@ V předchozí části jsme se podívali na teoreticky za přístup a ověřován
 
 Proto Podíváme se na přidání některé Touch ID ověřování do aplikace. V tomto návodu budeme používat [Storyboard tabulky](https://developer.xamarin.com/samples/StoryboardTable/) ukázka. Chceme, abyste měli jistotu, že pouze vlastník zařízení něco můžete přidat do tohoto seznamu, nechceme zaplnit tím, že každý, kdo přidání položky!
 
-1.  Ukázku stáhnout a spustit v sadě Visual Studio for Mac.
-2.  Dvakrát klikněte na `MainStoryboard.Storyboard` otevřete ukázku v iOS Designer. Pomocí této ukázky jsme chcete přidat nové obrazovky do naší aplikaci, která bude řídit ověřování. To přejde předcházející aktuálnímu `MasterViewController`.
-3.  Přetáhněte novou **View Controller** z **sada nástrojů** k **návrhová plocha**. Nastavit jako **kořenového řadiče zobrazení** podle **Ctrl + přetažení** z **navigační řadiče**:
+1. Ukázku stáhnout a spustit v sadě Visual Studio for Mac.
+2. Dvakrát klikněte na `MainStoryboard.Storyboard` otevřete ukázku v iOS Designer. Pomocí této ukázky jsme chcete přidat nové obrazovky do naší aplikaci, která bude řídit ověřování. To přejde předcházející aktuálnímu `MasterViewController`.
+3. Přetáhněte novou **View Controller** z **sada nástrojů** k **návrhová plocha**. Nastavit jako **kořenového řadiče zobrazení** podle **Ctrl + přetažení** z **navigační řadiče**:
 
     [![](touchid-images/image4.png "Nastavte řadič zobrazení kořenové")](touchid-images/image4.png#lightbox)
 4.  Název nového řadiče zobrazení `AuthenticationViewController`.
-5.  Přetáhněte tlačítka a umístěte ji na `AuthenticationViewController`. Toto volání `AuthenticateButton`a pojmenujte ho text `Add a Chore`.
-6.  Vytvoření událostí na `AuthenticateButton` názvem `AuthenticateMe`.
-7.  Vytvoření ruční segue z `AuthenticationViewController` kliknutím na černé panelu v dolní části a **Ctrl + přetažení** z panelu `MasterViewController` a výběr **nabízené** (nebo **zobrazit** Pokud pomocí třídy velikost):
+5. Přetáhněte tlačítka a umístěte ji na `AuthenticationViewController`. Toto volání `AuthenticateButton`a pojmenujte ho text `Add a Chore`.
+6. Vytvoření událostí na `AuthenticateButton` názvem `AuthenticateMe`.
+7. Vytvoření ruční segue z `AuthenticationViewController` kliknutím na černé panelu v dolní části a **Ctrl + přetažení** z panelu `MasterViewController` a výběr **nabízené** (nebo **zobrazit** Pokud pomocí třídy velikost):
 
     [![](touchid-images/image5.png "Přetáhněte z panelu MasterViewController a výběr nabízených nebo zobrazení")](touchid-images/image6.png#lightbox)
-8.  Klikněte na nově vytvořený segue a dejte mu identifikátor `AuthenticationSegue`, jak je uvedeno dále:
+8. Klikněte na nově vytvořený segue a dejte mu identifikátor `AuthenticationSegue`, jak je uvedeno dále:
 
     [![](touchid-images/image7.png "Nastavit identifikátor segue na AuthenticationSegue")](touchid-images/image7.png#lightbox)
-9.  Přidejte následující kód, který `AuthenticationViewController`:
+9. Přidejte následující kód, který `AuthenticationViewController`:
 
-    ```
+    ```csharp
     partial void AuthenticateMe (UIButton sender)
-        {
-            var context = new LAContext();
-            NSError AuthError;
-            var myReason = new NSString("To add a new chore");
+    {
+        var context = new LAContext();
+        NSError AuthError;
+        var myReason = new NSString("To add a new chore");
 
-
-            if (context.CanEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, out AuthError)){
-                var replyHandler = new LAContextReplyHandler((success, error) => {
-
-                    this.InvokeOnMainThread(()=>{
-                        if(success){
-                            Console.WriteLine("You logged in!");
-                            PerformSegue("AuthenticationSegue", this);
-                        }
-                        else{
-                            //Show fallback mechanism here
-                        }
-                    });
-
+        if (context.CanEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, out AuthError)){
+            var replyHandler = new LAContextReplyHandler((success, error) => {
+                this.InvokeOnMainThread(()=> {
+                    if(success)
+                    {
+                        Console.WriteLine("You logged in!");
+                        PerformSegue("AuthenticationSegue", this);
+                    }
+                    else
+                    {
+                        // Show fallback mechanism here
+                    }
                 });
-                context.EvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, myReason, replyHandler);
-            };
-        }
+            });
+            context.EvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, myReason, replyHandler);
+        };
+    }
     ```
 
 Toto je veškerý kód, je nutné implementovat Touch ID ověřování pomocí místního ověřování. Zvýrazněné řádky na obrázku níže ukazují použití místního ověřování:

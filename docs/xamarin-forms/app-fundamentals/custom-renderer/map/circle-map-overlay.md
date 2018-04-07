@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: a70c8fdca457e386a1490ca974e1a1ea5da2f6db
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 23f36bfbdc4638bb8f35dd2a55124a1438e1d441
+ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="highlighting-a-circular-area-on-a-map"></a>Zvýraznění cyklické oblast na mapu
 
@@ -290,17 +290,40 @@ namespace MapOverlay.UWP
                 nativeMap.MapElements.Add(polygon);
             }
         }
-        ...
+        // GenerateCircleCoordinates helper method (below)
     }
 }
 ```
 
 Tato metoda provede následující operace, za předpokladu, že vlastní zobrazovací jednotky je připojen k nového elementu Xamarin.Forms:
 
-- Pozice kruh a radius jsou načteny z `CustomMap.Circle` vlastnost a předána `GenerateCircleCoordinates` metodu, která generuje zeměpisnou šířku a délku souřadnice hraniční kruh.
+- Pozice kruh a radius jsou načteny z `CustomMap.Circle` vlastnost a předána `GenerateCircleCoordinates` metodu, která generuje zeměpisnou šířku a délku souřadnice hraniční kruh. Kód pro tuto metodu helper je uveden níže.
 - Souřadnice hraniční kruh se převedou na `List` z `BasicGeoposition` souřadnice.
 - Po vytvoření instance se vytvoří na kruh `MapPolygon` objektu. `MapPolygon` Třída se používá k nastavení zobrazit tvar více bodů na mapě jeho `Path` vlastnosti `Geopath` objekt, který obsahuje souřadnice tvaru.
 - Vykreslení mnohoúhelníku na mapě přidáním do `MapControl.MapElements` kolekce.
+
+
+```
+List<Position> GenerateCircleCoordinates(Position position, double radius)
+{
+    double latitude = position.Latitude.ToRadians();
+    double longitude = position.Longitude.ToRadians();
+    double distance = radius / EarthRadiusInMeteres;
+    var positions = new List<Position>();
+
+    for (int angle = 0; angle <=360; angle++)
+    {
+        double angleInRadians = ((double)angle).ToRadians();
+        double latitudeInRadians = Math.Asin(Math.Sin(latitude) * Math.Cos(distance) + Math.Cos(latitude) * Math.Sin(distance) * Math.Cos(angleInRadians));
+        double longitudeInRadians = longitude + Math.Atan2(Math.Sin(angleInRadians) * Math.Sin(distance) * Math.Cos(latitude), Math.Cos(distance) - Math.Sin(latitude) * Math.Sin(latitudeInRadians));
+
+        var pos = new Position(latitudeInRadians.ToDegrees(), longitudeInRadians.ToDegrees());
+        positions.Add(pos);
+    }
+
+    return positions;
+}
+```
 
 ## <a name="summary"></a>Souhrn
 

@@ -6,12 +6,12 @@ ms.assetid: 915874C3-2F0F-4D83-9C39-ED6B90BB2C8E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 12/22/2017
-ms.openlocfilehash: f074bca7571188b14a36bd4e6c59a6fdf8df9339
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/04/2018
+ms.openlocfilehash: d5921c549c299197bdc442c9b883b49064655f76
+ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="android-emulator-hardware-acceleration"></a>Hardwarová akcelerace emulátoru systému Android
 
@@ -20,13 +20,14 @@ Protože je prohibitively pomalé bez hardwarové akcelerace, Intel na emulátor
 
 ## <a name="haxm-overview"></a>Přehled HAXM
 
-HAXM je modul virtualizace s hardwarovým řízením (hypervisor), který používá virtualizace technologie Intel (VT) pro urychlení emulace aplikace pro Android na hostitelském počítači. V kombinaci s Androidem x86 bitové kopie emulátoru zadaný Intel a oficiální Android SDK Manager HAXM umožňuje rychlejší Android emulace v systémech VT povolena. Pokud vyvíjíte na počítači s Intel využití procesoru, který má VT možnosti, můžete využít výhod z HAXM výrazně urychlit emulátoru Android SDK (Pokud si nejste jistí, jestli vaše procesoru podporuje VT, přečtěte si téma [určit, pokud vaše procesoru podporuje Intel Virtualizační technologie](https://www.intel.com/content/www/us/en/support/processors/000005486.html)).
+HAXM je modul virtualizace s hardwarovým řízením (hypervisor), který používá virtualizace technologie Intel (VT) pro urychlení emulace aplikace pro Android na hostitelském počítači. V kombinaci s Androidem x86 bitové kopie emulátoru zadaný Intel a oficiální Android SDK Manager HAXM umožňuje rychlejší Android emulace v systémech VT povolena. 
 
-Emulátoru Android SDK automaticky využívá HAXM případě, že je k dispozici. Vyberete-li **x86**– na základě virtuální zařízení (jak je popsáno v [konfigurace a použití](~/android/deploy-test/debugging/android-sdk-emulator/index.md)), virtuální zařízení bude používat HAXM hardwarovou akceleraci. Než poprvé použijete emulátoru Android SDK, je vhodné ověřit, že HAXM je nainstalovaná a k dispozici pro Android emulátoru sady SDK.
+Pokud vyvíjíte na počítači s Intel využití procesoru, který má VT možnosti, můžete využít výhod z HAXM výrazně urychlit emulátoru Android SDK (Pokud si nejste jistí, jestli vaše procesoru podporuje VT, přečtěte si téma [určit, pokud vaše procesoru podporuje Intel Virtualizační technologie](https://www.intel.com/content/www/us/en/support/processors/000005486.html)).
 
 > [!NOTE]
-> HAXM nelze spustit na virtuálním počítači.
+> Nelze spustit emulátoru accelerated virtuálních počítačů uvnitř jiným virtuálním Počítačem, jako je například virtuální počítač hostovaný VirtualBox, VMWare nebo Docker. Je nutné spustit emulátor Google Android [přímo na váš hardware systému](https://developer.android.com/studio/run/emulator-acceleration.html#extensions).
 
+Emulátoru Android SDK automaticky využívá HAXM případě, že je k dispozici. Vyberete-li **x86**– na základě virtuální zařízení (jak je popsáno v [konfigurace a použití](~/android/deploy-test/debugging/android-sdk-emulator/index.md)), virtuální zařízení bude používat HAXM hardwarovou akceleraci. Než poprvé použijete emulátoru Android SDK, je vhodné ověřit, že HAXM je nainstalovaná a k dispozici pro Android emulátoru sady SDK.
 
 ## <a name="verifying-haxm-installation"></a>Ověření instalace HAXM
 
@@ -44,7 +45,7 @@ Můžete zkontrolovat, zda je k dispozici zobrazením HAXM **od emulátoru Andro
 
    Pokud **upozornění výkonu** se zobrazí dialogové okno jako to, najdete v části [upozornění výkonu](~/android/deploy-test/debugging/android-sdk-emulator/troubleshooting.md#perfwarn) určit příčinu a vyřešte příčinu problému.
 
-3. Vyberte **x86** bitové kopie (například **Visual Studio\_android 23\_x86\_phone**), klikněte na tlačítko **spustit**, pak klikněte na tlačítko  **Spusťte**:
+3. Vyberte **x86** bitové kopie (například **Visual Studio\_android 23\_x86\_phone**), klikněte na tlačítko **spustit**, pak klikněte na tlačítko ** Spusťte**:
 
     ![Počínaje obrázku výchozí virtuální zařízení Android emulátoru sady SDK](hardware-acceleration-images/win/02-start-default-avd.png)
 
@@ -180,6 +181,11 @@ Pokud je povolena ochrana zařízení, použijte ji zakázat následující krok
 8. Po restartování počítače, zkontrolujte znovu zkontrolujte, zda technologie Hyper-V je vypnutá (jak je popsáno v předchozím kroku).
 
 Pokud ještě není zakázán technologie Hyper-V, zabránit vám v zakázání Guard zařízení a ochranu přihlašovacích údajů mohou zásady počítače připojené k doméně. V takovém případě může požádat o výjimku z vašeho správce domény a umožní vám pro vyjádření výslovného nesouhlasu ochranu přihlašovacích údajů. Alternativně můžete použít počítač, který není připojený k doméně používat HAXM.
+
+## <a name="hardware-acceleration-and-amd-cpus"></a>Hardwarová akcelerace a AMD procesorů
+
+Protože emulátor Google Android teď podporuje hardwarovou akceleraci AMD [pouze v systému Linux](https://developer.android.com/studio/run/emulator-acceleration.html#dependencies), hardwarovou akceleraci není k dispozici pro procesory AMD počítačů se systémem Windows.
+
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 

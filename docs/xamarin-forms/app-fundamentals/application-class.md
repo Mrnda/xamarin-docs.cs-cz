@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/19/2016
-ms.openlocfilehash: db8b767d6e7a6c5e5badc1c74703825a66ea2ab8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1e1039f513534885dffe9fef348d567243651e22
+ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="app-class"></a>Aplikace – třída
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 04/04/2018
 * Trvalé [ `Properties` slovník](#Properties_Dictionary) pro uložení jednoduché hodnot mezi změny stavu životního cyklu.
 * Statického `Current` vlastnost, která obsahuje odkaz na objekt aktuální aplikace.
 
-Pokud taky zpřístupňuje [životního cyklu metody](~/xamarin-forms/app-fundamentals/app-lifecycle.md) například `OnStart`, `OnSleep`, a `OnResume` a také události modální navigace.
+Taky zpřístupňuje [životního cyklu metody](~/xamarin-forms/app-fundamentals/app-lifecycle.md) například `OnStart`, `OnSleep`, a `OnResume` a také události modální navigace.
 
 V závislosti na šablonu, kterou jste zvolili, `App` třídy mohou být definovány v jedním ze dvou způsobů:
 

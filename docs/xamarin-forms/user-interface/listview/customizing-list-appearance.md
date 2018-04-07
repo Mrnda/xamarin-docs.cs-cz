@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: ff36deff996a92fca512158252c64e5c29046be9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 76a5c96d0e7bb85f0e6b313e2dbc058b8c2aae6d
+ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="list-appearance"></a>Seznam vzhledu
 
@@ -117,14 +117,12 @@ Všimněte si, že máme:
 - Změnit `ListView`na `ItemsSource` do seznamu seskupené
 
 ### <a name="customizing-grouping"></a>Přizpůsobení seskupení
-Teď, když jste viděli implementaci základní seskupování v ListView, podíváme se, jak přizpůsobit zobrazení záhlaví skupiny.
 
-Podobným způsobem `ListView` má `ItemTemplate` pro definování zobrazení řádky, `ListView` má `GroupHeaderTemplate`. Toto je příklad ListView z výše, s využitím šablony záhlaví přizpůsobené skupiny:
+Pokud bylo povoleno seskupení v seznamu, lze přizpůsobit záhlaví skupiny.
 
-![](customizing-list-appearance-images/grouping-depth.png "ListView s vlastní GroupHeaderTemplate")
+Podobným způsobem `ListView` má `ItemTemplate` pro definování zobrazení řádky, `ListView` má `GroupHeaderTemplate`. 
 
-
-Chcete-li provést tento návrh v jazyce XAML:
+Zde je uveden příklad možností přizpůsobení záhlaví skupiny v jazyce XAML:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
