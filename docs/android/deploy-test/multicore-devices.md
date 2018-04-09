@@ -1,18 +1,17 @@
 ---
-title: "Zařízení s více jádry & Xamarin.Android"
-description: "Android můžete spustit na několik architektury jiného počítače. Tento dokument popisuje různé architektury procesoru, které může být použit pro aplikace pro Xamarin.Android. Tento dokument taky vysvětluje, jak Android aplikace pro podporu různé architektury procesoru spojených. Bude potřeba zavést aplikace binární rozhraní (ABI) a bude poskytnuta pokyny týkající se které bis používat v aplikaci Xamarin.Android."
-ms.topic: article
+title: Zařízení s více jádry & Xamarin.Android
+description: Android můžete spustit na několik architektury jiného počítače. Tento dokument popisuje různé architektury procesoru, které může být použit pro aplikace pro Xamarin.Android. Tento dokument taky vysvětluje, jak Android aplikace pro podporu různé architektury procesoru spojených. Bude potřeba zavést aplikace binární rozhraní (ABI) a bude poskytnuta pokyny týkající se které bis používat v aplikaci Xamarin.Android.
 ms.prod: xamarin
 ms.assetid: D812883C-A14A-E74B-0F72-E50071E96328
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/05/2018
-ms.openlocfilehash: ac525805fce99f44ea1efb132fb99f6d3a01f2f3
-ms.sourcegitcommit: 0fdb243b46cf21be47584900805cadcd077121bf
+ms.openlocfilehash: 0288ba6aa8a3c9eb89208161f60ba831723444c5
+ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/04/2018
 ---
 # <a name="multi-core-devices--xamarinandroid"></a>Zařízení s více jádry & Xamarin.Android
 
@@ -212,7 +211,7 @@ $APP/lib/libone.so # armeabi
 $APP/lib/libtwo.so # armeabi, NOT armeabi-v7a!
 ```
 
-Kromě toho i pokud obě `armeabi` a `armeabi-v7a` bis nejsou zadány (jak je popsáno níže v části *deklarace podporované bis* ), Xamarin.Android vytvoří následující element v.
+Kromě toho i pokud obě `armeabi` a `armeabi-v7a` bis nejsou zadány (jak je popsáno níže v části *deklarace podporované bis*), Xamarin.Android vytvoří následující element v.
 `csproj`:
 
 ```xml

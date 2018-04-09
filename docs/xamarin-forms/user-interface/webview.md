@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: 54c70fda22782dfa9b6617c0832f2c17f0169b57
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a96c57b66e5debbbb7318c22e33a21eb9b998395
+ms.sourcegitcommit: 271d3f7ea4abfcf87734d2c747a68cb8114d743c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/08/2018
 ---
 # <a name="webview"></a>WebView
 
@@ -399,6 +399,8 @@ Dokončení načítání:
 Viděli jste poslední zálohy, každý z oblíbených webových prohlížečů jako hardwaru accelerated vykreslování a JavaScript kompilace přijme technologie. Bohužel se z důvodu omezení zabezpečení, většinu těchto rozvoj nebyly k dispozici v iOS-equaivalent z `WebView`, `UIWebView`. Xamarin.Forms `WebView` používá `UIWebView`. Pokud tento způsob problém, budete potřebovat k zápisu tohoto používá vlastní zobrazovací jednotky `WKWebView`, který podporuje rychlejší procházení. Všimněte si, že `WKWebView` je podporována pouze v systému iOS 8 a novější.
 
 Webové zobrazení v systému Android ve výchozím nastavení je přibližně tak rychlý jako prohlížeče integrované.
+
+[Webové zobrazení UWP](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/web-view) používá modul vykreslování Microsoft Edge. Zařízení Desktop a tablet měli vidět stejného výkonu jako pomocí prohlížeče Edge sám sebe.
 
 `WebBrowser` Ovládacího prvku na Windows Phone 8 a Windows Phone 8.1 nemá není funkcí, které podporují nejnovější HTML5 a často může mít snížený výkon. Zajímat, jak lokality zobrazí ve Windows Phone `WebView`. Není dostatečná pro testování v aplikaci Internet Explorer.
 

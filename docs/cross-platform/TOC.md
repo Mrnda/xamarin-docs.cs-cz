@@ -83,7 +83,6 @@
 ### [Selektor implementace zásobníku HttpClient a protokolu SSL/TLS](macios/http-stack.md)
 ## [Odstraňování potíží](troubleshooting/index.md)
 ### [Nejčastější dotazy](troubleshooting/questions/index.md)
-#### [Můžu se Xamarinem použít sadu Visual Studio 2017 Release Candidate?](troubleshooting/questions/visualstudio-2017-rc.md)
 #### [Jak si můžu zobrazit, které knihovny se podporují v PCL?](troubleshooting/questions/pcl-support-libraries.md)
 #### [Rozhraní PCL Reflection API](troubleshooting/questions/pcl-reflection.md)
 #### [Případová studie PCL: Jak můžu řešit problémy související se System.Diagnostics.Tracing pro balíček NuGet Microsoft TPL Dataflow?](troubleshooting/questions/pcl-case-study.md)
@@ -96,12 +95,14 @@
 #### [Kdy a jak mám ohlásit chybu?](troubleshooting/questions/howto-file-bug.md)
 #### [Proč Xamarin nepodporuje Jenkins?](troubleshooting/questions/xamarin-jenkins.md)
 #### [Jaká nastavení projektu vyžaduje ladicí program?](troubleshooting/questions/debugger-settings.md)
+
+### Otázky k sadě Visual Studio
+#### [Zakázaná zaškrtávací políčka týkající se nasazení v nástroji Configuration Manager](troubleshooting/questions/deploy-checkboxes.md)
+#### [Chybějící rozšíření sady Visual Studio po instalaci](troubleshooting/questions/missing-vs-extensions.md)
+#### [Jak provedu důkladnou odinstalaci nástroje Xamarin pro Visual Studio?](troubleshooting/questions/uninstall-xamarin-vs.md)
+#### [Jak shromáždím aktuální zásobníky volání procesu sady Visual Studio?](troubleshooting/questions/vs-callstack.md)
+#### [Proč Visual Studio nezahrnuje do mého sestavení projekt odkazované knihovny?](troubleshooting/questions/vs-config-manager.md)
+
 ### [Aktualizace odkazů na komponenty na NuGet](troubleshooting/component-nuget.md)
 ### [Možnosti podpory](troubleshooting/support-options.md)
-### [Otázky ke starším licencím](troubleshooting/legacy-licenses/index.md)
-#### [Správa týmu platformy Xamarin](troubleshooting/legacy-licenses/team-management.md)
-#### [Jak změním e-mailovou adresu svého účtu?](troubleshooting/legacy-licenses/change-email.md)
-#### [Jak ručně znovu synchronizovat licence Xamarinu?](troubleshooting/legacy-licenses/resync-licenses.md)
-#### [Některé konkrétní chyby při licencování](troubleshooting/legacy-licenses/licensing-errors.md)
-#### [Proč se v sadě Visual Studio nebo Visual Studio pro Mac nemůžu přihlásit ke Xamarinu?](troubleshooting/legacy-licenses/login-troubleshooting.md)
 ## [Ukázky](samples/index.yml)

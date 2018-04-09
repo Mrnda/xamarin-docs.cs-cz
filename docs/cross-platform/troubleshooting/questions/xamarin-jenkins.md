@@ -6,11 +6,11 @@ ms.assetid: 9951F980-2C6C-47C0-8A35-A78F06C20BEB
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 8112f9bfc8975b12e3c300c0c981d21749173f7c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: befcdcbee3114e760cec94a61a84106fddc72cf9
+ms.sourcegitcommit: 271d3f7ea4abfcf87734d2c747a68cb8114d743c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/08/2018
 ---
 # <a name="why-isnt-jenkins-supported-by-xamarin"></a>Proč není volaných Xamarin podporuje?
 
@@ -51,7 +51,3 @@ or
 > Chyba: Starter Edition Xamarin.iOS nepodporuje vytváření mimo Xamarin Studio 
 
 Nejběžnější příčina tohoto scénáře je použití volaných přihlášením pomocí uživatelského účtu nejsou přidružené licence na aplikaci Xamarin. Nejjednodušší způsob, jak řešení, je instalace volaných jako aplikace přímo přes uživatelský účet. Tento proces a některé další aspekty jsou popsány zde: [https://forums.xamarin.com/discussion/comment/99397/#Comment_99397](https://forums.xamarin.com/discussion/comment/99397/#Comment_99397)
-
-Další možností je, že vaše informace o licencích Xamarin je nějakým způsobem poškozený, můžete použít [nové synchronizace licencí Xamarin průvodce](~/cross-platform/troubleshooting/legacy-licenses/resync-licenses.md) tento scénář lze vyřešit.
-
-
