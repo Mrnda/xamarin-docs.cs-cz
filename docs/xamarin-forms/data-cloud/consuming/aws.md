@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
 ms.openlocfilehash: 1602319dbf5a5d00ac5de75f2d438b9aea692699
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.sourcegitcommit: 271d3f7ea4abfcf87734d2c747a68cb8114d743c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/12/2018
 ---
 # <a name="consuming-an-amazon-simpledb-service"></a>Využívání služby Amazon SimpleDB
 
@@ -195,9 +195,9 @@ Tento článek vysvětluje používání AWS SDK pro .NET pro dotazování, vytv
 
 ## <a name="related-links"></a>Související odkazy
 
-- [TodoAWS (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoAWS/)
+- [TodoAWS (sample)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoAWS/)
 - [Příručka vývojáře pro Xamarin SDK služby Amazon Web Services](http://docs.aws.amazon.com/mobile/sdkforxamarin/developerguide/)
 - [Amazon Cognito Identity](http://docs.aws.amazon.com/cognito/devguide/identity/)
 - [Dokumentaci pro vývojáře SimpleDB Amazon](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/Welcome.html)
-- [AmazonSimpleDBClient – třída](http://docs.aws.amazon.com/sdkfornet1/latest/apidocs/html/T_Amazon_SimpleDB_AmazonSimpleDBClient.htm)
+- [AmazonSimpleDBClient Class](http://docs.aws.amazon.com/sdkfornet1/latest/apidocs/html/T_Amazon_SimpleDB_AmazonSimpleDBClient.htm)
 - [Amazon Web Services SDK pro .NET](https://www.nuget.org/packages?q=Tags%3A%22aws-sdk-v3%22)
