@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
-ms.openlocfilehash: f20042b9599f7b4dde699a125e63c5ce435f6bc5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6e67820fa83ddea46f934b4eaedde2c6334f9cc6
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="data--cloud-services"></a>Datové a cloudové služby
 
@@ -25,11 +25,11 @@ Tento článek obsahuje návod ukázkovou aplikaci Xamarin.Forms, která ukazuje
 
 ## <a name="consuming-web-servicesxamarin-formsdata-cloudconsumingindexmd"></a>[Používání webových služeb](~/xamarin-forms/data-cloud/consuming/index.md)
 
-Tato příručka ukazuje, jak komunikovat se službami jiných webových vám umožňuje vytvářet, číst, aktualizovat a odstraňovat funkce (CRUD) k aplikaci Xamarin.Forms. Obsahuje následující témata komunikaci s [ASMX služby](consuming/asmx.md), [služby WCF](consuming/wcf.md), [služby REST](consuming/rest.md), [Azure Mobile Apps](consuming/azure.md)a [ Amazon Web Services](consuming/aws.md).
+Tato příručka ukazuje, jak komunikovat se službami jiných webových vám umožňuje vytvářet, číst, aktualizovat a odstraňovat funkce (CRUD) k aplikaci Xamarin.Forms. Obsahuje následující témata komunikaci s [ASMX služby](consuming/asmx.md), [služby WCF](consuming/wcf.md), [služby REST](consuming/rest.md), a [Azure Mobile Apps](consuming/azure.md).
 
 ## <a name="authenticating-access-to-web-servicesxamarin-formsdata-cloudauthenticationindexmd"></a>[Ověřování přístupu k webovým službám](~/xamarin-forms/data-cloud/authentication/index.md)
 
-Tato příručka vysvětluje, jak integrovat ověřovací služby do Xamarin.Forms aplikace umožňuje uživatelům sdílet back-end přitom jenom má přístup k svá vlastní data. Obsahuje následující témata [základní ověřování pomocí služby REST](authentication/rest.md), [pomocí součásti Xamarin.Auth k ověřování na základě poskytovatelů identit OAuth](authentication/oauth.md)a pomocí integrované ověřování mechanismy nabízených [Azure Mobile Apps](authentication/azure.md), a [Amazon Web Services](authentication/aws.md).
+Tato příručka vysvětluje, jak integrovat ověřovací služby do Xamarin.Forms aplikace umožňuje uživatelům sdílet back-end přitom jenom má přístup k svá vlastní data. Obsahuje následující témata [základní ověřování pomocí služby REST](authentication/rest.md), [pomocí součásti Xamarin.Auth k ověřování na základě poskytovatelů identit OAuth](authentication/oauth.md)a pomocí integrované ověřování mechanismy nabízených [Azure Mobile Apps](authentication/azure.md).
 
 ## <a name="synchronizing-data-with-web-servicessyncindexmd"></a>[Synchronizace dat s webovými službami](sync/index.md)
 

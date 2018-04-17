@@ -6,12 +6,12 @@ ms.assetid: 4D7C5F46-C997-49F6-AFDA-6763E68CDC90
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: c6e1d36d871b4bb41a1e53d6e58ba8940813b29f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/12/2018
+ms.openlocfilehash: e2f25504b971a0332dc51dc9b017c9c83222ec57
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="remote-notifications-with-firebase-cloud-messaging"></a>Vzdálená oznámení s Firebase cloudu zasílání zpráv
 
@@ -93,7 +93,7 @@ Protože zasílání zpráv cloudu Firebase na služby Google Play, závisí [Xa
 
 1.  V sadě Visual Studio pro Mac, klikněte pravým tlačítkem na **balíčků > přidat balíčky...** . 
 
-2.  Search for **Xamarin.GooglePlayServices.Base**. 
+2.  Vyhledejte **Xamarin.GooglePlayServices.Base**. 
 
 3.  Instalaci tohoto balíčku do **FCMClient** projektu: 
 
@@ -427,7 +427,7 @@ Klepněte **protokolu tokenu** tlačítko. V okně výstupu IDE by se zobrazit z
 Dlouhý řetězec označený verzí **tokenu** je token ID instance, který bude vložte do konzoly Firebase &ndash; vyberte a zkopírujte tento řetězec do schránky. Pokud nevidíte instance ID token, přidejte následující řádek na začátek `OnCreate` metodu k ověření, který **google services.json** byla správně analyzovat:
 
 ```csharp
-Log.Debug(TAG, "google app id: " + Resource.String.google_app_id);
+Log.Debug(TAG, "google app id: " + GetString(Resource.String.google_app_id));
 ```
 
 `google_app_id` Hodnota protokolují do okna výstupu by měl odpovídat `mobilesdk_app_id` hodnota zaznamenaná v **google services.json**. 
@@ -683,6 +683,27 @@ Tentokrát zprávu, která byla zaznamenána ve výstupním okně je také souč
 Když otevřete oznámení, měli vidět poslední zprávu, která byla odeslána z grafického uživatelského rozhraní Firebase konzoly oznámení: 
 
 [![Zobrazí se ikona popředí oznámení popředí](remote-notifications-with-fcm-images/23-foreground-msg-sml.png)](remote-notifications-with-fcm-images/23-foreground-msg.png#lightbox)
+
+
+## <a name="disconnecting-from-fcm"></a>Odpojení od FCM
+
+Chcete-li zrušit odběr tématu, volejte [UnsubscribeFromTopic](https://firebase.google.com/docs/reference/android/com/google/firebase/messaging/FirebaseMessaging.html#unsubscribeFromTopic%28java.lang.String%29) metodu [FirebaseMessaging](https://firebase.google.com/docs/reference/android/com/google/firebase/messaging/FirebaseMessaging) – třída. Například pro odhlášení odběru _zprávy_ tématu přihlásit k odběru dříve, **Unsubscribe** tlačítko nebylo možné přidat do rozložení s následující kód pro obslužnou rutinu:
+
+```csharp
+var unSubscribeButton = FindViewById<Button>(Resource.Id.unsubscribeButton);
+unSubscribeButton.Click += delegate {
+    FirebaseMessaging.Instance.UnsubscribeFromTopic("news");
+    Log.Debug(TAG, "Unsubscribed from remote notifications");
+};
+```
+
+Chcete-li zrušit registraci zařízení z FCM úplně, odstranit instance ID voláním [DeleteInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId.html#deleteInstanceId%28%29) metodu [FirebaseInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId) – třída. Příklad:
+
+```csharp
+FirebaseInstanceId.Instance.DeleteInstanceId();
+```
+
+Toto volání metody odstraní instance ID a data s ním spojená. V důsledku toho se zastavilo pravidelné odesílání dat FCM do zařízení.
 
  
 ## <a name="troubleshooting"></a>Poradce při potížích

@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: b4d96ef50498b454da583a955169b9d51c29dd01
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8103dcc1c2e1e8c2375a86d51580b1ea3fcce432
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="resources-and-data-storage"></a>Prostředky a úložiště dat
 
@@ -55,6 +55,9 @@ V důsledku toho musí aplikace Xamarin.tvOS ukládání uživatelských dat v �
 
 - **Icloudu klíč-hodnota úložiště (KVS)** – pro malé informace (méně než 1 MB), že vaše aplikace může vyžadovat (např. uživatelské předvolby), můžete použít Icloudu KVS úložiště. Icloudu KVS dat je automaticky synchronizované s cloudem a všechny uživatele zařízení se systémem stejné aplikaci. Další informace najdete v tématu [klíč-hodnota úložiště](~/ios/data-cloud/introduction-to-icloud.md) části našich [Úvod do Icloudu](~/ios/data-cloud/introduction-to-icloud.md) dokument nebo společnosti Apple [návrhu pro Data klíč-hodnota v Icloudu](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/iCloudDesignGuide/Chapters/DesigningForKey-ValueDataIniCloud.html#//apple_ref/doc/uid/TP40012094-CH7) dokumentace.
 - **CloudKit** – úložiště větší údaje (větší než 1 MB), použijte CloudKit Framework společnosti Apple. Na rozdíl od Icloudu KVS úložiště CloudKit data se dají sdílet mezi všichni uživatelé aplikace (stejně jako se privátní jednomu uživateli). Vytvoří další informace, najdete v tématu naše [Úvod do CloudKit](~/ios/data-cloud/intro-to-cloudkit.md) dokumentace nebo společnosti Apple [CloudKit rychlý Start](https://developer.apple.com/library/prerelease/tvos/documentation/DataManagement/Conceptual/CloudKitQuickStart/Introduction/Introduction.html#//apple_ref/doc/uid/TP40014987).
+
+> [!IMPORTANT]
+> Apple [poskytuje nástroje](https://developer.apple.com/support/allowing-users-to-manage-data/) , což vývojářům správně zpracovat Evropské unie obecné Data Protection nařízení (GDPR).
 
 <a name="On-Demand-Resources" />
 

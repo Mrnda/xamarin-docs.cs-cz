@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
-ms.openlocfilehash: e9738a766762dd64cdfbb034d4eaa54f76aca311
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 703441e3fc58beeb33e519f3781387a59c1c1cef
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="understanding-the-sample"></a>Principy vzorku
 
@@ -86,7 +86,7 @@ Operace webové služby jsou přístupné prostřednictvím `TodoItemManager` t�
 
 Kromě toho některé ukázkové aplikace obsahují další metody v `TodoItemManager` třídy, která se používají ke správě procesu ověřování uživatele.
 
-Ne přímo, vyvolání operace webové služby `TodoItemManager` metody vyvolání metody pro třídu závislé, která je vloženy do `TodoItemManager` konstruktor. Například jeden ukázkovou aplikaci vloží `SimpleDBStorage` třídy do `TodoItemManager` konstruktor k zajištění implementace, která volá operace u služby Amazon na SimpleDB.
+Ne přímo, vyvolání operace webové služby `TodoItemManager` metody vyvolání metody pro třídu závislé, která je vloženy do `TodoItemManager` konstruktor. Například jeden ukázkovou aplikaci vloží `RestService` třídy do `TodoItemManager` konstruktor k zajištění implementace, který používá rozhraní REST API pro přístup k datům.
 
 ### <a name="translating-text-to-speech"></a>Převod textu na řeč překladu
 
@@ -113,4 +113,3 @@ Toto téma poskytuje návod ukázkovou aplikaci Xamarin.Forms, která se použí
 - [Verze WCF (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoWCF)
 - [Verze REST (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoREST)
 - [Verze Azure (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoAzure)
-- [Verze Amazon Web Services (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoAWS)

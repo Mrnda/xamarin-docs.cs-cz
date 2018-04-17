@@ -6,11 +6,11 @@ ms.assetid: 89539D79-BC6E-4A3E-AEC6-69D9A6CC6818
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 33a6dc7294db74c3c8ab451f147c941124db8982
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d9b98611c7d269e590ce6fe2ce0270ef71dacf1e
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="document-picker"></a>Výběr dokumentu.
 
@@ -38,6 +38,8 @@ Pokud chcete implementovat nové funkce nástroje pro výběr dokumentu, byly pr
 -  V nástroji hledání Mac OS se přidal k složce serveru služby iCloud.
 -  zařízení s iOS můžete přístup k obsahu složky systému Mac OS serveru služby iCloud.
 
+> [!IMPORTANT]
+> Apple [poskytuje nástroje](https://developer.apple.com/support/allowing-users-to-manage-data/) , což vývojářům správně zpracovat Evropské unie obecné Data Protection nařízení (GDPR).
 
 ## <a name="what-is-a-document"></a>Co je dokument?
 

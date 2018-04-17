@@ -6,16 +6,20 @@ ms.assetid: 4FC3C774-EF93-41B2-A81E-C6A08F32C09B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/13/2018
-ms.openlocfilehash: 969b1b36659ac52782d30a1840ba352524e5e3c6
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/12/2018
+ms.openlocfilehash: f4a1451cb848f4da1f595c15d946f4e05292900d
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="remote-notifications-with-google-cloud-messaging"></a>Vzdálená oznámení s zasílání zpráv cloudu Google
 
 _Tento názorný postup obsahuje podrobné vysvětlení způsobu implementace vzdáleného oznámení (také nazývané nabízená oznámení) pomocí služby Google Cloud Messaging v aplikaci Xamarin.Android. Popisuje různé třídy, které je nutné implementovat pro komunikaci s zasílání zpráv cloudu Google (GCM), vysvětluje, jak nastavit oprávnění ve Android Manifest pro přístup do služby GCM a ukazuje, s testovací ukázka programu zasílání zpráv začátku do konce._
+
+> [!NOTE]
+> Byl nahrazen GCM [zasílání zpráv cloudu Firebase](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md) (FCM).
+> GCM serverových a klientských rozhraní API [jsou zastaralé](https://firebase.googleblog.com/2018/04/time-to-upgrade-from-gcm-to-fcm.html) a bude k dispozici co nejdříve 11. dubna 2019.
 
 ## <a name="gcm-notifications-overview"></a>Přehled oznámení GCM
 

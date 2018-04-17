@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: df0e188efd2791b03a63c31b715ed1da77079230
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bc34cf265885708fa6392936a8dbc9d82796e2fd
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="authenticating-access-to-web-services"></a>Ověřování přístupu k webovým službám
 
@@ -36,11 +36,6 @@ Azure Active Directory B2C je cloudové řešení správy identity pro určenýc
 ## <a name="integrating-azure-active-directory-b2c-with-azure-mobile-appsazure-ad-b2c-mobile-appmd"></a>[Integrace Azure Active Directory B2C s Azure Mobile Apps](azure-ad-b2c-mobile-app.md)
 
 Azure Active Directory B2C můžete použít ke správě ověřování pracovního postupu pro Azure Mobile Apps. S tímto přístupem prostředí správy identit je plně definována v cloudu a můžete změnit, aniž by měnili kód mobilní aplikace. Tento článek ukazuje, jak používat Azure Active Directory B2C k ověřování a autorizace na instanci Azure Mobile Apps s Xamarin.Forms.
-
-## <a name="authenticating-users-with-an-amazon-simpledb-serviceawsmd"></a>[Ověřování uživatelů pomocí služby Amazon SimpleDB](aws.md)
-
-Amazon SimpleDB nenabízí svůj vlastní systém oprávnění na základě prostředků. Místo toho ověřování proti zprostředkovatele identity lze zajistit, že uživatelé v doméně SimpleDB mají jenom přístup k svá vlastní data. Tento článek vysvětluje, jak omezit přístup uživatelů k svá vlastní data SimpleDB.
-
 
 ## <a name="related-links"></a>Související odkazy
 

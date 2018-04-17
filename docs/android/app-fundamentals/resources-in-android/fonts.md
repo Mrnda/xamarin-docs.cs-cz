@@ -5,15 +5,14 @@ ms.assetid: 3F543FC5-FDED-47F8-8D2C-481FCC98BFDA
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
-ms.date: 03/09/2018
-ms.openlocfilehash: d4ad9dde4004440985ff247d2f986ede385f981f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/13/2018
+ms.openlocfilehash: 086576ea7d806bb0768fbe4563df7fca99244ccb
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="fonts"></a>Písma
-
 
 ## <a name="overview"></a>Přehled
 
@@ -41,7 +40,7 @@ Knihovna pro Android podporují v26 bude podpora backport písem úroveň rozhra
             app:fontStyle="normal" 
             app:fontWeight="400" />
 
-</font-family>    
+</font-family>
 ```
 
 Také písem jsou k dispozici do aplikace systému Android správné způsobem, dají se použít k widget uživatelského rozhraní nastavením [ `fontFamily` atribut](https://developer.android.com/reference/android/widget/TextView.html#attr_android:fontFamily). Například následující fragment kódu ukazuje, jak zobrazit písmo v TextView:
@@ -49,8 +48,8 @@ Také písem jsou k dispozici do aplikace systému Android správné způsobem, 
 ```xml
 <TextView
     android:text="The quick brown fox jumped over the lazy dog."
-    android:fontFamily="@font/caveat_bold"
-    app:fontFamily="@font/caveat_bold"
+    android:fontFamily="@font/sourcesanspro_regular"
+    app:fontFamily="@font/sourcesanspro_regular"
     android:textAppearance="?android:attr/textAppearanceLarge"
     android:layout_width="match_parent"
     android:layout_height="wrap_content" />
@@ -58,14 +57,12 @@ Také písem jsou k dispozici do aplikace systému Android správné způsobem, 
 
 Tento průvodce nejprve popisují způsob použití písem jako prostředek Android a poté přejde k popisují postup stažení písem za běhu.
 
-
 ## <a name="fonts-as-a-resource"></a>Písma jako prostředek
 
 Balení písmo do Android APK zajistí, že je vždy k dispozici pro aplikaci. Soubor písma (buď. Písem TTF nebo. Soubor OTF) je přidán do aplikace pro Xamarin.Android stejně jako jiný prostředek, pomocí kopírování souborů do adresáře v **prostředky** složce projektu Xamarin.Android. Prostředky písem udržovaly v **písma** podadresáře z **prostředky** složce projektu. 
 
-
 > [!NOTE]
->  Musí mít písma **akce sestavení** z **AndroidResource** nebo nebude mít zabalené do konečné APK. Akce sestavení musí být nastavena automaticky podle prostředí IDE.
+> Musí mít písma **akce sestavení** z **AndroidResource** nebo nebude mít zabalené do konečné APK. Akce sestavení musí být nastavena automaticky podle prostředí IDE.
 
 Když je mnoho podobné písma souborů (například stejné písma s jinou váhu nebo styly) je možné seskupovat je do v dané rodině písem.
 
@@ -75,7 +72,7 @@ Když je mnoho podobné písma souborů (například stejné písma s jinou váh
 
 V dané rodině písem je sada písma, které mají různé váhu a stylů. Například může být samostatné písma soubory tučné a kurzíva písem. Je definované rodiny písem `font` elementy v souboru XML, který je uložen v **prostředky nebo písma** adresáře. Každý rodinu písem by měl mít vlastní soubor XML.
 
-Chcete-li vytvořit v dané rodině písem, nejprve přidat všech písem s **prostředky/písma** složky. Pak vytvořte nový soubor XML ve složce písma pro rodiny písem. Tento soubor XML, bude mít kořenové `font-family` element, který obsahuje jeden nebo více `font` elementy. Každý `font` element deklaruje atributy písma. 
+Chcete-li vytvořit v dané rodině písem, nejprve přidat všech písem s **prostředky/písma** složky. Pak vytvořte nový soubor XML ve složce písma pro rodiny písem. Název souboru XML neobsahuje spřažení ani vztah na písma, se na ně odkazovat; soubor prostředků může být jakýkoli název souboru právní Android prostředků. Tento soubor XML, bude mít kořenové `font-family` element, který obsahuje jeden nebo více `font` elementy. Každý `font` element deklaruje atributy písma.
 
 Následující kód XML je příkladem v dané rodině písem pro _zdroje sítě SAN Pro_ písma, která definuje mnoho váhu jiné písmo. To je uloženo jako soubor **prostředky nebo písma** složku s názvem **sourcesanspro.xml**:
 
@@ -86,7 +83,7 @@ Následující kód XML je příkladem v dané rodině písem pro _zdroje sítě
     <font android:font="@font/sourcesanspro_regular" 
           android:fontStyle="normal" 
           android:fontWeight="400"
-          app:font="@font/sourcesanspro_" 
+          app:font="@font/sourcesanspro_regular" 
           app:fontStyle="normal" 
           app:fontWeight="400" />
     <font android:font="@font/sourcesanspro_bold" 
@@ -112,7 +109,7 @@ Následující kód XML je příkladem v dané rodině písem pro _zdroje sítě
 `fontWeight` Atribut odpovídá CSS `font-weight` atribut a odkazuje na tloušťku písma. Toto je hodnota v rozsahu 100 900. Následující seznam popisuje běžné hodnoty váhy písma a jména:
 
 * **Dynamické** &ndash; 100
-* **Extra Light** &ndash; 200
+* **Velmi světla** &ndash; 200
 * **Lehký** &ndash; 300
 * **Normální** &ndash; 400
 * **Střední** &ndash; 500
@@ -136,7 +133,6 @@ Po definování v dané rodině písem, může sloužit deklarativně nastavení
     />
 ```
 
-
 ### <a name="programmatically-assigning-fonts"></a>Prostřednictvím kódu programu přiřazení písem
 
 Písma lze programově nastavit pomocí [ `Resources.GetFont` ](https://developer.android.com/reference/android/content/res/Resources.html#getFont(int)) metoda pro načtení [ `Typeface` ](https://developer.android.com/reference/android/graphics/Typeface.html) objektu. Mnoho zobrazení je k dispozici `TypeFace` vlastnost, která umožňuje přiřadit widgetu písmo. Tento fragment kódu ukazuje, jak programově nastavení písma na TextView:
@@ -154,14 +150,13 @@ var typeface = Typeface.Create("<FONT FAMILY NAME>", Android.Graphics.TypefaceSt
 textView1.Typeface = typeface;
 ```
 
-
 ## <a name="downloading-fonts"></a>Stahování je víc písem.
 
 Místo balení písma jako prostředek aplikace můžete Android stáhnout písem ze vzdáleného zdroje. To bude mít za následek žádoucí snížení velikosti APK. 
 
 Za pomoci se stáhnou písem _písma zprostředkovatele_. Toto je speciální obsahu zprostředkovatele, který spravuje stažení a ukládání do mezipaměti, jaká písma jsou na všechny aplikace na zařízení. Android 8.0 obsahuje poskytovatele písma ke stažení písem z [Google písma úložiště](http://fonts.google.com). Tento výchozí zprostředkovatel písma je přeneseny zpět na úroveň rozhraní API 14 s v26 knihovna pro Android podpory.
- 
- Pokud aplikace požádá o písmo, písmo zprostředkovatele nejprve zkontrolujte zda písmo je již v zařízení. Pokud ne, pak se pokusí o stažení písma. Pokud písmo nemůže být stažené, pak Android použije na písmo. Po stažení písmo, je k dispozici pro všechny aplikace na zařízení, ne jenom aplikace, který počáteční požadavek.
+
+Pokud aplikace požádá o písmo, písmo zprostředkovatele nejprve zkontrolujte zda písmo je již v zařízení. Pokud ne, pak se pokusí o stažení písma. Pokud písmo nemůže být stažené, pak Android použije na písmo. Po stažení písmo, je k dispozici pro všechny aplikace na zařízení, ne jenom aplikace, který počáteční požadavek.
 
 Při požadavku na stažení písmo aplikace neprohledává přímo poskytovateli písma. Místo toho bude aplikace používat instanci [ `FontsContract` ](https://developer.android.com/reference/android/provider/FontsContract.html) rozhraní API (nebo [ `FontsContractCompat` ](https://developer.android.com/reference/android/support/v4/provider/FontsContractCompat.html) Pokud se používá 26 knihovny podporu).  
 
@@ -184,19 +179,18 @@ Bez ohledu na to, jaký přístup je použita lze stáhnout soubory prostředků
              app:fontProviderPackage="com.google.android.gms" 
              app:fontProviderQuery="VT323"
              app:fontProviderCerts="@array/com_google_android_gms_fonts_certs"
-    >
+>
 </font-family>
 ```
 
 `font-family` Prvek obsahuje následující atributy, deklarace informace, že Android vyžaduje stahování písem:
- 
+
 1. **fontProviderAuthority** &ndash; autority písma zprostředkovatele má být použit pro požadavek.
 2. **fontPackage** &ndash; balíčku pro zprostředkovatele písma, který má být použita pro požadavek. To se používá pro ověření totožnosti poskytovatele.
 3. **fontQuery** &ndash; Toto je řetězec, který vám pomůže najít požadované písmo zprostředkovatele písma. Informace o dotazu písma jsou specifické pro zprostředkovatele písma. [ `QueryBuilder` ](https://github.com/xamarin/monodroid-samples/blob/master/android-o/DownloadableFonts/DownloadableFonts/QueryBuilder.cs) Třídy v [ke stažení písem](https://github.com/xamarin/monodroid-samples/blob/master/android-o/DownloadableFonts/) ukázková aplikace obsahuje některé informace o formátu dotazu písem z kolekce otevřený zdroj Google písem.
 4. **fontProviderCerts** &ndash; prostředků pole se seznamem sady hodnot hash pro certifikáty, které by měl být podepsán zprostředkovatele.
 
 Jakmile jsou definovány písma, může být nezbytné k poskytování informací o _písma certifikáty_ zahrnuta ve stahování.
-
 
 ### <a name="font-certificates"></a>Certifikáty písma
 
@@ -226,7 +220,6 @@ Například následující kód XML s názvem **Resources/values/fonts_cert.xml*
 
 Tyto soubory prostředků v místě je aplikace schopná stahování písma.
 
-
 ### <a name="declaring-downloadable-fonts-as-resources"></a>Zaváděná písma deklarace jako prostředky
 
 Tak, že uvedete ke stažení písem v **AndroidManifest.XML**, Android asynchronně stáhne písmo při prvním spuštění aplikace. Písmo je sami jsou uvedeny ve pole souboru prostředků, podobná následujícímu: 
@@ -238,14 +231,13 @@ Tak, že uvedete ke stažení písem v **AndroidManifest.XML**, Android asynchro
         <item>@font/vt323</item>
     </array>
 </resources>
-```        
+```
 
 Ke stažení těchto písem, musí být deklarován v **AndroidManifest.XML** přidáním `meta-data` jako podřízenou `application` elementu. Například, pokud jsou ke stažení písem deklarované v souboru prostředků v **Resources/values/downloadable_fonts.xml**, pak tento fragment kódu by bylo možné přidat do manifestu: 
 
 ```xml
 <meta-data android:name="downloadable_fonts" android:resource="@array/downloadable_fonts" />
 ```
-
 
 ### <a name="downloading-a-font-with-the-font-apis"></a>Stahování písma s rozhraními API sady písma
 
@@ -269,17 +261,16 @@ V předchozím fragmentu kódu `FontToDownload` je dotaz, který vám pomůže p
 Před předáním `FontRequest` k `FontContractCompat.RequestFont` metoda, existují dva objekty, které se musí vytvořit:
 
 * **`FontsContractCompat.FontRequestCallback`** &ndash; To je abstraktní třída, která se musí rozšířit. Je zpětné volání, která bude volána při `RequestFont` po dokončení. Aplikace Xamarin.Android musí podtřídami `FontsContractCompat.FontRequestCallback` a přepsat `OnTypefaceRequestFailed` a `OnTypefaceRetrieved`, poskytuje akce, jež mají být provedeny, když stahování selže nebo je úspěšné v uvedeném pořadí.
-* **`Handler`** &ndash; Toto je `Handler` který se použije v `RequestFont` ke stažení písma ve vlákně, v případě potřeby. Měli písem **není** stáhnout ve vlákně UI.  
+* **`Handler`** &ndash; Toto je `Handler` který se použije v `RequestFont` ke stažení písma ve vlákně, v případě potřeby. Měli písem **není** stáhnout ve vlákně UI.
 
 Tento fragment kódu je příklad třídy jazyka C#, která asynchronně stáhne písmo z kolekce Google písem Open Source. Implementuje `FontRequestCallback` rozhraní a vyvolá událost jazyka C# při `FontRequest` byl dokončen. 
-
 
 ```csharp
 public class FontDownloadHelper : FontsContractCompat.FontRequestCallback
 {
     // A very simple font query; replace as necessary
     public static readonly String FontToDownload = "Courgette";
-    
+
     Android.OS.Handler Handler = null;
 
     public event EventHandler<FontDownloadEventArg> FontDownloaded = delegate
@@ -305,7 +296,7 @@ public class FontDownloadHelper : FontsContractCompat.FontRequestCallback
         base.OnTypefaceRetrieved(typeface);
         FontDownloaded(this, new FontDownloadEventArg(typeface));
     }
-    
+
     Handler GetHandlerThreadHandler()
     {
         if (Handler == null)
@@ -335,9 +326,8 @@ public class FontDownloadEventArg : EventArgs
 }
 ```
 
-
-
 Použití tohoto pomocníka novou `FontDownloadHelper` je vytvořen, a je mu přiřazená obslužné rutiny události:  
+
 ```csharp
 var fontHelper = new FontDownloadHelper();
 
@@ -348,20 +338,18 @@ fontHelper.FontDownloaded += (object sender, FontDownloadEventArg e) =>
 fontHelper.DownloadFonts(this); // this is an Android Context instance.
 ```
 
-
 ## <a name="summary"></a>Souhrn
 
-Tato příručka popsané nových rozhraní API v Android 8.0 pro podporu ke stažení písem a písem jako prostředky. Je popsané postupy vložit existující písma v APK a použít je v rozložení. Také popsané, jak Android 8.0 podporuje stahování písem od zprostředkovatele písma, buď programově, nebo deklarace meta-data písma v soubory prostředků. 
-
+Tato příručka popsané nových rozhraní API v Android 8.0 pro podporu ke stažení písem a písem jako prostředky. Je popsané postupy vložit existující písma v APK a použít je v rozložení. Také popsané, jak Android 8.0 podporuje stahování písem od zprostředkovatele písma, buď programově, nebo deklarace meta-data písma v soubory prostředků.
 
 ## <a name="related-links"></a>Související odkazy
 
-- [fontFamily](https://developer.android.com/reference/android/widget/TextView.html#attr_android:fontFamily)
+- [FontFamily](https://developer.android.com/reference/android/widget/TextView.html#attr_android:fontFamily)
 - [FontConfig](https://developer.android.com/reference/android/text/FontConfig.html)
 - [FontRequest](https://developer.android.com/reference/android/support/v4/provider/FontRequest.html)
 - [FontsContractCompat](https://developer.android.com/reference/android/support/v4/provider/FontsContractCompat.html)
 - [Resources.GetFont](https://developer.android.com/reference/android/content/res/Resources.html#getFont(int))
-- [Typeface](https://developer.android.com/reference/android/graphics/Typeface.html)
+- [Řez písma](https://developer.android.com/reference/android/graphics/Typeface.html)
 - [Podpora pro Android knihovny 26 NuGet](https://www.nuget.org/packages/Xamarin.Android.Support.Compat/)
 - [Použití písem v Android](https://www.youtube.com/watch?v=TfB-TsLFJdM)
 - [Specifikace váhy písma šablon stylů CSS](https://www.w3.org/TR/css-fonts-3/#font-weight-numeric-values)

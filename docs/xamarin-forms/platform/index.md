@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/20/2017
-ms.openlocfilehash: 454969d8a59128423d632452033b8ba84ee0bc98
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fd46411f3662652ef26addc76f273d6071401a6f
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="platform-features"></a>Funkce platformy
 
@@ -33,9 +33,17 @@ Postup použití `Device` třídy za účelem vytvoření specifické pro platfo
 
 Některé stylů iOS je možné provádět prostřednictvím **Info.plist** a `UIAppearance` rozhraní API. Tato příručka obsahuje příklady, jak se zahrnuje do aplikace pro iOS řešení Xamarin.Forms, včetně vyhledávání Spotlight základní funkce iOS 9.
 
+## <a name="gtkgtkmd"></a>[GTK](gtk.md)
+
+Xamarin.Forms má nyní preview podporuje GTK # aplikace.
+
 ## <a name="macmacmd"></a>[Mac](mac.md)
 
 Xamarin.Forms má nyní preview podporu pro aplikace systému macOS.
+
+## <a name="wpfwpfmd"></a>[GRAFICKÝ SUBSYSTÉM WPF](wpf.md)
+
+Xamarin.Forms má nyní preview podporu pro aplikace Windows Presentation Foundation (WPF).
 
 ## <a name="native-formsnative-formsmd"></a>[Nativní formuláře](native-forms.md)
 

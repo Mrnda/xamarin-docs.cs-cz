@@ -7,11 +7,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 5ab373d708d47ad7c3dbbf4507284be04a1f9934
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3b8211e4c38fd37040fab5b35be4709d4b926c91
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="introduction-to-macos-sierra"></a>Úvod do systému macOS Sierra
 
@@ -64,6 +64,9 @@ Rozhraní framework CloudKit rozšířila v systému macOS Sierra chcete umožni
 CloudKit poskytuje kompletní uživatelského rozhraní pro odesílání a přijímání sdílených záznamů pozvánek a uživatel má dokončení pro čtení a zápis kontrolu nad osoby, které mají přístup k záznamům.
 
 Další informace najdete v tématu společnosti Apple [CloudKit Framework – referenční informace](https://developer.apple.com/reference/clockkit) a [CloudKit JS Framework – referenční informace](https://developer.apple.com/reference/cloudkitjs).
+
+> [!IMPORTANT]
+> Apple [poskytuje nástroje](https://developer.apple.com/support/allowing-users-to-manage-data/) , což vývojářům správně zpracovat Evropské unie obecné Data Protection nařízení (GDPR).
 
 <a name="Safari-App-Extensions-Support" />
 

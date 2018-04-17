@@ -1,5 +1,5 @@
 ---
-title: iCloud
+title: Icloudu
 description: Společnost Apple vydala v iOS 5 Icloudu jako službu, která umožňují aplikacím ukládat data na servery společnosti Apple a mít jeho synchronizaci na všech zařízeních, která používá stejnou osoba (prostřednictvím jejich Apple ID). Je také zálohování součást, kde data v zařízeních se zálohovaná na servery společnosti Apple. Tento dokument popisuje, jak používat některé z na serveru služby iCloud poskytuje rozhraní API společností Apple k ukládání a načítání dat ze svých serverů s C# – ukázky pro uložení párů malá klíč hodnota data a pro ukládání dokumentů. Také popisuje, jak Icloudu zálohování mohou mít vliv na návrh vaší aplikace.
 ms.prod: xamarin
 ms.assetid: C6F3B87C-C195-4434-EF14-D66E63894F09
@@ -7,13 +7,13 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/09/2016
-ms.openlocfilehash: c9e7c920855d2002f52d05e28c5225f301cd62b1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a62d4621a8f3ace64401d64e35c806317a591c03
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
-# <a name="icloud"></a>iCloud
+# <a name="icloud"></a>Icloudu
 
 _Společnost Apple vydala v iOS 5 Icloudu jako službu, která umožňují aplikacím ukládat data na servery společnosti Apple a mít jeho synchronizaci na všech zařízeních, která používá stejnou osoba (prostřednictvím jejich Apple ID). Je také zálohování součást, kde data v zařízeních se zálohovaná na servery společnosti Apple. Tento dokument popisuje, jak používat některé z na serveru služby iCloud poskytuje rozhraní API společností Apple k ukládání a načítání dat ze svých serverů s C# – ukázky pro uložení párů malá klíč hodnota data a pro ukládání dokumentů. Také popisuje, jak Icloudu zálohování mohou mít vliv na návrh vaší aplikace._
 
@@ -30,6 +30,9 @@ K dispozici jsou čtyři typy úložiště:
 - **Jednotlivé soubory a adresáře** – pro správu spoustu různých souborů přímo v systému souborů.
 
 Tento dokument popisuje první dva typy - páry klíč-hodnota a UIDocument podtřídy – a jak používat tyto funkce v Xamarin.iOS.
+
+> [!IMPORTANT]
+> Apple [poskytuje nástroje](https://developer.apple.com/support/allowing-users-to-manage-data/) , což vývojářům správně zpracovat Evropské unie obecné Data Protection nařízení (GDPR).
 
 ## <a name="requirements"></a>Požadavky
 
@@ -436,5 +439,5 @@ Nakonec zahrnuty stručné informace o přidání serveru služby iCloud záloho
 - [Úvod do Icloudu (ukázka)](https://developer.xamarin.com/samples/monotouch/IntroductionToiCloud)
 - [Icloudu seminář ukázkový kód](https://github.com/xamarin/Seminars/tree/master/2012-03-22-iCloud)
 - [Snímky seminář Icloudu](http://www.slideshare.net/Xamarin/using-icloud-with-monotouch)
-- [iCloud NSUbiquitousKeyValueStore](https://developer.apple.com/library/prerelease/ios/)
+- [Icloudu NSUbiquitousKeyValueStore](https://developer.apple.com/library/prerelease/ios/)
 - [Icloudu úložiště](http://support.apple.com/kb/HT4847)

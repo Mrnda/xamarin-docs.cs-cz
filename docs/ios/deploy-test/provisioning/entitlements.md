@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: 6ced541ca9df6fcae1643dc14c2e19807e972822
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f158ab7e51eb7610566ed052b326fecf016add8a
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="working-with-entitlements"></a>Práce s oprávnění
 
@@ -102,7 +102,7 @@ Klíče nárocích jde přidat prostřednictvím panelu zdroj Entitlements.plist
 *   **Popis**: dříve označované jako Passbook, Peněženka je aplikace, která uchovává a spravuje předává. Tyto předává může být platební karty, karty úložiště, nástupu předává nebo lístků.
 
     - **Identifikátor typu pass**
-        * **Keys**: com.apple.developer.pass-type-identifiers
+        * **Klíče**: identifikátory com.apple.developer.pass typu
         * **Řetězec**: `$(TeamIdentifierPrefix)*`
 
 * **Poznámky k**:
@@ -112,7 +112,7 @@ Klíče nárocích jde přidat prostřednictvím panelu zdroj Entitlements.plist
 
 <a name="icloud" />
 
-### <a name="icloud"></a>iCloud
+### <a name="icloud"></a>Icloudu
 
 *   **Popis**: Icloudu poskytuje uživatelům iOS pohodlný a jednoduchý způsob ukládání obsahu a sdílet mezi zařízeními. Existují čtyři způsoby vývojáři mohou poskytovat úložiště pro své uživatele pomocí serveru služby iCloud: úložiště klíč-hodnota, UIDocument úložiště, CoreData a pomocí CloudKit přímo k poskytování úložiště pro jednotlivé soubory a adresáře. Další informace o těchto naleznete úvod k příručce serveru služby iCloud.
 
@@ -120,13 +120,16 @@ Klíče nárocích jde přidat prostřednictvím panelu zdroj Entitlements.plist
         - **Klíče**: identifikátorů com.apple.developer.ubiquity kontejneru
         - **Řetězec**: `$(TeamIdentifierPrefix)$(CFBundleIdentifier)`
     - **Icloudu KeyValue úložiště**
-        - **Key**: com.apple.developer.ubiquity-kvstore-identifier
+        - **Klíč**: com.apple.developer.ubiquity-kvstore – identifikátor
         - **Řetězec**: `$(TeamIdentifierPrefix)$(CFBundleIdentifier)`
 
 * **Poznámky k**:
     - `$(TeamIdentifierPrefix)` Řetězec můžete nalézt protokolování developer.apple.com a najdete **Member Center > váš účet > Souhrn účtu vývojáře** k získání ID týmu (nebo jednotlivé ID pro vývojáře v jednom). Bude řetězec 10 znaků (například A93A5CM278).
     - `$(CFBundleIdentifier)` Řetězec začíná `iCloud` a při Icloudu kontejneru je vytvářet podle kroků v nastavený [práce s možností](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md) průvodce.
     - $Expand`(TeamIdentifierPrefix)` a `$(CFBundleIdentifier)` zástupné symboly lze použít a bude nahrazena pro správné hodnoty v čase vytvoření buildu.
+
+> [!IMPORTANT]
+> Apple [poskytuje nástroje](https://developer.apple.com/support/allowing-users-to-manage-data/) , což vývojářům správně zpracovat Evropské unie obecné Data Protection nařízení (GDPR).
 
 ### <a name="app-groups"></a>Skupiny aplikací
 
@@ -140,7 +143,7 @@ Klíče nárocích jde přidat prostřednictvím panelu zdroj Entitlements.plist
 ### <a name="apple-pay"></a>Platím Apple
 
 - **Popis**: Apple platím umožňuje uživatelům platit pro fyzické zboží prostřednictvím zařízení iOS.
-    - **Key**: com.apple.developer.in-app-payments
+    - **Klíč**: com.apple.developer.in. aplikace plateb
     - **Řetězec**: merchant.your.mechantid
 
 ### <a name="push-notifications"></a>Nabízená oznámení
@@ -151,7 +154,7 @@ Klíče nárocích jde přidat prostřednictvím panelu zdroj Entitlements.plist
 ### <a name="siri"></a>Siri
 
 - **Popis**: SiriKit umožňuje aplikaci pro iOS k poskytování služeb, které jsou k dispozici Siri a mapy aplikace na zařízení s iOS pomocí rozšíření aplikace a nové tříd Intent a uživatelského rozhraní záměry architektury. Další informace najdete v části Úvod do SiriKit průvodce.
-    - **Key**: com.apple.developer.siri
+    - **Klíč**: com.apple.developer.siri
 
 ### <a name="personal-vpn"></a>Osobní VPN
 
@@ -162,7 +165,7 @@ Klíče nárocích jde přidat prostřednictvím panelu zdroj Entitlements.plist
 
 - **Popis**: sdílení řetězce klíčů umožňuje vývojáři aplikace sdílet hesla, které jsou uložené v řetězci klíčů zařízení s jinými aplikacemi vyvinutými stejné týmem. Přístup se dá omezit předáním identifikátor skupiny přístup řetězce klíčů v řetězci.
     - **Klíč**: keychain-access-groups
-    - **String**: $(AppIdentifierPrefix) $(CFBundleIdentifier)
+    - **Řetězec**: $(AppIdentifierPrefix) $(CFBundleIdentifier)
 
 ### <a name="inter-app-audio"></a>Zvuk mezi aplikacemi
 
@@ -170,7 +173,7 @@ Klíče nárocích jde přidat prostřednictvím panelu zdroj Entitlements.plist
     - **Klíč**: mimo zvuk aplikace
     - **Logická hodnota**: Ano
 
-### <a name="associated-domains"></a>Associated Domains
+### <a name="associated-domains"></a>Přidružené domén
 
 - **Popis**: přidružené domén, které by měly být zpracovány jako univerzální odkazy, které mají být předány s toto oprávnění. Univerzální odkazy se dá implementovat umožňuje přímé propojení mezi aplikací a webu. Měli byste jim poskytnout položku pro každou doménu, která vaše aplikace podporuje a každý záznam by měl začínat obráceným `applinks:`
     - **Key**: com.apple.developer.associated-domains
@@ -179,13 +182,13 @@ Klíče nárocích jde přidat prostřednictvím panelu zdroj Entitlements.plist
 ### <a name="data-protection"></a>Ochrana dat
 
 - **Popis**: Povolení ochrany dat využívá integrovaný šifrovací hardware k ukládání citlivých dat, které se používají ve vaší aplikaci v zašifrovaném formátu. Ve výchozím nastavení je k dokončení ochrany (soubory jsou přístupné jenom když je zařízení odemknout) nastavit úroveň ochrany.
-    - **Key**: com.apple.developer.default-data-protection
-    - **String**: NSFileProtectionComplete
+    - **Klíč**: com.apple.developer.default ochrany dat
+    - **Řetězec**: NSFileProtectionComplete
 
 ### <a name="homekit"></a>HomeKit
 
 - **Popis**: The HomeKit framework poskytuje platformu pro nastavení, konfiguraci a správě podporovaná zařízení domácí automatizace – všechny ze zařízení s iOS. Další informace o použití HomeKit naleznete úvod do HomeKit průvodce.
-    - **Key**: com.apple.developer.homekit
+    - **Klíč**: com.apple.developer.homekit
     - **Logická hodnota**: Ano
 
 ### <a name="healthkit"></a>HealthKit
@@ -197,7 +200,7 @@ Klíče nárocích jde přidat prostřednictvím panelu zdroj Entitlements.plist
 ### <a name="wireless-accessory-configuration"></a>Konfigurace bezdrátového příslušenství
 
 - **Popis**: použití konfigurace bezdrátového příslušenství umožníte své aplikaci konfigurovat příslušenství MFI s připojením Wi-Fi
-    - **Key**: com.apple.external-accessory.wireless-configuration
+    - **Klíč**: com.apple.external. accessory.wireless konfigurace
     - **Logická hodnota**: Ano
 
 ## <a name="summary"></a>Souhrn

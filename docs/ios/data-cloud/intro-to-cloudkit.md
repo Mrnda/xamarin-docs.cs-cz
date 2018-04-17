@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/11/2016
-ms.openlocfilehash: 33ceff4549e4afbb1e5fecf3bd380fdb9a3df5f2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4765b91bdc1f64be7e2ea67622db7af8634f1347
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="cloudkit"></a>CloudKit
 
@@ -20,6 +20,9 @@ _Icloudu rozhraní API umožňují aplikacím iOS 8 k uložení dat v serveru sl
 Rozhraní framework CloudKit zjednodušuje vývoj aplikací, že přístup k serveru služby iCloud. To zahrnuje načtení data aplikací a asset práva a také schopnost bezpečně uložit informace o aplikaci. Tato sada poskytuje uživatelům vrstvu anonymity tím, že přístup k aplikacím s jejich Icloudu ID bez sdílení osobní údaje.
 
 Vývojáři můžou zaměřit na své aplikace na straně klienta a umožní Icloudu eliminovat potřeba psát logiku aplikace na straně serveru. CloudKit poskytuje ověřování, privátní a veřejné databáze a strukturovaných dat a služby úložiště asset.
+
+> [!IMPORTANT]
+> Apple [poskytuje nástroje](https://developer.apple.com/support/allowing-users-to-manage-data/) , což vývojářům správně zpracovat Evropské unie obecné Data Protection nařízení (GDPR).
 
 ## <a name="requirements"></a>Požadavky
 

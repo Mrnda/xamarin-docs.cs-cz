@@ -1,21 +1,21 @@
 ---
 title: Využívání webových služeb
-description: Tato příručka ukazuje, jak komunikovat se službami jiných webových vám umožňuje vytvářet, číst, aktualizovat a odstraňovat funkce (CRUD) k aplikaci Xamarin.Forms. Obsahuje následující témata komunikaci s ASMX služby WCF services, REST services, Azure Mobile Apps a Amazon Web Services.
+description: Tato příručka ukazuje, jak komunikovat se službami jiných webových vám umožňuje vytvářet, číst, aktualizovat a odstraňovat funkce (CRUD) k aplikaci Xamarin.Forms. Obsahuje následující témata komunikaci se službami ASMX, služby WCF, služby REST a Azure Mobile Apps.
 ms.prod: xamarin
 ms.assetid: 8B360BDA-E4E3-4A3F-9004-0E35362F49F
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 530b57c009a1f76d3756d7315856f74b6cda2f66
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a4c842ea7fd37ade9be0a9cb3e3ff7e50a6d1491
+ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="consuming-web-services"></a>Využívání webových služeb
 
-_Tato příručka ukazuje, jak komunikovat se službami jiných webových vám umožňuje vytvářet, číst, aktualizovat a odstraňovat funkce (CRUD) k aplikaci Xamarin.Forms. Obsahuje následující témata komunikaci s ASMX služby WCF services, REST services, Azure Mobile Apps a Amazon Web Services._
+_Tento příručka ukazuje, jak komunikovat se službami jiných webových vám umožňuje vytvářet, číst, aktualizovat a odstraňovat funkce (CRUD) k aplikaci Xamarin.Forms. Obsahuje následující témata komunikaci se službami ASMX, služby WCF, služby REST a Azure Mobile Apps.
 
 ## <a name="consuming-an-aspnet-web-service-asmxxamarin-formsdata-cloudconsumingasmxmd"></a>[Využívání ASP.NET webové služby (ASMX)](~/xamarin-forms/data-cloud/consuming/asmx.md)
 
@@ -32,11 +32,6 @@ Přenos REST (Representational State) je styl architektury pro vytváření webo
 ## <a name="consuming-an-azure-mobile-appxamarin-formsdata-cloudconsumingazuremd"></a>[Použití Azure mobilní aplikace](~/xamarin-forms/data-cloud/consuming/azure.md)
 
 Azure Mobile Apps umožňují vývoj aplikací s škálovatelné back-EndY hostované v Azure App Service, se podpora pro mobilní ověřování, offline synchronizace a nabízených oznámení. Tento článek, který je pouze pro Azure Mobile Apps, použít back-end Node.js, vysvětluje, jak pro dotazování, vložit, aktualizovat a odstranit data uložená v tabulce v instanci Azure Mobile Apps.
-
-## <a name="consuming-an-amazon-simpledb-servicexamarin-formsdata-cloudconsumingawsmd"></a>[Využívání služby Amazon SimpleDB](~/xamarin-forms/data-cloud/consuming/aws.md)
-
-Amazon SimpleDB je webová služba, která poskytuje možnost ukládání a dotazování dat v cloudu na Amazon. Tento článek vysvětluje, jak pomocí AWS SDK pro .NET pro dotazování, vytvořit a nahradit a odstraňte data uložená ve službě SimpleDB.
-
 
 ## <a name="related-links"></a>Související odkazy
 
