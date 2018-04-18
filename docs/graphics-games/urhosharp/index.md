@@ -7,25 +7,25 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2017
-ms.openlocfilehash: c8df53d90ab1245aecff3eab1393c009b7910aa5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 564d106cc0192e818b87342ae0590e20afe507ae
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="urhosharp---3d2d-engine"></a>UrhoSharp - 3D/2D modul
 
 _UrhoSharp je napříč platformami vysoké úrovně 3D a 2D modul, který slouží k vytvoření animovaný 2D a 3D scény pro vaše aplikace pomocí geometrie, materiály, indikátory a kamery._
 
-![](images/video.gif "Ukázka UrhoSharp hra")
+![Ukázka UrhoSharp hra](images/video.gif)
 
 UrhoSharp je distribuován jako balíčku NuGet, který lze nainstalovat v sadě Visual Studio nebo Visual Studio pro Mac a lze použít pro všechny následující platformy: Android, systému MacOS, iOS, tvOS a Windows.
 
-##  <a name="an-introduction-to-urhosharpgraphics-gamesurhosharpintroductionmd"></a>[Úvod do UrhoSharp](~/graphics-games/urhosharp/introduction.md)
+## <a name="an-introduction-to-urhosharpgraphics-gamesurhosharpintroductionmd"></a>[Úvod do UrhoSharp](~/graphics-games/urhosharp/introduction.md)
 
 Tento článek obsahuje přehled UrhoSharp a jeho funkce pro 3D vizualizaci a pro použití v jednoduchých 3D hry.
 
-##  <a name="using-urhosharpgraphics-gamesurhosharpusingmd"></a>[Používání UrhoSharpu](~/graphics-games/urhosharp/using.md)
+## <a name="using-urhosharpgraphics-gamesurhosharpusingmd"></a>[Používání UrhoSharpu](~/graphics-games/urhosharp/using.md)
 
 V tomto dokumentu jsme popisují základní koncepty UrhoSharp, který byste použili k vytvoření hry nebo vytvořte 3D vizualizace pro vaši aplikaci.
 
@@ -54,16 +54,13 @@ Vytvořili jsme [ukázky z webu GitHub](http://github.com/xamarin/urho-samples) 
 Všechny ukázky spustit v systému Android, iOS, Mac a Windows.
 Existují také počet UrhoSharp [sešity](https://developer.xamarin.com/workbooks/) včetně [planetu Earth](https://developer.xamarin.com/workbooks/graphics/urhosharp/planetearth/planetearth.workbook) a [zkoumat koordinuje](https://developer.xamarin.com/workbooks/graphics/urhosharp/coordinates/ExploringUrhoCoordinates.workbook).
 
-
 ## <a name="copyright"></a>Copyright
 
 Tato dokumentace obsahuje původní obsah z Xamarin Inc, ale nevykresluje hojně v dokumentaci k s otevřeným zdrojem pro projekt Urho3D a obsahuje snímky obrazovky z projektu Cocos2D.
 
-## <a name="license"></a>License
+## <a name="license"></a>Licence
 
 Není k dispozici v UrhoSharp licence [http://download.xamarin.com/content/licenses/URHO.LICENSE](http://download.xamarin.com/content/licenses/URHO.LICENSE)
-
-
 
 ## <a name="related-links"></a>Související odkazy
 

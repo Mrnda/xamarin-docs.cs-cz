@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 02/24/2017
-ms.openlocfilehash: 77f9873259a2a44426007c50efbd7ff83c8a0ccb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d23f89ed8ad7956f7a366280a14ccc12ba3dac0c
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="xaml-previewer-for-xamarinforms"></a>Náhled XAML pro Xamarin.Forms
 
@@ -33,7 +33,7 @@ Použití **zobrazení > ostatní okna > Náhled Xamarin.Forms** nabídky v sad�
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-**Preview** tlačítko lze zobrazit v editoru pravým tlačítkem myši na soubor XAML a výběrem **otevřít v > prohlížeče XAML**. V podokně náhledu pak můžete zobrazen nebo skryt stisknutím **Preview** tlačítko v pravém horním rohu okna dokumentu žádné XAML:
+**Preview** tlačítko lze zobrazit v editoru pravým tlačítkem myši na soubor XAML a výběrem **otevřít v > Náhled Forms dokumentu**. V podokně náhledu pak můžete zobrazen nebo skryt stisknutím **Preview** tlačítko v pravém horním rohu okna dokumentu žádné XAML:
 
 [![Náhled ovládacího prvku ListView v sadě Visual Studio pro Mac](xaml-previewer-images/xamlp-list-sml.png "prohlížeč formulářů v sadě Visual Studio pro Mac")](xaml-previewer-images/xamlp-list.png#lightbox "prohlížeč formulářů v sadě Visual Studio pro Mac")
 

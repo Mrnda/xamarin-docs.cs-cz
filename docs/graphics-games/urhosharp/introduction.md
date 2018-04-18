@@ -7,17 +7,17 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2017
-ms.openlocfilehash: 243498e1d5a24a0a6b8d1e911b374df61dfa6971
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6c46d7648d1f1bb8863abe092bae5c44850d3cf1
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="an-introduction-to-urhosharp"></a>Úvod do UrhoSharp
 
 _To poskytuje stručný úvod do Principy UrhoSharp_
 
-![](introduction-images/urhosharp-icon.png "UrhoSharp je výkonný stroj herní 3D pro vývojáře, Xamarin a rozhraní .NET")
+![UrhoSharp logo](introduction-images/urhosharp-icon.png)
 
 UrhoSharp je výkonný stroj herní 3D pro vývojáře, Xamarin a rozhraní .NET.  Je podobná v smyslu SceneKit a SpriteKit společnosti Apple a zahrnují fyziky, navigace, sítě a mnohem víc při stále probíhá pro různé platformy.
 
@@ -25,7 +25,7 @@ Je rozhraní .NET vazbu ke [Urho3D](http://urho3d.github.io/) modul a umožňuje
 
 UrhoSharp je modul herní s velkým množstvím funkce mimo pole:
 
- - Efektivní 3D grafický vykreslování
+- Efektivní 3D grafický vykreslování
 - [Fyzice simulace](https://developer.xamarin.com/api/namespace/Urho.Physics/) (s použitím knihovny odrážek)
 - [Zpracování scény](https://developer.xamarin.com/api/type/Urho.Scene/)
 - Await nebo asynchronní podpora
@@ -38,15 +38,15 @@ UrhoSharp je modul herní s velkým množstvím funkce mimo pole:
 - [Generování konvexní trupu pro detekce kolizí](https://developer.xamarin.com/api/type/Urho.Physics.CollisionShape/) (pomocí StanHull)
 - [Přehrávání zvuku](https://developer.xamarin.com/api/namespace/Urho.Audio/) (s **libvorbis**)
 
-# <a name="getting-started"></a>Začínáme
+## <a name="getting-started"></a>Začínáme
 
 UrhoSharp pohodlně je distribuován jako [balíček NuGet](https://www.nuget.org/) a lze ji přidat do vašich projektů jazyka C# nebo F # cílených Windows, Mac, Android nebo iOS.  NuGet se dodává s knihovny potřebné ke spuštění programu, jak základní prostředky (CoreData) používá stroj.
 
-## <a name="urho-as-a-portable-class-library"></a>Urho jako knihovny přenosných tříd
+### <a name="urho-as-a-portable-class-library"></a>Urho jako knihovny přenosných tříd
 
 Balíček Urho mohou být využívány buď z projektu specifických pro platformy, nebo z projektu knihovny přenosných tříd, abyste mohli znovu použít veškerý kód pro všechny platformy.  To znamená, že všechny, které budete muset udělat na každou platformu je pro vaše platformy konkrétní vstupní bod zápisu a potom přeneste řízení sdílené herní kódu.
 
-## <a name="samples"></a>Ukázky kódu
+### <a name="samples"></a>Ukázky kódu
 
 Získáte tak, že otevřete v sadě Visual Studio pro Mac nebo Visual Studio ukázkové řešení z chuť pro možnosti Urho:
 
@@ -68,7 +68,7 @@ Následující příklad ukazuje, co modul je schopen to:
 
 Při další ukázky zobrazit jednotlivé vlastnosti každého vzorku.
 
-# <a name="basic-structure"></a>Základní struktura
+## <a name="basic-structure"></a>Základní struktura
 
 Podtřídy by vaše hra [ `Application` ](https://developer.xamarin.com/api/type/Urho.Application/) třída, to je, kde bude instalační program vaše hra (na [ `Setup` ](https://developer.xamarin.com/api/member/Urho.Application.Setup/) metoda) a spusťte vaše hra (v [ `Start` ](https://developer.xamarin.com/api/member/Urho.Application.Start) metoda).  Potom můžete vytvořit hlavní uživatelské rozhraní.  Přidáme provede malé vzorku, který ukazuje rozhraní API pro 3D scény, některé prvky uživatelského rozhraní a jednoduché chování se připojuje k němu instalačního programu.
 
@@ -98,7 +98,7 @@ class MySample : Application {
         UI.Root.AddChild(helloText);
 
         // Create a top-level scene, must add the Octree
-    // to visualize any 3D content.
+        // to visualize any 3D content.
         var scene = new Scene();
         scene.CreateComponent<Octree>();
         // Box
@@ -133,7 +133,9 @@ Dejte nám popisují, co se děje na sem.
 
 Ke spuštění aplikace volání funkce inicializace modulu, za nímž následuje vytvoření nové instance třídy vaší aplikace, jako to:
 
-    new MySample().Run();
+```csharp
+new MySample().Run();
+```
 
 Modul runtime vyvolá `Setup` a `Start` metody pro vás.  Pokud přepíšete `Setup` můžete nakonfigurovat parametry modulu (ne zobrazit v této ukázce).
 
@@ -141,50 +143,56 @@ Je nutné přepsat `Start` jako tím se spustí vaše hra.  Tato metoda se nač�
 
 Následující část kódu, pomocí uživatelského rozhraní framework vytvořte textový element a přidejte jej do vaší aplikace:
 
-        // UI text
-        var helloText = new Text()
-        {
-            Value = "Hello World from UrhoSharp",
-            HorizontalAlignment = HorizontalAlignment.Center,
-            VerticalAlignment = VerticalAlignment.Center
-        };
-        helloText.SetColor(new Color(0f, 1f, 1f));
-        helloText.SetFont(
-            font: ResourceCache.GetFont("Fonts/Font.ttf"),
-            size: 30);
-        UI.Root.AddChild(helloText);
+```csharp
+// UI text
+var helloText = new Text()
+{
+    Value = "Hello World from UrhoSharp",
+    HorizontalAlignment = HorizontalAlignment.Center,
+    VerticalAlignment = VerticalAlignment.Center
+};
+helloText.SetColor(new Color(0f, 1f, 1f));
+helloText.SetFont(
+    font: ResourceCache.GetFont("Fonts/Font.ttf"),
+    size: 30);
+UI.Root.AddChild(helloText);
+```
 
 Rozhraní framework uživatelského rozhraní je zajistit velmi jednoduché ve hře uživatelské rozhraní a funguje přidáním nových uzlů k [ `UI.Root` ](https://developer.xamarin.com/api/property/Urho.Gui.UI.Root/) uzlu.
 
-Druhá část naší příklady způsobu nastavení hlavní scény.  To zahrnuje několik kroků, vytváření 3D scény, vytváření 3D pole v dialogovém okně Přidání lehkým, fotoaparátu a zobrazení.  Tyto jsou prozkoumali podrobněji v části "[scény, uzlů, komponent a fotoaparáty](~/graphics-games/urhosharp/using.md#scenenodescomponentsandcameras)"
+Druhá část naší příklady způsobu nastavení hlavní scény.  To zahrnuje několik kroků, vytváření 3D scény, vytváření 3D pole v dialogovém okně Přidání lehkým, fotoaparátu a zobrazení.  Tyto jsou prozkoumali podrobněji v části [scény, uzlů, komponent a fotoaparáty](~/graphics-games/urhosharp/using.md#scenenodescomponentsandcameras).
 
 Třetí součást naše ukázka aktivuje několik akcí.  Akce jsou recepty, které popisují konkrétní vliv a po jejich vytvoření může provést uzel na vyžádání pomocí volání [ `RunActionAsync` ](https://developer.xamarin.com/api/member/Urho.Node.RunActionsAsync) metodu `Node`.
 
 Je první akcí škáluje pole s skákající účinek a druhý navždy otočí pole:
 
-    await boxNode.RunActionsAsync(
-        new EaseBounceOut(new ScaleTo(duration: 1f, scale: 1)));
+```csharp
+await boxNode.RunActionsAsync(
+    new EaseBounceOut(new ScaleTo(duration: 1f, scale: 1)));
+```
 
 Výše ukazuje, jak je první akci, která se nám vytvořit [ `ScaleTo` ](https://developer.xamarin.com/api/type/Urho.Actions.ScaleTo/) akci, jedná se jenom tajný recept, která určuje, že chcete škálovat pro druhý směrem na hodnotu jedna vlastnost škálování uzlu.  Tato akce je zase zalomen okolo nejvýraznější akce, [ `EaseBounceOut` ](https://developer.xamarin.com/api/type/Urho.Actions.EaseBounceInOut/) akce.  Nejvýraznější akce narušují lineární provádění akce a použití efektu, v takovém případě poskytuje účinek skákání na více systémů.
 Naše recepturách tak může zapsat jako:
 
-    var recipe = new EaseBounceOut(new ScaleTo(duration: 1f, scale: 1));
+```csharp
+var recipe = new EaseBounceOut(new ScaleTo(duration: 1f, scale: 1));
+```
 
 Po vytvoření receptury, můžeme provést receptury:
 
-    await boxNode.RunActionsAsync (recipe)
+```csharp
+await boxNode.RunActionsAsync (recipe)
+```
 
 Await znamená, že potřeba po dokončení akce pokračovat v provádění po tomto řádku.  Po dokončení akce se spouští druhý animace.
 
 [Pomocí UrhoSharp](~/graphics-games/urhosharp/using.md) dokumentu prozkoumá podrobněji, další koncepty za Urho a postup struktury kódu k vytvoření hry s.
 
-# <a name="copyrights"></a>Autorská práva
+## <a name="copyrights"></a>Autorská práva
 
 Tato dokumentace obsahuje původní obsah z Xamarin Inc, ale nevykresluje hojně v dokumentaci k s otevřeným zdrojem pro projekt Urho3D a obsahuje snímky obrazovky z projektu Cocos2D.
 
-
-
-## <a name="related-links"></a>Související odkazy
+### <a name="related-links"></a>Související odkazy
 
 - [Sešit planetu země](https://developer.xamarin.com/workbooks/graphics/urhosharp/planetearth/planetearth.workbook)
 - [Zkoumání souřadnice sešitu](https://developer.xamarin.com/workbooks/graphics/urhosharp/coordinates/ExploringUrhoCoordinates.workbook)

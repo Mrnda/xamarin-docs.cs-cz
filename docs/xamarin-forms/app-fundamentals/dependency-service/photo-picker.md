@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: 5b4e3ab12a74b0f70866dc9f41593bfd5bcec0e8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 95ac9912f0ff6788a2a633b3f8d3495e286030f1
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="picking-a-photo-from-the-picture-library"></a>Výběr fotografie z knihovny obrázků
 
@@ -48,7 +48,7 @@ Toto rozhraní je implementováno ve všech platformách pomocí kódu pro konkr
 
 ## <a name="ios-implementation"></a>iOS implementace
 
-Implementace iOS `IPicturePicker` rozhraní používá [ `UIImagePickerController` ](https://developer.xamarin.com/api/type/UIKit.UIImagePickerController/) jak je popsáno v [ **zvolte fotografie z Galerie** ](https://developer.xamarin.com/recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery/) recepturách a [ukázkový kód](https://github.com/xamarin/recipes/tree/master/ios/media/video_and_photos/choose_a_photo_from_the_gallery).
+Implementace iOS `IPicturePicker` rozhraní používá [ `UIImagePickerController` ](https://developer.xamarin.com/api/type/UIKit.UIImagePickerController/) jak je popsáno v [ **zvolte fotografie z Galerie** ](https://developer.xamarin.com/recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery/) recepturách a [ukázkový kód](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery).
 
 Implementace iOS je součástí [ `PicturePickerImplementation` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/iOS/PicturePickerImplementation.cs) třídu do projektu iOS ukázkový kód. Zpřístupněte Tato třída `DependencyService` správci zjistit třídu, musí se [`assembly`] atribut typu `Dependency`, musí být veřejné a explicitní implementace třídy `IPicturePicker` rozhraní:
 
@@ -146,7 +146,7 @@ Aplikace pro iOS vyžaduje oprávnění od uživatele pro přístup k telefonu f
 
 ## <a name="android-implementation"></a>Android implementace
 
-Android implementace používá podle postupu popsaného v [ **Vybrat bitovou kopii** ](https://developer.xamarin.com/recipes/android/other_ux/pick_image/) recepturách a [ukázkový kód](https://github.com/xamarin/recipes/tree/master/android/other_ux/pick_image). Je však metoda, která je volána, když uživatel vybral bitovou kopii z knihovny obrázků `OnActivityResult` potlačení v třídu odvozenou z `Activity`. Z tohoto důvodu normální [ `MainActivity` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/Droid/MainActivity.cs) třídy v projektu pro Android má byla doplněná pole, vlastnosti a přepsání `OnActivityResult` metoda:
+Android implementace používá podle postupu popsaného v [ **Vybrat bitovou kopii** ](https://developer.xamarin.com/recipes/android/other_ux/pick_image/) recepturách a [ukázkový kód](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image). Je však metoda, která je volána, když uživatel vybral bitovou kopii z knihovny obrázků `OnActivityResult` potlačení v třídu odvozenou z `Activity`. Z tohoto důvodu normální [ `MainActivity` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/Droid/MainActivity.cs) třídy v projektu pro Android má byla doplněná pole, vlastnosti a přepsání `OnActivityResult` metoda:
 
 ```csharp
 public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity

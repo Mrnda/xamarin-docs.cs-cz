@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 871e4b1ad058dd97635dab228522620850b229b7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7e778df7fa6dd27aee8282154c99faf5ca5791ce
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="using-the-model-class"></a>Používání třídy modelu
 
@@ -21,27 +21,26 @@ Zahrnuje rozhraní API MonoGame `Model` třída, která slouží k ukládání d
 
 Tento návod používá [3D model robot](https://github.com/xamarin/mobile-samples/blob/master/ModelRenderingMG/Resources/Content.zip?raw=true) a obsahuje následující:
 
- - Spuštění nového projektu herní
- - Vytváření XNBs pro model a jeho textury
- - Včetně XNBs v herní projektu
- - Kreslení 3D modelu
- - Kreslení více modelů
+- Spuštění nového projektu herní
+- Vytváření XNBs pro model a jeho textury
+- Včetně XNBs v herní projektu
+- Kreslení 3D modelu
+- Kreslení více modelů
 
 Po dokončení naše projektu bude vypadat takto:
 
-![](part1-images/image1.png "Po dokončení projektu se zobrazí jako to")
+![Dokončení ukázkové zobrazující šesti robotů](part1-images/image1.png)
 
-
-# <a name="creating-an-empty-game-project"></a>Vytvoření prázdné herní projektu
+## <a name="creating-an-empty-game-project"></a>Vytvoření prázdné herní projektu
 
 Budeme potřebovat nastavit herní projektu nejdříve volána MonoGame3D. Informace o vytvoření nového projektu MonoGame najdete v tématu [tento návod na vytvoření projektu křížové platformy Monogame](~/graphics-games/monogame/introduction/part1.md).
 
 Než budete pokračovat jsme měli ověřte, zda projekt otevře a nasadí správně. Jednou nasazené bychom měli vidět prázdnou obrazovku blue:
 
-![](part1-images/image2.png "Nasazené jednou, vývojáři měli vidět prázdnou obrazovku modrá")
+![Prázdná obrazovka blue herní](part1-images/image2.png)
 
 
-# <a name="including-the-xnbs-in-the-game-project"></a>Včetně XNBs v herní projektu
+## <a name="including-the-xnbs-in-the-game-project"></a>Včetně XNBs v herní projektu
 
 Formát souboru .xnb je standardní příponou integrovaný obsahu (obsah, který byl vytvořen [MonoGame kanálu nástroj](http://www.monogame.net/documentation/?page=Pipeline)). Všechny vytvořené obsah obsahuje zdrojový soubor (což je soubor .fbx v případě našeho modelu) a cílový soubor (soubor .xnb). Běžné formátu 3D modelu, který lze vytvořit pomocí aplikací, jako je formát .fbx [Maya](http://www.autodesk.com/products/maya/overview) a [digestoru](http://www.blender.org/). 
 
@@ -53,20 +52,19 @@ Jsme budete rozbalte [Content.zip soubor](https://github.com/xamarin/mobile-samp
 
 Dva soubory musí být součástí našich projektu nyní:
 
-![](part1-images/xnbsinxs.png "Dva soubory musí být součástí projektu nyní")
+![Složky obsahu Průzkumník řešení se xnb soubory](part1-images/xnbsinxs.png)
 
 Visual Studio pro Mac, nemusí nastavovat automaticky akce sestavení pro nově přidané XNBs. Pro iOS, klikněte pravým tlačítkem na všechny soubory a vyberte **akce sestavení -> BundleResource**. Pro Android, klikněte pravým tlačítkem na všechny soubory a vyberte **akce sestavení -> AndroidAsset**.
 
-# <a name="rendering-a-3d-model"></a>Vykreslování 3D modelu
+## <a name="rendering-a-3d-model"></a>Vykreslování 3D modelu
 
 Nezbytné zobrazíte modelu na obrazovce posledním krokem je přidání načítání a kreslení kódu. Konkrétně jsme budete mít následujícím způsobem:
 
- - Definování `Model` instance v našem `Game1` – třída
- - Načítání `Model` instance v `Game1.LoadContent`
- - Kreslení `Model` instance v `Game1.Draw`
+- Definování `Model` instance v našem `Game1` – třída
+- Načítání `Model` instance v `Game1.LoadContent`
+- Kreslení `Model` instance v `Game1.Draw`
 
 Nahraďte `Game1.cs` souboru kódu (který se nachází ve **WalkingGame** PCL) následujícím kódem:
-
 
 ```csharp
 public class Game1 : Game
@@ -81,7 +79,7 @@ public class Game1 : Game
     {
         graphics = new GraphicsDeviceManager(this);
         graphics.IsFullScreen = true;
-                    
+
         Content.RootDirectory = "Content";
     }
     protected override void LoadContent()
@@ -162,17 +160,13 @@ public class Game1 : Game
         base.Draw(gameTime);
     }
 }
-                                                                                                                 
 ```
 
 Pokud jsme spustit tento kód jsme zobrazí na obrazovce se model:
 
-![](part1-images/image8.png "Pokud tento kód běží, model se zobrazí na obrazovce")
+![Model zobrazené na obrazovce](part1-images/image8.png "Pokud tento kód běží, model se zobrazí na obrazovce")
 
-Podívejme se na některé z důležitější částí výše uvedený kód.
-
-
-## <a name="model-class"></a>Třídy modelu
+### <a name="model-class"></a>Třídy modelu
 
 `Model` Třída je základní třída pro provádění 3D vykreslování z obsahu souborů (například soubory .fbx). Obsahuje všechny informace potřebné pro vykreslování, včetně 3D geometrie texture odkazy a `BasicEffect` instancí, které řídí hodnoty umístění, osvětlení a fotoaparát.
 
@@ -180,20 +174,17 @@ Podívejme se na některé z důležitější částí výše uvedený kód.
 
 Každý `Model` se skládá z jedné nebo více `ModelMesh` instance, které jsou k dispozici prostřednictvím `Meshes` vlastnost. I když lze považovat za `Model` jako jeden herní objektu (například robot nebo automobilu), každý `ModelMesh` lze rozlišovat jiné `BasicEffect` hodnoty. Například oko částí může představovat úsecích robot nebo souborů Wheel na automobilu a jsme může přiřadit `BasicEffect` hodnoty tak, aby typu číselník souborů Wheel nebo nohy přesunout. 
 
-
-## <a name="basiceffect-class"></a>BasicEffect – třída
+### <a name="basiceffect-class"></a>BasicEffect – třída
 
 `BasicEffect` Třída poskytuje vlastnosti pro řízení možnosti vykreslování. První úpravy provedeme `BasicEffect` je volání `EnableDefaultLighting` metoda. Jak již název napovídá, to umožňuje osvětlení výchozí, což je velmi užitečný pro ověření, který `Model` se zobrazí ve hře podle očekávání. Pokud jsme komentář `EnableDefaultLighting` volat, pak ukážeme modelu vykreslen pomocí právě jeho texture, ale pomocí žádné stínování nebo zrcadlová záře:
 
-
 ```csharp
-//effect.EnableDefaultLighting (); 
+//effect.EnableDefaultLighting ();
 ```
 
-![](part1-images/image9.png "Modelu vykreslen pomocí právě jeho texture, ale pomocí žádné stínování nebo zrcadlová záře")
+![Modelu vykreslen pomocí právě jeho texture, ale pomocí žádné stínování nebo zrcadlová záře](part1-images/image9.png "modelu vykreslen pomocí právě jeho texture, ale pomocí žádné stínování nebo zrcadlová záře")
 
 `World` Vlastnost lze upravit pozice, otáčení a škálování modelu. Kód výše používá `Matrix.Identity` hodnotu, která znamená, že `Model` vykreslí ve hře přesně tak, jak v souboru .fbx. Jsme budete pokrývajících 3D souřadnice v podrobněji a matic [část 3](~/graphics-games/monogame/3d/part3.md), ale jako příklad Změníme pozici `Model` změnou `World` vlastnost následujícím způsobem:
-
 
 ```csharp
 // Z is up, so changing Z to 3 moves the object up 3 units:
@@ -203,10 +194,9 @@ effect.World = Matrix.CreateTranslation (modelPosition);
 
 Tento kód vrátí objekt přesouvání 3 jednotkami world:
 
-![](part1-images/image10.png "Tento kód výsledkem objekt přesouvání 3 world jednotkami")
+![Tento kód výsledkem objekt přesouvání 3 jednotkami world](part1-images/image10.png "tento kód výsledkem objekt přesouvání 3 world jednotkami")
 
 Poslední dvě vlastnosti přiřadit `BasicEffect` jsou `View` a `Projection`. Jsme budete pokrývajících 3D kamery v [část 3](~/graphics-games/monogame/3d/part3.md), ale jako příklad jsme lze změnit pozice kamery změnou místní `cameraPosition` proměnné:
-
 
 ```csharp
 // The 8 has been changed to a 30 to move the Camera further back
@@ -215,10 +205,9 @@ var cameraPosition = new Vector3 (0, 30, 0);
 
 Uvidíte, kamera přesunul další zpět, což vede k `Model` zobrazování menší kvůli perspektivy:
 
-![](part1-images/image11.png "Kamera přesunul další zpět, což vede k modelu zobrazování menší kvůli perspektivy")
+![Kamera přesunul další zpět, což vede k modelu zobrazování menší kvůli perspektivy](part1-images/image11.png "kamera přesunul další zpět, což vede k modelu zobrazování menší kvůli perspektivy")
 
-
-# <a name="rendering-multiple-models"></a>Vykreslování více modelů
+## <a name="rendering-multiple-models"></a>Vykreslování více modelů
 
 Jak je uvedeno výše, jedním `Model` lze rozlišovat vícekrát. Pro tuto činnost usnadnit jsme bude přesunutí `Model` kreslení kódu do své vlastní metody, která přijímá požadovanou `Model` pozici jako parametr. Po dokončení naše `Draw` a `DrawModel` metody bude vypadat podobně jako:
 
@@ -266,10 +255,9 @@ void DrawModel(Vector3 modelPosition)
 
 Výsledkem je robot modelu přitahuje šestkrát:
 
-![](part1-images/image1.png "Výsledkem je robot přitahuje šestkrát modelu")
+![Výsledkem je robot modelu přitahuje šestkrát](part1-images/image1.png "výsledkem robot přitahuje šestkrát modelu")
 
-
-# <a name="summary"></a>Souhrn
+## <a name="summary"></a>Souhrn
 
 Tento návod představil na MonoGame `Model` třídy. Pokrývá převodu soubor .fbx .xnb, který je naopak možné načíst do `Model` třídy. Také ukazuje, jak změny `BasicEffect` instance může mít vliv na `Model` kreslení.
 

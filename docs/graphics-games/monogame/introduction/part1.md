@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 0cd12f23f8cb269b2a41a08bf641db08e18fb82b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1c859c5a8d8c5d8b0539d4158895e816d47d3d5e
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="part-1--creating-a-cross-platform-monogame"></a>Část 1 – Vytvoření MonoGame křížové platformy
 
@@ -21,42 +21,36 @@ MonoGame umožňuje vývoj napříč platformami hry s velkou část opakované 
 
 Když jsme hotovi, jsme budete projekt, který má správnou strukturu pro provádění logiku herní aktualizace a her kreslení logiky na 30 snímků za sekundu. Můžete použít jako základní projekt pro všechny MonoGame projekt. Při spuštění, bude naše projektu vypadat například takto:
 
-![](part1-images/image1.png "Projekt bude vypadat například takto při spuštění")
+![Prázdná obrazovka modrá](part1-images/image1.png)
 
-
-# <a name="adding-monogame-to-visual-studio-for-mac"></a>Přidání MonoGame k sadě Visual Studio pro Mac
+## <a name="adding-monogame-to-visual-studio-for-mac"></a>Přidání MonoGame k sadě Visual Studio pro Mac
 
 MonoGame se dá přidat jako doplněk k sadě Visual Studio for Mac. V systému Mac, vyberte **Visual Studio pro Mac** > **Add-in správce...**  . V systému Windows, vyberte ** Nástroje ** > **Add-in správce...**  . Vyberte **Galerie** rozbalte **herní vývoj** kategorie a vyberte **MonoGame doplněk**, pak klikněte na tlačítko **nainstalovat**:
 
-![](part1-images/image2.png "Vyberte kartu galerie, rozbalte kategorii herní vývoj a MonoGame doplněk a potom kliknutím na tlačítko Instalovat")
+![Visual Studio pro Mac Galerie rozšíření výběr MonoGame](part1-images/image2.png)
 
 > [!IMPORTANT]
 > **Poznámka**: Pokud **herní vývoj** oddíl se nezobrazí v nástroji Správce, můžete ručně stáhnout a nainstalovat nejnovější verzi z tohoto místa: http://www.monogame.net/downloads/. Musíte restartovat Visual Studio pro Mac pro šablony zobrazí.
 
-
-
 Po instalaci šablony MonoGame se zobrazí v sadě Visual Studio pro Mac, protože jsme se zobrazí v další části.
 
-
-# <a name="creating-a-new-solution"></a>Vytvoření nové řešení
+## <a name="creating-a-new-solution"></a>Vytvoření nové řešení
 
 V sadě Visual Studio pro Mac vyberte **soubor > Nový řešení**. V **nový projekt** dialogové okno, klikněte na **různé**, přejděte na **Obecné** vyberte ** aplikaci Universal MonoGame Mobile ** možnost a kliknutím na tlačítko Další.
 
-![](part1-images/image3.png "V dialogovém okně Nový Projekt klikněte na různé, přejděte do části Obecné, vyberte možnost Universal MonoGame mobilní aplikace a klikněte na tlačítko Další")
+![Dialogové okno Nový projekt vytvoření MonoGame aplikace](part1-images/image3.png)
 
 Název projektu WalkingGame a klikněte na tlačítko vytvořit:
 
-![](part1-images/image4.png "Název projektu WalkingGame a klikněte na možnost vytvořit")
+![Dialogové okno Nový projekt výběr název a umístění](part1-images/image4.png)
 
 Naše projektu bude nyní spustit stejně jako ostatní iOS nebo Android projektu. Projekt by měl spustit zobrazení cornflower modré pozadí:
 
-![](part1-images/image5.png "Projekt by se měl spouštět zobrazení cornflower modré pozadí")
+![Prázdná aplikace modré pozadí](part1-images/image5.png)
 
-
-# <a name="fixing-android-compile-errors"></a>Opravy chyb Android kompilace
+## <a name="fixing-android-compile-errors"></a>Opravy chyb Android kompilace
 
 Aktuální verze je MonoGame šablony zahrnuje několik chyby syntaxe v Android `Activity1.cs` souboru. Chcete-li tyto problémy opravit, nahraďte `OnCreate` funkce následujícím kódem:
-
 
 ```csharp
 protected override void OnCreate (Bundle bundle)
@@ -69,8 +63,7 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-
-# <a name="summary"></a>Souhrn
+## <a name="summary"></a>Souhrn
 
 Tento názorný postup popsané postupy k vytvoření projektu MonoGame napříč platformami pomocí sady Visual Studio for Mac. Důsledkem je prázdný modré obrazovce. Tento projekt slouží jako výchozí bod pro všechny iOS a Android hra.
 

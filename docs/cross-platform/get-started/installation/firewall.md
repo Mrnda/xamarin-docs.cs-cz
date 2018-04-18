@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 12/02/2016
-ms.openlocfilehash: bb551b548f241cacfc4cb700d247684c15f6fcf7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 212a190b56465a8401b17b7a379a1f083d8f8d87
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="xamarin-firewall-configuration-instructions"></a>Pokyny ke konfiguraci brány Xamarin Firewall
 
@@ -21,14 +21,14 @@ Aby produkty Xamarin k instalaci a správně fungovat musí být přístupné a 
 
 ## <a name="endpoints-to-whitelist"></a>Koncové body k seznamu povolených IP adres
 
-### <a name="xamarin-installer"></a>Xamarin Installer
+### <a name="xamarin-installer"></a>Instalační program Xamarin
 
 Následující známé adresy bude muset být přidán v pořadí pro software, který chcete nainstalovat správně, pokud používáte nejnovější verzi Instalační služby Xamarin:
 
 -  xamarin.com (Instalační program manifesty)
 -  DL.xamarin.com (umístění stahování balíčku)
 -  DL.Google.com (ke stažení sady SDK pro Android)
--  download.oracle.com (JDK)
+-  download.Oracle.com (JDK)
 -  VisualStudio.com (instalační balíčky stáhnout umístění)
 -  go.microsoft.com (překlad adresy URL nastavení)
 -  aka.MS (překlad adresy URL nastavení)
@@ -42,8 +42,8 @@ Následující adresy bude třeba přidat pro přístup k úložišti součást�
 
 -  Components.xamarin.com (pro použití úložiště součástí Xamarin)
 -  xampubdl.BLOB.Core.Windows.NET (součásti úložiště hostitelů soubory ke stažení)
--  www.nuget.org (pro přístup k NuGet)
--  az320820.vo.msecnd.net (NuGet downloads)
+-  Webová\.nuget.org (pro přístup k NuGet)
+-  az320820.vo.msecnd.NET (NuGet soubory ke stažení)
 -  DL-ssl.google.com (Google komponenty)
 
 

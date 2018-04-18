@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 0273b4f13c91fd766530ff7c0976096de3239dc5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e3538efef107778397bd8c799bdd63eb6c2f3de3
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="3d-coordinates-in-monogame"></a>3D souřadnic v MonoGame
 
@@ -23,26 +23,26 @@ Koncepty uvedené pocházejí z lineární algebra, ale tak, aby libovolného u�
 
 Jsme vám, že se která obsahuje následující témata:
 
- - Vytvoření projektu
- - Vytváření Robot Entity
- - Přesunutí Robot Entity
- - Násobení matic
- - Vytváření entit fotoaparát
- - Přesunutí kamera se vstupem
+- Vytvoření projektu
+- Vytváření Robot Entity
+- Přesunutí Robot Entity
+- Násobení matic
+- Vytváření entit fotoaparát
+- Přesunutí kamera se vstupem
 
 Po dokončení budeme mít projektu s robot Přesun na kruh a fotoaparát, který se dá nastavit podle dotykové ovládání:
 
 ![](part3-images/image1.gif "Po dokončení aplikace budou obsahovat projektu s robot Přesun na kruh a fotoaparát, který se dá nastavit podle dotykové ovládání")
 
 
-# <a name="creating-a-project"></a>Vytvoření projektu
+## <a name="creating-a-project"></a>Vytvoření projektu
 
 Tento názorný postup se zaměřuje na přesouvání objektů v 3D prostoru. Začneme projekt pro vykreslování modely a pole vrchol [které naleznete zde](https://developer.xamarin.com/samples/mobile/ModelsAndVertsMG/). Po stažení, rozbalte a otevřete projekt, který má zkontrolujte, zda je spuštěna a bychom měli vidět následující:
 
 ![](part3-images/image2.png "Po stažení, rozbalte a otevřete projekt a ujistěte se, spuštění a musí toto zobrazení")
 
 
-# <a name="creating-a-robot-entity"></a>Vytváření Robot Entity
+## <a name="creating-a-robot-entity"></a>Vytváření Robot Entity
 
 Než začneme přesunutí naše robot kolem, vytvoříme `Robot` třída obsahuje logiku pro vykreslování a pohyb. Herní vývojáři odkazovat na tuto zapouzdření logiku a data jako *entity*.
 
@@ -51,7 +51,6 @@ Přidat nový soubor prázdné třídy k **MonoGame3D** Přenosná knihovna tř�
 ![](part3-images/image3.png "Název Robot a klikněte na nový")
 
 Upravit `Robot` třídy následujícím způsobem:
-
 
 ```csharp
 using System;
@@ -88,7 +87,7 @@ namespace MonoGame3D
 
                     effect.View = Matrix.CreateLookAt (
                         cameraPosition, cameraLookAtVector, cameraUpVector);
-                        
+
                     float fieldOfView = Microsoft.Xna.Framework.MathHelper.PiOver4;
                     float nearClipPlane = 1;
                     float farClipPlane = 200;
@@ -109,7 +108,6 @@ namespace MonoGame3D
 ```
 
 `Robot` Kódu je v podstatě stejný kód v `Game1` pro vykreslování `Model`. Pro kontrolu na `Model` načítání a kreslení, najdete v části [Tato příručka o práci s modely](~/graphics-games/monogame/3d/part1.md). Nyní jsme můžete odebrat všechny `Model` načítání a generování kódu z `Game1`a nahraďte ho `Robot` instance:
-
 
 ```csharp
 using Microsoft.Xna.Framework;
@@ -135,7 +133,7 @@ namespace MonoGame3D
         {
             graphics = new GraphicsDeviceManager(this);
             graphics.IsFullScreen = true;
-                        
+
             Content.RootDirectory = "Content";
         }
 
@@ -226,7 +224,7 @@ namespace MonoGame3D
                     2);
             }
         }
-    }                                          
+    }
 }
 ```
 
@@ -234,15 +232,13 @@ Pokud jsme spustit kód teď pomůžeme scény s pouze jeden robot, který je vy
 
 ![](part3-images/image4.png "Pokud kód je spustit nyní, aplikace se zobrazí scény s pouze jeden robot, který je vykreslen většinou pod podlaží")
 
-
-# <a name="moving-the-robot"></a>Přesunutí robota
+## <a name="moving-the-robot"></a>Přesunutí robota
 
 Teď, když máme `Robot` třída, přidáme logiku Přesun do robota. V takovém případě stačí vytočit robot přesunout v kruh dle herní času. Toto je poněkud nepraktické implementace pro skutečné hry, protože znak může obvykle reagovat na vstupu nebo umělé inteligence, ale poskytuje prostředí pro nám prozkoumat 3D umístění a oběh.
 
 Veškeré informace, budeme potřebovat z mimo `Robot` třída je aktuální čas herní. Přidáme `Update` metoda, která má být `GameTime` parametr. To `GameTime` se zvýší na proměnnou úhlu, který použijeme k určení poslední pozice pro robota bude použit parametr.
 
 Nejprve přidáme pole úhlu, které chcete `Robot` třídy v části `model` pole:
-
 
 ```csharp
 public class Robot
@@ -251,11 +247,10 @@ public class Robot
 
     // new code:
     float angle;
-    ... 
+    ...
 ```
 
  Nyní jsme můžete tuto hodnotu v zvýšit `Update` funkce:
-
 
 ```csharp
 public void Update(GameTime gameTime)
@@ -267,17 +262,15 @@ public void Update(GameTime gameTime)
 
 Musíme Ujistěte se, že `Update` metoda je volána z `Game1.Update`:
 
-
 ```csharp
 protected override void Update(GameTime gameTime)
 {
     robot.Update (gameTime);
     base.Update(gameTime);
-} 
+}
 ```
 
 Samozřejmě úhel pole v tomto okamžiku se nic nestane – potřebujeme psaní kódu pro použití. Upravíme `Draw` metoda tak, aby jsme můžete vypočítat na světě `Matrix` vyhrazené metoda: 
-
 
 ```csharp
 public void Draw(Vector3 cameraPosition, float aspectRatio)
@@ -296,7 +289,7 @@ public void Draw(Vector3 cameraPosition, float aspectRatio)
 
             effect.View = Matrix.CreateLookAt (
                 cameraPosition, cameraLookAtVector, cameraUpVector);
-                
+
             float fieldOfView = Microsoft.Xna.Framework.MathHelper.PiOver4;
             float nearClipPlane = 1;
             float farClipPlane = 200;
@@ -307,18 +300,17 @@ public void Draw(Vector3 cameraPosition, float aspectRatio)
 
         mesh.Draw ();
     }
-} 
+}
 ```
 
 V dalším kroku budete implementaci `GetWorldMatrix` metoda v `Robot` třídy:
-
 
 ```csharp
 Matrix GetWorldMatrix()
 {
     const float circleRadius = 8;
     const float heightOffGround = 3;
-    
+
     // this matrix moves the model "out" from the origin
     Matrix translationMatrix = Matrix.CreateTranslation (
         circleRadius, 0, heightOffGround);
@@ -330,15 +322,14 @@ Matrix GetWorldMatrix()
     Matrix combined = translationMatrix * rotationMatrix;
 
     return combined;
-} 
+}
 ```
 
 Výsledek spuštění tento kód z výsledkem robot v kruh přesunutím:
 
 ![](part3-images/image5.gif "Spuštění této výsledky kódu v robot v kruh přesunutím")
 
-
-# <a name="matrix-multiplication"></a>Násobení matic
+## <a name="matrix-multiplication"></a>Násobení matic
 
 Výše uvedený kód otočí robota tak, že vytvoříte `Matrix` v `GetWorldMatrix` metoda. `Matrix` Struktura obsahuje 16 float hodnoty, které se dají použít k převede (nastavení pozice), otočit a škálování (nastavit velikost). Když jsme přiřadit `effect.World` vlastnost nám informace o tom, základní vykreslování systému jak pozice, velikost a orientaci ať jsme dojít k být kreslení ( `Model` nebo geometrie z vrcholy). 
 
@@ -348,9 +339,9 @@ Naštěstí `Matrix` struktura zahrnuje několik metod, které zjednodušují vy
 
 Druhý přehled, který vytváříme je otočení matice pomocí `CreateRotationZ` matice. Toto je jednou ze tří metod, které se dají použít k vytvoření otočení:
 
- - `CreateRotationX`
- - `CreateRoationY`
- - `CreateRotationZ`
+- `CreateRotationX`
+- `CreateRoationY`
+- `CreateRotationZ`
 
 Každá metoda vytvoří otočení matice otáčení dané osy. V našem případě jsme rotaci kolem osy Z, který ukazuje "nahoru". Následující může pomoci vizualizovat otočení osy jak na základě funguje:
 
@@ -359,7 +350,6 @@ Každá metoda vytvoří otočení matice otáčení dané osy. V našem přípa
 Také se používá `CreateRotationZ` metoda s polem úhlu, které zvýší časem kvůli naše `Update` volané metodě. Výsledkem je, že `CreateRotationZ` metoda způsobí, že naše robot k Oběžná dráha kolem počátku po uplynutí určitého času.
 
 Poslední řádek kódu kombinuje dvě matice do jedné:
-
 
 ```csharp
 Matrix combined = translationMatrix * rotationMatrix;
@@ -370,7 +360,6 @@ To se označuje jako násobení matic, který funguje poněkud liší od regulá
 ![](part3-images/image8.png "Vizualizace pf způsobem, že výše řádku ovlivňuje pozice a otočení")
 
 Chcete-li pochopit, jak pořadí násobení matic může mít vliv na výsledek, zvažte následující, kde je obrácený násobení matic:
-
 
 ```csharp
 Matrix combined = rotationMatrix * translationMatrix;
@@ -384,13 +373,11 @@ Pokud jsme spustit kód s obráceným násobení, jsme si všimnout, že vzhlede
 
 ![](part3-images/image10.gif "Model otočí na místě")
 
-
-# <a name="creating-the-camera-entity"></a>Vytváření entit fotoaparát
+## <a name="creating-the-camera-entity"></a>Vytváření entit fotoaparát
 
 `Camera` Entity bude obsahovat všechny potřebné k provedení na základě vstup pohyb a zadejte vlastnosti pro přiřazení vlastnosti na logiky `BasicEffect` třídy.
 
 Nejdřív jsme budete implementovat statické fotoaparát (bez přesouvání s založené na vstup) a jeho integraci do našich existující projekt. Přidejte novou třídu do **MonoGame3D** Přenosná knihovna tříd (stejná projektu s `Robot.cs`) a pojmenujte ji **fotoaparát**. Obsah souboru nahraďte následujícím kódem:
-
 
 ```csharp
 using System;
@@ -427,7 +414,7 @@ namespace MonoGame3D
                 float nearClipPlane = 1;
                 float farClipPlane = 200;
                 float aspectRatio = graphicsDevice.Viewport.Width / (float)graphicsDevice.Viewport.Height;
-                
+
                 return Matrix.CreatePerspectiveFieldOfView(
                     fieldOfView, aspectRatio, nearClipPlane, farClipPlane);
             }
@@ -448,8 +435,7 @@ namespace MonoGame3D
 
 Výše uvedený kód je velmi podobný kód z `Game1` a `Robot` v přiřadit matic `BasicEffect`. 
 
-Nyní budeme integrovat nové `Camera` třída do našich existující projekty. Nejprve upravíme `Robot` třídy trvat `Camera` instance v jeho` Draw `metody, která bude eliminovat velké množství duplicitních kódu. Nahraďte `Robot.Draw` metoda následujícím kódem:
-
+Nyní budeme integrovat nové `Camera` třída do našich existující projekty. Nejprve upravíme `Robot` třídy trvat `Camera` instance v jeho `Draw` metody, která bude eliminovat velké množství duplicitních kódu. Nahraďte `Robot.Draw` metoda následujícím kódem:
 
 ```csharp
 public void Draw(Camera camera)
@@ -468,11 +454,10 @@ public void Draw(Camera camera)
 
         mesh.Draw ();
     }
-} 
+}
 ```
 
 V dalším kroku změnit `Game1.cs` souboru:
-
 
 ```csharp
 using Microsoft.Xna.Framework;
@@ -499,7 +484,7 @@ namespace MonoGame3D
         {
             graphics = new GraphicsDeviceManager(this);
             graphics.IsFullScreen = true;
-                        
+
             Content.RootDirectory = "Content";
         }
 
@@ -585,35 +570,32 @@ namespace MonoGame3D
             }
         }
     }
-} 
+}
 ```
 
 Změny `Game1` z předchozí verze (které jsou označeny `// New camera code` ) jsou:
 
- - `Camera` pole v `Game1`
- - `Camera` vytváření instancí v `Game1.Initialize`
- - `Camera.Update` volání v `Game1.Update`
- - `Robot.Draw` Nyní trvá `Camera` parametr
- - `Game1.Draw` Teď používá `Camera.ViewMatrix` a `Camera.ProjectionMatrix`
+- `Camera` pole v `Game1`
+- `Camera` vytváření instancí v `Game1.Initialize`
+- `Camera.Update` volání v `Game1.Update`
+- `Robot.Draw` Nyní trvá `Camera` parametr
+- `Game1.Draw` Teď používá `Camera.ViewMatrix` a `Camera.ProjectionMatrix`
 
-
-# <a name="moving-the-camera-with-input"></a>Přesunutí kamera se vstupem
+## <a name="moving-the-camera-with-input"></a>Přesunutí kamera se vstupem
 
 Zatím jsme přidali `Camera` entity, ale ještě nepracovali ho chcete změnit chování za běhu. Chování, které umožňuje uživateli přidáme na:
 
- - Touch levé straně obrazovky fotoaparát směrem doleva
- - Touch pravé straně obrazovky fotoaparát vpravo
- - Dotykové ovládání center obrazovky přejít kamera
+- Touch levé straně obrazovky fotoaparát směrem doleva
+- Touch pravé straně obrazovky fotoaparát vpravo
+- Dotykové ovládání center obrazovky přejít kamera
 
-
-## <a name="making-lookat-relative"></a>Provádění lookAt relativní
+### <a name="making-lookat-relative"></a>Provádění lookAt relativní
 
 Nejprve budete aktualizujeme `Camera` třída zahrnout `angle` pole, které použije se nastavení směru `Camera` směrem k. V současné době naše `Camera` Určuje směr, se kterým čelí prostřednictvím místní `lookAtVector`, který je přiřazen k `Vector3.Zero`. Jinými slovy naše `Camera` vždy vypadá v původu. Pokud se přesune fotoaparát, pak úhlu, se kterým se setkávají fotoaparát změní také:
 
 ![](part3-images/image11.gif "Pokud se přesune fotoaparát, pak úhlu, se kterým se setkávají fotoaparát změní také")
 
-Chceme, aby `Camera` na stejném směru bez ohledu na jeho pozice – alespoň připojena dokud jsme implementují logiku pro otáčení` Camera `pomocí vstup. První změna bude upravit `lookAtVector` proměnnou být založen na našem aktuální umístění, nikoli na absolutní pozici vypadající:
-
+Chceme, aby `Camera` na stejném směru bez ohledu na jeho pozice – alespoň připojena dokud jsme implementují logiku pro otáčení `Camera` pomocí vstup. První změna bude upravit `lookAtVector` proměnnou být založen na našem aktuální umístění, nikoli na absolutní pozici vypadající:
 
 ```csharp
 public class Camera
@@ -635,7 +617,7 @@ public class Camera
             return  Matrix.CreateLookAt (
                 position, lookAtVector, upVector);
         }
-    } 
+    }
     ...
 ```
 
@@ -643,15 +625,13 @@ Výsledkem `Camera` zobrazení přímo na celém světě. Všimněte si, že po�
 
 ![](part3-images/image12.png "Spuštění hra zobrazí toto zobrazení")
 
-
-## <a name="creating-an-angle-variable"></a>Vytváření úhlu proměnné
+### <a name="creating-an-angle-variable"></a>Vytváření úhlu proměnné
 
 `lookAtVector` Proměnné řídí úhlu, který naše fotoaparát je zobrazení. Momentálně je nastaven na zobrazení dolů záporné osy Y a mírně nakloněná dolů (z `-.5f` hodnota Z). Vytvoříme `angle` proměnné, která se použije k úpravě `lookAtVector` vlastnost. 
 
 V předchozích částech tohoto návodu jsme vám ukázal, že matice slouží k otáčení, jak jsou vykreslovány objekty. Také můžeme použít matic otočení vektory jako `lookAtVector` pomocí `Vector3.Transform` metoda. 
 
 Přidat `angle` pole a upravovat `ViewMatrix` vlastnost následujícím způsobem:
-
 
 ```csharp
 public class Camera
@@ -678,12 +658,11 @@ public class Camera
             return  Matrix.CreateLookAt (
                 position, lookAtVector, upVector);
         }
-    } 
+    }
     ...
 ```
 
-
-## <a name="reading-input"></a>Načítání vstupu
+### <a name="reading-input"></a>Načítání vstupu
 
 Naše `Camera` entity lze nyní plně řídit prostřednictvím jeho pozice a proměnné úhel – potřebujeme je změnit podle vstup.
 
@@ -693,13 +672,11 @@ Pokud je uživatel klepnou na levém třetí pak jsme vám nastavit `angle` hodn
 
 Nejprve přidejte pomocí příkazu, aby se dosáhlo nároku `TouchPanel` a `TouchCollection` třídy v `Camera.cs`:
 
-
 ```csharp
 using Microsoft.Xna.Framework.Input.Touch; 
 ```
 
 V dalším kroku změnit `Update` metoda číst panelu touch a upravit `angle` a `position` proměnné odpovídajícím způsobem:
-
 
 ```csharp
 public void Update(GameTime gameTime)
@@ -734,7 +711,7 @@ public void Update(GameTime gameTime)
             angle -= (float)gameTime.ElapsedGameTime.TotalSeconds;
         }
     }
-} 
+}
 ```
 
 Nyní `Camera` bude odpovídat touch vstup:
@@ -747,8 +724,7 @@ Pokud uživatel je klepnou na obrazovce, kód kontroluje zda je první touch v l
 
 Pokud uživatel je dotykové ovládání centru třetí obrazovky, pak fotoaparát přesune dál. To lze provést nejdřív získání předat dál vektor, který se původně definován jako směřující na ose Y záporná, pak je otáčet o matice vytvořený `Matrix.CreateRotationZ` a `angle` hodnotu. Nakonec `forwardVector` se použije pro `position` pomocí `unitsPerSecond` koeficient.
 
-
-# <a name="summary"></a>Souhrn
+## <a name="summary"></a>Souhrn
 
 Tento názorný postup obsahuje informace o přesunutí a otočit `Models` v 3D prostoru pomocí `Matrices` a `BasicEffect.World` vlastnost. Tato forma přesunu poskytuje základ pro přesouvání objektů v 3D hry. Tento postup platí i pro implementaci `Camera` entity pro zobrazení na světě z jakékoli pozice a úhlu.
 

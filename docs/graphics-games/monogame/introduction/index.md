@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 9fb19b86ca303f8be3506d267dd75dc9db6cfca6
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c94ed2e06ee57b67745b6a02692df2360aeb9754
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="introduction-to-game-development-with-monogame"></a>Úvod do vývoj her s MonoGame
 
@@ -27,16 +27,16 @@ Na konci tohoto průvodce jsme vytvořili jednoduchá hra, kde přehrávač mů�
 
 Na obrázku je výsledek Tento názorný postup:
 
-![](images/image1.gif "Aplikace, které budou vytvořeny v návodu")
+![Animace ukázka herní znaku následující myši](images/image1.gif)
 
-# <a name="monogame-and-xna"></a>Monogame a XNA
+## <a name="monogame-and-xna"></a>Monogame a XNA
 
 Knihovna MonoGame slouží tak, aby napodoboval knihovna XNA společnosti Microsoft v syntaxi a funkce.  Všechny objekty MonoGame existovat pod oborem názvů Microsoft.Xna – povolení většinu XNA kódu pro použití v MonoGame bez úprav. 
 
 Vývojáři, kteří znají XNA bude již obeznámeni s MonoGame pro syntaxi a vývojáři hledá další informace o práci s MonoGame budou moci odkazovat na existující online návody XNA, dokumentaci k rozhraní API a diskuzí.
 
 
-# <a name="walkthrough-parts"></a>Návod částí
+## <a name="walkthrough-parts"></a>Návod částí
 
 - [Část 1 – Vytvoření projektu MonoGame křížové platformy](~/graphics-games/monogame/introduction/part1.md)
 - [Část 2 – implementace WalkingGame](~/graphics-games/monogame/introduction/part2.md)

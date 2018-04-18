@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/23/2017
-ms.openlocfilehash: 643ae8f30dc6447b548448f77883b204d8dc76c2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 34702fafdd0d767362b0ca32ab56e880ed7cb366
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="using-team-city-with-xamarin"></a>Pomocí Xamarin Team města
 
@@ -39,7 +39,7 @@ Jsou spojené s nastavením TeamCity několik kroků:
 
 - **Vytvoření projektu A TeamCity** – po dokončení předchozí tři kroky jsou nutné vytvoříme TeamCity projekt, který bude obsahovat všechny meta-data potřebné k načtení zdrojový kód, kompilace projektů a odeslání testy, abyste Xamarin Test Cloud.
 
-# <a name="requirements"></a>Požadavky
+## <a name="requirements"></a>Požadavky
 
 Prostředí s [Xamarin Test Cloud](https://developer.xamarin.com/guides/testcloud) je vyžadován.
 
@@ -88,7 +88,6 @@ Skript sestavení může být stejně jednoduché jako soubor prostředí Powers
 - [**ZFALŠOVAT** ](http://fsharp.github.io/FAKE/) – to je DSL, na základě v jazyce F # umožňuje využívat stávající knihovny .NET, v případě potřeby.
 
 Skriptovací jazyk, který se používá závisí na vašich předvoleb a požadavky. [TaskyPro Calabash](https://github.com/xamarin/test-cloud-samples/tree/master/TaskyPro/TaskyPro-Calabash) příklad obsahuje příklad použití převislým jako [sestavení skriptu](https://github.com/xamarin/test-cloud-samples/blob/master/TaskyPro/TaskyPro-Calabash/Rakefile).
-
 
 > [!NOTE]
 > Je možné použít sestavení systému založeného na XML jako je například MSBuild nebo NAnt, ale tyto nedostatečná expressiveness a udržovatelnosti DSL, který je vyhrazen pro vytváření softwaru.
@@ -166,35 +165,35 @@ Jakmile je nainstalována TeamCity a Visual Studio pro Mac, můžete vytvořit p
 
 1. Spustí protokolování do TeamCity prostřednictvím webového prohlížeče. Přejděte do kořenové projektu:
 
-    ![](teamcity-images/image2.png "Přejděte do projektu kořenové") pod kořenového projektu vytvořte nový projekt dílčí:
+    ![Přejděte do projektu kořenové](teamcity-images/image2.png "přejděte do projektu kořenové") pod kořenového projektu vytvořte nový projekt dílčí:
 
-    ![](teamcity-images/image3.png "Přejděte do kořenové projektu pod v kořenové projektu, vytvořte nový projekt dílčí")
+    ![Přejděte do kořenové projektu pod v kořenové projektu, vytvořte nový projekt dílčí](teamcity-images/image3.png "přejděte do kořenové projektu pod v kořenové projektu vytvořte nový projekt dílčí")
 2. Po vytvoření dílčí projekt, přidejte novou konfiguraci sestavení:
 
-    ![](teamcity-images/image5.png "Po vytvoření dílčí projekt, přidejte novou konfiguraci sestavení")
+    ![Po vytvoření dílčí projekt, přidejte novou konfiguraci sestavení](teamcity-images/image5.png "po vytvoření dílčí projekt, přidejte novou konfiguraci sestavení")
 3. Připojte konfigurace sestavení projektu VC. To se provádí prostřednictvím na obrazovce nastavení řízení verze:
 
-    ![](teamcity-images/image6.png "To se provádí prostřednictvím nastavení řízení verze obrazovky")
+    ![To se provádí prostřednictvím na obrazovce nastavení řízení verze](teamcity-images/image6.png "to se provádí prostřednictvím nastavení řízení verze obrazovky")
 
     Pokud není žádný VC projekt vytvořen, máte možnost vytvořit jednu ze stránky nové kořenové VC vidíte níže:
 
-    ![](teamcity-images/image7.png "Pokud není žádný VC projekt vytvořen, máte možnost vytvořit jednu ze stránky nové kořenové VC")
+    ![Pokud není žádný VC projekt vytvořen, máte možnost vytvořit jednu ze stránky nové kořenové VC](teamcity-images/image7.png "Pokud neexistuje žádný projekt VC vytvořen, máte možnost vytvořit jednu ze stránky nové kořenové VC")
 
     Kroky sestavení rozpoznat, jakmile byla přiřazena kořenu VC, TeamCity bude najdete v článku věnovaném projektu a pokuste se automaticky. Pokud jste obeznámeni s TeamCity, pak můžete vybrat jeden z kroků zjištěné sestavení. Je bezpečné prozatím ignorovat kroky zjištěné sestavení.
 
 4. V dalším kroku nakonfigurujte vytvořit aktivační událost. Sestavení se to fronty, pokud jsou splněny určité podmínky, například pokud uživatel potvrdí kód do úložiště. Následující snímek obrazovky ukazuje, jak přidat aktivační událost sestavení:
 
-    ![](teamcity-images/image8.png "Tato obrazovka ukazuje, jak přidat aktivační událost sestavení") příklad konfigurace aktivační události sestavení můžete vidět na následujícím snímku obrazovky:
+    ![Tato obrazovka ukazuje, jak přidat aktivační událost sestavení](teamcity-images/image8.png "tento snímek obrazovky ukazuje, jak přidat aktivační událost sestavení") příklad konfigurace aktivační události sestavení můžete vidět na následujícím snímku obrazovky:
 
-    ![](teamcity-images/image9.png "Příklad konfigurace aktivační událost sestavení se zobrazí v tomto snímku obrazovky")
+    ![Příklad konfigurace aktivační událost sestavení se zobrazí v tomto snímku obrazovky](teamcity-images/image9.png "na tomto snímku obrazovky můžete zobrazit příklad konfigurace aktivační události sestavení")
 
 5. V předchozí části Parametrizace sestavit skript navrhované ukládání některé hodnoty jako proměnné prostředí. Tyto proměnné lze přidat na konfiguraci sestavení prostřednictvím obrazovce parametry. Přidání proměnné pro klíč rozhraní API testu cloudu, ID zařízení iOS a Android ID zařízení, jak ukazuje následující snímek obrazovky:
 
-    ![](teamcity-images/image11.png "Přidání proměnné pro klíč rozhraní API testu cloudu, ID zařízení iOS a Android ID zařízení")
+    ![Přidání proměnné pro klíč rozhraní API testu cloudu, ID zařízení iOS a Android ID zařízení](teamcity-images/image11.png "přidejte proměnné pro klíč rozhraní API testu cloudu, ID zařízení iOS a Android ID zařízení")
 
 6. Posledním krokem je přidání kroku sestavení, který bude vyvolat skriptu buildu zkompilovat aplikace a zařazování aplikace pro testovací Cloud. Na následujícím snímku obrazovky je příklad krok sestavení, který používá Rakefile pro vytvoření aplikace:
 
-    ![](teamcity-images/image12.png "Tomto snímku obrazovky je příklad krok sestavení, který používá Rakefile pro vytvoření aplikace")
+    ![Tomto snímku obrazovky je příklad krok sestavení, který používá k vytvoření aplikace Rakefile](teamcity-images/image12.png "tomto snímku obrazovky je příklad krok sestavení, který používá Rakefile pro vytvoření aplikace")
 
 7. V tomto okamžiku je konfigurace sestavení je dokončena. Je vhodné aktivovat build a ověřte, že projekt správně nakonfigurován. Dobrým způsobem, jak to udělat je malý, zanedbatelný změnu potvrdit do úložiště. TeamCity by měl zjistit potvrzení a spuštění sestavení.
 

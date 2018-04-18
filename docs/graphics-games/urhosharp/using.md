@@ -6,11 +6,12 @@ ms.assetid: D9BEAD83-1D9E-41C3-AD4B-3D87E13674A0
 ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
-ms.openlocfilehash: cdb32c0fe9aa1a267bda5768b9026667723d694c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 03/29/2017
+ms.openlocfilehash: 7d54203fe391af6acde70f4c2a073b7f71332c91
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="using-urhosharp"></a>Pomocí UrhoSharp
 
@@ -20,7 +21,7 @@ Než napíšete první hru, kterou chcete získat familiarized se základy: jak 
 
 <a name="scenenodescomponentsandcameras"/>
 
-# <a name="scenes-nodes-components-and-cameras"></a>Děje, uzlů, komponent a kamery
+## <a name="scenes-nodes-components-and-cameras"></a>Děje, uzlů, komponent a kamery
 
 Model scény lze popsat jako na základě součástí scény grafu. Scény se skládá z hierarchie scény uzly od kořenového uzlu, který také představuje celou scény. Každý [ `Node` ](https://developer.xamarin.com/api/type/Urho.Node/) má 3D transformace (pozice, otáčení a škálování), název, ID a libovolný počet součástí.  Součásti Oživte uzel, udělat přidat vizuální reprezentace ([`StaticModel`](https://developer.xamarin.com/api/type/Urho.StaticModel)), se může vydávat zvuk ([`SoundSource`](https://developer.xamarin.com/api/type/Urho.Audio.SoundSource)), mohou poskytnout hranici kolizí a tak dále.
 
@@ -28,7 +29,7 @@ Můžete vytvořit scény a instalační program uzlů pomocí [Urho Editor](#Ur
 
 Kromě nastavení vaší scény, budete muset instalační program [ `Camera` ](https://developer.xamarin.com/api/type/Urho.Camera/), je to, co určuje, co bude získat zobrazí uživateli.
 
-## <a name="setting-up-your-scene"></a>Nastavení vaší scény
+### <a name="setting-up-your-scene"></a>Nastavení vaší scény
 
 Tento formulář byste obvykle vytvořili způsob spuštění:
 
@@ -52,7 +53,7 @@ planeObject.Model = ResourceCache.GetModel ("Models/Plane.mdl");
 planeObject.SetMaterial(ResourceCache.GetMaterial("Materials/StoneTiled.xml"));
 ```
 
-## <a name="components"></a>Součásti
+### <a name="components"></a>Součásti
 
 Vykreslování 3D objekty, přehrávání zvuku, fyziky a skriptované logiku aktualizace jsou všechny povolené vytvořením různých komponent na uzly voláním [ `CreateComponent<T>()` ](https://developer.xamarin.com/api/member/Urho.Node.CreateComponent%3CT%3E/p/Urho.CreateMode/System.UInt32/).  Instalační program například uzel a světla součást takto:
 
@@ -82,11 +83,11 @@ Obyčejnou komponenty, jako [ `Light` ](https://developer.xamarin.com/api/type/U
 
 Knihovny se dodává s celou řadu součástí, které můžete provést připojení k uzly k Oživte je: viditelné pro uživatele prvky (modelů), zvuky, pevné subjekty, kolizí tvarů, kamery, zdroje světla, částice vysílače a mnohé další.
 
-## <a name="shapes"></a>Obrazce
+### <a name="shapes"></a>Obrazce
 
 V zájmu usnadnění jsou k dispozici jako jednoduchý uzly v oboru názvů Urho.Shapes různých tvarů.  Ty zahrnují polí, oblasti, hlávky, válců a roviny.
 
-## <a name="camera-and-viewport"></a>Fotoaparát a zobrazení
+### <a name="camera-and-viewport"></a>Fotoaparát a zobrazení
 
 Stejně jako světlým, kamery jsou součásti, takže bude potřeba pro připojení k uzlu komponentu, to se provádí podobné výjimky:
 
@@ -104,7 +105,7 @@ Renderer.SetViewPort (0, new Viewport (Context, scene, camera, null))
 
 A teď musí být možné zobrazit výsledky vašeho vytvoření.
 
-## <a name="identification-and-scene-hierarchy"></a>Identifikace a scény hierarchie
+### <a name="identification-and-scene-hierarchy"></a>Identifikace a scény hierarchie
 
 Na rozdíl od uzly součásti nemají názvů; součásti ve stejném uzlu jsou identifikovány pouze podle jejich typu a index v seznamu součástí uzlu, který je vyplněno vytvoření pořadí, například můžete načíst [ `Light` ](https://developer.xamarin.com/api/type/Urho.Light) součásti z `lightNode` objektu vyšší podobné výjimky:
 
@@ -128,13 +129,13 @@ Všimněte si, že [ `Scene` ](https://developer.xamarin.com/api/type/Urho.Node/
 
 Je také možné vytvořit `Node` , nepatří do scény. To je užitečné, například s fotoaparátu přesunutí v scény, který může načíst nebo uložit, protože pak kamera se neuloží společně s skutečné scény a nebude být zničený, když je načten scény. Všimněte si však vytváření geometry, fyziky nebo skript součásti odpojit uzel a pak ho později přesouvání do scény způsobí těchto součástí nebude fungovat správně.
 
-## <a name="scene-updates"></a>Aktualizace scény
+### <a name="scene-updates"></a>Aktualizace scény
 
 Scény jehož aktualizace jsou povolené (výchozí), bude automaticky aktualizovat na každé iteraci smyčky hlavní.  Aplikace [ `SceneUpdate` ](https://developer.xamarin.com/api/event/Urho.Scene.SceneUpdate/) ho je volána obslužná rutina události.
 
 Uzly a součásti mohou být vyloučeny z aktualizace scény zakázáním je najdete v tématu [ `Enabled` ](https://developer.xamarin.com/api/member/Urho.Node.Enabled).  Chování závisí na konkrétní součást, ale například zakázání komponentu drawable také umožňuje neviditelná, při zakázání zvukové zdrojovou součástí ztlumí. Pokud uzel je zakázaná, všech jeho součástí jsou považovány jako zakázané bez ohledu na jejich vlastní stav povolit nebo zakázat.
 
-# <a name="adding-behavior-to-your-components"></a>Přidání chování u součástí
+## <a name="adding-behavior-to-your-components"></a>Přidání chování u součástí
 
 Nejlepší způsob, jak struktury vaše hra je provádět vlastní komponenty, která zapouzdřovat objektu actor nebo element na příslušnou hru.  Díky funkci vlastní obsažené z prostředků slouží k zobrazení, její chování.
 
@@ -142,7 +143,7 @@ Nejjednodušší způsob přidání chování pro komponentu je pomocí akcí, k
 
 Alternativně můžete řídit, přesně co se stane příslušné součásti aktualizací vaší vlastnosti součásti na každý snímek (popsané v části chování na základě rámečkem).
 
-## <a name="actions"></a>Akce
+### <a name="actions"></a>Akce
 
 Chování můžete přidat do uzlů velmi snadno pomocí akce.  Akce můžete změnit různé vlastnosti uzlu a je provedena v časovém intervalu ani je opakovat několikrát s danou animace křivky.
 
@@ -182,7 +183,7 @@ V předchozím příkladu cloudu přesune a vykreslit ve stejnou dobu.
 
 Si všimnete, že tyto pomocí jazyka C# await, která umožňuje lineárně myslíte o chování, které chcete dosáhnout.
 
-## <a name="basic-actions"></a>Základní operace
+### <a name="basic-actions"></a>Základní operace
 
 Toto jsou podporované v UrhoSharp akce:
 
@@ -196,7 +197,7 @@ Toto jsou podporované v UrhoSharp akce:
 
 Další funkce zahrnují kombinaci [ `Spawn` ](https://developer.xamarin.com/api/type/Urho.Actions.Spawn) a [ `Sequence` ](https://developer.xamarin.com/api/type/Urho.Actions.Sequence) akce.
 
-## <a name="easing---controlling-the-speed-of-your-actions"></a>Usnadnění – řízení rychlosti vaše akce
+### <a name="easing---controlling-the-speed-of-your-actions"></a>Usnadnění – řízení rychlosti vaše akce
 
 Usnadnění je tak, aby přesměruje způsobu, jakým bude unfold animace a mohl zajistit své animace mnohem víc příjemný.  Ve výchozím nastavení vaše akce bude mít lineární chování, například [ `MoveTo` ](https://developer.xamarin.com/api/type/Urho.Actions.MoveTo) akce by měla mít velmi automatické pohyb.  Vaše akce do náběh a doběh akci, kterou chcete změnit chování, například ten, který by pomalu spuštění pohyb, zvýšení a pomalu dosažení poslední může obtékat ([`EasyInOut`](https://developer.xamarin.com/api/type/Urho.Actions.EasyInOut)).
 
@@ -212,7 +213,7 @@ Existuje mnoho nejvýraznější režimy, následující tabulka ukazuje různé
 
 ![Usnadnění režimy](using-images/easing.png "tento graf znázorňuje různé typy nejvýraznější a jejich chování na základě hodnoty objektu jsou řízení v časovém období")
 
-## <a name="using-actions-and-async-code"></a>Pomocí akce a asynchronních kódu
+### <a name="using-actions-and-async-code"></a>Pomocí akce a asynchronních kódu
 
 Ve vašem [ `Component` ](https://developer.xamarin.com/api/type/Urho.Component/) podtřídami, je vhodné zavést použití asynchronní metody, který připraví chování vaší součásti a řídí funkce pro ni.
 Pak by volat tuto metodu, pomocí jazyka C# `await` – klíčové slovo z jiné části vašeho programu buď vaše `Application.Start` metoda nebo v reakci na bod uživatele nebo scénáře v aplikaci.
@@ -267,7 +268,7 @@ class Robot : Component {
 
 V `Launch` jsou spuštěna metoda výše tři akce: robota stává scény, tato akce změní umístění uzlu za období 0,6 sekund.  Vzhledem k tomu, že se jedná o možnost asynchronní, dojde k ní souběžně jako další pokyny, které jsou volání do `MoveRandomly`.  Tato metoda změní pozici robota paralelně s náhodném umístění.  Toho dosáhnete tak, že provedete dvě složené akce Přesun do nového umístění a po návratu do původní pozice a tento postup opakujte, dokud robota zůstane aktivní.  A aby věcí zajímavějšího, bude udržovat robota čistá současně.  Čistá pouze spustí každých 0,1 sekund.
 
-## <a name="frame-based-behavior-programming"></a>Na základě rámce chování programování
+### <a name="frame-based-behavior-programming"></a>Na základě rámce chování programování
 
 Pokud chcete řídit chování příslušné součásti na základě jednotlivých snímcích místo použití akce, co by se má přepsat [ `OnUpdate` ](https://developer.xamarin.com/api/member/Urho.Component.OnUpdate) metodu vaše [ `Component` ](https://developer.xamarin.com/api/type/Urho.Component) podtřídy.  Tato metoda je volána jednou za snímek a je volána, pouze pokud nastavíte vlastnost ReceiveSceneUpdates na hodnotu true.
 
@@ -299,7 +300,7 @@ var rotator = new Rotator() { RotationSpeed = rotationSpeed };
 boxNode.AddComponent (rotator);
 ```
 
-## <a name="combining-styles"></a>Kombinování styly
+### <a name="combining-styles"></a>Kombinování styly
 
 Můžete použít asynchronní akce nebo na základě modelu pro programování většinu chování, což je výhodné pro ještě efektivněji a zapomněli styl programování, ale můžete také podrobně upravit chování příslušné součásti spustit také některé kód aktualizace na každý snímek.
 
@@ -316,7 +317,7 @@ Například v ukázkové SamplyGame slouží v `Enemy` třída kóduje akce, kte
     }
 ```
 
-# <a name="loading-and-saving-scenes"></a>Načítání a ukládání scény
+## <a name="loading-and-saving-scenes"></a>Načítání a ukládání scény
 
 Scény můžete načíst a uložit ve formátu XML; najdete v části funkce [ `LoadXml` ](https://developer.xamarin.com/api/member/Urho.Scene.LoadXml) a [ `SaveXML()` ](https://developer.xamarin.com/api/member/Urho.Scene.SaveXml). Při načítání scény je nejdřív odstranit všechny existující obsah (podřízené uzly a součásti). Uzly a součásti, které jsou označené dočasné s `Temporary` vlastnosti se neuloží. Serializátor zpracovává všechny integrované komponenty a vlastnosti, ale není dostatečně inteligentní zpracování vlastní vlastnosti a pole definovaná v podtřídách vaší součásti. Ale nabízí dvě virtuální metody pro toto:
 
@@ -355,7 +356,7 @@ class MyComponent : Component {
 }
 ```
 
-## <a name="object-prefabs"></a>Objekt Prefabs
+### <a name="object-prefabs"></a>Objekt Prefabs
 
 Právě načítání nebo ukládání celou scény není dostatečně flexibilní pro hry kdy je potřeba dynamicky vytvořit nové objekty. Na druhé straně vytváření složitých objektů a nastavování jejich vlastností v kódu bude také zdlouhavé. Z tohoto důvodu je také možné uložit scény uzel, který bude obsahovat jeho podřízené uzly, součásti a atributy. Ty lze načíst později pohodlně jako skupina.  Uložený objekt se často označuje jako prefab. Existují tři způsoby, jak to udělat:
 
@@ -374,7 +375,7 @@ using (var file = new File(Context, prefabPath, FileMode.Read))
 }
 ```
 
-# <a name="events"></a>Události
+## <a name="events"></a>Události
 
 UrhoObjects zvýšit počet událostí, ty jsou prezentované jako událostí jazyka C# na různé třídy, které je generovat.  Kromě jazyka C# – model na základě událostí je také možné použít `SubscribeToXXX` metody, které vám umožní přihlášení k odběru a udržovat předplatné token, který můžete později použít k odhlášení odběru.  Rozdílem je, že první bude mnoho volajícím povolit přihlášení k odběru, druhý pouze jeden umožňuje, ale umožňuje nicer lambda stylu přístupu má být použit a ještě umožňují snadno odebrání předplatného.  Budou se vzájemně vylučují.
 
@@ -421,7 +422,7 @@ public void override Start ()
 
 Parametr přijatých obslužné rutiny události je třída silného typu události argumenty, která bude specifické pro každou jednotlivou událost a obsahuje datová část události.
 
-# <a name="responding-to-user-input"></a>Reagovat na vstup uživatele
+## <a name="responding-to-user-input"></a>Reagovat na vstup uživatele
 
 Přihlášení k odběru události a reagovat na vstup doručován lze přihlásit různé události, jako je stisknutí kláves dolů:
 
@@ -459,7 +460,7 @@ protected override void OnUpdate(float timeStep)
 }
 ```
 
-# <a name="resources-assets"></a>Prostředky (prostředky)
+## <a name="resources-assets"></a>Prostředky (prostředky)
 
 Zdroje informací v UrhoSharp většinu věcí, které jsou načteny z velkokapacitních paměťových zařízení během inicializace nebo modul runtime:
 
@@ -492,13 +493,13 @@ Prostředky můžete také ručně vytvořit a uložit do mezipaměti prostředk
 
 Paměť rozpočty lze nastavit pro typ prostředku: Pokud prostředků vyžaduje více paměti, než je povoleno, nejstarší prostředky se odeberou z mezipaměti v opačném případě používán už. Ve výchozím nastavení rozpočty paměti jsou nastaveny na neomezený.
 
-## <a name="bringing-3d-models-and-images"></a>Přináší 3D modely a obrázků
+### <a name="bringing-3d-models-and-images"></a>Přináší 3D modely a obrázků
 
 Urho3D pokusí použít existující formáty souborů, kdykoli je to možné a definujte vlastních formátů souborů pouze v případě, že je nezbytně nutné, jako pro modely (*.mdl) a pro animace (*.ani). Pro tyto typy prostředků Urho poskytuje převaděč - [AssetImporter](http://urho3d.github.io/documentation/1.4/_tools.html) které můžou využívat mnoho oblíbených formátů 3D například fbx, dae, 3ds a obj atd.
 
 Existuje také užitečné add-in pro digestoru [ https://github.com/reattiva/Urho3D-Blender ](https://github.com/reattiva/Urho3D-Blender) , můžete exportovat vaše prostředky digestoru ve formátu, který je vhodný pro Urho3D.
 
-## <a name="background-loading-of-resources"></a>Načítání na pozadí prostředků
+### <a name="background-loading-of-resources"></a>Načítání na pozadí prostředků
 
 Za normálních okolností žádosti o prostředky pomocí jedné z `ResourceCache`na `Get` metoda, jsou načteny hned v hlavní vlákno, které může trvat několik milisekund pro všechny požadované kroky (načíst soubor z disku, analyzovat data, odešlete do GPU v případě potřeby ) a proto může způsobit vyřazuje kmitočet snímků.
 
@@ -510,7 +511,7 @@ Nakonec maximální dobu (v milisekundách) strávený každý snímek na dokon�
 
 <a name="sound"/>
 
-# <a name="sound"></a>Zvuk
+## <a name="sound"></a>Zvuk
 
 Zvuk, který je důležitou součástí hraní her a rozhraní UrhoSharp poskytuje způsob přehrávání zvuku ve hře.  Přehrávání zvuků připojením [ `SoundSource` ](https://developer.xamarin.com/api/type/Urho.Audio.SoundSource/) součásti na [ `Node` ](https://developer.xamarin.com/api/type/Urho.Node) a pak přehrávání soubor s názvem z vašich prostředků.
 
@@ -526,7 +527,7 @@ soundSource.AutoRemove = true;
 
 <a name="particles"/>
 
-# <a name="particles"></a>Částice
+## <a name="particles"></a>Částice
 
 Částice poskytují jednoduchý způsob přidání některé jednoduché a nenákladné efekty do vaší aplikace.  Můžete využívat částice uložený ve formátu nástroje PEX pomocí nástroje, například [ http://onebyonedesign.com/flash/particleeditor/ ](http://onebyonedesign.com/flash/particleeditor/).
 
@@ -561,22 +562,19 @@ A je to, co vypadá, pokud používáte zablokovaného texture:
 
 ![Částice texturou pole](using-images/image-2.png "a to v souboru se zobrazí při použití zablokovaného textury")
 
-# <a name="multithreading-support"></a>Podpora více vláken
+## <a name="multithreading-support"></a>Podpora více vláken
 
 UrhoSharp je jediná zařazování knihovna.  To znamená, že byste neměli k vyvolání metody v UrhoSharp z vlákna na pozadí, nebo riziko poškozování stavu aplikace a pravděpodobně k chybě aplikace.
 
 Pokud chcete spouštět nějaký kód na pozadí a aktualizujte Urho součásti na hlavní uživatelské rozhraní, můžete použít [ `Application.InvokeOnMain(Action)` ](https://developer.xamarin.com/api/member/Urho.Application.InvokeOnMain) metoda.  Kromě toho můžete pomocí jazyka C# await a .NET úloh zkontrolujte, zda je na správné vlákno kód rozhraní API.
 
-
-# <a name="urhoeditor"></a>UrhoEditor
+## <a name="urhoeditor"></a>UrhoEditor
 
 Urho Editor si můžete stáhnout pro vaši platformu z [Urho webu](http://urho3d.github.io/), přejděte na soubory ke stažení a vyberte nejnovější verzi.
 
-# <a name="copyrights"></a>Autorská práva
+## <a name="copyrights"></a>Autorská práva
 
 Tato dokumentace obsahuje původní obsah z Xamarin Inc, ale nevykresluje hojně v dokumentaci k s otevřeným zdrojem pro projekt Urho3D a obsahuje snímky obrazovky z projektu Cocos2D.
-
-
 
 ## <a name="related-links"></a>Související odkazy
 
