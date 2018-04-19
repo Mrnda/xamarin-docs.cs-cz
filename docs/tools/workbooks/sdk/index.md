@@ -5,17 +5,18 @@ ms.assetid: FAED4445-9F37-46D8-B408-E694060969B9
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: bc8ae0304e5b044cc1a898820d0ac33e33dfec0d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 03/30/2017
+ms.openlocfilehash: ad7341776c2f37d4eb6238a26d5b12ee9e340ff7
+ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="getting-started-with-the-xamarin-workbooks-sdk"></a>Začínáme s Xamarin sešity SDK
 
 Tento dokument obsahuje Stručného průvodce Začínáme s vývojem integrace pro sešity Xamarin. Velká část to bude fungovat s stabilní sešity Xamarin, ale **načítání integrace prostřednictvím balíčky NuGet je podporována pouze v 1.3 sešity**, v alfa kanálu v době psaní.
 
-# <a name="general-overview"></a>Obecné – přehled
+## <a name="general-overview"></a>Obecné – přehled
 
 Sešity Xamarin integrace jsou malé knihovny, které používají [ `Xamarin.Workbooks.Integrations` NuGet] [ nuget] SDK k integraci s Xamarin sešitů a Inspector agenty zajistit lepší prostředí.
 

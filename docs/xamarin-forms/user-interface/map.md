@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 7dcf3cba72a07b06236e29ddf2603745fd348596
-ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
+ms.openlocfilehash: 050e37d208c3ba5a330d7ecc6df9d106e14f8bb9
+ms.sourcegitcommit: f52aa66de4d07bc00931ac8af791d4c33ee1ea04
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="map"></a>mapy
 
@@ -72,15 +72,26 @@ Na některých platformách jsou zapotřebí další konfigurační kroky, než 
 
 ### <a name="ios"></a>iOS
 
-V systému iOS 7 mapy řízení "jenom funguje", za předpokladu jako `FormsMaps.Init()` bylo provedeno volání.
+Pro přístup k umístění služby v systému iOS, musíte nastavit tyto klíče **Info.plist**:
 
-Pro iOS 8 dva klíče musí být přidán do **Info.plist** souboru: [ `NSLocationAlwaysUsageDescription` ](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18) a [ `NSLocationWhenInUseUsageDescription` ](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26). Reprezentace XML je zobrazena níže – by měl aktualizovat `string` hodnoty tak, aby odrážela, jak vaše aplikace používá informace o umístění:
+- iOS 11
+    - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) – použití polohy při aplikace je používána
+    - [`NSLocationAlwaysAndWhenInUseUsageDescription`](https://developer.apple.com/documentation/corelocation/choosing_the_authorization_level_for_location_services/requesting_always_authorization?language=objc) – pro umístění služby pomocí za všech okolností
+- iOS 10 a starší
+    - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) – použití polohy při aplikace je používána
+    - [`NSLocationAlwaysUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18) – pro umístění služby pomocí za všech okolností    
+    
+Pro podporu iOS 11 a starší, můžete zahrnout všechny tři klíče: `NSLocationWhenInUseUsageDescription`, `NSLocationAlwaysAndWhenInUseUsageDescription`, a `NSLocationAlwaysUsageDescription`.
+
+Reprezentace XML pro tyto klíče v **Info.plist** jsou uvedeny níže. Je třeba aktualizovat `string` hodnoty tak, aby odrážela, jak vaše aplikace používá informace o umístění:
 
 ```xml
 <key>NSLocationAlwaysUsageDescription</key>
-    <string>Can we use your location</string>
+<string>Can we use your location at all times?</string>
 <key>NSLocationWhenInUseUsageDescription</key>
-    <string>We are using your location</string>
+<string>Can we use your location when your app is being used?</string>
+<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+<string>Can we use your location at all times?</string>
 ```
 
 **Info.plist** položky můžete přidat i v **zdroj** zobrazení při úpravách **Info.plist** souboru:

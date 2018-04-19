@@ -1,31 +1,37 @@
 ---
-title: Pomocí SQLite.NET
+title: Pomocí Android SQLite.NET
+description: Knihovny SQLite.NET PCL NuGet poskytuje mechanismus jednoduché datové přístupu pro aplikace pro Xamarin.Android.
 ms.prod: xamarin
 ms.assetid: 3447B7EE-A320-489E-AF02-E5721097760A
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/08/2018
-ms.openlocfilehash: 59ba1ef60b0f63ed98302bf65c4d43c8ae207f22
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/18/2018
+ms.openlocfilehash: 00a937204147c418ada5570cf8021ebe1e6cfa28
+ms.sourcegitcommit: f52aa66de4d07bc00931ac8af791d4c33ee1ea04
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="using-sqlitenet"></a>Pomocí SQLite.NET
 
 SQLite.NET knihovny, která doporučuje Xamarin je velmi základní ORM, který vám umožní snadno uložení a načtení objektů v místní databázi SQLite na zařízení s Androidem. ORM znamená relační mapování objektu &ndash; rozhraní API, které vám umožní uložit a načíst "objekty" z databáze bez nutnosti psaní příkazů SQL.
 
-## <a name="using-sqlitenet"></a>Pomocí SQLite.NET
+Zahrnout knihovně SQLite.NET aplikace Xamarin, přidejte následující balíček NuGet do projektu:
 
-Zahrnout knihovně SQLite.NET aplikace Xamarin, přidejte [balíček SQLite.net PCL NuGet](https://www.nuget.org/packages/sqlite-net-pcl/) pomocí projektu **SQLite net PCL** balíček NuGet:
+- **Název balíčku:** PCL SQLite net
+- **Autor:** Krueger František A.
+- **ID:** sqlite. net pcl
+- **Adresa URL:** [nuget.org/packages/sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
 [![Balíček SQLite.NET NuGet](using-sqlite-orm-images/image1a-sml.png "balíček SQLite.NET NuGet")](using-sqlite-orm-images/image1a.png#lightbox)
 
+> [!TIP]
+> Nejsou k dispozici několik různých balíčcích SQLite – nezapomeňte vybrat tu správnou (nemusí být nejvyšší výsledek vyhledávání).
+
 Až budete mít k dispozici SQLite.NET knihovny, postupujte podle tyto tři kroky ji používat pro přístup k databázi:
 
-
-1.  **Přidat pomocí příkazu** &ndash; do kdy je potřeba přístup k datům soubory C# přidejte následující příkaz: 
+1.  **Přidat pomocí příkazu** &ndash; do kdy je potřeba přístup k datům soubory C# přidejte následující příkaz:
 
     ```csharp
     using SQLite;
@@ -206,7 +212,7 @@ Chcete-li změnit režim vláken, volejte `SqliteConnection.SetConfig`. Napřík
 SqliteConnection.SetConfig(SQLiteConfig.Serialized);
 ```
 
-Android verze SQLite má omezení, která vyžaduje několik další kroky. Pokud volání `SqliteConnection.SetConfig` například vytvoří výjimka SQLite `library used incorrectly`, pak musíte použít následující alternativní řešení: 
+Android verze SQLite má omezení, která vyžaduje několik další kroky. Pokud volání `SqliteConnection.SetConfig` například vytvoří výjimka SQLite `library used incorrectly`, pak musíte použít následující alternativní řešení:
 
 1.  Odkaz na nativního **libsqlite.so** knihovny tak, aby `sqlite3_shutdown` a `sqlite3_initialize` rozhraní API jsou k dispozici pro aplikaci:
 
@@ -228,8 +234,6 @@ Android verze SQLite má omezení, která vyžaduje několik další kroky. Poku
     ```
 
 Toto řešení funguje i pro `Mono.Data.Sqlite` knihovny. Další informace o SQLite a více vláken, najdete v části [SQLite a více vláken](https://www.sqlite.org/threadsafe.html). 
-
-
 
 ## <a name="related-links"></a>Související odkazy
 

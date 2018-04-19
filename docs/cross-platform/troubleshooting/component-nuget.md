@@ -7,28 +7,21 @@ ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.date: 11/22/2017
-ms.openlocfilehash: a76adab41e9f7de5abb391e69a5b27783e0c3a63
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/18/2018
+ms.openlocfilehash: e3adee1b56b833442a8c927672cf903d45d03e84
+ms.sourcegitcommit: f52aa66de4d07bc00931ac8af791d4c33ee1ea04
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="updating-component-references-to-nuget"></a>Aktualizace komponenty odkazů na NuGet
 
-_Nahraďte vaší součásti odkazy na balíčky NuGet pro osvědčení do budoucna aplikace._
+> [!NOTE]
+> Xamarin součásti již nejsou podporovány v sadě Visual Studio a by měl být nahrazen balíčky NuGet. Postupujte podle následujících pokynů ručně odebrat součást odkazy z vašich projektů.
 
-Tato příručka vysvětluje, jak aktualizovat existující Xamarin řešení Chcete-li změnit součást odkazy na balíčky NuGet.
+Postupovat podle těchto pokynů pro přidání balíčků NuGet v [Windows](https://docs.microsoft.com/nuget/quickstart/use-a-package) nebo [Mac](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough).
 
-- [Součásti, které obsahují balíčky NuGet](#contain)
-- [Komponenty s náhrady NuGet](#replace)
-
-Většina komponent spadat do jednoho z výše uvedených kategorií.
-Pokud používáte komponenty, která vypadá to, že máte ekvivalentní balíček NuGet, přečtěte si [součásti bez cesty migrace NuGet](#require-update) části níže.
-
-Odkazovat na těchto stránkách podrobnější pokyny pro přidání balíčků NuGet v [Windows](https://docs.microsoft.com/nuget/quickstart/use-a-package) nebo [Mac](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough).
-
-## <a name="opening-a-project-containing-a-component"></a>Otevření projektu, který obsahuje komponentu
+## <a name="manually-removing-component-references"></a>Ručním odebráním součást odkazy
 
 V listopadu 2017 byla [oznámeno](https://blog.xamarin.com/hello-nuget-new-home-xamarin-components/) , úložišti součástí Xamarin by zastaveny. Ve snaze jak urychlit sunsetting součástí 15.6 verze sady Visual Studio a 7.4 verze sady Visual Studio pro Mac už nebude podporovat komponenty ve vašem projektu. 
 
@@ -40,7 +33,7 @@ Při načítání projektu do sady Visual Studio, zobrazí se následující dia
 
 K vyloučení komponenty ze svého projektu:
 
-1. Otevřete soubor .csproj. Chcete-li to provést, klikněte pravým tlačítkem na název projektu a vyberte **uvolnit projekt**. 
+1. Otevřete **.csproj** souboru. Chcete-li to provést, klikněte pravým tlačítkem na název projektu a vyberte **uvolnit projekt**. 
 
 2. Znovu klikněte pravým tlačítkem na odpojen projekt a vyberte **upravit {vaše projektu name} .csproj**.
 
@@ -100,9 +93,21 @@ K vyloučení komponenty ze svého projektu:
 
 3. Odebrat odkazy na `XamarinComponentReference` a soubor uložte. V předchozím příkladu je bezpečné odeberte celý `ItemGroup`
 
-4. Opakujte předchozí kroky pro každý projekt ve vašem řešení. 
+4. Opakujte předchozí kroky pro každý projekt ve vašem řešení.
 
 -----
+
+> [!WARNING]
+> Podle následujících pokynů pracovat pouze s starší verze sady Visual Studio.
+> **Součásti** uzlu již není k dispozici v aktuální verze Visual Studio 2017 nebo Visual Studio for Mac.
+
+Následující části popisují, jak aktualizovat existující Xamarin řešení Chcete-li změnit součást odkazy na balíčky NuGet.
+
+- [Součásti, které obsahují balíčky NuGet](#contain)
+- [Komponenty s náhrady NuGet](#replace)
+
+Většina komponent spadat do jednoho z výše uvedených kategorií.
+Pokud používáte komponenty, která vypadá to, že máte ekvivalentní balíček NuGet, přečtěte si [součásti bez cesty migrace NuGet](#require-update) části níže.
 
 <a name="contain" />
 
@@ -147,14 +152,12 @@ Všimněte si, že **balíčky** karta bude pravděpodobně prázdný:
 
 _Může obsahovat závislosti NuGet, ale ty lze ignorovat._
 
-
 Potvrďte náhradní NuGet balíček existuje hledání [NuGet.org](https://www.nuget.org/packages), pomocí názvu komponenty, případně autorem.
 
 Jako příklad můžete najít oblíbených **sqlite. net pcl** balíčku tak, že:
 
 - [`sqlite-net-pcl`](https://www.nuget.org/packages?q=sqlite-net-pcl) – Název produktu.
 - [`praeclarum`](https://www.nuget.org/packages?q=praeclarum) – profil autora.
-
 
 ### <a name="updating-the-solution"></a>Aktualizace řešení
 

@@ -1,16 +1,17 @@
 ---
-title: Pomocí SQLite.NET
+title: Použití SQLite.NET s iOS
+description: Knihovny SQLite.NET PCL NuGet poskytuje mechanismus jednoduché datové přístupu pro aplikace pro Xamarin.iOS.
 ms.prod: xamarin
 ms.assetid: 79813B09-42D7-47DD-AE71-A605E6B9EF24
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 01/18/2018
-ms.openlocfilehash: 8d68df2c29afe828482da7c5747b30dc5d30a5de
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/18/2018
+ms.openlocfilehash: e7287a4f6b4e3f1203f6181c900c05565d9b5050
+ms.sourcegitcommit: f52aa66de4d07bc00931ac8af791d4c33ee1ea04
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="using-sqlitenet"></a>Pomocí SQLite.NET
 
@@ -21,32 +22,47 @@ ORM je zkratka pro objekt relační mapování – rozhraní API, které vám um
 
 ## <a name="usage"></a>Použití
 
-Přidat [balíček SQLite.net PCL NuGet](https://www.nuget.org/packages/sqlite-net-pcl/), do projektu - podporuje mnoha různých platforem včetně iOS, Android a Windows.
+Zahrnout knihovně SQLite.NET aplikace Xamarin, přidejte následující balíček NuGet do projektu:
 
-  [![](using-sqlite-orm-images/image1a-sml.png "Balíček SQLite.NET NuGet")](using-sqlite-orm-images/image1a.png#lightbox)
+- **Název balíčku:** PCL SQLite net
+- **Autor:** Krueger František A.
+- **ID:** sqlite. net pcl
+- **Adresa URL:** [nuget.org/packages/sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
+
+[![Balíček SQLite.NET NuGet](using-sqlite-orm-images/image1a-sml.png "balíček SQLite.NET NuGet")](using-sqlite-orm-images/image1a.png#lightbox)
+
+> [!TIP]
+> Nejsou k dispozici několik různých balíčcích SQLite – nezapomeňte vybrat tu správnou (nemusí být nejvyšší výsledek vyhledávání).
 
 Až budete mít k dispozici SQLite.NET knihovny, postupujte podle tyto tři kroky ji používat pro přístup k databázi:
 
-
 1. **Přidat pomocí příkazu** -do kdy je potřeba přístup k datům soubory C# přidejte následující příkaz:
 
-        using SQLite;
+    ```csharp
+    using SQLite;
+    ```
 
 1. **Vytvořit prázdnou databázi** – odkaz na databázi lze vytvořit pomocí předání konstruktoru třídy SQLiteConnection cesta k souboru. Nemusíte zaškrtněte, pokud soubor již existuje – se automaticky vytvoří Pokud požadováno, v opačném případě stávající soubor databáze se otevřít.
 
-        var db = new SQLiteConnection (dbPath);
+    ```csharp
+    var db = new SQLiteConnection (dbPath);
+    ```
 
     Je třeba určit proměnnou dbPath podle pravidla popsané dříve v tomto dokumentu.
 
 1. **Uložení dat** – po vytvoření objektu SQLiteConnection, databáze, které příkazy budou provedeny voláním její metody, jako je například CreateTable a vložení takto:
 
-        db.CreateTable<Stock> ();
-        db.Insert (newStock); // after creating the newStock object
+    ```csharp
+    db.CreateTable<Stock> ();
+    db.Insert (newStock); // after creating the newStock object
+    ```
 
 1. **Načtení dat** – Pokud chcete načíst objekt (nebo seznam objektů) použijte následující syntaxi:
 
-        var stock = db.Get<Stock>(5); // primary key id of 5
-        var stockList = db.Table<Stock>();
+    ```csharp
+    var stock = db.Get<Stock>(5); // primary key id of 5
+    var stockList = db.Table<Stock>();
+    ```
 
 ## <a name="basic-data-access-sample"></a>Základní Data Access – ukázka
 
@@ -54,14 +70,13 @@ Až budete mít k dispozici SQLite.NET knihovny, postupujte podle tyto tři krok
 
 **iOS**
 
- ![](using-sqlite-orm-images/image2.png "Ukázka SQLite.NET iOS")
+ [![Ukázka SQLite.NET iOS](using-sqlite-orm-images/image2-sml.png)](using-sqlite-orm-images/image2-sml.png#lightbox)
 
 Následující příklad kódu ukazuje interakce celou databázi pomocí knihovny SQLite.NET k zapouzdření základní přístup k databázi. Zobrazuje:
 
 1.  Vytvoření souboru databáze
 1.  Vytváření objektů a jejich uložením vkládání některá data
 1.  Dotazování na data
-
 
 Budete muset zahrnují tyto obory názvů:
 
@@ -187,7 +202,6 @@ Chcete-li změnit režim vláken, volejte `SqliteConnection.SetConfig`. Napřík
 ```csharp
 SqliteConnection.SetConfig(SQLiteConfig.Serialized);
 ```
-
 
 ## <a name="related-links"></a>Související odkazy
 
