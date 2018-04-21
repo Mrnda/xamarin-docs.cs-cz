@@ -7,13 +7,13 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/18/2018
-ms.openlocfilehash: e7287a4f6b4e3f1203f6181c900c05565d9b5050
-ms.sourcegitcommit: f52aa66de4d07bc00931ac8af791d4c33ee1ea04
+ms.openlocfilehash: e9149fc163d31e0fcbc6ae28ccaa896eeca6dd9b
+ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 04/20/2018
 ---
-# <a name="using-sqlitenet"></a>Pomocí SQLite.NET
+# <a name="using-sqlitenet-with-ios"></a>Použití SQLite.NET s iOS
 
 SQLite.NET knihovny, která doporučuje Xamarin je základní ORM, který umožňuje ukládání a načítání objektů v místní databázi SQLite na zařízení s iOS.
 ORM je zkratka pro objekt relační mapování – rozhraní API, které vám umožní uložit a načíst "objekty" z databáze bez nutnosti psaní příkazů SQL.
@@ -24,7 +24,7 @@ ORM je zkratka pro objekt relační mapování – rozhraní API, které vám um
 
 Zahrnout knihovně SQLite.NET aplikace Xamarin, přidejte následující balíček NuGet do projektu:
 
-- **Název balíčku:** PCL SQLite net
+- **Název balíčku:** sqlite. net pcl
 - **Autor:** Krueger František A.
 - **ID:** sqlite. net pcl
 - **Adresa URL:** [nuget.org/packages/sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)

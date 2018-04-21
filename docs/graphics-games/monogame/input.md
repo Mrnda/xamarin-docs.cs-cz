@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: e7ce8320441f6b248b183a8698a4f41c78bf2d64
-ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
+ms.openlocfilehash: ac87ee44163d53b11c15538f382379aae962cbb2
+ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="monogame-gamepad-reference"></a>MonoGame GamePad odkaz
 
@@ -25,7 +25,7 @@ Poskytuje rozhraní API původní XNA `Xbox360GamePad` třídu pro čtení vstup
 
 ## <a name="reading-input-from-gamepad"></a>Čtení vstup z GamePad
 
-`GameController` Třída poskytuje standardizovaného způsobu čtení vstupu na jakékoli platformě MonoGame. Poskytuje informace prostřednictvím dvou metod:
+`GamePad` Třída poskytuje standardizovaného způsobu čtení vstupu na jakékoli platformě MonoGame. Poskytuje informace prostřednictvím dvou metod:
 
 - `GetState` – Vrátí aktuální stav tlačítek, analogovým jsou Flash disky a řídicí kontroleru.
 - `GetCapabilities` – Vrátí informace o možnostech hardwaru, například jestli řadičem má určité tlačítka nebo podporuje vibracím.

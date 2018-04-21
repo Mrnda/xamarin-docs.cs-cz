@@ -6,12 +6,12 @@ ms.assetid: eecaf6a5-567c-49b2-ac83-2a195596c5bf
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/19/2017
-ms.openlocfilehash: e62c82b351bab759192a4fe879a3b63754cdf0af
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/19/2018
+ms.openlocfilehash: d2125c1ddaa3edc3e2ee76d8e03e384efdca42c6
+ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="xamarinforms-requirements"></a>Požadavky na platformě Xamarin.Forms
 
@@ -85,7 +85,7 @@ Visual Studio pro Mac můžete použít k vývoji aplikací Xamarin.Forms na OS 
 
 ## <a name="windows-system-requirements"></a>Požadavky na systém Windows
 
-Xamarin.Forms aplikace pro iOS a Android se dají vytvářet v žádné instalaci systému Windows, která podporuje vývoj na platformě Xamarin. To vyžaduje Visual Studio 2015 nebo novější běžící na systému Windows 7 nebo vyšší. Síťově připojeného počítače Mac se vyžaduje pro vývoj pro iOS.
+Xamarin.Forms aplikace pro iOS a Android se dají vytvářet v žádné instalaci systému Windows, která podporuje vývoj na platformě Xamarin. To vyžaduje Visual Studio 2017 nebo novější běžící na systému Windows 7 nebo vyšší. Síťově připojeného počítače Mac se vyžaduje pro vývoj pro iOS.
 
 ### <a name="universal-windows-platform-uwp"></a>Univerzální platforma Windows (UPW)
 
@@ -93,7 +93,7 @@ Vývoj aplikací Xamarin.Forms pro UPW vyžaduje:
 
 * Windows 10 (doporučené aktualizace Creators patří.)
 
-* Doporučuje se Visual Studio 2017
+* Visual Studio 2017
 
 * [Windows 10 SDK](https://dev.windows.com/downloads/windows-10-sdk)
 

@@ -6,17 +6,16 @@ ms.assetid: B2727160-12F2-43EE-84B5-0B15C8FCF4BD
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
-ms.date: 03/19/2018
-ms.openlocfilehash: 75d42da4ba01aaefded0081da02b8e1651695f46
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/20/2018
+ms.openlocfilehash: 9c17641312384634983c2cbb34fa923a9416c9f7
+ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="broadcast-receivers-in-xamarinandroid"></a>Příjemci všesměrového vysílání v Xamarin.Android
 
 _Tato část popisuje postup použití příjemce všesměrového vysílání._
-
 
 ## <a name="broadcast-receiver-overview"></a>Přehled všesměrového vysílání příjemce
 
@@ -55,7 +54,7 @@ public class SampleReceiver : BroadcastReceiver
     public override void OnReceive(Context context, Intent intent)
     {
         // Do stuff here.
-        
+
         String value = intent.GetStringExtra("key");
     }
 }
@@ -97,9 +96,9 @@ public class MySampleBroadcastReceiver : BroadcastReceiver
 }
 ```
 
-Aplikace, které cílí na Android 8.0 (API úrovně 26) nebo vyšší nemusí staticky zaregistrovat pro implicitní všesměrové vysílání. Aplikace může stále staticky zaregistrovat explicitní všesměrové vysílání. Existuje malé seznam implicitní vysílání, které jsou vyloučené z tohoto omezení. Tyto výjimky jsou popsány v [implicitní vysílání výjimky](https://developer.android.com/guide/components/broadcast-exceptions.html) průvodce v Android dokumentaci. Aplikace, které zajímá implicitní všesměrové vysílání, musíte udělat proto dynamicky pomocí `RegisterReceiver` metoda. To je popsána dále.  
+Aplikace, které cílí na Android 8.0 (API úrovně 26) nebo vyšší nemusí staticky zaregistrovat pro implicitní všesměrové vysílání. Aplikace může stále staticky zaregistrovat explicitní všesměrové vysílání. Existuje malé seznam implicitní vysílání, které jsou vyloučené z tohoto omezení. Tyto výjimky jsou popsány v [implicitní vysílání výjimky](https://developer.android.com/guide/components/broadcast-exceptions.html) průvodce v Android dokumentaci. Aplikace, které zajímá implicitní všesměrové vysílání, musíte udělat proto dynamicky pomocí `RegisterReceiver` metoda. To je popsána dále.
 
-### <a name="context-registering-a-broadcast-receiver"></a>Kontext registrace všesměrového vysílání příjemce 
+### <a name="context-registering-a-broadcast-receiver"></a>Kontext registrace všesměrového vysílání příjemce
 
 Kontext – registrace (také označované jako dynamické registraci) příjemce provádí volání `RegisterReceiver` metoda a všesměrového vysílání příjemce musí neregistrované pomocí volání `UnregisterReceiver` metoda. Aby se zabránilo unikající prostředky, je potřeba zrušit registraci příjemce, když už není relevantní pro daný kontext (aktivity nebo služby). Služba může například vysílání záměrem k informování aktivitu, která jsou k dispozici, který se má zobrazit uživateli aktualizace. Při spuštění aktivity by zaregistrovat pro tyto záměry. Při aktivity se přesune do na pozadí a již nebude viditelná pro uživatele, se musí zrušit příjemce protože uživatelské rozhraní pro zobrazení aktualizací již není viditelný. Následující fragment kódu je příklad toho, jak se zaregistrovat a zrušit příjemce všesměrového vysílání v rámci aktivity:
 
@@ -108,22 +107,22 @@ Kontext – registrace (také označované jako dynamické registraci) příjemc
 public class MainActivity: Activity 
 {
     MySampleBroadcastReceiver receiver;
-    
+
     protected override void OnCreate(Bundle savedInstanceState)
     {
         base.OnCreate(savedInstanceState);
         receiver = new MySampleBroadcastReceiver()
-        
+
         // Code omitted for clarity
     }
-    
+
     protected override OnResume() 
     {
         base.OnResume();
         RegisterReceiver(receiver, new IntentFilter("com.xamarin.example.TEST"));
         // Code omitted for clarity
     }
-    
+
     protected override OnPause() 
     {
         UnregisterReceiver(receiver);
@@ -150,28 +149,32 @@ Vysílání může být publikována do všechny aplikace nainstalované v zař�
    ```
 
     Tento fragment kódu je další příklad odesílání vysílání pomocí `Intent.SetAction` metodu, jak identifikovat akce:
-    
+
     ```csharp 
     Intent intent = new Intent();
     intent.SetAction("com.xamarin.example.TEST");
     intent.PutExtra("key", "value");
     SendBroadcast(intent);
     ```
-   
+
 2. **Context.SendOrderedBroadcast** &ndash; metodu je velmi podobné `Context.SendBroadcast`, s rozdílem je, že bude záměr publikované jeden v čase k příjemce, v pořadí, recievers registraci.
-   
+
 ### <a name="localbroadcastmanager"></a>LocalBroadcastManager
 
-[V4 knihovna podpory Xamarin](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) poskytuje třídu pomocníka názvem [ `LocalBroadcastManager` ](https://developer.android.com/reference/android/support/v4/content/LocalBroadcastManager.html). `LocalBroadcastManager` Je určený pro aplikace, které nechcete odeslat nebo přijmout vysílání z jiných aplikací na zařízení. `LocalBroadcastManager` Bude publikovat pouze zprávy v rámci této aplikace. Jiné aplikace na zařízení nemůže přijímat zprávy, které jsou publikovány pomocí `LocalBroadcastManager`. 
+[V4 knihovna podpory Xamarin](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) poskytuje třídu pomocníka názvem [ `LocalBroadcastManager` ](https://developer.android.com/reference/android/support/v4/content/LocalBroadcastManager.html). `LocalBroadcastManager` Je určený pro aplikace, které nechcete odeslat nebo přijmout vysílání z jiných aplikací na zařízení. `LocalBroadcastManager` Pouze publikuje zprávy v kontextu aplikace a pouze ty všesměrového vysílání příjemci, které jsou registrovány `LocalBroadcastManager`. Tento fragment kódu je příklad registrace všesměrového vysílání příjemce s `LocalBroadcastManager`:
 
-Tento fragment kódu ukazuje, jak odeslat záměrné pomocí `LocalBroadcastManager`:
+```csharp
+Android.Support.V4.Content.LocalBroadcastManager.GetInstance(this). RegisterReceiver(receiver, new IntentFilter("com.xamarin.example.TEST"));
+```
+
+Jiné aplikace na zařízení nemůže přijímat zprávy, které jsou publikovány pomocí `LocalBroadcastManager`. Tento fragment kódu ukazuje, jak odeslat záměrné pomocí `LocalBroadcastManager`:
 
 ```csharp
 Intent message = new Intent("com.xamarin.example.TEST");
 // If desired, pass some values to the broadcast receiver.
 intent.PutExtra("key", "value");
 Android.Support.V4.Content.LocalBroadcastManager.GetInstance(this).SendBroadcast(message);
-``` 
+```
 
 ## <a name="related-links"></a>Související odkazy
 

@@ -1,18 +1,18 @@
 ---
-title: Použitím technologie ADO.NET
+title: Pomocí Android ADO.NET
 ms.prod: xamarin
 ms.assetid: F6ABCEF1-951E-40D8-9EA9-DD79123C2650
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: a2f7a7a0c282284d7a45fb81c134d300aef5afba
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 29e81afdf2c46cdefc68e2c2fae4e6e47999a346
+ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/20/2018
 ---
-# <a name="using-adonet"></a>Použitím technologie ADO.NET
+# <a name="using-adonet-with-android"></a>Pomocí Android ADO.NET
 
 Xamarin má integrovanou podporu pro databázi SQLite, která je k dispozici v systému Android a mohou být zpřístupněny pomocí známé syntaxe pro technologii ADO.NET. Pomocí těchto rozhraní API vyžaduje, abyste zápisu příkazů SQL, které jsou zpracovány SQLite, jako například `CREATE TABLE`, `INSERT` a `SELECT` příkazy.
 

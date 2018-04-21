@@ -7,19 +7,19 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 04/18/2018
-ms.openlocfilehash: 00a937204147c418ada5570cf8021ebe1e6cfa28
-ms.sourcegitcommit: f52aa66de4d07bc00931ac8af791d4c33ee1ea04
+ms.openlocfilehash: e8e6e98cb6ada8d8da494e408e8db66ad5038799
+ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 04/20/2018
 ---
-# <a name="using-sqlitenet"></a>Pomocí SQLite.NET
+# <a name="using-sqlitenet-with-android"></a>Pomocí Android SQLite.NET
 
 SQLite.NET knihovny, která doporučuje Xamarin je velmi základní ORM, který vám umožní snadno uložení a načtení objektů v místní databázi SQLite na zařízení s Androidem. ORM znamená relační mapování objektu &ndash; rozhraní API, které vám umožní uložit a načíst "objekty" z databáze bez nutnosti psaní příkazů SQL.
 
 Zahrnout knihovně SQLite.NET aplikace Xamarin, přidejte následující balíček NuGet do projektu:
 
-- **Název balíčku:** PCL SQLite net
+- **Název balíčku:** sqlite. net pcl
 - **Autor:** Krueger František A.
 - **ID:** sqlite. net pcl
 - **Adresa URL:** [nuget.org/packages/sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
