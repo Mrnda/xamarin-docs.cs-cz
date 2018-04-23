@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: a8264d3ebd5f294b1b77fbbafd660825d5ce5180
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 859f84fbe329d79e9e1e6a8b7445fe2a7f03af23
+ms.sourcegitcommit: dc6ccf87223942088ca926c0dadd5b5478c683cb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/23/2018
 ---
 # <a name="introduction-to-xamarinios-for-visual-studio"></a>Úvod do Xamarin.iOS pro sadu Visual Studio
 
@@ -36,39 +36,25 @@ Existuje několik požadavků, které musí být použito při vývoji pro iOS v
 
 Existuje řada možností konfigurace k dispozici, abyste se mohli rozhodnout, které vám nejvíce vyhovuje vašim potřebám vývoj. Tyto podmínky jsou uvedeny níže:
 
--  Pomocí Macu jako váš hlavní vývojový počítač a spusťte virtuální počítač Windows s nainstalovanou sadu Visual Studio. Doporučujeme, abyste pomocí softwaru virtuálních počítačů, jako třeba [Parallels](http://www.parallels.com/products/desktop/) nebo [VMWare](http://www.vmware.com/products/fusion/) .
--  Stejně jako hostitel sestavení pomocí Macu. V tomto scénáři by byl simply připojené ke stejné síti jako počítače s Windows pomocí [nezbytné](~/cross-platform/get-started/installation/windows.md#installation) nástroje nainstalované.
+-  Pomocí Macu jako hlavní vývojovém počítači a spuštění virtuálního počítače s Windows s nainstalovanou sadu Visual Studio. Doporučujeme, abyste pomocí softwaru virtuálních počítačů, jako třeba [Parallels](http://www.parallels.com/products/desktop/) nebo [VMWare](http://www.vmware.com/products/fusion/) .
+-  Stejně jako hostitel sestavení pomocí Macu. V tomto scénáři by být připojen ke stejné síti jako počítače s Windows pomocí [nezbytné](~/cross-platform/get-started/installation/windows.md#installation) nástroje nainstalované.
 
 
 V obou případech postupujte podle těchto kroků:
 
-- [Nainstalujte nástroje pro Xamarin.iOS na hostiteli Mac](https://docs.microsoft.com/visualstudio/mac/installation)
-- [Konfigurace počítače Mac](~/ios/get-started/installation/windows/index.md#configuring)
+- [Instalaci sady Visual Studio pro Mac](https://docs.microsoft.com/visualstudio/mac/installation)
 - [Instalace nástroje Xamarin v systému Windows](~/cross-platform/get-started/installation/windows.md)
-
-K vývoji s Xamarinem v sadě Visual Studio, je třeba použít **alespoň** Visual Studio 2015 Professional nebo vyšší. Xamarin bude **nebude fungovat** Express edice Visual Studia, protože nepodporují doplňků.
 
 ## <a name="connecting-to-the-mac"></a>Připojení k počítači Mac
 
-Můžete připojit k počítači Mac sestavení hostitele buď přes ikonu na panelu nástrojů Visual Studio (poskytuje aplikace pro iOS je otevřený):
+Pro připojení k hostiteli Mac sestavení sady Visual Studio, postupujte podle pokynů v [pár na Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) průvodce.
 
-[![](introduction-to-xamarin-ios-for-visual-studio-images/xma1a.png "Připojení k ikonu Mac")](introduction-to-xamarin-ios-for-visual-studio-images/xma1a.png#lightbox)
-
-Nebo procházením **nástroje > Možnosti** v sadě Visual Studio a výběrem **Xamarin > Nastavení iOS**:
-
- [![](introduction-to-xamarin-ios-for-visual-studio-images/xma-ios-options.png "iOS – možnost")](introduction-to-xamarin-ios-for-visual-studio-images/xma-ios-options.png#lightbox)
-
-Sestavení hostitele Mac můžete změnit kliknutím **najít Xamarin Mac Agent** tlačítko. Aktualizovat hostitele sestavení Mac se zobrazí následující obrazovka:
-
-  [![](introduction-to-xamarin-ios-for-visual-studio-images/xma-dialog.png "Dialogové okno Xamarin Mac Agent")](introduction-to-xamarin-ios-for-visual-studio-images/xma-dialog.png#lightbox)
 
 
 ## <a name="visual-studio-toolbar-overview"></a>Přehled nástrojů Visual Studio
 
 Xamarin iOS pro sadu Visual Studio přidává položky na standardním panelu nástrojů a na nový panel nástrojů iOS.
 Funkce tyto panely nástrojů jsou vysvětleny níže.
-
-
 
 ### <a name="standard-toolbar"></a>Standardním panelu nástrojů
 
@@ -174,7 +160,7 @@ Chcete-li přidat objekty do zobrazení, použijte **sada nástrojů** podokně 
 
 ### <a name="device-logging"></a>Protokolování zařízení
 
-V sadě Visual Studio 2015 a vyšší Android a iOS jsou unified dotyková zařízení protokolu
+Visual Studio 2017, Android a iOS jsou unified dotyková zařízení protokolu.
 
 Nové okno zařízení protokolu nástroje pro sadu Visual Studio umožňuje zobrazit protokoly pro zařízení s Androidem a iOS. Dá se spuštěním některý z následujících příkazů:
 

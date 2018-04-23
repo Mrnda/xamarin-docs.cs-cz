@@ -8,13 +8,13 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/23/2017
-ms.openlocfilehash: e4828f1ae5448a94fa1f52147d1aef3787e95521
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: dc9b86845dc91c7fb8ec3a88a5862e5e9f6de18d
+ms.sourcegitcommit: dc6ccf87223942088ca926c0dadd5b5478c683cb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/23/2018
 ---
-# <a name="helloios-quickstart"></a>Hello.iOS Quickstart
+# <a name="helloios-quickstart"></a>Hello.iOS rychlý start
 
 Tato příručka popisuje, jak vytvořit aplikaci, která znamená, že alfanumerické telefonní číslo, zadané uživatelem do číselné telefonní číslo a pak zavolá toto číslo. Konečné aplikace vypadá takto:
 
@@ -288,7 +288,7 @@ Tento návod popisuje, jak vytvořit aplikaci s názvem Phoneword, který překl
 **Poznámka:**: Tento návod používá Visual Studio Enterprise 2017 na 10 virtuálního počítače s Windows. Vaše nastavení se liší od toho, dokud splňuje požadavky na výše uvedené, ale mějte na paměti, že některé snímky obrazovky se mohou lišit na vaše nastavení.
 
 > [!NOTE]
-> Než budete pokračovat v tomto průvodci, musíte mít již připojení k počítači Mac ze sady Visual Studio. To je proto Xamarin.iOS spoléhá na společnosti Apple nástrojů pro sestavení a spusťte iOS Designer a aplikace. Pokud chcete získat nastavit, postupujte podle kroků v [připojení k Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) průvodce.
+> Než budete pokračovat v tomto průvodci, musíte mít již připojení k počítači Mac ze sady Visual Studio. To je proto Xamarin.iOS spoléhá na společnosti Apple nástrojů pro sestavení a spusťte iOS Designer a aplikace. Pokud chcete získat nastavit, postupujte podle kroků v [pár na Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) průvodce.
 
 1. Spusťte sadu Visual Studio z **spustit** nabídky:
 

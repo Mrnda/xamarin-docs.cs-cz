@@ -8,11 +8,11 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/27/2018
-ms.openlocfilehash: 0a4bab44cfa260060c990949b45d3f5e6b103d0c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: df6a848023febcb7fc65cf6616aeae3b43b39262
+ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="xamarinmac-error-messages-mmp"></a>Xamarin.Mac chybové zprávy (zhr)
 
@@ -131,7 +131,7 @@ Obvykle to ukazuje na chybu v Xamarin.Mac; prosím soubor sestavy chyb v [ https
 
 #### <a name="mm0091-this-version-of-xamarinmac-requires-the--sdk-shipped-with-xcode--either-upgrade-xcode-to-get-the-required-header-files-or-use-the-dynamic-registrar-or-set-the-managed-linker-behaviour-to-link-platform-or-link-framework-sdks-only-to-try-to-avoid-the-new-apis"></a>MM0091: Vyžaduje tato verze Xamarin.Mac * SDK (dodávané s Xcode *). Buď upgradujte Xcode získání požadované hlavičky souborů nebo použít dynamické registrátora nebo nastavit chování spravované linkeru na odkaz platformy nebo pouze odkaz Framework sady SDK (a pokuste se vyhnout nových rozhraní API).
 
-Xamarin.Mac vyžaduje soubory hlaviček, z SDK verze zadaná v chybové zprávě, k vytvoření vaší aplikace pomocí statické registrátora... Doporučeným způsobem, jak vyřešit tuto chybu se k upgradu Xcode získat požadované SDK, to bude zahrnovat všechny soubory požadované hlavičky. Pokud máte více verzí Xcode nainstalován, nebo chcete použít Xcode v jiné než výchozí umístění, ujistěte se, zda je nastavení správné umístění Xcode v předvolbách vaší IDE.
+Xamarin.Mac vyžaduje soubory hlaviček, z SDK verze zadaná v chybové zprávě, k vytvoření vaší aplikace pomocí statické registrátora. Doporučeným způsobem, jak vyřešit tuto chybu se k upgradu Xcode získat požadované SDK, to bude zahrnovat všechny soubory požadované hlavičky. Pokud máte více verzí Xcode nainstalován, nebo chcete použít Xcode v jiné než výchozí umístění, ujistěte se, zda je nastavení správné umístění Xcode v předvolbách vaší IDE.
 
 Jeden potenciální a alternativní řešení, je umožnit spravované linkeru. Tato akce odebere nepoužívané včetně rozhraní API, ve většině případů nové rozhraní API, kde jsou soubory hlaviček chybí (nebo jsou neúplné). To nebude fungovat, pokud váš projekt používá rozhraní API byla zavedena v novější SDK než jeden vaší Xcode ale nabízí.
 
@@ -219,7 +219,7 @@ Poslední podají řešení může být použití starší verze Xamarin.Mac, te
 
 #### <a name="mm1604-file-of-type-0-is-not-a-macho-file-1"></a>MM1604: Soubor typu {0} není soubor MachO ({1}).
 
-## <a name="mm2xxx-linker"></a>MM2xxx: Linker
+## <a name="mm2xxx-linker"></a>MM2xxx: Linkeru
 
 ### <a name="mm20xx-linker-general-errors"></a>MM20xx: Chybami Linkeru (Obecné)
 
@@ -435,7 +435,7 @@ Najdete v článku [ekvivalentní mtouch upozornění](~/ios/troubleshooting/mto
 
 ## <a name="mm8xxx-runtime"></a>MM8xxx: modul runtime
 
-### <a name="mm800x-misc"></a>MM800x: misc
+### <a name="mm800x-misc"></a>MM800x: různé
 
 <!-- 8000 used by mtouch -->
 <!-- 8001 used by mtouch -->

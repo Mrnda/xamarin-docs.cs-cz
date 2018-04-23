@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: f30e49122c343a967a2348c03ce4f06d9452dc76
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f5bd88da2d95f91add9e19c7a53d793256b49238
+ms.sourcegitcommit: dc6ccf87223942088ca926c0dadd5b5478c683cb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/23/2018
 ---
 # <a name="connection-troubleshooting"></a>Odstraňování problémů s připojením
 
@@ -114,36 +114,36 @@ Už je vyžadován hostitel sestavení Xamarin ze starších verzí Xamarin.iOS.
 
 <a name="knownissues" />
 
-## <a name="known-issues-and-limitations"></a>Známé problémy a omezení
+### <a name="known-issues-and-limitations"></a>Známé problémy a omezení
 
 > [!NOTE]
 > Tato část se týká pouze v případě, že už jste připojení úspěšně hostitele sestavení Mac s Mac uživatelské jméno a heslo pomocí OpenSSH SSH klienta, jak je popsáno v kroku 8 a 9 výše.
 
-### <a name="invalid-credentials-please-try-again"></a>"Neplatné přihlašovací údaje. Zkuste to prosím znovu."
+#### <a name="invalid-credentials-please-try-again"></a>"Neplatné přihlašovací údaje. Zkuste to prosím znovu."
 
 Známé příčiny:
 
 - **Omezení** – tato chyba se může zobrazit při pokusu o přihlášení k sestavení hostitele pomocí účtu _úplný název_ Pokud název obsahuje znak s diakritikou. Jedná se o omezení [SSH.NET knihovny](https://sshnet.codeplex.com/) Xamarin používaný pro připojení SSH. **Alternativní řešení**: informace najdete v kroku 5 výše.
 
-### <a name="unable-to-authenticate-with-ssh-keys-please-try-to-log-in-with-credentials-first"></a>"Nelze provést ověření pomocí klíče SSH. Pokuste se přihlásit pomocí přihlašovacích údajů nejprve"
+#### <a name="unable-to-authenticate-with-ssh-keys-please-try-to-log-in-with-credentials-first"></a>"Nelze provést ověření pomocí klíče SSH. Pokuste se přihlásit pomocí přihlašovacích údajů nejprve"
 
 Známé příčina:
 
 - **Omezení zabezpečení SSH** – tato zpráva nejčastěji znamená, že jeden soubory nebo adresáře ve plně kvalifikovanou cestu **$HOME/.ssh/authorized\_klíče** na Mac má oprávnění k zápisu pro povoleno_jiných_ nebo _skupiny_ členy. **Běžné potíže**: Spusťte `chmod og-w "$HOME"` v terminálu příkazovém řádku Mac. Podrobnosti o které určitý soubor nebo adresář je příčinou problému, spusťte `grep sshd /var/log/system.log > "$HOME/Desktop/sshd.log"` v terminálu a pak otevřete **sshd.log** souboru z plochy a vyhledejte "ověřování odmítl: Chybný vlastnictví nebo režimy".
 
-### <a name="trying-to-connect-never-completes"></a>"Pokusu o připojení..." nedokončí se.
+#### <a name="trying-to-connect-never-completes"></a>"Pokusu o připojení..." nedokončí se.
 
 - **Chyb [#52264](https://bugzilla.xamarin.com/show_bug.cgi?id=52264)**  – tento problém se může stát při Xamarin 4.1, pokud **prostředí přihlášení** v **pokročilé možnosti** kontextové nabídky pro uživatele Mac v  **Předvolbách systému &gt; uživatelé &amp; skupiny** nastavena na hodnotu s výjimkou **/bin/bash**. (Počínaje Xamarin 4.2, tento scénář místo vede k chybová zpráva "Nelze se připojit".) **Alternativní řešení**: Změna **prostředí přihlášení** zpět na původní výchozí **/bin/bash**.
 
 <a name="tryagain" />
 
-### <a name="couldnt-connect-to-macbuildhostlocal-please-try-again"></a>"Nelze se připojit k MacBuildHost.local. Zkuste to prosím znovu."
+#### <a name="couldnt-connect-to-macbuildhostlocal-please-try-again"></a>"Nelze se připojit k MacBuildHost.local. Zkuste to prosím znovu."
 
 Hlášené příčiny:
 
 - **Chyby** – několik uživatelů zobrazila tato chybová zpráva, společně s podrobnější Chyba v souborech protokolu "došlo k neočekávané chybě při konfiguraci SSH pro uživatele... Vypršel časový limit relace operace"při pokusu o přihlášení k sestavení hostitele pomocí služby Active Directory nebo účet uživatele domény jiné adresářové služby. **Alternativní řešení:** Přihlaste se k sestavení hostitele, místo toho pomocí místního uživatelského účtu.
 
-- **Chyby** – někteří uživatelé viděli při pokusu o připojení k hostiteli sestavení dvojitým kliknutím na název Mac v dialogovém okně připojení k této chybě. **Možných alternativních**: [ručně přidat Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md#manual-add) pomocí IP adresy.
+- **Chyby** – někteří uživatelé viděli při pokusu o připojení k hostiteli sestavení dvojitým kliknutím na název Mac v dialogovém okně připojení k této chybě. **Možných alternativních**: [ručně přidat Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md#manually-add-a-mac) pomocí IP adresy.
 
 - **Chyby [#35971](https://bugzilla.xamarin.com/show_bug.cgi?id=35971)**  – někteří uživatelé mají spustit přes tuto chybu při použití bezdrátové připojení k síti mezi hostiteli sestavení Mac a Windows. **Možných alternativních**: přesunout oba počítače připojení k drátové síti.
 
@@ -181,7 +181,7 @@ Hlášené příčiny:
 
 <a name="clearing" />
 
-### <a name="clearing-the-broker-idb-build-and-designer-agents-on-the-mac"></a>Vymazání zprostředkovatele, IDB, sestavení a návrháře agenty na Mac
+#### <a name="clearing-the-broker-idb-build-and-designer-agents-on-the-mac"></a>Vymazání zprostředkovatele, IDB, sestavení a návrháře agenty na Mac
 
 Pokud vaše soubory protokolu zobrazit problém během "Instalace", "Nahrát", nebo "Počáteční" kroky pro některý z agentů Mac, můžete zkusit odstraňování **XMA** složky mezipaměti vynutit Visual Studio znovu odešlete.
 
@@ -201,31 +201,31 @@ Pokud vaše soubory protokolu zobrazit problém během "Instalace", "Nahrát", n
     del %localappdata%\Temp\Xamarin\XMA
     ```
     
-## <a name="warning-messages"></a>Zprávy upozornění
+### <a name="warning-messages"></a>Zprávy upozornění
 
 Tato část popisuje několik zprávy, které se mohou objevit v oknech výstupu a protokoly, které obvykle můžete ignorovat.
 
-### <a name="there-is-a-mismatch-between-the-installed-xamarinios--and-the-local-xamarinios"></a>"Došlo k neshodě mezi nainstalovaných Xamarin.iOS... a místní Xamarin.iOS"
+#### <a name="there-is-a-mismatch-between-the-installed-xamarinios--and-the-local-xamarinios"></a>"Došlo k neshodě mezi nainstalovaných Xamarin.iOS... a místní Xamarin.iOS"
 
 Pokud jste ověřili, že Mac a Windows jsou aktualizovány na stejný distribuční kanál Xamarin, toto upozornění je Ignorovatelná.
 
-### <a name="failed-to-execute-ls-usrbinmono-exitstatus1"></a>"Spuštění 'ls /usr/bin/mono' se nezdařilo: ExitStatus = 1"
+#### <a name="failed-to-execute-ls-usrbinmono-exitstatus1"></a>"Spuštění 'ls /usr/bin/mono' se nezdařilo: ExitStatus = 1"
 
 Tato zpráva je Ignorovatelná tak dlouho, dokud Mac se systémem OS X 10.11 (El Capitan) nebo novější. Tato zpráva se nejedná o problém v OS X 10.11 protože Xamarin také zkontroluje **/usr/local/bin/mono**, což je správné umístění pro očekává `mono` na OS X 10.11.
 
-### <a name="bonjour-service-macbuildhost-did-not-respond-with-its-ip-address"></a>"Service Bonjour 'MacBuildHost' neodpověděl. s jeho IP adresu.
+#### <a name="bonjour-service-macbuildhost-did-not-respond-with-its-ip-address"></a>"Service Bonjour 'MacBuildHost' neodpověděl. s jeho IP adresu.
 
-Tato zpráva je Ignorovatelná, pokud si všimnete, že dialogové okno připojení nezobrazí IP adresu Mac sestavení hostitele. Pokud IP adresa _je_ chybí v tomto dialogovém okně, můžete stále [ručně přidat Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md#manual-add).
+Tato zpráva je Ignorovatelná, pokud si všimnete, že dialogové okno připojení nezobrazí IP adresu Mac sestavení hostitele. Pokud IP adresa _je_ chybí v tomto dialogovém okně, můžete stále [ručně přidat Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md#manually-add-a-mac).
 
-### <a name="invalid-user-a-from-101895-and-inputuserauthrequest-invalid-user-a-preauth"></a>"Neplatný uživatel z 10.1.8.95" a "vstupní\_userauth\_požadavek: Neplatné uživatelské [předběžného ověření]"
+#### <a name="invalid-user-a-from-101895-and-inputuserauthrequest-invalid-user-a-preauth"></a>"Neplatný uživatel z 10.1.8.95" a "vstupní\_userauth\_požadavek: Neplatné uživatelské [předběžného ověření]"
 
 Možná jste si všimli to zprávy v **sshd.log**. Tyto zprávy jsou součástí procesu normální připojení. Se objeví, protože Xamarin používá uživatelské jméno **a** dočasně při načítání _SSH otisk_.
 
-## <a name="output-window-and-log-files"></a>Okno výstup a soubory protokolu.
+### <a name="output-window-and-log-files"></a>Okno výstup a soubory protokolu.
 
 Pokud Visual Studio přístupy k chybě při připojování k hostiteli sestavení, jsou 2 umístění zkontrolujte další zprávy: okno výstupu a soubory protokolu.
 
-### <a name="output-window"></a>Okno Výstup
+#### <a name="output-window"></a>Okno Výstup
 
 Ve výstupním okně je nejlepší místo k spuštění. Zobrazuje zprávy o k chybám a kroky hlavního připojení. Chcete-li zobrazit Xamarin zprávy v okně výstupu:
 
@@ -235,7 +235,7 @@ Ve výstupním okně je nejlepší místo k spuštění. Zobrazuje zprávy o k c
 
 [![](troubleshooting-images/troubleshooting-image11.png "Vyberte na kartě výstup Xamarin")](troubleshooting-images/troubleshooting-image11.png#lightbox)
 
-### <a name="log-files"></a>Soubory protokolu
+#### <a name="log-files"></a>Soubory protokolu
 
 Pokud ve výstupním okně neobsahuje dostatek informací, aby mohli problém diagnostikovat, soubory protokolu jsou další místo, kde vypadat. Soubory protokolu obsahují další diagnostické zprávy, které se nezobrazí v okně výstupu. Chcete-li zobrazit soubory protokolů:
 
@@ -262,7 +262,7 @@ Pokud ve výstupním okně neobsahuje dostatek informací, aby mohli problém di
 
 <a name="verboselogs" />
 
-### <a name="verbose-log-files"></a>Podrobné soubory protokolů
+#### <a name="verbose-log-files"></a>Podrobné soubory protokolů
 
 Pokud soubory normální protokolu není dostatečné informace k diagnostice problému stále poskytovat, jeden poslední technika pokusit je povolit podrobné protokolování. Podrobné protokoly jsou také upřednostňovaná na sestavy chyb.
 
@@ -287,6 +287,12 @@ Pokud soubory normální protokolu není dostatečné informace k diagnostice pr
    ```
 
 Pokud tyto soubory podrobného protokolování neposkytuje dost možné problém vyřešit přímo, [souboru nové sestavy chyb](https://bugzilla.xamarin.com/newbug) a připojte soubor .zip z kroku 5 a soubor .log v kroku 6.
+
+## <a name="troubleshooting-automatic-mac-provisioning"></a>Řešení potíží s automatické zřizování Mac
+
+### <a name="ide-log-files"></a>Soubory protokolu IDE
+
+Pokud narazíte na potíže s používáním [automatické zřizování Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md#automatic-mac-provisioning), podívejte se na Visual Studio 2017 IDE protokolů, uložených v **%LOCALAPPDATA%\Xamarin\Logs\15.0**.
 
 ## <a name="troubleshooting-build-and-deployment-errors"></a>Řešení potíží s sestavení a chyby nasazení
 
@@ -369,5 +375,5 @@ Pokud řešíte problém sestavení a ujistěte se, že chování nemá relaci k
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Připojení k Macu](~/ios/get-started/installation/windows/connecting-to-mac/index.md)
-- [Připojením algoritmu Mac k prostředí Visual Studio s XMA (video)](https://university.xamarin.com/lightninglectures/xamarin-mac-agent)
+- [Pár pro Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md)
+- [Xamarin Mac sestavení Agent – Přednáškový Lightning univerzity Xamarin](https://www.youtube.com/watch?v=MBAPBtxkjFQ)
