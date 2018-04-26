@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: ae1300936a24ac1381496eaaf78aefb875bd5ed6
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 33573d14d77f0582caca7d1e71b839563a3dd110
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="2d-math-with-cocossharp"></a>2D matematické s CocosSharp
 
@@ -264,7 +264,7 @@ Tento kód vrátí následující chování:
 
 `System.Math.Atan2` Umožňuje převést posun úhlu. Název funkce `Atan2` pochází z Arkus trigonometrické funkce. "2" přípona odlišuje tuto funkci od standardní `Atan` funkce, který by odpovídal výhradně matematickém chování Arkus. Arkus tangens je funkci, která vrátí hodnotu v rozsahu od -90 a + 90 stupňů (nebo ekvivalent v radiánech). Mnoho aplikací, včetně počítače hry, často vyžadují úplné 360 stupňů hodnot, proto `Math` třída zahrnuje `Atan2` ke splnění tohoto požadavku.
 
-Všimněte si, že výše uvedený kód předá parametr Y nejprve, pak parametr X při volání metody `Atan2` metoda. Toto je zpětně z obvyklé X, Y řazení souřadnice polohy. Další informace [najdete v části dokumentace Atan2](https://msdn.microsoft.com/en-us/library/system.math.atan2(v=vs.110).aspx).
+Všimněte si, že výše uvedený kód předá parametr Y nejprve, pak parametr X při volání metody `Atan2` metoda. Toto je zpětně z obvyklé X, Y řazení souřadnice polohy. Další informace [najdete v části dokumentace Atan2](https://msdn.microsoft.com/library/system.math.atan2(v=vs.110).aspx).
 
 Je také vhodné poznamenat, že z hodnoty návratový `Atan2` je v radiánech, který se používá k měření úhly jiné jednotce. Tato příručka nepodporuje pokrývat podrobnosti radiánech, ale mějte na paměti, všechny trigonometrické funkce v `System.Math` obor názvů používá radiánech, takže všechny hodnoty musí být převedena na stupňů před na objekty CocosSharp používá. Další informace o radiánech můžete najít [na stránce Wikipedia radián](http://en.wikipedia.org/wiki/Radian).
 

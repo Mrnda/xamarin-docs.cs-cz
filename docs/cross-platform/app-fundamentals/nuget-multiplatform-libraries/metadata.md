@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: fa526d33758afb73965e315c8e471d960d84e781
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6d30f564d54b96d358d37059f9dababaf8f3314e
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="editing-nuget-metadata"></a>Úprava metadat NuGet
 
@@ -19,7 +19,7 @@ _Použijte možnosti projektu a upravit metadata NuGet pro s více platformami k
 
 Typy projektu knihovny (například PCL nebo .NET Standard nebo nový typ projektu NuGet) mají **balíček NuGet** tématu **možnosti projektu** okno.
 
-**Metadata** nakonfiguruje hodnoty používané v části [ **příponou .nuspec** souboru manifestu balíčku NuGet](https://docs.microsoft.com/en-us/nuget/create-packages/creating-a-package#the-role-and-structure-of-the-nuspec-file).
+**Metadata** nakonfiguruje hodnoty používané v části [ **příponou .nuspec** souboru manifestu balíčku NuGet](https://docs.microsoft.com/nuget/create-packages/creating-a-package#the-role-and-structure-of-the-nuspec-file).
 
 ## <a name="required-information"></a>Požadované informace
 
@@ -27,15 +27,15 @@ Typy projektu knihovny (například PCL nebo .NET Standard nebo nový typ projek
 
 [![](metadata-images/metadata-general-sml.png "Okno požadovaná metadata balíčků NuGet")](metadata-images/metadata-general.png#lightbox)
 
-- **ID** – identifikátor balíčku, který by měl být jedinečný v rámci Nuget.org (nebo kdekoli budou distribuována balíčku). Potom zadejte [pokyny](https://docs.microsoft.com/en-us/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number) a používat pouze znaky, které jsou platné v adrese URL (bez mezer a vyhnout se žádné speciální znaky).
-- **Verze** – vyberte číslo verze, která je konzistentní s [pravidla verzí NuGet](https://docs.microsoft.com/en-us/nuget/create-packages/dependency-versions).
+- **ID** – identifikátor balíčku, který by měl být jedinečný v rámci Nuget.org (nebo kdekoli budou distribuována balíčku). Potom zadejte [pokyny](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number) a používat pouze znaky, které jsou platné v adrese URL (bez mezer a vyhnout se žádné speciální znaky).
+- **Verze** – vyberte číslo verze, která je konzistentní s [pravidla verzí NuGet](https://docs.microsoft.com/nuget/create-packages/dependency-versions).
 - **Autoři** – čárkami oddělený seznam názvů.
 - **Popis** – přehled funkcí balíčku, který se zobrazí, když uživatelé mají vybrat balíček.
 
 > [!NOTE]
 > Nezapomeňte při vytváření nové verze pro distribuci ke NuGet nebo jiných uživatelů, zvýšíte číslo verze.
 
-Další informace najdete v tématu [požadované referenční dokumentace elementů](https://docs.microsoft.com/en-us/nuget/schema/nuspec#required-metadata-elements) Další informace najdete také jako tyto podrobné pokyny v [výběr balíčku jedinečný identifikátor a nastavení číslo verze](https://docs.microsoft.com/en-us/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number) a [ Typ balíčku nastavení](https://docs.microsoft.com/en-us/nuget/create-packages/creating-a-package#setting-a-package-type).
+Další informace najdete v tématu [požadované referenční dokumentace elementů](https://docs.microsoft.com/nuget/schema/nuspec#required-metadata-elements) Další informace najdete také jako tyto podrobné pokyny v [výběr balíčku jedinečný identifikátor a nastavení číslo verze](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number) a [ Typ balíčku nastavení](https://docs.microsoft.com/nuget/create-packages/creating-a-package#setting-a-package-type).
 
 > [!IMPORTANT]
 > Všechna pole na této kartě je třeba zadat; jinak, zobrazí se chybová zpráva: _"projektu nemá NuGet metadata proto nevytvoří balíčku NuGet. V části Metadata v možnosti projektu lze zadat metadata balíčků NuGet"_
@@ -46,7 +46,7 @@ Další informace najdete v tématu [požadované referenční dokumentace eleme
 
 [![](metadata-images/metadata-detail-sml.png "Okno volitelná metadata balíčků NuGet")](metadata-images/metadata-detail.png#lightbox)
 
-Odkazovat [s volitelnými elementy](https://docs.microsoft.com/en-us/nuget/schema/nuspec#optional-metadata-elements) Další informace o povinná a nepovinná pole.
+Odkazovat [s volitelnými elementy](https://docs.microsoft.com/nuget/schema/nuspec#optional-metadata-elements) Další informace o povinná a nepovinná pole.
 
 > [!NOTE]
 > Pokud se na distribuci balíčku NuGet [NuGet.org](https://www.nuget.org) se doporučuje zadejte co nejvíce informací.
@@ -54,4 +54,4 @@ Odkazovat [s volitelnými elementy](https://docs.microsoft.com/en-us/nuget/schem
 
 ## <a name="related-links"></a>Související odkazy
 
-- [referenční dokumentace příponou .nuspec](https://docs.microsoft.com/en-us/nuget/schema/nuspec#general-form-and-schema)
+- [referenční dokumentace příponou .nuspec](https://docs.microsoft.com/nuget/schema/nuspec#general-form-and-schema)

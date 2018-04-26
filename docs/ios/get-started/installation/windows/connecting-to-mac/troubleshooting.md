@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: f5bd88da2d95f91add9e19c7a53d793256b49238
-ms.sourcegitcommit: dc6ccf87223942088ca926c0dadd5b5478c683cb
+ms.openlocfilehash: 8aac58546e51525ae22c09218f90addef911669a
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="connection-troubleshooting"></a>Odstraňování problémů s připojením
 
@@ -268,7 +268,7 @@ Pokud soubory normální protokolu není dostatečné informace k diagnostice pr
 
 1. Ukončete sady Visual Studio.
 
-2. Spuštění [ **příkazový řádek vývojáře**](https://msdn.microsoft.com/en-us/library/ms229859(v=vs.110).aspx).
+2. Spuštění [ **příkazový řádek vývojáře**](https://msdn.microsoft.com/library/ms229859(v=vs.110).aspx).
 
 3. Spusťte následující příkaz v příkazovém řádku spusťte sadu Visual Studio s podrobné protokolování:
 

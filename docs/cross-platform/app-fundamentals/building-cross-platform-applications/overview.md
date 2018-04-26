@@ -6,17 +6,17 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 48aa53595d7ab0ccd5fb8f3dab57198199d65b8e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b3b15736b5ec750e0b8db078cf428a7f573bc435
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="building-cross-platform-applications-overview"></a>Sestavení pro různé platformy aplikace – přehled
 
 Tento průvodce představuje platformu Xamarin a postup architektury aplikace napříč platformami maximalizovat opětovné použití kódu a poskytování vysoce kvalitních nativním prostředím na všechny hlavní mobilní platformy: iOS, Android a Windows Phone.
 
-Metoda používaná v tomto dokumentu je obecně platný pro kancelářské aplikace a herní aplikace, ale zaměřuje se na produktivitu a nástroj (bez herní aplikace). Najdete v článku [Úvod do dokumentu MonoGame](https://developer.xamarin.com/guides/cross-platform/game_development/monogame/introduction/) nebo rezervovat [Visual Studio Tools for Unity](https://docs.microsoft.com/en-us/visualstudio/cross-platform/visual-studio-tools-for-unity) pokyny vývoj her pro různé platformy.
+Metoda používaná v tomto dokumentu je obecně platný pro kancelářské aplikace a herní aplikace, ale zaměřuje se na produktivitu a nástroj (bez herní aplikace). Najdete v článku [Úvod do dokumentu MonoGame](~/graphics-games/monogame/introduction/index.md) nebo rezervovat [Visual Studio Tools for Unity](https://docs.microsoft.com/visualstudio/cross-platform/visual-studio-tools-for-unity) pokyny vývoj her pro různé platformy.
 
 Fráze "zápis-jednou spustit everywhere" se často používá k extol přednosti z jedné základu kódu, že běží ponechat beze změny ve více platformách. Když má výhodu kódu opakovaného použití, tento přístup často vede k aplikace, které mají nejnižší společný jmenovatel sadu funkcí a vyhledávání obecného uživatelské rozhraní, které nebudou vyhovovat vhodně do některé z cílových platforem.
 

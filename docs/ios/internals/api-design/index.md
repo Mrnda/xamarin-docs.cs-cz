@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: b7604633a5dfad6134d7b549299194ab6707a865
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: da827c5bdd25bf841f5396b10d1eeb70e132dfeb
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="api-design"></a>Rozhraní API návrhu
 
@@ -693,7 +693,7 @@ Xamarin.iOS má uvolňování, která se postará o uvolnění prostředků pro 
 
 Vystavení `IDisposable` rozhraní je pohodlný způsob pomoci vývojářům při uvolnění objektů, které může zapouzdřit velké bloky paměti (například `UIImage` může vypadat například právě nevinnosti ukazatele, ale může ukazovat na obrázku 2 MB ) a další důležité a omezené prostředky (jako jsou videa dekódování vyrovnávací paměti).
 
-NSObject implementuje rozhraní IDisposable a také [.NET Dispose vzor](http://msdn.microsoft.com/en-us/library/fs2xkftw.aspx). To umožňuje vývojářům tento podtřídami NSObject potlačení chování uvolnění a vydání vlastní prostředky na vyžádání. Představte si třeba tento řadič zobrazení, který udržuje kolem spoustu bitové kopie:
+NSObject implementuje rozhraní IDisposable a také [.NET Dispose vzor](http://msdn.microsoft.com/library/fs2xkftw.aspx). To umožňuje vývojářům tento podtřídami NSObject potlačení chování uvolnění a vydání vlastní prostředky na vyžádání. Představte si třeba tento řadič zobrazení, který udržuje kolem spoustu bitové kopie:
 
 ```csharp
 class MenuViewController : UIViewController {

@@ -6,11 +6,11 @@ ms.assetid: E4EF7E0F-ED86-44C9-9F98-38ECF881C7E2
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: d8853da7d35752ef27bb23fce6d0db54540ed39d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 500b4c63131ab850b4b9d7c6a0aec49b313ec426
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="what-support-options-are-available-for-xamarin"></a>Jaké možnosti podpory jsou k dispozici pro Xamarin?
 
@@ -32,7 +32,7 @@ Tým podpory Xamarin pomáhá monitorovat každá z těchto možností.  Doporu�
 
 ### <a name="visual-studio-email-support-incidents-for-xamarin-topics"></a>Visual Studio e-mailová podpora pro Xamarin témata incidentů
 
-Funkce Xamarin SDK a IDE jsou způsobilé pro technickou podporu incidenty v rámci [výhody pro předplatitele sady Visual Studio](https://msdn.microsoft.com/subscriptions/bb266240) a [Microsoft Premier Support](https://www.microsoft.com/en-us/microsoftservices/support.aspx).  To odpovídá zásadám pro jiné platformy vývoj v sadě Visual Studio jako UWP a ASP.NET.  Xamarin incidenty odeslat tímto způsobem bude mít přidělena týmu podpory Xamarin.  Najdete v článku [nejčastější dotazy týkající se podpory Microsoft](https://support.microsoft.com/gp/offerprophone) pro další informace o zásadách pro tyto incidenty.
+Funkce Xamarin SDK a IDE jsou způsobilé pro technickou podporu incidenty v rámci [výhody pro předplatitele sady Visual Studio](https://msdn.microsoft.com/subscriptions/bb266240) a [Microsoft Premier Support](https://www.microsoft.com/microsoftservices/support.aspx).  To odpovídá zásadám pro jiné platformy vývoj v sadě Visual Studio jako UWP a ASP.NET.  Xamarin incidenty odeslat tímto způsobem bude mít přidělena týmu podpory Xamarin.  Najdete v článku [nejčastější dotazy týkající se podpory Microsoft](https://support.microsoft.com/gp/offerprophone) pro další informace o zásadách pro tyto incidenty.
 
 Pro Xamarin Test Cloud incidentů podpory můžete odeslat přechodem na [testovací Cloud přihlašovací stránku](https://testcloud.xamarin.com/login) a otevírání **podporu** odkaz.
 

@@ -6,11 +6,11 @@ ms.assetid: 00285CBD-AE5E-4126-8F22-6B231B9467EA
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 717e131dd4025ea07780f6e52d8171fd15272dac
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c4c8e7246b4414fb4153f0dd9eb812ddff1e7b07
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="c-primer-for-objective-c-developers"></a>Úvod do jazyka C# pro vývojáře jazyka Objective-C
 
@@ -20,7 +20,7 @@ iOS a OS X aplikace vyvinuté v Objective-C mohou těžit z výhod Xamarin s vyu
 
 Pokud chcete využít výhod Xamarin při zachování existující prostředky jazyka Objective-C, první mohou být zpřístupněny C# v technologie z Xamarin známé jako vazeb, které surface kód jazyka Objective-C spravované, World C#. Také v případě potřeby kód lze přenést řádek po řádku jazyka C# také. Bez ohledu na to přístupu ale ať už být vazba nebo portování, některé znalost jazyka Objective-C a C# je nutné efektivně využívat stávající kód jazyka Objective-C s Xamarin.iOS.
 
-## <a name="objective-c-interop"></a>Objective-C Interop
+## <a name="objective-c-interop"></a>Zprostředkovatel komunikace s objekty jazyka Objective-C
 
 V současné době není žádné podporované mechanismus pro vytvoření knihovny v C# s použitím Xamarin.iOS, kterou lze volat z Objective-c Hlavním důvodem je že mono runtime je také nutný kromě vazby. Většina logika však můžete vytvořit v Objective-C, včetně uživatelského rozhraní. K tomuto účelu zabalení kód jazyka Objective-C v knihovně a vytvořte vazbu na ni. Xamarin.iOS je potřeba k navázání připojení aplikace (což znamená, musíte vytvořit `Main` vstupního bodu). Potom může být další logiku v Objective-C, vystavený C# prostřednictvím vazby (nebo P/Invoke). Tímto způsobem můžete zachovat určitou logiku platformy v Objective-C a vývoj platformy lhostejné částí v jazyce C#.
 
@@ -141,7 +141,7 @@ Používá jazyka Objective-C *bloky* vytvořit uzavření, kde můžete vytvoř
 };
 ```
 
-Další informace o výrazy lambda, najdete v článku společnosti Microsoft [Průvodce programováním v C#](http://msdn.microsoft.com/en-us/library/vstudio/bb397687.aspx).
+Další informace o výrazy lambda, najdete v článku společnosti Microsoft [Průvodce programováním v C#](http://msdn.microsoft.com/library/vstudio/bb397687.aspx).
 
 ## <a name="summary"></a>Souhrn
 

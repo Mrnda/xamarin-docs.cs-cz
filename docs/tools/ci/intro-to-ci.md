@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 07/19/2017
-ms.openlocfilehash: 017691ece68f979eea1627c0442f49018d5742fb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5e4720ac44876620783b32f731c44afe5a623231
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>Úvod do průběžnou integraci s funkcí Xamarin
 
@@ -36,7 +36,7 @@ Následující diagram znázorňuje tento proces:
 
 Mobilní aplikace zavést jedinečné výzvy pro nepřetržitou integraci. Aplikace může vyžadovat snímače například GPS nebo fotoaparát, které jsou dostupné jenom na fyzických zařízení. Kromě toho simulátorů emulátorů jsou pouze sblížení hardwaru a může skrýt nebo skrývat problémy. Díky tomu je potřeba otestovat mobilní aplikace na skutečné hardwaru, který má být jistý, že je skutečně zákazníka.
 
-[Test Center aplikace](https://docs.microsoft.com/en-us/appcenter/test-cloud) testování aplikací přímo na stovky fyzických zařízení řeší konkrétní problém. Vývojáři psát přijetí automatizované testy, které umožňují efektivní testování uživatelského rozhraní. Jakmile tyto testy se odešlou do Center aplikace, CI serveru můžete spustit je automaticky jako součást procesu CI jak je znázorněno v následujícím diagramu:
+[Test Center aplikace](https://docs.microsoft.com/appcenter/test-cloud) testování aplikací přímo na stovky fyzických zařízení řeší konkrétní problém. Vývojáři psát přijetí automatizované testy, které umožňují efektivní testování uživatelského rozhraní. Jakmile tyto testy se odešlou do Center aplikace, CI serveru můžete spustit je automaticky jako součást procesu CI jak je znázorněno v následujícím diagramu:
 
 [![](intro-to-ci-images/intro02-small.png "Tyto testy se odešlou do aplikace Center, CI serveru můžete spustit po je automaticky v rámci procesu CI znázorněné v tomto diagramu")](intro-to-ci-images/intro02.png#lightbox)
 
@@ -48,21 +48,21 @@ Není rozsáhlé prostředí komerční a open source nástrojů pro podporu pol
 
 ### <a name="visual-studio-team-services-and-team-foundation-server"></a>Visual Studio Team Services a serveru Team Foundation Server
 
-[Visual Studio Team Services](https://www.visualstudio.com/products/visual-studio-team-services-vs) (VSTS) a [Team Foundation Server](http://msdn.microsoft.com/en-us/vstudio/ff637362.aspx) (TFS) se sestavení spolupráce nástroje společnosti Microsoft pro nepřetržitou integraci služby, úloha, která sleduje, agilní plánování a vytváření sestav nástroje a verze ovládací prvek. S verzí služby VSTS a pracovní sady TFS můžete svůj vlastní systém (správy verzí Team Foundation nebo TFVC) nebo s projekty, které jsou hostované na Githubu.
+[Visual Studio Team Services](https://www.visualstudio.com/products/visual-studio-team-services-vs) (VSTS) a [Team Foundation Server](http://msdn.microsoft.com/vstudio/ff637362.aspx) (TFS) se sestavení spolupráce nástroje společnosti Microsoft pro nepřetržitou integraci služby, úloha, která sleduje, agilní plánování a vytváření sestav nástroje a verze ovládací prvek. S verzí služby VSTS a pracovní sady TFS můžete svůj vlastní systém (správy verzí Team Foundation nebo TFVC) nebo s projekty, které jsou hostované na Githubu.
 
  - Visual Studio Team Services poskytuje služby přes cloud. Primární výhod je, že vyžaduje vyhrazený hardware a infrastruktury a je přístupný z odkudkoli prostřednictvím webových prohlížečů a pomocí Oblíbené vývojové nástroje, jako je například Visual Studio, takže je přitažlivými pro týmy, které jsou geograficky distribuován. Je zdarma pro týmy vývojářů pět nebo méně, po které další licence lze zakoupit Abychom vyhověli narůstajícím týmu.
  - TFS je určený pro místní servery Windows a získat přístup prostřednictvím místní sítě nebo připojení k síti VPN. Jeho primární výhodou je, že plně řídit konfiguraci serverů sestavení a můžete nainstalovat libovolnou dalšího softwaru a služeb, jsou potřeba. TFS má volné vstupní úrovně edice Express pro menší týmy.
 
 Služby VSTS i sady TFS jsou pevně integrovány pomocí sady Visual Studio a umožňují vývojářům provádět mnoho verzí a úkoly položek konfigurace z v rámci pohodlí jednoho IDE. K dispozici je také plugin Team Explorer Everywhere pro Eclipse (viz níže). Visual Studio pro Mac nenabízí žádné podporu pro TFS nebo služby VSTS.
 
-Visual Studio Team služby sestavení systém má přímé podpory pro Xamarin projekty, ve které můžete vytvořit definici sestavení pro každou platformu, kterou chcete k cíli (Android, iOS a Windows). Licence vhodnou Xamarin je potřeba pro každý definici sestavení. Je také možné se připojit místní, podporující Xamarin TFS sestavení serveru pro Visual Studio Team Services pro tento účel. S tímto nastavením bude sestavení, které jsou zařazené do služby VSTS delegovat na místním serveru. Podrobnosti najdete v části [nasadit a nakonfigurovat server sestavení](https://msdn.microsoft.com/en-us/library/ms181712.aspx). Alternativně můžete použít jiný nástroj pro sestavení třeba volaných nebo města týmu.
+Visual Studio Team služby sestavení systém má přímé podpory pro Xamarin projekty, ve které můžete vytvořit definici sestavení pro každou platformu, kterou chcete k cíli (Android, iOS a Windows). Licence vhodnou Xamarin je potřeba pro každý definici sestavení. Je také možné se připojit místní, podporující Xamarin TFS sestavení serveru pro Visual Studio Team Services pro tento účel. S tímto nastavením bude sestavení, které jsou zařazené do služby VSTS delegovat na místním serveru. Podrobnosti najdete v části [nasadit a nakonfigurovat server sestavení](https://msdn.microsoft.com/library/ms181712.aspx). Alternativně můžete použít jiný nástroj pro sestavení třeba volaných nebo města týmu.
 
-Úplný přehled všechny funkce správy životního cyklu aplikací (ALM) najdete v sadě Visual Studio, Visual Studio Team Services a serveru Team Foundation Server [Správa životního cyklu aplikací s aplikacemi Xamarin](https://msdn.microsoft.com/en-us/library/mt162217(v=vs.140).aspx) na webu MSDN.
+Úplný přehled všechny funkce správy životního cyklu aplikací (ALM) najdete v sadě Visual Studio, Visual Studio Team Services a serveru Team Foundation Server [Správa životního cyklu aplikací s aplikacemi Xamarin](https://msdn.microsoft.com/library/mt162217(v=vs.140).aspx) na webu MSDN.
 
 
 ### <a name="team-explorer-everywhere"></a>Team Explorer Everywhere
 
-[Team Explorer Everywhere](http://msdn.microsoft.com/en-us/library/gg413285.aspx) power Team Foundation Server a Visual Studio Team Services umožňuje týmy vývoj mimo Visual Studio. To umožňuje vývojářům připojení k týmovým projektům místně nebo v cloudu z klienta napříč platformami příkazový řádek nebo prostředí Eclipse pro OS X a Linux. Team Explorer Everywhere poskytuje plný přístup do správy verzí (včetně Git), pracovní položky a sestavení možnosti pro jiných platforem než Windows.
+[Team Explorer Everywhere](http://msdn.microsoft.com/library/gg413285.aspx) power Team Foundation Server a Visual Studio Team Services umožňuje týmy vývoj mimo Visual Studio. To umožňuje vývojářům připojení k týmovým projektům místně nebo v cloudu z klienta napříč platformami příkazový řádek nebo prostředí Eclipse pro OS X a Linux. Team Explorer Everywhere poskytuje plný přístup do správy verzí (včetně Git), pracovní položky a sestavení možnosti pro jiných platforem než Windows.
 
 
 ### <a name="git"></a>Git
@@ -103,11 +103,11 @@ Následující diagram znázorňuje tento topografie:
 
 [![](intro-to-ci-images/intro03-small.png "Tento diagram znázorňuje tento topografie")](intro-to-ci-images/intro03.png#lightbox)
 
-Je také možné propojit místní server TFS projekt Visual Studio Team Services tak, aby služby VSTS sestavení jsou delegovanými k místnímu serveru. Podrobnosti najdete v tématu [nasadit a nakonfigurovat server sestavení](http://msdn.microsoft.com/en-us/library/ms181712.aspx) na webu MSDN.
+Je také možné propojit místní server TFS projekt Visual Studio Team Services tak, aby služby VSTS sestavení jsou delegovanými k místnímu serveru. Podrobnosti najdete v tématu [nasadit a nakonfigurovat server sestavení](http://msdn.microsoft.com/library/ms181712.aspx) na webu MSDN.
 
 ### <a name="visual-studio-team-services-and-jenkins"></a>Visual Studio Team Services a volaných
 
-Pokud použijete volaných k sestavení aplikace, můžete ukládat kódu ve Visual Studio Team Services nebo Team Foundation Server a pokračovat v používání volaných pro vaše buildy CI. Sestavení volaných můžete aktivovat po stisknutí kód do úložiště Git nebo když jste se změnami kódu TFVC týmového projektu. Podrobnosti najdete v tématu [volaných s Visual Studio Team Services](https://www.visualstudio.com/en-us/docs/marketplace/integrate/service-hooks/services/jenkins).
+Pokud použijete volaných k sestavení aplikace, můžete ukládat kódu ve Visual Studio Team Services nebo Team Foundation Server a pokračovat v používání volaných pro vaše buildy CI. Sestavení volaných můžete aktivovat po stisknutí kód do úložiště Git nebo když jste se změnami kódu TFVC týmového projektu. Podrobnosti najdete v tématu [volaných s Visual Studio Team Services](https://www.visualstudio.com/docs/marketplace/integrate/service-hooks/services/jenkins).
 
 [![](intro-to-ci-images/intro04-small.png "Pokud použijete volaných k sestavení aplikace, můžete ukládat kódu ve Visual Studio Team Services nebo Team Foundation Server a pokračovat v používání volaných pro vaše buildy CI")](intro-to-ci-images/intro04.png#lightbox)
 
@@ -123,4 +123,4 @@ Další běžné CI prostředí může být zcela OS X na základě. Tento scén
 
 # <a name="summary"></a>Souhrn
 
-Tento dokument zaveden koncept průběžnou integraci a výhody, které přináší k softwaru vývojové týmy. Význam verzí byla popsané společně s role a odpovědnosti sestavení serveru. Dokument se pak na popisují některé nástroje, které se dají použít pro řízení zdrojového kódu a sestavení servery. Zavedli jsme taky Test Center aplikace, která pomáhá vývojářům spuštěním automatizovaných testů, které bude prokázat kvality a funkce aplikací, jejich publikování kvalitních aplikací. Podrobnější dokumentaci na odesílání aplikací a otestuje aplikace Center najdete [zde](https://docs.microsoft.com/en-us/appcenter/test-cloud). Nakonec pomohou pochopit, jak tyto nástroje a součásti zapadají, jsme uvedeno několik různých prostředích položek konfigurace, které organizace může vytvořit pro nepřetržitou integraci. Další informace pomocí Xamarin projektů Visual Studio Team Services a serveru Team Foundation Server najdete v tématu [konfigurace TFVC](https://docs.microsoft.com/vsts/tfvc/overview) a tato [průběžnou integraci ÚVOD](https://docs.microsoft.com/en-us/vsts/build-release/actions/ci-cd-part-1). Podobně, pokud používáte volaných, přečtěte si téma [volaných pomocí xamarinu](~/tools/ci/jenkins-walkthrough.md) podrobné informace o nastavení nepřetržité integrace.
+Tento dokument zaveden koncept průběžnou integraci a výhody, které přináší k softwaru vývojové týmy. Význam verzí byla popsané společně s role a odpovědnosti sestavení serveru. Dokument se pak na popisují některé nástroje, které se dají použít pro řízení zdrojového kódu a sestavení servery. Zavedli jsme taky Test Center aplikace, která pomáhá vývojářům spuštěním automatizovaných testů, které bude prokázat kvality a funkce aplikací, jejich publikování kvalitních aplikací. Podrobnější dokumentaci na odesílání aplikací a otestuje aplikace Center najdete [zde](https://docs.microsoft.com/appcenter/test-cloud). Nakonec pomohou pochopit, jak tyto nástroje a součásti zapadají, jsme uvedeno několik různých prostředích položek konfigurace, které organizace může vytvořit pro nepřetržitou integraci. Další informace pomocí Xamarin projektů Visual Studio Team Services a serveru Team Foundation Server najdete v tématu [konfigurace TFVC](https://docs.microsoft.com/vsts/tfvc/overview) a tato [průběžnou integraci ÚVOD](https://docs.microsoft.com/vsts/build-release/actions/ci-cd-part-1). Podobně, pokud používáte volaných, přečtěte si téma [volaných pomocí xamarinu](~/tools/ci/jenkins-walkthrough.md) podrobné informace o nastavení nepřetržité integrace.

@@ -6,11 +6,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: f94959062f01a363319494eb510f1a6e42fe36b6
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 52f4c51258d1b635adcd697bccb7dd553acc0d5e
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="localization"></a>Lokalizace
 
@@ -110,7 +110,7 @@ Pokud uživatel aplikace není se vstupní data, analyzovat pomocí CultureInfo 
 double.Parse("1 999,99", CultureInfo.CreateSpecificCulture("fr-FR"));
 ```
 
-Najdete v článku [Analýza číselných řetězců](http://msdn.microsoft.com/en-us/library/xbtzcc4w(v=vs.110).aspx) a [řetězců analýza data a času](http://msdn.microsoft.com/en-us/library/2h3syy57(v=vs.110).aspx) MSDN články pro další informace.
+Najdete v článku [Analýza číselných řetězců](http://msdn.microsoft.com/library/xbtzcc4w(v=vs.110).aspx) a [řetězců analýza data a času](http://msdn.microsoft.com/library/2h3syy57(v=vs.110).aspx) MSDN články pro další informace.
 
 <a name="rtl" />
 
@@ -130,7 +130,7 @@ IOS a Android podporují rozložení zprava doleva a vykreslování písma s int
 
 Různé jazyky definovat pořadí řazení jejich abeced odlišně, i když používají stejné znakovou sadu.
 
-Najdete v článku [podrobné porovnání řetězců](http://msdn.microsoft.com/en-us/library/dd465121(v=vs.110).aspx#the_details_of_string_comparison) v [osvědčené postupy pro používání řetězců v rozhraní .NET Framework](http://msdn.microsoft.com/en-us/library/dd465121(v=vs.110).aspx) příklad kde jazyk (CultureInfo) má vliv pořadí řazení.
+Najdete v článku [podrobné porovnání řetězců](http://msdn.microsoft.com/library/dd465121(v=vs.110).aspx#the_details_of_string_comparison) v [osvědčené postupy pro používání řetězců v rozhraní .NET Framework](http://msdn.microsoft.com/library/dd465121(v=vs.110).aspx) příklad kde jazyk (CultureInfo) má vliv pořadí řazení.
 
 Není pravděpodobné že integrovanou databází funkcí na mobilních platformách budou podporovat řazení pro specifický jazyk, řazení, může být nutné implementovat další kód v obchodní logiky.
 
@@ -274,7 +274,7 @@ To poskytuje maximální flexibilitu překladače:
 -   Některé jazyky může být nutné přepínač hodnota, která má být zkratka a nevejde se do uživatelského ovládacího prvku rozhraní, zatímco dokončení (přeložený) aplikace word se mohou objevit v popisku.
 -   Pro některé jazyky vykreslování přepínač může být případně pro kulturního znalosti použít "I" a "O", ale stále můžete chtít štítek, který chcete číst "Na" nebo "Vypnuto".
 
-### <a name="translation-services"></a>Translation Services
+### <a name="translation-services"></a>Překladatelské služby
 
 #### <a name="machine-translation"></a>Strojový překlad
 
@@ -283,7 +283,7 @@ Chcete-li vytvořit funkce překladu do vaší aplikace, zvažte [rozhraní API 
 Pro účely testování může použít jeden z mnoha nástrojů překlad online pro některé lokalizované textu v aplikaci během vývoje:
 
 - [Překladač Bing](https://www.bing.com/translator/)
-- [Google Translate](http://translate.google.com/)
+- [Převede Google](http://translate.google.com/)
 
 Existuje mnoho dalších k dispozici. Kvalitu strojový překlad obecně není považováno za dobré dostatečně k uvolnění aplikace bez nejprve se zkontrolovat a testovat professional překladatelé nebo rodilí mluvčí.
 
@@ -312,4 +312,4 @@ Pokračujte ve čtení technické podrobnosti pro platformy, které vás zajíma
 
 - [Přehled lokalizace společnosti Apple](https://developer.apple.com/internationalization/)
 - [Kontrolní seznam pro Android lokalizace](http://developer.android.com/distribute/tools/localization-checklist.html)
-- [Osvědčené postupy pro vývoj aplikací připravených (MSDN)](http://msdn.microsoft.com/en-us/library/w7x1y988%28v=vs.90%29.aspx)
+- [Osvědčené postupy pro vývoj aplikací připravených (MSDN)](http://msdn.microsoft.com/library/w7x1y988%28v=vs.90%29.aspx)

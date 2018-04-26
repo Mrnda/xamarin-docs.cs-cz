@@ -6,81 +6,88 @@ ms.assetid: 12101297-BB04-4410-85F0-A0D41B7E6591
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.date: 06/12/2017
-ms.openlocfilehash: ba9eb6a062ce91db5f1597de6f9a2b01ad18a367
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/20/2018
+ms.openlocfilehash: a1cf4340a2d9e26490f0e605f47ca43a14ae4c72
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="httpclient-stack-and-ssltls-implementation-selector-for-iosmacos"></a>Zásobník HttpClient a SSL/TLS implementace selektor pro iOS/systému macOS
 
-## <a name="httpclient-stack-selector"></a>Výběr zobrazení HttpClient
-
-K dispozici pro Xamarin.iOS, Xamarin.tvOS a Xamarin.Mac: Tato volba určuje, které `HttpClient` implementace používat. Výchozí hodnota je stále HttpClient, který používá technologii `HttpWebRequest`, zatímco lze nyní volitelně přepnout implementace, která používá iOS, tvOS nebo systému macOS nativní přenosy (`NSUrlSession` nebo `CFNetwork` v závislosti na operačním systémem). Vzhůru je menší binární soubory a rychlejší stahování, nevýhodou je, že vyžaduje smyčky událostí, aby byl spuštěn pro spouštění asynchronních operací.
+**Selektor implementace HttpClient** pro Xamarin.iOS, Xamarin.tvOS a Xamarin.Mac Určuje, které `HttpClient` implementace používat. Můžete přepnout implementace, která používá iOS, tvOS nebo systému macOS nativní přenosy (`NSUrlSession` nebo `CFNetwork`, v závislosti na operačním systémem). Vzhůru je protokol TLS 1.2 podpora, menší binární soubory a rychlejší stahování; Nevýhodou je, že vyžaduje smyčky událostí, aby byl spuštěn pro spouštění asynchronních operací.
 
 Projekty musí odkazovat **System.Net.Http** sestavení.
+
+> [!WARNING]
+> **Duben, 2018** – kvůli zvýšení zabezpečení požadavky, včetně soulad s normami PCI, Hlavní poskytovatelé cloudové a webové servery se očekává, zastavit, podpora TLS verze starší než 1.2.  Xamarin projektů vytvořených v předchozích verzích sady Visual Studio výchozí používat starší verze protokolu TLS.
+>
+> Aby se zajistilo, pokračovat v práci s těmito servery a služby, aplikace **by měl aktualizovat projekty Xamarin s `NSUrlSession` nastavení níže uvedené, pak znovu sestavit a znovu nasaďte aplikace** pro vaše uživatele.
 
 <a name="Selecting-a-HttpClient-Stack" />
 
 ### <a name="selecting-a-httpclient-stack"></a>Výběr HttpClient zásobníku
 
-Chcete-li upravit HttpClient používá aplikaci:
+Chcete-li upravit `HttpClient` používá aplikaci:
 
 1. Dvakrát klikněte **název projektu** v **Průzkumníku řešení** otevřete dialogové okno Možnosti projektu.
 2. Přepnout **sestavení** nastavení pro svůj projekt (například **iOS sestavení** pro aplikace Xamarin.iOS).
-3. Z **implementace HttpClient** rozevíracího seznamu, vyberte HttpClient zadejte jako jednu z následujících: **spravované**, **CFNetwork** nebo **NSUrlSession**.
+3. Z **implementace HttpClient** rozevíracího seznamu, vyberte `HttpClient` zadejte jako jednu z následujících: **NSUrlSession** (doporučeno), **CFNetwork**, nebo  **Spravované**.
 
 [![Implementace HttpClient vybírat spravované, CFNetwork nebo NSUrlSession](http-stack-images/http-xs-sml.png)](http-stack-images/http-xs.png#lightbox)
 
-<a name="Managed" />
-
-### <a name="managed-default"></a>Spravované (výchozí)
-
-Spravované obslužné rutiny je plně spravovaná HttpClient obslužná rutina, která je dodávána se předchozí verze nástroje Xamarin.
-
-#### <a name="pros"></a>Odborníci na:
-
- - Obsahuje funkci nejvíce kompatibilní nastavit pomocí rozhraní Microsoft .NET a starší verze Xamarin.
-
-#### <a name="cons"></a>Cons:
-
- - Ji není plně integrována operační systémy Apple a je omezený na TLS 1.0.
- - Je obvykle výrazně zpomalit na třeba šifrování než nativních rozhraní API.
- - To vyžaduje více spravovaného kódu, proto vytvoření distribuovatelného větší aplikace.
-
-<a name="CFNetwork" />
-
-### <a name="cfnetwork"></a>CFNetwork
-
-Obslužné rutiny na základě CFNetwork je založena na nativního `CFNetwork` framework k dispozici v iOS 6 nebo novější.
-
-#### <a name="pros"></a>Odborníci na:
-
- - Používá nativních rozhraní API pro lepší výkon a menší velikost spustitelný soubor.
- - Podporuje pro novější standardy, jako je protokol TLS 1.2.
-
-#### <a name="cons"></a>Cons:
-
- - Vyžaduje iOS 6 nebo novější.
- - Není k dispozici v watchOS.
- - Některé funkce nebo možnosti HttpClient nejsou k dispozici.
+> [!TIP]
+> Podpora protokolu TLS 1.2 `NSUrlSession` možnost se doporučuje.
 
 <a name="NSUrlSession" />
 
 ### <a name="nsurlsession"></a>NSUrlSession
 
-Obslužné rutiny na základě NSURLSession je založena na nativního `NSURLSession` framework k dispozici v iOS 7 a novější.
+`NSURLSession`– Na základě obslužná rutina je založena na nativního `NSURLSession` framework k dispozici v iOS 7 a novější. 
+**Toto je doporučené nastavení.**
 
-#### <a name="pros"></a>Odborníci na:
+#### <a name="pros"></a>Odborníci na
 
- - Používá nativních rozhraní API pro lepší výkon a menší velikost spustitelný soubor.
- - Zajišťuje podporu pro nejnovější standardy, jako je protokol TLS 1.2.
+- Používá nativních rozhraní API pro lepší výkon a menší velikost spustitelný soubor.
+- Podporu pro nejnovější standardy, jako je protokol TLS 1.2.
 
-#### <a name="cons"></a>Cons:
+#### <a name="cons"></a>Cons
 
- - Vyžaduje iOS 7 nebo novější.
- - Některé funkce nebo možnosti HttpClient nejsou k dispozici.
+- Vyžaduje iOS 7 nebo novější.
+- Některé `HttpClient` funkce/možnosti nejsou k dispozici.
+
+<a name="CFNetwork" />
+
+### <a name="cfnetwork"></a>CFNetwork
+
+`CFNetwork`– Na základě obslužná rutina je založena na nativního `CFNetwork` framework k dispozici v iOS 6 nebo novější.
+
+#### <a name="pros"></a>Odborníci na
+
+- Používá nativních rozhraní API pro lepší výkon a menší velikost spustitelný soubor.
+- Podpora pro novější standardy, jako je protokol TLS 1.2.
+
+#### <a name="cons"></a>Cons
+
+- Vyžaduje iOS 6 nebo novější.
+- Není k dispozici v watchOS.
+- Některé funkce nebo možnosti HttpClient nejsou k dispozici.
+
+<a name="Managed" />
+
+### <a name="managed"></a>Spravované
+
+Spravované obslužné rutiny je plně spravovaná HttpClient obslužná rutina, která je dodávána se předchozí verze nástroje Xamarin.
+
+#### <a name="pros"></a>Odborníci na
+
+- Obsahuje funkci nejvíce kompatibilní nastavit pomocí rozhraní Microsoft .NET a starší verze Xamarin.
+
+#### <a name="cons"></a>Cons
+
+- Ji není plně integrována operační systémy Apple a je omezený na TLS 1.0. Nemusí být možné se připojit k zabezpečení webových serverů nebo cloudové služby v budoucnu.
+- Je obvykle výrazně zpomalit na třeba šifrování než nativních rozhraní API.
+- To vyžaduje více spravovaného kódu, proto vytvoření distribuovatelného větší aplikace.
 
 ### <a name="programmatically-setting-the-httpmessagehandler"></a>Objekt HttpMessageHandler prostřednictvím kódu programu nastavení
 
@@ -104,14 +111,9 @@ Díky tomu je možné použít jiné `HttpMessageHandler` z co je v deklarována
 <a name="Selecting-a-SSL-TLS-implementation" />
 <a name="Apple-TLS" />
 
-## <a name="ssltls-implementation-build"></a>Implementace protokolu SSL/TLS sestavení
+## <a name="ssltls-implementation"></a>Implementace protokolu SSL/TLS
 
 Protokol SSL (Secure Socket Layer) a jeho následníka TLS (Transport Layer Security) poskytuje podporu pro protokol HTTP a jiných síťových připojení prostřednictvím `System.Net.Security.SslStream`. Xamarin.iOS, Xamarin.tvOS nebo na Xamarin.Mac `System.Net.Security.SslStream` implementace zavolá společnosti Apple nativní implementaci protokolu SSL/TLS místo použití spravovaných implementace poskytované Mono. Nativní implementaci společnosti Apple podporuje TLS 1.2.
-
-<a name="Mono" />
-
-> [!WARNING]
-> **Mono nebo spravované** TLS zprostředkovatele je omezen na SSL v3 a TLS v1. Tento zprostředkovatel TLS je zastaralá a již není k dispozici pro aplikace Xamarin.iOS. 
 
 <a name="App-Transport-Security" />
 

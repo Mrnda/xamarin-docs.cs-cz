@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 0ecad6259cb0d472ac39afb0a6be980d4582812c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 638e16a47d30e1d4d61fe9e7d19a0245261e5d7f
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="async-support-overview"></a>Přehled asynchronních podpory
 
@@ -23,7 +23,7 @@ Asynchronní podpora pro Xamarin je založená na foundation Mono 3.0 a upgraduj
 
 Tento dokument zavádí nové async a operátoru await klíčová slova pak nevystavíte slabé stránky zabezpečení prostřednictvím jednoduché příklady implementace asynchronních metod v Xamarin.iOS a Xamarin.Android.
 
-Podrobnější informace o nových asynchronní funkcí jazyka C# 5 (včetně spoustu ukázky a scénáře použití různých) naleznete v dokumentaci MSDN [asynchronní programování s Async a Await](http://msdn.microsoft.com/en-us/library/vstudio/hh191443.aspx).
+Podrobnější informace o nových asynchronní funkcí jazyka C# 5 (včetně spoustu ukázky a scénáře použití různých) naleznete v dokumentaci MSDN [asynchronní programování s Async a Await](http://msdn.microsoft.com/library/vstudio/hh191443.aspx).
 
 Ukázkovou aplikaci Díky jednoduché asynchronní webové žádosti (bez blokování hlavní vlákno) a aktualizuje uživatelského rozhraní stažené html a počet znaků.
 
@@ -69,7 +69,7 @@ Pomocí await neblokuje volajícího přístup z více vláken – místo ovlád
 
 Po dokončení úlohy metoda obnoví provádění na stejném místě v kódu. To zahrnuje vrácením oboru zkuste bloku try-catch-finally – (Pokud je k dispozici). await nelze použít v catch nebo nakonec blokovat.
 
-Další informace o [await na webu MSDN](http://msdn.microsoft.com/en-us/library/vstudio/hh156528.aspx).
+Další informace o [await na webu MSDN](http://msdn.microsoft.com/library/vstudio/hh156528.aspx).
 
 ## <a name="exception-handling"></a>Zpracování výjimek
 
@@ -85,7 +85,7 @@ Asynchronní metody, které trvat dlouhou dobu pro dokončení by měly podporov
 
 Potom úlohu se zruší a uznává zrušení.
 
-Další informace o zrušení najdete v tématu [postupy: zrušení asynchronní úlohy](http://msdn.microsoft.com/en-us/library/vstudio/jj155761.aspx) na webu MSDN.
+Další informace o zrušení najdete v tématu [postupy: zrušení asynchronní úlohy](http://msdn.microsoft.com/library/vstudio/jj155761.aspx) na webu MSDN.
 
 ## <a name="example"></a>Příklad
 
@@ -202,9 +202,9 @@ Tento dokument poskytl přehled o nové klíčová slova jazyka a příklady pro
 - [HttpClient (iOS) (ukázka)](https://developer.xamarin.com/samples/monotouch/HttpClient/)
 - [MapKitSearch (iOS) (ukázka)](https://github.com/xamarin/monotouch-samples/tree/master/MapKitSearch)
 - [Webinář: C# asynchronní na iOS a Android (video)](http://xamarin.wistia.com/medias/k27mc627xz)
-- [Asynchronní programování pomocí modifikátoru Async a operátoru Await (MSDN)](http://msdn.microsoft.com/en-us/library/vstudio/hh191443.aspx)
-- [Jemnou ladění aplikace Async (MSDN)](http://msdn.microsoft.com/en-us/library/vstudio/jj155761.aspx)
+- [Asynchronní programování pomocí modifikátoru Async a operátoru Await (MSDN)](http://msdn.microsoft.com/library/vstudio/hh191443.aspx)
+- [Jemnou ladění aplikace Async (MSDN)](http://msdn.microsoft.com/library/vstudio/jj155761.aspx)
 - [Await a uživatelského rozhraní a blokování! Jejda Moje! (MSDN)](http://blogs.msdn.com/b/pfxteam/archive/2011/01/13/10115163.aspx)
 - [Zpracování úloh po dokončení (MSDN)](http://blogs.msdn.com/b/pfxteam/archive/2012/08/02/processing-tasks-as-they-complete.aspx)
-- [Asynchronní vzor založený na úlohách (TAP)](http://msdn.microsoft.com/en-us/library/hh873175.aspx)
+- [Asynchronní vzor založený na úlohách (TAP)](http://msdn.microsoft.com/library/hh873175.aspx)
 - [Asynchrony v C# 5 (blog Erica Lippert) – o zavedení klíčová slova](http://blogs.msdn.com/b/ericlippert/archive/2010/11/11/whither-async.aspx)

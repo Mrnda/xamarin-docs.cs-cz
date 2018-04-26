@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: ad18382a7143c7b1cc6bbecb3867c042512eb562
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6de16095d9e1267587a050e8081f87f896f3153e
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="introduction-to-web-services"></a>Úvod k webovým službám
 
@@ -22,8 +22,8 @@ Aby správně fungoval, jsou závislé na cloudu mnoho mobilních aplikací, a p
 Tento článek popisuje v následujících tématech:
 
 - [Služby REST](#rest)
-- [ASP.Net Web Services (ASMX)](#asmx)
-- [WCF Services](#wcf)
+- [ASP.Net – webové služby (ASMX)](#asmx)
+- [Služby WCF](#wcf)
 
 Pro zákazníky používající Xamarin.Forms, jsou dokončení příklady použití každé z těchto technologií v [Xamarin.Forms webové služby](~/xamarin-forms/data-cloud/index.md) dokumentaci.
 
@@ -337,7 +337,7 @@ public async Task<List<TodoItem>> RefreshDataAsync ()
 
 Task Parallel Library (TPL) může zjednodušit proces využívání dvojici APM zahájení a ukončení metoda zapouzdřením asynchronních operací ve stejném `Task` objektu. Tato zapouzdření poskytuje více přetížení `Task.Factory.FromAsync` metoda. Tato metoda vytvoří `Task` , která se spouští `TodoService.EndGetTodoItems` metoda jednou `TodoService.BeginGetTodoItems` metoda dokončí, s `null` parametr určující, zda je předávána žádná data do `BeginGetTodoItems` delegovat. Nakonec hodnotu `TaskCreationOptions` – výčet Určuje, že má být použita výchozí chování pro vytváření a spouštění úloh.
 
-Další informace o APM najdete v tématu [modelu asynchronního programování](https://msdn.microsoft.com/en-us/library/ms228963(v=vs.110).aspx) a [TPL a tradiční rozhraní .NET Framework asynchronní programování](https://msdn.microsoft.com/en-us/library/dd997423(v=vs.110).aspx) na webu MSDN.
+Další informace o APM najdete v tématu [modelu asynchronního programování](https://msdn.microsoft.com/library/ms228963(v=vs.110).aspx) a [TPL a tradiční rozhraní .NET Framework asynchronní programování](https://msdn.microsoft.com/library/dd997423(v=vs.110).aspx) na webu MSDN.
 
 Další informace o využívání služby ASMX najdete v tématu [využívání služby Web ASP.NET (ASMX)](~/xamarin-forms/data-cloud/consuming/asmx.md).
 
@@ -364,7 +364,7 @@ Další informace o použití platformy Xamarin využívat službou WCF webové 
 
 A *proxy* musí být generovány využívat služby WCF, který umožňuje aplikaci připojit ke službě. Proxy serveru je vytvořený ve využívání služby metadata, která definují metody a přidružená služba konfigurace. Tato data použita ve formě webové služby popis Language (WSDL) dokumentu, který je generovaný webovou službu. Proxy server se dají vytvářet pomocí zprostředkovatele služby Microsoft WCF webové služby odkaz v Visual Studio 2017 přidání odkazu na službu pro webovou službu do standardní knihovna pro .NET.
 
-Alternativu k vytvoření proxy server pomocí zprostředkovatele služby Microsoft WCF webové služby odkaz v Visual Studio 2017 je použití ServiceModel Metadata Utility Tool (svcutil.exe). Další informace najdete v tématu [ServiceModel Metadata Utility Tool (Svcutil.exe)](https://docs.microsoft.com/en-us/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe).
+Alternativu k vytvoření proxy server pomocí zprostředkovatele služby Microsoft WCF webové služby odkaz v Visual Studio 2017 je použití ServiceModel Metadata Utility Tool (svcutil.exe). Další informace najdete v tématu [ServiceModel Metadata Utility Tool (Svcutil.exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe).
 
 <a name="Calling_a_WCF_Service_with_Client_Credential_Security" />
 
@@ -416,7 +416,7 @@ public async Task<List<TodoItem>> RefreshDataAsync ()
 
 Task Parallel Library (TPL) může zjednodušit proces využívání dvojici APM zahájení a ukončení metoda zapouzdřením asynchronních operací ve stejném `Task` objektu. Tato zapouzdření poskytuje více přetížení `Task.Factory.FromAsync` metoda. Tato metoda vytvoří `Task` , která se spouští `TodoServiceClient.EndGetTodoItems` metoda jednou `TodoServiceClient.BeginGetTodoItems` metoda dokončí, s `null` parametr určující, zda je předávána žádná data do `BeginGetTodoItems` delegovat. Nakonec hodnotu `TaskCreationOptions` – výčet Určuje, že má být použita výchozí chování pro vytváření a spouštění úloh.
 
-Další informace o APM najdete v tématu [modelu asynchronního programování](https://msdn.microsoft.com/en-us/library/ms228963(v=vs.110).aspx) a [TPL a tradiční rozhraní .NET Framework asynchronní programování](https://msdn.microsoft.com/en-us/library/dd997423(v=vs.110).aspx) na webu MSDN.
+Další informace o APM najdete v tématu [modelu asynchronního programování](https://msdn.microsoft.com/library/ms228963(v=vs.110).aspx) a [TPL a tradiční rozhraní .NET Framework asynchronní programování](https://msdn.microsoft.com/library/dd997423(v=vs.110).aspx) na webu MSDN.
 
 Další informace o využívání služby WCF najdete v tématu [využívají webové služby Windows Communication Foundation (WCF)](~/xamarin-forms/data-cloud/consuming/wcf.md).
 
@@ -460,7 +460,7 @@ Tato příručka ukázal, jak používat technologie jiné webové služby. Obsa
 
 ## <a name="related-links"></a>Související odkazy
 
-- [WebServices Sample](https://developer.xamarin.com/samples/mobile/WebServices/WebServiceSamples/)
+- [Ukázka webovým službám](https://developer.xamarin.com/samples/mobile/WebServices/WebServiceSamples/)
 - [Webové služby v platformě Xamarin.Forms](~/xamarin-forms/data-cloud/index.md)
-- [Nástroj ServiceModel Metadata Utility (svcutil.exe)](https://docs.microsoft.com/en-us/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)
-- [BasicHttpBinding](http://msdn.microsoft.com/en-us/library/system.servicemodel.basichttpbinding.aspx)
+- [Nástroj ServiceModel Metadata Utility (svcutil.exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)
+- [BasicHttpBinding](http://msdn.microsoft.com/library/system.servicemodel.basichttpbinding.aspx)

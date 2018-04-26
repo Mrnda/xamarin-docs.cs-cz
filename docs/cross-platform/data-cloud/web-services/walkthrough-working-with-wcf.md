@@ -7,18 +7,18 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 02/17/2018
-ms.openlocfilehash: 1b317c4c82ec736c7f4c8306036e43cf04086a82
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 297aac4ba4a564e4506d841d3e11718ad79307e2
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="walkthrough---working-with-wcf"></a>Návod - práce s použitím technologie WCF
 
 _Tento návod popisuje, jak mobilních aplikací vytvořených pomocí Xamarinu spotřebovat webové služby WCF pomocí třídy BasicHttpBinding._
 
 
-Je běžné požadavek pro mobilní aplikace komunikovat s back-end systémy. Existuje mnoho možností a možnosti pro rozhraní back-end, z nichž jeden je [Windows Communication Foundation](http://msdn.microsoft.com/en-us/library/ms731082.aspx) (WCF). Tento názorný postup bude uveďte příklad způsob, jakým může mobilní aplikace Xamarin využívají službu WCF pomocí `BasicHttpBinding` třídy. Průvodce obsahuje následující témata:
+Je běžné požadavek pro mobilní aplikace komunikovat s back-end systémy. Existuje mnoho možností a možnosti pro rozhraní back-end, z nichž jeden je [Windows Communication Foundation](http://msdn.microsoft.com/library/ms731082.aspx) (WCF). Tento názorný postup bude uveďte příklad způsob, jakým může mobilní aplikace Xamarin využívají službu WCF pomocí `BasicHttpBinding` třídy. Průvodce obsahuje následující témata:
 
 1.  **Vytvoření služby WCF** – v této části vytvoříme velmi základní služby WCF s dvě metody. První metoda bude trvat řetězcový parametr, zatímco jiné metody bude trvat objekt C#. V této části se také popisují postup konfigurace pracovní stanice pro vývojáře a povolil vzdálený přístup ke službě WCF.
 1.  **Vytvoření aplikace Xamarin.Android** -po vytvoření služby WCF, vytvoříme jednoduchou aplikaci Xamarin.Android, která budou používat služby WCF. Tato část se zabývá vytvořit třídu proxy služby WCF pro usnadnění komunikace se službou WCF.
@@ -228,7 +228,7 @@ Proxy server webové služby musí být vytvořeny pro službu WCF, než aplikac
 1. Sestavení `HelloWorldServiceProxy` projektu.
 
 > [!NOTE]
-> Alternativu k vytvoření proxy server pomocí zprostředkovatele služby Microsoft WCF webové služby odkaz v Visual Studio 2017 je použití ServiceModel Metadata Utility Tool (svcutil.exe). Další informace najdete v tématu [ServiceModel Metadata Utility Tool (Svcutil.exe)](https://docs.microsoft.com/en-us/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe).
+> Alternativu k vytvoření proxy server pomocí zprostředkovatele služby Microsoft WCF webové služby odkaz v Visual Studio 2017 je použití ServiceModel Metadata Utility Tool (svcutil.exe). Další informace najdete v tématu [ServiceModel Metadata Utility Tool (Svcutil.exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe).
 
 <a name="Creating_a_Xamarin_Android_Application" />
 
@@ -535,6 +535,6 @@ V tomto kurzu popsané postupy pro práci se službou WCF v mobilní aplikaci po
 ## <a name="related-links"></a>Související odkazy
 
 - [Hello World (ukázka)](https://developer.xamarin.com/samples/mobile/WCF-Walkthrough/)
-- [Vývoj aplikací orientovaných na služby s použitím technologie WCF](https://docs.microsoft.com/en-us/dotnet/framework/wcf/index)
-- [Postupy: vytvoření klienta Windows Communication Foundation](https://docs.microsoft.com/en-us/dotnet/framework/wcf/how-to-create-a-wcf-client)
-- [Nástroj ServiceModel Metadata Utility (svcutil.exe)](https://docs.microsoft.com/en-us/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)
+- [Vývoj aplikací orientovaných na služby s použitím technologie WCF](https://docs.microsoft.com/dotnet/framework/wcf/index)
+- [Postupy: vytvoření klienta Windows Communication Foundation](https://docs.microsoft.com/dotnet/framework/wcf/how-to-create-a-wcf-client)
+- [Nástroj ServiceModel Metadata Utility (svcutil.exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)

@@ -8,11 +8,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 5ca2918a0348254407fcbfff030def6c36af4988
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 71bfccdcab73b651f458dd8d9c5396bffd55004b
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="hello-ios-deep-dive"></a>Hello, iOS podrobné informace
 
@@ -85,7 +85,7 @@ Na pravé straně je *řešení podokně*, který obsahuje strukturu adresáře 
 
 V [Hello, iOS](~/ios/get-started/hello-ios/hello-ios-quickstart.md) návodu jste vytvořili řešení názvem **Phoneword** a umístit iOS projekt – **Phoneword_iOS** – uvnitř ho. Položky v rámci projektu patří:
 
--  **Odkazy na** – obsahuje sestavení požadovaná sestavení a spuštění aplikace. Rozbalte adresář zobrazíte odkazy na sestavení .NET [systému](http://msdn.microsoft.com/en-us/library/system%28v=vs.110%29.aspx) , System.Core a [System.Xml](http://msdn.microsoft.com/en-us/library/system.xml%28v=vs.110%29.aspx) , a také odkaz na sestavení Xamarin pro Xamarin.iOS.
+-  **Odkazy na** – obsahuje sestavení požadovaná sestavení a spuštění aplikace. Rozbalte adresář zobrazíte odkazy na sestavení .NET [systému](http://msdn.microsoft.com/library/system%28v=vs.110%29.aspx) , System.Core a [System.Xml](http://msdn.microsoft.com/library/system.xml%28v=vs.110%29.aspx) , a také odkaz na sestavení Xamarin pro Xamarin.iOS.
 -  **Balíčky** -adresář balíčky obsahuje předem připravené balíčky NuGet.
 -  **Prostředky** -složku prostředky ukládá další média.
 -  **Main.cs** – obsahuje hlavní vstupní bod aplikace. Ke spuštění aplikace, název třídy hlavní aplikace, `AppDelegate`, je předaná.

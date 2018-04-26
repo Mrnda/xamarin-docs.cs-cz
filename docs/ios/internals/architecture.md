@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 930b52e5b2a532e71594f26af79035db2cc5fb25
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 85dc675a9b18b974f21532298e4d3028bdecd0b7
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="ios-architecture"></a>iOS architektura
 
@@ -23,14 +23,14 @@ Následující diagram ukazuje základní přehled této architektury:
 
 ## <a name="native-and-managed-code-an-explanation"></a>Nativního a spravovaného kódu: vysvětlení
 
-Při vývoji pro Xamarin podmínky *nativní a spravovaná* kódu se často používají. [Spravovaný kód](https://blogs.msdn.microsoft.com/brada/2004/01/09/what-is-managed-code/) je kód, který má jejího provádění spravuje [rozhraní .NET Framework Common Language Runtime](https://msdn.microsoft.com/en-us/library/8bs2ecf4(v=vs.110).aspx), nebo v případě pro Xamarin: Mono Runtime. Toto je takzvaný převodní jazyk.
+Při vývoji pro Xamarin podmínky *nativní a spravovaná* kódu se často používají. [Spravovaný kód](https://blogs.msdn.microsoft.com/brada/2004/01/09/what-is-managed-code/) je kód, který má jejího provádění spravuje [rozhraní .NET Framework Common Language Runtime](https://msdn.microsoft.com/library/8bs2ecf4(v=vs.110).aspx), nebo v případě pro Xamarin: Mono Runtime. Toto je takzvaný převodní jazyk.
 
 Nativní kód je kód, který se spustí nativně na konkrétní platformu (například jazyka Objective-C nebo dokonce i AOT zkompilovat kód, na čip TPM ARM). Tato příručka popisuje, jak AOT zkompiluje spravovaného kódu do nativního kódu a vysvětluje, jak lze aplikaci Xamarin.iOS, provedení úplné použití společnosti Apple iOS rozhraní API prostřednictvím vazby, také přístup k. NET na BCL a sofistikované jazyk, například C#.
 
 
 ## <a name="aot"></a>AOT
 
-Při kompilaci všechny platformy aplikace Xamarin kompilátoru Mono jazyka C# (nebo F #) se spustí a bude kompilace kódu C# a F # do Microsoft Intermediate Language (MSIL). Pokud používáte Xamarin.Android, Xamarin.Mac aplikace nebo i aplikace pro Xamarin.iOS v simulátoru, [rozhraní .NET Common Language Runtime (CLR)](https://msdn.microsoft.com/en-us/library/8bs2ecf4(v=vs.110).aspx) zkompiluje MSIL pomocí pouze v kompilátoru čas (JIT). Za běhu, které to kompiluje do nativního kódu, který můžete spustit na správnou architekturu pro vaši aplikaci.
+Při kompilaci všechny platformy aplikace Xamarin kompilátoru Mono jazyka C# (nebo F #) se spustí a bude kompilace kódu C# a F # do Microsoft Intermediate Language (MSIL). Pokud používáte Xamarin.Android, Xamarin.Mac aplikace nebo i aplikace pro Xamarin.iOS v simulátoru, [rozhraní .NET Common Language Runtime (CLR)](https://msdn.microsoft.com/library/8bs2ecf4(v=vs.110).aspx) zkompiluje MSIL pomocí pouze v kompilátoru čas (JIT). Za běhu, které to kompiluje do nativního kódu, který můžete spustit na správnou architekturu pro vaši aplikaci.
 
 Je však omezení zabezpečení v systému iOS, nastavte společností Apple, která zakáže spuštění dynamicky generovaném kódu na zařízení.
 Aby se zajistilo, že jsme splňovat tyto protokoly zabezpečení, Xamarin.iOS místo toho používá kompilátoru můžete některé z času (AOT) pro kompilaci spravovaného kódu. To vytváří nativní aplikace pro iOS binární, volitelně s LLVM optimalizované pro zařízení, které lze nasadit na bázi ARM procesoru společnosti Apple. Dole je zobrazená hrubý diagram jak to zapadá společně:
@@ -69,7 +69,7 @@ Pseudo následující kód ukazuje příklad způsob provedení:
  }
 ```
 
-**Objective-C:**
+**Cíl – C:**
 
 ```objectivec
 @interface MyViewController : UIViewController { }

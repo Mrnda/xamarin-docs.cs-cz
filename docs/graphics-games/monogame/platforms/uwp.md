@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: ee4ee83c07cf01d1324b5f127d4f77ced0df2afe
-ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
+ms.openlocfilehash: e28823165188d1046142e31490967367d3246422
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="creating-a-monogame-uwp-project"></a>Vytváření projektu UPW MonoGame
 
@@ -31,9 +31,9 @@ Vývoj aplikací MonoGame UWP vyžaduje:
 - Nastavení zařízení do režimu vývojáře
 - [3.5 MonoGame pro sadu Visual Studio](http://www.monogame.net/2016/03/17/monogame-3-5/) nebo novější
 
-Další informace najdete v tématu to [stránky na nastavení pro vývoj Windows 10 UWP](https://msdn.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
+Další informace najdete v tématu to [stránky na nastavení pro vývoj Windows 10 UWP](https://msdn.microsoft.com/windows/uwp/get-started/get-set-up).
 
-Hry pro Xbox jeden mohou být vytvořeny na prodejní Xbox jeden hardwaru. Na vývoj počítače a jeden Xbox se vyžaduje další software. Informace o konfiguraci jeden Xbox pro vývoj her, najdete v části této stránky na [nastavení jeden Xbox](https://msdn.microsoft.com/en-us/windows/uwp/xbox-apps/index).
+Hry pro Xbox jeden mohou být vytvořeny na prodejní Xbox jeden hardwaru. Na vývoj počítače a jeden Xbox se vyžaduje další software. Informace o konfiguraci jeden Xbox pro vývoj her, najdete v části této stránky na [nastavení jeden Xbox](https://msdn.microsoft.com/windows/uwp/xbox-apps/index).
 
 ## <a name="creating-an-empty-template"></a>Vytvoření prázdné šablony
 

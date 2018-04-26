@@ -6,102 +6,106 @@ ms.assetid: 582B6D0C-1F16-4299-A9A6-5651E76009FE
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/16/2017
-ms.openlocfilehash: 96fc3ea0aa802f62bd697b34f7bd504eb445a4f6
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/25/2018
+ms.openlocfilehash: d512dfddb3a6c81767f937272a4ffb1ab1a35372
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="working-with-progress-indicators"></a>Práce s indikátory průběhu
 
 _Tento článek se zabývá navrhování a práce s indikátory průběhu uvnitř Xamarin.tvOS aplikace._
 
+Mohou nastat situace, když vaše aplikace Xamarin.tvOS musí načíst nový obsah nebo provést operaci zdlouhavé zpracování. Během této doby by měla představovat indikátorem aktivity nebo indikátor průběhu, aby mohl uživatel vědět, že aplikace je stále spuštěná a dát jim některé údaj o délce úloha spuštěná.
 
-Mohou nastat situace, když vaše aplikace Xamarin.tvOS musí načíst nový obsah nebo provést operaci zdlouhavé zpracování. Během této doby by měla představovat buď ukazatel aktivity nebo indikátor průběhu aby mohl uživatel vědět, že aplikace je stále spuštěná a dát jim některé údaj o délce úloha spuštěná.
-
-[![](progress-indicators-images/intro01.png "Ukázka indikátory průběhu")](progress-indicators-images/intro01.png#lightbox)
-
-<a name="About-Activity-Indicators" />
+![Ukázkové indikátory průběhu](progress-indicators-images/intro01.png "ukázkové indikátory průběhu")
 
 ## <a name="about-activity-indicators"></a>O indikátory aktivity
 
-Slouží jako ukazatel aktivity uvede jako roztočený ikonu vizuálně a se používá k reprezentování úlohu neurčená délky. Ukazatele se zobrazí, když úloha spustí a po dokončení úlohy zmizí.
+Slouží jako ukazatel aktivity uvede jako roztočený ikonu a se používá k reprezentování úlohu neurčená délky. Ukazatele se zobrazí, když úloha spustí a po dokončení úlohy zmizí.
 
 Společnost Apple má následující návrhy pro práci s indikátory aktivity:
 
-- **Kdykoli je to možné, použijte místo řádky průběh** – protože slouží jako ukazatel aktivity umožňuje uživateli žádné zpětnou vazbu, jak dlouho bude trvat proces spuštěn, vždy použijte indikátor průběhu, pokud je délka vědět (například kolik bajtů ke stažení v souboru).
-- **Zachovat animovaný ukazatel** -uživatelé zablokované aplikace se týkají stojící ukazatel aktivity, byste měli mít vždy indikátoru animovaný při se zobrazily.
-- **Popis úloh zpracovávaných** -právě zobrazení ukazatel aktivity sám o sobě není dost, uživatel musí být informováni o proces, že čekají na. Zahrnout smysluplný popisek (obvykle jednu, kompletní věta), který jasně definuje úlohu.
-
-<a name="Summary" />
+- **Pokud je to možné, použijte indikátory průběhu místo** – vzhledem poskytuje indikátor aktivity uživatele žádné zpětnou vazbu, jak dlouhé proces spuštěn bude trvat, vždy používají indikátor průběhu, pokud je délka znám (například kolik bajtů ke stažení v souboru).
+- **Zachovat indikátoru animovaný** -uživatelé týkají ukazatel stojící aktivity zablokované aplikace, takže by měla vždy animace indikátoru, když se zobrazí.
+- **Popis úloh zpracovávaných** -právě zobrazení ukazatel aktivity sám o sobě nestačí, uživatel musí být informováni o proces, na kterém jsou čekání. Zahrnout smysluplný popisek (obvykle jednu, kompletní věta), který jasně definuje úlohu.
 
 ## <a name="about-progress-bars"></a>O indikátory průběhu
 
-Indikátor průběhu uvede jako řádek, který vyplní barvou k označení stavu a délka časově náročný úkol. Indikátory průběhu by měl být použit při délka úlohy je vědět, nebo můžete vypočítat.
+Indikátor průběhu uvede jako řádek, který vyplní barvou k označení stavu a délka časově náročný úkol. Indikátory průběhu by měl být použit při délka úlohy je známý nebo je můžete vypočítat.
 
 Společnost Apple má následující návrhy pro práci s indikátory průběhu:
 
-- **Přesně sestavy průběhu** -indikátory průběhu by měla být vždy přesné reprezentace čas potřebný k dokončení úlohy. Nikdy poskytovat zavádějící informace o době k vytvoření aplikace zobrazí zaneprázdněný.
-- **Použití dob trvání Well-Defined** -indikátor průběhu nesmí jenom zobrazit, že náročná úloha trvá umístit, ale poskytnout uživatele a údaj o kolik úlohy dokončení a odhad zbývající dobu.
-
-<a name="Progress-Indicators-and-Storyboards" />
+- **Přesně hlásit průběh** -indikátory průběhu měli vždy k dispozici ve správné podobě čas potřebný k dokončení úlohy. Nikdy poskytovat zavádějící informace o době k vytvoření aplikace zobrazí zaneprázdněný.
+- **Použití pro dobře definované doby trvání** -umístit průběh řádky nesmí jenom zobrazit, že náročná úloha trvá, ale poskytnout uživatele a údaj o kolik úlohy dokončení a odhad zbývající dobu.
 
 ## <a name="progress-indicators-and-storyboards"></a>Indikátory průběhu a scénářů
 
-Nejjednodušší způsob, jak pracovat s ukazatelem průběhu v aplikaci Xamarin.tvOS je chcete přidat do aplikace uživatelského rozhraní pomocí návrháře iOS.
+Nejjednodušší způsob, jak pracovat s indikátor průběhu v aplikaci Xamarin.tvOS je přidat do aplikace uživatelského rozhraní pomocí návrháře iOS.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
     
-1. V **řešení Pad**, dvakrát klikněte `Main.storyboard` souborů a otevřete pro úpravy.
-1. Přetáhněte **ukazatel aktivity** z **sada nástrojů** na zobrazení: 
+1. V **řešení Pad**, dvakrát klikněte **Main.storyboard** souborů a otevřete pro úpravy.
 
-    [![](progress-indicators-images/activity01.png "Ukazatel aktivity")](progress-indicators-images/activity01.png#lightbox)
-1. V **pomůcky karta** z **vlastnosti Pad**, můžete upravit několik vlastností ukazatel aktivity, jako jeho **styl** a **chování**: 
+2. Přetáhněte **ukazatel aktivity** z **sada nástrojů** na zobrazení: 
 
-    [![](progress-indicators-images/activity02.png "Na kartě pomůcky ")](progress-indicators-images/activity02.png#lightbox)
-1. Přetáhněte **zobrazení průběhu** z **sada nástrojů** na zobrazení: 
+    ![Slouží jako ukazatel aktivity](progress-indicators-images/activity01.png "indikátorem aktivity")
 
-    [![](progress-indicators-images/activity03.png "Zobrazení průběhu")](progress-indicators-images/activity03.png#lightbox)
-1. V **pomůcky karta** z **vlastnost Explorer**, můžete upravit několik vlastností zobrazení průběhu jeho **styl** a **průběh**(dokončeno): 
+3. V **pomůcky** kartě **vlastnosti Pad**, můžete upravit několik vlastností ukazatel aktivity, jako jeho **styl**, **chování**, a **název**: 
 
-    [![](progress-indicators-images/activity04.png "Na kartě pomůcky")](progress-indicators-images/activity04.png#lightbox)
-1. Nakonec přiřadit **názvy** pro ovládací prvky, aby mohli odpovídat na ně v kódu jazyka C#. Příklad: 
+    ![Kartě pomůcky pro indikátorem aktivity](progress-indicators-images/activity02.png "The pomůcky karta slouží jako ukazatel aktivity")
+    
+    **Název** Určuje název vlastnosti, která představuje ukazatel aktivity v kódu jazyka C#.
 
-    [![](progress-indicators-images/activity05.png "Přiřadit název")](progress-indicators-images/activity05.png#lightbox)
-1. Uložte provedené změny.
+4. Přetáhněte **zobrazení průběhu** z **sada nástrojů** na zobrazení: 
+
+    ![Zobrazení průběhu](progress-indicators-images/activity03.png "zobrazení průběhu")
+
+5. V **pomůcky** kartě **vlastnost Explorer**, můžete upravit několik vlastností zobrazení průběhu jeho **styl**, **průběh**(dokončeno), a **název**: 
+
+    ![Na kartě pomůcky pro zobrazení průběhu](progress-indicators-images/activity04.png "kartu The pomůcky pro zobrazení průběhu")
+    
+    **Název** Určuje název vlastnosti, který představuje zobrazení průběhu v kódu jazyka C#.
+
+6. Uložte provedené změny.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
     
-1. V **Průzkumníku řešení**, dvakrát klikněte `Main.storyboard` souborů a otevřete pro úpravy.
-1. Přetáhněte **ukazatel aktivity** z **sada nástrojů** na zobrazení: 
+1. V **Průzkumníku řešení**, dvakrát klikněte **Main.storyboard** souborů a otevřete pro úpravy.
 
-    [![](progress-indicators-images/activity01-vs.png "Ukazatel aktivity")](progress-indicators-images/activity01-vs.png#lightbox)
-1. V **pomůcky karta** z **Explorer vlastnosti**, můžete upravit několik vlastností ukazatel aktivity, jako jeho **styl** a **chování**: 
+2. Přetáhněte **ukazatel aktivity** z **sada nástrojů** na zobrazení: 
 
-    [![](progress-indicators-images/activity02-vs.png "Na kartě pomůcky")](progress-indicators-images/activity02-vs.png#lightbox)
-1. Přetáhněte **zobrazení průběhu** z **sada nástrojů** na zobrazení: 
+    ![Slouží jako ukazatel aktivity](progress-indicators-images/activity01-vs.png
+    "indikátorem aktivity")
 
-    [![](progress-indicators-images/activity03-vs.png "Zobrazení průběhu")](progress-indicators-images/activity03-vs.png#lightbox)
-1. V **pomůcky karta** z **vlastnost Explorer**, můžete upravit několik vlastností zobrazení průběhu jeho **styl** a **průběh**(dokončeno): 
+3. V **pomůcky** kartě **Explorer vlastnosti**, můžete upravit několik vlastností ukazatel aktivity, jako jeho **styl**, **chování**, a **název**: 
 
-    [![](progress-indicators-images/activity04-vs.png "Na kartě pomůcky")](progress-indicators-images/activity04-vs.png#lightbox)
-1. Nakonec přiřadit **názvy** pro ovládací prvky, aby mohli odpovídat na ně v kódu jazyka C#. Příklad: 
+    ![Kartě pomůcky pro indikátorem aktivity](progress-indicators-images/activity02-vs.png "The pomůcky karta slouží jako ukazatel aktivity")
 
-    [![](progress-indicators-images/activity05-vs.png "Přiřadit název")](progress-indicators-images/activity05-vs.png#lightbox)
-1. Uložte provedené změny.
+    **Název** Určuje název vlastnosti, která představuje ukazatel aktivity v kódu jazyka C#.
+
+4. Přetáhněte **zobrazení průběhu** z **sada nástrojů** na zobrazení: 
+
+   ![Zobrazení průběhu](progress-indicators-images/activity03-vs.png "zobrazení průběhu")
+
+5. V **pomůcky** kartě **vlastnost Explorer**, můžete upravit několik vlastností zobrazení průběhu jeho **styl**, **průběh**(dokončeno), a **název**: 
+
+    ![Na kartě pomůcky pro zobrazení průběhu](progress-indicators-images/activity04-vs.png "kartu The pomůcky pro zobrazení průběhu")
+    
+    **Název** Určuje název vlastnosti, který představuje zobrazení průběhu v kódu jazyka C#.
+
+6. Uložte provedené změny.
 
 -----
 
 Další informace o práci s scénářů, najdete v tématu naše [Hello, tvOS úvodní příručce](~/ios/tvos/get-started/hello-tvos.md). 
 
-<a name="Working-with-Activity-Indicators" />
-
 ## <a name="working-with-activity-indicators"></a>Práce s indikátory aktivity
 
-Jak jsme uvedli výše, pokud vaše aplikace běží dlouho procesu, ale neznáte přesnou délku doba, kterou bude vyžadovat úlohy se mají indikátory aktivity.
+Jak jsme uvedli výše, pokud vaše aplikace běží dlouho proces neurčitém délka se mají indikátory aktivity.
 
-Kdykoli se zobrazí, pokud se ukazatel aktivity běží jeho animace roztočený kontrolou `IsAnimating` vlastnost. Pokud `HidesWhenStopped` vlastnost je `true`, ukazatel aktivity bude skrytá automaticky při zastavení jeho animace.
+Kdykoli, uvidíte, pokud je indikátor aktivity animace kontrolou jeho `IsAnimating` vlastnost. Pokud `HidesWhenStopped` vlastnost je `true`, ukazatel aktivity bude skrytá automaticky při zastavení jeho animace.
 
 Můžete použít následující kód pro spuštění animace: 
 
@@ -115,21 +119,18 @@ A následující zastaví animace:
 ActivityIndicator.StopAnimating();
 ```
 
-<a name="Working-with-Progress-Bars" />
+> [!NOTE]
+> Tyto fragmenty kódu předpokládat, že ukazatel aktivity **název** byla nastavena na **ActivityIndicator** v **pomůcky** kartě IOS Designer.
 
 ## <a name="working-with-progress-bars"></a>Práce s indikátory průběhu
 
-Indikátor průběhu, třeba použít vždy, když vaše aplikace je prováděna dlouhotrvající úkol dobu trvání Přehled. 
+Indikátor průběhu znovu, třeba použít vždy, když vaše aplikace je prováděna dlouho spuštěná úloha známé hodnotě DURATION. 
 
 `Progress` Vlastnost se používá k nastavení velikosti úloha, která byla dokončena z 0 % na 100 % (od 0,0 do 1,0). Použití `ProgressTintColor` vlastnost pro nastavení barvy panelu velikost dokončit a `TrackTintColor` vlastnost nastavující barvu pozadí (nedokončené velikost).
-
-<a name="Summary" />
 
 ## <a name="summary"></a>Souhrn
 
 Tento článek má zahrnutých navrhování a práce s indikátory průběhu uvnitř Xamarin.tvOS aplikace.
-
-
 
 ## <a name="related-links"></a>Související odkazy
 

@@ -1,54 +1,78 @@
 ---
-title: Transport Layer Security (TLS)
+title: Transport Layer Security (TLS) 1.2
 description: Povolení protokolu TLS 1.2 pro projekty Xamarin pro Android, iOS a Mac
 ms.prod: xamarin
 ms.assetid: 399F71C6-16A4-4ABC-B30D-AF17D066A5FA
 ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
-ms.date: 10/10/2017
-ms.openlocfilehash: 8b2d0288248f2468e6976ad4f7c46255690116c0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/20/2018
+ms.openlocfilehash: 6205e8633ccdd2c1e568e7de8103c38eb9edbc2f
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
-# <a name="transport-layer-security-tls"></a>Transport Layer Security (TLS)
-
-_Povolení protokolu TLS 1.2 pro projekty Xamarin pro Android, iOS a Mac_
+# <a name="transport-layer-security-tls-12"></a>Transport Layer Security (TLS) 1.2
 
 Pomocí nejnovější verze [ _Transport Layer Security_ (TLS)](https://en.wikipedia.org/wiki/Transport_Layer_Security) je důležité zajistit síťové komunikace mezi aplikací jsou bezpečné.
 
+> [!WARNING]
+> **Duben, 2018** – kvůli zvýšení zabezpečení požadavky, včetně soulad s normami PCI, Hlavní poskytovatelé cloudové a webové servery se očekává, zastavit, podpora TLS verze starší než 1.2.  Xamarin projektů vytvořených v předchozích verzích sady Visual Studio výchozí používat starší verze protokolu TLS.
+>
+> Aby se zajistilo, pokračovat v práci s těmito servery a služby, aplikace **by měl aktualizovat projekty Xamarin, aby toto nastavení, pak znovu sestavit a znovu nasaďte aplikace** pro vaše uživatele.
+
+Projekty musí odkazovat **System.Net.Http** sestavení a nakonfigurovat, jak je uvedeno níže.
+
+## <a name="update-android-to-tls-12"></a>Aktualizace Android TLS 1.2
+
+Aktualizace **implementace HttpClient** a **SSL/TLS implementace** možnosti Povolit zabezpečení protokolu TLS 1.2.
+
 > [!NOTE]
-> Xamarin uvolní od [února 2017](https://releases.xamarin.com/stable-release-cycle-9/) TLS 1.2 ve výchozím nastavení používá nové projekty.
+> Vyžaduje Android 5.0 nebo novější.
 
-Podpora protokolu TLS 1.2 je nyní k dispozici v:
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-* Mono 4.8 (zahrnuje [podpora protokolu TLS 1.2](http://www.mono-project.com/docs/about-mono/releases/4.8.0/#tls-12-support))
-* Xamarin.iOS
-* Xamarin.Mac
-* Xamarin.Android (vyžaduje Android 5.0 nebo novější)
+Tato nastavení najdete v **vlastnosti projektu > Android možnosti** a kliknete na **Upřesnit** tlačítko:
 
-Projekty musí odkazovat **System.Net.Http** sestavení. 
+[![Konfigurace HttpClient a TLS v sadě Visual Studio](transport-layer-security-images/android-win-sml.png)](transport-layer-security-images/android-win.png#lightbox)
 
-## <a name="updating-to-tls-12"></a>Aktualizace TLS 1.2
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-Tato část popisuje některé možnosti konfigurace sítě v projektech Xamarin, abyste mohli aktualizovat vaše _existující_ aplikace využívat výhod bezpečnější protokol.
+Tato nastavení najdete v **možnosti projektu > sestavení > Android sestavení** karty:
 
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-Tato nastavení najdete v **možnosti projektu > Android možnosti** a kliknete na **Upřesnit** tlačítko: 
-
-[![Konfigurace HttpClient a TLS v sadě Visual Studio](transport-layer-security-images/properties-vs-sml.png)](transport-layer-security-images/properties-vs.png#lightbox)
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-Tato nastavení najdete v **vlastnosti projektu > sestavení možnosti > Upřesnit** karty:
-
-[![Konfigurace HttpClient a TLS v Xamarin studiu a Visual Studio pro Mac](transport-layer-security-images/properties-xs-sml.png)](transport-layer-security-images/properties-xs.png#lightbox)
+[![Konfigurace HttpClient a TLS v sadě Visual Studio pro Mac](transport-layer-security-images/android-mac-sml.png)](transport-layer-security-images/android-mac.png#lightbox)
 
 -----
 
+## <a name="update-ios-to-tls-12"></a>Aktualizace iOS TLS 1.2
+
+Aktualizace **implementace HttpClient** možnost povolit TSL 1.2 zabezpečení.
+
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+
+Toto nastavení lze nalézt v **vlastnosti projektu > iOS sestavení**:
+
+[![Konfigurace HttpClient a TLS v sadě Visual Studio](transport-layer-security-images/ios-win-sml.png)](transport-layer-security-images/ios-win.png#lightbox)
+
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+
+Toto nastavení lze nalézt v **možnosti projektu > sestavení > iOS sestavení** karty:
+
+[![Konfigurace HttpClient v sadě Visual Studio pro Mac](transport-layer-security-images/ios-mac-sml.png)](transport-layer-security-images/ios-mac.png#lightbox)
+
+-----
+
+## <a name="update-macos-to-tls-12-in-visual-studio-for-mac"></a>Aktualizace systému macOS na TLS 1.2 v sadě Visual Studio pro Mac
+
+Aktualizace **implementace HttpClient** možnost **možnosti projektu > sestavení > Mac sestavení** a povolit TSL 1.2 zabezpečení:
+
+[![Konfigurace HttpClient v sadě Visual Studio pro Mac](transport-layer-security-images/macos-mac-sml.png)](transport-layer-security-images/macos-mac.png#lightbox)
+
+## <a name="alternative-configuration-options"></a>Možnosti alternativní konfigurace
+
+Tato část popisuje alternativy TLS 1.2 podporované konfigurace uvedené výše.
+Vývojáři aplikací zvažte alternativy pouze, pokud tito uživatelé pochopit rizika pomocí různé úrovně podpory protokolu TLS.
 
 ### <a name="httpclient-implementation"></a>Implementace HttpClient
 
@@ -63,24 +87,23 @@ Spravované zásobníku poskytuje nejvyšší úroveň kompatibility s existují
 
 Nativní možnosti může být rychlejší a mít lepší zabezpečení (včetně protokolu TLS 1.2), ale nemusí poskytnout všechny funkce a možnosti `HttpClient` třídy.
 
+### <a name="ssltls-implementation-android"></a>Implementace protokolu SSL/TLS (Android)
 
-### <a name="ssltls-implementation"></a>Implementace protokolu SSL/TLS
+Možnosti projektu Android vám také umožní vybrat které implementace SSL/TLS na podporu:
 
-Možnosti projektu vám také umožní vybrat které implementace SSL/TLS na podporu:
-
-- **Mono nebo spravované** – v systému Android protokolu TLS 1.1, TLS 1.0 na iOS a systému macOS.
-- **Nativní** – protokol TLS 1.2 na Android, iOS a systému macOS.
+- **Spravovaná/mono** – protokol TLS 1.1 v systému Android
+- **Nativní** – protokol TLS 1.2 v systému Android.
 
 Nové projekty Xamarin výchozí pro nativní implementaci, který podporuje protokol TLS 1.2, (který se doporučuje pro všechny projekty), ale můžete přepnout zpět do spravovaného kódu Pokud požadované z důvodu kompatibility.
 
 > [!IMPORTANT]
-> **Mono nebo spravované** možnost odeberou v [budoucí verze](https://developer.xamarin.com/releases/ios/xamarin.ios_10/xamarin.ios_10.8/).
+> **Mono nebo spravované** možnost byla [ze systémů iOS a Mac](https://developer.xamarin.com/releases/ios/xamarin.ios_10/xamarin.ios_10.8/) možnosti projektu.
 >
-> Nativní možnost se doporučuje.
+> Možnost nativního se vždy používá na iOS a Mac platformách.
 
 ## <a name="platform-specific-details"></a>Podrobnosti o specifických pro platformy
 
-Výše uvedené souhrn vysvětluje nastavení projektu pro implementace HttpClient a SSL/TLS v projektech Xamarin. Implementace HttpClient lze také nastavit dynamicky v kódu a v systému iOS existují dvě možnosti nativní lze vybírat.
+Výše uvedené souhrn vysvětluje nastavení projektu pro implementace HttpClient a SSL/TLS v projektech Xamarin. Implementace HttpClient lze nastavit i dynamicky v kódu. Tyto příručky specifické pro platformu pro další informace najdete:
 
 - [**Android**](~/android/app-fundamentals/http-stack.md)
 - [**iOS a Mac**](~/cross-platform/macios/http-stack.md)
@@ -89,25 +112,25 @@ Výše uvedené souhrn vysvětluje nastavení projektu pro implementace HttpClie
 ## <a name="summary"></a>Souhrn
 
 Aplikace by měly používat zabezpečení TLS (Transport Layer) 1.2, pokud je to možné.
-Nové aplikace se teď výchozí do této konfigurace, ale budete muset aktualizovat nastavení v existujících aplikací podle pokynů v tomto článku.
+By měl aktualizovat nastavení v existujících aplikací podle pokynů v tomto článku, pak znovu sestavit a znovu nasadit na vaše zákazníky.
 
 ## <a name="related-links"></a>Související odkazy
 
 - [Zabezpečení přenosu aplikací](~/ios/app-fundamentals/ats.md)
-- [Xamarin.Android Environment](~/android/deploy-test/environment.md)
+- [Prostředí Xamarin.Android](~/android/deploy-test/environment.md)
 - [Xamarin cyklus 9 (únor 2017)](https://releases.xamarin.com/stable-release-cycle-9/)
 - [Protokol TLS (Wikipedia)](https://en.wikipedia.org/wiki/Transport_Layer_Security)
-- [Poznámky k verzi mono 4.8 – podpora TLS 1.2](http://www.mono-project.com/docs/about-monohttps://developer.xamarin.com/releases/4.8.0/#tls-12-support)
+- [Poznámky k verzi mono 4.8 – podpora TLS 1.2](http://www.mono-project.com/docs/about-mono/releases/4.8.0/#tls-12-support)
 - [BoringSSL](https://boringssl.googlesource.com/boringssl/)
 - [HttpClient, HttpClientHandler a WebRequestHandler vysvětlené](https://blogs.msdn.microsoft.com/henrikn/2012/08/07/httpclient-httpclienthandler-and-webrequesthandler-explained/)
-- [System.Net.HttpClient](https://msdn.microsoft.com/en-us/library/system.net.http.httpclient(v=vs.118).aspx)
-- [System.Net.HttpClientHandler](https://msdn.microsoft.com/en-us/library/system.net.http.httpclienthandler(v=vs.118).aspx)
-- [System.Net.HttpMessageHandler](https://msdn.microsoft.com/en-us/library/system.net.http.httpmessagehandler(v=vs.118).aspx)
-- [System.Net.HttpWebRequest](https://msdn.microsoft.com/en-us/library/system.net.httpwebrequest(v=vs.110).aspx)
-- [System.Net.WebClient](https://msdn.microsoft.com/en-us/library/system.net.webclient(v=vs.110).aspx)
-- [System.Net.WebRequest](https://msdn.microsoft.com/en-us/library/system.net.webrequest(v=vs.110).aspx)
+- [System.Net.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx)
+- [System.Net.HttpClientHandler](https://msdn.microsoft.com/library/system.net.http.httpclienthandler(v=vs.118).aspx)
+- [System.Net.HttpMessageHandler](https://msdn.microsoft.com/library/system.net.http.httpmessagehandler(v=vs.118).aspx)
+- [System.Net.HttpWebRequest](https://msdn.microsoft.com/library/system.net.httpwebrequest(v=vs.110).aspx)
+- [System.Net.WebClient](https://msdn.microsoft.com/library/system.net.webclient(v=vs.110).aspx)
+- [System.Net.WebRequest](https://msdn.microsoft.com/library/system.net.webrequest(v=vs.110).aspx)
 - [java.net.URLConnection](http://developer.android.com/reference/java/net/URLConnection.html)
 - [Foundation.CFNetwork](https://developer.xamarin.com/api/type/CoreFoundation.CFNetwork/)
 - [Foundation.NSUrlConnection](https://developer.xamarin.com/api/type/Foundation.NSUrlConnection/)
-- [System.Net.WebRequest](https://msdn.microsoft.com/en-us/library/system.net.webrequest(v=vs.110).aspx)
+- [System.Net.WebRequest](https://msdn.microsoft.com/library/system.net.webrequest(v=vs.110).aspx)
 - [Klient HTTP (ukázka)](https://developer.xamarin.com/samples/monotouch/HttpClient/)

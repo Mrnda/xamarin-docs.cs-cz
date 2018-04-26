@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/06/2018
-ms.openlocfilehash: 0187b65e4c10e7cc03715a997a90fbddab9bd532
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 71cddc07863002a887cada2bb0db0f8d25fd1a17
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="xamarinios-errors"></a>Chyby Xamarin.iOS
 
@@ -135,7 +135,7 @@ Ověřte, že nainstalovaná verze systému Xcode podporuje zvolené architektur
 
 <a name="MT0015" />
 
-### <a name="mt0015-invalid-abi--supported-abis-are-i386-x8664--armv7-armv7llvm-armv7llvmthumb2-armv7s-armv7sllvm-armv7sllvmthumb2-arm64-and-arm64llvm"></a>MT0015: Invalid ABI: *. Jsou podporované bis : i386, x86_64, armv7, armv7 + llvm, armv7 + llvm + thumb2, armv7s, armv7s + llvm, armv7s + llvm + thumb2, arm64 a arm64 + llvm.
+### <a name="mt0015-invalid-abi--supported-abis-are-i386-x8664--armv7-armv7llvm-armv7llvmthumb2-armv7s-armv7sllvm-armv7sllvmthumb2-arm64-and-arm64llvm"></a>MT0015: Neplatný ABI: *. Jsou podporované bis : i386, x86_64, armv7, armv7 + llvm, armv7 + llvm + thumb2, armv7s, armv7s + llvm, armv7s + llvm + thumb2, arm64 a arm64 + llvm.
 
 Byl předán neplatný ABI mtouch. Zadejte platný ABI.
 
@@ -631,7 +631,7 @@ protože `my/path.o` není platný název souboru z důvodu directory oddělovac
 
 <a name="MT0109" />
 
-### <a name="mt0109-the-assembly-0-was-loaded-from-a-different-path-than-the-provided-path-provided-path-1-actual-path-2"></a>MT0109: Sestavení: {0} byl načten z jiné cestě než zadaná cesta (Zadaná cesta: {1}, skutečné cesty: {2}).
+### <a name="mt0109-the-assembly-0-was-loaded-from-a-different-path-than-the-provided-path-provided-path-1-actual-path-2"></a>MT0109: Sestavení '{0}' byla načtena z jiné cestě než zadaná cesta (Zadaná cesta: {1}, skutečné cesty: {2}).
 
 Toto je upozornění znamenající, že byla sestavení odkazuje aplikaci načíst z jiného místa než požadovaný.
 
@@ -1653,11 +1653,11 @@ Sestavení, která způsobila problém jmenuje v chybové zprávě. Chcete-li te
 
 <a name="MT2104" />
 
-### <a name="mm2104-unable-to-link-assembly-0-as-it-is-mixed-mode"></a>MM2104: Nelze vytvořit odkaz sestavení: {0}, protože je ve smíšeném režimu.
+### <a name="mm2104-unable-to-link-assembly-0-as-it-is-mixed-mode"></a>MM2104: Nelze vytvořit odkaz sestavení '{0}, protože je ve smíšeném režimu.
 
 Ve smíšeném režimu sestavení nelze zpracovat linkeru.
 
-V tématu https://msdn.microsoft.com/en-us/library/x0w2664k.aspx Další informace o sestavení ve smíšeném režimu.
+V tématu https://msdn.microsoft.com/library/x0w2664k.aspx Další informace o sestavení ve smíšeném režimu.
 
 ## <a name="mt3xxx-aot-error-messages"></a>MT3xxx: AOT chybové zprávy
 
@@ -2060,7 +2060,7 @@ Ověřte, že `Register` atribut na spravované třídy uvedený v chybové zpr�
 
 <a name="MT4161" />
 
-### <a name="mt4161-the-registrar-found-an-unsupported-structure--all-fields-in-a-structure-must-also-be-structures-field--with-type-2-is-not-a-structure"></a>MT4161: Registrátora nalezen nepodporovaný struktura '\*': všechna pole ve struktuře musí být také struktury (pole '\*' typu '{2}' není struktury).
+### <a name="mt4161-the-registrar-found-an-unsupported-structure--all-fields-in-a-structure-must-also-be-structures-field--with-type-2-is-not-a-structure"></a>MT4161: Registrátora nalezen nepodporovaný struktura '\*': všechna pole ve struktuře musí být také struktury (pole "\*'s typem'{2}' není strukturou).
 
 Registrátora najít struktura s Nepodporovaná pole.
 
@@ -2179,7 +2179,7 @@ Pokud spustíte do této při vývoji vazby projektu nativní knihovny, nám ote
 
 Obvykle to ukazuje na chybu v Xamarin.iOS; Oznamte chybu v [ http://bugzilla.xamarin.com ](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS).
 
-### <a name="mt52xx-linking"></a>MT52xx: Linking
+### <a name="mt52xx-linking"></a>MT52xx: propojování
 
 <!--
   MT52xx linking
@@ -2953,7 +2953,7 @@ Obvykle to ukazuje na chybu v Xamarin.iOS; Oznamte chybu v [ http://bugzilla.xam
 
 <a name="MT8014" />
 
-### <a name="mt8014-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-null-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8014: Neplatný DelegateProxyAttribute pro návratovou hodnotu metody *.*: The DelegateType společnosti ({2}), obslužné rutiny, pole má hodnotu null. Oznamte chybu v http://bugzilla.xamarin.com.
+### <a name="mt8014-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-null-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8014: Neplatný DelegateProxyAttribute pro návratovou hodnotu metody *.*: The DelegateType ({2}), obslužné rutiny, pole má hodnotu null. Oznamte chybu v http://bugzilla.xamarin.com.
 
 Atribut DelegateProxy pro danou metodu je neplatný.
 
@@ -2961,7 +2961,7 @@ Obvykle to ukazuje na chybu v Xamarin.iOS; Oznamte chybu v [ http://bugzilla.xam
 
 <a name="MT8015" />
 
-### <a name="mt8015-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-not-a-delegate-its-a--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8015: Neplatný DelegateProxyAttribute pro návratovou hodnotu metody *.*: The DelegateType společnosti ({2}), obslužné rutiny, pole není delegáta, je *. Oznamte chybu v http://bugzilla.xamarin.com.
+### <a name="mt8015-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-not-a-delegate-its-a--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8015: Neplatný DelegateProxyAttribute pro návratovou hodnotu metody *.*: The DelegateType ({2}), obslužné rutiny, pole není delegáta, je *. Oznamte chybu v http://bugzilla.xamarin.com.
 
 Atribut DelegateProxy pro danou metodu je neplatný.
 

@@ -6,11 +6,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 33551a924af1b7ca9c465514c704a0c1445fc2c4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 76b0e9ea6e13ed053a53971b6dbe9f65bb436a4e
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="part-1--understanding-the-xamarin-mobile-platform"></a>Část 1 – Principy Xamarin mobilní platformy
 
@@ -173,7 +173,7 @@ Doporučujeme, abyste si přečetli relevantní pro platformy, které se zaměř
 
 -   **iOS** – [společnosti Apple Human Interface Guidelines](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/index.html)
 -   **Android** – [Google uživatelské rozhraní pravidla](http://developer.android.com/guide/practices/ui_guidelines/index.html)
--   **Windows** – [pokynů pro návrh zkušeností uživatele pro Windows](https://developer.microsoft.com/en-us/windows/design)
+-   **Windows** – [pokynů pro návrh zkušeností uživatele pro Windows](https://developer.microsoft.com/windows/design)
 
 
  <a name="Library_and_Code_Re-use" />
@@ -195,7 +195,7 @@ Příklady C# zdroje, které je možné v Xamarin.iOS nebo Xamarin.Android: SQLi
  <a name="Objective-C_Bindings_+_Binding_Projects" />
 
 
-### <a name="objective-c-bindings--binding-projects"></a>Objective-C Bindings + Binding Projects
+### <a name="objective-c-bindings--binding-projects"></a>Vazby jazyka Objective-C + vazby projekty
 
 Xamarin poskytuje nástroj názvem *btouch* , pomůže vytvořit vazby, které umožňují knihoven jazyka Objective-C pro použití v projektech pro Xamarin.iOS. Odkazovat [vazby typy jazyka Objective-C dokumentace](~/cross-platform/macios/binding/binding-types-reference.md) podrobnosti o tom, jak to provést.
 
@@ -230,7 +230,7 @@ Vývojáři, kteří znají rozhraní API existující C můžete vytvořit sadu
  <a name="C++_via_Cxxi" />
 
 
-### <a name="c-via-cppsharp"></a>C++ via CppSharp
+### <a name="c-via-cppsharp"></a>C++ prostřednictvím CppSharp
 
 Miguel vysvětluje CXXI (nyní označuje jako [CppSharp](https://github.com/mono/CppSharp)) na svůj [blog](http://tirania.org/blog/archive/2011/Dec-19.html). Alternativu k vazbu přímo do knihovny C++ je vytvoření obálku C a vytvořit vazbu, prostřednictvím P/Invoke.
 

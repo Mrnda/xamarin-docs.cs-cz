@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: f8e663ab2e274bff1ae8b700586d4c6749f04545
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 690edabd53752ff0347fdb232a4bbfcb1ba6e84d
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="case-study-tasky"></a>Případová studie: Tasky
 
@@ -166,7 +166,7 @@ public T GetItem<T> (int id) where T : BL.Contracts.IBusinessEntity, new ()
 
 #### <a name="locking-to-prevent-concurrent-access"></a>Aby se zabránilo souběžný přístup zamykání
 
-A [zámku](http://msdn.microsoft.com/en-us/library/c5kehkcz(v=vs.100).aspx) je implementována v rámci `TaskItemDatabase` třídy, aby souběžný přístup k databázi. Tím je zajištěno serializován souběžný přístup z různých vláknech (jinak součást uživatelského rozhraní může pokus o čtení databáze ve stejnou dobu aktualizuje vlákna na pozadí). Příklad způsobu implementace zámek je uveden zde:
+A [zámku](http://msdn.microsoft.com/library/c5kehkcz(v=vs.100).aspx) je implementována v rámci `TaskItemDatabase` třídy, aby souběžný přístup k databázi. Tím je zajištěno serializován souběžný přístup z různých vláknech (jinak součást uživatelského rozhraní může pokus o čtení databáze ve stejnou dobu aktualizuje vlákna na pozadí). Příklad způsobu implementace zámek je uveden zde:
 
 ```csharp
 static object locker = new object ();
@@ -233,7 +233,7 @@ V Tasky je Model `TaskItem` třídy a `TaskItemManager` implementuje vzor průč
 
  <a name="Façade" />
 
-#### <a name="faade"></a>Façade
+#### <a name="faade"></a>Průčelí za
 
  `TaskItemManager` zabalí `DAL.TaskItemRepository` zajistit Get, uložte a odstraňte metody, které se bude odkazovat prostřednictvím uživatelského rozhraní vrstvy a aplikaci.
 
@@ -253,7 +253,7 @@ Zbývající části popisují podrobnosti implementace specifické pro platform
 
  <a name="iOS_App" />
 
-## <a name="ios-app"></a>iOS App
+## <a name="ios-app"></a>Aplikace pro iOS
 
 Existují jen někteří z nich potřebnou k implementaci iOS Tasky aplikace pomocí běžných PCL projektu pro uložení a načtení dat třídy. Projekt pro Xamarin.iOS dokončení iOS je zobrazena níže:
 
@@ -357,7 +357,7 @@ Funkce **podrobnosti úlohy** obrazovce (například uložení nebo odstranění
 
  <a name="Android_App" />
 
-## <a name="android-app"></a>Android App
+## <a name="android-app"></a>Aplikace pro Android
 
 Dokončený projekt Xamarin.Android je na obrázku níže:
 

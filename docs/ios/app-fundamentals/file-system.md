@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 5c6a5233c9cdc043986f106712895439fa008b41
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0706e416861e5636413577d38bf524ce9184bc4d
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="working-with-the-file-system"></a>Práce s systému souborů
 
@@ -77,7 +77,7 @@ using (TextReader reader = new StreamReader("./TestData/test.xml")) {
 }
 ```
 
-V MSDN dokumentaci pro [System.Xml](http://msdn.microsoft.com/en-us/library/system.xml.aspx) obor názvů pro další informace o [serializace](http://msdn.microsoft.com/en-us/library/system.xml.serialization.aspx). Také byste měli revidovat [Xamarin.iOS dokumentace](~/ios/deploy-test/linker.md) na linkeru – obvykle budete muset přidat `[Preserve]` atribut třídy, které chcete serializovat.
+V MSDN dokumentaci pro [System.Xml](http://msdn.microsoft.com/library/system.xml.aspx) obor názvů pro další informace o [serializace](http://msdn.microsoft.com/library/system.xml.serialization.aspx). Také byste měli revidovat [Xamarin.iOS dokumentace](~/ios/deploy-test/linker.md) na linkeru – obvykle budete muset přidat `[Preserve]` atribut třídy, které chcete serializovat.
 
  <a name="Creating_Files_and_Directories" />
 
@@ -102,7 +102,7 @@ var directoryname = Path.Combine (documents, "NewDirectory");
 Directory.CreateDirectory(directoryname);
 ```
 
-Další informace o System.IO – obor názvů najdete v tématu [dokumentace MSDN](http://msdn.microsoft.com/en-us/library/system.io.aspx).
+Další informace o System.IO – obor názvů najdete v tématu [dokumentace MSDN](http://msdn.microsoft.com/library/system.io.aspx).
 
 
 ### <a name="serializing-json"></a>Serializace Json

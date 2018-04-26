@@ -6,11 +6,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: d5f639cffc8ff2d134731374bd72663fec81c6a0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6f6b88bf29e94a221b2ef58b3299348eb08d33fa
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="part-5---practical-code-sharing-strategies"></a>Část 5 - praktické kód sdílení strategie
 
@@ -200,7 +200,7 @@ Izolované úložiště je společné rozhraní API pro ukládání a načítán
 
 Je výchozí mechanismus pro přístup k souborům ve Windows Phone (Silverlight), která nebyla implementovaná v Xamarin.iOS a Xamarin.Android povolit společný kód přístup k souborům k zapsání. `System.IO.IsolatedStorage` Třída může být odkazováno pro všechny tři platformy v [sdílený projekt](~/cross-platform/app-fundamentals/shared-projects.md).
 
-Odkazovat [izolované úložiště – přehled pro Windows Phone](http://msdn.microsoft.com/en-us/library/windowsphone/develop/ff402541(v=vs.105).aspx) Další informace.
+Odkazovat [izolované úložiště – přehled pro Windows Phone](http://msdn.microsoft.com/library/windowsphone/develop/ff402541(v=vs.105).aspx) Další informace.
 
 Rozhraní API izolované úložiště nejsou k dispozici v [přenosné knihovny tříd](~/cross-platform/app-fundamentals/pcl.md). Jeden alternativou k PCL je [PCLStorage NuGet](https://pclstorage.codeplex.com/)
 

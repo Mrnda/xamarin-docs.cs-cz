@@ -5,11 +5,11 @@ ms.assetid: 50BCAF3B-1020-DDC1-0339-7028985AAC72
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 6d178231cd45d3b251a26c47abd47bf22b6c2716
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 63a213a62021923ac6dae8b080f3f8931621251d
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="threading"></a>Dělení na vlákna
 
@@ -17,7 +17,7 @@ Modul runtime Xamarin.iOS poskytuje vývojářům přístup k .NET dělení na v
 
 
 
-Xamarin důrazně doporučuje používat [Task Parallel Library](http://msdn.microsoft.com/en-us/library/dd460717.aspx) (TPL) pro vytváření aplikací mít několik důvodů:
+Xamarin důrazně doporučuje používat [Task Parallel Library](http://msdn.microsoft.com/library/dd460717.aspx) (TPL) pro vytváření aplikací mít několik důvodů:
 -  Plánovač TPL výchozí budou delegovat to provedení úlohy do fondu vláken, který naopak se dynamicky zvýší počet vláken, které jsou potřeba, protože probíhá proces, při vyloučení scénář, kde skončili neslučitelných pro doba využití procesoru příliš mnoho vláken. 
 -  Je snazší vezměte v úvahu operace z hlediska TPL úlohy. Můžete snadno s nimi manipulovat, k jejich plánování, serializaci jejich spuštění nebo spuštění mnoho paralelně s bohatou sadu rozhraní API. 
 -  Je základem pro programování s novou C# asynchronní jazyk rozšíření. 

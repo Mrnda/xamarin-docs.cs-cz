@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: 036dbc6a33126d4ade1a68e853ca6ddb4b7c83cc
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0df51429ea9655b0a72d9f4c1e413fa7e37410ac
+ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="app-search-enhancements"></a>Vylepšení hledání aplikace
 
@@ -107,7 +107,7 @@ Chcete-li povolit tuto funkci, postupujte takto:
 1. Vytváření rozšíření aplikace zprávu.
 2. Přidat `com.apple.developer.associated-domains` na oprávnění aplikace a budou zahrnovat seznam webových domén, které hostují bitové kopie je rozšíření zpráv aplikace pro sdílení. Pro každou doménu, zadejte `spotlight-image-search` služby.
 3. Přidat `apple-app-site-association` souboru na web, který je hostitelem bitové kopie. Tento soubor obsahuje slovník pro `spotlight-image-search` služby a obsahuje ID aplikace, které je předpona ID týmu nebo ID aplikace, za nímž následuje ID sady. Soubor může obsahovat maximálně 500 cesty a vzorů, které bude indexovat pomocí Spotlight a součástí bitové kopie oblíbených hledání. Další informace najdete v tématu společnosti Apple [vytvoření a nahrání souboru přidružení](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/AppSearch/UniversalLinks.html#//apple_ref/doc/uid/TP40016308-CH12-SW4) dokumentaci.
-4. Povolit Applebot procházet weby. Najdete v tématu společnosti Apple [o Applebot](https://support.apple.com/en-us/HT204683) dokumentaci.
+4. Povolit Applebot procházet weby. Najdete v tématu společnosti Apple [o Applebot](https://support.apple.com/HT204683) dokumentaci.
 
 V tématu naše [integrace aplikace zpráv](~/ios/platform/message-app-integration/index.md) dokumentace pro další podrobnosti.
 
