@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 6288a773fb7122c16b405b8a5056b23b7a59fb6d
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: d22ebf0e150c064835fa73765a65025f10ef4c2a
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="the-path-fill-types"></a>Typy výplně cesta
 
@@ -165,7 +165,7 @@ Za normálních okolností typ výplně cesty by měl mít vliv pouze výplněmi
 
 [![](fill-types-images/fivepointedstar-small.png "Trojitá snímek obrazovky stránky hvězdičky Five-Pointed")](fill-types-images/fivepointedstar-large.png#lightbox "Trojitá snímek obrazovky stránky Five-Pointed hvězdičkou")
 
-Mobilní snímky obrazovky Android a Windows zobrazit typické lichý a vinutí důsledky, ale pořadí tahu a výplně ovlivní také výsledky.
+Snímky obrazovky Android a UWP zobrazit typické lichý a vinutí důsledky, ale pořadí tahu a výplně ovlivní také výsledky.
 
 Algoritmus vinutí je závislá na směru, že jsou vykreslovány řádky. Obvykle při vytváření cestu, můžete určit, že směr jako určíte, že řádky jsou vykreslovány z jednoho bodu do jiného. Ale `SKPath` třída také definuje metody, třeba `AddRect` a `AddCircle` , kreslení celý rozvrhů. Chcete-li řídit, jak jsou vykreslovány tyto objekty, metody obsahovat parametr typu [ `SKPathDirection` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathDirection/), který má dva členy:
 
@@ -222,4 +222,4 @@ Jedná se o zajímavých obrázek vytvořen s minimální kódu:
 ## <a name="related-links"></a>Související odkazy
 
 - [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

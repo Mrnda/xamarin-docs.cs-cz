@@ -7,11 +7,11 @@ ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
 author: charlespetzold
 ms.author: chape
 ms.date: 07/29/2017
-ms.openlocfilehash: 9bdad3e7d3e16dfe906f96bce2b92cdb9ee6260a
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.openlocfilehash: 76192f48bedebb183c64c83e34c3908cc85d591c
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="path-effects"></a>Cesta efekty
 
@@ -854,7 +854,7 @@ V `PaintSurface` obslužnou rutinu, `SKPathEffect.Create2DPath` volání nastav�
 
 Škálování z původní snímek způsobí, že některé narušení, zvláště na obrazovce Android.
 
-Všimněte si, že tato dlaždice vždy zobrazovat celou a nikdy se zkrátí. S výjimkou na obrazovce Windows 10 Mobile není i zřejmé, že oblast má číslo je zaoblený obdélník. Pokud chcete, aby došlo ke zkrácení tyto dlaždice do konkrétní oblasti, použijte cestu výstřižek.
+Všimněte si, že tato dlaždice vždy zobrazovat celou a nikdy se zkrátí. Na první dva snímky obrazovky není i zřejmé, že oblast má číslo je zaoblený obdélník. Pokud chcete, aby došlo ke zkrácení tyto dlaždice do konkrétní oblasti, použijte cestu výstřižek.
 
 Zkuste nastavení `Style` vlastnost `SKPaint` do objektu `Stroke`, a uvidíte jednotlivé dlaždice uvedených než vyplněna.
 
@@ -1414,4 +1414,4 @@ Teď, když jste viděli účinky cesty, které v rozsahu od jednoduchého tečk
 ## <a name="related-links"></a>Související odkazy
 
 - [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

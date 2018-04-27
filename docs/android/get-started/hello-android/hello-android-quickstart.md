@@ -7,12 +7,12 @@ ms.assetid: 44007FA1-3ABC-4935-BF52-4613AF0553A6
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/08/2018
-ms.openlocfilehash: c5937cc86a8a1f8506b14774b0429bee3c8aa594
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/25/2018
+ms.openlocfilehash: 44c3e4b0f05526560ff4b32808ba476110ce5e8f
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="hello-android-quickstart"></a>Hello, Android: rychlý start
 
@@ -74,7 +74,7 @@ Název nového projektu `Phoneword`. Klikněte na tlačítko **OK** k vytvořen�
 Po vytvoření nového projektu, rozbalte **prostředky** složku a potom **rozložení** složky v **Průzkumníku řešení**.
 Klikněte dvakrát na **Main.axml** otevřít v Návrháři Android. Toto je soubor rozložení obrazovky aplikace:
 
-[![Open Main.axml](hello-android-quickstart-images/vs/04-open-layout-sml.png)](hello-android-quickstart-images/vs/04-open-layout.png#lightbox)
+[![Otevřete Main.axml](hello-android-quickstart-images/vs/04-open-layout-sml.png)](hello-android-quickstart-images/vs/04-open-layout.png#lightbox)
 
 Z **sada nástrojů** (oblast na levé straně), zadejte `text` do pole hledání a přetažení **Text (velká)** pomůcky na návrhovou plochu (oblast v centru):
 
@@ -114,7 +114,7 @@ Dalším krokem je přidání kód, který převede telefonní čísla z alfanum
 
 V **přidat novou položku** dialogovém okně, vyberte **Visual C# > kódu** a název nového souboru kódu **PhoneTranslator.cs**:
 
-[![Add PhoneTranslator.cs](hello-android-quickstart-images/vs/14-add-class-sml.png)](hello-android-quickstart-images/vs/14-add-class.png#lightbox)
+[![Přidat PhoneTranslator.cs](hello-android-quickstart-images/vs/14-add-class-sml.png)](hello-android-quickstart-images/vs/14-add-class.png#lightbox)
 
 Tím se vytvoří novou prázdnou C# třídu. Vložte následující kód do tohoto souboru:
 
@@ -185,11 +185,10 @@ Dalším krokem je přidání kódu k propojit se uživatelské rozhraní vlože
 (Resource.Layout.Main)` volání. Nejprve upravit kód šablony tak, aby `OnCreate` metoda vypadá zhruba takto:
 
 ```csharp
-using System;
 using Android.App;
-using Android.Content;
-using Android.Widget;
 using Android.OS;
+using Android.Widget;
+using Core;
 
 namespace Phoneword
 {
@@ -307,7 +306,7 @@ V **konfigurace nové aplikace Android** dialogové okno, ponechte název řeše
 Po vytvoření nového projektu, rozbalte **prostředky** složku a potom **rozložení** složky v **řešení** odsazení.
 Klikněte dvakrát na **Main.axml** otevřít v Návrháři Android. Toto je soubor rozložení pro obrazovky při jeho zobrazení v Návrháři Android:
 
-[![Open Main.axml](hello-android-quickstart-images/xs/05-open-layout-sml.png)](hello-android-quickstart-images/xs/05-open-layout.png#lightbox)
+[![Otevřete Main.axml](hello-android-quickstart-images/xs/05-open-layout-sml.png)](hello-android-quickstart-images/xs/05-open-layout.png#lightbox)
 
 Vyberte **Hello World, klikněte na tlačítko Poslat mi!** **Tlačítko** na návrhovou plochu a stiskněte klávesu **odstranit** klíč k jeho odebrání. 
 
@@ -420,13 +419,10 @@ Klikněte dvakrát na **MainActivity.cs** v **řešení Pad** ho otevřete.
 Začněte tím, že přidání obslužné rutiny události pro **přeložit** tlačítko. V `MainActivity` třídy, vyhledejte `OnCreate` metoda. Přidejte kód tlačítko uvnitř `OnCreate`, níže `base.OnCreate(bundle)` a `SetContentView (Resource.Layout.Main)` volání. Tlačítko šablony kód pro zpracování odebrat tak, aby `OnCreate` metoda vypadá zhruba takto:
 
 ```csharp
-using System;
 using Android.App;
-using Android.Content;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
+using Android.Widget;
+using Core;
 
 namespace Phoneword
 {

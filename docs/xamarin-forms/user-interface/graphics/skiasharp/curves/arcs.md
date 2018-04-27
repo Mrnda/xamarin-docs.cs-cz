@@ -7,11 +7,11 @@ ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
 author: charlespetzold
 ms.author: chape
 ms.date: 05/10/2017
-ms.openlocfilehash: c6fd0f905aceb9dddc4047abc6ad2722adf2d8e9
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: aba193ca38d60db52298fdf239d936310a4ac193
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="three-ways-to-draw-an-arc"></a>Tři způsoby, jak nakreslit oblouk
 
@@ -415,8 +415,6 @@ Tady je **tangens oblouk** stránky běžící na všechny tři platformách:
 
 [![](arcs-images/tangentarc-small.png "Trojitá snímek obrazovky stránky tangens oblouk")](arcs-images/tangentarc-large.png#lightbox "Trojitá snímek obrazovky stránky tangens oblouk")
 
-Na zařízení Windows Mobile tři body jsou téměř colinear a oblouk je velmi malé.
-
 Tečný oblouk je ideální pro vytváření zaoblenými hranami, jako je například zaoblený obdélník. Protože `SKPath` již obsahuje `AddRoundedRect` metoda, **zaokrouhlené pro sedmiúhelník** stránky demonstruje použití `ArcTo` pro zaokrouhlení rozích zachytávání sedm mnohoúhelníku. (Kód je zobecněn pro všechny regulární mnohoúhelníku.)
 
 `PaintSurface` Obslužnou rutinu [ `RoundedHeptagonPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RoundedHeptagonPage.cs) třída obsahuje jednu `for` smyčky k výpočtu souřadnice sedm vrcholy pro sedmiúhelník a druhý k výpočtu střední sedm postranní z nich vrcholy. Tyto středních bodů jsou pak používány k vytváření cesta:
@@ -669,4 +667,4 @@ I když jsou připojení mezi oblouky a přímky matematicky smooth, tato změna
 ## <a name="related-links"></a>Související odkazy
 
 - [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

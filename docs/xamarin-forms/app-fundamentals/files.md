@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/22/2017
-ms.openlocfilehash: 8315f1a0056c6a6f084ebfe2c29f0c0c2bb30330
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 02bea7e2ec927277a92c0732b25f590b5ae6704b
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="files"></a>Soubory
 
@@ -99,9 +99,6 @@ var resourcePrefix = "WorkingWithFiles.iOS.";
 #if __ANDROID__
 var resourcePrefix = "WorkingWithFiles.Droid.";
 #endif
-#if WINDOWS_PHONE
-var resourcePrefix = "WorkingWithFiles.WinPhone.";
-#endif
 
 Debug.WriteLine("Using this resource prefix: " + resourcePrefix);
 // note that the prefix includes the trailing period '.' that is required
@@ -142,7 +139,7 @@ Vzhledem k platformě Xamarin.Forms běží na více platforem, každou s vlastn
 
  [![Ukládání a načítání textu](files-images/saveandload-sml.png "ukládání a načítání souborů v aplikaci")](files-images/saveandload.png#lightbox "ukládání a načítání souborů v aplikaci")
 
-Každá platforma má mírně odlišné adresářovou strukturu a možnosti různých filesystem – například Xamarin.iOS a Xamarin.Android podporují většinu `System.IO` funkce ale Windows Phone podporuje pouze `IsolatedStorage` a [ `Windows.Storage` ](http://msdn.microsoft.com/library/windowsphone/develop/jj681698(v=vs.105).aspx) Rozhraní API.
+Každá platforma má mírně odlišné adresářovou strukturu a možnosti různých filesystem – například Xamarin.iOS a Xamarin.Android podporují většinu `System.IO` funkce ale univerzální platformu Windows podporuje jenom [ `Windows.Storage` ](/uwp/api/windows.storage/) Rozhraní API.
 
 Pokud chcete tento problém vyřešit, definuje ukázková aplikace rozhraní PCL Xamarin.Forms načíst a ukládat soubory. Nabízí jednoduché rozhraní API k načtení a uložení textové soubory, které se uloží v zařízení.
 
@@ -190,9 +187,9 @@ namespace WorkingWithFiles {
 }
 ```
 
-### <a name="universal-windows-platform-uwp-windows-81-and-windows-phone-81"></a>Univerzální platformu Windows (UWP), Windows 8.1 a Windows Phone 8.1
+### <a name="universal-windows-platform-uwp"></a>Univerzální platforma Windows (UPW)
 
-Tyto platformy mít jiný rozhraní API – systém souborů [ `Windows.Storage` ](/windows/uwp/files/quickstart-reading-and-writing-files/) – to znamená používá k uložení a načtení souborů.
+UWP má jiný rozhraní API – systém souborů [ `Windows.Storage` ](/windows/uwp/files/quickstart-reading-and-writing-files/) – to znamená používá k uložení a načtení souborů.
 `ISaveAndLoad` Rozhraní může být implementováno, jak je uvedeno níže:
 
 ```csharp
@@ -226,7 +223,6 @@ namespace WindowsApp
     }
 }
 ```
-
 
 <a name="Saving_and_Loading_in_Shared_Projects" />
 

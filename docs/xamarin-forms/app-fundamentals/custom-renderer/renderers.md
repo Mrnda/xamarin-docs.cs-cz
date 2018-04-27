@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/15/2016
-ms.openlocfilehash: 9402bd53ab3bfb0b11182eb700aa560e8f962de3
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 513b9b3738b9481444cdad10daa9b11a8441c9dd
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="renderer-base-classes-and-native-controls"></a>Základní třídy zobrazovací jednotky a nativní ovládací prvky
 
@@ -22,13 +22,13 @@ S výjimkou produktů `MapRenderer` třídy pro vykreslování specifických pro
 - **iOS** – Xamarin.Forms.Platform.iOS
 - **Android** – Xamarin.Forms.Platform.Android
 - **Android (kompatibility aplikace)** – Xamarin.Forms.Platform.Android.AppCompat
-- **Universal Windows Platform (UWP)** – Xamarin.Forms.Platform.UWP
+- **Univerzální platformu Windows (UWP)** – Xamarin.Forms.Platform.UWP
 
 `MapRenderer` Třída naleznete v následujících oborů názvů:
 
 - **iOS** – Xamarin.Forms.Maps.iOS
 - **Android** – Xamarin.Forms.Maps.Android
-- **Universal Windows Platform (UWP)** – Xamarin.Forms.Maps.UWP
+- **Univerzální platformu Windows (UWP)** – Xamarin.Forms.Maps.UWP
 
 ## <a name="pages"></a>Stránky
 
@@ -66,7 +66,7 @@ Následující tabulka uvádí zobrazovací jednotky a nativní řízení tříd
 |zobrazení|Zobrazovací jednotky|iOS|Android|Android (kompatibility aplikace)|UWP|
 |--- |--- |--- |--- |--- |--- |
 |[`ActivityIndicator`](https://developer.xamarin.com/api/type/Xamarin.Forms.ActivityIndicator/)|ActivityIndicatorRenderer|UIActivityIndicator|ProgressBar||ProgressBar|
-|[`BoxView`](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/)|BoxRenderer (iOS a Android), BoxViewRenderer (Windows Phone a WinRT)|UIView|Skupinu ViewGroup||rámeček|
+|[`BoxView`](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/)|BoxRenderer (iOS a Android), BoxViewRenderer (UWP)|UIView|Skupinu ViewGroup||rámeček|
 |[`Button`](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/)|ButtonRenderer|UIButton|Tlačítko|AppCompatButton|Tlačítko|
 |[`CarouselView`](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselView/)|CarouselViewRenderer|UIScrollView|RecyclerView||FlipView|
 |[`DatePicker`](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/)|DatePickerRenderer|UITextField|EditText||DatePicker|
@@ -84,7 +84,7 @@ Následující tabulka uvádí zobrazovací jednotky a nativní řízení tříd
 |[`Switch`](https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/)|SwitchRenderer|UISwitch|přepínače|SwitchCompat|ToggleSwitch|
 |[`TableView`](https://developer.xamarin.com/api/type/Xamarin.Forms.TableView/)|TableViewRenderer|UITableView|ListView||ListView|
 |[`TimePicker`](https://developer.xamarin.com/api/type/Xamarin.Forms.TimePicker/)|TimePickerRenderer|UITextField|EditText||TimePicker|
-|[`WebView`](https://developer.xamarin.com/api/type/Xamarin.Forms.WebView/)|WebViewRenderer|UIWebView|WebView||WebView|
+|[`WebView`](https://developer.xamarin.com/api/type/Xamarin.Forms.WebView/)|WebViewRenderer|UIWebView|Webové zobrazení||Webové zobrazení|
 
 ## <a name="cells"></a>Buněk
 

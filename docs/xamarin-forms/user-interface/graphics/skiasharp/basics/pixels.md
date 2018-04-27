@@ -7,11 +7,11 @@ ms.assetid: 26C25BB8-FBE8-4B77-B01D-16A163A16890
 author: charlespetzold
 ms.author: chape
 ms.date: 02/09/2017
-ms.openlocfilehash: e01d3e228a0684865fb09dd7a4cbb0e2f0b49125
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 95f782fd4670782217d8ce4bc055341747a71170
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="pixels-and-device-independent-units"></a>Pixelů a jednotky nezávislé na zařízení
 
@@ -102,7 +102,7 @@ Tady je programy spuštěné na všech tří platformách:
 
 Jak je vidět `CanvasSize` vlastnost `SKCanvasView` a `Size` vlastnost `SKImageInfo` hodnota jsou konzistentní v sestavách dimenze pixelů. `Height` a `Width` vlastnosti `SKCanvasView` jsou vlastnosti Xamarin.Forms a zobrazit zprávu velikost zobrazení v definované platformou jednotky nezávislé na zařízení.
 
-Simulátoru iOS 7 na levé straně neobsahuje 2 počet pixelů na jednotka nezávislá na zařízení, 3 pixelů na jednotku se systémem Android 5 Nexus v centru a 925 Lumia Nokia na pravé straně je 2,25 pixelů na jednotku. Zda je proč jednoduché v kruhu uvedené starší vypadá o stejnou velikost na iPhone a Windows phone, ale je menší na telefon se systémem Android.
+Simulátoru iOS 7 na levé straně má 2 počet pixelů na jednotka nezávislá na zařízení a 3 pixelů na jednotku se systémem Android 5 Nexus v centru. To je důvod, proč jednoduchý kruh uvedena výše má různou velikost na různých platformách.
 
 Pokud si přejete pracovat zcela v jednotky nezávislé na zařízení, můžete tak učinit nastavením `IgnorePixelScaling` vlastnost `SKCanvasView` k `true`. Nemusí ale jako výsledky. SkiaSharp vykreslí grafiky na menší prostor zařízení, s velikostí pixelů rovná velikosti zobrazení jednotky nezávislé na zařízení. (Například SkiaSharp využije zobrazení prostor 360 x 512 pixelů na Nexus 5.) Potom škálování této bitové kopie velikostí, což vede k významnému rastrový obrázek jaggies.
 
@@ -164,4 +164,4 @@ canvas.DrawOval(rect, paint);
 ## <a name="related-links"></a>Související odkazy
 
 - [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

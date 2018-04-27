@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: 638243958fce34871089b10185f150492dbd2b0d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c27f94302037e4e19c9d72131e7137c8a4004d5c
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="stacklayout"></a>StackLayout
 
@@ -215,8 +215,6 @@ Title="StackLayouts">
 Ve výše uvedeném kódu má za následek následující rozložení:
 
 ![](stack-layout-images/stack.png "Komplexní StackLayout")
-
-Všimněte si, že kvůli rozdílu ve způsobu vykreslení tlačítka ve Windows Phone, některé kroužky byly nahrazeny boxviews na snímku obrazovky Windows Phone.
 
 Všimněte si, že `StackLayouts`s jsou vnořené, protože v některých případech vnoření rozložení může být snazší než nabízí všechny elementy v rámci stejné rozvržení. Také Všimněte si, že, protože `StackLayout` nepodporuje překrývající se položky stránky není některé z rozložení niceties našli na stránkách pro ostatní rozložení.
 

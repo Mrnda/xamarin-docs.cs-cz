@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/19/2016
-ms.openlocfilehash: 1e1039f513534885dffe9fef348d567243651e22
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.openlocfilehash: 5c9eed8f48a40bc7feaadd0c644610f691713e9b
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="app-class"></a>Aplikace – třída
 
@@ -173,7 +173,7 @@ public partial class AppDelegate :
 }
 ```
 
-### <a name="android-project"></a>Android Project
+### <a name="android-project"></a>Projekt pro Android
 
 Android `MainActivity` nyní dědí z `FormsApplicationActivity`. V `OnCreate` přepsat `LoadApplication` metoda je volána s instancí `App` třídy.
 
@@ -198,70 +198,9 @@ public class MainActivity :
 > Je novější [ `FormsAppCompatActivity` ](~/xamarin-forms/platform/android/appcompat.md) základní třídu, která umožňuje lepší podpory Android materiálu návrhu.
 > To se stane výchozí šablonu pro Android v budoucnosti, ale můžete postupovat podle [tyto pokyny](~/xamarin-forms/platform/android/appcompat.md) k aktualizaci existující aplikace pro Android.
 
-
-### <a name="windows-phone-project"></a>Projekt Windows Phone
-
-Hlavní stránka v projektu Windows Phone (na základě Silverlight) musí dědit z `FormsApplicationPage`. To znamená XAML a C# pro `MainPage` odkaz `FormsApplicationPage` třídy, jak je vidět.
-
-XAML používá vlastní obor názvů tak, aby kořenový element odráží `FormsApplicationPage` třídy:
-
-```xaml
-<winPhone:FormsApplicationPage
-   ...
-   xmlns:winPhone="clr-namespace:Xamarin.Forms.Platform.WinPhone;assembly=Xamarin.Forms.Platform.WP8"
-    ...>
-</winPhone:FormsApplicationPage>
-```
-
-C# dědí z `FormsApplicationPage` třídy a volání `LoadApplication` k vytvoření instance vaše Xamarin.Forms `App`. Všimněte si, že je dobrým zvykem explicitně ke kvalifikaci použít obor názvů aplikace `App` protože aplikace Windows Phone také mají svůj vlastní `App` nezávislé na platformě Xamarin.Forms třídy.
-
-```csharp
-public partial class MainPage :
-    global::Xamarin.Forms.Platform.WinPhone.FormsApplicationPage // superclass new in 1.3
-{
-    public MainPage()
-    {
-        InitializeComponent();
-        SupportedOrientations = SupportedPageOrientation.PortraitOrLandscape;
-
-        global::Xamarin.Forms.Forms.Init();
-        LoadApplication(new YOUR_APP_NAMESPACE.App()); // new in 1.3, use the correct namespace
-    }
- }
-```
-
-### <a name="windows-81-project"></a>Windows 8.1 Project
-
-Na hlavní stránku [Windows 8.1 (založené na WinRT)](~/xamarin-forms/platform/windows/installation/tablet.md) projekty by měl nyní dědí `WindowsPage`. To znamená XAML pro `MainPage` odkaz `WindowsPage` třídy, jak je znázorněno:
-
-XAML používá vlastní obor názvů tak, aby kořenový element odráží `FormsApplicationPage` třídy:
-
-```xaml
-<forms:WindowsPage
-   ...
-   xmlns:forms="using:Xamarin.Forms.Platform.WinRT"
-   ...>
-</forms:WindowsPage>
-```
-
-Konstrukce codebehind C# musí volat `LoadApplication` k vytvoření instance vaše Xamarin.Forms `App`. Všimněte si, že je dobrým zvykem explicitně ke kvalifikaci použít obor názvů aplikace `App` vzhledem k tomu, že aplikace UWP také mají svůj vlastní `App` nezávislé na platformě Xamarin.Forms třídy.
-
-```csharp
-public partial class MainPage
-{
-    public MainPage()
-    {
-        InitializeComponent();
-        LoadApplication(new YOUR_APP_NAMESPACE.App());
-    }
- }
-```
-
-Všimněte si, že `Forms.Init()` musí být volán v **App.xaml.cs** kolem řádku 65.
-
 ### <a name="universal-windows-project-uwp-for-windows-10"></a>Univerzální projekt pro Windows (UWP) pro Windows 10
 
-[Universal Windows Project](~/xamarin-forms/platform/windows/installation/universal.md) podpory v Xamarin.Forms je aktuálně ve verzi Preview.
+V tématu [projekty instalace Windows](~/xamarin-forms/platform/windows/installation/index.md) informace o podpoře UWP v Xamarin.Forms.
 
 Na hlavní stránku projektu UPW musí dědit z `WindowsPage`. To znamená XAML a C# pro `MainPage` odkaz `FormsApplicationPage` třídy, jak je vidět.
 

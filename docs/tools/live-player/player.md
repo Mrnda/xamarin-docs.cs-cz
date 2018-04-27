@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 05/10/2017
-ms.openlocfilehash: 2ddaba4541af52ae119fbf504fdcc66ba357c113
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e3205d83ba207322d4c53c4c6e98d4890ad48a77
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="xamarin-live-player-app"></a>Aplikace Xamarin za provozu Player
 
@@ -23,7 +23,7 @@ ms.lasthandoff: 04/04/2018
 
 Přehrávač Xamarin za provozu je k dispozici pro Android z Google Play:
 
-[ ![K dispozici na webu Google Play](images/google-play-badge.png)](https://play.google.com/store/apps/details?id=com.xamarin.live)
+[![K dispozici na webu Google Play](images/google-play-badge.png)](https://play.google.com/store/apps/details?id=com.xamarin.live)
 
 Pro zařízení s Androidem bez Google Play je k dispozici prostřednictvím Xamarin Live Player [HockeyApp](https://aka.ms/xlp-hockeyapp) distribuce. Kromě toho časné sestavení pro Android může nainstalovat přímo na webu Google Play vyjádření výslovného souhlasu s [otevřete beta programu](https://play.google.com/apps/testing/com.xamarin.live)
 
@@ -53,7 +53,7 @@ Pokud připojení úspěšné, kód by měl téměř okamžité spuštění v za
 
 Klikněte na tlačítko informace **(i)** v dolní části aplikaci odhalit **možnosti** nabídky:
 
-[ ![Snímek obrazovky možností nabídky](player-images/options-sml.png)](player-images/options.png#lightbox)
+[![Snímek obrazovky možností nabídky](player-images/options-sml.png)](player-images/options.png#lightbox)
 
 ### <a name="logs"></a>Protokoly
 
@@ -61,11 +61,11 @@ Zobrazit protokoly k diagnostikování problémů.
 
 ### <a name="settings"></a>Nastavení
 
-* Přepnutí zobrazení chyby při kompilaci a modulu runtime.
-* Informace o verzi.
-* Odešlete zpětnou vazbu.
+- Přepnutí zobrazení chyby při kompilaci a modulu runtime.
+- Informace o verzi.
+- Odešlete zpětnou vazbu.
 
-[ ![Snímek obrazovky nastavení](player-images/settings-sml.png)](player-images/settings.png#lightbox)
+[![Snímek obrazovky nastavení](player-images/settings-sml.png)](player-images/settings.png#lightbox)
 
 ## <a name="managing-devices"></a>Správa zařízení
 
@@ -107,9 +107,8 @@ Toto okno se dostanete ze seznamu zařízení:
 
 Pokud máte jakékoli problémy najdete [omezení a řešení potíží s](~/tools/live-player/troubleshooting.md).
 
-
 ## <a name="related-links"></a>Související odkazy
 
 - [Omezení](~/tools/live-player/limitations.md)
 - [Odstraňování potíží](~/tools/live-player/troubleshooting.md)
-- [Ukázky za provozu Player Xamarin](~/tools/livehttps://developer.xamarin.com/samples.md)
+- [Ukázky za provozu Player Xamarin](samples.md)

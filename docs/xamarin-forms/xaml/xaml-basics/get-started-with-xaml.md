@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: f1d347cc37ab065e09cb2627ee2122797280f3c1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f8032966b49f6f023642b0d1338e8c5d740b66e0
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="part-1-getting-started-with-xaml"></a>Část 1. Začínáme s XAML
 
@@ -192,7 +192,7 @@ V době běhu kódu v projektu volání konkrétní platformu `LoadApplication` 
 
 I když nepotřebujete normálně tráví mnoho času se soubory generovaného kódu, někdy výjimky za běhu jsou vyvolány v kódu generovaného souborů, měli byste se seznámit s nimi.
 
-Při kompilování a spuštění tohoto programu `Label` prvek se zobrazuje v centru stránky, jako navrhuje XAML. Tři platformy zleva doprava se systémem iOS, Android a Windows 10 Mobile:
+Při kompilování a spuštění tohoto programu `Label` prvek se zobrazuje v centru stránky, jako navrhuje XAML. Tři platformy zleva doprava se systémy iOS, Android a UWP:
 
 [![](get-started-with-xaml-images/xamlsamples.png "Výchozí zobrazení Xamarin.Forms")](get-started-with-xaml-images/xamlsamples-large.png#lightbox "Xamarin.Forms výchozí zobrazení")
 
@@ -351,11 +351,11 @@ public MainPage()
 }
 ```
 
-Nastavení `Content` vlastnost stránky nahrazuje nastavení jazyka `Content` vlastnost v souboru XAML. Při kompilování a nasadit novou verzi tohoto programu, se zobrazí tlačítko na obrazovce. Stisknutím ho přejde na `HelloXamlPage`. Tady je výsledné stránky na zařízení iPhone, Android a Windows 10 Mobile zařízení:
+Nastavení `Content` vlastnost stránky nahrazuje nastavení jazyka `Content` vlastnost v souboru XAML. Při kompilování a nasadit novou verzi tohoto programu, se zobrazí tlačítko na obrazovce. Stisknutím ho přejde na `HelloXamlPage`. Tady je výsledné stránky na zařízení iPhone, Android a UWP:
 
 [![](get-started-with-xaml-images/helloxaml1.png "Text popisku otočen")](get-started-with-xaml-images/helloxaml1-large.png#lightbox "Text popisku otočen")
 
-Můžete přejít zpět na `MainPage` pomocí **< Zpět** tlačítko v systému iOS, pomocí na šipku vlevo v horní části stránky nebo v dolní části telefonu v systému Android, nebo pomocí na šipku vlevo v dolní části stránky na Windows 10 Mobile.
+Můžete přejít zpět na `MainPage` pomocí **< Zpět** tlačítko v systému iOS, pomocí na šipku vlevo v horní části stránky nebo v dolní části telefonu v systému Android, nebo pomocí na šipku vlevo v horní části stránky na Windows 10.
 
 Nebojte se experimentovat s XAML pro různé způsoby, jak vykreslit `Label`. Pokud potřebujete pro vložení libovolné znaky Unicode do textu, můžete použít standardní syntaxe jazyka XML. Například pokud chcete přepnout pozdrav uvozovky, použijte tento příkaz:
 

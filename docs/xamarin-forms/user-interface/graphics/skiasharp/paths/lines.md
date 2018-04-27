@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: b9a5e7c15fd1105a9ca4661ff38e4eb2c92dd10f
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 24bf7bd7fb2aa51968a96bdbf808030604665c26
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="lines-and-stroke-caps"></a>Řádky a tahu CAP k vzdálené ploše
 
@@ -235,7 +235,7 @@ Pro iPhone na levém ukazuje jak `SKPointMode.Points` – člen výčtu způsob�
 
 Pokud místo toho použít `SKPointMode.Lines`, jak je znázorněno na obrazovce Android v centru `DrawPoints` metoda nakreslí mezi každý pár `SKPoint` hodnoty, v takovém případě pomocí krytky zadaný řádek `Round`.
 
-Zařízení Windows mobile zobrazuje výsledek `SKPointMode.Polygon` hodnotu. Řádek vykreslením mezi následných body v poli, ale když se podíváte velmi úzce, uvidíte, že tyto řádky nejsou připojené. Každý z těchto samostatné řádky spustí a končí krytky zadaný řádek. Pokud jste vybrali `Round` CAP k vzdálené ploše, řádky se může zdát připojit, ale ve skutečnosti nejsou připojené.
+Snímek obrazovky UWP ukazuje výsledek `SKPointMode.Polygon` hodnotu. Řádek vykreslením mezi následných body v poli, ale když se podíváte velmi úzce, uvidíte, že tyto řádky nejsou připojené. Každý z těchto samostatné řádky spustí a končí krytky zadaný řádek. Pokud jste vybrali `Round` CAP k vzdálené ploše, řádky se může zdát připojit, ale ve skutečnosti nejsou připojené.
 
 Zda jsou řádky připojen nebo nebude připojený je velmi důležitý aspekt pracovat s grafické cesty.
 
@@ -243,4 +243,4 @@ Zda jsou řádky připojen nebo nebude připojený je velmi důležitý aspekt p
 ## <a name="related-links"></a>Související odkazy
 
 - [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

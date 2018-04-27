@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2016
-ms.openlocfilehash: 773636cf879439477a6f71e44f13ae66b8f10ea8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6138bd1f9211248b3a260795c2ef9d3db87580be
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="creating-an-effect"></a>Vytváření efekt
 
@@ -96,7 +96,7 @@ namespace EffectsDemo.iOS
 
 `OnElementPropertyChanged` Přepsání reaguje na změny vazbu vlastnosti na platformě Xamarin.Forms ovládací prvek. Když [ `IsFocused` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsFocused/) změny vlastností `BackgroundColor` vlastností ovládacího prvku se změní na prázdné, pokud má právě fokus, ovládacího prvku, v opačném případě se změní na světla fialová. Tato funkce je uzavřen do `try` / `catch` blokovat v případě, že ovládacího prvku účinek je připojen k nemá `BackgroundColor` vlastnost.
 
-## <a name="android-project"></a>Android Project
+## <a name="android-project"></a>Projekt pro Android
 
 Následující příklad kódu ukazuje `FocusEffect` implementace pro projekt Android:
 
@@ -150,17 +150,17 @@ namespace EffectsDemo.Droid
 
 `OnElementPropertyChanged` Přepsání reaguje na změny vazbu vlastnosti na platformě Xamarin.Forms ovládací prvek. Když [ `IsFocused` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsFocused/) změny vlastností barvu pozadí ovládacího prvku se změní na prázdné, pokud má právě fokus, ovládacího prvku, v opačném případě se změní na světle zelená. Tato funkce je uzavřen do `try` / `catch` blokovat v případě, že ovládacího prvku účinek je připojen k nemá `BackgroundColor` vlastnost.
 
-## <a name="windows-phone--universal-windows-platform-projects"></a>Windows Phone & Universal Windows Platform projekty
+## <a name="universal-windows-platform-projects"></a>Projekty platformy Universal Windows
 
-Následující příklad kódu ukazuje `FocusEffect` implementace pro projekty Windows Phone a univerzální platformu Windows (UWP):
+Následující příklad kódu ukazuje `FocusEffect` implementace pro univerzální platformu Windows (UWP) projekty:
 
 ```csharp
 using Xamarin.Forms;
-using Xamarin.Forms.Platform.WinRT;
+using Xamarin.Forms.Platform.UWP;
 
 [assembly: ResolutionGroupName("MyCompany")]
 [assembly: ExportEffect(typeof(FocusEffect), "FocusEffect")]
-namespace EffectsDemo.WinPhone81
+namespace EffectsDemo.UWP
 {
     public class FocusEffect : PlatformEffect
     {

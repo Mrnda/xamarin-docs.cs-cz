@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: 2edd7a982d0307475933a234e7e1fbb8dd8d6a34
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 924aa88d29379c98204fd810c651de56ff757971
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="relativelayout"></a>RelativeLayout
 
@@ -221,8 +221,6 @@ Title="RelativeLayout">
 Ve výše uvedeném kódu má za následek následující rozložení:
 
 ![](relative-layout-images/relative.png "Komplexní RelativeLayout")
-
-Všimněte si, že kvůli rozdílu ve způsobu vykreslení tlačítka ve Windows Phone, některé kroužky byly nahrazeny boxviews na snímku obrazovky Windows Phone.
 
 Všimněte si, že `RelativeLayouts`s jsou vnořené, protože v některých případech vnoření rozložení může být snazší než nabízí všechny elementy v rámci stejné rozvržení. Také Všimněte si, že některé prvky jsou `RelativeToView`, protože umožňuje jednodušší a intuitivnější rozložení při vztahy mezi zobrazení Průvodce umístění.
 

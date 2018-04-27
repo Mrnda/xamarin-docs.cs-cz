@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/20/2017
-ms.openlocfilehash: fd46411f3662652ef26addc76f273d6071401a6f
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: be131bdbfeceabd72494708cdfe9a263da9bbbd8
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="platform-features"></a>Funkce platformy
 
@@ -41,7 +41,7 @@ Xamarin.Forms má nyní preview podporuje GTK # aplikace.
 
 Xamarin.Forms má nyní preview podporu pro aplikace systému macOS.
 
-## <a name="wpfwpfmd"></a>[GRAFICKÝ SUBSYSTÉM WPF](wpf.md)
+## <a name="wpfwpfmd"></a>[WPF](wpf.md)
 
 Xamarin.Forms má nyní preview podporu pro aplikace Windows Presentation Foundation (WPF).
 
@@ -63,11 +63,4 @@ Nejsou k dispozici na Githubu, Nuget a úložišti součástí Xamarin pomáhaj�
 
 ## <a name="windowswindowsindexmd"></a>[Windows](windows/index.md)
 
-Xamarin.Forms má podporu pro čtyři různé typy projektu pro Windows:
-
-* Windows Phone 8 Silverlight (původní platformu Windows nepodporuje Xamarin.Forms),
-* Windows Phone 8.1 (WinRT)
-* Windows 8.1 (WinRT), a
-* Univerzální platformu Windows (Windows 10).
-
-Tato část popisuje rozdíly mezi nimi a jak je přidat do existujícího řešení Xamarin.Forms.
+Xamarin.Forms obsahuje podporu pro univerzální platformu Windows (UWP) ve Windows 10. Tento článek popisuje, jak přidat projektu UPW do existujícího řešení Xamarin.Forms.

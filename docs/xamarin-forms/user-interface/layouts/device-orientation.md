@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: 9d1b10925f1455c303950eff342764b1fbc9275d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b06b17ce8f19f7f7cabe35c23de5b61db8f71dbe
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="device-orientation"></a>Orientace zařízení
 
@@ -28,9 +28,6 @@ Tento článek vás provede vytvořením aplikace, které využít výhod funkc�
 ## <a name="controlling-orientation"></a>Řízení orientace
 
 Při použití Xamarin.Forms, podporovaná metoda řízení orientace zařízení je možné použít nastavení pro každý projekt.
-
-> [!NOTE]
-> Od verze Xamarin.Forms 1.5.0, které je chyba, což zabraňuje vlastní zobrazovací jednotky na základě pokusí řízení orientaci selhání. V tématu [toto pojednání](https://forums.xamarin.com/discussion/46653/forcing-landscape-for-a-single-page-in-ios#latest)Tato diskuse ve fórech Xamarin pro další informace.
 
 ### <a name="ios"></a>iOS
 
@@ -57,7 +54,6 @@ Pokud chcete upravit hodnoty pomocí rozhraní editoru klíč hodnota, vyberte *
 ![Podporované orientace zařízení v sadě Visual Studio pro Mac](device-orientation-images/orientation-xam-source.png)
 
 -----
-
 
 ### <a name="android"></a>Android
 
@@ -93,27 +89,9 @@ Xamarin.Android podporuje několik možností pro zadání orientaci:
 
 Všimněte si, že nativní Android rozhraní API nabízejí spoustu ovládat, jak se spravuje orientaci, včetně možnosti, které explicitně rozporu uživatele vyjádřit předvolby.
 
-### <a name="windows-phone"></a>Windows Phone
+### <a name="universal-windows-platform"></a>Univerzální platformu Windows
 
-Ve Windows Phone RT, jsou podporované orientace nastavené <span class="UIItem">Package.appxmanifest</span> souboru. Otevírání manifest se odhalit konfigurace panel, kde lze vybrat podporované orientace:
-
-![](device-orientation-images/vs-winrt-config.png "Package.appxmanifest Visual Editor")
-
-Ve Windows Phone 8 (Silverlight), podporované orientace nastaveny v kódu v <span class="UIItem">MainPage.xaml.cs</span> souboru. V šabloně projektu výchozí hodnota je nastavena již s následující řádek kódu:
-
-```csharp
-SupportedOrientations = SupportedPageOrientation.PortraitOrLandscape;
-```
-
-Postup určení možností orientaci na Windows Phone, nahraďte, kódem orientaci, ve které chcete povolit:
-
-```csharp
-SupportedOrientations = SupportedPageOrientation.PortraitOrLandscape;
-SupportedOrientations = SupportedPageOrientation.Portrait; // portrait only
-SupportedOrientations = SupportedPageOrientation.Landscape; // landscape only
-```
-
-Mějte na paměti, že Windows Phone podporuje zobrazení na šířku v obou (jak je vidět z na výšku) orientace zleva doprava a zprava doleva. Není možné určit, který se používá.
+Na univerzální platformu Windows (UWP), podporované orientace se nastavují v **Package.appxmanifest** souboru. Otevírání manifest se odhalit konfigurace panel, kde lze vybrat podporované orientace.
 
 <a name="Reacting_to_Changes_in_Orientation" />
 

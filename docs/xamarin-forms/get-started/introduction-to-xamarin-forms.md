@@ -1,27 +1,27 @@
 ---
 title: Úvod do Xamarin.Forms
-description: Xamarin.Forms je že napříč platformami nativně podporovaný abstrakce nástrojů uživatelského rozhraní, která umožňuje vývojářům snadno vytvářet uživatelského rozhraní, které můžete sdílet mezi Android, iOS, Windows a Windows Phone. Uživatelská rozhraní jsou vykreslovány pomocí nativní ovládací prvky typu cílovou platformu, povolíte Xamarin.Forms aplikací zachovat odpovídající vzhledu a chování pro každou platformu. Tento článek obsahuje úvod do Xamarin.Forms a jak začít pracovat psaní aplikací s ním.
+description: Xamarin.Forms je že napříč platformami nativně podporovaný abstrakce nástrojů uživatelského rozhraní, která umožňuje vývojářům snadno vytvářet uživatelského rozhraní, které můžete sdílet mezi Android, iOS a univerzální platformu Windows. Uživatelská rozhraní jsou vykreslovány pomocí nativní ovládací prvky typu cílovou platformu, povolíte Xamarin.Forms aplikací zachovat odpovídající vzhledu a chování pro každou platformu. Tento článek obsahuje úvod do Xamarin.Forms a jak začít pracovat psaní aplikací s ním.
 ms.prod: xamarin
 ms.assetid: f619595f-3ee7-439b-a1bc-d13e5106e6e9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/02/2016
-ms.openlocfilehash: 6428f1658245ec5ecf47e474bc5ffd5d49663bf2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9f7c9d1b410d9d1d699644148903fdc6cfeec4fd
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="an-introduction-to-xamarinforms"></a>Úvod do Xamarin.Forms
 
-_Xamarin.Forms je že napříč platformami nativně podporovaný abstrakce nástrojů uživatelského rozhraní, která umožňuje vývojářům snadno vytvářet uživatelského rozhraní, které můžete sdílet mezi Android, iOS, Windows a Windows Phone. Uživatelská rozhraní jsou vykreslovány pomocí nativní ovládací prvky typu cílovou platformu, povolíte Xamarin.Forms aplikací zachovat odpovídající vzhledu a chování pro každou platformu. Tento článek obsahuje úvod do Xamarin.Forms a jak začít pracovat psaní aplikací s ním._
+_Xamarin.Forms je že napříč platformami nativně podporovaný abstrakce nástrojů uživatelského rozhraní, která umožňuje vývojářům snadno vytvářet uživatelského rozhraní, které můžete sdílet mezi Android, iOS, Windows a univerzální platformu Windows. Uživatelská rozhraní jsou vykreslovány pomocí nativní ovládací prvky typu cílovou platformu, povolíte Xamarin.Forms aplikací zachovat odpovídající vzhledu a chování pro každou platformu. Tento článek obsahuje úvod do Xamarin.Forms a jak začít pracovat psaní aplikací s ním._
 
 <a name="Overview" />
 
 ## <a name="overview"></a>Přehled
 
-Xamarin.Forms je rozhraní, které umožňuje vývojářům umožní rychle vytvořit křížové platformy uživatelská rozhraní. Poskytuje, že se že jedná vlastní abstrakci pro uživatelské rozhraní, které bude vykresleno pomocí nativní ovládací prvky na iOS, Android, Windows nebo Windows Phone. To znamená, že aplikace můžete sdílet velkou část svůj kód uživatelského rozhraní a zachovat přitom přirozený vzhled a chování cílové platformy.
+Xamarin.Forms je rozhraní, které umožňuje vývojářům umožní rychle vytvořit křížové platformy uživatelská rozhraní. Poskytuje, že se že jedná vlastní abstrakci pro uživatelské rozhraní, které bude vykresleno pomocí nativní ovládací prvky na iOS, Android nebo univerzální platformu Windows (UWP). To znamená, že aplikace můžete sdílet velkou část svůj kód uživatelského rozhraní a zachovat přitom přirozený vzhled a chování cílové platformy.
 
 Xamarin.Forms umožňuje rychlé vytváření prototypů aplikací, které můžete rozvíjet v čase pro komplexní aplikace. Protože aplikace Xamarin.Forms nativních aplikací, nemají omezení jiných sadách například sandboxing prohlížeče, omezené rozhraní API nebo snížený výkon. Aplikace napsané v Xamarin.Forms se můžou využívat některé z rozhraní API nebo funkce základní platformy, jako například (ale nikoli výhradně) CoreMotion, PassKit a StoreKit v systému iOS; NFC a služby Google Play v systému Android; a dlaždice v systému Windows. Kromě toho je možné vytvořit aplikace, které se mají částí jejich uživatelské rozhraní vytvořen s Xamarin.Forms, zatímco ostatní části jsou vytvořené pomocí nativních nástrojů uživatelského rozhraní.
 
@@ -120,39 +120,6 @@ namespace HelloXamarinFormsWorld.Android
 ```
 
 `OnCreate` Přepsání inicializuje pomocí volání rozhraní Xamarin.Forms `Init` metoda. To způsobí, že implementace specifické pro Android Xamarin.Forms má být načten v aplikaci, než je aplikace Xamarin.Forms načtena.
-
-<a name="Launching_in_Windows_Phone" />
-
-#### <a name="windows-phone-81-winrt"></a>Windows Phone 8.1 (WinRT)
-
-V prostředí Windows Runtime aplikace `Init` metoda, která inicializuje rozhraní Xamarin.Forms se volá z `App` – třída:
-
-```csharp
-Xamarin.Forms.Forms.Init (e);
-
-if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
-{
-  ...
-}
-```
-
-To způsobí, že implementace specifické pro Windows Phone Xamarin.Forms načíst v aplikaci. Úvodní stránky Xamarin.Forms je spuštěn `MainPage` třídy, jak je ukázáno v následujícím příkladu kódu:
-
-```csharp
-public partial class MainPage
-{
-    public MainPage()
-    {
-      this.InitializeComponent();
-      this.NavigationCacheMode = NavigationCacheMode.Required;
-      this.LoadApplication(new HelloXamarinFormsWorld.App());
-    }
-}
-```
-
-Xamarin.Forms aplikace je načtena s `LoadApplication` metoda.
-
-Xamarin.Forms má také podpora pro Windows 8.1. Informace o tom, jak nakonfigurovat tuto funkci typy projektů naleznete v tématu [projekty Windows instalace](~/xamarin-forms/platform/windows/installation/index.md).
 
 #### <a name="universal-windows-platform"></a>Univerzální platforma pro Windows
 
@@ -747,7 +714,7 @@ Vytváření mobilních aplikací s Xamarin.Forms, seznamu pomocí Charlese Petz
 
 ## <a name="summary"></a>Souhrn
 
-Tento článek poskytuje úvod do Xamarin.Forms a jak začít pracovat psaní aplikací s ním. Xamarin.Forms je že napříč platformami nativně podporovaný abstrakce nástrojů uživatelského rozhraní, která umožňuje vývojářům snadno vytvářet uživatelského rozhraní, které můžete sdílet mezi Android, iOS, Windows a Windows Phone. Uživatelská rozhraní jsou vykreslovány pomocí nativní ovládací prvky typu cílovou platformu, povolíte Xamarin.Forms aplikací zachovat odpovídající vzhledu a chování pro každou platformu.
+Tento článek poskytuje úvod do Xamarin.Forms a jak začít pracovat psaní aplikací s ním. Xamarin.Forms je že napříč platformami nativně podporovaný abstrakce nástrojů uživatelského rozhraní, která umožňuje vývojářům snadno vytvářet uživatelského rozhraní, které můžete sdílet mezi Android, iOS a univerzální platformu Windows. Uživatelská rozhraní jsou vykreslovány pomocí nativní ovládací prvky typu cílovou platformu, povolíte Xamarin.Forms aplikací zachovat odpovídající vzhledu a chování pro každou platformu.
 
 
 ## <a name="related-links"></a>Související odkazy

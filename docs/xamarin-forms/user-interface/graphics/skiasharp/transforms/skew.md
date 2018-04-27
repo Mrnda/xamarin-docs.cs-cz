@@ -7,11 +7,11 @@ ms.assetid: FDD16186-E3B7-4FF6-9BC2-8A2974BFF616
 author: charlespetzold
 ms.author: chape
 ms.date: 03/20/2017
-ms.openlocfilehash: 39547ebaf301a9b6dca6a90cb5ede831b19862cf
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: c8913dcb5dbe9664f1186b1acf46f09cb8da74ed
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="the-skew-transform"></a>Zkosení transformace
 
@@ -71,13 +71,13 @@ Hodnoty `xSkew` argument posunutí dolní části textu pro kladné hodnoty nebo
 
 [![](skew-images/skewexperiment-small.png "Trojitá snímek obrazovky stránky zkreslit experimentu")](skew-images/skewexperiment-large.png#lightbox "Trojitá snímek obrazovky stránky zkreslit experimentu")
 
-Pokud `xSkew` je záporná z `ySkew`, výsledek je otočení, ale také poněkud škálovat jako Windows označuje zobrazení.
+Pokud `xSkew` je záporná z `ySkew`, výsledkem je, otáčení, ale také škálovat poněkud jako označuje UWP zobrazení.
 
 Transformace vzorce jsou následující:
 
-x' = x + xSkew · y
+x: = x + xSkew · y
 
-y' = ySkew · x + y
+y' = ySkew · x a y
 
 Například pro pozitivní `xSkew` hodnota, transformovaných `x'` hodnota se zvyšuje s rostoucím `y` zvyšuje. To je, co způsobí, že náklon.
 
@@ -251,4 +251,4 @@ Nyní se bude stín rozšiřuje v dolní části těchto dolní dotahy:
 ## <a name="related-links"></a>Související odkazy
 
 - [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

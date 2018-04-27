@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 09328e1c6d884898aed86f2cb8ab1b84bf6d5cab
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 52c86c63c328729211c4fbd22bd10b5eb1e56615
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="fonts"></a>Písma
 
@@ -52,7 +52,7 @@ Můžete také `NamedSize` výčet, který obsahuje čtyři integrované možnos
 
 -  **Micro**
 -  **Malá**
--  **Medium**
+-  **Střední**
 -  **Velká**
 
 
@@ -166,7 +166,7 @@ Chcete-li určit více `Font` nastavení zkombinovat požadovaná nastavení do 
         <OnPlatform x:TypeArguments="x:String">
                 <On Platform="iOS" Value="MarkerFelt-Thin" />
                 <On Platform="Android" Value="Lobster-Regular.ttf#Lobster-Regular" />
-                <On Platform="UWP, WinRT, WinPhone" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />
+                <On Platform="UWP" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />
         </OnPlatform>
     </Label.FontFamily>
 </Label>
@@ -178,7 +178,7 @@ Při zadávání řez vlastní písma, vždycky je vhodné použít `OnPlatform`
 
 ## <a name="using-a-custom-font"></a>Pomocí vlastního písma
 
-Použití písem než předdefinované řezů písma vyžaduje některé specifické pro platformu kódování. Tento snímek obrazovky ukazuje vlastní písmo **severského** z [Google open-source písem](https://www.google.com/fonts) vykreslen v systému iOS, Android a Windows Phone pomocí Xamarin.Forms.
+Použití písem než předdefinované řezů písma vyžaduje některé specifické pro platformu kódování. Tento snímek obrazovky ukazuje vlastní písmo **severského** z [Google open-source písem](https://www.google.com/fonts) vykreslen pomocí Xamarin.Forms.
 
  [![Vlastní písma na iOS a Android](fonts-images/custom-sml.png "vlastní písem příklad")](fonts-images/custom.png#lightbox "příklad vlastní písem")
 
@@ -240,7 +240,7 @@ Můžete také použít [ `Device.RuntimePlatform` ](~/xamarin-forms/platform/de
         <OnPlatform x:TypeArguments="x:String">
                 <On Platform="iOS" Value="Lobster-Regular" />
                 <On Platform="Android" Value="Lobster-Regular.ttf#Lobster-Regular" />
-                <On Platform="UWP, WinRT, WinPhone" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />
+                <On Platform="UWP" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />
         </OnPlatform>
     </Label.FontFamily>
 </Label>

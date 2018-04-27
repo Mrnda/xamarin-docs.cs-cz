@@ -6,11 +6,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/21/2018
-ms.openlocfilehash: 238e224a1dfbc17089c8b6d03e78043f77f3f383
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 18c49afdd08921b81573da94c23e66f1dd48a25f
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="preparing-an-application-for-release"></a>Příprava aplikace pro vydání
 
@@ -192,7 +192,7 @@ Všimněte si, že ladicí sestavení automaticky nastavit některá oprávněn�
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 I když [zakázáno ladění](#Disable_Debugging), je stále možné pro útočníky znovu zabalit aplikace, přidání nebo odebrání možnosti konfigurace nebo oprávnění. To jim umožňuje provádět zpětnou analýzu, ladění a manipulovat s aplikací.
-[Dotfuscatoru Community Edition (CE)](https://www.preemptive.com/products/dotfuscator/overview) slouží k obfuskováním spravovaného kódu a vložit runtime bezpečnostní stav detekce kód do aplikace Xamarin.Android v čase vytvoření buildu.
+[Dotfuscatoru Community Edition (CE)](https://www.preemptive.com/products/dotfuscator/overview) slouží k obfuskováním spravovaného kódu a vložit runtime bezpečnostní stav detekce kód do aplikace Xamarin.Android v čase vytvoření buildu zjistit a reagovat, pokud aplikace běží na zařízení s rootem.
 
 Dotfuscatoru CE je obsažen v sadě Visual Studio, ale pouze Visual Studio 2015 Update 3 (a vyšší) má správná verze pro práci s Xamarin.Android. Chcete-li použít Dotfuscatoru, klikněte na tlačítko **nástroje > preemptivní ochrana – Dotfuscatoru**.
 
@@ -202,7 +202,7 @@ Jakmile se nakonfiguruje, Dotfuscatoru CE automaticky chránit každé sestaven�
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 I když [zakázáno ladění](#Disable_Debugging), je stále možné pro útočníky znovu zabalit aplikace, přidání nebo odebrání možnosti konfigurace nebo oprávnění. To jim umožňuje provádět zpětnou analýzu, ladění a manipulovat s aplikací.
-I když nepodporuje sady Visual Studio pro Mac, můžete použít [Dotfuscatoru Community Edition (CE)](https://www.preemptive.com/products/dotfuscator/overview) pomocí sady Visual Studio obfuskováním spravovaného kódu a vložit runtime bezpečnostní stav detekce kód do aplikace Xamarin.Android v okamžiku sestavení .
+I když nepodporuje sady Visual Studio pro Mac, můžete použít [Dotfuscatoru Community Edition (CE)](https://www.preemptive.com/products/dotfuscator/overview) pomocí sady Visual Studio obfuskováním spravovaného kódu a vložit runtime bezpečnostní stav detekce kód do aplikace Xamarin.Android v okamžiku sestavení zjistit a reagovat, pokud aplikace běží na zařízení s rootem.
 
 Pokud chcete konfigurovat Dotfuscatoru CE, najdete v tématu [pomocí Dotfuscatoru Community Edition s Xamarinem](https://www.preemptive.com/obfuscating-xamarin-with-dotfuscator).
 Jakmile se nakonfiguruje, Dotfuscatoru CE automaticky chránit každé sestavení, který je vytvořen.

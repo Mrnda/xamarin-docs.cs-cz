@@ -5,12 +5,12 @@ ms.assetid: 7DC22A08-808A-DC0C-B331-2794DD1F9229
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: f4be88a1eabb3fa3cca733690a3f097a03516272
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/25/2018
+ms.openlocfilehash: 9ce1d790f5dea00ac47d5639ae8424793006445a
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="architecture"></a>Architektura
 
@@ -70,7 +70,7 @@ Pozor musí provést při uvolnění spravované obálky s možností, pokud lze
 Spravovaná obálka volatelná aplikacemi podtřídy jsou může bydlišti všechny "zajímavé" specifické pro aplikaci logiky. Patří mezi ně vlastní [Android.App.Activity](https://developer.xamarin.com/api/type/Android.App.Activity/) podtřídy (například [aktivity "activity1"](https://github.com/xamarin/monodroid-samples/blob/master/HelloM4A/Activity1.cs#L13) zadejte výchozí šablona projektu). (Konkrétně tyto jsou *Java.Lang.Object* podtřídy, které se *není* obsahovat [RegisterAttribute](https://developer.xamarin.com/api/type/Android.Runtime.RegisterAttribute/) vlastních atributů nebo [ RegisterAttribute.DoNotGenerateAcw](https://developer.xamarin.com/api/property/Android.Runtime.RegisterAttribute.DoNotGenerateAcw/) je *false*, který je výchozí.)
 
 Jako spravované obálky s možností spravovaná obálka volatelná aplikacemi podtřídy také obsahovat globální odkaz, přístupný prostřednictvím [Java.Lang.Object.Handle](https://developer.xamarin.com/api/property/Java.Lang.Object.Handle/) vlastnost. Stejně jako s spravované obálky s možností, může být explicitně uvolněno globální odkazy voláním [Java.Lang.Object.Dispose()](https://developer.xamarin.com/api/member/Java.Lang.Object.Dispose/).
-Na rozdíl od spravované obálky s možností *pozor* by měla být provedena před uvolnění těchto instancí jako *Dispose()*ing instance poruší mapování mezi Java instanci (instance Android obálka volatelná aplikacemi) a spravované instance.
+Na rozdíl od spravované obálky s možností *pozor* by měla být provedena před uvolnění těchto instancí jako *Dispose()* ing instance poruší mapování mezi Java instanci (instance Android obálka volatelná aplikacemi) a spravované instance.
 
 
 ### <a name="java-activation"></a>Aktivace Java
@@ -101,7 +101,7 @@ Pořadí událostí:
 
 4.  *TextView* volá konstruktor *monodroid.apidemo.LogTextBox.getDefaultMovementMethod()* .
 
-5.  *monodroid.apidemo.LogTextBox.getDefaultMovementMethod()* invokes *LogTextBox.n_getDefaultMovementMethod()* , which invokes *TextView.n_GetDefaultMovementMethod()* , which invokes [Java.Lang.Object.GetObject&lt;TextView&gt; (handle, JniHandleOwnership.DoNotTransfer)](https://developer.xamarin.com/api/member/Java.Lang.Object.GetObject%7BT%7D/p/System.IntPtr/Android.Runtime.JniHandleOwnership/) .
+5.  *monodroid.apidemo.LogTextBox.getDefaultMovementMethod()* vyvolá *LogTextBox.n_getDefaultMovementMethod()* , který vyvolá *TextView.n_GetDefaultMovementMethod()* , který vyvolá [Java.Lang.Object.GetObject&lt;TextView&gt; (zpracování, JniHandleOwnership.DoNotTransfer)](https://developer.xamarin.com/api/member/Java.Lang.Object.GetObject%7BT%7D/p/System.IntPtr/Android.Runtime.JniHandleOwnership/) .
 
 6.  *Java.Lang.Object.GetObject&lt;TextView&gt;()* instanci zkontroluje, jestli je už odpovídající C# pro *zpracování* . Pokud existuje, bude vrácen. V tomto scénáři není k dispozici, tak *Object.GetObject&lt;T&gt;()* musíte vytvořit.
 
@@ -115,11 +115,7 @@ Pořadí událostí:
 
 11. *LogTextBox (kontextu, IAttributeSet, int)* konstruktoru *ve stejné instanci vytvořené v (7)* .
 
-12. ...
-
-
-Pokud (IntPtr, JniHandleOwnership) nelze najít konstruktor, pak [System.MissingMethodException](https://developer.xamarin.com/api/type/System.MissingMethodException/) bude vyvolána.
-
+12. Pokud (IntPtr, JniHandleOwnership) konstruktor nelze najít, pak System.MissingMethodException] (https://developer.xamarin.com/api/type/System.MissingMethodException/) bude vyvolána.
 
 <a name="Premature_Dispose_Calls" />
 

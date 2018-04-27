@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2017
-ms.openlocfilehash: afaf0c702cdba1ba9c5d2c9d158501c50501f910
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3fc5b24474230fd2b2477f020ac24cd72996d7b1
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="hierarchical-navigation"></a>Hierarchická navigace
 
@@ -47,7 +47,7 @@ Rozložení [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.
 
 - V systému iOS, se nachází v horní části stránky, který zobrazí název, a který má navigačním panelu *zpět* tlačítko, které vrátí na předchozí stránku.
 - V systému Android, se nachází v horní části stránky, který zobrazuje název, ikonu, navigačním panelu a *zpět* tlačítko, které vrátí na předchozí stránku. Ikona je definována v `[Activity]` atribut, který upraví `MainActivity` třídy v projektu pro specifické pro platformu Android.
-- Na Windows Phone je přítomen v horní části stránky, který zobrazuje název navigačním panelu. Windows Phone chybí *zpět* tlačítko na navigačním panelu, protože obrazovce *zpět* tlačítko k dispozici v dolní části obrazovky.
+- Na univerzální platformu Windows nachází v horní části stránky, který zobrazuje název navigačním panelu. 
 
 Na všech platformách hodnotu [ `Page.Title` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Title/) vlastnosti se zobrazí jako nadpis stránky.
 

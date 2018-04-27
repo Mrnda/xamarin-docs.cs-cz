@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms Deep Dive
+title: Informace přímým Xamarin.Forms
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: d97aa580-1eb9-48b3-b15b-0d7421ea7ae
@@ -7,13 +7,13 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/06/2018
-ms.openlocfilehash: 91086186f600855f597e3cd758b9bc30b48d82fb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e254aa14f5889cee6b5bee452f5275fd579eb8fc
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
-# <a name="xamarinforms-deep-dive"></a>Xamarin.Forms Deep Dive
+# <a name="xamarinforms-deep-dive"></a>Informace přímým Xamarin.Forms
 
 V [rychlý start Xamarin.Forms](~/xamarin-forms/get-started/hello-xamarin-forms/quickstart.md), Phoneword byla vytvořena. Tento článek zkontroluje, co byla vytvořena získat představu o základní informace o fungování Xamarin.Forms aplikace.
 
@@ -316,7 +316,7 @@ Aplikace Phoneword pro Xamarin.Forms obsahuje zavedla několik konceptů, které
         <ContentPage.Padding>
             <OnPlatform x:TypeArguments="Thickness">
                 <On Platform="iOS" Value="20, 40, 20, 20" />
-                <On Platform="Android, WinPhone, Windows" Value="20" />
+                <On Platform="Android, UWP" Value="20" />
             </OnPlatform>
         </ContentPage.Padding>
         ...

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 050e37d208c3ba5a330d7ecc6df9d106e14f8bb9
-ms.sourcegitcommit: f52aa66de4d07bc00931ac8af791d4c33ee1ea04
+ms.openlocfilehash: e296ca79ee03e7fc61532758219b65946a8d4381
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="map"></a>mapy
 
@@ -50,7 +50,7 @@ V systému Android musí projít stejné parametry jako `Forms.Init`:
 Xamarin.FormsMaps.Init(this, bundle);
 ```
 
-Pro prostředí Windows Runtime (WinRT) a univerzální platformu Windows (UWP) použijte následující kód:
+Pro univerzální platformu Windows (UWP) použijte následující kód:
 
 ```csharp
 Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
@@ -60,7 +60,7 @@ Přidejte toto volání v následujících souborech pro každou platformu:
 
 -  **iOS** -AppDelegate.cs v souboru `FinishedLaunching` metoda.
 -  **Android** -MainActivity.cs v souboru `OnCreate` metoda.
--  **WinRT a UWP** -souboru MainPage.xaml.cs, `MainPage` konstruktor.
+-  **UWP** -souboru MainPage.xaml.cs, `MainPage` konstruktor.
 
 Jakmile se přidal balíček NuGet a inicializační metoda volána v rámci každé applcation `Xamarin.Forms.Maps` rozhraní API mohou být používány společný kód PCL nebo sdílený projekt.
 
@@ -132,9 +132,9 @@ Na snímku obrazovky níže jsou uvedeny některé z těchto:
 
 Poslední dva jsou požadovány, protože aplikace vyžaduje síťové připojení ke stahování dat mapy. Přečtěte si informace o Android [oprávnění](http://developer.android.com/reference/android/Manifest.permission.html) Další informace.
 
-### <a name="windows-runtime-and-universal-windows-platform"></a>Prostředí Windows Runtime a univerzální platformu Windows
+### <a name="universal-windows-platform"></a>Univerzální platforma pro Windows
 
-Chcete-li použít mapy v prostředí Windows Runtime a univerzální platformu Windows musíte vygenerovat autorizační token. Další informace najdete v tématu [žádostí ověřovací klíč mapy](https://msdn.microsoft.com/library/windows/apps/mt219694.aspx) na webu MSDN.
+Chcete-li použít mapy na univerzální platformu Windows musíte vygenerovat autorizační token. Další informace najdete v tématu [žádostí ověřovací klíč mapy](https://msdn.microsoft.com/library/windows/apps/mt219694.aspx) na webu MSDN.
 
 Ověřovací token musí být zadán pak v `FormsMaps.Init("AUTHORIZATION_TOKEN")` volání metody k ověření aplikace pomocí mapy Bing.
 
@@ -255,7 +255,7 @@ MyMap.MoveToRegion(
 
 ## <a name="summary"></a>Souhrn
 
-Xamarin.Forms.Maps je samostatný NuGet, který musí být přidaný do jednotlivých projektů v řešení Xamarin.Forms. Je požadován, jako i některé kroky konfigurace pro iOS, Android, WinRT a UWP další inicializační kód.
+Xamarin.Forms.Maps je samostatný NuGet, který musí být přidaný do jednotlivých projektů v řešení Xamarin.Forms. Je požadován, jako i některé kroky konfigurace pro iOS, Android a UWP další inicializační kód.
 
 Jednou nakonfigurovaných rozhraní API map můžete použít k vykreslení maps se značkami PIN kód v několika řádků kódu. Mapy lze dále rozšířit o [vlastní zobrazovací jednotky](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md).
 

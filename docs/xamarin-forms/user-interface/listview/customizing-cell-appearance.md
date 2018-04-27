@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: df0e113f0c76ea9bde58da7a7ceccd50edd5b227
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 74f65021c23515e78e630f907a89ffde74de4da4
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="cell-appearance"></a>Vzhledu buněk
 
@@ -51,7 +51,7 @@ TextCells se vykresluje jako nativní ovládací prvky v době běhu, výkon, je
 
 <a name="ImageCell" />
 
-### <a name="imagecell"></a>ImageCell
+### <a name="imagecell"></a>Funkce ImageCell
 
 [`ImageCell`](http://developer.xamarin.com/api/type/Xamarin.Forms.ImageCell/), jako je `TextCell`, lze použít pro zobrazení textu a sekundární podrobností text a nabízí vysoký výkon pomocí nativní ovládací prvky každou platformu. `ImageCell` se liší od `TextCell` v, že se zobrazí obrázek vlevo od textu.
 
@@ -62,8 +62,6 @@ TextCells se vykresluje jako nativní ovládací prvky v době běhu, výkon, je
 - `TextColor` &ndash; Barva textu
 - `DetailColor` &ndash; Barva textu podrobností
 - `ImageSource` &ndash; obrázek, který má zobrazit vedle textu
-
-Všimněte si, že pokud je cílem Windows Phone 8.1, `ImageCell` nelze škálovat bitové kopie ve výchozím nastavení. Pamatujte taky, Windows Phone 8.1 je pouze platformy, na které podrobností se zobrazí text ve stejné barvy a písma jako primární text ve výchozím nastavení. Windows Phone 8.0 vykreslí `ImageCell` jak vidíte níže:
 
 ![](customizing-cell-appearance-images/image-cell-default.png "Výchozí funkce ImageCell příklad")
 

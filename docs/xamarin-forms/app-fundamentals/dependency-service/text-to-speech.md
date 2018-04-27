@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/18/2017
-ms.openlocfilehash: 67e392bb3672e54a1e2fe709af9cf5deb3dae5e8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c9cf700ea798ac316e806c40cb90eedc7ded9fa5
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="implementing-text-to-speech"></a>Implementace převod textu na řeč
 
@@ -20,7 +20,7 @@ Tento článek vám pomohou, jako je vytváření aplikace a platformy, která v
 - **[Vytváření rozhraní](#Creating_the_Interface)**  &ndash; pochopit vytváření rozhraní ve sdílené kódu.
 - **[iOS implementace](#iOS_Implementation)**  &ndash; zjistěte, jak toto rozhraní implementovat v nativním kódu pro iOS.
 - **[Android implementace](#Android_Implementation)**  &ndash; zjistěte, jak implementovat rozhraní v nativním kódu pro Android.
-- **[Implementace systému Windows](#WindowsImplementation)**  &ndash; zjistěte, jak implementovat rozhraní v nativním kódu pro Windows Phone a univerzální platformu Windows (UWP).
+- **[Implementace UWP](#WindowsImplementation)**  &ndash; zjistěte, jak toto rozhraní implementovat v nativním kódu pro univerzální platformu Windows (UWP).
 - **[Implementace v sdíleného kódu](#Implementing_in_Shared_Code)**  &ndash; Naučte se používat `DependencyService` provést volání do nativního implementace ze sdíleného kódu.
 
 Aplikace pomocí `DependencyService` bude mít následující strukturu:
@@ -122,9 +122,9 @@ namespace DependencyServiceSample.Droid
 
 <a name="WindowsImplementation" />
 
-## <a name="windows-phone-and-universal-windows-platform-implementation"></a>Windows Phone a Universal Windows Platform implementace
+## <a name="universal-windows-platform-implementation"></a>Implementace Universal Windows Platform
 
-Windows Phone a univerzální platformu Windows mají řeči rozhraní API v `Windows.Media.SpeechSynthesis` oboru názvů. Přímý přístup do pouze paměti je nezapomeňte osové **mikrofon** schopností v manifestu, jinak přístup k rozpoznávání řeči rozhraní API jsou zablokované.
+Univerzální platformu Windows má řeči rozhraní API v `Windows.Media.SpeechSynthesis` oboru názvů. Přímý přístup do pouze paměti je nezapomeňte osové **mikrofon** schopností v manifestu, jinak přístup k rozpoznávání řeči rozhraní API jsou zablokované.
 
 ```csharp
 [assembly:Dependency(typeof(TextToSpeechImplementation))]
@@ -165,7 +165,7 @@ public MainPage ()
 }
 ```
 
-Spuštění této aplikace v iOS, Android nebo platformy systému Windows a stiskněte tlačítko selže, nebude v aplikaci a Mluvte prostřednictvím nativního řeči SDK na každou platformu.
+Spuštění této aplikace v iOS, Android nebo UWP a stisknutím tlačítka způsobí v aplikaci a Mluvte prostřednictvím nativního řeči SDK na každou platformu.
 
  ![iOS a Android je tlačítko](text-to-speech-images/running.png "převod textu na řeč ukázka")
 

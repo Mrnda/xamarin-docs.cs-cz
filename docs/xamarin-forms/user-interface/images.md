@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: ddbcb74d34f09c7bb60891148bd50b36bc5094c3
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5e8ad5ba3bdfa61ae1b2f4404016f204a8c1747c
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="images"></a>Obrázky
 
@@ -58,7 +58,6 @@ Soubory obrázků lze přidat na každý projekt aplikace a na něj odkazovat z 
 
 - **iOS** – upřednostňovaný způsob, jak spravovat a podporovat bitové kopie, protože iOS 9, je použít **sady obrázků katalog Asset**, který by měl obsahovat všechny verze bitové kopie, které jsou nezbytné pro podporu různých zařízení a škálovat faktory pro aplikace. Další informace najdete v tématu [přidání bitových kopií do skupiny pro bitovou kopii Asset Catalog](~/ios/app-fundamentals/images-icons/displaying-an-image.md).
 - **Android** -umístit obrázků v **prostředky/drawable** adresáři s **akce sestavení: AndroidResource**. Vysoké a nízké DPI verze bitové kopie můžete také zadat (v odpovídajícím způsobem název **prostředky** podadresáře, jako **drawable ldpi**, **drawable hdpi**a **drawable xhdpi**).
-- **Windows Phone** -umístit bitové kopie v kořenovém adresáři aplikace s **akce sestavení: obsahu**.
 - **Univerzální platformu Windows (UWP)** -umístit bitové kopie v kořenovém adresáři aplikace s **akce sestavení: obsahu**.
 
 > [!IMPORTANT]
@@ -93,7 +92,7 @@ image.Source = Device.RuntimePlatform == Device.Android ? ImageSource.FromFile("
 
 ### <a name="native-resolutions-retina-and-high-dpi"></a>Nativní řešení (sítnice a vysokou hodnotou DPI)
 
-iOS, Android, Windows Phone a UWP zahrnují podporu pro řešení jinou bitovou kopii, kde operační systém zvolí příslušné bitové kopie v době běhu podle možností určitého zařízení. Xamarin.Forms pomocí nativní platformy rozhraní API pro načítání místní Image, takže ji automaticky podporuje alternativní řešení, pokud jsou soubory správně s názvem a umístěný v projektu.
+iOS, Android a UWP zahrnují podporu pro řešení jinou bitovou kopii, kde operační systém zvolí příslušné bitové kopie v době běhu podle možností určitého zařízení. Xamarin.Forms pomocí nativní platformy rozhraní API pro načítání místní Image, takže ji automaticky podporuje alternativní řešení, pokud jsou soubory správně s názvem a umístěný v projektu.
 
 Přetáhněte bitových kopií pro každé řešení vyžaduje sadu odpovídající asset katalogu bitové kopie je upřednostňovaný způsob, jak spravovat obrázky od sady iOS 9. Další informace najdete v tématu [přidání bitových kopií do skupiny pro bitovou kopii Asset Catalog](~/ios/app-fundamentals/images-icons/displaying-an-image.md).
 
@@ -103,7 +102,7 @@ Android alternativní řešení obrázků musí být umístěny v [speciálně n
 
 [![Umístění bitové kopie Android více řešení](images-images/xs-highdpisolution-sml.png "umístění bitové kopie Android více řešení")](images-images/xs-highdpisolution.png#lightbox "umístění Android více rozlišení obrázku")
 
-Názvy souborů bitové kopie UWP a Windows Phone [může být na konci s `.scale-xxx` před příponu souboru](https://docs.microsoft.com/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast), kde `xxx` je procento škálování u prostředku, například **myimage.scale-200.png**. Bitové kopie lze pak odkazovat v kódu nebo XAML bez modifikátor škálování, například právě **myimage.png**. Platforma Vybere nejbližší odpovídající asset škálování podle aktuální DPI v zobrazení.
+Názvy souborů obrázků UWP [může být na konci s `.scale-xxx` před příponu souboru](https://docs.microsoft.com/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast), kde `xxx` je procento škálování u prostředku, například **myimage.scale 200.png**. Bitové kopie lze pak odkazovat v kódu nebo XAML bez modifikátor škálování, například právě **myimage.png**. Platforma Vybere nejbližší odpovídající asset škálování podle aktuální DPI v zobrazení.
 
 ### <a name="additional-controls-that-display-images"></a>Další ovládací prvky, které zobrazení obrázků
 

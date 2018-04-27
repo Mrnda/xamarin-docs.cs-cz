@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 58f5a64f85dbe5a6889e6ff598c14fdfd9b0a5df
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: da3025f2616c91488ec70e25836351b08e957494
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="customizing-a-contentpage"></a>Přizpůsobení ContentPage
 
 _ContentPage je visual element, který zobrazí jedno zobrazení a zabírá Většina obrazovky. Tento článek ukazuje, jak vytvořit vlastní zobrazovací jednotky pro stránku ContentPage umožňuje vývojářům přepsat výchozí nativní vykreslování s vlastní přizpůsobení specifické pro platformu._
 
-Každý prvek Xamarin.Forms musí doprovodné zobrazovací jednotky pro každou platformu, která vytvoří instanci nativní ovládacího prvku. Když [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) je vykreslen metodou aplikaci Xamarin.Forms, v iOS `PageRenderer` vytvoření instance třídy, které pak vytvoří nativní `UIViewController` ovládacího prvku. Na platformě Android `PageRenderer` vytvoří instanci třídy `ViewGroup` ovládacího prvku. Na Windows Phone a univerzální platformu Windows (UWP) `PageRenderer` vytvoří instanci třídy `FrameworkElement` ovládacího prvku. Další informace o zobrazovací jednotky a třídy nativní ovládacích prvků, které ovládací prvky Xamarin.Forms mapování na najdete v tématu [zobrazovací jednotky základní třídy a nativní ovládací prvky](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Každý prvek Xamarin.Forms musí doprovodné zobrazovací jednotky pro každou platformu, která vytvoří instanci nativní ovládacího prvku. Když [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) je vykreslen metodou aplikaci Xamarin.Forms, v iOS `PageRenderer` vytvoření instance třídy, které pak vytvoří nativní `UIViewController` ovládacího prvku. Na platformě Android `PageRenderer` vytvoří instanci třídy `ViewGroup` ovládacího prvku. Na univerzální platformu Windows (UWP), `PageRenderer` vytvoří instanci třídy `FrameworkElement` ovládacího prvku. Další informace o zobrazovací jednotky a třídy nativní ovládacích prvků, které ovládací prvky Xamarin.Forms mapování na najdete v tématu [zobrazovací jednotky základní třídy a nativní ovládací prvky](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
 Následující diagram znázorňuje vztah mezi [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) a odpovídající nativní ovládací prvky, které implementují ho:
 
@@ -197,57 +197,6 @@ namespace CustomRenderer.Droid
 Volání základní třídy `OnElementChanged` metoda vytvoří instanci Android `ViewGroup` řízení, které je skupina zobrazení. Datový proud za provozu fotoaparát je vykreslen pouze za předpokladu, že zobrazovací jednotky není již připojena k existující element Xamarin.Forms a za předpokladu, že existuje instance stránky, vykreslované ve vlastní zobrazovací jednotky.
 
 Stránku pak upravíte vyvoláním řady metod, které používají `Camera` rozhraní API k poskytování živý datový proud z fotoaparátu a umožňuje zaznamenat fotografie, než `AddView` přidat kamera za provozu je volána metoda stream uživatelského rozhraní pro `ViewGroup`.
-
-### <a name="creating-the-page-renderer-on-windows-phone"></a>Vytváření vykreslení stránky na Windows Phone
-
-Následující příklad kódu ukazuje vykreslení stránky pro platformu Windows Phone:
-
-```csharp
-[assembly: ExportRenderer (typeof(CameraPage), typeof(CameraPageRenderer))]
-namespace CustomRenderer.WinPhone81
-{
-    public class CameraPageRenderer : PageRenderer
-    {
-        ...
-
-        protected override void OnElementChanged (VisualElementChangedEventArgs e)
-        {
-            base.OnElementChanged (e);
-
-            if (e.OldElement != null || Element == null) {
-                return;
-            }
-
-            try {
-                ...
-                var container = ContainerElement as Canvas;
-
-                SetupUserInterface ();
-                SetupEventHandlers ();
-                SetupLiveCameraStream ();
-                container.Children.Add (page);
-            }
-            ...
-        }
-
-        protected override Size ArrangeOverride(Size finalSize)
-        {
-            page.Arrange(new Windows.Foundation.Rect(0, 0, finalSize.Width, finalSize.Height));
-            return finalSize;
-        }
-        ...
-    }
-}
-```
-
-Volání základní třídy `OnElementChanged` metoda vytvoří instanci Windows Phone `Canvas` řízení, vykreslení stránky. Datový proud za provozu fotoaparát je vykreslen pouze za předpokladu, že zobrazovací jednotky není již připojena k existující element Xamarin.Forms a za předpokladu, že existuje instance stránky, vykreslované ve vlastní zobrazovací jednotky.
-
-Na platformě Windows Phone typu odkaz na stránku nativní používá na platformě je přístupná prostřednictvím `ContainerElement` vlastnost s `Canvas` řízení se typu odkaz na `FrameworkElement`. Stránku pak upravíte vyvoláním řady metod, které používají `MediaCapture` rozhraní API k poskytování živý datový proud z fotoaparátu a schopnost zachytit fotografie před upravené stránky je přidat do `Canvas` pro zobrazení.
-
-Při implementaci vlastní zobrazovací jednotky, která je odvozena z `PageRenderer` v prostředí Windows Runtime `ArrangeOverride` by také být implementována metoda uspořádat ovládací prvky stránky, protože základní zobrazovací jednotky nebude vědět, co dělat s nimi. Prázdná stránka výsledků, jinak hodnota. Proto v tomto příkladu `ArrangeOverride` volání metod `Arrange` metodu `Page` instance.
-
-> [!NOTE]
-> Je důležité k zastavení a uvolnění objektů, které poskytují přístup k fotoaparátu v aplikaci Windows Phone 8.1 WinRT. Tak neučiníte, může narušovat jiné aplikace, které se pokoušejí o přístup k fotoaparátu zařízení. Další informace najdete v tématu `CleanUpCaptureResourcesAsync` metoda v projektu Windows Phone v ukázkové řešení a [rychlý start: Digitalizace videa pomocí rozhraní API MediaCapture](https://msdn.microsoft.com/library/windows/apps/xaml/dn642092.aspx).
 
 ### <a name="creating-the-page-renderer-on-uwp"></a>Vytváření vykreslení stránky na UWP
 

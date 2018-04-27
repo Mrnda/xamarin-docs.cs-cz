@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 7979e43cdde60b1b0248118e591c096295847acb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 46284fd1b0863f904e9f24f125aef75fe3eb8caa
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="native-views-in-c"></a>Nativní zobrazení v jazyce C#
 
@@ -34,8 +34,7 @@ Pomocí těchto metod v projektu sdíleného Xamarin.Forms vyžaduje import odpo
 
 - **iOS** – Xamarin.Forms.Platform.iOS
 - **Android** – Xamarin.Forms.Platform.Android
-- **Windows Runtime** – Xamarin.Forms.Platform.WinRT
-- **Universal Windows Platform (UWP)** – Xamarin.Forms.Platform.UWP
+- **Univerzální platformu Windows (UWP)** – Xamarin.Forms.Platform.UWP
 
 ## <a name="adding-platform-specific-views-on-each-platform"></a>Přidání zobrazení specifických pro platformy na jednotlivých platformách
 
@@ -70,7 +69,7 @@ contentView.Content = textView.ToView();
 
 Příklad předpokládá, že `stackLayout` a `contentView` instance dříve vytvořené v jazyce XAML nebo C#.
 
-### <a name="windows-runtime-and-universal-windows-platform"></a>Prostředí Windows Runtime a univerzální platformu Windows
+### <a name="universal-windows-platform"></a>Univerzální platforma pro Windows
 
 Následující příklad kódu ukazuje, jak přidat `TextBlock` k [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) a [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/):
 

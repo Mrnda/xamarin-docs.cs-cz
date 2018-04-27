@@ -6,11 +6,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/14/2018
-ms.openlocfilehash: 2833c645a07a3717d9baeeec11e5fa7f9087725a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 806ed841ec4db037a063bb458e1eed13226e08bd
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="build-process"></a>Proces sestavení
 
@@ -52,7 +52,7 @@ Rychlé nasazení je ve výchozím nastavení povolené a mohou být zakázány 
 Proces sestavení Xamarin.Android je založena na MSBuild, což je také použít Visual Studio pro Mac a Visual Studio formát souboru projektu.
 Normálně, nebudou uživatelé muset ručně upravte soubory nástroje MSBuild &ndash; IDE vytvoří plně funkční projekty a aktualizuje všechny změny a podle potřeby automaticky vyvolání sestavení cílů. 
 
-Pokročilí uživatelé chtít provádět akce, které nejsou podporované grafického uživatelského rozhraní IDE, takže procesu sestavení je přizpůsobivý přímou úpravou souboru projektu. Tato stránka dokumenty pouze funkce specifické pro Xamarin.Android a přizpůsobení &ndash; je možné s normální MSBuild položky, vlastnosti a cíle, mnoho dalších věcí. 
+Pokročilí uživatelé chtít provádět akce, které nejsou podporované grafického uživatelského rozhraní IDE, takže procesu sestavení je přizpůsobitelné přímou úpravou souboru projektu. Tato stránka dokumenty pouze funkce specifické pro Xamarin.Android a přizpůsobení &ndash; je možné s normální MSBuild položky, vlastnosti a cíle, mnoho dalších věcí. 
 
 <a name="Build_Targets" />
 
@@ -91,7 +91,7 @@ Vlastnosti nástroje MSBuild řídí chování cíle. Jsou uvedené v souboru pr
 
     - **PdbOnly**: "PDB" symboly jsou generovány. Balíček aplikace bude *není* být debuggable.
 
-    Pokud `DebugType` není nastavena nebo je prázdný řetězec, pak se `DebugSymbols` vlastnost určuje, zda tý aplikace je debuggable.
+    Pokud `DebugType` není nastavena nebo je prázdný řetězec, pak se `DebugSymbols` vlastnost určuje, zda je debuggable aplikace.
 
 
 ### <a name="install-properties"></a>Vlastnosti instalace
@@ -110,7 +110,7 @@ Vlastnosti instalace řídí chování `Install` a `Uninstall` cíle.
 ### <a name="packaging-properties"></a>Balení vlastnosti
 
 Balení vlastnosti řídit vytváření balíček Android a jsou používány `Install` a `SignAndroidPackage` cíle.
-[Podepisování vlastnosti](#Signing_Properties) souvisí také při packaing verzi aplikace.
+[Podepisování vlastnosti](#Signing_Properties) jsou také v případě relevantní balení verzi aplikace.
 
 
 -   **AndroidApkSigningAlgorithm** &ndash; hodnotu řetězce, který určuje podpisový algoritmus pro použití s `jarsigner -sigalg`.
@@ -238,7 +238,7 @@ Balení vlastnosti řídit vytváření balíček Android a jsou používány `I
 
 -   **AndroidSdkBuildToolsVersion** &ndash; nástroje sestavení balíček Android SDK poskytuje **aapt** a **zipalign** nástroje, mimo jiné. Více různých verzích balíček nástroje sestavení může být nainstalována současně. Balíček nástroje sestavení zvolené pro balení se provádí kontrola a používáte verzi "upřednostňované" nástroje sestavení, pokud je k dispozici; Pokud je "upřednostňované" verze *není* k dispozici, pak se používá nejvyšší balíček verzí nainstalované nástroje sestavení.
 
-    `$(AndroidSdkBuildToolsVersion)` Vlastnosti MSBuild obsahuje verzi nástroje sestavení upřednostňované. Sestavení systému Xamarin.Android poskytuje výchozí hodnotu v `Xamarin.Android.Common.targets`, a výchozí hodnota může být přepsána v souboru projektu youur zvolit alternativní nástroje sestavení verze, pokud (například) nejnovější aapt selhává se při předchozí verze aapt je zřejmé, fungovat.
+    `$(AndroidSdkBuildToolsVersion)` Vlastnosti MSBuild obsahuje verzi upřednostňované nástroje sestavení. Sestavení systému Xamarin.Android poskytuje výchozí hodnotu v `Xamarin.Android.Common.targets`, a výchozí hodnota může být přepsána v souboru projektu zvolte alternativní nástroje sestavení verze, pokud (například) nejnovější aapt selhává se při předchozí verze aapt je zřejmé, fungovat.
 
 -   **AndroidSupportedAbis** &ndash; ve vlastnosti string, který obsahuje středníkem (`;`)-oddělený seznam bis , které mají být zahrnuty do `.apk`.
 
@@ -264,9 +264,9 @@ Balení vlastnosti řídit vytváření balíček Android a jsou používány `I
 
     Tato vlastnost by měla být `True` pro verze sestavení a `False` pro sestavení pro ladění. Ho *může* musí být `True` u sestavení ladicí verze, pokud rychlého nasazení nepodporuje cílové zařízení.
 
-    Pokud je tato vlastnost `False`, pak se `$(AndroidFastDeploymentType)` MSBuild vlastnost také určuje, co bude embedd do `.apk`, což může mít vliv na nasazení a rebuidl časy.
+    Pokud je tato vlastnost `False`, pak se `$(AndroidFastDeploymentType)` MSBuild vlastnost také určuje, co budou vloženy do `.apk`, který může mít vliv nasazení a sestavte znovu časy.
 
--   **EnableLLVM** &ndash; vlastnost typu boolean, která určuje, zda LLVM se použije při Ahead doba kompilace assemblines do nativního kódu.
+-   **EnableLLVM** &ndash; vlastnost typu boolean, který určuje, zda LLVM se použije při Ahead dobu kompilace sestavení do nativního kódu.
 
     V Xamarin.Android 5.1 přidala se podpora pro tuto vlastnost.
 
@@ -326,13 +326,13 @@ Balení vlastnosti řídit vytváření balíček Android a jsou používány `I
     Některé příklady, pokud `abi` je `armeabi` a `versionCode` v manifestu je `123`, `{abi}{versionCode}` vytvoří versionCode z `1123` při `$(AndroidCreatePackagePerAbi)` má hodnotu True, v opačném případě bude vytvoření hodnoty 123.
     Pokud `abi` je `x86_64` a `versionCode` v manifestu je `44`. Vznikne tak `544` při `$(AndroidCreatePackagePerAbi)` má hodnotu True, v opačném případě bude vytvoření hodnoty `44`.
 
-    Pokud jsme obsahovat left odsazení řetězec formátu `{abi}{versionCode:0000}`, by vytvořit `50044` vzhledem k tomu, že jsme nezbývají odsazení `versionCode` s `0`. Případně můžete také použít desetinné odsazení, jako `{abi}{versionCode:D4}` která dělá to stejné jako v předchozím příkladu.
+    Pokud jsme obsahovat left odsazení řetězec formátu `{abi}{versionCode:0000}`, by vytvořit `50044` vzhledem k tomu, že jsme nezbývají odsazení `versionCode` s `0`. Alternativně můžete použít desetinné odsazení, jako `{abi}{versionCode:D4}` která dělá to stejné jako v předchozím příkladu.
 
     Pouze '0' a 'DirectX odsazení formátu řetězce jsou podporovány, protože hodnota musí být celé číslo.
     
-    Před definované klíčové položky
+    Předem definované klíčové položky
 
-    -   **ABI** &ndash; vloží abi směrována pro aplikaci
+    -   **ABI** &ndash; vloží abi cílové aplikace  
         -   1 &ndash; `armeabi`
         -   2 &ndash; `armeabi-v7a`
         -   3 &ndash; `x86`
@@ -341,7 +341,7 @@ Balení vlastnosti řídit vytváření balíček Android a jsou používány `I
 
     -   **minSDK** &ndash; vloží minimální podporovaná hodnota Sdk z `AndroidManifest.xml` nebo `11` Pokud žádný je definována.
 
-    -   **versionCode** &ndash; používá direrctly kód verze z `Properties\AndroidManifest.xml`. 
+    -   **versionCode** &ndash; používá verzi kód přímo z `Properties\AndroidManifest.xml`. 
 
     Můžete definovat vlastní položky pomocí `$(AndroidVersionCodeProperties)` vlastnosti (definovaná Další).
 
@@ -394,7 +394,7 @@ Následující vlastnosti nástroje MSBuild se používají s [vazby projekty](~
 
 -   **AndroidCodegenTarget** &ndash; ve vlastnosti string, který řídí cíl generování kódu ABI. Možné hodnoty patří:
 
-    - **XamarinAndroid**: používá rozhraní API vazby JNI součástí od Mono pro Android 1.0. Vazba sestavení vytvořené s nástroji s Xamarin.Android 5.0 nebo novější můžete pouze spouštět na Xamarin.Android 5.0 nebo novější (rozhraní API/ABI dodatky), ale *zdroj* je kompatibilní s dřívější verze produktu.
+    - **XamarinAndroid**: používá rozhraní API vazby JNI součástí od Mono pro Android 1.0. Vazba sestavení vytvořené s Xamarin.Android 5.0 nebo novější můžete pouze spouštět na Xamarin.Android 5.0 nebo novější (rozhraní API/ABI dodatky), ale *zdroj* je kompatibilní s dřívější verze produktu.
 
     - **XAJavaInterop1**: použití Java.Interop pro JNI volání. Vazba sestavení s využitím `XAJavaInterop1` můžete pouze sestavit a spustit s Xamarin.Android 6.1 nebo novější. Xamarin.Android 6.1 a novější vazby `Mono.Android.dll` s touto hodnotou.
 
@@ -576,7 +576,7 @@ Pomocí tohoto sestavení akce považovat podobným způsobem příliš vložen�
 
 Normální `Content` sestavení akce není podporována (jak jsme nebyly započítáno jak ho podporují bez pravděpodobně nákladná krok při prvním spuštění).
 
-Od verze 5.1 Xamarin.Android, pokus o použití thw `@(Content)` výsledkem akce sestavení `XA0101` upozornění.
+Od verze 5.1 Xamarin.Android, pokus o použití `@(Content)` výsledkem akce sestavení `XA0101` upozornění.
 
 ### <a name="linkdescription"></a>LinkDescription
 
@@ -606,7 +606,7 @@ Následující vlastnosti sestavení musí být nastavená před importem veške
 </PropertyGroup>
 ```
 
-Všechny tyto tyto cílem a vlastnosti může být součástí pro jazyk C# importováním *Xamarin.Android.CSharp.targets*: 
+Všechny tyto cíle a vlastnosti lze nastavit pro jazyk C# importováním *Xamarin.Android.CSharp.targets*: 
 
 ```xml
 <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

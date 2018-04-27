@@ -6,11 +6,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/01/2016
-ms.openlocfilehash: d75c5714e53961ff5704c72b5508514f8cd2e898
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bcd277145de13a95a0b19aa4945b02078af52978
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="layout-for-tablet-and-desktop-apps"></a>Rozložení pro aplikace, tablety a vzdálené ploše
 
@@ -18,7 +18,7 @@ Xamarin.Forms podporuje všechny typy zařízení jsou dostupné na podporovaný
 
 * Ipady,
 * Tablety Android
-* Tablety s Windows a stolních počítačů (se systémem Windows 8.1 nebo Windows 10).
+* Tablety s Windows a stolních počítačů (se systémem Windows 10).
 
 Tato stránka stručně popisuje:
 
@@ -53,12 +53,7 @@ Zkontrolujte [Android prostředky](~/android/app-fundamentals/resources-in-andro
 
 ### <a name="windows-tablets-and-desktops"></a>Tablety s Windows a stolní počítače
 
-Pro podporu tablety a stolní počítače se systémem Windows, budete muset použít jednu z těchto dvou typů podporovaných projektu:
-
-* [Windows 8.1](~/xamarin-forms/platform/windows/installation/tablet.md) -
-  sestavení aplikace konkrétně pro Windows 8.1 tablety a stolní počítače.
-* [Podpora Windows UWP](~/xamarin-forms/platform/windows/installation/universal.md) -
-  sestavení univerzálních aplikací, které běží na jak Windows 10 telefony, tablety a stolní počítače.
+Pro podporu tablety a stolní počítače se systémem Windows, budete muset použít [podporu Windows UWP](~/xamarin-forms/platform/windows/installation/index.md), která sestavení univerzálních aplikací, které běží na Windows 10.
 
 Aplikace běžící na Windows tablety a stolní počítače velikost lze změnit na libovolný dimenze kromě k provozu přes celou obrazovku.
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 511a7052b07a853279f91211b3e3b1219f125c59
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d16c45b7f7cb7eef67a905b6fbcb9b8675b0b2ba
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="listview-interactivity"></a>Interaktivity ListView
 
@@ -53,12 +53,10 @@ S výběrem povoleno:
 
 ![](interactivity-images/selection-default.png "ListView s výběrem povoleno")
 
-Všimněte si, že se na Windows Phone, některé buňky, včetně `SwitchCell` Neaktualizovat jejich visual stavu v reakci na výběr.
-
 <a name="Context_Actions" />
 
 ## <a name="context-actions"></a>Kontext akce
-Často, budou uživatelé chtít provést akci pro položku v `ListView`. Zvažte například seznam e-mailů v aplikaci Mail. V systému iOS můžete prstem odstranění zprávy a na Windows Phone, můžete dlouho stiskněte zprávu a potom jej odstraňte:
+Často, budou uživatelé chtít provést akci pro položku v `ListView`. Zvažte například seznam e-mailů v aplikaci Mail. V systému iOS, může odstranění zprávy prstem::
 
 ![](interactivity-images/context-default.png "ListView s kontext akce")
 
@@ -149,8 +147,6 @@ Aktualizace obsahu jako uživatel je vyžádání:
 ![](interactivity-images/refresh-start.png "Vyžádání ListView aktualizace v průběhu")
 
 Aktualizace obsahu jako uživatel vydala vyžádání. Je to, co uživatel uvidí, když aktualizujete seznam: ![ ] (interactivity-images/refresh-in-progress.png "ListView vyžádání obsahu pro aktualizaci dokončení")
-
-Všimněte si, že se od Xamarin.Forms 1.4.3, aktualizace obsahu není podporováno ve Windows Phone 8.1. Ve Windows phone 8 není aktualizace obsahu funkci nativní platformy, takže poskytuje implementaci pro vyžádání obsahu aktualizace Xamarin.Forms. Nakonec Upozorňujeme, že-aktualizace obsahu nebude fungovat na Windows Phone, pokud všechny elementy v seznamu vejde na obrazovce (jinými slovy, pokud svislé posouvání není povinné).
 
 ListView poskytuje několik událostí, které vám umožní reagovat na události aktualizace obsahu.
 

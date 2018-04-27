@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 4adff8a95f9981dbecc44bf177dcd98b7984a3a9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ffb013c355db34ef7456404d6f9dcaec75743420
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="implementing-a-hybridwebview"></a>Implementace HybridWebView
 
 _Xamarin.Forms vlastní uživatelské rozhraní ovládací prvky by měl být odvozen od třídy zobrazení, který se používá k umístění rozložení a ovládací prvky na obrazovce. Tento článek ukazuje, jak vytvořit vlastní zobrazovací jednotky HybridWebView vlastního ovládacího prvku, který ukazuje, jak zvýšit ovládací prvky specifické pro platformu webového povolit C# – kód má být volána z jazyka JavaScript._
 
-Každé zobrazení Xamarin.Forms má doprovodné zobrazovací jednotky pro každou platformu, která vytvoří instanci nativní ovládacího prvku. Když [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) je vykreslen metodou Xamarin.Forms aplikace v iOS, `ViewRenderer` vytvoření instance třídy, které pak vytvoří nativní `UIView` ovládacího prvku. Na platformě Android `ViewRenderer` vytvoří instanci třídy `View` ovládacího prvku. Na Windows Phone a univerzální platformu Windows (UWP) `ViewRenderer` třída vytvoří nativní `FrameworkElement` ovládacího prvku. Další informace o zobrazovací jednotky a třídy nativní ovládacích prvků, které ovládací prvky Xamarin.Forms mapování na najdete v tématu [zobrazovací jednotky základní třídy a nativní ovládací prvky](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Každé zobrazení Xamarin.Forms má doprovodné zobrazovací jednotky pro každou platformu, která vytvoří instanci nativní ovládacího prvku. Když [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) je vykreslen metodou Xamarin.Forms aplikace v iOS, `ViewRenderer` vytvoření instance třídy, které pak vytvoří nativní `UIView` ovládacího prvku. Na platformě Android `ViewRenderer` vytvoří instanci třídy `View` ovládacího prvku. Na univerzální platformu Windows (UWP), `ViewRenderer` třída vytvoří nativní `FrameworkElement` ovládacího prvku. Další informace o zobrazovací jednotky a třídy nativní ovládacích prvků, které ovládací prvky Xamarin.Forms mapování na najdete v tématu [zobrazovací jednotky základní třídy a nativní ovládací prvky](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
 Následující diagram znázorňuje vztah mezi [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) a odpovídající nativní ovládací prvky, které implementují ho:
 
@@ -417,13 +417,13 @@ Všimněte si, že `JSBridge` třída udržuje `WeakReference` k `HybridWebViewR
 > [!IMPORTANT]
 > Na Android Oreo Ujistěte se, že nastaví Android manifest **cílovou verzi systému Android** k **automatické**. Jinak systémem tento kód bude výsledkem chybová zpráva "invokeCSharpAction není definován".
 
-### <a name="creating-the-custom-renderer-on-windows-phone-and-uwp"></a>Vytváření vlastní zobrazovací jednotky na Windows Phone a UWP
+### <a name="creating-the-custom-renderer-on-uwp"></a>Vytváření vlastní zobrazovací jednotky na UWP
 
-Následující příklad kódu ukazuje vlastní zobrazovací jednotky pro Windows Phone a UWP:
+Následující příklad kódu ukazuje vlastní zobrazovací jednotky pro UPW:
 
 ```csharp
 [assembly: ExportRenderer(typeof(HybridWebView), typeof(HybridWebViewRenderer))]
-namespace CustomRenderer.WinPhone81
+namespace CustomRenderer.UWP
 {
     public class HybridWebViewRenderer : ViewRenderer<HybridWebView, Windows.UI.Xaml.Controls.WebView>
     {

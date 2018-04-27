@@ -1,5 +1,5 @@
 ---
-title: WebView
+title: Webové zobrazení
 description: K dispozici místní nebo síťové webového obsahu a dokumenty.
 ms.prod: xamarin
 ms.assetid: E44F5D0F-DB8E-46C7-8789-114F1652A6C5
@@ -7,13 +7,13 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: a96c57b66e5debbbb7318c22e33a21eb9b998395
-ms.sourcegitcommit: 271d3f7ea4abfcf87734d2c747a68cb8114d743c
+ms.openlocfilehash: ed37e723d4b1a7997890c41886df8d117425e270
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2018
+ms.lasthandoff: 04/27/2018
 ---
-# <a name="webview"></a>WebView
+# <a name="webview"></a>Webové zobrazení
 
 [Webové zobrazení](https://developer.xamarin.com/api/type/Xamarin.Forms.WebView/) je zobrazení pro webové a HTML obsahu ve vaší aplikaci. Na rozdíl od `OpenUri`, který uživatel přejde na webový prohlížeč v zařízení, `WebView` zobrazí obsah HTML v aplikaci.
 
@@ -33,12 +33,12 @@ Tato příručka se skládá z následujících částí:
 Webové zobrazení teď obsahuje podporu pro následující typy obsahu:
 
 - Weby HTML a CSS &ndash; webové zobrazení má plnou podporu pro weby, které jsou zapsány pomocí HTML a CSS, včetně podpory jazyka JavaScript.
-- Dokumenty &ndash; vzhledem k tomu webové zobrazení je implementovaná pomocí nativní součásti na každou platformu, je webové zobrazení umožňuje zobrazení dokumentů, které je možné zobrazit na jednotlivých platformách. To znamená, že soubory PDF fungovat na iOS a Android, ale ne Windows Phone.
+- Dokumenty &ndash; vzhledem k tomu webové zobrazení je implementovaná pomocí nativní součásti na každou platformu, je webové zobrazení umožňuje zobrazení dokumentů, které je možné zobrazit na jednotlivých platformách. To znamená, že soubory PDF fungovat na iOS a Android.
 - Řetězce HTML &ndash; webové zobrazení můžete zobrazit řetězce HTML z paměti.
 - Místní soubory &ndash; webové zobrazení může být jakýkoli z výše uvedených obsahu typů vložených v aplikaci.
 
 > [!NOTE]
-> `WebView` v systémech Windows a Windows Phone nepodporuje program Silverlight, Flash nebo všechny ovládací prvky ActiveX i v případě, že se na této platformě se aplikace Internet Explorer nepodporuje.
+> `WebView` v systému Windows nepodporuje program Silverlight, Flash nebo všechny ovládací prvky ActiveX i v případě, že se na této platformě se aplikace Internet Explorer nepodporuje.
 
 ### <a name="websites"></a>Weby
 
@@ -231,28 +231,9 @@ using (var streamReader = new StreamReader (assetManager.Open ("local.html"))) {
 }
 ```
 
-#### <a name="windows-phone"></a>Windows Phone
+#### <a name="universal-windows-platform"></a>Univerzální platforma pro Windows
 
-Na Windows Phone, umístěte HTML, CSS a obrázků v kořenu projektu pomocí akce sestavení nastavena na *obsahu* jak je ukázáno níže:
-
-![](webview-images/windows-vs.png "Místní soubory na Windows Phone")
-
-Na Windows Phone `BaseUrl` musí být nastavena na `""`:
-
-```csharp
-[assembly: Dependency (typeof(BaseUrl_Windows))]
-namespace WorkingWithWebview.Windows {
-  public class BaseUrl_Windows : IBaseUrl {
-    public string Get() {
-      return "";
-    }
-  }
-}
-```
-
-#### <a name="windows-runtime-and-universal-windows-platform"></a>Prostředí Windows Runtime a univerzální platformu Windows
-
-V prostředí Windows Runtime a univerzální platformu Windows (UWP) projekty, umístěte HTML, CSS a obrázků v kořenu projektu pomocí akce sestavení nastavena na *obsahu*.
+V projektech univerzální platformu Windows (UWP), umístěte HTML, CSS a obrázků v kořenu projektu pomocí akce sestavení nastavena na *obsahu*.
 
 `BaseUrl` Musí být nastavena na `"ms-appx-web:///"`:
 
@@ -402,14 +383,11 @@ Webové zobrazení v systému Android ve výchozím nastavení je přibližně t
 
 [Webové zobrazení UWP](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/web-view) používá modul vykreslování Microsoft Edge. Zařízení Desktop a tablet měli vidět stejného výkonu jako pomocí prohlížeče Edge sám sebe.
 
-`WebBrowser` Ovládacího prvku na Windows Phone 8 a Windows Phone 8.1 nemá není funkcí, které podporují nejnovější HTML5 a často může mít snížený výkon. Zajímat, jak lokality zobrazí ve Windows Phone `WebView`. Není dostatečná pro testování v aplikaci Internet Explorer.
-
 ## <a name="permissions"></a>Oprávnění
 
 Aby `WebView` postup, musíte zkontrolovat, zda jsou oprávnění nastavena pro každou platformu. Všimněte si, že se na některých platformách `WebView` bude fungovat v režimu ladění, ale ne v případě, že vytvořené pro verzi. Je to způsobeno některá oprávnění, jako jsou ty, pro přístup k Internetu v systému Android, jsou nastavené ve výchozím nastavení Visual Studio pro Mac v režimu ladění.
 
-- **Windows Phone 8.0** &ndash; vyžaduje `ID_CAP_WEBBROWSERCOMPONENT` pro ovládací prvek a `ID_CAP_NETWORKING` pro přístup k Internetu.
-- **Windows Phone 8.1 a UWP** &ndash; při zobrazování obsahu sítě vyžaduje schopnost Internet (klient a Server).
+- **UWP** &ndash; při zobrazování obsahu sítě vyžaduje schopnost Internet (klient a Server).
 - **Android** &ndash; vyžaduje `INTERNET` jenom v případě, že zobrazování obsahu ze sítě. Místní obsah vyžaduje žádná zvláštní oprávnění.
 - **iOS** &ndash; vyžaduje žádná zvláštní oprávnění.
 

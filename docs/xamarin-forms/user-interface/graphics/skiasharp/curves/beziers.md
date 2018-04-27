@@ -7,11 +7,11 @@ ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
 author: charlespetzold
 ms.author: chape
 ms.date: 05/25/2017
-ms.openlocfilehash: c5142a3abcc6d461bc277faeb02e3aacd9727bca
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 7b7bd83c474c7e0d32a693e06b5f12696ec5efa2
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="three-types-of-bzier-curves"></a>Tři typy Bézierových křivek
 
@@ -92,7 +92,7 @@ Zde je spuštěn na všechny tři platformy:
 
 Matematický křivka je krychlový polynomu. Křivku maximálně protíná přímku na tři body. U počáteční bod křivka je vždy tečný chcete a ve stejném směru jako přímka od začátku, přejděte na první kontrolního bodu. Na koncový bod křivka je vždy tečný chcete a ve stejném směru jako přímka z ovládacího prvku druhý přejděte na koncový bod.
 
-Krychlový Bézierovy křivky je vždy ohraničené konvexní čtyřúhelník připojení čtyři body. Tento postup se nazývá *konvexní trupu*. Pokud kontrolní body leží na přímku mezi počátečním a koncovým bodem, Bézierovy křivky vykreslí jako přímka. Ale křivku můžete také mezi samostatně, jak ukazuje snímek obrazovky zařízení Windows Mobile.
+Krychlový Bézierovy křivky je vždy ohraničené konvexní čtyřúhelník připojení čtyři body. Tento postup se nazývá *konvexní trupu*. Pokud kontrolní body leží na přímku mezi počátečním a koncovým bodem, Bézierovy křivky vykreslí jako přímka. Ale křivku můžete také mezi samostatně, protože třetí snímek obrazovky ukazuje.
 
 Obrysem cesta může obsahovat více Bézierových křivek krychlový připojené, ale bude připojení mezi dvěma krychlový Bézierových křivek smooth pouze v případě, že následující tři body jsou colinear (tedy leží na přímku):
 
@@ -208,7 +208,7 @@ Tady je programy spuštěné na tři platforem pomocí tří různých úhlů:
 
 [![](beziers-images/beziercirculararc-small.png "Trojitá snímek obrazovky stránky kruhový oblouk na Bézierovu")](beziers-images/beziercirculararc-large.png#lightbox "Trojitá snímek obrazovky stránky Bézierovy kruhový oblouk")
 
-Úzce podívejte se na obrazovce Windows Mobile a uvidíte, že Bézierovy křivky zejména odchylují od polokruhu když úhel je 180 stupňů, ale na obrazovce iOS ukazuje, že nejspíš vyhovoval čtvrtletí kruh stejně dobře, když úhel je 90 stupňů.
+Prohlédněte si blíže třetí snímek obrazovky a uvidíte, že Bézierovy křivky zejména odchylují od polokruhu když úhel je 180 stupňů, ale na obrazovce iOS ukazuje, že nejspíš vyhovoval čtvrtletí kruh stejně dobře, když úhel je 90 stupňů.
 
 Výpočet souřadnice dvě kontrolních bodů je poměrně snadné, když čtvrtletí kroužek je orientované takto:
 
@@ -552,4 +552,4 @@ Je v tomto případě velice nepříjemná který `ConicTo` nepodporuje záporn�
 ## <a name="related-links"></a>Související odkazy
 
 - [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/19/2016
-ms.openlocfilehash: e555c038d66033d925da42e4c70b89d5caac8ad6
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 43b021b158bbb815ab8d27c393f54e0775599940
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="introduction-to-custom-renderers"></a>Úvod do vlastní nástroji pro vykreslování
 
@@ -19,7 +19,7 @@ _Přizpůsobení vzhledu a chování ovládacích prvků Xamarin.Forms zadejte v
 
 Xamarin.Forms [rozložení stránky a ovládací prvky](~/xamarin-forms/user-interface/controls/index.md) k dispozici společné rozhraní API popisují různé platformy mobilních uživatelská rozhraní. Každé stránky, rozložení a řízení vykreslením jinak na jednotlivých platformách pomocí `Renderer` třídu, která zase vytvoří nativní ovládací prvek (odpovídající Xamarin.Forms zastupování), uspořádá na obrazovce a přidá zadané v chování sdílené kód.
 
-Vývojářům můžete implementovat vlastní vlastní `Renderer` třídy k přizpůsobení vzhledu a chování ovládacího prvku. Vlastní nástroji pro vykreslování pro daný typ lze přidat do projektu jedné aplikace k přizpůsobení ovládacího prvku na jednom místě, zatímco výchozí chování na jiných platformách; nebo jiný vlastní nástroji pro vykreslování lze přidat na každý projekt aplikace vytvořit různé vzhled a chování na iOS, Android a Windows Phone. Implementace třídy vlastní zobrazovací jednotky k přizpůsobení jednoduchý ovládací prvek je však často zobrazené – odpověď. Účinky zjednodušení tohoto procesu a jsou obvykle používány pro malé stylů změny. Další informace najdete v tématu [důsledky](~/xamarin-forms/app-fundamentals/effects/index.md).
+Vývojářům můžete implementovat vlastní vlastní `Renderer` třídy k přizpůsobení vzhledu a chování ovládacího prvku. Vlastní nástroji pro vykreslování pro daný typ lze přidat do projektu jedné aplikace k přizpůsobení ovládacího prvku na jednom místě, zatímco výchozí chování na jiných platformách; nebo jiný vlastní nástroji pro vykreslování lze přidat na každý projekt aplikace vytvořit různé vzhled a chování na iOS, Android a univerzální platformu Windows (UWP). Implementace třídy vlastní zobrazovací jednotky k přizpůsobení jednoduchý ovládací prvek je však často zobrazené – odpověď. Účinky zjednodušení tohoto procesu a jsou obvykle používány pro malé stylů změny. Další informace najdete v tématu [důsledky](~/xamarin-forms/app-fundamentals/effects/index.md).
 
 ## <a name="examining-why-custom-renderers-are-necessary"></a>Zkušební proč vlastní nástroji pro vykreslování jsou nezbytné
 
@@ -51,7 +51,7 @@ public class MyEntry : Entry
 `local` Předponu oboru názvů můžete použít jakýkoli. Ale `namespace` a `assembly` hodnoty musí odpovídat podrobnosti vlastního ovládacího prvku. Jakmile je deklarován obor názvů, je předpona, která slouží k odkazování vlastního ovládacího prvku.
 
 > [!NOTE]
-> Definování `xmlns` v PCLs mnohem jednodušší než sdílených projektů. Kompiluje PCL do sestavení tak, aby byl snadno zjistit, co `assembly=CustomRenderer` hodnota by měla být. Při použití sdílených projektů, jsou všechny sdílené prostředky (včetně XAML) zkompilovány do každé odkazující projektů, které znamená, že pokud iOS, Android a Windows Phone projekty mají svůj vlastní *názvy sestavení* není možné o zápis `xmlns` deklarace vzhledem k tomu, že hodnota musí být různé pro jednotlivé aplikace. Vlastní ovládací prvky v jazyce XAML pro sdílených projektů bude vyžadovat každý projekt aplikace nakonfigurovat se stejným názvem sestavení.
+> Definování `xmlns` v PCLs mnohem jednodušší než sdílených projektů. Kompiluje PCL do sestavení tak, aby byl snadno zjistit, co `assembly=CustomRenderer` hodnota by měla být. Při použití sdílených projektů, jsou všechny sdílené prostředky (včetně XAML) zkompilovány do každé odkazující projektů, které znamená, že pokud iOS, Android a UWP projekty mají svůj vlastní *názvy sestavení* není možné zapisovat `xmlns` deklarace vzhledem k tomu, že hodnota musí být různé pro jednotlivé aplikace. Vlastní ovládací prvky v jazyce XAML pro sdílených projektů bude vyžadovat každý projekt aplikace nakonfigurovat se stejným názvem sestavení.
 
 `MyEntry` Vlastní vykreslení ovládacího prvku klikněte na každou platformu, barvou pozadí, jak je vidět na následujících snímcích obrazovky:
 

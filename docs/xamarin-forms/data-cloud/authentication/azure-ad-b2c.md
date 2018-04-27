@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: f17a6ad012aff81674db943b7d65e65ba77dca52
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 627c6773c099c9cf45f871a9bb73a201bf98271a
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="authenticating-users-with-azure-active-directory-b2c"></a>Ověřování uživatelů s Azure Active Directory B2C
 
@@ -60,7 +60,7 @@ Knihovna NuGet Microsoft ověřování knihovny (MSAL) musí být přidaný do p
 
 ### <a name="portable-class-library"></a>Přenosná knihovna tříd
 
-MSAL nepodporuje Windows Phone 8.1, a proto bude třeba odebrat tento cíl PCLs, které využívají MSAL. To můžete udělat Změna orientace PCLs používat Profile7. Další informace o PCLs najdete v tématu [Úvod do knihovny přenosných tříd](~/cross-platform/app-fundamentals/pcl.md).
+PCLs, které využívají MSAL bude nutné změnit cíl necílené používat Profile7. Další informace o PCLs najdete v tématu [Úvod do knihovny přenosných tříd](~/cross-platform/app-fundamentals/pcl.md).
 
 ### <a name="ios"></a>iOS
 

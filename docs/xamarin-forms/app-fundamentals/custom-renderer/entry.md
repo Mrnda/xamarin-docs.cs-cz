@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 1e8ef47ceb381a0e4e163aaa24795d46264195da
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c120add5a301e440911bd9794da77732e7787cc0
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="customizing-an-entry"></a>Přizpůsobení položku
 
 _Ovládací prvek Xamarin.Forms položka umožňuje jeden řádek textu k provádění úprav. Tento článek ukazuje, jak vytvořit vlastní zobrazovací jednotky pro ovládací prvek položku, umožňuje vývojářům přepsat výchozí nativní vykreslování s vlastní přizpůsobení specifické pro platformu._
 
-Každý prvek Xamarin.Forms musí doprovodné zobrazovací jednotky pro každou platformu, která vytvoří instanci nativní ovládacího prvku. Když [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) vykreslení ovládacího prvku platformě Xamarin.Forms aplikací v iOS `EntryRenderer` vytvoření instance třídy, což na oplátku vytvoří nativní `UITextField` ovládacího prvku. Na platformě Android `EntryRenderer` vytvoří instanci třídy `EditText` ovládacího prvku. Na Windows Phone a univerzální platformu Windows (UWP) `EntryRenderer` vytvoří instanci třídy `TextBox` ovládacího prvku. Další informace o zobrazovací jednotky a třídy nativní ovládacích prvků, které ovládací prvky Xamarin.Forms mapování na najdete v tématu [zobrazovací jednotky základní třídy a nativní ovládací prvky](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Každý prvek Xamarin.Forms musí doprovodné zobrazovací jednotky pro každou platformu, která vytvoří instanci nativní ovládacího prvku. Když [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) vykreslení ovládacího prvku platformě Xamarin.Forms aplikací v iOS `EntryRenderer` vytvoření instance třídy, což na oplátku vytvoří nativní `UITextField` ovládacího prvku. Na platformě Android `EntryRenderer` vytvoří instanci třídy `EditText` ovládacího prvku. Na univerzální platformu Windows (UWP), `EntryRenderer` vytvoří instanci třídy `TextBox` ovládacího prvku. Další informace o zobrazovací jednotky a třídy nativní ovládacích prvků, které ovládací prvky Xamarin.Forms mapování na najdete v tématu [zobrazovací jednotky základní třídy a nativní ovládací prvky](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
 Následující diagram znázorňuje vztah mezi [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) řízení a odpovídající nativní ovládací prvky, které implementují ho:
 
@@ -178,13 +178,13 @@ namespace CustomRenderer.Android
 
 Volání základní třídy `OnElementChanged` metoda vytvoří instanci Android `EditText` ovládací prvek s odkazem na přiřazeny vykreslení ovládacího prvku `Control` vlastnost. Barva pozadí je pak nastavena na hodnotu světle zelená s `Control.SetBackgroundColor` metoda.
 
-### <a name="creating-the-custom-renderer-on-windows-phone-and-uwp"></a>Vytváření vlastní zobrazovací jednotky na Windows Phone a UWP
+### <a name="creating-the-custom-renderer-on-uwp"></a>Vytváření vlastní zobrazovací jednotky na UWP
 
-Následující příklad kódu ukazuje vlastní zobrazovací jednotky pro Windows Phone a UWP:
+Následující příklad kódu ukazuje vlastní zobrazovací jednotky pro UPW:
 
 ```csharp
 [assembly: ExportRenderer(typeof(MyEntry), typeof(MyEntryRenderer))]
-namespace CustomRenderer.WinPhone81
+namespace CustomRenderer.UWP
 {
     public class MyEntryRenderer : EntryRenderer
     {

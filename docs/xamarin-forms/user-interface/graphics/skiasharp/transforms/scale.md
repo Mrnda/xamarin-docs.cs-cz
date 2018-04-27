@@ -7,11 +7,11 @@ ms.assetid: 54A43F3D-9DA8-44A7-9AE4-7E3025129A0B
 author: charlespetzold
 ms.author: chape
 ms.date: 03/23/2017
-ms.openlocfilehash: 09a81cd84f145512b9fbbf0db009335eac8a95a9
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: b4a36e15bd5db72ef113748282175c6d31a95966
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="the-scale-transform"></a>Transformace škálování
 
@@ -25,13 +25,13 @@ Transformace škálování také často způsobí, že grafiky souřadnice přes
 
 Dříve jste viděli dva vzorce transformace, které popisují důsledky překlad faktory `dx` a `dy`:
 
-x' = x + dx
+x: = x + DirectX
 
 y' = y + dy
 
 Škálování faktory `sx` a `sy` jsou multiplikativní místo doplňkové:
 
-x' = sx · x
+x: sx · = x
 
 y' = sy · y
 
@@ -167,7 +167,7 @@ Je umístěný levém horním rohu obdélníku zaokrouhlené `margin` pixelů z 
 
 [![](scale-images/centeredscale-small.png "Trojitá snímek obrazovky stránky zarovnaný na střed škálování")](scale-images/centeredscale-large.png#lightbox "Trojitá snímek obrazovky stránky škálování zarovnaný na střed")
 
-`Slider` Elementy v tento program mít řadu &ndash;10 až 10. Jak vidíte, záporné hodnoty Vertical škálování (například na Android obrazovky v centru) způsobit, že objekty kolem vodorovné osy, které procházejí středu škálování. Záporné hodnoty vodorovných škálování (například obrazovce Windows na pravé straně) způsobit, že objekty kolem svislé osy, které procházejí středu škálování.
+`Slider` Elementy v tento program mít řadu &ndash;10 až 10. Jak vidíte, záporné hodnoty Vertical škálování (například na Android obrazovky v centru) způsobit, že objekty kolem vodorovné osy, které procházejí středu škálování. Záporné hodnoty vodorovných škálování (například obrazovce UWP na pravé straně) způsobit, že objekty kolem svislé osy, které procházejí středu škálování.
 
 Tato verze čtvrtý `Scale` metoda je ve skutečnosti zástupce. Můžete chtít zjistit, jak to funguje tak, že nahradíte `Scale` metoda v tento kód následujícím kódem:
 
@@ -206,7 +206,7 @@ canvas.Scale(sx, sy, px, py);
 
 Jednotlivé transformace jsou kombinovaných tak, aby celkový transformace vzorec:
 
- x' = sx · (x – px) + px
+ x: sx · = (x – px) + px
 
  y' = sy · (y – py) + py
 
@@ -344,4 +344,4 @@ Kód zobrazí také hvězdičkou deset vícekrát, pokaždé, když snížení �
 ## <a name="related-links"></a>Související odkazy
 
 - [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

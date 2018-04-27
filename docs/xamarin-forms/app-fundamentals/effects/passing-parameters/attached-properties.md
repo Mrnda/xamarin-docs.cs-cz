@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/05/2016
-ms.openlocfilehash: c02929c49d9757f0814208d5f4fce7d258a689bd
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5bca36189100942e21d1d750dd156dab0cf45fc4
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="passing-effect-parameters-as-attached-properties"></a>Předávání parametrů účinek jako připojené vlastnosti
 
@@ -257,7 +257,7 @@ public class LabelShadowEffect : PlatformEffect
 
 `OnElementPropertyChanged` Metoda aktualizace radius, barvu nebo posun stínu, za předpokladu, že odpovídající `ShadowEffect` přidružená vlastnost hodnota změněna. Kontrolu pro vlastnost, která se změnila měli vždy provedena, protože toto přepsání lze volat vícekrát.
 
-### <a name="android-project"></a>Android Project
+### <a name="android-project"></a>Projekt pro Android
 
 Následující příklad kódu ukazuje `LabelShadowEffect` implementace pro projekt Android:
 
@@ -345,14 +345,14 @@ public class LabelShadowEffect : PlatformEffect
 
 `OnElementPropertyChanged` Metoda aktualizace radius, barvu nebo posun stínu, za předpokladu, že odpovídající `ShadowEffect` přidružená vlastnost hodnota změněna. Kontrolu pro vlastnost, která se změnila měli vždy provedena, protože toto přepsání lze volat vícekrát.
 
-### <a name="windows-phone--universal-windows-platform-projects"></a>Windows Phone & Universal Windows Platform projekty
+### <a name="universal-windows-platform-project"></a>Univerzální platforma projekt pro Windows
 
-Následující příklad kódu ukazuje `LabelShadowEffect` implementace pro projekty Windows Phone a univerzální platformu Windows (UWP):
+Následující příklad kódu ukazuje `LabelShadowEffect` implementace pro projekt univerzální platformu Windows (UWP):
 
 ```csharp
 [assembly: ResolutionGroupName ("MyCompany")]
 [assembly: ExportEffect (typeof(LabelShadowEffect), "LabelShadowEffect")]
-namespace EffectsDemo.WinPhone81
+namespace EffectsDemo.UWP
 {
     public class LabelShadowEffect : PlatformEffect
     {
@@ -401,7 +401,7 @@ namespace EffectsDemo.WinPhone81
 }
 ```
 
-Prostředí Windows Runtime a univerzální platformu Windows neposkytují stínové platit a proto `LabelShadowEffect` implementace na obou platformách simuluje jeden přidáním druhý posun [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) za primární `Label`. `OnAttached` Metoda vytvoří nový `Label` a nastaví některé vlastnosti rozložení `Label`. Potom volá metody, které načíst hodnoty přidružená vlastnost pomocí `ShadowEffect` metod getter a vytvoří stín nastavením [ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.TextColor/), [ `TranslationX` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationX/)a [ `TranslationY` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationY/) vlastnosti pro řízení barvy a umístění `Label`. `shadowLabel` Se pak vloží posun za primární `Label`. Tato funkce je uzavřen do `try` / `catch` blokovat v případě, že ovládací prvek, který účinek je připojen k nemá `Control.Layer` vlastnosti. Žádné implementace poskytuje `OnDetached` metoda vzhledem k tomu, že je nutné žádné čištění.
+Univerzální platformu Windows neposkytuje stínové platit a proto `LabelShadowEffect` implementace na obou platformách simuluje jeden přidáním druhý posun [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) za primární `Label`. `OnAttached` Metoda vytvoří nový `Label` a nastaví některé vlastnosti rozložení `Label`. Potom volá metody, které načíst hodnoty přidružená vlastnost pomocí `ShadowEffect` metod getter a vytvoří stín nastavením [ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.TextColor/), [ `TranslationX` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationX/)a [ `TranslationY` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationY/) vlastnosti pro řízení barvy a umístění `Label`. `shadowLabel` Se pak vloží posun za primární `Label`. Tato funkce je uzavřen do `try` / `catch` blokovat v případě, že ovládací prvek, který účinek je připojen k nemá `Control.Layer` vlastnosti. Žádné implementace poskytuje `OnDetached` metoda vzhledem k tomu, že je nutné žádné čištění.
 
 #### <a name="responding-to-property-changes"></a>Reakce na změny vlastností
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/05/2016
-ms.openlocfilehash: 78d14b9764ab0c7cafb9f09fa1c8acea3f45afde
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c913ea56af423631c48fb9ee6d8dcb95028a4144
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="passing-effect-parameters-as-common-language-runtime-properties"></a>Předávání parametrů účinek jako běžné vlastnosti Runtime jazyka
 
@@ -147,7 +147,7 @@ namespace EffectsDemo.iOS
 
 `OnAttached` Metoda načte `ShadowEffect` instance a sady `Control.Layer` vlastnosti pro zadanou vlastnost hodnotami pro vytvoření stínové kopie. Tato funkce je uzavřen do `try` / `catch` blokovat v případě, že ovládací prvek, který účinek je připojen k nemá `Control.Layer` vlastnosti. Žádné implementace poskytuje `OnDetached` metoda vzhledem k tomu, že je nutné žádné čištění.
 
-### <a name="android-project"></a>Android Project
+### <a name="android-project"></a>Projekt pro Android
 
 Následující příklad kódu ukazuje `LabelShadowEffect` implementace pro projekt Android:
 
@@ -184,14 +184,14 @@ namespace EffectsDemo.Droid
 
 `OnAttached` Metoda načte `ShadowEffect` instance a volání [ `TextView.SetShadowLayer` ](https://developer.xamarin.com/api/member/Android.Widget.TextView.SetShadowLayer/p/System.Single/System.Single/System.Single/Android.Graphics.Color/) metodu pro vytvoření stín pomocí hodnot zadanou vlastnost. Tato funkce je uzavřen do `try` / `catch` blokovat v případě, že ovládací prvek, který účinek je připojen k nemá `Control.Layer` vlastnosti. Žádné implementace poskytuje `OnDetached` metoda vzhledem k tomu, že je nutné žádné čištění.
 
-### <a name="windows-phone--universal-windows-platform-projects"></a>Windows Phone & Universal Windows Platform projekty
+### <a name="universal-windows-platform-project"></a>Univerzální platforma projekt pro Windows
 
-Následující příklad kódu ukazuje `LabelShadowEffect` implementace pro projekty Windows Phone a univerzální platformu Windows (UWP):
+Následující příklad kódu ukazuje `LabelShadowEffect` implementace pro projekt univerzální platformu Windows (UWP):
 
 ```csharp
 [assembly: ResolutionGroupName ("Xamarin")]
 [assembly: ExportEffect (typeof(LabelShadowEffect), "LabelShadowEffect")]
-namespace EffectsDemo.WinPhone81
+namespace EffectsDemo.UWP
 {
     public class LabelShadowEffect : PlatformEffect
     {
@@ -229,7 +229,7 @@ namespace EffectsDemo.WinPhone81
 }
 ```
 
-Prostředí Windows Runtime a univerzální platformu Windows neposkytují stínové platit a proto `LabelShadowEffect` implementace na obou platformách simuluje jeden přidáním druhý posun [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) za primární `Label`. `OnAttached` Metoda načte `ShadowEffect` instance, vytvoří novou `Label`a nastaví některé vlastnosti rozložení `Label`. Ta poté vytvoří stín nastavením [ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.TextColor/), [ `TranslationX` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationX/), a [ `TranslationY` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationY/) vlastnosti pro řízení barvy a umístění `Label`. `shadowLabel` Se pak vloží posun za primární `Label`. Tato funkce je uzavřen do `try` / `catch` blokovat v případě, že ovládací prvek, který účinek je připojen k nemá `Control.Layer` vlastnosti. Žádné implementace poskytuje `OnDetached` metoda vzhledem k tomu, že je nutné žádné čištění.
+Univerzální platformu Windows neposkytuje stínové platit a proto `LabelShadowEffect` implementace na obou platformách simuluje jeden přidáním druhý posun [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) za primární `Label`. `OnAttached` Metoda načte `ShadowEffect` instance, vytvoří novou `Label`a nastaví některé vlastnosti rozložení `Label`. Ta poté vytvoří stín nastavením [ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.TextColor/), [ `TranslationX` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationX/), a [ `TranslationY` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationY/) vlastnosti pro řízení barvy a umístění `Label`. `shadowLabel` Se pak vloží posun za primární `Label`. Tato funkce je uzavřen do `try` / `catch` blokovat v případě, že ovládací prvek, který účinek je připojen k nemá `Control.Layer` vlastnosti. Žádné implementace poskytuje `OnDetached` metoda vzhledem k tomu, že je nutné žádné čištění.
 
 ## <a name="summary"></a>Souhrn
 

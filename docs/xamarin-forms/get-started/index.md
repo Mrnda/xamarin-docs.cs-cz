@@ -1,6 +1,6 @@
 ---
 title: Začínáme s Xamarin.Forms
-description: Xamarin.Forms je sada nástrojů uživatelského rozhraní a platformy, která umožňuje vývojářům vytvářet efektivní nativní uživatelské rozhraní rozložení, které mohou být sdíleny s iOS, Android, Windows Phone a aplikace pro univerzální platformu Windows. Tato řada nabízí základní informace o vývoj s Xamarin.Forms a popisuje vytváření aplikací s více platformami a více obrazovky.
+description: Xamarin.Forms je sada nástrojů uživatelského rozhraní a platformy, která umožňuje vývojářům vytvářet efektivní nativní uživatelské rozhraní rozložení, které mohou být sdíleny s iOS, Android a Universal Windows Platform apps. Tato řada nabízí základní informace o vývoj s Xamarin.Forms a popisuje vytváření aplikací s více platformami a více obrazovky.
 ms.prod: xamarin
 ms.assetid: d87d7232-242c-4ec4-81e9-36103d7e8fcf
 ms.technology: xamarin-forms
@@ -8,20 +8,20 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/02/2016
-ms.openlocfilehash: 58c0fa2041c106f697166891c0e88a409283c17f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: da5547de1f21b1f02462f47a4e6ffee43dd0d1bf
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="getting-started-with-xamarinforms"></a>Začínáme s Xamarin.Forms
 
-_Xamarin.Forms je sada nástrojů uživatelského rozhraní a platformy, která umožňuje vývojářům vytvářet efektivní nativní uživatelské rozhraní rozložení, které mohou být sdíleny s iOS, Android, Windows Phone a aplikace pro univerzální platformu Windows. Tato řada nabízí základní informace o vývoj s Xamarin.Forms a popisuje vytváření aplikací s více platformami a více obrazovky._
+_Xamarin.Forms je sada nástrojů uživatelského rozhraní a platformy, která umožňuje vývojářům vytvářet efektivní nativní uživatelské rozhraní rozložení, které mohou být sdíleny s iOS, Android a Universal Windows Platform apps. Tato řada nabízí základní informace o vývoj s Xamarin.Forms a popisuje vytváření aplikací s více platformami a více obrazovky._
 
 Přehled instalace a nastavení postupy, které platí pro vývoj pro různé platformy najdete v tématu [požadavky na platformě Xamarin.Forms](installation.md) a [instalace](~/cross-platform/get-started/installation/index.md).
 
 > [!div class="nextstepaction"]
-> [Xamarin.Forms Quickstart](~/xamarin-forms/get-started/hello-xamarin-forms/quickstart.md)
+> [Rychlý start Xamarin.Forms](~/xamarin-forms/get-started/hello-xamarin-forms/quickstart.md)
 
 
 

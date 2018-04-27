@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: 7cae53187c9bc35d55f34dca664e28280cdab062
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f179fcfc26dd73bf1655c786078dce1f6a02b3a9
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="localization"></a>Lokalizace
 
@@ -165,7 +165,7 @@ Když je aplikace vyvinuté a základního souboru RESX má text přidat, by mě
 </data>
 ```
 
-**AppResources.ja.resx (Japanese)**
+**AppResources.ja.resx (japonština)**
 
 ```xml
 <data name="AddButton" xml:space="preserve">
@@ -201,7 +201,7 @@ myEntry.Placeholder = AppResources.NotesPlaceholder;
 myButton.Text = AppResources.AddButton;
 ```
 
-Uživatelské rozhraní pro iOS, Android a vykreslí platformy systému Windows tak, jak jste zvyklí, s výjimkou nyní je možné přeložit aplikaci do různých jazyků, protože je právě načítán textu z prostředku spíše, než pevně. Zde je snímek obrazovky zobrazující uživatelské rozhraní na jednotlivých platformách před překlad:
+Uživatelské rozhraní pro iOS, Android a vykreslí univerzální platformu Windows (UWP), jak jste zvyklí, s výjimkou nyní je možné přeložit aplikaci do různých jazyků, protože je právě načítán textu z prostředku spíše, než pevně. Zde je snímek obrazovky zobrazující uživatelské rozhraní na jednotlivých platformách před překlad:
 
 ![](localization-images/simple-example-english.png "Uživatelská rozhraní a platformy před překlad")
 
@@ -274,7 +274,7 @@ public interface ILocalize
 }
 ```
 
-Druhý, použijte [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md) v platformě Xamarin.Forms `App` třída volání rozhraní a nastavit jazykovou verzi naše RESX prostředky na správnou hodnotu. Všimněte si, že jsme nemusíte ručně nastavena tato hodnota pro Windows Phone a do univerzální platformy Windows, protože rozhraní prostředky automaticky rozpozná vybraný jazyk na těchto platformách.
+Druhý, použijte [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md) v platformě Xamarin.Forms `App` třída volání rozhraní a nastavit jazykovou verzi naše RESX prostředky na správnou hodnotu. Všimněte si, že jsme nemusíte ručně, nastavte hodnotu pro univerzální platformu Windows, protože rozhraní prostředky automaticky rozpozná vybraný jazyk na těchto platformách.
 
 ```csharp
 if (Device.RuntimePlatform == Device.iOS || Device.RuntimePlatform == Device.Android)
@@ -326,7 +326,7 @@ public class PlatformCulture
 
 ### <a name="platform-specific-code"></a>Kód specifický pro platformu
 
-Kód k detekci, který jazyk pro zobrazení musí být specifické pro platformu, protože iOS, Android a platformy Windows zveřejnění těchto informací v několika různými způsoby. Kód pro `ILocalize` závislostí služby je zadaný pod pro každou platformu, společně s další požadavky specifické pro platformu zajistit textu je vykreslí správně.
+Kód k detekci, který jazyk pro zobrazení musí být specifické pro platformu, protože iOS, Android a UWP zveřejnění těchto informací v několika různými způsoby. Kód pro `ILocalize` závislostí služby je zadaný pod pro každou platformu, společně s další požadavky specifické pro platformu zajistit textu je vykreslí správně.
 
 Kód specifických pro platformy musí také zpracovat případy, kdy operačního systému umožňuje uživatelům nakonfigurovat identifikátor národního prostředí, která není podporována. Na NET `CultureInfo` třídy. V těchto případech musí být napsané vlastní kód pro zjišťování nepodporované národní prostředí a nahraďte nejvhodnější. Národní prostředí NET kompatibilní.
 
@@ -553,48 +553,9 @@ Jakmile tento kód byl přidán do projektu aplikace pro Android, bude moci auto
 > [!NOTE]
 >️ **upozornění:** přeloženými řetězci práci ve vašich sestaveních verze Android, ale není při ladění, klikněte pravým tlačítkem na **projekt Android** a vyberte **možnosti > sestavení > Android Sestavení** a ujistěte se, že **rychlé nasazení sestavení** není zaškrtnuté. Tato možnost způsobí, že potíže při načítání prostředků a by se neměla používat, pokud testujete lokalizované aplikace.
 
-#### <a name="windows-application-projects"></a>Projekty aplikace pro Windows
+#### <a name="universal-windows-platform"></a>Univerzální platforma pro Windows
 
-Windows 8.1 a univerzální platformu Windows (UWP) projekty nevyžadují službu závislostí – tyto platformy správně automaticky nastaví jazykovou verzi prostředku.
-
-Implementace rozšíření značek XAML popsané dál v tomto dokumentu může vyžadovat `ILocalize` implementace vidíte níže pro Windows Phone.
-
-##### <a name="windows-phone-80"></a>Windows Phone 8.0
-
-I když není používán `App` třídy, zde je implementaci pro Windows Phone `ILocalize` závislostí služby. Přidejte tuto třídu do projektu aplikace Windows Phone; je-li provést implementaci rozšíření značek XAML popsané dál:
-
-```csharp
-[assembly: Dependency(typeof(UsingResxLocalization.WinPhone.Localize))]
-
-namespace UsingResxLocalization.WinPhone
-{
-    public class Localize : UsingResxLocalization.ILocalize
-    {
-        public void SetLocale (CultureInfo ci) { }
-        public System.Globalization.CultureInfo GetCurrentCultureInfo ()
-        {
-            return System.Threading.Thread.CurrentThread.CurrentUICulture;
-        }
-    }
-}
-
-```
-
-Projekty Windows Phone 8.0 musí být správně nakonfigurované pro lokalizovaný text, který se má zobrazit.
-Podporované jazyky musí být vybraný v možnosti projektu *a* **WMAppManifest.xml** soubory.
-Pokud tato nastavení nejsou aktualizovány lokalizované prostředky RESX se nenačte.
-
-##### <a name="project-options"></a>Možnosti projektu
-
-Klikněte pravým tlačítkem na projekt Windows Phone a vyberte **vlastnosti**. V **aplikace** kartě značek **podporované jazykové verze** podporující aplikaci:
-
-[![](localization-images/winphone-projectproperties-sml.png "Vlastnosti – podporované jazykové verze projektu")](localization-images/winphone-projectproperties.png#lightbox "projektu – vlastnosti – podporované jazykové verze")
-
-##### <a name="wmappmanifestxml"></a>WMAppManifest.xml
-
-Rozbalte uzel vlastnosti v projektu Windows Phone a dvakrát klikněte na **WMAppManifest.xml** souboru. Klikněte na **balení** kartě a osové všech jazyků podporovaných aplikací.
-
-[![](localization-images/winphone-wmappmanifest-sml.png "WMAppManifest.xml – podporované jazyky")](localization-images/winphone-wmappmanifest.png#lightbox "WMAppManifest.xml – podporované jazyky")
+Univerzální platformu Windows (UWP) projekty nevyžadují službu závislostí. Místo toho tuto platformu automaticky nastaví jazykovou verzi prostředku správně.
 
 ##### <a name="assemblyinfocs"></a>AssemblyInfo.cs
 
@@ -683,7 +644,7 @@ Následující odrážek popisují důležité elementy ve výše uvedeném kód
 * `"UsingResxLocalization.Resx.AppResources"` je identifikátor prostředku pro naše RESX prostředky. Tvořená naše výchozí obor názvů, složku, kde jsou umístěny soubory prostředků a výchozí název souboru RESX.
 * `ResourceManager` Třída je vytvořený pomocí `IntrospectionExtensions.GetTypeInfo(typeof(TranslateExtension)).Assembly)` k určení aktuální sestavení načíst prostředky z a v mezipaměti v statických `ResMgr` pole. Je vytvořen jako `Lazy` zadejte tak, aby vytvořila je odložení, dokud se nejprve používá v `ProvideValue` metoda.
 * `ci` závislosti služby se používá k získání zvolený jazyk pro uživatele z nativní operačního systému.
-* `GetString` je metoda, která načte skutečné přeložené řetězce z souborů prostředků. Ve Windows Phone 8.1 a univerzální platformu Windows `ci` bude mít hodnotu null. protože `ILocalize` rozhraní není implementovaný pro tyto platformy. Jde o ekvivalent volání `GetString` metodu se pouze první parametr. Místo toho rozhraní prostředky automaticky rozpozná národní prostředí a načte přeložené řetězce z příslušné souboru RESX.
+* `GetString` je metoda, která načte skutečné přeložené řetězce z souborů prostředků. Na univerzální platformu Windows `ci` bude mít hodnotu null. protože `ILocalize` rozhraní není implementovaný pro tyto platformy. Jde o ekvivalent volání `GetString` metodu se pouze první parametr. Místo toho rozhraní prostředky automaticky rozpozná národní prostředí a načte přeložené řetězce z příslušné souboru RESX.
 * Zpracování chyb byl pro lepší ladění chybějící prostředky, které došlo k výjimce (v `DEBUG` jenom na režim).
 
 Následující fragment kódu XAML ukazuje, jak používat rozšíření značek. Existují dva kroky ke spolupráci:
@@ -809,92 +770,23 @@ Aplikaci teď lokalizováno název aplikace a bitové kopie. Zde je snímek obra
 
 ![](localization-images/android-imageicon.png "Android ukázkový Text aplikace a lokalizace bitové kopie")
 
-### <a name="windows-phone-80-application-project"></a>Projekt aplikace Windows Phone 8.0
+### <a name="universal-windows-platform-application-projects"></a>Projekty aplikace platformy Universal Windows
 
-Windows Phone nemá jednoduchý předdefinovaný způsob výběru konkrétní lokalizované image ani pro lokalizace název aplikace.
-
-#### <a name="images"></a>Obrázky
-
-Získat obejít toto omezení ukázka poskytuje zlepšení pro jak může implementovat lokalizované pomocí načítání bitové kopie [vlastní zobrazovací jednotky](~/xamarin-forms/app-fundamentals/custom-renderer/index.md) pro `Image` ovládacího prvku.
-
-Kód vlastní zobrazovací jednotky jsou uvedeny níže – Pokud je zdroj `FileImageSource` pak extrahuje název souboru a vytvoří cestu k lokalizované image pomocí `CurrentUICulture`. Některé jazyky vyžadují zvláštní zpracování, aby případech přejít fungovat podle očekávání; v tomto příkladu je výchozí hodnota pro použití pouze kód jazyka obsahující dvě písmena s výjimkou v několika zvláštních případech:
-
-```csharp
-using System.IO;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.WinPhone;
-
-[assembly: ExportRenderer(typeof(Image), typeof(UsingResxLocalization.WinPhone.LocalizedImageRenderer))]
-namespace UsingResxLocalization.WinPhone
-{
-    public class LocalizedImageRenderer : ImageRenderer
-    {
-        protected override void OnElementChanged(ElementChangedEventArgs<Image> e)
-        {
-            base.OnElementChanged(e);
-
-            if (e.NewElement != null)
-            {
-                var s = e.NewElement.Source as FileImageSource;
-                if (s != null)
-                {
-                    var fileName = s.File;
-                    string ci = System.Threading.Thread.CurrentThread.CurrentUICulture.ToString();
-                    // you might need some custom logic here to support particular cultures and fallbacks
-                    if (ci == "pt-BR") {
-                        // use the complete string 'as is'
-                    } else if (ci == "zh-CN") {
-                         // we could have named the image directories differently,
-                         // but this keeps them consisent with RESX file naming
-                        ci = "zh-Hans";
-                    } else if (ci == "zh-TW" || ci == "zh-HK") {
-                        ci = "zh-Hant";
-                    } else {
-                        // for all others, just use the two-character language code
-                        ci = System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName;
-                    }
-                    e.NewElement.Source = Path.Combine("Assets/" + ci + "/" + fileName);
-                }
-            }
-        }
-    }
-}
-```
-
-Tento kód funguje s lokalizované obrázky struktury adresářů vidíte níže. Jste podporovali změnit kód podle požadavků vaší konkrétní lokalizace (například zpracování konkrétnější národní prostředí a návratem zpět v případě, že obrázky nejsou k dispozici):
-
-![](localization-images/winphone-resources.png "WinPhone lokalizované strukturu adresáře bitové kopie")
-
-Windows Phone teď lokalizováno bitovou kopii. Zde je snímek obrazovky výsledek (v španělština a zjednodušená čínština):
-
-![](localization-images/winphone-image-sml.png "WinPhone ukázkové aplikace Text a lokalizace bitové kopie")
-
-#### <a name="app-name"></a>Název aplikace.
-
-V dokumentaci společnosti Microsoft pro [lokalizace název aplikace Windows Phone 8.0](http://msdn.microsoft.com/library/windows/apps/ff967550(v=vs.105).aspx).
-
-### <a name="windows-phone-81-and-universal-windows-platform-application-projects"></a>Windows Phone 8.1 a Universal Windows projekty aplikací platformy
-
-Univerzální platformu Windows a Windows Phone 8.1 mít prostředků infrastruktury, která zjednodušuje lokalizace bitové kopie a název aplikace.
+Univerzální platformu Windows má prostředků infrastruktury, která zjednodušuje lokalizace bitové kopie a název aplikace.
 
 #### <a name="images"></a>Obrázky
 
 Bitové kopie je možné lokalizovat tím, že je ve složce daného prostředku, jak ukazuje následující snímek obrazovky:
 
-![](localization-images/uwp-image-folder-structure.png "WinPhone 8.1 a struktura složek lokalizace UWP bitové kopie")
+![](localization-images/uwp-image-folder-structure.png "Struktura složek lokalizace UWP bitové kopie")
 
 V době běhu bude prostředku infrastruktury systému Windows vyberte příslušné bitové kopie podle národního prostředí uživatele.
-
-#### <a name="app-name"></a>Název aplikace.
-
-V dokumentaci společnosti Microsoft pro [aplikace pro Windows 8.1 Store: lokalizace informací s popisem vaší aplikaci uživatelům](https://msdn.microsoft.com/library/windows/apps/hh454044.aspx) a [načítání řetězců z manifest aplikace](https://msdn.microsoft.com/library/windows/apps/xaml/hh965323.aspx#loading_strings_from_the_app_manifest.).
 
 ## <a name="summary"></a>Souhrn
 
 Xamarin.Forms aplikace je možné lokalizovat pomocí RESX – soubory a třídy globalizace rozhraní .NET. Kromě malé množství kód specifický pro platformu zjistit jazyk upřednostní uživatele je většina úsilí lokalizace centralizované v společný kód.
 
-Bitové kopie jsou obecně jiným způsobem specifické pro platformu chcete využít výhod více řešení poskytovaných v iOS a Android. Windows Phone vyžaduje vlastní kód, který lokalizaci bitové kopie způsobem cross platformy friendly; Chcete-li přidat další možnost zadaná ukázkový kód.
-
+Bitové kopie jsou obecně jiným způsobem specifické pro platformu chcete využít výhod více řešení poskytovaných v iOS a Android. 
 
 ## <a name="related-links"></a>Související odkazy
 

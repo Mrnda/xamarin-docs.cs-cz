@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: 3f098e7f403a4f5e9fd924b8745348197cd4f843
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9b437b42c1cb4dd8cbe7612a680032d84e852ff6
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="checking-battery-status"></a>Kontrola stavu baterie
 
@@ -22,7 +22,6 @@ Protože Xamarin.Forms neobsahuje funkce pro kontrolu aktuální stav baterie, t
 - **[Vytváření rozhraní](#Creating_the_Interface)**  &ndash; pochopit vytváření rozhraní ve sdílené kódu.
 - **[iOS implementace](#iOS_Implementation)**  &ndash; zjistěte, jak toto rozhraní implementovat v nativním kódu pro iOS.
 - **[Android implementace](#Android_Implementation)**  &ndash; zjistěte, jak implementovat rozhraní v nativním kódu pro Android.
-- **[Windows Phone implementace](#Windows_Phone_Implementation)**  &ndash; zjistěte, jak implementovat rozhraní v nativním kódu pro Windows Phone.
 - **[Universal Windows Platform implementace](#UWPImplementation)**  &ndash; zjistěte, jak toto rozhraní implementovat v nativním kódu pro univerzální platformu Windows (UWP).
 - **[Implementace v sdíleného kódu](#Implementing_in_Shared_Code)**  &ndash; Naučte se používat `DependencyService` provést volání do nativního implementace ze sdíleného kódu.
 
@@ -311,74 +310,6 @@ namespace DependencyServiceSample.Droid
 
 Tento atribut zaregistruje jako implementaci třídy `IBattery` rozhraní, což znamená, že `DependencyService.Get<IBattery>` mohou být používány sdíleného kódu můžete vytvořit její instanci.
 
-<a name="Windows_Phone_Implementation" />
-
-## <a name="windows-phone-implementation"></a>Implementace Windows Phone
-
-Tato implementace je omezenější než verze Android a iOS, protože rozhraní API Windows Phone power informacemi s menší než ekvivalenty Android a iOS.
-
-```csharp
-using System;
-using Windows.ApplicationModel.Core;
-using DependencyServiceSample.WinPhone;
-
-namespace DependencyServiceSample.WinPhone
-{
-  public class BatteryImplementation : IBattery
-  {
-    private int last;
-    private BatteryStatus status = BatteryStatus.Unknown;
-
-    public BatteryImplementation()
-    {
-      last = DefaultBattery.RemainingChargePercent;
-    }
-
-    Windows.Phone.Devices.Power.Battery battery;
-    private Windows.Phone.Devices.Power.Battery DefaultBattery
-    {
-      get { return battery ?? (battery = Windows.Phone.Devices.Power.Battery.GetDefault()); }
-    }
-    public int RemainingChargePercent
-    {
-      get
-      { return DefaultBattery.RemainingChargePercent; }
-    }
-
-    public  BatteryStatus Status
-    {
-      get { return status; }
-    }
-
-    public PowerSource PowerSource
-    {
-      get
-      {
-        if (status == BatteryStatus.Full || status == BatteryStatus.Charging)
-          return PowerSource.Ac;
-
-        return PowerSource.Battery;
-      }
-    }
-  }
-}
-```
-
-Přidejte tuto `[assembly]` atribut nad třídu (a mimo všechny obory názvů, které byly definovány), včetně požadované `using` příkazy.
-
-```csharp
-using System;
-using Windows.ApplicationModel.Core;
-using DependencyServiceSample.WinPhone;
-
-[assembly: Xamarin.Forms.Dependency (typeof (BatteryImplementation))]
-namespace DependencyServiceSample.WinPhone {
-  public class BatteryImplementation : IBattery {
-    ...
-```
-
-Tento atribut zaregistruje jako implementaci třídy `IBattery` rozhraní, což znamená, že `DependencyService.Get<IBattery>` lze použít v sdíleného kódu vytvořit její instanci.
-
 <a name="UWPImplementation" />
 
 ## <a name="universal-windows-platform-implementation"></a>Implementace Universal Windows Platform
@@ -537,7 +468,7 @@ public MainPage ()
 }
 ```
 
-Spuštění této aplikace v iOS, Android nebo platformy systému Windows a stisknutím tlačítka, bude výsledkem text tlačítka aktualizace tak, aby odrážela aktuální stav napájení zařízení.
+Spuštění této aplikace v iOS, Android, nebo UWP a stisknutím tlačítka výsledkem bude text tlačítka aktualizace tak, aby odrážela aktuální stav napájení zařízení.
 
 ![](battery-info-images/battery.png "Ukázka stavu baterie")
 

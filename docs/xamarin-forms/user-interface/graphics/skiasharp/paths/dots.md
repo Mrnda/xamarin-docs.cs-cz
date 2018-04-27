@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 46ab21aa5156a6deab5952f165917cc299b500ac
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 1e295ac424c311472ff175d4627c5fb12641d31f
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="dots-and-dashes"></a>Tečky a pomlčky
 
@@ -164,7 +164,7 @@ Chcete-li získat tento problém vyřešit, při použití zakončení tahu z `S
 - {30, 10} stane {20, 20} pro na přerušovanou čáru
 - {10, 10, 30, 10} stane {0, 20, 20, 20} pro desítkovém a přerušované čáry
 
-Zobrazí obrazovky systému Windows, které s tečkami a přerušovanou řádek tah cap z `Round`. `Round` Zakončení tahu často poskytuje nejlepší vzhled tečky a pomlčky v silné čáry.
+Zobrazuje UWP obrazovky, které s tečkami a přerušovanou řádek tah cap z `Round`. `Round` Zakončení tahu často poskytuje nejlepší vzhled tečky a pomlčky v silné čáry.
 
 Pokud byl proveden žádné zmínky o druhý parametr `SKPathEffect.CreateDash` metoda. Tento parametr je s názvem `phase` odkazuje posun, tečky a pomlčky vzor pro začátek řádku. Například, pokud je pole dash {10, 10} a `phase` je 10 a pak na začátku řádku mezera spíše než tečku.
 
@@ -220,4 +220,4 @@ Nyní jste viděli kreslení čar a křivek pomocí čištění vzorce definovat
 ## <a name="related-links"></a>Související odkazy
 
 - [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

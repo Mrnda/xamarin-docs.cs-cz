@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 2e0a5ff433de034da0170e3aa9a19ab50ddc3cb6
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 97f0917e4e8670ab379aae1b2707ae08cb29bb70
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="displaying-pop-ups"></a>Zobrazení automaticky otevíraná okna
 
@@ -45,7 +45,7 @@ async void OnAlertYesNoClicked (object sender, EventArgs e)
 
 ## <a name="guiding-users-through-tasks"></a>Pokyny uživateli prostřednictvím úlohy
 
-[UIActionSheet](https://developer.apple.com/library/ios/documentation/uikit/reference/uiactionsheet_class/Reference/Reference.html) je běžné elementu uživatelského rozhraní v iOS. Platformě Xamarin.Forms [ `DisplayActionSheet` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayActionSheet(System.String,System.String,System.String,System.String[])/) metoda umožňuje zahrnout tento ovládací prvek v aplikacích pro různé platformy, vykreslování nativní alternativy v Android a Windows Phone.
+[UIActionSheet](https://developer.apple.com/library/ios/documentation/uikit/reference/uiactionsheet_class/Reference/Reference.html) je běžné elementu uživatelského rozhraní v iOS. Platformě Xamarin.Forms [ `DisplayActionSheet` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayActionSheet(System.String,System.String,System.String,System.String[])/) metoda umožňuje zahrnout tento ovládací prvek v aplikacích pro různé platformy, vykreslování nativní alternativy v Android a UWP.
 
 Zobrazte seznam akci `await` [ `DisplayActionSheet` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayActionSheet(System.String,System.String,System.String,System.String[])/) v žádném [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/), předávání zprávy a tlačítko popisky jako řetězce. Metoda vrátí řetězec popisku tlačítka, které bylo kliknuto uživatelem. Zde je uveden jednoduchý příklad:
 

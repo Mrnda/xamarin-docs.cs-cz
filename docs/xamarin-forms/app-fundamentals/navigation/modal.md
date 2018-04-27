@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 909a04398043a3c2f0c30e4da82d174a6bfaf148
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 00d52aa69372ab5ec3073e2355a43521b515ca8b
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="modal-pages"></a>Modální stránky
 
@@ -100,7 +100,7 @@ Přesné pořadí, že k těmto událostem dojde, je však platformy, které jso
 
 ### <a name="disabling-the-back-button"></a>Zakázat tlačítko Zpět
 
-Pro Android a Windows Phone, uživatel může vždy vrátit na předchozí stránku stisknutím standardní *zpět* na zařízení tlačítko. Pokud stránce modální vyžaduje, aby uživatel k dokončení úlohy nezávislý před opuštěním stránky, musíte zakázat aplikaci *zpět* tlačítko. Toho lze dosáhnout přepsáním [ `Page.OnBackButtonPressed` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnBackButtonPressed/) metoda na stránce modální. Další informace najdete v části [kapitoly 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) Charlese Petzold Xamarin.Forms knihy.
+V systému Android, uživatel může vždy vrátit na předchozí stránku stisknutím standardní *zpět* na zařízení tlačítko. Pokud stránce modální vyžaduje, aby uživatel k dokončení úlohy nezávislý před opuštěním stránky, musíte zakázat aplikaci *zpět* tlačítko. Toho lze dosáhnout přepsáním [ `Page.OnBackButtonPressed` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnBackButtonPressed/) metoda na stránce modální. Další informace najdete v části [kapitoly 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) Charlese Petzold Xamarin.Forms knihy.
 
 ### <a name="animating-page-transitions"></a>Animace přechody stránek
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: d55d8c8d98828097c842cc383037db88097b963d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 035254f87e52801d5ff7419f9ad9d5503f060020
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="carousel-page"></a>Karuselu stránky
 
@@ -45,7 +45,7 @@ Dva přístupy lze použít k vytvoření [ `CarouselPage` ](https://developer.x
 - [Naplnění](#Populating_a_CarouselPage_with_a_Page_Collection) `CarouselPage` s kolekcí podřízených [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) instance.
 - [Přiřadit](#Populating_a_CarouselPage_with_a_Template) kolekce [ `ItemsSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%601.ItemsSource/) vlastnost a přiřadit [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) k [ `ItemTemplate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%601.ItemTemplate/) vlastnost vrátit [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) instancí pro objekty v kolekci.
 
-Pomocí obou přístupů `CarouselPage` bude potom zobrazení každé stránce se pak s prstem interakce, Přesun na další stránku, který se má zobrazit. Toto navigační prostředí bude myslíte, že fyzické a pro uživatele Windows Phone.
+Pomocí obou přístupů `CarouselPage` bude potom zobrazení každé stránce se pak s prstem interakce, Přesun na další stránku, který se má zobrazit. 
 
 > [!NOTE]
 > A [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) pouze možné naplnit [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) instancí, nebo `ContentPage` odvozené konfigurace.
@@ -246,7 +246,7 @@ Další informace o [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xa
 
 ## <a name="summary"></a>Souhrn
 
-Tento článek ukázal, jak používat [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) procházet kolekce stránek. `CarouselPage` Je stránka, která uživatelé mohou prstem stranu procházet stránky obsahu, jako je Galerie a poskytuje možnosti navigace, které funguje přirozené a pro uživatele Windows Phone.
+Tento článek ukázal, jak používat [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) procházet kolekce stránek. `CarouselPage` Je stránka, která uživatelé mohou prstem stranu procházet stránky obsahu, podobně jako galerie.
 
 
 ## <a name="related-links"></a>Související odkazy

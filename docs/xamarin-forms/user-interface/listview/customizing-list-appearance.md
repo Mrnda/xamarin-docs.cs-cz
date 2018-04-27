@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 76a5c96d0e7bb85f0e6b313e2dbc058b8c2aae6d
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.openlocfilehash: f1f0bb0ce282479a7b185257880244863bb67a60
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="list-appearance"></a>Seznam vzhledu
 
@@ -35,7 +35,7 @@ Chcete-li povolit seskupování:
 - Nastavte `ListView`na `ItemsSource` do tohoto seznamu.
 - Nastavit `IsGroupingEnabled` na hodnotu true.
 - Nastavit [ `GroupDisplayBinding` ](http://developer.xamarin.com/api/property/Xamarin.Forms.ListView.GroupDisplayBinding/) k vytvoření vazby na vlastnost skupiny, který se používá jako název skupiny.
-- [Nepovinné] Nastavit [ `GroupShortNameBinding` ](http://developer.xamarin.com/api/property/Xamarin.Forms.ListView.GroupShortNameBinding/) k vytvoření vazby na vlastnost skupiny, který je používán jako krátký název pro skupinu. Krátký název se používá pro seznam odkazů (rigt straně sloupec v systému iOS, dlaždice mřížky na Windows Phone).
+- [Nepovinné] Nastavit [ `GroupShortNameBinding` ](http://developer.xamarin.com/api/property/Xamarin.Forms.ListView.GroupShortNameBinding/) k vytvoření vazby na vlastnost skupiny, který je používán jako krátký název pro skupinu. Krátký název se používá pro seznam odkazů (sloupec vpravo v systému iOS).
 
 Začněte vytvořením třídy pro skupiny:
 
@@ -120,7 +120,7 @@ Všimněte si, že máme:
 
 Pokud bylo povoleno seskupení v seznamu, lze přizpůsobit záhlaví skupiny.
 
-Podobným způsobem `ListView` má `ItemTemplate` pro definování zobrazení řádky, `ListView` má `GroupHeaderTemplate`. 
+Podobným způsobem `ListView` má `ItemTemplate` pro definování zobrazení řádky, `ListView` má `GroupHeaderTemplate`.
 
 Zde je uveden příklad možností přizpůsobení záhlaví skupiny v jazyce XAML:
 
@@ -206,7 +206,7 @@ Pokud chcete vytvořit vlastní záhlaví a zápatí, definujte zobrazení záhl
 <a name="Row_Separators" />
 
 ## <a name="row-separators"></a>Řádek oddělovačů
-Se zobrazí čáry oddělovače mezi `ListView` elementy ve výchozím nastavení na iOS a Android. Windows Phone nepodporuje oddělovač řádků na této platformy pravidla pro uživatelské prostředí. Pokud chcete skrýt oddělovacích čar na iOS a Android, nastavte `SeparatorVisibility` vlastnost na vaše ListView. Možnosti pro `SeparatorVisibility` jsou:
+Se zobrazí čáry oddělovače mezi `ListView` elementy ve výchozím nastavení na iOS a Android. Pokud chcete skrýt oddělovacích čar na iOS a Android, nastavte `SeparatorVisibility` vlastnost na vaše ListView. Možnosti pro `SeparatorVisibility` jsou:
 
 * **Výchozí** -zobrazuje oddělovací čáry na iOS a Android.
 * **Žádný** -skryje oddělovače na všech platformách.

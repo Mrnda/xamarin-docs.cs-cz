@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 8d6276a96d591363c88be4ff7edd8a9d039fb29d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 71c10e1de8b94b8d9799d144fb603c82c40ca9eb
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="colors"></a>Barvy
 
@@ -44,7 +44,7 @@ var @default = new Label    { Text = "Default",    BackgroundColor = Color.Defau
 var accent = new Label      { Text = "Accent",     BackgroundColor = Color.Accent };
 ```
 
-Tyto barvy se zobrazí na jednotlivých platformách níže. Všimněte si barvu konečné - `Accent` -blue-ish barvu pro iOS a Android; je tato hodnota je definováno Xamarin.Forms. Na Windows Phone `Accent` zobrazuje jako červený *barva zvýraznění vybrané uživatelem pro toto zařízení je totiž*; tato hodnota změny v závislosti na uživatelské předvolby.
+Tyto barvy se zobrazí na jednotlivých platformách níže. Všimněte si barvu konečné - `Accent` -blue-ish barvu pro iOS a Android; je tato hodnota je definováno Xamarin.Forms.
 
  [![Barva ukázku](colors-images/colors-sml.png "barva ukázku")](colors-images/colors.png#lightbox "barva Demo")
 
@@ -59,8 +59,6 @@ Vývojáři mohou použít tato hodnota k nastavení `Color` vlastnost ale měli
 Nastavení barvy zrušte.
 
 ## <a name="coloraccent"></a>Color.Accent
-
-Na Windows Phone je to doplňkové barvy volená uživatelem. Dobrý aplikace Windows Phone použít jako součást jejich stylů zajistit přirozený vzhled a chování.
 
 IOS a Android tato instance nastavena kontrastní barvu, která se zobrazí na výchozí pozadí, ale není stejný jako výchozí barvu textu.
 

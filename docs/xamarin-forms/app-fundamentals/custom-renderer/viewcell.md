@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 3e5f4f2d4c4025cce21026cc611af650616e69e2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4d1d4323e42df6240fee7be42ae8fac70a2b3f1f
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="customizing-a-viewcell"></a>Přizpůsobení ViewCell
 
 _Xamarin.Forms ViewCell je buňku, která mohou být přidány do ListView nebo zobrazení Tabulka, která obsahuje zobrazení definované developer. Tento článek ukazuje, jak vytvořit vlastní zobrazovací jednotky pro ViewCell, který je hostován v ovládacím prvku Xamarin.Forms ListView. To zastaví výpočty rozložení Xamarin.Forms nebudou opakovaně volá se během ListView posouvání._
 
-Každé buňce Xamarin.Forms má doprovodné zobrazovací jednotky pro každou platformu, která vytvoří instanci nativní ovládacího prvku. Když [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) je vykreslen metodou aplikaci Xamarin.Forms, v iOS `ViewCellRenderer` vytvoření instance třídy, které pak vytvoří nativní `UITableViewCell` ovládacího prvku. Na platformě Android `ViewCellRenderer` třída vytvoří nativní `View` ovládacího prvku. Na Windows Phone a univerzální platformu Windows (UWP) `ViewCellRenderer` třída vytvoří nativní `DataTemplate`. Další informace o zobrazovací jednotky a třídy nativní ovládacích prvků, které ovládací prvky Xamarin.Forms mapování na najdete v tématu [zobrazovací jednotky základní třídy a nativní ovládací prvky](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Každé buňce Xamarin.Forms má doprovodné zobrazovací jednotky pro každou platformu, která vytvoří instanci nativní ovládacího prvku. Když [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) je vykreslen metodou aplikaci Xamarin.Forms, v iOS `ViewCellRenderer` vytvoření instance třídy, které pak vytvoří nativní `UITableViewCell` ovládacího prvku. Na platformě Android `ViewCellRenderer` třída vytvoří nativní `View` ovládacího prvku. Na univerzální platformu Windows (UWP), `ViewCellRenderer` třída vytvoří nativní `DataTemplate`. Další informace o zobrazovací jednotky a třídy nativní ovládacích prvků, které ovládací prvky Xamarin.Forms mapování na najdete v tématu [zobrazovací jednotky základní třídy a nativní ovládací prvky](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
 Následující diagram znázorňuje vztah mezi [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) a odpovídající nativní ovládací prvky, které implementují ho:
 
@@ -169,7 +169,7 @@ Následující diagram znázorňuje odpovědnosti jednotlivých projektů v uká
 
 ![](viewcell-images/screenshots.png "NativeCell na jednotlivých platformách")
 
-`ViewCellRenderer` Třída poskytuje metody specifické pro platformu pro vykreslování vlastní buňky. Toto je `GetCell` metoda na platformě iOS `GetCellCore` metoda na platformě Android a `GetTemplate` metoda na platformě Windows Phone.
+`ViewCellRenderer` Třída poskytuje metody specifické pro platformu pro vykreslování vlastní buňky. Toto je `GetCell` metoda na platformě iOS `GetCellCore` metoda na platformě Android a `GetTemplate` metodu UWP.
 
 Každá třída vlastní zobrazovací jednotky je upraven pomocí `ExportRenderer` atribut, který registruje zobrazovací jednotky s Xamarin.Forms. Atribut přebírá dva parametry – název typu vykreslované Xamarin.Forms buňky a název typu vlastní zobrazovací jednotky. `assembly` Předpona, která má atribut určuje atribut, které se vztahují na celou sestavení.
 
@@ -519,15 +519,15 @@ Následující příklad kódu ukazuje definici rozložení `NativeAndroidCell.a
 
 Toto rozložení určuje, že dva `TextView` ovládací prvky a `ImageView` řízení lze zobrazit obsah buňky. Dva `TextView` ovládací prvky jsou v rámci svisle orientované `LinearLayout` ovládacího prvku pomocí všechny ovládací prvky v `RelativeLayout`.
 
-### <a name="creating-the-custom-renderer-on-windows-phone-and-uwp"></a>Vytváření vlastní zobrazovací jednotky na Windows Phone a UWP
+### <a name="creating-the-custom-renderer-on-uwp"></a>Vytváření vlastní zobrazovací jednotky na UWP
 
-Následující příklad kódu ukazuje vlastní zobrazovací jednotky pro Windows Phone a UWP:
+Následující příklad kódu ukazuje vlastní zobrazovací jednotky pro UPW:
 
 ```csharp
-[assembly: ExportRenderer(typeof(NativeCell), typeof(NativeWinPhoneCellRenderer))]
-namespace CustomRenderer.WinPhone81
+[assembly: ExportRenderer(typeof(NativeCell), typeof(NativeUWPCellRenderer))]
+namespace CustomRenderer.UWP
 {
-    public class NativeWinPhoneCellRenderer : ViewCellRenderer
+    public class NativeUWPCellRenderer : ViewCellRenderer
     {
         public override Windows.UI.Xaml.DataTemplate GetTemplate(Cell cell)
         {

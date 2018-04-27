@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2017
-ms.openlocfilehash: 11287d38ec0e01e068ca385c92e6a6efdc323aeb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4210f672cdc68acc45b1f547dcc2e6933298df93
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="tabbed-page"></a>Na kartách stránky
 
@@ -39,7 +39,6 @@ Rozložení [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Form
     > [!NOTE]
   > Všimněte si, že při použití kompatibility aplikace v systému Android, každé kartě také zobrazit ikony. Kromě toho `TabbedPageRenderer` pro Android kompatibility aplikace má přepisovatelným `SetTabIcon` metoda, která slouží k načtení ikony karta z vlastní `Drawable`. Toto přepsání umožňuje používat Image SVG jako ikony na `TabbedPage`.
 
-- Na Windows Phone zobrazí se seznam karty v horní části obrazovky a oblasti podrobností je nižší než. Na kartě, které názvy jsou automaticky převeden na malá a uživatel můžete přejděte kolekce karty, pokud jsou moc pro jednu obrazovku.
 - Na faktorech – Windows tablet formuláře, karty nejsou vždy viditelné a uživatelé nemusí prstem dolů (nebo klikněte pravým tlačítkem, pokud mají myši připojen) k zobrazení karet v `TabbedPage` (jak je znázorněno níže).
 
 ![](tabbed-page-images/windows-tabs.png "TabbedPage karet v systému Windows")

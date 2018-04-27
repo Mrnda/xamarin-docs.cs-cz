@@ -6,11 +6,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/06/2018
-ms.openlocfilehash: 268622ff8bc7ff05771096549ed694c57139366d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 066f084187a486ca2f88882890b5e9ad277b8cff
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="xamarinforms-multiscreen-quickstart"></a>Rychlý start Multiobrazovka Xamarin.Forms
 
@@ -46,7 +46,7 @@ Rozšíření aplikace Phoneword následujícím způsobem:
         <ContentPage.Padding>
             <OnPlatform x:TypeArguments="Thickness">
                 <On Platform="iOS" Value="20, 40, 20, 20" />
-                <On Platform="Android, WinPhone, Windows" Value="20" />
+                <On Platform="Android, UWP" Value="20" />
             </OnPlatform>
         </ContentPage.Padding>
         <StackLayout>
@@ -59,7 +59,7 @@ Rozšíření aplikace Phoneword následujícím způsobem:
 
 5. V **Průzkumníku řešení**, dvakrát klikněte na **App.xaml.cs** a otevře se:
 
-    ![](quickstart-images/vs/open-app-class.png "Open App.xaml.cs")
+    ![](quickstart-images/vs/open-app-class.png "Otevření souboru App.xaml.cs")
 
 6. V **App.xaml.cs**, importovat `System.Collections.Generic` obor názvů, přidejte deklaraci `PhoneNumbers` vlastnost inicializaci vlastnosti `App` konstruktor a inicializovat [ `MainPage` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.MainPage/) vlastnost, která má být [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/). `PhoneNumbers` Kolekce se použije k uložení seznamu každý přeložený telefonního čísla, která volá aplikaci:
 
@@ -90,7 +90,7 @@ Rozšíření aplikace Phoneword následujícím způsobem:
 
 7. V **Průzkumníku řešení**, dvakrát klikněte na **MainPage.xaml** a otevře se:
 
-    ![](quickstart-images/vs/open-mainpage-xaml.png "Open MainPage.xaml")
+    ![](quickstart-images/vs/open-mainpage-xaml.png "Otevřete MainPage.xaml")
 
 8. V **MainPage.xaml**, přidejte [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) ovládacího prvku na konci [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) ovládacího prvku. Tlačítko se použije k přejít na stránku historie volání:
 
@@ -110,7 +110,7 @@ Rozšíření aplikace Phoneword následujícím způsobem:
 
 9. V **Průzkumníku řešení**, dvakrát klikněte na **MainPage.xaml.cs** a otevře se:
 
-    ![](quickstart-images/vs/open-mainpage-codebehind.png "Open MainPage.xaml.cs")
+    ![](quickstart-images/vs/open-mainpage-codebehind.png "Otevřete MainPage.xaml.cs")
 
 10. V **MainPage.xaml.cs**, přidejte `OnCallHistory` obslužná rutina události a upravit `OnCall` obslužná rutina události přidat přeložený telefonní číslo, `App.PhoneNumbers` kolekce a povolit `callHistoryButton`, za předpokladu, že `dialer` proměnná není `null`:
 
@@ -178,7 +178,7 @@ Rozšíření aplikace Phoneword následujícím způsobem:
 
 4. V **řešení Pad**, dvakrát klikněte na **CallHistoryPage.xaml** a otevře se:
 
-    ![](quickstart-images/xs/open-callhistorypage-xaml.png "Open CallHistoryPage.xaml")
+    ![](quickstart-images/xs/open-callhistorypage-xaml.png "Otevřete CallHistoryPage.xaml")
 
 5. V **CallHistoryPage.xaml**, odeberte všechny kód šablony a nahraďte ji následujícím kódem. Tento kód definuje deklarativně uživatelské rozhraní pro stránky:
 
@@ -192,7 +192,7 @@ Rozšíření aplikace Phoneword následujícím způsobem:
         <ContentPage.Padding>
             <OnPlatform x:TypeArguments="Thickness">
                 <On Platform="iOS" Value="20, 40, 20, 20" />
-                <On Platform="Android, WinPhone, Windows" Value="20" />
+                <On Platform="Android, UWP" Value="20" />
             </OnPlatform>
         </ContentPage.Padding>
         <StackLayout>
@@ -205,7 +205,7 @@ Rozšíření aplikace Phoneword následujícím způsobem:
 
 6. V **řešení Pad**, dvakrát klikněte na **App.xaml.cs** a otevře se:
 
-    ![](quickstart-images/xs/open-app-class.png "Open App.xaml.cs")
+    ![](quickstart-images/xs/open-app-class.png "Otevření souboru App.xaml.cs")
 
 7. V **App.xaml.cs**, importovat `System.Collections.Generic` obor názvů, přidejte deklaraci `PhoneNumbers` vlastnost inicializaci vlastnosti `App` konstruktor a inicializovat [ `MainPage` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.MainPage/) vlastnost, která má být [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/). `PhoneNumbers` Kolekce se použije k uložení seznamu každý přeložený telefonního čísla, která volá aplikaci:
 
@@ -236,7 +236,7 @@ Rozšíření aplikace Phoneword následujícím způsobem:
 
 8. V **řešení Pad**, dvakrát klikněte na **MainPage.xaml** a otevře se:
 
-    ![](quickstart-images/xs/open-mainpage-xaml.png "Open MainPage.xaml")
+    ![](quickstart-images/xs/open-mainpage-xaml.png "Otevřete MainPage.xaml")
 
 9. V **MainPage.xaml**, přidejte [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) ovládacího prvku na konci [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) ovládacího prvku. Tlačítko se použije k přejít na stránku historie volání:
 
@@ -256,7 +256,7 @@ Rozšíření aplikace Phoneword následujícím způsobem:
 
 10. V **řešení Pad**, dvakrát klikněte na **MainPage.xaml.cs** a otevře se:
 
-    ![](quickstart-images/xs/open-mainpage-codebehind.png "Open MainPage.xaml.cs")
+    ![](quickstart-images/xs/open-mainpage-codebehind.png "Otevřete MainPage.xaml.cs")
 
 11. V **MainPage.xaml.cs**, přidejte `OnCallHistory` obslužná rutina události a upravit `OnCall` obslužná rutina události přidat přeložený telefonní číslo, `App.PhoneNumbers` kolekce a povolit `callHistoryButton`, za předpokladu, že `dialer` proměnná není `null`:
 

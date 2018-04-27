@@ -1,19 +1,19 @@
 ---
-title: Xamarin.Forms Quickstart
+title: Rychlý start Xamarin.Forms
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: 3f2f9c2d-d204-43bc-8c8a-a55ce1e6d2c8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/06/2018
-ms.openlocfilehash: e8d1064e76c2ccdeb14302d30428cd932444a0f5
-ms.sourcegitcommit: 271d3f7ea4abfcf87734d2c747a68cb8114d743c
+ms.date: 04/26/2018
+ms.openlocfilehash: f5c05ce308a10747ad3e18e4a1d141d29fd6c8a1
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/08/2018
+ms.lasthandoff: 04/27/2018
 ---
-# <a name="xamarinforms-quickstart"></a>Xamarin.Forms Quickstart
+# <a name="xamarinforms-quickstart"></a>Rychlý start Xamarin.Forms
 
 Tento návod ukazuje, jak vytvořit aplikaci, která znamená, že alfanumerické telefonní číslo, zadané uživatelem do číselné telefonní číslo a číslo, který volá. Konečné aplikace je zobrazena níže:
 
@@ -35,13 +35,13 @@ Vytvoření aplikace Phoneword následujícím způsobem:
 
     ![](quickstart-images/vs/new-project.png "Šablony projektů a platformy")
 
-4. V **novou aplikaci křížové platformy** dialogové okno, klikněte na tlačítko **prázdnou aplikaci**, vyberte **Xamarin.Forms** technologií uživatelského rozhraní, vyberte **.NET Standard** jako Strategie sdílení kódu a klikněte na **OK** tlačítko:
+4. V **novou aplikaci křížové platformy** dialogové okno, klikněte na tlačítko **prázdnou aplikaci**, vyberte **.NET Standard** strategie sdílení kódu a klikněte na **OK** tlačítko:
 
     ![](quickstart-images/vs/new-app.png "Novou aplikaci pro různé platformy")
 
 5. V **Průzkumníku řešení**v **Phoneword** projektu, klikněte dvakrát na **MainPage.xaml** a otevře se:
 
-    ![](quickstart-images/vs/open-mainpage-xaml.png "Open MainPage.xaml")
+    ![](quickstart-images/vs/open-mainpage-xaml.png "Otevřete MainPage.xaml")
 
 6. V **MainPage.xaml**, odeberte všechny kód šablony a nahraďte ji následujícím kódem. Tento kód definuje deklarativně uživatelské rozhraní pro stránky:
 
@@ -53,7 +53,7 @@ Vytvoření aplikace Phoneword následujícím způsobem:
         <ContentPage.Padding>
             <OnPlatform x:TypeArguments="Thickness">
                 <On Platform="iOS" Value="20, 40, 20, 20" />
-                <On Platform="Android, WinPhone, Windows" Value="20" />
+                <On Platform="Android, UWP" Value="20" />
             </OnPlatform>
         </ContentPage.Padding>
         <StackLayout>
@@ -69,7 +69,7 @@ Vytvoření aplikace Phoneword následujícím způsobem:
 
 7. V **Průzkumníku řešení**, rozbalte položku **MainPage.xaml** a dvakrát klikněte na **MainPage.xaml.cs** a otevře se:
 
-    ![](quickstart-images/vs/open-mainpage-codebehind.png "Open MainPage.xaml.cs")
+    ![](quickstart-images/vs/open-mainpage-codebehind.png "Otevřete MainPage.xaml.cs")
 
 8. V **MainPage.xaml.cs**, odeberte všechny kód šablony a nahraďte ji následujícím kódem. `OnTranslate` a `OnCall` metody bude proveden v reakci **přeložit** a **volání** tlačítka klepnutí v uživatelském rozhraní, v uvedeném pořadí:
 
@@ -123,7 +123,7 @@ Vytvoření aplikace Phoneword následujícím způsobem:
 
 9. V **Průzkumníku řešení**, rozbalte položku **App.xaml** a dvakrát klikněte na **App.xaml.cs** a otevře se:
 
-    ![](quickstart-images/vs/open-app-class.png "Open App.xaml.cs")
+    ![](quickstart-images/vs/open-app-class.png "Otevření souboru App.xaml.cs")
 
 10. V **App.xaml.cs**, odeberte všechny kód šablony a nahraďte ji následujícím kódem. `App` Konstruktor nastaví `MainPage` třídu, jak je stránka, ke které se zobrazí při spuštění aplikace:
 
@@ -511,7 +511,7 @@ Vytvoření aplikace Phoneword následujícím způsobem:
 
 7. V **řešení Pad**, dvakrát klikněte na **MainPage.xaml** a otevře se:
 
-    ![](quickstart-images/xs/open-mainpage-xaml.png "Open MainPage.xaml")
+    ![](quickstart-images/xs/open-mainpage-xaml.png "Otevřete MainPage.xaml")
 
 8. V **MainPage.xaml**, odeberte všechny kód šablony a nahraďte ji následujícím kódem. Tento kód definuje deklarativně uživatelské rozhraní pro stránky:
 
@@ -523,7 +523,7 @@ Vytvoření aplikace Phoneword následujícím způsobem:
         <ContentPage.Padding>
             <OnPlatform x:TypeArguments="Thickness">
                 <On Platform="iOS" Value="20, 40, 20, 20" />
-                <On Platform="Android, WinPhone, Windows" Value="20" />
+                <On Platform="Android, UWP" Value="20" />
             </OnPlatform>
         </ContentPage.Padding>
         <StackLayout>
@@ -539,7 +539,7 @@ Vytvoření aplikace Phoneword následujícím způsobem:
 
 9. V **řešení Pad**, dvakrát klikněte na **MainPage.xaml.cs** a otevře se:
 
-    ![](quickstart-images/xs/open-mainpage-codebehind.png "Open MainPage.xaml.cs")
+    ![](quickstart-images/xs/open-mainpage-codebehind.png "Otevřete MainPage.xaml.cs")
 
 10. V **MainPage.xaml.cs**, odeberte všechny kód šablony a nahraďte ji následujícím kódem. `OnTranslate` a `OnCall` metody bude proveden v reakci **přeložit** a **volání** tlačítka klepnutí na uživatelské rozhraní v uvedeném pořadí:
 
@@ -593,7 +593,7 @@ Vytvoření aplikace Phoneword následujícím způsobem:
 
 11. V **řešení Pad**, dvakrát klikněte na **App.xaml.cs** a otevře se:
 
-    ![](quickstart-images/xs/open-app-class.png "Open App.xaml.cs")
+    ![](quickstart-images/xs/open-app-class.png "Otevření souboru App.xaml.cs")
 
 12. V **App.xaml.cs**, odeberte všechny kód šablony a nahraďte ji následujícím kódem. `App` Konstruktor nastaví `MainPage` třídu, jak je stránka, ke které se zobrazí při spuštění aplikace:
 
@@ -630,7 +630,7 @@ Vytvoření aplikace Phoneword následujícím způsobem:
     }
     ```
 
-    Uložit změny do **Phoneword.cs** výběrem **soubor > Uložit** (nebo stisknutím kombinace kláves  **&#8984; + S**) a zavřete soubor.
+    Uložit změny do **App.xaml.cs** výběrem **soubor > Uložit** (nebo stisknutím kombinace kláves  **&#8984; + S**) a zavřete soubor.
 
 13. V **řešení Pad**, vyberte **Phoneword** projektu klikněte pravým tlačítkem a vyberte **Přidat > Nový soubor...** :
 

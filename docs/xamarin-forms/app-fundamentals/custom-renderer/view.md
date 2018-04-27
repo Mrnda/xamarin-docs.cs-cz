@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: e84427ba576528ed76f5885605c423bf6499d20c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a8ab35b3ec13c76e1e00da6e3265e3e337e37b7e
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="implementing-a-view"></a>Implementace zobrazení
 
 _Xamarin.Forms vlastní uživatelské rozhraní ovládací prvky by měl být odvozen od třídy zobrazení, který se používá k umístění rozložení a ovládací prvky na obrazovce. Tento článek ukazuje, jak vytvořit vlastní zobrazovací jednotky Xamarin.Forms vlastního ovládacího prvku, který se používá k zobrazení náhledu datový proud videa z fotoaparátu zařízení._
 
-Každé zobrazení Xamarin.Forms má doprovodné zobrazovací jednotky pro každou platformu, která vytvoří instanci nativní ovládacího prvku. Když [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) je vykreslen metodou Xamarin.Forms aplikace v iOS, `ViewRenderer` vytvoření instance třídy, které pak vytvoří nativní `UIView` ovládacího prvku. Na platformě Android `ViewRenderer` třída vytvoří nativní `View` ovládacího prvku. Na Windows Phone a univerzální platformu Windows (UWP) `ViewRenderer` třída vytvoří nativní `FrameworkElement` ovládacího prvku. Další informace o zobrazovací jednotky a třídy nativní ovládacích prvků, které ovládací prvky Xamarin.Forms mapování na najdete v tématu [zobrazovací jednotky základní třídy a nativní ovládací prvky](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Každé zobrazení Xamarin.Forms má doprovodné zobrazovací jednotky pro každou platformu, která vytvoří instanci nativní ovládacího prvku. Když [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) je vykreslen metodou Xamarin.Forms aplikace v iOS, `ViewRenderer` vytvoření instance třídy, které pak vytvoří nativní `UIView` ovládacího prvku. Na platformě Android `ViewRenderer` třída vytvoří nativní `View` ovládacího prvku. Na univerzální platformu Windows (UWP), `ViewRenderer` třída vytvoří nativní `FrameworkElement` ovládacího prvku. Další informace o zobrazovací jednotky a třídy nativní ovládacích prvků, které ovládací prvky Xamarin.Forms mapování na najdete v tématu [zobrazovací jednotky základní třídy a nativní ovládací prvky](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
 Následující diagram znázorňuje vztah mezi [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) a odpovídající nativní ovládací prvky, které implementují ho:
 
@@ -263,13 +263,13 @@ namespace CustomRenderer.Droid
 
 Za předpokladu, že `Control` vlastnost je `null`, `SetNativeControl` metoda je volána k vytvoření instance nového `CameraPreview` řízení a přiřaďte odkaz na jeho `Control` vlastnost. `CameraPreview` Je specifické pro platformu ovládací prvek vlastní, který používá `Camera` rozhraní API k poskytování preview datový proud z kamery. `CameraPreview` Ovládací prvek je nakonfigurovaný, za předpokladu, že vlastní zobrazovací jednotky je připojen k nového elementu Xamarin.Forms. Tato konfigurace zahrnuje vytvoření nové nativní `Camera` objektu pro přístup k fotoaparátu konkrétní hardware a registraci obslužné rutiny události ke zpracování `Click` událostí. Tato obslužná rutina zase zastaví a spustit náhledu videa v případě, že je stisknuté. `Click` Událostí je odhlásil ze, pokud element Xamarin.Forms zobrazovací jednotky je připojena k změny.
 
-### <a name="creating-the-custom-renderer-on-windows-phone-and-uwp"></a>Vytváření vlastní zobrazovací jednotky na Windows Phone a UWP
+### <a name="creating-the-custom-renderer-on-uwp"></a>Vytváření vlastní zobrazovací jednotky na UWP
 
-Následující příklad kódu ukazuje vlastní zobrazovací jednotky pro Windows Phone a UWP:
+Následující příklad kódu ukazuje vlastní zobrazovací jednotky pro UPW:
 
 ```csharp
 [assembly: ExportRenderer (typeof(CameraPreview), typeof(CameraPreviewRenderer))]
-namespace CustomRenderer.WinPhone81
+namespace CustomRenderer.UWP
 {
     public class CameraPreviewRenderer : ViewRenderer<CameraPreview, Windows.UI.Xaml.Controls.CaptureElement>
     {
@@ -317,7 +317,7 @@ namespace CustomRenderer.WinPhone81
 Za předpokladu, že `Control` vlastnost je `null`, nový `CaptureElement` je vytvořena instance a `InitializeAsync` metoda je volána, které používá `MediaCapture` rozhraní API k poskytování preview datový proud z kamery. `SetNativeControl` Metoda je volána poté přiřadit odkaz na `CaptureElement` instance k `Control` vlastnost. `CaptureElement` Řízení zpřístupňuje `Tapped` událost, která jsou zpracována `OnCameraPreviewTapped` metoda zastavení a spuštění náhledu videa, když je stisknuté. `Tapped` Událostí je přihlášen k, když je vlastní zobrazovací jednotky připojené k nového elementu Xamarin.Forms a odhlásil z jenom, když je element zobrazovací jednotky připojen na změny.
 
 > [!NOTE]
-> Je důležité k zastavení a uvolnění objektů, které poskytují přístup k fotoaparátu na Windows Phone nebo v aplikaci UWP. Tak neučiníte, může narušovat jiné aplikace, které se pokoušejí o přístup k fotoaparátu zařízení. Další informace najdete v tématu a [rychlý start: Digitalizace videa pomocí rozhraní API MediaCapture](https://msdn.microsoft.com/library/windows/apps/xaml/dn642092.aspx) pro aplikace Windows Runtime a [zobrazení náhledu fotoaparátu](https://msdn.microsoft.com/windows/uwp/audio-video-camera/simple-camera-preview-access) pro aplikace UWP.
+> Je důležité k zastavení a uvolnění objektů, které poskytují přístup k fotoaparátu v aplikaci UWP. Tak neučiníte, může narušovat jiné aplikace, které se pokoušejí o přístup k fotoaparátu zařízení. Další informace najdete v tématu [zobrazení náhledu fotoaparátu](/windows/uwp/audio-video-camera/simple-camera-preview-access/).
 
 ## <a name="summary"></a>Souhrn
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: 01953d55a104a70b0451c9b796c732254afb081e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 88821c5315fc338b5195e42ea4b2bc3e648e6ea1
+ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="introduction-to-dependencyservice"></a>Úvod do DependencyService
 
@@ -48,53 +48,64 @@ public interface ITextToSpeech {
 
 ### <a name="implementation-per-platform"></a>Implementace na každou platformu
 
-Po vhodné rozhraní byly navržené tak, že rozhraní musí být implementován v projektu pro každou platformu, kterou cílíte na. Například následující třídy implementují `ITextToSpeech` rozhraní na Windows Phone:
+Po vhodné rozhraní byly navržené tak, že rozhraní musí být implementován v projektu pro každou platformu, kterou cílíte na. Například následující třídy implementuje `ITextToSpeech` rozhraní v systému iOS:
 
 ```csharp
-namespace TextToSpeech.WinPhone
+namespace UsingDependencyService.iOS
 {
-  public class TextToSpeechImplementation : ITextToSpeech
-  {
-      public TextToSpeechImplementation() {}
+    public class TextToSpeech_iOS : ITextToSpeech
+    {
+        public void Speak (string text)
+        {
+            var speechSynthesizer = new AVSpeechSynthesizer ();
 
-      public async void Speak(string text)
-      {
-          SpeechSynthesizer synth = new SpeechSynthesizer();
-          await synth.SpeakTextAsync(text);
-      }
-  }
+            var speechUtterance = new AVSpeechUtterance (text) {
+                Rate = AVSpeechUtterance.MaximumSpeechRate/4,
+                Voice = AVSpeechSynthesisVoice.FromLanguage ("en-US"),
+                Volume = 0.5f,
+                PitchMultiplier = 1.0f
+            };
+
+            speechSynthesizer.SpeakUtterance (speechUtterance);
+        }
+    }
 }
 ```
 
-Všimněte si, že každý implementace musí mít výchozí konstruktor (bez parametrů) v pořadí pro `DependencyService` moct vytvoří instanci. Rozhraní nemůže být definovaný bezparametrové konstruktory.
-
 ### <a name="registration"></a>Registrace
 
-Každá implementace rozhraní musí být registrováno s `DependencyService` s atributem metadat. Následující kód zaregistruje implementaci pro Windows Phone:
+Každá implementace rozhraní musí být registrováno s `DependencyService` s atributem metadat. Následující kód zaregistruje implementaci pro iOS:
 
 ```csharp
-using TextToSpeech.WinPhone;
-
-[assembly: Xamarin.Forms.Dependency (typeof (TextToSpeechImplementation))]
-namespace TextToSpeech.WinPhone {
+[assembly: Dependency (typeof (TextToSpeech_iOS))]
+namespace UsingDependencyService.iOS
+{
   ...
+}
 ```
 
 Vložení všechny společně, specifické pro platformu implementace vypadá takto:
 
 ```csharp
-[assembly: Xamarin.Forms.Dependency (typeof (TextToSpeechImplementation))]
-namespace TextToSpeech.WinPhone {
-  public class TextToSpeechImplementation : ITextToSpeech
-  {
-      public TextToSpeechImplementation() {}
+[assembly: Dependency (typeof (TextToSpeech_iOS))]
+namespace UsingDependencyService.iOS
+{
+    public class TextToSpeech_iOS : ITextToSpeech
+    {
+        public void Speak (string text)
+        {
+            var speechSynthesizer = new AVSpeechSynthesizer ();
 
-      public async void Speak(string text)
-      {
-          SpeechSynthesizer synth = new SpeechSynthesizer();
-          await synth.SpeakTextAsync(text);
-      }
-  }
+            var speechUtterance = new AVSpeechUtterance (text) {
+                Rate = AVSpeechUtterance.MaximumSpeechRate/4,
+                Voice = AVSpeechSynthesisVoice.FromLanguage ("en-US"),
+                Volume = 0.5f,
+                PitchMultiplier = 1.0f
+            };
+
+            speechSynthesizer.SpeakUtterance (speechUtterance);
+        }
+    }
 }
 ```
 
@@ -102,7 +113,7 @@ Poznámka: které registrace probíhá na úrovni oboru názvů, ne na úrovni t
 
 #### <a name="universal-windows-platform-net-native-compilation"></a>Nativní kompilace rozhraní .NET Universal Windows Platform
 
-Postupujte podle projektů UPW, které používají možnost kompilace .NET Native [mírně odlišné konfigurace](~/xamarin-forms/platform/windows/installation/universal.md#target-invocation-exception) při inicializaci Xamarin.Forms. Kompilace .NET native taky vyžaduje trochu jiná registrace závislosti služeb.
+Postupujte podle projektů UPW, které používají možnost kompilace .NET Native [mírně odlišné konfigurace](~/xamarin-forms/platform/windows/installation/index.md#target-invocation-exception) při inicializaci Xamarin.Forms. Kompilace .NET native taky vyžaduje trochu jiná registrace závislosti služeb.
 
 V **App.xaml.cs** souboru, ruční registraci jednotlivých služeb závislostí definované v projektu UPW pomocí `Register<T>` metoda, jak je uvedeno níže:
 
