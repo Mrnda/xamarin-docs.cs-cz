@@ -5,12 +5,12 @@ ms.assetid: B09AD282-2C4F-D71E-6806-9B1EF05C2CD4
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: 71557cc0adb123cd4556c3d35add314f44f30da1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/26/2018
+ms.openlocfilehash: f4d737e31304a88f3ec293f90267a35ed1f2c7a5
+ms.sourcegitcommit: a69439ad4c9fd0abe759143687d3b23582573d90
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="customizing-a-listviews-appearance"></a>Přizpůsobení vzhledu prvku ListView
 
@@ -106,7 +106,7 @@ Zobrazit jednu z těchto příslušenství průchodu ID prostředku požadované
 ListAdapter = new ArrayAdapter<String>(this, Android.Resource.Layout.SimpleListItemChecked, items);
 ```
 
-`ListView` Samotné podporuje jiný výběr režimy, bez ohledu na to příslušenství zobrazily. Chcete-li předejít nejasnostem, použijte `Single` režim výběru s `Checked` a `SingleChoice` příslušenství a `Multiple` režimu se `MultipleChoice` stylu. Režim výběru řídí `ChoiceMode` vlastnost `ListView`.
+`ListView` Samotné podporuje jiný výběr režimy, bez ohledu na to příslušenství zobrazily. Chcete-li předejít nejasnostem, použijte `Single` režim výběru s `SingleChoice` příslušenství a `Checked` nebo `Multiple` režimu se `MultipleChoice` stylu. Režim výběru řídí `ChoiceMode` vlastnost `ListView`.
 
 
 ### <a name="handling-api-level"></a>Zpracování úroveň rozhraní API

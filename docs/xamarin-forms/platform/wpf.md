@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 04/05/2018
-ms.openlocfilehash: 51aad1643709a96c56ccad8187a53f47a65a9dac
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: 2e2bbf12cd7b4abab4609349b549fde1bcea09e8
+ms.sourcegitcommit: a69439ad4c9fd0abe759143687d3b23582573d90
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="wpf-platform-setup"></a>Instalační program platformy WPF
 
@@ -57,7 +57,7 @@ Postupujte podle těchto pokynů můžete přidat aplikaci WPF, který se spust�
     xmlns:wpf="clr-namespace:Xamarin.Forms.Platform.WPF;assembly=Xamarin.Forms.Platform.WPF"
     ```
 
-    Nyní změnit `Window` značky k `wpf:FormsApplcationPage`. Změna `Title` nastavení na název vaší aplikace, například **BoxViewClock**. Dokončené souboru XAML by měl vypadat takto:
+    Nyní změnit `Window` značky k `wpf:FormsApplicationPage`. Změna `Title` nastavení na název vaší aplikace, například **BoxViewClock**. Dokončené souboru XAML by měl vypadat takto:
 
     ```xaml
     <wpf:FormsApplicationPage x:Class="BoxViewClock.WPF.MainWindow"

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 74f65021c23515e78e630f907a89ffde74de4da4
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 37ecc76d9774b3f375af92f2a00c6c687358f065
+ms.sourcegitcommit: a69439ad4c9fd0abe759143687d3b23582573d90
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="cell-appearance"></a>Vzhledu buněk
 
@@ -70,7 +70,7 @@ TextCells se vykresluje jako nativní ovládací prvky v době běhu, výkon, je
 <a name="customcells" />
 
 ## <a name="custom-cells"></a>Vlastní buněk
-Při integrované buněk neposkytují na požadované rozložení, implementovat vlastní buněk na požadované rozložení. Můžete například představovat buňku dva popisky, které mají stejnou váhu. A `LabelCell` by dostatek protože `LabelCell` má jeden štítek, který je menší. Většina přizpůsobení buněk přidat další data jen pro čtení (například další popisky, obrázky nebo jiné zobrazované informace).
+Při integrované buněk neposkytují na požadované rozložení, implementovat vlastní buněk na požadované rozložení. Můžete například představovat buňku dva popisky, které mají stejnou váhu. A `TextCell` by dostatek protože `TextCell` má jeden štítek, který je menší. Většina přizpůsobení buněk přidat další data jen pro čtení (například další popisky, obrázky nebo jiné zobrazované informace).
 
 Všechny vlastní buňky musí být odvozeny od [ `ViewCell` ](http://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/), že všechny buňky předdefinované typy použijte stejnou základní třídu.
 

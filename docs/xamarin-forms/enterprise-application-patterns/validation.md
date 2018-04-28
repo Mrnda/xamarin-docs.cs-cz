@@ -6,11 +6,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 7b1eb1289688b6152e4e854ca0f51d66932c91a1
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 80c78d359761c4383f9abf9338a995e3cc486968
+ms.sourcegitcommit: a69439ad4c9fd0abe759143687d3b23582573d90
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="validation"></a>Ověřování
 
@@ -189,7 +189,7 @@ Tato metoda odstraní `Errors` kolekce a potom načte všechny ověřovací prav
 
 ### <a name="triggering-validation-when-properties-change"></a>Spouštěcí ověření při změně vlastnosti
 
-Ověření je také automaticky aktivuje vždy, když se změní vázané vlastnosti. Například když vazba obousměrná v `LoginView` nastaví `UserName` nebo `Password` vlastnost, ověření se aktivuje. Následující příklad kódu ukazuje, jak k tomu dochází:
+Ověřování se dá taky spustit při každé změně vázané vlastnosti. Například když vazba obousměrná v `LoginView` nastaví `UserName` nebo `Password` vlastnost, ověření se aktivuje. Následující příklad kódu ukazuje, jak k tomu dochází:
 
 ```xaml
 <Entry Text="{Binding UserName.Value, Mode=TwoWay}">  
