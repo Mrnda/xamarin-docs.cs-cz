@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
 ms.date: 04/23/2018
-ms.openlocfilehash: 11e876207285689b230bb2fada3a4c836443e360
-ms.sourcegitcommit: a69439ad4c9fd0abe759143687d3b23582573d90
+ms.openlocfilehash: bfb53af420b64fb9af994d3fb19293406d3acd7b
+ms.sourcegitcommit: 180a8411d912de40545f9624e2127a66ee89e7b2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 04/30/2018
 ---
 # <a name="xamarin-live-reload"></a>Načtěte Xamarin za provozu
 
@@ -31,7 +31,7 @@ Za provozu načtěte je aktuálně k dispozici pouze v Visual Studio 2017.
 * [Xamarin.Forms 3.0.354232-pre3](https://www.nuget.org/packages/Xamarin.Forms/3.0.0.354232-pre3) nebo vyšší.
 
 ## <a name="getting-started"></a>Začínáme
-### <a name="1-install-xamarin-live-reload-from-the-visual-studio-marketplace"></a>1. Nainstalujte Xamarin načtěte za provozu v sadě Visual Studio Marketplace.
+### <a name="1-install-xamarin-live-reload-from-the-visual-studio-marketplace"></a>1. Nainstalovat Xamarin načtěte za provozu v sadě Visual Studio Marketplace
 
 Načtěte Xamarin za provozu je distribuován přes Visual Studio Marketplace. Chcete-li nainstalovat rozšíření, navštivte [Xamarin Live opětovného načtení stránky na Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=Xamarin.XamarinLiveReload) web a klikněte na **Stáhnout**.
 
@@ -39,9 +39,9 @@ Otevřete VSIX, který se stáhne a klikněte na **nainstalovat**.
 
 ![Instalační program Visual Studio znovu načíst Live Xamarin potvrzení](images/LiveReloadVSIXInstall.png)
 
-> Alternativně můžete vyhledat v **Online** ve **rozšíření a aktualizace** dialogové okno v sadě Visual Studio.
+Alternativně můžete vyhledat v **Online** ve **rozšíření a aktualizace** dialogové okno v sadě Visual Studio.
 
-### <a name="2-configure-your-app-to-use-live-reload"></a>2. Konfigurace aplikace používat živé opětovného načtení.
+### <a name="2-configure-your-app-to-use-live-reload"></a>2. Konfigurace aplikace používat živé opětovného načtení
 
 Přidání za provozu opětovného načtení na stávající mobilní aplikace můžete provést tři kroky:
 
@@ -66,7 +66,7 @@ public partial class App : Application
 }
 ```
 
-### <a name="3-start-live-reloading"></a>3. Spusťte opětovné načtení za provozu.
+### <a name="3-start-live-reloading"></a>3. Spustit opětovné načtení za provozu
 
 Kompilace a nasazení aplikace. Jakmile aplikace nasazené, otevřete soubor XAML, provedeme některé změny a uložte soubor. Změny se znovu nasadit do cíle nasazení.
 
@@ -110,18 +110,13 @@ Ne. Ve skutečnosti můžete i spustit všechny vaše podporované aplikační c
 * Pracuje pouze s .NET standardní knihovny.
 * Šablony stylů CSS nejsou podporovány.
 * Pokud používáte rozhraní MVVM nemusí nakládat mezi opětovně nasadí, stav uživatelského rozhraní.
-
-## <a name="live-reload-server"></a>Server znovu načíst za provozu
-
-Ve scénářích kde připojení z spuštěné aplikaci k vašemu počítači (jako označené pomocí `localhost` nebo `127.0.0.1` v **nástroje > Možnosti > Xamarin > Live načtěte**) není možné (tj. brány firewall, různé sítě), můžete nakonfigurovat na vzdálený server místo toho, který rozhraní IDE a aplikace bude k připojení.
-
-Za provozu načtěte pomocí standardu [MQTT protokol](http://mqtt.org/) pro výměnu zpráv a proto může komunikovat s [serverech třetích stran](https://github.com/mqtt/mqtt.github.io/wiki/servers). Existují i [veřejné servery](https://github.com/mqtt/mqtt.github.io/wiki/public_brokers) (také označované jako *makléřům*) k dispozici, které můžete použít. Načtěte za provozu se testovalo s `broker.hivemq.com` a `iot.eclipse.org` názvy hostitelů, jakož i služeb poskytovaných [www.cloudmqtt.com](https://www.cloudmqtt.com) a [www.cloudamqp.com](https://www.cloudamqp.com). Můžete taky nasadit vlastní MQTT server v cloudu, jako například [HiveMQ v Azure](https://www.hivemq.com/blog/hivemq-on-windows-azure-mqtt-microsoft-cloud) nebo [králičího MQ v AWS](http://www.rabbitmq.com/ec2.html). 
-
-Můžete nakonfigurovat jakéhokoli portu, ale je běžné používat výchozí 1883 port pro vzdálené servery. Živé opětovného načtení zprávy používat silné začátku do konce symetrické šifrování AES, takže je bezpečné připojení k vzdálené servery. Ve výchozím nastavení šifrovací klíč a inicializační vektor (IV) obnovovaly na každou relaci Visual Studio.
+* Opětovném načtení celou aplikaci prostředky (tj. **App.xaml** nebo sdílené slovnících prostředků), navigace aplikace se resetuje.
 
 ## <a name="troubleshooting"></a>Poradce při potížích
 
-Když je aplikace vytvářena, informace z **nástroje > Možnosti > Xamarin > Live opětovného načtení** (název, port a šifrovací klíče hostitele) jsou vloženy do aplikace, takže který po `LiveReload.Init();` běží, žádné párování nebo konfigurace je potřebné pro připojení k úspěšné.
+### <a name="app-doesnt-connect"></a>Aplikace nemá připojení.
+
+Když je aplikace vytvářena, informace z **nástroje > Možnosti > Xamarin > Live opětovného načtení** (název, port a šifrovací klíče hostitele) jsou vloženy do aplikace, takže který po `LiveReload.Init()` běží, žádné párování nebo konfigurace je potřebné pro připojení k úspěšné.
 
 Než běžné problémy se sítí (Brána firewall, zařízení s jinou sítí) je hlavním důvodem, že aplikace nemusí úspěšně připojit IDE, protože jeho konfigurace se liší od verze v sadě Visual Studio. K tomu může dojít, pokud:
 
@@ -131,6 +126,13 @@ Než běžné problémy se sítí (Brána firewall, zařízení s jinou sítí) 
 
 Těchto případech se vyřeší vytváření a nasazení aplikace znovu.
 
+### <a name="uninstalling-preview-1"></a>Odinstalace Preview 1
+
+Pokud máte starší verzi preview a máte problémy s jeho odinstalování, postupujte takto:
+
+1. Odstranit složku **C:\Program Files (x86) \Microsoft Visual Studio\Preview\Enterprise\Common7\IDE\Extensions\Xamarin\LiveReload** (Poznámka: nahraďte nainstalovaná edice "Enterprise" a "Náhled" službou "2017" Pokud jste nainstalována do stabilní VS)
+2. Otevřete **příkazový řádek vývojáře** pro tento Visual Studio a spustit `devenv /updateconfiguration`. 
+
 ## <a name="tips--tricks"></a>Tipy a triky
 
 * Tak dlouho, dokud neměnit nastavení načtěte za provozu (včetně šifrovací klíče, jako třeba když vypnete **automaticky generovat šifrovací klíče**) a sestavení ze stejného počítače, není nutné vytvořit a nasadit aplikaci po počáteční nasazení, pokud změníte kód nebo závislosti. Můžete jenom spustit znovu dříve nasazené aplikace a budou připojovat posledního hostitel používá.
@@ -138,3 +140,21 @@ Těchto případech se vyřeší vytváření a nasazení aplikace znovu.
 * Neexistuje žádné omezení toho, kolik zařízení se můžete připojit k stejné relace sady Visual Studio. Můžete nasadit a spusťte aplikaci v tolik zařízení nebo simulátorů podle potřeby zobrazíte za provozu překladní pracovní na všech těchto ve stejnou dobu.
 
 * Za provozu načtěte jenom znovu načíst část uživatelské rozhraní aplikace, ale nepracuje *není* vaší stránky znovu vytvořit, ani jej nahradit modelu zobrazení (nebo kontextu vazby). To znamená *celou* stav aplikace je vždy zachováno napříč zavážky, včetně vloženého závislostmi.
+
+## <a name="live-reload-server"></a>Server znovu načíst za provozu
+
+Ve scénářích kde připojení z spuštěné aplikaci k vašemu počítači (jako označené pomocí `localhost` nebo `127.0.0.1` v **nástroje > Možnosti > Xamarin > Live načtěte**) není možné (tj. brány firewall, různé sítě), můžete nakonfigurovat na vzdálený server místo toho, který rozhraní IDE a aplikace bude k připojení.
+
+Za provozu načtěte pomocí standardu [MQTT protokol](http://mqtt.org/) pro výměnu zpráv a proto může komunikovat s [serverech třetích stran](https://github.com/mqtt/mqtt.github.io/wiki/servers). Existují i [veřejné servery](https://github.com/mqtt/mqtt.github.io/wiki/public_brokers) (také označované jako *makléřům*) k dispozici, které můžete použít. Načtěte za provozu se testovalo s `broker.hivemq.com` a `iot.eclipse.org` názvy hostitelů, jakož i služeb poskytovaných [www.cloudmqtt.com](https://www.cloudmqtt.com) a [www.cloudamqp.com](https://www.cloudamqp.com). Můžete taky nasadit vlastní MQTT server v cloudu, jako například [HiveMQ v Azure](https://www.hivemq.com/blog/hivemq-on-windows-azure-mqtt-microsoft-cloud) nebo [králičího MQ v AWS](http://www.rabbitmq.com/ec2.html). 
+
+Můžete nakonfigurovat jakéhokoli portu, ale je běžné používat výchozí 1883 port pro vzdálené servery. Živé opětovného načtení zprávy používat silné začátku do konce symetrické šifrování AES, takže je bezpečné připojení k vzdálené servery. Ve výchozím nastavení šifrovací klíč a inicializační vektor (IV) obnovovaly na každou relaci Visual Studio.
+
+Pravděpodobně je nejjednodušší způsob instalace [mosquitto](https://mosquitto.org) server v prázdné virtuálního počítače s Ubuntu v Azure:
+
+1. Vytvoření nového virtuálního počítače Ubuntu Server na portálu Azure
+2. Přidat nové pravidlo příchozí port pro 1883 (výchozí port MQTT) na kartě sítě
+3. Otevřete [cloudové prostředí](https://docs.microsoft.com/azure/cloud-shell/overview) (bash režim)
+4. Zadejte `ssh [USERNAME]@[PUBLIC_IP]` pomocí uživatelského jména, které jste zvolili v 1) a veřejné IP adresy, které se zobrazí na stránce Přehled virtuálních počítačů
+5. Spustit `sudo apt-get install mosquitto`, zadání hesla, které jste zvolili v 1)
+
+Teď můžete použít tento IP pro připojení k serveru MQTT.
