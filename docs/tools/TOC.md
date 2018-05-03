@@ -28,6 +28,7 @@
 #### [Ukázkové integrace](workbooks/sdk/samples.md)
 ## [Vkládání technologie .NET](dotnet-embedding/index.md)
 ### [Začínáme](dotnet-embedding/get-started/index.md)
+#### [Instalace](dotnet-embedding/get-started/install/install.md)
 #### [C](dotnet-embedding/get-started/c.md)
 #### [Java](dotnet-embedding/get-started/java/index.md)
 ##### [Android](dotnet-embedding/get-started/java/android.md)
