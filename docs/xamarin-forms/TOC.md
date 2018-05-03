@@ -16,6 +16,7 @@
 #### [Část 4. Základy vytváření vazeb dat](xaml/xaml-basics/data-binding-basics.md)
 #### [Část 5. Od vazeb dat po MVVM](xaml/xaml-basics/data-bindings-to-mvvm.md)
 ### [Kompilace XAML](xaml/xamlc.md)
+### [Live Reload](xaml/live-reload.md)
 ### [Náhled XAML](xaml/xaml-previewer.md)
 ### [Obory názvů jazyka XAML](xaml/namespaces.md)
 ### [Rozšíření značek XAML](xaml/markup-extensions/index.md)
