@@ -6,14 +6,13 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: f75ced921cd240e280b5dd6f7366ccceefb5e40e
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: 3620312ff3fbf9d7aa879ae6d318f0b39eec386a
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="getting-started-with-macos"></a>Začínáme s systému macOS
-
 
 ## <a name="what-you-will-need"></a>Co budete potřebovat
 
@@ -27,7 +26,7 @@ Nejprve vytvořte jednoduchý hello world – ukázka v jazyce C#.
 
 Otevřete Visual Studio pro Mac, vytvoření nového projektu knihovny tříd Mac s názvem **hello z csharp**a uložte ho do **~/Projects/hello-from-csharp**.
 
-Nahraďte kód v `MyClass.cs` souboru následujícím fragmentem kódu:
+Nahraďte kód v **MyClass.cs** souboru následujícím fragmentem kódu:
 
 ```csharp
 using AppKit;
@@ -44,7 +43,9 @@ Sestavte projekt. Výsledné sestavení se uloží jako **~/Projects/hello-from-
 
 ### <a name="bind-the-managed-assembly"></a>Vytvoření vazby spravované sestavení.
 
-Spusťte embeddinator vytvoření nativní rozhraní pro spravované sestavení:
+Jakmile máte spravované sestavení, vazbu vyvoláním vložení .NET.
+
+Jak je popsáno v [instalace](~/tools/dotnet-embedding/get-started/install/install.md) průvodce, to lze provést jako krok po sestavení ve vašem projektu s cílem vlastní MSBuild nebo ručně:
 
 ```shell
 cd ~/Projects/hello-from-csharp
@@ -93,4 +94,4 @@ Nakonec spusťte projekt Xcode a přibližně toto se zobrazí:
 
 ![Hello z ukázky C# v simulátoru](macos-images/hello-from-csharp-mac.png)
 
-Více úplný a lepšího ukázka je dostupná [zde](https://github.com/mono/Embeddinator-4000/tree/objc/samples/mac/weather).
+Ukázka více úplný a lepšího [Zde jsou k dispozici](https://github.com/mono/Embeddinator-4000/tree/objc/samples/mac/weather).

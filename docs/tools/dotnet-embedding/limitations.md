@@ -6,41 +6,46 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: d8995946966020955a1d9378dea631387ed5f4bd
-ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
+ms.openlocfilehash: a99d4f06b68e645ab1d0fc1423facb827b31959d
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="net-embedding-limitations"></a>Vložení omezení rozhraní .NET
 
-Tento dokument popisuje omezení .NET vnoření (Embeddinator-4000) a kdykoli je to možné, poskytuje řešení pro ně.
+Tento dokument popisuje omezení vnoření .NET a kdykoli je to možné, poskytuje řešení pro ně.
 
 ## <a name="general"></a>Obecné
 
 ### <a name="use-more-than-one-embedded-library-in-a-project"></a>Použití více než jeden embedded knihovny v projektu
 
-Není možné, že dvě mono runtimes společně existující uvnitř stejné aplikaci. To znamená, že nemůžete použít dvě různé knihovnami embeddinator generované 4000 uvnitř stejné aplikaci.
+Není možné, že dvě Mono runtimes společně existující uvnitř stejné aplikaci. To znamená, že nemůžete použít dvě různé knihovny .NET vložení generované uvnitř stejné aplikaci.
 
 **Alternativní řešení:** generátor můžete použít k vytvoření jedné knihovny, která zahrnuje několik sestavení (z různých projektů).
 
 ### <a name="subclassing"></a>Vytvoření podtřídy
 
-Embeddinator usnadňuje integraci mono runtime uvnitř aplikací díky zpřístupnění sada připravené k použití rozhraní API pro cílový jazyk a platformu.
+Díky zpřístupnění sada připravené k použití rozhraní API pro cílový jazyk a platformu .NET vložení usnadňuje integrace Mono runtime uvnitř aplikace.
 
-Ale není to dva způsob integrace, například nemůžete podtřídami spravovaného typu a očekávat spravovaného kódu pro zpětné volání do nativního kódu, protože spravovaný kód je vědoma této společné existance.
+Ale není to obousměrný integraci, například nemůžete podtřídami spravovaného typu a očekávat spravovaného kódu pro zpětné volání do nativního kódu, protože spravovaný kód je vědoma této společné existance.
 
 Podle potřeby bude pravděpodobně možné na alternativní řešení součástí toto omezení, například
 
 * spravovaný kód můžete p/invoke do nativního kódu. To vyžaduje přizpůsobení spravovaného kódu umožňují vlastní z nativního kódu;
 
-* použití produktů, třeba Xamarin.iOS a vystavit spravované knihovny, která by povolit ObjC (v tomto případě) podtřídami některé spravované NSObject podtřídy.
+* použití produktů, třeba Xamarin.iOS a vystavit spravované knihovny, který by umožnil že jazyka Objective-C (v tomto případě) k podtřídami některé spravované nástrojem NSObject podtřídy.
 
-
-## <a name="objc-generated-code"></a>ObjC vygeneruje kód
+## <a name="objective-c-generated-code"></a>Generovaný kód jazyka Objective-C
 
 ### <a name="nullability"></a>Možnost použití hodnoty Null
 
-V rozhraní .NET neexistuje žádná metadata, která Řekněte nám, pokud je přijatelné odkaz s hodnotou null nebo není pro rozhraní API. Většina rozhraní API vyvolá výjimku `ArgumentNullException` Pokud nelze zvládl `null` argument. To je problematické, protože ObjC zpracování výjimek je něco lépe vyhnout.
+Neexistuje žádná metadata v rozhraní .NET, která Řekněte nám, pokud je přijatelné odkaz s hodnotou null nebo není pro rozhraní API. Většina rozhraní API vyvolá výjimku `ArgumentNullException` Pokud nelze zvládl `null` argument. To je problematické, protože jazyka Objective-C zpracování výjimek je něco lépe vyhnout.
 
 Vzhledem k tomu, že nelze generovat poznámky přesné možnost použití hodnoty Null v soubory hlaviček a chcete minimalizovat spravované výjimky jsme výchozí argumenty nesmí být nulová (`NS_ASSUME_NONNULL_BEGIN`) a přidejte některé konkrétní, když přesnost je možné, poznámky možnost použití hodnoty Null.
+
+### <a name="bitcode-ios"></a>Bitcode (iOS)
+
+Aktuálně vložení .NET nepodporuje bitcode na iOS, která je povolena pro některé šablony projektu Xcode. To bude muset být úmyslně zakázáno úspěšně odkaz generované architektury.
+
+![Možnost Bitcode](images/ios-bitcode-option.png)

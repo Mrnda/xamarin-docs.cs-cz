@@ -1,5 +1,5 @@
 ---
-title: Instalační program sady SDK pro Android
+title: Nastavení služby SDK pro Android pro Xamarin.Android
 description: Visual Studio obsahuje Android SDK Manager, který nahrazuje Google samostatné sady SDK Manager. Tato příručka vysvětluje, jak používat ke stahování nástroje, platformy a další součásti, které potřebujete pro vývoj aplikací Xamarin.Android sady SDK pro Android SDK Manager.
 ms.prod: xamarin
 ms.assetid: 9A857F52-2EC1-414F-8010-CEE67B60A4B4
@@ -7,13 +7,13 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 45ab1930300ac704da0a1fee25c08d40aa35ac5c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5c2259ad32f341094f6cdc440edb2053987374b1
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="android-sdk-setup"></a>Instalační program sady SDK pro Android
+# <a name="setting-up-the-android-sdk-for-xamarinandroid"></a>Nastavení služby SDK pro Android pro Xamarin.Android
 
 _Visual Studio obsahuje Android SDK Manager, který nahrazuje Google samostatné sady SDK Manager. Tato příručka vysvětluje, jak používat ke stahování nástroje, platformy a další součásti, které potřebujete pro vývoj aplikací Xamarin.Android sady SDK pro Android SDK Manager._
 

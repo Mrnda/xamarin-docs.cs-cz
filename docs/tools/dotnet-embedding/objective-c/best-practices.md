@@ -1,18 +1,18 @@
 ---
-title: Embeddinator 4000 osvědčené postupy pro ObjC
+title: Vložení osvědčené postupy pro Objective-C rozhraní .NET
 ms.prod: xamarin
 ms.assetid: 63C7F5D2-8933-4D4A-8348-E9CBDA45C472
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: ca5face9865c60fabe8359c2bf356d5d5555f517
-ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
+ms.openlocfilehash: 9f31190d54b187e1dc298fe1c2a8d443862f10de
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="embeddinator-4000-best-practices-for-objc"></a>Embeddinator 4000 osvědčené postupy pro ObjC
+# <a name="net-embedding-best-practices-for-objective-c"></a>Vložení .NET osvědčené postupy pro Objective-C
 
 Toto je koncept a nemusí být synchronizovaná s funkcí podporován v současné době nástrojem. Věříme, že bude tento dokument momentální samostatně a nakonec odpovídat konečné nástroj, tedy budete doporučujeme dlouhodobé nejlepší přístupy - není okamžitý alternativní řešení.
 
@@ -106,7 +106,7 @@ Toto pravidlo pojmenování nemá žádná shoda v rozhraní .NET GC world; Meto
 
 ## <a name="exceptions"></a>Výjimky
 
-Je konce commont v rozhraní .NET použít výjimky hojně zprávy o chybách. Jsou to ale pomalé a není v ObjC poměrně identické. Pokud je to možné by jejich skrytí od vývojáře jazyka Objective-C.
+Je celkem běžné v rozhraní .NET použít výjimky hojně zprávy o chybách. Jsou to ale pomalé a není poměrně identické v Objective-c Pokud je to možné by jejich skrytí od vývojáře jazyka Objective-C.
 
 Například .NET `Try` vzor bude mnohem jednodušší využívat z kódu jazyka Objective-C:
 
@@ -138,6 +138,6 @@ Generátor podle stejné `return nil` vzor pro nevygeneruje `init*` metody. Poku
 
 Jazyka Objective-C neumožňuje operátory být přetíženy stejně C#, tak ty jsou převedeny na třídu selektorů.
 
-["Popisný"](/dotnet/standard/design-guidelines/operator-overloads/) metodu s názvem jsou generovány přednostně přetížení operátoru při nalezena a může vytvářet snadněji používat rozhraní API.
+["Popisný"](https://docs.microsoft.com/dotnet/standard/design-guidelines/operator-overloads) pojmenované metody jsou generovány přednostně přetížení operátoru při nalezena a může vytvářet snadněji používat rozhraní API.
 
 Třídy, které potlačí operátory `==` nebo `!=` by měly přepsat také standardní metody Equals (objekt).

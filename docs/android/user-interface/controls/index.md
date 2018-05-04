@@ -1,5 +1,5 @@
 ---
-title: Ovládací prvky
+title: Android – ovládací prvky (widgety)
 description: Stavební bloky pro vytvoření Xamarin.Android uživatelského rozhraní
 ms.prod: xamarin
 ms.assetid: B7A82166-B920-4672-B7A2-20DD5E0B5AEF
@@ -7,14 +7,13 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 8994a8988c0e32e85aedcd9110e3583195843862
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 28418c3b3fedcd24963008eb3b59ffa782d791f1
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="controls"></a>Ovládací prvky
-
+# <a name="android-controls-widgets"></a>Android – ovládací prvky (widgety)
 
 Xamarin.Android zpřístupní všechny nativní uživatelské rozhraní ovládací prvky (widgety), která je poskytovaný Androidem. Tyto ovládací prvky lze snadno přidat do aplikace Xamarin.Android pomocí návrháře Android nebo programově pomocí souborů XML rozložení. Bez ohledu na to, kterou metodu zvolit Xamarin.Android zpřístupní všechny vlastnosti objektu uživatelské rozhraní a metody v jazyce C#. Následující části zavést většiny běžných ovládacích prvků Android uživatelského rozhraní a popisují, jak začlenit do aplikace Xamarin.Android.
 

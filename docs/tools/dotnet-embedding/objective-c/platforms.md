@@ -6,14 +6,13 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: 7dc4dc4ea0ab55ff603b9e8d6fa905336159222a
-ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
+ms.openlocfilehash: 22652baa941debf7ded2d43cfda8c95ec474816f
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="objective-c-platforms"></a>Platformy jazyka Objective-C
-
 
 Vložení .NET, můžete vybrat různé platformy při generování kódu jazyka Objective-C:
 
@@ -22,14 +21,14 @@ Vložení .NET, můžete vybrat různé platformy při generování kódu jazyka
 * tvOS
 * watchOS [není dosud implementována]
 
-Platforma je vybrána předáním `--platform=<platform>` argument příkazového řádku k embeddinator.
+Platforma je vybrána předáním `--platform=<platform>` argument příkazového řádku k vložení .NET.
 
-Při sestavování pro platformy iOS, tvOS a watchOS, embeddinator vždy vytvoří rozhraní, které se vloží Xamarin.iOS, protože Xamarin.iOS obsahuje velké množství runtime podporu kód, který je vyžadován na těchto platformách.
+Při sestavování pro iOS, tvOS a watchOS platformy .NET vložení vždy vytvoří rozhraní, které se vloží Xamarin.iOS, protože Xamarin.iOS obsahuje velké množství runtime podporu kód, který je vyžadován na těchto platformách.
 
-Ale při vytváření pro platformu systému macOS, je možné zvolit, zda by měl rozhraní vygenerovaný vložení Xamarin.Mac nebo ne. Je možné, pokud vázané sestavení neodkazuje Xamarin.Mac.dll (přímo ani nepřímo) a tato možnost je vybrána předáním není vložit Xamarin.Mac `--platform=macOS` k embeddinator.
+Ale při vytváření pro platformu systému macOS, je možné zvolit, zda by měl rozhraní vygenerovaný vložení Xamarin.Mac nebo ne. Je možné, pokud vázané sestavení neodkazuje Xamarin.Mac.dll (přímo ani nepřímo) a tato možnost je vybrána předáním není vložit Xamarin.Mac `--platform=macOS` k nástroji vložení .NET.
 
 Pokud vázané sestavení obsahuje odkaz na Xamarin.Mac.dll, je nutné vložit Xamarin.Mac a kromě embeddinator musí vědět, které cílové rozhraní používat.
 
-Existují tři možné cílové rozhraní Xamarin.Mac: `modern` (označovaly jako `mobile`), `full` a `system` (rozdíl mezi jednotlivými je popsaná v Xamarin.Mac na [cílové rozhraní] [ 1] dokumentace), a každou je vybraná předáním `--platform=macOS-modern`, `--platform=macOS-full` nebo `--platform=macOS-system` k embeddinator.
+Existují tři možné cílové rozhraní Xamarin.Mac: `modern` (označovaly jako `mobile`), `full` a `system` (rozdíl mezi jednotlivými je popsaná v Xamarin.Mac na [cílové rozhraní] [ 1] dokumentace), a každou je vybraná předáním `--platform=macOS-modern`, `--platform=macOS-full` nebo `--platform=macOS-system` k nástroji vložení .NET.
 
 [1]: ~/mac/platform/target-framework.md

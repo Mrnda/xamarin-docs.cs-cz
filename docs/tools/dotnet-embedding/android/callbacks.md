@@ -6,11 +6,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: 72786ac4bceca2635747ebcc844a98b0ce60383f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1b2584d1e76c2f4ed0fb0a924beda3fd2554a57d
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="callbacks-on-android"></a>Zpětná volání v systému Android
 
@@ -44,7 +44,7 @@ public abstract class AbstractClass : Java.Lang.Object
 Zde jsou uvedeny podrobnosti byly tyto funkce:
 
 - `[Register]` generuje dobrý balíčku název v jazyce Java – zobrazí se název automaticky generovaný balíček bez jeho.
-- Vytvoření podtřídy `Java.Lang.Object` signály Embeddinator, aby procházely Třída Java generátor pro Xamarin.Android.
+- Vytvoření podtřídy `Java.Lang.Object` signály, které vložení .NET aby procházely Třída Java generátor pro Xamarin.Android.
 - Prázdný konstruktor: je co budete chtít použít z kódu v jazyce Java.
 - `(IntPtr, JniHandleOwnership)` Konstruktor: je co Xamarin.Android použije pro vytvoření jazyka C#-ekvivalentní objekty Java.
 - `[Export]` signály Xamarin.Android vystavit metodu Java. Název metody, jsme také můžete změnit, protože na světě Java Neradi použít metody malá písmena.
@@ -64,7 +64,7 @@ public class JavaCallbacks : Java.Lang.Object
 ```
 `JavaCallbacks` může být jakákoli třída k testování toho, dokud je `Java.Lang.Object`.
 
-Teď spusťte Embeddinator na vaše sestavení rozhraní .NET pro generování AAR. Najdete v článku [příručce Začínáme](~/tools/dotnet-embedding/get-started/java/android.md) podrobnosti.
+Teď spusťte .NET vložení na vaše sestavení rozhraní .NET pro generování AAR. Najdete v článku [příručce Začínáme](~/tools/dotnet-embedding/get-started/java/android.md) podrobnosti.
 
 Po dokončení importu se AAR do Android studia, můžete napsat testování částí:
 
@@ -153,7 +153,7 @@ Je poměrně chvilku děje Zde jsme:
 
 Po přidání této třídy a generování nové AAR, naše jednotkové testování předává. Jak je vidět tento vzor pro zpětná volání není *ideální*, ale doable.
 
-Podrobnosti o zprostředkovatel komunikace s objekty Java, najdete v článku zvláštní, [Xamarin.Android dokumentace](https://developer.xamarin.com/guides/android/advanced_topics/java_integration_overview/working_with_jni/) na toto téma.
+Podrobnosti o zprostředkovatel komunikace s objekty Java, najdete v článku zvláštní, [Xamarin.Android dokumentace](~/android/platform/java-integration/working-with-jni.md) na toto téma.
 
 ## <a name="interfaces"></a>Rozhraní
 
@@ -169,7 +169,8 @@ public interface IJavaCallback : IJavaObject
     void Send(string text);
 }
 ```
-`IJavaObject` Embeddinator signalizuje, že to je rozhraní Xamarin.Android, ale v opačném případě je to přesně stejné jako `abstract` třídy.
+
+`IJavaObject` signalizuje do .NET vložení, že to je rozhraní Xamarin.Android, ale v opačném případě je to přesně stejné jako `abstract` třídy.
 
 Vzhledem k tomu, že Xamarin.Android nevygeneruje aktuálně kódu v jazyce Java pro toto rozhraní, přidejte následující Java do projektu C#:
 
@@ -180,7 +181,8 @@ public interface IJavaCallback {
     void send(String text);
 }
 ```
-Můžete umístit kamkoli souboru, ale nezapomeňte nastavit jeho procesu sestavení `AndroidJavaSource`. To bude signál Embeddinator a zkopírujte ho do správné adresář, který chcete získat zkompilovat do souboru AAR.
+
+Můžete umístit kamkoli souboru, ale nezapomeňte nastavit jeho procesu sestavení `AndroidJavaSource`. To bude signál .NET vložení a zkopírujte ho do správné adresář, který chcete získat zkompilovat do souboru AAR.
 
 Dále `Invoker` implementace budou poměrně stejné:
 
@@ -281,15 +283,15 @@ Existuje několik věcí, které nemůžeme ke zlepšení těchto scénářích:
     - To odebírá potřebu, přidání Java zdrojový soubor pomocí akce sestavení `AndroidJavaSource`.
 1. Ujistěte se, tak pro Xamarin.Android se načíst `Invoker` pro virtuální třídy.
     - To eliminuje nutnost označte třídu v našem `virtual` příklad `abstract`.
-1. Generovat `Invoker` třídy pro Embeddinator automaticky
+1. Generovat `Invoker` automaticky třídy pro vložení rozhraní .NET
     - To bude mít složité, ale doable. Xamarin.Android již provádí podobat následujícímu pro projekty vazby Java.
 
-Je hodně práce na jednom místě, ale je možné, tyto vylepšení Embeddinator.
+Je hodně práce na jednom místě, ale je možné, tato vylepšení pro vložení .NET.
 
 ## <a name="further-reading"></a>Další čtení
 
 * [Začínáme v systému Android](~/tools/dotnet-embedding/get-started/java/android.md)
 * [Předběžné Android Research](~/tools/dotnet-embedding/android/index.md)
-* [Omezení Embeddinator](~/tools/dotnet-embedding/limitations.md)
+* [Vložení omezení rozhraní .NET](~/tools/dotnet-embedding/limitations.md)
 * [Na projektu s otevřeným zdrojem](https://github.com/mono/Embeddinator-4000/blob/master/docs/Contributing.md)
 * [Kódy a popisy chyb](~/tools/dotnet-embedding/errors.md)

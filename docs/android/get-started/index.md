@@ -1,5 +1,5 @@
 ---
-title: Začínáme s Androidem
+title: Začít vyvíjet aplikace pro Android s Xamarin.Android
 description: Xamarin.Android umožňuje vytvářet nativní aplikace pro Android pomocí stejné ovládacích prvků uživatelského rozhraní, jako byste v jazyce Java, ale s flexibilitu a eleganci moderní jazyka (C#), power .NET základní třídy knihovny (BCL) a první třídy (IDE Visual Studio) na dosah ruky. Tato řada obsahuje základní informace o vývoj Xamarin.Android. Tím přejdete z nastavení a instalaci na vytvoření vaší první aplikace.
 ms.prod: xamarin
 ms.assetid: D3BC68C5-87C1-50AF-ED0A-55EBF07CBD8B
@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 ms.custom: xamu-video
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/25/2017
-ms.openlocfilehash: 8a9abb7e9a5640994d67c1fb33d15d8405442b6c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/25/2018
+ms.openlocfilehash: a60331a6c8cd1b65e51a63b221cbdb7182803bd1
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="getting-started-series"></a>Začínáme řady
 
@@ -36,7 +36,7 @@ V této příručce dvě části budete rozbalte aplikace vytvořené v _Hello, 
 
 Tento článek obsahuje úvod do jazyka C# – programování pro vývojáře v jazyce Java, zaměřením na funkce jazyka C#, které vývojáře v jazyce Java mohou být zobrazeny při učení o vývoj aplikací pro Xamarin.Android.
 
-## <a name="xamarin-university-video"></a>Xamarin University Video
+## <a name="xamarin-university-video"></a>Xamarin univerzity Video
 
 > [!VIDEO https://youtube.com/embed/rkNikCa5D48]
 

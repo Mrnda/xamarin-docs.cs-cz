@@ -5,11 +5,11 @@ title: Dokumentace pro Xamarin
 description: Xamarin umožňuje vytvářet nativní aplikace pro Android, iOS a macOS pomocí kódu technologie .NET a uživatelských rozhraní specifických pro danou platformu. Xamarin.Forms umožňuje vytvářet nativní aplikace se sdíleným kódem uživatelského rozhraní napsané v jazycích C# nebo XAML.
 featureFlags:
 - clicktale
-ms.openlocfilehash: de03c1bd1b7874e6a837fbbb9e88a353f19afca5
-ms.sourcegitcommit: 4f1b508caa8e7b6ccf85d167ea700a5d28b0347e
+ms.openlocfilehash: a2f8c6ddedcff89f357ed8a984954d9f91c0477f
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 05/03/2018
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -831,12 +831,12 @@ ms.lasthandoff: 04/03/2018
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Application Fundamentals" src="~/media/index/xamarin-cross-platform-fundamentals.svg?branch=master" data-linktype="external">
+                                                        <img alt="Sharing Code" src="~/media/index/xamarin-cross-platform-fundamentals.svg?branch=master" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Principy aplikací</h3>
-                                                    <p>Naučte se základy psaní kódu, který slouží pro základní úkoly, jako je zpracování souborů, obrázků apod., a dá se i sdílet.</p>
+                                                    <h3>Sdílení kódu</h3>
+                                                    <p>Poznejte různé možnosti pro sdílení kódu a knihoven mezi Androidem, iOSem a Windows.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -850,12 +850,12 @@ ms.lasthandoff: 04/03/2018
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Platform Features" src="~/media/index/xamarin-cross-platform-platform-features.svg?branch=master" data-linktype="external">
+                                                        <img alt="Language Support" src="~/media/index/xamarin-cross-platform-platform-features.svg?branch=master" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Funkce platformy</h3>
-                                                    <p>Práce s funkcemi konkrétních platforem, jako je FaceID a ARKit a nejnovější funkce iOS</p>
+                                                    <h3>Podpora jazyků</h3>
+                                                    <p>Projekty Xamarin lze psát v jazyce C# a F# s využitím knihoven napsaných v jazyce VB. Podporují se také šablony Razor.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -873,8 +873,8 @@ ms.lasthandoff: 04/03/2018
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Nasazení a testování</h3>
-                                                    <p>Vytváření a nasazování aplikací pro různé platformy</p>
+                                                    <h3>Ladění a výkon</h3>
+                                                    <p>Tipy pro vylepšení aplikace bez ohledu na cílovou platformu</p>
                                                 </div>
                                             </div>
                                         </div>

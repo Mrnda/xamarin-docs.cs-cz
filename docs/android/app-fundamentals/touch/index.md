@@ -1,5 +1,5 @@
 ---
-title: Dotykové ovládání
+title: Dotykové ovládání a gest v Xamarin.Android
 description: Dotykové obrazovky na množství dnešních zařízení umožňují uživatelům rychle a efektivně využívat zařízení přirozené a intuitivní způsobem. Tato interakce se neomezuje jenom na jednoduchý touch detekce – je možné pomocí gest také. Například gesto roztahováním přiblížení, je velmi běžné příklad tohoto roztáhnout součástí obrazovky se dvěma prsty, které uživatel může zvětšit nebo zmenšit. Tato příručka prozkoumá touch a gesta v Android.
 ms.prod: xamarin
 ms.assetid: 61874769-978A-4562-9B2A-7FFD45F58B38
@@ -7,13 +7,13 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: d6c6d7fd02511ede84b7cfa75575d755f11bab99
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3700f9c73fb58fefcdba7987c9931e385cd52d38
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="touch"></a>Dotykové ovládání
+# <a name="touch-and-gestures-in-xamarinandroid"></a>Dotykové ovládání a gest v Xamarin.Android
 
 _Dotykové obrazovky na množství dnešních zařízení umožňují uživatelům rychle a efektivně využívat zařízení přirozené a intuitivní způsobem. Tato interakce se neomezuje jenom na jednoduchý touch detekce – je možné pomocí gest také. Například gesto roztahováním přiblížení, je velmi běžné příklad tohoto roztáhnout součástí obrazovky se dvěma prsty, které uživatel může zvětšit nebo zmenšit. Tato příručka prozkoumá touch a gesta v Android._
 

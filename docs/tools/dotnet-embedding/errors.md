@@ -1,16 +1,16 @@
 ---
-title: Vložení chyby rozhraní .NET
+title: Vložení .NET chyby
 ms.prod: xamarin
 ms.assetid: 932C3F0C-D968-42D1-BB14-D97C73361983
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 04/11/2018
-ms.openlocfilehash: 0bc4451d8eb93b826fc673bc4e163c9b7b68c36e
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 677242ea12f8fd87d82f337eafd96a1743ad806a
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="net-embedding-errors"></a>Vložení chyby rozhraní .NET
 
@@ -92,7 +92,7 @@ Jde o známý problém, který jsme v úmyslu opravit v budoucí verzi generáto
 
 Nástroj nelze sloučit architektury uvedený v chybové zprávě, protože je běžné souborů mezi nimi.
 
-To může znamenat chybu v Embeddinator-4000; prosím soubor sestavy chyb v [ https://github.com/mono/Embeddinator-4000/issues ](https://github.com/mono/Embeddinator-4000/issues) s testovacího případu.
+To může znamenat chyby v rozhraní .NET vložení; prosím soubor sestavy chyb v [ https://github.com/mono/Embeddinator-4000/issues ](https://github.com/mono/Embeddinator-4000/issues) s testovacího případu.
 
 <a name="EM0011" />
 
@@ -142,9 +142,9 @@ Syntaxe pro možnost příkazového řádku zadané `A` nebylo možné analyzova
 
 ### <a name="em0099-internal-error--please-file-a-bug-report-with-a-test-case-httpsgithubcommonoembeddinator-4000issues"></a>EM0099: Vnitřní chyba *. Prosím soubor zprávu o chybě s testovacího případu (https://github.com/mono/Embeddinator-4000/issues).
 
-Tato chybová zpráva se hlásí, když se nezdaří Kontrola interní konzistence v Embeddinator-4000.
+Tato chybová zpráva se hlásí, když se nezdaří Kontrola interní konzistence v rozhraní .NET vložení.
 
-To ukazuje na chybu v Embeddinator-4000; prosím soubor sestavy chyb v [ https://github.com/mono/Embeddinator-4000/issues ](https://github.com/mono/Embeddinator-4000/issues) s testovacího případu.
+To ukazuje na chybu v rozhraní .NET vložení; prosím soubor sestavy chyb v [ https://github.com/mono/Embeddinator-4000/issues ](https://github.com/mono/Embeddinator-4000/issues) s testovacího případu.
 
 <!-- 1xxx: code processing -->
 
@@ -189,7 +189,7 @@ public class MyType {
 }
 ```
 
-V takových případech jenom dva generované `init` selektory bude vytvořen, obě volání do mono, ale bude existovat žádné obálku pro později.
+V takových případech jenom dva generované `init` selektory bude vytvořen, obě volání do Mono, ale bude existovat žádné obálku pro později.
 
 <a name="EM1030" />
 
@@ -224,7 +224,7 @@ public class MyType {
 }
 ```
 
-V takových případech jenom dva generované `increment` selektory bude vytvořen, obě volání do mono, ale bude existovat žádné obálku pro později.
+V takových případech jenom dva generované `increment` selektory bude vytvořen, obě volání do Mono, ale bude existovat žádné obálku pro později.
 
 <a name="EM1033" />
 
@@ -236,7 +236,7 @@ Toto je **upozornění** , metoda `M` není vygenerovat, protože jiná metoda z
 
 ### <a name="em1034-extension-method-m-is-not-generated-inside-a-category-because-they-cannot-be-created-on-primitive-type-t-a-normal-static-method-was-generated"></a>EM1034: Metody rozšíření `M` nevygenerovala uvnitř kategorii, protože nemohou být vytvářeny na primitivní typ `T`. Normální, statickou metodu byl vygenerován.
 
-Toto je **upozornění** , zadejte na primivite metody rozšíření (například `System.Int32`) nebyl nalezen. V ObjC není možné vytvořit na primitivní typ kategorie. Generátor místo toho bude vytvořit normální, statickou metodu.
+Toto je **upozornění** , zadejte na primivite metody rozšíření (například `System.Int32`) nebyl nalezen. V Objective-C není možné vytvořit na primitivní typ kategorie. Generátor místo toho bude vytvořit normální, statickou metodu.
 
 <a name="EM1040" />
 
@@ -286,7 +286,7 @@ Toto je **upozornění** daný Element `E` není vygenerovat, protože jeho náz
 
 Toto je **upozornění** cílených `E` se považuje za nepodporovaný pro Xamarin.iOS a Xamarin.Mac případy použití. 
 
-Využívání statickou nebo dynamickou Embeddinator knihoven může vyžadovat další pracovní postup nebo vylepšení a je nutno ve většině případů použití.
+Spotřeba statické nebo dynamické knihovny .NET vložení může vyžadovat další pracovní postup nebo vylepšení a je nutno ve většině případů použití.
 
 Zvažte odebrání vaší `--target` , nebo parametr předejte `--target=framework` místo.
 

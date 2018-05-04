@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
 ms.date: 04/23/2018
-ms.openlocfilehash: bfb53af420b64fb9af994d3fb19293406d3acd7b
-ms.sourcegitcommit: 180a8411d912de40545f9624e2127a66ee89e7b2
+ms.openlocfilehash: 627225fdeef781a8b24a79e9b46627a739fd15af
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/30/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="xamarin-live-reload"></a>Načtěte Xamarin za provozu
 
@@ -106,13 +106,33 @@ Ne. Ve skutečnosti můžete i spustit všechny vaše podporované aplikační c
 ## <a name="limitations"></a>Omezení
 
 * Je podporován pouze opětovném načtení XAML.
-* Podporuje jenom v sadě Visual Studio.
-* Pracuje pouze s .NET standardní knihovny.
-* Šablony stylů CSS nejsou podporovány.
 * Pokud používáte rozhraní MVVM nemusí nakládat mezi opětovně nasadí, stav uživatelského rozhraní.
-* Opětovném načtení celou aplikaci prostředky (tj. **App.xaml** nebo sdílené slovnících prostředků), navigace aplikace se resetuje.
+
+## <a name="known-issues"></a>Známé problémy
+
+* Podporuje jenom v sadě Visual Studio.
+* Pracuje pouze s .NET standardní knihovny. Tento problém bude vyřešený v příští verzi preview.
+* Šablony stylů CSS nejsou podporovány. Tento problém bude vyřešený v příští verzi preview.
+* Opětovném načtení celou aplikaci prostředky (tj. **App.xaml** nebo sdílené slovnících prostředků), navigace aplikace se resetuje. Tento problém bude vyřešený v příští verzi preview.
+* Úpravy XAML při ladění UWP může způsobit selhání modulu runtime. Alternativní řešení: Použití **spustit bez ladění (Ctrl + F5)** místo **spustit ladění (F5)**.
 
 ## <a name="troubleshooting"></a>Poradce při potížích
+
+### <a name="error-codes"></a>Kódy chyb
+
+* **XLR001**: *aktuální projekt odkazuje na verze balíčku NuGet, Xamarin.LiveReload' [verze], ale rozšíření načtěte Xamarin za provozu vyžaduje verzi [verze].*
+
+  Chcete-li povolit rychlé iterace a vývoj funkce Live načtěte, balíček nuget a rozšíření sady Visual Studio musí přesně shodovat. Aktualizace vašeho balíčku nuget na stejnou verzi rozšíření, které jste nainstalovali.
+
+* **XLR002**: *načtěte za provozu vyžaduje alespoň vlastnost 'MqttHostname' při sestavování z příkazového řádku. Alternativně nastavte 'EnableLiveReload' na hodnotu "false" funkci zakážete.*
+
+  Vlastnosti, které vyžadují Live opětovného načtení nejsou k dispozici při sestavování z příkazového řádku (nebo průběžnou integraci) a proto je třeba explicitně zadat. 
+
+* **XLR003**: *balíček nuget načtěte za provozu vyžaduje instalaci rozšíření Xamarin Live opětovného načtení Visual Studio.*
+
+  Pokus o sestavení projektu, který odkazuje balíček nuget Live načtěte ale rozšíření Visual není nainstalován.  
+
+
 
 ### <a name="app-doesnt-connect"></a>Aplikace nemá připojení.
 
@@ -145,7 +165,7 @@ Pokud máte starší verzi preview a máte problémy s jeho odinstalování, pos
 
 Ve scénářích kde připojení z spuštěné aplikaci k vašemu počítači (jako označené pomocí `localhost` nebo `127.0.0.1` v **nástroje > Možnosti > Xamarin > Live načtěte**) není možné (tj. brány firewall, různé sítě), můžete nakonfigurovat na vzdálený server místo toho, který rozhraní IDE a aplikace bude k připojení.
 
-Za provozu načtěte pomocí standardu [MQTT protokol](http://mqtt.org/) pro výměnu zpráv a proto může komunikovat s [serverech třetích stran](https://github.com/mqtt/mqtt.github.io/wiki/servers). Existují i [veřejné servery](https://github.com/mqtt/mqtt.github.io/wiki/public_brokers) (také označované jako *makléřům*) k dispozici, které můžete použít. Načtěte za provozu se testovalo s `broker.hivemq.com` a `iot.eclipse.org` názvy hostitelů, jakož i služeb poskytovaných [www.cloudmqtt.com](https://www.cloudmqtt.com) a [www.cloudamqp.com](https://www.cloudamqp.com). Můžete taky nasadit vlastní MQTT server v cloudu, jako například [HiveMQ v Azure](https://www.hivemq.com/blog/hivemq-on-windows-azure-mqtt-microsoft-cloud) nebo [králičího MQ v AWS](http://www.rabbitmq.com/ec2.html). 
+Za provozu načtěte pomocí standardu [MQTT protokol](http://mqtt.org/) pro výměnu zpráv a proto může komunikovat s [serverech třetích stran](https://github.com/mqtt/mqtt.github.io/wiki/servers). Existují i [veřejné servery](https://github.com/mqtt/mqtt.github.io/wiki/public_brokers) (také označované jako *makléřům*) k dispozici, které můžete použít. Načtěte za provozu se testovalo s `broker.hivemq.com` a `iot.eclipse.org` názvy hostitelů, jakož i služeb poskytovaných [www.cloudmqtt.com](https://www.cloudmqtt.com) a [www.cloudamqp.com](https://www.cloudamqp.com). Můžete taky nasadit vlastní MQTT server v cloudu, jako například [HiveMQ v Azure](https://www.hivemq.com/blog/hivemq-on-windows-azure-mqtt-microsoft-cloud).
 
 Můžete nakonfigurovat jakéhokoli portu, ale je běžné používat výchozí 1883 port pro vzdálené servery. Živé opětovného načtení zprávy používat silné začátku do konce symetrické šifrování AES, takže je bezpečné připojení k vzdálené servery. Ve výchozím nastavení šifrovací klíč a inicializační vektor (IV) obnovovaly na každou relaci Visual Studio.
 

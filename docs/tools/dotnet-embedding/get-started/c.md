@@ -5,61 +5,55 @@ ms.assetid: 2A27BE0F-95FB-4C3A-8A43-72540179AA85
 ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.date: 11/14/2017
-ms.openlocfilehash: 8dff45de6de7c9492b199f323656778ac5c34d57
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/19/2018
+ms.openlocfilehash: 1313d7156a1fd75fd40e2aff65404aef5ab023bb
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="getting-started-with-c"></a>Začínáme s C
 
-
 ## <a name="requirements"></a>Požadavky
 
-Použití rozhraní .NET vkládání s C budete potřebovat spuštěný počítače Mac nebo Windows:
+Používat C vložení .NET, budete potřebovat spuštěný počítače Mac nebo Windows:
+
+### <a name="macos"></a>macOS
 
 * systému macOS 10.12 (Sierra) nebo novější
 * Xcode 8.3.2 nebo novější
+* [Mono](http://www.mono-project.com/download/)
+
+### <a name="windows"></a>Windows
 
 * Windows 7, 8, 10 nebo novější
 * Visual Studio 2015 nebo novější
 
-* [Mono](http://www.mono-project.com/download/)
+## <a name="installing-net-embedding-from-nuget"></a>Instalace rozhraní .NET vložení z NuGet
 
+Postupujte podle těchto [pokyny](~/tools/dotnet-embedding/get-started/install/install.md) k instalaci a konfiguraci vložení .NET pro váš projekt.
 
-## <a name="installation"></a>Instalace
+Příkaz volání, které byste měli nakonfigurovat bude vypadat (případně s různých čísel verzí a cesty):
 
-Dalším krokem je ke stažení a instalaci nástrojů .NET vložení na váš počítač.
+### <a name="visual-studio-for-mac"></a>Visual Studio for Mac
 
-Binární sestavení pro C a Java generátory ještě nejsou k dispozici, ale budou brzo dostupné.
+```shell
+mono {SolutionDir}/packages/Embeddinator-4000.0.4.0.0/tools/Embeddinator-4000.exe --gen=c --output=managed_c --platform=macos --compile managed.dll
+```
 
-Případně je možné vytvořit z našich úložiště git, najdete v článku [přidání](https://github.com/mono/Embeddinator-4000/blob/master/docs/Contributing.md) dokumentu pokyny.
+### <a name="visual-studio-2017"></a>Visual Studio 2017
 
+```shell
+$(SolutionDir)\packages\Embeddinator-4000.0.2.0.80\tools\Embeddinator-4000.exe --gen=c --output=managed_c --platform=windows --compile managed.dll
+```
 
 ## <a name="generation"></a>Generování
-
-Ke generování kódu jazyka C, invoke .NET vložení nástroj předávání správné příznaky pro jazyk C:
-
-### <a name="windows"></a>Windows:
-
-```csharp
-$ build/lib/Debug/Embeddinator-4000.exe --gen=c --output=managed_c --platform=windows --compile managed.dll
-```
-
-Ujistěte se, že zavolat z příkazového prostředí sady Visual Studio konkrétní verzi sady Visual Studio jste, které se budou zaměřovat.
-
-### <a name="macos"></a>macOS
-
-```csharp
-$ mono build/lib/Debug/Embeddinator-4000.exe --gen=c --output=managed_c --platform=macos --compile managed.dll
-```
 
 ### <a name="output-files"></a>Výstupní soubory
 
 Pokud všechno proběhne správně, zobrazí se následující výstup:
 
-```csharp
+```shell
 Parsing assemblies...
     Parsed 'managed.dll'
 Processing assemblies...
@@ -76,12 +70,12 @@ Generating binding code...
     Generated: mono_embeddinator.h
 ```
 
-Vzhledem k tomu `--compile` příznak byl předán nástroj, .NET vložení by také sestavili výstupní soubory do sdílené knihovny, které můžete vyhledat vedle generované soubory, `libmanaged.dylib` souboru v systému macOS, a `managed.dll` v systému Windows.
+Vzhledem k tomu `--compile` příznak byl předán nástroj, .NET vložení by také sestavili výstupní soubory do sdílené knihovny, které můžete vyhledat vedle generované soubory, **libmanaged.dylib** souboru v systému macOS a **managed.dll** v systému Windows.
 
-Používat sdílené knihovny, můžete zahrnout `managed.h` C záhlaví souboru, který poskytuje deklarace C odpovídající příslušné spravovanou knihovnu rozhraní API a odkaz s výše uvedených zkompilovat sdílenou knihovnu.
+Používat sdílené knihovny, můžete zahrnout **managed.h** C záhlaví souboru, který poskytuje deklarace C odpovídající příslušné spravovanou knihovnu rozhraní API a odkaz s výše uvedených zkompilovat sdílenou knihovnu.
 
 ## <a name="further-reading"></a>Další čtení
 
-* [Omezení Embeddinator](~/tools/dotnet-embedding/limitations.md)
-* [Na projektu s otevřeným zdrojem](https://github.com/mono/Embeddinator-4000/blob/master/docs/Contributing.md)
+* [Vložení omezení rozhraní .NET](~/tools/dotnet-embedding/limitations.md)
+* [Na projektu s otevřeným zdrojem](https://github.com/mono/Embeddinator-4000/blob/master/Contributing.md)
 * [Kódy a popisy chyb](~/tools/dotnet-embedding/errors.md)

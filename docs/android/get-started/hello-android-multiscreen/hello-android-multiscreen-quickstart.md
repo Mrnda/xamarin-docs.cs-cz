@@ -7,12 +7,12 @@ ms.assetid: ED99584A-BA3B-429A-AEE5-CF3CB0116762
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/08/2018
-ms.openlocfilehash: 67644caedd268aac45a86c03a69ba017976fc103
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/30/2018
+ms.openlocfilehash: d8f909ab522b5bbf08a2b666fd4f64340e60b3e5
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="hello-android-multiscreen-quickstart"></a>Hello, Android Multiobrazovka: rychlý start
 
@@ -52,7 +52,7 @@ Nastavte **Text** vlastnost tlačítko pro `@string/translationHistory`. Android
 
 Rozbalte **hodnoty** pod uzlem **prostředky** složky v **Průzkumníku řešení** a dvakrát klikněte na soubor prostředků řetězec **Strings.xml**:
 
-[![Open Strings.xml](hello-android-multiscreen-quickstart-images/vs/04-strings-resources-file-sml.png)](hello-android-multiscreen-quickstart-images/vs/04-strings-resources-file.png#lightbox)
+[![Otevřete Strings.xml](hello-android-multiscreen-quickstart-images/vs/04-strings-resources-file-sml.png)](hello-android-multiscreen-quickstart-images/vs/04-strings-resources-file.png#lightbox)
 
 Přidat `translationHistory` řetězec název a hodnotu **Strings.xml** souboru a uložte jej:
 
@@ -108,10 +108,11 @@ V této třídě, kterou vytváříte `ListActivity` a naplnění prostřednictv
 
 ### <a name="adding-translation-history-code"></a>Přidání kódu historie překlad
 
-Tato aplikace shromažďuje telefonní čísla (ke které má uživatel přeložit na první obrazovce) a předá je k obrazovce pro druhý. Telefonní čísla, která jsou uloženy jako seznam řetězců. Chcete-li podporovat seznamy, přidejte následující `using` direktivy do horní části `MainActivity` – třída:
+Tato aplikace shromažďuje telefonní čísla (ke které má uživatel přeložit na první obrazovce) a předá je k obrazovce pro druhý. Telefonní čísla, která jsou uloženy jako seznam řetězců. Pro podporu seznamy (a záměry, které se použijí později), přidejte následující `using` direktivy do horní části **MainActivity.cs**:
 
 ```csharp
 using System.Collections.Generic;
+using Android.Content;
 ```
 
 Dále vytvořte prázdný seznam, který může být vyplněna s telefonními čísly.
@@ -246,10 +247,11 @@ V této třídě `ListActivity` je vytvořeny a naplněny prostřednictvím kód
 
 ### <a name="adding-translation-history-code"></a>Přidání kódu historie překlad
 
-Tato aplikace shromažďuje telefonní čísla (ke které má uživatel přeložit na první obrazovce) a předá je k obrazovce pro druhý. Telefonní čísla, která jsou uloženy jako seznam řetězců. Chcete-li podporovat seznamy, přidejte následující `using` direktivy do horní části `MainActivity` – třída:
+Tato aplikace shromažďuje telefonní čísla (ke které má uživatel přeložit na první obrazovce) a předá je k obrazovce pro druhý. Telefonní čísla, která jsou uloženy jako seznam řetězců. Pro podporu seznamy (a záměry, které se použijí později), přidejte následující `using` direktivy do horní části **MainActivity.cs**:
 
 ```csharp
 using System.Collections.Generic;
+using Android.Content;
 ```
 
 Dále vytvořte prázdný seznam, který může být vyplněna s telefonními čísly. `MainActivity` Třída bude vypadat například takto:

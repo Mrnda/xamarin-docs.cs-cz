@@ -1,5 +1,5 @@
 ---
-title: Funkce platformy
+title: Funkce platformě Xamarin.Android
 description: Dokumenty v této části se týkají funkcí, které jsou specifické pro Android. Zde najdete oblastech, jako je pomocí fragmentů, práci s mapy a zapouzdření dat pomocí poskytovatelů obsahu.
 ms.prod: xamarin
 ms.assetid: DDE54082-6E2B-9ED9-05FB-D9C1D1B1258E
@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: 69a70fe399bc95a9d8b24cc839382f2f3bee553e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8c26cc3af97cad26e8add248b5bf4aabcefc614b
+ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="platform-features"></a>Funkce platformy
 
@@ -38,7 +38,7 @@ Android 3.0 zavedla fragmenty, znázorňující způsob pro podporu flexibilněj
 
 
 
-## <a name="app-linkingandroidplatformapp-linkingmd"></a>[App-Linking](~/android/platform/app-linking.md)
+## <a name="app-linkingandroidplatformapp-linkingmd"></a>[Propojení aplikace](~/android/platform/app-linking.md)
 
 Tato příručka popisuje, jak Android 6.0 podporuje _propojení aplikace_, technika, který umožňuje mobilní aplikace reagovat na adresy URL na webech. Bude popisují, jak implementovat aplikaci propojení v aplikaci Android 6.0 a jak nakonfigurovat web, který chcete udělit oprávnění k mobilní aplikaci pro zpracování aplikace odkazy pro doménu.
 
@@ -105,7 +105,7 @@ Tato část popisuje postup použití mapy a umístění s Xamarin.Android. Pokr
 
 
 
-## <a name="android-speechandroidplatformspeechmd"></a>[Android Speech](~/android/platform/speech.md)
+## <a name="android-speechandroidplatformspeechmd"></a>[Android řeči](~/android/platform/speech.md)
 
 Tato část popisuje, jak používat Android Text, který se řečových a řeči na Text zařízení. Také vysvětluje instalaci jazykové sady a výklad text používaný k zařízení. 
 
