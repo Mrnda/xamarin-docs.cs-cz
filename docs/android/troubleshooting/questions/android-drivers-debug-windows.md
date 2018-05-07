@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/19/2017
-ms.openlocfilehash: 5799d3bd40effcad4404532c47bdab73bc6cfc98
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 77a7f50ab9d8f351dcefcbbdd50e88e18a13645d
+ms.sourcegitcommit: c9ebf456e1c6924956bedb13f4ea78ff09f7b1a0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="what-usb-drivers-do-i-need-to-debug-android-on-windows"></a>Jaké ovladače USB jsou nutné k ladění Android v systému Windows?
 
@@ -25,9 +25,9 @@ Jiná zařízení vyžadují ovladače USB konkrétně publikováno výrobce za�
 
 V závislosti na manfacturer může být obtížné sledovat přesný ovladač USB potřeby. Některé alternativami pro testování aplikací pro Android vyvinuté v systému Windows včetně pomocí emulátoru Androidu nebo pomocí externích služeb testování. Mezi ty patří:
 
-- [Xamarin Test Cloud](https://xamarin.com/test-cloud) – cloudové služby, spusťte na stovky skutečných Android zařízení testování.
+- [Testovací aplikace Center](https://docs.microsoft.com/appcenter/test-cloud/) – cloudové služby, spusťte na stovky skutečných Android zařízení testování.
 
 - [Emulátor sady Visual Studio pro Android](https://www.visualstudio.com/en-us/features/msft-android-emulator-vs.aspx)
 
-- [Google Android SDK Emulator](~/android/deploy-test/debugging/android-sdk-emulator/index.md)
+- [Emulátor Google Android SDK](~/android/deploy-test/debugging/android-sdk-emulator/index.md)
 

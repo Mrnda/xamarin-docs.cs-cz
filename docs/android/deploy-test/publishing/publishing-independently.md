@@ -6,11 +6,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/21/2017
-ms.openlocfilehash: 6d278f3ae046a31be6e4335119572fb509672a66
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f7ba0620a4639ff62e2d75d7cf8f02fcc01faac5
+ms.sourcegitcommit: c9ebf456e1c6924956bedb13f4ea78ff09f7b1a0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="publishing-independently"></a>Publikování nezávisle
 
@@ -25,7 +25,7 @@ Pro vývoj, nasazení a distribuci aplikací Xamarin.Android k dispozici jsou č
 
 -   **Visual Studio Professional** &ndash; pro jednotlivé vývojáře nebo malé týmy (jenom Windows). Tuto licenci nabízí standardní nebo cloudové předplatné, přístup k obsahu další univerzity Xamarin a žádná omezení použití.
 
--   **Visual Studio Enterprise** &ndash; pro týmy jakékoli velikosti (jenom Windows). Tuto licenci zahrnuje možnosti enterprise, standard nebo cloudové předplatné a 25 % sleva Xamarin Test Cloud.
+-   **Visual Studio Enterprise** &ndash; pro týmy jakékoli velikosti (jenom Windows). Tuto licenci obsahuje funkce enterprise, standard nebo cloudové předplatné.
 
 Přejděte [visualstudio.com](https://www.visualstudio.com/xamarin/) stahování Community Edition nebo Další informace o zakoupení edice Professional a Enterprise.
 

@@ -1,74 +1,68 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: "Nástroje Xamarin"
+title: Nástroje Xamarin
 metadata:
-  description: "Nástroje, které usnadňují vývoj pomocí Xamarinu"
+  description: Nástroje, které usnadňují vývoj pomocí Xamarinu
   author: conceptdev
   ms.author: crdun
   ms.date: 02-17-2018
   ms.topic: landing-page
-  ms.openlocfilehash: 61fa7aa174a4c5681f36b11d808cd02fc3c5908b
-  ms.sourcegitcommit: 8e722d72c5d1384889f70adb26c5675544897b1f
+  ms.openlocfilehash: b1f47f67677c2618b89b52ab2c015a8a4da48f95
+  ms.sourcegitcommit: c9ebf456e1c6924956bedb13f4ea78ff09f7b1a0
   ms.translationtype: HT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 03/15/2018
+  ms.lasthandoff: 05/04/2018
 abstract:
-  description: "Nástroje, které usnadňují vývoj pomocí Xamarinu"
+  description: Nástroje, které usnadňují vývoj pomocí Xamarinu
   menu:
     items:
     - href: https://visualstudio.com/
       text: Visual Studio
     - href: https://developer.xamarin.com/releases/#mac
-      text: "Poznámky k vydané verzi"
+      text: Poznámky k vydané verzi
 sections:
-- title: "Nástroje"
+- title: Nástroje
   items:
   - type: list
     style: cards
     className: cardsC
     items:
     - href: ~/tools/live-player/index.md
-      html: "Pomocí aplikace Live Player v sadě Visual Studio můžete se Xamarinem začít během minut."
+      html: Pomocí aplikace Live Player v sadě Visual Studio můžete se Xamarinem začít během minut.
       image:
         src: ~/media/index/xamarin-tools-live-player.svg?branch=master
         href: ~/tools/live-player/index.md
       title: Xamarin Live Player
     - href: ~/tools/inspector/index.md
-      html: "Informace o uživatelském rozhraní a jeho ladění"
+      html: Informace o uživatelském rozhraní a jeho ladění
       image:
         src: ~/media/index/xamarin-tools-inspector.svg?branch=master
         href: ~/tools/inspector/index.md
       title: Xamarin Inspector
     - href: ~/tools/workbooks/index.md
-      html: "Interaktivní výuka jazyka C# a platformy Xamarin"
+      html: Interaktivní výuka jazyka C# a platformy Xamarin
       image:
         src: https://docs.microsoft.com/en-us/media/illustrations/dynamics-resource-library.svg
         href: ~/tools/workbooks/index.md
-      title: "Sešity ke Xamarinu"
+      title: Sešity ke Xamarinu
     - href: ~/tools/ios-simulator.md
-      html: "Interakce se simulátorem iOSu pomocí sady Visual Studio ve Windows"
+      html: Interakce se simulátorem iOSu pomocí sady Visual Studio ve Windows
       image:
         src: ~/media/index/xamarin-tools-windows-simulator.svg?branch=master
         href: ~/tools/ios-simulator.md
-      title: "Simulátor iOSu pro Windows"
+      title: Simulátor iOSu pro Windows
     - href: ~/tools/profiler/index.md
-      html: "Identifikace a řešení problémů s výkonem"
+      html: Identifikace a řešení problémů s výkonem
       image:
         src: ~/media/index/xamarin-tools-profiler.svg?branch=master
         href: ~/tools/profiler/index.md
       title: Xamarin Profiler
     - href: ~/tools/dotnet-embedding/index.md
-      html: "Umožňuje využít váš stávající kód technologie .NET i v jiných programovacích jazycích."
+      html: Umožňuje využít váš stávající kód technologie .NET i v jiných programovacích jazycích.
       image:
         src: ~/media/index/xamarin-cross-platform-dotnet-embedding.svg
         href: ~/tools/dotnet-embedding/index.md
-      title: "Vkládání technologie .NET"
-    - href: https://developer.xamarin.com/testcloud/
-      html: "Testování aplikace na jakémkoli zařízení"
-      image:
-        src: https://docs.microsoft.com/en-us/media/illustrations/team-services-agile-track.svg
-        href: https://developer.xamarin.com/testcloud/
-      title: Xamarin Test Cloud
+      title: Vkládání technologie .NET
 - title: Platformy
   items:
   - type: list
@@ -77,13 +71,13 @@ sections:
     items:
     - title: Xamarin.Forms
       href: ~/xamarin-forms/index.md
-      html: "<p><a href=\"~/xamarin-forms/get-started/index.md\">Začínáme</a><br /><a href=\"~/xamarin-forms/app-fundamentals/index.md\">Principy aplikace</a><br /><a href=\"~/xamarin-forms/user-interface/index.md\">Uživatelské rozhraní</a><br /><a href=\"~/xamarin-forms/platform/index.md\">Funkce platformy</a><br /><a href=\"~/xamarin-forms/deploy-test/index.md\">Nasazení a testování</a><br /><a href=\"~/xamarin-forms/xaml/index.md\">XAML</a><br /><a href=\"~/xamarin-forms/data-cloud/index.md\">Datové a cloudové služby</a><br /><a href=\"~/xamarin-forms/internals/index.md\">Pokročilé koncepty a vnitřní fungování</a></p>"
+      html: <p><a href="~/xamarin-forms/get-started/index.md">Začínáme</a><br /><a href="~/xamarin-forms/app-fundamentals/index.md">Principy aplikace</a><br /><a href="~/xamarin-forms/user-interface/index.md">Uživatelské rozhraní</a><br /><a href="~/xamarin-forms/platform/index.md">Funkce platformy</a><br /><a href="~/xamarin-forms/deploy-test/index.md">Nasazení a testování</a><br /><a href="~/xamarin-forms/xaml/index.md">XAML</a><br /><a href="~/xamarin-forms/data-cloud/index.md">Datové a cloudové služby</a><br /><a href="~/xamarin-forms/internals/index.md">Pokročilé koncepty a vnitřní fungování</a></p>
     - title: Android
       href: ~/android/index.md
-      html: "<p><a href=\"~/android/get-started/index.md\">Začínáme</a><br /><a href=\"~/android/app-fundamentals/index.md\">Principy aplikace</a><br /><a href=\"~/android/user-interface/index.md\">Uživatelské rozhraní</a><br /><a href=\"~/android/platform/index.md\">Funkce platformy</a><br /><a href=\"~/android/deploy-test/index.md\">Nasazení a testování</a><br /><a href=\"~/android/data-cloud/index.md\">Datové a cloudové služby</a><br /><a href=\"~/android/internals/index.md\">Pokročilé koncepty a vnitřní fungování</a></p>"
+      html: <p><a href="~/android/get-started/index.md">Začínáme</a><br /><a href="~/android/app-fundamentals/index.md">Principy aplikace</a><br /><a href="~/android/user-interface/index.md">Uživatelské rozhraní</a><br /><a href="~/android/platform/index.md">Funkce platformy</a><br /><a href="~/android/deploy-test/index.md">Nasazení a testování</a><br /><a href="~/android/data-cloud/index.md">Datové a cloudové služby</a><br /><a href="~/android/internals/index.md">Pokročilé koncepty a vnitřní fungování</a></p>
     - title: iOS
       href: ~/ios/index.md
-      html: "<p><a href=\"~/ios/get-started/index.md\">Začínáme</a><br /><a href=\"~/ios/app-fundamentals/index.md\">Principy aplikace</a><br /><a href=\"~/ios/user-interface/index.md\">Uživatelské rozhraní</a><br /><a href=\"~/ios/platform/index.md\">Funkce platformy</a><br /><a href=\"~/ios/deploy-test/index.md\">Nasazení a testování</a><br /><a href=\"~/ios/data-cloud/index.md\">Datové a cloudové služby</a><br /><a href=\"~/ios/internals/index.md\">Pokročilé koncepty a vnitřní fungování</a></p>"
+      html: <p><a href="~/ios/get-started/index.md">Začínáme</a><br /><a href="~/ios/app-fundamentals/index.md">Principy aplikace</a><br /><a href="~/ios/user-interface/index.md">Uživatelské rozhraní</a><br /><a href="~/ios/platform/index.md">Funkce platformy</a><br /><a href="~/ios/deploy-test/index.md">Nasazení a testování</a><br /><a href="~/ios/data-cloud/index.md">Datové a cloudové služby</a><br /><a href="~/ios/internals/index.md">Pokročilé koncepty a vnitřní fungování</a></p>
     - title: Mac
       href: ~/mac/index.md
-      html: "<p><a href=\"~/mac/get-started/index.md\">Začínáme</a><br /><a href=\"~/mac/app-fundamentals/index.md\">Principy aplikace</a><br /><a href=\"~/mac/user-interface/index.md\">Uživatelské rozhraní</a><br /><a href=\"~/mac/platform/index.md\">Funkce platformy</a><br /><a href=\"~/mac/deploy-test/index.md\">Nasazení a testování</a><br /><a href=\"~/mac/internals/index.md\">Pokročilé koncepty a vnitřní fungování</a></p>"
+      html: <p><a href="~/mac/get-started/index.md">Začínáme</a><br /><a href="~/mac/app-fundamentals/index.md">Principy aplikace</a><br /><a href="~/mac/user-interface/index.md">Uživatelské rozhraní</a><br /><a href="~/mac/platform/index.md">Funkce platformy</a><br /><a href="~/mac/deploy-test/index.md">Nasazení a testování</a><br /><a href="~/mac/internals/index.md">Pokročilé koncepty a vnitřní fungování</a></p>

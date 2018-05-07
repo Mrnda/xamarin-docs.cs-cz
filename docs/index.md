@@ -5,11 +5,11 @@ title: Dokumentace pro Xamarin
 description: Xamarin umožňuje vytvářet nativní aplikace pro Android, iOS a macOS pomocí kódu technologie .NET a uživatelských rozhraní specifických pro danou platformu. Xamarin.Forms umožňuje vytvářet nativní aplikace se sdíleným kódem uživatelského rozhraní napsané v jazycích C# nebo XAML.
 featureFlags:
 - clicktale
-ms.openlocfilehash: a2f8c6ddedcff89f357ed8a984954d9f91c0477f
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.openlocfilehash: ba47459859866c140dd12186035ed6916393a4f2
+ms.sourcegitcommit: c9ebf456e1c6924956bedb13f4ea78ff09f7b1a0
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/04/2018
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -863,6 +863,25 @@ ms.lasthandoff: 05/03/2018
                                 </a>
                             </li>
                             <li>
+                                <a href="~/cross-platform/deploy-test/performance.md">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter x-hidden-focus">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img alt="Deployment and Testing" src="https://docs.microsoft.com/media/illustrations/team-services-agile-track.svg?branch=master" data-linktype="external">
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>Výkon a zabezpečení</h3>
+                                                    <p>Pokyny pro výkon a zabezpečení aplikací</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
                                 <a href="~/cross-platform/deploy-test/index.md">
                                     <div class="cardSize">
                                         <div class="cardPadding">
@@ -873,8 +892,27 @@ ms.lasthandoff: 05/03/2018
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Ladění a výkon</h3>
-                                                    <p>Tipy pro vylepšení aplikace bez ohledu na cílovou platformu</p>
+                                                    <h3>Vývoj a ladění</h3>
+                                                    <p>Tipy pro ladění a vývoj</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="~/cross-platform/desktop/index.md">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter x-hidden-focus">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img alt="Deployment and Testing" src="~/media/index/xamarin-cross-platform-desktop.svg" data-linktype="external">
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>Vývojáři pro desktop</h3>
+                                                    <p>Pokyny, které ocení vývojáři .NET pro desktop, kteří mají zájem o vývoj mobilních aplikací</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -1123,25 +1161,6 @@ ms.lasthandoff: 05/03/2018
                                                 <div class="cardText">
                                                     <h3>Průběžná integrace</h3>
                                                     <p>Popisuje, jak začlenit projekty Xamarin do procesu průběžného sestavování a integrace</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://developer.xamarin.com/testcloud/">
-                                    <div class="cardSize">
-                                        <div class="cardPadding">
-                                            <div class="card">
-                                                <div class="cardImageOuter">
-                                                    <div class="cardImage bgdAccent1">
-                                                        <img src="https://docs.microsoft.com/en-us/media/illustrations/team-services-agile-track.svg" alt="Xamarin Test Cloud" />
-                                                    </div>
-                                                </div>
-                                                <div class="cardText">
-                                                    <h3>Xamarin Test Cloud</h3>
-                                                    <p>Testování aplikace na jakémkoli zařízení</p>
                                                 </div>
                                             </div>
                                         </div>

@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 05/04/2017
-ms.openlocfilehash: b5bccfa38a9f382789585284765183efa42b6a3d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 54f3d3c475e506e7d451af5125e90a0f51aa7374
+ms.sourcegitcommit: c9ebf456e1c6924956bedb13f4ea78ff09f7b1a0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/04/2018
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>Úvod do průběžnou integraci s funkcí Xamarin
 
@@ -35,9 +35,8 @@ Sestavení řešení pro Xamarin.iOS a Xamarin.Android s centrem aplikaci přím
 
 ### <a name="using-teamcity-with-xamarintoolsciteamcitymd"></a>[Používání TeamCity se Xamarinem](~/tools/ci/teamcity.md)
 
-Tento průvodce popisuje kroky s použitím TeamCity pro kompilaci mobilních aplikací a odesílat je na Xamarin Test Cloud.
+Tento průvodce popisuje kroky s použitím TeamCity pro kompilaci mobilních aplikací a odesílat je na Test Center aplikace.
 
-###  <a name="using-jenkins-with-xamarintoolscijenkins-walkthroughmd"></a>[Používání Jenkins se Xamarinem](~/tools/ci/jenkins-walkthrough.md)
+### <a name="using-jenkins-with-xamarintoolscijenkins-walkthroughmd"></a>[Používání Jenkins se Xamarinem](~/tools/ci/jenkins-walkthrough.md)
 
 Tato příručka ukazuje, jak nastavit volaných jako server průběžnou integraci a automatizaci kompilování mobilní aplikace vytvořené s funkcí Xamarin. Popisuje postup instalace volaných na OS X, konfiguraci a nastavení úlohy kompilace aplikace Xamarin.iOS a Xamarin.Android, když jsou změny potvrzeny do systému správy verzí.
-
