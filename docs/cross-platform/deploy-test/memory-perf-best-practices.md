@@ -7,11 +7,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: 98b4b4a9e7bc28dd444cfdcb1afdfbe64cb1aee0
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: efbe5c5847c8e53de896c6a83f994492e2cd97a4
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="cross-platform-performance"></a>Napříč platformami výkonu
 
@@ -168,7 +168,7 @@ public class Subscriber : IDisposable
 ## <a name="use-weak-references-to-prevent-immortal-objects"></a>Použít slabé odkazy, abyste zabránili Immortal objekty
 
 > [!NOTE]
-> Vývojáři pro iOS, zkontrolujte v dokumentaci na [zabraňující cyklické odkazy v iOS](~/ios/deploy-test/performance.md#avoidcircularreferences) zajistit jejich aplikace efektivně používat paměti.
+> Vývojáři pro iOS, zkontrolujte v dokumentaci na [zabraňující cyklické odkazy v iOS](~/ios/deploy-test/performance.md#avoid-strong-circular-references) zajistit jejich aplikace efektivně používat paměti.
 
 <a name="lazy" />
 

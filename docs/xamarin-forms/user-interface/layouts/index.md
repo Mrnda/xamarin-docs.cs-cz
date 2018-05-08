@@ -8,11 +8,11 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 864e81b6955fd5138c4055a3f202695803139ac6
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 2f57ac5b5b54b2606618c5e59fb544cae7c77e88
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="layouts"></a>Rozložení
 
@@ -28,6 +28,7 @@ Každý ovládací prvek rozložení je popsáno níže, a také podrobnosti o t
 * **[AbsoluteLayout](absolute-layout.md)**  &ndash; umožňuje uspořádat zobrazení podle nastavení souřadnic & velikost jako absolutní hodnoty nebo poměry. AbsoluteLayout slouží k zobrazení vrstvy a také je ukotvení vlevo, vpravo nebo center.
 * **[RelativeLayout](relative-layout.md)**  &ndash; použitá k uspořádání zobrazení nastavením omezení vzhledem k jejich nadřazené rozměry a umístění.
 * **[Mřížky](grid.md)**  &ndash; použitá k uspořádání zobrazení v mřížce. Řádků a sloupců lze zadat jako absolutní hodnoty nebo poměry.
+* **[FlexLayout](flex-layout.md)**  &ndash; použitá k uspořádání zobrazení obtékané vodorovně nebo svisle.
 * **[ScrollView](scroll-view.md)**  &ndash; použitý k poskytnutí posouvání při zobrazení se nemůže vejít zcela v rámci hranice na obrazovce.
 * **[LayoutOptions](layout-options.md)**  &ndash; definovat zarovnání a rozšíření pro zobrazení, relativně k jeho nadřazený objekt.
 * **[Vstupní průhlednost](#input_transparency)**  &ndash; Určuje, jestli element obdrží vstup.
@@ -59,6 +60,23 @@ Příklad při `StackLayout` by být vhodné použít, zvažte aplikaci, která 
   <Button HorizontalOptions="End" Text="Button" />
 </StackLayout>
 ```
+
+### <a name="flexlayoutflex-layoutmd"></a>[FlexLayout](flex-layout.md)
+
+`FlexLayout` Je podobná `StackLayout` v, že zobrazuje podřízené zobrazení vodorovně nebo svisle:
+
+```xaml
+<FlexLayout Direction="Column"
+            AlignItems="Center"
+            JustifyContent="SpaceEvenly">
+        
+    <Label Text="FlexLayout in Action" />
+    <Button Text="Button" />
+    <Label Text="Another Label" />
+</FlexLayout>
+```
+
+Nicméně, pokud jsou moc podřízené objekty, aby se vešla do jednoho řádku nebo sloupec, `FlexLayout` se taky může zabalení těchto zobrazení. `FlexLayout` je založena na modulu pro rozložení flexibilní pole ze šablon stylů CSS a má řadu stejné integrované možnosti pro umístění a zarovnání své podřízené objekty.
 
 ### <a name="absolutelayoutabsolute-layoutmd"></a>[AbsoluteLayout](absolute-layout.md)
 

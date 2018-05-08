@@ -1,0 +1,63 @@
+---
+title: Xamarin.Essentials
+description: Xamarin.Essentials poskytuje vývojářům rozhraní API a platformy pro své mobilní aplikace.
+ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
+ms.technology: xamarin-crossplatform
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 05/04/2018
+ms.openlocfilehash: 37e9331eca5a9f17ad0537b0e8cfbc1a7ba36f79
+ms.sourcegitcommit: 46d3c9daa45350bdd536d9e105517f3c1c753c5b
+ms.translationtype: MT
+ms.contentlocale: cs-CZ
+ms.lasthandoff: 05/07/2018
+---
+# <a name="xamarinessentials"></a>Xamarin.Essentials
+
+![Předběžné verze NuGet](~/media/shared/pre-release.png)
+
+Xamarin.Essentials poskytuje vývojářům rozhraní API a platformy pro své mobilní aplikace.
+
+Android, iOS a UWP nabízejí jedinečné operační systém a platforma rozhraní API, že vývojáři mají přístup ke všem v jazyce C# využití Xamarin. Xamarin.Essentials poskytuje rozhraní API jedné platformě, která funguje s Xamarin.Forms, Android, iOS nebo aplikace UPW, která je přístupná ze sdíleného kódu bez ohledu na to, jak vytvořit uživatelské rozhraní.
+
+## <a name="get-started-with-xamarinessentialsget-startedmdcontextxamarinxamarin-forms"></a>[Začínáme s Xamarin.Essentials](get-started.md?context=xamarin/xamarin-forms)
+
+Postupujte podle [Příručka Začínáme](get-started.md) k instalaci **Xamarin.Essentials** balíček NuGet do existující nebo nové Xamarin.Forms, Android, iOS nebo projekty UWP.
+
+## <a name="feature-guides"></a>Průvodce funkcemi
+
+Postupujte podle pokynů pro tyto funkce Xamarin.Essentials integrovat do svých aplikací:
+
+* [Zrychlení](accelerometer.md?context=xamarin/xamarin-forms) – načtení dat akcelerace zařízení za tři dimenzí místa na disku.
+* [Informace o aplikaci](app-information.md?context=xamarin/xamarin-forms) – informace o aplikaci.
+* [Baterie](battery.md?context=xamarin/xamarin-forms) – snadno zjistit stav baterie, zdroje a stavu
+* [Schránky](clipboard.md?context=xamarin/xamarin-forms) – rychle a snadno nastavování nebo čtení textu ze schránky.
+* [Kompas](compass.md?context=xamarin/xamarin-forms) – kompas sledování změn.
+* [Připojení](connectivity.md?context=xamarin/xamarin-forms) – zkontrolujte stav připojení a zjišťuje změny.
+* [Přenos dat](data-transfer.md?context=xamarin/xamarin-forms) – odeslat text a webu identifikátory URI do jiných aplikací.
+* [Informace o zobrazení zařízení](device-display.md?context=xamarin/xamarin-forms) – získání metriky obrazovky a orientace zařízení.
+* [Informace o zařízení](device-information.md?context=xamarin/xamarin-forms) – zjistěte informace o zařízení s snadné.
+* [E-mailu](email.md?context=xamarin/xamarin-forms) – snadno odeslat e-mailové zprávy.
+* [Soubor Pomocníci systému](file-system-helpers.md?context=xamarin/xamarin-forms) – snadno ukládat soubory pro data aplikací.
+* [Výstražná](flashlight.md?context=xamarin/xamarin-forms) – jednoduchý způsob, jak zapnout výstražná zapnutí nebo vypnutí.
+* [Geografické kódování](geocoding.md?context=xamarin/xamarin-forms) – Geocode a zpětná geocode adresy a souřadnice.
+* [Informace o zeměpisné poloze](geolocation.md?context=xamarin/xamarin-forms) – načíst umístění GPS zařízení.
+* [Volný setrvačník](gyroscope.md?context=xamarin/xamarin-forms) – sledovat otočení přibližně tři primární osy v zařízení.
+* [Magnetometer](magnetometer.md?context=xamarin/xamarin-forms) – zjišťovat zařízení orientaci relativně k země magnetické pole.
+* [Otevřete prohlížeč](open-browser.md?context=xamarin/xamarin-forms) – snadno a rychle otevřete prohlížeč na konkrétní web.
+* [Telefon](phone-dialer.md?context=xamarin/xamarin-forms) – otevřete telefon.
+* [Předvolby](preferences.md?context=xamarin/xamarin-forms) – rychle a snadno přidat trvalé předvolby.
+* [Zamykací obrazovka](screen-lock.md?context=xamarin/xamarin-forms) – zachovat vzhůru obrazovce zařízení.
+* [Zabezpečené úložiště](secure-storage.md?context=xamarin/xamarin-forms) – bezpečně uložit data.
+* [SMS](sms.md?context=xamarin/xamarin-forms) – vytvoření zprávy SMS pro odesílání.
+* [Převod textu na řeč](text-to-speech.md?context=xamarin/xamarin-forms) – Vocalize text na zařízení.
+* [Sledování verze](version-tracking.md?context=xamarin/xamarin-forms) – sledování verze aplikace a čísla sestavení.
+* [Zavibrovat](vibrate.md?context=xamarin/xamarin-forms) – zavibrovat zařízením.
+
+## <a name="troubleshootingtroubleshootingmdcontextxamarinxamarin-forms"></a>[Odstraňování potíží](troubleshooting.md?context=xamarin/xamarin-forms)
+
+Hledání pomoci, pokud používáte problémy.
+
+## <a name="api-documentationxrefxamarinessentials"></a>[Dokumentaci k rozhraní API](xref:Xamarin.Essentials)
+
+Vyhledejte v dokumentaci rozhraní API pro všechny funkce, které Xamarin.Essentials.

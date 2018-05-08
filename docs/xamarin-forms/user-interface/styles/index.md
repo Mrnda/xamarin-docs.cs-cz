@@ -1,44 +1,24 @@
 ---
-title: Styly
+title: Aplikace Xamarin.Forms stylů
 description: Přizpůsobení vzhledu pomocí styly
 ms.prod: xamarin
-ms.assetid: 344A34AA-B19A-4765-BC8A-875D9A6B5EA8
+ms.assetid: EABF5072-B89B-4356-B7B3-1C6B40358926
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/17/2016
-ms.openlocfilehash: 7a19f7597ee17282bc8b41e7f0e7e3ade2361a50
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 28/04/2018
+ms.openlocfilehash: f6a80084ea68bb57a0c8aa61ad15d16dd67c6fc4
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
-# <a name="styles"></a>Styly
+# <a name="styling-xamarinforms-apps"></a>Aplikace Xamarin.Forms stylů
 
-## <a name="introductionintroductionmd"></a>[Úvod](introduction.md)
+## <a name="styling-xamarinforms-apps-using-xaml-stylesxamlindexmd"></a>[Práce se styly Xamarin.Forms aplikací pomocí jazyka XAML styly](xaml/index.md)
 
-Xamarin.Forms aplikace často obsahují více ovládacích prvků, které mají stejné vzhled. Může být nastavení vzhled jednotlivých ovládacích prvků opakovaných a chyba náchylné k chybám. Místo toho styly lze vytvořit které přizpůsobení vzhledu ovládacího prvku pomocí seskupení a nastavení vlastnosti, které jsou k dispozici na typ ovládacího prvku.
+Práce se styly aplikace na platformě Xamarin.Forms se tradičně dá udělat pomocí [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) třídy, které chcete seskupit do jednoho objektu, který lze použít na více instancí vizuální prvek kolekci hodnot vlastností. To pomáhá snížit opakovaných značek a umožňuje snadno změnit vzhled aplikace.
 
-## <a name="explicit-stylesexplicitmd"></a>[Explicitní styly](explicit.md)
+## <a name="styling-xamarinforms-apps-using-cascading-style-sheetscssindexmd"></a>[Práce se styly Xamarin.Forms aplikace pomocí šablony stylů CSS](css/index.md)
 
-*Explicitní* styl je ten, který je selektivně použít u ovládacích prvků nastavením jejich [ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/) vlastnosti.
-
-## <a name="implicit-stylesimplicitmd"></a>[Implicitní styly](implicit.md)
-
-*Implicitní* styl je ten, který se používá ve všech ovládacích prvků na stejné [ `TargetType` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.TargetType/), bez nutnosti každý ovládací prvek tak, aby odkazovaly styl.
-
-## <a name="global-stylesapplicationmd"></a>[Globální styly](application.md)
-
-Styly může být k dispozici globálně jejich přidáním do aplikace [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/). To pomáhá zamezit duplicitních stylů stránky a ovládací prvky.
-
-## <a name="style-inheritanceinheritancemd"></a>[Dědičnost stylů](inheritance.md)
-
-Styly může dědit vlastnosti z jiných styly snížit duplikování a povolit opakované použití.
-
-## <a name="dynamic-stylesdynamicmd"></a>[Dynamické styly](dynamic.md)
-
-Styly nezadávejte reagovat na změny vlastností a zůstanou nezměněny po dobu trvání aplikace. Ale aplikace reagovat na změny styl dynamicky za běhu pomocí dynamické prostředky.
-
-## <a name="device-stylesdevicemd"></a>[Styly zařízení](device.md)
-
-Xamarin.Forms obsahuje šest *dynamické* styly, označované jako *zařízení* styly v [ `Devices.Styles` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Device+Styles/) třídy. Všech šest styly mohou být použity k [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) pouze instance.
+Xamarin.Forms podporuje vizuální prvky stylu pomocí stylů CSS (Cascading Style). Šablony stylů se skládá z seznam pravidel, se každé pravidlo jeden nebo více selektory, a blok deklarace.

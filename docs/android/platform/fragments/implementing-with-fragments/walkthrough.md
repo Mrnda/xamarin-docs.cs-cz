@@ -1,232 +1,280 @@
 ---
-title: Návod
+title: Návod fragmenty Xamarin.Android – část 1
 ms.prod: xamarin
+ms.topic: tutorial
 ms.assetid: ED368FA9-A34E-DC39-D535-5C34C32B9761
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/15/2018
-ms.openlocfilehash: cc5c05fce9b9c3dd974afe027cc7cbb60085c621
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/26/2018
+ms.openlocfilehash: 4dae59d113671c9ba1ac35dd8e4189d05a7c319a
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
-# <a name="walkthrough"></a>Návod
+# <a name="fragments-walkthrough-ndash-phone"></a>Fragmenty návod &ndash; phone]
 
-V následujících krocích se vytvoří základní aplikaci s fragmenty. Prvním krokem je vytvoření nové Xamarin.Android pro projekt pro Android.
+Toto je první část a návod, dojde k vytvoření aplikace Xamarin.Android, která je cílena zařízení s Androidem v orientaci na výšku. Tento názorný postup popisuje vytvoření fragmenty v Xamarin.Android a jejich přidání do vzorku.
 
-## <a name="1-create-a-project"></a>1. Vytvoření projektu
+[![](./images/intro-screenshot-phone-sml.png)](./images/intro-screenshot-phone.png#lightbox)
 
-Vytvoření nového projektu Xamarin.Android názvem **FragmentSample**. **Minimální Android** musí být verze nastavená na Android 3.1 nebo novější, jak je znázorněno na obrázku níže:
+Pro tuto aplikaci se vytvoří následující třídy:
 
-[![Nastavení minimální verzi systému Android](walkthrough-images/00.png)](walkthrough-images/00.png#lightbox)
+1. `PlayQuoteFragment` &nbsp; Tento fragment zobrazí v uvozovkách z play pomocí William Shakespeare. Bude hostitelem `PlayQuoteActivity`.
+1. `Shakespeare` &nbsp; Tato třída bude obsahovat dvě pole pevně zakódované jako vlastnosti.
+1. `TitlesFragment` &nbsp; Tento fragment zobrazí seznam názvů plní, které byly napsané pomocí William Shakespeare. Bude hostitelem `MainActivity`.
+1. `PlayQuoteActivity` &nbsp; `TitlesFragment` Spustí `PlayQuoteActivity` v reakci na uživatele vyberte play v `TitlesFragment`.
 
+## <a name="1-create-the-android-project"></a>1. Vytvoření projektu pro Android
 
-## <a name="2-create-the-mainactivity"></a>2. Vytvořte MainActivity
+Vytvoření nového projektu Xamarin.Android názvem **FragmentSample**.
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Dále je potřeba vytvořit `MainActivity` třídy. Toto je spuštění aktivity pro aplikaci. Tato aktivita bude hostitelem jednoho nebo obou fragmentů, v závislosti na velikosti obrazovky. `MainActivity` bude to provedete načítání rozložení souboru, který je vhodný pro zařízení.
+[![Vytvoření nového projektu Xamarin.Android](./walkthrough-images/01-newproject.w157-sml.png)](./walkthrough-images/01-newproject.w157.png#lightbox)
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+
+[![Vytvoření nového projektu Xamarin.Android](./walkthrough-images/01-newproject.m742-sml.png)](./walkthrough-images/01-newproject.m742.png#lightbox)
+
+Doporučuje se vybrat **moderní vývoj** pro účely tohoto postupu.
+
+Po vytvoření projektu, přejmenujte soubor **layout/Main.axml** k **layout/activity_main.axml**.
+
+-----
+
+## <a name="2-add-the-data"></a>2. Přidejte data
+
+Data pro tuto aplikaci se uloží v dvou polích pevně zakódované řetězce, které jsou vlastnostmi název třídy `Shakespeare`:
+
+* `Shakespeare.Titles` &nbsp; Toto pole bude obsahovat seznam plní z William Shakespeare. Toto je zdroj dat pro `TitlesFragment`.
+* `Shakespeare.Dialogue` &nbsp; Toto pole bude obsahovat seznam uvozovky z jednoho z plní obsažené v `Shakespeare.Titles`. Toto je zdroj dat pro `PlayQuoteFragment`.
+
+Přidání nového jazyka C# třídy k **FragmentSample** projektu a pojmenujte ji **Shakespeare.cs**. Uvnitř tohoto souboru, vytvořte novou třídu C# s názvem `Shakespeare` s tímto obsahem
 
 ```csharp
-[Activity(Label = "Fragments Walkthrough", MainLauncher = true, Icon = "@drawable/launcher")]
-public class MainActivity : Activity
+class Shakespeare
 {
-   protected override void OnCreate(Bundle bundle)
-   {
-       base.OnCreate(bundle);
-       SetContentView(Resource.Layout.activity_main);
-   }
+    public static string[] Titles = {
+                                      "Henry IV (1)",
+                                      "Henry V",
+                                      "Henry VIII",
+                                      "Richard II",
+                                      "Richard III",
+                                      "Merchant of Venice",
+                                      "Othello",
+                                      "King Lear"
+                                    };
+
+    public static string[] Dialogue = {
+                                        "So shaken as we are, so wan with care, Find we a time for frighted peace to pant, And breathe short-winded accents of new broils To be commenced in strands afar remote. No more the thirsty entrance of this soil Shall daub her lips with her own children's blood; Nor more shall trenching war channel her fields, Nor bruise her flowerets with the armed hoofs Of hostile paces: those opposed eyes, Which, like the meteors of a troubled heaven, All of one nature, of one substance bred, Did lately meet in the intestine shock And furious close of civil butchery Shall now, in mutual well-beseeming ranks, March all one way and be no more opposed Against acquaintance, kindred and allies: The edge of war, like an ill-sheathed knife, No more shall cut his master. Therefore, friends, As far as to the sepulchre of Christ, Whose soldier now, under whose blessed cross We are impressed and engaged to fight, Forthwith a power of English shall we levy; Whose arms were moulded in their mothers' womb To chase these pagans in those holy fields Over whose acres walk'd those blessed feet Which fourteen hundred years ago were nail'd For our advantage on the bitter cross. But this our purpose now is twelve month old, And bootless 'tis to tell you we will go: Therefore we meet not now. Then let me hear Of you, my gentle cousin Westmoreland, What yesternight our council did decree In forwarding this dear expedience.",
+                                        "Hear him but reason in divinity, And all-admiring with an inward wish You would desire the king were made a prelate: Hear him debate of commonwealth affairs, You would say it hath been all in all his study: List his discourse of war, and you shall hear A fearful battle render'd you in music: Turn him to any cause of policy, The Gordian knot of it he will unloose, Familiar as his garter: that, when he speaks, The air, a charter'd libertine, is still, And the mute wonder lurketh in men's ears, To steal his sweet and honey'd sentences; So that the art and practic part of life Must be the mistress to this theoric: Which is a wonder how his grace should glean it, Since his addiction was to courses vain, His companies unletter'd, rude and shallow, His hours fill'd up with riots, banquets, sports, And never noted in him any study, Any retirement, any sequestration From open haunts and popularity.",
+                                        "I come no more to make you laugh: things now, That bear a weighty and a serious brow, Sad, high, and working, full of state and woe, Such noble scenes as draw the eye to flow, We now present. Those that can pity, here May, if they think it well, let fall a tear; The subject will deserve it. Such as give Their money out of hope they may believe, May here find truth too. Those that come to see Only a show or two, and so agree The play may pass, if they be still and willing, I'll undertake may see away their shilling Richly in two short hours. Only they That come to hear a merry bawdy play, A noise of targets, or to see a fellow In a long motley coat guarded with yellow, Will be deceived; for, gentle hearers, know, To rank our chosen truth with such a show As fool and fight is, beside forfeiting Our own brains, and the opinion that we bring, To make that only true we now intend, Will leave us never an understanding friend. Therefore, for goodness' sake, and as you are known The first and happiest hearers of the town, Be sad, as we would make ye: think ye see The very persons of our noble story As they were living; think you see them great, And follow'd with the general throng and sweat Of thousand friends; then in a moment, see How soon this mightiness meets misery: And, if you can be merry then, I'll say A man may weep upon his wedding-day.",
+                                        "First, heaven be the record to my speech! In the devotion of a subject's love, Tendering the precious safety of my prince, And free from other misbegotten hate, Come I appellant to this princely presence. Now, Thomas Mowbray, do I turn to thee, And mark my greeting well; for what I speak My body shall make good upon this earth, Or my divine soul answer it in heaven. Thou art a traitor and a miscreant, Too good to be so and too bad to live, Since the more fair and crystal is the sky, The uglier seem the clouds that in it fly. Once more, the more to aggravate the note, With a foul traitor's name stuff I thy throat; And wish, so please my sovereign, ere I move, What my tongue speaks my right drawn sword may prove.",
+                                        "Now is the winter of our discontent Made glorious summer by this sun of York; And all the clouds that lour'd upon our house In the deep bosom of the ocean buried. Now are our brows bound with victorious wreaths; Our bruised arms hung up for monuments; Our stern alarums changed to merry meetings, Our dreadful marches to delightful measures. Grim-visaged war hath smooth'd his wrinkled front; And now, instead of mounting barded steeds To fright the souls of fearful adversaries, He capers nimbly in a lady's chamber To the lascivious pleasing of a lute. But I, that am not shaped for sportive tricks, Nor made to court an amorous looking-glass; I, that am rudely stamp'd, and want love's majesty To strut before a wanton ambling nymph; I, that am curtail'd of this fair proportion, Cheated of feature by dissembling nature, Deformed, unfinish'd, sent before my time Into this breathing world, scarce half made up, And that so lamely and unfashionable That dogs bark at me as I halt by them; Why, I, in this weak piping time of peace, Have no delight to pass away the time, Unless to spy my shadow in the sun And descant on mine own deformity: And therefore, since I cannot prove a lover, To entertain these fair well-spoken days, I am determined to prove a villain And hate the idle pleasures of these days. Plots have I laid, inductions dangerous, By drunken prophecies, libels and dreams, To set my brother Clarence and the king In deadly hate the one against the other: And if King Edward be as true and just As I am subtle, false and treacherous, This day should Clarence closely be mew'd up, About a prophecy, which says that 'G' Of Edward's heirs the murderer shall be. Dive, thoughts, down to my soul: here Clarence comes.",
+                                        "To bait fish withal: if it will feed nothing else, it will feed my revenge. He hath disgraced me, and hindered me half a million; laughed at my losses, mocked at my gains, scorned my nation, thwarted my bargains, cooled my friends, heated mine enemies; and what's his reason? I am a Jew. Hath not a Jew eyes? hath not a Jew hands, organs, dimensions, senses, affections, passions? fed with the same food, hurt with the same weapons, subject to the same diseases, healed by the same means, warmed and cooled by the same winter and summer, as a Christian is? If you prick us, do we not bleed? if you tickle us, do we not laugh? if you poison us, do we not die? and if you wrong us, shall we not revenge? If we are like you in the rest, we will resemble you in that. If a Jew wrong a Christian, what is his humility? Revenge. If a Christian wrong a Jew, what should his sufferance be by Christian example? Why, revenge. The villany you teach me, I will execute, and it shall go hard but I will better the instruction.",
+                                        "Virtue! a fig! 'tis in ourselves that we are thus or thus. Our bodies are our gardens, to the which our wills are gardeners: so that if we will plant nettles, or sow lettuce, set hyssop and weed up thyme, supply it with one gender of herbs, or distract it with many, either to have it sterile with idleness, or manured with industry, why, the power and corrigible authority of this lies in our wills. If the balance of our lives had not one scale of reason to poise another of sensuality, the blood and baseness of our natures would conduct us to most preposterous conclusions: but we have reason to cool our raging motions, our carnal stings, our unbitted lusts, whereof I take this that you call love to be a sect or scion.",
+                                        "Blow, winds, and crack your cheeks! rage! blow! You cataracts and hurricanoes, spout Till you have drench'd our steeples, drown'd the cocks! You sulphurous and thought-executing fires, Vaunt-couriers to oak-cleaving thunderbolts, Singe my white head! And thou, all-shaking thunder, Smite flat the thick rotundity o' the world! Crack nature's moulds, an germens spill at once, That make ingrateful man!" 
+                                    };
 }
+```
+
+## <a name="3-create-the-playquotefragment"></a>3. Vytvořte PlayQuoteFragment
+
+`PlayQuoteFragment` Je Android fragment, který se zobrazí v uvozovkách pro Shakespeare play, která byla vybrána, uživatel dříve na v aplikaci, nebude tento fragment používat soubor Android rozložení; místo toho dynamicky vytvoří jeho uživatelské rozhraní. Přidejte nový `Fragment` třídu s názvem `PlayQuoteFragment` do projektu:
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+[![Přidání nové třídy jazyka C#](./walkthrough-images/04-addfragment.w157-sml.png)](./walkthrough-images/02-addclass.w157.png#lightbox)
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+
+[![Přidání nové třídy jazyka C#](./walkthrough-images/04-addfragment.m742-sml.png)](./walkthrough-images/02-addclass.m742.png#lightbox)
+
+-----
+
+Potom změňte kód fragment tak, aby připomínaly tento fragment kódu:
+
+```csharp
+public class PlayQuoteFragment : Fragment
+{
+    public int PlayId => Arguments.GetInt("current_play_id", 0);
+
+    public static PlayQuoteFragment NewInstance(int playId)
+    {
+        var bundle = new Bundle();
+        bundle.PutInt("current_play_id", playId);
+        return new PlayQuoteFragment {Arguments = bundle};
+    }
+
+    public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+    {
+        if (container == null)
+        {
+            return null;
+        }
+
+        var textView = new TextView(Activity);
+        var padding = Convert.ToInt32(TypedValue.ApplyDimension(ComplexUnitType.Dip, 4, Activity.Resources.DisplayMetrics));
+        textView.SetPadding(padding, padding, padding, padding);
+        textView.TextSize = 24;
+        textView.Text = Shakespeare.Dialogue[PlayId];
+
+        var scroller = new ScrollView(Activity);
+        scroller.AddView(textView);
+
+        return scroller;
+    }
+}
+```
+
+Je běžné vzoru v aplikace pro Android zajistit metoda factory, která vytvoří instanci fragment. To zajistí, že fragment bude vytvořena s potřebné parametry pro správné fungování. V tomto návodu aplikace budou používat `PlayQuoteFragment.NewInstance` metodu pro vytvoření nové fragment pokaždé, když je vybraný v uvozovkách. `NewInstance` Metoda bude trvat jeden parametr &ndash; index uvozovky k zobrazení.
+
+`OnCreateView` Metoda bude volána Android, když je na čase k vykreslení fragment na obrazovce. Vrátí Android `View` objekt, který je fragment. Tento fragment nepoužívá soubor rozložení pro vytvoření zobrazení. Místo toho prostřednictvím kódu programu vytvoří zobrazení po vytvoření instance **TextView** pro uložení uvozovky a zobrazí widgetu v **ScrollView**.
+
+> [!NOTE]
+> Dílčí třídy fragment, musí mít veřejný výchozí konstruktor, který nemá žádné parametry.
+
+## <a name="4-create-the-playquoteactivity"></a>4. Vytvořte PlayQuoteActivity
+
+Fragmenty musí být hostované uvnitř aktivity, takže tato aplikace vyžaduje aktivitu, která bude hostitelem `PlayQuoteFragment`. Aktivity dynamicky přidá fragment k jeho rozložení za běhu. Přidat novou aktivitu do aplikace a pojmenujte ji `PlayQuoteActivity`:
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+[![Přidá k projektu Android aktivitu](./walkthrough-images/03-addactivity.w157-sml.png)](./walkthrough-images/03-addactivity.w157.png#lightbox)
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+
+[![Přidá k projektu Android aktivitu](./walkthrough-images/03-addactivity.m742-sml.png)](./walkthrough-images/03-addactivity.m742.png#lightbox)
+
+-----
+
+Upravit kód v `PlayQuoteActivity`:
+
+```csharp
+[Activity(Label = "PlayQuoteActivity")]
+public class PlayQuoteActivity : Activity
+{
+    protected override void OnCreate(Bundle savedInstanceState)
+    {
+        base.OnCreate(savedInstanceState);
+
+        var playId = Intent.Extras.GetInt("current_play_id", 0);
+
+        var detailsFrag = PlayQuoteFragment.NewInstance(playId);
+        FragmentManager.BeginTransaction()
+                        .Add(Android.Resource.Id.Content, detailsFrag)
+                        .Commit();
+    }
+}
+```
+
+Při `PlayQuoteActivity` je vytvořen, vytvoří instanci novou `PlayQuoteFragment` a načíst tento fragment v jeho kořenové zobrazení v kontextu `FragmentTransaction`. Všimněte si, že tuto aktivitu nenačte soubor Android rozložení pro svoje uživatelské rozhraní. Místo toho novou `PlayQuoteFragment` se přidá do zobrazení kořenové aplikace. Identifikátor prostředku `Android.Resource.Id.Content` slouží k odkazování na kořenovému zobrazení aktivity, aniž by věděly, jeho konkrétní identifikátoru.
+
+## <a name="5-create-titlesfragment"></a>5. Vytvoření TitlesFragment
+
+`TitlesFragment` Bude podtřídami specializované fragment říká `ListFragment` který zapouzdří logiku pro zobrazení `ListView` v fragment. A `ListFragment` zpřístupní `ListAdapter` vlastnost (používaný `ListView` zobrazíte její obsah) a obslužné rutiny události s názvem `OnListItemClick` což umožňuje fragment k reakce na kliknutí na řádek, který se zobrazí `ListView`. 
+
+Abyste mohli začít, přidejte do projektu nový fragment a pojmenujte ji **TitlesFragment**:
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+[![Přidat Android fragment do projektu](./walkthrough-images/04-addfragment.w157-sml.png)](./walkthrough-images/04-addfragment.w157.png#lightbox)
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+
+[![Přidat Android fragment do projektu](./walkthrough-images/04-addfragment.m742-sml.png)](./walkthrough-images/04-addfragment.m742.png#lightbox)
+
+-----
+
+Upravte kód uvnitř fragment:
+
+```csharp
+public class TitlesFragment : ListFragment
+{
+    int selectedPlayId;
+
+    public TitlesFragment()
+    {
+        // Being explicit about the requirement for a default constructor.
+    }
+
+    public override void OnActivityCreated(Bundle savedInstanceState)
+    {
+        base.OnActivityCreated(savedInstanceState);
+        ListAdapter = new ArrayAdapter<String>(Activity, Android.Resource.Layout.SimpleListItemActivated1, Shakespeare.Titles);
+
+        if (savedInstanceState != null)
+        {
+            selectedPlayId = savedInstanceState.GetInt("current_play_id", 0);
+        }
+    }
+
+    public override void OnSaveInstanceState(Bundle outState)
+    {
+        base.OnSaveInstanceState(outState);
+        outState.PutInt("current_play_id", selectedPlayId);
+    }
+
+    public override void OnListItemClick(ListView l, View v, int position, long id)
+    {
+        ShowPlayQuote(position);
+    }
+
+    void ShowPlayQuote(int playId)
+    {
+        var intent = new Intent(Activity, typeof(PlayQuoteActivity));
+        intent.PutExtra("current_play_id", playId);
+        StartActivity(intent);
+    }
+}
+```
+
+Při vytvoření aktivity se vyvolat Android `OnActivityCreated` metoda fragmentu; to je, kdy adaptér seznamu `ListView` je vytvořena.  `ShowQuoteFromPlay` Metoda spustí instanci `PlayQuoteActivity` zobrazíte nabídku pro vybrané play.
+
+## <a name="display-titlesfragment-in-mainactivity"></a>Zobrazit TitlesFragment v MainActivity
+
+Posledním krokem je zobrazíte `TitlesFragment` v rámci `MainActivity`. Aktivity nenačte dynamicky fragment. Místo toho fragment budou staticky načteny deklarace v rozložení souboru pomocí aktivity `fragment` elementu. Fragment k načtení je určený podle nastavení `android:name` atribut k třídě fragment (includeing obor názvů typu). Chcete-li například použít `TitlesFragment`, pak `android:name` by byl nastaven na `FragmentSample.TitlesFragment`.
+
+Upravte soubor rozložení **activity_mail.axml**, nahraďte existující XML následující:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <fragment
+        android:name="FragmentSample.TitleFragment"
+        android:id="@+id/titles"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>
 ```
 
 > [!NOTE]
-> `Note:` Fragment dílčí třídy musí mít výchozí veřejný konstruktor bez argumentů.
+> `class` Atribut je platný nenahrazuje `android:name`. Neexistuje žádné formální pokyny na to, jaký typ je upřednostňovaný, existuje mnoho příkladů základů kódu, které budou používat `class` zcela zaměnitelným významem s `android:name`.
 
-## <a name="3-create-the-layout-files"></a>3. Vytvoření souborů rozložení
-
-Dvou různých obrazovek velikosti vyžadují dva různé rozložení soubory. Proto vytvoříme novou složku, **prostředky nebo rozložení-Large**a vytvořit nové rozložení názvem **activity_main.axml**. Také jsme budete přejmenovat soubor výchozí rozložení jako **Resources/Layout/activity_main.axml**. Po provedení těchto změn by měl vypadat rozložení složky na následujícím snímku obrazovky:
-
-[![Snímek obrazovky rozložení složek v prostředí IDE](walkthrough-images/01.png)](walkthrough-images/01.png#lightbox)
-
-
-Všechna zařízení se načíst a použít na soubor rozložení v **prostředky, rozvržení**.
-Je velmi jednoduché rozložení, které právě zobrazí `TitlesFragment`:
-
-```xml
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-       android:orientation="horizontal"
-       android:layout_width="fill_parent"
-       android:layout_height="fill_parent">
- <fragment class="com.xamarin.sample.fragments.supportlib.TitlesFragment"
-           android:id="@+id/titles_fragment"
-           android:layout_width="fill_parent"
-           android:layout_height="fill_parent" />
-</LinearLayout>
-```
-
-Pro zařízení, které mají promítat obrazovku, Android načte soubor rozložení v **prostředky nebo rozložení-Large**. Obsah rozložení pro tablety vypadá takto:
-
-```xml
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-       android:orientation="horizontal"
-       android:layout_width="fill_parent"
-       android:layout_height="fill_parent">
- <fragment class="com.xamarin.sample.fragments.supportlib.TitlesFragment"
-           android:id="@+id/titles_fragment"
-           android:layout_weight="1"
-           android:layout_width="0px"
-           android:layout_height="match_parent" />
- <FrameLayout android:id="@+id/details"
-              android:layout_weight="1"
-              android:layout_width="0px"
-              android:layout_height="match_parent" />
-</LinearLayout>
-```
-
-Soubor rozložení pro větší obrazovky se mírně liší. Nejen je `TitlesFragment` zobrazí v tomto souboru rozložení, ale `FrameLayout` je přidána vpravo vedle fragment. Na větší obrazovky `DetailsFragment` prostřednictvím kódu programu přidán do `MainActivity` když uživatel vybere play. Později na vysvětlíme podrobněji způsob provedení.
-
-Android 3.2 zavedl nový způsob, jak zadat rozložení obrazovky. Tyto nové kvalifikátory zadejte velikost místa potřebuje vaše rozložení, místo velikost obrazovky. Pokud byla tato aplikace spustit pouze Android 3.2 nebo vyšší, by vytvoříme **prostředků nebo rozložení sw600dp** složky (místo složce **prostředků nebo rozložení-Large**) pro soubor rozložení  **activity_main.axml**. Tento soubor prostředků by načteny všechna zařízení, které mají minimální obrazovky šířka 600 nezávislé na hustotě pixelů. Tato aplikace je však nastavení cíl Android 3.1 nebo vyšší, používá starší kvalifikátor prostředků.
-
-## <a name="4-create-the-titlesfragment"></a>4. Vytvořte TitlesFragment
-
-`TitlesFragment` bude zobrazit názvy různé plní, proto umožňuje přidat nové fragment k projektu názvem `TitlesFragment`:
-
-[![Přidávání nových fragment k TitlesFragment projektu](walkthrough-images/02.png)](walkthrough-images/02.png#lightbox)
-
-Po `TitlesFragment` byla přidána, třída jsme musí změnit tak, aby dědila z `Android.App.ListFragment`. `ListFragment` je specializovaná fragment typ, který zahrnuje funkci seznamu.
-`TitlesFragment` bude také přepsat `OnActivityCreated` (jiná metoda fragment životního cyklu) a zadejte `Adapter` , `ListFragment` bude používat k naplnění seznamu:
+Neexistují žádné změny kódu, které jsou potřebné pro MainActivity. Kód v dané třídě by měl být velmi podobně jako tento fragment kódu:
 
 ```csharp
-public override void OnActivityCreated(Bundle savedInstanceState)
+[Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
+public class MainActivity : Activity
 {
-   base.OnActivityCreated(savedInstanceState);
-   var adapter = new ArrayAdapter<String>(Activity, Android.Resource.Layout.SimpleListItemChecked, Shakespeare.Titles);
-   ListAdapter = adapter;
-   if (savedInstanceState != null)
-   {
-       _currentPlayId = savedInstanceState.GetInt("current_play_id", 0);
-   }
-   var detailsFrame = Activity.FindViewById<View>(Resource.Id.details);
-   _isDualPane = detailsFrame != null && detailsFrame.Visibility == ViewStates.Visible;
-   if (_isDualPane)
-   {
-       ListView.ChoiceMode = (int) ChoiceMode.Single;
-       ShowDetails(_currentPlayId);
-   }
+    protected override void OnCreate(Bundle savedInstanceState)
+    {
+        base.OnCreate(savedInstanceState);
+        SetContentView(Resource.Layout.activity_main);
+    }
 }
 ```
 
-Jak jsme uvedli, naše aplikace má dvě rozložení pro `MainActivity`. Kód v `OnActivityCreated` zjišťuje, zda `FrameLayout` a určuje, jaké rozložení souboru se načetl. Pokud `FrameLayout` existuje v rozložení, pak se `_isDualPane` je příznak nastaven na `true`. `_isDualPane` Příznak se používá jinde v rámci aktivity specificky službou `ShowDetails` metoda. `ShowDetails` Metoda se budeme podrobněji níže.
+## <a name="run-the-app"></a>Spuštění aplikace
 
-`TitlesFragment` seznam je a reagovat na výběr uživatelů v seznamu. K tomu, `TitlesFragment` přepíše metodu `OnListItemClick`. Uvnitř `OnListItemClick`, nový `DetailsFragment` se vytvoří a zobrazí v `FrameLayout`, prostřednictvím kódu programu. Kód relevantní uvnitř `TitlesFragment` je:
+Teď, když kód je dokončena, spusťte aplikaci v zařízení najdete v části v akci.
 
-```csharp
-public override void OnListItemClick(ListView l, View v, int position, long id)
-{
-   ShowDetails(position);
-}
-private void ShowDetails(int playId)
-{
-   _currentPlayId = playId;
-   if (_isDualPane)
-   {
-       // We can display everything in place with fragments.
-       // Have the list highlight this item and show the data.
-       ListView.SetItemChecked(playId, true);
-       // Check what fragment is shown, replace if needed.
-       var details = FragmentManager.FindFragmentById(Resource.Id.details) as DetailsFragment;
-       if (details == null || details.ShownPlayId != playId)
-       {
-           // Make new fragment to show this selection.
-           details = DetailsFragment.NewInstance(playId);
-           // Execute a transaction, replacing any existing
-           // fragment with this one inside the frame.
-           var ft = FragmentManager.BeginTransaction();
-           ft.Replace(Resource.Id.details, details);
-           ft.SetTransition(FragmentTransaction.TransitFragmentFade);
-           ft.Commit();
-       }
-   }
-   else
-   {
-       // Otherwise we need to launch a new Activity to display
-       // the dialog fragment with selected text.
-       var intent = new Intent();
-       intent.SetClass(Activity, typeof (DetailsActivity));
-       intent.PutExtra("current_play_id", playId);
-       StartActivity(intent);
-   }
-}
-```
+[![Snímky obrazovky aplikace spuštěná na telefonu.](./walkthrough-images/05-app-screenshots-sml.png)](./walkthrough-images/05-app-screenshots.png#lightbox)
 
-Kód ze zařízení určuje, jak pro formátování a zobrazení uvozovky z vybraných play. V případě tablety `_isDualPane` příznak bude nastavena pro `true`, a proto nabídky se zobrazí vedle `TitlesFragment`. Pokud vybraný play `id` není zobrazena, pak nový `DetailsFragment` se vytvoří a pak načten do `FrameLayout` na aktivity. Pro další zařízení, které nemají velké zobrazení &ndash; telefony, například &ndash; `isDualPane` bude nastavena pro `false` tak novou `DetailsActivity` bude spuštěn.
-
-
-## <a name="5-create-the-detailsactivity"></a>5. Vytvořte DetailsActivity
-
-`DetailsActivity` Zobrazí `DetailsFragment` pro menší zařízení. Tím zobrazíte nejprve přidáme novou aktivitu do projektu s názvem `DetailsActivity`. `DetailsActivity` je velmi jednoduchá aktivita. Vytvoří a pak hostitele novou `DetailsFragment` pro Přehrát `id` , byla odeslána:
-
-```csharp
-[Activity(Label = "Details Activity")]
-public class DetailsActivity : Activity
-{
-   protected override void OnCreate(Bundle bundle)
-   {
-       base.OnCreate(bundle);
-       var index = Intent.Extras.GetInt("current_play_id", 0);
-
-       var details = DetailsFragment.NewInstance(index); // DetailsFragment.NewInstance is a factory method to create a Details Fragment
-       var fragmentTransaction = FragmentManager.BeginTransaction();
-       fragmentTransaction.Add(Android.Resource.Id.Content, details);
-       fragmentTransaction.Commit();
-   }
-}
-```
-
-Všimněte si, že žádný soubor rozložení je načtena pro `DetailsActivity`. Místo toho `DetailsFragment` je načten do kořenové zobrazení aktivity. Toto zobrazení kořenové má speciální ID `Android.Resource.Id.Content`. Nový `DetailFragment` se vytvoří a pak přidá do této kořenové zobrazení uvnitř `FragmentTransaction` vytvořené aktivity `FragmentManager`.
-
-
-## <a name="6-create-the-detailsfragment"></a>6. Vytvořte DetailsFragment
-
-Nyní Pojďme přidat jiné fragment k aplikaci s názvem `DetailsFragment`. Tento fragment zobrazí v uvozovkách z vybraných play. Následující kód ukazuje kompletní `DetailsFragment`:
-
-```csharp
-internal class DetailsFragment : Fragment
-{
-   public static DetailsFragment NewInstance(int playId)
-   {
-       var detailsFrag = new DetailsFragment {Arguments = new Bundle()};
-       detailsFrag.Arguments.PutInt("current_play_id", playId);
-       return detailsFrag;
-   }
-   public int ShownPlayId
-   {
-       get { return Arguments.GetInt("current_play_id", 0); }
-   }
-   public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
-   {
-       if (container == null)
-       {
-           // Currently in a layout without a container, so no reason to create our view.
-           return null;
-       }
-       var scroller = new ScrollView(Activity);
-       var text = new TextView(Activity);
-       var padding = Convert.ToInt32(TypedValue.ApplyDimension(ComplexUnitType.Dip, 4, Activity.Resources.DisplayMetrics));
-       text.SetPadding(padding, padding, padding, padding);
-       text.TextSize = 24;
-       text.Text = Shakespeare.Dialogue[ShownPlayId];
-       scroller.AddView(text);
-       return scroller;
-   }
-}
-```
-
-Aby `DetailsFragment` fungovat správně, musí mít index play, který je vybraný v `TitlesFragment`. Existuje mnoho způsobů, jak zadat tuto hodnotu s `DetailsFragment`; v tomto příkladu play `Id` je umístěn do sady a sady uložená pro argumenty vlastnost instance `DetailsFragment`. Vlastnost `ShownPlayId` ke zvýšení pohodlí &ndash; se použije instancemi `DetailsFragment` načíst tuto hodnotu ze sady.
-
-`OnCreateView` je volána, když fragment potřebuje k vykreslení svoje uživatelské rozhraní a by měla vrátit `Android.Views.View` objektu. Ve většině případů se jedná `View` zvětšený z existujícího souboru rozložení. V případě výše uvedeném příkladu bude fragment prostřednictvím kódu programu vytvořit zobrazení, který se použije k zobrazení.
-
-Blahopřejeme! Nyní jste vytvořili aplikaci, která používá fragmenty zjednodušit vývoj mezi typy zařízení.
-
-V [další části](supporting-pre-honeycomb.md), vytvoříme prodloužit tuto aplikaci tak, že budou fungovat na zařízení Android předběžné 3.0.
-
+[Část 2 tohoto návodu](./walkthrough-landscape.md) optimtize bude tato aplikace pro zařízení se systémem na šířku.

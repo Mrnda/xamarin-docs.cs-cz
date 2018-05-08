@@ -6,12 +6,12 @@ ms.assetid: 93F1D5C5-E2AF-46EA-8460-485A0860C176
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/15/2018
-ms.openlocfilehash: a6cb08f19aac46ffa089914e28c732660caa52b2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/11/2018
+ms.openlocfilehash: 2d9f2198dbb88e7614944ac73729a4e6eca42647
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="binding-a-jar"></a>Vytvoření vazby. JAR
 
@@ -81,7 +81,7 @@ Před zahájením pomocí následujících kroků, stáhněte si prosím [picass
 
 Nejdřív vytvořte nový projekt knihovny vazby. V sadě Visual Studio pro Mac nebo Visual Studio, vytvořte nové řešení a vyberte *knihovna pro Android vazby* šablony. (Na snímcích obrazovky v tomto názorném postupu použijte sadu Visual Studio, ale je velmi podobný jako Visual Studio pro Mac.) Název řešení **JarBinding**: 
 
-[![Vytvoření projektu knihovny JarBinding](binding-a-jar-images/01-new-bindings-library-sml.png)](binding-a-jar-images/01-new-bindings-library.png#lightbox)
+[![Vytvoření projektu knihovny JarBinding](binding-a-jar-images/01-new-bindings-library-sml.w157.png)](binding-a-jar-images/01-new-bindings-library.w157.png#lightbox)
 
 Šablona obsahuje **Jars** složku, kde můžete přidat vaše. JAR(s) na projekt knihovny vazby. Klikněte pravým tlačítkem myši **Jars** složky a vyberte **Přidat > existující položka**: 
 
@@ -130,7 +130,7 @@ V následujících krocích vytvoříme minimální aplikaci, která používá 
 
 Nejprve vytvořte novou aplikaci pro Xamarin.Android, který využívá knihovně vazby. Klikněte pravým tlačítkem na řešení a vyberte **přidat nový projekt**; název nového projektu **BindingTest**. Vytváříme tuto aplikaci ve stejném řešení jako vazby knihovny za účelem zjednodušení Tento názorný postup; aplikace, které zabírá knihovně vazby může, ale místo toho nacházet v jiné řešení: 
 
-[![Přidat nový projekt BindingTest](binding-a-jar-images/07-add-new-project-sml.png)](binding-a-jar-images/07-add-new-project.png#lightbox)
+[![Přidat nový projekt BindingTest](binding-a-jar-images/07-add-new-project-sml.w157.png)](binding-a-jar-images/07-add-new-project.w157.png#lightbox)
 
 Klikněte pravým tlačítkem myši **odkazy** uzlu **BindingTest** projektu a vyberte **přidat odkaz na...** :
 

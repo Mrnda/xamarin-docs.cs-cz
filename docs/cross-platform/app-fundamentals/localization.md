@@ -6,11 +6,11 @@ ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 52f4c51258d1b635adcd697bccb7dd553acc0d5e
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 2e108947ce8237b9f48b201e60c2252cfb0bc376
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="localization"></a>Lokalizace
 
@@ -18,7 +18,7 @@ Tento průvodce představuje koncepty za *internacionalizace* a *lokalizace* a o
 
 Pokud chcete nechat přeskočit rovnou na technické informace o lokalizaci aplikace Xamarin, spusťte některý z těchto články s návody specifické pro platformu:
 
-- [**Xamarin.Forms** ](~/xamarin-forms/app-fundamentals/localization.md) napříč platformami lokalizace pomocí souborů RESX.
+- [**Xamarin.Forms** ](~/xamarin-forms/app-fundamentals/localization/index.md) napříč platformami lokalizace pomocí souborů RESX.
 - [**Xamarin.iOS** ](~/ios/app-fundamentals/localization/index.md) lokalizace nativní platformy.
 - [**Xamarin.Android** ](~/android/app-fundamentals/localization.md) lokalizace nativní platformy.
 
@@ -302,7 +302,7 @@ Tyto koncepty je použít pro různé specifické pro platformu a napříč plat
 
 Pokračujte ve čtení technické podrobnosti pro platformy, které vás zajímají:
 
-- [Xamarin.Forms](~/xamarin-forms/app-fundamentals/localization.md) napříč platformami lokalizace pomocí souborů RESX.
+- [Xamarin.Forms](~/xamarin-forms/app-fundamentals/localization/index.md) napříč platformami lokalizace pomocí souborů RESX.
 - [Xamarin.iOS](~/ios/app-fundamentals/localization/index.md) lokalizace nativní platformy.
 - [Xamarin.Android](~/android/app-fundamentals/localization.md) lokalizace nativní platformy.
 

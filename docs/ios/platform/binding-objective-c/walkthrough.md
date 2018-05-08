@@ -6,12 +6,12 @@ ms.assetid: D3F6FFA0-3C4B-4969-9B83-B6020B522F57
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/18/2017
-ms.openlocfilehash: 6a43b9ad3c9af0a4118c40fb128f8890ac0ffe40
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.date: 05/02/2017
+ms.openlocfilehash: 5954d705e403a3c8230c3125efcf836c3930c459
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>Návod: Vytvoření vazby iOS knihovna jazyka Objective-C
 
@@ -128,6 +128,7 @@ Prvním krokem je pro nás přidání InfoColorPicker zdrojový kód do se stati
 3. Vyberte **Framework & knihovny**, **kakao Touch statické knihovny** šablonu a klikněte na **Další** tlačítko:
 
     [![](walkthrough-images/image05.png "Vyberte šablonu, kakao Touch statické knihovny")](walkthrough-images/image05.png#lightbox)
+
 4. Zadejte `InfColorPicker` pro **název projektu** a klikněte na **Další** tlačítko:
 
     [![](walkthrough-images/image06.png "Zadejte název projektu InfColorPicker")](walkthrough-images/image06.png#lightbox)
@@ -276,11 +277,11 @@ Vytvoří se řešení a dvě výchozí soubory budou zahrnuty:
 
 1. Z **soubor** nabídce vyberte možnost **nový** > **projektu...** :
 
-    ![](walkthrough-images/bind01vs.png "Spuštění nového projektu")
+    ![Spuštění nového projektu](walkthrough-images/bind01vs.png "spuštění nového projektu")
 
-1. Z dialogového okna Nový projekt, vyberte **iOS** > **vazby knihovny**:
+1. Z dialogového okna Nový projekt, vyberte **Visual C# > iPhone & iPad > iOS vazby knihovny (Xamarin)**:
 
-    ![](walkthrough-images/bind02vs.png "Vyberte iOS vazby knihovny")
+    [![Vyberte iOS vazby knihovny](walkthrough-images/bind02.w157-sml.png)](walkthrough-images/bind02.w157.png#lightbox)
 
 1. Zadejte "InfColorPickerBinding" jako **název** a klikněte na tlačítko **OK** tlačítko pro vytvoření řešení.
 
@@ -289,8 +290,6 @@ Vytvoří se řešení a dvě výchozí soubory budou zahrnuty:
 ![](walkthrough-images/bind03vs.png "Struktura řešení v Průzkumníku řešení")
 
 -----
-
-
 
 - **ApiDefinition.cs** – tento soubor bude obsahovat smluv, které definují, jak budou API jazyka Objective-C zabaleny v C#.
 - **Structs.cs** – tento soubor bude obsahovat všechny struktury nebo výčtové hodnoty, které jsou vyžadované rozhraní a delegáti.
@@ -332,8 +331,7 @@ Použijte následující postup přidání knihovny:
 
 -----
 
-
-Když soubor .a se přidá do projektu, Xamarin.iOS automaticky nastaví **akce sestavení** souboru, který se **ObjcBindingNativeLibrary**a vytvořte speciální soubor s názvem `libInfColorPickerSDK.linkwith.cs`.
+Když **.a** soubor je přidán do projektu Xamarin.iOS automaticky nastaví **akce sestavení** souboru, který se **ObjcBindingNativeLibrary**a vytvořte soubor speciální volá se `libInfColorPickerSDK.linkwith.cs`.
 
 
 Tento soubor obsahuje `LinkWith` atribut, který sděluje Xamarin.iOS jak popisovač statickou knihovnu, kterou jsme právě přidali. Obsah tohoto souboru jsou uvedeny v následující fragment kódu:
@@ -536,6 +534,7 @@ Postupujte podle těchto kroků k vytvoření ukázkové aplikace iPhone použí
 1. **Vytvoření uživatelského rozhraní pro iPhone** -dvakrát klikněte na **MainStoryboard.storyboard** souboru v **InfColorPickerSample** projektu a upravit v iOS Designer. Přidat **tlačítko** k zobrazení a pojmenujte ji `ChangeColorButton`, jak je znázorněno v následujícím:
 
     ![](walkthrough-images/use03.png "Přidání tlačítka do zobrazení")
+
 1. **Přidat InfColorPickerView.xib** -The InfColorPicker Objective-C knihovna obsahuje **.xib** souboru. Xamarin.iOS nebude obsahovat to **.xib** v projektu vazby, které způsobí chyby v našem ukázkové aplikaci. Alternativní řešení pro tuto je přidání **.xib** souboru do našich projektu Xamarin.iOS. Vyberte projektu Xamarin.iOS, klikněte pravým tlačítkem a vyberte **Přidat > Přidat soubory**a přidejte **.xib** souboru, jak je znázorněno na následujícím snímku obrazovky:
 
     ![](walkthrough-images/use04.png "Přidat InfColorPickerView.xib")
@@ -544,10 +543,11 @@ Postupujte podle těchto kroků k vytvoření ukázkové aplikace iPhone použí
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
+1. **Vytvoření projektu Xamarin.iOS** – přidání nového projektu Xamarin.iOS s názvem **InfColorPickerSample** pomocí **jediné zobrazení aplikace** šablony:
 
-1. **Vytvoření projektu Xamarin.iOS** – přidání nového projektu Xamarin.iOS názvem **InfColorPickerSample** k řešení, jak je znázorněno na následujícím snímku obrazovky:
+    [![projekt pro iOS aplikace (Xamarin)](walkthrough-images/use01.w157-sml.png)](walkthrough-images/use01.w157.png#lightbox)
 
-    ![](walkthrough-images/use01vs.png "Vytvoření projektu Xamarin.iOS")
+    [![Vyberte šablonu](walkthrough-images/use01-2.w157-sml.png)](walkthrough-images/use01-2.w157.png#lightbox)
 
 1. **Přidat odkaz na projekt vazby** -aktualizace **InfColorPickerSample** tak, aby měl odkaz na projekt **InfColorPickerBinding** projektu:
 
@@ -559,10 +559,7 @@ Postupujte podle těchto kroků k vytvoření ukázkové aplikace iPhone použí
 
 1. **Přidat InfColorPickerView.xib** -The InfColorPicker Objective-C knihovna obsahuje **.xib** souboru. Xamarin.iOS nebude obsahovat to **.xib** v projektu vazby, které způsobí chyby v našem ukázkové aplikaci. Alternativní řešení pro tuto je přidání **.xib** souboru do našich projektu Xamarin.iOS z našich **Mac sestavení hostitele**. Vyberte projektu Xamarin.iOS, klikněte pravým tlačítkem a vyberte **přidat** > **existující položka...** a přidejte **.xib** souboru.
 
-
 -----
-
-
 
 Dále umožňuje rychlý prohlédněte si protokoly v Objective-C a jak jsme je zpracovávat v kódu jazyka C# a vazeb.
 

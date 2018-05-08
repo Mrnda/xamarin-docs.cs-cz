@@ -1,5 +1,5 @@
 ---
-title: Hello, iOS
+title: Hello, iOS rychlý start
 description: Tato příručka dvě části popisuje, jak vytvořit základní aplikace pro Xamarin.iOS pomocí sady Visual Studio pro Mac nebo Visual Studio a pochopili jejich základní informace o vývoj aplikací pro iOS pomocí Xamarin. Zavede nástroje, koncepty a kroky potřebné k sestavení a nasazení aplikace pro Xamarin.iOS.
 ms.topic: quickstart
 ms.prod: xamarin
@@ -7,19 +7,18 @@ ms.assetid: D3868F3A-4EED-BDDF-45AA-665102C39634
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/23/2017
-ms.openlocfilehash: dc9b86845dc91c7fb8ec3a88a5862e5e9f6de18d
-ms.sourcegitcommit: dc6ccf87223942088ca926c0dadd5b5478c683cb
+ms.date: 05/02/2017
+ms.openlocfilehash: c82343b3ec36512a8cfd7ba3b96862eac14bfafd
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="helloios-quickstart"></a>Hello.iOS rychlý start
 
 Tato příručka popisuje, jak vytvořit aplikaci, která znamená, že alfanumerické telefonní číslo, zadané uživatelem do číselné telefonní číslo a pak zavolá toto číslo. Konečné aplikace vypadá takto:
 
  [![](hello-ios-quickstart-images/image1.png "Aplikaci Hello.iOS Quickstart")](hello-ios-quickstart-images/image1.png#lightbox)
-
 
 <a name="Requirements" />
 
@@ -42,7 +41,7 @@ Xamarin.iOS funguje s následující nastavení:
 
 Xamarin.iOS funguje s následující nastavení:
 
--  Nejnovější verzi Visual Studio 2015 nebo 2017 Professional nebo novější na systému Windows 7 nebo vyšší, spárována s Mac sestavení hostitele, který nejlépe odpovídá výše uvedené podmínky.
+-  Nejnovější verzi Visual Studio 2017 Community, Professional nebo Enterprise na systém Windows 7 nebo novější, spárována s Mac sestavení hostitele, který nejlépe odpovídá výše uvedené podmínky.
 
 [Průvodce instalací Windows Xamarin.iOS](~/ios/get-started/installation/windows/index.md) je k dispozici pokyny krok za krokem instalace.
 
@@ -63,7 +62,6 @@ Tento návod popisuje, jak vytvořit aplikaci s názvem Phoneword, který překl
 Na obrazovce spustit, klikněte na tlačítko **nový projekt...**  k vytvoření nové řešení Xamarin.iOS:
 
 ![](hello-ios-quickstart-images/image3new.png "řešení pro iOS")
-
 
 2. Z **dialogové okno nové řešení**, vyberte **iOS > aplikace > jediné zobrazení aplikace** šablony, zajistíte, že C# je vybraný. Klikněte na tlačítko **Další**:
 
@@ -294,51 +292,42 @@ Tento návod popisuje, jak vytvořit aplikaci s názvem Phoneword, který překl
 
   ![](hello-ios-quickstart-images/image001-.png "Na úvodní obrazovce")
 
-  Do vyhledávacího pole v části **nové řešení** zadejte _jediné zobrazení aplikace_a vyberte **jediné zobrazení aplikace (iPhone)** k vytvoření nové řešení Xamarin.iOS:
+  Vytvořte nové řešení Xamarin.iOS výběrem **soubor > Nový > projekt... > Visual C# > iPhone & iPad > aplikace pro iOS (Xamari**:
 
-  ![](hello-ios-quickstart-images/image002-.png "Přidání jediné zobrazení aplikace")
+  ![Vyberte iOS typu projektu aplikace (Xamarin)](hello-ios-quickstart-images/image002.w157.png "vybrat iOS typu projektu aplikace (Xamarin)")
 
+  V dialogu další, který se zobrazí, vyberte **jediné zobrazení aplikace** šablony a stiskněte klávesu **OK** pro vytvoření projektu:
 
-2. Název projektu a řešení `Phoneword`, jak je uvedeno dále:
+  ![Šablona projektu vyberte jednoho zobrazení](hello-ios-quickstart-images/image002-2.w157.png "šablona projektu vyberte jednoho zobrazení")
 
-  ![](hello-ios-quickstart-images/vs-image3.png "Název projektu PhonewordiOS a nového řešení Phoneword")
-
-
-3. Stiskněte klávesu **OK** k vytvoření nového projektu
-
-4. Potvrďte, že je zelená ikona Xamarin Mac Agent na panelu nástrojů.
+1. Potvrďte, že je zelená ikona Xamarin Mac Agent na panelu nástrojů.
 
     ![Potvrďte, že je zelená ikona Xamarin Mac Agent na panelu nástrojů](hello-ios-quickstart-images/vs-image4.png)
 
     Pokud tomu tak není, to znamená, že se žádné připojení k hostiteli sestavení Mac, postupujte podle kroků v [Průvodci konfigurací](~/ios/get-started/installation/windows/connecting-to-mac/index.md) můžete spojit.
 
-
-5. Otevřete **Main.storyboard** souboru v iOS Návrhář dvojitým kliknutím na něm v **Průzkumníku řešení**:
+1. Otevřete **Main.storyboard** souboru v iOS Návrhář dvojitým kliknutím na něm v **Průzkumníku řešení**:
 
   ![](hello-ios-quickstart-images/vs-image7.png "IOS návrháře")
 
-6. Otevřete **sada nástrojů** kartě, zadejte "Popis" do panelu Hledat a přetáhněte ji **popisek** na návrhovou plochu (oblast v centru):
+1. Otevřete **sada nástrojů** kartě, zadejte "Popis" do panelu Hledat a přetáhněte ji **popisek** na návrhovou plochu (oblast v centru):
 
   ![](hello-ios-quickstart-images/vs-image8.png "Přetáhněte na návrhovou plochu oblasti v Centru pro štítek")
 
-
-7. V dalším kroku získat popisovačů systému *přetáhněte ovládací prvky* a jmenovku širší:
+1. V dalším kroku získat popisovačů systému *přetáhněte ovládací prvky* a jmenovku širší:
 
   ![](hello-ios-quickstart-images/vs-image9.png "Ujistěte se, širší popisek")
 
-
-8. S **popisek** vybrané na návrhovou plochu, použijte **Windows vlastnosti** změnit **Text** vlastnost **popisek** k "Enter Phoneword: "
+1. S **popisek** vybrané na návrhovou plochu, použijte **Windows vlastnosti** změnit **Text** vlastnost **popisek** k "Enter Phoneword: "
 
   ![](hello-ios-quickstart-images/vs-image10.png "Změňte vlastnost Text popisku, zadat Phoneword.")
 
   > [!NOTE]
   > Lze provést **vlastnosti** nebo **sada nástrojů** kdykoli přechodem na **zobrazení** nabídky.
 
-
-9. Vyhledejte "textové pole" uvnitř sady nástrojů a přetáhněte **textové pole** z **sada nástrojů** na návrh surface a umístěte ji pod **popisek**. Umožňuje upravit šířku až **textové pole** stejnou délku jako **popisek**:
+1. Vyhledejte "textové pole" uvnitř sady nástrojů a přetáhněte **textové pole** z **sada nástrojů** na návrh surface a umístěte ji pod **popisek**. Umožňuje upravit šířku až **textové pole** stejnou délku jako **popisek**:
 
   ![](hello-ios-quickstart-images/vs-image12.png "Umožňuje upravit šířku, dokud textové pole je šířku stejné jako popisek")
-
 
 10. S **textové pole** vybrané na návrhovou plochu, změnit **textové pole**na **název** vlastnost v části Identita **vlastnosti**k `PhoneNumberText`a změňte **Text** vlastnost "1-855-XAMARIN":
 
@@ -371,9 +360,9 @@ Tento návod popisuje, jak vytvořit aplikaci s názvem Phoneword, který překl
   ![](hello-ios-quickstart-images/vs-image18.png "Přidat kód, který převede telefonní čísla z alfanumerické na číselné")
 
 
-16. V **nový soubor** dialogovém okně, vyberte **Apple > třída** a pojmenujte nový soubor `PhoneTranslator`:
+16. V **přidat novou položku** dialogové okno (klikněte pravým tlačítkem na projekt, zvolte možnost Přidat > novou položku...), vyberte **Apple > třída** a pojmenujte nový soubor `PhoneTranslator`:
 
-  ![](hello-ios-quickstart-images/vs-image19.png "Přidejte novou třídu s názvem PhoneTranslator")
+  ![](hello-ios-quickstart-images/vs-image19.w157.png "Přidejte novou třídu s názvem PhoneTranslator")
 
   > [!IMPORTANT]
   > Ujistěte se, že vyberete šablonu 'class', která obsahuje C# v ikonu. Jinak nebudete moci odkazovat na tato nová třída.

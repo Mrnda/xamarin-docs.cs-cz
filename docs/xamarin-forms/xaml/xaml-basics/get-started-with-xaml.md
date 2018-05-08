@@ -6,12 +6,12 @@ ms.assetid: 9073FA0E-BD5A-4492-8A93-54C466F6EDB9
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
-ms.date: 10/25/2017
-ms.openlocfilehash: f8032966b49f6f023642b0d1338e8c5d740b66e0
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.date: 04/10/2018
+ms.openlocfilehash: bc535160816ad186baaa5e802eceb6ae40347d75
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="part-1-getting-started-with-xaml"></a>Část 1. Začínáme s XAML
 
@@ -23,9 +23,9 @@ Můžete začít s úpravami vaše první soubor XAML, použijte k vytvoření n
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-V systému Windows, použijte sadu Visual Studio vyberte **soubor > Nový > projekt** z nabídky. V **nový projekt** dialogovém okně, vyberte **Visual C# > křížové platformy** na levé straně a pak **mezi aplikaci pro platformu (Xamarin.Forms nebo nativní)** ze seznamu v centru. 
+V systému Windows, použijte sadu Visual Studio vyberte **soubor > Nový > projekt** z nabídky. V **nový projekt** dialogovém okně, vyberte **Visual C# > křížové platformy** na levé straně a pak **mobilní aplikace (Xamarin.Forms)** ze seznamu v centru. 
 
-![](get-started-with-xaml-images/win/newprojectdialog.png "Dialogové okno Nový projekt")
+![](get-started-with-xaml-images/win/newprojectdialog.w157.png "Dialogové okno Nový projekt")
 
 Vyberte umístění pro řešení, zadejte jeho název z **XamlSamples** (nebo dáváte přednost) a stiskněte klávesu **OK**.
 
@@ -226,7 +226,7 @@ Test, který program stále zkompiluje a nasadí než budete pokračovat.
 
 Chcete-li přidat další založených na XAML `ContentPage` třídy do projektu, vyberte **XamlSamples** PCL projektu a vyvolání **projektu > Přidat novou položku** položku nabídky. Na levé straně **přidat novou položku** dialogovém okně, vyberte **Visual C#** a **Xamarin.Forms**. Ze seznamu vyberte **obsahu stránce** (není **obsahu stránce (C#)**, která vytvoří stránku pouze kód, nebo **zobrazení obsahu**, který není na stránce). Stránky zadejte název, například **HelloXamlPage.xaml**:
 
-![](get-started-with-xaml-images/win/addnewitemdialog.png "Přidat novou položku – dialogové okno")
+![](get-started-with-xaml-images/win/addnewitemdialog.w157.png "Přidat novou položku – dialogové okno")
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 

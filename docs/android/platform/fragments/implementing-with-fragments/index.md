@@ -1,65 +1,55 @@
 ---
-title: Implementace fragmenty
-description: Android 3.0 zavedla fragmenty. Fragmenty jsou samostatné modulární komponenty, které pomáhají řešit obtíže při psaní aplikací, které můžou běžet na obrazovkách různých velikostí. Tento článek vás provede jak vyvíjet aplikace Xamarin.Android pomocí fragmentů a jak podporovat fragmenty na zařízeních s předem Androidem 3.0.
+title: Implementace fragmenty - návod
+description: Tento článek vás provede použití fragmenty k vývoji aplikací Xamarin.Android.
+ms.topic: tutorial
 ms.prod: xamarin
 ms.assetid: A71E9D87-CB69-10AB-CE51-357A05C76BCD
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: 81f1f992de450ee62c4c1d2e80da858b024be594
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/26/2018
+ms.openlocfilehash: 92c68298d7abd2570efd89e12d7cfb6364e90972
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
-# <a name="implementing-with-fragments"></a>Implementace fragmenty
+# <a name="implementing-fragments---walkthrough"></a>Implementace fragmenty - návod
 
-_Android 3.0 zavedla fragmenty. Fragmenty jsou samostatné modulární komponenty, které pomáhají řešit obtíže při psaní aplikací, které můžou běžet na obrazovkách různých velikostí. Tento článek vás provede jak vyvíjet aplikace Xamarin.Android pomocí fragmentů a jak podporovat fragmenty na zařízeních s předem Androidem 3.0._
-
+_Fragmenty jsou samostatný, modulární součásti, které vám mohou pomoci vyřešit složitost aplikací pro Android, které cílí na zařízení s různými velikost obrazovky. Tento článek vás provede postup vytvoření a používání fragmenty při vývoji aplikace Xamarin.Android._
 
 ## <a name="overview"></a>Přehled
 
-V této části se budeme zabývat jak vytvořit aplikaci, která se zobrazí seznam plní Shakespeare na a z každé vybrané play v uvozovkách. Naše aplikace bude využívat fragmenty tak, aby jsme definovat naše součásti uživatelského rozhraní na jednom místě, ale používat na různých faktorech. Například následující snímek obrazovky zobrazit aplikace běžící na tablet 10", a také na phone:
+V této části budete provede procesem vytvoření a používání fragmentů v aplikaci Xamarin.Android. Tato aplikace se zobrazí názvy několik plní ve William Shakespeare v seznamu. Když uživatel klepnutím na název play, zobrazí aplikace v samostatnou aktivitě v uvozovkách z této play:
 
-[![Snímky obrazovky příklad aplikaci spuštěnou na tablet a phone](images/intro-screenshot-sml.png)](images/intro-screenshot.png#lightbox)
+[![Aplikaci spuštěnou s telefonem s Androidem v režimu na výšku](./images/intro-screenshot-phone-sml.png)](./images/intro-screenshot-phone.png#lightbox)
 
-Tato část popisuje v následujících tématech:
+Když telefonu otočen na šířku režimu, se změní vzhled aplikace: Zobrazí se ve stejné aktivitě seznamu plní a uvozovky. Pokud je vybraná play, bude nabídka zobrazení do stejné aktivity:
 
-- **Vytváření fragmenty** &ndash; ukazuje, jak vytvořit fragment zobrazíte seznam na Shakespeare plní a jiné fragment k zobrazení v uvozovkách z každé play.
+[![Aplikaci spuštěnou s telefonem s Androidem v režimu na šířku](./images/intro-screenshot-phone-land-sml.png)](./images/intro-screenshot-phone-land.png#lightbox)
 
-- **Podpora různých obrazovek velikosti** &ndash; ukazuje, jak rozložení aplikace využívat větší velikost obrazovky.
+Nakonec pokud aplikace běží na tablet:
 
-- **Pomocí Android balíčku pro podporu** &ndash; implementuje balíček Android podporu a potom provede menšími změnami aktivity v aplikaci, díky kterému jej spustit na starší verze systému Android.
+[![Aplikaci spuštěnou na Android tablet](./images/intro-screenshot-tablet-sml.png)](./images/intro-screenshot-tablet.png#lightbox)
 
+Tato ukázková aplikace můžete snadno upravit pro různá zařízení a orientace s minimálními změnami kódu s použitím fragmenty a [alternativní rozložení](/xamarin/android/app-fundamentals/resources-in-android/alternate-resources).
 
-## <a name="requirements"></a>Požadavky
+Data pro aplikace, budou existovat v dvou polích řetězce, které jsou pevně kódovaný v aplikaci jako pole řetězců C#. Každé pole bude sloužit jako zdroj dat pro jeden fragment.  Jedno pole bude obsahovat název některé plní ve Shakespeare a další pole bude obsahovat v uvozovkách z této play. Po spuštění aplikace zobrazí názvy play v `ListFragment`. Když uživatel klikne na play v `ListFragment`, bude další aktivitu, která se zobrazí nabídku spuštění aplikace.
 
-Tento postup vyžaduje Xamarin.Android 4.0 nebo vyšší. Bude také nutné instalovat balíček Android podporu, jak je uvedeno v dokumentaci k fragmenty.
+Uživatelské rozhraní pro aplikaci bude obsahovat dvě rozložení, jednu pro na výšku a jeden pro režim na šířku. V době běhu Android určí, jaké rozložení byste měli zatížení na základě orientace zařízení a bude poskytovat tohoto rozložení aktivity k vykreslení. Veškerou logiku pro neodpovídá na požadavky uživatel klikne na a zobrazování dat bude obsažená v fragmenty. Aktivity v aplikaci existují pouze jako kontejnery, které budou hostiteli fragmenty.
 
+Tento názorný postup bude rozdělit do dvou průvodců. [První část](./walkthrough.md) se soustředí na základní částí aplikace. Jednu sadu rozložení (optimalizované pro režim na výšku) vytvoří, spolu s dva fragmenty a dvě aktivity:
 
-## <a name="introduction"></a>Úvod
+1. `MainActivity` &nbsp; Toto je spuštění aktivity pro aplikaci.
+1. `TitlesFragment` &nbsp; Tento fragment zobrazí seznam názvů plní, které byly napsané pomocí William Shakespeare. Bude hostitelem `MainActivity`.
+1. `PlayQuoteActivity` &nbsp; `TitlesFragment` Spustí `PlayQuoteActivity` v reakci na uživatele vyberte play v `TitlesFragment`.
+1. `PlayQuoteFragment` &nbsp; Tento fragment zobrazí v uvozovkách z play pomocí William Shakespeare. Bude hostitelem `PlayQuoteActivity`.
 
-V příkladu, které jsme budete sestavení v této části neobsahují aktivity logiku pro načítání seznamu, reakce na výběr uživatele nebo zobrazení nabídky pro vybrané play. Tato logika v jednotlivé fragmenty existuje.
-Tím, že tato logika fragmenty sami, jsme rozdělit pracovní postup aplikaci, aby podporovala velké obrazovky s jedním aktivity nebo malé obrazovky s více aktivit bez nutnosti psaní různých logiku pro každou aktivitu. Na tablet bude každém z obou fragmentů v jedné aktivity. V telefonu fragmenty hostované ve různé aktivity.
-
-Tato aplikace obsahuje následující části:
-
- **MainActivity** – zobrazí alespoň jedna z obou fragmentů, v závislosti na velikosti obrazovky. Toto je spuštění aktivity.
-
- **TitlesFragment** – zobrazuje seznam na Shakespeare plní, ze kterých může uživatel vybírat.
-
- **DetailsFragment** – zobrazí nabídku od vybrané play.
-
- **DetailsActivity** – hostitelem a zobrazuje DetailsFragment.
-Tato aktivita používá zařízení s malé obrazovky, jako jsou telefony.
-
-
+[Druhé části tohoto návodu](./walkthrough-landscape.md) zabývat přidání alternativní rozložení (optimalizované pro šířku), který se zobrazí každém z obou fragmentů na obrazovce. Navíc některé dílčí kód bude být provedeny změny kód tak, aby aplikace bude přizpůsobit své chování pro počet fragmentů, které jsou současně zobrazené na obrazovce.
 
 ## <a name="related-links"></a>Související odkazy
 
 - [FragmentsWalkthrough (ukázka)](https://developer.xamarin.com/samples/monodroid/FragmentsWalkthrough/)
 - [Návrhář – přehled](~/android/user-interface/android-designer/index.md)
-- [Ukázky Xamarin.Android: voštinový Galerie](https://developer.xamarin.com/samples/HoneycombGallery/)
 - [Implementace fragmenty](http://developer.android.com/guide/topics/fundamentals/fragments.html)
 - [Balíček pro podporu](http://developer.android.com/sdk/compatibility-library.html)

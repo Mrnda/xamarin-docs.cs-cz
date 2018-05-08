@@ -1,17 +1,17 @@
 ---
-title: Spusťte obrazovky
+title: Spusťte obrazovky pro aplikace pro Xamarin.iOS
 description: Tento článek vysvětluje, jak vytvořit aplikaci spustit obrazovky pro všechna zařízení s iOS, na jakékoli řešení a orientaci pomocí jednoho Unified scénáře.
 ms.prod: xamarin
 ms.assetid: 31A489CA-756B-4B9B-B386-4BADF18EDD33
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 01/19/2018
-ms.openlocfilehash: 991c2f30bcca1969e336f7269ad2a22ce6245b95
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/02/2018
+ms.openlocfilehash: d5a267bfa8655a9b9c6d4dba9d8cf9d16624ba9b
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="launch-screens"></a>Spusťte obrazovky
 
@@ -96,17 +96,19 @@ V iOS 8 (nebo novější) můžete vytvořit vývojář speciální Unified Stor
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. Vytvořte nový projekt. V sadě Visual Studio, vyberte **soubor > Nový > projekt**a potom zvolte **jediné zobrazení aplikace (iPhone)**:
-    
-    ![Okna Nový projekt, pomocí jediné zobrazení aplikace (iPhone) vybraná](launch-screens-images/launch01-vs.png)
+1. Vytvořte nový projekt. V sadě Visual Studio, vyberte **soubor > Nový > Projekt > Visual C# > iPhone & iPad > iOS aplikace (Xamarin)**:
 
-    - Název projektu, vyberte umístění a vyberte **OK**.
+    ![Okna Nový projekt, s iOS aplikace (Xamarin) vybraná](launch-screens-images/launch01.w157.png)
+
+    Vyberte **jediné zobrazení aplikace** šablony a pak klikněte na tlačítko **OK**:
+
+    ![Jediné zobrazení aplikace šabloně](launch-screens-images/launch01-2.w157.png)
 
 2. Pokud **prostředky > LaunchScreen.xib** existuje v **Průzkumníku řešení**, odstraňte jej tak, že kliknete na soubor pravým tlačítkem a vyberete **odstranit**. Tento soubor se nahradí Storyboard v dalším kroku.
 
 3. Vytvořte Storyboard chcete použít jako obrazovce spustit. V **Průzkumníku řešení**, klikněte pravým tlačítkem na projekt a vyberte možnost **Přidat > novou položku...**  následuje **prázdný Storyboard**. Název tohoto scénáře **LaunchScreen.storyboard** a klikněte na tlačítko **přidat**:
 
-    ![Okna Přidat novou položku s prázdnou Storyboard vybrané](launch-screens-images/launch03-vs.png)
+    ![Okna Přidat novou položku s prázdnou Storyboard vybrané](launch-screens-images/launch03.w157.png)
 
 4. Konfigurace projektu pro použití **LaunchScreen.storyboard** jako jeho spuštění Storyboard obrazovky:
 
@@ -119,7 +121,7 @@ V iOS 8 (nebo novější) můžete vytvořit vývojář speciální Unified Stor
 
     - V **Průzkumníku řešení**, klikněte pravým tlačítkem na **Asset katalogů** a vyberte **přidat katalog Asset**. Název tohoto nového katalogu Asset **prostředky**:
 
-    ![Okna Přidat novou položku s katalogem Asset vybrané](launch-screens-images/launch05-vs.png)
+    ![Okna Přidat novou položku s katalogem Asset vybrané](launch-screens-images/launch05.w157.png)
 
     - Přidání nové bitové kopie sad do **prostředky** katalog Asset, jak je popsáno v [přidání bitových kopií do skupiny pro bitovou kopii Asset Catalog](~/ios/app-fundamentals/images-icons/displaying-an-image.md) části [zobrazení bitovou kopii](~/ios/app-fundamentals/images-icons/displaying-an-image.md) průvodce.
 

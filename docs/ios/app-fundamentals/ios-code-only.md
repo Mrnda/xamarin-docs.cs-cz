@@ -6,12 +6,12 @@ ms.assetid: 7CB1FEAE-0BB3-4CDC-9076-5BD555003F1D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/18/2017
-ms.openlocfilehash: 7e8460d2c946159a9869322d6d4944d213d3d801
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/03/2018
+ms.openlocfilehash: e2f377b11cfb1ff5027cc704de694184d2208c97
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="creating-ios-user-interfaces-in-code"></a>Vytváření iOS uživatelského rozhraní v kódu
 
@@ -33,9 +33,7 @@ Následující obrázek znázorňuje vztahy mezi oken, zobrazení, dílčích zo
 
 [![](ios-code-only-images/image9.png "Tento diagram znázorňuje vztahy mezi oken, zobrazení, dílčích zobrazení a View Controller")](ios-code-only-images/image9.png#lightbox)
 
-
 Tyto zobrazení hierarchie se dá vytvořit pomocí [Xamarin Designer pro iOS](~/ios/user-interface/designer/index.md) v sadě Visual Studio pro Mac, ale je dobrým základní znalosti o tom, jak pracovat zcela v kódu. Tento článek vás provede některé základní body ke zprovoznění a běh vývoj jen kód uživatelského rozhraní.
-
 
 -----
 
@@ -45,16 +43,17 @@ Tyto zobrazení hierarchie se dá vytvořit pomocí [Xamarin Designer pro iOS](~
 
 ## <a name="ios-blank-project-template"></a>Prázdná šablona projektu iOS
 
-Nejprve vytvořte projekt pro iOS v sadě Visual Studio pomocí iPhone **prázdného projektu** šablony, viz následující obrázek, kterou rozšiřujeme budete přidávat řadiče a zobrazení.
+Nejprve vytvořte projekt pro iOS pomocí sady Visual Studio **soubor > Nový Projekt > Visual C# > iPhone & iPad > iOS aplikace (Xamarin)** projektu, vidíte níže:
 
+[![Dialogové okno Nový projekt](ios-code-only-images/blankapp.w157-sml.png)](ios-code-only-images/blankapp.w157.png#lightbox)
 
-[![](ios-code-only-images/blankapp-vs.png "Dialogové okno Nový projekt")](ios-code-only-images/blankapp-vs.png#lightbox)
+Vyberte **prázdnou aplikaci** šablona projektu:
 
+[![Vyberte šablony dialogu](ios-code-only-images/blankapp-2.w157-sml.png)](ios-code-only-images/blankapp-2.w157.png#lightbox)
 
 Prázdná šablona projektu přidá 4 soubory do projektu:
 
-
-[![](ios-code-only-images/empty-project.png "Soubory projektu")](ios-code-only-images/empty-project.png#lightbox)
+[![Soubory projektu](ios-code-only-images/empty-project.w157-sml.png "soubory projektu")](ios-code-only-images/empty-project.w157.png#lightbox)
 
 
 1. **AppDelegate.cs** – obsahuje `UIApplicationDelegate` podtřídami, `AppDelegate` , který se používá ke zpracování událostí aplikací z iOS. Okno aplikace je vytvořen v `AppDelegate`na `FinishedLaunching` metoda.
@@ -99,18 +98,12 @@ Následující postup vás provede odebrání scénáři z aplikace:
             return true;
         }
 
+Kód, který byl přidán do `FinishedLaunching` metoda v kroku 5 výše, je minimální množství kód potřebný k vytvoření okna pro aplikace iOS.
+
 
 -----
 
-## <a name="creating-a-window"></a>Vytvoření okna
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-Kód, který byl přidán do `FinishedLaunching` metoda v kroku 3 výše, je minimální množství kód potřebný k vytvoření okna pro aplikace iOS.  
-
------
 
 aplikace pro iOS jsou vytvořeny pomocí [vzor MVC](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md#Model_View_Controller). První obrazovka, která aplikace zobrazuje je vytvořený z okna kořenové zobrazení řadiče. Najdete v článku [Hello, iOS Multiscreen](~/ios/get-started/hello-ios-multiscreen/index.md) Průvodce pro další podrobnosti o MVC vzor sám sebe.
 
@@ -223,7 +216,7 @@ Přidejte novou třídu s názvem `CustomViewController` jak je uvedeno níže:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![](ios-code-only-images/customviewcontroller.png "Přidejte novou třídu s názvem CustomViewController")](ios-code-only-images/customviewcontroller.png#lightbox)
+[![](ios-code-only-images/customviewcontroller.w157-sml.png "Přidejte novou třídu s názvem CustomViewController")](ios-code-only-images/customviewcontroller.w157.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 

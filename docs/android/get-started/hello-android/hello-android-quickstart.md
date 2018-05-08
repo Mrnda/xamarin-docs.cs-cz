@@ -8,11 +8,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 04/25/2018
-ms.openlocfilehash: 44c3e4b0f05526560ff4b32808ba476110ce5e8f
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 7faf4ef090815ea799209e76816113f06889bd21
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="hello-android-quickstart"></a>Hello, Android: rychlý start
 
@@ -64,10 +64,10 @@ Pokud používáte Android emulátor sady Visual Studio, technologie Hyper-V mus
 
 Spuštění sady Visual Studio.  Klikněte na tlačítko **soubor > Nový > projekt** k vytvoření nového projektu.
 
-V **nový projekt** dialogové okno, klikněte **prázdná aplikace (Android)** šablony.
+V **nový projekt** dialogové okno, klikněte na tlačítko **aplikace pro Android** šablony.
 Název nového projektu `Phoneword`. Klikněte na tlačítko **OK** k vytvoření nového projektu:
 
-[![Nový projekt je Phoneword](hello-android-quickstart-images/vs/02-new-project-name-sml.png)](hello-android-quickstart-images/vs/02-new-project-name.png#lightbox)
+[![Nový projekt je Phoneword](hello-android-quickstart-images/vs/02-new-project-name-sml.w157.png)](hello-android-quickstart-images/vs/02-new-project-name.w157.png#lightbox)
 
 ### <a name="creating-the-layout"></a>Vytváření rozložení
 
@@ -112,9 +112,9 @@ Dalším krokem je přidání kód, který převede telefonní čísla z alfanum
 
 [![Přidat novou položku](hello-android-quickstart-images/vs/12-add-new-item-sml.png)](hello-android-quickstart-images/vs/12-add-new-item.png#lightbox)
 
-V **přidat novou položku** dialogovém okně, vyberte **Visual C# > kódu** a název nového souboru kódu **PhoneTranslator.cs**:
+V **přidat novou položku** dialogovém okně, vyberte **Visual C# > kódu > souboru kódu** a název nového souboru kódu **PhoneTranslator.cs**:
 
-[![Přidat PhoneTranslator.cs](hello-android-quickstart-images/vs/14-add-class-sml.png)](hello-android-quickstart-images/vs/14-add-class.png#lightbox)
+[![Přidat PhoneTranslator.cs](hello-android-quickstart-images/vs/14-add-class-sml.w157.png)](hello-android-quickstart-images/vs/14-add-class.w157.png#lightbox)
 
 Tím se vytvoří novou prázdnou C# třídu. Vložte následující kód do tohoto souboru:
 
@@ -185,10 +185,11 @@ Dalším krokem je přidání kódu k propojit se uživatelské rozhraní vlože
 (Resource.Layout.Main)` volání. Nejprve upravit kód šablony tak, aby `OnCreate` metoda vypadá zhruba takto:
 
 ```csharp
+using System;
 using Android.App;
-using Android.OS;
+using Android.Content;
 using Android.Widget;
-using Core;
+using Android.OS;
 
 namespace Phoneword
 {
@@ -419,10 +420,13 @@ Klikněte dvakrát na **MainActivity.cs** v **řešení Pad** ho otevřete.
 Začněte tím, že přidání obslužné rutiny události pro **přeložit** tlačítko. V `MainActivity` třídy, vyhledejte `OnCreate` metoda. Přidejte kód tlačítko uvnitř `OnCreate`, níže `base.OnCreate(bundle)` a `SetContentView (Resource.Layout.Main)` volání. Tlačítko šablony kód pro zpracování odebrat tak, aby `OnCreate` metoda vypadá zhruba takto:
 
 ```csharp
+using System;
 using Android.App;
-using Android.OS;
+using Android.Content;
+using Android.Runtime;
+using Android.Views;
 using Android.Widget;
-using Core;
+using Android.OS;
 
 namespace Phoneword
 {

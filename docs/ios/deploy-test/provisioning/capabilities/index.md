@@ -4,14 +4,14 @@ description: Přidání funkcí do aplikace často vyžaduje další nastavení 
 ms.prod: xamarin
 ms.assetid: 98A4676F-992B-4593-8D38-6EEB2EB0801C
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
-ms.date: 03/15/2017
-ms.openlocfilehash: ff918ac104e7eab4f2e8c0d0be46df240138c97c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+author: asb3993
+ms.author: amburns
+ms.date: 05/06/2018
+ms.openlocfilehash: e6fc3d38fef7c7c3204d1413911ddfa9a486c67c
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="working-with-capabilities"></a>Práce s možností
 
@@ -21,13 +21,13 @@ Apple poskytuje vývojářům _možnosti_, často označovaný jako _aplikační
 Tyto funkce lze použít s projekty Xamarin.iOS. Úplný seznam služeb je popsán dále:
 
 * Skupiny aplikací
-* Associated Domains
+* Přidružené domén
 * Ochrana dat
 * Herní Centrum
 * HealthKit
 * HomeKit
 * Konfigurace bezdrátového příslušenství
-* iCloud
+* Icloudu
 * Nákupy v aplikaci
 * Zvuk mezi aplikacemi
 * Platím Apple
@@ -44,20 +44,18 @@ Tyto funkce lze použít s projekty Xamarin.iOS. Úplný seznam služeb je pops�
 * Značky NFC čtení
 
 
-Možnosti lze povolit buď pomocí sady Visual Studio pro Mac, nebo ručně v portálu pro vývojáře Apple. Některé funkce, jako je například Peněženka, dotykový identifikátor a na Icloudu vyžadují další konfiguraci ID aplikace.
+Možnosti lze povolit buď pomocí sady Visual Studio pro Mac a Visual Studio 2017 nebo ručně v portálu pro vývojáře Apple. Některé funkce, jako je například Peněženka, dotykový identifikátor a na Icloudu vyžadují další konfiguraci ID aplikace.
 
-Tato příručka vysvětluje, jak můžete povolit každou z těchto App Services ve vaší aplikaci v obou sadě Visual Studio pro Mac a ručně prostřednictvím centru pro vývojáře, včetně jakékoliv další nastavení, které mohou být potřebné. 
+Tato příručka vysvětluje, jak můžete povolit každou z těchto App Services ve vaší aplikaci v sadě Visual Studio automaticky a ručně prostřednictvím centru pro vývojáře, včetně jakékoliv další nastavení, které mohou být potřebné. 
 
 ## <a name="adding-app-services"></a>Přidání aplikační služby
 
-Pokud chcete používat funkce, aplikace musí mít platný profil pro zřizování, který obsahuje ID aplikace se na správné služby povolena. Vytvořením této profil pro zřizování můžete buď provést automaticky v sadě Visual Studio pro Mac nebo ručně v Centru pro vývojáře Apple.
+Pokud chcete používat funkce, aplikace musí mít platný profil pro zřizování, který obsahuje ID aplikace se na správné služby povolena. Vytvořením této profil pro zřizování můžete buď provést automaticky v sadě Visual Studio pro Mac a Visual Studio 2017, nebo ručně v Centru pro vývojáře Apple.
 
-Tato část vysvětluje, jak pomocí prostředí Visual Studio pro Mac je automatické zřizování nebo středisku pro vývojáře můžete povolit většinu funkcí. Existují některé funkce, například Peněženka, Icloudu, dotykový identifikátor a skupin aplikací, které vyžadují další nastavení. Tyto jsou podrobně vysvětleny v sousedících příručky.
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+Tato část vysvětluje, jak používat ke povolit většinu funkcí sady Visual Studio automatické zřizování nebo středisku pro vývojáře. Existují některé funkce, například Peněženka, Icloudu, dotykový identifikátor a skupin aplikací, které vyžadují další nastavení. Tyto jsou podrobně vysvětleny v sousedících příručky.
 
 > [!IMPORTANT]
-> Ne všechny funkce lze přidat a spravovat v sadě Visual Studio for Mac. Následující seznam obsahuje podporované funkce:
+> Ne všechny funkce můžete přidat a spravovat pomocí automatické zřizování. Následující seznam obsahuje podporované funkce:
 >
 >* HealthKit 
 >* HomeKit 
@@ -72,10 +70,13 @@ Tato část vysvětluje, jak pomocí prostředí Visual Studio pro Mac je automa
 >
 >Nabízená oznámení, herní centrum, nákupy v aplikaci, map, sdílení řetězce klíčů, přidružené domén a funkce ochrany dat nejsou aktuálně podporovány. Pokud chcete přidat tyto možnosti, pomocí ručního zřizování a postupujte podle kroků v [středisku pro vývojáře](#devcenter) části.
 
+## <a name="using-the-ide"></a>Používání prostředí IDE
 
-Možnosti jsou přidány do **Entitlements.plist** v sadě Visual Studio for Mac. Pro přidání možností, postupujte podle následujících kroků:
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-1. Otevřete **Info.plist** vaší aplikace iOS a ujistěte se, **automaticky spravovat podepisování** je vybrána. Postupujte podle kroků v [automatické zřizování](~/ios/get-started/installation/device-provisioning/automatic-provisioning.md) průvodce, pokud potřebujete pomoc:
+Možnosti jsou přidány do **Entitlements.plist** v sadě Visual Studio for Mac. Pro přidání možností, použijte následující postup:
+
+1. Otevřete **Info.plist** souboru aplikace systému iOS a vyberte **automaticky zřizování** schéma a **Team** z pole se seznamem. Postupujte podle kroků v [automatické zřizování](~/ios/get-started/installation/device-provisioning/automatic-provisioning.md) průvodce, pokud potřebujete pomoc:
 
     ![Automaticky spravovat podpisový možnost](images/manage-signing.png)
 
@@ -93,39 +94,29 @@ Možnosti jsou přidány do **Entitlements.plist** v sadě Visual Studio for Mac
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Jako nejsou aktuálně podporovány pro automatické zřizování v Visual Studio 2017, je nutné použít [středisku pro vývojáře](#devcenter) k vytvoření ID aplikace se službami správnou aplikaci.
+Možnosti jsou přidány do **Entitlements.plist**. Pro přidání možností v Visual Studio 2017, použijte následující postup:
+
+1. Spárujte Visual Studio 2017 na Mac, jak je popsáno v [pár na Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) průvodce.
+
+2. Otevřete tak, že vyberete možnosti zřizování **Projekt > zřizování vlastnosti...**
+
+3. Vyberte **automaticky zřizování** schéma a **Team** z pole se seznamem. Postupujte podle kroků v [automatické zřizování](~/ios/get-started/installation/device-provisioning/automatic-provisioning.md) průvodce, pokud potřebujete pomoc:
+
+    ![Automaticky spravovat podpisový možnost](images/manage-signing-vs.png)
+
+4. Otevřete **Entitlements.plist** soubor a vyberte funkci, která chcete přidat. Uložte soubor.
+
+    Ukládání **Entitlement.plist** provádí dvě věci:
+
+    * Tato funkce přidá do vašeho ID aplikace
+    * Přidá dvojici klíč/hodnota oprávnění k souboru Entitlements.plist.
 
 -----
 
-<!--
-<a name="xcode" />
-
-## Xcode
-
-Xamarin developers can also use Xcode to quickly create a provisioning profile with a suitable App ID. This process, described below, can be used for any app service in the list:
-
-1.  Open Xcode and create a ‘dummy’ project. Give the dummy project the same name as your Xamarin.iOS project. The bundle identifier should be identical to the bundle identifier of your Xamarin.iOS project:
-
-    ![Xcode Create Project](images/image1.png)
-
-2.  Ensure **Automatically manage signing** is selected:
-
-    ![Automatically manage signing selection](images/image2.png)
-
-3.  Once the app has been created, go to the tab named **Capabilities**:
-
-    ![Xcode Capabilities tab](images/image3.png)
-
-4.  Browse to the capability that you wish to add, and move the switch to the **ON** position.
-5.  This will create a provisioning profile with an App ID that contains the capability and adds the entitlement to the profile.
-6.  In Visual Studio for Mac / Visual Studio, browse to **Project Options > Bundle Signing** and set the provisioning profile to the one that was just created in Xcode:
-
-    ![Visual Studio for Mac Project Options](images/image4.png)
--->
 
 <a name="devcenter" />
 
-## <a name="developer-center"></a>Středisko pro vývojáře
+## <a name="using-the-developer-center"></a>Pomocí centra pro vývojáře
 
 Pomocí centra pro vývojáře je proces dvě krok, který vyžaduje vytvoření ID aplikace a pak pomocí tohoto ID aplikace vytvořte profil pro zřizování. Tyto kroky jsou podrobně popsány níže.
 
@@ -190,7 +181,7 @@ Teď vytvořte profil pro zřizování, který obsahuje číslem ID této aplika
 
 8.  Stiskněte **Stáhnout** tlačítko se stáhne a poklikejte na soubor v hledání k instalaci profilu pro zřizování.
 
-9. Pokud používáte Visual Studio pro Mac Ujistěte se, že **automaticky spravovat podepisování** možnost je zrušte vybrané v **Info.plist** souboru
+9. Pokud používáte Visual Studio Ujistěte se, že **ručního zřizování** je vybraná možnost.
 
 10. V sadě Visual Studio pro Mac / Visual Studio, přejděte na **možnosti projektu > podepisování sady** a nastavení profilu pro zřizování jeden, kterou jste právě vytvořili:
 

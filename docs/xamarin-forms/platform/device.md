@@ -6,11 +6,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: 471616dffc700cf93a9f6435565222d7628bf165
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 1fc3fb17ec97ce9028abbf63cdedbfc5fec12204
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="device-class"></a>Zařízení – třída
 
@@ -86,6 +86,28 @@ if (Device.Idiom == TargetIdiom.Phone) {
     // layout views horizontally for a larger display (tablet or desktop)
 }
 ```
+
+## <a name="deviceflowdirection"></a>Device.FlowDirection
+
+[ `Device.FlowDirection` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.FlowDirection/) Hodnota načte [ `FlowDirection` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlowDirection/) hodnota výčtu, který představuje aktuální směr toku používá zařízení. Směr toku je směr, ve kterém jsou prvky uživatelského rozhraní na stránce skenovalo oko. Hodnoty výčtu jsou:
+
+- [`LeftToRight`](https://developer.xamarin.com/api/field/Xamarin.Forms.FlowDirection.LeftToRight/)
+- [`RightToRight`](https://developer.xamarin.com/api/field/Xamarin.Forms.FlowDirection.RightToLeft/)
+- [`MatchParent`](https://developer.xamarin.com/api/field/Xamarin.Forms.FlowDirection.MatchParent/)
+
+V jazyce XAML [ `Device.FlowDirection` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.FlowDirection/) hodnotu můžete načíst pomocí `x:Static` – rozšíření značek:
+
+```xaml
+<ContentPage ... FlowDirection="{x:Static Device.FlowDirection}"> />
+```
+
+Je ekvivalentní kód v jazyce C#:
+
+```csharp
+this.FlowDirection = Device.FlowDirection;
+```
+
+Další informace o směr toku najdete v tématu [zprava doleva lokalizace](~/xamarin-forms/app-fundamentals/localization/right-to-left.md).
 
 <a name="Device_Styles" />
 

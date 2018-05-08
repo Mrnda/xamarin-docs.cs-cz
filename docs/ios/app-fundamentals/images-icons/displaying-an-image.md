@@ -6,12 +6,12 @@ ms.assetid: 60288B12-49E3-4E87-8690-D04A5EC7A664
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/18/2017
-ms.openlocfilehash: 8afc15a75b6d34d9b3f094fe2c92f2b6623ee63f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/24/2018
+ms.openlocfilehash: f1f733fa91be7bf76e19896e78809d18494891d3
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="displaying-an-image"></a>Zobrazení obrázku
 
@@ -66,6 +66,7 @@ Při použití **nastavit obrázek** v iOS Designer, jednoduše vyberte název s
 1. Otevřete katalogu Asset z **Průzkumníku řešení**a v levém horním rohu klikněte na **Plus** tlačítko:
 
     ![](displaying-an-image-images/asset5.png "Klikněte na tlačítko Plus tlačítko")
+
 2. Vyberte **přidat sadu Image** a zobrazí se editor nastavit obrázek nové sady bitové kopie. Z tohoto místa, přetáhněte do bitových kopií pro každý z různých zařízení a a řešení vyžaduje. (Poznámka: který tato řešení přizpůsobit řešení zadaný v [velikosti obrázků a názvy souborů](~/ios/app-fundamentals/images-icons/displaying-an-image.md) dokumentu):
 
     ![](displaying-an-image-images/asset7.png "Editor obrázků sady")

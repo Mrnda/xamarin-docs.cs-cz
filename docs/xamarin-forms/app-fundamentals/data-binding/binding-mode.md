@@ -4,14 +4,14 @@ description: Řízení toku informací mezi zdrojem a cílem
 ms.prod: xamarin
 ms.assetid: D087C389-2E9E-47B9-A341-5B14AC732C45
 ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/05/2018
-ms.openlocfilehash: fdcba9b680bd548371883788af9e4eda755d91df
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+author: charlespetzold
+ms.author: chape
+ms.date: 05/01/2018
+ms.openlocfilehash: 1aa612d8b855158f09bc0aeaad1520a44b3d9637
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="binding-mode"></a>Vazba režimu
 
@@ -58,6 +58,7 @@ Vazba režimu se zadaným členem [ `BindingMode` ](https://developer.xamarin.co
 - [`TwoWay`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.TwoWay/) &ndash; data přejde obou směrech mezi zdrojem a cílem
 - [`OneWay`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.OneWay/) &ndash; data přejde ze zdroje k cíli
 - [`OneWayToSource`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.OneWayToSource/) &ndash; data přejde z cíle na zdroj
+- [`OneTime`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.OneWayToSource/) &ndash; data přejde ze zdroje na cíl, ale pouze tehdy, když `BindingContext` změny (novou s Xamarin.Forms 3.0)
 
 Každý vazbu vlastnost má výchozí vazby režimu, který je nastavený při vytvoření vlastnost vazbu a který je k dispozici [ `DefaultBindingMode` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableProperty.DefaultBindingMode/) vlastnost `BindableProperty` objektu. Tento režim vazby výchozí režim označuje platit při této vlastnosti je cílem datové vazby.
 
@@ -94,6 +95,15 @@ Jen pro čtení vazbu vlastnosti mají výchozí režim vazba z `OneWayToSource`
 - `SelectedItem` Vlastnost `ListView`
 
 Logický základ hlediska je, že vazbu na `SelectedItem` vlastnost by měla mít za následek nastavení zdroji vazby. Příklad později v tomto článku přepsání tohoto chování.
+
+### <a name="one-time-bindings"></a>Jednorázové vazby
+
+Několik vlastností, které mají výchozí režim vazba z `OneTime`. Jsou to:
+
+- `IsTextPredictionEnabled` Vlastnost `Entry`
+- `Text`, `BackgroundColor`, a `Style` vlastnosti `Span`.
+
+Cílové vlastnosti se způsobem vazby `OneTime` jsou aktualizovány pouze v případě změny kontextu vazby. U vazeb na těchto vlastností cíle zjednodušuje infrastruktura vazeb, protože není nutné sledovat změny v vlastnosti zdroje.
 
 ## <a name="viewmodels-and-property-change-notifications"></a>ViewModels a změnu vlastnosti oznámení
 
@@ -198,6 +208,8 @@ public class HslColorViewModel : INotifyPropertyChanged
 Když `Color` změny vlastností, statické `GetNearestColorName` metoda v `NamedColor` – třída (také obsaženy v **DataBindingDemos** řešení) nejbližší pojmenovaná barva získá a nastaví `Name` vlastnost. To `Name` vlastnost má privátního `set` přistupujícího objektu, takže ji nelze nastavit z mimo třídu.
 
 Pokud jako zdroj vazba je nastavená ViewModel, infrastruktura vazeb připojí obslužnou rutinu do `PropertyChanged` událostí. Tímto způsobem vazby můžete upozornění na změny vlastnosti a pak můžete nastavit vlastnosti cíle v změněné hodnoty.
+
+Ale když vlastnost target (nebo `Binding` definice na cílovou vlastnost) má `BindingMode` z `OneTime`, není nutné pro infrastruktura vazeb připojit obslužnou rutinu na `PropertyChanged` událostí. Vlastnost target je aktualizovat pouze tehdy, když `BindingContext` změny a když samotné vlastnosti zdroje není změny. 
 
 **Jednoduchý selektor barva** souboru XAML vytvoří `HslColorViewModel` ve slovníku prostředků a inicializuje stránky `Color` vlastnost. `BindingContext` Vlastnost `Grid` je nastaven na `StaticResource` vazby rozšíření, chcete-li tento prostředek:
 

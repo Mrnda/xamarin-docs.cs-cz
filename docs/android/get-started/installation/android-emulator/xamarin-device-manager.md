@@ -1,41 +1,36 @@
 ---
 title: Správa Android emulátorů pomocí Správce zařízení Xamarin Android
-description: Správce zařízení Android Xamarin, momentálně ve verzi preview, nahradí Google starší verze Správce zařízení. Tato příručka vysvětluje, jak vytvořit a nakonfigurovat virtuální zařízení se systémem Android (AVDs), emulovat zařízení se systémem Android pomocí Správce zařízení Xamarin Android. Tato virtuální zařízení můžete použít ke spuštění a testování aplikace bez nutnosti se spoléhat na fyzické zařízení.
+description: Tato příručka vysvětluje, jak vytvořit a nakonfigurovat virtuální zařízení se systémem Android (AVDs), emulovat zařízení se systémem Android pomocí Správce zařízení Xamarin Android. Tato virtuální zařízení můžete použít ke spuštění a testování aplikace bez nutnosti se spoléhat na fyzické zařízení.
 ms.prod: xamarin
 ms.assetid: ECB327F3-FF1C-45CC-9FA6-9C11032BD5EF
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 04/26/2018
-ms.openlocfilehash: 2b41c23bb880ca6150fa5f3f487eb00d8a7a19d8
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.date: 05/03/2018
+ms.openlocfilehash: 420ffc905659c6fd6245dc8cc3bdae4cb9401a63
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="xamarin-android-device-manager"></a>Správce zařízení Xamarin Android
 
-_Správce zařízení Android Xamarin, momentálně ve verzi preview, nahradí Google starší verze Správce zařízení. Tato příručka vysvětluje, jak vytvořit a nakonfigurovat virtuální zařízení se systémem Android (AVDs), emulovat zařízení se systémem Android pomocí Správce zařízení Xamarin Android. Tato virtuální zařízení můžete použít ke spuštění a testování aplikace bez nutnosti se spoléhat na fyzické zařízení._
+_Tato příručka vysvětluje, jak vytvořit a nakonfigurovat virtuální zařízení se systémem Android (AVDs), emulovat zařízení se systémem Android pomocí Správce zařízení Xamarin Android. Tato virtuální zařízení můžete použít ke spuštění a testování aplikace bez nutnosti se spoléhat na fyzické zařízení._
 
-![Momentálně ve verzi preview](~/media/shared/preview.png)
- 
 ## <a name="overview"></a>Přehled
 
-Po ověření, zda je povoleno hardwarová akcelerace (jak je popsáno v [hardwarovou akceleraci](~/android/get-started/installation/android-emulator/hardware-acceleration.md)), dalším krokem je vytvoření virtuálního zařízení používat pro testování a ladění aplikace. Chcete-li vytvořit virtuální zařízení za účelem použití emulátoru Android SDK můžete použít Správce zařízení Xamarin Android.
-
-Proč byste se měli pomocí Správce zařízení Xamarin Android místo [Správce zařízení Google](~/android/get-started/installation/android-emulator/google-emulator-manager.md)?
-Od verze nástroje pro Android SDK 26.0.1 Google má odebranou podporu architektury jejich uživatelského rozhraní AVD a sady SDK správce považuje jejich nových nástrojů rozhraní příkazového řádku (rozhraní příkazového řádku). Z důvodu této změny je nutné použít [Xamarin SDK Manager](~/android/get-started/installation/android-sdk.md) a Xamarin Android Správce zařízení při aktualizaci nástroje pro Android SDK 26.0.1 a novější (což je vyžadováno pro vývoj pro Android 8.0 Oreo).
+Po ověření, zda je povoleno hardwarová akcelerace (jak je popsáno v [hardwarovou akceleraci](~/android/get-started/installation/android-emulator/hardware-acceleration.md)), dalším krokem je vytvoření virtuální zařízení používat pro testování a ladění aplikace pomocí Správce zařízení Xamarin Android.
 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Tato příručka vysvětluje, jak nainstalovat a pomocí Správce zařízení Android Xamarin pro Visual Studio v systému Windows (nebo [pro Mac](?tabs=vsmac)):
+Tato příručka vysvětluje, jak pomocí Správce zařízení Android Xamarin pro Visual Studio v systému Windows (nebo [pro Mac](?tabs=vsmac)):
 
 [![Snímek obrazovky Správce zařízení Android Xamarin na kartě zařízení](xamarin-device-manager-images/win/01-devices-dialog-sml.png)](xamarin-device-manager-images/win/01-devices-dialog.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-Tato příručka vysvětluje, jak nainstalovat a pomocí Správce zařízení Android Xamarin pro Visual Studio pro Mac (nebo [pro systém Windows](?tabs=vswin)):
+Tato příručka vysvětluje, jak pomocí Správce zařízení Android Xamarin pro Visual Studio pro Mac (nebo [pro systém Windows](?tabs=vswin)):
 
 [![Snímek obrazovky Správce zařízení Android Xamarin na kartě zařízení](xamarin-device-manager-images/mac/01-devices-dialog-sml.png)](xamarin-device-manager-images/mac/01-devices-dialog.png#lightbox)
 
@@ -48,7 +43,7 @@ Xamarin Studio není kompatibilní s Správce zařízení Android Xamarin.
 Můžete vytvořit a nakonfigurovat pomocí Správce zařízení Android Xamarin *virtuální zařízení se systémem Android* (AVDs), spusťte [emulátoru Android SDK](~/android/deploy-test/debugging/android-sdk-emulator/index.md).
 Každý AVD je konfigurace aplikace emulátoru, která simuluje fyzického zařízení s Androidem. To umožňuje spuštění a testování vaší aplikace v různých konfiguracích, které simulují různé fyzické zařízení se systémem Android. Správce zařízení Xamarin Android nahrazuje Google samostatné správce AVD (která se už nepoužívá).
 
-V tomto průvodci se dozvíte, jak nainstalovat a spustit Správce zařízení Android. Se dozvíte, jak vytvářet, duplicitní, přizpůsobit a spustit virtuální zařízení. Tento průvodce také vysvětluje, jak konfigurovat vlastnosti pro každý virtuální zařízení (například úroveň rozhraní API, procesoru, paměti a řešení), povolit nebo zakázat simulované senzorů, například zrychlení, GPS, orientaci a senzoru světla a konfigurace typu hardwaru akcelerace používá virtuální zařízení.
+V tomto průvodci se dozvíte, jak lze pomocí Správce zařízení Android k vytváření, duplicitní, přizpůsobení a spustit virtuální zařízení. Tento průvodce také vysvětluje, jak konfigurovat vlastnosti pro každý virtuální zařízení (například úroveň rozhraní API, procesoru, paměti a řešení), povolit nebo zakázat simulované senzorů, například zrychlení, GPS, orientaci a senzoru světla a konfigurace typu hardwaru akcelerace používá virtuální zařízení.
 
 ## <a name="requirements"></a>Požadavky
 
@@ -56,74 +51,37 @@ V tomto průvodci se dozvíte, jak nainstalovat a spustit Správce zařízení A
 
 Pomocí Správce zařízení Xamarin Android, budete potřebovat následující:
 
-- Visual Studio 2017 verze 15,5 nebo novější je povinný. Visual Studio Community edition a vyšší je podporovaná.
+- Visual Studio 2017 verze 15.7 nebo novější je povinný. Visual Studio Community edition a vyšší je podporovaná.
 
-- Xamarin pro Visual Studio verze 4,8 nebo novější. Informace o aktualizaci Xamarin najdete v tématu [změnit kanál aktualizace](https://developer.xamarin.com/recipes/cross-platform/ide/change_updates_channel/).
+- Xamarin pro Visual Studio verze 4.9 nebo novější. Informace o aktualizaci Xamarin najdete v tématu [změnit kanál aktualizace](https://developer.xamarin.com/recipes/cross-platform/ide/change_updates_channel/).
 
-- Nejnovější verzi [instalační program Správce zařízení Xamarin](https://go.microsoft.com/fwlink/?linkid=865528) pro systém Windows.
-
-- **Sady SDK pro Android** &ndash; musí být nainstalována sada Android SDK (najdete v části [Android SDK instalace](~/android/get-started/installation/android-sdk.md)), a verze sady SDK nástroje 26.0 musí být nainstalována, jak je popsáno v následující části. (Pokud již není nainstalována), nainstalujte sady SDK pro Android v následujícím umístění: **C:\\Program Files (x86)\\Android\\android-sdk**.
+- **Sady SDK pro Android** &ndash; musí být nainstalována sada Android SDK (najdete v části [Android SDK instalace](~/android/get-started/installation/android-sdk.md)), a musí být nainstalována verze sady SDK nástroje 26.0 nebo novější, jak je popsáno v následující části. (Pokud již není nainstalována), nainstalujte sady SDK pro Android v následujícím umístění: **C:\\Program Files (x86)\\Android\\android-sdk**.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-- Visual Studio pro Mac 7.4 nebo novější.
-
-- Nejnovější verzi [instalační program Správce zařízení Xamarin](https://go.microsoft.com/fwlink/?linkid=865527) pro systému macOS.
+- Visual Studio pro Mac 7.5 nebo novější.
 
 - **Sady SDK pro Android** &ndash; Android SDK 8.0 (26 rozhraní API) nebo novější musí být nainstalován prostřednictvím sady SDK Manager.
 
 -----
 
-## <a name="installing-the-device-manager"></a>Instalace Správce zařízení
-
-Při instalaci Správce zařízení Xamarin Android použijte následující kroky:
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-1. Stažení [instalační program Správce zařízení Xamarin](https://go.microsoft.com/fwlink/?linkid=865528) pro systém Windows.
-
-2. Klikněte dvakrát na **Xamarin.DeviceManager.msi** a postupujte podle pokynů k instalaci: 
-
-    ![Průvodce instalací Správce zařízení Xamarin Android](xamarin-device-manager-images/win/30-installer.png)
-
-
-> [!NOTE]
-> Počínaje [Visual Studio 2017 Preview 5](https://www.visualstudio.com/vs/preview/), Správce zařízení Android budou distribuována jako jako součást VS2017 Instalační služby. Není nutné stáhnout samostatný instalační program získat správce zařízení Xamarin Android s Visual Studio 2017 Preview 5.
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-1. Stažení [instalační program Správce zařízení Xamarin](https://go.microsoft.com/fwlink/?linkid=865527) pro systému macOS.
-
-2. Klikněte dvakrát na **AndroidDevices.pkg** a postupujte podle pokynů k instalaci: 
-
-    [![Průvodce instalací Správce zařízení Xamarin Android](xamarin-device-manager-images/mac/30-installer-sml.png)](xamarin-device-manager-images/mac/30-installer.png#lightbox)
-
------
 ## <a name="launching-the-device-manager"></a>Spuštění Správce zařízení
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-V sadě Visual Studio 15,6 operací Preview 3 nebo novější, můžete spustit Správce Xamarin Android zařízení z **nástroje** nabídky. Pokud používáte Visual Studio 15,6 operací Preview 3 nebo novější, spusťte Správce zařízení kliknutím **nástroje > Správce emulátoru Android**:
+Spusťte správce Xamarin Android zařízení z **nástroje** nabídky kliknutím **nástroje > Správce emulátoru Android**:
 
 [![Spouštění z nabídky Nástroje](xamarin-device-manager-images/win/04-tools-menu-sml.png)](xamarin-device-manager-images/win/04-tools-menu.png#lightbox)
 
-Pokud používáte starší verze sady Visual Studio, správce Xamarin Android zařízení musí být spuštěn z Windows **spustit** nabídky.
-
-![Správce zařízení Xamarin Android v nabídce start](xamarin-device-manager-images/win/31-start-menu.png)
-
-Klikněte pravým tlačítkem na **Správce zařízení Xamarin Android** a vyberte **více > Spustit jako správce**. Pokud se při spuštění následující chybový dialog, najdete v článku [Poradce při potížích s](#troubleshooting) části Pokyny alternativní řešení:
+Pokud se při spuštění následující chybový dialog, najdete v článku [Poradce při potížích s](#troubleshooting) části Pokyny alternativní řešení:
 
 ![Chyba instance sady Android SDK](xamarin-device-manager-images/win/32-sdk-error.png)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-V sadě Visual Studio pro Mac 7.6 Preview 3 (aktuálně v alfa kanálu) nebo novější, můžete spustit Správce zařízení Xamarin Android výběrem **nástroje > Správce emulátorů**:
+V sadě Visual Studio pro Mac, spusťte Správce Xamarin Android zařízení tak, že vyberete **nástroje > Správce emulátorů**:
 
 [![Spouštění z nabídky Nástroje](xamarin-device-manager-images/mac/16-tools-menu-sml.png)](xamarin-device-manager-images/mac/16-tools-menu.png#lightbox)
-
-Pokud používáte starší verze sady Visual Studio pro Mac, správce Xamarin Android zařízení musí být spuštěn nezávisle. Vyhledejte **zařízení se systémem Android** v **aplikace** složku a dvojím kliknutím ho spusťte:
-
-[![Správce zařízení Xamarin Android umístění v nástroji hledání](xamarin-device-manager-images/mac/31-location-in-finder-sml.png)](xamarin-device-manager-images/mac/31-location-in-finder.png#lightbox)
 
 -----
 

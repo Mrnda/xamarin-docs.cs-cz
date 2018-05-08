@@ -6,12 +6,12 @@ ms.assetid: 2BE4D5AD-D468-B177-8F96-837D084E7DE1
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: 1cd9a4977aad3f3bd8d8a4e51871698a54f75eb8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/10/2018
+ms.openlocfilehash: c9155e1d3ebff52337e65cf3b8cd7dc16b8cdb37
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="windows-installation"></a>Instalace systému Windows
 
@@ -84,7 +84,7 @@ Protože vývojovém počítači procesoru může podporovat pouze jeden virtual
 
 <a name="device" />
 
-### <a name="android-device"></a>Android Device
+### <a name="android-device"></a>Zařízení se systémem Android
 
 Pokud máte fyzické zařízení Android má použít pro testování, to je vhodná doba na nastavit pro použití vývoj. V tématu [nastavit zařízení pro vývoj](~/android/get-started/installation/set-up-device-for-development.md) konfigurace zařízení s Androidem pro vývoj, připojte jej k počítači pro spouštění a ladění aplikací Xamarin.Android.
 
@@ -95,9 +95,9 @@ Teď, když jste nainstalovali Xamarin.Android, můžete spustit Visual Studio v
 
 ![Postup vytvoření nového projektu](windows-images/10-new-project.png)
 
-V **nový projekt** dialogovém okně, vyberte **Android** pod **šablony** a klikněte na tlačítko **prázdná aplikace (Android)** v pravém podokně. Zadejte název pro vaši aplikaci (na tomto snímku obrazovky je aplikace volána **Moje aplikace**), pak klikněte na tlačítko **OK**:
+V **nový projekt** dialogovém okně, vyberte **Android** pod **šablony** a klikněte na tlačítko **aplikace pro Android** v pravém podokně. Zadejte název pro vaši aplikaci (na tomto snímku obrazovky je aplikace volána **Moje aplikace**), pak klikněte na tlačítko **OK**:
 
-[![Dialogové okno snímek obrazovky nový projekt, vytvořit prázdnou aplikaci pro Android](windows-images/11-first-app-sml.png)](windows-images/11-first-app.png#lightbox)
+[![Dialogové okno snímek obrazovky nový projekt, vytvořit prázdnou aplikaci pro Android](windows-images/11-first-app-sml.w157.png)](windows-images/11-first-app.w157.png#lightbox)
 
 Je to! Nyní jste připraveni vytvořit aplikace pro Android pomocí Xamarin.Android!
 

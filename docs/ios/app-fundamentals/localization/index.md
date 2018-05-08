@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/28/2017
-ms.openlocfilehash: 96ee8343bb2b99fdc0be9437aaa7737a70b8c19c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5ee04614a500618846ad3acf2a38f279351d6e9d
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="ios-localization"></a>iOS lokalizace
 
@@ -19,7 +19,7 @@ _Tento dokument popisuje funkce lokalizace IOS SDK a jak přistupovat k nim s fu
 
 Odkazovat [internacionalizace kódování](encodings.md) pokyny, včetně znaku sady nebo znakové stránky v aplikacích, které je nutné zpracovat data kódování Unicode.
 
-## <a name="ios-platform-features"></a>iOS funkcí platformy
+## <a name="ios-platform-features"></a>Funkce platformy iOS
 
 Tato část popisuje některé funkce lokalizace v iOS. Pokračujte [další části](#basics) konkrétního kódu a příklady.
 
@@ -359,5 +359,5 @@ Další informace o i18n a L10n pro iOS, Android a multiplatformní aplikace (v�
 - [Tasky (lokalizované storyboard) (ukázka)](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10nStoryboard)
 - [Lokalizace průvodce Apple](https://developer.apple.com/library/ios/documentation/MacOSX/Conceptual/BPInternational/InternationalizingYourUserInterface/InternationalizingYourUserInterface.html)
 - [Lokalizace a platformy – přehled](~/cross-platform/app-fundamentals/localization.md)
-- [Xamarin.Forms Localization](~/xamarin-forms/app-fundamentals/localization.md)
+- [Lokalizace Xamarin.Forms](~/xamarin-forms/app-fundamentals/localization/index.md)
 - [Android lokalizace](~/android/app-fundamentals/localization.md)

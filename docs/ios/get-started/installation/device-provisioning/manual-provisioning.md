@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 07/15/2017
-ms.openlocfilehash: 3f321366b3afc814aef1c586af2707b1caeef4c7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f604d41990a7a592a3d5207e7a12075c35ae661f
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="manual-provisioning"></a>Ruční zřizování
 
@@ -254,7 +254,10 @@ Pokud je nastavena v **automatické**, Visual Studio pro Mac vybere identity a p
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. Připojit zařízení k macu.
+> [!IMPORTANT]
+> Než začnete, je nutné vybrat **ručního zřizování** v **Projekt > zřizování vlastnosti...** .
+
+1. Připojte zařízení k sestavení hostitele Mac.
 2. V projektu **Info.plist**, zajistěte, aby identifikátor balíčku shoduje ID aplikace:
 
   ![](manual-provisioning-images/servicevs01.png "Zadat identifikátor")

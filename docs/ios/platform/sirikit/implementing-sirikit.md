@@ -6,12 +6,12 @@ ms.assetid: 20FFB981-EB10-48BA-BF79-40F37F0291EB
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/17/2017
-ms.openlocfilehash: 5fdc05de19799ce7b553428c23f860186909bcbb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/03/2018
+ms.openlocfilehash: a4f38e93cae3c9577a0b1e32067da2cfd2e4796d
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="implementing-sirikit"></a>Implementace SiriKit
 
@@ -95,7 +95,7 @@ Postupujte takto:
 2. Klikněte pravým tlačítkem na název řešení v **Průzkumníku řešení** a vyberte **přidat** > **nový projekt...** .
 3. Vyberte **Visual C#** > **sdílený projekt** a klikněte na **Další** tlačítko: 
 
-    [![](implementing-sirikit-images/prep02w.png "Vyberte knihovnu – třída")](implementing-sirikit-images/prep02w.png#lightbox)
+    [![](implementing-sirikit-images/prep02.w157-sml.png "Vyberte knihovnu – třída")](implementing-sirikit-images/prep02.w157.png#lightbox)
 4. Zadejte `MonkeyChatCommon` pro **název** a klikněte na **vytvořit** tlačítko.
 5. Klikněte pravým tlačítkem na **odkazy** složky hlavní aplikace v **Průzkumníku řešení** a vyberte **upravit odkazy...** . Zkontrolujte **MonkeyChatCommon** projektu a klikněte na **OK** tlačítko: 
 
@@ -459,7 +459,7 @@ Chcete-li přidat `AppIntentVocabulary.plist` souboru do projektu aplikace, post
 
 1. Klikněte pravým tlačítkem myši na název projektu v **Průzkumníku řešení** a vyberte **přidat** > **nový soubor...**   >  **iOS**:
 
-    [![](implementing-sirikit-images/plist01.png "Přidat seznam vlastností")](implementing-sirikit-images/plist01.png#lightbox) 
+    [![](implementing-sirikit-images/plist01.png "Přidat seznam vlastností")](implementing-sirikit-images/plist01.png#lightbox)
 2. Dvakrát klikněte `AppIntentVocabulary.plist` souboru v **Průzkumníku řešení** otevřete pro úpravy.
 3. Klikněte na tlačítko **+** přidat klíč, nastavte **název** k `ParameterVocabularies` a **typ** k `Array`:
 
@@ -521,9 +521,10 @@ Chcete-li přidat `AppIntentVocabulary.plist` souboru do projektu aplikace, post
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. Klikněte pravým tlačítkem myši na název projektu v **Průzkumníku řešení** a vyberte **přidat** > **nový soubor...**   >  **iOS**:
+1. Klikněte pravým tlačítkem myši na název projektu v **Průzkumníku řešení** a vyberte **Přidat > novou položku... > Apple > seznam vlastností > Info.plist**:
 
-    [![](implementing-sirikit-images/plist01w.png "Přidat nové Info.plist")](implementing-sirikit-images/plist01w.png#lightbox) 
+    [![](implementing-sirikit-images/plist01.w157-sml.png "Přidat nové Info.plist")](implementing-sirikit-images/plist01.w157.png#lightbox)
+
 2. Dvakrát klikněte `AppIntentVocabulary.plist` souboru v **Průzkumníku řešení** otevřete pro úpravy.
 3. Klikněte na tlačítko **+** přidat klíč, nastavte **název** k `ParameterVocabularies` a **typ** k `Array`:
 
@@ -625,11 +626,11 @@ Chcete-li přidat rozšíření tříd Intent k řešení, postupujte takto:
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. Klikněte pravým tlačítkem na **název řešení** v **Průzkumníku řešení** a vyberte **přidat** > **přidat nový projekt...** .
-2. V dialogovém okně vyberte **iOS** > **rozšíření** > **záměr rozšíření** a klikněte na tlačítko **Další** tlačítko: 
+2. V dialogovém okně vyberte **Visual C# > iOS rozšíření > rozšíření záměr** a klikněte na tlačítko **Další** tlačítko:
 
-    [![](implementing-sirikit-images/intents05w.png "Vyberte záměrné rozšíření")](implementing-sirikit-images/intents05w.png#lightbox)
+    [![](implementing-sirikit-images/intents05.w157-sml.png "Vyberte záměrné rozšíření")](implementing-sirikit-images/intents05.w157.png#lightbox)
 3. Potom zadejte **název** záměr rozšíření a klikněte na tlačítko **OK** tlačítko.
-5. V **Průzkumníku řešení**, klikněte pravým tlačítkem na **odkazy** složky nově vytvořený rozšíření záměr. Zkontrolujte název běžné projektu knihovny sdíleného kódu (který aplikaci vytvořili výše) a klikněte **OK** tlačítko: 
+1. V **Průzkumníku řešení**, klikněte pravým tlačítkem na **odkazy** záměry rozšíření nově vytvořené složky a vyberte **Přidat > odkaz**. Zkontrolujte název běžné projektu knihovny sdíleného kódu (který aplikaci vytvořili výše) a klikněte **OK** tlačítko:
 
     [![](implementing-sirikit-images/intents08w.png "Vyberte název běžné knihovny projektu sdíleného kódu")](implementing-sirikit-images/intents08w.png#lightbox)
     

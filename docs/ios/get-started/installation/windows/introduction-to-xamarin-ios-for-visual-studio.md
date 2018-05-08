@@ -6,12 +6,12 @@ ms.assetid: bf3c779f-959f-428d-babb-428f363f7e4e
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/19/2017
-ms.openlocfilehash: 859f84fbe329d79e9e1e6a8b7445fe2a7f03af23
-ms.sourcegitcommit: dc6ccf87223942088ca926c0dadd5b5478c683cb
+ms.date: 05/02/2018
+ms.openlocfilehash: fbd48deb0b18dcd3ac0d40e379e21d5967f81e0d
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="introduction-to-xamarinios-for-visual-studio"></a>Úvod do Xamarin.iOS pro sadu Visual Studio
 
@@ -48,8 +48,6 @@ V obou případech postupujte podle těchto kroků:
 ## <a name="connecting-to-the-mac"></a>Připojení k počítači Mac
 
 Pro připojení k hostiteli Mac sestavení sady Visual Studio, postupujte podle pokynů v [pár na Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) průvodce.
-
-
 
 ## <a name="visual-studio-toolbar-overview"></a>Přehled nástrojů Visual Studio
 
@@ -136,14 +134,17 @@ Vlastnosti projektu sady Visual Studio je přístupná kliknutím pravým tlač�
 
 ## <a name="creating-a-new-project-for-ios-applications"></a>Vytvoření nového projektu pro iOS aplikace
 
-Vytvoření nového projektu iOS z v sadě Visual Studio se provádí stejně jako jakýkoli jiný typ projektu. Výběr **soubor > Nový projekt** bude otevřete dialogové okno vidíte níže, ilustrující některé šablony, které jsou k dispozici pro vytvoření nového projektu iOS:
+Vytvoření nového projektu iOS z v sadě Visual Studio se provádí stejně jako jakýkoli jiný typ projektu. Výběr **soubor > Nový projekt** bude otevřete dialogové okno vidíte níže, ilustrující některé typy projektů, která je k dispozici pro vytvoření nového projektu iOS:
 
+![Vytvoření nového projektu](introduction-to-xamarin-ios-for-visual-studio-images/newproject.w157.png)
 
-![](introduction-to-xamarin-ios-for-visual-studio-images/newproject.png "Vytvoření nového projektu")
+Výběr **aplikace (Xamarin) pro iOS** se zobrazí následující šablony pro vytvoření nové aplikace Xamarin.iOS:
+
+![Vyberte šablonu pro aplikace pro iOS](introduction-to-xamarin-ios-for-visual-studio-images/newproject-2.w157.png)
 
 Scénáře a .xib soubory se dá upravit v sadě Visual Studio pomocí návrháře iOS. K vytvoření scénáře, zvolte jeden z šablony scénáře. Tím se vygeneruje **Main.storyboard** v soubor **Průzkumníku řešení** vidíte na následující snímek obrazovky:
 
-![](introduction-to-xamarin-ios-for-visual-studio-images/solution-explorer-new.png "Main.storyboard soubor v Průzkumníku řešení")
+![Main.storyboard soubor v Průzkumníku řešení](introduction-to-xamarin-ios-for-visual-studio-images/solution-explorer-new.w157.png)
 
 Pokud chcete spustit vytvořením nebo úpravou vaše scénáře, dvakrát klikněte na `Main.storyboard` a otevře se v iOS Designer:
 

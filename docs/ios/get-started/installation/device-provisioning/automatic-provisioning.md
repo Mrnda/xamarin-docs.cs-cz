@@ -1,35 +1,46 @@
 ---
 title: Automatické zřizování
-description: Po úspěšné instalaci Xamarin.iOS na další krok v vývoj pro iOS je ke zřízení zařízení s iOS. Tato příručka prozkoumá pomocí automatické přihlašování v sadě Visual Studio pro Mac požadavků vývoj certifikátů a profilů.
+description: Po úspěšné instalaci Xamarin.iOS na další krok v vývoj pro iOS je ke zřízení zařízení s iOS. Tato příručka prozkoumá požadavek vývoj certifikátů a profilů pomocí automatické přihlašování.
 ms.prod: xamarin
 ms.assetid: 81FCB2ED-687C-40BC-ABF1-FB4303034D01
 ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
-ms.date: 11/17/2017
-ms.openlocfilehash: 01818d2870c7cf59a0f15385dbb3565f07400ff0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/06/2018
+ms.openlocfilehash: 0e2ce758da2951efa0508e76cdf4eaac5384fa6b
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="automatic-provisioning"></a>Automatické zřizování
 
-_Po úspěšné instalaci Xamarin.iOS na další krok v vývoj pro iOS je ke zřízení zařízení s iOS. Tato příručka prozkoumá pomocí automatické přihlašování v sadě Visual Studio pro Mac požadavků vývoj certifikátů a profilů._
+_Po úspěšné instalaci Xamarin.iOS na další krok v vývoj pro iOS je ke zřízení zařízení s iOS. Tato příručka prozkoumá požadavek vývoj certifikátů a profilů pomocí automatické přihlašování._
 
 ## <a name="requirements"></a>Požadavky
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 - Visual Studio pro Mac 7.3 nebo větší
 - Xcode 9 nebo vyšší
 
-> [!IMPORTANT]
-> Tato příručka ukazuje, jak používat Visual Studio pro Mac k nastavení zařízení se systémem Apple pro nasazení a nasazení aplikace. Pro ruční postup k tomu nebo chcete-li to provést pomocí sady Visual Studio v systému Windows, je doporučeno, postupujte podle podrobných pokynů v [ručního zřizování](~/ios/get-started/installation/device-provisioning/manual-provisioning.md) průvodce.
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+- Visual Studio 2017 verze 15.7 (nebo novější)
+
+Také musí spárována hostitele sestavení Mac, který má následující:
+
+- Xcode 9 nebo vyšší
+
+-----
 
 ## <a name="enabling-automatic-signing"></a>Povolení automatické přihlašování
 
-Před zahájením procesu automatického podepisování, měli ujistit, že máte Apple ID přidat v sadě Visual Studio pro Mac, jak je popsáno v [správy účtů Apple](~/cross-platform/macios/apple-account-management.md) průvodce. Po přidání Apple ID, můžete použít všechny přidružené _Team_. To umožňuje certifikátů, profily a další ID má být provedeno s týmem. ID se také používá k vytvoření týmu předponu pro ID aplikace, které budou zahrnuty v profilu zřizování. To umožní Apple, kdo Řekněme, že jste jsou.
+Před zahájením procesu automatického podepisování, měli ujistit, že máte Apple ID přidat v sadě Visual Studio, jak je popsáno v [správy účtů Apple](~/cross-platform/macios/apple-account-management.md) průvodce. Po přidání Apple ID, můžete použít všechny přidružené _Team_. To umožňuje certifikátů, profily a další ID má být provedeno s týmem. ID se také používá k vytvoření týmu předponu pro ID aplikace, které budou zahrnuty v profilu zřizování. To umožní Apple, kdo Řekněme, že jste jsou.
 
 Automaticky podepsání vaší aplikace pro nasazení na zařízení s iOS, postupujte takto:
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. Otevřete projekt pro iOS v sadě Visual Studio for Mac.
 
@@ -47,11 +58,31 @@ Automaticky podepsání vaší aplikace pro nasazení na zařízení s iOS, post
 
     Pokud automatické podepisování selže **automatické podpisový pad** zobrazí z důvodu chyby.
 
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+1. Spárujte Visual Studio 2017 na Mac, jak je popsáno v [pár na Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) průvodce.
+
+2. Otevřete tak, že vyberete možnosti zřizování **Projekt > zřizování vlastnosti...**
+
+3. Vyberte **automaticky zřizování** schéma:
+
+    ![Výběr automatického schématu](automatic-provisioning-images/prov4.png)
+
+4. Vyberte váš tým z **Team** – pole se seznamem zahájíte proces automatického podepisování.
+
+    ![Výběr týmu](automatic-provisioning-images/prov3.png)
+
+4. Spustí se proces automatického podepisování. Visual Studio pokusí ke generování ID aplikace, profil pro zřizování a podpisové identity použít tyto artefakty pro podepisování. Zobrazí se proces generace ve výstupu sestavení:
+
+    ![Výstup zobrazuje generování artefaktů sestavení](automatic-provisioning-images/prov5.png)
+
+-----
+
 ## <a name="triggering-automatic-provisioning"></a>Aktivuje automatické zřizování
 
 Pokud je povolena automatická podepisování, Visual Studio pro Mac zaktualizuje těchto artefaktů v případě potřeby při žádnou z následujících akcí dojít:
 
-* Zařízení s iOS je připojeno do počítače mac
+* Zařízení s iOS je připojeno do počítače Mac
     - Tato kontrola ověřuje automaticky zobrazíte, když je zařízení zaregistrované na portál pro vývojáře Apple. Pokud tomu tak není, bude ho přidat a vygenerovat nový profil pro zřizování, který jej obsahuje.
 * Je-li změnit ID sady prostředků aplikace
     - Tím se aktualizuje ID aplikace. Nový profil pro zřizování obsahující ID této aplikace se vytvoří.

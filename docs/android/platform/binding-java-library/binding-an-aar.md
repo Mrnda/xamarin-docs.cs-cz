@@ -6,12 +6,12 @@ ms.assetid: 380413B8-6A99-4BB8-B64C-3EAF9F359C22
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: 101fb28add97749549de9c44292a1ef99a717dde
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/11/2018
+ms.openlocfilehash: 54708a7cfd071f77968991c9fe4e52938697c9bb
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="binding-an-aar"></a>Vazba. AAR
 
@@ -82,7 +82,7 @@ Před zahájením pomocí následujících kroků, stáhněte si prosím tento p
 
 1.  Vytvoření nového projektu knihovny vazby od verze šablony knihovna pro Android vazby. Můžete použít Visual Studio pro Mac nebo Visual Studio (na následujících snímcích obrazovky zobrazit Visual Studio, ale je velmi podobný jako Visual Studio pro Mac). Název řešení **AarBinding**:
 
-    [![Vytvoření projektu AarBindings](binding-an-aar-images/01-new-bindings-library-vs-sml.png)](binding-an-aar-images/01-new-bindings-library-vs.png#lightbox)
+    [![Vytvoření projektu AarBindings](binding-an-aar-images/01-new-bindings-library-vs-sml.w157.png)](binding-an-aar-images/01-new-bindings-library-vs.w157.png#lightbox)
 
 2.  Šablona obsahuje **Jars** složku, kde můžete přidat vaše. AAR(s) na projekt knihovny vazby. Klikněte pravým tlačítkem myši **Jars** složky a vyberte **Přidat > existující položka**:
 
@@ -118,7 +118,7 @@ To využívat. Knihovny DLL v aplikaci Xamarin.Android, je nejprve nutno přidat
 
 1.  Vytváříme tuto aplikaci ve stejném řešení jako knihovně vazby ke zjednodušení tohoto návodu. (Aplikaci, která využívá knihovně vazby může také nacházet v jiné řešení.) Vytvoření nové aplikace Xamarin.Android: klikněte pravým tlačítkem na řešení a vyberte **přidat nový projekt**. Název nového projektu **BindingTest**:
 
-    [![Vytvoření nového projektu BindingTest](binding-an-aar-images/07-add-new-project-vs-sml.png)](binding-an-aar-images/07-add-new-project-vs.png#lightbox)
+    [![Vytvoření nového projektu BindingTest](binding-an-aar-images/07-add-new-project-vs-sml.w157.png)](binding-an-aar-images/07-add-new-project-vs.w157.png#lightbox)
 
 2.  Klikněte pravým tlačítkem myši **odkazy** uzlu **BindingTest** projektu a vyberte **přidat odkaz na...** :
 

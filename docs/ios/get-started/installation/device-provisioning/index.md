@@ -6,12 +6,12 @@ ms.assetid: CACA5236-3C90-F6DF-FD4E-0797B61670CE
 ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
-ms.date: 07/15/2017
-ms.openlocfilehash: e04ebd041c64d474fafe12c387f558e740773c98
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/06/2018
+ms.openlocfilehash: 5265ee366c7e3c0e79e54d320d3d6eb57c2fd92d
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="device-provisioning"></a>Zřizování zařízení
 
@@ -47,23 +47,14 @@ Tyto kroky Ujistěte se, že vše, co se vytvoří nebo použít během procesu 
 
 <a name="Provisioning_Profile" />
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
 ## <a name="provisioning-your-device"></a>Zřizování zařízení
 
-Existují dva způsoby, jak zřídit zařízení s iOS pomocí sady Visual Studio pro Mac:
+Existují dva způsoby, jak zřídit zařízení s iOS:
 
-* **Automaticky (doporučeno)** – vyberte **automaticky spravovat podepisování** možnost, v souboru Info.plist Visual Studio pro Mac automaticky vytvořit a spravovat identity přihlašování, ID aplikace a zřizování Profily.  Informace o tom, jak automaticky spravovat zřizování najdete v tématu [automatické zřizování](automatic-provisioning.md) průvodce. Toto je doporučený způsob zřizování zařízení s iOS.
+* **Automaticky (doporučeno)** – vyberte **automatické zřizování** schéma ve vašem projektu mít Visual Studio automaticky vytvořit a spravovat identity přihlašování, ID aplikace a profily zřizování. Informace o tom, jak automaticky spravovat zřizování najdete v tématu [automatické zřizování](automatic-provisioning.md) průvodce. Toto je doporučený způsob zřizování zařízení s iOS.
 
 * **Ručně** – podepisování identit, ID aplikace a profily zřizování můžete vytvořit a spravovat prostřednictvím portálu pro vývojáře Apple, jak je popsáno v [ručního zřizování](manual-provisioning.md) průvodce. Tyto artefakty potom je můžete spravovat jak je popsáno v [správy účtů Apple](~/cross-platform/macios/apple-account-management.md) průvodce.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-## <a name="provisioning-your-device"></a>Zřizování zařízení
-
-Pokyny o tom, jak nastavit zařízení se systémem Apple pro nasazení a nasazení aplikace pomocí sady Visual Studio v systému Windows, je doporučeno, postupujte podle podrobných pokynů v [ručního zřizování](manual-provisioning.md) průvodce.
-
------
 
 <a name="appservices" />
 
@@ -74,9 +65,6 @@ Apple poskytuje výběr speciální aplikační služby, označované taky jako 
 * Vytvoření ID aplikace se službami požadovaná aplikace.
 * Vytvořte novou [profil pro zřizování](#Provisioning_Profile) obsahující číslem ID této aplikace.
 * Nastavit oprávnění v projektu Xamarin.iOS
-
-> [!NOTE]
-> V současné době zřizování profily vytvořené v sadě Visual Studio pro Mac nebude do účtu oprávnění vybrané ve vašich projektů (Entitlements.plist). Tato funkce bude přidána v budoucích verzích rozhraní IDE. Pokud budete muset použít aplikační služby, je vhodné postupujte podle pokynů [ručního zřizování](manual-provisioning.md) průvodce.
 
 ## <a name="related-links"></a>Související odkazy
 

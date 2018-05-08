@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2017
-ms.openlocfilehash: 83fb7a03b3426631fcf772bcb3605fea44fd4f2b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3485a7ebf9c54c2aa084dd11f32cd028cbc68aff
+ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="user-interface"></a>Uživatelské rozhraní
 
@@ -51,7 +51,7 @@ Bitové kopie lze sdílet napříč platformami s Xamarin.Forms, může se jedna
 
 ## <a name="layoutslayoutsindexmd"></a>[Rozložení](layouts/index.md)
 
-Xamarin.Forms má několik rozložení pro organizační na obrazovce obsahu. `StackLayout`, `Grid`, `AbsoluteLayout`, `ScrollView`, a `RelativeLayout` každý lze vytvořit Krásný reagující uživatelské rozhraní.
+Xamarin.Forms má několik rozložení pro organizační na obrazovce obsahu. `StackLayout`, `Grid`, `FlexLayout`, `AbsoluteLayout`, `ScrollView`, a `RelativeLayout` každý lze vytvořit Krásný reagující uživatelské rozhraní.
 
 ## <a name="listviewlistviewindexmd"></a>[ListView](listview/index.md)
 
@@ -84,6 +84,10 @@ Xamarin.Forms obsahuje několik zobrazení pro prezentování a přijetí textu.
 ## <a name="themesthemesindexmd"></a>[Motivy](themes/index.md)
 
 Motivy Xamarin.Forms definovat konkrétní vzhled pro standardní ovládací prvky. Jakmile přidáte motiv na slovník prostředků aplikace, se změní vzhled standardní ovládací prvky.
+
+## <a name="visual-state-managervisual-state-managermd"></a>[Správce stavu Visual](visual-state-manager.md)
+
+Visual správce stavu poskytuje strukturovaných způsob, jak aktivují změny v uživatelském rozhraní z kódu, včetně rozložení, který přizpůsobení změnám v orientace zařízení nebo velikost.
 
 ## <a name="webviewwebviewmd"></a>[WebView](webview.md)
 
