@@ -6,12 +6,12 @@ ms.assetid: DF103686-4A92-40FA-9CF1-A9376293B13C
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
-ms.date: 05/02/2018
-ms.openlocfilehash: ee3e4c984072fc019fe3719aab650a44d3899911
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.date: 05/07/2018
+ms.openlocfilehash: bfdfeda5821b020d7948e583a63bf9ec7e8ee324
+ms.sourcegitcommit: daa089d41cfe1ed0456d6de2f8134cf96ae072b1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="resource-dictionaries"></a>Slovnících prostředků
 
@@ -21,16 +21,16 @@ Tyto objekty prostředků jsou uloženy ve slovníku prostředků. Tento článe
 
 ## <a name="overview"></a>Přehled
 
-A [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) je úložiště pro prostředky, které jsou používány k aplikaci Xamarin.Forms. Typické prostředky, které jsou uložené v `ResourceDictionary` zahrnují [styly](~/xamarin-forms/user-interface/styles/index.md), [řízení šablony](~/xamarin-forms/app-fundamentals/templates/control-templates/index.md), [dat šablony](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md), barvy a převaděče.
+A [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) je úložiště pro prostředky, které jsou používány k aplikaci Xamarin.Forms. Typické prostředky, které jsou uložené v `ResourceDictionary` zahrnují [styly](~/xamarin-forms/user-interface/styles/index.md), [řízení šablony](~/xamarin-forms/app-fundamentals/templates/control-templates/index.md), [dat šablony](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md), barvy a převaděče.
 
 V jazyce XAML, prostředky, které jsou uložené v `ResourceDictionary` lze poté načíst a použít na elementy pomocí `StaticResource` – rozšíření značek. V jazyce C#, může být také definováno prostředky v `ResourceDictionary` a načíst a použít na elementy pomocí indexeru se na základě řetězce. Je však jen málo výhod pomocí `ResourceDictionary` v jazyce C#, jako sdílené objekty můžete jednoduše ukládat jako pole nebo vlastnosti a získat přístup přímo bez nutnosti první je načtou ze slovníku.
 
 ## <a name="creating-and-consuming-a-resourcedictionary"></a>Vytvoření a použití ResourceDictionary
 
-Prostředky jsou definovány v [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) který je pak nastaven na jednu z následujících `Resources` vlastnosti:
+Prostředky jsou definovány v [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) který je pak nastaven na jednu z následujících `Resources` vlastnosti:
 
-- [ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.Resources/) Vlastnosti třídy, která je odvozena z [`Application`](https://developer.xamarin.com/api/type/Xamarin.Forms.Application/)
-- [ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Resources/) Vlastnosti třídy, která je odvozena z ['VisualElement.](https://developer.xamarin.com/api/type/Xamarin.Forms.Application/)
+- [ `Resources` ](xref:Xamarin.Forms.Application.Resources) Vlastnosti třídy, která je odvozena z [`Application`](xref:Xamarin.Forms.Application)
+- [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) Vlastnosti třídy, která je odvozena z ['VisualElement.](xref:Xamarin.Forms.Application)
 
 Xamarin.Forms program obsahuje pouze jednu třídu, která je odvozena z `Application` , ale často využívá mnoho tříd, které jsou odvozeny od `VisualElement`, včetně stránky, rozložení a ovládací prvky. Každý z těchto objektů může mít jeho `Resources` vlastnost nastavena na hodnotu `ResourceDictionary`. Volba umístění konkrétní `ResourceDictionary` ovlivňuje, kde je možné prostředky:
 
@@ -58,7 +58,7 @@ Následující XAML zobrazuje prostředky, které jsou definované úrovni aplik
 </Application>
 ```
 
-To `ResourceDictionary` definuje tři [ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/) prostředky a [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) prostředků. Další informace o `App` třídy najdete v tématu [– třída aplikace](~/xamarin-forms/app-fundamentals/application-class.md).
+To `ResourceDictionary` definuje tři [ `Color` ](xref:Xamarin.Forms.Color) prostředky a [ `Style` ](xref:Xamarin.Forms.Style) prostředků. Další informace o `App` třídy najdete v tématu [– třída aplikace](~/xamarin-forms/app-fundamentals/application-class.md).
 
 Počínaje Xamarin.Forms 3.0, explicitní `ResourceDictionary` značky nejsou potřeba. `ResourceDictionary` Objekt se vytvoří automaticky a můžete vložit přímo mezi prostředky `Resources` element vlastnosti značky:
 
@@ -77,7 +77,7 @@ Počínaje Xamarin.Forms 3.0, explicitní `ResourceDictionary` značky nejsou po
 </Application>
 ```
 
-Každý prostředek má klíč, který je zadán pomocí `x:Key` atribut, který se stane klíče slovníku v `ResourceDictionary`. Klíč se používá k načtení prostředku z `ResourceDictionary` podle [ `StaticResource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.StaticResourceExtension/) – rozšíření značek, jak je ukázáno v následujícím příkladu kódu XAML, který ukazuje další prostředky, které jsou definované v rámci `StackLayout`:
+Každý prostředek má klíč, který je zadán pomocí `x:Key` atribut, který se stane klíče slovníku v `ResourceDictionary`. Klíč se používá k načtení prostředku z `ResourceDictionary` podle [ `StaticResource` ](xref:Xamarin.Forms.Xaml.StaticResourceExtension) – rozšíření značek, jak je ukázáno v následujícím příkladu kódu XAML, který ukazuje další prostředky, které jsou definované v rámci `StackLayout`:
 
 ```xaml
 <StackLayout Margin="0,20,0,0">
@@ -105,7 +105,7 @@ Každý prostředek má klíč, který je zadán pomocí `x:Key` atribut, který
 </StackLayout>
 ```
 
-První [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) instance načte a zpracuje `LabelPageHeadingStyle` prostředků, které jsou definované na úrovni aplikace `ResourceDictionary`, s druhou `Label` instance načítání a využívají `LabelNormalStyle`prostředků, které jsou definované na úrovni řízení `ResourceDictionary`. Podobně [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) instance načte a zpracuje `NormalTextColor` prostředků, které jsou definované na úrovni aplikace `ResourceDictionary`a `MediumBoldText` prostředků, které jsou definované na úrovni řízení `ResourceDictionary`. Výsledkem je vidět na následujících snímcích obrazovky vzhled:
+První [ `Label` ](xref:Xamarin.Forms.Label) instance načte a zpracuje `LabelPageHeadingStyle` prostředků, které jsou definované na úrovni aplikace `ResourceDictionary`, s druhou `Label` instance načítání a využívají `LabelNormalStyle`prostředků, které jsou definované na úrovni řízení `ResourceDictionary`. Podobně [ `Button` ](xref:Xamarin.Forms.Button) instance načte a zpracuje `NormalTextColor` prostředků, které jsou definované na úrovni aplikace `ResourceDictionary`a `MediumBoldText` prostředků, které jsou definované na úrovni řízení `ResourceDictionary`. Výsledkem je vidět na následujících snímcích obrazovky vzhled:
 
 [![](resource-dictionaries-images/screenshots-sml.png "Využívání prostředků ResourceDictionary")](resource-dictionaries-images/screenshots.png#lightbox "spotřebovávat ResourceDictionary prostředků")
 
@@ -144,7 +144,7 @@ Původní `PageBackgroundColor` a `NormalTextColor` instance, které jsou defino
 
 [![](resource-dictionaries-images/overridding-screenshots-sml.png "Přepsání ResourceDictionary prostředky")](resource-dictionaries-images/overridding-screenshots.png#lightbox "přepsání ResourceDictionary prostředky")
 
-Všimněte si však, že na pozadí panelu [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) stále žlutý, protože [ `BarBackgroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.NavigationPage.BarBackgroundColor/) je nastavena na hodnotu `PageBackgroundColor` prostředků, které jsou definované v aplikaci úroveň `ResourceDictionary`.
+Všimněte si však, že na pozadí panelu [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) stále žlutý, protože [ `BarBackgroundColor` ](xref:Xamarin.Forms.NavigationPage.BarBackgroundColor) je nastavena na hodnotu `PageBackgroundColor` prostředků, které jsou definované v aplikaci úroveň `ResourceDictionary`.
 
 Zde je další způsob myslet `ResourceDictionary` přednost před: při XAML analyzátor narazí `StaticResource`, vyhledá odpovídající klíč pomocí procházející vizuální strojové struktuře, použití na první shodu najde. Pokud toto hledání končí na stránce a klíč ještě nebyl nalezen, analyzátor XAML vyhledá `ResourceDictionary` připojené k `App` objektu. Pokud ještě není nalezen klíč, je vyvolána výjimka.
 
@@ -154,7 +154,7 @@ Třída odvozená z `ResourceDictionary` může být také v samostatném samost
 
 Pokud chcete vytvořit takový soubor, přidejte nový **zobrazení obsahu** nebo **obsahu stránce** položku do projektu (ale ne **zobrazení obsahu** nebo **obsahu stránce** s jenom soubor jazyka C#). V souboru XAML i v souboru C#, změňte název základní třídy z `ContentView` nebo `ContentPage` k `ResourceDictionary`. Název základní třídy v souboru XAML je element nejvyšší úrovně.
 
-Následující příklad ukazuje XAML [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) s názvem `MyResourceDictionary`:
+Následující příklad ukazuje XAML [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) s názvem `MyResourceDictionary`:
 
 ```xaml
 <ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
@@ -198,10 +198,10 @@ Tato úloha vyžaduje slovnících sloučené prostředků.
 
 ## <a name="merged-resource-dictionaries"></a>Slovníky sloučených prostředků
 
-Slovnících prostředků sloučené kombinovat jeden nebo více `ResourceDictionary` do jiné instance `ResourceDictionary`. To provedete v souboru XAML nastavením [ `MergedDictionaries` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ResourceDictionary.MergedDictionaries/) vlastnost, která má jeden nebo více slovnících prostředků, které budou sloučena do aplikace, stránka nebo ovládací prvek úroveň `ResourceDictionary`.
+Slovnících prostředků sloučené kombinovat jeden nebo více `ResourceDictionary` do jiné instance `ResourceDictionary`. To provedete v souboru XAML nastavením [ `MergedDictionaries` ](xref:Xamarin.Forms.ResourceDictionary.MergedDictionaries) vlastnost, která má jeden nebo více slovnících prostředků, které budou sloučena do aplikace, stránka nebo ovládací prvek úroveň `ResourceDictionary`.
 
 > [!IMPORTANT]
-> `ResourceDictionary` také definuje [ `MergedWith` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ResourceDictionary.MergedWith/) vlastnost. Nepoužívejte tuto vlastnost; se už nepoužívá od Xamarin.Forms 3.0.
+> `ResourceDictionary` také definuje [ `MergedWith` ](xref:Xamarin.Forms.ResourceDictionary.MergedWith) vlastnost. Nepoužívejte tuto vlastnost; se už nepoužívá od Xamarin.Forms 3.0.
 
 A instanci `MyResourceDictionary` by se daly sloučit do aplikací, stránka nebo ovládací prvek úroveň `ResourceDictionary`. Následující příklad kódu XAML ukazuje ho slučování do úrovně stránky `ResourceDictionary` pomocí `MergedDictionaries` vlastnost:
 
@@ -247,10 +247,10 @@ Tento kód ukazuje pouze instance `MyResourceDictionary` se přidává do `Resou
 
 Může být jen jedna `MergedDictionaries` tématu `ResourceDictionary`, ale můžete dávat tolik `ResourceDictionary` instance zde tak, jak chcete.
 
-Při slučování [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) prostředky sdílet stejné `x:Key` hodnoty atributu, Xamarin.Forms používá následující prioritu prostředků:
+Při slučování [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) prostředky sdílet stejné `x:Key` hodnoty atributu, Xamarin.Forms používá následující prioritu prostředků:
 
 1. Prostředky místní do slovníku prostředků.
-1. Prostředky obsažené v slovník prostředků, který byl sloučit prostřednictvím nepoužívané [ `MergedWith` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ResourceDictionary.MergedWith/) vlastnost.
+1. Prostředky obsažené v slovník prostředků, který byl sloučit prostřednictvím nepoužívané [ `MergedWith` ](xref:Xamarin.Forms.ResourceDictionary.MergedWith) vlastnost.
 1. Prostředky obsažené ve slovnících prostředků, které byly slučovány prostřednictvím `MergedDictionaries` kolekce, v pořadí uvedeném v `MergedDictionaries` vlastnost.
 
 > [!NOTE]
@@ -258,7 +258,7 @@ Při slučování [ `ResourceDictionary` ](https://developer.xamarin.com/api/typ
 
 ## <a name="merging-dictionaries-in-xamarinforms-30"></a>Slučování slovníků v Xamarin.Forms 3.0
 
-Od verze 3.0 Xamarin.Forms, proces sloučení `ResourceDictionaries` se stal poněkud snadnější a flexibilnější. `MergedDictionaries` Již nejsou potřebné značky element vlastnosti. Místo toho můžete přidat do slovníku prostředků jiného `ResourceDictionary` značky s novým [ `Source` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ResourceDictionary.Source/) vlastnost nastavena na název souboru XAML s prostředky:
+Od verze 3.0 Xamarin.Forms, proces sloučení `ResourceDictionaries` se stal poněkud snadnější a flexibilnější. `MergedDictionaries` Již nejsou potřebné značky element vlastnosti. Místo toho můžete přidat do slovníku prostředků jiného `ResourceDictionary` značky s novým [ `Source` ](xref:Xamarin.Forms.ResourceDictionary.Source) vlastnost nastavena na název souboru XAML s prostředky:
 
 ```xaml
 <ContentPage ...>
@@ -298,10 +298,10 @@ Toto nové syntaxe nemá _není_ doložit `MyResourceDictionary` – třída. M�
 
 ## <a name="summary"></a>Souhrn
 
-Jak vytvářet a využívat popsané v tomto článku [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)a způsob sloučení slovnících prostředků. A `ResourceDictionary` umožňuje prostředky definované na jednom místě, a znovu použít v celé aplikaci Xamarin.Forms.
+Jak vytvářet a využívat popsané v tomto článku [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)a způsob sloučení slovnících prostředků. A `ResourceDictionary` umožňuje prostředky definované na jednom místě, a znovu použít v celé aplikaci Xamarin.Forms.
 
 ## <a name="related-links"></a>Související odkazy
 
 - [Slovnících prostředků (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/xaml/resourcedictionaries/)
 - [Styly](~/xamarin-forms/user-interface/styles/index.md)
-- [ResourceDictionary](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)
+- [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)

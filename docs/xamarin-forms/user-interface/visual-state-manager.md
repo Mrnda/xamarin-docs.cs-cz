@@ -7,10 +7,10 @@ ms.technology: xamarin-forms
 ms.custom: xamu-video
 author: charlespetzold
 ms.author: chape
-ms.date: 05/01/2018
-ms.openlocfilehash: 15519e504f7eec7b85bacb439e729b8be2422888
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
-ms.translationtype: MT
+ms.date: 05/07/2018
+ms.openlocfilehash: f511f5c33b947704a42df850d2772c0b26511173
+ms.sourcegitcommit: daa089d41cfe1ed0456d6de2f8134cf96ae072b1
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
 ---
@@ -30,7 +30,7 @@ V původní verze správce stavu Visual Xamarin.Florms definuje jednu skupinu vi
 - "Zakázáno"
 - "Zaměřuje"
 
-Tato skupina visual stavu je podporována pro všechny třídy, které jsou odvozeny od [ `VisualElement` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualElement/), což je základní třídu pro [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) a [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/). 
+Tato skupina visual stavu je podporována pro všechny třídy, které jsou odvozeny od [ `VisualElement` ](xref:Xamarin.Forms.VisualElement), což je základní třídu pro [ `View` ](xref:Xamarin.Forms.View) a [ `Page` ](xref:Xamarin.Forms.Page). 
 
 Můžete také definovat vlastní skupiny visual stavu a visual stavy, jako tento článek popisuje.
 
@@ -73,9 +73,9 @@ V dalším kroku vložit `VisualStateManager.VisualStateGroups` značky mezi tyt
 
 To může vypadat trochu neobvyklé. Za normálních okolností je pouze kód, který se zobrazí mezi dvě značky toto řazení pro obsah nebo vlastnost elementy a `VisualStateManager.VisualStateGroups` značka je ani jeden z nich.
 
-Toto je syntaxe právní XAML, protože [ `VisualStateGroups` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualStateManager.VisualStateGroupsProperty/) připojené vazbu vlastnost definované [ `VisualStateManager` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualStateManager.VisualStateGroups) třídy. (Další informace o přidružené vlastnosti vazbu, najdete v článku [přidružené vlastnosti](~/xamarin-forms/xaml/attached-properties.md).) Jedná se jak `VisualStateGroups` vlastnost je připojen k `Entry` objektu.
+Toto je syntaxe právní XAML, protože [ `VisualStateGroups` ](xref:Xamarin.Forms.VisualStateManager.VisualStateGroupsProperty) připojené vazbu vlastnost definované [ `VisualStateManager` ](xref:Xamarin.Forms.VisualStateManager) třídy. (Další informace o přidružené vlastnosti vazbu, najdete v článku [přidružené vlastnosti](~/xamarin-forms/xaml/attached-properties.md).) Jedná se jak `VisualStateGroups` vlastnost je připojen k `Entry` objektu.
 
-`VisualStateGroups` Vlastnost je typu [ `VisualStateGroupList` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualStateGroupList/), což je kolekce [ `VisualStateGroup` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualStateGroup/) objekty. V rámci `VisualStateManager.VisualStateGroups` značky, vložte pár `VisualStateGroup` značky pro každou skupinu visual stavy, které chcete zahrnout:
+`VisualStateGroups` Vlastnost je typu [ `VisualStateGroupList` ](xref:Xamarin.Forms.VisualStateGroupList), což je kolekce [ `VisualStateGroup` ](xref:Xamarin.Forms.VisualStateGroup) objekty. V rámci `VisualStateManager.VisualStateGroups` značky, vložte pár `VisualStateGroup` značky pro každou skupinu visual stavy, které chcete zahrnout:
 
 ```xaml
 <Entry FontSize="18">
@@ -93,7 +93,7 @@ Všimněte si, že `VisualStateGroup` má `x:Name` atribut, který určuje náze
 <VisualStateGroup Name="CommonStates">
 ```
 
-`VisualStateGroup` Třída definuje vlastnost s názvem [ `States` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualStateGroup/States/), což je kolekce [ `VisualState` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualState/) objekty. `States` Vlastnost obsahu je `VisualStateGroups` , můžete zahrnout `VisualState` přímo mezi značky `VisualStateGroup` značky.
+`VisualStateGroup` Třída definuje vlastnost s názvem [ `States` ](xref:Xamarin.Forms.VisualStateGroup.States), což je kolekce [ `VisualState` ](xref:Xamarin.Forms.VisualState) objekty. `States` Vlastnost obsahu je `VisualStateGroups` , můžete zahrnout `VisualState` přímo mezi značky `VisualStateGroup` značky.
 
 Dalším krokem je pro zahrnutí pár značky pro každý stav visual do této skupiny. Také lze je identifikovat pomocí `x:Name` nebo `Name`:
 
@@ -117,7 +117,7 @@ Dalším krokem je pro zahrnutí pár značky pro každý stav visual do této s
 </Entry>
 ```
 
-`VisualState` definuje vlastnost s názvem [ `Setters` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualState/Setters/), což je kolekce [ `Setter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Setter/) objekty. Tyto jsou stejné `Setter` objekty, které používáte ve [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) objektu.
+`VisualState` definuje vlastnost s názvem [ `Setters` ](xref:Xamarin.Forms.VisualState.Setters), což je kolekce [ `Setter` ](xref:Xamarin.Forms.Setter) objekty. Tyto jsou stejné `Setter` objekty, které používáte ve [ `Style` ](xref:Xamarin.Forms.Style) objektu.
 
 `Setters` je _není_ obsahu vlastnost `VisualState`, takže je nutné zahrnout značky elementu vlastnost pro `Setters` vlastnost:
 

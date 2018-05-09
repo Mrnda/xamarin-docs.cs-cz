@@ -6,12 +6,12 @@ ms.assetid: 809ECE88-EF08-4E9A-B389-A2DC08C51A6E
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
-ms.date: 02/16/2018
-ms.openlocfilehash: 1cb151cc5c741a020fcbb398441ed4958ec5980b
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.date: 05/04/2018
+ms.openlocfilehash: f4fe1bd753260f05dedb452655572d290c0781d0
+ms.sourcegitcommit: daa089d41cfe1ed0456d6de2f8134cf96ae072b1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="bound-services-in-xamarinandroid"></a>Vázaný služby v Xamarin.Android
 
@@ -42,8 +42,8 @@ Tato příručka popisuje postup rozšíření `Service` třídu pro implementac
 Existují tři součásti, které musí být implementován v pořadí pro aplikace pro Android využívat vázané služby:
 
 1. **Rozšíření `Service` třídy a metody zpětného volání životního cyklu implementovat** &ndash; tuto třídu bude obsahovat kód, který provede práci, kterou bude vyžádána služby. To bude možné podrobněji níže.
-2. **Vytvořte třídu, že implementuje `IServiceConnection`**  &ndash; tento objekt obsahuje metody zpětného volání, které upozornění klienta, pokud je připojený k (nebo ztratil připojení) ze služby. Připojení služby bude také zadejte odkaz na objekt, který může klient použít přímo komunikovat se službou. Tento odkaz se označuje jako _vazač_.
-3. **Vytvořte třídu, že implementuje `IBinder`**  &ndash; A _vazač_ implementace poskytuje rozhraní API, které klient používá ke komunikaci se službou. Vazač můžete buď zadat odkaz na službu vázané umožňuje metody, které má být volána přímo nebo vazač poskytnout klienta rozhraní API, který zapouzdřuje a skryje vázané službu z aplikace. `IBinder` Musíte zadat kód potřebné pro volání vzdálené procedury. Není nutné (nebo doporučené) k implementaci `IBinder` rozhraní přímo. `IBinder` Místo aplikace by měl rozšířit `Binder` který poskytuje většinu základní funkce vyžadují `IBinder`.
+2. **Vytvořte třídu, že implementuje `IServiceConnection`**  &ndash; toto rozhraní, poskytuje metody zpětného volání, bude vyvolána Android o upozornění klienta při připojení ke službě došlo ke změně, má tj klienta připojení nebo odpojení na Služba. Připojení služby bude také zadejte odkaz na objekt, který může klient použít přímo komunikovat se službou. Tento odkaz se označuje jako _vazač_.
+3. **Vytvořte třídu, že implementuje `IBinder`**  &ndash; A _vazač_ implementace poskytuje rozhraní API, které klient používá ke komunikaci se službou. Vazač můžete buď zadat odkaz na službu vázané umožňuje metody, které má být volána přímo nebo vazač poskytnout klienta rozhraní API, který zapouzdřuje a skryje vázané službu z aplikace. `IBinder` Musíte zadat kód potřebné pro volání vzdálené procedury. Není nutné (nebo doporučené) k implementaci `IBinder` rozhraní přímo. Místo toho by měla aplikace rozšířit `Binder` typ, který obsahuje většinu základní funkce vyžadují `IBinder`.
 4. **Spuštění a vytvoření vazby na služby** &ndash; po vytvoření připojení služby, vazač a služba aplikace pro Android je zodpovědný za spouštění služby a vytvoření vazby na ni.
 
 Každý z těchto kroků bude popsané v následující části obsahují další podrobnosti.

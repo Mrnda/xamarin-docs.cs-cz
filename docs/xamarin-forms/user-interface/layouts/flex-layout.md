@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 ms.custom: xamu-video
 author: charlespetzold
 ms.author: chape
-ms.date: 05/01/2018
-ms.openlocfilehash: 4aa2ea21c9cf2e9e646465ab7ad4aa0a01de433e
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
-ms.translationtype: MT
+ms.date: 05/07/2018
+ms.openlocfilehash: bba5007acb54852b9427c57c26aba6358c4c5771
+ms.sourcegitcommit: daa089d41cfe1ed0456d6de2f8134cf96ae072b1
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="the-xamarinforms-flexlayout"></a>Xamarin.Forms FlexLayout
 
 _Použijte FlexLayout překrývání nebo zabalení kolekce podřízené zobrazení._
 
-Platformě Xamarin.Forms [ `FlexLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexLayout/) je nového v Xamarin.Forms verze 3.0. Je založena na CSS [modulu rozložení flexibilní pole](http://www.w3.org/TR/css-flexbox-1/), běžně označovaný jako _flexibilní rozložení_ nebo _flexibilního pole_, takže volat, protože obsahuje mnoho flexibilní možnosti uspořádat podřízené objekty v rámci rozložení.
+Platformě Xamarin.Forms [ `FlexLayout` ](xref:Xamarin.Forms.FlexLayout) je nového v Xamarin.Forms verze 3.0. Je založena na CSS [modulu rozložení flexibilní pole](http://www.w3.org/TR/css-flexbox-1/), běžně označovaný jako _flexibilní rozložení_ nebo _flexibilního pole_, takže volat, protože obsahuje mnoho flexibilní možnosti uspořádat podřízené objekty v rámci rozložení.
 
 `FlexLayout` je podobná platformě Xamarin.Forms [ `StackLayout` ](~/xamarin-forms/user-interface/layouts/stack-layout.md) v tom, že ho můžete uspořádat podřízené vodorovně a svisle ve vrstvách. Ale `FlexLayout` se taky může zabalení své podřízené objekty, pokud jsou moc, aby se vešla do jednoho řádku nebo sloupce, a také obsahuje mnoho možností pro orientaci, zarovnání a přizpůsobení do různých velikost obrazovky.
 
@@ -65,11 +65,11 @@ Tady je této stránce se systémem iOS, Android a univerzální platformu Windo
 
 Tři vlastnosti `FlexLayout` se zobrazují v **SimpleStackPage.xaml** souboru:
 
-- [ `Direction` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.Direction/) Je nastavena na hodnotu [ `FlexDirection` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexDirection/) výčtu. Výchozí hodnota je `Row`. Nastavení vlastnosti na `Column` způsobí, že podřízené objekty daného `FlexLayout` musí být uspořádány do jednoho sloupce položek.
+- [ `Direction` ](xref:Xamarin.Forms.FlexLayout.Direction) Je nastavena na hodnotu [ `FlexDirection` ](xref:Xamarin.Forms.FlexDirection) výčtu. Výchozí hodnota je `Row`. Nastavení vlastnosti na `Column` způsobí, že podřízené objekty daného `FlexLayout` musí být uspořádány do jednoho sloupce položek.
 
     Když položky v `FlexLayout` jsou uspořádány ve sloupci a `FlexLayout` říká, že je mít svislé _hlavní ose_ a vodorovných _křížové osy_.
 
-- [ `AlignItems` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.AlignItems/) Vlastnost je typu [ `FlexAlignItems` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexAlignItems/) a určuje, jak jsou položky zarovnávat na křížové ose. `Center` Možnost způsobí, že každá položka být vodorovně zarovnaný na střed.
+- [ `AlignItems` ](xref:Xamarin.Forms.FlexLayout.AlignItems) Vlastnost je typu [ `FlexAlignItems` ](xref:Xamarin.Forms.FlexAlignItems) a určuje, jak jsou položky zarovnávat na křížové ose. `Center` Možnost způsobí, že každá položka být vodorovně zarovnaný na střed.
 
     Pokud jste používali `StackLayout` ne `FlexLayout` pro tuto úlohu by všechny položky center přiřazením `HorizontalOptions` vlastnost každé položky k `Center`. `HorizontalOptions` Vlastnost nefunguje pro podřízené objekty `FlexLayout`, ale tento jeden `AlignItems` vlastnost provede stejným cílem. Pokud potřebujete, můžete použít `AlignSelf` přidružená vlastnost vazbu k přepsání `AlignItems` vlastnost pro jednotlivé položky:
 
@@ -81,7 +81,7 @@ Tři vlastnosti `FlexLayout` se zobrazují v **SimpleStackPage.xaml** souboru:
 
     S touto změnou, tato `Label` je nastavený na levém okraji `FlexLayout` po pořadí čtení zleva doprava.
 
-- [ `JustifyContent` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.JustifyContent/) Vlastnost je typu [ `FlexJustify` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexJustify/)a určuje, jak jsou uspořádány položky na hlavní ose. `SpaceEvenly` Možnost přiděluje všechny velikost zbývajícího svislý prostor rovnoměrně mezi všechny položky a nad první položka a pod poslední položky.
+- [ `JustifyContent` ](xref:Xamarin.Forms.FlexLayout.JustifyContent) Vlastnost je typu [ `FlexJustify` ](xref:Xamarin.Forms.FlexJustify)a určuje, jak jsou uspořádány položky na hlavní ose. `SpaceEvenly` Možnost přiděluje všechny velikost zbývajícího svislý prostor rovnoměrně mezi všechny položky a nad první položka a pod poslední položky.
 
     Pokud jste používali `StackLayout`, je třeba přiřadit `VerticalOptions` vlastnost každé položky k `CenterAndExpand` k dosažení podobný vliv. Ale `CenterAndExpand` možnost by přidělit dvakrát tolik místa mezi každou položku než před první a za poslední položku. Mohou napodobovat `CenterAndExpand` možnost `VerticalOptions` nastavením `JustifyContent` vlastnost `FlexLayout` k `SpaceAround`.
 
@@ -112,7 +112,7 @@ Tyto `FlexLayout` vlastnosti jsou podrobněji popsána v části **[šesti vazbu
 
 `Direction` Vlastnost tohoto objektu `FlexLayout` není nastavena, takže má výchozí nastavení `Row`, což znamená, že podřízené objekty jsou uspořádány do řádků a na hlavní ose je vodorovné.
 
-[ `Wrap` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.Wrap/) Vlastnost je typ výčtu [ `FlexWrap` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexWrap/). Pokud existuje příliš mnoho položek pro řádek, potom nastavení této vlastnosti způsobí, že položky, které chcete zabalit na další řádek.
+[ `Wrap` ](xref:Xamarin.Forms.FlexLayout.Wrap) Vlastnost je typ výčtu [ `FlexWrap` ](xref:Xamarin.Forms.FlexWrap). Pokud existuje příliš mnoho položek pro řádek, potom nastavení této vlastnosti způsobí, že položky, které chcete zabalit na další řádek.
 
 Všimněte si, že `FlexLayout` je podřízená `ScrollView`. Pokud jsou moc velký počet řádků, který má velikost stránky, pak se `ScrollView` má výchozí `Orientation` vlastnost `Vertical` a umožňuje svislé posouvání.
 
@@ -398,14 +398,14 @@ Každý z `Label` zobrazení má šedé pozadí zobrazující místo přidělen�
 
 ### <a name="the-direction-property"></a>Vlastnost směr
 
-[ `Direction` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.Direction/) Vlastnost je typu [ `FlexDirection` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexDirection/), výčet s čtyři členy:
+[ `Direction` ](xref:Xamarin.Forms.FlexLayout.Direction) Vlastnost je typu [ `FlexDirection` ](xref:Xamarin.Forms.FlexDirection), výčet s čtyři členy:
 
 - `Column`
 - `ColumnReverse` (nebo "sloupec zpětného" v jazyce XAML)
 - `Row`, výchozí
 - `RowReverse` (nebo "řádek zpětného" v jazyce XAML)
 
-V jazyce XAML můžete zadat hodnotu této vlastnosti pomocí názvy členů výčtu na malá písmena, velká písmena, nebo smíšeném případu, nebo můžete použít dva další řetězce, které jsou uvedené v závorkách, které jsou stejné jako indikátory šablon stylů CSS. ("Sloupec zpětného" a "řádek zpětného" řetězce jsou definovány v [ `FlexDirectionTypeConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexDirectionTypeConverter/) třída používaná analyzátorem jazyka XAML.)
+V jazyce XAML můžete zadat hodnotu této vlastnosti pomocí názvy členů výčtu na malá písmena, velká písmena, nebo smíšeném případu, nebo můžete použít dva další řetězce, které jsou uvedené v závorkách, které jsou stejné jako indikátory šablon stylů CSS. ("Sloupec zpětného" a "řádek zpětného" řetězce jsou definovány v [ `FlexDirectionTypeConverter` ](xref:Xamarin.Forms.FlexDirectionTypeConverter) třída používaná analyzátorem jazyka XAML.)
 
 Tady je **experimentu** stránky zobrazující (zleva doprava), `Row` směr, `Column` směr, a `ColumnReverse` směr:
 
@@ -417,7 +417,7 @@ Všimněte si, že pro `Reverse` možnosti položky se spustí v pravé nebo dol
 
 ### <a name="the-wrap-property"></a>Vlastnost Wrap
 
-[ `Wrap` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.Wrap/) Vlastnost je typu [ `FlexWrap` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexWrap/), výčet se tři členy:
+[ `Wrap` ](xref:Xamarin.Forms.FlexLayout.Wrap) Vlastnost je typu [ `FlexWrap` ](xref:Xamarin.Forms.FlexWrap), výčet se tři členy:
 
 - `NoWrap`, výchozí
 - `Wrap`
@@ -433,7 +433,7 @@ Když `Wrap` je nastavena na `NoWrap` je omezené na hlavní ose (stejně jako t
 
 ### <a name="the-justifycontent-property"></a>Vlastnost JustifyContent
 
-[ `JustifyContent` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.JustifyContent/) Vlastnost je typu [ `FlexJustify` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexJustify/), výčet se šesti členy:
+[ `JustifyContent` ](xref:Xamarin.Forms.FlexLayout.JustifyContent) Vlastnost je typu [ `FlexJustify` ](xref:Xamarin.Forms.FlexJustify), výčet se šesti členy:
 
 - `Start` (nebo "flex-start" v jazyce XAML), výchozí
 - `Center`
@@ -452,7 +452,7 @@ Všechny tři snímcích obrazovky `Wrap` je nastavena na `Wrap`. `Start` Výcho
 
 ### <a name="the-alignitems-property"></a>Vlastnost AlignItems
 
-[ `AlignItems` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.AlignItems/) Vlastnost je typu [ `FlexAlignItems` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexAlignItems/), výčet s čtyři členy:
+[ `AlignItems` ](xref:Xamarin.Forms.FlexLayout.AlignItems) Vlastnost je typu [ `FlexAlignItems` ](xref:Xamarin.Forms.FlexAlignItems), výčet s čtyři členy:
 
 - `Stretch`, výchozí
 - `Center`
@@ -471,7 +471,7 @@ Pro všechny jednotlivé položky `AlignItems` monitorconfigurationoverride lze 
 
 ### <a name="the-aligncontent-property"></a>Vlastnost AlignContent
 
-[ `AlignContent` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.AlignContent/) Vlastnost je typu [ `FlexAlignContent` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexAlignContent/), výčet se sedm členy:
+[ `AlignContent` ](xref:Xamarin.Forms.FlexLayout.AlignContent) Vlastnost je typu [ `FlexAlignContent` ](xref:Xamarin.Forms.FlexAlignContent), výčet se sedm členy:
 
 - `Stretch`, výchozí
 - `Center`
@@ -501,7 +501,7 @@ V iOS screnshot jsou obě řádky v horní části; v systému Android – sním
 
 ### <a name="the-alignself-property"></a>Vlastnost AlignSelf
 
-[ `AlignSelf` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.AlignSelf/) Přidružená vlastnost vazbu je typu [ `FlexAlignSelf` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlexAlignContent/), výčet s pěti členy:
+[ `AlignSelf` ](xref:Xamarin.Forms.FlexLayout.AlignSelfProperty) Přidružená vlastnost vazbu je typu [ `FlexAlignSelf` ](xref:Xamarin.Forms.FlexAlignContent), výčet s pěti členy:
 
 - `Auto`, výchozí
 - `Stretch`
@@ -525,15 +525,15 @@ Všimněte si, že neexistuje žádný odkaz na `FlexLayout` nadřazené položk
 
 ### <a name="the-order-property"></a>Vlastnost pořadí
 
-[ `Order` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.Order/) Vlastnost je typu `int`. Výchozí hodnota je 0.
+[ `Order` ](xref:Xamarin.Forms.FlexLayout.OrderProperty) Vlastnost je typu `int`. Výchozí hodnota je 0.
 
 `Order` Vlastnost umožňuje změnit pořadí, podřízené objekty daného `FlexLayout` jsou uspořádány. Obvykle, děti `FlexLayout` jsou uspořádány je stejné pořadí, ve kterém se zobrazují v `Children` kolekce. Toto pořadí můžete změnit nastavením `Order` připojené vazbu vlastnosti na hodnotu nula celé číslo na jeden nebo více podřízených prvků. `FlexLayout` Pak uspořádá své podřízené objekty podle nastavení `Order` vlastnost v každé podřízené, ale podřízené objekty se stejnou `Order` nastavení jsou uspořádány v pořadí, ve kterém se zobrazují v `Children` kolekce.
 
 ### <a name="the-basis-property"></a>Vlastnost základ
 
-[ `Basis` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.Basis/) Přidružená vlastnost vazbu určuje množství místa, která je přidělena podřízenou `FlexLayout` na hlavní ose. Velikost určený pomocí `Basis` vlastnost je velikost na hlavní ose nadřazené `FlexLayout`. Jinými slovy `Basis` Určuje šířku podřízenou při podřízené objekty jsou řazeny řádků nebo výška při podřízené objekty jsou uspořádány do sloupců.
+[ `Basis` ](xref:Xamarin.Forms.FlexLayout.BasisProperty) Přidružená vlastnost vazbu určuje množství místa, která je přidělena podřízenou `FlexLayout` na hlavní ose. Velikost určený pomocí `Basis` vlastnost je velikost na hlavní ose nadřazené `FlexLayout`. Jinými slovy `Basis` Určuje šířku podřízenou při podřízené objekty jsou řazeny řádků nebo výška při podřízené objekty jsou uspořádány do sloupců.
 
-`Basis` Vlastnost je typu [ `FlexBasis` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexBasis/), struktury. Velikost může být zadané buď jednotky nezávislé na zařízení nebo jako procento velikosti `FlexLayout`. Výchozí hodnota `Basis` je statickou vlastnost `FlexBasis.Auto`, což znamená, že podřízená požadované šířky nebo výšky se používá.
+`Basis` Vlastnost je typu [ `FlexBasis` ](xref:Xamarin.Forms.FlexBasis), struktury. Velikost může být zadané buď jednotky nezávislé na zařízení nebo jako procento velikosti `FlexLayout`. Výchozí hodnota `Basis` je statickou vlastnost `FlexBasis.Auto`, což znamená, že podřízená požadované šířky nebo výšky se používá.
 
 V kódu, můžete nastavit `Basis` vlastnost `Label` s názvem `label` na 40 jednotky nezávislé na zařízení takto:
 
@@ -581,7 +581,7 @@ Snímek obrazovky iOS na levé straně ukazuje dva `Label` elementy právě uved
 
 ### <a name="the-grow-property"></a>Růst vlastnost
 
-[ `Grow` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.Grow/) Vlastnost je typu `int`. Výchozí hodnota je 0, a hodnota musí být větší než nebo rovna 0.
+[ `Grow` ](xref:Xamarin.Forms.FlexLayout.GrowProperty) Přidružená vlastnost vazbu je typu `int`. Výchozí hodnota je 0, a hodnota musí být větší než nebo rovna 0.
 
 `Grow` Vlastnost hrají roli při při `Wrap` je nastavena na `NoWrap` a řádek podřízených prvků má celková šířka menší než šířka `FlexLayout`, nebo sloupec podřízených prvků má kratší výška než `FlexLayout`. `Grow` Vlastnost určuje, jak pro rozdělení velikost zbývajícího prostoru mezi podřízené objekty.
 
@@ -597,7 +597,7 @@ Používání toto místo podřízené zobrazení, závisí na konkrétní typ p
 
 ### <a name="the-shrink-property"></a>Vlastnost zmenšení
 
-[ `Shrink` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FlexLayout.Shrink/) Vlastnost je typu `int`. Výchozí hodnota je 1 a hodnota musí být větší než nebo rovna 0.
+[ `Shrink` ](xref:Xamarin.Forms.FlexLayout.ShrinkProperty) Přidružená vlastnost vazbu je typu `int`. Výchozí hodnota je 1 a hodnota musí být větší než nebo rovna 0.
 
 `Shrink` Vlastnost hrají roli při `Wrap` je nastavena na `NoWrap` a je větší než šířka agregační šířka řádku podřízených prvků `FlexLayout`, nebo je větší než celková výška jeden sloupec podřízených prvků Výška `FlexLayout`. Obvykle `FlexLayout` se zobrazí tyto podřízené objekty podle constricting jejich velikost. `Shrink` Vlastnosti můžete určit, které podřízené objekty jsou uvedeny priority v zobrazení v jejich úplné velikosti.
 

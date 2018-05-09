@@ -84,6 +84,7 @@
 #### [Aktualizace aplikací Xamarin.Mac založených na rozhraní Unified API na 64bitovou verzi](~/cross-platform/macios/32-and-64/mac-64-bit.md?context=xamarin/mac)
 ### [Práce s nativní typy v multiplatformních aplikacích](~/cross-platform/macios/native-types-cross-platform.md?context=xamarin/mac)
 ### [Selektor implementace zásobníku HttpClient a protokolu SSL/TLS](~/cross-platform/macios/http-stack.md?context=xamarin/mac)
+### [Optimalizace buildu](~/cross-platform/macios/optimizations.md?context=xamarin/mac)
 ## [Pokročilé koncepty a vnitřní fungování](internals/index.md)
 ### [AOT](internals/aot.md)
 ### [Dostupná sestavení](~/cross-platform/internals/available-assemblies.md?context=xamarin/mac)

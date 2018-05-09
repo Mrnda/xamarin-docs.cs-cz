@@ -7,9 +7,9 @@ ms.technology: xamarin-forms
 ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/18/2018
-ms.openlocfilehash: 001c9f6f26fc96ca0fd0d25e150c5ec9409e552a
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.date: 05/07/2018
+ms.openlocfilehash: 3201c3161d66163cabffdb36465356192bdd3843
+ms.sourcegitcommit: daa089d41cfe1ed0456d6de2f8134cf96ae072b1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
@@ -21,27 +21,27 @@ _Lokalizace zprava doleva přidává podporu pro směr toku zprava doleva na pla
 > [!NOTE]
 > Lokalizace zprava doleva vyžaduje použití iOS 9 nebo vyšší a rozhraní API 17 nebo vyšší v systému Android.
 
-Směr toku je směr, ve kterém jsou prvky uživatelského rozhraní na stránce skenovalo oko. Některé jazyky, jako je arabština a hebrejština, vyžadují, aby prvky uživatelského rozhraní jsou nastíněny v směr toku zprava doleva. Toho lze dosáhnout nastavením [ `VisualElement.FlowDirection` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.FlowDirection/) vlastnost. Tato vlastnost získá nebo nastaví směr, ve které toku elementy uživatelského rozhraní v rámci žádnému nadřazenému prvku, který řídí jejich rozložení a musí být nastavena na jednu z [ `FlowDirection` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlowDirection/) hodnot výčtu:
+Směr toku je směr, ve kterém jsou prvky uživatelského rozhraní na stránce skenovalo oko. Některé jazyky, jako je arabština a hebrejština, vyžadují, aby prvky uživatelského rozhraní jsou nastíněny v směr toku zprava doleva. Toho lze dosáhnout nastavením [ `VisualElement.FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) vlastnost. Tato vlastnost získá nebo nastaví směr, ve které toku elementy uživatelského rozhraní v rámci žádnému nadřazenému prvku, který řídí jejich rozložení a musí být nastavena na jednu z [ `FlowDirection` ](xref:Xamarin.Forms.FlowDirection) hodnot výčtu:
 
-- [`LeftToRight`](https://developer.xamarin.com/api/field/Xamarin.Forms.FlowDirection.LeftToRight/)
-- [`RightToRight`](https://developer.xamarin.com/api/field/Xamarin.Forms.FlowDirection.RightToLeft/)
-- [`MatchParent`](https://developer.xamarin.com/api/field/Xamarin.Forms.FlowDirection.MatchParent/)
+- [`LeftToRight`](xref:Xamarin.Forms.FlowDirection.LeftToRight)
+- [`RightToRight`](xref:Xamarin.Forms.FlowDirection.RightToLeft)
+- [`MatchParent`](xref:Xamarin.Forms.FlowDirection.MatchParent)
 
-Nastavení [ `FlowDirection` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.FlowDirection/) vlastnost [ `RightToLeft` ](https://developer.xamarin.com/api/field/Xamarin.Forms.FlowDirection.RightToLeft/) v elementu obecně Nastaví zarovnání vpravo, pořadí čtení zprava doleva a rozložení ovládacího prvku, které jsou předávány z zprava doleva:
+Nastavení [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) vlastnost [ `RightToLeft` ](xref:Xamarin.Forms.FlowDirection.RightToLeft) v elementu obecně Nastaví zarovnání vpravo, pořadí čtení zprava doleva a rozložení ovládacího prvku, které jsou předávány z zprava doleva:
 
 [![TodoItemPage v arabské s směr toku zprava doleva](rtl-images/TodoItemPage-Arabic.png "TodoItemPage v arabské s směr toku zprava doleva")](rtl-images/TodoItemPage-Arabic-Large.png#lightbox "TodoItemPage v arabské s směr toku zprava doleva")
 
 > [!TIP]
-> Byste měli nastavit pouze [ `FlowDirection` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.FlowDirection/) vlastnost na počáteční rozložení. Tato změna za běhu způsobí, že nákladné rozložení proces, který bude mít vliv na výkon.
+> Byste měli nastavit pouze [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) vlastnost na počáteční rozložení. Tato změna za běhu způsobí, že nákladné rozložení proces, který bude mít vliv na výkon.
 
-Výchozí hodnota [ `FlowDirection` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.FlowDirection/) je hodnota vlastnosti pro element bez nadřazený [ `LeftToRight` ](https://developer.xamarin.com/api/field/Xamarin.Forms.FlowDirection.LeftToRight/), při výchozí `FlowDirection` pro element s nadřazeným [ `MatchParent`](https://developer.xamarin.com/api/field/Xamarin.Forms.FlowDirection.MatchParent/). Proto dědí element `FlowDirection` hodnotu vlastnosti z nadřazené ve vizuální strojové struktuře a libovolný element, můžete přepsat hodnotu získá z nadřazené.
+Výchozí hodnota [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) je hodnota vlastnosti pro element bez nadřazený [ `LeftToRight` ](xref:Xamarin.Forms.FlowDirection.LeftToRight), při výchozí `FlowDirection` pro element s nadřazeným [ `MatchParent`](xref:Xamarin.Forms.FlowDirection.MatchParent). Proto dědí element `FlowDirection` hodnotu vlastnosti z nadřazené ve vizuální strojové struktuře a libovolný element, můžete přepsat hodnotu získá z nadřazené.
 
 > [!TIP]
-> Při lokalizaci aplikace pro zprava doleva jazyky, nastavte [ `FlowDirection` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.FlowDirection/) vlastnost na stránce nebo kořenové rozložení. To způsobí, že všechny elementy, které obsahuje stránky, nebo kořenový rozložení, odpovídajícím způsobem odpovědět na směr toku.
+> Při lokalizaci aplikace pro zprava doleva jazyky, nastavte [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) vlastnost na stránce nebo kořenové rozložení. To způsobí, že všechny elementy, které obsahuje stránky, nebo kořenový rozložení, odpovídajícím způsobem odpovědět na směr toku.
 
 ## <a name="respecting-device-flow-direction"></a>Bere ohledy na zařízení směr toku
 
-Respektováním směr toku zařízení založená na vybraný jazyk a oblast je na volbu explicitní developer a neprobíhá automaticky. Jde dosáhnout nastavením [ `FlowDirection` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.FlowDirection/) vlastnost na stránce nebo kořenové rozložení k `static` [ `Device.FlowDirection` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Device.FlowDirection/) hodnotu:
+Respektováním směr toku zařízení založená na vybraný jazyk a oblast je na volbu explicitní developer a neprobíhá automaticky. Jde dosáhnout nastavením [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) vlastnost na stránce nebo kořenové rozložení k `static` [ `Device.FlowDirection` ](xref:Xamarin.Forms.Device.FlowDirection) hodnotu:
 
 ```xaml
 <ContentPage ... FlowDirection="{x:Static Device.FlowDirection}"> />
@@ -51,7 +51,7 @@ Respektováním směr toku zařízení založená na vybraný jazyk a oblast je 
 this.FlowDirection = Device.FlowDirection;
 ```
 
-Všechny podřízené elementy stránky nebo kořenové rozložení, bude ve výchozím nastavení pak dědit [ `Device.FlowDirection` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Device.FlowDirection/) hodnotu.
+Všechny podřízené elementy stránky nebo kořenové rozložení, bude ve výchozím nastavení pak dědit [ `Device.FlowDirection` ](xref:Xamarin.Forms.Device.FlowDirection) hodnotu.
 
 ## <a name="platform-setup"></a>Instalační program platformy
 
@@ -76,7 +76,7 @@ Další informace najdete v tématu [základy lokalizace v iOS](https://docs.mic
 Lokalizace zprava doleva může být testována pak změnou jazyk a oblast v simulátoru zařízení nebo na zprava doleva národního prostředí, která byla zadaná v **Info.plist**.
 
 > [!WARNING]
-> Pamatujte, že při změně jazyka a oblasti do zprava doleva národního prostředí v systému iOS, všechny [ `DatePicker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/) zobrazení bude vyvolána výjimka, pokud neuvedete prostředky požadované pro národní prostředí. Například při testování aplikace v arabština, který má `DatePicker`, ujistěte se, že **mideast** je vybraný v **internacionalizace** části **iOS sestavení** podokně.
+> Pamatujte, že při změně jazyka a oblasti do zprava doleva národního prostředí v systému iOS, všechny [ `DatePicker` ](xref:Xamarin.Forms.DatePicker) zobrazení bude vyvolána výjimka, pokud neuvedete prostředky požadované pro národní prostředí. Například při testování aplikace v arabština, který má `DatePicker`, ujistěte se, že **mideast** je vybraný v **internacionalizace** části **iOS sestavení** podokně.
 
 ### <a name="android"></a>Android
 
@@ -119,29 +119,29 @@ Lokalizace zprava doleva můžete otestovat pak můžete změnit jazyk a oblast 
 
 Lokalizace zprava doleva Xamarin.Forms aktuálně má několik omezení:
 
-- [`NavigationPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) umístění tlačítka panelu nástrojů položky umístění a přechodu animace se řídí zařízení národní prostředí, místo [ `FlowDirection` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.FlowDirection/) vlastnost.
-- [`CarouselPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) Směr prstem není překlopit.
-- [`Image`](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) vizuální obsah není překlopit.
-- [`DisplayAlert`](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayAlert/p/System.String/System.String/System.String/) a [ `DisplayActionSheet` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayActionSheet/p/System.String/System.String/System.String/System.String[]/) řídí orientace zařízení národní prostředí, místo [ `FlowDirection` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.FlowDirection/) vlastnost.
-- [`WebView`](https://developer.xamarin.com/api/type/Xamarin.Forms.WebView/) obsah nedodržuje [ `FlowDirection` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.FlowDirection/) vlastnost.
+- [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) umístění tlačítka panelu nástrojů položky umístění a přechodu animace se řídí zařízení národní prostředí, místo [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) vlastnost.
+- [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) Směr prstem není překlopit.
+- [`Image`](xref:Xamarin.Forms.Image) vizuální obsah není překlopit.
+- [`DisplayAlert`](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayAlert/p/System.String/System.String/System.String/) a [ `DisplayActionSheet` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayActionSheet/p/System.String/System.String/System.String/System.String[]/) řídí orientace zařízení národní prostředí, místo [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) vlastnost.
+- [`WebView`](xref:Xamarin.Forms.WebView) obsah nedodržuje [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) vlastnost.
 - A `TextDirection` vlastnost musí být přidán, řídit zarovnání textu.
 
 ### <a name="ios"></a>iOS
 
-- [`Stepper`](https://developer.xamarin.com/api/type/Xamarin.Forms.Stepper/) orientace se řídí zařízení národní prostředí, místo [ `FlowDirection` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.FlowDirection/) vlastnost.
-- [`EntryCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.EntryCell/) zarovnání textu se řídí zařízení národní prostředí, místo [ `FlowDirection` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.FlowDirection/) vlastnost.
-- [`ContextActions`](https://developer.xamarin.com/api/property/Xamarin.Forms.Cell.ContextActions/) gesta a zarovnání nejsou vrátit zpět.
+- [`Stepper`](xref:Xamarin.Forms.Stepper) orientace se řídí zařízení národní prostředí, místo [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) vlastnost.
+- [`EntryCell`](xref:Xamarin.Forms.EntryCell) zarovnání textu se řídí zařízení národní prostředí, místo [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) vlastnost.
+- [`ContextActions`](xref:Xamarin.Forms.Cell.ContextActions) gesta a zarovnání nejsou vrátit zpět.
 
 ### <a name="android"></a>Android
 
-- [`SearchBar`](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/) orientace se řídí zařízení národní prostředí, místo [ `FlowDirection` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.FlowDirection/) vlastnost.
-- [`ContextActions`](https://developer.xamarin.com/api/property/Xamarin.Forms.Cell.ContextActions/) umístění se řídí zařízení národní prostředí, místo [ `FlowDirection` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.FlowDirection/) vlastnost.
+- [`SearchBar`](xref:Xamarin.Forms.SearchBar) orientace se řídí zařízení národní prostředí, místo [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) vlastnost.
+- [`ContextActions`](xref:Xamarin.Forms.Cell.ContextActions) umístění se řídí zařízení národní prostředí, místo [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) vlastnost.
 
 ### <a name="uwp"></a>UWP
 
-- [`Editor`](https://developer.xamarin.com/api/type/Xamarin.Forms.Editor/) zarovnání textu se řídí zařízení národní prostředí, místo [ `FlowDirection` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.FlowDirection/) vlastnost.
-- [`FlowDirection`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.FlowDirection/) Vlastnost není zdědí [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) podřízené objekty.
-- [`ContextActions`](https://developer.xamarin.com/api/property/Xamarin.Forms.Cell.ContextActions/) zarovnání textu se řídí zařízení národní prostředí, místo [ `FlowDirection` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.FlowDirection/) vlastnost.
+- [`Editor`](xref:Xamarin.Forms.Editor) zarovnání textu se řídí zařízení národní prostředí, místo [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) vlastnost.
+- [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) Vlastnost není zdědí [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) podřízené objekty.
+- [`ContextActions`](xref:Xamarin.Forms.Cell.ContextActions) zarovnání textu se řídí zařízení národní prostředí, místo [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) vlastnost.
 
 ## <a name="right-to-left-language-support-with-xamarinuniversity"></a>Právo na levém jazyk podporovat Xamarin.University
 

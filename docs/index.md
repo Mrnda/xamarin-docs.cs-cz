@@ -5,11 +5,11 @@ title: Dokumentace pro Xamarin
 description: Xamarin umožňuje vytvářet nativní aplikace pro Android, iOS a macOS pomocí kódu technologie .NET a uživatelských rozhraní specifických pro danou platformu. Xamarin.Forms umožňuje vytvářet nativní aplikace se sdíleným kódem uživatelského rozhraní napsané v jazycích C# nebo XAML.
 featureFlags:
 - clicktale
-ms.openlocfilehash: ba47459859866c140dd12186035ed6916393a4f2
-ms.sourcegitcommit: c9ebf456e1c6924956bedb13f4ea78ff09f7b1a0
+ms.openlocfilehash: 8f7f1432ab0dfc7a44a6b688ea998ec01812609a
+ms.sourcegitcommit: daa089d41cfe1ed0456d6de2f8134cf96ae072b1
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 05/07/2018
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -178,6 +178,44 @@ ms.lasthandoff: 05/04/2018
                                 </a>
                             </li>
                             <li>
+                                <a href="~/essentials/index.md?context=xamarin/xamarin-forms">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter x-hidden-focus">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img alt="Xamarin.Essentials" src="~/media/index/xamarin-essentials.svg" data-linktype="external">
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>Xamarin.Essentials</h3>
+                                                    <p>Multiplatformní rozhraní API pro běžné úlohy, jako je přístup k souborům, informace o zařízení, hardwarové funkce a další</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="~/xamarin-forms/data-cloud/index.md">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter x-hidden-focus">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img alt="Data & Cloud Services" src="~/media/index/xamarin-forms-data-cloud.svg?branch=master" data-linktype="external">
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>Datové a cloudové služby</h3>
+                                                    <p>Úložiště dat a přístup ke cloudovým službám, jako je například Microsoft Azure</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
                                 <a href="~/xamarin-forms/deploy-test/index.md">
                                     <div class="cardSize">
                                         <div class="cardPadding">
@@ -209,25 +247,6 @@ ms.lasthandoff: 05/04/2018
                                                 <div class="cardText">
                                                     <h3>Pokročilé koncepty a vnitřní fungování</h3>
                                                     <p>Jak funguje Xamarin.Forms</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="~/xamarin-forms/data-cloud/index.md">
-                                    <div class="cardSize">
-                                        <div class="cardPadding">
-                                            <div class="card">
-                                                <div class="cardImageOuter x-hidden-focus">
-                                                    <div class="cardImage bgdAccent1">
-                                                        <img alt="Data and Cloud Services" src="~/media/index/xamarin-forms-data-cloud.svg?branch=master" data-linktype="external">
-                                                    </div>
-                                                </div>
-                                                <div class="cardText">
-                                                    <h3>Datové a cloudové služby</h3>
-                                                    <p>Úložiště dat a přístup ke cloudovým službám, jako je například Microsoft Azure</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -373,18 +392,18 @@ ms.lasthandoff: 05/04/2018
                                 </a>
                             </li>
                             <li>
-                                <a href="~/android/deploy-test/index.md">
+                                <a href="~/essentials/index.md?context=xamarin/android">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Deployment and Testing" src="~/media/index/xamarin-cross-platform-deployment.svg?branch=master" data-linktype="external">
+                                                        <img alt="Xamarin.Essentials" src="~/media/index/xamarin-essentials.svg" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Nasazení a testování</h3>
-                                                    <p>Pokyny pro vytváření a nasazování aplikací a tipy, jak je s předstihem testovat</p>
+                                                    <h3>Xamarin.Essentials</h3>
+                                                    <p>Multiplatformní rozhraní API pro běžné úlohy, jako je přístup k souborům, informace o zařízení, hardwarové funkce a další</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -398,12 +417,31 @@ ms.lasthandoff: 05/04/2018
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Data and Cloud Services" src="~/media/index/xamarin-android-data-cloud.svg?branch=master" data-linktype="external">
+                                                        <img alt="Data & Cloud Services" src="~/media/index/xamarin-android-data-cloud.svg?branch=master" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Datové a cloudové služby</h3>
                                                     <p>Úložiště dat a přístup ke cloudovým službám</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="~/android/deploy-test/index.md">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter x-hidden-focus">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img alt="Deployment and Testing" src="~/media/index/xamarin-cross-platform-deployment.svg?branch=master" data-linktype="external">
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>Nasazení a testování</h3>
+                                                    <p>Pokyny pro vytváření a nasazování aplikací a tipy, jak je s předstihem testovat</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -549,18 +587,18 @@ ms.lasthandoff: 05/04/2018
                                 </a>
                             </li>
                             <li>
-                                <a href="~/ios/deploy-test/index.md">
+                                <a href="~/essentials/index.md?context=xamarin/ios">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Deployment and Testing" src="~/media/index/xamarin-cross-platform-deployment.svg?branch=master" data-linktype="external">
+                                                        <img alt="Xamarin.Essentials" src="~/media/index/xamarin-essentials.svg" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Nasazení a testování</h3>
-                                                    <p>Pokyny pro vytváření a nasazování aplikací a tipy, jak je s předstihem testovat</p>
+                                                    <h3>Xamarin.Essentials</h3>
+                                                    <p>Multiplatformní rozhraní API pro běžné úlohy, jako je přístup k souborům, informace o zařízení, hardwarové funkce a další</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -574,12 +612,31 @@ ms.lasthandoff: 05/04/2018
                                             <div class="card">
                                                 <div class="cardImageOuter x-hidden-focus">
                                                     <div class="cardImage bgdAccent1">
-                                                        <img alt="Data and Cloud Services" src="~/media/index/xamarin-ios-data-cloud.svg?branch=master" data-linktype="external">
+                                                        <img alt="Data & Cloud Services" src="~/media/index/xamarin-ios-data-cloud.svg?branch=master" data-linktype="external">
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Datové a cloudové služby</h3>
                                                     <p>Úložiště dat a přístup ke cloudovým službám</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="~/ios/deploy-test/index.md">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter x-hidden-focus">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img alt="Deployment and Testing" src="~/media/index/xamarin-cross-platform-deployment.svg?branch=master" data-linktype="external">
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>Nasazení a testování</h3>
+                                                    <p>Pokyny pro vytváření a nasazování aplikací a tipy, jak je s předstihem testovat</p>
                                                 </div>
                                             </div>
                                         </div>

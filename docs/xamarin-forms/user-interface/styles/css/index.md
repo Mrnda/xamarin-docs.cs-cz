@@ -7,9 +7,9 @@ ms.technology: xamarin-forms
 ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/28/2018
-ms.openlocfilehash: cb46744b3c0a2f50a02491cc4824dfd4cf847235
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.date: 05/07/2018
+ms.openlocfilehash: 811abacff330bf7b6e6240691cb6a15ebbd9d242
+ms.sourcegitcommit: daa089d41cfe1ed0456d6de2f8134cf96ae072b1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/07/2018
@@ -76,7 +76,7 @@ V Xamarin.Forms analyzovat a vyhodnocovány v modulu runtime, nikoli době potř
 [![Stránka Podrobnosti MonkeyApp s stylů CSS](css-images/MonkeyAppDetailPage.png "stránku s podrobnostmi MonkeyApp s stylů CSS")](css-images/MonkeyAppDetailPage-Large.png#lightbox "stránku s podrobnostmi MonkeyApp s stylů CSS")
 
 > [!NOTE]
-> Není možné aktuálně k úpravě stylu barvu pozadí [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) pomocí šablony stylů. Proto v ukázkové aplikaci [ `NavigationPage.BarBackgroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.NavigationPage.BarBackgroundColor/) je nastavena v kódu.
+> Není možné aktuálně k úpravě stylu barvu pozadí [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) pomocí šablony stylů. Proto v ukázkové aplikaci [ `NavigationPage.BarBackgroundColor` ](xref:Xamarin.Forms.NavigationPage.BarBackgroundColor) je nastavena v kódu.
 
 ## <a name="consuming-a-style-sheet"></a>Použití šablony stylů
 
@@ -91,7 +91,7 @@ Existuje několik přístupů, které slouží k načtení šablony stylů.
 
 ### <a name="xaml"></a>XAML
 
-Šablony stylů můžete načíst a analyzovat s [ `StyleSheet` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StyleSheets.StyleSheet/) třída před se přidává do [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) stránky:
+Šablony stylů můžete načíst a analyzovat s [ `StyleSheet` ](xref:Xamarin.Forms.StyleSheets.StyleSheet) třída před se přidává do [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) stránky:
 
 ```xaml
 <ContentPage ...>
@@ -102,12 +102,12 @@ Existuje několik přístupů, které slouží k načtení šablony stylů.
 </ContentPage>
 ```
 
-[ `StyleSheet.Source` ](https://developer.xamarin.com/api/property/Xamarin.Forms.StyleSheets.Source/) Vlastnost určuje šablony stylů jako identifikátor URI relativní k umístění souboru XAML nadřazených nebo relativní vůči kořenovému adresáři projektu, pokud identifikátor URI začíná `/`.
+[ `StyleSheet.Source` ](xref:Xamarin.Forms.Xaml.StyleSheetExtension.Source) Vlastnost určuje šablony stylů jako identifikátor URI relativní k umístění souboru XAML nadřazených nebo relativní vůči kořenovému adresáři projektu, pokud identifikátor URI začíná `/`.
 
 > [!WARNING]
 > Soubor CSS se nepodaří načíst, pokud je akce sestavení není nastavena na **EmbeddedResource**.
 
-Alternativně můžete načíst a analyzovat pomocí šablony stylů [ `StyleSheet` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StyleSheets.StyleSheet/) třídy podle vložené v `CDATA` části:
+Alternativně můžete načíst a analyzovat pomocí šablony stylů [ `StyleSheet` ](xref:Xamarin.Forms.StyleSheets.StyleSheet) třídy podle vložené v `CDATA` části:
 
 ```xaml
 <ContentPage ...>
@@ -126,7 +126,7 @@ Alternativně můžete načíst a analyzovat pomocí šablony stylů [ `StyleShe
 
 ### <a name="c"></a>C#
 
-V jazyce C#, můžete načíst jako vložený prostředek šablony stylů a přidat do [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) stránky:
+V jazyce C#, můžete načíst jako vložený prostředek šablony stylů a přidat do [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) stránky:
 
 ```csharp
 public partial class MyPage : ContentPage
@@ -144,7 +144,7 @@ public partial class MyPage : ContentPage
 
 První argument `StyleSheet.FromAssemblyResource` metoda je sestavení obsahující šablony stylů, zatímco druhý argument je `string` představující identifikátor prostředku. Identifikátor prostředku můžete získat **vlastnosti** okno, pokud je vybrána soubor CSS.
 
-Alternativně šablony stylů mohou být načteny z `StringReader` a přidají se do [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) stránky:
+Alternativně šablony stylů mohou být načteny z `StringReader` a přidají se do [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) stránky:
 
 ```csharp
 public partial class MyPage : ContentPage
@@ -179,7 +179,7 @@ stacklayout {
 }
 ```
 
-Tento selektor identifikuje všechny [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) elementů na stránky, které využívají šablony stylů a nastaví jejich okraje uniform tloušťka 20.
+Tento selektor identifikuje všechny [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) elementů na stránky, které využívají šablony stylů a nastaví jejich okraje uniform tloušťka 20.
 
 > [!NOTE]
 > `element` Selektor neidentifikuje dílčí třídy zadaného typu.
@@ -194,7 +194,7 @@ Elementy ve vizuální strojové struktuře lze vybrat základní třídou s mal
 }
 ```
 
-Tento selektor identifikuje všechny [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) prvky, které využívají šablony stylů a nastaví jejich pozadí barvu, která má `lightgray`.
+Tento selektor identifikuje všechny [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) prvky, které využívají šablony stylů a nastaví jejich pozadí barvu, která má `lightgray`.
 
 > [!NOTE]
 > `^base` Selektor je specifický pro Xamarin.Forms a není součástí specifikace šablon stylů CSS.
@@ -209,7 +209,7 @@ Jednotlivé elementy ve vizuální strojové struktuře lze vybrat pomocí malá
 }
 ```
 
-Tento výběr určuje element jejichž [ `StyleId` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.StyleId/) je nastavena na `listView`. Ale pokud `StyleId` není nastavena vlastnost, modulu pro výběr se vrátit k použití `x:Name` elementu. Proto v následujícím příkladu XAML `#listView` určují selektor [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) jejichž `x:Name` je atribut nastaven na `listView`a nastaví barvu pozadí jeho `lightgray`.
+Tento výběr určuje element jejichž [ `StyleId` ](xref:Xamarin.Forms.Element.StyleId) je nastavena na `listView`. Ale pokud `StyleId` není nastavena vlastnost, modulu pro výběr se vrátit k použití `x:Name` elementu. Proto v následujícím příkladu XAML `#listView` určují selektor [ `ListView` ](xref:Xamarin.Forms.ListView) jejichž `x:Name` je atribut nastaven na `listView`a nastaví barvu pozadí jeho `lightgray`.
 
 ```xaml
 <ContentPage ...>
@@ -241,7 +241,7 @@ Elementy s atributem určité třídy lze vybrat pomocí malá a velká písmena
 }
 ```
 
-Třídu CSS lze přiřadit k elementu XAML nastavením [ `StyleClass` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.StyleClass/) vlastnost elementu název třídy CSS. Proto v následujícím příkladu XAML styly definované `.detailPageTitle` třídy jsou přiřazeny k první [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/), při styly definované `.detailPageSubtitle` třídy jsou přiřazeny k druhý `Label`.
+Třídu CSS lze přiřadit k elementu XAML nastavením [ `StyleClass` ](xref:Xamarin.Forms.VisualElement.StyleClass) vlastnost elementu název třídy CSS. Proto v následujícím příkladu XAML styly definované `.detailPageTitle` třídy jsou přiřazeny k první [ `Label` ](xref:Xamarin.Forms.Label), při styly definované `.detailPageSubtitle` třídy jsou přiřazeny k druhý `Label`.
 
 ```xaml
 <ContentPage ...>
@@ -269,7 +269,7 @@ listview image {
 }
 ```
 
-Tento selektor identifikuje všechny [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) prvky, které jsou podřízené objekty [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) prvky a nastaví jejich výšky a šířky na 60. Proto v následujícím příkladu XAML `listview image` určují selektor [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) která je podřízená [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/)a nastaví jeho výška a šířka na 60.
+Tento selektor identifikuje všechny [ `Image` ](xref:Xamarin.Forms.Image) prvky, které jsou podřízené objekty [ `ListView` ](xref:Xamarin.Forms.ListView) prvky a nastaví jejich výšky a šířky na 60. Proto v následujícím příkladu XAML `listview image` určují selektor [ `Image` ](xref:Xamarin.Forms.Image) která je podřízená [ `ListView` ](xref:Xamarin.Forms.ListView)a nastaví jeho výška a šířka na 60.
 
 ```xaml
 <ContentPage ...>
@@ -308,7 +308,7 @@ stacklayout>image {
 }
 ```
 
-Tento selektor identifikuje všechny [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) prvky, které jsou přímo podřízené [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) prvky a nastaví jejich výšky a šířky na 200. Proto v následujícím příkladu XAML `stacklayout>image` určují selektor [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) , je přímé podřízená [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/)a nastaví jeho výška a šířka na 200.
+Tento selektor identifikuje všechny [ `Image` ](xref:Xamarin.Forms.Image) prvky, které jsou přímo podřízené [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) prvky a nastaví jejich výšky a šířky na 200. Proto v následujícím příkladu XAML `stacklayout>image` určují selektor [ `Image` ](xref:Xamarin.Forms.Image) , je přímé podřízená [ `StackLayout` ](xref:Xamarin.Forms.StackLayout)a nastaví jeho výška a šířka na 200.
 
 ```xaml
 <ContentPage ...>
@@ -401,7 +401,7 @@ Tyto vlastnosti nejsou aktuálně podporovány:
 - Rozložení vlastnosti (pole a mřížky).
 - Sdružená vlastnost vlastnosti, jako například `font`, a `border`.
 
-Kromě toho není žádná `inherit` hodnota a tak dědičnosti není podporován. Proto nelze, například nastavit `font-size` vlastnost rozložení a očekávají, že všechny [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) instancí v rozložení pro dědění hodnota. Jedinou výjimkou je `direction` vlastnosti, která má výchozí hodnotu z `inherit`.
+Kromě toho není žádná `inherit` hodnota a tak dědičnosti není podporován. Proto nelze, například nastavit `font-size` vlastnost rozložení a očekávají, že všechny [ `Label` ](xref:Xamarin.Forms.Label) instancí v rozložení pro dědění hodnota. Jedinou výjimkou je `direction` vlastnosti, která má výchozí hodnotu z `inherit`.
 
 ### <a name="color"></a>Barva
 
