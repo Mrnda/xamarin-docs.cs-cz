@@ -220,7 +220,7 @@
 #### [Sestavování balíčků APK specifických pro ABI](deploy-test/building-apps/abi-specific-apks.md)
 ### [Emulátor příkazového řádku](deploy-test/command-line-emulator.md)
 ### [Ladění](deploy-test/debugging/index.md)
-#### [Emulátor sady Android SDK](deploy-test/debugging/android-sdk-emulator/index.md)
+#### [Emulátor Google Android](deploy-test/debugging/android-sdk-emulator/index.md)
 ##### [Spouštění v emulátoru](deploy-test/debugging/android-sdk-emulator/running-the-emulator.md)
 ##### [Odstraňování potíží](deploy-test/debugging/android-sdk-emulator/troubleshooting.md)
 #### [Visual Studio Android Emulator](deploy-test/debugging/visual-studio-android-emulator.md)
