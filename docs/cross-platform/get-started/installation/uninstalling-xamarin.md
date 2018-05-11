@@ -3,15 +3,14 @@ title: Odinstalace Xamarin
 description: Odinstalace Xamarin produkty z počítače
 ms.prod: xamarin
 ms.assetid: b83a85ec-842a-444c-8f82-c2464eda099b
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 04/08/2017
-ms.openlocfilehash: ae01fdcefa06dbfe3412eeac427477d898fd6ea5
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.openlocfilehash: d1b88ad97a1cecaadd84226bca61c7f2b262438d
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="uninstalling-xamarin"></a>Odinstalace Xamarin
 
@@ -217,8 +216,8 @@ Xamarin byl podporován na následující:
 
 - [Visual Studio 2017](#uninstallvs2017)
 - [Visual Studio 2015](#uninstallvs2015)
-- [Visual Studio 2013](#uninstallvs2015) [**Unsupported**]
-- [Xamarin Studio](#uninstallxamarinstudio) [**Unsupported**]
+- [Visual Studio 2013](#uninstallvs2015) [**nepodporované**]
+- [Xamarin Studio](#uninstallxamarinstudio) [**nepodporované**]
 
 <a name="uninstallvs2017" />
 

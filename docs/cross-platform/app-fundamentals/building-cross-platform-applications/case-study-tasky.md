@@ -3,15 +3,14 @@ title: 'Případová studie: Tasky'
 description: Tento dokument popisuje, jak se zásadami vytváření aplikací a platformy byly použity v Tasky přenosné ukázkové aplikaci. Dotýká se na návrhu mobilních aplikací, zápisu společný kód pro nové použití a implementace projekty specifických pro platformy, které používají iOS, Android a Windows Phone platformy.
 ms.prod: xamarin
 ms.assetid: B581B2D0-9890-C383-C654-0B0E12DAD5A6
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 690edabd53752ff0347fdb232a4bbfcb1ba6e84d
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 1f8325bbc6b3f8aa40a08ca2c57605544ab0bc85
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="case-study-tasky"></a>Případová studie: Tasky
 

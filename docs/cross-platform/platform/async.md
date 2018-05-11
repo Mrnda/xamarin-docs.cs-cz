@@ -3,15 +3,14 @@ title: Async – přehled
 description: 'Nejnovější verzi jazyka C# – verze 5 – zavedená dvě nová klíčová slova a express asynchronních operací: async a operátoru await. Tato klíčová slova umožňuje psát jednoduché kód, který využívá Task Parallel Library provádět dlouhotrvající operace (například přístup k síti) v jiné vlákno a snadný přístup k výsledky při dokončení. Nejnovější verze Xamarin.iOS a Xamarin.Android podporu async a operátoru await – tento dokument obsahuje vysvětlení a příklady pomocí nové syntaxe s funkcí Xamarin.'
 ms.prod: xamarin
 ms.assetid: F87BF587-AB64-4C60-84B1-184CAE36ED65
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 638e16a47d30e1d4d61fe9e7d19a0245261e5d7f
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 5d6bb9581a4429502d9a70385b3ee2ff056f30ee
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="async-support-overview"></a>Přehled asynchronních podpory
 

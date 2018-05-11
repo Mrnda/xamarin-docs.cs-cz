@@ -1,21 +1,21 @@
 ---
-title: Spuštěný emulátoru sady SDK pro Android
-description: Postup ladění aplikace pomocí emulátoru Android SDK
+title: Spuštěný emulátor Google Android
+description: Postup ladění aplikace s emulátor Google Android
 ms.prod: xamarin
 ms.assetid: AEA165A4-D81A-411B-91DF-2DED2EED27B5
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 630520f88dd23d3860b5f42fbb9bc4eb35ca2c4b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0e290b24c0d7a98b1abaf647fe76e56867042645
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
-# <a name="running-the-android-sdk-emulator"></a>Spuštěný emulátoru sady SDK pro Android
+# <a name="running-the-google-android-emulator"></a>Spuštěný emulátor Google Android
 
-V tomto průvodci se dozvíte, jak ke spuštění virtuálního zařízení v Android emulátoru sady SDK pro ladění a testování vaší aplikace.
+V tomto průvodci se dozvíte, jak spustit virtuální zařízení v emulátor Google Android pro ladění a testování vaší aplikace.
 
 ## <a name="using-a-pre-configured-virtual-device"></a>Pomocí předem nakonfigurovaných virtuálního zařízení
 
@@ -80,13 +80,13 @@ Po výběru virtuálního zařízení z rozevírací nabídky zařízení, vyber
 
 -----
 
-Po spuštění emulátoru systému Android, bude Xamarin.Android nasazení aplikace na emulátoru. Na emulátoru běží aplikace s bitovou kopií nakonfigurované virtuální zařízení. Níže je zobrazena snímku obrazovky s příkladem emulátoru Android SDK (emulátoru běží prázdnou aplikaci volat **Moje aplikace**):
+Po spuštění emulátoru systému Android, bude Xamarin.Android nasazení aplikace na emulátoru. Na emulátoru běží aplikace s bitovou kopií nakonfigurované virtuální zařízení. Níže je zobrazena na příkladu snímek obrazovky emulátor Google Android (emulátoru běží prázdnou aplikaci volat **Moje aplikace**):
 
 ![Emulátor s prázdnou aplikaci](running-the-emulator-images/emulator-running.png)
 
 Emulátor, může být ponecháno systémem; není potřeba ho vypnout a restartovat při každém spuštění aplikace. Při prvním spuštění aplikace Xamarin.Android v emulátoru, Xamarin.Android sdílené runtime pro úroveň směrována rozhraní API je nainstalován, společně s aplikací. Instalace modulu CLR může chvíli trvat, takže počkejte. Instalace modulu runtime probíhá pouze v případě, že první aplikace Xamarin.Android je nasazen na emulátoru &ndash; následné nasazení je rychlejší, protože jenom aplikaci se zkopíruje do emulátoru.
 
-Další informace o použití emulátoru Android SDK naleznete v následujících tématech Android Developer:
+Další informace o používání emulátor Google Android najdete v následujících tématech Android Developer:
 
 -   [Navigace na obrazovce](https://developer.android.com/studio/run/emulator.html#navigate)
 

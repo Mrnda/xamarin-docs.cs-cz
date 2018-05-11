@@ -3,14 +3,13 @@ title: Sešity instalace a požadavky
 description: Jak chcete stáhnout, nainstalovat a používat sešity Xamarin.
 ms.prod: xamarin
 ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
-ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: 68cac91a9b430d2abd138c0bb8bd334b65986329
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4d3217140605be8567d70e6dcf63d60a02e6b2fb
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="workbooks-installation-and-requirements"></a>Sešity instalace a požadavky
 
@@ -102,7 +101,7 @@ Pokud jsou potíže s připojením zařízení s iOS nebo Android sešitu a jste
 - Název zařízení, které se pokoušíte připojit k
 - Verze operačního systému vašeho zařízení.
 - Android: Ověřte, že používáte x86 emulátoru
-- Android: Platformě emulátoru používáte? Google Emulator?
+- Android: Platformě emulátoru používáte? Google Emulátor?
   Visual Studio emulátoru Android? Přehrávač Xamarin Android?
 - iOS v systému Windows: Jaká verze simulátoru iOS Xamarin vzdálené instalaci (zkontrolujte **přidat nebo odebrat programy** v **ovládací panely**)?
 - iOS v systému Windows: uveďte také informace o verzi platformy pro svého hostitele Mac sestavení
@@ -116,7 +115,7 @@ Pokud jsou potíže s připojením zařízení s iOS nebo Android sešitu a jste
 
 V závislosti na tom, jak jste získali sešity & Kontrola možná budete muset provést dva postupy odinstalace. Zkontrolujte prosím obě tyto úplně odinstalujte software.
 
-#### <a name="visual-studio-installer"></a>Instalační program sady Visual Studio
+#### <a name="visual-studio-installer"></a>Instalační program pro Visual Studio
 
 Pokud máte Visual Studio 2017, otevřete **instalační program Visual Studio**a vyhledejte v **jednotlivých součástí** pro **Xamarin sešity**. Pokud je zaškrtnuto, zrušte jeho zaškrtnutí a pak klikněte na **upravit** odinstalovat.
 

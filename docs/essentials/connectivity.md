@@ -2,15 +2,14 @@
 title: Xamarin.Essentials připojení
 description: Třída připojení umožňuje sledovat změny v zařízení se síťové podmínky, zkontrolujte aktuální přístup k síti a jak je aktuálně připojen.
 ms.assetid: E1B1F152-B1D5-4227-965E-C0AEBF528F49
-ms.technology: xamarin-crossplatform
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 99faa518f44dca51cd1bbe2562a83893c48d2917
-ms.sourcegitcommit: 46d3c9daa45350bdd536d9e105517f3c1c753c5b
+ms.openlocfilehash: fd757bec32d2854d2c9693812dece05ef11e2f80
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="xamarinessentials-connectivity"></a>Xamarin.Essentials připojení
 

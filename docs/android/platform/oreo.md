@@ -8,11 +8,11 @@ ms.custom: video
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: 4a7a8a96ff22cf02d04ffdfff684d454d1a28024
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3eb3bdd7b060b661d5202c63a879f1c88d2ccdcb
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="oreo-features"></a>Funkce Oreo
 
@@ -190,7 +190,7 @@ Po použití **avdmanager** Pokud chcete vytvořit virtuální zařízení, budo
 
 -----
 
-Další informace o konfiguraci pro testování a ladění emulátoru Androidu najdete v tématu [emulátoru Android SDK](~/android/deploy-test/debugging/android-sdk-emulator/index.md).
+Další informace o konfiguraci pro testování a ladění emulátoru Androidu najdete v tématu [emulátor Google Android](~/android/deploy-test/debugging/android-sdk-emulator/index.md).
 
 Pokud používáte fyzické zařízení, například Nexus nebo jeden bod, můžete buď zařízení prostřednictvím automaticky aktualizovat prostřednictvím aktualizace letecké (OTA) nebo stáhnout bitovou kopii systému a flash zařízení přímo. Další informace o ruční aktualizaci zařízení pro Android Oreo najdete v tématu [objekt pro vytváření bitových kopií pro Nexus a pixelů zařízení](https://developers.google.com/android/images).
 

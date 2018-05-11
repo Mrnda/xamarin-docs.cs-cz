@@ -3,15 +3,14 @@ title: Použití volaných s Xamarin
 description: Tato příručka ukazuje, jak nastavit volaných jako server průběžnou integraci a automatizaci kompilování mobilní aplikace vytvořené s funkcí Xamarin. Popisuje postup instalace volaných na OS X, konfiguraci a nastavení úlohy kompilace aplikace Xamarin.iOS a Xamarin.Android, když jsou změny potvrzeny systému správy zdrojového kódu.
 ms.prod: xamarin
 ms.assetid: 1E6825DF-1254-4FCB-B94D-ADD33D1B5309
-ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/23/2017
-ms.openlocfilehash: f183eb487b49d60c896bef9c90c711cd3da846b7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1052507bfbf06e264f9e9da89be1e0f35fa70ce1
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="using-jenkins-with-xamarin"></a>Použití volaných s Xamarin
 

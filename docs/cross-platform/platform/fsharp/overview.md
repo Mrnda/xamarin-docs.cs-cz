@@ -3,15 +3,14 @@ title: 'Začínáme s F #'
 description: 'F # je silného typu funkční programovací jazyk určená ke spuštění na rozhraní .NET'
 ms.prod: xamarin
 ms.assetid: 1A0E627D-A4C1-4F95-BAED-76A0E40B9054
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: 29e5eff33a18090760365124101f1f7bd1fd0d0c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 07082ed68e1257679b6296470d276b61a9f39f00
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="getting-started-with-f35"></a>Začínáme s F&#35;
 
@@ -54,6 +53,6 @@ Není nadbytku informace online pro získání zorientujte F # jazyka, který po
 -  [Portál Learning F #](http://tryfsharp.org)
 -  [Vývojový portál Visual F #](http://go.microsoft.com/fwlink/?LinkID=234174)
 -  [Galerie Visual F # – kód](http://go.microsoft.com/fwlink/?LinkID=124614)
--  [Visual F# Math/Stats Programming](http://go.microsoft.com/fwlink/?LinkId=235173)
+-  [Visual F # matematické/Stats programování](http://go.microsoft.com/fwlink/?LinkId=235173)
 -  [Visual F # grafů](http://go.microsoft.com/fwlink/?LinkId=235176)
 

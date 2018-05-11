@@ -3,15 +3,14 @@ title: Úvod do životního cyklu mobilní Software
 description: Tento článek popisuje životního cyklu softwaru s ohledem na mobilní aplikace a popisuje některé aspekty při vytváření mobilních projekty vyžaduje. Pro vývojáře, kteří chtějí stačí přejít přímo na a spusťte vytváření může tento průvodce přeskočí a čtení později podrobnější vysvětlení nástroje pro vývoj mobilních řešení.
 ms.prod: xamarin
 ms.assetid: 420c5fdf-4610-4e71-9db5-fe894c961924
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 11/22/2016
-ms.openlocfilehash: c49723038870b7b222bdada7823f1571c5d89d9e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c93a063c9c933e1b9f397d172115471473cf8f35
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="introduction-to-the-mobile-software-development-lifecycle"></a>Úvod do životního cyklu mobilní Software
 

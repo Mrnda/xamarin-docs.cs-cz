@@ -3,15 +3,14 @@ title: Aktualizace stávající aplikace Xamarin.Forms
 description: Postupujte podle těchto kroků provedete aktualizaci existující aplikaci Xamarin.Forms pomocí unifikované API a aktualizovat verzi 1.3.1
 ms.prod: xamarin
 ms.assetid: C2F0D1D1-256D-44A4-AAC9-B06A0CB41E70
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 49614dddf05d692d94d28b29729e7b2038be31e7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7b69ecb5d62a30cf6259aae1884971ad13babede
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="updating-existing-xamarinforms-apps"></a>Aktualizace stávající aplikace Xamarin.Forms
 
@@ -63,7 +62,7 @@ To bude automaticky:
 
 Pokud jste přidali další iOS nativního kódu (například vlastní nástroji pro vykreslování nebo závislostí services) musíte provést další ruční kód opravy. Znovu kompilovat vaší aplikace a odkazovat na [iOS aktualizaci existující aplikace pokyny](~/cross-platform/macios/unified/updating-ios-apps.md) Další informace o změnách, které mohou být vyžadovány. [Tyto tipy](~/cross-platform/macios/unified/updating-tips.md) také pomůže identifikovat změny, které jsou požadovány.
 
-## <a name="2-xamarinforms-131-update"></a>2. Xamarin.Forms 1.3.1 Update
+## <a name="2-xamarinforms-131-update"></a>2. Xamarin.Forms 1.3.1 aktualizace
 
 Jakmile je aplikace pro iOS je aktualizovaná tak, aby unifikované API, je třeba aktualizovat na platformě Xamarin.Forms verze 1.3.1 zbytek řešení. Sem patří:
 

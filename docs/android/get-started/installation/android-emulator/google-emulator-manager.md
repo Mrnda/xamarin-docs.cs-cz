@@ -7,15 +7,15 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: a399aa1c314f1e93377a7831b430e563d9fd1b13
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c42ebdca44e47e29ac74a263f0d11d4d4c120586
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="google-emulator-manager"></a>Správce emulátorů Google
 
-Po ověření, zda je povoleno hardwarová akcelerace (jak je popsáno v [Android emulátoru hardwarovou akceleraci](~/android/get-started/installation/android-emulator/hardware-acceleration.md)), dalším krokem je vytvoření virtuálního zařízení používat pro testování a ladění aplikace. Můžete použít starší verze správce emulátorů Google (také označované jako *Manager virtuální zařízení Android (AVD)*) Chcete-li vytvořit virtuální zařízení za účelem použití emulátoru Android SDK.
+Po ověření, zda je povoleno hardwarová akcelerace (jak je popsáno v [Android emulátoru hardwarovou akceleraci](~/android/get-started/installation/android-emulator/hardware-acceleration.md)), dalším krokem je vytvoření virtuálního zařízení používat pro testování a ladění aplikace. Můžete použít starší verze správce emulátorů Google (také označované jako *Manager virtuální zařízení Android (AVD)*) Chcete-li vytvořit virtuální zařízení za účelem použití emulátor Google Android.
 
 > [!NOTE]
 > Pokud cílíte na Android 8.0 Oreo, musíte použít [Správce zařízení Xamarin Android](~/android/get-started/installation/android-emulator/xamarin-device-manager.md) vytvořit a nakonfigurovat virtuální zařízení.

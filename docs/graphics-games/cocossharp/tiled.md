@@ -3,15 +3,14 @@ title: Pomocí rozložen formou dlaždic s CocosSharp
 description: Na dlaždicích je efektivní, flexibilní a mapování vyspělá aplikací pro vytvoření dlaždice ortogonální a Izometrické pro hry. CocosSharp poskytuje integraci pro vedle sebe na nativní formát souborů.
 ms.prod: xamarin
 ms.assetid: 804C042C-F62A-4E6C-B10F-06528637F0E2
-ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: a356ddc0412eb1dce1b35e060e6c9127525de804
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8a7782097324829b8150b968c5658a864d1fab4a
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="using-tiled-with-cocossharp"></a>Pomocí rozložen formou dlaždic s CocosSharp
 

@@ -6,11 +6,11 @@ ms.assetid: 8764EB7D-8331-4CF7-9BE1-26D0DEE9E0BB
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: c206b124349614db7249609707bd22e8a4efe6d8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 81bcc8e2f8627264820a859123e1be1a9f960a92
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="summary-of-chapter-2-anatomy-of-an-app"></a>Souhrn kapitoly 2. Anatomie aplikace
 
@@ -18,7 +18,7 @@ V aplikaci Xamarin.Forms, objekty, které zabírají prostor na obrazovce se ozn
 
 - [Stránka](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)
 - [Rozložení](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout/)
-- [View](https://developer.xamarin.com/api/type/Xamarin.Forms.View/)
+- [Zobrazení](https://developer.xamarin.com/api/type/Xamarin.Forms.View/)
 
 A `Page` odvozených zabírá na celé obrazovce a téměř celou obrazovku. Často je podřízeným stránky `Layout` odvozených k uspořádání podřízených vizuální prvky. Podřízené objekty daného `Layout` může být jiné `Layout` třídy nebo `View` odvozené konfigurace (často říká *elementy*), které jsou známé objekty, například textu, rastrové obrázky, posuvníky, tlačítka, seznamy a tak dále.
 
@@ -91,7 +91,7 @@ Pro podporu všech platformách Xamarin.Forms, musí zohlednit verze rozhraní .
 - Windows Phone 8,1
 - Xamarin.Android
 - Xamarin.iOS
-- Xamarin.IOS (Classic)
+- Xamarin.IOS (klasické)
 
 To se označuje jako počítač profil 111.
 
@@ -202,7 +202,7 @@ Tyto dvě vlastnosti jsou definovány pouze systémem `Label`, zatímco `Horizon
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Úplný text kapitoly 2 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch03-Apr2016.pdf)
-- [Ukázky kapitoly 2](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03)
-- [Kapitola 2 F # – ukázky](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/FS)
+- [Úplný text kapitoly 2 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch02-Apr2016.pdf)
+- [Ukázky kapitoly 2](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02)
+- [Kapitola 2 F # – ukázky](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/FS)
 - [Začínáme s Xamarin.Forms](~/xamarin-forms/get-started/index.md)

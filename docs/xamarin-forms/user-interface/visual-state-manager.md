@@ -1,6 +1,6 @@
 ---
 title: Správce stavu Visual Xamarin.Forms
-description: Pomocí Visual správce stavu můžete provádět změny v elementů XAML podle visual stavy nastavit z kódu.
+description: Pomocí Visual správce stavu můžete provádět změny do elementů XAML podle visual stavy nastavit z kódu.
 ms.prod: xamarin
 ms.assetid: 17296F14-640D-484B-A24C-A4E9B7013E4F
 ms.technology: xamarin-forms
@@ -8,15 +8,15 @@ ms.custom: xamu-video
 author: charlespetzold
 ms.author: chape
 ms.date: 05/07/2018
-ms.openlocfilehash: f511f5c33b947704a42df850d2772c0b26511173
-ms.sourcegitcommit: daa089d41cfe1ed0456d6de2f8134cf96ae072b1
-ms.translationtype: HT
+ms.openlocfilehash: 14553bc9484ecc236fb4ceefd687ec7742109758
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="the-xamarinforms-visual-state-manager"></a>Správce stavu Visual Xamarin.Forms
 
-_Pomocí Visual správce stavu můžete provádět změny v elementů XAML podle visual stavy nastavit z kódu._
+_Pomocí Visual správce stavu můžete provádět změny do elementů XAML podle visual stavy nastavit z kódu._
 
 Správce stavu Visual (VSM) je nová v Xamarin.Forms 3.0. VSM poskytuje strukturovaných způsob, jak změnit visual uživatelské rozhraní z kódu. Ve většině případů je definována uživatelské rozhraní aplikace v jazyce XAML, a tento jazyk XAML obsahuje kód popisující, jak Visual správce stavu ovlivňuje vizuální prvky uživatelského rozhraní.
 
@@ -24,7 +24,7 @@ VSM zavádí koncepci _visual stavy_. Zobrazení Xamarin.Forms, jako `Button` m�
 
 Visual stavy se shromažďují v _visual stavu skupiny_. Všechny stavy visual v rámci skupiny visual stavu se vzájemně vylučují. Visual stavy i visual stavu skupiny se označují pomocí jednoduchého textového řetězce.
 
-V původní verze správce stavu Visual Xamarin.Florms definuje jednu skupinu visual stavu s názvem "CommonStates" se tři visual stavy:
+Správce stavu Visual Xamarin.Forms definuje jednu skupinu visual stavu s názvem "CommonStates" se tři visual stavy:
 
 - "Normální"
 - "Zakázáno"
@@ -39,9 +39,9 @@ Můžete také definovat vlastní skupiny visual stavu a visual stavy, jako tent
 
 ## <a name="the-common-states"></a>Běžné stavy
 
-V původní verze Visual správce stavu můžete obsahovat části v souboru XAML, který můžete změnit vzhled zobrazení, pokud zobrazení Normální nebo zakázáno, nebo má zaměření pro vstup. Toto jsou známé jako _běžné stavy_.
+Visual správce stavu můžete obsahovat části v souboru XAML, který můžete změnit vzhled zobrazení, pokud zobrazení Normální nebo zakázáno, nebo má zaměření pro vstup. Toto jsou známé jako _běžné stavy_.
 
-Předpokládejme například, že máte `Entry` zobrazení na stránku. Tady je způsob vzhled `Entry` změnit:
+Předpokládejme například, že máte `Entry` zobrazení na stránku, a chcete vzhled `Entry` změnit následujícími způsoby:
 
 - `Entry` By měl mít růžová na pozadí při `Entry` je zakázána.
 - `Entry` By měl mít pozadí vápna normálně.
@@ -71,9 +71,7 @@ V dalším kroku vložit `VisualStateManager.VisualStateGroups` značky mezi tyt
 </Entry>
 ```
 
-To může vypadat trochu neobvyklé. Za normálních okolností je pouze kód, který se zobrazí mezi dvě značky toto řazení pro obsah nebo vlastnost elementy a `VisualStateManager.VisualStateGroups` značka je ani jeden z nich.
-
-Toto je syntaxe právní XAML, protože [ `VisualStateGroups` ](xref:Xamarin.Forms.VisualStateManager.VisualStateGroupsProperty) připojené vazbu vlastnost definované [ `VisualStateManager` ](xref:Xamarin.Forms.VisualStateManager) třídy. (Další informace o přidružené vlastnosti vazbu, najdete v článku [přidružené vlastnosti](~/xamarin-forms/xaml/attached-properties.md).) Jedná se jak `VisualStateGroups` vlastnost je připojen k `Entry` objektu.
+[`VisualStateGroups`](xref:Xamarin.Forms.VisualStateManager.VisualStateGroupsProperty) připojená vlastnost vazbu definované [ `VisualStateManager` ](xref:Xamarin.Forms.VisualStateManager) třídy. (Další informace o přidružené vlastnosti vazbu, najdete v článku [přidružené vlastnosti](~/xamarin-forms/xaml/attached-properties.md).) Jedná se jak `VisualStateGroups` vlastnost je připojen k `Entry` objektu.
 
 `VisualStateGroups` Vlastnost je typu [ `VisualStateGroupList` ](xref:Xamarin.Forms.VisualStateGroupList), což je kolekce [ `VisualStateGroup` ](xref:Xamarin.Forms.VisualStateGroup) objekty. V rámci `VisualStateManager.VisualStateGroups` značky, vložte pár `VisualStateGroup` značky pro každou skupinu visual stavy, které chcete zahrnout:
 
@@ -87,13 +85,15 @@ Toto je syntaxe právní XAML, protože [ `VisualStateGroups` ](xref:Xamarin.For
 </Entry>
 ```
 
-Všimněte si, že `VisualStateGroup` má `x:Name` atribut, který určuje název skupiny. `VisualStateGroup` Třída definuje `Name` vlastnost, kterou můžete použít místo:
+Všimněte si, že `VisualStateGroup` má `x:Name` atribut, který určuje název skupiny. `VisualStateGroup` Třída definuje `Name` vlastnost, která můžete použít místo:
 
 ```xaml
 <VisualStateGroup Name="CommonStates">
 ```
 
-`VisualStateGroup` Třída definuje vlastnost s názvem [ `States` ](xref:Xamarin.Forms.VisualStateGroup.States), což je kolekce [ `VisualState` ](xref:Xamarin.Forms.VisualState) objekty. `States` Vlastnost obsahu je `VisualStateGroups` , můžete zahrnout `VisualState` přímo mezi značky `VisualStateGroup` značky.
+Můžete použít buď `x:Name` nebo `Name` , ale nikoli pro obě v stejného elementu.
+
+`VisualStateGroup` Třída definuje vlastnost s názvem [ `States` ](xref:Xamarin.Forms.VisualStateGroup.States), což je kolekce [ `VisualState` ](xref:Xamarin.Forms.VisualState) objekty. `States` je _obsahu vlastnost_ z `VisualStateGroups` , můžete zahrnout `VisualState` přímo mezi značky `VisualStateGroup` značky. (Obsahu vlastnosti, které jsou popsané v článku [základní syntaxe XAML](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md#content-properties).)
 
 Dalším krokem je pro zahrnutí pár značky pro každý stav visual do této skupiny. Také lze je identifikovat pomocí `x:Name` nebo `Name`:
 
@@ -254,7 +254,7 @@ Všimněte si, že druhá `Entry` má také `DataTrigger` jako součást jeho `T
 
 Aktuální stav visual je "Zakázat" proto pozadí druhý `Entry` je růžový na iOS a Android obrazovky. Implementace UWP `Entry` není povoleno nastavení na pozadí barvu, kdy `Entry` je zakázána. 
 
-Zadáte-li něco do třetí `Entry`, druhý `Entry` přepínače do stavu "Normální" a na pozadí je nyní vápna:
+Když zadáte text do třetí `Entry`, druhý `Entry` přepínače do stavu "Normální" a na pozadí je nyní vápna:
 
 [![VSM za provozu na zobrazení: normální](vsm-images/VsmOnViewNormal.png "VSM za provozu na zobrazení – Normální")](vsm-images/VsmOnViewNormal-Large.png#lightbox)
 
@@ -275,13 +275,13 @@ Pokud chcete `Entry` tak, aby měl vápna pozadí ve stavu "Focused", přidejte 
 </VisualState>
 ```
 
-V pořadí pro tyto `Setter` objekty fungovalo správně, `VisualStateGroup` musí obsahuje `VisualState` objekty pro všechny stavy, které jsou v této skupině. Pokud je visual stavu, který nemá žádné `Setter` objekty, zahrnují ji přesto jako prázdný značky:
+Aby se tyto `Setter` objekty fungovalo správně, `VisualStateGroup` musí obsahovat `VisualState` objekty pro všechny stavy, které jsou v této skupině. Pokud je visual stavu, který nemá žádné `Setter` objekty, zahrnují ji přesto jako prázdný značky:
 
 ```xaml
 <VisualState x:Name="Normal" />
 ``` 
 
-### <a name="vsm-markup-in-a-style"></a>Značka VSM za provozu ve stylu
+### <a name="visual-state-manager-markup-in-a-style"></a>Kód stavu Visual Manager ve stylu
 
 Často je nezbytné pro sdílení kód Visual správce stavu mezi dva nebo více zobrazení. V takovém případě budete chtít umístit značku do `Style` definice.
 
@@ -415,13 +415,13 @@ Nyní všechny `Entry` zobrazení na této stránce reagovat stejným způsobem 
 
 ## <a name="defining-your-own-visual-states"></a>Definování vlastní visual stavy
 
-Každá třída, která je odvozena z `VisualElement` podporuje tři běžné stavy "Normální", "Zaměřuje" a "Zakázáno". Interně [ `VisualElement` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Core/VisualElement.cs) třída rozpozná, pokud se stává stále povolený nebo zakázaný, nebo cílených nebo nezaostřená a volá statických [ `VisualStateManager.GoToState` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualStateManager.GoToState/p/Xamarin.Forms.VisualElement/System.String/) metoda takto:
+Každá třída, která je odvozena z `VisualElement` podporuje tři běžné stavy "Normální", "Zaměřuje" a "Zakázáno". Interně [ `VisualElement` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Core/VisualElement.cs) třída rozpozná, pokud se stává stále povolený nebo zakázaný, nebo cílených nebo nezaostřená a volá statických [ `VisualStateManager.GoToState` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualStateManager.GoToState/p/Xamarin.Forms.VisualElement/System.String/) metoda:
 
 ```csharp
 VisualStateManager.GoToState(this, "Focused");
 ```
 
-Toto je velmi důležitý metoda a je kód pouze Visual správce stavu najdete v `VisualElement` třídy. Protože `GoToState` je volána pro každý objekt v závislosti na každé vazby třída odvozená z `VisualElement`, Visual správce stavu můžete použít s žádným `VisualElement` objekt, který má odpovědět na tyto změny.
+Toto je pouze Visual správce stavu kód, který se nachází ve `VisualElement` třídy. Protože `GoToState` je volána pro každý objekt v závislosti na každou třídu odvozenou od `VisualElement`, Visual správce stavu můžete použít s žádným `VisualElement` objekt, který má odpovědět na tyto změny.
 
 Interestingly, název skupiny visual stavu "CommonStates" není ve výslovně odkazována `VisualElement`. Název skupiny není součástí rozhraní API pro Visual správce stavu. V jednom ze dvou ukázka programu, pokud se zobrazí můžete změnit název skupiny z "CommonStates" na jakoukoli jinou a program bude i nadále fungovat. Název skupiny je jenom obecný popis stavů v této skupině. Implicitně předpokládá se, že visual stavy v kterékoli skupině se vzájemně vylučují: jeden stav a pouze jeden stav je aktuální kdykoli.
 
@@ -485,9 +485,9 @@ Pokud chcete implementovat vlastní visual stavy, budete muset volat `VisualStat
 </ContentPage>
 ```
 
-Značka VSM za provozu je připojen k druhý `Label` (s názvem `helpLabel`) a `Button` (s názvem `submitButton`). Existují dva stavy vzájemně vylučují, s názvem "Platné" a "Neplatný". (Uvidíte soubor kódu, který nastaví tyto stavy krátce.) Všimněte si, že každé dvě skupiny "ValidationState" obsahuje `VisualState` značky pro "Platné" a "Neplatná", i když jeden z nich je prázdná v každém případu. 
+Značka VSM za provozu je připojen k druhý `Label` (s názvem `helpLabel`) a `Button` (s názvem `submitButton`). Existují dva stavy vzájemně vylučují, s názvem "Platné" a "Neplatný". Všimněte si, že každé dvě skupiny "ValidationState" obsahuje `VisualState` značky pro "Platné" a "Neplatná", i když jeden z nich je prázdná v každém případu. 
 
-Pokud `Entry` neobsahuje platné telefonní číslo, a aktuální stav je "Neplatná". Druhý `Label` je viditelná a `Button` je zakázaná:
+Pokud `Entry` neobsahuje platné telefonní číslo, a aktuální stav je "Neplatná" a tudíž druhý `Label` je viditelná a `Button` je zakázaná:
 
 [![Ověření VSM za provozu: Neplatný stav](vsm-images/VsmValidationInvalid.png "VSM ověření - neplatná")](vsm-images/VsmValidationInvalid-Large.png#lightbox)
 
@@ -526,19 +526,19 @@ Všimněte si také, že `GoToState` metoda je volána z konstruktoru k chybě p
 
 Všimněte si, že soubor kódu musí vzít v úvahu každého objektu na stránku, která má vliv tyto visual státy a k volání `VisualStateManager.GoToState` pro každý z těchto objektů. V tomto příkladu je pouze dva objekty ( `Label` a `Button`), ale může být několik další.
 
-Může vás zajímat: Pokud souboru kódu musí odkazovat na stránce, která jsou ovlivněná tyto visual stavy každý objekt, proč nelze soubor kódu jednoduše objekty přímý přístup? Surely může. Však pomocí Visual správce stavu můžete řídit, jak tyto objekty reagovat na různých visual stavů zcela v jazyce XAML, který uchovává všechny návrh uživatelského rozhraní na jednom místě.
+Může vás zajímat: Pokud souboru kódu musí odkazovat na stránce, která jsou ovlivněná tyto visual stavy každý objekt, proč nelze soubor kódu jednoduše objekty přímý přístup? Surely může. Výhodou použití VSM za provozu je však, kterou řídíte jak vizuální prvky reagovat na jiný stav zcela v jazyce XAML, který udržuje všechny návrh uživatelského rozhraní na jednom místě. Tím je zabráněno vzhled nastavení přístupu k vizuální prvky přímo z modelu code-behind.
 
 Může to být tempting vzít v úvahu odvození třídy z `Entry` a případně definování vlastnosti, která můžete nastavit, aby funkce externího ověřování. Třída odvozená z `Entry` pak můžete volat `VisualStateManager.GoToState` metoda. Toto schéma by pracovat správně, ale pouze tehdy, pokud `Entry` měla pouze objekt vliv různých visual stavů. V tomto příkladu `Label` a `Button` jsou také mít vliv. Neexistuje žádný způsob pro VSM značek připojené k `Entry` k řízení jiné objekty, na stránce a nijak pro připojené VSM značek tyto další objekty tak, aby odkazovaly změny ve visual stavu z jiného objektu.
 
 <a name="adaptive-layout" />
 
-## <a name="using-the-vsm-for-adaptive-layout"></a>Pomocí VSM adaptivní rozložení
+## <a name="using-the-visual-state-manager-for-adaptive-layout"></a>Pomocí Visual správce stavu pro adaptivní rozložení
 
-Program Xamarin.Forms spuštěná na telefonu obvykle lze zobrazit v poměru stran výšku nebo na šířku a běžící v desktopovém programu Xamarin.Forms velikost lze změnit předpokládat, že mnoho různou velikost a poměr stran obrázku. Dobře navržených aplikace může zobrazit svůj obsah pro tyto různé typy zařízení stránky nebo okna. 
+Xamarin.Forms, které aplikace spuštěná na telefonu obvykle lze zobrazit v portrét nebo poměr stran na šířku a běžící v desktopovém programu Xamarin.Forms můžete změnit velikost předpokládat, že mnoho různou velikost a poměr stran obrázku. Dobře navržených aplikace může zobrazit svůj obsah pro tyto různé typy zařízení stránky nebo okna. 
 
 Tento postup se někdy označuje jako _adaptivní rozložení_. Protože adaptivní rozložení výhradně zahrnuje programu vizuály, je ideální aplikace Visual správce stavu.
 
-Jednoduchým příkladem je program, který zobrazí malá skupina tlačítek, které by ovlivnily obsah aplikace. V režimu na výšku mohou být zobrazeny tato tlačítka v horní části stránky vodorovném řádku:
+Jednoduchý příklad je aplikace, která zobrazuje malá skupina tlačítek, které by ovlivnily obsah aplikace. V režimu na výšku mohou být zobrazeny tato tlačítka v horní části stránky vodorovném řádku:
 
 [![Adaptivní rozložení VSM za provozu: Na výšku](vsm-images/VsmAdaptiveLayoutPortrait.png "VSM adaptivní rozložení - na výšku")](vsm-images/VsmAdaptiveLayoutPortrait-Large.png#lightbox)
 
@@ -548,9 +548,9 @@ V režimu na šířku pole tlačítka může být přesunout na jedné straně a
 
 Shora dolů že je spuštěna pro univerzální platformu Windows, Android a iOS.
 
-Toto je úloha pro Visual správce stavu. **Adaptivní rozložení VSM** stránku [VsmDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/VsmDemos/) ukázka definuje skupinu s názvem "OrientationStates" s dvěma stavy visual s názvem "Výšku" a "na šířku". (Složitější přístup může být založen na několik různých šířky stránky nebo okno.) 
+**Adaptivní rozložení VSM** stránku [VsmDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/VsmDemos/) ukázka definuje skupinu s názvem "OrientationStates" s dvěma stavy visual s názvem "Výšku" a "na šířku". (Složitější přístup může být založen na několik různých šířky stránky nebo okno.) 
 
-Značka VSM za provozu se zobrazí v čtyři místa v souboru XAML. `StackLayout` s názvem `mainStack` obsahuje v nabídce a obsah, který je `Image` elementu. To `StackLayout` by měl mít svislou orientaci v režimu na výšku a vodorovné orientaci na šířku:
+Značka VSM proběhne čtyři místa v souboru XAML. `StackLayout` s názvem `mainStack` obsahuje v nabídce a obsah, který je `Image` elementu. To `StackLayout` by měl mít svislou orientaci v režimu na výšku a vodorovné orientaci na šířku:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -663,9 +663,9 @@ Značka VSM za provozu se zobrazí v čtyři místa v souboru XAML. `StackLayout
 </ContentPage>
 ```
 
-Vnitřní `ScrollView` s názvem `menuScroll` a `StackLayout` s názvem `menuStack` implementovat nabídky tlačítka. Orientace těchto rozložení je opačné z `mainStack`: V nabídce by měla být v režimu na výšku vodorovného a svislého v režimu na šířku.
+Vnitřní `ScrollView` s názvem `menuScroll` a `StackLayout` s názvem `menuStack` implementovat nabídky tlačítka. Orientace těchto rozložení je opačné z `mainStack`. V nabídce musí být v režimu na výšku vodorovného a svislého v režimu na šířku.
 
-U čtvrtý bloku kódu VSM za provozu je v implicitní stylu pro tlačítka sami. Tento kód nastaví `VerticalOptions`, `HorizontalOptions`, a `Margin` vlastnosti specifické pro orienations portait a na šířku.
+Části čtvrtý značek VSM za provozu je v implicitní stylu pro tlačítka sami. Tento kód nastaví `VerticalOptions`, `HorizontalOptions`, a `Margin` vlastnosti specifické pro orientaci ve portait a na šířku.
 
 Nastaví souboru kódu `BindingContext` vlastnost `menuStack` implementovat `Button` tvorba příkazů a také připojí obslužnou rutinu do `SizeChanged` událostí stránky:
 
@@ -703,7 +703,7 @@ public partial class VsmAdaptiveLayoutPage : ContentPage
 
 `SizeChanged` Volání obslužné rutiny `VisualStateManager.GoToState` pro dva `StackLayout` a `ScrollView` prvky a pak smyčky prostřednictvím podřízené objekty daného `menuStack` volat `VisualStateManager.GoToState` pro `Button` elementy.
 
-Na první pohled může zdát, jako kdyby souboru kódu může zpracovávat změny orientace více přímo nastavením vlastnosti elementů v souboru XAML, ale Visual správce stavu je výborný více strukturovanými přístup. Všechny vizuálech udržovaly v souboru XAML, kde se bude snazší, zkontrolujte, spravovat a upravovat.
+To nemusí připadat, jako kdyby souboru kódu může zpracovávat změny orientace více přímo nastavením vlastnosti elementů v souboru XAML, ale Visual správce stavu je výborný více strukturovanými přístup. Všechny vizuálech udržovaly v souboru XAML, kde se bude snazší, zkontrolujte, spravovat a upravovat.
 
 ## <a name="visual-state-manager-with-xamarinuniversity"></a>Správce stavu Visual s Xamarin.University
 

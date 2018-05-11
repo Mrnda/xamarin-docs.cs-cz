@@ -6,12 +6,12 @@ ms.assetid: 4917273d-32f9-401a-a52c-5cfb53a2170d
 ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
-ms.date: 04/23/2018
-ms.openlocfilehash: 627225fdeef781a8b24a79e9b46627a739fd15af
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.date: 05/08/2018
+ms.openlocfilehash: 96054505af44c5d3e198c2b9e7e7cb30d39b02b1
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="xamarin-live-reload"></a>Načtěte Xamarin za provozu
 
@@ -27,8 +27,8 @@ Za provozu načtěte je aktuálně k dispozici pouze v Visual Studio 2017.
 
 ## <a name="requirements"></a>Požadavky
 
-* [Visual Studio 2017 15.7 Preview 4](https://www.visualstudio.com/vs/preview/) nebo novější s **pro vývoj mobilních řešení s .NET** zatížení.
-* [Xamarin.Forms 3.0.354232-pre3](https://www.nuget.org/packages/Xamarin.Forms/3.0.0.354232-pre3) nebo vyšší.
+* [Visual Studio 2017 verze 15.7 nebo vyšší](https://www.visualstudio.com/vs/) nebo novější s **pro vývoj mobilních řešení s .NET** zatížení.
+* [Xamarin.Forms 3.0.0 nebo vyšší](https://www.nuget.org/packages/Xamarin.Forms/) nebo vyšší.
 
 ## <a name="getting-started"></a>Začínáme
 ### <a name="1-install-xamarin-live-reload-from-the-visual-studio-marketplace"></a>1. Nainstalovat Xamarin načtěte za provozu v sadě Visual Studio Marketplace
@@ -45,8 +45,13 @@ Alternativně můžete vyhledat v **Online** ve **rozšíření a aktualizace** 
 
 Přidání za provozu opětovného načtení na stávající mobilní aplikace můžete provést tři kroky:
 
-1. Ujistěte se, jsou aktualizovány všechny projekty používat [Xamarin.Forms 3.0.354232-pre3](https://www.nuget.org/packages/Xamarin.Forms/3.0.0.354232-pre3) nebo vyšší.
-2. Nainstalujte **Xamarin.LiveReload** NuGet do knihovnu standardní rozhraní .NET 2.0. Toto nemusí být nainstalovaný v projekty platformy. Ujistěte se, že **zdroj balíčku** je nastaven na **všechny**.
+1. Ujistěte se, jsou aktualizovány všechny projekty používat [Xamarin.Forms 3.0.0 nebo vyšší](https://www.nuget.org/packages/Xamarin.Forms/) nebo vyšší.
+
+2. Přidat **Xamarin.LiveReload** balíček NuGet:
+
+    a. **.NET standard** – nainstalovat **Xamarin.LiveReload** NuGet do knihovnu standardní rozhraní .NET 2.0. Toto nemusí být nainstalovaný v projekty platformy. Ujistěte se, že **zdroj balíčku** je nastaven na **všechny**.
+    
+    b. **Sdílených projektů** – nainstalovat **Xamarin.LiveReload** NuGet do všech projektů platformy (třeba se systémem Android, iOS, UPW, atd.). Ujistěte se, že **zdroj balíčku** je nastaven na **všechny**.
 
 ![Přidat Xamarin za provozu načtěte NuGet Správce balíčků NuGet](images/addlivereloadnuget.png)
 
@@ -85,7 +90,7 @@ Protože aplikace je kompilovat, Live opětovného načtení pracuje s všech kn
 
 ### <a name="what-changes-does-live-reload-redeploy"></a>Jaké změny za provozu načtěte nasadili? 
 
-Načtěte za provozu se vztahuje pouze změny provedené v XAML. Pokud provedete změny do souboru C#, bude se vyžadovat pak ji znovu zkompilovat. Podpora pro opětovné načtení C# je plánovaná pro budoucí použití.
+Načtěte za provozu se vztahuje pouze změny provedené v XAML nebo šablon stylů CSS. Pokud provedete změny do souboru C#, bude se vyžadovat pak ji znovu zkompilovat. Podpora pro opětovné načtení C# je plánovaná pro budoucí použití.
 
 ### <a name="what-platforms-are-supported"></a>Jaké platformy jsou podporovány? 
 
@@ -111,8 +116,6 @@ Ne. Ve skutečnosti můžete i spustit všechny vaše podporované aplikační c
 ## <a name="known-issues"></a>Známé problémy
 
 * Podporuje jenom v sadě Visual Studio.
-* Pracuje pouze s .NET standardní knihovny. Tento problém bude vyřešený v příští verzi preview.
-* Šablony stylů CSS nejsou podporovány. Tento problém bude vyřešený v příští verzi preview.
 * Opětovném načtení celou aplikaci prostředky (tj. **App.xaml** nebo sdílené slovnících prostředků), navigace aplikace se resetuje. Tento problém bude vyřešený v příští verzi preview.
 * Úpravy XAML při ladění UWP může způsobit selhání modulu runtime. Alternativní řešení: Použití **spustit bez ladění (Ctrl + F5)** místo **spustit ladění (F5)**.
 
@@ -131,8 +134,6 @@ Ne. Ve skutečnosti můžete i spustit všechny vaše podporované aplikační c
 * **XLR003**: *balíček nuget načtěte za provozu vyžaduje instalaci rozšíření Xamarin Live opětovného načtení Visual Studio.*
 
   Pokus o sestavení projektu, který odkazuje balíček nuget Live načtěte ale rozšíření Visual není nainstalován.  
-
-
 
 ### <a name="app-doesnt-connect"></a>Aplikace nemá připojení.
 

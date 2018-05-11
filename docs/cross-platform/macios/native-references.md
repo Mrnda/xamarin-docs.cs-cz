@@ -3,15 +3,14 @@ title: Nativní odkazy
 description: Nativní odkazy vám dává možnost pro vložení nativní rozhraní do projektu Xamarin.iOS nebo Xamarin.Mac nebo vazby projektu.
 ms.prod: xamarin
 ms.assetid: E53185FB-CEF5-4AB5-94F9-CC9B57C52300
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: cd271ad68e5edb06158f7d595395ddcd0bcfbdce
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c56e392420debb21998363cfffa288aec51691ea
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="native-references"></a>Nativní odkazy
 

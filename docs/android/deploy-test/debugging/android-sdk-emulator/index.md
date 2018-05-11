@@ -1,21 +1,21 @@
 ---
-title: Emulátor sady SDK pro Android
-description: Tato příručka vysvětluje, jak používat emulátor Google Android SDK pomocí sady Visual Studio.
+title: Emulátor Google Android
+description: Tato příručka vysvětluje, jak používat emulátor Google Android pomocí sady Visual Studio.
 ms.prod: xamarin
 ms.assetid: 8913bb90-1340-409d-b7bb-71a06914923a
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: bdae9f2189f91a6768419fd930a4ad5ce4b6e0ad
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: aca71284c7d51936ce2addf143edb9980d9536fc
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
-# <a name="android-sdk-emulator"></a>Emulátor sady SDK pro Android
+# <a name="google-android-emulator"></a>Emulátor Google Android
 
-_Tato příručka vysvětluje, jak používat emulátor Google Android SDK pomocí sady Visual Studio._
+_Tato příručka vysvětluje, jak používat emulátor Google Android pomocí sady Visual Studio._
 
 
 ## <a name="overview"></a>Přehled
@@ -27,13 +27,13 @@ Emulátor Google Android SDK Android můžete spustit v různých konfiguracích
 
 ### <a name="running-the-emulatorandroiddeploy-testdebuggingandroid-sdk-emulatorrunning-the-emulatormd"></a>[Spouštění v emulátoru](~/android/deploy-test/debugging/android-sdk-emulator/running-the-emulator.md)
 
-Postup spuštění emulátoru Android SDK ze sady Visual Studio.
+Postup spuštění emulátor Google Android ze sady Visual Studio.
 
 ### <a name="troubleshootingandroiddeploy-testdebuggingandroid-sdk-emulatortroubleshootingmd"></a>[Odstraňování potíží](~/android/deploy-test/debugging/android-sdk-emulator/troubleshooting.md)
 
-Jak identifikovat a řešit běžné problémy emulátoru sady SDK pro Android.
+Jak identifikovat a řešit běžné problémy emulátor Google Android.
 
-Informace o konfiguraci emulátoru Android SDK a vytvoření nové virtuální zařízení najdete v tématu [Android – nastavení emulátoru](~/android/get-started/installation/android-emulator/index.md).
+Informace o konfiguraci emulátor Google Android a vytvoření nové virtuální zařízení najdete v tématu [Android – nastavení emulátoru](~/android/get-started/installation/android-emulator/index.md).
 
 
 

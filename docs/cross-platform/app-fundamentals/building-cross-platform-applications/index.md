@@ -3,15 +3,14 @@ title: Sestavení pro různé platformy aplikace
 description: Tato část popisuje v souhrn plus šest částí, jak vytvářet aplikace, které používají platformou vývoj Xamarin – z pochopení, jak funguje Xamarin navrhování mobilní aplikace a pak testování a nasazení do různých úložišť aplikace.
 ms.prod: xamarin
 ms.assetid: 442FC40A-84DD-A218-0D15-EAD86594B6D7
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 01/28/2016
-ms.openlocfilehash: b9d167d8874ecfde9094bacc26cff3e7d1b10bab
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fba13ab921949cd2361e78535d5ffc96952a1336
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="sharing-code-options"></a>Možnosti sdílení kódu
 

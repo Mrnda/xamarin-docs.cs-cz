@@ -6,12 +6,12 @@ ms.assetid: 2BE4D5AD-D468-B177-8F96-837D084E7DE1
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 04/10/2018
-ms.openlocfilehash: c9155e1d3ebff52337e65cf3b8cd7dc16b8cdb37
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.date: 05/04/2018
+ms.openlocfilehash: b1cf87ed8c5614a113a03232547a6753da26bc2d
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="windows-installation"></a>Instalace systému Windows
 
@@ -67,20 +67,25 @@ Google Android SDK Manager můžete použít k instalaci verze balíčku nástro
 
 Další informace o používání nástroje Xamarin Android SDK Manager najdete v tématu [Android SDK instalace](~/android/get-started/installation/android-sdk.md).
 
+### <a name="google-android-emulator"></a>Emulátor Google Android
 
-### <a name="android-emulator"></a>Emulátoru systému Android
+[Emulátor Google Android](https://developer.android.com/studio/run/emulator) může být užitečné nástroje pro vývoj a testování aplikace Xamarin.Android. Například fyzické zařízení, jako je například tablet nemusí být snadno dostupné během vývoje nebo vývojář chtít spustit některé testy integrace ve svém počítači před potvrzením kódu.
 
-Pokud nemáte fyzické zařízení Android má použít pro testování, můžete k testování aplikace emulátoru Androidu. Další informace o emulátor Google Android, najdete v části [emulátoru Android SDK](~/android/deploy-test/debugging/android-sdk-emulator/index.md).
+Emulace zařízení v počítači se systémem Android zahrnuje následující součásti:
 
-Emulátor Google Android používá společnosti Intel HAXM (hardwaru Accelerated správce spuštění), který může dojít ke konfliktu s virtualizačních technologií používá jiné emulátorů. Jsou tři hlavní virtualizačních technologií:
+* **Emulátor Google Android** &ndash; Toto je emulátor na základě [QEMU](https://www.qemu.org/) vytvářející virtualizované zařízení se systémem na pracovní stanici pro vývojáře.
+* **Obrázek emulátoru** &ndash; _bitová kopie emulátoru_ šablonu nebo je specifikace hardwaru a operačního systému, který je určen jako Virtualizovat. Například jedna bitová kopie emulátoru by identifikovat požadavky na hardware pro Nexus 5 X systémem Android 7.0 s Google Play Services nainstalována. Jiné bitová kopie emulátoru může konkrétní tabulky 10" systémem Android 6.0.
+* **Virtuální zařízení Android (AVD)** &ndash; _virtuální zařízení se systémem Android_ je emulovaných zařízení se systémem Android vytvořit z image emulátor. Při spuštění a testování aplikací pro Android, bude Xamarin.Android spustit Android emulátor, spouštění konkrétní AVD, nainstalujte APK a spusťte aplikaci.
 
--   **Technologie Hyper-V** (pro Android a Windows Phone emulátor používá emulátor sady Visual Studio) 
+Přináší značné vylepšení výkonu při vývoji na x86 na počítačích můžete dosáhnout pomocí speciální emulátoru bitové kopie, které jsou optimalizované pro x86 architektura a mezi dvěma virtualizačních technologií:
 
--   **Virtuální pole** (používané Genymotion)
+1. Společnosti Microsoft Hyper-V &ndash; k dispozici v počítačích se systémem Windows 10. dubna Update.
+2. Společnosti Intel hardwaru Accelerated spuštění správce (HAXM) &ndash; k dispozici na x86 počítače se systémem OS X, systému macOS nebo starší verzí systému Windows.
 
--   **Intel HAXM** (používané emulátor Google Android SDK) 
+Další informace o emulátor Google Android Hyper-V a HAXM, najdete v tématu [Android emulátoru hardwarovou akceleraci](~/android/get-started/installation/android-emulator/hardware-acceleration.md) průvodce.
 
-Protože vývojovém počítači procesoru může podporovat pouze jeden virtualizační technologie současně, je nejlepší mít jenom jeden používán na vývojovém počítači.
+> [!NOTE]
+> Ve starších verzích systému Windows HAXM není kompatibilní s technologií Hyper-V. V tomto scénáři je potřeba buď [zakázat technologie Hyper-V](/xamarin/android/deploy-test/debugging/android-sdk-emulator/troubleshooting.md?tabs=vswin#disabling-hyper-v) nebo používat pomalejší emulátoru bitové kopie, které nemají x86 optimalizace.
 
 <a name="device" />
 
@@ -115,5 +120,6 @@ Dalším krokem je Podíváme se na [Hello, Android](~/android/get-started/hello
 - [Instalace nástrojů Visual Studio Tools pro Xamarin](~/cross-platform/get-started/installation/windows.md)
 - [Požadavky na systém](~/cross-platform/get-started/requirements.md)
 - [Instalace sady Android SDK](~/android/get-started/installation/android-sdk.md)
-- [Emulátor sady Android SDK](~/android/get-started/installation/android-emulator/index.md)
+- [Emulátor Google Android](~/android/get-started/installation/android-emulator/index.md)
 - [Nastavit zařízení pro vývoj](~/android/get-started/installation/set-up-device-for-development.md)
+- [Spuštění aplikace v emulátoru systému Android](https://developer.android.com/studio/run/emulator#Requirements)

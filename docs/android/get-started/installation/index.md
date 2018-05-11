@@ -6,11 +6,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 04/25/2018
-ms.openlocfilehash: 269b5a06796ae748da93f7c65b23598d9e9311df
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.openlocfilehash: b2f83c8f8ab6ab730a586b30394454f6bf6f6ba9
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="setup-and-installation"></a>Instalační program a instalace
 
@@ -31,7 +31,7 @@ Visual Studio obsahuje Android SDK Manager, který nahrazuje samostatné Google 
 
 ## <a name="android-emulator-setupandroidget-startedinstallationandroid-emulatorindexmd"></a>[Instalace emulátoru Androidu](~/android/get-started/installation/android-emulator/index.md)
 
-Tyto články vysvětlují postup nastavení emulátoru Android SDK pro testování a ladění aplikací Xamarin.Android.
+Tyto články vysvětlují, jak nastavit emulátor Google Android pro testování a ladění aplikací Xamarin.Android.
 
 ## <a name="android-device-setupandroidget-startedinstallationset-up-device-for-developmentmd"></a>[Instalace zařízení s Androidem](~/android/get-started/installation/set-up-device-for-development.md)
 

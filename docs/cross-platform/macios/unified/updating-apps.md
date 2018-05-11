@@ -2,15 +2,14 @@
 title: Aktualizace existujících aplikací jednotné rozhraní API
 ms.prod: xamarin
 ms.assetid: 8A654C95-5DCA-4BB5-A582-F96C2BECC81C
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: ca14d35bcc167bd35cf1ec9e822e86421579b7b8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 588c01ef9f9ee014592c9d8dc72f2b8be20dfee3
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="updating-existing-apps-to-the-unified-api"></a>Aktualizace existujících aplikací jednotné rozhraní API
 
@@ -24,7 +23,7 @@ ms.lasthandoff: 04/04/2018
 
 Xamarin univerzity má volně dostupných video na **upgrade na iOS jednotné rozhraní API**. Navštivte [Xamarin univerzity Lightning přednášek](http://university.xamarin.com/lightninglectures) si chcete přehrát!
 
-[ ![](updating-apps-images/xamu-video-sml.png "Xamarin University")](http://university.xamarin.com/lightninglectures)
+[ ![](updating-apps-images/xamu-video-sml.png "Univerzity Xamarin")](http://university.xamarin.com/lightninglectures)
 
 Aktualizace aplikace tři kroky:
 
@@ -40,7 +39,7 @@ Nejsou k dispozici pro každý produkt, který vám pomůže aktualizovat vaše 
 
 Existující aplikace Xamarin.iOS lze aktualizovat jednotné rozhraní API v nástroji automatické migrace vestavěná v sadě Visual Studio for Mac. Některé další opravy může pak bude vyžadovat, jak je popsáno v [tyto pokyny](~/cross-platform/macios/unified/updating-ios-apps.md) a [tipy](~/cross-platform/macios/unified/updating-tips.md).
 
-###  <a name="xamarinmac-appscross-platformmaciosunifiedupdating-mac-appsmd"></a>[Xamarin.Mac apps](~/cross-platform/macios/unified/updating-mac-apps.md)
+###  <a name="xamarinmac-appscross-platformmaciosunifiedupdating-mac-appsmd"></a>[Xamarin.Mac aplikace](~/cross-platform/macios/unified/updating-mac-apps.md)
 
 Existující aplikace Xamarin.Mac lze aktualizovat jednotné rozhraní API v nástroji automatické migrace vestavěná v sadě Visual Studio for Mac. Některé další opravy může pak bude vyžadovat, jak je popsáno v [tyto pokyny](~/cross-platform/macios/unified/updating-mac-apps.md) a [tipy](~/cross-platform/macios/unified/updating-tips.md).
 

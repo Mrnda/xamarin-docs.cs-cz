@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 04/25/2018
-ms.openlocfilehash: 4b51b10965f3f6e77420d657bc0f7f7d25fc6569
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.openlocfilehash: a4ce36e28bd5b6dcf78d248b1f2ba951cad9b286
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="debugging"></a>Ladění
 
@@ -21,7 +21,7 @@ Tato část popisuje postup ladění aplikace Xamarin.Android na zařízeních n
 Vývoj aplikací pro Android vyžaduje spuštění aplikace, buď na fyzickém hardwaru nebo použití emulátoru. Použití hardwaru je nejlepší metodou, ale ne vždy nejvhodnější. V mnoha případech může být jednodušší a nákladově efektivní simulovat nebo emulovat Android hardwaru pomocí jedné z emulátorů popsané dole.
 
 
-### <a name="android-sdk-emulatorandroiddeploy-testdebuggingandroid-sdk-emulatorindexmd"></a>[Emulátor sady Android SDK](~/android/deploy-test/debugging/android-sdk-emulator/index.md)
+### <a name="google-android-emulatorandroiddeploy-testdebuggingandroid-sdk-emulatorindexmd"></a>[Emulátor Google Android](~/android/deploy-test/debugging/android-sdk-emulator/index.md)
 
 Tyto články vysvětlují použití výchozí emulátor, který je k dispozici s SDK pro Android. Tento emulátor je k dispozici pro Visual Studio pro Windows a Visual Studio for Mac.
 

@@ -3,15 +3,14 @@ title: Xamarin Profiler
 description: Tato příručka popisuje klíčové funkce profileru Xamarin. Ji vyhledat v profilery, profilace a kdy by měly být použity a v pracovním postupu standardní profily – aplikace Xamarin.
 ms.prod: xamarin
 ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
-ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 10/27/2017
-ms.openlocfilehash: 3408d4e1ca50651536b9d04f64156efac4fdd0ed
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7e28e2513b74faa884fb7bc3d7194f1b02844734
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -39,7 +38,7 @@ Tato příručka prozkoumá běžné scénáře profilování a zavádí profile
         - [Ukládání a načítání relace profileru](#Saving_and_Loading_Profiler_Sessions)
         - [Profileru funkcí a nástrojů](#Profiler_Features)
     - [Přidělení](#Allocations)
-    - [Time Profiler](#Time_Profiler)
+    - [Čas profileru](#Time_Profiler)
     - [Cykly](#Cycles)
 - [Profilace – aplikace](#Profiling_Applications)
 - [Shrnutí](#Summary)

@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: cf1b586c8e30b2922251104461d9ca7100b8e74e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3dda1445815f747f484458388cd856c2f9705603
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="debug-android-wear-on-an-emulator"></a>Ladění Android opotřebení v emulátoru
 
@@ -21,9 +21,9 @@ _Tyto články vysvětlují postup ladění aplikace Xamarin.Android opotřeben�
 
 Vývoj aplikací pro Android nosit vyžaduje spuštění aplikace, buď na fyzickém hardwaru nebo použití emulátor ani simulátor. Použití hardwaru je nejlepší metodou, ale ne vždy nejvhodnější. V mnoha případech může být jednodušší a nákladově efektivní simulovat nebo emulovat Android nosit hardwaru pomocí emulátoru, jak je popsáno níže. Pokud si nejste ještě v tématu obeznámeni s procesem nasazení a spuštění aplikace Android nosit [nosit Hello,](~/android/wear/get-started/hello-wear.md).
 
-## <a name="configure-the-android-sdk-emulator"></a>Konfigurace emulátoru sady SDK pro Android
+## <a name="configure-the-google-android-emulator"></a>Konfigurace emulátor Google Android
 
-Ke spouštění vaší aplikace a opotřebením motoru na emulátoru, musíte nainstalovat Android emulátoru systému Android SDK a nakonfigurovat ji pro Android nosit. Celkové emulátoru Android SDK instalace a konfigurace informace najdete v tématu [emulátoru Android SDK](~/android/deploy-test/debugging/android-sdk-emulator/index.md).
+Ke spouštění vaší aplikace a opotřebením motoru na emulátoru, musíte nainstalovat Android emulátoru systému Android SDK a nakonfigurovat ji pro Android nosit. Celkové emulátoru Android SDK instalace a konfigurace informace najdete v tématu [emulátor Google Android](~/android/deploy-test/debugging/android-sdk-emulator/index.md).
 
 Když vytvoříte virtuální zařízení a opotřebením motoru, vyberte profil zařízení Android nosit (například **Android opotřebení hranaté**). Pro lepší výkon použijte opotřebení **x86** CPU/ABI, jak je vidět v tomto příkladu:
 
@@ -47,4 +47,4 @@ Emulátor, může být ponecháno systémem; není potřeba ho vypnout a restart
  
 ## <a name="summary"></a>Souhrn
  
-Tato příručka vysvětluje postup konfigurace emulátoru Android SDK pro vývoj a opotřebením motoru a spuštění virtuálního zařízení opotřebení pro ladění.
+Tato příručka vysvětluje postup konfigurace emulátor Google Android pro vývoj a opotřebením motoru a spuštění virtuálního zařízení opotřebení pro ladění.

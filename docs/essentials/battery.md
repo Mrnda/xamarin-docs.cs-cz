@@ -2,15 +2,14 @@
 title: Xamarin.Essentials baterie
 description: Třída baterie umožňuje zkontrolovat informace o baterie zařízení a monitorujte změny.
 ms.assetid: 47EB26D8-8C62-477B-A13C-6977F74E6E43
-ms.technology: xamarin-crossplatform
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 1420e95067c060991851aff9ef99a89ed89a8358
-ms.sourcegitcommit: 46d3c9daa45350bdd536d9e105517f3c1c753c5b
+ms.openlocfilehash: e7993a8febe0cb03bbe3dec4cbd5897e7730213f
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="xamarinessentials-battery"></a>Xamarin.Essentials baterie
 

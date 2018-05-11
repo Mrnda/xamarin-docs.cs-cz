@@ -3,15 +3,14 @@ title: Interaktivní sešity
 description: Pomocí sešity můžete vytvořit za provozu dokumenty s kódem jazyka C# pro experimentování, výuky za školení nebo zkoumat.
 ms.prod: xamarin
 ms.assetid: B79E5DE9-5389-4691-9AA3-FF4336CE294E
-ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/30/2017
-ms.openlocfilehash: 7577380ff78b9b94b88f5a4190df32400d2c573f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: de88bbc9bc45b8a6326924d964bdd9385acb82aa
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="interactive-workbooks"></a>Interaktivní sešity
 
@@ -45,7 +44,7 @@ Existují známé omezení týkající se podpory balíček NuGet v sešitech:
   * Balíčky, které závisí na `.targets` soubory nebo skripty prostředí PowerShell se pravděpodobně nepodaří fungovat podle očekávání.
   * Pokud chcete odebrat ani změnit závislost balíčku, upravte manifest do sešitu v textovém editoru. Správa správný balíček je na cestě.
 
-### <a name="xamarinforms-support"></a>Xamarin.Forms Support
+### <a name="xamarinforms-support"></a>Podpora Xamarin.Forms
 
 Pokud balíček Xamarin.Forms NuGet odkazujete v sešitu, změní se sešit aplikace jeho hlavní zobrazení být založené na platformě Xamarin.Forms. Budete mít přístup prostřednictvím `Xamarin.Forms.Application.Current.MainPage`.
 

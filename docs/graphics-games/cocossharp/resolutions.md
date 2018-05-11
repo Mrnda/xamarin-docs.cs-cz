@@ -3,15 +3,14 @@ title: Zpracování více řešení v CocosSharp
 description: Tato příručka ukazuje, jak pracovat s CocosSharp pro vývoj her, které zobrazí správně v zařízeních různých řešení.
 ms.prod: xamarin
 ms.assetid: 859ABF98-2646-431A-A4A8-3E7E48DA5A43
-ms.technology: xamarin-cross-platform
 author: charlespetzold
 ms.author: chape
 ms.date: 03/28/2017
-ms.openlocfilehash: 4077af2351b8ab3ef718a71cc672add54b6ef05a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 577a3edbd106b6fba298b3ee5999265ef955f9dd
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="handling-multiple-resolutions-in-cocossharp"></a>Zpracování více řešení v CocosSharp
 
@@ -26,7 +25,7 @@ Výchozí chování řešení CocosSharp je tak, aby odpovídala fyzické pixel�
 |--- | --- |--- |
 |Požadované zobrazení|368 x 240 (s černým řádky poměru stran)| ![368 x 240 (s černým řádky poměru stran)](resolutions-images/image1.png) |
 |iPhone 4s|960x640| ![iPhone 4s 960x640](resolutions-images/image2.png) |
-|iPhone 6 Plus|1920x1080| ![iPhone 6 Plus 1920x1080](resolutions-images/image3.png) |
+|iPhone 6 Plus|1920x1080| ![iPhone 6 Plus 1920 × 1080](resolutions-images/image3.png) |
 
 Tento dokument popisuje, jak používat CocosSharp k opravě problému uvedené v předchozí tabulce. To znamená, že jsme zaměříme jak provádět jakékoli zařízení vykreslení, jak je znázorněno v prvním řádku – bez ohledu na rozlišení obrazovky.
 
@@ -318,5 +317,5 @@ Tento článek popisuje postup vytvoření hry, které budou zobrazovat správn�
 
 ## <a name="related-links"></a>Související odkazy
 
-- [CocosSharp Introduction](~/graphics-games/cocossharp/index.md)
+- [CocosSharp Úvod](~/graphics-games/cocossharp/index.md)
 - [Dokumentace CocosSharp rozhraní API](https://developer.xamarin.com/api/namespace/CocosSharp/)

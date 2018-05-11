@@ -3,15 +3,14 @@ title: Kontrola instalace a požadavky
 description: Jak chcete stáhnout, nainstalovat a používat nástroj Xamarin Inspector.
 ms.prod: xamarin
 ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
-ms.technology: xamarin-cross-platform
 author: topgenorth
 ms.author: toopge
 ms.date: 03/29/2017
-ms.openlocfilehash: 93f42eef8d76074f6b672bc5a663e8f8f1d2ef80
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5bbd5c64f53e191d5ac629e20df87c2b7ca4ec00
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="inspector-installation-and-requirements"></a>Kontrola instalace a požadavky
 
@@ -126,7 +125,7 @@ Pro Android a iOS je důležité, abychom věděli, jaké zařízení jsou na la
 - Název zařízení, jak je znázorněno v vaší IDE
 - Verze operačního systému vašeho zařízení.
 - Android: Ověřte, že používáte x86 emulátoru
-- Android: Platformě emulátoru používáte? Google Emulator? Visual Studio emulátoru Android? Přehrávač Xamarin Android?
+- Android: Platformě emulátoru používáte? Google Emulátor? Visual Studio emulátoru Android? Přehrávač Xamarin Android?
 - Neobsahuje aplikaci, kterou ladíte správně zobrazí a funkce v zařízení?
 - Zařízení mít připojení k síti (kontrola prostřednictvím webového prohlížeče)?
 
@@ -138,7 +137,7 @@ Pro Android a iOS je důležité, abychom věděli, jaké zařízení jsou na la
 
 V závislosti na tom, jak jste získali sešity & Kontrola možná budete muset provést dva postupy odinstalace. Zkontrolujte prosím obě tyto úplně odinstalujte software.
 
-#### <a name="visual-studio-installer"></a>Instalační program sady Visual Studio
+#### <a name="visual-studio-installer"></a>Instalační program pro Visual Studio
 
 Pokud máte Visual Studio 2017, otevřete **instalační program Visual Studio**a vyhledejte v **jednotlivých součástí** pro **Xamarin sešity**. Pokud je zaškrtnuto, zrušte jeho zaškrtnutí a poté klikněte na "Upravit" odinstalovat.
 

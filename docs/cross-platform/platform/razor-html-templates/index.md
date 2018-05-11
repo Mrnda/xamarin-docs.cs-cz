@@ -3,15 +3,14 @@ title: Vytváření zobrazení HTML pomocí šablon Razor
 description: " Pomocí celé obrazovky webové stránky k vykreslení HTML může být jednoduchý a efektivní způsob vykreslení komplexní formátování způsobem, a platformy, zejména pokud již máte jazyka HTML, Javascript a CSS z projektu webu."
 ms.prod: xamarin
 ms.assetid: D8B87C4F-178E-48D9-BE43-85066C46F05C
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 02/18/2018
-ms.openlocfilehash: fa361e48f8f7e236a3295deda2d80a02ef06b34d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 48d7778bf3225401f2819909ae6be320cfa881e3
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="building-html-views-using-razor-templates"></a>Vytváření zobrazení HTML pomocí šablon Razor
 
@@ -519,6 +518,6 @@ Nakonec zavedl RazorTodo vzorků, které ukazují, jak spojovat zobrazení web s
 
 ### <a name="related-links"></a>Související odkazy
 
-- [RazorTodo Sample](https://github.com/xamarin/mobile-samples/tree/master/RazorTodo)
+- [Ukázka RazorTodo](https://github.com/xamarin/mobile-samples/tree/master/RazorTodo)
 - [MVC 3 – zobrazovací modul Razor (Microsoft)](http://www.asp.net/mvc/videos/mvc-3/mvc-3-razor-view-engine)
 - [Úvod do rozhraní ASP.NET Web programování pomocí syntaxe Razor (Microsoft)](http://www.asp.net/web-pages/tutorials/basics/2-introduction-to-asp-net-web-programming-using-the-razor-syntax)

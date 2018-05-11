@@ -3,15 +3,14 @@ title: Úvod k webovým službám
 description: Tato příručka ukazuje, jak používat technologie jiné webové služby. Obsahuje následující témata komunikaci s služby REST, SOAP služby a služby Windows Communication Foundation.
 ms.prod: xamarin
 ms.assetid: 72627B90-586A-02B6-E231-F7CE015A1B97
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 6de16095d9e1267587a050e8081f87f896f3153e
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 5c07443519391192f7bdb62cc19ff8b1f87b2558
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="introduction-to-web-services"></a>Úvod k webovým službám
 

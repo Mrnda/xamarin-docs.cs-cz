@@ -3,15 +3,14 @@ title: Nástroje a příkazy
 description: Přehled nástroje součástí Sharpie cíl a argumenty příkazového řádku, jejich použití.
 ms.prod: xamarin
 ms.assetid: A84E209B-8932-4CC1-BAD1-7FD51F798A97
-ms.technology: xamarin-cross-platform
 author: asb3993
 ms.author: amburns
 ms.date: 10/05/2015
-ms.openlocfilehash: 8a307739134fe3b76692fbef5c1dc028af01017d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0e333ce7c336d13c8b55326a5d51a64092885dfd
+ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="tools--commands"></a>Nástroje a příkazy
 
@@ -54,11 +53,11 @@ Cíle Sharpie obsahuje následující nástroje:
 
 |Nástroj|Popis|
 |--- |--- |
-|**xcode**|Poskytuje informace o aktuální instalaci Xcode a verze iOS a Mac sady SDK, které jsou k dispozici. Použijeme tyto informace později při se vygeneruje naše vazby.|
+|**Xcode**|Poskytuje informace o aktuální instalaci Xcode a verze iOS a Mac sady SDK, které jsou k dispozici. Použijeme tyto informace později při se vygeneruje naše vazby.|
 |**pod**|Hledat, nakonfiguruje, nainstaluje (v místním adresáři) a sváže jazyka Objective-C [CocoaPod](https://cocoapods.org/) knihovny k dispozici z hlavní specifikace úložiště. Tento nástroj vyhodnotí nainstalované CocoaPod automaticky odvodit správnou vstup předat `bind` nástroj níže. Nové ve 3.0!|
 |**Vazby**|Analyzuje hlavičkových souborů (`*.h`) v knihovně jazyka Objective-C do počáteční [ApiDefinition.cs a StructsAndEnums.cs](~/cross-platform/macios/binding/objective-sharpie/platform/apidefinitions-structsandenums.md) soubory.|
 |**update**|Kontroluje novější verze Sharpie cíl a stáhne a spustí instalační program, pokud je k dispozici.|
-|**verify-docs**|Obsahuje podrobné informace o `[Verify]` atributy.|
+|**Ověřte dokumentace**|Obsahuje podrobné informace o `[Verify]` atributy.|
 |**Dokumentace**|Přejde na tento dokument ve webovém prohlížeči výchozí.|
 
 Potřebujete pomoc na konkrétní nástroj Sharpie cíl, zadejte název tohoto nástroje a `-help` možnost. Například `sharpie xcode -help` vrátí následující výstup:
