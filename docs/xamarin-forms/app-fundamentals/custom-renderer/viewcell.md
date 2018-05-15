@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 4d1d4323e42df6240fee7be42ae8fac70a2b3f1f
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: fd96770caf92eb30e669133f592f5d780146be59
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="customizing-a-viewcell"></a>Přizpůsobení ViewCell
 
@@ -65,13 +65,13 @@ public class NativeCell : ViewCell
   }
 }
 ```
-`NativeCell` Třída se vytvoří v projektu knihovny (PCL) přenosných tříd a definuje rozhraní API pro vlastní buňky. Zpřístupňuje vlastní buňky `Name`, `Category`, a `ImageFilename` vlastnosti, které lze zobrazit pomocí datové vazby. Další informace o vazbě dat najdete v tématu [základy vazby dat](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md).
+`NativeCell` Třída definuje rozhraní API pro vlastní buňky a je vytvořena standardní rozhraní .NET projektu knihovny. Zpřístupňuje vlastní buňky `Name`, `Category`, a `ImageFilename` vlastnosti, které lze zobrazit pomocí datové vazby. Další informace o vazbě dat najdete v tématu [základy vazby dat](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md).
 
 <a name="Consuming_the_Custom_Cell" />
 
 ## <a name="consuming-the-custom-cell"></a>Použití vlastní buňky
 
-`NativeCell` Vlastní buňku můžete odkazovat v jazyce Xaml v projektu PCL deklarace oboru názvů pro umístění a použití Předpona oboru názvů na element vlastní buňky. Následující příklad kódu ukazuje jak `NativeCell` vlastní buňky mohou být spotřebovávána stránky XAML:
+`NativeCell` Vlastní buňku můžete odkazovat v jazyce Xaml v rozhraní .NET standardní projektu knihovny deklarace oboru názvů pro umístění a použití Předpona oboru názvů na element vlastní buňky. Následující příklad kódu ukazuje jak `NativeCell` vlastní buňky mohou být spotřebovávána stránky XAML:
 
 ```xaml
 <ContentPage ...

@@ -5,17 +5,39 @@ ms.assetid: 78856C0D-76BB-406E-A880-D5A3987B7D64
 author: redth
 ms.author: jodick
 ms.date: 05/04/2018
-ms.openlocfilehash: 24d1e29ba0203aaafc3e21533478f6c505cc09b3
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: e64160a5579bffa8e9e9820db1a3ba39bdf7304e
+ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials zabezpečeného úložiště
 
 ![Předběžné verze NuGet](~/media/shared/pre-release.png)
 
 **SecureStorage** třída pomáhá bezpečně uložit páry klíč hodnota.
+
+## <a name="getting-started"></a>Začínáme
+
+Abyste měli přístup **SecureStorage** funkce, následující nastavení specifických pro platformy je nutné:
+
+# <a name="androidtabandroid"></a>[Android](#tab/android)
+
+Nevyžaduje žádné další nastavení.
+
+# <a name="iostabios"></a>[iOS](#tab/ios)
+
+Při vývoji v simulátoru iOS, povolte **řetězce klíčů** nároku a přidejte skupinu řetězce klíčů přístup pro identifikátor svazku aplikace.
+
+Otevřete **Entitlements.plist** v projektu iOS a najít **řetězce klíčů** nároku a povolte ji. Identifikátor aplikace to bude automaticky přidají jako skupina.
+
+Ve vlastnostech projektu v části **iOS podepisování sady** nastavit **vlastní oprávnění** k **Entitlements.plist**.
+
+# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+
+Nevyžaduje žádné další nastavení.
+
+-----
 
 ## <a name="using-secure-storage"></a>Použití zabezpečeného úložiště
 
@@ -75,5 +97,5 @@ Toto rozhraní API slouží k uložení malé množství textu.  Výkon může b
 
 ## <a name="api"></a>rozhraní API
 
-- [SecureStorage zdrojového kódu](https://github.com/xamarin/Essentials/tree/master/Essentials/SecureStorage)
+- [SecureStorage zdrojového kódu](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/SecureStorage)
 - [Dokumentaci k rozhraní API SecureStorage](xref:Xamarin.Essentials.SecureStorage)

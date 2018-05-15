@@ -7,11 +7,11 @@ ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: charlespetzold
 ms.author: chape
 ms.date: 3/27/2018
-ms.openlocfilehash: 104a3adb5d59bc7feafa3c993290247b749ce312
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c110223eae2bb06f64adf3e09977d97cc7b5d71b
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="part-3-xaml-markup-extensions"></a>Část 3. XAML – rozšíření značek
 
@@ -386,13 +386,13 @@ xmlns="http://xamarin.com/schemas/2014/forms"
 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 ```
 
-Budete potřebovat další deklarace oboru názvů XML pro přístup k jiné třídy. Každý další deklaraci oboru názvů XML definuje novou předponu. Pro přístup k třídy místní sdílené aplikaci PCL, jako například `AppConstants`, programátory v jazyce XAML často používají předponu `local`. Deklarace oboru názvů musí označovat název oboru názvů CLR (Common Language Runtime), také známé jako název oboru názvů .NET, což je název, který se zobrazí v jazyce C# `namespace` definice nebo v `using` – direktiva:
+Budete potřebovat další deklarace oboru názvů XML pro přístup k jiné třídy. Každý další deklaraci oboru názvů XML definuje novou předponu. Pro přístup k třídy místní do knihovny .NET standardní sdílené aplikace, jako například `AppConstants`, programátory v jazyce XAML často používají předponu `local`. Deklarace oboru názvů musí označovat název oboru názvů CLR (Common Language Runtime), také známé jako název oboru názvů .NET, což je název, který se zobrazí v jazyce C# `namespace` definice nebo v `using` – direktiva:
 
 ```csharp
 xmlns:local="clr-namespace:XamlSamples"
 ```
 
-Deklarace oborů názvů XML pro obory názvů .NET můžete také definovat v jakékoli sestavení, která odkazuje PCL. Zde je ukázka, `sys` předponu pro standardní .NET `System` obor názvů, který je v **mscorlib** sestavení, které jednou v platnosti pro "Knihovna Runtime běžné objekt Microsoft", ale teď znamená "překlady standardní Běžné objektu Runtime knihovny." Vzhledem k tomu, že je sestavení, musíte také zadáte název sestavení, v takovém případě **mscorlib**:
+Deklarace oborů názvů XML pro obory názvů .NET můžete také definovat v jakékoli sestavení, který odkazuje na knihovny .NET standardní. Zde je ukázka, `sys` předponu pro standardní .NET `System` obor názvů, který je v **mscorlib** sestavení, které jednou v platnosti pro "Knihovna Runtime běžné objekt Microsoft", ale teď znamená "překlady standardní Běžné objektu Runtime knihovny." Vzhledem k tomu, že je sestavení, musíte také zadáte název sestavení, v takovém případě **mscorlib**:
 
 ```csharp
 xmlns:sys="clr-namespace:System;assembly=mscorlib"

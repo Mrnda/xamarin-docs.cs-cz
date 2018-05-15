@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 46284fd1b0863f904e9f24f125aef75fe3eb8caa
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: c3a79947b02e0f877fd4ea1b0ddb72486c222719
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="native-views-in-c"></a>Nativní zobrazení v jazyce C#
 
@@ -19,7 +19,7 @@ _Nativní zobrazení z iOS, Android a UWP můžete přímo na něj odkazovat z X
 
 ## <a name="overview"></a>Přehled
 
-Libovolný ovládací prvek Xamarin.Forms, která umožňuje `Content` o nastavit, nebo který má `Children` kolekce, můžete přidat zobrazení specifické pro platformu. Například iOS `UILabel` lze přímo přidat do [ `ContentView.Content` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ContentView.Content/) vlastnost, nebo [ `StackLayout.Children` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout%3CT%3E.Children/) kolekce. Ale Všimněte si, že tato funkce vyžaduje použití `#if` definuje v řešení Xamarin.Forms sdílených projektů a není k dispozici z řešení Xamarin.Forms přenosných třída knihovny PCL ().
+Libovolný ovládací prvek Xamarin.Forms, která umožňuje `Content` o nastavit, nebo který má `Children` kolekce, můžete přidat zobrazení specifické pro platformu. Například iOS `UILabel` lze přímo přidat do [ `ContentView.Content` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ContentView.Content/) vlastnost, nebo [ `StackLayout.Children` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout%3CT%3E.Children/) kolekce. Ale Všimněte si, že tato funkce vyžaduje použití `#if` definuje v řešení Xamarin.Forms sdílených projektů a není k dispozici z řešení Xamarin.Forms .NET standardní knihovny.
 
 Tyto snímky obrazovky ukazují specifické pro platformu zobrazení přidána do platformě Xamarin.Forms [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/):
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/11/2016
-ms.openlocfilehash: 8421355e0630a637589cb4f08c2fec4ea9cdab24
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1a982078f7a3fb2ba462cd7d6f1420b1d27618f7
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="using-urhosharp-in-xamarinforms"></a>Použití UrhoSharp v Xamarin.Forms
 
@@ -27,10 +27,10 @@ To [ukázka](https://github.com/xamarin/urho-samples/tree/master/FormsSample) uk
 
 ## <a name="adding-the-urhosharp-nuget-packages"></a>Přidání balíčků UrhoSharp Nuget
 
-Před použitím UrhoSharp, vývojáři nutné přidat balíček UrhoSharp Nuget k jejich řešení. Tato příručka předpokládá Xamarin.Forms projektu s iOS, Android a PCL projektu. Kód, bude napsán v projektu PCL; ale UrhoSharp Nuget musí být přidaný do iOS a Android projekty příliš.
+Před použitím UrhoSharp, vývojáři nutné přidat balíček UrhoSharp Nuget k jejich řešení. Tato příručka předpokládá Xamarin.Forms projektu s iOS, Android a .NET Standard projektu knihovny. Kód, bude napsán v rozhraní .NET standardní projektu knihovny; ale UrhoSharp Nuget musí být přidaný do iOS a Android projekty příliš.
 
 Balíček UrhoSharp.Forms Nuget obsahuje všechny objekty, které jsou potřebné k vytváření objektů UrhoSharp. Balíček nuget UrhoSharp.Forms zahrnuje `UrhoSurface` třídy, která se používá k hostiteli UrhoSharp v Xamarin.Forms.
-Pokud chcete začít, klikněte pravým tlačítkem na PCL **balíčky** složky a vyberte **přidat balíčky... **. Zadejte hledaný termín **UrhoSharp.Forms**, vyberte **UrhoSharp pro Xamarin.Forms**, pak klikněte na tlačítko **přidat balíček**.
+Pokud chcete začít, klikněte pravým tlačítkem na **balíčky** složky v rozhraní .NET standardní projektu knihovny a vyberte **přidat balíčky...** . Zadejte hledaný termín **UrhoSharp.Forms**, vyberte **UrhoSharp pro Xamarin.Forms**, pak klikněte na tlačítko **přidat balíček**.
 
 [![](urhosharp-images/add-package-sml.png "Balíčky dialogové okno Přidání")](urhosharp-images/add-package.png#lightbox "balíčky dialogové okno Přidání")
 

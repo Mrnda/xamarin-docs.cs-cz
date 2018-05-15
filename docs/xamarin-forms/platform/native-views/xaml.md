@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/24/2016
-ms.openlocfilehash: 6dbad7352a089f482fa3a396505507da58771cef
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 24e7f29e42607d4a2c957cf85dad15f659d3618e
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="native-views-in-xaml"></a>Nativní zobrazení v jazyce XAML
 
@@ -74,7 +74,7 @@ Vlastnosti vazbu a přidružené vazbu vlastnosti lze také nastavit na nativní
 Android pomůcky konstruktory obecně vyžadují systém Android `Context` jako argument a to může být k dispozici prostřednictvím statickou vlastnost v objektu `MainActivity` třídy. Proto, že při vytváření Android pomůcka v jazyce XAML, `Context` objekt musí být obecně předaný konstruktoru ovládacího prvku pomocí `x:Arguments` atribut s `x:Static` – rozšíření značek. Další informace najdete v tématu [předání argumentů nativní zobrazení](#passing_arguments).
 
 > [!NOTE]
-> Všimněte si, že pojmenování nativní zobrazení s `x:Name` není možné v projektu přenosných třída knihovny PCL () nebo sdílený prostředek projektu (SAP). Díky tomu bude generovat proměnné nativní typu, což způsobí chybu kompilace. Však nativní zobrazení může být uzavřen do `ContentView` instance a načíst v souboru kódu na pozadí, za předpokladu, že se používá SAP. Další informace najdete v tématu [odkazující na nativní zobrazení z kódu](#native_view_code).
+> Všimněte si, že pojmenování nativní zobrazení s `x:Name` není možné v rozhraní .NET standardní projektu knihovny nebo sdílený prostředek projektu (SAP). Díky tomu bude generovat proměnné nativní typu, což způsobí chybu kompilace. Však nativní zobrazení může být uzavřen do `ContentView` instance a načíst v souboru kódu na pozadí, za předpokladu, že se používá SAP. Další informace najdete v tématu [odkazující na nativní zobrazení z kódu](#native_view_code).
 
 <a name="native_bindings" />
 
@@ -285,7 +285,7 @@ IOS a Android nativních tlačítek sdílet stejný `OnButtonTap` obslužné rut
 
 ## <a name="subclassing-native-views"></a>Vytvoření podtřídy nativní zobrazení
 
-Mnoho iOS a Android nativní zobrazení nejsou vhodné pro vytvoření instance v jazyce XAML, protože používají metody, a nikoli vlastnosti, k nastavení ovládacího prvku. Řešení tohoto problému je podtřídou nativní zobrazení v obálky, které definují další API XAML-friendly používající vlastnosti nastavení ovládacího prvku a nezávislé na platformě události, který používá. Zabalené nativní zobrazení můžete být umístěn v projektu sdíleného prostředku (SAP) a obklopená Podmíněná kompilace direktivy nebo umístěny v projektech specifické pro platformu a na něj odkazovat z XAML v projektu přenosných třída knihovny PCL ().
+Mnoho iOS a Android nativní zobrazení nejsou vhodné pro vytvoření instance v jazyce XAML, protože používají metody, a nikoli vlastnosti, k nastavení ovládacího prvku. Řešení tohoto problému je podtřídou nativní zobrazení v obálky, které definují další API XAML-friendly používající vlastnosti nastavení ovládacího prvku a nezávislé na platformě události, který používá. Zabalené nativní zobrazení můžete být umístěn v projektu sdíleného prostředku (SAP) a obklopená Podmíněná kompilace direktivy nebo umístěny v projektech specifické pro platformu a na něj odkazovat z XAML v rozhraní .NET standardní projektu knihovny.
 
 Následující příklad kódu ukazuje, že stránka s Xamarin.Forms, která využívá rozčlenění nativní zobrazení:
 

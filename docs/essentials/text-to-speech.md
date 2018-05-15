@@ -5,11 +5,11 @@ ms.assetid: AEEF03AE-A047-4DF0-B0E8-CC8D9A7B8351
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 2fcb97eafda15a73e2b7e5441f1d6c94f75af0ce
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: b2c9ed50c48aee6343a20ddb28c49e1bd05d2153
+ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="xamarinessentials-text-to-speech"></a>Převod textu na řeč Xamarin.Essentials
 
@@ -45,7 +45,7 @@ public void SpeakNowDefaultSettings2()
 }
 ```
 
-Tato metoda přebírá volitelné CancellationToken zastavit utterance, jednou z jeho spuštění. 
+Tato metoda přebírá volitelné CancellationToken zastavit utterance po jeho spuštění. 
 ```csharp
 CancellationTokenSource cts;
 public async Task SpeakNowDefaultSettings()
@@ -143,5 +143,5 @@ public async Task SpeakNow()
 
 ## <a name="api"></a>rozhraní API
 
-- [TextToSpeech zdrojového kódu](https://github.com/xamarin/Essentials/tree/master/Essentials/TextToSpeech)
+- [TextToSpeech zdrojového kódu](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/TextToSpeech)
 - [Dokumentaci k rozhraní API TextToSpeech](xref:Xamarin.Essentials.TextToSpeech)

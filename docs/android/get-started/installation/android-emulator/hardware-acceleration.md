@@ -6,12 +6,12 @@ ms.assetid: 915874C3-2F0F-4D83-9C39-ED6B90BB2C8E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/07/2018
-ms.openlocfilehash: 2d903df97da2e8d6ae0c5df3b1ba09dd3015e404
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
-ms.translationtype: HT
+ms.date: 05/10/2018
+ms.openlocfilehash: b5c20eb9f40bb4c4981d6b60b9fd4bc75fd29336
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="android-emulator-hardware-acceleration"></a>Hardwarová akcelerace emulátoru systému Android
 
@@ -39,23 +39,37 @@ Chcete-li začít s použitím technologie Hyper-V a emulátor Google Android:
 
     [![Specifikace Windows](hardware-acceleration-images/win/12-about-windows.w10-sml.png)](hardware-acceleration-images/win/12-about-windows.w10.png#lightbox)
 
-1. **Povolení technologie Hyper-V a na platformu hypervisoru Windows** &ndash; panelu v vyhledávání Cortaně, typ **Windows zapnout nebo vypnout funkce**. Přejděte dolů v **funkce systému Windows** dialogové okno a ujistěte se, že **platformu hypervisoru Windows** je povoleno.
+2. **Povolení technologie Hyper-V a na platformu hypervisoru Windows** &ndash; panelu v vyhledávání Cortaně, typ **Windows zapnout nebo vypnout funkce**.
+   Přejděte dolů v **funkce systému Windows** dialogové okno a ujistěte se, že **platformu hypervisoru Windows** je povoleno.
 
     [![Technologie Hyper-V a povolit platformu hypervisoru Windows](hardware-acceleration-images/win/13-windows-features.w10-sml.png)](hardware-acceleration-images/win/13-windows-features.w10.png#lightbox)
 
     Může být nutné restartování systému Windows po povolení Hyper-V a na platformu hypervisoru Windows.
 
-1. **Nainstalujte [Visual Studio 15.8 Preview 1](https://aka.ms/hyperv-emulator-dl)**  &ndash; tato verze sady Visual Studio poskytuje podporu rozhraní IDE pro spuštění emulátor Google Android s podporou technologie Hyper-V.
+3. **Nainstalujte [Visual Studio 15.8 Preview 1](https://aka.ms/hyperv-emulator-dl)**  &ndash; tato verze sady Visual Studio poskytuje podporu rozhraní IDE pro spuštění emulátor Google Android s podporou technologie Hyper-V.
 
-1. **Instalovat balíček emulátor Google Android 27.2.7 nebo vyšší** &ndash; k instalaci tohoto balíčku, přejděte na **nástroje > Android > Android SDK Manager** v sadě Visual Studio. Vyberte **nástroje** kartě a zajistit komponentu emulátoru Android minimálně verze 27.2.7.
+4. **Instalovat balíček emulátor Google Android 27.2.7 nebo vyšší** &ndash; k instalaci tohoto balíčku, přejděte na **nástroje > Android > Android SDK Manager** v sadě Visual Studio. Vyberte **nástroje** kartě a zajistit komponentu emulátoru Android minimálně verze 27.2.7.
 
     [![Dialogové okno sady Android SDK a nástroje](hardware-acceleration-images/win/14-sdk-manager.w158-sml.png)](hardware-acceleration-images/win/14-sdk-manager.w158.png#lightbox)
 
+5. Pokud je verze emulátoru systému Android menší než 27.3.1, použít krok další alternativní řešení popsané v **známé problémy** (Další).
+
+
 ### <a name="known-issues"></a>Známé problémy
 
-* Při použití určitých Intel a na základě AMD procesorů se může snížit výkon.
-* Aplikace pro Android, může trvat neobvyklé množství času se načíst na nasazení.
-* Chyba přístupu k MMIO může zabránit občas spouštěcího emulátoru systému Android. Restartování emulátoru by měla potíže vyřešit následovně.
+-   Pokud je verze emulátoru alespoň 27.2.7 ale menší než 27.3.1, následující alternativní řešení, je potřeba použít technologie Hyper-V:
+    1.  V **C:\\uživatelé\\_uživatelské jméno_\\.android** složky, vytvořte soubor s názvem **advancedFeatures.ini** Pokud tomu tak není již existuje.
+    2.  Přidejte následující řádek na **advancedFeatures.ini**:
+        ```
+        WindowsHypervisorPlatform = on
+        ```
+
+-   Při použití určitých Intel a na základě AMD procesorů se může snížit výkon.
+
+-   Aplikace pro Android, může trvat neobvyklé množství času se načíst na nasazení.
+
+-   Chyba přístupu k MMIO může zabránit občas spouštěcího emulátoru systému Android. Restartování emulátoru by měla potíže vyřešit následovně.
+
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: cf0e7cab0c879f8fb286c87b2aaadab2dc1453f8
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: eaa57e90ef71f13a53737aa6540e5b5bd9126ad2
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="localization"></a>Lokalizace
 
@@ -32,7 +32,7 @@ Existují dvě ukázky spojené s tímto dokumentem:
 
 Ukázka TodoLocalized zahrnuje [ukázkový projekt sdílené](https://github.com/xamarin/xamarin-forms-samples/tree/master/TodoLocalized/SharedProject/) ale z důvodu omezení systému sestavení Nezískávat soubory prostředků **. designer.cs** vygeneruje soubor, který dělí přístup přeložených řetězců silného typu v kódu.
 
-Zbývající část tohoto dokumentu se týká projektů pomocí šablony Xamarin.Forms PCL.
+Zbývající část tohoto dokumentu se týká projektů pomocí Xamarin.Forms .NET standardní šablona knihovny.
 
 ## <a name="globalizing-xamarinforms-code"></a>Globalizace Xamarin.Forms kódu
 
@@ -46,7 +46,7 @@ Ukázky cíle angličtina, francouzština, španělština, němčina, čínštin
 
 ### <a name="adding-resources"></a>Přidávání zdrojů
 
-Prvním krokem při globalizace Xamarin.Forms PCL aplikace je přidání soubory RESX prostředků, které se použije k uložení všech text, který slouží v aplikaci. Je potřeba přidat RESX soubor, který obsahuje výchozí text a poté přidejte další soubory RESX pro každý jazyk, který jsme chcete podporovat.
+Prvním krokem při globalizace Xamarin.Forms .NET standardní knihovny aplikace je přidání soubory RESX prostředků, které se použije k uložení všech text, který slouží v aplikaci. Je potřeba přidat RESX soubor, který obsahuje výchozí text a poté přidejte další soubory RESX pro každý jazyk, který jsme chcete podporovat.
 
 #### <a name="base-language-resource"></a>Základní jazyk prostředků
 
@@ -98,7 +98,7 @@ Chcete-li vlastnosti silného typu řetězec `public`, musíte je ručně změni
 
 -----
 
-Tuto změnu je volitelný a je jenom potřeba, pokud chcete odkazovat lokalizovaných řetězců v různých sestavení (například když vložíte soubory RESX v jiném sestavení kódu). Ukázka pro toto téma opustí řetězce `internal` vzhledem k tomu, že jsou definované ve stejném sestavení Xamarin.Forms PCL, kdy se používá.
+Tuto změnu je volitelný a je jenom potřeba, pokud chcete odkazovat lokalizovaných řetězců v různých sestavení (například když vložíte soubory RESX v jiném sestavení kódu). Ukázka pro toto téma opustí řetězce `internal` vzhledem k tomu, že jsou definované ve stejném sestavení knihovny Xamarin.Forms .NET Standard, kdy se používá.
 
 Potřebujete nastavit vlastního nástroje u základního souboru RESX, jako v příkladu nahoře; není nutné nastavovat *žádné* nástroj pro sestavení v jazykových souborů RESX popsané v následujících částech.
 
@@ -559,7 +559,7 @@ Univerzální platformu Windows (UWP) projekty nevyžadují službu závislostí
 
 ##### <a name="assemblyinfocs"></a>AssemblyInfo.cs
 
-Rozbalte uzel vlastnosti v projektu knihovny přenosných – třída (PCL) a dvakrát klikněte na **AssemblyInfo.cs** souboru. Přidejte následující řádek do souboru nastavení neutrální prostředky sestavení jazyka na angličtinu:
+Rozbalte uzel vlastnosti v rozhraní .NET standardní projektu knihovny a dvakrát klikněte na **AssemblyInfo.cs** souboru. Přidejte následující řádek do souboru nastavení neutrální prostředky sestavení jazyka na angličtinu:
 
 ```csharp
 [assembly: NeutralResourcesLanguage("en")]

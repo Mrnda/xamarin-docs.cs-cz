@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 5e8ad5ba3bdfa61ae1b2f4404016f204a8c1747c
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: caa7884920e842a8f83e2b0fdb5e0fa4b358ca8e
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="images"></a>Obrázky
 
@@ -39,7 +39,7 @@ Používá Xamarin.Forms [ `Image` ](https://developer.xamarin.com/api/type/Xama
 
 - [`FromFile`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromFile/p/System.String/) -Vyžaduje název souboru nebo cesta k souboru, který lze převést na každou platformu.
 - [`FromUri`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromUri/p/System.Uri/) -Vyžaduje objekt Uri, např.  `new Uri("http://server.com/image.jpg")` .
-- [`FromResource`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/) -Vyžaduje identifikátor prostředku se souborem bitové kopie vložených v této aplikaci nebo PCL, s **sestavení akce: EmbeddedResource**.
+- [`FromResource`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/) -Vyžaduje identifikátor prostředku se souborem bitové kopie s vložených v aplikaci nebo .NET Standard projektu knihovny, **sestavení akce: EmbeddedResource**.
 - [`FromStream`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromStream/p/System.Func%7BSystem.IO.Stream%7D/) -Vyžaduje stream, který poskytuje data bitové kopie.
 
 [ `Aspect` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Image.Aspect/) Vlastnost určuje, jak bitovou kopii se přizpůsobí oblasti zobrazení:

@@ -1,93 +1,66 @@
 ---
-title: Používat vzdáleně iOS simulátoru (pro Windows)
-description: Test a ladění aplikací pro iOS zcela v sadě Visual Studio v systému Windows
+title: Remoted iOS Simulator pro Windows
+description: Můžete používat vzdáleně iOS simulátor pro systém Windows k testování aplikace na simulátoru iOS zobrazí v systému Windows společně Visual Studio 2017.
 ms.prod: xamarin
 ms.assetid: 63c50190-7e54-4140-a30d-1a0e577c47d7
 author: topgenorth
 ms.author: toopge
-ms.date: 04/07/2017
-ms.openlocfilehash: 5a1408f6595bd1e2371cd1d0421f81a3a16a5cc3
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 05/11/2018
+ms.openlocfilehash: b07cc24e63f4aa3ce4451e3bdb5819f1df1058c6
+ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/12/2018
 ---
-# <a name="remoted-ios-simulator-for-windows"></a>Používat vzdáleně iOS simulátoru (pro Windows)
+# <a name="remoted-ios-simulator-for-windows"></a>Remoted iOS Simulator pro Windows
 
-_Test a ladění aplikací pro iOS zcela v sadě Visual Studio v systému Windows_
+Můžete používat vzdáleně iOS simulátor pro systém Windows k testování aplikace na simulátoru iOS zobrazí v systému Windows společně Visual Studio 2017.
 
 [![](ios-simulator-images/hero-sml.png "simulátoru iOS systémem Windows")](ios-simulator-images/hero.png#lightbox)
 
-## <a name="download-and-install"></a>Stáhnout a nainstalovat
-
-Stažení [instalační program](https://dl.xamarin.com/xamarin-simulator/Xamarin.Simulator.Installer.msi) a nainstalovat na počítače se systémem Windows. Nástroje sady Visual Studio pro Xamarin by měl být již nainstalován.
-
-> [!NOTE]
-> Použití vzdáleného simulátoru iOS v sadě Visual Studio vyžaduje síťově připojeného počítače Mac pomocí Xamarinu nainstalována.
-
 ## <a name="getting-started"></a>Začínáme
 
-Použití simulátoru vzdálené iOS:
+Používat vzdáleně iOS simulátor pro systém Windows je automaticky nainstalován jako součást Xamarinu ve Visual Studio 2017. Pokud chcete použít, postupujte takto:
 
-1. Ujistěte se, že Visual Studio se připojil k počítači Mac alespoň jednou před zahájením vzdálené simulátoru iOS.
-2. Ujistěte se, je aplikace iOS nebo tvOS **spouštěný projekt** a spuštění ladění.
+1. [Spárujte Visual 2017 na Mac sestavení hostitele](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
+2. V aplikaci Visual Studio 2017 spusťte ladění projektu iOS nebo tvOS. Používat vzdáleně iOS simulátor pro systém Windows se zobrazí na počítač se systémem Windows.
 
-Můžete zakázat simulátoru iOS vzdálené z **nástroje > Možnosti > Xamarin > Nastavení iOS** zrušením zaškrtnutí políčka **vzdáleného simulátoru Windows** znázorněno zde:
+## <a name="simulator-window"></a>Simulátor okna
 
-[![](ios-simulator-images/options-sml.png "Chcete-li použít simulátoru")](ios-simulator-images/options.png#lightbox)
+Panelu nástrojů v horní části okna simulátoru obsahuje řadu užitečné tlačítka:
 
-Připojeného počítače Mac bude poté otevřete simulátoru iOS. Když zaškrtnete tuto možnost simulátoru iOS vzdálené znovu zapnout.
-
-## <a name="features"></a>Funkce
-
-Vzdálené simulátoru iOS vám poskytuje způsob, jak testování a ladění aplikací pro iOS v simulátoru zcela ze sady Visual Studio v systému Windows.
-
-### <a name="simulator-window"></a>Simulátor okna
-
-Panelu nástrojů okna zahrnuje několik tlačítek pro interakci s simulátoru:
-
-- **Domácí** – simuluje tlačítko Domů v zařízení.
-- **Zámek** – uzamkne simulátoru (můžete prstem odemkněte).
-- **Snímek obrazovky** – snímek obrazovky simulátoru uloží na disk.
-- [**Nastavení** ](#settings) – konfigurace klávesnici a k umístění.
-- Další [ **možnosti** ](#options) – celou řadu možností simulátoru jsou k dispozici jako je například otočení, zatřesením nebo vyvolání jiných stavů v simulátoru. Pokud některé možnosti jsou skryté, lze k nim ze tří teček ikonu, která se zobrazí na panelu nástrojů nebo kliknutím pravým tlačítkem na obrazovce.
+- **Domácí** – simuluje tlačítko Domů na zařízení s iOS
+- **Zámek** – uzamkne simulátoru (prstem k odemknutí)
+- **Snímek obrazovky** – snímek obrazovky simulátoru uloží
+- [**Nastavení** ](#settings) – zobrazí klávesnice, umístění a další nastavení
+- [**Další možnosti** ](#other-options) – otevře různé možnosti simulátoru, jako je například otočení a zatřesením gesta
 
     [![](ios-simulator-images/maps-app-sml.png "příklad mapuje simulátoru iOS")](ios-simulator-images/maps-app.png#lightbox)
 
+## <a name="settings"></a>Nastavení
 
-### <a name="settings"></a>Nastavení
-
-Ikona "zařízení" se otevře **nastavení** okno:
+Kliknutím na ikonu panelu nástrojů ozubené kolečko otevře **nastavení** okno:
 
 [![](ios-simulator-images/settings-sml.png "nastavení simulátoru iOS")](ios-simulator-images/settings.png#lightbox)
 
-To umožňuje povolit klávesnice hardwaru v simulátoru a vyberte, jaké umístění je hlášených zařízení (včetně statické umístění nebo jiné možnosti přesunutí umístění).
+Tato nastavení umožňují povolit hardwaru klávesnice, vyberte umístění, která se má zařízení sestavy (statické a přesunutí umístění jsou podporované), povolit Touch ID a resetovat obsah a nastavení pro simulátoru.
 
+## <a name="other-options"></a>Další možnosti
 
-
-### <a name="other-options"></a>Další možnosti
-
-Klikněte pravým tlačítkem na libovolné místo v okně simulátoru zobrazíte všechny možnosti, které jsou k dispozici v simulátoru, jako je například otočení, spouštění gesto zatřesením a restartování simulátoru:
+Tlačítko se třemi tečkami panelu nástrojů zobrazí se další možnosti, jako je například otočení, zatřesením gesta a restartování. Tyto stejné možnosti jako seznam lze zobrazit kliknutím pravým tlačítkem na libovolné místo v okně simulátoru:
 
 [![](ios-simulator-images/more-sml.png "Další nastavení simulátoru iOS")](ios-simulator-images/more.png#lightbox)
 
-### <a name="touchscreen-support"></a>Podpora dotykovou obrazovku
+## <a name="touchscreen-support"></a>Podpora dotykovou obrazovku
 
-Většina moderních počítače se systémem Windows mají dotykovou obrazovku a simulátoru iOS vzdálené umožňuje touch okno simulátoru testování interakce uživatele v aplikaci s iOS.
+Většina moderních počítače se systémem Windows mají dotykovou obrazovku. Vzhledem k tomu, že používat vzdáleně iOS simulátor pro Windows podporuje interakce dotykového ovládání, můžete otestovat vaší aplikace pomocí stejné roztahováním, prstem a gesta více prstem touch, používané v iOS fyzického zařízení.
 
-To zahrnuje roztáhnout, k načtení a více prstem touch gesta - věcí, které dříve pouze snadno testovat na fyzických zařízení.
+Podobně platí používat vzdáleně iOS simulátor pro systém Windows zpracovává vstup pera Windows jako vstup tužky Apple.
 
-Podpora pera v systému Windows je také převedeny na vstup Apple tužky v simulátoru.
+## <a name="disabling-the-remoted-ios-simulator-for-windows"></a>Zakázání používat vzdáleně iOS simulátor pro Windows
 
-<!--
-<a name="knownissues" />
+Pokud chcete zakázat používat vzdáleně iOS simulátor pro systém Windows, přejděte na **nástroje > Možnosti > Xamarin > Nastavení iOS** a zrušte zaškrtnutí políčka **vzdáleného simulátoru Windows**.
 
-# Known Issues
+[![](ios-simulator-images/options-sml.png "Chcete-li použít simulátoru")](ios-simulator-images/options.png#lightbox)
 
- - Apple Watch devices may show in the Visual Studio device list, but are not yet supported.
- - Launching in **Release** mode may also start Apple’s simulator on the networked Mac.
- - Closing the remote iOS Simulator on Windows will not immediately stop debugging in Visual Studio. Stop debugging manually from the menu or the red button.
- - Opening too many different simulators simultaneously will produce unexpected results.
- - Exception of type `Foundation.NSErrorException` may be thrown while launching Simulators. Workaround is to kill csproxy (server process) on the Mac host and re-deploy to the simulator.
- - Performance may be slower when using Xcode 8
--->
+Tato možnost zakázáno, ladění otevře na připojené Mac simulátoru iOS sestavení hostitele.

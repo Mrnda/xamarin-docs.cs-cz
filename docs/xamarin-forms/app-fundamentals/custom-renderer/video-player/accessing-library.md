@@ -6,11 +6,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: eb3d66630613225c9b2becaa20f73a82f409ce7e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d0f58a4a53d41c23e993f8b8b89b3fca44e0733d
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="accessing-the-devices-video-library"></a>Přístup ke knihovně videí zařízení
 
@@ -20,7 +20,7 @@ Většina moderních mobilních zařízení a stolních počítačů mít možno
 
 Všechny tři platformy obsahuje funkci, která umožňuje uživateli vybrat fotku nebo video z bitové kopie knihovny zařízení. Prvním krokem při přehrávání videa z knihovna obrázků v zařízení vytváří služba závislost, která volá výběr image na každou platformu. Je velmi podobné definovaná v závislostí služby popsané níže [ **výběr fotografie z knihovny obrázků** ](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md) článku, s tím rozdílem, že video výběr vrátí název souboru, nikoli `Stream`objektu.
 
-Definuje rozhraní s názvem projektu PCL `IVideoPicker` pro službu závislost:
+.NET Standard projektu knihovny definuje rozhraní s názvem `IVideoPicker` pro službu závislost:
 
 ```csharp
 namespace FormsVideoLibrary

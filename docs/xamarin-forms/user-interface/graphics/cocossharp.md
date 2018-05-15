@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 05/03/2016
-ms.openlocfilehash: 5fcc3405780e0c5e8a0e8d32caf35abf59808c8e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7ce541134e6db9a26699f96ab3114ced2ad22244
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="using-cocossharp-in-xamarinforms"></a>Použití CocosSharp v Xamarin.Forms
 
@@ -53,13 +53,13 @@ Podrobnější informace najdete v [CocosSharp části](~/graphics-games/cocossh
 ## <a name="adding-the-cocossharp-nuget-packages"></a>Přidání balíčků CocosSharp Nuget
 
 Před použitím CocosSharp, vývojáři potřeba provést několik dodatky k jejich Xamarin.Forms projektu.
-Tato příručka předpokládá Xamarin.Forms projektu s iOS, Android a PCL projektu.
-Kód, bude napsán v projektu PCL; ale knihovny, je nutné přidat na iOS a Android projekty.
+Tato příručka předpokládá Xamarin.Forms projektu s iOS, Android a .NET Standard projektu knihovny.
+Kód, bude napsán v rozhraní .NET standardní projektu knihovny; ale knihovny, je nutné přidat na iOS a Android projekty.
 
 Balíček CocosSharp Nuget obsahuje všechny objekty, které jsou potřebné k vytváření objektů CocosSharp.
 Balíček nuget CocosSharp.Forms zahrnuje `CocosSharpView` třídy, která se používá k hostiteli CocosSharp v Xamarin.Forms.
 Přidat **CocosSharp.Forms** NuGet a **CocosSharp** bude automaticky přidáno také.
-Chcete-li to provést, klikněte pravým tlačítkem na PCL <span class="UIItem">balíčky</span> složky a vyberte <span class="UIItem">přidat balíčky... </span>. Zadejte hledaný termín <span class="UIItem">CocosSharp.Forms</span>, vyberte <span class="UIItem">CocosSharp pro Xamarin.Forms</span>, pak klikněte na tlačítko <span class="UIItem">přidat balíček</span>.
+Chcete-li to provést, klikněte pravým tlačítkem na <span class="UIItem">balíčky</span> složky v rozhraní .NET standardní projektu knihovny a vyberte <span class="UIItem">přidat balíčky... </span>. Zadejte hledaný termín <span class="UIItem">CocosSharp.Forms</span>, vyberte <span class="UIItem">CocosSharp pro Xamarin.Forms</span>, pak klikněte na tlačítko <span class="UIItem">přidat balíček</span>.
 
 ![](cocossharp-images/image1.png "Balíčky dialogové okno Přidání")
 
@@ -198,7 +198,7 @@ Následující graf může pomoct vizualizovat typické CocosSharp hierarchie:
 
 Pouze jeden `CCScene` může být aktivní v jednom okamžiku. Většina her používá více `CCLayer` instance řazení obsahu, ale naše aplikace používá jenom jeden. Podobně Většina her používat víc vizuální objekty, ale nemůžeme budete mít pouze jednu v naší aplikaci. Podrobnější diskuzi o CocosSharp visual hierarchie lze nalézt v [BouncingGame návod](~/graphics-games/cocossharp/bouncing-game.md).
 
-Zpočátku `GameScene` třída bude téměř prázdný – stačí vytvoříme ji vyhovět odkaz v `HomePage`. Přidejte novou třídu do vaší PCL s názvem `GameScene`. Musí dědit z `CCScene` třídy následujícím způsobem:
+Zpočátku `GameScene` třída bude téměř prázdný – stačí vytvoříme ji vyhovět odkaz v `HomePage`. Přidejte novou třídu do projektu .NET standardní knihovny s názvem `GameScene`. Musí dědit z `CCScene` třídy následujícím způsobem:
 
 
 ```csharp
@@ -222,7 +222,7 @@ GameScene gameScene;
 
 Nyní jsme můžete zkompilovat naše projektu a spusťte ji zobrazíte CocosSharp systémem. Jsme nepřidali nic, aby naše `GameScene,` tak, aby horní polovině naší stránce s začernit – výchozí barvu scény CocosSharp:
 
-![](cocossharp-images/image5.png "Blank GameScene")
+![](cocossharp-images/image5.png "Prázdné GameScene")
 
 <a name="4" />
 

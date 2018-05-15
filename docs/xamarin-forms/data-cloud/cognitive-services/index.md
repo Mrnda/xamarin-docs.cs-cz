@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 2600b52b6e044ca9a3a8387bcf719dd1632c406d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 86253e42db7da2da6eb8b03e2d4a4b3c943b7e17
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="adding-intelligence-with-cognitive-services"></a>Přidání Intelligence kognitivní službou
 
@@ -70,9 +70,7 @@ Projekt PCL také obsahuje některé důležité soubory:
 
 Ukázková aplikace používá následující balíčky NuGet:
 
-- `Microsoft.Net.Http` – poskytuje `HttpClient` třídu pro zasílání požadavků prostřednictvím protokolu HTTP.
 - `Newtonsoft.Json` – poskytuje pro rozhraní .NET JSON framework.
-- `Microsoft.ProjectOxford.Face` – Klientská knihovna pro přístup k rozhraní API řez.
 - `PCLStorage` – poskytuje sadu napříč platformami místního souboru vstupně-výstupní operace rozhraní API.
 - `sqlite-net-pcl` – poskytuje úložiště databáze SQLite.
 - `Xam.Plugin.Media` – poskytuje fotografií vezme napříč platformami a výběr rozhraní API.

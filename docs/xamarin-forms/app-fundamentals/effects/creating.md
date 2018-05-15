@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2016
-ms.openlocfilehash: 6138bd1f9211248b3a260795c2ef9d3db87580be
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 12b8906dd4562e58dede181e773e4046b8434214
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="creating-an-effect"></a>Vytváření efekt
 
@@ -188,7 +188,7 @@ namespace EffectsDemo.UWP
 
 ## <a name="consuming-the-effect"></a>Využívání účinek
 
-Proces pro použití vliv z Xamarin.Forms přenosných třída knihovny PCL () nebo projektu sdílené knihovny vypadá takto:
+Proces pro použití vliv z Xamarin.Forms .NET standardní knihovny nebo sdílené knihovny projektu vypadá takto:
 
 1. Ovládací prvek, který bude přizpůsobený podle účinek deklarujte.
 1. Připojte účinek do ovládacího prvku přidáním do ovládacího prvku [ `Effects` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.Effects/) kolekce.
@@ -209,7 +209,7 @@ Následující příklad ukazuje kód XAML [ `Entry` ](https://developer.xamarin
 </Entry>
 ```
 
-`FocusEffect` Třídy v PCL podporuje vliv spotřebu v jazyce XAML a je znázorněno v následujícím příkladu kódu:
+`FocusEffect` – Třída v knihovně .NET Standard podporuje vliv spotřebu v jazyce XAML a je znázorněno v následujícím příkladu kódu:
 
 ```csharp
 public class FocusEffect : RoutingEffect

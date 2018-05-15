@@ -81,8 +81,6 @@
 #### [GridLayout](user-interface/layouts/grid-layout.md)
 #### [Rozložení s kartami](user-interface/layouts/tab-layout/index.md)
 ##### [Navigační karty s panelem akcí](user-interface/layouts/tab-layout/with-action-bar.md)
-##### [TabHost – přehled](user-interface/layouts/tab-layout/tab-host.md)
-##### [Vytvoření uživatelského rozhraní s kartami pomocí TabHostu](user-interface/layouts/tab-layout/creating-a-tabbed-ui.md)
 ### [Ovládací prvky](user-interface/controls/index.md)
 #### [Panel akcí](user-interface/controls/action-bar.md)
 #### [Automatické dokončování](user-interface/controls/auto-complete.md)

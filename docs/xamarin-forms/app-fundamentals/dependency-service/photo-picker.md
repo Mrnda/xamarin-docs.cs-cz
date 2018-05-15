@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: 6945d64e37bc7e0de930093d8a3f71590026182d
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: e552a0bf76572d50eb0d4618af69fc1179979f97
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="picking-a-photo-from-the-picture-library"></a>Výběr fotografie z knihovny obrázků
 
@@ -27,7 +27,7 @@ Tento článek vás provede vytváření aplikace, která umožňuje uživateli 
 
 ## <a name="creating-the-interface"></a>Vytváření rozhraní
 
-Nejprve vytvořte rozhraní v sdíleného kódu, která vyjadřuje požadované funkce. V případě fotografií výdej aplikace je vyžaduje právě jednu metodu. To je definována v [ `IPicturePicker` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/DependencyServiceSample/IPicturePicker.cs) rozhraní v knihovny přenosných tříd ukázkového kódu:
+Nejprve vytvořte rozhraní v sdíleného kódu, která vyjadřuje požadované funkce. V případě fotografií výdej aplikace je vyžaduje právě jednu metodu. To je definována v [ `IPicturePicker` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/DependencyServiceSample/IPicturePicker.cs) rozhraní v knihovně .NET standardní ukázkového kódu:
 
 ```csharp
 namespace DependencyServiceSample
@@ -261,7 +261,7 @@ namespace DependencyServiceSample.UWP
 
 ## <a name="implementing-in-shared-code"></a>Implementace v sdíleného kódu
 
-Teď, když byl implementován rozhraní pro každou platformu, aplikaci v běžné knihovny přenosných tříd můžete využít výhod ho.
+Teď, když byl implementován rozhraní pro každou platformu, aplikace v knihovně .NET Standard můžete využít výhod ho.
 
 [ `App` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/DependencyServiceSample/DependencyServiceSample.cs) Třída vytvoří `Button` vybrat fotografie:
 

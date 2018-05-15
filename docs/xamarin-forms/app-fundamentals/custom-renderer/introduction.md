@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/19/2016
-ms.openlocfilehash: 43b021b158bbb815ab8d27c393f54e0775599940
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: b394c64fe6e2bfb9e5e7ee0e00d8c0366d6bd93e
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="introduction-to-custom-renderers"></a>Úvod do vlastní nástroji pro vykreslování
 
@@ -51,7 +51,7 @@ public class MyEntry : Entry
 `local` Předponu oboru názvů můžete použít jakýkoli. Ale `namespace` a `assembly` hodnoty musí odpovídat podrobnosti vlastního ovládacího prvku. Jakmile je deklarován obor názvů, je předpona, která slouží k odkazování vlastního ovládacího prvku.
 
 > [!NOTE]
-> Definování `xmlns` v PCLs mnohem jednodušší než sdílených projektů. Kompiluje PCL do sestavení tak, aby byl snadno zjistit, co `assembly=CustomRenderer` hodnota by měla být. Při použití sdílených projektů, jsou všechny sdílené prostředky (včetně XAML) zkompilovány do každé odkazující projektů, které znamená, že pokud iOS, Android a UWP projekty mají svůj vlastní *názvy sestavení* není možné zapisovat `xmlns` deklarace vzhledem k tomu, že hodnota musí být různé pro jednotlivé aplikace. Vlastní ovládací prvky v jazyce XAML pro sdílených projektů bude vyžadovat každý projekt aplikace nakonfigurovat se stejným názvem sestavení.
+> Definování `xmlns` je v rozhraní .NET standardní projektů knihovny mnohem jednodušší než sdílených projektů. Knihovnu .NET Standard je zkompilován do sestavení tak, aby byl snadno zjistit, co `assembly=CustomRenderer` hodnota by měla být. Při použití sdílených projektů, jsou všechny sdílené prostředky (včetně XAML) zkompilovány do každé odkazující projektů, které znamená, že pokud iOS, Android a UWP projekty mají svůj vlastní *názvy sestavení* není možné zapisovat `xmlns` deklarace vzhledem k tomu, že hodnota musí být různé pro jednotlivé aplikace. Vlastní ovládací prvky v jazyce XAML pro sdílených projektů bude vyžadovat každý projekt aplikace nakonfigurovat se stejným názvem sestavení.
 
 `MyEntry` Vlastní vykreslení ovládacího prvku klikněte na každou platformu, barvou pozadí, jak je vidět na následujících snímcích obrazovky:
 
@@ -74,7 +74,7 @@ Témata v této série vám poskytne předvádění a vysvětlení tohoto proces
 
 ## <a name="troubleshooting"></a>Poradce při potížích
 
-Pokud PCL projekt, který je přidaný do řešení (tj. není PCL vytvořené sady Visual Studio pro šablony projektu aplikace Xamarin.Forms Mac/Visual Studio) je součástí vlastního ovládacího prvku, k výjimce může dojít v iOS při pokusu o přístup k vlastní ovládací prvek. Pokud tento problém nastane, dají se vyřešit vytvořením odkaz na vlastní ovládací prvek z `AppDelegate` třídy:
+Pokud je součástí vlastního ovládacího prvku .NET Standard projektu knihovny, který byl přidán do řešení (tj. není .NET Standard knihovny vytvořené sady Visual Studio pro šablony projektu aplikace Xamarin.Forms Mac/Visual Studio), k výjimce může dojít v iOS při došlo k pokusu o přístup k vlastní ovládací prvek. Pokud tento problém nastane, dají se vyřešit vytvořením odkaz na vlastní ovládací prvek z `AppDelegate` třídy:
 
 ```csharp
 var temp = new ClassInPCL(); // in AppDelegate, but temp not used anywhere

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 353575bad91c9bade0207a0aa271d9de7ec50240
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 04d3d99a5d85dd77c93e9b926e8952cc3d8a771e
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="customizing-a-map-pin"></a>Přizpůsobení Map kódu Pin
 
@@ -47,7 +47,7 @@ public class CustomMap : Map
 }
 ```
 
-`CustomMap` Řízení je vytvořen v projektu knihovny (PCL) přenosných tříd a definuje rozhraní API pro vlastní mapy. Zpřístupňuje vlastní mapy `CustomPins` vlastnost, která představuje kolekci `CustomPin` objekty, které bude vykreslen pomocí nativní mapový ovládací prvek na každou platformu. `CustomPin` Třída je znázorněno v následujícím příkladu kódu:
+`CustomMap` Řízení je vytvořen v rozhraní .NET standardní projektu knihovny a definuje rozhraní API pro vlastní mapy. Zpřístupňuje vlastní mapy `CustomPins` vlastnost, která představuje kolekci `CustomPin` objekty, které bude vykreslen pomocí nativní mapový ovládací prvek na každou platformu. `CustomPin` Třída je znázorněno v následujícím příkladu kódu:
 
 ```csharp
 public class CustomPin : Pin
@@ -62,7 +62,7 @@ Tato třída definuje `CustomPin` jako dědí vlastnosti [ `Pin` ](https://devel
 
 ## <a name="consuming-the-custom-map"></a>Použití vlastní mapy
 
-`CustomMap` Řízení může odkazovat v jazyce XAML v projektu PCL deklarace oboru názvů pro umístění a použití Předpona oboru názvů na vlastní mapový ovládací prvek. Následující příklad kódu ukazuje jak `CustomMap` řízení mohou být spotřebovávána stránky XAML:
+`CustomMap` Řízení může odkazovat v jazyce XAML v rozhraní .NET standardní projektu knihovny deklarace oboru názvů pro umístění a použití Předpona oboru názvů na vlastní mapový ovládací prvek. Následující příklad kódu ukazuje jak `CustomMap` řízení mohou být spotřebovávána stránky XAML:
 
 ```xaml
 <ContentPage ...
@@ -322,7 +322,7 @@ void OnCalloutAccessoryControlTapped (object sender, MKMapViewAccessoryTappedEve
 }
 ```
 
-Tato metoda otevře webový prohlížeč a přejde na adresu uložené v `CustomMKAnnotationView.Url` vlastnost. Všimněte si, že adresa byla definována při vytváření `CustomPin` kolekce v projektu PCL.
+Tato metoda otevře webový prohlížeč a přejde na adresu uložené v `CustomMKAnnotationView.Url` vlastnost. Všimněte si, že adresa byla definována při vytváření `CustomPin` kolekce v rozhraní .NET standardní projektu knihovny.
 
 <a name="Deselecting_the_Annotation" />
 
@@ -499,7 +499,7 @@ void OnInfoWindowClick (object sender, GoogleMap.InfoWindowClickEventArgs e)
 }
 ```
 
-Tato metoda otevře webový prohlížeč a přejde na adresu uložené v `Url` vlastnost načtené `CustomPin` instanci pro `Marker`. Všimněte si, že adresa byla definována při vytváření `CustomPin` kolekce v projektu PCL.
+Tato metoda otevře webový prohlížeč a přejde na adresu uložené v `Url` vlastnost načtené `CustomPin` instanci pro `Marker`. Všimněte si, že adresa byla definována při vytváření `CustomPin` kolekce v rozhraní .NET standardní projektu knihovny.
 
 Další informace o přizpůsobení `MapView` instance najdete v tématu [rozhraní API map](~/android/platform/maps-and-location/maps/maps-api.md).
 
@@ -645,7 +645,7 @@ private async void OnInfoButtonTapped(object sender, TappedRoutedEventArgs e)
 }
 ```
 
-Tato metoda otevře webový prohlížeč a přejde na adresu uložené v `Url` vlastnost `CustomPin` instance. Všimněte si, že adresa byla definována při vytváření `CustomPin` kolekce v projektu PCL.
+Tato metoda otevře webový prohlížeč a přejde na adresu uložené v `Url` vlastnost `CustomPin` instance. Všimněte si, že adresa byla definována při vytváření `CustomPin` kolekce v rozhraní .NET standardní projektu knihovny.
 
 Další informace o přizpůsobení `MapControl` instance najdete v tématu [Maps a umístění přehled](https://msdn.microsoft.com/library/windows/apps/mt219699.aspx) na webu MSDN.
 

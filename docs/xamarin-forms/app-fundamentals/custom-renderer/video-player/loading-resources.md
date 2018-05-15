@@ -6,15 +6,15 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: a9dbf77b85fe7f39c152d4dfb33bdd44c72dca40
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 89c424ee80a4ebf6363a836e752b72ee9bc5cd5a
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="loading-application-resource-videos"></a>Načítání videa prostředků aplikace
 
-Vlastní nástroji pro vykreslování pro `VideoPlayer` zobrazení podporují přehrávání videa soubory, které byly vloženy do projektů jednotlivé platformy jako prostředky aplikace. Ale aktuální verze `VideoPlayer` nemají přístup k prostředkům, které jsou součástí knihovny přenosných tříd.
+Vlastní nástroji pro vykreslování pro `VideoPlayer` zobrazení podporují přehrávání videa soubory, které byly vloženy do projektů jednotlivé platformy jako prostředky aplikace. Ale aktuální verze `VideoPlayer` nemají přístup k prostředkům v rozhraní .NET standardní knihovny.
 
 K načtení těchto prostředků, vytvořte instanci `ResourceVideoSource` nastavením `Path` vlastnost název souboru (nebo na složku a název souboru) prostředku. Alternativně můžete volat statických `VideoSource.FromResource` metoda tak, aby odkazovaly na prostředek. Potom nastavte `ResourceVideoSource` do objektu `Source` vlastnost `VideoPlayer`. 
 

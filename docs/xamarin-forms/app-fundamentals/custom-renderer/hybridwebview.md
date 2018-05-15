@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: ffb013c355db34ef7456404d6f9dcaec75743420
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: af0dbef84d8ceb178fe5c1ac6fc7194c178141dc
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="implementing-a-hybridwebview"></a>Implementace HybridWebView
 
@@ -74,7 +74,7 @@ public class HybridWebView : View
 }
 ```
 
-`HybridWebView` Vlastní ovládací prvek je vytvořen v projektu knihovny (PCL) přenosných tříd a definuje následující rozhraní API ovládacího prvku:
+`HybridWebView` Vlastní ovládací prvek je vytvořen v rozhraní .NET standardní projektu knihovny a definuje následující rozhraní API ovládacího prvku:
 
 - A `Uri` vlastnost, která určuje adresu webové stránky, která má být načten.
 - A `RegisterAction` metoda, která se zaregistruje `Action` pomocí ovládacího prvku. Registrované akce, který bude vyvolán z obsažené v souboru HTML, který odkazuje prostřednictvím jazyka JavaScript `Uri` vlastnost.
@@ -85,7 +85,7 @@ public class HybridWebView : View
 
 ## <a name="consuming-the-hybridwebview"></a>Použití HybridWebView
 
-`HybridWebView` Vlastní ovládací prvek může odkazovat v jazyce XAML v projektu PCL deklarace oboru názvů pro umístění a použití Předpona oboru názvů na vlastní ovládací prvek. Následující příklad kódu ukazuje jak `HybridWebView` vlastního ovládacího prvku mohou být spotřebovávána stránky XAML:
+`HybridWebView` Vlastní ovládací prvek může odkazovat v jazyce XAML v rozhraní .NET standardní projektu knihovny deklarace oboru názvů pro umístění a použití Předpona oboru názvů na vlastní ovládací prvek. Následující příklad kódu ukazuje jak `HybridWebView` vlastního ovládacího prvku mohou být spotřebovávána stránky XAML:
 
 ```xaml
 <ContentPage ...

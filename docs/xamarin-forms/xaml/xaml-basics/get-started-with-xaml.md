@@ -1,25 +1,27 @@
 ---
 title: Část 1. Začínáme s XAML
-description: V aplikaci Xamarin.Forms XAML nejčastěji používá k definování visual obsahu stránky. Soubor XAML je vždy přidružen souboru kódu C#, který poskytuje podporu kódu pro kód. Tyto dva soubory společně přispívat k nové definice třídy, obsahuje podřízené zobrazení a vlastnosti inicializace. V souboru XAML třídy a vlastnosti jsou odkazovány pomocí XML elementů a atributů, a jsou určeny propojení mezi značek a kódu.
+description: V aplikaci Xamarin.Forms XAML nejčastěji používá k definování visual obsah stránky a funguje nejlépe společně s souboru kódu na pozadí.
 ms.prod: xamarin
 ms.assetid: 9073FA0E-BD5A-4492-8A93-54C466F6EDB9
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
-ms.date: 04/10/2018
-ms.openlocfilehash: bc535160816ad186baaa5e802eceb6ae40347d75
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.date: 05/10/2018
+ms.openlocfilehash: 5883564841a4ef0e19518dd3b12ee00fe35ed778
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="part-1-getting-started-with-xaml"></a>Část 1. Začínáme s XAML
 
-_V aplikaci Xamarin.Forms XAML nejčastěji používá k definování visual obsahu stránky. Soubor XAML je vždy přidružen souboru kódu C#, který poskytuje podporu kódu pro kód. Tyto dva soubory společně přispívat k nové definice třídy, obsahuje podřízené zobrazení a vlastnosti inicializace. V souboru XAML třídy a vlastnosti jsou odkazovány pomocí XML elementů a atributů, a jsou určeny propojení mezi značek a kódu._
+_V aplikaci Xamarin.Forms XAML nejčastěji používá k definování visual obsah stránky a funguje nejlépe společně s souboru kódu C#._
+
+Soubor modelu code-behind poskytuje podporu kódu pro kód. Tyto dva soubory společně přispívat k nové definice třídy, obsahuje podřízené zobrazení a vlastnosti inicializace. V souboru XAML třídy a vlastnosti jsou odkazovány pomocí XML elementů a atributů, a jsou určeny propojení mezi značek a kódu.
 
 ## <a name="creating-the-solution"></a>Vytváření řešení
 
-Můžete začít s úpravami vaše první soubor XAML, použijte k vytvoření nové řešení Xamarin.Forms Visual Studio nebo Visual Studio pro Mac. (Vyberte kartu v horní části této stránky odpovídající pro vaše prostředí.)
+Můžete začít s úpravami vaše první soubor XAML, použijte k vytvoření nové řešení Xamarin.Forms Visual Studio nebo Visual Studio pro Mac. (Vyberte kartu níže odpovídající pro vaše prostředí.)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -29,13 +31,13 @@ V systému Windows, použijte sadu Visual Studio vyberte **soubor > Nový > proj
 
 Vyberte umístění pro řešení, zadejte jeho název z **XamlSamples** (nebo dáváte přednost) a stiskněte klávesu **OK**.
 
-Na další obrazovce, vyberte **prázdnou aplikaci** šablony, **Xamarin.Forms** technologie uživatelského rozhraní a **přenosných třída knihovny PCL ()** strategie sdílení kódu:
+Na další obrazovce, vyberte **prázdnou aplikaci** šablony a **.NET Standard** strategie sdílení kódu:
 
 ![](get-started-with-xaml-images/win/newcrossplatformapp.png "Dialogové okno Nový aplikace")
 
 Press **OK**. 
 
-Čtyři projekty jsou vytvořené v řešení: **XamlSamples** knihovny přenosných tříd (PCL), **XamlSamples.Android**, **XamlSamples.iOS**a Universal Windows Řešení platformy **XamlSamples.UWP**.
+Čtyři projekty jsou vytvořené v řešení: **XamlSamples** .NET standardní knihovny **XamlSamples.Android**, **XamlSamples.iOS**a že univerzální platforma Windows řešení, **XamlSamples.UWP**.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -45,7 +47,7 @@ V sadě Visual Studio pro Mac, vyberte **soubor > Nový řešení** z nabídky. 
 
 Stiskněte klávesu **Další**.
 
-V dialogovém okně Další pojmenujte projekt z **XamlSamples** (nebo pokud dáváte přednost). Ujistěte se, že **pomocí přenosné knihovny tříd** přepínače a že **použití XAML pro soubory user interface** je zaškrtnuta možnost:
+V dialogovém okně Další pojmenujte projekt z **XamlSamples** (nebo pokud dáváte přednost). Ujistěte se, že **Standard .NET použijte** přepínače:
 
 ![](get-started-with-xaml-images/mac/newprojectdialog2.png "Dialogové okno Nový projekt 2")
 
@@ -57,17 +59,17 @@ V dialogovém okně následující můžete vybrat umístění projektu:
 
 Stiskněte klávesu **vytvořit**
 
-Jsou vytvořeny tři projekty v řešení: **XamlSamples** knihovny přenosných tříd (PCL), **XamlSamples.Android**, a **XamlSamples.iOS**. 
+Jsou vytvořeny tři projekty v řešení: **XamlSamples** .NET standardní knihovny **XamlSamples.Android**, a **XamlSamples.iOS**. 
 
 -----
 
 Po vytvoření **XamlSamples** řešení, můžete chtít otestovat vývojového prostředí tak, že vyberete různé projekty platformy jako spouštěný projekt řešení a vytváření a nasazování jednoduchou aplikaci vytvořené Šablona projektu na telefonu emulátorů nebo skutečné zařízení.
 
-Pokud potřebujete napsat kód specifický pro platformu, sdílený **XamlSamples** PCL projektu je, kde budete čekat prakticky všechny programovací doby. Tyto články nebude podniku mimo daného projektu.
+Pokud potřebujete napsat kód specifický pro platformu, sdílený **XamlSamples** .NET Standard projektu knihovny je, kde budete čekat prakticky všechny programovací doby. Tyto články nebude podniku mimo daného projektu.
 
 ### <a name="anatomy-of-a-xaml-file"></a>Anatomie souboru XAML
 
-V rámci **XamlSamples** knihovny přenosných tříd jsou pár soubory s těmito názvy:
+V rámci **XamlSamples** .NET standardní knihovny jsou pár soubory s těmito názvy:
 
 - **App.XAML**, soubor XAML a
 - **App.XAML.cs**, C# *kódu* soubor přidružený k souboru XAML.
@@ -76,12 +78,10 @@ Budete muset klikněte na šipku vedle **App.xaml** k naleznete v souboru kódu 
 
 Obě **App.xaml** a **App.xaml.cs** přispívat do třídy s názvem `App` která je odvozena od `Application`. Většina tříd se soubory XAML podílet se na třídu, která pochází z `ContentPage`; tyto soubory použít k definování visual obsah celé stránky XAML. To platí další dva soubory v **XamlSamples** projektu:
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
 - **MainPage.xaml**, soubor XAML a
 - **MainPage.xaml.cs**, soubor kódu C#.
 
-**MainPage.xaml** soubor vypadá takto:
+**MainPage.xaml** soubor bude vypadat takto (i když formátování, může být jen málo liší):
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -89,56 +89,27 @@ Obě **App.xaml** a **App.xaml.cs** přispívat do třídy s názvem `App` kter�
              xmlns:local="clr-namespace:XamlSamples"
              x:Class="XamlSamples.MainPage">
 
-    <Label Text="Welcome to Xamarin Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+    <StackLayout>
+        <!-- Place new controls here -->
+        <Label Text="Welcome to Xamarin Forms!" 
+               VerticalOptions="Center" 
+               HorizontalOptions="Center" />
+    </StackLayout>
 
 </ContentPage>
 ```
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-- **XamlSamplesPage.xaml**, soubor XAML a
-- **XamlSamplesPage.xaml.cs**, soubor kódu C#.
-
-**XamlSamplesPage.xaml** soubor vypadá takto:
-
-```xaml
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:local="clr-namespace:XamlSamples" 
-             x:Class="XamlSamples.XamlSamplesPage">
-
-    <Label Text="Welcome to Xamarin Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
-
-</ContentPage>
-```
-
------
 
 Dva obor názvů XML ( `xmlns`) deklarace odkazovat na identifikátory URI, zdánlivě na webu pro Xamarin první a druhý na společnosti Microsoft. Nemáte Nepokoušejte se kontrola co tyto identifikátory URI přejděte na příkaz. Není co existuje. Jsou jednoduše identifikátory URI vlastníkem Xamarin a společnosti Microsoft a v podstatě fungovat jako identifikátory verze.
 
 První deklaraci oboru názvů XML znamená, že značky, které jsou definované v souboru XAML s žádná předpona. získáte na třídy v Xamarin.Forms, například `ContentPage`. Druhý deklaraci oboru názvů definuje předponu `x`. Používá se pro několik elementů a atributů, které jsou vnitřní do jazyka XAML samostatně a které jsou podporovány v jiných implementacích XAML. Tyto elementy a atributy jsou však mírně liší v závislosti na rok vložených v identifikátoru URI. Xamarin.Forms podporuje specifikace jazyka XAML 2009, ale ne všechny jeho.
 
-`local` Deklaraci oboru názvů umožňuje přístup k jiné třídy z PCL projektu.
+`local` Deklaraci oboru názvů umožňuje přístup k jiné třídy z .NET Standard projektu knihovny.
 
 Na konci prvního značky `x` předpona se používá pro atribut s názvem `Class`. Protože použití tohoto `x` předpona je prakticky univerzální pro obor názvů jazyka XAML, XAML atributy, jako `Class` se téměř vždy označují jako `x:Class`.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
 `x:Class` Atribut Určuje plně kvalifikovaný název třídy rozhraní .NET: `MainPage` třídy v `XamlSamples` oboru názvů. To znamená, že tento soubor XAML definuje novou třídu s názvem `MainPage` v `XamlSamples` obor názvů, který je odvozen od `ContentPage`– značka, ve kterém `x:Class` atributu se zobrazí.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-`x:Class` Atribut Určuje plně kvalifikovaný název třídy rozhraní .NET: `XamlSamplesPage` třídy v `XamlSamples` oboru názvů. To znamená, že tento soubor XAML definuje novou třídu s názvem `XamlSamplesPage` v `XamlSamples` obor názvů, který je odvozen od `ContentPage`– značka, ve kterém `x:Class` atributu se zobrazí.
-
------
-
 `x:Class` Atribut se může vyskytovat pouze v kořenovém elementu souboru XAML pro definování odvozené třídy jazyka C#. Toto je pouze nové třídy definované v souboru XAML. Všechno ostatní, co se zobrazí v souboru XAML se místo toho jednoduše vytvořené z existujících tříd a inicializován.
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 **MainPage.xaml.cs** soubor bude vypadat takto (kromě zajištění dostatečného nepoužívané `using` direktivy):
 
@@ -161,34 +132,7 @@ namespace XamlSamples
 
 Když Visual Studio vytvoří projekt, analyzuje souboru XAML pro generování souboru kódu C#. Pokud se podíváte **XamlSamples\XamlSamples\obj\Debug** adresáře, najdete soubor s názvem **XamlSamples.MainPage.xaml.g.cs**. "g" je zkratka pro nevygeneruje. To je další třídu definice `MainPage` obsahující definice `InitializeComponent` metoda volána z `MainPage` konstruktor. Tyto dvě partial `MainPage` definice tříd pak lze zkompilovat společně. V závislosti na tom, jestli XAML kompiluje nebo ne je soubor XAML nebo binárního formátu souboru XAML vložený spustitelný soubor.
 
-V době běhu kódu v projektu volání konkrétní platformu `LoadApplication` metoda, předání novou instanci třídy `App` třídy v PCL. `App` Vytvoří konstruktoru třídy `MainPage`. Volání konstruktoru třídy `InitializeComponent`, který potom volá `LoadFromXaml` metoda, která extrahuje souboru XAML (nebo její kompilované binární) z PCL. `LoadFromXaml` inicializuje všechny objekty, které jsou definované v souboru XAML, připojí všechny společně v vztahů nadřazenosti a podřízenosti, připojí obslužné rutiny událostí, které jsou definované v kódu na události, nastavte v souboru XAML a nastaví stromu výsledných objektů jako obsahu stránce.
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-**XamlSamplesPage.xaml.cs** soubor vypadá takto:
-
-```csharp
-using Xamarin.Forms;
-
-namespace XamlSamples
-{
-    public partial class XamlSamplesPage : ContentPage
-    {
-        public XamlSamplesPage()
-        {
-            InitializeComponent();
-        }
-    }
-}
-```
-
-`XamlSamplesPage` Třída odvozená z `ContentPage`, ale Všimněte si `partial` definici třídy. Existuje naznačuje, že by měl být jiné C# soubor s jinou definici třídu pro `XamlSamplesPage`, ale kde je to? A co je, že `InitializeComponent` metoda?
-
-Když Visual Studio pro Mac sestavení projektu, analyzuje souboru XAML pro generování souboru kódu C#. Pokud se podíváte **XamlSamples\XamlSamples\obj\Debug** adresáře, najdete soubor s názvem **XamlSamples.XamlSamplesPage.xaml.g.cs**. "g" je zkratka pro nevygeneruje. To je další třídu definice `XamlSamplesPage` obsahující definice `InitializeComponent` metoda volána z `XamlSamplesPage` konstruktor.  Tyto dvě partial `XamlSamplesPage` definice tříd pak lze zkompilovat společně. V závislosti na tom, jestli XAML kompiluje nebo ne je soubor XAML nebo binárního formátu souboru XAML vložený spustitelný soubor.
-
-V době běhu kódu v projektu volání konkrétní platformu `LoadApplication` metoda, předání novou instanci třídy `App` třídy v PCL. `App` Vytvoří konstruktoru třídy `XamlSamplesPage`. Volání konstruktoru třídy `InitializeComponent`, který potom volá `LoadFromXaml` metoda, která extrahuje souboru XAML (nebo její kompilované binární) z PCL. `LoadFromXaml` inicializuje všechny objekty, které jsou definované v souboru XAML, připojí všechny společně v vztahů nadřazenosti a podřízenosti, připojí obslužné rutiny událostí, které jsou definované v kódu na události, nastavte v souboru XAML a nastaví stromu výsledných objektů jako obsahu stránce.
-
------
+V době běhu kódu v projektu volání konkrétní platformu `LoadApplication` metoda, předání novou instanci třídy `App` – třída v knihovně .NET Standard. `App` Vytvoří konstruktoru třídy `MainPage`. Volání konstruktoru třídy `InitializeComponent`, který potom volá `LoadFromXaml` metoda, která extrahuje souboru XAML (nebo její kompilované binární) v knihovně .NET Standard. `LoadFromXaml` inicializuje všechny objekty, které jsou definované v souboru XAML, připojí všechny společně v vztahů nadřazenosti a podřízenosti, připojí obslužné rutiny událostí, které jsou definované v kódu na události, nastavte v souboru XAML a nastaví stromu výsledných objektů jako obsahu stránce.
 
 I když nepotřebujete normálně tráví mnoho času se soubory generovaného kódu, někdy výjimky za běhu jsou vyvolány v kódu generovaného souborů, měli byste se seznámit s nimi.
 
@@ -198,39 +142,17 @@ Při kompilování a spuštění tohoto programu `Label` prvek se zobrazuje v ce
 
 Pro více zajímavé vizuální prvky, stačí je další zajímavé XAML.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-## <a name="preliminaries"></a>Nezbytné úkony
-
-Chcete-li názvy souborů v sadě Visual Studio pro Mac konzistentní s souborů vytvořených pomocí sady Visual Studio spuštěná s pověřeními Windows, přejmenujte **XamlSamplesPage.xaml** k **MainPage.xaml**, a  **XamlSamplesPage.xaml.cs** k **MainPage.xaml.cs**. V rámci **XamlSamplesPage.xaml** změňte `XamlSamplesPage` k `MainPage`. V rámci **XamlSamplesPage.xaml.cs** změňte dva výskyty `XamlSamplesPage` k `MainPage`. V rámci **App.xaml.cs** souboru, změňte příkaz
-
-```csharp
-MainPage = new XamlSamplesPage();
-```
-
-na
-
-```csharp
-MainPage = new MainPage();
-```
-
------
-
-Test, který program stále zkompiluje a nasadí než budete pokračovat.
-
 ## <a name="adding-new-xaml-pages"></a>Přidání nové stránky XAML
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Chcete-li přidat další založených na XAML `ContentPage` třídy do projektu, vyberte **XamlSamples** PCL projektu a vyvolání **projektu > Přidat novou položku** položku nabídky. Na levé straně **přidat novou položku** dialogovém okně, vyberte **Visual C#** a **Xamarin.Forms**. Ze seznamu vyberte **obsahu stránce** (není **obsahu stránce (C#)**, která vytvoří stránku pouze kód, nebo **zobrazení obsahu**, který není na stránce). Stránky zadejte název, například **HelloXamlPage.xaml**:
+Chcete-li přidat další založených na XAML `ContentPage` třídy do projektu, vyberte **XamlSamples** .NET standardní knihovna projektu a vyvolání **projektu > Přidat novou položku** položku nabídky. Na levé straně **přidat novou položku** dialogovém okně, vyberte **Visual C#** a **Xamarin.Forms**. Ze seznamu vyberte **obsahu stránce** (není **obsahu stránce (C#)**, která vytvoří stránku pouze kód, nebo **zobrazení obsahu**, který není na stránce). Stránky zadejte název, například **HelloXamlPage.xaml**:
 
 ![](get-started-with-xaml-images/win/addnewitemdialog.w157.png "Přidat novou položku – dialogové okno")
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-Chcete-li přidat další založených na XAML `ContentPage` třídy do projektu, vyberte **XamlSamples** PCL projektu a vyvolání **soubor > Nový soubor** položku nabídky. Na levé straně **nový soubor** dialogovém okně, vyberte **Forms** na levé straně a **Forms ContentPage Xaml** (není **Forms ContentPage**, které Vytvoří stránku pouze kód, nebo **zobrazení obsahu**, který není na stránce). Stránky zadejte název, například **HelloXamlPage**:
+Chcete-li přidat další založených na XAML `ContentPage` třídy do projektu, vyberte **XamlSamples** .NET standardní knihovna projektu a vyvolání **soubor > Nový soubor** položku nabídky. Na levé straně **nový soubor** dialogovém okně, vyberte **Forms** na levé straně a **Forms ContentPage Xaml** (není **Forms ContentPage**, které Vytvoří stránku pouze kód, nebo **zobrazení obsahu**, který není na stránce). Stránky zadejte název, například **HelloXamlPage**:
 
 ![](get-started-with-xaml-images/mac/newfiledialog.png "Dialogové okno Nový soubor")
 

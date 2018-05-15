@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/23/2017
-ms.openlocfilehash: 95c5f482e1bf3e55fa4c6fef18b1dbe6274f33e8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d1f11ed1b52354dedbdb8893a96e0ae7589d5389
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="local-databases"></a>Místní databáze
 
@@ -19,7 +19,7 @@ _Xamarin.Forms podporuje aplikací řízené databázi pomocí SQLite databázov
 
 ## <a name="overview"></a>Přehled
 
-Xamarin.Forms aplikace můžete použít [SQLite.NET PCL NuGet](https://www.nuget.org/packages/sqlite-net-pcl/) balíček začlenit databázových operací do sdíleného kódu odkazem `SQLite` třídy, které se dodávají v NuGet. Databázové operace lze definovat v projektu přenosných třída knihovny PCL () řešení Xamarin.Forms s projekty specifické pro platformu vrácení cestu k uložení databáze.
+Xamarin.Forms aplikace můžete použít [SQLite.NET PCL NuGet](https://www.nuget.org/packages/sqlite-net-pcl/) balíček začlenit databázových operací do sdíleného kódu odkazem `SQLite` třídy, které se dodávají v NuGet. Databázové operace může být definován v .NET Standard projektu knihovny řešení Xamarin.Forms s projekty specifické pro platformu vrácení cestu k uložení databáze.
 
 Doprovodných [ukázkové aplikace](https://github.com/xamarin/xamarin-forms-samples/tree/master/Todo) je jednoduchou aplikaci seznamu úkolů. Tyto snímky obrazovky ukazují, jak ukázka zobrazuje na jednotlivých platformách:
 
@@ -33,7 +33,7 @@ V této části ukazuje, jak přidat balíčky SQLite.Net NuGet řešení Xamari
 
 <a name="XamarinForms_PCL_Project" />
 
-### <a name="xamarinsforms-pcl-project"></a>Xamarins.Forms PCL Project
+### <a name="xamarinsforms-pcl-project"></a>Xamarins.Forms PCL projektu
 
 Chcete-li přidat podporu SQLite na platformě Xamarin.Forms PCL projekt, pomocí funkce vyhledávání NuGet najděte **sqlite. net pcl** a instalaci balíčku:
 
@@ -160,7 +160,7 @@ Všimněte si, že tento kód obsahuje `assembly:Dependency` atributů tak, aby 
 
 <a name="PCL_Android" />
 
-### <a name="android-project"></a>Android Project
+### <a name="android-project"></a>Projekt pro Android
 
 Konfigurace aplikace pro Android, přidat jeden balíček NuGet do projektu pro Android pomocí *NuGet* okno:
 

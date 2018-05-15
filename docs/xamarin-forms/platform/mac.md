@@ -8,11 +8,11 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/03/2017
-ms.openlocfilehash: de08e686fc07595b75016b9266f57b12831e9822
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0985fb533969a331ceee62f490bae600de9f189c
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="mac-platform-setup"></a>Instalační program platformy Mac
 
@@ -39,9 +39,9 @@ Postupujte podle těchto pokynů můžete přidat aplikaci Mac, který se spust�
 
   ![Animovaný pokyny znázorňující postup přidání kakao aplikace](mac-images/add-macos-proj.gif)
 
-5. V projektu Mac, klikněte pravým tlačítkem na **balíčků > přidat balíčky... ** přidat [Xamarin.Forms/2.3.5.235-pre2](https://www.nuget.org/packages/Xamarin.Forms/2.3.5.235-pre2) NuGet. Ostatní projekty by měl aktualizovat také na tuto verzi.
+5. V projektu Mac, klikněte pravým tlačítkem na **balíčků > přidat balíčky...**  přidat [Xamarin.Forms/2.3.5.235-pre2](https://www.nuget.org/packages/Xamarin.Forms/2.3.5.235-pre2) NuGet. Ostatní projekty by měl aktualizovat také na tuto verzi.
 
-6. V projektu Mac, klikněte pravým tlačítkem na **odkazy** a přidejte odkaz na projekt Xamarin.Forms (sdílených projektů nebo PCL).
+6. V projektu Mac, klikněte pravým tlačítkem na **odkazy** a přidejte odkaz na projekt Xamarin.Forms (sdílených projektů nebo .NET Standard projektu knihovny).
 
   ![Přidat odkaz na projektu sdíleného kódu Xamarin.Forms](mac-images/references-sml.png)
 
@@ -151,9 +151,9 @@ Ne všechny funkce Xamarin.Forms jsou dokončeny v této verzi preview; Tady je 
 * Navigace – InsertPageBefore
 * OpenGLRenderer
 * Výběr – implementace Bindable/lze zobrazit
-* TabbedPage – BarBackgroundColor, BarTextColor
+* BarTextColor TabbedPage – BarBackgroundColor,
 * Zobrazení Tabulka – UnevenRows
-* ViewCell – IsEnabled, ForceUpdateSize
+* ForceUpdateSize ViewCell – hodnotu IsEnabled,
 * Webové zobrazení – většina WebNavigationEvents
 
 

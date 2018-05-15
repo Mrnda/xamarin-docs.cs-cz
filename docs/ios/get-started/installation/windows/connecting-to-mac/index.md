@@ -7,11 +7,11 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/16/2018
-ms.openlocfilehash: adaa74e206b1e756398f1ef1a38f387082c1e8f5
-ms.sourcegitcommit: dc6ccf87223942088ca926c0dadd5b5478c683cb
+ms.openlocfilehash: ac3df50a67dcf6ad813d549479db42856acc2ce1
+ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="pair-to-mac"></a>Pár pro Mac
 
@@ -243,3 +243,4 @@ Tento článek popisuje postup použití pár na Mac pro připojení k hostiteli
 - [Řešení potíží s připojením](~/ios/get-started/installation/windows/connecting-to-mac/troubleshooting.md)
 - [Xamarin Mac sestavení Agent – Přednáškový Lightning univerzity Xamarin](https://www.youtube.com/watch?v=MBAPBtxkjFQ)
 - [Úvod k Xamarin.iOSu pro Visual Studio](~/ios/get-started/installation/windows/introduction-to-xamarin-ios-for-visual-studio.md)
+- [Používat vzdáleně iOS simulátor pro Windows](~/tools/ios-simulator.md)

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
-ms.openlocfilehash: ae4f2198e42ab404cabe148108a24ef2219bcf6b
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 9bb368ca72909489ca267794035a4c4d0883f109
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="xamarinforms-deep-dive"></a>Informace přímým Xamarin.Forms
 
@@ -54,7 +54,7 @@ Visual Studio pro Mac následuje postup sadě Visual Studio uspořádání kód 
 
 Projekty jsou:
 
-- Phoneword – tento projekt je projektu knihovny (PCL) přenosných tříd, který obsahuje všechny sdílené kód a sdíleného uživatelského rozhraní.
+- Phoneword – tento projekt je .NET Standard projektu knihovny, který obsahuje všechny sdílené kód a sdíleného uživatelského rozhraní.
 - Phoneword.Droid – tento projekt obsahuje konkrétní kódu pro systém Android a vstupní bod pro aplikace pro Android.
 - Phoneword.iOS – tento projekt obsahuje iOS konkrétního kódu a je vstupní bod pro aplikace pro iOS.
 
@@ -94,7 +94,7 @@ Aplikaci Xamarin.Forms je navržen stejným způsobem jako tradiční aplikace n
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-Aplikaci Xamarin.Forms je navržen stejným způsobem jako tradiční aplikace napříč platformami. Sdílené kódu je obvykle umístěna v přenosných třída knihovny PCL () a specifické pro platformu aplikace využívat sdíleného kódu. Následující diagram ukazuje přehled této relace pro aplikaci Phoneword:
+Aplikaci Xamarin.Forms je navržen stejným způsobem jako tradiční aplikace napříč platformami. Sdílené kódu je obvykle umístěna v rozhraní .NET standardní knihovna a specifické pro platformu aplikace využívat sdíleného kódu. Následující diagram ukazuje přehled této relace pro aplikaci Phoneword:
 
 ![](deepdive-images/xs/architecture.png "Architektura Phoneword")
 

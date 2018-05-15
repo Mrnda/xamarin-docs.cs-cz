@@ -6,11 +6,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: d06c3f95f55edb4870279bfc7d5326be4af4b3bc
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5774d91dad7b733a03219dcce1434798f70d4564
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="getting-started-with-datapages"></a>Začínáme s DataPages
 
@@ -26,7 +26,7 @@ Abyste mohli začít vytváření stránky jednoduché datové jednotky pomocí 
 
 ## <a name="1-add-nuget-packages"></a>1. Přidání balíčků NuGet
 
-Přidejte tyto balíčky Nuget Xamarin.Forms PCL a projekty aplikací:
+Tyto balíčky Nuget přidáte do vašich Xamarin.Forms .NET Standard projektů knihovny a aplikace:
 
 * Xamarin.Forms.Pages
 * Xamarin.Forms.Theme.Base

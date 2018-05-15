@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: d4ae3b42c5c926749310da6e36b6f4e9754d398c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3807ac6a91d3bf650922a01d9111dc34513d62b3
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="creating-xaml-markup-extensions"></a>Vytváření rozšíření značek pro jazyk XAML
 
@@ -151,7 +151,7 @@ class ImageResourceExtension : IMarkupExtension<ImageSource>
 }
 ```
 
-`ImageResourceExtension` je užitečné, pokud soubor XAML potřebuje přístup k souboru bitové kopie uložené jako vložený prostředek v projektu knihovny přenosných tříd. Použije `Source` vlastnost zavolejte statickou `ImageSource.FromResource` metoda. Tato metoda vyžaduje prostředků plně kvalifikovaný název, který se skládá z název sestavení, název složky a název souboru odděleny tečkami. `ImageResourceExtension` Není nutné sestavení název část protože získá název sestavení pomocí reflexe a přidá ji do `Source` vlastnost. Bez ohledu na to `ImageSource.FromResource` od sestavení, které obsahuje rastrového obrázku, což znamená, že tato rozšíření prostředků XAML nemůže být součástí vnější knihovny, pokud jsou bitové kopie i v této knihovně se musí volat. (Viz [ **vložené obrázky** ](~/xamarin-forms/user-interface/images.md#embedded_images) článku Další informace o přístupu k bitmap uložené jako vložené prostředky.) 
+`ImageResourceExtension` je užitečné, pokud soubor XAML potřebuje přístup k souboru bitové kopie uložené jako vložený prostředek v rozhraní .NET standardní projektu knihovny. Použije `Source` vlastnost zavolejte statickou `ImageSource.FromResource` metoda. Tato metoda vyžaduje prostředků plně kvalifikovaný název, který se skládá z název sestavení, název složky a název souboru odděleny tečkami. `ImageResourceExtension` Není nutné sestavení název část protože získá název sestavení pomocí reflexe a přidá ji do `Source` vlastnost. Bez ohledu na to `ImageSource.FromResource` od sestavení, které obsahuje rastrového obrázku, což znamená, že tato rozšíření prostředků XAML nemůže být součástí vnější knihovny, pokud jsou bitové kopie i v této knihovně se musí volat. (Viz [ **vložené obrázky** ](~/xamarin-forms/user-interface/images.md#embedded_images) článku Další informace o přístupu k bitmap uložené jako vložené prostředky.) 
 
 I když `ImageResourceExtension` vyžaduje `Source` vlastnost, která má být nastaveno, `Source` vlastnost jako vlastnost obsahu třídy uvedené v atributu. To znamená, že `Source=` lze vynechat část výrazu do složených závorek. V **ukázkový prostředek obrázku** stránky, `Image` elementy načíst dvě bitové kopie pomocí název složky a název souboru odděleny tečkami:
 

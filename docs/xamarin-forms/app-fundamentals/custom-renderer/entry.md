@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: c120add5a301e440911bd9794da77732e7787cc0
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: c93681c3bfd8de8d813cbe98a7ac28b3ee8b74fc
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="customizing-an-entry"></a>Přizpůsobení položku
 
@@ -43,13 +43,13 @@ public class MyEntry : Entry
 }
 ```
 
-`MyEntry` Řízení je vytvořen v projektu knihovny (PCL) přenosných tříd a je jednoduše k [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) ovládacího prvku. Přizpůsobení ovládacího prvku budou provedeny v vlastní zobrazovací jednotky, aby žádné další implementace je vyžadována v `MyEntry` ovládacího prvku.
+`MyEntry` Prvek je vytvořen v rozhraní .NET standardní projektu knihovny, je jednoduše k [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) ovládacího prvku. Přizpůsobení ovládacího prvku budou provedeny v vlastní zobrazovací jednotky, aby žádné další implementace je vyžadována v `MyEntry` ovládacího prvku.
 
 <a name="Consuming_the_Custom_Control" />
 
 ## <a name="consuming-the-custom-control"></a>Použití vlastního ovládacího prvku
 
-`MyEntry` Řízení může odkazovat v jazyce XAML v projektu PCL deklarace oboru názvů pro umístění a použití Předpona oboru názvů na elementu ovládacího prvku. Následující příklad kódu ukazuje jak `MyEntry` řízení mohou být spotřebovávána stránky XAML:
+`MyEntry` Řízení může odkazovat v jazyce XAML v rozhraní .NET standardní projektu knihovny deklarace oboru názvů pro umístění a použití Předpona oboru názvů na elementu ovládacího prvku. Následující příklad kódu ukazuje jak `MyEntry` řízení mohou být spotřebovávána stránky XAML:
 
 ```xaml
 <ContentPage ...

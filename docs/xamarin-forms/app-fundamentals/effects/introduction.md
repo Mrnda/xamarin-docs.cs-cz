@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 7b859dd58551675c121c5600ba9c691e4280a03b
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 805b27139d644d0fac4a7c5a9e9b2c2c331d7130
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="introduction-to-effects"></a>Úvod do efekty
 
@@ -21,7 +21,7 @@ Xamarin.Forms [rozložení stránky a ovládací prvky](~/xamarin-forms/user-int
 
 Vývojářům můžete implementovat vlastní vlastní `Renderer` třídy k přizpůsobení vzhledu a chování ovládacího prvku. Implementace třídy vlastní zobrazovací jednotky k přizpůsobení jednoduchý ovládací prvek je však často zobrazené – odpověď. Tento proces, což nativní ovládací prvky na každou platformu, která lze snadno přizpůsobit zjednodušit účinky.
 
-Účinky jsou vytvořené v projektech specifické pro platformu vytváření podtříd `PlatformEffect` řízení a důsledky jsou spotřebovávají jejich připojením k vhodný ovládací prvek v projektu Xamarin.Forms přenosných třída knihovny PCL () nebo sdílené knihovny.
+Účinky jsou vytvořené v projektech specifické pro platformu vytváření podtříd `PlatformEffect` řízení a důsledky jsou spotřebovávají jejich připojením k vhodný ovládací prvek Xamarin.Forms .NET standardní knihovny nebo sdílené knihovny projektu.
 
 ## <a name="why-use-an-effect-over-a-custom-renderer"></a>Proč používat vliv přes vlastní zobrazovací jednotky?
 

@@ -6,11 +6,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: 1fc3fb17ec97ce9028abbf63cdedbfc5fec12204
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 520982491803fa0a909008ee60730a4149a75296
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="device-class"></a>Zařízení – třída
 
@@ -155,7 +155,7 @@ Device.OpenUri(new Uri("https://evolve.xamarin.com/"));
 
 ## <a name="devicestarttimer"></a>Device.StartTimer
 
-`Device` Třída také obsahuje `StartTimer` metodu, která poskytuje jednoduchý způsob k aktivaci úlohy závislá na čase, který funguje v Xamarin.Forms společný kód (včetně PCLs). Předat `TimeSpan` nastavit interval a vrátíte se `true` zachovat časovač spuštěná nebo `false` zastavit po aktuální volání.
+`Device` Třída také obsahuje `StartTimer` metodu, která poskytuje jednoduchý způsob k aktivaci úlohy závislá na čase, který funguje v Xamarin.Forms společný kód, včetně .NET standardní knihovny. Předat `TimeSpan` nastavit interval a vrátíte se `true` zachovat časovač spuštěná nebo `false` zastavit po aktuální volání.
 
 ```csharp
 Device.StartTimer (new TimeSpan (0, 0, 60), () => {
@@ -184,7 +184,7 @@ Poznámka: Tento metod pomocí `async/await` nemusíte používat `BeginInvokeOn
 
 ## <a name="summary"></a>Souhrn
 
-Platformě Xamarin.Forms `Device` třída umožňuje jemně odstupňovanou kontrolu nad funkce a rozložení na základě na platformu – společné i v kódu (PCL nebo sdílených projektů).
+Platformě Xamarin.Forms `Device` třída umožňuje jemně odstupňovanou kontrolu nad funkce a rozložení na základě na platformu – společné i v kódu (.NET Standard projektů knihovny nebo sdílených projektů).
 
 
 ## <a name="related-links"></a>Související odkazy

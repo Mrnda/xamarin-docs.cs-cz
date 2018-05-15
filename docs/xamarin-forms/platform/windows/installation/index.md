@@ -7,39 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
-ms.openlocfilehash: b6ea988aa8c058fe5a92a17e9b72f81e0ccb12db
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: aed240dd403957e5935666d4179a6d642c411b86
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="setup-windows-projects"></a>Projekty instalace systému Windows
 
 _Přidání nové projekty Windows do existujícího řešení Xamarin.Forms_
 
 Starší řešení Xamarin.Forms (nebo nebyla vytvořena v systému macOS) nebudou mít projekty aplikací pro univerzální platformu Windows (UWP). Proto musíte ručně přidat do projektu UPW sestavení Windows 10 (UWP) aplikace.
-
-<a name="pcl" />
-
-## <a name="update-the-pcl-profile"></a>Aktualizovat profil PCL
-
-Pokud vaše stávající aplikace Xamarin.Forms používá šablony přenosných třída knihovny PCL (), je třeba aktualizovat jeho profil.
-
-1. **Klikněte pravým tlačítkem na > vlastnosti** (stávající nastavení se můžou lišit)
-
-  ![](images/targets.png "PCL cíle")
-
-2. Klikněte na **změnu...** tlačítko
-
-3. Ujistěte se, **Windows 8** a **Windows Phone 8.1** jsou vybrané možnosti (a **Windows Phone Silveright** je *zrušte vybrané*):
-
-  ![](images/pcl.png "PCL Target – možnosti")
-
-4. Stiskněte klávesu **OK** a uložte změny.
-
-Tato hodnota rovná **profil 111** při konfigurování vašeho PCL v sadě Visual Studio pro Mac pomocí rozevíracího seznamu.
-
-  ![](images/pcl-xs.png "Profil PCL 111")
 
 ## <a name="add-a-universal-windows-platform-app"></a>Přidat Universal Windows Platform aplikace
 
@@ -65,7 +43,7 @@ Postupujte podle těchto pokynů můžete přidat aplikace pro UPW, který se sp
 
   [![](universal-images/configuration-sml.png "Okno nástroje Configuration Manager")](universal-images/configuration.png#lightbox "okno nástroje Configuration Manager")
 
- 5 . Klikněte pravým tlačítkem na projekt a vyberte **Přidat > odkaz** a vytvořit odkaz na projekt aplikace Xamarin.Forms (PCL, .NET Standard nebo sdílený projekt).
+ 5 . Klikněte pravým tlačítkem na projekt a vyberte **Přidat > odkaz** a vytvořit odkaz na projekt aplikace Xamarin.Forms (.NET Standard nebo sdílený projekt).
 
   ![](universal-images/addref-sml.png "Dialogové okno Správce odkazů")
 

@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/25/2017
-ms.openlocfilehash: c0c8a6f4736bdcbb028425296f2e05dd500294d9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5a36c6ab14fdc7bfc5916456670be9c8fe4476ff
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="frequently-asked-questions"></a>Nejčastější dotazy
 
 
 ## <a name="can-i-update-the-xamarinforms-default-template-to-a-newer-nuget-packageupdate-forms-templatemd"></a>[Můžu aktualizovat výchozí šablonu Xamarin.Forms na novější balíček NuGet?](update-forms-template.md)
-Tato příručka používá jako příklad šablony Xamarin.Forms PCL, ale stejnou metodu Obecné bude fungovat i pro šablonu Xamarin.Forms sdílených projektů. 
+Tato příručka používá jako příklad Xamarin.Forms .NET standardní šablona knihovny, ale stejnou metodu Obecné bude fungovat i pro šablonu Xamarin.Forms sdílených projektů. 
 
 ## <a name="why-doesnt-the-visual-studio-xaml-designer-work-for-xamarinforms-xaml-filesforms-xaml-designermd"></a>[Proč Návrhář XAML v sadě Visual Studio nefunguje pro soubory XAML Xamarin.Forms?](forms-xaml-designer.md)
 Xamarin.Forms nepodporuje aktuálně vizuální nástroje pro soubory XAML.

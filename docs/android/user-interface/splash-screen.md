@@ -6,12 +6,12 @@ ms.assetid: 26480465-CE19-71CD-FC7D-69D0990D05DE
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: f34a3ee44b604bf0b82faf77769f3c2844e6460f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
-ms.translationtype: MT
+ms.date: 05/11/2018
+ms.openlocfilehash: 431cc359f4191ab2b247b3cacf0f54c3ba44cd57
+ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="splash-screen"></a>Úvodní obrazovka
 
@@ -152,6 +152,74 @@ public class MainActivity : AppCompatActivity
     // Code omitted for brevity
 }
 ```
+
+## <a name="landscape-mode"></a>Režim na šířku
+
+Úvodní obrazovka implementována v předchozích krocích zobrazí správně v režimu na výšku a šířku. V některých případech je ale potřeba mít samostatné úvodní obrazovky pro režimy na výšku a šířku (například pokud obrázek úvodní přes celou obrazovku).
+
+Pro přidání úvodní obrazovka pro šířku, použijte následující kroky:
+
+1. V **prostředky/drawable** složky, přidejte na šířku verzi obrázek úvodní obrazovky, který chcete použít. V tomto příkladu **splash_logo_land.png** je verze na šířku logo, které byl použit v uvedených příkladech (používá černým lettering místo blue).
+
+2. V **prostředky/drawable** složky, vytvořit na šířku verzi `layer-list` drawable, byla definována dříve (například **splash_screen_land.xml**). V tomto souboru nastaví cestu rastrového obrázku na verzi obrázek úvodní obrazovky na šířku. V následujícím příkladu **splash_screen_land.xml** používá **splash_logo_land.png**:
+
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+      <item>
+        <color android:color="@color/splash_background"/>
+      </item>
+      <item>
+        <bitmap
+            android:src="@drawable/splash_logo_land"
+            android:tileMode="disabled"
+            android:gravity="center"/>
+      </item>
+    </layer-list>
+
+    ```
+
+3.  Vytvořte **prostředky nebo hodnoty krajině** složky, pokud ještě neexistuje.
+
+4.  Přidat soubory **colors.xml** a **style.xml** k **hodnoty krajině** (tyto můžete kopírovat a upravovat z existující **values/colors.xml**a **values/style.xml** soubory).
+
+5.  Upravit **hodnoty krajině/style.xml** tak, aby používala na šířku verze drawable pro `windowBackground`. V tomto příkladu **splash_screen_land.xml** se používá:
+
+    ```xml
+    <resources>
+      <style name="MyTheme.Base" parent="Theme.AppCompat.Light">
+      </style>
+        <style name="MyTheme" parent="MyTheme.Base">
+      </style>
+      <style name="MyTheme.Splash" parent ="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_screen_land</item>
+        <item name="android:windowNoTitle">true</item>  
+        <item name="android:windowFullscreen">true</item>  
+        <item name="android:windowContentOverlay">@null</item>  
+        <item name="android:windowActionBar">true</item>  
+      </style>
+    </resources>
+    ```
+
+6.  Upravit **hodnoty krajině/colors.xml** konfigurace barvy, kterou chcete použít pro verzi úvodní obrazovky na šířku. V tomto příkladu se barvu pozadí úvodní změní na žlutý pro režim na šířku:
+
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <resources>
+      <color name="primary">#2196F3</color>
+      <color name="primaryDark">#1976D2</color>
+      <color name="accent">#FFC107</color>
+      <color name="window_background">#F5F5F5</color>
+      <color name="splash_background">#FFFF00</color>
+    </resources>
+    ```
+
+7.  Sestavte a spusťte aplikaci znovu. Otočení zařízení na šířku režimu, zatímco stále zobrazené úvodní obrazovce. Úvodní obrazovka se změní na verzi na šířku:
+
+    [![Otočení úvodní obrazovky na šířku](splash-screen-images/landscape-splash-sml.png)](splash-screen-images/landscape-splash.png#lightbox)
+
+
+Všimněte si, že použití úvodní obrazovky na šířku režimu vždy neposkytuje integrované prostředí. Ve výchozím nastavení Android spuštění aplikace v režimu na výšku a přejde se na šířku režimu i v případě, že zařízení je již v režimu na šířku. Výsledkem je pokud je aplikace spuštěná, když je zařízení v režimu na šířku, zařízení krátce zobrazí úvodní obrazovka na výšku a pak animuje otočení z na výšku, které se úvodní obrazovky na šířku. Bohužel nastane tato počáteční přechod na výšku do na šířku i v případě `ScreenOrientation = Android.Content.PM.ScreenOrientation.Landscape` je uveden v příznaky úvodní aktivity. Nejlepší způsob, jak toto omezení obejít je vytvoření obrázek jeden úvodní obrazovky, který vykreslí správně v režimech na výšku a šířku.
 
 
 ## <a name="summary"></a>Souhrn

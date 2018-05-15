@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
-ms.openlocfilehash: a601e74cc274fd57bb2be9af3562b3a7290d7047
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: 275ec851a2fd8e96adecfeca5daf6a66add7bd92
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="gtk-platform-setup"></a>Instalační program platformy GTK #
 
@@ -34,7 +34,7 @@ Postupujte podle těchto pokynů můžete přidat GTK # aplikaci, která se spus
 
 1. V Visual Studio 2017, klikněte pravým tlačítkem na název řešení v **Průzkumníku řešení** a zvolte **Přidat > Nový projekt...** .
 
-2. V **nový projekt** okně na levém vyberte **Visual C#** a **Windows Classic Desktop**. V seznamu typy projektů, vyberte **knihovny tříd (rozhraní .NET Framework)**a ujistěte se, že **Framework** rozevíracího seznamu je nastaven na minimálně rozhraní .NET Framework 4.7.
+2. V **nový projekt** okně na levém vyberte **Visual C#** a **Windows Classic Desktop**. V seznamu typy projektů, vyberte **knihovny tříd (rozhraní .NET Framework)** a ujistěte se, že **Framework** rozevíracího seznamu je nastaven na minimálně rozhraní .NET Framework 4.7.
 
 3. Zadejte název projektu s **GTK** příponu, třeba **GameOfLife.GTK**. Klikněte **Procházet** tlačítko, vyberte složku obsahující jiné platformy projekty a stiskněte klávesu **vyberte složku**. Tím bude přidán GTK projektu ve stejném adresáři jako ostatní projekty v řešení.
 
@@ -56,7 +56,7 @@ Postupujte podle těchto pokynů můžete přidat GTK # aplikaci, která se spus
 
 6. V **Průzkumníku řešení**, klikněte pravým tlačítkem na název řešení a vyberte **spravovat balíčky NuGet pro řešení**. Vyberte **aktualizace** kartě a **Xamarin.Forms** balíčku. Vybrat všechny projekty a provede jejich aktualizaci na stejnou verzi jako použité v projektu GTK Xamarin.Forms.
 
-7. V **Průzkumníku řešení**, klikněte pravým tlačítkem na **odkazy** v GTK projektu. V **správce odkazů** dialogovém okně, vyberte **projekty** na levé straně a zaškrtněte políčka u projektu .NET Standard, PCL nebo sdílené:
+7. V **Průzkumníku řešení**, klikněte pravým tlačítkem na **odkazy** v GTK projektu. V **správce odkazů** dialogovém okně, vyberte **projekty** na levé straně a zaškrtněte políčka u projektu .NET Standard nebo sdílené:
 
     ![Referenční sdílený projekt](gtk-images/win/reference-shared-project.png "odkazovat sdílený projekt")
 
@@ -129,7 +129,7 @@ Postupujte podle těchto pokynů můžete přidat aplikaci GTK # které poběž�
 
 6. Aktualizujte ostatní platformy projekty, aby používaly stejnou verzi Xamarin.Forms jako použité GTK projektu.
 
-7. V **řešení Pad**, klikněte pravým tlačítkem na **odkazy > Upravit odkazy...**  pro GTK projekt a přidejte odkaz na projekt Xamarin.Forms (.NET Standard, PCL nebo sdílený projekt).
+7. V **řešení Pad**, klikněte pravým tlačítkem na **odkazy > Upravit odkazy...**  pro GTK projekt a přidejte odkaz na projekt Xamarin.Forms (.NET Standard nebo sdílený projekt).
 
     ![Referenční sdílený projekt](gtk-images/mac/reference-shared-project.png "odkazovat sdílený projekt")
 

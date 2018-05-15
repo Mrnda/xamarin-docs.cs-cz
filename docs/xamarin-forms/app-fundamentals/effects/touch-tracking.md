@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/01/2017
-ms.openlocfilehash: eb4ed3df4ea1f9e6aacf1c875eab17908d73cb7c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e363cae4dd72a25e4768395410d4e56a8db30eba
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="invoking-events-from-effects"></a>Vyvolání událostí z efekty
 
@@ -49,7 +49,7 @@ Z tohoto důvodu touch sledování účinek popsané v tomto článku implementu
 
 ## <a name="the-touch-tracking-effect-api"></a>Rozhraní API vliv sledování dotykového ovládání
 
-[ **Touch sledování účinku ukázky** ](https://developer.xamarin.com/samples/xamarin-forms/effects/TouchTrackingEffectDemos/) ukázka obsahuje třídy (a výčet), které implementují nízké úrovně sledování dotykového ovládání. Tyto typy patří do oboru názvů `TouchTracking` a začínat slovem `Touch`. **TouchTrackingEffectDemos** zahrnuje projektu knihovny přenosných tříd `TouchActionType` výčet typu touch událostí:
+[ **Touch sledování účinku ukázky** ](https://developer.xamarin.com/samples/xamarin-forms/effects/TouchTrackingEffectDemos/) ukázka obsahuje třídy (a výčet), které implementují nízké úrovně sledování dotykového ovládání. Tyto typy patří do oboru názvů `TouchTracking` a začínat slovem `Touch`. **TouchTrackingEffectDemos** zahrnuje .NET Standard projektu knihovny `TouchActionType` výčet typu touch událostí:
 
 ```csharp
 public enum TouchActionType
@@ -65,7 +65,7 @@ public enum TouchActionType
 
 Všechny platformy také zahrnovat událost, která určuje, že touch událost byla zrušena.
 
-`TouchEffect` Je odvozena od třídy v PCL `RoutingEffect` a definuje událost s názvem `TouchAction` a metodu s názvem `OnTouchAction` , který spustí `TouchAction` událostí:
+`TouchEffect` Je odvozena od třídy v knihovně .NET standardní `RoutingEffect` a definuje událost s názvem `TouchAction` a metodu s názvem `OnTouchAction` , který spustí `TouchAction` událostí:
 
 ```csharp
 public class TouchEffect : RoutingEffect
@@ -87,7 +87,7 @@ public class TouchEffect : RoutingEffect
 
 Všimněte si také `Capture` vlastnost. K zachycení událostí dotykového ovládání, musí aplikace nastavte tuto vlastnost na `true` před verzí `Pressed` událostí. Události dotykového ovládání, jinak hodnota chovají stejně jako v univerzální platformu Windows.
 
-`TouchActionEventArgs` Třída v PCL obsahuje všechny informace, které doprovází jednotlivých událostí:
+`TouchActionEventArgs` Třída v knihovně .NET Standard obsahuje všechny informace, které doprovází jednotlivých událostí:
 
 ```csharp
 public class TouchActionEventArgs : EventArgs
@@ -112,7 +112,7 @@ public class TouchActionEventArgs : EventArgs
 
 Aplikace můžete použít `Id` vlastnost pro sledování jednotlivých prstů. Upozornění `IsInContact` vlastnost. Tato vlastnost je vždy `true` pro `Pressed` události a `false` pro `Released` události. Je také vždy `true` pro `Moved` událostí na iOS a Android. `IsInContact` Vlastnost může být `false` pro `Moved` stisknutí událostí pro univerzální platformu Windows při spuštění programu na ploše a ukazatel myši přesune bez tlačítko.
 
-Můžete použít `TouchEffect` třídy ve svých vlastních aplikacích zahrnutím soubor v projektu PCL na řešení a přidáním instanci do `Effects` skupiny libovolný element Xamarin.Forms. Připojit, aby obslužná rutina `TouchAction` událost, která má získat události dotykového ovládání.
+Můžete použít `TouchEffect` třídy ve svých vlastních aplikacích zahrnutím soubor v projektu knihovny .NET standardní na řešení a přidáním instanci do `Effects` skupiny libovolný element Xamarin.Forms. Připojit, aby obslužná rutina `TouchAction` událost, která má získat události dotykového ovládání.
 
 Chcete-li použít `TouchEffect` ve vaší vlastní aplikaci, budete také potřebovat implementace platformy součástí **TouchTrackingEffectDemos** řešení.
 
@@ -151,7 +151,7 @@ public class TouchEffect : PlatformEffect
         // Get the Windows FrameworkElement corresponding to the Element that the effect is attached to
         frameworkElement = Control == null ? Container : Control;
 
-        // Get access to the TouchEffect class in the PCL
+        // Get access to the TouchEffect class in the .NET Standard library
         effect = (TouchTracking.TouchEffect)Element.Effects.
                     FirstOrDefault(e => e is TouchTracking.TouchEffect);
 
@@ -203,7 +203,7 @@ public class TouchEffect : PlatformEffect
 }
 ```
 
-`OnPointerPressed` také zkontroluje hodnotu `Capture` vlastnost ve třídě vliv v PCL a volání `CapturePointer` Pokud je `true`.
+`OnPointerPressed` také zkontroluje hodnotu `Capture` vlastnost ve třídě vliv v rozhraní .NET standardní knihovna a volání `CapturePointer` Pokud je `true`.
 
  Další UWP obslužné rutiny událostí jsou i jednodušší:
 
@@ -267,7 +267,7 @@ void OnTouch(object sender, Android.Views.View.TouchEventArgs args)
 
             idToEffectDictionary.Add(id, this);
 
-            capture = pclTouchEffect.Capture;
+            capture = libTouchEffect.Capture;
             break;
 
 ```
@@ -278,7 +278,7 @@ Položka je odebrána ze `idToEffectDictionary` uvolnění prstu na obrazovce. `
 void FireEvent(TouchEffect touchEffect, int id, TouchActionType actionType, Point pointerLocation, bool isInContact)
 {
     // Get the method to call for firing events
-    Action<Element, TouchActionEventArgs> onTouchAction = touchEffect.pclTouchEffect.OnTouchAction;
+    Action<Element, TouchActionEventArgs> onTouchAction = touchEffect.libTouchEffect.OnTouchAction;
 
     // Get the location of the pointer within the view
     touchEffect.view.GetLocationOnScreen(twoIntArray);

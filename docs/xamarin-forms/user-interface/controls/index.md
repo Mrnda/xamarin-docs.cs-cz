@@ -7,24 +7,24 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: a9fb90794ec74c46019fd2b4f41d90a2635909cd
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fb6620e160af4c2c844fa694649c95abdac123f9
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="controls-reference"></a>Referenční dokumentace ovládacích prvků
 
 _Popis všech vizuálních prvků použitý k vytvoření aplikace Xamarin.Forms._
 
-Rozhraní visual Xamarin.Forms aplikace vytvořená objektů, které mapují na nativní ovládací prvky pro každou platformu cíl. Díky tomu mohou použít kód Xamarin.Forms obsažené v specifické pro platformu aplikace pro iOS, Android a univerzální platformu Windows [Přenosná knihovna tříd](~/cross-platform/app-fundamentals/pcl.md), [standardní knihovny .NET](~/cross-platform/app-fundamentals/net-standard.md), nebo [ Sdílený projekt](~/cross-platform/app-fundamentals/shared-projects.md).
+Rozhraní visual Xamarin.Forms aplikace vytvořená objektů, které mapují na nativní ovládací prvky pro každou platformu cíl. Díky tomu mohou použít kód Xamarin.Forms obsažené v specifické pro platformu aplikace pro iOS, Android a univerzální platformu Windows [standardní knihovny .NET](~/cross-platform/app-fundamentals/net-standard.md) nebo [sdílený projekt](~/cross-platform/app-fundamentals/shared-projects.md).
 
 Čtyři hlavní řízení skupiny použít k vytvoření uživatelského rozhraní aplikace Xamarin.Forms se zobrazuje tyto čtyři články:
 
 - [**Stránky**](pages.md)
 - [**Rozložení**](layouts.md)
 - [**zobrazení**](views.md)
-- [**Cells**](cells.md)
+- [**Buněk**](cells.md)
 
 Na stránce Xamarin.Forms obecně zabírá celou obrazovku. Tato stránka obsahuje obvykle rozložení, který obsahuje zobrazení a případně dalších rozložení. Buňky jsou specializované součásti používán ve spojení s [ `TableView` ](views.md#tableView) a [ `ListView` ](views.md#listView).
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 964e2302c290930ec62752e51e7de388cb42ee32
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 0d1afc2c14b19bbd03244affed494405776a3c99
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="customizing-a-listview"></a>Přizpůsobení prvku ListView
 
@@ -59,13 +59,13 @@ public class NativeListView : ListView
 }
 ```
 
-`NativeListView` Je vytvořen v projektu knihovny (PCL) přenosných tříd a definuje rozhraní API pro vlastní ovládací prvek. Tento ovládací prvek zpřístupní `Items` vlastnost, která se používá pro sestavování `ListView` s daty a může být zobrazení data vázaná na pro účely. Také poskytuje `ItemSelected` událost, která nebudou vydány vždy, když je položka vybrána v ovládacím prvku seznamu nativní specifické pro platformu. Další informace o vazbě dat najdete v tématu [základy vazby dat](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md).
+`NativeListView` Je vytvořen v rozhraní .NET standardní projektu knihovny a definuje rozhraní API pro vlastní ovládací prvek. Tento ovládací prvek zpřístupní `Items` vlastnost, která se používá pro sestavování `ListView` s daty a může být zobrazení data vázaná na pro účely. Také poskytuje `ItemSelected` událost, která nebudou vydány vždy, když je položka vybrána v ovládacím prvku seznamu nativní specifické pro platformu. Další informace o vazbě dat najdete v tématu [základy vazby dat](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md).
 
 <a name="Consuming_the_Custom_Control" />
 
 ## <a name="consuming-the-custom-control"></a>Použití vlastního ovládacího prvku
 
-`NativeListView` Vlastní ovládací prvek může být odkazováno v Xaml v projektu PCL deklarace oboru názvů pro umístění a použitím Předpona oboru názvů na ovládací prvek. Následující příklad kódu ukazuje jak `NativeListView` vlastního ovládacího prvku mohou být spotřebovávána stránky XAML:
+`NativeListView` Vlastní ovládací prvek může být odkazováno v Xaml v rozhraní .NET standardní projektu knihovny deklarace oboru názvů pro umístění a použitím Předpona oboru názvů na ovládací prvek. Následující příklad kódu ukazuje jak `NativeListView` vlastního ovládacího prvku mohou být spotřebovávána stránky XAML:
 
 ```xaml
 <ContentPage ...

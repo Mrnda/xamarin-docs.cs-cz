@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms Views
+title: Zobrazení Xamarin.Forms
 description: Zobrazení Xamarin.Forms jsou jako stavební bloky pro různé platformy mobilních uživatelská rozhraní.
 ms.prod: xamarin
 ms.assetid: AC070686-A423-4A98-8BB6-0B9F94C062CC
@@ -7,13 +7,13 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: b690b4aed315a78d95d9e0e7444257f0fc2c4a78
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b370c27a212f876231764851c894bf683ae460c3
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
-# <a name="xamarinforms-views"></a>Xamarin.Forms Views
+# <a name="xamarinforms-views"></a>Zobrazení Xamarin.Forms
 
 _Zobrazení Xamarin.Forms jsou jako stavební bloky pro různé platformy mobilních uživatelská rozhraní._
 
@@ -42,7 +42,7 @@ Zobrazení jsou objekty uživatelského rozhraní, jako je například popisky, 
 | [`BoxView`](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/) Zobrazí plného obdélníku barevné [ `Color` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BoxView.Color/) vlastnost. `BoxView` má výchozí žádost o velikost 40 x 40. Pro ostatní formáty přiřadit [ `WidthRequest` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.WidthRequest/) a [ `HeightRequest` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.HeightRequest/) vlastnosti.<br /><br />[Dokumentaci k rozhraní API](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/) / [průvodce](~/xamarin-forms/user-interface/boxview.md) / [ukázkové 1](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BasicBoxView), [2](https://developer.xamarin.com/samples/xamarin-forms/BoxView/TextDecoration), [3](https://developer.xamarin.com/samples/xamarin-forms/BoxView/ColorListBox), [4 ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/GameOfLife), [5](https://developer.xamarin.com/samples/xamarin-forms/BoxView/DotMatrixClock), a [6](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BoxViewClock) | [![Příklad BoxView](views-images/BoxView.png "BoxView příklad")](views-images/BoxView-Large.png#lightbox "BoxView příklad")<br />[Kód jazyka C# pro tuto stránku](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/BoxViewDemoPage.cs) / [XAML – stránka](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/BoxViewDemoPage.xaml) |
 |     |     |
 
-### <a name="webview"></a>WebView
+### <a name="webview"></a>Webové zobrazení
 
 |     |     |
 | --- | --- |
@@ -53,7 +53,7 @@ Zobrazení jsou objekty uživatelského rozhraní, jako je například popisky, 
 
 |     |     |
 | --- | --- |
-| [`OpenGLView`](https://developer.xamarin.com/api/type/Xamarin.Forms.OpenGLView/) Zobrazí OpenGL grafika v iOS a Android projekty. Neexistuje žádná podpora pro univerzální platformu Windows. IOS a Android projekty vyžadují odkaz na **OpenTK 1.0** sestavení nebo **OpenTK** verzi 1.0.0.0 sestavení. `OpenGLView` je jednodušší použít v projektu sdíleného; Pokud se používá v knihovny PCL nebo .NET Standard, pak závislostí služby se také bude vyžadovat (jak je znázorněno v ukázkovém kódu).<br /><br />Toto je pouze grafiky zařízení, která je integrována do Xamarin.Forms, ale Xamarin.Forms aplikace může také zpracovat, pomocí grafických [ `CocosSharp` ](~/xamarin-forms/user-interface/graphics/cocossharp.md), [ `SkiaSharp` ](~/xamarin-forms/user-interface/graphics/skiasharp/index.md), nebo [ `UrhoSharp` ](~/xamarin-forms/user-interface/graphics/urhosharp.md).<br /><br />[Dokumentaci k rozhraní API](https://developer.xamarin.com/api/type/Xamarin.Forms.OpenGLView/)<br /><br /> | [![Příklad OpenGLView](views-images/OpenGLView.png "OpenGLView příklad")](views-images/OpenGLView-Large.png#lightbox "OpenGLView příklad")<br />[Kód jazyka C# pro tuto stránku](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/OpenGLViewDemoPage.cs) / [XAML – stránka](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml) s [kódu](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml.cs) |
+| [`OpenGLView`](https://developer.xamarin.com/api/type/Xamarin.Forms.OpenGLView/) Zobrazí OpenGL grafika v iOS a Android projekty. Neexistuje žádná podpora pro univerzální platformu Windows. IOS a Android projekty vyžadují odkaz na **OpenTK 1.0** sestavení nebo **OpenTK** verzi 1.0.0.0 sestavení. `OpenGLView` je jednodušší použít v projektu sdíleného; Pokud se používá v rozhraní .NET standardní knihovny, pak závislostí služby se také bude vyžadovat (jak je znázorněno v ukázkovém kódu).<br /><br />Toto je pouze grafiky zařízení, která je integrována do Xamarin.Forms, ale Xamarin.Forms aplikace může také zpracovat, pomocí grafických [ `CocosSharp` ](~/xamarin-forms/user-interface/graphics/cocossharp.md), [ `SkiaSharp` ](~/xamarin-forms/user-interface/graphics/skiasharp/index.md), nebo [ `UrhoSharp` ](~/xamarin-forms/user-interface/graphics/urhosharp.md).<br /><br />[Dokumentaci k rozhraní API](https://developer.xamarin.com/api/type/Xamarin.Forms.OpenGLView/)<br /><br /> | [![Příklad OpenGLView](views-images/OpenGLView.png "OpenGLView příklad")](views-images/OpenGLView-Large.png#lightbox "OpenGLView příklad")<br />[Kód jazyka C# pro tuto stránku](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/OpenGLViewDemoPage.cs) / [XAML – stránka](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml) s [kódu](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml.cs) |
 |     |     |
 
 ### <a name="map"></a>mapy
@@ -178,7 +178,7 @@ Tyto dvě třídy odvozovat [ `InputView` ](https://developer.xamarin.com/api/ty
 
 <a name="tableView" />
 
-### <a name="tableview"></a>TableView
+### <a name="tableview"></a>Zobrazení Tabulka
 
 |     |     |
 | --- | --- |

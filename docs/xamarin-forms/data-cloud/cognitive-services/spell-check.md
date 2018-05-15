@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 41bd79b22aa193dd5303847997bc07e8e8d12e58
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 259be743a706c9316e2e275ff305a0fe5ad97906
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="spell-checking-using-the-bing-spell-check-api"></a>Kontrola pravopisu pomocí kontrolu pravopisu Bing rozhraní API
 
@@ -90,7 +90,7 @@ async Task<string> SendRequestAsync(string url)
 }
 ```
 
-Tato metoda vytváří požadavek GET přidáváním klíč rozhraní API jako hodnotu `Ocp-Apim-Subscription-Key` záhlaví. Potom posílá požadavek GET `SpellCheck` rozhraní API pomocí adresu URL požadavku zadání text k převodu a režimu kontrolu pravopisu. Odpověď je pak číst a vrátí volání metody.
+Tato metoda odešle požadavek GET na `SpellCheck` rozhraní API pomocí adresu URL požadavku zadání text k převodu a režimu kontrolu pravopisu. Odpověď je pak číst a vrátí volání metody.
 
 `SpellCheck` Rozhraní API bude odesílat stavový kód HTTP 200 (OK) v odpovědi, za předpokladu, že žádost je platná, což naznačuje, že požadavek byl úspěšný a že požadované informace je v odpovědi. Seznam objektů odpovědi najdete v tématu [odpovědi objekty](/rest/api/cognitiveservices/bing-spell-check-api-v7-reference#response-objects).
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 11/15/2017
-ms.openlocfilehash: 7cb2a79fffda40f09ee75a12d6287b162566741d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b16d146c5ad1097f38c41763a3ae111e7439256f
+ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="xaml-standard-preview"></a>Standardní XAML (Preview)
 
@@ -22,7 +22,7 @@ Postupujte podle těchto kroků a experimentovat s standardní XAML v Xamarin.Fo
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. Stažení [náhled zde balíček NuGet](https://aka.ms/xf-xamlstandard-nuget).
-2. Přidat **Xamarin.Forms.Alias** balíček NuGet do vašich projektů Xamarin.Forms PCL, .NET Standard a platformu.
+2. Přidat **Xamarin.Forms.Alias** balíček NuGet do vašich projektů Xamarin.Forms .NET standardní a platformu.
 3. Inicializace balíček s `Alias.Init()`
 4. Přidat `xmlns:a` odkaz `xmlns:a="clr-namespace:Xamarin.Forms.Alias;assembly=Xamarin.Forms.Alias"`
 5. Použít typy v jazyce XAML – viz [řídí odkaz](controls.md) Další informace.
@@ -30,7 +30,7 @@ Postupujte podle těchto kroků a experimentovat s standardní XAML v Xamarin.Fo
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. Stažení [náhled zde balíček NuGet](https://aka.ms/xf-xamlstandard-nuget).
-2. Přidat **Xamarin.Forms.Alias** balíček NuGet do vašich projektů Xamarin.Forms PCL, .NET Standard a platformu.
+2. Přidat **Xamarin.Forms.Alias** balíček NuGet do vašich projektů Xamarin.Forms .NET standardní a platformu.
 3. Inicializace balíček s `Alias.Init()`
 4. Přidat `xmlns:a` odkaz `xmlns:a="clr-namespace:Xamarin.Forms.Alias;assembly=Xamarin.Forms.Alias"`
 5. Použít typy v jazyce XAML – viz [řídí odkaz](controls.md) Další informace.
