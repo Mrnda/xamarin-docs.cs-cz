@@ -7,22 +7,26 @@ ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
 author: asb3993
 ms.author: amburns
 ms.date: 04/18/2018
-ms.openlocfilehash: 020a5a2182458e759626b9bdbf45b62b6e13d71a
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 31660ff1255878dbae15bda601da8e628aabd459
+ms.sourcegitcommit: c5bb1045b2f4607dafe3101ad1ea6ade23e44342
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/14/2018
 ---
 # <a name="updating-component-references-to-nuget"></a>Aktualizace komponenty odkazů na NuGet
 
-> [!NOTE]
+> [!IMPORTANT]
+> Úložiště součástí již není k dispozici od 15. května 2018 (Tato uzavření byl původně [oznámeno](https://blog.xamarin.com/hello-nuget-new-home-xamarin-components/) v listopadu 2017).
+>
 > Xamarin součásti již nejsou podporovány v sadě Visual Studio a by měl být nahrazen balíčky NuGet. Postupujte podle následujících pokynů ručně odebrat součást odkazy z vašich projektů.
 
 Postupovat podle těchto pokynů pro přidání balíčků NuGet v [Windows](https://docs.microsoft.com/nuget/quickstart/use-a-package) nebo [Mac](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough).
 
+Seznam oblíbených Xamarin [modulů plug-in a knihovny](https://github.com/xamarin/XamarinComponents/blob/master/README.md) pomoci najít alternativy součásti, které jsou k dispozici jako NuGet pacakges.
+
 ## <a name="manually-removing-component-references"></a>Ručním odebráním součást odkazy
 
-V listopadu 2017 byla [oznámeno](https://blog.xamarin.com/hello-nuget-new-home-xamarin-components/) , úložišti součástí Xamarin by zastaveny. Ve snaze jak urychlit sunsetting součástí 15.6 verze sady Visual Studio a 7.4 verze sady Visual Studio pro Mac už nebude podporovat komponenty ve vašem projektu. 
+15.6 verze sady Visual Studio a 7.4 verze sady Visual Studio pro Mac už nebude podporovat komponenty ve vašem projektu. 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -199,6 +203,6 @@ Mnoho dodavatelů součásti jsou stále práce o migraci na NuGet a ostatní (v
 
 
 ## <a name="related-links"></a>Související odkazy
-
+- [Seznam oblíbených modulů plug-in Xamarin a knihovny](https://github.com/xamarin/XamarinComponents/blob/master/README.md)
 - [Instalace a použití balíčku NuGet (Windows)](https://docs.microsoft.com/nuget/quickstart/use-a-package)
 - [Včetně balíček NuGet (Mac)](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)

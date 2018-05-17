@@ -5,12 +5,12 @@ ms.prod: xamarin
 ms.assetid: 5DDF9203-8826-4B04-93F5-B8D07EDE3873
 author: topgenorth
 ms.author: toopge
-ms.date: 11/22/2017
-ms.openlocfilehash: 0f343e253a57de33d7e19e648862e6d11fa5af5f
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 05/14/2018
+ms.openlocfilehash: bbc935c2770fab1a853bb12fba2b7eb0283bb258
+ms.sourcegitcommit: b706fbe05344f7201fbe8f82d9dbbceb66060637
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/15/2018
 ---
 # <a name="xamarin-live-player-setup"></a>Instalační program za provozu Player Xamarin
 
@@ -30,7 +30,9 @@ Pro zařízení s Androidem bez Google Play je k dispozici prostřednictvím Xam
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-Doporučujeme, aby uživatelé pro připojení [aplikace Xamarin Live Player _iOS Preview_ ](https://aka.ms/liveplayeralpha) rychlý přístup k nejnovější vylepšení prostřednictvím TestFlight.
+Doporučujeme, aby uživatelé pro připojení iOS aplikace Xamarin Live Player Preview rychlý přístup k nejnovější vylepšení prostřednictvím TestFlight. Díky přístupu k Xamarin Live Player, můžete se kterým Odsouhlasíte Microsoft [podmínky použití](https://www.microsoft.com/en-us/legal/intellectualproperty/copyright/default.aspx) & [prohlášení o ochraně osobních údajů](https://privacy.microsoft.com/en-us/privacystatement). Společnost Microsoft může používat své kontaktní informace k poskytování aktualizací a speciálních nabídek o Xamarin a dalších produktů a služeb Microsoftu. Můžete kdykoli odhlásit kdykoli.
+
+Pro přístup k Xamarin Live Player iOS Preview, dokončete prosím [informace o registraci TestFlight](https://fastring.xamarinliveplayer.com/), po kterém obdržíte e-mailu z TestFlight na tom, jak nainstalovat Xamarin Live Player iOS Preview.
 
 -----
 

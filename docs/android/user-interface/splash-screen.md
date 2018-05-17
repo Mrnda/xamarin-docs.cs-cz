@@ -6,12 +6,12 @@ ms.assetid: 26480465-CE19-71CD-FC7D-69D0990D05DE
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/11/2018
-ms.openlocfilehash: 431cc359f4191ab2b247b3cacf0f54c3ba44cd57
-ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
-ms.translationtype: HT
+ms.date: 05/14/2018
+ms.openlocfilehash: 6200a04bb4d82174d36a48beab7c63709ac39187
+ms.sourcegitcommit: c5bb1045b2f4607dafe3101ad1ea6ade23e44342
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 05/14/2018
 ---
 # <a name="splash-screen"></a>Úvodní obrazovka
 
@@ -159,7 +159,7 @@ public class MainActivity : AppCompatActivity
 
 Pro přidání úvodní obrazovka pro šířku, použijte následující kroky:
 
-1. V **prostředky/drawable** složky, přidejte na šířku verzi obrázek úvodní obrazovky, který chcete použít. V tomto příkladu **splash_logo_land.png** je verze na šířku logo, které byl použit v uvedených příkladech (používá černým lettering místo blue).
+1. V **prostředky/drawable** složky, přidejte na šířku verzi obrázek úvodní obrazovky, který chcete použít. V tomto příkladu **splash_logo_land.png** je verze na šířku logo, které byl použit v uvedených příkladech (používá lettering bílé místo blue).
 
 2. V **prostředky/drawable** složky, vytvořit na šířku verzi `layer-list` drawable, byla definována dříve (například **splash_screen_land.xml**). V tomto souboru nastaví cestu rastrového obrázku na verzi obrázek úvodní obrazovky na šířku. V následujícím příkladu **splash_screen_land.xml** používá **splash_logo_land.png**:
 
@@ -176,7 +176,6 @@ Pro přidání úvodní obrazovka pro šířku, použijte následující kroky:
             android:gravity="center"/>
       </item>
     </layer-list>
-
     ```
 
 3.  Vytvořte **prostředky nebo hodnoty krajině** složky, pokud ještě neexistuje.
@@ -201,7 +200,7 @@ Pro přidání úvodní obrazovka pro šířku, použijte následující kroky:
     </resources>
     ```
 
-6.  Upravit **hodnoty krajině/colors.xml** konfigurace barvy, kterou chcete použít pro verzi úvodní obrazovky na šířku. V tomto příkladu se barvu pozadí úvodní změní na žlutý pro režim na šířku:
+6.  Upravit **hodnoty krajině/colors.xml** konfigurace barvy, kterou chcete použít pro verzi úvodní obrazovky na šířku. V tomto příkladu je změnit barvu pozadí úvodní na modrou pro režim na šířku:
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -210,7 +209,7 @@ Pro přidání úvodní obrazovka pro šířku, použijte následující kroky:
       <color name="primaryDark">#1976D2</color>
       <color name="accent">#FFC107</color>
       <color name="window_background">#F5F5F5</color>
-      <color name="splash_background">#FFFF00</color>
+      <color name="splash_background">#3498DB</color>
     </resources>
     ```
 
