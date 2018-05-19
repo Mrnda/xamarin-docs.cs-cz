@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/17/2017
-ms.openlocfilehash: dfc46b5caa14c1c02d1c2afaffecc701fea59e2c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8aa17c868ce1d0343eab6758c03aaf042c27130e
+ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="android-platform-specifics"></a>Android platformy – podrobnosti
 
@@ -135,7 +135,7 @@ Výsledkem je, že prstem stránkování prostřednictvím stránky zobrazí [ `
 
 ## <a name="controlling-the-elevation-of-visual-elements"></a>Řízení zvýšení úrovně vizuální prvky
 
-Tato specifické pro platformu se používá k řízení zvýšení oprávnění, nebo pořadí vykreslování, vizuální prvky v aplikacích, že cíl 21 rozhraní API nebo větší. Zvýšení úrovně vizuální prvek určuje jeho pořadí vykreslování, s vizuální prvky s vyššími hodnotami Z occluding vizuální prvky s nižšími hodnotami Z. V jazyce XAML spotřebování nastavením `Elevation.Elevation` připojené vlastnosti `boolean` hodnotu:
+Tato specifické pro platformu se používá k řízení zvýšení oprávnění, nebo pořadí vykreslování, vizuální prvky v aplikacích, že cíl 21 rozhraní API nebo větší. Zvýšení úrovně vizuální prvek určuje jeho pořadí vykreslování, s vizuální prvky s vyššími hodnotami Z occluding vizuální prvky s nižšími hodnotami Z. V jazyce XAML spotřebování nastavením `VisualElement.Elevation` připojené vlastnosti `boolean` hodnotu:
 
 ```xaml
 <ContentPage ...
@@ -147,7 +147,7 @@ Tato specifické pro platformu se používá k řízení zvýšení oprávnění
             <BoxView Color="Red" Opacity="0.2" HeightRequest="50" />
         </Grid>        
         <Grid Margin="0,20,0,0">
-            <Button Text="Button Above BoxView - Click Me" android:Elevation.Elevation="10"/>
+            <Button Text="Button Above BoxView - Click Me" android:VisualElement.Elevation="10"/>
             <BoxView Color="Red" Opacity="0.2" HeightRequest="50" />
         </Grid>
     </StackLayout>
@@ -196,7 +196,7 @@ public class AndroidElevationPageCS : ContentPage
 }
 ```
 
-`Button.On<Android>` Metoda určuje, že bude tento specifické pro platformu jenom spustit v systému Android. `Elevation.SetElevation` Metoda v [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/) obor názvů, je použít k nastavení zvýšení úrovně vizuální prvek s možnou hodnotou Null `float`. Kromě toho `Elevation.GetElevation` metoda slouží k načtení hodnoty zvýšení visual elementu.
+`Button.On<Android>` Metoda určuje, že bude tento specifické pro platformu jenom spustit v systému Android. `VisualElement.SetElevation` Metoda v [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/) obor názvů, je použít k nastavení zvýšení úrovně vizuální prvek s možnou hodnotou Null `float`. Kromě toho `VisualElement.GetElevation` metoda slouží k načtení hodnoty zvýšení visual elementu.
 
 Výsledkem je, že tak, aby vizuální prvky s vyššími hodnotami Z occlude vizuální prvky s nižšími hodnotami Z se dá řídit zvýšení úrovně vizuální prvky. Proto v tomto příkladu druhý [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) vykreslením výše [ `BoxView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/) vzhledem k tomu, že má vyšší hodnotu zvýšení oprávnění:
 

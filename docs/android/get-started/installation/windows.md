@@ -6,12 +6,12 @@ ms.assetid: 2BE4D5AD-D468-B177-8F96-837D084E7DE1
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/04/2018
-ms.openlocfilehash: b1cf87ed8c5614a113a03232547a6753da26bc2d
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 05/17/2018
+ms.openlocfilehash: ca88159e8bcbcd4665e29b4ad8df9ffe00cfec67
+ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="windows-installation"></a>Instalace systému Windows
 
@@ -85,7 +85,8 @@ Přináší značné vylepšení výkonu při vývoji na x86 na počítačích m
 Další informace o emulátor Google Android Hyper-V a HAXM, najdete v tématu [Android emulátoru hardwarovou akceleraci](~/android/get-started/installation/android-emulator/hardware-acceleration.md) průvodce.
 
 > [!NOTE]
-> Ve starších verzích systému Windows HAXM není kompatibilní s technologií Hyper-V. V tomto scénáři je potřeba buď [zakázat technologie Hyper-V](/xamarin/android/deploy-test/debugging/android-sdk-emulator/troubleshooting.md?tabs=vswin#disabling-hyper-v) nebo používat pomalejší emulátoru bitové kopie, které nemají x86 optimalizace.
+> Ve starších verzích systému Windows HAXM není kompatibilní s technologií Hyper-V. V tomto scénáři je potřeba buď [zakázat technologie Hyper-V](~/android/deploy-test/debugging/android-sdk-emulator/troubleshooting.md#disabling-hyper-v) nebo používat pomalejší emulátoru bitové kopie, které nemají x86 optimalizace.
+
 
 <a name="device" />
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 05/10/2018
-ms.openlocfilehash: b5c20eb9f40bb4c4981d6b60b9fd4bc75fd29336
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: 2f0bb6f1371b9ce1b925b876851d58f3c4d01419
+ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="android-emulator-hardware-acceleration"></a>Hardwarová akcelerace emulátoru systému Android
 
@@ -46,9 +46,9 @@ Chcete-li začít s použitím technologie Hyper-V a emulátor Google Android:
 
     Může být nutné restartování systému Windows po povolení Hyper-V a na platformu hypervisoru Windows.
 
-3. **Nainstalujte [Visual Studio 15.8 Preview 1](https://aka.ms/hyperv-emulator-dl)**  &ndash; tato verze sady Visual Studio poskytuje podporu rozhraní IDE pro spuštění emulátor Google Android s podporou technologie Hyper-V.
+3. **Nainstalujte [Visual Studio 15.8 Preview 1 nebo novější](https://www.visualstudio.com/vs/preview/)**  &ndash; tato verze sady Visual Studio poskytuje podporu rozhraní IDE pro spuštění emulátor Google Android s podporou technologie Hyper-V.
 
-4. **Instalovat balíček emulátor Google Android 27.2.7 nebo vyšší** &ndash; k instalaci tohoto balíčku, přejděte na **nástroje > Android > Android SDK Manager** v sadě Visual Studio. Vyberte **nástroje** kartě a zajistit komponentu emulátoru Android minimálně verze 27.2.7.
+4. **Instalovat balíček emulátor Google Android 27.2.7 nebo novější** &ndash; k instalaci tohoto balíčku, přejděte na **nástroje > Android > Android SDK Manager** v sadě Visual Studio. Vyberte **nástroje** kartě a zajistit komponentu emulátoru Android minimálně verze 27.2.7.
 
     [![Dialogové okno sady Android SDK a nástroje](hardware-acceleration-images/win/14-sdk-manager.w158-sml.png)](hardware-acceleration-images/win/14-sdk-manager.w158.png#lightbox)
 

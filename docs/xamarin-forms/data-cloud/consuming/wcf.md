@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: c626008012ccdab2f8ed2c719b34a45471598d47
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 23cdc1871511fa75ba2686213d135822ca0fb971
+ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="consuming-a-windows-communication-foundation-wcf-web-service"></a>Využívají webové služby systému Windows Communication Foundation (WCF)
 
@@ -52,7 +52,7 @@ Další informace o modelu dat používaných v aplikaci najdete v tématu [mode
 > [!NOTE]
 > Ukázková aplikace využívá službu WCF hostované Xamarin, který poskytuje přístup jen pro čtení k webové službě. Proto operace, které vytvářet, aktualizovat a odstraňovat data nemění data využívat v aplikaci. Však je k dispozici v IIS s možnostmi hostitele verzi služby ASMX **TodoWCFService** složky v doprovodné ukázkovou aplikaci. Tato verze IIS s možnostmi hostitele povolí služby WCF, úplná vytvářet, aktualizovat, číst a odstranit přístup k datům.
 
-A *proxy* musí být generovány využívat služby WCF, který umožňuje aplikaci připojit ke službě. Proxy serveru je vytvořený ve využívání služby metadata, která definují metody a přidružená služba konfigurace. Tato data použita ve formě webové služby popis Language (WSDL) dokumentu, který je generovaný webovou službu. Proxy server se dají vytvářet pomocí zprostředkovatele služby Microsoft WCF webové služby odkaz v Visual Studio 2017 přidání odkazu na službu pro webovou službu do standardní knihovna pro .NET. Alternativu k vytvoření proxy server pomocí zprostředkovatele služby Microsoft WCF webové služby odkaz v Visual Studio 2017 je použití ServiceModel Metadata Utility Tool (svcutil.exe). Další informace najdete v tématu [ServiceModel Metadata Utility Tool (Svcutil.exe)](/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe/).
+A *proxy* musí být generovány využívat služby WCF, který umožňuje aplikaci připojit ke službě. Proxy serveru je vytvořený ve využívání služby metadata, která definují metody a přidružená služba konfigurace. Tato data použita ve formě webové služby popis Language (WSDL) dokumentu, který je generovaný webovou službu. Proxy server se dají vytvářet pomocí zprostředkovatele služby Microsoft WCF webové služby odkaz v Visual Studio 2017 pro přidání odkazu na službu pro webovou službu do .NET standardní knihovny. Alternativu k vytvoření proxy server pomocí zprostředkovatele služby Microsoft WCF webové služby odkaz v Visual Studio 2017 je použití ServiceModel Metadata Utility Tool (svcutil.exe). Další informace najdete v tématu [ServiceModel Metadata Utility Tool (Svcutil.exe)](/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe/).
 
 Třídy generované proxy poskytují metody pro použití webové služby, které používají vzor návrhu asynchronní programování modelu (APM). V tomto vzoru asynchronní operaci je implementovaný jako dvě metody s názvem *BeginOperationName* a *EndOperationName*, které začínají a končí asynchronní operaci.
 

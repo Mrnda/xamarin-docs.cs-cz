@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 05/07/2018
-ms.openlocfilehash: bfdfeda5821b020d7948e583a63bf9ec7e8ee324
-ms.sourcegitcommit: daa089d41cfe1ed0456d6de2f8134cf96ae072b1
+ms.openlocfilehash: 47cca2f726b0af396ea1eb287cfa4e1f1bf19724
+ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 05/19/2018
 ---
 # <a name="resource-dictionaries"></a>Slovnících prostředků
 
@@ -35,7 +35,7 @@ Prostředky jsou definovány v [ `ResourceDictionary` ](xref:Xamarin.Forms.Resou
 Xamarin.Forms program obsahuje pouze jednu třídu, která je odvozena z `Application` , ale často využívá mnoho tříd, které jsou odvozeny od `VisualElement`, včetně stránky, rozložení a ovládací prvky. Každý z těchto objektů může mít jeho `Resources` vlastnost nastavena na hodnotu `ResourceDictionary`. Volba umístění konkrétní `ResourceDictionary` ovlivňuje, kde je možné prostředky:
 
 - Prostředky v `ResourceDictionary` připojená k zobrazení, jako `Button` nebo `Label` lze použít pouze pro daný objekt, tak toto není velmi užitečné.
-- Prostředky v `ResourceDictionary` připojené k rozložení, jako `StackLayout` nebo `Grid` lze použít k rozložení a všechny podřízené objekty tohoto rozložení. 
+- Prostředky v `ResourceDictionary` připojené k rozložení, jako `StackLayout` nebo `Grid` lze použít k rozložení a všechny podřízené objekty tohoto rozložení.
 - Prostředky v `ResourceDictionary` definované na stránce úroveň provádět na stránku a všechny její podřízené položky.
 - Prostředky v `ResourceDictionary` definované v aplikaci úroveň lze použít v celé aplikaci.
 
@@ -187,7 +187,7 @@ Můžete vytvořit instanci `MyResourceDictionary` vložením mezi dvěma `Resou
         <local:MyResourceDictionary />
     </ContentPage.Resources>
     ...
-</ContentPage>  
+</ContentPage>
 ```
 
 Instance `MyResourceDictionary` je nastaven na `Resources` vlastnost `ContentPage` objektu.
@@ -258,7 +258,7 @@ Při slučování [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary
 
 ## <a name="merging-dictionaries-in-xamarinforms-30"></a>Slučování slovníků v Xamarin.Forms 3.0
 
-Od verze 3.0 Xamarin.Forms, proces sloučení `ResourceDictionaries` se stal poněkud snadnější a flexibilnější. `MergedDictionaries` Již nejsou potřebné značky element vlastnosti. Místo toho můžete přidat do slovníku prostředků jiného `ResourceDictionary` značky s novým [ `Source` ](xref:Xamarin.Forms.ResourceDictionary.Source) vlastnost nastavena na název souboru XAML s prostředky:
+Od verze 3.0 Xamarin.Forms, proces sloučení [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) instancí přestane poněkud snadnější a flexibilnější. `MergedDictionaries` Již nejsou potřebné značky element vlastnosti. Místo toho můžete přidat do slovníku prostředků jiného `ResourceDictionary` značky s novým [ `Source` ](xref:Xamarin.Forms.ResourceDictionary.Source) vlastnost nastavena na název souboru XAML s prostředky:
 
 ```xaml
 <ContentPage ...>
@@ -294,7 +294,7 @@ Protože Xamarin.Forms 3.0 automaticky vytvoří `ResourceDictionary`, tyto dvě
 </ContentPage>
 ```
 
-Toto nové syntaxe nemá _není_ doložit `MyResourceDictionary` – třída. Místo toho odkazuje souboru XAML. Z toho důvodu souboru kódu na pozadí (**MyResourceDictionary.xaml.cs**) se už nevyžaduje. Rovněž můžete odebrat `x:Class` atribut z kořenové značky **MyResourceDictionary.xaml** souboru. 
+Toto nové syntaxe nemá _není_ doložit `MyResourceDictionary` – třída. Místo toho odkazuje souboru XAML. Z toho důvodu souboru kódu na pozadí (**MyResourceDictionary.xaml.cs**) se už nevyžaduje. Rovněž můžete odebrat `x:Class` atribut z kořenové značky **MyResourceDictionary.xaml** souboru.
 
 ## <a name="summary"></a>Souhrn
 
