@@ -159,7 +159,7 @@ Hlášené příčiny:
 
     1. Potvrďte umístění **sshd\_konfigurace** souboru spuštěním `ls /etc/ssh/sshd_config` a `ls /etc/sshd_config` v terminálu příkazového řádku. Pro všechny zbývající kroky, nezapomeňte použít tak umístění, nemá _není_ vrátit "podobný soubor nebo adresář".
 
-        [![](troubleshooting-images/troubleshooting-image18.png "Spouštění 'ls /etc/ssh/sshd_config' a "/etc/sshd_config ls" v terminálu")](troubleshooting-images/troubleshooting-image18.png#lightbox)
+        [![](troubleshooting-images/troubleshooting-image18.png "Spouštění 'ls /etc/ssh/sshd_config' a \"/etc/sshd_config ls\" v terminálu")](troubleshooting-images/troubleshooting-image18.png#lightbox)
 
     3. Spustit `cp /etc/ssh/sshd_config "$HOME/Desktop/"` v terminálu se zkopírovat soubor na pracovní plochu.
 
