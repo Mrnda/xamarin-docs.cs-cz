@@ -6,12 +6,12 @@ ms.assetid: DF103686-4A92-40FA-9CF1-A9376293B13C
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
-ms.date: 05/07/2018
-ms.openlocfilehash: 47cca2f726b0af396ea1eb287cfa4e1f1bf19724
-ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
+ms.date: 05/21/2018
+ms.openlocfilehash: b9c15357895bae64176ef34a848b968917035f3d
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="resource-dictionaries"></a>Slovnících prostředků
 
@@ -30,7 +30,7 @@ V jazyce XAML, prostředky, které jsou uložené v `ResourceDictionary` lze pot
 Prostředky jsou definovány v [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) který je pak nastaven na jednu z následujících `Resources` vlastnosti:
 
 - [ `Resources` ](xref:Xamarin.Forms.Application.Resources) Vlastnosti třídy, která je odvozena z [`Application`](xref:Xamarin.Forms.Application)
-- [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) Vlastnosti třídy, která je odvozena z ['VisualElement.](xref:Xamarin.Forms.Application)
+- [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) Vlastnosti třídy, která je odvozena z [`VisualElement`](xref:Xamarin.Forms.Application)
 
 Xamarin.Forms program obsahuje pouze jednu třídu, která je odvozena z `Application` , ale často využívá mnoho tříd, které jsou odvozeny od `VisualElement`, včetně stránky, rozložení a ovládací prvky. Každý z těchto objektů může mít jeho `Resources` vlastnost nastavena na hodnotu `ResourceDictionary`. Volba umístění konkrétní `ResourceDictionary` ovlivňuje, kde je možné prostředky:
 

@@ -5,11 +5,11 @@ ms.assetid: B3EC2DE0-EFC0-410C-AF71-7410AE84CF84
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 871d164df982d1d170e8ba5bffd3bd6600a4cdda
-ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
+ms.openlocfilehash: 14aabc319fefdbad86f29a9d27ce39b59da35e3e
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="xamarinessentials-file-system-helpers"></a>Pomocníci systému Xamarin.Essentials souboru
 
@@ -31,7 +31,7 @@ Chcete-li získat aplikace adresář pro ukládání **ukládat data do mezipam�
 var cacheDir = FileSystem.CacheDirectory;
 ```
 
-Chcete-li získat nejvyšší úrovně diredctory aplikace pro všechny soubory, které nejsou uživatelských dat souborů. Tyto soubory jsou zálohovány s operačním systémem synchronizuje framework. Viz níže podrobnosti implementace platformy.
+Chcete-li získat nejvyšší úrovně adresáře aplikace pro všechny soubory, které nejsou uživatelských dat souborů. Tyto soubory jsou zálohovány s operačním systémem synchronizuje framework. Viz níže podrobnosti implementace platformy.
 
 ```csharp
 var mainDir = FileSystem.AppDataDirectory;
@@ -54,7 +54,7 @@ Otevřete soubor, který je seskupeny do balíčku aplikace:
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
 - **CacheDirectory** – vrátí [CacheDir](https://developer.android.com/reference/android/content/Context.html#getCacheDir) aktuálního kontextu.
-- **AppDataDirectory** – vrátí [FilesDir](https://developer.android.com/reference/android/content/Context.html#getFilesDir) aktuální kontext a jsou zálohovány pomocí [Autu zálohování](https://developer.android.com/guide/topics/data/autobackup.html) spouštění na rozhraní API 23 a vyšší.
+- **AppDataDirectory** – vrátí [FilesDir](https://developer.android.com/reference/android/content/Context.html#getFilesDir) aktuální kontext a jsou zálohovány pomocí [automatické zálohování](https://developer.android.com/guide/topics/data/autobackup.html) spouštění na rozhraní API 23 a vyšší.
 
 Přidejte všechny soubory do **prostředky** složky v Android projektu a označit akce sestavení jako **AndroidAsset** pro použití s `OpenAppPackageFileAsync`.
 

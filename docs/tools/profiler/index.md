@@ -6,11 +6,11 @@ ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
 author: topgenorth
 ms.author: toopge
 ms.date: 10/27/2017
-ms.openlocfilehash: 7e28e2513b74faa884fb7bc3d7194f1b02844734
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 81c6a5682fc91b49a0f7495f06e7f7b6d3f76330
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -24,33 +24,12 @@ Xamarin profileru má několik dostupných nástrojů pro profilaci – přiděl
 
 Tato příručka prozkoumá běžné scénáře profilování a zavádí profileru jako nástroj vám usnadní analýzu a optimalizaci iOS a Android aplikace.
 
-## <a name="contents"></a>Obsah
-
-- [Stáhnout a nainstalovat](#Download_and_Install)
-- [Profilery a profilace](#Profilers_and_Profiling)
-- [Xamarin Profiler](#Xamarin_Profiler)
-- [Podpora profileru](#Profiler_Support)
-- [Základy profileru](#Profiler_Basics)
-    - [Povolení profilace v aplikaci](#Allowing_Profiling_in_your_App)
-    - [Spuštění profileru](#Launching_the_Profiler)
-        - [Spuštění ze sady Visual Studio pro Mac](#Launching_from_Xamarin_Studio)
-        - [Spuštění ze sady Visual Studio](#Launching_from_Visual_Studio)
-        - [Ukládání a načítání relace profileru](#Saving_and_Loading_Profiler_Sessions)
-        - [Profileru funkcí a nástrojů](#Profiler_Features)
-    - [Přidělení](#Allocations)
-    - [Čas profileru](#Time_Profiler)
-    - [Cykly](#Cycles)
-- [Profilace – aplikace](#Profiling_Applications)
-- [Shrnutí](#Summary)
-
 ## <a name="download-and-install"></a>Stáhnout a nainstalovat
 
 > [!NOTE]
-> **Poznámka:** bude muset být [Visual Studio Enterprise](https://www.visualstudio.com/vs/compare/) odběratele odemknout tuto funkci v buď Visual Studio Enterprise v systému Windows nebo Visual Studio pro Mac v počítačích Mac.
+> Budete muset být [Visual Studio Enterprise](https://www.visualstudio.com/vs/compare/) odběratele odemknout tuto funkci v buď Visual Studio Enterprise v systému Windows nebo Visual Studio pro Mac v počítačích Mac.
 
 Xamarin profileru je samostatná aplikace a je integrována s Visual Studio pro Mac a Visual Studio, chcete-li povolit profilace z prostředí IDE.
-
-### <a name="download"></a>Stáhnout
 
 Stáhněte si balíček instalace pro vaši platformu:
 
@@ -58,7 +37,6 @@ Stáhněte si balíček instalace pro vaši platformu:
 - [**Windows**](https://dl.xamarin.com/profiler/profiler-windows.msi)
 
 Po stažení, spusťte instalační program pro přidání do systému profileru Xamarin.
-
 
 ## <a name="profilers-and-profiling"></a>Profilery a profilace
 
@@ -199,7 +177,6 @@ Můžete načíst *.mlpd* soubory do profileru otevřením samostatná aplikace,
 
 Další informace najdete v tématu [generování souborů .mlpd ](~/tools/profiler/troubleshooting.md#gen_mlpd).
 
-
 ## <a name="profiler-features"></a>Funkce profileru
 
 Xamarin profileru se skládá z pěti částí, jak je uvedeno dále:
@@ -298,7 +275,6 @@ Krabicový diagram, jak je vidět na tomto snímku obrazovky, zobrazuje počet v
 
 -----
 
-
 - **Strom volání** – ukazuje množství času stráveného v jednotlivých metod:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
@@ -340,24 +316,7 @@ Pokud je profil aplikace pro ostatní konfigurace, zobrazí se následující di
 
 -----
 
-
 Vyberte **aktualizace** pokračujte.
-
-<!---
-## Profiling Android Applications
-
-
-Due to the recent inclusion of the profiling libraries into any new Android project template, you will find that when profiling any legacy applications you are greeted with the message dialog above.
-
-You will need to enable this to make sure that the profiling libraries are included in your Android application, for debug builds. This should not be checked for release builds as it creates overhead.
-
-
-## Profiling iOS Applications
-
-### Profiling tvOS
-
-## Profiling Mac Applications
--->
 
 ### <a name="sgen-garbage-collector-and-profiling"></a>SGen – uvolňování paměti a profilace
 
@@ -374,7 +333,6 @@ Další informace o správě paměti naleznete [paměti a osvědčené postupy z
 ## <a name="summary"></a>Souhrn
 
 V této příručce jsme se podívali na jaké profilace a jak je výhodné pro vývojáře. Zavedli jsme pak profileru Xamarin, poskytuje některé historie a informace o tom, jak funguje. Nakonec jsme toured funkce profileru Xamarin a prozkoumali přidělení a čas Profiler nástrojů.
-
 
 ## <a name="related-links"></a>Související odkazy
 

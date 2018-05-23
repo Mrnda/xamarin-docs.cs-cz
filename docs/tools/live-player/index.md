@@ -6,11 +6,11 @@ ms.assetid: 19B1F126-866E-4672-92D2-BE2B70ACF0F1
 author: topgenorth
 ms.author: toopge
 ms.date: 05/10/2017
-ms.openlocfilehash: b5301e499a3b85087f19449f8a25b107b8ec1e4b
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: dd179fb1d1ce3ca57cdf6e27bb86a12e2f9ef03f
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="xamarin-live-player-for-xamarinforms"></a>Za provozu Player Xamarin pro Xamarin.Forms
 
@@ -22,7 +22,7 @@ Přehrávač Live Xamarin je navržený tak, jak Začínáme izolovaného prosto
 
 [![Xamarin Player za provozu: Kódu, kontrolovat, Test](images/xamarin-live.png)](images/xamarin-live-sml.png#lightbox)
 
-1. Stáhnout aplikaci pomocí toku [instalaci Xamarin Live Player](install.md) pokyny.
+1. Stáhnout aplikaci pomocí následujících [instalaci Xamarin Live Player](install.md) pokyny.
 2. Povolit *Xamarin Live Player* v **Předvolby**, pak vyberte zařízení z **zařízení** seznamu.
 2. Spravovat zařízení za provozu Player naskenovat kód QR spárovat zařízení pro Visual Studio.
 3. Spuštění aplikace přímo na telefonu nebo tabletu.

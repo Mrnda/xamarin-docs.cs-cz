@@ -5,12 +5,12 @@ ms.assetid: 8E3EFBB2-F8AD-C126-5F32-7FD140791E53
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 01/26/2018
-ms.openlocfilehash: ba936137dd868e9ba5eabc6df89bb98a0a178ba2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/21/2018
+ms.openlocfilehash: 6a4164ea4a56ee7c1b3c1abd05f7b1bb95aede4f
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="signing-the-android-application-package"></a>Při podpisu balíčku aplikace pro Android
 
@@ -113,9 +113,9 @@ Přejděte do požadovaného umístění a klikněte na tlačítko **Uložit**. 
 
 [![Podepisování dialogové okno heslo](images/vs/07-signing-password-vs-sml.png)](images/vs/07-signing-password-vs.png#lightbox)
 
-Po dokončení procesu podepisování, klikněte na tlačítko **otevřít složku**:
+Po dokončení procesu podepisování, klikněte na tlačítko **otevřete distribuční**:
 
-[![Tlačítko Otevřít složku](images/vs/08-open-folder-vs-sml.png)](images/vs/08-open-folder-vs.png#lightbox)
+[![Tlačítko Otevřít distribuce](images/vs/08-open-distribution-sml.png)](images/vs/08-open-distribution.png#lightbox)
 
 To způsobí, že Průzkumníku Windows otevřete složku obsahující vygenerovaný soubor APK. Visual Studio v tomto okamžiku má kompilovat aplikace Xamarin.Android do APK, který je připraven k distribuci.
 Následující snímek obrazovky zobrazuje příklad aplikace připravené pro publikování **MyApp.MyApp.apk**:

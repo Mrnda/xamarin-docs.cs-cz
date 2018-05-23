@@ -5,13 +5,13 @@ ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: ead498113f432e766fbd77ae2f01bc67c2273b60
-ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
+ms.openlocfilehash: bf0fa7d2caf7c8857bc1272f4471def04100383f
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 05/23/2018
 ---
-# <a name="xamarinessentials-geocoding"></a>Geografické kódování Xamarin.Essentials
+# <a name="xamarinessentials-geolocation"></a>Informace o zeměpisné poloze Xamarin.Essentials
 
 ![Předběžné verze NuGet](~/media/shared/pre-release.png)
 
@@ -19,7 +19,7 @@ ms.lasthandoff: 05/12/2018
 
 ## <a name="getting-started"></a>Začínáme
 
-Abyste měli přístup **informace o zeměpisné poloze** funkce následující nastavení konkrétní platformy není třeba.
+Abyste měli přístup **informace o zeměpisné poloze** funkce, následující nastavení specifických pro platformy je nutné:
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
@@ -35,9 +35,9 @@ Otevřete **AssemblyInfo.cs** souboru pod **vlastnosti** složky a přidat:
 [assembly: UsesFeature("android.hardware.location.network", Required = false)]
 ```
 
-NEBO aktualizovat manifestu systému Android.:
+Nebo aktualizovat Android manifest:
 
-Otevřete **AndroidManifest.xml** souboru pod **vlastnosti** složky a přidejte následující uvnitř **manifest** uzlu.
+Otevřete **AndroidManifest.xml** souboru pod **vlastnosti** složky a přidejte následující uvnitř **manifest** uzlu:
 
 ```xml
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -47,11 +47,11 @@ Otevřete **AndroidManifest.xml** souboru pod **vlastnosti** složky a přidejte
 <uses-feature android:name="android.hardware.location.network" android:required="false" />
 ```
 
-Nebo klikněte pravým tlačítkem na projekt Anroid a otevřete vlastnosti projektu. V části **Android Manifest** najít **požadovaná oprávnění:** oblasti a kontroly **ACCESS_COARSE_LOCATION** a **ACCESS_FINE_LOCATION**oprávnění. Tím se automaticky aktualizuje **AndroidManifest.xml** souboru.
+Nebo klikněte pravým tlačítkem na projekt pro Android a otevřete vlastnosti projektu. V části **Android Manifest** najít **požadovaná oprávnění:** oblasti a kontroly **ACCESS_COARSE_LOCATION** a **ACCESS_FINE_LOCATION**oprávnění. Tím se automaticky aktualizuje **AndroidManifest.xml** souboru.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-Aplikace je potřeba mít klíče vaší **Info.plist** pro NSLocationWhenInUseUsageDescription, aby bylo možné získat přístup k umístění v zařízení.
+Vaše aplikace **Info.plist** musí obsahovat `NSLocationWhenInUseUsageDescription` klíč, aby bylo možné získat přístup k umístění v zařízení.
 
 Otevřete plist editor a přidat **soukromí - umístění při v použití využití popis** vlastnosti a vyplňte hodnotu zobrazíte uživatele.
 
@@ -64,7 +64,7 @@ Ručně upravte soubor a přidejte následující:
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-Je nutné nastavit `Location` oprávnění pro aplikaci. To lze provést pomocí otevřete **Package.appxmanifest** a selecing **možnosti** kartě a kontrola **umístění**.
+Je nutné nastavit `Location` oprávnění pro aplikaci. To lze provést otevřením **Package.appxmanifest** a selecing **možnosti** kartě a kontrola **umístění**.
 
 -----
 
@@ -104,7 +104,7 @@ catch (Exception ex)
 }
 ```
 
-Zjistit aktuální zařízení [umístění](xref:Xamarin.Essentials.Location) souřadnice `GetLocationAsync` lze použít. Doporučuje se předat úplnou `GeolocationRequest` a `CancellationToken` vzhledem k tomu, že může trvat nějakou dobu umístění zařízení.
+Zjistit aktuální zařízení [umístění](xref:Xamarin.Essentials.Location) souřadnice, `GetLocationAsync` lze použít. Je nejvhodnější předávat úplnou `GeolocationRequest` a `CancellationToken` vzhledem k tomu, že může trvat nějakou dobu umístění zařízení.
 
 ```csharp
 try
@@ -133,7 +133,7 @@ catch (Exception ex)
 
 ## <a name="geolocation-accuracy"></a>Informace o zeměpisné poloze přesnost
 
-Následující tabulka popisuje přesnost na každou platformu
+Následující tabulka popisuje přesnost na každou platformu:
 
 ### <a name="lowest"></a>Nejnižší
 

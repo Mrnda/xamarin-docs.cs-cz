@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/02/2016
-ms.openlocfilehash: 9f7c9d1b410d9d1d699644148903fdc6cfeec4fd
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: c2e37de65cf7be461543704b67249dfa9833dba8
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="an-introduction-to-xamarinforms"></a>Úvod do Xamarin.Forms
 
@@ -21,7 +21,7 @@ _Xamarin.Forms je že napříč platformami nativně podporovaný abstrakce nás
 
 ## <a name="overview"></a>Přehled
 
-Xamarin.Forms je rozhraní, které umožňuje vývojářům umožní rychle vytvořit křížové platformy uživatelská rozhraní. Poskytuje, že se že jedná vlastní abstrakci pro uživatelské rozhraní, které bude vykresleno pomocí nativní ovládací prvky na iOS, Android nebo univerzální platformu Windows (UWP). To znamená, že aplikace můžete sdílet velkou část svůj kód uživatelského rozhraní a zachovat přitom přirozený vzhled a chování cílové platformy.
+Xamarin.Forms je rozhraní, které umožňuje vývojářům umožní rychle vytvořit křížové platformy uživatelská rozhraní. Poskytuje vlastní abstrakci pro uživatelské rozhraní, které bude vykresleno pomocí nativní ovládací prvky na iOS, Android nebo univerzální platformu Windows (UWP). To znamená, že aplikace můžete sdílet velkou část svůj kód uživatelského rozhraní a zachovat přitom přirozený vzhled a chování cílové platformy.
 
 Xamarin.Forms umožňuje rychlé vytváření prototypů aplikací, které můžete rozvíjet v čase pro komplexní aplikace. Protože aplikace Xamarin.Forms nativních aplikací, nemají omezení jiných sadách například sandboxing prohlížeče, omezené rozhraní API nebo snížený výkon. Aplikace napsané v Xamarin.Forms se můžou využívat některé z rozhraní API nebo funkce základní platformy, jako například (ale nikoli výhradně) CoreMotion, PassKit a StoreKit v systému iOS; NFC a služby Google Play v systému Android; a dlaždice v systému Windows. Kromě toho je možné vytvořit aplikace, které se mají částí jejich uživatelské rozhraní vytvořen s Xamarin.Forms, zatímco ostatní části jsou vytvořené pomocí nativních nástrojů uživatelského rozhraní.
 

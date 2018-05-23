@@ -6,12 +6,12 @@ ms.assetid: 81FCB2ED-687C-40BC-ABF1-FB4303034D01
 ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
-ms.date: 05/06/2018
-ms.openlocfilehash: 0e2ce758da2951efa0508e76cdf4eaac5384fa6b
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.date: 05/22/2018
+ms.openlocfilehash: d324e469ba392b14c635990d607bf04c949ad5db
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="automatic-provisioning"></a>Automatické zřizování
 
@@ -37,6 +37,14 @@ Také musí spárována hostitele sestavení Mac, který má následující:
 ## <a name="enabling-automatic-signing"></a>Povolení automatické přihlašování
 
 Před zahájením procesu automatického podepisování, měli ujistit, že máte Apple ID přidat v sadě Visual Studio, jak je popsáno v [správy účtů Apple](~/cross-platform/macios/apple-account-management.md) průvodce. Po přidání Apple ID, můžete použít všechny přidružené _Team_. To umožňuje certifikátů, profily a další ID má být provedeno s týmem. ID se také používá k vytvoření týmu předponu pro ID aplikace, které budou zahrnuty v profilu zřizování. To umožní Apple, kdo Řekněme, že jste jsou.
+
+> [!IMPORTANT]
+> Než začnete, ujistěte se přihlásit k buď [iTunes připojit](https://itunesconnect.apple.com/) nebo [appleid.apple.com](https://appleid.apple.com) zkontrolujte, že jste přijali nejnovější zásady účtu Apple. Pokud se zobrazí výzva, proveďte kroky přijímat žádné nové smlouvy účet od společnosti Apple. Pokud nemáte přijmout smlouvy o ochraně osobních údajů z může 2018, získáte následující výstrahu při pokusu o zřízení zařízení:
+> ```
+> Unexpected authentication failure. Reason: {
+> "authType" : "sa"
+>}
+>```
 
 Automaticky podepsání vaší aplikace pro nasazení na zařízení s iOS, postupujte takto:
 

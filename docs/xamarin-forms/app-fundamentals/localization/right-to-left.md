@@ -8,11 +8,11 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/07/2018
-ms.openlocfilehash: ff9814291d5a28ec9e0bbb3c2a6fc6cce5d8ee25
-ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
+ms.openlocfilehash: 92ca58374292c829df4098274abae870b355a7b0
+ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="right-to-left-localization"></a>Lokalizace zprava doleva
 
@@ -24,7 +24,7 @@ _Lokalizace zprava doleva přidává podporu pro směr toku zprava doleva na pla
 Směr toku je směr, ve kterém jsou prvky uživatelského rozhraní na stránce skenovalo oko. Některé jazyky, jako je arabština a hebrejština, vyžadují, aby prvky uživatelského rozhraní jsou nastíněny v směr toku zprava doleva. Toho lze dosáhnout nastavením [ `VisualElement.FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) vlastnost. Tato vlastnost získá nebo nastaví směr, ve které toku elementy uživatelského rozhraní v rámci žádnému nadřazenému prvku, který řídí jejich rozložení a musí být nastavena na jednu z [ `FlowDirection` ](xref:Xamarin.Forms.FlowDirection) hodnot výčtu:
 
 - [`LeftToRight`](xref:Xamarin.Forms.FlowDirection.LeftToRight)
-- [`RightToRight`](xref:Xamarin.Forms.FlowDirection.RightToLeft)
+- [`RightToLeft`](xref:Xamarin.Forms.FlowDirection.RightToLeft)
 - [`MatchParent`](xref:Xamarin.Forms.FlowDirection.MatchParent)
 
 Nastavení [ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) vlastnost [ `RightToLeft` ](xref:Xamarin.Forms.FlowDirection.RightToLeft) v elementu obecně Nastaví zarovnání vpravo, pořadí čtení zprava doleva a rozložení ovládacího prvku, které jsou předávány z zprava doleva:
