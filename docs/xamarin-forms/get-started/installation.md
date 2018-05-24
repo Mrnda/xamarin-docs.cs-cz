@@ -6,12 +6,12 @@ ms.assetid: eecaf6a5-567c-49b2-ac83-2a195596c5bf
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/19/2018
-ms.openlocfilehash: ce3f2bcf6acc36239fc431bb7f5edece15d2e139
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.date: 05/23/2018
+ms.openlocfilehash: 75e6d25f95a0a3f18c83fe73f67ad4a7797f0924
+ms.sourcegitcommit: c024f29ff730ae20c15e99bfe0268a0e1c9d41e5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="xamarinforms-requirements"></a>Požadavky na platformě Xamarin.Forms
 
@@ -23,15 +23,27 @@ Odkazovat [instalace](~/cross-platform/get-started/installation/index.md) najdet
 
 Xamarin.Forms aplikace může být zapsán pro následující operační systémy:
 
--  iOS 8 nebo novější
--  Android 4.0.3 (API 15) nebo vyšší ([podrobnosti](#android))
--  Windows 10 univerzální platformu Windows ([podrobnosti](#windows10))
--  *Windows 8.1 / Windows Phone 8.1 WinRT (zastaralé)*
--  *Windows Phone 8 Silverlight (zastaralé)*
+- iOS 8 nebo novější
+- Android 4.0.3 (API 15) nebo vyšší ([podrobnosti](#android))
+- Windows 10 univerzální platformu Windows ([podrobnosti](#windows10))
 
-Předpokládá se, že vývojáři mají znalost [přenosné knihovny tříd](~/cross-platform/app-fundamentals/pcl.md) a [sdílených projektů](~/cross-platform/app-fundamentals/shared-projects.md).
+Předpokládá se, že vývojáři mají znalost [.NET Standard](~/cross-platform/app-fundamentals/net-standard.md) a [sdílených projektů](~/cross-platform/app-fundamentals/shared-projects.md).
 
-<a name="android" />
+### <a name="additional-platform-support"></a>Podpora dalších platformy
+
+Stav těchto platforem je k dispozici na [Xamarin.Forms Githubu](https://github.com/xamarin/Xamarin.Forms/wiki/Platform-Support):
+
+- Samsung Tizen
+- macOS
+- GTK #
+- WPF
+
+### <a name="platforms-from-earlier-versions"></a>Platformy z dřívějších verzí
+
+Při použití Xamarin.Forms 3.0 nejsou podporovány tyto platformy:
+
+- *Windows 8.1 / Windows Phone 8.1 WinRT*
+- *Windows Phone 8 Silverlight*
 
 ### <a name="android"></a>Android
 
@@ -57,12 +69,6 @@ Kromě toho je verze cílové/kompilace pro Android projekty **musí** nastavit 
 
 -----
 
-<a name="windows10" />
-
-### <a name="universal-windows-platform"></a>Univerzální platforma pro Windows
-
-Pokud řešení je vytvořen v systému macOS, nebyly přidány projekty Windows 10 UWP. Pokyny o tom, jak přidat tyto projekty do existujícího řešení najdete v tématu [projekty Windows instalace](~/xamarin-forms/platform/windows/installation/index.md).
-
 ## <a name="development-system-requirements"></a>Vývoj pro požadavky na systém
 
 Xamarin.Forms aplikace mohou být vytvořeny v systému macOS a Windows. Windows Server a Visual Studio jsou však vyžadováno k vytvoření verzí aplikace Windows.
@@ -78,15 +84,17 @@ Visual Studio pro Mac můžete použít k vývoji aplikací Xamarin.Forms na OS 
 
 Xamarin.Forms aplikace pro iOS a Android se dají vytvářet v žádné instalaci systému Windows, která podporuje vývoj na platformě Xamarin. To vyžaduje Visual Studio 2017 nebo novější běžící na systému Windows 7 nebo vyšší. Síťově připojeného počítače Mac se vyžaduje pro vývoj pro iOS.
 
+<a name="windows10" />
+
 ### <a name="universal-windows-platform-uwp"></a>Univerzální platforma Windows (UPW)
 
 Vývoj aplikací Xamarin.Forms pro UPW vyžaduje:
 
-* Windows 10 (doporučené aktualizace Creators patří.)
+- Windows 10 (doporučené aktualizace Creators patří.)
 
-* Visual Studio 2017
+- Visual Studio 2017
 
-* [Windows 10 SDK](https://dev.windows.com/downloads/windows-10-sdk)
+- [Windows 10 SDK](https://dev.windows.com/downloads/windows-10-sdk)
 
-Projekty UWP jsou součástí řešení Xamarin.Forms vytvořené v sadě Visual Studio 2015 a Visual Studio 2017.
-Můžete také [přidat univerzální platformu Windows (UWP) aplikace](~/xamarin-forms/platform/windows/installation/index.md) do existujícího řešení Xamarin.Forms.
+Projekty UWP jsou součástí řešení Xamarin.Forms vytvořené v aplikaci Visual Studio 2017, ale není řešení vytvořená v sadě Visual Studio for Mac.
+Můžete [přidat univerzální platformu Windows (UWP) aplikace](~/xamarin-forms/platform/windows/installation/index.md) do existujícího řešení Xamarin.Forms kdykoli.

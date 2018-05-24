@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: dc83defcb3eb69cf53c205793ce77029c0947c2f
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 035365a22c487039ff811756d91ca0a8d392d628
+ms.sourcegitcommit: c024f29ff730ae20c15e99bfe0268a0e1c9d41e5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="editor"></a>Editor
 
@@ -19,8 +19,8 @@ _Víceřádkový textový vstup_
 
 `Editor` Řízení se používá k přijetí Víceřádkový vstup. Tento článek se zabývá:
 
-- **[Přizpůsobení](#Customization)**  &ndash; klávesnici a barvu možnosti.
-- **[Interaktivity](#Interactivity)**  &ndash; události, které můžete naslouchali pro zajistit interaktivity.
+- **[Přizpůsobení](#customization)**  &ndash; klávesnici a barvu možnosti.
+- **[Interaktivity](#interactivity)**  &ndash; události, které můžete naslouchali pro zajistit interaktivity.
 
 ## <a name="customization"></a>Přizpůsobení
 
