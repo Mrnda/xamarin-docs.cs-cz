@@ -6,12 +6,12 @@ ms.assetid: F4180997-BA21-453A-9958-D1E2940DF050
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 01/12/2016
-ms.openlocfilehash: e9a4a661e694b5a885f202a36f9a2916c6c339fd
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.date: 05/21/2018
+ms.openlocfilehash: ca48ad6fb7d5aae53f972f6e3b5257919d140a8d
+ms.sourcegitcommit: 4f646dc5c51db975b2936169547d625c78a22b30
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="xamarinforms-layouts"></a>Rozložení Xamarin.Forms
 
@@ -19,7 +19,7 @@ _Rozložení Xamarin.Forms se používají k uspořádání ovládacích prvků 
 
 [ `Layout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout) a [ `Layout<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/) v Xamarin.Forms třídy jsou specializované podtypů zobrazení, které fungují jako kontejnery pro zobrazení a další rozložení. `Layout` Třída odvozená z [ `View` ](views.md). A `Layout` odvozených obvykle obsahuje logiku a nastavit umístění a velikost podřízených elementů v aplikacích Xamarin.Forms.
 
- [ ![](layouts-images/layouts-sml.png "Typy rozložení Xamarin.Forms")](layouts-images/layouts.png#lightbox "typy rozložení Xamarin.Forms")
+[![Typy rozložení Xamarin.Forms](layouts-images/layouts-sml.png "Xamarin.Forms rozložení typy")](layouts-images/layouts.png#lightbox "typy rozložení Xamarin.Forms")
 
 Třídy, které jsou odvozeny od `Layout` je možné rozdělit do dvou kategorií:
 
@@ -101,7 +101,14 @@ Tyto třídy jsou odvozeny od [ `Layout<View>` ](https://developer.xamarin.com/a
 
 |     |     |
 | --- | --- |
-| [`RelativeLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/) umisťuje podřízené elementy vzhledem k `RelativeLayout` sám sebe nebo jejich na stejné úrovni. Podřízená pozice je vytvářen [přidružené vlastnosti](~/xamarin-forms/xaml/attached-properties.md) nastavených pro objekty typu [ `Constraint` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Constraint/) a [ `BoundsConstraint` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Constraint/).<br /><br />[Dokumentaci k rozhraní API](https://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/)/ [průvodce](~/xamarin-forms/user-interface/layouts/relative-layout.md) / [vzorku](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/) | [![Příklad RelativeLayout](layouts-images/RelativeLayout.png "RelativeLayout příklad")](layouts-images/RelativeLayout-Large.png#lightbox "RelativeLayout příklad")<br />[Kód jazyka C# pro tuto stránku](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/RelativeLayoutDemoPage.cs) / [XAML – stránka](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/RelativeLayoutDemoPage.xaml) |
+| [`RelativeLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/) umisťuje podřízené elementy vzhledem k `RelativeLayout` sám sebe nebo jejich na stejné úrovni. Podřízená pozice je vytvářen [přidružené vlastnosti](~/xamarin-forms/xaml/attached-properties.md) nastavených pro objekty typu [ `Constraint` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Constraint/) a [ `BoundsConstraint` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Constraint/).<br /><br />[Dokumentaci k rozhraní API](https://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/) / [průvodce](~/xamarin-forms/user-interface/layouts/relative-layout.md) / [vzorku](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/) | [![Příklad RelativeLayout](layouts-images/RelativeLayout.png "RelativeLayout příklad")](layouts-images/RelativeLayout-Large.png#lightbox "RelativeLayout příklad")<br />[Kód jazyka C# pro tuto stránku](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/RelativeLayoutDemoPage.cs) / [XAML – stránka](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/RelativeLayoutDemoPage.xaml) |
+|     |     |
+
+### <a name="flexlayout"></a>FlexLayout
+
+|     |     |
+| --- | --- |
+| [`FlexLayout`](xref:Xamarin.Forms.FlexLayout) je založena na CSS [modulu rozložení flexibilní pole](http://www.w3.org/TR/css-flexbox-1/), běžně označovaný jako _flexibilní rozložení_ nebo _flexibilního pole_. `FlexLayout` definuje vlastnosti šesti vazbu a pět přidružené vlastnosti vazbu, které umožňují podřízené objekty skládaný nebo obklopeno mnoho možností zarovnání a orientaci.<br /><br />[Dokumentaci k rozhraní API](xref:Xamarin.Forms.FlexLayout) / [průvodce](~/xamarin-forms/user-interface/layouts/flex-layout.md) / [vzorku](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/) | [![Příklad FlexLayout](layouts-images/FlexLayout.png "FlexLayout příklad")](layouts-images/FlexLayout-Large.png#lightbox "FlexLayout příklad")<br />[Kód jazyka C# pro tuto stránku](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/FlexLayoutDemoPage.cs) / [XAML – stránka](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/FlexLayoutDemoPage.xaml) |
 |     |     |
 
 ## <a name="related-links"></a>Související odkazy

@@ -6,12 +6,12 @@ ms.assetid: C0837996-A1E8-47F9-B3A8-98EE43B4A675
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/16/2017
-ms.openlocfilehash: 7826962cd3bf9595a63841e3f2d9fb377d1a0574
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/23/2018
+ms.openlocfilehash: cc6cb282565e08f7ce4401e5317fba518a74a8f3
+ms.sourcegitcommit: 4f646dc5c51db975b2936169547d625c78a22b30
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="ios-platform-specifics"></a>iOS specifika platformy
 
@@ -28,6 +28,7 @@ V systému iOS obsahuje Xamarin.Forms jsou specifikace následující platformy:
 - Řízení, kdy dochází k výběr položek v [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/). Další informace najdete v tématu [řízení výběr položek výběr](#picker_update_mode).
 - Nastavení stavu viditelnost panelu na [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/). Další informace najdete v tématu [nastavení viditelnost panelu stavu na stránce](#set_status_bar_visibility).
 - Řízení zda [ `ScrollView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) zpracuje gesto touch nebo předává je na jeho obsah. Další informace najdete v tématu [zpozdit obsahu úpravy v ScrollView](#delay_content_touches).
+- Nastavení stylu oddělovače na [ `ListView` ](xref:Xamarin.Forms.ListView). Další informace najdete v tématu [nastavení styl oddělovače v prvku ListView](#listview-separatorstyle).
 
 <a name="blur" />
 
@@ -302,7 +303,6 @@ Výsledkem je, že se na stavovém řádku barvy textu na [ `NavigationPage` ](h
 Tato specifické pro platformu slouží ke změně měřítka velikost písma [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) zajistit, že vyhovuje zadaném textu v ovládacím prvku. V jazyce XAML spotřebování nastavením [ `Entry.AdjustsFontSizeToFitWidth` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.AdjustsFontSizeToFitWidthProperty/) připojené vlastnosti `boolean` hodnotu:
 
 ```xaml
-<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage ...
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     <StackLayout Margin="20">
@@ -393,7 +393,6 @@ Výsledkem je, že zadané `UpdateMode` se použije na [ `Picker` ](https://deve
 Tato specifické pro platformu se používá k nastavit viditelnost panelu Stav na [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/), a zahrnuje možnost řídit způsob, jakým stavový řádek zadá nebo ponechá `Page`. V jazyce XAML spotřebování nastavením `Page.PrefersStatusBarHidden` přidružená vlastnost na hodnotu `StatusBarHiddenMode` výčtu a volitelně `Page.PreferredStatusBarUpdateAnimation` přidružená vlastnost na hodnotu `UIStatusBarAnimation` – výčet:
 
 ```xaml
-<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage ...
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              ios:Page.PrefersStatusBarHidden="True"
@@ -468,6 +467,45 @@ scrollView.On<iOS>().SetShouldDelayContentTouches(!scrollView.On<iOS>().ShouldDe
 Výsledkem je, že [ `ScrollView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) můžete zakázat zpozdit přijetí úpravy obsahu, takže v tomto scénáři [ `Slider` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/) obdrží gesta místo [ `Detail` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Detail/) stránky [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/):
 
 [![](ios-images/scrollview-delay-content-touches.png "Obsah ScrollView zpoždění dotykem specifické pro platformu")](ios-images/scrollview-delay-content-touches-large.png#lightbox "ScrollView Delay Content Touches Plaform-Specific")
+
+<a name="listview-separatorstyle" />
+
+## <a name="setting-the-separator-style-on-a-listview"></a>Nastavení stylu oddělovače v prvku ListView
+
+Tato specifické pro platformu řídí, zda oddělovač mezi buněk v [ `ListView` ](xref:Xamarin.Forms.ListView) používá celou šířku `ListView`. V jazyce XAML spotřebování nastavením [ `ListView.SeparatorStyle` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.ListView.SeparatorStyleProperty) přidružená vlastnost na hodnotu [ `SeparatorStyle` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle) výčtu:
+
+```xaml
+<ContentPage ...
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core">
+    <StackLayout Margin="20">
+        <ListView ... ios:ListView.SeparatorStyle="FullWidth">
+            ...
+        </ListView>
+    </StackLayout>
+</ContentPage>
+```
+
+Alternativně může být používán z C# s použitím rozhraní fluent API:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+...
+
+listView.On<iOS>().SetSeparatorStyle(SeparatorStyle.FullWidth);
+```
+
+`ListView.On<iOS>` Metoda určuje, že tento specifické pro platformu lze spustit pouze v iOS. [ `ListView.SetSeparatorStyle` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.ListView.SetSeparatorStyle(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.ListView},Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle)) Metoda v [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) obor názvů, je slouží ke kontrole, jestli oddělovač mezi buněk v [ `ListView` ](xref:Xamarin.Forms.ListView) používá kompletní Šířka `ListView`, s [ `SeparatorStyle` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle) výčtu poskytuje dvě možné hodnoty:
+
+- [`Default`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle.Default) – Určuje výchozí chování oddělovače iOS. Toto je výchozí chování v Xamarin.Forms.
+- [`FullWidth`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle.FullWidth) – Označuje, že bude možné oddělovačů vykreslován od jednoho okraje `ListView` na druhý.
+
+Výsledkem je, že zadané [ `SeparatorStyle` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle) k, je použita hodnota [ `ListView` ](xref:Xamarin.Forms.ListView), který určuje šířku oddělovač mezi buněk:
+
+![](ios-images/listview-separatorstyle.png "ListView SeparatorStyle specifických pro platformy")
+
+> [!NOTE]
+> Jakmile styl oddělovače byla nastavena na `FullWidth`, nelze jej změnit zpět na `Default` za běhu.
 
 ## <a name="summary"></a>Souhrn
 

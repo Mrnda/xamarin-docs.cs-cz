@@ -6,12 +6,12 @@ ms.assetid: 22B403C0-FE6D-498A-AE53-095E6C4B527C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/11/2017
-ms.openlocfilehash: d1610e4c9e6a8799362ff955061953962dd755ab
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/23/2018
+ms.openlocfilehash: d4ddb662bf167a0c80561cce097104a7f5fc8096
+ms.sourcegitcommit: 4f646dc5c51db975b2936169547d625c78a22b30
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="windows-platform-specifics"></a>Platforma Windows – podrobnosti
 
@@ -19,8 +19,9 @@ _Platforma specifika umožňují využívat funkce, která je dostupná pouze na
 
 Na univerzální platformu Windows (UWP), Xamarin.Forms obsahuje následující platformy specifické:
 
-- Možnosti umístění panelu nástrojů. Další informace najdete v tématu [Změna umístění panelu nástrojů](#toolbar_placement).
-- Částečně sbalovací [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) navigačním panelu. Další informace najdete v tématu [sbalení navigační panel MasterDetailPage](#collapsable_navigation_bar).
+- Nastavení možností umístění panelu nástrojů. Další informace najdete v tématu [Změna umístění panelu nástrojů](#toolbar_placement).
+- Sbalení [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) navigačním panelu. Další informace najdete v tématu [sbalení navigační panel MasterDetailPage](#collapsable_navigation_bar).
+- Povolení [ `WebView` ](xref:Xamarin.Forms.WebView) zobrazení výstrah JavaScript v dialogu UWP zprávy. Další informace najdete v tématu [zobrazení výstrahy JavaScript](#webview-javascript-alert).
 
 <a name="toolbar_placement" />
 
@@ -34,7 +35,6 @@ Chcete změnit umístění panelu nástrojů na se používá tato specifické p
             windows:Page.ToolbarPlacement="Bottom">
   ...
 </TabbedPage>
-
 ```
 
 Alternativně může být používán z C# s použitím rozhraní fluent API:
@@ -85,10 +85,52 @@ Výsledkem je, že zadané [ `CollapseStyle` ](https://developer.xamarin.com/api
 
 [![](windows-images/collapsed-navigation-bar.png "Sbalené navigační panel specifické platformy")](windows-images/collapsed-navigation-bar-large.png#lightbox "sbalené navigační panel specifické platformy")
 
+<a name="webview-javascript-alert" />
+
+## <a name="displaying-javascript-alerts"></a>Zobrazení výstrah JavaScript
+
+Umožňuje této specifické pro platformu [ `WebView` ](xref:Xamarin.Forms.WebView) zobrazení výstrah JavaScript v dialogu UWP zprávy. V jazyce XAML spotřebování nastavením [ `WebView.IsJavaScriptAlertEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.WebView.IsJavaScriptAlertEnabledProperty) připojené vlastnosti `boolean` hodnotu:
+
+```xaml
+<ContentPage ...
+             xmlns:windows="clr-namespace:Xamarin.Forms.PlatformConfiguration.WindowsSpecific;assembly=Xamarin.Forms.Core">
+    <StackLayout>
+        <WebView ... windows:WebView.IsJavaScriptAlertEnabled="true" />
+        ...
+    </StackLayout>
+</ContentPage>
+```
+
+Alternativně může být používán z C# s použitím rozhraní fluent API:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
+...
+
+var webView = new Xamarin.Forms.WebView
+{
+  Source = new HtmlWebViewSource
+  {
+    Html = @"<html><body><button onclick=""window.alert('Hello World from JavaScript');"">Click Me</button></body></html>"
+  }
+};
+webView.On<Windows>().SetIsJavaScriptAlertEnabled(true);
+```
+
+`WebView.On<Windows>` Metoda určuje, že bude tento specifické pro platformu jenom spustit na univerzální platformu Windows. [ `WebView.SetIsJavaScriptAlertEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.WebView.SetIsJavaScriptAlertEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.WebView},System.Boolean)) Metoda v [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) obor názvů, je slouží ke kontrole, jestli jsou povolené JavaScript výstrahy. Kromě toho `WebView.SetIsJavaScriptAlertEnabled` metoda slouží k přepnutí výstrah JavaScript voláním [ `IsJavaScriptAlertEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.WebView.IsJavaScriptAlertEnabled*) metoda vrátí, zda je povoleno:
+
+```csharp
+_webView.On<Windows>().SetIsJavaScriptAlertEnabled(!_webView.On<Windows>().IsJavaScriptAlertEnabled());
+```
+
+Výsledkem je, že JavaScript výstrahy lze zobrazit v dialogu UWP zpráva:
+
+![Webové zobrazení JavaScript výstrahy specifické pro platformu](windows-images/webview-javascript-alert.png "JavaScript webové zobrazení výstrahy specifické pro platformu")
+
 ## <a name="summary"></a>Souhrn
 
 Tento článek ukázal, jak používat Windows platform podrobností, které jsou součástí Xamarin.Forms. Platforma specifika umožňují využívat funkce, která je dostupná pouze na konkrétní platformu, bez implementace vlastní nástroji pro vykreslování nebo účinky.
-
 
 ## <a name="related-links"></a>Související odkazy
 

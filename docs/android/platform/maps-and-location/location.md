@@ -6,12 +6,12 @@ ms.assetid: 0008682B-6CEF-0C1D-3200-56ECF58F5D3C
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 366c75db49a7e0f4f559b13c0871071dee2f08e3
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/22/2018
+ms.openlocfilehash: b509f6892b27afa053a6ee913826d913d7ad54a8
+ms.sourcegitcommit: 4f646dc5c51db975b2936169547d625c78a22b30
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="location-services"></a>Umístění služby
 
@@ -83,9 +83,15 @@ Zprostředkovatel roztaveného umístění je upřednostňovaný způsob pro apl
  
 Zprostředkovatel roztaveného umístění rozhraní API poskytuje celou řadu dalších nástrojů na základě kterého umístění aplikace, včetně monitorování aktivit a monitorování geografických zón. V této části přidáme zaměřit se na základní informace o nastavení `LocationClient`, zřízením poskytovatelů a získávání umístění uživatele.
 
-Zprostředkovatel roztaveného umístění je součástí [služby Google Play](http://developer.android.com/google/play-services/index.html). Balíček služby Google Play musí být nainstalovaná a správně nakonfigurovaná v aplikaci pro zprostředkovatele roztaveného umístění rozhraní API pro práci, a zařízení musí mít APK přehrání služby Google nainstalována.
+Zprostředkovatel roztaveného umístění je součástí [služby Google Play](http://developer.android.com/google/play-services/index.html).
+Balíček služby Google Play musí být nainstalovaná a správně nakonfigurovaná v aplikaci pro zprostředkovatele roztaveného umístění rozhraní API pro práci, a zařízení musí mít APK přehrání služby Google nainstalována.
 
-Před Xamarin.Android aplikace můžete použít poskytovatele roztaveného umístění, je nutné přidat **Xamarin.GooglePlayServices.Maps** do projektu.
+Před Xamarin.Android aplikace můžete použít poskytovatele roztaveného umístění, je nutné přidat **Xamarin.GooglePlayServices.Maps** balíčku do projektu. Kromě toho následující `using` příkazy musí být přidaní do žádné zdrojové soubory, které odkazují na třídy popsané dál:
+
+```csharp
+using Android.Gms.Common;
+using Android.Gms.Location;
+```
 
 ### <a name="checking-if-google-play-services-is-installed"></a>Kontrola, zda je nainstalován služby Google Play
 

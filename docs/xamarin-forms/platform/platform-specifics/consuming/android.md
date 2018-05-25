@@ -6,12 +6,12 @@ ms.assetid: C5D4AA65-9BAA-4008-8A1E-36CDB78A435D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/17/2017
-ms.openlocfilehash: 8aa17c868ce1d0343eab6758c03aaf042c27130e
-ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
+ms.date: 05/23/2018
+ms.openlocfilehash: 8d7ec3f2f64fdb8be903fd13bd72bcf545265a3d
+ms.sourcegitcommit: 4f646dc5c51db975b2936169547d625c78a22b30
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="android-platform-specifics"></a>Android platformy – podrobnosti
 
@@ -24,6 +24,8 @@ V systému Android se Xamarin.Forms obsahuje následující platformy specifick�
 - Povolení mezi stránky v k načtení [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/). Další informace najdete v tématu [povolení k načtení mezi stránky v TabbedPage](#enable_swipe_paging).
 - Řízení pořadí vizuálních prvků k určení pořadí vykreslování. Další informace najdete v tématu [řízení zvýšení vizuální prvky](#elevation).
 - Zakázání [ `Disappearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) a [ `Appearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) stránky události životního cyklu na pozastavení a obnovení, pro aplikace, které používají kompatibility aplikace. Další informace najdete v tématu [zakázání Disappearing a zobrazování událostí životního cyklu stránky](#disable_lifecycle_events).
+- Řízení zda [ `WebView` ](xref:Xamarin.Forms.WebView) můžete zobrazit smíšený obsah. Další informace najdete v tématu [povolení smíšený obsah webové zobrazení](#webview-mixed-content).
+- Nastavení možností editoru pro softwarová klávesnice pro vstupní metodu [ `Entry` ](xref:Xamarin.Forms.Entry). Další informace najdete v tématu [možnosti nastavení editoru IME položka](#entry-imeoptions).
 
 <a name="soft_input_mode" />
 
@@ -245,10 +247,88 @@ Výsledkem je, že [ `Disappearing` ](https://developer.xamarin.com/api/event/Xa
 
 [![](android-images/keyboard-on-resume.png "Životní cyklus události specifické pro platformu")](android-images/keyboard-on-resume-large.png#lightbox "životního cyklu události specifické pro platformu")
 
+<a name="webview-mixed-content" />
+
+## <a name="enabling-mixed-content-in-a-webview"></a>Povolení smíšený obsah webové zobrazení
+
+Tento ovládací prvky specifické pro platformu zda [ `WebView` ](xref:Xamarin.Forms.WebView) můžete zobrazit smíšený obsah v aplikacích této cílové rozhraní API 21 nebo vyšší. Smíšený obsah je obsah, který je původně načtený přes připojení HTTPS, ale který načte prostředky (například obrázky, zvuk, video, předlohy se styly, skripty) pomocí připojení HTTP. V jazyce XAML spotřebování nastavením [ `WebView.MixedContentMode` ](x:ref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WebView.MixedContentModeProperty) přidružená vlastnost na hodnotu [ `MixedContentHandling` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling) výčtu:
+
+```xaml
+<ContentPage ...
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core">
+    <WebView ... android:WebView.MixedContentMode="AlwaysAllow" />
+</ContentPage>
+```
+
+Alternativně může být používán z C# s použitím rozhraní fluent API:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
+...
+
+webView.On<Android>().SetMixedContentMode(MixedContentHandling.AlwaysAllow);
+```
+
+`WebView.On<Android>` Metoda určuje, že bude tento specifické pro platformu jenom spustit v systému Android. [ `WebView.SetMixedContentMode` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WebView.SetMixedContentMode(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.WebView},Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling)) Metoda v [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) obor názvů, je slouží ke kontrole, zda lze zobrazit smíšený obsah, se [ `MixedContentHandling` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling) výčet poskytování třemi možnými hodnotami:
+
+- [`AlwaysAllow`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling.AlwaysAllow) – Označuje, že [ `WebView` ](xref:Xamarin.Forms.WebView) vám umožní počátek HTTPS se načíst obsah z počátek HTTP.
+- [`NeverAllow`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling.NeverAllow) – Označuje, že [ `WebView` ](xref:Xamarin.Forms.WebView) neumožní počátek HTTPS se načíst obsah z počátek HTTP.
+- [`CompatibilityMode`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling.CompatibilityMode) – Označuje, že [ `WebView` ](xref:Xamarin.Forms.WebView) se pokusí o být kompatibilní s přístupem nejnovější webový prohlížeč zařízení. Nějaký obsah HTTP může být povoleno načteny počátek HTTPS a jiné typy obsahu se zablokuje. Typy obsahu, které jsou blokované nebo povolené může změnit při každém vydání operačního systému.
+
+Výsledkem je, že zadané [ `MixedContentHandling` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling) k, je použita hodnota [ `WebView` ](xref:Xamarin.Forms.WebView), který určuje, zda lze zobrazit smíšený obsah:
+
+[![Webové zobrazení smíšeného obsahu zpracování specifické platformy](android-images/webview-mixedcontent.png "webové zobrazení smíšeného obsahu zpracování specifické platformy")](android-images/webview-mixedcontent-large.png#lightbox "webové zobrazení smíšeného obsahu zpracování specifické platformy")
+
+<a name="entry-imeoptions" />
+
+## <a name="setting-entry-input-method-editor-options"></a>Možnosti nastavení editoru IME položka
+
+Tato specifické pro platformu Nastaví vstupní metoda editor IME možnosti pro softwarové klávesnice pro [ `Entry` ](xref:Xamarin.Forms.Entry). To zahrnuje nastavení tlačítko akce uživatele v dolním rohu logicky klávesnici a interakce s `Entry`. V jazyce XAML spotřebování nastavením [ `Entry.ImeOptions` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Entry.ImeOptionsProperty) přidružená vlastnost na hodnotu [ `ImeFlags` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags) výčtu:
+
+```xaml
+<ContentPage ...
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core">
+    <StackLayout ...>
+        <Entry ... android:Entry.ImeOptions="Send" />
+        ...
+    </StackLayout>
+</ContentPage>
+```
+
+Alternativně může být používán z C# s použitím rozhraní fluent API:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
+...
+
+entry.On<Android>().SetImeOptions(ImeFlags.Send);
+```
+
+`Entry.On<Android>` Metoda určuje, že bude tento specifické pro platformu jenom spustit v systému Android. [ `Entry.SetImeOptions` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Entry.SetImeOptions(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Entry},Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags)) Metoda v [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) oboru názvů se používá k nastavení možnosti vstupní metoda akce pro softwarové klávesnice pro [ `Entry` ](xref:Xamarin.Forms.Entry), pomocí [ `ImeFlags` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags) výčtu poskytuje následující hodnoty:
+
+- [`Default`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Default) – Označuje, že žádné konkrétní akce klíč je požadován, a že základní ovládacího prvku vytvoří vlastní Pokud můžete.
+- [`None`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.None) – Označuje, že žádný klíč akce bude k dispozici.
+- [`Go`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Go) – Označuje, že klíč akce se provést operaci "jít" trvá uživatele k cílovému textu je zadat.
+- [`Search`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Search) – Označuje, že klíč akce provede operaci "Vyhledat" trvá uživateli výsledky hledání textu se, že jste zadali.
+- [`Send`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Send) – Označuje, že klíč akce se provést operaci "Odeslat", doručování text k cíli.
+- [`Next`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Next) – Označuje, že klíč akce bude "Další" operaci, trvá uživatele na následující pole, která bude přijímat text.
+- [`Done`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Done) – Označuje, že klíč akce bude "done" operaci zavření logicky klávesnice.
+- [`Previous`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Previous) – Označuje, že klíč akce bude "předchozí" operace, trvá uživateli na předchozí pole, která bude přijímat text.
+- [`ImeMaskAction`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.ImeMaskAction) – Maska vybrat možnosti Akce.
+- [`NoPersonalizedLearning`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.NoPersonalizedLearning) – označuje kontroly pravopisu bude ani zjistěte od uživatele ani opravy založené na co se uživatel dříve zadal zobrazovat.
+- [`NoFullscreen`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.NoFullscreen) – Označuje, že rozhraní by neměl celé obrazovce.
+- [`NoExtractUi`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.NoExtractUi) – Označuje, že extrahované textu budou zobrazeny žádné uživatelské rozhraní.
+- [`NoAccessoryAction`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.NoAccessoryAction) – Označuje, že se zobrazí žádné uživatelské rozhraní pro vlastní akce.
+
+Výsledkem je, že zadané [ `ImeFlags` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags) hodnota se použije pro softwarové klávesnice pro [ `Entry` ](xref:Xamarin.Forms.Entry), která nastaví vstupní metoda možností editoru:
+
+[![Položka vstupní metoda editor specifické pro platformu](android-images/entry-imeoptions.png "položka vstupní metoda editor specifické pro platformu")](android-images/entry-imeoptions-large.png#lightbox "položka vstupní metoda editor specifické pro platformu")
+
 ## <a name="summary"></a>Souhrn
 
 Tento článek ukázal, jak využívat jsou Android platformy – specifikace integrovaných do Xamarin.Forms. Platforma specifika umožňují využívat funkce, která je dostupná pouze na konkrétní platformu, bez implementace vlastní nástroji pro vykreslování nebo účinky.
-
 
 ## <a name="related-links"></a>Související odkazy
 
