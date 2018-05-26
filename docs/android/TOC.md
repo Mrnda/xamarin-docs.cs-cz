@@ -232,6 +232,7 @@
 ### [Vlastní nastavení linkeru](deploy-test/linker.md)
 ### [Zařízení s více jádry](deploy-test/multicore-devices.md)
 ### [Výkon](deploy-test/performance.md)
+### [Profilace](deploy-test/profiling.md)
 ### [Příprava na vydání](deploy-test/release-prep/index.md)
 #### [ProGuard](deploy-test/release-prep/proguard.md)
 ### [Podepisování APK](deploy-test/signing/index.md)
