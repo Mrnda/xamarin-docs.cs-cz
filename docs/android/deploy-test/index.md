@@ -7,11 +7,11 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 04/25/2018
-ms.openlocfilehash: 5b3061f30f6f120cf8edb41ccf5e70ae853aeb9e
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.openlocfilehash: ce86590b2d05f3b9141d1a5ba42df9274544f9ae
+ms.sourcegitcommit: 8f14a067528067a34521452297080c98b4c1d1af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="deployment-and-testing"></a>Nasazování a testování
 
@@ -57,6 +57,11 @@ Tento článek popisuje proces propojení používá ke snížení konečné vel
 ## <a name="xamarinandroid-performanceandroiddeploy-testperformancemd"></a>[Výkon Xamarin.Android](~/android/deploy-test/performance.md)
 
 Existuje mnoho postupů pro zvýšení výkonu aplikace sestavené s Xamarin.Android. Souhrnně těchto postupů může výrazně snížit objem práce využití procesoru a paměti spotřebovávají aplikace.
+
+## <a name="profiling-android-appsandroiddeploy-testprofilingmd"></a>[Profilace aplikací pro Android](~/android/deploy-test/profiling.md)
+
+Tato příručka vysvětluje, jak používat profileru nástroje pro zjištění výkonu a využití paměti aplikace pro Android.
+
 
 ## <a name="preparing-an-application-for-releaseandroiddeploy-testrelease-prepindexmd"></a>[Příprava aplikace pro vydání](~/android/deploy-test/release-prep/index.md)
 
