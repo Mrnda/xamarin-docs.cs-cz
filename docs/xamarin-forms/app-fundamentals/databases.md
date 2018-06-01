@@ -6,12 +6,13 @@ ms.assetid: F687B24B-7DF0-4F8E-A21A-A9BB507480EB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/23/2017
-ms.openlocfilehash: d1f11ed1b52354dedbdb8893a96e0ae7589d5389
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.date: 05/31/2018
+ms.openlocfilehash: d97fc792e2eb14f7e432d377811d1318c99b9602
+ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34689445"
 ---
 # <a name="local-databases"></a>Místní databáze
 
@@ -33,17 +34,20 @@ V této části ukazuje, jak přidat balíčky SQLite.Net NuGet řešení Xamari
 
 <a name="XamarinForms_PCL_Project" />
 
-### <a name="xamarinsforms-pcl-project"></a>Xamarins.Forms PCL projektu
+### <a name="xamarinsforms-net-standard-or-pcl-project"></a>Xamarins.Forms .NET Standard nebo PCL projektu
 
-Chcete-li přidat podporu SQLite na platformě Xamarin.Forms PCL projekt, pomocí funkce vyhledávání NuGet najděte **sqlite. net pcl** a instalaci balíčku:
+Chcete-li přidat podporu SQLite do projektu Xamarin.Forms, pomocí funkce vyhledávání NuGet najděte **sqlite. net pcl** a instalaci balíčku:
 
-![](databases-images/vs2017-sqlite-pcl-nuget.png "Přidejte balíček NuGet SQLite.NET PCL")
+![Přidejte balíček NuGet SQLite.NET PCL](databases-images/vs2017-sqlite-pcl-nuget.png "přidejte balíček NuGet SQLite.NET PCL")
 
 Existuje několik balíčků NuGet s podobnými názvy, správný balíček s těmito atributy:
 
 - **Autor:** Krueger František A.
 - **ID:** sqlite. net pcl
 - **Odkaz NuGet:** [sqlite. net pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
+
+> [!TIP]
+> Použití **sqlite. net pcl** NuGet i v rozhraní .NET standardní projekty.
 
 Po přidání odkazu zápisu rozhraní abstrahovat funkce specifické pro platformu, která je k určení umístění souboru databáze. Rozhraní používá v ukázce definuje jednu metodu:
 
@@ -130,7 +134,7 @@ Všechny přístupový kód dat je napsána v projektu PCL ke sdílení pro vše
 
 Konfigurace aplikace iOS, přidejte jeden balíček NuGet do projektu iOS pomocí *NuGet* okno:
 
-![](databases-images/vsmac-sqlite-nuget.png "Přidejte balíček NuGet SQLite.NET PCL")
+![Přidejte balíček NuGet SQLite.NET PCL](databases-images/vsmac-sqlite-nuget.png "přidejte balíček NuGet SQLite.NET PCL")
 
 Vyžaduje pouze kód je `IFileHelper` implementace, která určuje cestu k souboru data. Následující kód umístí soubor databáze SQLite **knihovny nebo databází** složku v rámci izolovaného prostoru aplikace. Najdete v článku [iOS práce pomocí systému souborů](~/ios/app-fundamentals/file-system.md) dokumentace pro další informace o různých adresáře, které jsou k dispozici pro úložiště.
 
@@ -138,21 +142,21 @@ Vyžaduje pouze kód je `IFileHelper` implementace, která určuje cestu k soubo
 [assembly: Dependency(typeof(FileHelper))]
 namespace Todo.iOS
 {
-    public class FileHelper : IFileHelper
+  public class FileHelper : IFileHelper
+  {
+    public string GetLocalFilePath(string filename)
     {
-        public string GetLocalFilePath(string filename)
-        {
-            string docFolder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            string libFolder = Path.Combine(docFolder, "..", "Library", "Databases");
+      string docFolder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+      string libFolder = Path.Combine(docFolder, "..", "Library", "Databases");
 
-            if (!Directory.Exists(libFolder))
-            {
-                Directory.CreateDirectory(libFolder);
-            }
+      if (!Directory.Exists(libFolder))
+      {
+        Directory.CreateDirectory(libFolder);
+      }
 
-            return Path.Combine(libFolder, filename);
-        }
+      return Path.Combine(libFolder, filename);
     }
+  }
 }
 ```
 
@@ -172,14 +176,14 @@ Po přidání tohoto odkazu se vyžaduje jenom kód `IFileHelper` implementace, 
 [assembly: Dependency(typeof(FileHelper))]
 namespace Todo.Droid
 {
-    public class FileHelper : IFileHelper
+  public class FileHelper : IFileHelper
+  {
+    public string GetLocalFilePath(string filename)
     {
-        public string GetLocalFilePath(string filename)
-        {
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            return Path.Combine(path, filename);
-        }
+        string path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+        return Path.Combine(path, filename);
     }
+  }
 }
 ```
 
@@ -189,7 +193,7 @@ namespace Todo.Droid
 
 Konfigurace aplikace pro UPW, přidejte jeden balíček NuGet do projektu UPW pomocí *NuGet* okno:
 
-![](databases-images/vs2017-sqlite-uwp-nuget.png "Přidejte balíček NuGet SQLite.NET PCL")
+![Přidejte balíček NuGet SQLite.NET PCL](databases-images/vs2017-sqlite-uwp-nuget.png "přidejte balíček NuGet SQLite.NET PCL")
 
 Po přidání odkaz na implementaci `IFileHelper` rozhraní, pomocí konkrétní platformy `Windows.Storage` rozhraní API určit cestu k souboru data.
 
@@ -200,23 +204,21 @@ using Windows.Storage;
 [assembly: Dependency(typeof(FileHelper))]
 namespace Todo.UWP
 {
-    public class FileHelper : IFileHelper
+  public class FileHelper : IFileHelper
+  {
+    public string GetLocalFilePath(string filename)
     {
-        public string GetLocalFilePath(string filename)
-        {
-            return Path.Combine(ApplicationData.Current.LocalFolder.Path, filename);
-        }
+      return Path.Combine(ApplicationData.Current.LocalFolder.Path, filename);
     }
+  }
 }
-
 ```
 
 ## <a name="summary"></a>Souhrn
 
 Xamarin.Forms podporuje aplikací řízené databázi pomocí SQLite databázový stroj, takže je možné načíst objekty a uložit v sdíleného kódu.
 
-Tento článek zaměřuje na **přístup k** pomocí Xamarin.Forms databáze SQLite. Další informace o práci s SQLite.Net sám sebe, najdete v části [přístup k datům: pomocí SQLite.NET](~/cross-platform/app-fundamentals/index.md) dokumentaci. Většinu kódu SQLite.Net je lze sdílet v rámci všech platformách; pouze konfiguraci umístění souboru databáze SQLite vyžaduje funkce specifické pro platformu.
-
+Tento článek zaměřuje na **přístup k** pomocí Xamarin.Forms databáze SQLite. Další informace o práci s SQLite.Net sám sebe, najdete v části [SQLite.NET v systému Android](~/android/data-cloud/data-access/using-sqlite-orm.md) nebo [SQLite.NET v systému iOS](~/ios/data-cloud/data/using-sqlite-orm.md) dokumentaci. Většinu kódu SQLite.Net je lze sdílet v rámci všech platformách; pouze konfiguraci umístění souboru databáze SQLite vyžaduje funkce specifické pro platformu.
 
 ## <a name="related-links"></a>Související odkazy
 

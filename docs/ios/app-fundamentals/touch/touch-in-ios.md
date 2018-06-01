@@ -6,11 +6,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 78783089303eba09b0ee36534b0078b82674a1c6
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9ed90a9c4ddcd398d834cb8c91553a57e7bd5ad8
+ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34689538"
 ---
 # <a name="touch-in-ios"></a>Touch v iOS
 
@@ -76,7 +77,7 @@ public override void TouchesBegan (NSSet touches, UIEvent evt)
 }
 ```
 
-## <a name="multi-touch"></a>Multi-Touch
+## <a name="multi-touch"></a>Více dotykového ovládání
 
 Na ovládací prvky ve výchozím nastavení není povoleno více touch. Více touch lze povolit v iOS Designer, jak vidíte na následujícím snímku obrazovky:
 
@@ -117,7 +118,7 @@ Nástroje pro rozpoznávání gesto může výrazně zjednodušit a snížit pro
 
 Xamarin.iOS poskytuje třídu `UIGestureRecognizer` jako základní třída pro následující předdefinované gesto rozpoznávání:
 
--  *UITapGesturesRecognizer* – je to pro jeden nebo více odposlouchávání.
+-  *UITapGestureRecognizer* – je to pro jeden nebo více odposlouchávání.
 -  *UIPinchGestureRecognizer* – Pinching a šíření prsty, které od sebe.
 -  *UIPanGestureRecognizer* – klávesnicí nebo přetahování.
 -  *UISwipeGestureRecognizer* – vede libovolným směrem k načtení.

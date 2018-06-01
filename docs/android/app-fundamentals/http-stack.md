@@ -7,11 +7,12 @@ ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 04/20/2018
-ms.openlocfilehash: bedcf0603fffc9886155881f91972203104ba155
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 765c51346ac63a00838fec52bde87b38091e2dd9
+ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34689471"
 ---
 # <a name="httpclient-stack-and-ssltls-implementation-selector-for-android"></a>Zásobník HttpClient a SSL/TLS implementace selektor pro Android
 
@@ -89,9 +90,9 @@ Volba mezi `AndroidClientHandler` a `HttpClientHandler` závisí na potřebách 
 
 Počínaje Xamarin.Android 8.3 `HttpClientHandler` výchozí hodnota je přítomnost SSL (`btls`) jako výchozí zprostředkovatel TLS. Poskytovatel přítomnost SSL TLS nabízí následující výhody:
 
--   Podporuje TLS 1.2.
+-   Podporuje TLS 1.2 +.
 -   Podporuje všechny verze systému Android.
--   Poskytuje podporu protokolu TLS 1.2 pro obě `HttpClient` a `WebClient`.
+-   Poskytuje i podpora protokolu TLS 1.2 + `HttpClient` a `WebClient`.
 
 Nevýhodou přítomnost protokolu SSL používá jako zprostředkovatel TLS základní slovník je, že můžete zvětšit velikost výsledné APK (přidá další velikosti APK za podporované ABI o 1MB).
 
