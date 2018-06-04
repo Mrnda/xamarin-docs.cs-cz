@@ -115,6 +115,7 @@
 #### [Funkce uvolnění](user-interface/animation/easing.md)
 #### [Vlastní animace](user-interface/animation/custom.md)
 ### [BoxView](user-interface/boxview.md)
+### [Tlačítko](user-interface/button.md)
 ### [Barvy](user-interface/colors.md)
 ### [Referenční informace o ovládacích prvcích](user-interface/controls/index.md)
 #### [Stránky](user-interface/controls/pages.md)

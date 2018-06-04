@@ -7,12 +7,13 @@ ms.technology: xamarin-android
 ms.custom: video
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: 3eb3bdd7b060b661d5202c63a879f1c88d2ccdcb
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 05/30/2018
+ms.openlocfilehash: 3776a0554e5ae496f9e39612ec9bab971c6f1f88
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732759"
 ---
 # <a name="oreo-features"></a>Funkce Oreo
 
@@ -133,8 +134,8 @@ Pokud se pokusíte spustit výchozí Google grafického uživatelského rozhran�
 
 Tato zpráva se zobrazí, protože Google již poskytuje samostatnou správce AVD grafického uživatelského rozhraní, která podporuje rozhraní API 26.0 a novější. Pro Android 8.0 Oreo, je nutné použít Správce emulátoru Android Xamarin nebo příkazového řádku `avdmanager` nástroj pro Android Oreo vytvořit virtuální zařízení.
 
-Pomocí Správce zařízení Xamarin Android vytvářet a spravovat virtuální zařízení, najdete v tématu [Správce zařízení Xamarin Android](~/android/get-started/installation/android-emulator/xamarin-device-manager.md).
-Pokud chcete vytvořit virtuální zařízení bez správce emulátoru Android Xamarin, postupujte podle kroků v další části.
+Chcete-li vytvořit a spravovat virtuální zařízení pomocí Správce zařízení Android, najdete v části [Správa virtuálního zařízení pomocí Správce zařízení Android](~/android/get-started/installation/android-emulator/device-manager.md).
+Pokud chcete vytvořit virtuální zařízení bez Správce zařízení Android, postupujte podle kroků v další části.
 
 
 #### <a name="creating-virtual-devices-using-avdmanager"></a>Vytvoření virtuálního zařízení používat avdmanager
@@ -190,7 +191,7 @@ Po použití **avdmanager** Pokud chcete vytvořit virtuální zařízení, budo
 
 -----
 
-Další informace o konfiguraci pro testování a ladění emulátoru Androidu najdete v tématu [emulátor Google Android](~/android/deploy-test/debugging/android-sdk-emulator/index.md).
+Další informace o konfiguraci pro testování a ladění emulátoru Androidu najdete v tématu [ladění pomocí emulátor Google Android](~/android/deploy-test/debugging/android-sdk-emulator/index.md).
 
 Pokud používáte fyzické zařízení, například Nexus nebo jeden bod, můžete buď zařízení prostřednictvím automaticky aktualizovat prostřednictvím aktualizace letecké (OTA) nebo stáhnout bitovou kopii systému a flash zařízení přímo. Další informace o ruční aktualizaci zařízení pro Android Oreo najdete v tématu [objekt pro vytváření bitových kopií pro Nexus a pixelů zařízení](https://developers.google.com/android/images).
 

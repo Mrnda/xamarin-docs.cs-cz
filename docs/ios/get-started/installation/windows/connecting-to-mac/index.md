@@ -6,12 +6,13 @@ ms.assetid: 39DD7B3F-3E69-4E2A-B743-4C26AF613025
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 04/16/2018
-ms.openlocfilehash: e2f9b23bb298b0bb01f7e5491963daed4521ac9c
-ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
+ms.date: 05/29/2018
+ms.openlocfilehash: 4be29dabfd98c84876b65cd1655dcc4a6d444eeb
+ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34562838"
 ---
 # <a name="pair-to-mac"></a>Pár pro Mac
 
@@ -38,6 +39,7 @@ Pár na Mac umožňuje následující pracovní postup vývoje:
 - Je možné použít okno příkazového řádku k vytvoření aplikace pro iOS.
 
 > [!NOTE]
+> 
 > Než budete postupovat podle pokynů v této příručce, proveďte následující kroky: 
 > 
 > - Na počítači s Windows [nainstalovat Visual Studio 2017](~/cross-platform/get-started/installation/windows.md)
@@ -161,6 +163,7 @@ Počínaje [Visual Studio 2017 verze 15,6 operací](https://docs.microsoft.com/v
 > [!IMPORTANT]
 > - Pár na Mac nemůže nainstalovat Xcode; musíte ručně nainstalovat ho na hostiteli Mac sestavení. Je vyžadována pro vývoj na platformě Xamarin.iOS.
 > - Automatické zřizování Mac vyžaduje, aby na Mac je povoleno vzdálené přihlášení a Mac musí být přístupné prostřednictvím sítě k počítači systému Windows. V tématu [povolení vzdáleného přihlášení na Mac](#enable-remote-login-on-the-mac) další podrobnosti.
+> - Automatické zřizování Mac vyžaduje 3GB volného místa v systému Mac pro instalaci Xamarin.iOS.
 
 Pár pro Mac provede nezbytné instalace nebo aktualizace softwaru, když Visual Studio 2017 [připojení k počítači Mac](#connect-to-the-mac-from-visual-studio-2017).
 

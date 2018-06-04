@@ -6,12 +6,13 @@ ms.assetid: 2BE4D5AD-D468-B177-8F96-837D084E7DE1
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/17/2018
-ms.openlocfilehash: ca88159e8bcbcd4665e29b4ad8df9ffe00cfec67
-ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
+ms.date: 05/30/2018
+ms.openlocfilehash: 545636bc38240bc17837a661416702ec259caf45
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732603"
 ---
 # <a name="windows-installation"></a>Instalace systému Windows
 
@@ -82,7 +83,7 @@ Přináší značné vylepšení výkonu při vývoji na x86 na počítačích m
 1. Společnosti Microsoft Hyper-V &ndash; k dispozici v počítačích se systémem Windows 10. dubna Update.
 2. Společnosti Intel hardwaru Accelerated spuštění správce (HAXM) &ndash; k dispozici na x86 počítače se systémem OS X, systému macOS nebo starší verzí systému Windows.
 
-Další informace o emulátor Google Android Hyper-V a HAXM, najdete v tématu [Android emulátoru hardwarovou akceleraci](~/android/get-started/installation/android-emulator/hardware-acceleration.md) průvodce.
+Další informace o emulátor Google Android Hyper-V a HAXM, najdete v tématu [hardwarovou akceleraci emulátoru výkonu](~/android/get-started/installation/android-emulator/hardware-acceleration.md) průvodce.
 
 > [!NOTE]
 > Ve starších verzích systému Windows HAXM není kompatibilní s technologií Hyper-V. V tomto scénáři je potřeba buď [zakázat technologie Hyper-V](~/android/deploy-test/debugging/android-sdk-emulator/troubleshooting.md#disabling-hyper-v) nebo používat pomalejší emulátoru bitové kopie, které nemají x86 optimalizace.
@@ -121,6 +122,6 @@ Dalším krokem je Podíváme se na [Hello, Android](~/android/get-started/hello
 - [Instalace nástrojů Visual Studio Tools pro Xamarin](~/cross-platform/get-started/installation/windows.md)
 - [Požadavky na systém](~/cross-platform/get-started/requirements.md)
 - [Instalace sady Android SDK](~/android/get-started/installation/android-sdk.md)
-- [Emulátor Google Android](~/android/get-started/installation/android-emulator/index.md)
+- [Instalace emulátoru Androidu](~/android/get-started/installation/android-emulator/index.md)
 - [Nastavit zařízení pro vývoj](~/android/get-started/installation/set-up-device-for-development.md)
 - [Spuštění aplikace v emulátoru systému Android](https://developer.android.com/studio/run/emulator#Requirements)

@@ -10,7 +10,7 @@ ms.openlocfilehash: 9ed90a9c4ddcd398d834cb8c91553a57e7bd5ad8
 ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2018
+ms.lasthandoff: 06/04/2018
 ms.locfileid: "34689538"
 ---
 # <a name="touch-in-ios"></a>Touch v iOS

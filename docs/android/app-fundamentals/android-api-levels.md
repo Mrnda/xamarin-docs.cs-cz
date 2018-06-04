@@ -6,12 +6,13 @@ ms.assetid: 58CB7B34-3140-4BEB-BE2E-209928C1878C
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: 8f284fefd260764c6f09d78d2518bfd115782cd2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/01/2018
+ms.openlocfilehash: b942bb1be3441b1fb1a8bd65016914b3ecddbb26
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732317"
 ---
 # <a name="understanding-android-api-levels"></a>Principy úrovní rozhraní API systému Android
 
@@ -29,6 +30,10 @@ Xamarin.Android zpřístupní tři nastavení úrovně projektu rozhraní API sy
 -   [Cílová verze Android](#target) &ndash; Určuje verzi Androidu, který vaše aplikace je určená ke spuštění na. Tato úroveň rozhraní API se používá v *spustit* čas Android.
 
 Než budete moct nakonfigurovat úroveň rozhraní API pro svůj projekt, musíte nainstalovat komponenty SDK platformy pro tuto úroveň rozhraní API. Další informace o stahování a instalaci součástí sady SDK pro Android, najdete v části [Android SDK instalace](~/android/get-started/installation/android-sdk.md).
+
+> [!NOTE]
+> Počínaje srpen 2018, Google Play Console bude vyžadovat, nové aplikace cílí úroveň rozhraní API 26 (Android 8.0) nebo vyšší.
+Existující aplikace, bude nutné cílit na úrovni rozhraní API 26 nebo vyšší od listopadu 2018. Další informace najdete v tématu [zlepšení aplikace zabezpečení a výkonu na webu Google Play let pocházet](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -173,10 +178,6 @@ Cíl a rozhraní API minimální úroveň mohli vybrat v Xamarin.Android, musít
 Cílovém Frameworku, který identifikuje jaké verze knihovny aplikace je propojený s &ndash; určí, které rozhraní API můžete použít ve vaší aplikaci. Například, pokud chcete použít [NotificationBuilder.SetCategory](https://developer.xamarin.com/api/member/Android.App.Notification+Builder.SetCategory/p/System.String/) metoda, která byla zavedena v systému Android 5.0 typu Lupa, nastavte v cílovém Frameworku, který **21 úroveň rozhraní API (typu Lupa)** nebo novější. Pokud nastavíte cílový Framework projektu na na rozhraní API úrovně, jako **rozhraní API úrovně 19 (KitKat)** a pokuste se zavolat `SetCategory` metoda ve vašem kódu, zobrazí se chyba kompilace.
 
 Doporučujeme vám, že je vždy kompilovat s *nejnovější* dostupná verze cílové rozhraní. Díky tomu vám poskytne užitečné zprávy upozornění pro zastaralé rozhraní API, která může být volána vašeho kódu. Pomocí nejnovější verze cílové rozhraní je obzvláště důležité, pokud používáte nejnovější verze knihovny podporu &ndash; jednotlivých knihoven očekává vaší aplikace na kompilované minimální úroveň API knihovní podporu nebo vyšší. 
-
-> [!NOTE]
-> Počínaje srpen 2018, Google Play Console bude vyžadovat, nové aplikace cílí úroveň rozhraní API 26 (Android 8.0) nebo vyšší.
-Existující aplikace, bude nutné cílit na úrovni rozhraní API 26 nebo vyšší od listopadu 2018. Další informace najdete v tématu [zlepšení aplikace zabezpečení a výkonu na webu Google Play let pocházet](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)

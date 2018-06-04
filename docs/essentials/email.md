@@ -5,11 +5,12 @@ ms.assetid: 5FBB6FF0-0E7B-4C29-8F06-91642AF12629
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 3fee30e31dc18665d59f944462959fd3f8166968
-ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
+ms.openlocfilehash: 4bba713fa4dbcac3c145389c4b009d6e207273b8
+ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34562861"
 ---
 # <a name="xamarinessentials-email"></a>Xamarin.Essentials e-mailu
 
@@ -41,12 +42,13 @@ public class EmailTest
                 To = recipients,
                 //Cc = ccRecipients,
                 //Bcc = bccRecipients
-            }
+            };
+            
             await Email.ComposeAsync(message);
         }
         catch (FeatureNotSupportedException fbsEx)
         {
-            // Sms is not supported on this device
+            // Email is not supported on this device
         }
         catch (Exception ex)
         {

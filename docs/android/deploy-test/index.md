@@ -8,10 +8,11 @@ author: mgmclemore
 ms.author: mamcle
 ms.date: 04/25/2018
 ms.openlocfilehash: ce86590b2d05f3b9141d1a5ba42df9274544f9ae
-ms.sourcegitcommit: 8f14a067528067a34521452297080c98b4c1d1af
+ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/25/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34549233"
 ---
 # <a name="deployment-and-testing"></a>Nasazování a testování
 

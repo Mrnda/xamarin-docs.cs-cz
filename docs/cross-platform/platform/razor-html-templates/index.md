@@ -5,12 +5,13 @@ ms.prod: xamarin
 ms.assetid: D8B87C4F-178E-48D9-BE43-85066C46F05C
 author: asb3993
 ms.author: amburns
-ms.date: 02/18/2018
-ms.openlocfilehash: 48d7778bf3225401f2819909ae6be320cfa881e3
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 05/29/2018
+ms.openlocfilehash: 15cc51ac92d8a44a2568089d0a448c6f7fdf25d5
+ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34562796"
 ---
 # <a name="building-html-views-using-razor-templates"></a>Vytváření zobrazení HTML pomocí šablon Razor
 
@@ -149,7 +150,7 @@ V systému Android jednoduše podtřídami WebViewClient a pak implementace kód
 
 ```csharp
 class HybridWebViewClient : WebViewClient {
-    public override bool ShouldOverrideUrlLoading (WebView webView, string url) {
+    public override bool ShouldOverrideUrlLoading (WebView webView, IWebResourceRequest request) {
         // return true if handled in code
         // return false to let the web view follow the link
     }

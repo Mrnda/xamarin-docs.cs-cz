@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 805b27139d644d0fac4a7c5a9e9b2c2c331d7130
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: 38805c09136405a7a241cfaeb8fa8cb6fb1a5d5f
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732720"
 ---
 # <a name="introduction-to-effects"></a>Úvod do efekty
 
@@ -53,7 +54,7 @@ Každý specifické pro platformu `PlatformEffect` třída zpřístupňuje násl
 
 Každý specifické pro platformu `PlatformEffect` třída poskytuje následující metody, které musí být potlačena za účelem implementace vliv:
 
-- [`OnAttached`](https://developer.xamarin.com/api/member/Xamarin.Forms.Effect.OnAttached()/) – voláno, pokud je připojen vliv do ovládacího prvku Xamarin.Forms. Přepsané verzi tuto metodu v třídě každý čip konkrétní vliv je místo, kde provádět přizpůsobení ovládacího prvku, společně s zpracování výjimek v případě, že účinek nelze použít pro daný ovládací prvek Xamarin.Forms.
+- [`OnAttached`](https://developer.xamarin.com/api/member/Xamarin.Forms.Effect.OnAttached()/) – voláno, pokud efekt je připojen k ovládacímu prvku Xamarin.Forms. Přepsané verzi tuto metodu v třídě každý čip konkrétní vliv je místo, kde provádět přizpůsobení ovládacího prvku, společně s zpracování výjimek v případě, že účinek nelze použít pro daný ovládací prvek Xamarin.Forms.
 - [`OnDetached`](https://developer.xamarin.com/api/member/Xamarin.Forms.Effect.OnDetached()/) – voláno, pokud vliv odpojený od ovládacího prvku Xamarin.Forms. Přepsané verzi této metody v každé třídě vliv specifických pro platformy je místo, kde vyčistit všechny vliv například zrušte registraci obslužné rutiny události.
 
 Kromě toho `PlatformEffect` zpřístupní [ `OnElementPropertyChanged` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformEffect%3CTContainer,TControl%3E.OnElementPropertyChanged/p/System.ComponentModel.PropertyChangedEventArgs/) metodu, která je také možné přepsat. Tato metoda je volána, když došlo ke změně vlastností elementu. Přepsané verzi této metody v každé třídě vliv specifických pro platformy je na místě reagovat na změny vazbu vlastnosti na platformě Xamarin.Forms ovládací prvek. Kontrolu pro vlastnost, která se změnila měli vždy provedena, protože toto přepsání lze volat vícekrát.

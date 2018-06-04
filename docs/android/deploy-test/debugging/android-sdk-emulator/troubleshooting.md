@@ -6,24 +6,25 @@ ms.assetid: 4B05C3C5-E1F6-47A9-B098-C31E630194F6
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/04/2018
-ms.openlocfilehash: 001fc21a519a251715d24b43acfdd4251b5fbc91
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 06/01/2018
+ms.openlocfilehash: 73d0e578a0cf8ea6c0a62d8e21809cdab4b20910
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732359"
 ---
 # <a name="google-android-emulator-troubleshooting"></a>Řešení potíží s emulátor Google Android
 
-V tomto článku jsou vysvětleny nejběžnější zprávy upozornění a problémy s emulátor Google Android (a jejich řešení).
- 
+_V tomto článku nejběžnější zprávy upozornění a problémy, ke kterým dochází při spuštění emulátor Google Android jsou popsány, společně s alternativní řešení a tipů. Informace o řešení potíží během instalace emulátoru najdete v tématu [odstraňování potíží s instalací emulátoru](~/android/get-started/installation/android-emulator/troubleshooting.md)._
+
 <a name="perfwarn" />
 
 ## <a name="performance-warnings"></a>Upozornění výkonu
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Od verze Visual Studio 2017 verzi 15.4, dialogové okno upozornění výkonu může zobrazit při prvním nasazení aplikace pro Android emulátoru sady SDK. Tyto dialogy upozornění jsou vysvětleny níže.
+Od verze Visual Studio 2017 verzi 15.4, dialogové okno upozornění výkonu může zobrazit při prvním nasazení aplikace do emulátor Google Android. Tyto dialogy upozornění jsou vysvětleny níže.
 
 ### <a name="computer-does-not-contain-an-intel-procesor"></a>Počítač neobsahuje Procesor Intel
 
@@ -68,7 +69,7 @@ SERVICE_NAME: intelhaxm
 ```
 
 
-Pokud **stavu** není nastavený na **systémem**, najdete v části [jak používat Správce spuštění Accelerated Intel hardwaru](https://software.intel.com/en-us/android/articles/how-to-use-the-intel-hardware-accelerated-execution-manager-intel-haxm-android-emulator) pro vyřešení problému.
+Pokud `STATE` není nastavený na `RUNNING`, najdete v části [jak používat Správce spuštění Accelerated Intel hardwaru](https://software.intel.com/en-us/android/articles/how-to-use-the-intel-hardware-accelerated-execution-manager-intel-haxm-android-emulator) pro vyřešení problému.
 
 
 ### <a name="other-failures"></a>Jiné chyby
@@ -83,6 +84,8 @@ Chcete-li tuto chybu vyřešit, přečtěte si téma [jak používat Správce sp
 Pokud nechcete zobrazovat upozornění výkonu, můžete je zakázat. V sadě Visual Studio, klikněte na tlačítko **nástroje > Možnosti > Xamarin > Nastavení Androidu** a zakázat **varování, pokud AVD akcelerace není podporované (HAXM)** možnost:
 
 [![Zakázání AVD akcelerace upozornění](troubleshooting-images/win/06-disable-perf-warnings-sml.png)](troubleshooting-images/win/06-disable-perf-warnings.png#lightbox)
+
+
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -110,16 +113,11 @@ Toto dialogové okno se zobrazí, pokud emulátoru nepodaří spustit z neznám�
 -----
 
 
-## <a name="solutions-to-common-problems"></a>Řešení běžných potíží
-
-Mnoho běžných problémů emulátor Google Android lze vyřešit tak, že změny konfigurace v počítači nebo po instalaci další software. Následující části popisují tyto problémy a poskytují řešení.
-
-
-### <a name="deployment-issues"></a>Problémy při nasazení
+## <a name="deployment-issues"></a>Problémy při nasazení
 
 Pokud dojde k chybě o selhání instalace APK na emulátoru nebo selhání při spouštění most ladění Android (**adb**), ověřte, zda SDK pro Android můžete připojit k vaší emulátor. Chcete-li to provést, použijte následující kroky:
 
-1. Spusťte emulátor ze **Manager virtuální zařízení Android (AVD)** (vyberte virtuální zařízení a klikněte na **spustit**).
+1. Spusťte emulátor ze **Správce zařízení Android** (vyberte virtuální zařízení a klikněte na **spustit**).
 
 2. Otevřete příkazový řádek a přejděte do složky, kde **adb** je nainstalovaná. Například v systému Windows, může se jednat v: **C:\\Program Files (x86)\\Android\\android-sdk\\nástrojů platformy\\adb.exe**.
 
@@ -139,27 +137,26 @@ Pokud dojde k chybě o selhání instalace APK na emulátoru nebo selhání při
 5. Pokud v tomto seznamu nezobrazí emulátoru, spusťte **Android SDK Manager**, všechny aktualizace a pak se pokuste spustit v emulátoru znovu.
 
 
-
-### <a name="haxm-issues"></a>HAXM problémy
+## <a name="haxm-issues"></a>HAXM problémy
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Pokud emulátor Google Android nespustí správně, to je obvykle způsobeno problémy s HAXM. HAXM problémy jsou často výsledek je v konfliktu s jiných virtualizačních technologií, nesprávná nastavení nebo aktuální ovladač HAXM.
+Pokud emulátor Google Android nespustí správně, je často příčinou problémů s HAXM. HAXM problémy jsou často výsledek je v konfliktu s jiných virtualizačních technologií, nesprávná nastavení nebo aktuální ovladač HAXM.
 
 <a name="virt-conflicts" />
 
-#### <a name="haxm-virtualization-conflicts"></a>Konflikty HAXM virtualizace
+### <a name="haxm-virtualization-conflicts"></a>Konflikty HAXM virtualizace
 
 HAXM může dojít ke konfliktu s jinými technologiemi, které používají virtualizaci, jako je například technologie Hyper-V, Windows Device Guard a některé antivirový software:
 
-- **Technologie Hyper-V** &ndash; Pokud používáte systém Windows s technologií Hyper-V povolena, postupujte podle kroků v [zakázání technologie Hyper-V](#disable-hyperv).
+- **Technologie Hyper-V** &ndash; Pokud používáte verzi systému Windows, než **Windows 10. dubna 2018 aktualizovat (sestavení 1803)** a je povolená technologie Hyper-V, postupujte podle kroků v [zakázání technologie Hyper-V](#disable-hyperv).
 
 - **Ochrana zařízení** &ndash; ochranou zařízení a ochranu přihlašovacích údajů mohou zabránit technologie Hyper-V bude zakázán na počítače s Windows. Pokud chcete zakázat ochranu zařízení a ochranu přihlašovacích údajů, přečtěte si téma [zakázání Device Guard](#disable-devguard).
 
 - **Antivirový Software** &ndash; Pokud máte spuštěný antivirový software, který používá virtualizace s hardwarovým řízením (například Avast), zakažte nebo odinstalujte tento software, restartování a opakovat emulátoru Android SDK.
 
 
-#### <a name="incorrect-bios-settings"></a>Nastavení nesprávný systému BIOS
+### <a name="incorrect-bios-settings"></a>Nastavení nesprávný systému BIOS
 
 Pokud používáte HAXM v počítačích s Windows, HAXM nebude fungovat, pokud není v systému BIOS povolena virtualizace technology (Intel VT-x). Pokud VT-x je zakázaná, obdržíte chybu podobný následujícímu při pokusu o spuštění emulátor Google Android:
 
@@ -167,20 +164,13 @@ Pokud používáte HAXM v počítačích s Windows, HAXM nebude fungovat, pokud 
 
 Chcete-li opravit tuto chybu, spustit počítač v systému BIOS, povolit VT-x a SLAT (překlad adres druhé úrovně) a pak restartujte počítač zpět do systému Windows.
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
-Pokud emulátor Google Android nespustí správně, to je obvykle způsobeno problémy s HAXM. HAXM problémy jsou často výsledek je v konfliktu s jiných virtualizačních technologií, nesprávná nastavení nebo aktuální ovladač HAXM. Zkuste znovu nainstalovat ovladač HAXM, pomocí kroky popsané v [instalace HAXM](~/android/get-started/installation/android-emulator/hardware-acceleration.md#install-haxm).
-
------
-
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
 <a name="disable-hyperv" />
 
 ### <a name="disabling-hyper-v"></a>Zakázání technologie Hyper-V
 
-Pokud používáte systém Windows s technologií Hyper-V povolena, musíte ji vypnout a restartovat počítač, aby nainstalovat a používat HAXM. Technologie Hyper-V z ovládacích panelů můžete zakázat pomocí následujících kroků:
+Pokud používáte verzi systému Windows, než **Windows 10. dubna 2018 aktualizace (sestavení 1803)** a je povolená technologie Hyper-V, je nutné zakázat technologie Hyper-V a restartujte počítač k instalaci a používání HAXM. Pokud používáte **Windows 10. dubna 2018 aktualizace (sestavení 1803)** nebo novější, emulátor Google Android verze 27.2.7 nebo novější můžete použít technologie Hyper-V (ne HAXM) pro hardwarové akcelerace, takže není nutné zakázat technologie Hyper-V.
+
+Technologie Hyper-V z ovládacích panelů můžete zakázat pomocí následujících kroků:
 
 1. Do vyhledávacího pole Windows zadejte **programy a** klikněte **programy a funkce** výsledek hledání.
 
@@ -196,13 +186,14 @@ Alternativně můžete pomocí následujících rutin Powershellu zakázat Hyper
 
 `Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Hypervisor`
 
-Intel HAXM i Microsoft Hyper-V nemůže být aktivní ve stejnou dobu. Bohužel není aktuálně žádný způsob, jak přepínat mezi mezi Hyper-V a HAXM bez restartování počítače. Pokud chcete použít [Visual Studio Emulator for Android](~/android/deploy-test/debugging/visual-studio-android-emulator.md) (která závisí na technologii Hyper-V), nebude možné pomocí emulátoru Android SDK bez nutnosti restartování. Jeden ze způsobů použití technologie Hyper-V a HAXM je vytvoření instalace s možností více systémů, jak je popsáno v [vytváření žádný spouštěcí položku hypervisoru](https://blogs.msdn.microsoft.com/virtual_pc_guy/2008/04/14/creating-a-no-hypervisor-boot-entry/).
+Intel HAXM i Microsoft Hyper-V nemůže být aktivní ve stejnou dobu. Bohužel neexistuje žádný způsob, jak přepínat mezi mezi Hyper-V a HAXM bez restartování počítače. Pokud chcete použít Visual Studio 2015 [Visual Studio Emulator for Android](~/android/deploy-test/debugging/visual-studio-android-emulator.md) (která závisí na technologii Hyper-V), nebude možné používat emulátor Google Android bez restartování. Jedním ze způsobů, chcete-li vyřešit tento problém se k upgradu systému Windows **Windows 10. dubna 2018 aktualizace (sestavení 1803)** nebo novější a používat Hyper-V pro obě emulátorů (najdete v části [hardwarovou akceleraci emulátoru výkonu](~/android/get-started/installation/android-emulator/hardware-acceleration.md)).
+Dalším způsobem je použít technologie Hyper-V a HAXM vytvořením instalace s možností více systémů, jak je popsáno v [vytváření žádný spouštěcí položku hypervisoru](https://blogs.msdn.microsoft.com/virtual_pc_guy/2008/04/14/creating-a-no-hypervisor-boot-entry/).
 
 V některých případech pomocí výše uvedené kroky nepovede v zakázání technologie Hyper-V, pokud je povolena ochrana zařízení a ochranu přihlašovacích údajů. Pokud nelze zakázat technologie Hyper-V (nebo ji zdá se, že se zakáže, ale HAXM instalace se nezdaří), postupujte podle kroků v další části zakázat ochranu zařízení a ochranu přihlašovacích údajů.
 
 <a name="disable-devguard" />
 
-#### <a name="disabling-device-guard"></a>Zakázání ochranou zařízení
+### <a name="disabling-device-guard"></a>Zakázání ochranou zařízení
 
 Ochrana zařízení a ochranu přihlašovacích údajů mohou zabránit technologie Hyper-V bude zakázán na počítače s Windows. Často se jedná o problém pro počítače připojené k doméně, které jsou konfigurovány a řídí vlastnící organizace.
 Ve Windows 10, použijte následující postup pro případ, **Device Guard** běží:
@@ -249,9 +240,9 @@ Pokud je povolena ochrana zařízení, použijte ji zakázat následující krok
 Pokud ještě není zakázán technologie Hyper-V, zabránit vám v zakázání Guard zařízení a ochranu přihlašovacích údajů mohou zásady počítače připojené k doméně. V takovém případě může požádat o výjimku z vašeho správce domény a umožní vám pro vyjádření výslovného nesouhlasu ochranu přihlašovacích údajů. Alternativně můžete použít počítač, který není připojený k doméně používat HAXM.
 
 
-# <a name="visual-studiotabvsmac"></a>[Visual Studio](#tab/vsmac)
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-Technologie Hyper-V není k dispozici na OS X nebo systému macOS.
+Pokud emulátor Google Android nespustí správně, je často příčinou problémů s HAXM. HAXM problémy jsou často výsledek je v konfliktu s jiných virtualizačních technologií, nesprávná nastavení nebo aktuální ovladač HAXM. Zkuste znovu nainstalovat ovladač HAXM, pomocí kroky popsané v [instalace HAXM](~/android/get-started/installation/android-emulator/hardware-acceleration.md#install-haxm).
 
 -----
 

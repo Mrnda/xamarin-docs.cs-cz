@@ -6,12 +6,13 @@ ms.assetid: 5C74ABE2-C862-4ED0-8EA5-C7FEE5251D4B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: fe544f8ac677987f8921ccb1c11b8930811b9553
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/02/2018
+ms.openlocfilehash: 15698767ae71b68a26138169771f7f397bddd95a
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732515"
 ---
 # <a name="nougat-features"></a>Funkce cukrovinkách typu nugát
 
@@ -46,7 +47,7 @@ Tento článek vysvětluje, jak začít vytváření aplikací s Androidem cukro
 
 Toto je potřeba používat nové funkce systému Android cukrovinkách typu nugát v založené na Xamarinu aplikace:
 
--   **Visual Studio nebo Visual Studio pro Mac** &ndash; Pokud používáte Visual Studio, verze 4.2.0.628 nebo novější z Xamarin pro Visual Studio se vyžaduje. Pokud používáte Visual Studio pro Mac, verze 6.1.0 nebo později sady Visual Studio pro Mac, je nutné.
+-   **Visual Studio nebo Visual Studio pro Mac** &ndash; Pokud používáte Visual Studio, verze 4.2.0.628 nebo novější z Visual Studio Tools pro Xamarin se vyžaduje. Pokud používáte Visual Studio pro Mac, verze 6.1.0 nebo později sady Visual Studio pro Mac, je nutné.
 
 -   **Xamarin.Android** &ndash; Xamarin.Android 7.0 nebo novější musí být nainstalovaná a nakonfigurovaná s Visual Studio nebo Visual Studio for Mac.
 

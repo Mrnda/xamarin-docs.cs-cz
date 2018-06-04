@@ -6,12 +6,13 @@ ms.assetid: C0837996-A1E8-47F9-B3A8-98EE43B4A675
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/23/2018
-ms.openlocfilehash: cc6cb282565e08f7ce4401e5317fba518a74a8f3
-ms.sourcegitcommit: 4f646dc5c51db975b2936169547d625c78a22b30
+ms.date: 05/30/2018
+ms.openlocfilehash: 762a604186cf8657ce2f3732081cd82612b1b7ef
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/25/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732993"
 ---
 # <a name="ios-platform-specifics"></a>iOS specifika platformy
 
@@ -29,6 +30,7 @@ V systému iOS obsahuje Xamarin.Forms jsou specifikace následující platformy:
 - Nastavení stavu viditelnost panelu na [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/). Další informace najdete v tématu [nastavení viditelnost panelu stavu na stránce](#set_status_bar_visibility).
 - Řízení zda [ `ScrollView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) zpracuje gesto touch nebo předává je na jeho obsah. Další informace najdete v tématu [zpozdit obsahu úpravy v ScrollView](#delay_content_touches).
 - Nastavení stylu oddělovače na [ `ListView` ](xref:Xamarin.Forms.ListView). Další informace najdete v tématu [nastavení styl oddělovače v prvku ListView](#listview-separatorstyle).
+- Zakázat režim starší verze barva na podporované [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Další informace najdete v tématu [zakázat režim starší verze barva](#legacy-color-mode).
 
 <a name="blur" />
 
@@ -506,6 +508,47 @@ Výsledkem je, že zadané [ `SeparatorStyle` ](xref:Xamarin.Forms.PlatformConfi
 
 > [!NOTE]
 > Jakmile styl oddělovače byla nastavena na `FullWidth`, nelze jej změnit zpět na `Default` za běhu.
+
+<a name="legacy-color-mode" />
+
+## <a name="disabling-legacy-color-mode"></a>Zakázat režim starší verze barev
+
+Některé z Xamarin.Forms zobrazení funkce režim starší verze barev. V tomto režimu když [ `IsEnabled` ](xref:Xamarin.Forms.VisualElement.IsEnabled) zobrazení je nastavena na `false`, zobrazení se přepíše barvy nastavený uživatelem s nativní výchozí barvy pro zakázaném stavu. Pro zpětné kompatibility, tento režim starší verze barva zůstane výchozí chování pro podporované zobrazení.
+
+Tato specifické pro platformu zakáže tento režim starší verze barvu, aby barvy nastavený na zobrazení uživatelem zůstanou i v případě, že zobrazení je zakázáno. V jazyce XAML spotřebování nastavením [ `VisualElement.IsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.IsLegacyColorModeEnabledProperty) přidružená vlastnost k `false`:
+
+```xaml
+<ContentPage ...
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core">
+    <StackLayout>
+        ...
+        <Button Text="Button"
+                TextColor="Blue"
+                BackgroundColor="Bisque"
+                ios:VisualElement.IsLegacyColorModeEnabled="False" />
+        ...
+    </StackLayout>
+</ContentPage>
+```
+
+Alternativně může být používán z C# s použitím rozhraní fluent API:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+...
+
+_legacyColorModeDisabledButton.On<iOS>().SetIsLegacyColorModeEnabled(false);
+```
+
+`VisualElement.On<iOS>` Metoda určuje, že tento specifické pro platformu lze spustit pouze v iOS. [ `VisualElement.SetIsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.SetIsLegacyColorModeEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement},System.Boolean)) Metoda v [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) obor názvů, je slouží ke kontrole, zda režim starší verze barva je zakázán. Kromě toho [ `VisualElement.GetIsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.GetIsLegacyColorModeEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement})) lze metoda vrátí, zda je zakázána režim starší verze barvy.
+
+Výsledkem je, že lze zakázat režim starší verze barvy, takže barvy nastavený na zobrazení uživatelem zůstanou i když je zakázáno zobrazení:
+
+![](ios-images/legacy-color-mode-disabled.png "Zakázat režim starší verze barvy")
+
+> [!NOTE]
+> Při nastavování [ `VisualStateGroup` ](xref:Xamarin.Forms.VisualStateGroup) zobrazení, režim starší verze barva úplně ignorovány. Další informace o vizuálních stavů najdete v tématu [nástroje stavu Manager Visual Xamarin.Forms](~/xamarin-forms/user-interface/visual-state-manager.md).
 
 ## <a name="summary"></a>Souhrn
 

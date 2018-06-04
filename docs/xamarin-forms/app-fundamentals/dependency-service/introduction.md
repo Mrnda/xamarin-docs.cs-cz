@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: 88821c5315fc338b5195e42ea4b2bc3e648e6ea1
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 6a0544a58245efed696b92c543fbaf5e7e1b8365
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732824"
 ---
 # <a name="introduction-to-dependencyservice"></a>Úvod do DependencyService
 
@@ -23,7 +24,7 @@ ms.lasthandoff: 04/27/2018
 
 ## <a name="how-dependencyservice-works"></a>Jak funguje DependencyService
 
-Xamarin.Forms aplikace potřebují tři komponenty pro použití `DependencyService`:
+Xamarin.Forms aplikace potřebují čtyři komponenty pro použití `DependencyService`:
 
 - **Rozhraní** &ndash; požadovanou funkčnost je definované rozhraní v sdíleného kódu.
 - **Implementace za platformy** &ndash; třídy, které implementují rozhraní musí být přidaný do každého projektu platformy.

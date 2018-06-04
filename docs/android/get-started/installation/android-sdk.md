@@ -6,12 +6,13 @@ ms.assetid: 9A857F52-2EC1-414F-8010-CEE67B60A4B4
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/01/2018
-ms.openlocfilehash: 5c2259ad32f341094f6cdc440edb2053987374b1
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.date: 06/02/2018
+ms.openlocfilehash: 0af0ef56630103498041ad61f7c5ce900358b055
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732850"
 ---
 # <a name="setting-up-the-android-sdk-for-xamarinandroid"></a>Nastavení služby SDK pro Android pro Xamarin.Android
 
@@ -44,9 +45,9 @@ Proč by chcete použít místo správce SDK, který je součástí sady Android
 
 Pokud chcete používat Xamarin Android SDK Manager, budete potřebovat následující:
 
-- Visual Studio 2017 community edition nebo vyšší. Visual Studio 2017 verze 15,5 nebo novější je povinný.
+- Visual Studio 2017 (Community, Professional nebo Enterprise edition). Visual Studio 2017 verze 15,5 nebo novější je povinný.
 
-- Xamarin pro Visual Studio verze 4.5.0 nebo novější. 
+- Nástroje sady Visual Studio pro Xamarin verze 4.5.0 nebo novější. 
 
 Xamarin Android SDK Manager není kompatibilní s Visual Studio
 2015. Uživatelé sady Visual Studio 2015 by měl používat SDK Manager nástroje poskytované subsystémem pro Google Android SDK.

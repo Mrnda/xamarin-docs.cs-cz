@@ -7,11 +7,12 @@ ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: 4e3e090d826aa46d503f8c612250fd5122bc703e
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: a8adc0c16043048ec919f5a0f9f7c5ce25f08ef9
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34733032"
 ---
 # <a name="part-4-data-binding-basics"></a>Část 4. Základy vazba dat
 
@@ -388,7 +389,7 @@ Tady je výsledek:
 
 [![](data-binding-basics-images/listview3.png "Vytvoření vazby na kolekci s šablonu DataTemplate a převaděče")](data-binding-basics-images/listview3-large.png#lightbox "vazby ke kolekci s šablonu DataTemplate a převaděče")
 
-`ListView` Je poměrně složité při zpracování změn, které můžou nastat dynamicky v základní data, ale jenom v případě provést určité kroky. Pokud kolekce položek přiřazen k `ItemsSource` vlastnost `ListView` změny během doby běhu –, pokud položky můžete přidat do nebo z kolekce odebrán – použijte `ObservableCollection` třídu pro tyto položky. `ObservableCollection` implementuje `INotifyCollectionChanged` rozhraní, a `ListView` nainstaluje obslužnou rutinu pro `CollectionChanged` událostí.
+`ListView` Je poměrně složité při zpracování změny, které může dynamicky dojít podkladového, ale pouze, pokud je provést určité kroky. Pokud kolekce položek přiřazen k `ItemsSource` vlastnost `ListView` změny během doby běhu –, pokud položky můžete přidat do nebo z kolekce odebrán – použijte `ObservableCollection` třídu pro tyto položky. `ObservableCollection` implementuje `INotifyCollectionChanged` rozhraní, a `ListView` nainstaluje obslužnou rutinu pro `CollectionChanged` událostí.
 
 Pokud vlastnosti položek sami změnit za běhu, pak by měla implementovat položky v kolekci `INotifyPropertyChanged` rozhraní a signál změny hodnot vlastností, pomocí `PropertyChanged` událostí. Tento postup je znázorněn v další části této série [část 5. Z datové vazby k rozhraní MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md).
 

@@ -6,12 +6,13 @@ ms.assetid: F136AAE0-C6D2-4B0F-8F8C-7A6A94877266
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 01/02/2018
-ms.openlocfilehash: d1fc8a1c511e86615108d1df841c28256f23191f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/30/2018
+ms.openlocfilehash: df359fae545079c7ac1d7106ec86e9297f183f90
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732772"
 ---
 # <a name="which-android-sdk-packages-should-i-install"></a>Instalace balíčků které sady SDK pro Android
 
@@ -42,11 +43,8 @@ Stačí nainstalovat sadu SDK platformy pro rozhraní API 23
 Třeba nainstalovat sadu SDK platformy pro rozhraní API 15 a 23. Všimněte si, že není potřeba nainstalovat úrovně rozhraní API mezi minimální a cílem (i v případě, že jste backporting na tyto úrovně rozhraní API).
 
 ## <a name="system-images"></a>Bitové kopie systému
-Toto jsou jenom potřeba, pokud chcete použít na více systémů pole emulátorů Android z Google. 
 
-- [Postup konfigurace výchozí emulátor](~/android/get-started/installation/android-emulator/index.md)
-
-- [Jak zrychlit výchozí emulátor](~/android/get-started/installation/android-emulator/index.md)
+Toto jsou jenom potřeba, pokud chcete použít na více systémů pole emulátorů Android z Google. Další informace najdete v tématu [emulátoru Android – nastavení](~/android/get-started/installation/android-emulator/index.md)
 
 ## <a name="extras"></a>Funkce
 Android SDK funkce nejsou obvykle nutné; ale je užitečné zajímat z nich, protože mohou být vyžadovány v závislosti na váš případ použití.

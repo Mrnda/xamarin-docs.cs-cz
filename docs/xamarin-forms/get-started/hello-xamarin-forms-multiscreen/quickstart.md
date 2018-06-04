@@ -6,11 +6,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/06/2018
-ms.openlocfilehash: 066f084187a486ca2f88882890b5e9ad277b8cff
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 0a56996d37bcdd2922b53b414fb1afb9d33974bd
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732837"
 ---
 # <a name="xamarinforms-multiscreen-quickstart"></a>Rychlý start Multiobrazovka Xamarin.Forms
 
@@ -57,7 +58,7 @@ Rozšíření aplikace Phoneword následujícím způsobem:
 
     Uložit změny do **CallHistoryPage.xaml** stisknutím **CTRL + S**a zavřete soubor.
 
-5. V **Průzkumníku řešení**, dvakrát klikněte na **App.xaml.cs** a otevře se:
+5. V **Průzkumníku řešení**, dvakrát klikněte **App.xaml.cs** soubor sdílený **Phoneword** projektu a otevře se:
 
     ![](quickstart-images/vs/open-app-class.png "Otevření souboru App.xaml.cs")
 
@@ -88,7 +89,7 @@ Rozšíření aplikace Phoneword následujícím způsobem:
 
     Uložit změny do **App.xaml.cs** stisknutím **CTRL + S**a zavřete soubor.
 
-7. V **Průzkumníku řešení**, dvakrát klikněte na **MainPage.xaml** a otevře se:
+7. V **Průzkumníku řešení**, dvakrát klikněte **MainPage.xaml** soubor sdílený **Phoneword** projektu a otevře se:
 
     ![](quickstart-images/vs/open-mainpage-xaml.png "Otevřete MainPage.xaml")
 

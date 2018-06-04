@@ -5,11 +5,12 @@ ms.assetid: C52AE99A-0FB3-425D-9106-3DA5777FEFA0
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 67a0218325918b57e5ed2618b57d52d3fe3ee820
-ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
+ms.openlocfilehash: 10100d1c65946780b77dbb022822bdd73f45a84a
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732694"
 ---
 # <a name="xamarinessentials-clipboard"></a>Xamarin.Essentials schránky
 
@@ -34,7 +35,7 @@ var hasText = Clipboard.HasText;
 Nastavit text na **schránky**:
 
 ```csharp
-ClipBoard.SetText("Hello World");
+Clipboard.SetText("Hello World");
 ```
 
 Čtení textu ze **schránky**:

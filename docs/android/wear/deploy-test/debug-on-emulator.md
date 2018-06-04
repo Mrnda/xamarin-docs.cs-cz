@@ -6,12 +6,13 @@ ms.assetid: 225684B2-3122-4E3B-A028-A3A400976D31
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: 3dda1445815f747f484458388cd856c2f9705603
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 05/30/2018
+ms.openlocfilehash: 9be9b91a0ed7e7607469bf8d74087b6f93677559
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732980"
 ---
 # <a name="debug-android-wear-on-an-emulator"></a>Ladění Android opotřebení v emulátoru
 
@@ -23,7 +24,7 @@ Vývoj aplikací pro Android nosit vyžaduje spuštění aplikace, buď na fyzic
 
 ## <a name="configure-the-google-android-emulator"></a>Konfigurace emulátor Google Android
 
-Ke spouštění vaší aplikace a opotřebením motoru na emulátoru, musíte nainstalovat Android emulátoru systému Android SDK a nakonfigurovat ji pro Android nosit. Celkové emulátoru Android SDK instalace a konfigurace informace najdete v tématu [emulátor Google Android](~/android/deploy-test/debugging/android-sdk-emulator/index.md).
+Ke spouštění vaší aplikace a opotřebením motoru na emulátoru, musíte nainstalovat Android emulátoru systému Android SDK a nakonfigurovat ji pro Android nosit. Celkové emulátoru Android SDK instalace a konfigurace informace najdete v tématu [Android – nastavení emulátoru](~/android/get-started/installation/android-emulator/index.md).
 
 Když vytvoříte virtuální zařízení a opotřebením motoru, vyberte profil zařízení Android nosit (například **Android opotřebení hranaté**). Pro lepší výkon použijte opotřebení **x86** CPU/ABI, jak je vidět v tomto příkladu:
 

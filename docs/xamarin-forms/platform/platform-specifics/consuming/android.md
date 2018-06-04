@@ -6,12 +6,13 @@ ms.assetid: C5D4AA65-9BAA-4008-8A1E-36CDB78A435D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/23/2018
-ms.openlocfilehash: 8d7ec3f2f64fdb8be903fd13bd72bcf545265a3d
-ms.sourcegitcommit: 4f646dc5c51db975b2936169547d625c78a22b30
+ms.date: 05/30/2018
+ms.openlocfilehash: 05f1fc6158e9a20892ab4a4b49b33e4eac6bc5e5
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/25/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34733058"
 ---
 # <a name="android-platform-specifics"></a>Android platformy – podrobnosti
 
@@ -26,6 +27,8 @@ V systému Android se Xamarin.Forms obsahuje následující platformy specifick�
 - Zakázání [ `Disappearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) a [ `Appearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) stránky události životního cyklu na pozastavení a obnovení, pro aplikace, které používají kompatibility aplikace. Další informace najdete v tématu [zakázání Disappearing a zobrazování událostí životního cyklu stránky](#disable_lifecycle_events).
 - Řízení zda [ `WebView` ](xref:Xamarin.Forms.WebView) můžete zobrazit smíšený obsah. Další informace najdete v tématu [povolení smíšený obsah webové zobrazení](#webview-mixed-content).
 - Nastavení možností editoru pro softwarová klávesnice pro vstupní metodu [ `Entry` ](xref:Xamarin.Forms.Entry). Další informace najdete v tématu [možnosti nastavení editoru IME položka](#entry-imeoptions).
+- Zakázat režim starší verze barva na podporované [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Další informace najdete v tématu [zakázat režim starší verze barva](#legacy-color-mode).
+- Pomocí výchozí odsazení a hodnoty stínu Android tlačítek. Další informace najdete v tématu [pomocí Android tlačítka](#button-padding-shadow).
 
 <a name="soft_input_mode" />
 
@@ -308,7 +311,7 @@ entry.On<Android>().SetImeOptions(ImeFlags.Send);
 
 `Entry.On<Android>` Metoda určuje, že bude tento specifické pro platformu jenom spustit v systému Android. [ `Entry.SetImeOptions` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Entry.SetImeOptions(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Entry},Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags)) Metoda v [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) oboru názvů se používá k nastavení možnosti vstupní metoda akce pro softwarové klávesnice pro [ `Entry` ](xref:Xamarin.Forms.Entry), pomocí [ `ImeFlags` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags) výčtu poskytuje následující hodnoty:
 
-- [`Default`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Default) – Označuje, že žádné konkrétní akce klíč je požadován, a že základní ovládacího prvku vytvoří vlastní Pokud můžete.
+- [`Default`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Default) – Označuje, že žádné konkrétní akce klíč je požadován, a že základní ovládacího prvku vytvoří vlastní Pokud můžete. To bude buď `Next` nebo `Done`.
 - [`None`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.None) – Označuje, že žádný klíč akce bude k dispozici.
 - [`Go`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Go) – Označuje, že klíč akce se provést operaci "jít" trvá uživatele k cílovému textu je zadat.
 - [`Search`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Search) – Označuje, že klíč akce provede operaci "Vyhledat" trvá uživateli výsledky hledání textu se, že jste zadali.
@@ -325,6 +328,83 @@ entry.On<Android>().SetImeOptions(ImeFlags.Send);
 Výsledkem je, že zadané [ `ImeFlags` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags) hodnota se použije pro softwarové klávesnice pro [ `Entry` ](xref:Xamarin.Forms.Entry), která nastaví vstupní metoda možností editoru:
 
 [![Položka vstupní metoda editor specifické pro platformu](android-images/entry-imeoptions.png "položka vstupní metoda editor specifické pro platformu")](android-images/entry-imeoptions-large.png#lightbox "položka vstupní metoda editor specifické pro platformu")
+
+<a name="legacy-color-mode" />
+
+## <a name="disabling-legacy-color-mode"></a>Zakázat režim starší verze barev
+
+Některé z Xamarin.Forms zobrazení funkce režim starší verze barev. V tomto režimu když [ `IsEnabled` ](xref:Xamarin.Forms.VisualElement.IsEnabled) zobrazení je nastavena na `false`, zobrazení se přepíše barvy nastavený uživatelem s nativní výchozí barvy pro zakázaném stavu. Pro zpětné kompatibility, tento režim starší verze barva zůstane výchozí chování pro podporované zobrazení.
+
+Tato specifické pro platformu zakáže tento režim starší verze barvu, aby barvy nastavený na zobrazení uživatelem zůstanou i v případě, že zobrazení je zakázáno. V jazyce XAML spotřebování nastavením [ `VisualElement.IsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.VisualElement.IsLegacyColorModeEnabledProperty) přidružená vlastnost k `false`:
+
+```xaml
+<ContentPage ...
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core">
+    <StackLayout>
+        ...
+        <Button Text="Button"
+                TextColor="Blue"
+                BackgroundColor="Bisque"
+                android:VisualElement.IsLegacyColorModeEnabled="False" />
+        ...
+    </StackLayout>
+</ContentPage>
+```
+
+Alternativně může být používán z C# s použitím rozhraní fluent API:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
+...
+
+_legacyColorModeDisabledButton.On<Android>().SetIsLegacyColorModeEnabled(false);
+```
+
+`VisualElement.On<Android>` Metoda určuje, že bude tento specifické pro platformu jenom spustit v systému Android. [ `VisualElement.SetIsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.VisualElement.SetIsLegacyColorModeEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.VisualElement},System.Boolean)) Metoda v [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) obor názvů, je slouží ke kontrole, zda režim starší verze barva je zakázán. Kromě toho [ `VisualElement.GetIsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.VisualElement.GetIsLegacyColorModeEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.VisualElement})) lze metoda vrátí, zda je zakázána režim starší verze barvy.
+
+Výsledkem je, že lze zakázat režim starší verze barvy, takže barvy nastavený na zobrazení uživatelem zůstanou i když je zakázáno zobrazení:
+
+![](android-images/legacy-color-mode-disabled.png "Zakázat režim starší verze barvy")
+
+> [!NOTE]
+> Při nastavování [ `VisualStateGroup` ](xref:Xamarin.Forms.VisualStateGroup) zobrazení, režim starší verze barva úplně ignorovány. Další informace o vizuálních stavů najdete v tématu [nástroje stavu Manager Visual Xamarin.Forms](~/xamarin-forms/user-interface/visual-state-manager.md).
+
+<a name="button-padding-shadow" />
+
+## <a name="using-android-buttons"></a>Pomocí Android tlačítka
+
+Tato specifické pro platformu řídí, zda Xamarin.Forms tlačítka používat výchozí odsazení a hodnoty stínu Android tlačítek. V jazyce XAML spotřebování nastavením [ `Button.UseDefaultPadding` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Button.UseDefaultPaddingProperty) a [ `Button.UseDefaultShadow` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Button.UseDefaultShadowProperty) přidružené vlastnosti pro `boolean` hodnoty:
+
+```xaml
+<ContentPage ...
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core">
+    <StackLayout>
+        ...
+        <Button ...
+                android:Button.UseDefaultPadding="true"
+                android:Button.UseDefaultShadow="true" />         
+    </StackLayout>
+</ContentPage>
+```
+
+Alternativně může být používán z C# s použitím rozhraní fluent API:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
+...
+
+button.On<Android>().SetUseDefaultPadding(true).SetUseDefaultShadow(true);
+```
+
+`Button.On<Android>` Metoda určuje, že bude tento specifické pro platformu jenom spustit v systému Android. [ `Button.SetUseDefaultPadding` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Button.SetUseDefaultPadding(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Button},System.Boolean)) a[ `Button.SetUseDefaultShadow` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Button.SetUseDefaultShadow(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Button},System.Boolean)) metody v [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) obor názvů, jsou slouží ke kontrole, jestli Xamarin.Forms tlačítka použít výchozí odsazení a hodnoty stínu Android tlačítek. Kromě toho [ `Button.UseDefaultPadding` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Button.UseDefaultPadding(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Button})) a [ `Button.UseDefaultShadow` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Button.UseDefaultShadow(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Button})) metody slouží k vrátí, zda tlačítko používá výchozí odsazení hodnotu a výchozí hodnotou stínové, v uvedeném pořadí.
+
+Výsledkem je, že Xamarin.Forms tlačítka můžete použít výchozí odsazení a hodnoty stínu tlačítek Android:
+
+![](android-images/button-padding-and-shadow.png "Zakázat režim starší verze barvy")
+
+Všimněte si, že se na snímku obrazovky nad každou [ `Button` ](xref:Xamarin.Forms.Button) má stejné definice, vyjma toho, že pravém `Button` používá výchozí odsazení a hodnoty stínu Android tlačítek.
 
 ## <a name="summary"></a>Souhrn
 

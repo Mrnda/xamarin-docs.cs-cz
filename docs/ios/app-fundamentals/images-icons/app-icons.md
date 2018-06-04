@@ -7,11 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/22/2017
-ms.openlocfilehash: 3bf9286fe641d836f0877bfe2e17263bf9d7356e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9a6f69598d137ac05fae5aaed7c16b0cf05284e6
+ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34562887"
 ---
 # <a name="application-icons"></a>Ikony aplikace
 
@@ -48,30 +49,30 @@ Následující obrázek asset velikosti a řešení bude potřeba k podporovat v
     ||3x|
     |---|---|
     |Ikona aplikace|180x180|
-    |Spotlight|120x120|
-    |Nastavení|87x87|
+    |Spotlight|120 x 120|
+    |Nastavení|87 x 87|
 
 - **iPhone: iOS 7 a 8**
 
-    ||1x|2x|
+    ||1 x.|2x|
     |---|---|---|
-    |Ikona aplikace|60x60<sup>1</sup>|120x120|
+    |Ikona aplikace|60x60<sup>1</sup>|120 x 120|
     |Spotlight|40x40<sup>2</sup>|80x80|
     |Nastavení|-|-|
 
 - **iPhone: iOS 5 a 6**
 
-    ||1x|2x|
+    ||1 x.|2x|
     |---|---|---|
-    |Ikona aplikace|57x57|114x114|
-    |Spotlight|29x29|58x58|
+    |Ikona aplikace|57 x 57|114x114|
+    |Spotlight|29x29|58 x 58|
     |Nastavení|29x29<sup>3, 4</sup>|58x58<sup>3, 4</sup>|
 
 ### <a name="ipad-icon-sizes"></a>iPad ikonu velikosti
 
 - **iPad: iOS 9 a 10**
 
-    ||2x (iPad Pro)|
+    ||2 x (iPad Pro)|
     |---|---|
     |Ikona aplikace|167x167<sup>6</sup>|
     |Spotlight|120x120<sup>6</sup>|
@@ -79,7 +80,7 @@ Následující obrázek asset velikosti a řešení bude potřeba k podporovat v
 
 - **iPad: iOS 7 a 8**
 
-    ||1x|2x|
+    ||1 x.|2x|
     |---|---|---|
     |Ikona aplikace|76x76|152x152|
     |Spotlight|40x40|80x80|
@@ -87,10 +88,10 @@ Následující obrázek asset velikosti a řešení bude potřeba k podporovat v
 
 - **iPad: iOS 5 a 6**
 
-    ||1x|2x|
+    ||1 x.|2x|
     |---|---|---|
-    |Ikona aplikace|72x72|144x144|
-    |Spotlight|50x50|100x100|
+    |Ikona aplikace|72x72|144 × 144|
+    |Spotlight|50 × 50|100x100|
     |Nastavení|29x29<sup>3, 5</sup>|58x58<sup>3, 5</sup>|
 
  1. Obě sady Visual Studio pro Mac a Xcode již nepodporují nastavení 1 bitovou kopii x pro iOS 7.
@@ -114,7 +115,7 @@ Chcete-li používat katalog Asset, postupujte takto:
 
 1. Dvakrát klikněte `Info.plist` souboru v **Průzkumníku řešení** otevřete pro úpravy.
 2. Přejděte dolů k položce **ikony aplikace** části.
-3. Z **zdroj** rozevíracího seznamu, ujistěte se, **AppIcons** je vybrána: 
+3. Z **zdroj** rozevíracího seznamu, ujistěte se, **AppIcon** je vybrána: 
 
     ![](app-icons-images/migrate01.png "Ujistěte se, že je vybraný AppIcons")
 4. Z **Průzkumníku řešení**, dvakrát klikněte `Assets.xcassets` soubor otevřete pro úpravy: 

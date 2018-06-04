@@ -4,11 +4,12 @@ ms.prod: xamarin
 ms.assetid: 495958BA-C9C2-4910-9BAD-F48A425208CF
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: 186faf3fc4f93d1c9a4af9e3e9f72afd569fed8b
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: a424b37840bd944302235221f2e0c6a478d4bab3
+ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34732957"
 ---
 # <a name="known-issues--workarounds"></a>Známé problémy a řešení
 
@@ -56,7 +57,7 @@ Je [chyb v editoru Monaco] [ monaco-bug] v prohlížeči Safari nebo WebKit, kte
 
 ## <a name="skiasharp-renderers-are-missing-in-workbooks-13"></a>Nástroji pro vykreslování SkiaSharp chybí v 1.3 sešity
 
-Počínaje 1.3 sešity, odebrali jsme nástroji pro vykreslování SkiaSharp, které jsme součástí v sešitech 0.99.0, považuje SkiaSharp poskytování nástroji pro vykreslování sám sebe, pomocí našich [SDK] [/ příručky/cross platformy nebo sešity nebo sdk nebo].
+Počínaje 1.3 sešity, odebrali jsme nástroji pro vykreslování SkiaSharp, které jsme součástí v sešitech 0.99.0, považuje SkiaSharp poskytování nástroji pro vykreslování sám sebe, pomocí našich [SDK](~/tools/workbooks/sdk/index.md).
 
 ### <a name="workaround"></a>Alternativní řešení
 
