@@ -1,21 +1,19 @@
 ---
-title: 'Návod: Vytvoření aplikace pomocí rozhraní API reflexe'
-description: Kromě rozhraní API elementy MonoTouch.Dialog (strojový překladů. D) také zahrnuje rozhraní API reflexe založená na atributu. Rozhraní API reflexe umožňuje vytváření obrazovky s strojový překladů. D stejně snadná jako stavební třídy s atributy. Tento článek obsahuje procházení prostřednictvím znázorňující postup vytvoření aplikace pomocí rozhraní API reflexe.
+title: Vytvoření aplikace Xamarin.iOS pomocí rozhraní API reflexe
+description: Tento dokument popisuje MonoTouch.Dialog založená na atributu reflexe rozhraní API, které vytvoří podle třídy upraven pomocí atributů uživatelského rozhraní.
 ms.prod: xamarin
 ms.assetid: C0F923D2-300E-DB9D-F390-9FA71B22DFD6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: e56eaeccb2e09d9f1ad84245bf41e2a4bf1b56f1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c60d2a8ca58fe807dc340125d0db21b6f9ddff9f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790506"
 ---
-# <a name="walkthrough-creating-an-application-using-the-reflection-api"></a>Návod: Vytvoření aplikace pomocí rozhraní API reflexe
-
-_Kromě rozhraní API elementy MonoTouch.Dialog (strojový překladů. D) také zahrnuje rozhraní API reflexe založená na atributu. Rozhraní API reflexe umožňuje vytváření obrazovky s strojový překladů. D stejně snadná jako stavební třídy s atributy. Tento článek obsahuje procházení prostřednictvím znázorňující postup vytvoření aplikace pomocí rozhraní API reflexe._
-
+# <a name="creating-a-xamarinios-application-using-the-reflection-api"></a>Vytvoření aplikace Xamarin.iOS pomocí rozhraní API reflexe
 
 Strojový překladů. Rozhraní API reflexe D umožňuje třídy být upraven pomocí atributů této strojový překladů. D používá k vytvoření obrazovky automaticky. Rozhraní API reflexe poskytuje vazbu mezi tyto třídy a co se zobrazí na obrazovce. Ačkoli toto rozhraní API neobsahuje podrobné ovládací prvek, který nemá elementy rozhraní API, snižuje složitost podle budovy automaticky se element hierarchii podle třídy decoration.
 
@@ -36,7 +34,6 @@ Podívejme se na příklad na ukazují, jak používat rozhraní API reflexe. V 
  [![](reflection-api-walkthrough-images/01-expense-entry.png "V tomto příkladu jsme jak je vidět tady budete vytvářet obrazovky jednoduché datové položky")](reflection-api-walkthrough-images/01-expense-entry.png#lightbox)
 
  <a name="Creating_a_Class_with_MT.D_Attributes" />
-
 
 ## <a name="creating-a-class-with-mtd-attributes"></a>Vytvoření třídy s strojový překladů. Atributy D
 

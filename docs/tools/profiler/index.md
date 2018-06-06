@@ -5,12 +5,13 @@ ms.prod: xamarin
 ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
 author: topgenorth
 ms.author: toopge
-ms.date: 10/27/2017
-ms.openlocfilehash: 81c6a5682fc91b49a0f7495f06e7f7b6d3f76330
-ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
+ms.date: 06/03/2018
+ms.openlocfilehash: 42a8a2e3751d111f6ba8ccbea32e0446460f9a29
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793872"
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -289,13 +290,15 @@ Krabicový diagram, jak je vidět na tomto snímku obrazovky, zobrazuje počet v
 
 ### <a name="cycles"></a>Cykly
 
-Pomocí jazyka C# a F # spravovaný kód může být celkem běžné a bohužel poměrně snadno vytvořit odkazy na objekty, které bude nikdy zlikvidován. Tato intrument umožňuje přesně určit těchto objektů a zobrazení cykly odkazovaný ve vaší aplikaci.
+Pomocí jazyka C# a F # spravovaný kód může být celkem běžné a bohužel poměrně snadno vytvořit odkazy na objekty, které bude nikdy zlikvidován. Tento nástroj umožňuje přesné těchto objektů a zobrazení cykly odkazovaný ve vaší aplikaci.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
+[![Cykly nástrojích](images/cycles.m751-sml.png)](images/cycles.m751.png#lightbox) 
+
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Cykly nástrojích](images/cycles-vs.png)](images/time1-vs.png#lightbox) 
+[![Cykly nástrojích](images/cycles-vs-sml.png)](images/cycles-vs.png#lightbox) 
 
 -----
 

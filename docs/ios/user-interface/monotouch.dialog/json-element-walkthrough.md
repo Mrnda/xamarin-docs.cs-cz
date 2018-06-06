@@ -1,21 +1,21 @@
 ---
-title: 'Návod: Použití prvku JSON pro vytvoření uživatelského rozhraní'
+title: Použití JSON pro vytvoření uživatelského rozhraní v Xamarin.iOS
 description: MonoTouch.Dialog (strojový překladů. D) zahrnuje podporu pro dynamické generování uživatelského rozhraní pomocí JSON data. V tomto kurzu budeme zabývat použití JSONElement vytvořit uživatelské rozhraní z formátu JSON, který je buď součástí aplikace, nebo načíst z vzdálené adresy Url.
 ms.prod: xamarin
 ms.assetid: E353DF14-51D7-98E3-59EA-16683C770C23
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 322857295383d17da03507bdd5ac78753f8c0619
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f9ba2cce1650260aa889e8282c091012ef8bbddc
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790650"
 ---
-# <a name="walkthrough-using-a-json-element-to-create-a-user-interface"></a>Návod: Použití prvku JSON pro vytvoření uživatelského rozhraní
+# <a name="using-json-to-create-a-user-interface-in-xamarinios"></a>Použití JSON pro vytvoření uživatelského rozhraní v Xamarin.iOS
 
 _MonoTouch.Dialog (strojový překladů. D) zahrnuje podporu pro dynamické generování uživatelského rozhraní pomocí JSON data. V tomto kurzu budeme zabývat použití JSONElement vytvořit uživatelské rozhraní z formátu JSON, který je buď součástí aplikace, nebo načíst z vzdálené adresy Url._
-
 
 STROJOVÝ PŘEKLADŮ. D podporuje vytváření uživatelské rozhraní deklarovat ve formátu JSON. Když jsou elementy deklarováno s použitím JSON, strojový překladů. D přidružených elementů pro vytvoření automaticky. JSON je možné načíst buď z místního souboru Analyzovaná `JsonObject` instance nebo i vzdálenou adresou Url.
 

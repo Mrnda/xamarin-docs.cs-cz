@@ -1,30 +1,31 @@
 ---
-title: Poradce při potížích
-description: Tento článek obsahuje několik tipy k řešení potíží pro práci s systému macOS Sierra v Xamarin.Mac aplikace.
+title: Xamarin.Mac - systému macOS Sierra řešení potíží
+description: Tento dokument obsahuje několik tipy k řešení potíží pro práci s systému macOS Sierra v Xamarin.Mac aplikace. Tipy se týkají Mac App Storu, dotykový identifikátor, binární kompatibilitu, CFNetwork, CloudKit a další.
 ms.prod: xamarin
 ms.assetid: 323DD5EE-87CE-48E4-B234-1CF61B45A019
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/22/2016
-ms.openlocfilehash: 7ea4ec48399b42ce69b0346b1a88a1d9fb9fbf6e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5b2571d9562fd137257e2dd0ea2ada8f071bab92
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792317"
 ---
-# <a name="troubleshooting"></a>Poradce při potížích
+# <a name="xamarinmac---macos-sierra-troubleshooting"></a>Xamarin.Mac - systému macOS Sierra řešení potíží
 
 _Tento článek obsahuje několik tipy k řešení potíží pro práci s systému macOS Sierra v Xamarin.Mac aplikace._
 
-Následující části seznamu některé známé problémy, ke kterým dochází při používání systému macOS Sierra s Xamarin.mac a řešení těchto problémů:
+V následujících částech jsou uvedené některé známé problémy, ke kterým dochází při používání systému macOS Sierra s Xamarin.mac a řešení těchto problémů:
 
 - [App Store](#App-Store)
 - [Apple Pay](#Apple-Pay)
 - [Binární kompatibilitu](#Binary-Compatibility)
 - [Protokol HTTP CFNetwork](#CFNetwork-HTTP-Protocol)
 - [CloudKit](#CloudKit)
-- [CoreImage](#CoreImage)
+- [Základní Image](#CoreImage)
 - [Oznámení](#Notifications)
 - [NSUserActivity](#NSUserActivity)
 - [Safari](#Safari)
@@ -69,7 +70,7 @@ Dlouho běžící operace vrátí _"Nemáte oprávnění k uložení souboru."_ 
 
 <a name="CoreImage" />
 
-## <a name="coreimage"></a>CoreImage
+## <a name="core-image"></a>Základní Image
 
 `CIImageProcessor` Rozhraní API nyní podporuje počet libovolný vstupní obrázků. `CIImageProcessor` Rozhraní API, která byla zahrnuta v systému macOS Sierra beta 1, se odeberou.
 

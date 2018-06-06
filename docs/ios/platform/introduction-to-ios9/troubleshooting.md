@@ -1,19 +1,20 @@
 ---
-title: Poradce při potížích
-description: Tento článek obsahuje několik tipy k řešení potíží pro práci s iOS 9 v aplikacích pro Xamarin.iOS.
+title: Xamarin.iOS 9 – řešení potíží
+description: Tento článek obsahuje různé tipy k řešení potíží pro práci s iOS 9 Xamarin.iOS. Tipy zahrnují analýza kódu XML, simulátorů, rozložení omezení, problémů se sítí a mnoho dalších tématech.
 ms.prod: xamarin
 ms.assetid: DCE83E36-CBD9-4D96-8E7F-384CB8A54563
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 1b335fc6b19d87a46059511baf866433691b1b4d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c44d737efcf5092eb4b27d5311271005de65318b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787660"
 ---
-# <a name="troubleshooting"></a>Poradce při potížích
+# <a name="xamarinios-9--troubleshooting"></a>Xamarin.iOS 9 – řešení potíží
 
 _Tento článek obsahuje několik tipy k řešení potíží pro práci s iOS 9 v aplikacích pro Xamarin.iOS._
 
@@ -172,7 +173,7 @@ Volitelně můžete použít soubor storyboard nabídne obrazovky spuštění va
 
 Nakonec aplikace použijte soubor scénáře pro jeho spuštění obrazovky a podporují všechny čtyři rozhraní orientace (na výšku, obráceným na výšku, šířku levá a pravá na šířku) aby byla považována za pro spuštění v panelu Vysuňte přes nebo v režimu zobrazení rozdělení. Chcete-li získat další informace o nové schopnosti multitasking systému iOS 9, najdete v tématu naše [Multitasking pro iPad](~/ios/platform/multitasking.md) průvodce.
 
-## <a name="nsinternalinconsistencyexception-exception"></a>NSInternalInconsistencyException Exception
+## <a name="nsinternalinconsistencyexception-exception"></a>Výjimka NSInternalInconsistencyException
 
 Při kompilaci a spuštění aplikace Xamarin.iOS existující pro iOS 9 může dojde k chybě ve tvaru:
 
@@ -190,8 +191,6 @@ Existují alespoň dvě možná řešení tohoto problému:
 S Xamarin.iOS je možné provést inicializaci zobrazení nebo zobrazení řadič uvnitř konstruktory, které se volají, pokud něco je vystaven do spravovaného kódu, ale to naruší iOS návrhu.
 
 Obecně by neměl inicializovat všechno, co můžete volat zpět kód jazyka Objective-C z konstruktoru vzhledem k tomu, že nemůže být se, když bude volána. To také znamená, je lepší míst (jiné .ctor) nebo volání přepsat (jak jazyka Objective-C neobsahuje žádné události) kde by mělo být provedeno tento inicializace.
-
-
 
 ## <a name="related-links"></a>Související odkazy
 

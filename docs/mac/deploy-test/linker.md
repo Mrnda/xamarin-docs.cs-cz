@@ -1,17 +1,18 @@
 ---
 title: Možnosti linkeru Xamarin.Mac
-description: Propojení je výkonný optimalizace nástroj, který snižuje velikost aplikace odebráním nepoužívané kódu.
+description: Tento dokument popisuje propojení v Xamarin.Mac. Propojení je výkonný optimalizace nástroj, který snižuje velikost aplikace odebráním nepoužívané kódu.
 ms.prod: xamarin
 ms.assetid: F03176C3-F8D4-4DE8-870C-7F27D8CE525A
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 11/10/2017
-ms.openlocfilehash: f98953574f33612395500787a09351d2ba451802
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e565511d96ac85d89ec51be01934695def3e20bb
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791865"
 ---
 # <a name="xamarinmac-linker-options"></a>Možnosti linkeru Xamarin.Mac
 

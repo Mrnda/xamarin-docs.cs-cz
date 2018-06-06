@@ -1,19 +1,20 @@
 ---
-title: uživatelské rozhraní systému macOS
-description: Tento článek obsahuje odkazy na pokyny, které popisují různé ovládacích prvků uživatelského rozhraní systému macOS.
+title: ovládacích prvků uživatelského rozhraní v systému macOS v Xamarin.Mac
+description: Tento dokument obsahuje odkazy na příručky, které popisují různé ovládacích prvků uživatelského rozhraní Xamarin.Mac vývojářům dostupná. Odkazovaný obsah se podíváme na systému windows, dialogová okna, výstrahy, nabídek, panely nástrojů, zobrazení tabulek, zobrazení osnovy a další.
 ms.prod: xamarin
 ms.assetid: 876B6EC2-E158-43F2-B9C9-03F54F3D2A49
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/27/2018
-ms.openlocfilehash: d40faa29f2fe278377bf4eae42a032f3dc9086ab
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 231d3a935cf251d0b2a1a3e6947abcb1c2133b90
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792951"
 ---
-# <a name="macos-user-interface"></a>uživatelské rozhraní systému macOS
+# <a name="macos-user-interface-controls-in-xamarinmac"></a>ovládacích prvků uživatelského rozhraní v systému macOS v Xamarin.Mac
 
 _Tento článek obsahuje odkazy na pokyny, které popisují různé ovládacích prvků uživatelského rozhraní systému macOS._
 

@@ -1,6 +1,6 @@
 ---
-title: Začínáme s iOS
-description: Z Hello, World Hello App Storu
+title: Začínáme s Xamarin.iOS
+description: Tento dokument obsahuje odkazy na pokyny, které popisují, jak nastavit Xamarin.iOS a jak vytvořit první aplikaci a poskytuje informace o Xamarin pro vývojáře jazyka Objective-C.
 ms.prod: xamarin
 ms.assetid: FA802CCF-3BA4-4F26-A7BF-FBB7D0AA889B
 ms.technology: xamarin-ios
@@ -8,13 +8,14 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 11/23/2016
-ms.openlocfilehash: be25d976cc58d6c1dd0154cbdc06aab7039c544e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 237480c91a40e6ee08481664ce3981af10f97599
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785592"
 ---
-# <a name="getting-started-with-ios"></a>Začínáme s iOS
+# <a name="getting-started-with-xamarinios"></a>Začínáme s Xamarin.iOS
 
 Xamarin.iOS umožňuje vývojářům vytvářet nativní aplikace pro iOS aplikace pomocí stejné ovládacích prvků uživatelského rozhraní, které jsou k dispozici v Objective-C a Xcode, s výjimkou s flexibilitu a eleganci moderní jazyka (C#), výkon .NET základní třídy knihovny (BCL) a dvě první třídy integrovaného vývojového prostředí – Visual Studio pro Mac a Visual Studio. Tato řada zavádí instalační program a instalace Xamarin.iOS a adres základní informace o vývoj na platformě Xamarin.iOS.
 
@@ -46,7 +47,7 @@ Tato příručka dvě části jsou zde popsány rozšiřování aplikace vytvoř
 
 Poskytuje informace pro vývojáře jazyka Objective-C přechod na platformě Xamarin.
 
-## <a name="xamarin-university-video"></a>Xamarin University Video
+## <a name="xamarin-university-video"></a>Xamarin univerzity Video
 
 > [!VIDEO https://youtube.com/embed/1ilsDnYC-B8]
 

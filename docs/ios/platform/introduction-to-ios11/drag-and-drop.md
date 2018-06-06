@@ -1,19 +1,20 @@
 ---
-title: Přetažení
-description: Implementace přetažení pro iOS 11
+title: Přetáhnout myší v Xamarin.iOS
+description: Tento dokument popisuje, jak implementovat přetažení a vyřadit v aplikace Xamarin.iOS pomocí rozhraní API byla zavedená v iOS 11. Konkrétně popisuje povolení přetažení v UITableView.
 ms.prod: xamarin
 ms.assetid: 0D39C4C3-D169-42F8-B3FA-7F98CF0B6F1F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/05/2016
-ms.openlocfilehash: fa6fcb2c4f5f17011307b31e4644889d066b71a9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7c41f96dae88047e64ec1e74838e3efab55958cc
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786961"
 ---
-# <a name="drag-and-drop"></a>Přetažení
+# <a name="drag-and-drop-in-xamarinios"></a>Přetáhnout myší v Xamarin.iOS
 
 _Implementace přetažení pro iOS 11_
 

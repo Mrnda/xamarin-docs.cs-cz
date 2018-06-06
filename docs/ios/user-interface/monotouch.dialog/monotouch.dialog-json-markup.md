@@ -1,17 +1,19 @@
 ---
-title: MonoTouch.Dialog Json Markup
+title: Kód Json MonoTouch.Dialog
+description: Tento dokument popisuje syntaxe JSON, který slouží k vytvoření uživatelského rozhraní Xamarin.iOS pomocí MonoTouch.Dialog.
 ms.prod: xamarin
 ms.assetid: 59F3E18C-3A73-69B8-DA5E-21B19B9DFB98
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 02c95f06571a3c242481769846d7cab51450f2ca
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: dc3f4ea87bbd381a4a1767fb9179fb1bcf0c56d8
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790754"
 ---
-# <a name="monotouchdialog-json-markup"></a>MonoTouch.Dialog Json Markup
+# <a name="monotouchdialog-json-markup"></a>Kód Json MonoTouch.Dialog
 
 Tato stránka popisuje kód Json akceptovat na MonoTouch.Dialog [JsonElement](https://developer.xamarin.com/api/type/MonoTouch.Dialog.JsonElement/)
 
@@ -321,7 +323,7 @@ Pokud to je nastaven na hodnotu nula, bude automaticky velikost element v závis
  <a name="style" />
 
 
-### <a name="style"></a> – styl
+### <a name="style"></a>– styl
 
 Určuje styl druh styl buněk, který se použije k vykreslení obsahu a jejich hodnoty výčtu UITableViewCellStyle odpovídat.
 Možné hodnoty jsou:

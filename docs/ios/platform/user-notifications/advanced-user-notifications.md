@@ -1,21 +1,20 @@
 ---
-title: Oznámení pro pokročilé uživatele
-description: Tento článek trvá hlubší pohled na nové architektury uživatelská oznámení a postup plně využít výhod ho v aplikaci pro Xamarin.iOS.
+title: Pokročilé uživatele oznámení v Xamarin.iOS
+description: V tomto článku se podíváme podrobněji na rozhraní oznámení uživateli, zavedená v iOS 10. Popisuje oznámení uživateli, uživatelské rozhraní oznámení, přílohy média, vlastní uživatelská rozhraní a další.
 ms.prod: xamarin
 ms.assetid: 4E0C60AE-6F54-4098-8FA0-AADF9AC86805
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/03/2018
-ms.openlocfilehash: bd8a95afc5bdd5aed958913d63f9b6cfe853677e
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 09a73ebc3dab90e6342a45c0f1fb5a40184d18a6
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788527"
 ---
-# <a name="advanced-user-notifications"></a>Oznámení pro pokročilé uživatele
-
-_Tento článek trvá hlubší pohled na nové architektury uživatelská oznámení a postup plně využít výhod ho v aplikaci pro Xamarin.iOS._
+# <a name="advanced-user-notifications-in-xamarinios"></a>Pokročilé uživatele oznámení v Xamarin.iOS
 
 Nový iOS 10, framework umožňuje doručení a zpracování místní a vzdálené oznámení oznámení pro uživatele. Pomocí toto rozhraní, aplikace nebo rozšíření aplikace můžete naplánovat doručování oznámení místní zadáním sadu podmínek, jako je například umístění nebo denní dobu.
 

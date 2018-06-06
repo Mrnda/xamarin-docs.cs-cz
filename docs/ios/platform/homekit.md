@@ -1,5 +1,5 @@
 ---
-title: HomeKit
+title: HomeKit v Xamarin.iOS
 description: HomeKit je architektura společnosti Apple pro řízení zařízení domácí automatizace. Tento článek představuje HomeKit a popisuje konfiguraci testovací příslušenství v simulátoru HomeKit příslušenství a zápis jednoduchou aplikaci Xamarin.iOS k interakci se tyto příslušenství.
 ms.prod: xamarin
 ms.assetid: 90C0C553-916B-46B1-AD52-1E7332792283
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 5699465330a4d2a5b983ec7661f80c1ed4f14bde
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0dfc6e9ba5098df66a72292d6c8b89ea1bbd1f97
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787458"
 ---
-# <a name="homekit"></a>HomeKit
+# <a name="homekit-in-xamarinios"></a>HomeKit v Xamarin.iOS
 
 _HomeKit je architektura společnosti Apple pro řízení zařízení domácí automatizace. Tento článek představuje HomeKit a popisuje konfiguraci testovací příslušenství v simulátoru HomeKit příslušenství a zápis jednoduchou aplikaci Xamarin.iOS k interakci se tyto příslušenství._
 

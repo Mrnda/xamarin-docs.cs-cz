@@ -1,21 +1,20 @@
 ---
-title: Začínáme
-description: Další informace pro vývoj mobilních aplikací od nuly do nasazení s tyto podrobné příručky.
+title: Začínáme s Xamarin
+description: Tento dokument obsahuje odkazy na různé příručky, které popisují, jak začít pracovat s vývoj na platformě Xamarin. Odkazovaný obsah popisuje, jak vytvořit první aplikaci, poskytuje obecný úvod do pro vývoj mobilních řešení a se podíváme na školení s univerzity Xamarin.
 ms.prod: xamarin
 ms.assetid: 13FCAE14-E73D-C1A4-1D22-A433AD827C07
 ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 04/10/2017
-ms.openlocfilehash: de5b1499f95e6703e0c11adb1f76e1717a494e33
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 3873236c64f1288a896c40d468f06b60f532a431
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34780793"
 ---
-# <a name="getting-started"></a>Začínáme
-
-_Další informace pro vývoj mobilních aplikací od nuly do nasazení s tyto podrobné příručky._
+# <a name="getting-started-with-xamarin"></a>Začínáme s Xamarin
 
 Než začnete, podívejte se [požadavky na systém](requirements.md) a [pokyny k instalaci](installation/index.md) a ujistěte se, vše, co je připraven k odeslání.
 

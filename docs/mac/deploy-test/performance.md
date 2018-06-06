@@ -1,17 +1,18 @@
 ---
 title: Xamarin.Mac výkonu
-description: Tento dokument obsahuje některé důležité informace o výkonu pro Xamarin.Mac aplikace.
+description: Tento dokument obsahuje některé důležité informace o výkonu pro Xamarin.Mac aplikace. Popisuje, moderních cílové rozhraní, linkeru AOT, deleguje, kakao rozhraní API pro opětovné použití zobrazení a asynchronních kódu.
 ms.prod: xamarin
 ms.assetid: 54B07DED-FDF2-49B2-A5FB-3A9357E65922
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 11/10/2017
-ms.openlocfilehash: 273fb1980695a3dcd4a4fc2123b1ebafef1756a2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ab02fd5048503d73390c2d64892dbec411dfd5a8
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791810"
 ---
 # <a name="xamarinmac-performance"></a>Xamarin.Mac výkonu
 

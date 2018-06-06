@@ -1,16 +1,17 @@
 ---
 title: Úvod do průběžnou integraci s funkcí Xamarin
-description: Průběžnou integraci je software inženýrství postupem, ve kterém automatizované sestavení zkompiluje a volitelně otestuje aplikace při přidání nebo změně vývojáři v úložišti řízení projektu verze kódu. Tento článek popisuje jsou obecné koncepty průběžnou integraci a některé z možností k dispozici pro nepřetržitou integraci s projekty Xamarin.
+description: Tento dokument popisuje průběžnou integraci s funkcí Xamarin. Popisuje různé prostředích průběžnou integraci a verzí.
 ms.prod: xamarin
 ms.assetid: C034200E-2947-4309-9DDD-80DAC505C43F
 author: topgenorth
 ms.author: toopge
 ms.date: 07/19/2017
-ms.openlocfilehash: e441e3a2f967bf7bed0a236375ce708966fdb6eb
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 333e672b054c38370847338e9a4ffad94c90bb5d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793659"
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>Úvod do průběžnou integraci s funkcí Xamarin
 

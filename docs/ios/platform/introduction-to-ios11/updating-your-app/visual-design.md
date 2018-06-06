@@ -1,21 +1,20 @@
 ---
-title: Visual Design Updates
-description: Zkoumání nové funkce systému iOS 11
+title: Aktualizace Visual návrhu v iOS 11
+description: Tento dokument popisuje visual návrhu aktualizace byla zavedená v iOS 11. Popisuje změny navigační panely, hledání řadiče, okraje, obsah celé obrazovky a zobrazení tabulek.
 ms.prod: xamarin
 ms.assetid: 7C300B94-0FAF-492E-A326-877419A1824B
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: 50858592ec6246fe825e80a3039f3640ebf708a9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5bc29e021e30910c7fcc4c3b451d0a4dfe187d05
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787848"
 ---
-# <a name="visual-design-updates"></a>Visual Design Updates
-
-_Zkoumání nové funkce systému iOS 11_
+# <a name="visual-design-updates-in-ios-11"></a>Aktualizace Visual návrhu v iOS 11
 
 Společnost Apple vydala v iOS 11, nastavení nové visual změny, včetně aktualizací na navigačním panelu, panelu vyhledávání a zobrazení tabulek. Kromě toho vylepšily k povolení pro větší flexibilitu v okraje a obsah celé obrazovky. Tyto změny jsou popsané v této příručce.
 

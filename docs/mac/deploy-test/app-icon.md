@@ -1,5 +1,5 @@
 ---
-title: Ikona aplikace
+title: Ikona aplikace pro Xamarin.Mac aplikace
 description: Tento článek popisuje vytvoření bitové kopie, vyžaduje se pro aplikace Xamarin.Mac ikonu, sdružování bitové kopie do souboru .icns a včetně ikony v projektu Xamarin.Mac.
 ms.prod: xamarin
 ms.assetid: 675b9405-d9a7-49f0-94ad-417f10a71d11
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 3603e43b4b98d1387c718d0a6010d38aa01440c5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 685a29eea4b03361b185e25ae0e146be7b5e69b6
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792031"
 ---
-# <a name="application-icon"></a>Ikona aplikace
+# <a name="application-icon-for-xamarinmac-apps"></a>Ikona aplikace pro Xamarin.Mac aplikace
 
 _Tento článek popisuje vytvoření bitové kopie, vyžaduje se pro aplikace Xamarin.Mac ikonu, sdružování bitové kopie do souboru .icns a včetně ikony v projektu Xamarin.Mac._
 
@@ -24,7 +25,7 @@ Při práci s C# a rozhraní .NET v aplikaci Xamarin.Mac, vývojář má příst
 
 Skvělé ikonu by měl nesou hlavním účelem Xamarin.Mac aplikace a nápovědu k prostředí, které uživatel by měl očekávat při použití aplikace. Tento článek se zabývá všechny kroky potřebné k vytvoření bitové kopie prostředky požadované pro ikonu, tyto prostředky do balení `AppIcons.appiconset` souboru a využívají tento soubor v aplikaci Xamarin.Mac.
 
-![The AppIcons.appiconset editor](app-icon-images/intro01.png "The AppIcons.appiconset editor")
+![AppIcons.appiconset editor](app-icon-images/intro01.png "AppIcons.appiconset editoru")
 
 
 ## <a name="application-icon"></a>Ikona aplikace
@@ -62,16 +63,16 @@ Aby se zajistilo, že na ikonu vypadá skvělé na místech, že uživatelé uvi
 
 |Název souboru|Velikost v pixelech|
 |---|---|
-|icon_512x512@2x.png|1024 x 1024|
+|icon_512x512@2x.png|1 024 x 1 024|
 |icon_512x512.png|512 x 512|
 |icon_256x256@2x.png|512 x 512|
 |icon_256x256.png|256 x 256|
 |icon_128x128@2x.png|256 x 256|
-|icon_128x128.png|128 x 128|
+|icon_128x128.png|velikosti 128 × 128|
 |icon_32x32@2x.png|64 x 64|
 |icon_32x32.png|32 x 32|
 |icon_16x16@2x.png|32 x 32|
-|icon_16x16.png|16 x 16|
+|icon_16x16.png|16 x 16.|
 
 Další informace najdete v tématu společnosti Apple [poskytují tisk s vysokým rozlišením verze z všechny aplikace Grafické prostředky](https://developer.apple.com/library/mac/documentation/GraphicsAnimation/Conceptual/HighResolutionOSX/Optimizing/Optimizing.html#//apple_ref/doc/uid/TP40012302-CH7-SW3) dokumentaci.
 

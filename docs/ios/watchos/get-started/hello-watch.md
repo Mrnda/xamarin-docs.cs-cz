@@ -1,19 +1,20 @@
 ---
-title: Hello, sledování
-description: Začínáme s Xamarinem a watchOS
+title: Hello, watchOS – návod
+description: Tento dokument poskytuje návod k vytvoření jednoduché watchOS aplikace pomocí Xamarin. Popisuje, jak fungují v sadě Visual Studio a Visual Studio pro Mac, pracovat s scénářů a reakce na události v kódu.
 ms.prod: xamarin
 ms.assetid: AD1DA488-51AB-420A-A0B7-3AE69A964A40
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/14/2016
-ms.openlocfilehash: 2281fa801d32e8d8934767ae090503ca523d7eff
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 00d6080429450dce2c0491fa385cf4f179befba6
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790994"
 ---
-# <a name="hello-watch"></a>Hello, sledování
+# <a name="hello-watchos--walkthrough"></a>Hello, watchOS – návod
 
 Po vytvoření řešení kroků v [instalační program a instalace](~/ios/watchos/get-started/installation.md), budete mít 3 projekty:
 
@@ -130,13 +131,11 @@ Nyní otevřete **InterfaceController.cs** (*není* InterfaceController.designer
 
 ```csharp
 int clickCount = 0;
-
 partial void OnButtonPress (WatchKit.WKInterfaceButton sender)
 {
   var msg = String.Format("Clicked {0} times", ++clickCount);
   myLabel.SetText(msg);
 }
-
 ```
 
 Tento kód by měl být poměrně transparentní: proměnnou instance `clickCount` se zvýší pokaždé, když funkce `OnButtonPress` je volána. Text `myLabel` se změnilo tak, aby odrážela tuto count; `myLabel`, samozřejmě, je název jednoho z výstupy jste vytvořili v XCode. `partial` Funkce je implementace funkce přidružené k názvu akce, které jste zadali.

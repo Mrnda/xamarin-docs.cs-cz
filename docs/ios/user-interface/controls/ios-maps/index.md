@@ -1,21 +1,20 @@
 ---
-title: Mapy
-description: iOS zahrnuje MapKit mapuje framework, který umožňuje snadno přidat k aplikaci. Pomocí sady mapy, aplikace pro iOS můžete přidat interaktivní mapy, které podporují funkce, jako je posouvání a přibližování, zobrazuje umístění uživatele a bohaté grafické rozvrstvení na mapě. Tento článek obsahuje podrobné několik součástí mapy Kit znázorňující mohli využít k vytváření funkcí geografické funkce do aplikace
+title: Map v Xamarin.iOS
+description: Tento dokument popisuje rozhraní MapKit iOS a jeho použití s Xamarin.iOS. Popisuje, jak přidat mapu, styl, posunete zobrazení zvětšení, pracovat s umístění uživatele, přidání poznámky, pracovat s popisky a překryvy a místní hledání.
 ms.prod: xamarin
 ms.assetid: 5DD8E56D-51C1-4AFA-B387-79B5734698ED
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 0249da1754083231fa4426ae4f42ce4ad73c3f51
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3649c8eb9c8c1a82940b8e2eece7d2bfd005d024
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790227"
 ---
-# <a name="maps"></a>Mapy
-
-_iOS zahrnuje MapKit mapuje framework, který umožňuje snadno přidat k aplikaci. Pomocí sady mapy, aplikace pro iOS můžete přidat interaktivní mapy, které podporují funkce, jako je posouvání a přibližování, zobrazuje umístění uživatele a bohaté grafické rozvrstvení na mapě. Tento článek obsahuje podrobné několik součástí mapy Kit znázorňující mohli využít k vytváření funkcí geografické funkce do aplikace_
+# <a name="maps-in-xamarinios"></a>Map v Xamarin.iOS
 
 Mapování jsou běžnou funkcí ve všech operačních systémech mobilních moderní. iOS nabízí podporu mapování nativně prostřednictvím rozhraní Kit mapy. Pomocí mapy Kit aplikace snadno přidat bohatý a interaktivní mapy. Tyto mapy lze přizpůsobit různými způsoby, například přidání poznámek k označení umístění na mapě a Překrytí grafiky libovolný tvarů. Mapa Kit i má integrovanou podporu pro zobrazení aktuálního umístění zařízení.
 

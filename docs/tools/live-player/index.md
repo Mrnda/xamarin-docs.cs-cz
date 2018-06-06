@@ -1,16 +1,17 @@
 ---
-title: Za provozu Player pro Xamarin.Forms
-description: Spusťte Xamarin učení rychle, sestavovat a spouštět aplikace na zařízení Android nebo iOS.
+title: Za provozu Player Xamarin pro Xamarin.Forms
+description: Tento dokument popisuje Xamarin Live Player pro Xamarin.Forms popisující instalaci aplikace Xamarin Live Player, ukázky chcete používat s Xamarin za provozu, omezení a řešení potíží.
 ms.prod: xamarin
 ms.assetid: 19B1F126-866E-4672-92D2-BE2B70ACF0F1
 author: topgenorth
 ms.author: toopge
 ms.date: 05/10/2017
-ms.openlocfilehash: dd179fb1d1ce3ca57cdf6e27bb86a12e2f9ef03f
-ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
+ms.openlocfilehash: 79cf2c790789963189d3eedd6645a6b6ae6503b6
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793135"
 ---
 # <a name="xamarin-live-player-for-xamarinforms"></a>Za provozu Player Xamarin pro Xamarin.Forms
 
@@ -46,7 +47,6 @@ Xamarin Live Player má určitá omezení na funkce, které může podporovat.
 ## <a name="troubleshootingtroubleshootingmd"></a>[Odstraňování potíží](troubleshooting.md)
 
 Hledání pomoci, pokud dojde k potížím.
-
 
 ## <a name="related-links"></a>Související odkazy
 

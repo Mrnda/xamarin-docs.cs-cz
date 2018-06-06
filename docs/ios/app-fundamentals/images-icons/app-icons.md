@@ -1,22 +1,20 @@
 ---
-title: Ikony aplikace
-description: Tento článek obsahuje včetně a správu prostředek bitové kopie v aplikaci Xamarin.iOS, který se má použít jako ikona aplikace.
+title: Ikony aplikace v Xamarin.iOS
+description: 'Tento dokument popisuje, jak pracovat s různými ikony aplikace v Xamarin.iOS: Ikona aplikace, samotné, Spotlight ikony, nastavení ikon a kresby iTunes.'
 ms.prod: xamarin
 ms.assetid: B7791574-4A0F-4CB6-8C18-36D40B5C91EB
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/22/2017
-ms.openlocfilehash: 9a6f69598d137ac05fae5aaed7c16b0cf05284e6
-ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
+ms.openlocfilehash: 3c07f2573aa8ac6e28b2cd6bff56a773e6206aea
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34562887"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783994"
 ---
-# <a name="application-icons"></a>Ikony aplikace
-
-_Tento článek obsahuje včetně a správu prostředek bitové kopie v aplikaci Xamarin.iOS, který se má použít jako ikona aplikace._
+# <a name="application-icons-in-xamarinios"></a>Ikony aplikace v Xamarin.iOS
 
 Podrobně se budeme v následujících tématech:
 

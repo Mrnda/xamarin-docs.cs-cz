@@ -1,5 +1,5 @@
 ---
-title: Profily zřizování
+title: Profily zřizování pro aplikace Xamarin.Mac
 description: Tento průvodce vás provede vytvořením nezbytné profily zřizování, který bude vyžadovat, aby publikování Xamarin.Mac aplikace.
 ms.prod: xamarin
 ms.assetid: bdff6c32-f7e3-4a97-a093-dbda48be8227
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/12/2017
-ms.openlocfilehash: 4f3120c45de5022dca1e522be251f453f9f5b4c7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9660d5373cc5213f648b145ef38ddbf25c7633ce
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792148"
 ---
-# <a name="provisioning-profiles"></a>Profily zřizování
+# <a name="provisioning-profiles-for-xamarinmac-apps"></a>Profily zřizování pro aplikace Xamarin.Mac
 
 Zřizování profily umožňují vývojář do své aplikace Xamarin.Mac zahrnout několik konkrétních funkcí (dříve označované jako Mac OS X) v systému macOS (například Icloudu a nabízená oznámení). Se musí vytvořit, stáhněte a nainstalujte profil zřizování Mac pro každou aplikaci, jejich vývoj, který používá tyto funkce.
 

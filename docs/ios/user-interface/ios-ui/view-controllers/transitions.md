@@ -1,18 +1,20 @@
 ---
-title: Přechody řadiče zobrazení
+title: Přechody řadiče zobrazení v Xamarin.iOS
+description: Tento dokument popisuje, jak přizpůsobit animovaný přechodů mezi řadiče zobrazení v aplikacích Xamarin.iOS.
 ms.prod: xamarin
 ms.assetid: CB3AC8E2-8A47-4839-AFA5-AE33047BB26C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/14/2017
-ms.openlocfilehash: 253a2556872ea9186eec832a84f4cfff9cb1c209
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 35795002310cd79a1897061fe6e3e41b48b45b4d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790445"
 ---
-# <a name="view-controller-transitions"></a>Přechody řadiče zobrazení
+# <a name="view-controller-transitions-in-xamarinios"></a>Přechody řadiče zobrazení v Xamarin.iOS
 
 UIKit přidává podporu pro přizpůsobení animovaný přechodu, který nastane, když prezentací řadiče zobrazení. Tato podpora je součástí integrované řadiče, stejně jako všechny vlastní řadiče, které dědí přímo z `UIViewController`. Kromě toho `UICollectionViewController` využívá řadiče přechod přizpůsobení využít animované přechody v kolekci zobrazení rozložení.
 

@@ -1,5 +1,5 @@
 ---
-title: Nasazování a testování
+title: Nasazení a testování aplikací pro tvOS v Xamarinu
 description: Tato část obsahuje témata týkající se používá k testování aplikace a její distribuce. Témata v tomto poli mezi patří například nástroje používané pro ladění, nasazení a testery, jak publikovat aplikace pro Apple TV App Store.
 ms.prod: xamarin
 ms.assetid: DA4B4BD7-DC09-4F61-BC07-36727AF52BA2
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: ab5b12e13095212a070c308b7e21d008c9aa2673
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b810d7cef05a4d4e26677eb0b18b9b72ca3995fc
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788585"
 ---
-# <a name="deployment-and-testing"></a>Nasazování a testování
+# <a name="deploying-and-testing-tvos-apps-in-xamarin"></a>Nasazení a testování aplikací pro tvOS v Xamarinu
 
 ## <a name="app-distributioniostvosdeploy-testapp-distributionindexmd"></a>[Distribuce aplikace](~/ios/tvos/deploy-test/app-distribution/index.md)
 

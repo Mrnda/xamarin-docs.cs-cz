@@ -1,19 +1,20 @@
 ---
-title: Funkce platformy
-description: Apple Watch funkce specifické pro zahrnutí do watchOS aplikace.
+title: watchOS funkcí platformy
+description: Tento dokument obsahuje odkazy na různé příručky, které popisují watchOS platformy funkce jako je dotykový identifikátor, oznámení, komplikace, proaktivní návrhy, cvičení aplikace a další.
 ms.prod: xamarin
 ms.assetid: 13F23E01-BAED-43EB-A70E-3B30EF53D379
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: 9b90c799f2635221a2c19bda426c501737600f88
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8ad4dc52c3bca0f54adb64bb97acaa23aeb1e590
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791283"
 ---
-# <a name="platform-features"></a>Funkce platformy
+# <a name="watchos-platform-features"></a>watchOS funkcí platformy
 
 _Apple Watch funkce specifické pro zahrnutí do watchOS aplikace._
 

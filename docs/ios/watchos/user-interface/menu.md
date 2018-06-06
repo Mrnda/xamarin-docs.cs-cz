@@ -1,18 +1,20 @@
 ---
-title: Menu – ovládací prvek (Force Touch)
+title: watchOS Menu – ovládací prvek (Force Touch) v Xamarinu
+description: Tento dokument popisuje, jak používat gesto watchOS force touch v Xamarin. Popisuje, jak reagovat na vynutit touch, jak přidat nabídky a změna položky nabídky.
 ms.prod: xamarin
 ms.assetid: 5A7F83FB-9BC4-4812-92C5-CEC8DAE8211E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 4895f140acbc8a622cfb91c2fe9db6c5e9d9d1d7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4b973b925b99189416087224644c376864c56871
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791342"
 ---
-# <a name="menu-control-force-touch"></a>Menu – ovládací prvek (Force Touch)
+# <a name="watchos-menu-control-force-touch-in-xamarin"></a>watchOS Menu – ovládací prvek (Force Touch) v Xamarinu
 
 Podívejte se, že Kit poskytuje gesto Force Touch, která aktivuje nabídky při implementaci na obrazovce aplikace sledovat.
 

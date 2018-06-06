@@ -1,18 +1,20 @@
 ---
-title: Obrázek ovládacího prvku
+title: watchOS ovládací prvky obrázků v Xamarinu
+description: Tento dokument popisuje, jak používat ovládací prvky obrázků v aplikaci watchOS vytvořených pomocí Xamarinu. Popisuje prvku WKInterfaceImage SetImage – metoda, přidávání obrázků na rozšíření sledovat, animace a další.
 ms.prod: xamarin
 ms.assetid: B741C207-3427-46F3-9C90-A52BF8933FA4
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 370b9f2a57716de876c7e883afdaf445186fb577
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: eb58c587f737a5991a21f0efe9964353a8ab0399
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791248"
 ---
-# <a name="image-control"></a>Obrázek ovládacího prvku
+# <a name="watchos-image-controls-in-xamarin"></a>watchOS ovládací prvky obrázků v Xamarinu
 
 poskytuje watchOS [ `WKInterfaceImage` ](https://developer.xamarin.com/api/type/WatchKit.WKInterfaceImage/) ovládacího prvku pro zobrazení obrázků a jednoduchý animace. Některé ovládací prvky můžete taky nechat obrázek na pozadí (například tlačítka, skupiny a řadičů rozhraní).
 

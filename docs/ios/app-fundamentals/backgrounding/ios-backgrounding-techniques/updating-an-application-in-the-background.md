@@ -1,18 +1,20 @@
 ---
-title: Aktualizaci aplikace na pozadí
+title: Aktualizace na pozadí aplikace Xamarin.iOS
+description: Tento dokument popisuje různé způsoby, jak aktualizovat aplikaci Xamarin.iOS, která je na pozadí, například monitorování oblast, načítání na pozadí a vzdáleného oznámení.
 ms.prod: xamarin
 ms.assetid: A2B2231A-C045-4C11-8176-F9966485197A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 370d1cba71fa695e4e01dfb93241536a8df01b11
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 973c18528eee2096b29ba86e82ceff31ecf3e207
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784062"
 ---
-# <a name="updating-an-application-in-the-background"></a>Aktualizaci aplikace na pozadí
+# <a name="updating-a-xamarinios-app-in-the-background"></a>Aktualizace na pozadí aplikace Xamarin.iOS
 
 Aktualizace na pozadí je proces probuzení aplikaci, která je pozastaven nebo není spuštěn a aktualizace pomocí nového obsahu. iOS poskytuje tři možnosti pro aktualizaci obsahu na pozadí:
 

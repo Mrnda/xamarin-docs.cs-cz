@@ -1,22 +1,20 @@
 ---
-title: Práce s tlačítka
-description: Tento článek se zabývá navrhování a práce s tlačítka uvnitř Xamarin.tvOS aplikace.
+title: Práce s tvOS tlačítka v Xamarinu
+description: Tento dokument popisuje, jak pracovat s tlačítka v tvOS aplikace vytvořené s nástroji Xamarin. Popisuje, jak pracovat s tlačítka v kódu a scénářů a zkontroluje postupy k úpravě stylu tlačítko.
 ms.prod: xamarin
 ms.assetid: DA6EF400-A4E3-4245-A0D4-F2398CAE2C9B
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/07/2017
-ms.openlocfilehash: e915e96690fe67f0e704ec558313427f01753438
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3de732e9eee696ce21ffc5526afd44f29695a313
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789382"
 ---
-# <a name="working-with-buttons"></a>Práce s tlačítka
-
-_Tento článek se zabývá navrhování a práce s tlačítka uvnitř Xamarin.tvOS aplikace._
-
+# <a name="working-with-tvos-buttons-in-xamarin"></a>Práce s tvOS tlačítka v Xamarinu
 
 Použít instanci systému `UIButton` třídy za účelem vytvoření může získat fokus, které lze vybírat tlačítka v okně tvOS. Když uživatel vybere tlačítko, odešle zprávu akce na objekt cíle povolit vstup vaší Xamarin.tvOS reakce aplikace pro uživatele.
 

@@ -1,16 +1,17 @@
 ---
 title: Instalace NUnit 2.6.4 pomocí nástroje NuGet
-description: Tento průvodce obsahuje informace na starší verzi 3.0 NUnit k NUnit 2.6.4 pomocí nástroje NuGet.
+description: Tento dokument popisuje, jak na starší verzi 3.0 NUnit k NUnit 2.6.4 pomocí nástroje NuGet. To je nezbytné při práci s Xamarin.UITest, který nepodporuje NUnit 3.x.
 ms.prod: xamarin
 ms.assetid: 7683F2B8-7FDF-48C4-8E7D-649D4D4E79F0
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: e74975864dc7f3f00c6b04fe48139589c1f52ad5
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: fb0ffd87a61f20744e68eafdd7eb8de691df6f75
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781517"
 ---
 # <a name="installing-nunit-264-using-nuget"></a>Instalace NUnit 2.6.4 pomocí nástroje NuGet
 

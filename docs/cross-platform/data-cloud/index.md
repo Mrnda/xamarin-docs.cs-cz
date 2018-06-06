@@ -1,20 +1,19 @@
 ---
-title: Microsoft Azure
-description: Dokumentaci a ukázkový kód soubory ke stažení pro Azure.
+title: Microsoft Azure a Xamarin
+description: Tento dokument obsahuje odkazy na dokumentaci o připojené služby v sadě Visual Studio pro Mac, Azure Mobile Apps, ověřování služby Active Directory a WebAPI.
 ms.prod: xamarin
 ms.assetid: 7b9aa8d9-c181-4c33-8ab0-2f56e4dbfc04
 author: asb3993
 ms.author: amburns
 ms.date: 10/09/2017
-ms.openlocfilehash: 5a7c2e4e1bc8beff40984e66760a332e8b00f87d
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 25eec247a0cb664897541a0e6e818a77018fda43
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781075"
 ---
-# <a name="microsoft-azure"></a>Microsoft Azure
-
-_Dokumentaci a ukázkový kód soubory ke stažení pro Azure._
+# <a name="microsoft-azure-and-xamarin"></a>Microsoft Azure a Xamarin
 
 [ ![](images/evolve-mikej-azure-sml.png "Funkce Azure App Services lze snadno přidávat do aplikace Xamarin, včetně datové úložiště v cloudu a různé platformy nabízená oznámení")](https://evolve.xamarin.com/session/56ec886fde91c6253c277bc6)
 
@@ -23,7 +22,6 @@ _Dokumentaci a ukázkový kód soubory ke stažení pro Azure._
 ## <a name="connected-services-in-visual-studio-for-mac"></a>Připojené služby v sadě Visual Studio pro Mac
 
 Nové [připojené služby](connected-services.md) funkce sady Visual Studio pro Mac pomáhá vývojářům snadno a rychle přidat Azure funkce mobilní aplikace z prostředí IDE. Aktuálně k dispozici pro testování v kanálu alfa.
-
 
 ## <a name="azure-app-services"></a>Azure App Services
 

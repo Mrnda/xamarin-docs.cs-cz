@@ -1,21 +1,20 @@
 ---
-title: Úvod do scénářů
-description: Scénář je vizuální reprezentace vzhled a tok vaší aplikace. Xamarin má zavedl Designer umožňuje aplikace Xamarin.iOS využívat výhod scénářů, abyste mohli vizuální návrh obrazovky aplikace a přístup k zobrazení, řadiče a segues pomocí C# pro další ovládací prvek.
+title: Úvod do scénářů v Xamarin.iOS
+description: Tento dokument obsahuje úvod do scénářů v Xamarin.iOS. Se popisuje, jak scénář se používá k definování uživatelské rozhraní, segues a jak používat návrháře iOS k úpravě souborů scénáře.
 ms.prod: xamarin
 ms.assetid: A3339BD2-9F56-7965-25F5-4B7C991EB775
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 647bd7d339dc56978752f7ab29de30cf8acb7e07
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3366da2f5dc869c7b075bf32be238a1ebd3145d7
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790965"
 ---
-# <a name="introduction-to-storyboards"></a>Úvod do scénářů
-
-_Scénář je vizuální reprezentace vzhled a tok vaší aplikace. Xamarin má zavedl Designer umožňuje aplikace Xamarin.iOS využívat výhod scénářů, abyste mohli vizuální návrh obrazovky aplikace a přístup k zobrazení, řadiče a segues pomocí C# pro další ovládací prvek._
+# <a name="introduction-to-storyboards-in-xamarinios"></a>Úvod do scénářů v Xamarin.iOS
 
 V této příručce vysvětlíme, jaké scénáře je a prozkoumat některé z klíčových součástí – například Segues. Podíváme jak vytvořit a použít, scénářů a jaké výhody mají pro vývojáře.
 

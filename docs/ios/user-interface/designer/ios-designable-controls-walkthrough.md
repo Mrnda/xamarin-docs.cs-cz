@@ -1,21 +1,20 @@
 ---
-title: Návod - použití vlastních ovládacích prvků pomocí návrháře Xamarin pro iOS
-description: Tento článek obsahuje podrobný postup znázorňující postup vytvoření vlastního ovládacího prvku a použít jej v Návrháři Xamarin pro iOS. Ukazuje, jak zpřístupnit ovládacího prvku v panelu nástrojů návrháře, přetáhněte nebo vyřazením do zobrazení. Kromě toho ukazuje, jak implementovat ovládacího prvku, vykreslí správně v době návrhu a prostředí runtime, jakož i vytvoření vlastnosti, které lze nastavit v době návrhu.
+title: Použití vlastních ovládacích prvků s iOS návrháře
+description: Tento dokument popisuje postup vytvoření vlastního ovládacího prvku a jeho použití s návrháře Xamarin pro iOS. Ukazuje, jak zpřístupnit ovládací prvek v sadě nástrojů návrháře iOS, implementaci ovládacího prvku tak, aby se vykreslí správně a Navrhnout čas a další.
 ms.prod: xamarin
 ms.assetid: 9032B32E-97BD-4DA6-9955-811B84682578
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 4a7fb6cba82b52f2a3506df7a36b4813a88ff583
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: dae675d65cb2be93ac828a1aebe560354630ab54
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790162"
 ---
-# <a name="walkthrough---using-custom-controls-with-the-xamarin-designer-for-ios"></a>Návod - použití vlastních ovládacích prvků pomocí návrháře Xamarin pro iOS
-
-_Tento článek obsahuje podrobný postup znázorňující postup vytvoření vlastního ovládacího prvku a použít jej v Návrháři Xamarin pro iOS. Ukazuje, jak zpřístupnit ovládacího prvku v panelu nástrojů návrháře, přetáhněte nebo vyřazením do zobrazení. Kromě toho ukazuje, jak implementovat ovládacího prvku, vykreslí správně v době návrhu a prostředí runtime, jakož i vytvoření vlastnosti, které lze nastavit v době návrhu._
+# <a name="using-custom-controls-with-the-ios-designer"></a>Použití vlastních ovládacích prvků s iOS návrháře
 
 ## <a name="requirements"></a>Požadavky
 

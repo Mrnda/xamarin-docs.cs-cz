@@ -1,6 +1,6 @@
 ---
-title: Poradce při potížích
-description: Tento článek obsahuje vědět problémy se můžete setkat při práci s tvOS podpory pro Xamarin.
+title: Řešení potíží s tvOS aplikací vytvořených pomocí Xamarinu
+description: Tento článek obsahuje různé tipy k řešení během vývoje aplikace tvOS vytvořených pomocí Xamarinu. Popisuje známý problém a konkrétní chyby.
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 124E4953-4DFA-42B0-BCFC-3227508FE4A6
@@ -8,13 +8,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 86106fa5ca53e93ccffb4dd141914c01ab65a506
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e69157cf9c8a9b9405e31edb2906754328653ccb
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789200"
 ---
-# <a name="troubleshooting"></a>Poradce při potížích
+# <a name="troubleshooting-tvos-apps-built-with-xamarin"></a>Řešení potíží s tvOS aplikací vytvořených pomocí Xamarinu
 
 _Tento článek obsahuje vědět problémy se můžete setkat při práci s tvOS podpory pro Xamarin._
 
@@ -128,7 +129,7 @@ Pokud používáte knihovnu 3. stran (například MonoGame) a vaše verze kompil
 
 Musí rovněž zahrnovat `--bitcode=asmonly` v **touch další argumenty**, možnosti linkeru nastavili **odkaz všechny** a proveďte čistou kompilace.
 
-### <a name="itms-90471-error-the-large-icon-is-missing"></a>ITMS-90471 error. Chybí velkých ikon.
+### <a name="itms-90471-error-the-large-icon-is-missing"></a>ITMS 90471 došlo k chybě. Chybí velkých ikon.
 
 Pokud se zobrazí zpráva ve tvaru "ITMS 90471 došlo k chybě. Velké ikony chybí"při pokusu o odeslání Xamarin.tvOS aplikace pro Apple TV App Store pro verzi, zkontrolujte následující:
 

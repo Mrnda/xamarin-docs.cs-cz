@@ -1,21 +1,20 @@
 ---
-title: Icloudu
-description: Společnost Apple vydala v iOS 5 Icloudu jako službu, která umožňují aplikacím ukládat data na servery společnosti Apple a mít jeho synchronizaci na všech zařízeních, která používá stejnou osoba (prostřednictvím jejich Apple ID). Je také zálohování součást, kde data v zařízeních se zálohovaná na servery společnosti Apple. Tento dokument popisuje, jak používat některé z na serveru služby iCloud poskytuje rozhraní API společností Apple k ukládání a načítání dat ze svých serverů s C# – ukázky pro uložení párů malá klíč hodnota data a pro ukládání dokumentů. Také popisuje, jak Icloudu zálohování mohou mít vliv na návrh vaší aplikace.
+title: Pomocí serveru služby iCloud Xamarin.iOS
+description: Tento dokument popisuje Icloudu a jeho použití v aplikacích Xamarin.iOS. Popisuje, klíč hodnota úložiště, ukládání dokumentů a na Icloudu zálohování.
 ms.prod: xamarin
 ms.assetid: C6F3B87C-C195-4434-EF14-D66E63894F09
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/09/2016
-ms.openlocfilehash: a62d4621a8f3ace64401d64e35c806317a591c03
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: 032d5f01ae63e5aececa14390300c28623c4f371
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785535"
 ---
-# <a name="icloud"></a>Icloudu
-
-_Společnost Apple vydala v iOS 5 Icloudu jako službu, která umožňují aplikacím ukládat data na servery společnosti Apple a mít jeho synchronizaci na všech zařízeních, která používá stejnou osoba (prostřednictvím jejich Apple ID). Je také zálohování součást, kde data v zařízeních se zálohovaná na servery společnosti Apple. Tento dokument popisuje, jak používat některé z na serveru služby iCloud poskytuje rozhraní API společností Apple k ukládání a načítání dat ze svých serverů s C# – ukázky pro uložení párů malá klíč hodnota data a pro ukládání dokumentů. Také popisuje, jak Icloudu zálohování mohou mít vliv na návrh vaší aplikace._
+# <a name="using-icloud-with-xamarinios"></a>Pomocí serveru služby iCloud Xamarin.iOS
 
 Úložiště iCloud rozhraní API v iOS 5 umožňuje aplikacím ukládat dokumenty uživatele a specifická data do centrálního umístění a přístup k těmto položkám ze zařízení, všechny uživatele.
 

@@ -1,5 +1,5 @@
 ---
-title: Změny StoreKit
+title: Změny StoreKit v iOS 6
 description: 'iOS 6 zavádí dvě změny do rozhraní API úložiště Kit: možnost zobrazit iTunes (a obchodu s aplikacemi nebo iBookstore) produkty z v rámci vaší aplikace a nové v aplikaci zakoupit možnost Apple kterých bude hostovat vaše soubory ke stažení. Tento dokument vysvětluje, jak implementovat tyto funkce s Xamarin.iOS.'
 ms.prod: xamarin
 ms.assetid: 253D37D7-44C7-D012-3641-E15DC41C2699
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 8a7a70c3f84518141cf44d630fb4137051d0c866
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ff717d1e4ea7da947d5534f1ce790b58d84fdfd4
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787689"
 ---
-# <a name="changes-to-storekit"></a>Změny StoreKit
+# <a name="changes-to-storekit-in-ios-6"></a>Změny StoreKit v iOS 6
 
 _iOS 6 zavádí dvě změny do rozhraní API úložiště Kit: možnost zobrazit iTunes (a obchodu s aplikacemi nebo iBookstore) produkty z v rámci vaší aplikace a nové v aplikaci zakoupit možnost Apple kterých bude hostovat vaše soubory ke stažení. Tento dokument vysvětluje, jak implementovat tyto funkce s Xamarin.iOS._
 
@@ -142,8 +143,8 @@ Výsledky bude také obsahovat další metadata, včetně zobrazované informace
 
 Následuje několik příkladů:
 
--   **aplikace iBooks*- [http://itunes.apple.com/search?term=ibooks&amp;entity = softwaru&amp;země = us](http://itunes.apple.com/search?term=ibooks&amp;entity=software&amp;country=us) 
--   **Dot a ibooks, který má Kangaroo*- [http://itunes.apple.com/search?term=dot+and+the+kangaroo&amp;entity = elektronická kniha&amp;země = us](http://itunes.apple.com/search?term=dot+and+the+kangaroo&amp;entity=ebook&amp;country=us) 
+-   **aplikace iBooks*- [http://itunes.apple.com/search?term=ibooks&amp; entity = softwaru&amp;země = us](http://itunes.apple.com/search?term=ibooks&amp;entity=software&amp;country=us) 
+-   **Dot a ibooks, který má Kangaroo*- [http://itunes.apple.com/search?term=dot+and+the+kangaroo&amp; entity = elektronická kniha&amp;země = us](http://itunes.apple.com/search?term=dot+and+the+kangaroo&amp;entity=ebook&amp;country=us) 
 
 
 ### <a name="enterprise-partner-feed"></a>Organizace partnera kanálu
@@ -540,7 +541,7 @@ Tento článek obsahuje zavedla dvě nové funkce úložiště Kit v iOS6: náku
 - [StoreKit (ukázka)](https://developer.xamarin.com/samples/StoreKit/)
 - [Nákupy v aplikaci](~/ios/platform/in-app-purchasing/index.md)
 - [StoreKit Framework – referenční informace](https://developer.apple.com/library/prerelease/ios/#documentation/StoreKit/Reference/StoreKit_Collection/_index.html)
-- [SKStoreProductViewController Class Reference](https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKITunesProductViewController_Ref/SKStoreProductViewController.html)
+- [Odkaz na SKStoreProductViewController – třída](https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKITunesProductViewController_Ref/SKStoreProductViewController.html)
 - [iTunes referenční dokumentace rozhraní API pro vyhledávání](http://www.apple.com/itunes/affiliates/resources/documentation/itunes-store-web-service-search-api.html)
 - [SKDownload](https://developer.apple.com/library/prerelease/ios/#documentation/StoreKit/Reference/SKDownload_Ref/Introduction/Introduction.html)
 - [SKPaymentQueue](https://developer.apple.com/library/prerelease/ios/documentation/StoreKit/Reference/SKPaymentQueue_Class/Reference/Reference.html#/apple_ref/occ/instm/SKPaymentQueue/cancelDownloads:)

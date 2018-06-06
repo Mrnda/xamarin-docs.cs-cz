@@ -2,7 +2,7 @@
 ## [Vývoj her](game-development/index.md)
 ## [SkiaSharp](skiasharp/index.md)
 ### [Úvod](skiasharp/introduction.md)
-### [Poznámky pro konkrétní platformu](skiasharp/platform.md)
+### [Poznámky k specifické pro platformu](skiasharp/platform.md)
 
 
 

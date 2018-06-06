@@ -1,5 +1,5 @@
 ---
-title: Dialogová okna
+title: Dialogová okna v Xamarin.Mac
 description: Tento článek se zabývá práce se dialogová okna a modální okna v aplikaci Xamarin.Mac. Popisuje vytváření modální okna v Xcode a rozhraní tvůrce, práce s standardní dialogová okna a interakci s tyto ovládací prvky v kódu jazyka C#.
 ms.prod: xamarin
 ms.assetid: 55451990-B77B-4D44-B8BB-F874EC503B0C
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: cd0b57cc40d3f7cffd4d5711ec04a7225be870e9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7d9a93c8503d7e25f098e871378a22455b597e90
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792691"
 ---
-# <a name="dialogs"></a>Dialogová okna
+# <a name="dialogs-in-xamarinmac"></a>Dialogová okna v Xamarin.Mac
 
 Při práci s C# a rozhraní .NET v aplikaci Xamarin.Mac, máte přístup ke stejným dialogová okna a modální okna, developer, práce *jazyka Objective-C* a *Xcode* nemá. Protože Xamarin.Mac integruje přímo s Xcode, můžete na Xcode _rozhraní tvůrce_ vytvořit a udržovat modální okna (nebo je můžete také vytvořit přímo v kódu jazyka C#).
 

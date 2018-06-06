@@ -1,21 +1,20 @@
 ---
 title: Úvod do fastlane pro iOS
-description: Tento průvodce představuje různé fastlane nástroje, které slouží k kódové podepisování aplikací iOS
+description: Tento průvodce představuje různé fastlane nástroje, které slouží k kódové podepisování aplikací iOS. Popisuje, jak aktualizovat, nainstalovat a používat nástroje fastlane.
 ms.prod: xamarin
 ms.assetid: 8202C57D-22FF-4224-A5B1-AAEF12B7C106
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 68c252edecc4ebffb764c0de328ab605975471c4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ffb7e0a088bcd227f45b97229f089ef59d4d6608
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785486"
 ---
 # <a name="introduction-to-fastlane-for-ios"></a>Úvod do fastlane pro iOS
-
-_Tento průvodce představuje různé fastlane nástroje, které slouží k kódové podepisování aplikací iOS_
 
 fastlane je opensourcový projekt, k vytvoření, která zjednodušují proces matoucí a často zdlouhavé vydání systémy iOS a Android. Obsahuje několik nástrojů, že každý zpracovat konkrétních aspektů verze aplikace, například:
 

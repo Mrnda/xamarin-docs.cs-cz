@@ -1,22 +1,20 @@
 ---
-title: Vzdálené Siri a řadiče Bluetooth.
-description: Tento článek se zabývá podpora nové řadiče herní Siri Remote a Bluetooth v Xamarin.tvOS aplikací.
+title: Vzdálené Siri a Bluetooth řadiče pro tvOS v Xamarinu
+description: Tento článek popisuje, jak pracovat s Siri vzdálené a herní zařízení Bluetooth v tvOS aplikací napsaných pomocí Xamarinu.
 ms.prod: xamarin
 ms.assetid: BDB9894A-236B-424B-9032-ACD12A6C5720
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 5b5893278acad999efd94c89f1ca923100f5cf7c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3fc2abed202f8b2e6993890ca4e6b3c6875522e5
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789187"
 ---
-# <a name="siri-remote-and-bluetooth-controllers"></a>Vzdálené Siri a řadiče Bluetooth.
-
-_Tento článek se zabývá podpora nové řadiče herní Siri Remote a Bluetooth v Xamarin.tvOS aplikací._
-
+# <a name="siri-remote-and-bluetooth-controllers-for-tvos-in-xamarin"></a>Vzdálené Siri a Bluetooth řadiče pro tvOS v Xamarinu
 
 Uživatele vaší aplikace Xamarin.tvOS nebude interakci s jeho rozhraní přímo jako s iOS kde jejich klepněte na Image na displeji zařízení, ale nepřímo z napříč místnosti pomocí [Siri vzdálené](#The-Siri-Remote).
 
@@ -40,7 +38,7 @@ Vzdálené Siri má následující funkce a očekávané použití aplikace pro 
 
 |Funkce|Obecné využití aplikací|Herní využití aplikací|
 |---|---|---|
-|**Prostor dotykového ovládání**<br />Prstem přejděte, stiskněte a vyberte přidržte kontextové nabídky.|**Tap/Swipe**<br />Uživatelské rozhraní navigace mezi položkami může získat fokus.<br /><br />**Klikněte na**<br />Aktivuje vybrané položky (vybraný).|**Tap/Swipe**<br />Závisí na herní návrhu a může sloužit jako D-Pad klepnutím na okrajích.<br /><br />**Klikněte na**<br />Provedení funkce primární tlačítko.|
+|**Prostor dotykového ovládání**<br />Prstem přejděte, stiskněte a vyberte přidržte kontextové nabídky.|**Klepněte na nebo prstem**<br />Uživatelské rozhraní navigace mezi položkami může získat fokus.<br /><br />**Klikněte na**<br />Aktivuje vybrané položky (vybraný).|**Klepněte na nebo prstem**<br />Závisí na herní návrhu a může sloužit jako D-Pad klepnutím na okrajích.<br /><br />**Klikněte na**<br />Provedení funkce primární tlačítko.|
 |**Nabídka**<br />Stisknutím vrátit na předchozí obrazovce nebo nabídku.|Vrátí předchozí obrazovku a ukončí Apple TV Domů obrazovku na obrazovce hlavní aplikace.|Pozastavení a obnovení hraní her, vrátí na předchozí obrazovku a ukončí Apple TV Domů obrazovku na obrazovce hlavní aplikace.|
 |**Siri nebo vyhledávání**<br />V zemích s Siri stiskněte a podržte pro řízení hlasové, ve všech dalších zemích, zobrazí obrazovky vyhledávání.|není k dispozici|není k dispozici|
 |**Přehrát či pozastavit**<br />Přehrávání a pozastavení média nebo poskytuje sekundární funkce v aplikacích.|Spustí přehrávání médií a přehrávání pozastavení nebo obnovení.|Provede funkci sekundární tlačítka nebo přeskočí video úvod (pokud existuje).|
@@ -75,9 +73,6 @@ Kromě toho stisknutí tlačítka nabídky můžete zjistit pomocí standard pro
 
 > [!IMPORTANT]
 > Měli byste **vždy** přiřadit tlačítko Přehrát či pozastavit na vzdáleném funkce. S funkční tlačítko můžete nastavit aplikaci vypadat porušený pro koncového uživatele. Pokud nemáte platnou funkcí pro toto tlačítko, přiřadíte stejnou funkci jako primární tlačítko (Touch prostor kliknutím).
-
-
-
 
 <a name="Gestures-and-Storyboards" />
 
@@ -287,7 +282,7 @@ Herní zařízení slouží k vylepšení hraní her a poskytnout představu o z
 
 |Funkce|Obecné využití aplikací|Herní využití aplikací|
 |---|---|---|
-|**D-Pad**|Přejde na prvky uživatelského rozhraní (fokus změny).|Závisí na hra.|
+|**Řídicí**|Přejde na prvky uživatelského rozhraní (fokus změny).|Závisí na hra.|
 |**A**|Aktivuje vybrané položky (vybraný).|Provede funkci primární tlačítka a potvrdí, dialogové okno akce.|
 |**B**|Vrátí na předchozí obrazovku nebo ji opustí na domovské obrazovce, pokud na obrazovce hlavní aplikace.|Provede funkci sekundární tlačítko nebo vrátí na předchozí obrazovku.|
 |**X**|Spustí přehrávání médií nebo pozastavení nebo obnoví přehrávání.|Závisí na hra.|

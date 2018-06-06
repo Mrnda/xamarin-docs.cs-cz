@@ -1,22 +1,20 @@
 ---
-title: tvOS Internals
-description: Xamarin.tvOS sdílí stejné DNA jako náš produkt Xamarin.iOS tak pokročilé dokumenty, které jsme je tvořen pro náš produkt iOS jsou téměř stejné jako náš produkt tvOS.
+title: v Xamarin – Internals tvOS
+description: Dokumenty popisující do interní chodu tvOS na Xamarin, která je založena na Xamarin.iOS. Odkaz obsahu popisuje sestavení, cílové architektury a související s koncepty iOS.
 ms.prod: xamarin
 ms.assetid: 8C076FED-9C03-44DE-9723-0E20272DD16B
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: 83b8d5b6dc4e73f05160960f0e2547284de57799
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0132eac4edd4ecb9f693828bd58288dfbcb1c008
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789142"
 ---
-# <a name="tvos-internals"></a>tvOS Internals
-
-_Xamarin.tvOS sdílí stejné DNA jako náš produkt Xamarin.iOS tak pokročilé dokumenty, které jsme je tvořen pro náš produkt iOS jsou téměř stejné jako náš produkt tvOS._
-
+# <a name="tvos-in-xamarin--internals"></a>v Xamarin – Internals tvOS 
 
 ##  <a name="assembliesiostvosinternalsassembliesmd"></a>[Sestavení](~/ios/tvos/internals/assemblies.md)
 
@@ -73,8 +71,6 @@ Poznámky k použití vlákna v rámci aplikace Xamarin.iOS.
 ###  <a name="xib-code-generationiosinternalsxib-code-generationmd"></a>[Generování kódu XIB](~/ios/internals/xib-code-generation.md)
 
 Jak Visual Studio pro Mac se integruje s Tvůrce Xcode je rozhraní, ve kterém vám umožní používat rozhraní tvůrce návrh uživatelského rozhraní.
-
-
 
 ## <a name="related-links"></a>Související odkazy
 

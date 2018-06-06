@@ -1,20 +1,20 @@
 ---
-title: Vazba knihoven Mac
-description: Tato příručka odkazy na jiné dokumenty, které popisují, jak vytvořit vazby pro librariesl jazyka Objective-C
+title: Vazba knihoven Mac pro Xamarin.Mac
+description: Tento dokument obsahuje odkazy na pokyny, které popisují, jak pro práci s vazbami jazyka Objective-C v Xamarin.Mac aplikaci, včetně Sharpie cíl a ukázkový kód.
 ms.prod: xamarin
 ms.assetid: 521707CD-79D3-488A-84CB-A37EBF93AC94
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/13/2017
-ms.openlocfilehash: c70a34acbdac6339a96000a2f987d4ac4f3d6a45
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 05602401c1408b016b371fc00b65f2d3db4c667d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792212"
 ---
-# <a name="binding-mac-libraries"></a>Vazba knihoven Mac
-
+# <a name="binding-mac-libraries-for-xamarinmac"></a>Vazba knihoven Mac pro Xamarin.Mac
 
 Další informace o vytvoření vazby knihovny jazyka Objective-C na Xamarin.Mac na následujících odkazech:
 
@@ -25,18 +25,14 @@ Další informace o vytvoření vazby knihovny jazyka Objective-C na Xamarin.Mac
 - [**Zadejte definici referenční příručka** ](~/cross-platform/macios/binding/binding-types-reference.md) -
   popisuje všechny atributy, které jsou k dispozici pro vazbu autorům jednotka proces vytváření vazby.
 
+## <a name="objective-sharpiecross-platformmaciosbindingobjective-sharpieindexmd"></a>[Objective Sharpie](~/cross-platform/macios/binding/objective-sharpie/index.md)
 
-<a name="objective-sharpiecross-platformmaciosbindingobjective-sharpieindexmd"></a>[Objective Sharpie](~/cross-platform/macios/binding/objective-sharpie/index.md)
--------------------
-
-Cíle Sharpie je nástroj příkazového řádku, který pomůže bootstrap první fáze vazby.
+Cíle Sharpie je nástroj příkazového řádku pomohou bootstrap první fáze vazby.
 Funguje díky analýze soubory hlaviček nativní knihovny pro mapování veřejné rozhraní API do [vazby definice](~/cross-platform/macios/binding/binding-types-reference.md) (Tento proces, který je jinak provést ručně). Cíle Sharpie nevytvoří vazbu sám o sobě, ale může pomoct vám pomůžou začít!
 
-<a name="examples"></a>Příklady
---------
+## <a name="examples"></a>Příklady
 
 Odkazovat [XMBindingExample Mac ukázka](https://github.com/xamarin/mac-samples/tree/master/XMBindingExample) Další informace o vytvoření vazby Mac pomocí vazby projekty.
-
 
 ## <a name="related-links"></a>Související odkazy
 

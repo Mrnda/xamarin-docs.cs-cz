@@ -1,24 +1,26 @@
 ---
-title: SceneKit
+title: SceneKit v Xamarin.iOS
+description: Tento dokument popisuje SceneKit 3D scény graph API, která zjednodušuje práci s 3D grafický tím, že poskytuje abstrakci rychle složitosti OpenGL.
 ms.prod: xamarin
 ms.assetid: 19049ED5-B68E-4A0E-9D57-B7FAE3BB8987
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/14/2017
-ms.openlocfilehash: 7c00a3f6aed442eec402f34a5cea4b1895bb3685
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fb72e194e14f903061e1bd2dc6d04ef88ab429d4
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786782"
 ---
-# <a name="scenekit"></a>SceneKit
+# <a name="scenekit-in-xamarinios"></a>SceneKit v Xamarin.iOS
 
-Scény Kit je rozhraní API, které usnadňuje práci s 3D grafický graf 3D scény. Bylo poprvé dostupné ve OS X 10.8 a teď zase na iOS 8. S scény Kit vytváření dokonalé 3D vizualizace a běžné 3D hry nevyžaduje odborných znalostí v OpenGL. Sestavování na běžné koncepty grafu scény, scény Kit abstrahuje rychle složitosti OpenGL a ES OpenGL, což velmi usnadňuje přidat 3D obsahu k aplikaci. Pokud jste odborník OpenGL, má scény Kit však podpory pro příkazů přímo s OpenGL také. Také zahrnuje množství funkcí, které doplňují 3D grafiky, jako je například fyziky a velmi dobře se integruje se službou několik dalších rozhraní Apple, například základní animace, základní Image a pohyblivý symbol Kit.
+SceneKit je rozhraní API, které usnadňuje práci s 3D grafický graf 3D scény. Bylo poprvé dostupné ve OS X 10.8 a teď zase na iOS 8. S SceneKit vytváření dokonalé 3D vizualizace a běžné 3D hry nevyžaduje odborných znalostí v OpenGL. Sestavování na běžné koncepty grafu scény, SceneKit abstrahuje rychle složitosti OpenGL a ES OpenGL, což velmi usnadňuje přidat 3D obsahu k aplikaci. Pokud jste odborník OpenGL, má SceneKit však podpory pro příkazů přímo s OpenGL také. Také zahrnuje množství funkcí, které doplňují 3D grafiky, jako je například fyziky a velmi dobře se integruje se službou několik dalších rozhraní Apple, například základní animace, základní Image a pohyblivý symbol Kit.
 
-Scény Kit je velmi snadno pracovat. Je deklarativní rozhraní API, který má na starosti vykreslování. Jednoduše nastavit scény, přidání vlastnosti do a zpracovává scény Kit vykreslování scény.
+SceneKit je velmi snadné pracovat. Je deklarativní rozhraní API, který má na starosti vykreslování. Jednoduše nastavit scény, přidání vlastnosti do a zpracovává SceneKit vykreslování scény.
 
-Pro práci s scény Kit vytvoříte pomocí graf scény `SCNScene` třídy. Scény obsahuje hierarchii uzlů reprezentována instancí `SCNNode`, definování umístění v 3D prostoru. Každý uzel má vlastnosti, například geometry, osvětlení a materiálů, které ovlivňují její vzhled, jak vidíte na následujícím obrázku:
+Pro práci s SceneKit vytvoříte pomocí graf scény `SCNScene` třídy. Scény obsahuje hierarchii uzlů reprezentována instancí `SCNNode`, definování umístění v 3D prostoru. Každý uzel má vlastnosti, například geometry, osvětlení a materiálů, které ovlivňují její vzhled, jak vidíte na následujícím obrázku:
 
 ![](scenekit-images/image7.png "Hierarchie SceneKit") 
 
@@ -43,7 +45,7 @@ scene.RootNode.AddChildNode (sphereNode);
 
 ## <a name="adding-light"></a>Přidání světlý
 
-V tomto okamžiku oblasti nezobrazí nic protože v scény neexistuje žádné indikátor. Připojení `SCNLight` instance do uzlů vytvoří indikátory v scény Kit. Existuje několik typů indikátory od různé formy směrovou osvětlení až osvětlení okolí. Například následující kód vytvoří ve všech směrech light stranu oblasti:
+V tomto okamžiku oblasti nezobrazí nic protože v scény neexistuje žádné indikátor. Připojení `SCNLight` instance do uzlů vytvoří indikátory v SceneKit. Existuje několik typů indikátory od různé formy směrovou osvětlení až osvětlení okolí. Například následující kód vytvoří ve všech směrech light stranu oblasti:
 
 ```csharp
 // omnidirectional light
@@ -89,7 +91,7 @@ cameraNode = new SCNNode {
 scene.RootNode.AddChildNode (cameraNode);
 ```
 
-Jak vidíte z výše uvedeného kódu scény Kit objekty mohou být vytvořeny pomocí konstruktorů nebo z metody vytvoření objektu pro vytváření. První umožňuje pomocí syntaxe inicializátoru C#, ale které z nich používat je z velké části řádu předvoleb.
+Jak vidíte z kódu výše SceneKit objekty mohou být vytvořeny pomocí konstruktorů nebo z metody vytvoření objektu pro vytváření. První umožňuje pomocí syntaxe inicializátoru C#, ale které z nich používat je z velké části řádu předvoleb.
 
 S fotoaparátu na místě se zobrazí uživateli celé oblasti:
 
@@ -129,7 +131,7 @@ Opic se teď vizuálně nacházejí v rámci oblasti, nezávisle na hlediska.
 
 ### <a name="animation"></a>Animace
 
-Scény Kit je navržen pro práci s animace. Můžete vytvořit implicitního nebo explicitního animace a může vykreslit i scény ze stromu vrstvy základní animace. Při vytváření implicitní animace, scény Kit poskytuje svou vlastní třídu přechod `SCNTransaction`.
+SceneKit je navržená tak, aby dobře pracoval s animace. Můžete vytvořit implicitního nebo explicitního animace a může vykreslit i scény ze stromu vrstvy základní animace. Při vytváření implicitní animace, SceneKit poskytuje svou vlastní třídu přechod `SCNTransaction`.
 
 Tady je příklad, který otočí oblasti:
 
@@ -140,7 +142,7 @@ sphereNode.Rotation = new SCNVector4 (0, 1, 0, (float)Math.PI * 4);
 SCNTransaction.Commit ();
 ```
 
-Můžete animace mnohem víc než otočení ale. Mnoho vlastností scény Kit jsou animatable. Například následující kód animuje těmto informacím `Shininess` zvýšit zrcadlová reflexe.
+Můžete animace mnohem víc než otočení ale. Mnoho vlastností SceneKit jsou animatable. Například následující kód animuje těmto informacím `Shininess` zvýšit zrcadlová reflexe.
 
 ```csharp
 SCNTransaction.Begin ();
@@ -149,4 +151,4 @@ material.Shininess = 0.1f;
 SCNTransaction.Commit ();
 ```
 
-Scény Kit je velmi jednoduchá používat. Nabízí širokou řadu dalších funkcí, včetně omezení, fyziky, deklarativní akce, 3D text, hloubka pole podpory, integration Kit pohyblivý symbol a integrace základní bitovou kopii k několika název.
+SceneKit je velmi jednoduchá používat. Nabízí širokou řadu dalších funkcí, včetně omezení, fyziky, deklarativní akce, 3D text, hloubka pole podpory, integration Kit pohyblivý symbol a integrace základní bitovou kopii k několika název.

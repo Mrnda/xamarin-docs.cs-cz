@@ -1,18 +1,19 @@
 ---
-title: Ověřte atributy
+title: Cíle Sharpie Ověřte atributy
+description: Tento dokument popisuje atribut [ověřte, zda] generované Sharpie cíl. Atribut [ověřte, zda] označuje pro vývojáře, kde se ručně ověřte Sharpie cíl výstupu.
 ms.prod: xamarin
 ms.assetid: 107FBCEA-266B-4295-B7AA-40A881B82B7B
 author: asb3993
 ms.author: amburns
 ms.date: 01/15/2016
-ms.openlocfilehash: b9409b4351ed9233db0edf8e2dd9f516b9727fe0
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 96e5bafc14c2d3aba03ccc137151a83ee8afeef9
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34780708"
 ---
-# <a name="verify-attributes"></a>Ověřte atributy
-
+# <a name="objective-sharpie-verify-attributes"></a>Cíle Sharpie Ověřte atributy
 
 Často zjistíte, že bude opatřen poznámkou vazby vyprodukované cíl Sharpie `[Verify]` atribut. Tyto atributy znamenat, že byste měli _ověřte_ , cíl Sharpie nebyla správnou věc tak, že porovnáte vazba s původní deklaraci jazyka C nebo Objective-C (která bude k dispozici v komentář nad deklaraci vázané).
 
@@ -27,7 +28,7 @@ Jakmile si ověříte, že vazba platí opravte nebo mít pevnou správné, _ode
 
 Pomocný parametr argument zadaný do atribut může být křížové odkazuje níže naleznete v dokumentaci. Dokumentace pro žádné vytvořeného `[Verify]` atributy bude poskytnuta v konzole také po dokončení vazby.
 
-|Ověřte pomocný parametr|Popis|
+|`[Verify]` Pomocný parametr|Popis|
 |---|---|
 |InferredFromPreceedingTypedef|Název tohoto prohlášení, byla vyvozena na základě běžných konvencí z přímo předcházejícího `typedef` v původní nativní zdrojového kódu. Ověřte, že název odvozené správné jako touto konvencí je nejednoznačný.|
 |ConstantsInterfaceAssociation|Neexistuje způsob ověření fool k určení, které rozhraní jazyka Objective-C může být přidružený extern deklarace proměnné. Tyto instance jsou svázané s jako `[Field]` vlastnosti částečné rozhraní do téměř podle konkrétní rozhraní k vytváření intuitivnější rozhraní API, může být odstranění konstanty rozhraní úplně.|

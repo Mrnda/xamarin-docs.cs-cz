@@ -195,7 +195,7 @@
 ##### [Dědičnost stylů](user-interface/styles/xaml/inheritance.md)
 ##### [Dynamické styly](user-interface/styles/xaml/dynamic.md)
 ##### [Styly zařízení](user-interface/styles/xaml/device.md)
-#### [Použití šablon stylů CSS u aplikací Xamarin.Forms](user-interface/styles/css/index.md)
+#### [Práce se styly Xamarin.Forms aplikací pomocí stylů CSS (Cascading Style)](user-interface/styles/css/index.md)
 ### [TableView](user-interface/tableview.md)
 ### [Text](user-interface/text/index.md)
 #### [Popisek](user-interface/text/label.md)

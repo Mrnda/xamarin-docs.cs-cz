@@ -1,19 +1,20 @@
 ---
-title: Hledání se webové značek
-description: Přidání webové vyhledávání výsledky, které můžete propojit zpět do vaší aplikace.
+title: Hledání se webové značek v Xamarin.iOS
+description: Tento dokument popisuje postup vytvoření výsledky hledání založené na webu, které odkaz zpět do aplikace pro Xamarin.iOS. Popisuje, jak povolit webového obsahu indexování, která vaše aplikace Web zjistitelný pomocí inteligentní aplikace hlaviček, universal odkazy a další.
 ms.prod: xamarin
 ms.assetid: 876315BA-2EF9-4275-AE33-A3A494BBF7FD
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: bc3446419ef0e469f7184d60fe8876cd2e5da520
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 438a65de3eb78f849493e3478bce5522a325d0cd
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787991"
 ---
-# <a name="search-with-web-markup"></a>Hledání se webové značek
+# <a name="search-with-web-markup-in-xamarinios"></a>Hledání se webové značek v Xamarin.iOS
 
 Pro aplikace, které poskytují přístup k obsahu prostřednictvím webového serveru (ne jenom z aplikace), webový obsah může být označena speciální odkazy, které bude procházen společností Apple a poskytují přímé propojení aplikace na zařízení uživatele iOS 9.
 

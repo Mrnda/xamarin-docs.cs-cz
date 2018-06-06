@@ -1,20 +1,19 @@
 ---
 title: Řešení potíží s profileru Xamarin
-description: Řešení potíží s Xamarin profileru
+description: Tento dokument obsahuje informace o odstraňování potíží související s Xamarin profileru. Popisuje problémy související s protokolování a diagnostiky, integrovaného vývojového prostředí a další témata.
 ms.prod: xamarin
 ms.assetid: 0060E9D1-C003-4E4C-ADE8-B406978FE891
 author: topgenorth
 ms.author: toopge
 ms.date: 10/27/2017
-ms.openlocfilehash: 9e2f9a35f37513ce0cb785f2bd922aeccf42dd8e
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 247a18cf7f645ea90d100cb3f4900f30ac7754cc
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793848"
 ---
 # <a name="xamarin-profiler-troubleshooting"></a>Řešení potíží s profileru Xamarin
-
-_Řešení potíží s Xamarin profileru_
 
 ## <a name="logging-and-diagnostics"></a>Protokolování a diagnostiky
 
@@ -25,6 +24,7 @@ Xamarin tým může pomoct sledovat problémy, pokud nám poskytnete informace, 
 - **.Mlpd** generován pro relace profilování (viz níže).
 
 ### <a name="getting-log-outputs"></a>Získávání výstupy protokolu
+
 V systému Mac protokoly jsou ukládány do `~/Library/Logs/Xamarin.Profiler/Profiler.<date>.log`.
 
 V systému Windows, ty se uloží do `%appdata%Local//Xamarin/Log/Xamarin.Profiler/Profiler.<date>.log` uveďte nejnovější protokolu vždy, když odešlete problém.
@@ -49,7 +49,6 @@ Přidáváme další protokolování, jak jsme přejít, tak, aby tento výstup 
 
 ![](troubleshooting-images/image17-vs.png "Uložení souboru .mlpd v sadě Visual Studio")
 
-
 Je důležité si uvědomit, že **.mlpd** obsahovat velké množství informací a velikost souboru bude velké.
 
 ## <a name="troubleshooting"></a>Poradce při potížích
@@ -70,7 +69,6 @@ Zkontrolujte následující nastavení a tento problém vyřešili:
 - Ujistěte se, že jste přihlášeni v a správně ověřen.
 - [Visual Studio] Je třeba použít [Visual Studio Enterprise](https://www.visualstudio.com/vs/enterprise/) a mít platnou licenci Enterprise.
 
-
 #### <a name="i-get-an-error-when-i-try-to-launch-the-profiler"></a>Dojde k chybě při pokusu o spuštění profileru
 
 Pokud spustíte do tohoto pole chyby při použití profileru v sadě Visual Studio:
@@ -83,14 +81,11 @@ Je obvykle kvůli není schopen spustit simulátoru nebo emulátor. Zkuste a spu
 
 Pokud máte vlákno, které jste chtěli konkrétně sledování, je ideální pro pojmenování vlákno na velmi od svého vytvoření, a získat get `ThreadName` místo `0x0`. Například k nastavení názvu vlákna jako uživatelského rozhraní můžete použít následující kód:
 
-
 ```csharp
 RunOnUiThread (() => {
   Thread.CurrentThread.Name  = "UI";
 });
 ```
-
-
 
 ## <a name="related-links"></a>Související odkazy
 

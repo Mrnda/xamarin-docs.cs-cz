@@ -1,19 +1,20 @@
 ---
-title: Široké barev
-description: Tento článek se zabývá široké barvy a jeho použití v aplikaci Xamarin.iOS nebo Xamarin.Mac.
+title: Široké barev v Xamarin.iOS
+description: Tento dokument popisuje široké barvy a jeho použití v aplikaci Xamarin.iOS nebo Xamarin.Mac. Také poskytuje podrobný přehled mnoho důležité koncepty související barva například barevné prostory, kanálů a základní barvy.
 ms.prod: xamarin
 ms.assetid: 576E978A-F182-489A-83E4-D8CDC6890B24
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 5f56b396715159cbc1539ae9a7f30cc7ad2236bf
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 173919e0d5feda6ab7d34895cc834c5f36d737a8
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788778"
 ---
-# <a name="wide-color"></a>Široké barev
+# <a name="wide-color-in-xamarinios"></a>Široké barev v Xamarin.iOS
 
 _Tento článek se zabývá široké barvy a jeho použití v aplikaci Xamarin.iOS nebo Xamarin.Mac._
 

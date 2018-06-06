@@ -1,22 +1,22 @@
 ---
-title: Funkce platformy
-description: Klíč je součástí systému macOS platformy
+title: systému macOS funkcí platformy
+description: 'Tento dokument obsahuje odkazy na pokyny, které popisují důležité systému macOS a funkce Xamarin.Mac: OpenTK, scénářů, rozšíření a další.'
 ms.prod: xamarin
 ms.assetid: 37451F65-672A-4512-8DDD-06CCDE9E5A12
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/19/2016
-ms.openlocfilehash: 2bebc42cd3b5db7dba20066e90f294e621b1e4ac
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9e82db1c0f38d35c23a6cd0667bef49315ff86be
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792215"
 ---
-# <a name="platform-features"></a>Funkce platformy
+# <a name="macos-platform-features"></a>systému macOS funkcí platformy
 
 Dokumenty v této části popisují práci s funkcí systému macOS v aplikaci Xamarin.Mac klíč, specifické pro platformu.
-
 
 ## <a name="introduction-to-macos-sierramacplatformintroduction-to-macos-sierraindexmd"></a>[Úvod do macOS Sierry](~/mac/platform/introduction-to-macos-sierra/index.md)
 

@@ -1,18 +1,20 @@
 ---
-title: Práce s zadávání textu
+title: Práce s watchOS zadávání textu v Xamarinu
+description: Tento dokument popisuje watchOS zadávání textu v Xamarin. Popisuje PresentTextInputController metoda, ruční psaní, prostý text, emojis a diktování.
 ms.prod: xamarin
 ms.assetid: E9CDF1DE-4233-4C39-99A9-C0AA643D314D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 9dec6f754590abf6db8829f555376b423b7a7da7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: da668333b3549c92264af7d4da4941ac6b5bf865
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791381"
 ---
-# <a name="working-with-text-input"></a>Práce s zadávání textu
+# <a name="working-with-watchos-text-input-in-xamarin"></a>Práce s watchOS zadávání textu v Xamarinu
 
 Apple Watch neposkytuje klávesnice uživatelům zadejte text, ale podporuje některé sledovat friendly alternativy.
 

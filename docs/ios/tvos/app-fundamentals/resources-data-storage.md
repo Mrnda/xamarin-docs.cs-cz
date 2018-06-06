@@ -1,19 +1,20 @@
 ---
-title: Prostředky a úložiště dat
-description: Tento článek se zabývá práci s prostředky a úložiště dat v aplikaci Xamarin.tvOS.
+title: tvOS prostředky a úložiště dat v Xamarinu
+description: Tento článek popisuje, jak pracovat s prostředků a úložiště dat v tvOS aplikace vytvořené s nástroji Xamarin. Popisuje prostředky úložiště a na vyžádání dat serveru služby iCloud.
 ms.prod: xamarin
 ms.assetid: C56B5046-D2C0-4B63-9CE0-ADAA0EFD368A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 8103dcc1c2e1e8c2375a86d51580b1ea3fcce432
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: aa14ac08763a48b5f4f9a9522e8b10c652e513c4
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788833"
 ---
-# <a name="resources-and-data-storage"></a>Prostředky a úložiště dat
+# <a name="tvos-resources-and-data-storage-in-xamarin"></a>tvOS prostředky a úložiště dat v Xamarinu
 
 _Tento článek se zabývá práci s prostředky a úložiště dat v aplikaci Xamarin.tvOS._
 

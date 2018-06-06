@@ -1,20 +1,19 @@
 ---
 title: Apple platforma (iOS a Mac)
-description: V této části nabídneme strategie sdílet kód mezi Xamarin.iOS a Xamarin.Mac projekty.
+description: 'Tento dokument popisuje různé témata týkající se vývoje Xamarin.iOS a Xamarin.Mac: kód sdílení unifikované API, vazba jazyka Objective-C knihovny, nativní odkazy, nativní typy a další.'
 ms.prod: xamarin
 ms.assetid: 67246203-D78E-4DCC-9E55-7D3D93968E54
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 3c01ff4af699dd0374729b638470d1ef34aa7022
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: b40758fa562e57415cd3c0818763ef0a7ce5dcca
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781530"
 ---
 # <a name="apple-platform-ios-and-mac"></a>Apple platforma (iOS a Mac)
-
-_V této části nabídneme strategie sdílet kód mezi Xamarin.iOS a Xamarin.Mac projekty._
 
 ## <a name="code-sharing"></a>Sdílení kódu
 
@@ -48,8 +47,6 @@ Xamarin umožňuje uvést nativní knihovny do svých aplikací s vazbami. Tato 
 
 ## <a name="native-referencesnative-referencesmd"></a>[Nativní odkazy](native-references.md)
 
-
-
 ##  <a name="macios-native-typesnativetypesmd"></a>[Mac/iOS nativních typech](nativetypes.md)
 
 Pro podporu 32 a 64bitová verze kódu transparentně z jazyka C# a F #, Představujeme nové datové typy.   Informace o nich zde.
@@ -62,7 +59,6 @@ Co potřebujete vědět o podporu 32 až 64 bitové aplikace.
 
 Tento článek popisuje použití nové iOS jednotné rozhraní API nativních typech (`nint`, `nuint`, `nfloat`) v aplikaci a platformy, kde je kód sdílet s jiným systémem než iOS zařízení, třeba na Android nebo operační systémy Windows Phone.
 Poskytuje přehled o při by měl použít nativní typy a poskytuje několik řešení případech, kdy nový typ musí být použita s kódem napříč platformami.
-
 
 ## <a name="httpclient-stack-and-ssltls-implementation-selectorhttp-stackmd"></a>[Selektor implementace zásobníku HttpClient a protokolu SSL/TLS](http-stack.md)
 

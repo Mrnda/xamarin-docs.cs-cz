@@ -1,18 +1,20 @@
 ---
-title: Obecné podtřídy NSObject
+title: Obecné podtřídy NSObject v Xamarin.iOS
+description: Tento dokument popisuje, jak vytvořit vytvořit obecné podtřídy NSObject. Zjistí, co můžete nelze provést, popisuje statické registrátora a se podíváme na výkon.
 ms.prod: xamarin
 ms.assetid: BB99EBD7-308A-C865-1829-4DFFDB1BBCA4
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 89df751d74b9b54ae8138d2e1b24c61d82c3cac8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9caad9d4990225a0468be8ee4987eaa9fea0c118
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786480"
 ---
-# <a name="generic-subclasses-of-nsobject"></a>Obecné podtřídy NSObject
+# <a name="generic-subclasses-of-nsobject-in-xamarinios"></a>Obecné podtřídy NSObject v Xamarin.iOS
 
 ## <a name="using-generics-with-nsobjects"></a>Pomocí NSObjects obecné typy
 

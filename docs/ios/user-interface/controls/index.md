@@ -1,23 +1,22 @@
 ---
-title: Ovládací prvky
-description: Xamarin.iOS zpřístupní všechny objekty nativní uživatelského rozhraní, která je poskytovaných společností Apple. Budou přidány do aplikace Xamarin.iOS pomocí iOS Designer, na Xcode rozhraní tvůrce snadno nebo prostřednictvím kódu programu. Bez ohledu na to, kterou metodu zvolit Xamarin.iOS zpřístupní všechny vlastnosti objektu uživatelské rozhraní a metody v jazyce C#.
+title: Ovládacích prvků uživatelského rozhraní v Xamarin.iOS
+description: Tento dokument obsahuje odkazy na příručky, které popisují různých iOS ovládacích prvků uživatelského rozhraní pro Xamarin.iOS vývojáře k dispozici. Odkazovaný obsah popisuje výstrahy, tlačítka, zobrazení kolekcí, bitové kopie, ruční ovládací prvky, mapy, popisky, výběr, výběr data a další.
 ms.prod: xamarin
 ms.assetid: C00EA232-ADCC-42AD-BF86-B526414A21C6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 82b2998319d4e78ee4f58a6d024032a509724537
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 477cb4e479224b9e795f3460e0f59e0aa2038630
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790039"
 ---
-# <a name="controls"></a>Ovládací prvky
+# <a name="user-interface-controls-in-xamarinios"></a>Ovládacích prvků uživatelského rozhraní v Xamarin.iOS
 
-_Xamarin.iOS zpřístupní všechny objekty nativní uživatelského rozhraní, která je poskytovaných společností Apple. Budou přidány do aplikace Xamarin.iOS pomocí iOS Designer, na Xcode rozhraní tvůrce snadno nebo prostřednictvím kódu programu. Bez ohledu na to, kterou metodu zvolit Xamarin.iOS zpřístupní všechny vlastnosti objektu uživatelské rozhraní a metody v jazyce C#._
-
-Tento dokument vás seznámí některé z nejběžnějších ovládacích prvků uživatelského rozhraní iOS a způsob jejich použití.
+Tento dokument uvádí některé z nejběžnějších ovládacích prvků uživatelského rozhraní iOS a způsob jejich použití.
 
 ## <a name="alertsalertsmd"></a>[Upozornění](alerts.md)
 

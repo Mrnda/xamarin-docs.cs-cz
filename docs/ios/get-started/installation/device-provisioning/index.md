@@ -1,21 +1,20 @@
 ---
-title: Zřizování zařízení
-description: Po úspěšné instalaci Xamarin.iOS na další krok v vývoj pro iOS je ke zřízení zařízení s iOS. Tato příručka se prozkoumejte vyžádání vývoj certifikátů a profilů, práce s aplikační služby a nasazení aplikace na zařízení.
+title: Zřizování pro Xamarin.iOS
+description: Tento dokument popisuje, jak zřídit zařízení, aby se může použít k testování aplikace. Také popisuje, jak aplikaci nakonfigurovat tak, aby mohl používat funkce, jako jsou nabízená oznámení.
 ms.prod: xamarin
 ms.assetid: CACA5236-3C90-F6DF-FD4E-0797B61670CE
 ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
-ms.openlocfilehash: 5265ee366c7e3c0e79e54d320d3d6eb57c2fd92d
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 9721cc40319f0b4d6f0869eabccb84256122fb02
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785785"
 ---
-# <a name="device-provisioning"></a>Zřizování zařízení
-
-_Po úspěšné instalaci Xamarin.iOS na další krok v vývoj pro iOS je ke zřízení zařízení s iOS. Tato příručka se prozkoumejte vyžádání vývoj certifikátů a profilů, práce s aplikační služby a nasazení aplikace na zařízení._
+# <a name="device-provisioning-for-xamarinios"></a>Zřizování pro Xamarin.iOS
 
 Při vývoji aplikace pro Xamarin.iOS je nezbytné pro testování pomocí nasazeného aplikaci fyzické zařízení, kromě v simulátoru. Pouze zařízení chyb a problémů s výkonem můžete transpire při spuštění v zařízení, z důvodu omezení hardwaru, jako je například paměť nebo připojením k síti. K testování na fyzické zařízení, musí být zařízení *zřízený*, a Apple musí být informováni, že zařízení se použije pro testování.
 

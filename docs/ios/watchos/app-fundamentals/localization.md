@@ -1,18 +1,19 @@
 ---
-title: Práce s lokalizace
-description: Přizpůsobení aplikace watchOS více jazyků
+title: Práce s watchOS lokalizace v Xamarinu
+description: Tento dokument popisuje, jak k lokalizaci watchOS aplikace vytvořené s funkcí Xamarin. Popisuje, aplikace, sledování, sledovat rozšíření řetězců v kódu scénáře text, testování a další.
 ms.prod: xamarin
 ms.assetid: 55834877-757B-4860-AF2F-933A948BE38D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: c765005491f55a1bdcadb1bc5aea97f693dc4570
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4f158f1c8699ad5090eb7fade8af8918c8881d95
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790776"
 ---
-# <a name="working-with-localization"></a>Práce s lokalizace
+# <a name="working-with-watchos-localization-in-xamarin"></a>Práce s watchOS lokalizace v Xamarinu
 
 _Přizpůsobení aplikace watchOS více jazyků_
 

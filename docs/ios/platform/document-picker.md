@@ -1,20 +1,19 @@
 ---
-title: Výběr dokumentu.
-description: Řadiče zobrazení dokumentu výběr udělí uživatelům přístup k souborům mimo izolovaného prostoru aplikace. Je jednoduchý mechanismus pro sdílení dokumentů mezi aplikacemi. Umožňuje také složitějších pracovních postupů, protože uživatelé mohou upravovat jednotlivý dokument s více aplikacemi. Tento článek obsahuje úvod do aplikace pro Xamarin.iOS pomocí nástroje pro výběr dokumentu a změny v dokumentech Icloudu nutné ho podporují.
+title: Výběr dokumentu v Xamarin.iOS
+description: Tento dokument popisuje iOS výběr dokumentu a způsobu jeho použití v Xamarin.iOS. Podívejte se na serveru služby iCloud, dokumentů, běžné instalační kód, dokumentu poskytovatele rozšíření a další trvá.
 ms.prod: xamarin
 ms.assetid: 89539D79-BC6E-4A3E-AEC6-69D9A6CC6818
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: d9b98611c7d269e590ce6fe2ce0270ef71dacf1e
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: efa1b589ad4afe26d8b87c3db1777660b3e27be6
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786883"
 ---
-# <a name="document-picker"></a>Výběr dokumentu.
-
-_Řadiče zobrazení dokumentu výběr udělí uživatelům přístup k souborům mimo izolovaného prostoru aplikace. Je jednoduchý mechanismus pro sdílení dokumentů mezi aplikacemi. Umožňuje také složitějších pracovních postupů, protože uživatelé mohou upravovat jednotlivý dokument s více aplikacemi. Tento článek obsahuje úvod do aplikace pro Xamarin.iOS pomocí nástroje pro výběr dokumentu a změny v dokumentech Icloudu nutné ho podporují._
+# <a name="document-picker-in-xamarinios"></a>Výběr dokumentu v Xamarin.iOS
 
 Nástroje pro výběr dokumentu umožňuje dokumenty ke sdílení mezi aplikacemi. Tyto dokumenty můžou být uložená v Icloudu nebo v adresáři jinou aplikaci. Dokumenty jsou sdíleny prostřednictvím sadu [dokumentu poskytovatele rozšíření](~/ios/platform/extensions.md) uživatel nainstaloval na svém zařízení. 
 

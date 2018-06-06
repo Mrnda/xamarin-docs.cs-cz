@@ -1,32 +1,32 @@
 ---
-title: TextKit
-description: Rozhraní API Text Kit nabízí výkonné text rozložení a vykreslování funkce Xamarin.iOS.
+title: TextKit v Xamarin.iOS
+description: Tento dokument popisuje, jak používat TextKit v Xamarin.iOS. TextKit poskytuje výkonné text rozložení a vykreslování funkce.
 ms.prod: xamarin
 ms.assetid: 1D0477E8-CD1E-48A9-B7C8-7CA892069EFF
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 78ca0d9505c9f56dc6476bd04dab560a70b2c4b0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ac80d1d07f5649d377dd6fdefcb4911ba9ec2dcb
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788332"
 ---
-# <a name="text-kit"></a>Text Kit
+# <a name="textkit-in-xamarinios"></a>TextKit v Xamarin.iOS
 
-Text Kit je nové rozhraní API, které nabízí výkonné text rozložení a vykreslování funkce. Je postavená na nízkou úroveň základní Text framework, ale je mnohem jednodušší než základní Text.
+TextKit je nové rozhraní API, které nabízí výkonné text rozložení a vykreslování funkce. Je postavená na rozhraní nízké úrovně základní Text, ale je mnohem jednodušší než základní Text.
 
-Chcete-li k dispozici pro standardní ovládací prvky funkce Text Kit, byly několik ovládacích prvků textu iOS znovu implementovaná používat Kit Text, včetně:
+Chcete-li k dispozici pro standardní ovládací prvky funkce TextKit, několik ovládacích prvků textu iOS byla znovu implementovaná používat TextKit, včetně:
 
 -  UITextView
 -  UITextField
 -  UILabel
 
-
 ## <a name="architecture"></a>Architektura
 
-Text Kit poskytuje Vrstvená architektura, která odděluje úložiště text z rozložení a zobrazení, včetně následující třídy:
+TextKit poskytuje Vrstvená architektura, která odděluje úložiště text z rozložení a zobrazení, včetně následující třídy:
 
 -  `NSTextContainer` – Poskytuje systém souřadnic a geometry, který se používá k rozložení textu.
 -  `NSLayoutManager` – Rozložen text vypnutím text do glyfů. 
@@ -37,7 +37,7 @@ Tyto tři třídy se použijí pro zobrazení, který vykreslí text. Integrovan
 
 Následující obrázek ukazuje této architektury:
 
- ![](textkit-images/textkitarch.png "Následující obrázek ukazuje architekturu Text Kit")
+ ![](textkit-images/textkitarch.png "Následující obrázek ukazuje architekturu TextKit")
 
 ## <a name="text-storage-and-attributes"></a>Text úložiště a atributy
 
@@ -56,7 +56,7 @@ Po `EndEditing` je volána, změny se odesílají do Správce rozložení, kter�
 
 ## <a name="layout-with-exclusion-path"></a>Rozložení s Cesta vyloučení
 
-Text Kit také podporuje rozložení a umožňuje komplexní scénáře, jako je více sloupci a průchodu textu kolem zadané cesty volají *vyloučení cesty*. Vyloučení cesty se používají ke kontejneru text, který upravuje geometrie rozložení textu, způsobuje kolem zadané cesty toku textu.
+TextKit také podporuje rozložení a umožňuje komplexní scénáře, jako je více sloupci a průchodu textu kolem zadané cesty volají *vyloučení cesty*. Vyloučení cesty se používají ke kontejneru text, který upravuje geometrie rozložení textu, způsobuje kolem zadané cesty toku textu.
 
 Přidání cesta pro vyloučení vyžaduje, aby nastavení `ExclusionPaths` vlastnost rozložení správcem. Nastavení této vlastnosti způsobí, že Správce rozložení a zrušit platnost rozložení textu toku textu kolem cesta vyloučení.
 
@@ -139,10 +139,10 @@ public class ExclusionPathView : UITextView
 }
 ```
 
-Tento kód přidává podporu pro vykreslení zobrazení textu pomocí základní grafické prvky. Vzhledem k tomu `UITextView` třída je teď vytvořená pro použití Text Kit pro jeho vykreslování textu a rozložení, může použít všechny funkce Kit Text, například nastavení vyloučení cesty.
+Tento kód přidává podporu pro vykreslení zobrazení textu pomocí základní grafické prvky. Vzhledem k tomu `UITextView` třída je teď vytvořená pro použití TextKit pro jeho vykreslování textu a rozložení, může použít všechny funkce TextKit, jako je třeba nastavení vyloučení cesty.
 
 > [!IMPORTANT]
-> Tento příklad podtřídy `UITextView` přidat touch kreslení podpory. Vytvoření podtřídy `UITextView` není nutné funkce Text Kit.
+> Tento příklad podtřídy `UITextView` přidat touch kreslení podpory. Vytvoření podtřídy `UITextView` není nutné funkce TextKit.
 
 
 

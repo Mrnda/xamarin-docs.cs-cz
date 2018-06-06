@@ -1,21 +1,20 @@
 ---
-title: Poradce při potížích
-description: Tento článek obsahuje několik tipy k řešení potíží pro práci s iOS 11 v aplikacích pro Xamarin.iOS.
+title: Řešení potíží s iOS 11 aplikace vytvořené s Xamarin.iOS
+description: Tento článek popisuje prostředky, které lze použít pro řešení potíží při vývoji aplikace Xamarin.iOS. Popisuje vytváření sestav chyb, poznámky k verzi, blogu Xamarin verze a možnosti odborné pomoci.
 ms.prod: xamarin
 ms.assetid: A90493BF-5298-4A5D-A5D5-8A8FCD078FF7
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/31/2017
-ms.openlocfilehash: 181f0a1c66d05e0adf2b682f2df971f5d7d67dfb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ace24cae139c97a8735558c82e22143adbc9c064
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787543"
 ---
-# <a name="troubleshooting"></a>Poradce při potížích
-
-_Tento článek obsahuje několik tipy k řešení potíží pro práci s iOS 11 v aplikacích pro Xamarin.iOS._
+# <a name="troubleshooting-ios-11-apps-built-with-xamarinios"></a>Řešení potíží s iOS 11 aplikace vytvořené s Xamarin.iOS
 
 Následující části uvádějí některé známé problémy, ke kterým dochází při používání iOS 11 s Xamarin.iOS a pokud je k dispozici řešení těchto problémů:
 
@@ -42,7 +41,7 @@ Známé problémy, řešení a opravy chyb s konkrétními verzemi Xamarin.iOS, 
 
 <a name="Xamarin-Releases-Blog" />
 
-## <a name="xamarin-releases-blog"></a>Xamarin Releases Blog
+## <a name="xamarin-releases-blog"></a>Blog verze Xamarin
 
 [Xamarin verzích Blog](https://releases.xamarin.com/) je jiný zdroj informací o nejnovější Alpha a beta verzi sestavení Xamarin.iOS. Zobrazí se seznam oprav, které jsou součástí dané verze a známé problémy, které neexistuje.
 

@@ -1,5 +1,5 @@
 ---
-title: Práce s možností
+title: Práce s funkcemi v Xamarin.iOS
 description: Přidání funkcí do aplikace často vyžaduje další nastavení zřizování. Tato příručka vysvětluje potřebné pro všechny možnosti instalace.
 ms.prod: xamarin
 ms.assetid: 98A4676F-992B-4593-8D38-6EEB2EB0801C
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
-ms.openlocfilehash: e6fc3d38fef7c7c3204d1413911ddfa9a486c67c
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: c897b1f5fbdf950e6858d7b73ebed60049f60e8e
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785554"
 ---
-# <a name="working-with-capabilities"></a>Práce s možností
+# <a name="working-with-capabilities-in-xamarinios"></a>Práce s funkcemi v Xamarin.iOS
 
 _Přidání funkcí do aplikace často vyžaduje další nastavení zřizování. Tato příručka vysvětluje potřebné pro všechny možnosti instalace._
 
@@ -21,7 +22,7 @@ Apple poskytuje vývojářům _možnosti_, často označovaný jako _aplikační
 Tyto funkce lze použít s projekty Xamarin.iOS. Úplný seznam služeb je popsán dále:
 
 * Skupiny aplikací
-* Přidružené domén
+* Přidružené domény
 * Ochrana dat
 * Herní Centrum
 * HealthKit
@@ -31,7 +32,7 @@ Tyto funkce lze použít s projekty Xamarin.iOS. Úplný seznam služeb je pops�
 * Nákupy v aplikaci
 * Zvuk mezi aplikacemi
 * Platím Apple
-* Peněženka
+* Wallet
 * Nabízená oznámení
 * Osobní VPN
 * Siri

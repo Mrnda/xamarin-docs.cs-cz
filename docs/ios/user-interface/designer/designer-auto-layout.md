@@ -1,21 +1,20 @@
 ---
 title: Automatické rozložení pomocí návrháře Xamarin pro iOS
-description: Tento průvodce představuje iOS automatického rozložení a nový pracovní postup omezení, které jsou k dispozici v Návrháři Xamarin pro iOS.
+description: Tento průvodce uvádí iOS automatického rozložení a popisuje, jak používat návrháře Xamarin pro iOS můžete vytvářet a upravovat rozložení pomocí omezení. Popisuje také omezení změny v kódu animace změny omezení a další.
 ms.prod: xamarin
 ms.assetid: CAC7A715-55BB-45E2-BB6D-2168D36D428F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 2023483f817c365d2cfad6945b281d630317693b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 876bf3de19d2bcce7d951facc92d5b05a928cd38
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790198"
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>Automatické rozložení pomocí návrháře Xamarin pro iOS
-
-_Tento průvodce představuje iOS automatického rozložení a nový pracovní postup omezení, které jsou k dispozici v Návrháři Xamarin pro iOS._
 
 Automatické rozložení (také nazývané "adaptivní rozložení") je přizpůsobivý návrh přístup. Na rozdíl od přechodném rozložení systému, kde každý element umístění je pevně zakódovaná na bod na obrazovce, je automaticky rozložení o *vztahy* -pozice elementů relativně k další prvky na návrhovou plochu. Jádrem automatického rozložení je představu o omezení nebo pravidla, která definují umístění element nebo sadu elementů v kontextu jiných prvků na obrazovce. Protože elementy nejsou vázaný na konkrétní pozici na obrazovce, omezení pomůže vytvořit adaptivní rozložení, který bude vypadat dobře v různých obrazovek velikosti a orientace zařízení.
 

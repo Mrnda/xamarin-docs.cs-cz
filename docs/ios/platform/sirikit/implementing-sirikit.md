@@ -1,23 +1,22 @@
 ---
-title: Implementace SiriKit
-description: Tento článek popisuje kroky nutné k implementaci SiriKit podpory v aplikacích pro Xamarin.iOS.
+title: Implementace SiriKit v Xamarin.iOS
+description: Tento dokument popisuje kroky nutné k implementaci SiriKit podpory v aplikacích pro Xamarin.iOS. Popisuje rozšíření tříd Intent a rozšíření tříd Intent uživatelského rozhraní.
 ms.prod: xamarin
 ms.assetid: 20FFB981-EB10-48BA-BF79-40F37F0291EB
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/03/2018
-ms.openlocfilehash: a4f38e93cae3c9577a0b1e32067da2cfd2e4796d
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: f0e5e05828305bd3656d70105b6e2ad06f9fdc81
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788846"
 ---
-# <a name="implementing-sirikit"></a>Implementace SiriKit
+# <a name="implementing-sirikit-in-xamarinios"></a>Implementace SiriKit v Xamarin.iOS
 
 _Tento článek popisuje kroky nutné k implementaci SiriKit podpory v aplikacích pro Xamarin.iOS._
-
-
 
 Nové iOS 10 SiriKit povoluje aplikace Xamarin.iOS k poskytování služeb, které jsou dostupné pro uživatele na zařízení s iOS pomocí Siri a aplikace mapy. Tento článek popisuje kroky nutné k implementaci SiriKit podpory v aplikace pro Xamarin.iOS přidáním požadované rozšíření tříd Intent, rozšíření tříd Intent uživatelského rozhraní a termínů.
 

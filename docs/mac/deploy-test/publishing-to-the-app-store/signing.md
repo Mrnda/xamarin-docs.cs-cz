@@ -1,19 +1,20 @@
 ---
-title: Přihlášení s ID vývojáře
-description: Tento průvodce vás provede podepisování aplikace Xamarin.Mac s ID vývojáře pro publikaci.
+title: Podepisování aplikací Xamarin.Mac s ID vývojáře
+description: Tento dokument popisuje, jak podepsat aplikaci Xamarin.Mac s ID vývojáře tak, aby mohou být distribuovány mimo Mac App Storu. Popisuje možnosti podepisování a vytváření kódu.
 ms.prod: xamarin
 ms.assetid: cf7b733b-e08f-4f56-a233-264b29ee4c97
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 1a2726ec46ac51ae9848b318798afba74183360c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 130766ef7f9ab8e311db97a7209f4ec62a2ceee4
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792300"
 ---
-# <a name="sign-with-developer-id"></a>Přihlášení s ID vývojáře
+# <a name="signing-xamarinmac-apps-with-a-developer-id"></a>Podepisování aplikací Xamarin.Mac s ID vývojáře
 
 Pokud vývojář plánuje distribuovat aplikace přímo uživatelům systému macOS, Apple doporučuje se podepsání kódu ji s jejich ID vývojáře, které lze nainstalovat v systému macOS systémech s **těchto pravidel** povolena. Pokud aplikace není podepsaný, **těchto pravidel** se uživatelům zabrání v instalaci se zpráva s upozorněním (se mohou obejít tím omezíte tím, že podržíte stisknutou klávesu řízení při spouštění).
 

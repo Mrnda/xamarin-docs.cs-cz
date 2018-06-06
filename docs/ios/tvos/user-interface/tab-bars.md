@@ -1,21 +1,20 @@
 ---
-title: Práce s řadiče posuvníku
-description: Tento článek se zabývá navrhování a práce s karta panelu řadiče uvnitř Xamarin.tvOS aplikace.
+title: Práce s tvOS kartě panelu řadičů v Xamarinu
+description: Tento dokument popisuje, jak pracovat s karta panelu řadičů v tvOS aplikace vytvořené s nástroji Xamarin. Poskytuje vysokou úroveň přes zobrazení Karta řádky a popisuje položky panelu kartě, scénáře integrace a karta panelu položky.
 ms.prod: xamarin
 ms.assetid: 99A2D7C6-0324-4DE5-B6E9-D39D0BAD8370
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 1536e37830f3b2a1e2a83c7bf5039909062d092b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ea782fc8d6a2ccef2cdd687ec467be6d49793fc0
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789317"
 ---
-# <a name="working-with-tab-bar-controller"></a>Práce s řadiče posuvníku
-
-_Tento článek se zabývá navrhování a práce s karta panelu řadiče uvnitř Xamarin.tvOS aplikace._
+# <a name="working-with-tvos-tab-bar-controllers-in-xamarin"></a>Práce s tvOS kartě panelu řadičů v Xamarinu
 
 Pro mnoho typů aplikací tvOS primární navigační prezentována jako pás karet spuštěna v horní části obrazovky. Uživatel swipes napříč seznamu možných kategorií a oblast obsahu níže změny podle uživatele výběru doleva a doprava.
 
@@ -136,7 +135,7 @@ TabBar.Items [2].BadgeValue = "10";
 
 Které byste mohli vytvořit při spuštění následující výsledky:
 
-[![](tab-bars-images/tab06.png "Položku panelu karta s oznámení "BADGE"")](tab-bars-images/tab06.png#lightbox)
+[![](tab-bars-images/tab06.png "Položku panelu karta s oznámení \"BADGE\"")](tab-bars-images/tab06.png#lightbox)
 
 Použití `Title` vlastnost `UITabBarItem` Chcete-li změnit název a `Image` vlastnosti chcete změnit ikonu.
 

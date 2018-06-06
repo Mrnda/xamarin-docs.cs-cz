@@ -1,18 +1,18 @@
 ---
-title: Xamarin.Essentials schránky
-description: Třída schránky umožňuje kopírování a vložení textu do schránky systému mezi aplikacemi.
+title: 'Xamarin.Essentials: schránky'
+description: Tento dokument popisuje třídy schránky v Xamarin.Essentials, která vám umožní zkopírovat a vložit text do schránky systému mezi aplikacemi.
 ms.assetid: C52AE99A-0FB3-425D-9106-3DA5777FEFA0
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 10100d1c65946780b77dbb022822bdd73f45a84a
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.openlocfilehash: 41b15b480fa23bd49667b68e904043e4f1a95732
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732694"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782356"
 ---
-# <a name="xamarinessentials-clipboard"></a>Xamarin.Essentials schránky
+# <a name="xamarinessentials-clipboard"></a>Xamarin.Essentials: schránky
 
 ![Předběžné verze NuGet](~/media/shared/pre-release.png)
 

@@ -1,21 +1,20 @@
 ---
-title: Práce s ikony a obrázků
-description: Tento článek se zabývá navrhování a práce s ikony a bitové kopie v rámci Xamarin.tvOS aplikace.
+title: Práce s tvOS ikony a obrázků v Xamarinu
+description: Tento dokument popisuje, jak pracovat s ikony a obrázků v tvOS aplikace vytvořené s nástroji Xamarin. Popisuje spuštění bitové kopie, vrstvený bitové kopie, ikona aplikace a další.
 ms.prod: xamarin
 ms.assetid: A2DA4347-0563-4C72-A8D7-5B9DE9E28712
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: c888ecf3d7e0f21734f2b89176eed56bf778dbf9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 59cbc53acf3ab7da12826b9d3cffb821631a0500
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788794"
 ---
-# <a name="working-with-icons-and-images"></a>Práce s ikony a obrázků
-
-_Tento článek se zabývá navrhování a práce s ikony a bitové kopie v rámci Xamarin.tvOS aplikace._
+# <a name="working-with-tvos-icons-and-images-in-xamarin"></a>Práce s tvOS ikony a obrázků v Xamarinu
 
 Vytváření poutavé ikony a obrazů jsou důležitou součástí vývoj dokonalé uživatelské prostředí pro aplikace pro Apple TV. Tato příručka popisuje kroky potřebné k vytvoření a zahrnutí nezbytné grafické prostředky pro vaše aplikace Xamarin.tvOS:
 

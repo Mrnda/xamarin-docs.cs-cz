@@ -1,15 +1,16 @@
 ---
 title: Známé problémy a řešení
+description: Tento dokument popisuje známé problémy a řešení pro sešity Xamarin. Popisuje CultureInfo problémy, problémy JSON a další.
 ms.prod: xamarin
 ms.assetid: 495958BA-C9C2-4910-9BAD-F48A425208CF
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: a424b37840bd944302235221f2e0c6a478d4bab3
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.openlocfilehash: b6dc3b119d3e85369a71638f2519b2ef0c85446c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732957"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34794030"
 ---
 # <a name="known-issues--workarounds"></a>Známé problémy a řešení
 

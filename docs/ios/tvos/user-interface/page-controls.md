@@ -1,21 +1,20 @@
 ---
-title: Práce s ovládací prvek stránky
-description: Tento článek se zabývá navrhování a práce s ovládací prvek stránku uvnitř Xamarin.tvOS aplikace.
+title: Práce s tvOS ovládací prvky stránky v Xamarinu
+description: Tento dokument popisuje, jak pracovat s ovládacími prvky tvOS stránky v aplikaci vytvořené s nástroji Xamarin. Poskytuje podrobný popis ovládací prvky stránky, popisuje, jak je nastavit v scénářů a hledá způsob reakce na události změny stránky.
 ms.prod: xamarin
 ms.assetid: 19198D46-7BBE-4D04-9BFA-7D1C5C9F9FC6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 1cb07c050aeb2ee72e34048baab991df2d5775d0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bf020f230afc2eb2a09d863424bd4eb56ea1bde6
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789155"
 ---
-# <a name="working-with-page-control"></a>Práce s ovládací prvek stránky
-
-_Tento článek se zabývá navrhování a práce s ovládací prvek stránku uvnitř Xamarin.tvOS aplikace._
+# <a name="working-with-tvos-page-controls-in-xamarin"></a>Práce s tvOS ovládací prvky stránky v Xamarinu
 
 Někdy je třeba zobrazit řadu stránky nebo bitové kopie v aplikaci Xamarin.tvOS. Ovládací prvek stránku byla navržená tak, aby jasně zobrazení stránky, které je uživatel na mimo maximální počet stránek. Ovládací prvek stránky se zobrazuje řada teček proti tmavý, oval ve tvaru pozadí. Na aktuální stránce se zobrazí vyplněný bod, všechny ostatní stránky zobrazit jako dutý tečky. Ovládací prvek stránky bude oříznutí vnější většina tečky, pokud jsou moc, aby se vešla do jeho pozadí oblasti.
 
@@ -72,9 +71,6 @@ Nejjednodušší způsob, jak pracovat s ovládacími prvky stránky v aplikaci 
 
 > [!IMPORTANT]
 > Když je možné přiřadit události, jako `TouchUpInside` element uživatelského rozhraní v iOS návrháře (například UIButton), se nebude nikdy volat protože Apple TV nemá touch obrazovky nebo podporují touch události. Je třeba použít `Primary Action` události při vytváření obslužných rutin událostí pro tvOS prvky uživatelského rozhraní.
-
-
-
 
 Upravit View Controller (například `ViewController.cs`) souboru a přidat kód pro zpracování na stránkách mění. Příklad:
 

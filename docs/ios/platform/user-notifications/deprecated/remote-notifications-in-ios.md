@@ -1,21 +1,20 @@
 ---
 title: Nabízená oznámení v iOS
-description: Tato část se bude zabývat nabízená oznámení v iOS. Zavádí službu Apple Push brány oznámení a roli, které splňuje při publikování oznámení pro aplikace iOS. Se vysvětluje, jak vytvořit potřeba povolte nabízená oznámení a popisují certifikáty zabezpečení. Nakonec bude v této části popisují některé housekeeping úlohy, které můžete sledovat mobilní zařízení klientů musí provést aplikační servery.
+description: Tento dokument popisuje, jak pracovat s nabízená oznámení v iOS 9 a starší. Popisuje, certifikáty, registrace oznámení brány služby APNS (Apple Push) a další.
 ms.prod: xamarin
 ms.assetid: 64B3BE6A-A3E2-4B1B-95ED-02D27A8FDAAC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 3a86ce5e61576faec41b5fcddf899d731d2cc57a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7bb2a250b9d3cc0c8df02f432330f9fe1dc58f94
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788664"
 ---
 # <a name="push-notifications-in-ios"></a>Nabízená oznámení v iOS
-
-_Tato část se bude zabývat nabízená oznámení v iOS. Zavádí službu Apple Push brány oznámení a roli, které splňuje při publikování oznámení pro aplikace iOS. Se vysvětluje, jak vytvořit potřeba povolte nabízená oznámení a popisují certifikáty zabezpečení. Nakonec bude v této části popisují některé housekeeping úlohy, které můžete sledovat mobilní zařízení klientů musí provést aplikační servery._
 
 > [!IMPORTANT]
 > Informace v této části se vztahují na iOS 9 a předchozí, ho byla ponechána zde k podpoře starší verze iOS. IOS 10 a novější, najdete v tématu [uživatele oznámení Framework – průvodce](~/ios/platform/user-notifications/index.md) pro podporu místní i vzdálené oznámení na zařízení s iOS.

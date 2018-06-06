@@ -1,19 +1,20 @@
 ---
-title: Touch v iOS
+title: Touch události a gest v Xamarin.iOS
+description: Tento dokument popisuje, jak pracovat s události dotykového ovládání, více touch, gesta, více gesta a vlastních gest v aplikacích Xamarin.iOS.
 ms.prod: xamarin
 ms.assetid: DA666DC9-446E-4CD1-B5A0-C6FFBC7E53AD
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 9ed90a9c4ddcd398d834cb8c91553a57e7bd5ad8
-ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
+ms.openlocfilehash: 34073474ef3ef74f2fddbf487b3377224dc1aa3e
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34689538"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784586"
 ---
-# <a name="touch-in-ios"></a>Touch v iOS
+# <a name="touch-events-and-gestures-in-xamarinios"></a>Touch události a gest v Xamarin.iOS
 
 Je důležité pochopit touch události a touch rozhraní API v aplikaci iOS, jako jsou důležitá pro všechny fyzické interakce s zařízení. Všechny interakce touch zahrnují `UITouch` objektu. V tomto článku jsme se dozvíte, jak používat `UITouch` třídy a jejích rozhraní API pro podporu dotykového ovládání. Později jsme rozšíří na našem znalostní báze se dozvíte, jak pro podporu gesta.
 

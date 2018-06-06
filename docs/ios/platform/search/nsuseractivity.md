@@ -1,18 +1,20 @@
 ---
-title: Hledání s NSUserActivity
+title: Hledání se NSUserActivity v Xamarin.iOS
+description: Tento dokument popisuje index NSUserActivity, což s možností vyhledávání Spotlight a Safari. Popisuje, jak reagovat na výběr NSUserActivity ve výsledcích hledání.
 ms.prod: xamarin
 ms.assetid: 0B28B284-C7C9-4C0D-A782-D471FBBC4CAE
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 803fcce359bbe27ea19901afa766f5b7f4692e0c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4b053f66e9b6b7715cbe52c4e43d9db32db48f4c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788205"
 ---
-# <a name="search-with-nsuseractivity"></a>Hledání s NSUserActivity
+# <a name="search-with-nsuseractivity-in-xamarinios"></a>Hledání se NSUserActivity v Xamarin.iOS
 
 `NSUserActivity` byla zavedena v iOS 8 a slouží k poskytování dat pro aby Handoff.
 Umožňuje vytvořit aktivity v konkrétní části aplikace, který je pak možné předat do jiné instance aplikace spuštěné na zařízení iOS jiný. Přijímající zařízení poté můžete dál aktivity spustit na předchozích zařízení, výběr vpravo tam, kde uživatel přestali. Další informace o používání aby Handoff, najdete v tématu naše [Úvod k předání](~/ios/platform/handoff.md) dokumentaci.

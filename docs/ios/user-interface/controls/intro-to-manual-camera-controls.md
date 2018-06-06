@@ -1,21 +1,20 @@
 ---
-title: Ovládací prvky ruční fotoaparát
-description: Rozhraní AVFoundation Framework usnadňuje než někdy uživatelům trvat skvělé fotografie tím, že pro ovládací prvky ruční fotoaparát. Pomocí toto rozhraní, aplikace může trvat přímou kontrolu nad fotoaparát fokus, vyvážení bílé a nastavení ohrožení. Aplikace můžete také v závorkách ohrožení zachycení automaticky zachycení bitové kopie s různým nastavením expozice. V tomto článku bude trvat rychlý přehled používání ovládacích prvků, fotoaparát ruční v mobilní aplikaci jednoduché iOS 8.
+title: Ruční fotoaparát ovládacích prvků v Xamarin.iOS
+description: Tento dokument popisuje, jak lze použít rozhraní AVFoundation iOS s Xamarin.iOS povolit ruční ovládací prvky. Ovládací prvky ruční fotoaparát umožňují uživatelům aktivního ovládacího prvku, vyvážení bílé a nastavení ohrožení.
 ms.prod: xamarin
 ms.assetid: 56340225-5F3C-4BFC-9A79-61496D7FE5B5
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 8545dce1b9232e396c4c9e71ad5f20649eef2417
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a0f605a38117df87a03801c3b9d86b0b7361c232
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790822"
 ---
-# <a name="manual-camera-controls"></a>Ovládací prvky ruční fotoaparát
-
-_Rozhraní AVFoundation Framework usnadňuje než někdy uživatelům trvat skvělé fotografie tím, že pro ovládací prvky ruční fotoaparát. Pomocí toto rozhraní, aplikace může trvat přímou kontrolu nad fotoaparát fokus, vyvážení bílé a nastavení ohrožení. Aplikace můžete také v závorkách ohrožení zachycení automaticky zachycení bitové kopie s různým nastavením expozice. V tomto článku bude trvat rychlý přehled používání ovládacích prvků, fotoaparát ruční v mobilní aplikaci jednoduché iOS 8._
+# <a name="manual-camera-controls-in-xamarinios"></a>Ruční fotoaparát ovládacích prvků v Xamarin.iOS
 
 Ovládací prvky fotoaparát ruční poskytované `AVFoundation Framework` v iOS 8, povolení mobilní aplikace, abyste mohli plnou kontrolu nad fotoaparát zařízení s iOS. Tato přesné úrovni řízení lze vytvořit profesionální úrovni fotoaparát aplikace a poskytnout umělcem složení tím, že postupně je upravujte parametry fotoaparát při pořizování stále bitovou kopii nebo video.
 

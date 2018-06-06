@@ -1,19 +1,20 @@
 ---
-title: Výběr.
-description: Tento průvodce popisuje navrhování a práce s ovládacích prvků výběr v aplikaci pro Xamarin.iOS.
+title: Ovládací prvek výběru v Xamarin.iOS
+description: Tento dokument popisuje, jak navrhnout a pracovat s ovládací prvky pro výběr v aplikaci pro Xamarin.iOS. Popisuje, jak implementovat výběr v kódu a iOS Designer.
 ms.prod: xamarin
 ms.assetid: A2369EFC-285A-44DD-9E80-EC65BC3DF041
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/02/2017
-ms.openlocfilehash: e213124e870f1cca96a6078fd26bc7eeb1af55a1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7f46d354af86027d1e2656171c6595562d3555a6
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789909"
 ---
-# <a name="picker"></a>Výběr.
+# <a name="picker-control-in-xamarinios"></a>Ovládací prvek výběru v Xamarin.iOS
 
 Ovládací prvek výběru zobrazí wheel jako ovládací prvek obsahující posuvného seznam hodnot s se zvýrazněnou vybrané hodnoty. Uživatelé otočit kolečka a vyberte možnost, který jim vyhovuje.
 

@@ -1,21 +1,20 @@
 ---
-title: Vytváření iOS uživatelského rozhraní v kódu
-description: Xamarin.iOS nabízí dvě metody vytvoření uživatelského rozhraní pro vaši aplikaci – pomocí návrháře Xamarin pro iOS nebo v kódu. Tento článek prověří vytvoření uživatelského rozhraní iOS zcela v kódu. Ukazuje, jak začít ze šablony projektu stavět obrazovce aplikace v řadiči tím, vytváření hierarchie zobrazení z UIKit. Potom popisuje, jak vytvořit vlastní zobrazení, které je možné načíst v kontroleru.
+title: Vytváření iOS uživatelského rozhraní v kódu v Xamarin.iOS
+description: Tento dokument popisuje postup vytvoření uživatelského rozhraní pro aplikace Xamarin.iOS pomocí kódu. Popisuje zobrazení řadičů, vytváření hierarchie zobrazení, zpracování rotaci kolem a další.
 ms.prod: xamarin
 ms.assetid: 7CB1FEAE-0BB3-4CDC-9076-5BD555003F1D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/03/2018
-ms.openlocfilehash: e2f377b11cfb1ff5027cc704de694184d2208c97
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 5e8abc2cea2e2ca8abfada8bc85379d93d183768
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784631"
 ---
-# <a name="creating-ios-user-interfaces-in-code"></a>Vytváření iOS uživatelského rozhraní v kódu
-
-_Xamarin.iOS nabízí dvě metody vytvoření uživatelského rozhraní pro vaši aplikaci – pomocí návrháře Xamarin pro iOS nebo v kódu. Tento článek prověří vytvoření uživatelského rozhraní iOS zcela v kódu. Ukazuje, jak začít ze šablony projektu stavět obrazovce aplikace v řadiči tím, vytváření hierarchie zobrazení z UIKit. Potom popisuje, jak vytvořit vlastní zobrazení, které je možné načíst v kontroleru._
+# <a name="creating-ios-user-interfaces-in-code-in-xamarinios"></a>Vytváření iOS uživatelského rozhraní v kódu v Xamarin.iOS
 
 Uživatelské rozhraní aplikace iOS se podobá výkladní skříň – aplikace obvykle získá jeden interval, ale ho může zaplnit okno s jako mnoho objektů na to potřebuje, a objekty a uspořádání lze změnit v závislosti na tom, co aplikace chce, zobrazte. Objekty v tomto scénáři - věcí, které uživatel vidí - se nazývají zobrazení. K vytvoření jedné obrazovky v aplikaci, zobrazení jsou sebe v obsahu zobrazení hierarchie a hierarchie spravuje jeden řadič zobrazení. Aplikace s více obrazovek mají více obsahu zobrazení hierarchie, každou s vlastní řadiče zobrazení a aplikace umístí v okně vytvořit jiné obsahu zobrazení hierarchie založené na obrazovce, jejímž je uživatel v zobrazení.
 

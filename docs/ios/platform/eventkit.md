@@ -1,21 +1,20 @@
 ---
-title: EventKit
-description: Tato příručka poskytuje přehled o tom, jak přístupu a práce s kalendáři, CalendarEvents a připomenutí data uložená v databázi, kalendáře jako zveřejňovány prostřednictvím EventKit. Pokrývá hlavní třídy a jejich role v EventKit programování, jakož i počet běžné úlohy spojené s EventKit framework.
+title: EventKit v Xamarin.iOS
+description: Tento dokument popisuje EventKit a způsobu jeho použití v Xamarin.iOS. Popisuje, kalendáře, kalendář události a připomenutí, vypadá na třídy běžně používané při programování s EventKit a další.
 ms.prod: xamarin
 ms.assetid: 00E88629-357D-1FCD-4FCE-1330D5D9D32C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: a8439586ac92f8139cf9341611125352c85706e5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3522870d3e063d1e12660094a311e9850bcefa13
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786711"
 ---
-# <a name="eventkit"></a>EventKit
-
-_Tato příručka poskytuje přehled o tom, jak přístupu a práce s kalendáři, CalendarEvents a připomenutí data uložená v databázi, kalendáře jako zveřejňovány prostřednictvím EventKit. Pokrývá hlavní třídy a jejich role v EventKit programování, jakož i počet běžné úlohy spojené s EventKit framework._
+# <a name="eventkit-in-xamarinios"></a>EventKit v Xamarin.iOS
 
 iOS obsahuje dvě předdefinované související kalendáře aplikace: kalendáře aplikace a aplikace připomenutí. Je dostatečně jasné, abyste pochopili, jak aplikace kalendáře spravuje kalendářní data, ale je méně zřejmé připomenutí v aplikaci. Připomenutí ve skutečnosti může mít data související s nimi z hlediska, pokud jsou z důvodu, když jste dokončeny, atd. Jako takový iOS ukládá všechna data kalendáře, zda byl kalendář události nebo připomenutí v jednom místě, volá se *kalendáře databáze*.
 

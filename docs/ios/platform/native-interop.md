@@ -1,18 +1,20 @@
 ---
-title: Odkazování na nativní knihovny
+title: Odkazování na nativní knihovny v Xamarin.iOS
+description: Tento dokument popisuje, jak propojit nativní knihovny jazyka C do aplikace pro Xamarin.iOS. Popisuje jak sestavit universal nativní knihovny a přístupu k metody C z jazyka C#.
 ms.prod: xamarin
 ms.assetid: 1DA80280-E78A-EC4B-8673-C249C8425CF5
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/28/2016
-ms.openlocfilehash: 4d58e869dc1357faef71ea88ed6b5ea30aaf960d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bb27ba8b2d9c1b66448f22b7f80f17ba2e483544
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787722"
 ---
-# <a name="referencing-native-libraries"></a>Odkazování na nativní knihovny
+# <a name="referencing-native-libraries-in-xamarinios"></a>Odkazování na nativní knihovny v Xamarin.iOS
 
 Xamarin.iOS podporuje propojení s nativní knihovny jazyka C a knihovny jazyka Objective-C. Tento dokument popisuje, jak propojit váš nativní knihovny jazyka C s projektu Xamarin.iOS. Informace na to stejné jazyka Objective-C knihovny najdete v tématu naše [vazby typy jazyka Objective-C](~/ios/platform/binding-objective-c/index.md) dokumentu.
 

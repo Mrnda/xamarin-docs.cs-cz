@@ -1,19 +1,20 @@
 ---
 title: Sdružování pro Mac App Storu
-description: Tento průvodce vás provede sdružování Xamarin.Mac aplikace pro publikaci Mac App Storu.
+description: Tento dokument popisuje sady Xamarin.Mac aplikace pro publikaci na Mac App Storu. Popisuje možnosti podepisování a vytváření kódu.
 ms.prod: xamarin
 ms.assetid: 00a36d7c-937d-4657-bf6a-0de9684b8f94
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 88d813331dfce437f3668ada8f008bbbd5fdc3de
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3aeda97fa4a5a63d51623335c0721026b2394d2f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792057"
 ---
-# <a name="bundle-for-mac-app-store"></a>Sada pro Mac App Storu
+# <a name="bundling-for-the-mac-app-store"></a>Sdružování pro Mac App Storu
 
 Tato část popisuje základní informace o vytváření aplikace pro verzi v Mac App Storu pomocí sady Visual Studio for Mac. Podle další funkce, (například přístup a nabízenými oznámeními Icloudu), další instalační program může být nutný, přejde beyon rámec tohoto článku.
 

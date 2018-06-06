@@ -1,21 +1,19 @@
 ---
-title: V aplikaci nákupu
-description: aplikace pro iOS můžete prodeje digitální produkty a služby pomocí rozhraní API úložiště Kit. Produkty jsou vytvořit a spravovat na portálu Connect iTunes. Apple spravuje zpracování transakcí a schválí všechny produkty, než může být prodaných a účtuje poplatek za jednotlivé transakce (aktuálně 30 %). Apple vyžaduje, aby používáte v aplikaci nákupu pro všechny digitální prodej ve vaší aplikaci, ale nemůžete je využít pro prodej fyzické zboží nebo služeb bez digitální. Aplikace, které nabízí možnosti alternativní platby pro digitální produkty a služby se pravděpodobně odmítnuty. Tento dokument vysvětluje postup konfigurace aplikace k používání úložiště Kit a obsahuje příklady Xamarin.iOS většiny běžných nákupu scénáře v aplikaci.
+title: Zakoupení v Xamarin.iOS v aplikaci
+description: Tento dokument popisuje, jak prodávat digitální produkty a služby pomocí rozhraní API StoreKit. Odkazuje příručky, které popisují konfigurace, použití produktů, -nespotřebitelné produktů, transakce, odběry a další.
 ms.prod: xamarin
 ms.assetid: B41929D8-47E4-466D-1F09-6CC3C09C83B2
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 7a8dec6051caeba55c45df29c085ecfcddd160d2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8a41ed44a331c91a333b95c1d62136244a6945dd
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787338"
 ---
-# <a name="in-app-purchasing"></a>V aplikaci nákupu
-
-_aplikace pro iOS můžete prodeje digitální produkty a služby pomocí rozhraní API úložiště Kit. Produkty jsou vytvořit a spravovat na portálu Connect iTunes. Apple spravuje zpracování transakcí a schválí všechny produkty, než může být prodaných a účtuje poplatek za jednotlivé transakce (aktuálně 30 %). Apple vyžaduje, aby používáte v aplikaci nákupu pro všechny digitální prodej ve vaší aplikaci, ale nemůžete je využít pro prodej fyzické zboží nebo služeb bez digitální. Aplikace, které nabízí možnosti alternativní platby pro digitální produkty a služby se pravděpodobně odmítnuty. Tento dokument vysvětluje postup konfigurace aplikace k používání úložiště Kit a obsahuje příklady Xamarin.iOS většiny běžných nákupu scénáře v aplikaci._
-
+# <a name="in-app-purchasing-in-xamarinios"></a>Zakoupení v Xamarin.iOS v aplikaci
 
 aplikace pro iOS můžete prodeje digitální produktech či službách pomocí StoreKit – sadu rozhraní API poskytované iOS, která se komunikovat se servery společnosti Apple k provedení finanční transakce se uživatele na základě jejich Apple ID. Rozhraní API StoreKit se týká především načítání informací o produktu a provádění transakcí – neexistuje žádná součást uživatelského rozhraní. Aplikace, které implementují nákupu v aplikaci musíte vytvořit své vlastní uživatelské rozhraní a sledování zakoupených položek s vlastní kód k poskytování požadované produkty nebo služby pro uživatele.
 
@@ -27,9 +25,7 @@ Poskytuje funkce nákupy v aplikaci vyžaduje několik kroků:
 -  **Vytváření uživatelského rozhraní a produkty sami** – produkty musí být implementována, včetně mechanismy pro sledování každý nákupu a zálohování nebo obnovení je podle potřeby.
 -  **Monitorování prodeje a přijetí fondů** – použijte informace poskytované iTunes připojit ke sledování prodejním trendům a příjmy a sledovat.
 
-
 Tento dokument vysvětluje, jak provést tyto kroky zajistit, že pomocí Xamarin.iOS nákupy v aplikaci.
-
 
 ## <a name="requirements"></a>Požadavky
 
@@ -39,7 +35,7 @@ Pro podporu nákupu v aplikaci je nutné použít Xamarin.iOS 5.0 nebo novějš�
 
  * [Základní informace a konfigurace nákupů v aplikaci](~/ios/platform/in-app-purchasing/in-app-purchase-basics-and-configuration.md)
 
- * [Přehled StoreKitu a načítání informací o produktu](~/ios/platform/in-app-purchasing/store-kit-overview-and-retreiving-product-information.md)
+ * [Přehled StoreKit a načítání informací o produktu](~/ios/platform/in-app-purchasing/store-kit-overview-and-retreiving-product-information.md)
 
  * [Nákup spotřebních produktů](~/ios/platform/in-app-purchasing/purchasing-consumable-products.md)
 
@@ -48,7 +44,6 @@ Pro podporu nákupu v aplikaci je nutné použít Xamarin.iOS 5.0 nebo novějš�
  * [Transakce a ověření](~/ios/platform/in-app-purchasing/transactions-and-verification.md)
 
  * [Předplatná a sestavy](~/ios/platform/in-app-purchasing/subscriptions-and-reporting.md)
-
 
 ## <a name="summary"></a>Souhrn
 

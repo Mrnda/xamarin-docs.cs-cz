@@ -1,29 +1,28 @@
 ---
-title: Poradce při potížích
-description: Tento článek obsahuje několik tipy k řešení potíží pro práci s tvOS 10 v Xamarin.tvOS aplikace.
+title: Řešení potíží s tvOS 10 aplikací vytvořených pomocí Xamarinu
+description: Tento článek obsahuje několik tipy k řešení potíží pro práci s tvOS 10 v aplikacích pro Xamarin. Popisuje problémy související s obchodu s aplikacemi, binární kompatibilitu, CFNetwork HttpProtocol, CloudKit, základní Image, NSUserActivity a UIKit.
 ms.prod: xamarin
 ms.assetid: EA5564BB-C415-49A2-B70C-3DBF5E0F3FAB
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 8875e658ead17820655a2401079627875c14958b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4332caca2804da52bb565fe382932af691c39dab
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788807"
 ---
-# <a name="troubleshooting"></a>Poradce při potížích
+# <a name="troubleshooting-tvos-10-apps-built-with-xamarin"></a>Řešení potíží s tvOS 10 aplikací vytvořených pomocí Xamarinu
 
-_Tento článek obsahuje několik tipy k řešení potíží pro práci s tvOS 10 v Xamarin.tvOS aplikace._
-
-V následujících částech jsou uvedené některé známé problémy, ke kterým dochází při používání tvOS 10 s Xamarin.tvOS a řešení těchto problémů:
+V následujících částech jsou uvedené některé známé problémy, ke kterým dochází při používání tvOS 10 s Xamarinem a řešení těchto problémů:
 
 - [App Store](#App-Store)
 - [Binární kompatibilitu](#Binary-Compatibility)
 - [Protokol HTTP CFNetwork](#CFNetwork-HTTP-Protocol)
 - [CloudKit](#CloudKit)
-- [CoreImage](#CoreImage)
+- [Základní Image](#CoreImage)
 - [NSUserActivity](#NSUserActivity)
 - [UIKit](#UIKit)
 
@@ -62,7 +61,7 @@ Dlouho běžící operace vrátí _"Nemáte oprávnění k uložení souboru."_ 
 
 <a name="CoreImage" />
 
-## <a name="coreimage"></a>CoreImage
+## <a name="core-image"></a>Základní Image
 
 `CIImageProcessor` Rozhraní API nyní podporuje počet libovolný vstupní obrázků. `CIImageProcessor` Rozhraní API, která byla součástí tvOS 10 beta 1, se odeberou.
 
@@ -84,10 +83,6 @@ Známé problémy:
  - tvOS 10 vyžaduje vývojáři volání `base.AwakeFromNib` při vytvoření podtřídy `UIViewController` a přepsáním `AwakeFromNib` metoda.
  - Aplikace s vlastní `UIView` podtříd přepsat `LayoutSubviews` a nesprávné rozložení před voláním `base.LayoutSubviews` mohou aktivovat smyčky nekonečné rozložení v tvOS 10.
  - Specifické pro směr nebo flippable imagí prostředky jsou žádné překlopení bylo přiřazeno `UIButton` objekty.
-
-
-
-
 
 ## <a name="related-links"></a>Související odkazy
 

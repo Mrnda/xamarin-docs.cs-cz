@@ -1,5 +1,5 @@
 ---
-title: Uživatelské rozhraní
+title: Vytváření tvOS uživatelského rozhraní pomocí Xamarinu
 description: Pokrytí obecné činnost koncového uživatele (UX), včetně ovládacích prvků uživatelského rozhraní (UI), použijte rozhraní tvůrce na Xcode a zásady designu UX při práci s Xamarin.tvOS.
 ms.prod: xamarin
 ms.assetid: 8CF80705-B36A-42D6-B66B-52BC8586FA5A
@@ -7,17 +7,18 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: a30bd02a9545717175daf1381730afce6b72218d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bc29510b90a3651f7547f38c234b6e2904016f83
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789064"
 ---
-# <a name="user-interface"></a>Uživatelské rozhraní
+# <a name="building-tvos-user-interfaces-with-xamarin"></a>Vytváření tvOS uživatelského rozhraní pomocí Xamarinu
 
 _Pokrytí obecné činnost koncového uživatele (UX), včetně ovládacích prvků uživatelského rozhraní (UI), použijte rozhraní tvůrce na Xcode a zásady designu UX při práci s Xamarin.tvOS._
 
-Při práci s C# a rozhraní .NET v aplikaci Xamarin.tvOS, máte přístup ke stejným ovládacích prvků uživatelského rozhraní, které nemá vývojář pracující Objective-C nebo Swiftu a Xcode. Protože Xamarin.tvOS integruje přímo s Xcode, můžete vytvořit a Udržovat uživatelská rozhraní (nebo je můžete také vytvořit přímo v kódu jazyka C#) na Xcode rozhraní tvůrce.
+Při práci s C# a rozhraní .NET v tvOS se založené na Xamarinu, máte přístup ke stejným ovládacích prvků uživatelského rozhraní, které nemá vývojář pracující Objective-C nebo Swiftu a Xcode. Xcode je rozhraní tvůrce lze vytvořit a Udržovat uživatelská rozhraní (nebo je můžete také vytvořit přímo v kódu jazyka C#).
 
 Příručky níže uvedené poskytnout podrobné informace o práci s tvOS prvky uživatelského rozhraní v Xamarin.tvOS aplikaci. Vysoce navržený na spolupracovat [Hello, tvOS úvodní příručce](~/ios/tvos/get-started/hello-tvos.md) nejprve, jak vysvětluje klíčové koncepty a techniky, které budeme používat v každé článku.
 

@@ -1,21 +1,20 @@
 ---
-title: Práce s navigační řadiče
-description: Tento článek se zabývá navrhování a práce s navigační panely uvnitř Xamarin.tvOS aplikace.
+title: Práce s tvOS navigační panely v Xamarinu
+description: Tento dokument popisuje, jak pracovat s navigační panely v tvOS aplikace vytvořené s nástroji Xamarin. Popisuje nastavení navigační panely v scénáře a reagování na události z těchto tlačítek.
 ms.prod: xamarin
 ms.assetid: 74E396B7-87F0-46F7-BC6C-827DB8884C97
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 8a9a1c852137a2bcc0d46615e69eef0a245a9768
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b6c8ff8551c91578b9399b88e90e94c6af12ac68
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789288"
 ---
-# <a name="working-with-navigation-controllers"></a>Práce s navigační řadiče
-
-_Tento článek se zabývá navrhování a práce s navigační panely uvnitř Xamarin.tvOS aplikace._
+# <a name="working-with-tvos-navigation-bars-in-xamarin"></a>Práce s tvOS navigační panely v Xamarinu
 
 Navigační panely mohou být přidány do horní části pohledů pro zobrazení název a volitelný navigačních tlačítek panelu. Obvykle se používají při přešel uživatel z hlavní stránky, jako jsou tabulky zobrazení, kolekce nebo nabídku dílčí zobrazení zobrazující podrobnosti vybrané položky.
 
@@ -26,9 +25,6 @@ Kromě toho k titulu (který se zobrazí v centru), navigační panely může ob
 > [!IMPORTANT]
 > Navigační panely jsou ve výchozím nastavení zcela transparentní. Potřeba dát pozor zajistit, že obsah navigačního panelu zůstane čitelný přes obsah pod ním. Například když obsah v zobrazení tabulky nebo kolekce se posouvá společně v něm.
 
-
-
-
 <a name="Navigation-Bars-and-Storyboards" />
 
 ## <a name="navigation-bars-and-storyboards"></a>Navigační panely a scénářů
@@ -36,7 +32,6 @@ Kromě toho k titulu (který se zobrazí v centru), navigační panely může ob
 Nejjednodušší způsob, jak pracovat s navigační panely v aplikaci Xamarin.tvOS je chcete přidat do aplikace uživatelského rozhraní pomocí návrháře iOS.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
 
 1. V **řešení Pad**, dvakrát klikněte na `Main.storyboard` souborů a otevřete pro úpravy.
 1. Přetáhněte **navigační panel** z **sada nástrojů** na zobrazení v horní části obrazovky: 
@@ -77,9 +72,6 @@ Nejjednodušší způsob, jak pracovat s navigační panely v aplikaci Xamarin.t
 
 > [!IMPORTANT]
 > Když je možné přiřadit události, jako `TouchUpInside` element uživatelského rozhraní v iOS návrháře (například UIButton), se nebude nikdy volat protože Apple TV nemá touch obrazovky nebo podporují touch události. Je třeba použít `Primary Action` události při vytváření obslužných rutin událostí pro tvOS prvky uživatelského rozhraní.
-
-
-
 
 Následující kód obsahuje příklad obslužné rutiny události o tři různé BarButtonItems: `ShowFirstHotel`, `ShowSecondHotel`, a `ShowThirdHotel`. Když každá položka po kliknutí na obrázku pozadí `HotelImage` se změnilo. To je upravit v Kontroleru zobrazení (například `ViewController.cs`) souboru:
 

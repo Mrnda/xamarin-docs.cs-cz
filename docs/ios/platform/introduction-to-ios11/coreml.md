@@ -1,19 +1,20 @@
 ---
-title: Úvod do CoreML
-description: Strojového učení pro mobilní aplikace v systému iOS 11
+title: Úvod do CoreML v Xamarin.iOS
+description: Tento dokument popisuje CoreML, která umožňuje machine learning v iOS. Tento dokument popisuje, jak začít pracovat s CoreML a způsobu jeho použití s vize framework.
 ms.prod: xamarin
 ms.assetid: BE1E2CA1-E3AE-4C90-914C-CFDBD1DCB82B
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/30/2016
-ms.openlocfilehash: 412a534829349dbbc3f3b76b166882fa6e0e1cd1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b893fe5e56cc2d43a71870ffbbd20f0b8c6cfd18
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787492"
 ---
-# <a name="introduction-to-coreml"></a>Úvod do CoreML
+# <a name="introduction-to-coreml-in-xamarinios"></a>Úvod do CoreML v Xamarin.iOS
 
 _Strojového učení pro mobilní aplikace v systému iOS 11_
 

@@ -1,5 +1,5 @@
 ---
-title: Poznámky a překryvy
+title: Poznámky a překryvy v Xamarin.iOS
 description: Tento článek představuje podrobný návod znázorňující způsob práce s poznámky a překrytí funkce Kit mapy. Ukazuje, jak přidat mapu do aplikace, která se zobrazí poznámky a překrytí v umístění konference Xamarin momentální 2013.
 ms.prod: xamarin
 ms.assetid: 1BC4F7FC-AE3C-46D7-A4D3-18E142F55B8E
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 9defbade6fafefb26d87e88665c491b3a559c1ae
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7d224f034afc9b841bbf82b2b15b92db2d7820c7
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789577"
 ---
-# <a name="annotations-and-overlays--walkthrough"></a>Poznámky a překryvy – návod
+# <a name="annotations-and-overlays-in-xamarinios"></a>Poznámky a překryvy v Xamarin.iOS
 
 Aplikace, kterou vytvoříme sestavení v tomto návodu je zobrazena níže:
 

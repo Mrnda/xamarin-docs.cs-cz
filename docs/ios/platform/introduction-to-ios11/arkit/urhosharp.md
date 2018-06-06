@@ -1,18 +1,20 @@
 ---
-title: Pomocí ARKit UrhoSharp
+title: Pomocí ARKit UrhoSharp v Xamarin.iOS
+description: Tento dokument popisuje, jak nastavit ARKit aplikaci Xamarin.iOS, poté vyhledá způsobu rámce vykreslení, jak upravit fotoaparátu, k zjištění rovin, jak pracovat s osvětlení a další. Popisuje také UrhoSharp a zápis kódu pro HoloLens.
 ms.prod: xamarin
 ms.assetid: 877AF974-CC2E-48A2-8E1A-0EF9ABF2C92D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/01/2016
-ms.openlocfilehash: 95c9c602d0bfe1b77fda453a137dfdfc12a975c9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0d70b1f751d5aa6b6c8fa578f53ba1ac8260cfa1
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787100"
 ---
-# <a name="using-arkit-with-urhosharp"></a>Pomocí ARKit UrhoSharp
+# <a name="using-arkit-with-urhosharp-in-xamarinios"></a>Pomocí ARKit UrhoSharp v Xamarin.iOS
 
 Se zavedením [ARKit](https://developer.apple.com/arkit/), Apple má provedené u vývojářům vytvářet aplikace aktualizovaná skutečnosti. ARKit můžete sledovat přesnou pozici vašeho zařízení a zjištění různých ploch na světě a je pak až developer a přizpůsobte dat pocházejících mimo ARKit do vašeho kódu.
 

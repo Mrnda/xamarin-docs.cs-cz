@@ -1,5 +1,5 @@
 ---
-title: Práce s oprávnění
+title: Práce s oprávnění v Xamarin.iOS
 description: Oprávnění jsou možnosti speciální aplikace a k aplikacím, které jsou správně nakonfigurovány pro použití je udělena oprávnění zabezpečení.
 ms.prod: xamarin
 ms.assetid: 8A3961A2-02AB-4228-A41D-06CB4108D9D0
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/15/2017
-ms.openlocfilehash: f158ab7e51eb7610566ed052b326fecf016add8a
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: 7e5ace306b580ba76986e89367de84e5bfd9cc40
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785301"
 ---
-# <a name="working-with-entitlements"></a>Práce s oprávnění
+# <a name="working-with-entitlements-in-xamarinios"></a>Práce s oprávnění v Xamarin.iOS
 
 _Oprávnění jsou možnosti speciální aplikace a k aplikacím, které jsou správně nakonfigurovány pro použití je udělena oprávnění zabezpečení._
 
@@ -97,7 +98,7 @@ Přidání souboru Entitlements.plist do vaší Xamarin.iOS provést následují
 
 Klíče nárocích jde přidat prostřednictvím panelu zdroj Entitlements.plist editoru. Požadované klíče se obvykle přidá při použití editoru Entitlements.plist ale jsou níže uvedených pro referenci.
 
-### <a name="wallet"></a>Peněženka
+### <a name="wallet"></a>Wallet
 
 *   **Popis**: dříve označované jako Passbook, Peněženka je aplikace, která uchovává a spravuje předává. Tyto předává může být platební karty, karty úložiště, nástupu předává nebo lístků.
 
@@ -173,7 +174,7 @@ Klíče nárocích jde přidat prostřednictvím panelu zdroj Entitlements.plist
     - **Klíč**: mimo zvuk aplikace
     - **Logická hodnota**: Ano
 
-### <a name="associated-domains"></a>Přidružené domén
+### <a name="associated-domains"></a>Přidružené domény
 
 - **Popis**: přidružené domén, které by měly být zpracovány jako univerzální odkazy, které mají být předány s toto oprávnění. Univerzální odkazy se dá implementovat umožňuje přímé propojení mezi aplikací a webu. Měli byste jim poskytnout položku pro každou doménu, která vaše aplikace podporuje a každý záznam by měl začínat obráceným `applinks:`
     - **Key**: com.apple.developer.associated-domains

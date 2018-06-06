@@ -1,21 +1,20 @@
 ---
-title: Vytváření vlastních ovládacích prvků
-description: Tento článek popisuje, jak vytvořit vlastní ovládací prvky a pracovat s nimi v Tvůrci rozhraní.
+title: Vytváření vlastních ovládacích prvků v Xamarin.Mac
+description: Tento dokument popisuje, jak vytvořit vlastní ovládací prvky v Xamarin.Mac. Ukazuje, jak vytvořit vlastní ovládací prvek, sledovat jeho stav, kreslení jeho rozhraní, reakci na vstup uživatele a použijte ovládací prvek v aplikaci.
 ms.prod: xamarin
 ms.assetid: 004534B1-5AEE-452C-BBBE-8C2673FD49B7
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: e1ab3977df96e241fa2a5a80f6cabd74d7d775f8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e4c2b2c9ee7bae3d6489fec6b22881653ec53043
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792675"
 ---
-# <a name="creating-custom-controls"></a>Vytváření vlastních ovládacích prvků
-
-_Tento článek popisuje, jak vytvořit vlastní ovládací prvky a pracovat s nimi v Tvůrci rozhraní._
+# <a name="creating-custom-controls-in-xamarinmac"></a>Vytváření vlastních ovládacích prvků v Xamarin.Mac
 
 Při práci s C# a rozhraní .NET v aplikaci Xamarin.Mac, máte přístup ke stejné uživatelské ovládací prvky, vývojář práce *jazyka Objective-C*, *Swift* a *Xcode* nemá . Protože Xamarin.Mac integruje přímo s Xcode, můžete na Xcode _rozhraní tvůrce_ vytvořit a udržovat vaše uživatelské ovládací prvky (nebo je můžete také vytvořit přímo v kódu jazyka C#).
 

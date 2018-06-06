@@ -1,5 +1,5 @@
 ---
-title: Nové uživatelské rozhraní styly
+title: tvOS styly uživatelské rozhraní v Xamarinu
 description: Tento článek se zabývá světlým a tmavým uživatelského rozhraní motivy této Apple přidala k tvOS 10 a jejich implementaci v Xamarin.tvOS aplikaci.
 ms.prod: xamarin
 ms.assetid: 8BC37683-AD9E-45CD-BE40-96965618AD1D
@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: da75a99e842b13d42251cdd1c5195ec66ff4a513
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 43bfac29acb8b465fd1f3cdfd53c7664adeae18f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789168"
 ---
-# <a name="new-user-interface-styles"></a>Nové uživatelské rozhraní styly
+# <a name="tvos-user-interface-styles-in-xamarin"></a>tvOS styly uživatelské rozhraní v Xamarinu
 
 _Tento článek se zabývá světlým a tmavým uživatelského rozhraní motivy této Apple přidala k tvOS 10 a jejich implementaci v Xamarin.tvOS aplikaci._
 
 tvOS 10 nyní podporuje motiv světlý i Light uživatelské rozhraní, všechna sestavení v UIKit určí, bude automaticky přizpůsobí se jí, podle preferencí uživatele. Kromě toho Vývojář můžete ručně upravit podle motivu, který uživatel vybral prvky uživatelského rozhraní a můžete přepsat daný motiv.
-
 
 <a name="About-the-New-User-Interface-Styles" />
 

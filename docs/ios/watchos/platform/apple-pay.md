@@ -1,5 +1,5 @@
 ---
-title: Dotykový identifikátor na watchOS
+title: Dotykový identifikátor na watchOS v Xamarinu
 description: Tento článek se zabývá rozšířením Apple má provést dotykový identifikátor ve watchOS 3 a jejich implementaci Xamarin.iOS pro Apple Watch.
 ms.prod: xamarin
 ms.assetid: 32FF5D21-C252-485D-83AC-A7E592237962
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: b46a0e57ea9abc5c4ec4fc2aba1e6940249b64fb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 75d660ad0699b6fac3b1ae43046f322f380872b3
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791072"
 ---
-# <a name="apple-pay-on-watchos"></a>Dotykový identifikátor na watchOS
+# <a name="apple-pay-on-watchos-in-xamarin"></a>Dotykový identifikátor na watchOS v Xamarinu
 
 Apple udělal několik vylepšení Apple platit v watchOS 3, která přidává podporu pro plateb v aplikaci. To umožňuje uživatelům bezpečně zadejte platby a kontaktní informace přímo z Apple Watch platit pro fyzické zboží a služeb.
 

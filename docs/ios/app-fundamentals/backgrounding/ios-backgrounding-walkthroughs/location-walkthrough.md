@@ -1,18 +1,20 @@
 ---
-title: Návod - pomocí umístění pozadí
+title: Návod - umístění pozadí v Xamarin.iOS
+description: Tento dokument poskytuje návod, jak používat informace o umístění backgrounded aplikace pro Xamarin.iOS. Popisuje potřebné instalační uživatelské rozhraní a stavy aplikace.
 ms.prod: xamarin
 ms.assetid: F8EEA0FD-5614-47FE-ADAC-80A5BCA6EB5F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: e6c74d9ffba4f63682a905d6ebc06d02be81abf4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: aef39ef435bbbad6f643b2376832d8f8132d6a4c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784091"
 ---
-# <a name="walkthrough---using-background-location"></a>Návod - pomocí umístění pozadí
+# <a name="walkthrough---background-location-in-xamarinios"></a>Návod - umístění pozadí v Xamarin.iOS
 
 V tomto příkladu přidáme sestavit iOS umístění aplikaci, která se zobrazí informace o našich aktuální umístění: zeměpisné šířky, zeměpisnou délku a dalších parametrů na obrazovku. Tato aplikace bude ukazují, jak správně provádět aktualizace umístění, zatímco aplikace je aktivní nebo Backgrounded.
 

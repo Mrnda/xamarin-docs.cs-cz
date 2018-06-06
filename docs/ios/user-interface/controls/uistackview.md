@@ -1,5 +1,5 @@
 ---
-title: Zobrazení zásobníku
+title: Zobrazení zásobníku v Xamarin.iOS
 description: Tento článek se týká použití nové aplikace Xamarin.iOS ovládacího prvku UIStackView ke správě sadu dílčích zobrazení buď vodorovně nebo svisle uspořádaných zásobníku.
 ms.prod: xamarin
 ms.assetid: 20246E87-2A49-438A-9BD7-756A1B50A617
@@ -8,13 +8,14 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: aec1c4ceb562f528d6bcef7e4de0f2708952d2a5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a894efebe4089adefeb02007bd394c13fc77974c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790097"
 ---
-# <a name="stack-view"></a>Zobrazení zásobníku
+# <a name="stack-views-in-xamarinios"></a>Zobrazení zásobníku v Xamarin.iOS
 
 _Tento článek se týká použití nové aplikace Xamarin.iOS ovládacího prvku UIStackView ke správě sadu dílčích zobrazení buď vodorovně nebo svisle uspořádaných zásobníku._
 
@@ -71,7 +72,7 @@ Vodorovné zobrazení zásobníku nakonfigurujte následující možnosti:
 
 [![](uistackview-images/quick04.png "Konfigurovat možnosti vodorovné zobrazení zásobníku")](uistackview-images/quick04.png#lightbox)
 
-Protože Neradi bychom ikonu, která představuje každý "místo" v hodnocení na dojít k roztažení když je přidán do vodorovné zásobníku zobrazení, jsme nastavili **zarovnání** k **Center** a ** Distribuce** k **vyplnění stejně**.
+Protože Neradi bychom ikonu, která představuje každý "místo" v hodnocení na dojít k roztažení když je přidán do vodorovné zásobníku zobrazení, jsme nastavili **zarovnání** k **Center** a  **Distribuce** k **vyplnění stejně**.
 
 Nakonec propojit si následující **výstupy** a **akce**:
 

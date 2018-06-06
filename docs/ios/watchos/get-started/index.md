@@ -1,19 +1,20 @@
 ---
-title: Začínáme s watchOS
-description: Úvod do watchOS a jak vytvářet sledování aplikace
+title: Začínáme s watchOS v Xamarinu
+description: Tento dokument obsahuje odkazy na různé příručky, které popisují, jak začít pracovat s watchOS vývoj pomocí Xamarin. Odkazovaný obsah obsahuje úvod do watchOS, vysvětluje, jak nainstalovat watchOS podporu pro Xamarin a ukazuje, jak vytvořit počáteční aplikaci.
 ms.prod: xamarin
 ms.assetid: BB938008-C013-4A1D-8229-FEEE94F83BBD
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: 7eabcb9a9ea300eccf34737e634168defe2948e7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 66482d72bebabbc6fd5c4f4a252ac81d1b73dd05
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790890"
 ---
-# <a name="getting-started-with-watchos"></a>Začínáme s watchOS
+# <a name="getting-started-with-watchos-in-xamarin"></a>Začínáme s watchOS v Xamarinu
 
 _Úvod do watchOS a jak vytvářet sledování aplikace_
 

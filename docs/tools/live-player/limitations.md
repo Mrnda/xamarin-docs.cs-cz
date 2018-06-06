@@ -1,18 +1,19 @@
 ---
-title: Omezení
-description: Některá omezení Xamarin Live Player
+title: Omezení provozu Player Xamarin
+description: Tento dokument popisuje omezení přehrávače Xamarin za provozu. Ho popisuje požadavky na zařízení, funkce funguje s typy projektů a další ostatní témata.
 ms.prod: xamarin
 ms.assetid: 36A1531E-630A-4B7C-A333-4E67E5DC023C
 author: topgenorth
 ms.author: toopge
 ms.date: 03/29/2018
-ms.openlocfilehash: a3aea31f32e3bf6227cce2e3340e3d04828472a0
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: ea71391382f9e1ecb80cbf5f2d5bf127e0d6d1be
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793672"
 ---
-# <a name="limitations"></a>Omezení
+# <a name="limitations-of-xamarin-live-player"></a>Omezení provozu Player Xamarin
 
 ![Funkce ve verzi Preview](~/media/shared/preview.png)
 
@@ -36,6 +37,7 @@ Aplikace Xamarin Live Player podporuje následující zařízení:
 Existují některá omezení akcí, které můžete spustit Xamarin Live Player, včetně následujících položek:
 
 ### <a name="xamarinforms"></a>Xamarin.Forms
+
 - Vlastní nástroji pro vykreslování nejsou podporovány.
 - Účinky nejsou podporovány.
 - Vlastní ovládací prvky s vlastní vazbu vlastnosti nejsou podporovány.
@@ -44,9 +46,11 @@ Existují některá omezení akcí, které můžete spustit Xamarin Live Player,
 - Katalog Asset v systému iOS nejsou podporovány.
 
 ### <a name="other-project-types"></a>Typy projektu
+
 - Za provozu Player není určen pro nativní Android nebo iOS projekty, (které používají Android XML nebo scénářů pro uživatelské rozhraní).
 
 ### <a name="misc"></a>Různé
+
 - Omezenou podporu pro reflexi (ovlivňuje aktuálně některých oblíbených NuGets, jako je SQLite a Json.NET). Další NuGets může být stále podporovány.
 - Nebylo možné přepsat některé třídy systému (například nemůžete implementovat podtřídy).
 - Některé funkce platformy, které vyžadují zřizování nemůže pracovat v aplikaci Xamarin Live Player (ale byla nakonfigurována pro běžné operace, jako je přístup Galerie fotografií).
@@ -55,7 +59,6 @@ Existují některá omezení akcí, které můžete spustit Xamarin Live Player,
 - Složitější scénáře s vlastní obecné třídy a rozhraní nemusí být podporována.
 
 Nahlaste všechny další problémy na [bugzilla](https://aka.ms/live-player-report-issue).
-
 
 ## <a name="related-links"></a>Související odkazy
 

@@ -1,5 +1,5 @@
 ---
-title: .XIb soubory
+title: soubory .xib v Xamarin.Mac
 description: Tento článek se zabývá práci s .xib soubory vytvořené v Xcode na tvůrce rozhraní k vytváření a údržbě uživatelského rozhraní pro aplikaci Xamarin.Mac.
 ms.prod: xamarin
 ms.assetid: 6AF3D216-448D-4B2D-9026-74E4FFF5923A
@@ -7,13 +7,14 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: c1f575f5d3d5f0fbe82d5e0d08103b9261944602
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3ef536ddb19ed60975368bd022e57c34c6f473dc
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792271"
 ---
-# <a name="xib-files"></a>.XIb soubory
+# <a name="xib-files-in-xamarinmac"></a>soubory .xib v Xamarin.Mac
 
 _Tento článek se zabývá práci s .xib soubory vytvořené v Xcode na tvůrce rozhraní k vytváření a údržbě uživatelského rozhraní pro aplikaci Xamarin.Mac._
 

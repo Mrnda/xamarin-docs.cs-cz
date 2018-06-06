@@ -1,16 +1,17 @@
 ---
 title: Vazba, řešení potíží
-description: Tato příručka popisuje, co dělat, pokud máte problémy s vazby knihovna jazyka Objective-C.
+description: Tato příručka popisuje, co dělat, pokud máte problémy s vazby knihovna jazyka Objective-C. Konkrétně popisuje chybějící vazby, výjimky argumentu při předávání vazbu a vytváření sestav chyb hodnotu null.
 ms.prod: xamarin
 ms.assetid: 7C65A55C-71FA-46C5-A1B4-955B82559844
 author: asb3993
 ms.author: amburns
 ms.date: 10/19/2016
-ms.openlocfilehash: cb685bb60d49615c69925d17f69b0342d4f0a1a6
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: b0ce6c3792d6495cabdf8acdab1a644fe75f1219
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34780232"
 ---
 # <a name="binding-troubleshooting"></a>Vazba, řešení potíží
 

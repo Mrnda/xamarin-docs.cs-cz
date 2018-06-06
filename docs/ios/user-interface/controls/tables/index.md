@@ -1,20 +1,20 @@
 ---
-title: Práce s tabulkami a buněk
-description: Zobrazení dat pomocí UITableView Xamarin.iOS
+title: Práce s tabulkami a buněk v Xamarin.iOS
+description: Tento dokument obsahuje odkazy na různé příručky, které popisují, jak zobrazit data pomocí ovládacího prvku UITableView v aplikaci pro Xamarin.iOS.
 ms.prod: xamarin
 ms.assetid: 04DF47DD-4E17-75D7-AC7C-8CF4A574CD21
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/06/2016
-ms.openlocfilehash: a1cda3632a75c7e462e763a34fdb5b586237b670
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ebdad2cc8e3083bee5acc127660b5641f42c731f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790013"
 ---
-# <a name="working-with-tables-and-cells"></a>Práce s tabulkami a buněk
-
+# <a name="working-with-tables-and-cells-in-xamarinios"></a>Práce s tabulkami a buněk v Xamarin.iOS
 
 Tato část představuje třídy používané k vytváření a zobrazování tabulky pak poskytuje příklady, jak je používat v Xamarin.iOS. Bude se vztahovat pomocí výchozí vzhled pro tabulky, přizpůsobení rozložení, implementace úpravy a použití Xamarin iOS Designer pro vizuální návrh tabulky. Někdy zobrazení je samozřejmě seznam řádků (například aplikace Hudba) a dalších akcí, kdy je obtížné rozpoznat ovládacího prvku tabulky (např. úpravy v aplikaci kontakty nebo konverzace v aplikaci zprávy).
 
@@ -26,7 +26,6 @@ Tyto články bude trvat komplexní pohled na práci s tabulky, včetně:
 -   **Zobrazení dat v tabulkách** – který ukazuje, jak vytvořit a naplnit tabulku, používat různé styly tabulky a buněk a předešli problémům s paměti podle recyklace buňky objekty. 
 -   **Rozšířené použití** – vytváření vlastní buněk a pomocí funkce úprav UITableView třídy. 
 -   **Vytvoření tabulky vizuálně** – pomocí návrháře Xamarin pro iOS k vytváření rozhraní řízené tabulky s scénáře. 
-
 
 ## <a name="contents"></a>Obsah
 
@@ -43,7 +42,6 @@ Tyto články bude trvat komplexní pohled na práci s tabulky, včetně:
  [Vytváření tabulek v scénáře](~/ios/user-interface/controls/tables/creating-tables-in-a-storyboard.md)
  
  [Automatické nastavování výšky řádku](~/ios/user-interface/controls/tables/autosizing-row-height.md)
-
 
 ## <a name="related-links"></a>Související odkazy
 

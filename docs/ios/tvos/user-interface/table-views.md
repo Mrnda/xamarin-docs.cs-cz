@@ -1,5 +1,5 @@
 ---
-title: Práce se zobrazeními tabulky
+title: Práce s tvOS zobrazení tabulek v Xamarinu
 description: Tento článek se zabývá navrhování a práce s řadiče zobrazení tabulky a zobrazení tabulek uvnitř Xamarin.tvOS aplikace.
 ms.prod: xamarin
 ms.assetid: D8F80FA9-6400-4DB7-AFC9-A28A54AD04E8
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 8864e85e4d657fc242f6c06b21c815f62055c9f4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8c74c2cc7598f50e57a6a450823e2b0ebca4b537
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789564"
 ---
-# <a name="working-with-table-views"></a>Práce se zobrazeními tabulky
+# <a name="working-with-tvos-table-views-in-xamarin"></a>Práce s tvOS zobrazení tabulek v Xamarinu
 
 _Tento článek se zabývá navrhování a práce s řadiče zobrazení tabulky a zobrazení tabulek uvnitř Xamarin.tvOS aplikace._
 

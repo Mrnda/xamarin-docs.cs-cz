@@ -1,21 +1,20 @@
 ---
-title: Změny obchodu s aplikacemi
-description: Zkoumání nové funkce systému iOS 11
+title: Změny v úložišti aplikací v iOS 11
+description: Tento dokument jsou zde popsány změny k obchodu s aplikacemi v iOS 11. Ho popisuje ikona aplikace úložiště, propagovaných nákupy v aplikaci, stránka přepracovanou produktu, komunikaci zákazníků a postupné verze.
 ms.prod: xamarin
 ms.assetid: 4A7A03FD-B4F2-4969-8676-A17260730FD6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: 9c9355c047d2e7083ca787f473515163d8e6f5f1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 59f5d2c0c05ec2950ae7cc74e4f5aaa2565020f0
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787387"
 ---
-# <a name="app-store-changes"></a>Změny obchodu s aplikacemi
-
-_Zkoumání nové funkce systému iOS 11_
+# <a name="app-store-changes-in-ios-11"></a>Změny v úložišti aplikací v iOS 11
 
 IOS App Store zaznamenala dokončení změna, která pouze umožňuje uživatelům efektivně přejděte úložiště, ale můžete taky, jako vývojář, zvýšení úrovně vaší aplikaci pro uživatele. Tyto úrovně celého čísla zahrnují aktualizace nákupy v aplikaci a aktualizace stránky produktu. iOS 11 také přidá aktualizace týkající se ke komunikaci s uživateli, jak přidat ikonu vaší aplikace a postup verze vaší aplikace na veřejnost.
 

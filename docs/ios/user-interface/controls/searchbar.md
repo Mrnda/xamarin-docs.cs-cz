@@ -1,18 +1,20 @@
 ---
-title: Panel hledání
+title: Hledání řádky v Xamarin.iOS
+description: Tento dokument popisuje, jak používat panely vyhledávání v Xamarin.iOS. Popisuje, jak vytvořit panely hledání prostřednictvím kódu programu a v scénáře.
 ms.prod: xamarin
 ms.assetid: 22A8249A-19C6-4734-8331-E49FE3170771
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/11/2017
-ms.openlocfilehash: 4ea39f6f935adba2c035884c625c57c0039b1165
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: cd78c58ecb119c437296a0befe1d319d8837edae
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789922"
 ---
-# <a name="search-bar"></a>Panel hledání
+# <a name="search-bars-in-xamarinios"></a>Hledání řádky v Xamarin.iOS
 
 UISearchBar se používá k hledání v seznamu hodnot. 
 

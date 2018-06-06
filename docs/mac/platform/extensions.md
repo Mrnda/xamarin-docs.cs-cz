@@ -1,17 +1,18 @@
 ---
 title: Podpora Xamarin.Mac rozšíření
-description: Tento článek se zaměřuje na podporu rozšíření v Xamarin.Mac verze 2.10 (a vyšší).
+description: Tento dokument popisuje Xamarin.Mac je podpora pro funkce hledání, sdílené složky a dnes rozšíření. Prověří omezení a známé problémy najdete odkazy na postupy a ukázkové aplikace a obsahuje typy pro práci s rozšířeními.
 ms.prod: xamarin
 ms.assetid: 4148F1BE-DFA0-46B6-9FCD-425A6541F510
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 03936c75d31bfd01e741ad2c09096c925dc9dbfc
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4cef6e89b89ef41a0c93b687c9df11a8aa971ed5
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792374"
 ---
 # <a name="xamarinmac-extension-support"></a>Podpora Xamarin.Mac rozšíření
 

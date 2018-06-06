@@ -1,18 +1,20 @@
 ---
-title: Práce s nastavením
+title: Práce s watchOS nastavení v Xamarinu
+description: Tento dokument popisuje, jak pracovat s watchOS nastavení v nástroji Xamarin. Popisuje přidání nastavení aplikace sledování řešení pomocí těchto nastavení najdete v Apple Watch aplikace a aplikace na iPhone.
 ms.prod: xamarin
 ms.assetid: 4B2EB192-F0A2-4010-B141-0431520594C0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 6de70eae1eb1c498336a62b4d7be5e2805de11f9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6cfbcf3b4383588819490838c2a54cdb4faf9403
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790874"
 ---
-# <a name="working-with-settings"></a>Práce s nastavením
+# <a name="working-with-watchos-settings-in-xamarin"></a>Práce s watchOS nastavení v Xamarinu
 
 Apple Watch aplikace můžete použít funkci stejné nastavení jako aplikací pro iOS – nastavení uživatelské rozhraní se zobrazí v **Apple Watch** iPhone aplikace, ale hodnoty jsou k dispozici v aplikaci iPhone i taky sledovat rozšíření.
 

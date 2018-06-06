@@ -1,19 +1,20 @@
 ---
-title: Nasazení do obchodu s aplikacemi
-description: Nasazení aplikace sledovat do obchodu s aplikacemi
+title: Nasazení watchOS aplikace k obchodu s aplikacemi
+description: Tento dokument popisuje postup nasazení watchOS aplikací vytvořených pomocí Xamarinu k obchodu s aplikacemi. Podívejte se na distribuční zřizovacích profilů a iTunes připojení trvá a poskytuje také Rady pro odstraňování potíží.
 ms.prod: xamarin
 ms.assetid: DBE16040-70D2-4F61-B5F3-C8D213DBC754
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: a3c68a0720fbe18f35731cf1a19248c00f748877
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 70613c79c2ec0c81f1dbdc218b747f809f859767
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790981"
 ---
-# <a name="deploying-to-the-app-store"></a>Nasazení do obchodu s aplikacemi
+# <a name="deploying-watchos-apps-to-the-app-store"></a>Nasazení watchOS aplikace k obchodu s aplikacemi
 
 > [!IMPORTANT]
 > Nezapomeňte si přečíst [společnosti Apple sledovat Kit odeslání průvodce](https://developer.apple.com/app-store/watch/)a zobrazit [Poradce při potížích s](#Troubleshooting) oddíl pro všechny problémy, může mít.
@@ -147,7 +148,7 @@ with an alpha channel. Icons should not have an alpha channel.
 
 Postupujte podle [pokyny k odebrání alfa kanálu](~/ios/watchos/troubleshooting.md) z vaší ikon.
 
-### <a name="cfbundleversion-mismatch"></a>CFBundleVersion Mismatch
+### <a name="cfbundleversion-mismatch"></a>Neshoda CFBundleVersion
 
 ```csharp
 CFBundleVersion Mismatch. The CFBundleVersion value '1' of watch application

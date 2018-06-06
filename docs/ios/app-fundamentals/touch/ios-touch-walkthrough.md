@@ -1,18 +1,20 @@
 ---
-title: Návod – pomocí Touch v iOS
+title: 'Návod: Použití Touch v Xamarin.iOS'
+description: Tento dokument popisuje, jak zpracovat touch v aplikacích pro Xamarin.iOS pojednávající o ukázková interakce dotykového ovládání, nástroje pro rozpoznávání gesto a nástroje pro rozpoznávání vlastní gesto.
 ms.prod: xamarin
 ms.assetid: 13F8289B-7A80-4959-AF3F-57874D866DCA
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 58066ef0071c8105658f0d766e8f038b2bd3ddf2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fff49599d3843bb09d407316d6964ca54b6a1004
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784787"
 ---
-# <a name="walkthrough--using-touch-in-ios"></a>Návod – pomocí Touch v iOS
+# <a name="walkthrough-using-touch-in-xamarinios"></a>Návod: Použití Touch v Xamarin.iOS
 
 Tento návod ukazuje, jak napsat kód, který reaguje na různé druhy událostí dotykového ovládání. Každý příklad se nachází v samostatné obrazovky:
 
@@ -316,7 +318,7 @@ Na následujícím snímku obrazovky je příkladem tyto akce:
 
 V této části použijeme koncepty z předchozí části k sestavení pro rozpoznávání vlastní gesto. Pro vlastní gesto rozpoznávání bude podtřídy `UIGestureRecognizer`, bude rozpoznat když uživatel nakreslí "V" na obrazovce a potom přepněte rastrový obrázek. Na následujícím snímku obrazovky je příklad této obrazovce:
 
- [![](ios-touch-walkthrough-images/image8.png "Aplikaci rozpozná, když uživatel na obrazovce nakreslí "V"")](ios-touch-walkthrough-images/image8.png#lightbox)
+ [![](ios-touch-walkthrough-images/image8.png "Aplikaci rozpozná, když uživatel na obrazovce nakreslí \"V\"")](ios-touch-walkthrough-images/image8.png#lightbox)
 
 Postupujte podle těchto kroků můžete vytvořit vlastní gesto rozpoznávání:
 

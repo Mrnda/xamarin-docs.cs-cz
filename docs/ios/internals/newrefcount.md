@@ -1,17 +1,19 @@
 ---
-title: Nový odkaz počítání systém
+title: Nový systém Xamarin.iOS při počítání referencí
+description: Tento dokument popisuje rozšířené odkaz na Xamarin počítání systému, ve výchozím nastavení povolená v všechny aplikace Xamarin.iOS.
 ms.prod: xamarin
 ms.assetid: 0221ED8C-5382-4C1C-B182-6C3F3AA47DB1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 00a792fb6ee55d5937046ebb321ffcb3aa8bdbd5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f2e40ca1fdd4a02d62e45004b75f3abefda781a5
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786249"
 ---
-# <a name="new-reference-counting-system"></a>Nový odkaz počítání systém
+# <a name="new-reference-counting-system-in-xamarinios"></a>Nový systém Xamarin.iOS při počítání referencí
 
 Xamarin.iOS 9.2.1 zavedl odkaz na rozšířené počítání systému na všechny aplikace ve výchozím nastavení. Může sloužit k vyloučení mnoho problémů paměti, které by bylo obtížné sledovat a opravit v dřívějších verzích Xamarin.iOS.
 

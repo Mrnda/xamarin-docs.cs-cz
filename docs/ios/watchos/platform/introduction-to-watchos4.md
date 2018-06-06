@@ -1,21 +1,20 @@
 ---
 title: Úvod do watchOS 4
-description: Nové funkce je k dispozici pro vývojáře, kteří používají Xamarin pro watchOS 4.
+description: Tento dokument obsahuje podrobný Úvod do watchOS 4, popisuje nové funkce, které jsou nyní k dispozici pro vývojáře pro Xamarin.
 ms.prod: xamarin
 ms.assetid: 753A9993-A951-40A2-9270-37F000A01BC9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/07/2017
-ms.openlocfilehash: d3377b503273dc84cfe07227c4b007c8e073f1a0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 550cf57f6b89a8fd5726ae55cb5eaaa54d6d2692
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791264"
 ---
 # <a name="introduction-to-watchos-4"></a>Úvod do watchOS 4
-
-_Nové funkce je k dispozici pro vývojáře, kteří používají Xamarin pro watchOS 4._
 
 Přístup k novým funkcím watchOS 4 ve svých aplikacích:
 
@@ -29,7 +28,6 @@ Změny provedené po watchOS 3:
 
 * Kód aplikace a uživatelského rozhraní, spusťte v jediném procesu.
 * Umístění oprávnění lze udělit na sledování (není třeba požádat uživatele, aby přijímal na svůj telefon).
-
 
 ## <a name="related-links"></a>Související odkazy
 

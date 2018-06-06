@@ -1,15 +1,17 @@
 ---
 title: Část 2 – architektura
+description: Tento dokument popisuje architekturu vzorů, které jsou užitečné pro vytváření aplikací pro různé platformy. Popisuje Typická aplikace vrstvy (Datová vrstva, vrstva atd.) a běžných vzorů mobilní software (modelem MVVM, MVC, atd.)
 ms.prod: xamarin
 ms.assetid: 2176DB2D-E84A-3757-CFAB-04A586068D50
 author: asb3993
 ms.author: amburns
 ms.date: 03/27/2017
-ms.openlocfilehash: 94cd2ae09da2e36f8855d95dda883cd3b7819e5b
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: ebcfe8880a826c552d55e7a5567271a5a764fa1d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34780871"
 ---
 # <a name="part-2---architecture"></a>Část 2 – architektura
 

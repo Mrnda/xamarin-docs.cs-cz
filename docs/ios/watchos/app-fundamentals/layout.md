@@ -1,18 +1,20 @@
 ---
-title: Práce s rozložení
+title: Práce s watchOS rozložení v Xamarinu
+description: Tento dokument popisuje postup vytvoření watchOS rozložení pomocí Xamarin. Popisuje rozhraní řadiče, skupiny, oddělovače a ovládací prvky obsahu.
 ms.prod: xamarin
 ms.assetid: BEDB62A1-2249-4459-986F-413A41E63DF0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 38e26544a907ffcafdec38e3e2758d9bdac7b977
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 11ff5ec2fc8fe99a780a3d728d3d84af59794cea
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790611"
 ---
-# <a name="working-with-layout"></a>Práce s rozložení
+# <a name="working-with-watchos-layout-in-xamarin"></a>Práce s watchOS rozložení v Xamarinu
 
 Navrhování rozložení pro Apple Watch [obrazovky velikosti](~/ios/watchos/app-fundamentals/screen-sizes.md) uvede jedinečné výzvy.
 

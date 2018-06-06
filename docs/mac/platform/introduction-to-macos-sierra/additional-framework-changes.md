@@ -1,21 +1,20 @@
 ---
 title: Další systému macOS Sierra Framework změny
-description: Tento článek se zabývá další, méně závažné změny nebo vylepšení existující rozhraní pro systému macOS Sierra.
+description: Tento dokument popisuje menší změny a vylepšení, které byla zavedená v systému macOS Sierra existující rozhraní. Zkontroluje změny rozhraní Accelerate, AppKit, AVFoundation, základní dat, základní Image, Foundation a další.
 ms.prod: xamarin
 ms.assetid: CA701269-D11E-4DE3-89C1-58EF8993A482
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: a1bc12629a84e9a06cc80882d141bf6a0c2f0c52
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3cfa2e9bcb0be4d65462914215045c9c7f01da5b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792590"
 ---
 # <a name="additional-macos-sierra-framework-changes"></a>Další systému macOS Sierra Framework změny
-
-_Tento článek se zabývá další, méně závažné změny nebo vylepšení existující rozhraní pro systému macOS Sierra._
 
 <a name="Accelerate-Framework-Enhancements" />
 
@@ -29,7 +28,7 @@ Architektura urychlit pro systému macOS Sierra byly provedeny následující vy
 
 <a name="AppKit-Framework-Enhancements" />
 
-## <a name="appkit-framework-enhancements"></a>Vylepšení Appkit Framework
+## <a name="appkit-framework-enhancements"></a>Vylepšení AppKit Framework
 
 Architektura AppKit pro systému macOS Sierra byly provedeny následující vylepšení:
 

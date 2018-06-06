@@ -1,23 +1,21 @@
 ---
 title: Úvod do průběžnou integraci s funkcí Xamarin
-description: Průběžnou integraci je software inženýrství postupem, ve kterém automatizované sestavení zkompiluje a volitelně otestuje aplikace při přidání nebo změně vývojáři v úložišti řízení projektu verze kódu. Tento článek popisuje jsou obecné koncepty průběžnou integraci a některé z možností k dispozici pro nepřetržitou integraci s projekty Xamarin.
+description: Tento dokument obsahuje odkazy na příručky, které popisují průběžnou integraci s funkcí Xamarin. Odkazovaný obsah poskytuje přehled průběžnou integraci a popisuje sestavení aplikace Center, TeamCity a volaných.
 ms.prod: xamarin
 ms.assetid: 99484E96-DC69-4697-8BBB-1B44C5CBB5ED
 author: topgenorth
 ms.author: toopge
 ms.date: 05/04/2017
-ms.openlocfilehash: 34838a1527cb3661e8e5ed51b5950f26026e9433
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 1a38160b4f1536c0e0e393cb9ec3482624a40681
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793740"
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>Úvod do průběžnou integraci s funkcí Xamarin
 
-_Průběžnou integraci je software inženýrství postupem, ve kterém automatizované sestavení zkompiluje a volitelně otestuje aplikace při přidání nebo změně vývojáři v úložišti řízení projektu verze kódu. Tento článek popisuje jsou obecné koncepty průběžnou integraci a některé z možností k dispozici pro nepřetržitou integraci s projekty Xamarin._
-
 > [!Video https://youtube.com/embed/wXgnh2Q7Uv8]
-
 
 ##  <a name="introduction-to-continuous-integrationtoolsciintro-to-cimd"></a>[Úvod do průběžnou integraci](~/tools/ci/intro-to-ci.md)
 
@@ -26,7 +24,6 @@ Tato část obsahuje různé součásti, které jsou spojené s průběžnou int
 [!include[](~/tools/ci/includes/firewall-information.md)]
 
 ## <a name="working-with-continuous-integration-environments"></a>Práce s průběžnou integraci prostředí
-
 
 ### <a name="using-app-center-build-with-xamarinappcenterbuildxamarin"></a>[Používání sestavení App Center se Xamarinem](/appcenter/build/xamarin/)
 

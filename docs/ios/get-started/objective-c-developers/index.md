@@ -1,20 +1,19 @@
 ---
 title: Xamarin pro vývojáře jazyka Objective-C
-description: Pokud jste vývojář jazyka Objective-C, se i na moct využívat znalosti a existující kód jazyka Objective-C na platformě Xamarin při využívat kód znovu použít výhody jazyka C#. Tato část slouží jako vstupní bod do Xamarin.iOS a odkazuje na širokou řadu informace o použití existujícího kódu jazyka Objective-C z jazyka C#.
+description: Tento dokument obsahuje popis Xamarin.iOS pro vývojáře jazyka Objective-C. Odkazuje příručky, které popisují, jak pro přechod do jazyka C# z jazyka Objective-C, jak vytvořit vazbu knihovna jazyka Objective-C pro použití v jazyce C# a jak vytvářet různé platformy mobilních aplikací.
 ms.prod: xamarin
 ms.assetid: 9F3C86A3-403E-4025-99CA-99FCA86DC828
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: e29762fb258f7d796878c85bfe6f7aaa93207c5e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 027ef8cabc55ace41bcf201b8355aab8ca6ec625
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786048"
 ---
 # <a name="xamarin-for-objective-c-developers"></a>Xamarin pro vývojáře jazyka Objective-C
-
-_Pokud jste vývojář jazyka Objective-C, se i na moct využívat znalosti a existující kód jazyka Objective-C na platformě Xamarin při využívat kód znovu použít výhody jazyka C#. Tato část slouží jako vstupní bod do Xamarin.iOS a odkazuje na širokou řadu informace o použití existujícího kódu jazyka Objective-C z jazyka C#._
 
 Nabízí Xamarin cestu pro vývojáře cílené iOS přesunout jejich bez uživatelského rozhraní chcete-li bez ohledu na platformu C# kód, aby ho bylo možné použít kdekoli C# je k dispozici, včetně zařízení s Androidem přes Xamarin.Android a různých typů systému Windows. Ale stejně, protože používáte C# s Xamarinem neznamená, že nelze využít existujících dovedností a kód jazyka Objective-C. Ve skutečnosti znalost jazyka Objective-C zadává jste vývojář lepší Xamarin.iOS protože Xamarin zpřístupní všechny nativní platformu iOS a OS X rozhraní API, které znáte a kterými rádi pracují, například UIKit, animace jádra, základní Foundation a základní grafické prvky a další. Ve stejnou dobu získáte sílu jazyka C#, včetně funkcí, jako jsou LINQ a obecné typy a také bohaté rozhraní .NET základní knihovny tříd pro použití v nativních aplikací.
 

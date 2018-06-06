@@ -1,18 +1,19 @@
 ---
-title: Konkrétní podrobnosti o platformě SkiaSharp
-description: Podrobnosti o tom, jak převést váš obsah SKSurface do nativní aplikace.
+title: Poznámky k SkiaSharp specifické platformy
+description: Tento dokument popisuje specifické pro platformu podrobnosti, které jsou relevantní pro SkiaSharp. Poskytuje ukázkový kód pro iOS, Android, systému macOS, Windows a Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 1D90E0B3-A3A8-4286-BC54-9D67188A1C6C
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: 3f40c7ea0b118816b7be373617795db9158c1450
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: bcec8f2c850396f45cba795555b924d3cbc4ef22
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783526"
 ---
-# <a name="platform-specific-integration"></a>Integrace specifické platformy
+# <a name="skiasharp-platform-specific-notes"></a>Poznámky k SkiaSharp specifické platformy
 
 Následující příklady přidělení vyrovnávací paměti bitové kopie ručně, to se provádí pro ilustraci běžné platformy vzor, který je k vykreslení na existující vyrovnávací paměť RBGA poskytované platformou.
 

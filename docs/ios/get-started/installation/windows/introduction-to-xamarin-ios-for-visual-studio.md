@@ -1,21 +1,20 @@
 ---
 title: Úvod do Xamarin.iOS pro sadu Visual Studio
-description: Tento článek ukazuje, jak vytvářet a testovat aplikace Xamarin iOS pomocí sady Visual Studio. Se vysvětluje, jak použít k vytvoření nové projekty iOS, vytvářet aplikace pro iOS a pak kompilovat, testování a ladění pomocí síťově připojeného počítače Mac hostitele Apple kompilátoru a simulátoru a nástrojů sestavení Xamarin pro Visual Studio.
+description: Tento dokument popisuje, jak vytvářet a testovat aplikace Xamarin.iOS pomocí sady Visual Studio. Popisuje vytvoření projektu, spuštění a ladění aplikace a připojení na Mac sestavení hostitele ze systému Windows.
 ms.prod: xamarin
 ms.assetid: bf3c779f-959f-428d-babb-428f363f7e4e
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/02/2018
-ms.openlocfilehash: fbd48deb0b18dcd3ac0d40e379e21d5967f81e0d
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: e07119bee6478a503ca6c586fa3348206ccd16f7
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786197"
 ---
 # <a name="introduction-to-xamarinios-for-visual-studio"></a>Úvod do Xamarin.iOS pro sadu Visual Studio
-
-_Tento článek ukazuje, jak vytvářet a testovat aplikace Xamarin iOS pomocí sady Visual Studio. Se vysvětluje, jak použít k vytvoření nové projekty iOS, vytvářet aplikace pro iOS a pak kompilovat, testování a ladění pomocí síťově připojeného počítače Mac hostitele Apple kompilátoru a simulátoru a nástrojů sestavení Xamarin pro Visual Studio._
 
 Xamarin pro systém Windows umožňuje aplikacím zapsat a otestovat v sadě Visual Studio pomocí síťově připojeného počítače Mac poskytující službu sestavení a nasazení iOS.
 
@@ -27,7 +26,6 @@ Vývoj pro iOS v sadě Visual Studio poskytuje řadu výhod:
 -  Pomocí oblíbených nástrojů Visual Studio (například **Resharper** a **Team Foundation Server**) pro všechny projekty a platformy včetně iOS zdrojového kódu.
 -  Spolupracovat s známé IDE, s využitím Xamarin.iOS vazby všechny Apple rozhraní API.
 
-
 <a name="Requirements_and_Installation" />
 
 ## <a name="requirements-and-installation"></a>Instalace a požadavky
@@ -38,7 +36,6 @@ Existuje řada možností konfigurace k dispozici, abyste se mohli rozhodnout, k
 
 -  Pomocí Macu jako hlavní vývojovém počítači a spuštění virtuálního počítače s Windows s nainstalovanou sadu Visual Studio. Doporučujeme, abyste pomocí softwaru virtuálních počítačů, jako třeba [Parallels](http://www.parallels.com/products/desktop/) nebo [VMWare](http://www.vmware.com/products/fusion/) .
 -  Stejně jako hostitel sestavení pomocí Macu. V tomto scénáři by být připojen ke stejné síti jako počítače s Windows pomocí [nezbytné](~/cross-platform/get-started/installation/windows.md#installation) nástroje nainstalované.
-
 
 V obou případech postupujte podle těchto kroků:
 
@@ -64,7 +61,6 @@ Ovládací prvky, které jsou relevantní pro vývoj na platformě Xamarin iOS s
 -  **Konfigurace řešení** – umožňuje vybrat konfiguraci použít (například ladění, vydání).
 -  **Řešení platformy** -vám umožní vybrat zařízení iPhone nebo iPhoneSimulator pro nasazení.
 
-
 ### <a name="ios-toolbar"></a>iOS panelu nástrojů
 
 IOS panelu nástrojů v sadě Visual Studio bude vypadat podobně jako v jednotlivých verzí sady Visual Studio. Všechny jsou zobrazena níže:
@@ -77,10 +73,7 @@ Každá položka je popsáno níže:
 -  **Zobrazit simulátoru iOS** –, zobrazí se okno simulátoru iOS dopředu na Mac.
 -  **Zobrazit soubor IPA na sestavení serveru** – otevře vyhledávací v systému Mac do umístění souboru aplikace IPA výstupního souboru.
 
-
-
 ## <a name="ios-output-options"></a>Možnosti výstupu iOS
-
 
 ### <a name="output-window"></a>Okno Výstup
 
@@ -108,29 +101,23 @@ Ostatní výchozí podokna výstup Visual Studio jako ladění a sestavení jsou
 
     [![](introduction-to-xamarin-ios-for-visual-studio-images/output1-sml.png "Výstup nástroje MSBuild")](introduction-to-xamarin-ios-for-visual-studio-images/output1-large.png#lightbox)
 
-
 ## <a name="ios-project-properties"></a>Vlastnosti projektu iOS
 
 Vlastnosti projektu sady Visual Studio je přístupná kliknutím pravým tlačítkem myši na název projektu a výběrem *vlastnosti* v místní nabídce. To vám umožní nakonfigurovat aplikaci iOS, jak ukazuje následující snímek obrazovky:
-
 
  ![](introduction-to-xamarin-ios-for-visual-studio-images/iosproperties.png "Konfigurace aplikace pro iOS")
 
 -  *iOS podepisování sady* – připojí k počítači Mac k naplnění identity podepisování kódu a profily zřizování:
 
-
  ![](introduction-to-xamarin-ios-for-visual-studio-images/bundlesigning.png "Naplnění kód podepisování identit a profily zřizování")
 
 -  *iOS IPA možnosti* – soubor IPA bude uloženo v systému souborů Mac:
-
 
  ![](introduction-to-xamarin-ios-for-visual-studio-images/ipaoptions.png "iOS možnosti IPA")
 
 -  *iOS spustit možnosti* – konfigurace dalších parametrů:
 
  ![](introduction-to-xamarin-ios-for-visual-studio-images/iosrunoptions.png "iOS možnosti spuštění")
-
-
 
 ## <a name="creating-a-new-project-for-ios-applications"></a>Vytvoření nového projektu pro iOS aplikace
 
@@ -156,7 +143,6 @@ Chcete-li přidat objekty do zobrazení, použijte **sada nástrojů** podokně 
 
  Další informace o použití návrháře iOS, najdete v části [Návrhář](~/ios/user-interface/designer/index.md) příručky.
 
-
 ## <a name="running--debugging-ios-applications"></a>Spuštění a ladění v aplikacích iOS
 
 ### <a name="device-logging"></a>Protokolování zařízení
@@ -175,7 +161,6 @@ V pořadí pro zařízení, než se objeví v komponenty combobox musí být na�
 
 Toto okno Nástroj obsahuje: tabulku položky protokolu, rozevírací seznam pro výběr zařízení, způsob, jak zrušit položky protokolu, vyhledávacího pole a přehrát či zastavit nebo pozastavit tlačítky.
 
-
 ### <a name="set-debugging-stops"></a>Nastavení ladění zastaví
 
 V libovolném bodě v aplikaci na signál ladicího programu dočasně pozastavit provádění programu lze nastavit zarážky. Chcete-li nastavit zarážky v aplikaci Visual Studio, klikněte na oblast okraje editoru, vedle číslo řádku kódu, který chcete rozdělit na:
@@ -185,7 +170,6 @@ V libovolném bodě v aplikaci na signál ladicího programu dočasně pozastavi
 Spuštění ladění a pomocí simulátoru nebo zařízení můžete přejít aplikace zarážky. Pokud je dosáhl zarážku, zvýrazní řádku a povolí chování ladění normální sady Visual Studio: Krok do, přes, nebo mimo kód, zkontrolujte místní proměnné nebo použití hodnot proměnných.
 
 Tento snímek obrazovky ukazuje spuštění simulátoru iOS vedle sady Visual Studio na OS X: za použití Parallels
-
 
 ![](introduction-to-xamarin-ios-for-visual-studio-images/image19.png "Tento snímek obrazovky ukazuje spuštění simulátoru iOS vedle sady Visual Studio v systému OS X za použití Parallels")
 

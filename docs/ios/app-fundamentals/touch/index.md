@@ -1,22 +1,20 @@
 ---
-title: Dotykové ovládání
-description: Dotykové obrazovky na množství dnešních zařízení umožňují uživatelům rychle a efektivně využívat zařízení přirozené a intuitivní způsobem. Tato interakce se neomezuje jenom na jednoduchý touch detekce – je možné pomocí gest také. Například gesto roztahováním přiblížení, je velmi běžné příklad tohoto – roztáhnout součástí obrazovky se dvěma prsty, které uživatel může zvětšit nebo zmenšit. Tato příručka prověří touch a gest v iOS.
+title: Zpracování Touch v aplikace Xamarin.iOS
+description: Tento dokument obsahuje odkazy na příručky, které popisují, jak pracovat s dotykového ovládání, více touch, gesta a 3D Touch v aplikaci pro Xamarin.iOS.
 ms.prod: xamarin
 ms.assetid: E3904713-6018-4755-A315-EB045DFB3500
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/23/2017
-ms.openlocfilehash: f34b502e3c0d67f33d41bc489f7ec1d93356af99
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: eb8dce8b13345c13a6f95ae7784bd135e7d1f1f5
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784159"
 ---
-# <a name="touch"></a>Dotykové ovládání
-
-_Dotykové obrazovky na množství dnešních zařízení umožňují uživatelům rychle a efektivně využívat zařízení přirozené a intuitivní způsobem. Tato interakce se neomezuje jenom na jednoduchý touch detekce – je možné pomocí gest také. Například gesto roztahováním přiblížení, je velmi běžné příklad tohoto – roztáhnout součástí obrazovky se dvěma prsty, které uživatel může zvětšit nebo zmenšit. Tato příručka prověří touch a gest v iOS._
-
+# <a name="handling-touch-in-xamarinios-apps"></a>Zpracování Touch v aplikace Xamarin.iOS
 
 Stejně jako jiné mobilní platformy iOS má několik způsobů, jak zpracovat dotykového ovládání. Může podporovat více touch – mnoha bodů obraťte se na obrazovce – a komplexní gesta. Tento průvodce uvádí některé koncepty, a také zvláštnosti implementace touch a gest v systému iOS.
 
@@ -38,8 +36,6 @@ Tato příručka slouží jako úvod do Touch v iOS. Další informace o použit
 
 * [3D Touch](~/ios/platform/3d-touch.md)
 * [Poskytování hmatové zpětné vazby](~/ios/user-interface/ios-ui/haptic-feedback.md)
-
-
 
 ## <a name="related-links"></a>Související odkazy
 

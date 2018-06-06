@@ -1,21 +1,20 @@
 ---
-title: HealthKit
-description: HealthKit je zavedená v iOS 8, která poskytuje centralizovaný, koordinované a zabezpečené úložiště pro informace týkající se stavu rozhraní. Operační systém zajišťuje ochranu osobních údajů a zabezpečení s informacemi o stavu a stavu aplikace, řídicí panel pro uživatele. Aplikace s oprávněními uživatele lze číst a zapisovat širokou škálu informací o stavu.
+title: HealthKit v Xamarin.iOS
+description: Tento dokument popisuje HealthKit, zavedená v iOS 8, která poskytuje centralizovaný, koordinované a zabezpečené úložiště pro informace týkající se stavu rozhraní. Popisuje, jak zřídit HealthKit aplikace a jak napsat kód, který používá rozhraní HealthKit.
 ms.prod: xamarin
 ms.assetid: E3927A21-507C-43BA-A2AD-957716BA9B52
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: a569bcff3ac33d008788bb0b946bd027fa5c0ea8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 06c0231bbb9aa7b82b92e0a8c2157b8be9c8b05b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787530"
 ---
-# <a name="healthkit"></a>HealthKit
-
-_HealthKit je zavedená v iOS 8, která poskytuje centralizovaný, koordinované a zabezpečené úložiště pro informace týkající se stavu rozhraní. Operační systém zajišťuje ochranu osobních údajů a zabezpečení s informacemi o stavu a stavu aplikace, řídicí panel pro uživatele. Aplikace s oprávněními uživatele lze číst a zapisovat širokou škálu informací o stavu._
+# <a name="healthkit-in-xamarinios"></a>HealthKit v Xamarin.iOS
 
 Kit stavu poskytuje zabezpečené úložiště pro informace týkající se stavu uživatele. Stav Kit aplikace může s výslovná oprávnění uživatele, čtení a zápis do tohoto úložiště dat a přijímat upozornění, když je přidána příslušná data. Aplikace s sebou může nést data nebo uživatele můžete použít zadaný stavu aplikace společnosti Apple k zobrazení řídicího panelu všechna svá data.
 

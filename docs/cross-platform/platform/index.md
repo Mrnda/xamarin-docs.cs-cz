@@ -1,22 +1,22 @@
 ---
-title: Podpora jazyků
-description: Funkce pro různé platformy aplikací a koncepty.
+title: Podpora programovacích jazyků v Xamarinu
+description: 'Tento dokument popisuje různé programovací jazyky nepodporuje Xamarin. Popisuje, C#, F #, přenosné Visual Basic.NET a šablon Razor.'
 ms.prod: xamarin
 ms.assetid: CEE8C464-67D7-45F4-9614-EAEF5217CACC
 author: asb3993
 ms.author: amburns
 ms.date: 02/18/2018
-ms.openlocfilehash: 18d7e93d686f369dec4a98b5b5f6c77679119091
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 715f63a0be54ba3342bd63c1c76d89656313359a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781673"
 ---
-# <a name="language-support"></a>Podpora jazyků
-
-Tato část obsahuje dokumenty, které popisují některé pokročilejší funkce aplikace napříč platformami a koncepty.
+# <a name="programming-language-support-in-xamarin"></a>Podpora programovacích jazyků v Xamarinu
 
 ## <a name="c"></a>C# 
+
 ###  <a name="async-support-overviewcross-platformplatformasyncmd"></a>[Přehled podpory asynchronních operací](~/cross-platform/platform/async.md)
 
 Verze 5 jazyka C# zavedená dvě nová klíčová slova a express asynchronních operací: async a operátoru await. Tato klíčová slova umožňuje psát jednoduché kód, který využívá Task Parallel Library provádět dlouhotrvající operace (například přístup k síti) v jiné vlákno a snadný přístup k výsledky při dokončení. Nejnovější verze Xamarin.iOS a Xamarin.Android podporu async a operátoru await – tento dokument obsahuje vysvětlení a příklady pomocí nové syntaxe s funkcí Xamarin.

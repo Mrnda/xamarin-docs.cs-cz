@@ -1,20 +1,19 @@
 ---
 title: Microsoft Azure Active Directory
-description: Pomocí služby Active Directory k ověřování uživatelů v mobilních aplikacích Xamarin.
+description: Tento dokument popisuje, jak používat Azure Active Directory k ověřování uživatelů v mobilních aplikacích vytvořených pomocí Xamarinu.
 ms.prod: xamarin
 ms.assetid: 0A74766A-B583-47AF-986C-FEA8F5CBF9CD
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 7182b0ff308b952205c0d89ecb929695b0183e53
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 9d34b38cf30a9d5a21f5d106f78823a2b077ef7c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34780568"
 ---
 # <a name="microsoft-azure-active-directory"></a>Microsoft Azure Active Directory
-
-_Pomocí služby Active Directory k ověřování uživatelů v mobilních aplikacích Xamarin._
 
 
 Azure Active Directory umožňuje vývojářům zabezpečení prostředků, jako jsou soubory, odkazy a webová rozhraní API, Office 365 a další pomocí stejného účtu organizace, která zaměstnanci používají a přihlaste se k jejich systémy, nebo zaškrtněte jejich e-mailů.

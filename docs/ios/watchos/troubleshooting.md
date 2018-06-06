@@ -1,6 +1,6 @@
 ---
 title: watchOS Poradce při potížích
-description: Známé problémy a řešení problémů watchOS vývoj.
+description: Tento dokument popisuje známé problémy a řešení pro vývoj watchOS s funkcí Xamarin. Popisuje obrázky s problémy, ručně přidejte soubory řadiče rozhraní, spouštění sledování aplikace z příkazového řádku a další.
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 27C31DB8-451E-4888-BBC1-CE0DFC2F9DEC
@@ -8,11 +8,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 6e7a7dd09d65b88831136662d8718886aaf483c5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4e84028336669738c40da9e37cd22f32ba11dfc1
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791762"
 ---
 # <a name="watchos-troubleshooting"></a>watchOS Poradce při potížích
 
@@ -96,7 +97,7 @@ Je snadné se odebrání kanálu alfa na Mac OS X pomocí **Preview** aplikace:
 
 2. Přetáhněte novou `InterfaceController` na scénáři:
 
-    ![](troubleshooting-images/add-1.png "A InterfaceController")
+    ![](troubleshooting-images/add-1.png "InterfaceController")
 
 3. Nyní můžete přetáhnout ovládací prvky na řadič rozhraní (např. tlačítka a popisky) ale nelze vytvořit výstupy nebo akce ještě, protože neexistuje žádný **.h** soubor hlaviček. Následující postup způsobí, že požadovaná **.h** soubor hlaviček, který se má vytvořit.
 
@@ -175,7 +176,7 @@ Pokud se vše správně fungovala, by se měla objevit automaticky v **– tří
 
     Pokud je fokus nastavený v podokně kódu, zkontrolujte si prohlédnete **.h** soubor hlaviček a pokud není klikněte pravým tlačítkem v navigačním panelu a vyberte správný soubor (**MyInterfaceController.h**)
 
-    ![](troubleshooting-images/add-8.png "Select MyInterfaceController")
+    ![](troubleshooting-images/add-8.png "Vyberte MyInterfaceController")
 
 10. Nyní můžete vytvořit výstupy a akce podle **Ctrl + přetažení** scénáře do **.h** soubor hlaviček.
 

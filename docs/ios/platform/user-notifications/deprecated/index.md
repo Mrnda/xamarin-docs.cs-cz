@@ -1,26 +1,25 @@
 ---
-title: Zastaralé oznámení technologie
+title: Zastaralé oznámení technologie v Xamarin.iOS
+description: Tento dokument popisuje technologie oznámení iOS, které jsou zastaralé považuje rozhraní oznámení uživateli, zavedená v iOS 10.
 ms.prod: xamarin
 ms.assetid: 20C4F6E5-56DF-4A85-BBF0-E38C88586307
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/07/2016
-ms.openlocfilehash: eff1d999e705aa493d0481e34ead3b9b81d434f9
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4becc5e296fb6e2496d9ffd863f7137419480262
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788550"
 ---
-# <a name="deprecated-notification-technologies"></a>Zastaralé oznámení technologie
+# <a name="deprecated-notification-technologies-in-xamarinios"></a>Zastaralé oznámení technologie v Xamarin.iOS
 
 V této části ukazuje, jak implementovat místních a nabízených oznámení v Xamarin.iOS. Bude popisují různé prvky uživatelského rozhraní oznámení iOS a popisují rozhraní API je zahrnuta s vytváření a zobrazování oznámení.
 
 > [!IMPORTANT]
 > Informace v této části se vztahují na iOS 9 a předchozí, ho byla ponechána zde k podpoře starší verze iOS. IOS 10 a novější, najdete v tématu [uživatele oznámení Framework – průvodce](~/ios/platform/user-notifications/index.md) pro podporu místní i vzdálené oznámení na zařízení s iOS.
-
-
-
 
 ## <a name="sections"></a>Oddíly
 

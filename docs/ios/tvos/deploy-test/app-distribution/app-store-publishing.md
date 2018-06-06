@@ -1,21 +1,20 @@
 ---
 title: Publikování do App Storu Apple TV
-description: Tento článek ukazuje, jak nakonfigurovat, vytvářet a publikovat Xamarin.tvOS aplikace pro distribuci přes Apple TV App Store. Obsahuje podrobný průvodce, který popisuje postup přípravy vaší aplikace pro distribuci, jak odeslat aplikace ke kontrole pomocí nástroje Apple a, nakonec, jak publikovat aplikace pro Apple TV App Store.
+description: Tento dokument popisuje postup publikování aplikace pro Apple TV App Store. Popisuje, jak nakonfigurovat, zřízení, vytvoření a odeslání tvOS aplikací vytvořených pomocí Xamarinu.
 ms.prod: xamarin
 ms.assetid: 52448C93-DC19-40FA-BF8C-608AE680FF49
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: c72b161845f6d8492a47d95e51a80cf0b4f30271
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ac905caaf0bdefe7f0c5502be0bd63102ca5a813
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789301"
 ---
 # <a name="publishing-to-the-apple-tv-app-store"></a>Publikování do App Storu Apple TV
-
-_Tento článek ukazuje, jak nakonfigurovat, vytvářet a publikovat Xamarin.tvOS aplikace pro distribuci přes Apple TV App Store. Obsahuje podrobný průvodce, který popisuje postup přípravy vaší aplikace pro distribuci, jak odeslat aplikace ke kontrole pomocí nástroje Apple a, nakonec, jak publikovat aplikace pro Apple TV App Store._
 
 V pořadí distribuovat aplikace na všechna zařízení Apple TV, Apple vyžaduje, aby publikovat prostřednictvím aplikace *Apple TV App Store*, provedení nákupní centrální umístění pro tvOS aplikace obchodu s aplikacemi. Vývojáři mnoho typů aplikací můžete velkými písmeny v masivním úspěch tento jediný bod rozdělení. Apple TV App Store je to řešení na klíč, nabídky vývojáři aplikací distribuce a platebních systémy.
 

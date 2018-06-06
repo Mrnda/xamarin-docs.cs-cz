@@ -1,22 +1,22 @@
 ---
-title: Práce s výstrahami
-description: Tento článek se zabývá práci s UIAlertController chcete uživateli v Xamarin.tvOS zobrazit zpráva s upozorněním.
+title: Práce s výstrahami tvOS v Xamarinu
+description: Tento dokument popisuje, jak pracovat s výstrahami tvOS v Xamarin. Popisuje zobrazení výstrahy, přidání textových polí a pomocná třída.
 ms.prod: xamarin
 ms.assetid: F969BB28-FF2C-4A7D-88CA-F8076AD48538
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: da4d2d952687c7e39276ca76af413b83c4519eea
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b5125f150a4d57ed27041da2944f4c161434cf93
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789080"
 ---
-# <a name="working-with-alerts"></a>Práce s výstrahami
+# <a name="working-with-tvos-alerts-in-xamarin"></a>Práce s výstrahami tvOS v Xamarinu
 
 _Tento článek se zabývá práci s UIAlertController chcete uživateli v Xamarin.tvOS zobrazit zpráva s upozorněním._
-
 
 Pokud potřebujete získat pozornost tvOS uživatele nebo se zeptejte oprávnění k provedení destruktivní akce (například odstranění souboru), může znamenat k upozornění pomocí `UIAlertViewController`:
 

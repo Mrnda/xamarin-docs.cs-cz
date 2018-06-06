@@ -1,26 +1,26 @@
 ---
-title: Odběry a vytváření sestav
+title: Odběry a vytváření sestav v Xamarin.iOS
+description: Tento dokument popisuje – obnovení odběry, bezplatných předplatných, automaticky obnovitelných odběry a pomocí iTunes připojení Pokud chcete sestavu podle těchto položek.
 ms.prod: xamarin
 ms.assetid: 27EE4234-07F5-D2CD-DC1C-86E27C20141E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 7ba47e8f0ec114845c14269e81bb7f078a5d4936
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7e0873107a60b48e5ebfd8e159f3bf3b85d02867
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787026"
 ---
-# <a name="subscriptions-and-reporting"></a>Odběry a vytváření sestav
+# <a name="subscriptions-and-reporting-in-xamarinios"></a>Odběry a vytváření sestav v Xamarin.iOS
 
 ## <a name="about-non-renewing-subscriptions"></a>O bez obnovení odběrů
 
 Obnovení není odběry jsou určené pro produkty, které představují prodej služby s omezením čas například (jeden týden přístupu k navigační aplikaci) nebo časově omezené přístup k archivu data.   
    
-   
-   
- Hlavní rozdíly mezi-obnovení odběry a jinými typy produktu:
+Hlavní rozdíly mezi-obnovení odběry a jinými typy produktu:
 
 -  Definice produktu v iTunes Connect nezahrnuje termín. Kód aplikace musí být schopen odvodit doby platnosti z ID produktu. 
 -  Můžete ji získat několikrát (například použití produktu). Aplikace se vyžaduje ke správě předplatného termín nebo vypršení platnosti a obnovení a brání uživateli, kdybyste kupovali překrývající se odběry. 

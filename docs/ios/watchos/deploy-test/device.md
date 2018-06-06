@@ -1,19 +1,20 @@
 ---
-title: Testování v sledování zařízení
-description: Nasazení aplikací k testování na vaše Apple Watch
+title: Testování v zařízení Apple Watch
+description: Tento dokument popisuje postup nasazení aplikace watchOS vytvořených pomocí Xamarinu pro testování v skutečné Apple Watch. Popisuje zařízení, profily, testování, zřizování a poskytuje Rady pro odstraňování potíží.
 ms.prod: xamarin
 ms.assetid: A72A7D38-FAE8-4DD2-843D-54B74C5078D7
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: d1d00a4d561551435e7d2333520dc614a79dcad3
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a960d81d41ff127fa3316e6190dfbf4881305c02
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790858"
 ---
-# <a name="testing-on-watch-devices"></a>Testování v sledování zařízení
+# <a name="testing-on-apple-watch-devices"></a>Testování v zařízení Apple Watch
 
 Po provedení [kroky nasazení](~/ios/watchos/deploy-test/index.md) k vytvoření ID aplikace a skupin aplikací (v případě potřeby), postupujte podle pokynů na této stránce:
 

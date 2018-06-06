@@ -1,19 +1,20 @@
 ---
-title: Běžné vzory a idioms
-description: Tento dokument popisuje vzoru model-view-controller, zdroje a delegáta vzorky dat a protokoly.
+title: Běžné vzory a idioms v Xamarin.Mac
+description: Tento dokument popisuje běžné vzory návrhu použít při vytváření Xamarin.Mac aplikace. Popisuje model-view-controller vzor, datové zdroje a delegáta vzory a protokoly.
 ms.prod: xamarin
 ms.assetid: BF0A3517-17D8-453D-87F7-C8A34BEA8FF5
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/17/2016
-ms.openlocfilehash: cf499c555ddbefbdb5a7fae3ae8929a17e0d0cd7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f6bba5575edf2dcbddbd354b590e03f9fed06291
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791534"
 ---
-# <a name="common-patterns-and-idioms"></a>Běžné vzory a idioms
+# <a name="common-patterns-and-idioms-in-xamarinmac"></a>Běžné vzory a idioms v Xamarin.Mac
 
 V celém rozhraní API Apple zveřejňovány prostřednictvím jazyka C# určitých idioms a vzory se spustit znovu a znovu. Pokud máte zkušenosti s programování s Xamarin.iOS, může to vypadat povědomě. Dokumentace bude často odkazovat tyto vzory a idioms opakovaně, tak mít solidní znalosti z nich vám pomůže smysl, které můžete najít dokumentaci.
 

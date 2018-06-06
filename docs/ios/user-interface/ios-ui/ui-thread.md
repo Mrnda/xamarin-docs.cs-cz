@@ -1,18 +1,20 @@
 ---
-title: Práce z vlákna uživatelského rozhraní
+title: Práce z vlákna uživatelského rozhraní v Xamarin.iOS
+description: Tento dokument popisuje, jak pracovat s vlákna uživatelského rozhraní v Xamarin.iOS. Popisuje provádění vlákna uživatelského rozhraní, poskytuje příklad vlákna na pozadí a prověří asynchronní/await.
 ms.prod: xamarin
 ms.assetid: 98762ACA-AD5A-4E1E-A536-7AF3BE36D77E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 72f161001509519fb02a652f23eaa7805a55f7ca
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4328b84625aff4c92d6e97029ced7dde747d4fc4
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790406"
 ---
-# <a name="working-with-the-ui-thread"></a>Práce z vlákna uživatelského rozhraní
+# <a name="working-with-the-ui-thread-in-xamarinios"></a>Práce z vlákna uživatelského rozhraní v Xamarin.iOS
 
 Uživatelské rozhraní aplikace jsou vždy jednovláknové, i v Vícevláknová zařízení – je pouze jeden reprezentace obrazovky a potřeba koordinované prostřednictvím jednoho 'přístupový bod, co se zobrazí všechny změny. Více vláken zabrání pokusu o aktualizaci stejné pixelů ve stejnou dobu (například).
 

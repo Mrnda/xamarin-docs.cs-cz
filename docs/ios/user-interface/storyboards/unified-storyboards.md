@@ -1,21 +1,20 @@
 ---
-title: Jednotná scénářů
-description: Jednotná scénářů povolit iOS developer vytvoření uživatelského rozhraní pomocí jednoho storyboard, nikoli několik scénářů, tak, aby pokrývalo zvětšující rozsahu velikost obrazovky zařízení. Tento článek je navržená tak získali podrobnější přehled do operaci jednotná scénáře v rámci Xamarin.iOS.
+title: Jednotná scénářů v Xamarin.iOS
+description: Tento dokument popisuje jednotné scénářů v Xamarin.iOS. Jednotná scénářů umožňují vývojářům pro podporu více velikost obrazovky s definicí jednoho rozhraní.
 ms.prod: xamarin
 ms.assetid: F6F70374-FC2A-4401-A712-A16D0F9B340F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: d84afd0d33a6115d5d3ef9ea9b68d3370f9bb946
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6d3324a6485f2d240ec339f6ce7f03aafe51c80c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792018"
 ---
-# <a name="unified-storyboards"></a>Jednotná scénářů
-
-_Jednotná scénářů povolit iOS developer vytvoření uživatelského rozhraní pomocí jednoho storyboard, nikoli několik scénářů, tak, aby pokrývalo zvětšující rozsahu velikost obrazovky zařízení. Tento článek je navržená tak získali podrobnější přehled do operaci jednotná scénáře v rámci Xamarin.iOS._
+# <a name="unified-storyboards-in-xamarinios"></a>Jednotná scénářů v Xamarin.iOS
 
 iOS 8 obsahuje nový, jednodušší použití mechanismus pro vytvoření uživatelského rozhraní – jednotná scénáře. Pomocí jednoho storyboard nepokrývají všechny velikosti obrazovky jiný hardware, mohou být vytvořeny rychlé a dobře reagovaly zobrazení v "návrhu-jednou, použijte m" stylu.
 
@@ -679,7 +678,7 @@ A když se aplikace spustí na zařízení iPhone simulátoru, nebyl nalezen ele
 
  [![](unified-storyboards-images/exclude05.png "Element chybí při spuštěné aplikaci v simulátoru iPhone")](unified-storyboards-images/exclude05.png#lightbox)
 
-K odebrání případu vyloučení z elementu, jednoduše vyberte požadovaný prvek v **návrhová plocha**, přejděte do dolní části **vlastnost Explorer** a klikněte na tlačítko **-**tlačítko vedle případ odebrat.
+K odebrání případu vyloučení z elementu, jednoduše vyberte požadovaný prvek v **návrhová plocha**, přejděte do dolní části **vlastnost Explorer** a klikněte na tlačítko **-** tlačítko vedle případ odebrat.
 
 Informace o implementaci Unified scénářů, podívejte se na `UnifiedStoryboard` ukázkové aplikace Xamarin iOS 8 připojené k tomuto dokumentu.
 

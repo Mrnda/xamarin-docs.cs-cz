@@ -1,15 +1,17 @@
 ---
 title: TinyRenderer sešity
+description: Tento dokument popisuje TinyRenderer sešity, které pracují s OpenGL. Tyto sešity ve Windows a macu.
 ms.prod: xamarin
 ms.assetid: E4E17836-94C2-436F-ADD8-104AC574D22B
 author: topgenorth
 ms.author: toopge
 ms.date: 03/30/2017
-ms.openlocfilehash: fc0716fc3babd0b2ee835b839ae816f2cb815b0f
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 10704044042ea38dd3a5297c46371f9f9c27936c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34794134"
 ---
 # <a name="tinyrenderer-workbooks"></a>TinyRenderer sešity
 
@@ -31,7 +33,6 @@ ms.lasthandoff: 05/09/2018
 [![](tinyrenderer-images/tinyrenderer-sml.png "Příklad vykreslování obrázek")](tinyrenderer-images/tinyrenderer.png#lightbox)
 
 Kód jazyka C# v těchto sešitech je založen na tento otevřený zdroj [C++ – kód](https://github.com/ssloy/tinyrenderer) a text je z tohoto [wiki](https://github.com/ssloy/tinyrenderer/wiki/). Děkujeme, které jsou k dispozici v části licenci, která nám chcete-li do sady sešity povolené původní práci.
-
 
 ## <a name="related-links"></a>Související odkazy
 

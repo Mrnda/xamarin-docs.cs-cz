@@ -1,21 +1,20 @@
 ---
-title: Rozšířené uživatelská oznámení
-description: Tento článek se týká všech způsobů, jak uživatelé oznámení vylepšily iOS 10 a jejich použití v aplikaci pro Xamarin.iOS.
+title: Rozšířené uživatelská oznámení v Xamarin.iOS
+description: Tento článek popisuje rozhraní oznámení uživateli byla zavedená v iOS 10. Popisuje, místní oznámení, vzdálené oznámení, oznámení správy, akcí oznámení a další.
 ms.prod: xamarin
 ms.assetid: 4E1FF652-28F0-4566-B383-9D12664401A4
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/02/2017
-ms.openlocfilehash: b27d415240f3b8cd25c4bc54f6d176c50e42a250
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 29c529d57d35b0ab2b7bf2e80f8d295a8d059c5e
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788651"
 ---
-# <a name="enhanced-user-notifications"></a>Rozšířené uživatelská oznámení
-
-_Tento článek se týká všech způsobů, jak uživatelé oznámení vylepšily iOS 10 a jejich použití v aplikaci pro Xamarin.iOS._
+# <a name="enhanced-user-notifications-in-xamarinios"></a>Rozšířené uživatelská oznámení v Xamarin.iOS
 
 Nový iOS 10, framework umožňuje doručení a zpracování místní a vzdálené oznámení oznámení pro uživatele. Pomocí toto rozhraní, aplikace nebo rozšíření aplikace můžete naplánovat doručování oznámení místní zadáním sadu podmínek, jako je například umístění nebo denní dobu.
 

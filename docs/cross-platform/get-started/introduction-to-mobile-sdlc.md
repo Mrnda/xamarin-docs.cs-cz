@@ -1,20 +1,19 @@
 ---
 title: Úvod do životního cyklu mobilní Software
-description: Tento článek popisuje životního cyklu softwaru s ohledem na mobilní aplikace a popisuje některé aspekty při vytváření mobilních projekty vyžaduje. Pro vývojáře, kteří chtějí stačí přejít přímo na a spusťte vytváření může tento průvodce přeskočí a čtení později podrobnější vysvětlení nástroje pro vývoj mobilních řešení.
+description: Tento dokument popisuje životního cyklu mobilní software, trvá podívejte se na UX návrhu, uživatelského rozhraní návrhu, vývoj, ustálení, distribuce a další.
 ms.prod: xamarin
 ms.assetid: 420c5fdf-4610-4e71-9db5-fe894c961924
 author: asb3993
 ms.author: amburns
 ms.date: 11/22/2016
-ms.openlocfilehash: c93a063c9c933e1b9f397d172115471473cf8f35
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 8a95f89ad41ab793d8c26631f1a967180b4c1779
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782330"
 ---
 # <a name="introduction-to-the-mobile-software-development-lifecycle"></a>Úvod do životního cyklu mobilní Software
-
-_Tento článek popisuje životního cyklu softwaru s ohledem na mobilní aplikace a popisuje některé aspekty při vytváření mobilních projekty vyžaduje. Pro vývojáře, kteří chtějí stačí přejít přímo na a spusťte vytváření může tento průvodce přeskočí a čtení později podrobnější vysvětlení nástroje pro vývoj mobilních řešení._
 
 Vytváření mobilních aplikací může být stejně snadná jako otevírání až rozhraní IDE, vyvolání něco společně, provádění rychlé bit testování a odesílá na obchod s aplikacemi – všechny provádí za dnešní odpoledne. Nebo může být velmi zahrnutých proces, který zahrnuje přísných počáteční návrh, testování, QA testování na tisíce zařízení, životní cyklus úplné beta a pak nasazení několika různými způsoby použitelnost.
 

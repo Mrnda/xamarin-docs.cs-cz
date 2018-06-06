@@ -1,19 +1,20 @@
 ---
-title: Touch ID
-description: Touch ID je technologie ověřování otisků prstů společnosti Apple.
+title: Touch ID v Xamarin.iOS
+description: Tento dokument popisuje, jak používat Touch ID technologie ověřování otisků prstů společnosti Apple, v aplikacích pro Xamarin.iOS.
 ms.prod: xamarin
 ms.assetid: 4BC8EFD6-52FC-4793-BA69-D6BFF850FE5F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: d9d70c37de5cb91c4cd1fdc77e27942d851c346b
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.openlocfilehash: b5db80d280d7ad3c43a438d5caae57fbd1928896
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788579"
 ---
-# <a name="touch-id"></a>Touch ID
+# <a name="touch-id-in-xamarinios"></a>Touch ID v Xamarin.iOS
 
 Touch ID byla zavedena v iOS 7 jako prostředek k ověřování uživatele - podobná hesla. Bylo ale k odemknutí zařízení, přes obchod s aplikacemi, pomocí iTunes a ověřování serveru služby iCloud řetězce klíčů pouze omezený.
 

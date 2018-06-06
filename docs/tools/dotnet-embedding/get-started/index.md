@@ -1,15 +1,17 @@
 ---
 title: Začínáme s .NET vložení
+description: Tento dokument obsahuje odkazy na různé příručky, které popisují, jak používat .NET vložení do C, Java, Android, Objective-C, iOS a systému macOS projekty.
 ms.prod: xamarin
 ms.assetid: AF8A4798-EBDD-4E73-997B-C3D4FC5E9685
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: af73de4c9f27cfab34b22e726248723da3d1ee58
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 9829881dcb374b141bdf7fc578266ec66d90315b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793055"
 ---
 # <a name="getting-started-with-net-embedding"></a>Začínáme s .NET vložení
 

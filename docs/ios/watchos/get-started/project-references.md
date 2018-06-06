@@ -1,19 +1,20 @@
 ---
-title: Odkazy na projekt
-description: Vysvětlení vztahu mezi aplikace pro iOS, aplikaci sledovat a sledovat rozšíření.
+title: watchOS odkazy na projekt v Xamarinu
+description: Tento dokument popisuje vztah mezi aplikaci pro iOS, sledovat aplikace a rozšíření aplikace sledovat. Popisuje, odkazy na projekt a sady identifikátory.
 ms.prod: xamarin
 ms.assetid: C366E062-C33D-406A-B3FF-CBE82E5D1E7E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: f3573e8b578ca567ea9d7360eb132aead4c24f37
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1bd950d0929beae7133b0eb8ef6b2a69bc116f50
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791485"
 ---
-# <a name="project-references"></a>Odkazy na projekt
+# <a name="watchos-project-references-in-xamarin"></a>watchOS odkazy na projekt v Xamarinu
 
 _Vysvětlení vztahu mezi aplikace pro iOS, aplikaci sledovat a sledovat rozšíření._
 

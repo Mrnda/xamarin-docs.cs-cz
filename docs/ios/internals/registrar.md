@@ -1,17 +1,19 @@
 ---
-title: Typ registrátora
+title: Typ Registrátor pro Xamarin.iOS
+description: Tento dokument popisuje typ registrátora Xamarin.iOS, která zpřístupňuje třídy jazyka C# do jazyka Objective-C runtime.
 ms.prod: xamarin
 ms.assetid: 610A0834-1141-4D09-A05E-B7ADF99462C5
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 9d4d2e5f3e1c2dc1233b466c00dd60340552fed0
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: e818d6a2092f408823e4a635a70c4f6666e3a7a9
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786171"
 ---
-# <a name="type-registrar"></a>Typ registrátora
+# <a name="type-registrar-for-xamarinios"></a>Typ Registrátor pro Xamarin.iOS
 
 Tento dokument popisuje systému registrace typu používané Xamarin.iOS.
 

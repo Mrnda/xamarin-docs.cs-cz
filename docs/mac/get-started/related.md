@@ -1,19 +1,20 @@
 ---
-title: Související dokumentace
-description: Odkazy na další dokumentaci pro vývojáře v systému macOS.
+title: Xamarin.Mac – související dokumentace
+description: 'Tento dokument poskytnout odkazy na relevantní dokumentaci pro vývojáře Xamarin.Mac: Xamarin.iOS dokumentace, Apple Mac Dev Center a různé příručky, které popisují, jak sestavit uživatelské rozhraní s Xamarin.Mac.'
 ms.prod: xamarin
 ms.assetid: 0a282c58-1c37-4f73-8440-85de2daf454a
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/02/2016
-ms.openlocfilehash: ff26747a395b48163dbabf0b058f28427182d41a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 1bef756d89a92d082bd5ee29e18047bc4bed2498
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792525"
 ---
-# <a name="related-documentation"></a>Související dokumentace
+# <a name="xamarinmac--related-documentation"></a>Xamarin.Mac – související dokumentace
 
 Kromě části Mac [developer.xamarin.com](~/mac/get-started/index.md) existují tři skvělé zdroje dokumentace, která může být také pomoc s dotazy Xamarin.Mac:
 

@@ -1,17 +1,18 @@
 ---
-title: Funkce platformy
-description: Tento dokument obsahuje odkazy na články popisující funkce obsažené v různých verzích tvOS.
+title: tvOS funkcí platformy
+description: Tento dokument obsahuje odkazy na články popisující funkce obsažené v různých verzích tvOS. Taky obsahuje odkazy na dokument, který popisuje řadiče vzdálené Siri a Bluetooth.
 ms.prod: xamarin
 ms.assetid: FB705CAD-B43C-4374-B139-92AB81185429
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 02/02/2018
-ms.openlocfilehash: 3cce82bd6058d2d74c1acdef7f99196835908718
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 33679a79935d891e4d340d4adcf41e37d68cd40f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788956"
 ---
 # <a name="tvos-platform-features"></a>tvOS funkcí platformy
 
@@ -34,8 +35,6 @@ Tento článek představuje všechny nové a změněné rozhraní API a funkce d
 ## <a name="siri-remote-and-bluetooth-controllersiostvosplatformremote-bluetoothmd"></a>[Siri Remote a řadiče Bluetooth](~/ios/tvos/platform/remote-bluetooth.md)
 
 Tento článek se zabývá podpora nové řadiče herní Siri Remote a Bluetooth v Xamarin.tvOS aplikace.
-
-
 
 ## <a name="related-links"></a>Související odkazy
 

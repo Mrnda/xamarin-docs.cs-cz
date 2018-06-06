@@ -1,18 +1,20 @@
 ---
-title: Výška řádku automatickou
+title: Výška řádku automatickou v Xamarin.iOS
+description: Tento dokument popisuje, jak přidat do aplikace Xamarin.iOS zobrazení řádky tabulky, jejichž výšky lišit podle jejich obsahu. Popisuje rozložení buněk v iOS Designer a povolení výšky automatickou změnu velikosti.
 ms.prod: xamarin
 ms.assetid: CE45A385-D40A-482A-90A0-E8382C2BFFB9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 73e16c3381b639645463e3e8aaeed35224b67861
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3c6beb112947f5423de200fd5c8957ef28dd48f9
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789964"
 ---
-# <a name="auto-sizing-row-height"></a>Výška řádku automatickou
+# <a name="auto-sizing-row-height-in-xamarinios"></a>Výška řádku automatickou v Xamarin.iOS
 
 Od verze iOS 8, Apple přidat schopnost vytvářet zobrazení tabulky (`UITableView`), automaticky zvýšit nebo snížit výšku daného řádku založenou na velikosti jeho obsah pomocí automatického rozložení, velikost třídy a omezení.
 

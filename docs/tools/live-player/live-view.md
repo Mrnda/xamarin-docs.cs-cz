@@ -1,17 +1,18 @@
 ---
 redirect_url: /xamarin/tools/live-player/
 title: Live nastavenému XAML
-description: Testování změny kódu aplikace v reálném čase na systému iOS nebo zařízení se systémem Android
+description: Tento dokument popisuje, jak použijte přehrávač Live Xamarin live preview stránky XAML, provést změny XAML a podívejte se změny, okamžitě se zobrazí na zařízení.
 ms.prod: xamarin
 ms.assetid: 86E9A179-21F8-4F3A-A9CE-36F0FC5DB4A8
 author: topgenorth
 ms.author: toopge
 ms.date: 12/21/2017
-ms.openlocfilehash: e485ea596d9c6c7aee378d50ae41d13faa7c0a80
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: cc68044342fca84e62e3b17770170e1d7a23f677
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793699"
 ---
 # <a name="xaml-live-previewing"></a>Live nastavenému XAML
 
@@ -30,8 +31,6 @@ Jednou z výhod přehrávače Xamarin za provozu je možnost live preview strán
 2. Visual Studio pro Mac 7.2 nebo novější. Doporučujeme, abyste na nejnovější verzi.
 
 -----
-
-
 
 <a name="deploydevice" />
 
@@ -69,13 +68,6 @@ Před Xamarin Live Player mohli používat s iOS nebo zařízení se systémem A
 
 -----
 
-
-
-
-
-
-
-
 ## <a name="deploying-to-android-emulator"></a>Nasazení do emulátoru systému Android
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -108,10 +100,6 @@ Před Xamarin Live Player mohli používat s iOS nebo zařízení se systémem A
 
 -----
 
-
-
-
-
 ## <a name="deploying-to-ios-simulator"></a>Nasazení do simulátoru iOS
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -137,13 +125,6 @@ Aktuálně neexistuje žádná podpora pro použití náhled XAML za provozu v s
     ![](live-view-images/image5.png)  
 
 -----
-
-
-
-
-
-
-
 
 ## <a name="related-links"></a>Související odkazy
 

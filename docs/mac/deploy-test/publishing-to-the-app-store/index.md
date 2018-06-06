@@ -1,21 +1,20 @@
 ---
-title: Publikování do obchodu s aplikacemi
-description: Tento průvodce vás provede nasazení aplikace na Xamarin.Mac pomocí sady Visual Studio for Mac. Vysvětluje, jak nastavit účet pro vývojáře Mac, vás provede procesem vytvoření certifikáty pro podepisování kódu a ukazuje, jak je používat k vytvoření aplikace pro Mac, které mohou být distribuovány přímo nebo prostřednictvím Mac App Storu.
+title: Publikování Xamarin.Mac aplikací pro Mac App Storu
+description: Tento dokument popisuje, jak nasadit Xamarin.Mac aplikaci pomocí sady Visual Studio for Mac. Vysvětluje, jak nastavit účet Mac pro vývojáře, jak vytvořit certifikáty pro podepisování kódu a jakým způsobem je použít k vytvoření aplikace pro Mac, které mohou být distribuovány přímo nebo prostřednictvím Mac App Storu.
 ms.prod: xamarin
 ms.assetid: D26C5E54-EAD2-5487-264D-4263AEA1EBF2
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 3b21dd0adfd96e1190660aa97b2850f968b5473f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: eba359dac70e31325235f6145fe06902e25df7af
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791963"
 ---
-# <a name="publishing-to-the-app-store"></a>Publikování do obchodu s aplikacemi
-
-_Tento průvodce vás provede nasazení aplikace na Xamarin.Mac pomocí sady Visual Studio for Mac. Vysvětluje, jak nastavit účet pro vývojáře Mac, vás provede procesem vytvoření certifikáty pro podepisování kódu a ukazuje, jak je používat k vytvoření aplikace pro Mac, které mohou být distribuovány přímo nebo prostřednictvím Mac App Storu._
+# <a name="publishing-xamarinmac-apps-to-the-mac-app-store"></a>Publikování Xamarin.Mac aplikací pro Mac App Storu
 
 ## <a name="overview"></a>Přehled
 

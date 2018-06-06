@@ -1,5 +1,5 @@
 ---
-title: Přehled distribuce aplikace
+title: tvOS přehled distribuce aplikace
 description: Tento dokument poskytuje přehled distribuční technik, které jsou k dispozici pro aplikaci Xamarin.tvOS a slouží jako ukazatel na podrobnější dokumenty v tomto tématu.
 ms.prod: xamarin
 ms.assetid: D5E0F446-C083-4E21-9788-FC84D32D00C4
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: e5be0bef158c87fe06516d9a58e34c741e6e14b1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 440d980c39434165ba9a59ccf67850977c8f75c3
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788742"
 ---
-# <a name="app-distribution-overview"></a>Přehled distribuce aplikace
+# <a name="tvos-app-distribution-overview"></a>tvOS přehled distribuce aplikace
 
 _Tento dokument poskytuje přehled distribuční technik, které jsou k dispozici pro aplikaci Xamarin.tvOS a slouží jako ukazatel na podrobnější dokumenty v tomto tématu._
 

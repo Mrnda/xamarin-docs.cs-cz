@@ -1,15 +1,16 @@
 ---
-title: Xamarin.Essentials
+title: Začínáme s Xamarin.Essentials
 description: Xamarin.Essentials poskytuje rozhraní API jedné platformě, která funguje s iOS, Android nebo UWP aplikace, která je přístupná ze sdíleného kódu bez ohledu na to, jak vytvořit uživatelské rozhraní.
 ms.assetid: B2669C48-B659-4854-BD80-FEB0E876F5B9
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 2e0abff4d0408d3db11ab95f1debc6621f609d86
-ms.sourcegitcommit: c024f29ff730ae20c15e99bfe0268a0e1c9d41e5
+ms.openlocfilehash: f0f6eebbd12041a7be2d8e2dc00a9146b40d675f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783071"
 ---
 # <a name="get-started-with-xamarinessentials"></a>Začínáme s Xamarin.Essentials
 

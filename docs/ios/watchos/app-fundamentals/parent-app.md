@@ -1,21 +1,20 @@
 ---
-title: Práce s nadřazenou aplikací
-description: Sdílení dat mezi aplikace pro iOS a sledování v watchOS 1
+title: Práce s watchOS nadřazená aplikace v Xamarinu
+description: Tento dokument popisuje, jak pracovat s nadřazenou aplikací watchOS v Xamarin. Popisuje rozšíření WatchKit aplikace, aplikace pro iOS, sdíleného úložiště a další.
 ms.prod: xamarin
 ms.assetid: 9AD29833-E9CC-41A3-95D2-8A655FF0B511
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 769847cccb3e21fea4d8f45d8e5d0c0fb59bdd43
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3af2cce0d84e3934eeb89917990f111d29aadef1
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790689"
 ---
-# <a name="working-with-the-parent-application"></a>Práce s nadřazenou aplikací
-
-_Sdílení dat mezi aplikace pro iOS a sledování v watchOS 1_
+# <a name="working-with-the-watchos-parent-application-in-xamarin"></a>Práce s watchOS nadřazená aplikace v Xamarinu
 
 > [!IMPORTANT]
 > Přístup k aplikaci nadřazené pouze pomocí níže uvedených příkladech funguje na watchOS 1 sledování aplikace.
@@ -59,7 +58,7 @@ WKInterfaceController.OpenParentApplication (new NSDictionary (), (replyInfo, er
 ```
 
 
-### <a name="ios-app"></a>iOS App
+### <a name="ios-app"></a>Aplikace pro iOS
 
 Všechna volání z rozšíření sledování aplikace jsou směrovány prostřednictvím aplikace iPhone `HandleWatchKitExtensionRequest` metoda.
 Pokud provádíte různých požadavků v aplikaci sledování, pak tato metoda bude nutné zadat dotaz `userInfo` slovníku určit, jak zpracovat žádost.
@@ -149,6 +148,6 @@ Stáhnout verzi jazyka C# [WormHoleSharp](https://github.com/Clancey/WormHoleSha
 ## <a name="related-links"></a>Související odkazy
 
 - [GpsWatch (ukázka)](https://developer.xamarin.com/samples/monotouch/WatchKit/WatchKitCatalog/)
-- [WormHoleSharp (sample)](https://github.com/Clancey/WormHoleSharp)
+- [WormHoleSharp (ukázka)](https://github.com/Clancey/WormHoleSharp)
 - [Odkaz na WKInterfaceController společnosti Apple](https://developer.apple.com/library/prerelease/ios/documentation/WatchKit/Reference/WKInterfaceController_class/index.html#//apple_ref/occ/clm/WKInterfaceController/openParentApplication:reply:)
 - [Společnosti Apple sdílení dat s obsahující aplikaci](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html)

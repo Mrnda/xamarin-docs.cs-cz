@@ -1,19 +1,20 @@
 ---
-title: Nasazování a testování
-description: Testování v zařízeních a nahrávání do obchodu s aplikacemi
+title: Nasazení a testování aplikací watchOS pomocí Xamarinu
+description: Tento dokument popisuje, jak nasadit a otestovat watchOS aplikace vytvořené s funkcí Xamarin. Ho kontrolní seznam nasazení poskytuje, popisuje explicitní a zástupný znak app ID a se podíváme na skupiny aplikací.
 ms.prod: xamarin
 ms.assetid: 98257399-E9B3-4BAB-9204-0E89117DEA6D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 47c63a01d435626fd1637b6ed5f5bb1755c717af
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 778583456e74bb7ed3a85dce96bcdbc487aef57a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790939"
 ---
-# <a name="deployment-and-testing"></a>Nasazování a testování
+# <a name="deploying-and-testing-watchos-apps-with-xamarin"></a>Nasazení a testování aplikací watchOS pomocí Xamarinu
 
 ## <a name="deployment-checklist"></a>Kontrolní seznam nasazení
 

@@ -1,18 +1,20 @@
 ---
-title: Transakce a ověření
+title: Transakce a ověření v Xamarin.iOS
+description: Tento dokument popisuje, jak povolit pro obnovení posledních nákupy v aplikaci pro Xamarin.iOS. Také popisuje způsoby, jak zabezpečit nákupy a doručit serveru produkty.
 ms.prod: xamarin
 ms.assetid: 84EDD2B9-3FAA-B3C7-F5E8-C1E5645B7C77
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: c8d86d0ce3119b3e104a65a170ab141484af44a7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 2cb38df4bbabc3534f5c90c7695569d68349ccc3
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786922"
 ---
-# <a name="transactions-and-verification"></a>Transakce a ověření
+# <a name="transactions-and-verification-in-xamarinios"></a>Transakce a ověření v Xamarin.iOS
 
 ## <a name="restoring-past-transactions"></a>Obnovení po transakce
 
@@ -195,7 +197,7 @@ Jinou implementaci produktu velmi velkých souborů obsahu může patřit jednod
 
 ### <a name="writing-server-side-receipt-verification-code"></a>Psaní kódu pro ověření serveru na straně příjmu
 
-Ověřování na příjemce v kódu na straně serveru lze provádět pomocí jednoduché HTTP POST požadavek/odpověď zahrnujícím kroky #5 až &#8; v diagramu pracovního postupu.   
+Ověřování na příjemce v kódu na straně serveru lze provádět pomocí jednoduché HTTP POST požadavek/odpověď zahrnujícím kroky #5 až 8 # v diagramu pracovního postupu.   
    
    
    

@@ -1,16 +1,17 @@
 ---
 title: Vkládání technologie .NET
-description: 'Vložení rozhraní .NET umožňuje váš stávající kód rozhraní .NET (C#, F # a jiné) využijí z jinými programovací jazyky'
+description: 'Vložení rozhraní .NET umožňuje váš stávající kód rozhraní .NET (C#, F # a jiné) být využívány službou kód napsaný v jinými programovací jazyky.'
 ms.prod: xamarin
 ms.assetid: 617C38CA-B921-4A76-8DFC-B0A3DF90E48A
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: f6edf25faa00bc7c90a52b76a6e90168ccd85b32
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 16f59498a49d10a43e04989136d8835bf78bd89d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793114"
 ---
 # <a name="net-embedding"></a>Vkládání technologie .NET
 
@@ -24,7 +25,7 @@ Vložení .NET je založena na [Embeddinator 4000](https://github.com/mono/Embed
 
 ## <a name="environments-and-languages"></a>Prostředí a jazyky
 
-Tento nástroj je i informace o prostředí, ve kterém se bude používat, stejně jako jazyk, který bude využívat.   Platforma iOS například neumožňuje kompilace za běhu (JIT), tak vložení .NET bude staticky kompilaci rozhraní .NET kódu do nativního kódu, který lze použít v iOS.  Jiných prostředích povolit JIT – kompilace a v těchto enviroments jsme zapojit do JIT kompilace.
+Tento nástroj je i informace o prostředí, ve kterém se bude používat, stejně jako jazyk, který bude využívat.   Platforma iOS například neumožňuje kompilace za běhu (JIT), tak vložení .NET bude staticky kompilaci rozhraní .NET kódu do nativního kódu, který lze použít v iOS.  Jiných prostředích povolit JIT – kompilace a v těchto prostředích jsme zapojit do JIT kompilace.
 
 Podporuje různé spotřebiteli jazyk, se zobrazí kód .NET jako idiomatickou kód v jazyce cíl.   Toto je seznam podporovaných jazyků v současné době:
 

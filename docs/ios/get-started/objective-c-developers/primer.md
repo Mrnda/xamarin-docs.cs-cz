@@ -1,16 +1,17 @@
 ---
 title: Úvod do jazyka C# pro vývojáře jazyka Objective-C
-description: Xamarin.iOS umožňuje bez ohledu na platformu kód napsaný v jazyce C# být sdílen napříč platformami. Stávající aplikace pro iOS však vhodné využít jazyka Objective-C kód, který již existuje. Tento článek slouží jako krátký úvod do jazyka Objective-C vývojářům vyhledávání přesunout do Xamarin a jazyka C#.
+description: Tento dokument popisuje C# pro vývojáře jazyka Objective-C. Porovnává a dvou jazyků se liší od prověřením Selektory protokolů a rozhraní, kategorie a rozšiřující metody, rozhraní a sestavení a pojmenované parametry a další.
 ms.prod: xamarin
 ms.assetid: 00285CBD-AE5E-4126-8F22-6B231B9467EA
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: c4c8e7246b4414fb4153f0dd9eb812ddff1e7b07
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 514841bb18ebed72c07377ff95127dff247f0d71
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786210"
 ---
 # <a name="c-primer-for-objective-c-developers"></a>Úvod do jazyka C# pro vývojáře jazyka Objective-C
 

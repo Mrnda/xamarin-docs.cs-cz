@@ -1,5 +1,5 @@
 ---
-title: návrh.Storyboard/.XIb-Less uživatelského rozhraní
+title: návrh uživatelského rozhraní v Xamarin.Mac.Storyboard/.XIb-Less
 description: Tento článek popisuje vytvoření uživatelského rozhraní aplikace Xamarin.Mac přímo z kódu jazyka C#, bez .storyboard soubory, soubory .xib nebo rozhraní tvůrce.
 ms.prod: xamarin
 ms.assetid: 02310F58-DCF1-4589-9F4A-065DF64FC0E1
@@ -7,16 +7,16 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 66725b02d3e351e74fa79ae5336a7db3a9f2b534
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 239133c8a5bcce97aca0c4444624fe0541600354
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792398"
 ---
-# <a name="storyboardxib-less-user-interface-design"></a>návrh.Storyboard/.XIb-Less uživatelského rozhraní
+# <a name="storyboardxib-less-user-interface-design-in-xamarinmac"></a>návrh uživatelského rozhraní v Xamarin.Mac.Storyboard/.XIb-Less
 
 _Tento článek popisuje vytvoření uživatelského rozhraní aplikace Xamarin.Mac přímo z kódu jazyka C#, bez .storyboard soubory, soubory .xib nebo rozhraní tvůrce._
-
 
 ## <a name="overview"></a>Přehled
 

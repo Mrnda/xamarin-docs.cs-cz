@@ -1,20 +1,19 @@
 ---
 title: Podpora UrhoSharp Windows
-description: Konkrétní instalačního programu systému Windows a funkce pro UrhoSharp.
+description: Tento dokument popisuje podporu Windows pro UrhoSharp. Popisuje, jak vytvořit projekt, nakonfigurovat a spustit Urho, integrovat WPF a integrovat UWP.
 ms.prod: xamarin
 ms.assetid: A4F36014-AE4E-4F07-A1AC-F264AAA68ACF
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2017
-ms.openlocfilehash: ac563e18c714a276ebe94a491999e61630d53ef3
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 094eaf0ebe84ce8c1771bd6481ee897463349856
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783230"
 ---
 # <a name="urhosharp-windows-support"></a>Podpora UrhoSharp Windows
-
-_Konkrétní instalačního programu systému Windows a funkce_
 
 Při Urho je knihovny přenosných tříd a umožňuje stejné rozhraní API pro použití na celém různé platformy pro herní logiku, je stále nutné inicializovat Urho v ovladači konkrétní platformu a v některých případech, můžete využít výhod funkcí konkrétní platformu .
 

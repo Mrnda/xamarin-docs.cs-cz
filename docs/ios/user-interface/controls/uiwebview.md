@@ -1,19 +1,20 @@
 ---
-title: Webové zobrazení
-description: Nejednoznačnosti iOS webové zobrazení možnosti
+title: Webové zobrazení v Xamarin.iOS
+description: Tento dokument popisuje různé způsoby, kterými aplikace Xamarin.iOS můžete zobrazit webového obsahu. Popisuje, UIWebView, WKWebView, SFSafariViewController, Safari a zabezpečení přenosu aplikace.
 ms.prod: xamarin
 ms.assetid: 84886CF4-2B2B-4540-AD92-7F0B791952D1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 787b5594476b3a1b5b3f6a0e8151a98c97443d00
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f720eae68415ab9efe021e53c9da4875209cd221
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790493"
 ---
-# <a name="web-views"></a>Webové zobrazení
+# <a name="web-views-in-xamarinios"></a>Webové zobrazení v Xamarin.iOS
 
 Během životního cyklu iOS Apple vydala řadou různých způsobů vývojářům aplikací začlenit funkce webového zobrazení ve svých aplikacích. Většina uživatelů využívat integrované webový prohlížeč Safari na svém zařízení s iOS a proto očekávat, že jsou konzistentní s toto prostředí webové zobrazení funkce z jiných aplikací. Očekávané stejné gesta pracovat, výkon se na hodnotu a funkce stejné.
 

@@ -1,19 +1,20 @@
 ---
-title: Rozhraní API Macu
-description: Tento dokument popisuje, jak číst selektory jazyka Objective-C a jak se mají najít jejich odpovídající metody C#.
+title: rozhraní API pro vývojáře Xamarin.Mac systému macOS
+description: Tento dokument popisuje, jak číst selektory jazyka Objective-C a jak v aplikaci Xamarin.Mac najít jejich odpovídající metody C#.
 ms.prod: xamarin
 ms.assetid: 9F7451FA-E07E-4C7B-B5CF-27AFC157ECDA
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/02/2017
-ms.openlocfilehash: 0344fecb9a8d64a680bb11689f56cf074d952f4e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: cceaa2f6e89b712be5929f7e978663d8c47f18c5
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791547"
 ---
-# <a name="mac-apis"></a>Rozhraní API Macu
+# <a name="macos-apis-for-xamarinmac-developers"></a>rozhraní API pro vývojáře Xamarin.Mac systému macOS
 
 ## <a name="overview"></a>Přehled
 

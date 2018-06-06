@@ -1,27 +1,28 @@
 ---
-title: NSString
+title: NSString v Xamarin.iOS a Xamarin.Mac
+description: Tento dokument popisuje, jak Xamarin.iOS transparentně převede NSString objekty na C# řetězec objekty, když se tato situace.
 ms.prod: xamarin
 ms.assetid: 785744B3-42E2-4590-8F41-435325E609B9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 4b084c2f1066c5cfad90911d845aa7555c669130
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: baf36700ab4d608296a9a67e234ce613da9ca077
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786087"
 ---
-# <a name="nsstring"></a>NSString
+# <a name="nsstring-in-xamarinios-and-xamarinmac"></a>NSString v Xamarin.iOS a Xamarin.Mac
 
 Návrh Xamarin.iOS a Xamarin.Mac volání pro rozhraní API používá ke zveřejnění nativní řetězce typu .NET, `string`, pro zacházení s řetězci v jazyce C# a jinými programovací jazyky rozhraní .NET a vystavit řetězec jako datový typ, který je zveřejněný prostřednictvím rozhraní API místo `NSString` datového typu.
-
 
 To znamená, že vývojáři by neměl mít zachovat řetězce, které se má použít pro volání do Xamarin.iOS & Xamarin.Mac rozhraní API (Unified) ve zvláštním typem (`Foundation.NSString`), můžete dál používat na Mono `System.String` pro všechny operace a kdykoli rozhraní API v Xamarin.iOS nebo Xamarin.Mac vyžaduje řetězec, má na starosti naše rozhraní API vazby zařazování informace.
 
 Například "text" vlastnost jazyka Objective-C na `UILabel` typu `NSString`, je deklarován takto:
 
-```csharp
+```objc
 @property(nonatomic, copy) NSString *text
 ```
 
@@ -39,14 +40,11 @@ Existuje několik rozhraní API jazyka Objective-C třetích stran, která není
 
  <a name="Exceptions_to_the_Rule" />
 
-
 ## <a name="exceptions-to-the-rule"></a>Výjimky z pravidla
 
 V Xamarin.iOS i Xamarin.Mac jsme provedli výjimku pro toto pravidlo. Rozhodnutí mezi při zveřejňujeme `string`s, a když jsme proveďte s výjimkou a vystavit `NSString`s, se provádí v případě `NSString` metoda může být způsobem porovnání ukazatelů místo obsahu porovnání.
 
-
 Toto může nastat, když rozhraní API jazyka Objective-C používá veřejné `NSString` konstantní jako token, který představuje některá z akcí, namísto porovnávání skutečný obsah řetězce.
-
 
 V takových případech `NSString` se zveřejňují rozhraní API, a neexistují výjimečných rozhraní API, které mají to. Také si všimněte, že jsou přístupné NSString vlastnosti některé třídy. Ty `NSString` vlastnosti jsou viditelné pro položky, jako jsou oznámení. Ty jsou vlastnosti obvykle vypadat například takto:
 
@@ -55,7 +53,6 @@ class Foo {
      public NSString FooNotification { get; }
 }
 ```
-
 Oznámení jsou klíče, které se používají pro `NSNotification` třídy, pokud chcete zaregistrovat pro určitá událost se vysílání modulem runtime.
 
 Klíče obvykle vypadat přibližně takto:

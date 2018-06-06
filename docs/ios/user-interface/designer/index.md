@@ -1,22 +1,28 @@
 ---
-title: iOS Designer
-description: Návrhář Xamarin pro iOS je vizuálního návrháře pro iOS formáty scénáře a Tvůrce rozhraní, která jsou plně integrované s Visual Studio pro Mac a Visual Studio. IOS Návrhář udržuje úplnou kompatibilitu s formáty scénáře a .xib tak, aby soubory lze upravit v sadě Visual Studio pro Mac nebo Visual Studio kromě Tvůrce rozhraní pro Xcode. Kromě toho návrháře Xamarin pro iOS podporuje pokročilé funkce, jako je například vlastní ovládací prvky, které vykreslení v době návrhu v editoru.
+title: Vytváření uživatelského rozhraní s iOS návrháře
+description: Tento dokument popisuje, jak používat návrháře Xamarin pro iOS k sestavení aplikace uživatelské rozhraní s scénářů a .xib souborů. Odkazuje na dokumenty, které popisují dostupnosti nástroj, jeho základních funkcí, navrhovatelé ovládací prvky a zadejte návody jeho použití.
 ms.prod: xamarin
 ms.assetid: E35EFB69-EBBA-40E3-ADBE-CB8016F17127
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/31/2018
-ms.openlocfilehash: 8251bb85e06a23a24103cf670db7088b37eccdfa
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.openlocfilehash: eadc2147a44d6077436e394a4757d367ce42e5fa
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732811"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790000"
 ---
+# <a name="building-user-interfaces-with-the-ios-designer"></a>Vytváření uživatelského rozhraní s iOS návrháře
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+
+=======
 # <a name="ios-designer"></a>iOS Designer
 
 _Návrhář Xamarin pro iOS je vizuálního návrháře pro iOS formáty scénáře a Tvůrce rozhraní, která jsou plně integrované s Visual Studio pro Mac a Visual Studio. IOS Návrhář udržuje úplnou kompatibilitu s formáty scénáře a .xib tak, aby soubory lze upravit v sadě Visual Studio pro Mac nebo Visual Studio kromě Tvůrce rozhraní pro Xcode. Kromě toho návrháře Xamarin pro iOS podporuje pokročilé funkce, jako je například vlastní ovládací prvky, které vykreslení v době návrhu v editoru._
+>>>>>>> master
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 

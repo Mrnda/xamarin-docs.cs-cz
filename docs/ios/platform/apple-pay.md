@@ -1,24 +1,23 @@
 ---
-title: Platím Apple
+title: Apple platím v Xamarin.iOS
 description: Tato příručka popisuje nastavení Xamarin.iOS prostředí pro použití s dotykový identifikátor platit pro fyzické zboží, například jídlo, zábavy a členství ve skupinách prostřednictvím vaší aplikace. Obsahuje informace o požadované identifikátory, certifikáty a oprávnění.
 ms.prod: xamarin
 ms.assetid: A25AE660-B145-465F-9CCE-8D82BFD614C6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: fc7c247e5edcdc25d53c34c922801a5497b8c367
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7033373cddb2503e5912eb17b1e72ece759cc3ad
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786688"
 ---
-# <a name="apple-pay"></a>Platím Apple
+# <a name="apple-pay-in-xamarinios"></a>Apple platím v Xamarin.iOS
 
 _Tato příručka popisuje nastavení Xamarin.iOS prostředí pro použití s dotykový identifikátor platit pro fyzické zboží, například jídlo, zábavy a členství ve skupinách prostřednictvím vaší aplikace. Obsahuje informace o požadované identifikátory, certifikáty a oprávnění._
 
-
 Dotykový identifikátor přinesl spolu s iOS 8, uživatelé budou platit pro fyzické zboží například jídlo, zábavy a členství ve skupinách prostřednictvím jejich zařízení s iOS. Je k dispozici na zařízení iPhone 6 a iPhone 6 Plus a také může být spárována s Apple Watch pro nákupy v obchodě. Při použití v zařízení iPhone, používá Touch ID jako způsob, jak potvrďte a autorizovat uživatele kreditní nebo debetní karty transakce.
-
 
 ## <a name="requirements"></a>Požadavky
 
@@ -41,7 +40,6 @@ Rozhraní používá se také klíčovým rozdílem; [PassKit](https://developer
 
 S dotykový identifikátor, Apple [stavy](https://developer.apple.com/apple-pay/Getting-Started-with-Apple-Pay.pdf) , "[] nebude uplatňovat uživatelům obchodníků nebo vývojáři použít Apple platím pro platby". V porovnání má IAP poplatků 30 % pro každou transakci. Kromě toho se dotykový identifikátor, transakce neprochází Apple vůbec, místo toho projde platebních platformy.
 
-
 ## <a name="using-a-payment-processor-platform"></a>Pomocí platformu platebních procesoru
 
 Jedním z základní částí dotykový identifikátor je zpracování platby. I když je možné dělat toto sami, se vyžaduje významné znalost kryptografie
@@ -53,7 +51,6 @@ Dvě možnosti:
 - **Stripe** -zaregistrovat na [Stripe.com](https://stripe.com/) pro přístup k jejich rozhraní API.
 
 - **JudoPay** – podívejte se na jejich [Xamarin ukázkový kód na githubu](https://github.com/Judopay/Xamarin-Sample-App)a zaregistrovat v [JudoPay.com](https://www.judopay.com/).
-
 
 ## <a name="provisioning-for-apple-pay"></a>Zřizování pro platím Apple
 
@@ -70,13 +67,11 @@ Konfigurace aplikace používat dotykový identifikátor vyžaduje Instalační 
 5. Přidejte dotykový identifikátor oprávnění:
     - Vyberte nárocích platím Apple jako podrobné [sem](~/ios/deploy-test/provisioning/entitlements.md), nebo ručně přidat dvojici klíč/hodnota do souboru z [sem](~/ios/deploy-test/provisioning/entitlements.md)
 
-
 ## <a name="working-with-apple-pay"></a>Práce s platím Apple
 
 Apple udělal několik vylepšení Apple platit v iOS 10, které umožní uživatele, aby zabezpečené platby z webů a prostřednictvím interakci s Siri a mapy.
 
 S iOS 10 několik nových rozhraní API přidané které pracují s iOS a watchOS pro podporu dynamické platebních sítí a nové testovacím prostředí izolovaného prostoru.
-
 
 ### <a name="apple-pay-website-integration"></a>Integrace Apple platím webu
 
@@ -122,7 +117,6 @@ Pokud chcete povolit nové testovacího prostředí, postupujte takto:
 ## <a name="summary"></a>Souhrn
 
 V tomto článku jsme prozkoumali různé položky, které jsou potřeba v rámci aplikace použít dotykový identifikátor. Jsme se podívali na postup vytvoření ID obchodních a jak se používají v rámci **Entitlements.plist**, který má být změněn ručně.
-
 
 ## <a name="related-links"></a>Související odkazy
 

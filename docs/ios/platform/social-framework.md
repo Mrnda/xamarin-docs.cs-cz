@@ -1,5 +1,5 @@
 ---
-title: Sociální Framework
+title: Sociální Framework v Xamarin.iOS
 description: Sociální Framework poskytuje jednotné rozhraní API pro interakci se sociálními sítěmi, včetně Twitteru a Facebooku, jakož i SinaWeibo pro uživatele v Číně.
 ms.prod: xamarin
 ms.assetid: A1C28E66-AA20-1C13-23AF-5A8712E6C752
@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 334e05ad653d766b48f7f6028a1e98b0a0548c0c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9b7269282b18adc46f53b708a0af4934a1621d23
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788192"
 ---
-# <a name="social-framework"></a>Sociální Framework
+# <a name="social-framework-in-xamarinios"></a>Sociální Framework v Xamarin.iOS
 
 _Sociální Framework poskytuje jednotné rozhraní API pro interakci se sociálními sítěmi, včetně Twitteru a Facebooku, jakož i SinaWeibo pro uživatele v Číně._
-
 
 Pomocí rozhraní sociálních umožňuje aplikacím komunikovat se sociálními sítěmi z jediného rozhraní API bez nutnosti ke správě ověřování. Obsahuje systém poskytuje řadiče zobrazení pro vytváření příspěvků, jakož i abstrakci, která umožňuje využívání rozhraní API každý sociální sítě prostřednictvím protokolu HTTP.
 
@@ -476,5 +476,5 @@ Tento článek vám ukázal, jak použít sociálních architekturu pro interakc
 
 ## <a name="related-links"></a>Související odkazy
 
-- [SocialFrameworkDemo (sample)](https://developer.xamarin.com/samples/SocialFrameworkDemo/)
+- [SocialFrameworkDemo (ukázka)](https://developer.xamarin.com/samples/SocialFrameworkDemo/)
 - [Úvod k webovým službám](~/cross-platform/data-cloud/web-services/index.md)

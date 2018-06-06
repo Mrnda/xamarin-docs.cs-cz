@@ -1,22 +1,20 @@
 ---
-title: Práce s skládaný zobrazení
-description: Tento článek se zabývá navrhování a práce s skládaný zobrazení uvnitř Xamarin.tvOS aplikace.
+title: Práce se zobrazeními skládaný tvOS v Xamarinu
+description: Tento dokument popisuje, jak pracovat s tvOS skládaný zobrazení v aplikaci vytvořené s nástroji Xamarin. Poskytuje přehled skládaný zobrazení a popisuje automatické rozložení, umístění a velikost skládaný zobrazení, běžné používá, integrace s scénářů a další.
 ms.prod: xamarin
 ms.assetid: 00B07F85-F30B-4DD4-8664-A61D0A1CDB0E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: a6300e4da47022199c0503e6be63b0c90f15654d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7e718e525c23e78fbf846209602a07bf0f3f386e
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789369"
 ---
-# <a name="working-with-stacked-view"></a>Práce s skládaný zobrazení
-
-_Tento článek se zabývá navrhování a práce s skládaný zobrazení uvnitř Xamarin.tvOS aplikace._
-
+# <a name="working-with-tvos-stacked-views-in-xamarin"></a>Práce se zobrazeními skládaný tvOS v Xamarinu
 
 Ovládací prvek zobrazení zásobníku (`UIStackView`) využívá sílu automatického rozložení a velikost třídy, které slouží ke správě více dílčích zobrazení, vodorovně nebo svisle, která dynamicky reaguje na změny obsahu a velikost obrazovky zařízení Apple TV.
 

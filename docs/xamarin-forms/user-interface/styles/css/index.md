@@ -1,5 +1,5 @@
 ---
-title: Práce se styly Xamarin.Forms aplikace pomocí šablony stylů CSS
+title: Práce se styly Xamarin.Forms aplikací pomocí stylů CSS (Cascading Style)
 description: Xamarin.Forms podporuje vizuální prvky stylu pomocí stylů CSS (Cascading Style).
 ms.prod: xamarin
 ms.assetid: C89D57A6-DAB9-4C42-963F-26D67627DDC2
@@ -8,13 +8,14 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/07/2018
-ms.openlocfilehash: 811abacff330bf7b6e6240691cb6a15ebbd9d242
-ms.sourcegitcommit: daa089d41cfe1ed0456d6de2f8134cf96ae072b1
+ms.openlocfilehash: 76ca67f7ac8a8e27e5f502455d48874c775fc172
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34794082"
 ---
-# <a name="styling-xamarinforms-apps-using-cascading-style-sheets"></a>Práce se styly Xamarin.Forms aplikace pomocí šablony stylů CSS
+# <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>Práce se styly Xamarin.Forms aplikací pomocí stylů CSS (Cascading Style)
 
 _Xamarin.Forms podporuje vizuální prvky stylu pomocí stylů CSS (Cascading Style)._
 
@@ -372,7 +373,7 @@ Podporuje následující vlastnosti CSS Xamarin.Forms (v **hodnoty** sloupce, ty
 |`color`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`|_Barva_ \| `initial` |`color: rgba(255, 0, 0, 0.3);`|
 |`direction`|`VisualElement`|`ltr` \| `rtl` \| `inherit` \| `initial` |`direction: rtl;`|
 |`font-family`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_Řetězec_ \| `initial` |`font-family: Consolas;`|
-|`font-size`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_dvojité_ \| _namedsize_  \| `initial` |`font-size: 12;`|
+|`font-size`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_dvojité_ \| _namedsize_ \| `initial` |`font-size: 12;`|
 |`font-style`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|`bold` \| `italic` \| `initial` |`font-style: bold;`|
 |`height`|`VisualElement`|_Double_ \| `initial` |`min-height: 250;`|
 |`margin`|`View`|_Tloušťka_ \| `initial` |`margin: 6 12;`|
@@ -447,4 +448,4 @@ Přesný význam jednotlivých `namedsize` hodnota je závislé na platformu a z
 ## <a name="related-links"></a>Související odkazy
 
 - [MonkeyAppCSS (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/MonkeyAppCSS/)
-- [Práce se styly Xamarin.Forms aplikací pomocí jazyka XAML styly](~/xamarin-forms/user-interface/styles/xaml/index.md)
+- [Použití stylů XAML u aplikací Xamarin.Forms](~/xamarin-forms/user-interface/styles/xaml/index.md)

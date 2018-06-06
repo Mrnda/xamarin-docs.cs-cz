@@ -1,23 +1,23 @@
 ---
-title: Poradce při potížích
-description: Známé problémy s Xamarin přehrávač za provozu a jejich řešení.
+title: Řešení potíží s Xamarin Player za provozu
+description: Tento dokument popisuje známé problémy s Xamarin Player za provozu a potenciální opravy. Popisuje problémy s připojením, problémy s konfigurací a další.
 ms.prod: xamarin
 ms.assetid: 29A97ADA-80E0-40A1-8B26-C68FFABE7D26
 author: topgenorth
 ms.author: toopge
 ms.date: 05/17/2017
-ms.openlocfilehash: 147ce43d3fe764f71f27dce46b699142dfb99872
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 3db14db2c64e024ef1c04275661f610f9407dfb7
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793752"
 ---
-# <a name="troubleshooting"></a>Poradce při potížích
+# <a name="troubleshooting-xamarin-live-player"></a>Řešení potíží s Xamarin Player za provozu
 
 ![Funkce ve verzi Preview](~/media/shared/preview.png)
 
 Tento článek popisuje některé běžné problémy a poskytuje postup opravte je.
-
 
 ## <a name="mobile-device-does-not-connect-after-scanning-barcode-or-entering-code"></a>Mobilní zařízení není připojit po skenování čárového kódu (nebo vstup kódu)
 
@@ -27,7 +27,6 @@ Nastane, když mobilní zařízení se systémem Xamarin Live Player není ve st
   - Pokud počítač je také připojený k drátové síti, zkuste odpojit drátového připojení.
 - Síť může být úzce zabezpečené (například některých podnikových sítích), blokování porty vyžadované Player Xamarin za provozu.
 - Zavřete aplikaci Xamarin Player za provozu a restartujte ji.
-
 
 ## <a name="error-while-trying-to-deploy-message-in-ide"></a>Zpráva "Chyba při pokusu o nasazení" v integrovaném vývojovém prostředí
 
@@ -67,7 +66,6 @@ Uvnitř klepnutí Xamarin Live Player **pár** nebo **pár znovu**, stiskněte *
 
 Přejděte na: https://www.guidgenerator.com/online-guid-generator.aspx a vygenerovat nový identifikátor guid a zkontrolujte, zda je velká na.
 
-
 **Krok 5: Konfigurace zařízení**
 
 Otevřete **PlayerDeviceList.xml** až v editoru, jako je například Visual Studio nebo Visual Studio Code. Budete muset ručně nakonfigurovat zařízení v tomto souboru. Ve výchozím nastavení, soubor by měl obsahovat následující prázdný `Devices` – element XML:
@@ -98,7 +96,6 @@ Otevřete **PlayerDeviceList.xml** až v editoru, jako je například Visual Stu
 </PlayerDevice>
 ```
 
-
 **Přidejte zařízení s Androidem:**
 
 ```xml
@@ -118,7 +115,6 @@ Otevřete **PlayerDeviceList.xml** až v editoru, jako je například Visual Stu
 ```
 
 **Zavřete a znovu otevřete Visual Studio.** Zařízení musí zobrazí v seznamu.
-
 
 ## <a name="type-or-namespace-cannot-be-found-message-in-ide"></a>Zpráva "nelze nalézt typ nebo oboru názvů" v integrovaném vývojovém prostředí
 
@@ -141,9 +137,7 @@ AXML soubory nejsou aktuálně podporované v za provozu Player Xamarin.
 
 Projekty Xamarin.Forms Android musí používat "Toolbar.axml" a "Tabbar.axml" pro názvy souborů relevantní rozložení. Výchozí šablona používá tyto názvy; Přejmenování je způsobí, že vykreslování problémy.
 
-
 Nahlaste všechny další problémy na [bugzilla](https://aka.ms/live-player-report-issue).
-
 
 ## <a name="related-links"></a>Související odkazy
 

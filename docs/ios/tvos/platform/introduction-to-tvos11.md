@@ -1,17 +1,18 @@
 ---
 title: Úvod do tvOS 11
-description: Nové funkce, které jsou k dispozici pro vývojáře, kteří používají Xamarin pro tvOS 11
+description: Tento dokument obsahuje stručný přehled nových funkcí, které jsou k dispozici pro vývojáře pro Xamarin v tvOS 11 a odkazy na poznámky k verzi společnosti Apple.
 ms.prod: xamarin
 ms.assetid: 5258F7A1-3388-4482-978C-DC33AAAEFBE6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 02/08/2018
-ms.openlocfilehash: 735b2a113256b61d4e93c52707411e43fed2eca2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 83251cfa50dde4fb2089057aaaa2771956a4a3b0
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788911"
 ---
 # <a name="introduction-to-tvos-11"></a>Úvod do tvOS 11
 
@@ -36,8 +37,6 @@ Přístup k novým funkcím tvOS 11 v aplikacích Xamarin.tvOS:
 - Obnovení 2
 
 Úplný seznam změny Apple byla zavedená v tvOS 11, najdete v článku [co je nového v tvOS](https://developer.apple.com/library/content/releasenotes/General/WhatsNewinTVOS/Articles/tvOS_11_0.html) dokumentu.
-
-
 
 ## <a name="related-links"></a>Související odkazy
 

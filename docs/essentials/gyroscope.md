@@ -1,17 +1,18 @@
 ---
-title: Volný setrvačník Xamarin.Essentials
-description: Třída volný setrvačník umožňuje monitorovat senzor volný setrvačník zařízení, která je otočení přibližně tři primární osy v zařízení.
+title: 'Xamarin.Essentials: volný setrvačník'
+description: Třída volný setrvačník v Xamarin.Essentials umožňuje monitorovat senzor volný setrvačník zařízení, která měří otočení přibližně tři primární osy v zařízení.
 ms.assetid: DA4F968A-D988-41F5-8745-1BEE693660A1
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: a987978882a928ad50578d3a0031bce07e60fb6e
-ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
+ms.openlocfilehash: 2f2961c6cb78293891e186e7e0f749a7aa2fb8fc
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783012"
 ---
-# <a name="xamarinessentials-gyroscope"></a>Volný setrvačník Xamarin.Essentials
+# <a name="xamarinessentials-gyroscope"></a>Xamarin.Essentials: volný setrvačník
 
 ![Předběžné verze NuGet](~/media/shared/pre-release.png)
 

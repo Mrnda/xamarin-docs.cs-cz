@@ -1,34 +1,32 @@
 ---
-title: Funkce platformy
-description: Dokumenty v této části se týkají funkcí, které jsou specifické pro iOS.
+title: Funkce platformy iOS
+description: Tento dokument obsahuje odkazy na různé příručky, které popisují funkce zavedená v různých verzích systému iOS a další funkce pro platformu iOS.
 ms.prod: xamarin
 ms.assetid: 9F6A27E5-8A87-ADE2-D1EF-5684E7B8C999
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/15/2017
-ms.openlocfilehash: 0a76ed52f52de144bb3da1e7be6e215ce0dfe0ab
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 95053faa4bab0a65660772aeea39405e4a80a042
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787084"
 ---
-# <a name="platform-features"></a>Funkce platformy
+# <a name="ios-platform-features"></a>Funkce platformy iOS
 
 ##  <a name="introduction-to-ios-11iosplatformintroduction-to-ios11indexmd"></a>[Úvod do iOSu 11](~/ios/platform/introduction-to-ios11/index.md)
 
 Postup instalace a začít pracovat s Xcode 9 beta a verze preview 11 podpory pro Xamarin iOS.
 
-
 ##  <a name="introduction-to-ios-10iosplatformintroduction-to-ios10indexmd"></a>[Úvod do iOSu 10](~/ios/platform/introduction-to-ios10/index.md)
 
 Apple iOS 10 zahrnuje několik nových rozhraní API a služby, které vám umožní vyvíjet aplikace s novými funkcemi a funkce. IOS 10 aplikace mají nové schopnosti, jako je například rozšíření Maps, zprávy, Telefon a Siri. Tato část uvádí hows využít těchto funkcí v aplikaci pro Xamarin.iOS.
 
-
 ##  <a name="introduction-to-ios-9iosplatformintroduction-to-ios9indexmd"></a>[Úvod do iOSu 9](~/ios/platform/introduction-to-ios9/index.md)
 
 Tento oddíl definuje změny provedené v iOS 9, při upgradu z iOS 8 a používání těchto funkcí v aplikaci pro Xamarin.iOS.
-
 
 ##  <a name="introduction-to-ios-8iosplatformintroduction-to-ios8md"></a>[Úvod do iOSu 8](~/ios/platform/introduction-to-ios8.md)
 
@@ -147,8 +145,6 @@ Nový iOS 10, framework umožňuje doručení a zpracování místní a vzdálen
 ##  <a name="wide-coloriosplatformwide-colormd"></a>[Wide Color](~/ios/platform/wide-color.md)
 
 iOS 10 a systému macOS Sierra vylepšuje podporu pro rozšířené rozsah pixelů a prostory celou rozsah, barvy v celém systému, včetně architektury, jako je například základní grafické prvky, základní Image, operačního systému a AVFoundation. Podpora pro zařízení s wide barev zobrazí se další opatřeny náběhem / tím, že poskytuje toto chování v rámci celého grafiky zásobníku.
-
-
 
 ##  <a name="binding-objective-cbinding-objective-cindexmd"></a>[Vytváření vazeb Objective-C](binding-objective-c/index.md)
 

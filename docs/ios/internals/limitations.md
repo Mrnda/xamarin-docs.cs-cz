@@ -1,18 +1,20 @@
 ---
-title: Omezení
+title: Omezení Xamarin.iOS
+description: Tento dokument popisuje omezení Xamarin.iOS, hovoříte o obecných typů, obecný podtřídy NSObjects, P/vyvolá v obecné objekty a další.
 ms.prod: xamarin
 ms.assetid: 5AC28F21-4567-278C-7F63-9C2142C6E06A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/09/2018
-ms.openlocfilehash: 8bd4ce464adf316517e2e1f2299006913bc68736
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: 8eb2cd5a749beab6f089479f5992fe3fbc16dd0a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786226"
 ---
-# <a name="limitations"></a>Omezení
+# <a name="limitations-of-xamarinios"></a>Omezení Xamarin.iOS
 
 Vzhledem k tomu, že aplikace na zařízení iPhone pomocí Xamarin.iOS kompilovány statické kódu, není možné použít jakékoli zařízení, které vyžadují generování kódu v době běhu.
 

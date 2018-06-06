@@ -1,21 +1,20 @@
 ---
-title: Práce se zobrazeními kolekce
-description: Tento článek se zabývá navrhování a práce se zobrazeními kolekce uvnitř Xamarin.tvOS aplikace.
+title: Práce s tvOS zobrazení kolekcí v Xamarinu
+description: Tento dokument popisuje, jak pracovat s zobrazení kolekcí v tvOS aplikace vytvořené s nástroji Xamarin. Pokrývá rozložení zobrazení kolekce, vytváření buněk a doplňující zobrazení, reagování na události uživatele a další.
 ms.prod: xamarin
 ms.assetid: 5125C4C7-2DDF-4C19-A362-17BB2B079178
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 7fa38aa81e5929bdc88ceebd153d86cfcd92f20e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9b411ac6bb8d1492511f9e5d2234731ae64c3a82
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789275"
 ---
-# <a name="working-with-collection-views"></a>Práce se zobrazeními kolekce
-
-_Tento článek se zabývá navrhování a práce se zobrazeními kolekce uvnitř Xamarin.tvOS aplikace._
+# <a name="working-with-tvos-collection-views-in-xamarin"></a>Práce s tvOS zobrazení kolekcí v Xamarinu
 
 Zobrazení kolekce povolit pro skupinu obsahu, který se má zobrazit pomocí libovolného rozložení. Pomocí integrovanou podporu, umožňují pro snadné vytváření rozložení mřížky nebo lineární zároveň také podporuje vlastní rozložení.
 

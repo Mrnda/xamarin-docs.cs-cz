@@ -1,18 +1,18 @@
 ---
-title: Xamarin.Essentials e-mailu
-description: Třída e-mailu umožňuje aplikace pro otevření výchozí e-mailové aplikace se zadanými informacemi, včetně předmět, text a příjemců (na, kopie, pole SKRYTÁ).
+title: 'Xamarin.Essentials: e-mailu'
+description: Třída e-mailu v Xamarin.Essentials umožňuje aplikace pro otevření výchozí e-mailové aplikace se zadanými informacemi, včetně předmět, text a příjemců (na, kopie, pole SKRYTÁ).
 ms.assetid: 5FBB6FF0-0E7B-4C29-8F06-91642AF12629
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 4bba713fa4dbcac3c145389c4b009d6e207273b8
-ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
+ms.openlocfilehash: aea2f429126180ae3d98bc665bed5574f416ea53
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34562861"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782434"
 ---
-# <a name="xamarinessentials-email"></a>Xamarin.Essentials e-mailu
+# <a name="xamarinessentials-email"></a>Xamarin.Essentials: e-mailu
 
 ![Předběžné verze NuGet](~/media/shared/pre-release.png)
 

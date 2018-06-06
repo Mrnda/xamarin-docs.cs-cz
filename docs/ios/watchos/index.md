@@ -1,21 +1,20 @@
 ---
-title: watchOS
-description: Vývoj aplikací pro Apple Watch xamarinu
+title: Vytváření watchOS aplikací pomocí Xamarinu
+description: Tento dokument obsahuje odkazy na různé příručky, které popisují, jak vytvářet aplikace watchOS s funkcí Xamarin. Popisují propojené příručky Začínáme, ovládacích prvků uživatelského rozhraní watchOS, watchOS funkce, nasazení a testování a řešení potíží
 ms.prod: xamarin
 ms.assetid: 14EAE85E-460A-4145-8C8D-869D176D5C3F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 5634306836b5fe0255a5d4cdf49013441206dd5f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 407c1648bef6e1ca84922a8186fbcfbc76c2c7a6
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791394"
 ---
-# <a name="watchos"></a>watchOS
-
-_Vývoj aplikací pro Apple Watch xamarinu_
+# <a name="building-watchos-apps-with-xamarin"></a>Vytváření watchOS aplikací pomocí Xamarinu
 
 ![Rozhraní pro výběr Apple Watch](images/watch1.png) ![Apple Watch tlačítka](images/watch2.png) ![Rozhraní Apple Watch mapy](images/watch3.png)
 

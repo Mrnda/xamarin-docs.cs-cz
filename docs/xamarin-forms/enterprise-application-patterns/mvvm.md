@@ -6,11 +6,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 32a7a7dd50edcc3eefe76429ddb1e5581447993e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 03a3c411c7031ece32a8987b480f96ad39909201
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793947"
 ---
 # <a name="mvvm"></a>MVVM
 
@@ -175,7 +176,7 @@ Tento přístup má výhodu, že aplikace má jednu třídu, která je odpovědn
 
 Všechny modelu zobrazení a modelu třídy, které jsou přístupné pro zobrazení by měla implementovat `INotifyPropertyChanged` rozhraní. Implementace tohoto rozhraní v zobrazení modelu nebo třídy modelu umožňuje třídě poskytnout oznámení o změnách pro všechny ovládací prvky vázané na data v zobrazení, když základní hodnota vlastnosti.
 
-Aplikace by měla být navržen pro správné použití oznámení o změně vlastností, při splnění následujících požadavků:
+Aplikace by měl být navržen pro správné použití oznámení o změně vlastností, při splnění následujících požadavků:
 
 -   Vždy vyvolání `PropertyChanged` událost, pokud se změní hodnota veřejné vlastnosti. Nepředpokládejte, že vyvolání `PropertyChanged` události může být ignorována z důvodu znalosti, jak dojde k XAML vazby.
 -   Vždy vyvolání `PropertyChanged` vypočítat událost pro všechny vlastnosti, jejichž hodnoty jsou používány jiné vlastnosti v zobrazení nebo model.

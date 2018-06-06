@@ -1,18 +1,20 @@
 ---
-title: Úpravy
+title: Úprava tabulek s Xamarin.iOS
+description: Tento dokument popisuje, jak upravit tabulek v Xamarin.iOS. Popisuje prstem chcete odstranit, upravit režimu a vložení řádku.
 ms.prod: xamarin
 ms.assetid: EC197F25-E865-AFA3-E5CF-B33FAB7744A0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 161de0209217dde671b976afad90eaad18d8c7b0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 28ebf1157a1bfc9f7bd910fd11365b29cecb9529
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789987"
 ---
-# <a name="editing"></a>Úpravy
+# <a name="editing-tables-with-xamarinios"></a>Úprava tabulek s Xamarin.iOS
 
 Úpravy funkce tabulky jsou povolit přepsáním metody v `UITableViewSource` podtřídy. Nejjednodušší úprav chování je prstem odstranění gesta, která může být implementováno s přepsání jedné metody.
 Složitější úpravy (včetně přesunutí řádky) lze provádět pomocí tabulky v režimu úprav.

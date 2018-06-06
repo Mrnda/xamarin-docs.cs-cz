@@ -1,21 +1,20 @@
 ---
-title: Přehrávání zvuku s AVAudioPlayer
-description: Tento článek ukazuje, jak používat pomocná třída pro ovládání přehrávání zvuku použití AVAudioPlayer.
+title: Přehrávání zvuku s AVAudioPlayer v Xamarin.Mac
+description: Tento dokument popisuje, jak přehrát zvuk s AVAudioPlayer v Xamarin.Mac aplikaci. Popisuje AVAudioPlayer na vysoké úrovni a odkazy na další dokumentaci, která zde popsány podrobněji.
 ms.prod: xamarin
 ms.assetid: 4A683A94-F75D-4EAF-8497-E9443653250B
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/19/2016
-ms.openlocfilehash: 25e3285a1da1b6a112629001d5412fdd0788c705
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9e5b9ec43189999f8a0aee29eb50221b494e2133
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791852"
 ---
-# <a name="playing-sound-with-avaudioplayer"></a>Přehrávání zvuku s AVAudioPlayer
-
-_Tento článek ukazuje, jak používat pomocná třída pro ovládání přehrávání zvuku použití AVAudioPlayer._
+# <a name="playing-sound-with-avaudioplayer-in-xamarinmac"></a>Přehrávání zvuku s AVAudioPlayer v Xamarin.Mac
 
 ## <a name="about-the-avaudioplayer"></a>O AVAudioPlayer
 
@@ -34,8 +33,6 @@ Můžete použít `AVAudioPlayer` třída proveďte následující:
 ## <a name="playing-sounds-in-macos"></a>Přehrávání zvuků v systému macOS
 
 Protože systému macOS podporuje stejné třídy zvuk nástrojů jako iOS, najdete v tématu naše iOS [přehrávání zvuku s AVAudioPlayer](https://developer.xamarin.com/recipes/ios/media/sound/avaudioplayer/) dokumentace pro všechny podrobnosti o přehrávání zvuku ve Xamarin.Mac aplikaci.
-
-
 
 ## <a name="related-links"></a>Související odkazy
 

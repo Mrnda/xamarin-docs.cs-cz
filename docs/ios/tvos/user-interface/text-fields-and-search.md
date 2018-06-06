@@ -1,23 +1,20 @@
 ---
-title: Práce s textem a vyhledávacích polí
-description: Tento článek se zabývá navrhování a práci s textem a vyhledávacích polí uvnitř Xamarin.tvOS aplikace.
+title: Práce s tvOS Text a pole hledání v Xamarinu
+description: Tento dokument popisuje, jak pracovat s pole text a hledání v tvOS aplikace vytvořené s nástroji Xamarin. Poskytuje přehled pole text a vyhledávání a popisuje klávesnice, scénáře integrace, hledání datové modely a další.
 ms.prod: xamarin
 ms.assetid: 9EE63CA6-2F31-4EE0-AAE5-82E18CFAC06C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 220c6e3d1c6f358c67a2f596c977f4d2132298a8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4bf71df62bd6ffd88f42d31809444cd7b3350b66
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789719"
 ---
-# <a name="working-with-text-and-search-fields"></a>Práce s textem a vyhledávacích polí
-
-_Tento článek se zabývá navrhování a práci s textem a vyhledávacích polí uvnitř Xamarin.tvOS aplikace._
-
-
+# <a name="working-with-tvos-text-and-search-fields-in-xamarin"></a>Práce s tvOS Text a pole hledání v Xamarinu
 
 Pokud jsou povinné, Xamarin.tvOS aplikace může požádat o svislý text od uživatele (například ID uživatele a hesla) pomocí textové pole a program klávesnice na obrazovce:
 

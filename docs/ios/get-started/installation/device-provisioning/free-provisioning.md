@@ -1,21 +1,22 @@
 ---
-title: Volné zřizování
-description: Verze společnosti Apple Xcode 7 pocházejí důležité změně pro všechny iOS a Mac vývojáři – volné zřizování.
+title: Volné zřizování pro aplikace pro Xamarin.iOS
+description: Tento dokument popisuje, jak mohou vývojáři Xamarin.iOS testovat svou aplikaci na fyzické zařízení bez nutnosti zaregistrovat placené programu pro vývojáře Apple.
 ms.prod: xamarin
 ms.assetid: A5CE2ECF-8057-49ED-8393-EB0C5977FE4C
 ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 03/19/2017
-ms.openlocfilehash: 09244ebaefedb991289e5a1f67b59491ee84ed28
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 623f79f482170c6b1d8ecdb642afb2fc7acf061d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786019"
 ---
-# <a name="free-provisioning"></a>Volné zřizování
+# <a name="free-provisioning-for-xamarinios-apps"></a>Volné zřizování pro aplikace pro Xamarin.iOS
 
-_Verze společnosti Apple Xcode 7 pocházejí důležité změně pro všechny iOS a Mac vývojáři – volné zřizování._
+_Verze společnosti Apple Xcode 7 pocházejí důležité změně pro všechny iOS a Mac vývojáři: Uvolněte zřizování._
 
 Volné zřizování umožňuje vývojářům k nasazení své aplikace pro Xamarin.iOS na svém zařízení s iOS **bez** stal součástí žádné **programu pro vývojáře Apple**. To je velmi výhodné pro vývojáře, jako testování na zařízení testování v simulátoru, včetně, ale bez omezení na paměti, úložiště, připojení k síti, mimo jiné umožňuje řadu výhod.
 
@@ -81,7 +82,7 @@ Zřizování pro většinu aplikační služby není také možné pomocí voln�
 
 - Platím Apple
 - Herní Centrum
-- iCloud
+- Icloudu
 - V aplikaci nákupu
 - Nabízená oznámení
 - Peněženka (byl Passbook.)

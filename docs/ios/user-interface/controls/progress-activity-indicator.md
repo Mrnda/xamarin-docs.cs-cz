@@ -1,18 +1,20 @@
 ---
-title: Průběh a indikátory aktivity
+title: Průběh a aktivity indikátory v Xamarin.iOS
+description: Tento dokument popisuje, jak používat indikátory průběhu a aktivity v Xamarin.iOS. Popisuje jejich použití prostřednictvím kódu programu i s scénáře.
 ms.prod: xamarin
 ms.assetid: 7AA887E4-51F7-4867-82C5-A8D2EA48AE07
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/11/2017
-ms.openlocfilehash: 58a492bed81a1d96a482c1396718da1c5e4af589
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 27ee788ec40bfd158dbc0d9926245b166e2954a9
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790052"
 ---
-# <a name="progress-and-activity-indicators"></a>Průběh a indikátory aktivity
+# <a name="progress-and-activity-indicators-in-xamarinios"></a>Průběh a aktivity indikátory v Xamarin.iOS
 
 Je pravděpodobné, že vaše aplikace bude mít k provádění dlouho spuštěných úloh, jako je například načítání nebo zpracování dat a aby toto zpoždění může způsobit zpoždění při aktualizaci vašeho uživatelského rozhraní. Během této doby byste měli vždycky používat indikátor průběhu uživatel ujistit, že systém je zaneprázdněn prováděním pracovní. Díky tomu uživatelského ovládacího prvku, zda aplikace pracuje na jejich požadavek, který není čekání na jejich zadání a způsob s podrobnostmi o přesně jak dlouho budou muset počkat, než může poskytnout.
 

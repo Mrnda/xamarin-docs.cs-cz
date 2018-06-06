@@ -1,18 +1,20 @@
 ---
-title: Hledání se Spotlight jádra
+title: Hledání se základní Spotlight v Xamarin.iOS
+description: Tento dokument popisuje, jak používat Spotlight základní aplikace pro Xamarin.iOS poskytnout odkazy na obsah v aplikaci. Popisuje, jak vytvářet, obnovit, aktualizovat a odstraňovat položky s možností vyhledávání.
 ms.prod: xamarin
 ms.assetid: 1374914C-0F63-41BF-BD97-EBCEE86E57B1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 0074cfcdc4a80f66f64d12f8e5c0a5e81ab2b8a1
-ms.sourcegitcommit: c9ebf456e1c6924956bedb13f4ea78ff09f7b1a0
+ms.openlocfilehash: a8bc3aaa43d7830b0a3baa0768d495458b1ecfad
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788036"
 ---
-# <a name="search-with-core-spotlight"></a>Hledání se Spotlight jádra
+# <a name="search-with-core-spotlight-in-xamarinios"></a>Hledání se základní Spotlight v Xamarin.iOS
 
 Základní funkce představuje nové rozhraní pro iOS 9, která uvede databázového typu rozhraní API přidat, upravit nebo odstranit odkazy na obsah v rámci vaší aplikace. Položky, které byly přidány pomocí funkce jádra služby bude k dispozici v vyhledávání Spotlight na zařízení s iOS.
 

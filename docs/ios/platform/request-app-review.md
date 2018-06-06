@@ -1,19 +1,20 @@
 ---
-title: Zkontrolujte žádost o aplikaci
-description: Tento článek se zabývá metodu RequestReview této Apple přidat iOS 10 a jak implementovat v Xamarin.iOS.
+title: Žádosti o aplikace zkontrolujte v Xamarin.iOS
+description: Tento článek popisuje způsob RequestReview této Apple přidány do systému iOS 10 a popisuje, jak implementovat v Xamarin.iOS.
 ms.prod: xamarin
 ms.assetid: 6408e707-b7dc-4557-b931-16a4d79b8930
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/29/2017
-ms.openlocfilehash: 2fff227581d6eeca69d7a770308d9793a4831baf
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 2b329ebad5faaa635d9a791f8760bd5f521de591
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788154"
 ---
-# <a name="request-app-review"></a>Zkontrolujte žádost o aplikaci
+# <a name="request-app-review-in-xamarinios"></a>Žádosti o aplikace zkontrolujte v Xamarin.iOS
 
 _Tento článek se zabývá metodu RequestReview této Apple přidat iOS 10 a jak implementovat v Xamarin.iOS._
 

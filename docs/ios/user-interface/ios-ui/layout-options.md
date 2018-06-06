@@ -1,24 +1,25 @@
 ---
-title: Možnosti rozložení
+title: Možnosti rozložení v Xamarin.iOS
+description: Tento dokument popisuje různé způsoby, jak Rozvrhněte uživatelského rozhraní v Xamarin.iOS. Popisuje, automatická změna velikosti a automatického rozložení.
 ms.prod: xamarin
 ms.assetid: D8180FEC-F300-42C0-B029-66803E0C1A5F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 8f197bbffeabb708769c48f0130aa27a86b14386
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bad29eae308c8ca9f7228a1cbdfd69940894cf34
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790113"
 ---
-# <a name="layout-options"></a>Možnosti rozložení
+# <a name="layout-options-in-xamarinios"></a>Možnosti rozložení v Xamarin.iOS
 
 Existují dva různé mechanismy pro řízení rozložení, když je zobrazení po změně velikosti nebo otáčet:
 
 -  **Automatická změna velikosti** – inspector Automatická změna velikosti v návrháři poskytuje způsob, jak nastavit `AutoresizingMask` vlastnosti. To vám umožní ovládacího prvku být pevnou okrajů jejich kontejneru a opravte jejich velikost. Automatická změna velikosti funguje ve všech verzích systémů iOS. To je podrobněji popsané v následující
--  **Automatické rozložení** – funkce, zavedená ve iOS6, která umožňuje jemně odstupňovanou kontrolu nad vztahy ovládacích prvků uživatelského rozhraní. Ovládací prvek pozic elementů relativně k další prvky na návrhovou plochu, která bude možné. Toto téma je zahrnuté v podrobněji [automatického rozložení s Xamarin iOS Návrhář](~/ios/user-interface/designer/designer-auto-layout.md) průvodce.
-
+-  **Automatické rozložení** – funkce, zavedená ve iOS 6, která umožňuje jemně odstupňovanou kontrolu nad vztahy ovládacích prvků uživatelského rozhraní. Ovládací prvek pozic elementů relativně k další prvky na návrhovou plochu, která bude možné. Toto téma je zahrnuté v podrobněji [automatického rozložení s Xamarin iOS Návrhář](~/ios/user-interface/designer/designer-auto-layout.md) průvodce.
 
 ## <a name="autosizing"></a>Automatická změna velikosti
 

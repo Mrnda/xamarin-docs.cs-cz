@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: e2e3843506061cc79ad911404468477bf49dfe56
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c3c278666c5d57d00b4038ae6d3f2d7925e88537
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789021"
 ---
 # <a name="introduction-to-tvos-9"></a>Úvod do tvOS 9
 
 _Tento článek představuje všechny nové a změněné rozhraní API a funkce dostupné v tvOS 9 pro vývojáře Xamarin.tvOS._
-
 
 Apple vydala generování 4. Apple TV hardwaru s funkcí přepracovanou, vzdálené povolit touch, nové tvOS operačním systémem (založené na iOS 9).
 
@@ -37,7 +37,7 @@ tvOS aplikace běžící na Apple TV následující podporovaná možnosti a fun
  - Ochrana dat
  - Herní Centrum
  - Herní zařízení
- - iCloud
+ - Icloudu
  - Nákupy v aplikaci
  - Sdílení řetězce klíčů
 
@@ -45,14 +45,14 @@ Nejsou podporovány následující funkce a možnosti:
 
  - Platím Apple
  - Izolovaný prostor aplikace
- - Associated Domains
+ - Přidružené domény
  - HealthKit
  - HomeKit
  - Zvuk mezi aplikacemi
  - Mapy
  - Osobní VPN
  - Nabízená oznámení
- - Peněženka
+ - Wallet
  - Konfigurace bezdrátového příslušenství
 
 Najdete v tématu naše [podporované sestavení](~/ios/tvos/internals/assemblies.md) a [podporované architektury](~/ios/tvos/internals/frameworks.md) Další informace naleznete v dokumentaci.
@@ -122,7 +122,7 @@ V tématu naše [Hello, tvOS úvodní příručce](~/ios/tvos/get-started/hello-
 
 <a name="Summary" />
 
-### <a name="client-server-apps"></a>Client-Server Apps
+### <a name="client-server-apps"></a>Aplikace Klient Server
 
 Kromě tradičních instalaci aplikací Apple TV usnadňuje vytvoření média webové klient server streamování aplikací pomocí webové technologie (protokol HTTPS, XML a JavaScript). Bude návrh uživatelského rozhraní pomocí jazyka značek TVML společnosti Apple a použít k definování chování aplikace pomocí TVMLKit JavaScript.
 

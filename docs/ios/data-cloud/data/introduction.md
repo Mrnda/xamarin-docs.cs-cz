@@ -1,18 +1,20 @@
 ---
-title: Úvod do úložiště dat v systému iOS
+title: Úvod do úložiště dat v aplikacích pro Xamarin.iOS
+description: Tento dokument popisuje různé způsoby uložení dat v aplikaci Xamarin.iOS a poskytuje konkrétní informace o výhodách SQLite.
 ms.prod: xamarin
 ms.assetid: B1994468-FD06-4FD9-96B3-FCEBB13A972A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/11/2016
-ms.openlocfilehash: 0da267502629ba30da59c26600ef0e7c605640aa
-ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
+ms.openlocfilehash: 3fc82e2a1a2cf8d25d934ca2194ecd7de1b8b7df
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784700"
 ---
-# <a name="introduction"></a>Úvod
+# <a name="introduction-to-data-storage-in-xamarinios-apps"></a>Úvod do úložiště dat v aplikacích pro Xamarin.iOS
 
 ## <a name="when-to-use-a-database"></a>Kdy použít databázi
 

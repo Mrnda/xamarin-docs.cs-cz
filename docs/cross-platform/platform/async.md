@@ -1,20 +1,21 @@
 ---
-title: Async – přehled
-description: 'Nejnovější verzi jazyka C# – verze 5 – zavedená dvě nová klíčová slova a express asynchronních operací: async a operátoru await. Tato klíčová slova umožňuje psát jednoduché kód, který využívá Task Parallel Library provádět dlouhotrvající operace (například přístup k síti) v jiné vlákno a snadný přístup k výsledky při dokončení. Nejnovější verze Xamarin.iOS a Xamarin.Android podporu async a operátoru await – tento dokument obsahuje vysvětlení a příklady pomocí nové syntaxe s funkcí Xamarin.'
+title: Přehled asynchronních podpory
+description: Tento dokument popisuje programování pomocí modifikátoru async a operátoru await, koncepty představené v 5 C# a usnadňují psaní asynchronní kódu.
 ms.prod: xamarin
 ms.assetid: F87BF587-AB64-4C60-84B1-184CAE36ED65
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 5d6bb9581a4429502d9a70385b3ee2ff056f30ee
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 22878695d93ae79bbbfe1b99961587ff0bf957be
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782005"
 ---
 # <a name="async-support-overview"></a>Přehled asynchronních podpory
 
-_Nejnovější verzi jazyka C# – verze 5 – zavedená dvě nová klíčová slova a express asynchronních operací: async a operátoru await. Tato klíčová slova umožňuje psát jednoduché kód, který využívá Task Parallel Library provádět dlouhotrvající operace (například přístup k síti) v jiné vlákno a snadný přístup k výsledky při dokončení. Nejnovější verze Xamarin.iOS a Xamarin.Android podporu async a operátoru await – tento dokument obsahuje vysvětlení a příklady pomocí nové syntaxe s funkcí Xamarin._
+_C# 5 zavedená dvě klíčová slova, aby se zjednodušila asynchronní programing: async a operátoru await. Tato klíčová slova umožňuje psát jednoduché kód, který využívá Task Parallel Library provádět dlouhotrvající operace (například přístup k síti) v jiné vlákno a snadný přístup k výsledky při dokončení. Nejnovější verze Xamarin.iOS a Xamarin.Android podporu async a operátoru await – tento dokument obsahuje vysvětlení a příklady pomocí nové syntaxe s funkcí Xamarin._
 
 Asynchronní podpora pro Xamarin je založená na foundation Mono 3.0 a upgraduje profilem rozhraní API z se mobilní zařízení verzi Silverlight jako mobilní zařízení verzi rozhraní .NET 4.5.
 

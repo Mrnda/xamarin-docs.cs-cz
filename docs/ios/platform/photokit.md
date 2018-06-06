@@ -1,30 +1,31 @@
 ---
-title: PhotoKit
-description: Fotografie Kit umožňuje aplikacím pro dotazování knihovna obrázků systému a vytvářet vlastní uživatelské rozhraní k zobrazení a změna jeho obsahu.
+title: PhotoKit v Xamarin.iOS
+description: Tento dokument popisuje PhotoKit, hovoříte o jeho objekty modelu, jak k dotazování na data modelu a ukládání změn do knihovny fotografie.
 ms.prod: xamarin
 ms.assetid: 7FDEE394-3787-40FA-8372-76A05BF184B3
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/14/2017
-ms.openlocfilehash: c721064f62f8e2255de2b4ea2d0438e3ed630d39
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4aeeec5b96e24c654407ad672930c0cb78592450
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787894"
 ---
-# <a name="photokit"></a>PhotoKit
+# <a name="photokit-in-xamarinios"></a>PhotoKit v Xamarin.iOS
 
-_Fotografie Kit umožňuje aplikacím pro dotazování knihovna obrázků systému a vytvářet vlastní uživatelské rozhraní k zobrazení a změna jeho obsahu._
-
-Fotografie Kit je nové rozhraní, které umožňuje aplikacím pro dotazování knihovna obrázků systému a vytvořit vlastní uživatelská rozhraní zobrazovat a měnit jeho obsah. Obsahuje několik tříd, které představují bitové kopie a video prostředky, jakož i kolekcí prostředků, jako je například alb a složky.
+PhotoKit je nové rozhraní, které umožňuje aplikacím pro dotazování knihovna obrázků systému a vytvořit vlastní uživatelská rozhraní zobrazovat a měnit jeho obsah. Obsahuje několik tříd, které představují bitové kopie a video prostředky, jakož i kolekcí prostředků, jako je například alb a složky.
 
 ## <a name="model-objects"></a>Objekty modelu
-Fotografie Kit představuje tyto prostředky v volá objekty modelu. Model objektů, které představují fotky a videa, sami jsou typu `PHAsset`. A `PHAsset` obsahuje metadata, jako je například typ média assetu a jeho data vytvoření.
+
+PhotoKit představuje tyto prostředky v volá objekty modelu. Model objektů, které představují fotky a videa, sami jsou typu `PHAsset`. A `PHAsset` obsahuje metadata, jako je například typ média assetu a jeho data vytvoření.
 Podobně `PHAssetCollection` a `PHCollectionList` třídy obsahovat metadata o asset kolekce a seznamy kolekce v uvedeném pořadí. Asset kolekce jsou skupiny prostředků, jako je například fotky a videa pro zadaný rok. Podobně kolekce seznamy jsou skupiny asset kolekcí, jako je například fotografiím a videím seskupené podle roku.
 
 ## <a name="querying-model-data"></a>Dotazování na Data modelu
-Fotografie Kit usnadňuje data modelu dotazu prostřednictvím řady různých metod načítání. Například pokud chcete načíst všechny Image, by volat `PFAsset.Fetch`, předejte `PHAssetMediaType.Image` typ média.
+
+PhotoKit usnadňuje data modelu dotazu prostřednictvím řady různých metod načítání. Například pokud chcete načíst všechny Image, by volat `PFAsset.Fetch`, předejte `PHAssetMediaType.Image` typ média.
 
     PHFetchResult fetchResults = PHAsset.FetchAssets (PHAssetMediaType.Image, null);
 

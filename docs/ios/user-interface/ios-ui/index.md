@@ -1,19 +1,20 @@
 ---
-title: Uživatelské rozhraní v iOS
-description: Zahrnuje práce s iOS uživatelské rozhraní v aplikaci pro Xamarin.iOS.
+title: Uživatelská rozhraní v iOS
+description: Tento dokument obsahuje odkazy na příručky, které popisují, jak sestavit uživatelské rozhraní aplikace Xamarin.iOS. Propojené postupy zahrnují rozhraní API vzhled vytváření objektů uživatelského rozhraní, možnosti rozložení a další.
 ms.prod: xamarin
 ms.assetid: 1BB46561-F503-491E-A27C-7878E7EBE00B
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/14/2017
-ms.openlocfilehash: dd07ba6853901c93ad26b371ea88b7d39c37d3f7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a51d3f57106a282ed72b45dedf356739244e247f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790364"
 ---
-# <a name="user-interface-in-ios"></a>Uživatelské rozhraní v iOS
+# <a name="user-interfaces-in-ios"></a>Uživatelská rozhraní v iOS
 
 ## <a name="appearance-apiintroduction-to-the-appearance-apimd"></a>[Rozhraní API pro vzhled](introduction-to-the-appearance-api.md)
 

@@ -1,6 +1,6 @@
 ---
-title: Hello, iOS rychlý start
-description: Tato příručka dvě části popisuje, jak vytvořit základní aplikace pro Xamarin.iOS pomocí sady Visual Studio pro Mac nebo Visual Studio a pochopili jejich základní informace o vývoj aplikací pro iOS pomocí Xamarin. Zavede nástroje, koncepty a kroky potřebné k sestavení a nasazení aplikace pro Xamarin.iOS.
+title: Hello, iOS – rychlý start
+description: Tento návod ukazuje, jak vytvořit jednoduchou aplikaci Xamarin.iOS názvem Hello, iOS. Při tom představuje základní nástroje a koncepty, které je třeba chápat k vytvoření aplikace Xamarin.iOS.
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: D3868F3A-4EED-BDDF-45AA-665102C39634
@@ -8,13 +8,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/02/2017
-ms.openlocfilehash: c82343b3ec36512a8cfd7ba3b96862eac14bfafd
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: d9f5894f03bbfaa2145aec462dbd0ede7774354a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785983"
 ---
-# <a name="helloios-quickstart"></a>Hello.iOS rychlý start
+# <a name="hello-ios--quickstart"></a>Hello, iOS – rychlý start
 
 Tato příručka popisuje, jak vytvořit aplikaci, která znamená, že alfanumerické telefonní číslo, zadané uživatelem do číselné telefonní číslo a pak zavolá toto číslo. Konečné aplikace vypadá takto:
 

@@ -1,5 +1,5 @@
 ---
-title: Návod - pomocí CoreGraphics a CoreAnimation
+title: Použití jádra grafika a základní animace v Xamarin.iOS
 description: Tento článek ukazuje krok za krokem, jak vytvořit aplikaci, která používá základní grafika a základní animace. Zobrazuje postup kreslení na obrazovce v reakci na touch uživatele a také jak animace obrázek cestují podél cesty.
 ms.prod: xamarin
 ms.assetid: 4B96D5CD-1BF5-4520-AAA6-2B857C83815C
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: f857accfcdec4cb60e781936d1d0836dbf8d6ffb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7a4399a5d62e2000c2a15a65da8e0e427dc039e0
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787052"
 ---
-# <a name="drawing-and-animating-along-a-path"></a>Kreslení a animace podél cesty
+# <a name="using-core-graphics-and-core-animation-in-xamarinios"></a>Použití jádra grafika a základní animace v Xamarin.iOS
 
 V tomto návodu budeme kreslení pomocí základní grafické prvky v reakci na touch vstup cestu. Potom přidáme `CALayer` obsahující obrázek, který jsme se animace v cestě.
 

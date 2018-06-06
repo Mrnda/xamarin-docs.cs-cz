@@ -1,21 +1,20 @@
 ---
-title: Publikování do obchodu s aplikacemi
-description: Tento článek ukazuje, jak nakonfigurovat, vytvářet a publikovat aplikace pro Xamarin.iOS pro distribuci přes obchod s aplikacemi. Obsahuje podrobný průvodce, který popisuje postup přípravy vaší aplikace pro distribuci, jak používat nástroje společnosti Apple k odeslání aplikace ke kontrole a, nakonec, jak publikovat aplikace k obchodu s aplikacemi.
+title: Publikování aplikace Xamarin.iOS k obchodu s aplikacemi
+description: Tento dokument popisuje, jak nakonfigurovat, vytvářet a publikovat aplikace pro Xamarin.iOS pro distribuci v úložišti aplikací.
 ms.prod: xamarin
 ms.assetid: DFBCC0BA-D233-4DC4-8545-AFBD3768C3B9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: 5d78cb81f27ce7478719ff9f11f4eb38fddc3981
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b8bea29e71e055621e7d0b85d3736ec6cc9ba3b4
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785697"
 ---
-# <a name="publishing-to-the-app-store"></a>Publikování do obchodu s aplikacemi
-
-_Tento článek ukazuje, jak nakonfigurovat, vytvářet a publikovat aplikace pro Xamarin.iOS pro distribuci přes obchod s aplikacemi. Obsahuje podrobný průvodce, který popisuje postup přípravy vaší aplikace pro distribuci, jak používat nástroje společnosti Apple k odeslání aplikace ke kontrole a, nakonec, jak publikovat aplikace k obchodu s aplikacemi._
+# <a name="publishing-xamarinios-apps-to-the-app-store"></a>Publikování aplikace Xamarin.iOS k obchodu s aplikacemi
 
 V pořadí distribuovat aplikace pro všechna zařízení iOS, Apple vyžaduje, aby publikovat prostřednictvím aplikace *App Store*, což nákupní centrální umístění pro aplikace pro iOS App Storu. S více než 500 000 aplikace v úložišti velkými písmeny vývojáři mnoho typů aplikací v masivním úspěch tento jediný bod rozdělení. Obchod s aplikacemi je to řešení na klíč, nabídky vývojáři aplikací distribuce a platebních systémy.
 

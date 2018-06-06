@@ -1,18 +1,20 @@
 ---
-title: Podporované a nepodporované rozhraní
+title: Podporované a nepodporované rozhraní v tvOS
+description: 'Abyste pomohli vysvětlení funkce dostupné pro aplikace tvOS, tento dokument obsahuje dva seznamy Apple rozhraní: jsou podporovány tvOS a ty, které tvOS nepodporují.'
 ms.prod: xamarin
 ms.assetid: 28EF1337-3D0E-47AB-8A13-1B333A964FB6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/07/2016
-ms.openlocfilehash: 4b368a8e4d449d8fa8d0d29dab19d227bb6eee4c
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8ba33d028263385eca50f8174124bbe629e3f951
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789119"
 ---
-# <a name="supported-and-unsupported-frameworks"></a>Podporované a nepodporované rozhraní
+# <a name="supported-and-unsupported-frameworks-in-tvos"></a>Podporované a nepodporované rozhraní v tvOS
 
 <a name="Supported-Frameworks" />
 
@@ -39,7 +41,7 @@ Toto je seznam rozhraní poskytovaných společností Apple pro použití ve va�
 * CoreVideo
 * Darwin
 * Foundation
-* GameController
+* Herní
 * GameKit
 * Hraní her
 * GLKit
@@ -71,7 +73,7 @@ Toto je seznam rozhraní poskytovaných společností Apple pro použití ve va�
 Následuje seznam rozhraní, které jsou podporovány v iOS 9, ale byly odebrány z podpory tvOS 9 společností Apple a proto jej nelze použít ve svých aplikacích Xamarin.tvOS:
 
 * Účty
-* AddressBook
+* Adresáře
 * AddressBookUI
 * AssetsLibrary
 * Kontakty
@@ -102,7 +104,7 @@ Následuje seznam rozhraní, které jsou podporovány v iOS 9, ale byly odebrán
 * ReplayKit
 * SafariServices
 * Sociální
-* Twitter
+* Služby Twitter.
 * VideoToolbox
 * WatchConnectivity
 * WatchKit

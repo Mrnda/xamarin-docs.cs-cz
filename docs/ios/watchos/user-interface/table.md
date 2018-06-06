@@ -1,18 +1,20 @@
 ---
-title: Ovládací prvek tabulky
+title: watchOS ovládacích prvků tabulka v Xamarinu
+description: Tento dokument popisuje, jak používat ovládací prvky watchOS tabulky v Xamarin. Popisuje přidání tabulky, přidání řadič řádek, vytvoření a naplnění řádky, neodpovídá na požadavky odposlouchávání a další.
 ms.prod: xamarin
 ms.assetid: 7C14126D-9591-4387-A588-3C4521F11C55
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: 3f596b424292dd0f4db08429bc7c5d4a885d3954
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: afb8f9a96fa14877cbd0352869e23972719a4480
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34791355"
 ---
-# <a name="table-control"></a>Ovládací prvek tabulky
+# <a name="watchos-table-controls-in-xamarin"></a>watchOS ovládacích prvků tabulka v Xamarinu
 
 WatchOS `WKInterfaceTable` ovládací prvek je mnohem jednodušší než jeho protějšku iOS, ale provádí podobnou roli. Vytvoří seznam řádků, který může mít vlastní rozložení a které reagují na touch události posouvání.
 

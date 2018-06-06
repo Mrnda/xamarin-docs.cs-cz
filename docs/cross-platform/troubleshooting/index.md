@@ -1,20 +1,23 @@
 ---
-title: Poradce při potížích
+title: Řešení potíží s Xamarin
+description: Tento dokument odkazy na obsah, že obsahuje odpovědi na časté otázky o vývoj na platformě Xamarin, popisuje postup aktualizace součástí odkazy na NuGet, popisuje možnosti podpory a odpovědi na dotazy určitého produktu.
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 4513D391-9850-4CDC-BE9B-7FF4B14FEFFC
 author: asb3993
 ms.author: amburns
 ms.date: 02/18/2018
-ms.openlocfilehash: 5e8a28f85e947cffeaf6a0aac544e10f7e4eae8a
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 7a10a20290872005233bfffd5ec861f7372be4a8
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782060"
 ---
-# <a name="troubleshooting"></a>Poradce při potížích
+# <a name="xamarin-troubleshooting"></a>Řešení potíží s Xamarin
 
 ## <a name="general-issues"></a>Obecné problémy
+
 ### <a name="frequently-asked-questionsquestionsindexmd"></a>[Nejčastější dotazy](questions/index.md)
 
 Nejčastější dotazy o platformě Xamarin a odpovědi jsou specifické pro Visual Studio.

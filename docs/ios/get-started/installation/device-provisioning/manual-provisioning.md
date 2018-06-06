@@ -1,21 +1,22 @@
 ---
-title: Ruční zřizování
-description: Po úspěšné instalaci Xamarin.iOS na další krok v vývoj pro iOS je ke zřízení zařízení s iOS. Tato příručka se prozkoumejte vyžádání vývoj certifikátů a profilů, práce s aplikační služby a nasazení aplikace na zařízení.
+title: Ručního zřizování pro Xamarin.iOS
+description: Po úspěšné instalaci Xamarin.iOS na další krok v vývoj pro iOS je ke zřízení zařízení s iOS. Tato příručka popisuje nastavení profilů a certifikátů vývoj pomocí ručního zřizování.
 ms.prod: xamarin
 ms.assetid: E26ACC94-F4A5-4FF5-B7D4-BE596745A665
 ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 07/15/2017
-ms.openlocfilehash: f604d41990a7a592a3d5207e7a12075c35ae661f
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: c0404a1fd8f7e878638b9483c65c637f6b4faa66
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786100"
 ---
-# <a name="manual-provisioning"></a>Ruční zřizování
+# <a name="manual-provisioning-for-xamarinios"></a>Ručního zřizování pro Xamarin.iOS
 
-_Po úspěšné instalaci Xamarin.iOS na další krok v vývoj pro iOS je ke zřízení zařízení s iOS. Tato příručka se prozkoumejte vyžádání vývoj certifikátů a profilů, práce s aplikační služby a nasazení aplikace na zařízení._
+_Po úspěšné instalaci Xamarin.iOS na další krok v vývoj pro iOS je ke zřízení zařízení s iOS. Tato příručka popisuje nastavení profilů a certifikátů vývoj pomocí ručního zřizování._
 
 <a name="signingidentity" />
 

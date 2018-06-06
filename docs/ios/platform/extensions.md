@@ -1,6 +1,6 @@
 ---
-title: iOS rozšíření
-description: Zavádí v iOS 8, jsou rozšíření pomůcky, které jsou prezentované podle iOS v standardní kontextech, například v centru oznámení, když uživatel požádá vlastní klávesnice, nebo když jsou fotografie úpravy. Všechna rozšíření jsou nainstalovány ve spojení s aplikací kontejneru a aktivují z určitého bodu rozšíření v hostiteli aplikace.
+title: iOS rozšíření v Xamarin.iOS
+description: Tento dokument popisuje rozšíření, která jsou pomůcky předložený iOS v standardní kontextu, jako v centru oznámení. Popisuje, jak vytvořit rozšíření a komunikovat s ním z nadřazené aplikace.
 ms.prod: xamarin
 ms.assetid: 3DEB3D43-3E4A-4099-8331-93C1E7A77095
 ms.technology: xamarin-ios
@@ -8,15 +8,14 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: af52db5f1add040af025f2134f0e9a7b3936f4f2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c26f951ddaff34cf23662f701395e636e1258b7d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786727"
 ---
-# <a name="ios-extensions"></a>iOS rozšíření
-
-_Zavádí v iOS 8, jsou rozšíření pomůcky, které jsou prezentované podle iOS v standardní kontextech, například v centru oznámení, když uživatel požádá vlastní klávesnice, nebo když jsou fotografie úpravy. Všechna rozšíření jsou nainstalovány ve spojení s aplikací kontejneru a aktivují z určitého bodu rozšíření v hostiteli aplikace._
+# <a name="ios-extensions-in-xamarinios"></a>iOS rozšíření v Xamarin.iOS
 
 > [!VIDEO https://youtube.com/embed/Sd0-ch9Udmk]
 

@@ -1,21 +1,20 @@
 ---
-title: Úlohy na pozadí
-description: Ujistěte se, že aplikace sledovat má vždy nejnovější data a snímky ukotvení pomocí nové úlohy na pozadí watchOS 3.
+title: watchOS úlohy na pozadí v Xamarinu
+description: Tento dokument popisuje, jak používat úlohy na pozadí s watchOS v Xamarin, trvá podívejte se na typy úloh na pozadí, pomocí prostředků, implementace úlohy na pozadí, plánování, osvědčené postupy a další.
 ms.prod: xamarin
 ms.assetid: 2049C430-7566-45F8-9E3D-1446F484981E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/13/2017
-ms.openlocfilehash: 0279aed1e694e3b38dcb8189819d88740c37b6ad
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 5ab53d4aea32cf41c492e286c18cbe85a619889a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34792044"
 ---
-# <a name="background-tasks"></a>Úlohy na pozadí
-
-_Ujistěte se, že aplikace sledovat má vždy nejnovější data a snímky ukotvení pomocí nové úlohy na pozadí watchOS 3._
+# <a name="watchos-background-tasks-in-xamarin"></a>watchOS úlohy na pozadí v Xamarinu
 
 S watchOS 3 existují tři hlavní způsoby, sledování aplikací můžete zachovat informace o jeho aktuální: 
 
@@ -545,7 +544,7 @@ Když aplikaci právě na pozadí, systém ukládá několik omezení:
 - Ji dostane jenom pár sekund dokončete jakékoli dané úlohy. Systém vezme v úvahu jenom množství času předán, ale také kolik výkonu procesoru aplikace spotřebovává odvození toto omezení.
 - Jakékoli aplikaci, která překračuje omezení budou ukončeny s následující kódy chyb:
     - **CPU** - 0xc51bad01
-    - **Time** - 0xc51bad02
+    - **Čas** -0xc51bad02
 - Systém bude uložit různé omezení na základě typu požádal aplikaci k provedení úlohy na pozadí. Například `WKApplicationRefreshBackgroundTask` a `WKURLSessionRefreshBackgroundTask` úlohy jsou uvedeny poněkud déle runtimes přes jiné typy úloh na pozadí.
 
 <a name="Complications-and-App-Updates" />

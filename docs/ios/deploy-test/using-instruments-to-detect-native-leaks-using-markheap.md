@@ -1,21 +1,20 @@
 ---
 title: Profilace – aplikace Xamarin.iOS s nástroji
-description: Jak používat nástroje na Xamarin.iOS aplikace na zařízení nebo v simulátoru.
+description: Tento dokument popisuje, jak pomocí nástroje aplikace společnosti Apple profil nainstalovat na zařízení nebo simulátoru aplikace pro Xamarin.iOS.
 ms.prod: xamarin
 ms.assetid: 70A8CAC8-20C2-655B-37C3-ACF9EA7874D8
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: a5c44531a8f05529b169390f25b2946133411098
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 25129d532af0b146afedf28865649ffc9e38ee17
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785609"
 ---
 # <a name="profiling-xamarinios-applications-with-instruments"></a>Profilace – aplikace Xamarin.iOS s nástroji
-
-_Jak používat nástroje na Xamarin.iOS aplikace na zařízení nebo v simulátoru._
 
 Xcode **Instruments** je nástroj, který je možné do profilu aplikace Xamarin.iOS na zařízení nebo v simulátoru. Mono používá jeho těsně za běhu modelu kompilace kódu a nástroje není tento druh dat interpretovat dobře, tak může být složité pro práci s výstupem na základě simulátoru aplikace, které používají nástroje.
 Kvůli tomuto problému se zaměří Tato příručka o tom, jak používat aplikaci vývojáře k interpretaci Instruments výstupu v tomto dokumentu.

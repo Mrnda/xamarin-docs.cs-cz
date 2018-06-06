@@ -1,22 +1,22 @@
 ---
-title: Hledání a vylepšení pomůcky domovskou obrazovku
-description: Tento článek se zabývá vylepšení provedena Apple systém pomůcka v iOS 10.
+title: Hledání a domů obrazovky pomůcky vylepšení v iOS 10
+description: Tento dokument popisuje vylepšení, které má Apple provedli v pomůckách v iOS 10, včetně aktualizací vyhledávání a pomůcky domovskou obrazovku.
 ms.prod: xamarin
 ms.assetid: D66FD9E1-9E23-4BB6-825C-ED19B8F72A81
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: e7a64738f29ab2b5c62659d721beb50db7c9adb5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8383f167f8c85459e996b83368281fa243317948
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788108"
 ---
-# <a name="search-and-home-screen-widget-enhancements"></a>Hledání a vylepšení pomůcky domovskou obrazovku
+# <a name="search-and-home-screen-widget-enhancements-in-ios-10"></a>Hledání a domů obrazovky pomůcky vylepšení v iOS 10
 
 _Tento článek se zabývá vylepšení provedena Apple systém pomůcka v iOS 10._
-
 
 Společnost Apple má několik vylepšení systému pomůcky a ujistěte se, že widgetů hledat skvělé na všechny pozadí, která existuje v nové iOS 10 zamykací obrazovka vydala. Kromě toho nyní obsahují pomůcky [NCWidgetDisplayMode](https://developer.apple.com/reference/notificationcenter/ncwidgetdisplaymode) vlastnost, která umožňuje vývojáři popisují, kolik obsah je dostupný a umožňuje uživateli rozbalit nebo sbalit obsah.
 

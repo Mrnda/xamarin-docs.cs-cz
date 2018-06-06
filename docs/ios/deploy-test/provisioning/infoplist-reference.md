@@ -1,18 +1,20 @@
 ---
-title: Odkaz na Info.plist
+title: Referenční dokumentace info.plist pro Xamarin.iOS
+description: Tento dokument popisuje různé páry klíč/hodnota, které lze nastavit v souboru Info.plist aplikace pro Xamarin.iOS. Tyto klíče jsou nezbytné, pokud vaše aplikace provádí konkrétní úlohy, jako je přístup k umístění, fotografie, mikrofon nebo fotoaparát.
 ms.prod: xamarin
 ms.assetid: 944DFDB5-ADBA-4D6E-984C-5AEC19A1CC57
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/18/2017
-ms.openlocfilehash: 8ad2c5e8137dede71d9858aa144e440d984c1a75
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fa40add67155bd982041b829264a10b9764aa950
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785473"
 ---
-# <a name="infoplist-reference"></a>Odkaz na Info.plist
+# <a name="infoplist-reference-for-xamarinios"></a>Referenční dokumentace info.plist pro Xamarin.iOS
 
 Další informace o práci s Info.Plist klíče naleznete [práce zabezpečení a ochrana osobních údajů](~/ios/app-fundamentals/security-privacy.md) průvodce. 
 

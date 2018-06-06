@@ -1,22 +1,20 @@
 ---
-title: Práce s řadiče zobrazení rozdělení
-description: Tento článek se zabývá navrhování a práce s řadiče zobrazení rozdělení uvnitř Xamarin.tvOS aplikace.
+title: Práce s tvOS rozdělení řadiče zobrazení v Xamarinu
+description: Tento dokument popisuje, jak pracovat s tvOS rozdělení zobrazení v aplikaci vytvořené s nástroji Xamarin. Poskytuje souhrnné informace o rozdělení řadiče zobrazení, jak používat s scénářů, přístup k zobrazení seznamu a podrobností a zobrazení a skrytí zobrazení předlohy.
 ms.prod: xamarin
 ms.assetid: 21248CFB-5A94-4C19-B223-C72E0DC5F1D5
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 25151eb2929e2bc61dba27a9937ffdf4ee224626
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 2dd07cd8a4e92d6d39be50ba670441d965ed4d13
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789428"
 ---
-# <a name="working-with-split-view-controllers"></a>Práce s řadiče zobrazení rozdělení
-
-_Tento článek se zabývá navrhování a práce s řadiče zobrazení rozdělení uvnitř Xamarin.tvOS aplikace._
-
+# <a name="working-with-tvos-split-view-controllers-in-xamarin"></a>Práce s tvOS rozdělení řadiče zobrazení v Xamarinu
 
 Řadič zobrazení rozdělení uvede a spravuje hlavní a řadiče zobrazení podrobností-souběžného, na obrazovce ve stejnou dobu. Rozdělení zobrazení řadiče jsou použít k zobrazení obsahu trvalé, může získat fokus v zobrazení předlohy (menší části na levé straně) a související podrobnosti v zobrazení podrobností (větší oddílu na pravé straně).
 

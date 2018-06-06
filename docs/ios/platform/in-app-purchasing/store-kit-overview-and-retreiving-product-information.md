@@ -1,18 +1,20 @@
 ---
-title: Uložení Kit přehled a načítání informací o produktu
+title: Přehled StoreKit a načítání informace o produktu v Xamarin.iOS
+description: Tento dokument obsahuje přehled StoreKit. Popisuje třídy používané s StoreKit testování StoreKit interakce a zobrazení produktů pro prodej, zpracování neplatný produkty a zobrazení lokalizované ceny.
 ms.prod: xamarin
 ms.assetid: FC21192E-6325-4389-C060-E92DBB5EBD87
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: f4ecd2942a99f80854fd340be454f9d8fefa5a36
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 964b97e82db8e79cb32598d0c955fac3ab122314
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787221"
 ---
-# <a name="store-kit-overview-and-retrieving-product-information"></a>Uložení Kit přehled a načítání informací o produktu
+# <a name="storekit-overview-and-retrieving-product-info-in-xamarinios"></a>Přehled StoreKit a načítání informace o produktu v Xamarin.iOS
 
 Uživatelské rozhraní pro nákupy v aplikaci je vidět na následujících snímcích obrazovky.
 Před provedením jakékoli transakce, aplikace musí získat cena produktu a popis pro zobrazení. Když uživatel potom stiskne **koupit**, aplikace odešle požadavek StoreKit, která spravuje dialogové okno potvrzení a Apple ID přihlášení. Za předpokladu, že transakce pak úspěšné, StoreKit upozorní kódu aplikace, které musíte uložit výsledek transakce a uživateli poskytnout přístup k jejich nákupu.   

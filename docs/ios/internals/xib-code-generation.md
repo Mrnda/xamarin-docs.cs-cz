@@ -1,18 +1,20 @@
 ---
-title: Generování kódu .xib
+title: Generování kódu .xib v Xamarin.iOS
+description: Tento dokument popisuje, jak Xamarin.iOS generuje kód do mapovat .xib soubory C#, visual ovládací prvky zpřístupnění prostřednictvím kódu programu.
 ms.prod: xamarin
 ms.assetid: 365991A8-E07A-0420-D28E-BC4D32065E1A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: b887dbf09693452f62f744669ad9713927020cea
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 064e17393747a36cd761cb2464e3239cfc17141c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786145"
 ---
-# <a name="xib-code-generation"></a>Generování kódu .xib
+# <a name="xib-code-generation-in-xamarinios"></a>Generování kódu .xib v Xamarin.iOS
 
 > [!IMPORTANT]
 >  Tento dokument popisuje sady Visual Studio pro Mac pro integraci s Xcode na rozhraní pouze tvůrce jako akce a výstupy nejsou použít v Návrháři Xamarin pro iOS. Další informace o návrháři iOS, přečtěte si [iOS Návrhář](~/ios/user-interface/designer/index.md) dokumentu.
@@ -31,7 +33,7 @@ Ve se dá definovat vlastní třídy **.xib** souboru pomocí příkazu "Přidat
 
 ## <a name="generating-code"></a>Vytváření kódu
 
-Pro žádné **{0} .xib** souboru pomocí akce sestavení *stránky*, pokud **{0}.xib.designer.cs** soubor také existuje v projektu, Visual Studio pro Mac vydá částečné třídy v soubor návrháře pro všechny třídy uživatelů můžete najít v **.xib** soubor s vlastností výstupy a částečné metody pro všechny akce. Jednoduše tak, že přítomnost tento soubor je povolit generování kódu.
+Pro libovolný  **{0}.xib** souboru pomocí akce sestavení *stránky*, pokud  **{0}. xib.designer.cs** soubor také existuje v projektu Visual Studio pro Mac vygeneruje částečné třídy v návrháře souboru pro všechny třídy uživatelů můžete najít v **.xib** soubor s vlastností výstupy a částečné metody pro všechny akce. Jednoduše tak, že přítomnost tento soubor je povolit generování kódu.
 
 Soubor návrháře je automaticky aktualizovat, kdy **.xib** soubor změny a Visual Studio pro Mac získal fokus. Soubor návrháře se nesmí upravovat ručně, protože změny budou přepsána dalším spuštění Visual Studio pro Mac aktualizace souboru.
 
@@ -49,7 +51,7 @@ Třídy, nemůže být definovaný ve více než jeden **.xib**, nebo se budou v
 
 Důvodem je potřeba flexibilitu. Například vícenásobné třídy CodeBehind může podtřídami běžné třídy, která má být rozčlenění podle IB spravované abstraktní třídu, která podtřídy.
 
-Je běžné tyto uvést do **{0}.xib.cs** souboru vedle položky **{0}.xib.designer.cs** návrháře souboru.
+Je běžné tyto uvést do  **{0}. xib.cs** souboru vedle položky  **{0}. xib.designer.cs** návrháře souboru.
 
 <a name="generated" />
 

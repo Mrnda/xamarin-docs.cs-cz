@@ -1,21 +1,21 @@
 ---
 title: Kontrola instalace a požadavky
-description: Jak chcete stáhnout, nainstalovat a používat nástroj Xamarin Inspector.
+description: Tento dokument popisuje, jak nainstalovat nástroj Xamarin Inspector a popisuje podporovaný operační systém, integrovaného vývojového prostředí a aplikace platformy.
 ms.prod: xamarin
 ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
 author: topgenorth
 ms.author: toopge
 ms.date: 03/29/2017
-ms.openlocfilehash: 5bbd5c64f53e191d5ac629e20df87c2b7ca4ec00
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 80bf3cb4e8e27355ccf6213dbfd07a17e992961b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793805"
 ---
 # <a name="inspector-installation-and-requirements"></a>Kontrola instalace a požadavky
 
 ## <a name="download-and-installation"></a>Stažení a instalaci
-
 
 # <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
@@ -55,7 +55,6 @@ Kontroly za provozu aplikace je k dispozici pro podnikové zákazníky.
 |iOS (Unified)|Podporované v XS a Visual Studio|Kontroly aplikací pro iOS ze systému Windows vyžaduje stejnou verzi nástroje Inspector taky nainstalovat na hostiteli Mac sestavení.|
 |Android|Podporované v XS a Visual Studio|Android musí být > = 4.0.3, s **fastdev** povolena.<br />Musíte použít emulátorů Google, Visual Studio a Xamarin Android. Android 7 emulátorů nemusí umožňovat kontroly v tuto chvíli.|
 |WPF|Podporuje jenom v sadě Visual Studio v systému Windows|
-
 
 <a name="reporting-bugs" />
 
@@ -167,6 +166,5 @@ Pro starší verze musíte ručně odebrat následující:
 
 1. Odstranit aplikaci sešity v `"/Applications/Xamarin Workbooks.app"`
 2. Odstranit aplikaci Inspector ve `"Applications/Xamarin Inspector.app"`
-2. Odstranit doplňky: `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Interactive"` a `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Inspector"`
-3. Odstraňte Inspector a podpůrné soubory. zde: `/Library/Frameworks/Xamarin.Interactive.framework` a `/Library/Frameworks/Xamarin.Inspector.framework`
-
+3. Odstranit doplňky: `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Interactive"` a `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Inspector"`
+4. Odstraňte Inspector a podpůrné soubory. zde: `/Library/Frameworks/Xamarin.Interactive.framework` a `/Library/Frameworks/Xamarin.Inspector.framework`

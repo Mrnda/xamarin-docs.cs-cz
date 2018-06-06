@@ -1,19 +1,20 @@
 ---
-title: Zařazování výjimky
-description: Xamarin.iOS obsahuje nové události, který mu umožní reagovat na výjimky, zejména v nativním kódu.
+title: Výjimka zařazování v Xamarin.iOS
+description: Tento dokument popisuje, jak pracovat s nativní a spravovaná výjimkami v aplikaci pro Xamarin.iOS. Popisuje problémy, které se můžou vyskytnout a řešení těchto problémů.
 ms.prod: xamarin
 ms.assetid: BE4EE969-C075-4B9A-8465-E393556D8D90
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/05/2017
-ms.openlocfilehash: bb9c16985d958772193093434350435ce477956a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: dcf1074aacb6d139d107dac01fa86f459831d5f9
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786740"
 ---
-# <a name="exception-marshaling"></a>Zařazování výjimky
+# <a name="exception-marshaling-in-xamarinios"></a>Výjimka zařazování v Xamarin.iOS
 
 _Xamarin.iOS obsahuje nové události, který mu umožní reagovat na výjimky, zejména v nativním kódu._
 
@@ -108,7 +109,7 @@ Zde pouze spravované rámce jsou snímky, 8-10, ale spravované výjimka je vyv
 
 Příklad kódu:
 
-``` objective-c
+```objc
 -(id) setObject: (id) object forKey: (id) key
 {
     @try {
@@ -124,7 +125,7 @@ A `@finally` klauzule nebude nelze provést, protože Mono modul runtime, který
 
 Varianta to je spravovaný výjimku spravovaného kódu a pak unwinding prostřednictvím nativní rámce získat vyvolat prvního spravované `catch` klauzule:
 
-``` csharp
+```csharp
 class AppDelegate : UIApplicationDelegate {
     public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
     {

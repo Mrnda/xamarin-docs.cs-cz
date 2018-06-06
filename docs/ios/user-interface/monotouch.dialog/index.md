@@ -1,21 +1,19 @@
 ---
-title: Úvod do MonoTouch.Dialog
-description: MonoTouch.Dialog (strojový překladů. D) Sada nástrojů je představuje nepostradatelné rozhraní pro aplikaci rychlý vývoj uživatelského rozhraní v Xamarin.iOS. STROJOVÝ PŘEKLADŮ. D umožňuje rychle a snadno definovat komplexní aplikace uživatelského rozhraní pomocí deklarativní způsob místo nebylo nutné pracně navigační řadiče, tabulek atd. Kromě toho strojový překladů. D má flexibilní sadu rozhraní API, která poskytne vývojářům úplnou kontrolu nebo rukou vypnout přístup a také další funkce, například obrázek pozadí-aktualizace obsahu, načtení, vyhledání podporu a dynamické generování uživatelského rozhraní pomocí JSON data. Tento průvodce uvádí různé způsoby, jak pracovat s strojový překladů. D a pak dives o pokročilé využití.
+title: Úvod do MonoTouch.Dialog pro Xamarin.iOS
+description: Tento dokument popisuje MonoTouch.Dialog (strojový překladů. D), rozhraní pro rychlé, deklarativní vývoj uživatelského rozhraní pomocí Xamarin.iOS. Popisuje, jak používat rozhraní API MonoTouch.Dialog k vytváření rozhraní v kódu nebo JSON a používání funkcí, jako je aktualizace obsahu, hledání, načítání obrázku pozadí a další.
 ms.prod: xamarin
 ms.assetid: 52A35B24-C23B-8461-A8FF-5928A2128FB0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: be979b35ffdd597dae74f1f661a381ae44433b10
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6511d8deed1800a8ae655f749feccd249bf4a8c0
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790835"
 ---
-# <a name="introduction-to-monotouchdialog"></a>Úvod do MonoTouch.Dialog
-
-_MonoTouch.Dialog (strojový překladů. D) Sada nástrojů je představuje nepostradatelné rozhraní pro aplikaci rychlý vývoj uživatelského rozhraní v Xamarin.iOS. STROJOVÝ PŘEKLADŮ. D umožňuje rychle a snadno definovat komplexní aplikace uživatelského rozhraní pomocí deklarativní způsob místo nebylo nutné pracně navigační řadiče, tabulek atd. Kromě toho strojový překladů. D má flexibilní sadu rozhraní API, která poskytne vývojářům úplnou kontrolu nebo rukou vypnout přístup a také další funkce, například obrázek pozadí-aktualizace obsahu, načtení, vyhledání podporu a dynamické generování uživatelského rozhraní pomocí JSON data. Tento průvodce uvádí různé způsoby, jak pracovat s strojový překladů. D a pak dives o pokročilé využití._
-
+# <a name="introduction-to-monotouchdialog-for-xamarinios"></a>Úvod do MonoTouch.Dialog pro Xamarin.iOS
 
 MonoTouch.Dialog, označuje jako strojový překladů. D pro zkrácení, je rychlé toolkit vývoj uživatelského rozhraní, která umožňuje vývojářům vytvářet aplikace obrazovky a navigační pomocí informace místo nebylo nutné pracně vytváření řadiče zobrazení, tabulek atd. Jako takový nabízí významné zjednodušení snížení vývoj a kód uživatelského rozhraní. Zvažte například následující snímek obrazovky:
 
@@ -293,7 +291,7 @@ Název skupiny v `RadioGroup` se používá k zobrazení vybrané hodnoty na str
 
 ### <a name="badge-element"></a>Element oznámení "BADGE"
 
- [![](images/image15.png "Element oznámení "BADGE"")](images/image15.png#lightbox)
+ [![](images/image15.png "Element oznámení \"BADGE\"")](images/image15.png#lightbox)
 
 ### <a name="float-element"></a>Float – Element
 
@@ -589,7 +587,7 @@ Tento článek zahrnutých velké množství informací o MonoTouch.Dialog. Je p
 - [Návod: Vytvoření aplikace pomocí rozhraní Elements API](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)
 - [Návod: Vytvoření aplikace pomocí rozhraní Reflection API](~/ios/user-interface/monotouch.dialog/reflection-api-walkthrough.md)
 - [Návod: Vytvoření uživatelského rozhraní pomocí elementu JSON](~/ios/user-interface/monotouch.dialog/json-element-walkthrough.md)
-- [MonoTouch.Dialog JSON Markup](~/ios/user-interface/monotouch.dialog/monotouch.dialog-json-markup.md)
+- [MonoTouch.Dialog JSON značek](~/ios/user-interface/monotouch.dialog/monotouch.dialog-json-markup.md)
 - [Dialogové okno MonoTouch na Githubu](https://github.com/migueldeicaza/MonoTouch.Dialog)
 - [Odkaz na UITableViewController – třída](http://developer.apple.com/library/ios/#DOCUMENTATION/UIKit/Reference/UITableViewController_Class/Reference/Reference.html)
 - [Odkaz na UINavigationController – třída](http://developer.apple.com/library/ios/#documentation/UIKit/Reference/UINavigationController_Class/Reference/Reference.html)

@@ -1,15 +1,17 @@
 ---
 title: Podpora jazyka Objective-C
+description: Tento dokument obsahuje popis podporu jazyka Objective-C v rozhraní .NET vložení. Popisuje automatické počítání odkazů, NSString, protokoly, NSObject protokol, výjimky a další.
 ms.prod: xamarin
 ms.assetid: 3367A4A4-EC88-4B75-96D0-51B1FCBCE614
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: 1c0d4ac79bba0846b62c4ca74c42cd86610caa1b
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 95604133293f0fb2fe9b651fd7cb6b18f3994c84
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34793852"
 ---
 # <a name="objective-c-support"></a>Podpora jazyka Objective-C
 

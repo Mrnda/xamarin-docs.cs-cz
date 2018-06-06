@@ -1,21 +1,20 @@
 ---
-title: Karta řádky a řadiče posuvníku
-description: aplikace pro iOS pomocí uživatelského rozhraní navigace na kartě jsou vytvořené pomocí třídy UITabBarController. V tomto článku budeme zabývat postup nastavení na kartách aplikaci, která obsahuje několik kontrolery a zobrazení. Potom podíváme jak načíst UITabBarController, pokud není kořenový řadič, například po přihlašovací obrazovku.
+title: Karta řádky a posuvníku řadičů v Xamarin.iOS
+description: Tento dokument popisuje iOS karta panelu řadiče a postup jejich používání s Xamarin.iOS. Ukazuje, jak nastavit UITabBarController, práce s obrázky, nastavení oznámení "BADGE" hodnoty, práce s událostmi a další.
 ms.prod: xamarin
 ms.assetid: 7C772899-2900-F139-D642-F3C4F3F14DDC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: c3c57cceed7271ebbe707172db892a246003426b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d8b096774e60ec0e0b69e109fa5da53c25e66d25
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34789755"
 ---
-# <a name="tab-bars-and-tab-bar-controllers"></a>Karta řádky a řadiče posuvníku
-
-_aplikace pro iOS pomocí uživatelského rozhraní navigace na kartě jsou vytvořené pomocí třídy UITabBarController. V tomto článku budeme zabývat postup nastavení na kartách aplikaci, která obsahuje několik kontrolery a zobrazení. Potom podíváme jak načíst UITabBarController, pokud není kořenový řadič, například po přihlašovací obrazovku._
+# <a name="tab-bars-and-tab-bar-controllers-in-xamarinios"></a>Karta řádky a posuvníku řadičů v Xamarin.iOS
 
 Na kartách aplikace se používají v iOS pro podporu uživatelského rozhraní, kde může získat přístup více obrazovek v žádné konkrétní pořadí. Prostřednictvím `UITabBarController` třídy aplikace můžete snadno zahrnují podporu pro tyto scénáře s více obrazovky. `UITabBarController` má na starosti správu více obrazovky, umožňuje vývojáři aplikace umožňuje zaměřit se na podrobnosti o každém obrazovky.
 
