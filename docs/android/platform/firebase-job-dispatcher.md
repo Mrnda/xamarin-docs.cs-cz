@@ -6,18 +6,18 @@ ms.assetid: 3DB9C7A3-D351-481D-90C5-BEC25D1B9910
 ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
-ms.date: 05/08/2018
-ms.openlocfilehash: a714ac55c3a49b91cb21e3ba1793b9bccd7d1be2
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 06/05/2018
+ms.openlocfilehash: 0d512342f1c978c84341d20c298a9fa750800d84
+ms.sourcegitcommit: 5db075bdd0b62d5d1d1567c267303a6a1888c8f2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34806800"
 ---
 # <a name="firebase-job-dispatcher"></a>Dispečer firebase úlohy
 
 _Tato příručka popisuje, jak při plánování práce na pozadí pomocí knihovny dispečera úloh Firebase z Google._
 
-![Dispečer úlohy firebase ve verzi Preview](~/media/shared/preview.png)
 
 ## <a name="overview"></a>Přehled
 
@@ -65,9 +65,6 @@ Dispečera úloh Firebase vyžaduje úroveň rozhraní API systému Android 9 ne
 Chcete-li začít pracovat s dispečera Firebase úlohy, nejprve přidejte [balíček Xamarin.Firebase.JobDispatcher NuGet](https://www.nuget.org/packages/Xamarin.Firebase.JobDispatcher) do projektu Xamarin.Android. Správce balíčků NuGet pro vyhledávání **Xamarin.Firebase.JobDispatcher** balíčku (což je stále v předběžné verzi).
 
 Po přidání knihovně dispečera úloh Firebase, vytvoření `JobService` třídy a potom ji spustit s instancí naplánovat `FirebaseJobDispatcher`.
-
-> [!NOTE]
-> Aktuální vazby pro dispečera úloh Firebase zaměřuje na původní verzi knihovny. Je [známého problému [(https://bugzilla.xamarin.com/show_bug.cgi?id=59046)] znemožnění vazbu z aktualizovaných cílení na novější verzi dispečera Firebase úlohy.
 
 
 ### <a name="creating-a-jobservice"></a>Vytváření JobService
@@ -293,7 +290,6 @@ Tato příručka popsané, jak používat dispečera úloh Firebase inteligentn�
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Generátor vazby nezdaří a zobrazí se chyba závažná NEOŠETŘENÉ výjimky: System.ArgumentNullException: hodnota nemůže být null.](https://bugzilla.xamarin.com/show_bug.cgi?id=59046)
 - [Xamarin.Firebase.JobDispatcher na NuGet](https://www.nuget.org/packages/Xamarin.Firebase.JobDispatcher)
 - [Úloha dispečera firebase na Githubu](https://github.com/firebase/firebase-jobdispatcher-android)
 - [Vazba Xamarin.Firebase.JobDispatcher](https://github.com/xamarin/XamarinComponents/tree/master/Android/FirebaseJobDispatcher)

@@ -6,12 +6,12 @@ ms.assetid: 8C30F8D3-1920-453E-9E8B-D40696736FF2
 author: asb3993
 ms.author: amburns
 ms.date: 04/12/2017
-ms.openlocfilehash: 448bbc0630388f6bf45056c90cc75586996d0623
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 82a89309e6462462471f42c3504d109ff0722917
+ms.sourcegitcommit: 5db075bdd0b62d5d1d1567c267303a6a1888c8f2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781030"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34806787"
 ---
 # <a name="using-net-standard-libraries-to-share-code"></a>Použití standardní knihovny .NET pro sdílení kódu
 
@@ -37,7 +37,7 @@ Přidání standardní knihovna pro .NET pro vaše řešení je docela rovnou d�
 
   **Poznámka:** této šablony, bude přejmenován na `.NET Standard` v budoucí verzi sady Visual Studio for Mac.
 
-  ![Vytvoření knihovny tříd .NET Core](net-standard-images/vsm01.png)
+  ![Vytvoření knihovny tříd .NET Core](net-standard-images/vsm01.png "vytvoření nové knihovny tříd rozhraní .NET Core")
 
 2. Standardní knihovny .NET projektu se zobrazí, jak je znázorněno v Průzkumníku řešení. Uzel závislosti označí, že používá knihovna [NETStandard.Library](https://www.nuget.org/packages/NETStandard.Library/).
 
@@ -47,7 +47,7 @@ Přidání standardní knihovna pro .NET pro vaše řešení je docela rovnou d�
 
 Nastavení standardní knihovny .NET můžete zobrazit a změnit tak, že kliknete pravým tlačítkem na projekt a výběrem `Options` jak je vidět na tomto snímku obrazovky:
 
-![Upravit standardní rozhraní .NET framework cíl v možnosti projektu](net-standard-images/vsm03.png)
+![Upravit standardní rozhraní .NET framework cíl v možnosti projektu](net-standard-images/vsm03.png "upravit verzi rozhraní .NET Framework standardní cíl v možnosti projektu")
 
 Můžete změnit ve vaší verzi `netstandard` změnou `Target Framework` hodnota rozevíracího seznamu.
 
@@ -67,17 +67,17 @@ Přidání standardní knihovna pro .NET pro vaše řešení je docela rovnou d�
 
 1. V dialogovém okně Přidat nový projekt, vyberte `.NET Standard` kategorie a potom vyberte `Class Library(.NET Standard)`.
 
-  ![](net-standard-images/vs01.png "Vytvořit novou knihovnu .NET Standard – třída")
+  ![Vytvoření nové knihovny tříd standardní .NET](net-standard-images/vs01.png "vytvořit nové standardní rozhraní .NET třídy knihovny")
 
 2. Standardní knihovny .NET projektu se zobrazí, jak je znázorněno v Průzkumníku řešení. Uzel závislosti označí, že používá knihovna [NETStandard.Library](https://www.nuget.org/packages/NETStandard.Library/).
 
-  ![](net-standard-images/vs02.png ".NET standard projekt v řešení")
+  ![NETStandard.Library ve složce projektu](net-standard-images/vs02.png ".NET Standard projekt v řešení")
 
 #### <a name="editing-net-standard-library-settings"></a>Úprava nastavení standardní knihovny .NET
 
 Nastavení standardní knihovny .NET můžete zobrazit a změnit tak, že kliknete pravým tlačítkem na projekt a výběrem `Properties` jak je vidět na tomto snímku obrazovky:
 
-![](net-standard-images/vs03.png "Referenční .NET Standard knihovnu stejným způsobem jako jiné projekty")
+![Upravit standardní cílové rozhraní .NET v okně Vlastnosti projektu](net-standard-images/vs03.png "odkazovat .NET standardní knihovnu stejným způsobem jako jiné projekty")
 
 Můžete změnit ve vaší verzi `netstandard` změnou `Target Framework` hodnota rozevíracího seznamu.
 
@@ -87,7 +87,7 @@ Můžete změnit ve vaší verzi `netstandard` změnou `Target Framework` hodnot
 
 Po vytvoření standardní knihovny .NET, můžete přidat odkaz na jeho ze žádného kompatibilní aplikace nebo knihovna projektu stejným způsobem jako za normálních okolností přidáte odkazy. V sadě Visual Studio, klikněte pravým tlačítkem na uzel odkazy a zvolte `Add Reference...` potom přepnout `Solution : Projects` kartě, jak je znázorněno:
 
-![](net-standard-images/vs04.png "V sadě Visual Studio klikněte pravým tlačítkem na uzel odkazy a zvolte možnost Přidat odkaz... potom přejděte na kartu řešení projekty, jak vidíte")
+![Odkazování na standardní knihovna pro .NET](net-standard-images/vs04.png "v sadě Visual Studio, klikněte pravým tlačítkem na uzel odkazy a zvolte možnost Přidat odkaz... potom přejděte na kartu řešení projekty, jak vidíte")
 
 -----
 

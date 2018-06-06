@@ -6,13 +6,13 @@ ms.assetid: 915874C3-2F0F-4D83-9C39-ED6B90BB2C8E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/30/2018
-ms.openlocfilehash: cf75d070dfff97f48bab2210f72af747bc53099c
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.date: 06/05/2018
+ms.openlocfilehash: 9db44d9f120f1ede5060f4680faefc49c09fffae
+ms.sourcegitcommit: 5db075bdd0b62d5d1d1567c267303a6a1888c8f2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732941"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34806813"
 ---
 # <a name="hardware-acceleration-for-emulator-performance"></a>Hardwarovou akceleraci emulátoru výkonu
 
@@ -79,6 +79,8 @@ Vývojáři, kteří používají Windows 10 (duben 2018 aktualizovat nebo nově
 
 
 ### <a name="known-issues"></a>Známé problémy
+
+-   Pokud není možné aktualizovat verzi emulátoru 27.2.7 nebo později po aktualizaci sady Visual Studio preview, možná budete muset nainstalovat přímo [náhled instalační program](http://aka.ms/hyperv-emulator-dl) povolit novější verze emulátoru.
 
 -   Při použití určitých Intel a na základě AMD procesorů se může snížit výkon.
 
