@@ -1,21 +1,20 @@
 ---
-title: Architektura změny
-description: Zkoumání nové funkce systému iOS 11
+title: Architektura změny v iOS 11
+description: Tento dokument popisuje vyřazení 32bitové aplikace v iOS 11. Popisuje, jak se aktualizace aplikace k cílové 64bitové architektury.
 ms.prod: xamarin
 ms.assetid: 55F62F3F-8570-402B-B7D9-2875F76CB946
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: 6dd874fd803d2b3de21b0b604cbc2bafa5bf1aec
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 09d528ceb0654debd7c0ac8818f19c622775eac2
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787432"
 ---
-# <a name="architecture-changes"></a>Architektura změny
-
-_Zkoumání nové funkce systému iOS 11_
+# <a name="architecture-changes-in-ios-11"></a>Architektura změny v iOS 11
 
 Jednou z největších změn, které byste měli vědět o s iOS 11 je 32-bit podpory pro aplikace, podle popisu v [společnosti Apple](https://developer.apple.com/news/?id=06282017b) stiskněte verze. Všech nových aplikací a aktualizací na stávající aplikace musí podporovat 64-bit. 32bitová verze aplikace **nespustí** v iOS 11.
 

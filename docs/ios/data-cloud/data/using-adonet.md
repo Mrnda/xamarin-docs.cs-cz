@@ -1,18 +1,20 @@
 ---
-title: Použitím technologie ADO.NET s iOS
+title: Pomocí ADO.NET Xamarin.iOS
+description: Tento dokument popisuje, jak používat technologie ADO.NET jako metodu pro přístup k SQLite aplikace pro Xamarin.iOS. Popisuje, odkazy na sestavení, Mono.Data.Sqlite a BasicDataAccess vzorku.
 ms.prod: xamarin
 ms.assetid: 79078A4D-2D24-44F3-9543-B50418A7A000
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 7d8478c363da1e4362a8a837dafba7f9cf85872e
-ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
+ms.openlocfilehash: 8240e3052b4deb4bfdf0ec94e67fbd6827a34dab
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784826"
 ---
-# <a name="using-adonet-with-ios"></a>Použitím technologie ADO.NET s iOS
+# <a name="using-adonet-with-xamarinios"></a>Pomocí ADO.NET Xamarin.iOS
 
 Xamarin má integrovanou podporu pro databázi SQLite, která je k dispozici v systému iOS, které jsou vystavené pomocí známé syntaxe pro technologii ADO.NET. Pomocí těchto rozhraní API vyžaduje, abyste zápisu příkazů SQL, které jsou zpracovány SQLite, jako například `CREATE TABLE`, `INSERT` a `SELECT` příkazy.
 

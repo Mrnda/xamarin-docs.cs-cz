@@ -1,18 +1,19 @@
 ---
-title: Zásobník HttpClient a SSL/TLS implementace selektor pro iOS/systému macOS
+title: HttpClient a SSL/TLS implementace selektor pro iOS/systému macOS
 description: Zásobník HttpClient a SSL/TLS implementace selektor určuje implementace HttpClient a SSL/TLS, která se použije v aplikaci Xamarin iOS, tvOS nebo systému macOS.
 ms.prod: xamarin
 ms.assetid: 12101297-BB04-4410-85F0-A0D41B7E6591
 author: asb3993
 ms.author: amburns
 ms.date: 04/20/2018
-ms.openlocfilehash: dcbdb4d20bca9764731b08e551a4d3b8a26a2ab4
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 9de2c97933bd33111a751be51e06dffe09794f15
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782265"
 ---
-# <a name="httpclient-stack-and-ssltls-implementation-selector-for-iosmacos"></a>Zásobník HttpClient a SSL/TLS implementace selektor pro iOS/systému macOS
+# <a name="httpclient-and-ssltls-implementation-selector-for-iosmacos"></a>HttpClient a SSL/TLS implementace selektor pro iOS/systému macOS
 
 **Selektor implementace HttpClient** pro Xamarin.iOS, Xamarin.tvOS a Xamarin.Mac Určuje, které `HttpClient` implementace používat. Můžete přepnout implementace, která používá iOS, tvOS nebo systému macOS nativní přenosy (`NSUrlSession` nebo `CFNetwork`, v závislosti na operačním systémem). Vzhůru je protokol TLS 1.2 podpora, menší binární soubory a rychlejší stahování; Nevýhodou je, že vyžaduje smyčky událostí, aby byl spuštěn pro spouštění asynchronních operací.
 

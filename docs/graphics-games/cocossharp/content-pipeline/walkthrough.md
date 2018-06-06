@@ -1,20 +1,21 @@
 ---
-title: Pomocí MonoGame PipelineTool
-description: Nástroj MonoGame kanálu se používá k vytváření a správě obsahu projekty MonoGame. Soubory v obsahu projekty jsou Monogame kanálu nástroj zpracoval a výstupem jako soubory .xnb pro použití v aplikacích CocosSharp a MonoGame.
+title: Pomocí nástroje MonoGame kanálu
+description: Nástroj MonoGame kanálu se používá k vytváření a správě obsahu projekty MonoGame. Soubory v obsahu projekty jsou MonoGame kanálu nástroj zpracoval a výstupem jako soubory .xnb pro použití v aplikacích CocosSharp a MonoGame.
 ms.prod: xamarin
 ms.assetid: CACFBF5F-BBD4-4D46-8DDA-1F46466725FD
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: 50e6c611e285cde9184eed242353ad08b2a941ee
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 347cb7e9d417f97cb6e8d78e67b1c76a378cd188
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783288"
 ---
 # <a name="using-the-monogame-pipeline-tool"></a>Pomocí nástroje MonoGame kanálu
 
-_Nástroj MonoGame kanálu se používá k vytváření a správě obsahu projekty MonoGame. Soubory v obsahu projekty jsou Monogame kanálu nástroj zpracoval a výstupem jako soubory .xnb pro použití v aplikacích CocosSharp a MonoGame._
+_Nástroj MonoGame kanálu se používá k vytváření a správě obsahu projekty MonoGame. Soubory v obsahu projekty jsou MonoGame kanálu nástroj zpracoval a výstupem jako soubory .xnb pro použití v aplikacích CocosSharp a MonoGame._
 
 Tento nástroj kanálu MonoGame nabízí snadno použitelné prostředí pro převod souborů obsahu do **.xnb** souborů pro použití v aplikacích CocosSharp a MonoGame. Informace o obsahu kanálů a proč jsou užitečné v vývoj her, najdete v článku [tento úvod na obsahu kanálů](~/graphics-games/cocossharp/content-pipeline/introduction.md)
 

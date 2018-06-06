@@ -1,20 +1,19 @@
 ---
 title: Úvod do vývoj her pro Xamarin
-description: Povaha vývoj her pro se může značně lišit od vývoj jiné typy aplikací. Tento článek je úvodem do vývoj her s funkcí technologie, které lze použít s Xamarin.iOS a Xamarin.Android. Poskytuje nejvyšší úrovni diskuzi o tom, jak jsou vytvářeny hry a vzorkování technologií, které jsou k dispozici pro použití s Xamarin.iOS a Xamarin.Android.
+description: Tento dokument obsahuje přehled vývoj her s Xamarinem, popisující, jak jsou vytvářeny hry a vzorkování technologií, které jsou k dispozici pro použití s Xamarin.iOS a Xamarin.Android.
 ms.prod: xamarin
 ms.assetid: 0E3CDCD2-FBE4-49F5-A70E-8A7B937BAF1D
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: 543d3e2d4e53d1b88213ac82689073a9fb925820
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: b1bd6d011cdc10352ce3b9258da7e16c2899d2d8
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783913"
 ---
 # <a name="introduction-to-game-development-with-xamarin"></a>Úvod do vývoj her pro Xamarin
-
-_Povaha vývoj her pro se může značně lišit od vývoj jiné typy aplikací. Tento článek je úvodem do vývoj her s funkcí technologie, které lze použít s Xamarin.iOS a Xamarin.Android. Poskytuje nejvyšší úrovni diskuzi o tom, jak jsou vytvářeny hry a vzorkování technologií, které jsou k dispozici pro použití s Xamarin.iOS a Xamarin.Android._
 
 Vývoj her může být velmi zajímavé hlavně zadaný jak snadno může být publikování práci na mobilních platformách. Tento článek popisuje koncepty a technologie související s vývoj her, který vám pomůže vytvořit hry, zda chcete vytvořit vysoce kvalitní AAA herní nebo jenom k programu pro zábavu je.
 

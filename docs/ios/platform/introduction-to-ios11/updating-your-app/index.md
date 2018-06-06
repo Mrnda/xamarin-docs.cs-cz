@@ -1,21 +1,20 @@
 ---
 title: Aktualizace aplikace pro iOS 11
-description: Zkoumání nové funkce systému iOS 11
+description: Tento dokument obsahuje odkazy na různé příručky, které popisují nové funkce, které jsou k dispozici pro Xamarin.iOS vývojářům verzi iOS 11. Například aktualizace visual návrhu, App Store změny, a aktualizace ikona aplikace.
 ms.prod: xamarin
 ms.assetid: EC809504-9CF6-4949-B6EE-36384297E744
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/13/2016
-ms.openlocfilehash: 2581f729d85787021763f50f005e84d6bbb5db01
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ea57acbd6165f7b1abd8b9bd69873670c179f411
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787569"
 ---
 # <a name="updating-your-app-to-ios-11"></a>Aktualizace aplikace pro iOS 11
-
-_Zkoumání nové funkce systému iOS 11_
 
 V iOS 11 má společnost Apple vydala architektura aktualizací, nové visual změny a o proces připojení aktualizované iTunes. Tato příručka prozkoumá, každý z těchto změn, což pomáhá vaší aplikace Xamarin.iOS aktualizovat pro iOS 11.
 

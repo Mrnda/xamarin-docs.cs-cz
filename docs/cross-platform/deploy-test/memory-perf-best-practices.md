@@ -1,23 +1,21 @@
 ---
 title: Napříč platformami výkonu
-description: Existuje mnoho postupů pro zvýšení výkonu aplikace vytvořené pomocí platformy Xamarin. Tyto postupy souhrnně může výrazně snížit objem práce využití procesoru a paměti spotřebovávají aplikace. Tento článek popisuje a tyto postupy.
+description: Tento dokument popisuje různé postupy, které lze použít ke zlepšení výkonu mobilní aplikace. Popisuje, profileru, IDisposable prostředků, slabé odkazy, bude systém uvolňování SGen, techniky snížení velikosti a další.
 ms.prod: xamarin
 ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: f011a92b4789da7328827f184449fd957abdf3ba
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 66234bb44bb0cae9580c119c6029603a528f882e
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781979"
 ---
 # <a name="cross-platform-performance"></a>Napříč platformami výkonu
 
-_Existuje mnoho postupů pro zvýšení výkonu aplikace vytvořené pomocí platformy Xamarin. Tyto postupy souhrnně může výrazně snížit objem práce využití procesoru a paměti spotřebovávají aplikace. Tento článek popisuje a tyto postupy._
-
 Výkon nízký aplikace prezentuje mnoha způsoby. Aplikace může díky pravděpodobně reagovat, může způsobit pomalé posouvání a může snížit z baterie. Ale optimalizace výkonu zahrnuje více než jen implementace efektivní kódu. Musíte také zvážit možnosti pro uživatele s výkonem aplikace. Například zajistíte, že operace spustit bez blokování uživatele z jiné aktivity vám může pomoct vylepšit možnosti pro uživatele.
-
 
 <a name="profiler" />
 

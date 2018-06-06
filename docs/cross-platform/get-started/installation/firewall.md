@@ -1,16 +1,17 @@
 ---
 title: Pokyny ke konfiguraci brány Xamarin Firewall
-description: Seznam hostitelů, které je potřeba na seznam povolených adres v bráně firewall povolit platformu pro Xamarin pro práci pro vaši společnost.
+description: Tento dokument obsahuje seznam hostitelů, které musí být seznam povolených adres v bráně firewall povolit Xamarin pro práci v podnikovém prostředí.
 ms.prod: xamarin
 ms.assetid: 658f699b-8cca-48f7-ae54-fa956384b6d6
 author: asb3993
 ms.author: amburns
 ms.date: 12/02/2016
-ms.openlocfilehash: 34ac0b0eb2563b2122d7b093b19ac3a6ac78cbe5
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: dab4aeccd58da22736aea3139f11cbdff259ef7b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781088"
 ---
 # <a name="xamarin-firewall-configuration-instructions"></a>Pokyny ke konfiguraci brány Xamarin Firewall
 

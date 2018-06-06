@@ -1,21 +1,20 @@
 ---
-title: Události, protokoly a delegáti
-description: Tento článek představuje klíče iOS technologií používaných pro příjem zpětná volání a k vyplnění ovládacích prvků uživatelského rozhraní s daty. Tyto technologie jsou události, protokoly a delegáti. Tento článek vysvětluje, co každý z nich je, a každé použití z jazyka C#. Ukazuje, jak Xamarin.iOS používá ovládací prvky iOS ke zveřejnění známé .NET události, a jak Xamarin.iOS poskytuje podporu pro koncepty jazyka Objective-C, jako jsou protokoly a delegáti (Objective-C delegáti by neměl být zaměňovat s delegáti C#). Tento článek také obsahuje příklady, které ukazují, jak se používají protokoly – jak jako základ pro delegáti jazyka Objective-C a na jiných delegáta scénáře.
+title: Události, protokoly a delegáti v Xamarin.iOS
+description: Tento dokument popisuje, jak pracovat s událostmi, protokolů a deleguje v Xamarin.iOS. Tyto základní koncepty jsou všudypřítomný v vývoj na platformě Xamarin.iOS.
 ms.prod: xamarin
 ms.assetid: 7C07F0B7-9000-C540-0FC3-631C29610447
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 4c2888eb2d0b1ae79e10ca764e7bf14a1afb6c59
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d0e4c23bffe689c9218da2f43b97d98f348513ad
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784007"
 ---
-# <a name="events-protocols-and-delegates"></a>Události, protokoly a delegáti
-
-_Tento článek představuje klíče iOS technologií používaných pro příjem zpětná volání a k vyplnění ovládacích prvků uživatelského rozhraní s daty. Tyto technologie jsou události, protokoly a delegáti. Tento článek vysvětluje, co každý z nich je, a každé použití z jazyka C#. Ukazuje, jak Xamarin.iOS používá ovládací prvky iOS ke zveřejnění známé .NET události, a jak Xamarin.iOS poskytuje podporu pro koncepty jazyka Objective-C, jako jsou protokoly a delegáti (Objective-C delegáti by neměl být zaměňovat s delegáti C#). Tento článek také obsahuje příklady, které ukazují, jak se používají protokoly – jak jako základ pro delegáti jazyka Objective-C a na jiných delegáta scénáře._
+# <a name="events-protocols-and-delegates-in-xamarinios"></a>Události, protokoly a delegáti v Xamarin.iOS
 
 Xamarin.iOS používá ovládací prvky ke zveřejnění události pro většinu interakce uživatele.
 Aplikace Xamarin.iOS využívat tyto události mnohem stejným způsobem jako tradiční aplikace .NET. Například Xamarin.iOS UIButton třída má událost názvem TouchUpInside a odebírá Tato událost stejně, jako kdyby této třídy a události se aplikace .NET.
@@ -28,15 +27,13 @@ V tomto článku se dozvíte o těchto tématech, která poskytuje sice solidní
 -  **Protokoly** – učení co protokoly jsou a jak se používají a vytvoření příklad, který poskytuje data pro poznámky mapy.
 -  **Delegáti** – zkušenosti o jazyka Objective-C delegáti podle rozšíření Příklad mapy do zpracovávají interakci s uživatelem, který obsahuje poznámky, pak učení rozdíl mezi silné a slabé Delegáti a při použití každé z nich.
 
-
 Pro ilustraci protokoly a delegáti, využijeme jednoduché mapy aplikace, která přidá poznámky na mapu, jak je vidět tady:
 
  [![](delegates-protocols-and-events-images/01-map.png "Příklad jednoduchého mapy aplikace, které přidá poznámky mapy") ](delegates-protocols-and-events-images/01-map.png#lightbox) [ ![ ] (delegates-protocols-and-events-images/04-annotation-with-callout.png "příklad poznámky přidat na mapu")](delegates-protocols-and-events-images/04-annotation-with-callout.png#lightbox)
 
 Před boji se této aplikace, můžeme začít pohledem na události UIKit .NET.
 
- <a name=".NET_Events_with_UIKit" />
-
+<a name=".NET_Events_with_UIKit" />
 
 ## <a name="net-events-with-uikit"></a>Události rozhraní .NET s UIKit
 
@@ -47,7 +44,6 @@ aButton.TouchUpInside += (o,s) => {
     Console.WriteLine("button touched");
 };
 ```
-
 To může implementovat pomocí jazyka C# 2.0 stylu anonymní metody podobné následujícímu:
 
 ```csharp

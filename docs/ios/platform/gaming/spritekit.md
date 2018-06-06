@@ -1,33 +1,35 @@
 ---
-title: SpriteKit
+title: SpriteKit v Xamarin.iOS
+description: Tento dokument popisuje SpriteKit společnosti Apple 2D grafické rozhraní, které se integruje s SceneKit, zahrnuje fyziky a animace, zahrnuje podporu pro osvětlení a stínování a další. SpriteKit lze použít k vytvoření 2D hry.
 ms.prod: xamarin
 ms.assetid: 93971DAE-ED6B-48A8-8E61-15C0C79786BB
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/14/2017
-ms.openlocfilehash: 967fd5b25213478c89d1ab849b6c0b7ac66d0e20
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b74b5a722aab240b55ed96bea2a33b162d7817eb
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786766"
 ---
-# <a name="spritekit"></a>SpriteKit
+# <a name="spritekit-in-xamarinios"></a>SpriteKit v Xamarin.iOS
 
-Pohyblivý symbol Kit, 2D herní framework od společnosti Apple, obsahuje některé zajímavé nové funkce v iOS 8 a OS X Yosemite. Mezi ně patří integrace s Kit scény, podporu shaderu, osvětlení, stínů, omezení, normální mapa generování a fyziky vylepšení. Konkrétně nové funkce fyziky usnadňují velmi přidat realistické efekty do hru.
+SpriteKit rozhraní grafiky 2D od společnosti Apple, obsahuje některé zajímavé nové funkce v iOS 8 a OS X Yosemite. Mezi ně patří integrace s SceneKit, podporu shaderu, osvětlení, stínů, omezení, normální mapa generování a fyziky vylepšení. Konkrétně nové funkce fyziky usnadňují velmi přidat realistické efekty do hru.
 
 ## <a name="physics-bodies"></a>Fyziky těla
 
-Sada pohyblivý symbol obsahuje 2D, pevné textu fyziky rozhraní API. Každý pohyblivý symbol má k přidružené fyziky tělo (`SKPhysicsBody`), který definuje vlastnosti fyziky například velkokapacitních a třením, jakož i geometrie obsahu na světě fyziky.
+SpriteKit zahrnuje 2D, pevné textu fyziky rozhraní API. Každý pohyblivý symbol má k přidružené fyziky tělo (`SKPhysicsBody`), který definuje vlastnosti fyziky například velkokapacitních a třením, jakož i geometrie obsahu na světě fyziky.
 
 ## <a name="creating-a-physics-body-from-a-texture"></a>Vytváření fyziky text z texturou
-Pohyblivý symbol Kit teď podporuje odvozování z jeho texture fyziky text pohyblivý symbol. Díky tomu je snadno implementovat kolize, které podívejte přirozenější.
+SpriteKit teď podporuje odvozování z jeho texture fyziky text pohyblivý symbol. Díky tomu je snadno implementovat kolize, které podívejte přirozenější.
 
 Všimněte si například v následujícím kolizí jak banánů a opic kolidují téměř na povrchu každé bitové kopie:
  
 ![](spritekit-images/image13.png "Banánů a opic dojít ke konfliktu téměř na povrchu každé bitové kopie")
 
-Pohyblivý symbol Kit umožňuje vytváření fyziky text s jedním řádkem kódu. Jednoduše volání `SKPhysicsBody.Create` s texture a velikost: pohyblivý symbol. PhysicsBody = SKPhysicsBody.Create (pohyblivý symbol. Texture, pohyblivý symbol. Velikost);
+SpriteKit umožňuje vytváření fyziky text s jedním řádkem kódu. Jednoduše volání `SKPhysicsBody.Create` s texture a velikost: pohyblivý symbol. PhysicsBody = SKPhysicsBody.Create (pohyblivý symbol. Texture, pohyblivý symbol. Velikost);
 
 ## <a name="alpha-threshold"></a>Prahovou hodnotu alfa
 
@@ -45,7 +47,7 @@ sprite.PhysicsBody = SKPhysicsBody.Create (sprite.Texture, 0.7f, sprite.Size);
  
 ## <a name="physics-fields"></a>Fyziky pole
 
-Jiné skvělé přidání do pohyblivý symbol Kit je nové pole fyziky podporovat. Ty umožňují přidávat položky, například pole vortex paprskového gravitace pole a pole pružiny pro pojmenování několika.
+Jiné skvělé přidání do SpriteKit je nové pole fyziky podporovat. Ty umožňují přidávat položky, například pole vortex paprskového gravitace pole a pole pružiny pro pojmenování několika.
 
 Pole fyziky jsou vytvořené pomocí SKFieldNode třídu, která se přidá do scény stejně jako libovolný jiný `SKNode`. Existuje mnoho různých metod vytváření na `SKFieldNode` vytvořit různé fyziky pole. Pole pružiny lze vytvořit voláním `SKFieldNode.CreateSpringField()`, pole paprskového gravitace voláním `SKFieldNode.CreateRadialGravityField()`a tak dále.
 

@@ -1,17 +1,18 @@
 ---
-title: Verze Xamarin.Essentials sledování
-description: Třída VersionTracking umožňuje zkontrolujte verzi aplikace a čísla sestavení spolu se zobrazuje tyto další informace, jako by se jednalo o první čas spuštění někdy aplikace nebo pro aktuální verzi, získat předchozí informace o sestavení a další.
+title: 'Xamarin.Essentials: Sledování verze'
+description: Třída VersionTracking v Xamarin.Essentials umožňuje zkontrolujte verzi aplikace a čísla sestavení spolu se zobrazuje tyto další informace, jako by se jednalo o první čas spuštění někdy aplikace nebo pro aktuální verzi, získat předchozího sestavení informace a další.
 ms.assetid: 670C7E8A-E882-4AC0-97D2-A53D90ADD6A3
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: f6ab63c44307fca860ccb73744b35c006f25a9ed
-ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
+ms.openlocfilehash: 2c092d6767045f0af956c5dab74801077dadb51f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782999"
 ---
-# <a name="xamarinessentials-version-tracking"></a>Verze Xamarin.Essentials sledování
+# <a name="xamarinessentials-version-tracking"></a>Xamarin.Essentials: Sledování verze
 
 ![Předběžné verze NuGet](~/media/shared/pre-release.png)
 

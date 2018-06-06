@@ -1,5 +1,5 @@
 ---
-title: Distribuce Ad-Hoc
+title: Ad Hoc distribuce pro aplikace pro Xamarin.iOS
 description: Tento dokument poskytuje přehled o Ad Hoc distribuční technik, které se primárně používají pro testování aplikací Xamarin.iOS s celou skupinou uživatelů.
 ms.prod: xamarin
 ms.assetid: 3B621CAD-103C-478A-97C3-829015F48D1A
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 9b862a39d8fb8fe079b83b8842281fad5ec903e4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 0907c3bcca9e0955e5ad9f8ed48adac03202cbaa
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784800"
 ---
-# <a name="ad-hoc-distribution"></a>Distribuce Ad-Hoc
+# <a name="ad-hoc-distribution-for-xamarinios-apps"></a>Ad Hoc distribuce pro aplikace pro Xamarin.iOS
 
 _Tento dokument poskytuje přehled o Ad Hoc distribuční technik, které se primárně používají pro testování aplikací Xamarin.iOS s celou skupinou uživatelů._
 

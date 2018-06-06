@@ -1,21 +1,20 @@
 ---
-title: Návod - pomocí služba přenosu na pozadí a NSURLSession
-description: V tomto návodu používáme služba přenosu na pozadí a rozhraní API NSURLSession k ji stahování velký obrázek, který se bude stahovat, když je aplikace na pozadí.
+title: Přenos na pozadí a NSURLSession v Xamarin.iOS
+description: Tento dokument poskytuje návod, který ukazuje, jak používat přenos na pozadí a NSUrlSession ji stahování velký obrázek, a pokračujte tohoto stažení aplikace při umístění na pozadí.
 ms.prod: xamarin
 ms.assetid: 6960E025-3D5C-457A-B893-25B734F8626D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 51e1ae0a4314d0b23ec9e3236656321bd3dcb4e4
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 08a0ba1337c0d28d1f0d60d04394ccaf4a9ccfc7
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783736"
 ---
-# <a name="walkthrough---using-background-transfer-service-and-nsurlsession"></a>Návod - pomocí služba přenosu na pozadí a NSURLSession
-
-_V tomto návodu používáme služba přenosu na pozadí a rozhraní API NSURLSession k ji stahování velký obrázek, který se bude stahovat, když je aplikace na pozadí._
+# <a name="background-transfer-and-nsurlsession-in-xamarinios"></a>Přenos na pozadí a NSURLSession v Xamarin.iOS
 
 Inicializuje přenosu na pozadí v konfiguraci na pozadí `NSURLSession` a enqueuing odeslání nebo stažení úlohy. Pokud úkoly dokončí, zatímco aplikace backgrounded, pozastaveno nebo byla ukončena, iOS oznámí aplikace voláním obslužná rutina dokončení v aplikačním *AppDelegate*. Následující diagram ukazuje to, v akci:
 

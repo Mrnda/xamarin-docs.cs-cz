@@ -1,21 +1,20 @@
 ---
-title: iOS přístup k datům
-description: Většina aplikací mít některé požadavek k uložení dat v zařízení místně. Pokud je trivially malé množství dat, většinou je potřeba databáze a datové vrstvy v aplikaci pro správu přístupu k databázi. iOS má databázový stroj SQLite "součástí" a přístup k uložení a načtení dat se zjednodušilo díky Xamarin pro platformu. Tento dokument ukazuje, jak získat přístup k databázi SQLite.
+title: Přístup k datům Xamarin.iOS
+description: Tento dokument obsahuje odkazy na příručky, které popisují, jak pracovat s místní databází aplikace pro Xamarin.iOS. Odkazovaný obsah popisuje SQLite.NET, ADO.NET a další.
 ms.prod: xamarin
 ms.assetid: 3AEDFD8D-FB10-4CEF-BE04-CCD14E95F02C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/11/2016
-ms.openlocfilehash: 47f2567d81f61568aad639330dc5133856e31936
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a986ea9931f62497e5a6863c84bd4041983d66d9
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784573"
 ---
-# <a name="ios-data-access"></a>iOS přístup k datům
-
-_Většina aplikací mít některé požadavek k uložení dat v zařízení místně. Pokud je trivially malé množství dat, většinou je potřeba databáze a datové vrstvy v aplikaci pro správu přístupu k databázi. iOS má databázový stroj SQLite "součástí" a přístup k uložení a načtení dat se zjednodušilo díky Xamarin pro platformu. Tento dokument ukazuje, jak získat přístup k databázi SQLite._
+# <a name="xamarinios-data-access"></a>Přístup k datům Xamarin.iOS
 
 Přístup k databázi rozhraní API podporuje Xamarin.iOS například:
 
@@ -40,7 +39,6 @@ Xamarin.Forms aplikace, najdete v tématu [práce s databázemi](~/xamarin-forms
 -  [Používání SQLite.NET ORM](using-sqlite-orm.md)
 -  [Používání ADO.NET](using-adonet.md)
 -  [Používání dat v aplikaci](using-data-in-an-app.md)
-
 
 ## <a name="summary"></a>Souhrn
 

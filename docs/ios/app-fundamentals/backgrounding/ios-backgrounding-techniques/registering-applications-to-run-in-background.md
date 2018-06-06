@@ -1,18 +1,20 @@
 ---
-title: Registrace aplikace, které poběží na pozadí
+title: Registrace aplikace Xamarin.iOS pro spouštění na pozadí
+description: Tento dokument popisuje postup registrace aplikace pro Xamarin.iOS ke spuštění na pozadí. Popisuje, zvuk aplikace, VoIP aplikací, externích příslušenství a bluetooth a další.
 ms.prod: xamarin
 ms.assetid: 8F89BE63-DDB5-4740-A69D-F60AEB21150D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 58ee68f765372094d68c3cf30ed6a631a67fe313
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f4774f6b4f5412c44dc985bd40129a178b1e813c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783672"
 ---
-# <a name="registering-applications-to-run-in-the-background"></a>Registrace aplikace, které poběží na pozadí
+# <a name="registering-xamarinios-apps-to-run-in-the-background"></a>Registrace aplikace Xamarin.iOS pro spouštění na pozadí
 
 Registrace jednotlivé úlohy pro pozadí oprávnění funguje pro některé aplikace, ale co se stane, když aplikace neustále nucen provádět důležité, dlouho běžící úlohy, jako je například získávání pokyny pro uživatele na základě GPS? Aplikace, třeba tyto by měl místo zaregistrovat jako známé pozadí potřeby aplikace.
 

@@ -1,19 +1,20 @@
 ---
-title: iOS lokalizace
-description: Tento dokument popisuje funkce lokalizace IOS SDK a jak přistupovat k nim s funkcí Xamarin.
+title: Lokalizace v Xamarin.iOS
+description: Tento dokument popisuje funkce lokalizace iOS a používání těchto funkcí v aplikacích pro Xamarin.iOS. Popisuje, jazyka, národní prostředí, soubory řetězce, spouštěcí bitové kopie a další.
 ms.prod: xamarin
 ms.assetid: DFD9EB4A-E536-18E4-C8FD-679BA9C836D8
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/28/2017
-ms.openlocfilehash: 5ee04614a500618846ad3acf2a38f279351d6e9d
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 06758fd8fac62a63c309b173738a8ee889716143
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785263"
 ---
-# <a name="ios-localization"></a>iOS lokalizace
+# <a name="localization-in-xamarinios"></a>Lokalizace v Xamarin.iOS
 
 _Tento dokument popisuje funkce lokalizace IOS SDK a jak přistupovat k nim s funkcí Xamarin._
 

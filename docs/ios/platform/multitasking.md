@@ -1,5 +1,5 @@
 ---
-title: Multitasking pro iPad
+title: Multitasking pro iPad v Xamarin.iOS
 description: iOS 9 podporuje dvě aplikace běžící na stejnou dobu, pomocí snímku přes nebo rozděleným zobrazením. Podporuje také obraz v obraze přehrávání videa.
 ms.prod: xamarin
 ms.assetid: 0F2266D7-21FF-404D-A148-0CFDE76B12AA
@@ -8,13 +8,14 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/20/2017
-ms.openlocfilehash: 553fd6e45df897037d6ad90ef9211eef0bf27aae
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7eacd9ece067d2ddf6363c0551055daa3df4433a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787952"
 ---
-# <a name="multitasking-for-ipad"></a>Multitasking pro iPad
+# <a name="multitasking-for-ipad-in-xamarinios"></a>Multitasking pro iPad v Xamarin.iOS
 
 _iOS 9 podporuje dvě aplikace běžící na stejnou dobu, pomocí snímku přes nebo rozděleným zobrazením. Podporuje také obraz v obraze přehrávání videa._
 
@@ -150,7 +151,7 @@ Nakonec, musí vaše aplikace používá soubor storyboard k jeho spuštění ob
 
 V systému iOS 9 spuštěna na Ipadu, Společnost Apple má rozšířenou podporu pro hardware klávesnice. Ipady mít vždy zahrnuje podporu základní externí klávesnice přes Bluetooth a některé klávesnice výrobců vytvořili klávesnice, které zahrnuty pevně integrované zkratky specifické pro iOS.
 
-Nyní s iOS 9, aplikace můžete vytvořit své vlastní vlastní klávesové zkratky. Kromě toho jsou k dispozici jako některé základní klávesové zkratky **příkaz C** (kopie), **příkaz X** (Vyjmout), **V příkazu** (Vložit) a **příkaz-Shift-H ** (domovskou), aniž by se konkrétně napsané reakce na ně aplikace.
+Nyní s iOS 9, aplikace můžete vytvořit své vlastní vlastní klávesové zkratky. Kromě toho jsou k dispozici jako některé základní klávesové zkratky **příkaz C** (kopie), **příkaz X** (Vyjmout), **V příkazu** (Vložit) a **příkaz-Shift-H**  (domovskou), aniž by se konkrétně napsané reakce na ně aplikace.
 
 **Příkaz – karta** zobrazíte přepínači aplikace, která umožňuje uživatelům rychlé přepínání mezi aplikací z klávesnice, podobně jako Mac OS:
 

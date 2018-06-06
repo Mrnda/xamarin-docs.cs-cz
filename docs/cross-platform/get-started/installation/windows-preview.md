@@ -1,15 +1,17 @@
 ---
 title: Instalace Xamarin Preview v systému Windows
+description: Tento dokument popisuje, jak nainstalovat verzi preview Xamarin na Visual Studio 2017 pomocí kanálu verze Preview.
 ms.prod: xamarin
 ms.assetid: 9F730444-06E8-4B3F-8A19-CA95CD484FFA
 author: asb3993
 ms.author: amburns
 ms.date: 03/20/2018
-ms.openlocfilehash: 20b9bbfcdcc698f19c6400cd738ba7f6d5db7e44
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: d920dd688a7911ccf4002d67914c977da56f89e1
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34780682"
 ---
 # <a name="installing-xamarin-preview-on-windows"></a>Instalace Xamarin Preview v systému Windows
 

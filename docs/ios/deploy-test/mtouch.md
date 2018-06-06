@@ -1,23 +1,23 @@
 ---
-title: mtouch
+title: Pomocí mtouch sady aplikace Xamarin.iOS
+description: Tento dokument popisuje mtouch, nástroj, spusťte v simulátoru jednotek řada kroků potřebných k vypnutí aplikace pro Xamarin.iOS do jednoho svazku a nasadíte ho do fyzického zařízení.
 ms.prod: xamarin
 ms.assetid: BCA491DA-E4C1-8689-3EC9-E4C72495A798
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 933ad24a8778ffbee3a1b6089c6ebcf33d26bf84
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9aaa79f929898f6765b97ab0a0c4a30a271d945a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784950"
 ---
-# <a name="mtouch"></a>mtouch
-
+# <a name="using-mtouch-to-bundle-xamarinios-apps"></a>Pomocí mtouch sady aplikace Xamarin.iOS
 
 iPhone aplikace jsou dodávána jako sady aplikace. Jedná se o adresáře s příponou `.app` obsahující kódu, data, konfiguračních souborů a manifestu, který používá iPhone Další informace o vaší aplikace.
 
 Proces zapnutí spustitelný soubor rozhraní .NET do aplikace většinou vycházejí z `mtouch` příkaz, nástroj, který se integruje se řadu kroky potřebné k vypnutí aplikace do sady. Tento nástroj se používá také ke spuštění aplikace v simulátoru a nasazení softwaru do samotného zařízení iPhone nebo iPod Touch.
-
 
 ## <a name="detailed-instructions"></a>Podrobné pokyny
 

@@ -1,19 +1,20 @@
 ---
 ms.assetid: 65F6A634-9CB0-4BB8-A013-7CA0334F6100
 title: Napříč platformami vývojářům plochy
-description: Xamarin umožňuje vytvářet aplikace pro Windows, Android, iOS a Mac pomocí svoje dovednosti Windows Forms nebo WPF.
+description: Tento dokument obsahuje odkazy na různé příručky, které popisují Xamarin.Forms pro vývojáře WPF a Windows Forms. Odkazovaný obsah prozkoumá životního cyklu aplikací, ovládacích prvků uživatelského rozhraní, portování pokyny a ukázky.
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: 0794d931dd57971efcbd0ea5b42159e3524ea6b0
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 21c74b8c0ccaffb2b3b8205a3bdda9101b99f072
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34779951"
 ---
 # <a name="cross-platform-for-desktop-developers"></a>Napříč platformami vývojářům plochy
 
-Tato část obsahuje informace, které pomohou WPF a Windows.Forms vývojářům další vývoj mobilních aplikací s Xamarinem, v odkazu jejich stávajících znalostí a zkušenosti k mobilní idioms a poskytuje příklady portování desktopovým aplikacím mobile.
+Tato část obsahuje informace o pomoci vývojářům WPF a Windows Forms další vývoj mobilních aplikací s Xamarinem, v odkazu jejich stávajících znalostí a prostředí mobilních idioms a poskytnete příklady portování desktopovým aplikacím mobilní.
 
 ## <a name="app-lifecycle-comparisonlifecyclemd"></a>[Porovnání životního cyklu aplikace](lifecycle.md)
 

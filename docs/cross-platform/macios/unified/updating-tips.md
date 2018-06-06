@@ -1,14 +1,16 @@
 ---
 title: Tipy pro aktualizaci kódu jednotné rozhraní API
+description: Tento dokument popisuje běžné chyby a různé typy, které jsou užitečné při aktualizaci aplikace pro použití na Xamarin unifikované API.
 ms.prod: xamarin
 ms.assetid: 8DD34D21-342C-48E9-97AA-1B649DD8B61F
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 640f95e0083c73288cc8e1f183b06bd28a7b4e07
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: cab27d5dc38eeab65728f242c6f11fd445601a88
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782115"
 ---
 # <a name="tips-for-updating-code-to-the-unified-api"></a>Tipy pro aktualizaci kódu jednotné rozhraní API
 
@@ -20,7 +22,6 @@ Je [chyb](https://bugzilla.xamarin.com/show_bug.cgi?id=25569) v aktuální verzi
 
 ```console
 Objective-C exception thrown. Name: NSInvalidArgumentException Reason: Could not find a storyboard named 'xxx' in bundle NSBundle...
-
 ```
 
 Můžete provést následující příkaz pro tento problém vyřešit, vyhledejte následující cílový soubor sestavení:
@@ -82,9 +83,9 @@ Některé kroky, které může být potřeba ručně opravit patří:
     vidrec.WeakVideoSettings = new AVVideoSettings() { ... }.Dictionary;
     ```
 
- * NSObject `.ctor(IntPtr)` konstruktor se změnil z veřejné k chráněné ([zabránit neoprávněnému používání](~/cross-platform/macios/unified/index.md#NSObject_ctor)).
+ * NSObject `.ctor(IntPtr)` konstruktor se změnil z veřejné k chráněné ([zabránit neoprávněnému používání](~/cross-platform/macios/unified/overview.md#NSObject_ctor)).
 
- * `NSAction` byl [nahradit](~/cross-platform/macios/unified/index.md#NSAction) s starndard .NET `Action`. Některé delegáti jednoduché (jeden parametr) také byla nahrazena `Action<T>`.
+ * `NSAction` byl [nahradit](~/cross-platform/macios/unified/overview.md#NSAction) s starndard .NET `Action`. Některé delegáti jednoduché (jeden parametr) také byla nahrazena `Action<T>`.
 
 Nakonec odkazovat [rozdíly v klasickém unifikované API](http://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/) k vyhledání změnách rozhraní API v kódu. Hledání [tuto stránku](http://developer.xamarin.com/releases/ios/api_changes/classic-vs-unified-8.6.0/) vám pomůže najít klasické rozhraní API a co se jste aktualizovaná tak, aby.
 

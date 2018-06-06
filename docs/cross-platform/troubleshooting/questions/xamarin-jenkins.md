@@ -1,15 +1,17 @@
 ---
 title: Proč není volaných Xamarin podporuje?
+description: Tento dokument popisuje na vysoké úrovni, Xamarin pro interakci se systémem volaných CI. Popisuje také několik běžné problémy, které se spustit při práci s volaných.
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 9951F980-2C6C-47C0-8A35-A78F06C20BEB
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 37fc134f7e97af74f5bb019f3262972273f0c4cf
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: cf1a59d3084f178187209fdf3999af10efe6203a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782447"
 ---
 # <a name="why-isnt-jenkins-supported-by-xamarin"></a>Proč není volaných Xamarin podporuje?
 
@@ -24,6 +26,7 @@ Výjimkou je na problémy, které může být izolované na konkrétní chyby v 
 Při výše uvedených hodnot volaných problémy nepodporují přímo náš tým; [volaných pomocí xamarinu](~/tools/ci/jenkins-walkthrough.md) příručka slouží k nastavení volaných CI serveru, který je integrován s funkcí Xamarin. 
 
 ## <a name="fixes-for-common-issues"></a>Opravy pro běžné problémy
+
 ### <a name="jenkins-is-unable-to-find-the-android-sdk"></a>Volaných se nepodařilo najít SDK pro Android
 
 Chybová zpráva pro tento problém je přibližně takto:

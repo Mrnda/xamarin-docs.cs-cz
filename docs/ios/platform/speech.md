@@ -1,5 +1,5 @@
 ---
-title: Rozpoznávání řeči
+title: Rozpoznávání řeči v Xamarin.iOS
 description: Tento článek představuje nové rozhraní API řeči a ukazuje, jak implementovat v aplikaci Xamarin.iOS rozpoznávání řeči průběžné podporovat a transcribe rozpoznávání řeči (z provozu nebo záznam zvuku datových proudů) do textu.
 ms.prod: xamarin
 ms.assetid: 64FED50A-6A28-4833-BEAE-63CEC9A09010
@@ -7,13 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/17/2017
-ms.openlocfilehash: fa010f57d163cabe544176608cff2eb6efe872ad
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 00841a73f9da3c4c434419cdb37726b17c08cf31
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788358"
 ---
-# <a name="speech-recognition"></a>Rozpoznávání řeči
+# <a name="speech-recognition-in-xamarinios"></a>Rozpoznávání řeči v Xamarin.iOS
 
 _Tento článek představuje nové rozhraní API řeči a ukazuje, jak implementovat v aplikaci Xamarin.iOS rozpoznávání řeči průběžné podporovat a transcribe rozpoznávání řeči (z provozu nebo záznam zvuku datových proudů) do textu._
 

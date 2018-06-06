@@ -1,21 +1,20 @@
 ---
-title: Ikona obchodu s aplikacemi
-description: Tento článek obsahuje včetně a správu prostředek bitové kopie v aplikaci Xamarin.iOS, který se má použít jako ikona aplikace úložiště.
+title: Ikony obchodu s aplikacemi v Xamarin.iOS
+description: Tento dokument popisuje, jak používat katalog asset ke správě ikonu App Store pro aplikace pro Xamarin.iOS. Ikony obchod byly dříve, spravované s iTunes připojit.
 ms.prod: xamarin
 ms.assetid: BFB5665A-F557-46E1-B35E-870CC2026AD9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 09/26/2017
-ms.openlocfilehash: f8d993ccb23817e237b9cef8074b881f3ea4b3a2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 749dbf01af382a54fe24652706f6a605ac7b20b4
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783607"
 ---
-# <a name="app-store-icon"></a>Ikona obchodu s aplikacemi
-
-_Tento článek obsahuje včetně a správu prostředek bitové kopie v aplikaci Xamarin.iOS, který se má použít jako ikona aplikace úložiště._
+# <a name="app-store-icons-in-xamarinios"></a>Ikony obchodu s aplikacemi v Xamarin.iOS
 
 Před Xcode 9 byly přidány všechny ikony obchodu s aplikacemi prostřednictvím iTunes připojit. Je to ale už tento případ. Ikony obchod teď musí být zahrnut jako součást vaší projektu sady a přidat v rámci katalog asset. Aplikace, které neobsahují ikonu App Store budou odmítnuty společností Apple.
 

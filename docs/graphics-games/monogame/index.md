@@ -1,19 +1,21 @@
 ---
-title: Monogame
+title: Monogame Framework
+description: 'Tento dokument obsahuje odkazy na různé příručky, které popisují vývoj her s MonoGame: Přehled, diskusí o 3D grafika a herními a podívejte se na informace specifické pro platformu.'
 ms.prod: xamarin
 ms.assetid: 35EC29CE-538B-4844-BACC-E51823EFF3B5
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2017
-ms.openlocfilehash: 8c5256f3e8f6a617362fe6721a0eaff897297100
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 1c398b7d20a8c28001c2f3371dd792ed4b017a5f
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783119"
 ---
-# <a name="monogame"></a>Monogame
+# <a name="monogame-framework"></a>Monogame Framework
 
-MonoGame je efektivní, flexibilní, křížové platformy rozhraní API pro vývoj her 2D a 3D. Poskytuje základ pro mnoho modulů herní napříč platformami, ale můžete použít přímo v hry bez je uzavřen do herní modul.
+MonoGame je rozhraní API efektivní, flexibilní, a platformy pro vývoj her 2D a 3D. Poskytuje základ pro mnoho modulů herní napříč platformami, ale můžete použít přímo v hry bez je uzavřen do herní modul.
 
 ## <a name="introduction-to-game-development-with-monogamegraphics-gamesmonogameintroductionindexmd"></a>[Úvod do vývoj her s MonoGame](~/graphics-games/monogame/introduction/index.md)
 

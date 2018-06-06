@@ -1,22 +1,22 @@
 ---
-title: Nasazování a testování
-description: Ustálení a příruček nasazení
+title: Nasazení a testování aplikace Xamarin.iOS
+description: Tento dokument obsahuje odkazy na různé příručky, které popisují témata týkající se nasazení a testování aplikace pro Xamarin.iOS. Například distribuci aplikací, .ipa soubory, zřizování, bezdrátové nasazení, TestFlight a ladění.
 ms.prod: xamarin
 ms.assetid: 2DBF3BF9-79E7-4E24-AF26-E34C972B0169
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 515ea8e63f8309c46a7d802af1daafcb0c483762
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a96eeefa631eb4055d8bd0af5b89160ab0899907
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785181"
 ---
-# <a name="deployment-and-testing"></a>Nasazování a testování
+# <a name="deploying-and-testing-xamarinios-apps"></a>Nasazení a testování aplikace Xamarin.iOS
 
 Tato část obsahuje témata týkající se používá k testování aplikace a její distribuce. Témata v tomto poli mezi patří například nástroje používané pro ladění, nasazení a testery, jak publikovat aplikaci do obchodu s aplikacemi.
-
 
 ##  <a name="app-distributioniosdeploy-testapp-distributionindexmd"></a>[Distribuce aplikace](~/ios/deploy-test/app-distribution/index.md)
 
@@ -46,19 +46,14 @@ TestFlight je nyní vlastněná společností Apple a je primární způsob, jak
 
 Visual Studio a Visual Studio pro Mac integrovaného vývojového prostředí zahrnují podporu pro ladění aplikace Xamarin.iOS v simulátoru iOS i na zařízeních s iOS. Tento článek ukazuje, jak pomocí ladicího programu a také jak nakonfigurovat různé možnosti, kterou podporuje.
 
-
 ##  <a name="touchunitiosdeploy-testtouchunitmd"></a>[Touch.Unit](~/ios/deploy-test/touch.unit.md)
 
 Tento dokument popisuje, jak vytvářet testy částí pro Xamarin.iOS projekty.
 Testování částí pomocí Xamarin.iOS se provádí pomocí rozhraní Touch.Unit, která obsahuje oba iOS test runner, jakož i upravenou verzi [NUnitLite](http://www.nunitlite.com/) rozhraní, které poskytují obeznámeni sadu rozhraní API pro zápis testů částí.
 
-
-
 ##  <a name="using-instruments-to-detect-native-leaks-using-markheapiosdeploy-testusing-instruments-to-detect-native-leaks-using-markheapmd"></a>[Použití nástrojů pro zjištění nativní nevracení pomocí MarkHeap](~/ios/deploy-test/using-instruments-to-detect-native-leaks-using-markheap.md)
 
 V tomto článku popisují způsob použití nástroje na jakékoli zařízení s iOS a všechny aplikace pro Xamarin.iOS. Vypadá to také o tom, jak na profil aplikace v simulátoru.
-
-
 
 ##  <a name="walkthrough---using-apples-instrument-tooliosdeploy-testwalkthrough-apples-instrumentmd"></a>[Návod – Používání nástroje Apple Instruments](~/ios/deploy-test/walkthrough-apples-instrument.md)
 

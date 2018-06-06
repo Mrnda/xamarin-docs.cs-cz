@@ -1,20 +1,19 @@
 ---
 title: Podpora UrhoSharp platformy
-description: Křížové platformy 3D/2D herní a vizualizace stroje
+description: Tento dokument obsahuje odkazy na různé příručky, které popisují, jak přidat Urho do existujícího projektu nativní pro konkrétní platformu. Popisuje, Android, iOS, tvOS, systému macOS, Windows a Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 6205E430-1036-4CC3-8E97-AA5554E3D468
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2017
-ms.openlocfilehash: b9fdb205148824282d527f2483e027b14d786ff2
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 9179b0913566ee5c70fbbfabe4c17ee3b98fbeca
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783382"
 ---
 # <a name="urhosharp-platform-support"></a>Podpora UrhoSharp platformy
-
-_Křížové platformy 3D/2D herní a vizualizace stroje_
 
 V této části probereme, jak přidat do existujícího projektu nativní pro vaši platformu Urho a jak chcete využít výhod integrace konkrétní platformy.
 

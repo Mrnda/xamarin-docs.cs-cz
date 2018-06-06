@@ -1,18 +1,20 @@
 ---
-title: Nákup-nespotřebitelné produkty
+title: Nákup-nespotřebitelné produkty v Xamarin.iOS
+description: Tento dokument popisuje produkty nespotřebitelné v Xamarin.iOS, které jsou funkce zakoupili uživatelem, které zůstanou dostupné po neomezenou dobu, bez ohledu na zařízení.
 ms.prod: xamarin
 ms.assetid: 635D9CA2-6BCA-53E1-7B10-968029AA3493
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 0a581dc222e43f8d4742bd52dc56dc691449a8f2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: db193493ea11a7963fe5fc57f0c45978c26a7a74
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786948"
 ---
-# <a name="purchasing-non-consumable-products"></a>Nákup-nespotřebitelné produkty
+# <a name="purchasing-non-consumable-products-in-xamarinios"></a>Nákup-nespotřebitelné produkty v Xamarin.iOS
 
 Non-consumable produkty jsou '' zákazník vlastní. Očekává se, že budou vždy mít přístup, a to i v případě ztráty nebo odcizení je jejich zařízení nebo se koupit nový. Jsou vhodné pro knihy, katalogu problémy, herní úrovně, filtry fotografií, 'funkce verze pro, atd. Jakmile uživatel koupil-nespotřebitelné produktu, mají nikdy platit pro něj znovu. Pokud váš kód omylem jim umožňuje akci, StoreKit zobrazí zprávu, která již byla zakoupili.
 

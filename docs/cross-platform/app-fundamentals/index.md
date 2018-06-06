@@ -1,18 +1,19 @@
 ---
-title: Sdílení kódu
-description: Základní koncepty aplikace
+title: Sdílení kódu ve více platformách
+description: Tento dokument obsahuje odkazy na různé příručky, které popisují techniky pro sdílení kód, včetně knihovny tříd portable, sdílených projektů, .NET Standard a NuGet.
 ms.prod: xamarin
 ms.assetid: 7D179ACF-09A6-46EE-B49D-E27AB5F09CD4
 author: asb3993
 ms.author: amburns
 ms.date: 02/18/2018
-ms.openlocfilehash: 4cca202627d1b901e00532c92598ffddd48b4853
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 61377afa61e2c2006c2fdf8ef9b21fe7d567b3de
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34780063"
 ---
-# <a name="sharing-code"></a>Sdílení kódu
+# <a name="sharing-code-on-multiple-platforms"></a>Sdílení kódu ve více platformách
 
 Tato část poskytuje návod na některých běžných úloh věcí nebo koncepty, které vývojáři potřeba myslet při vývoji mobilních aplikací.
 

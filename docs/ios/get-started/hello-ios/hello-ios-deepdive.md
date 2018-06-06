@@ -1,6 +1,6 @@
 ---
-title: 'Dobrý den, iOS: podrobné informace'
-description: Tato příručka dvě části popisuje, jak vytvářet základní aplikace pro Xamarin.iOS pomocí sady Visual Studio pro Mac nebo Visual Studio a pochopili jejich základní informace o vývoj aplikací pro iOS pomocí Xamarin. Zavede nástroje, koncepty a kroky potřebné k sestavení a nasazení aplikace pro Xamarin.iOS.
+title: Hello, iOS – podrobné informace
+description: Tento dokument se podíváme podrobněji na Hello, iOS ukázkové aplikace, s jeho architektura, uživatelské rozhraní, zobrazení obsahu hierarchie, testování, nasazení a další.
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: 61ba3a7e-fe11-4439-8bc8-9809512b8eff
@@ -8,18 +8,18 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 71bfccdcab73b651f458dd8d9c5396bffd55004b
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: f7869f572bfd6f6c8a0bc710c6e28671c22ad7eb
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786397"
 ---
-# <a name="hello-ios-deep-dive"></a>Hello, iOS podrobné informace
+# <a name="hello-ios--deep-dive"></a>Hello, iOS – podrobné informace
 
 Návod rychlý start, zavedl sestavení a spuštění základní aplikace pro Xamarin.iOS. Nyní je čas k vývoji lépe pochopili, jak fungují aplikace pro iOS, můžete vytvořit složitější programy. Tento průvodce zkontroluje kroky v Hello, návodu iOS Principy základní koncepty pro vývoj aplikací pro iOS.
 
 V tomto článku jsou prozkoumali v následujících tématech:
-
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 

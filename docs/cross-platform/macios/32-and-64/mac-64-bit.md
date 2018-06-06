@@ -1,16 +1,17 @@
 ---
 title: Aktualizace Xamarin.Mac Unified aplikací 64-bit
-description: Tato příručka popisuje postup aktualizace aplikace Xamarin.Mac cíl 64-bit
+description: Tato příručka popisuje postup aktualizace aplikace Xamarin.Mac cíl 64-bit. Také poskytuje příklady typů chyb, které mohou být zjištěny při provedení této změny.
 ms.prod: xamarin
 ms.assetid: C3810A74-539C-4FFB-B47F-68CA5F7BCDAD
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 02/22/2018
-ms.openlocfilehash: 558edbdee5adfe57205c7f76b35a0538c78b927f
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: aa97f9a68ea4acc4234233a22d10c99cde3e6d6c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34780695"
 ---
 # <a name="updating-xamarinmac-unified-applications-to-64-bit"></a>Aktualizace Xamarin.Mac Unified aplikací 64-bit
 

@@ -1,17 +1,19 @@
 ---
-title: Selektory jazyka Objective-C
+title: Selektory jazyka Objective-C v Xamarin.iOS
+description: Tento dokument popisuje, jak pracovat s selektory jazyka Objective-C z jazyka C#. Popisuje, jak vyvolat selektory a technické aspekty, které musí vzít v úvahu při tak.
 ms.prod: xamarin
 ms.assetid: A80904C4-6A89-389B-0487-057AFEB70989
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 60f107bda29b351c119f5702b0ca797d7d16b0b1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 25276851879ba828361d3236cbf7896cf748588c
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787039"
 ---
-# <a name="objective-c-selectors"></a>Selektory jazyka Objective-C
+# <a name="objective-c-selectors-in-xamarinios"></a>Selektory jazyka Objective-C v Xamarin.iOS
 
 Podle jazyka Objective-C *selektory*. Selektor je zprávu, která lze odeslat buď do objektu nebo *třída*. [Xamarin.iOS](~/ios/internals/api-design/index.md) mapy instance selektory metod, které a selektorů statické metody třídy.
 

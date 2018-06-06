@@ -1,18 +1,20 @@
 ---
-title: Testování částí
+title: Aplikace na platformě Xamarin.iOS testování částí
+description: Tento dokument obsahuje přehled o tom, jak testování částí aplikace pro Xamarin.iOS. Popisuje postup vytvoření projektu testů jednotek, zápis testů a spouštění testů.
 ms.prod: xamarin
 ms.assetid: BD959779-3239-79B6-5289-3A9ECDFBD973
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 3129302cbb2fbe9e2757986317da0ec30601b492
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ce2b452d50222ac3561dab5b76915b7ae634934b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785460"
 ---
-# <a name="unit-testing"></a>Testování částí
+# <a name="unit-testing-xamarinios-apps"></a>Aplikace na platformě Xamarin.iOS testování částí
 
 Tento dokument popisuje, jak vytvářet testy částí pro Xamarin.iOS projekty.
 Testování částí pomocí Xamarin.iOS se provádí pomocí rozhraní Touch.Unit, která obsahuje oba iOS pro spuštění testu, jakož i upravenou verzi NUnit názvem [Touch.Unit](https://github.com/xamarin/Touch.Unit) poskytující známé sada rozhraní API pro zápis testů částí.

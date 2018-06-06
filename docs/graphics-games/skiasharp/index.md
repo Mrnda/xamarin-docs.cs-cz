@@ -1,18 +1,19 @@
 ---
-title: 2D kreslení
-description: Křížové platformy 2D kreslení s SkiaSharp
+title: 2D kreslení s SkiaSharp
+description: Tento dokument obsahuje přehled napříč platformami 2D kreslení pomocí SkiaSharp. Ho odkazy na různé příručky, které popisují SkiaSharp a jeho různých rozhraních API.
 ms.prod: xamarin
 ms.assetid: A8A61421-4544-422A-A7E0-9355C67DF21E
 author: charlespetzold
 ms.author: chape
 ms.date: 09/14/2017
-ms.openlocfilehash: f1a40b48ecfb7244aae77cf1b4110ae53490d98c
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 962fe657f25976f9b5069f2d434e92f816d249ca
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783284"
 ---
-# <a name="2d-drawing"></a>2D kreslení
+# <a name="2d-drawing-with-skiasharp"></a>2D kreslení s SkiaSharp
 
 SkiaSharp poskytuje výkonné API jazyka C# pro provádění 2D grafiky. Používá technologii [Google Skia knihovny](http://skia.org), stejnou knihovnu, která pohání grafické zásobníky Google Chrome, Firefox a pro Android.
 

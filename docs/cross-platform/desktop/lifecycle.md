@@ -1,15 +1,16 @@
 ---
 ms.assetid: 7C132A7C-4973-4B2D-98DC-3661C08EA33F
 title: WPF vs. Životní cyklus aplikace Xamarin.Forms
-description: Principy procesu spuštění aplikace a týkajících se stavy pozadí
+description: Porovná tento dokument podobnosti a rozdíly mezi životního cyklu aplikace pro aplikace Xamarin.Forms a WPF. Vypadá to také ve vizuálním stromu, grafiky, prostředky a stylů.
 author: asb3993
 ms.author: amburns
 ms.date: 04/26/2017
-ms.openlocfilehash: b4f9aebbbcab48290d37c5732c69267897238272
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: abb7773873fa181085464b5985cc8233715cc4be
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781579"
 ---
 # <a name="wpf-vs-xamarinforms-app-lifecycle"></a>WPF vs. Životní cyklus aplikace Xamarin.Forms
 

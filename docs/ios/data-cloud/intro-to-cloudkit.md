@@ -1,21 +1,20 @@
 ---
-title: CloudKit
-description: Icloudu rozhraní API umožňují aplikacím iOS 8 k uložení dat v serveru služby iCloud s podporou pro automatickou synchronizaci mezi uživatelský účet. Pomocí CloudKit poskytuje uživatelům konzistentní a bezproblémové možnosti ověřování v zařízení s podporou serveru služby iCloud. Tento článek se zabývá povolení CloudKit v aplikaci pro systém iOS 8 pomocí rozhraní API pro usnadnění práce.
+title: CloudKit v Xamarin.iOS
+description: Tento dokument popisuje, jak pracovat s CloudKit v Xamarin.iOS. Poskytuje přehled CloudKit a popisuje, jak povolit ji, rozhraní API CloudKit pohodlí, škálovatelnost, uživatelské účty a vývoj a produkční prostředí.
 ms.prod: xamarin
 ms.assetid: 66B207F2-FAA0-4551-B43B-3DB9F620C397
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/11/2016
-ms.openlocfilehash: 4765b91bdc1f64be7e2ea67622db7af8634f1347
-ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
+ms.openlocfilehash: 941d39510d05c95ff06ffd3d55685c002bd4d4e5
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785054"
 ---
-# <a name="cloudkit"></a>CloudKit
-
-_Icloudu rozhraní API umožňují aplikacím iOS 8 k uložení dat v serveru služby iCloud s podporou pro automatickou synchronizaci mezi uživatelský účet. Pomocí CloudKit poskytuje uživatelům konzistentní a bezproblémové možnosti ověřování v zařízení s podporou serveru služby iCloud. Tento článek se zabývá povolení CloudKit v aplikaci pro systém iOS 8 pomocí rozhraní API pro usnadnění práce._
+# <a name="cloudkit-in-xamarinios"></a>CloudKit v Xamarin.iOS
 
 Rozhraní framework CloudKit zjednodušuje vývoj aplikací, že přístup k serveru služby iCloud. To zahrnuje načtení data aplikací a asset práva a také schopnost bezpečně uložit informace o aplikaci. Tato sada poskytuje uživatelům vrstvu anonymity tím, že přístup k aplikacím s jejich Icloudu ID bez sdílení osobní údaje.
 

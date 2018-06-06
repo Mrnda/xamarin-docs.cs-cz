@@ -1,19 +1,20 @@
 ---
-title: Úvod do 3D dotykového ovládání
-description: Tento článek popisuje použití nové iPhone 6s a iPhone 6s Plus 3D Touch gesta ve vaší aplikaci.
+title: Úvod do 3D Touch v Xamarin.iOS
+description: Tento článek popisuje, jak pomocí 3D gest dotykového ovládání, které jsou zavedené iPhone 6s a iPhone 6s Plus. Povolit tyto gesta přetížení velkých a malých písmen, funkce Náhled a pop a rychlé akce.
 ms.prod: xamarin
 ms.assetid: 806D051E-3791-40F7-9776-4E4D3E56F7F3
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: a0d89315b82f4931538cdabe64aade7986b2a42e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: f6eb71409317661cdd571c708db062e06e63ff55
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786580"
 ---
-# <a name="introduction-to-3d-touch"></a>Úvod do 3D dotykového ovládání
+# <a name="introduction-to-3d-touch-in-xamarinios"></a>Úvod do 3D Touch v Xamarin.iOS
 
 _Tento článek popisuje použití nové iPhone 6s a iPhone 6s Plus 3D Touch gesta ve vaší aplikaci._
 

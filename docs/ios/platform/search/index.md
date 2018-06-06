@@ -1,20 +1,21 @@
 ---
-title: Nové rozhraní API pro vyhledávání
+title: Rozhraní API pro vyhledávání v Xamarin.iOS
 description: Tento článek popisuje použití nových aplikace vyhledávání rozhraní API poskytované iOS 9 umožníte uživatelům hledat informace a funkce uvnitř vaší aplikace na platformě Xamarin.iOS.
 ms.prod: xamarin
 ms.assetid: 7323EB3D-A78F-4BF0-9990-3160C7E83CF0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 5dcd3d9665befaa82fd0f5677a4a662f633ed45b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bc62ad34af0b9b98f0475599a08946122badd21e
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34788173"
 ---
-# <a name="new-search-apis"></a>Nové rozhraní API pro vyhledávání
+# <a name="search-apis-in-xamarinios"></a>Rozhraní API pro vyhledávání v Xamarin.iOS
 
-_Tento článek popisuje použití nových aplikace vyhledávání rozhraní API poskytované iOS 9 umožníte uživatelům hledat informace a funkce uvnitř vaší aplikace na platformě Xamarin.iOS._
+_Tento článek popisuje, aby uživatelé mohli vyhledat informace a funkce uvnitř vaší aplikace na platformě Xamarin.iOS použití rozhraní API pro vyhledávání aplikace poskytované iOS 9._
 
 Hledání se rozšířila na iOS 9 zajistit skvělé nové způsoby pro přístup k informacím a funkcím uvnitř aplikace Xamarin.iOS. Pomocí nových rozhraní API vyhledávání aplikace, je obsah aplikace jako prohledávatelný prostřednictvím Spotlight a Safari výsledky hledání, aby Handoff a Siri připomínky a návrhy. To umožňuje uživatelům rychle se dostat k aktivity a informace o hloubkové v rámci vaší aplikace.
 

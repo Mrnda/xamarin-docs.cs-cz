@@ -1,20 +1,20 @@
 ---
-title: Použití SQLite.NET s iOS
-description: Knihovny SQLite.NET PCL NuGet poskytuje mechanismus jednoduché datové přístupu pro aplikace pro Xamarin.iOS.
+title: Pomocí SQLite.NET Xamarin.iOS
+description: Knihovny SQLite.NET PCL NuGet poskytuje mechanismus jednoduché datové přístupu pro aplikace pro Xamarin.iOS. Tento dokument obsahuje přehled o tom, jak tuto knihovnu používat.
 ms.prod: xamarin
 ms.assetid: 79813B09-42D7-47DD-AE71-A605E6B9EF24
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/18/2018
-ms.openlocfilehash: 861b024a7ff5dd07752662cc45306b6533cd38bd
-ms.sourcegitcommit: a4c2a63ba76b839cda99e4474e7ab46fe307cd39
+ms.openlocfilehash: 2a96a7c3f9bf02110bc5e2b21e26e71fe9d84d83
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34689498"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784982"
 ---
-# <a name="using-sqlitenet-with-ios"></a>Použití SQLite.NET s iOS
+# <a name="using-sqlitenet-with-xamarinios"></a>Pomocí SQLite.NET Xamarin.iOS
 
 SQLite.NET knihovny, která doporučuje Xamarin je základní ORM, který umožňuje ukládání a načítání objektů v místní databázi SQLite na zařízení s iOS.
 ORM je zkratka pro objekt relační mapování – rozhraní API, které vám umožní uložit a načíst "objekty" z databáze bez nutnosti psaní příkazů SQL.

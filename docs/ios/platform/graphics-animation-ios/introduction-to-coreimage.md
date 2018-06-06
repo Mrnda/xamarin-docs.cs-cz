@@ -1,23 +1,24 @@
 ---
-title: CoreImage
-description: CoreImage je novou architekturou zavedena v systému iOS 5 a zadejte zpracování obrázků a live video vylepšení funkce. Tento článek představuje tyto funkce o ukázky Xamarin.iOS.
+title: Základní bitové kopie v Xamarin.iOS
+description: Základní Image je novou architekturou zavedena v systému iOS 5 a zadejte zpracování obrázků a live video vylepšení funkce. Tento článek představuje tyto funkce o ukázky Xamarin.iOS.
 ms.prod: xamarin
 ms.assetid: 91E0780B-FF8A-E70D-9CD4-419119612B2D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 0bb2c3b8b563da53e432ad16e6518ada67a4655e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6032554a0ddbda26ff5de94f6035bc4f8c15a22a
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786629"
 ---
-# <a name="coreimage"></a>CoreImage
+# <a name="core-image-in-xamarinios"></a>Základní bitové kopie v Xamarin.iOS
 
-_CoreImage je novou architekturou zavedena v systému iOS 5 a zadejte zpracování obrázků a live video vylepšení funkce. Tento článek představuje tyto funkce o ukázky Xamarin.iOS._
+_Základní Image je novou architekturou zavedena v systému iOS 5 a zadejte zpracování obrázků a live video vylepšení funkce. Tento článek představuje tyto funkce o ukázky Xamarin.iOS._
 
-CoreImage je novou architekturou, zavedená v iOS 5, který poskytuje řadu předdefinovaných filtrů a efekty uplatňovat na obrázky a videa, včetně detekce řez.
+Základní Image je novou architekturou, zavedená v iOS 5, který poskytuje řadu předdefinovaných filtrů a efekty uplatňovat na obrázky a videa, včetně detekce řez.
 
 Tento dokument obsahuje jednoduché příklady, jak:
 
@@ -26,7 +27,7 @@ Tento dokument obsahuje jednoduché příklady, jak:
 -  Výpis k dispozici tyto filtry.
 
 
-Tyto příklady by vám pomůžou začít začlenění CoreImage funkce do aplikace Xamarin.iOS.
+Tyto příklady by vám pomůžou začít začlenění funkce základní bitovou kopii do aplikace Xamarin.iOS.
 
 ## <a name="requirements"></a>Požadavky
 
@@ -34,7 +35,7 @@ Musíte použít nejnovější verzi Xcode.
 
 ## <a name="face-detection"></a>Vzhled detekce
 
-Funkce rozpoznávání vzhled CoreImage neobsahuje právě co zobrazuje – se pokusí identifikovat tyto řezy v fotografie a vrátí souřadnice žádné řezy, které ji rozpoznává. Tyto informace lze zjistit, kolik lidí do image, kreslení ukazatele na bitovou kopii (např. pro "označování, osoby v fotografie), nebo cokoliv jiného, si můžete představit.
+Funkce rozpoznávání vzhled základní Image neobsahuje právě co zobrazuje – se pokusí identifikovat tyto řezy v fotografie a vrátí souřadnice žádné řezy, které ji rozpoznává. Tyto informace lze zjistit, kolik lidí do image, kreslení ukazatele na bitovou kopii (např. pro "označování, osoby v fotografie), nebo cokoliv jiného, si můžete představit.
 
 Tento kód z CoreImage\SampleCode.cs ukazuje, jak vytvořit a použít vzhled detekce na vložený obrázek:
 
@@ -219,11 +220,11 @@ Každý filtr uvedené má byla zpřístupněná jako třídu v Xamarin.iOS, tak
 
 ## <a name="summary"></a>Souhrn
 
-Tento článek ukazuje, jak používat některé z nových funkcí framework CoreImage systém iOS 5 jako detekce vzhled a použití filtrů pro bitovou kopii. Nejsou k dispozici v rámci budete moci použít desítek filtry jinou bitovou kopii.
+Tento článek ukazuje, jak používat některé z nových funkcí framework základní Image systém iOS 5 jako detekce vzhled a použití filtrů pro bitovou kopii. Nejsou k dispozici v rámci budete moci použít desítek filtry jinou bitovou kopii.
 
 ## <a name="related-links"></a>Související odkazy
 
 - [Základní Image (ukázka)](https://developer.xamarin.com/samples/CoreImage/)
 - [Upravit kontraktu a také Průraznost složení bitové kopie](https://developer.xamarin.com/recipes/ios/media/coreimage/adjust_contrast_and_brightness_of_an_image)
-- [Použití filtrů CoreImage](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Conceptual/CoreImaging/ci_tasks/ci_tasks.html)
+- [Použití filtrů základní bitové kopie](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Conceptual/CoreImaging/ci_tasks/ci_tasks.html)
 - [Odkaz na CIFilter – třída](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/Reference/Reference.htm)

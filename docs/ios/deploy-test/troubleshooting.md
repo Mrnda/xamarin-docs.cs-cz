@@ -1,19 +1,20 @@
 ---
-title: Poradce při potížích
-description: Tipy a triky pro vytvoření smooth nasazení
+title: Xamarin.iOS testování a nasazení – řešení potíží
+description: Tento dokument obsahuje tipy k řešení potíží týkající se podepisování kódu a zřizování, TestFlight a kopírování aplikaci pro iOS sady z hostitele sestavení Mac do systému Windows.
 ms.prod: xamarin
 ms.assetid: 65286D09-F74D-4F22-B6CD-D1BCD7FC7992
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: fe7425bbf6440317cc856d2c727874298f66bc33
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 056b9ba5c1625093cd7fdd2914fa5df919a2f426
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785382"
 ---
-# <a name="troubleshooting"></a>Poradce při potížích
+# <a name="xamarinios-testing-and-deployment---troubleshooting"></a>Xamarin.iOS testování a nasazení – řešení potíží
 
 ## <a name="code-signing--provisioning"></a>Podepisování kódu a zřizování
 
@@ -32,7 +33,6 @@ Podepisování kódu & zřizování s iOS může být poměrně nevhodných, a p
 * Ujistěte se, že všechny požadované certifikáty a odpovídající privátní klíče jsou k dispozici. Pro každý tým bude nutné certifikátu vývojáře (pro instalaci aplikace na vlastní zařízení) a certifikát distribuční (k instalaci na jiných zařízeních)
 
 * Spusťte Xcode a Visual Studio pro Mac / Visual Studio při instalaci nový certifikát a profil zřizování.
-
 
 ## <a name="testflight"></a>TestFlight
 

@@ -1,16 +1,18 @@
 ---
 title: Instalace Xamarin.iOS
+description: Tento dokument obsahuje odkazy na pokyny, které popisují, jak nainstalovat Xamarin.iOS na Mac a Windows a zřízení zařízení pro testování.
 ms.prod: xamarin
 ms.assetid: E5A29963-C8BD-465B-BFC1-7FAC9CC64BD3
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/02/2016
-ms.openlocfilehash: 10b9e4e1abd97a82390d81ab740d753389b410b4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 58eb2c348530e6ed3caa04c5a367e01d3b98beaa
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785935"
 ---
 # <a name="xamarinios-installation"></a>Instalace Xamarin.iOS
 

@@ -1,19 +1,20 @@
 ---
-title: Bezdrátová nasazení
-description: Tato funkce umožňuje pro nasazení do systému iOS nebo zařízení Apple TV přes síťová připojení
+title: Bezdrátová nasazení pro Xamarin.iOS a tvOS aplikace
+description: Tento dokument popisuje postup bezdrátově nasazení aplikace Xamarin.iOS na zařízení s iOS ze buď sady Visual Studio u tabulátorů Mac nebo Visual Studio 2017.
 ms.prod: xamarin
 ms.assetid: 5AB4C5A9-4FBB-4DCB-BD72-0022D5439E65
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 02/09/2018
-ms.openlocfilehash: b331ea61915b4f202aa971658a5a54d1a8038d64
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ade7eb7ff26fec8df616401801585e499ddf4206
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34785515"
 ---
-# <a name="wireless-deployment"></a>Bezdrátová nasazení
+# <a name="wireless-deployment-for-xamarinios-and-tvos-apps"></a>Bezdrátová nasazení pro Xamarin.iOS a tvOS aplikace
 
 Důležitou součástí pracovního postupu vývojáře nasazuje do zařízení. Xcode 9 zavedla možnost nasazení na zařízení s iOS nebo Apple TV prostřednictvím sítě, místo nutnosti pevně připojené zařízení pokaždé, když chcete nasazení a ladění aplikace. Tato funkce je zavedený v sadě Visual Studio pro Mac 7.4 a Visual Studio 15,6 operací verzi.
 

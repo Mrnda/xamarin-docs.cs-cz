@@ -1,18 +1,20 @@
 ---
-title: Ukázka životního cyklu aplikací
+title: Ukázka životního cyklu aplikace pro Xamarin.iOS
+description: Tento dokument prověří různé události životního cyklu zpracovávaných delegát aplikace v aplikaci iOS, ukázka, kdy a jak tyto události jsou zpracovávány.
 ms.prod: xamarin
 ms.assetid: 5C8AACA6-49F8-4C6D-99C3-5F443C01B230
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: f03cd7d74d09fc40b88cfbf44bf54c6da5f4c149
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 64c695065012e4bf796c219c260324d9b6278ca5
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783581"
 ---
-# <a name="application-lifecycle-demo"></a>Ukázka životního cyklu aplikací
+# <a name="application-lifecycle-demo-for-xamarinios"></a>Ukázka životního cyklu aplikace pro Xamarin.iOS
 
 V této části jsme se chystáte vyhledejte aplikaci, která popisuje čtyři stavy aplikace a role `AppDelegate` metody v upozornění o při získání stavy změně aplikace. Aplikace bude tisku aktualizace do konzoly vždy, když se změní stav aplikace:
 

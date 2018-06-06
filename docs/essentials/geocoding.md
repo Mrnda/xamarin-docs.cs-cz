@@ -1,17 +1,18 @@
 ---
-title: Geografické kódování Xamarin.Essentials
-description: Geografické kódování třída poskytuje rozhraní API pro geocode placemark pro poziční souřadnice a nechat provést zpětnou geocode coordincates placemark.
+title: 'Xamarin.Essentials: geografické kódování'
+description: Geografické kódování třídy v Xamarin.Essentials poskytuje rozhraní API pro obě geocode placemark pro poziční souřadnice a nechat provést zpětnou souřadnice geocode placemark.
 ms.assetid: 3ADC440C-B000-4708-A2CC-296F5160AF90
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 95301dad847887e867b220997ea9c34dba827982
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: 0b6cbf9ee5621466285656a5efee68ccc2c85211
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34783025"
 ---
-# <a name="xamarinessentials-geocoding"></a>Geografické kódování Xamarin.Essentials
+# <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials: geografické kódování
 
 ![Předběžné verze NuGet](~/media/shared/pre-release.png)
 

@@ -1,17 +1,18 @@
 ---
-title: Xamarin.Essentials Magnetometer
-description: Třída Magnetometer umožňuje monitorovat senzor magnetometer zařízení, označující orientace zařízení relativně k země magnetické pole.
+title: 'Xamarin.Essentials: Magnetometer'
+description: Třída Magnetometer v Xamarin.Essentials umožňuje monitorovat senzor magnetometer zařízení, označující orientace zařízení relativně k země magnetické pole.
 ms.assetid: 64DD0D41-03E2-40DD-9EC8-101CA0ED852B
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 054a3081aab3b0337336ad7f856532caa41d70fe
-ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
+ms.openlocfilehash: 78ed943a0fa7ca0cb249a4ac030ea6b52dcfb537
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782934"
 ---
-# <a name="xamarinessentials-magnetometer"></a>Xamarin.Essentials Magnetometer
+# <a name="xamarinessentials-magnetometer"></a>Xamarin.Essentials: Magnetometer
 
 ![Předběžné verze NuGet](~/media/shared/pre-release.png)
 

@@ -1,17 +1,19 @@
 ---
-title: Plovoucí desetinnou čárkou
+title: Plovoucí bodu operace v Xamarin.iOS
+description: Tento dokument popisuje, jak Xamarin.iOS zpracovává 32bitové a 64bitové verze přesnost operací s pohyblivou čárkou a přidružené dopad na výkon.
 ms.prod: xamarin
 ms.assetid: 003F25C1-B430-4339-9C95-7DF527EBC699
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 67fcf459747152346d32eb5836fa22b99719af12
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ea5d69b52cbd4c76abb236bd1a272633dde440b7
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786158"
 ---
-# <a name="floating-point"></a>Plovoucí desetinnou čárkou
+# <a name="floating-point-operations-in-xamarinios"></a>Plovoucí bodu operace v Xamarin.iOS
 
 Xamarin.iOS ve výchozím nastavení provede 32bitové a 64bitové verze operace s plovoucí desetinnou pomocí 64-bit přesnost na ARM.  
 

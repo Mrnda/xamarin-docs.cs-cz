@@ -1,21 +1,20 @@
 ---
-title: Práce s systému souborů
-description: Xamarin.iOS můžete použít stejné třídy System.IO pro práci s souborů a adresářů v iOS, který byste použili v jakékoli aplikaci .NET. Navzdory známé třídy a metody, ale iOS implementuje určitá omezení na soubory, které můžou vytvořit nebo získat přístup a také poskytuje zvláštní funkce pro určité adresáře. Tento článek popisuje těchto omezení a funkce a vysvětluje, jak funguje přístup k souborům aplikace pro Xamarin.iOS.
+title: Práce s systém souborů ve Xamarin.iOS
+description: Tento dokument popisuje, jak pracovat s systém souborů ve Xamarin.iOS. Popisuje, adresářů, čtení souborů, serializace XML a JSON, izolovaného prostoru aplikace, sdílení souborů přes iTunes a další.
 ms.prod: xamarin
 ms.assetid: 37DF2F38-901E-8F8E-269A-5EE0CCD28C08
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 0706e416861e5636413577d38bf524ce9184bc4d
-ms.sourcegitcommit: dc882e9631b4ed52596b944a6fbbdde309346943
+ms.openlocfilehash: 5bcfac7911ac589e08cd6c5db8c8ea15a3497eca
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784238"
 ---
-# <a name="working-with-the-file-system"></a>Práce s systému souborů
-
-_Xamarin.iOS můžete použít stejné třídy System.IO pro práci s souborů a adresářů v iOS, který byste použili v jakékoli aplikaci .NET. Navzdory známé třídy a metody, ale iOS implementuje určitá omezení na soubory, které můžou vytvořit nebo získat přístup a také poskytuje zvláštní funkce pro určité adresáře. Tento článek popisuje těchto omezení a funkce a vysvětluje, jak funguje přístup k souborům aplikace pro Xamarin.iOS._
+# <a name="working-with-the-file-system-in-xamarinios"></a>Práce s systém souborů ve Xamarin.iOS
 
 Můžete použít Xamarin.iOS a `System.IO` třídy v *.NET základní třídy knihovny (BCL)* pro přístup k souboru systému iOS. `File` Třída umožňuje vytvářet, mazat a číst soubory a `Directory` třída umožňuje vytvořit, odstranit nebo vytvořit výčet obsah adresáře. Můžete také použít `Stream` podtřídy, což může poskytnout vyšší stupeň kontroly nad operací se soubory (jako je hledání kompresi nebo pozice v souboru).
 
@@ -29,15 +28,13 @@ Tento článek popisuje funkce a omezení IOS systém souborů podrobně a obsah
 
  <a name="General_File_Access" />
 
-
 ## <a name="general-file-access"></a>Přístup k souborům obecné
 
 Xamarin.iOS umožňuje používat .NET `System.IO` třídy pro operace systému souborů v systému iOS.
 
 Následující fragmenty kódu ukazují některé běžné operace souboru. Najdete je všechny níže v `SampleCode.cs` souboru v ukázkové aplikace pro tohoto článku.
 
- <a name="Working_with_directories" />
-
+<a name="Working_with_directories" />
 
 ### <a name="working-with-directories"></a>Práce s adresáře
 

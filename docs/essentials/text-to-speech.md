@@ -1,17 +1,18 @@
 ---
-title: Převod textu na řeč Xamarin.Essentials
-description: Třída TextToSpeech umožňuje aplikace využívat předdefinovaných v převod textu na řeč moduly mluvit back text ze zařízení a také dotazu dostupné jazyky, které mohou podporovat modul.
+title: 'Xamarin.Essentials: převod textu na řeč'
+description: Třída TextToSpeech v Xamarin.Essentials umožňuje využívat v převod textu na řeč moduly mluvit back text ze zařízení a také dotazu dostupné jazyky, které mohou podporovat modul předdefinovaných aplikace.
 ms.assetid: AEEF03AE-A047-4DF0-B0E8-CC8D9A7B8351
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: b2c9ed50c48aee6343a20ddb28c49e1bd05d2153
-ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
+ms.openlocfilehash: 9383411074bc43af1034138aadbb6ac5494c2c01
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782798"
 ---
-# <a name="xamarinessentials-text-to-speech"></a>Převod textu na řeč Xamarin.Essentials
+# <a name="xamarinessentials-text-to-speech"></a>Xamarin.Essentials: převod textu na řeč
 
 ![Předběžné verze NuGet](~/media/shared/pre-release.png)
 

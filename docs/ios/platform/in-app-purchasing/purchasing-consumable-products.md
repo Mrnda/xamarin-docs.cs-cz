@@ -1,18 +1,20 @@
 ---
-title: Zakoupení použití produktů
+title: Zakoupení použití produkty v Xamarin.iOS
+description: Tento dokument popisuje použití produkty v Xamarin.iOS. Použití produkty jsou části jedno použití funkce, jako je currency ve hře.
 ms.prod: xamarin
 ms.assetid: E0CB4A0F-C3FA-3933-58A7-13246971D677
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 5c2c84c044ff41cced2c97e414502faff45341ec
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9c53af1055736512c42f83a58011b7b3a42bcd5b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34786974"
 ---
-# <a name="purchasing-consumable-products"></a>Zakoupení použití produktů
+# <a name="purchasing-consumable-products-in-xamarinios"></a>Zakoupení použití produkty v Xamarin.iOS
 
 Nejjednodušší implementovat, protože není potřeba, obnovení, jsou použití produkty. Jsou užitečné pro produkty, jako je currency ve hře nebo úsek jedno použití funkce. Uživatele můžete znovu zakoupit použití produktů přes a přes znovu.
 
@@ -23,8 +25,6 @@ Ukázkový kód doplňujícími tento dokument ukazuje předdefinované produkty
 [![Nákupní proces vizualizaci](purchasing-consumable-products-images/image26.png)](purchasing-consumable-products-images/image26.png#lightbox)     
    
  Je základní pracovní postup:   
-   
-   
    
  1. Přidá aplikaci `SKPayment` do fronty. V případě potřeby uživatel se zobrazí výzva k zadání jejich Apple ID a výzva k potvrzení platbu.   
    

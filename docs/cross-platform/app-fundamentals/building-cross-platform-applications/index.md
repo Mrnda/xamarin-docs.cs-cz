@@ -1,24 +1,23 @@
 ---
-title: Sestavení pro různé platformy aplikace
+title: Vytváření aplikací a platformy
 description: Tato část popisuje v souhrn plus šest částí, jak vytvářet aplikace, které používají platformou vývoj Xamarin – z pochopení, jak funguje Xamarin navrhování mobilní aplikace a pak testování a nasazení do různých úložišť aplikace.
 ms.prod: xamarin
 ms.assetid: 442FC40A-84DD-A218-0D15-EAD86594B6D7
 author: asb3993
 ms.author: amburns
 ms.date: 01/28/2016
-ms.openlocfilehash: fba13ab921949cd2361e78535d5ffc96952a1336
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 3966b731531d617f105583210334a23071a6802b
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34780171"
 ---
-# <a name="sharing-code-options"></a>Možnosti sdílení kódu
+# <a name="building-cross-platform-applications"></a>Vytváření aplikací a platformy
 
 Existují dvě možnosti pro sdílení kódu mezi různé platformy mobilních aplikací: sdílený prostředek projekty a knihovny přenosných tříd. Tyto možnosti jsou [tady popisovaných](~/cross-platform/app-fundamentals/code-sharing.md); Další informace o [přenosné knihovny tříd](~/cross-platform/app-fundamentals/pcl.md) a [sdílených projektů](~/cross-platform/app-fundamentals/shared-projects.md) je také k dispozici.
 
 <a name="Sections" />
-
-## <a name="building-cross-platform-mobile-apps"></a>Sestavení pro různé platformy mobilních aplikací
 
  [Přehled](~/cross-platform/app-fundamentals/building-cross-platform-applications/overview.md)
 
@@ -36,13 +35,11 @@ Existují dvě možnosti pro sdílení kódu mezi různé platformy mobilních a
 
  <a name="Cross-Platform_Mobile_Application_Case_Studies" />
 
-
 ## <a name="case-studies"></a>Případové studie
 
 Principy uvedených v tomto dokumentu jsou uvedené do praxe v ukázkové aplikaci *Tasky*, a také [předem integrované aplikace](https://xamarin.com/prebuilt) jako [Xamarin CRM](https://xamarin.com/prebuilt/#xamarincrm).
 
  <a name="Tasky" />
-
 
 ### <a name="tasky"></a>Tasky
 
@@ -53,7 +50,6 @@ Ho ukazuje základní informace o vytvoření aplikace pro různé platformy s X
 
 Pro čtení [Tasky Případová studie](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md).
 
-
 ## <a name="summary"></a>Souhrn
 
 Tato část nabízí nástroje pro vývoj aplikací pro Xamarin a popisuje, jak vytvářet aplikace, které více mobilní platformy.
@@ -63,8 +59,6 @@ Popisuje Vrstvená architektura tento kód struktury pro nové použití napří
 Příklady jsou uvedeny běžné funkce aplikace (např. soubor a síťových operací) a jak může být sestaven tak napříč platformami.
 
 Nakonec stručně popisuje testování a poskytuje odkazy na příkladovou studii, která vloží těchto zásad do akce.
-
-
 
 ## <a name="related-links"></a>Související odkazy
 

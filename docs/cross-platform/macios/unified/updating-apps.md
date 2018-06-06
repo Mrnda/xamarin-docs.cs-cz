@@ -1,23 +1,24 @@
 ---
 title: Aktualizace existujících aplikací jednotné rozhraní API
+description: Tento dokument obsahuje odkazy na různé příručky, které popisují, jak se aktualizace aplikace Xamarin jednotné rozhraní API. Popisuje aplikace Xamarin.iOS, Xamarin.Mac aplikace. Aplikace Xamarin.Forms, nativní typy v aplikací pro různé platformy a vazba projekty.
 ms.prod: xamarin
 ms.assetid: 8A654C95-5DCA-4BB5-A582-F96C2BECC81C
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 588c01ef9f9ee014592c9d8dc72f2b8be20dfee3
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 2d09be7b85980e5c5a8eb209dc1b4ff3136c34b3
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781628"
 ---
 # <a name="updating-existing-apps-to-the-unified-api"></a>Aktualizace existujících aplikací jednotné rozhraní API
 
 > [!IMPORTANT]
-> **Classic profil vyřazení:** při přidání nové platformy v Xamarin.iOS jsme spouštějí postupně přestat používat funkce z klasického profilu (monotouch.dll). Například možnost bez NRC (-ref počet nových) byla odebrána. NRC vždy byla povolená pro všechny jednotná aplikace (tj. bez NRC se nikdy možnost) a nemá žádné známé problémy. Možnost použití Boehm jako garbage collector v budoucích verzích dojde k odebrání. Je také možnost Nikdy dostupné pro jednotné aplikace. Úplné odebrání classic podpory naplánován další patří verze Xamarin.iOS 10.0.
-
-
-
+> Xamarin klasické rozhraní API, které před unifikované API, je zastaralá. 
+> - Poslední verzi Xamarin.iOS pro podporu klasické rozhraní API (monotouch.dll) byl Xamarin.iOS 9.10.
+> - Xamarin.Mac stále podporuje klasické rozhraní API, ale už se aktualizuje. Vzhledem k tomu, že je zastaralý, přesuňte vývojáři aplikací a unifikované API.
 
 ## <a name="how-to-update-your-apps"></a>Postup aktualizace aplikace
 
@@ -31,7 +32,7 @@ Aktualizace aplikace tři kroky:
 
 2. Použijte nástroj pro migraci vestavěná v sadě Visual Studio pro Mac k aktualizaci souborů projektu a obory názvů.
 
-3. Oprava zbývající chyby kompilátoru týkající se nové [64 typy](~/cross-platform/macios/nativetypes.md) a [jiná rozhraní API](~/cross-platform/macios/unified/index.md#deprecated-typos) které změněny. Podívejte se na [tyto tipy](~/cross-platform/macios/unified/updating-tips.md) Další informace o ruční aktualizace, které mohou být požadovány.
+3. Oprava zbývající chyby kompilátoru týkající se nové [64 typy](~/cross-platform/macios/nativetypes.md) a [jiná rozhraní API](~/cross-platform/macios/unified/overview.md#deprecated-typos) které změněny. Podívejte se na [tyto tipy](~/cross-platform/macios/unified/updating-tips.md) Další informace o ruční aktualizace, které mohou být požadovány.
 
 Nejsou k dispozici pro každý produkt, který vám pomůže aktualizovat vaše aplikace unifikované API a podpora 64bitových technologií konkrétní příručky:
 
@@ -55,9 +56,6 @@ Tento článek se týká použití nové iOS jednotné rozhraní API nativních 
 
 Zákazníkům, kteří vytvořili vazby do knihoven jazyka Objective-C bude nutné aktualizovat vazby projektu, aby odpovídalo změnám v základní rozhraní API (kdy některé typy teď bude 64-bit).
 Postupujte podle těchto pokynů můžete [aktualizovat existující projekt vazby pro podporu unifikované API](~/cross-platform/macios/unified/update-binding.md).
-
-
-
 
 ## <a name="related-links"></a>Související odkazy
 

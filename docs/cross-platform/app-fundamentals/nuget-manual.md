@@ -1,16 +1,17 @@
 ---
 title: Ruční vytvoření balíčků NuGet pro Xamarin
-description: Tato stránka obsahuje některé tipy k sestavení balíčky NuGet, které cílí na platformě Xamarin.
+description: Tento dokument obsahuje tipy k sestavení balíčky NuGet, které cílí na platformě Xamarin. Popisuje NuGet balíček Xamarin profily PCL NuGets závislosti platformy a obsahuje odkazy na různé ukázky open source.
 ms.prod: xamarin
 ms.assetid: a5964686-5fc6-4280-b087-7ba27cc1c8bf
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 510c27cb54b91c837ca6f6b7a93f944f13097f0c
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: cc39ade2ccc1192461bcfa19c98b7f9925b667a0
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781416"
 ---
 # <a name="manually-creating-nuget-packages-for-xamarin"></a>Ruční vytvoření balíčků NuGet pro Xamarin
 
@@ -58,7 +59,6 @@ O vysvětlení:
 - **Xamarin.iOS10** odpovídá Xamarin.iOS 1.0 a novější
 - **Xamarin.iOS1.0** také odpovídající Xamarin.iOS 1.0 a novější
 
-
 ## <a name="pcl-nugets-with-platform-dependencies"></a>PCL NuGets závislosti platformy
 
 PCL profily mají omezenou jaké rozhraní .NET framework získají přístup k rozhraní API a určitě nemůžou získat přístup kódu pro konkrétní platformu. Tyto odkazy 3. stran popisují různé přístupy k vytváření balíčků NuGet, které používají PCL a nativního rozhraní API k zajištění kompatibility pro Xamarin a jiné platformy:
@@ -76,7 +76,6 @@ Některé příklady open source, které mohou odkazovat na:
 - [**ModernHttpClient** ](https://www.nuget.org/packages/modernhttpclient/) – zápis vaší aplikace pomocí System.Net.Http, ale vyřadit této knihovně a přejde se výrazně rychlejší (zobrazení [zdroj](https://github.com/paulcbetts/ModernHttpClient)).
 - [**Splat** ](https://www.nuget.org/packages/Splat/) – knihovnu aby věcí a platformy, která má být (zobrazení [zdroj](https://github.com/paulcbetts/Splat)).
 - [**NGraphics** ](https://www.nuget.org/packages/NGraphics/) -knihovnu křížové platformy pro vykreslování vektorová grafika na rozhraní .NET (zobrazení [zdroj](https://github.com/praeclarum/NGraphics/blob/master/NGraphics.nuspec)).
-
 
 ## <a name="related-links"></a>Související odkazy
 

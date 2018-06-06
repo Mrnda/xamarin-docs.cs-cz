@@ -1,20 +1,20 @@
 ---
-title: Data a cloudové služby
-description: Ustálení a příruček nasazení
+title: Data a cloudové služby v aplikace Xamarin.iOS
+description: Tento dokument obsahuje odkazy na příručky, které popisují, jak pracovat s místní data, Icloudu a CloudKit v aplikaci pro Xamarin.iOS.
 ms.prod: xamarin
 ms.assetid: 945719F7-7CE6-4207-BF0F-23195125FC84
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/13/2017
-ms.openlocfilehash: 81aebe5fd7431e578b75c5b61e1d2c92ce546909
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a733c1af34b577786a7e18eeafa13da4327dddc6
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784257"
 ---
-# <a name="data-and-cloud-services"></a>Data a cloudové služby
-
+# <a name="data-and-cloud-services-in-xamarinios-apps"></a>Data a cloudové služby v aplikace Xamarin.iOS
 
 ##  <a name="data-accessiosdata-clouddataindexmd"></a>[Přístup k datům](~/ios/data-cloud/data/index.md)
 

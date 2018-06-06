@@ -1,19 +1,21 @@
 ---
-title: Standardní rozhraní .NET
+title: Použití standardní knihovny .NET pro sdílení kódu
+description: Tento dokument popisuje, jak sdílet kódu pomocí standardní knihovny .NET. Popisuje vytvoření .NET standardní knihovny, úpravy jeho nastavení a použití v aplikaci.
 ms.prod: xamarin
 ms.assetid: 8C30F8D3-1920-453E-9E8B-D40696736FF2
 author: asb3993
 ms.author: amburns
 ms.date: 04/12/2017
-ms.openlocfilehash: c70a1cb1aa05426ba6d54d8af3787f014883bfa1
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 448bbc0630388f6bf45056c90cc75586996d0623
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781030"
 ---
-# <a name="net-standard"></a>Standardní rozhraní .NET
+# <a name="using-net-standard-libraries-to-share-code"></a>Použití standardní knihovny .NET pro sdílení kódu
 
-## <a name="using-net-standard-library-projects-to-share-code"></a>Pomocí standardní projektů knihovny .NET sdílení kódu
+## <a name="net-standard"></a>Standardní rozhraní .NET
 
 Standardní knihovny .NET je formální specifikaci rozhraní API .NET, která by měla být k dispozici na všechny moduly runtime rozhraní .NET. Motivace za standardní knihovna navazuje větší jednotnost v ekosystému .NET.
 [ECMA 335](https://github.com/dotnet/coreclr/blob/master/Documentation/project-docs/dotnet-standards.md) pokračuje k navázání jednotnost chování modulu runtime rozhraní .NET, ale neexistuje žádné podobné specifikace pro knihovny pro třídy Base rozhraní .NET (BCL) pro implementace knihovny .NET.

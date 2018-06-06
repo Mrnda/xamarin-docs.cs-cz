@@ -1,17 +1,18 @@
 ---
-title: Předvolby Xamarin.Essentials
-description: Třída předvolby uloží předvolby aplikace do úložiště dvojic klíč/hodnota.
+title: 'Xamarin.Essentials: předvolby'
+description: Tento dokument popisuje třídy předvolby v Xamarin.Essentials, který uloží předvolby aplikace do úložiště dvojic klíč/hodnota. Popisuje, jak používat třídu a typy dat, které lze uložit.
 ms.assetid: AA81BCBD-79BA-448F-942B-BA4415CA50FF
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 882ff8e0f10948f4f88303f8bcc3d45b3cecf5fd
-ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
+ms.openlocfilehash: e453c04a953e60be2508670723d175bde3dc7c42
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782840"
 ---
-# <a name="xamarinessentials-preferences"></a>Předvolby Xamarin.Essentials
+# <a name="xamarinessentials-preferences"></a>Xamarin.Essentials: předvolby
 
 ![Předběžné verze NuGet](~/media/shared/pre-release.png)
 

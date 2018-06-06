@@ -1,20 +1,19 @@
 ---
 title: Aktualizace stávající aplikace pro Mac
-description: Postupujte podle těchto kroků provedete aktualizaci existující aplikace Xamarin.Mac používat unifikované API.
+description: Tento dokument popisuje kroky, které musí být sledována aktualizace Xamarin.Mac aplikace z rozhraní API Classic jednotné rozhraní API.
 ms.prod: xamarin
 ms.assetid: 26673CC5-C1E5-4BAC-BEF4-9A386B296FD5
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: a2e3df4db13ccbf8001b762bf29a3eb53cacd35a
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 5e6034b079bba5e884872e4f2096d677fd3641d0
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34782408"
 ---
 # <a name="updating-existing-mac-apps"></a>Aktualizace stávající aplikace pro Mac
-
-_Postupujte podle těchto kroků provedete aktualizaci existující aplikace Xamarin.Mac používat unifikované API._
 
 Aktualizace stávající aplikace pro použití unifikované API vyžaduje změny samotný soubor projektu také na obory názvů a rozhraní API používaná v kódu aplikace.
 

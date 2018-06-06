@@ -1,29 +1,31 @@
 ---
-title: Nativní typy
+title: Nativní typy pro iOS a systému macOS
+description: Tento dokument popisuje, jak pro Xamarin unifikované API mapuje typy .NET 32bitové a 64bitové verze nativní typy, podle potřeby, v závislosti na architektuře cílového kompilace.
 ms.prod: xamarin
 ms.assetid: B5237770-0FC3-4B01-9E22-766B35C9A952
 author: asb3993
 ms.author: amburns
 ms.date: 01/25/2016
-ms.openlocfilehash: 4d11d053cf4471a98cbba0f7c97be3bef39276fb
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: fc2b91a9265fcf09e4f58d5de27a1fdef9350b2d
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781101"
 ---
-# <a name="native-types"></a>Nativní typy
+# <a name="native-types-for-ios-and-macos"></a>Nativní typy pro iOS a systému macOS
 
-Základní rozdíl Mac a iOS rozhraní API použijte specifické pro architekturu datové typy, které jsou vždy 32bitové na platformách 32bitová a 64bitová verze na 64bitových platformách.
+Mac a iOS rozhraní API pomocí specifické pro architekturu datové typy, které jsou vždy 32bitová verze na platformách 32bitová a 64bitová verze na 64bitových platformách.
 
 Například jazyka Objective-C mapuje `NSInteger` datový typ pro `int32_t` na 32bitové systémy a na `int64_t` v 64bitových systémech.
 
-Tak, aby odpovídaly toto chování na našem jednotné rozhraní API, jsme nahradit předchozí použití `int` (který v rozhraní .NET je definován jako vždy `System.Int32`) na nový datový typ: `System.nint`.  Si můžete představit "n" jako význam "nativní", takže nativní celé číslo, zadejte na platformě.
+Tak, aby odpovídaly toto chování na našem jednotné rozhraní API, jsme nahradit předchozí použití `int` (který v rozhraní .NET je definován jako vždy `System.Int32`) na nový datový typ: `System.nint`. Si můžete představit "n" jako význam "nativní", takže nativní celé číslo, zadejte na platformě.
 
-Pomocí těchto nových typů dat je ze stejného zdrojového kódu zkompilovaného pro 32bitová verze, 32bitová a 64bitová verze nebo 64bitová verze, v závislosti na vaší příznaky kompilace.
+Pomocí těchto nových typů dat je pro 32bitové a 64bitové verze architektury, v závislosti na vaší kompilace příznaky zkompilovat ze stejného zdrojového kódu.
 
 ## <a name="new-data-types"></a>Nové datové typy
 
-Následující tabulka uvádí změny v našich typů dat tak, aby tento nový world 32 nebo 64bitový:
+Následující tabulka uvádí změny v našich typů dat tak, aby tento nový world 32 nebo 64bitová verze:
 
 |Nativním typu|32-bit základní typ|64bitová verze základní typ|
 |--- |--- |--- |
@@ -35,7 +37,7 @@ Jsme zvolili tyto názvy umožňující kód C# a vyšší nebo nižší vypadat
 
 ### <a name="implicit-and-explicit-conversions"></a>Implicitní a explicitní převody
 
-Návrh nové typy dat se má povolit jednoho jazyka C# zdrojového souboru přirozeně používání 32 nebo 64 bit úložiště v závislosti na nastavení kompilace a platorm hostitele.
+Návrh nové typy dat se má povolit jednoho jazyka C# zdrojového souboru přirozeně používání 32 nebo 64 bit úložiště v závislosti na platformě hostitele a nastavení kompilace.
 
 To vyžaduje nám návrhu sadu implicitní a explicitní převody z typů dat specifických pro platformy a na rozhraní .NET bodu plovoucí a integrální datové typy.
 

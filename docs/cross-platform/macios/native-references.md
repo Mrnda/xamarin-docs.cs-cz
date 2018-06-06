@@ -1,29 +1,26 @@
 ---
-title: Nativní odkazy
-description: Nativní odkazy vám dává možnost pro vložení nativní rozhraní do projektu Xamarin.iOS nebo Xamarin.Mac nebo vazby projektu.
+title: Nativní iOS, Mac a vazby projekty odkazy
+description: Nativní odkazy vám dává možnost pro vložení nativní rozhraní do Xamarin.iOS, Xamarin.Mac nebo vazby projektu.
 ms.prod: xamarin
 ms.assetid: E53185FB-CEF5-4AB5-94F9-CC9B57C52300
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: c56e392420debb21998363cfffa288aec51691ea
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 3a497d0bb4674014b8063cb1fbc91eec6e7ae5ea
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34781715"
 ---
-# <a name="native-references"></a>Nativní odkazy
+# <a name="native-references-in-ios-mac-and-bindings-projects"></a>Nativní odkazy v iOS, Mac a vazby projekty
 
 _Nativní odkazy vám dává možnost pro vložení nativní rozhraní do projektu Xamarin.iOS nebo Xamarin.Mac nebo vazby projektu._
-
 
 Od sady iOS 8.0 ji bylo možné vytvořit představuje embedded rozhraní sdílet kód mezi přípony aplikace a hlavní aplikace v Xcode. Pomocí funkce nativní referenční dokumentace ho bude možné využívat tyto vložené architektury (vytvořeny s Xcode) v Xamarin.iOS.
  
 > [!IMPORTANT]
 > Nebude možné vytvořit vložený rozhraní z jakéhokoli typu Xamarin.iOS nebo Xamarin.Mac projektů, nativní odkazy Povolit jenom pro používání existující nativní rozhraní (Objective-C).
-
-
-
 
 <a name="Terminology" />
 
