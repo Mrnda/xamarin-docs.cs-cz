@@ -1,17 +1,18 @@
 ---
 title: Úvod do systému iOS 6
-description: iOS 6 zahrnuje celou řadu nových technologií pro vývoj aplikací, které přináší Xamarin.iOS 6 pro vývojáře jazyka C#.
+description: Tento dokument obsahuje odkazy na pokyny, které popisují funkce byla zavedená v iOS 6. Zobrazení kolekce, PassKit, sociálních Framework a změny StoreKit jsou všechny popsané.
 ms.prod: xamarin
 ms.assetid: 242DA7E3-8FD8-5F20-285D-603259CA622D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 8f3be80ffb8156c24c96b03fda8eac3907ca88bd
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: cf623c7788137106ddbb2c23c69465f205a5a400
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34787611"
 ---
 # <a name="introduction-to-ios-6"></a>Úvod do systému iOS 6
 
@@ -28,12 +29,12 @@ Tento dokument uvádí některé více zajímavé nové funkce, které jsou k di
 Zobrazení kolekce povolit obsah, který se má zobrazit pomocí libovolného rozložení. Umožňují snadno vytváření rozložení mřížky předinstalované, spolu s podporou i vlastní rozložení. Další informace najdete v tématu, [Úvod do zobrazení kolekce](~/ios/user-interface/controls/uicollectionview.md) [ ](~/ios/user-interface/controls/uicollectionview.md)průvodce.
 
 
-## <a name="introduction-to-pass-kitiosplatformpasskitmd"></a>[Úvod k předávání Kit](~/ios/platform/passkit.md)
+## <a name="introduction-to-passkitiosplatformpasskitmd"></a>[Úvod do PassKit](~/ios/platform/passkit.md)
 
-Rozhraní framework předat Kit umožňuje aplikacím komunikovat s digitální předává, které jsou spravovány v aplikaci Passbook. Další informace najdete v tématu, [Úvod k příručce předat Kit](~/ios/platform/passkit.md).
+Rozhraní framework PassKit umožňuje aplikacím komunikovat s digitální předává, které jsou spravovány v aplikaci Passbook. Další informace najdete v tématu, [Úvod k příručce předat Kit](~/ios/platform/passkit.md).
 
 
-##  <a name="introduction-to-event-kitiosplatformeventkitmd"></a>[Úvod do Kit událostí](~/ios/platform/eventkit.md)
+##  <a name="introduction-to-eventkitiosplatformeventkitmd"></a>[Úvod do EventKit](~/ios/platform/eventkit.md)
 
 Rozhraní EventKit poskytuje přístup k kalendáře, kalendář události a připomenutí data, která ukládá kalendář databáze. Přístup do kalendáře a kalendář události byl k dispozici od sady iOS 4, ale iOS 6 teď poskytuje přístup k datům připomenutí. Další informace najdete v tématu [I](~/ios/platform/eventkit.md) [ntroduction k EventKit](~/ios/platform/eventkit.md) průvodce.
 
@@ -43,7 +44,7 @@ Rozhraní EventKit poskytuje přístup k kalendáře, kalendář události a př
 Sociální Framework poskytuje jednotné rozhraní API pro interakci se sociálními sítěmi, včetně Twitteru a Facebooku, jakož i SinaWeibo pro uživatele v Číně. Další informace najdete v tématu, [Úvod do rozhraní sociálních](~/ios/platform/social-framework.md) průvodce.
 
 
-##  <a name="changes-to-store-kitchanges-to-storekitmd"></a>[Změny k uložení Kit](changes-to-storekit.md)
+##  <a name="changes-to-storekitchanges-to-storekitmd"></a>[Změny ve StoreKitu](changes-to-storekit.md)
 
 Má společnost Apple vydala dvě nové funkce v úložišti Kit: nákup a stahování iTunes nebo obchod obsah z vaší aplikace a hostování souborů obsahu pro nákupy v aplikaci!. Další informace najdete v tématu, [změny úložiště Kit](changes-to-storekit.md) průvodce.
 

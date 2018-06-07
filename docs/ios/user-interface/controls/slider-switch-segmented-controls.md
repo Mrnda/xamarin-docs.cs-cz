@@ -1,27 +1,28 @@
 ---
-title: Posuvníky, přepínače a Segmentovaným ovládací prvky
+title: Posuvníky, přepínače a Segmentovaným ovládacích prvků v Xamarin.iOS
+description: Tento dokument popisuje snímků, přepínače a segmentovaným ovládacích prvků v Xamarin.iOS, popisující, jak pracovat s nimi prostřednictvím kódu programu i v iOS Designer.
 ms.prod: xamarin
 ms.assetid: 85BF0EC8-E581-49CD-B9E7-98BE4C5A0F6B
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 3c98ea19b3f925e71f72b09d5356286d676a9f71
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 09a5d9e76c41eba4e16cab041daa67d3a5d8a584
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34790026"
 ---
-# <a name="sliders-switches-and-segmented-controls"></a>Posuvníky, přepínače a Segmentovaným ovládací prvky
+# <a name="sliders-switches-and-segmented-controls-in-xamarinios"></a>Posuvníky, přepínače a Segmentovaným ovládacích prvků v Xamarin.iOS
 
 <a name="Sliders" />
-
 
 ## <a name="sliders"></a>Posuvníky
 
 V ovládacím prvku posuvník umožňuje jednoduché výběr číselnou hodnotu v rozsahu. Ovládací prvek výchozí hodnotu mezi 0 a 1, ale tato omezení lze přizpůsobit.
 
- [![](slider-switch-segmented-controls-images/image25a.png "Slider")](slider-switch-segmented-controls-images/image25a.png#lightbox)
+ [![](slider-switch-segmented-controls-images/image25a.png "Posuvník")](slider-switch-segmented-controls-images/image25a.png#lightbox)
 
 Následující snímek obrazovky ukazuje vlastnosti, které lze upravit v designeru:
 
@@ -61,7 +62,7 @@ Přizpůsobené posuvníku vypadá takto:
 
 používá iOS `UISwitch` jako logická hodnota vstupu, který může být reprezentována přepínač na jiných platformách. Uživatele můžete upravit ovládacího prvku přesunutím *jezdec* mezi **zapnutí nebo vypnutí** pozic.
 
- [![](slider-switch-segmented-controls-images/image28a.png "Switch")](slider-switch-segmented-controls-images/image28a.png#lightbox)
+ [![](slider-switch-segmented-controls-images/image28a.png "přepínače")](slider-switch-segmented-controls-images/image28a.png#lightbox)
 
 Lze přizpůsobit vzhled přepínače v **vlastnosti Pad** návrháře, což vám umožní řídit výchozí stav, **zapnutí nebo vypnutí TINT –** barvy a **samostatnými Image**. To je znázorněno na obrázku níže:
 
