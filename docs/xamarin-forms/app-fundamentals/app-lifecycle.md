@@ -6,25 +6,27 @@ ms.assetid: 69B416CF-B243-4790-AB29-F030B32465BE
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/19/2016
-ms.openlocfilehash: 511591482a0e7512be34f6a210c6f44a1826be24
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 05/31/2018
+ms.openlocfilehash: a22ad8f3f272212f5c7f088ba2112f2771ff4a7f
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34846341"
 ---
 # <a name="app-lifecycle"></a>Životní cyklus aplikace
 
-`Application` Základní třída nabízí následující funkce:
+[ `Application` ](xref:Xamarin.Forms.Application) Základní třída nabízí následující funkce:
 
 * [Životní cyklus metody](#Lifecycle_Methods) `OnStart`, `OnSleep`, a `OnResume`.
+* [Stránka události navigace](#page) [ `PageAppearing` ](xref:Xamarin.Forms.Application.PageAppearing), [ `PageDisappearing` ](xref:Xamarin.Forms.Application.PageDisappearing).
 * [Modální navigační události](#modal) `ModalPushing`, `ModalPushed`, `ModalPopping`, a `ModalPopped`.
 
 <a name="Lifecycle_Methods" />
 
 ## <a name="lifecycle-methods"></a>Životní cyklus metody
 
-`Application` Třída obsahuje tři virtuální metody, které může být potlačena za účelem zpracování životního cyklu metody:
+[ `Application` ](xref:Xamarin.Forms.Application) Třída obsahuje tři virtuální metody, které může být potlačena za účelem zpracování životního cyklu metody:
 
 * **OnStart** -volat při spuštění aplikace.
 
@@ -54,18 +56,30 @@ protected override void OnResume()
 
 Při aktualizaci *starší* Xamarin.Forms aplikace (např. vytvořit s Xamarin.Forms 1.3 nebo starší), ujistěte se, že Android hlavní aktivitu zahrnuje `ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation` v `[Activity()]` atribut. Pokud není zadán, bude sledovat `OnStart` metoda je volána na otočení i při prvním spuštění aplikace. Tento atribut je automaticky součástí aktuální šablony aplikaci Xamarin.Forms.
 
+<a name="page" />
+
+## <a name="page-navigation-events"></a>Navigace stránky události
+
+Existují dvě události na [ `Application` ](xref:Xamarin.Forms.Application) třídu, která poskytují oznámení stránek, které jsou uvedeny a jindy mizí:
+
+- [`PageAppearing`](xref:Xamarin.Forms.Application.PageAppearing) -vyvolá, když na stránce se zobrazí na obrazovce.
+- [`PageDisappearing`](xref:Xamarin.Forms.Application.PageDisappearing) -vyvolá, když na stránce je zmizí z obrazovky.
+
+Tyto události můžete použít ve scénářích, kde chcete sledovat stránky, jako jsou uvedené na obrazovce.
+
+> [!NOTE]
+> [ `PageAppearing` ](xref:Xamarin.Forms.Application.PageAppearing) a [ `PageDisappearing` ](xref:Xamarin.Forms.Application.PageDisappearing) události jsou vyvolány z [ `Page` ](xref:Xamarin.Forms.Page) základní třída ihned po [ `Page.Appearing` ](xref:Xamarin.Forms.Page.Appearing) a [ `Page.Disappearing` ](xref:Xamarin.Forms.Page.Disappearing) událostí, v uvedeném pořadí.
+
 <a name="modal" />
 
 ## <a name="modal-navigation-events"></a>Modální navigační události
 
-Existují čtyři nové události na `Application` třídy v Xamarin.Forms 1.4, každou s vlastní argumenty událostí:
+Existují čtyři události na [ `Application` ](xref:Xamarin.Forms.Application) třída, každou s vlastní argumenty událostí, které vám umožní reagovat na modální stránky se zobrazí a zavře:
 
 * **ModalPushing** - `ModalPushingEventArgs`
 * **ModalPushed** - `ModalPushedEventArgs`
 * **ModalPopping** – `ModalPoppingEventArgs` třída obsahuje `Cancel` vlastnost. Když `Cancel` je nastaven na `true` modální pop byla zrušena.
 * **ModalPopped** - `ModalPoppedEventArgs`
-
-Tyto události vám pomohou lépe spravovat životním cyklu aplikací, když necháte reagovat na modální stránky se zobrazí a zavře.
 
 > [!NOTE]
 > Implementace metody životního cyklu aplikací a události modální navigace, všechny předběžné`Application` metody vytváření aplikace na platformě Xamarin.Forms (ie. aplikace napsané v verze 1.2 nebo starší, které používají statického `GetMainPage` metoda) byly aktualizovány k vytvoření výchozí `Application` který je nastaven jako nadřazeného `MainPage`.

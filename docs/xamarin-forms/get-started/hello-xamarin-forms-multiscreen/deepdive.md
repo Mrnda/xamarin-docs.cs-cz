@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms Multiscreen Deep Dive
+title: Xamarin.Forms Multiobrazovka podrobné informace
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: e4faa36c-6600-48c0-94c4-b4431103a4
@@ -7,13 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/02/2016
-ms.openlocfilehash: f4e6dace59c14a0e30ef4cdea2c7dd490d645057
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 2bf76a42fa05dce0d76cfd2169e8310d76216282
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34847030"
 ---
-# <a name="xamarinforms-multiscreen-deep-dive"></a>Xamarin.Forms Multiscreen Deep Dive
+# <a name="xamarinforms-multiscreen-deep-dive"></a>Xamarin.Forms Multiobrazovka podrobné informace
 
 V [Multiobrazovka rychlý start Xamarin.Forms](~/xamarin-forms/get-started/hello-xamarin-forms-multiscreen/quickstart.md), Phoneword aplikace byla rozšířen o druhou obrazovce, která uchovává informace o historii volání pro aplikaci. Tento článek zkontroluje, co byla vytvořena, vyvíjet představu o navigaci na stránce a datové vazby v aplikaci na platformě Xamarin.Forms.
 

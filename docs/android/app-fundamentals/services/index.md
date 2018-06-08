@@ -7,11 +7,12 @@ ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 03/19/2018
-ms.openlocfilehash: 2e942d1085822fee935ae0f23f2253f23d49a43d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 92eabbec31b654f1aefcffb99ec2ed14062e8681
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34847374"
 ---
 # <a name="creating-android-services"></a>Vytváření Android služeb
 
@@ -21,11 +22,11 @@ _Tato příručka popisuje Xamarin.Android služby, které jsou Android součás
 
 Mobilní aplikace nejsou jako aplikace klasické pracovní plochy. Stolní počítače mají velkým množství prostředků, jako jsou obrazovky nemovitosti, paměti, úložiště a připojené napájení, mobilní zařízení nepodporují. Těchto omezení vynutit mobilních aplikací se bude chovat jinak. Například malou obrazovku na mobilních zařízeních obvykle znamená, že jenom jedna aplikace (tj. aktivita) je zobrazen v čase. Ostatní aktivity jsou na pozadí a vložena do pozastaveném stavu, kde nelze provést veškerou práci. Ale stejně, protože aplikace platformy Android se na pozadí neznamená, že není možné aplikace a pokračovat v práci. 
 
-Aplikace pro Android se skládají nejméně jedné následující čtyři primární součásti: _aktivity_, _vysílání příjemci_, _poskytovatelů obsahu_a _Služby_. Aktivity jsou kamenem mnoho kvalitních aplikací pro Android, protože poskytují uživatelského rozhraní, která umožňuje uživatelům interakci s aplikací. Při rozhodování o provedení souběžné nebo práce pozadí, aktivity jsou však není vždy nejlepší volbou.
+Aplikace pro Android se skládají nejméně jedné z následujících čtyř součástí primární: _aktivity_, _vysílání příjemci_, _poskytovatelů obsahu_a _Služby_. Aktivity jsou kamenem mnoho kvalitních aplikací pro Android, protože poskytují uživatelského rozhraní, která umožňuje uživatelům interakci s aplikací. Při rozhodování o provedení souběžné nebo práce pozadí, aktivity jsou však není vždy nejlepší volbou.
  
 Primární mechanismus pro práce na pozadí v Android je _služby_. Android služby je komponenta, která slouží k nějakou práci bez uživatelského rozhraní. Služba může stáhnout soubor, přehrání Hudba nebo použít filtr na bitovou kopii. Služby lze také meziprocesová komunikace (_IPC_) mezi aplikací pro Android. Můžete třeba použít jednu aplikaci pro Android hudební přehrávač služba, která je z jiné aplikace nebo aplikace mohou být vystaveny data (například kontaktní informace osoby) do jiných aplikací prostřednictvím služby. 
 
-Služby a jejich schopnost provádět práce na pozadí, jsou klíčové pro poskytování hladký a plynulá práce uživatelského rozhraní. Všechny aplikace pro Android mají _hlavního vlákna_ (také označované jako _vlákna uživatelského rozhraní_) na které se spouštějí aktivity. Aby zařízení reakce, Android musí být schopen aktualizovat uživatelské rozhraní ve výši 60 snímků za sekundu. Pokud aplikace pro Android provádí spoustu práce na hlavní vlákno, pak Android bude vyřadit rámce, což způsobí, že uživatelské rozhraní zobrazí trhané (někdy označují jako _janky_). To znamená, že by se měla dokončit práce ve vláknu uživatelského rozhraní v časový interval mezi dvěma snímky, přibližně 16 milisekund (1 sekundu každých 60 rámce). 
+Služby a jejich schopnost provádět práce na pozadí, jsou klíčové pro poskytování hladký a plynulá práce uživatelského rozhraní. Všechny aplikace pro Android mají _hlavního vlákna_ (také označované jako _vlákna uživatelského rozhraní_) na které se spouštějí aktivity. Aby zařízení reakce, Android musí být schopen aktualizovat uživatelské rozhraní ve výši 60 snímků za sekundu. Pokud aplikace pro Android provádí příliš mnoho práce na hlavní vlákno, pak Android bude vyřadit rámce, což způsobí, že uživatelské rozhraní zobrazí trhané (někdy označují jako _janky_). To znamená, že by se měla dokončit práce ve vláknu uživatelského rozhraní v časový interval mezi dvěma snímky, přibližně 16 milisekund (1 sekundu každých 60 rámce). 
 
 Jak tuto situaci řešit, může vývojář v aktivitě pomocí vláken, provádět některé práci, kterou by blokovat uživatelského rozhraní. To však může způsobit problémy. Je velmi možné, že bude Android destroy a znovu vytvořit více instancí aktivity. Android však se automaticky nezničí vláken, které může mít za následek nevracení paměti. Typickým příkladem tohoto objektu je při [zařízení otočen](~/android/app-fundamentals/handling-rotation.md) &ndash; Android se pokusí destroy instance aktivity a pak znovu vytvořte novou:
 

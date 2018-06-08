@@ -6,12 +6,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/06/2018
-ms.openlocfilehash: 0a56996d37bcdd2922b53b414fb1afb9d33974bd
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.openlocfilehash: 7d6c52bdee29b99b8a00de8f03d263c6fe528c5e
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732837"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34847612"
 ---
 # <a name="xamarinforms-multiscreen-quickstart"></a>Rychlý start Multiobrazovka Xamarin.Forms
 

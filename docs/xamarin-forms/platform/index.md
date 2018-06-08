@@ -6,12 +6,13 @@ ms.assetid: 2C6CE42C-E380-4BB9-90CC-D0F4E60C4C03
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/20/2017
-ms.openlocfilehash: be131bdbfeceabd72494708cdfe9a263da9bbbd8
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.date: 04/06/2018
+ms.openlocfilehash: 0609d15248f1827b892ae02a877382ca0ffbed18
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34847628"
 ---
 # <a name="platform-features"></a>Funkce platformy
 
@@ -41,10 +42,6 @@ Xamarin.Forms má nyní preview podporuje GTK # aplikace.
 
 Xamarin.Forms má nyní preview podporu pro aplikace systému macOS.
 
-## <a name="wpfwpfmd"></a>[WPF](wpf.md)
-
-Xamarin.Forms má nyní preview podporu pro aplikace Windows Presentation Foundation (WPF).
-
 ## <a name="native-formsnative-formsmd"></a>[Nativní formuláře](native-forms.md)
 
 Nativní formuláře umožňují Xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-odvozené stránky, které se spotřebovávají nativní projekty Xamarin.iOS, Xamarin.Android a univerzální platformu Windows (UWP).
@@ -61,6 +58,14 @@ Platforma specifika umožňují využívat funkce, která je dostupná pouze na 
 
 Nejsou k dispozici na Githubu, Nuget a úložišti součástí Xamarin pomáhají prodloužit Xamarin.Forms aplikace širokou škálu open-source moduly plug-in.
 
+## <a name="tizentizenmd"></a>[tizen](tizen.md)
+
+Tizen .NET umožňuje vytvářet aplikace .NET s Xamarin.Forms a Tizen .NET framework.
+
 ## <a name="windowswindowsindexmd"></a>[Windows](windows/index.md)
 
 Xamarin.Forms obsahuje podporu pro univerzální platformu Windows (UWP) ve Windows 10. Tento článek popisuje, jak přidat projektu UPW do existujícího řešení Xamarin.Forms.
+
+## <a name="wpfwpfmd"></a>[WPF](wpf.md)
+
+Xamarin.Forms má nyní preview podporu pro aplikace Windows Presentation Foundation (WPF).

@@ -6,18 +6,32 @@ ms.assetid: D4815A4B-104B-4294-951B-BD8F2EC33C86
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/11/2017
-ms.openlocfilehash: 9889502b635997dbb5e2b79a7654bf1ff0c99861
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/04/2018
+ms.openlocfilehash: 7f0050351ca28d7f8afeb82a85e82e51d399824b
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34847495"
 ---
 # <a name="picker"></a>Výběr.
 
 _Výběr zobrazení je ovládací prvek pro výběr textu položky ze seznamu data._
 
-A [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/) zobrazí zkrácený seznam položek, které můžete vybrat uživatele. Ale [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/) nezobrazí žádná data, jakmile se nejprve zobrazí. Místo toho hodnotu jeho [ `Title` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.Title/) vlastnosti se zobrazí jako zástupný znak na iOS a Android platformách:
+Platformě Xamarin.Forms [ `Picker` ](xref:Xamarin.Forms.Picker) zobrazí zkrácený seznam položek, ze kterých si uživatel může vybrat položku. `Picker` definuje vlastnosti osm:
+
+- [`Title`](xref:Xamarin.Forms.Picker.Title) typu `string`, což výchozí nastavení `null`.
+- [`ItemsSource`](xref:Xamarin.Forms.Picker.ItemsSource) typu `IList`, seznamu zdrojů položky k zobrazení, kde je použit výchozí `null`.
+- [`SelectedIndex`](xref:Xamarin.Forms.Picker.SelectedIndex) typu `int`, index vybrané položky, které bude jako výchozí nastavena na hodnotu -1.
+- [`SelectedItem`](xref:Xamarin.Forms.Picker.SelectedItem) typu `object`, vybrané položky, výchozí nastavení je `null`.
+- [`TextColor`](xref:Xamarin.Forms.Picker.TextColor) typu [ `Color` ](xref:Xamarin.Forms.Color), barvu použitou k zobrazení textu, který se standardně [ `Color.Default` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Color.Default/).
+- [`FontAttributes`](xref:Xamarin.Forms.Picker.FontAttributes) typu [ `FontAttributes` ](xref:Xamarin.Forms.FontAttributes), což výchozí nastavení [ `FontAtributes.None` ](xref:Xamarin.Forms.FontAttributes.None).
+- [`FontFamily`](xref:Xamarin.Forms.Picker.FontFamily) typu `string`, což výchozí nastavení `null`.
+- [`FontSize`](xref:Xamarin.Forms.Picker.FontSize) typu `double`, což výchozí nastavení-1.0.
+
+Všechny vlastnosti osm jsou zajišťované [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) objekty, které znamená, že může být ve vlastnostech lze cíle datové vazby. [ `SelectedIndex` ](xref:Xamarin.Forms.Picker.SelectedIndex) a [ `SelectedItem` ](xref:Xamarin.Forms.Picker.SelectedItem) vlastnosti mají výchozí režim vazba z [ `BindingMode.TwoWay` ](xref:Xamarin.Forms.BindingMode.TwoWay), což znamená, že mohou být cíle vazby dat v aplikaci, která používá [Model-View-ViewModel (modelem MVVM)](~/xamarin-forms/enterprise-application-patterns/mvvm.md) architektura. Informace o nastavení písma vlastnostech najdete v tématu [písem](~/xamarin-forms/user-interface/text/fonts.md).
+
+A [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/) nezobrazí žádná data, jakmile se nejprve zobrazí. Místo toho hodnotu jeho [ `Title` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.Title/) vlastnosti se zobrazí jako zástupný znak na iOS a Android platformách:
 
 [![](images/picker-initial.png "Počáteční výběr zobrazení")](images/picker-initial-large.png#lightbox "počáteční výběr zobrazení")
 
@@ -25,7 +39,7 @@ Když [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/)
 
 [![](images/picker-selection.png "Výběr výběrem položky")](images/picker-selection-large.png#lightbox "výběr výběrem položky")
 
-Následující výběr, je ve vybrané položky [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/):
+[ `Picker` ](xref:Xamarin.Forms.Picker) Aktivuje [ `SelectedIndexChanged` ](xref:Xamarin.Forms.Picker.SelectedIndexChanged) událost, když uživatel vybere položku. Následující výběr, je ve vybrané položky `Picker`:
 
 ![](images/picker-after-selection.png "Výběr po výběru")
 
@@ -33,7 +47,6 @@ Existují dvě metody pro sestavování [ `Picker` ](https://developer.xamarin.c
 
 - Nastavení [ `ItemsSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.ItemsSource/) vlastnost k datům, který se má zobrazit. Toto je doporučená techniku, která byla představena v Xamarin.Forms 2.3.4. Další informace najdete v tématu [nastavení vlastnost ItemsSource výběr](populating-itemssource.md).
 - Přidání dat, který se má zobrazit na [ `Items` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.Items/) kolekce. Tento postup se původní proces pro sestavování [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/) s daty. Další informace najdete v tématu [přidání dat do kolekce položky ovládacího prvku Výběr](populating-items.md).
-
 
 ## <a name="related-links"></a>Související odkazy
 

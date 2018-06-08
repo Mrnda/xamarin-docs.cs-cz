@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 71c10e1de8b94b8d9799d144fb603c82c40ca9eb
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 7a304790213bcebe50a3f39295b5b1d1fb052879
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34848340"
 ---
 # <a name="colors"></a>Barvy
 
@@ -71,6 +72,21 @@ IOS a Android tato instance nastavena kontrastní barvu, která se zobrazí na v
 -  **WithLuminosity** -vrátí novou barvu, nahraďte světelnost byla zadána hodnota.
 -  **WithSaturation** -vrátí novou barvu, nahraďte sytost byla zadána hodnota.
 -  **MultiplyAlpha** -vrátí novou barvu úpravou alfa, vynásobením podle zadané hodnoty alfa.
+
+## <a name="implicit-conversions"></a>Implicitní převody
+
+Implicitní převod mezi `Xamarin.Forms.Color` a `System.Drawing.Color` typy lze provést:
+
+```csharp
+Xamarin.Forms.Color xfColor = Xamarin.Forms.Color.FromRgb(0, 72, 255);
+System.Drawing.Color sdColor = System.Drawing.Color.FromArgb(38, 127, 0);
+
+// Implicity convert from a Xamarin.Forms.Color to a System.Drawing.Color
+System.Drawing.Color sdColor2 = xfColor;
+
+// Implicitly convert from a System.Drawing.Color to a Xamarin.Forms.Color
+Xamarin.Forms.Color xfColor2 = sdColor;
+```
 
 ## <a name="deviceruntimeplatform"></a>Device.RuntimePlatform
 

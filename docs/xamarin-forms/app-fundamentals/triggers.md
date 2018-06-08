@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: 3b0cba75c8a62d571e82abb3bd2e27cac1e0d075
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: af5912736e2a2bd7d3347d4aa199faa3fdfe41c7
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34846442"
 ---
 # <a name="triggers"></a>Aktivační procedury
 
@@ -163,7 +164,7 @@ Vlastnosti vystavené prostřednictvím akce aktivace můžete nastavit v deklar
 
 Buďte opatrní při sdílení aktivační události v `ResourceDictionary`, jedna instance bude sdílena mezi ovládací prvky, takže nějaký stav, který je nakonfigurovaný jednou budou platit pro všechny.
 
-Všimněte si, že aktivační události nepodporují `EnterActions` a `ExitActions` [popsané dál](#enterexit).
+Všimněte si, že aktivační události nepodporují `EnterActions` a `ExitActions` [popsané dál](#enterexit).    
 
 <a name="multi" />
 
@@ -211,7 +212,7 @@ public class MultiTriggerConverter : IValueConverter
         if ((int)value > 0) // length > 0 ?
             return true;            // some data has been entered
         else
-            return false;           // input is empty
+            return false;            // input is empty
     }
 
     public object ConvertBack(object value, Type targetType,

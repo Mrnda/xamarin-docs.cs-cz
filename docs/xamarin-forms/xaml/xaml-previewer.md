@@ -6,12 +6,13 @@ ms.assetid: 84769ff1-72fd-4c44-8251-dd6d5bf8c7b2
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
-ms.date: 02/24/2017
-ms.openlocfilehash: d23f89ed8ad7956f7a366280a14ccc12ba3dac0c
-ms.sourcegitcommit: 775a7d1cbf04090eb75d0f822df57b8d8cff0c63
+ms.date: 05/31/2018
+ms.openlocfilehash: 9b87145773bf16b15c391c5c5d6d136b7aa76e39
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34848353"
 ---
 # <a name="xaml-previewer-for-xamarinforms"></a>Náhled XAML pro Xamarin.Forms
 
@@ -55,6 +56,17 @@ Možnosti v horní části podokna náhledu jsou:
 Některá rozložení může být obtížné vizualizovat bez jakékoli data vázaná na ovládacích prvků uživatelského rozhraní. Chcete-li ve verzi preview užitečnější, zařadit některé statických dat k ovládacím prvkům hardcoding kontext vazby, (buď v modelu code-behind nebo pomocí XAML).
 
 Odkazovat na James Montemagno [příspěvku na blogu o přidání dat návrhu](http://motzcod.es/post/143702671962/xamarinforms-xaml-previewer-design-time-data) chcete zjistit, jak vytvořit vazbu na statické ViewModel v jazyce XAML.
+
+## <a name="detecting-design-mode"></a>Zjišťování režimu návrhu
+
+Statické [ `DesignMode.IsDesignModeEnabled` ](xref:Xamarin.Forms.DesignMode.IsDesignModeEnabled) vlastnost můžete prověřit, abyste zjistili, zda je aplikace spuštěna v náhledu. To umožňuje zadat kód, který spustí, pouze když je aplikace spuštěna v náhledu:
+
+```csharp
+if (DesignMode.IsDesignModeEnabled)
+{
+  // Previewer only code  
+}
+```
 
 ## <a name="troubleshooting"></a>Poradce při potížích
 

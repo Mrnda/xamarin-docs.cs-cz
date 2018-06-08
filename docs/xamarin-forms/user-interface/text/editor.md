@@ -6,12 +6,13 @@ ms.assetid: 7074DB3A-30D2-4A6B-9A89-B029EEF20B07
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/22/2017
-ms.openlocfilehash: 035365a22c487039ff811756d91ca0a8d392d628
-ms.sourcegitcommit: c024f29ff730ae20c15e99bfe0268a0e1c9d41e5
+ms.date: 05/31/2018
+ms.openlocfilehash: 317d4f140daeccc525c4267fca43e6164a8f7827
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34848314"
 ---
 # <a name="editor"></a>Editor
 
@@ -26,7 +27,7 @@ _Víceřádkový textový vstup_
 
 ### <a name="setting-and-reading-text"></a>Nastavení a čtení textu
 
-Zpřístupní editoru, jako ostatních zobrazení prezentací text `Text` vlastnost. `Text` můžete použít k nastavení a přečtěte si text uvedený na `Editor`. Následující příklad ukazuje nastavení text v jazyce XAML:
+`Editor`, Jako ostatních zobrazení textu prezentací zpřístupní `Text` vlastnost. Tuto vlastnost lze použít k nastavení a přečtěte si text uvedený na `Editor`. Následující příklad ukazuje nastavení `Text` vlastnost v jazyce XAML:
 
 ```xaml
 <Editor Text="I am an Editor" />
@@ -44,6 +45,20 @@ var MyEditor = new Editor { Text = "I am an Editor" };
 var text = MyEditor.Text;
 ```
 
+### <a name="limiting-input-length"></a>Omezení vstupní délka
+
+[ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength) Vlastnosti lze omezit vstupní délku, která je povolené [ `Editor` ](xref:Xamarin.Forms.Editor). Tato vlastnost by měla být nastavená na kladné celé číslo:
+
+```xaml
+<Editor ... MaxLength="10" />
+```
+
+```csharp
+var editor = new Editor { ... MaxLength = 10 };
+```
+
+A [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength) vlastnost hodnota 0 znamená, že bude možné žádný vstup a hodnota `int.MaxValue`, což je výchozí hodnota pro [ `Editor` ](xref:Xamarin.Forms.Editor), určuje, že neexistuje žádná efektivní limit počtu znaků, které mohou být zapsána.
+
 ### <a name="keyboards"></a>Klávesnice
 
 Klávesnice, který se zobrazí, když uživatelé komunikovat s `Editor` lze nastavit prostřednictvím kódu programu prostřednictvím [ ``Keyboard`` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Keyboard/) vlastnost.
@@ -58,6 +73,23 @@ Možnosti pro typ klávesnice jsou:
 - **Adresa URL** &ndash; používá pro zadání cesty k souborům & webové adresy
 
 Došlo [příklad každý klávesnice](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/choose-keyboard-for-entry/) v části našich recepty.
+
+### <a name="enabling-and-disabling-spell-checking"></a>Povolení a zakázání kontrola pravopisu
+
+[ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) Ovládací prvky vlastnost jestli pravopisu kontrola je povolené. Ve výchozím nastavení, je vlastnost nastavena `true`. Jako uživatel zadá text, jsou vypsány pravopisné chyby.
+
+Ale v některých případech vstupní text, například zadáním uživatelského jména, kontrolu pravopisu poskytuje záporné prostředí a to by mělo být zakázáno nastavením [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) vlastnost `false`:
+
+```xaml
+<Editor ... IsSpellCheckEnabled="false" />
+```
+
+```csharp
+var editor = new Editor { ... IsSpellCheckEnabled = false };
+```
+
+> [!NOTE]
+> Když [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) je nastavena na `false`a není používán vlastní klávesnice, kontrola pravopisu nativní bude zakázán. Ale pokud [ `Keyboard` ](xref:Xamarin.Forms.Keyboard) má byla sada, která zakáže pravopisu kontrola, jako například [ `Keyboard.Chat` ](xref:Xamarin.Forms.Keyboard.Chat), `IsSpellCheckEnabled` vlastnost je ignorována. Proto vlastnost nelze použít k povolení pro kontrolu pravopisu `Keyboard` zakazující explicitně.
 
 ### <a name="colors"></a>Barvy
 

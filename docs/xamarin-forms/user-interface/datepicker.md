@@ -6,24 +6,28 @@ ms.assetid: 68E8EF8A-42E7-4939-8ABE-64D060E609D9
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
-ms.date: 03/12/2018
-ms.openlocfilehash: 0ab9d3c83b849e5ab5aac8bce9c581abd0312237
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/04/2018
+ms.openlocfilehash: 09b0bd788d9ac436e0270b447556ad2b0a848f99
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34848561"
 ---
 # <a name="using-datepicker"></a>Pomocí ovládací prvek DatePicker
 
 _Zobrazení Xamarin.Forms, která umožňuje uživateli vybrat datum_
 
-Platformě Xamarin.Forms [ `DatePicker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/) vyvolá ovládací prvek platformu pro výběr data a umožňuje uživateli vybrat datum. `DatePicker` Definuje pěti vlastností:
+Platformě Xamarin.Forms [ `DatePicker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/) vyvolá ovládací prvek platformu pro výběr data a umožňuje uživateli vybrat datum. `DatePicker` definuje vlastnosti osm:
 
 - [`MinimumDate`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.MinimumDate/) typu [ `DateTime` ](https://developer.xamarin.com/api/type/System.DateTime/), což výchozí nastavení je první den v roce 1900.
 - [`MaximumDate`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.MaximumDate/) typu `DateTime`, které výchozí hodnota je poslední den v roce 2100.
 - [`Date`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.Date/) typu `DateTime`, vybraným datem, což je výchozí hodnotou je hodnota [ `DateTime.Today` ](https://developer.xamarin.com/api/property/System.DateTime.Today/).
 - [`Format`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.Format/) typu `string`, [standardní](/dotnet/standard/base-types/standard-date-and-time-format-strings/) nebo [vlastní](/dotnet/standard/base-types/custom-date-and-time-format-strings/) .NET formátování řetězce, který se standardně "D", datum na dlouhém vzor.
 - [`TextColor`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.TextColor/) typu [ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/), barvu použitou k zobrazení vybraným datem, který se standardně [ `Color.Default` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Color.Default/).
+- [`FontAttributes`](xref:Xamarin.Forms.DatePicker.FontAttributes) typu [ `FontAttributes` ](xref:Xamarin.Forms.FontAttributes), což výchozí nastavení [ `FontAtributes.None` ](xref:Xamarin.Forms.FontAttributes.None).
+- [`FontFamily`](xref:Xamarin.Forms.DatePicker.FontFamily) typu `string`, což výchozí nastavení `null`.
+- [`FontSize`](xref:Xamarin.Forms.DatePicker.FontSize) typu `double`, což výchozí nastavení-1.0.
 
 `DatePicker` Aktivuje [ `DateSelected` ](https://developer.xamarin.com/api/event/Xamarin.Forms.DatePicker.DateSelected/) událost, když uživatel vybere datum.
 
@@ -32,7 +36,7 @@ Platformě Xamarin.Forms [ `DatePicker` ](https://developer.xamarin.com/api/type
 
 Interně `DatePicker` zajistí, že `Date` mezi `MinimumDate` a `MaximumDate`(včetně). Pokud `MinimumDate` nebo `MaximumDate` je nastaven tak, aby `Date` není mezi nimi, `DatePicker` upraví hodnotu `Date`.
 
-Všechny vlastnosti pět jsou zajišťované [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) objekty, které znamená, že může být ve vlastnostech lze cíle datové vazby. `Date` Vlastnost má režim výchozí vazby [ `BindingMode.TwoWay` ](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.TwoWay/), což znamená, že může být cílem datové vazby v aplikaci, která používá [Model-View-ViewModel (modelem MVVM)](~/xamarin-forms/enterprise-application-patterns/mvvm.md) Architektura.
+Všechny vlastnosti osm jsou zajišťované [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) objekty, které znamená, že může být ve vlastnostech lze cíle datové vazby. `Date` Vlastnost má režim výchozí vazby [ `BindingMode.TwoWay` ](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.TwoWay/), což znamená, že může být cílem datové vazby v aplikaci, která používá [Model-View-ViewModel (modelem MVVM)](~/xamarin-forms/enterprise-application-patterns/mvvm.md) Architektura.
 
 ## <a name="initializing-the-datetime-properties"></a>Inicializace vlastností data a času
 
@@ -67,13 +71,15 @@ V tomto příkladu jsou všechny tři vlastnosti inicializovány na odpovídají
 
 Pokud `DatePicker` neobsahuje vazby na jeho `Date` vlastnost, aplikace by měl připojit obslužnou rutinu do `DateSelected` událost, která má být informováni, když uživatel vybere nové datum.
 
+Informace o nastavení písma vlastnostech najdete v tématu [písem](~/xamarin-forms/user-interface/text/fonts.md).
+
 ## <a name="datepicker-and-layout"></a>Ovládací prvek DatePicker a rozložení
 
 Je možné použít možnost neomezeným vodorovném rozložení, jako je `Center`, `Start`, nebo `End` s `DatePicker`:
 
 ```xaml
-<DatePicker ··· 
-            HorizontalOptions="Center" 
+<DatePicker ···
+            HorizontalOptions="Center"
             ··· />
 ```
 
@@ -138,7 +144,7 @@ Tady je souboru XAML:
 </ContentPage>
 ```
 
-Každý `DatePicker` je přiřazen `Format` vlastnost "D" pro formát dlouhého data. Všimněte si také, že `endDatePicker` objekt má vazbu, která je cílena jeho `MinimumDate` vlastnost. Je vybraný zdroj vazby `Date` vlastnost `startDatePicker` objektu. Tím se zajistí, že koncové datum je vždy později než nebo rovna počáteční datum. Kromě dva `DatePicker` objekty, `Switch` označením "Zahrnout i dny celkem". 
+Každý `DatePicker` je přiřazen `Format` vlastnost "D" pro formát dlouhého data. Všimněte si také, že `endDatePicker` objekt má vazbu, která je cílena jeho `MinimumDate` vlastnost. Je vybraný zdroj vazby `Date` vlastnost `startDatePicker` objektu. Tím se zajistí, že koncové datum je vždy později než nebo rovna počáteční datum. Kromě dva `DatePicker` objekty, `Switch` označením "Zahrnout i dny celkem".
 
 Dva `DatePicker` zobrazení mají obslužné rutiny, které jsou připojené k `DateSelected` události a `Switch` má obslužná rutina připojené k jeho `Toggled` událostí. Tyto obslužné rutiny událostí v souboru kódu na pozadí a aktivovat nový výpočet dní mezi dvěma kalendářními:
 

@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2015
-ms.openlocfilehash: ddd779fc7eb1a10e74c68504367083ff0efcdfcd
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 7beb9e66a6e6bc29de36fcd605c5daa0098e75a2
+ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34848535"
 ---
 # <a name="listview"></a>ListView
 
@@ -41,8 +42,8 @@ ListView má počet součásti jsou k dispozici vykonávat funkci nativní pro k
 
 - **[Buněk](customizing-cell-appearance.md)**  &ndash; Data v prvku ListView se zobrazí v buňkách. Řádek dat odpovídá jednotlivých buněk. Existují vybrat z předdefinovaných buněk, nebo můžete definovat vlastní vlastní buňky. Předdefinované a vlastní buněk se dá použít nebo definován v jazyce XAML nebo kódu.
   - **[Předdefinované](customizing-cell-appearance.md#Built_in_Cells)**  &ndash; vytvořené v buňkách, zejména TextCell a funkce ImageCell, může být ideální pro výkon, protože tyto hodnoty odpovídají nativní ovládací prvky na každou platformu.
-    - **[TextCell](customizing-cell-appearance.md#TextCell)**  &ndash; zobrazí řetězec textu, volitelně s textem podrobností. Podrobnosti o text je reprezentován jako druhý řádek menší velikosti se zvýrazněnou barvou.
-    - **[Funkce ImageCell](customizing-cell-appearance.md#ImageCell)**  &ndash; zobrazí obrázek s textem. Zobrazí se jako TextCell s bitovou kopií na levé straně.
+       - **[TextCell](customizing-cell-appearance.md#TextCell)**  &ndash; zobrazí řetězec textu, volitelně s textem podrobností. Podrobnosti o text je reprezentován jako druhý řádek menší velikosti se zvýrazněnou barvou.
+       - **[Funkce ImageCell](customizing-cell-appearance.md#ImageCell)**  &ndash; zobrazí obrázek s textem. Zobrazí se jako TextCell s bitovou kopií na levé straně.
   - **[Vlastní buněk](customizing-cell-appearance.md#customcells)**  &ndash; vlastní buněk jsou skvělé, když potřebujete komplexní data k dispozici. Například vlastní zobrazení může představovat seznam skladeb, včetně alba a umělcem:
 
 ![](images/image-cell-default.png "ListView s ImageCells")
