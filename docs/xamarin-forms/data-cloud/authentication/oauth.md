@@ -1,17 +1,18 @@
 ---
 title: Ověřování uživatelů pomocí zprostředkovatele Identity
-description: Xamarin.Auth je SDK a platformy pro ověřování uživatelů a ukládání svých účtů. Zahrnuje ověřovací data OAuth, které poskytují podporu pro použití poskytovatelů identit, jako je například Google, Microsoft, Facebook či Twitter. Tento článek vysvětluje, jak používat ke správě procesu ověřování v aplikaci Xamarin.Forms Xamarin.Auth.
+description: Tento článek vysvětluje, jak používat ke správě procesu ověřování v aplikaci Xamarin.Forms Xamarin.Auth.
 ms.prod: xamarin
 ms.assetid: D44745D5-77BB-4596-9B8C-EC75C259157C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/19/2017
-ms.openlocfilehash: 26e85a37cfd36b5d4f045273548efafccca79e1a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 361b5e5583b10b7ea07abd1460350d6445cae1c2
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241257"
 ---
 # <a name="authenticating-users-with-an-identity-provider"></a>Ověřování uživatelů pomocí zprostředkovatele Identity
 
@@ -268,4 +269,4 @@ Tento článek vysvětlení najdete postup používání Xamarin.Auth ke správ�
 - [OAuth 2.0 pro nativní aplikace](https://tools.ietf.org/html/draft-ietf-oauth-native-apps-12)
 - [Pomocí OAuth2.0 pro přístup k rozhraní API Google](https://developers.google.com/identity/protocols/OAuth2)
 - [Xamarin.Auth (NuGet)](https://www.nuget.org/packages/xamarin.auth/)
-- [Xamarin.Auth (GitHub)](https://github.com/xamarin/Xamarin.Auth)
+- [Xamarin.Auth (Githubu)](https://github.com/xamarin/Xamarin.Auth)

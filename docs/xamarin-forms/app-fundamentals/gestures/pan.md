@@ -1,18 +1,18 @@
 ---
 title: Přidání pro rozpoznávání gesto Pan
-description: Gesto pan se používá pro zjišťování přetahování a je implementována pomocí třídy PanGestureRecognizer. Běžný scénář pro gesto panoramování je vodorovně a svisle přetáhnout bitovou kopii, tak, aby veškerý obsah image jde zobrazit, když se zobrazily v zobrazení menší než image rozměry. To je prováděno přesunutím obrázku v rámci zobrazení a je ukázáno v tomto článku.
+description: Tento článek vysvětluje, jak používat gesto pan k vodorovně a svisle přetáhněte bitovou kopii, tak, aby veškerý obsah image jde zobrazit, když se zobrazily v zobrazení menší než image rozměry.
 ms.prod: xamarin
 ms.assetid: 42CBD2CF-432D-4F19-A05E-D569BB7F8713
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
-ms.openlocfilehash: 1f564fe14be0bcda08722bad11c9c5bd8152687a
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: d3e4dfc57678ff75fb8f9761360748d94aeefcc2
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34846328"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35239981"
 ---
 # <a name="adding-a-pan-gesture-recognizer"></a>Přidání pro rozpoznávání gesto Pan
 

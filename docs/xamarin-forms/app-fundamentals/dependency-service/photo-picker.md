@@ -1,17 +1,18 @@
 ---
 title: Výběr fotografie z knihovny obrázků
-description: Použijte DependencyService a vyberte fotografie z knihovny obrázků telefonu
+description: Tento článek vysvětluje způsob použití třídy Xamarin.Forms DependencyService vybrat fotografie z knihovny obrázků telefonu.
 ms.prod: xamarin
 ms.assetid: 4F51B0E7-6A63-403C-B488-500CCBCE75DD
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: e552a0bf76572d50eb0d4618af69fc1179979f97
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: af5f499687e1ef0b7c245ca524e33cd9d31683cb
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242466"
 ---
 # <a name="picking-a-photo-from-the-picture-library"></a>Výběr fotografie z knihovny obrázků
 

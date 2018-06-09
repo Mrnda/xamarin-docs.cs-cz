@@ -7,16 +7,14 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/30/2016
-ms.openlocfilehash: b893fe5e56cc2d43a71870ffbbd20f0b8c6cfd18
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 8b489fd1a1bcce474decf6881e8eb6620c2ee2e3
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34787492"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240733"
 ---
 # <a name="introduction-to-coreml-in-xamarinios"></a>Úvod do CoreML v Xamarin.iOS
-
-_Strojového učení pro mobilní aplikace v systému iOS 11_
 
 CoreML přináší machine learning k iOS – aplikace mohou využít výhod vyškolení machine learning modely k provádění nejrůznějším úloh, od řešení problémů k rozpoznávání bitové kopie.
 
@@ -33,28 +31,19 @@ Tyto kroky popisují, jak přidat CoreML do projektu iOS. Odkazovat [Pricer pros
 
 ![Snímek obrazovky ukázkové předpověď ceny MARS prostředí](coreml-images/marspricer-heading.png)
 
-### <a name="1-add-the-model-to-the-project"></a>1. Přidání modelu do projektu
+### <a name="1-add-the-coreml-model-to-the-project"></a>1. Do projektu přidejte CoreML modelu
 
-Přidání kompilované modelu (adresář s **.modelc** rozšíření) k **prostředky** adresáři projektu. Obsah adresáře by měly mít akci s sestavení **BundleResource**:
+Přidání modelu CoreML (soubor s **.mlmodel** rozšíření) k **prostředky** adresáři projektu. 
 
-![Složky zdrojů by měl obsahovat kompilované modelu](coreml-images/resources-modelc.png)
-
-[Ukázky](https://developer.xamarin.com/samples/monotouch/ios11/) použití modelů kompilovat v Xcode 9 nebo ručně pomocí následujícího příkazu terminálu:
-
-```csharp
-xcrun coremlcompiler compile {model.mlmodel} {outputFolder}
-```
-
-> [!NOTE]
-> **.model –** soubory _musí_ kompilovány do **.modelc** před použitím podle CoreML
+Ve vlastnostech souboru modelu jeho **akce sestavení** je nastaven na **CoreMLModel**. To znamená, že se zkompiluje do **.mlmodelc** souboru, když je aplikace vytvářena.
 
 ### <a name="2-load-the-model"></a>2. Načíst model
 
-Před použitím modelu, načíst pomocí `MLModel.FromUrl` statickou metodu:
+Načtení modelu pomocí `MLModel.Create` statickou metodu:
 
 ```csharp
 var assetPath = NSBundle.MainBundle.GetUrlForResource("NameOfModel", "mlmodelc");
-model = MLModel.FromUrl(assetPath, out NSError error1);
+model = MLModel.Create(assetPath, out NSError error1);
 ```
 
 ### <a name="3-set-the-parameters"></a>3. Nastavte parametry
@@ -113,13 +102,15 @@ CoreML model _MNISTClassifier_ je načíst a pak uzavřen do `VNCoreMLModel` tak
 
 ```csharp
 // Load the ML model
-var assetPath = NSBundle.MainBundle.GetUrlForResource("MNISTClassifier", "mlmodelc");
-var mlModel = MLModel.FromUrl(assetPath, out NSError mlErr);
-var vModel = VNCoreMLModel.FromMLModel(mlModel, out NSError vnErr);
+var bundle = NSBundle.MainBundle;
+var assetPath = bundle.GetUrlForResource("MNISTClassifier", "mlmodelc");
+NSError mlErr, vnErr;
+var mlModel = MLModel.Create(assetPath, out mlErr);
+var model = VNCoreMLModel.FromMLModel(mlModel, out vnErr);
 
 // Initialize Vision requests
 RectangleRequest = new VNDetectRectanglesRequest(HandleRectangles);
-ClassificationRequest = new VNCoreMLRequest(vModel, HandleClassification);
+ClassificationRequest = new VNCoreMLRequest(model, HandleClassification);
 ```
 
 Třída musí implementovat `HandleRectangles` a `HandleClassification` metody pro žádosti o vizi, zobrazí v krocích 3 a 4 níže.
@@ -153,7 +144,7 @@ void HandleRectangles(VNRequest request, NSError error) {
   // Run the Core ML MNIST classifier -- results in handleClassification method
   var handler = new VNImageRequestHandler(correctedImage, new VNImageOptions());
   DispatchQueue.DefaultGlobalQueue.DispatchAsync(() => {
-    handler.Perform(new VNRequest[] { ClassificationRequest }, out NSError err);
+    handler.Perform(new VNRequest[] {ClassificationRequest}, out NSError err);
   });
 }
 ```
@@ -167,7 +158,7 @@ void HandleRectangles(VNRequest request, NSError error) {
 ```csharp
 void HandleClassification(VNRequest request, NSError error){
   var observations = request.GetResults<VNClassificationObservation>();
-  ... omitted error handling ...
+  // ... omitted error handling ...
   var best = observations[0]; // first/best classification result
   // render in UI
   DispatchQueue.MainQueue.DispatchAsync(()=>{
@@ -175,8 +166,6 @@ void HandleClassification(VNRequest request, NSError error){
   });
 }
 ```
-
-
 
 ## <a name="samples"></a>Ukázky kódu
 
@@ -187,7 +176,6 @@ Existují tři CoreML ukázky můžete vyzkoušet:
 * [Vize & CoreML ukázka](https://developer.xamarin.com/samples/monotouch/ios11/CoreMLVision/) přijme parametrem bitové kopie a používá rozhraní vize k identifikaci odmocnina oblasti v bitovou kopii, které jsou předávány CoreML modelu, který rozpoznává jeden číslic.
 
 * Nakonec [CoreML Image rozpoznávání ukázka](https://developer.xamarin.com/samples/monotouch/ios11/CoreMLImageRecognition/) CoreML používá k identifikaci funkcí v fotografie. Ve výchozím nastavení používá menší **SqueezeNet** modelu (5MB), ale bylo zapsáno tak, aby si můžete stáhnout a začlenit delší **VGG16** modelu (553 MB). Další informace najdete v tématu [tohoto příkladu readme](https://github.com/xamarin/ios-samples/blob/master/ios11/CoreMLImageRecognition/CoreMLImageRecognition/README.md).
-
 
 ## <a name="related-links"></a>Související odkazy
 

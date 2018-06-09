@@ -1,16 +1,18 @@
 ---
 title: Vlastní umístění video
+description: Tento článek vysvětluje, jak implementovat vlastní pozici panelu v aplikaci přehrávání videa pomocí Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 6D792264-30FF-46F7-8C1B-2FEF9D277DF4
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 51256f078411f0ade72867544ced3d9a3a91d7b4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b5f3c9dcbaa6ba1a9e86568ccabe38416cc653f2
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241907"
 ---
 # <a name="custom-video-positioning"></a>Vlastní umístění video
 

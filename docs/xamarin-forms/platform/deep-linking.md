@@ -1,6 +1,6 @@
 ---
 title: Indexování aplikace a přímé propojení
-description: Indexování aplikace umožňuje aplikacím, které by jinak zapomenete po pár používá zůstane relevantní, ve které jsou uvedeny ve výsledcích hledání. Přímé propojení umožňuje aplikacím reagovat na výsledek hledání, který obsahuje data aplikací, obvykle tak, že přejdete na stránku na něj odkazovat z přímý odkaz. Tento článek ukazuje, jak používat aplikace indexování a hloubkové propojení, aby se obsah aplikace Xamarin.Forms prohledávatelné na zařízení iOS a Android.
+description: Tento článek ukazuje, jak používat aplikace indexování a hloubkové propojení, aby se obsah aplikace Xamarin.Forms prohledávatelné na zařízení iOS a Android.
 ms.prod: xamarin
 ms.assetid: 410C5D19-AA3C-4E0D-B799-E288C5803226
 ms.technology: xamarin-forms
@@ -8,11 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/11/2016
-ms.openlocfilehash: d302e24ee74290eecd3dd9ad3f81921d6654cc10
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9cc5177a585af1569385840ab8c370993984ca2b
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242489"
 ---
 # <a name="application-indexing-and-deep-linking"></a>Indexování aplikace a přímé propojení
 

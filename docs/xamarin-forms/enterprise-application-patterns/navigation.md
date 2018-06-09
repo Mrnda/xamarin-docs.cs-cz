@@ -1,18 +1,20 @@
 ---
-title: Navigace
+title: Podnikové aplikace navigace
+description: Tato kapitola vysvětluje, jak mobilní aplikace eShopOnContainers provede zobrazení modelu první navigační z modelů zobrazení.
 ms.prod: xamarin
 ms.assetid: 4cad57b5-7fe4-4527-a988-d9b60c9620b4
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: aa2e2858e3bb8e435ec3f38bb3d5b249eaa6cba4
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9ac9f3200440001752c07ad45fdaaf2b1d9ba6a5
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243678"
 ---
-# <a name="navigation"></a>Navigace
+# <a name="enterprise-app-navigation"></a>Podnikové aplikace navigace
 
 Xamarin.Forms zahrnuje podporu pro navigaci na stránce, které obvykle výsledky z interakce uživatele se uživatelské rozhraní nebo z aplikace v důsledku vnitřní stav řízené logiku změny. Navigace však může být složité implementace v aplikacích, které používají vzorec Model-View-ViewModel (modelem MVVM), protože musí být splněny následující problémy:
 

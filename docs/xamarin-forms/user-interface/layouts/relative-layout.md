@@ -1,20 +1,20 @@
 ---
-title: RelativeLayout
-description: RelativeLayout použijte k vytvoření uživatelská rozhraní, které škálovat podle jakékoli velikosti obrazovky.
+title: Xamarin.Forms RelativeLayout
+description: Tento článek vysvětluje, jak vytvořit uživatelská rozhraní, které škálovat podle jakékoli velikosti obrazovky pomocí Xamarin.Forms RelativeLayout třídy.
 ms.prod: xamarin
 ms.assetid: 2530BCB8-01B8-4C4F-BF14-CA53659F1B5A
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: f23c00fb40ba661cbc1633b61a898a9437fdee98
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 712092e58a7a7358ba1fa808614822c7988e6105
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847017"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245052"
 ---
-# <a name="relativelayout"></a>RelativeLayout
+# <a name="xamarinforms-relativelayout"></a>Xamarin.Forms RelativeLayout
 
 `RelativeLayout` slouží k pozice a velikosti zobrazení relativně k vlastnosti zobrazení rozložení nebo na stejné úrovni. Na rozdíl od `AbsoluteLayout`, `RelativeLayout` nemá koncept přesunutí ukotvení a nemá zařízení pro umístění prvků relativně k dolní a pravé hrany rozložení. `RelativeLayout` podporuje umísťovací elementy mimo svůj vlastní rozsah.
 

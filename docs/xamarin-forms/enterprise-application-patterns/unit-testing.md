@@ -1,18 +1,20 @@
 ---
-title: Testování částí
+title: Podnikové aplikace testování částí
+description: Tato kapitola vysvětluje, jak se provádí testování částí v mobilní aplikaci eShopOnContainers.
 ms.prod: xamarin
 ms.assetid: 4af82e52-f99b-4cad-b278-1745f190c240
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 57201a32f5ffc0ae962f6db851a25a737e1cb17d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 06cd89e0b0871eac723e8580340173f77821e4ed
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242528"
 ---
-# <a name="unit-testing"></a>Testování částí
+# <a name="unit-testing-enterprise-apps"></a>Podnikové aplikace testování částí
 
 Mobilních aplikací mít jedinečný problémy, které ještě nemají desktop a webových aplikací si dělat starosti. Mobilní uživatelé se budou lišit podle zařízení, která používají, pomocí připojení k síti, dostupnost služby a řadu dalších faktorů. Mobilní aplikace musí být proto testovány, jak se pravděpodobně použijí v reálném světě ke zlepšení jejich kvality, spolehlivosti a výkonu. Existuje mnoho typů testování, které mají být provedeny v aplikaci, včetně testování částí, integrace, testování a testování pomocí testování se nejběžnější formu testování částí uživatelského rozhraní.
 

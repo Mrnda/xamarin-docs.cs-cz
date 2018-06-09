@@ -1,17 +1,18 @@
 ---
 title: Nastavení hodnot usnadnění na elementy uživatelského rozhraní
-description: Xamarin.Forms umožňuje usnadnění hodnoty nastavení na elementy uživatelského rozhraní pomocí přidružené vlastnosti ze třídy AutomationProperties, které se v změní hodnoty nativní usnadnění přístupu sady. Tento článek vysvětluje, jak používat třídu AutomationProperties tak, aby čtečky obrazovky můžete prodiskutovat elementy na stránce.
+description: Tento článek vysvětluje, jak používat třídu AutomationProperties tak, aby čtečky obrazovky můžete prodiskutovat elementy na stránce.
 ms.prod: xamarin
 ms.assetid: c0bb6893-fd26-47e7-88e5-3c333c9f786c
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: cf9071684061b584e1cb75cfd50b33212f42bf79
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ad7b1c41f34c14a81910d5be30fd6484919e8d39
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241881"
 ---
 # <a name="setting-accessibility-values-on-user-interface-elements"></a>Nastavení hodnot usnadnění na elementy uživatelského rozhraní
 
@@ -35,7 +36,7 @@ Každá platforma má čtečka různých obrazovek komentovat hodnoty usnadněn�
 
 - iOS má VoiceOver. Další informace najdete v tématu [usnadnění Test na vaše zařízení s VoiceOver](https://developer.apple.com/library/content/technotes/TestingAccessibilityOfiOSApps/TestAccessibilityonYourDevicewithVoiceOver/TestAccessibilityonYourDevicewithVoiceOver.html) na developer.apple.com.
 - Android má TalkBack. Další informace najdete v tématu [testování aplikace pro usnadnění](https://developer.android.com/training/accessibility/testing.html#talkback) na developer.android.com.
-- Windows has Narrator. Další informace najdete v tématu [ověřit scénáře hlavní aplikace pomocí Předčítání](/windows/uwp/accessibility/accessibility-testing#verify-main-app-scenarios-by-using-narrator/).
+- Systém Windows má Předčítání. Další informace najdete v tématu [ověřit scénáře hlavní aplikace pomocí Předčítání](/windows/uwp/accessibility/accessibility-testing#verify-main-app-scenarios-by-using-narrator/).
 
 Přesné chování čtečky obrazovky však závisí na software a konfigurace uživatele je. Například většina čtečky obrazovky přečtěte si text související s ovládacím prvkem, pokud obdrží fokus, tím, že uživatelům orientaci přechází mezi ovládacími prvky na stránce. Uživatelské rozhraní celá aplikace si také přečíst některé čtečky obrazovky při, zobrazí se stránka, která umožňuje uživatelům přijímat všechny stránky k dispozici informační obsahu před pokusem o jeho přejděte.
 

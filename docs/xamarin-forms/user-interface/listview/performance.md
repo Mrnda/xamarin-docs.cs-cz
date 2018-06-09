@@ -1,28 +1,24 @@
 ---
 title: Výkon ListView
-description: Ujistěte se, vysoký výkon s vaší aplikací na základě ListView.
+description: I když ListView je výkonný zobrazení pro zobrazení dat, má určitá omezení. Tento článek vysvětluje, jak zajistit vysoký výkon s Xamarin.Forms ListView v aplikaci.
 ms.prod: xamarin
 ms.assetid: 1B085639-652C-4862-86EB-5D55D32B9395
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2017
-ms.openlocfilehash: dcd4881e2ad7f1bb4af5455805da1dd2cade3605
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4803a612e2b06e458f2859dbbbd30b970f0fc8ea
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244900"
 ---
 # <a name="listview-performance"></a>Výkon ListView
 
 Při zápisu mobilních aplikací, záleží na výkon. Uživatelé mají dřívější očekávat plynulé posouvání a časů rychlé načítání. Nemůže splnit očekávání uživatelů bude náklady můžete hodnocení do obchodu s aplikacemi nebo v případě-obchodní aplikace, náklady organizace čas a peníze.
 
 I když [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) je výkonný zobrazení pro zobrazení dat, má určitá omezení. Posouvání výkonu může dojít, pokud používáte vlastní buněk, zejména v případě, že budou obsahovat hluboko vložené zobrazení hierarchie, nebo použijte určité rozložení, které vyžadují mnoho měření. Naštěstí existují postupů, které můžete použít, aby se zabránilo snížení výkonu.
-
-V následujících tématech jsou popsané v tomto článku:
-
-- **[Ukládání do mezipaměti strategie](#cachingstrategy)**
-- **[Zlepšení výkonu ListView](#improving-performance)**
 
 <a name="cachingstrategy" />
 

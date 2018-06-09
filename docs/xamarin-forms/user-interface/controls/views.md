@@ -1,18 +1,18 @@
 ---
 title: Zobrazení Xamarin.Forms
-description: Zobrazení Xamarin.Forms jsou jako stavební bloky pro různé platformy mobilních uživatelská rozhraní.
+description: Zobrazení Xamarin.Forms jsou jako stavební bloky pro různé platformy mobilních uživatelská rozhraní. Tento článek obsahuje seznam zobrazení, které jsou součástí Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: AC070686-A423-4A98-8BB6-0B9F94C062CC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: aafad29a30130c9ec088121e03a986034f002e1c
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.openlocfilehash: 414df933716c7ce5d9422e8a2b9be89ba7eff3a9
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34733084"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243515"
 ---
 # <a name="xamarinforms-views"></a>Zobrazení Xamarin.Forms
 
@@ -80,7 +80,7 @@ Zobrazení jsou objekty uživatelského rozhraní, jako je například popisky, 
 | [`SearchBar`](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/) Zobrazí oblast pro uživatele na typ textového řetězce a tlačítko (nebo na klávesnici klíč), který se dá signál aplikaci k provedení vyhledávání. [ `Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.SearchBar.Text/) Vlastnost poskytuje přístup k text a [ `SearchButtonPressed` ](https://developer.xamarin.com/api/event/Xamarin.Forms.SearchBar.SearchButtonPressed/) událost označuje, že byla stisknuta tlačítko.<br /><br />[Dokumentaci k rozhraní API](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/) | [![Příklad SearchBar](views-images/SearchBar.png "SearchBar příklad")](views-images/SearchBar-Large.png#lightbox "SearchBar příklad")<br /> [Kód jazyka C# pro tuto stránku](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SearchBarDemoPage.cs) / [XAML – stránka](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SearchBarDemoPage.xaml) s [kódu](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SearchBarDemoPage.xaml.cs) |
 |     |     |
 
-## <a name="views-for-setting-values"></a>Zobrazení pro nastavení hodnot 
+## <a name="views-for-setting-values"></a>Zobrazení pro nastavení hodnot
 
 ### <a name="slider"></a>Posuvník
 
@@ -96,7 +96,7 @@ Zobrazení jsou objekty uživatelského rozhraní, jako je například popisky, 
 | [`Stepper`](https://developer.xamarin.com/api/type/Xamarin.Forms.Stepper/) Umožňuje uživateli vybrat `double` hodnotu z rozsahu hodnot přírůstkové zadaným [ `Minimum` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Stepper.Minimum/), [ `Maximum` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Stepper.Maximum/), a [ `Increment` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Stepper.Increment/) vlastnosti.<br /><br />[Dokumentaci k rozhraní API](https://developer.xamarin.com/api/type/Xamarin.Forms.Stepper/) | [![Příklad krokovač](views-images/Stepper.png "krokovač příklad")](views-images/Stepper-Large.png#lightbox "krokovač příklad")<br />[Kód jazyka C# pro tuto stránku](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/StepperDemoPage.cs) / [XAML – stránka](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/StepperDemoPage.xaml) |
 |     |     |
 
-### <a name="switch"></a>přepínače 
+### <a name="switch"></a>přepínače
 
 |     |     |
 | --- | --- |

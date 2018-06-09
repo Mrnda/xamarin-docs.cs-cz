@@ -1,19 +1,20 @@
 ---
-title: Vazba režimu
-description: Řízení toku informací mezi zdrojem a cílem
+title: Režim vazby Xamarin.Forms
+description: Tento článek vysvětluje, jak řídit tok informací mezi zdrojem a cílem pomocí vazby režimu, který je zadaný člen výčtu BindingMode. Každá vlastnost vazbu má výchozí režim vazby, označující režim platit při této vlastnosti je cílem datové vazby.
 ms.prod: xamarin
 ms.assetid: D087C389-2E9E-47B9-A341-5B14AC732C45
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 05/01/2018
-ms.openlocfilehash: 1aa612d8b855158f09bc0aeaad1520a44b3d9637
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 12e6416eee989b0d36a7b9fe0ca4dcd9b18b0ade
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241813"
 ---
-# <a name="binding-mode"></a>Vazba režimu
+# <a name="xamarinforms-binding-mode"></a>Režim vazby Xamarin.Forms
 
 V [předchozí článek](basic-bindings.md), **alternativní kód vazby** a **alternativní XAML vazby** vybrané stránky `Label` s jeho `Scale` vlastnost vázána `Value` vlastnost `Slider`. Protože `Slider` počáteční hodnota je 0, příčinou `Scale` vlastnost `Label` být nastavena na 0, nikoli 1 a `Label` smazán.
 
@@ -26,7 +27,7 @@ V [ **DataBindingDemos** ](https://developer.xamarin.com/samples/xamarin-forms/D
              Title="Reverse Binding">
     <StackLayout Padding="10, 0">
 
-        <Label x:Name="label" 
+        <Label x:Name="label"
                Text="TEXT"
                FontSize="80"
                HorizontalOptions="Center"
@@ -52,9 +53,9 @@ Rozdíl mezi **zpětná vazba** ukázka a starší ukázky zahrnuje *vazby reži
 
 ## <a name="the-default-binding-mode"></a>Výchozí režim vazby
 
-Vazba režimu se zadaným členem [ `BindingMode` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindingMode/) výčtu: 
+Vazba režimu se zadaným členem [ `BindingMode` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindingMode/) výčtu:
 
-- [`Default`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.Default/) 
+- [`Default`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.Default/)
 - [`TwoWay`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.TwoWay/) &ndash; data přejde obou směrech mezi zdrojem a cílem
 - [`OneWay`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.OneWay/) &ndash; data přejde ze zdroje k cíli
 - [`OneWayToSource`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.OneWayToSource/) &ndash; data přejde z cíle na zdroj
@@ -78,11 +79,11 @@ Většina vazbu vlastnosti mají výchozí režim vazba z `OneWay` , ale násled
 - `SelectedItem` Vlastnost `MultiPage`
 - `SelectedIndex` a `SelectedItem` vlastnosti `Picker`
 - `Value` Vlastnost `Slider` a `Stepper`
-- `IsToggled` Vlastnost `Switch` 
+- `IsToggled` Vlastnost `Switch`
 - `On` Vlastnost `SwitchCell`
 - `Time` Vlastnost `TimePicker`
 
-Tyto konkrétní vlastnosti, které jsou definovány jako `TwoWay` velmi dobré důvodu: 
+Tyto konkrétní vlastnosti, které jsou definovány jako `TwoWay` velmi dobré důvodu:
 
 V případě vazby dat používají s architekturou aplikace Model-View-ViewModel (modelem MVVM), třída ViewModel je zdroji datové vazby a zobrazení, která se skládá ze zobrazení, jako `Slider`, jsou datová vazba cíle. Rozhraní MVVM vazby vypadat **zpětná vazba** ukázka víc než v předchozích ukázkách vazby. Je velmi pravděpodobné, že chcete jednotlivých zobrazení na stránce inicializovat pomocí hodnoty odpovídající vlastnosti v ViewModel, ale v zobrazení by měl ovlivní také vlastnost ViewModel.
 
@@ -117,7 +118,7 @@ ViewModel je zdrojem datové vazby. Nemá ViewModel *není* definovat vlastnosti
 public class HslColorViewModel : INotifyPropertyChanged
 {
     Color color;
-    string name; 
+    string name;
 
     public event PropertyChangedEventHandler PropertyChanged;
 
@@ -130,7 +131,7 @@ public class HslColorViewModel : INotifyPropertyChanged
                 Color = Color.FromHsla(value, color.Saturation, color.Luminosity);
             }
         }
-        get 
+        get
         {
             return color.Hue;
         }
@@ -209,7 +210,7 @@ Když `Color` změny vlastností, statické `GetNearestColorName` metoda v `Name
 
 Pokud jako zdroj vazba je nastavená ViewModel, infrastruktura vazeb připojí obslužnou rutinu do `PropertyChanged` událostí. Tímto způsobem vazby můžete upozornění na změny vlastnosti a pak můžete nastavit vlastnosti cíle v změněné hodnoty.
 
-Ale když vlastnost target (nebo `Binding` definice na cílovou vlastnost) má `BindingMode` z `OneTime`, není nutné pro infrastruktura vazeb připojit obslužnou rutinu na `PropertyChanged` událostí. Vlastnost target je aktualizovat pouze tehdy, když `BindingContext` změny a když samotné vlastnosti zdroje není změny. 
+Ale když vlastnost target (nebo `Binding` definice na cílovou vlastnost) má `BindingMode` z `OneTime`, není nutné pro infrastruktura vazeb připojit obslužnou rutinu na `PropertyChanged` událostí. Vlastnost target je aktualizovat pouze tehdy, když `BindingContext` změny a když samotné vlastnosti zdroje není změny.
 
 **Jednoduchý selektor barva** souboru XAML vytvoří `HslColorViewModel` ve slovníku prostředků a inicializuje stránky `Color` vlastnost. `BindingContext` Vlastnost `Grid` je nastaven na `StaticResource` vazby rozšíření, chcete-li tento prostředek:
 
@@ -221,7 +222,7 @@ Ale když vlastnost target (nebo `Binding` definice na cílovou vlastnost) má `
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <local:HslColorViewModel x:Key="viewModel" 
+            <local:HslColorViewModel x:Key="viewModel"
                                      Color="MediumTurquoise" />
 
             <Style TargetType="Slider">
@@ -229,7 +230,7 @@ Ale když vlastnost target (nebo `Binding` definice na cílovou vlastnost) má `
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
-        
+
     <Grid BindingContext="{StaticResource viewModel}">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
@@ -246,7 +247,7 @@ Ale když vlastnost target (nebo `Binding` definice na cílovou vlastnost) má `
                    HorizontalTextAlignment="Center" />
 
             <Slider Value="{Binding Hue}" />
-    
+
             <Slider Value="{Binding Saturation}" />
 
             <Slider Value="{Binding Luminosity}" />
@@ -257,7 +258,7 @@ Ale když vlastnost target (nebo `Binding` definice na cílovou vlastnost) má `
 
 `BoxView`, `Label`a tři `Slider` zobrazení dědit z kontextu vazby `Grid`. Tato zobrazení se všechny vazby cíle, které odkazují na vlastnosti zdroje v ViewModel. Pro `Color` vlastnost `BoxView`a `Text` vlastnost `Label`, vazby dat jsou `OneWay`: z vlastností v ViewModel jsou nastaveny vlastnosti v zobrazení.
 
-`Value` Vlastnost `Slider`, je však `TwoWay`. To umožňuje každý `Slider` možné nastavit ViewModel a také pro ViewModel nastavení z každé `Slider`. 
+`Value` Vlastnost `Slider`, je však `TwoWay`. To umožňuje každý `Slider` možné nastavit ViewModel a také pro ViewModel nastavení z každé `Slider`.
 
 Při prvním spuštění programu, `BoxView`, `Label`a tři `Slider` prvky jsou všechny sady z ViewModel podle počáteční `Color` vlastnost nastavena, když ViewModel byla vytvořena instance. Můžete se podívat na snímku obrazovky iOS na levé straně:
 
@@ -272,7 +273,7 @@ Vytváření instancí ViewModel ve slovníku prostředků je jedním z běžný
     <Grid.BindingContext>
         <local:HslColorViewModel Color="MediumTurquoise" />
     </Grid.BindingContext>
-        
+
     ···
 
 </Grid>
@@ -408,9 +409,9 @@ public class SampleSettingsViewModel : INotifyPropertyChanged
 }
 ```
 
-Každé nastavení aplikace je vlastnost, která je uložena do slovníku Xamarin.Forms vlastnosti v metodu s názvem `SaveState` a načíst z tohoto slovníku v konstruktoru. Směrem dolní třídy jsou dvě metody, které pomáhají zjednodušit ViewModels a aby byly méně náchylná k chybám. `OnPropertyChanged` Metoda v dolní části je volitelný parametr, který je nastaven na vlastnost volání. Tím je zabráněno pravopisné chyby při zadávání názvu vlastnosti jako řetězec. 
+Každé nastavení aplikace je vlastnost, která je uložena do slovníku Xamarin.Forms vlastnosti v metodu s názvem `SaveState` a načíst z tohoto slovníku v konstruktoru. Směrem dolní třídy jsou dvě metody, které pomáhají zjednodušit ViewModels a aby byly méně náchylná k chybám. `OnPropertyChanged` Metoda v dolní části je volitelný parametr, který je nastaven na vlastnost volání. Tím je zabráněno pravopisné chyby při zadávání názvu vlastnosti jako řetězec.
 
-`SetProperty` Metodu v třídě nemá i více: porovnává hodnotu, která je nastavena na vlastnosti s hodnotou uloženou jako pole a pouze volá `OnPropertyChanged` Pokud nejsou tyto dvě hodnoty rovny. 
+`SetProperty` Metodu v třídě nemá i více: porovnává hodnotu, která je nastavena na vlastnosti s hodnotou uloženou jako pole a pouze volá `OnPropertyChanged` Pokud nejsou tyto dvě hodnoty rovny.
 
 `SampleSettingsViewModel` Třída definuje dvě vlastnosti pro barvu pozadí: `BackgroundNamedColor` vlastnost je typu `NamedColor`, což je třída také součástí **DataBindingDemos** řešení. `BackgroundColor` Vlastnost je typu `Color`a se získávají z `Color` vlastnost `NamedColor` objektu.
 
@@ -649,7 +650,7 @@ Všechny podřízené objekty stránky zdědí kontextu vazby. Většina vazby n
 SelectedItem="{Binding BackgroundNamedColor, Mode=TwoWay}"
 ```
 
-Výchozí režim vazby pro `SelectedItem` je `OneWayToSource`, která nastaví vlastnost ViewModel z vybrané položky. `TwoWay` Režim umožňuje `SelectedItem` inicializované ze ViewModel. 
+Výchozí režim vazby pro `SelectedItem` je `OneWayToSource`, která nastaví vlastnost ViewModel z vybrané položky. `TwoWay` Režim umožňuje `SelectedItem` inicializované ze ViewModel.
 
 Ale, když `SelectedItem` nastavena tímto způsobem `ListView` automaticky neposouvá zobrazení vybrané položky. Je třeba trochu kód v souboru kódu na pozadí:
 
@@ -662,13 +663,13 @@ public partial class SampleSettingsPage : ContentPage
 
         if (colorListView.SelectedItem != null)
         {
-            colorListView.ScrollTo(colorListView.SelectedItem, 
-                                   ScrollToPosition.MakeVisible, 
+            colorListView.ScrollTo(colorListView.SelectedItem,
+                                   ScrollToPosition.MakeVisible,
                                    false);
         }
     }
 }
-``` 
+```
 
 Snímek obrazovky iOS na levé straně ukazuje program při prvním spuštění. Konstruktor pro `SampleSettingsViewModel` inicializuje barva pozadí na bílou, na kterém jsou položky vybrané v `ListView`:
 

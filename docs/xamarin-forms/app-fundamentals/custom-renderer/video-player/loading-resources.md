@@ -1,22 +1,24 @@
 ---
 title: Načítání videa prostředků aplikace
+description: Tento článek vysvětluje, jak načíst videa ukládají jako prostředky aplikace v aplikaci přehrávání videa pomocí Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: F75BD540-9354-4C17-A119-57F3DEC66D54
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 89c424ee80a4ebf6363a836e752b72ee9bc5cd5a
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: f28b0dc8e25cb2e498f4101175005f05a5c5a6ef
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241029"
 ---
 # <a name="loading-application-resource-videos"></a>Načítání videa prostředků aplikace
 
 Vlastní nástroji pro vykreslování pro `VideoPlayer` zobrazení podporují přehrávání videa soubory, které byly vloženy do projektů jednotlivé platformy jako prostředky aplikace. Ale aktuální verze `VideoPlayer` nemají přístup k prostředkům v rozhraní .NET standardní knihovny.
 
-K načtení těchto prostředků, vytvořte instanci `ResourceVideoSource` nastavením `Path` vlastnost název souboru (nebo na složku a název souboru) prostředku. Alternativně můžete volat statických `VideoSource.FromResource` metoda tak, aby odkazovaly na prostředek. Potom nastavte `ResourceVideoSource` do objektu `Source` vlastnost `VideoPlayer`. 
+K načtení těchto prostředků, vytvořte instanci `ResourceVideoSource` nastavením `Path` vlastnost název souboru (nebo na složku a název souboru) prostředku. Alternativně můžete volat statických `VideoSource.FromResource` metoda tak, aby odkazovaly na prostředek. Potom nastavte `ResourceVideoSource` do objektu `Source` vlastnost `VideoPlayer`.
 
 ## <a name="storing-the-video-files"></a>Ukládání souborů videa
 
@@ -30,13 +32,13 @@ V **VideoPlayerDemos** řešení, **VideoPlayerDemos.iOS** projekt obsahuje pods
 
 ### <a name="android-video-resources"></a>Android grafických prostředků
 
-V projektu Android videa musí být uložen v podsložce **prostředky** s názvem **nezpracovaná**. **Nezpracovaná** složka nemůže obsahovat podsložky. Poskytnout soubor videa `Build Action` z `AndroidResource`. Nastavte `Path` vlastnost `ResourceVideoSource` k názvu souboru, například **MyFile.mp4**. 
+V projektu Android videa musí být uložen v podsložce **prostředky** s názvem **nezpracovaná**. **Nezpracovaná** složka nemůže obsahovat podsložky. Poskytnout soubor videa `Build Action` z `AndroidResource`. Nastavte `Path` vlastnost `ResourceVideoSource` k názvu souboru, například **MyFile.mp4**.
 
-**VideoPlayerDemos.Android** projekt obsahuje podsložky **prostředky** s názvem **nezpracovaná**, která obsahuje soubor s názvem **AndroidApiVideo.mp4**. 
+**VideoPlayerDemos.Android** projekt obsahuje podsložky **prostředky** s názvem **nezpracovaná**, která obsahuje soubor s názvem **AndroidApiVideo.mp4**.
 
 ### <a name="uwp-video-resources"></a>UWP grafických prostředků
 
-V projektu univerzální platformu Windows můžete uložit videa v libovolné složky v projektu. Zadejte soubor `Build Action` z `Content`. Nastavte `Path` vlastnost `ResourceVideoSource` na složku a název souboru, například **MyFolder/MyVideo.mp4**. 
+V projektu univerzální platformu Windows můžete uložit videa v libovolné složky v projektu. Zadejte soubor `Build Action` z `Content`. Nastavte `Path` vlastnost `ResourceVideoSource` na složku a název souboru, například **MyFolder/MyVideo.mp4**.
 
 **VideoPlayerDemos.UWP** projekt obsahuje složku s názvem **videa** souborem **UWPApiVideo.mp4**.
 
@@ -169,7 +171,7 @@ namespace FormsVideoLibrary.UWP
 </ContentPage>
 ```
 
-Pokud uloží se prostředek iOS **prostředky** složku, a pokud uloží se prostředek do UWP v kořenové složce projektu, můžete použít stejný název souboru pro tři platformy. Pokud tomu tak je, pak můžete nastavit přímo na tento název `Source` vlastnost `VideoPlayer`. 
+Pokud uloží se prostředek iOS **prostředky** složku, a pokud uloží se prostředek do UWP v kořenové složce projektu, můžete použít stejný název souboru pro tři platformy. Pokud tomu tak je, pak můžete nastavit přímo na tento název `Source` vlastnost `VideoPlayer`.
 
 Tady je této stránce běžící na třech platformách:
 

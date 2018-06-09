@@ -1,19 +1,20 @@
 ---
-title: Vlastní nástroji pro vykreslování
-description: Uživatelská rozhraní Xamarin.Forms jsou vykreslovány pomocí nativní ovládací prvky typu cílovou platformu, povolíte Xamarin.Forms aplikací zachovat odpovídající vzhledu a chování pro každou platformu. Vlastní nástroji pro vykreslování umožňují vývojářům přepsání tohoto procesu, chcete-li přizpůsobit vzhled a chování Xamarin.Forms ovládacích prvků na každou platformu.
+title: Nástroji pro vykreslování vlastní Xamarin.Forms
+description: Vlastní nástroji pro vykreslování umožňují vývojářům přepsat vykreslování nativní ovládací prvky na každou platformu, chcete-li přizpůsobit vzhled a chování Xamarin.Forms ovládacích prvků.
 ms.prod: xamarin
 ms.assetid: BF1CF23A-3BC9-4226-92E6-DAEEB91422F1
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 6a2ee4b09426e6b4ff6dac7e1fd5221fc5b6d750
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a88462052906e68fd85a07161e8b5bb63a61e69d
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35239887"
 ---
-# <a name="custom-renderers"></a>Vlastní nástroji pro vykreslování
+# <a name="xamarinforms-custom-renderers"></a>Nástroji pro vykreslování vlastní Xamarin.Forms
 
 _Uživatelská rozhraní Xamarin.Forms jsou vykreslovány pomocí nativní ovládací prvky typu cílovou platformu, povolíte Xamarin.Forms aplikací zachovat odpovídající vzhledu a chování pro každou platformu. Vlastní nástroji pro vykreslování umožňují vývojářům přepsání tohoto procesu, chcete-li přizpůsobit vzhled a chování Xamarin.Forms ovládacích prvků na každou platformu._
 
@@ -55,7 +56,7 @@ Tento článek ukazuje, jak vytvořit vlastní zobrazovací jednotky pro `Hybrid
 
 ## <a name="implementing-a-video-playervideo-playerindexmd"></a>[Implementace přehrávání videa](video-player/index.md)
 
-Tento článek ukazuje, jak napsat nástroji pro vykreslování implementovat vlastní `VideoPlayer` ovládací prvek, který můžete přehrát videa z webových, videa vložených jako prostředky aplikace nebo videa uložený v knihovně videa na zařízení uživatele. Je ukázán několik postupů, včetně implementace metod a vlastností, vázat jen pro čtení. 
+Tento článek ukazuje, jak napsat nástroji pro vykreslování implementovat vlastní `VideoPlayer` ovládací prvek, který můžete přehrát videa z webových, videa vložených jako prostředky aplikace nebo videa uložený v knihovně videa na zařízení uživatele. Je ukázán několik postupů, včetně implementace metod a vlastností, vázat jen pro čtení.
 
 
 ## <a name="related-links"></a>Související odkazy

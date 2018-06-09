@@ -1,19 +1,20 @@
 ---
-title: Nativní formulářů
-description: Nativní Forms povolí na stránkách Xamarin.Forms ContentPage odvozené využívat nativní projekty Xamarin.iOS, Xamarin.Android a univerzální platformu Windows (UWP). Nativní projekty spotřebovat odvozené ContentPage stránek, které jsou přímo přidat do projektu, nebo z .NET standardní knihovny, .NET standardní knihovny nebo sdílené projektu. Tento článek vysvětluje, jak využívat odvozené ContentPage stránek, které jsou přímo přidat do nativní projekty a jak se orientovat mezi nimi.
+title: Xamarin.Forms v projektech nativní Xamarin
+description: Tento článek vysvětluje, jak využívat odvozené ContentPage stránek, které jsou přímo přidat do nativní projekty Xamarin a jak se orientovat mezi nimi.
 ms.prod: xamarin
 ms.assetid: f343fc21-dfb1-4364-a332-9da6705d36bc
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/11/2018
-ms.openlocfilehash: a103d360221650ee4f679ee285dbedd65e62f947
-ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
+ms.openlocfilehash: ca62b9fec3223e8da62d8e4cc6e1f69a58f335a0
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243272"
 ---
-# <a name="native-forms"></a>Nativní formulářů
+# <a name="xamarinforms-in-xamarin-native-projects"></a>Xamarin.Forms v projektech nativní Xamarin
 
 _Nativní Forms povolí na stránkách Xamarin.Forms ContentPage odvozené využívat nativní projekty Xamarin.iOS, Xamarin.Android a univerzální platformu Windows (UWP). Nativní projekty spotřebovat odvozené ContentPage stránek, které jsou přímo přidat do projektu, nebo z .NET standardní knihovny, .NET standardní knihovny nebo sdílené projektu. Tento článek vysvětluje, jak využívat odvozené ContentPage stránek, které jsou přímo přidat do nativní projekty a jak se orientovat mezi nimi._
 

@@ -1,20 +1,20 @@
 ---
-title: StackLayout
-description: Pomocí StackLayout kolekce zobrazení k dispozici prostřednictvím jednu dimenzi.
+title: Xamarin.Forms StackLayout
+description: Tento článek vysvětluje, jak pomocí třídy Xamarin.Forms StackLayout kolekce zobrazení k dispozici prostřednictvím jednu dimenzi.
 ms.prod: xamarin
 ms.assetid: 6A91EA70-268C-462C-AAAF-F8DA011403F8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: 412ea71df2d13338725246704b342e9b93109709
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 6e278c466c352ad19575cd3a84d6e38e14ec2587
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847822"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244594"
 ---
-# <a name="stacklayout"></a>StackLayout
+# <a name="xamarinforms-stacklayout"></a>Xamarin.Forms StackLayout
 
 `StackLayout` umožňuje uspořádat zobrazení jednorozměrné řádku ("stack"), vodorovně nebo svisle. Zobrazení v `StackLayout` může mít velikost podle místa v rozložení pomocí možností rozložení. Umístění je určen podle pořadí, ve kterém zobrazení byly přidány do rozložení a rozložení možnosti zobrazení.
 

@@ -1,20 +1,20 @@
 ---
-title: AbsoluteLayout
-description: AbsoluteLayout použijte k vytvoření uživatelská dokonalou pixelů.
+title: Xamarin.Forms AbsoluteLayout
+description: Tento článek vysvětluje způsob použití třídy Xamarin.Forms AbsoluteLayout vytvořit uživatelská dokonalou pixelů. Tato třída umisťuje a velikosti podřízené elementy přímo úměrná vlastní velikosti a pozice nebo absolutní hodnoty.
 ms.prod: xamarin
 ms.assetid: 01A5CCE0-AD45-4806-84FD-72C007005B38
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: 506a9a4916cf2cf9105d59f56648e339d664a3d2
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: f36334bca9e7401f35d4b6181b47c0f64923f652
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848383"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244454"
 ---
-# <a name="absolutelayout"></a>AbsoluteLayout
+# <a name="xamarinforms-absolutelayout"></a>Xamarin.Forms AbsoluteLayout
 
 [`AbsoluteLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayout/) umisťuje a velikosti podřízené elementy přímo úměrná vlastní velikosti a pozice nebo absolutní hodnoty. Podřízené zobrazení může být umístěné a velikosti pomocí přímo úměrná hodnoty nebo statické hodnoty a přímo úměrná a statické hodnoty můžete kombinovat.
 

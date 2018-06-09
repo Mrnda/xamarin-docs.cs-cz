@@ -1,17 +1,18 @@
 ---
 title: Rychlý start Multiobrazovka Xamarin.Forms
+description: Tento článek vysvětluje, jak rozšířit aplikace Phoneword přidat druhý obrazovky ke sledování historie volání pro aplikaci.
 ms.prod: quickstart
 ms.assetid: 255d93b9-518c-4e5d-a9cd-4dd8a7945a7f
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/06/2018
-ms.openlocfilehash: 7d6c52bdee29b99b8a00de8f03d263c6fe528c5e
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: c931b4f74fbfbbb7396e492cb7ad7ae5d0097bad
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847612"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242388"
 ---
 # <a name="xamarinforms-multiscreen-quickstart"></a>Rychlý start Multiobrazovka Xamarin.Forms
 

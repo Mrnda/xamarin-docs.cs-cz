@@ -1,18 +1,18 @@
 ---
 title: Implementace HybridWebView
-description: Xamarin.Forms vlastní uživatelské rozhraní ovládací prvky by měl být odvozen od třídy zobrazení, který se používá k umístění rozložení a ovládací prvky na obrazovce. Tento článek ukazuje, jak vytvořit vlastní zobrazovací jednotky HybridWebView vlastního ovládacího prvku, který ukazuje, jak zvýšit ovládací prvky specifické pro platformu webového povolit C# – kód má být volána z jazyka JavaScript.
+description: Tento článek ukazuje, jak vytvořit vlastní zobrazovací jednotky HybridWebView vlastního ovládacího prvku, který ukazuje, jak zvýšit ovládací prvky specifické pro platformu webového povolit C# – kód má být volána z jazyka JavaScript.
 ms.prod: xamarin
 ms.assetid: 58DFFA52-4057-49A8-8682-50A58C7E842C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 3926fd5c19ad187deef16c4beb0812b3947e9544
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: d2cce7598fde4cf59a91940161e605860847623e
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847238"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241296"
 ---
 # <a name="implementing-a-hybridwebview"></a>Implementace HybridWebView
 

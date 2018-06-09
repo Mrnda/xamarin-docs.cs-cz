@@ -1,17 +1,18 @@
 ---
 title: Přidání kompatibility aplikace a podstatným návrhu
-description: Pomocí těchto kroků převést stávající aplikace Xamarin.Forms Android používat kompatibility aplikace a materiálu návrhu
+description: Tento článek vysvětluje, jak převést stávající aplikace Xamarin.Forms Android používat kompatibility aplikace a materiálu návrhu.
 ms.prod: xamarin
 ms.assetid: 045FBCDF-4D45-48BB-9911-BD3938C87D58
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/27/2017
-ms.openlocfilehash: 8f9820b863274453cff7e4124df683fb8518a978
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c2eed44a7c684b91ceed4493a83ff3b4e1578b5f
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242918"
 ---
 # <a name="adding-appcompat-and-material-design"></a>Přidání kompatibility aplikace a podstatným návrhu
 
@@ -38,7 +39,7 @@ Zkontrolujte, zda cílový framework Android projektu Android 6.0 (Marshmallow).
 
 Vytvořte následující tři soubory v projektu Android a vložte následující obsah. Poskytuje Google [průvodci správným stylem](http://www.google.com/design/spec/style/color.html#color-color-palette) a [barev palety generátor](http://www.materialpalette.com/) si můžete vybrat režim alternativní barvu, která je zadán.
 
-**Resources/values/colors.xml**
+**Resources/Values/colors.XML**
 
 ```xml
 <resources>
@@ -49,7 +50,7 @@ Vytvořte následující tři soubory v projektu Android a vložte následujíc�
 </resources>
 ```
 
-**Resources/values/style.xml**
+**Resources/Values/Style.XML**
 
 ```xml
 <resources>
@@ -79,7 +80,7 @@ Musí být součástí další styl **hodnoty v21** složku, kterou chcete použ
 </resources>
 ```
 
-### <a name="4-update-androidmanifestxml"></a>4. Update AndroidManifest.xml
+### <a name="4-update-androidmanifestxml"></a>4. Aktualizace AndroidManifest.xml
 
 Pokud chcete zajistit nový motiv informace je motiv použít, nastavte v **AndroidManifest** souboru přidáním `android:theme="@style/MyTheme"` (stejně jako tomu bylo Ponechejte zbývající XML).
 

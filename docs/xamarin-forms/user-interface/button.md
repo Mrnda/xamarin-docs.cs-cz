@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 06/01/2018
-ms.openlocfilehash: 1fed439ecb4bd79bd84974ea1397ca0ed1336b62
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: d74e0b2aa5be6e8eee2ce5cb54572dd4113d4d7d
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847950"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244913"
 ---
 # <a name="xamarinforms-button"></a>Tlačítko Xamarin.Forms
 
-_Tlačítko odpoví na klepněte nebo klikněte na tlačítko, která přesměruje aplikaci k provedení určité úlohy._ 
+_Tlačítko odpoví na klepněte nebo klikněte na tlačítko, která přesměruje aplikaci k provedení určité úlohy._
 
 [ `Button` ](xref:Xamarin.Forms.Button) Nejzákladnější interaktivní ovládací prvek ve všech Xamarin.Forms. `Button` Obvykle zobrazuje krátký textový řetězec označující příkazu, ale můžete také zobrazit rastrový obrázek, nebo kombinaci textu a bitovou kopii. Stisknutí uživatele `Button` prstem nebo při kliknutí myší na tento příkaz spustit.
 
@@ -24,7 +24,7 @@ Většinu témat popsané níže odpovídají stránkám v [ **ButtonDemos** ](h
 
 ## <a name="handling-button-clicks"></a>Kliknutím na tlačítko řízení
 
-`Button` definuje [ `Clicked` ](xref:Xamarin.Forms.Button.Clicked) událost, která je aktivována, když uživatel klepnutím `Button` pomocí ukazatele prstem nebo myši. Událost je aktivována, jestliže uvolnění tlačítka prstem nebo myš od plochy `Button`. `Button` Musí mít jeho [ `IsEnabled` ](xref:Xamarin.Forms.VisualElement.IsEnabled) vlastnost nastavena na hodnotu `true` pro něj reagovat na odposlouchávání. 
+`Button` definuje [ `Clicked` ](xref:Xamarin.Forms.Button.Clicked) událost, která je aktivována, když uživatel klepnutím `Button` pomocí ukazatele prstem nebo myši. Událost je aktivována, jestliže uvolnění tlačítka prstem nebo myš od plochy `Button`. `Button` Musí mít jeho [ `IsEnabled` ](xref:Xamarin.Forms.VisualElement.IsEnabled) vlastnost nastavena na hodnotu `true` pro něj reagovat na odposlouchávání.
 
 **Základní klikněte na tlačítko** stránku [ **ButtonDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ButtonDemos) příklad ukazuje, jak vytvořit instanci `Button` v XAML a popisovač jeho `Clicked` událostí. **BasicButtonClickPage.xaml** soubor obsahuje `StackLayout` s oběma `Label` a `Button`:
 
@@ -34,18 +34,18 @@ Většinu témat popsané níže odpovídají stránkám v [ **ButtonDemos** ](h
              x:Class="ButtonDemos.BasicButtonClickPage"
              Title="Basic Button Click">
     <StackLayout>
-        
+
         <Label x:Name="label"
                Text="Click the Button below"
                FontSize="Large"
-               VerticalOptions="CenterAndExpand" 
+               VerticalOptions="CenterAndExpand"
                HorizontalOptions="Center" />
 
         <Button Text="Click to Rotate Text!"
                 VerticalOptions="CenterAndExpand"
                 HorizontalOptions="Center"
                 Clicked="OnButtonClicked" />
-     
+
     </StackLayout>
 </ContentPage>
 ```
@@ -136,7 +136,8 @@ button.Clicked += OnButtonClicked;
 
 ## <a name="disabling-the-button"></a>Zakázat tlačítko
 
-V některých případech aplikace je v určitém stavu, kde konkrétní `Button` kliknutím není platná operace. V takových případech `Button` by mělo být zakázáno nastavením jeho `IsEnabled` vlastnost `false`. Classic příkladem je `Entry` řízení pro název souboru doplněny otevření souboru `Button`: `Button` by měla být povolená jenom v případě, že zadal nějaký text do `Entry`. Můžete použít `DataTrigger` pro tuto úlohu, jak je znázorněno [ **Data aktivační události** ](~/xamarin-forms/app-fundamentals/triggers.md#data-triggers) článku.
+V některých případech aplikace je v určitém stavu, kde konkrétní `Button` kliknutím není platná operace. V takových případech `Button` by mělo být zakázáno nastavením jeho `IsEnabled` vlastnost `false`. Classic příkladem je `Entry` řízení pro název souboru doplněny otevření souboru `Button`: `Button` by měla být povolená jenom v případě, že zadal nějaký text do `Entry`.
+Můžete použít `DataTrigger` pro tuto úlohu, jak je znázorněno [ **Data aktivační události** ](~/xamarin-forms/app-fundamentals/triggers.md#data-triggers) článku.
 
 ## <a name="using-the-command-interface"></a>Pomocí rozhraní příkazového
 
@@ -199,15 +200,15 @@ Dva `ICommand` vlastnosti jsou inicializovány v konstruktoru třídy s dva obje
              xmlns:local="clr-namespace:ButtonDemos"
              x:Class="ButtonDemos.BasicButtonCommandPage"
              Title="Basic Button Command">
-    
+
     <ContentPage.BindingContext>
         <local:CommandDemoViewModel />
     </ContentPage.BindingContext>
-    
+
     <StackLayout>
         <Label Text="{Binding Number, StringFormat='Value is now {0}'}"
                FontSize="Large"
-               VerticalOptions="CenterAndExpand" 
+               VerticalOptions="CenterAndExpand"
                HorizontalOptions="Center" />
 
         <Button Text="Multiply by 2"
@@ -355,7 +356,7 @@ Kromě `Clicked` událostí, `Button` také definuje [ `Pressed` ](xref:Xamarin.
         <Label x:Name="label"
                Text="Press and hold the Button below"
                FontSize="Large"
-               VerticalOptions="CenterAndExpand" 
+               VerticalOptions="CenterAndExpand"
                HorizontalOptions="Center" />
 
         <Button Text="Press to Rotate Text!"
@@ -406,7 +407,7 @@ Výsledkem je, že `Label` pouze otočí při prstem v kontaktu s `Button`a zast
 
 [![Stisknutím a uvolněním tlačítka](button-images/PressAndReleaseButton.png "stisknutím a uvolněním tlačítka")](button-images/PressAndReleaseButton-Large.png)
 
-Tento druh chování má aplikací pro hry: prstu, které jsou uložené v `Button` může nastavení na obrazovce objektu přesunout v konkrétní směr. 
+Tento druh chování má aplikací pro hry: prstu, které jsou uložené v `Button` může nastavení na obrazovce objektu přesunout v konkrétní směr.
 
 <a name="button-appearance" />
 
@@ -420,7 +421,7 @@ Tento druh chování má aplikací pro hry: prstu, které jsou uložené v `Butt
 - [`FontFamily`](xref:Xamarin.Forms.Button.FontFamily) slouží pro text rodiny písem
 - [`FontSize`](xref:Xamarin.Forms.Button.FontSize) je velikost textu
 - [`FontAttributes`](xref:Xamarin.Forms.Button.FontAttributes) Určuje, zda je výběr kurzívy nebo bold text
-- [`BorderWidth`](xref:Xamarin.Forms.Button.BorderWidth) Šířka ohraničení 
+- [`BorderWidth`](xref:Xamarin.Forms.Button.BorderWidth) Šířka ohraničení
 - [`CornerRadius`](xref:Xamarin.Forms.Button.CornerRadius) Zaokrouhlí rozích
 
 Důsledky šest z těchto vlastností (s výjimkou `FontFamily` a `FontAttributes`) je ukázán v **vzhled tlačítka** stránky. Jinou vlastnost [ `Image` ](xref:Xamarin.Forms.Button.Image), je popsané v části [ **bitmap pomocí tlačítka**](#image-button).
@@ -447,7 +448,7 @@ Všechna zobrazení a datové vazby v **vzhled tlačítka** stránky jsou defino
 
         <StackLayout BindingContext="{x:Reference button}"
                      Padding="10">
-            
+
             <Slider x:Name="fontSizeSlider"
                     Maximum="48"
                     Minimum="1"
@@ -462,8 +463,8 @@ Všechna zobrazení a datové vazby v **vzhled tlačítka** stránky jsou defino
                     Minimum="-1"
                     Maximum="12"
                     Value="{Binding BorderWidth}" />
-            
-            <Label Text="{Binding Source={x:Reference borderWidthSlider}, 
+
+            <Label Text="{Binding Source={x:Reference borderWidthSlider},
                                   Path=Value,
                                   StringFormat='BorderWidth = {0:F0}'}"
                    HorizontalTextAlignment="Center" />
@@ -473,7 +474,7 @@ Všechna zobrazení a datové vazby v **vzhled tlačítka** stránky jsou defino
                     Maximum="24"
                     Value="{Binding CornerRadius}" />
 
-            <Label Text="{Binding Source={x:Reference cornerRadiusSlider}, 
+            <Label Text="{Binding Source={x:Reference cornerRadiusSlider},
                                   Path=Value,
                                   StringFormat='CornerRadius = {0:F0}'}"
                    HorizontalTextAlignment="Center" />
@@ -484,7 +485,7 @@ Všechna zobrazení a datové vazby v **vzhled tlačítka** stránky jsou defino
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
-                
+
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
@@ -586,13 +587,13 @@ class ToggleButton : Button
 }
 ```
 
-`ToggleButton` Konstruktor připojí, aby obslužná rutina `Clicked` událostí, které můžete změnit hodnotu `IsToggled` vlastnost. `OnIsToggledChanged` Metoda aktivuje `Toggled` událostí. 
+`ToggleButton` Konstruktor připojí, aby obslužná rutina `Clicked` událostí, které můžete změnit hodnotu `IsToggled` vlastnost. `OnIsToggledChanged` Metoda aktivuje `Toggled` událostí.
 
-Poslední řádek `OnIsToggledChanged` metoda volá statických `VisualStateManager.GoToState` metoda s dva textové řetězce "ToggledOn" a "ToggledOff". Můžete si přečíst o tuto metodu a jak vaše aplikace může reagovat na visual stavů v článku [ **nástroje stavu Manager Visual Xamarin.Forms**](~/xamarin-forms/user-interface/visual-state-manager.md). 
+Poslední řádek `OnIsToggledChanged` metoda volá statických `VisualStateManager.GoToState` metoda s dva textové řetězce "ToggledOn" a "ToggledOff". Můžete si přečíst o tuto metodu a jak vaše aplikace může reagovat na visual stavů v článku [ **nástroje stavu Manager Visual Xamarin.Forms**](~/xamarin-forms/user-interface/visual-state-manager.md).
 
-Protože `ToggleButton` provede volání `VisualStateManager.GoToState`, vlastní třídy nemusí obsahovat jakákoli další zařízení, chcete-li změnit vzhled tlačítka na základě jeho `IsToggled` stavu. To znamená odpovědnost XAML, který je hostitelem `ToggleButton`. 
+Protože `ToggleButton` provede volání `VisualStateManager.GoToState`, vlastní třídy nemusí obsahovat jakákoli další zařízení, chcete-li změnit vzhled tlačítka na základě jeho `IsToggled` stavu. To znamená odpovědnost XAML, který je hostitelem `ToggleButton`.
 
-**Přepínací tlačítko ukázkový** stránka obsahuje dvě instance `ToggleButton`, včetně Visual správce stavu kód, který nastaví `Text`, `BackgroundColor`, a `TextColor` tlačítka na základě visual stavu: 
+**Přepínací tlačítko ukázkový** stránka obsahuje dvě instance `ToggleButton`, včetně Visual správce stavu kód, který nastaví `Text`, `BackgroundColor`, a `TextColor` tlačítka na základě visual stavu:
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -601,7 +602,7 @@ Protože `ToggleButton` provede volání `VisualStateManager.GoToState`, vlastn�
              xmlns:local="clr-namespace:ButtonDemos"
              x:Class="ButtonDemos.ToggleButtonDemoPage"
              Title="Toggle Button Demo">
-    
+
     <ContentPage.Resources>
         <Style TargetType="local:ToggleButton">
             <Setter Property="VerticalOptions" Value="CenterAndExpand" />
@@ -620,7 +621,7 @@ Protože `ToggleButton` provede volání `VisualStateManager.GoToState`, vlastn�
                             <Setter Property="TextColor" Value="Black" />
                         </VisualState.Setters>
                     </VisualState>
-                    
+
                     <VisualState Name="ToggledOn">
                         <VisualState.Setters>
                             <Setter Property="Text" Value=" Italic On " />
@@ -642,7 +643,7 @@ Protože `ToggleButton` provede volání `VisualStateManager.GoToState`, vlastn�
                             <Setter Property="TextColor" Value="Black" />
                         </VisualState.Setters>
                     </VisualState>
-                    
+
                     <VisualState Name="ToggledOn">
                         <VisualState.Setters>
                             <Setter Property="Text" Value=" Bold On " />
@@ -710,9 +711,9 @@ Tady je program spuštěný v iOS, Android a UWP:
 
 `Button` Třída definuje [ `Image` ](xref:Xamarin.Forms.Button.Image) vlastnost, která umožňuje zobrazit rastrový obrázek na `Button`, samostatně nebo v kombinaci s textem. Můžete také zadat, jak jsou uspořádány textových a obrázkových.
 
-`Image` Vlastnost je typu [ `FileImageSource` ](xref:Xamarin.Forms.FileImageSource), což znamená, že rastrových obrázků, které musí být uložen jako prostředky v projektech pro jednotlivé platformy a nikoli v rozhraní .NET standardní projektu knihovny. 
+`Image` Vlastnost je typu [ `FileImageSource` ](xref:Xamarin.Forms.FileImageSource), což znamená, že rastrových obrázků, které musí být uložen jako prostředky v projektech pro jednotlivé platformy a nikoli v rozhraní .NET standardní projektu knihovny.
 
-Každou platformu podporovanou nástrojem Xamarin.Forms umožňuje bitové kopie k uložení do více velikostí pro různé pixelů rozlišení různých zařízení, které aplikace může spustit na. Tyto jsou více bitmap s názvem nebo uložené tak, že operační systém, můžete vybrat nejlepší shodu pro zařízení video rozlišení obrazovky. 
+Každou platformu podporovanou nástrojem Xamarin.Forms umožňuje bitové kopie k uložení do více velikostí pro různé pixelů rozlišení různých zařízení, které aplikace může spustit na. Tyto jsou více bitmap s názvem nebo uložené tak, že operační systém, můžete vybrat nejlepší shodu pro zařízení video rozlišení obrazovky.
 
 Rastrového obrázku na `Button`nejlepší velikost je obvykle mezi 32 až 64 jednotky nezávislé na zařízení, v závislosti na tom, jak velký se má být. Obrázků použitých v tomto příkladu jsou založené na velikost 48 jednotky nezávislé na zařízení.
 
@@ -801,7 +802,7 @@ Aby se zabránilo spoustu automatizujete značek v **ImageButtonDemo.xaml** soub
     <FlexLayout Direction="Column"
                 JustifyContent="SpaceEvenly"
                 AlignItems="Center">
-        
+
         <FlexLayout.Resources>
             <Style TargetType="Button">
                 <Setter Property="Image">
@@ -833,7 +834,7 @@ Aby se zabránilo spoustu automatizujete značek v **ImageButtonDemo.xaml** soub
         <Button Text="Right - 20"
                 ContentLayout="Right, 20" />
 
-        <Button Text="Bottom - 20" 
+        <Button Text="Bottom - 20"
                 ContentLayout="Bottom, 20" />
     </FlexLayout>
 </ContentPage>

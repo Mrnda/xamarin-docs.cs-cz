@@ -1,19 +1,20 @@
 ---
-title: Moduly plug-in
-description: Nativní funkce snadno přidat na platformě Xamarin.Forms aplikace
+title: Využívání a vytváření modulů plug-in Xamarin.Forms
+description: Tento článek vysvětluje, jak využívat a vytvořit Xamarin.Forms modulů plug-in. Moduly plug-in jsou obvykle používány snadno vystavit nativní funkce.
 ms.prod: xamarin
 ms.assetid: 8A06A420-A9D0-4BCB-B9AF-3AEA6A648A8B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/07/2016
-ms.openlocfilehash: 5770d13c46998872752820b7a0cbb222a04c3ff8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: dff9fad0da30475a0fb91c0af76a25ea50d34439
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242554"
 ---
-# <a name="plugins"></a>Moduly plug-in
+# <a name="consuming-and-creating-xamarinforms-plugins"></a>Využívání a vytváření modulů plug-in Xamarin.Forms
 
 Existuje mnoho funkcí nativní platformy, které existují pro všechny platformy, ale mají mírně odlišné rozhraní API. Vývojáři psát modulů plug-in pro vytvoření abstraktní rozhraní a platformy pro tyto funkce, které můžou taky sdílet s ostatními.
 

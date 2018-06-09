@@ -1,20 +1,20 @@
 ---
-title: Styl dědičnosti
-description: Styly může dědit vlastnosti z jiných styly snížit duplikování a povolit opakované použití.
+title: Styl dědičnosti v Xamarin.Forms
+description: Styly může dědit vlastnosti z jiných styly snížit duplikování a povolit opakované použití. Tento článek vysvětluje, jak provést styl dědičnosti v aplikaci Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 67A3A39C-8CC0-446D-8162-FFA73582D3B8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 7b489e90daec2659a6d11b2776731582bdf368ff
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: aff47769fad065e03de4c62af1be1d67b903eb0a
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848418"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245091"
 ---
-# <a name="style-inheritance"></a>Styl dědičnosti
+# <a name="style-inheritance-in-xamarinforms"></a>Styl dědičnosti v Xamarin.Forms
 
 _Styly může dědit vlastnosti z jiných styly snížit duplikování a povolit opakované použití._
 

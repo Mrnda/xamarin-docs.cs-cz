@@ -1,16 +1,18 @@
 ---
 title: Shrnutí kapitoly 25. Stránka typy
+description: 'Vytváření mobilních aplikací s Xamarin.Forms: Souhrn kapitoly 25. Stránka typy'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: D1D348F2-6A44-4781-ADCE-A0B7BB9AEF89
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 951ae41763d8338d5adf73fb46ebc6defa64f8f8
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ecee7866f4bf9ac1a4f706853434dce2b9cef7f6
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241152"
 ---
 # <a name="summary-of-chapter-25-page-varieties"></a>Shrnutí kapitoly 25. Stránka typy
 

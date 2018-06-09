@@ -1,20 +1,20 @@
 ---
-title: Funkce platformy
-description: Využití výhod funkcí specifických pro platformy s Xamarin.Forms
+title: Funkce platformě Xamarin.Forms
+description: Tato příručka vysvětluje, jak chcete využít výhod funkce specifické pro platformu v aplikacích Xamarin.Forms pomocí řady různých způsobů.
 ms.prod: xamarin
 ms.assetid: 2C6CE42C-E380-4BB9-90CC-D0F4E60C4C03
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2018
-ms.openlocfilehash: 0609d15248f1827b892ae02a877382ca0ffbed18
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 2e8eb19411799e7723be338e9e3f6df35058eb8c
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847628"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242797"
 ---
-# <a name="platform-features"></a>Funkce platformy
+# <a name="xamarinforms-platform-features"></a>Funkce platformě Xamarin.Forms
 
 Xamarin.Forms rozšiřitelný a umožňuje vám začlenění specifické pro platformu funkcí s použitím [důsledky](~/xamarin-forms/app-fundamentals/effects/index.md), [vlastní nástroji pro vykreslování](~/xamarin-forms/app-fundamentals/custom-renderer/index.md), [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md), [MessagingCenter](~/xamarin-forms/app-fundamentals/messaging-center.md)a další.
 

@@ -1,6 +1,6 @@
 ---
 title: Využívání dokumentu databázi Azure Cosmos DB
-description: Databázi dokumentů Azure Cosmos DB je databáze NoSQL, která poskytuje přístup s nízkou latencí k dokumentů JSON, nabízí rychlý, vysoce dostupných, škálovatelných databázová služba pro aplikace, které vyžadují bezproblémové škálování a globální replikace. Tento článek vysvětluje, jak pomocí Azure Cosmos DB .NET standardní klientské knihovny integrovat do aplikace Xamarin.Forms databázi dokumentů Azure Cosmos DB.
+description: Tento článek vysvětluje, jak pomocí Azure Cosmos DB .NET standardní klientské knihovny integrovat do aplikace Xamarin.Forms databázi dokumentů Azure Cosmos DB.
 ms.prod: xamarin
 ms.assetid: 7C0605D9-9B7F-4002-9B60-2B5DAA3EA30C
 ms.technology: xamarin-forms
@@ -8,11 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: a4656b5eb9a8159f1b3dc39c8cf62509101d219e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6e797eaad98f6fac66876aaebecd7ae53ad9dbab
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242502"
 ---
 # <a name="consuming-an-azure-cosmos-db-document-database"></a>Využívání dokumentu databázi Azure Cosmos DB
 

@@ -1,17 +1,18 @@
 ---
 title: Manipulace dotykového ovládání
-description: Použití matice transformuje implementovat přetahování dotykového ovládání, roztáhnout a otočení
+description: Tento článek vysvětluje, jak použít k implementaci přetahování dotykového ovládání, roztáhnout a oběh matice transformací a to ukazuje s ukázkový kód.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: A0B8DD2D-7392-4EC5-BFB0-6209407AD650
 author: charlespetzold
 ms.author: chape
 ms.date: 04/03/2018
-ms.openlocfilehash: e8e5cc7b1a00f9822c4cbb4859a02b7546102ca0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: a53fe287e74070adb22c2a7c67d4b7cc10b35d3e
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244283"
 ---
 # <a name="touch-manipulations"></a>Manipulace dotykového ovládání
 
@@ -753,9 +754,9 @@ public partial class SingleFingerCornerScalePage : ContentPage
 }
 ```
 
-To `SKMatrix` objekt je upraven logikou touch vidíte níže. 
+To `SKMatrix` objekt je upraven logikou touch vidíte níže.
 
-Je zbytek souboru kódu `TouchEffect` obslužné rutiny události. Začne tím, že převedete aktuální umístění prstu k `SKPoint` hodnotu. Pro `Pressed` typ akce obslužná rutina ověří, že žádné další prstem je klepnou na obrazovce, a že prstu je v rámci hranice bitmapy. 
+Je zbytek souboru kódu `TouchEffect` obslužné rutiny události. Začne tím, že převedete aktuální umístění prstu k `SKPoint` hodnotu. Pro `Pressed` typ akce obslužná rutina ověří, že žádné další prstem je klepnou na obrazovce, a že prstu je v rámci hranice bitmapy.
 
 Je zásadní součástí kód `if` příkaz zahrnující dvě volání `Math.Pow` metoda. Tato matematické zkontroluje, jestli umístění prstem mimo elipsy, který vyplní celé bitové mapy. Pokud ano, který je operace škálování. Prstu je téměř mezi rozích bitovou mapu a bod pivot je určen, že je opačné rohu. Pokud prstu v rámci této elipsy, je regulární klávesnicí operace:
 
@@ -901,5 +902,5 @@ Tento kód efektivně rozděluje oblasti bitmapy do obrazce vnitřních kosočtv
 ## <a name="related-links"></a>Související odkazy
 
 - [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 - [Vyvolání událostí z efekty](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)

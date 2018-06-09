@@ -1,5 +1,5 @@
 ---
-title: Stránka podrobností
+title: Stránka Xamarin.Forms seznam podrobnosti
 description: Xamarin.Forms MasterDetailPage je stránka, která spravuje dvě související stránky informací – hlavní stránky, který představuje položky a podrobnosti o stránku, která zobrazí podrobné informace o položky na hlavní stránce. Tento článek vysvětluje, jak používat MasterDetailPage a přecházet mezi její stránky informace.
 ms.prod: xamarin
 ms.assetid: 119945E3-58B8-4630-A3D2-8B561529D53B
@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 20032cdf4789de3248ec30a8da5e21e1bd8e4bcd
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 80d86e1aa6a00d4a55c0fdba1b858bfef7bcbc84
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34846374"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241341"
 ---
-# <a name="master-detail-page"></a>Stránka podrobností
+# <a name="xamarinforms-master-detail-page"></a>Stránka Xamarin.Forms seznam podrobnosti
 
 _Xamarin.Forms MasterDetailPage je stránka, která spravuje dvě související stránky informací – hlavní stránky, který představuje položky a podrobnosti o stránku, která zobrazí podrobné informace o položky na hlavní stránce. Tento článek vysvětluje, jak používat MasterDetailPage a přecházet mezi její stránky informace._
 

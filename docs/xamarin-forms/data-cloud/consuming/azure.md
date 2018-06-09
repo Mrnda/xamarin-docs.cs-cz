@@ -1,17 +1,18 @@
 ---
 title: Použití Azure mobilní aplikace
-description: Azure Mobile Apps umožňují vývoj aplikací s škálovatelné back-EndY hostované v Azure App Service, se podpora pro mobilní ověřování, offline synchronizace a nabízených oznámení. Tento článek, který je pouze pro Azure Mobile Apps, použít back-end Node.js, vysvětluje, jak pro dotazování, vložit, aktualizovat a odstranit data uložená v tabulce v instanci Azure Mobile Apps.
+description: Tento článek, který je pouze pro Azure Mobile Apps, použít back-end Node.js, vysvětluje, jak pro dotazování, vložit, aktualizovat a odstranit data uložená v tabulce v instanci Azure Mobile Apps.
 ms.prod: xamarin
 ms.assetid: 2B3EFD0A-2922-437D-B151-4B4DE46E2095
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: e2e9e2c05d3f6e467fd47b31af4f53049aab2709
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3cf27e48fe23b9a0f035689e55a72fcc706ab266
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241328"
 ---
 # <a name="consuming-an-azure-mobile-app"></a>Použití Azure mobilní aplikace
 

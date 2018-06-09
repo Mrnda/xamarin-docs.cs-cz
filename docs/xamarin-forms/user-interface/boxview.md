@@ -1,20 +1,20 @@
 ---
-title: BoxView
-description: Používejte barevný obdélník pro dekorace, grafiky a interakce.
+title: Xamarin.Forms BoxView
+description: Tento článek vysvětluje, jak používat barevného obdélníku pro dekorace, grafiky a interakce v aplikaci Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 4CBF703D-84A0-4CDF-A433-5926B587782A
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2017
-ms.openlocfilehash: 356d0effe55638902b6ee599a0d9fb7e9b8ade2d
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: edb2785362f2cc7377d9adb0c1a89a6fa2b08111
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848405"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244312"
 ---
-# <a name="boxview"></a>BoxView
+# <a name="xamarinforms-boxview"></a>Xamarin.Forms BoxView
 
 [`BoxView`](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/) vykreslí jednoduché obdélník zadaný šířky, výšky a barvy. Můžete použít `BoxView` pro dekorace, elementární grafiky a pro interakci s uživatelem prostřednictvím dotykového ovládání.
 
@@ -45,7 +45,7 @@ Velmi často budete nastavíte následující tři vlastnosti `BoxView`:
 
 `WidthRequest` a `HeightRequest` vlastnosti jenom hrají roli, pokud `BoxView` je *neomezeným* v rozložení. To je případ, kdy kontejner rozložení musí znát, podřízená je upravit velikost, například když `BoxView` je podřízená Automatická velikost buňky v `Grid` rozložení. A `BoxView` je také neomezeným při jeho `HorizontalOptions` a `VerticalOptions` vlastnosti jsou nastaveny na hodnoty jiné než `LayoutOptions.Fill`. Pokud `BoxView` neomezeným, ale `WidthRequest` a `HeightRequest` nejsou nastaveny vlastnosti a potom šířky nebo výšky jsou nastaveny na výchozí hodnoty 40 jednotky nebo o 1/4 palce na mobilních zařízeních.
 
-`WidthRequest` a `HeightRequest` vlastnosti jsou ignorovány, pokud `BoxView` je *omezené* v rozložení, ve kterém případ kontejneru rozložení ukládá na vlastní velikost `BoxView`. 
+`WidthRequest` a `HeightRequest` vlastnosti jsou ignorovány, pokud `BoxView` je *omezené* v rozložení, ve kterém případ kontejneru rozložení ukládá na vlastní velikost `BoxView`.
 
 A `BoxView` může být omezené v jednou dimenzí a neomezeného v dalších. Například pokud `BoxView` je podřízená svislého `StackLayout`, svislé dimenzi `BoxView` je neomezeného a jeho vodorovné dimenze je obvykle omezené. Existují však výjimky pro daná vodorovném dimenze: Pokud `BoxView` má jeho `HorizontalOptions` vlastnost nastavena na jinou hodnotu než `LayoutOptions.Fill`, pak vodorovné dimenze je také neomezeným. Je také možné, `StackLayout` samotné tak, aby měl neomezeným vodorovné dimenze, v takovém případě `BoxView` bude také vodorovně neomezeným.
 
@@ -60,7 +60,7 @@ A `BoxView` může být omezené v jednou dimenzí a neomezeného v dalších. N
     <BoxView Color="CornflowerBlue"
              WidthRequest="160"
              HeightRequest="160"
-             VerticalOptions="Center" 
+             VerticalOptions="Center"
              HorizontalOptions="Center" />
 
 </ContentPage>
@@ -149,7 +149,7 @@ Je také možné použít `BoxView` tak, aby připomínaly HTML `hr` – element
 <BoxView HeightRequest="3" />
 ```
 
-Nakonec kreslení svislé čáry na jedné straně odstavec textu uzavřením i `BoxView` a `Label` vodorovně `StackLayout`. V tomto případě výšku `BoxView` je stejný jako výšku `StackLayout`, které se řídí výšku `Label`: 
+Nakonec kreslení svislé čáry na jedné straně odstavec textu uzavřením i `BoxView` a `Label` vodorovně `StackLayout`. V tomto případě výšku `BoxView` je stejný jako výšku `StackLayout`, které se řídí výšku `Label`:
 
 ```xaml
 <StackLayout Orientation="Horizontal">
@@ -242,7 +242,7 @@ public class NamedColor
 }
 ```
 
-Vizuály programu jsou popsané v souboru XAML. `ItemsSource` Vlastnost `ListView` nastavena na statickou `NamedColor.All` vlastnost, což znamená, že `ListView` zobrazuje všechny jednotlivý `NamedColor` objekty: 
+Vizuály programu jsou popsané v souboru XAML. `ItemsSource` Vlastnost `ListView` nastavena na statickou `NamedColor.All` vlastnost, což znamená, že `ListView` zobrazuje všechny jednotlivý `NamedColor` objekty:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -290,7 +290,7 @@ Vizuály programu jsou popsané v souboru XAML. `ItemsSource` Vlastnost `ListVie
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
-</ContentPage> 
+</ContentPage>
 ```
 
 `NamedColor` Objekty jsou formátovány podle `ViewCell` objekt, který je nastaven jako šablonu dat z `ListView`. Tato šablona zahrnuje `BoxView` jejichž `Color` vlastnost je vázána na `Color` vlastnost `NamedColor` objektu.
@@ -388,15 +388,15 @@ public partial class MainPage : ContentPage
     static readonly int[, ,] numberPatterns = new int[10, 7, 5]
     {
         {
-            { 0, 1, 1, 1, 0}, { 1, 0, 0, 0, 1}, { 1, 0, 0, 1, 1}, { 1, 0, 1, 0, 1}, 
+            { 0, 1, 1, 1, 0}, { 1, 0, 0, 0, 1}, { 1, 0, 0, 1, 1}, { 1, 0, 1, 0, 1},
             { 1, 1, 0, 0, 1}, { 1, 0, 0, 0, 1}, { 0, 1, 1, 1, 0}
         },
         {
-            { 0, 0, 1, 0, 0}, { 0, 1, 1, 0, 0}, { 0, 0, 1, 0, 0}, { 0, 0, 1, 0, 0}, 
+            { 0, 0, 1, 0, 0}, { 0, 1, 1, 0, 0}, { 0, 0, 1, 0, 0}, { 0, 0, 1, 0, 0},
             { 0, 0, 1, 0, 0}, { 0, 0, 1, 0, 0}, { 0, 1, 1, 1, 0}
         },
         {
-            { 0, 1, 1, 1, 0}, { 1, 0, 0, 0, 1}, { 0, 0, 0, 0, 1}, { 0, 0, 0, 1, 0}, 
+            { 0, 1, 1, 1, 0}, { 1, 0, 0, 0, 1}, { 0, 0, 0, 0, 1}, { 0, 0, 0, 1, 0},
             { 0, 0, 1, 0, 0}, { 0, 1, 0, 0, 0}, { 1, 1, 1, 1, 1}
         },
         {
@@ -404,27 +404,27 @@ public partial class MainPage : ContentPage
             { 0, 0, 0, 0, 1}, { 1, 0, 0, 0, 1}, { 0, 1, 1, 1, 0}
         },
         {
-            { 0, 0, 0, 1, 0}, { 0, 0, 1, 1, 0}, { 0, 1, 0, 1, 0}, { 1, 0, 0, 1, 0}, 
+            { 0, 0, 0, 1, 0}, { 0, 0, 1, 1, 0}, { 0, 1, 0, 1, 0}, { 1, 0, 0, 1, 0},
             { 1, 1, 1, 1, 1}, { 0, 0, 0, 1, 0}, { 0, 0, 0, 1, 0}
         },
         {
-            { 1, 1, 1, 1, 1}, { 1, 0, 0, 0, 0}, { 1, 1, 1, 1, 0}, { 0, 0, 0, 0, 1}, 
+            { 1, 1, 1, 1, 1}, { 1, 0, 0, 0, 0}, { 1, 1, 1, 1, 0}, { 0, 0, 0, 0, 1},
             { 0, 0, 0, 0, 1}, { 1, 0, 0, 0, 1}, { 0, 1, 1, 1, 0}
         },
         {
-            { 0, 0, 1, 1, 0}, { 0, 1, 0, 0, 0}, { 1, 0, 0, 0, 0}, { 1, 1, 1, 1, 0}, 
+            { 0, 0, 1, 1, 0}, { 0, 1, 0, 0, 0}, { 1, 0, 0, 0, 0}, { 1, 1, 1, 1, 0},
             { 1, 0, 0, 0, 1}, { 1, 0, 0, 0, 1}, { 0, 1, 1, 1, 0}
         },
         {
-            { 1, 1, 1, 1, 1}, { 0, 0, 0, 0, 1}, { 0, 0, 0, 1, 0}, { 0, 0, 1, 0, 0}, 
+            { 1, 1, 1, 1, 1}, { 0, 0, 0, 0, 1}, { 0, 0, 0, 1, 0}, { 0, 0, 1, 0, 0},
             { 0, 1, 0, 0, 0}, { 0, 1, 0, 0, 0}, { 0, 1, 0, 0, 0}
         },
         {
-            { 0, 1, 1, 1, 0}, { 1, 0, 0, 0, 1}, { 1, 0, 0, 0, 1}, { 0, 1, 1, 1, 0}, 
+            { 0, 1, 1, 1, 0}, { 1, 0, 0, 0, 1}, { 1, 0, 0, 0, 1}, { 0, 1, 1, 1, 0},
             { 1, 0, 0, 0, 1}, { 1, 0, 0, 0, 1}, { 0, 1, 1, 1, 0}
         },
         {
-            { 0, 1, 1, 1, 0}, { 1, 0, 0, 0, 1}, { 1, 0, 0, 0, 1}, { 0, 1, 1, 1, 1}, 
+            { 0, 1, 1, 1, 0}, { 1, 0, 0, 0, 1}, { 1, 0, 0, 0, 1}, { 0, 1, 1, 1, 1},
             { 0, 0, 0, 0, 1}, { 0, 0, 0, 1, 0}, { 0, 1, 1, 0, 0}
         },
     };
@@ -528,24 +528,24 @@ public partial class MainPage : ContentPage
 }
 ```
 
-Tento program používá relativní umístění a velikost funkce `AbsoluteLayout`. Šířka a výška jednotlivých `BoxView` jsou nastaveny na desetinné číslo, konkrétně 85 % 1 rozdělené podle počtu vodorovného a svislého tečky. Pozice jsou nastaveny také pro desetinné číslo. 
+Tento program používá relativní umístění a velikost funkce `AbsoluteLayout`. Šířka a výška jednotlivých `BoxView` jsou nastaveny na desetinné číslo, konkrétně 85 % 1 rozdělené podle počtu vodorovného a svislého tečky. Pozice jsou nastaveny také pro desetinné číslo.
 
 Vzhledem k tomu, že pozice a velikosti jsou relativní vzhledem k celková velikost `AbsoluteLayout`, `SizeChanged` obslužné rutiny pro stránky třeba nastavit pouze `HeightRequest` z `AbsoluteLayout`:
 
 ```csharp
 public partial class MainPage : ContentPage
 {
-    
+
     ···
-    
+
     void OnPageSizeChanged(object sender, EventArgs args)
     {
         // No chance a display will have an aspect ratio > 41:7
         absoluteLayout.HeightRequest = vertDots * Width / horzDots;
     }
-    
+
     ···
-    
+
 }
 ```
 
@@ -556,9 +556,9 @@ Poslední kód `MainPage` třída zpracovává zpětné volání časovače a ba
 ```csharp
 public partial class MainPage : ContentPage
 {
-   
+
     ···
- 
+
     bool OnTimer()
     {
         DateTime dateTime = DateTime.Now;
@@ -596,7 +596,7 @@ Maticové hodiny zdát zřejmé aplikace `BoxView`, ale `BoxView` prvky jsou tak
 
 [![Hodiny BoxView](boxview-images/boxviewclock-small.png "BoxView hodiny")](boxview-images/boxviewclock-large.png#lightbox "BoxView hodiny")
 
-Všech vizuálů na [ **BoxViewClock** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BoxViewClock/) programu jsou podřízené `AbsoluteLayout`. Tyto prvky jsou dimenzované pomocí `LayoutBounds` přidružená vlastnost a otáčet pomocí `Rotation` vlastnost. 
+Všech vizuálů na [ **BoxViewClock** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BoxViewClock/) programu jsou podřízené `AbsoluteLayout`. Tyto prvky jsou dimenzované pomocí `LayoutBounds` přidružená vlastnost a otáčet pomocí `Rotation` vlastnost.
 
 Tří `BoxView` prvky pro do nesprávných rukou hodiny nejsou vytvořena instance v souboru XAML, ale umístěný nebo velikost:
 
@@ -613,13 +613,13 @@ Tří `BoxView` prvky pro do nesprávných rukou hodiny nejsou vytvořena instan
 
     <AbsoluteLayout x:Name="absoluteLayout"
                     SizeChanged="OnAbsoluteLayoutSizeChanged">
-        
+
         <BoxView x:Name="hourHand"
                  Color="Black" />
-        
+
         <BoxView x:Name="minuteHand"
                  Color="Black" />
-        
+
         <BoxView x:Name="secondHand"
                  Color="Black" />
     </AbsoluteLayout>
@@ -631,9 +631,9 @@ Vytvoří konstruktoru souboru kódu 60 `BoxView` elementy značek kolem obvodu 
 ```csharp
 public partial class MainPage : ContentPage
 {
-      
+
     ···
- 
+
     BoxView[] tickMarks = new BoxView[60];
 
     public MainPage()
@@ -649,9 +649,9 @@ public partial class MainPage : ContentPage
 
         Device.StartTimer(TimeSpan.FromSeconds(1.0 / 60), OnTimerTick);
     }
-  
+
     ···
- 
+
 }
 ```
 
@@ -678,9 +678,9 @@ public partial class MainPage : ContentPage
     static readonly HandParams secondParams = new HandParams(0.02, 1.1, 0.85);
     static readonly HandParams minuteParams = new HandParams(0.05, 0.8, 0.9);
     static readonly HandParams hourParams = new HandParams(0.125, 0.65, 0.9);
- 
+
     ···
- 
+
  }
 ```
 
@@ -689,9 +689,9 @@ public partial class MainPage : ContentPage
 ```csharp
 public partial class MainPage : ContentPage
 {
- 
+
     ···
- 
+
     void OnAbsoluteLayoutSizeChanged(object sender, EventArgs args)
     {
         // Get the center and radius of the AbsoluteLayout.
@@ -729,9 +729,9 @@ public partial class MainPage : ContentPage
         // Set the AnchorY property for rotations.
         boxView.AnchorY = handParams.Offset;
     }
- 
+
     ···
- 
+
 }
 ```
 
@@ -742,9 +742,9 @@ Do rukou otáčejí ve funkci zpětného volání časovače:
 ```csharp
 public partial class MainPage : ContentPage
 {
- 
+
     ···
-     
+
     bool OnTimerTick()
     {
         // Set rotation angles for hour and minute hands.

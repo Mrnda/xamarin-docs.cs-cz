@@ -1,20 +1,20 @@
 ---
-title: Seznam vzhledu
-description: Přizpůsobte ListViews pomocí záhlaví, zápatí, skupiny a proměnné výška buňky.
+title: Přizpůsobení vzhledu ListView
+description: Tento článek vysvětluje, jak přizpůsobit ListViews v aplikacích Xamarin.Forms pomocí záhlaví, zápatí, skupiny a proměnné výška buňky.
 ms.prod: xamarin
 ms.assetid: DC8009B0-4371-4D60-885A-5362FC7EE3E5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 6b460e25aa5b97953069caa5456003b6cab2c8a8
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: febf712848b81c09a4e25c824acc097e8b65e409
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848382"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245137"
 ---
-# <a name="list-appearance"></a>Seznam vzhledu
+# <a name="customizing-listview-appearance"></a>Přizpůsobení vzhledu ListView
 
 `ListView` možnosti pro řízení prezentace seznamu celkové kromě základní `ViewCell`s. Mezi možnosti patří:
 

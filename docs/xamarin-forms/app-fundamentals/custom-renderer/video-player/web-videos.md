@@ -1,17 +1,18 @@
 ---
 title: Přehrávání videa Web
+description: Tento článek vysvětluje, jak k přehrávání videa web v aplikaci přehrávání videa pomocí Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 75781A10-865D-4BA8-8D6B-E3DA012922BC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 1d00861a9b6d7066212189aa4a59e786cb545f12
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: f9b52398efbd189153ca74ce80433863b25bd578
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34846744"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240974"
 ---
 # <a name="playing-a-web-video"></a>Přehrávání videa Web
 
@@ -36,7 +37,7 @@ namespace FormsVideoLibrary
             set { SetValue(SourceProperty, value); }
             get { return (VideoSource)GetValue(SourceProperty); }
         }
-        
+
         // AutoPlay property
         public static readonly BindableProperty AutoPlayProperty =
             BindableProperty.Create(nameof(AutoPlay), typeof(bool), typeof(VideoPlayer), true);
@@ -169,7 +170,7 @@ namespace FormsVideoLibrary
             if (!String.IsNullOrWhiteSpace(value))
             {
                 Uri uri;
-                return Uri.TryCreate(value, UriKind.Absolute, out uri) && uri.Scheme != "file" ? 
+                return Uri.TryCreate(value, UriKind.Absolute, out uri) && uri.Scheme != "file" ?
                                 VideoSource.FromUri(value) : VideoSource.FromResource(value);
             }
 
@@ -482,7 +483,7 @@ Podobně můžete potlačit zobrazení ovládacích prvků přenosu nastavením 
                    AreTransportControlsEnabled="False" />
 ```
 
-Pokud nastavíte obě vlastnosti na `false`, videa nezahájí, přehrávání a budou existovat žádný způsob, jak jej spustit! Je třeba volat `Play` ze souboru kódu na pozadí, nebo vytvořte vlastní ovládací prvky přenosu, jak je popsáno v článku [implementace vlastní přenos ovládací prvky Video](custom-transport.md). 
+Pokud nastavíte obě vlastnosti na `false`, videa nezahájí, přehrávání a budou existovat žádný způsob, jak jej spustit! Je třeba volat `Play` ze souboru kódu na pozadí, nebo vytvořte vlastní ovládací prvky přenosu, jak je popsáno v článku [implementace vlastní přenos ovládací prvky Video](custom-transport.md).
 
 **App.xaml** soubor obsahuje prostředky pro dva další videa:
 
@@ -502,7 +503,7 @@ Pokud nastavíte obě vlastnosti na `false`, videa nezahájí, přehrávání a 
 
             <video:UriVideoSource x:Key="Sintel"
                                   Uri="https://archive.org/download/Sintel/sintel-2048-stereo_512kb.mp4" />
-            
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

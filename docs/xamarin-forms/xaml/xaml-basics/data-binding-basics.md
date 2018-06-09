@@ -1,18 +1,18 @@
 ---
 title: Část 4. Základy vazba dat
-description: Datové vazby povolit vlastnosti dvou objektů propojení tak, aby změnu v jednom způsobí změnu na druhý. To je velmi cenným nástrojem ke zjištění a během vazby dat lze definovat zcela v kódu, XAML poskytuje zkratky a usnadnění práce. V důsledku toho je vazba jedním z nejdůležitějších rozšíření značek v Xamarin.Forms.
+description: Datové vazby povolit vlastnosti dvou objektů propojení tak, aby změnu v jednom způsobí změnu na druhý.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: a8adc0c16043048ec919f5a0f9f7c5ce25f08ef9
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.openlocfilehash: 117ddd033faedda871c33ba10c246739309e2e86
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34733032"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245947"
 ---
 # <a name="part-4-data-binding-basics"></a>Část 4. Základy vazba dat
 
@@ -86,7 +86,7 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 Vlastnosti může být na jeden řádek, nebo rozdělené na více řádků:
 
 ```csharp
-Text="{Binding Value, 
+Text="{Binding Value,
                StringFormat='The angle is {0:F0} degrees'}"
 ```
 
@@ -102,13 +102,13 @@ Tady je spuštěným programem:
 
 [![](data-binding-basics-images/sliderbinding.png "Zobrazení zobrazení vazby")](data-binding-basics-images/sliderbinding-large.png#lightbox "vazby zobrazení – zobrazení ")
 
-## <a name="the-binding-mode"></a>Režim vazby 
+## <a name="the-binding-mode"></a>Režim vazby
 
 Jediné zobrazení mohou mít vazby dat na některé jeho vlastnosti. Každé zobrazení však může mít jen jeden `BindingContext`, takže více vazby dat v tomto zobrazení, musí všechny vlastnosti objektu stejné odkazovat.
 
 Zahrnuje řešení, aby tato a další problémy `Mode` vlastnost, která je nastavena na hodnotu členem `BindingMode` výčtu:
 
-- `Default` 
+- `Default`
 - `OneWay` – hodnoty jsou převést ze zdrojové do cílové
 - `OneWayToSource` – hodnoty jsou přeneseny z cíle na zdroj
 - `TwoWay` – hodnoty přenášených obou směrech mezi zdrojem a cílem
@@ -324,7 +324,7 @@ Mnohem lepší. Nyní všechno, co je potřeba je smrk až šablony položky s d
 </ContentPage>
 ```
 
-Všimněte si použití `OnPlatform` zadat velikost `BoxView` a výšku `ListView` řádků. I když hodnoty pro všechny tři platformy jsou stejné, může být kód snadno přizpůsobit pro ostatní hodnoty a systém doladit zobrazení. 
+Všimněte si použití `OnPlatform` zadat velikost `BoxView` a výšku `ListView` řádků. I když hodnoty pro všechny tři platformy jsou stejné, může být kód snadno přizpůsobit pro ostatní hodnoty a systém doladit zobrazení.
 
 ## <a name="binding-value-converters"></a>Převodníky hodnot vazby
 
@@ -366,7 +366,7 @@ namespace XamlSamples
 }
 ```
 
-`ConvertBack` Metoda nehraje roli v tomto programu, protože vazby jsou pouze jedním ze způsobů ze zdroje k cíli. 
+`ConvertBack` Metoda nehraje roli v tomto programu, protože vazby jsou pouze jedním ze způsobů ze zdroje k cíli.
 
 Vazba odkazuje převaděč vazba s `Converter` vlastnost. Převaděč vazba může také přijmout parametr zadaný `ConverterParameter` vlastnost. Pro některé univerzálnost Toto je, jak je zadán násobitel. Převaděč vazby kontroluje parametr převaděč pro platná `double` hodnotu.
 

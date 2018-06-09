@@ -1,5 +1,5 @@
 ---
-title: Na kartách stránky
+title: Stránka s kartami Xamarin.Forms
 description: Xamarin.Forms TabbedPage se skládá ze seznamu karty a větší oblast podrobností, každé kartě načítání obsahu do oblasti podrobností. Tento článek ukazuje, jak pomocí TabbedPage můžete přejít přes kolekci stránek.
 ms.prod: xamarin
 ms.assetid: C946057F-C77C-412D-82A0-DAF475A24EF5
@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2017
-ms.openlocfilehash: 7af9248e706e615ea3e693a58a5f7664e8dc4daa
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: b7e3eb8539704fccd713af45490c35a6196b072f
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847809"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240376"
 ---
-# <a name="tabbed-page"></a>Na kartách stránky
+# <a name="xamarinforms-tabbed-page"></a>Stránka s kartami Xamarin.Forms
 
 _Xamarin.Forms TabbedPage se skládá ze seznamu karty a větší oblast podrobností, každé kartě načítání obsahu do oblasti podrobností. Tento článek ukazuje, jak pomocí TabbedPage můžete přejít přes kolekci stránek._
 

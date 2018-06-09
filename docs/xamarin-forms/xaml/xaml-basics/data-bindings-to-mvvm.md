@@ -1,17 +1,18 @@
 ---
 title: Část 5. Z vazby dat na rozhraní MVVM
-description: Architekturní vzor Model-View-ViewModel (modelem MVVM) byla vyvinuta s XAML v paměti. Vzor vynucuje oddělení mezi tři vrstvy softwaru – uživatelské rozhraní jazyka XAML volat zobrazení; Základní data, nazývá Model; a zprostředkovatel mezi zobrazení a modelu s názvem ViewModel. Zobrazení a ViewModel jsou často připojené prostřednictvím vazby dat, které jsou definované v souboru XAML. Vazby pro zobrazení je obvykle instanci ViewModel.
+description: Vzor modelem MVVM vynucuje oddělení mezi tři vrstvy softwaru – uživatelské rozhraní jazyka XAML volat zobrazení; Základní data, nazývá Model; a zprostředkovatel mezi zobrazení a modelu s názvem ViewModel.
 ms.prod: xamarin
 ms.assetid: 48B37D44-4FB1-41B2-9A5E-6D383B041F81
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: 95cd79a4bd6da47757cfeb12a2862ccb5a66fee2
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e9f38377299e8094162dd2d2d73174e6f2b40369
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245768"
 ---
 # <a name="part-5-from-data-bindings-to-mvvm"></a>Část 5. Z vazby dat na rozhraní MVVM
 
@@ -649,7 +650,7 @@ public class PageDataViewModel
         };
     }
 
-    public static IList<PageDataViewModel> All { private set; get; } 
+    public static IList<PageDataViewModel> All { private set; get; }
 }
 ```
 

@@ -1,18 +1,18 @@
 ---
 title: Vytvoření vlastního rozložení
-description: Definuje Xamarin.Forms třídy čtyři rozložení – StackLayout, AbsoluteLayout, RelativeLayout a mřížky, a všechny její podřízené položky uspořádá jiným způsobem. Ale někdy je nezbytné k uspořádání obsahu stránce pomocí rozložení neposkytuje Xamarin.Forms. Tento článek vysvětluje, jak napsat vlastní rozložení třídu a ukazuje třídu WrapLayout orientaci-velká a malá písmena, který uspořádá podřízené vodorovně na stránce a potom zabalí zobrazení následné podřízené objekty další řádky.
+description: Tento článek vysvětluje, jak napsat vlastní rozložení třídu a ukazuje třídu WrapLayout orientaci-velká a malá písmena, který uspořádá podřízené vodorovně na stránce a potom zabalí zobrazení následné podřízené objekty další řádky.
 ms.prod: xamarin
 ms.assetid: B0CFDB59-14E5-49E9-965A-3DCCEDAC2E31
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/29/2017
-ms.openlocfilehash: 7f2a443ded0d6b41db237e9842cd80e016bb5251
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: f225a80a1c386668b71d1cdd47409eb017f19033
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847743"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244932"
 ---
 # <a name="creating-a-custom-layout"></a>Vytvoření vlastního rozložení
 

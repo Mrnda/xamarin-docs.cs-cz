@@ -1,33 +1,25 @@
 ---
-title: Styly
-description: Styl textu v Xamarin.Forms
+title: Styly Xamarin.Forms textu
+description: Tento článek vysvětluje, jak stylů textu v aplikacích Xamarin.Forms. Styly můžete definovat jednou a používané mnoha zobrazení, ale styl lze použít pouze se zobrazeními jednoho typu.
 ms.prod: xamarin
 ms.assetid: 57C0CFD6-A568-46B8-ADA1-BF25681893CF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 42d5da5c4171347de8c4befc773e498803fd9f36
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: b8cc6493c3574180e7938050075c5a70ecebeebf
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848444"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245319"
 ---
-# <a name="styles"></a>Styly
+# <a name="xamarinforms-text-styles"></a>Styly Xamarin.Forms textu
 
 _Styl textu v Xamarin.Forms_
 
-
 Styly lze upravit vzhled popisky, položek a editory. Styly můžete definovat jednou a používané mnoha zobrazení, ale styl lze použít pouze se zobrazeními jednoho typu.
 Je možné přidělit styly `Key` a použije selektivně pomocí určitý ovládací prvek `Style` vlastnost.
-
-Tento článek obsahuje následující témata:
-
-- **[Předdefinované styly](#Built-In_Styles)**  &ndash; použít předdefinované stylů pro styl zobrazení založený na textu v celé vaší aplikace.
-- **[Vlastní styly](#Custom_Styles)**  &ndash; při integrovaných možností nejsou dost definovat vlastní styly.
-- **[Použití styly](#Applying_Styles)**  &ndash; používání vlastních a vestavěných stylů pro zobrazení.
-- **[Usnadnění](#Accessibility)**  &ndash; Ujistěte se, že text respektuje nastavení usnadnění.
 
 <a name="Built-In_Styles" />
 

@@ -1,17 +1,18 @@
 ---
 title: Část 2. Syntaxe nezbytné XAML
-description: XAML je většinou určený k vytváření instancí a inicializace objektů. Ale často, vlastnosti musí být nastavené na komplexní objekty, které nelze snadno reprezentovat jako řetězce XML a někdy vlastnosti definované třídou jeden musí být nastavena na podřízené třídy. Tyto dvě potřeby vyžadují základní funkce syntaxe XAML vlastnost elementů a přidružené vlastnosti.
+description: Tento článek vysvětluje základní funkce syntaxe XAML vlastnost elementů a přidružené vlastnosti.
 ms.prod: xamarin
 ms.assetid: 4022F1DC-3802-4635-A553-688ABD3F0D5A
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: d0129ec9872d8e5270ed8f0072cff0035d4f5255
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 62223a4c56198271513b0b15587bb588e71b28cc
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245843"
 ---
 # <a name="part-2-essential-xaml-syntax"></a>Část 2. Syntaxe nezbytné XAML
 

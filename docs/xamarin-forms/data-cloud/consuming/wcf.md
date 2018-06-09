@@ -1,17 +1,18 @@
 ---
 title: Využívají webové služby systému Windows Communication Foundation (WCF)
-description: WCF je společnosti Microsoft jednotné rozhraní pro vytváření aplikací orientovaných na služby. Umožňuje vývojářům vytvářet zabezpečeným, spolehlivým, zpracovaných a umožňuje vzájemnou spolupráci distribuované aplikace. Tento článek ukazuje, jak používat služby WCF objekt přístup protokolu SOAP (Simple) z aplikace Xamarin.Forms.
+description: Tento článek ukazuje, jak používat služby WCF objekt přístup protokolu SOAP (Simple) z aplikace Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 5696FF04-EF21-4B7A-8C8B-26DE28B5C0AD
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 23cdc1871511fa75ba2686213d135822ca0fb971
-ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
+ms.openlocfilehash: 05092a3648ac4c37dfd8d712184176a544979ede
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241201"
 ---
 # <a name="consuming-a-windows-communication-foundation-wcf-web-service"></a>Využívají webové služby systému Windows Communication Foundation (WCF)
 

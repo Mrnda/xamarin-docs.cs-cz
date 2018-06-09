@@ -1,20 +1,20 @@
 ---
-title: Položka
-description: Jednořádkové textové nebo heslo, zadejte
+title: Položka Xamarin.Forms
+description: Tento článek vysvětluje způsob použití třídy Xamarin.Forms položky tak, aby přijímal textových nebo heslo vstup v aplikaci.
 ms.prod: xamarin
 ms.assetid: 9923C541-3C10-4D14-BAB5-C4D6C514FB1E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/31/2018
-ms.openlocfilehash: a45a4edb93920cfe1d0289da44ee664e41c25cf1
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: b6188b986589a56229ad2e092d4100ff3f75dbe4
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847845"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245550"
 ---
-# <a name="entry"></a>Položka
+# <a name="xamarinforms-entry"></a>Položka Xamarin.Forms
 
 _Jednořádkové textové nebo heslo, zadejte_
 

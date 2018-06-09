@@ -1,19 +1,20 @@
 ---
-title: Účinek
-description: Uživatelská rozhraní Xamarin.Forms jsou vykreslovány pomocí nativní ovládací prvky typu cílovou platformu, povolíte Xamarin.Forms aplikací zachovat odpovídající vzhledu a chování pro každou platformu. Účinky povolí nativní ovládací prvky na jednotlivých platformách k přizpůsobení bez nutnosti uchýlit implementaci vlastní zobrazovací jednotky.
+title: Účinky Xamarin.Forms
+description: Účinky povolí nativní ovládací prvky na jednotlivých platformách k přizpůsobení bez nutnosti uchýlit implementaci vlastní zobrazovací jednotky.
 ms.prod: xamarin
 ms.assetid: 8AF168A7-4CD9-4603-B961-15B8B1543784
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/01/2017
-ms.openlocfilehash: 63d7750294321a28dbde833f72fe6b7277ada397
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bc1c600aa6d5ede079fe0af83370393d4f0e298f
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35239693"
 ---
-# <a name="effects"></a>Účinek
+# <a name="xamarinforms-effects"></a>Účinky Xamarin.Forms
 
 _Uživatelská rozhraní Xamarin.Forms jsou vykreslovány pomocí nativní ovládací prvky typu cílovou platformu, povolíte Xamarin.Forms aplikací zachovat odpovídající vzhledu a chování pro každou platformu. Účinky povolí nativní ovládací prvky na jednotlivých platformách k přizpůsobení bez nutnosti uchýlit implementaci vlastní zobrazovací jednotky._
 

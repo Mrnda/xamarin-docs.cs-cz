@@ -1,18 +1,18 @@
 ---
 title: Hierarchická navigace
-description: Třída NavigationPage poskytuje hierarchické navigační prostředí, kde je možné procházet stránky, dopředný a podle potřeby zpětné uživatele. Třída implementuje navigační jako zásobník ven (LIFO) last-in objektů stránky. Tento článek ukazuje, jak používat třídu NavigationPage k provádění navigace v zásobníku stránek.
+description: Tento článek ukazuje, jak používat třídu NavigationPage k provádění navigace v zásobníku last-in, první ven (LIFO) stránky.
 ms.prod: xamarin
 ms.assetid: C8A5EEFF-5A3B-4163-838A-147EE3939FAA
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2017
-ms.openlocfilehash: 49be5b812c5ef66907e7ebf74906c25bfbb076b6
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 20dfb6e935d08c35da73a81fb401a613aa6c9bac
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847160"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242453"
 ---
 # <a name="hierarchical-navigation"></a>Hierarchická navigace
 
@@ -48,7 +48,7 @@ Rozložení [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.
 
 - V systému iOS, se nachází v horní části stránky, který zobrazí název, a který má navigačním panelu *zpět* tlačítko, které vrátí na předchozí stránku.
 - V systému Android, se nachází v horní části stránky, který zobrazuje název, ikonu, navigačním panelu a *zpět* tlačítko, které vrátí na předchozí stránku. Ikona je definována v `[Activity]` atribut, který upraví `MainActivity` třídy v projektu pro specifické pro platformu Android.
-- Na univerzální platformu Windows nachází v horní části stránky, který zobrazuje název navigačním panelu. 
+- Na univerzální platformu Windows nachází v horní části stránky, který zobrazuje název navigačním panelu.
 
 Na všech platformách hodnotu [ `Page.Title` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Title/) vlastnosti se zobrazí jako nadpis stránky.
 

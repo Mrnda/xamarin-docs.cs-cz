@@ -1,17 +1,18 @@
 ---
 title: Část 3. XAML – rozšíření značek
-description: XAML – rozšíření značek tvoří důležitou součást v jazyce XAML, které umožní vlastnosti, které chcete nastavit na objekty nebo hodnoty, které jsou nepřímo odkazované z jiných zdrojů. XAML – rozšíření značek jsou obzvláště důležité pro sdílení objekty a odkazování na konstanty používají v rámci aplikace, ale v datových vazeb najdou jejich největší nástroj.
+description: XAML – rozšíření značek tvoří důležitou součást v jazyce XAML, které umožní vlastnosti, které chcete nastavit na objekty nebo hodnoty, které jsou nepřímo odkazované z jiných zdrojů.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: charlespetzold
 ms.author: chape
 ms.date: 3/27/2018
-ms.openlocfilehash: c110223eae2bb06f64adf3e09977d97cc7b5d71b
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: 6fcb051d2c24c7da169106b06ad5ebfc91edafa6
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245908"
 ---
 # <a name="part-3-xaml-markup-extensions"></a>Část 3. XAML – rozšíření značek
 
@@ -321,8 +322,8 @@ Bez ohledu podobnosti jejich názvy `x:Static` a `StaticResource` se příliš n
 
 - Veřejné statické pole
 - Veřejné statické vlastnosti
-- veřejné konstantní pole 
-- člena výčtu. 
+- veřejné konstantní pole
+- člena výčtu.
 
 `StaticResource` – Rozšíření značek podporuje XAML implementace, které definují slovník prostředků při `x:Static` je vnitřní součástí XAML, jako `x` předpony zjistí informace o.
 
@@ -366,7 +367,7 @@ namespace XamlSamples
                     PagePadding = new Thickness(5, 0, 5, 0);
                     TitleFont = Font.SystemFontOfSize(40, FontAttributes.Bold);
                     break;
-                    
+
                 case Device.UWP:
                     PagePadding = new Thickness(5, 0, 5, 0);
                     TitleFont = Font.SystemFontOfSize(50, FontAttributes.Bold);

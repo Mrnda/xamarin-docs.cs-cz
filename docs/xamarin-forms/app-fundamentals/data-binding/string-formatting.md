@@ -1,19 +1,20 @@
 ---
-title: Řetězec formátování
-description: Použití datových vazeb pro formátování a zobrazení objektů jako řetězce
+title: Řetězec Xamarin.Forms formátování
+description: Tento článek vysvětluje, jak používat Xamarin.FOrms datové vazby k formátování a zobrazení objektů jako řetězce. Toho dosáhnete pomocí nastavení StringFormat – vazby na standardní řetězec formátování .NET s zástupný symbol.
 ms.prod: xamarin
 ms.assetid: 978C85B7-CB58-4483-A131-21B381A865E0
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 4e143f650c3cde7577def1a95e53b207608a088a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: bdac74e4ec14797ec373f86b8a94c7af4d480951
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240298"
 ---
-# <a name="string-formatting"></a>Řetězec formátování
+# <a name="xamarinforms-string-formatting"></a>Řetězec Xamarin.Forms formátování
 
 Někdy je vhodnější použít datové vazby k zobrazení řetězcovou reprezentaci objektu nebo hodnota. Například můžete chtít použít `Label` zobrazit aktuální hodnoty `Slider`. V této vazbě dat `Slider` je zdroj a cíl `Text` vlastnost `Label`.
 

@@ -1,5 +1,5 @@
 ---
-title: Obory názvů jazyka XAML
+title: Obory názvů jazyka XAML v Xamarin.Forms
 description: XAML používá atribut XML xmlns pro deklarace oboru názvů. Tento článek představuje syntaxe oboru názvů jazyka XAML a ukazuje, jak deklarace oboru názvů jazyka XAML pro přístup k typu.
 ms.prod: xamarin
 ms.assetid: C03B5553-B199-4A19-9F0F-E5BCE1DB268F
@@ -7,13 +7,14 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 07/10/2017
-ms.openlocfilehash: ecf255d2fc6937e93258eaa021f79152cb7b1c7f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: faa4998869b918caaf5bc4252dc81a5745199c93
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245830"
 ---
-# <a name="xaml-namespaces"></a>Obory názvů jazyka XAML
+# <a name="xaml-namespaces-in-xamarinforms"></a>Obory názvů jazyka XAML v Xamarin.Forms
 
 _XAML používá atribut XML xmlns pro deklarace oboru názvů. Tento článek představuje syntaxe oboru názvů jazyka XAML a ukazuje, jak deklarace oboru názvů jazyka XAML pro přístup k typu._
 

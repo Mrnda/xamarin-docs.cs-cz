@@ -1,18 +1,20 @@
 ---
-title: Vytváření vlastní motiv
+title: Vytváření vlastních Xamarin.Forms motiv
+description: Tento článek vysvětluje, jak vytvořit vlastní motiv Xamarin.Forms pro odkazování na v aplikaci.
 ms.prod: xamarin
 ms.assetid: 4FE08ADC-093F-47FA-B33C-20CF08B5D7E0
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/01/2017
-ms.openlocfilehash: c9bc532902e9cfcc080220a05e41401e893783e4
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: 018193cf0b198fd87f0f09cbfeba52e9d2a0f68b
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245570"
 ---
-# <a name="creating-a-custom-theme"></a>Vytváření vlastní motiv
+# <a name="creating-a-custom-xamarinforms-theme"></a>Vytváření vlastních Xamarin.Forms motiv
 
 ![](~/media/shared/preview.png "Toto rozhraní API je aktuálně ve verzi preview")
 

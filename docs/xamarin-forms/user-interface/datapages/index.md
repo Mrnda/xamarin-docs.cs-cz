@@ -1,18 +1,20 @@
 ---
-title: DataPages
+title: Xamarin.Forms DataPages
+description: Tento článek představuje Xamarin.Forms DataPages, která poskytují rozhraní API pro rychle a snadno svázat zdroj dat se předdefinovaných zobrazení.
 ms.prod: xamarin
 ms.assetid: DF16EAEE-DB78-42CA-9C59-51D9D6CB6B95
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: e83efcd71eb9427f0b63749e8885a991a206febe
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 2a74b636a41a72b26776157a774f0a33ef45a075
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243327"
 ---
-# <a name="datapages"></a>DataPages
+# <a name="xamarinforms-datapages"></a>Xamarin.Forms DataPages
 
 ![](~/media/shared/preview.png "Toto rozhraní API je aktuálně ve verzi preview")
 
@@ -72,4 +74,3 @@ Infrastruktury Xamarin.Forms komunikuje se zdrojem dat prostřednictvím násled
 
 Existují dvě metody `MaskKey` a `UnmaskKey` , můžete použít (zobrazit nebo skrýt) vlastnosti datové položky (tj. zabránit jejich vykreslení).
 Klíč odpovídá vlastnost s názvem na datový objekt položky.
-

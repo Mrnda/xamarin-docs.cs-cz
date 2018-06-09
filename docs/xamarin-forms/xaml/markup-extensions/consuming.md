@@ -1,17 +1,18 @@
 ---
 title: Využívání XAML – rozšíření značek
-description: Použití značek rozšíření XAML, které jsou k dispozici v Xamarin.Forms
+description: Tento článek vysvětluje, jak používat rozšíření značek Xamarin.Forms XAML pro zlepšení výkonu a flexibilitě XAML tím, že atributy prvků nastavit z různých zdrojů.
 ms.prod: xamarin
 ms.assetid: CE686893-609C-4EC3-9225-6C68D2A9F79C
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: 25eada483e8bd2ce95cb3101dfe873ea38b283ab
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 278677d45f997ac446c2a20967dc3501179bf8da
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245934"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>Využívání XAML – rozšíření značek
 
@@ -136,7 +137,7 @@ V posledním příkladu se zobrazí `Device.RuntimePlatform` hodnotu. `Environme
 
 Zde je ukázka běžící na všechny tři platformách:
 
-[![x:Static Demo](consuming-images/staticdemo-small.png "x:Static Demo")](consuming-images/staticdemo-large.png#lightbox "x:Static Demo")
+[![x: Static ukázku](consuming-images/staticdemo-small.png "ukázku x: Static")](consuming-images/staticdemo-large.png#lightbox "x: Static Demo")
 
 <a name="reference" />
 

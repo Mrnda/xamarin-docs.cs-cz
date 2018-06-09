@@ -1,19 +1,20 @@
 ---
-title: Bitmap Basics
-description: Načíst rastrové obrázky z různých zdrojů a jejich zobrazení.
+title: Základy rastrový obrázek v SkiaSharp
+description: Tento článek vysvětluje, jak načíst rastrové obrázky v SkiaSharp z různých zdrojů a zobrazí je v aplikacích Xamarin.Forms a to ukazuje s ukázkový kód.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
 author: charlespetzold
 ms.author: chape
 ms.date: 04/03/2017
-ms.openlocfilehash: 688c6218f9ac66e3dfd6cd157e43f9b639e124c6
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 291f08afb95c70e9f9fccc02e1fd7353cf107213
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244383"
 ---
-# <a name="bitmap-basics"></a>Bitmap Basics
+# <a name="bitmap-basics-in-skiasharp"></a>Základy rastrový obrázek v SkiaSharp
 
 _Načíst rastrové obrázky z různých zdrojů a jejich zobrazení._
 
@@ -247,5 +248,5 @@ Pokud žádné rastrový obrázek ještě byl načten z knihovny obrázků, pak 
 ## <a name="related-links"></a>Související odkazy
 
 - [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 - [Výběr fotografie z knihovny obrázků](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)

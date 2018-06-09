@@ -1,19 +1,20 @@
 ---
-title: Cesta vazby
-description: Použití datových vazeb dílčí vlastnosti přístup a členy kolekce
+title: Cesta vazby Xamarin.Forms
+description: Tento článek vysvětluje, jak používat Xamarin.Forms datové vazby pro přístup k dílčí vlastnosti a členy kolekce společně s vlastností cesta třídu vazby.
 ms.prod: xamarin
 ms.assetid: 3CF721A5-E157-468B-AD3A-DA0A45E58E8D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: f75cfcf4bfd5ffa71699f62b30145b732421d964
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d7c3b1ba991380451b4a82c389c4d46e950bc914
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240470"
 ---
-# <a name="binding-path"></a>Cesta vazby
+# <a name="xamarinforms-binding-path"></a>Cesta vazby Xamarin.Forms
 
 Ve všech předchozích příkladech vazby dat [ `Path` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Binding.Path/) vlastnost `Binding` – třída (nebo [ `Path` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Xaml.BindingExtension.Path/) vlastnost `Binding` – rozšíření značek) byla nastavena do vlastnosti jediné. Ve skutečnosti lze nastavit `Path` k *dílčí vlastnosti* (vlastnost vlastnost), nebo členem kolekce.
 
@@ -29,7 +30,7 @@ Předpokládejme například, obsahuje stránku `TimePicker`:
 {Binding Source={x:Reference timePicker},
          Path=Time.TotalSeconds}
 ```
-         
+
 `Time` Vlastnost je typu `TimeSpan`, který má `TotalSeconds` vlastnost. `Time` a `TotalSeconds` vlastnosti jsou simply připojené tečkou. Položky v `Path` řetězec vždy odkazovat na vlastnosti a ne na typy těchto vlastností.
 
 Jestli třeba a některé další se zobrazují v **cesta variace** stránky:
@@ -50,7 +51,7 @@ Jestli třeba a některé další se zobrazují v **cesta variace** stránky:
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
-    
+
     <StackLayout Margin="10, 0">
         <TimePicker x:Name="timePicker" />
 
@@ -61,7 +62,7 @@ Jestli třeba a některé další se zobrazují v **cesta variace** stránky:
         <Label Text="{Binding Source={x:Reference page},
                               Path=Content.Children.Count,
                               StringFormat='There are {0} children in this StackLayout'}" />
-        
+
         <Label Text="{Binding Source={x:Static globe:CultureInfo.CurrentCulture},
                               Path=DateTimeFormat.DayNames[3],
                               StringFormat='The middle day of the week is {0}'}" />
@@ -156,7 +157,7 @@ Který typ vazby zdroje, zobrazí nebo `DataBindingDemos.PathVariationsPage`. Zn
 
 Typ `Content` vlastnost je nyní odhalen být `Xamarin.Forms.StackLayout`. Přidat `Children` vlastnost, která má `Path` a typ je `Xamarin.Forms.ElementCollection'1[Xamarin.Forms.View]`, což je třída interní Xamarin.Forms, ale samozřejmě typu kolekce. Přidat index, a typ je `Xamarin.Forms.Label`. Pokračujte tímto způsobem.
 
-Jako Xamarin.Forms zpracovává cestu vazby, nainstaluje `PropertyChanged` obslužná rutina libovolného objektu v cestě, která implementuje `INotifyPropertyChanged` rozhraní. Například konečné vazby reaguje na změny v prvním `Label` protože `Text` změny vlastností. 
+Jako Xamarin.Forms zpracovává cestu vazby, nainstaluje `PropertyChanged` obslužná rutina libovolného objektu v cestě, která implementuje `INotifyPropertyChanged` rozhraní. Například konečné vazby reaguje na změny v prvním `Label` protože `Text` změny vlastností.
 
 Pokud vlastnost v cestě vazba neimplementuje `INotifyPropertyChanged`, všechny změny tuto vlastnost bude ignorována. Některé změny může zcela zneplatnit cestu vazby, proto použijte tento postup pouze v případě, že řetězec vlastnosti a dílčí vlastnosti nikdy zneplatní.
 

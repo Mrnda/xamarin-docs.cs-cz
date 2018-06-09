@@ -1,22 +1,24 @@
 ---
 title: Souhrn kapitoly 16. Datová vazba
+description: 'Vytváření mobilních aplikací s Xamarin.Forms: Souhrn kapitoly 16. Datová vazba'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: ED997DB0-C229-4868-A5FB-928703B377D6
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 0f200e0c482402813ac7051255dd7c27da93d6dc
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 520da1518c7b795bd1ad17cc3cfaa8d37815de53
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241507"
 ---
 # <a name="summary-of-chapter-16-data-binding"></a>Souhrn kapitoly 16. Datová vazba
 
 Programátory v jazyce často najít sami zápis obslužné rutiny, které rozpoznat, kdy došlo ke změně vlastností jeden objekt a použijte ke změně hodnoty vlastnosti v jiném objektu. Tento proces je možné automatizovat pomocí technika *datová vazba*. Datové vazby jsou obvykle definovány v jazyce XAML a stanou se součástí definice uživatelského rozhraní.
 
-Tyto datové vazby velmi často připojit objektů uživatelského rozhraní na základní data. Toto je postup, který je ve více prozkoumali [ **kapitoly 18. MVVM**](chapter18.md). Datové vazby však může připojit i dvě nebo více elementům uživatelského rozhraní. Většina příkladů časné vazby dat v této kapitole ukazují tento postup.
+Tyto datové vazby velmi často připojit objektů uživatelského rozhraní na základní data. Toto je postup, který je ve více prozkoumali [ **kapitoly 18. ROZHRANÍ MVVM**](chapter18.md). Datové vazby však může připojit i dvě nebo více elementům uživatelského rozhraní. Většina příkladů časné vazby dat v této kapitole ukazují tento postup.
 
 ## <a name="binding-basics"></a>Základy vazby
 

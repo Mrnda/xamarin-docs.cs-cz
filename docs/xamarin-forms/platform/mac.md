@@ -1,6 +1,6 @@
 ---
 title: Instalační program platformy Mac
-description: Xamarin.Forms má nyní preview podporu pro platformu Mac
+description: Tento článek vysvětluje, jak přidat do projektu Xamarin.Forms, která bude vytvářet aplikace fungovat v systému macOS Sierra a systému macOS El Capitan Mac projekt.
 ms.prod: xamarin
 ms.assetid: EEC549E0-F182-4F9C-B2BA-B31D19569AA5
 ms.technology: xamarin-forms
@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/03/2017
-ms.openlocfilehash: c3a2c36463b2934254c54f3f2250ee253d57798b
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: ae0fbfc7862a0d2147b2c3bbdbae7dd53dfce78f
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848219"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242593"
 ---
 # <a name="mac-platform-setup"></a>Instalační program platformy Mac
 
@@ -28,7 +28,7 @@ Můžete přidat pouze Mac aplikace pomocí sady Visual Studio for Mac.
 
 ## <a name="adding-a-mac-app"></a>Přidání aplikace Mac
 
-Postupujte podle těchto pokynů můžete přidat aplikaci Mac, který se spustí v systému macOS Sierra a Mac OS X El Capitan:
+Postupujte podle těchto pokynů můžete přidat aplikaci Mac, který se spustí v systému macOS Sierra a systému macOS El Capitan:
 
 1. V sadě Visual Studio pro Mac, klikněte pravým tlačítkem na existující řešení Xamarin.Forms a zvolte **Přidat > Přidat nový projekt...**
 

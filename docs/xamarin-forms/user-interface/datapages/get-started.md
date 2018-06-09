@@ -1,17 +1,18 @@
 ---
 title: Začínáme s DataPages
+description: Tento článek vysvětluje, jak začít pracovat, vytvoření jednoduché datové stránky pomocí Xamarin.Forms DataPages.
 ms.prod: xamarin
 ms.assetid: 6416E5FA-6384-4298-BAA1-A89381E47210
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: d5e73839f889234c816bfff08f3e46dade8dffc9
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 1fb8a06111271d453c578cd3d2db97ec8689c995
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34846838"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243074"
 ---
 # <a name="getting-started-with-datapages"></a>Začínáme s DataPages
 
@@ -21,7 +22,7 @@ ms.locfileid: "34846838"
 > Vyžaduje DataPages [Xamarin.Forms motiv](~/xamarin-forms/user-interface/themes/index.md) odkaz k vykreslení.
 
 
-Abyste mohli začít vytváření stránky jednoduché datové jednotky pomocí verze Preview DataPages, postupujte podle následujících kroků. Tento ukázkový používá pevně zakódované styl ("události") ve verzi Preview sestavení, které lze použít pouze se konkrétní formátu JSON v kódu.
+Abyste mohli začít vytváření jednoduché datové stránky pomocí verze Preview DataPages, postupujte podle následujících kroků. Tento ukázkový používá pevně zakódované styl ("události") ve verzi Preview sestavení, které lze použít pouze se konkrétní formátu JSON v kódu.
 
 [![](get-started-images/demo-sml.png "DataPages ukázkovou aplikaci")](get-started-images/demo.png#lightbox "DataPages ukázkové aplikace")
 

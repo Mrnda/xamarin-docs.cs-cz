@@ -1,19 +1,20 @@
 ---
-title: Ověřování
+title: Ověření v podnikové aplikace
+description: Tato kapitola vysvětluje, jak mobilní aplikace eShopOnContainers provede ověření vstupu uživatele. To zahrnuje určení ověřovacích pravidel, která aktivuje ověření a zobrazení chyby ověření.
 ms.prod: xamarin
 ms.assetid: 56e4f0fc-48d9-4033-91ec-173bb46a5e4d
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 484f3b3d45e41d0dd0406681250ac90943a1cdde
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 6a7f244b78d5b48dd219f59f1191993d62663bbf
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847586"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243174"
 ---
-# <a name="validation"></a>Ověřování
+# <a name="validation-in-enterprise-apps"></a>Ověření v podnikové aplikace
 
 Jakékoli aplikaci, která přijímá vstup od uživatele zkontrolujte, že vstup je neplatný. Aplikace může například zkontrolovat pro vstup, obsahuje pouze znaky v konkrétní rozsah, je určité délky nebo odpovídá konkrétní formátu. Bez ověřování může uživatel zadat data, která způsobila selhání aplikace. Ověření vynucuje obchodní pravidla a zabraňuje útočníkovi vložení škodlivá data.
 

@@ -1,22 +1,22 @@
 ---
 title: Vytváření rozšíření značek pro jazyk XAML
-description: Definovat vlastní vlastní rozšíření značek v jazyce XAML
+description: Tento článek vysvětluje, jak definovat vlastní vlastní rozšíření značek Xamarin.Forms XAML. Rozšíření značek XAML je třída, která implementuje rozhraní IMarkupExtension IMarkupExtension.
 ms.prod: xamarin
 ms.assetid: 797C1EF9-1C8E-4208-8610-9B79CCF17D46
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: 1a484aa4a19473c5a4f60b3d7bab78af7a20eecd
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: b185ea3b7260ff2be8a4dec5dc713f24dc6e6095
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848249"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245700"
 ---
 # <a name="creating-xaml-markup-extensions"></a>Vytváření rozšíření značek pro jazyk XAML
 
-Na úroveň programová rozšíření značek XAML je třída, která implementuje [ `IMarkupExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.IMarkupExtension/) nebo [ `IMarkupExtension<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.IMarkupExtension%3CT%3E/) rozhraní. Můžete si prostudovat zdrojový kód rozšíření standardní značek, které jsou popsané níže v [ **MarkupExtensions** directory](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Xaml/MarkupExtensions) úložiště Xamarin.Forms GitHub. 
+Na úroveň programová rozšíření značek XAML je třída, která implementuje [ `IMarkupExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.IMarkupExtension/) nebo [ `IMarkupExtension<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.IMarkupExtension%3CT%3E/) rozhraní. Můžete si prostudovat zdrojový kód rozšíření standardní značek, které jsou popsané níže v [ **MarkupExtensions** directory](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Xaml/MarkupExtensions) úložiště Xamarin.Forms GitHub.
 
 Je také možné definovat vlastní vlastní rozšíření značek v jazyce XAML odvozené z `IMarkupExtension` nebo `IMarkupExtension<T>`. Obecný formulář použijte, pokud rozšíření značek získá hodnotu konkrétního typu. Toto je tomu u několik rozšíření značek Xamarin.Forms:
 
@@ -26,7 +26,7 @@ Je také možné definovat vlastní vlastní rozšíření značek v jazyce XAML
 - `BindingExtension` odvozená z `IMarkupExtension<BindingBase>`
 - `ConstraintExpression` odvozená z `IMarkupExtension<Constraint>`
 
-Dva `IMarkupExtension` rozhraní definovat pouze jednu metodu s názvem `ProvideValue`: 
+Dva `IMarkupExtension` rozhraní definovat pouze jednu metodu s názvem `ProvideValue`:
 
 ```csharp
 public interface IMarkupExtension
@@ -92,7 +92,7 @@ Protože `IMarkupExtension<T>` je odvozena z `IMarkupExtension`, třída musí o
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
-    
+
     <StackLayout>
         <BoxView>
             <BoxView.Color>
@@ -121,7 +121,7 @@ Všimněte si, že když `HslColorExtension` je značky XML, jako atributy jsou 
 
 ## <a name="a-markup-extension-for-accessing-bitmaps"></a>Rozšíření značek pro přístup k rastrové obrázky
 
-Argument `ProvideValue` je objekt, který implementuje [ `IServiceProvider` ](https://developer.xamarin.com/api/type/System.IServiceProvider/) rozhraní, která je definována v .NET `System` oboru názvů. Toto rozhraní má jednoho člena, metodu s názvem `GetService` s `Type` argument. 
+Argument `ProvideValue` je objekt, který implementuje [ `IServiceProvider` ](https://developer.xamarin.com/api/type/System.IServiceProvider/) rozhraní, která je definována v .NET `System` oboru názvů. Toto rozhraní má jednoho člena, metodu s názvem `GetService` s `Type` argument.
 
 `ImageResourceExtension` Třídy, viz následující obrázek ukazuje jedno možné použití `IServiceProvider` a `GetService` získat `IXmlLineInfoProvider` objekt, který může poskytnout řádku a znak informace o tom, kde byla zjištěna konkrétní chyba. V takovém případě je vyvolána výjimka při `Source` nebyla nastavena vlastnost:
 
@@ -152,7 +152,7 @@ class ImageResourceExtension : IMarkupExtension<ImageSource>
 }
 ```
 
-`ImageResourceExtension` je užitečné, pokud soubor XAML potřebuje přístup k souboru bitové kopie uložené jako vložený prostředek v rozhraní .NET standardní projektu knihovny. Použije `Source` vlastnost zavolejte statickou `ImageSource.FromResource` metoda. Tato metoda vyžaduje prostředků plně kvalifikovaný název, který se skládá z název sestavení, název složky a název souboru odděleny tečkami. `ImageResourceExtension` Není nutné sestavení název část protože získá název sestavení pomocí reflexe a přidá ji do `Source` vlastnost. Bez ohledu na to `ImageSource.FromResource` od sestavení, které obsahuje rastrového obrázku, což znamená, že tato rozšíření prostředků XAML nemůže být součástí vnější knihovny, pokud jsou bitové kopie i v této knihovně se musí volat. (Viz [ **vložené obrázky** ](~/xamarin-forms/user-interface/images.md#embedded_images) článku Další informace o přístupu k bitmap uložené jako vložené prostředky.) 
+`ImageResourceExtension` je užitečné, pokud soubor XAML potřebuje přístup k souboru bitové kopie uložené jako vložený prostředek v rozhraní .NET standardní projektu knihovny. Použije `Source` vlastnost zavolejte statickou `ImageSource.FromResource` metoda. Tato metoda vyžaduje prostředků plně kvalifikovaný název, který se skládá z název sestavení, název složky a název souboru odděleny tečkami. `ImageResourceExtension` Není nutné sestavení název část protože získá název sestavení pomocí reflexe a přidá ji do `Source` vlastnost. Bez ohledu na to `ImageSource.FromResource` od sestavení, které obsahuje rastrového obrázku, což znamená, že tato rozšíření prostředků XAML nemůže být součástí vnější knihovny, pokud jsou bitové kopie i v této knihovně se musí volat. (Viz [ **vložené obrázky** ](~/xamarin-forms/user-interface/images.md#embedded_images) článku Další informace o přístupu k bitmap uložené jako vložené prostředky.)
 
 I když `ImageResourceExtension` vyžaduje `Source` vlastnost, která má být nastaveno, `Source` vlastnost jako vlastnost obsahu třídy uvedené v atributu. To znamená, že `Source=` lze vynechat část výrazu do složených závorek. V **ukázkový prostředek obrázku** stránky, `Image` elementy načíst dvě bitové kopie pomocí název složky a název souboru odděleny tečkami:
 
@@ -167,7 +167,7 @@ I když `ImageResourceExtension` vyžaduje `Source` vlastnost, která má být n
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        
+
         <Image Source="{local:ImageResource Images.SeatedMonkey.jpg}"
                Grid.Row="0" />
 
@@ -198,7 +198,7 @@ V některých – rozšíření značek XAML tato služba může být užitečn�
 
 ## <a name="conclusion"></a>Závěr
 
-XAML – rozšíření značek hrát zásadní roli v jazyce XAML tím, že rozšíří možnost nastavit atributy z různých zdrojů. Kromě toho pokud existující rozšíření značek XAML neposkytují přesně to, co potřebujete, můžete taky napsat vlastní. 
+XAML – rozšíření značek hrát zásadní roli v jazyce XAML tím, že rozšíří možnost nastavit atributy z různých zdrojů. Kromě toho pokud existující rozšíření značek XAML neposkytují přesně to, co potřebujete, můžete taky napsat vlastní.
 
 
 ## <a name="related-links"></a>Související odkazy

@@ -1,18 +1,18 @@
 ---
 title: Synchronizace Offline dat s Azure Mobile Apps
-description: Offline synchronizace umožňuje uživatelům interakci s mobilních aplikací, zobrazení, přidání nebo úprava dat, i tam, kde není k dispozici síťové připojení. Změny se ukládají do místní databáze, a když je zařízení online, změny mohou být synchronizovány s Azure Mobile Apps instancí. Tento článek vysvětluje, jak přidat funkci offline synchronizace Xamarin.Forms aplikace.
+description: Tento článek vysvětluje, jak přidat funkci offline synchronizace aplikaci Xamarin.Forms, který využívá back-end Azure Mobile Apps.
 ms.prod: xamarin
 ms.assetid: DBB343B0-2709-4C20-A669-5522B9956D9B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/02/2017
-ms.openlocfilehash: 8623127444836d3335f42f9ba7a40de6aedfef70
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: e8b0eeeb4f0033fccd7a61b4acb286bb8457e6c2
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848366"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243594"
 ---
 # <a name="synchronizing-offline-data-with-azure-mobile-apps"></a>Synchronizace Offline dat s Azure Mobile Apps
 

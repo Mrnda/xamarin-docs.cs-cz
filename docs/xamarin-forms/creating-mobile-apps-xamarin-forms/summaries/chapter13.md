@@ -1,18 +1,20 @@
 ---
-title: Shrnutí kapitoly 13. Bitmaps
+title: Shrnutí kapitoly 13. Rastrové obrázky
+description: 'Vytváření mobilních aplikací s Xamarin.Forms: Souhrn kapitoly 13. Rastrové obrázky'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 5D153857-B6B7-4A14-8FB9-067DE198C2C7
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 76551057abc1abdd150591c0a1be39e9f68c4278
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: d95e801f6a239e894c1f6baa68015659af9eba35
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241552"
 ---
-# <a name="summary-of-chapter-13-bitmaps"></a>Shrnutí kapitoly 13. Bitmaps
+# <a name="summary-of-chapter-13-bitmaps"></a>Shrnutí kapitoly 13. Rastrové obrázky
 
 Platformě Xamarin.Forms [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) element zobrazí rastrový obrázek. Všechny platformy Xamarin.Forms podporují formáty souborů JPEG, GIF, PNG nebo BMP.
 
@@ -143,12 +145,12 @@ Pro Android, rastrové obrázky jsou uloženy v různých podsložkách **prost�
 
 V různých verzích bitmapy rastrového obrázku má být vykreslen v jedné odmocnina palec, bude mít stejný název, ale s jinou velikostí a v těchto složkách:
 
-- drawable-ldpi/MyImage.jpg at 120 pixels square
-- drawable-mdpi/MyImage.jpg at 160 pixels square
-- drawable-hdpi/MyImage.jpg at 240 pixels square
-- drawable-xhdpi/MyImage.jpg at 320 pixels square
-- drawable-xxhdpi/MyImage.jpg at 480 pixels square
-- drawable-xxxhdpi/MyImage.jpg at 640 pixels square
+- drawable-ldpi/Mujobrazek.jpg v odmocnina 120 pixelů
+- drawable-mdpi/Mujobrazek.jpg v odmocnina 160 pixelů
+- drawable-hdpi/Mujobrazek.jpg v odmocnina 240 pixelů
+- drawable-xhdpi/Mujobrazek.jpg v odmocnina 320 pixelů
+- drawable-xxhdpi/Mujobrazek.jpg v odmocnina 480 pixelů
+- drawable-xxxhdpi/Mujobrazek.jpg v odmocnina 640 pixelů
 
 Bitmapy vždy vykreslí na 160 jednotky nezávislé na zařízení. (Standardní šablona řešení Xamarin.Forms pouze zahrnuje hdpi, xhdpi a xxhdpi složek.)
 
@@ -156,7 +158,7 @@ Prostředí Windows Runtime projekty podporují rastrový obrázek pojmenování
 
 - MyImage.scale 200.jpg v odmocnina 320 pixelů
 
-Platné jsou jenom některé procenta. Ukázka programy pro tato kniha zahrnují jenom Image s **škálování – 200** přípony, ale aktuální šablony řešení Xamarin.Forms zahrnují **škálování 100**, **škálování 125**, **škálování 150**, a **škálování 400**. 
+Platné jsou jenom některé procenta. Ukázka programy pro tato kniha zahrnují jenom Image s **škálování – 200** přípony, ale aktuální šablony řešení Xamarin.Forms zahrnují **škálování 100**, **škálování 125**, **škálování 150**, a **škálování 400**.
 
 Při přidávání bitmap pro projekty platformy, **akce sestavení** by měla být:
 

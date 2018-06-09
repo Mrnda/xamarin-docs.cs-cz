@@ -1,5 +1,5 @@
 ---
-title: Vytvoření vazby ze ControlTemplate
+title: Vytvoření vazby ze Xamarin.Forms ControlTemplate
 description: Vazby šablony umožňují vytvořit vazbu na veřejné vlastnosti ovládacích prvků v šabloně ovládacího prvku k datům povolení hodnot vlastností ovládacích prvků v šabloně řízení snadno změnit. Tento článek ukazuje použití šablony vazby k provedení vazby dat z šablony ovládacího prvku.
 ms.prod: xamarin
 ms.assetid: 794A663C-3A8D-438A-BD02-8E97C919B55F
@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 6b2904d06d0982fb30e9a989f03f22b726b9772e
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 99d798ce2c74da0cf7fa0d497128db628a12ead5
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847173"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241578"
 ---
-# <a name="binding-from-a-controltemplate"></a>Vytvoření vazby ze ControlTemplate
+# <a name="binding-from-a-xamarinforms-controltemplate"></a>Vytvoření vazby ze Xamarin.Forms ControlTemplate
 
 _Vazby šablony umožňují vytvořit vazbu na veřejné vlastnosti ovládacích prvků v šabloně ovládacího prvku k datům povolení hodnot vlastností ovládacích prvků v šabloně řízení snadno změnit. Tento článek ukazuje použití šablony vazby k provedení vazby dat z šablony ovládacího prvku._
 

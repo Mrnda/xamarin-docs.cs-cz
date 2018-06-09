@@ -1,17 +1,18 @@
 ---
 title: Výstřižek se cesty a oblasti
-description: Použití cesty grafiky klip určitých oblastí a vytvářet oblastí
+description: Tento článek vysvětluje, jak používat SkiaSharp cesty k klip grafiky pro konkrétní oblasti a k vytvoření oblastí a to ukazuje s ukázkový kód.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 8022FBF9-2208-43DB-94D8-0A4E9A5DA07F
 author: charlespetzold
 ms.author: chape
 ms.date: 06/16/2017
-ms.openlocfilehash: 051ceec148a569d00048a661e6ba8dc3ce96fc81
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 0d246dc4a5304b56560deb1095149e52c1f82335
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243886"
 ---
 # <a name="clipping-with-paths-and-regions"></a>Výstřižek se cesty a oblasti
 
@@ -515,4 +516,4 @@ Je skutečně nevypadá čtyři – listu jetel, ale je obrázek, který jinak m
 ## <a name="related-links"></a>Související odkazy
 
 - [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

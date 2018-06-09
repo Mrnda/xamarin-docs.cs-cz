@@ -1,20 +1,20 @@
 ---
-title: Mřížka
-description: Existuje zobrazení mřížky.
+title: Xamarin.Forms mřížky
+description: Tento článek vysvětluje způsob použití třídy Xamarin.Forms mřížky prezentovat zobrazení v mřížkách, které měl řádků a sloupců.
 ms.prod: xamarin
 ms.assetid: 762B1802-D185-494C-B643-74EED55882FE
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 6ff36f511c5194017afd34601fc9ea2f89b1e2d4
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: a50144f5e0962bd74858bb7731e30cef5dd31b6d
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848106"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245150"
 ---
-# <a name="grid"></a>Mřížka
+# <a name="xamarinforms-grid"></a>Xamarin.Forms mřížky
 
 [`Grid`](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/) podporuje uspořádání zobrazení do řádků a sloupců. Řádků a sloupců můžete nastavit tak, aby měl přímo úměrná velikosti nebo absolutní velikosti. `Grid` Rozložení by neměly zaměňovat s tradiční tabulky a není určena pro tabulková data k dispozici. `Grid` Koncept řádek, sloupec nebo buňka formátování není k dispozici. Na rozdíl od tabulek HTML `Grid` je určený výhradně pro vytvoření rozložení obsahu.
 

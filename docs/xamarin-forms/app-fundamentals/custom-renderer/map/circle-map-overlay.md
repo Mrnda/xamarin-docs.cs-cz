@@ -1,18 +1,18 @@
 ---
 title: Zvýraznění cyklické oblast na mapu
-description: Tento článek vysvětluje postup přidání cyklické překrytí na mapu, abyste měli na očích cyklické oblasti mapy.
+description: Tento článek vysvětluje postup přidání cyklické překrytí na mapu, abyste měli na očích cyklické oblasti mapy. Zatímco iOS a Android poskytují rozhraní API pro přidání do mapy cyklické překrytí, překrytí na UWP vykreslen jako mnohoúhelníku.
 ms.prod: xamarin
 ms.assetid: 6FF8BD15-074E-4E6A-9522-F9E2BE32EF12
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 1bec7a318bebc40c050104a51408473d89f483a5
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 06ea1e788add0064571f01dc1080147e64bb8397
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34846520"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240282"
 ---
 # <a name="highlighting-a-circular-area-on-a-map"></a>Zvýraznění cyklické oblast na mapu
 

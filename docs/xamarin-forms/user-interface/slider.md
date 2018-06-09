@@ -1,23 +1,24 @@
 ---
-title: Pomocí posuvníku
-description: Použijte při výběru z rozsahu průběžné hodnoty jezdce.
+title: Posuvník Xamarin.Forms
+description: Posuvník Xamarin.Forms je vodorovné panel, který smí uživatel manipulovat uživateli vybrat hodnotu double z průběžné rozsahu. Tento článek vysvětluje způsob použití třídy posuvníku vybrat hodnotu z rozsahu průběžné hodnot.
 ms.prod: xamarin
 ms.assetid: 36B1C645-26E0-4874-B6B6-BDBF77662878
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/16/2018
-ms.openlocfilehash: 99109f6377037ffb9f622b7ddb237b42d241e505
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 33c26abe2de017b6d8070053baf917cdd7a0dfc6
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245804"
 ---
-# <a name="using-slider"></a>Pomocí posuvníku
+# <a name="xamarinforms-slider"></a>Posuvník Xamarin.Forms
 
 _Použijte při výběru z rozsahu průběžné hodnoty jezdce._
 
-Platformě Xamarin.Forms [ `Slider` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/) je vodorovné panel, který smí uživatel manipulovat uživateli vybrat `double` hodnotu nepřetržitá rozsahu. 
+Platformě Xamarin.Forms [ `Slider` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/) je vodorovné panel, který smí uživatel manipulovat uživateli vybrat `double` hodnotu nepřetržitá rozsahu.
 
 `Slider` Definuje tři vlastnosti typu `double`:
 
@@ -25,14 +26,14 @@ Platformě Xamarin.Forms [ `Slider` ](https://developer.xamarin.com/api/type/Xam
 - [`Maximum`](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Maximum/) je maximální rozsah, výchozí hodnotou 1.
 - [`Value`](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Value/) je hodnota jezdce, které mohou být v rozsahu mezi `Minimum` a `Maximum` a výchozí hodnota je 0.
 
-Všechny tři vlastnosti jsou zajišťované `BindableProperty` objekty. `Value` Vlastnost má režim výchozí vazby `BindingMode.TwoWay`, což znamená, že se jedná o vhodné jako zdroj vazby v aplikaci, která používá [Model-View-ViewModel (modelem MVVM)](~/xamarin-forms/enterprise-application-patterns/mvvm.md) architektura. 
+Všechny tři vlastnosti jsou zajišťované `BindableProperty` objekty. `Value` Vlastnost má režim výchozí vazby `BindingMode.TwoWay`, což znamená, že se jedná o vhodné jako zdroj vazby v aplikaci, která používá [Model-View-ViewModel (modelem MVVM)](~/xamarin-forms/enterprise-application-patterns/mvvm.md) architektura.
 
 > [!WARNING]
 > Interně `Slider` zajistí, že `Minimum` je menší než `Maximum`. Pokud `Minimum` nebo `Maximum` někdy nastaveny tak, aby `Minimum` je menší než `Maximum`, je vyvolána výjimka. Najdete v článku [ **opatření** ](#precautions) části níže Další informace o nastavení `Minimum` a `Maximum` vlastnosti.
 
-`Slider` Převede `Value` vlastnost, aby byla mezi `Minimum` a `Maximum`(včetně). Pokud `Minimum` je nastavena na hodnotu větší než `Value` vlastnost, `Slider` nastaví `Value` vlastnost, která má `Minimum`. Podobně pokud `Maximum` je nastavená na hodnotu menší než `Value`, pak `Slider` nastaví `Value` vlastnost `Maximum`. 
+`Slider` Převede `Value` vlastnost, aby byla mezi `Minimum` a `Maximum`(včetně). Pokud `Minimum` je nastavena na hodnotu větší než `Value` vlastnost, `Slider` nastaví `Value` vlastnost, která má `Minimum`. Podobně pokud `Maximum` je nastavená na hodnotu menší než `Value`, pak `Slider` nastaví `Value` vlastnost `Maximum`.
 
-`Slider` definuje [ `ValueChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Slider.ValueChanged/) událost, která je aktivována, pokud `Value` změny, buď pomocí manipulace s uživatele `Slider` nebo když program nastaví `Value` vlastnost přímo. A `ValueChanged` událost je aktivována, i pokud `Value` vlastnost je má, jak je popsáno v předchozím odstavci. 
+`Slider` definuje [ `ValueChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Slider.ValueChanged/) událost, která je aktivována, pokud `Value` změny, buď pomocí manipulace s uživatele `Slider` nebo když program nastaví `Value` vlastnost přímo. A `ValueChanged` událost je aktivována, i pokud `Value` vlastnost je má, jak je popsáno v předchozím odstavci.
 
 [ `ValueChangedEventArgs` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ValueChangedEventArgs/) Objekt, který doprovází `ValueChanged` událostí má dvě vlastnosti, obě typu `double`: [ `OldValue` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ValueChangedEventArgs.OldValue/) a [ `NewValue` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ValueChangedEventArgs.NewValue/). V době událost je aktivována například, hodnota `NewValue` je stejný jako `Value` vlastnost `Slider` objektu.
 
@@ -92,7 +93,7 @@ public class BasicSliderCodePage : ContentPage
 }
 ```
 
-`Slider` Je inicializována tak, aby měl `Maximum` vlastnost 360. `ValueChanged` Obslužnou rutinu `Slider` používá `Value` vlastnost `slider` objekt, který chcete nastavit `Rotation` vlastnost první `Label` a používá `String.Format` metoda s `NewValue` vlastnost argumenty událostí nastavit `Text` vlastnost druhý `Label`. Tyto dva přístupy k získání aktuální hodnota `Slider` zaměnitelné. 
+`Slider` Je inicializována tak, aby měl `Maximum` vlastnost 360. `ValueChanged` Obslužnou rutinu `Slider` používá `Value` vlastnost `slider` objekt, který chcete nastavit `Rotation` vlastnost první `Label` a používá `String.Format` metoda s `NewValue` vlastnost argumenty událostí nastavit `Text` vlastnost druhý `Label`. Tyto dva přístupy k získání aktuální hodnota `Slider` zaměnitelné.
 
 Tady je programy spuštěné na iOS, Android a univerzální platformu Windows (UWP) zařízení:
 
@@ -111,7 +112,7 @@ Druhý `Label` zobrazí text "(Neinicializovaný)", dokud `Slider` se s nimi man
              Title="Basic Slider XAML"
              Padding="10, 0">
     <StackLayout>
-        <Label x:Name="rotatingLabel" 
+        <Label x:Name="rotatingLabel"
                Text="ROTATING TEXT"
                FontSize="Large"
                HorizontalOptions="Center"
@@ -171,7 +172,7 @@ double value = slider.Value;
              Padding="10, 0">
     <StackLayout>
         <Label Text="ROTATING TEXT"
-               Rotation="{Binding Source={x:Reference slider}, 
+               Rotation="{Binding Source={x:Reference slider},
                                   Path=Value}"
                FontSize="Large"
                HorizontalOptions="Center"
@@ -181,8 +182,8 @@ double value = slider.Value;
                 Maximum="360" />
 
         <Label x:Name="displayLabel"
-               Text="{Binding Source={x:Reference slider}, 
-                              Path=Value, 
+               Text="{Binding Source={x:Reference slider},
+                              Path=Value,
                               StringFormat='The Slider value is {0:F0}'}"
                HorizontalOptions="Center"
                VerticalOptions="CenterAndExpand" />
@@ -244,7 +245,7 @@ Slider slider = new Slider
 
 Místo toho `Value` vlastnost sloučen s `Maximum` hodnotu 1.
 
-Tady je výše uvedeném fragmentu kódu: 
+Tady je výše uvedeném fragmentu kódu:
 
 ```csharp
 Slider slider = new Slider
@@ -254,9 +255,9 @@ Slider slider = new Slider
 };
 ```
 
-Když `Minimum` nastavena na 10, pak `Value` také nastaven na hodnotu 10. 
+Když `Minimum` nastavena na 10, pak `Value` také nastaven na hodnotu 10.
 
-Pokud `ValueChanged` obslužné rutiny události byla připojena v době, `Value` vlastnost sloučen s něco jiného než jeho výchozí hodnotu 0, pak `ValueChanged` událost je aktivována. Zde je fragment kódu jazyka XAML: 
+Pokud `ValueChanged` obslužné rutiny události byla připojena v době, `Value` vlastnost sloučen s něco jiného než jeho výchozí hodnotu 0, pak `ValueChanged` událost je aktivována. Zde je fragment kódu jazyka XAML:
 
 ```xaml
 <Slider ValueChanged="OnSliderValueChanged"
@@ -272,15 +273,15 @@ Když `Minimum` je nastaven na hodnotu 10, `Value` je také nastavena na 10 a `V
 
 Snímky obrazovky uvedena výše zobrazit hodnotu `Slider` s jiný počet desetinných míst. Vztahuje se k jak `Slider` se implementuje na platformy Android a UWP.
 
-### <a name="the-android-implementation"></a>Android implementace 
+### <a name="the-android-implementation"></a>Android implementace
 
-Android implementace `Slider` je založena na Android [ `SeekBar` ](https://developer.xamarin.com/api/type/Android.Widget.SeekBar/) a vždy nastavuje [ `Max` ](https://developer.xamarin.com/api/property/Android.Widget.ProgressBar.Max/) vlastnost do 1000. To znamená, že `Slider` v systému Android má pouze 1,001 diskrétními hodnotami. Pokud nastavíte `Slider` tak, aby měl `Minimum` 0 a `Maximum` 5000 a potom jako `Slider` se s nimi manipulovat, `Value` vlastnost má hodnoty 0, 5, 10, 15 a tak dále. 
+Android implementace `Slider` je založena na Android [ `SeekBar` ](https://developer.xamarin.com/api/type/Android.Widget.SeekBar/) a vždy nastavuje [ `Max` ](https://developer.xamarin.com/api/property/Android.Widget.ProgressBar.Max/) vlastnost do 1000. To znamená, že `Slider` v systému Android má pouze 1,001 diskrétními hodnotami. Pokud nastavíte `Slider` tak, aby měl `Minimum` 0 a `Maximum` 5000 a potom jako `Slider` se s nimi manipulovat, `Value` vlastnost má hodnoty 0, 5, 10, 15 a tak dále.
 
 ### <a name="the-uwp-implementation"></a>Implementace UWP
 
-Implementace UWP `Slider` je založena na UWP [ `Slider` ](/uwp/api/windows.ui.xaml.controls.slider) ovládacího prvku. `StepFrequency` Vlastnost UWP `Slider` je nastaven na rozdíl `Maximum` a `Minimum` vlastnosti dělený 10, ale není větší než 1. 
+Implementace UWP `Slider` je založena na UWP [ `Slider` ](/uwp/api/windows.ui.xaml.controls.slider) ovládacího prvku. `StepFrequency` Vlastnost UWP `Slider` je nastaven na rozdíl `Maximum` a `Minimum` vlastnosti dělený 10, ale není větší než 1.
 
-Například pro výchozí rozsah 0 až 1 `StepFrequency` je nastavena na 0,1. Jako `Slider` se s nimi manipulovat, `Value` vlastnost je omezené na 0, 0.1, 0.2, 0.3, 0.4, 0,5, 0,6, 0,7, 0,8, 0,9 a 1.0. (Toto je zřejmé ve na poslední stránku [ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos) ukázkové.) Když rozdíl mezi `Maximum` a `Minimum` vlastnosti je 10 nebo vyšší, pak `StepFrequency` je nastavena na hodnotu 1 a `Value` vlastnost má celočíselné hodnoty. 
+Například pro výchozí rozsah 0 až 1 `StepFrequency` je nastavena na 0,1. Jako `Slider` se s nimi manipulovat, `Value` vlastnost je omezené na 0, 0.1, 0.2, 0.3, 0.4, 0,5, 0,6, 0,7, 0,8, 0,9 a 1.0. (Toto je zřejmé ve na poslední stránku [ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos) ukázkové.) Když rozdíl mezi `Maximum` a `Minimum` vlastnosti je 10 nebo vyšší, pak `StepFrequency` je nastavena na hodnotu 1 a `Value` vlastnost má celočíselné hodnoty.
 
 ### <a name="the-stepslider-solution"></a>Řešení StepSlider
 
@@ -288,9 +289,9 @@ Rozmanitější `StepSlider` je podrobněji [kapitoly 27. Vlastní nástroji pro
 
 ## <a name="sliders-for-color-selection"></a>Posuvníky pro výběr barev
 
-Konečné dvě stránky v [ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos) ukázku, jak použít tři `Slider` instance pro výběr barev. Na první stránku zpracovává všechny interakce v souboru kódu na pozadí, zatímco druhé stránce ukazuje, jak použít datovou vazbu s ViewModel. 
+Konečné dvě stránky v [ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos) ukázku, jak použít tři `Slider` instance pro výběr barev. Na první stránku zpracovává všechny interakce v souboru kódu na pozadí, zatímco druhé stránce ukazuje, jak použít datovou vazbu s ViewModel.
 
-### <a name="handling-sliders-in-the-code-behind-file"></a>Zpracování posuvníků v souboru kódu na pozadí 
+### <a name="handling-sliders-in-the-code-behind-file"></a>Zpracování posuvníků v souboru kódu na pozadí
 
 **Posuvníky barva RGB** vytvoří stránky `BoxView` zobrazíte barvu, tři `Slider` instance červené, zelené a modré součásti, barvu a tři `Label` prvky pro zobrazení těchto barev hodnoty:
 
@@ -304,7 +305,7 @@ Konečné dvě stránky v [ **SliderDemos** ](https://developer.xamarin.com/samp
             <Style TargetType="Slider">
                 <Setter Property="Maximum" Value="255" />
             </Style>
-            
+
             <Style TargetType="Label">
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
             </Style>
@@ -321,12 +322,12 @@ Konečné dvě stránky v [ **SliderDemos** ](https://developer.xamarin.com/samp
 
         <Label x:Name="redLabel" />
 
-        <Slider x:Name="greenSlider" 
+        <Slider x:Name="greenSlider"
                 ValueChanged="OnSliderValueChanged" />
 
         <Label x:Name="greenLabel" />
 
-        <Slider x:Name="blueSlider" 
+        <Slider x:Name="blueSlider"
                 ValueChanged="OnSliderValueChanged" />
 
         <Label x:Name="blueLabel" />
@@ -390,7 +391,7 @@ public class HslColorViewModel : INotifyPropertyChanged
                 Color = Color.FromHsla(value, color.Saturation, color.Luminosity);
             }
         }
-        get 
+        get
         {
             return color.Hue;
         }
@@ -483,7 +484,7 @@ ViewModels a `INotifyPropertyChanged` rozhraní jsou popsané v článku [datov�
         <Slider Value="{Binding Luminosity}" />
         <Label Text="{Binding Luminosity, StringFormat='Luminosity = {0:F2}'}" />
     </StackLayout>
-</ContentPage> 
+</ContentPage>
 ```
 
 Jako `Slider` elementy jsou s nimi manipulovat, `BoxView` a `Label` elementy jsou aktualizovány ze ViewModel:

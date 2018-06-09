@@ -1,5 +1,5 @@
 ---
-title: Modální stránky
+title: Modální Xamarin.Forms stránky
 description: Xamarin.Forms poskytuje podporu pro modální stránky. Modální stránky doporučuje uživatelům k dokončení samostatná úloha, která nemůže být opuštění dokud je úloha dokončena nebo zrušena. Tento článek ukazuje, jak přejděte na modální stránky.
 ms.prod: xamarin
 ms.assetid: 486CB7FD-2B9A-4DE3-94BD-C8D904E5D3C6
@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 30d0371e0eaa31673561ae12c7a46b7a7819a647
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 4540ac006993a46cb0ead9346c1cb960ac631926
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847416"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240135"
 ---
-# <a name="modal-pages"></a>Modální stránky
+# <a name="xamarinforms-modal-pages"></a>Modální Xamarin.Forms stránky
 
 _Xamarin.Forms poskytuje podporu pro modální stránky. Modální stránky doporučuje uživatelům k dokončení samostatná úloha, která nemůže být opuštění dokud je úloha dokončena nebo zrušena. Tento článek ukazuje, jak přejděte na modální stránky._
 

@@ -1,6 +1,6 @@
 ---
 title: Začínáme s Xamarin.Forms
-description: Xamarin.Forms je sada nástrojů uživatelského rozhraní a platformy, která umožňuje vývojářům vytvářet efektivní nativní uživatelské rozhraní rozložení, které mohou být sdíleny s iOS, Android a Universal Windows Platform apps. Tato řada nabízí základní informace o vývoj s Xamarin.Forms a popisuje vytváření aplikací s více platformami a více obrazovky.
+description: Tato příručka nabízí základní informace o vývoj s Xamarin.Forms a popisuje vytváření aplikací s více platformami a více obrazovky.
 ms.prod: xamarin
 ms.assetid: d87d7232-242c-4ec4-81e9-36103d7e8fcf
 ms.technology: xamarin-forms
@@ -8,11 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/02/2016
-ms.openlocfilehash: da5547de1f21b1f02462f47a4e6ffee43dd0d1bf
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 6ac76f41fc0646107102e0d5e59609c0f3969511
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242437"
 ---
 # <a name="getting-started-with-xamarinforms"></a>Začínáme s Xamarin.Forms
 

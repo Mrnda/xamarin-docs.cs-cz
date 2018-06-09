@@ -1,18 +1,18 @@
 ---
 title: Vytváření specifika platformy
-description: Dodavatelé mohou vytvářet své vlastní specifika platformy s účinky. Efekt poskytuje určitých funkcí, které jsou pak dostupné prostřednictvím příslušnou platformu. Výsledkem je efektu, kterou můžete snadno zpracovat prostřednictvím XAML a prostřednictvím fluent kódu rozhraní API. Tento článek ukazuje, jak vystavit vliv prostřednictvím příslušnou platformu.
+description: Tento článek ukazuje, jak vystavit vliv prostřednictvím příslušnou platformu.
 ms.prod: xamarin
 ms.assetid: 0D0E6274-6EF2-4D40-BB77-3D8E53BCD24B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/23/2016
-ms.openlocfilehash: dcd22dd0d4e281245a1f6598d9a58d24a97b1f20
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: a07ff2e206a08ee40355733ab2c1026f29de2f2f
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848145"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242781"
 ---
 # <a name="creating-platform-specifics"></a>Vytváření specifika platformy
 

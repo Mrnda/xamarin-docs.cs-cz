@@ -1,17 +1,18 @@
 ---
 title: Čáru lomených a čištění vzorce
-description: Použití SkiaSharp k vykreslení kterýkoli řádek, který můžete definovat s čištění vzorce
+description: Tento článek vysvětluje, jak chcete SkiaSharp použít k vykreslení kterýkoli řádek můžete definovat s čištění vzorce a to ukazuje s ukázkový kód.
 ms.prod: xamarin
 ms.assetid: 85AEBB33-E954-4364-A6E1-808FAB197BEE
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: efd2dbac0f4a1190fac646d8e9e3120ee4d245a7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 9539a21b7dbc91da63795639610886233ed705be
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245306"
 ---
 # <a name="polylines-and-parametric-equations"></a>Čáru lomených a čištění vzorce
 
@@ -116,4 +117,4 @@ Všimněte si, že `SKPath` je vytvořen v `using` bloku. To `SKPath` spotřebov
 ## <a name="related-links"></a>Související odkazy
 
 - [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

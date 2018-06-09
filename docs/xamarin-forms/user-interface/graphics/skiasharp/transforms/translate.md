@@ -1,17 +1,18 @@
 ---
 title: Transformace přeložit
-description: Další informace o použití transformace přeložit se posunou SkiaSharp grafiky
+description: Článek examiens použití transformace přeložit k posunutí SkiaSharp grafiky v aplikacích Xamarin.Forms a to ukazuje s ukázkový kód.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: BD28ADA1-49F9-44E2-A548-46024A29882F
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 98bf81df3eed951893c6bb717d933cfb61e029d3
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: dbc7ffe5c3828876579ba72a387c86d8221c1641
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244819"
 ---
 # <a name="the-translate-transform"></a>Transformace přeložit
 
@@ -72,7 +73,7 @@ Následných obdélníků skapat dolní části stránky:
 
 Pokud jsou faktory Akumulovaná překlad `dx` a `dy`, a zadáte v kreslení funkce bod je (`x`, `y`), pak vykreslením grafického objektu v bodě (`x'`, `y'`), kde:
 
-x' = x + dx
+x: = x + DirectX
 
 y' = y + dy
 
@@ -302,4 +303,4 @@ Všimněte si, že hvězdičkou udržuje stejné orientaci, jako je zásadní ko
 ## <a name="related-links"></a>Související odkazy
 
 - [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

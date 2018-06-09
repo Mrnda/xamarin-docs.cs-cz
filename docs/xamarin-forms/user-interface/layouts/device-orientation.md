@@ -1,28 +1,22 @@
 ---
 title: Orientace zařízení
-description: Pochopit, jak k rozložení aplikace, které vypadají skvěle v orientaci na výšku a šířku.
+description: Tento článek vysvětluje, jak rozložení Xamarin.Forms aplikace, které vypadají skvělé v orientaci na výšku a šířku.
 ms.prod: xamarin
 ms.assetid: 11A1D327-2DF3-4F3B-810D-6C95B71D27B2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: 95049e2d44b369bfa879226e17d2bad20b7b5408
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 9245a17423d97887d2032856b10427685b25c29b
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848132"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244348"
 ---
 # <a name="device-orientation"></a>Orientace zařízení
 
 Je důležité vzít v úvahu používání vaší aplikace a jak orientaci na šířku můžete začlenit i metodu ke zlepšení činnost koncového uživatele. Jednotlivé rozložení můžete navržená tak, aby dokázala pojmout více orientace a nejvhodnější používat volné místo. Na úrovni aplikace můžete zakázat nebo povolit otočení.
-
-Tento článek vás provede vytvořením aplikace, které využít výhod funkcí orientace zařízení a obsahuje následující části:
-
-- **[Řízení orientaci](#Controlling_Orientation)**  &ndash; pochopit, jak řídit orientaci na úrovni aplikace napříč platformami.
-- **[Reaguje na změny v orientaci](#Reacting_to_Changes_in_Orientation)**  &ndash; zjistěte, jak informováni o a reagovat na ně, změn v orientace.
-- **[Přizpůsobivé rozložení](#Responsive_Layout)**  &ndash; Naučte se vytvářet rozložení, které automaticky fungovat na všech na výšku a šířku.
 
 <a name="Controlling_Orientation" />
 

@@ -1,5 +1,5 @@
 ---
-title: Soubory
+title: Zpracování souborů v Xamarin.Forms
 description: Práce s Xamarin.Forms se soubory lze provést pomocí vložených prostředků nebo zápis proti nativní filesystem rozhraní API.
 ms.prod: xamarin
 ms.assetid: 9987C3F6-5F04-403B-BBB4-ECB024EA6CC8
@@ -7,13 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/22/2017
-ms.openlocfilehash: 02bea7e2ec927277a92c0732b25f590b5ae6704b
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 80fdedd6c5df15272e36e6ac9c1414a4f731123a
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241930"
 ---
-# <a name="files"></a>Soubory
+# <a name="file-handling-in-xamarinforms"></a>Zpracování souborů v Xamarin.Forms
 
 _Práce s Xamarin.Forms se soubory lze provést pomocí vložených prostředků nebo zápis proti nativní filesystem rozhraní API._
 

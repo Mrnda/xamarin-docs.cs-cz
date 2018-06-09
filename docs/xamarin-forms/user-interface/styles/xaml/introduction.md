@@ -1,5 +1,5 @@
 ---
-title: Úvod do styly
+title: Úvod do Xamarin.Forms styly
 description: Styly povolit vzhled vizuální prvky k přizpůsobení. Styly jsou definovány pro konkrétní typ a obsahovat hodnoty pro vlastnosti dostupné u tohoto typu.
 ms.prod: xamarin
 ms.assetid: 3FF899C0-6CFB-4C1D-837D-9E9E10181967
@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: f878641f9266da74d61eda8a85d4e16de193be0e
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 071cfa2ba145775c179bc85dce4fac29ba0bd8fa
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847963"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245817"
 ---
-# <a name="introduction-to-styles"></a>Úvod do styly
+# <a name="introduction-to-xamarinforms-styles"></a>Úvod do Xamarin.Forms styly
 
 _Styly povolit vzhled vizuální prvky k přizpůsobení. Styly jsou definovány pro konkrétní typ a obsahovat hodnoty pro vlastnosti dostupné u tohoto typu._
 

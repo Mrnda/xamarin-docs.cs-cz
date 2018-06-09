@@ -1,19 +1,20 @@
 ---
-title: Maticové transformace
-description: Ponořit hlouběji do SkiaSharp transformací s univerzální transformační matice
+title: Maticové transformace v SkiaSharp
+description: Tento článek dives hlubší do SkiaSharp transformací s univerzální transformační matice a to ukazuje s ukázkový kód.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 9EDED6A0-F0BF-4471-A9EF-E0D6C5954AE4
 author: charlespetzold
 ms.author: chape
 ms.date: 04/12/2017
-ms.openlocfilehash: 90fadf0081f86e7739d75c0710caeaf1775c423e
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.openlocfilehash: 816a5f47a4a4f5c01a1fb20b5c8e7a2fc83a64b0
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244874"
 ---
-# <a name="matrix-transforms"></a>Maticové transformace
+# <a name="matrix-transforms-in-skiasharp"></a>Maticové transformace v SkiaSharp
 
 _Ponořit hlouběji do SkiaSharp transformací s univerzální transformační matice_
 
@@ -61,7 +62,7 @@ Tato matice 1 3 násobí transformační matice a výsledkem je bodu na plátně
 
 Pomocí násobení matic standardní, převedený body jsou následující:
 
-x' = x
+x: = x
 
 y' = y
 
@@ -101,7 +102,7 @@ y' = y + ty
 
 Transformace vzorce jsou následující:
 
-x' = sx · x
+x: sx · = x
 
 y' = sy · y
 
@@ -115,9 +116,9 @@ Maticové transformace po volání `Skew` obsahuje dva argumenty v buňkách mat
 
 Transformace vzorce jsou:
 
-x' = x + xSkew · y
+x: = x + xSkew · y
 
-y' = ySkew · x + y
+y' = ySkew · x a y
 
 Pro volání `RotateDegrees` nebo `RotateRadians` pro úhel α, transformační matice vypadá takto:
 
@@ -225,7 +226,7 @@ Tři transformační matice se násobí v obráceném pořadí z jak metody zobr
               │ TransX  TransY  1 │
 </pre>
 
-x' = ScaleX · x + SkewX · y + TransX
+x: ScaleX · = x + SkewX · y + TransX
 
 y' = SkewX · x + ScaleY · y + TransY
 
@@ -652,4 +653,4 @@ Hodnoty nenulová `Persp0` a `Persp1` mít za následek transformace, které př
 ## <a name="related-links"></a>Související odkazy
 
 - [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

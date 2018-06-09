@@ -1,17 +1,18 @@
 ---
 title: Přidání Intelligence kognitivní službou
-description: Kognitivní služby společnosti Microsoft se sadu rozhraní API, sady SDK a službách, které jsou k dispozici pro vývojáře k jejich aplikacím inteligentnější přidáním funkce, jako je rozpoznávání obličeje, rozpoznávání řeči a znalosti jazyka. Tento článek obsahuje úvod do ukázkovou aplikaci, která ukazuje, jak má být vyvolán některé z rozhraní API kognitivní služby společnosti Microsoft.
+description: Tento článek obsahuje úvod do ukázkovou aplikaci, která ukazuje, jak má být vyvolán některé z rozhraní API kognitivní služby společnosti Microsoft.
 ms.prod: xamarin
 ms.assetid: 74121ADB-1322-4C1E-A103-F37257BC7CB0
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 86253e42db7da2da6eb8b03e2d4a4b3c943b7e17
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: c577aaf1991082baaf34248ee31899902f692d0b
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241520"
 ---
 # <a name="adding-intelligence-with-cognitive-services"></a>Přidání Intelligence kognitivní službou
 

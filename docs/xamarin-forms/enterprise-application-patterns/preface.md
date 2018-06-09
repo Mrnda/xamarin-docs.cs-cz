@@ -1,18 +1,20 @@
 ---
-title: Předponu
+title: Předponu pro vývoj aplikací Enterprise
+description: Tato kapitola obsahuje předponu k modelům podnikové aplikace pomocí Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: fbf32a44-1d33-4e16-a904-dc7ee5991e7c
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: e9dd5f663fc98ac1e869721517e9a3d0fb2033bb
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: fd085d2fb12e82233f6d3be2e2773a84539f837b
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242365"
 ---
-# <a name="preface"></a>Předponu
+# <a name="preface-to-enterprise-app-development"></a>Předponu pro vývoj aplikací Enterprise
 
 Tato elektronická kniha obsahuje pokyny k vytváření a platformy podnikové aplikace pomocí Xamarin.Forms. Xamarin.Forms je sada nástrojů uživatelského rozhraní a platformy, která umožňuje vývojářům snadno vytvářet nativní uživatelské rozhraní rozložení, které můžete sdílet napříč platformami, včetně iOS, Android a univerzální platformu Windows (UWP). Poskytuje komplexní řešení pro firmy na zaměstnance (B2E), Business to Business (B2B) a obchodní k příjemce (B2C) aplikace, že poskytuje možnost sdílet kód pro všechny cílové platformy a pomáhá snížit celkové náklady na vlastnictví (TCO).
 

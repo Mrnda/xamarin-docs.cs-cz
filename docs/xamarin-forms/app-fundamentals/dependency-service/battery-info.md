@@ -1,18 +1,18 @@
 ---
 title: Kontrola stavu baterie
-description: Použít DependencyService přístup k informacím baterie nativně pro každou platformu
+description: Tento článek vysvětluje způsob použití Xamarin.Forms DependencyService třídy pro přístup k informacím baterie nativně pro každou platformu.
 ms.prod: xamarin
 ms.assetid: CF1C5A73-84ED-407D-BDC5-EB1D83D2D3DB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: 35c70b0074af170a9df29ea7d19a5f9db492af96
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 74e191cd6a87626e887d45f823e65d57000d7463
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34846783"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241081"
 ---
 # <a name="checking-battery-status"></a>Kontrola stavu baterie
 

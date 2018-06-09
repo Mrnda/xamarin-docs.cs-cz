@@ -1,19 +1,20 @@
 ---
-title: MVVM
+title: Vzor Model-View-ViewModel
+description: Tato kapitola vysvětluje, jak mobilní aplikace eShopOnContainers používá rozhraní MVVM vzor řádně jednotlivé obchodní a prezentace logiku aplikace z jeho uživatelské rozhraní.
 ms.prod: xamarin
 ms.assetid: dd8c1813-df44-4947-bcee-1a1ff2334b87
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 03a3c411c7031ece32a8987b480f96ad39909201
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: fe2cace6a0fc3a1d901f55556eed09380f8f2006
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793947"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245429"
 ---
-# <a name="mvvm"></a>MVVM
+# <a name="the-model-view-viewmodel-pattern"></a>Vzor Model-View-ViewModel
 
 Možnosti vývojáře Xamarin.Forms obvykle zahrnuje vytvoření uživatelského rozhraní v jazyce XAML a přidání kódu, který pracuje v uživatelském rozhraní. Jako aplikací jsou upraveny, čím velikost a rozsah, mohou se vyskytnout potíže se komplexní údržby. Mezi tyto problémy patří úzkou párování mezi ovládacími prvky uživatelského rozhraní a obchodní logiky, která zvyšuje náklady na provedení změny uživatelského rozhraní a je obtížné takový kód testování částí.
 

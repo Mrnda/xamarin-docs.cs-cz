@@ -1,20 +1,20 @@
 ---
-title: Uživatelské rozhraní
-description: Použití zobrazení poskytované Xamarin.Forms
+title: Zobrazení Xamarin.Forms uživatelské rozhraní
+description: Tento článek představuje ovládací prvky a koncepty, které lze použít při vytváření uživatelského rozhraní v aplikaci Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 391B4A77-7CAC-42D2-9E77-BD8E170E9BE6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2017
-ms.openlocfilehash: 84106cf8f699616fae772a6f149681840abca0e5
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.openlocfilehash: 55c461a7dee26462e0b9daebeb10e47afa4e5f6f
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34733045"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244367"
 ---
-# <a name="user-interface"></a>Uživatelské rozhraní
+# <a name="xamarinforms-user-interface-views"></a>Zobrazení Xamarin.Forms uživatelské rozhraní
 
 _Použití zobrazení poskytované Xamarin.Forms_
 

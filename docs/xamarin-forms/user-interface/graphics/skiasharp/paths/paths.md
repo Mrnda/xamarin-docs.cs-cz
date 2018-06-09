@@ -1,19 +1,20 @@
 ---
-title: Základy cesta
-description: Prozkoumat objekt SkiaSharp SKPath kombinování připojené čar a křivek
+title: Základní informace o cestě v SkiaSharp
+description: V tomto článku jsou zde popsány objekt SkiaSharp SKPath kombinování připojené čar a křivek a to ukazuje s ukázkový kód.
 ms.prod: xamarin
 ms.assetid: A7EDA6C2-3921-4021-89F3-211551E430F1
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: b2881148631435c9082b42cad0e784100b010b46
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 2fc492f723a7a009da506d241ddf2e8459908633
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244042"
 ---
-# <a name="path-basics"></a>Základy cesta
+# <a name="path-basics-in-skiasharp"></a>Základní informace o cestě v SkiaSharp
 
 _Prozkoumat objekt SkiaSharp SKPath kombinování připojené čar a křivek_
 
@@ -196,4 +197,4 @@ Pokosové spojení se skládá z sharp bodu, kde řádky připojit. Když dva ř
 ## <a name="related-links"></a>Související odkazy
 
 - [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

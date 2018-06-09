@@ -1,17 +1,18 @@
 ---
 title: Ověřování uživatelů s databází Azure Cosmos DB dokumentu
-description: Databáze dokumentů Azure Cosmos DB podporují dělené kolekce, které může mít rozsah více serverů a oddíly, spolu s podporou neomezené úložiště a propustnosti. Tento článek vysvětluje, jak spojovat řízení přístupu se dělené kolekce tak, aby uživatel přístup jenom k své vlastní dokumenty v aplikaci Xamarin.Forms.
+description: Tento článek vysvětluje, jak kombinovat řízení přístupu ke kolekcím Azure DB Cosmos rozdělena na oddíly tak, aby uživatel přístup jenom k své vlastní dokumenty v aplikaci Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 11ED4A4C-0F05-40B2-AB06-5A0F2188EF3D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 0132f849a066976896295da8b8b67ed8bf3c3e8d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 031a48e5e10100b2c57ac067a0dda916c93d20da
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241608"
 ---
 # <a name="authenticating-users-with-an-azure-cosmos-db-document-database"></a>Ověřování uživatelů s databází Azure Cosmos DB dokumentu
 

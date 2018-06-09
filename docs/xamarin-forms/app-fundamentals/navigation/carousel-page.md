@@ -1,5 +1,5 @@
 ---
-title: Karuselu stránky
+title: Stránka karuselu Xamarin.Forms
 description: Xamarin.Forms CarouselPage je stránka, která uživatelé mohou prstem stranu procházet stránky obsahu, jako je galerie. Tento článek ukazuje, jak pomocí CarouselPage můžete přejít přes kolekci stránek.
 ms.prod: xamarin
 ms.assetid: 2D14FC9D-DF5F-427E-9006-2AAE61ECF8DC
@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 9259e2a85a7375106891eaae5fe22d6babfa2fcf
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: daf19dbed2e98429280758125a19efce2d7fd9a1
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34846455"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241748"
 ---
-# <a name="carousel-page"></a>Karuselu stránky
+# <a name="xamarinforms-carousel-page"></a>Stránka karuselu Xamarin.Forms
 
 _Xamarin.Forms CarouselPage je stránka, která uživatelé mohou prstem stranu procházet stránky obsahu, jako je galerie. Tento článek ukazuje, jak pomocí CarouselPage můžete přejít přes kolekci stránek._
 
@@ -46,7 +46,7 @@ Dva přístupy lze použít k vytvoření [ `CarouselPage` ](https://developer.x
 - [Naplnění](#Populating_a_CarouselPage_with_a_Page_Collection) `CarouselPage` s kolekcí podřízených [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) instance.
 - [Přiřadit](#Populating_a_CarouselPage_with_a_Template) kolekce [ `ItemsSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%601.ItemsSource/) vlastnost a přiřadit [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) k [ `ItemTemplate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%601.ItemTemplate/) vlastnost vrátit [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) instancí pro objekty v kolekci.
 
-Pomocí obou přístupů `CarouselPage` bude potom zobrazení každé stránce se pak s prstem interakce, Přesun na další stránku, který se má zobrazit. 
+Pomocí obou přístupů `CarouselPage` bude potom zobrazení každé stránce se pak s prstem interakce, Přesun na další stránku, který se má zobrazit.
 
 > [!NOTE]
 > A [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) pouze možné naplnit [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) instancí, nebo `ContentPage` odvozené konfigurace.

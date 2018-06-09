@@ -1,19 +1,20 @@
 ---
-title: Malování prstem
-description: Pomocí prstů k vyplnění na plátně.
+title: Malování prstem v SkiaSharp
+description: Tento článek vysvětluje, jak pomocí prstů k vyplnění na plátně SkiaSharp v aplikaci Xamarin.Forms a to ukazuje s ukázkový kód.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 56929D74-8F2C-44C6-90E6-3FBABCDC0A4B
 author: charlespetzold
 ms.author: chape
 ms.date: 04/05/2017
-ms.openlocfilehash: 6180eb61e7850b7739c5514461796fb0aacbc4ff
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: f4c3d2ef2f6d1253f58b95559ef83af291f87b03
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243776"
 ---
-# <a name="finger-painting"></a>Malování prstem
+# <a name="finger-painting-in-skiasharp"></a>Malování prstem v SkiaSharp
 
 _Pomocí prstů k vyplnění na plátně._
 

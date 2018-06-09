@@ -1,22 +1,24 @@
 ---
 title: Souhrn kapitoly 1. Jak se uplatní Xamarin.Forms?
+description: 'Vytváření mobilních aplikací s Xamarin.Forms: Souhrn kapitoly 1. Jak se uplatní Xamarin.Forms?'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F3F864FF-EE70-49D0-90D1-388889037625
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 534c36a16acdc10ffb6f6b6703296a672875286e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 2897229b0749b1a6ead805d6ad063603a77f8f0d
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35240457"
 ---
 # <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>Souhrn kapitoly 1. Jak se uplatní Xamarin.Forms?
 
 Mezi nejvíce nepříjemným úlohy při programování je portování kód základní z jedné platformy na jiný, zvlášť pokud této platformě zahrnuje různé programovací jazyk. Dojde riziko portování kód, který je také Refaktorovat, avšak pokud obě platformy musí být zachovaná paralelně, pak rozdíly mezi základů dvou kódu budou budoucí údržby obtížnější.
 
-## <a name="cross-platform-mobile-development"></a>Mobilní vývoj pro různé platformy
+## <a name="cross-platform-mobile-development"></a>Vývoj mobilních řešení napříč platformami
 
 Tento problém je běžné, pokud je cílem mobilní platformy. V současné době existují dvě hlavní mobilní platformy, Apple řadu Iphony a Ipady spuštěn operační systém iOS a Android operačního systému, který běží na různých druhů telefonů a tabletů. Jiné významné platformě je Microsoftu pro univerzální platformu Windows (UWP), který umožňuje jednu aplikaci pro Windows 10 a Windows 10 Mobile.
 
@@ -74,7 +76,7 @@ Webové servery Xamarin a Microsoft obsahují informace o tom, jak to udělat:
 
 - [Začínáme s iOS](~/ios/get-started/index.md)
 - [Začínáme s Android](~/android/get-started/index.md)
-- [Windows Dev Center](http://dev.windows.com)
+- [Centrum vývojářů pro Windows](http://dev.windows.com)
 
 Jednou můžete vytvořit a spustit projekty pro tyto jednotlivé platformy, měli byste mít žádné problémy, vytváření a spouštění aplikací Xamarin.Forms.
 

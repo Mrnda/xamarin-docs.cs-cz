@@ -1,19 +1,20 @@
 ---
-title: 3D otočení
-description: Otočit 2D objektů v 3D prostoru pomocí-afinní transformace.
+title: 3D otočení v SkiaSharp
+description: Tento článek vysvětluje, jak používat-afinní transformace otočení 2D objektů v 3D prostoru a to ukazuje s ukázkový kód.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: B5894EA0-C415-41F9-93A4-BBF6EC72AFB9
 author: charlespetzold
 ms.author: chape
 ms.date: 04/14/2017
-ms.openlocfilehash: 2f5562475db17b7451fe7cb2ee8bbf4ccb782a87
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: ad4bce6eff7df65185fc3bd754c747fd0db0c9f1
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244296"
 ---
-# <a name="3d-rotations"></a>3D otočení
+# <a name="3d-rotations-in-skiasharp"></a>3D otočení v SkiaSharp
 
 _Otočit 2D objektů v 3D prostoru pomocí-afinní transformace._
 
@@ -60,13 +61,13 @@ V rámci systému 3D grafický je 1 4 matice pro vynásobí matice 4 4 transform
 
 Podobá se 2D transformuje které se provádějí v tři dimenze, 3D transformace se předpokládá, že proběhne ve čtyři dimenze. Čtvrtý dimenze se označuje jako W a 3D prostoru se předpokládá, že v rámci 4D místa, kde jsou W souřadnice rovna 1. Transformace vzorce jsou následující:
 
-x' = M11·x + M21·y + M31·z + M41
+x: = M11·x + M21·y + M31·z + M41
 
 y' = M12·x + M22·y + M32·z + M42
 
 z' = M13·x + M23·y + M33·z + M43
 
-w' = M14·x + M24·y + M34·z + M44
+w "= M14·x + M24·y + M34·z + M44
 
 Je zřejmé od vzorců transformace, buněk `M11`, `M22`, `M33` jsou škálování faktory v X, Y a pokynů, a `M41`, `M42`, a `M43` jsou překlad faktory X, Y a Z pokynů.
 
@@ -76,9 +77,9 @@ x"= x' / w.
 
 y"= y" / w.
 
-z" = z' / w'
+z"= z" / w.
 
-w" = w' / w' = 1
+w"= w, / w" = 1
 
 Že dělení w, poskytuje perspektivy v 3D prostoru. Pokud w se rovná 1, pak dojde k žádné perspektivy.
 
@@ -538,4 +539,4 @@ Tato 3D otočení obklopená několik 2D transformací chcete přesunout střed 
 ## <a name="related-links"></a>Související odkazy
 
 - [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

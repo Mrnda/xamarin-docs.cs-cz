@@ -1,17 +1,18 @@
 ---
 title: Afinní transformace
-description: Vytvoření perspektivy a Sbíhavost důsledky s třetí sloupec maticové transformace
+description: Tento článek vysvětluje, jak vytvářet perspektivy a Sbíhavost důsledky s třetí sloupec matice transformace a to ukazuje s ukázkový kód.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 785F4D13-7430-492E-B24E-3B45C560E9F1
 author: charlespetzold
 ms.author: chape
 ms.date: 04/14/2017
-ms.openlocfilehash: 8c3d39038fbaf5ed6601102a0aa16860c7a5a7a6
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 03c5b0dcbb7870e38991d7e0f4c7ac4feebfcf4e
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244230"
 ---
 # <a name="non-affine-transforms"></a>Afinní transformace
 
@@ -39,17 +40,17 @@ x' = ScaleX·x + SkewX·y + TransX
 
 y' = SkewY·x + ScaleY·y + TransY
 
-z` = Persp0·x + Persp1·y + Persp2
+z' = Persp0·x + Persp1·y + Persp2
 
 Základní pravidlo použití matice 3 3 pro dvourozměrná transformace je, že všechno, co na rovině zůstává, kde Z rovná 1. Pokud `Persp0` a `Persp1` mají hodnotu 0, a `Persp2` hodnotu 1, transformovat přesunul souřadnice Z této plochy.
 
 Pokud chcete obnovit to dvourozměrná transformace, je třeba souřadnice přesunout zpět touto rovinou. Další krok je povinný. X', y ", a z"hodnoty musí být rozdělené podle z':
 
-x" = x' / z'
+x"= x, nebo z.
 
 y"= y, nebo z.
 
-z" = z' / z' = 1
+z"= z, nebo z" = 1
 
 Toto jsou známé jako *homogenní souřadnice* a byly vyvinuty společností matematikovi srpen Ferdinand Möbius, mnohem lepší známé pro jeho topologické oddity pruhu Möbius.
 
@@ -59,7 +60,7 @@ Při zobrazení grafiky, ale budete chtít vyhnout vykreslování něco s souřa
 
 V této rovnici nechcete hodnotu z "stal nula:
 
-z` = Persp0·x + Persp1·y + Persp2
+z' = Persp0·x + Persp1·y + Persp2
 
 `Persp2` Buňky může být nula nebo není nula. Pokud `Persp2` nula, pak je z' je nulová bodu (0, 0), a které nejsou obvykle žádoucí vzhledem k tomu, že tento bod je velmi běžné u dvourozměrná grafiky. Pokud `Persp2` není rovný nule, a pokud je bez ztráty Obecné `Persp2` vyřešen v 1. Například, pokud zjistíte, že `Persp2` by měla být 5, pak můžete jednoduše rozdělíte všechny buňky v matici o 5, díky čemuž `Persp2` rovno 1 a výsledkem bude stejná.
 
@@ -230,7 +231,7 @@ Zde jsou některé obrázky, ukázka:
 
 Proto byste posuvníků, zjistíte, že hodnoty nad rámec 0.0066 nebo pod –0.0066 způsobit bitovou kopii k najednou fractured a osamocené. Rastrový obrázek transformaci je hranaté 300 pixelů. Je transformovat relativně k jeho center, takže souřadnice bitmapy v rozsahu od –150 do 150. Odvolat, hodnotu z "je:
 
-z` = Persp0·x + Persp1·y + 1
+z' = Persp0·x + Persp1·y + 1
 
 Pokud `Persp0` nebo `Persp1` je větší než 0.0066 nebo pod –0.0066, pak je vždy některé souřadnice rastrového obrázku, jejímž výsledkem z "hodnota nula. Která způsobí dělení nulou a vykreslování bude času. Pokud používáte jiný afinní transformace, budete chtít vyhnout vykreslování nic s souřadnice, které způsobí dělení nulou.
 
@@ -469,4 +470,4 @@ Jiné použití-afinní transformace je tak, aby napodoboval prostorovou grafiku
 ## <a name="related-links"></a>Související odkazy
 
 - [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

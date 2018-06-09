@@ -1,19 +1,20 @@
 ---
-title: Navigace
-description: Xamarin.Forms poskytuje několik možností, navigace různé stránky, v závislosti na typu stránka používá.
+title: Navigační Xamarin.Forms
+description: Tato příručka vysvětluje, jak provádět navigace v Xamarin.Forms aplikace. Xamarin.Forms poskytuje několik možností, navigace různé stránky, v závislosti na typu stránka používá.
 ms.prod: xamarin
 ms.assetid: BC5D0C6C-D5A9-4B12-A492-ED1F570CEC87
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 1a184e1ebfd9d87ba82642ebdfc30a8d3f92cce1
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 90aedee42af7ed1788110e832fb3b435d870ee77
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241953"
 ---
-# <a name="navigation"></a>Navigace
+# <a name="xamarinforms-navigation"></a>Navigační Xamarin.Forms
 
 _Xamarin.Forms poskytuje několik možností, navigace různé stránky, v závislosti na typu stránka používá._
 
@@ -42,4 +43,3 @@ Xamarin.Forms taky poskytuje podporu pro modální stránky. Modální stránky 
 ## <a name="displaying-pop-upspop-upsmd"></a>[Zobrazování automaticky otevíraných oken](pop-ups.md)
 
 Xamarin.Forms poskytuje dva elementy pop množství jako uživatelského rozhraní: výstrahu a akci listu. Tyto prvky rozhraní lze použít k dotazu na uživatele jednoduchých dotazů a můžete uživatele prostřednictvím úlohy.
-

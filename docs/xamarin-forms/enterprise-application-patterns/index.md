@@ -1,17 +1,18 @@
 ---
 title: Vzory podnikové aplikace pomocí elektronická kniha Xamarin.Forms
-description: Architektury pokyny pro vývoj aplikací enterprise Xamarin.Forms přizpůsobitelné, udržovatelného a možností intenzivního testování
+description: Tato elektronická kniha obsahuje architektury pokyny pro vývoj přizpůsobitelné, udržovatelného a možností intenzivního testování Xamarin.Forms podnikové aplikace.
 ms.prod: xamarin
 ms.assetid: 28cfed6c-6175-4223-a8cc-798d40bf0832
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: b7f69e987eb4f628dfaf5422bc1ce52108d90634
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: c401465d8a57abe1d5a1cfaf9ee2616888332ea3
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35242160"
 ---
 # <a name="enterprise-application-patterns-using-xamarinforms-ebook"></a>Vzory podnikové aplikace pomocí elektronická kniha Xamarin.Forms
 

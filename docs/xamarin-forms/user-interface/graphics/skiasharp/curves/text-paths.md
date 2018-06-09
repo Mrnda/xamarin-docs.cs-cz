@@ -1,25 +1,26 @@
 ---
-title: Cesty a Text.
-description: Prozkoumejte průnik cesty a text.
+title: Cesty a Text v SkiaSharp
+description: V tomto článku jsou zde popsány průnik SkiaSharp cesty a text a to ukazuje s ukázkový kód.
 ms.prod: xamarin
 ms.assetid: C14C07F6-4A84-4A8C-BDB4-CD61FBF0F79B
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 08/01/2017
-ms.openlocfilehash: 9b3f906a23ed0d51237a244f3944104acc76e259
-ms.sourcegitcommit: 6f7033a598407b3e77914a85a3f650544a4b6339
+ms.openlocfilehash: 305ee2946d3a291e6237d5a2860eda7331193b23
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243902"
 ---
-# <a name="paths-and-text"></a>Cesty a Text.
+# <a name="paths-and-text-in-skiasharp"></a>Cesty a Text v SkiaSharp
 
 _Prozkoumejte průnik cesty a text._
 
-V systémech moderní grafiky jsou písma textu kolekce obrysy znaků, obvykle definované kvadratických Bézierových křivek. V důsledku toho mnoho moderní grafické systémy zahrnují umožňuje převést do cesty grafiky textových znaků. 
+V systémech moderní grafiky jsou písma textu kolekce obrysy znaků, obvykle definované kvadratických Bézierových křivek. V důsledku toho mnoho moderní grafické systémy zahrnují umožňuje převést do cesty grafiky textových znaků.
 
-Už jste se seznámili, vám může obtažení jsou podrobněji popsány dále textových znaků, stejně jako je vyplnění. To umožňuje zobrazit tyto obrysy znaků s šířku tahu konkrétní a i efekt cestu, jak je popsáno v [ **cesta důsledky** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) článku. Je také možné převést na řetězec znaků, ale `SKPath` objektu. To znamená, že text jsou podrobněji popsány dále lze použít pro výstřižek pomocí technik, které bylo popsané v [ **výstřižek s cestami a oblasti** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/clipping.md) článku. 
+Už jste se seznámili, vám může obtažení jsou podrobněji popsány dále textových znaků, stejně jako je vyplnění. To umožňuje zobrazit tyto obrysy znaků s šířku tahu konkrétní a i efekt cestu, jak je popsáno v [ **cesta důsledky** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) článku. Je také možné převést na řetězec znaků, ale `SKPath` objektu. To znamená, že text jsou podrobněji popsány dále lze použít pro výstřižek pomocí technik, které bylo popsané v [ **výstřižek s cestami a oblasti** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/clipping.md) článku.
 
 Kromě použití efektu cesta k obtažení outline znak, můžete také vytvořit cestu, kterou účinky, které jsou založená na cestách jsou odvozené z řetězce znaků, a dokonce můžete kombinovat dvě důsledky:
 
@@ -37,7 +38,7 @@ Nakonec tento článek ukazuje další průnik cesty a text: [ `DrawTextOnPath` 
 public SKPath GetTextPath (String text, Single x, Single y)
 ```
 
-`x` a `y` argumenty označuje počáteční bod základních hodnot v levé části textu. Přehrávání na stejný atribut role v tomto poli jako v `DrawText` metodu `SKCanvas`. V této cestě bude mít základních hodnot v levé části textu souřadnic (x, y). 
+`x` a `y` argumenty označuje počáteční bod základních hodnot v levé části textu. Přehrávání na stejný atribut role v tomto poli jako v `DrawText` metodu `SKCanvas`. V této cestě bude mít základních hodnot v levé části textu souřadnic (x, y).
 
 `GetTextPath` Metoda je přehnaně, pokud chcete jenom vyplnění nebo obtažení výsledné cestu. Normální `DrawText` metoda umožňuje udělat. `GetTextPath` Je užitečnější pro další úkoly týkající se cesty.
 
@@ -114,7 +115,7 @@ public class ClippingTextPage : ContentPage
 
         // Display bitmap to fill window but maintain aspect ratio
         SKRect rect = new SKRect(0, 0, info.Width, info.Height);
-        canvas.DrawBitmap(bitmap, 
+        canvas.DrawBitmap(bitmap,
             rect.AspectFill(new SKSize(bitmap.Width, bitmap.Height)));
     }
 }
@@ -141,7 +142,7 @@ public class TextPathEffectPage : ContentPage
         TextSize = littleSize
     };
 
-    SKPaint textPaint = new SKPaint 
+    SKPaint textPaint = new SKPaint
     {
         Style = SKPaintStyle.Stroke,
         Color = SKColors.Black
@@ -160,7 +161,7 @@ public class TextPathEffectPage : ContentPage
         textPathPaint.MeasureText(character, ref textPathPaintBounds);
 
         // Create textPath centered around (0, 0)
-        SKPath textPath = textPathPaint.GetTextPath(character, 
+        SKPath textPath = textPathPaint.GetTextPath(character,
                                                     -textPathPaintBounds.MidX,
                                                     -textPathPaintBounds.MidY);
         // Create the path effect
@@ -324,9 +325,9 @@ public class CircularTextPage : ContentPage
 
 [![](text-paths-images/circulartext-small.png "Trojitá snímek obrazovky stránky cyklické Text")](text-paths-images/circulartext-large.png#lightbox "Trojitá snímek obrazovky stránky cyklické textu")
 
-Vlastní text jste vybrali bude poněkud cyklické: slova "Kruh" je předmět věty i objekt prepositional frázi. 
+Vlastní text jste vybrali bude poněkud cyklické: slova "Kruh" je předmět věty i objekt prepositional frázi.
 
 ## <a name="related-links"></a>Související odkazy
 
 - [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

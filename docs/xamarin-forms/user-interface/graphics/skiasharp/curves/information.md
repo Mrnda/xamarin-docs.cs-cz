@@ -1,17 +1,18 @@
 ---
 title: Informace o cestě a – výčet
-description: Získat informace o cestách a výčet obsahu
+description: Tento článek vysvětluje, jak získat informace o způsobech SkiaSharp a výčet obsahu a to ukazuje s ukázkový kód.
 ms.prod: xamarin
 ms.assetid: 8E8C5C6A-F324-4155-8652-7A77D231B3E5
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 09/12/2017
-ms.openlocfilehash: 82ac4ea49462c7520219e1a621ea3946297b1b45
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 53d1fce20a0e3bc75ba34ab84b2549211567e222
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243789"
 ---
 # <a name="path-information-and-enumeration"></a>Informace o cestě a – výčet
 
@@ -27,7 +28,7 @@ Je také někdy užitečné k získání kreslení operace a body, které tvoř�
 
 ## <a name="getting-the-path-length"></a>Získávání délky cesty
 
-V článku [ **cesty a Text** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md) jste viděli, jak používat [ `DrawTextOnPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawTextOnPath/p/System.String/SkiaSharp.SKPath/System.Single/System.Single/SkiaSharp.SKPaint/) metoda kreslení textový řetězec, jehož základní následuje během cesty. Ale co když budete chtít velikost text tak, aby odpovídal cesta přesněji? Pro kreslení textu kolem kruh, totiž snadno obvodu kruhu je jednoduchá k výpočtu. Ale obvodu elipsy nebo délka Bézierovy křivky není tak jednoduché. 
+V článku [ **cesty a Text** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md) jste viděli, jak používat [ `DrawTextOnPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawTextOnPath/p/System.String/SkiaSharp.SKPath/System.Single/System.Single/SkiaSharp.SKPaint/) metoda kreslení textový řetězec, jehož základní následuje během cesty. Ale co když budete chtít velikost text tak, aby odpovídal cesta přesněji? Pro kreslení textu kolem kruh, totiž snadno obvodu kruhu je jednoduchá k výpočtu. Ale obvodu elipsy nebo délka Bézierovy křivky není tak jednoduché.
 
 [ `SKPathMeasure` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathMeasure/) Může pomoci třídy. [Konstruktor](https://developer.xamarin.com/api/constructor/SkiaSharp.SKPathMeasure.SKPathMeasure/p/SkiaSharp.SKPath/System.Boolean/System.Single/) přijímá `SKPath` argument a [ `Length` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPathMeasure.Length/) vlastnost zjistí jeho délka.
 
@@ -151,7 +152,7 @@ public class UnicycleHalfPipePage : ContentPage
     };
 
     SKPath unicyclePath = SKPath.ParseSvgPathData(
-        "M 0 0" + 
+        "M 0 0" +
         "A 25 25 0 0 0 0 -50" +
         "A 25 25 0 0 0 0 0 Z" +
         "M 0 -25 L 0 -100" +
@@ -179,7 +180,7 @@ public class UnicycleHalfPipePage : ContentPage
         using (SKPath pipePath = new SKPath())
         {
             pipePath.MoveTo(50, 50);
-            pipePath.CubicTo(0, 1.25f * info.Height, 
+            pipePath.CubicTo(0, 1.25f * info.Height,
                              info.Width - 0, 1.25f * info.Height,
                              info.Width - 50, 50);
 
@@ -197,7 +198,7 @@ public class UnicycleHalfPipePage : ContentPage
                 t = (float)((1 - Math.Cos(t * 2 * Math.PI)) / 2);
 
                 SKMatrix matrix;
-                pathMeasure.GetMatrix(t * length, out matrix, 
+                pathMeasure.GetMatrix(t * length, out matrix,
                                       SKPathMeasureMatrixFlags.GetPositionAndTangent);
 
                 canvas.SetMatrix(matrix);
@@ -426,7 +427,7 @@ Všimněte si, že metoda zachová první bod každý obrysem v proměnné názv
 
 [![](information-images/globulartext-small.png "Trojitá snímek obrazovky stránky Globular Text")](information-images/globulartext-large.png#lightbox "Trojitá snímek obrazovky stránky Globular Text")
 
-[ `GlobularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/GlobularTextPage.cs) Konstruktoru třídy provede Tato transformace. Vytvoří `SKPaint` objekt pro text a pak získá `SKPath` objektu z `GetTextPath` metoda. Jedná se o cestu předaný `CloneWithTransform` metoda rozšíření spolu s transform funkce: 
+[ `GlobularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/GlobularTextPage.cs) Konstruktoru třídy provede Tato transformace. Vytvoří `SKPaint` objekt pro text a pak získá `SKPath` objektu z `GetTextPath` metoda. Jedná se o cestu předaný `CloneWithTransform` metoda rozšíření spolu s transform funkce:
 
 ```csharp
 public class GlobularTextPage : ContentPage
@@ -453,9 +454,9 @@ public class GlobularTextPage : ContentPage
 
                 globePath = textPath.CloneWithTransform((SKPoint pt) =>
                 {
-                    double longitude = (Math.PI / textPathBounds.Width) * 
+                    double longitude = (Math.PI / textPathBounds.Width) *
                                             (pt.X - textPathBounds.Left) - Math.PI / 2;
-                    double latitude = (Math.PI / textPathBounds.Height) * 
+                    double latitude = (Math.PI / textPathBounds.Height) *
                                             (pt.Y - textPathBounds.Top) - Math.PI / 2;
 
                     longitude *= 0.75;
@@ -510,4 +511,4 @@ To je velice flexibilní technika. Pokud pole cesty důsledky podrobněji [ **ce
 ## <a name="related-links"></a>Související odkazy
 
 - [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

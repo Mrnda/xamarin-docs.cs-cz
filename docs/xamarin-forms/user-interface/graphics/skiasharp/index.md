@@ -1,17 +1,18 @@
 ---
 title: Použití SkiaSharp v Xamarin.Forms
-description: Použít SkiaSharp pro 2D grafiky ve svých aplikacích Xamarin.Forms
+description: SkiaSharp je systém 2D grafiky pro rozhraní .NET a C# používá technologii open source Skia grafiky modulem, který je hojně používaná v produktech Google. Tato příručka vysvětluje, jak používat SkiaSharp pro 2D grafiky ve svých aplikacích Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 2C348BEA-81DF-4794-8857-EB1DFF5E11DB
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 09/11/2017
-ms.openlocfilehash: e3444411c80ecaee105cce7c10f7bec7583dc2a5
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 272e70af83c8946d0c3eacadac9726487121ac0f
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243935"
 ---
 # <a name="using-skiasharp-in-xamarinforms"></a>Použití SkiaSharp v Xamarin.Forms
 
@@ -56,5 +57,5 @@ Zkoumání cest pokračuje přidávání křivek na cestu objekty a zneužitím 
 ## <a name="related-links"></a>Související odkazy
 
 - [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 - [SkiaSharp s Xamarin.Forms Webinář (video)](https://channel9.msdn.com/Events/Xamarin/Xamarin-University-Presents-Webinar-Series/SkiaSharp-Graphics-for-XamarinForms)

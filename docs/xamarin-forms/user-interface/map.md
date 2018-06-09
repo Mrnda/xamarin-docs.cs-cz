@@ -1,19 +1,20 @@
 ---
-title: mapy
-description: Xamarin.Forms používá nativní mapy rozhraní API na každou platformu.
+title: Mapa Xamarin.Forms
+description: Tento článek vysvětluje způsob použití třídy Xamarin.Forms Map pomocí nativní mapování rozhraní API na jednotlivých platformách zajistit, že známým mapuje prostředí pro uživatele.
 ms.prod: xamarin
 ms.assetid: 59CD1344-8248-406C-9144-0C8A67141E5B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 6063732e08680974b8d4a2358bfd85b176b36aec
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: 9bd4c810db0397d84803be7c38f625b9b047c3da
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35245472"
 ---
-# <a name="map"></a>mapy
+# <a name="xamarinforms-map"></a>Mapa Xamarin.Forms
 
 _Xamarin.Forms používá nativní mapy rozhraní API na každou platformu._
 
@@ -80,7 +81,7 @@ Pro přístup k umístění služby v systému iOS, musíte nastavit tyto klíč
 - iOS 10 a starší
     - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) – použití polohy při aplikace je používána
     - [`NSLocationAlwaysUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18) – pro umístění služby pomocí za všech okolností    
-    
+
 Pro podporu iOS 11 a starší, můžete zahrnout všechny tři klíče: `NSLocationWhenInUseUsageDescription`, `NSLocationAlwaysAndWhenInUseUsageDescription`, a `NSLocationAlwaysUsageDescription`.
 
 Reprezentace XML pro tyto klíče v **Info.plist** jsou uvedeny níže. Je třeba aktualizovat `string` hodnoty tak, aby odrážela, jak vaše aplikace používá informace o umístění:

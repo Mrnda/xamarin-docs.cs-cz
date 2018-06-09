@@ -1,16 +1,18 @@
 ---
 title: Shrnutí kapitoly 15. Interaktivní rozhraní
+description: 'Vytváření mobilních aplikací s Xamarin.Forms: Souhrn kapitoly 15. Interaktivní rozhraní'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F54E86F4-1CDA-474E-9B09-242060C2C13D
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: c5b2bc00c4337969322193966f26ce0e151f426e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: aac49c9e74dd22642396ea8daf5ee3abd85de7bf
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35241894"
 ---
 # <a name="summary-of-chapter-15-the-interactive-interface"></a>Shrnutí kapitoly 15. Interaktivní rozhraní
 
