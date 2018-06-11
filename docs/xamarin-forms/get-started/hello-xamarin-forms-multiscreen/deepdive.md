@@ -12,7 +12,7 @@ ms.openlocfilehash: 1c7edff3c71b9d7530b2acf21acaa06149156d43
 ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
+ms.lasthandoff: 06/11/2018
 ms.locfileid: "35242232"
 ---
 # <a name="xamarinforms-multiscreen-deep-dive"></a>Xamarin.Forms Multiobrazovka podrobné informace

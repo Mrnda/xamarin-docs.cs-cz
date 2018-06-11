@@ -11,7 +11,7 @@ ms.openlocfilehash: dc43d8b5623b83be16d437e30290bc8b059be4bb
 ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
+ms.lasthandoff: 06/11/2018
 ms.locfileid: "35242944"
 ---
 # <a name="automate-xamarinforms-testing-with-app-center"></a>Automatizovat Xamarin.Forms testování pomocí Center aplikace

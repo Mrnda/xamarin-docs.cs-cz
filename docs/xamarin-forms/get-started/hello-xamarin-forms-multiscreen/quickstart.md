@@ -11,7 +11,7 @@ ms.openlocfilehash: c931b4f74fbfbbb7396e492cb7ad7ae5d0097bad
 ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
+ms.lasthandoff: 06/11/2018
 ms.locfileid: "35242388"
 ---
 # <a name="xamarinforms-multiscreen-quickstart"></a>Rychlý start Multiobrazovka Xamarin.Forms

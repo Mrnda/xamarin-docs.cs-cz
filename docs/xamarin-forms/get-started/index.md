@@ -12,7 +12,7 @@ ms.openlocfilehash: 6ac76f41fc0646107102e0d5e59609c0f3969511
 ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
+ms.lasthandoff: 06/11/2018
 ms.locfileid: "35242437"
 ---
 # <a name="getting-started-with-xamarinforms"></a>Začínáme s Xamarin.Forms

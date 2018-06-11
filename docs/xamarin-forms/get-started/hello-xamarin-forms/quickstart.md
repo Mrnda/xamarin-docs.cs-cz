@@ -12,7 +12,7 @@ ms.openlocfilehash: 90394195afc4257656c8d09fab348156a7f549d5
 ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
+ms.lasthandoff: 06/11/2018
 ms.locfileid: "35242905"
 ---
 # <a name="xamarinforms-quickstart"></a>Rychlý start Xamarin.Forms

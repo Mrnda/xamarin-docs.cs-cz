@@ -12,7 +12,7 @@ ms.openlocfilehash: 1b017f282a1295dba4b2a051928b54fc16ff746b
 ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
+ms.lasthandoff: 06/11/2018
 ms.locfileid: "35243737"
 ---
 # <a name="hello-xamarinforms"></a>Hello, Xamarin.Forms
