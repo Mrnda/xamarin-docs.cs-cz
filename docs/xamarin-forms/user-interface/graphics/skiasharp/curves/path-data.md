@@ -1,19 +1,20 @@
 ---
-title: Data SVG cesty
-description: Zadejte cesty pomocí textové řetězce ve formátu Škálovatelné vektorová grafika
+title: Data SVG cesty v SkiaSharp
+description: Tento článek vysvětluje, jak definovat SkiaSharp cesty pomocí textové řetězce ve formátu Škálovatelné vektorové grafiky a to ukazuje s ukázkový kód.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 1D53067B-3502-4D74-B89D-7EC496901AE2
 author: charlespetzold
 ms.author: chape
 ms.date: 05/24/2017
-ms.openlocfilehash: fe9699894224d9a33b3a79e9b5bcd4cd41c635dd
-ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
+ms.openlocfilehash: 0453374c59c3b12842b7fb1524cc150329d84b7f
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35243971"
 ---
-# <a name="svg-path-data"></a>Data SVG cesty
+# <a name="svg-path-data-in-skiasharp"></a>Data SVG cesty v SkiaSharp
 
 _Zadejte cesty pomocí textové řetězce ve formátu Škálovatelné vektorová grafika_
 
@@ -49,7 +50,7 @@ Písmena jsou příkazy, které sestavení `SKPath` objektu. `M` označuje `Move
 
 Syntaxe data cesty SVG oficiálně zdokumentována [části 8.3 specifikace SVG](http://www.w3.org/TR/SVG11/paths.html#PathData). Zde je souhrn:
 
-## <a name="moveto"></a>**MoveTo**
+## <a name="moveto"></a>**MoveTo (přesunout)**
 
 ```csharp
 M x y
@@ -430,4 +431,4 @@ Něco speciální provádí pomocí druhé straně, ale. Protože hodiny se aktu
 ## <a name="related-links"></a>Související odkazy
 
 - [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
-- [SkiaSharpFormsDemos (sample)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
