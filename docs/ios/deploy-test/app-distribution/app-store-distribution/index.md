@@ -1,21 +1,20 @@
 ---
 title: Distribuce obchodu s aplikacemi
-description: Tento dokument popisuje požadavky pro distribuci do společnosti Apple App Store.
+description: Tento dokument popisuje, jak se bude distribuovat aplikace pro Xamarin.iOS na webu App Store. Popisuje, jak vytvořit certifikát pro distribuční, postup vytvoření distribučního profil pro zřizování a jak nakonfigurovat iTunes připojit a odeslání aplikace.
 ms.prod: xamarin
 ms.assetid: B07E2C1F-A6DF-43CB-BFB0-0252A5558467
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: 7a38c77dde7a66f2db194cd8888a2c32a3529a9a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 42d287285fc9b8842dfb0c86b627d1d5c84189e1
+ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34784813"
 ---
 # <a name="app-store-distribution"></a>Distribuce obchodu s aplikacemi
-
-_Tento dokument popisuje požadavky pro distribuci do společnosti Apple App Store._
 
 Po byla vyvinuta aplikace Xamarin.iOS, je dalším krokem v životního cyklu softwaru distribuovat aplikace pro uživatele, kteří používají iTunes App Storu. Toto je nejběžnější způsob distribuce aplikací. Tím, že publikujete aplikaci v Apple App Store, se může být dostupné k příjemce po celém světě.
 
@@ -82,7 +81,7 @@ Jako všechny ostatní profil zřizování vytvoříte, ID aplikace požadované
 1. V [Apple Developer Center](https://developer.apple.com/account/overview.action) vyhledejte *certifikát, identifikátory a profily* části. Vyberte **ID aplikace** pod **identifikátory**.
 2. Klikněte **+** tlačítko a zadejte **název** který bude identifikovat na portálu.
 3. Předpona aplikace musí být již nastavená jako ID vašeho týmu a nelze změnit. Vyberte buď explicitní nebo ID aplikace zástupný znak a zadejte ID sady v následujícím formátu zpětné DNS:
-    - **Explicit**: com.[DomainName].[AppName]
+    - **Explicitní**: com. [DomainName]. [AppName]
     - **Wildcard**:com.[DomainName].*
 4. Vyberte některé [App Services](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#appservices) vyžadující aplikace.
 5. Klikněte **pokračovat** tlačítko a postupujte podle pokynů na obrazovce pro vytvoření nového ID aplikace.
