@@ -1,19 +1,20 @@
 ---
-title: Cesta efekty
-description: Zjištění různých cesta účinky, které umožňují cesty, které se použije pro vytažení a naplnění
+title: Cesta efekty při SkiaSharp
+description: Tento článek vysvětluje různé důsledky cesta SkiaSharp, které umožňují cesty, které se použije pro vytažení a naplnění a to s ukázkový kód ukazuje.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
 author: charlespetzold
 ms.author: chape
 ms.date: 07/29/2017
-ms.openlocfilehash: 76192f48bedebb183c64c83e34c3908cc85d591c
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: 2071a2fb140d0e9c78d4c86d6aa70d3606dc1f98
+ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35244107"
 ---
-# <a name="path-effects"></a>Cesta efekty
+# <a name="path-effects-in-skiasharp"></a>Cesta efekty při SkiaSharp
 
 _Zjištění různých cesta účinky, které umožňují cesty, které se použije pro vytažení a naplnění_
 
@@ -400,7 +401,7 @@ public partial class OneDimensionalPathEffectPage : ContentPage
 
 Cesta zadaná v `SKPathEffect.Create1DPath` metoda je vždy vyplněna. Cesta zadaná v `DrawPath` metoda je vždy vytažený, pokud `SKPaint` objekt má jeho `PathEffect` vlastnost nastavena na hodnotu efekt cesta 1 D. Všimněte si, že `pathPaint` objekt nemá žádné `Style` normálně výchozí nastavení pro `Fill`, ale cesta je vytažený bez ohledu na to.
 
-Pole použité v `Translate` příklad je 20 pixelů odmocnina a `advance` argument je nastaven na hodnotu 24. Tento rozdíl způsobí, že mezera mezi polí při řádek je přibližně vodorovné nebo svislé, ale do polí překrývat trochu při řádek je diagonálních, protože diagonálních pole je 28.3 pixelů. 
+Pole použité v `Translate` příklad je 20 pixelů odmocnina a `advance` argument je nastaven na hodnotu 24. Tento rozdíl způsobí, že mezera mezi polí při řádek je přibližně vodorovné nebo svislé, ale do polí překrývat trochu při řádek je diagonálních, protože diagonálních pole je 28.3 pixelů.
 
 Kosočtverec tvaru v `Rotate` příklad je také 20 pixelů. `advance` Nastavena na 20, aby body nadále touch jako kosočtverec otáčí společně s zakřivení čáry.
 
@@ -418,7 +419,7 @@ y = · COSH(x / a)
 
 *Cosh* hyperbolický kosinus funkcí. Pro *x* rovná 0, *cosh* rovná nule a *y* rovná *a*. To je center trolejového. Podobně jako *kosinus* funkce, *cosh* se říká, že *i*, to znamená, že *cosh(–x)* rovná *cosh(x)*, a hodnoty zvyšují pro zvýšení kladné a záporné argumenty. Tyto hodnoty popisují křivek, které vytvářejí postranní trolejového.
 
-Hledání správnou hodnotu *a* podle trolejového vedení dimenzím, na stránce telefonu není přímé výpočtu. Pokud *w* a *h* jsou šířky a výšky obdélníku, optimální hodnotu *a* splňuje následující rovnice:
+Hledání správné hodnoty *a* podle trolejového vedení dimenzím, na stránce telefonu není přímé výpočtu. Pokud *w* a *h* jsou šířky a výšky obdélníku, optimální hodnotu *a* splňuje následující rovnice:
 
 COSH (w/2/a) = 1 + h / a
 
@@ -585,9 +586,9 @@ public class ConveyorBeltPage : ContentPage
         bucketPath.AddRect(new SKRect(-5, -3, 25, 3));
 
         // Sides
-        bucketPath.AddRoundedRect(new SKRect(25, -19, 27, 18), 10, 10, 
+        bucketPath.AddRoundedRect(new SKRect(25, -19, 27, 18), 10, 10,
                                   SKPathDirection.CounterClockwise);
-        bucketPath.AddRoundedRect(new SKRect(63, -19, 65, 18), 10, 10, 
+        bucketPath.AddRoundedRect(new SKRect(63, -19, 65, 18), 10, 10,
                                   SKPathDirection.CounterClockwise);
 
         // Five slats
@@ -595,20 +596,20 @@ public class ConveyorBeltPage : ContentPage
         {
             bucketPath.MoveTo(25, -19 + 8 * i);
             bucketPath.LineTo(25, -13 + 8 * i);
-            bucketPath.ArcTo(50, 50, 0, SKPathArcSize.Small, 
+            bucketPath.ArcTo(50, 50, 0, SKPathArcSize.Small,
                              SKPathDirection.CounterClockwise, 65, -13 + 8 * i);
             bucketPath.LineTo(65, -19 + 8 * i);
-            bucketPath.ArcTo(50, 50, 0, SKPathArcSize.Small, 
+            bucketPath.ArcTo(50, 50, 0, SKPathArcSize.Small,
                              SKPathDirection.Clockwise, 25, -19 + 8 * i);
             bucketPath.Close();
         }
 
         // Arc to suggest the hidden side
         bucketPath.MoveTo(25, -17);
-        bucketPath.ArcTo(50, 50, 0, SKPathArcSize.Small, 
+        bucketPath.ArcTo(50, 50, 0, SKPathArcSize.Small,
                          SKPathDirection.Clockwise, 65, -17);
         bucketPath.LineTo(65, -19);
-        bucketPath.ArcTo(50, 50, 0, SKPathArcSize.Small, 
+        bucketPath.ArcTo(50, 50, 0, SKPathArcSize.Small,
                          SKPathDirection.CounterClockwise, 25, -19);
         bucketPath.Close();
 
@@ -619,7 +620,7 @@ public class ConveyorBeltPage : ContentPage
     ...
 ```
 
-Kód pro vytvoření sady dokončení s dvěma transformace, které se ujistěte se o něco větší sady a zapnout ho ze strany. Používání těchto transformací byla jednodušší než úpravě všechny souřadnice v předchozí kód. 
+Kód pro vytvoření sady dokončení s dvěma transformace, které se ujistěte se o něco větší sady a zapnout ho ze strany. Používání těchto transformací byla jednodušší než úpravě všechny souřadnice v předchozí kód.
 
 `PaintSurface` Obslužná rutina začne definováním cestu pro běžícím pásu sám sebe. Toto je jednoduše pár řádků a pár zadáte kroužky, které jsou vykreslovány s 20 pixelů širokou světlý šedá řádek:
 
@@ -642,10 +643,10 @@ public class ConveyorBeltPage : ContentPage
         {
             // Straight verticals capped by semicircles on top and bottom
             conveyerPath.MoveTo(width, verticalMargin);
-            conveyerPath.ArcTo(width / 2, width / 2, 0, SKPathArcSize.Large, 
+            conveyerPath.ArcTo(width / 2, width / 2, 0, SKPathArcSize.Large,
                                SKPathDirection.Clockwise, 2 * width, verticalMargin);
             conveyerPath.LineTo(2 * width, info.Height - verticalMargin);
-            conveyerPath.ArcTo(width / 2, width / 2, 0, SKPathArcSize.Large, 
+            conveyerPath.ArcTo(width / 2, width / 2, 0, SKPathArcSize.Large,
                                SKPathDirection.Clockwise, width, info.Height - verticalMargin);
             conveyerPath.Close();
 
@@ -665,8 +666,8 @@ public class ConveyorBeltPage : ContentPage
             float phase = -t * spacing;
 
             // Create the buckets PathEffect
-            using (SKPathEffect bucketsPathEffect = 
-                        SKPathEffect.Create1DPath(bucketPath, spacing, phase, 
+            using (SKPathEffect bucketsPathEffect =
+                        SKPathEffect.Create1DPath(bucketPath, spacing, phase,
                                                   SKPath1DPathEffectStyle.Rotate))
             {
                 // Set it to the Paint object and draw the path again
@@ -680,7 +681,7 @@ public class ConveyorBeltPage : ContentPage
 
 Logika pro kreslení běžícím pásu nepracuje v režimu na šířku.
 
-Kbelíků by měl rozmístěny o 200 pixelů na běžícím pásu od sebe. Dopravní pás je však pravděpodobně není násobkem dlouhý a 200 pixelů, což znamená, jako `phase` argument `SKPathEffect.Create1DPath` je animovaný, kbelíků bude pop, do a z existence. 
+Kbelíků by měl rozmístěny o 200 pixelů na běžícím pásu od sebe. Dopravní pás je však pravděpodobně není násobkem dlouhý a 200 pixelů, což znamená, jako `phase` argument `SKPathEffect.Create1DPath` je animovaný, kbelíků bude pop, do a z existence.
 
 Z tohoto důvodu program nejprve vypočítá hodnotu s názvem `length` tedy délka běžícím pásu. Protože běžícím pásu se skládá z přímky a zadáte kroužky, jedná se o jednoduchý výpočet. Dále je počet intervalů, vypočítá jako podíl `length` podle 200. To se zaokrouhlí na nejbližší celé číslo, a pak je číslo rozdělené do `length`. Výsledkem je mezery pro integrální počet intervalů. `phase` Argument je jednoduše zlomek této.
 
@@ -708,11 +709,11 @@ Stejně jako u předchozí příklad `GetFillPath`, uvidíte, že výsledky jsou
 public static SKPathEffect Create2DLine (Single width, SKMatrix matrix)
 ```
 
-`width` Argument určuje šířku tahu čar šrafování. `matrix` Parametr je kombinací otočení škálování a volitelné. Měřítko určuje přírůstek pixelů, který Skia používá k mezery mezi řádky šrafování. Oddělení mezi řádky je měřítko minus `width` argument. Pokud na škálování faktor je menší než nebo rovno `width` hodnotu, bude bez mezery mezi řádky šrafování a aby byla vyplněna se zobrazí v oblasti. Zadejte stejnou hodnotu pro vodorovného a svislého škálování. 
+`width` Argument určuje šířku tahu čar šrafování. `matrix` Parametr je kombinací otočení škálování a volitelné. Měřítko určuje přírůstek pixelů, který Skia používá k mezery mezi řádky šrafování. Oddělení mezi řádky je měřítko minus `width` argument. Pokud na škálování faktor je menší než nebo rovno `width` hodnotu, bude bez mezery mezi řádky šrafování a aby byla vyplněna se zobrazí v oblasti. Zadejte stejnou hodnotu pro vodorovného a svislého škálování.
 
 Šrafování řádky jsou ve výchozím nastavení, vodorovné. Pokud `matrix` parametr obsahuje otočení, řádky šrafování otáčejí po směru hodinových ručiček.
 
-**Šrafování výplně** stránky ukazuje platnost této cesty. [ `HatchFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/HatchFillPage.cs) Třída definuje tři důsledky cestu jako pole, první pro vodorovné šrafování řádky s šířka 3 pixelů se škálování označujícím Multi-Factor, které jsou rozmístěny 6 pixelů od sebe. Oddělení mezi řádky je proto 3 pixelů. Druhý efektu cesta je pro vertikální šrafování řádky s šířku 6 pixelů rozmístěny 24 pixelů od sebe (takže oddělení je 18 pixelů), a třetí je diagonálních šrafování řádků 12 pixelů celý rozmístěné 36 pixelů od sebe. 
+**Šrafování výplně** stránky ukazuje platnost této cesty. [ `HatchFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/HatchFillPage.cs) Třída definuje tři důsledky cestu jako pole, první pro vodorovné šrafování řádky s šířka 3 pixelů se škálování označujícím Multi-Factor, které jsou rozmístěny 6 pixelů od sebe. Oddělení mezi řádky je proto 3 pixelů. Druhý efektu cesta je pro vertikální šrafování řádky s šířku 6 pixelů rozmístěny 24 pixelů od sebe (takže oddělení je 18 pixelů), a třetí je diagonálních šrafování řádků 12 pixelů celý rozmístěné 36 pixelů od sebe.
 
 ```csharp
 public class HatchFillPage : ContentPage
@@ -721,10 +722,10 @@ public class HatchFillPage : ContentPage
 
     SKPathEffect horzLinesPath = SKPathEffect.Create2DLine(3, SKMatrix.MakeScale(6, 6));
 
-    SKPathEffect vertLinesPath = SKPathEffect.Create2DLine(6, 
+    SKPathEffect vertLinesPath = SKPathEffect.Create2DLine(6,
         Multiply(SKMatrix.MakeRotationDegrees(90), SKMatrix.MakeScale(24, 24)));
 
-    SKPathEffect diagLinesPath = SKPathEffect.Create2DLine(12, 
+    SKPathEffect diagLinesPath = SKPathEffect.Create2DLine(12,
         Multiply(SKMatrix.MakeScale(36, 36), SKMatrix.MakeRotationDegrees(45)));
 
     SKPaint strokePaint = new SKPaint
@@ -761,14 +762,14 @@ public class HatchFillPage : ContentPage
 
         using (SKPath roundRectPath = new SKPath())
         {
-            // Create a path 
+            // Create a path
             roundRectPath.AddRoundedRect(
                 new SKRect(50, 50, info.Width - 50, info.Height - 50), 100, 100);
 
             // Horizontal hatch marks
             fillPaint.PathEffect = horzLinesPath;
             fillPaint.Color = SKColors.Red;
-            canvas.DrawPath(roundRectPath, fillPaint); 
+            canvas.DrawPath(roundRectPath, fillPaint);
 
             // Vertical hatch marks
             fillPaint.PathEffect = vertLinesPath;
@@ -808,18 +809,18 @@ Android obrazovky nevypadá skutečně jako je například: škálování na sn�
 public static SKPathEffect Create2DPath (SKMatrix matrix, SKPath path)
 ```
 
-`SKMatrix` Škálování faktory znamenat vodorovného a svislého mezery replikované cesty. Ale nemůže otočení cesty pomocí této `matrix` argument; Pokud chcete, aby cesta otáčet, otočit samotná cesta pomocí `Transform` metoda definované `SKPath`. 
+`SKMatrix` Škálování faktory znamenat vodorovného a svislého mezery replikované cesty. Ale nemůže otočení cesty pomocí této `matrix` argument; Pokud chcete, aby cesta otáčet, otočit samotná cesta pomocí `Transform` metoda definované `SKPath`.
 
 Replikovaná složka je obvykle zarovnán levého a horního okraje obrazovky, nikoli oblasti má číslo. Toto chování můžete přepsat zadáním faktory překlad mezi 0 a škálování faktorů k určení vodorovného a svislého posunutí z stran levého a horního.
 
-**Vyplnění dlaždice cesta** stránky ukazuje platnost této cesty. Cesty používanou pro dlaždice oblasti je definován jako pole v [ `PathFileFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathTileFillPage.cs) třídy. Souřadnice vodorovného a svislého rozsahu od –40 na 40, což znamená, že tato cesta je 80 pixelů odmocnina: 
+**Vyplnění dlaždice cesta** stránky ukazuje platnost této cesty. Cesty používanou pro dlaždice oblasti je definován jako pole v [ `PathFileFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathTileFillPage.cs) třídy. Souřadnice vodorovného a svislého rozsahu od –40 na 40, což znamená, že tato cesta je 80 pixelů odmocnina:
 
 ```csharp
 public class PathTileFillPage : ContentPage
 {
     SKPath tilePath = SKPath.ParseSvgPathData(
-        "M -20 -20 L 2 -20, 2 -40, 18 -40, 18 -20, 40 -20, " + 
-        "40 -12, 20 -12, 20 12, 40 12, 40 40, 22 40, 22 20, " + 
+        "M -20 -20 L 2 -20, 2 -40, 18 -40, 18 -20, 40 -20, " +
+        "40 -12, 20 -12, 20 12, 40 12, 40 40, 22 40, 22 20, " +
         "-2 20, -2 40, -20 40, -20 8, -40 8, -40 -8, -20 -8 Z");
     ...
     void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -840,7 +841,7 @@ public class PathTileFillPage : ContentPage
                 paint.PathEffect = pathEffect;
 
                 canvas.DrawRoundRect(
-                    new SKRect(50, 50, info.Width - 50, info.Height - 50), 
+                    new SKRect(50, 50, info.Width - 50, info.Height - 50),
                     100, 100, paint);
             }
         }
@@ -935,7 +936,7 @@ Někdy bezchybné přímky grafiky počítače nejsou poměrně co chcete použ�
 public static SKPathEffect CreateDiscrete (Single segLength, Single deviation, UInt32 seedAssist)
 ```
 
-Platnost této cesty můžete použít pro vytažení nebo naplnění. Řádky jsou rozdělené do připojené segmenty – přibližnou délka je zadána `segLength` – a rozšířit v různých směrech. Je zadána v rozsahu odchylky z původního řádku `deviation`. 
+Platnost této cesty můžete použít pro vytažení nebo naplnění. Řádky jsou rozdělené do připojené segmenty – přibližnou délka je zadána `segLength` – a rozšířit v různých směrech. Je zadána v rozsahu odchylky z původního řádku `deviation`.
 
 Konečný argument je základní hodnota používá ke generování pseudonáhodného pořadí používá pro účinek. Účinek kolísání bude vypadat pro různé semena mírně liší. Argument má výchozí hodnotu nula, což znamená, že stejný účinek se při každém spuštění programu. Pokud chcete jiné kolísání vždy, když je překreslen na obrazovce, můžete nastavit počáteční hodnotu na `Millisecond` vlastnost `DataTime.Now` hodnoty (například).
 
@@ -1016,7 +1017,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
     using (SKPaint paint = new SKPaint())
     {
-        paint.Style = SKPaintStyle.Stroke; 
+        paint.Style = SKPaintStyle.Stroke;
         paint.StrokeWidth = 5;
         paint.Color = SKColors.Blue;
 
@@ -1144,7 +1145,7 @@ public partial class TapToOutlineThePathPage : ContentPage
         using (SKPath circlePath = new SKPath())
         {
             circlePath.AddCircle(info.Width / 2, info.Height / 2,
-                                 Math.Min(info.Width / 2, info.Height / 2) - 
+                                 Math.Min(info.Width / 2, info.Height / 2) -
                                  redThickStroke.StrokeWidth);
 
             if (!outlineThePath)
@@ -1217,9 +1218,9 @@ using (SKPath linkPath = new SKPath())
 }
 ```
 
-`outlinePath` Objekt je pak příjemce obrys `linkPath` při, jsou-li vytažené zadány ve vlastnosti `strokePaint`. 
+`outlinePath` Objekt je pak příjemce obrys `linkPath` při, jsou-li vytažené zadány ve vlastnosti `strokePaint`.
 
-Další příklad touto technikou na blížící se další pro cestu použitou v `SKPathEffect.Create2DPath` metody. 
+Další příklad touto technikou na blížící se další pro cestu použitou v `SKPathEffect.Create2DPath` metody.
 
 ## <a name="combining-path-effects"></a>Kombinování cesta efekty
 
@@ -1270,7 +1271,7 @@ public class CatsInFramePage : ContentPage
         StrokeWidth = 5
     };
 
-    SKPath scallopPath = 
+    SKPath scallopPath =
         SKPath.ParseSvgPathData("M 0 0 L 50 0 A 60 60 0 0 1 -50 0 Z");
 
     SKPaint framePaint = new SKPaint
@@ -1316,7 +1317,7 @@ public class CatsInFramePage : ContentPage
             outlinedCatPath);
 
         // Create a 1D path effect from the scallop path
-        SKPathEffect strokeEffect = 
+        SKPathEffect strokeEffect =
             SKPathEffect.Create1DPath(scallopPath, 75, 0, SKPath1DPathEffectStyle.Rotate);
 
         // Set the sum the effects to frame paint
@@ -1358,11 +1359,11 @@ Je běžné použití `SKPathEffect.CreateCompose` přidat některé kolísání
 ```csharp
 public class DashedHatchLinesPage : ContentPage
 {
-    static SKPathEffect dashEffect = 
+    static SKPathEffect dashEffect =
         SKPathEffect.CreateDash(new float[] { 30, 30 }, 0);
 
     static SKPathEffect hatchEffect = SKPathEffect.Create2DLine(20,
-        Multiply(SKMatrix.MakeScale(60, 60), 
+        Multiply(SKMatrix.MakeScale(60, 60),
                  SKMatrix.MakeRotationDegrees(45)));
 
     SKPaint paint = new SKPaint()
@@ -1395,8 +1396,8 @@ public class DashedHatchLinesPage : ContentPage
 
         canvas.Clear();
 
-        canvas.DrawOval(info.Width / 2, info.Height / 2, 
-                        0.45f * info.Width, 0.45f * info.Height, 
+        canvas.DrawOval(info.Width / 2, info.Height / 2,
+                        0.45f * info.Width, 0.45f * info.Height,
                         paint);
     }
     ...
