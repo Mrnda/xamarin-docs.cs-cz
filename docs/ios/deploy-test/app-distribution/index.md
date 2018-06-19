@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 83c58fa430a0cf21e8b86e56b9dea04b3cad6d82
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 815277e9a4f9384d92bf17376f426cacd40dbc9f
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784765"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209437"
 ---
 # <a name="xamarinios-app-distribution-overview"></a>Přehled distribuce aplikace Xamarin.iOS
 
@@ -35,6 +35,9 @@ Tyto scénáře vyžadují, aby aplikace zřídit pomocí odpovídající *profi
 <a name="App_Store_Distribution"/>
 
 ## <a name="app-store-distribution"></a>Distribuce obchodu s aplikacemi
+
+> [!IMPORTANT]
+> Apple [oznámilo](https://developer.apple.com/news/?id=05072018a) , od července 2018 se všechny aplikace a aktualizace odeslána na obchod s aplikacemi a musí mít byla vytvořena pomocí iOS 11 SDK a [podporují zobrazení iPhone X](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md).
 
 To je hlavním prostředkem, že jsou k příjemce na zařízeních s iOS distribuovat aplikace iOS. Všechny aplikace, které jsou odeslána do obchodu s aplikacemi vyžadovat schválení společností Apple.
 

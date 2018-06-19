@@ -7,11 +7,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/13/2018
-ms.openlocfilehash: 29fc698e6ed1cfe02ce329813342916d5e7a1651
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 92bcfc888c52f9f74c8484295666da8f5ef7a14c
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209333"
 ---
 # <a name="xamarin-for-java-developers"></a>Xamarin pro vývojáře v jazyce Java
 
@@ -50,7 +51,7 @@ Existují však mnoho rozdíly mezi Java a C#. Příklad:
 
 -   Java nepodporuje preprocesor – direktivy jako `#define`.
 
--   Java nepodporuje typy celé číslo bez znaménka, zatímco C poskytuje typy celé číslo bez znaménka, například `ulong`, `uint`, `ushort` a `byte`.
+-   Java nepodporuje typy celé číslo bez znaménka, zatímco C# poskytuje typy celé číslo bez znaménka, jako `ulong`, `uint`, `ushort` a `byte`.
 
 -   Java nepodporuje operátor přetížení; v jazyce C# můžete použít přetížení operátory a převody.
 
@@ -464,7 +465,7 @@ K dispozici je také mnoho klíčová slova, které jsou jedinečné pro C# a ma
 |[object](https://msdn.microsoft.com/en-us/library/9kkx3h3c.aspx)|Alias pro typ objektu v rozhraní .NET framework.|
 |[out](https://msdn.microsoft.com/en-us/library/t3c3bfhx.aspx)|– Modifikátor parametrů nebo deklarací parametrů obecného typu.|
 |[override](https://msdn.microsoft.com/en-us/library/ebca9ah3.aspx)|Rozšiřuje nebo upravuje implementace zděděného členu.|
-|[partial](https://msdn.microsoft.com/en-us/library/6b0scde8.aspx)|Deklaruje definice, aby se daly rozdělit do několika souborů nebo rozdělí definici metoda od jeho implementace.|
+|[částečné](https://msdn.microsoft.com/en-us/library/6b0scde8.aspx)|Deklaruje definice, aby se daly rozdělit do několika souborů nebo rozdělí definici metoda od jeho implementace.|
 |[readonly](https://msdn.microsoft.com/en-us/library/acdd6hb7.aspx)|Deklaruje, že člena třídy může být přiřazen pouze v době prohlášení nebo pomocí konstruktoru třídy.|
 |[ref](https://msdn.microsoft.com/en-us/library/14akc2c7.aspx)|Způsobí, že předání odkazem, a nikoli hodnotu argumentu.|
 |[set](https://msdn.microsoft.com/en-us/library/ms228368.aspx)|Definuje metodu přistupujícího objektu, která nastaví hodnotu vlastnosti.|

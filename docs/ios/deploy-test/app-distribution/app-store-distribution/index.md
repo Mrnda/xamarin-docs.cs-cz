@@ -7,21 +7,24 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: 42d287285fc9b8842dfb0c86b627d1d5c84189e1
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: b763407797cf635908cf34cce4f1a6a06325000d
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784813"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209256"
 ---
 # <a name="app-store-distribution"></a>Distribuce obchodu s aplikacemi
 
 Po byla vyvinuta aplikace Xamarin.iOS, je dalším krokem v životního cyklu softwaru distribuovat aplikace pro uživatele, kteří používají iTunes App Storu. Toto je nejběžnější způsob distribuce aplikací. Tím, že publikujete aplikaci v Apple App Store, se může být dostupné k příjemce po celém světě.
 
 > [!IMPORTANT]
-> Je **důležité** si uvědomit, že chcete použít iTunes připojit a proto publikování aplikace k obchodu s aplikacemi, které **musí** být buď součástí jednotlivých nebo organizace Program vývojáře Apple. Nebudete moci postupujte podle kroků na této stránce, pokud jste členem vývojáře Apple **Enterprise** Program.
+> Apple [oznámilo](https://developer.apple.com/news/?id=05072018a) , od července 2018 se všechny aplikace a aktualizace odeslána na obchod s aplikacemi a musí mít byla vytvořena pomocí iOS 11 SDK a [podporují zobrazení iPhone X](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md).
 
 Distribuce aplikace – stejně jako v vývoji aplikace – vyžaduje, aby aplikace byly zřízené odpovídající pomocí *profil pro zřizování*. Profily zřizování jsou soubory, které obsahují informace, jakož i identity aplikace a mechanismus určený distribuce pro podpis kódu. Také obsahují informace o jaká zařízení mohou být aplikace nasazeny na distribuce App Store.
+
+> [!IMPORTANT]
+> Je **důležité** si uvědomit, že chcete použít iTunes připojit a proto publikování aplikace k obchodu s aplikacemi, které **musí** být buď součástí jednotlivých nebo organizace Program vývojáře Apple. Nebudete moci postupujte podle kroků na této stránce, pokud jste členem vývojáře Apple **Enterprise** Program.
 
 <a name="provisioning" />
 

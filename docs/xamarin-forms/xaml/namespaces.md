@@ -6,13 +6,13 @@ ms.assetid: C03B5553-B199-4A19-9F0F-E5BCE1DB268F
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
-ms.date: 07/10/2017
-ms.openlocfilehash: faa4998869b918caaf5bc4252dc81a5745199c93
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.date: 06/18/2018
+ms.openlocfilehash: 25299bc3b56c2fbb748db202e43e75be183cce66
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245830"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209294"
 ---
 # <a name="xaml-namespaces-in-xamarinforms"></a>Obory názvů jazyka XAML v Xamarin.Forms
 
@@ -43,11 +43,12 @@ V následující tabulce jsou podrobněji popsány dále `x` nepodporuje Xamarin
 |`x:Arguments`|Určuje argumenty konstruktoru pro jiné než výchozí konstruktor, nebo na prohlášení metoda objektu factory.|
 |`x:Class`|Určuje název oboru názvů a třídy pro třídy definované v jazyce XAML. Název třídy musí odpovídat názvu třídy souboru kódu na pozadí. Všimněte si, že tento konstruktor může vyskytovat pouze v kořenovém elementu souboru XAML.|
 |`x:FactoryMethod`|Určuje metoda factory, která slouží k inicializaci objektu.|
+|`x:FieldModifier`|Určuje úroveň přístupu pro generované pole s názvem elementů XAML.|
 |`x:Key`|Určuje jedinečný klíč uživatelem definované pro každý zdroj v `ResourceDictionary`. Hodnota klíče se používá k načtení prostředek XAML a obvykle se používá jako argument pro `StaticResource` – rozšíření značek.|
 |`x:Name`|Určuje název objektu modulu runtime pro XAML element. Nastavení `x:Name` je podobná deklarace proměnné v kódu.|
 |`x:TypeArguments`|Určuje argumenty obecného typu do konstruktoru objektu obecného typu.|
 
-Další informace o `x:Arguments`, `x:FactoryMethod`, a `x:TypeArguments` atributy, najdete v části [předání argumentů v jazyce XAML](~/xamarin-forms/xaml/passing-arguments.md).
+Další informace o `x:FieldModifier` atributů najdete v tématu [Modifikátory polí](~/xamarin-forms/xaml/field-modifiers.md). Další informace o `x:Arguments`, `x:FactoryMethod`, a `x:TypeArguments` atributy, najdete v části [předání argumentů v jazyce XAML](~/xamarin-forms/xaml/passing-arguments.md).
 
 V jazyce XAML deklarace oboru názvů dědí z nadřazeného prvku pro podřízený element. Proto při definování oboru názvů v kořenovém elementu souboru XAML, zdědí všechny elementy v souboru deklaraci oboru názvů.
 

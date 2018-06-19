@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: bcc265c4d8410bb1aa2305f8a137c96a63c60fae
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 37d99add473203d90cb1b420536827e34e834a2b
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847716"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209320"
 ---
 # <a name="xamarinforms-performance"></a>Výkon Xamarin.Forms
 
@@ -314,7 +314,7 @@ protected override void OnElementChanged (ElementChangedEventArgs<NativeListView
 }
 ```
 
-Nový nativní ovládací prvek by měla být vytvořená pouze jednou, pokud `Control` vlastnost je `null`. Ovládací prvek by měl být nakonfigurovaný jenom a po vlastní zobrazovací jednotky k nové element Xamarin.Forms přihlásit k odběru obslužné rutiny událostí. Podobně, všechny obslužné rutiny, které byly přihlásit k odběru by měly být jenom v odhlásit po elementu zobrazovací jednotky k změny. Přijetí tento přístup vám pomůže vytvořit efektivní provádění vlastní zobrazovací jednotky, která není trpí nevracení paměti.
+Nový nativní ovládací prvek by měla být vytvořená pouze jednou, pokud `Control` vlastnost je `null`. Ovládací prvek by měl být nakonfigurovaný jenom a po vlastní zobrazovací jednotky k nové element Xamarin.Forms přihlásit k odběru obslužné rutiny událostí. Podobně, všechny obslužné rutiny, které byly přihlásit k odběru by měly být jenom v odhlásit po vykreslení elementu k změny. Přijetí tento přístup vám pomůže vytvořit efektivní provádění vlastní zobrazovací jednotky, která není trpí nevracení paměti.
 
 Další informace o nástroji pro vykreslování vlastní najdete v tématu [přizpůsobení ovládacích prvků na každou platformu](~/xamarin-forms/app-fundamentals/custom-renderer/index.md).
 

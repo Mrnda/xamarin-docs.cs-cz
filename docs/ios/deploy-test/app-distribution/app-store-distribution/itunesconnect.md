@@ -7,15 +7,17 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: b54313668a2cb87a6cce0b8c519a06247524df81
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 05492f866bb083326ef1eccb8db3d624d8dc4806
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209307"
 ---
 # <a name="configuring-an-app-in-itunes-connect"></a>Konfigurace aplikace v iTunes Connect
 
-_Tento článek popisuje kroky potřebné k vytvoření a údržba aplikace pro Xamarin.iOS v iTunes připojení tak, aby mohou být vydány pro distribuci na webu App Store._
+> [!IMPORTANT]
+> Apple [oznámilo](https://developer.apple.com/news/?id=05072018a) , od července 2018 se všechny aplikace a aktualizace odeslána na obchod s aplikacemi a musí mít byla vytvořena pomocí iOS 11 SDK a [podporují zobrazení iPhone X](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md).
 
 iTunes připojení je sada webových nástrojů, mimo jiné, Správa aplikací iOS na webu App Store. Aplikace pro Xamarin.iOS bude muset být správně nastavili a nakonfigurovali v iTunes připojit předtím, než může být odeslány společnosti Apple k posouzení a nakonec vydané pro prodej, nebo jako bezplatnou aplikaci v App Storu.
 

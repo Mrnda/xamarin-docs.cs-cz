@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
-ms.openlocfilehash: 275ec851a2fd8e96adecfeca5daf6a66add7bd92
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: 7f68b7c8affc11b50bdb4a2fc9589f8dcbfb45ec
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209187"
 ---
 # <a name="gtk-platform-setup"></a>Instalační program platformy GTK #
 
@@ -42,7 +43,7 @@ Postupujte podle těchto pokynů můžete přidat GTK # aplikaci, která se spus
 
     Stiskněte **OK** tlačítko pro vytvoření projektu.
 
-4. V **Průzkumníku řešení**, klikněte pravým tlačítkem na nový projekt GTK a vyberte **spravovat balíčky NuGet**. Vyberte **Procházet** , klikněte na **zahrnout předběžné verze** zaškrtávací políčko a vyhledejte **Xamarin.Forms** 3.0 nebo novější.
+4. V **Průzkumníku řešení**, klikněte pravým tlačítkem na nový projekt GTK a vyberte **spravovat balíčky NuGet**. Vyberte **Procházet** kartě a vyhledejte **Xamarin.Forms** 3.0 nebo novější.
 
     ![Vyberte balíček Xamarin.Forms NuGet](gtk-images/win/select-forms-nuget-package.png "vyberte balíček Xamarin.Forms NuGet")
 

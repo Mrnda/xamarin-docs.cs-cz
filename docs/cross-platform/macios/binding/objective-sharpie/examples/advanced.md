@@ -6,12 +6,12 @@ ms.assetid: 044FF669-0B81-4186-97A5-148C8B56EE9C
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 7af9700a9b661280c2ee32a1f65cdc01234cbe37
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 811b783d33a20e23a7e807861e19355a1c372b84
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781253"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209398"
 ---
 # <a name="advanced-manual-real-world-example"></a>Rozšířené (ruční) příklad reálného
 
@@ -19,7 +19,7 @@ ms.locfileid: "34781253"
 
 Tato část popisuje pokročilejší přístup k vazby, kde budeme používat společnosti Apple `xcodebuild` nástroje k nejprve sestavení projektu POP a pak ručně odvodit vstup pro Sharpie cíl. To v podstatě popisuje, co je to cíl Sharpie pod pokličkou v předchozí části.
 
-```csharp
+```
  $ git clone https://github.com/facebook/pop.git
 Cloning into 'pop'...
    _(more git clone output)_
@@ -29,7 +29,7 @@ $ cd pop
 
 Vzhledem k tomu, že knihovna, POP, má projektu Xcode (`pop.xcodeproj`), můžeme jednoduše použít `xcodebuild` k sestavení POP. Tento proces může generovat zase soubory hlaviček, které Sharpie cíl může být nutné analyzovat. Z tohoto důvodu vytváření před vazba je důležité. Při sestavování prostřednictvím `xcodebuild` zkontrolujte předáte stejný identifikátor SDK a architektury který máte v úmyslu předat Sharpie cíl (a pamatujte si, že cíl Sharpie 3.0 můžete obvykle to pro vás!):
 
-```csharp
+```
 $ xcodebuild -sdk iphoneos9.0 -arch arm64
 
 Build settings from command line:
@@ -54,7 +54,7 @@ Budou existovat velké množství informací výstup v konzole jako součást `x
 
 Nyní připraveni vytvořit vazbu protokolu POP. Víme, že má být sestavení sady SDK `iphoneos8.1` s `arm64` architekturu a že se v záhlaví soubory záleží nám `build/Headers` pod POP git checkout. Pokud podíváme `build/Headers` adresář, uvidíme počet soubory hlaviček:
 
-```csharp
+```
 $ ls build/Headers/POP/
 POP.h                    POPAnimationTracer.h     POPDefines.h
 POPAnimatableProperty.h  POPAnimator.h            POPGeometry.h
@@ -66,7 +66,7 @@ POPAnimationPrivate.h    POPDecayAnimation.h
 
 Pokud se podíváme na `POP.h`, uvidíte je knihovny hlavní nejvyšší úrovně záhlaví souboru, který `#import`s další soubory. Z toho důvodu musíme pouze předat `POP.h` k Sharpie cíl a provede clang rest na pozadí:
 
-```csharp
+```
 $ sharpie bind -output Binding -sdk iphoneos8.1 \
     -scope build/Headers build/Headers/POP/POP.h \
     -c -Ibuild/Headers -arch arm64

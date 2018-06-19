@@ -6,13 +6,13 @@ ms.assetid: F687B24B-7DF0-4F8E-A21A-A9BB507480EB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/31/2018
-ms.openlocfilehash: 91df4d36dd8d98712063a30773f927a82676b18e
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.date: 06/18/2018
+ms.openlocfilehash: 123e65f1efe31935167ca8684e89e7c0b4505443
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243607"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209216"
 ---
 # <a name="xamarinforms-local-databases"></a>Databáze Microsoft Xamarin.Forms
 
@@ -36,7 +36,7 @@ V této části ukazuje, jak přidat balíčky SQLite.Net NuGet řešení Xamari
 
 ### <a name="xamarinsforms-net-standard-or-pcl-project"></a>Xamarins.Forms .NET Standard nebo PCL projektu
 
-Chcete-li přidat podporu SQLite do projektu Xamarin.Forms, pomocí funkce vyhledávání NuGet najděte **sqlite. net pcl** a instalaci balíčku:
+Chcete-li přidat podporu SQLite do projektu Xamarin.Forms, pomocí funkce vyhledávání NuGet najděte **sqlite. net pcl** a instalovat nejnovější balíček:
 
 ![Přidejte balíček NuGet SQLite.NET PCL](databases-images/vs2017-sqlite-pcl-nuget.png "přidejte balíček NuGet SQLite.NET PCL")
 
@@ -47,7 +47,7 @@ Existuje několik balíčků NuGet s podobnými názvy, správný balíček s t�
 - **Odkaz NuGet:** [sqlite. net pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
 > [!TIP]
-> Použití **sqlite. net pcl** NuGet i v rozhraní .NET standardní projekty.
+> Použití **sqlite. net pcl** balíček NuGet i v rozhraní .NET standardní projekty.
 
 Po přidání odkazu zápisu rozhraní abstrahovat funkce specifické pro platformu, která je k určení umístění souboru databáze. Rozhraní používá v ukázce definuje jednu metodu:
 
@@ -126,15 +126,11 @@ public Task<int> DeleteItemAsync(TodoItem item)
 > [!NOTE]
 > Výhodou použití asynchronní SQLite.Net API je této databáze, kterou operace přesunou do vlákna na pozadí. Kromě toho není třeba zapsat další souběžnosti kód zpracování, protože rozhraní API postará ho.
 
-Všechny přístupový kód dat je napsána v projektu PCL ke sdílení pro všechny platformy. Jenom získávání místní cesta pro databáze vyžaduje kódu pro konkrétní platformu, jak je uvedeno v následující části.
+Všechna data přístup kód je napsán v rozhraní .NET standardní projektu knihovny ke sdílení pro všechny platformy. Jenom získávání místní cesta pro databáze vyžaduje kódu pro konkrétní platformu, jak je uvedeno v následující části.
 
 <a name="PCL_iOS" />
 
 ### <a name="ios-project"></a>iOS projektu
-
-Konfigurace aplikace iOS, přidejte jeden balíček NuGet do projektu iOS pomocí *NuGet* okno:
-
-![Přidejte balíček NuGet SQLite.NET PCL](databases-images/vsmac-sqlite-nuget.png "přidejte balíček NuGet SQLite.NET PCL")
 
 Vyžaduje pouze kód je `IFileHelper` implementace, která určuje cestu k souboru data. Následující kód umístí soubor databáze SQLite **knihovny nebo databází** složku v rámci izolovaného prostoru aplikace. Najdete v článku [iOS práce pomocí systému souborů](~/ios/app-fundamentals/file-system.md) dokumentace pro další informace o různých adresáře, které jsou k dispozici pro úložiště.
 
@@ -166,11 +162,7 @@ Všimněte si, že tento kód obsahuje `assembly:Dependency` atributů tak, aby 
 
 ### <a name="android-project"></a>Projekt pro Android
 
-Konfigurace aplikace pro Android, přidat jeden balíček NuGet do projektu pro Android pomocí *NuGet* okno:
-
-![](databases-images/vsmac-sqlite-nuget.png "Přidejte balíček NuGet SQLite.NET PCL")
-
-Po přidání tohoto odkazu se vyžaduje jenom kód `IFileHelper` implementace, která určuje cestu k souboru data.
+Vyžaduje pouze kód je `IFileHelper` implementace, která určuje cestu k souboru dat:
 
 ```csharp
 [assembly: Dependency(typeof(FileHelper))]
@@ -191,11 +183,7 @@ namespace Todo.Droid
 
 ### <a name="windows-10-universal-windows-platform-uwp"></a>Windows 10 univerzální platformu Windows (UWP)
 
-Konfigurace aplikace pro UPW, přidejte jeden balíček NuGet do projektu UPW pomocí *NuGet* okno:
-
-![Přidejte balíček NuGet SQLite.NET PCL](databases-images/vs2017-sqlite-uwp-nuget.png "přidejte balíček NuGet SQLite.NET PCL")
-
-Po přidání odkaz na implementaci `IFileHelper` rozhraní, pomocí konkrétní platformy `Windows.Storage` rozhraní API určit cestu k souboru data.
+Implementace `IFileHelper` rozhraní, pomocí konkrétní platformy `Windows.Storage` rozhraní API určit cestu k souboru dat:
 
 ```csharp
 using Windows.Storage;
