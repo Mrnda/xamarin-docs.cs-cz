@@ -7,16 +7,19 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2016
-ms.openlocfilehash: 3cf27e48fe23b9a0f035689e55a72fcc706ab266
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 73d74b59ef6e59028eec7cad19feec21908b6329
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241328"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36269041"
 ---
 # <a name="consuming-an-azure-mobile-app"></a>Použití Azure mobilní aplikace
 
 _Azure Mobile Apps umožňují vývoj aplikací s škálovatelné back-EndY hostované v Azure App Service, se podpora pro mobilní ověřování, offline synchronizace a nabízených oznámení. Tento článek, který je pouze pro Azure Mobile Apps, použít back-end Node.js, vysvětluje, jak pro dotazování, vložit, aktualizovat a odstranit data uložená v tabulce v instanci Azure Mobile Apps._
+
+> [!NOTE]
+> Spouštění služby na 30. června, všechny nové Azure Mobile Apps bude vytvořen s protokolem TLS 1.2 ve výchozím nastavení. Kromě toho se taky doporučuje tento existující Azure Mobile Apps být nakonfigurována na používání protokolu TLS 1.2. Informace o tom, jak vynutit TLS 1.2 v mobilní aplikaci Azure najdete v tématu [vynutit TLS 1.2](/azure/app-service/app-service-web-tutorial-custom-ssl#enforce-tls-1112). Informace o tom, jak nakonfigurovat projektu Xamarin pro použití protokolu TLS 1.2, najdete v článku [zabezpečení TLS (Transport Layer) 1.2](~/cross-platform/app-fundamentals/transport-layer-security.md).
 
 Informace o tom, jak vytvořit instanci Azure Mobile Apps, která mohou být spotřebovávána Xamarin.Forms najdete v tématu [vytvoření aplikace na platformě Xamarin.Forms](https://azure.microsoft.com/documentation/articles/app-service-mobile-xamarin-forms-get-started/). Až projdete tyto pokyny, lze nastavit ke stažení ukázkové aplikace využívat Azure Mobile Apps instance nastavením `Constants.ApplicationURL` na adresu URL instance Azure Mobile Apps. Poté při spuštění ukázkové aplikace se připojí k instanci Azure Mobile Apps, jak je znázorněno na následujícím snímku obrazovky:
 

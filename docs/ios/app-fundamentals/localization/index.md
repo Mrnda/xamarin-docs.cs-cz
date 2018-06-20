@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/28/2017
-ms.openlocfilehash: 06758fd8fac62a63c309b173738a8ee889716143
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 7f05243196a9b916ac5c7b73df957262604ccb11
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785263"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36268807"
 ---
 # <a name="localization-in-xamarinios"></a>Lokalizace v Xamarin.iOS
 
@@ -55,6 +55,16 @@ Aktuální národní prostředí může dotazovat dvěma způsoby:
 - `NSLocale.AutoUpdatingCurrentLocale.LocaleIdentifier`
 
 První hodnotu do mezipaměti podle operačního systému a proto nemusí pokaždé odpovídat aktuálně vybrané národního prostředí uživatele. Druhá hodnota použijte k získání aktuálně vybrané národní prostředí.
+
+> [!NOTE]
+> Mono (na kterém je založena Xamarin.iOS runtime rozhraní .NET) a společnosti Apple iOS rozhraní API nepodporuje identické sady kombinace jazyka nebo oblasti.
+> Z toho důvodu je možné vybrat kombinaci jazyka nebo oblasti v iOS **nastavení** aplikace, které nejsou namapované na platnou hodnotu mono. Například nastavení zařízení typu iPhone jazyka na angličtinu a jeho oblast na Španělsko způsobí následující rozhraní API pro yield různé hodnoty:
+> 
+> - `CurrentThead.CurrentCulture`: cs cz (Mono rozhraní API)
+> - `CurrentThread.CurrentUICulture`: cs cz (Mono rozhraní API)
+> - `NSLocale.CurrentLocale.LocaleIdentifier`: en_ES (Apple rozhraní API)
+>
+> Vzhledem k tomu, že používá Mono `CurrentThread.CurrentUICulture` a vyberte prostředky a `CurrentThread.CurrentCulture` k formátování kalendářních dat a měny, na základě Mono lokalizace (například se soubory .resx) nemusí yield očekávané výsledky pro tyto kombinace jazyka nebo oblasti. V takových situacích se spoléhat na rozhraní API společnosti Apple k lokalizaci podle potřeby.
 
 ### <a name="nscurrentlocaledidchangenotification"></a>NSCurrentLocaleDidChangeNotification
 

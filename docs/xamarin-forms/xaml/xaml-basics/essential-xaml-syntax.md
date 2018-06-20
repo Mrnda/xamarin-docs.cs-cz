@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: 62223a4c56198271513b0b15587bb588e71b28cc
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: ea448708403478cdaf565bc7abbed2af28c7a9bf
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245843"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36268846"
 ---
 # <a name="part-2-essential-xaml-syntax"></a>Část 2. Syntaxe nezbytné XAML
 
@@ -430,7 +430,7 @@ V rámci těchto značek patří `OnPlatform` značky. `OnPlatform` je obecná t
 </ContentPage>
 ```
 
-Nyní přidejte `On` elementy. Pro každý onem nastavit `Platform` vlastnost a `Value` vlastnost, která má kód pro `Thickness` vlastnost:
+Nyní přidejte `On` elementy. Pro každé z nich nastavte `Platform` vlastnost a `Value` vlastnost, která má kód pro `Thickness` vlastnost:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

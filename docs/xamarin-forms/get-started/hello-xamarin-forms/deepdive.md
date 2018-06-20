@@ -7,13 +7,13 @@ ms.assetid: d97aa580-1eb9-48b3-b15b-0d7421ea7ae
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/10/2018
-ms.openlocfilehash: 011ec94aca4e5110c704b83cb24cf6260338dfbd
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.date: 06/13/2018
+ms.openlocfilehash: 7c8eee5fc7075f23221c06dab29b83b1d5e01ffc
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35243623"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36269094"
 ---
 # <a name="xamarinforms-deep-dive"></a>Informace přímým Xamarin.Forms
 
@@ -62,15 +62,11 @@ Projekty jsou:
 
 ## <a name="anatomy-of-a-xamarinforms-application"></a>Anatomie aplikaci na platformě Xamarin.Forms
 
-Následující snímek obrazovky ukazuje obsah Phoneword PCL projektu v sadě Visual Studio pro Mac:
+Následující snímek obrazovky ukazuje Phoneword .NET Standard projektu knihovny obsahu v sadě Visual Studio pro Mac:
 
-![](deepdive-images/xs/pcl-project.png "Obsah Phoneword PCL projektu")
+![](deepdive-images/xs/library-project.png "Obsah projektu standardní knihovny .NET Phoneword")
 
-Projekt se skládá ze tří složek:
-
-- **Odkazy na** – obsahuje sestavení požadovaná sestavení a spuštění aplikace. Rozšiřování složce přenosném dílčím .NET zjistí odkazy na sestavení .NET, jako [systému](http://msdn.microsoft.com/library/system%28v=vs.110%29.aspx), System.Core a [System.Xml](http://msdn.microsoft.com/library/system.xml%28v=vs.110%29.aspx). Rozšíření **z balíčků** složku zjistí odkazy na sestavení Xamarin.Forms.
-- **Balíčky** – balíčky adresáři Domů [NuGet](https://www.nuget.org) balíčky, které zjednodušují proces použití knihoven jiných dodavatelů ve vaší aplikaci. Tyto balíčky lze aktualizovat na nejnovější vydání kliknutím pravým tlačítkem na složku a výběrem možnosti aktualizace v místní nabídce.
-- **Vlastnosti** – obsahuje **AssemblyInfo.cs**, soubor metadat sestavení rozhraní .NET. Je dobrým zvykem vyplníte tento soubor některých základních informací o vaší aplikaci. Další informace o tento soubor najdete v tématu [AssemblyInfo třída](http://msdn.microsoft.com/library/microsoft.visualbasic.applicationservices.assemblyinfo(v=vs.110).aspx) na webu MSDN.
+Tento projekt **závislosti** uzlu, který obsahuje **NuGet** a **SDK** uzlů. **NuGet** uzel obsahuje balíček Xamarin.Forms NuGet, který byl přidán do projektu a **SDK** uzel obsahuje `NETStandard.Library` metapackage, který odkazuje na kompletní sadu balíčků NuGet které definují .NET Standard.
 
 -----
 
@@ -81,7 +77,6 @@ Projekt se skládá z několika souborů:
 - **IDialer.cs** – `IDialer` rozhraní, které určuje, že `Dial` metoda musí být poskytnuta žádnou implementující třídu.
 - **MainPage.xaml** – kód jazyce XAML pro `MainPage` třídy, která definuje uživatelské rozhraní pro stránky zobrazí při spuštění aplikace.
 - **MainPage.xaml.cs** – kódu pro `MainPage` třídy, která obsahuje obchodní logiky, která se spustí, až uživatel pracuje se stránkou.
-- **soubor Packages.config** – soubor ve formátu XML (Visual Studio pro Mac pouze), který obsahuje informace o balíčcích NuGet používá projektu, sledovat požadované balíčky a příslušné verze. Visual Studio pro Mac a Visual Studio může být nakonfigurován pro automatické obnovení všech chybějících balíčků NuGet při sdílení s jinými uživateli ve zdrojovém kódu. Obsah tohoto souboru se řídí správce balíčků NuGet a by neměla být upravována ručně.
 - **PhoneTranslator.cs** – obchodní logiky, která je zodpovědná za převod phone word na telefonní číslo, který lze vyvolat pomocí **MainPage.xaml.cs**.
 
 Další informace o anatomy aplikace pro Xamarin.iOS najdete v tématu [anatomie aplikace pro Xamarin.iOS](~/ios/get-started/hello-ios/hello-ios-deepdive.md#anatomy). Další informace o anatomy aplikace pro Xamarin.Android, najdete v části [anatomie aplikace pro Xamarin.Android](~/android/get-started/hello-android/hello-android-deepdive.md#anatomy).
@@ -99,8 +94,6 @@ Aplikaci Xamarin.Forms je navržen stejným způsobem jako tradiční aplikace n
 Aplikaci Xamarin.Forms je navržen stejným způsobem jako tradiční aplikace napříč platformami. Sdílené kódu je obvykle umístěna v rozhraní .NET standardní knihovna a specifické pro platformu aplikace využívat sdíleného kódu. Následující diagram ukazuje přehled této relace pro aplikaci Phoneword:
 
 ![](deepdive-images/xs/architecture.png "Architektura Phoneword")
-
-Další informace o PCLs najdete v tématu [Úvod do knihovny přenosných tříd](~/cross-platform/app-fundamentals/pcl.md).
 
 -----
 
@@ -153,23 +146,26 @@ namespace Phoneword.iOS
 
 ### <a name="android"></a>Android
 
-Spusťte úvodní stránky Xamarin.Forms v Android, tento projekt Phoneword.Droid zahrnuje kód, který vytvoří `Activity` s `MainLauncher` atribut s aktivitou, která dědí z `FormsApplicationActivity` třídy, jak je znázorněno v následujícím příkladu kódu:
+Spusťte úvodní stránky Xamarin.Forms v Android, tento projekt Phoneword.Droid zahrnuje kód, který vytvoří `Activity` s `MainLauncher` atribut s aktivitou, která dědí z `FormsAppCompatActivity` třídy, jak je znázorněno v následujícím příkladu kódu:
 
 ```csharp
 namespace Phoneword.Droid
 {
-    [Activity(Label = "Phoneword",
-              Icon = "@drawable/icon",
+    [Activity(Label = "Phoneword", 
+              Icon = "@mipmap/icon", 
+              Theme = "@style/MainTheme", 
               MainLauncher = true,
               ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
+    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         internal static MainActivity Instance { get; private set; }
 
         protected override void OnCreate(Bundle bundle)
         {
-            base.OnCreate(bundle);
+            TabLayoutResource = Resource.Layout.Tabbar;
+            ToolbarResource = Resource.Layout.Toolbar;
 
+            base.OnCreate(bundle);
             Instance = this;
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());

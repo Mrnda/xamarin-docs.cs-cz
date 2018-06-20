@@ -5,19 +5,18 @@ ms.prod: xamarin
 ms.assetid: 91B3206E-B2A5-4660-A6E5-B924B8FE69A7
 author: topgenorth
 ms.author: toopge
-ms.date: 03/29/2017
-ms.openlocfilehash: 16a0474c7fc9a496409e2133714b6d4374691dbc
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 06/19/2018
+ms.openlocfilehash: 67cc6b42901521226322d964514f19b4b639148b
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793476"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36268820"
 ---
 # <a name="inspecting-live-applications"></a>Probíhá kontrola aplikací pro živé
 
 Kontroly za provozu aplikace je k dispozici pro podnikové zákazníky.
 
-1. [Nainstalujte Xamarin sešity & Kontrola.](~/tools/inspector/install.md)
 1. Otevřít libovolný [podporované projekt aplikace](~/tools/inspector/install.md#supported-platforms) v sadě Visual Studio pro Mac nebo Visual Studio.
 1. Spusťte aplikaci v režimu ladění.
 1. Klikněte **kontroly** tlačítka na panelu nástrojů rozhraní IDE (v sadě Visual Studio **kontroly aktuální aplikaci...**  je také k dispozici prostřednictvím položky nabídky **nástroje** nebo **ladění** nabídky).

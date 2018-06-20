@@ -5,13 +5,13 @@ ms.prod: xamarin
 ms.assetid: 90143544-084D-49BF-B44D-7AF943668F6C
 author: topgenorth
 ms.author: toopge
-ms.date: 03/30/2017
-ms.openlocfilehash: fa8806345a364a70535a91b2ba99e3bfee8d47bc
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 06/19/2018
+ms.openlocfilehash: 6e37b1ac3d0fb78b5737ebe97b5a28ab40adb648
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34794017"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36269054"
 ---
 # <a name="debugging-integrations"></a>Ladění integrace
 
@@ -23,8 +23,8 @@ V systému macOS, protokolu zprávy se zobrazují v obou nabídce log viewer (**
 
 Protokol klienta je v následujících umístěních v systému macOS nebo ve Windows:
 
-- Mac: `~/Library/Logs/Xamarin/Inspector/Xamarin Inspector {date}.log`
-- Windows: `%LOCALAPPDATA%\Xamarin\Inspector\logs\Xamarin Inspector {date}.log`
+- Mac: `~/Library/Logs/Xamarin/Workbooks/Xamarin Workbooks {date}.log`
+- Windows: `%LOCALAPPDATA%\Xamarin\Workbooks\logs\Xamarin Workbooks {date}.log`
 
 Jednou z věcí zajímat je, že při načítání integrace prostřednictvím obvykle `#r` mechanismus během vývoje, integrace sestavení bude být zachyceny jako _závislostí_ sešitu a spojených s ním, pokud se absolutní cesta nepoužívá se. To může způsobit změny, která se zobrazí nešířily, jako kdyby znovu sestavit integrace nebyla nic.
 
@@ -39,7 +39,7 @@ Obě sady nástrojů umožňují zobrazit JavaScript nebo TypeScript zdroj, nast
 Pokud chcete povolit nástrojů pro vývojáře pro Xamarin sešity v systému Mac, spusťte následující příkaz v terminálu:
 
 ```shell
-defaults write com.xamarin.Inspector WebKitDeveloperExtras -bool true
+defaults write com.xamarin.Workbooks WebKitDeveloperExtras -bool true
 ```
 
 a znovu spusťte Xamarin sešity. Až to uděláte tak, měli byste vidět **zkontrolovat Element** objeví ve vaší místní nabídce klikněte pravým tlačítkem a novou **vývojáře** podokně bude k dispozici v předvolbách sešity. Tato možnost vám umožňuje zvolit, pokud chcete otevřít při spuštění nástroje pro vývojáře:

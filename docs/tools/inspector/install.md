@@ -5,13 +5,13 @@ ms.prod: xamarin
 ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
 author: topgenorth
 ms.author: toopge
-ms.date: 03/29/2017
-ms.openlocfilehash: 80bf3cb4e8e27355ccf6213dbfd07a17e992961b
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 06/19/2018
+ms.openlocfilehash: f7c5217a9c2d3881ca29094c3186e448975db6a3
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793805"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36268966"
 ---
 # <a name="inspector-installation-and-requirements"></a>Kontrola instalace a požadavky
 
@@ -19,13 +19,15 @@ ms.locfileid: "34793805"
 
 # <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
-1. Stáhněte a nainstalujte [Xamarin sešity & Inspector pro systém Windows](https://dl.xamarin.com/interactive/XamarinInteractive.msi).
-2. [Zkontrolujte vlastní aplikace!](~/tools/inspector/inspect.md)
+1. Stáhněte a nainstalujte [Visual Studio Enterprise](https://www.visualstudio.com/vs/) a vyberte **pro vývoj mobilních řešení s .NET** zatížení.
+1. [Přihlaste se](https://docs.microsoft.com/visualstudio/ide/signing-in-to-visual-studio) povolit předplatné Enterprise.
+1. [Zkontrolujte](~/tools/inspector/inspect.md) vlastní aplikace!
 
 # <a name="macostabmacos"></a>[macOS](#tab/macos)
 
-1. Stáhněte a nainstalujte [Xamarin sešity & Kontrola pro Mac](https://dl.xamarin.com/interactive/XamarinInteractive.pkg).
-2. [Zkontrolujte vlastní aplikace!](~/tools/inspector/inspect.md)
+1. Stáhněte a nainstalujte [Visual Studio pro Mac](https://www.visualstudio.com/vs/mac/).
+1. [Přihlaste se](https://docs.microsoft.com/visualstudio/mac/activation) povolit předplatné Enterprise.
+1. [Zkontrolujte](~/tools/inspector/inspect.md) vlastní aplikace!
 
 -----
 
@@ -38,10 +40,8 @@ ms.locfileid: "34793805"
 
 ### <a name="supported-ides"></a>Podporované integrovaného vývojového prostředí
 
-- Xamarin Studio 6.2 nebo větší
-- Visual Studio pro Mac Preview 4 nebo vyšší
-- Visual Studio 2015 s Xamarinem 4.3.x nebo vyšší
-- Visual Studio 2017 zatížení Xamarin
+- Visual Studio for Mac
+- Visual Studio 2017 s **pro vývoj mobilních řešení s .NET** pracovního vytížení
 
 Kontroly za provozu aplikace je k dispozici pro podnikové zákazníky.
 
@@ -51,10 +51,10 @@ Kontroly za provozu aplikace je k dispozici pro podnikové zákazníky.
 
 |Aplikace platformy|Podpora rozhraní IDE|Poznámky|
 |--- |--- |--- |
-|Mac (Unified)|Podporováno pouze v systému Mac|
-|iOS (Unified)|Podporované v XS a Visual Studio|Kontroly aplikací pro iOS ze systému Windows vyžaduje stejnou verzi nástroje Inspector taky nainstalovat na hostiteli Mac sestavení.|
-|Android|Podporované v XS a Visual Studio|Android musí být > = 4.0.3, s **fastdev** povolena.<br />Musíte použít emulátorů Google, Visual Studio a Xamarin Android. Android 7 emulátorů nemusí umožňovat kontroly v tuto chvíli.|
-|WPF|Podporuje jenom v sadě Visual Studio v systému Windows|
+|Mac|Podporuje jenom v sadě Visual Studio pro Mac|
+|iOS|Podporováno v aplikaci Visual Studio 2017 a Visual Studio pro Mac| |
+|Android|Podporováno v aplikaci Visual Studio 2017 a Visual Studio pro Mac|Android musí být > = 4.0.3, s **fastdev** povolena.<br />Musíte použít emulátorů Google, Visual Studio a Xamarin Android. Android 7 emulátorů nemusí umožňovat kontroly v tuto chvíli.|
+|WPF|Podporováno pouze v Visual Studio 2017|
 
 <a name="reporting-bugs" />
 
@@ -73,11 +73,6 @@ Tyto informace je důležité.
 Visual Studio pro Mac
 
 - **Visual Studio > o sadě Visual Studio > Zobrazit podrobnosti > zkopírujte informace**
-- Vložte do sestavy chyb
-
-Xamarin Studio
-
-- **Xamarin Studio > o Xamarin Studio > Zobrazit podrobnosti > zkopírujte informace**
 - Vložte do sestavy chyb
 
 Visual Studio
@@ -102,10 +97,6 @@ Visual Studio pro Mac
 
 - `~/Library/Logs/VisualStudio/7.0/Ide.log`
 
-Xamarin Studio
-
-- `~/Library/Logs/XamarinStudio-6.0/Ide.log`
-
 Visual Studio
 
 - `%LOCALAPPDATA%\Xamarin\Logs\{VS version}\Inspector {date}.log`
@@ -129,42 +120,3 @@ Pro Android a iOS je důležité, abychom věděli, jaké zařízení jsou na la
 - Zařízení mít připojení k síti (kontrola prostřednictvím webového prohlížeče)?
 
 [client-bugs]: https://github.com/Microsoft/workbooks/issues/new
-
-## <a name="uninstall"></a>Odinstalovat
-
-### <a name="windows"></a>Windows
-
-V závislosti na tom, jak jste získali sešity & Kontrola možná budete muset provést dva postupy odinstalace. Zkontrolujte prosím obě tyto úplně odinstalujte software.
-
-#### <a name="visual-studio-installer"></a>Instalační program pro Visual Studio
-
-Pokud máte Visual Studio 2017, otevřete **instalační program Visual Studio**a vyhledejte v **jednotlivých součástí** pro **Xamarin sešity**. Pokud je zaškrtnuto, zrušte jeho zaškrtnutí a poté klikněte na "Upravit" odinstalovat.
-
-#### <a name="system-uninstall"></a>Odinstalace systému
-
-Pokud jste nainstalovali sešity & Kontrola sami s stažený instalační program, ji budou muset odinstalovat přes **aplikace a funkce** stránka nastavení systému Windows 10 nebo prostřednictvím **přidat nebo odebrat programy**v Ovládacích panelech ve starších verzích systému Windows.
-
-> **Spustit > Nastavení > Systém > aplikace a funkce**
-
-![](install-images/windows-remove.png "Sešity Xamarin a Inspector, jak je uvedeno v, aplikace a funkce.")
-
-**Postupujte podle procesu pro instalační program Visual Studio k Ujistěte se, že sešity & není získat přeinstalovat nástroj Inspector bez vašeho vědomí.**
-
-### <a name="macos"></a>macOS
-
-Počínaje [1.2.2](https://developer.xamarin.com/releases/interactive/interactive-1.2/), Xamarin sešity & Kontrola můžou se odinstalovat z terminálu spuštěním:
-
-```bash
-sudo /Library/Frameworks/Xamarin.Interactive.framework/Versions/Current/uninstall
-```
-
-Odinstalační program, který podrobně popisuje soubory a adresáře se odstraní a požádat o potvrzení, než budete pokračovat.
-
-Předat `-help` argument `uninstall` skript pro pokročilejší scénáře.
-
-Pro starší verze musíte ručně odebrat následující:
-
-1. Odstranit aplikaci sešity v `"/Applications/Xamarin Workbooks.app"`
-2. Odstranit aplikaci Inspector ve `"Applications/Xamarin Inspector.app"`
-3. Odstranit doplňky: `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Interactive"` a `"~/Library/Application Support/XamarinStudio-6.0/LocalInstall/Addins/Xamarin.Inspector"`
-4. Odstraňte Inspector a podpůrné soubory. zde: `/Library/Frameworks/Xamarin.Interactive.framework` a `/Library/Frameworks/Xamarin.Inspector.framework`

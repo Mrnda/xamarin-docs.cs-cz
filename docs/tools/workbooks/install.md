@@ -5,12 +5,13 @@ ms.prod: xamarin
 ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
 author: topgenorth
 ms.author: toopge
-ms.openlocfilehash: b5e94a9b0bc3b9e9f141ad9fd262d29e01eb8a10
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 06/19/2018
+ms.openlocfilehash: a35038a948a89889bbf067a453b7465c1a6a7b49
+ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793818"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36268989"
 ---
 # <a name="workbooks-installation-and-requirements"></a>Sešity instalace a požadavky
 
@@ -43,8 +44,8 @@ ms.locfileid: "34793818"
 
 |Aplikace platformy|Podpora operačního systému|Poznámky|
 |--- |--- |--- |
-|Mac (Unified)|Podporováno pouze v systému Mac|
-|iOS (Unified)|Podporované na Mac a Windows|Xamarin.iOS 11.0 a Xcode 9.0 nebo vyšší musí být nainstalován na macu. Sešity iOS systémem Windows vyžaduje Mac sestavení hostitele se systémem všechny výše uvedené a [používat vzdáleně simulátoru iOS](~/tools/ios-simulator.md) nainstalovaná v systému Windows.|
+|Mac|Podporováno pouze v systému Mac|
+|iOS|Podporované na Mac a Windows|Xamarin.iOS 11.0 a Xcode 9.0 nebo vyšší musí být nainstalován na macu. Sešity iOS systémem Windows vyžaduje Mac sestavení hostitele se systémem všechny výše uvedené a [používat vzdáleně simulátoru iOS](~/tools/ios-simulator.md) nainstalovaná v systému Windows.|
 |Android|Podporované na Mac a Windows|Google, Visual Studio nebo Xamarin Android emulátoru, musíte použít s virtuálního zařízení > = 5.0|
 |WPF|Podporováno pouze v systému Windows|
 |Konzole (rozhraní .NET Framework)|Podporované na Mac a Windows|
@@ -114,7 +115,7 @@ Pokud jsou potíže s připojením zařízení s iOS nebo Android sešitu a jste
 
 ### <a name="windows"></a>Windows
 
-V závislosti na tom, jak jste získali sešity & Kontrola možná budete muset provést dva postupy odinstalace. Zkontrolujte prosím obě tyto úplně odinstalujte software.
+V závislosti na tom, jak jste získali sešity možná budete muset provést dva postupy odinstalace. Zkontrolujte prosím obě tyto úplně odinstalujte software.
 
 #### <a name="visual-studio-installer"></a>Instalační program pro Visual Studio
 
@@ -122,19 +123,19 @@ Pokud máte Visual Studio 2017, otevřete **instalační program Visual Studio**
 
 #### <a name="system-uninstall"></a>Odinstalace systému
 
-Pokud jste nainstalovali sešity & Kontrola sami s stažený instalační program, ji budou muset odinstalovat přes **aplikace a funkce** stránka nastavení systému Windows 10 nebo prostřednictvím **přidat nebo odebrat programy**v Ovládacích panelech ve starších verzích systému Windows.
+Pokud jste nainstalovali sešity sami s stažený instalační program, ji budou muset odinstalovat přes **aplikace a funkce** stránka nastavení systému Windows 10 nebo prostřednictvím **přidat nebo odebrat programy** v ovládacím prvku Panely ve starších verzích systému Windows.
 
 > **Spustit > Nastavení > Systém > aplikace a funkce**
 
-![](install-images/windows-remove.png "Sešity Xamarin a Inspector, jak je uvedeno v &quot;aplikace &amp; funkce&quot;")
+![](install-images/windows-remove.png "Sešity Xamarin, jak je uvedeno v &quot;aplikace &amp; funkce&quot;")
 
-**Postupujte podle procesu pro instalační program Visual Studio k Ujistěte se, že sešity & není získat přeinstalovat nástroj Inspector bez vašeho vědomí.**
+**Postupujte podle procesu pro instalační program Visual Studio a ujistěte se sešity získat není přeinstalovat bez vašeho vědomí.**
 
 <a name="uninstall-macos" />
 
 ### <a name="macos"></a>macOS
 
-Počínaje [1.2.2](https://developer.xamarin.com/releases/interactive/interactive-1.2/), Xamarin sešity & Kontrola můžou se odinstalovat z terminálu spuštěním:
+Počínaje [1.2.2](https://developer.xamarin.com/releases/interactive/interactive-1.2/), Xamarin sešity, můžou se odinstalovat z terminálu spuštěním:
 
 ```bash
 sudo /Library/Frameworks/Xamarin.Interactive.framework/Versions/Current/uninstall
@@ -153,7 +154,7 @@ Pro starší verze musíte ručně odebrat následující:
 
 ## <a name="downgrading"></a>Přechod na starší verzi
 
-Identifikátor sady pro **aplikace nebo Xamarin Workbooks.app** se změnil z `com.xamarin.Inspector` k `com.xamarin.Workbooks` ve verzi 1.4 pro usnadnění budoucí rozdělení instalační programy Xamarin sešity & Kontrola.
+Identifikátor sady pro **aplikace nebo Xamarin Workbooks.app** se změnil z `com.xamarin.Inspector` k `com.xamarin.Workbooks` v 1,4 vydání jako sešitů a Inspector jsou nyní plně rozdělení.
 
 Z důvodu chyby v starší instalační programy není možné přejít na starší verzi 1,4 nebo novější verze pomocí 1.3.2 nebo starší instalační programy.
 
