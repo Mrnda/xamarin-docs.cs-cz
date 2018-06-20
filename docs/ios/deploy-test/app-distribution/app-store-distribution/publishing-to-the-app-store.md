@@ -7,14 +7,17 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 08/23/2017
-ms.openlocfilehash: b8bea29e71e055621e7d0b85d3736ec6cc9ba3b4
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 489d9fa569b083f5cb655dc503ab4fa551810b6d
+ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785697"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36209486"
 ---
 # <a name="publishing-xamarinios-apps-to-the-app-store"></a>Publikování aplikace Xamarin.iOS k obchodu s aplikacemi
+
+> [!IMPORTANT]
+> Apple [oznámilo](https://developer.apple.com/news/?id=05072018a) , od července 2018 se všechny aplikace a aktualizace odeslána na obchod s aplikacemi a musí mít byla vytvořena pomocí iOS 11 SDK a [podporují zobrazení iPhone X](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md).
 
 V pořadí distribuovat aplikace pro všechna zařízení iOS, Apple vyžaduje, aby publikovat prostřednictvím aplikace *App Store*, což nákupní centrální umístění pro aplikace pro iOS App Storu. S více než 500 000 aplikace v úložišti velkými písmeny vývojáři mnoho typů aplikací v masivním úspěch tento jediný bod rozdělení. Obchod s aplikacemi je to řešení na klíč, nabídky vývojáři aplikací distribuce a platebních systémy.
 
@@ -231,7 +234,7 @@ Modul plug-in Xamarin pro Visual Studio aktuálně nepodporuje archivaci pracovn
 1. Vyberte **iOS podepisování sady** a změna profilu pro zřizování na obchod s aplikacemi profil pro zřizování:
 
     ![](publishing-to-the-app-store-images/ipa01.png "Vyberte iOS podepisování sady a změňte profilu pro zřizování na obchod s aplikacemi profil pro zřizování")
-1. Vyberte **iOS IPA možnosti** a vyberte **Ad-Hoc** z **konfigurace** rozevíracího seznamu (Pokud Ad-Hoc nezobrazí, vyberte **verze** Místo toho):
+1. Vyberte **iOS možnosti IPA > Konfigurace > Ad-Hoc** (Pokud **Ad-Hoc** není volba, vyberte **verze** místo) a zaškrtněte políčko pro vytváření soubor IPA:
 
     ![](publishing-to-the-app-store-images/imagevs02.png "Vyberte z rozevíracího seznamu konfigurace Ad-Hoc")
 
