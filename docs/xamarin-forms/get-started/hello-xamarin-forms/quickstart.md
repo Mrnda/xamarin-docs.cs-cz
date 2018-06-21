@@ -8,12 +8,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/13/2018
-ms.openlocfilehash: 3a1da095559b4030332f4b7cc74b4f8f94fb1c61
-ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
+ms.openlocfilehash: 6cef2f5e8b92341a83f9e791f268f8ad324f1da5
+ms.sourcegitcommit: c2d1249cb67b877ee0d9cb8d095ec66fd51d8c31
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36268872"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36291361"
 ---
 # <a name="xamarinforms-quickstart"></a>Rychlý start Xamarin.Forms
 
@@ -33,9 +33,12 @@ Vytvoření aplikace Phoneword následujícím způsobem:
 
     ![](quickstart-images/vs/new-solution.png "Nový projekt")
 
-3. V **nový projekt** dialogové okno, klikněte na tlačítko **napříč platformami**, vyberte **mobilní aplikace (Xamarin.Forms)** šablony, nastavte název název a řešení na `Phoneword`, vyberte vhodné umístění projektu a klikněte na **OK** tlačítko:
+3. V **nový projekt** dialogové okno, klikněte na tlačítko **napříč platformami**, vyberte **mobilní aplikace (Xamarin.Forms)** šablony, nastavte název na **Phoneword**, vyberte vhodný umístění projektu a klikněte na **OK** tlačítko:
 
     ![](quickstart-images/vs/new-project.w157.png "Šablony projektů a platformy")
+
+    > [!NOTE]
+    > Nedaří se název řešení **Phoneword** bude mít za následek chyby množství sestavení.
 
 4. V **novou aplikaci křížové platformy** dialogové okno, klikněte na tlačítko **prázdnou aplikaci**, vyberte **.NET Standard** strategie sdílení kódu a klikněte na **OK** tlačítko:
 
@@ -454,13 +457,16 @@ Vytvoření aplikace Phoneword následujícím způsobem:
 
     ![](quickstart-images/xs/choose-template.png "Výběr šablony")
 
-3. V **konfigurace aplikace prázdné formuláře** dialogové okno, název nové aplikace `Phoneword`, ujistěte se, že **Standard .NET použijte** přepínač je vybrána a klikněte na **Další** tlačítko:
+3. V **konfigurace aplikace prázdné formuláře** dialogové okno, název nové aplikace **Phoneword**, ujistěte se, že **Standard .NET použijte** přepínač je vybrána a klikněte **Další** tlačítko:
 
     ![](quickstart-images/xs/configure-app.png "Konfigurace aplikace formulářů")
 
-4. V **konfigurace nové prázdné formuláře aplikace** dialogové okno, ponechte název řešení a projektu nastavena na `Phoneword`, vyberte vhodný umístění projektu a klikněte **vytvořit** tlačítko vytvořte projektu:
+4. V **konfigurace nové prázdné formuláře aplikace** dialogové okno, ponechte název řešení a projektu nastavena na **Phoneword**, vyberte vhodný umístění projektu a klikněte **vytvořit**tlačítko pro vytvoření projektu:
 
     ![](quickstart-images/xs/configure-project.png "Konfigurace projektu formulářů")
+
+    > [!NOTE]
+    > Nedaří se název řešení a projektu **Phoneword** bude mít za následek chyby množství sestavení.
 
 5. V **řešení Pad**, dvakrát klikněte na **MainPage.xaml** a otevře se:
 

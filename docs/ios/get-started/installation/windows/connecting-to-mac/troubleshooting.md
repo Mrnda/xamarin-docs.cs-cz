@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: e371b4aecdd7b40c33e4596fec3c3ca7691bb42c
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 575e6705679539af6d3e5fae3ffc5721d9f79ba6
+ms.sourcegitcommit: c2d1249cb67b877ee0d9cb8d095ec66fd51d8c31
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786184"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36291045"
 ---
 # <a name="connection-troubleshooting-for-a-xamarinios-build-host"></a>Řešení potíží pro Xamarin.iOS sestavení hostitele připojení
 
@@ -91,7 +91,7 @@ Už je vyžadován hostitel sestavení Xamarin ze starších verzí Xamarin.iOS.
     ssh amyb@10.1.8.95 'ls'
     ```
     
-    To by měl zobrazit obsah domovského adresáře na Mac. Pokud `ls` příkaz funguje správně, ale připojení k sadě Visual Studio stále selže, můžete zkontrolovat [známé problémy a omezení](#knownissues) části o komplikace, které jsou specifické pro Xamarin. Pokud žádný z nich neodpovídá váš problém, [souboru nové sestavy chyb](https://bugzilla.xamarin.com/newbug) a připojte protokoly popsané v části [zkontrolujte podrobné soubory protokolu](#verboselogs).
+    To by měl zobrazit obsah domovského adresáře na Mac. Pokud `ls` příkaz funguje správně, ale připojení k sadě Visual Studio stále selže, můžete zkontrolovat [známé problémy a omezení](#knownissues) části o komplikace, které jsou specifické pro Xamarin. Pokud žádná z těch, které odpovídají váš problém, přechodem na prosím souboru nové sestavy chyb na komunity vývojářů **pomoci > odeslat zpětnou vazbu > nahlásit problém** v sadě Visual Studio a připojte protokoly popsané v části [podrobné protokolu Soubory](#verboselogs).
 
 10. Pokud **krok 8 selže**, spuštěním následujícího příkazu v terminálu v systému Mac, zda je SSH server přijímá _žádné_ připojení:
 

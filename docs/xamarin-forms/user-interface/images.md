@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 6d3e5e61069723b0910b092da6631d5dc4ad8629
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: b0fd644f1f3b49a949a3a9ba9aca4c0770f17013
+ms.sourcegitcommit: c2d1249cb67b877ee0d9cb8d095ec66fd51d8c31
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244542"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36291348"
 ---
 # <a name="images-in-xamarinforms"></a>Bitové kopie v Xamarin.Forms
 
@@ -153,8 +153,11 @@ Pokud vložené obrázky umístíte do složky v rámci projektu, názvy složek
 Jednoduše předává kód pro načtení vložený obrázek **ID prostředku** k [ `ImageSource.FromResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/) metoda, jak je uvedeno níže:
 
 ```csharp
-var embeddedImage = new Image { Source = ImageSource.FromResource("WorkingWithImages.beach.jpg") };
+var embeddedImage = new Image { Source = ImageSource.FromResource("WorkingWithImages.beach.jpg", typeof(EmbeddedImages).GetTypeInfo().Assembly) };
 ```
+
+> [!NOTE]
+> Pro podporu zobrazení vložené obrázky v režimu vydání na univerzální platformu Windows, je třeba použít přetížení `ImageSource.FromResource` určující zdrojové sestavení, ve kterém se má hledat bitovou kopii.
 
 Aktuálně neexistuje žádná implicitní převod pro identifikátory prostředků. Místo toho musíte použít [ `ImageSource.FromResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/) nebo `new ResourceImageSource()` načíst vložené obrázky.
 
@@ -182,12 +185,15 @@ public class ImageResourceExtension : IMarkupExtension
    }
 
    // Do your translation lookup here, using whatever method you require
-   var imageSource = ImageSource.FromResource(Source);
+   var imageSource = ImageSource.FromResource(Source, typeof(ImageResourceExtension).GetTypeInfo().Assembly);
 
    return imageSource;
  }
 }
 ```
+
+> [!NOTE]
+> Pro podporu zobrazení vložené obrázky v režimu vydání na univerzální platformu Windows, je třeba použít přetížení `ImageSource.FromResource` určující zdrojové sestavení, ve kterém se má hledat bitovou kopii.
 
 Pokud chcete používat toto rozšíření přidejte vlastní `xmlns` XAML, pomocí správné hodnoty oboru názvů a sestavení pro projekt. Zdroj bitové kopie můžete nastavit potom pomocí této syntaxe: `{local:ImageResource WorkingWithImages.beach.jpg}`. Úplný příklad XAML je zobrazena níže:
 
@@ -224,9 +230,15 @@ foreach (var res in assembly.GetManifestResourceNames())
 }
 ```
 
-#### <a name="images-embedded-in-other-projects-dont-appear"></a>Obrázky obsažené v jiných projektů nezobrazí.
+#### <a name="images-embedded-in-other-projects"></a>Obrázky obsažené v jiných projektů
 
-`Image.FromResource` pouze vyhledá bitové kopie ve stejném sestavení jako kód volání `FromResource`. Pomocí kódu ladění výše můžete můžete určit sestavení, které obsahují konkrétní prostředek změnou `typeof()` příkaz, který má `Type` ví, že se v každé sestavení.
+Ve výchozím nastavení `ImageSource.FromResource` metoda pouze vyhledá bitové kopie ve stejném sestavení jako volání kódu `ImageSource.FromResource` metoda. Pomocí kódu ladění výše můžete můžete určit sestavení, které obsahují konkrétní prostředek změnou `typeof()` příkaz, který má `Type` ví, že se v každé sestavení.
+
+Sestavení zdroje prohledávaný pro vložený obrázek však lze zadat jako argument pro `ImageSource.FromResource` metoda:
+
+```csharp
+var imageSource = ImageSource.FromResource("filename.png", typeof(MyClass).GetTypeInfo().Assembly);
+```
 
 <a name="Downloading_Images" />
 
@@ -316,7 +328,6 @@ V dokumentaci pro [iOS práce s obrázky](~/ios/app-fundamentals/images-icons/in
 Xamarin.Forms nabízí mnoho různých způsobů, jak zahrnují Image v aplikaci a platformy, povolení pro stejnou bitovou kopii pro použití na celém platformy nebo chcete-li zadat obrázky specifické pro platformu. Stažený bitové kopie jsou taky automaticky uloží do mezipaměti, automatizaci běžný scénář kódování.
 
 Ikona a splashscreen Image aplikací jsou nastavení a nakonfigurované jako u jiných Xamarin.Forms aplikace – řídit stejnými pokyny používají pro příslušnou platformu aplikace.
-
 
 ## <a name="related-links"></a>Související odkazy
 

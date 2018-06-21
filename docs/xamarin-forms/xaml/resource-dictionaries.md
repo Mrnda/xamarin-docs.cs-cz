@@ -7,11 +7,12 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 05/21/2018
-ms.openlocfilehash: b9c15357895bae64176ef34a848b968917035f3d
-ms.sourcegitcommit: 9f8e7393019791bbd6af4fefaa24a1602adabb4e
+ms.openlocfilehash: c2e6a5624baba251061bcd324fcb849e3d95ebfd
+ms.sourcegitcommit: c2d1249cb67b877ee0d9cb8d095ec66fd51d8c31
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36291032"
 ---
 # <a name="resource-dictionaries"></a>Slovnících prostředků
 
@@ -251,7 +252,7 @@ Při slučování [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary
 
 1. Prostředky místní do slovníku prostředků.
 1. Prostředky obsažené v slovník prostředků, který byl sloučit prostřednictvím nepoužívané [ `MergedWith` ](xref:Xamarin.Forms.ResourceDictionary.MergedWith) vlastnost.
-1. Prostředky obsažené ve slovnících prostředků, které byly slučovány prostřednictvím `MergedDictionaries` kolekce, v pořadí uvedeném v `MergedDictionaries` vlastnost.
+1. Prostředky obsažené ve slovnících prostředků, které byly slučovány prostřednictvím `MergedDictionaries` kolekce, v opačném pořadí, jsou uvedeny v `MergedDictionaries` vlastnost.
 
 > [!NOTE]
 > Hledání slovnících prostředků může být výpočetně náročné úlohy, pokud aplikace obsahuje více slovnících velké prostředků. Proto aby se zabránilo zbytečným vyhledávání, by měla zajistit, aby každé stránce v aplikaci pouze používal slovnících prostředků, které jsou vhodné na stránku.

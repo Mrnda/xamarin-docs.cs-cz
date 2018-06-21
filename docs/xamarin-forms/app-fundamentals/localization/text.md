@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: 7171142951a2893233233bb8a1c44c5a84c57b5c
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 47ea437be8a1570517f37cc59aab17431c5af7f0
+ms.sourcegitcommit: c2d1249cb67b877ee0d9cb8d095ec66fd51d8c31
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848197"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36291322"
 ---
 # <a name="localization"></a>Lokalizace
 
@@ -44,6 +44,9 @@ Jeden z klíčových částí globalizace aplikace je vytvoření uživatelskéh
 V tomto dokumentu podíváme, jak používat soubory RESX a uložit tyto řetězce načíst a zobrazit v závislosti na preferencím uživatele.
 
 Ukázky cíle angličtina, francouzština, španělština, němčina, čínština, japonština, ruština a Brazilská portugalština jazyky. Aplikace lze přeložit na nejmenším nebo jako v mnoha jazycích podle potřeby.
+
+> [!NOTE]
+> Na univerzální platformu Windows RESW souborů slouží pro nabízená oznámení lokalizace, nikoli RESX – soubory. Další informace najdete v tématu [UWP lokalizace](/windows/uwp/design/globalizing/globalizing-portal/).
 
 ### <a name="adding-resources"></a>Přidávání zdrojů
 
@@ -458,6 +461,8 @@ Jakmile jste implementovaná službu závislostí a aktualizovat **Info.plist**,
 > Z [jejich dokumentace](https://developer.apple.com/library/ios/documentation/MacOSX/Conceptual/BPInternational/LocalizingYourApp/LocalizingYourApp.html#//apple_ref/doc/uid/10000171i-CH5-SW2): _"použijte pt jako ID jazyka pro portugalština se používá v Brazílie a pt-PT jako ID jazyka pro portugalština jako se používá v Portugalsko"_.
 > To znamená, když je zvolen Portugalská v nestandardním národním prostředí, záložní jazyk bude brazilská portugalština v systému iOS, pokud kód je zapsán do toto chování změnit (například `ToDotnetFallbackLanguage` výše).
 
+Další informace o iOS lokalizace najdete v tématu [iOS lokalizace](~/ios/app-fundamentals/localization/index.md).
+
 #### <a name="android-application-project"></a>Projekt aplikace pro Android
 
 Android zpřístupní aktuálně vybrané národní prostředí prostřednictvím `Java.Util.Locale.Default`a také používá podtržítka oddělovače místo pomlčkou (který se nahrazuje následující kód). Tato implementace služby závislostí přidejte do projektu aplikace pro Android:
@@ -548,11 +553,12 @@ namespace UsingResxLocalization.Android
 >
 > Vývojáři mají upravit `iOSToDotnetLanguage` a `ToDotnetFallbackLanguage` metody pro zpracování konkrétní případů vyžadovaných pro jejich podporované jazyky.
 
-
 Jakmile tento kód byl přidán do projektu aplikace pro Android, bude moci automaticky zobrazit přeložené řetězce.
 
 > [!NOTE]
 >️ **upozornění:** přeloženými řetězci práci ve vašich sestaveních verze Android, ale není při ladění, klikněte pravým tlačítkem na **projekt Android** a vyberte **možnosti > sestavení > Android Sestavení** a ujistěte se, že **rychlé nasazení sestavení** není zaškrtnuté. Tato možnost způsobí, že potíže při načítání prostředků a by se neměla používat, pokud testujete lokalizované aplikace.
+
+Další informace o lokalizaci Android najdete v tématu [Android lokalizace](~/android/app-fundamentals/localization.md).
 
 #### <a name="universal-windows-platform"></a>Univerzální platforma pro Windows
 
@@ -573,6 +579,8 @@ Tento příkaz informuje správce prostředků aplikace výchozí jazykové verz
 Po aktualizaci specifické pro platformu projektů jak je uvedené výše a nutnosti rekompilace aplikace s přeložené soubory RESX, bude k dispozici v každé aplikaci aktualizované překladů. Zde je snímek obrazovky ukázkového kódu přeložit na zjednodušená čínština:
 
 ![](text-images/simple-example-hans.png "Uživatelská rozhraní a platformy převedeny na zjednodušená čínština")
+
+Další informace o lokalizaci UWP najdete v tématu [UWP lokalizace](/windows/uwp/design/globalizing/globalizing-portal/).
 
 ## <a name="localizing-xaml"></a>Lokalizace XAML
 
@@ -713,7 +721,7 @@ Všechny platformy automaticky vyřeší odkazů na obrázky takovéto pro lokal
 
 ### <a name="ios-application-project"></a>Projekt aplikace iOS
 
-iOS používá standardní pojmenování, který volá lokalizace projekty nebo **.lproj** adresáře, které obsahují prostředky bitové kopie a řetězec. Tyto adresáře může obsahovat lokalizované verze obrázků použitých v aplikaci a také **InfoPlist.strings** soubor, který slouží k lokalizaci název aplikace.
+iOS používá standardní pojmenování, který volá lokalizace projekty nebo **.lproj** adresáře, které obsahují prostředky bitové kopie a řetězec. Tyto adresáře může obsahovat lokalizované verze obrázků použitých v aplikaci a také **InfoPlist.strings** soubor, který slouží k lokalizaci název aplikace. Další informace o iOS lokalizace najdete v tématu [iOS lokalizace](~/ios/app-fundamentals/localization/index.md).
 
 #### <a name="images"></a>Obrázky
 
@@ -737,7 +745,7 @@ Při spuštění aplikace, název aplikace a image jsou obě lokalizované:
 
 ### <a name="android-application-project"></a>Projekt aplikace pro Android
 
-Android odpovídá jiné schéma pro ukládání lokalizované obrázky pomocí různých **drawable** a **řetězce** adresáře s příponou kódu jazyka. Pokud kód národního prostředí čtyři písmeno je požadována (například zh-TW nebo pt-BR), Všimněte si, že Android vyžaduje další **r** následující dash nebo předchozí kód národního prostředí (např. zh-rTW nebo pt rBR).
+Android odpovídá jiné schéma pro ukládání lokalizované obrázky pomocí různých **drawable** a **řetězce** adresáře s příponou kódu jazyka. Pokud kód národního prostředí čtyři písmeno je požadována (například zh-TW nebo pt-BR), Všimněte si, že Android vyžaduje další **r** následující dash nebo předchozí kód národního prostředí (např. zh-rTW nebo pt rBR). Další informace o lokalizaci Android najdete v tématu [Android lokalizace](~/android/app-fundamentals/localization.md).
 
 #### <a name="images"></a>Obrázky
 
@@ -773,7 +781,7 @@ Aplikaci teď lokalizováno název aplikace a bitové kopie. Zde je snímek obra
 
 ### <a name="universal-windows-platform-application-projects"></a>Projekty aplikace platformy Universal Windows
 
-Univerzální platformu Windows má prostředků infrastruktury, která zjednodušuje lokalizace bitové kopie a název aplikace.
+Univerzální platformu Windows má prostředků infrastruktury, která zjednodušuje lokalizace bitové kopie a název aplikace. Další informace o lokalizaci UWP najdete v tématu [UWP lokalizace](/windows/uwp/design/globalizing/globalizing-portal/).
 
 #### <a name="images"></a>Obrázky
 
@@ -796,5 +804,6 @@ Bitové kopie jsou obecně jiným způsobem specifické pro platformu chcete vyu
 - [Lokalizace a platformy](~/cross-platform/app-fundamentals/localization.md)
 - [iOS lokalizace](~/ios/app-fundamentals/localization/index.md)
 - [Android lokalizace](~/android/app-fundamentals/localization.md)
+- [Lokalizace UWP](/windows/uwp/design/globalizing/globalizing-portal/)
 - [Použití třídy CultureInfo (MSDN)](http://msdn.microsoft.com/library/87k6sx8t%28v=vs.90%29.aspx)
 - [Vyhledání a použití prostředků pro konkrétní jazykové verze (MSDN)](http://msdn.microsoft.com/library/s9ckwb4b%28v=vs.90%29.aspx)
