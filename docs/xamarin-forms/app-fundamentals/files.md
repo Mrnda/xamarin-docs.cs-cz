@@ -1,42 +1,68 @@
 ---
 title: Zpracování souborů v Xamarin.Forms
-description: Práce s Xamarin.Forms se soubory lze provést pomocí vložených prostředků nebo zápis proti nativní filesystem rozhraní API.
+description: Práce s Xamarin.Forms se soubory se dá dosáhnout pomocí kódu v rozhraní .NET standardní knihovny, nebo pomocí vložené prostředky.
 ms.prod: xamarin
 ms.assetid: 9987C3F6-5F04-403B-BBB4-ECB024EA6CC8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/22/2017
-ms.openlocfilehash: 80fdedd6c5df15272e36e6ac9c1414a4f731123a
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.date: 06/21/2018
+ms.openlocfilehash: 0be441a7be9777698212e690aca95fdd75e5050f
+ms.sourcegitcommit: eac092f84b603958c761df305f015ff84e0fad44
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241930"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36310150"
 ---
 # <a name="file-handling-in-xamarinforms"></a>Zpracování souborů v Xamarin.Forms
 
-_Práce s Xamarin.Forms se soubory lze provést pomocí vložených prostředků nebo zápis proti nativní filesystem rozhraní API._
+_Práce s Xamarin.Forms se soubory se dá dosáhnout pomocí kódu v rozhraní .NET standardní knihovny, nebo pomocí vložené prostředky._
 
 ## <a name="overview"></a>Přehled
 
-Spustí kód Xamarin.Forms ve více platformách - z nichž každá má svou vlastní systému souborů. To znamená, že čtení a zápis souborů je většina snadno done pomocí nativních rozhraní API souboru na každou platformu. Alternativně vložené prostředky jsou jednodušší řešení k distribuci datových souborů s aplikací.
-
-Tento dokument popisuje následující běžné souborů zpracování scénáře:
-
--  [ **Vložené soubory jako prostředky** ](#Loading_Files_Embedded_as_Resources) -soubory lze dodávána jako součást k aplikaci a načíst pomocí rozhraní API reflexe.
--  [ **Ukládání a načítání souborů** ](#Loading_and_Saving_Files) -uživatele zapisovatelné úložiště může být implementována nativně a potom získat přístup pomocí `DependencyService` .
-
-
-Volání komponenty jiných výrobců **PCLStorage** slouží také k čtení a zápis souborů uživatele dostupné úložiště z PCL kódu.
+Spustí kód Xamarin.Forms ve více platformách - z nichž každá má svou vlastní systému souborů. Dříve vynutila si snadno byl čtení a zápis souborů provést pomocí nativních rozhraní API souboru na každou platformu. Alternativně vložené prostředky jsou jednodušší řešení k distribuci datových souborů s aplikací. S standardní rozhraní .NET 2.0 je možné sdílet soubor přístupového kódu v rozhraní .NET standardní knihovny.
 
 Informace o zpracování souborů bitové kopie, naleznete [práce s obrázky](~/xamarin-forms/user-interface/images.md) stránky.
+
+<a name="Loading_and_Saving_Files" />
+
+## <a name="saving-and-loading-files"></a>Ukládání a načítání souborů
+
+`System.IO` Třídy lze použít pro přístup k systému souborů na každou platformu. `File` Třída umožňuje vytvářet, mazat a číst soubory a `Directory` třída umožňuje vytvořit, odstranit nebo vytvořit výčet obsah adresáře. Můžete také `Stream` podtřídy, což může poskytnout vyšší stupeň kontroly nad operací se soubory (jako je hledání kompresi nebo pozice v souboru).
+
+Textový soubor lze zapsat pomocí `File.WriteAllText` metoda:
+
+```csharp
+File.WriteAllText(fileName, text);
+```
+
+Textový soubor lze číst pomocí `File.ReadAllText` metoda:
+
+```csharp
+string text = File.ReadAllText(fileName);
+```
+
+Kromě toho `File.Exists` metoda určuje, zda zadaný soubor existuje:
+
+```csharp
+bool doesExist = File.Exists(fileName);
+```
+
+Cestu k souboru na každou platformu můžete určit z .NET standardní knihovny pomocí hodnotu [ `Environment.SpecialFolder` ](xref:System.Environment.SpecialFolder) výčet jako první argument `Environment.GetFolderPath` metoda. To je pak možné kombinovat s název souboru s `Path.Combine` metoda:
+
+```csharp
+string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "temp.txt");
+```
+
+Tyto operace jsou ukázáno v ukázkové aplikace, která zahrnuje stránky, který se uloží a načte text:
+
+[![Ukládání a načítání textu](files-images/saveandload-sml.png "ukládání a načítání souborů v aplikaci")](files-images/saveandload.png#lightbox "ukládání a načítání souborů v aplikaci")
 
 <a name="Loading_Files_Embedded_as_Resources" />
 
 ## <a name="loading-files-embedded-as-resources"></a>Načítání souborů vložených jako prostředky
 
-Chcete-li vložit soubor do **PCL** sestavení, vytvořit nebo přidat soubor a ujistěte se, že **akce sestavení: EmbeddedResource**.
+Chcete-li vložit soubor do **.NET Standard** sestavení, vytvořit nebo přidat soubor a ujistěte se, že **akce sestavení: EmbeddedResource**.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -112,7 +138,7 @@ Stream stream = assembly.GetManifestResourceStream
 
 ### <a name="organizing-resources"></a>Uspořádání prostředků
 
-Příklady uvedené nahoře předpokládá, že soubor vložené v kořenu projektu PCL, ve kterém jsou rozlišována ID prostředku ve formátu **Namespace.Filename.Extension**, jako například `WorkingWithFiles.PCLTextResource.txt` a `WorkingWithFiles.iOS.SharedTextResource.txt`.
+Příklady uvedené nahoře předpokládají, který je vložený soubor v kořenovém .NET Standard projektu knihovny, ve kterém jsou rozlišována ID prostředku ve formátu **Namespace.Filename.Extension**, jako například `WorkingWithFiles.PCLTextResource.txt` a `WorkingWithFiles.iOS.SharedTextResource.txt`.
 
 Je možné k uspořádání vložených prostředků ve složkách. Když je vložený prostředek umístěn ve složce, název složky stane součástí ID prostředku (odděleny tečkami), tak, aby se změní na formát ID prostředku **Namespace.Folder.Filename.Extension**. Umístění souborů použitých ukázková aplikace do složky **Moje_složka** by Zkontrolujte odpovídající prostředek ID `WorkingWithFiles.MyFolder.PCLTextResource.txt` a `WorkingWithFiles.iOS.MyFolder.SharedTextResource.txt`.
 
@@ -132,119 +158,13 @@ foreach (var res in assembly.GetManifestResourceNames()) {
 }
 ```
 
-<a name="Loading_and_Saving_Files" />
-
-## <a name="saving-and-loading-files"></a>Ukládání a načítání souborů
-
-Vzhledem k platformě Xamarin.Forms běží na více platforem, každou s vlastním systému souborů, neexistuje žádný jeden přístup pro načítání a ukládání souborů vytvořený uživatelem. Abychom ukázali, jak pro uložení a načtení textových souborů ukázková aplikace zahrnuje k obrazovce, která uloží a načte některé uživatelský vstup - dokončení obrazovky je zobrazena níže:
-
- [![Ukládání a načítání textu](files-images/saveandload-sml.png "ukládání a načítání souborů v aplikaci")](files-images/saveandload.png#lightbox "ukládání a načítání souborů v aplikaci")
-
-Každá platforma má mírně odlišné adresářovou strukturu a možnosti různých filesystem – například Xamarin.iOS a Xamarin.Android podporují většinu `System.IO` funkce ale univerzální platformu Windows podporuje jenom [ `Windows.Storage` ](/uwp/api/windows.storage/) Rozhraní API.
-
-Pokud chcete tento problém vyřešit, definuje ukázková aplikace rozhraní PCL Xamarin.Forms načíst a ukládat soubory. Nabízí jednoduché rozhraní API k načtení a uložení textové soubory, které se uloží v zařízení.
-
-```csharp
-public interface ISaveAndLoad {
-    void SaveText (string filename, string text);
-    string LoadText (string filename);
-}
-```
-
-PCL kód pak používá [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md) získat odkaz na nativní implementaci rozhraní. To umožňuje kód přenosné delegovat načítání a ukládání souborů do třídy, které jsou napsané v všechny projekty specifické pro platformu. V ukázce **Uložit** a **zatížení** tlačítka se zapisují, jak je znázorněno:
-
-```csharp
-var saveButton = new Button {Text = "Save"};
-saveButton.Clicked += (sender, e) => {
-    DependencyService.Get<ISaveAndLoad>().SaveText("temp.txt", input.Text);
-};
-var loadButton = new Button {Text = "Load"};
-loadButton.Clicked += (sender, e) => {
-    output.Text = DependencyService.Get<ISaveAndLoad>().LoadText("temp.txt");
-};
-```
-
-Implementace pak musí být přidán do jednotlivých projektů specifické pro platformu než soubory ve skutečnosti můžete uložit a načíst.
-
-### <a name="ios-and-android"></a>iOS a Android
-
-Implementace rozhraní pro Xamarin.iOS a Xamarin.Android projekty může být identické. Kód jsou uvedeny níže, včetně `[assembly: Dependency (typeof (SaveAndLoad))]` atribut, který je vyžadován pro `DependencyService` pracovat.
-
-```csharp
-[assembly: Dependency (typeof (SaveAndLoad))]
-namespace WorkingWithFiles {
-    public class SaveAndLoad : ISaveAndLoad {
-        public void SaveText (string filename, string text) {
-            var documentsPath = Environment.GetFolderPath (Environment.SpecialFolder.Personal);
-            var filePath = Path.Combine (documentsPath, filename);
-            System.IO.File.WriteAllText (filePath, text);
-        }
-        public string LoadText (string filename) {
-            var documentsPath = Environment.GetFolderPath (Environment.SpecialFolder.Personal);
-            var filePath = Path.Combine (documentsPath, filename);
-            return System.IO.File.ReadAllText (filePath);
-        }
-    }
-}
-```
-
-### <a name="universal-windows-platform-uwp"></a>Univerzální platforma Windows (UPW)
-
-UWP má jiný rozhraní API – systém souborů [ `Windows.Storage` ](/windows/uwp/files/quickstart-reading-and-writing-files/) – to znamená používá k uložení a načtení souborů.
-`ISaveAndLoad` Rozhraní může být implementováno, jak je uvedeno níže:
-
-```csharp
-using System;
-using System.Threading.Tasks;
-using Windows.Storage;
-using WinApp;
-using WorkingWithFiles;
-using Xamarin.Forms;
-
-[assembly: Dependency(typeof(SaveAndLoad_WinApp))]
-
-namespace WindowsApp
-{
-    // https://msdn.microsoft.com/library/windows/apps/xaml/hh758325.aspx
-    public class SaveAndLoad_WinApp : ISaveAndLoad
-    {
-        public async Task SaveTextAsync(string filename, string text)
-        {
-            StorageFolder localFolder = ApplicationData.Current.LocalFolder;
-            StorageFile sampleFile = await localFolder.CreateFileAsync(filename, CreationCollisionOption.ReplaceExisting);
-            await FileIO.WriteTextAsync(sampleFile, text);
-        }
-        public async Task<string> LoadTextAsync(string filename)
-        {
-            StorageFolder storageFolder = ApplicationData.Current.LocalFolder;
-            StorageFile sampleFile = await storageFolder.GetFileAsync(filename);
-            string text = await Windows.Storage.FileIO.ReadTextAsync(sampleFile);
-            return text;
-        }
-    }
-}
-```
-
-<a name="Saving_and_Loading_in_Shared_Projects" />
-
-### <a name="saving-and-loading-in-shared-projects"></a>Ukládání a načítání ve sdílených projektů
-
-Vzhledem k tomu sdílených projektů podporují direktivy kompilátoru je možné zahrnout všechny specifické pro platformu kód v souboru jednu třídu do projektu sdíleného (bez použití `DependencyService`).
-Jediný `SaveAndLoad` třída může zapisovat obsahující obou výše, implementace selektivně zkompilovat do odkazující projektů pomocí direktivy kompilátoru jako `#if WINDOWS_PHONE`, `#if __IOS__`, a `#if __ANDROID__`.
-
-## <a name="additional-information"></a>Další informace
-
-Na základě PCL Xamarin.Forms projekty také můžete využít výhod [PCLStorage NuGet](http://www.nuget.org/packages/pclstorage) ([kód &amp; dokumentace](https://pclstorage.codeplex.com/)) při provádění operací se soubory způsobem napříč platformami.
-
-
 ## <a name="summary"></a>Souhrn
 
-Tento dokument ukazuje některé operace jednoduchého souboru pro načítání vložené prostředky a ukládání a načítání textu v zařízení. Vývojářům můžete implementovat vlastní nativní souboru rozhraní API pomocí `DependencyService`, což komplexní vyžadovaná ke zpracování jejich požadavky na zpracování souboru.
-
+Tento článek ukazuje některé operace jednoduchého souboru pro ukládání a načítání textu na zařízení a pro načítání vložené prostředky. S standardní rozhraní .NET 2.0 je možné sdílet soubor přístupového kódu v rozhraní .NET standardní knihovny.
 
 ## <a name="related-links"></a>Související odkazy
 
 - [FilesSample](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithFiles/)
-- [Vytváření, zápisu a čtení souboru (UWP)](/windows/uwp/files/quickstart-reading-and-writing-files/)
 - [Ukázky Xamarin.Forms](https://github.com/xamarin/xamarin-forms-samples)
+- [Práce s systém souborů ve Xamarin.iOS](~/ios/app-fundamentals/file-system.md)
 - [Soubory sešitu](https://developer.xamarin.com/workbooks/xamarin-forms/application-fundamentals/files/files.workbook)

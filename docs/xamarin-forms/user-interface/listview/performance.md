@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2017
-ms.openlocfilehash: 4803a612e2b06e458f2859dbbbd30b970f0fc8ea
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: f1707a6b2a1dc03ae1346520bf29ff83f0fe74fb
+ms.sourcegitcommit: eac092f84b603958c761df305f015ff84e0fad44
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244900"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36309808"
 ---
 # <a name="listview-performance"></a>Výkon ListView
 
@@ -171,9 +171,9 @@ Existuje mnoho postupů pro zlepšení výkonu `ListView`:
 -  Nepoužívejte hluboko vložené rozložení hierarchie. Použití `AbsoluteLayout` nebo `Grid` snížit vnoření.
 -  Vyhněte se konkrétní `LayoutOptions` jiné než `Fill` (výplně je cheapest k výpočtu).
 -  Neumísťujte `ListView` uvnitř `ScrollView` z následujících důvodů:
-  - `ListView` Implementuje vlastní posouvání.
-  - `ListView` Nebude přijímat žádné gesta, jak se budou zpracovávat nadřazené `ScrollView`.
-  - `ListView` Může být vlastní záhlaví a zápatí stránky, která se posouvá společně s prvky v seznamu, potenciálně nabídky funkce `ScrollView` byl použit pro. Další informace najdete v části [záhlaví a zápatí](~/xamarin-forms/user-interface/listview/customizing-list-appearance.md#Headers_and_Footers).
+    - `ListView` Implementuje vlastní posouvání.
+    - `ListView` Nebude přijímat žádné gesta, jak se budou zpracovávat nadřazené `ScrollView`.
+    - `ListView` Může být vlastní záhlaví a zápatí stránky, která se posouvá společně s prvky v seznamu, potenciálně nabídky funkce `ScrollView` byl použit pro. Další informace najdete v části [záhlaví a zápatí](~/xamarin-forms/user-interface/listview/customizing-list-appearance.md#Headers_and_Footers).
 -  Pokud potřebujete velmi určité a složité návrh uvedené ve vašem buněk, zvažte vlastní zobrazovací jednotky.
 
 `AbsoluteLayout` se může provést rozložení bez volání jedné míry. Díky tomu je velice mocný výkonu. Pokud `AbsoluteLayout` nelze použít, zvažte [ `RelativeLayout` ](http://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/). Pokud používáte `RelativeLayout`, předávání omezení přímo bude podstatně rychleji než pomocí výrazu rozhraní API. Je to způsobeno výrazu rozhraní API používá JIT, a v systému iOS stromu se budou interpretovat, což je pomalejší. Ve výrazu rozhraní API je vhodný pro rozložení stránek kde pouze vyžadovala na počáteční rozložení a oběh, ale v `ListView`, kde je spuštěn neustále při posouvání, ho škodí jak výkonu.

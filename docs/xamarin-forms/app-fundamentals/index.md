@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
-ms.openlocfilehash: f843f4b1c20daba2a504bd0e70ae51f4d0405c06
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: d75cac7a21b2c74a6627845cdda8e4c04e72bddc
+ms.sourcegitcommit: eac092f84b603958c761df305f015ff84e0fad44
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240243"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36309772"
 ---
 # <a name="xamarinforms-application-fundamentals"></a>Základy aplikací Xamarin.Forms
 
@@ -47,6 +47,10 @@ Datová vazba propojí vlastnosti dva objekty, povolení změn v jednu vlastnost
 ## <a name="effectseffectsindexmd"></a>[Efekty](effects/index.md)
 
 Účinky Povolit nativní ovládací prvky na každou platformu, která lze přizpůsobit a jsou obvykle používány pro malé stylů změny.
+
+## <a name="filesfilesmd"></a>[Soubory](files.md)
+
+Práce s Xamarin.Forms se soubory se dá dosáhnout pomocí kódu v rozhraní .NET standardní knihovny, nebo pomocí vložené prostředky.
 
 ## <a name="gesturesgesturesindexmd"></a>[Gesta](gestures/index.md)
 

@@ -5,12 +5,13 @@ ms.assetid: D5969C57-3444-465E-D6FF-249AEE62E127
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: c37fce491b2e6f5e0211fcc6aa7906643a1bac2a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/20/2018
+ms.openlocfilehash: 5a162ba15bbb6d6dcdf7debe01fb12b3b08a843e
+ms.sourcegitcommit: eac092f84b603958c761df305f015ff84e0fad44
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36309787"
 ---
 # <a name="obtaining-a-google-maps-api-key"></a>Získání služby Google mapuje klíč rozhraní API
 
@@ -36,7 +37,7 @@ Ve výchozím nastavení úložiště klíčů, který se používá k podepisov
 
 Informace o úložiště klíčů je získaném spuštěním `keytool` příkaz sadu JDK. Tento nástroj se obvykle nachází v adresáři bin Java:
 
-**C:\\Program Files (x86)\\Java\\jdk[VERSION]\\bin\\keytool.exe**
+**C:\\Program Files (x86)\\Java\\jdk [verze]\\bin\\keytool.exe**
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -46,7 +47,7 @@ Ve výchozím nastavení úložiště klíčů, který se používá k podepisov
 
 Informace o úložiště klíčů je získaném spuštěním `keytool` příkaz sadu JDK. Tento nástroj se obvykle nachází v adresáři bin Java:
 
-**/System/Library/Java/JavaVirtualMachines/[VERSION].jdk/Contents/Home/bin/keytool**
+**/System/library/Java/JavaVirtualMachines/[Version].JDK/Contents/Home/Bin/keytool**
 
 -----
 
@@ -104,41 +105,37 @@ Certificate fingerprints:
 
 Budete používat otisk prstu SHA-1 (uvedené po **SHA1**) dál v této příručce.
 
-
 ## <a name="creating-an-api-project"></a>Vytvoření projektu rozhraní API
 
 Po načtení otisku prstu SHA-1 z podpisový úložiště klíčů, je nutné vytvořit nový projekt v konzole rozhraní Google API (nebo přidání služby Google Maps Android API v2 do existujícího projektu).
 
-1. V prohlížeči přejděte na [konzole pro vývojáře Google](https://console.developers.google.com/): a klikněte na tlačítko **vytvoření projektu**:
+1. V prohlížeči přejděte na [rozhraní API konzoly Google vývojáři & řídicího panelu služby](https://console.developers.google.com/apis/dashboard/) a klikněte na tlačítko **vyberte projektu**. Klikněte na název projektu nebo vytvořte novou kliknutím **nový projekt**:
 
    [![Tlačítko Google Developer konzoly vytvoření projektu](obtaining-a-google-maps-api-key-images/01-google-developer-console-vs-sml.png)](obtaining-a-google-maps-api-key-images/01-google-developer-console-vs.png#lightbox)
 
-2. V **nový projekt** dialog, který se zobrazí, zadejte název projektu.
-   Dialogové okno bude ID jedinečný projektu, který je založen na název projektu, výroby, jak je uvedeno v následujícím příkladu:
+2. Pokud jste vytvořili nový projekt, zadejte název projektu v **nový projekt** dialog, který se zobrazí. Toto dialogové okno bude výroba ID jedinečný projektu, který je založen na název projektu. Klikněte na tlačítko **vytvořit** tlačítko jak je uvedeno v následujícím příkladu:
 
    [![Nový projekt jmenuje XamarinMapsDemo](obtaining-a-google-maps-api-key-images/02-new-project-vs-sml.png)](obtaining-a-google-maps-api-key-images/02-new-project-vs.png#lightbox)
 
-3. Klikněte **vytvořit** tlačítko. Za minutu, vytvoření projektu a jsou přesměrováni na **rozhraní API Správce** stránky. V **knihovny** klikněte na tlačítko **rozhraní API systému Android mapy Google**:
+3. Za minutu, vytvoření projektu a jsou přesměrováni na **řídicí panel** stránky projektu. Zde, klikněte na tlačítko **povolit rozhraní API a služby**:
 
    [![Kliknutím na tlačítko Google Maps Android API v části knihovny](obtaining-a-google-maps-api-key-images/03-api-selection-vs-sml.png)](obtaining-a-google-maps-api-key-images/03-api-selection-vs.png#lightbox)
 
-4. V horní části **rozhraní API systému Android mapy Google** klikněte na tlačítko **povolit** zapnout službu pro tento projekt:
+4. Z **rozhraní API knihovny** klikněte na tlačítko **mapy SDK pro Android**. Na další stránce klikněte na tlačítko **povolit** zapnout službu pro tento projekt:
 
    [![Klepnutím na tlačítko Povolit v části řídicího panelu](obtaining-a-google-maps-api-key-images/04-enable-api-vs-sml.png)](obtaining-a-google-maps-api-key-images/04-enable-api-vs.png#lightbox)
 
-
-V tomto okamžiku vytvoření projektu rozhraní API a rozhraní API systému Android mapy Google v2 byla přidaná k němu. Toto rozhraní API však nelze používat ve vašem projektu, dokud vytvořit přihlašovací údaje pro ni. Dále se podíváme na tom, jak vytvořte klíč rozhraní API a aplikace pro Xamarin.Android seznamu povolených tak, aby je autorizovaný k použití tohoto klíče.
-
+V tomto okamžiku vytvoření projektu rozhraní API a rozhraní API systému Android mapy Google v2 byla přidaná k němu. Toto rozhraní API však nelze používat ve vašem projektu, dokud vytvořit přihlašovací údaje pro ni. V další části vysvětluje, jak vytvořte klíč rozhraní API a aplikace pro Xamarin.Android seznamu povolených tak, aby je autorizovaný k použití tohoto klíče.
 
 ## <a name="obtaining-the-api-key"></a>Získat klíč rozhraní API
 
 Po **vývojářské konzole Google** projektu rozhraní API byla vytvořena, je potřeba vytvořit klíč rozhraní API systému Android. Aplikace Xamarin.Android musí obsahovat klíč rozhraní API, než získají přístup k rozhraní API systému Android mapy v2.
 
-1. V **rozhraní API systému Android mapy Google** stránky, která se zobrazí (po kliknutí na **povolit** v předchozím kroku), klikněte na tlačítko **přejít na přihlašovací údaje** tlačítko:
+1. V **mapy SDK pro Android** stránky, která se zobrazí (po kliknutí na **povolit** v předchozím kroku), přejděte na **pověření** a klikněte **vytvořit přihlašovací údaje** tlačítko:
 
-   [![Toto rozhraní API je povoleno zpráv](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs-sml.png)](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs.png#lightbox)
+   [![Mapuje SDK pro Android pověření zprávu](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs-sml.png)](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs.png#lightbox)
 
-2. V **přihlašovací údaje** klikněte na **jaké přihlašovací údaje potřebuji?** tlačítko:
+2. Klikněte na tlačítko **klíč rozhraní API**:
 
    [![Přidejte pověření do dialogu projektu](obtaining-a-google-maps-api-key-images/06-add-credentials-to-your-project-vs-sml.png)](obtaining-a-google-maps-api-key-images/06-add-credentials-to-your-project-vs.png#lightbox)
 
@@ -166,7 +163,17 @@ Po **vývojářské konzole Google** projektu rozhraní API byla vytvořena, je 
 
    [![XamarinMapsDemoKey se zobrazí v seznamu klíče rozhraní API](obtaining-a-google-maps-api-key-images/12-list-of-apis-vs-sml.png)](obtaining-a-google-maps-api-key-images/12-list-of-apis-vs.png#lightbox)
 
+## <a name="connect-the-project-to-a-billable-account"></a>Připojte projekt na účet fakturovatelného času
 
+Od června, 11 2018, klíč rozhraní API nebude fungovat, pokud projekt není připojený k účet Fakturovatelný (i když tato služba je stále zdarma pro mobilní aplikace).
+
+1. Klikněte na tlačítko hamburger nabídku a vyberte **fakturace** stránky:
+
+   [![Výběr části hamburger nabídky fakturace](obtaining-a-google-maps-api-key-images/13-goto-billing-vs-sml.png)](obtaining-a-google-maps-api-key-images/13-goto-billing-vs.png#lightbox)
+
+2. Propojení projektu na účet fakturace kliknutím **propojit fakturační účet** následuje **vytvořit fakturační účet** v místní nabídce zobrazené (Pokud nemáte účet, průvodce vytvoříte nový):
+
+   [![Propojení projektu fakturace účtu](obtaining-a-google-maps-api-key-images/14-link-billing-account-vs-sml.png)](obtaining-a-google-maps-api-key-images/14-link-billing-account-vs.png#lightbox)
 
 ## <a name="adding-the-key-to-your-project"></a>Přidání klíče do projektu
 
@@ -177,15 +184,13 @@ Nakonec přidejte tento klíč rozhraní API k **AndroidManifest.XML** soubor ap
     android:versionName="4.10" package="com.xamarin.docs.android.mapsandlocationdemo"
     android:versionCode="10">
 ...
-
   <application android:label="@string/app_name">
     <!-- Put your Google Maps V2 API Key here. -->
-    <meta-data android:name="com.google.android.geo.API_KEY" android:value="YOUR_API_KEY" />
+    <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="YOUR_API_KEY" />
     <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
   </application>
 </manifest>
 ```
-
 
 ## <a name="related-links"></a>Související odkazy
 
