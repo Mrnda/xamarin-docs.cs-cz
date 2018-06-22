@@ -10,6 +10,7 @@ ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/09/2018
+ms.locfileid: "33919869"
 ---
 # <a name="unifying-google-play-services-components-and-nuget"></a>Sjednotit Google Play Services součásti a NuGet
 

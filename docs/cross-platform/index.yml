@@ -12,6 +12,7 @@ metadata:
   ms.translationtype: HT
   ms.contentlocale: cs-CZ
   ms.lasthandoff: 05/03/2018
+  ms.locfileid: "32436382"
 abstract:
   description: Xamarin poskytuje řešení pro multiplatformní vývoj mobilních, tabletových a desktopových aplikací. Tento oddíl popisuje podrobnosti, které platí bez ohledu na cílovou platformu.
   menu:

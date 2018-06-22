@@ -12,6 +12,7 @@ ms.sourcegitcommit: c024f29ff730ae20c15e99bfe0268a0e1c9d41e5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/23/2018
+ms.locfileid: "34470327"
 ---
 # <a name="xamarinforms-requirements"></a>Požadavky na platformě Xamarin.Forms
 

@@ -12,6 +12,7 @@ ms.sourcegitcommit: bc39d85b4585fcb291bd30b8004b3f7edcac4602
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31044935"
 ---
 # <a name="remote-notifications-with-firebase-cloud-messaging"></a>Vzdálená oznámení s Firebase cloudu zasílání zpráv
 

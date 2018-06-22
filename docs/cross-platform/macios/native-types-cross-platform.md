@@ -11,6 +11,7 @@ ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/09/2018
+ms.locfileid: "33918153"
 ---
 # <a name="working-with-native-types-in-cross-platform-apps"></a>Práce s nativní typy v aplikací pro různé platformy
 

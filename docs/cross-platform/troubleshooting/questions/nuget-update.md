@@ -10,6 +10,7 @@ ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/09/2018
+ms.locfileid: "33920171"
 ---
 # <a name="how-can-i-update-nuget"></a>Jak můžete aktualizovat NuGet?
 

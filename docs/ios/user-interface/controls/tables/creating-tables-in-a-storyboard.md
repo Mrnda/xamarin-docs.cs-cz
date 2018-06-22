@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30780720"
 ---
 # <a name="working-with-tables-in-the-ios-designer"></a>Práce s tabulkami v iOS návrháře
 
@@ -45,7 +46,7 @@ Uživatelské rozhraní bude vytvořené s nástroji scénáře a obě obrazovky
 
 ## <a name="walkthrough"></a>Návod
 
-Vytvořte nové řešení v sadě Visual Studio pomocí **(vytvořit) nový projekt... > jednoho zobrazení App(C#)**a pojmenujte ji _StoryboardTables_.
+Vytvořte nové řešení v sadě Visual Studio pomocí **(vytvořit) nový projekt... > jednoho zobrazení App(C#)** a pojmenujte ji _StoryboardTables_.
 
  [![Vytvořit dialogové okno Nový projekt](creating-tables-in-a-storyboard-images/npd.png)](creating-tables-in-a-storyboard-images/npd.png#lightbox)
 

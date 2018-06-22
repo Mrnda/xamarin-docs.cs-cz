@@ -11,6 +11,7 @@ ms.sourcegitcommit: 66807f8927d472fbfd0ff8bc77cea9b37e7b9a4f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/05/2018
+ms.locfileid: "30822879"
 ---
 # <a name="android-debug-log"></a>Protokol pro Android ladění
 

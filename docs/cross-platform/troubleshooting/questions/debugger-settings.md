@@ -10,6 +10,7 @@ ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/09/2018
+ms.locfileid: "33919986"
 ---
 # <a name="what-project-settings-are-required-for-the-debugger"></a>Nastavení projektu, které jsou požadovány pro ladicí program?
 

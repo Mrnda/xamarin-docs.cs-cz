@@ -11,6 +11,7 @@ ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/09/2018
+ms.locfileid: "33922545"
 ---
 # <a name="improving-frame-rate-with-ccspritesheet"></a>Vylepšení obnovovací frekvence s CCSpriteSheet
 

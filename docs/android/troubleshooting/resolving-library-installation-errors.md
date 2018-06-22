@@ -13,6 +13,7 @@ ms.sourcegitcommit: f52aa66de4d07bc00931ac8af791d4c33ee1ea04
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/19/2018
+ms.locfileid: "31538088"
 ---
 # <a name="resolving-library-installation-errors"></a>Řešení chyb instalace knihovny
 

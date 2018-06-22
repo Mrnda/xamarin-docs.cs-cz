@@ -12,6 +12,7 @@ ms.sourcegitcommit: 3e05b135b6ff0d607bc2378c1b6e66d2eebbcc3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/12/2018
+ms.locfileid: "34149257"
 ---
 # <a name="tabbed-layouts"></a>Na kartách rozložení
 
