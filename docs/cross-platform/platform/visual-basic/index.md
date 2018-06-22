@@ -11,6 +11,7 @@ ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/09/2018
+ms.locfileid: "33917964"
 ---
 # <a name="portable-visual-basicnet"></a>Přenosné Visual Basic.NET
 

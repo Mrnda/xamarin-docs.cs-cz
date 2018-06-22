@@ -12,6 +12,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30776661"
 ---
 # <a name="text-translation-using-the-translator-api"></a>Překlad text použití překladač rozhraní API
 

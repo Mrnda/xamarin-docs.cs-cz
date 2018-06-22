@@ -12,6 +12,7 @@ ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32436287"
 ---
 # <a name="touch-and-gestures-in-xamarinandroid"></a>Dotykové ovládání a gest v Xamarin.Android
 
