@@ -11,6 +11,7 @@ ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 04/04/2018
+ms.locfileid: "30774405"
 ---
 # <a name="apk-expansion-files"></a>Soubory rozšíření APK
 
@@ -72,7 +73,7 @@ Při instalaci aplikace z obchodu Google Play soubory rozšíření by měl stá
 
 [![Vývojový diagram rozšíření APK](apk-expansion-files-images/apkexpansion.png)](apk-expansion-files-images/apkexpansion.png#lightbox)
 
-Při spuštění aplikace, měli zkontrolovat Pokud chcete zobrazit, pokud příslušná rozšíření soubory existují v aktuální zařízení. Pokud ne, pak aplikace musíte provést žádost na webu Google Play [licencování aplikace](http://developer.android.com/google/play/licensing/index.html). Tato kontrola se provádí pomocí *licence ověření knihovny (úroveň)*a musí být provedeny pro volné a licencované aplikace. ÚROVEŇ se primárně používají placené aplikace vynutit licenční omezení. Google však má rozšířené úroveň, tak, aby se dá použít s také rozšíření knihovny. Volné aplikací mít k provedení kontroly úroveň, ale můžete ignorovat licenční omezení. Žádost o úroveň zodpovídá za poskytování následující informace o rozšíření soubory, které aplikace vyžaduje: 
+Při spuštění aplikace, měli zkontrolovat Pokud chcete zobrazit, pokud příslušná rozšíření soubory existují v aktuální zařízení. Pokud ne, pak aplikace musíte provést žádost na webu Google Play [licencování aplikace](http://developer.android.com/google/play/licensing/index.html). Tato kontrola se provádí pomocí *licence ověření knihovny (úroveň)* a musí být provedeny pro volné a licencované aplikace. ÚROVEŇ se primárně používají placené aplikace vynutit licenční omezení. Google však má rozšířené úroveň, tak, aby se dá použít s také rozšíření knihovny. Volné aplikací mít k provedení kontroly úroveň, ale můžete ignorovat licenční omezení. Žádost o úroveň zodpovídá za poskytování následující informace o rozšíření soubory, které aplikace vyžaduje: 
 
 -   **Velikost souboru** &ndash; velikosti souboru rozšíření soubory se používají v rámci kontroly, které určuje, zda již byly staženy soubory správné rozšíření.
 -   **Názvy souborů** &ndash; Toto je název souboru (na aktuální zařízení) které musí být uloženy sady rozšíření.
