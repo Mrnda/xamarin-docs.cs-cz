@@ -5,12 +5,12 @@ ms.assetid: 3ADC440C-B000-4708-A2CC-296F5160AF90
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 0b6cbf9ee5621466285656a5efee68ccc2c85211
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 001cca2524e495d64c6781d8a2fc5cb58e771e6e
+ms.sourcegitcommit: 0be3d10bf08d1f76eab109eb891ed202615ac399
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783025"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36321441"
 ---
 # <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials: geografické kódování
 
@@ -32,7 +32,7 @@ Nevyžaduje žádné další nastavení.
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-Klíč rozhraní API map Bing je potřeba použít funcationality geografické kódování. Zaregistrujte si bezplatný [mapy Bing](https://www.bingmapsportal.com/) účtu. V části **Můj účet > mé klíče** vytvořte nový klíč a vyplňte informace podle vašeho typu aplikace.
+Klíč rozhraní API map Bing je potřeba použít funcationality geografické kódování. Zaregistrujte si bezplatný [mapy Bing](https://www.bingmapsportal.com/) účtu. V části **Můj účet > mé klíče** vytvořte nový klíč a vyplňte informace podle vašeho typu aplikace (což by mělo být **veřejné aplikace pro Windows (UPW, 8.x a starší)** pro aplikace UWP).
 
 Časná na v životnosti vaší aplikace před voláním žádné **geografické kódování** nastavit klíč rozhraní API:
 

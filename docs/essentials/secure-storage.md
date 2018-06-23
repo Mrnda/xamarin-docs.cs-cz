@@ -5,12 +5,12 @@ ms.assetid: 78856C0D-76BB-406E-A880-D5A3987B7D64
 author: redth
 ms.author: jodick
 ms.date: 05/04/2018
-ms.openlocfilehash: d9fd5b5fd0d4dc29f4d2531521370618f97e3846
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 4909cb3b874b1397fad10c92d8d655fadcbe8d85
+ms.sourcegitcommit: 0be3d10bf08d1f76eab109eb891ed202615ac399
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783155"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36321337"
 ---
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials: Zabezpečené úložiště
 
@@ -78,13 +78,13 @@ Při odinstalaci aplikace ze zařízení se odeberou všechny šifrované hodnot
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-[Řetězce klíčů](https://developer.xamarin.com/api/type/Android.Security.KeyChain/) se používá k ukládání hodnot bezpečně na zařízeních s iOS.  `SecRecord` Používá k ukládání hodnota má `Service` nastavena na hodnotu **[YOUR-sady-ID aplikace] .xamarinessentials**.
+[Řetězce klíčů](https://developer.xamarin.com/api/type/Security.SecKeyChain/) se používá k ukládání hodnot bezpečně na zařízeních s iOS.  `SecRecord` Používá k ukládání hodnota má `Service` nastavena na hodnotu **[YOUR-sady-ID aplikace] .xamarinessentials**.
 
 V některých případech data řetězce klíčů se synchronizují s Icloudem a odinstalování aplikace není možné odstranit zabezpečené hodnoty ze serveru služby iCloud a dalších zařízení uživatele.
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-[DataProtectionProvider](https://docs.microsoft.com/en-us/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider) se používá k encryped hodnot bezpečně UWP zařízení.
+[DataProtectionProvider](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider) se používá k encryped hodnot bezpečně UWP zařízení.
 
 Encryped hodnoty se uloží v `ApplicationData.Current.LocalSettings`, uvnitř kontejner s názvem **[YOUR ID aplikace] .xamarinessentials**.
 

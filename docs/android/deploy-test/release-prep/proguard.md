@@ -1,27 +1,27 @@
 ---
 title: ProGuard
-description: ProGuard je knihovnu shrinker souboru Třída Java, optimalizátor, obfuscator a předběžné ověřovatele. Rozpozná a odebere nepoužívané kódu, analyzuje a optimalizuje bajtového kódu potom zastírá třídy a jejich členové. Tato příručka vysvětluje, jak funguje ProGuard, jak povolit ve vašem projektu a jeho konfiguraci. Je také několik příkladů ProGuard konfigurace.
+description: Xamarin.Android ProGuard je knihovnu shrinker souboru Třída Java, optimalizátor a předběžné ověřovatele. Zjistí a odebere nepoužívané kódu, analyzuje a optimalizuje bajtového kódu. Tato příručka vysvětluje, jak funguje ProGuard, jak povolit ve vašem projektu a jeho konfiguraci. Je také několik příkladů ProGuard konfigurace.
 ms.prod: xamarin
 ms.assetid: 29C0E850-3A49-4618-9078-D59BE0284D5A
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/01/2018
-ms.openlocfilehash: e65c78633ae91318bd8e9cce949bac9cc12675c0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: efb9c73eb9bddb2b22b84fb6f3388281f32a82ab
+ms.sourcegitcommit: 0be3d10bf08d1f76eab109eb891ed202615ac399
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30771441"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36321373"
 ---
 # <a name="proguard"></a>ProGuard
 
-_ProGuard je knihovnu shrinker souboru Třída Java, optimalizátor, obfuscator a předběžné ověřovatele. Rozpozná a odebere nepoužívané kódu, analyzuje a optimalizuje bajtového kódu potom zastírá třídy a jejich členové. Tato příručka vysvětluje, jak funguje ProGuard, jak povolit ve vašem projektu a jeho konfiguraci. Je také několik příkladů ProGuard konfigurace._
+_Xamarin.Android ProGuard je knihovnu shrinker souboru Třída Java, optimalizátor a předběžné ověřovatele. Zjistí a odebere nepoužívané kódu, analyzuje a optimalizuje bajtového kódu. Tato příručka vysvětluje, jak funguje ProGuard, jak povolit ve vašem projektu a jeho konfiguraci. Je také několik příkladů ProGuard konfigurace._
 
 
 ## <a name="overview"></a>Přehled
 
-ProGuard rozpozná a odebere nepoužívané třídy, pole, metod a atributy ze zabalené aplikace. I ho můžete provést stejný pro odkazované knihovny (to vám může pomoct vyhnout limit pro odkaz na 64 kB). ProGuard nástroj ze sady Android SDK bude také optimalizovat bajtového kódu, odeberte nepoužívané kód pokyny a obfuskováním zbývající třídy, pole a metody s kratší názvy. ProGuard čtení **vstupní JAR** zmenšuje, optimalizuje, zastírá a předem ověří jejich; zapíše výsledky na jeden nebo více **výstup JAR**. 
+ProGuard rozpozná a odebere nepoužívané třídy, pole, metod a atributy ze zabalené aplikace. I ho můžete provést stejný pro odkazované knihovny (to vám může pomoct vyhnout limit pro odkaz na 64 kB). Nástroj ProGuard ze sady Android SDK bude také optimalizovat bajtového kódu a odeberte nepoužívané kód pokyny. ProGuard čtení **vstupní JAR** zmenšuje, optimalizuje a předem ověří jejich; zapíše výsledky na jeden nebo více **výstup JAR**. 
 
 ProGuard procesy vstup na APK pomocí následujících kroků: 
 
@@ -30,7 +30,7 @@ ProGuard procesy vstup na APK pomocí následujících kroků:
 2.  **Optimalizace krok** &ndash; ProGuard další optimalizuje kód. 
     Mezi další optimalizace, třídy a metody, které nejsou, že vstupní body můžete provedeny, privátní, statické nebo konečné lze odebrat nepoužité parametry a některé metody mohou být vložená. 
 
-3.  **Krok maskováním** &ndash; ProGuard přejmenuje třídy a členy třídy, které nejsou vstupní body. Zachování vstupní body zajišťuje, lze přesto k nim jejich původní názvy. 
+3.  **Krok maskováním** &ndash; v nativní vývoj pro Android, přejmenuje ProGuard třídy a členy třídy, které nejsou vstupní body. Zachování vstupní body zajišťuje, lze přesto k nim jejich původní názvy. Tento krok však není podporována Xamarin.Android, protože aplikace je kompilovat dolů Intermediate Language (IL).
 
 4.  **Preverification krok** &ndash; nekontroluje Java bytecodes před runtime a označí soubory třídy ve prospěch virtuálního počítače Java. Toto je jediný krok, který nemá vědět, vstupní body. 
 

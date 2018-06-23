@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 288ac813f23f281a1bbed375cadf5faa9d4ff9d0
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 4fd64a1ebf05dd149304f49d8282ee1b38bfcf03
+ms.sourcegitcommit: 0be3d10bf08d1f76eab109eb891ed202615ac399
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784872"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36321360"
 ---
 # <a name="ipa-support-in-xamarinios"></a>Podpora IPA v Xamarin.iOS
 
@@ -132,10 +132,10 @@ V některých případech například v prostředí CI ho může být nutné k s
 
      ![](ipa-support-images/imagexs03.png "Vyberte iTunesMetadata.plist ze seznamu")
 
-1. Volání **xbuild** (nebo **mdtool** pro klasické rozhraní API) přímo a předejte tuto vlastnost na příkazovém řádku:
+1. Volání **msbuild** přímo a předejte tuto vlastnost na příkazovém řádku:
 
     ```bash
-    /Library/Frameworks/Mono.framework/Commands/xbuild YourSolution.sln /p:Configuration=Ad-Hoc /p:Platform=iPhone /p:BuildIpa=true
+    /Library/Frameworks/Mono.framework/Commands/msbuild YourSolution.sln /p:Configuration=Ad-Hoc /p:Platform=iPhone /p:BuildIpa=true
     ```
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -178,7 +178,7 @@ Nový **MSBuild** vlastnost `IpaPackageDir` byl přidán do snadno přizpůsobit
 
 Existuje několik možných způsobech použití nové vlastnosti:
 
-Například k výstupu **.ipa** soubor na původní výchozí adresář (jako Xamarin.iOS 9.6 a nižší), můžete nastavit `IpaPackageDir` vlastnost `$(OutputPath)` pomocí jedné z následujících dvou přístupů. Oba přístupy, které jsou kompatibilní s všechny sestavení Unified Xamarin.iOS rozhraní API, včetně sestavení IDE a také příkazového řádku sestavení, které používají **xbuild**, **msbuild**, nebo **mdtool**:
+Například k výstupu **.ipa** soubor na původní výchozí adresář (jako Xamarin.iOS 9.6 a nižší), můžete nastavit `IpaPackageDir` vlastnost `$(OutputPath)` pomocí jedné z následujících dvou přístupů. Oba přístupy, které jsou kompatibilní s všechny sestavení Unified Xamarin.iOS rozhraní API, včetně sestavení IDE, jakož i sestavení příkazového řádku, které používají **msbuild**, **xbuild**, nebo **mdtool**:
 
 - První možností je nastavit `IpaPackageDir` vlastností v rámci `<PropertyGroup>` element v **MSBuild** souboru. Můžete například přidat následující `<PropertyGroup>` k dolnímu okraji projekt aplikace pro iOS **.csproj** souboru (těsně před uzavírací `</Project>` značka):
 
@@ -212,19 +212,17 @@ Například k výstupu **.ipa** soubor na původní výchozí adresář (jako Xa
     </PropertyGroup>
     ```
 
-Alternativní technika pro **msbuild** nebo **xbuild** sestavení příkazového řádku je přidat `/p:` argument příkazového řádku nastavit `IpaPackageDir` vlastnost. V takovém případě Všimněte si, že **msbuild** nerozšiřuje `$()` výrazy předaná na příkazovém řádku, takže není možné použít `$(OutputPath)` syntaxe. Místo toho je musíte zadat úplnou cestu. Na mono **xbuild** příkaz rozbalte `$()` výrazy, ale je stále vhodnější použít úplnou cestu, protože **xbuild** přestanou nakonec pro [ napříč platformami verzi **msbuild** ](http://www.mono-project.com/docs/about-mono/releases/4.4.0/#msbuild-preview-for-os-x) v budoucích verzích.
+Alternativní technika pro **msbuild** nebo **xbuild** sestavení příkazového řádku je přidat `/p:` argument nastavit `IpaPackageDir` vlastnost. V takovém případě Všimněte si, že **msbuild** nerozšiřuje `$()` výrazy předaná na příkazovém řádku, takže není možné použít `$(OutputPath)` syntaxe. Místo toho je musíte zadat úplnou cestu. Na mono **xbuild** příkaz rozbalte `$()` výrazy, ale je stále vhodnější použít úplnou cestu, protože **xbuild** se už nepoužívá pro [a platformy verze **msbuild**](https://www.mono-project.com/docs/about-mono/releases/5.0.0/#msbuild).
 
 Úplný příklad, který používá tento přístup může vypadat podobně jako následující v systému Windows:
-
 
 ```bash
 msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:ServerAddress="192.168.1.3" /p:ServerUser="macuser" /p:IpaPackageDir="%USERPROFILE%\Builds" /t:Build SingleViewIphone1.sln
 ```
-
 Nebo následující v systému Mac:
 
 ```bash
-xbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/Builds" /t:Build SingleViewIphone1.sln
+msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/Builds" /t:Build SingleViewIphone1.sln
 ```
 
 <a name="installipa" />
