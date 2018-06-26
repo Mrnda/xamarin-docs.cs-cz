@@ -7,13 +7,13 @@ ms.technology: xamarin-android
 ms.custom: video
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/30/2018
-ms.openlocfilehash: 3776a0554e5ae496f9e39612ec9bab971c6f1f88
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.date: 06/22/2018
+ms.openlocfilehash: a23072427a74119bfa339fea8a695cd13b775685
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732759"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935100"
 ---
 # <a name="oreo-features"></a>Funkce Oreo
 
@@ -191,7 +191,7 @@ Po použití **avdmanager** Pokud chcete vytvořit virtuální zařízení, budo
 
 -----
 
-Další informace o konfiguraci pro testování a ladění emulátoru Androidu najdete v tématu [ladění pomocí emulátor Google Android](~/android/deploy-test/debugging/android-sdk-emulator/index.md).
+Další informace o konfiguraci pro testování a ladění emulátoru Androidu najdete v tématu [ladění na emulátoru systému Android](~/android/deploy-test/debugging/debug-on-emulator.md).
 
 Pokud používáte fyzické zařízení, například Nexus nebo jeden bod, můžete buď zařízení prostřednictvím automaticky aktualizovat prostřednictvím aktualizace letecké (OTA) nebo stáhnout bitovou kopii systému a flash zařízení přímo. Další informace o ruční aktualizaci zařízení pro Android Oreo najdete v tématu [objekt pro vytváření bitových kopií pro Nexus a pixelů zařízení](https://developers.google.com/android/images).
 

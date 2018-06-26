@@ -1,20 +1,20 @@
 ---
-title: Mapy
+title: Jak používat službu mapy Google a umístění s Xamarin.Android
 description: Tento článek popisuje, jak používat mapy a umístění s Xamarin.Android. Vysvětluje všechno využívat integrované mapy aplikace přímo pomocí Google mapuje Android API V2.
 ms.prod: xamarin
 ms.assetid: 425E0ED2-5380-6EBE-7059-256B6E9128B8
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: e57dc07aefbd1c80a53f4225f5f44fe72a9ddb9a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/25/2018
+ms.openlocfilehash: a861e43152870933ba684bf693a1bd3d3ac5bd0b
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30763326"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935370"
 ---
-# <a name="maps"></a>Mapy
+# <a name="how-to-use-google-maps-and-location-with-xamarinandroid"></a>Jak používat službu mapy Google a umístění s Xamarin.Android
 
 _Tento článek popisuje, jak používat mapy a umístění s Xamarin.Android. Vysvětluje všechno využívat integrované mapy aplikace přímo pomocí Google mapuje Android API V2._
 
@@ -35,6 +35,5 @@ Nejprve se popisují, jak můžete využít předdefinované mapy aplikace pro A
 - [MapsAndLocationDemo_v3 (ukázka)](https://developer.xamarin.com/samples/monodroid/MapsAndLocationDemo_v3/)
 - [Životní cyklus aktivity](~/android/app-fundamentals/activity-lifecycle/index.md)
 - [Získání klíče rozhraní API služby Mapy Google](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)
-- [Rozšíření rozhraní API Google](http://code.google.com/android/add-ons/google-apis/reference/index.html?com/google/android/maps/package-summary.html)
 - [Seznam tříd Intent: Vyvolání Google aplikací na zařízení se systémem Android](http://developer.android.com/guide/appendix/g-app-intents.html)
 - [Umístění a mapy](http://developer.android.com/guide/topics/location/index.html)

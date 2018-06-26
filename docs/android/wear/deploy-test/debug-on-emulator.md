@@ -6,13 +6,13 @@ ms.assetid: 225684B2-3122-4E3B-A028-A3A400976D31
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/30/2018
-ms.openlocfilehash: 9be9b91a0ed7e7607469bf8d74087b6f93677559
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.date: 06/21/2018
+ms.openlocfilehash: baa8df87caf2c05d7b6202d5160c930e51656e10
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732980"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36934976"
 ---
 # <a name="debug-android-wear-on-an-emulator"></a>Ladění Android opotřebení v emulátoru
 
@@ -22,7 +22,7 @@ _Tyto články vysvětlují postup ladění aplikace Xamarin.Android opotřeben�
 
 Vývoj aplikací pro Android nosit vyžaduje spuštění aplikace, buď na fyzickém hardwaru nebo použití emulátor ani simulátor. Použití hardwaru je nejlepší metodou, ale ne vždy nejvhodnější. V mnoha případech může být jednodušší a nákladově efektivní simulovat nebo emulovat Android nosit hardwaru pomocí emulátoru, jak je popsáno níže. Pokud si nejste ještě v tématu obeznámeni s procesem nasazení a spuštění aplikace Android nosit [nosit Hello,](~/android/wear/get-started/hello-wear.md).
 
-## <a name="configure-the-google-android-emulator"></a>Konfigurace emulátor Google Android
+## <a name="configure-the-android-emulator"></a>Konfigurace emulátoru systému Android
 
 Ke spouštění vaší aplikace a opotřebením motoru na emulátoru, musíte nainstalovat Android emulátoru systému Android SDK a nakonfigurovat ji pro Android nosit. Celkové emulátoru Android SDK instalace a konfigurace informace najdete v tématu [Android – nastavení emulátoru](~/android/get-started/installation/android-emulator/index.md).
 
@@ -48,4 +48,4 @@ Emulátor, může být ponecháno systémem; není potřeba ho vypnout a restart
  
 ## <a name="summary"></a>Souhrn
  
-Tato příručka vysvětluje postup konfigurace emulátor Google Android pro vývoj a opotřebením motoru a spuštění virtuálního zařízení opotřebení pro ladění.
+Tato příručka vysvětluje postup konfigurace emulátoru Android pro vývoj a opotřebením motoru a spuštění virtuálního zařízení opotřebení pro ladění.

@@ -6,13 +6,13 @@ ms.assetid: 9A857F52-2EC1-414F-8010-CEE67B60A4B4
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 06/02/2018
-ms.openlocfilehash: 0af0ef56630103498041ad61f7c5ce900358b055
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.date: 06/22/2018
+ms.openlocfilehash: 6a3f3f79e81339cc903d85081ca173a7ac707f6a
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732850"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935474"
 ---
 # <a name="setting-up-the-android-sdk-for-xamarinandroid"></a>Nastavení služby SDK pro Android pro Xamarin.Android
 
@@ -280,6 +280,5 @@ Tato příručka vysvětlené použití nástroje Xamarin Android SDK Manager v 
 
 - [Změny nástrojů sady Android SDK](~/android/troubleshooting/sdk-cli-tooling-changes.md)
 - [Principy úrovní rozhraní API systému Android](~/android/app-fundamentals/android-api-levels.md)
-- [Sady SDK nástroje poznámky k verzi (Google)](https://developer.android.com/studiohttps://developer.xamarin.com/releases/sdk-tools.html)
 - [sdkmanager](https://developer.android.com/studio/command-line/sdkmanager.html)
 - [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html)

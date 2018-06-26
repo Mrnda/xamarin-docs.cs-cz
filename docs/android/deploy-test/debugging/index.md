@@ -6,13 +6,13 @@ ms.assetid: A355A471-8195-4391-93FE-0000BCB17923
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 05/30/2018
-ms.openlocfilehash: e1c2a591450d8a5fd0aebe2bceb1d914a711512e
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.date: 06/22/2018
+ms.openlocfilehash: 1ed6ec57365c5d3a861dd3fd947a2ad195ce5357
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732216"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935383"
 ---
 # <a name="debugging"></a>Ladění
 
@@ -22,13 +22,9 @@ Tato část popisuje postup ladění aplikace Xamarin.Android na zařízeních n
 
 Vývoj aplikací pro Android vyžaduje spuštění aplikace, buď na fyzickém hardwaru nebo použití emulátoru. Použití hardwaru je nejlepší metodou, ale ne vždy nejvhodnější. V mnoha případech může být jednodušší a nákladově efektivní simulovat nebo emulovat Android hardwaru pomocí jedné z emulátorů popsané dole.
 
-### <a name="debugging-with-the-google-android-emulatorandroiddeploy-testdebuggingandroid-sdk-emulatorindexmd"></a>[Ladění pomocí emulátor Google Android](~/android/deploy-test/debugging/android-sdk-emulator/index.md)
+### <a name="debugging-on-the-android-emulatorandroiddeploy-testdebuggingdebug-on-emulatormd"></a>[Ladění na emulátoru systému Android](~/android/deploy-test/debugging/debug-on-emulator.md)
 
-Tyto články vysvětlují použití výchozí emulátor, který je k dispozici s SDK pro Android. Tento emulátor je k dispozici pro Visual Studio pro Windows a Visual Studio for Mac.
-
-### <a name="visual-studio-android-emulatorandroiddeploy-testdebuggingvisual-studio-android-emulatormd"></a>[Visual Studio Android Emulator](~/android/deploy-test/debugging/visual-studio-android-emulator.md)
-
-Tento článek vysvětluje, jak ladit a testovat aplikace Xamarin.Android pomocí emulátoru systému Android, která je integrována do sady Visual Studio 2015. Tento emulátor je vhodné použít, pokud používáte Visual Studio 2015 a není nutné profily vlastní zařízení.
+Tento článek vysvětluje, jak spustit Android emulátor ze sady Visual Studio a spusťte aplikaci v virtuálního zařízení.
 
 ### <a name="debugging-on-a-deviceandroiddeploy-testdebuggingdebug-on-devicemd"></a>[Ladění na zařízení](~/android/deploy-test/debugging/debug-on-device.md)
 
@@ -39,4 +35,4 @@ Tento článek ukazuje, jak nakonfigurovat fyzického zařízení Android, tak, 
 Jeden velmi běžné efektu vývojáři použít k ladění aplikací používá `Console.WriteLine`. Však na mobilní platformu jako Android neexistuje žádné konzoly. Zařízení se systémem Android poskytuje protokolu, který budete pravděpodobně muset využít při zápisu aplikace. To se někdy označuje jako **logcat** z důvodu příkaz zadali ho Pokud chcete zjistit. Tento článek popisuje způsob použití **logcat**.
 
 > [!WARNING]
-> Všimněte si, že **Xamarin Android Player** je zastaralá. Další informace najdete v tématu [oznámení v tomto příspěvku na blogu](https://blog.xamarin.com/live-from-dotnetconf-cycle-7-xamarin-studio-6-and-more/).
+> Všimněte si, že **Xamarin Android Player** je zastaralá. Další informace najdete v tématu [oznámení v tomto příspěvku na blogu](https://blog.xamarin.com/live-from-dotnetconf-cycle-7-xamarin-studio-6-and-more/). Kromě toho **Visual Studio Android Emulator** je zastaralá od Visual Studio 2017.

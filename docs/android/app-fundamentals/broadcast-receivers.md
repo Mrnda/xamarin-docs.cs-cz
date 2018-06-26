@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: topgenorth
 ms.author: toopge
 ms.date: 04/20/2018
-ms.openlocfilehash: 9c17641312384634983c2cbb34fa923a9416c9f7
-ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
+ms.openlocfilehash: 6b2e316eaf67e51801be4fcd670e80ec81c8ff08
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/20/2018
-ms.locfileid: "31646700"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935396"
 ---
 # <a name="broadcast-receivers-in-xamarinandroid"></a>Příjemci všesměrového vysílání v Xamarin.Android
 
@@ -25,7 +25,7 @@ A _všesměrového vysílání příjemce_ je Android součásti, které umožn�
 Android identifikuje dva typy vysílání:
 
 * **Explicitní vysílání** &ndash; tyto typy vysílání zacílit na konkrétní aplikaci. Explicitní všesměrové vysílání slouží nejčastěji spuštění aktivity. Příkladem explicitní všesměrové vysílání když aplikace potřebuje k vytočte telefonní číslo; se bude odesílat záměrem zacílený telefonní aplikaci pro Android a předejte podél telefonní číslo chcete vytočit. Android pak směrovat záměr telefonní aplikace.
-* **Implicitní broadcase** &ndash; tyto vysílání se odesílají na všechny aplikace na zařízení. Je například implicitní všesměrové vysílání `ACTION_POWER_CONNECTED` záměr. Tento záměr je publikován pokaždé, když Android zjistí, zda je ukládání baterie na zařízení. Android bude směrovat tato záměr na všechny aplikace, která byla zaregistrovaná pro tuto událost.
+* **Implicitní vysílání** &ndash; tyto vysílání se odesílají na všechny aplikace na zařízení. Je například implicitní všesměrové vysílání `ACTION_POWER_CONNECTED` záměr. Tento záměr je publikován pokaždé, když Android zjistí, zda je ukládání baterie na zařízení. Android bude směrovat tato záměr na všechny aplikace, která byla zaregistrovaná pro tuto událost.
 
 Příjemce všesměrového vysílání je podtřídou třídy `BroadcastReceiver` typu a musí přepsat [ `OnReceive` ](https://developer.xamarin.com/api/member/Android.Content.BroadcastReceiver.OnReceive/p/Android.Content.Context/Android.Content.Intent/) metoda. Android, budou spuštěny `OnReceive` na hlavní vlákno, takže tato metoda by se měly navrhovat rychle provést. Potřeba dát pozor, pokud při vytváření kopie vlákna v `OnReceive` protože Android může po dokončení metody ukončit proces. Pokud příjemce všesměrového vysílání, musíte provést dlouhotrvající pracovní, pak se doporučuje naplánovat _úlohy_ pomocí `JobScheduler` nebo _Firebase úlohy dispečera_. Plánování práce s úlohou budou popsané v samostatné průvodce.
 

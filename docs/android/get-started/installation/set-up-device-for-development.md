@@ -6,13 +6,13 @@ ms.assetid: 9116A3AA-EA00-56AF-AE70-BAEEC045EF11
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 03/21/2017
-ms.openlocfilehash: 16716db67067f07166fa35df7e539cdf3ed1de5e
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/22/2018
+ms.openlocfilehash: 838e0df80334d6865466b189a65a3f7c590bb590
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30768279"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935357"
 ---
 # <a name="set-up-device-for-development"></a>Nastavit zařízení pro vývoj
 
@@ -112,7 +112,7 @@ K instalaci ovladačů na systému Windows 7:
 
 6.  Vyberte **vyhledat v počítači software ovladače** a klikněte na tlačítko **Další** .
 
-7.  Klikněte na tlačítko **Procházet** a vyhledejte složku ovladač USB (ovladač Google USB je umístěn ve **[cesta instalace sady SDK pro Android] \extras\google\usb_driver**.
+7.  Klikněte na tlačítko **Procházet** a vyhledejte složku ovladač USB (ovladač Google USB je umístěn ve **[cesta instalace sady SDK pro Android] \extras\google\usb_driver**).
 
 8.  Klikněte na tlačítko **Další** instalace ovladače.
 

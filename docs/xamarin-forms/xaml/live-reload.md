@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
 ms.date: 05/11/2018
-ms.openlocfilehash: 756f0570ce792450cfcaf6b1c5161a95a6cb80c8
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 15de334500ea25d22657c257a4a4fc6887cc122c
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848301"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935425"
 ---
 # <a name="xamarin-live-reload"></a>Načtěte Xamarin za provozu
 
@@ -119,6 +119,7 @@ Ne. Ve skutečnosti můžete i spustit všechny vaše podporované aplikační c
 ## <a name="known-issues"></a>Známé problémy
 
 * Podporuje jenom v sadě Visual Studio.
+* Propojování musí být nastavena na **není odkaz** nebo **pouze odkaz Framework sady SDK** 
 * Opětovném načtení celou aplikaci prostředky (tj. **App.xaml** nebo sdílené slovnících prostředků), navigace aplikace se resetuje. Tento problém bude vyřešený v příští verzi preview.
 * Úpravy XAML při ladění UWP může způsobit selhání modulu runtime. Alternativní řešení: Použití **spustit bez ladění (Ctrl + F5)** místo **spustit ladění (F5)**.
 

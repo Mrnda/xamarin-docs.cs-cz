@@ -7,13 +7,13 @@ ms.assetid: 5AC61C00-0FF6-4C2D-80E7-D67A3EE30A5A
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 06/02/2018
-ms.openlocfilehash: b0d9458238c4b3ac9ceeeb7d7ce4e2ca8b0b6de3
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.date: 06/21/2018
+ms.openlocfilehash: 4e808736fd92fa40ecbf0c24938c0fedd7afcff9
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732863"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935448"
 ---
 # <a name="changes-to-the-android-sdk-tooling"></a>Změny nástrojů sady SDK pro Android
 
@@ -56,7 +56,7 @@ Je nový program s názvem **sdkmanager** v **nástroje/bin** složky Android SD
 
 **Přidáno v:** Android SDK Tools 25.3.0 (březen 2017) a vyšší.
 
-Je nový program s názvem **avdmanager** v **nástroje/bin** složky Android SDK. Tento nástroj se používá k udržování AVDs pro emulátor Google Android. Další informace o použití tohoto nástroje najdete v tématu [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html).
+Je nový program s názvem **avdmanager** v **nástroje/bin** složky Android SDK. Tento nástroj se používá k udržování AVDs pro emulátoru systému Android. Další informace o použití tohoto nástroje najdete v tématu [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html).
 
 ### <a name="downgrading"></a>Přechod na starší verzi
 
