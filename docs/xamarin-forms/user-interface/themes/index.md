@@ -49,7 +49,7 @@ Tyto snímky obrazovky ukazují tyto ovládací prvky s:
 * Motiv Světlý (pouze jemně lišit na situaci, kdy bez motivu)
 * Tmavý motiv
 
-![](images/standard-none-sml.png "Ovládací prvky bez motivů") ![ ] (images/standard-light-sml.png "ovládacích prvků pomocí motiv světlý") ![ ] (images/standard-dark-sml.png "ovládacích prvků pomocí tmavý motiv")
+![](images/standard-none-sml.png "Ovládací prvky bez motivů") ![](images/standard-light-sml.png "ovládacích prvků pomocí motiv světlý") ![](images/standard-dark-sml.png "ovládacích prvků pomocí tmavý motiv")
 
 <a name="styleclass" />
 
@@ -69,7 +69,7 @@ Tyto snímky obrazovky ukazují tyto ovládací prvky s:
 
 To vykreslí světlým a tmavým následujícím způsobem:
 
-![](images/boxview-light-sml.png "BoxView s motiv světlý StyleClass") ![ ] (images/boxview-dark-sml.png "BoxView s StyleClass tmavý motiv")
+![](images/boxview-light-sml.png "BoxView s motiv světlý StyleClass") ![](images/boxview-dark-sml.png "BoxView s StyleClass tmavý motiv")
 
 <a name="builtin" />
 
