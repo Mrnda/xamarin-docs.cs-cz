@@ -1,19 +1,20 @@
 ---
-title: Rozhraní API map
+title: Pomocí služby Google Maps API v aplikaci
+description: Popisuje, jak implementovat rozhraní API map Google v2 funkce v aplikaci Xamarin.Android.
 ms.prod: xamarin
 ms.assetid: C0589878-2D04-180E-A5B9-BB41D5AF6E02
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
-ms.openlocfilehash: fc16178a4068b2dcf22fc19047e0ef403e83633f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/25/2018
+ms.openlocfilehash: a0e010a8300eb4b4452737e34d2f55a35ab95428
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30773521"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935136"
 ---
-# <a name="maps-api"></a>Rozhraní API map
+# <a name="using-the-google-maps-api-in-your-application"></a>Použití rozhraní API Google Maps v aplikaci
 
 Pomocí aplikace mapy je skvělé, ale někdy, do které chcete zahrnout mapy přímo v aplikaci. Kromě integrovaných mapuje aplikace, Google, poskytuje taky [nativní mapování rozhraní API pro Android](https://developers.google.com/maps/documentation/android/).
 Rozhraní API map je vhodná pro případy, kdy chcete zachovat větší kontrolu nad prostředí mapování. Věcí, které je možné pomocí rozhraní API map, patří:
@@ -315,7 +316,7 @@ Rozhraní API systému Android mapy poskytuje rozhraní API umožňující aktiv
 
 Mapy jsou modelována jako plochý roviny na obrazovce, v závislosti na projekci Mercator. Zobrazení mapy, je *fotoaparát* vypadající rovnou dolů na této umělé. Pozice kamery lze řídit změnou umístění, přiblížení, Náklon a vliv. [CameraUpdate](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/CameraUpdate) třída se používá k přesunu umístění fotoaparát. `CameraUpdate` objekty nejsou přímo vytvořeny instance, místo toho poskytuje rozhraní API map [CameraUpdateFactory](http://developer.android.com/reference/com/google/android/gms/maps/CameraUpdateFactory.html) třídy.
 
-Jednou `CameraUpdate` objekt byl vytvořen, jako parametr je předán do buď [GoogleMap.MoveCamera](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/GoogleMap.html#moveCamera(com.google.maps.CameraUpdate)) nebo [GoogleMap.AnimateCamera](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/GoogleMap.html#animateCamera(com.google.maps.CameraUpdate)) metody. `MoveCamera` Metoda aktualizace mapy okamžitě při `AnimateCamera` metoda poskytuje smooth, animovaný přechodu.
+Jednou `CameraUpdate` objekt byl vytvořen, jako parametr je předán do buď [GoogleMap.MoveCamera](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/GoogleMap.html#moveCamera%28com.google.maps.CameraUpdate%29) nebo [GoogleMap.AnimateCamera](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/GoogleMap.html#animateCamera%28com.google.maps.CameraUpdate%29) metody. `MoveCamera` Metoda aktualizace mapy okamžitě při `AnimateCamera` metoda poskytuje smooth, animovaný přechodu.
 
 Tento fragment kódu je jednoduchý příklad použití `CameraUpdateFactory` k vytvoření `CameraUpdate` , se zvýší o jednu úroveň přiblížení mapy:
 
@@ -328,7 +329,7 @@ if (_map != null) {
 }
 ```
 
-Poskytuje rozhraní API map [CameraPosition](http://developer.android.com/reference/com/google/android/gms/maps/model/CameraPosition.html) která bude agregovat všech možných hodnot pro pozice fotoaparát. Instance této třídy lze zadat do [CameraUpdateFactory.NewCameraPosition](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/CameraUpdateFactory#newCameraPosition(com.google.android.gms.maps.model.CameraPosition)) metodu, která vrátí `CameraUpdate` objektu. Rozhraní API map také zahrnuje [CameraPosition.Builder](http://developer.android.com/reference/com/google/android/gms/maps/model/CameraPosition.Builder.html) třídu, která poskytuje rozhraní fluent API pro vytváření `CameraPosition` objekty.
+Poskytuje rozhraní API map [CameraPosition](http://developer.android.com/reference/com/google/android/gms/maps/model/CameraPosition.html) která bude agregovat všech možných hodnot pro pozice fotoaparát. Instance této třídy lze zadat do [CameraUpdateFactory.NewCameraPosition](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/CameraUpdateFactory#newCameraPosition%28com.google.android.gms.maps.model.CameraPosition%29) metodu, která vrátí `CameraUpdate` objektu. Rozhraní API map také zahrnuje [CameraPosition.Builder](http://developer.android.com/reference/com/google/android/gms/maps/model/CameraPosition.Builder.html) třídu, která poskytuje rozhraní fluent API pro vytváření `CameraPosition` objekty.
 Následující fragment kódu ukazuje příklad vytvoření `CameraUpdate` z `CameraPosition` a použití, chcete-li změnit na pozici fotoaparát `GoogleMap`:
 
 ```csharp
@@ -372,7 +373,7 @@ Poskytuje rozhraní API map [značky](https://developers.google.com/maps/documen
 
 ##### <a name="adding-a-marker"></a>Přidání značka
 
-Chcete-li přidat značku k mapě, je nutné vytvořit nový [MarkerOptions](https://developers.google.com/android/reference/com/google/android/gms/maps/model/MarkerOptions) objektu a pak zavolají [AddMarker](http://developer.android.com/reference/com/google/android/gms/maps/GoogleMap.html#addMarker(com.google.android.gms.maps.model.MarkerOptions)) metodu `GoogleMap` instance. Tato metoda vrátí [značky](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/model/Marker) objektu.
+Chcete-li přidat značku k mapě, je nutné vytvořit nový [MarkerOptions](https://developers.google.com/android/reference/com/google/android/gms/maps/model/MarkerOptions) objektu a pak zavolají [AddMarker](http://developer.android.com/reference/com/google/android/gms/maps/GoogleMap.html#addMarker%28com.google.android.gms.maps.model.MarkerOptions%29) metodu `GoogleMap` instance. Tato metoda vrátí [značky](https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/model/Marker) objektu.
 
 ```csharp
 MapFragment mapFrag = (MapFragment) FragmentManager.FindFragmentById(Resource.Id.my_mapfragment_container);
@@ -382,7 +383,7 @@ if (_map != null) {
     MarkerOptions markerOpt1 = new MarkerOptions();
     markerOpt1.SetPosition(new LatLng(50.379444, 2.773611));
     markerOpt1.SetTitle("Vimy Ridge");
-    _map.AddMarker(marker1);
+    _map.AddMarker(markerOpt1);
 }
 ```
 
@@ -402,7 +403,7 @@ Tato metoda přebírá [BitmapDescriptor](http://developer.android.com/reference
 
 -   `FromBitmap(Bitmap image)` &ndash; Zadaný rastrový obrázek použijte jako ikona.
 
--   `FromFile(string fileName` &ndash; Vytvořte vlastní ikonou ze souboru v zadané cestě.
+-   `FromFile(string fileName)` &ndash; Vytvořte vlastní ikonou ze souboru v zadané cestě.
 
 -   `FromResource(int resourceId)` &ndash; Vytvořte vlastní ikonou z zadaný prostředek.
 
@@ -417,7 +418,7 @@ if (_map != null)
     markerOpt1.SetPosition(new LatLng(50.379444, 2.773611));
     markerOpt1.SetTitle("Vimy Ridge");
     markerOpt1.InvokeIcon(BitmapDescriptorFactory.DefaultMarker (BitmapDescriptorFactory.HueCyan));
-    _map.AddMarker(marker1);
+    _map.AddMarker(markerOpt1);
 }
 ```
 
@@ -515,7 +516,7 @@ Následující fragment kódu ukazuje, jak k vykreslení kruh:
 CircleOptions circleOptions = new CircleOptions ();
 circleOptions.InvokeCenter (new LatLng(37.4, -122.1));
 circleOptions.InvokeRadius (1000);
-_map.AddCircle (CircleOptions);
+_map.AddCircle (circleOptions);
 ```
 
 
@@ -614,4 +615,3 @@ Odvolat, zda je informační okno statického `View` které je vykresleno jako b
 - [Mapy Google Android API v2](https://developers.google.com/maps/documentation/android/)
 - [Google Play Services APK](https://play.google.com/store/apps/details?id=com.google.android.gms&hl=en)
 - [Získat klíč Google Maps API](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)
-- [Problém 57880: Aktualizovat ale AVD není služby Google Play](https://code.google.com/p/android/issues/detail?id=57880)

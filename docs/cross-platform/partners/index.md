@@ -5,13 +5,13 @@ ms.prod: xamarin
 ms.assetid: F42526FF-2B0D-4A9D-B129-CECF680ED0DE
 author: conceptdev
 ms.author: crdun
-ms.date: 06/19/2017
-ms.openlocfilehash: 8f52c6783335bd7bc26bc9886dee670489ffba09
-ms.sourcegitcommit: c2d1249cb67b877ee0d9cb8d095ec66fd51d8c31
+ms.date: 06/25/2018
+ms.openlocfilehash: 4a3045b6f35930b61598f7038974722801c38c2e
+ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36291764"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36935513"
 ---
 # <a name="certified-consulting-partners-to-deliver-mobile-solutions"></a>Certifikované konzultační partnery dodávat mobilních řešení
 
@@ -56,7 +56,6 @@ _Uvedené podle primární umístění, mnoho partneři poskytovat služby přes
 |[Ciber USA](http://www.ciber.com/)|Greenwood vesnice, USA|Cloudové služby první digitální transformace, jedinečné akcelerátorů a cílených talentu služby zajišťujeme, vaše budoucí možné.|
 |[Digitální CIE Labs](http://www.ciedigital.com/)|Los Angeles, USA; Irvine, USA|Digitální Labs CIE je Vášniví o vysvětlení, že firmy vyzve našich partnerů vzhled a innovating nové softwarové řešení, které převést hodnotu measureable enterprise|
 |[Přehlednost podniků](https://www.clarity-ventures.com)|Austinu, TX|Přehlednost je dobře zaokrouhlené, professional, všechny rozšíření služby vaší firmy. Od tvůrčí týmu návrhu nic z svou obchodní identitu na obrazovce obrazovku...|
-|[Technologie Mill kódu](https://codemilltech.com/)|Madison, USA|Kód Mill je konzultace ohledně boutique a školení firma, která nabízí společností Microsoft a Xamarin MVP Matt Soucoup. Se specializuje na vývoj pro Xamarin a Azure |
 |[Řešení cognizant technologie](http://www.cognizant.com)|Buenos Aires, Argentinou; Auckland, Nový Zéland; Melbourne, Austrálie; Sydney, Austrálie; Brisbane, Austrálie; Brussels, Belgie; Síť SAN Paulo, Brazílie; Toronto, Kanada; Šanghaj, Čína; Heredia, Kostarika; Jersey města, ni, USA; Síť SAN Franciscu, certifikační Autority, USA; Teaneck, ni, USA|Cognizant kombinuje nadšení pro klienta spokojenost, technologie inovace, přímé odvětví a obchodní proces znalosti a globální, spolupráce pracovníky, kteří ztělesňuje budoucí práce|
 |[Souvislý řešení, Inc.](http://www.coherentsolutions.com)|New York, NY; Boston, MA; Minsk, Bělorusko|Vývoj softwaru konzultace ohledně a využití poskytovatele společnosti, která řeší zákazníka obchodních problémů spojením globální znalosti, inovace a kreativitu je souvislý řešení|
 |[Cruxlab](https://cruxlab.com/)|Los Angeles, USA|Vlastní digitální produktů pro začínající podniky a podniky, vytvoříme pro koncové uživatele a podniky|
@@ -65,10 +64,10 @@ _Uvedené podle primární umístění, mnoho partneři poskytovat služby přes
 |[STUPŇŮ](http://www.degdigital.com)|Overland parku, USA|STUPŇŮ vytvoří inteligentní digitální marketing, obchodu a spolupráce strategií, které umožnit organizacím rozšířit jejich konkurenční výhody a dosáhli svých cílů|
 |[DevRabbit](http://www.devrabbit.com)|Síť SAN Ramon, USA|DevRabbit je USA, na základě technická konzultace ohledně pevně, který poskytuje stavu techniky řešení pro podnikovou mobilitu, vývoj webových aplikací a konzultace ohledně cloudu.|
 |[Digineer](http://www.digineer.com)|Plymouth, MN|Digineer poskytuje správu podnikových projektů, obchodní analýzy, vývoj aplikace a business intelligence a pracovníky služby|
-|[DigitasLBi Sverige AB](http://www.digitaslbi.com)|Boston, MA; Evropa; Asie Pasific;  Blízký východ; Afrika|DigitasLBi je agentura mezinárodní komunikace který společnostem přejděte digitální world|
+|[DigitasLBi Sverige AB](http://www.digitaslbi.com)|Boston, MA; Evropa; Asie a Tichomoří;  Blízký východ; Afrika|DigitasLBi je agentura mezinárodní komunikace který společnostem přejděte digitální world|
 |[DMI](https://dminc.com/)|Bethesda, MD|Vytvořená tak, aby organizacím reinvent sami pro připojené world, nabízíme jedinečný blend funkcí a udržování přistupovat navržený tak, aby paliva inovace.|
 |[DOOR3](http://door3.com/)|New Yorku, USA|Ve světě tvůrčí úřady konzultační velké podniky a kavárnách specializované implementace, se liší. Záleží nám na našeho podnikání, ale záleží nám na naše zákazníky více.|
-|[DreamTeam Mobile](http://dreamteam-mobile.com)|D.C. Washington, USA|DreamTeam Moible vytvářet nativní aplikace pro iOS, Android, Windows a Mac aplikace Swift pomocí Xamarin a reagovat na nativní. Můžeme vytvářet nativní aplikace pro různé platformy s sdílené základy kódu|
+|[DreamTeam Mobile](http://dreamteam-mobile.com)|D.C. Washington, USA|DreamTeam Mobile vytvářet nativní aplikace pro iOS, Android, Windows a Mac aplikace Swift pomocí Xamarin a reagovat na nativní. Můžeme vytvářet nativní aplikace pro různé platformy s sdílené základy kódu|
 |[Durwella](http://www.durwella.com)|Houston, USA|Durwella je softwarové společnosti řešení, která se zaměřuje na vyhledání projekty|
 |[EastBanc technologie](http://www.eastbanctech.com)|D.C. Washington, USA|Technologie EastBanc je flexibilní technologie řešeních společnost vyvíjející software platformy vázané úplné cyklu|
 |[Okraj Webware, Inc.](https://edgewebware.com)|Miamisburg, OH|Okraj Webware, Inc. poskytuje webové a mobilní aplikace návrh a vývoj služby|
@@ -79,7 +78,7 @@ _Uvedené podle primární umístění, mnoho partneři poskytovat služby přes
 |[Úsilí softwaru technologie Inc.](http://www.techendeavour.com)|Austinu, TX|Konzultanty úsilí na vyhodnocení Enterprise Mobile vyspělosti a usnadní adresování strategické mobility požadavky organizace na všech úrovních|
 |[Rozšířené systémy konzultace ohledně](http://www.enhancedsystems.com)|Janíček města, TN|Rozšířená systémy konzultace, Inc. poskytuje odborné návrhu, vývoj a integrační služby pro společnosti hledající k vytvoření nové obchodní aplikace nebo existující|
 |[Envoc](http://envoc.com/)|Baton Rouge, LA|Jsme existovat v průniku kreativitu a technologie pro použití vynikající prostředí a inovací|
-|[EPAM systémy](https://www.epam.com)|Newtown, PA|EPAM systémy, Inc je přední globální produktu vývoj a digitální platformě engineering firemní služby|
+|[EPAM systémy](https://www.epam.com)|Newtown, PA; New Yorku; Philadelphia; Chicagu; Brno; Los Angeles; Londýn; Minsk; Petrohradské; Budapešť|EPAM systémy, Inc je přední globální produktu vývoj a digitální platformě engineering firemní služby|
 |[Experis Ciber B.V.](http://www.ciber.com)|Tróje, MI |Ciber je globální IT konzultační společnost s více než 2,900 zaměstnanci a pobočkách v Severní Americe a Indie|
 |[Rychloposuv vpřed LLC](http://www.fastforward.sh/)|Salem, MA|Rychloposuv vpřed sama vyvinula aplikace ve všech hlavních nativní operačních systémech, všech typů zařízení a ujistěte se, pracovní Internet věcí|
 |[Fincons skupiny](http://www.finconsgroup.com)|Los Angeles, CA; New York, NY; Londýn, Spojené království|Fincoins skupiny služeb a řešení poskytuje konkrétní odpovědi skutečné potřebám velkých účtů a malé a střední podniky, jak pro technologie a procesy, která zaručí inovací, které potřebují.|
@@ -88,7 +87,7 @@ _Uvedené podle primární umístění, mnoho partneři poskytovat služby přes
 |[FusionComputing, Inc.](http://www.fusioncomputing.com)|Douglasville, Georgie|Budeme vyvíjet nativních aplikací křížové platformy, můžete uživatele oslovit vašim zákazníkům na jakémkoli zařízení.|
 |[Griffin řešení skupiny](http://griffinsolutionsgroup.com)|Alpharetta, GA|Skupiny řešení Griffin byla založena, protože jsme se o materiály pro řešení obchodních problémů. Použijeme letech zkušeností v velkého množství odvětví naše klientů jako pomůcku při rozhodování správné technologie|
 |[Harman připojené služby, Inc.](http://www.harman.com)|Horská zobrazení, CA; Hartford, Berte; Seattle, WA; Newark, ni; Londýn, Spojené království; Berlín, Německo; Moskva, Rusko|Harman návrhy a techniky připojené produktů a řešení pro automakers, příjemci a podniky po celém světě, včetně systémy připojené car, zvuk a vizuální produktů, podniková řešení automatizace; a propojené služby|
-|[Technologie kompatibilního hardwaru](https://www.hcltech.com/)|Noida Uttar Pradesh, Indie; Mississauga, ON, Kanada; New York, NY, USA; Síť SAN Paulo, Brazílie; Mexico města, CDMX, Mexico; Londýn, Spojené království; Sydney, Austrálie|Technologie kompatibilního hardwaru je globální technologie nové generace společnost, která pomáhá podnikům reimagine svého podnikání pro digitální stáří|
+|[Technologie kompatibilního hardwaru](https://www.hcltech.com/)|Noida Uttar Pradesh, Indie; Mississauga, ON, Kanada; New York, NY, USA; Síť SAN Paulo, Brazílie; Mexico města, CDMX, Mexico; Londýn, Spojené království; Sydney, Austrálie|Technologie kompatibilního hardwaru je globální technologie nové generace společnost, která pomáhá podnikům znovu Představte si své firmy pro digitální stáří|
 |[Hexaware technologie Ltd](http://hexaware.com/)|Iselin, New Jersey|Hexaware je globální poskytovatel IT, BPO a konzultace ohledně služby |
 |[Skupiny špičkové technologie, LLC](http://hightg.com)|Kansas města, Kansas|Společnost vyvíjející software vlastní|
 |[Hitcents](http://hitcents.com)|Zelená kuželky, KY; Los Angeles, certifikační Autority, USA; Síť SAN Franciscu, certifikační Autority, USA; Šanghaj, Šanghaj Čína|Hitcents není právě vytvářet aplikace; vytváří prostředí, které překročí právě jednu platformu. Také podporují aplikace 24 hodin denně 7, aby žádným uživatelem, kdekoli, můžete přístup k vaší aplikace.|
@@ -239,7 +238,7 @@ _Uvedené podle primární umístění, mnoho partneři poskytovat služby přes
 |[Pilotní nasazení toku CVBA](http://www.flowpilots.com)|Antverpy, Belgie|Tok návrhů pilotní nasazení, sestavení, nasazení a správu digitální nástroje, které pomáhají zákazníkům zvýšit výnosy, snížit náklady nebo přepněte volnost a flexibilitu na své zaměstnance.|
 |[KENZE](http://www.kenze.be)|Mechelen, Belgie|Rozhraní Microsoft .NET projecten en gerelateerde technologieën.  De drie belangrijkste pijlers binnen de organisatie zijn mensen, kennis en mensenkennis, má zij vormen de základ voor kwalitatieve succesvolle projecten en tevreden klanten. |
 |[Levelapp](http://www.levelapp.be)|Hoeilaart, Belgie|Snažíme se Levelapp úplné mobilní agenturou. jsme fungují jako vývojáři softwaru. Vytvoříme křížové platformy aplikace, které přizpůsobit a pohonu svou strategické vizi. Hodnota jsme poskytovat zákazníkům, partneři a zaměstnanci. |
-|[Realdolmen](http://www.realdolmen.com/)|Huizingen, Belgie; Kontich, Belgie; Lummen, Belgie; Ghent, Belgie; Harelbeke, Belgie; Namur, Belgie; Monsu, Belgie|Mobile je novým standardem. Téměř všechny společností, potřebujete mobilní služby nebo aby aplikace zůstaly konkurenčním prostředí. Ale strategie mobilní sama o sobě nemá dostatek; všechno, co musí být plně integrované v obecné ICT infrastruktuře, včetně cloudu, zabezpečení, ERP a tak dále. V Realdolmen říkáme to firma připojen. <link>|
+|[Realdolmen](http://www.realdolmen.com/)|Huizingen, Belgie; Kontich, Belgie; Lummen, Belgie; Ghent, Belgie; Harelbeke, Belgie; Namur, Belgie; Monsu, Belgie|Mobile je novým standardem. Téměř všechny společností, potřebujete mobilní služby nebo aby aplikace zůstaly konkurenčním prostředí. Ale strategie mobilní sama o sobě nemá dostatek; všechno, co musí být plně integrované v obecné ICT infrastruktuře, včetně cloudu, zabezpečení, ERP a tak dále. V Realdolmen říkáme to firma připojen.|
 
 
 ## <a name="brazil"></a>Brazílie
@@ -574,7 +573,7 @@ _Uvedené podle primární umístění, mnoho partneři poskytovat služby přes
 |[Billennium](http://billennium.pl/)|Varšava, Polsko |Billennium má mnoho let prostředí při vývoji inovativní obchodní nástroje a jejich řešení.|
 |[Okraj o.o. z jednoho řešení služeb.](http://www.edge1s.com)|Varšava, Polsko |Poskytujeme znalosti a zkušenosti s vysoce kvalifikovaný konzultanty IT. V rámci každé služby v našem portfolií Zaručujeme flexibilní přístup k očekávání a požadavky klienta|
 |[O.o. z NETBULLS služeb.](http://www.netbulls.io)|Bialystok, Polsko|Získáte vašich nápadů na trh skilfully. Bez nevyužité £$ €, čas nebo výmluv. |
-|[SII](http://www.sii.pl/en)|Varšava, Polsko; Paříž, Francie; Madrid, Španělsko; Berlín, Německo; Amsterdam, Nizozemí; Brussels, Belgie; Lucembursko města, Lucembursko; Genevy, Švýcarska; Marrakesh, Maroko; Praha, Czechia; Bukurešť, Rumunsko; Toronto, ON, Kanada; Santiago Santiago metropolitní oblasti, základě; Buenos Aires autonomního města Buenos Aires, Argentinou; Bogot√ °, Bogoty, Kolumbie; Dillí, Indie|SII je přední IT služeb společnost v Polsko podpora digitální transformace programy z jeho koncepci úspěšné doručení až. Poskytujeme znalosti doručování enterprise a příjemce aplikace nejprve povolení komunikace zařízení, velké objemy dat, zpracování a offline.|
+|[SII](http://www.sii.pl/en)|Varšava, Polsko; Paříž, Francie; Madrid, Španělsko; Berlín, Německo; Amsterdam, Nizozemí; Brussels, Belgie; Lucembursko města, Lucembursko; Genevy, Švýcarska; Marrakesh, Maroko; Praha, Czechia; Bukurešť, Rumunsko; Toronto, ON, Kanada; Santiago Santiago metropolitní oblasti, základě; Buenos Aires autonomního města Buenos Aires, Argentinou; Bogotá, Bogoty, Kolumbie; Dillí, Indie|SII je přední IT služeb společnost v Polsko podpora digitální transformace programy z jeho koncepci úspěšné doručení až. Poskytujeme znalosti doručování enterprise a příjemce aplikace nejprve povolení komunikace zařízení, velké objemy dat, zpracování a offline.|
 
 
 ## <a name="portugal"></a>Portugalsko
