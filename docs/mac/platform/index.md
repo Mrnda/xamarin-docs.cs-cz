@@ -7,16 +7,27 @@ ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/19/2016
-ms.openlocfilehash: 9e82db1c0f38d35c23a6cd0667bef49315ff86be
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 539ec976e3ea28aa2e017318022bd102f2c03ae5
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792215"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066881"
 ---
 # <a name="macos-platform-features"></a>systému macOS funkcí platformy
 
 Dokumenty v této části popisují práci s funkcí systému macOS v aplikaci Xamarin.Mac klíč, specifické pro platformu.
+
+## <a name="introduction-to-macos-mojavemacplatformintroduction-to-macos-mojaveindexmd"></a>[Úvod do systému macOS Mojave](~/mac/platform/introduction-to-macos-mojave/index.md)
+
+> [!WARNING]
+> Xamarin pro macOS Mojave podporu je aktuálně ve verzi preview, což znamená, že může obsahovat chyby, není funkce dokončení a může změnit. Použijte pouze experimenty.
+
+Tento dokument obsahuje přehled nové a aktualizované funkce v systému macOS Mojave, které jsou k dispozici pro použití při vytváření Xamarin.Mac aplikací.
+
+## <a name="introduction-to-macos-high-sierramacplatformintroduction-to-macos-high-sierraindexmd"></a>[Úvod do systému macOS vysoké Sierra](~/mac/platform/introduction-to-macos-high-sierra/index.md)
+
+Tento dokument popisuje nové a vylepšené funkce v systému macOS vysoké Sierra.
 
 ## <a name="introduction-to-macos-sierramacplatformintroduction-to-macos-sierraindexmd"></a>[Úvod do macOS Sierry](~/mac/platform/introduction-to-macos-sierra/index.md)
 
@@ -30,7 +41,6 @@ Odkazovat [Poradce při potížích s stránky](~/cross-platform/macios/binding/
 ## <a name="introduction-to-opentkmacplatformopentkmd"></a>[Úvod do OpenTK](~/mac/platform/opentk.md)
 
 OpenTK (sada nástrojů otevřete) je k rozšířené, nízké úrovně C# knihovny, která usnadňuje práci s OpenGL a OpenCL OpenAL. OpenTK lze použít pro hry, vědecké aplikace nebo jiné projekty, které vyžadují 3D grafiky, zvuk nebo výpočetní funkce. Tento článek poskytuje stručný úvod do používání OpenTK v Xamarin.Mac aplikace.
-
 
 ## <a name="introduction-to-storyboardsmacplatformstoryboardsindexmd"></a>[Úvod do scénářů](~/mac/platform/storyboards/index.md)
 

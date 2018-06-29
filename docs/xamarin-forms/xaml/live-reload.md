@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
 ms.date: 05/11/2018
-ms.openlocfilehash: 15de334500ea25d22657c257a4a4fc6887cc122c
-ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
+ms.openlocfilehash: 12b677c8cc4a709a865d2eaee3ea44a6babf1b05
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36935425"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066647"
 ---
 # <a name="xamarin-live-reload"></a>Načtěte Xamarin za provozu
 
@@ -28,7 +28,7 @@ Za provozu načtěte je aktuálně k dispozici pouze v Visual Studio 2017.
 
 ## <a name="requirements"></a>Požadavky
 
-* [Visual Studio 2017 verze 15.7 nebo vyšší](https://www.visualstudio.com/vs/) nebo novější s **pro vývoj mobilních řešení s .NET** zatížení.
+* [Visual Studio 2017 verze 15.7 nebo vyšší](https://visualstudio.microsoft.com/vs/) nebo novější s **pro vývoj mobilních řešení s .NET** zatížení.
 * [Xamarin.Forms 3.0.0 nebo vyšší](https://www.nuget.org/packages/Xamarin.Forms/) nebo vyšší.
 
 ## <a name="getting-started"></a>Začínáme

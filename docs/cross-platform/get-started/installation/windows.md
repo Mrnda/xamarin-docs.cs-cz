@@ -6,12 +6,12 @@ ms.assetid: E20D4463-368E-4B60-A059-F50DB8C5552D
 author: asb3993
 ms.author: amburns
 ms.date: 09/29/2017
-ms.openlocfilehash: 419addde14d5be99833b4611a4af2a1be8756b9d
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 6c2fe10b9b29901dfbb6173df131d093fe726bff
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781475"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066949"
 ---
 # <a name="installing-xamarin-in-visual-studio-2017"></a>Instalaci Xamarinu ve Visual Studio 2017
 
@@ -36,7 +36,7 @@ Další informace o požadavcích pro instalaci a použití Xamarin najdete v t�
 Xamarin lze nainstalovat jako součást nové instalace Visual Studio 2017.
 Chcete-li dosáhnout, použijte následující kroky:
 
-1. Stáhněte si Visual Studio 2017 Community, Visual Studio Professional nebo Visual Studio Enterprise z [Visual Studio](https://www.visualstudio.com/vs/) stránky (ke stažení jsou k dispozici odkazy v dolní části).
+1. Stáhněte si Visual Studio 2017 Community, Visual Studio Professional nebo Visual Studio Enterprise z [Visual Studio](https://visualstudio.microsoft.com/vs/) stránky (ke stažení jsou k dispozici odkazy v dolní části).
 
 2. Poklikejte na stažený balíček, který chcete spustit instalaci.
 

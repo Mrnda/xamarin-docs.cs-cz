@@ -6,12 +6,12 @@ ms.assetid: 4ABC0247-B608-42D4-89CB-D2E598097142
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: c5db0a55cc1d2597837ae5feb2c5167a0a21b494
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 02d79103825d150b6e6f5bec7ed3ee1788078312
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792977"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066624"
 ---
 # <a name="getting-started-with-objective-c"></a>Začínáme s jazyka Objective-C
 
@@ -25,7 +25,7 @@ Použít vložení .NET pomocí jazyka Objective-C, budete potřebovat s adresou
 * Xcode 8.3.2 nebo novější
 * [Mono 5.0](http://www.mono-project.com/download/)
 
-Můžete nainstalovat [Visual Studio pro Mac](https://www.visualstudio.com/vs/visual-studio-mac/) upravit a kompilace kódu C#.
+Můžete nainstalovat [Visual Studio pro Mac](https://visualstudio.microsoft.com/vs/mac/) upravit a kompilace kódu C#.
 
 > [!NOTE]
 > * Dřívějších verzích systému macOS, Xcode a Mono _může_ pracovat, ale testována a nepodporované

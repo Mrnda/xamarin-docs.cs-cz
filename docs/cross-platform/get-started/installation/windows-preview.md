@@ -6,12 +6,12 @@ ms.assetid: 9F730444-06E8-4B3F-8A19-CA95CD484FFA
 author: asb3993
 ms.author: amburns
 ms.date: 03/20/2018
-ms.openlocfilehash: 17deacf115042a2fcd6bad9e22a630eadb432d44
-ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
+ms.openlocfilehash: 12a661a7cb0e92046e56c5c2ece6e8504252ca10
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36269015"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066855"
 ---
 # <a name="installing-xamarin-preview-on-windows"></a>Instalace Xamarin Preview v systému Windows
 
@@ -21,7 +21,7 @@ Visual Studio 2017 nepodporuje alpha, beta a stabilní kanály stejným způsobe
 - **Náhled** – ekvivalentní _Alpha_ a _Beta_ kanály v sadě Visual Studio pro Mac
 
 > [!TIP] 
-> Můžete vyzkoušet na předběžné verze funkcí, měli byste [stažení instalačního programu sady Visual Studio 2017 Preview](https://www.visualstudio.com/vs/preview/), které se nabízejí možnost nainstalovat **Preview** verzích sady Visual Studio – souběžného s stabilní ( Vydání) verze. Další informace o co je nového ve Visual Studio 2017 naleznete v [poznámky k verzi](/visualstudio/releasenotes/vs2017-preview-relnotes).
+> Můžete vyzkoušet na předběžné verze funkcí, měli byste [stažení instalačního programu sady Visual Studio 2017 Preview](https://visualstudio.microsoft.com/vs/preview/), které se nabízejí možnost nainstalovat **Preview** verzích sady Visual Studio – souběžného s stabilní ( Vydání) verze. Další informace o co je nového ve Visual Studio 2017 naleznete v [poznámky k verzi](/visualstudio/releasenotes/vs2017-preview-relnotes).
 
 Verze Preview sady Visual Studio může zahrnovat odpovídající verze Preview Xamarin funkcí, včetně:
 

@@ -6,12 +6,12 @@ ms.assetid: D5453695-69C9-44BC-B226-5B86950956E2
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
-ms.openlocfilehash: 3da76e650281cbf7320b88fa9c76948865d7a2fb
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 683f448c3e0cdba1bbe3ba68f0db3225675f5830
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793558"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066894"
 ---
 # <a name="getting-started-with-ios"></a>Začínáme s iOS
 
@@ -19,7 +19,7 @@ ms.locfileid: "34793558"
 
 Kromě požadavků z našich [Začínáme s jazyka Objective-C](~/tools/dotnet-embedding/get-started/objective-c/index.md) průvodce, budete také potřebovat:
 
-* [Xamarin.iOS 10.11](https://www.visualstudio.com/xamarin/) nebo novější
+* [Xamarin.iOS 10.11](https://visualstudio.microsoft.com/xamarin/) nebo novější
 
 ## <a name="hello-world"></a>Ahoj světe
 

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/21/2017
-ms.openlocfilehash: f7ba0620a4639ff62e2d75d7cf8f02fcc01faac5
-ms.sourcegitcommit: c9ebf456e1c6924956bedb13f4ea78ff09f7b1a0
+ms.openlocfilehash: 2cb2167f534251e15455e11b6a2c85f53fb48b8c
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33113470"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066998"
 ---
 # <a name="publishing-independently"></a>Publikování nezávisle
 
@@ -28,7 +28,7 @@ Pro vývoj, nasazení a distribuci aplikací Xamarin.Android k dispozici jsou č
 
 -   **Visual Studio Enterprise** &ndash; pro týmy jakékoli velikosti (jenom Windows). Tuto licenci obsahuje funkce enterprise, standard nebo cloudové předplatné.
 
-Přejděte [visualstudio.com](https://www.visualstudio.com/xamarin/) stahování Community Edition nebo Další informace o zakoupení edice Professional a Enterprise.
+Přejděte [visualstudio.com](https://visualstudio.microsoft.com/xamarin/) stahování Community Edition nebo Další informace o zakoupení edice Professional a Enterprise.
 
 
 ## <a name="allow-installation-from-unknown-sources"></a>Povolit instalace z neznámých zdrojů
@@ -62,7 +62,7 @@ Je možné aplikaci distribuovat webový server. To lze provést odeslání apli
 Ruční instalace je třetí možnost pro instalaci aplikace. Za účelem ruční instalace aplikace:
 
 1.   **Distribuovat kopii APK uživateli** &ndash; například tato kopie mohou být distribuovány na disku CD nebo USB flash disku.
-1.   **(Uživatel) nainstaluje aplikaci na zařízení s Androidem** &ndash; pomocí příkazového řádku *Android ladění most* (**adb**) nástroj. **ADB** je univerzální nástroj příkazového řádku, která umožňuje komunikaci se instance emulátoru nebo zařízení se systémem Android zapnuté. Sada Android SDK zahrnuje **adb**; se nachází v adresáři  **<sdk>/platform-tools /**.
+1.   **(Uživatel) nainstaluje aplikaci na zařízení s Androidem** &ndash; pomocí příkazového řádku *Android ladění most* (**adb**) nástroj.   **ADB** je univerzální nástroj příkazového řádku, která umožňuje komunikaci se instance emulátoru nebo zařízení se systémem Android zapnuté. Sada Android SDK zahrnuje **adb**; se nachází v adresáři  **<sdk>/platform-tools /**.
 
 Zařízení s Androidem musí být připojen pomocí kabelu USB k počítači.
 Počítače se systémem Windows může také vyžadovat další ovladače USB od dodavatele phone rozpoznala **adb**. Pokyny k instalaci pro tyto další ovladače USB je nad rámec tohoto dokumentu.

@@ -6,12 +6,12 @@ ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
 author: topgenorth
 ms.author: toopge
 ms.date: 06/19/2018
-ms.openlocfilehash: f7c5217a9c2d3881ca29094c3186e448975db6a3
-ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
+ms.openlocfilehash: 690329aa1577c66b3aa2794342a8e367477d3a74
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36268966"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066920"
 ---
 # <a name="inspector-installation-and-requirements"></a>Kontrola instalace a požadavky
 
@@ -19,13 +19,13 @@ ms.locfileid: "36268966"
 
 # <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
-1. Stáhněte a nainstalujte [Visual Studio Enterprise](https://www.visualstudio.com/vs/) a vyberte **pro vývoj mobilních řešení s .NET** zatížení.
+1. Stáhněte a nainstalujte [Visual Studio Enterprise](https://visualstudio.microsoft.com/vs/) a vyberte **pro vývoj mobilních řešení s .NET** zatížení.
 1. [Přihlaste se](https://docs.microsoft.com/visualstudio/ide/signing-in-to-visual-studio) povolit předplatné Enterprise.
 1. [Zkontrolujte](~/tools/inspector/inspect.md) vlastní aplikace!
 
 # <a name="macostabmacos"></a>[macOS](#tab/macos)
 
-1. Stáhněte a nainstalujte [Visual Studio pro Mac](https://www.visualstudio.com/vs/mac/).
+1. Stáhněte a nainstalujte [Visual Studio pro Mac](https://visualstudio.microsoft.com/vs/mac/).
 1. [Přihlaste se](https://docs.microsoft.com/visualstudio/mac/activation) povolit předplatné Enterprise.
 1. [Zkontrolujte](~/tools/inspector/inspect.md) vlastní aplikace!
 

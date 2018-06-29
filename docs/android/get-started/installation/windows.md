@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/22/2018
-ms.openlocfilehash: 6577b80c6ec71d7e038338d6c8a3e28dbbd75590
-ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
+ms.openlocfilehash: 1eb8d4ec9ad60f0f9e81676920df4d950a875088
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36935169"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37066439"
 ---
 # <a name="windows-installation"></a>Instalace systému Windows
 
@@ -118,7 +118,7 @@ Dalším krokem je Podíváme se na [Hello, Android](~/android/get-started/hello
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Stáhněte si Visual Studio](https://www.visualstudio.com/vs/)
+- [Stáhněte si Visual Studio](https://visualstudio.microsoft.com/vs/)
 - [Instalace nástrojů Visual Studio Tools pro Xamarin](~/cross-platform/get-started/installation/windows.md)
 - [Požadavky na systém](~/cross-platform/get-started/requirements.md)
 - [Instalace sady Android SDK](~/android/get-started/installation/android-sdk.md)

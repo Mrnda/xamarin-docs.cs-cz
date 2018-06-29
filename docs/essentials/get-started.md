@@ -5,12 +5,12 @@ ms.assetid: B2669C48-B659-4854-BD80-FEB0E876F5B9
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: f0f6eebbd12041a7be2d8e2dc00a9146b40d675f
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: a42086f70eb81a761358655b3effb9f8f934c8d4
+ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783071"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37067161"
 ---
 # <a name="get-started-with-xamarinessentials"></a>Začínáme s Xamarin.Essentials
 
@@ -63,6 +63,10 @@ Xamarin.Essentials je k dispozici jako balíčku NuGet, který lze přidat do ž
 5. Xamarin.Essentials vyžaduje nastavení specifických pro platformy:
 
     # <a name="androidtabandroid"></a>[Android](#tab/android)
+
+    Cílová verze Android kompilaci musí být 8.1, ale Xamarin.Essentials podporuje minimálně verze Android 4.4, odpovídající API úrovně 19, odpovídající úroveň rozhraní API 27. (V sadě Visual Studio, tyto dvě verze jsou nastavené v dialogovém okně Vlastnosti projektu Android projektu, na kartě Android Manifest. V sadě Visual Studio pro Mac je nastavena v dialogovém okně Možnosti projektu Android projektu, na kartě aplikace pro Android.) 
+    
+    Xamarin.Essentials nainstaluje verzi 27.0.2 Xamarin.Android.Support knihovny, které jsou potřeba. Žádné další Xamarin.Android.Support knihovny, které vaše aplikace vyžaduje by měl aktualizovat verzi 27.0.2 pomocí Správce balíčků NuGet. Všechny Xamarin.Android.Support knihovny, které používá vaše aplikace by měla být stejná a by měla být minimálně verze 27.0.2. Odkazovat [řešení potíží s stránky](troubleshooting.md) Pokud máte problémy s Xamarin.Essentials NuGet přidání nebo aktualizace NuGets ve vašem řešení.
 
     V projektu Android `MainLauncher` nebo jakoukoli `Activity` tedy spuštěného Xamarin.Essentials musí být inicializován v `OnCreate` metoda:
 
