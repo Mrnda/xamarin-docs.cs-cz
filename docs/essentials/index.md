@@ -5,12 +5,12 @@ ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 5fec06fd6f0c13a75040d940a11811ef97c3bcc3
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 97dc5494f37da1590178bc90feb673889598bdd7
+ms.sourcegitcommit: 72450a6a29599fa133ff4f16fb0b1f443d89f9dc
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782736"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37080373"
 ---
 # <a name="xamarinessentials"></a>Xamarin.Essentials
 
@@ -44,8 +44,11 @@ Postupujte podle pokynů pro tyto funkce Xamarin.Essentials integrovat do svých
 * [Informace o zeměpisné poloze](geolocation.md?context=xamarin/xamarin-forms) – načíst umístění GPS zařízení.
 * [Volný setrvačník](gyroscope.md?context=xamarin/xamarin-forms) – sledovat otočení přibližně tři primární osy v zařízení.
 * [Magnetometer](magnetometer.md?context=xamarin/xamarin-forms) – zjišťovat zařízení orientaci relativně k země magnetické pole.
+* [MainThread](main-thread.md?content=xamarin/xamarin-forms) – spustit kód na hlavní vlákno aplikace. 
 * [Otevřete prohlížeč](open-browser.md?context=xamarin/xamarin-forms) – snadno a rychle otevřete prohlížeč na konkrétní web.
+* [Orientace senzor](orientation-sensor.md?context=xamarin/xamarin-forms) – načíst orientaci zařízení do tří dimenzí místa.
 * [Telefon](phone-dialer.md?context=xamarin/xamarin-forms) – otevřete telefon.
+* [Napájení](power.md?context=xamarin/xamarin-forms) – získat stav energie šetřič tohoto zařízení.
 * [Předvolby](preferences.md?context=xamarin/xamarin-forms) – rychle a snadno přidat trvalé předvolby.
 * [Zamykací obrazovka](screen-lock.md?context=xamarin/xamarin-forms) – zachovat vzhůru obrazovce zařízení.
 * [Zabezpečené úložiště](secure-storage.md?context=xamarin/xamarin-forms) – bezpečně uložit data.
