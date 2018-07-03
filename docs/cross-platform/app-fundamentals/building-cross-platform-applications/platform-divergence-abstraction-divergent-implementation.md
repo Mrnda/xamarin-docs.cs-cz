@@ -1,27 +1,27 @@
 ---
-title: Součástí 4 – plánování práce s více platforem
-description: Tento dokument popisuje, jak zpracovat odchylkami aplikace založené na platformy nebo funkce. Ho popisuje velikost obrazovky, navigace metaphors, touch a gesta, nabízená oznámení a vzorů rozhraní, jako je například seznamy a karty.
+title: Část 4 – práce s několika platformami
+description: Tento dokument popisuje způsob zpracování odchylkami aplikace založené na platformy nebo funkce. Popisuje velikost obrazovky, navigace metaphors, dotykové ovládání a gesta, nabízená oznámení a rozhraní vzorů, jako je například seznamy a karty.
 ms.prod: xamarin
 ms.assetid: BBE47BA8-78BC-6A2B-63BA-D1A45CB1D3A5
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: c00519ecc4c8a8d85e993a6002d131f227eb9764
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 4a60c99cbc9819f07b77bfe9abe046ea92a550a5
+ms.sourcegitcommit: 081a2d094774c6f75437d28b71d22607e33aae71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781605"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37403322"
 ---
-# <a name="part-4---dealing-with-multiple-platforms"></a>Součástí 4 – plánování práce s více platforem
+# <a name="part-4---dealing-with-multiple-platforms"></a>Část 4 – práce s několika platformami
 
 ## <a name="handling-platform-divergence-amp-features"></a>Zpracování platformy odchylkami &amp; funkce
 
-Odchylkami není právě různé platformy problém; zařízení na "stejné" platformy mají různé možnosti (zejména široké škály zařízení Android, která jsou k dispozici). Zřejmé a základní je velikost obrazovky, ale může lišit a vyžadovat aplikace chovat různě v závislosti na jejich přítomnosti (nebo absenci) a zkontrolujte určité možnosti dalších atributů zařízení.
+Odchylkami není právě problém různé platformy; zařízení na platformě "stejné" mají různé možnosti (zejména celou řadu zařízení s Androidem, které jsou k dispozici). Jasné a basic je velikost obrazovky, ale může další atributy zařízení se liší a vyžaduje aplikaci pro kontrolu pro určité funkce a chovají různě v závislosti na jejich přítomnosti (nebo absenci).
 
-To znamená, že všechny aplikace potřeba řešit řádně snížení funkčnosti, jinak sadu rozdělení nežádoucí, nejnižší společný jmenovatel funkce k dispozici. Xamarin pro těsná integrace s nativních sad SDK pro každou platformu aplikacím umožňují využít výhod funkce specifické pro platformu, takže má smysl návrhu aplikace mohly používat tyto funkce.
+To znamená, že všechny aplikace musí čelit řádné snížení úrovně funkcí, jinak k dispozici sadě funkcí nejnižší společným faktorem, zkuste. Rozhraní Xamarin těsnou integraci s nativním sadám SDK pro každou platformu umožňovala využít výhod funkce specifické pro platformu, takže je vhodné navrhovat aplikace, které používají tyto funkce.
 
-Najdete v dokumentaci funkce platformy přehled o jak platformy liší funkcí.
+Najdete v dokumentaci funkce platformy pro přehled o jak se liší ve funkcích platformy.
 
  <a name="Examples_of_Platform_Divergence" />
 
@@ -31,32 +31,32 @@ Najdete v dokumentaci funkce platformy přehled o jak platformy liší funkcí.
  <a name="Fundamental_elements_that_exist_across_platforms" />
 
 
-#### <a name="fundamental-elements-that-exist-across-platforms"></a>Základní prvky, které existují různé platformy
+#### <a name="fundamental-elements-that-exist-across-platforms"></a>Základní prvky, které existují mezi platformami
 
-Existují některé vlastnosti mobilních aplikací, které jsou universal.
-Toto jsou vyšší úrovně koncepty, které jsou obecně true všech zařízení a proto můžete představují základ pro návrh vaší aplikace:
+Existují některé vlastnosti mobilních aplikací, které jsou univerzální.
+Toto jsou vyšší úrovně koncepty, které jsou obecně platí pro všechna zařízení a může proto tvoří základ vaší aplikace:
 
--  Výběr funkce prostřednictvím karty nebo nabídky
+-  Výběr funkce prostřednictvím karet nebo nabídky
 -  Seznam dat a posouvání
--  Jediné zobrazení dat
--  Úprava jednoho zobrazení dat
--  Navigace zpět
+-  Jednotné zobrazení dat
+-  Úpravy jednotné zobrazení dat
+-  Přechodu zpět
 
 
-Při navrhování vaší vysoké úrovně obrazovky toku běžné uživatelské prostředí můžete založit na tyto koncepty.
+Při navrhování toku vysoké úrovni obrazovky můžete založit na tyto koncepty běžné uživatelské prostředí.
 
  <a name="platform-specific_attributes" />
 
 
-#### <a name="platform-specific-attributes"></a>atributy specifické pro platformu
+#### <a name="platform-specific-attributes"></a>Atributy specifické pro platformu
 
-Kromě základní prvky, které existuje na všech platformách budou muset adresu klíče platformy rozdíly v návrhu. Musíte vzít v úvahu (a napsat kód speciálně pro zpracování) tyto rozdíly:
+Kromě základní prvky, které existují na všech platformách je potřeba klíče platformy rozdíly v návrhu. Budete muset zvážit (a napište kód speciálně pro zpracování) tyto rozdíly:
 
--   **Obrazovky velikosti** – některé platformy (jako je iOS a starší verze Windows Phone) mají standardizované velikost obrazovky, které se poměrně snadno cíle. Zařízení se systémem Android mít širokou škálu obrazovky dimenzí, které vyžadují další úsilí na podporu ve vaší aplikaci.
--   **Navigační metaphors** – liší napříč platformami (např. tlačítko "zadní" hardwaru, kontrolní mechanismus uživatelského rozhraní – Panorama) a v rámci platformy (Android 2 až 4, iPhone a iPad).
--   **Klávesnice** – zařízení se systémem Android některá mít fyzické klávesnice jiné pouze mají softwarová klávesnice. Kód, která zjistí, že konfigurace soft klávesnice je použít skrytí části obrazovky musí být citlivá s ohledem na tyto rozdíly.
--   **Dotykové ovládání a gest** – podpora operačního systému pro rozpoznávání gesto liší, zejména v starší verze operačního systému. Starší verze systému Android mají velmi omezenou podporu pro operace dotykového ovládání, což znamená, že podporuje starší zařízení může vyžadovat samostatné kódu
--   **Nabízená oznámení** – existují různé možnosti/implementace na každou platformu (např. Živé dlaždice v systému Windows).
+-   **Velikosti obrazovky** – standardně velikostí obrazovky, které jsou poměrně snadno cílit na některé platformy (jako je iOS a starší verze Windows Phone). Zařízení s androidem mají širokou škálu obrazovky dimenzí, které vyžadují další úsilí pro podporu ve vaší aplikaci.
+-   **Navigace metaphors** – se liší mezi platformami (např.) tlačítko "zadní" hardwaru, ovládací prvek uživatelského rozhraní Panorama) a v rámci platformy (Android 2 a 4, iPhone a iPad).
+-   **Klávesnice** – některé androidem mají fyzickou klávesnicích, zatímco jiní softwarová klávesnice. Kód, který rozpozná, pokud konfigurace soft klávesnice je použít skrytí části obrazovky je potřeba brát ohled na tyto rozdíly.
+-   **Dotyky a gesta** – podpora operačního systému pro rozpoznání gest se liší především ve starších verzích operačního systému. Starší verze systému Android mají velmi omezenou podporu pro dotykové ovládání operace, což znamená, že podpora starších zařízení může vyžadovat samostatného kódu
+-   **Nabízená oznámení** – existují různé možnosti/implementace na jednotlivých platformách (např.) Živé dlaždice na Windows).
 
 
  <a name="Device-specific_features" />
@@ -64,24 +64,24 @@ Kromě základní prvky, které existuje na všech platformách budou muset adre
 
 #### <a name="device-specific-features"></a>Funkce specifické pro zařízení
 
-Zjistit, co musí být funkce minimální požadované pro danou aplikaci; nebo pokud rozhodnout, jaké další funkce, které chcete využít výhod na každou platformu. Kód bude vyžadovat, aby detekovat funkce a vypnout funkce nebo nabízejí alternativy (např. alternativu k geografického umístění může být aby mohl uživatel, zadejte umístění, nebo zvolte z mapy):
+Určí, co musí být minimální funkce potřebné pro aplikace; nebo pokud rozhodnout, jaké další funkce, abyste mohli využívat na jednotlivých platformách. Kód je třeba k detekci funkce a zakáže funkci nebo nabízejí alternativy (např.) alternativa k geografického umístění, může být, umožníte uživateli zadat umístění nebo jej vybrat z mapy):
 
--   **Fotoaparát** – funkce se liší v zařízeních: některá zařízení nemáte fotoaparátu, ostatní uživatelé mají obě kamery přední a zadní přístupem. Záznam videa mohou některé kamery.
--   **Geografické umístění & mapy** – podpora pro GPS nebo Wi-Fi v umístění není k dispozici na všech zařízeních. Aplikace také nahrazovat pro různé úrovně přesnost podporovaný každá metoda potřebují.
--   **Zrychlení, volný setrvačník a kompas** – tyto funkce se často nacházejí v pouze výběr zařízení pro každou platformu, takže aplikace se téměř vždy muset poskytnout zálohu, když hardware není podporován.
--   **Twitteru a Facebooku** – pouze 'předdefinované' na iOS5 a iOS6 v uvedeném pořadí. Na starší verze a jiné platformy je potřeba zadat své vlastní ověřování funkce a rozhraní s jednotlivými rozhraní API služeb.
--   **V blízkosti pole komunikace (NFC)** – pouze u (některých) telefony Android (v době psaní).
+-   **Fotoaparát** – funkce se liší v zařízeních: některá zařízení nemají fotoaparát, mají obě přední a zadní přístupem kamery. Záznam videa podporují některé kamery.
+-   **Geografické umístění & mapování** – podpora GPS nebo Wi-Fi umístění není k dispozici na všech zařízeních. Aplikace je také potřeba rozšířit pro různé úrovně přesnosti, kterou podporuje jednotlivé metody.
+-   **Akcelerometr, volný setrvačník a compass** – tyto funkce jsou často součástí pouze výběr zařízení pro každou platformu, aby aplikací téměř vždy třeba zadat záložní, když hardware není podporována.
+-   **Twitter a Facebook** – pouze "integrované" na iOS5 a iOS6 v uvedeném pořadí. V dřívějších verzích a jiné platformy budete muset poskytnout vašich vlastních funkcích ověřování a rozhraní s každým rozhraní API služeb.
+-   **U pole komunikace (NFC)** – pouze na (některé) telefony s Androidem (v době psaní textu).
 
 
  <a name="Dealing_with_Platform_Divergence" />
 
 
-### <a name="dealing-with-platform-divergence"></a>Práci s odchylkami platformy
+### <a name="dealing-with-platform-divergence"></a>Práce s odchylkami platformy
 
-Existují dva různé přístupy k podpora více platforem ze stejné-základu kódu, každou s vlastní sadou výhody a nevýhody.
+Existují dva různé přístupy k podpoře více platforem z stejný základ kódu, každý s vlastní sadou výhody a nevýhody.
 
--   **Abstrakce platformy** – firmy průčelí za vzor, poskytuje jednotný přístup napříč platformami a abstrahuje implementace konkrétní platformu do rozhraní API, jednotnou.
--   **Implementace odlišných** – vyvolání konkrétní platformu funkce prostřednictvím odlišných implementace prostřednictvím architektury nástroje, jako je rozhraní a dědičnost nebo podmíněná kompilace.
+-   **Momentálně není vestavěný symbol pro Xamarin.Mac, ale můžete přidat vlastní aplikaci v Mac app projekt **možnosti > sestavení > kompilátoru** v definovat symboly pole nebo upravit .csproj  a přidejte existuje (například )
+-   **Aplikace Windows Phone definuje dva symboly – **a** –, který je možné cílit na kód platformy.
 
 
  <a name="Platform_Abstraction" />
@@ -92,77 +92,77 @@ Existují dva různé přístupy k podpora více platforem ze stejné-základu k
  <a name="Class_Abstraction" />
 
 
-### <a name="class-abstraction"></a>Abstraktní třídy
+### <a name="class-abstraction"></a>Tyto nemají podtržítka okolní jako symboly platformu Xamarin provést.
 
-Pomocí rozhraní nebo základní třídy definované v sdíleného kódu a implementovat nebo rozšířené v projektech specifické pro platformu. Psaní a rozšíření sdíleného kódu pomocí třídy abstrakce je zvlášť vhodné na přenosné knihovny tříd protože mají omezenou podmnožinou rozhraní framework, která je jim dostupná a nesmí obsahovat direktivy kompilátoru pro podporu větví kódu pro konkrétní platformu.
+Použití podmíněné kompilace Jednoduchý příklad případovou studii – Podmíněná kompilace je nastavení umístění souboru pro soubor databáze SQLite.
 
  <a name="Interfaces" />
 
 
 #### <a name="interfaces"></a>Rozhraní
 
-Použití rozhraní umožňuje implementovat třídy specifických pro platformy, které mohou být stále předány do vaše sdílené knihovny využívat výhod společný kód.
+Tři platformy mají mírně odlišné požadavky pro určení umístění souboru:
 
-Rozhraní je definovaný v sdíleného kódu a předá do sdílené knihovny jako parametr nebo vlastnost.
+iOS – Apple upřednostňuje neuživatelských data se mají umístit na konkrétní umístění (adresář knihovny), ale neexistuje žádná konstanta systému pro tento adresář.
 
-Aplikace specifické pro platformu můžete pak toto rozhraní implementovat a nadále využívat výhod sdíleného kódu ' zpracovat '.
+Vyžaduje se kód specifický pro platformu k sestavování správnou cestu.
 
- **Výhody**
+ **Android** – systém cesta vrácená procedurou  je přijatelné umístění pro uložení souboru databáze.**
 
-Implementace může obsahovat kód specifický pro platformu a i odkazovat na externí knihovny specifické pro platformu.
+Windows Phone – izolované úložiště mechanismem neumožňuje úplnou cestu k lze zadat pouze relativní cestu a název souboru.
 
- **Nevýhody**
+ **Universal Windows Platform** – používá  rozhraní API.**
 
-Bylo nutné vytvořit a předejte implementace do sdíleného kódu. Pokud se používá rozhraní hloubky v rámci sdíleného kódu ji končí až se předána více parametrů metody nebo jinak posunuta prostřednictvím řetěz volání. Pokud sdílené kód používá velké množství různých rozhraní pak musí všechny být vytvořen a nastavte v někde sdíleného kódu.
+Následující kód používá k zajištění podmíněné kompilace  je správný pro každou platformu: Výsledkem je třída, která se dají vytvořit a použít na všech platformách, umístění souboru databáze SQLite v jiném umístění na jednotlivých platformách. Pokud sdílený kód používá velké množství různých rozhraní pak musí všechny být vytvořené a nastavené v někde sdíleného kódu.
 
  <a name="Inheritance" />
 
 
 #### <a name="inheritance"></a>Dědičnost
 
-Kód sdílený může implementovat abstraktní nebo virtuální třídy, které by mohly rozšířit v jednoho nebo několika projektů specifické pro platformu. Tato funkce je použití rozhraní, ale s některé chování již implementována. Existují různé hlediska toho, jestli dědičnosti nebo rozhraní se lepší volbou návrhu: protože C# umožňuje pouze jedna dědičnost ho na konkrétní určují způsob, jak můžete navrhnout vaše rozhraní API do budoucna. Použití dědičnosti opatrně.
+Sdílený kód může implementovat virtuální nebo abstraktní třídy, které by mohly rozšířit v jeden nebo více projektů pro konkrétní platformu. To se podobá pomocí rozhraní, ale s některé rysy chování sady již implementováno. Existují různé pohledy na, jestli jsou rozhraní nebo dědičnosti je vhodnější návrhu: protože C# umožňuje pouze jedna dědičnost ho zejména diktování tak, jak vaše rozhraní API můžete navrženy do budoucna. Dědičnost používejte opatrně.
 
-Výhody a nevýhody rozhraní platí stejně pro dědičnosti s Další výhodou, že základní třídy může obsahovat některé implementace kódu (případně celý platformy lhostejné implementace, která lze případně rozšířit).
+Výhody a nevýhody rozhraní platí stejnou měrou do dědičnosti s Další výhodou je základní třídy mohou obsahovat některé implementace kódu (například celou platformu bez implementace, která je možné volitelně rozšířit).
 
 <a name="Xamarin.Forms" />
 
 ### <a name="xamarinforms"></a>Xamarin.Forms
 
-Najdete v článku [Xamarin.Forms](~/xamarin-forms/get-started/index.md) dokumentaci.
+Zobrazit [Xamarin.Forms](~/xamarin-forms/get-started/index.md) dokumentaci.
 
 
-### <a name="plug-in-cross-platform-functionality"></a>Modul plug-in funkce pro různé platformy
+### <a name="plug-in-cross-platform-functionality"></a>Modul plug-in funkce napříč platformami
 
-Můžete také rozšířit aplikací pro různé platformy v konzistentní způsob používání modulů plug-in.
+Konzistentním způsobem pomocí modulů plug-in můžete taky rozšířit aplikace pro různé platformy.
 
-Propojené z našich [githubu modulů plug-in](https://github.com/xamarin/plugins), většina modulů plug-in jsou open-source projekty (obvykle k dispozici pro instalaci přes Nuget), které vám pomůžou implementace celé řady funkce specifické pro platformu z stav baterie nastavení s společné rozhraní API, které se snadno využívat v platformě Xamarin a Xamarin.Forms aplikace.
+Odkazovaný z našich [moduly plug-in githubu](https://github.com/xamarin/plugins), většina moduly plug-in jsou open source projektů (obvykle k dispozici pro instalaci přes Nuget), které vám pomohou implementovat celou řadu funkce specifické pro platformu ze stavu baterie nastavení s společné rozhraní API, které usnadňují využití v aplikacích pro platformu Xamarin a Xamarin.Forms.
 
 
 <a name="Other_Cross-Platform_Libraries" />
 
-### <a name="other-cross-platform-libraries"></a>Další knihovny a platformy
+### <a name="other-cross-platform-libraries"></a>Další knihovny Cross-Platform
 
-Existuje několik 3. stran knihoven k dispozici, které poskytují funkce pro různé platformy:
+Existuje několik knihoven 3. stran k dispozici, které poskytují funkce pro různé platformy:
 
 -   **MvvmCross** -  [https://github.com/slodge/MvvmCross/](https://github.com/slodge/MvvmCross/)
 -   **Rodný jazyk** (pro lokalizaci) -  [https://github.com/rdio/vernacular/](https://github.com/rdio/vernacular/)
--   **MonoGame** (pro hry XNA) -  [http://monogame.codeplex.com/](http://monogame.codeplex.com/)
--   **NGraphics** - [NGraphics](https://github.com/praeclarum/NGraphics) a jeho prekurzorů [https://github.com/praeclarum/CrossGraphics](https://github.com/praeclarum/CrossGraphics)
+-   **MonoGame** (pro hry XNA) –  [http://www.monogame.net](http://www.monogame.net)
+-   **NGraphics** - [NGraphics](https://github.com/praeclarum/NGraphics) a jeho předchůdce [https://github.com/praeclarum/CrossGraphics](https://github.com/praeclarum/CrossGraphics)
 
 
  <a name="Divergent_Implementation" />
 
 
-### <a name="divergent-implementation"></a>Odlišných implementace
+### <a name="divergent-implementation"></a>Implementace snižování
 
  <a name="Conditional_Compilation" />
 
 
 #### <a name="conditional-compilation"></a>Podmíněná kompilace
 
-Existují některé situace, kdy sdíleného kódu budete muset dál fungují jinak na jednotlivých platformách, které by mohly mít přístup k třídy nebo funkce, které se chovají jinak. Podmíněná kompilace nejvhodnější sdílených projektů Asset kde stejný zdrojový soubor je odkazováno ve více projektech, které mají různé symboly definované.
+Existují určité situace, kdy svým sdíleným kódem muset dál fungují jinak na jednotlivých platformách, může být přístup k třídy nebo funkce, které se chovají odlišně. Podmíněná kompilace funguje nejlépe s Asset sdílenými, kde je stejném zdrojovém souboru odkazovaný ve více projektech, které mají různé symboly definované.
 
-Projekty Xamarin vždy definovat `__MOBILE__` tedy platí pro iOS a Android aplikace projekty (Všimněte si dvojité podtržítko před a po opravu na těchto symbolů).
+Projekty Xamarin vždy definovat `__MOBILE__` které platí pro iOS a aplikace pro Android projekty (Poznámka: dvojité podtržítko provedení před instrumentací a po opravě těchto symbolů).
 
 ```csharp
 #if __MOBILE__
@@ -174,7 +174,7 @@ Projekty Xamarin vždy definovat `__MOBILE__` tedy platí pro iOS a Android apli
 
 ##### <a name="ios"></a>iOS
 
-Definuje Xamarin.iOS `__IOS__` který můžete použít ke zjištění zařízení s iOS.
+Definuje Xamarin.iOS `__IOS__` který můžete použít k detekci zařízení s Iosem.
 
 ```csharp
 #if __IOS__
@@ -182,7 +182,7 @@ Definuje Xamarin.iOS `__IOS__` který můžete použít ke zjištění zařízen
 #endif
 ```
 
-Existují také sledovat a TV konkrétní symboly:
+Existují také sledováním a TV konkrétní symboly:
 
 ```csharp
 #if __TVOS__
@@ -198,7 +198,7 @@ Existují také sledovat a TV konkrétní symboly:
 
 ##### <a name="android"></a>Android
 
-Můžete použít následující kód, který se má pouze kompilovat do aplikace Xamarin.Android
+Můžete použít následující kód, který by měl být zkompilován pouze do aplikace Xamarin.Android
 
 ```csharp
 #if __ANDROID__
@@ -206,7 +206,7 @@ Můžete použít následující kód, který se má pouze kompilovat do aplikac
 #endif
 ```
 
-Jednotlivé verze rozhraní API také definuje direktivu nové kompilátoru, tak kód jako to vám umožní můžete přidat funkce, pokud jsou cílem novější rozhraní API. Každá úroveň rozhraní API zahrnuje 'dolní' úrovně symboly. Tato funkce není skutečně užitečné pro podporu více platforem; obvykle `__ANDROID__` symbol bude dostatečná.
+Každá verze rozhraní API také definuje nové direktivy kompilátoru, umožní kód tímto způsobem je přidat funkce jsou zacílení novějších rozhraní API. Každá úroveň rozhraní API zahrnuje všechny symboly 'dolní' úrovně. Tato funkce se hodí hlavně pro různé platformy; podpora obvykle `__ANDROID__` symbol bude stačit.
 
 ```csharp
 #if __ANDROID_11__
@@ -216,7 +216,7 @@ Jednotlivé verze rozhraní API také definuje direktivu nové kompilátoru, tak
 
 ##### <a name="mac"></a>Mac
 
-Aktuálně není o vestavěný symbol pro Xamarin.Mac, ale můžete přidat vlastní aplikaci v Mac projekt aplikace **možnosti > sestavení > kompilátoru** v **definovat symboly** pole nebo upravit **.csproj**  souboru a přidejte existuje (například `__MAC__`)
+Momentálně není vestavěný symbol pro Xamarin.Mac, ale můžete přidat vlastní aplikaci v Mac app projekt **možnosti > sestavení > kompilátoru** v **definovat symboly** pole nebo upravit **.csproj**  a přidejte existuje (například `__MAC__`)
 
 ```xml
 <PropertyGroup><DefineConstants>__MAC__;$(DefineConstants)</DefineConstants></PropertyGroup>
@@ -226,21 +226,21 @@ Aktuálně není o vestavěný symbol pro Xamarin.Mac, ale můžete přidat vlas
 
 ##### <a name="windows-phone"></a>Windows Phone
 
-Aplikace Windows Phone definuje dvě symboly – `WINDOWS_PHONE` a `SILVERLIGHT` –, lze cíle kód pro platformu. Tyto nemají podtržítka, které obaluje je jako symboly platformě Xamarin provést.
+Aplikace Windows Phone definuje dva symboly – `WINDOWS_PHONE` a `SILVERLIGHT` –, který je možné cílit na kód platformy. Tyto nemají podtržítka okolní jako symboly platformu Xamarin provést.
 
 
 <a name="Using_Conditional_Compilation" />
 
-##### <a name="using-conditional-compilation"></a>Pomocí Podmíněná kompilace
+##### <a name="using-conditional-compilation"></a>Použití podmíněné kompilace
 
-Jednoduchý příklad Případová studie Podmíněná kompilace je nastavení umístění souboru pro soubor databáze SQLite. Tři platformy mají mírně odlišné požadavky pro zadání umístění souboru:
+Jednoduchý příklad případovou studii – Podmíněná kompilace je nastavení umístění souboru pro soubor databáze SQLite. Tři platformy mají mírně odlišné požadavky pro určení umístění souboru:
 
--   **iOS** – Apple upřednostní neuživatelských data umístit do určitého umístění (adresář knihovny), ale neexistuje žádná konstanta systému pro tento adresář. Specifické pro platformu kód není nutný k vytvoření správnou cestu.
--   **Android** – systémové cesty vrácený `Environment.SpecialFolder.Personal` je přijatelné umístění pro uložení souboru databáze.
--   **Windows Phone** – mechanismus izolované úložiště nepovoluje úplnou cestu k lze zadat pouze relativní cesta a název souboru.
--   **Univerzální platformu Windows** – používá `Windows.Storage` rozhraní API.
+-   **iOS** – Apple upřednostňuje neuživatelských data se mají umístit na konkrétní umístění (adresář knihovny), ale neexistuje žádná konstanta systému pro tento adresář. Vyžaduje se kód specifický pro platformu k sestavování správnou cestu.
+-   **Android** – systém cesta vrácená procedurou `Environment.SpecialFolder.Personal` je přijatelné umístění pro uložení souboru databáze.
+-   **Windows Phone** – izolované úložiště mechanismem neumožňuje úplnou cestu k lze zadat pouze relativní cestu a název souboru.
+-   **Universal Windows Platform** – používá `Windows.Storage` rozhraní API.
 
-Následující kód používá k zajištění Podmíněná kompilace `DatabaseFilePath` je správný pro každou platformu:
+Následující kód používá k zajištění podmíněné kompilace `DatabaseFilePath` je správný pro každou platformu:
 
 ```csharp
 public static string DatabaseFilePath {
@@ -270,5 +270,5 @@ public static string DatabaseFilePath {
 }
 ```
 
-Výsledkem je třída, která mohou být vytvořené a použít na všech platformách, umístění souboru databáze SQLite v jiném umístění na každou platformu.
+Výsledkem je třída, která se dají vytvořit a použít na všech platformách, umístění souboru databáze SQLite v jiném umístění na jednotlivých platformách.
 

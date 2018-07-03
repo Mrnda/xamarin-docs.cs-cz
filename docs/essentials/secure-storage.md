@@ -1,54 +1,54 @@
 ---
 title: 'Xamarin.Essentials: Zabezpečené úložiště'
-description: Tento dokument popisuje třídy SecureStorage v Xamarin.Essentials, která pomáhá bezpečně uložit páry klíč hodnota. Popisuje, jak používat třídu, specifika implementace platformy a omezení.
+description: Tento dokument popisuje třídy SecureStorage v Xamarin.Essentials, která pomáhá bezpečně ukládají dvojice hodnot klíč/hodnota jednoduchého. Popisuje, jak použít třídu, implementace specifika platforem a omezení.
 ms.assetid: 78856C0D-76BB-406E-A880-D5A3987B7D64
 author: redth
 ms.author: jodick
 ms.date: 05/04/2018
-ms.openlocfilehash: df2aa1fd23976e8db34d7c466317a8630408af7a
-ms.sourcegitcommit: 72450a6a29599fa133ff4f16fb0b1f443d89f9dc
+ms.openlocfilehash: fae5f5f0f15d80e2f3bdce26b8beb5f6fae2f81f
+ms.sourcegitcommit: 081a2d094774c6f75437d28b71d22607e33aae71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37080349"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37403439"
 ---
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials: Zabezpečené úložiště
 
 ![Předběžné verze NuGet](~/media/shared/pre-release.png)
 
-**SecureStorage** třída pomáhá bezpečně uložit páry klíč hodnota.
+**SecureStorage** třídy pomáhá bezpečně ukládají dvojice hodnot klíč/hodnota jednoduchého.
 
 ## <a name="getting-started"></a>Začínáme
 
-Abyste měli přístup **SecureStorage** funkce, následující nastavení specifických pro platformy je nutné:
+Pro přístup **SecureStorage** funkce, která je následující nastavení specifické pro platformu je nutné:
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-Nevyžaduje žádné další nastavení.
+Není požadováno žádné další nastavení.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-Při vývoji v simulátoru iOS, povolte **řetězce klíčů** nároku a přidejte skupinu řetězce klíčů přístup pro identifikátor svazku aplikace.
+Při vývoji v simulátoru iOS, povolte **řetězce klíčů** oprávnění a přidat přístupovou skupinu pro identifikátor sady prostředků aplikace.
 
-Otevřete **Entitlements.plist** v projektu iOS a najít **řetězce klíčů** nároku a povolte ji. Identifikátor aplikace to bude automaticky přidají jako skupina.
+Otevřít **do souboru Entitlements.plist** v projektu pro iOS a najít **řetězce klíčů** oprávnění a povolit ho. Identifikátor aplikace bude automaticky přidán jako skupinu.
 
-Ve vlastnostech projektu v části **iOS podepisování sady** nastavit **vlastní oprávnění** k **Entitlements.plist**.
+Ve vlastnostech projektu v rámci **podepsání sady prostředků aplikace pro iOS** nastavit **vlastní oprávnění** k **do souboru Entitlements.plist**.
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwptabuwp"></a>[UPW](#tab/uwp)
 
-Nevyžaduje žádné další nastavení.
+Není požadováno žádné další nastavení.
 
 -----
 
 ## <a name="using-secure-storage"></a>Použití zabezpečeného úložiště
 
-Přidáte odkaz na Xamarin.Essentials v třídě:
+Přidáte odkaz na Xamarin.Essentials ve své třídě:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Uložit hodnotu danou _klíč_ v zabezpečeném úložišti:
+Uložte hodnotu daného _klíč_ v zabezpečeném úložišti:
 
 ```csharp
 await SecureStorage.SetAsync("oauth_token", "secret-oauth-token-value");
@@ -60,56 +60,59 @@ K načtení hodnoty ze zabezpečeného úložiště:
 var oauthToken = await SecureStorage.GetAsync("oauth_token");
 ```
 
-Chcete-li odebrat konkrétní klíč, volejte:
+> [!NOTE]
+> Pokud není žádná hodnota přidružené k požadované klíče `GetAsync` vrátí `null`.
+
+Pokud chcete odebrání určitého klíče, zavolejte:
 
 ```csharp
 SecureStorage.Remove("oauth_token");
 ```
 
-Chcete-li odebrat všechny klíče, volejte:
+Pokud chcete odebrat všechny klíče, volání:
 
 ```csharp
 SecureStorage.RemoveAll();
 ```
 
 
-## <a name="platform-implementation-specifics"></a>Podrobnosti implementace platformy
+## <a name="platform-implementation-specifics"></a>Specifika platforem implementace
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-[Android úložiště klíčů](https://developer.android.com/training/articles/keystore.html) se používá k ukládání šifrovací klíč používaný k šifrování hodnotu před uložením do [sdílet Předvolby](https://developer.android.com/training/data-storage/shared-preferences.html) s názvem souboru z **.xamarinessentials [YOUR-balíček-ID aplikace]** .  Klíč používaný v souboru sdílet Předvolby _hodnota Hash MD5_ klíče předaný do `SecureStorage` rozhraní API.
+[Úložiště klíčů Android](https://developer.android.com/training/articles/keystore.html) se používá k ukládání šifrovací klíč použitý k šifrování hodnotu před uložením do [sdílené Předvolby](https://developer.android.com/training/data-storage/shared-preferences.html) s názvem souboru z **.xamarinessentials [YOUR-APP-– ID balíčku]** .  Je klíč používaný v souboru sdílet Předvolby _hodnota Hash MD5_ klíče předán `SecureStorage` rozhraní API.
 
-## <a name="api-level-23-and-higher"></a>Úroveň rozhraní API 23 a vyšší
+## <a name="api-level-23-and-higher"></a>Rozhraní API úrovně 23 a vyšší
 
-Na novější úrovně rozhraní API **AES** klíč získaný Android úložiště klíčů a použít s **AES nebo GCM/NoPadding** šifrovací ke hodnotu, než je uložen v souboru sdílet předvolby.
+Na novější úrovně rozhraní API **AES** klíč je získané z úložiště klíčů Android a používá se **AES nebo GCM/NoPadding** šifry šifrování hodnotu před jejich uložením v souboru předvoleb sdílené.
 
 ## <a name="api-level-22-and-lower"></a>Úroveň rozhraní API 22 a nižší
 
-Na starší úrovně rozhraní API systému Android úložiště klíčů podporuje pouze ukládání **RSA** klíčů, které se používá s **RSA/ECB/PKCS1Padding** šifrovací k šifrování **AES** (náhodně klíče generovaná za běhu) a uložené v souboru sdílet předvolby pod klíčem _SecureStorageKey_, pokud nebyla byla vygenerována.
+Na starší úrovně rozhraní API, úložiště klíčů Android podporuje pouze ukládání **RSA** klíče, které se používá se **RSA/ECB/PKCS1Padding** šifry šifrování **AES** (náhodně klíče Generovat za běhu) a uloženy v souboru sdílené předvolby pod klíčem _SecureStorageKey_, pokud nebyla byl vygenerován.
 
-Při odinstalaci aplikace ze zařízení se odeberou všechny šifrované hodnoty.
+Všechny šifrované hodnoty se odeberou, když aplikace se odinstaluje ze zařízení.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-[Řetězce klíčů](https://developer.xamarin.com/api/type/Security.SecKeyChain/) se používá k ukládání hodnot bezpečně na zařízeních s iOS.  `SecRecord` Používá k ukládání hodnota má `Service` nastavena na hodnotu **[YOUR-sady-ID aplikace] .xamarinessentials**.
+[Řetězce klíčů](https://developer.xamarin.com/api/type/Security.SecKeyChain/) se používá k ukládání hodnot bezpečně na zařízeních s Iosem.  `SecRecord` Používá pro ukládání hodnoty horní má `Service` nastavena na hodnotu **[YOUR-APP-sady-ID] .xamarinessentials**.
 
-V některých případech data řetězce klíčů se synchronizují s Icloudem a odinstalování aplikace není možné odstranit zabezpečené hodnoty ze serveru služby iCloud a dalších zařízení uživatele.
+V některých případech data řetězce klíčů se synchronizují s serveru služby iCloud a odinstalace aplikace nemusí odebrat zabezpečených hodnot ze serveru služby iCloud a dalším zařízením uživatele.
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwptabuwp"></a>[UPW](#tab/uwp)
 
-[DataProtectionProvider](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider) se používá k encryped hodnot bezpečně UWP zařízení.
+[DataProtectionProvider](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider) slouží k zašifrovaný hodnoty bezpečně na zařízeních UPW.
 
-Encryped hodnoty se uloží v `ApplicationData.Current.LocalSettings`, uvnitř kontejner s názvem **[YOUR ID aplikace] .xamarinessentials**.
+Zašifrovaný hodnoty jsou uloženy v `ApplicationData.Current.LocalSettings`, uvnitř kontejneru s názvem **[YOUR-APP-ID] .xamarinessentials**.
 
-Odinstalace aplikace způsobí, že _LocalSettings_a všechny šifrované hodnoty má být odebrán také.
+Odinstalace aplikace způsobí, že _LocalSettings_a všechny šifrované hodnoty chcete také odebrat.
 
 -----
 
 ## <a name="limitations"></a>Omezení
 
-Toto rozhraní API slouží k uložení malé množství textu.  Výkon může být pomalé, pokud se pokusíte použít k ukládání velkých objemů textu.
+Toto rozhraní API je určené k ukládání malé množství textu.  Výkon může být pomalé, pokud se pokusíte použít k ukládání velkého množství textu.
 
 ## <a name="api"></a>rozhraní API
 
 - [SecureStorage zdrojového kódu](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/SecureStorage)
-- [Dokumentaci k rozhraní API SecureStorage](xref:Xamarin.Essentials.SecureStorage)
+- [Dokumentace k rozhraní API SecureStorage](xref:Xamarin.Essentials.SecureStorage)

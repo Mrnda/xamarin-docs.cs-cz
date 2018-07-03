@@ -1,41 +1,42 @@
 ---
-title: Pomocí RelativeLayout v Xamarin.Android
+title: Použití RelativeLayout v Xamarin.Android
+description: Jak používat RelativeLayout do aplikace Xamarin.Android
 ms.prod: xamarin
 ms.assetid: AFD9C849-02C3-E728-BC78-77A563612BC5
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 04/25/2018
-ms.openlocfilehash: cd2d7537036978e30c97b5776155e429178b6dac
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+ms.date: 06/29/2018
+ms.openlocfilehash: af8d37775a798fc6019106a66df75843a951c108
+ms.sourcegitcommit: 081a2d094774c6f75437d28b71d22607e33aae71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32435995"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37403413"
 ---
 # <a name="relativelayout"></a>RelativeLayout
 
-[`RelativeLayout`](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/) je [ `ViewGroup` ](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/) který zobrazí podřízené [ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/) elementů v relativní umístění. Pozice [ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/) lze zadat jako relativně k prvků (například tak, aby levé straně z nebo pod daného elementu) nebo v umisťuje relativně k [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/) oblast (například zarovnán dolů, doleva centra).
+[`RelativeLayout`](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/) je [ `ViewGroup` ](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/) , který zobrazí podřízené [ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/) prvků v relativní pozice. Pozice [ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/) se dá nastavit jako relativní k elementů na stejné úrovni, (například tak, aby levé straně z nebo pod daného elementu) nebo v umístění vzhledem ke [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/) oblast (například Zarovnání dolní, levý centra).
 
-A [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/) je velmi výkonný nástroj pro navrhování uživatelské rozhraní, protože můžete eliminovat vnořeného [ `ViewGroup` ](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/)s. Pokud se přistihnete pomocí několik vnořené [ `LinearLayout` ](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/) skupiny, bude pravděpodobně možné je nahradit jedné [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/).
+A [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/) je velmi výkonný nástroj pro navrhování uživatelského rozhraní, protože může eliminovat vnořeného [ `ViewGroup` ](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/)s. Pokud se několik použití vnořených [ `LinearLayout` ](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/) skupin, je možné nahradit pomocí jediného [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/).
 
 Spuštění nového projektu s názvem **HelloRelativeLayout**.
 
-Otevřete **Resources/Layout/Main.axml** soubor a vložte následující:
+Otevřít **Resources/Layout/Main.axml** soubor a vložte následující:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <TextView
         android:id="@+id/label"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Type here:"/>
     <EditText
         android:id="@+id/entry"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:drawable/editbox_background"
         android:layout_below="@id/label"/>
@@ -56,12 +57,12 @@ Otevřete **Resources/Layout/Main.axml** soubor a vložte následující:
 </RelativeLayout>
 ```
 
-Všimněte si těchto `android:layout_*` atributů, jako je například `layout_below`, `layout_alignParentRight`, a `layout_toLeftOf`.
-Při použití [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/), tyto atributy lze použít k popisu, jak chcete umístit každý [ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/). Každé z nich těchto atributů definovat jiný druh relativní pozici. ID prostředku na stejné úrovni použití některých atributů [ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/) zadat relativní pozici. Například poslední [ `Button` ](https://developer.xamarin.com/api/type/Android.Widget.Button/) je definována leží na levé straně of a zarovnán s the-top-of [ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/) identifikovaný ID `ok` (což je předchozí [`Button`](https://developer.xamarin.com/api/type/Android.Widget.Button/)).
+Všimněte si, že každý z `android:layout_*` atributů, jako je například `layout_below`, `layout_alignParentRight`, a `layout_toLeftOf`.
+Při použití [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout/), tyto atributy můžete použít k popisu, jak chcete umístit každý [ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/). Jedna z těchto atributů definovat jiný druh relativní pozice. Některé atributy použijte ID prostředku na stejné úrovni [ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/) definovat vlastní relativní pozice. Například poslední [ `Button` ](https://developer.xamarin.com/api/type/Android.Widget.Button/) je definována leží na levé straně of a zarovnána s the horní of [ `View` ](https://developer.xamarin.com/api/type/Android.Views.View/) identifikovaný ID `ok` (což je předchozí [`Button`](https://developer.xamarin.com/api/type/Android.Widget.Button/)).
 
 Všechny dostupné rozložení atributy jsou definovány v [ `RelativeLayout.LayoutParams` ](https://developer.xamarin.com/api/type/Android.Widget.RelativeLayout+LayoutParams/).
 
-Zajistěte, aby načíst toto rozložení v [ `OnCreate()` ](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/) metoda:
+Ujistěte se, že načtete toto rozložení v [ `OnCreate()` ](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/) metody:
 
 ```csharp
 protected override void OnCreate (Bundle savedInstanceState)
@@ -71,11 +72,11 @@ protected override void OnCreate (Bundle savedInstanceState)
 }
 ```
 
-[ `SetContentView(int)` ](https://developer.xamarin.com/api/member/Android.App.Activity.SetContentView/p/System.Int32/) Metoda načte soubor rozložení pro [ `Activity` ](https://developer.xamarin.com/api/type/Android.App.Activity/)zadaný podle ID prostředku &mdash; `Resource.Layout.Main` odkazuje **prostředky, rozvržení nebo Main.axml** rozložení souboru.
+[ `SetContentView(int)` ](https://developer.xamarin.com/api/member/Android.App.Activity.SetContentView/p/System.Int32/) Metoda načte soubor rozložení pro [ `Activity` ](https://developer.xamarin.com/api/type/Android.App.Activity/), podle ID prostředku &mdash; `Resource.Layout.Main` odkazuje **prostředky/rozložení / Main.axml** soubor rozložení.
 
 Spusťte aplikaci. Měli byste vidět následující rozložení:
 
-[![Snímek obrazovky relativní rozložení TextView, EditText a dvě tlačítka](relative-layout-images/helloviews2.png)](relative-layout-images/helloviews2.png#lightbox)
+[![Snímek obrazovky s relativní rozložení s TextView EditText a dvě tlačítka](relative-layout-images/helloviews2.png)](relative-layout-images/helloviews2.png#lightbox)
 
 
 ## <a name="resources"></a>Prostředky
@@ -87,5 +88,5 @@ Spusťte aplikaci. Měli byste vidět následující rozložení:
 -   [`Button`](https://developer.xamarin.com/api/type/Android.Widget.Button/)
 
 
-*Úpravy, které jsou na základě práce vytvořen a sdílí projektu pro Android otevřít zdroje a používají podle podmínek, které jsou popsané v části této stránky jsou*
-[*Creative Commons 2.5 porušení licence* ](http://creativecommons.org/licenses/by/2.5/).
+*Části této stránky jsou změn založených na vytvořené a sdílené s Androidem otevřete zdrojový projekt a používán v souladu s podmínkami uvedenými v práci*
+[*Creative Commons 2.5 Attribution License* ](http://creativecommons.org/licenses/by/2.5/).

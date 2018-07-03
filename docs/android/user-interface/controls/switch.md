@@ -1,42 +1,43 @@
 ---
-title: přepínače
+title: Přepínač
+description: Tom, jak pomocí widgetu přepínače do aplikace Xamarin.Android
 ms.prod: xamarin
 ms.assetid: 6E1F3324-EC41-454A-AEC0-0208813C7E50
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/05/2018
-ms.openlocfilehash: 0f4bfc3646f1ccd956ee8151468b3de20f6e1e2b
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 06/29/2018
+ms.openlocfilehash: e3bcce48a675a9ba3d1d41f93babc7fcb26448c8
+ms.sourcegitcommit: 081a2d094774c6f75437d28b71d22607e33aae71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30762656"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37403273"
 ---
-# <a name="switch"></a>přepínače
+# <a name="switch"></a>Přepínač
 
-`Switch` Pomůcky (zobrazené dole) umožňuje uživateli přepínat mezi dvěma stavy, například jako na nebo vypnout. `Switch` Výchozí hodnota je OFF. Widgetu jsou uvedeny níže v jeho ON a OFF stavy:
+`Switch` Widgetu (viz dole) umožňuje uživatelům přepínat mezi dvěma stavy, například jako na nebo vypnuto. `Switch` Výchozí hodnota je OFF. Ve widgetu najdete níž v jeho ON a OFF stavů:
 
-[![Snímky obrazovky se widget přepínače a ZAPNĚTE stavy](switch-images/16-switch-onoff.png)](switch-images/16-switch-onoff.png#lightbox)
+[![Snímky obrazovky widgetu přepínač v VYPÍNAT a ZAPÍNAT stavy](switch-images/16-switch-onoff.png)](switch-images/16-switch-onoff.png#lightbox)
 
 
-## <a name="creating-a-switch"></a>Vytváření přepínač
+## <a name="creating-a-switch"></a>Vytváření přepínačů
 
-K vytvoření přepínače, jednoduše deklarovat `Switch` elementu v kódu XML následujícím způsobem:
+Chcete-li vytvořit přepínač, stačí deklarovat `Switch` element v XML následujícím způsobem:
 
 ```xml
 <Switch android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 ```
 
-Tím se vytvoří základní přepínač jak je uvedeno níže:
+To vytvoří základní přepínač, jak je znázorněno níže:
 
-[![Snímek obrazovky zobrazení přepínač ve stavu OFF ukázkovou aplikaci](switch-images/07-switch.png)](switch-images/07-switch.png#lightbox)
+[![Snímek obrazovky s ukázkovou aplikaci, zobrazení přepínače ve stavu vypnuto](switch-images/07-switch.png)](switch-images/07-switch.png#lightbox)
 
 
-## <a name="changing-default-values"></a>Změna výchozí hodnoty
+## <a name="changing-default-values"></a>Změnou výchozích hodnot
 
-Text, který zobrazí ovládací prvek pro ON a OFF stavy a výchozí hodnota se dají konfigurovat. Chcete-li přepínač výchozí na hodnotu ON a čtení Ano-Ne místo OFF/ON, například můžete nastaví `checked`, `textOn`, a `textOff` atributy v následující soubor XML.
+Text, který ovládací prvek zobrazuje pro ON a OFF států a výchozí hodnota je možné konfigurovat. Například, chcete-li přepínač zapnuto ve výchozím nastavení a čtení č/Ano místo OFF/ON, můžete nastavíme `checked`, `textOn`, a `textOff` atributy v následující kód XML.
 
 ```xml
 <Switch android:layout_width="wrap_content"
@@ -50,7 +51,7 @@ Text, který zobrazí ovládací prvek pro ON a OFF stavy a výchozí hodnota se
 
 ## <a name="providing-a-title"></a>Poskytuje název
 
-`Switch` Pomůcka podporuje také včetně textový popisek nastavením `text` atribut následujícím způsobem:
+`Switch` Widgetu podporuje také třeba popisek s textem tak, že nastavení `text` atribut následujícím způsobem:
 
 ```xml
 <Switch android:text="Is Xamarin.Android great?"
@@ -61,12 +62,12 @@ Text, který zobrazí ovládací prvek pro ON a OFF stavy a výchozí hodnota se
         android:textOff="NO" />
 ```
 
-Tato značka vytvoří za běhu na následujícím snímku obrazovky:
+Tento kód vytvoří za běhu na následujícím snímku obrazovky:
 
-[![Snímek obrazovky ukázkové aplikace s textem vodorovně předcházející widgetu přepínače](switch-images/08-switch.png)](switch-images/08-switch.png#lightbox)
+[![Snímek obrazovky s ukázkovou aplikaci s textem vodorovně před ovládacím prvku přepínač](switch-images/08-switch.png)](switch-images/08-switch.png#lightbox)
 
-Když `Switch`na změny hodnot, vyvolá `CheckedChange` událostí.
-Například následující kód jsme zachycování této události a k dispozici `Toast` na základě pomůcky zprávou `isChecked` hodnotu `Switch`, který je předat do obslužné rutiny události v rámci `CompoundButton.CheckedChangeEventArg` argument.
+Při `Switch`na změny hodnot, vyvolá `CheckedChange` událostí.
+Například v následujícím kódu jsme zachycování této události a prezentovat `Toast` widgetů a zobrazí se zpráva na základě `isChecked` hodnotu `Switch`, který je předán do obslužné rutiny události v rámci `CompoundButton.CheckedChangeEventArg` argument.
 
 ```csharp
 Switch s = FindViewById<Switch> (Resource.Id.monitored_switch);
@@ -81,7 +82,5 @@ s.CheckedChange += delegate(object sender, CompoundButton.CheckedChangeEventArgs
 
 ## <a name="related-links"></a>Související odkazy
 
-- [SwitchDemo (ukázka)](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/ICS_Samples/SwitchDemo/)
-- [Karta rozložení kurzu](~/android/user-interface/layouts/tab-layout/index.md)
-- [Představení Sandwichovy Zmrzlinová](http://www.android.com/about/ice-cream-sandwich/)
-- [Platformu Android 4.0](http://developer.android.com/sdk/android-4.0.html)
+- [SwitchDemo (ukázka)](https://developer.xamarin.com/samples/monodroid/SwitchDemo/)
+- [Kurz rozložení karty](~/android/user-interface/layouts/tab-layout/index.md)

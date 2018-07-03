@@ -1,30 +1,30 @@
 ---
 title: Kvalifikátory prostředků a možnosti vizualizace
-description: Toto téma vysvětluje, jak definovat prostředky, které se použijí jenom v případě, že některé kvalifikátor hodnoty se shodují. Jednoduchý příklad je prostředek kvalifikovaný jazyk řetězec. Řetězec prostředku může být definováno jako výchozí, s další alternativní zdroje definované má být použit pro další jazyky. Může být kvalifikovaný všechny typy prostředků, včetně rozložení sám sebe.
+description: Toto téma vysvětluje, jak definovat prostředky, které se použijí jenom v případě, že budou odpovídat některé jednu hodnotu kvalifikátoru. Jednoduchý příklad je prostředek řetězce jazyka kvalifikovaný. Prostředek řetězce lze definovat jako výchozí, s další alternativní prostředky definované pro další jazyky. Může být kvalifikovány všechny typy prostředků, včetně samotné rozložení.
 ms.prod: xamarin
 ms.assetid: 2111C18A-3EDA-3787-25E1-3869FF4BE441
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/29/2018
-ms.openlocfilehash: bc9eb145b6d9ed7bd441d625f533c5cbbd87fccd
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 7bc8c1066e557085c1bf34f77765edbb2259ba7a
+ms.sourcegitcommit: 081a2d094774c6f75437d28b71d22607e33aae71
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30771889"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37403296"
 ---
 # <a name="resource-qualifiers-and-visualization-options"></a>Kvalifikátory prostředků a možnosti vizualizace
 
-_Toto téma vysvětluje, jak definovat prostředky, které se použijí jenom v případě, že některé kvalifikátor hodnoty se shodují. Jednoduchý příklad je prostředek kvalifikovaný jazyk řetězec. Řetězec prostředku může být definováno jako výchozí, s další alternativní zdroje definované má být použit pro další jazyky. Může být kvalifikovaný všechny typy prostředků, včetně rozložení sám sebe._
+_Toto téma vysvětluje, jak definovat prostředky, které se použijí jenom v případě, že budou odpovídat některé jednu hodnotu kvalifikátoru. Jednoduchý příklad je prostředek řetězce jazyka kvalifikovaný. Prostředek řetězce lze definovat jako výchozí, s další alternativní prostředky definované pro další jazyky. Může být kvalifikovány všechny typy prostředků, včetně samotné rozložení._
 
 
-## <a name="custom-device-configurations"></a>Konfigurace vlastní zařízení
+## <a name="custom-device-configurations"></a>Konfigurace vlastních zařízení
 
-Android k dispozici na nadbytku zařízení a rozlišení obrazovky.
-Chcete-li návrh uživatelského rozhraní, které cílí mnoho zařízení, návrháře obsahuje celou řadu konfigurací zařízení, které jsou součástí. Také podporuje přidání konfigurací další zařízení; Tyto konfigurace jsou založené na *kvalifikátory* zadáte k rozlišení jednu konfiguraci zařízení z jiného. Existuje mnoho různých typů kvalifikátory. Další informace o těchto typech prostředků najdete v tématu [Android prostředky](~/android/app-fundamentals/resources-in-android/index.md).
+Android je k dispozici na množství zařízení a rozlišení obrazovky.
+Abychom návrh uživatelských rozhraní, které se zaměřují velký počet zařízení, návrháře se dodává s širokou škálu konfigurací zařízení součástí. Podporuje taky přidávání dalších zařízení konfigurace; Tyto konfigurace jsou založeny na *kvalifikátory* určenou k rozlišení jednoho konfigurace zařízení z jiného. Existuje mnoho různých typů kvalifikátory. Další informace o těchto typech prostředků najdete v tématu [prostředky Androidu](~/android/app-fundamentals/resources-in-android/index.md).
 
-V dolní části modulu pro výběr zařízení je nabídka **přizpůsobit** možnost, jak je uvedeno níže:
+V dolní části modulu pro výběr zařízení je nabídky **vlastní** možnosti, jak je znázorněno níže:
 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -38,34 +38,34 @@ V dolní části modulu pro výběr zařízení je nabídka **přizpůsobit** mo
 -----
 
 
-Výběr **přizpůsobit** zobrazí dialogové okno, které můžete použít k procházení prostřednictvím konfigurací zařízení k dispozici. Když kliknete **zařízení definice** kartě se zobrazí seznam všech definic známé zařízení:
+Výběr **vlastní** zobrazí dialogové okno, které můžete použít pro procházení konfigurace zařízení k dispozici. Když kliknete **definice zařízení** kartu, se zobrazí seznam všech definic známé zařízení:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Správce AVD](resource-qualifiers-images/vs/02-device-definitions-sml.png)](resource-qualifiers-images/vs/02-device-definitions.png#lightbox)
+[![AVD Manager](resource-qualifiers-images/vs/02-device-definitions-sml.png)](resource-qualifiers-images/vs/02-device-definitions.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Správce AVD](resource-qualifiers-images/xs/02-device-definitions-sml.png)](resource-qualifiers-images/xs/02-device-definitions.png#lightbox)
+[![AVD Manager](resource-qualifiers-images/xs/02-device-definitions-sml.png)](resource-qualifiers-images/xs/02-device-definitions.png#lightbox)
 
 -----
 
 
-Předkonfigurované v Návrháři zařízení nemůže být upraven. Je však možnost **vytvořit zařízení...**  k definování definici vlastní zařízení. Alternativně můžete vybrat existující definice a klikněte na tlačítko **klon...**  používat jako výchozí bod pro novou definici.
-Například výběr **Nexus 5** definice a kliknutím na **klon...**  uvede následující dialogové okno:
+Zařízení předkonfigurované v návrháři se nedá upravit. Ale můžete kliknout na **vytvoření zařízení...**  k definování definice vlastní zařízení. Alternativně můžete vybrat existující definice a klikněte na tlačítko **klonování...**  použít jako výchozí bod pro novou definici.
+Například, že vyberete **Nexus 5** definice a kliknete na **klonování...**  zobrazí následující dialogové okno:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Klonování zařízení](resource-qualifiers-images/vs/03-clone-sml.png)](resource-qualifiers-images/vs/03-clone.png#lightbox)
+[![Klonovat zařízení](resource-qualifiers-images/vs/03-clone-sml.png)](resource-qualifiers-images/vs/03-clone.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Klonování zařízení](resource-qualifiers-images/xs/03-clone-sml.png)](resource-qualifiers-images/xs/03-clone.png#lightbox)
+[![Klonovat zařízení](resource-qualifiers-images/xs/03-clone-sml.png)](resource-qualifiers-images/xs/03-clone.png#lightbox)
 
 -----
 
 
-Na snímku obrazovky další název se změní na **Nexus 5 vlastní** a parametry zařízení jsou upravit tak, aby vytvořte novou definici vlastní zařízení. V tomto příkladu **na výšku** je zakázaná, aby definice zařízení je jen na šířku:
+V rámci následujícího snímku obrazovky, název se změní na **Nexus 5 vlastní** a parametry zařízení, které jsou použity vytvořte novou definici vlastního zařízení. V tomto příkladu **na výšku** je zakázaná, takže definice zařízení je jenom na šířku:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -78,20 +78,20 @@ Na snímku obrazovky další název se změní na **Nexus 5 vlastní** a paramet
 -----
 
 
-Kliknutím na tlačítko **klon zařízení** vytvoří nové definice zařízení, která se teď zobrazí v **zařízení definice** seznamu:
+Kliknutím na **klonování zařízení** vytvoří nové definice zařízení, která se teď zobrazí v **definice zařízení** seznamu:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Definice aktualizované zařízení](resource-qualifiers-images/vs/05-updated-device-definitions-sml.png)](resource-qualifiers-images/vs/05-updated-device-definitions.png#lightbox)
+[![Definice aktualizace zařízení](resource-qualifiers-images/vs/05-updated-device-definitions-sml.png)](resource-qualifiers-images/vs/05-updated-device-definitions.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Definice aktualizované zařízení](resource-qualifiers-images/xs/05-updated-device-definitions-sml.png)](resource-qualifiers-images/xs/05-updated-device-definitions.png#lightbox)
+[![Definice aktualizace zařízení](resource-qualifiers-images/xs/05-updated-device-definitions-sml.png)](resource-qualifiers-images/xs/05-updated-device-definitions.png#lightbox)
 
 -----
 
 
-Všimněte si, se zelenou ikonou se zobrazí každý definice vytvořené uživatelem zařízení, jak je uvedeno výše. Když se vrátíte **zařízení** selektor nabídce nové definice vlastní zařízení se zobrazí v horní části seznamu (Pokud se nezobrazí vlastní konfiguraci zařízení v tomto seznamu, zkuste restartovat IDE):
+Všimněte si, že každá definice vytvořené uživatelem zařízení se zobrazí s ikonou zelené, jak je znázorněno výše. Po návratu k **zařízení** výběr nabídky novou definici vlastního zařízení se zobrazí v horní části seznamu (Pokud se nezobrazí vlastní konfiguraci zařízení v tomto seznamu, zkuste restartovat integrované vývojové prostředí):
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -104,7 +104,7 @@ Všimněte si, se zelenou ikonou se zobrazí každý definice vytvořené uživa
 -----
 
 
-Výběrem této konfiguraci zařízení upraví rozložení tak, aby odpovídala přizpůsobení (v tomto režimu případu, pouze na šířku) vytvořili:
+Výběrem této konfiguraci zařízení upraví rozložení tak, aby odpovídal na přizpůsobování vytvořené dříve (v tomto případě aplikace jen na šířku režimu):
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -118,47 +118,47 @@ Výběrem této konfiguraci zařízení upraví rozložení tak, aby odpovídala
 
 
 
-## <a name="resource-qualifier-options"></a>Možnosti kvalifikátoru prostředků
+## <a name="resource-qualifier-options"></a>Možnosti kvalifikátoru prostředku
 
-**Možnosti kvalifikátoru prostředků** můžete dostat kliknutím na ikonu trojúhelníček dolů vpravo od **konfigurace zařízení** možnosti:
+**Možnosti kvalifikátoru prostředku** je přístupná po kliknutí na tři tečky vpravo od **konfigurace zařízení** možnosti:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Možnosti kvalifikátoru prostředků](resource-qualifiers-images/vs/08-resource-qual-opt-sml.png)](resource-qualifiers-images/vs/08-resource-qual-opt.png#lightbox)
+[![Možnosti kvalifikátoru prostředku](resource-qualifiers-images/vs/08-resource-qual-opt-sml.png)](resource-qualifiers-images/vs/08-resource-qual-opt.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Možnosti kvalifikátoru prostředků](resource-qualifiers-images/xs/08-resource-qual-opt-sml.png)](resource-qualifiers-images/xs/08-resource-qual-opt.png#lightbox)
+[![Možnosti kvalifikátoru prostředku](resource-qualifiers-images/xs/08-resource-qual-opt-sml.png)](resource-qualifiers-images/xs/08-resource-qual-opt.png#lightbox)
 
 -----
 
 
 Toto dialogové okno zobrazí rozevírací nabídky pro následující kvalifikátory prostředků:
 
--   **Jazyk** &ndash; zobrazí prostředky k dispozici jazyk a nabízí možnost Přidat nové prostředky jazyka nebo oblasti.
+-   **Jazyk** &ndash; zobrazí dostupné jazykové prostředky a nabízí možnost pro přidání nové prostředky jazyk a oblast.
 
--   **Režimu uživatelského rozhraní** &ndash; režimy zobrazení seznamy (například **Car ukotvení** a **podpory ukotvení**) a také rozložení pokynů.
+-   **Režim uživatelského rozhraní** &ndash; režimy zobrazení seznamů (například **dokovací stanice do auta** a **stanice na stůl**) a také pokyny rozložení.
 
-Každá z těchto rozevírací nabídky otevře nové dialogových oken, kde můžete vybrat a nakonfigurovat prostředek kvalifikátory (jak je popsáno dále).
+Každá z těchto rozevírací nabídky otevře nové dialogových oknech, kde můžete vybrat a nakonfigurovat kvalifikátory prostředků (jak je vysvětleno dále).
 
 
 
 ### <a name="language"></a>Jazyk
 
-**Jazyk** rozevírací nabídce uvádí jenom jazyky, které mají prostředky definované (nebo **všechny jazyky**, což je výchozí hodnota). Je však také **přidat jazyk nebo oblast...**  možnost, která slouží k přidání nového jazyka do seznamu:
+**Jazyk** rozevírací nabídky jsou uvedeny pouze jazyky, které mají prostředky definované (nebo **všechny jazyky**, což je výchozí hodnota). Existuje ale také **přidat jazyk a oblast...**  možnost, která umožňuje přidat nový jazyk do seznamu:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Přidat jazyk nebo oblast](resource-qualifiers-images/vs/09-add-language-region-sml.png)](resource-qualifiers-images/vs/09-add-language-region.png#lightbox)
+[![Přidat jazyk a oblast](resource-qualifiers-images/vs/09-add-language-region-sml.png)](resource-qualifiers-images/vs/09-add-language-region.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Přidat jazyk nebo oblast](resource-qualifiers-images/xs/09-add-language-region-sml.png)](resource-qualifiers-images/xs/09-add-language-region.png#lightbox)
+[![Přidat jazyk a oblast](resource-qualifiers-images/xs/09-add-language-region-sml.png)](resource-qualifiers-images/xs/09-add-language-region.png#lightbox)
 
 -----
 
 
-Když kliknete na tlačítko **přidat jazyk nebo oblast...** , **vybrat jazyk** zobrazíte rozevírací seznam dostupné jazyky a oblastí, otevře se dialogové okno:
+Po kliknutí na **přidat jazyk a oblast...** , **vybrat jazyk** dialogové okno se otevře a zobrazí rozevírací seznam dostupných jazyků a oblastí:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -171,47 +171,47 @@ Když kliknete na tlačítko **přidat jazyk nebo oblast...** , **vybrat jazyk**
 -----
 
 
-V tomto příkladu jsme vybrali **fr (francouzština)** pro jazyk a **BE** (Belgie) pro místní dialekt francouzštinu. Všimněte si, že **oblast** pole je volitelné, protože bez ohledu na konkrétní oblasti lze zadat mnoha jazycích. Když **jazyk** rozevírací nabídky je znovu otevřít, a zobrazí nově přidané jazyk nebo oblast prostředku:
+V tomto příkladu jsme zvolili **Francie (francouzština)** pro jazyk a **BE** (Belgie) pro místní dialekt francouzština. Všimněte si, **oblasti** pole je volitelné, protože řadu jiných jazyků se dá nastavit bez ohledu na konkrétní oblasti. Když **jazyk** je znovu otevřít rozevírací nabídku, zobrazí se nově přidané jazyk a oblast prostředku:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-![Jazyk a oblast vybrali](resource-qualifiers-images/vs/11-language-region-added.png "zvolený jazyk a oblast")
+![Jazyk a oblast zvolili](resource-qualifiers-images/vs/11-language-region-added.png "zvolený jazyk a oblast")
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Jazyk a vybrat oblast](resource-qualifiers-images/xs/11-language-region-added-sml.png)](resource-qualifiers-images/xs/11-language-region-added.png#lightbox)
+[![Jazyk a vybrat oblasti](resource-qualifiers-images/xs/11-language-region-added-sml.png)](resource-qualifiers-images/xs/11-language-region-added.png#lightbox)
 
 -----
 
 
-Všimněte si, že pokud přidáte nový jazyk, ale nelze vytvořit nové prostředky pro se už přidané jazykově budou zobrazovat při příštím otevření projektu.
+Všimněte si, že pokud přidáte nový jazyk, ale nikoli vytvářet nové prostředky pro se budou přidané jazykově už nebude zobrazovat při příštím otevření projektu.
 
 
 
 ### <a name="ui-mode"></a>Režim uživatelského rozhraní
 
-Když kliknete **režimu uživatelského rozhraní** se zobrazí rozevírací nabídce Seznam režimů, jako například **normální**, **Car ukotvení**, **podpory ukotvení**, **Televize**, **zařízení**, a **sledovat**:
+Když kliknete **režim uživatelského rozhraní** se zobrazí rozevírací nabídku, seznam režimů, jako například **normální**, **dokovací stanice do auta**, **stanice na stůl**, **Televize**, **zařízení**, a **Watch**:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Nabídky režimu uživatelského rozhraní](resource-qualifiers-images/vs/12-ui-mode-sml.png)](resource-qualifiers-images/vs/12-ui-mode.png#lightbox)
+[![Režim uživatelského rozhraní nabídky](resource-qualifiers-images/vs/12-ui-mode-sml.png)](resource-qualifiers-images/vs/12-ui-mode.png#lightbox)
 
-Níže tohoto seznamu jsou režimů noc **není noc** a **noc**, za nímž následují pokynů rozložení **zleva doprava** a **zprava doleva** (pro informace o **zleva doprava** a **zprava doleva** najdete v části Možnosti [metodu LayoutDirection](https://developer.xamarin.com/api/type/Android.Util.LayoutDirection/).
-Poslední položky v **prostředků kvalifikátor možnosti** se dialogové okno **zaokrouhlit obrazovky** (pro použití se systémem Android nosit) nebo **není zaokrouhlit obrazovky** (informace o zaokrouhlit a najdete v části obrazovky bez ZAOKROUHLIT [rozložení](https://developer.android.com/training/wearables/ui/layouts.html)).
-Další informace o režimech Android uživatelského rozhraní najdete v tématu [UiModeManager](https://developer.xamarin.com/api/type/Android.App.UiModeManager/).
+Pod tohoto seznamu jsou režimy noční **ne noc** a **noční**, za nímž ve směru rozložení **zleva doprava** a **zprava doleva** (pro informace o **zleva doprava** a **zprava doleva** naleznete v možnosti [metodu LayoutDirection](https://developer.xamarin.com/api/type/Android.Util.LayoutDirection/).
+Poslední položky v **Možnosti kvalifikátoru prostředku** dialogového okna jsou **zaokrouhlit obrazovky** (pro použití s Android Wear) nebo **započaté obrazovky** (informace o kruhové a bez do kruhové obrazovky, naleznete v tématu [rozložení](https://developer.android.com/training/wearables/ui/layouts.html)).
+Další informace o režimech Android uživatelského rozhraní, naleznete v tématu [UiModeManager](https://developer.xamarin.com/api/type/Android.App.UiModeManager/).
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Nabídky režimu uživatelského rozhraní](resource-qualifiers-images/xs/12-ui-mode-sml.png)](resource-qualifiers-images/xs/12-ui-mode.png#lightbox)
+[![Režim uživatelského rozhraní nabídky](resource-qualifiers-images/xs/12-ui-mode-sml.png)](resource-qualifiers-images/xs/12-ui-mode.png#lightbox)
 
-Níže tohoto seznamu jsou režimů noc **není noc** a **noc**, za nímž následují pokynů rozložení **zleva doprava** a **zprava doleva**. Další informace o režimech Android uživatelského rozhraní najdete v tématu [UiModeManager](https://developer.xamarin.com/api/type/Android.App.UiModeManager/).
-Informace o **zleva doprava** a **zprava doleva** najdete v části Možnosti [metodu LayoutDirection](https://developer.xamarin.com/api/type/Android.Util.LayoutDirection/).
+Pod tohoto seznamu jsou režimy noční **ne noc** a **noční**, za nímž ve směru rozložení **zleva doprava** a **zprava doleva**. Další informace o režimech Android uživatelského rozhraní, naleznete v tématu [UiModeManager](https://developer.xamarin.com/api/type/Android.App.UiModeManager/).
+Informace o **zleva doprava** a **zprava doleva** naleznete v možnosti [metodu LayoutDirection](https://developer.xamarin.com/api/type/Android.Util.LayoutDirection/).
 
-### <a name="round-screen"></a>Zaokrouhlí obrazovky
+### <a name="round-screen"></a>Kulatá obrazovka
 
-Poslední položky v **prostředků kvalifikátor možnosti** dialogové okno je **zaokrouhlí obrazovky** nabídky. Tato nabídka umožňuje vybrat buď **zaokrouhlit obrazovky** (pro použití se systémem Android nosit) nebo **obdélníková obrazovky**:
+Poslední položky **Možnosti kvalifikátoru prostředku** dialogové okno je **Round obrazovky** nabídky. Tato nabídka umožňuje vybrat buď **zaokrouhlit obrazovky** (pro použití s Android Wear) nebo **nesedím**:
 
-[![Zaokrouhlí obrazovky nabídky](resource-qualifiers-images/xs/13-round-screen-sml.png)](resource-qualifiers-images/xs/13-round-screen.png#lightbox)
+[![Round nabídku obrazovky.](resource-qualifiers-images/xs/13-round-screen-sml.png)](resource-qualifiers-images/xs/13-round-screen.png#lightbox)
 
 -----
 
@@ -219,7 +219,7 @@ Poslední položky v **prostředků kvalifikátor možnosti** dialogové okno je
 
 ## <a name="action-bar-settings"></a>Nastavení panelu akcí
 
-**Panelu nastavení akce** ikonu je k dispozici nalevo od štětec (Editor motivů):
+**Nastavení panelu akcí** ikona je k dispozici na levém rohu ikonu štětce (Editor motivů sady):
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -232,19 +232,19 @@ Poslední položky v **prostředků kvalifikátor možnosti** dialogové okno je
 -----
 
 
-Tato ikona otevře dialogové okno popover, který poskytuje způsob, jak vyberte jednu z tři režimy panelu akcí:
+Tato ikona se otevře dialogové okno popover, který poskytuje způsob, jak vyberte jednu ze tří režimů panel akcí:
 
--   **Standardní** &ndash; se skládá buď logo nebo ikonu a title textu s volitelné subtitle.
+-   **Standardní** &ndash; se skládá z obou logo nebo ikonu a název text s nepovinný titulek.
 
--   **Seznam** &ndash; režim navigační seznamu. Místo statické nadpisu, tento režim uvede seznamu nabídky pro navigaci v rámci aktivity (to znamená, že ji lze zobrazit uživateli jako rozevíracího seznamu).
+-   **Seznam** &ndash; navigační režim seznamu. Místo statické nadpis, představuje tento režim seznamu nabídku navigace v rámci aktivity (to znamená, ho lze zobrazit uživateli jako rozevíracího seznamu).
 
--   **Karty** &ndash; karta navigační režimu. Tento režim místo statické nadpisu, uvede řadu karty pro navigaci v rámci aktivity.
+-   **Karty** &ndash; kartu navigační režim. Tento režim místo statické nadpis, představuje řadu karet pro navigaci v rámci aktivity.
 
 
 
 ## <a name="themes"></a>Motivy
 
-**Motiv** rozevírací nabídky se zobrazí všechny motivy definované v projektu. Výběr **víc motivů** otevře dialogové okno se seznamem všech motivy, které jsou k dispozici z nainstalovaných SDK pro Android, jak je uvedeno níže:
+**Motiv** rozevírací nabídce se zobrazí všechny motivy definované v projektu. Výběr **víc motivů** otevře dialogové okno se seznamem všech dostupných z nainstalované sady Android SDK, motivů, jak je znázorněno níže:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -257,39 +257,39 @@ Tato ikona otevře dialogové okno popover, který poskytuje způsob, jak vybert
 -----
 
 
-Pokud je vybraná motiv, návrhovou plochu, která je aktualizována na účinku nový motiv. Všimněte si, že tato změna se provádí trvalé jenom Pokud **OK** kliknutí na tlačítko **motiv** dialogové okno. Jakmile motiv byla vybrána, budou zahrnuty do **motiv** rozevírací nabídce jak je uvedené níže:
+Při výběru motivu návrhové ploše se aktualizuje a zobrazí efekt nový motiv. Mějte na paměti, že tato změna se provádí trvalé pouze tehdy, pokud **OK** kliknutí na tlačítko **motiv** dialogového okna. Jakmile motiv byl vybrán, budou zahrnuty do **motiv** rozevírací nabídky jak je znázorněno níže:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-![Motiv světlý je nyní k dispozici](resource-qualifiers-images/vs/16-light-theme.png "motiv světlý je nyní k dispozici")
+![Světlý motiv je nyní k dispozici](resource-qualifiers-images/vs/16-light-theme.png "světlý motiv je nyní k dispozici")
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Motiv světlý je nyní k dispozici](resource-qualifiers-images/xs/15-light-theme-sml.png)](resource-qualifiers-images/xs/15-light-theme.png#lightbox)
+[![Světlý motiv je nyní k dispozici](resource-qualifiers-images/xs/15-light-theme-sml.png)](resource-qualifiers-images/xs/15-light-theme.png#lightbox)
 
 -----
 
 
 
-## <a name="android-version"></a>Verzi systému Android
+## <a name="android-version"></a>Verze androidu
 
-Android **verze** selektor nastaví verzi systému Android, která se použije k vykreslení rozložení v návrháři. Selektor zobrazí všechny verze, které jsou kompatibilní s verzí cílový framework projektu:
+Android **verze** nastaví verzi Androidu, který se použije k vykreslení zobrazení v Návrháři selektoru. Selektor zobrazí všechny verze, které jsou kompatibilní s cílovou verzi rozhraní framework projektu:
 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-![Seznam verzí systému Android](resource-qualifiers-images/vs/17-android-version.png "seznamu Android verze")
+![Seznam verzí Androidu](resource-qualifiers-images/vs/17-android-version.png "seznamu Android verze")
 
-Cílová verze framework lze nastavit v nastavení projektu v části **vlastnosti > aplikace > zkompilovat pomocí Android verze**. Další informace o cílové verze framework najdete v tématu [Principy Android API úrovně](~/android/app-fundamentals/android-api-levels.md).
+Verze cílové platformy je možné nastavit v nastavení projektu v rámci **vlastnosti > aplikace > zkompilovat pomocí verze Androidu**. Další informace o cílové verze rozhraní najdete v tématu [Principy Android API úrovně](~/android/app-fundamentals/android-api-levels.md).
 
-Sada pomůcky, které jsou k dispozici v sadě nástrojů je určena cílová verze framework projektu. To platí také pro vlastnosti, které jsou dostupné ve **vlastnosti – okno**. Seznam dostupných pomůcky je *není* určená hodnotou vybraný v **verze** selektor panelu nástrojů. Například pokud nastavíte verze cíle projektu Android 4.4, Android 6.0 můžete vybrat v modulu pro výběr verze nástrojů zobrazíte vzhled projekt v Android 6.0, ale nebudete moct přidávat pomůcky, které jsou specifické pro Android 6.0 &ndash;  budou mít pořád omezená na pomůcky, které jsou k dispozici v systému Android 4.4.
+Sadu pomůcek, které jsou k dispozici v panelu nástrojů je určena cílová verze rozhraní framework projektu. To platí také pro tyto vlastnosti, které jsou k dispozici v **okno vlastností**. Je k dispozici seznam pomůcky *není* určené hodnoty vybrané v **verze** selektor panelu nástrojů. Například pokud nastavíte cílová verze projektu na Android 4.4, Android 6.0 můžete vybrat v volič verze nástrojů, vypadá projekt v Android 6.0, ale nebudete moci přidat pomůcky, které jsou specifické pro Android 6.0 &ndash;  stále budete omezeni widgetů, které jsou k dispozici v Androidu 4.4.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-[![Seznam verzí systému Android](resource-qualifiers-images/xs/16-android-version-sml.png)](resource-qualifiers-images/xs/16-android-version.png#lightbox)
+[![Seznam verzí Androidu](resource-qualifiers-images/xs/16-android-version-sml.png)](resource-qualifiers-images/xs/16-android-version.png#lightbox)
 
-Cílová verze framework lze nastavit v nastavení projektu v části **možnosti projektu > sestavení > Obecné** části. Další informace o cílové verze framework najdete v tématu [Principy Android API úrovně](~/android/app-fundamentals/android-api-levels.md).
+Verze cílové platformy je možné nastavit v nastavení projektu v rámci **možnosti projektu > sestavení > Obecné** oddílu. Další informace o cílové verze rozhraní najdete v tématu [Principy Android API úrovně](~/android/app-fundamentals/android-api-levels.md).
 
-Sada pomůcky, které jsou k dispozici v sadě nástrojů je určena cílová verze framework projektu. To platí také pro vlastnosti, které jsou dostupné ve **Pad vlastnost**. Seznam dostupných pomůcky je *není* určená hodnotou vybraný v **verze** selektor panelu nástrojů. Například pokud nastavíte verze cíle projektu Android 4.4, Android 6.0 můžete vybrat v modulu pro výběr verze nástrojů zobrazíte vzhled projekt v Android 6.0, ale nebudete moct přidávat pomůcky, které jsou specifické pro Android 6.0 &ndash;  budou mít pořád omezená na pomůcky, které jsou k dispozici v systému Android 4.4.
+Sadu pomůcek, které jsou k dispozici v panelu nástrojů je určena cílová verze rozhraní framework projektu. To platí také pro tyto vlastnosti, které jsou k dispozici v **vlastnost Pad**. Je k dispozici seznam pomůcky *není* určené hodnoty vybrané v **verze** selektor panelu nástrojů. Například pokud nastavíte cílová verze projektu na Android 4.4, Android 6.0 můžete vybrat v volič verze nástrojů, vypadá projekt v Android 6.0, ale nebudete moci přidat pomůcky, které jsou specifické pro Android 6.0 &ndash;  stále budete omezeni widgetů, které jsou k dispozici v Androidu 4.4.
 
 -----
