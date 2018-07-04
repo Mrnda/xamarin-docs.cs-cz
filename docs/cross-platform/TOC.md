@@ -11,7 +11,7 @@
 ### [Úvod do vývoje pro mobilní zařízení](get-started/introduction-to-mobile-development.md)
 ### [Úvod do životního cyklu vývoje mobilního softwaru](get-started/introduction-to-mobile-sdlc.md)
 
-### [Vytváření aplikací a platformy](app-fundamentals/building-cross-platform-applications/index.md)
+### [Vytváření multiplatformních aplikací](app-fundamentals/building-cross-platform-applications/index.md)
 #### [Přehled](app-fundamentals/building-cross-platform-applications/overview.md)
 #### [Část 1 – Informace o mobilní platformě Xamarin](app-fundamentals/building-cross-platform-applications/understanding-the-xamarin-mobile-platform.md)
 #### [Část 2 – Architektura](app-fundamentals/building-cross-platform-applications/architecture.md)
@@ -89,5 +89,4 @@
 #### [Proč Visual Studio nezahrnuje do mého sestavení projekt odkazované knihovny?](troubleshooting/questions/vs-config-manager.md)
 
 ### [Aktualizace odkazů na komponenty na NuGet](troubleshooting/component-nuget.md)
-### [Možnosti podpory](troubleshooting/support-options.md)
 ## [Ukázky](samples/index.yml)
