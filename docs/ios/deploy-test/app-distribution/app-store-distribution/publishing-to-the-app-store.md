@@ -1,385 +1,358 @@
 ---
-title: Publikování aplikace Xamarin.iOS k obchodu s aplikacemi
-description: Tento dokument popisuje, jak nakonfigurovat, vytvářet a publikovat aplikace pro Xamarin.iOS pro distribuci v úložišti aplikací.
+title: Publikování aplikace na platformě Xamarin.iOS pro App Store
+description: Tento dokument popisuje, jak nakonfigurovat, sestavit a publikovat aplikace pro Xamarin.iOS pro distribuci v App Store.
 ms.prod: xamarin
 ms.assetid: DFBCC0BA-D233-4DC4-8545-AFBD3768C3B9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 08/23/2017
-ms.openlocfilehash: 489d9fa569b083f5cb655dc503ab4fa551810b6d
-ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
+ms.date: 06/25/2018
+ms.openlocfilehash: 60aa177ccb14c443f1599b4ce42c07faa695baed
+ms.sourcegitcommit: 7d766f8a080ee6999e47c873a9f2ccec8fa5dd5a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36209486"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37439171"
 ---
-# <a name="publishing-xamarinios-apps-to-the-app-store"></a>Publikování aplikace Xamarin.iOS k obchodu s aplikacemi
+# <a name="publishing-xamarinios-apps-to-the-app-store"></a>Publikování aplikace na platformě Xamarin.iOS pro App Store
+
+Publikování aplikace do [App Store](https://www.apple.com/ios/app-store/), vývojář aplikací, musíte nejprve odeslat – společně se snímky obrazovky, popis, ikony a další informace – do společnosti Apple k revizi. Po schválení aplikace Apple umístí se na App Store, kde uživatelé můžou ji zakoupit a nainstalovat přímo z jejich zařízení s Iosem.
+
+Tato příručka popisuje, jak postupovat, Příprava aplikace pro App Store a odesílat do společnosti Apple k revizi. Konkrétně se popisuje:
+
+> [!div class="checklist"]
+> - Následující pokyny pro recenze App Store
+> - Nastavení ID aplikace a oprávnění
+> - Ikona App Store a ikony aplikace
+> - Nastavení App Store, zřizovací profil
+> - Aktualizuje **vydání** konfigurace sestavení
+> - Konfigurace aplikace v iTunes Connectu
+> - Sestavení aplikace a odesláním do společnosti Apple
 
 > [!IMPORTANT]
-> Apple [oznámilo](https://developer.apple.com/news/?id=05072018a) , od července 2018 se všechny aplikace a aktualizace odeslána na obchod s aplikacemi a musí mít byla vytvořena pomocí iOS 11 SDK a [podporují zobrazení iPhone X](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md).
+> Apple [udává](https://developer.apple.com/news/?id=05072018a) , že od července 2018 se všechny aplikace a aktualizace odeslané do App Store musí sestavené v IOS 11 SDK a [musí podporovat zobrazení pro iPhone X](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md).
 
-V pořadí distribuovat aplikace pro všechna zařízení iOS, Apple vyžaduje, aby publikovat prostřednictvím aplikace *App Store*, což nákupní centrální umístění pro aplikace pro iOS App Storu. S více než 500 000 aplikace v úložišti velkými písmeny vývojáři mnoho typů aplikací v masivním úspěch tento jediný bod rozdělení. Obchod s aplikacemi je to řešení na klíč, nabídky vývojáři aplikací distribuce a platebních systémy.
+## <a name="app-store-guidelines"></a>Pokyny pro App Store
 
-Proces odesílání aplikace k obchodu s aplikacemi zahrnuje:
+Před odesláním aplikace pro publikování v App Store, ujistěte se, že splňuje standardy definované společnosti Apple [pokyny pro recenze v App Store](https://developer.apple.com/appstore/resources/approval/guidelines.html).
+Při odesílání aplikace pro App Store společnosti Apple kontroly a ujistit se, že splňuje tyto požadavky. Pokud tomu tak není, Apple je odmítne – a budete muset řešit zmiňovanou problémy a odešlete znovu.
+Proto je vhodné se seznámit pokyny co nejdříve do procesu vývoje.
 
-1. Vytvoření **ID aplikace** a výběrem **oprávnění**.
-2. Vytváření **distribuční profil pro zřizování**.
-3. Pomocí tohoto profilu k sestavení aplikace.
-4. Odesílá se vaše aplikace prostřednictvím **iTunes Connect**.
+Pár věcí, které dávejte pozor na při odesílání aplikace:
 
+1. Zajistěte, aby že aplikace popis odpovídá jeho funkce.
+2. Test, který nemá k chybě aplikace v rámci normálního využití. To zahrnuje využití na každé zařízení s Iosem, které podporuje.
 
-Tento článek se zabývá všechny kroky potřebné k zřizovat, vytvoření a odeslání aplikace pro distribuci obchodu s aplikacemi.
+Také se podívejte na [App Store související prostředky](https://developer.apple.com/app-store/resources/) , které poskytuje Apple.
 
-## <a name="before-you-submit-an-application"></a>Před odesláním aplikace
+## <a name="set-up-an-app-id-and-entitlements"></a>Nastavení ID aplikace a oprávnění
 
-Po odeslání aplikace pro publikaci k obchodu s aplikacemi projde kontrolním procesu společností Apple zajistit, že splňuje společnosti Apple pokyny pro kvality a obsahu. Pokud vaše aplikace nesplňuje tyto pokyny, odmítnou Apple ho, po kterém budete muset vyřešit – neshoda citovalo společností Apple a pak znovu odešlete.
-Proto být mít co šanci díky tomu prostřednictvím Apple zkontrolujte seznámení se s těmito pokyny a při pokusu přizpůsobit aplikaci na ně. Společnosti Apple pokyny jsou k dispozici zde: [App Store kontrolní pokyny](https://developer.apple.com/appstore/resources/approval/guidelines.html).
+Každá aplikace systému iOS má jedinečné ID aplikace, která má přidruženou sadu aplikační služby volá *nároků*. Povolit oprávnění aplikace k provádění nejrůznějších operací, jako dostat nabízené oznámení, přístup k funkce iOS jako HealthKit a další.
 
-Pár věcí sledujte při odesílání aplikace, které jsou:
+K vytvoření ID aplikace a vyberte libovolné potřebné oprávnění, navštivte [portálu Apple Developer](https://developer.apple.com/account/) a postupujte podle těchto kroků:
 
-1. Ujistěte se, že popis aplikace odpovídá funkcí zahrnutých v aplikaci.
-2. Test, který není v aplikaci k chybě v rámci normálního využití. To zahrnuje využití na každé zařízení s iOS, které podporujete.
+1. V **certifikáty, ID a profily** vyberte **identifikátory > ID aplikace**.
+2. Klikněte na tlačítko **+** tlačítko a zadejte **název** a **ID sady prostředků** pro novou aplikaci.
+3. Přejděte do dolní části obrazovky a vyberte některou **App Services** aplikaci Xamarin.iOS, která se vyžaduje. Aplikační služby jsou popsané v [práce s funkcemi v Xamarin.iosu](~/ios/deploy-test/provisioning/capabilities/index.md) průvodce.
+4. Klikněte na tlačítko **pokračovat** a postupujte podle na obrazovce pokynů a vytvořte nové ID aplikace.
 
+Kromě výběru a konfigurace požadované aplikační služby, při definování ID aplikace, musíte nakonfigurovat ID aplikace a oprávnění v projektu Xamarin.iOS úpravou **Info.plist** a  **Do souboru Entitlements.plist** soubory. Další informace, podívejte se na [práce s nároky v Xamarin.iosu](~/ios/deploy-test/provisioning/entitlements.md) příručku, která popisuje, jak vytvořit **do souboru Entitlements.plist** Souborová služba a význam různá nastavení oprávnění obsahuje.
 
-Apple také udržuje seznam tipy odeslání obchodu s aplikacemi. Můžete si přečíst tyto položky ve [distribuci na webu App Store](https://developer.apple.com/appstore/resources/submission/tips.html).
+## <a name="include-an-app-store-icon"></a>Zahrnout ikona App Store
 
-## <a name="configuring-your-application-in-itunes-connect"></a>Konfigurace vaší aplikace v iTunes Connect
+Při odeslání aplikace do společnosti Apple, se ujistěte, že obsahuje katalog prostředků, který obsahuje ikonu App Store. Se dozvíte, jak to provést, podívejte se na [App Store ikony v Xamarin.iosu](~/ios/app-fundamentals/images-icons/app-store-icon.md) průvodce.
 
-[iTunes Connect](https://itunesconnect.apple.com/WebObjects/iTunesConnect.woa) je sada nástrojů pro webové, mimo jiné, správu aplikací iOS na webu App Store. Aplikace Xamarin.iOS bude muset být správně instalační program a nakonfigurované v iTunes připojit před lze odeslat společnosti Apple ke kontrole a nakonec, se uvolní pro prodej, nebo jako bezplatnou aplikaci v App Storu.
+## <a name="set-the-apps-icons-and-launch-screens"></a>Nastavení ikon aplikace a spouštěcí obrazovky
 
-Postupujte takto:
+Pro společnosti Apple a zpřístupnit tak aplikaci pro iOS na App Store musí mít správné ikony a spouštěcí obrazovky pro všechna zařízení s Iosem, na kterém můžete spustit. Další informace o nastavení ikony aplikace a spouštěcí obrazovky přečtěte si následující příručky:
 
-1. Ověřte, zda jsou na místě a až datum ve správné smlouvy **smlouvy, daň a bankovnictví** části iTunes připojit k vydání aplikace pro iOS zdarma nebo pro prodej.
-2. Vytvořte novou **iTunes připojit záznam** pro aplikaci a zadejte jeho **zobrazovaný název** (jak je vidět na webu App Store).
-3. Vyberte **prodej cena** nebo určit, že aplikace budou vydány zdarma.
-5. Zajištění čisté, stručného **popis** aplikace včetně její funkce a využívat pro koncového uživatele.
-6. Zadejte **kategorie**, **dílčí kategorie**, a **klíčová slova** pomoct uživateli najít vaší aplikace v úložišti aplikací.
-7. Zadejte **kontaktujte** a **podporu** adres URL pro váš web vyžaduje společností Apple.
-8. Nastavení aplikace **hodnocení**, který je využíván jiným rodičovské kontroly na webu App Store.
-9. Nakonfigurovat volitelné obchodu s aplikacemi technologie, jako třeba **herní Centrum** a **nákupy v aplikaci**.
+- [Ikony aplikace v Xamarin.iosu](~/ios/app-fundamentals/images-icons/app-icons.md)
+- [Spouštěcí obrazovky pro aplikace Xamarin.iOS](~/ios/app-fundamentals/images-icons/launch-screens.md)
 
-Další podrobnosti najdete v tématu naše [konfigurace aplikace v iTunes Connect](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md) dokumentaci.
+## <a name="create-and-install-an-app-store-provisioning-profile"></a>Vytvoření a instalace aplikace App Store, zřizovací profil
 
-## <a name="preparing-for-app-store-distribution"></a>Příprava pro distribuci obchodu s aplikacemi
+používá iOS *zřizovací profily* řídit, jak je možné nasadit konkrétní aplikaci sestavení. Jsou to soubory, které obsahují informace o certifikátu použitého k podepsání aplikace, ID aplikace a nainstalovanou aplikaci. Pro vývoj a ad hoc distribuci zřizovací profil také obsahuje seznam povolených zařízení, na které můžete aplikaci nasadit. Pro App Store distribuci pouze certifikátu a informace o ID aplikace jsou však součástí od App Store je jediným mechanismus pro distribuci veřejného.
 
-K publikování aplikace do obchodu s aplikacemi, musíte nejprve vytvořit pro distribuci, který zahrnuje mnoho kroků. V následujících částech obsahuje všechno potřebné při přípravě aplikace pro Xamarin.iOS pro publikaci tak, aby se dají vytvářet a odešlete ji do obchodu s aplikacemi pro revize a verze.
+Vytvoření a instalace aplikace App Store, zřizovací profil, postupujte podle těchto kroků:
 
-### <a name="provisioning-for-application-services"></a>Zřizování pro aplikační služby
+1. Přihlaste se k [portálu Apple Developer](https://developer.apple.com/account/).
+2. V **certifikáty, ID a profily**vyberte **zřizovací profily > distribuce**.
+3. Klikněte na tlačítko **+** tlačítka, vyberte **App Store**a klikněte na tlačítko **pokračovat**.
+4. Vyberte svou aplikaci **ID aplikace** ze seznamu a klikněte na tlačítko **pokračovat**.
+5. Vyberte podpisový certifikát a klikněte na tlačítko **pokračovat**.
+6. Zadejte **název profilu** a klikněte na tlačítko **pokračovat** k vygenerování profilu.
+7. Pomocí Xamarinu pro [Správa účtů Apple](~/cross-platform/macios/apple-account-management.md) nástroje pro stažení nově vytvořené zřizování profilu do vašeho macu. Pokud jste na počítači Mac, můžete také stáhnout přímo z portálu Apple Developer zřizovací profil a poklepejte na něj nainstalovat.
 
-Apple poskytuje výběr speciální aplikační služby, označované taky jako oprávnění, které je možné aktivovat pro aplikace iOS, pokud vytvoříte jedinečné ID pro ni. Ať používáte vlastní oprávnění, nebo Ne, musíte stále vytvořit jedinečné ID pro vaši aplikaci Xamarin.iOS před publikováním na webu App Store.
+Podrobné pokyny najdete v tématu [vytváření distribučního profilu](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#provisioningprofile) a [výběr distribučního profilu v projektu Xamarin.iOS](~/ios/deploy-test/app-distribution/app-store-distribution/index.md#selectprofile).
 
-Vytvoření ID aplikace a volitelně vybrat oprávnění zahrnuje následující kroky pomocí společnosti Apple založené na webu iOS Provisioning Portal:
+## <a name="update-the-release-build-configuration"></a>Aktualizace konfigurace sestavení pro vydání
 
-1. V **certifikáty, identifikátory a profily** části vyberte **identifikátory** > **ID aplikace**.
-2. Klikněte **+** tlačítko a zadejte **název** a **ID sady** pro novou aplikaci.
-3. Přejděte do dolní části obrazovky a vyberte některou **App Services** , bude nutné ve vaší aplikace pro Xamarin.iOS.
-4. Klikněte **pokračovat** tlačítko a následující na obrazovce pokyny pro vytvoření nového ID aplikace.
-
-Kromě výběr a konfigurace požadované aplikace služby při definování vaše ID aplikace, musíte také nakonfigurovat ID aplikace a oprávnění v projektu Xamarin.iOS úpravou i `Info.plist` a `Entitlements.plist` soubory.
-
-Postupujte takto:
-
-1. V **Průzkumníku řešení**, dvakrát klikněte `Info.plist` soubor otevřete pro úpravy.
-2. V **iOS cíl aplikací** , zadejte název vaší aplikace a zadejte **identifikátor svazku** jste vytvořili při definování ID aplikace.
-3. Uložit změny `Info.plist` souboru.
-4. V **Průzkumníku řešení**, dvakrát klikněte `Entitlements.plist` soubor otevřete pro úpravy.
-5. Vyberte a nakonfigurujte oprávnění požadované pro vás aplikace pro Xamarin.iOS tak, aby se shodovaly s instalačním programem, které jste provedli výše, pokud je definována ID aplikace.
-6. Uložit změny `Entitlements.plist` souboru.
-
-Podrobné pokyny najdete v tématu naše [zřizování pro služby aplikací](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#appservices) dokumentaci.
-
-### <a name="setting-the-store-icons"></a>Nastavení úložiště ikony
-
-Ikony aplikace úložiště by měl nyní doručil katalog asset. Přidání ikony obchodu s aplikacemi, nejprve vyhledat **AppIcon** image nastavit **Assets.xcassets** souboru projektu.
-
-Název požadované ikony v katalogu Asset **obchod** a měl by být **1 024 x 1 024** velikost. Apple uvedli, že ikonu úložiště pro aplikace v katalogu asset nemůže být průhledná ani obsahovat kanálu alfa.
-
-Informace o nastavení ikonu úložiště najdete v části [ikonu Uložit aplikace](~/ios/app-fundamentals/images-icons/app-store-icon.md) průvodce.
-
-### <a name="setting-the-apps-icons-and-launch-screens"></a>Nastavení ikony aplikace a spuštění obrazovky
-
-Pro aplikace pro iOS třeba přijmout společností Apple pro zařazení do obchodu s aplikacemi vyžaduje správné ikony a spuštění obrazovky pro všechny IOS zařízení, která bude systémem. Ikony aplikace jsou přidány do vašich projektů v katalog asset prostřednictvím **AppIcon** image nastavit **Assets.xcassets** souboru. Spuštění obrazovky jsou přidány prostřednictvím scénáře.
-
-Podrobné pokyny pro vytvoření ikony aplikace a spuštění obrazovky, najdete v článku [ikona aplikace](~/ios/app-fundamentals/images-icons/app-icons.md) a [spusťte obrazovky](~/ios/app-fundamentals/images-icons/launch-screens.md) příručky.
-
-### <a name="creating-and-installing-a-distribution-profile"></a>Vytvoření a instalace profil distribuce
-
-používá iOS *profily zřizování* k řízení nasazení sestavení konkrétní aplikace. Jsou to soubory, které obsahují informace o certifikát použitý k podepsání aplikace, *ID aplikace*, kde se dají nainstalovat aplikaci. Pro vývoj a distribuci ad-hoc profil zřizování také zahrnuje seznam povolených zařízení, do kterých můžete aplikaci nasadit. Pro distribuci obchodu s aplikacemi, pouze informace ID certifikátu a aplikace jsou však součástí, vzhledem k tomu, že je pouze mechanismus pro distribuci veřejného prostřednictvím App Storu.
-
-Zřizování zahrnuje následující kroky pomocí společnosti Apple webové iOS Provisioning Portal:
-
-1.  Vyberte **zřizování** > **distribuční**.
-2.  Klikněte **+** tlačítko a vyberte typ profil distribuce, kterou chcete vytvořit jako **obchod**.
-3.  Vyberte **ID aplikace** z rozevíracího seznamu, který chcete vytvořit profil distribuce pro.
-4.  Vyberte platný certifikát pro podepsání aplikace produkční (distribuce).
-5.  Zadejte **název** pro nové **profil distribuce** a generovat profil.
-6.  V systému Mac, otevřete na Xcode a přejděte do **Předvolby > [vyberte Apple ID] > Zobrazit podrobnosti...** . Stažení všech dostupných profilů v Xcode na Mac.
-7.  Návratový IDE a v části **iOS podepisování sady** možností vyberte profil zřizování distribuce pro správný _sestavení konfigurace_ (to bude buď **obchod**nebo **verze**).
-
-Podrobné pokyny najdete v tématu [vytváření profil distribuce](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#provisioningprofile) a [vyberete profil distribuce v projektu Xamarin.iOS](~/ios/deploy-test/app-distribution/app-store-distribution/index.md#selectprofile).
-
-## <a name="setting-the-build-configuration-for-your-application"></a>Nastavení konfigurace sestavení pro aplikaci
+Nové projekty Xamarin.iOS automaticky nastavit **ladění** a **vydání** _konfigurace sestavení_. O správné konfiguraci **vydání** sestavení, postupujte podle těchto kroků:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-Postupujte takto:
+1. Z **oblasti řešení**, otevřete **Info.plist**. Vyberte **ruční zřizování**. Soubor uložte a zavřete.
+2. Klikněte pravým tlačítkem na **název projektu** v **oblasti řešení**vyberte **možnosti**a přejděte **iOS Build** kartu.
+3. Nastavte **konfigurace** k **vydání** a **platformy** k **iPhone**.
+4. K sestavení konkrétní sadou SDK pro iOS, vyberte ho z **verze sady SDK** seznamu. V opačném případě ponechte tuto hodnotu na **výchozí**.
+5. Odstranění limit nepoužitý kód propojení snižuje celkové velikosti aplikace. Ve většině případů **chování Linkeru** by měla být nastavena na výchozí hodnotu **propojit jen sady SDK architektury**. V některých případech, jako je při použití některých knihoven třetích stran, může být potřeba nastavit hodnotu **není odkaz** zajistit, že se neodebere potřebný kód. Další informace najdete [aplikace Xamarin.iOS propojení](~/ios/deploy-test/linker.md) průvodce.
+6. Zkontrolujte **obrázků PNG optimalizovat** dále snížit velikost vaší aplikace.
+7. Ladění by měl _není_ zapnout, protože to způsobí, že sestavení zbytečně velký.
+8. Pro iOS 11, vyberte jednu z architektury zařízení, které podporuje **ARM64**. Další informace o sestavování pro zařízení s Iosem 64-bit, najdete v tématu **povolení 64bitové sestavení z aplikace na platformě Xamarin.iOS** část [informace o 32bitové/64bitové platformě](~/cross-platform/macios/32-and-64/index.md) dokumentaci.
+9. Možná budete chtít použít **LLVM** kompilátoru k sestavení kódu menší a rychlejší. Tato možnost však zvyšuje dobu potřebnou ke kompilaci.
+10. Podle potřeb vaší aplikace, můžete také chtít upravit typ **uvolňování** právě používá a nastaveny pro **internacionalizace**.
 
-1. Klikněte pravým tlačítkem na **název projektu** v **řešení Pad** a výběr **možnost** k jejich otevření k úpravám.
-2. Vyberte **iOS sestavení** a vyberte **verze | iPhone** z **konfigurace** rozevíracího seznamu:
+    Po nastavení možností je popsáno výše, nastavení sestavení by měl vypadat nějak takto:
 
-    ![](publishing-to-the-app-store-images/configurevs01.png "Vyberte z rozevíracího seznamu konfigurace AppStore")
+    ![nastavení sestavení iOS](publishing-to-the-app-store-images/build-m157.png "nastavení sestavení pro iOS")
 
-3. Pokud máte na iOS konkrétní verzi, která cílení, můžete vybrat z **verze sady SDK** rozevíracího seznamu, else ponechte tuto hodnotu ve výchozím nastavení.
-4. Propojování snižuje celkové velikosti vaší aplikace distribuovatelného tím odstraňování se nepoužité metody, vlastnosti třídy, atd. a ve většině případů by měl být ponecháno na výchozí hodnotu **pouze sestavení SDK odkaz**. V některých situacích, jako např. kdy některé konkrétní použití 3. stran knihovny, budete muset nastavit hodnotu **není odkaz** zachovat požadované prvky. odebrání. Další informace najdete v části [iOS sestavení mechanismy](~/ios/deploy-test/ios-build-mechanics.md) průvodce.
-5. **Soubory ve formátu PNG optimalizovat pro iOS** by měl být zaškrtnuto, jako to vám pomůže další zmenšete velikost dodávky vaší aplikace.
-6. Ladění by _není_ povolit sestavení budou provedeny zbytečně velké.
-8. Pro iOS 11, budete muset vyberte jednu z architektury zařízení, které podporuje **ARM64**. Další informace o vytváření pro zařízení s iOS 64bitová verze, najdete v tématu **povolení 64 Bit sestavení z aplikace na platformě Xamarin.iOS** části [32 nebo 64bitový platformy aspekty](~/cross-platform/macios/32-and-64/index.md) dokumentaci.
-9. Můžete volitelně použít **LLVM** kompilátoru, která vytvoří kód menší a rychlejší, ale bude trvat déle, než se zkompilovat.
-10. Podle potřeb vaší aplikace, může také chcete upravit typ **uvolňování paměti** používá a nastavení pro **internacionalizace**.
-11. Uloží změny do konfigurace sestavení.
+    Také se podívejte na za [mechanismy sestavování pro iOS](~/ios/deploy-test/ios-build-mechanics.md) příručku, která popisuje další nastavení buildu.
+
+11. Přejděte **podepsání sady prostředků aplikace pro iOS** kartu. Pokud tady možnosti se nedají upravovat, ujistěte se, že **ručního zřizování** výběru v **Info.plist** souboru.
+12. Ujistěte se, že **konfigurace** je nastavena na **vydání** a **platformy** je nastavena na **iPhone**.
+13. Nastavte **Podpisová identita** k **distribuce (automaticky)**.
+14. Pro **zřizovací profil**, vyberte App Store, zřizovací profil [vytvořené výše](#create-and-install-an-app-store-provisioning-profile).
+
+    Váš projekt sady Možnosti podpisu by teď měl vypadat nějak takto:
+
+    ![Podepsání sady prostředků aplikace pro iOS](publishing-to-the-app-store-images/bundleSigning-m157.png "podepsání sady prostředků aplikace pro iOS")
+
+15. Klikněte na tlačítko **OK** uložte změny ve vlastnostech projektu.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Ve výchozím nastavení, když vytvoříte novou aplikaci Xamarin.iOS v sadě Visual Studio _sestavení konfigurace_ se vytvářejí automaticky pro obě **Ad Hoc** a **obchod** nasazení. Před provedením poslední sestavení aplikace, který se odesílá do společnosti Apple, existuje několik změna, která budete muset provést základní konfiguraci.
+1. Z **Průzkumníka řešení**, otevřete **Info.plist**. Vyberte **ruční zřizování**. Soubor uložte a zavřete.
+2. Ujistěte se, že Visual Studio 2017 byla [spárované k hostiteli buildu Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
+3. Klikněte pravým tlačítkem na **název projektu** v **Průzkumníku řešení**, vyberte **vlastnosti**a přejděte **iOS Build** kartu.
+4. Nastavte **konfigurace** k **vydání** a **platformy** k **iPhone**.
+5. K sestavení konkrétní sadou SDK pro iOS, vyberte ho z **verze sady SDK** seznamu. V opačném případě ponechte tuto hodnotu na **výchozí**.
+6. Odstranění limit nepoužitý kód propojení snižuje celkové velikosti aplikace. Ve většině případů **chování Linkeru** by měla být nastavena na výchozí hodnotu **propojit jen sady SDK architektury**. V některých případech, jako je při použití některých knihoven třetích stran, může být potřeba nastavit hodnotu **není odkaz** zajistit, že se neodebere potřebný kód. Další informace najdete [aplikace Xamarin.iOS propojení](~/ios/deploy-test/linker.md) průvodce.
+7. Zkontrolujte **obrázků PNG optimalizovat** dále snížit velikost vaší aplikace.
+8. Ladění by nemělo být povoleno, protože to způsobí, že sestavení zbytečně velký.
+9. Pro iOS 11, vyberte jednu z architektury zařízení, které podporuje **ARM64**. Další informace o sestavování pro zařízení s Iosem 64-bit, najdete v tématu **povolení 64bitové sestavení z aplikace na platformě Xamarin.iOS** část [informace o 32bitové/64bitové platformě](~/cross-platform/macios/32-and-64/index.md) dokumentaci.
+10. Možná budete chtít použít **LLVM** kompilátoru k sestavení kódu menší a rychlejší. Tato možnost však zvyšuje dobu potřebnou ke kompilaci.
+11. Podle potřeb vaší aplikace, můžete také chtít upravit typ **uvolňování** právě používá a nastaveny pro **internacionalizace**.
 
-Postupujte takto:
+    Po nastavení možností je popsáno výše, nastavení sestavení by měl vypadat nějak takto:
 
-1. Klikněte pravým tlačítkem na **název projektu** v **Průzkumníku řešení** a výběr **vlastnosti** k jejich otevření k úpravám.
-2. Vyberte **iOS sestavení** a **AppStore** (nebo **verze** Pokud AppStore není k dispozici) z **konfigurace** rozevíracího seznamu:
+    ![nastavení sestavení iOS](publishing-to-the-app-store-images/build-w157.png "nastavení sestavení pro iOS")
 
-    ![](publishing-to-the-app-store-images/configurevs01.png "Vyberte z rozevíracího seznamu konfigurace AppStore")
+    Také se podívejte na za [mechanismy sestavování pro iOS](~/ios/deploy-test/ios-build-mechanics.md) příručku, která popisuje další nastavení buildu.
 
-3. Pokud máte na iOS konkrétní verzi, která cílení, můžete vybrat z **verze sady SDK** rozevíracího seznamu, else ponechte tuto hodnotu ve výchozím nastavení.
-4. Propojování snižuje celkové velikosti vaší aplikace distribuovatelného tím odstraňování se nepoužité metody, vlastnosti třídy, atd. a ve většině případů by měl být ponecháno na výchozí hodnotu **pouze sestavení SDK odkaz**. V některých situacích, jako např. kdy některé konkrétní použití 3. stran knihovny, budete muset nastavit hodnotu **není odkaz** zachovat požadované prvky. odebrání. Další informace najdete v části [iOS sestavení mechanismy](~/ios/deploy-test/ios-build-mechanics.md) průvodce.
-5. **Soubory ve formátu PNG optimalizovat pro iOS** by měl být zaškrtnuto, jako to vám pomůže další zmenšete velikost dodávky vaší aplikace.
-6. Ladění by _není_ povolit sestavení budou provedeny zbytečně velké.
-7. Klikněte na **Upřesnit** karty:
+12. Přejděte **podepsání sady prostředků aplikace pro iOS** kartu. Pokud tady možnosti se nedají upravovat, ujistěte se, že **ručního zřizování** výběru v **Info.plist** souboru.
+13. Ujistěte se, že **konfigurace** je nastavena na **vydání** a **platformy** je nastavena na **iPhone**.
+14. Nastavte **Podpisová identita** k **distribuce (automaticky)**.
+15. Pro **zřizovací profil**, vyberte App Store, zřizovací profil [vytvořené výše](#create-and-install-an-app-store-provisioning-profile).
 
-    ![](publishing-to-the-app-store-images/configurevs02.png "Karta Upřesnit")
+    Váš projekt sady Možnosti podpisu by teď měl vypadat nějak takto:
 
-8. Pokud vaše aplikace Xamarin.iOS je cílení na zařízení s iOS 8 a 64 bit iOS, budete muset vyberte jednu z architektury zařízení, které podporuje **ARM64**. Další informace o vytváření pro zařízení s iOS 64bitová verze, najdete v tématu **povolení 64 Bit sestavení z aplikace na platformě Xamarin.iOS** části [32 nebo 64bitový platformy aspekty](~/cross-platform/macios/32-and-64/index.md) dokumentaci.
-9. Můžete volitelně použít **LLVM** kompilátoru, která vytvoří kód menší a rychlejší, ale bude trvat déle, než se zkompilovat.
-10. Podle potřeb vaší aplikace, může také chcete upravit typ **uvolňování paměti** používá a nastavení pro **internacionalizace**.
-11. Uloží změny do konfigurace sestavení.
+    ![Podepsání sady prostředků nastavení iOS](publishing-to-the-app-store-images/bundleSigning-w157.png "podepsání sady prostředků nastavení pro iOS")
+
+16. Přejděte **iOS – možnosti souborů IPA** kartu.
+17. Ujistěte se, že **konfigurace** je nastavena na **vydání** a **platformy** je nastavena na **iPhone**.
+18. Zkontrolujte, **sestavení iTunes Package Archive (IPA)** zaškrtávací políčko. Toto nastavení způsobí, že každý **vydání** (protože to je vybraná konfigurace) od sestavení k vygenerování souboru .ipa. Tento soubor lze odeslat společnosti Apple na vydání v App Store.
+
+    > [!NOTE]
+    > **iTunes Metadata** a **iTunes** nejsou nutné pro App Store vydané verze. Další informace, podívejte se na [soubor iTunesMetadata.plist v aplikace Xamarin.iOS](~/ios/deploy-test/app-distribution/itunesmetadata.md) a [obrázky pro iTunes](~/ios/app-fundamentals/images-icons/app-icons.md#itunes-artwork).
+
+19. .Ipa název souboru, který se liší od názvu projektu Xamarin.iOS, zadejte ho **název balíčku** pole.
+
+    ![Podepsání sady prostředků nastavení iOS](publishing-to-the-app-store-images/ipaOptions-w157.png "podepsání sady prostředků nastavení pro iOS")
+
+20. Uložte konfiguraci sestavení a zavřete ho.
 
 -----
 
-## <a name="building-and-submitting-the-distributable"></a>Vytváření a odesílání distribuovatelného
+## <a name="configure-your-app-in-itunes-connect"></a>Nakonfigurujte svoji aplikaci ve službě iTunes Connect
 
-Pomocí aplikace Xamarin.iOS správně nakonfigurovány nyní jste připraveni udělat poslední distribuční sestavení, který se odesílá, aby Apple ke kontrole a verzi.
+[iTunes Connect](https://itunesconnect.apple.com) je sada webové nástroje pro správu svých aplikacích pro iOS v App Store. Vaše aplikace Xamarin.iOS musejí být správně nakonfigurovány ve službě iTunes Connect, než může být odeslána do společnosti Apple k revizi a uvolněna na App Store.
+
+Zjistěte, jak to provést, najdete [konfigurace aplikace ve službě iTunes Connect](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md) průvodce.
+
+## <a name="build-and-submit-your-app"></a>Vytvoření a odeslání aplikace
+
+Správně nakonfigurované nastavení sestavení a iTunes Connect čeká na váš příspěvek teď můžete sestavit svoji aplikaci a odešlete do společnosti Apple.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-### <a name="build-your-archive"></a>Sestavení vašem archivu
+1. V sadě Visual Studio pro Mac, vyberte **vydání** konfiguraci sestavení a zařízení (ne simulátor), pro které chcete sestavit.
 
-1. Vyberte **verze | Zařízení** konfigurace v sadě Visual Studio pro Mac:
+    ![Sestavit výběr konfigurace a platforma](publishing-to-the-app-store-images/chooseConfig-m157.png "výběru konfigurace a platforma sestavení")
 
-    ![](publishing-to-the-app-store-images/buildxs01new.png "Vyberte verze | Konfigurace zařízení")
-1. Z **sestavení** nabídce vyberte možnost **archivu pro publikování**:
+2. Z **sestavení** nabídce vyberte možnost **archivovat pro publikování**.
+3. Po vytvoření archivu **archivy** zobrazení se zobrazí:
 
-    ![](publishing-to-the-app-store-images/buildxs02new.png "Vyberte archivu pro publikování")
+    ![Zobrazit archivy](publishing-to-the-app-store-images/archives-m157.png "archivuje zobrazení")
 
-1. Po vytvoření archivu **archivy** zobrazení se zobrazí:
+    > [!NOTE]
+    > Ve výchozím nastavení **archivuje** zobrazení se zobrazí pouze archivy pro otevřené řešení. Pokud chcete zobrazit všechna řešení s archivy, zkontrolujte **zobrazit všechny archivy** zaškrtávací políčko. Je vhodné zachovat původní archivy tak, aby ladicí informace, které patří mezi ně můžete použít pro symbolizaci zpráv o chybách v případě potřeby.
 
-    ![](publishing-to-the-app-store-images/buildxs03new.png "Zobrazí se zobrazení archivy")
+4. Klikněte na tlačítko **podepsat a distribuovat...**  otevřete Průvodce publikováním.
+5. Vyberte **App Store** distribuční kanál. Klikněte na tlačítko **Další**.
 
+    ![Výběr distribuční kanál](publishing-to-the-app-store-images/distChannel-m157.png "distribuční kanál výběr")
+
+6. V **zřizovací profil** okna, vyberte podpisovou identitu, aplikace a zřizovací profil. Klikněte na tlačítko **Další**.
+
+    ![Výběr profilu zřizování](publishing-to-the-app-store-images/provProfileSelect-m157.png "výběr profilu zřizování")
+
+7. Ověřte podrobnosti balíčku a klikněte na tlačítko **publikovat** uložení souboru .ipa pro aplikaci:
+
+    ![Ověření podrobností aplikace](publishing-to-the-app-store-images/publish-m157.png "ověření podrobnosti aplikace")
+
+8. Jakmile vaše .ipa byla uložena, vaše aplikace je připravená k odeslání do služby iTunes Connect.
+
+    ![Připravena k odeslání](publishing-to-the-app-store-images/readyToGo-m157.png "připravena k odeslání")
+
+9. Klikněte na tlačítko **otevřít zavaděč aplikace** a přihlaste se (Všimněte si, že je potřeba [vytvořit heslo aplikace konkrétní](https://support.apple.com/ht204397) zadání Apple ID).
+
+    > [!NOTE]
+    > Další informace o nástroji, podívejte se na [dokumentace společnosti Apple o zavaděč aplikací](https://help.apple.com/itc/apploader/#/apdS673accdb).
+
+10. Vyberte **dodávat aplikace** a klikněte na tlačítko **zvolit** tlačítka:
+
+    ![Vyberte doručování aplikací](publishing-to-the-app-store-images/publishvs01.png "vyberte doručování aplikací")
+
+11. Vyberte soubor .ipa jste vytvořili výše a klikněte na tlačítko **OK** tlačítko.
+12. Zavaděč aplikací se ověření souboru:
+
+    ![Obrazovka ověření](publishing-to-the-app-store-images/publishvs02.png "obrazovky ověření")
+
+13. Klikněte na tlačítko **Další** tlačítko a aplikace bude ověřovat na App Store:
+
+    ![Ověřování App Store](publishing-to-the-app-store-images/publishvs03.png "ověření proti App Store")
+
+14. Klikněte na tlačítko **odeslat** tlačítko k odeslání aplikací do společnosti Apple k revizi.
+15. Zavaděč aplikací bude informovat, když soubor se úspěšně odeslal.
+
+    > [!NOTE]
+    > Apple může zamítnout aplikací s využitím **iTunesMetadata.plist** součástí soubor .ipa výsledkem je chyba, jako je následující:
+    >
+    > `ERROR: ERROR ITMS-90047: "Disallowed paths ( "iTunesMetadata.plist" ) found at: Payload/iPhoneApp1.app"`
+    >
+    > Alternativní řešení této chyby, podívejte se na [tento příspěvek na fórech Xamarin](https://forums.xamarin.com/discussion/40388/disallowed-paths-itunesmetadata-plist-found-at-when-submitting-to-app-store/p1).
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 > [!NOTE]
-> Při starý _obchod_ a _Ad Hoc_ konfigurace teď byly odebrány ze všech pro Mac šablony projektů sady Visual Studio, můžete zjistit, že starší projekty stále zahrnuje tyto konfigurace. Pokud je to tento případ, můžete nadále používat **App Store | Zařízení** konfigurace v kroku 1 seznamu výše.
+> Visual Studio 2017 v současné době nepodporuje **archivovat pro publikování** pracovní postup najít v sadě Visual Studio pro Mac.
 
-### <a name="sign-and-distribute-your-app"></a>Podepisování a distribuce aplikace
+1. Ujistěte se, že Visual Studio 2017 byla [spárované k hostiteli buildu Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
+2. Vyberte **vydání** ze sady Visual Studio 2017 **konfigurace řešení** rozevíracího seznamu a **iPhone** z **platformy řešení** rozevírací seznam.
 
- Pokaždé, když vytváříte aplikace pro archiv, se automaticky otevře **archivy zobrazení**, zobrazení všech archivovány projekty; seskupené podle řešení. Ve výchozím nastavení toto zobrazení uvádí jenom aktuální, otevřete řešení. Pokud chcete zobrazit všechna řešení, které mají archivy, klikněte na **zobrazit všechny archivy** možnost.
+    ![Sestavit výběr konfigurace a platforma](publishing-to-the-app-store-images/chooseConfig-w157.png "výběru konfigurace a platforma sestavení")
 
- Aby se zachovala archivy nasazované pro zákazníky (obchodu s aplikacemi nebo Enterprise nasazení), se doporučuje, aby všechny ladicí informace, které jsou generovány můžete symbolized později.
+3. Sestavte projekt. Tím se vytvoří soubor s příponou .ipa.
 
- Podepište aplikaci, a příprava pro distribuci:
+    > [!NOTE]
+    > [Aktualizace konfigurace sestavení pro vydání](#update-the-release-build-configuration) nakonfigurované nastavení sestavení aplikace chcete vytvořit soubor .ipa pro každou část tohoto dokumentu **vydání** sestavení.
 
+4. Najít soubor .ipa na počítači s Windows, klikněte pravým tlačítkem na název projektu Xamarin.iOS ve Visual Studiu 2017 **Průzkumníka řešení** a zvolte **otevřít složku v Průzkumníku souborů**. Pak na právě otevřené Windows **Průzkumníka souborů**, přejděte **bin/iPhone/Release** podadresáře. Pokud nemáte [přizpůsobit umístění výstupu soubor .ipa](#customize-the-ipa-location), by měla být v tomto adresáři.
+5. Chcete-li zobrazit místo toho soubor .ipa na hostiteli buildu Mac, klikněte pravým tlačítkem na název projektu Xamarin.iOS ve Visual Studiu 2017 **Průzkumníka řešení** (ve Windows) a vyberte **zobrazit soubor IPA na serveru sestavení**. Tím se otevře **Finder** okno na hostiteli buildu Mac se vybraný soubor .ipa.
+6. Na hostiteli buildu Mac otevřete **Spouštěče aplikací**. V Xcode, vyberte **Xcode > Otevřít vývojářský nástroj > Spouštěče aplikací**.
 
-1. Vyberte **přihlásit a distribuovat...** , ilustrované níže:
+    > [!NOTE]
+    > Další informace o nástroji, podívejte se na [dokumentace společnosti Apple o zavaděč aplikací](https://help.apple.com/itc/apploader/#/apdS673accdb).
 
-    ![](publishing-to-the-app-store-images/buildxs04new.png "Vyberte znaménko a distribuovat...")
+7. Přihlaste se ke spuštění aplikace (Všimněte si, že je potřeba [vytvořit heslo aplikace konkrétní](https://support.apple.com/ht204397) zadání Apple ID).
+8. Vyberte **dodávat aplikace** a klikněte na tlačítko **zvolit** tlačítka:
 
-1. Otevře se Průvodce přidáním publikování. Vyberte **obchod** distribuční kanál vytvořit balíček a otevřete zavaděč aplikací:
+    ![Vyberte doručování aplikací ] (publishing-to-the-app-store-images/publishvs01.png "vyberte doručování aplikací")
 
-    ![](publishing-to-the-app-store-images/distribute01.png "Otevřete aplikaci zavaděče")
+9. Vyberte soubor .ipa vytvořili výše a klikněte na tlačítko **OK**.
+10. Zavaděč aplikací se ověření souboru:
 
-1. Na obrazovce profil zřizování vyberte podepisování identity a odpovídající profil pro zřizování nebo znovu podepsat pomocí jiné identity:
+    ![Obrazovka ověření](publishing-to-the-app-store-images/publishvs02.png "obrazovky ověření")
 
-    ![](publishing-to-the-app-store-images/distribute02.png "Vyberte podpisový identity a odpovídající profil pro zřizování")
+11. Klikněte na tlačítko **Další** tlačítko a aplikace bude ověřovat na App Store:
 
-1. Zkontrolujte podrobnosti vašeho balíčku a klikněte na tlačítko **publikovat** uložit vaše `.ipa` balíčku:
+    ![Ověřování App Store](publishing-to-the-app-store-images/publishvs03.png "ověření proti App Store")
 
-    ![](publishing-to-the-app-store-images/distribute03.png "Zkontrolujte podrobnosti o balíčku")
+12. Klikněte na tlačítko **odeslat** tlačítko k odeslání aplikací do společnosti Apple k revizi.
+13. Zavaděč aplikací bude informovat, když soubor se úspěšně odeslal.
 
-1. Jednou vaše `.ipa` byl uložen, je aplikace připravená k odeslání do iTunes připojit prostřednictvím zavaděč aplikací:
-
-    ![](publishing-to-the-app-store-images/distribute04.png "Na obrazovce publikaci proběhlo úspěšně.")
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-Modul plug-in Xamarin pro Visual Studio aktuálně nepodporuje archivaci pracovního postupu pro publikování aplikace pro iOS k obchodu s aplikacemi. V důsledku toho máte nahrávání IPA vytvořené prostřednictvím **sestavení Ad hoc IPA** příkaz, který je popsán níže.
-
-
-## <a name="build-an-ipa"></a>Sestavení IPA
-
- Tato část popisuje vytváření IPA podobná pracovní postup při použití Ad Hoc nebo distribuční Enterprise. Však budou podepsány, pomocí obchodu s aplikacemi zřizování profilu, který byl vytvořen výše.
-
- Postupujte takto:
-
-1. V **Průzkumníku řešení**, klikněte pravým tlačítkem na název projektu Xamarin.iOS a vyberte **vlastnosti** k jejich otevření k úpravám:
-
-    ![](publishing-to-the-app-store-images/imagevs01.png "Vyberte vlastnosti")
-1. Vyberte **iOS podepisování sady** a změna profilu pro zřizování na obchod s aplikacemi profil pro zřizování:
-
-    ![](publishing-to-the-app-store-images/ipa01.png "Vyberte iOS podepisování sady a změňte profilu pro zřizování na obchod s aplikacemi profil pro zřizování")
-1. Vyberte **iOS možnosti IPA > Konfigurace > Ad-Hoc** (Pokud **Ad-Hoc** není volba, vyberte **verze** místo) a zaškrtněte políčko pro vytváření soubor IPA:
-
-    ![](publishing-to-the-app-store-images/imagevs02.png "Vyberte z rozevíracího seznamu konfigurace Ad-Hoc")
-
-1. Volitelně můžete zadat **název balíčku** pro soubor IPA, pokud není zadán, bude mít stejný název jako projektu Xamarin.iOS.
-1. Uloží změny do vlastností projektu.
-1. Vyberte **Ad Hoc** ze sady Visual Studio pro Mac **sestavení konfigurace** rozevíracího seznamu:
-
-    ![](publishing-to-the-app-store-images/imagevs05.png "Vyberte z rozevíracího seznamu konfigurací sestavení Ad Hoc")
-1. Sestavení projektu k vytvoření balíčku IPA.
-1. Soubor IPA budou vytvořeny `Bin`  >  _zařízení iOS_  >  `Ad Hoc` složky:
-
-    ![](publishing-to-the-app-store-images/imagevs06.png "Soubor IPA zobrazí v Průzkumníku souborů")
+    > [!NOTE]
+    > Apple může zamítnout aplikací s využitím **iTunesMetadata.plist** součástí soubor .ipa výsledkem je chyba, jako je následující:
+    >
+    > `ERROR: ERROR ITMS-90047: "Disallowed paths ( "iTunesMetadata.plist" ) found at: Payload/iPhoneApp1.app"`
+    >
+    > Alternativní řešení této chyby, podívejte se na [tento příspěvek na fórech Xamarin](https://forums.xamarin.com/discussion/40388/disallowed-paths-itunesmetadata-plist-found-at-when-submitting-to-app-store/p1).
 
 -----
 
+## <a name="itunes-connect-status"></a>iTunes Connect stav
 
-## <a name="customizing-the-ipa-location"></a>Přizpůsobení umístění soubor IPA
+Pokud chcete zobrazit stav odeslání vaší aplikace, přihlaste se do služby iTunes Connect a vyberte svou aplikaci. Počáteční stav by měl být **čekání na kontrolu**, i když dočasně může načíst **nahrát přijatých** během zpracování.
 
-Nový **MSBuild** vlastnost `IpaPackageDir` byl přidán do snadno přizpůsobit `.ipa` souboru výstupní umístění. Pokud `IpaPackageDir` do vlastního umístění, je nastaven `.ipa` souboru bude uložena v tomto umístění místo podadresáři označen časovým razítkem výchozí. To může být užitečné při vytváření automatizovaných sestavení, která závisí na cestu k adresáři konkrétní fungovala správně, jako jsou ty používané pro nepřetržitou integraci konfigurace sestavení.
+![Čekání na kontrolu](publishing-to-the-app-store-images/image21.png "čekání na kontrolu")
 
-Existuje několik možných způsobech použití nové vlastnosti:
+## <a name="tips-and-tricks"></a>Tipy a triky
 
-Například k výstupu `.ipa` soubor na původní výchozí adresář (jako Xamarin.iOS 9.6 a nižší), můžete nastavit `IpaPackageDir` vlastnost `$(OutputPath)` pomocí jedné z následujících dvou přístupů. Oba přístupy, které jsou kompatibilní s všechny sestavení Unified Xamarin.iOS rozhraní API, včetně sestavení IDE a také příkazového řádku sestavení, které používají `xbuild`, `msbuild`, nebo `mdtool`:
+### <a name="customize-the-ipa-location"></a>Přizpůsobení umístění .ipa
 
-  - První možností je nastavit `IpaPackageDir` vlastností v rámci `<PropertyGroup>` element v **MSBuild** souboru. Můžete například přidat následující `<PropertyGroup>` k dolnímu okraji projekt aplikace pro iOS `.csproj` souboru (těsně před uzavírací `</Project>` značka):
+**MSBuild** vlastnost `IpaPackageDir`, umožňuje přizpůsobení umístění výstupu soubor .ipa. Pokud `IpaPackageDir` nastavena do vlastního umístění, se umístí soubor .ipa v dané oblasti místo výchozí podadresář časovým razítkem. To může být užitečné při vytváření automatizovaných sestavení, která závisí na konkrétní adresář fungovala správně, jako jsou ty používané pro sestavení kontinuální integrace (CI).
 
-      ```xml
-        <PropertyGroup>
-            <IpaPackageDir>$(OutputPath)</IpaPackageDir>
-        </PropertyGroup>
-      ```
-  - Lepším řešením je přidat `<IpaPackageDir>` element k dolnímu okraji existující `<PropertyGroup>` , který odpovídá konfiguraci sloužící k vytvoření `.ipa` souboru. To je lepší, protože jej pro budoucí kompatibility s plánované nastavení na stránce vlastností projektu soubor IPA možnosti iOS připravte projektu. Pokud aktuálně používáte `Release|iPhone` konfiguraci sestavení `.ipa` souboru skupiny dokončení aktualizované vlastností může vypadat podobně jako následující:
+Existuje několik způsobů je to možné používat novou vlastnost. Například do výstupního souboru .ipa pro staré výchozí adresář (stejně jako v Xamarin.iOS 9.6 a nižší), můžete nastavit `IpaPackageDir` vlastnost `$(OutputPath)` pomocí jedné z následujících přístupů. Oba přístupy jsou kompatibilní s všechna sestavení Unified API Xamarin.iOS, včetně integrovaného vývojového prostředí sestavení, jakož i sestavení příkazového řádku, které používají **msbuild** nebo **mdtool**:
 
-      ```xml
-      <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' )
-        <Optimize>true</Optimize>
-        <OutputPath>bin\iPhone\Release</OutputPath>
-        <ErrorReport>prompt</ErrorReport>
-        <WarningLevel>4</WarningLevel>
-        <ConsolePause>false</ConsolePause>
-        <CodesignKey>iPhone Developer</CodesignKey>
-        <MtouchUseSGen>true</MtouchUseSGen>
-        <MtouchUseRefCounting>true</MtouchUseRefCounting>
-        <MtouchFloat32>true</MtouchFloat32>
-        <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-        <MtouchLink>SdkOnly</MtouchLink>
-        <MtouchArch>;ARMv7, ARM64</MtouchArch>
-        <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
-        <MtouchTlsProvider>Default</MtouchTlsProvider>
-        <PlatformTarget>x86&</PlatformTarget>
-        <BuildIpa>true</BuildIpa>
-        <IpaPackageDir>$(OutputPath</IpaPackageDir>
-      </PropertyGroup>
-      ```
-Alternativní technika pro `msbuild` nebo `xbuild` sestavení příkazového řádku je přidat `/p:` argument příkazového řádku nastavit `IpaPackageDir` vlastnost. V takovém případě Všimněte si, že `msbuild` nerozšiřuje `$()` výrazy předaná na příkazovém řádku, takže není možné použít `$(OutputPath)` syntaxe. Místo toho je musíte zadat úplnou cestu. Na mono `xbuild` příkaz rozbalte `$()` výrazy, ale je stále vhodnější použít úplnou cestu, protože `xbuild` přestanou nakonec pro [napříč platformami verzi `msbuild` ](http://www.mono-project.com/docs/about-mono/releases/4.4.0/#msbuild-preview-for-os-x)v budoucích verzích. Úplný příklad, který používá tento přístup může vypadat podobně jako následující v systému Windows:
+- První možností je nastavit `IpaPackageDir` vlastnosti v rámci `<PropertyGroup>` prvek **MSBuild** souboru. Můžete například přidat následující `<PropertyGroup>` do spodní části souboru .csproj projektu aplikace iOS (těsně před uzavírací `</Project>` značka):
+
+    ```xml
+    <PropertyGroup>
+      <IpaPackageDir>$(OutputPath)</IpaPackageDir>
+    </PropertyGroup>
+    ```
+
+- Lepším řešením je přidat `<IpaPackageDir>` elementu k dolnímu okraji existující `<PropertyGroup>` , který odpovídá konfiguraci sloužící k sestavení soubor .ipa. To je lepší, protože ji připravil projektu pro budoucí kompatibilitu s plánované nastavení na stránce vlastností projektu iOS – možnosti souborů IPA. Pokud aktuálně používáte službu `Release|iPhone` konfigurace sestavení soubor .ipa skupině kompletní aktualizovaná vlastnost může vypadat nějak takto:
+
+    ```xml
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone'">
+       <Optimize>true</Optimize>
+       <OutputPath>bin\iPhone\Release</OutputPath>
+       <ErrorReport>prompt</ErrorReport>
+       <WarningLevel>4</WarningLevel>
+       <ConsolePause>false</ConsolePause>
+       <CodesignKey>iPhone Developer</CodesignKey>
+       <MtouchUseSGen>true</MtouchUseSGen>
+       <MtouchUseRefCounting>true</MtouchUseRefCounting>
+       <MtouchFloat32>true</MtouchFloat32>
+       <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+       <MtouchLink>SdkOnly</MtouchLink>
+       <MtouchArch>;ARMv7, ARM64</MtouchArch>
+       <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+       <MtouchTlsProvider>Default</MtouchTlsProvider>
+       <PlatformTarget>x86&</PlatformTarget>
+       <BuildIpa>true</BuildIpa>
+       <IpaPackageDir>$(OutputPath</IpaPackageDir>
+    </PropertyGroup>
+    ```
+
+Alternativní metoda pro **msbuild** sestavení příkazového řádku, je přidat `/p:` argument příkazového řádku k nastavení `IpaPackageDir` vlastnost. V tomto případě Všimněte si, že **msbuild** Nerozbaluje `$()` výrazy předané na příkazovém řádku, takže není možné použít `$(OutputPath)` syntaxe. Místo toho musíte zadat úplnou cestu.
 
 ```bash
 msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:ServerAddress="192.168.1.3" /p:ServerUser="macuser" /p:IpaPackageDir="%USERPROFILE%\Builds" /t:Build SingleViewIphone1.sln
 ```
 
-Nebo následující v systému Mac:
+Nebo následující na počítači Mac:
 
 ```bash
-xbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/Builds" /t:Build SingleViewIphone1.sln
+msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/Builds" /t:Build SingleViewIphone1.sln
 ```
 
-S distribuční vytvořit sestavení a archivovat, nyní jste připraveni k odeslání aplikace iTunes připojit.
-
-### <a name="automatically-copy-app-bundles-back-to-windows"></a>Automaticky zkopírujte .app sady zpět do systému Windows
-
-[!include[](~/ios/includes/copy-app-bundle-to-windows.md)]
-
-## <a name="submitting-your-app-to-apple"></a>Odeslání vaší aplikace pro Apple
-
-> [!NOTE]
-> Apple nedávno změnila její proces ověření pro aplikace pro iOS a může odmítnout aplikací pomocí `iTunesMetadata.plist` součástí soubor IPA. Pokud dojde k chybě `ERROR: ERROR ITMS-90047: "Disallowed paths ( "iTunesMetadata.plist" ) found at: Payload/iPhoneApp1.app"`popsané řešení [sem](https://forums.xamarin.com/discussion/40388/disallowed-paths-itunesmetadata-plist-found-at-when-submitting-to-app-store/p1) má problém vyřešit.
-
-S distribuční sestavení dokončit jste připraveni k odeslání vaší aplikace pro iOS Apple ke kontrole a uvolněte na webu App Store.
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
-
- Postupujte takto:
-
-1. Spustit **Xcode**.
-2. Z **okno** nabídky vyberte možnost **organizátora**.
-3. Klikněte na **archivy** a vyberte archiv, který byl postavený výše:
-
-    ![](publishing-to-the-app-store-images/publishxs01.png "Vyberte archivu k odeslání")
-4. Klikněte na **ověření...**  tlačítko.
-5. Vyberte účet, který chcete ověřit vůči a klikněte na **zvolte** tlačítko:
-
-    ![](publishing-to-the-app-store-images/publishxs02.png "Vyberte účet, který chcete ověřit vůči")
-6. Klikněte **ověřením** tlačítko:
-
-    ![](publishing-to-the-app-store-images/publishxs03.png "Dialogového okna souhrnu souboru")
-7. Pokud se vyskytly potíže s sady, bude zobrazovat.
-8. Opravte všechny problémy a znovu sestavte archivu v sadě Visual Studio for Mac.
-9. Klikněte na **odeslání...**  tlačítko.
-10. Vyberte účet, který chcete ověřit vůči a klikněte na **zvolte** tlačítko:
-
-    ![](publishing-to-the-app-store-images/publishxs04.png "Vyberte účet, který chcete ověřit vůči")
-11. Klikněte **odeslání** tlačítko:
-
-    ![](publishing-to-the-app-store-images/publishxs05.png "Dialogového okna souhrnu souboru")
-12. Xcode bude informovat o tom můžete po dokončení nahrávání souboru pro službu iTunes připojit.
-
-
-Pracovní postup archivu v sadě Visual Studio pro Mac se zavaděč aplikací automaticky otevře, které jste uložili _.ipa_:
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-Odeslání vaší žádosti o Apple ke kontrole se provádí pomocí aplikace zavaděč aplikací. Na hostiteli sestavení Mac, je třeba provést tyto kroky. Můžete si stáhnout kopii zavaděč aplikací z [zde](https://itunesconnect.apple.com/apploader/ApplicationLoader_3.0.dmg).
-
------
-
-1. Vyberte *poskytovat aplikace* a klikněte na *zvolte* tlačítko:
-
-    [![](publishing-to-the-app-store-images/publishvs01.png "Vyberte poskytování vaší aplikace")](publishing-to-the-app-store-images/publishvs01.png#lightbox)
-
-2. Vyberte zip nebo soubor IPA vytvořili výše a klikněte na **OK** tlačítko.
-
-3. Zavaděč aplikací budou ověření souboru:
-
-    [![](publishing-to-the-app-store-images/publishvs02.png "Na obrazovce ověření")](publishing-to-the-app-store-images/publishvs02.png#lightbox)
-4. Klikněte *Další* tlačítko a aplikace bude ověřovat s obchodu s aplikacemi:
-
-    [![](publishing-to-the-app-store-images/publishvs03.png "Ověření proti obchodu s aplikacemi")](publishing-to-the-app-store-images/publishvs03.png#lightbox)
-5. Klikněte **odeslat** tlačítko Odeslat ke kontrole aplikace společnosti Apple.
-6. Zavaděč aplikací bude informovat, když byla úspěšně nahrána soubor.
-
-## <a name="itunes-connect-status"></a>iTunes stav připojení
-
-Pokud znovu se přihlásili k iTunes připojit a vybrat aplikaci ze seznamu dostupných aplikací, stav v iTunes Connect by měl zobrazit nyní, že je **čekání zkontrolujte** (dočasně lze číst **nahrát přijata** je zpracování):
-
-[![](publishing-to-the-app-store-images/image21.png "Tento stav v iTunes připojení byste nyní měli vidět, že čekáte ke kontrole")](publishing-to-the-app-store-images/image21.png#lightbox)
+Vaší distribuce sestavení vytvořeno a archivovat, nyní jste připraveni k odeslání vaší žádosti do služby iTunes Connect.
 
 ## <a name="summary"></a>Souhrn
 
-Tento článek zobrazí podrobný návod, jak konfiguraci, sestavování a žádá o App Store publikace. Nejprve popsané kroky potřebné k vytvoření a nainstalovat distribuční profil pro zřizování. V dalším kroku ji projít použití sady Visual Studio a Visual Studio pro Mac vytvořit distribuční sestavení. Nakonec se ukázal, jak používat iTunes Connect a nástroje k odesílání aplikace k obchodu s aplikacemi.
-
+Tento článek popisuje, jak nakonfigurovat, sestavit a odeslat aplikaci pro iOS na vydání v App Store.
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Práce s obrázky](~/ios/app-fundamentals/images-icons/index.md)
-- [iOS aplikace vývoj pracovní postup průvodce: distribuce aplikace](http://developer.apple.com/library/ios/#documentation/Xcode/Conceptual/ios_development_workflow/35-Distributing_Applications/distributing_applications.html)
-- [Tipy pro odeslání obchodu s aplikacemi](https://developer.apple.com/appstore/resources/submission/tips.html)
-- [Běžné aplikace zamítnutí](https://developer.apple.com/app-store/review/rejections/)
-- [Pokyny pro recenze v App Storu](https://developer.apple.com/appstore/resources/approval/guidelines.html)
+- [Portál pro vývojáře Apple (Apple)](https://developer.apple.com/account/)
+- [iTunes Connect (Apple)](https://itunesconnect.apple.com)
+- [Pokyny pro recenze v App Store (Apple)](https://developer.apple.com/appstore/resources/approval/guidelines.html)
+- [Zamítnutí běžné aplikace (Apple)](https://developer.apple.com/app-store/review/rejections/)
+- [Práce s funkcemi v Xamarin.iosu](~/ios/deploy-test/provisioning/capabilities/index.md)
+- [Práce s nároky v Xamarin.iosu](~/ios/deploy-test/provisioning/entitlements.md)
+- [Konfigurace aplikace v iTunes Connectu](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)
+- [Ikony aplikace v Xamarin.iosu](~/ios/app-fundamentals/images-icons/app-icons.md)
+- [Spouštěcí obrazovky pro aplikace Xamarin.iOS](~/ios/app-fundamentals/images-icons/launch-screens.md)
+- [Dokumentace k Application zavaděč (Apple)](https://help.apple.com/itc/apploader/#/apdS673accdb)

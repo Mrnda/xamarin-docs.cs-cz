@@ -1,66 +1,66 @@
 ---
-title: 'Xamarin.Essentials: vibrace'
-description: Tento dokument popisuje třídy kmitání v Xamarin.Essentials, která vám umožní spustit a zastavit funkci vibrate pro požadované množství času.
+title: 'Xamarin.Essentials: Pronikavost'
+description: Tento dokument popisuje třídy vibrace ve Xamarin.Essentials, která umožňuje spouštět a zastavovat vibrate funkce pro požadované množství času.
 ms.assetid: 7E8B24C4-2625-4DAE-A129-383542D34F1E
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 2a2902ca4eac8b889f6875580d7cb4ea352803a8
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 1de464d289bc684015e5fb8489683e3134535b70
+ms.sourcegitcommit: cb69bdb469db0b3118e365d71114091c6febb027
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782918"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37406768"
 ---
-# <a name="xamarinessentials-vibration"></a>Xamarin.Essentials: vibrace
+# <a name="xamarinessentials-vibration"></a>Xamarin.Essentials: Pronikavost
 
 ![Předběžné verze NuGet](~/media/shared/pre-release.png)
 
-**Vibracím** třída umožňuje spuštění a zastavení funkci vibrate pro požadované množství času.
+**Vibrace** třída umožňuje spouštět a zastavovat vibrate funkce pro požadované množství času.
 
 ## <a name="getting-started"></a>Začínáme
 
-Pro přístup k **vibracím** funkce následující nastavení konkrétní platformy je požadovaná.
+Pro přístup **vibrace** funkce je následující nastavení konkrétní platformy se vyžaduje.
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-Vibrate oprávnění je vyžadováno a musí být konfigurované v projektu pro Android. To lze přidat následujícími způsoby:
+Oprávnění Vibrate je povinné a musí být nakonfigurovány v projektu pro Android. Jde přidat následujícími způsoby:
 
-Otevřete **AssemblyInfo.cs** souboru pod **vlastnosti** složky a přidat:
+Otevřít **AssemblyInfo.cs** soubor **vlastnosti** složky a přidejte:
 
 ```csharp
 [assembly: UsesPermission(Android.Manifest.Permission.Vibrate)]
 ```
 
-NEBO aktualizovat manifestu systému Android.:
+NEBO aktualizovat Android Manifest:
 
-Otevřete **AndroidManifest.xml** souboru pod **vlastnosti** složky a přidejte následující uvnitř **manifest** uzlu.
+Otevřít **AndroidManifest.xml** soubor **vlastnosti** složky a přidejte následující uvnitř **manifest** uzlu.
 
 ```xml
 <uses-permission android:name="android.permission.VIBRATE" />
 ```
 
-Nebo klikněte pravým tlačítkem na projekt Anroid a otevřete vlastnosti projektu. V části **Android Manifest** najít **požadovaná oprávnění:** oblasti a kontroly **VIBRATE** oprávnění. Tím se automaticky aktualizuje **AndroidManifest.xml** souboru.
+Nebo klikněte pravým tlačítkem na projekt Anroid a otevřete vlastnosti projektu. V části **Manifest v Androidu** najít **požadovaná oprávnění:** oblasti a kontrolu **VIBRATE** oprávnění. Tím se automaticky aktualizují **AndroidManifest.xml** souboru.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-Nevyžaduje žádné další nastavení.
+Není požadováno žádné další nastavení.
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwptabuwp"></a>[UPW](#tab/uwp)
 
-Nevyžaduje žádné další nastavení.
+Není požadováno žádné další nastavení.
 
 -----
 
-## <a name="using-vibration"></a>Pomocí vibracím
+## <a name="using-vibration"></a>Pomocí Pronikavost
 
-Přidáte odkaz na Xamarin.Essentials v třídě:
+Přidáte odkaz na Xamarin.Essentials ve své třídě:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Funkce vibrace mohou být požadována pro po dobu sady nebo výchozí hodnotu 500 milisekund.
+Vibrace funkce mohou být požadována pro nastavené doby nenaváže nebo výchozí hodnotu 500 milisekund.
 
 ```csharp
 try
@@ -82,7 +82,7 @@ catch (Exception ex)
 }
 ```
 
-Zrušení vibrací zařízení mohou být vyžádány s `Cancel` metoda:
+Zrušení pronikavost zařízení mohou být požadována s `Cancel` metody:
 
 ```csharp
 try
@@ -99,14 +99,15 @@ catch (Exception ex)
 }
 ```
 
-## <a name="platform-differences"></a>Rozdíly platformy
+## <a name="platform-differences"></a>Rozdíly pro tyto platformy
 
 | Platforma | Rozdíl |
 | --- | --- |
-| iOS | Vždy Urgency pro 500 milisekund. |
-| iOS | Není možné zrušit vibracím. |
+| iOS | Urgency pouze pokud zařízení je nastavena na "Vibrate na kanál". |
+| iOS | Vždy Urgency 500 milisekund. |
+| iOS | Není možné zrušit pronikavost. |
 
 ## <a name="api"></a>rozhraní API
 
 - [Vibrace zdrojového kódu](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Vibration)
-- [Dokumentace vibrace rozhraní API](xref:Xamarin.Essentials.Vibration)
+- [Dokumentace ke službě pronikavost rozhraní API](xref:Xamarin.Essentials.Vibration)
