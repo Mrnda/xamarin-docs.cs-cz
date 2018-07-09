@@ -5,12 +5,12 @@ ms.assetid: 7E8B24C4-2625-4DAE-A129-383542D34F1E
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 1de464d289bc684015e5fb8489683e3134535b70
-ms.sourcegitcommit: cb69bdb469db0b3118e365d71114091c6febb027
+ms.openlocfilehash: ca21f43631c261cd384f9049f30f0fa29e2ca44e
+ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37406768"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37855166"
 ---
 # <a name="xamarinessentials-vibration"></a>Xamarin.Essentials: Pronikavost
 
@@ -101,11 +101,21 @@ catch (Exception ex)
 
 ## <a name="platform-differences"></a>Rozdíly pro tyto platformy
 
-| Platforma | Rozdíl |
-| --- | --- |
-| iOS | Urgency pouze pokud zařízení je nastavena na "Vibrate na kanál". |
-| iOS | Vždy Urgency 500 milisekund. |
-| iOS | Není možné zrušit pronikavost. |
+# <a name="androidtabandroid"></a>[Android](#tab/android)
+
+Žádné rozdíly pro tyto platformy.
+
+# <a name="iostabios"></a>[iOS](#tab/ios)
+
+* Urgency pouze pokud zařízení je nastavena na "Vibrate na kanál".
+* Vždy Urgency 500 milisekund.
+* Není možné zrušit pronikavost.
+
+# <a name="uwptabuwp"></a>[UPW](#tab/uwp)
+
+Žádné rozdíly pro tyto platformy.
+
+-----
 
 ## <a name="api"></a>rozhraní API
 

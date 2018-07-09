@@ -1,66 +1,66 @@
 ---
-title: 'Xamarin.Essentials: stav baterie.'
-description: Tento dokument popisuje třídy baterie v Xamarin.Essentials, který vám umožňuje zkontrolovat informace o baterie zařízení a monitorujte změny.
+title: 'Xamarin.Essentials: baterie'
+description: Tento dokument popisuje třídy baterie v Xamarin.Essentials, který umožňuje zkontrolovat informace o baterie zařízeních a monitorujte změny.
 ms.assetid: 47EB26D8-8C62-477B-A13C-6977F74E6E43
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 35764b4c2270359a7c010e1186f882e236e17fd5
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 1ed0ef5e013967545e739733c887702325f60c3f
+ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782083"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37855052"
 ---
-# <a name="xamarinessentials-battery"></a>Xamarin.Essentials: stav baterie.
+# <a name="xamarinessentials-battery"></a>Xamarin.Essentials: baterie
 
 ![Předběžné verze NuGet](~/media/shared/pre-release.png)
 
-**Baterie** třída umožňuje zkontrolovat stav baterie informace a monitorujte změny zařízení.
+**Baterie** třída umožňuje zkontrolovat informace o bateriích a monitorujte změny zařízení.
 
 ## <a name="getting-started"></a>Začínáme
 
-Abyste měli přístup **baterie** funkce následující nastavení konkrétní platformy není třeba.
+Pro přístup **baterie** funkce je následující nastavení konkrétní platformy se vyžaduje.
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-`Battery` Oprávnění je povinná a musí být konfigurované v projektu pro Android. To lze přidat následujícími způsoby:
+`Battery` Oprávnění je povinné a musí být nakonfigurovány v projektu pro Android. Jde přidat následujícími způsoby:
 
-Otevřete **AssemblyInfo.cs** souboru pod **vlastnosti** složky a přidat:
+Otevřít **AssemblyInfo.cs** soubor **vlastnosti** složky a přidejte:
 
 ```csharp
 [assembly: UsesPermission(Android.Manifest.Permission.Battery)]
 ```
 
-NEBO aktualizovat manifestu systému Android.:
+NEBO aktualizovat Android Manifest:
 
-Otevřete **AndroidManifest.xml** souboru pod **vlastnosti** složky a přidejte následující uvnitř **manifest** uzlu.
+Otevřít **AndroidManifest.xml** soubor **vlastnosti** složky a přidejte následující uvnitř **manifest** uzlu.
 
 ```xml
 <uses-permission android:name="android.permission.BATTERY" />
 ```
 
-Nebo klikněte pravým tlačítkem na projekt Anroid a otevřete vlastnosti projektu. V části **Android Manifest** najít **požadovaná oprávnění:** oblasti a kontroly **baterie** oprávnění. Tím se automaticky aktualizuje **AndroidManifest.xml** souboru.
+Nebo klikněte pravým tlačítkem na projekt Anroid a otevřete vlastnosti projektu. V části **Manifest v Androidu** najít **požadovaná oprávnění:** oblasti a kontrolu **baterie** oprávnění. Tím se automaticky aktualizují **AndroidManifest.xml** souboru.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-Nevyžaduje žádné další nastavení.
+Není požadováno žádné další nastavení.
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwptabuwp"></a>[UPW](#tab/uwp)
 
-Nevyžaduje žádné další nastavení.
+Není požadováno žádné další nastavení.
 
 -----
 
-## <a name="using-battery"></a>Pomocí stav baterie.
+## <a name="using-battery"></a>Používání baterie
 
-Přidáte odkaz na Xamarin.Essentials v třídě:
+Přidáte odkaz na Xamarin.Essentials ve své třídě:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Zkontrolujte aktuální stav baterie informace:
+Zkontrolujte informace o aktuálním baterie:
 
 ```csharp
 var level = Battery.ChargeLevel; // returns 0.0 to 1.0 or -1.0 if unable to determine.
@@ -108,7 +108,7 @@ switch (source)
 }
 ```
 
-Při každé změně jakékoli vlastnosti baterie se aktivuje událost:
+Při každé změně vlastnosti baterie se aktivuje událost:
 
 ```csharp
 public class BatteryTest
@@ -129,15 +129,25 @@ public class BatteryTest
 }
 ```
 
-## <a name="platform-differences"></a>Rozdíly platformy
+## <a name="platform-differences"></a>Rozdíly pro tyto platformy
 
-| Platforma | Rozdíl |
-| --- | --- |
-| iOS | Zařízení musí být použít k testování rozhraní API. |
-| iOS | Pouze vrátí Ac nebo baterie pro PowerSource. |
-| UWP | Pouze vrátí Ac nebo baterie pro PowerSource. |
+# <a name="androidtabandroid"></a>[Android](#tab/android)
+
+Žádné rozdíly pro tyto platformy.
+
+# <a name="iostabios"></a>[iOS](#tab/ios)
+
+* Zařízení musí použít k testování rozhraní API. 
+* Pouze vrátí `Ac` nebo `Battery` pro `PowerSource`. 
+* Není možné zrušit pronikavost.
+
+# <a name="uwptabuwp"></a>[UPW](#tab/uwp)
+
+* Pouze vrátí `Ac` nebo `Battery` pro `PowerSource`. 
+
+-----
 
 ## <a name="api"></a>rozhraní API
 
 - [Baterie zdrojového kódu](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Battery)
-- [Dokumentaci k rozhraní API stav baterie.](xref:Xamarin.Essentials.Battery)
+- [Dokumentace k rozhraní API baterie](xref:Xamarin.Essentials.Battery)

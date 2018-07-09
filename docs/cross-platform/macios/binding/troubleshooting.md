@@ -1,58 +1,63 @@
 ---
-title: Vazba, řešení potíží
-description: Tato příručka popisuje, co dělat, pokud máte problémy s vazby knihovna jazyka Objective-C. Konkrétně popisuje chybějící vazby, výjimky argumentu při předávání vazbu a vytváření sestav chyb hodnotu null.
+title: Řešení potíží s vazby
+description: Tato příručka popisuje, jak postupovat, pokud máte potíže s vazbu knihovnou Objective-C. Především se zabývá chybějící vazby výjimky argumentu při předávání vazby a hlášení chyb hodnotu null.
 ms.prod: xamarin
 ms.assetid: 7C65A55C-71FA-46C5-A1B4-955B82559844
 author: asb3993
 ms.author: amburns
 ms.date: 10/19/2016
-ms.openlocfilehash: b0ce6c3792d6495cabdf8acdab1a644fe75f1219
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: aaceada84b151856506ede66907274e2457c23d4
+ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34780232"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37854796"
 ---
-# <a name="binding-troubleshooting"></a>Vazba, řešení potíží
+# <a name="binding-troubleshooting"></a>Řešení potíží s vazby
 
-Tipy pro řešení potíží s vazby na systému macOS (dříve označované jako OS X) rozhraní API v Xamarin.Mac.
+Některé tipy pro řešení potíží s vazbami pro macOS (dříve označované jako OS X) rozhraní API v Xamarin.Mac.
 
 ## <a name="missing-bindings"></a>Chybějící vazby
 
-Při Xamarin.Mac pokrývá většinu Apple rozhraní API, někdy budete muset volat rozhraní API pro některé Apple, který nemá vazbu ještě. V ostatních případech je třeba volat třetích stran jazyka C nebo Objective-C to nad rámec Xamarin.Mac vazby.
+Zatímco Xamarin.Mac zahrnuje i velká část rozhraní API Apple, někdy je nutné volat některá rozhraní API od Applu, který nemá vazbu ještě. V ostatních případech je třeba volat třetích stran C/Objective-C, které se nad rámec vazby Xamarin.Mac.
 
-Pokud chcete pracovat s rozhraním API pro Apple, prvním krokem je umožníte Xamarin vědět, že jste nedosáhli část rozhraní API, ale pro ještě nemáme pokrytí. [Založení záznamu o chybě](#reporting-bugs) poznamenat chybějící rozhraní API. Zprávy od zákazníků jsme slouží k určení priority které rozhraní API pracujeme na další. Kromě toho, pokud máte licenci firmy nebo organizace a kvůli chybějící vazby blokuje průběh, také podle pokynů v [podporu](http://xamarin.com/support) do souboru lístek. Jsme nelze promise vazbu, ale v některých případech nám můžete získat jste pracovní.
+Pokud pracujete se sekvenčním rozhraní API od Applu, prvním krokem je umožnit Xamarin vědět, že nenarážíte část rozhraní API, která pro ještě nemáme pokrytí. [Oznámit chybu](#reporting-bugs) zmínku chybějící rozhraní API. Zprávy od zákazníků jsme použít k určení priority, které rozhraní API pracujeme na další. Kromě toho, pokud máte licenci Business nebo Enterprise, tento nedostatek vazbu blokuje pokroku ve studiu také podle pokynů v [podporu](http://xamarin.com/support) do souboru lístek. Nelze slibujeme vazby, ale v některých případech můžeme dostat je pracovní.
 
-Jakmile můžete upozornit Xamarin (pokud existuje) vaší chybějící vazby, dalším krokem je vzít v úvahu vazby sami. Máme úplné průvodce [sem](~/cross-platform/macios/binding/overview.md) a některé neoficiální dokumentaci [sem](http://brendanzagaeski.appspot.com/xamarin/0002.html) pro zabalení jazyka Objective-C vazby ručně. Při volání rozhraní API jazyka C, můžete použít C# na P/Invoke mechanismu, dokumentace je [zde](http://www.mono-project.com/docs/advanced/pinvoke/).
+Jakmile neoznámíte Xamarin (pokud existuje) chybí vazby, dalším krokem je vzít v úvahu vazby sami. Máme úplného průvodce [tady](~/cross-platform/macios/binding/overview.md) a některé neoficiální dokumentaci [tady](http://brendanzagaeski.appspot.com/xamarin/0002.html) pro obtékání vazeb Objective-C ručně. Pokud voláte rozhraní API jazyka C, můžete použít mechanismu P/Invoke C#, je dokumentace ke službě [tady](http://www.mono-project.com/docs/advanced/pinvoke/).
 
-Pokud se rozhodnete pro práci na vazby sami, mějte na paměti, chyb vazba může vytvořit nejrůznějším zajímavé havárií v nativní modul runtime. Konkrétně buďte opatrní, že podpisu v jazyce C# odpovídá nativní podpis počet argumentů a velikost každé argumentu. Selhání k tomu může dojít k poškození paměti nebo zásobníku a může dojít k chybě okamžitě, nebo libovolný někde v budoucnu nebo poškození dat.
+Pokud se rozhodnete pracovat ve vazbě sami, mějte na paměti, že chyby ve vazbě může vytvářet nejrůznější zajímavé chyby v nativním modulu runtime. Konkrétně se velmi pečlivě, že podpisu v jazyce C# odpovídající nativní podpisu počet argumentů a velikost každý argument. Selhání k tomu může dojít k poškození paměti a/nebo zásobníku a může dojít k selhání okamžitě nebo libovolného někdy v budoucnu nebo poškodit data.
 
-## <a name="argument-exceptions-when-passing-null-to-a-binding"></a>Výjimky argumentu při předávání vazbu hodnotu null.
+## <a name="argument-exceptions-when-passing-null-to-a-binding"></a>Výjimky argumentu při předávání pro vazbu s hodnotou null
 
-Během Xamarin funguje k poskytování vysoké kvality a dobře otestované vazeb pro rozhraní API Apple někdy chyb a chyb v listu. Rozhraní API je zdaleka Nejběžnější problém, který může dojít k vyvolání `ArgumentNullException` při můžete předat hodnotu null při přijímá základního rozhraní API `nil`. Nativní hlavičkových souborů definice rozhraní API často neposkytují dostatek informací, na kterém rozhraní API přijímat nulovou hodnotu a které dojde k chybě Pokud předáte ho.
+I když Xamarin funguje zajistit vysokou kvalitu a dobře otestovaný vazby pro rozhraní API Apple někdy chyby a chyby list v. Rozhraní API je jednoznačně nejpopulárnější nejběžnějším problémem, které můžete narazit na vyvolání `ArgumentNullException` při můžete předat hodnotu null při základního rozhraní API přijímá `nil`. Soubory hlaviček nativní často definice rozhraní API se neposkytuje dostatek informací, na kterém rozhraní API přijmout hodnotu nil a které dojde k chybě Pokud předáte v.
 
-Pokud spustíte do případu kde předávání v `null` vyvolá `ArgumentNullException` ale domníváte, že by měla fungovat, postupujte takto:
+Pokud narazíte na případ tam, kde předávajícího `null` vyvolá `ArgumentNullException` ale si myslíte, že by měl pracovat, postupujte podle těchto kroků:
 
-1. Zkontrolujte dokumentaci od společnosti Apple a příklady, které chcete zobrazit, pokud zjistíte důkaz, že ho přijme `nil`. Pokud umíte pracovat s jazyka Objective-C, můžete napsat testu malých program k ověření.
-2. [Založení záznamu o chybě](#reporting-bugs).
-3. Můžete alternativně vyřešit chybě? Pokud volání rozhraní API s se můžete vyhnout `null`, kontrolu jednoduché null kolem volání lze snadno vyřešit.
-4. Ale některé rozhraní API vyžadovat předávání null vypnutí nebo zakázat některé funkce. V těchto případech můžete alternativně vyřešit problém tak, že převedou do prohlížeče sestavení (najdete v části [hledání člen C# pro danou selektor](~/mac/app-fundamentals/mac-apis.md#finding_selector)), kopírování vazby a odebírání zkontrolujte hodnotu null. Zkontrolujte prosím soubor chyb (krok 2) Pokud tomu můžete, protože vaše zkopírovaný vazby neobdrží aktualizace a opravy, které jsme v Xamarin.Mac, a to by se měly zvažovat krátkodobou práci za.
+1. Zkontrolujte dokumentaci společnosti Apple a/nebo příklady a ověřte, jestli nenajdete důkaz, že přijímá `nil`. Pokud znáte Objective-C, můžete napsat program malý test, který ověří, že.
+2. [Oznámit chybu](#reporting-bugs).
+3. Můžete alternativně vyřešit chybu? Pokud volání rozhraní API se můžete vyhnout `null`, jednoduché kontrolu hodnot null kolem volání může být snadno vyřešit.
+4. Některá rozhraní API ale vyžadují předávání null, pokud chcete vypnout nebo zakázat některé funkce. V těchto případech můžete alternativně vyřešit problém vyvoláním prohlížeč sestavení (naleznete v tématu [hledání člen C# pro daný selektor](~/mac/app-fundamentals/mac-apis.md#finding_selector)), kopírování, vazby a odebírání kontrolu hodnot null. Ujistěte se prosím do souboru chybu (krok 2) Pokud to provedete, protože zkopírovaný vazby nebude dostávat aktualizace a opravy, kterým v Xamarin.Mac, a to by se měly zvažovat krátkodobé alternativní řešení.
 
 <a name="reporting-bugs"/>
 
 ## <a name="reporting-bugs"></a>Zasílání zpráv o chybách
 
-Váš názor je pro nás důležitá. Pokud narazíte na potíže s Xamarin.Mac:
+Vaše zpětná vazba je pro nás důležité. Pokud nenajdete žádné problémy s Xamarin.Mac:
 
-- Zkontrolujte [Xamarin.Mac fóra](https://forums.xamarin.com/categories/mac)
+- Zkontrolujte, [fóra Xamarin.Mac](https://forums.xamarin.com/categories/mac)
 - Hledání [problém úložiště](https://github.com/xamarin/xamarin-macios/issues) 
-- Před přepnutím na Githubu problémy, problémy Xamarin byly sledovány pro [Bugzilla](https://bugzilla.xamarin.com/describecomponents.cgi). Pro párování problémy, vyhledávání existuje.
-- Pokud nemůžete najít odpovídající problém, prosím soubor nový problém v [potíže úložiště GitHub](https://github.com/xamarin/xamarin-macios/issues/new).
+- Před přepnutím na problémy Githubu, byly problémy s Xamarinem sledovány v [Bugzilla](https://bugzilla.xamarin.com/describecomponents.cgi). Vyhledejte existuje odpovídající problémy.
+- Pokud nemůžete najít odpovídající problém, požádejte prosím o nový problém v [úložiště problém Githubu](https://github.com/xamarin/xamarin-macios/issues/new).
 
-GitHub problémy jsou všechny veřejné. Není možné skrýt komentáře nebo přílohy. 
+Problémy Githubu jsou všechny veřejné. Není možné skrýt poznámky nebo přílohy. 
 
-Uveďte co nejvíc následující kroky jako možné:
+Uveďte co nejvíce z následujících akcí, jako je to možné:
 
-- Jednoduchý příklad reprodukci problému. Toto je **neocenitelnou pomocí** kde je to možné. 
-- Trasování zásobníku úplné havárie.
-- C# kódu havárii. 
+- Jednoduchý příklad reprodukci problému. Toto je **neocenitelnou** tam, kde je to možné. 
+- Úplné trasování zásobníku selhání.
+- Kód jazyka C# kolem selhání. 
+
+## <a name="related-links"></a>Související odkazy
+
+- [Xamarin University kurz: Vytvoření knihovny vazeb Objective-C](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Xamarin University kurz: Vytvoření knihovny vazeb Objective-C pomocí cíle Sharpie](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)
