@@ -1,43 +1,43 @@
 ---
-title: Shrnutí kapitoly 26. Vlastní rozložení
-description: 'Vytváření mobilních aplikací s Xamarin.Forms: Souhrn kapitoly 26. Vlastní rozložení'
+title: Souhrn kapitole 26. Vlastní rozložení
+description: 'Vytváření mobilních aplikací s Xamarin.Forms: Souhrn kapitole 26. Vlastní rozložení'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 2B7F4346-414E-49FF-97FB-B85E92D98A21
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 1c8fec34c0bc7f38d360f76122d851ae653ce15e
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: b6ef23364cac0dd1459681aa92c7a7db58bc81f0
+ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241168"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37935638"
 ---
-# <a name="summary-of-chapter-26-custom-layouts"></a>Shrnutí kapitoly 26. Vlastní rozložení
+# <a name="summary-of-chapter-26-custom-layouts"></a>Souhrn kapitole 26. Vlastní rozložení
 
-Xamarin.Forms zahrnuje několik třídy odvozené od třídy [ `Layout<View>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/):
+Xamarin.Forms zahrnuje několik tříd odvozených z [ `Layout<View>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/):
 
 * `StackLayout`,
 * `Grid`,
 * `AbsoluteLayout`, a
 * `RelativeLayout`.
 
-Tato kapitola popisuje, jak vytvořit vlastní třídy, které jsou odvozeny od `Layout<View>`.
+Tato kapitola popisuje, jak vytvořit vlastní třídy, které jsou odvozeny z `Layout<View>`.
 
-## <a name="an-overview-of-layout"></a>Přehled rozložení
+## <a name="an-overview-of-layout"></a>Základní informace o rozložení
 
-Neexistuje žádný centralizované systém, který zpracovává Xamarin.Forms rozložení. Každý prvek je zodpovědný za určení toho, co vlastní velikost by měla být a způsob vykreslení sám v určité oblasti.
+Neexistuje žádné centralizovaného systému, který zpracovává rozložení Xamarin.Forms. Každý prvek je odpovědností co vlastní velikost by měla být a samotné vykreslování v konkrétní oblasti.
 
 ### <a name="parents-and-children"></a>Nadřazené a podřízené položky
 
-Každý element, který má podřízených prvků, je zodpovědná za umístění těchto podřízené objekty v rámci samotného. Je nadřazeného objektu, který určuje, co velikost podřízené by měla být založena na velikosti má k dispozici a chce být velikost podřízený objekt.
+Každý element, který obsahuje podřízené položky je odpovědná za umístění tyto podřízené objekty v rámci samotného. Je nadřazené položky, která určuje, co velikost jejích potomků by měla být založena na velikosti má k dispozici a velikost podřízené chce mít.
 
-### <a name="sizing-and-positioning"></a>Změna velikosti a rozmístění
+### <a name="sizing-and-positioning"></a>Změna velikosti a polohování
 
-Rozložení začne v horní části stromu visual s hledanou stránkou a potom pokračuje prostřednictvím všechny větve. Je nejdůležitější veřejná metoda v rozložení [ `Layout` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.Layout/p/Xamarin.Forms.Rectangle/) definované `VisualElement`. Každý element, který je nadřazený na další prvky volání `Layout` pro každý z jejích podřízených umožnit podřízené velikosti a pozice relativně k samotné ve formě [ `Rectangle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Rectangle/) hodnotu. Tyto `Layout` volání rozšíří v rámci vizuálním stromu.
+Rozložení začíná v horní části stránky z vizuálního stromu se stránkou a pak pokračuje přes všechny větve. Nejdůležitější veřejnou metodu v rozložení je [ `Layout` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.Layout/p/Xamarin.Forms.Rectangle/) určené `VisualElement`. Každý element, který je nadřazený objekt jiných prvků volání `Layout` pro každý z jejích podřízených poskytnout podřízené, velikost a umístění vzhledem k samotné ve formě [ `Rectangle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Rectangle/) hodnotu. Tyto `Layout` volání šířila vizuálního stromu.
 
-Volání `Layout` je vyžadována pro element se objeví na obrazovce a způsobí, že následující vlastnosti jen pro čtení nastavení. Jsou konzistentní s `Rectangle` předaný metodě:
+Volání `Layout` je vyžadován pro element, který má na obrazovce a způsobí, že vlastnosti jen pro čtení, následující nastavení. Jsou v souladu s `Rectangle` předaný metodě:
 
 - [`Bounds`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Bounds/) typu `Rectangle`
 - [`X`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.X/) typu `double`
@@ -45,59 +45,59 @@ Volání `Layout` je vyžadována pro element se objeví na obrazovce a způsob�
 - [`Width`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Width/) typu `double`
 - [`Height`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Height/) typu `double`
 
-Před verzí `Layout` volat, `Height` a `Width` mít imitované hodnoty &ndash;1.
+Před verzí `Layout` volání, `Height` a `Width` mají hodnoty mock &ndash;1.
 
-Volání `Layout` také aktivuje volání následující chráněné metody:
+Volání `Layout` také aktivuje volání na následující chráněné metody:
 
 - [`SizeAllocated`](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.SizeAllocated/p/System.Double/System.Double/), který volá
-- [`OnSizeAllocated`](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.OnSizeAllocated/p/System.Double/System.Double/), který je možné přepsat.
+- [`OnSizeAllocated`](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.OnSizeAllocated/p/System.Double/System.Double/), který se dá přepsat.
 
-Nakonec se aktivuje například následující událost:
+Nakonec se aktivuje následující událost:
 
 - [`SizeChanged`](https://developer.xamarin.com/api/event/Xamarin.Forms.VisualElement.SizeChanged/)
 
-`OnSizeAllocated` Je metoda přepsat `Page` a `Layout`, které jsou pouze dvě třídy v Xamarin.Forms, která může mít podřízené objekty. Volání přepsaného – metoda
+`OnSizeAllocated` Je přepsána metoda `Page` a `Layout`, které jsou jenom dvě třídy v Xamarin.Forms, která může mít podřízené objekty. Volání přepsaných metod
 
-- [`UpdateChildrenLayout`](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.UpdateChildrenLayout()/) pro `Page` odvozené konfigurace a [ `UpdateChildrenLayout` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.UpdateChildrenLayout()/) pro `Layout` odvozené konfigurace, které volá
-- [`LayoutChildren`](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.LayoutChildren/p/System.Double/System.Double/System.Double/System.Double/) pro `Page` odvozené konfigurace a [ `LayoutChildren` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.LayoutChildren/p/System.Double/System.Double/System.Double/System.Double/) pro `Layout` odvozené konfigurace.
+- [`UpdateChildrenLayout`](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.UpdateChildrenLayout()/) pro `Page` vy a [ `UpdateChildrenLayout` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.UpdateChildrenLayout()/) pro `Layout` odvozené konfigurace, které volá
+- [`LayoutChildren`](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.LayoutChildren/p/System.Double/System.Double/System.Double/System.Double/) pro `Page` vy a [ `LayoutChildren` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.LayoutChildren/p/System.Double/System.Double/System.Double/System.Double/) pro `Layout` vy.
 
-`LayoutChildren` pak zavolá `Layout` pro všechny podřízené objekty daného elementu. Pokud má alespoň jednu podřízenou novou `Bounds` nastavení, pak je aktivována například následující událost:
+`LayoutChildren` pak zavolá `Layout` pro každý z podřízené objekty daného elementu. Pokud má alespoň jeden podřízený prvek nový `Bounds` nastavení, a aktivuje následující událost:
 
-- [`LayoutChanged`](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.LayoutChanged/) pro `Page` odvozené konfigurace a [ `LayoutChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Layout.LayoutChanged/) pro `Layout` odvozené konfigurace
+- [`LayoutChanged`](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.LayoutChanged/) pro `Page` vy a [ `LayoutChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Layout.LayoutChanged/) pro `Layout` odvozené konfigurace
 
 ### <a name="constraints-and-size-requests"></a>Omezení a požadavky na velikost
 
-Pro `LayoutChildren` inteligentně volat `Layout` na všechny její podřízené položky, musí znát *upřednostňované* nebo *požadované* velikost podřízené objekty. Proto volání `Layout` pro všechny podřízené objekty jsou obecně sebou volání
+Pro `LayoutChildren` inteligentně volat `Layout` na všech jejích potomků, musíte znát *upřednostňované* nebo *požadované* velikost pro podřízené položky. Proto volání `Layout` pro každou podřízenou položku obecně předchází volání
 
 - [`GetSizeRequest`](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.GetSizeRequest/p/System.Double/System.Double/)
 
-Po publikování knihy, `GetSizeRequest` metoda byla zastaralá a nahradit
+Po publikování knihy, `GetSizeRequest` byl zastaralý a nahradí – metoda
 
 - [`Measure`](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.Measure/p/System.Double/System.Double/Xamarin.Forms.MeasureFlags/)
 
-`Measure` Může metoda vyrovnávat [ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/) vlastnost i argument typu [ `MeasureFlag` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MeasureFlags/), který má dva členy:
+`Measure` Metoda přizpůsobuje [ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/) vlastnost a zahrnuje argument typu [ `MeasureFlag` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MeasureFlags/), který má dva členy:
 
-- [`IncludeMargins`](https://developer.xamarin.com/api/field/Xamarin.Forms.MeasureFlags.IncludeMargins/)
-- [`None`](https://developer.xamarin.com/api/field/Xamarin.Forms.MeasureFlags.None/) možnost Nezahrnovat okraje
+- [`IncludeMargins`](xref:Xamarin.Forms.MeasureFlags.IncludeMargins)
+- [`None`](xref:Xamarin.Forms.MeasureFlags.None) tak, aby nezahrnovala okraje
 
-Pro mnoho prvků `GetSizeRequest` nebo `Measure` nativní velikost elementu získává z jeho zobrazovací jednotky. Obě metody mít parametry pro šířku a výšku *omezení*. Například `Label` budou používat omezení šířky určit, jak zabalit více řádků textu.
+Pro mnoho prvků `GetSizeRequest` nebo `Measure` nativní velikost elementu získává z jeho zobrazovací jednotky. Obě metody mají parametry pro šířku a výšku *omezení*. Například `Label` budou používat omezení šířky určit, jak zabalit více řádků textu.
 
-Obě `GetSizeRequest`a `Measure` vrátí hodnotu typu [ `SizeRequest` ](https://developer.xamarin.com/api/type/Xamarin.Forms.SizeRequest/), která má dvě vlastnosti:
+Obě `GetSizeRequest`a `Measure` vrátit hodnotu typu [ `SizeRequest` ](https://developer.xamarin.com/api/type/Xamarin.Forms.SizeRequest/), která má dvě vlastnosti:
 
 - [`Request`](https://developer.xamarin.com/api/property/Xamarin.Forms.SizeRequest.Request/) typu `Size`
 - [`Minimum`](https://developer.xamarin.com/api/property/Xamarin.Forms.SizeRequest.Minimum/) typu `Size`
 
-Velmi často tyto dvě hodnoty jsou stejné a `Minimum` hodnotu lze obvykle ignorovat.
+Velmi často se tyto dvě hodnoty stejné a `Minimum` hodnotu lze obvykle ignorovat.
 
-`VisualElement` Definuje také chráněná metoda, která je podobná `GetSizeRequest` která je volána z `GetSizeRequest`:
+`VisualElement` Definuje také chráněné metody podobné `GetSizeRequest` , která je volána z `GetSizeRequest`:
 
 - [`OnSizeRequest`](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.OnSizeRequest/p/System.Double/System.Double/) Vrátí `SizeRequest` hodnota
 
-Tuto metodu je nyní zastaralé a nahradí:
+Tato metoda je nyní zastaralé a nahradit:
 
 - [`OnMeasure`](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.OnMeasure/p/System.Double/System.Double/)
 
-Každá třída, která je odvozena z `Layout` nebo `Layout<T>` musí přepsat `OnSizeRequest` nebo `OnMeasure`. Toto je, kde třídu rozložení určuje vlastní velikost, která je obecně založena na velikosti jeho podřízených položek, které se získá voláním `GetSizeRequest` nebo `Measure` na podřízené objekty. Před a po volání `OnSizeRequest` nebo `OnMeasure`, `GetSizeRequest` nebo `Measure` provádí úpravy podle následující vlastnosti:
+Každá třída, která je odvozena z `Layout` nebo `Layout<T>` musí přepsat `OnSizeRequest` nebo `OnMeasure`. To je, kde rozložení třídy určuje vlastní velikost, která je obecně podle velikosti jeho podřízené položky, která se získá voláním `GetSizeRequest` nebo `Measure` na podřízené objekty. Před a po volání `OnSizeRequest` nebo `OnMeasure`, `GetSizeRequest` nebo `Measure` provádí úpravy na základě následujících vlastností:
 
 - [`WidthRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.WidthRequest/)typu `double`, má vliv `Request` vlastnost `SizeRequest`
 - [`HeightRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.HeightRequest/) typu `double`, má vliv `Request` vlastnost `SizeRequest`
@@ -106,92 +106,92 @@ Každá třída, která je odvozena z `Layout` nebo `Layout<T>` musí přepsat `
 
 ### <a name="infinite-constraints"></a>Nekonečné omezení
 
-Předaný argumentů omezení `GetSizeRequest` (nebo `Measure`) a `OnSizeRequest` (nebo `OnMeasure`) může být nekonečné (tj, hodnoty `Double.PositiveInfinity`). Ale `SizeRequest` vrácená z těchto metod nemůže obsahovat nekonečné dimenzí.
+Omezení argumenty předané `GetSizeRequest` (nebo `Measure`) a `OnSizeRequest` (nebo `OnMeasure`) může být nekonečné (například hodnoty `Double.PositiveInfinity`). Ale `SizeRequest` vrátilo tyto metody nemůže obsahovat nekonečné dimenze.
 
-Nekonečné omezení znamenat, že požadovaná velikost by měl odrážet přirozenou velikostí elementu. Svislé `StackLayout` volání `GetSizeRequest` (nebo `Measure`) na své podřízené objekty s omezením nekonečné výšku. Rozložení vodorovné zásobníku volání `GetSizeRequest` (nebo `Measure`) na své podřízené objekty s omezením neomezenou šířku. `AbsoluteLayout` Volání `GetSizeRequest` (nebo `Measure`) na své podřízené objekty s neomezenou šířku a výšku omezení.
+Nekonečné omezení znamenat, že požadovaná velikost by měly odrážet fyzická velikost prvku. Svislé `StackLayout` volání `GetSizeRequest` (nebo `Measure`) na jeho podřízené objekty s omezením nekonečné výšku. Volá vodorovný zásobníku rozložení `GetSizeRequest` (nebo `Measure`) na jeho podřízené objekty s omezením neomezenou šířku. `AbsoluteLayout` Volání `GetSizeRequest` (nebo `Measure`) na jeho podřízené objekty s neomezenou šířku a výšku omezení.
 
-### <a name="peeking-inside-the-process"></a>Prohlížení uvnitř proces
+### <a name="peeking-inside-the-process"></a>Prohlížení uvnitř procesu
 
-[ **ExploreChildSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/ExploreChildSizes) zobrazí omezení a velikost žádostí o informace pro jednoduché rozložení.
+[ **ExploreChildSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/ExploreChildSizes) zobrazí omezení a velikost vyžádat informace pro jednoduché rozložení.
 
 ## <a name="deriving-from-layoutview"></a>Odvozování z rozložení<View>
 
-Vlastní rozložení třída odvozená z `Layout<View>`. Má dva zodpovědnosti:
+Vlastní rozložení třídy je odvozen z `Layout<View>`. Má dva odpovědnosti:
 
-- Přepsání `OnMeasure` volat `Measure` na všechny rozložení podřízené objekty. Požadovaná velikost pro samotné rozložení
-- Přepsání `LayoutChildren` volat `Layout` na všechny rozložení podřízené objekty
+- Přepsat `OnMeasure` volat `Measure` na podřízené položky všechna rozložení. Vrátí požadovaná velikost pro samotný rozložení
+- Přepsat `LayoutChildren` volat `Layout` na podřízené objekty všechny rozložení
 
-`for` Nebo `foreach` smyčky v tato přepsání by měla přeskočit všechny podřízené jejichž `IsVisible` je nastavena na `false`.
+`for` Nebo `foreach` smyčky v tato přepsání přeskočte všech podřízených jehož `IsVisible` je nastavena na `false`.
 
-Volání `OnMeasure` není zaručena. `OnMeasure` nebude volána, pokud nadřazená rozložení je řídících velikosti pro rozložení (například rozložení, které vyplní celé stránky). Z tohoto důvodu `LayoutChildren` nelze závisí na velikosti podřízené získané při `OnMeasure` volání. Velmi často `LayoutChildren` musí sám volat `Measure` na podřízené objekty na rozložení, nebo můžete implementovat nějaký druh velikost ukládání do mezipaměti logiku (a později popsané).
+Volání `OnMeasure` není zaručena. `OnMeasure` nebude volat, pokud se nadřazený prvek rozložení se kterými se řídí velikost na rozložení (například rozložení, který vyplní stránka). Z tohoto důvodu `LayoutChildren` nelze spoléhat na podřízené velikosti zjišťovala během `OnMeasure` volání. Velmi často `LayoutChildren` zavolat samotného `Measure` na podřízené položky na rozložení, nebo můžete implementovat nějaký druh velikost ukládání do mezipaměti logiku (pro prodiskutována později).
 
-### <a name="an-easy-example"></a>Příklad snadno
+### <a name="an-easy-example"></a>Příklad jednoduché
 
-[ **VerticalStackDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/VerticalStackDemo) ukázka obsahuje zjednodušená [ `VerticalStack` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter26/VerticalStackDemo/VerticalStackDemo/VerticalStackDemo/VerticalStack.cs) třídy a předvedení jeho použití.
+[ **VerticalStackDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/VerticalStackDemo) obsahuje vzorek je zjednodušená [ `VerticalStack` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter26/VerticalStackDemo/VerticalStackDemo/VerticalStackDemo/VerticalStack.cs) třídy a ukázka jeho použití.
 
-### <a name="vertical-and-horizontal-positioning-simplified"></a>Svislého a vodorovného umístění zjednodušená
+### <a name="vertical-and-horizontal-positioning-simplified"></a>Vodorovné a svislé umístění zjednodušená
 
-Jedna z úloh, `VerticalStack` musíte provést spadá `LayoutChildren` přepsat. Metoda používá dítěte `HorizontalOptions` vlastnost určit, jak na pozici v rámci jeho slot v podřízených `VerticalStack`. Můžete místo toho zavolejte statickou metodu [ `Layout.LayoutChildIntoBoundingRect` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.LayoutChildIntoBoundingRegion/p/Xamarin.Forms.VisualElement/Xamarin.Forms.Rectangle/). Tato metoda volá `Measure` na podřízené a používá jeho `HorizontalOptions` a `VerticalOptions` vlastnosti, které chcete umístit podřízené v rámci zadaného rámeček.
+Jedna z úloh, která `VerticalStack` musí provádět spadá `LayoutChildren` přepsat. Metoda používá dítěte `HorizontalOptions` vlastnost určit, jak na pozici v rámci jeho pozice v podřízené `VerticalStack`. Místo toho můžete volat statickou metodu [ `Layout.LayoutChildIntoBoundingRect` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.LayoutChildIntoBoundingRegion/p/Xamarin.Forms.VisualElement/Xamarin.Forms.Rectangle/). Tato metoda volá `Measure` na podřízené a používá svůj `HorizontalOptions` a `VerticalOptions` vlastnosti, které chcete umístit podřízené v rámci určeného obdélníku.
 
-### <a name="invalidation"></a>Zneplatnění
+### <a name="invalidation"></a>Zrušení
 
-Ke změně v elementu vlastnost často ovlivňuje, jak tento prvek se zobrazuje v rozložení. Rozložení musí být zneplatněné k aktivaci nové rozložení.
+Změna vlastnosti elementu často ovlivňuje, jak se zobrazuje tento prvek v rozložení. Rozložení musí být zneplatněné k aktivaci nového rozložení.
 
-`VisualElement` Definuje chráněná metoda [ `InvalidateMeasure` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.InvalidateMeasure()/), obecně tzv. obslužná rutina vlastnost změnit libovolné vazbu vlastnosti jejichž změna má vliv velikost elementu. `InvalidateMeasure` Metoda aktivuje [ `MeasureInvalidated` ](https://developer.xamarin.com/api/event/Xamarin.Forms.VisualElement.MeasureInvalidated/) událostí.
+`VisualElement` Definuje chráněná metoda [ `InvalidateMeasure` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.InvalidateMeasure()/), což obecně volá obslužná rutina změny vlastnosti libovolné umožňujících vazbu vlastnosti jehož změna ovlivňuje velikost prvku. `InvalidateMeasure` Aktivuje se metoda [ `MeasureInvalidated` ](https://developer.xamarin.com/api/event/Xamarin.Forms.VisualElement.MeasureInvalidated/) událostí.
 
-`Layout` Třída definuje podobně jako chráněnou metodu s názvem [ `InvalidateLayout` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.InvalidateLayout()/), které `Layout` odvozených by měly volat pro všechny změny, která má vliv na způsob umisťuje a velikosti své podřízené objekty.
+`Layout` Třída definuje podobně jako chráněnou metodu s názvem [ `InvalidateLayout` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.InvalidateLayout()/), který `Layout` odvozených děl na základě by měly volat pro všechny změny, který má vliv jak umístění a velikosti své podřízené objekty.
 
 ### <a name="some-rules-for-coding-layouts"></a>Některá pravidla pro kódování rozložení
 
-1. Vlastnosti definované `Layout<T>` odvozené konfigurace by měl být zálohovaný vazbu vlastnosti a obslužné rutiny vlastnost změnit by měly volat `InvalidateLayout`.
+1. Vlastnosti definované `Layout<T>` odvozené by měl být založená na vlastnosti umožňující vazbu a obslužné rutiny změny vlastnosti by měly volat `InvalidateLayout`.
 
-2. A `Layout<T>` by měly přepsat odvozených, který definuje vazbu přidružené vlastnosti [ `OnAdded` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout%3CT%3E.OnAdded/p/T/) pro přidání obslužné rutiny vlastnost změnit jeho podřízených objektů a [ `OnRemoved` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout%3CT%3E.OnRemoved/p/T/) odebrat Obslužná rutina. Obslužná rutina by měla zkontrolujte změny v těchto přidružené vazbu vlastnosti a reagovat voláním `InvalidateLayout`.
+2. A `Layout<T>` by měly přepsat jeho odvozených děl, která definuje připojené vlastnosti umožňující vazbu [ `OnAdded` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout%3CT%3E.OnAdded/p/T/) pro přidání obslužné rutiny změny vlastnosti na podřízené a [ `OnRemoved` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout%3CT%3E.OnRemoved/p/T/) odebrat Obslužná rutina. By měla obslužná rutina zkontrolujte, zda změny v těchto připojené vlastnosti umožňující vazbu a reagovat voláním `InvalidateLayout`.
 
-3. A `Layout<T>` by měly přepsat odvozených, který implementuje mezipaměti o velikosti podřízené `InvalidateLayout` a [ `OnChildMeasureInvalidated` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.OnChildMeasureInvalidated()/) a vymažte mezipaměť, pokud jsou volány tyto metody.
+3. A `Layout<T>` by měly přepsat jeho odvozených děl, která implementuje mezipaměť podřízené velikostí `InvalidateLayout` a [ `OnChildMeasureInvalidated` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.OnChildMeasureInvalidated()/) a vymažte její mezipaměť při volání těchto metod.
 
 ### <a name="a-layout-with-properties"></a>Rozložení s vlastnostmi
 
-[ `WrapLayout` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/WrapLayout.cs) Třídy v [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) předpokládá, že se všechny její podřízené položky stejné velikost a dojde k zalomení podřízené objekty z jeden řádek (nebo sloupec) na další. Definuje, `Orientation` vlastnost jako `StackLayout`, a `ColumnSpacing` a `RowSpacing` vlastnosti, například `Grid`, a ukládá do mezipaměti podřízené velikosti.
+[ `WrapLayout` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/WrapLayout.cs) Třídy v [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) předpokládá, že jsou všechny jeho podřízené objekty stejné velikosti a přesahuje šířku ovládacího prvku podřízené položky z jednoho řádku (nebo sloupce) na další. Definuje `Orientation` vlastnost jako `StackLayout`, a `ColumnSpacing` a `RowSpacing` vlastnosti, jako je `Grid`, a ukládá do mezipaměti podřízené velikosti.
 
-[ **PhotoWrap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/PhotoWrap) ukázkové PUT `WrapLayout` v `ScrollView` pro zobrazení uložené fotografie.
+[ **PhotoWrap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/PhotoWrap) ukázkový vloží `WrapLayout` v `ScrollView` pro zobrazování fotografií akcie.
 
 ### <a name="no-unconstrained-dimensions-allowed"></a>Žádné neomezeným dimenze povoleny!
 
-[ `UniformGridLayout` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/UniformGridLayout.cs) v [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) knihovna je určená zobrazíte všechny její podřízené položky v rámci samotného. Proto nelze zpracovat s neomezeným dimenzemi a vyvolá výjimku, pokud jeden došlo k.
+[ `UniformGridLayout` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/UniformGridLayout.cs) v [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) knihovna je určená zobrazíte všechny jeho podřízené objekty v rámci samotného. Proto nelze zacházet s neomezeným dimenzí a vyvolá výjimku, pokud nebude nalezen jeden.
 
-[ **PhotoGrid** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/PhotoGrid) příklad znázorňuje `UniformGridLayout`:
+[ **PhotoGrid** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/PhotoGrid) ukázce `UniformGridLayout`:
 
-[![Trojitá snímek obrazovky Mřížka fotografií](images/ch26fg08-small.png "Uniform rozložení mřížky")](images/ch26fg08-large.png#lightbox "Uniform rozložení mřížky")
+[![Trojitá snímek Mřížka fotografií](images/ch26fg08-small.png "Uniform rozložení mřížky")](images/ch26fg08-large.png#lightbox "Uniform rozložení mřížky")
 
 ### <a name="overlapping-children"></a>Překrývající se podřízené objekty
 
-A `Layout<T>` odvozených může dojít k překrytí své podřízené objekty. Ale podřízené objekty jsou vykreslovány v pořadí podle jejich v `Children` kolekce a ne pořadí, v jakém jejich `Layout` metody jsou volány.
+A `Layout<T>` odvozených děl na základě může dojít k překrytí své podřízené objekty. Ale podřízené objekty jsou vykreslovány v jejich pořadí v `Children` kolekce a ne pořadí, ve kterém jejich `Layout` metody jsou volány.
 
-`Layout` Třída definuje dvě metody, které umožňují přesunout podřízenou v kolekci:
+`Layout` Třída definuje dvě metody, které umožňují přesunout podřízené v rámci kolekce:
 
 - [`LowerChild`](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.LowerChild/p/Xamarin.Forms.View/) Přesunout podřízenou na začátek kolekce
 - [`RaiseChild`](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.RaiseChild/p/Xamarin.Forms.View/) Přesunout podřízenou na konec kolekce
 
-Pro překrývající se děti děti na konec kolekce vizuálně zobrazují nad podřízené objekty na začátek kolekce.
+Pro překrývající se děti podřízené položky na konec kolekce vizuálně zobrazují nad podřízené objekty na začátku kolekce.
 
-[ `OverlapLayout` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/OverlapLayout.cs) Třídy v [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) knihovny definuje přidružená vlastnost označují pořadí vykreslování a proto povolit jeden z jeho má zobrazit nad jiné podřízené objekty. [ **StudentCardFile** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/StudentCardFile) příklad znázorňuje toto:
+[ `OverlapLayout` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/OverlapLayout.cs) Třídy v [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) knihovna definuje připojené vlastnosti k určení pořadí vykreslování a tím umožní jeden z jeho podřízené položky, který se má zobrazit nad rámec ostatních. [ **StudentCardFile** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/StudentCardFile) ukázce toto:
 
-[![Trojitá snímek obrazovky Student karta soubor mřížky](images/ch26fg10-small.png "překrývání podřízené objekty rozložení")](images/ch26fg10-large.png#lightbox "překrývání rozložení podřízené objekty")
+[![Trojitá snímek mřížky souboru karta studenta](images/ch26fg10-small.png "překrývající se děti rozložení")](images/ch26fg10-large.png#lightbox "překrývající se děti rozložení")
 
-### <a name="more-attached-bindable-properties"></a>Víc připojený vazbu vlastnosti
+### <a name="more-attached-bindable-properties"></a>Další připojené vlastnosti umožňující vazbu
 
-[ `CartesianLayout` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/CartesianLayout.cs) Třídy v [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) knihovny definuje připojené vazbu vlastnosti k určení dva `Point` hodnoty a Tloušťka hodnotu a zpracovává `BoxView` elementy tak, aby připomínaly řádky.
+[ `CartesianLayout` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/CartesianLayout.cs) Třídy v [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) knihovna definuje připojené s možností vazby vlastnosti k určení dvou `Point` hodnoty a Hodnota thickness a manipuluje s `BoxView` prvků, které se podobají řádky.
 
-[ **UnitCube** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/UnitCube) Ukázka používá k vykreslení 3D datové krychle.
+[ **UnitCube** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/UnitCube) ukázka, která používá pro kreslení 3D krychle.
 
 ### <a name="layout-and-layoutto"></a>Rozložení a LayoutTo
 
-A `Layout<T>` můžete volat odvozených `LayoutTo` místo `Layout` pro animaci rozložení. [ `AnimatedCartesianLayout` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AnimatedCartesianLayout.cs) Třída nepodporuje a [ **AnimatedUnitCube** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/AnimatedUnitCube) příklad znázorňuje ho.
+A `Layout<T>` můžete volat odvozených děl na základě `LayoutTo` spíše než `Layout` pro animaci rozložení. [ `AnimatedCartesianLayout` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AnimatedCartesianLayout.cs) Třídy se k tomu a [ **AnimatedUnitCube** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/AnimatedUnitCube) ukázce ho.
 
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Úplný text 26 kapitoly (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch26-Apr2016.pdf)
-- [Ukázky kapitoly 26](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26)
-- [Vytváření vlastní rozložení](~/xamarin-forms/user-interface/layouts/custom.md)
+- [Kapitola 26 textu v plném znění (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch26-Apr2016.pdf)
+- [Ukázky kapitole 26](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26)
+- [Vytvoření vlastního rozložení](~/xamarin-forms/user-interface/layouts/custom.md)

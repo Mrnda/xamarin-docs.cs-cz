@@ -1,5 +1,5 @@
 ---
-title: Shrnutí kapitoly 15. Interaktivní rozhraní
+title: Souhrn kapitoly 15. Interaktivní rozhraní
 description: 'Vytváření mobilních aplikací s Xamarin.Forms: Souhrn kapitoly 15. Interaktivní rozhraní'
 ms.prod: xamarin
 ms.technology: xamarin-forms
@@ -7,156 +7,156 @@ ms.assetid: F54E86F4-1CDA-474E-9B09-242060C2C13D
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: aac49c9e74dd22642396ea8daf5ee3abd85de7bf
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 6d26e3b9a82917ec3f70190e5e90c59d274de990
+ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241894"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37935183"
 ---
-# <a name="summary-of-chapter-15-the-interactive-interface"></a>Shrnutí kapitoly 15. Interaktivní rozhraní
+# <a name="summary-of-chapter-15-the-interactive-interface"></a>Souhrn kapitoly 15. Interaktivní rozhraní
 
-Tato kapitola prozkoumá osm `View` odvozené konfigurace, které umožňují interakci s uživatelem.
+Tato kapitola popisuje osm `View` odvozené konfigurace, které umožňují interakci s uživatelem.
 
 ## <a name="view-overview"></a>Zobrazit přehled
 
-Xamarin.Forms obsahuje 20 instantiable třídy, které jsou odvozeny od `View` ale ne `Layout`. Šest z těchto popsaná v předchozích kapitol:
+Xamarin.Forms obsahuje 20 instantiable třídy, které jsou odvozeny z `View` , ale ne `Layout`. Šest těchto popsaná v předchozích kapitol:
 
-- `Label`: [ **Kapitoly 2. Anatomie aplikace**](chapter02.md)
-- `BoxView`: [ **Kapitoly 3. Procházení zásobníku**](chapter03.md)
-- `Button`: [ **Kapitoly 6. Kliknutí na tlačítko**](chapter06.md)
-- `Image`: [ **Kapitoly 13. Rastrové obrázky**](chapter13.md)
-- `ActivityIndicator`: [ **Kapitoly 13. Rastrové obrázky**](chapter13.md)
-- `ProgressBar`: [ **Kapitoly 14. AbsoluteLayout**](chapter14.md)
+- `Label`: [ **Kapitola 2. Anatomie aplikace**](chapter02.md)
+- `BoxView`: [ **Kapitolu 3. Posouvání zásobníku**](chapter03.md)
+- `Button`: [ **Kapitola 6. Kliknutí na tlačítko**](chapter06.md)
+- `Image`: [ **Kapitola 13. Rastrové obrázky**](chapter13.md)
+- `ActivityIndicator`: [ **Kapitola 13. Rastrové obrázky**](chapter13.md)
+- `ProgressBar`: [ **Kapitola 14. AbsoluteLayout**](chapter14.md)
 
-Osm zobrazení v této kapitole efektivně povolit uživatelům interakci s základní datové typy .NET:
+Osm zobrazení v této kapitole efektivně umožňují uživateli pracovat s základní datové typy .NET:
 
-|Datový typ|zobrazení|
+|Datový typ|Zobrazení|
 |--- |--- |
 |`Double`|[`Slider`](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/), [`Stepper`](https://developer.xamarin.com/api/type/Xamarin.Forms.Stepper/)|
 |`Boolean`|[`Switch`](https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/)|
 |`String`|[`Entry`](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/), [`Editor`](https://developer.xamarin.com/api/type/Xamarin.Forms.Editor/), [`SearchBar`](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/)|
 |`DateTime`|[`DatePicker`](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/), [`TimePicker`](https://developer.xamarin.com/api/type/Xamarin.Forms.TimePicker/)|
 
-Tato zobrazení si můžete představit jako interaktivní vizuální reprezentace základní datové typy. Tento koncept je více prozkoumali v další kapitoly [ **kapitoly 16. Datová vazba**](chapter16.md).
+Tato zobrazení můžete představit jako vizuální reprezentace interaktivní z podkladových datových typů. Tento koncept je v následující kapitole více prozkoumat [ **kapitola 16. Vytváření datových vazeb**](chapter16.md).
 
-Zbývající šesti zobrazení jsou popsané v následujících kapitolách:
+Zbývající pohledy šest jsou popsané v následujících kapitolách:
 
-- `WebView`: [ **Kapitoly 16. Datová vazba**](chapter16.md)
-- `Picker`: [ **Kapitoly 19. Zobrazení kolekce**](chapter19.md)
-- `ListView`: [ **Kapitoly 19. Zobrazení kolekce**](chapter19.md)
-- `TableView`: [ **Kapitoly 19. Zobrazení kolekce**](chapter19.md)
-- `Map`: [ **Kapitoly 28. Umístění a mapy**](chapter28.md)
-- `OpenGLView`: Není popsaná v této příručce (a žádná podpora pro platformy systému Windows)
+- `WebView`: [ **Kapitola 16. Vytváření datových vazeb**](chapter16.md)
+- `Picker`: [ **Kapitole 19. Zobrazení kolekcí**](chapter19.md)
+- `ListView`: [ **Kapitole 19. Zobrazení kolekcí**](chapter19.md)
+- `TableView`: [ **Kapitole 19. Zobrazení kolekcí**](chapter19.md)
+- `Map`: [ **Kapitola 28. Poloha a mapy**](chapter28.md)
+- `OpenGLView`: Není v této příručce (a žádná podpora pro platformy Windows)
 
 ## <a name="slider-and-stepper"></a>Posuvník a krokovač
 
-Obě [ `Slider` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/) a [ `Stepper` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Stepper/) umožnit uživatelům zvolit číselná hodnota z rozsahu. `Slider` Je nepřetržitá rozsah při `Stepper` zahrnuje diskrétními hodnotami.
+Obě [ `Slider` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/) a [ `Stepper` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Stepper/) uživateli umožní výběr z různých číselnou hodnotu. `Slider` Je souvislou při `Stepper` zahrnuje jednotlivých hodnot.
 
 ### <a name="slider-basics"></a>Základy posuvníku
 
-[ `Slider` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/) Je vodorovných panelu reprezentující rozsah hodnot z minimálně na levé straně na maximální na pravé straně. Definuje tři veřejné vlastnosti:
+[ `Slider` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/) Je vodorovný pruh reprezentující rozsah hodnot z minimálně na levé straně maximum na pravé straně. Definuje tři veřejné vlastnosti:
 
-- [`Value`](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Value/) typu `double`, výchozí hodnota 0
-- [`Minimum`](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Minimum/) typu `double`, výchozí hodnota 0
-- [`Maximum`](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Maximum/) typu `double`, výchozí hodnota 1
+- [`Value`](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Value/) typ `double`, výchozí hodnota 0
+- [`Minimum`](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Minimum/) typ `double`, výchozí hodnota 0
+- [`Maximum`](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Maximum/) typ `double`, výchozí hodnota 1
 
-Vazbu vlastnosti, které zpět tyto vlastnosti Ujistěte se, že jsou konzistentní:
+S možností vazby vlastnosti, které zálohují tyto vlastnosti ověřte, že jsou konzistentní vzhledem k aplikacím:
 
-- Pro všechny tři vlastnosti [ `coerceValue` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty+CoerceValueDelegate/) zadaná pro vlastnost vazbu zajišťuje, že metoda `Value` mezi `Minimum` a `Maximum`.
-- [ `validateValue` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty+ValidateValueDelegate/) Metodu `MinimumProperty` vrátí `false` Pokud `Minimum` je nastavena na hodnotu větší než nebo rovna hodnotě `Maximum`a podobné pro `MaximumProperty`. Vrácení `false` z `validateValue` metody způsobí, že `ArgumentException` má být aktivována.
+- Pro všechny tři vlastnosti [ `coerceValue` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty+CoerceValueDelegate/) zadaná pro vlastnost podporující vazby zajišťuje, že metoda `Value` mezi `Minimum` a `Maximum`.
+- [ `validateValue` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty+ValidateValueDelegate/) Metoda `MinimumProperty` vrátí `false` Pokud `Minimum` je nastavena na hodnotu větší než nebo rovna hodnotě `Maximum`a podobně pro `MaximumProperty`. Vrací `false` z `validateValue` metody způsobí, že `ArgumentException` zapříčinil.
 
-`Slider` Aktivuje se [ `ValueChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Slider.ValueChanged/) událost s [ `ValueChangedEventArgs` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ValueChangedEventArgs/) argument při `Value` změny vlastností buď programově, nebo když uživatel manipuluje `Slider`.
+`Slider` je aktivována [ `ValueChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Slider.ValueChanged/) událost s [ `ValueChangedEventArgs` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ValueChangedEventArgs/) argument při `Value` změny vlastností buď programově, nebo když uživatel manipuluje se `Slider`.
 
-[ **SliderDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/SliderDemo) příklad znázorňuje jednoduché použití `Slider`.
+[ **SliderDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/SliderDemo) ukázce jednoduché použití `Slider`.
 
 ### <a name="common-pitfalls"></a>Běžné nástrahy
 
-V kódu i v jazyce XAML `Minimum` a `Maximum` vlastnosti jsou nastaveny v zadaném pořadí. Ujistěte se, k chybě při inicializaci tyto vlastnosti tak, aby `Maximum` je vždy větší než `Minimum`. V opačném případě bude vyvolána výjimka.
+V kódu i v XAML `Minimum` a `Maximum` jsou nastaveny ve vámi stanoveném pořadí. Je potřeba inicializovat tyto vlastnosti tak, aby `Maximum` je vždy větší než `Minimum`. Jinak bude vyvolána výjimka.
 
-Inicializace `Slider` může způsobit vlastnosti `Value` vlastnosti chcete změnit a `ValueChanged` událost, která má být aktivována. Ujistěte se, že `Slider` obslužné rutiny události nemá přístup k zobrazení, která ještě nejsou vytvořené během inicializace.
+Inicializace `Slider` vlastnosti může způsobit, že `Value` vlastnost změnit a `ValueChanged` událost se aktivuje. Měli byste zajistit, `Slider` obslužná rutina události nemá přístup k zobrazení, která ještě nejsou vytvořené během inicializace stránky.
 
-`ValueChanged` Událostí není fire během `Slider` inicializace Pokud `Value` změny vlastností. Můžete volat `ValueChanged` obslužná rutina přímo z kódu.
+`ValueChanged` Události neaktivuje během `Slider` inicializace není-li `Value` změny vlastností. Můžete volat `ValueChanged` obslužná rutina přímo z kódu.
 
 ### <a name="slider-color-selection"></a>Výběr barvy posuvníku
 
-[ **RgbSliders** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/RgbSliders) program obsahuje tři `Slider` elementy, které vám umožní interaktivní výběr barvy zadáním jeho hodnoty RGB:
+[ **RgbSliders** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/RgbSliders) program obsahuje tři `Slider` prvky, které umožňuje interaktivně vybírat barvy tak, že zadáte jeho hodnoty RGB:
 
-[![Trojitá snímek obrazovky R G B posuvníky](images/ch15fg03-small.png "RGB posuvníky")](images/ch15fg03-large.png#lightbox "RGB posuvníky")
+[![Trojitá snímek jezdce R G B](images/ch15fg03-small.png "RGB posuvníky")](images/ch15fg03-large.png#lightbox "RGB posuvníky")
 
-[ **TextFade** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/TextFade) Ukázka používá dva `Slider` elementy přesunout dva `Label` elementy napříč `AbsoluteLayout` a vykreslit ho do druhé.
+[ **TextFade** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/TextFade) Ukázka používá dvě `Slider` prvků, které mají dvě přesunout `Label` prvky napříč `AbsoluteLayout` a fade ho do druhé.
 
 ### <a name="the-stepper-difference"></a>Rozdíl krokovač
 
-[ `Stepper` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Stepper/) Definuje stejné vlastnosti a události jako `Slider` ale `Maximum` vlastnost inicializovala na 100 a `Stepper` definuje čtvrtý vlastnost:
+[ `Stepper` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Stepper/) Definuje stejné vlastnosti a události jako `Slider` ale `Maximum` vlastnost je inicializován na 100 a `Stepper` definuje čtvrtý vlastnost:
 
-- [`Increment`](https://developer.xamarin.com/api/property/Xamarin.Forms.Stepper.Increment/) typu `double`, inicializovaného 1
+- [`Increment`](https://developer.xamarin.com/api/property/Xamarin.Forms.Stepper.Increment/) typ `double`, inicializována na hodnotu 1
 
-Vizuální `Stepper` se skládá ze dvou tlačítka označená **&ndash;** a **+**. Stisknutím **&ndash;** snižuje `Value` podle `Increment` minimálně na `Minimum`. Stisknutím **+** zvyšuje `Value` podle `Increment` maximálně `Maximum`.
+Vizuálně `Stepper` se skládá ze dvou tlačítek označené **&ndash;** a **+**. Stisknutím klávesy **&ndash;** snižuje `Value` podle `Increment` na minimum `Minimum`. Stisknutím klávesy **+** zvyšuje `Value` podle `Increment` maximálně `Maximum`.
 
-Tento postup je znázorněn pomocí [ **StepperDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/StepperDemo) ukázka.
+To je patrné podle [ **StepperDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/StepperDemo) vzorku.
 
 ## <a name="switch-and-checkbox"></a>Přepínač a zaškrtávací políčko
 
-[ `Switch` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/) Umožňuje uživateli zadat logickou hodnotu.
+[ `Switch` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Switch/) Umožňuje uživateli určit logickou hodnotu.
 
 ### <a name="switch-basics"></a>Základy přepínače
 
-Vizuální `Switch` se skládá z přepínač, který je možné zapnout a zapněte. Třída definuje jednu vlastnost:
+Vizuálně `Switch` se skládá z přepínací tlačítko, které je možné zapnout odhlásit a znovu přihlásit. Třída definuje jednu vlastnost:
 
 - [`IsToggled`](https://developer.xamarin.com/api/property/Xamarin.Forms.Switch.IsToggled/) typu `bool`
 
 `Switch` definuje jednu událost:
 
-- [`Toggled`](https://developer.xamarin.com/api/event/Xamarin.Forms.Switch.Toggled/) spolu [ `ToggledEventArgs` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ToggledEventArgs/) objektu, když je aktivována `IsToggled` změny vlastností.
+- [`Toggled`](https://developer.xamarin.com/api/event/Xamarin.Forms.Switch.Toggled/) spolu [ `ToggledEventArgs` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ToggledEventArgs/) objektu vyvolané při `IsToggled` změny vlastností.
 
 [ **SwitchDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/SwitchDemo) program ukazuje `Switch`.
 
 ### <a name="a-traditional-checkbox"></a>Tradiční zaškrtávací políčko
 
-Někteří vývojáři preferovat více tradiční `CheckBox` k `Switch`. [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) knihovna obsahuje `CheckBox` třídu odvozenou od `ContentView`. `CheckBox` je implementované [CheckBox.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/CheckBox.xaml) a [CheckBox.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/CheckBox.xaml.cs) soubory. `CheckBox` definuje vlastnosti tři (`Text`, `FontSize`, a `IsChecked`) a `CheckedChanged` událostí.
+Někteří vývojáři dát přednost více tradiční `CheckBox` k `Switch`. [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) knihovna obsahuje `CheckBox` třídu odvozenou od `ContentView`. `CheckBox` je implementováno [CheckBox.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/CheckBox.xaml) a [CheckBox.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/CheckBox.xaml.cs) soubory. `CheckBox` definuje tři vlastnosti (`Text`, `FontSize`, a `IsChecked`) a `CheckedChanged` událostí.
 
-[ **CheckBoxDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/CheckBoxDemo) příklad znázorňuje to `CheckBox`.
+[ **CheckBoxDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/CheckBoxDemo) ukázce to `CheckBox`.
 
 ## <a name="typing-text"></a>Zadávání textu
 
-Xamarin.Forms definuje tři zobrazení, které umožňují uživateli zadat a upravit text:
+Xamarin.Forms definuje tři zobrazení, které umožní uživateli zadat a upravit text:
 
 - [`Entry`](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) pro jeden řádek textu
 - [`Editor`](https://developer.xamarin.com/api/type/Xamarin.Forms.Editor/) pro více řádků textu
 - [`SearchBar`](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/) pro jeden řádek textu pro účely vyhledávání.
 
-`Entry` a `Editor` odvozena od [ `InputView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.InputView/), která je odvozena z `View`. `SearchBar` Odvozená přímo z `View`.
+`Entry` a `Editor` odvozovat [ `InputView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.InputView/), která je odvozena z `View`. `SearchBar` je odvozena přímo z `View`.
 
-### <a name="keyboard-and-focus"></a>Klávesnice a zaměřit
+### <a name="keyboard-and-focus"></a>Klávesnice a zaměření
 
-Z telefonů a tabletů bez fyzické klávesnice `Entry`, `Editor`, a `SearchBar` způsobit, že všechny elementy virtuální klávesnici objevil. Přítomnost této klávesnice na obrazovce se týká vstupní fokus. Zobrazení musí mít obě jeho [ `IsVisible` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsVisible/) a [ `IsEnabled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsEnabled/) vlastnosti nastavit na `true` získat zaměření pro vstup.
+Na telefonech a tabletech bez fyzickou klávesnicích `Entry`, `Editor`, a `SearchBar` všechny elementy způsobovat virtuální klávesnice objevil. Přítomnost této klávesnice na obrazovce se vztahuje na vstupní fokus. Zobrazení musí obsahovat jeho [ `IsVisible` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsVisible/) a [ `IsEnabled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsEnabled/) nastaveny `true` zobrazíte vstupní fokus.
 
-Dvě metody, jednu vlastnost jen pro čtení a dvě události se podílejí s zaměření pro vstup. Tyto jsou všechny definované `VisualElement`:
+Dvě metody, jednu vlastnost jen pro čtení a dvě události souvisejících s vstupní fokus. Ty jsou definovány `VisualElement`:
 
-- [ `Focus` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.Focus()/) Metoda pokusí se nastavit zaměření pro vstup na prvek a vrátí `true` v případě úspěchu
-- [ `Unfocus` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.Unfocus()/) Metoda odebere element vstupního fokusu
-- [ `IsFocused` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsFocused/) Vlastnost určenou jen pro čtení označuje, pokud má element vstupu fokusu
-- [ `Focused` ](https://developer.xamarin.com/api/event/Xamarin.Forms.VisualElement.Focused/) Událost označuje, pokud element získá vstupního fokusu
-- [ `Unfocused` ](https://developer.xamarin.com/api/event/Xamarin.Forms.VisualElement.Unfocused/) Událost označuje, pokud element ztratí zaměření pro vstup
+- [ `Focus` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.Focus()/) Metoda pokusí se nastavit fokus na prvek a vrátí `true` v případě úspěšného ověření
+- [ `Unfocus` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.Unfocus()/) Metoda odstraní zaměření pro vstup z elementu
+- [ `IsFocused` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsFocused/) Vlastnost jen pro čtení znamená, pokud prvek má vstupní fokus
+- [ `Focused` ](https://developer.xamarin.com/api/event/Xamarin.Forms.VisualElement.Focused/) Událost označuje, pokud prvek získá vstupní fokus.
+- [ `Unfocused` ](https://developer.xamarin.com/api/event/Xamarin.Forms.VisualElement.Unfocused/) Událost označuje, kdy prvek ztratí vstupní fokus.
 
 ### <a name="choosing-the-keyboard"></a>Výběr klávesnice
 
-[ `InputView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.InputView/) Třídu, ze které `Entry` a `Editor` odvozena definuje pouze jednu vlastnost:
+[ `InputView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.InputView/) Třídu, ze které `Entry` a `Editor` odvodit definuje pouze jednu vlastnost:
 
 - [`Keyboard`](https://developer.xamarin.com/api/property/Xamarin.Forms.InputView.Keyboard/) typu [`Keyboard`](https://developer.xamarin.com/api/type/Xamarin.Forms.Keyboard/)
 
-To znamená typ klávesnice, který se zobrazí. Některé klávesnice jsou optimalizované pro identifikátory URI nebo čísla.
+Označuje typ klávesnice, který se zobrazí. Některé klávesnice jsou optimalizované pro identifikátory URI nebo čísla.
 
-`Keyboard` Třída umožňuje definovat klávesnice s statického [ `Keyboard.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Keyboard.Create/p/Xamarin.Forms.KeyboardFlags/) metoda s parametrem typu [ `KeyboardFlags` ](https://developer.xamarin.com/api/type/Xamarin.Forms.KeyboardFlags/), výčet s následující bitové příznaky:
+`Keyboard` Třída umožňuje definovat klávesnice s statickou [ `Keyboard.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Keyboard.Create/p/Xamarin.Forms.KeyboardFlags/) metoda s argumentem typu [ `KeyboardFlags` ](https://developer.xamarin.com/api/type/Xamarin.Forms.KeyboardFlags/), výčet s následující bitové příznaky:
 
 - `None` Nastavte na hodnotu 0
-- [`CapitalizeSentence`](https://developer.xamarin.com/api/field/Xamarin.Forms.KeyboardFlags.CapitalizeSentence/) nastavena na hodnotu 1
-- [`Spellcheck`](https://developer.xamarin.com/api/field/Xamarin.Forms.KeyboardFlags.Spellcheck/) nastaven na hodnotu 2
-- [`Suggestions`](https://developer.xamarin.com/api/field/Xamarin.Forms.KeyboardFlags.Suggestions/) Nastavte na 4
-- [`All`](https://developer.xamarin.com/api/field/Xamarin.Forms.KeyboardFlags.All/) Nastavte na \xFFFFFFFF
+- [`CapitalizeSentence`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeSentence) Nastavte na 1
+- [`Spellcheck`](xref:Xamarin.Forms.KeyboardFlags.Spellcheck) nastaven na hodnotu 2
+- [`Suggestions`](xref:Xamarin.Forms.KeyboardFlags.Suggestions) Nastavte na 4
+- [`All`](xref:Xamarin.Forms.KeyboardFlags.All) Nastavte na \xFFFFFFFF
 
-Při použití víceřádkových [ `Editor` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Editor/) při odstavec nebo více textu je očekávané, volání `Keyboard.Create` je dobré přístupem při výběru klávesnici. Pro jeden řádek [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/), následující statické jen pro čtení vlastnosti `Keyboard` jsou užitečné:
+Při použití víceřádkového [ `Editor` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Editor/) odstavce nebo více textu se očekával, volání `Keyboard.Create` je dobrý přístup k výběru klávesnice. Pro jeden řádek [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/), následující statické jen pro čtení vlastnosti `Keyboard` jsou užitečné:
 
 - [`Default`](https://developer.xamarin.com/api/property/Xamarin.Forms.Keyboard.Default/)
 - [`Text`](https://developer.xamarin.com/api/property/Xamarin.Forms.Keyboard.Text/)
@@ -164,84 +164,84 @@ Při použití víceřádkových [ `Editor` ](https://developer.xamarin.com/api/
 - [`Url`](https://developer.xamarin.com/api/property/Xamarin.Forms.Keyboard.Url/)
 - [`Email`](https://developer.xamarin.com/api/property/Xamarin.Forms.Keyboard.Email/)
 - [`Telephone`](https://developer.xamarin.com/api/property/Xamarin.Forms.Keyboard.Telephone/)
-- [`Numeric`](https://developer.xamarin.com/api/property/Xamarin.Forms.Keyboard.Numeric/) pro kladná čísla s nebo bez desetinné čárky.
+- [`Numeric`](https://developer.xamarin.com/api/property/Xamarin.Forms.Keyboard.Numeric/) pro kladná čísla s nebo bez něj desetinné čárky.
 
-[ `KeyboardTypeConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.KeyboardTypeConverter/) Umožňuje zadání tyto vlastnosti v jazyce XAML, jak je předvedeno pomocí [ **EntryKeyboards** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/EntryKeyboards) programu.
+[ `KeyboardTypeConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.KeyboardTypeConverter/) Umožňuje zadat tyto vlastnosti v XAML, jak je uvedeno ve [ **EntryKeyboards** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/EntryKeyboards) programu.
 
-### <a name="entry-properties-and-events"></a>Položka vlastnosti a události
+### <a name="entry-properties-and-events"></a>Položka vlastnosti a události.
 
 Jeden řádek [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) definuje následující vlastnosti:
 
-- [`Text`](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.Text/) typu `string`, text, který se zobrazí v `Entry`
+- [`Text`](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.Text/) typ `string`, text, který se zobrazuje `Entry`
 - [`TextColor`](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.TextColor/) typu `Color`
 - [`FontFamily`](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.FontFamily/) typu `string`
 - [`FontSize`](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.FontSize/) typu `double`
 - [`FontAttributes`](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.FontAttributes/) typu `FontAttributes`
-- [`IsPassword`](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.IsPassword/) typu `bool`, což způsobí, že znaky maskování
-- [`Placeholder`](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.Placeholder/) typu `string`, pro dimly barevný text, který se zobrazí v `Entry` předtím, než je vše, co zadáte
+- [`IsPassword`](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.IsPassword/) typ `bool`, což způsobí, že znaků, které mají být zakryté hvězdičkami
+- [`Placeholder`](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.Placeholder/) typu `string`, pro dimly barevný text, který se zobrazí `Entry` předtím, než vše, co zadáte
 - [`PlaceholderColor`](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.PlaceholderColor/) typu `Color`
 
-`Entry` Také definuje dvě události:
+`Entry` Definuje také dvě události:
 
-- [`TextChanged`](https://developer.xamarin.com/api/event/Xamarin.Forms.Entry.TextChanged/) s [ `TextChangedEventArgs` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TextChangedEventArgs/) objekt, vždy, když je aktivována `Text` změny vlastností
-- [`Completed`](https://developer.xamarin.com/api/event/Xamarin.Forms.Entry.Completed/), aktivována, jestliže uživatel dokončení a klávesnice se zavře. Uživatel označuje dokončení způsobem specifické pro platformu
+- [`TextChanged`](https://developer.xamarin.com/api/event/Xamarin.Forms.Entry.TextChanged/) s [ `TextChangedEventArgs` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TextChangedEventArgs/) objektu, aktivuje vždy, když `Text` změny vlastností
+- [`Completed`](https://developer.xamarin.com/api/event/Xamarin.Forms.Entry.Completed/), že uživatel dokončil a klávesnice je zrušená. Uživatel označuje dokončení způsobem specifické pro platformu
 
-[ **QuadraticEquations** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/QuadaticEquations) příklad znázorňuje tyto dvě události.
+[ **QuadraticEquations** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/QuadaticEquations) ukázka demonstruje tyto dvě události.
 
 ### <a name="the-editor-difference"></a>Rozdíl editoru
 
-Víceřádkových [ `Editor` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Editor/) definuje stejné `Text` a `Font` vlastnosti jako `Entry` , ale není ostatní vlastnosti. `Editor` Definuje také stejné dvě vlastnosti jako `Entry`.
+Víceřádkového [ `Editor` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Editor/) definuje stejné `Text` a `Font` vlastnosti jako `Entry` , ale nikoli jiné vlastnosti. `Editor` Definuje také dvě stejné vlastnosti jako `Entry`.
 
-[**JustNotes** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/JustNotes) je program poznámky k pořízení volného formátu, který uloží a obnoví obsah `Editor`.
+[**JustNotes** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/JustNotes) je program pořizování poznámek volného tvaru, který se uloží a obnoví obsah `Editor`.
 
 ### <a name="the-searchbar"></a>SearchBar
 
-[ `SearchBar` ](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/) Není odvozena od `InputView`, takže nemá `Keyboard` vlastnost. Mají všechny, ale `Text`, `Font`, a `Placeholder` vlastnosti, `Entry` definuje. Kromě toho `SearchBar` definuje tři další vlastnosti:
+[ `SearchBar` ](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/) Není odvozen od `InputView`, takže se nemusí `Keyboard` vlastnost. Mají všechny, ale `Text`, `Font`, a `Placeholder` vlastnosti, která `Entry` definuje. Kromě toho `SearchBar` definuje tři další vlastnosti:
 
 - [`CancelButtonColor`](https://developer.xamarin.com/api/property/Xamarin.Forms.SearchBar.CancelButtonColor/) typu `Color`
 - [`SearchCommand`](https://developer.xamarin.com/api/property/Xamarin.Forms.SearchBar.SearchCommand/) typu [ `ICommand` ](https://developer.xamarin.com/api/type/System.Windows.Input.ICommand/) pro použití s datové vazby a rozhraní MVVM
-- [`SearchCommandParameter`](https://developer.xamarin.com/api/property/Xamarin.Forms.SearchBar.SearchCommandParameter/) typu `Object`, pro použití s `SearchCommand`
+- [`SearchCommandParameter`](https://developer.xamarin.com/api/property/Xamarin.Forms.SearchBar.SearchCommandParameter/) typ `Object`, pro použití se službou `SearchCommand`
 
-Specifické platformy zrušit tlačítko vymazáním text. `SearchBar` Má také tlačítko Hledat specifické pro platformu. Kliknutím na některou z těchto tlačítek vyvolá jednu z těchto dvou událostí, `SearchBar` definuje:
+Konkrétní platformy zrušit tlačítko použita rychlá vymazání textu. `SearchBar` Také obsahuje tlačítko hledání pro konkrétní platformu. Stisknutím jednu z těchto tlačítek vyvolá jednu z těchto dvou událostí, který `SearchBar` definuje:
 
 - [`TextChanged`](https://developer.xamarin.com/api/event/Xamarin.Forms.SearchBar.TextChanged/) spolu [ `TextChangedEventArgs` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TextChangedEventArgs/) objektu
 - [`SearchButtonPressed`](https://developer.xamarin.com/api/event/Xamarin.Forms.SearchBar.SearchButtonPressed/)
 
-[ **SearchBarDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/SearchBarDemo) příklad ukazuje `SearchBar`.
+[ **SearchBarDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/SearchBarDemo) příklad ukazuje, `SearchBar`.
 
 ## <a name="date-and-time-selection"></a>Výběr data a času
 
-[ `DatePicker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/) a [ `TimePicker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TimePicker/) zobrazení implementovat kontroly specifických pro platformy, které umožní uživateli zadat datum nebo čas.
+[ `DatePicker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/) a [ `TimePicker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TimePicker/) zobrazení implementaci ovládacích prvků pro konkrétní platformu, které uživateli umožňují určit datum nebo čas.
 
 ### <a name="the-datepicker"></a>Ovládací prvek DatePicker
 
 [`DatePicker`](https://developer.xamarin.com/api/type/Xamarin.Forms.DatePicker/) definuje čtyři vlastnosti:
 
-- [`MinimumDate`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.MinimumDate/) typu `DateTime`, inicializované do 1. ledna 1900
-- [`MaximumDate`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.MaximumDate/) typu `DateTime`, inicializované do 31. prosince 2100
-- [`Date`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.Date/) typu `DateTime`, inicializované do `DateTime.Today`
-- [`Format`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.Format/) typu `string`, .NET formátování řetězce inicializována tak, aby "d", vzoru krátkého data, což vede k zobrazení data, jako je "7/20/1969" v USA.
+- [`MinimumDate`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.MinimumDate/) typ `DateTime`, inicializována na hodnotu 1. ledna 1900
+- [`MaximumDate`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.MaximumDate/) typ `DateTime`, inicializované do 31. prosince 2100
+- [`Date`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.Date/) typ `DateTime`, inicializována na hodnotu `DateTime.Today`
+- [`Format`](https://developer.xamarin.com/api/property/Xamarin.Forms.DatePicker.Format/) typ `string`, .NET formátovací řetězec inicializován na "d", vzor krátkého formátu data, výsledkem je zobrazení data, jako je "7/20/1969" v USA.
 
-Můžete nastavit `DateTime` vlastnosti v jazyce XAML vyjadřující vlastnosti jako vlastnosti elementy a použitím krátkého data neutrální jazykovou verzi formátu ("7/20/1969").   
+Můžete nastavit `DateTime` vlastnosti v XAML vyjádření vlastnosti storyboards a použitím krátké datum invariantní jazykovou verzi formátu ("7/20/1969").   
 
-[ **DaysBetweenDates** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/DaysBetweenDates) ukázka vypočítá počet dní mezi dvěma kalendářními vybraný uživatelem.
+[ **DaysBetweenDates** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/DaysBetweenDates) ukázkové vypočítá počet dnů mezi dvěma kalendářními daty vybraný uživatelem.
 
-### <a name="the-timepicker-or-is-it-a-timespanpicker"></a>TimePicker (nebo je TimeSpanPicker?)
+### <a name="the-timepicker-or-is-it-a-timespanpicker"></a>TimePicker (nebo se jedná TimeSpanPicker?)
 
 [`TimePicker`](https://developer.xamarin.com/api/type/Xamarin.Forms.TimePicker/) definuje dvě vlastnosti a žádné události:
 
-- [`Time`](https://developer.xamarin.com/api/property/Xamarin.Forms.TimePicker.Time/) je typu `TimeSpan` místo `DateTime`, která určuje čas uběhlých od půlnoci
-- [`Format`](https://developer.xamarin.com/api/property/Xamarin.Forms.TimePicker.Format/) typu `string`, .NET formátování řetězce inicializována tak, aby "t", vzoru krátkého času, což vede k zobrazení času jako "1:45 odp" v USA.
+- [`Time`](https://developer.xamarin.com/api/property/Xamarin.Forms.TimePicker.Time/) je typu `TimeSpan` spíše než `DateTime`, určující čas uplynulých od půlnoci
+- [`Format`](https://developer.xamarin.com/api/property/Xamarin.Forms.TimePicker.Format/) typ `string`, .NET formátovací řetězec inicializován na "t", vzor krátkého formátu času, což vede k zobrazení času jako "1:45 PM" v USA.
 
-[ **SetTimer** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/SetTimer) program ukazuje, jak používat `TimePicker` chcete zadat čas pro časovač. Program funguje jenom v případě byste mít na popředí.
+[ **SetTimer** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/SetTimer) program ukazuje způsob použití `TimePicker` jak určit čas pro časovače. Program funguje jenom v případě zachovat v popředí.
 
-**SetTimer** také ukazuje, jak pomocí [ `DisplayAlert` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayAlert/p/System.String/System.String/System.String/) metodu `Page` zobrazit upozornění.
+**SetTimer** také ukazuje použití [ `DisplayAlert` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayAlert/p/System.String/System.String/System.String/) metoda `Page` zobrazit upozornění.
 
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Úplný text 15 kapitoly (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch15-Apr2016.pdf)
-- [Ukázky kapitoly 15](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15)
+- [Kapitola 15 textu v plném znění (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch15-Apr2016.pdf)
+- [Ukázky kapitole 15](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15)
 - [Položka](~/xamarin-forms/user-interface/text/entry.md)
 - [Editor](~/xamarin-forms/user-interface/text/editor.md)

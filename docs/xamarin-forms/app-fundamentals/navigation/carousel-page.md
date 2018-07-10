@@ -1,38 +1,38 @@
 ---
-title: Stránka karuselu Xamarin.Forms
-description: Xamarin.Forms CarouselPage je stránka, která uživatelé mohou prstem stranu procházet stránky obsahu, jako je galerie. Tento článek ukazuje, jak pomocí CarouselPage můžete přejít přes kolekci stránek.
+title: Stránka – Carousel Xamarin.Forms
+description: Xamarin.Forms CarouselPage je stránka, která uživatelé můžou potažením prstem přejděte na stranu pro navigaci mezi stránkami obsahu, jako je galerie. Tento článek ukazuje, jak používat CarouselPage procházení kolekce stránek.
 ms.prod: xamarin
 ms.assetid: 2D14FC9D-DF5F-427E-9006-2AAE61ECF8DC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: daf19dbed2e98429280758125a19efce2d7fd9a1
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: b190498911867d29b63d839f56613fb1b80fe56f
+ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241748"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37935144"
 ---
-# <a name="xamarinforms-carousel-page"></a>Stránka karuselu Xamarin.Forms
+# <a name="xamarinforms-carousel-page"></a>Stránka – Carousel Xamarin.Forms
 
-_Xamarin.Forms CarouselPage je stránka, která uživatelé mohou prstem stranu procházet stránky obsahu, jako je galerie. Tento článek ukazuje, jak pomocí CarouselPage můžete přejít přes kolekci stránek._
+_Xamarin.Forms CarouselPage je stránka, která uživatelé můžou potažením prstem přejděte na stranu pro navigaci mezi stránkami obsahu, jako je galerie. Tento článek ukazuje, jak používat CarouselPage procházení kolekce stránek._
 
 ## <a name="overview"></a>Přehled
 
-Následující zobrazení snímky obrazovky [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) na jednotlivých platformách:
+Zobrazit následující snímky obrazovky [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) na jednotlivých platformách:
 
 ![](carousel-page-images/thirdpage.png "CarouselPage Thid položky")
 
-Rozložení [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) je stejná na každou platformu. Stránky lze procházet přes potažením zprava doleva přejděte předávání prostřednictvím kolekce a potažením zleva doprava přejděte zpětné prostřednictvím kolekce. Na následujících snímcích obrazovky zobrazit na první stránku [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) instance:
+Rozložení [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) je stejný jako na jednotlivých platformách. Stránky se dá Navigovat prostřednictvím potáhnutím zleva doprava pro navigaci vpřed prostřednictvím kolekce a potáhnutím zleva doprava pro navigaci zpět prostřednictvím kolekce. Na následujících snímcích obrazovky zobrazit na první stránce [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) instance:
 
-![](carousel-page-images/firstpage.png "První CarouselPage položky")
+![](carousel-page-images/firstpage.png "CarouselPage první položka")
 
-K načtení zprava doleva přesune na druhou stránku, jak je vidět na následujících snímcích obrazovky:
+Potažení prstem zprava levé přesune na druhou stránku, jak je znázorněno na následujících snímcích obrazovky:
 
-![](carousel-page-images/secondpage.png "Položka CarouselPage sekundu")
+![](carousel-page-images/secondpage.png "CarouselPage druhé položky")
 
-K načtení zprava doleva znovu přesune na třetí stránce při načtení zleva doprava vrátí na předchozí stránku.
+Na třetí stránce potažení prstem zprava doleva znovu pohybuje, zatímco potažení prstem zleva doprava vrátí na předchozí stránku.
 
 <!--
 > [!NOTE]
@@ -43,19 +43,19 @@ K načtení zprava doleva znovu přesune na třetí stránce při načtení zlev
 
 Dva přístupy lze použít k vytvoření [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/):
 
-- [Naplnění](#Populating_a_CarouselPage_with_a_Page_Collection) `CarouselPage` s kolekcí podřízených [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) instance.
-- [Přiřadit](#Populating_a_CarouselPage_with_a_Template) kolekce [ `ItemsSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%601.ItemsSource/) vlastnost a přiřadit [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) k [ `ItemTemplate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%601.ItemTemplate/) vlastnost vrátit [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) instancí pro objekty v kolekci.
+- [Naplnění](#Populating_a_CarouselPage_with_a_Page_Collection) `CarouselPage` sbírka podřízené [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) instancí.
+- [Přiřadit](#Populating_a_CarouselPage_with_a_Template) kolekci [ `ItemsSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%601.ItemsSource/) vlastnosti a přiřazení [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) k [ `ItemTemplate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%601.ItemTemplate/) vlastnost vrátit [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) instance pro objekty v kolekci.
 
-Pomocí obou přístupů `CarouselPage` bude potom zobrazení každé stránce se pak s prstem interakce, Přesun na další stránku, který se má zobrazit.
+Pomocí obou metod `CarouselPage` bude poté zobrazte jednotlivé stránky zase potáhnutí prstem zásahu Přesun na další stránku, který se má zobrazit.
 
 > [!NOTE]
-> A [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) pouze možné naplnit [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) instancí, nebo `ContentPage` odvozené konfigurace.
+> A [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) je možné naplnit pouze [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) instancí, nebo `ContentPage` vy.
 
 <a name="Populating_a_CarouselPage_with_a_Page_Collection" />
 
-### <a name="populating-a-carouselpage-with-a-page-collection"></a>Naplnění CarouselPage s shromažďování stránky.
+### <a name="populating-a-carouselpage-with-a-page-collection"></a>Naplnění CarouselPage s kolekcí stránky
 
-Následující příklad ukazuje kód XAML [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) zobrazující tři [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) instancí:
+Následující příklad ukazuje kód XAML [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) , který zobrazí tři [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) instancí:
 
 ```xaml
 <CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -139,20 +139,20 @@ public class MainPageCS : CarouselPage
 }
 ```
 
-Každý [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) jednoduše zobrazí [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) pro konkrétní barvy a [ `BoxView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/) této barvy.
+Každý [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) jednoduše zobrazí [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) pro určitou barvu a [ `BoxView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/) této barvy.
 
 > [!NOTE]
-> [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) Nepodporuje virtualizace uživatelského rozhraní. Proto být ovlivněn výkon, pokud `CarouselPage` obsahuje příliš mnoho podřízené elementy.
+> [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) Nepodporuje uživatelského rozhraní virtualizace. Proto se ovlivnil výkon, pokud `CarouselPage` obsahuje příliš mnoho podřízených elementů.
 
-Pokud [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) se vloží do [ `Detail` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Detail/) stránky [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/), [ `MasterDetailPage.IsGestureEnabled` ](https://developer.xamarin.com/api/field/Xamarin.Forms.MasterDetailPage.IsGestureEnabledProperty/) Vlastnost by měla být nastavená na `false` zabránit konfliktům gesto mezi `CarouselPage` a `MasterDetailPage`.
+Pokud [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) je vložen do [ `Detail` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Detail/) stránce [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/), [ `MasterDetailPage.IsGestureEnabled` ](xref:Xamarin.Forms.MasterDetailPage.IsGestureEnabledProperty) Vlastnost musí být nastavena na `false` které zabrání konfliktům gesta `CarouselPage` a `MasterDetailPage`.
 
-Další informace o [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/), najdete v části [kapitoly 25](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf) Charlese Petzold Xamarin.Forms knihy.
+Další informace o [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/), naleznete v tématu [kapitoly 25](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf) Charles Petzold Xamarin.Forms knihy.
 
 <a name="Populating_a_CarouselPage_with_a_Template" />
 
 ### <a name="populating-a-carouselpage-with-a-template"></a>Naplnění CarouselPage pomocí šablony
 
-Následující příklad ukazuje kód XAML [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) sestavený přiřazením [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) k [ `ItemTemplate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%601.ItemTemplate/) vlastnost vrátit stránky pro objekty v kolekci:
+Následující příklad ukazuje kód XAML [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) vytvořený pomocí přiřazení [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) k [ `ItemTemplate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%601.ItemTemplate/) vlastnost vrátit stránky pro objekty v kolekci:
 
 ```xaml
 <CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -176,7 +176,7 @@ Následující příklad ukazuje kód XAML [ `CarouselPage` ](https://developer.
 </CarouselPage>
 ```
 
-[ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) Naplněný daty nastavením [ `ItemsSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%601.ItemsSource/) vlastnost v konstruktoru pro soubor kódu:
+[ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) Naplněný daty tak, že nastavíte [ `ItemsSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%601.ItemsSource/) vlastnost v konstruktoru pro soubor kódu na pozadí:
 
 ```csharp
 public MainPage ()
@@ -186,7 +186,7 @@ public MainPage ()
 }
 ```
 
-Následující příklad kódu ukazuje ekvivalent [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) vytvořené v C#:
+Následující příklad kódu ukazuje ekvivalent [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) vytvořené v jazyce C#:
 
 ```csharp
 public class MainPageCS : CarouselPage
@@ -236,23 +236,23 @@ public class MainPageCS : CarouselPage
 }
 ```
 
-Každý [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) jednoduše zobrazí [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) pro konkrétní barvy a [ `BoxView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/) této barvy.
+Každý [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) jednoduše zobrazí [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) pro určitou barvu a [ `BoxView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/) této barvy.
 
 > [!NOTE]
-> [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) Nepodporuje virtualizace uživatelského rozhraní. Proto být ovlivněn výkon, pokud `CarouselPage` obsahuje příliš mnoho podřízené elementy.
+> [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) Nepodporuje uživatelského rozhraní virtualizace. Proto se ovlivnil výkon, pokud `CarouselPage` obsahuje příliš mnoho podřízených elementů.
 
-Pokud [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) se vloží do [ `Detail` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Detail/) stránky [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/), [ `MasterDetailPage.IsGestureEnabled` ](https://developer.xamarin.com/api/field/Xamarin.Forms.MasterDetailPage.IsGestureEnabledProperty/) Vlastnost by měla být nastavená na `false` zabránit konfliktům gesto mezi `CarouselPage` a `MasterDetailPage`.
+Pokud [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) je vložen do [ `Detail` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Detail/) stránce [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/), [ `MasterDetailPage.IsGestureEnabled` ](xref:Xamarin.Forms.MasterDetailPage.IsGestureEnabledProperty) Vlastnost musí být nastavena na `false` které zabrání konfliktům gesta `CarouselPage` a `MasterDetailPage`.
 
-Další informace o [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/), najdete v části [kapitoly 25](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf) Charlese Petzold Xamarin.Forms knihy.
+Další informace o [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/), naleznete v tématu [kapitoly 25](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf) Charles Petzold Xamarin.Forms knihy.
 
 ## <a name="summary"></a>Souhrn
 
-Tento článek ukázal, jak používat [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) procházet kolekce stránek. `CarouselPage` Je stránka, která uživatelé mohou prstem stranu procházet stránky obsahu, podobně jako galerie.
+V tomto článku jsme vám ukázali jak používat [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) procházení kolekce stránek. `CarouselPage` Je stránka, která uživatelé můžou potažením prstem přejděte na stranu pro navigaci mezi stránkami obsahu, podobně jako galerie.
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Stránka typy](~/xamarin-forms/user-interface/controls/pages.md)
+- [Variace stránek](~/xamarin-forms/user-interface/controls/pages.md)
 - [CarouselPage (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/CarouselPage/)
 - [CarouselPageTemplate (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/CarouselPageTemplate/)
 - [CarouselPage](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/)

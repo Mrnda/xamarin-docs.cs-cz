@@ -1,57 +1,57 @@
 ---
-title: Souhrn kapitoly 2. Anatomie aplikace
-description: 'Vytváření mobilních aplikací s Xamarin.Forms: Souhrn kapitoly 2. Anatomie aplikace'
+title: Souhrn kapitola 2. Anatomie aplikace
+description: 'Vytváření mobilních aplikací s Xamarin.Forms: Souhrn kapitola 2. Anatomie aplikace'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 8764EB7D-8331-4CF7-9BE1-26D0DEE9E0BB
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 208cf28341ceaa43d1c56b4f5086dc98febee6be
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 94c575bdfdc2325def00de58381f9bc295d953b9
+ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35242744"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37935111"
 ---
-# <a name="summary-of-chapter-2-anatomy-of-an-app"></a>Souhrn kapitoly 2. Anatomie aplikace
+# <a name="summary-of-chapter-2-anatomy-of-an-app"></a>Souhrn kapitola 2. Anatomie aplikace
 
-V aplikaci Xamarin.Forms, objekty, které zabírají prostor na obrazovce se označují jako *vizuální prvky*, zapouzdřené pomocí [ `VisualElement` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualElement/) třídy. Vizuální prvky můžete rozdělit do tří kategorií odpovídající tyto třídy:
+V aplikaci Xamarin.Forms, se nazývají objekty, které zabírají místo na obrazovce *vizuální prvky*, zapouzdřené podle [ `VisualElement` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualElement/) třídy. Vizuální prvky lze rozdělit do tří kategorií odpovídající tyto třídy:
 
 - [Stránka](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)
 - [Rozložení](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout/)
 - [Zobrazení](https://developer.xamarin.com/api/type/Xamarin.Forms.View/)
 
-A `Page` odvozených zabírá na celé obrazovce a téměř celou obrazovku. Často je podřízeným stránky `Layout` odvozených k uspořádání podřízených vizuální prvky. Podřízené objekty daného `Layout` může být jiné `Layout` třídy nebo `View` odvozené konfigurace (často říká *elementy*), které jsou známé objekty, například textu, rastrové obrázky, posuvníky, tlačítka, seznamy a tak dále.
+A `Page` odvozených děl na základě zabírá celou obrazovku nebo skoro celou obrazovku. Často je podřízenou položku stránky `Layout` odvozených děl na základě k uspořádání podřízených prvků. Podřízené objekty daného `Layout` může být buď `Layout` třídy nebo `View` vy (často označované jako *prvky*), které jsou známé objekty, jako jsou text, rastrové obrázky, posuvníky, tlačítka, pole se seznamem a tak dále.
 
-Tato kapitola ukazuje, jak vytvořit aplikaci se zaměříte na [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/), který je `View` odvozených, který zobrazí text.
+Tato kapitola popisuje způsob vytvoření aplikace se zaměříte na [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/), což je `View` jeho odvozených děl, která zobrazí text.
 
-## <a name="say-hello"></a>Seznamte
+## <a name="say-hello"></a>Přivítejte
 
-S platformou Xamarin nainstalován můžete vytvořit nové řešení Xamarin.Forms v sadě Visual Studio nebo Visual Studio for Mac. [ **Hello** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello) řešení používá přenosné knihovny tříd pro společný kód. Ukazuje řešení Xamarin.Forms vytvořené v sadě Visual Studio beze změn. Řešení se skládá z šesti projekty (poslední dva z nich nejsou vytvořeny s aktuální šablony řešení Xamarin.Forms):
+Díky platformě Xamarin, nainstalované můžete vytvořit nové řešení Xamarin.Forms v sadě Visual Studio nebo Visual Studio pro Mac. [ **Hello** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello) řešení používá přenosné knihovny tříd pro společný kód. Ukazuje Xamarin.Forms řešení vytvořené v sadě Visual Studio bez možnosti úprav. Řešení se skládá z šesti projekty (poslední dva z nich nejsou vytvořeny s aktuální šablony řešení Xamarin.Forms):
 
-- [**Hello**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello), přenosných třída knihovny PCL () sdíleny ostatní projekty
+- [**Hello**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello), sdílet přenosnou knihovnou tříd (PCL) ostatních projektů
 - [**Hello.Droid**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.Droid), projekt aplikace pro Android
 - [**Hello.iOS**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.iOS), projekt aplikace pro iOS
 - [**Hello.UWP**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.UWP), projekt aplikace pro univerzální platformu Windows (Windows 10 a Windows 10 Mobile)
 - [**Hello.Windows**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.Windows), projekt aplikace pro Windows 8.1
 - [**Hello.WinPhone**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.WinPhone), projekt aplikace pro Windows Phone 8.1
 
-Můžete provést některou z těchto aplikací projekty spouštěný projekt a potom sestavit a spustit program na zařízení nebo simulátoru.
+Můžete provést některou z těchto projektů aplikace spouštěný projekt a potom sestavíte a spustíte program na zařízení nebo simulátor.
 
-V mnoha Xamarin.Forms programy nebude úpravy projekty aplikací. To často zůstat jen nepatrnou zástupných procedur jenom na spuštění programu. Většina váš výběr bude Přenosná knihovna tříd společné pro všechny aplikace.
+V mnoha aplikacích Xamarin.Forms nebude změna projekty aplikací. Ty často zůstanou malý zástupné procedury jen ke spuštění programu. Většina fokus bude přenosné knihovny tříd, která je společná pro všechny aplikace.
 
 ## <a name="inside-the-files"></a>Uvnitř soubory
 
-Vizuály zobrazuje **Hello** programu jsou definovány v konstruktoru [ `App` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello/App.cs) třídy. `App` je odvozena od třídy Xamarin.Forms [ `Application` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Application/).
+Vizuály, zobrazí **Hello** programu jsou definovány v konstruktoru [ `App` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello/App.cs) třídy. `App` je odvozena z třídy Xamarin.Forms [ `Application` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Application/).
 
-**Odkazy** části **Hello** PCL projekt zahrnuje následující Xamarin.Forms sestavení:
+**Odkazy** část **Hello** projekt PCL zahrnuje následující Xamarin.Forms sestavení:
 
 - **Xamarin.Forms.Core**
 - **Xamarin.Forms.Xaml**
 - **Xamarin.Forms.Platform**
 
-**Odkazy** části pět aplikace projekty obsahují další sestavení, které se vztahují na jednotlivých platformách:
+**Odkazy** projektů pět aplikací další sestavení, které platí pro jednotlivé platformy částí:
 
 - **Xamarin.Forms.Platform.Android**
 - **Xamarin.Forms.Platform.iOS**
@@ -60,120 +60,120 @@ Vizuály zobrazuje **Hello** programu jsou definovány v konstruktoru [ `App` ](
 - **Xamarin.Forms.Platform.WinRT.Tablet**
 - **Xamarin.Forms.Platform.WinRT.Phone**
 
-Všechny projekty aplikace obsahuje volání statických `Forms.Init` metoda v `Xamarin.Forms` oboru názvů. To inicializuje Xamarin.Forms knihovny. Jinou verzi `Forms.Init` je definována pro každou platformu. Volání této metody naleznete v následující třídy:
+Všechny projekty aplikace obsahuje volání statické `Forms.Init` metodu `Xamarin.Forms` oboru názvů. To inicializuje knihovnu Xamarin.Forms. Na jinou verzi `Forms.Init` definované pro každou platformu. Volání této metody najdete v následující třídy:
 
 - iOS: [`AppDelegate`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.iOS/AppDelegate.cs)
 - Android: [`MainActivity`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Droid/MainActivity.cs)
-- UWP: [ `App` třídy, `OnLaunched` – metoda](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Droid/MainActivity.cs)
-- Windows 8.1: [ `App` třídy, `OnLaunched` – metoda](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Windows/App.xaml.cs#L65)
-- Windows Phone 8.1: [ `App` třídy, `OnLaunched` – metoda](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.WinPhone/App.xaml.cs#L67)
+- UPW: [ `App` třídy `OnLaunched` – metoda](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Droid/MainActivity.cs)
+- Windows 8.1: [ `App` třídy `OnLaunched` – metoda](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Windows/App.xaml.cs#L65)
+- Windows Phone 8.1: [ `App` třídy `OnLaunched` – metoda](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.WinPhone/App.xaml.cs#L67)
 
-Kromě toho musí vytvořit instanci jednotlivé platformy `App` třídy umístění PCL. K tomuto dochází u volání `LoadApplication` v následující třídy:
+Kromě toho musíte každou platformu vytvořit instanci `App` třídy umístění PCL. K tomuto dochází u volání `LoadApplication` v následující třídy:
 
 - iOS: [`AppDelegate`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.iOS/AppDelegate.cs)
 - Android: [`MainActivity`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Droid/MainActivity.cs)
-- UWP: [`MainPage`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.UWP/MainPage.xaml.cs)
+- UPW: [`MainPage`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.UWP/MainPage.xaml.cs)
 - Windows 8.1: [`MainPage`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Windows/MainPage.xaml.cs)
 - Windows Phone 8.1: [`MainPage`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.WindowsPhone/MainPage.xaml.cs)
 
-Jinak tyto aplikace projekty jsou normální programy "nedělat nic".
+V opačném případě tyto projekty aplikací jsou běžné "Neprovádět žádnou akci" programy.
 
 ## <a name="pcl-or-sap"></a>PCL nebo SAP?
 
-Je možné vytvořit řešení Xamarin.Forms s společný kód v přenosných třída knihovny PCL () nebo sdílený prostředek projektu (SAP). K vytvoření řešení SAP, vyberte možnost sdílené v sadě Visual Studio. [ **HelloSap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/HelloSap) řešení ukazuje šabloně SAP beze změn.
+Je možné vytvořit řešení Xamarin.Forms s společný kód v přenosnou knihovnou tříd (PCL) nebo sdíleného prostředku projektu (SAP). K vytvoření řešení SAP, vyberte možnost sdílené v sadě Visual Studio. [ **HelloSap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/HelloSap) řešení ukazuje šablony SAP bez možnosti úprav.
 
-Sady přístup PCL všechny běžné kódu v projektu knihovny odkazuje projekty aplikací platformy. S tímto přístupem SAP společný kód efektivně existuje ve všech projektech aplikace platformy a sdílený mezi nimi.
+Sady přístup PCL všechny společné kódu v projektu knihovny odkazuje projektů aplikace platformy. S tímto přístupem SAP společný kód efektivně existuje ve všech projektech application platform a je sdílen mezi nimi.
 
-Většina vývojářů Xamarin.Forms přednost PCL přístup. Většina řešení v této příručce jsou PCL. Ty, které používáte SAP patří **Sap** přípony v názvu projektu.
+Většina vývojářů Xamarin.Forms radši PCL přístup. Většina řešení v této příručce jsou PCL. Klíčovými slovy SAP patří **Sap** přípony v názvu projektu.
 
-Pro podporu všech platformách Xamarin.Forms, musí zohlednit verze rozhraní .NET používané PCL na následujících platformách:
+Pro podporu všechny platformy Xamarin.Forms, musí na verzi .NET používané PCL zvládat s následujícími platformami:
 
 - .NET Framework 4.5
 - Windows 8
 - Windows Phone 8,1
 - Xamarin.Android
 - Xamarin.iOS
-- Xamarin.IOS (klasické)
+- Xamarin.IOS (Classic)
 
-To se označuje jako počítač profil 111.
+To se označuje jako 111 profilu počítače.
 
-S přístupem SAP kódu v projektu sdíleného můžete spouštět různé kódu pro různé platformy pomocí C# direktivy preprocesoru (`#if`, #`elif`, a `#endif`) pomocí těchto předdefinované identifikátory:
+S přístupem SAP kódu ve sdíleném projektu můžete provést různý kód pro různé platformy pomocí jazyka C# direktivy preprocesoru (`#if`, #`elif`, a `#endif`) s těmito předdefinované identifikátory:
 
 - iOS: `__IOS__`
 - Android: `__ANDROID__`
-- UWP: `WINDOWS_UWP`
+- UPW: `WINDOWS_UWP`
 - Windows 8.1: `WINDOWS_APP`
 - Windows Phone 8.1: `WINDOWS_PHONE_APP`
 
-V PCL můžete určit jaké platformy spuštěné v běhu, jak zjistíte dále v této kapitole.
+V PCL můžete určit, jakou platformu máte spuštěnou za běhu, jak uvidíte později v této kapitole.
 
-## <a name="labels-for-text"></a>Štítky pro text
+## <a name="labels-for-text"></a>Popisky pro text
 
-[ **Pozdrav** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Greetings) řešení ukazuje, jak přidat nový C# soubor, který **pozdrav** projektu. Tento soubor definuje třídu s názvem `GreetingsPage` která je odvozena od `ContentPage`. V této příručce, většina projekty obsahují jeden `ContentPage` odvozených, jejíž název je název projektu s příponou `Page` připojí.
+[ **Greetings** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Greetings) řešení ukazuje, jak přidat nový soubor jazyka C# k **Greetings** projektu. Tento soubor definuje třídu s názvem `GreetingsPage` , která je odvozena z `ContentPage`. V této knize, většina projekty obsahují jeden `ContentPage` odvozená díla, jehož název je název projektu s příponou `Page` připojí.
 
-`GreetingsPage` Konstruktor vytvoří [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) zobrazení, které je Xamarin.Forms zobrazení, který zobrazí text. [ `Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.Text/) Je nastavena na textu zobrazovaného `Label`. Nastaví tento program `Label` k `Content` vlastnost `ContentPage`. Konstruktoru `App` třída pak vytvoří `GreetingsPage` a nastaví na jeho `MainPage` vlastnost.
+`GreetingsPage` Konstruktoru vytvoří instanci [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) zobrazení, které je zobrazení Xamarin.Forms, která zobrazí text. [ `Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.Text/) Je nastavena na text, zobrazený `Label`. Nastaví tento program `Label` k `Content` vlastnost `ContentPage`. Konstruktor třídy `App` poté vytvoří instanci třídy `GreetingsPage` a nastaví ji na jeho `MainPage` vlastnost.
 
-Text se zobrazuje v levém horním rohu stránky. V systému iOS to znamená, že se překrývá stránky stavový řádek. Existuje několik řešení tohoto problému:
+Text se zobrazí v levém horním rohu stránky. V systémech iOS to znamená, že se překrývá stavový řádek na stránce. Existuje několik řešení tohoto problému:
 
 ### <a name="solution-1-include-padding-on-the-page"></a>Řešení 1. Zahrnout odsazení na stránce
 
-Nastavte [ `Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Padding/) vlastnost na stránce. `Padding` je typu [ `Thickness` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Thickness/), struktura čtyři vlastnostmi:
+Nastavte [ `Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Padding/) vlastnost na stránce. `Padding` je typu [ `Thickness` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Thickness/), struktura s čtyři vlastnosti:
 
 - [`Left`](https://developer.xamarin.com/api/property/Xamarin.Forms.Thickness.Left/)
 - [`Top`](https://developer.xamarin.com/api/property/Xamarin.Forms.Thickness.Top/)
 - [`Right`](https://developer.xamarin.com/api/property/Xamarin.Forms.Thickness.Right/)
 - [`Bottom`](https://developer.xamarin.com/api/property/Xamarin.Forms.Thickness.Bottom/)
 
-`Padding` definuje oblast uvnitř stránky, kde je obsah vyloučen. To umožňuje `Label` aby nedošlo k přepsání iOS stavový řádek.
+`Padding` vymezuje oblast uvnitř stránky, kde je obsah vyloučený. Díky tomu `Label` aby nedošlo k přepsání stavového řádku iOS.
 
 ### <a name="solution-2-include-padding-just-for-ios-sap-only"></a>Řešení 2. Zahrnout odsazení jenom pro iOS (pouze SAP)
 
-Nastaví vlastnost 'odsazení, pouze v systému iOS pomocí C# direktivy preprocesoru SAP. Tento postup je znázorněn v [ **GreetingsSap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/GreetingsSap) řešení.
+Nastavení vlastnosti "Padding: pouze v systému iOS SAP pomocí direktivy preprocesoru jazyka C#. To je patrné [ **GreetingsSap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/GreetingsSap) řešení.
 
 ### <a name="solution-3-include-padding-just-for-ios-pcl-or-sap"></a>Řešení 3. Zahrnout odsazení jenom pro iOS (PCL nebo SAP)
 
-V této verzi Xamarin.Forms použít pro seznam `Padding` vlastnosti specifické pro iOS ve PCL nebo SAP lze vybrat pomocí [ `Device.OnPlatform` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.OnPlatform/p/System.Action/System.Action/System.Action/System.Action/) nebo [ `Device.OnPlatform<T>` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.OnPlatform%7BT%7D/p/T/T/T/) statickou metodu. Tyto metody jsou nyní zastaralé.
+Ve verzi Xamarin.Forms pro knihy `Padding` lze vybrat vlastnost, které jsou specifické pro iOS v PCL nebo SAP pomocí [ `Device.OnPlatform` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.OnPlatform/p/System.Action/System.Action/System.Action/System.Action/) nebo [ `Device.OnPlatform<T>` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.OnPlatform%7BT%7D/p/T/T/T/) statické metody. Tyto metody jsou nyní zastaralé.
 
-`Device.OnPlatform` Metody se používají ke spuštění kódu pro konkrétní platformu nebo vyberete hodnoty, specifické pro platformu. Interně provádění použití [ `Device.OS` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Device.OS/) statické vlastnosti jen pro čtení, která vrací členem [ `TargetPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TargetPlatform/) výčtu:
+`Device.OnPlatform` Metody se používají ke spouštění kódu specifické pro platformu nebo vyberte hodnoty pro konkrétní platformu. Interně, získávají využívání [ `Device.OS` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Device.OS/) statickou vlastnost jen pro čtení, která vrací členem [ `TargetPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TargetPlatform/) výčtu:
 
-- [`iOS`](https://developer.xamarin.com/api/field/Xamarin.Forms.TargetPlatform.iOS/)
-- [`Android`](https://developer.xamarin.com/api/field/Xamarin.Forms.TargetPlatform.Android/)
-- [`Windows`](https://developer.xamarin.com/api/field/Xamarin.Forms.TargetPlatform.Windows/) pro Windows 8.1, Windows Phone 8.1 a všechna zařízení UWP.
-- [`WinPhone`](https://developer.xamarin.com/api/field/Xamarin.Forms.TargetPlatform.WinPhone/), dříve použít k identifikaci Windows Phone 8.0, ale je nyní nepoužívané
-- [`Other`](https://developer.xamarin.com/api/field/Xamarin.Forms.TargetPlatform.Other/) se nepoužívá
+- [`iOS`](xref:Xamarin.Forms.TargetPlatform.iOS)
+- [`Android`](xref:Xamarin.Forms.TargetPlatform.Android)
+- [`Windows`](xref:Xamarin.Forms.TargetPlatform.Windows) pro Windows 8.1, Windows Phone 8.1 a všechna zařízení UPW.
+- [`WinPhone`](xref:Xamarin.Forms.TargetPlatform.WinPhone), dřív slouží k identifikaci Windows Phone 8.0, ale je nyní nepoužívané
+- [`Other`](xref:Xamarin.Forms.TargetPlatform.Other) se nepoužívá
 
-`Device.OnPlatform` Metody, `Device.OS` vlastnost a `TargetPlatform` výčtu jsou všechny nyní zastaralé. Místo toho použijte [ `Device.RuntimePlatform` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Device.RuntimePlatform/) vlastnost a porovnat `string` vrátit hodnotu u následujících statických polí:
+`Device.OnPlatform` Metody, `Device.OS` vlastnost a `TargetPlatform` výčtu jsou všechny nyní zastaralé. Místo toho použijte [ `Device.RuntimePlatform` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Device.RuntimePlatform/) vlastnost a porovnejte `string` návratová hodnota u následujících statických polí:
 
 - [`iOS`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.iOS/), řetězec "iOS"
 - [`Android`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.Android/), řetězec "Android"
-- [`UWP`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.UWP/), řetězec "UWP", která odkazuje na platformu Windows Runtime
-- [`Windows`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.Windows/), řetězec "Systém Windows" pro prostředí Windows Runtime (Windows 8.1 a Windows Phone 8.1)
+- [`UWP`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.UWP/), řetězec "UWP" odkazující na platformu Windows Runtime
+- [`Windows`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.Windows/), řetězec "Windows" pro prostředí Windows Runtime (Windows 8.1 a Windows Phone 8.1)
 - [`WinPhone`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.WinPhone/), řetězec "WinPhone" pro Windows Phone 8.0
 
-[ `Device.Idiom` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Device.Idiom/) Související statické vlastnosti jen pro čtení. Tento příkaz vrátí členem [ `TargetIdiom` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TargetIdiom/), který má tyto členy:
+[ `Device.Idiom` ](xref:Xamarin.Forms.Device.Idiom) Související statickou vlastnost jen pro čtení. Vrátí se členem [ `TargetIdiom` ](xref:Xamarin.Forms.TargetIdiom), který má tyto členy:
 
-- [`Desktop`](https://developer.xamarin.com/api/field/Xamarin.Forms.TargetIdiom.Desktop/)
-- [`Tablet`](https://developer.xamarin.com/api/field/Xamarin.Forms.TargetIdiom.Tablet/)
-- [`Phone`](https://developer.xamarin.com/api/field/Xamarin.Forms.TargetIdiom.Phone/)
-- [`Unsupported`](https://developer.xamarin.com/api/field/Xamarin.Forms.TargetIdiom.Unsupported/) se nepoužívá
+- [`Desktop`](xref:Xamarin.Forms.TargetIdiom.Desktop)
+- [`Tablet`](xref:Xamarin.Forms.TargetIdiom.Tablet)
+- [`Phone`](xref:Xamarin.Forms.TargetIdiom.Phone)
+- [`Unsupported`](xref:Xamarin.Forms.TargetIdiom.Unsupported) se nepoužívá
 
-Pro iOS a Android, hodnotou přechodu mezi `Tablet` a `Phone` na výšku šířka 600 jednotek. Pro platformu Windows `Desktop` označuje k aplikaci UWP spuštěna pod Windows 10, `Tablet` je program Windows 8.1, a `Phone` označuje k aplikaci UWP spuštěna pod Windows 10 nebo aplikace pro Windows Phone 8.1.
+Pro zařízení s iOS a Android, odříznutí mezi `Tablet` a `Phone` šířku na výšku 600 jednotek. Pro platformu Windows `Desktop` označuje spuštěný pod Windows 10, aplikaci pro UPW `Tablet` je program Windows 8.1 a `Phone` označuje aplikaci pro UPW spuštěný pod Windows 10 nebo aplikace pro Windows Phone 8.1.
 
-## <a name="solution-3a-set-margin-on-the-label"></a>3a řešení. Sada okraj na popisek
+## <a name="solution-3a-set-margin-on-the-label"></a>3a řešení. Nastavit okraj na popisek
 
-[ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/) Vlastnost byla zavedena příliš pozdní mají být zahrnuty v seznamu, ale je také typu `Thickness` a nastavte ji na `Label` k definování oblasti mimo zobrazení, která je součástí výpočtu zobrazení rozložení.
+[ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/) Vlastnost byla zavedena příliš pozdě mají být zahrnuty v knize, ale je také typu `Thickness` a nastavte ho na `Label` definovat oblasti mimo zobrazení, která je zahrnutá ve výpočtu ukazatelů zobrazení rozložení.
 
-`Padding` Vlastnost je dostupná pouze na [ `Layout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout/) a [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) odvozené konfigurace. `Margin` Vlastnost je k dispozici na všech [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) odvozené konfigurace.
+`Padding` Vlastnost je dostupný jenom u [ `Layout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout/) a [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) vy. `Margin` Vlastnost je k dispozici na všech [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) vy.
 
-## <a name="solution-4-center-the-label-within-the-page"></a>Řešení 4. Center popisek v rámci dané stránky
+## <a name="solution-4-center-the-label-within-the-page"></a>Řešení 4. System Center popisek na stránku
 
-Můžete center `Label` v rámci `Page` (nebo ji umístěte v jednom z osm jiných míst) nastavením [ `HorizontalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.HorizontalOptions/) a [ `VerticalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) vlastnosti `Label` hodnotu typu [ `LayoutOptions` ](https://developer.xamarin.com/api/type/Xamarin.Forms.LayoutOptions/). `LayoutOptions` Struktura definuje dvě vlastnosti:
+Můžete center `Label` v rámci `Page` (nebo vložit ho do jednu z osmi jinde) tak, že nastavíte [ `HorizontalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.HorizontalOptions/) a [ `VerticalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) vlastnosti `Label` hodnotu typu [ `LayoutOptions` ](https://developer.xamarin.com/api/type/Xamarin.Forms.LayoutOptions/). `LayoutOptions` Struktury definuje dvě vlastnosti:
 
-- [ `Alignment` ](https://developer.xamarin.com/api/property/Xamarin.Forms.LayoutOptions.Alignment/) Vlastnost typu [ `LayoutAlignment` ](https://developer.xamarin.com/api/type/Xamarin.Forms.LayoutAlignment/), výčet s čtyři členy: [ `Start` ](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutAlignment.Start/), což znamená levého nebo horního v závislosti na orientace, [ `Center` ](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutAlignment.Center/), [ `End` ](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutAlignment.End/), což znamená, pravé nebo dolní strany v závislosti na orientaci, a [ `Fill` ](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutAlignment.Fill/).
+- [ `Alignment` ](https://developer.xamarin.com/api/property/Xamarin.Forms.LayoutOptions.Alignment/) Vlastnost typu [ `LayoutAlignment` ](xref:Xamarin.Forms.LayoutAlignment), výčet s čtyři členy: [ `Start` ](xref:Xamarin.Forms.LayoutAlignment.Start), což znamená, že levého nebo horního v závislosti na tom orientace [ `Center` ](xref:Xamarin.Forms.LayoutAlignment.Center), [ `End` ](xref:Xamarin.Forms.LayoutAlignment.End), což znamená, že pravé nebo dolní v závislosti na orientaci, a [ `Fill` ](xref:Xamarin.Forms.LayoutAlignment.Fill).
 
 - [ `Expands` ](https://developer.xamarin.com/api/property/Xamarin.Forms.LayoutOptions.Expands/) Vlastnost typu `bool`.
 
-Tyto vlastnosti nejsou obvykle použít přímo. Místo toho kombinace těchto dvou vlastností jsou poskytovány osm statické jen pro čtení vlastnosti typu `LayoutOptions`:
+Obecně tyto vlastnosti nejsou přímo používány. Místo toho jsou k dispozici kombinace těchto dvou vlastností v osmi statické vlastnosti jen pro čtení typu `LayoutOptions`:
 
 - [`LayoutOptions.Start`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.Start/)
 - [`LayoutOptions.Center`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.Center/)
@@ -184,27 +184,27 @@ Tyto vlastnosti nejsou obvykle použít přímo. Místo toho kombinace těchto d
 - [`LayoutOptions.EndAndExpand`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.EndAndExpand/)
 - [`LayoutOptions.FillAndExpand`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.FillAndExpand/)
 
-`HorizontalOptions` a `VerticalOptions` jsou nejdůležitější vlastnosti v Xamarin.Forms rozložení a jsou podrobněji popsána v [ **kapitole 4. Procházení zásobníku**](chapter04.md).
+`HorizontalOptions` a `VerticalOptions` jsou nejdůležitější vlastnosti v rozložení Xamarin.Forms a jsou popsány podrobněji [ **kapitoly 4. Posouvání zásobníku**](chapter04.md).
 
-Tady je výsledků `HorizontalOptions` a `VerticalOptions` vlastnosti `Label` obě nastaveny na `LayoutOptions.Center`:
+Tady je výsledek s `HorizontalOptions` a `VerticalOptions` vlastnosti `Label` obě nastaveny na `LayoutOptions.Center`:
 
-[![Trojitá snímek obrazovky pozdrav program](images/ch02fg05-small.png "vodorovně a svisle na střed popisku")](images/ch02fg05-large.png#lightbox "vodorovně a svisle na střed popisku")
+[![Trojitá snímek obrazovky aplikace greetings](images/ch02fg05-small.png "vodorovně a svisle na střed popisek")](images/ch02fg05-large.png#lightbox "vodorovně a svisle na střed popisek")
 
-## <a name="solution-5-center-the-text-within-the-label"></a>Řešení 5. Center textu v rámci popisku
+## <a name="solution-5-center-the-text-within-the-label"></a>Řešení 5. Zarovnat na střed text v rámci popisku
 
-Můžete také center text (nebo jeho následné uložení do osm umístění na stránce) nastavením [ `HorizontalTextAlignment` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.HorizontalTextAlignment/) a [ `VerticalTextAlignment` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.VerticalTextAlignment/) vlastnosti `Label` pro člena [ `TextAlignment` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TextAlignment/) výčtu:
+Můžete také center text (nebo jeho následné uložení do osm umístění na stránce) tak, že nastavíte [ `HorizontalTextAlignment` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.HorizontalTextAlignment/) a [ `VerticalTextAlignment` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.VerticalTextAlignment/) vlastnosti `Label` ke členovi [ `TextAlignment` ](xref:Xamarin.Forms.TextAlignment) výčtu:
 
-- [`Start`](https://developer.xamarin.com/api/field/Xamarin.Forms.TextAlignment.Start/), význam vlevo nebo nahoře (v závislosti na orientaci)
-- [`Center`](https://developer.xamarin.com/api/field/Xamarin.Forms.TextAlignment.Center/)
-- [`End`](https://developer.xamarin.com/api/field/Xamarin.Forms.TextAlignment.End/), což znamená pravé nebo dolní strany (v závislosti na orientaci)
+- [`Start`](xref:Xamarin.Forms.TextAlignment.Start), význam left nebo top (v závislosti na orientaci)
+- [`Center`](xref:Xamarin.Forms.TextAlignment.Center)
+- [`End`](xref:Xamarin.Forms.TextAlignment.End), což znamená pravé nebo dolní (v závislosti na orientaci)
 
-Tyto dvě vlastnosti jsou definovány pouze systémem `Label`, zatímco `HorizontalAlignment` a `VerticalAlignment` jsou definovány vlastnosti `View` a zdědí všechny `View` odvozené konfigurace. Visual výsledky jevily jako podobné, ale jsou příliš neliší, jak ukazuje další kapitoly.
+Tyto dvě vlastnosti jsou definovány pouze `Label`, že `HorizontalAlignment` a `VerticalAlignment` jsou definovány vlastnosti `View` a dědí všechny `View` vy. Vizuální výsledky zdají být podobné, ale jsou velmi odlišné, jak ukazuje následující kapitoly.
 
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Úplný text kapitoly 2 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch02-Apr2016.pdf)
-- [Ukázky kapitoly 2](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02)
-- [Kapitola 2 F # – ukázky](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/FS)
+- [Kapitola 2 textu v plném znění (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch02-Apr2016.pdf)
+- [Ukázky kapitola 2](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02)
+- [Ukázky kapitola 2 F #](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/FS)
 - [Začínáme s Xamarin.Forms](~/xamarin-forms/get-started/index.md)

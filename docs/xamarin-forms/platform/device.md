@@ -1,34 +1,34 @@
 ---
-title: Zařízení Xamarin.Forms třídy
-description: Tento článek vysvětluje, jak používat třídu Xamarin.Forms zařízení pro jemně odstupňovanou kontrolu nad funkce a rozložení na základě na platformu.
+title: Třída zařízení Xamarin.Forms
+description: Tento článek vysvětluje, jak použít třídu Xamarin.Forms zařízení pro detailní kontrolu nad funkce a rozložení na základě podle platformy.
 ms.prod: xamarin
 ms.assetid: 2F304AEC-8612-4833-81E5-B2F3F469B2DF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: cdcd4bb08b9dac84d264f7c0c41e16d68380e1d0
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: ff707cdf73665ae07881d2d17ec837a4cfacaca0
+ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35242541"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37935368"
 ---
-# <a name="xamarinforms-device-class"></a>Zařízení Xamarin.Forms třídy
+# <a name="xamarinforms-device-class"></a>Třída zařízení Xamarin.Forms
 
-[ `Device` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Device/) Třída obsahuje řadu vlastností a metod, což vývojářům přizpůsobení rozložení a funkce na základě na platformu.
+[ `Device` ](xref:Xamarin.Forms.Device) Třída obsahuje několik vlastností a metod, což vývojářům umožňuje přizpůsobení rozložení a funkce na základě podle platformy.
 
-Kromě metod a vlastností pro cílový kód na konkrétní typy hardwaru a velikosti `Device` třída zahrnuje [BeginInvokeOnMainThread](#Device_BeginInvokeOnMainThread) metoda, která se má použít při interakci s uživatelským rozhraním z ovládací prvky vlákna na pozadí.
+Kromě metod a vlastností na cílový kód na konkrétní typy hardwaru a velikosti `Device` třída zahrnuje [BeginInvokeOnMainThread](#Device_BeginInvokeOnMainThread) metodu, která má být použit při interakci v uživatelském rozhraní ovládacích prvků z vlákna na pozadí.
 
 <a name="providing-platform-values" />
 
-## <a name="providing-platform-specific-values"></a>Zadáním hodnot specifických pro platformy
+## <a name="providing-platform-specific-values"></a>Zadání hodnot pro konkrétní platformu
 
-Před Xamarin.Forms 2.3.4, může získat platforma byla aplikace spuštěná v tak, že prověří [ `Device.OS` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Device.OS/) vlastnost a porovná je do [ `TargetPlatform.iOS` ](https://developer.xamarin.com/api/field/Xamarin.Forms.TargetPlatform.iOS/), [ `TargetPlatform.Android` ](https://developer.xamarin.com/api/field/Xamarin.Forms.TargetPlatform.Android/), [ `TargetPlatform.WinPhone` ](https://developer.xamarin.com/api/field/Xamarin.Forms.TargetPlatform.WinPhone/), a [ `TargetPlatform.Windows` ](https://developer.xamarin.com/api/field/Xamarin.Forms.TargetPlatform.Windows/) hodnot výčtu. Podobně, jeden z [ `Device.OnPlatform` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.OnPlatform/p/System.Action/System.Action/System.Action/System.Action/) přetížení může poskytovat specifické pro platformu hodnot do ovládacího prvku.
+Před Xamarin.Forms 2.3.4 platformu aplikace byla spuštěna na může získat prozkoumáním [ `Device.OS` ](xref:Xamarin.Forms.Device.OS) vlastnost a porovnání na [ `TargetPlatform.iOS` ](xref:Xamarin.Forms.TargetPlatform.iOS), [ `TargetPlatform.Android` ](xref:Xamarin.Forms.TargetPlatform.Android), [ `TargetPlatform.WinPhone` ](xref:Xamarin.Forms.TargetPlatform.WinPhone), a [ `TargetPlatform.Windows` ](xref:Xamarin.Forms.TargetPlatform.Windows) hodnot výčtu. Podobně, jeden z [ `Device.OnPlatform` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.OnPlatform/p/System.Action/System.Action/System.Action/System.Action/) přetížení lze zadat hodnoty specifické pro platformu k ovládacímu prvku.
 
-Ale protože Xamarin.Forms 2.3.4 Tato rozhraní API byly zastaralé a nahradit. [ `Device` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Device/) Třída teď obsahuje veřejné řetězcové konstanty, které identifikují platformy – [ `Device.iOS` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.iOS/), [ `Device.Android` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.Android/), [ `Device.WinPhone` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.WinPhone/) (zastaralý), [ `Device.WinRT` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.WinRT/) (zastaralý), [ `Device.UWP` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.UWP/), a [ `Device.macOS` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Device.macOS/). Podobně [ `Device.OnPlatform` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.OnPlatform/p/System.Action/System.Action/System.Action/System.Action/) přetížení nahradil [ `OnPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.OnPlatform%3CT%3E/) a [ `On` ](https://developer.xamarin.com/api/type/Xamarin.Forms.On/) rozhraní API.
+Nicméně od Xamarin.Forms 2.3.4 Tato rozhraní API byly zastaralé a nahradit. [ `Device` ](xref:Xamarin.Forms.Device) Třída nyní obsahuje veřejné řetězcové konstanty, které identifikují platformy – [ `Device.iOS` ](xref:Xamarin.Forms.Device.iOS), [ `Device.Android` ](xref:Xamarin.Forms.Device.Android), `Device.WinPhone`() zastaralé), `Device.WinRT` (zastaralé), [ `Device.UWP` ](xref:Xamarin.Forms.Device.UWP), a [ `Device.macOS` ](xref:Xamarin.Forms.Device.macOS). Podobně [ `Device.OnPlatform` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.OnPlatform/p/System.Action/System.Action/System.Action/System.Action/) přetížení se nahradily [ `OnPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.OnPlatform%3CT%3E/) a [ `On` ](xref:Xamarin.Forms.On) rozhraní API.
 
-V jazyce C#, specifické pro platformu hodnoty lze zadat tak, že vytvoříte `switch` příkaz na [ `Device.RuntimePlatform` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Device.RuntimePlatform/) vlastnosti a pak zadají `case` příkazy pro požadované platformy:
+V jazyce C#, lze zadat hodnoty specifické pro platformy tak, že vytvoříte `switch` příkaz na [ `Device.RuntimePlatform` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Device.RuntimePlatform/) vlastnost a potom zadat `case` příkazy pro požadované platformy:
 
 ```csharp
 double top;
@@ -46,7 +46,7 @@ switch (Device.RuntimePlatform)
 layout.Margin = new Thickness(5, top, 5, 0);
 ```
 
-[ `OnPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.OnPlatform%3CT%3E/) a [ `On` ](https://developer.xamarin.com/api/type/Xamarin.Forms.On/) třídy poskytují stejnou funkcionalitu v jazyce XAML:
+[ `OnPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.OnPlatform%3CT%3E/) a [ `On` ](xref:Xamarin.Forms.On) třídy poskytují stejné funkce v XAML:
 
 ```xaml
 <StackLayout>
@@ -60,26 +60,26 @@ layout.Margin = new Thickness(5, top, 5, 0);
 </StackLayout>
 ```
 
-[ `OnPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.OnPlatform%3CT%3E/) Třída je obecné třídy a musí být vytvořena s `x:TypeArguments` atribut, který odpovídá typu cíle. V [ `On` ](https://developer.xamarin.com/api/type/Xamarin.Forms.On/) třídy, [ `Platform` ](https://developer.xamarin.com/api/property/Xamarin.Forms.On.Platform/) atribut může přijmout jeden `string` hodnotu, nebo více oddělených čárkou `string` hodnoty.
+[ `OnPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.OnPlatform%3CT%3E/) Třída je obecná třída a musí být vytvořena pomocí `x:TypeArguments` atribut, který odpovídá cílovým typem. V [ `On` ](xref:Xamarin.Forms.On) třídy, [ `Platform` ](xref:Xamarin.Forms.On.Platform) atribut může přijmout jediného `string` hodnotu nebo více oddělených čárkou `string` hodnoty.
 
 > [!IMPORTANT]
-> Poskytnutí nesprávné `Platform` hodnotu v atributu `On` třída nebude mít za následek chybu. Místo toho kód spustí bez hodnoty specifické pro platformu bylo použito.
+> Poskytuje nesprávné `Platform` hodnotu v atributu `On` třídy nesmí dojít k chybě. Místo toho kód se spustí bez použití hodnoty specifické pro platformu.
 
 <a name="Device_Idiom" />
 
 ## <a name="deviceidiom"></a>Device.Idiom
 
-`Device.Idiom` Lze použít ke změně rozložení nebo funkce podle aplikace běží na zařízení. [ `TargetIdiom` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TargetIdiom/) Výčet obsahuje následující hodnoty:
+`Device.Idiom` Lze použít ke změně rozložení nebo funkce podle aplikace běží na zařízení. [ `TargetIdiom` ](xref:Xamarin.Forms.TargetIdiom) Výčet obsahuje následující hodnoty:
 
--  **Phone** – iPhone, iPod touch a zařízení se systémem Android užší než 600 vyhrazené IP adresy ^
--  **Tablet** – iPad, zařízení se systémem Windows a zařízení se systémem Android širší než 600 vyhrazené IP adresy ^
--  **Plocha** – jen, vrátí se v [aplikace UWP](~/xamarin-forms/platform/windows/installation/index.md) na stolní počítače s Windows 10 (vrátí `Phone` na mobilní zařízení s Windows, včetně v situacích poměrně)
+-  **Phone** – iPhone, iPod touch a zařízení s Androidem užší než 600 vyhrazené IP adresy ^
+-  **Tablet** – iPad, zařízení s Windows a androidem širší než 600 vyhrazené IP adresy ^
+-  **Desktop** – pouze pro vrácené v [aplikací pro UWP](~/xamarin-forms/platform/windows/installation/index.md) na stolní počítače s Windows 10 (vrátí `Phone` na mobilních zařízeních Windows, včetně v situacích Continuum)
 -  **TV** – Tizen TV zařízení
--  **Nepodporované** – nepoužívané
+-  **Nepodporovaná** – nepoužívané
 
 *^ vyhrazené IP adresy není nutně počet fyzických pixelů*
 
-`Idiom` je užitečná zejména při vytváření rozložení, které využít větší obrazovky takto:
+`Idiom` je užitečná zejména při vytváření rozložení, které budou využívat větší obrazovek, následujícím způsobem:
 
 ```csharp
 if (Device.Idiom == TargetIdiom.Phone) {
@@ -91,31 +91,31 @@ if (Device.Idiom == TargetIdiom.Phone) {
 
 ## <a name="deviceflowdirection"></a>Device.FlowDirection
 
-[ `Device.FlowDirection` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.FlowDirection/) Hodnota načte [ `FlowDirection` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FlowDirection/) hodnota výčtu, který představuje aktuální směr toku používá zařízení. Směr toku je směr, ve kterém jsou prvky uživatelského rozhraní na stránce skenovalo oko. Hodnoty výčtu jsou:
+[ `Device.FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) Hodnota načte [ `FlowDirection` ](xref:Xamarin.Forms.FlowDirection) hodnota výčtu, která představuje aktuální směr toku se použité v zařízení. Směr toku je směr, ve kterém jsou prvky uživatelského rozhraní na stránce skenovalo okem. Hodnoty výčtu jsou:
 
-- [`LeftToRight`](https://developer.xamarin.com/api/field/Xamarin.Forms.FlowDirection.LeftToRight/)
-- [`RightToRight`](https://developer.xamarin.com/api/field/Xamarin.Forms.FlowDirection.RightToLeft/)
-- [`MatchParent`](https://developer.xamarin.com/api/field/Xamarin.Forms.FlowDirection.MatchParent/)
+- [`LeftToRight`](xref:Xamarin.Forms.FlowDirection.LeftToRight)
+- [`RightToRight`](xref:Xamarin.Forms.FlowDirection.RightToLeft)
+- [`MatchParent`](xref:Xamarin.Forms.FlowDirection.MatchParent)
 
-V jazyce XAML [ `Device.FlowDirection` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.FlowDirection/) hodnotu můžete načíst pomocí `x:Static` – rozšíření značek:
+V XAML [ `Device.FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection) hodnotu můžete získat pomocí `x:Static` – rozšíření značek:
 
 ```xaml
 <ContentPage ... FlowDirection="{x:Static Device.FlowDirection}"> />
 ```
 
-Je ekvivalentní kód v jazyce C#:
+Ekvivalentní kód v jazyce C# je:
 
 ```csharp
 this.FlowDirection = Device.FlowDirection;
 ```
 
-Další informace o směr toku najdete v tématu [zprava doleva lokalizace](~/xamarin-forms/app-fundamentals/localization/right-to-left.md).
+Další informace o směr toku, najdete v části [lokalizace zprava doleva](~/xamarin-forms/app-fundamentals/localization/right-to-left.md).
 
 <a name="Device_Styles" />
 
 ## <a name="devicestyles"></a>Device.Styles
 
-[ `Styles` Vlastnost](~/xamarin-forms/user-interface/styles/index.md) obsahuje definice předdefinovaný styl, které mohou být použity pro některé ovládací prvky (jako například `Label`) `Style` vlastnost. Styly k dispozici jsou:
+[ `Styles` Vlastnost](~/xamarin-forms/user-interface/styles/index.md) obsahuje integrované definice, které mohou být použity některé ovládací prvky (například `Label`) `Style` vlastnost. Jsou dostupné styly:
 
 * BodyStyle
 * CaptionStyle
@@ -128,7 +128,7 @@ Další informace o směr toku najdete v tématu [zprava doleva lokalizace](~/xa
 
 ## <a name="devicegetnamedsize"></a>Device.GetNamedSize
 
-`GetNamedSize` lze použít při nastavení [ `FontSize` ](~/xamarin-forms/user-interface/text/fonts.md) v kódu jazyka C#:
+`GetNamedSize` je možné při nastavování [ `FontSize` ](~/xamarin-forms/user-interface/text/fonts.md) v kódu jazyka C#:
 
 ```csharp
 myLabel.FontSize = Device.GetNamedSize (NamedSize.Small, myLabel);
@@ -143,21 +143,21 @@ someLabel.FontSize = Device.OnPlatform (
 
 ## <a name="deviceopenuri"></a>Device.OpenUri
 
-`OpenUri` Metoda umožňuje spouštět operace na základní platformě, jako je například otevřete a adresy URL v nativní webový prohlížeč (**Safari** v systému iOS nebo **Internet** v systému Android).
+`OpenUri` Metodu můžete použít k aktivaci operací na základní platformě, jako je například otevřít adresu URL do nativního webového prohlížeče (**Safari** v Iosu nebo **Internet** v systému Android).
 
 ```csharp
 Device.OpenUri(new Uri("https://evolve.xamarin.com/"));
 ```
 
-[Ukázkové webové zobrazení](https://github.com/xamarin/xamarin-forms-samples/blob/master/WorkingWithWebview/WorkingWithWebview/WebAppPage.cs) obsahuje příklad použití `OpenUri` k otevírání adres URL a taky aktivovat telefonní hovory.
+[WebView ukázka](https://github.com/xamarin/xamarin-forms-samples/blob/master/WorkingWithWebview/WorkingWithWebview/WebAppPage.cs) obsahuje příklad použití `OpenUri` k otevírání adres URL a také aktivovat telefonní hovory.
 
-[Mapy ukázka](https://github.com/xamarin/xamarin-forms-samples/blob/master/WorkingWithMaps/WorkingWithMaps/MapAppPage.cs) také používá `Device.OpenUri` k zobrazení mapy a pokynů pomocí nativního **mapuje** aplikace v iOS a Android.
+[Vzorku mapy](https://github.com/xamarin/xamarin-forms-samples/blob/master/WorkingWithMaps/WorkingWithMaps/MapAppPage.cs) také používá `Device.OpenUri` k zobrazení mapy a pokynů, pomocí nativní **mapuje** aplikací pro iOS a Android.
 
 <a name="Device_StartTimer" />
 
 ## <a name="devicestarttimer"></a>Device.StartTimer
 
-`Device` Třída také obsahuje `StartTimer` metodu, která poskytuje jednoduchý způsob k aktivaci úlohy závislá na čase, který funguje v Xamarin.Forms společný kód, včetně .NET standardní knihovny. Předat `TimeSpan` nastavit interval a vrátíte se `true` zachovat časovač spuštěná nebo `false` zastavit po aktuální volání.
+`Device` Třída má také `StartTimer` metodu, která poskytuje jednoduchý způsob, jak aktivovat úlohy závislé na čase, která funguje v Xamarin.Forms společný kód, včetně knihovny .NET Standard. Předat `TimeSpan` nastavte interval a vrátíte se `true` zachovat časovač s nebo `false` zastavit po aktuální volání.
 
 ```csharp
 Device.StartTimer (new TimeSpan (0, 0, 60), () => {
@@ -166,15 +166,15 @@ Device.StartTimer (new TimeSpan (0, 0, 60), () => {
 });
 ```
 
-Pokud kód uvnitř časovač komunikuje s uživatelským rozhraním (například nastavení text `Label` nebo zobrazení výstrahy) by mělo být provedeno uvnitř `BeginInvokeOnMainThread` výrazu (viz níže).
+Pokud kód uvnitř časovač spolupracuje s uživatelským rozhraním (například nastavení text `Label` nebo zobrazení výstrahy) by měl provést uvnitř příkazu `BeginInvokeOnMainThread` výrazu (viz níže).
 
 <a name="Device_BeginInvokeOnMainThread" />
 
 ## <a name="devicebegininvokeonmainthread"></a>Device.BeginInvokeOnMainThread
 
-Prvky uživatelského rozhraní by měly být dostupné nikdy vlákna na pozadí, jako je například kód spuštěný v časovač nebo dokončení obslužnou rutinu pro asynchronní operace, jako jsou například webové žádosti. Pozadí kód, který je potřeba aktualizovat uživatelské rozhraní by měl být uzavřen uvnitř [ `BeginInvokeOnMainThread` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.BeginInvokeOnMainThread/p/System.Action/). Jedná se o ekvivalent `InvokeOnMainThread` v systému iOS, `RunOnUiThread` v systému Android, a `Dispatcher.RunAsync` na univerzální platformu Windows.
+Prvky uživatelského rozhraní by měl mít nikdy přístup vláken na pozadí, jako je například kód spuštěný v časovač nebo obslužné rutiny dokončení asynchronních operací, jako je webových požadavků. Jakýkoli kód na pozadí, který je potřeba aktualizovat uživatelské rozhraní by měl být uzavřen v [ `BeginInvokeOnMainThread` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.BeginInvokeOnMainThread/p/System.Action/). Jde o ekvivalent `InvokeOnMainThread` v Iosu `RunOnUiThread` v Androidu a `Dispatcher.RunAsync` na univerzální platformu Windows.
 
-Kód Xamarin.Forms je:
+Xamarin.Forms kód je:
 
 ```csharp
 Device.BeginInvokeOnMainThread ( () => {
@@ -182,15 +182,15 @@ Device.BeginInvokeOnMainThread ( () => {
 });
 ```
 
-Poznámka: Tento metod pomocí `async/await` nemusíte používat `BeginInvokeOnMainThread` spuštěné z hlavního vlákna uživatelského rozhraní.
+Poznámka: Tento metod pomocí `async/await` není nutné používat `BeginInvokeOnMainThread` spuštěné z hlavního vlákna uživatelského rozhraní.
 
 ## <a name="summary"></a>Souhrn
 
-Platformě Xamarin.Forms `Device` třída umožňuje jemně odstupňovanou kontrolu nad funkce a rozložení na základě na platformu – společné i v kódu (.NET Standard projektů knihovny nebo sdílených projektů).
+Xamarin.Forms `Device` třída umožňuje detailní kontrolu nad funkce a rozložení na základě podle platformy – i v běžných kódu (projekty .NET Standard knihovny nebo sdílených projektech).
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Ukázka zařízení](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithDevice/)
+- [Ukázkové zařízení](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithDevice/)
 - [Ukázka styly](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
-- [Zařízení](https://developer.xamarin.com/api/type/Xamarin.Forms.Device/)
+- [Zařízení](xref:Xamarin.Forms.Device)

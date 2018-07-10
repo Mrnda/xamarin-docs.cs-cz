@@ -1,84 +1,84 @@
 ---
-title: Vazbu vlastnosti
-description: Tento článek obsahuje úvod do vlastnosti vazbu a ukazuje, jak vytvářet a využívat je.
+title: Vlastnosti umožňující vazbu
+description: Tento článek obsahuje úvod do vlastnosti umožňující vazbu a ukazuje, jak vytvářet a využívat je.
 ms.prod: xamarin
 ms.assetid: 1EE869D8-6FE1-45CA-A0AD-26EC7D032AD7
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 06/02/2016
-ms.openlocfilehash: 5e39e8eb3d7ffb3ed33ea2a585d8d367302e9baa
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 115fff5f80eb531780aa208fde677b26b69e9294
+ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245973"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37935625"
 ---
-# <a name="bindable-properties"></a>Vazbu vlastnosti
+# <a name="bindable-properties"></a>Vlastnosti umožňující vazbu
 
-_V Xamarin.Forms je funkce společných vlastností language runtime (CLR) rozšířit pomocí vazbu vlastnosti. Vazbu vlastnosti je speciální typ vlastnosti, kde je vlastnost systémem Xamarin.Forms sledovat hodnotu vlastnosti. Tento článek obsahuje úvod do vlastnosti vazbu a ukazuje, jak vytvářet a využívat je._
+_V Xamarin.Forms funkce common language runtime (CLR) vlastností rozšířit pomocí vlastnosti umožňující vazbu. Vlastnost s vazbou je speciální typ vlastnosti, kde hodnota vlastnosti je sledován pomocí funkce v systému vlastností Xamarin.Forms. Tento článek obsahuje úvod do vlastnosti umožňující vazbu a ukazuje, jak vytvářet a využívat je._
 
 ## <a name="overview"></a>Přehled
 
-Vlastnosti vazbu rozšiřovat funkce vlastnost CLR prostřednictvím zálohování vlastnost s [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) typu, místo zálohování vlastnost s polem. Účelem vazbu vlastnosti je poskytnout vlastnost systém, který podporuje datovou vazbu, styly, šablony a hodnoty nastavit pomocí vztahů nadřazenosti a podřízenosti. Výchozí hodnoty, ověření hodnoty vlastností a zpětná volání, které sledují změny vlastností kromě toho můžete zadat vlastnosti vazbu.
+Vlastnosti umožňující vazbu rozšíření funkcí vlastnost CLR prostřednictvím vlastnosti se zálohování [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) typ místo zálohování vlastnost s polem. Účelem vlastnosti umožňující vazbu je poskytnout vlastnost systému, který podporuje datovou vazbu, styly, šablony a hodnoty nastavené pomocí vztahů nadřazenosti a podřízenosti. Vlastnosti umožňující vazbu kromě toho můžete zadat výchozí hodnoty, ověření hodnoty vlastností a zpětná volání, které sledují změny vlastností.
 
-Vlastnosti by měla být implementována jako vazbu vlastnosti, které chcete podporovat jeden nebo více z následujících funkcí:
+Vlastnosti by měla být implementována jako vlastnosti umožňující vazbu pro podporu jeden nebo více následujících funkcí:
 
-- Funguje jako platný *cíl* vlastnost pro datovou vazbu.
+- Funguje jako platný *cílové* vlastnost pro datovou vazbu.
 - Nastavení vlastnosti prostřednictvím [styl](~/xamarin-forms/user-interface/styles/index.md).
-- Poskytuje výchozí hodnotu vlastnosti, které se liší od výchozí hodnoty pro typ vlastnosti.
-- Hodnota vlastnosti ověřování.
+- Poskytuje výchozí hodnotu vlastnosti, které se liší od výchozího nastavení pro typ vlastnosti.
+- Ověření hodnoty vlastnosti.
 - Monitorování změny vlastností.
 
-Příklady vazbu vlastnosti Xamarin.Forms [ `Label.Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.Text/), [ `Button.BorderRadius` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.BorderRadius/), a [ `StackLayout.Orientation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.StackLayout.Orientation/). Každou vazbu vlastnost má odpovídající `public static readonly` vlastnost typu [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) který je zveřejněný u stejné třídy a který je identifikátor vazbu vlastnosti. Například odpovídající identifikátor vazbu vlastnosti pro `Label.Text` vlastnost je [ `Label.TextProperty` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Label.TextProperty/).
+Příkladem vlastnosti umožňující vazbu Xamarin.Forms [ `Label.Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.Text/), [ `Button.BorderRadius` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.BorderRadius/), a [ `StackLayout.Orientation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.StackLayout.Orientation/). Každou vlastnost podporující vazby má odpovídající `public static readonly` vlastnost typu [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) , které je zveřejněné ve stejné třídě, a to je identifikátor vlastnost podporující vazby. Například odpovídající identifikátor vázanou vlastnost pro `Label.Text` vlastnost [ `Label.TextProperty` ](xref:Xamarin.Forms.Label.TextProperty).
 
 <a name="consuming-bindable-property" />
 
-## <a name="creating-and-consuming-a-bindable-property"></a>Vytvoření a použití vazbu vlastnosti
+## <a name="creating-and-consuming-a-bindable-property"></a>Vytváření a využívání vázanou vlastnost
 
-Proces vytvoření vazbu vlastnosti vypadá takto:
+Proces vytvoření vázanou vlastnost vypadá takto:
 
 1. Vytvoření [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) instance s jedním z [ `BindableProperty.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.Create/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/) přetížení metody.
-1. Definování vlastnosti přistupující objekty pro [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) instance.
+1. Definujte přístupové objekty vlastnosti pro [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) instance.
 
-Všimněte si, že všechny [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) musí být vytvořeny instance ve vlákně UI. To znamená, že pouze kód, který běží ve vlákně UI můžete získat nebo nastavit hodnotu vazbu vlastnosti. Ale `BindableProperty` instance je přístupný z jiných vláken zařazování na vlákna uživatelského rozhraní pomocí [ `Device.BeginInvokeOnMainThread` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.BeginInvokeOnMainThread/p/System.Action/) metoda.
+Všimněte si, že všechny [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) instancí musí být vytvořen na vlákně UI. To znamená, že pouze kód, který běží na vlákně UI můžete získat nebo nastavit hodnotu vázanou vlastnost. Ale `BindableProperty` instance je přístupný z jiných vláken zařazování na vlákno uživatelského rozhraní se [ `Device.BeginInvokeOnMainThread` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.BeginInvokeOnMainThread/p/System.Action/) metody.
 
 ### <a name="creating-a-property"></a>Vytvoření vlastnosti
 
-K vytvoření `BindableProperty` instance, obsahující třídy musí být odvozeny od [ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/) třídy. Ale `BindableObject` třída je vysoká. v hierarchii tříd, takže většina tříd použít pro uživatelské rozhraní funkce podpory vazbu vlastnosti.
+Chcete-li vytvořit `BindableProperty` instance, obsažené třídy musí být odvozen od [ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/) třídy. Ale `BindableObject` třídy je vysoká. v hierarchii tříd, takže většina tříd použitý pro uživatelské rozhraní funkce podpory umožňujících vazbu vlastnosti.
 
-Můžete vytvořit vazbu vlastnosti deklarace `public static readonly` vlastnost typu [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/). Vazbu vlastnost musí být nastavená na vrácená hodnota jednoho z [ `BindableProperty.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.Create/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/) přetížení metody. Deklaraci by měla být v rámci textu [ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/) odvozené třídy, ale mimo všechny definice člen.
+Vlastnost s vazbou lze vytvořit deklarováním `public static readonly` vlastnost typu [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/). Vázanou vlastnost měli nastavit na hodnotu vrácené některého [ `BindableProperty.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.Create/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/) přetížení metody. Deklarace by měla být v těle [ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/) odvozené třídy, ale mimo všechny definice členů.
 
-Minimálně identifikátor se musí zadat při vytváření [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/), společně s následujícími parametry:
+Minimálně musí být identifikátor zadali při vytváření [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/), společně s následujícími parametry:
 
 - Název [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/).
 - Typ vlastnosti.
 - Typ vlastnící objekt.
-- Výchozí hodnota pro vlastnost. Tím se zajistí, že vlastnost vždy vrátí hodnotu konkrétní výchozí hodnotu. Pokud je nastavení, a může lišit od výchozí hodnota pro typ vlastnosti. Výchozí hodnota bude obnovena, kdy [ `ClearValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.ClearValue/p/Xamarin.Forms.BindableProperty/) metoda je volána v vazbu vlastnosti.
+- Výchozí hodnota pro vlastnost. Tím se zajistí, že vlastnost vždy vrátí hodnotu konkrétní výchozí, pokud není nastavena a může se lišit od výchozí hodnoty pro typ vlastnosti. Výchozí hodnota bude obnovena, kdy [ `ClearValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.ClearValue/p/Xamarin.Forms.BindableProperty/) metoda je volána na vlastnost s vazbou.
 
-Následující kód ukazuje příklad vazbu vlastnosti s identifikátorem a hodnoty pro čtyři požadované parametry:
+Následující kód ukazuje příklad s možností vazby vlastnosti s identifikátorem a hodnoty pro čtyři požadované parametry:
 
 ```csharp
 public static readonly BindableProperty EventNameProperty =
   BindableProperty.Create ("EventName", typeof(string), typeof(EventToCommandBehavior), null);
 ```
 
-Tím se vytvoří [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) instanci s názvem `EventName`, typu `string`. Vlastní vlastnost `EventToCommandBehavior` třídy a má výchozí hodnotu `null`. Zásady vytváření názvů pro vazbu vlastnosti je, že identifikátor vazbu vlastnosti musí shodovat název vlastnosti zadaný ve `Create` metoda s "Vlastnost" připojená k němu. Proto v předchozím příkladu je identifikátor vazbu vlastnosti `EventNameProperty`.
+Tím se vytvoří [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) instanci s názvem `EventName`, typu `string`. Vlastní vlastnost `EventToCommandBehavior` třídy a má výchozí hodnotu `null`. Zásady vytváření názvů pro vlastnosti umožňující vazbu je, že identifikátor vázanou vlastnost musí odpovídat název vlastnosti zadaný v `Create` metodou "Vlastnosti" připojenou k němu. Proto v předchozím příkladu je identifikátor vázanou vlastnost `EventNameProperty`.
 
-Volitelně můžete při vytváření [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) instance, následující parametry lze zadat:
+Volitelně můžete při vytváření [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) instance následující parametry lze zadat:
 
-- Režim vazby. Slouží k určení směru, ve kterém se rozšíří změn hodnot vlastností. Ve výchozím režimu vazby, změny se rozšíří z *zdroj* k *cíl*.
-- Delegát ověření, která bude volána, když je hodnota vlastnosti nastavena. Další informace najdete v tématu [zpětná volání ověření](#validation).
-- Změnila se vlastnost delegáta, který bude vyvolán při změně hodnoty vlastnosti. Další informace najdete v tématu [zjišťování změny vlastností](#propertychanges).
-- Vlastnost Změna delegáta, který bude vyvolán při se změní hodnota vlastnosti. Tento delegát se stejným podpisem jako delegáta změněné vlastnosti.
-- Coerce hodnota delegáta, který bude vyvolán při změně hodnoty vlastnosti. Další informace najdete v tématu [Coerce zpětná volání hodnotu](#coerce).
-- A `Func` používané k chybě při inicializaci výchozí hodnotu vlastnosti. Další informace najdete v tématu [vytváření výchozí hodnotu s funkci Func](#defaultfunc).
+- Režim vazeb. Slouží k určení směru, ve kterém bude šířit změně hodnoty vlastnosti. Ve výchozím režimu vazby, se změny rozšíří z *zdroj* k *cílové*.
+- Ověření delegáta, který bude vyvolán při nastavení hodnoty vlastnosti. Další informace najdete v tématu [zpětná volání ověření](#validation).
+- Delegát, který bude vyvolán při změně hodnoty vlastnosti došlo ke změně vlastnosti. Další informace najdete v tématu [zjištění změny vlastností](#propertychanges).
+- Vlastnost Změna delegáta, který se vyvolá, když se změní hodnota vlastnosti. Tento delegát má stejný podpis jako delegát změněné vlastnosti.
+- Coerce hodnotu delegáta, který bude vyvolán při změně hodnoty vlastnosti. Další informace najdete v tématu [vynucení zpětných volání hodnoty](#coerce).
+- A `Func` , který slouží k inicializaci výchozí hodnotu vlastnosti. Další informace najdete v tématu [vytváření výchozí hodnotu s funkci Func](#defaultfunc).
 
 ### <a name="creating-accessors"></a>Vytváření přístupových objektů
 
-Přístupové objekty vlastnosti vyžadovaných používat vlastnost syntaxe pro přístup k vazbu vlastnosti. `Get` Přistupujícího objektu by měla vrátit hodnotu, která se nachází v odpovídající vazbu vlastnosti. Toho lze dosáhnout pomocí volání [ `GetValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.GetValue/p/Xamarin.Forms.BindableProperty/) metoda předávání v identifikátor vazbu vlastnosti, na kterém má být získána hodnota a pak výsledek, který má požadovaný typ přetypování. `Set` Přistupujícího objektu měli nastavit hodnotu odpovídající vazbu vlastnosti. Toho lze dosáhnout pomocí volání [ `SetValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.SetValue/p/Xamarin.Forms.BindableProperty/System.Object/) metody předávání v identifikátor vazbu vlastnosti, na kterém chcete nastavit hodnota a hodnota k nastavení.
+Přistupující objekty vlastnosti je potřeba použít syntaxe vlastnosti pro přístup k vázanou vlastnost. `Get` Přístupového objektu by měla vrátit hodnotu, která se nachází v odpovídající vlastnost podporující vazby. Toho lze dosáhnout pomocí volání [ `GetValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.GetValue/p/Xamarin.Forms.BindableProperty/) metoda předávání v identifikátoru vázanou vlastnost, na kterém má být získána hodnota a potom výsledek na požadovaný typ přetypování. `Set` Přistupující objekt měli nastavit hodnotu vlastnosti odpovídající vazbu. Toho lze dosáhnout pomocí volání [ `SetValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.SetValue/p/Xamarin.Forms.BindableProperty/System.Object/) metodu identifikátor umožňujících vazbu vlastnosti na základě které chcete nastavit hodnotu a hodnotu nastavení.
 
-Následující příklad kódu ukazuje přistupující objekty pro `EventName` vazbu vlastnosti:
+Následující příklad kódu ukazuje přístupové objekty pro `EventName` vázanou vlastnost:
 
 ```csharp
 public string EventName {
@@ -87,11 +87,11 @@ public string EventName {
 }
 ```
 
-### <a name="consuming-a-bindable-property"></a>Využívání vazbu vlastnosti
+### <a name="consuming-a-bindable-property"></a>Využívání vázanou vlastnost
 
-Po vytvoření vazbu vlastnosti mohou být využívány z XAML nebo kódu. V jazyce XAML toho se dosáhne deklarace oboru názvů s předponou, s deklaraci oboru názvů, která udává název oboru názvů CLR a volitelně název sestavení. Další informace najdete v tématu [obory názvů jazyka XAML](~/xamarin-forms/xaml/namespaces.md).
+Po vytvoření vázanou vlastnost může být upotřebena z XAML nebo kódu. V XAML tím se dosahuje deklarace oboru názvů s předponou, pomocí deklarace oboru názvů označující název oboru názvů CLR a volitelně název sestavení. Další informace najdete v tématu [obory názvů XAML](~/xamarin-forms/xaml/namespaces.md).
 
-Následující příklad kódu ukazuje oboru názvů jazyka XAML pro vlastní typ, který obsahuje vazbu vlastnosti, která je definována v rámci stejného sestavení jako aplikační kód, který odkazuje na vlastní typ:
+Následující příklad kódu ukazuje obor názvů XAML pro vlastní typ, který obsahuje vazbu vlastnosti, která je definována v rámci stejného sestavení jako kód aplikace, který odkazuje na vlastní typ:
 
 ```xaml
 <ContentPage ... xmlns:local="clr-namespace:EventToCommandBehavior" ...>
@@ -99,7 +99,7 @@ Následující příklad kódu ukazuje oboru názvů jazyka XAML pro vlastní ty
 </ContentPage>
 ```
 
-Deklarace oboru názvů se používá při nastavení `EventName` vazbu vlastnosti prokázaná v následujícím příkladu kódu XAML:
+Deklarace oboru názvů se používá při nastavení `EventName` vlastnost podporující vazby, jako předvedenou v následujícím příkladu kódu XAML:
 
 ```xaml
 <ListView ...>
@@ -109,7 +109,7 @@ Deklarace oboru názvů se používá při nastavení `EventName` vazbu vlastnos
 </ListView>
 ```
 
-Ekvivalentní kódu C# je znázorněno v následujícím příkladu kódu:
+Ekvivalentní kód jazyka C# můžete vidět v následujícím příkladu kódu:
 
 ```csharp
 var listView = new ListView ();
@@ -121,17 +121,17 @@ listView.Behaviors.Add (new EventToCommandBehavior {
 
 <a name="advanced" />
 
-## <a name="advanced-scenarios"></a>Složitější scénáře
+## <a name="advanced-scenarios"></a>Pokročilé scénáře
 
-Při vytváření [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) instanci, je počet volitelné parametry, které můžete nastavit pro povolení rozšířených vlastností vazbu scénáře. Tato část popisuje tyto scénáře.
+Při vytváření [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) instance, existuje mnoho nepovinných parametrů, které můžete nastavit pro povolení rozšířených vlastností umožňujících vazbu scénáře. Tato část popisuje tyto scénáře.
 
 <a name="propertychanges" />
 
-### <a name="detecting-property-changes"></a>Detekce změn vlastností
+### <a name="detecting-property-changes"></a>Zjišťují se změny vlastnosti
 
-A `static` metoda zpětného volání změny vlastnosti lze registrovat pomocí vazbu vlastnosti zadáním `propertyChanged` parametr pro [ `BindableProperty.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.Create/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/) metoda. Metoda zpětného volání zadaný bude vyvolán při změně hodnoty vazbu vlastnosti.
+A `static` metoda změny vlastnosti zpětného volání lze dokument zaregistrovat u vázanou vlastnost tak, že zadáte `propertyChanged` parametr pro [ `BindableProperty.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.Create/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/) metody. Zadaná metoda zpětného volání bude vyvolán při změně hodnoty vlastnosti umožňující vazbu.
 
-Následující příklad kódu ukazuje jak `EventName` registry vazbu vlastnosti `OnEventNameChanged` jako metody zpětného volání vlastnost změnit metodu:
+Následující příklad kódu ukazuje jak `EventName` vázanou vlastnost registrů `OnEventNameChanged` metody jako metody zpětného volání změny vlastnosti:
 
 ```csharp
 public static readonly BindableProperty EventNameProperty =
@@ -145,15 +145,15 @@ static void OnEventNameChanged (BindableObject bindable, object oldValue, object
 }
 ```
 
-V metodě vlastnost změnit zpětného volání [ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/) parametr se používá k označení, které instance třídy vlastnícím ohlásil změnu a hodnoty dvou `object` parametry představují staré a nové hodnoty Vlastnost vazbu.
+V metodě změny vlastnosti zpětného volání [ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/) parametr se používá k označení, která instance třídy vlastnící ohlásil změnu a hodnoty ze dvou `object` parametry představují staré a nové hodnoty Vlastnost podporující vazby.
 
 <a name="validation" />
 
 ### <a name="validation-callbacks"></a>Zpětná volání ověření
 
-A `static` metoda zpětného volání ověření lze registrovat pomocí vazbu vlastnosti tak, že zadáte `validateValue` parametr pro [ `BindableProperty.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.Create/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/) metoda. Metoda zpětného volání zadaný bude být volána, když je nastavena hodnota vazbu vlastnosti.
+A `static` ověření metody zpětného volání lze dokument zaregistrovat u vázanou vlastnost tak, že zadáte `validateValue` parametr pro [ `BindableProperty.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.Create/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/) metody. Zadaná metoda zpětného volání bude vyvolán při nastavenou vlastnost podporující vazby.
 
-Následující příklad kódu ukazuje jak `Angle` registry vazbu vlastnosti `IsValidValue` metoda jako metody zpětného volání ověření:
+Následující příklad kódu ukazuje jak `Angle` vázanou vlastnost registrů `IsValidValue` metody jako metody zpětného volání ověření:
 
 ```csharp
 public static readonly BindableProperty AngleProperty =
@@ -168,17 +168,17 @@ static bool IsValidValue (BindableObject view, object value)
 }
 ```
 
-Zpětná volání ověřování jsou k dispozici s hodnotou a by měla vrátit `true` Pokud hodnota je platná pro vlastnost, jinak `false`. Pokud vrátí zpětné volání pro ověření, bude vyvolána výjimka `false`, který má být zpracována vývojář. Typické použití metody zpětného volání ověření je omezíte hodnoty celá čísla nebo hodnoty Double-vazbu vlastnost nastavena. Například `IsValidValue` metoda kontroluje, zda hodnota vlastnosti `double` v rozsahu 0 až 360.
+Zpětná volání ověřování jsou k dispozici s hodnotou a by měl vrátit `true` Pokud hodnota je platná pro vlastnost, v opačném případě `false`. Bude vyvolána výjimka, pokud vrací zpětné volání pro ověření `false`, který má být zpracována vývojáře. Typické použití ověřovací metodu zpětného volání je omezení hodnoty celých čísel nebo hodnot datového typu Double, pokud je nastavena vlastnost podporující vazby. Například `IsValidValue` metoda zkontroluje, že hodnota vlastnosti je `double` v rozsahu 0 až 360.
 
 <a name="coerce" />
 
-### <a name="coerce-value-callbacks"></a>Coerce – hodnota zpětných volání
+### <a name="coerce-value-callbacks"></a>Vynucení zpětných volání hodnoty
 
-A `static` coerce – hodnota metody zpětného volání lze registrovat pomocí vazbu vlastnosti tak, že zadáte `coerceValue` parametr pro [ `BindableProperty.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.Create/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/) metoda. Metoda zpětného volání zadaný bude vyvolán při změně hodnoty vazbu vlastnosti.
+A `static` vynucení hodnotu metody zpětného volání lze dokument zaregistrovat u vázanou vlastnost tak, že zadáte `coerceValue` parametr pro [ `BindableProperty.Create` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.Create/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/) metoda. Zadaná metoda zpětného volání bude vyvolán při změně hodnoty vlastnosti umožňující vazbu.
 
-Coerce – hodnota, kterou zpětná volání slouží k vynucení opětovného hodnocení vazbu vlastnosti při změně hodnoty vlastnosti. Například hodnota zpětné volání coerce lze zajistit, že hodnota jednu vazbu vlastnosti není větší než hodnota jiné vazbu vlastnosti.
+Převeďte hodnotu, použitý zpětná volání k vynucení přehodnocení vázanou vlastnost při změně hodnoty vlastnosti. Například zpětné volání hodnotu coerce lze zajistit, že hodnota jednu vlastnost podporující vazby není větší než hodnota jinou vlastnost s vazbou.
 
-Následující příklad kódu ukazuje jak `Angle` registry vazbu vlastnosti `CoerceAngle` jako metody zpětného volání hodnotu coerce metodu:
+Následující příklad kódu ukazuje jak `Angle` vázanou vlastnost registrů `CoerceAngle` metody jako metody zpětného volání hodnotu coerce:
 
 ```csharp
 public static readonly BindableProperty AngleProperty = BindableProperty.Create (
@@ -200,13 +200,13 @@ static object CoerceAngle (BindableObject bindable, object value)
 }
 ```
 
-`CoerceAngle` Metoda kontroluje hodnotu `MaximumAngle` vlastnost a pokud `Angle` je větší než hodnota vlastnosti, se převede hodnotu na `MaximumAngle` hodnotu vlastnosti.
+`CoerceAngle` Metoda zkontroluje hodnotu vlastnosti `MaximumAngle` vlastnost a pokud `Angle` je větší než hodnota vlastnosti, převede hodnotu na `MaximumAngle` hodnotu vlastnosti.
 
 <a name="defaultfunc" />
 
-### <a name="creating-a-default-value-with-a-func"></a>Vytváření s funkci Func výchozí hodnotu.
+### <a name="creating-a-default-value-with-a-func"></a>Vytváří se výchozí hodnota s funkci Func
 
-A `Func` lze použít k chybě při inicializaci výchozí hodnota vlastnosti vazbu, jak je ukázáno v následujícím příkladu kódu:
+A `Func` slouží k inicializaci výchozí hodnoty vlastnosti umožňující vazbu, jak je ukázáno v následujícím příkladu kódu:
 
 ```csharp
 public static readonly BindableProperty SizeProperty =
@@ -214,18 +214,18 @@ public static readonly BindableProperty SizeProperty =
   defaultValueCreator: bindable => Device.GetNamedSize (NamedSize.Large, (Label)bindable));
 ```
 
-`defaultValueCreator` Parametr je nastaven na `Func` , který spustí [ `Device.GetNamedSize` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.GetNamedSize/p/Xamarin.Forms.NamedSize/System.Type/) metoda vrátí `double` představující pojmenované velikost písma, který se používá na [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) na nativní platformě.
+`defaultValueCreator` Parametr je nastaven na `Func` , která vyvolává [ `Device.GetNamedSize` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.GetNamedSize/p/Xamarin.Forms.NamedSize/System.Type/) metodu pro návrat `double` , která představuje pojmenované velikost písma, která se používá na [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) na nativní platformě.
 
 ## <a name="summary"></a>Souhrn
 
-Tento článek poskytuje úvod do vlastnosti vazbu a ukázal, jak lze vytvářet a využívat je. Vazbu vlastnosti je speciální typ vlastnosti, kde je vlastnost systémem Xamarin.Forms sledovat hodnotu vlastnosti.
+Tento článek poskytuje úvod do vlastnosti umožňující vazbu a ukázal, jak vytvářet a využívat je. Vlastnost s vazbou je speciální typ vlastnosti, kde hodnota vlastnosti je sledován pomocí funkce v systému vlastností Xamarin.Forms.
 
 
 ## <a name="related-links"></a>Související odkazy
 
 - [Obory názvů jazyka XAML](~/xamarin-forms/xaml/namespaces.md)
-- [Události k chování příkazu (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/eventtocommandbehavior/)
+- [Událost k chování příkazu (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/eventtocommandbehavior/)
 - [Zpětné volání pro ověření (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/xaml/validationcallback/)
-- [Coerce – hodnota zpětného volání (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/xaml/coercevaluecallback/)
+- [Vynucení zpětného volání hodnotu (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/xaml/coercevaluecallback/)
 - [BindableProperty](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/)
 - [BindableObject](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/)

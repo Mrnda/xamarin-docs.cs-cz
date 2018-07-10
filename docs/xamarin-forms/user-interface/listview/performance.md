@@ -1,34 +1,34 @@
 ---
 title: Výkon ListView
-description: I když ListView je výkonný zobrazení pro zobrazení dat, má určitá omezení. Tento článek vysvětluje, jak zajistit vysoký výkon s Xamarin.Forms ListView v aplikaci.
+description: I když ListView je výkonný zobrazení pro zobrazení dat, má určitá omezení. Tento článek vysvětluje, jak zajistit skvělý výkon s Xamarin.Forms ListView v aplikaci.
 ms.prod: xamarin
 ms.assetid: 1B085639-652C-4862-86EB-5D55D32B9395
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2017
-ms.openlocfilehash: f1707a6b2a1dc03ae1346520bf29ff83f0fe74fb
-ms.sourcegitcommit: eac092f84b603958c761df305f015ff84e0fad44
+ms.openlocfilehash: 906fd60954b18064467e665295dba8bb75ed5a45
+ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/21/2018
-ms.locfileid: "36309808"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37935586"
 ---
 # <a name="listview-performance"></a>Výkon ListView
 
-Při zápisu mobilních aplikací, záleží na výkon. Uživatelé mají dřívější očekávat plynulé posouvání a časů rychlé načítání. Nemůže splnit očekávání uživatelů bude náklady můžete hodnocení do obchodu s aplikacemi nebo v případě-obchodní aplikace, náklady organizace čas a peníze.
+Při vytváření mobilních aplikací, záleží na výkonu. Uživatelé zvykli očekávat plynulé posouvání a rychlé načítání. Služeb při selhání podle očekávání uživatelů bude stát hodnocení obchodu s aplikacemi nebo v případě – obchodní aplikace, náklady, vaše organizace čas a peníze.
 
-I když [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) je výkonný zobrazení pro zobrazení dat, má určitá omezení. Posouvání výkonu může dojít, pokud používáte vlastní buněk, zejména v případě, že budou obsahovat hluboko vložené zobrazení hierarchie, nebo použijte určité rozložení, které vyžadují mnoho měření. Naštěstí existují postupů, které můžete použít, aby se zabránilo snížení výkonu.
+I když [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) je výkonný zobrazení pro zobrazení dat, má určitá omezení. Posouvání výkonu může být negativně při použití vlastního buňky, zejména v případě, že obsahují zobrazení hluboce vnořené hierarchie nebo použití některých rozložení, které vyžadují hodně měření. Naštěstí jsou postupy, které vám umožní vyhnout se špatným výkonem.
 
 <a name="cachingstrategy" />
 
-## <a name="caching-strategy"></a>Ukládání do mezipaměti strategie
+## <a name="caching-strategy"></a>Strategie ukládání do mezipaměti
 
-ListViews se často používají k zobrazení mnohem víc dat, než můžete umístit na obrazovce. Zvažte Hudba aplikace, třeba. Knihovna skladeb může mít tisíce položek. Jednoduchý přístup, kde bude vytvořením řádek pro každou skladbu, by měla mít snížený výkon. Tento přístup zbytečně plýtvá cenné paměti a může zpomalit posouvání k procházení. Jiná možnost je vytvořit a zrušení řádky jako dat je přesunut do zobrazení oblasti. To vyžaduje konstantní vytváření instancí a čištění zobrazení objektů, které může být velmi pomalé.
+Zobrazení se často používají k zobrazení mnohem většímu množství dat, než můžete přizpůsobit na obrazovce. Zvažte například app Hudba. Knihovna skladeb pravděpodobně tisíce položek. Jednoduchým přístupem, které by bylo vytvořit řádek pro každý skladby, by dojít ke snížení výkonu. Tento přístup zabírají cenný paměti a může zpomalit posouvání k procházení. Další možností je vytvořit a zničit řádky, protože data je přesunut do oblasti zobrazení. To vyžaduje konstantní vytváření instancí a vyčištění zobrazit objekty, které mohou být velmi pomalé.
 
-Pro konzervaci paměti, nativního [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) ekvivalenty pro každou platformu mají integrované funkce pro opakované použití řádků. Pouze v buňkách viditelný na obrazovce jsou načtena do paměti a **obsah** je načten do existující buňky. To brání aplikaci v museli vytvořit instanci tisíc objektů, ukládání času a paměti.
+Pro konzervaci paměti, nativní [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) ekvivalenty pro jednotlivé platformy, mají integrované funkce pro opětovné použití řádky. Pouze v buňkách viditelný na obrazovce jsou načtena do paměti a **obsah** je načteno do existující buňky. Díky tomu aplikace nepotřebuje k vytvoření instance tisíce objektů, šetří čas a paměti.
 
-Umožňuje Xamarin.Forms [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) buňky znovu použijte pomocí [ `ListViewCachingStrategy` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListViewCachingStrategy/) výčtu, který má následující hodnoty:
+Xamarin.Forms umožňuje [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) buňky znovu pomocí [ `ListViewCachingStrategy` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListViewCachingStrategy/) výčet, který má následující hodnoty:
 
 ```csharp
 public enum ListViewCachingStrategy
@@ -40,29 +40,29 @@ public enum ListViewCachingStrategy
 ```
 
 > [!NOTE]
-> Ignoruje univerzální platformu Windows (UWP) [ `RetainElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RetainElement/) ukládání do mezipaměti strategie, protože vždy používá ukládání do mezipaměti ke zlepšení výkonu. Proto ve výchozím nastavení se chová jako kdyby [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) ukládání do mezipaměti strategie platí.
+> Ignoruje univerzální platformu Windows (UPW) [ `RetainElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RetainElement) ukládání do mezipaměti strategii, protože vždy používá ukládání do mezipaměti ke zlepšení výkonu. Proto ve výchozím nastavení se chová jako by [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) strategie ukládání do mezipaměti se použije.
 
 ### <a name="retainelement"></a>RetainElement
 
-[ `RetainElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RetainElement/) Ukládání do mezipaměti strategie Určuje, že [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) vygeneruje buňky pro každou položku v seznamu a výchozí nastavení je `ListView` chování. Obecně by být používána v následujících případech:
+[ `RetainElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RetainElement) Ukládání do mezipaměti strategie Určuje, že [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) vygeneruje buňky pro každou položku v seznamu a výchozí nastavení je `ListView` chování. Obecně byste měli použít v následujících případech:
 
-- Když každá buňka má velký počet vazby (20-30 +).
+- Pokud každá buňka má velký počet vazeb (20-30 a více).
 - Pokud šablona buňky často mění.
-- Při testování zjistí, že `RecycleElement` ukládání do mezipaměti strategie má za následek menší provádění rychlost.
+- Pokud testování odhalí, `RecycleElement` ukládání do mezipaměti strategie za následek sníženou provádění rychlost.
 
-Je důležité rozpoznat důsledky [ `RetainElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RetainElement/) ukládání do mezipaměti strategii, při práci s vlastní buněk. Žádný kód inicializace buňky bude muset spustit pro vytvoření jednotlivých buněk, což může být více než jednou za sekundu. V této situaci rozložení techniky, které byly dobře na stránce, jako jsou pomocí více vnořených [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) instancí, začnou být kritické body po instalaci a zničen v reálném čase jako viditelné pro uživatele.
+Je důležité uvědomit důsledky [ `RetainElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RetainElement) ukládání do mezipaměti strategie při práci s vlastní buňky. Všechny buňky inicializační kód potřebuje ke spuštění pro každou buňku vytváření, což může být více než jednou za sekundu. V této situaci rozložení techniky, které byly jemné na stránce, jako je používání několika vnořené [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) instance, se stávají problémových míst výkonu, když se instalační program a zničen v reálném čase jako uživatel posune.
 
 <a name="recycleelement" />
 
 ### <a name="recycleelement"></a>RecycleElement
 
-[ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) Ukládání do mezipaměti strategie Určuje, že [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) se pokusí o minimalizovat její nároky a provádění rychlost paměti podle recyklace seznamu buněk. Tento režim vždy nenabízí zlepšování výkonu a testování by měla provést, chcete-li zjistit případná zlepšení. Ale ho je obecně upřednostňovanou volbou a je třeba používat v následujících případech:
+[ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) Ukládání do mezipaměti strategie Určuje, že [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) se snaží minimalizovat nároky na místo a provádění rychlosti jeho paměti recyklací seznamu buněk. Tento režim vždy neposkytuje zlepšení výkonu a testování se provádí, chcete-li zjistit případná zlepšení. Ale to je obecně upřednostňované volbou a by měl používat v následujících případech:
 
-- Když každá buňka má malé a středně velkým počtem vazeb.
-- Při každé buňce [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) definuje všechna data buňky.
-- Pokud je do značné míry podobné, s neměnné buňky šablony jednotlivých buněk.
+- Pokud má každá buňka malá až středně velkým počtem vazeb.
+- Když každá buňka [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) definuje všechna data buňky.
+- Pokud každá buňka je do značné míry podobná s neměnnými šablonu buňky.
 
-Při virtualizaci buňky budou mít jeho kontext vazby, aktualizovat, a tak pokud aplikace používá tento režim se musí zajistit správně zpracovává aktualizace kontextu vazby. Všechna data o buňky musí pocházet z kontextu vazby, nebo může dojít k chybám konzistence. To můžete udělat pomocí datové vazby k zobrazení dat buňky. Alternativně data buňky musí být nastaveno v `OnBindingContextChanged` přepsat, a nikoli v konstruktoru vlastní buňky, jak je ukázáno v následujícím příkladu kódu:
+Při virtualizaci buňky budou mít jeho kontextu vazby, aktualizovat a proto pokud aplikace používá tento režim musíte zajistit, že aktualizace kontextu vazby jsou zpracovávány. Všechna data o buňky musí pocházet z kontextu vazby nebo může dojít k chybám konzistence. To lze provést pomocí vazby dat k zobrazení dat buňky. Můžete také data buňky musí být nastaveno v `OnBindingContextChanged` přepsat, spíše než v konstruktoru vlastní buňky, jak je ukázáno v následujícím příkladu kódu:
 
 ```csharp
 public class CustomCell : ViewCell
@@ -87,33 +87,33 @@ public class CustomCell : ViewCell
 }
 ```
 
-Další informace najdete v tématu [vazby kontextové změny](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#binding-context-changes).
+Další informace najdete v tématu [změny kontextu vazby](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#binding-context-changes).
 
-Na iOS a Android když buněk použít vlastní nástroji pro vykreslování, se musí zajistit, že je správně implementovaný oznámení o změně vlastností. Když jsou opakovaně buněk jejich hodnoty vlastností se změní při aktualizaci kontextu vazby na k dispozici buňky, který se `PropertyChanged` událostí vyvolaných. Další informace najdete v tématu [přizpůsobení ViewCell](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md).
+V Iosu a Androidu používáte-li buňky vlastní renderery, musí zajistit, že je správná implementace oznámení změn vlastností. Když údaje znovu použijí buňky hodnot vlastností se změní při aktualizaci kontextu vazby, který k dispozici buňky, s `PropertyChanged` událostí vyvolaných. Další informace najdete v tématu [přizpůsobení ViewCell](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md).
 
 #### <a name="recycleelement-with-a-datatemplateselector"></a>RecycleElement s DataTemplateSelector
 
-Když [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) používá [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) vybrat [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/), [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) ukládání do mezipaměti strategie neukládá do mezipaměti `DataTemplate`s. Místo toho `DataTemplate` pro každou položku dat v seznamu je vybrána.
+Když [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) používá [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) vyberte [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/), [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) ukládání do mezipaměti strategie neukládá do mezipaměti `DataTemplate`s. Místo toho `DataTemplate` je vybrán pro každou položku dat v seznamu.
 
 > [!NOTE]
-> [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) Ukládání do mezipaměti strategie je nezbytné, počínaje Xamarin.Forms 2.4, který po [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) se zobrazí výzva k výběru [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/)že každý `DataTemplate` musí vracet stejné [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) typu. Pokud například chcete, [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) s `DataTemplateSelector` , může vrátit buď `MyDataTemplateA` (kde `MyDataTemplateA` vrátí `ViewCell` typu `MyViewCellA`), nebo `MyDataTemplateB` (kde `MyDataTemplateB`vrátí `ViewCell` typu `MyViewCellB`), když `MyDataTemplateA` je vrácen musí vracet `MyViewCellA` nebo k výjimce.
+> [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) Strategie ukládání do mezipaměti je jako nezbytné komponenty, počínaje Xamarin.Forms 2.4, že [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) se výzva k výběru [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/), které každý `DataTemplate` musí vracet stejný [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) typu. Mějme například [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) s `DataTemplateSelector` , který může vrátit `MyDataTemplateA` (kde `MyDataTemplateA` vrátí `ViewCell` typu `MyViewCellA`), nebo `MyDataTemplateB` (kde `MyDataTemplateB`vrátí `ViewCell` typu `MyViewCellB`), kdy `MyDataTemplateA` je vrácena, musí vracet `MyViewCellA` nebo bude vyvolána výjimka.
 
 ### <a name="recycleelementanddatatemplate"></a>RecycleElementAndDataTemplate
 
-[ `RecycleElementAndDataTemplate` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElementAndDataTemplate/) Ukládání do mezipaměti strategie vychází [ `RecycleElement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElement/) ukládání do mezipaměti strategie podle kromě zajistit, že pokud [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) používá [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) vybrat [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/), `DataTemplate`v mezipaměti s typem položky v seznamu. Proto `DataTemplate`s jsou vybrané jednou za typ položky, namísto jednou za instance položky.
+[ `RecycleElementAndDataTemplate` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElementAndDataTemplate) Ukládání do mezipaměti strategie vychází [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) kromě zajištěním, že ukládání do mezipaměti strategie [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) používá [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) k výběru [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/), `DataTemplate`jsou ukládány do mezipaměti s typem položky v seznamu. Proto `DataTemplate`s jsou vybrány jednou za typ položky, namísto jednou za instance položky.
 
 > [!NOTE]
-> [ `RecycleElementAndDataTemplate` ](https://developer.xamarin.com/api/field/Xamarin.Forms.ListViewCachingStrategy.RecycleElementAndDataTemplate/) Ukládání do mezipaměti strategie má předpoklad, `DataTemplate`s vrácený [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) musí používat [ `DataTemplate` ](https://developer.xamarin.com/api/constructor/Xamarin.Forms.DataTemplate.DataTemplate/p/System.Type/) konstruktor, který přebírá `Type`.
+> [ `RecycleElementAndDataTemplate` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElementAndDataTemplate) Strategie ukládání do mezipaměti je jako nezbytné komponenty, která `DataTemplate`s vráceným [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) musí používat [ `DataTemplate` ](https://developer.xamarin.com/api/constructor/Xamarin.Forms.DataTemplate.DataTemplate/p/System.Type/) konstruktor, který přijímá `Type`.
 
-### <a name="setting-the-caching-strategy"></a>Nastavení ukládání do mezipaměti strategie
+### <a name="setting-the-caching-strategy"></a>Nastavení strategií ukládání do mezipaměti
 
-[ `ListViewCachingStrategy` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListViewCachingStrategy/) Hodnota výčtu je definován s [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) přetížení konstruktoru, jak je znázorněno v následujícím příkladu kódu:
+[ `ListViewCachingStrategy` ](xref:Xamarin.Forms.ListViewCachingStrategy) Hodnota výčtu není zadán s [ `ListView` ](xref:Xamarin.Forms.ListView) přetížení konstruktoru, jak je znázorněno v následujícím příkladu kódu:
 
 ```csharp
 var listView = new ListView(ListViewCachingStrategy.RecycleElement);
 ```
 
-V jazyce XAML, nastavte `CachingStrategy` atributu, jak je znázorněno v následujícím kódu:
+V XAML, nastavte `CachingStrategy` atributu, jak je znázorněno v následujícím kódu:
 
 ```xaml
 <ListView CachingStrategy="RecycleElement">
@@ -127,13 +127,13 @@ V jazyce XAML, nastavte `CachingStrategy` atributu, jak je znázorněno v násle
 </ListView>
 ```
 
-Tato akce nemá stejný účinek jako nastavení ukládání do mezipaměti argument strategie v konstruktoru v C#. Všimněte si, že neexistuje žádná `CachingStrategy` vlastnost `ListView`.
+To má stejný účinek jako argument strategie ukládání do mezipaměti v konstruktoru v C#. Všimněte si, že neexistuje žádná `CachingStrategy` vlastnost `ListView`.
 
-#### <a name="setting-the-caching-strategy-in-a-subclassed-listview"></a>Nastavení ukládání do mezipaměti strategie v rozčleněné ListView
+#### <a name="setting-the-caching-strategy-in-a-subclassed-listview"></a>Nastavení ukládání do mezipaměti strategie v rozčleněných do podtříd ListView
 
-Nastavení `CachingStrategy` atribut z XAML rozčleněné [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) požadované chování, nebude vytvořit, protože neexistuje žádné `CachingStrategy` vlastnost `ListView`. Kromě toho pokud [XAMLC](~/xamarin-forms/xaml/xamlc.md) je povoleno, budou vytvořeny následující chybová zpráva: **žádná vlastnost, vazbu vlastnosti nebo události nalezené pro 'CachingStrategy.**
+Nastavení `CachingStrategy` atribut z XAML rozčleněných do podtříd [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) nevytvoří požadované chování, protože neexistuje žádný `CachingStrategy` vlastnost `ListView`. Kromě toho pokud [XAMLC](~/xamarin-forms/xaml/xamlc.md) je povoleno, budou vytvořeny následující chybová zpráva: **žádná vlastnost, vázanou vlastnost nebo událost pro 'CachingStrategy' nalezen**
 
-Řešení tohoto problému je zadání konstruktor na rozčleněné [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) který přijme [ `ListViewCachingStrategy` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListViewCachingStrategy/) parametr a předá ji do základní třídy:
+Řešení tohoto problému je zadání konstruktoru na rozčleněných do podtříd [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) , který přijme [ `ListViewCachingStrategy` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListViewCachingStrategy/) parametr a předá ji do základní třídy:
 
 ```csharp
 public class CustomListView : ListView
@@ -145,7 +145,7 @@ public class CustomListView : ListView
 }
 ```
 
-Pak se [ `ListViewCachingStrategy` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListViewCachingStrategy/) z XAML můžete zadat hodnotu výčtu pomocí `x:Arguments` syntaxe:
+Pak bude [ `ListViewCachingStrategy` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListViewCachingStrategy/) hodnota výčtu je zadat v XAML pomocí `x:Arguments` syntaxi:
 
 ```xaml
 <local:CustomListView>
@@ -161,28 +161,28 @@ Pak se [ `ListViewCachingStrategy` ](https://developer.xamarin.com/api/type/Xama
 
 Existuje mnoho postupů pro zlepšení výkonu `ListView`:
 
--  Vytvoření vazby `ItemsSource` vlastnost, která má `IList<T>` kolekce místo `IEnumerable<T>` kolekce, protože `IEnumerable<T>` kolekce nepodporují náhodný přístup.
--  Použít předdefinované buňky (jako je `TextCell`  /  `SwitchCell` ) místo `ViewCell` vždy, když je možné.
--  Použijte méně elementů. Například zvažte použití jedné `FormattedString` popisek místo několika popisky.
--  Nahraďte `ListView` s `TableView` při zobrazení-homogenního dat – to znamená, dat z různých typů.
--  Omezit použití [ `Cell.ForceUpdateSize` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Cell.ForceUpdateSize()/) metoda. Pokud Nepromyšlené, způsobí snížení výkonu.
--  V systému Android, vyhněte se nastavení `ListView`na řádek oddělovače viditelnost nebo barvu po má po vytvoření instance, jako je výsledkem snížení výkonu velké.
--  Vyhnout změně rozložení buněk, na základě [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/). To způsobuje náklady na velké rozložení a inicializace.
--  Nepoužívejte hluboko vložené rozložení hierarchie. Použití `AbsoluteLayout` nebo `Grid` snížit vnoření.
--  Vyhněte se konkrétní `LayoutOptions` jiné než `Fill` (výplně je cheapest k výpočtu).
--  Neumísťujte `ListView` uvnitř `ScrollView` z následujících důvodů:
+-  Vytvoření vazby `ItemsSource` vlastnost `IList<T>` kolekce místo `IEnumerable<T>` kolekce, protože `IEnumerable<T>` kolekce nepodporují náhodný přístup.
+-  Použít integrované buňky (jako je `TextCell`  /  `SwitchCell` ) namísto `ViewCell` vždy, když je možné.
+-  Použití menší počet elementů. Představme si třeba pomocí jediného `FormattedString` popisek místo více popisky.
+-  Nahradit `ListView` s `TableView` při zobrazení nehomogenní data – to znamená, že data různých typů.
+-  Omezit použití [ `Cell.ForceUpdateSize` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Cell.ForceUpdateSize()/) metody. Pokud Nepromyšlené, způsobí snížení výkonu.
+-  V Androidu, nenastavujte `ListView`na řádek oddělovač viditelnost nebo Barva po jeho vytvoření instance, jak to má za následek snížení výkonu velké.
+-  Neměňte rozložení buněk, na základě [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/). Tím se spojují velké náklady na rozložení a inicializace.
+-  Vyhněte se rozložení hluboce vnořené hierarchie. Použití `AbsoluteLayout` nebo `Grid` snížit vnoření.
+-  Vyhněte se konkrétní `LayoutOptions` jiné než `Fill` (výplň je tím nejlevnější compute).
+-  Předejde `ListView` uvnitř `ScrollView` z následujících důvodů:
     - `ListView` Implementuje vlastní posouvání.
-    - `ListView` Nebude přijímat žádné gesta, jak se budou zpracovávat nadřazené `ScrollView`.
-    - `ListView` Může být vlastní záhlaví a zápatí stránky, která se posouvá společně s prvky v seznamu, potenciálně nabídky funkce `ScrollView` byl použit pro. Další informace najdete v části [záhlaví a zápatí](~/xamarin-forms/user-interface/listview/customizing-list-appearance.md#Headers_and_Footers).
--  Pokud potřebujete velmi určité a složité návrh uvedené ve vašem buněk, zvažte vlastní zobrazovací jednotky.
+    - `ListView` Nebude přijímat žádné gesta, jak se bude zpracován adresou nadřazené `ScrollView`.
+    - `ListView` Ale může představovat vlastní záhlaví a zápatí, umožňuje posouvání prvky seznamu potenciálně nabízí funkce, která `ScrollView` byl použit pro. Další informace najdete v části [záhlaví a zápatí](~/xamarin-forms/user-interface/listview/customizing-list-appearance.md#Headers_and_Footers).
+-  Pokud budete potřebovat velmi specifický, komplexní návrh uvedené ve vašich buňky vezměte v úvahu vlastní zobrazovací jednotky.
 
-`AbsoluteLayout` se může provést rozložení bez volání jedné míry. Díky tomu je velice mocný výkonu. Pokud `AbsoluteLayout` nelze použít, zvažte [ `RelativeLayout` ](http://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/). Pokud používáte `RelativeLayout`, předávání omezení přímo bude podstatně rychleji než pomocí výrazu rozhraní API. Je to způsobeno výrazu rozhraní API používá JIT, a v systému iOS stromu se budou interpretovat, což je pomalejší. Ve výrazu rozhraní API je vhodný pro rozložení stránek kde pouze vyžadovala na počáteční rozložení a oběh, ale v `ListView`, kde je spuštěn neustále při posouvání, ho škodí jak výkonu.
+`AbsoluteLayout` má schopnost provádět rozložení bez volání jedné míry. To umožňuje velmi efektivní při výkonu. Pokud `AbsoluteLayout` nelze použít, zvažte [ `RelativeLayout` ](http://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/). Pokud používáte `RelativeLayout`, předávání omezení přímo bude výrazně rychlejší než použití výrazu rozhraní API. Důvodem je skutečnost, že výraz rozhraní API používá JIT, a v Iosu stromu má interpretovat, což je pomalejší. Výraz rozhraní API je vhodný pro rozložení stránky kde pouze vyžadovala počáteční rozložení a otočení, ale v `ListView`, kde je spuštěn neustále při posouvání, to bolí výkonu.
 
-Vytváření vlastní zobrazovací jednotky pro [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) nebo jeho buněk je jeden ze způsobů snižuje účinek rozložení výpočty v posouvání výkonu. Další informace najdete v tématu [přizpůsobení prvku ListView](~/xamarin-forms/app-fundamentals/custom-renderer/listview.md) a [přizpůsobení ViewCell](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md).
+Vytváření vlastního rendereru pro [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) nebo jeho buněk je jedním z přístupů k tím je omezen vliv rozložení výpočty na posouvání výkonu. Další informace najdete v tématu [přizpůsobení ListView](~/xamarin-forms/app-fundamentals/custom-renderer/listview.md) a [přizpůsobení ViewCell](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md).
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Vlastní vykreslení zobrazení (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithListviewNative/)
-- [Vlastní zobrazovací jednotky ViewCell (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/viewcell/)
+- [Vlastní nástroj pro vykreslování zobrazení (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithListviewNative/)
+- [Vlastní nástroj pro vykreslování ViewCell (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/viewcell/)
 - [ListViewCachingStrategy](https://developer.xamarin.com/api/type/Xamarin.Forms.ListViewCachingStrategy/)

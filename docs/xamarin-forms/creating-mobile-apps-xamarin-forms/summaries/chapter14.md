@@ -1,106 +1,106 @@
 ---
-title: Shrnutí kapitoly 14. Absolutní rozložení
-description: 'Vytváření mobilních aplikací s Xamarin.Forms: Souhrn kapitoly 14. Absolutní rozložení'
+title: Souhrn kapitoly 14. Absolutní rozložení
+description: 'Vytváření mobilních aplikací s Xamarin.Forms: Souhrn kapitola 14. Absolutní rozložení'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 88882A48-3226-42D1-96ED-241250B64A84
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: b8fe8f8bb0ba3204a312f3d91bc59b8fa3f7c03a
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 2dd94d5fb8eecc5cf4a3e376bc67c2cb6afb153b
+ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241400"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37935436"
 ---
-# <a name="summary-of-chapter-14-absolute-layout"></a>Shrnutí kapitoly 14. Absolutní rozložení
+# <a name="summary-of-chapter-14-absolute-layout"></a>Souhrn kapitoly 14. Absolutní rozložení
 
-Jako `StackLayout`, [ `AbsoluteLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayout/) je odvozena z `Layout<View>` a dědí `Children` vlastnost. `AbsoluteLayout` implementuje rozložení systém, který vyžaduje programátory k určení pozice své podřízené objekty a volitelně jejich velikost. Je zadána pozice levého horního rohu podřízených relativně k levém horním rohu `AbsoluteLayout` v jednotkách nezávislé na zařízení. `AbsoluteLayout` implementuje také přímo úměrná umístění a velikost funkce.
+Stejně jako `StackLayout`, [ `AbsoluteLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayout/) je odvozena z `Layout<View>` a dědí `Children` vlastnost. `AbsoluteLayout` implementuje systém rozložení, který vyžaduje programátor k určení pozic jeho podřízené položky a volitelně, jejich velikosti. Pozice je určená levém horním rohu podřízeného vzhledem k levého horního rohu `AbsoluteLayout` v jednotkách nezávislých na zařízení. `AbsoluteLayout` také implementuje proporcionální umístění a velikosti funkce.
 
-`AbsoluteLayout` považuje se za speciální rozložení systému použije jenom v případě, že programátorů použít velikost na podřízené objekty (například `BoxView` elementy) nebo pokud velikost elementu nemá vliv, umístění jiné podřízené objekty. `HorizontalOptions` a `VerticalOptions` vlastnosti mít žádný vliv na podřízené objekty `AbsoluteLayout`.
+`AbsoluteLayout` by měly být považovány za zvláštní účely rozložení systému se použije jenom v případě, že může často znamenat výrazný programátor velikost na podřízené objekty (například `BoxView` elementy) nebo pokud velikost prvku nemá vliv na umístění ostatní podřízené objekty. `HorizontalOptions` a `VerticalOptions` vlastnosti nemají žádný vliv na podřízené objekty `AbsoluteLayout`.
 
-Tato kapitola také představuje důležitou součást *přidružené vazbu vlastnosti* které umožňují vlastnosti definované v jedné třídy (v tomto případě `AbsoluteLayout`) být připojené k jiné třídě (podřízenou `AbsoluteLayout`).
+Tato kapitola také zavádí důležité funkce *připojené vlastnosti umožňující vazbu* , která umožňují vlastnosti definované v jedné třídy (v tomto případě `AbsoluteLayout`) bude připojený k jiné třídy (podřízený `AbsoluteLayout`).
 
 ## <a name="absolutelayout-in-code"></a>AbsoluteLayout v kódu
 
-Můžete přidat podřízené `Children` kolekce `AbsoluteLayout` přes standardní [ `Add` ](https://developer.xamarin.com/api/member/System.Collections.Generic.ICollection%3CT%3E.Add/p/T/) metoda, ale `AbsoluteLayout` také poskytuje rozšířená [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.AbsoluteLayout+IAbsoluteList%3CT%3E.Add/p/Xamarin.Forms.View/Xamarin.Forms.Rectangle/Xamarin.Forms.AbsoluteLayoutFlags/) Metoda, která umožňuje určit [ `Rectangle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Rectangle/). Jiné [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.AbsoluteLayout+IAbsoluteList%3CT%3E.Add/p/Xamarin.Forms.View/Xamarin.Forms.Point/) metoda vyžaduje, jenom [ `Point` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Point/), v takovém případě neomezeným podřízený objekt a velikosti sám sebe.
+Můžete přidat podřízené `Children` kolekce `AbsoluteLayout` pomocí standardní [ `Add` ](https://developer.xamarin.com/api/member/System.Collections.Generic.ICollection%3CT%3E.Add/p/T/) metody, ale `AbsoluteLayout` poskytuje také rozšířené [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.AbsoluteLayout+IAbsoluteList%3CT%3E.Add/p/Xamarin.Forms.View/Xamarin.Forms.Rectangle/Xamarin.Forms.AbsoluteLayoutFlags/) Metoda, která umožňuje určit [ `Rectangle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Rectangle/). Jiné [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.AbsoluteLayout+IAbsoluteList%3CT%3E.Add/p/Xamarin.Forms.View/Xamarin.Forms.Point/) metoda vyžaduje, jenom [ `Point` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Point/), v takovém případě neomezeným podřízený objekt a velikosti samotného.
 
-Můžete vytvořit `Rectangle` hodnotu s [konstruktor](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Rectangle.Rectangle/p/System.Double/System.Double/System.Double/System.Double/) vyžadující čtyři hodnoty &mdash; první dvě označující pozice levého horního rohu podřízených relativně k nadřazenému a další dva označující velikost dítěte. Nebo můžete použít [konstruktor](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Rectangle.Rectangle/p/Xamarin.Forms.Point/Xamarin.Forms.Size/) vyžadující `Point` a [ `Size` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Size/) hodnotu.
+Můžete vytvořit `Rectangle` hodnotu [konstruktor](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Rectangle.Rectangle/p/System.Double/System.Double/System.Double/System.Double/) , která vyžaduje čtyři hodnoty &mdash; první dva označující polohu levého horního rohu podřízené relativně k nadřazenému a další dva, která velikost dítěte. Nebo můžete použít [konstruktor](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Rectangle.Rectangle/p/Xamarin.Forms.Point/Xamarin.Forms.Size/) , která vyžaduje `Point` a [ `Size` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Size/) hodnotu.
 
-Tyto `Add` metody je ukázán v [ **AbsoluteDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/AbsoluteDemo), které pozic `BoxView` elementů pomocí `Rectangle` hodnoty a `Label` elementu s použitím právě `Point` hodnotu.
+Tyto `Add` metody je ukázán v [ **AbsoluteDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/AbsoluteDemo), které pozice `BoxView` prvky pomocí `Rectangle` hodnoty a `Label` elementu s použitím pouze `Point` hodnotu.
 
-[ **ChessboardFixed** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/ChessboardFixed) ukázkové používá 32 `BoxView` elementy pro vytvoření chessboard vzorku. Poskytuje program `BoxView` velikost elementů pevně hranaté 35 jednotky. `AbsoluteLayout` Má jeho `HorizontalOptions` a `VerticalOptions` nastavena na `LayoutOptions.Center`, který spustí `AbsoluteLayout` tak, aby měl celková velikost hranaté 280 jednotky.
+[ **ChessboardFixed** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/ChessboardFixed) ukázkový použití 32 `BoxView` prvky k vytvoření vzorku chessboard. Poskytuje program `BoxView` velikost prvků pevně zakódovaná čtverec 35 jednotky. `AbsoluteLayout` Má jeho `HorizontalOptions` a `VerticalOptions` nastavena na `LayoutOptions.Center`, které způsobí, že `AbsoluteLayout` mít celková velikost čtverec 280 jednotky.
 
-## <a name="attached-bindable-properties"></a>Připojené vlastnosti vazbu
+## <a name="attached-bindable-properties"></a>Připojené vlastnosti umožňující vazbu
 
-Je také možné nastavit pozice a volitelně velikost podřízenou `AbsoluteLayout` po byl přidán do `Children` kolekce s použitím statickou metodu [ `AbsoluteLayout.SetLayoutBounds` ](https://developer.xamarin.com/api/member/Xamarin.Forms.AbsoluteLayout.SetLayoutBounds/p/Xamarin.Forms.BindableObject/Xamarin.Forms.Rectangle/). První argument je podřízeným; druhý `Rectangle` objektu. Můžete určit, že podřízená velikostí samotné vodorovně nebo svisle nastavením hodnoty šířky a výšky na [ `AbsoluteLayout.AutoSize` ](https://developer.xamarin.com/api/property/Xamarin.Forms.AbsoluteLayout.AutoSize/) konstantní.
+Je také možné nastavit umístění a volitelně velikost podřízenou `AbsoluteLayout` po přidání do `Children` kolekce pomocí statické metody [ `AbsoluteLayout.SetLayoutBounds` ](https://developer.xamarin.com/api/member/Xamarin.Forms.AbsoluteLayout.SetLayoutBounds/p/Xamarin.Forms.BindableObject/Xamarin.Forms.Rectangle/). První argument je podřízeným; Druhým je `Rectangle` objektu. Můžete určit, že podřízené velikosti samotného vodorovně nebo svisle nastavením hodnoty šířky a výšky na [ `AbsoluteLayout.AutoSize` ](https://developer.xamarin.com/api/property/Xamarin.Forms.AbsoluteLayout.AutoSize/) konstantní.
 
-[ **ChessboardDynamic** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/ChessboardDynamic) ukázkové PUT `AbsoluteLayout` v `ContentView` s `SizeChanged` obslužná rutina volat `AbsoluteLayout.SetLayoutBounds` na všechny podřízené objekty tak, aby byly co největší.  
+[ **ChessboardDynamic** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/ChessboardDynamic) ukázkový vloží `AbsoluteLayout` v `ContentView` s `SizeChanged` obslužná rutina volat `AbsoluteLayout.SetLayoutBounds` na všechny podřízené objekty tak, aby byly co největší.  
 
-Připojená vlastnost vazbu, `AbsoluteLayout` definuje je statické pole jen pro čtení typu `BindableProperty` s názvem [ `AbsoluteLayout.LayoutBoundsProperty` ](https://developer.xamarin.com/api/field/Xamarin.Forms.AbsoluteLayout.LayoutBoundsProperty/). Statické `AbsoluteLayout.SetLayoutBounds` voláním je implementována metoda `SetValue` na podřízených s `AbsoluteLayout.LayoutBoundsProperty`. Podřízená obsahuje slovník, ve kterém jsou uloženy připojená vazbu vlastnost a její hodnotu. Během rozložení `AbsoluteLayout` tuto hodnotu můžete získat voláním [ `AbsoluteLayout.GetLayoutBounds` ](https://developer.xamarin.com/api/member/Xamarin.Forms.AbsoluteLayout.GetLayoutBounds/p/Xamarin.Forms.BindableObject/), které je implementováno s `GetValue` volání.
+Připojená vlastnost podporující vazby, který `AbsoluteLayout` definuje je statické pole jen pro čtení typu `BindableProperty` s názvem [ `AbsoluteLayout.LayoutBoundsProperty` ](https://developer.xamarin.com/api/field/Xamarin.Forms.AbsoluteLayout.LayoutBoundsProperty/). Statické `AbsoluteLayout.SetLayoutBounds` metoda je implementována pomocí volání `SetValue` podřízených s `AbsoluteLayout.LayoutBoundsProperty`. Podřízené obsahuje slovník, ve kterém jsou uložené připojená vlastnost podporující vazby a její hodnotu. Během rozložení `AbsoluteLayout` tuto hodnotu lze získat voláním [ `AbsoluteLayout.GetLayoutBounds` ](https://developer.xamarin.com/api/member/Xamarin.Forms.AbsoluteLayout.GetLayoutBounds/p/Xamarin.Forms.BindableObject/), které je implementováno s `GetValue` volání.
 
-## <a name="proportional-sizing-and-positioning"></a>Přímo úměrná velikosti a rozmístění
+## <a name="proportional-sizing-and-positioning"></a>Proporční Změna velikosti a polohování
 
-`AbsoluteLayout` implementuje přímo úměrná velikosti a rozmístění funkce. Třída definuje druhý přidružená vlastnost vazbu, [ `LayoutFlagsProperty` ](https://developer.xamarin.com/api/field/Xamarin.Forms.AbsoluteLayout.LayoutFlagsProperty/), pomocí související statických metod [ `AbsoluteLayout.SetLayoutFlags` ](https://developer.xamarin.com/api/member/Xamarin.Forms.AbsoluteLayout.SetLayoutFlags/p/Xamarin.Forms.BindableObject/Xamarin.Forms.AbsoluteLayoutFlags/) a [ `AbsoluteLayout.GetLayoutFlags` ](https://developer.xamarin.com/api/member/Xamarin.Forms.AbsoluteLayout.GetLayoutFlags/p/Xamarin.Forms.BindableObject/).
+`AbsoluteLayout` implementuje přímo úměrná velikosti a polohování funkce. Třída definuje druhý připojená vlastnost podporující vazby, [ `LayoutFlagsProperty` ](https://developer.xamarin.com/api/field/Xamarin.Forms.AbsoluteLayout.LayoutFlagsProperty/), s související statické metody [ `AbsoluteLayout.SetLayoutFlags` ](https://developer.xamarin.com/api/member/Xamarin.Forms.AbsoluteLayout.SetLayoutFlags/p/Xamarin.Forms.BindableObject/Xamarin.Forms.AbsoluteLayoutFlags/) a [ `AbsoluteLayout.GetLayoutFlags` ](https://developer.xamarin.com/api/member/Xamarin.Forms.AbsoluteLayout.GetLayoutFlags/p/Xamarin.Forms.BindableObject/).
 
-Argument `AbsoluteLayout.SetLayoutFlags` a vrátí hodnotu, která `AbsoluteLayout.GetLayoutFlags` je hodnota typu [ `AbsoluteLayoutFlags` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayoutFlags/), výčet s následující členy:
+Argument `AbsoluteLayout.SetLayoutFlags` a návratová hodnota `AbsoluteLayout.GetLayoutFlags` je hodnota typu [ `AbsoluteLayoutFlags` ](xref:Xamarin.Forms.AbsoluteLayoutFlags), výčet s následující členy:
 
-- [`None`](https://developer.xamarin.com/api/field/Xamarin.Forms.AbsoluteLayoutFlags.None/) (rovna 0)
-- [`XProportional`](https://developer.xamarin.com/api/field/Xamarin.Forms.AbsoluteLayoutFlags.XProportional/) (1)
-- [`YProportional`](https://developer.xamarin.com/api/field/Xamarin.Forms.AbsoluteLayoutFlags.YProportional/) (2)
-- [`PositionProportional`](https://developer.xamarin.com/api/field/Xamarin.Forms.AbsoluteLayoutFlags.PositionProportional/) (3)
-- [`WidthProportional`](https://developer.xamarin.com/api/field/Xamarin.Forms.AbsoluteLayoutFlags.WidthProportional/) (4)
-- [`HeightProportional`](https://developer.xamarin.com/api/field/Xamarin.Forms.AbsoluteLayoutFlags.HeightProportional/) (8)
-- [`SizeProportional`](https://developer.xamarin.com/api/field/Xamarin.Forms.AbsoluteLayoutFlags.SizeProportional/) (12)
-- [`All`](https://developer.xamarin.com/api/field/Xamarin.Forms.AbsoluteLayoutFlags.All/) (\xFFFFFFFF)
+- [`None`](xref:Xamarin.Forms.AbsoluteLayoutFlags.None) (roven 0)
+- [`XProportional`](xref:Xamarin.Forms.AbsoluteLayoutFlags.XProportional) (1)
+- [`YProportional`](xref:Xamarin.Forms.AbsoluteLayoutFlags.YProportional) (2)
+- [`PositionProportional`](xref:Xamarin.Forms.AbsoluteLayoutFlags.PositionProportional) (3)
+- [`WidthProportional`](xref:Xamarin.Forms.AbsoluteLayoutFlags.WidthProportional) (4)
+- [`HeightProportional`](xref:Xamarin.Forms.AbsoluteLayoutFlags.HeightProportional) (8)
+- [`SizeProportional`](xref:Xamarin.Forms.AbsoluteLayoutFlags.SizeProportional) (12)
+- [`All`](xref:Xamarin.Forms.AbsoluteLayoutFlags.All) (\xFFFFFFFF)
 
-Tato nastavení u C# bitový operátor OR můžete kombinovat.
+Můžete kombinovat s C# bitového operátoru OR.
 
-Sadou tyto příznaky určité vlastnosti `Rectangle` rozložení hranice struktura používaná k umístění a velikost podřízená vyhodnocovány úměrně.
+Sadou tyto příznaky určitých vlastností objektu `Rectangle` rozložení hranice struktura používaná k umístění a velikost podřízené proporcionálně interpretovány.
 
-Když `WidthProportional` nastavený příznak, `Width` hodnota 1 znamená, že podřízená šířku stejné jako `AbsoluteLayout`. Podobný postup se používá k výšce.
+Když `WidthProportional` je příznak nastaven, `Width` hodnota 1 znamená, že podřízená je stejnou šířku jako `AbsoluteLayout`. Podobný přístup se používá pro výšku.
 
-Velikost úměrná umístění bere v úvahu. Když `XProportional` nastavený příznak, `X` vlastnost `Rectangle` rozložení hranice je úměrná. Hodnota 0 znamená, že podřízená levého kraje je nastavený na levém okraji `AbsoluteLayout`, ale na pozici 1 znamená, že její pravý okraj je nastavený na pravý okraj `AbsoluteLayout`, není nad rámec podle pravé hrany `AbsoluteLayout` jako může expec t. `X` Vlastnost 0,5 centra vodorovně v podřízených `AbsoluteLayout`.
+Umístění přímo úměrná velikosti bere v úvahu. Když `XProportional` je příznak nastaven, `X` vlastnost `Rectangle` hranice rozložení je přímo úměrná. Hodnota 0 znamená, že podřízené levým edge je umístěn na levém okraji `AbsoluteLayout`, ale pozice 1 znamená, že pravý okraj prvku je umístěn na pravé straně `AbsoluteLayout`, není nad rámec pravého okraje `AbsoluteLayout` jak může expec t. `X` Vlastnost 0,5 centra vodorovně v podřízené `AbsoluteLayout`.
 
-[ **ChessboardProportional** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/ChessboardProportional) příklad znázorňuje použití úměrná velikosti a umístění.
+[ **ChessboardProportional** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/ChessboardProportional) ukázka demonstruje použití přímo úměrná velikosti a umístění.
 
-## <a name="working-with-proportional-coordinates"></a>Práce přímo úměrná souřadnice
+## <a name="working-with-proportional-coordinates"></a>Práce s proporcionální souřadnice
 
-V některých případech je jednodušší zamyslet nad přímo úměrná jinak než jak jsou implementované v umístění `AbsoluteLayout`. Chcete pracovat přímo úměrná souřadnice kde `X` vlastnost 1 umisťuje vůči pravému okraji levého okraje dítěte (nikoli pravého okraje) `AbsoluteLayout`.
+V některých případech je snazší představit proporcionální jinak, než jak je implementován v umístění `AbsoluteLayout`. Budete pravděpodobně chtít pracovat přímo úměrná souřadnice kde `X` vlastnost 1 umístí na pravém okraji levého okraje podřízené (spíše než pravého okraje) `AbsoluteLayout`.
 
-Tento alternativní umísťovací systém lze volat "zlomkové podřízené souřadnice." Můžete převést z zlomkové podřízené souřadnice rozložení hranice požadované pro `AbsoluteLayout` pomocí následujícího vzorce:
+Toto alternativní umístění schéma může být volána "coordinates desetinné podřízené." Můžete převést ze souřadnice desetinné podřízené rozložení hranice, vyžaduje se pro `AbsoluteLayout` pomocí těchto vzorců:
 
 layoutBounds.X = (fractionalChildCoordinate.X / (1 - layoutBounds.Width))
 
 layoutBounds.Y = (fractionalChildCoordinate.Y / (1 - layoutBounds.Height))
 
-[ **ProportionalCoordinateCalc** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/PropCoordCalc) příklad znázorňuje to.
+[ **ProportionalCoordinateCalc** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/PropCoordCalc) příklad ukazuje to.
 
 ## <a name="absolutelayout-and-xaml"></a>AbsoluteLayout a XAML
 
-Můžete použít `AbsoluteLayout` v jazyce XAML a nastavte vlastnosti připojené vazbu na podřízené objekty daného `AbsoluteLayout` pomocí hodnoty atributu `AbsoluteLayout.LayoutBounds` a `AbsoluteLayout.LayoutFlags`. Tento postup je znázorněn v [ **AbsoluteXamlDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/AbsoluteXamlDemo) a [ **ChessboardXaml** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/ChessboardXaml) ukázky. Druhé program obsahuje 32 `BoxView` elementů, ale používá implicitní `Style` , který obsahuje `AbsoluteLayout.LayoutFlags` vlastnost zachovat kód dolů minimální.
+Můžete použít `AbsoluteLayout` v XAML a připojené vlastnosti umožňující vazbu na podřízené objekty daného `AbsoluteLayout` pomocí hodnoty atributu `AbsoluteLayout.LayoutBounds` a `AbsoluteLayout.LayoutFlags`. To je patrné [ **AbsoluteXamlDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/AbsoluteXamlDemo) a [ **ChessboardXaml** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/ChessboardXaml) ukázky. Druhý program obsahuje 32 `BoxView` elementů, ale používá implicitní `Style` , který obsahuje `AbsoluteLayout.LayoutFlags` vlastnost uchovávat značky na minimum.
 
-Atribut v jazyce XAML, která se skládá z název třídy, tečku a název vlastnosti je *vždy* ve připojené vazbu vlastnosti.
+Atribut v XAML, který se skládá z názvu třídy, tečku a název vlastnosti je *vždy* připojené vlastnosti umožňující vazbu.
 
-## <a name="overlays"></a>Překryvy
+## <a name="overlays"></a>Překrytí
 
-Můžete použít `AbsoluteLayout` vytvořit *překrytí*, který možná obsahuje stránku s dalšími kontrolami chránit uživatele před interakci s normální ovládací prvky na stránce.
+Můžete použít `AbsoluteLayout` k vytvoření *překrytí*, které možná zahrnuje stránky s jinými ovládacími prvky pro ochranu uživateli hlasovou interakci s normální ovládací prvky na stránce.
 
-[ **SimpleOverlay** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/SimpleOverlay) ukázka ukazuje tato technika a také ukazuje [ `ProgressBar` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ProgressBar/), zobrazuje v rozsahu, který program dokončení úloha.
+[ **SimpleOverlay** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/SimpleOverlay) ukázka demonstruje tento postup a také ukazuje [ `ProgressBar` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ProgressBar/), zobrazuje v rozsahu, do kterého byla dokončena programu úloha.
 
-## <a name="some-fun"></a>Některé fun
+## <a name="some-fun"></a>Trochu zábavy
 
-[ **DotMatrixClock** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/DotMatrixClock) ukázka zobrazuje aktuální čas s hodnotou display simulované matice 5 x 7 tečkou. Každý bod je `BoxView` (existují zde 228 je) velikost a umístění na `AbsoluteLayout`.
+[ **DotMatrixClock** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/DotMatrixClock) ukázka zobrazí aktuální čas s Simulovaná 5 x 7 jehličkové tiskárny zobrazení. Každé tečce je `BoxView` (existují 228 z nich) velikost a umístění na `AbsoluteLayout`.
 
-[![Trojitá snímek obrazovky tečkou matice hodiny](images/ch14fg08-small.png "tečkou matice hodiny")](images/ch14fg08-large.png#lightbox "tečkou matice hodiny")
+[![Trojitá snímek obrazovky s orientací hodiny](images/ch14fg08-small.png "orientací hodiny")](images/ch14fg08-large.png#lightbox "orientací hodiny")
 
-[ **BouncingText** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/BouncingText) program animuje dva `Label` objekty kolísají vodorovně a svisle po obrazovce.
+[ **BouncingText** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/BouncingText) program animuje dvě `Label` objekty kolísají vodorovně a svisle na obrazovce.
 
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Úplný text 14 kapitoly (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch14-Apr2016.pdf)
-- [Ukázky kapitoly 14](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14)
+- [Kapitola 14 textu v plném znění (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch14-Apr2016.pdf)
+- [Ukázky kapitola 14](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14)
 - [AbsoluteLayout](~/xamarin-forms/user-interface/layouts/absolute-layout.md)

@@ -1,6 +1,6 @@
 ---
-title: Část 3. XAML – rozšíření značek
-description: XAML – rozšíření značek tvoří důležitou součást v jazyce XAML, které umožní vlastnosti, které chcete nastavit na objekty nebo hodnoty, které jsou nepřímo odkazované z jiných zdrojů.
+title: Část 3. Rozšíření značek XAML
+description: Rozšíření značek XAML tvoří důležitou funkcí v XAML, díky kterým můžou vlastnosti nastavit na objekty nebo hodnoty, které jsou nepřímo odkazovány z jiných zdrojů.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
@@ -8,29 +8,29 @@ author: charlespetzold
 ms.author: chape
 ms.date: 3/27/2018
 ms.openlocfilehash: 6fcb051d2c24c7da169106b06ad5ebfc91edafa6
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245908"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37935612"
 ---
-# <a name="part-3-xaml-markup-extensions"></a>Část 3. XAML – rozšíření značek
+# <a name="part-3-xaml-markup-extensions"></a>Část 3. Rozšíření značek XAML
 
-_XAML – rozšíření značek tvoří důležitou součást v jazyce XAML, které umožní vlastnosti, které chcete nastavit na objekty nebo hodnoty, které jsou nepřímo odkazované z jiných zdrojů. XAML – rozšíření značek jsou obzvláště důležité pro sdílení objekty a odkazování na konstanty používají v rámci aplikace, ale v datových vazeb najdou jejich největší nástroj._
+_Rozšíření značek XAML tvoří důležitou funkcí v XAML, díky kterým můžou vlastnosti nastavit na objekty nebo hodnoty, které jsou nepřímo odkazovány z jiných zdrojů. Rozšíření značek XAML jsou obzvláště důležité pro sdílení obsahu objektů a odkazování na ně konstanty používané v celé aplikaci, ale naleznou. jejich největší nástroj v datové vazby._
 
-## <a name="xaml-markup-extensions"></a>XAML – rozšíření značek
+## <a name="xaml-markup-extensions"></a>Rozšíření značek XAML
 
-Obecně platí jazyka XAML použijete k nastavení vlastnosti objektu explicitní hodnoty jako řetězec, je číslo, člena výčtu nebo řetězec, který je převést na hodnotu na pozadí.
+Obecně platí pomocí XAML můžete nastavit vlastnosti objektu na explicitní hodnoty, jako je řetězec, číslo, na člena výčtu nebo řetězec, který je převedena na hodnotu na pozadí.
 
-V některých případech však vlastnosti musí odkazovat místo hodnoty definované někde jinde, nebo může vyžadující málo zpracování kódem za běhu. Pro tyto účely, XAML *rozšíření značek* jsou k dispozici.
+V některých případech však vlastnosti musí odkazovat místo hodnoty definované někde jinde, nebo které mohou vyžadovat trochu zpracování kódu za běhu. Pro tyto účely, XAML *– rozšíření značek* jsou k dispozici.
 
-Tato rozšíření značek XAML nejsou rozšíření XML. XAML je zcela právní XML. Nazývají "rozšíření", protože se opírají o kód v třídy, které implementují `IMarkupExtension`. Můžete napsat vlastní rozšíření vlastních značek.
+Tato rozšíření značek XAML nejsou rozšíření XML. XAML je zcela právní XML. Jsou volány "rozšíření", protože se zálohují ve třídách, které implementují kód `IMarkupExtension`. Můžete napsat vlastní rozšíření vlastních značek.
 
-V mnoha případech jsou okamžitě rozpoznatelném v souborech XAML rozšíření značek v jazyce XAML, protože se objeví jako nastavení atributů oddělená složené závorky: {a}, ale někdy se rozšíření značek v kódu jako konvenční elementy.
+V mnoha případech jsou rozšíření značek XAML pozná okamžitě v souborech XAML, protože se zobrazují jako nastavení atributů oddělených ve složených závorkách: {a}, ale někdy – rozšíření značek se zobrazí v kódu jako konvenční elementy.
 
 ## <a name="shared-resources"></a>Sdílené prostředky
 
-Některé stránky XAML obsahovat několik zobrazení s nastaveny na stejné hodnoty vlastnosti. Například mnoho nastavení vlastností pro tyto `Button` objekty jsou stejné:
+Některé stránky XAML obsahuje několik zobrazení s vlastnosti nastavené stejné hodnoty. Například mnoho nastavení vlastností pro tyto `Button` jsou objekty stejné:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -67,11 +67,11 @@ Některé stránky XAML obsahovat několik zobrazení s nastaveny na stejné hod
 </ContentPage>
 ```
 
-Pokud jeden z těchto vlastností je třeba změnit, budete pravděpodobně chtít provést změnu pouze jednou, nikoli třikrát. Pokud to byly kódu, budete pravděpodobně používat konstanty a statické objekty jen pro čtení zajistit, aby byl tyto hodnoty, konzistentní a snadno upravit.
+Pokud některou z těchto vlastností je třeba změnit, budete pravděpodobně chtít provést změny pouze jednou, spíše než třikrát. Pokud to bylo kódu, budete pravděpodobně používat konstanty a statické objekty jen pro čtení k udržení tyto hodnoty, konzistentní a snadno upravit.
 
-V jazyce XAML, jedním z oblíbených řešení je k uložení těchto hodnot nebo objekty v *slovník prostředků*. `VisualElement` Třída definuje vlastnost s názvem `Resources` typu `ResourceDictionary`, což je slovník s klíči typu `string` a hodnoty typu `object`. Můžete převést objekty do tohoto slovníku a potom je odkazovat z značek, všechny v jazyce XAML.
+V XAML, jedním z oblíbených řešení je uložit tyto hodnoty nebo objekty v *slovník prostředků*. `VisualElement` Třída definuje vlastnost s názvem `Resources` typu `ResourceDictionary`, což je slovník pomocí klíče typu `string` a hodnoty typu `object`. Můžete převést objekty do tohoto slovníku a odkázat na ně ze značek, vše v XAML.
 
-Pokud chcete používat slovník prostředků, a na stránce, patří pár `Resources` značky element vlastnosti. Je nejvhodnější pro umístění těchto v horní části stránky:
+Použití slovníku prostředků na stránce, patří pár `Resources` značky element vlastnosti. Je nejvhodnější pro vložit v horní části stránky:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -86,7 +86,7 @@ Pokud chcete používat slovník prostředků, a na stránce, patří pár `Reso
 </ContentPage>
 ```
 
-Je také nutné explicitně zahrnout `ResourceDictionary` značky:
+Je také nutné explicitně zahrnout symbol `ResourceDictionary` značky:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -103,7 +103,7 @@ Je také nutné explicitně zahrnout `ResourceDictionary` značky:
 </ContentPage>
 ```
 
-Nyní objekty a hodnoty různých typů lze přidat do slovníku prostředků. Tyto typy musí být instantiable. Například nemohou být abstraktní třídy. Tyto typy musí také mít konstruktor public bez parametrů. Každá položka vyžaduje slovník klíč zadaný `x:Key` atribut. Příklad:
+Nyní objekty a hodnoty různých typů, je přidat do slovníku prostředků. Tyto typy musí být instantiable. Například nemohou být abstraktní třídy. Tyto typy musí také mít veřejný konstruktor bez parametrů. Každá položka vyžaduje klíč slovníku zadaný `x:Key` atribut. Příklad:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -125,9 +125,9 @@ Nyní objekty a hodnoty různých typů lze přidat do slovníku prostředků. T
 </ContentPage>
 ```
 
-Těchto dvou položek jsou hodnoty strukturu typu `LayoutOptions`a každá z nich má jedinečný klíč a jedno nebo dvě vlastnosti nastavit. V kódu a kódu, je mnohem víc společné pro používání statických polí z `LayoutOptions`, ale tady je pohodlnější a nastavte vlastnosti.
+Tyto dvě položky jsou hodnoty typu Struktura `LayoutOptions`a každá má jedinečný klíč a jeden nebo dva nastaveny. V kódu a kódu, je mnohem častější použít statické pole `LayoutOptions`, ale tady je pohodlnější k nastavení vlastností.
 
-Nyní je nutné nastavit `HorizontalOptions` a `VerticalOptions` vlastnosti z těchto tlačítek na tyto prostředky, a které provádí pomocí `StaticResource` XAML – rozšíření značek:
+Nyní je nutné nastavit `HorizontalOptions` a `VerticalOptions` vlastnosti těchto tlačítek k těmto prostředkům, a, který se použije `StaticResource` – rozšíření značek XAML:
 
 ```xaml
 <Button Text="Do this!"
@@ -139,11 +139,11 @@ Nyní je nutné nastavit `HorizontalOptions` a `VerticalOptions` vlastnosti z t�
         FontSize="24" />
 ```
 
-`StaticResource` – Rozšíření značek jsou vždy odděleny složené závorky a obsahuje klíče slovníku.
+`StaticResource` – Rozšíření značek jsou vždy odděleny složených závorek a obsahuje klíč slovníku.
 
-Název `StaticResource` odlišuje jej od `DynamicResource`, který podporuje i Xamarin.Forms. `DynamicResource` pro klíče slovníku přidružené hodnoty, které mohou změnit za běhu, zatímco `StaticResource` přistupuje elementy ze slovníku pouze jednou, když se vytvářejí elementy na stránce.
+Název `StaticResource` odlišuje jej od `DynamicResource`, která také podporuje Xamarin.Forms. `DynamicResource` je pro klíče slovníku přidružené hodnoty, které mohou změnit za běhu, zatímco `StaticResource` přistupuje k elementy ze slovníku pouze jednou, když jsou vytvořeny elementy na stránce.
 
-Pro `BorderWidth` vlastnost, je nutné uložit dvojitou ve slovníku. XAML pohodlně definuje značky pro běžné typy dat jako `x:Double` a `x:Int32`:
+Pro `BorderWidth` vlastnost, je nezbytné k uložení typu double ve slovníku. XAML pohodlně definuje značky pro běžné typy dat, jako je `x:Double` a `x:Int32`:
 
 ```xaml
 <ContentPage.Resources>
@@ -162,7 +162,7 @@ Pro `BorderWidth` vlastnost, je nutné uložit dvojitou ve slovníku. XAML pohod
 </ContentPage.Resources>
 ```
 
-Není nutné pro něj na tři řádky. Tato položka slovník pro tuto úhel otočení zabírají pouze jeden řádek:
+Není nutné ho umístit na tři řádky. Tato položka slovník pro tuto úhel otočení přijímá pouze jeden řádek nahoru:
 
 ```xaml
 <ContentPage.Resources>
@@ -183,7 +183,7 @@ Není nutné pro něj na tři řádky. Tato položka slovník pro tuto úhel oto
 </ContentPage.Resources>
 ```
 
-Tyto dva prostředky, může být odkazován stejným způsobem jako `LayoutOptions` hodnoty:
+Tyto dva prostředky mohou odkazovat stejným způsobem jako `LayoutOptions` hodnoty:
 
 ```xaml
 <Button Text="Do this!"
@@ -195,19 +195,19 @@ Tyto dva prostředky, může být odkazován stejným způsobem jako `LayoutOpti
         FontSize="24" />
 ```
 
-Pro prostředky typu `Color`, můžete použít stejné řetězcové vyjádření, které používáte při přiřazování přímo atributy z těchto typů. Převaděče typů jsou volána, když je vytvořen prostředek. Zde je prostředek typu `Color`:
+Pro prostředky typu `Color`, můžete použít stejné řetězcových reprezentací, které používáte při přiřazování přímo atributy z těchto typů. Převaděče typů jsou vyvolány, když je prostředek vytvořený. Zde je prostředek typu `Color`:
 
 ```xaml
 <Color x:Key="textColor">Red</Color>
 ```
 
-Často programy sady `FontSize` vlastnost členem `NamedSize` výčtu jako `Large`. `FontSizeConverter` Třídy funguje na pozadí a převeďte ho na hodnotu závislé na platformě pomocí `Device.GetNamedSized` metoda. Ale při definování prostředek velikost písma, je vhodnější použít číselnou hodnotu, zobrazí jako `x:Double` typu:
+Často, programy sady `FontSize` vlastnost člena `NamedSize` výčet jako `Large`. `FontSizeConverter` Funguje na pozadí ho převést na hodnotu závislého na platformě pomocí třídy `Device.GetNamedSized` metody. Ale při definování prostředků velikost písma, je vhodnější použít číselnou hodnotu, zobrazí jako zde `x:Double` typu:
 
 ```xaml
 <x:Double x:Key="fontSize">24</x:Double>
 ```
 
-Nyní všechny vlastnosti s výjimkou `Text` jsou definovány nastavení prostředků:
+Nyní všechny vlastnosti s výjimkou `Text` se definuje na základě nastavení prostředků:
 
 ```xaml
 <Button Text="Do this!"
@@ -219,7 +219,7 @@ Nyní všechny vlastnosti s výjimkou `Text` jsou definovány nastavení prostř
         FontSize="{StaticResource fontSize}" />
 ```
 
-Je také možné použít `OnPlatform` v rámci slovníku prostředků můžete definovat různé hodnoty pro platformy. Tady je způsob `OnPlatform` objekt může být součástí slovníku prostředků pro jiné text barvy:
+Je také možné použít `OnPlatform` v rámci slovníku prostředků, chcete-li definovat různé hodnoty pro platformy. Tady je způsob `OnPlatform` objekt může být součástí slovníku prostředků pro různé text barvy:
 
 ```xaml
 <OnPlatform x:Key="textColor"
@@ -230,9 +230,9 @@ Je také možné použít `OnPlatform` v rámci slovníku prostředků můžete 
 </OnPlatform>
 ```
 
-Všimněte si, že `OnPlatform` získá i `x:Key` atributů, protože je objekt ve slovníku a `x:TypeArguments` atributů, protože je obecné třídy. `iOS`, `Android`, A `UWP` atributy se převedou na `Color` hodnoty při inicializaci objektu.
+Všimněte si, že `OnPlatform` získá obě `x:Key` atribut, protože jde o objekt ve slovníku a `x:TypeArguments` atribut, protože se jedná o obecnou třídu. `iOS`, `Android`, A `UWP` atributy jsou převedeny na `Color` hodnoty při inicializaci objektu.
 
-Tady je poslední dokončení souboru XAML s tři tlačítka přístup k šesti sdílené hodnoty:
+Zde je poslední úplný soubor XAML s tři tlačítka přístup k šest sdílené hodnoty:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -293,11 +293,11 @@ Tady je poslední dokončení souboru XAML s tři tlačítka přístup k šesti 
 </ContentPage>
 ```
 
-Na snímcích obrazovky ověřte konzistentní stylů a stylu závislé na platformě:
+Snímky obrazovky ověřte konzistentní styly a styly závislého na platformě:
 
-[![](xaml-markup-extensions-images/sharedresources.png "Ovládací prvky ve")](xaml-markup-extensions-images/sharedresources-large.png#lightbox "ve ovládací prvky")
+[![](xaml-markup-extensions-images/sharedresources.png "Ovládacích prvků")](xaml-markup-extensions-images/sharedresources-large.png#lightbox "ovládacích prvků")
 
-I když se nejčastěji můžete definovat `Resources` kolekce v horní části stránky, mějte na paměti, `Resources` je definována vlastnost `VisualElement`, a může mít `Resources` kolekce na další prvky na stránce. Zkuste například přidávání jeden, který `StackLayout` v tomto příkladu:
+I když je pro definování nejběžnějších `Resources` kolekce v horní části stránky, mějte na paměti, který `Resources` je definována vlastnost `VisualElement`, a může mít `Resources` kolekce v jiných elementy na stránce. Zkuste například přidáme do `StackLayout` v tomto příkladu:
 
 ```xaml
 <StackLayout>
@@ -310,24 +310,24 @@ I když se nejčastěji můžete definovat `Resources` kolekce v horní části 
 </StackLayout>
 ```
 
-Dozvíte se, barva textu tlačítka je nyní blue. Vždy, když analyzátor XAML v podstatě, dojde `StaticResource` – rozšíření značek, ho vyhledá nahoru k visual a použije první `ResourceDictionary` zjistí obsahující klíči.
+Dozvíte se, už modrou barvu textu tlačítka. Vždy, když analyzátor XAML v podstatě narazí `StaticResource` – rozšíření značek, hledá se vizuální strom a použije první `ResourceDictionary` narazí, který obsahuje daný klíč.
 
-Jednou z nejběžnějších typů objekty uložené ve slovnících prostředků je platformě Xamarin.Forms `Style`, která definuje kolekce vlastností nastavení. Styly jsou popsané v článku [styly](~/xamarin-forms/user-interface/styles/index.md).
+Jedním z nejběžnějších typů objekty uložené ve slovnících prostředků je Xamarin.Forms `Style`, která definuje sadu nastavení vlastností. Styly jsou popsány v následujícím článku [styly](~/xamarin-forms/user-interface/styles/index.md).
 
-Někdy vývojáři nové XAML zajímat, pokud se například umístit vizuální prvek `Label` nebo `Button` v `ResourceDictionary`. I když je surely možné, nemá mnoho smysl. Účelem `ResourceDictionary` je sdílet objekty. Vizuální prvek nelze sdílet. Stejnou instanci nelze vložit dvakrát na jedné stránce.
+Někdy vývojářům nové XAML zajímat, pokud jsou vizuální prvek vložit jako `Label` nebo `Button` v `ResourceDictionary`. I když je možné seděl, to moc nedává smysl. Účelem `ResourceDictionary` je sdílet objekty. Prvek visual nelze sdílet. Stejnou instanci se nemůže objevit dvakrát na jednu stránku.
 
 ## <a name="the-xstatic-markup-extension"></a>X: Static – rozšíření značek
 
-Bez ohledu podobnosti jejich názvy `x:Static` a `StaticResource` se příliš neliší. `StaticResource` Vrátí objekt ze slovníku prostředků při `x:Static` používá jednu z následujících:
+Bez ohledu na podobnosti jejich názvy `x:Static` a `StaticResource` se velmi liší. `StaticResource` Vrátí objekt ze slovníku prostředků při `x:Static` přistupuje k jedné z následujících akcí:
 
 - Veřejné statické pole
-- Veřejné statické vlastnosti
-- veřejné konstantní pole
-- člena výčtu.
+- veřejná statická vlastnost
+- veřejné konstanty pole
+- na člena výčtu.
 
-`StaticResource` – Rozšíření značek podporuje XAML implementace, které definují slovník prostředků při `x:Static` je vnitřní součástí XAML, jako `x` předpony zjistí informace o.
+`StaticResource` Podporuje – rozšíření značek XAML implementace, které definují slovníku prostředků, zatímco `x:Static` je vnitřní součástí XAML, jako `x` předpony zjistí informace o.
 
-Tady je několik příkladů, které ukazují, jak `x:Static` explicitně odkazovat statická pole a členové výčtu:
+Tady je pár příkladů, které ukazují, jak `x:Static` můžete explicitně odkazovat na statická pole a členy výčtu:
 
 ```xaml
 <Label Text="Hello, XAML!"
@@ -336,7 +336,7 @@ Tady je několik příkladů, které ukazují, jak `x:Static` explicitně odkazo
        TextColor="{x:Static Color.Aqua}" />
 ```
 
-Pokud to není velmi působivé. Ale `x:Static` – rozšíření značek lze také odkazovat statických polí nebo vlastnosti z vlastní kód. Zde je ukázka, `AppConstants` třídu, která obsahuje některá statické pole, které chcete použít na více stránkách v celé aplikaci:
+Toto zatím není velmi působivé. Ale `x:Static` – rozšíření značek lze také odkazovat na statické pole nebo vlastnosti z vlastního kódu. Tady je příklad, `AppConstants` třídu, která obsahuje některé statická pole, které můžete chtít použít na více stránkách v celé aplikaci:
 
 ```csharp
 using System;
@@ -378,32 +378,32 @@ namespace XamlSamples
 }
 ```
 
-Chcete-li statických polí této třídy v souboru XAML, budete potřebovat některé, jak v souboru XAML, kde se nachází tento soubor. Můžete to udělat pomocí deklarace oboru názvů XML.
+Odkaz na statické pole této třídy v souboru XAML, budete potřebovat způsob, jak určit v souboru XAML, ve kterém se tento soubor nachází. Můžete to provést pomocí deklarace oboru názvů XML.
 
-Odvolat, aby soubory XAML vytvořené jako součást standardní šablona Xamarin.Forms XAML obsahují dva deklarace oboru názvů XML: jeden pro přístup k Xamarin.Forms třídy a druhý pro odkazování na značky a atributy vnitřní do jazyka XAML:
+Připomínáme, že vytvořené jako součást standardní šablonu Xamarin.Forms XAML soubory XAML obsahovat dvě deklarace oboru názvů XML: jeden pro přístup k třídy Xamarin.Forms a druhou pro odkazování na tagy a atributy, které jsou přirozené pro XAML:
 
 ```csharp
 xmlns="http://xamarin.com/schemas/2014/forms"
 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 ```
 
-Budete potřebovat další deklarace oboru názvů XML pro přístup k jiné třídy. Každý další deklaraci oboru názvů XML definuje novou předponu. Pro přístup k třídy místní do knihovny .NET standardní sdílené aplikace, jako například `AppConstants`, programátory v jazyce XAML často používají předponu `local`. Deklarace oboru názvů musí označovat název oboru názvů CLR (Common Language Runtime), také známé jako název oboru názvů .NET, což je název, který se zobrazí v jazyce C# `namespace` definice nebo v `using` – direktiva:
+Budete potřebovat další deklarace oboru názvů XML pro přístup k jiné třídy. Každý další deklarace oboru názvů XML definuje novou předponu. Pro přístup k třídy místní do knihovny .NET Standard sdílené aplikace, jako například `AppConstants`, programátoři XAML často používají předponu `local`. Deklarace oboru názvů musíte uvést název oboru názvů CLR (Common Language Runtime), označované také jako název oboru názvů .NET, což je název, který se zobrazí v jazyce C# `namespace` definice nebo `using` – direktiva:
 
 ```csharp
 xmlns:local="clr-namespace:XamlSamples"
 ```
 
-Deklarace oborů názvů XML pro obory názvů .NET můžete také definovat v jakékoli sestavení, který odkazuje na knihovny .NET standardní. Zde je ukázka, `sys` předponu pro standardní .NET `System` obor názvů, který je v **mscorlib** sestavení, které jednou v platnosti pro "Knihovna Runtime běžné objekt Microsoft", ale teď znamená "překlady standardní Běžné objektu Runtime knihovny." Vzhledem k tomu, že je sestavení, musíte také zadáte název sestavení, v takovém případě **mscorlib**:
+Deklarace oboru názvů XML pro obory názvů .NET můžete také definovat žádné sestavení, na které odkazuje na knihovny .NET Standard. Tady je příklad, `sys` předpona pro standard .NET `System` obor názvů, který se nachází v **mscorlib** sestavení, které jednou jednoduchému "Knihovny Runtime běžné objekt Microsoft", ale teď znamená "překlady Standard Běžné objekt Runtime Library". Protože je to jiné sestavení, musíte zadat také název sestavení, v tomto případě **mscorlib**:
 
 ```csharp
 xmlns:sys="clr-namespace:System;assembly=mscorlib"
 ```
 
-Všimněte si, že klíčové slovo `clr-namespace` je následovaný dvojtečkou a potom název oboru názvů .NET, za nímž následuje středníkem, klíčové slovo `assembly`, znaku rovná a název sestavení.
+Všimněte si, že klíčové slovo `clr-namespace` následovaný dvojtečkou a potom název oboru názvů .NET, za nímž následuje středníkem, klíčové slovo `assembly`, znaménko rovná se a název sestavení.
 
-Ano, dvojtečkou následuje `clr-namespace` ale následuje rovná `assembly`. Syntaxe byla definována v tomto způsobem úmyslně: deklarace oboru názvů XML nejvíce odkazovat identifikátor URI, který začíná název schématu identifikátoru URI, jako `http`, který je vždy následovaným dvojtečkou. `clr-namespace` Součástí tento řetězec je určený tak, aby napodoboval této konvence.
+Ano, následuje dvojtečka `clr-namespace` ale následuje symbol rovná `assembly`. Syntaxe byla definována v tomto způsobem záměrně: deklarace oboru názvů XML nejvíce odkazovat na identifikátor URI, který začíná název schématu identifikátoru URI jako `http`, což je vždy následuje dvojtečka. `clr-namespace` Část tohoto řetězce je určena k napodobení úmluvy.
 
-Obě tyto deklarace oboru názvů jsou součástí **StaticConstantsPage** ukázka. Všimněte si, že `BoxView` dimenze jsou nastaveny na `Math.PI` a `Math.E`, ale škálovat faktorem 100:
+Obě tyto deklarace oboru názvů jsou součástí **StaticConstantsPage** vzorku. Všimněte si, že `BoxView` dimenze jsou nastaveny na `Math.PI` a `Math.E`, ale škálován faktorem 100:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -431,24 +431,24 @@ Obě tyto deklarace oboru názvů jsou součástí **StaticConstantsPage** ukáz
 </ContentPage>
 ```
 
-Velikost výsledné `BoxView` relativně k obrazovce je závislá na platformě:
+Velikost výsledné `BoxView` vzhledem k obrazovce závisí na platformě:
 
- [![](xaml-markup-extensions-images/staticconstants.png "Ovládacích prvků pomocí x: Static – rozšíření značek")](xaml-markup-extensions-images/staticconstants-large.png#lightbox "ovládacích prvků pomocí x: Static – rozšíření značek")
+ [![](xaml-markup-extensions-images/staticconstants.png "Ovládací prvky pomocí x: Static – rozšíření značek")](xaml-markup-extensions-images/staticconstants-large.png#lightbox "ovládacích prvků pomocí x: Static – rozšíření značek")
 
-## <a name="other-standard-markup-extensions"></a>Další rozšíření standardní značek
+## <a name="other-standard-markup-extensions"></a>Další rozšíření pro standardní značky
 
-Několik rozšíření značek jsou vlastní XAML a podporované v souborech Xamarin.Forms XAML. Některé z těchto nepoužívají velmi často, ale jsou důležité pro potřeby:
+Několik rozšíření značek jsou přirozené pro XAML a podporované v souborech XAML Xamarin.Forms. Některé z nich nepoužívají velmi často, ale jsou nezbytné, když je budete potřebovat:
 
--  Pokud má vlastnost jinou hodnotu než `null` hodnotu ve výchozím nastavení, ale chcete ho nastavit na `null`, nastavte ji na `{x:Null}` – rozšíření značek.
+-  Pokud je vlastnost non - `null` má hodnotu ve výchozím nastavení ale můžete ji nastavit na hodnotu `null`, nastavte ho na `{x:Null}` – rozšíření značek.
 -  Pokud je vlastnost typu `Type`, můžete je přiřadit `Type` pomocí rozšíření značek `{x:Type someClass}`.
--  Můžete definovat pole v jazyce XAML pomocí `x:Array` – rozšíření značek. Toto rozšíření značek má požadovaný atribut s názvem `Type` určující typ elementů v poli.
-- `Binding` – Rozšíření značek je popsána v [část 4. Datové vazby Základy](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md).
+-  Můžete definovat pole pomocí XAML `x:Array` – rozšíření značek. Toto rozšíření značek nemá požadovaný atribut s názvem `Type` , který určuje typ prvků v poli.
+- `Binding` – Rozšíření značek je podrobněji popsána [část 4. Datové vazby Základy](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md).
 
 ## <a name="the-constraintexpression-markup-extension"></a>Rozšíření značek ConstraintExpression
 
-Rozšíření značek může mít vlastnosti, ale nejsou nastaveny jako atributy XML. V rozšíření značek nastavení vlastností se oddělují čárkami a žádné uvozovky zobrazí do složených závorek.
+Rozšíření značek může mít vlastnosti, ale nejsou nastaveny jako atributy ve formátu XML. V rozšíření značek nastavení vlastností jsou odděleny čárkami a žádné uvozovky uvnitř složených závorek objevit.
 
-To lze ukázat pomocí rozšíření značek Xamarin.Forms s názvem `ConstraintExpression`, který se používá s `RelativeLayout` třídy. Umístění nebo velikost podřízené zobrazení můžete zadat jako konstanta, nebo relativně k nadřazené nebo jiné s názvem zobrazení. Syntaxe `ConstraintExpression` umožňuje nastavit pozici nebo velikost zobrazení pomocí `Factor` časy vlastnost jiné zobrazení, plus `Constant`. Nic složitější než vyžaduje kód.
+To lze ukázat pomocí rozšíření značek Xamarin.Forms s názvem `ConstraintExpression`, který se používá s `RelativeLayout` třídy. Můžete zadat umístění nebo velikost zobrazení podřízených jako konstanta, nebo relativní k nadřazené nebo jiných pojmenované zobrazení. Syntaxe `ConstraintExpression` umožňuje nastavit umístění a velikost zobrazení pomocí `Factor` časy vlastnost jiného zobrazení a navíc `Constant`. Vyžaduje něco složitější než kód.
 
 Tady je příklad:
 
@@ -545,7 +545,7 @@ Tady je příklad:
 </ContentPage>
 ```
 
-Možná je nejdůležitější lekce byste měli vzít od této ukázky syntaxe rozšíření značek: žádné uvozovky musí být do složených závorek rozšíření značek. Při psaní rozšíření značek v souboru XAML, je přirozené chcete uvést hodnoty vlastností v uvozovkách. Odolejte riziko!
+Pravděpodobně nejdůležitější lekci byste měli podniknout od této ukázky je syntaxe rozšíření značek: žádné uvozovky musí být uvedena ve složených závorkách rozšíření značek. Při psaní rozšíření značek v souboru XAML, je přirozeně vhodné hodnoty vlastností uzavřete do uvozovek. Odolejte pokušení!
 
 Tady je spuštěn program:
 
@@ -553,7 +553,7 @@ Tady je spuštěn program:
 
 ## <a name="summary"></a>Souhrn
 
-Rozšíření značek XAML tady uvedené podporují důležité soubory XAML. Ale možná se nejvíc hodí v situaci rozšíření značek XAML `Binding`, která je popsaná v další části této série [část 4. Datové vazby Základy](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md).
+Rozšíření značek XAML je vidět tady poskytují důležité podporu pro soubory XAML. Ale možná se nejvíc hodí v situaci rozšíření značek XAML `Binding`, který je popsaný v další části této série [část 4. Datové vazby Základy](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md).
 
 
 
@@ -563,4 +563,4 @@ Rozšíření značek XAML tady uvedené podporují důležité soubory XAML. Al
 - [Část 1. Začínáme s jazykem XAML](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
 - [Část 2. Základní syntaxe jazyka XAML](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
 - [Část 4. Základy vytváření vazeb dat](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)
-- [Část 5. Z datové vazby k rozhraní MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)
+- [Část 5. Z datové vazby k MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)

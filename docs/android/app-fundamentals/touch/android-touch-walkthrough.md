@@ -1,39 +1,39 @@
 ---
-title: Návod - pomocí Touch v Android
+title: Návod – používání dotykového ovládání v Androidu
 ms.prod: xamarin
 ms.assetid: E281F89B-4142-4BD8-8882-FB65508BF69E
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 05/09/2018
-ms.openlocfilehash: 625ba800ce498f80c0344c67e26bd79360de4002
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: d379630e3b7fa2b42bd9530e1dccd75e9634dd2f
+ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "34050556"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37935524"
 ---
-# <a name="walkthrough---using-touch-in-android"></a>Návod - pomocí Touch v Android
+# <a name="walkthrough---using-touch-in-android"></a>Návod – používání dotykového ovládání v Androidu
 
-Dejte nám zjistit, jak použít koncepty z předchozí části v funkční aplikaci. Pomocí čtyř aktivity vytvoříme aplikaci. První aktivitu bude nabídky nebo přepínací panel, který se spustí ostatní aktivity k předvedení různých rozhraních API. Následující snímek obrazovky znázorňuje hlavní aktivity:
+Dejte nám zjistit, jak použít koncepty z předchozí části funkční aplikaci. Vytvoříme aplikaci s čtyři aktivity. První aktivita bude nabídku nebo panel, který se spustí ostatní aktivity k předvedení různá rozhraní API. Následující snímek obrazovky ukazuje v hlavní aktivitě:
 
-[![Příklad – snímek obrazovky s Touch tlačítko](android-touch-walkthrough-images/image14.png)](android-touch-walkthrough-images/image14.png#lightbox)
+[![Ukázkový snímek pomocí Touch tlačítko](android-touch-walkthrough-images/image14.png)](android-touch-walkthrough-images/image14.png#lightbox)
 
-První aktivitu Touch ukázka zobrazí používání obslužných rutin událostí pro dotykové ovládání zobrazení. Aktivita gesto rozpoznávání rukopisu se ukazují, jak podtřídami `Android.View.Views` a zpracování událostí a také ukazují, jak zpracovat roztahováním gesta. Třetí a poslední aktivitu, **vlastní gesto**, bude zobrazení jak používat vlastních gest. Aby usnadnily a postupujte podle vyrovná se se zatížením, jsme budete rozdělit tento návod na část se každá část zaměřený na jednu z aktivit.
+První aktivita ukázky dotykové vám ukáže, jak používat obslužné rutiny událostí pro zásahu do zobrazení. Aktivita pro rozpoznávání gest vám ukáže, jak podtřídy `Android.View.Views` a zpracování událostí a také ukazují, jak zpracovat gesta stažení. Třetí a poslední aktivita **vlastních gest**, bude zobrazit použití vlastních gest. Aby to bylo jednodušší sledovat a chránit před, jsme budete rozdělte tento návod na oddíly se každá část, zaměřuje se na jednu z aktivit.
 
-## <a name="touch-sample-activity"></a>Vzorová aktivita dotykového ovládání
+## <a name="touch-sample-activity"></a>Aktivita ukázky dotykové ovládání
 
--   Otevřete projekt **TouchWalkthrough\_spustit**. **MainActivity** je nastavené přejdete &ndash; je až do us implementovat dotykového ovládání chování v aktivitě. Spusťte aplikaci a klikněte na tlačítko **Touch ukázka**, má následující aktivitu spuštění:
+-   Otevřete projekt **TouchWalkthrough\_Start**. **MainActivity** je nastavené a můžete přejít &ndash; je až nám k implementaci dotykové ovládání chování v rámci aktivity. Pokud spustíte aplikaci a klikněte na tlačítko **ukázky dotykové**, by měl spustit následující aktivity:
 
-    [![Snímek obrazovky aktivity Touch začne zobrazí](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png#lightbox)
+    [![Snímek obrazovky aktivity Touch začíná zobrazí](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png#lightbox)
 
--   Teď, když bylo potvrzeno, že spuštění aktivity, otevřete soubor **TouchActivity.cs** a přidání obslužné rutiny `Touch` události `ImageView`:
+-   Teď, když potvrdili jsme, že aktivity spuštění, otevřete soubor **TouchActivity.cs** a přidání obslužné rutiny `Touch` událost `ImageView`:
 
     ```csharp
     _touchMeImageView.Touch += TouchMeImageViewOnTouch;
     ```
 
--   Dál přidejte následující metodu do **TouchActivity.cs**:
+-   Dále přidejte následující metodu do **TouchActivity.cs**:
 
     ```csharp
     private void TouchMeImageViewOnTouch(object sender, View.TouchEventArgs touchEventArgs)
@@ -59,23 +59,23 @@ První aktivitu Touch ukázka zobrazí používání obslužných rutin událost
     }
     ```
 
-Ve výše uvedeném kódu všimněte, že jednáme `Move` a `Down` akci, jako stejný. Důvodem je, že i když uživatel nemusí navýšení jejich prstem `ImageView`, může pohyb nebo tlak vyvíjený uživatel může změnit. Tyto typy změn způsobí vygenerování `Move` akce.
+Všimněte si, že ve výše uvedeném kódu umožňuje zacházet `Move` a `Down` akce za stejné. Důvodem je, že i když uživatel nemůže přenést jejich prstem `ImageView`, může pohybovat nebo tlak uživatel může změnit. Tyto typy změn bude generovat `Move` akce.
 
-Pokaždé, když uživatel úpravy `ImageView`, `Touch` událost se vyvolá a naše obslužná rutina zobrazí zprávu **Touch začne** na obrazovce, jak je znázorněno na následujícím snímku obrazovky:
+Pokaždé, když uživatel dnešní `ImageView`, `Touch` událost se vyvolá a naše obslužnou rutinu se zobrazí zpráva **Touch začíná** na obrazovce, jak je znázorněno na následujícím snímku obrazovky:
 
-[![Snímek obrazovky aktivity Touch začne](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png#lightbox)
+[![Snímek obrazovky aktivity Touch začíná](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png#lightbox)
 
-Tak dlouho, dokud uživatel je klepnou `ImageView`, **Touch začne** se zobrazí v `TextView`. Když je uživatel již klepnou `ImageView`, zpráva **Touch končí** se zobrazí v `TextView`, jak je znázorněno na následujícím snímku obrazovky:
+Za předpokladu, uživatel se dotýká `ImageView`, **Touch začíná** se zobrazí v `TextView`. Když se uživatel již dotýká `ImageView`, zprávy **Touch končí** se zobrazí v `TextView`, jak je znázorněno na následujícím snímku obrazovky:
 
 [![Snímek obrazovky aktivity Touch končí](android-touch-walkthrough-images/image16.png)](android-touch-walkthrough-images/image16.png#lightbox)
 
 
-## <a name="gesture-recognizer-activity"></a>Gesto pro rozpoznávání aktivity
+## <a name="gesture-recognizer-activity"></a>Aktivita pro rozpoznávání gest
 
-Teď umožňuje implementovat pro rozpoznávání gesto aktivity. Tato aktivita se ukazují, jak přetáhněte zobrazení po obrazovce a ilustrují, jeden způsob, jak implementovat roztahováním přiblížení.
+Teď umožňuje implementovat aktivitu pro rozpoznávání gest. Tato aktivita ukazuje, jak ukazuje jeden způsob, jak implementovat přiblížení roztažením a přetáhněte ho zobrazit na obrazovce.
 
--   Přidat novou aktivitu do aplikace s názvem `GestureRecognizer`.
-    Upravte kód pro tuto aktivitu tak, aby je podobná následující kód:
+-   Přidat novou aktivitu pro aplikaci s názvem `GestureRecognizer`.
+    Upravte kód pro tuto aktivitu tak, aby vypadá podobně jako následující kód:
 
     ```csharp
     public class GestureRecognizerActivity : Activity
@@ -89,7 +89,7 @@ Teď umožňuje implementovat pro rozpoznávání gesto aktivity. Tato aktivita 
     }
     ```
 
--   Přidat nové Android zobrazit do projektu a pojmenujte ji `GestureRecognizerView`. Přidejte následující proměnné pro tuto třídu:
+-   Přidat novou s Androidem zobrazit do projektu a pojmenujte ho `GestureRecognizerView`. Do této třídy, přidejte následující proměnné:
 
     ```csharp
     private static readonly int InvalidPointerId = -1;
@@ -105,7 +105,7 @@ Teď umožňuje implementovat pro rozpoznávání gesto aktivity. Tato aktivita 
     private float _scaleFactor = 1.0f;
     ```
 
--   Přidejte následující konstruktor `GestureRecognizerView`. Tento konstruktor přidá `ImageView` naše aktivity. V tomto okamžiku nebude stále zkompilovat kód &ndash; musíme vytvořit třídu `MyScaleListener` který vám pomůže s Změna velikosti `ImageView` když ho uživatel pinches:
+-   Přidejte následující konstruktor k `GestureRecognizerView`. Tento konstruktor se přidá `ImageView` do naší činnosti. V tomto okamžiku nebude nadále kompilovat kód &ndash; musíme vytvořit třídu `MyScaleListener` , který vám pomůže s změnu velikosti `ImageView` když ho uživatel pinches:
 
     ```csharp
     public GestureRecognizerView(Context context): base(context, null, 0)
@@ -116,7 +116,7 @@ Teď umožňuje implementovat pro rozpoznávání gesto aktivity. Tato aktivita 
     }
     ```
 
--   Kreslení bitovou kopii na našem aktivity, musíme přepsat `OnDraw` metoda zobrazení třídy, jak je znázorněno v následujícím fragmentu kódu. Tento kód se přesune `ImageView` na pozici určeného `_posX` a `_posY` také jako změní velikost obrázku podle násobek velikosti:
+-   Chcete-li nakreslit obrázek v naší činnosti, musíme přepsat `OnDraw` metoda třídy zobrazení, jak je znázorněno v následujícím fragmentu kódu. Tento kód se přesune `ImageView` na určené pozici `_posX` a `_posY` i tak, jak změnit velikost obrázku podle koeficient změny měřítka:
 
     ```csharp
     protected override void OnDraw(Canvas canvas)
@@ -130,8 +130,8 @@ Teď umožňuje implementovat pro rozpoznávání gesto aktivity. Tato aktivita 
     }
     ```
 
--   Dále je potřeba aktualizovat proměnnou instance `_scaleFactor` jako uživatel pinches `ImageView`. Přidáme třídy s názvem `MyScaleListener`. Tato třída bude naslouchat škálování události, které bude vyvolána Android, když uživatel pinches `ImageView`.
-    Přidejte následující vnitřní třídu do `GestureRecognizerView`. Tato třída je `ScaleGesture.SimpleOnScaleGestureListener`. Tato třída je třída pohodlí, moduly pro naslouchání můžete podtřídami, pokud vás zajímá podmnožinu gesta:
+-   Dále musíme aktualizovat proměnnou instance `_scaleFactor` jako uživatel pinches `ImageView`. Přidáme třídu s názvem `MyScaleListener`. Tato třída bude naslouchat škálovací události, které bude Android vyvolána, když uživatel pinches `ImageView`.
+    Přidat následující vnitřní třídu `GestureRecognizerView`. Tato třída je `ScaleGesture.SimpleOnScaleGestureListener`. Tato třída je třída pohodlí, naslouchacích procesů můžete podtřídy, pokud vás zajímají podmnožinu gesta:
 
     ```csharp
     private class MyScaleListener : ScaleGestureDetector.SimpleOnScaleGestureListener
@@ -157,19 +157,19 @@ Teď umožňuje implementovat pro rozpoznávání gesto aktivity. Tato aktivita 
                 _view._scaleFactor = 0.1f;
             }
 
-            _iconview.Invalidate();
+            _view.Invalidate();
             return true;
         }
     }
     ```
 
--   Další metodou musíme potlačení v `GestureRecognizerView` je `OnTouchEvent`. Následující kód uvádí úplné implementace této metody. Existuje mnoho kódu tady, takže umožňuje trvat několik minut a podívejte se na co se děje sem. První věc nemá tato metoda je škálování na ikonu v případě potřeby &ndash; to se provádí volání `_scaleDetector.OnTouchEvent`. Potom jsme zkuste zjistit, jaké akce volat tuto metodu:
+-   Další metoda, která potřebujeme k přepsání v `GestureRecognizerView` je `OnTouchEvent`. Následující kód obsahuje úplný implementace této metody. Existuje velké množství kódu, proto umožňuje trvat několik minut a podívejte se, co se děje tady. První věc, kterou tato metoda provede se škálování na ikonu v případě potřeby &ndash; tento problém řeší pomocí volání `_scaleDetector.OnTouchEvent`. Dále jsme pokusí zjistit, jaká akce se volá tuto metodu:
 
-    - Pokud uživatel dotýkal na obrazovce s, jsme záznam pozice X a Y a Identifikátor první ukazatele, který dotýkal na obrazovce.
+    - Pokud uživatel dotyku obrazovky s, zaznamenejte jsme pozice X a Y a ID prvního ukazatel, který dotyku obrazovky.
 
-    - Pokud se uživatel přesune jejich touch na obrazovce, pak jsme rozmyslete si, jak daleko uživatel přesunout ukazatel.
+    - Pokud se uživatel přesune jejich touch na obrazovce, potom jsme zjistěte, jak daleko uživatel přesune ukazatel myši.
 
-    - Pokud uživatel má zrušeno jeho prstem z obrazovky, potom jsme se zastaví sledování gesta.
+    - Pokud uživatel má zrušeno jeho prstem mimo obrazovku, pak zastavíme sledování gest.
 
     ```csharp
     public override bool OnTouchEvent(MotionEvent ev)
@@ -231,24 +231,24 @@ Teď umožňuje implementovat pro rozpoznávání gesto aktivity. Tato aktivita 
     }
     ```
 
--   Nyní spusťte aplikaci a spusťte pro rozpoznávání gesto aktivity.
-    Když se spustí na obrazovce by měl vypadat podobně jako na následující snímek obrazovky:
+-   Nyní spusťte aplikaci a spuštění aktivit pro rozpoznávání gest.
+    Při spuštění na obrazovce by měla vypadat podobně jako následující snímek obrazovky:
 
-    [![Gesto pro rozpoznávání úvodní obrazovka ikonou Android](android-touch-walkthrough-images/image17.png)](android-touch-walkthrough-images/image17.png#lightbox)
+    [![Nástroj pro rozpoznávání gest úvodní obrazovkou s ikonou s Androidem](android-touch-walkthrough-images/image17.png)](android-touch-walkthrough-images/image17.png#lightbox)
 
--   Nyní touch ikonu a přetáhněte ji na obrazovce. Zkuste gesto roztahováním přiblížení. V určitém okamžiku obrazovky může vypadat podobně jako na následujícím snímku obrazovky:
+-   Nyní touch ikonu a přetáhněte ho na obrazovce. Zkuste gesta přiblížení roztažením. V určitém okamžiku vaše obrazovka může vypadat podobně jako na následujícím snímku obrazovky:
 
-    [![Ikona přesunutí gesta na obrazovce](android-touch-walkthrough-images/image18.png)](android-touch-walkthrough-images/image18.png#lightbox)
+    [![Ikona přesunutí gesta po obrazovce](android-touch-walkthrough-images/image18.png)](android-touch-walkthrough-images/image18.png#lightbox)
 
-V tomto okamžiku je třeba přiřadit sami pat na pozadí: jste implementovali roztahováním přiblížení jenom v aplikaci Android! Zalomení rychlý a přejít k třetí a poslední aktivita v tomto návodu &ndash; pomocí vlastních gest.
+V tomto okamžiku byste měli sami pat na pozadí: přiblížení roztažením jste implementovali jenom v aplikaci pro Android. Provést rychlé přerušení a umožní přesunout na třetí a poslední aktivita v tomto názorném postupu &ndash; pomocí vlastních gest.
 
-## <a name="custom-gesture-activity"></a>Vlastní gesto aktivity
+## <a name="custom-gesture-activity"></a>Aktivita vlastních gest
 
 Poslední obrazovka v tomto názorném postupu bude používat vlastních gest.
 
-Pro účely tohoto návodu knihovně gesta již byla vytvořena pomocí nástroje gesto a přidat do projektu v souboru **prostředky nebo nezpracovanou nebo gesta**. Pomocí tohoto bitu spouštění stranou umožňuje získat na s poslední aktivita v návodu.
+Pro účely tohoto návodu, gesta knihovna již byla vytvořena pomocí gest nástroje a přidány do projektu v souboru **prostředky/nezpracované/gesta**. Pomocí této bit eliminuje spouštění umožňuje přinese je poslední aktivita v tomto návodu.
 
--   Přidejte soubor rozložení s názvem **vlastní\_gesto\_layout.axml** do projektu s tímto obsahem. Projekt už má všechny bitové kopie **prostředky** složky:
+-   Přidejte do ní soubor rozložení **vlastní\_gesta\_layout.axml** do projektu s tímto obsahem. Projekt již má všechny image **prostředky** složky:
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -274,15 +274,15 @@ Pro účely tohoto návodu knihovně gesta již byla vytvořena pomocí nástroj
     </LinearLayout>
     ```
 
--   V dalším do projektu přidejte nová aktivita a pojmenujte ji `CustomGestureRecognizerActivity.cs`. Přidejte dvě proměnné instance do třídy, jako zobrazuje v následující dva řádky kódu:
+-   Dále přidejte do projektu novou aktivitu a pojmenujte ho `CustomGestureRecognizerActivity.cs`. Přidejte dvě instance proměnné do třídy, jak ukazuje následující dva řádky kódu:
 
     ```csharp
     private GestureLibrary _gestureLibrary;
     private ImageView _imageView;
     ```
 
--   Upravit `OnCreate` metoda tohoto aktivity, které se podobá následující kód. Umožňuje trvat několik minut, který vysvětluje, co se děje v tomto kódu. První věc provedeme, je vytvoření instance `GestureOverlayView` a nastavte ho jako kořenovému zobrazení aktivity.
-    Můžeme také přiřadit obslužnou rutinu události a `GesturePerformed` události `GestureOverlayView`. V dalším jsme zvýšilo rozložení souboru, který byl vytvořen již dříve a přidat jako podřízené zobrazení `GestureOverlayView`. Posledním krokem je můžete inicializovat `_gestureLibrary` a nahrajte soubor gesta z prostředky aplikace. Pokud z nějakého důvodu nelze načíst soubor gesta, není, které můžete provést tuto aktivitu, tak, aby byl vypnutí:
+-   Upravit `OnCreate` metodu na tuto aktivitu tak, že se podobá následující kód. Umožňuje trvat několik minut, který vysvětluje, co se děje v tomto kódu. První věc, kterou děláme, je vytvořit instanci `GestureOverlayView` a nastavte ji jako zobrazení kořenové aktivity.
+    Můžeme také přiřadit obslužnou rutinu události pro `GesturePerformed` událost `GestureOverlayView`. Dále jsme rozšiřování soubor rozložení, který jste vytvořili a přidat jako podřízené zobrazení `GestureOverlayView`. Posledním krokem je inicializovat proměnnou `_gestureLibrary` a nahrajte soubor gesta z prostředků aplikace. Pokud z nějakého důvodu nelze načíst soubor gesta, není, které tato aktivita může dělat, tak, aby byl vypnutí:
 
     ```csharp
     protected override void OnCreate(Bundle bundle)
@@ -306,9 +306,9 @@ Pro účely tohoto návodu knihovně gesta již byla vytvořena pomocí nástroj
     }
     ```
 
--   Poslední věcí, musíme implementovat metodu `GestureOverlayViewOnGesturePerformed` jak je znázorněno v následující fragment kódu. Když `GestureOverlayView` zjistí gesto, zavolá zpátky k této metodě. První věc, kterou jsme pokusí získat `IList<Prediction>` objekty, které odpovídají gesta voláním `_gestureLibrary.Recognize()`. Používáme kousek LINQ získat `Prediction` který má nejvyšší skóre gesta.
+-   Poslední věc musíme implementovat metodu `GestureOverlayViewOnGesturePerformed` jak je znázorněno v následujícím fragmentu kódu. Když `GestureOverlayView` zjistí gesto, zavolá zpět do této metody. První věc, kterou se pokusíme získat `IList<Prediction>` objekty, které odpovídají gesta voláním `_gestureLibrary.Recognize()`. K získání používáme hodně LINQ `Prediction` , který má nejvyšší skóre gesta.
 
-    Pokud se žádné odpovídající gesty s vysokou dostatek skóre a potom obslužné rutiny události ukončí bez jakékoli akce. V opačném případě zkontrolujte název předpovědi a změnit bitovou kopii se zobrazuje na základě názvu gesta:
+    Pokud se žádný odpovídající gesta s vysokou dostatek skóre, pak obslužná rutina události ukončí bez teď zrovna nic nedělá. V opačném případě zkontrolujte název odhadu a změnit na obrázku se zobrazuje na základě názvu gesta:
 
     ```csharp
     private void GestureOverlayViewOnGesturePerformed(object sender, GestureOverlayView.GesturePerformedEventArgs gesturePerformedEventArgs)
@@ -339,22 +339,22 @@ Pro účely tohoto návodu knihovně gesta již byla vytvořena pomocí nástroj
     }
     ```
 
--   Spusťte aplikaci a spuštění pro rozpoznávání gesto vlastní aktivity. Měl by vypadat nějak podobně jako na následujícím snímku obrazovky:
+-   Spusťte aplikaci a spustit vlastní nástroj pro rozpoznávání gest aktivity. By měl vypadat přibližně jako na následujícím snímku obrazovky:
 
     [![Snímek obrazovky s zkontrolujte bitové kopie](android-touch-walkthrough-images/image19.png)](android-touch-walkthrough-images/image19.png#lightbox)
 
-    Nyní kreslení zaškrtnout na obrazovce a rastrový obrázek se zobrazuje by měl vypadat podobně jako zobrazená na další snímky obrazovky:
+    Nyní nakreslit značku zaškrtnutí na obrazovce a rastrový obrázek se zobrazí by měla vypadat podobně jako, který je znázorněno v následující snímky obrazovky:
 
-    [![Je rozpoznán vykresleného zaškrtnutí, zaškrtnutí](android-touch-walkthrough-images/image20.png)](android-touch-walkthrough-images/image20.png#lightbox)
+    [![Rozpozná vykresleného značku zaškrtnutí, značky zaškrtnutí](android-touch-walkthrough-images/image20.png)](android-touch-walkthrough-images/image20.png#lightbox)
 
-    Nakonec kreslení scribble na obrazovce. Zaškrtávací políčko měli změnit zpátky na jeho původní image, jak je znázorněno v tyto snímky obrazovky:
+    A konečně kreslete scribble na obrazovce. Zaškrtávací políčko by měl změnit zpět na jeho původní image, jak je znázorněno v těchto snímků obrazovky:
 
-    [![Scribble na obrazovce, původní image se zobrazí.](android-touch-walkthrough-images/image21.png)](android-touch-walkthrough-images/image21.png#lightbox)
+    [![Scribble na obrazovce, původní obrázek se zobrazí.](android-touch-walkthrough-images/image21.png)](android-touch-walkthrough-images/image21.png#lightbox)
 
-Nyní máte představu o tom, jak integrovat touch a gest v Android aplikace Xamarin.Android pomocí.
+Teď máte znalosti o tom, jak integrovat dotyky a gesta v aplikaci pro Android pomocí Xamarin.Android.
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Android Touch Start (ukázka)](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/Touch_start)
+- [Android Touch spuštění (ukázka)](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/Touch_start)
 - [Android Touch konečné (ukázka)](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/Touch_final)

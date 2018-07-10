@@ -1,91 +1,91 @@
 ---
-title: Souhrn kapitoly 16. Datová vazba
-description: 'Vytváření mobilních aplikací s Xamarin.Forms: Souhrn kapitoly 16. Datová vazba'
+title: Souhrn kapitoly 16. Vytváření datových vazeb
+description: 'Vytváření mobilních aplikací s Xamarin.Forms: Souhrn kapitola 16. Vytváření datových vazeb'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: ED997DB0-C229-4868-A5FB-928703B377D6
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 520da1518c7b795bd1ad17cc3cfaa8d37815de53
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 92cf7f0163c4f074c718e86b06cf4830ff857c58
+ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241507"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37935599"
 ---
-# <a name="summary-of-chapter-16-data-binding"></a>Souhrn kapitoly 16. Datová vazba
+# <a name="summary-of-chapter-16-data-binding"></a>Souhrn kapitoly 16. Vytváření datových vazeb
 
-Programátory v jazyce často najít sami zápis obslužné rutiny, které rozpoznat, kdy došlo ke změně vlastností jeden objekt a použijte ke změně hodnoty vlastnosti v jiném objektu. Tento proces je možné automatizovat pomocí technika *datová vazba*. Datové vazby jsou obvykle definovány v jazyce XAML a stanou se součástí definice uživatelského rozhraní.
+Programátoři často naleznou sami sebe zápis obslužné rutiny událostí, které zjišťují, když je změněna vlastnost jednoho objektu a použijte, chcete-li změnit hodnotu vlastnosti v jiném objektu. Tento proces je možné automatizovat pomocí technika *datové vazby*. Datové vazby jsou obvykle definovány v XAML a se stanou součástí definice uživatelského rozhraní.
 
-Tyto datové vazby velmi často připojit objektů uživatelského rozhraní na základní data. Toto je postup, který je ve více prozkoumali [ **kapitoly 18. ROZHRANÍ MVVM**](chapter18.md). Datové vazby však může připojit i dvě nebo více elementům uživatelského rozhraní. Většina příkladů časné vazby dat v této kapitole ukazují tento postup.
+Tyto datové vazby velmi často připojit objektů uživatelského rozhraní na podkladová data. Toto je technika, která je ve více prozkoumat [ **kapitola 18. MVVM**](chapter18.md). Datové vazby, ale můžete také připojit dva nebo více prvků uživatelského rozhraní. Většina příkladů předčasné datové vazby v této kapitole ukazují tuto techniku.
 
-## <a name="binding-basics"></a>Základy vazby
+## <a name="binding-basics"></a>Základy vytváření vazeb
 
-Datová vazba podílí několik vlastností, metod a třídy:
+Několik vlastnosti, metody a třídy jsou součástí datové vazby:
 
-- [ `Binding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Binding/) Třída odvozená z [ `BindingBase` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindingBase/) a zapouzdří mnoho vlastností datová vazba
-- [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) Vlastnost je definována [ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/) – třída
-- [ `SetBinding` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.SetBinding/p/Xamarin.Forms.BindableProperty/Xamarin.Forms.BindingBase/) Metoda je také definován ve [ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/) – třída
+- [ `Binding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Binding/) Třída odvozena z [ `BindingBase` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindingBase/) a zapouzdřuje mnoho vlastností datovou vazbu
+- [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) Vlastnost je definována [ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/) třídy
+- [ `SetBinding` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.SetBinding/p/Xamarin.Forms.BindableProperty/Xamarin.Forms.BindingBase/) Metoda je také definován [ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/) třídy
 - [ `BindableObjectExtensions` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObjectExtensions/) Třída definuje tři další `SetBinding` metody
 
-Následující dvě třídy podporují XAML – rozšíření značek pro vazby:
+Následující dvě třídy podporu rozšíření značek XAML pro vazby:
 
 - [`BindingExtension`](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.BindingExtension/) podporuje `Binding` – rozšíření značek
 - [`ReferenceExtension`](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.ReferenceExtension/) podporuje `x:Reference` – rozšíření značek
 
-Datová vazba podílí dvě rozhraní:
+V datové vazbě se podílejí dvě rozhraní:
 
-- [`INotifyPropertyChanged`](https://developer.xamarin.com/api/type/System.ComponentModel.INotifyPropertyChanged/) v `System.ComponentModel` je obor názvů pro implementaci oznámení při změně vlastnosti
-- [`IValueConverter`](https://developer.xamarin.com/api/type/Xamarin.Forms.IValueConverter/) se používá k definování malé třídy, které převést hodnoty z jednoho typu do druhého v datové vazby
+- [`INotifyPropertyChanged`](https://developer.xamarin.com/api/type/System.ComponentModel.INotifyPropertyChanged/) v `System.ComponentModel` obor názvů je implementace oznámení změn vlastností
+- [`IValueConverter`](https://developer.xamarin.com/api/type/Xamarin.Forms.IValueConverter/) slouží k definování malé tříd, které provádějí převod hodnoty z jednoho typu na jiný v datové vazby
 
-Datová vazba připojí dvě vlastnosti stejného objektu nebo (běžně) dva různé objekty. Tyto dvě vlastnosti se označují jako *zdroj* a *cíl*. Obecně platí změny ve zdrojové vlastnosti způsobí změnu dochází k výskytu vlastnost target, ale někdy je směr obrácený. Bez ohledu na to:
+Datová vazba spojuje dvě vlastnosti stejného objektu, nebo (častěji) dva různé objekty. Tyto dvě vlastnosti se označují jako *zdroj* a *cílové*. Obecně platí změna ve zdrojové vlastnosti způsobí změnu vyskytuje v cílové vlastnosti, ale v některých případech je obrácený směru. Bez ohledu na to:
 
-- *cíl* musí být vlastnost založenou [`BindableProperty`](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/)
-- *zdroj* vlastnost obvykle se jedná o člena třídy, která implementuje [`INotifyPropertyChanged`](https://developer.xamarin.com/api/type/System.ComponentModel.INotifyPropertyChanged/)
+- *cílové* musí být vlastnost opírá [`BindableProperty`](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/)
+- *zdroj* vlastnost obecně je členem třídy, která implementuje [`INotifyPropertyChanged`](https://developer.xamarin.com/api/type/System.ComponentModel.INotifyPropertyChanged/)
 
-Třídu, která implementuje `INotifyPropertyChanged` aktivuje [ `PropertyChanged` ](https://developer.xamarin.com/api/event/System.ComponentModel.INotifyPropertyChanged.PropertyChanged/) události při změně hodnoty vlastnosti. `BindableObject` implementuje `INotifyPropertyChanged` a automaticky aktivuje `PropertyChanged` událost v případě, že vlastnost založenou `BindableProperty` změny hodnot, ale může zapisovat vaše vlastní třídy implementující `INotifyPropertyChanged` bez odvozování z `BindableObject`.
+Třídu, která implementuje `INotifyPropertyChanged` aktivuje [ `PropertyChanged` ](https://developer.xamarin.com/api/event/System.ComponentModel.INotifyPropertyChanged.PropertyChanged/) události při změně hodnoty vlastnosti. `BindableObject` implementuje `INotifyPropertyChanged` a automaticky spustí `PropertyChanged` událost, když se opírá o vlastnost `BindableProperty` změní hodnoty, ale můžete napsat vlastní třídy, které implementují `INotifyPropertyChanged` bez odvozený od `BindableObject`.
 
 ## <a name="code-and-xaml"></a>Kód a XAML
 
-[ **OpacityBindingCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/OpacityBindingCode) příklad ukazuje, jak nastavit datové vazby v kódu:
+[ **OpacityBindingCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/OpacityBindingCode) Ukázka předvádí, jak nastavit datové vazby v kódu:
 
 - Zdroj je `Value` vlastnost `Slider`
-- Cíl je `Opacity` vlastnost `Label`
+- Cílem `Opacity` vlastnost `Label`
 
-Tyto dva objekty jsou připojené nastavením `BindingContext` z `Label` do objektu `Slider` objektu. Připojení dvě vlastnosti voláním [ `SetBinding` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObjectExtensions.SetBinding/p/Xamarin.Forms.BindableObject/Xamarin.Forms.BindableProperty/System.String/) rozšiřující metody na `Label` odkazující na `OpacityProperty` vazbu vlastnosti a `Value` vlastnost `Slider` vyjádřený jako řetězec.
+Dva objekty jsou připojené tak, že nastavíte `BindingContext` z `Label` objektu `Slider` objektu. Dvě vlastnosti jsou připojené pomocí volání [ `SetBinding` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObjectExtensions.SetBinding/p/Xamarin.Forms.BindableObject/Xamarin.Forms.BindableProperty/System.String/) rozšiřující metody na `Label` odkazující `OpacityProperty` vázanou vlastnost a `Value` vlastnost `Slider` vyjádřený jako řetězec.
 
-Manipulace s `Slider` pak způsobí, že `Label` k objevovat a deaktivovat zobrazení.
+Manipulace `Slider` poté způsobí, že `Label` která má vyblednout do zobrazení.
 
-[ **OpacityBindingXaml** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/OpacityBindingXaml) je stejný program s datové vazby nastavit v jazyce XAML. `BindingContext` z `Label` je nastaven na `x:Reference` odkazující na rozšíření značek `Slider`a `Opacity` vlastnost `Label` je nastaven na `Binding` – rozšíření značek s jeho [ `Path` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Binding.Path/) odkazování na vlastnost `Value` vlastnost `Slider`.
+[ **OpacityBindingXaml** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/OpacityBindingXaml) je stejný program s datové vazby v XAML. `BindingContext` z `Label` je nastavena na `x:Reference` odkazující na rozšíření značek `Slider`a `Opacity` vlastnost `Label` je nastavena na `Binding` – rozšíření značek s jeho [ `Path` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Binding.Path/) vlastnosti odkazující `Value` vlastnost `Slider`.
 
-## <a name="source-and-bindingcontext"></a>Zdroj a vazby
+## <a name="source-and-bindingcontext"></a>Zdroj a BindingContext
 
-[ **BindingSourceCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/BindingSourceCode) příklad ukazuje alternativní způsob v kódu. A `Binding` objektu je vytvořen nastavením [ `Source` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Binding.Source/) vlastnost, která má `Slider` objektu a [ `Path` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Binding.Path/) vlastnost "Value". [ `SetBinding` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.SetBinding/p/Xamarin.Forms.BindableProperty/Xamarin.Forms.BindingBase/) Metodu `BindableObject` se potom volá na `Label` objektu.
+[ **BindingSourceCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/BindingSourceCode) příklad ukazuje alternativní způsob v kódu. A `Binding` objekt je vytvořen nastavením [ `Source` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Binding.Source/) vlastnost `Slider` objektu a [ `Path` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Binding.Path/) vlastnost "Value". [ `SetBinding` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.SetBinding/p/Xamarin.Forms.BindableProperty/Xamarin.Forms.BindingBase/) Metoda `BindableObject` pak volalo `Label` objektu.
 
-[ `Binding` Konstruktor](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Binding.Binding/p/System.String/Xamarin.Forms.BindingMode/Xamarin.Forms.IValueConverter/System.Object/System.String/System.Object/) také byl použit k definování `Binding` objektu.
+[ `Binding` Konstruktor](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Binding.Binding/p/System.String/Xamarin.Forms.BindingMode/Xamarin.Forms.IValueConverter/System.Object/System.String/System.Object/) může také se používají k definování `Binding` objektu.
 
-[ **BindingSourceXaml** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/BindingSourceXaml) příklad ukazuje porovnatelný z hlediska techniku v jazyce XAML. `Opacity` Vlastnost `Label` je nastaven na `Binding` – rozšíření značek s [ `Path` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Binding.Path/) nastavena na `Value` vlastnost a [ `Source` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Binding.Source/) nastavena na vložené `x:Reference` – rozšíření značek.
+[ **BindingSourceXaml** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/BindingSourceXaml) příklad ukazuje srovnatelné technika v XAML. `Opacity` Vlastnost `Label` je nastavena na `Binding` – rozšíření značek s [ `Path` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Binding.Path/) nastavena na `Value` vlastnost a [ `Source` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Binding.Source/) nastavena na vložený `x:Reference` – rozšíření značek.
 
-V souhrnu existují dva způsoby, jak odkazovat na zdrojový objekt vazby:
+Stručně řečeno existují dva způsoby, jak odkazovat na objekt zdroj vazby:
 
-- Prostřednictvím `BindingContext` vlastnost cíle
-- Prostřednictvím `Source` vlastnost `Binding` samotného objektu
+- Až `BindingContext` vlastnosti cíle
+- Až `Source` vlastnost `Binding` samotného objektu
 
-Pokud jsou zadány oba, druhý přednost. Výhodou `BindingContext` je rozšířena prostřednictvím vizuálním stromu. Toto je *velmi* užitečný, pokud více vlastností cíle, které jsou vázány na stejný zdrojový objekt.
+Pokud jsou zadány oba, druhým přednost. Výhodou `BindingContext` je, že se šíří prostřednictvím vizuálního stromu. Toto je *velmi* užitečné, pokud více vlastností cíle jsou svázány se stejným zdrojovým objektem.
 
-[ **WebViewDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/WebViewDemo) program ukazuje tato technika s [ `WebView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.WebView/) element. Dva `Button` prvky pro navigaci zpět a vpřed dědění `BindingContext` ze svého nadřazeného objektu, který odkazuje `WebView`. `IsEnabled` Vlastnosti pro dvě tlačítka pak mít jednoduché `Binding` rozšíření značek, které cílí na tlačítko `IsEnabled` vlastnosti podle nastavení [ `CanGoBack` ](https://developer.xamarin.com/api/property/Xamarin.Forms.WebView.CanGoBack/) a [ `CanGoForward` ](https://developer.xamarin.com/api/property/Xamarin.Forms.WebView.CanGoForward/) vlastnosti jen pro čtení `WebView`.
+[ **WebViewDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/WebViewDemo) program ukazuje tato technika se [ `WebView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.WebView/) elementu. Dvě `Button` prvky pro navigaci zpět a vpřed dědit `BindingContext` z nadřazeného webu, který odkazuje `WebView`. `IsEnabled` Vlastnosti dvě tlačítka potom mít jednoduchou `Binding` – rozšíření značek, které se zaměřují na tlačítko `IsEnabled` vlastnosti podle nastavení [ `CanGoBack` ](https://developer.xamarin.com/api/property/Xamarin.Forms.WebView.CanGoBack/) a [ `CanGoForward` ](https://developer.xamarin.com/api/property/Xamarin.Forms.WebView.CanGoForward/) vlastnosti jen pro čtení `WebView`.
 
-## <a name="the-binding-mode"></a>Režim vazby
+## <a name="the-binding-mode"></a>Režim vazeb
 
-Nastavit [ `Mode` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindingBase.Mode/) vlastnost `Binding` k členem [ `BindingMode` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindingMode/) výčtu:
+Nastavte [ `Mode` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindingBase.Mode/) vlastnost `Binding` členovi [ `BindingMode` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindingMode/) výčtu:
 
-- [`OneWay`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.OneWay/) tak, aby změny ve zdrojové vlastnosti ovlivnit cíl
-- [`OneWayToSource`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.OneWayToSource/) tak, aby se změny v vlastnost target ovlivní zdroj
-- [`TwoWay`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.TwoWay/) tak, aby změny ve zdrojové a cílové vzájemně ovlivňují.
-- [`Default`](https://developer.xamarin.com/api/field/Xamarin.Forms.BindingMode.Default/) použít [ `DefaultBindingMode` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableProperty.DefaultBindingMode/) zadaný při cíl `BindableProperty` byla vytvořena. Pokud byl zadán žádný výchozí hodnota je `OneWay` pro běžné vlastnosti vazbu, a `OneWayToSource` pro vazbu vlastnosti jen pro čtení.
+- [`OneWay`](xref:Xamarin.Forms.BindingMode.OneWay) tak, aby změny ve zdrojové vlastnosti ovlivňují cíl
+- [`OneWayToSource`](xref:Xamarin.Forms.BindingMode.OneWayToSource) tak, aby se změny v cílové vlastnosti ovlivní zdroj
+- [`TwoWay`](xref:Xamarin.Forms.BindingMode.TwoWay) tak, aby změny ve zdrojové a cílové vzájemně ovlivňují.
+- [`Default`](xref:Xamarin.Forms.BindingMode.Default) použít [ `DefaultBindingMode` ](xref:Xamarin.Forms.BindableProperty.DefaultBindingMode) zadán při cíl `BindableProperty` byl vytvořen. Pokud nebyla zadána žádná výchozí hodnota je `OneWay` pro běžné vlastnosti umožňující vazbu, a `OneWayToSource` pro vlastnosti jen pro čtení s možností vazby.
 
-Vlastnosti, které by mohly být cíle vazby dat ve scénářích rozhraní MVVM obvykle mají `DefaultBindingMode` z `TwoWay`. Jsou to:
+Vlastnosti, které by mohly být cíle datové vazby ve scénářích MVVM obecně mít `DefaultBindingMode` z `TwoWay`. Toto jsou:
 
 - `Value` Vlastnost `Slider` a `Stepper`
 - `IsToggled` Vlastnost `Switch`
@@ -93,47 +93,47 @@ Vlastnosti, které by mohly být cíle vazby dat ve scénářích rozhraní MVVM
 - `Date` Vlastnost `DatePicker`
 - `Time` Vlastnost `TimePicker`
 
-[ **BindingModes** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/BindingModes) příklad znázorňuje čtyři vazby režimy s vazbu dat, kde je cílem `FontSize` vlastnost `Label` a zdroj je `Value` Vlastnost `Slider`. To umožňuje každý `Slider` k řízení odpovídající velikost písma `Label`. Ale `Slider` elementy nejsou inicializovat, protože `DefaultBindingMode` z `FontSize` vlastnost je `OneWay`.
+[ **BindingModes** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/BindingModes) ukázce režimy čtyři vazby s datové vazby, kde je cílem `FontSize` vlastnost `Label` a zdroj je `Value` Vlastnost `Slider`. To umožňuje každému `Slider` rozumnou velikost písma k odpovídající položce `Label`. Ale `Slider` prvky nejsou inicializovat, protože `DefaultBindingMode` z `FontSize` vlastnost `OneWay`.
 
-[ **ReverseBinding** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/ReverseBinding) ukázka nastaví vazby `Value` vlastnost `Slider` odkazující na `FontSize` vlastnost jednotlivých `Label`. To zdá být zpětné, ale funguje lépe initialzing `Slider` elementy protože `Value` vlastnost `Slider` má `DefaultBindingMode` z `TwoWay`.
+[ **ReverseBinding** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/ReverseBinding) ukázka nastaví vazby na `Value` vlastnost `Slider` odkazující na `FontSize` vlastnosti každého `Label`. Zdá se být zpětně, ale funguje lépe initialzing `Slider` prvky protože `Value` vlastnost `Slider` má `DefaultBindingMode` z `TwoWay`.
 
-[![Trojitá snímek obrazovky zpětná vazba](images/ch16fg06-small.png "zpětná vazba")](images/ch16fg06-large.png#lightbox "zpětná vazba")
+[![Trojitá snímek zpětná vazba](images/ch16fg06-small.png "zpětná vazba")](images/ch16fg06-large.png#lightbox "zpětná vazba")
 
-Toto je podobná definici vazby v rozhraní MVVM a použijete tento typ vazby často.
+To je obdobou jak jsou definované vazby v MVVM a použijete tento typ vazby často.
 
-## <a name="string-formatting"></a>Řetězec formátování
+## <a name="string-formatting"></a>Formátování řetězců
 
-Pokud vlastnost target je typu `string`, můžete použít [ `StringFormat` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindingBase.StringFormat/) vlastnosti definované `BindingBase` převést zdroj k `string`. Nastavte `StringFormat` vlastnost .NET formátování řetězce, který byste použili s statických [ `String.Format` ](https://developer.xamarin.com/api/member/System.String.Format/p/System.String/System.Object/) formát, který se zobrazí objekt. Při použití tohoto formátování řetězce v rámci rozšíření značek, uzavřete ji do s jednoduché uvozovky, složené závorky nebudou omylem považovány za rozšíření embedded značek.
+Pokud je cílovou vlastnost typu `string`, můžete použít [ `StringFormat` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindingBase.StringFormat/) vlastnosti určené `BindingBase` převést zdroj na `string`. Nastavte `StringFormat` vlastnost .NET formátovací řetězec, který byste použili pro statické [ `String.Format` ](https://developer.xamarin.com/api/member/System.String.Format/p/System.String/System.Object/) formát pro zobrazení objektu. Při použití tohoto formátování řetězce v rámci rozšíření značek, uzavřete jej mezi jednoduché uvozovky, složené závorky nesmí být zaměněny za rozšíření vložený kód.
 
-[ **ShowViewValues** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/ShowViewValues) příklad ukazuje způsob použití `StringFormat` v jazyce XAML.
+[ **ShowViewValues** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/ShowViewValues) Ukázka předvádí, jak používat `StringFormat` v XAML.
 
-[ **WhatSizeBindings** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/WhatSizeBindings) příklad znázorňuje zobrazení velikost stránky s vazby na `Width` a `Height` vlastnosti `ContentPage`.
+[ **WhatSizeBindings** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/WhatSizeBindings) ukázce zobrazení velikost stránky pomocí vazby `Width` a `Height` vlastnosti `ContentPage`.
 
-## <a name="why-is-it-called-path"></a>Proč se nazývá "Cesta"?
+## <a name="why-is-it-called-path"></a>Proč se nazývá "Cesty"?
 
-[ `Path` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Binding.Path/) Vlastnost `Binding` je proto volat, protože může být řadu vlastnostmi a indexery, které jsou odděleny tečkami. [ **BindingPathDemos** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/BindingPathDemos) příklad ukazuje několik příkladů.
+[ `Path` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Binding.Path/) Vlastnost `Binding` je proto volat, protože může být řadu vlastnostmi a indexery oddělených tečkami. [ **BindingPathDemos** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/BindingPathDemos) příklad ukazuje několik příkladů.
 
-## <a name="binding-value-converters"></a>Převodníky hodnot vazby
+## <a name="binding-value-converters"></a>Převaděče hodnot vazeb
 
-Pokud zdrojové a cílové vlastnosti vazby jsou různé typy, můžete převést mezi typy pomocí převaděče vazby. Toto je třída, která implementuje [ `IValueConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.IValueConverter/) rozhraní a obsahuje dvě metody: [ `Convert` ](https://developer.xamarin.com/api/member/Xamarin.Forms.IValueConverter.Convert/p/System.Object/System.Type/System.Object/System.Globalization.CultureInfo/) převést zdroji na cíl, a [ `ConvertBack` ](https://developer.xamarin.com/api/member/Xamarin.Forms.IValueConverter.ConvertBack/p/System.Object/System.Type/System.Object/System.Globalization.CultureInfo/) Převést cíl ke zdroji.
+Pokud jsou zdrojové a cílové vlastnosti vazby různých typů, můžete převést mezi typy použití převaděče vazby. Toto je třída, která implementuje [ `IValueConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.IValueConverter/) rozhraní a obsahuje dvě metody: [ `Convert` ](https://developer.xamarin.com/api/member/Xamarin.Forms.IValueConverter.Convert/p/System.Object/System.Type/System.Object/System.Globalization.CultureInfo/) pro převedení zdroje do cíle, a [ `ConvertBack` ](https://developer.xamarin.com/api/member/Xamarin.Forms.IValueConverter.ConvertBack/p/System.Object/System.Type/System.Object/System.Globalization.CultureInfo/) Převod cíle na zdroj.
 
-[ `IntToBoolConverter` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/IntToBoolConverter.cs) Třídy v [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) knihovna je příklad pro převod `int` k `bool`. Je ukázán pomocí [ **ButtonEnabler** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/ButtonEnabler) vzorku, který umožňuje pouze `Button` Pokud zadal alespoň jeden znak do `Entry`.
+[ `IntToBoolConverter` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/IntToBoolConverter.cs) Třídy v [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) knihovna je příkladem pro převod `int` k `bool`. Je znázorněn ve [ **ButtonEnabler** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/ButtonEnabler) vzorku, který umožňuje pouze `Button` Pokud zadal aspoň jeden znak do `Entry`.
 
 [ `BoolToStringConverter` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BoolToStringConverter.cs) Třídy převede `bool` k `string` a definuje dvě vlastnosti k určení, jaký text má být vrácen pro `false` a `true` hodnoty.
-[ `BoolToColorConverter` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BoolToColorConverter.cs) Je podobný. [ **SwitchText** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/SwitchText) příklad znázorňuje zobrazení různých texty v různých barev, na základě pomocí těchto dvou převaděče `Switch` nastavení.
+[ `BoolToColorConverter` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BoolToColorConverter.cs) Je podobná. [ **SwitchText** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/SwitchText) příklad ukazuje použití těchto dvou převaděče k zobrazení různých textů v odlišných barvách, na základě `Switch` nastavení.
 
-Obecná [ `BoolToObjectConverter` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BoolToObjectConverter.cs) můžete nahradit `BoolToStringConverter` a `BoolToColorConverter` a sloužit jako zobecněný `bool`-na-objektu převodník jiného typu.
+Obecné [ `BoolToObjectConverter` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BoolToObjectConverter.cs) můžete nahradit `BoolToStringConverter` a `BoolToColorConverter` a slouží jako zobecněný `bool`-na-objekt převaděče libovolného typu.
 
 ## <a name="bindings-and-custom-views"></a>Vazby a vlastních zobrazení
 
-Vlastní ovládací prvky použití vazby dat můžete zjednodušit. [ `NewCheckBox.cs` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NewCheckBox.xaml.cs) Souboru kódu definuje `Text`, `TextColor`, `FontSize`, `FontAttributes`, a `IsChecked` vlastnosti, ale nemá žádné logiku vůbec pro vizuální prvky ovládacího prvku.
-Místo toho [ `NewCheckBox.cs.xaml` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NewCheckBox.xaml) soubor obsahuje všechny značky ovládacího prvku vizuály prostřednictvím datové vazby v `Label` elementy podle vlastností definovaných v souboru kódu na pozadí.
+Můžete zjednodušit vlastní ovládací prvky pomocí datové vazby. [ `NewCheckBox.cs` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NewCheckBox.xaml.cs) Soubor kódu definuje `Text`, `TextColor`, `FontSize`, `FontAttributes`, a `IsChecked` vlastnosti, ale nemá žádné logiku vůbec pro vizuály ovládacího prvku.
+Místo toho [ `NewCheckBox.cs.xaml` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NewCheckBox.xaml) soubor obsahuje všechny značky pro ovládací prvek vizuály prostřednictvím datové vazby na `Label` prvky podle vlastnosti definované v souboru kódu na pozadí.
 
-[ **NewCheckBoxDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/NewCheckBoxDemo) příklad ukazuje `NewCheckBox` vlastního ovládacího prvku.
+[ **NewCheckBoxDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/NewCheckBoxDemo) příklad ukazuje, `NewCheckBox` vlastního ovládacího prvku.
 
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Úplný text 16 kapitoly (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch16-Apr2016.pdf)
-- [Ukázky kapitoly 16](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16)
+- [Kapitola 16 textu v plném znění (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch16-Apr2016.pdf)
+- [Ukázky kapitola 16](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16)
