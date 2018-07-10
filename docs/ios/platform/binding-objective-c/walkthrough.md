@@ -1,54 +1,54 @@
 ---
-title: 'Návod: Vytvoření vazby iOS knihovna jazyka Objective-C'
-description: Tento článek obsahuje praktických návod, jak vytvořit vazbu Xamarin.iOS pro existující knihovnu jazyka Objective-C, InfColorPicker. Pokrývá oblastech, jako je kompilování statické knihovny jazyka Objective-C, jeho vazby a vazbu pomocí aplikace pro Xamarin.iOS.
+title: 'Návod: Vytvoření vazby mezi knihovnou Objective-C pro iOS'
+description: Tento článek poskytuje praktické návod k vytvoření vazby Xamarin.iOS pro existující knihovnou Objective-C, InfColorPicker. Vztahuje se na témata, jako je kompilování statickou knihovnou Objective-C, vytvoříte jejich vazbu a vazbu používá aplikace pro Xamarin.iOS.
 ms.prod: xamarin
 ms.assetid: D3F6FFA0-3C4B-4969-9B83-B6020B522F57
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/02/2017
-ms.openlocfilehash: 15e1f53d053046b4a51666647ac846366d3c858b
-ms.sourcegitcommit: 4db5f5c93f79f273d8fc462de2f405458b62fc02
+ms.openlocfilehash: 8285a82920f0d95a88855c5257535048c6de41d5
+ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2018
-ms.locfileid: "34335213"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37854854"
 ---
-# <a name="walkthrough-binding-an-ios-objective-c-library"></a>Návod: Vytvoření vazby iOS knihovna jazyka Objective-C
+# <a name="walkthrough-binding-an-ios-objective-c-library"></a>Návod: Vytvoření vazby mezi knihovnou Objective-C pro iOS
 
-_Tento článek obsahuje praktických návod, jak vytvořit vazbu Xamarin.iOS pro existující knihovnu jazyka Objective-C, InfColorPicker. Pokrývá oblastech, jako je kompilování statické knihovny jazyka Objective-C, jeho vazby a vazbu pomocí aplikace pro Xamarin.iOS._
+_Tento článek poskytuje praktické návod k vytvoření vazby Xamarin.iOS pro existující knihovnou Objective-C, InfColorPicker. Vztahuje se na témata, jako je kompilování statickou knihovnou Objective-C, vytvoříte jejich vazbu a vazbu používá aplikace pro Xamarin.iOS._
 
-Při práci na iOS, můžete se setkat případy, ve které chcete používat knihovnu jazyka Objective-C třetích stran. V těchto situacích můžete použít Xamarin.iOS _vazby projektu_ k vytvoření [C# vazby](~/cross-platform/macios/binding/overview.md) který vám umožní využívat knihovny v nástroji aplikace Xamarin.iOS.
+Při práci na iOS, může nastat případy, ve které chcete používat knihovnu třetí strany Objective-C. V takových situacích můžete použít Xamarin.iOS _vazby projektu_ k vytvoření [vazby C#](~/cross-platform/macios/binding/overview.md) , který vám umožní využívat knihovny aplikace Xamarin.iOS.
 
 Obecně v ekosystému iOS najdete knihovny v 3 charakteristikami:
 
-* Jako soubor předkompilovaných statické knihovny s `.a` rozšíření spolu s jeho záhlaví (souborů .h). Například [knihovnu Google Analytics](https://developers.google.com/analytics/devguides/collection/ios/v3/sdk-download?hl=es#download_sdk)
-* Jako předkompilovaných rozhraní. Toto je právě složku obsahující statickou knihovnu, záhlaví a někdy další prostředky s `.framework` rozšíření. Například [Google AdMob knihovny](https://developers.google.com/admob/ios/download).
-* Jako soubory zdrojového kódu. Například knihovny obsahující právě `.m` a `.h` Objective C soubory.
+* Jako soubor předkompilované statické knihovny s `.a` rozšíření spolu s jeho záhlaví (.h souborů). Například [knihovna Google Analytics](https://developers.google.com/analytics/devguides/collection/ios/v3/sdk-download?hl=es#download_sdk)
+* Jako předkompilované rozhraní. Toto je pouze složky obsahující statickou knihovnu, záhlaví a někdy další prostředky s `.framework` rozšíření. Například [knihovny AdMob od Googlu](https://developers.google.com/admob/ios/download).
+* Jako jen soubory zdrojového kódu. Například knihovnu obsahující pouze `.m` a `.h` Objective C soubory.
 
-V prvním a druhém scénáři již nebude předkompilovaných CocoaTouch statickou knihovnu, v tomto článku se zaměříme na třetí scénář. Mějte na paměti, než se pustíte do vytvoření vazby, vždy zkontrolujte licenční zadaný s knihovnou zajistit, že jste volné pro vytvoření vazby.
+V prvním a druhém scénáři již nebude předkompilované CocoaTouch statickou knihovnu, v tomto článku se zaměříme na třetí scénář. Mějte na paměti, než začnete, chcete-li vytvořit vazbu, vždy zkontrolujte licence k dispozici s knihovnou zajistit, že máte zdarma a vytvořte jeho vazbu.
 
-Tento článek obsahuje podrobný postup pro vytvoření vazby projektu pomocí open source [InfColorPicker](https://github.com/InfinitApps/InfColorPicker) jazyka Objective-C projektu jako příklad, ale všechny informace v této příručce lze upravit a použít s žádným Knihovna jazyka Objective-C třetích stran. Knihovna InfColorPicker obsahuje opakovaně použitelné zobrazení kontroler, který umožňuje uživateli vybrat barvy založený na jeho reprezentace HSB, provedení přívětivější výběr barev.
+Tento článek obsahuje podrobný postup vytvoření vazby projektu pomocí open source [InfColorPicker](https://github.com/InfinitApps/InfColorPicker) Objective-C projektu jako příklad, ale všechny informace v této příručce lze upravit a použít s žádným Objective-C knihovny třetí strany. Knihovna InfColorPicker obsahuje opakovaně použitelné zobrazení kontroler, který umožňuje uživateli vybrat barvu podle jeho reprezentace HSB provádění přívětivější výběr barvy.
 
-[![](walkthrough-images/run01.png "Příklad knihovny InfColorPicker systémem iOS")](walkthrough-images/run01.png#lightbox)
+[![](walkthrough-images/run01.png "Příklad InfColorPicker knihovna pro iOS")](walkthrough-images/run01.png#lightbox)
 
-Jsme zaměříme všechny potřebné kroky využívat toto konkrétní rozhraní API jazyka Objective-C v Xamarin.iOS:
+Všechny nezbytné kroky používat toto konkrétní rozhraní API jazyka Objective-C v Xamarin.iosu probereme:
 
-- Nejdříve vytvoříme jazyka Objective-C statickou knihovnu, v pomocí Xcode.
-- Potom jsme budete vazbu této statické knihovny s Xamarin.iOS.
-- V dalším kroku zobrazit, jak můžete snížit zatížení pomocí automatického generování některé (ale ne všechny) cíl Sharpie nutné definice rozhraní API vyžaduje Xamarin.iOS vazby.
-- Nakonec vytvoříme aplikaci Xamarin.iOS, která používá vazby.
+- Nejprve vytvoříme statické knihovny Objective-C pomocí Xcode.
+- Potom jsme budete vytvořit vazbu tento statické knihovny s Xamarin.iOS.
+- V dalším kroku ukazují, jak Sharpie cíle se dá snížit zatížení automatického generování některé (ale ne všech) nutné definice rozhraní API vyžaduje vazbu Xamarin.iOS.
+- A konečně My vytvoříme aplikaci Xamarin.iOS, která používá vazbu.
 
-Ukázkovou aplikaci ukazují, jak používat silné delegáta pro komunikaci mezi rozhraní API InfColorPicker a kódu jazyka C#. Po tom, jak používat silné delegáta jsme viděli, jak používat slabé delegátů k provádění stejných úloh jsme zaměříme.
+Ukázková aplikace ukazuje, jak používat silné delegáta pro komunikaci mezi InfColorPicker rozhraní API a náš kód jazyka C#. Po zaznamenali jsme na tom, jak používat silné delegáta, budeme zabývat použití slabé delegáty k provádění stejných úloh.
 
 ## <a name="requirements"></a>Požadavky
 
-Tento článek předpokládá, že máte některé znalost Xcode a jazyka Objective-C a jste četli naše [vazby Objective-C](~/cross-platform/macios/binding/index.md) dokumentaci. Kromě toho je nutné provést následující chcete provést kroky uvedené:
+Tento článek předpokládá, že máte některé znalost Xcode a jazyka Objective-C a jste si přečetli naše [vazeb Objective-C](~/cross-platform/macios/binding/index.md) dokumentaci. Kromě toho je nutné provést následující kroky uvedené:
 
--  **Xcode a iOS SDK** -Xcode společnosti Apple a nejnovější rozhraní API pro iOS musí být nainstalovaná a nakonfigurovaná na počítači pro vývojáře.
--  **[Nástroje příkazového řádku Xcode](#Installing_the_Xcode_Command_Line_Tools)**  – nástroje pro příkazový řádek Xcode musí být nainstalován pro aktuálně nainstalovanou verzi Xcode (dole najdete podrobné informace o instalaci).
--  **Visual Studio pro Mac nebo Visual Studio** – nejnovější verze sady Visual Studio pro Mac nebo Visual Studio musí být nainstalovaná a nakonfigurovaná na vývojovém počítači. Je vyžadován pro vývoj aplikace pro Xamarin.iOS Apple Mac, a když pomocí sady Visual Studio můžete musí být připojen k [Xamarin.iOS sestavení hostitele](~/ios/get-started/installation/windows/connecting-to-mac/index.md)
--  **Nejnovější verzi cíl Sharpie** -aktuální kopii nástroje cíl Sharpie stáhnout z [zde](~/cross-platform/macios/binding/objective-sharpie/get-started.md). Pokud už máte nainstalovaný Sharpie cíl, můžete je aktualizovat ji na nejnovější verzi pomocí `sharpie update`
+-  **Xcode a sadu iOS SDK** -Xcode od společnosti Apple a nejnovější rozhraní API pro iOS musí být nainstalovaná a nakonfigurovaná v počítači vývojáře.
+-  **[Nástroje příkazového řádku Xcode](#Installing_the_Xcode_Command_Line_Tools)**  – příkazového řádku nástroje Xcode, musí být nainstalována pro aktuálně nainstalovanou verzi Xcode (dole najdete podrobné informace o instalaci).
+-  **Visual Studio pro Mac nebo Visual Studio** – nejnovější verzi sady Visual Studio pro Mac nebo Visual Studio by měl nainstalovaný a nakonfigurovaný na vývojovém počítači. Apple Mac, je třeba vyvíjet aplikace pro Xamarin.iOS a při použití sady Visual Studio musíte být připojeni k [Xamarin.iOS build host](~/ios/get-started/installation/windows/connecting-to-mac/index.md)
+-  **Nejnovější verzi cíle Sharpie** -aktuální kopii cíle Sharpie nástroj stáhnout z [tady](~/cross-platform/macios/binding/objective-sharpie/get-started.md). Pokud už máte cíle Sharpie nainstalovaný, je můžete aktualizovat na nejnovější verzi pomocí `sharpie update`
 
 <a name="Installing_the_Xcode_Command_Line_Tools"/>
 
@@ -57,134 +57,134 @@ Tento článek předpokládá, že máte některé znalost Xcode a jazyka Object
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 
-Jak jsme uvedli výše, budeme používat nástroje příkazového řádku Xcode (konkrétně `make` a `lipo`) v tomto návodu. `make` Příkaz je velmi běžné Unix nástroj, který bude automatizovat kompilace spustitelné programy a knihovny pomocí _makefile_ určující, jak by měly být vytvořeny program. `lipo` Příkaz je nástroj příkazového řádku OS X pro vytváření souborů více architektura; ho bude kombinovat více `.a` soubory do jednoho souboru, který mohou využívat všechny architektury hardwaru.
+Jak je uvedeno výše, budeme používat nástroje příkazového řádku Xcode (konkrétně `make` a `lipo`) v tomto názorném postupu. `make` Příkaz je velmi běžné Unix nástroj, který automatizuje sestavování spustitelných programů a knihoven pomocí _makefile_ , která určuje, jak by měly být sestaveny program. `lipo` Příkaz je nástroj příkazového řádku systému OS X pro vytváření architektury více souborů, se budou kombinovat více `.a` soubory do jednoho souboru, který mohou využívat všechny architektury hardwaru.
 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 
-Jak jsme uvedli výše, budeme nástroje příkazového řádku Xcode používat na **Mac sestavení hostitele** (konkrétně `make` a `lipo`) v tomto návodu. `make` Příkaz je velmi běžné Unix nástroj, který bude automatizovat kompilace spustitelné programy a knihovny pomocí _makefile_ k Určuje, jak vytvořit program. `lipo` Příkaz je nástroj příkazového řádku OS X pro vytváření souborů více architektura; ho bude kombinovat více `.a` soubory do jednoho souboru, který mohou využívat všechny architektury hardwaru.
+Jak je uvedeno výše, budeme příkazového řádku nástroje Xcode používat na **hostitele sestavovací Mac** (konkrétně `make` a `lipo`) v tomto názorném postupu. `make` Příkaz je velmi běžné Unix nástroj, který automatizuje sestavování spustitelných programů a knihoven pomocí _makefile_ k Určuje, jak sestavit program. `lipo` Příkaz je nástroj příkazového řádku systému OS X pro vytváření architektury více souborů, se budou kombinovat více `.a` soubory do jednoho souboru, který mohou využívat všechny architektury hardwaru.
 
 
 -----
 
-Podle společnosti Apple [sestavení z příkazového řádku s Xcode – nejčastější dotazy](https://developer.apple.com/library/ios/technotes/tn2339/_index.html) dokumentace, OS X 10.9 a je větší, **stáhne** podokně Xcode **Předvolby** dialogu není nadále podporuje stahování nástroje příkazového řádku.
+Podle společnosti Apple [sestavení z příkazového řádku pomocí Xcode nejčastější dotazy k](https://developer.apple.com/library/ios/technotes/tn2339/_index.html) dokumentaci v OS X 10.9 nebo novější, **stáhne** podokně Xcode **Předvolby** dialogové okno není nadále podporuje stahování nástroje příkazového řádku.
 
-Budete muset použít jednu z následujících metod k instalaci nástroje:
+Budete muset použít jednu z následujících metod k instalaci nástrojů:
 
-- **Instalaci Xcode** – při instalaci Xcode, obsahuje také program s všechny nástroje příkazového řádku. V OS X 10.9 překrytí (nainstalované v `/usr/bin`), můžete namapovat jakýkoli nástroj součástí `/usr/bin` odpovídající nástroj v Xcode. Například `xcrun` příkaz, který umožňuje najít nebo všechny nástroj uvnitř Xcode spustit z příkazového řádku.
-- **Aplikace Terminálové** -z terminálu aplikace, můžete nainstalovat spuštěním nástroje příkazového řádku `xcode-select --install` příkaz:
-    - Spuštění aplikace terminálu.
+- **Nainstalovat Xcode** – při instalaci Xcode, dodává jako součást balíčku s všechny nástroje příkazového řádku. V OS X 10.9 překrytí (nainstalované v `/usr/bin`), lze mapovat libovolný nástroj součástí `/usr/bin` odpovídající nástroje v Xcode. Například `xcrun` příkaz, který umožňuje najít nebo z příkazového řádku spustit libovolný nástroj v Xcode.
+- **Aplikaci terminál** – z terminálu aplikace, můžete nainstalovat spuštěním nástroje příkazového řádku `xcode-select --install` příkaz:
+    - Spusťte aplikaci terminálu.
     - Typ `xcode-select --install` a stiskněte klávesu **Enter**, například:
 
     ```bash
     Europa:~ kmullins$ xcode-select --install
     ```
 
-    - Zobrazí se výzva k instalaci nástroje příkazového řádku, klikněte na tlačítko **nainstalovat** tlačítko: [ ![ ] (walkthrough-images/xcode01.png "instalaci nástrojů příkazového řádku")](walkthrough-images/xcode01.png#lightbox)
+    - Budete vyzváni k instalaci nástrojů příkazového řádku, klikněte na tlačítko **nainstalovat** tlačítko: [ ![ ] (walkthrough-images/xcode01.png "instalace nástrojů příkazového řádku")](walkthrough-images/xcode01.png#lightbox)
 
-    - Nástroje bude možné stáhnout a nainstalovat z servery společnosti Apple: [ ![ ] (walkthrough-images/xcode02.png "stahování nástroje")](walkthrough-images/xcode02.png#lightbox)
+    - Nástroje se stáhnout a nainstalovat ze serverů společnosti Apple: [ ![ ] (walkthrough-images/xcode02.png "stahování nástroje")](walkthrough-images/xcode02.png#lightbox)
 
-- **Soubory ke stažení pro vývojáře Apple** -balíček nástroje pro příkazový řádek je k dispozici [soubory ke stažení pro vývojáře Apple]() webové stránky. Přihlaste se pomocí Apple ID, potom vyhledat a stáhnout nástroje příkazového řádku: [ ![ ] (walkthrough-images/xcode03.png "hledání nástroje příkazového řádku")](walkthrough-images/xcode03.png#lightbox)
+- **Soubory ke stažení pro vývojáře Apple** – balíček nástroje pro příkazový řádek je k dispozici [soubory ke stažení pro vývojáře Apple]() webové stránky. Přihlaste se pomocí Apple ID, vyhledejte a stáhněte si nástroje příkazového řádku: [ ![ ] (walkthrough-images/xcode03.png "hledání nástrojů příkazového řádku")](walkthrough-images/xcode03.png#lightbox)
 
-Pomocí nástroje příkazového řádku nainstalované jsme připraveni pokračovat v návodu.
+Pomocí nástrojů příkazového řádku nainstalovat jsme připraveni pokračovat v návodu.
 
-## <a name="walkthrough"></a>Návod
+## <a name="walkthrough"></a>Názorný postup
 
-V tomto návodu nabídneme následující kroky:
+V tomto podrobném návodu se budeme zabývat následující kroky:
 
-- **[Vytvořte statické knihovny](#Creating_A_Static_Library)**  – tento krok zahrnuje vytvoření statické knihovny **InfColorPicker** kód jazyka Objective-C. Statické knihovny bude mít `.a` příponu souboru a budou vloženy do sestavení .NET projektu knihovny.
-- **[Vytvoření vazby projektu Xamarin.iOS](#Create_a_Xamarin.iOS_Binding_Project)**  – když máme statickou knihovnu, budeme ji používat k vytvoření vazby projektu Xamarin.iOS. Vazba projektu se skládá z statickou knihovnu, kterou jsme právě vytvořili a metadata ve formě kód C#, která vysvětluje, jak můžete použít rozhraní API jazyka Objective-C. Tato metadata se obvykle označuje jako definice rozhraní API. Použijeme **[cíl Sharpie](#Using_Objective_Sharpie)** a pomoci tak s vytvoření definice rozhraní API.
-- **[Normalizuje definice rozhraní API](#Normalize_the_API_Definitions)**  – cíl Sharpie nemá úlohu skvělé nám pomoci, ale nemůže dělat všechno, co. Probereme některé změny, které je potřeba před použitím provést definice rozhraní API.
-- **[Použití knihovny vazby](#Using_the_Binding)**  – nakonec vytvoříme aplikace pro Xamarin.iOS k ukazují, jak používat naše projektu nově vytvořená vazba.
+- **[Vytvoření statické knihovny](#Creating_A_Static_Library)**  – tento krok zahrnuje vytvoření statické knihovny **InfColorPicker** kód Objective-C. Statická knihovna bude mít `.a` příponu souboru a bude vložen do sestavení .NET projektu knihovny.
+- **[Vytvoření vazby projektu Xamarin.iOS](#Create_a_Xamarin.iOS_Binding_Project)**  – Jakmile budeme mít statickou knihovnu, použijeme ji k vytvoření vazby projektu Xamarin.iOS. Vazba projekt obsahuje statickou knihovnu, kterou jsme právě vytvořili a metadat ve formě kód jazyka C#, která vysvětluje, jak je možné rozhraní API jazyka Objective-C. Tato metadata se obvykle označuje jako definice rozhraní API. Použijeme **[cíle Sharpie](#Using_Objective_Sharpie)** nám s vytvořit definice rozhraní API.
+- **[Normalizovat definice rozhraní API](#Normalize_the_API_Definitions)**  – cíl Sharpie nemá Skvělá práce nám pomoci, ale nemůže provádět vše. Probereme některé změny, které potřebujeme před použitím provedli definice rozhraní API.
+- **[Použít knihovnu vazby](#Using_the_Binding)**  – nakonec vytvoříme aplikace Xamarin.iOS, která ukazují, jak použít náš projekt nově vytvořená vazba.
 
-Teď, když jsme pochopit, jaké kroky se podílejí, můžeme přesunout k rest návodu.
+Teď, když jsme pochopit, jaké kroky souvisejí, přejdeme zbytek návodu.
 
 <a name="Creating_A_Static_Library"/>
 
 ## <a name="creating-a-static-library"></a>Vytvoření statické knihovny
 
-Pokud jsme zkontrolovat kód pro InfColorPicker v Githubu:
+Pokud jsme prohlédnout kód pro InfColorPicker v Githubu:
 
-[![](walkthrough-images/image02.png "Zkontrolujte kód pro InfColorPicker v Githubu")](walkthrough-images/image02.png#lightbox)
+[![](walkthrough-images/image02.png "Prozkoumejte kód pro InfColorPicker v Githubu")](walkthrough-images/image02.png#lightbox)
 
-Vidíme následující tři adresáře v projektu:
+Můžeme vidět následující tři adresáře v projektu:
 
-- **InfColorPicker** -tento adresář obsahuje kód jazyka Objective-C pro projekt.
-- **PickerSamplePad** -tento adresář obsahuje ukázkový iPad projekt.
-- **PickerSamplePhone** -tento adresář obsahuje ukázkový iPhone projekt.
+- **InfColorPicker** – tento adresář obsahuje kód Objective-C pro projekt.
+- **PickerSamplePad** – tento adresář obsahuje ukázkový projekt pro iPad.
+- **PickerSamplePhone** – tento adresář obsahuje ukázkový projekt pro iPhone.
 
-Umožňuje stáhnout projektu InfColorPicker z [Githubu](https://github.com/InfinitApps/InfColorPicker/archive/master.zip) a rozbalte ho v adresáři naše výběru. Otevírání až Xcode cíle pro `PickerSamplePhone` projektu, vidíte následující strukturu projektu Xcode Navigátor:
+Umožňuje stáhnout InfColorPicker projekt z [Githubu](https://github.com/InfinitApps/InfColorPicker/archive/master.zip) a rozbalte ho do adresáře naše volba. Případným otevřením cíl Xcode pro `PickerSamplePhone` projektu, uvidíme následující strukturu projektu v části Xcode Navigátor:
 
-[![](walkthrough-images/image03.png "Struktura projektu Xcode Navigátor")](walkthrough-images/image03.png#lightbox)
+[![](walkthrough-images/image03.png "Struktura projektu v části Xcode Navigátor")](walkthrough-images/image03.png#lightbox)
 
-Tento projekt dosahuje opakované použití kódu přímo InfColorPicker zdrojový kód (v červeným rámečkem) přidáte do každé ukázkový projekt. Kód pro ukázkový projekt je uvnitř blue pole. Protože tato konkrétní projekt neposkytuje nám s statickou knihovnu, je nutné pro nás vytvoření projektu Xcode kompilace se statickou knihovnou.
+Tento projekt dosahuje opakované využívání kódu přímo do každý projekt ukázky přidání InfColorPicker zdrojového kódu (v červeným rámečkem). Kód pro ukázkový projekt je v poli modrá. Protože tohoto konkrétního projektu neposkytuje nám se statickou knihovnou, je nutné pro nám vytvořit projekt Xcode pro Zkompilujte statickou knihovnu.
 
-Prvním krokem je pro nás přidání InfoColorPicker zdrojový kód do se statickou knihovnou. Umožňuje dosáhnout postupujte takto:
+Prvním krokem je pro nás InfoColorPicker zdrojový kód se přidává do statické knihovny. Umožňuje dosáhnout postupujte takto:
 
-1. Spusťte Xcode.
-2. Z **soubor** nabídky vyberte možnost **nový** > **projektu...** :
+1. Spuštění Xcode.
+2. Z **souboru** nabídky vyberte možnost **nový** > **projektu...** :
 
-    [![](walkthrough-images/image04.png "Spuštění nového projektu")](walkthrough-images/image04.png#lightbox)
-3. Vyberte **Framework & knihovny**, **kakao Touch statické knihovny** šablonu a klikněte na **Další** tlačítko:
+    [![](walkthrough-images/image04.png "Zahájení projektu")](walkthrough-images/image04.png#lightbox)
+3. Vyberte **rozhraní a knihovny**, **Cocoa Touch statickou knihovnu** šablony a kliknutím **Další** tlačítka:
 
-    [![](walkthrough-images/image05.png "Vyberte šablonu, kakao Touch statické knihovny")](walkthrough-images/image05.png#lightbox)
+    [![](walkthrough-images/image05.png "Vyberte šablonu Cocoa Touch statickou knihovnu")](walkthrough-images/image05.png#lightbox)
 
-4. Zadejte `InfColorPicker` pro **název projektu** a klikněte na **Další** tlačítko:
+4. Zadejte `InfColorPicker` pro **název projektu** a klikněte na tlačítko **Další** tlačítka:
 
-    [![](walkthrough-images/image06.png "Zadejte název projektu InfColorPicker")](walkthrough-images/image06.png#lightbox)
-5. Vyberte umístění pro uložení projektu a klikněte na **OK** tlačítko.
-6. Teď je potřeba přidat zdroj z projektu InfColorPicker naše projektu statické knihovny. Protože **InfColorPicker.h** soubor již existuje v našem statické knihovny (ve výchozím nastavení), Xcode nebude povolovat nám ji přepsat. Z **vyhledávací**, přejděte na zdrojový kód InfColorPicker v původní projekt, který jsme rozbalené z Githubu, všechny soubory InfColorPicker zkopírujte a vložte je do našich nového projektu statické knihovny:
+    [![](walkthrough-images/image06.png "Zadejte InfColorPicker jako název projektu.")](walkthrough-images/image06.png#lightbox)
+5. Vyberte umístění, kam chcete projekt uložit a klikněte na tlačítko **OK** tlačítko.
+6. Teď potřebujeme přidat zdroj z projektu InfColorPicker pro náš projekt statické knihovny. Vzhledem k tomu, **InfColorPicker.h** soubor již existuje v našich statické knihovny (ve výchozím nastavení), Xcode nepovolí, abychom ho přepsat. Z **Finder**, přejít do zdrojového kódu InfColorPicker v původní projekt, který jsme odblokujte z Githubu, všechny soubory InfColorPicker zkopírujte a vložte je do našich nový projekt statické knihovny:
 
     [![](walkthrough-images/image12.png "Zkopírujte všechny soubory InfColorPicker")](walkthrough-images/image12.png#lightbox)
 
-7. Vrátit do Xcode, klikněte pravým tlačítkem na **InfColorPicker** složky a vyberte **přidat soubory do "InfColorPicker..."**:
+7. Vraťte se do Xcode, klikněte pravým tlačítkem na **InfColorPicker** a pak zvolte položku **přidat soubory do "InfColorPicker..."**:
 
     [![](walkthrough-images/image08.png "Přidávání souborů")](walkthrough-images/image08.png#lightbox)
 
-8. V dialogovém okně Přidat soubory přejděte na soubory InfColorPicker zdrojového kódu, které jsme právě zkopírovali, vyberte všechny a klikněte **přidat** tlačítko:
+8. V dialogovém okně Přidat soubory přejděte InfColorPicker souborů se zdrojovým kódem, které jsme právě zkopírovali, vyberte je všechny a klikněte na tlačítko **přidat** tlačítka:
 
-    [![](walkthrough-images/image09.png "Vyberte všechny a klikněte na tlačítko Přidat")](walkthrough-images/image09.png#lightbox)
+    [![](walkthrough-images/image09.png "Vybrat vše a klikněte na tlačítko Přidat")](walkthrough-images/image09.png#lightbox)
 
-9. Zdrojový kód se zkopírují do našich projektu:
+9. Zdrojový kód se zkopíruje do projektu:
 
-    [![](walkthrough-images/image10.png "Zdrojový kód se zkopírují do projektu")](walkthrough-images/image10.png#lightbox)
+    [![](walkthrough-images/image10.png "Zdrojový kód se zkopíruje do projektu")](walkthrough-images/image10.png#lightbox)
 
-10. Navigátor projektu Xcode, vyberte **InfColorPicker.m** souborů a komentář poslední dva řádky (kvůli způsobu, byla zapsána této knihovny, tento soubor není používán):
+10. Navigátor projektů Xcode, vyberte **InfColorPicker.m** souboru a nastavte komentář poslední dva řádky (vzhledem ke způsobu, zapsán této knihovny, tento soubor nepoužívá):
 
-    [![](walkthrough-images/image14.png "Úpravy souboru InfColorPicker.m")](walkthrough-images/image14.png#lightbox)
+    [![](walkthrough-images/image14.png "Úprava souboru InfColorPicker.m")](walkthrough-images/image14.png#lightbox)
 
-11. Nyní potřebujeme zkontrolujte, zda jsou všechny rozhraní, které vyžadují knihovny. Tyto informace můžete najít v souboru README nebo otevřením jednoho z ukázkových projektů zadat. Tento příklad používá `Foundation.framework`, `UIKit.framework`, a `CoreGraphics.framework` tak přidejme je.
+11. Nyní potřebujeme zkontrolujte, jestli jsou všechny architektury vyžadované knihovny. Tyto informace můžete najít v souboru README nebo otevřením jednoho z ukázkových projektů k dispozici. Tento příklad používá `Foundation.framework`, `UIKit.framework`, a `CoreGraphics.framework` přidejme tedy je.
 
-12. Vyberte **InfColorPicker cíl > fáze buildu** a rozbalte **odkaz binárních souborů a knihoven** části:
+12. Vyberte **InfColorPicker cíl > fáze buildu** a rozbalte **propojení binárních souborů a knihoven** části:
 
-    [![](walkthrough-images/image16b.png "Rozbalte část odkaz binárních souborů a knihoven")](walkthrough-images/image16b.png#lightbox)
+    [![](walkthrough-images/image16b.png "Rozbalte část propojení binárních souborů a knihoven")](walkthrough-images/image16b.png#lightbox)
 
-13. Použití **+** tlačítko otevřete dialogové okno umožňuje přidat požadované rámce architektury uvedené výše:
+13. Použití **+** tlačítka otevřete dialogové okno vám umožňuje přidat výše uvedené požadované snímků architektury:
 
-    [![](walkthrough-images/image16c.png "Přidejte že požadované rámce architektury uvedené výše")](walkthrough-images/image16c.png#lightbox)
+    [![](walkthrough-images/image16c.png "Přidání že výše uvedených architektur vyžaduje snímků")](walkthrough-images/image16c.png#lightbox)
 
-14. **Odkaz binárních souborů a knihoven** části by teď měl vypadat jako obrázek níže:
+14. **Propojení binárních souborů a knihoven** oddílu by teď měl vypadat jako na obrázku níže:
 
     [![](walkthrough-images/image16d.png "V části propojení binárních souborů a knihoven")](walkthrough-images/image16d.png#lightbox)
 
-V tuto chvíli jsme zavřít, ale máme není poměrně Hotovo. Vytvořil se statickou knihovnou, ale je třeba vytvořit k tvorbě Fat binární, který obsahuje všechny požadované architektury pro zařízení s iOS a simulátoru iOS.
+V tuto chvíli jsme zavřít, ale můžeme ještě není vše Hotovo. Vytvoření statické knihovny, ale musíme sestavte ho k vytvoření systému souborů Fat binární, který zahrnuje všechny povinné architektury pro zařízení s Iosem a simulátoru iOS.
 
-### <a name="creating-a-fat-binary"></a>Vytváření Fat binární
+### <a name="creating-a-fat-binary"></a>Vytváření Fat binárního souboru
 
-Všechna zařízení s iOS mají procesory s technologií architektura ARM, které mají postupného vývoje. Každé nové architektury přidat nové pokyny a dalších vylepšení současně se zachovává zpětné kompatibility. Na zařízeních s iOS máme armv6, armv7, armv7s, nastaví instrukce arm64 – i když [používáme už armv6](~/ios/deploy-test/compiling-for-different-devices.md). Simulátoru iOS není používá technologii ARM a je istead x86 a simulátoru x86_64 zapnuté. Jsme, které znamená, že pro nás je, že jsme musí poskytnout knihovny na každou instrukci nastaví.
+Všechna zařízení s Iosem mají procesory technologii architektuře ARM, které mají vyvinuty v průběhu času. Každé nové architektury přidat nové pokyny a další vylepšení a přitom zachovávat zpětné kompatibility. Na zařízeních s Iosem máme armv6, armv7, armv7s, arm64 instrukční sadu – i když [jsme již nebudete používat armv6](~/ios/deploy-test/compiling-for-different-devices.md). Simulátoru iOS se používá technologii ARM a je istead x86 a x86_64 s využitím simulátoru. Společnost Microsoft, které znamená, že nám je, že jsme na každou instrukci nezajistil knihovny nastaví.
 
-Se systémem souborů Fat knihovna `.a` souboru, který obsahuje všechny podporované architektury.
+Fat knihovna je `.a` souboru, který obsahuje všechny podporované architektury.
 
-Vytvoření fat binární je třech krocích:
+Vytvoření systému souborů fat binární je o třech krocích:
 
-- Zkompilujte ARM 7 & ARM64 verzi se statickou knihovnou.
-- Zkompilujte x86 a x84_64 verzi se statickou knihovnou.
-- Použití `lipo` nástroj příkazového řádku sloučit dva statické knihovny do jednoho.
+- Zkompilujte ARM 7 a ARM64 verzi statickou knihovnu.
+- Zkompilujte x86 a x84_64 verzi statickou knihovnu.
+- Použití `lipo` nástroj příkazového řádku zkombinovat do jedné dvě statické knihovny.
 
-Když jsou tyto tři kroky místo jednoduché a může být nutné je opakovat v budoucnu, když knihovna jazyka Objective-C získává aktualizace, nebo pokud je nutné opravy chyb. Pokud se rozhodnete automatizovat tyto kroky, zjednoduší budoucí údržby a podpory vazby projektu iOS.
+Když jsou spíše jednoduché tyto tři kroky a může být nutné zopakovat je v budoucnosti, když knihovnou Objective-C obdrží aktualizace nebo pokud vyžadujeme opravy chyb. Pokud se rozhodnete k automatizaci těchto kroků, zjednoduší budoucí údržby a podpory vazby projektu pro iOS.
 
-Existují celou řadu nástrojů, které jsou k dispozici pro automatizaci takových úloh - skript prostředí, [převislým](http://rake.rubyforge.org/), [xbuild](http://www.mono-project.com/docs/tools+libraries/tools/xbuild/), a [zkontrolujte](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/make.1.html). Když jsme nainstalovány nástroje pro příkazový řádek Xcode, jsme nainstalovali také zkontrolujte, tak, že se systému, který se použije v tomto návodu. Tady je **Makefile** , můžete použít k vytvoření více architektura sdílenou knihovnu, která bude fungovat na zařízení s iOS a simulátor pro všechny knihovny:
+Celá řada nástrojů, které jsou k dispozici automatizovat takových úloh - skript prostředí, [převislým](http://rake.rubyforge.org/), [xbuild](http://www.mono-project.com/docs/tools+libraries/tools/xbuild/), a [zkontrolujte](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/make.1.html). Když jsme nainstalovali nástroje Xcode příkazového řádku, jsme také nainstalovali, ujistěte se tak, že se systém sestavení, který se použije pro tento návod. Tady je **Makefile** , můžete použít k vytvoření více architektura sdílené knihovny, který bude fungovat na zařízení s Iosem a simulátor pro všechny knihovny:
 
 ```bash
 XBUILD=/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild
@@ -213,118 +213,118 @@ clean:
     -rm -f *.a *.dll
 ```
 
-Zadejte **Makefile** příkazů v editoru prostý text dle vlastního výběru a aktualizovat oddíly s **název projektu YOUR** s názvem projektu. Je také důležité zajistit, aby jsme vložte pokyny výše, zachována na karty v rámci pokynů.
+Zadejte **Makefile** příkazy v editoru prostého textu, které si vyberete a aktualizovat oddíly se **váš název projektu** s názvem projektu. Je také důležité zajistit, že jsme vložte pokyny výše, aby byla zachována kartách pokynů.
 
-Uložte soubor s názvem **Makefile** do stejného umístění jako statické knihovny InfColorPicker Xcode jsme vytvořili výše:
+Uložte soubor s názvem **Makefile** do stejného umístění jako statická knihovna InfColorPicker Xcode jsme vytvořili výše:
 
 [![](walkthrough-images/lib00.png "Uložte soubor s názvem souboru pravidel")](walkthrough-images/lib00.png#lightbox)
 
-Otevřete terminál aplikace na počítači Mac a přejděte do umístění vašeho souboru pravidel. Typ `make` do terminálu, stiskněte klávesu **Enter** a **Makefile** budou spuštěny:
+Otevřete aplikaci terminál na počítači Mac a přejděte do umístění vašeho souboru pravidel. Typ `make` do terminálu, stiskněte klávesu **Enter** a **Makefile** se spustí:
 
 [![](walkthrough-images/lib01.png "Ukázkový výstup souboru pravidel")](walkthrough-images/lib01.png#lightbox)
 
-Když spustíte Ujistěte se, zobrazí se spoustu text posouvání pomocí. Pokud všechno fungovala správně, uvidíte slova **sestavení bylo úspěšné** a `libInfColorPicker-armv7.a`, `libInfColorPicker-i386.a` a `libInfColorPickerSDK.a` soubory budou zkopírovány do stejného umístění, jako **Makefile**:
+Když spustíte, ujistěte se, zobrazí se hodně textu posouvání. Pokud vše funguje správně, zobrazí se vám slova **sestavení proběhlo úspěšně** a `libInfColorPicker-armv7.a`, `libInfColorPicker-i386.a` a `libInfColorPickerSDK.a` soubory budou zkopírovány do stejného umístění jako **Makefile**:
 
-[![](walkthrough-images/lib02.png "LibInfColorPicker armv7.a, libInfColorPicker i386.a a libInfColorPickerSDK.a soubory generované souboru pravidel")](walkthrough-images/lib02.png#lightbox)
+[![](walkthrough-images/lib02.png "LibInfColorPicker armv7.a, libInfColorPicker i386.a a libInfColorPickerSDK.a soubory generované záznamem souboru pravidel")](walkthrough-images/lib02.png#lightbox)
 
-Architekturách v rámci vaší Fat binární si můžete ověřit pomocí následujícího příkazu:
+Architektury můžete ověřit v rámci Fat binární soubor pomocí následujícího příkazu:
 
 ```bash
 xcrun -sdk iphoneos lipo -info libInfColorPicker.a
 ```
 
-To by měl zobrazit následující:
+Mělo by se zobrazit následující:
 
 ```bash
 Architectures in the fat file: libInfColorPicker.a are: i386 armv7 x86_64 arm64
 ```
 
-V tomto okamžiku prvním krokem naše iOS vazby po dokončení vytvořením statické knihovny pomocí Xcode a nástroje příkazového řádku Xcode `make` a `lipo`. Můžeme přesunout k dalšímu kroku a používat **cíl Sharpie** k automatizaci vytváření vazeb rozhraní API pro nás.
+V tuto chvíli jsme dokončení první krok naše vazby iOS tak, že vytvoříte statické knihovny pomocí Xcode a nástroje příkazového řádku Xcode `make` a `lipo`. Můžeme přejít k dalšímu kroku a použijte **cíle Sharpie** k automatizaci vytváření vazeb rozhraní API pro nás.
 
 <a name="Create_a_Xamarin.iOS_Binding_Project"/>
 
 ## <a name="create-a-xamarinios-binding-project"></a>Vytvoření vazby projektu Xamarin.iOS
 
-Před můžeme použít **cíl Sharpie** automatizovat proces vytváření vazby, potřebujeme k vytvoření vazby projektu Xamarin.iOS určený definice rozhraní API (který budeme používat **cíl Sharpie** nám pomáhají sestavení) a vytvořte vazbu C# pro nás.
+Dřív, než můžete **Sharpie cíle** automatizovat proces vytváření vazby, potřebujeme k vytvoření vazby projektu Xamarin.iOS k umístění definice rozhraní API (který budeme používat **Sharpie cíle** nám pomůže sestavení) a vytvoření vazby C# pro nás.
 
-Pojďme postupujte takto:
+Provedeme následující:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-1. Spuštění sady Visual Studio for Mac.
-1. Z **soubor** nabídce vyberte možnost **nový** > **řešení...** :
+1. Spusťte sadu Visual Studio pro Mac.
+1. Z **souboru** nabídce vyberte možnost **nový** > **řešení...** :
 
-    ![](walkthrough-images/bind01.png "Spuštění nové řešení")
+    ![](walkthrough-images/bind01.png "Spouští se nové řešení")
 
-1. V dialogovém okně nové řešení vyberte **knihovny** > **iOS vazby projektu**:
+1. V dialogovém okně Nová řešení vyberte **knihovny** > **iOS vazby projektu**:
 
-    ![](walkthrough-images/bind02.png "Vyberte iOS vazby projektu")
+    ![](walkthrough-images/bind02.png "Vybrat iOS vazby projektu")
 
-1. Klikněte **Další** tlačítko.
+1. Klikněte na tlačítko **Další** tlačítko.
 
-1. Zadejte "InfColorPickerBinding" jako **název projektu** a klikněte na tlačítko **vytvořit** tlačítko pro vytvoření řešení:
+1. Zadejte "InfColorPickerBinding" jako **název projektu** a klikněte na tlačítko **vytvořit** pro vytvoření řešení:
 
     ![](walkthrough-images/bind02a.png "Jako název projektu zadejte InfColorPickerBinding")
 
-Vytvoří se řešení a dvě výchozí soubory budou zahrnuty:
+Řešení se nevytvoří a dvě výchozí soubory budou zahrnuty:
 
-![](walkthrough-images/bind03.png "Struktura řešení v Průzkumníku řešení")
+![](walkthrough-images/bind03.png "Struktury řešení v Průzkumníku řešení")
 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 
-1. Spuštění sady Visual Studio.
+1. Spusťte sadu Visual Studio.
 
-1. Z **soubor** nabídce vyberte možnost **nový** > **projektu...** :
+1. Z **souboru** nabídce vyberte možnost **nový** > **projektu...** :
 
-    ![Spuštění nového projektu](walkthrough-images/bind01vs.png "spuštění nového projektu")
+    ![Spouští se nový projekt](walkthrough-images/bind01vs.png "zahájení projektu")
 
-1. Z dialogového okna Nový projekt, vyberte **Visual C# > iPhone & iPad > iOS vazby knihovny (Xamarin)**:
+1. V dialogovém okně Nový projekt, vyberte **Visual C# > iPhone & iPad > Knihovna vazeb (Xamarin) pro iOS**:
 
-    [![Vyberte iOS vazby knihovny](walkthrough-images/bind02.w157-sml.png)](walkthrough-images/bind02.w157.png#lightbox)
+    [![Vyberte knihovna vazeb pro iOS](walkthrough-images/bind02.w157-sml.png)](walkthrough-images/bind02.w157.png#lightbox)
 
-1. Zadejte "InfColorPickerBinding" jako **název** a klikněte na tlačítko **OK** tlačítko pro vytvoření řešení.
+1. Zadejte "InfColorPickerBinding" jako **název** a klikněte na tlačítko **OK** pro vytvoření řešení.
 
-Vytvoří se řešení a dvě výchozí soubory budou zahrnuty:
+Řešení se nevytvoří a dvě výchozí soubory budou zahrnuty:
 
-![](walkthrough-images/bind03vs.png "Struktura řešení v Průzkumníku řešení")
+![](walkthrough-images/bind03vs.png "Struktury řešení v Průzkumníku řešení")
 
 -----
 
-- **ApiDefinition.cs** – tento soubor bude obsahovat smluv, které definují, jak budou API jazyka Objective-C zabaleny v C#.
-- **Structs.cs** – tento soubor bude obsahovat všechny struktury nebo výčtové hodnoty, které jsou vyžadované rozhraní a delegáti.
+- **ApiDefinition.cs** – tento soubor bude obsahovat smluv, které definují, jak se dá zabalit API jazyka Objective-C v jazyce C#.
+- **Structs.cs** – tento soubor bude obsahovat všechny struktury nebo výčet hodnot, které jsou vyžadované rozhraní a delegátů.
 
-Jsme budete pracovat se tyto dva soubory později v tomto návodu. Nejprve musíme knihovně InfColorPicker přidejte do projektu vazby.
+Pomocí těchto dvou souborů později v tomto návodu budeme pracovat. Nejdřív potřebujeme přidat InfColorPicker knihovny do projektu vazby.
 
-### <a name="including-the-static-library-in-the-binding-project"></a>Včetně se statickou knihovnou v projektu vazby
+### <a name="including-the-static-library-in-the-binding-project"></a>Včetně statickou knihovnu v projektu vazby
 
-Teď máme naše základní vazby projektu připraven, je potřeba přidat Fat binární knihovny jsme vytvořili výše pro **InfColorPicker** knihovny.
+Teď máme naši základní vazby projektu připravené, je potřeba přidat Fat binární knihovny jsme vytvořili výše pro **InfColorPicker** knihovny.
 
-Použijte následující postup přidání knihovny:
+Postupujte podle těchto kroků přidejte knihovny:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-1. Klikněte pravým tlačítkem na **nativní odkazy** složky v řešení pro a vyberte **přidat nativní odkazy**:
+1. Klikněte pravým tlačítkem na **nativní odkazy** složky v oblasti řešení a vyberte **přidat nativní odkazy**:
 
     ![](walkthrough-images/bind04a.png "Přidat nativní odkazy")
 
-1. Přejděte na Fat binární jsme provedli dříve (`libInfColorPickerSDK.a`) a stiskněte klávesu **otevřete** tlačítko:
+1. Přejděte na Fat binární jsme provedli dříve (`libInfColorPickerSDK.a`) a stiskněte klávesu **otevřít** tlačítka:
 
     ![](walkthrough-images/bind05.png "Vyberte soubor libInfColorPickerSDK.a")
 1. Soubor bude zahrnutý v projektu:
 
-    ![](walkthrough-images/bind04.png "Včetně souboru")
+    ![](walkthrough-images/bind04.png "Včetně soubor")
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. Kopírování `libInfColorPickerSDK.a` z vaší **Mac sestavení hostitele** a vložte ji do projektu vazby.
+1. Kopírovat `libInfColorPickerSDK.a` z vaší **hostitele sestavovací Mac** a vložte ho do svého projektu vazby.
 
-1. Klikněte pravým tlačítkem na projekt a zvolte **Přidat > existující položka...** :
+1. Klikněte pravým tlačítkem na projekt a zvolte **Přidat > existující položku...** :
 
-    ![](walkthrough-images/bind04vs.png "Přidání existující soubor")
+    ![](walkthrough-images/bind04vs.png "Přidat existující soubor")
 
-1. Přejděte na `libInfColorPickerSDK.a` a stiskněte klávesu **přidat** tlačítko:
+1. Přejděte `libInfColorPickerSDK.a` a stiskněte klávesu **přidat** tlačítka:
 
     ![](walkthrough-images/bind05vs.png "Přidání libInfColorPickerSDK.a")
 
@@ -332,10 +332,10 @@ Použijte následující postup přidání knihovny:
 
 -----
 
-Když **.a** soubor je přidán do projektu Xamarin.iOS automaticky nastaví **akce sestavení** souboru, který se **ObjcBindingNativeLibrary**a vytvořte soubor speciální volá se `libInfColorPickerSDK.linkwith.cs`.
+Když **.a** se přidá soubor do projektu, Xamarin.iOS automaticky nastaví **akce sestavení** souboru, který se **ObjcBindingNativeLibrary**a vytvořit soubor speciální volá se, `libInfColorPickerSDK.linkwith.cs`.
 
 
-Tento soubor obsahuje `LinkWith` atribut, který sděluje Xamarin.iOS jak popisovač statickou knihovnu, kterou jsme právě přidali. Obsah tohoto souboru jsou uvedeny v následující fragment kódu:
+Tento soubor obsahuje `LinkWith` atribut, který říká Xamarin.iOS jak popisovač statickou knihovnu, kterou jsme právě přidali. Obsah tohoto souboru jsou uvedeny v následující fragment kódu:
 
 ```csharp
 using ObjCRuntime;
@@ -343,10 +343,10 @@ using ObjCRuntime;
 [assembly: LinkWith ("libInfColorPickerSDK.a", SmartLink = true, ForceLoad = true)]
 ```
 
-`LinkWith` Atribut určuje se statickou knihovnou pro projekt a některé příznaky linkeru důležité.
+`LinkWith` Atribut identifikuje statické knihovny pro projekt a některé příznaky linkeru důležité.
 
 
-Další krok, který je potřeba udělat je k vytvoření definice rozhraní API pro projekt InfColorPicker. Pro účely tohoto návodu použijeme Sharpie cíl pro generování souboru **ApiDefinition.cs**.
+Další věc, kterou budeme muset udělat, je vytvořit definice rozhraní API pro projekt InfColorPicker. Pro účely tohoto návodu budeme používat Sharpie cíle pro generování souboru **ApiDefinition.cs**.
 
 <a name="Using_Objective_Sharpie"/>
 
@@ -355,26 +355,26 @@ Další krok, který je potřeba udělat je k vytvoření definice rozhraní API
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 
-Cíle Sharpie je příkazového řádku nástroje (poskytované Xamarin), který může být užitečné při vytváření definice potřebné k vytvoření vazby. 3. stran jazyka Objective-C knihovny jazyka C#. V této části, použijeme Sharpie cíl pro vytvoření počáteční **ApiDefinition.cs** InfColorPicker projektu.
+Cíle Sharpie je příkazový řádek, který nástroj (postkytovatel: Xamarin), který může být užitečné při vytváření definice potřebné k vytvoření vazby 3. stran Objective-C knihovny jazyka C#. V této části, použijeme Sharpie cíle vytvořit počáteční **ApiDefinition.cs** InfColorPicker projektu.
 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 
-Cíle Sharpie je příkazového řádku nástroje (poskytované Xamarin), který může být užitečné při vytváření definice potřebné k vytvoření vazby. 3. stran jazyka Objective-C knihovny jazyka C#. V této části, použijeme Sharpie cíl na našem **Mac sestavení hostitele** vytvořit počáteční **ApiDefinition.cs** InfColorPicker projektu.
+Cíle Sharpie je příkazový řádek, který nástroj (postkytovatel: Xamarin), který může být užitečné při vytváření definice potřebné k vytvoření vazby 3. stran Objective-C knihovny jazyka C#. V této části, použijeme Sharpie cíle na naše **hostitele sestavovací Mac** vytvořit počáteční **ApiDefinition.cs** InfColorPicker projektu.
 
 
 -----
 
-Abyste mohli začít, budeme stáhnout soubor Instalační služby systému Sharpie cíl popsaných v tomto [průvodce](~/cross-platform/macios/binding/objective-sharpie/get-started.md#installing). Spusťte instalační program a všechny výzvy, na obrazovce podle pokynů Průvodce instalací nainstalujte cíl Sharpie na našem vývojovém počítači.
+Začněte tím, můžeme stáhnout soubor Instalační služby systému Sharpie cíle popsané v tomto [průvodce](~/cross-platform/macios/binding/objective-sharpie/get-started.md#installing). Spusťte instalační program a postupujte podle všech pokynů Průvodce instalací nainstalovat Sharpie cíle na na našich vývojovém počítači.
 
-Po máme cíl Sharpie úspěšně nainstalovaná, můžeme spustit aplikaci Terminálové a zadejte následující příkaz k získání nápovědy na všechny nástroje, které poskytuje pomoct vazby:
+Jakmile budeme mít cíl Sharpie úspěšně nainstalován, můžeme spustit aplikaci terminál a zadáním následujícího příkazu můžete zobrazit nápovědu pro všechny nástroje, které poskytuje pomáhat ve vazbě:
 
 ```bash
 sharpie -help
 ```
 
-Pokud jsme spustit příkaz výše, vygeneruje se následující výstup:
+Pokud se provede výše uvedený příkaz, se vygeneruje následující výstup:
 
 ```bash
 Europa:Resources kmullins$ sharpie -help
@@ -392,12 +392,12 @@ Available Tools:
 Europa:Resources kmullins$
 ```
 
-Pro účely tohoto návodu použijeme tyto nástroje Sharpie cíl:
+Pro účely tohoto návodu použijeme tyto nástroje Sharpie cíle:
 
-- **xcode** – tento nám nástrojů poskytuje informace o našich aktuální instalaci Xcode a verze iOS a Mac rozhraní API, které jsme nainstalovali. Použijeme tyto informace později při se vygeneruje naše vazby.
-- **Vytvoření vazby** -použijeme tento nástroj se analyzovat **.h** soubory v projektu InfColorPicker do počáteční **ApiDefinition.cs** a **StructsAndEnums.cs** soubory.
+- **xcode** – tohoto nástroje získáváme informace o našich aktuální instalaci Xcode a verze zařízení s Iosem a rozhraní API Macu, kterou jsme nainstalovali. Použijeme tyto informace později při generování jsme naše vazby.
+- **Vytvoření vazby** -použijeme tento nástroj pro analýzu **.h** soubory do původního projektu InfColorPicker **ApiDefinition.cs** a **StructsAndEnums.cs** soubory.
 
-Potřebujete pomoc na konkrétní nástroj Sharpie cíl, zadejte název tohoto nástroje a `-help` možnost. Například `sharpie xcode -help` vrátí následující výstup:
+Můžete zobrazit nápovědu pro konkrétní cíl Sharpie nástroj, zadejte název tohoto nástroje a `-help` možnost. Například `sharpie xcode -help` vrátí následující výstup:
 
 ```bash
 Europa:Resources kmullins$ sharpie xcode -help
@@ -411,7 +411,7 @@ Options:
 Europa:Resources kmullins$
 ```
 
-Proces vytváření vazby můžeme začít, potřebujeme získat informace o našich aktuální nainstalovaných sadách SDK zadáním následujícího příkazu do terminálu `sharpie xcode -sdks`:
+Než začneme proces vytváření vazby, musíte získat informace o našem aktuálním nainstalovaných sad SDK tak, že do terminálu zadáte následující příkaz `sharpie xcode -sdks`:
 
 ```bash
 amyb:Desktop amyb$ sharpie xcode -sdks
@@ -421,15 +421,15 @@ sdk: macosx10.11     arch: x86_64  i386
 sdk: watchos2.2      arch: armv7
 ```
 
-Z výše uvedeného vidíme, že máme `iphoneos9.3` SDK v našem počítači nainstalován. Tyto informace na místě a jsme připraveni analyzovat projektu InfColorPicker `.h` soubory do počáteční **ApiDefinition.cs** a `StructsAndEnums.cs` InfColorPicker projektu.
+Z výše uvedeného můžeme vidět, že máme `iphoneos9.3` na naše počítači nainstalovaná sada SDK. Pomocí těchto informací v místě, jsme připraveni k analýze projektu InfColorPicker `.h` soubory do původního **ApiDefinition.cs** a `StructsAndEnums.cs` InfColorPicker projektu.
 
-Zadejte následující příkaz v terminálu aplikace:
+Zadejte následující příkaz v aplikaci terminál:
 
 ```bash
 sharpie bind --output=InfColorPicker --namespace=InfColorPicker --sdk=[iphone-os] [full-path-to-project]/InfColorPicker/InfColorPicker/*.h
 ```
 
-Kde `[full-path-to-project]` je úplná cesta k adresáři kde **InfColorPicker** soubor projektu Xcode je umístěn v našem počítači a [iphone-os] je sada SDK, které jsme nainstalovali, iOS, protože označeny `sharpie xcode -sdks` příkaz. Všimněte si, že v tomto příkladu jsme jste úspěšně  **\*.h** jako parametr, který zahrnuje *všechny* soubory hlaviček v tomto adresáři - normálně jste měli tuto činnost, ale místo toho pečlivě přečtěte soubory hlaviček najít nejvyšší úrovně **.h** souboru, který odkazuje na všechny ostatní příslušné soubory a, stačí předat do Sharpie cíl.
+Kde `[full-path-to-project]` je úplná cesta k adresáři kde **InfColorPicker** soubor projektu Xcode je umístěn v našich počítači a [operační systém iphonu] je sady iOS SDK, kterou jsme nainstalovali, jak je uvedeno ve `sharpie xcode -sdks` příkazu. Všimněte si, že v tomto příkladu jsme splnění  **\*.h** jako parametr, který zahrnuje *všechny* soubory záhlaví v tomto adresáři – obvykle je by měla tuto akci, ale místo toho pečlivě přečtěte si soubory hlaviček najít na nejvyšší úrovni **.h** soubor, který odkazuje na všechny další příslušné soubory a předat ho jenom do Sharpie cíle.
 
 Následující [výstup](walkthrough-images/os05.png) vygeneruje v terminálu:
 
@@ -458,14 +458,14 @@ In file included from /Users/kmullins/Projects/InfColorPicker/InfColorPicker/Inf
 Europa:Resources kmullins$
 ```
 
-A **InfColorPicker.enums.cs** a **InfColorPicker.cs** soubory budou vytvořeny v našem adresáře:
+A **InfColorPicker.enums.cs** a **InfColorPicker.cs** soubory budou vytvořeny v našich adresáře:
 
 [![](walkthrough-images/os06.png "Soubory InfColorPicker.enums.cs a InfColorPicker.cs")](walkthrough-images/os06.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 
-Oba tyto soubory otevřete v projektu vazby, který jsme vytvořili výše. Zkopírujte obsah **InfColorPicker.cs** soubor a vložte ji do **ApiDefinition.cs** souboru, nahraďte existující `namespace ...` blok kódu s obsahem  **InfColorPicker.cs** souboru (a `using` příkazy beze změn):
+Otevřete oba soubory v projektu vazby, který jsme vytvořili výše. Zkopírujte obsah **InfColorPicker.cs** soubor a vložte ho do **ApiDefinition.cs** souboru, nahradí stávající `namespace ...` kód bloku s obsahem  **InfColorPicker.cs** souboru (opustit `using` příkazy beze změny):
 
 ![](walkthrough-images/os07.png "Soubor InfColorPickerControllerDelegate")
 
@@ -473,16 +473,16 @@ Oba tyto soubory otevřete v projektu vazby, který jsme vytvořili výše. Zkop
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 
-Oba tyto soubory otevřete v projektu vazby, který jsme vytvořili výše. Zkopírujte obsah **InfColorPicker.cs** souboru (z **Mac sestavení hostitele**) a vložte ji do **ApiDefinition.cs** souboru, nahraďte existující `namespace ...` blok kódu s obsahem **InfColorPicker.cs** souboru (a `using` příkazy beze změn).
+Otevřete oba soubory v projektu vazby, který jsme vytvořili výše. Zkopírujte obsah **InfColorPicker.cs** souboru (z **hostitele sestavovací Mac**) a vložte ho do **ApiDefinition.cs** souboru, nahradí stávající `namespace ...` blok kódu s obsahem **InfColorPicker.cs** souboru (opuštění `using` příkazy beze změny).
 
 
 -----
 
 <a name="Normalize_the_API_Definitions"/>
 
-## <a name="normalize-the-api-definitions"></a>Normalizuje definice rozhraní API
+## <a name="normalize-the-api-definitions"></a>Normalizovat definice rozhraní API
 
-Cíle Sharpie někdy má překladu problém `Delegates`, takže je potřeba upravit definici `InfColorPickerControllerDelegate` rozhraní a nahraďte `[Protocol, Model]` řádek následujícím kódem:
+Cíle Sharpie má někdy překladu problém `Delegates`, takže bude potřeba upravit definici `InfColorPickerControllerDelegate` rozhraní a nahraďte `[Protocol, Model]` řádek následujícím kódem:
 
 ```csharp
 [BaseType(typeof(NSObject))]
@@ -492,24 +492,24 @@ Tak, aby definice vypadá takto:
 
 [![](walkthrough-images/os11.png "Definice")](walkthrough-images/os11.png#lightbox)
 
-V dalším kroku provedeme samé s obsahem `InfColorPicker.enums.cs` souboru, kopírování a vkládání, je `StructsAndEnums.cs` souboru ponechat `using` příkazy beze změn:
+Dále jsme to samé udělá s obsahem `InfColorPicker.enums.cs` souboru, kopírování a vkládání v `StructsAndEnums.cs` souboru byste museli opustit `using` příkazy beze změny:
 
 [![](walkthrough-images/os09.png "Obsah StructsAndEnums.cs souboru ")](walkthrough-images/os09.png#lightbox)
 
-Také je možné, že cíl Sharpie má poznámkou vazba s `[Verify]` atributy. Tyto atributy znamenat, že ověřte, že cíl Sharpie nebyla správnou věc tak, že porovnáte vazba s původní deklaraci jazyka C nebo Objective-C (která bude k dispozici v komentář nad deklaraci vázané). Jakmile si ověříte vazby, byste měli odebrat ověřte atribut. Další informace najdete v části [ověřte](~/cross-platform/macios/binding/objective-sharpie/platform/verify.md) průvodce.
+Můžete také zjistit, že má cíl Sharpie s poznámkami vazba s `[Verify]` atributy. Tyto atributy znamenat, že byste měli ověřit, že cíl Sharpie nebyla správnou věc porovnáním vazby s původní deklarací C/Objective-C (který bude k dispozici v komentář nad deklaraci vazby). Jakmile si ověříte, že vazby, byste měli odebrat atribut ověřit. Další informace najdete [ověřte](~/cross-platform/macios/binding/objective-sharpie/platform/verify.md) průvodce.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 
-V tomto okamžiku naše vazby projektu musí být úplný a Průvodce je připraven vytvořit. Pojďme naše vazby projekt sestavil a ujistěte se, že jsme skončila bez chyb:
+V tomto okamžiku naše vazby projektu by měl být dokončena a připravena k sestavení. Pojďme naši vazby projekt sestavil a ujistěte se, že jsme jsem skončil bez chyb:
 
-[Sestavení projektu vazby a ujistěte se, že nejsou žádné chyby](walkthrough-images/os12.png)
+[Vytvoření vazby projektu a ujistěte se, že zde nejsou žádné chyby](walkthrough-images/os12.png)
 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 
-V tomto okamžiku naše vazby projektu musí být úplný a Průvodce je připraven vytvořit. Pojďme naše vazby projekt sestavil a ujistěte se, že jsme skončila bez chyb.
+V tomto okamžiku naše vazby projektu by měl být dokončena a připravena k sestavení. Pojďme naši vazby projekt sestavil a ujistěte se, že jsme jsem skončil bez chyb.
 
 
 -----
@@ -518,57 +518,57 @@ V tomto okamžiku naše vazby projektu musí být úplný a Průvodce je připra
 
 ## <a name="using-the-binding"></a>Pomocí vazby
 
-Postupujte podle těchto kroků k vytvoření ukázkové aplikace iPhone používat iOS, které knihovna vazby vytvořili výše:
+Postupujte podle těchto kroků a vytvořte ukázkovou aplikaci pro iPhone používat iOS, které vazby knihovny vytvořili výše:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-1. **Vytvoření projektu Xamarin.iOS** – přidání nového projektu Xamarin.iOS názvem **InfColorPickerSample** k řešení, jak je vidět na následujících snímcích obrazovky:
+1. **Vytvoření projektu Xamarin.iOS** – přidat nový projekt Xamarin.iOS s názvem **InfColorPickerSample** k řešení, jak je znázorněno na následujících snímcích obrazovky:
 
-    ![](walkthrough-images/use01.png "Přidání jediné zobrazení aplikace")
+    ![](walkthrough-images/use01.png "Přidání aplikace s jedním zobrazením")
 
     ![](walkthrough-images/use01a.png "Nastavení identifikátor")
 
-1. **Přidat odkaz na projekt vazby** -aktualizace **InfColorPickerSample** tak, aby měl odkaz na projekt **InfColorPickerBinding** projektu:
+1. **Přidat odkaz na projekt vazby** -aktualizace **InfColorPickerSample** projekt tak, aby obsahuje odkaz na **InfColorPickerBinding** projektu:
 
-    ![](walkthrough-images/use02.png "Přidat odkaz na projekt vazby")
+    ![](walkthrough-images/use02.png "Přidává se odkaz na projekt vazby")
 
-1. **Vytvoření uživatelského rozhraní pro iPhone** -dvakrát klikněte na **MainStoryboard.storyboard** souboru v **InfColorPickerSample** projektu a upravit v iOS Designer. Přidat **tlačítko** k zobrazení a pojmenujte ji `ChangeColorButton`, jak je znázorněno v následujícím:
+1. **Vytvoření uživatelského rozhraní pro iPhone** – dvakrát klikněte na **MainStoryboard.storyboard** soubor **InfColorPickerSample** projekt tak, aby ji upravit v iOS designeru. Přidat **tlačítko** k zobrazení a jeho volání `ChangeColorButton`, jak je znázorněno v následujícím:
 
-    ![](walkthrough-images/use03.png "Přidání tlačítka do zobrazení")
+    ![](walkthrough-images/use03.png "Přidání tlačítka pro zobrazení")
 
-1. **Přidat InfColorPickerView.xib** -The InfColorPicker Objective-C knihovna obsahuje **.xib** souboru. Xamarin.iOS nebude obsahovat to **.xib** v projektu vazby, které způsobí chyby v našem ukázkové aplikaci. Alternativní řešení pro tuto je přidání **.xib** souboru do našich projektu Xamarin.iOS. Vyberte projektu Xamarin.iOS, klikněte pravým tlačítkem a vyberte **Přidat > Přidat soubory**a přidejte **.xib** souboru, jak je znázorněno na následujícím snímku obrazovky:
+1. **Přidat InfColorPickerView.xib** – The Objective-InfColorPicker C knihovna obsahuje **.xib** souboru. Xamarin.iOS to nezahrnují **.xib** v projektu vazby, které způsobí chyby za běhu v naší ukázkovou aplikací. Pro tento alternativním řešením je přidat **.xib** souboru pro náš projekt Xamarin.iOS. Vyberte projekt Xamarin.iOS, klikněte pravým tlačítkem a vyberte **Přidat > Přidat soubory**a přidejte **.xib** sdílené, jak je znázorněno na následujícím snímku obrazovky:
 
     ![](walkthrough-images/use04.png "Přidat InfColorPickerView.xib")
 
-1. Když se zobrazí dotaz, zkopírujte **.xib** souboru do projektu.
+1. Když se zobrazí dotaz, zkopírujte **.xib** soubor do projektu.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. **Vytvoření projektu Xamarin.iOS** – přidání nového projektu Xamarin.iOS s názvem **InfColorPickerSample** pomocí **jediné zobrazení aplikace** šablony:
+1. **Vytvoření projektu Xamarin.iOS** – přidat nový projekt Xamarin.iOS s názvem **InfColorPickerSample** pomocí **aplikace s jedním zobrazením** šablony:
 
     [![projekt pro iOS aplikace (Xamarin)](walkthrough-images/use01.w157-sml.png)](walkthrough-images/use01.w157.png#lightbox)
 
-    [![Vyberte šablonu](walkthrough-images/use01-2.w157-sml.png)](walkthrough-images/use01-2.w157.png#lightbox)
+    [![Vybrat šablonu](walkthrough-images/use01-2.w157-sml.png)](walkthrough-images/use01-2.w157.png#lightbox)
 
-1. **Přidat odkaz na projekt vazby** -aktualizace **InfColorPickerSample** tak, aby měl odkaz na projekt **InfColorPickerBinding** projektu:
+1. **Přidat odkaz na projekt vazby** -aktualizace **InfColorPickerSample** projekt tak, aby obsahuje odkaz na **InfColorPickerBinding** projektu:
 
     ![](walkthrough-images/use02vs.png "Přidat odkaz na projekt vazby")
 
-1. **Vytvoření uživatelského rozhraní pro iPhone** -dvakrát klikněte na **MainStoryboard.storyboard** souboru v **InfColorPickerSample** projektu a upravit v iOS Designer. Přidat **tlačítko** k zobrazení a pojmenujte ji `ChangeColorButton`, jak je znázorněno v následujícím:
+1. **Vytvoření uživatelského rozhraní pro iPhone** – dvakrát klikněte na **MainStoryboard.storyboard** soubor **InfColorPickerSample** projekt tak, aby ji upravit v iOS designeru. Přidat **tlačítko** k zobrazení a jeho volání `ChangeColorButton`, jak je znázorněno v následujícím:
 
     ![](walkthrough-images/use03vs.png "Vytvoření uživatelského rozhraní pro iPhone")
 
-1. **Přidat InfColorPickerView.xib** -The InfColorPicker Objective-C knihovna obsahuje **.xib** souboru. Xamarin.iOS nebude obsahovat to **.xib** v projektu vazby, které způsobí chyby v našem ukázkové aplikaci. Alternativní řešení pro tuto je přidání **.xib** souboru do našich projektu Xamarin.iOS z našich **Mac sestavení hostitele**. Vyberte projektu Xamarin.iOS, klikněte pravým tlačítkem a vyberte **přidat** > **existující položka...** a přidejte **.xib** souboru.
+1. **Přidat InfColorPickerView.xib** – The Objective-InfColorPicker C knihovna obsahuje **.xib** souboru. Xamarin.iOS to nezahrnují **.xib** v projektu vazby, které způsobí chyby za běhu v naší ukázkovou aplikací. Pro tento alternativním řešením je přidat **.xib** soubor do projektu Xamarin.iOS z našich **hostitele sestavovací Mac**. Vyberte projekt Xamarin.iOS, klikněte pravým tlačítkem a vyberte **přidat** > **existující položku...** a přidejte **.xib** souboru.
 
 -----
 
-Dále umožňuje rychlý prohlédněte si protokoly v Objective-C a jak jsme je zpracovávat v kódu jazyka C# a vazeb.
+Teď Pojďme rychle podívat na protokoly v Objective-C a jak nakládáme s nimi v kódu jazyka C# a vazby.
 
 ### <a name="protocols-and-xamarinios"></a>Protokoly a Xamarin.iOS
 
-V Objective-C, což je protokol definuje metody (nebo zprávy), můžete použít v některých případech. Koncepčně jsou velmi podobné rozhraní v jazyce C#. Hlavní rozdíl mezi protokol jazyka Objective-C a rozhraní jazyka C# je, protokoly můžou mít volitelné metody - metody, které není nutné implementovat třídu. Používá jazyka Objective-C @optional – klíčové slovo slouží k označení, které metody jsou volitelné. Další informace o protokoly najdete v části [události, protokoly a delegáti](~/ios/app-fundamentals/delegates-protocols-and-events.md).
+V jazyce Objective-C, což je protokol definuje metody (nebo zprávy), který je možné za určitých okolností. Entity jsou velmi podobné rozhraní v jazyce C#. Jedním z hlavních rozdílů mezi protokol Objective-C a interface C# je, že protokoly může mít nepovinný metody - metody, které není potřeba implementovat třídu. Objective-C používá @optional – klíčové slovo se používá k označení, které metody jsou volitelné. Další informace o protokolech najdete v části [událostí, protokoly a delegáti](~/ios/app-fundamentals/delegates-protocols-and-events.md).
 
-**InfColorPickerController** má jeden takový protokol vidět v následujícím fragmentu kódu:
+**InfColorPickerController** má jeden takový protokol je znázorněno v následujícím fragmentu kódu:
 
 ```csharp
 @protocol InfColorPickerControllerDelegate
@@ -583,7 +583,7 @@ V Objective-C, což je protokol definuje metody (nebo zprávy), můžete použí
 @end
 ```
 
-Tento protokol je používán **InfColorPickerController** informovat klienty, že uživatel vybral novou barvu a že **InfColorPickerController** po dokončení. Cíle Sharpie mapují tento protokol, jak je znázorněno v následující fragment kódu:
+Tento protokol je používán **InfColorPickerController** informovat klienty, že uživatel vybral novou barvu a že **InfColorPickerController** bylo dokončeno. Cíle Sharpie mapován tento protokol, jak je znázorněno v následujícím fragmentu kódu:
 
 ```csharp
 [BaseType(typeof(NSObject))]
@@ -599,22 +599,22 @@ public partial interface InfColorPickerControllerDelegate {
 
 ```
 
-Při kompilaci knihovně vazby Xamarin.iOS vytvoří abstraktní základní třída, která je volána `InfColorPickerControllerDelegate`, které toto rozhraní implementuje s virtuální metody.
+Při kompilaci knihovny vazby Xamarin.iOS vytvoří abstraktní základní třída, která je volána `InfColorPickerControllerDelegate`, který implementuje toto rozhraní s virtuální metody.
 
-Existují dva způsoby, že jsme toto rozhraní implementovat aplikace pro Xamarin.iOS:
+Existují dva způsoby, že jsme toto rozhraní implementují aplikace pro Xamarin.iOS:
 
-- **Silná delegovat** -pomocí silné delegáta zahrnuje vytvoření třídy C#, která je podtřídou `InfColorPickerControllerDelegate` a přepíše příslušné metody. **InfColorPickerController** instance této třídy bude používat pro komunikaci s klienty.
-- **Slabé delegáta** -slabé delegát je mírně odlišný postup, který zahrnuje vytvoření veřejná metoda u některé třídy (, jako `InfColorPickerSampleViewController`) a potom tuto metodu pro vystavení `InfColorPickerDelegate` protokolu prostřednictvím `Export` atribut.
+- **Silná delegovat** – použití silné delegáta patří vytvoření třídy C#, která je podtřídou `InfColorPickerControllerDelegate` a přepisuje patřičné metody. **InfColorPickerController** instance této třídy bude používat pro komunikaci s klienty.
+- **Slabé delegáta** – slabé delegát je mírně odlišné technika, která zahrnuje vytvoření veřejnou metodu v některé třídě (jako `InfColorPickerSampleViewController`) a potom vystavení metody k `InfColorPickerDelegate` přes protokol `Export` atribut.
 
-Silné delegáti poskytovat technologii Intellisense, bezpečnost typů a lepší zapouzdření. Z těchto důvodů byste měli používat silné delegáti kde je to možné, místo slabé delegáta.
+Silné delegáti poskytují technologie Intellisense, bezpečnost typů a lepší zapouzdření. Z těchto důvodů byste měli používat silná delegáti kde je to možné, namísto slabé delegáta.
 
-V tomto návodu se budeme zabývat obě tyto metody: nejdřív implementace silné delegáta a pak vysvětlením, jak implementovat slabé delegáta.
+V tomto názorném postupu se budeme zabývat obě tyto metody: nejprve implementace silné delegáta a pak vám vysvětlíme, jak implementovat slabé delegáta.
 
-### <a name="implementing-a-strong-delegate"></a>Implementace silné delegáta
+### <a name="implementing-a-strong-delegate"></a>Implementace silných delegáta
 
-Dokončit aplikace Xamarin.iOS pomocí silné delegáta reagovat na `colorPickerControllerDidFinish:` zpráva:
+Dokončení aplikace Xamarin.iOS pomocí silné delegáta reagovat na `colorPickerControllerDidFinish:` zpráva:
 
-**Podtřída InfColorPickerControllerDelegate** -přidejte novou třídu do projektu názvem `ColorSelectedDelegate`. Třída upravte tak, aby měl následující kód:
+**Podtřídy InfColorPickerControllerDelegate** – přidání nové třídy projektu s názvem `ColorSelectedDelegate`. Upravte třídy tak, aby byly následující kód:
 
 ```csharp
 using InfColorPickerBinding;
@@ -640,15 +640,15 @@ namespace InfColorPickerSample
 }
 ```
 
-Xamarin.iOS vytvoří vazbu delegáta jazyka Objective-C vytvořením abstraktní základní třída, která je volána `InfColorPickerControllerDelegate`. Podtřída tento typ a přepsání `ColorPickerControllerDidFinish` metoda pro přístup k hodnotě `ResultColor` vlastnost `InfColorPickerController`.
+Xamarin.iOS vytvoří vazbu delegáta Objective-C tak, že vytvoříte abstraktní základní třída, která je volána `InfColorPickerControllerDelegate`. Podtřídy tento typ a přepsání `ColorPickerControllerDidFinish` metoda přistupovat k hodnotě `ResultColor` vlastnost `InfColorPickerController`.
 
-**Vytvoření instance ColorSelectedDelegate** -naše obslužné rutiny události bude nutné instanci `ColorSelectedDelegate` typ, který jsme vytvořili v předchozím kroku. Upravit třídy `InfColorPickerSampleViewController` a přidejte následující proměnnou instance do třídy:
+**Vytvořte instanci ColorSelectedDelegate** – naše obslužné rutiny události bude nutné instance `ColorSelectedDelegate` typ, který jsme vytvořili v předchozím kroku. Upravit třídu `InfColorPickerSampleViewController` a přidejte následující proměnnou instance do třídy:
 
 ```csharp
 ColorSelectedDelegate selector;
 ```
 
-**Inicializace proměnnou ColorSelectedDelegate** – Pokud chcete zajistit, aby `selector` je platná instance, aktualizujte metodu `ViewDidLoad` v `ViewController` tak, aby odpovídala následující fragment kódu:
+**Inicializace proměnné ColorSelectedDelegate** – Pokud chcete zajistit, aby `selector` je platná instance, aktualizujte metodu `ViewDidLoad` v `ViewController` tak, aby odpovídala následující fragment kódu:
 
 ```csharp
 public override void ViewDidLoad ()
@@ -658,7 +658,7 @@ public override void ViewDidLoad ()
     selector = new ColorSelectedDelegate (this);
 }
 ```
-**Implementujte metodu HandleTouchUpInsideWithStrongDelegate** -další implementaci obslužné rutiny události pro když uživatel dotykem **ColorChangeButton**. Upravit `ViewController`a přidejte následující metodu:
+**Implementovat metodu HandleTouchUpInsideWithStrongDelegate** -vedle implementujte obslužnou rutinu události pro když uživatel dotýká **ColorChangeButton**. Upravit `ViewController`a přidejte následující metodu:
 
 ```csharp
 using InfColorPicker;
@@ -673,19 +673,19 @@ private void HandleTouchUpInsideWithStrongDelegate (object sender, EventArgs e)
 
 ```
 
-Jsme nejprve získat instanci `InfColorPickerController` prostřednictvím statickou metodu a ujistěte se, instance vědět naše silné delegáta přes vlastnost `InfColorPickerController.Delegate`. Tato vlastnost automaticky vygeneroval pro nás Sharpie cíl. Nakonec říkáme `PresentModallyOverViewController` zobrazíte zobrazení `InfColorPickerSampleViewController.xib` tak, aby uživatel může vybrat barvu.
+Nejprve získáme instance `InfColorPickerController` prostřednictvím statická metoda a ujistěte se, že instance přehled o našich silné delegáta prostřednictvím vlastnosti `InfColorPickerController.Delegate`. Tato vlastnost automaticky vygeneroval pro nás Sharpie cíle. Nakonec zavoláme `PresentModallyOverViewController` zobrazit `InfColorPickerSampleViewController.xib` tak, aby uživatel může vybrat barvu.
 
-**Spusťte aplikaci** – v tomto okamžiku máme Hotovo se všemi kódu. Pokud spustíte aplikaci, byste měli změnit barvu pozadí `InfColorColorPickerSampleView` jak je vidět na následujících snímcích obrazovky:
+**Spusťte aplikaci** – v tuto chvíli máme Hotovo se všemi našeho kódu. Pokud aplikaci spouštíte, je třeba změnit barvu pozadí `InfColorColorPickerSampleView` jak je znázorněno na následujících snímcích obrazovky:
 
 [![](walkthrough-images/run01.png "Spuštění aplikace")](walkthrough-images/run01.png#lightbox)
 
-Blahopřejeme! V tomto okamžiku jste úspěšně vytvořili a vázaný knihovna jazyka Objective-C pro použití aplikace pro Xamarin.iOS. Dále umožňuje další informace o použití slabé delegáti.
+Blahopřejeme! V tomto okamžiku jste úspěšně vytvořili a svázán knihovnou Objective-C pro použití aplikace pro Xamarin.iOS. V dalším kroku Povíme si něco o použití slabé delegátů.
 
-### <a name="implementing-a-weak-delegate"></a>Implementace slabé delegáta
+### <a name="implementing-a-weak-delegate"></a>Implementace slabého delegáta
 
-Místo vytvoření podtřídy třídu vázaný na protokol jazyka Objective-C u konkrétního delegáta, Xamarin.iOS také umožňuje implementovat protokol metody do třídy, která je odvozena z `NSObject`, architekturu vaší metody s `ExportAttribute`a potom poskytnutí odpovídající selektorů. Pokud tuto metodu, přiřadíte instance do třídy `WeakDelegate` vlastnost místo na `Delegate` vlastnost. Slabé delegáta nabízí flexibilitu provést třídě delegáta hierarchii dědičnosti různých níže. Podíváme se, jak implementovat a použití delegáta slabé v naší aplikaci Xamarin.iOS.
+Místo vytvoření podtřídy třídy vázán na protokol Objective-C u konkrétního delegáta, Xamarin.iOS také umožňuje implementovat protokol metody do třídy, která je odvozena z `NSObject`, upravení vaše metody s `ExportAttribute`a pak poskytnutí odpovídající selektory. Při volbě této možnosti můžete přiřadit instanci třídy má `WeakDelegate` vlastnost místo položky `Delegate` vlastnost. Slabé delegáta nabízí flexibilitu se vaše třída delegáta hierarchií různých dědičnosti. Podívejme se na tom, jak implementovat a použití delegáta slabé v naší aplikaci Xamarin.iOS.
 
-**Vytvoření obslužné rutiny události pro TouchUpInside** -vytvoříme novou obslužnou rutinu události pro `TouchUpInside` událostí na tlačítko změnit barvu pozadí. Tato obslužná rutina naplní na stejný atribut role jako `HandleTouchUpInsideWithStrongDelegate` obslužná rutina, že jsme vytvořili v předchozí části, ale bude používat delegáta slabé místo silné delegáta. Upravit třídy `ViewController`a přidejte následující metodu:
+**Vytvořte obslužnou rutinu události pro TouchUpInside** -vytvoříme novou obslužnou rutinu události pro `TouchUpInside` události změnit barvu pozadí tlačítka. Tato obslužná rutina vyplní jako stejný atribut role `HandleTouchUpInsideWithStrongDelegate` obslužné rutiny, že jsme vytvořili v předchozí části, ale použije slabé delegáta namísto silné delegáta. Upravit třídu `ViewController`a přidejte následující metodu:
 
 ```csharp
 private void HandleTouchUpInsideWithWeakDelegate (object sender, EventArgs e)
@@ -696,7 +696,7 @@ private void HandleTouchUpInsideWithWeakDelegate (object sender, EventArgs e)
     picker.PresentModallyOverViewController (this);
 }
 ```
-**Aktualizovat ViewDidLoad** – musí se nám změnit `ViewDidLoad` tak, aby používala obslužné rutiny události, který jsme právě vytvořili. Upravit `ViewController` a změňte `ViewDidLoad` tak, aby připomínaly následující fragment kódu:
+**Aktualizovat ViewDidLoad** -musí Změníme `ViewDidLoad` tak, aby používal obslužnou rutinu události, kterou jsme právě vytvořili. Upravit `ViewController` a změňte `ViewDidLoad` tak, aby připomínala následující fragment kódu:
 
 
 ```csharp
@@ -708,7 +708,7 @@ public override void ViewDidLoad ()
 
 ```
 
-**Zpracování colorPickerControllerDidFinish: zpráva** – když `ViewController` je dokončena, iOS bude odesílat zprávy `colorPickerControllerDidFinish:` k `WeakDelegate`. Je potřeba vytvořit metodu C#, která dokáže zpracovat tuto zprávu. K tomu, jsme vytvoření metody C# a pak ho s adorn `ExportAttribute`. Upravit `ViewController`a přidejte následující metodu do třídy:
+**Zpracování colorPickerControllerDidFinish: zpráva** – když `ViewController` je dokončená, iOS bude odesílat zprávy `colorPickerControllerDidFinish:` k `WeakDelegate`. Potřebujeme vytvořit metodu C#, která dokáže zpracovat tuto zprávu. K tomu vytvoříme metoda C# a potom ho s doplnění `ExportAttribute`. Upravit `ViewController`a přidejte následující metodu do třídy:
 
 ```csharp
 [Export("colorPickerControllerDidFinish:")]
@@ -720,17 +720,19 @@ public void ColorPickerControllerDidFinish (InfColorPickerController controller)
 
 ```
 
-Spusťte aplikaci. By se měl chovat teď přesně tak, jak předtím, ale používá delegáta slabé místo silné delegáta. Tento názorný postup v tomto okamžiku jste úspěšně dokončena. Teď byste měli mít představu o tom, jak vytvářet a využívat vazby projektu Xamarin.iOS.
+Spusťte aplikaci. By se měl chovat nyní stejným způsobem jako předtím, ale používá slabé delegáta namísto silné delegáta. Tento názorný postup v tomto okamžiku jste úspěšně dokončen. Teď byste měli mít představu o tom, jak vytvářet a využívat vazby projektu Xamarin.iOS.
 
 ## <a name="summary"></a>Souhrn
 
-Tento článek projít procesem vytváření a používání vazby projektu Xamarin.iOS. Nejprve jsme probrali postup existující knihovny jazyka Objective-C kompilována statické knihovny. Potom jsme popsané postupy k vytvoření vazby projektu Xamarin.iOS a jak používat cíl Sharpie ke generování definice rozhraní API jazyka Objective-C knihovny. Jsme probrali aktualizaci a vylepšení generovaného definice rozhraní API, aby byly vhodné pro veřejnou spotřeby. Po dokončení vazby projektu Xamarin.iOS byla k použití této vazby v aplikaci Xamarin.iOS, se zaměřením na použití silné Delegáti a slabé delegáti jsme přesunout.
+Tento článek vás provede procesem vytvoření a použití vazby projektu Xamarin.iOS. Nejprve jsme probírali jak sestavit existující knihovnou Objective-C do statické knihovny. Potom jsme probrali vytvoření vazby projektu Xamarin.iOS a jak pomocí cíle Sharpie ke generování definice rozhraní API pro knihovnou Objective-C. Jsme probírali aktualizaci a upravit generované definice rozhraní API tak, aby byly vhodné pro zveřejnění. Po dokončení vazby projektu Xamarin.iOS byl spotřebovávalo, že vazba v aplikaci Xamarin.iOS, se zaměřením na použití delegátů silné a slabé delegáti jsme přešli.
 
 ## <a name="related-links"></a>Související odkazy
 
 - [Příklad vazby (ukázka)](https://developer.xamarin.com/samples/monotouch/InfColorPicker/)
 - [Knihovny pro vytváření vazeb Objective-C](~/cross-platform/macios/binding/objective-c-libraries.md)
-- [Podrobnosti o vazby](~/cross-platform/macios/binding/overview.md)
+- [Podrobnosti o vazbě](~/cross-platform/macios/binding/overview.md)
 - [Vazby typů referenční příručka](~/cross-platform/macios/binding/binding-types-reference.md)
-- [Xamarin pro vývojáře jazyka Objective-C](~/ios/get-started/objective-c-developers/index.md)
+- [Xamarin pro vývojáře v Objective-C](~/ios/get-started/objective-c-developers/index.md)
 - [Pokyny k návrhu architektury](http://msdn.microsoft.com/library/ms229042.aspx)
+- [Xamarin University kurz: Vytvoření knihovny vazeb Objective-C](https://university.xamarin.com/classes/track/all#building-an-objective-c-bindings-library)
+- [Xamarin University kurz: Vytvoření knihovny vazeb Objective-C pomocí cíle Sharpie](https://university.xamarin.com/classes/track/all#build-an-objective-c-bindings-library-with-objective-sharpie)

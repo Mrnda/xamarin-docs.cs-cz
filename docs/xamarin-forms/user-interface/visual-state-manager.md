@@ -1,6 +1,6 @@
 ---
-title: Správce stavu Visual Xamarin.Forms
-description: Pomocí Visual správce stavu můžete provádět změny do elementů XAML podle visual stavy nastavit z kódu.
+title: Xamarin.Forms Visual State Manager
+description: Pomocí Visual State Managerem provádět změny na elementy XAML podle vizuální stavy nastavení z kódu.
 ms.prod: xamarin
 ms.assetid: 17296F14-640D-484B-A24C-A4E9B7013E4F
 ms.technology: xamarin-forms
@@ -8,51 +8,51 @@ ms.custom: xamu-video
 author: charlespetzold
 ms.author: chape
 ms.date: 05/07/2018
-ms.openlocfilehash: 3c0330d8d6d07112350db007d0500d57c236dc24
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 0fdcbd6467547647089b436a894b1bc490ba5ee1
+ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848021"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37854815"
 ---
-# <a name="the-xamarinforms-visual-state-manager"></a>Správce stavu Visual Xamarin.Forms
+# <a name="the-xamarinforms-visual-state-manager"></a>Xamarin.Forms Visual State Manager
 
-_Pomocí Visual správce stavu můžete provádět změny do elementů XAML podle visual stavy nastavit z kódu._
+_Pomocí Visual State Managerem provádět změny na elementy XAML podle vizuální stavy nastavení z kódu._
 
-Správce stavu Visual (VSM) je nová v Xamarin.Forms 3.0. VSM poskytuje strukturovaných způsob, jak změnit visual uživatelské rozhraní z kódu. Ve většině případů je definována uživatelské rozhraní aplikace v jazyce XAML, a tento jazyk XAML obsahuje kód popisující, jak Visual správce stavu ovlivňuje vizuální prvky uživatelského rozhraní.
+Vizuální stav správce (VSM) je nového v Xamarin.Forms 3.0. Migrace VSM za provozu poskytuje strukturovaných způsob, jak provádět vizuální změny uživatelského rozhraní z kódu. Ve většině případů uživatelského rozhraní aplikace definované v XAML, a tento XAML obsahuje značky popisující, jak ovlivňuje vizuály uživatelské rozhraní Visual State Managerem.
 
-VSM zavádí koncepci _visual stavy_. Zobrazení Xamarin.Forms, jako `Button` může mít několik různých visual vzhled v závislosti na jeho stav podkladového &mdash; jestli je vypnutá, nebo stisknutí nebo má vstupu fokus. Jedná se o stavy tlačítka.
+Migrace VSM za provozu zavádí koncepci _vizuálních stavů_. Například zobrazení Xamarin.Forms `Button` může mít několik různých vzhledů visual v závislosti na jeho základní stav &mdash; Určuje, zda je zakázána, nebo stisknutí nebo má vstupní fokus. Jedná se o stavy tlačítka.
 
-Visual stavy se shromažďují v _visual stavu skupiny_. Všechny stavy visual v rámci skupiny visual stavu se vzájemně vylučují. Visual stavy i visual stavu skupiny se označují pomocí jednoduchého textového řetězce.
+Vizuální stavy jsou shromážděny v _vizuálního stavu skupiny_. Všechny vizuální stavy v rámci skupiny vizuálního stavu se vzájemně vylučují. Jednoduché textové řetězce jsou označeny vizuálních stavů a skupin vizuální stav.
 
-Správce stavu Visual Xamarin.Forms definuje jednu skupinu visual stavu s názvem "CommonStates" se tři visual stavy:
+Xamarin.Forms Visual State Managerem definuje vizuální stav skupinu s názvem "CommonStates" se třemi vizuální stavy:
 
 - "Normální"
 - "Zakázáno"
 - "Zaměřuje"
 
-Tato skupina visual stavu je podporována pro všechny třídy, které jsou odvozeny od [ `VisualElement` ](xref:Xamarin.Forms.VisualElement), což je základní třídu pro [ `View` ](xref:Xamarin.Forms.View) a [ `Page` ](xref:Xamarin.Forms.Page). 
+Tato skupina vizuálního stavu se podporuje pro všechny třídy, které jsou odvozeny z [ `VisualElement` ](xref:Xamarin.Forms.VisualElement), což je základní třída pro [ `View` ](xref:Xamarin.Forms.View) a [ `Page` ](xref:Xamarin.Forms.Page). 
 
-Můžete také definovat vlastní skupiny visual stavu a visual stavy, jako tento článek popisuje.
+Můžete také definovat vlastní skupiny vizuálního stavu a vizuální stavy, jako tento článek vám ukáže.
 
 > [!NOTE]
-> Vývojáři Xamarin.Forms, kteří znají [aktivační události](~/xamarin-forms/app-fundamentals/triggers.md) víte, že aktivační události můžete také provádět změny vizuální prvky v uživatelském rozhraní na základě změn v vlastností zobrazení nebo pálení událostí. Jak nakládat s různé kombinace těchto změn pomocí aktivační události však může stát velmi matoucí. V minulosti Visual správce stavu byla zavedena v prostředích založených na Windows XAML ke zmírnění nedorozuměním vyplývající z kombinace visual stavy. Pomocí funkce VSM vždy se vzájemně vylučují visual stavy v rámci skupiny visual stavu V každém okamžiku pouze jeden stav v každé skupině je aktuální stav.
+> Vývojáři Xamarin.Forms, kteří znají [triggery](~/xamarin-forms/app-fundamentals/triggers.md) si vědomi, že aktivační události můžete také provádět změny vizuály v uživatelském rozhraní na základě změn v vlastností zobrazení nebo vyvolanou událostí. Pomocí aktivační události se různé kombinace těchto změn však může být velmi matoucí. V minulosti Visual State Manager byla zavedena v prostředích založených na XAML pro Windows, abychom omezili zmatek vyplývající z kombinace vizuálních stavů. Pomocí funkce VSM vždy se vzájemně vylučují vizuálních stavů ve skupině vizuálních stavů V každém okamžiku pouze jeden stav v každé skupině je aktuální stav.
 
 ## <a name="the-common-states"></a>Běžné stavy
 
-Visual správce stavu můžete obsahovat části v souboru XAML, který můžete změnit vzhled zobrazení, pokud zobrazení Normální nebo zakázáno, nebo má zaměření pro vstup. Toto jsou známé jako _běžné stavy_.
+Visual State Managerem můžete zahrnout oddílů v souboru XAML, který můžete změnit vzhled zobrazení, pokud zobrazení je normální, nebo zakázaný nebo má vstupní fokus. Toto jsou známé jako _běžné stavy_.
 
-Předpokládejme například, že máte `Entry` zobrazení na stránku, a chcete vzhled `Entry` změnit následujícími způsoby:
+Předpokládejme například, že máte `Entry` zobrazení na stránce, a chcete je vizuální vzhled `Entry` změnit následujícími způsoby:
 
-- `Entry` By měl mít růžová na pozadí při `Entry` je zakázána.
-- `Entry` By měl mít pozadí vápna normálně.
-- `Entry` By měl rozbalit na dvakrát výšku normální, pokud ho má vstupu fokus.
+- `Entry` By měly mít růžová na pozadí, když `Entry` je zakázaná.
+- `Entry` By měl obvykle mít Limetkově pozadí.
+- `Entry` By měli rozbalit dvakrát normální výšku, pokud ji má vstupní fokus.
 
-Kód VSM za provozu můžete připojit jednotlivých zobrazení, nebo můžete ji definovat v styl Pokud se vztahuje na více zobrazení. V následujících dvou částech popisují tyto přístupy.
+Značek migrace VSM za provozu lze připojit k jednotlivým zobrazení, nebo můžete ji definovat ve stylu pokud platí pro několik zobrazení. V následujících dvou částech těchto přístupů.
 
-### <a name="vsm-markup-on-a-view"></a>Značka VSM za provozu na zobrazení
+### <a name="vsm-markup-on-a-view"></a>Migrace VSM za provozu značek na zobrazení
 
-Připojit VSM značek pro `Entry` zobrazit, nejprve oddělení `Entry` do počáteční a koncové značky:
+Připojit kód migrace VSM za provozu do `Entry` zobrazení, nejprve oddělení `Entry` do počáteční a koncovou značku:
 
 ```xaml
 <Entry FontSize="18">
@@ -60,9 +60,9 @@ Připojit VSM značek pro `Entry` zobrazit, nejprve oddělení `Entry` do počá
 </Entry>
 ```
 
-Udělil velikosti písma explicitní, protože jeden z stavů použije `FontSize` vlastnost zdvojnásobit velikost textu v `Entry`.
+Udělil explicitní písmo, protože budou používat některý z stavů `FontSize` vlastnost na dvojnásobek velikosti textu `Entry`.
 
-V dalším kroku vložit `VisualStateManager.VisualStateGroups` značky mezi tyto značky:
+V dalším kroku vložit `VisualStateManager.VisualStateGroups` značky mezi značky:
 
 ```xaml
 <Entry FontSize="18">
@@ -72,9 +72,9 @@ V dalším kroku vložit `VisualStateManager.VisualStateGroups` značky mezi tyt
 </Entry>
 ```
 
-[`VisualStateGroups`](xref:Xamarin.Forms.VisualStateManager.VisualStateGroupsProperty) připojená vlastnost vazbu definované [ `VisualStateManager` ](xref:Xamarin.Forms.VisualStateManager) třídy. (Další informace o přidružené vlastnosti vazbu, najdete v článku [přidružené vlastnosti](~/xamarin-forms/xaml/attached-properties.md).) Jedná se jak `VisualStateGroups` vlastnost je připojen k `Entry` objektu.
+[`VisualStateGroups`](xref:Xamarin.Forms.VisualStateManager.VisualStateGroupsProperty) je připojené umožňujících vazbu vlastnosti definované [ `VisualStateManager` ](xref:Xamarin.Forms.VisualStateManager) třídy. (Další informace o přidružené vlastnosti umožňující vazbu, najdete v článku [připojených vlastností](~/xamarin-forms/xaml/attached-properties.md).) Toto je způsob, jakým `VisualStateGroups` vlastnost je připojen k `Entry` objektu.
 
-`VisualStateGroups` Vlastnost je typu [ `VisualStateGroupList` ](xref:Xamarin.Forms.VisualStateGroupList), což je kolekce [ `VisualStateGroup` ](xref:Xamarin.Forms.VisualStateGroup) objekty. V rámci `VisualStateManager.VisualStateGroups` značky, vložte pár `VisualStateGroup` značky pro každou skupinu visual stavy, které chcete zahrnout:
+`VisualStateGroups` Vlastnost je typu [ `VisualStateGroupList` ](xref:Xamarin.Forms.VisualStateGroupList), což je kolekce [ `VisualStateGroup` ](xref:Xamarin.Forms.VisualStateGroup) objekty. V rámci `VisualStateManager.VisualStateGroups` značky, vložit pár `VisualStateGroup` značky pro každou skupinu vizuální stavy, které chcete zahrnout:
 
 ```xaml
 <Entry FontSize="18">
@@ -86,17 +86,17 @@ V dalším kroku vložit `VisualStateManager.VisualStateGroups` značky mezi tyt
 </Entry>
 ```
 
-Všimněte si, že `VisualStateGroup` má `x:Name` atribut, který určuje název skupiny. `VisualStateGroup` Třída definuje `Name` vlastnost, která můžete použít místo:
+Všimněte si, že `VisualStateGroup` značka nemá `x:Name` atribut název skupiny. `VisualStateGroup` Definuje třídu `Name` vlastnost, která můžete místo toho použít:
 
 ```xaml
 <VisualStateGroup Name="CommonStates">
 ```
 
-Můžete použít buď `x:Name` nebo `Name` , ale nikoli pro obě v stejného elementu.
+Můžete použít buď `x:Name` nebo `Name` , ale nikoli oba současně ve stejném elementu.
 
-`VisualStateGroup` Třída definuje vlastnost s názvem [ `States` ](xref:Xamarin.Forms.VisualStateGroup.States), což je kolekce [ `VisualState` ](xref:Xamarin.Forms.VisualState) objekty. `States` je _obsahu vlastnost_ z `VisualStateGroups` , můžete zahrnout `VisualState` přímo mezi značky `VisualStateGroup` značky. (Obsahu vlastnosti, které jsou popsané v článku [základní syntaxe XAML](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md#content-properties).)
+`VisualStateGroup` Třída definuje vlastnost s názvem [ `States` ](xref:Xamarin.Forms.VisualStateGroup.States), což je kolekce [ `VisualState` ](xref:Xamarin.Forms.VisualState) objekty. `States` je _Vlastnost ContentProperty_ z `VisualStateGroups` tak můžete zahrnout `VisualState` přímo mezi značky `VisualStateGroup` značky. (Obsahu vlastnosti jsou popsány v následujícím článku [základní syntaxe XAML](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md#content-properties).)
 
-Dalším krokem je pro zahrnutí pár značky pro každý stav visual do této skupiny. Také lze je identifikovat pomocí `x:Name` nebo `Name`:
+Dalším krokem je této skupiny přidat pár značek pro každý vizuální stav. Také lze je identifikovat za použití `x:Name` nebo `Name`:
 
 ```xaml
 <Entry FontSize="18">
@@ -118,9 +118,9 @@ Dalším krokem je pro zahrnutí pár značky pro každý stav visual do této s
 </Entry>
 ```
 
-`VisualState` definuje vlastnost s názvem [ `Setters` ](xref:Xamarin.Forms.VisualState.Setters), což je kolekce [ `Setter` ](xref:Xamarin.Forms.Setter) objekty. Tyto jsou stejné `Setter` objekty, které používáte ve [ `Style` ](xref:Xamarin.Forms.Style) objektu.
+`VisualState` definuje vlastnost s názvem [ `Setters` ](xref:Xamarin.Forms.VisualState.Setters), což je kolekce [ `Setter` ](xref:Xamarin.Forms.Setter) objekty. Jde o stejný `Setter` objekty, které můžete použít [ `Style` ](xref:Xamarin.Forms.Style) objektu.
 
-`Setters` je _není_ obsahu vlastnost `VisualState`, takže je nutné zahrnout značky elementu vlastnost pro `Setters` vlastnost:
+`Setters` je _není_ vlastnost content `VisualState`, takže je potřeba zahrnout tagy vlastnosti elementu `Setters` vlastnost:
 
 ```xaml
 <Entry FontSize="18">
@@ -148,7 +148,7 @@ Dalším krokem je pro zahrnutí pár značky pro každý stav visual do této s
 </Entry>
 ```
 
-Nyní můžete vložit jeden nebo více `Setter` objektů mezi každý pár `Setters` značky. Jedná se o `Setter` objekty, které definují visual stavy popsané výše:
+Nyní můžete vložit jeden nebo více `Setter` objektů mezi každý pár `Setters` značky. Jedná se o `Setter` objekty, které definují vizuálních stavů popsané výše:
 
 ```xaml
 <Entry FontSize="18">
@@ -176,9 +176,9 @@ Nyní můžete vložit jeden nebo více `Setter` objektů mezi každý pár `Set
 </Entry>
 ```
 
-Každý `Setter` značka označuje hodnotu, která konkrétní vlastnosti, když tento stav je aktuální. Vlastnost odkazuje `Setter` objekt musí být zajištěna vazbu vlastnosti.
+Každý `Setter` značka označuje hodnoty konkrétní vlastnosti při tomto stavu je aktuální. Jakoukoli vlastnost odkazuje `Setter` objekt musí být se opírá o vlastnost s vazbou.
 
-Podobně jako tento kód je základem **VSM za provozu na zobrazení** stránku **[VsmDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/VsmDemos/)** ukázka programu. Stránka obsahuje tři `Entry` zobrazení, ale jenom na druhou má kód VSM za provozu k němu připojen:
+Podobně jako tento kód je základem **migrace VSM za provozu na zobrazení** stránku **[VsmDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/VsmDemos/)** ukázkový program. Na stránce obsahuje tři `Entry` zobrazení, ale pouze pro druhou kolekci je k němu připojená značky migrace VSM za provozu:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -249,23 +249,23 @@ Podobně jako tento kód je základem **VSM za provozu na zobrazení** stránku 
 </ContentPage>
 ```
 
-Všimněte si, že druhá `Entry` má také `DataTrigger` jako součást jeho `Trigger` kolekce. To způsobí, že `Entry` na zakázáno, dokud nebude něco je zadán do třetí `Entry`. Zde je stránka při spuštění se systémem iOS, Android a univerzální platformu Windows (UWP):
+Všimněte si, že druhá `Entry` má také `DataTrigger` jako součást jeho `Trigger` kolekce. To způsobí, že `Entry` na zakázáno, dokud nebude něco je zadán do třetí `Entry`. Tady je stránku při spuštění počítače se systémem iOS, Android a univerzální platformu Windows (UPW):
 
-[![VSM za provozu na zobrazení: Zakázáno](vsm-images/VsmOnViewDisabled.png "VSM za provozu na zobrazení – zakázáno")](vsm-images/VsmOnViewDisabled-Large.png#lightbox)
+[![Migrace VSM za provozu pro zobrazení: Zakázáno](vsm-images/VsmOnViewDisabled.png "migrace VSM za provozu na zobrazení – zakázáno")](vsm-images/VsmOnViewDisabled-Large.png#lightbox)
 
-Aktuální stav visual je "Zakázat" proto pozadí druhý `Entry` je růžový na iOS a Android obrazovky. Implementace UWP `Entry` není povoleno nastavení na pozadí barvu, kdy `Entry` je zakázána. 
+Aktuální vizuální stav je "zakázáno" proto pozadí druhého `Entry` je růžový v Iosu a Androidu obrazovky. Implementace UPW `Entry` není povoleno nastavení na pozadí barvu při `Entry` je zakázaná. 
 
-Když zadáte text do třetí `Entry`, druhý `Entry` přepínače do stavu "Normální" a na pozadí je nyní vápna:
+Když zadáte nějaký text do třetí `Entry`, druhý `Entry` přepne do stavu "Normální" a na pozadí je nyní Limetkově:
 
-[![VSM za provozu na zobrazení: normální](vsm-images/VsmOnViewNormal.png "VSM za provozu na zobrazení – Normální")](vsm-images/VsmOnViewNormal-Large.png#lightbox)
+[![Migrace VSM za provozu pro zobrazení: normální](vsm-images/VsmOnViewNormal.png "migrace VSM za provozu na zobrazení – Normální")](vsm-images/VsmOnViewNormal-Large.png#lightbox)
 
-Když touch druhý `Entry`, získá zaměření pro vstup. Se přepne do stavu "Focused" a zasahuje do dvakrát na jeho výšku:
+Po stisknutí druhý `Entry`, získá fokus vstupu. Přepne do stavu "Focused" a rozšíří na dvojnásobkem výšky:
 
-[![VSM za provozu na zobrazení: zaměřuje](vsm-images/VsmOnViewFocused.png "VSM za provozu na zobrazení – zaměřuje")](vsm-images/VsmOnViewFocused-Large.png#lightbox)
+[![Migrace VSM za provozu pro zobrazení: zaměřuje](vsm-images/VsmOnViewFocused.png "migrace VSM za provozu na zobrazení - fokus")](vsm-images/VsmOnViewFocused-Large.png#lightbox)
 
-Všimněte si, že `Entry` nezachovává vápna pozadí, když získá zaměření pro vstup. Visual správce stavu přepínat mezi visual stavy, jsou nastavení vlastnosti, která nastavuje předchozího stavu. Uvědomte si, že visual stavy se vzájemně vylučují. Stav "Normální" neznamená výhradně `Entry` je povoleno. Znamená to, že `Entry` zapnutá a nemá zaměření pro vstup. 
+Všimněte si, že `Entry` nezachovává Limetkově pozadí, když dostane zaměření pro vstup. Jak Visual State Manager Přepne mezi vizuálních stavů, se zrušit nastavení vlastnosti nastavením předchozího stavu. Mějte na paměti, že vizuál se vzájemně vylučují. Stav "Normální" neznamená výhradně `Entry` je povolená. To znamená, že `Entry` zapnutá a nemá fokus vstupu. 
 
-Pokud chcete `Entry` tak, aby měl vápna pozadí ve stavu "Focused", přidejte další `Setter` na tento visual stav:
+Pokud chcete, aby `Entry` Pokud chcete, aby na pozadí Limetkově ve stavu "Focused", přidejte další `Setter` do tohoto vizuálního stavu:
 
 ```xaml
 <VisualState x:Name="Focused">
@@ -276,17 +276,17 @@ Pokud chcete `Entry` tak, aby měl vápna pozadí ve stavu "Focused", přidejte 
 </VisualState>
 ```
 
-Aby se tyto `Setter` objekty fungovalo správně, `VisualStateGroup` musí obsahovat `VisualState` objekty pro všechny stavy, které jsou v této skupině. Pokud je visual stavu, který nemá žádné `Setter` objekty, zahrnují ji přesto jako prázdný značky:
+Aby se tyto `Setter` objekty fungovalo správně, `VisualStateGroup` musí obsahovat `VisualState` objekty pro všechny státy v této skupině. Pokud je vizuální stav, který nemá žádné `Setter` objekty, zahrnout i přesto jako prázdné značky:
 
 ```xaml
 <VisualState x:Name="Normal" />
 ``` 
 
-### <a name="visual-state-manager-markup-in-a-style"></a>Kód stavu Visual Manager ve stylu
+### <a name="visual-state-manager-markup-in-a-style"></a>Vizuální stav správce značek ve stylu
 
-Často je nezbytné pro sdílení kód Visual správce stavu mezi dva nebo více zobrazení. V takovém případě budete chtít umístit značku do `Style` definice.
+Často je potřeba sdílet stejný kód Visual State Managerem mezi dva nebo více zobrazení. V takovém případě budete chtít umístit značku `Style` definice.
 
-Tady je existující implicitní `Style` pro `Entry` elementů v **VSM za provozu na zobrazení** stránky:
+Tady je existující implicitní `Style` pro `Entry` prvků v **migrace VSM za provozu na zobrazení** stránky:
 
 ```xaml
 <Style TargetType="Entry">
@@ -295,7 +295,7 @@ Tady je existující implicitní `Style` pro `Entry` elementů v **VSM za provoz
 </Style> 
 ```
 
-Přidat `Setter` značky pro `VisualStateManager.VisualStateGroups` přidružená vazbu vlastnost:
+Přidat `Setter` značky pro `VisualStateManager.VisualStateGroups` přidružená vlastnost podporující vazby:
 
 ```xaml
 <Style TargetType="Entry">
@@ -307,7 +307,7 @@ Přidat `Setter` značky pro `VisualStateManager.VisualStateGroups` přidružen�
 </Style> 
 ```
 
-Vlastnost obsahu pro `Setter` je `Value`, takže hodnota `Value` vlastnost lze zadat přímo v rámci těchto značek. Zda je vlastnost typu `VisualStateGroupList`:
+Vlastnost obsahu pro `Setter` je `Value`, takže hodnota `Value` vlastnost se dá zadat přímo v rámci těchto značek. Vlastnost je typu `VisualStateGroupList`:
 
 ```xaml
 <Style TargetType="Entry">
@@ -337,9 +337,9 @@ V rámci těchto značek může obsahovat jeden či více `VisualStateGroup` obj
 </Style> 
 ```
 
-Zbývající část kód VSM za provozu je stejná jako předtím.
+Zbývající část značky migrace VSM za provozu je stejná jako předtím.
 
-Tady je **VSM za provozu ve stylu** stránky zobrazující kód dokončení VSM za provozu:
+Tady je **migrace VSM za provozu ve stylu** stránky značkami kompletní migrace VSM za provozu:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -410,25 +410,25 @@ Tady je **VSM za provozu ve stylu** stránky zobrazující kód dokončení VSM 
 </ContentPage>
 ```
 
-Nyní všechny `Entry` zobrazení na této stránce reagovat stejným způsobem jako na jejich visual stavy. Všimněte si také, že stav "Focused" teď obsahuje druhý `Setter` udávající každý `Entry` vápna na pozadí i když ho má vstupu fokus:
+Nyní vše `Entry` reagovat stejným způsobem jejich vizuálních stavů zobrazení na této stránce. Všimněte si také, stav "Focused" teď zahrnuje sekundy `Setter` , který poskytuje každý `Entry` Limetkově pozadí také, když má vstupní fokus:
 
-[![VSM za provozu ve stylu](vsm-images/VsmInStyle.png "VSM za provozu ve stylu")](vsm-images/VsmInStyle-Large.png#lightbox)
+[![Migrace VSM za provozu ve stylu](vsm-images/VsmInStyle.png "migrace VSM za provozu ve stylu")](vsm-images/VsmInStyle-Large.png#lightbox)
 
-## <a name="defining-your-own-visual-states"></a>Definování vlastní visual stavy
+## <a name="defining-your-own-visual-states"></a>Definování vlastních vizuálních stavů
 
-Každá třída, která je odvozena z `VisualElement` podporuje tři běžné stavy "Normální", "Zaměřuje" a "Zakázáno". Interně [ `VisualElement` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Core/VisualElement.cs) třída rozpozná, pokud se stává stále povolený nebo zakázaný, nebo cílených nebo nezaostřená a volá statických [ `VisualStateManager.GoToState` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualStateManager.GoToState/p/Xamarin.Forms.VisualElement/System.String/) metoda:
+Každá třída, která je odvozena z `VisualElement` podporuje tři běžné stavy "Normální", "Zaměřuje" a "Zakázáno". Interně [ `VisualElement` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Core/VisualElement.cs) třídy rozpozná, pokud je stále povolený nebo zakázaný, nebo cílené nebo bez fokusu a volá statický [ `VisualStateManager.GoToState` ](xref:Xamarin.Forms.VisualStateManager.GoToState(Xamarin.Forms.VisualElement,System.String)) metody:
 
 ```csharp
 VisualStateManager.GoToState(this, "Focused");
 ```
 
-Toto je pouze Visual správce stavu kód, který se nachází ve `VisualElement` třídy. Protože `GoToState` je volána pro každý objekt v závislosti na každou třídu odvozenou od `VisualElement`, Visual správce stavu můžete použít s žádným `VisualElement` objekt, který má odpovědět na tyto změny.
+Toto je pouze kód Visual State Managerem, který najdete v `VisualElement` třídy. Protože `GoToState` je volána pro každý objekt, na základě každé třídy, která je odvozena z `VisualElement`, Visual State Managerem můžete použít s žádným `VisualElement` objekt reakce na tyto změny.
 
-Interestingly, název skupiny visual stavu "CommonStates" není ve výslovně odkazována `VisualElement`. Název skupiny není součástí rozhraní API pro Visual správce stavu. V jednom ze dvou ukázka programu, pokud se zobrazí můžete změnit název skupiny z "CommonStates" na jakoukoli jinou a program bude i nadále fungovat. Název skupiny je jenom obecný popis stavů v této skupině. Implicitně předpokládá se, že visual stavy v kterékoli skupině se vzájemně vylučují: jeden stav a pouze jeden stav je aktuální kdykoli.
+Zajímavé, název vizuálního stavu skupiny "CommonStates" není odkazuje explicitně `VisualElement`. Název skupiny není součástí rozhraní API pro Visual State Managerem. V jednom ze dvou ukázkový program zobrazí zatím můžete změnit název skupiny z "CommonStates" cokoli, a program bude i nadále fungovat. Název skupiny je pouze obecný popis státy v této skupině. Implicitně předpokládá se, že se navzájem vylučují vizuálních stavů v libovolné skupině: jeden stav a pouze jeden stav jsou aktuální v okamžiku.
 
-Pokud chcete implementovat vlastní visual stavy, budete muset volat `VisualStateManager.GoToState` z kódu. Nejčastěji budete provedete toto volání ze souboru kódu vaší třídy stránky.
+Pokud chcete implementovat vlastní vizuálních stavů, budete muset volat `VisualStateManager.GoToState` z kódu. Nejčastěji budete provedete toto volání ze souboru modelu code-behind třídy stránky.
 
-**VSM ověření** stránku **[VsmDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/VsmDemos/)** příklad ukazuje, jak používat Visual správce stavu souvislosti s ověření vstupu. Soubor XAML se skládá ze dvou `Label` elementů `Entry`, a `Button`:
+**Ověření migrace VSM za provozu** stránku **[VsmDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/VsmDemos/)** příklad ukazuje, jak používat Visual State Managerem v souvislosti s ověření vstupu. Soubor XAML se skládá ze dvou `Label` prvky, `Entry`, a `Button`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -486,17 +486,17 @@ Pokud chcete implementovat vlastní visual stavy, budete muset volat `VisualStat
 </ContentPage>
 ```
 
-Značka VSM za provozu je připojen k druhý `Label` (s názvem `helpLabel`) a `Button` (s názvem `submitButton`). Existují dva stavy vzájemně vylučují, s názvem "Platné" a "Neplatný". Všimněte si, že každé dvě skupiny "ValidationState" obsahuje `VisualState` značky pro "Platné" a "Neplatná", i když jeden z nich je prázdná v každém případu. 
+Migrace VSM za provozu značek je připojen k druhé `Label` (s názvem `helpLabel`) a `Button` (s názvem `submitButton`). Existují dva stavy vzájemně vylučují s názvem "Platný" a "Neplatný". Všimněte si, že každý dvě skupiny "ValidationState" obsahuje `VisualState` značky pro "Platný" a "Neplatný", i když se jeden z nich je v každém případě prázdné. 
 
-Pokud `Entry` neobsahuje platné telefonní číslo, a aktuální stav je "Neplatná" a tudíž druhý `Label` je viditelná a `Button` je zakázaná:
+Pokud `Entry` neobsahuje platné telefonní číslo, pak jeho aktuální stav je "Neplatný" a tak druhá `Label` je viditelná a `Button` zakázaná:
 
-[![Ověření VSM za provozu: Neplatný stav](vsm-images/VsmValidationInvalid.png "VSM ověření - neplatná")](vsm-images/VsmValidationInvalid-Large.png#lightbox)
+[![Ověření migrace VSM za provozu: Neplatný stav](vsm-images/VsmValidationInvalid.png "ověření migrace VSM za provozu – neplatný")](vsm-images/VsmValidationInvalid-Large.png#lightbox)
 
-Pokud je zadáno platné telefonní číslo, pak aktuální stav se změní na "Platné". Druhý `Entry` zmizí a `Button` je teď povolená:
+Po zadání platné telefonní číslo, pak aktuální stav se změní na "Platné". Druhá `Entry` zmizí a `Button` je nyní povolena:
 
-[![Ověření VSM za provozu: Neplatný stav](vsm-images/VsmValidationValid.png "VSM ověření - platný")](vsm-images/VsmValidationValid-Large.png#lightbox)
+[![Ověření migrace VSM za provozu: Neplatný stav](vsm-images/VsmValidationValid.png "ověření migrace VSM za provozu - platný")](vsm-images/VsmValidationValid-Large.png#lightbox)
 
-Je příslušné pro zpracování souboru kódu `TextChanged` událost z `Entry`. Obslužná rutina používá regulární výraz k určení, jestli vstupní řetězec je platný, nebo ne. Metoda v souboru kódu s názvem `GoToState` volá statických `VisualStateManager.GoToState` metodu pro obě `helpLabel` a `submitButton`:
+Soubor kódu na pozadí je příslušné pro zpracování `TextChanged` událost z `Entry`. Obslužná rutina používá regulární výraz k určení, zda vstupní řetězec je platný, nebo ne. Metoda v souboru kódu na pozadí s názvem `GoToState` volání statické `VisualStateManager.GoToState` metody pro oba `helpLabel` a `submitButton`:
 
 ```csharp
 public partial class VsmValidationPage : ContentPage
@@ -523,35 +523,35 @@ public partial class VsmValidationPage : ContentPage
 }
 ```
 
-Všimněte si také, že `GoToState` metoda je volána z konstruktoru k chybě při inicializaci stavu. Měla by existovat vždy aktuální stav. Ale nikde v kódu je všechny odkazy na název skupiny visual stavu, i když se odkazuje v XAML jako "ValidationStates" pro účely přehlednost. 
+Všimněte si také, že `GoToState` metoda je volána z konstruktoru inicializace stavu. Vždy by měl být aktuální stav. Ale nikde v kódu existuje odkaz na název vizuálního stavu skupiny, i když se odkazuje v XAML jako "ValidationStates" v zájmu přehlednosti. 
 
-Všimněte si, že soubor kódu musí vzít v úvahu každého objektu na stránku, která má vliv tyto visual státy a k volání `VisualStateManager.GoToState` pro každý z těchto objektů. V tomto příkladu je pouze dva objekty ( `Label` a `Button`), ale může být několik další.
+Všimněte si, že soubor kódu na pozadí musí vzít v úvahu každého objektu na stránce, která je tím ovlivněná tyto vizuálních stavů a volat `VisualStateManager.GoToState` pro každý z těchto objektů. V tomto příkladu je pouze dva objekty ( `Label` a `Button`), ale může být několik další.
 
-Může vás zajímat: Pokud souboru kódu musí odkazovat na stránce, která jsou ovlivněná tyto visual stavy každý objekt, proč nelze soubor kódu jednoduše objekty přímý přístup? Surely může. Výhodou použití VSM za provozu je však, kterou řídíte jak vizuální prvky reagovat na jiný stav zcela v jazyce XAML, který udržuje všechny návrh uživatelského rozhraní na jednom místě. Tím je zabráněno vzhled nastavení přístupu k vizuální prvky přímo z modelu code-behind.
+Může vás zajímat: Pokud soubor kódu na pozadí musí odkazovat na všechny objekty na stránce, která jsou ovlivněná tyto vizuální stavy, proč nelze soubor použití modelu code-behind jednoduše objekty přímý přístup? Seděl může. Výhodou použití migrace VSM za provozu je však řízení způsobu, jakým visual prvky reagovat na jiný stav zcela v XAML, který uchovává všechny návrhu uživatelského rozhraní na jednom místě. Tím se vyhnete nastavení vzhled přístupem k vizuální prvky přímo z kódu.
 
-Může to být tempting vzít v úvahu odvození třídy z `Entry` a případně definování vlastnosti, která můžete nastavit, aby funkce externího ověřování. Třída odvozená z `Entry` pak můžete volat `VisualStateManager.GoToState` metoda. Toto schéma by pracovat správně, ale pouze tehdy, pokud `Entry` měla pouze objekt vliv různých visual stavů. V tomto příkladu `Label` a `Button` jsou také mít vliv. Neexistuje žádný způsob pro VSM značek připojené k `Entry` k řízení jiné objekty, na stránce a nijak pro připojené VSM značek tyto další objekty tak, aby odkazovaly změny ve visual stavu z jiného objektu.
+Může být lákavé vzít v úvahu odvození třídy z `Entry` a pravděpodobně definovat vlastnost, která můžete nastavit na externí ověřovací funkce. Třída odvozená z `Entry` pak můžete volat `VisualStateManager.GoToState` metody. Toto schéma by fungovalo správně, ale pouze v případě, `Entry` byly pouze objekt ovlivněn různých vizuálních stavů. V tomto příkladu `Label` a `Button` se použije i. Neexistuje žádný způsob u VSM značek připojené k `Entry` řízení další objekty na stránce a žádný způsob pro značky migrace VSM za provozu připojené k těmto jinými objekty pro změnu vizuálního stavu odkazovat z jiného objektu.
 
 <a name="adaptive-layout" />
 
-## <a name="using-the-visual-state-manager-for-adaptive-layout"></a>Pomocí Visual správce stavu pro adaptivní rozložení
+## <a name="using-the-visual-state-manager-for-adaptive-layout"></a>Pomocí Visual State Managerem přizpůsobivé rozložení
 
-Xamarin.Forms, které aplikace spuštěná na telefonu obvykle lze zobrazit v portrét nebo poměr stran na šířku a běžící v desktopovém programu Xamarin.Forms můžete změnit velikost předpokládat, že mnoho různou velikost a poměr stran obrázku. Dobře navržených aplikace může zobrazit svůj obsah pro tyto různé typy zařízení stránky nebo okna. 
+Můžete změnit velikost Xamarin.Forms, které aplikace běžící na telefonu můžete zobrazit obvykle v portrét nebo poměr stran na šířku a běžící v desktopovém programu Xamarin.Forms předpokládat, že mnoho různých velikostí a poměry stran. Dobře navržená aplikace může zobrazit svůj obsah pro tyto různé typy zařízení stránky nebo okna. 
 
-Tento postup se někdy označuje jako _adaptivní rozložení_. Protože adaptivní rozložení výhradně zahrnuje programu vizuály, je ideální aplikace Visual správce stavu.
+Tato technika se někdy označuje jako _přizpůsobivé rozložení_. Protože přizpůsobivé rozložení pouze zahrnuje vizuály programu, je ideální aplikace z Visual State Managerem.
 
-Jednoduchý příklad je aplikace, která zobrazuje malá skupina tlačítek, které by ovlivnily obsah aplikace. V režimu na výšku mohou být zobrazeny tato tlačítka v horní části stránky vodorovném řádku:
+Jednoduchým příkladem je aplikace, která se zobrazí malá skupina tlačítek, které by ovlivnily obsah aplikace. V režimu na výšku může zobrazit tato tlačítka v horní části stránky vodorovnou:
 
-[![Adaptivní rozložení VSM za provozu: Na výšku](vsm-images/VsmAdaptiveLayoutPortrait.png "VSM adaptivní rozložení - na výšku")](vsm-images/VsmAdaptiveLayoutPortrait-Large.png#lightbox)
+[![Migrace VSM za provozu přizpůsobivé rozložení: Na výšku](vsm-images/VsmAdaptiveLayoutPortrait.png "přizpůsobivé rozložení migrace VSM za provozu – na výšku")](vsm-images/VsmAdaptiveLayoutPortrait-Large.png#lightbox)
 
 V režimu na šířku pole tlačítka může být přesunout na jedné straně a zobrazí ve sloupci:
 
-[![Adaptivní rozložení VSM za provozu: Na šířku](vsm-images/VsmAdaptiveLayoutLandscape.png "VSM adaptivní rozložení - na šířku")](vsm-images/VsmAdaptiveLayoutLandscape-Large.png#lightbox)
+[![Migrace VSM za provozu přizpůsobivé rozložení: Šířku](vsm-images/VsmAdaptiveLayoutLandscape.png "migrace VSM za provozu přizpůsobivé rozložení – na šířku")](vsm-images/VsmAdaptiveLayoutLandscape-Large.png#lightbox)
 
-Shora dolů že je spuštěna pro univerzální platformu Windows, Android a iOS.
+Shora dolů je program spuštěn na univerzální platformu Windows, Android a iOS.
 
-**Adaptivní rozložení VSM** stránku [VsmDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/VsmDemos/) ukázka definuje skupinu s názvem "OrientationStates" s dvěma stavy visual s názvem "Výšku" a "na šířku". (Složitější přístup může být založen na několik různých šířky stránky nebo okno.) 
+**Přizpůsobivé rozložení migrace VSM za provozu** stránku [VsmDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/VsmDemos/) ukázka definuje skupinu s názvem "OrientationStates" se dvěma vizuálních stavů s názvem "Na výšku" a "Krajina". (Složitější přístup může být založená na několik různých šířkách stránky nebo okna.) 
 
-Značka VSM proběhne čtyři místa v souboru XAML. `StackLayout` s názvem `mainStack` obsahuje v nabídce a obsah, který je `Image` elementu. To `StackLayout` by měl mít svislou orientaci v režimu na výšku a vodorovné orientaci na šířku:
+Migrace VSM za provozu značek probíhá čtyři místa v souboru XAML. `StackLayout` s názvem `mainStack` obsahuje nabídky a obsah, který je `Image` elementu. To `StackLayout` by měl mít svislou orientaci na výšku v režimu a vodorovné orientaci na šířku v režimu:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -664,11 +664,11 @@ Značka VSM proběhne čtyři místa v souboru XAML. `StackLayout` s názvem `ma
 </ContentPage>
 ```
 
-Vnitřní `ScrollView` s názvem `menuScroll` a `StackLayout` s názvem `menuStack` implementovat nabídky tlačítka. Orientace těchto rozložení je opačné z `mainStack`. V nabídce musí být v režimu na výšku vodorovného a svislého v režimu na šířku.
+Vnitřní `ScrollView` s názvem `menuScroll` a `StackLayout` s názvem `menuStack` implementovat v nabídce tlačítka. Orientace tyto rozloženích je opačné z `mainStack`. V nabídce by měl být v režimu na výšku vodorovného a svislého v režimu na šířku.
 
-Části čtvrtý značek VSM za provozu je v implicitní stylu pro tlačítka sami. Tento kód nastaví `VerticalOptions`, `HorizontalOptions`, a `Margin` vlastnosti specifické pro orientaci ve portait a na šířku.
+Čtvrtá část značky migrace VSM za provozu je v implicitní styl tlačítek sami. Tento kód nastaví `VerticalOptions`, `HorizontalOptions`, a `Margin` vlastnosti specifické pro orientace portait a na šířku.
 
-Nastaví souboru kódu `BindingContext` vlastnost `menuStack` implementovat `Button` tvorba příkazů a také připojí obslužnou rutinu do `SizeChanged` událostí stránky:
+Nastaví soubor použití modelu code-behind `BindingContext` vlastnost `menuStack` k implementaci `Button` příkazů a také připojí obslužnou rutinu pro `SizeChanged` událostí stránky:
 
 ```csharp
 public partial class VsmAdaptiveLayoutPage : ContentPage
@@ -702,15 +702,15 @@ public partial class VsmAdaptiveLayoutPage : ContentPage
 }
 ```
 
-`SizeChanged` Volání obslužné rutiny `VisualStateManager.GoToState` pro dva `StackLayout` a `ScrollView` prvky a pak smyčky prostřednictvím podřízené objekty daného `menuStack` volat `VisualStateManager.GoToState` pro `Button` elementy.
+`SizeChanged` Volání obsluhy `VisualStateManager.GoToState` dvou `StackLayout` a `ScrollView` prvky a pak cyklicky projde podřízené objekty daného `menuStack` volat `VisualStateManager.GoToState` pro `Button` elementy.
 
-To nemusí připadat, jako kdyby souboru kódu může zpracovávat změny orientace více přímo nastavením vlastnosti elementů v souboru XAML, ale Visual správce stavu je výborný více strukturovanými přístup. Všechny vizuálech udržovaly v souboru XAML, kde se bude snazší, zkontrolujte, spravovat a upravovat.
+To může zdát, jako kdyby soubor kódu na pozadí může zpracovávat změny orientace více přímo nastavením vlastnosti elementů v XAML souboru, ale Visual State Managerem je jednoznačně více strukturovaný přístup. Všechny vizuály, které jsou uloženy v souboru XAML, ve kterém budou snadněji zkontrolovat, spravovat a upravovat.
 
-## <a name="visual-state-manager-with-xamarinuniversity"></a>Správce stavu Visual s Xamarin.University
+## <a name="visual-state-manager-with-xamarinuniversity"></a>Visual State Manager s Xamarin.University
 
 > [!VIDEO https://youtube.com/embed/qhUHbVP5mIQ]
 
-**Správce stavu Visual Xamarin.Forms 3.0, pomocí [univerzity Xamarin](https://university.xamarin.com/)**
+**Xamarin.Forms 3.0 Visual State Manager, [Xamarin University](https://university.xamarin.com/)**
 
 ## <a name="related-links"></a>Související odkazy
 

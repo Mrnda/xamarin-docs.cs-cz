@@ -1,80 +1,80 @@
 ---
 title: Začínáme s Xamarin.Essentials
-description: Xamarin.Essentials poskytuje rozhraní API jedné platformě, která funguje s iOS, Android nebo UWP aplikace, která je přístupná ze sdíleného kódu bez ohledu na to, jak vytvořit uživatelské rozhraní.
+description: Xamarin.Essentials poskytuje jedním multiplatformní rozhraní API, který pracuje se všemi iOS, Android a UPW aplikaci, která je přístupná z sdíleného kódu bez ohledu na to, jak vytvořit uživatelské rozhraní.
 ms.assetid: B2669C48-B659-4854-BD80-FEB0E876F5B9
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: a42086f70eb81a761358655b3effb9f8f934c8d4
-ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
+ms.openlocfilehash: 7e371a6125d223d354b75ce7e09dcc28efb3dffa
+ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37067161"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37855231"
 ---
 # <a name="get-started-with-xamarinessentials"></a>Začínáme s Xamarin.Essentials
 
 ![Předběžné verze NuGet](~/media/shared/pre-release.png)
 
-Xamarin.Essentials poskytuje rozhraní API jedné platformě, která funguje s iOS, Android nebo UWP aplikace, která je přístupná ze sdíleného kódu bez ohledu na to, jak vytvořit uživatelské rozhraní.
+Xamarin.Essentials poskytuje jedním multiplatformní rozhraní API, který pracuje se všemi iOS, Android a UPW aplikaci, která je přístupná z sdíleného kódu bez ohledu na to, jak vytvořit uživatelské rozhraní.
 
 ## <a name="platform-support"></a>Podpora platformy
 
-Xamarin.Essentials podporuje následující platforem a operačních systémů:
+Xamarin.Essentials podporuje následující platformy a operační systémy:
 
 | Platforma | Version |
 | --- | --- |
-| Android | 4.4 (19 rozhraní API) nebo vyšší |
+| Android | 4.4 (rozhraní API 19) nebo vyšší |
 | iOS |10.0 nebo vyšší |
 | UWP | 10.0.16299.0 nebo vyšší |
 
 ## <a name="installation"></a>Instalace
 
-Xamarin.Essentials je k dispozici jako balíčku NuGet, který lze přidat do žádného stávajícího nebo nového projektu pomocí sady Visual Studio.
+Xamarin.Essentials je k dispozici jako balíček NuGet, který lze přidat do jakékoli existující nebo nový projekt pomocí sady Visual Studio.
 
-1. Stáhněte a nainstalujte [Visual Studio](http://visualstudio.com) s [Visual Studio tools pro Xamarin](~/cross-platform/get-started/installation/index.md).
+1. Stáhněte a nainstalujte [sady Visual Studio](http://visualstudio.com) s [Visual Studio tools for Xamarin](~/cross-platform/get-started/installation/index.md).
 
-2. Otevřít existující projekt nebo vytvořte nový projekt pomocí šablony prázdnou aplikaci v části **Visual Studio C#** (Android, zařízení iPhone a iPad nebo napříč platformami). **Důležité**: Jestliže přidání do projektu UPW zajistit sestavení 16299 nebo vyšší je ve vlastnostech projektu.
+2. Otevřete existující projekt nebo vytvořte nový projekt pomocí šablony prázdné aplikace v rámci **Visual Studio C#** (Android, iPhone a iPad nebo Cross-Platform). **Důležité**: Jestliže přidání do projektu UPW zajistit sestavení 16299 nebo vyšší je ve vlastnostech projektu.
 
 3. Přidat **Xamarin.Essentials** balíček NuGet do každého projektu:
 
     # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-    V panelu Průzkumníku řešení klikněte pravým tlačítkem na název řešení a vyberte **spravovat balíčky NuGet**. Vyhledejte **Xamarin.Essentials** a nainstalujte balíček do **všechny** projekty včetně Android, iOS, UWP a .NET Standard knihovny.
+    V panelu Průzkumníku řešení klikněte pravým tlačítkem na název řešení a vyberte **spravovat balíčky NuGet**. Vyhledejte **Xamarin.Essentials** a nainstalujte balíček do **všechny** projekty, včetně knihoven Android, iOS, UPW a .NET Standard.
 
     > [!TIP]
-    > Zkontrolujte **zahrnout předběžné verze** pole při [ **Xamarin.Essentials** NuGet](https://www.nuget.org/packages/Xamarin.Essentials) je ve verzi preview.
+    > Zkontrolujte, **zahrnout předběžné verze** pole při [ **Xamarin.Essentials** NuGet](https://www.nuget.org/packages/Xamarin.Essentials) je ve verzi preview.
 
     # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-    V panelu Průzkumníku řešení klikněte pravým tlačítkem na název projektu a vyberte **Přidat > přidat balíčky NuGet...** . Vyhledejte **Xamarin.Essentials** a nainstalujte balíček do **všechny** projekty včetně Android, iOS a .NET Standard knihovny.
+    V panelu Průzkumníku řešení klikněte pravým tlačítkem na název projektu a vyberte **Přidat > přidat balíčky NuGet...** . Vyhledejte **Xamarin.Essentials** a nainstalujte balíček do **všechny** projekty, včetně knihoven Android, iOS a .NET Standard.
 
     > [!TIP]
-    > Zkontrolujte **zobrazit předběžné verze balíčků** pole při [ **Xamarin.Essentials** NuGet](https://www.nuget.org/packages/Xamarin.Essentials) je ve verzi preview.
+    > Zkontrolujte, **zobrazit balíčky v předběžné verzi** pole při [ **Xamarin.Essentials** NuGet](https://www.nuget.org/packages/Xamarin.Essentials) je ve verzi preview.
 
     -----
 
-4. Přidáte odkaz na Xamarin.Essentials v žádné C# třídě, chcete-li rozhraní API.
+4. Přidejte odkaz na Xamarin.Essentials v jakékoli třídy C# k odkazování rozhraní API.
 
     ```csharp
     using Xamarin.Essentials;
     ```
 
-5. Xamarin.Essentials vyžaduje nastavení specifických pro platformy:
+5. Xamarin.Essentials vyžaduje nastavení specifické pro platformu:
 
     # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-    Cílová verze Android kompilaci musí být 8.1, ale Xamarin.Essentials podporuje minimálně verze Android 4.4, odpovídající API úrovně 19, odpovídající úroveň rozhraní API 27. (V sadě Visual Studio, tyto dvě verze jsou nastavené v dialogovém okně Vlastnosti projektu Android projektu, na kartě Android Manifest. V sadě Visual Studio pro Mac je nastavena v dialogovém okně Možnosti projektu Android projektu, na kartě aplikace pro Android.) 
+    Xamarin.Essentials podporuje minimální verze Androidu 4.4 odpovídající úroveň rozhraní API 19, ale cílová verze Androidu pro kompilaci musí být 8.1, odpovídající úroveň rozhraní API 27. (V sadě Visual Studio, tyto dvě verze se nastavují v dialogovém okně Vlastnosti projektu pro projekt pro Android, na kartě Manifest pro Android. V sadě Visual Studio pro Mac je nastavena v dialogovém okně Možnosti projektu pro projekt pro Android, na kartě aplikace pro Android.) 
     
-    Xamarin.Essentials nainstaluje verzi 27.0.2 Xamarin.Android.Support knihovny, které jsou potřeba. Žádné další Xamarin.Android.Support knihovny, které vaše aplikace vyžaduje by měl aktualizovat verzi 27.0.2 pomocí Správce balíčků NuGet. Všechny Xamarin.Android.Support knihovny, které používá vaše aplikace by měla být stejná a by měla být minimálně verze 27.0.2. Odkazovat [řešení potíží s stránky](troubleshooting.md) Pokud máte problémy s Xamarin.Essentials NuGet přidání nebo aktualizace NuGets ve vašem řešení.
+    Xamarin.Essentials nainstaluje verzi 27.0.2.1 Xamarin.Android.Support knihoven, které jsou potřeba. Další Xamarin.Android.Support knihovny, které vaše aplikace vyžaduje by také aktualizovat na verzi 27.0.2.1 pomocí Správce balíčků NuGet. Všechny knihovny Xamarin.Android.Support používá vaše aplikace by měla být stejná a by měl být dlouhý aspoň verzi 27.0.2.1. Odkazovat [stránka o řešení problémů](troubleshooting.md) Pokud máte problémy s Xamarin.Essentials NuGet přidávat nebo aktualizovat balíčky Nuget ve vašem řešení.
 
-    V projektu Android `MainLauncher` nebo jakoukoli `Activity` tedy spuštěného Xamarin.Essentials musí být inicializován v `OnCreate` metoda:
+    V Androidu projektu `MainLauncher` nebo jakékoli `Activity` , který je spuštěný Xamarin.Essentials musí být inicializován v `OnCreate` metoda:
 
     ```csharp
     Xamarin.Essentials.Platform.Init(this, bundle);
     ```
 
-    Pro zpracování oprávnění runtime v systému Android, musí přijmout Xamarin.Essentials žádné `OnRequestPermissionsResult`. Přidejte následující kód do všech `Activity` třídy:
+    Pro zpracování oprávnění modulu runtime v systému Android, Xamarin.Essentials musí doručovány `OnRequestPermissionsResult`. Přidejte následující kód všech `Activity` třídy:
 
     ```csharp
     public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
@@ -87,20 +87,20 @@ Xamarin.Essentials je k dispozici jako balíčku NuGet, který lze přidat do ž
 
     # <a name="iostabios"></a>[iOS](#tab/ios)
 
-    Nevyžaduje žádné další nastavení.
+    Není požadováno žádné další nastavení.
 
-    # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+    # <a name="uwptabuwp"></a>[UPW](#tab/uwp)
 
-    Nevyžaduje žádné další nastavení.
+    Není požadováno žádné další nastavení.
 
     -----
 
-6. Postupujte podle [Xamarin.Essentials příručky](index.md) které umožňují zkopírovat a Vložit fragmenty kódu pro každou funkci.
+6. Postupujte podle [Xamarin.Essentials vodítka](index.md) , díky kterým můžete zkopírovat a Vložit fragmenty kódu pro jednotlivé funkce.
 
 ## <a name="other-resources"></a>Další zdroje
 
-Doporučujeme, abyste vývojáře pro Xamarin návštěvu nové [Začínáme s vývojem Xamarin](~/cross-platform/getting-started/index.md).
+Doporučujeme vývojářům nové Xamarin návštěvu [Začínáme s vývojem pro Xamarin](~/cross-platform/getting-started/index.md).
 
-Přejděte [úložiště GitHub Xamarin.Essentials](http://github.com/xamarin/Essentials) zobrazíte aktuální zdrojový kód, co Připravujeme dále spuštění ukázky a zavřete úložiště. Komunitní příspěvky jsou Vítejte!
+Přejděte [úložiště GitHub Xamarin.Essentials](http://github.com/xamarin/Essentials) zobrazíte aktuální zdrojový kód, co se chystá, ukázky, spouštění a zavřete úložiště. Komunitní příspěvky jsou Vítejte!
 
-Procházejte [dokumentaci k rozhraní API](xref:Xamarin.Essentials) pro každou funkci Xamarin.Essentials.
+Projděte si [dokumentace k rozhraní API](xref:Xamarin.Essentials) pro všechny funkce Xamarin.Essentials.
