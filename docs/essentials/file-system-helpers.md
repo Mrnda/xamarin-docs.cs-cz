@@ -1,44 +1,44 @@
 ---
-title: 'Xamarin.Essentials: Pomocníci systému souboru'
-description: Třída systému souborů v Xamarin.Essentials obsahuje řadu pomocné rutiny můžete najít mezipaměti aplikace a data adresáře a otevírat soubory v balíčku aplikace.
+title: 'Xamarin.Essentials: Pomocné rutiny systému souborů'
+description: Třída systému souborů v Xamarin.Essentials obsahuje řadu pomocné rutiny najdete mezipaměti aplikace a data adresáře a otevírání souborů v balíčku aplikace.
 ms.assetid: B3EC2DE0-EFC0-410C-AF71-7410AE84CF84
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
 ms.openlocfilehash: 13293ec05261cbdc1e70fd278002d1af18654851
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782582"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38815615"
 ---
-# <a name="xamarinessentials-file-system-helpers"></a>Xamarin.Essentials: Pomocníci systému souboru
+# <a name="xamarinessentials-file-system-helpers"></a>Xamarin.Essentials: Pomocné rutiny systému souborů
 
 ![Předběžné verze NuGet](~/media/shared/pre-release.png)
 
-**FileSystem** třída obsahuje řadu pomocné rutiny do adresáře mezipaměti a data aplikace najít a otevřít soubory v balíčku aplikace.
+**Systému souborů** třída obsahuje řadu pomocné rutiny do mezipaměti a data adresáře aplikace najít a otevřít soubory v balíčku aplikace.
 
-## <a name="using-file-system-helpers"></a>Pomocí systému souborů pomocné rutiny
+## <a name="using-file-system-helpers"></a>Použití pomocné rutiny systému souborů
 
-Přidáte odkaz na Xamarin.Essentials v třídě:
+Přidáte odkaz na Xamarin.Essentials ve své třídě:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Chcete-li získat aplikace adresář pro ukládání **ukládat data do mezipaměti**. Data do mezipaměti můžete použít pro všechna data, která je potřeba zachovat déle, než dočasná data, ale nesmí být data, která je potřeba správně fungovat.
+Chcete-li získat adresáře aplikace k ukládání **ukládat data do mezipaměti**. Data v mezipaměti je použít pro všechna data, která je potřeba uchovávat déle než dočasná data, ale by neměly být data, která je potřeba správně fungovat.
 
 ```csharp
 var cacheDir = FileSystem.CacheDirectory;
 ```
 
-Chcete-li získat nejvyšší úrovně adresáře aplikace pro všechny soubory, které nejsou uživatelských dat souborů. Tyto soubory jsou zálohovány s operačním systémem synchronizuje framework. Viz níže podrobnosti implementace platformy.
+Chcete-li získat adresář nejvyšší úrovně vaší aplikace pro všechny soubory, které nejsou soubory dat uživatele. Tyto soubory jsou zálohovány pomocí synchronizace framework operačního systému. Viz podrobnosti implementace platformy níže.
 
 ```csharp
 var mainDir = FileSystem.AppDataDirectory;
 ```
 
-Otevřete soubor, který je seskupeny do balíčku aplikace:
+Otevřete soubor, který se dodává v sadě do balíčku aplikace:
 
 ```csharp
  using (var stream = await FileSystem.OpenAppPackageFileAsync(templateFileName))
@@ -50,32 +50,32 @@ Otevřete soubor, který je seskupeny do balíčku aplikace:
  }
 ```
 
-## <a name="platform-implementation-specifics"></a>Podrobnosti implementace platformy
+## <a name="platform-implementation-specifics"></a>Specifika platforem implementace
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
 - **CacheDirectory** – vrátí [CacheDir](https://developer.android.com/reference/android/content/Context.html#getCacheDir) aktuálního kontextu.
-- **AppDataDirectory** – vrátí [FilesDir](https://developer.android.com/reference/android/content/Context.html#getFilesDir) aktuální kontext a jsou zálohovány pomocí [automatické zálohování](https://developer.android.com/guide/topics/data/autobackup.html) spouštění na rozhraní API 23 a vyšší.
+- **AppDataDirectory** – vrátí [FilesDir](https://developer.android.com/reference/android/content/Context.html#getFilesDir) aktuálního kontextu a jsou zálohovány pomocí [automatické zálohování](https://developer.android.com/guide/topics/data/autobackup.html) spuštění na rozhraní API 23 a vyšší.
 
-Přidejte všechny soubory do **prostředky** složky v Android projektu a označit akce sestavení jako **AndroidAsset** pro použití s `OpenAppPackageFileAsync`.
+Přidejte všechny soubory do **prostředky** složky v Androidu projektu a označit akce sestavení jako **AndroidAsset** pro použití s `OpenAppPackageFileAsync`.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-- **CacheDirectory** – vrátí [knihovny nebo mezipamětí](https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html) adresáře.
-- **AppDataDirectory** – vrátí [knihovny](https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html) adresář, který je zálohovaný iTunes a Icloudu.
+- **CacheDirectory** – vrátí [knihovny/mezipamětí](https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html) adresáře.
+- **AppDataDirectory** – vrátí [knihovny](https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html) adresář, který je zajištěná dat v iTunes a Icloudu.
 
-Přidejte všechny soubory do **prostředky** složky v iOS projektu a označit akce sestavení jako **BundledResource** pro použití s `OpenAppPackageFileAsync`.
+Přidejte všechny soubory do **prostředky** složku v systému iOS projektu a označit akce sestavení jako **BundledResource** pro použití s `OpenAppPackageFileAsync`.
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwptabuwp"></a>[UPW](#tab/uwp)
 
 - **CacheDirectory** – vrátí [LocalCacheFolder](https://docs.microsoft.com/en-us/uwp/api/windows.storage.applicationdata.localcachefolder#Windows_Storage_ApplicationData_LocalCacheFolder) adresáře...
-- **AppDataDirectory** – vrátí [LocalFolder](https://docs.microsoft.com/en-us/uwp/api/windows.storage.applicationdata.localfolder#Windows_Storage_ApplicationData_LocalFolder) adresář, který je zálohována do cloudu.
+- **AppDataDirectory** – vrátí [LocalFolder](https://docs.microsoft.com/en-us/uwp/api/windows.storage.applicationdata.localfolder#Windows_Storage_ApplicationData_LocalFolder) adresář, který je zálohovat do cloudu.
 
-Přidejte všechny soubory do kořenového adresáře v projektu UPW a označte akce sestavení jako **obsahu** pro použití s `OpenAppPackageFileAsync`.
+Přidejte všechny soubory do kořenového adresáře v projektu UWP a označte akce sestavení jako **obsahu** pro použití s `OpenAppPackageFileAsync`.
 
 --------------
 
 ## <a name="api"></a>rozhraní API
 
-- [Soubor Pomocníci systému zdrojového kódu](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/FileSystem)
-- [Dokumentace rozhraní API systému souborů](xref:Xamarin.Essentials.FileSystem)
+- [Soubor pomocné rutiny systému zdrojového kódu](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/FileSystem)
+- [Dokumentace k rozhraní API systému souborů](xref:Xamarin.Essentials.FileSystem)

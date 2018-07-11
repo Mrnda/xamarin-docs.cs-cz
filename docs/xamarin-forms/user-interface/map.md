@@ -1,90 +1,90 @@
 ---
 title: Mapa Xamarin.Forms
-description: Tento článek vysvětluje způsob použití třídy Xamarin.Forms Map pomocí nativní mapování rozhraní API na jednotlivých platformách zajistit, že známým mapuje prostředí pro uživatele.
+description: Tento článek vysvětluje, jak použít třídu mapy Xamarin.Forms pomocí nativní mapování rozhraní API na každou platformu zajistit, že se že známým mapuje prostředí pro uživatele.
 ms.prod: xamarin
 ms.assetid: 59CD1344-8248-406C-9144-0C8A67141E5B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 9bd4c810db0397d84803be7c38f625b9b047c3da
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: d74ad52a2926fb30a528aeba29156259390c3edf
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245472"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37947241"
 ---
 # <a name="xamarinforms-map"></a>Mapa Xamarin.Forms
 
-_Xamarin.Forms používá nativní mapy rozhraní API na každou platformu._
+_Xamarin.Forms využívá nativní mapování rozhraní API na každou platformu._
 
-Xamarin.Forms.Maps používá nativní mapy rozhraní API na každou platformu. To nabízí rychlý, známé mapy prostředí pro uživatele, ale znamená, že některé věci řídit specifické požadavky rozhraní API jednotlivých platforem.
-Jednou nakonfigurovaná, `Map` řízení funguje stejně jako jakýkoli jiný Xamarin.Forms element společný kód.
+Xamarin.Forms.Maps není úspěšný kvůli využívá nativní mapování rozhraní API na každou platformu. To poskytuje rychlý a dobře známý mapování prostředí pro uživatele, ale znamená, že některé kroky konfigurace je třeba splnit požadavky jednotlivých platforem konkrétní rozhraní API.
+Po nakonfigurování `Map` ovládací prvek funguje stejně jako jakýkoli jiný Xamarin.Forms element společný kód.
 
 * [Mapuje inicializace](#Maps_Initialization) – pomocí `Map` vyžaduje další inicializační kód při spuštění.
-* [Konfigurace platformy](#Platform_Configuration) -každou platformu vyžaduje konfiguraci pro službu maps pracovat.
-* [V jazyce C# pomocí map](#Using_Maps) -zobrazení mapy a PIN kódy pomocí jazyka C#.
-* [Pomocí map v jazyce XAML](#Using_Xaml) -zobrazení mapy s XAML.
+* [Konfigurace platformy](#Platform_Configuration) – jednotlivé platformy, vyžaduje určitou konfiguraci pro mapování pro práci.
+* [Použití mapy v jazyce C#](#Using_Maps) – zobrazení mapy a připíná pomocí jazyka C#.
+* [Použití mapy v XAML](#Using_Xaml) – zobrazení mapy s XAML.
 
-Používá se mapový ovládací prvek v [MapsSample](https://developer.xamarin.com/samples/WorkingWithMaps/) vzorku, který je uveden níže.
+Se použil mapový ovládací prvek [MapsSample](https://developer.xamarin.com/samples/WorkingWithMaps/) vzorku, který je uveden níže.
 
- [![Mapy v ukázce MobileCRM](map-images/maps-zoom-sml.png "Příklad mapy ovládacího prvku")](map-images/maps-zoom.png#lightbox "Příklad mapy ovládacího prvku")
+ [![Mapy v ukázce MobileCRM](map-images/maps-zoom-sml.png "příklad ovládací prvek mapy")](map-images/maps-zoom.png#lightbox "příklad ovládacího prvku mapy")
 
-Mapování funkce může dále zvýšit tak, že vytvoříte [namapovat vlastní zobrazovací jednotky](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md).
+Můžete tak, že vytvoříte další rozšířené funkce mapy [namapovat vlastní zobrazovací jednotky](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md).
 
 <a name="Maps_Initialization" />
 
 ## <a name="maps-initialization"></a>Inicializace mapy
 
-Při přidávání mapování pro aplikaci Xamarin.Forms, **Xamarin.Forms.Maps** je samostatný balíček NuGet, měli byste přidat na všechny projekty v řešení.
-V systému Android to je také závislý na GooglePlayServices (jiné NuGet), kterou si můžete stáhnout automaticky při přidání Xamarin.Forms.Maps.
+Při přidávání mapy aplikace Xamarin.Forms **xamarin.Forms.Maps není úspěšný kvůli** je samostatném balíčku NuGet, měli byste přidat do jakéhokoliv projektu v řešení.
+V Androidu to je také závislý na GooglePlayServices (jiné NuGet), kterou si můžete stáhnout automaticky při přidání xamarin.Forms.Maps není úspěšný kvůli.
 
-Po instalaci balíčku NuGet, některé inicializace kód není nutný v každém projektu aplikace *po* `Xamarin.Forms.Forms.Init` volání metody. Pro iOS použijte následující kód:
+Po instalaci balíčku NuGet, se vyžaduje kód inicializace v každém projektu aplikace *po* `Xamarin.Forms.Forms.Init` volání metody. Pro iOS pomocí následujícího kódu:
 
 ```csharp
 Xamarin.FormsMaps.Init();
 ```
 
-V systému Android musí projít stejné parametry jako `Forms.Init`:
+V systému Android je nutné předat stejné parametry jako `Forms.Init`:
 
 ```csharp
 Xamarin.FormsMaps.Init(this, bundle);
 ```
 
-Pro univerzální platformu Windows (UWP) použijte následující kód:
+Pro univerzální platformu Windows (UPW) pomocí následujícího kódu:
 
 ```csharp
 Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 ```
 
-Přidejte toto volání v následujících souborech pro každou platformu:
+Přidáte toto volání v následujících souborech pro každou platformu:
 
--  **iOS** -AppDelegate.cs v souboru `FinishedLaunching` metoda.
--  **Android** -MainActivity.cs v souboru `OnCreate` metoda.
--  **UWP** -souboru MainPage.xaml.cs, `MainPage` konstruktor.
+-  **iOS** -souboru AppDelegate.cs, `FinishedLaunching` metody.
+-  **Android** -MainActivity.cs souboru `OnCreate` metody.
+-  **UPW** -souboru MainPage.xaml.cs, `MainPage` konstruktoru.
 
-Jakmile se přidal balíček NuGet a inicializační metoda volána v rámci každé applcation `Xamarin.Forms.Maps` rozhraní API mohou být používány běžný .NET Standard projektu knihovny nebo projektu sdíleného kódu.
+Jakmile se přidal balíček NuGet a inicializační metoda volána v rámci každé applcation `Xamarin.Forms.Maps` slouží rozhraní API v běžných projekt knihovny .NET Standard nebo sdíleného projektu kódu.
 
 <a name="Platform_Configuration" />
 
 ## <a name="platform-configuration"></a>Konfigurace platformy
 
-Na některých platformách jsou zapotřebí další konfigurační kroky, než se zobrazí mapy.
+Předtím, než se zobrazí na mapě, vyžadují se další konfigurační kroky na některých platformách.
 
 ### <a name="ios"></a>iOS
 
-Pro přístup k umístění služby v systému iOS, musíte nastavit tyto klíče **Info.plist**:
+Pro přístup k umístění služby v systému iOS, je nutné nastavit následující klíče v **Info.plist**:
 
 - iOS 11
-    - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) – použití polohy při aplikace je používána
-    - [`NSLocationAlwaysAndWhenInUseUsageDescription`](https://developer.apple.com/documentation/corelocation/choosing_the_authorization_level_for_location_services/requesting_always_authorization?language=objc) – pro umístění služby pomocí za všech okolností
+    - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) – pro pomocí zjišťování polohy, když se aplikace používá
+    - [`NSLocationAlwaysAndWhenInUseUsageDescription`](https://developer.apple.com/documentation/corelocation/choosing_the_authorization_level_for_location_services/requesting_always_authorization?language=objc) – používání polohy po celou dobu
 - iOS 10 a starší
-    - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) – použití polohy při aplikace je používána
-    - [`NSLocationAlwaysUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18) – pro umístění služby pomocí za všech okolností    
+    - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) – pro pomocí zjišťování polohy, když se aplikace používá
+    - [`NSLocationAlwaysUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18) – používání polohy po celou dobu    
 
-Pro podporu iOS 11 a starší, můžete zahrnout všechny tři klíče: `NSLocationWhenInUseUsageDescription`, `NSLocationAlwaysAndWhenInUseUsageDescription`, a `NSLocationAlwaysUsageDescription`.
+Pro podporu iOS 11 a starší, může zahrnovat všechny tři klíče: `NSLocationWhenInUseUsageDescription`, `NSLocationAlwaysAndWhenInUseUsageDescription`, a `NSLocationAlwaysUsageDescription`.
 
-Reprezentace XML pro tyto klíče v **Info.plist** jsou uvedeny níže. Je třeba aktualizovat `string` hodnoty tak, aby odrážela, jak vaše aplikace používá informace o umístění:
+Reprezentace XML pro tyto klíče v **Info.plist** je uveden níže. Měli byste aktualizovat `string` hodnoty tak, aby odrážely, jak vaše aplikace používá informace o poloze:
 
 ```xml
 <key>NSLocationAlwaysUsageDescription</key>
@@ -95,29 +95,29 @@ Reprezentace XML pro tyto klíče v **Info.plist** jsou uvedeny níže. Je třeb
 <string>Can we use your location at all times?</string>
 ```
 
-**Info.plist** položky můžete přidat i v **zdroj** zobrazení při úpravách **Info.plist** souboru:
+**Info.plist** položky lze přidat také v **zdroj** zobrazení při úpravách **Info.plist** souboru:
 
-![Info.plist pro iOS 8](map-images/ios8-map-permissions.png "položky Info.plist vyžaduje iOS 8")
+![Soubor info.plist pro iOS 8](map-images/ios8-map-permissions.png "iOS 8 požadovaných položek souboru Info.plist")
 
 
 ### <a name="android"></a>Android
 
-Použít [Google Maps API v2](https://developers.google.com/maps/documentation/android/) v systému Android musí vygenerovat klíč rozhraní API a přidejte ji do vašeho projektu Android.
-Postupujte podle pokynů v dokumentu Xamarin [získání klíč Google Maps API v2](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md).
-Až projdete tyto pokyny, vložte klíč rozhraní API v **Properties/AndroidManifest.xml** souboru (zobrazení zdroje a najít nebo aktualizovat následující element):
+Použít [Google Maps API v2](https://developers.google.com/maps/documentation/android/) na Androidu musí vygenerovat klíč rozhraní API a přidejte ji do vašeho projektu Android.
+Postupujte podle pokynů v dokumentu Xamarin na [získání klíče rozhraní API služby mapy Google v2](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md).
+Po provedení těchto pokynů, vložte klíč rozhraní API v **Properties/AndroidManifest.xml** soubor (zdroj zobrazení a hledání nebo aktualizovat následující element):
 
 ```xml
-<meta-data
-        android:name="com.google.android.geo.API_KEY"
-        android:value="YOUR_API_KEY"/>
+<application ...>
+    <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="YOUR_API_KEY" />
+</application>
 ```
 
-Bez platný klíč rozhraní API ovládacího prvku mapy zobrazí jako šedé pole v systému Android.
+Bez platný klíč rozhraní API se zobrazí ovládací prvek mapy jako šedou pole v Androidu.
 
 > [!NOTE]
-> Mějte na paměti, ke generování jiný klíč pomocí souboru úložiště klíčů, který se používá k podepisování prodejní verze nástroje jakékoli aplikace, která je načtený do obchodu Google Play. Klíč vygenerujete pro vývoj a ladění nebude fungovat a bude obsahovat aplikaci stáhnout z webu Google Play nefunkční zobrazení mapy. Nezapomeňte také znovu vygenerovat klíče Pokud aplikace **název balíčku** změny.
+> Mějte na paměti, aby vaše soubory APK k mapy Google, je nutné zahrnout otisky prstů SHA-1 a balíček názvy pro každé úložiště klíčů (debug a release), který se používá k podepisování vaší APK. Například pokud použijete jeden počítač pro ladění a další počítače ke generování vydání APK, měli byste zahrnout otisk SHA-1 certifikátu z úložiště klíčů ladění prvního počítače a otisk SHA-1 certifikátu z úložiště klíčů verzi nástroje druhý počítač. Nezapomeňte také upravit klíč přihlašovací údaje, pokud aplikace **název balíčku** změny. Zobrazit [získání klíče rozhraní API služby mapy Google v2](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md).
 
-Musíte také povolit příslušná oprávnění kliknutím pravým tlačítkem myši na projekt pro Android a výběrem **možnosti > sestavení > aplikace pro Android** a tikání následující:
+Bude také nutné povolit příslušné oprávnění tak, že kliknete pravým tlačítkem na projekt pro Android a vyberete **možnosti > sestavení > aplikace pro Android** a zaškrtnutím příslušného políčka následující:
 
 * `AccessCoarseLocation`
 * `AccessFineLocation`
@@ -127,23 +127,23 @@ Musíte také povolit příslušná oprávnění kliknutím pravým tlačítkem 
 * `AccessWifiState`
 * `Internet`
 
-Na snímku obrazovky níže jsou uvedeny některé z těchto:
+Na snímku obrazovky níže jsou uvedené některé z těchto:
 
-![Požadovaná oprávnění pro Android](map-images/android-map-permissions.png "požadovaných oprávnění pro Android")
+![Požadovaná oprávnění pro Android](map-images/android-map-permissions.png "požadovaná oprávnění pro Android")
 
-Poslední dva jsou požadovány, protože aplikace vyžaduje síťové připojení ke stahování dat mapy. Přečtěte si informace o Android [oprávnění](http://developer.android.com/reference/android/Manifest.permission.html) Další informace.
+Poslední dva jsou povinné, protože aplikace vyžadují připojení k síti pro stahování dat na mapě. Přečtěte si o aplikaci Android [oprávnění](http://developer.android.com/reference/android/Manifest.permission.html) Další informace.
 
 ### <a name="universal-windows-platform"></a>Univerzální platforma pro Windows
 
-Chcete-li použít mapy na univerzální platformu Windows musíte vygenerovat autorizační token. Další informace najdete v tématu [žádostí ověřovací klíč mapy](https://msdn.microsoft.com/library/windows/apps/mt219694.aspx) na webu MSDN.
+Použití mapy na univerzální platformu Windows musí generovat autorizační token. Další informace najdete v tématu [požádat o ověřovací klíč map](https://msdn.microsoft.com/library/windows/apps/mt219694.aspx) na webové stránce MSDN.
 
-Ověřovací token musí být zadán pak v `FormsMaps.Init("AUTHORIZATION_TOKEN")` volání metody k ověření aplikace pomocí mapy Bing.
+Ověřovací token musí být potom zadán v `FormsMaps.Init("AUTHORIZATION_TOKEN")` volání metody k ověření aplikace mapách služby mapy Bing.
 
 <a name="Using_Maps" />
 
-## <a name="using-maps"></a>Pomocí map
+## <a name="using-maps"></a>Pomocí mapy
 
-Najdete v článku [MapPage.cs](https://github.com/xamarin/xamarin-forms-samples/blob/master/MobileCRM/MobileCRM.Shared/Pages/MapPage.cs) v ukázce MobileCRM příklad použití mapový ovládací prvek v kódu. Jednoduchý `MapPage` třída může vypadat například tohoto – upozornění, nový `MapSpan` se vytvoří na pozici zobrazení mapy na:
+Zobrazit [MapPage.cs](https://github.com/xamarin/xamarin-forms-samples/blob/master/MobileCRM/MobileCRM.Shared/Pages/MapPage.cs) v ukázce MobileCRM příklad použití mapového ovládacího prvku v kódu. Jednoduchý `MapPage` třídy může vypadat toto – oznámení, který nový `MapSpan` se vytvoří na pozici na mapě zobrazit:
 
 ```csharp
 public class MapPage : ContentPage {
@@ -163,9 +163,9 @@ public class MapPage : ContentPage {
 }
 ```
 
-### <a name="map-type"></a>Typ mapy
+### <a name="map-type"></a>Typ mapování
 
-Mapa obsahu může také změnit nastavení `MapType` vlastnost, k zobrazení regulární silniční mapa (výchozí), satelitních snímků nebo jejich kombinaci.
+Obsah mapy lze také změnit tak, že nastavíte `MapType` vlastnost zobrazíte regulární ulice mapu (výchozí), satelitních snímků nebo kombinaci obojího.
 
 ```csharp
 map.MapType == MapType.Street;
@@ -174,19 +174,19 @@ map.MapType == MapType.Street;
 Platný `MapType` hodnoty jsou:
 
 -  Hybridní
--  Satelitní
+-  Satelit
 -  Ulice (výchozí)
 
 
-### <a name="map-region-and-mapspan"></a>Oblasti map a MapSpan
+### <a name="map-region-and-mapspan"></a>Mapa oblastí a MapSpan
 
-Jak je vidět ve výše uvedeném fragmentu kódu, zadávání `MapSpan` instance do konstruktoru mapy nastaví počáteční zobrazení (center bodu a úroveň přiblížení) mapy, když je načten. `MoveToRegion` Metoda u třídy map pak lze změnit úroveň pozici nebo Přiblížení mapy. Existují dva způsoby, jak vytvořit nový `MapSpan` instance:
+Jak je uvedeno ve výše uvedeném fragmentu kódu, zadávání `MapSpan` instance konstruktoru mapy nastaví počáteční zobrazení (na střed bodu a úroveň zvětšení) mapy při spuštění. `MoveToRegion` Metody ve třídě mapy je pak možné změnit úroveň pozice nebo Přiblížení mapy. Existují dva způsoby, jak vytvořit novou `MapSpan` instance:
 
--  **MapSpan.FromCenterAndRadius()** -statickou metodu pro vytvoření rozsahu ze `Position` a zadání `Distance` .
--  **nové (MapSpan)** – konstruktor, který používá `Position` a degress zeměpisné šířky a délky k zobrazení.
+-  **MapSpan.FromCenterAndRadius()** -statickou metodu pro vytvoření rozsahu ze `Position` a zadáte `Distance` .
+-  **(nové MapSpan)** – konstruktor, který se používá `Position` a degress zeměpisné šířky a délky pro zobrazení.
 
 
-Pokud chcete změnit úroveň přiblížení mapy beze změny umístění, vytvořte novou `MapSpan` pomocí aktuálního umístění, ze `VisibleRegion.Center` vlastnost mapový ovládací prvek. A `Slider` může použít k řízení Přiblížení mapy takto (ale přiblížení a oddálení přímo v mapový ovládací prvek nemůže aktualizovat aktuálně hodnotu jezdce):
+Chcete-li změnit úroveň přiblížení mapy beze změny umístění, vytvořte nový `MapSpan` pomocí aktuální umístění, ze `VisibleRegion.Center` vlastnost mapového ovládacího prvku. A `Slider` může použít k řízení Přiblížení mapy takto (ale přiblížit mapový ovládací prvek nemůže aktualizovat aktuálně hodnotu posuvníku):
 
 ```csharp
 var slider = new Slider (1, 18, 1);
@@ -199,9 +199,9 @@ slider.ValueChanged += (sender, e) => {
 
  [![Mapy s přiblížení](map-images/maps-zoom-sml.png "Přiblížení mapy ovládacího prvku")](map-images/maps-zoom.png#lightbox "Přiblížení mapy ovládacího prvku")
 
-### <a name="map-pins"></a>Mapování kódů PIN
+### <a name="map-pins"></a>Špendlíky
 
-Umístění může být označen na mapě s `Pin` objekty.
+Umístění je možné označit na mapě s `Pin` objekty.
 
 ```csharp
 var position = new Position(37,-122); // Latitude, Longitude
@@ -214,19 +214,19 @@ var pin = new Pin {
 map.Pins.Add(pin);
 ```
 
- `PinType` může být nastavené na jednu z následujících hodnot, které mohou ovlivnit způsob kódu pin v vykreslení (v závislosti na platformě):
+ `PinType` můžete nastavit na jednu z následujících hodnot, které může mít vliv na způsob, jak kód pin v vykreslení (v závislosti na platformě):
 
 -  Obecné
--  Místní
+-  Místo
 -  SavedPin
 -  SearchResult
 
 
 <a name="Using_Xaml" />
 
-## <a name="using-xaml"></a>Použitím jazyka Xaml
+## <a name="using-xaml"></a>Pomocí jazyka Xaml
 
-Mapy mohou být umístěny v Xaml rozložení také, jak ukazuje tento fragment kódu.
+Maps může také umístěné v rozložení Xaml, jak je znázorněno v tomto fragmentu kódu.
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -244,7 +244,7 @@ Mapy mohou být umístěny v Xaml rozložení také, jak ukazuje tento fragment 
 </ContentPage>
 ```
 
-`MapRegion` a `Pins` lze nastavit v kódu pomocí `MyMap` odkaz (nebo ať mapy jmenuje). Všimněte si, že další `xmlns` tak, aby odkazovaly ovládací prvky Xamarin.Forms.Maps je vyžadována definice oboru názvů.
+`MapRegion` a `Pins` je možné nastavit v kódu pomocí `MyMap` odkaz (nebo cokoli, co má název mapy). Všimněte si, že další `xmlns` definice oboru názvů je vyžadovaný pro odkaz na ovládací prvky xamarin.Forms.Maps není úspěšný kvůli.
 
 ```csharp
 MyMap.MoveToRegion(
@@ -256,13 +256,13 @@ MyMap.MoveToRegion(
 
 ## <a name="summary"></a>Souhrn
 
-Xamarin.Forms.Maps je samostatný NuGet, který musí být přidaný do jednotlivých projektů v řešení Xamarin.Forms. Je požadován, jako i některé kroky konfigurace pro iOS, Android a UWP další inicializační kód.
+Xamarin.Forms.Maps není úspěšný kvůli je samostatný NuGet, který musí být přidané do jednotlivých projektů v řešení Xamarin.Forms. Další inicializační kód je potřeba, a některé kroky konfigurace pro iOS, Android a UPW.
 
-Jednou nakonfigurovaných rozhraní API map můžete použít k vykreslení maps se značkami PIN kód v několika řádků kódu. Mapy lze dále rozšířit o [vlastní zobrazovací jednotky](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md).
+Jednou nakonfigurovaných rozhraní API pro mapy můžete použít k vykreslení mapy se značkami PIN kód v několika řádků kódu. Maps můžete dále rozšířit o další [vlastního rendereru](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md).
 
 
 ## <a name="related-links"></a>Související odkazy
 
 - [MapsSample](https://developer.xamarin.com/samples/WorkingWithMaps/)
-- [Vlastní zobrazovací jednotky mapy](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)
+- [Mapování vlastního Rendereru](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)
 - [Ukázky Xamarin.Forms](https://developer.xamarin.com/samples/xamarin-forms/all/)

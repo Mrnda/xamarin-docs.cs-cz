@@ -1,32 +1,32 @@
 ---
 title: 'Xamarin.Essentials: převod textu na řeč'
-description: Třída TextToSpeech v Xamarin.Essentials umožňuje využívat v převod textu na řeč moduly mluvit back text ze zařízení a také dotazu dostupné jazyky, které mohou podporovat modul předdefinovaných aplikace.
+description: Třída TextToSpeech v Xamarin.Essentials umožňuje využívat v převod textu na řeč moduly mluvit back text ze zařízení a také pro dotaz dostupné jazyky, které podporují modul integrované aplikace.
 ms.assetid: AEEF03AE-A047-4DF0-B0E8-CC8D9A7B8351
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
 ms.openlocfilehash: 9383411074bc43af1034138aadbb6ac5494c2c01
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782798"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38815658"
 ---
 # <a name="xamarinessentials-text-to-speech"></a>Xamarin.Essentials: převod textu na řeč
 
 ![Předběžné verze NuGet](~/media/shared/pre-release.png)
 
-**TextToSpeech** třída umožňuje aplikaci využívat předdefinovaných v převod textu na řeč moduly mluvit back text ze zařízení a také dotazu dostupné jazyky, které mohou podporovat modul.
+**TextToSpeech** třída umožňuje aplikaci využívat integrovaná v převod textu na řeč moduly mluvit back text ze zařízení a také pro dotaz dostupné jazyky, které podporují modul.
 
-## <a name="using-text-to-speech"></a>Mluvené slovo
+## <a name="using-text-to-speech"></a>Pomocí převod textu na řeč
 
-Přidáte odkaz na Xamarin.Essentials v třídě:
+Přidáte odkaz na Xamarin.Essentials ve své třídě:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Převod textu na řeč funkce funguje tak, že volání `SpeakAsync` metoda s textem a volitelné parametry a vrátí po dokončení utterance. 
+Funkce pro převod textu na řeč funguje tak, že volání `SpeakAsync` metoda s textem a volitelné parametry a vrátí po dokončení zpracování utterance. 
 
 ```csharp
 public async Task SpeakNowDefaultSettings()
@@ -46,7 +46,7 @@ public void SpeakNowDefaultSettings2()
 }
 ```
 
-Tato metoda přebírá volitelné CancellationToken zastavit utterance po jeho spuštění. 
+Tato metoda přijímá volitelný CancellationToken zastavit utterance po jeho spuštění. 
 ```csharp
 CancellationTokenSource cts;
 public async Task SpeakNowDefaultSettings()
@@ -66,7 +66,7 @@ public void CancelSpeech()
 }
 ```
 
-Převod textu na řeč, bude automaticky fronty řeči požadavky ze stejného podprocesu. 
+Převod textu na řeč automaticky fronty hlasové požadavky ze stejného podprocesu. 
 
 ```csharp
 bool isBusy = false;
@@ -90,9 +90,9 @@ public void SpeakMultiple()
 }
 ```
 
-### <a name="speech-settings"></a>Rozpoznávání řeči nastavení
+### <a name="speech-settings"></a>Nastavení řeči
 
-Pro větší kontrolu nad jak oznamována zvukovému záznamu zpět s `SpeakSettings` umožňuje nastavení svazek, výšky a národní prostředí.
+Větší kontrolu nad tím, jak je slyšet zvuk zpět s `SpeakSettings` , který umožňuje nastavení svazku, výšku a národní prostředí.
 
 ```csharp
 public async Task SpeakNow()
@@ -114,9 +114,9 @@ Tady jsou podporované hodnoty pro tyto parametry:
 | Výška | 0 | 2.0 |
 | Svazek | 0 | 1.0 |
 
-### <a name="speech-locales"></a>Rozpoznávání řeči národní prostředí
+### <a name="speech-locales"></a>Národní prostředí řeči
 
-Každá platforma nabízí národní prostředí mluvit pozadí textu v několika jazycích a akcenty. Každá platforma má jiné kódy a způsobů určení toho, které je důvod, proč Essentials poskytuje napříč platformami `Locale` třídy a vytvářet dotazy pomocí `GetLocalesAsync`.
+Každá platforma nabízí národní prostředí mluvit back text v několika jazycích a zvýraznění. Každá platforma má jiné kódy a způsoby pro určení toho, což je důvod, proč Essentials poskytuje napříč platformami `Locale` třídy a způsob, jak dotazovat je pomocí `GetLocalesAsync`.
 
 ```csharp
 public async Task SpeakNow()
@@ -139,10 +139,10 @@ public async Task SpeakNow()
 
 ## <a name="limitations"></a>Omezení
 
-- Fronty utterance není zaručeno, pokud volána napříč více vláken.
-- Přehrávání zvuku pozadí není oficiálně podporován.
+- Fronty utterance není zaručeno, pokud volá napříč více vlákny.
+- Přehrávání zvuku na pozadí není oficiálně podporován.
 
 ## <a name="api"></a>rozhraní API
 
 - [TextToSpeech zdrojového kódu](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/TextToSpeech)
-- [Dokumentaci k rozhraní API TextToSpeech](xref:Xamarin.Essentials.TextToSpeech)
+- [Dokumentace k rozhraní API TextToSpeech](xref:Xamarin.Essentials.TextToSpeech)

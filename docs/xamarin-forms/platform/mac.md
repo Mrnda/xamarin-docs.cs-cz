@@ -1,6 +1,6 @@
 ---
-title: Instalační program platformy Mac
-description: Tento článek vysvětluje, jak přidat do projektu Xamarin.Forms, která bude vytvářet aplikace fungovat v systému macOS Sierra a systému macOS El Capitan Mac projekt.
+title: Nastavení platformy Mac
+description: Tento článek vysvětluje, jak přidat projekt Mac do projektu Xamarin.Forms, která bude vytvářet aplikace fungovat v systému macOS Sierra a macOS El Capitan.
 ms.prod: xamarin
 ms.assetid: EEC549E0-F182-4F9C-B2BA-B31D19569AA5
 ms.technology: xamarin-forms
@@ -9,44 +9,44 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/03/2017
 ms.openlocfilehash: ae0fbfc7862a0d2147b2c3bbdbae7dd53dfce78f
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35242593"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38831686"
 ---
-# <a name="mac-platform-setup"></a>Instalační program platformy Mac
+# <a name="mac-platform-setup"></a>Nastavení platformy Mac
 
 ![Náhled](~/media/shared/preview.png)
 
-Než začnete, vytvořit (nebo použijte existující) Xamarin.Forms projektu.
-Můžete přidat pouze Mac aplikace pomocí sady Visual Studio for Mac.
+Než začnete, vytvořit (nebo použijte existující) projektu Xamarin.Forms.
+Můžete přidat jenom aplikace Mac pomocí sady Visual Studio pro Mac.
 
 > [!VIDEO https://youtube.com/embed/mvQ7jzaNseM]
 
-**Přidání systému macOS projektu do Xamarin.Forms, pomocí [univerzity Xamarin](https://university.xamarin.com/)**
+**Přidání objektu project s macOS do Xamarin.Forms, podle [Xamarin University](https://university.xamarin.com/)**
 
-## <a name="adding-a-mac-app"></a>Přidání aplikace Mac
+## <a name="adding-a-mac-app"></a>Přidání aplikací pro Mac
 
-Postupujte podle těchto pokynů můžete přidat aplikaci Mac, který se spustí v systému macOS Sierra a systému macOS El Capitan:
+Postupujte podle těchto pokynů pro přidání aplikací pro Mac, který se spustí v systému macOS Sierra a macOS El Capitan:
 
 1. V sadě Visual Studio pro Mac, klikněte pravým tlačítkem na existující řešení Xamarin.Forms a zvolte **Přidat > Přidat nový projekt...**
 
-2. V **nový projekt** okno zvolte **Mac > aplikace > kakao aplikace** a stiskněte klávesu **Další**.
+2. V **nový projekt** okna zvolte **Mac > aplikace > aplikace Cocoa** a stiskněte klávesu **Další**.
 
-3. Typ **název aplikace** (a volitelně vybrat jiný název pro položku ukotvení), stiskněte **Další**.
+3. Typ **název aplikace** (a volitelně vyberte jiný název pro položku Dock), stiskněte klávesu **Další**.
 
-4. Zkontrolujte konfiguraci a stiskněte klávesu **vytvořit**. Níže jsou uvedeny v těchto kroků:
+4. Zkontrolujte konfiguraci a stiskněte klávesu **vytvořit**. Tyto kroky je znázorněno níže:
 
-  ![Animovaný pokyny znázorňující postup přidání kakao aplikace](mac-images/add-macos-proj.gif)
+  ![Animovaný pokyny ukazující, jak přidat aplikace Cocoa](mac-images/add-macos-proj.gif)
 
-5. V projektu Mac, klikněte pravým tlačítkem na **balíčků > přidat balíčky...**  přidat [Xamarin.Forms/2.3.5.235-pre2](https://www.nuget.org/packages/Xamarin.Forms/2.3.5.235-pre2) NuGet. Ostatní projekty by měl aktualizovat také na tuto verzi.
+5. V projektu Mac, klikněte pravým tlačítkem na **balíčků > přidat balíčky...**  přidáte [Xamarin.Forms/2.3.5.235-pre2](https://www.nuget.org/packages/Xamarin.Forms/2.3.5.235-pre2) NuGet. Měli byste také aktualizovat ostatních projektů se na tuto verzi.
 
-6. V projektu Mac, klikněte pravým tlačítkem na **odkazy** a přidejte odkaz na projekt Xamarin.Forms (sdílených projektů nebo .NET Standard projektu knihovny).
+6. V projektu Mac, klikněte pravým tlačítkem na **odkazy** a přidejte odkaz na projekt Xamarin.Forms (sdílet projekt nebo .NET Standard knihovny projektu).
 
-  ![Přidat odkaz na projektu sdíleného kódu Xamarin.Forms](mac-images/references-sml.png)
+  ![Přidejte odkaz na projekt sdíleného kódu Xamarin.Forms](mac-images/references-sml.png)
 
-7. Aktualizace **Main.cs** k chybě při inicializaci `AppDelegate`:
+7. Aktualizace **Main.cs** inicializovat `AppDelegate`:
 
     ```csharp
     static class MainClass
@@ -60,7 +60,7 @@ Postupujte podle těchto pokynů můžete přidat aplikaci Mac, který se spust�
     }
     ```
 
-8. Aktualizace `AppDelegate` k chybě při inicializaci Xamarin.Forms, vytvoření okna a načíst aplikaci Xamarin.Forms (Nezapomeňte nastavit odpovídající `Title`). _Pokud máte další závislosti, které je třeba inicializovat, to udělat tady také._
+8. Aktualizace `AppDelegate` inicializovat Xamarin.Forms, vytvořit časové období a zatížení aplikace Xamarin.Forms (zapamatování nastavení odpovídající `Title`). _Pokud máte další závislosti, které je potřeba inicializovat to udělat tady také._
 
     ```csharp
     using Xamarin.Forms;
@@ -95,21 +95,21 @@ Postupujte podle těchto pokynů můžete přidat aplikaci Mac, který se spust�
     }
     ```
 
-9. Klikněte dvakrát na **Main.storyboard** upravit v Xcode. Vyberte **okno** a _zrušte zaškrtnutí políčka_ **je počáteční řadiče** políčko (totiž výše uvedený kód vytvoří okno):
+9. Dvakrát klikněte na panel **Main.storyboard** upravit v Xcode. Vyberte **okno** a _zrušte zaškrtnutí políčka_ **je počáteční Kontroleru** zaškrtávacího políčka (Toto je vzhledem k tomu, že výše uvedený kód vytvoří okno):
 
-  [![Zrušte zaškrtnutí políčka je počáteční řadiče v Xcode](mac-images/xcode-init-controller-sml.png)](mac-images/xcode-init-controller.png#lightbox)
+  [![Zrušte zaškrtnutí políčka je počáteční řadič v Xcode](mac-images/xcode-init-controller-sml.png)](mac-images/xcode-init-controller.png#lightbox)
 
-  Můžete upravit systém nabídek ve scénáři, odebrat položky nežádoucí.
+  Můžete upravit systém nabídek ve scénáři, chcete-li odebrat nepotřebné položky.
 
-10. Nakonec přidejte místním prostředkům (např. soubory obrázků) z existující projekty platformy, které jsou požadovány.
+10. Nakonec přidejte všechny místní prostředky (např.) soubory obrázků) z existujících projektů platformy, které jsou požadovány.
 
-11. Projekt Mac by měla spouštět Xamarin.Forms kódu v systému macOS!
+11. Projekt Mac by se měl spustit kódu Xamarin.Forms v systému macOS!
 
 ## <a name="next-steps"></a>Další kroky
 
 ### <a name="styling"></a>Práce se styly
 
-S poslední změny `OnPlatform` nyní můžete cílit na libovolný počet platformy. Systému macOS, který zahrnuje.
+S nejnovější změny provedené `OnPlatform` nyní můžete cílit na libovolný počet platformy. To zahrnuje macOS.
 
 ```xml
 <Button.TextColor>
@@ -121,11 +121,11 @@ S poslední změny `OnPlatform` nyní můžete cílit na libovolný počet platf
 </Button.TextColor>
 ```
 
-Poznámka: může se na platformách, jako je to také dvakrát: `<On Platform="iOS, macOS" ...>`.
+Mějte na paměti, může se na platformách, jako je to také dvakrát: `<On Platform="iOS, macOS" ...>`.
 
-### <a name="window-size-and-position"></a>Velikost a umístění okna
+### <a name="window-size-and-position"></a>Velikost a polohu okna
 
-Můžete upravit původní velikost a umístění okna v `AppDelegate`:
+Můžete upravit počáteční velikost a umístění okna `AppDelegate`:
 
 ```csharp
 var rect = new CoreGraphics.CGRect(200, 1000, 1024, 768);  // x, y, width, height
@@ -133,29 +133,29 @@ var rect = new CoreGraphics.CGRect(200, 1000, 1024, 768);  // x, y, width, heigh
 
 ## <a name="known-issues"></a>Známé problémy
 
-Toto je náhled, takže byste měli očekávat, že není vše produkční připraven. Níže je několik věcí, které se můžete setkat při přidávání systému macOS do vašich projektů:
+Toto je náhled, proto byste měli očekávat, že ne vše, co je připraveno na produkční. Níže je několik věcí, na které můžete narazit při přidávání do projektů macOS:
 
-### <a name="not-all-nugets-are-ready-for-macos"></a>Ne všechny NuGets jsou připravené ke systému macOS
+### <a name="not-all-nugets-are-ready-for-macos"></a>Ne všechny balíčky Nuget jsou připraveny pro macOS
 
-Balíčky musí být "xamarinmac20" pro práci v systému macOS projektu. Můžete zjistit, že některé z knihoven, které můžete použít zatím nepodporují systému macOS.
+Balíčky musí jako cíl "xamarinmac20" pro práci v projektu s macOS. Může se stát, že některé z knihoven, které používáte zatím ještě nepodporují macOS.
 
-V takovém případě budete muset odeslat požadavek na funkce maintainer projektu přidat. Dokud budou mít podporu, budete muset najít alternativy.
+V takovém případě budete muset odeslat žádost o funkci Maintainer projektu a přidejte ji. Dokud mají podporu, budete muset hledejte alternativy.
 
 ### <a name="missing-xamarinforms-features"></a>Chybějící funkce Xamarin.Forms
 
-Ne všechny funkce Xamarin.Forms jsou dokončeny v této verzi preview; Tady je seznam některých funkcí, které není dosud implementována:
+Ne všechny funkce Xamarin.Forms jsou dokončeny v této verzi preview; Tady je seznam některých funkcí, které ještě není naimplementovaný:
 
-* Zápatí stránky
+* Zápatí
 * Obrázek – aspekt
 * ListView – ScrollTo, UnevenRows podpory, aktualizace, SeparatorColor, SeparatorVisibility
 * MasterDetailPage – BackgroundColor
 * Navigace – InsertPageBefore
 * OpenGLRenderer
-* Výběr – implementace Bindable/lze zobrazit
+* Výběr – implementace Bindable/pozorovat
 * BarTextColor TabbedPage – BarBackgroundColor,
 * Zobrazení Tabulka – UnevenRows
 * ForceUpdateSize ViewCell – hodnotu IsEnabled,
-* Webové zobrazení – většina WebNavigationEvents
+* WebView – většina WebNavigationEvents
 
 
 ## <a name="related-links"></a>Související odkazy

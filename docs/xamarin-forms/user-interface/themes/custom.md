@@ -1,6 +1,6 @@
 ---
-title: Vytváření vlastních Xamarin.Forms motiv
-description: Tento článek vysvětluje, jak vytvořit vlastní motiv Xamarin.Forms pro odkazování na v aplikaci.
+title: Vytvoření vlastní Xamarin.Forms motivu
+description: Tento článek vysvětluje, jak vytvořit vlastní motiv Xamarin.Forms pro odkazování v aplikaci.
 ms.prod: xamarin
 ms.assetid: 4FE08ADC-093F-47FA-B33C-20CF08B5D7E0
 ms.technology: xamarin-forms
@@ -8,25 +8,25 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/01/2017
 ms.openlocfilehash: 018193cf0b198fd87f0f09cbfeba52e9d2a0f68b
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245570"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38838167"
 ---
-# <a name="creating-a-custom-xamarinforms-theme"></a>Vytváření vlastních Xamarin.Forms motiv
+# <a name="creating-a-custom-xamarinforms-theme"></a>Vytvoření vlastní Xamarin.Forms motivu
 
 ![](~/media/shared/preview.png "Toto rozhraní API je aktuálně ve verzi preview")
 
-Kromě přidání motiv z balíčku Nuget (například [Light](~/xamarin-forms/user-interface/themes/light.md) a [tmavý](~/xamarin-forms/user-interface/themes/dark.md) motivy), můžete vytvořit vlastní prostředků slovník motivy, které mohou odkazovat ve vaší aplikaci.
+Kromě přidání motiv z balíčku Nuget (například [světla](~/xamarin-forms/user-interface/themes/light.md) a [tmavě](~/xamarin-forms/user-interface/themes/dark.md) motivy), můžete vytvořit vlastní prostředek slovníku motivy, které lze odkazovat ve vaší aplikaci.
 
 ## <a name="example"></a>Příklad
 
-Tří `BoxView`s zobrazený na [motivy stránky](~/xamarin-forms/user-interface/themes/index.md) jsou ve podle tří tříd definovaných v dvě ke stažení motivů.
+Tři `BoxView`s zobrazený na [motivy stránky](~/xamarin-forms/user-interface/themes/index.md) jsou ve stylu podle tří tříd definovaných v dva motivy ke stažení.
 
-Abyste pochopili, jak fungují, následující kód vytvoří ekvivalentní stylu, které můžete přidat přímo na vaše **App.xaml**.
+Abyste pochopili, jak fungují, následující kód vytvoří ekvivalentní styl, který můžete přidat přímo do vaší **App.xaml**.
 
-Poznámka: `Class` atribut pro `Style` (Naproti tomu [ `x:Key` ](~/xamarin-forms/user-interface/styles/inheritance.md) atributů, které jsou k dispozici v dřívějších verzích Xamarin.Forms).
+Poznámka: `Class` atributu `Style` (nikoli [ `x:Key` ](~/xamarin-forms/user-interface/styles/inheritance.md) atributů, které jsou k dispozici v dřívějších verzích Xamarin.Forms).
 
 ```xml
 <ResourceDictionary>
@@ -63,17 +63,17 @@ Poznámka: `Class` atribut pro `Style` (Naproti tomu [ `x:Key` ](~/xamarin-forms
 </ResourceDictionary>
 ```
 
-Můžete si všimnout, který `Rounded` třída odkazuje na vlastní efekt `CornerRadius`.
-Kód pro tento efekt je uveden níže - na něj odkazovat správně vlastní `xmlns` musí být přidán do **App.xaml**pro kořenový element:
+Uvidíte, že `Rounded` třídy odkazuje na vlastní efekt `CornerRadius`.
+Kód pro tento efekt je uvedena níže - na něj odkazovat správně vlastní `xmlns` musí být přidané do **App.xaml**jeho kořenový element:
 
 ```csharp
 xmlns:local="clr-namespace:ThemesDemo;assembly=ThemesDemo"
 ```
 
-### <a name="c-code-in-the-net-standard-library-project-or-shared-project"></a>Kód jazyka C# v rozhraní .NET standardní projektu knihovny nebo sdílené projektu
+### <a name="c-code-in-the-net-standard-library-project-or-shared-project"></a>Kód jazyka C# v .NET Standard projekt knihovny nebo sdíleného projektu
 
-Kód pro vytvoření rohu ZAOKROUHLIT `BoxView` používá [důsledky](~/xamarin-forms/app-fundamentals/effects/index.md).
-Poloměr použije pomocí `BindableProperty` a je implementována použitím [vliv](~/xamarin-forms/app-fundamentals/effects/index.md). Účinek vyžaduje specifické pro platformu kód [iOS](#ios) a [Android](#android) projekty (zobrazené dole).
+Kód pro vytváření do kruhové rohu `BoxView` používá [účinky](~/xamarin-forms/app-fundamentals/effects/index.md).
+Poloměr použije pomocí `BindableProperty` a je implementováno s použitím [efekt](~/xamarin-forms/app-fundamentals/effects/index.md). Účinek vyžaduje platformě závislého kódu v [iOS](#ios) a [Android](#android) projekty (viz dole).
 
 ```csharp
 namespace ThemesDemo
@@ -257,8 +257,8 @@ namespace ThemesDemo.Droid
 
 ## <a name="summary"></a>Souhrn
 
-Definováním stylů pro každý ovládací prvek, který vyžaduje vlastní vzhled lze vytvořit vlastní motiv. Více stylů pro ovládací prvek musí rozlišovat podle různých `Class` atributy ve slovníku prostředků a poté použity nastavením `StyleClass` atribut ovládacího prvku.
+Vlastní motiv lze vytvořit tak, že definujete styly pro každý ovládací prvek, který vyžaduje vlastní vzhled. Více stylů pro ovládací prvek by měl být odlišené různých `Class` atributy ve slovníku prostředků a pak použít tak, že nastavíte `StyleClass` atribut na ovládacím prvku.
 
-Můžete také používat styl [důsledky](~/xamarin-forms/app-fundamentals/effects/index.md) k dalšímu přizpůsobení vzhledu ovládacího prvku.
+Můžete také použít styl [účinky](~/xamarin-forms/app-fundamentals/effects/index.md) k dalšímu přizpůsobení vzhledu ovládacího prvku.
 
-[Implicitní styly](~/xamarin-forms/user-interface/styles/implicit.md) (bez buď `x:Key` nebo `Style` atribut) pokračovat má být použita pro všechny ovládací prvky, které odpovídají `TargetType`.
+[Implicitní styly](~/xamarin-forms/user-interface/styles/implicit.md) (bez buď `x:Key` nebo `Style` atribut) dál platit pro všechny ovládací prvky, které odpovídají `TargetType`.

@@ -1,6 +1,6 @@
 ---
 title: Motivy Xamarin.Forms
-description: Tento článek představuje Xamarin.Forms motivy, které definují konkrétní visual vzhledy pro standardní zobrazení.
+description: Tento článek představuje Xamarin.Forms motivy, který definuje konkrétní visual vzhledy pro standardní zobrazení.
 ms.prod: xamarin
 ms.assetid: 3DFB7C55-69F6-4980-A501-588719143482
 ms.technology: xamarin-forms
@@ -8,30 +8,30 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/01/2017
 ms.openlocfilehash: 0f49eeba072d6aeb7ead40d5d56d4af9e9bf5e27
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245729"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38814704"
 ---
 # <a name="xamarinforms-themes"></a>Motivy Xamarin.Forms
 
 ![](~/media/shared/preview.png "Toto rozhraní API je aktuálně ve verzi preview")
 
-Motivy Xamarin.Forms byly oznamují na měnícím 2016 a jsou dostupné jako verze preview pro zákazníky a zkuste svůj názor.
+Motivy Xamarin.Forms byly bylo ohlášená na Evolve 2016 a jsou k dispozici jako verze preview pro zákazníky, kteří si vyzkoušet a poskytnout zpětnou vazbu.
 
-Motiv přidává k aplikaci Xamarin.Forms včetně **Xamarin.Forms.Theme.Base** balíčku Nuget, plus další balíčky, která definuje konkrétní motiv (např. Xamarin.Forms.Theme.Light) nebo jinak místní motiv lze definovat pro aplikace.
+Motiv se přidá do aplikace Xamarin.Forms zahrnutím **Xamarin.Forms.Theme.Base** balíček Nuget, plus další balíček, který definuje konkrétní motivu (např.) Xamarin.Forms.Theme.Light) nebo jiná místní motivu lze definovat pro aplikaci.
 
-Odkazovat [motiv světlý](light.md) a [tmavým motivem](dark.md) stránky pokyny o tom, jak je přidat do aplikace a podívejte se [příklad vlastní motiv](custom.md).
+Odkazovat [světlý motiv](light.md) a [tmavý motiv](dark.md) stránky pokyny o tom, jak je přidat do aplikace, nebo se podívejte [vlastní motiv příklad](custom.md).
 
-**Důležité:** také postupujte podle kroků pro [načtení motivu sestavení (dole)](#loadtheme) přidáním některé často používaný kód k iOS `AppDelegate` a Android `MainActivity`. To bude možné zlepšit v budoucí verzi preview verze.
+**Důležité:** by měl taky uvedený postup [načtení motivu sestavení (dole)](#loadtheme) přidáním některých často používaný kód do systému iOS `AppDelegate` a s Androidem `MainActivity`. To se vylepší v budoucí verzi preview verzi.
 
 
-## <a name="control-appearance"></a>Řízení vzhledu
+## <a name="control-appearance"></a>Vzhled ovládacího prvku
 
-[Light](light.md) a [tmavý](dark.md) motivy obou definovat konkrétní vzhled pro standardní ovládací prvky. Jakmile přidáte motiv na slovník prostředků aplikace, se změní vzhled standardní ovládací prvky.
+[Světla](light.md) a [tmavě](dark.md) motivy obou definovat konkrétní vizuálního vzhledu pro standardní ovládací prvky. Po přidání motiv na slovník prostředků aplikace se změní vzhled standardní ovládací prvky.
 
-Následující kód XAML uvádí některé běžné ovládací prvky:
+Následující kód XAML ukazuje některé běžné ovládací prvky:
 
 ```xaml
 <StackLayout Padding="40">
@@ -43,10 +43,10 @@ Následující kód XAML uvádí některé běžné ovládací prvky:
 </StackLayout>
 ```
 
-Tyto snímky obrazovky ukazují tyto ovládací prvky s:
+Tyto snímky obrazovky ukazují těchto ovládacích prvků:
 
-* Žádné motiv použít
-* Motiv Světlý (pouze jemně lišit na situaci, kdy bez motivu)
+* Žádné motiv
+* Světlý motiv (jen drobné rozdíly s tím, že žádné motiv)
 * Tmavý motiv
 
 ![](images/standard-none-sml.png "Ovládací prvky bez motivů") ![](images/standard-light-sml.png "ovládacích prvků pomocí motiv světlý") ![](images/standard-dark-sml.png "ovládacích prvků pomocí tmavý motiv")
@@ -55,9 +55,9 @@ Tyto snímky obrazovky ukazují tyto ovládací prvky s:
 
 ## <a name="styleclass"></a>StyleClass
 
-`StyleClass` Vlastnost umožňuje vzhled zobrazení změnit podle definice poskytované motiv.
+`StyleClass` Vlastnost umožňuje vzhled zobrazení změnit podle definice poskytovaných motiv.
 
-[Light](light.md) a [tmavý](dark.md) motivy obou definovat tři různé vzhledy pro `BoxView`: `HorizontalRule`, `Circle`, a `Rounded`. Tento kód ukazuje tři různé `BoxView`s s třídami jiný styl použít:
+[Světla](light.md) a [tmavě](dark.md) motivy obou definovat tři různé vzhledy pro `BoxView`: `HorizontalRule`, `Circle`, a `Rounded`. Tento kód ukazuje tři různé `BoxView`s jiným stylem tříd použit:
 
 ```xaml
 <StackLayout Padding="40">
@@ -67,44 +67,44 @@ Tyto snímky obrazovky ukazují tyto ovládací prvky s:
 </StackLayout>
 ```
 
-To vykreslí světlým a tmavým následujícím způsobem:
+Tím zkopírujete světlý a tmavý následujícím způsobem:
 
 ![](images/boxview-light-sml.png "BoxView s motiv světlý StyleClass") ![](images/boxview-dark-sml.png "BoxView s StyleClass tmavý motiv")
 
 <a name="builtin" />
 
-## <a name="built-in-classes"></a>Vestavěné třídy
+## <a name="built-in-classes"></a>Předdefinované třídy
 
-Kromě automaticky styly nejběžnější řídí světlým a tmavým motivy v současné době podporují následující třídy, které mohou být použity nastavením `StyleClass` na tyto ovládací prvky:
+Kromě automaticky používání stylů pro běžné ovládací prvky světla a tmavé motivy v současné době podporují následující třídy, které můžete použít tak, že nastavíte `StyleClass` do těchto ovládacích prvků:
 
 **BoxView**
 
 * HorizontalRule
-* kruhu.
-* Zaokrouhlí
+* Kruh
+* Zaokrouhleno
 
 **Obrázek**
 
-* kruhu.
-* Zaokrouhlí
-* Miniatury
+* Kruh
+* Zaokrouhleno
+* Miniatura
 
 **Tlačítko**
 
 * Výchozí
-* primární
+* Primární
 * Úspěch
 * Informace o
 * Upozornění
 * Nebezpečí
 * Odkaz
-* Malá
-* Velká
+* Malé
+* Velké
 
 **Popisek**
 
 * Záhlaví
-* Dílčí záhlaví
+* Podhlavičce
 * Text
 * Odkaz
 * Inverzní
@@ -114,13 +114,13 @@ Kromě automaticky styly nejběžnější řídí světlým a tmavým motivy v s
 
 <a name="loadtheme" />
 
-### <a name="could-not-load-file-or-assembly-xamarinformsthemelight-or-one-of-its-dependencies"></a>Nelze načíst soubor nebo sestavení 'Xamarin.Forms.Theme.Light' nebo jedna z jeho závislostí
+### <a name="could-not-load-file-or-assembly-xamarinformsthemelight-or-one-of-its-dependencies"></a>Nepovedlo se načíst soubor nebo sestavení 'Xamarin.Forms.Theme.Light' nebo některou z jeho závislostí
 
-Ve verzi preview nemusí být možné načíst za běhu motivů. Přidejte kód vidíte níže do příslušných projektů odstranění této chyby.
+Ve verzi preview nemusí být schopný načíst za běhu motivů. Přidejte kód níže do relevantní projekty, chcete-li vyřešit tuto chybu.
 
 **iOS**
 
-V **AppDelegate.cs** přidejte následující řádky po `LoadApplication`
+V **AppDelegate.cs** přidáním následujících řádků za `LoadApplication`
 
 ```csharp
 var x = typeof(Xamarin.Forms.Themes.DarkThemeResources);
@@ -130,7 +130,7 @@ x = typeof(Xamarin.Forms.Themes.iOS.UnderlineEffect);
 
 **Android**
 
-V **MainActivity.cs** přidejte následující řádky po `LoadApplication`
+V **MainActivity.cs** přidáním následujících řádků za `LoadApplication`
 
 ```csharp
 var x = typeof(Xamarin.Forms.Themes.DarkThemeResources);

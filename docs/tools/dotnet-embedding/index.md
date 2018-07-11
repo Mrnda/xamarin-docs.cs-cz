@@ -1,48 +1,48 @@
 ---
 title: Vkládání technologie .NET
-description: 'Vložení rozhraní .NET umožňuje váš stávající kód rozhraní .NET (C#, F # a jiné) být využívány službou kód napsaný v jinými programovací jazyky.'
+description: 'Vkládání technologie .NET umožňuje váš stávající kód technologie .NET (C#, F # a dalších) Chcete-li být zaplněny kódem napsaným v jiných programovacích jazycích.'
 ms.prod: xamarin
 ms.assetid: 617C38CA-B921-4A76-8DFC-B0A3DF90E48A
 author: topgenorth
 ms.author: toopge
 ms.date: 11/14/2017
 ms.openlocfilehash: 16f59498a49d10a43e04989136d8835bf78bd89d
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793114"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38830397"
 ---
 # <a name="net-embedding"></a>Vkládání technologie .NET
 
 ![Náhled](~/media/shared/preview.png)
 
-Vložení rozhraní .NET umožňuje váš stávající kód rozhraní .NET (C#, F # a jiné) využívat jinými programovací jazyky a v různých různých prostředích.
+Vkládání technologie .NET umožňuje váš stávající kód technologie .NET (C#, F # a dalších) který se má používat v jiných programovacích jazycích a v různých prostředích různé.
 
-To znamená, že pokud máte knihovny .NET, který chcete použít z vaší stávající aplikace pro iOS, můžete to udělat.   Nebo pokud chcete propojit s nativní knihovny C++, můžete také to udělat.   Nebo využívat kód .NET z prostředí Java.
+To znamená, že pokud máte knihovnu .NET, kterou chcete použít ze své stávající aplikace pro iOS, můžete to udělat.   Nebo pokud chcete propojit s nativní knihovnu C++, můžete také to udělat.   Nebo využívají kódu .NET z Javy.
 
-Vložení .NET je založena na [Embeddinator 4000](https://github.com/mono/Embeddinator-4000) open source projektu.
+Vkládání technologie .NET je založená na [Embeddinator 4000](https://github.com/mono/Embeddinator-4000) projekt open source.
 
 ## <a name="environments-and-languages"></a>Prostředí a jazyky
 
-Tento nástroj je i informace o prostředí, ve kterém se bude používat, stejně jako jazyk, který bude využívat.   Platforma iOS například neumožňuje kompilace za běhu (JIT), tak vložení .NET bude staticky kompilaci rozhraní .NET kódu do nativního kódu, který lze použít v iOS.  Jiných prostředích povolit JIT – kompilace a v těchto prostředích jsme zapojit do JIT kompilace.
+Tento nástroj je i přehled o prostředí, ve kterém se bude používat, stejně jako jazyk, který bude využívat.   Například na platformu iOS neumožňuje kompilace just-in-time (JIT), takže vkládání technologie .NET staticky zkompiluje kód .NET do nativního kódu, který lze použít v iOS.  Další prostředí povolit kompilaci JIT a v těchto prostředích jsme vyjádřit souhlas se službou kompilace JIT.
 
-Podporuje různé spotřebiteli jazyk, se zobrazí kód .NET jako idiomatickou kód v jazyce cíl.   Toto je seznam podporovaných jazyků v současné době:
+Podporuje různé jazykové spotřebitele, takže plochy kódu .NET podle kódu idiomatickou v cílovém jazyce.   Toto je seznam podporovaných jazyků v současné době:
 
-- [**Jazyka Objective-C** ](objective-c/index.md) – mapování .NET idiomatickou rozhraní API jazyka Objective-C
-- [**Java** ](android/index.md) – mapování .NET idiomatickou rozhraní API Java
-- [**C** ](get-started/c.md) – mapování .NET na objektově orientované jako rozhraní API jazyka C
+- [**Objective-C** ](objective-c/index.md) – mapování .NET idiomatickou rozhraní API jazyka Objective-C
+- [**Java** ](android/index.md) – mapování .NET idiomatickou rozhraní Java API
+- [**C** ](get-started/c.md) – mapování rozhraní .NET pro objektově orientované jako rozhraní API jazyka C
 
-Další jazyky budou pocházet později.
+Další jazyky přijde později.
 
 ## <a name="getting-started"></a>Začínáme
 
-Abyste mohli začít, zkontrolujte jeden z naší příručky pro každou z aktuálně podporované jazyky:
+Abyste mohli začít, najdete jednu z našich vodítka pro každou z aktuálně podporované jazyky:
 
-- [**Jazyka Objective-C** ](get-started/objective-c/index.md) – platí systému macOS a iOS
-- [**Java** ](get-started/java/index.md) – obsahuje systému macOS a Android
-- [**C** ](get-started/c.md) – obsahuje jazyka C na ploše platformy
+- [**Objective-C** ](get-started/objective-c/index.md) – zahrnuje macOS a iOS
+- [**Java** ](get-started/java/index.md) – zahrnuje macOS a Android
+- [**C** ](get-started/c.md) – zahrnuje jazyka C na desktopové platformy
 
 ## <a name="related-links"></a>Související odkazy
 
-- [4000 Embeddinator na Githubu](https://github.com/mono/Embeddinator-4000)
+- [Embeddinator 4000 na Githubu](https://github.com/mono/Embeddinator-4000)

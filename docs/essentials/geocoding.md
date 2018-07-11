@@ -1,40 +1,40 @@
 ---
-title: 'Xamarin.Essentials: geografické kódování'
-description: Geografické kódování třídy v Xamarin.Essentials poskytuje rozhraní API pro obě geocode placemark pro poziční souřadnice a nechat provést zpětnou souřadnice geocode placemark.
+title: 'Xamarin.Essentials: Geokódování'
+description: Třída Geokódování v Xamarin.Essentials poskytuje rozhraní API do obou geokód placemark poziční souřadnice a obrátit geokód souřadnice placemark.
 ms.assetid: 3ADC440C-B000-4708-A2CC-296F5160AF90
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
 ms.openlocfilehash: 063adba82d96e7fcc64d7ec49a0c0133e1cef8ef
-ms.sourcegitcommit: 72450a6a29599fa133ff4f16fb0b1f443d89f9dc
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37080323"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38831445"
 ---
-# <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials: geografické kódování
+# <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials: Geokódování
 
 ![Předběžné verze NuGet](~/media/shared/pre-release.png)
 
-**Geografické kódování** třída poskytuje rozhraní API pro geocode placemark pro poziční souřadnice a nechat provést zpětnou geocode coordincates placemark.
+**Geokódování** třída poskytuje rozhraní API pro geokód placemark poziční souřadnice a obrátit geokód coordincates placemark.
 
 ## <a name="getting-started"></a>Začínáme
 
-Abyste měli přístup **geografické kódování** následující nastavení konkrétní platformy funkce jsou nezbytné.
+Pro přístup **Geokódování** funkce je následující nastavení konkrétní platformy se vyžaduje.
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-Nevyžaduje žádné další nastavení.
+Není požadováno žádné další nastavení.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-Nevyžaduje žádné další nastavení.
+Není požadováno žádné další nastavení.
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwptabuwp"></a>[UPW](#tab/uwp)
 
-Klíč rozhraní API map Bing je potřeba použít funcationality geografické kódování. Zaregistrujte si bezplatný [mapy Bing](https://www.bingmapsportal.com/) účtu. V části **Můj účet > mé klíče** vytvořte nový klíč a vyplňte informace podle vašeho typu aplikace (což by mělo být **veřejné aplikace pro Windows (UPW, 8.x a starší)** pro aplikace UWP).
+Klíč rozhraní API map Bing je potřeba použít funcationality geokódování. Zaregistrujte si bezplatnou [mapy Bing](https://www.bingmapsportal.com/) účtu. V části **Můj účet > Moje klíče** vytvořte nový klíč a vyplňte informace podle typu aplikací (který by měl být **veřejné aplikace Windows (UPW, 8.x a starší)** pro aplikace pro UPW).
 
-Časná na v životnosti vaší aplikace před voláním žádné **geografické kódování** nastavit klíč rozhraní API:
+Hned zpočátku v životě vaší aplikace před voláním některé **Geokódování** nastavit klíč rozhraní API:
 
 ```csharp
 Geocoding.MapKey = "YOUR-KEY-HERE";
@@ -42,15 +42,15 @@ Geocoding.MapKey = "YOUR-KEY-HERE";
 
 -----
 
-## <a name="using-geocoding"></a>Pomocí geografické kódování
+## <a name="using-geocoding"></a>Pomocí Geokódování
 
-Přidáte odkaz na Xamarin.Essentials v třídě:
+Přidáte odkaz na Xamarin.Essentials ve své třídě:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Získávání [umístění](xref:Xamarin.Essentials.Location) souřadnice adresu:
+Získávání [umístění](xref:Xamarin.Essentials.Location) souřadnice pro adresu:
 
 ```csharp
 try
@@ -74,9 +74,9 @@ catch (Exception ex)
 }
 ```
 
-Výšku není vždy k dispozici. Pokud není k dispozici, `Altitude` vlastnost může být `null` nebo hodnota může být nula. Pokud je dostupný výšku, hodnota je v měřidla výše nad sea úrovní. 
+Výšku není vždy k dispozici. Pokud není k dispozici, `Altitude` může být vlastnost `null` nebo hodnota může být nula. Pokud je k dispozici výšku, hodnota je v metrech nahoře stopách. 
 
-Získávání [placemarks](xref:Xamarin.Essentials.Placemark) pro existující sady souřadnice:
+Získávání [placemarks](xref:Xamarin.Essentials.Placemark) pro stávající sadu souřadnice:
 
 ```csharp
 try
@@ -116,9 +116,9 @@ catch (Exception ex)
 
 ## <a name="distance-between-two-locations"></a>Vzdálenost mezi dvěma umístěními
 
-[ `Location` ](xref:Xamarin.Essentials.Location) a [ `LocationExtensions` ](xref:Xamarin.Essentials.LocationExtensions) třídy definují metody k výpočtu vzdálenost mezi dvěma umístěními. Najdete v článku [ **Xamarin.Essentials: informace o zeměpisné poloze** ](geolocation.md#calculate-distance) příklad.
+[ `Location` ](xref:Xamarin.Essentials.Location) a [ `LocationExtensions` ](xref:Xamarin.Essentials.LocationExtensions) třídy definuje metody k výpočtu vzdálenost mezi dvěma umístěními. Přečtěte si článek [ **Xamarin.Essentials: informace o zeměpisné poloze** ](geolocation.md#calculate-distance) příklad.
 
 ## <a name="api"></a>rozhraní API
 
-- [Geografické kódování zdrojového kódu](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Geocoding)
-- [Dokumentace k určování zeměpisných souřadnic rozhraní API](xref:Xamarin.Essentials.Geocoding)
+- [Geokódování zdrojového kódu](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Geocoding)
+- [Dokumentace ke službě geokódování rozhraní API](xref:Xamarin.Essentials.Geocoding)

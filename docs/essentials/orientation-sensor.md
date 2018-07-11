@@ -1,35 +1,35 @@
 ---
 title: 'Xamarin.Essentials: OrientationSensor'
-description: Třída OrientationSensor umožňuje monitorovat orientaci zařízení v trojrozměrné prostoru.
+description: Třída OrientationSensor vám umožní monitorovat orientace zařízení v trojrozměrném prostoru.
 ms.assetid: F3091D93-E779-41BA-8696-23D296F2F6F5
 author: charlespetzold
 ms.author: chape
 ms.date: 05/21/2018
-ms.openlocfilehash: c7bbc849e5fa0b901f5b54e77d548b28bc2a72c6
-ms.sourcegitcommit: 72450a6a29599fa133ff4f16fb0b1f443d89f9dc
+ms.openlocfilehash: c01fa28e495eb3eceec62885060dce8f096c4086
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37080377"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37947387"
 ---
 # <a name="xamarinessentials-orientationsensor"></a>Xamarin.Essentials: OrientationSensor
 
 ![Předběžné verze NuGet](~/media/shared/pre-release.png)
 
-**OrientationSensor** třída umožňuje monitorovat orientaci zařízení do tří dimenzí místa.
+**OrientationSensor** třída umožňuje monitorovat orientace zařízení do tří rozměrného prostoru.
 
 > [!NOTE]
-> Tato třída je pro určení orientaci zařízení v 3D prostoru. Pokud potřebujete zjistit, pokud je zařízení grafické zobrazení je v režimu na výšku nebo na šířku, použijte `Orientation` vlastnost `ScreenMetrics` objekt k dispozici z [ `DeviceDisplay` ](device-display.md) třídy.
+> Tato třída slouží k určení orientace zařízení v 3D prostoru. Pokud je potřeba určit, pokud zařízení uživatele videa zobrazení je v režimu na výšku nebo šířku, použijte `Orientation` vlastnost `ScreenMetrics` objekt k dispozici [ `DeviceDisplay` ](device-display.md) třídy.
 
 ## <a name="using-orientationsensor"></a>Pomocí OrientationSensor
 
-Přidáte odkaz na Xamarin.Essentials v třídě:
+Přidáte odkaz na Xamarin.Essentials ve své třídě:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-`OrientationSensor` Je povoleno voláním `Start` sledovat změny orientace zařízení a zakázáno voláním metody `Stop` metoda. Změny jsou odesílány zpět pomocí `ReadingChanged` událostí. Tady je využití vzorků:
+`OrientationSensor` Je povoleno voláním `Start` metoda monitorovat změny orientace zařízení a zakázáno voláním `Stop` metody. Všechny změny jsou odesílány zpět prostřednictvím `ReadingChanged` událostí. Tady je příklad použití:
 
 ```csharp
 
@@ -72,48 +72,41 @@ public class OrientationSensorTest
 }
 ```
 
-`OrientationSensor` odečty nejsou hlášeny ve formě [ `Quaternion` ](xref:System.Numerics.Quaternion) orientaci zařízení založené na dva 3D systém souřadnic, který popisuje:
+`OrientationSensor` měření jsou hlášeny ve formě [ `Quaternion` ](xref:System.Numerics.Quaternion) orientace zařízení založené na dvou 3D souřadnicových systémů, který popisuje:
 
-Zařízení (obvykle telefon nebo tablet) má 3D systém souřadnic s ose následující:
+V zařízení (obecně telefon nebo tablet) je 3D systém souřadnic s následující osy:
 
-- Kladná X ukazuje osy napravo od zobrazení v režimu na výšku.
-- Kladné osy Y odkazuje na horní části zařízení v režimu na výšku.
-- Kladné osy Z bodů z obrazovky.
+- Kladná X body osy napravo od zobrazení v režimu na výšku.
+- Osu Y pozitivní odkazuje na začátku zařízení v režimu na výšku.
+- Pozitivní osy Z bodů z obrazovky.
 
-3D systém souřadnic zemském povrchu má následující osy:
+3D souřadnicový systém všech koutech světa má následující osy:
 
-- Kladnou osy X je tangens na povrch zemském povrchu a bodů – východ.
-- Je také tečný na povrchu země a body severní kladné osy Y.
-- Kladné osy Z je kolmé na povrchu země a body nahoru.
+- Pozitivní osy X je tangens na povrchu země a bodů – východ.
+- Na povrchu země a sever bodů tangenty je také pozitivní osy Y.
+- Pozitivní osy je kolmé na povrchu země a body nahoru.
 
-`Quaternion` Popisuje oběh souřadný systém zařízení je relativní vzhledem k zemském povrchu souřadnicový systém.
+`Quaternion` Popisuje otočení souřadnicovém systému zařízení vzhledem k země souřadnicový systém.
 
-A `Quaternion` hodnota je velmi úzce související Otočení okolo osy. Pokud otočení osy vector normalizovaný (<sub>x</sub>,<sub>y</sub>,<sub>z</sub>), a je úhel otočení Θ, pak (X, Y, Z, W) jsou součástí quaternion:
+A `Quaternion` hodnotu velmi úzce souvisí s otočení kolem osy. Pokud osu otáčení normalizovaný vektor (<sub>x</sub>,<sub>y</sub>,<sub>z</sub>), a je úhel otočení Θ, pak (X, Y, Z, W) jsou součástí quaternion:
 
 (<sub>x</sub>·sin(Θ/2),<sub>y</sub>·sin(Θ/2),<sub>z</sub>·sin(Θ/2), cos(Θ/2))
 
-Toto jsou pravém systém souřadnic, tak s úchytu pravém odkazoval ve směru kladné otočení osy, křivku prsty, které indikují směru pro kladné hodnoty úhlu.
+Toto jsou pravém souřadnicových systémů, takže s thumb pravé straně, na kterou ukazuje ve směru kladné otočení osy, křivky prsty označují směr pro kladné hodnoty úhlu otočení.
 
 Příklady:
 
-* Pokud zařízení je nestrukturované v tabulce s jeho obrazovky čelí, s horní části zařízení (v režimu na výšku) odkazující sever, je zarovnán dvě systém souřadnic. `Quaternion` Hodnota představuje quaternion identity (0, 0, 0, 1). Všechny otočení lze analyzovat relativně k této pozice.
+* Pokud zařízení je plochý u tabulky s jeho obrazovky směřuje, horní zařízení (v režimu na výšku) – sever, odkazující je zarovnán dvěma systémy souřadnic. `Quaternion` Hodnota představuje quaternion identity (0, 0, 0, 1). Všechny rotace mohou být analyzovány vzhledem k této pozici.
 
-* Když je zařízení nestrukturované v tabulce s jeho obrazovka směřující a horní části zařízení (v režimu na výšku) – Západ, odkazující `Quaternion` hodnota je (0, 0, 0.707, 0.707). Zařízení má byla otočený o 90 stupňů kolem osy Z zemském povrchu.
+* Pokud zařízení je plochý u tabulky s jeho obrazovka lícem nahoru a horní zařízení (v režimu na výšku) – Západ, odkazující `Quaternion` hodnotu (0, 0, 0.707, 0.707). Zařízení má byla otočenou o 90 stupňů kolem osy Z všech koutech světa.
 
-* Když zařízení držena výšku tak, aby horní (v režimu na výšku) ukazuje k sky a zadní straně zařízení, kterým čelí Severní, zařízení bylo otočený o 90 stupňů okolo osy X. `Quaternion` Hodnota je (0.707, 0, 0, 0.707).
+* Pokud zařízení se nachází ve tak, že nahoře (v režimu na výšku) odkazuje na oblohy a sever čelí zpět zařízení, zařízení bylo otočenou o 90 stupňů kolem osy X. `Quaternion` Hodnotu (0.707, 0, 0, 0.707).
 
-* Pokud zařízení je nastavený tak, aby se jeho levé hrany v tabulce a horní body sever, zařízení otočený &ndash;90 stupňů okolo osy Y (nebo 90 stupňů okolo záporné osy Y). `Quaternion` Hodnota je (0,-0.707, 0, 0.707).
+* Pokud zařízení je umístěn v tabulce, je jeho levé hrany, takže – sever, odkazuje na začátek zařízení otočený &ndash;90 stupňů okolo osy Y (neboli 90 stupňů kolem záporný osy Y). `Quaternion` Hodnotu (0,-0.707, 0, 0.707).
 
-## <a name="sensor-speedxrefxamarinessentialssensorspeed"></a>[Snímač rychlosti](xref:Xamarin.Essentials.SensorSpeed)
-
-- **Nejrychlejší** – získat data snímačů co nejrychleji (není zaručena k vrácení při vlákna uživatelského rozhraní).
-- **Herní** – míra vhodný pro hry (není zaručena k vrácení při vlákna uživatelského rozhraní).
-- **Normální** – výchozí rychlost vhodný pro změny orientace obrazovky.
-- **Uživatelské rozhraní** – míra vhodný pro obecné uživatelské rozhraní.
-
-Pokud není zaručena vaší obslužné rutiny události pro spuštění na vlákna uživatelského rozhraní a pokud obslužné rutiny události musí pro přístup k elementům uživatelského rozhraní, použijte [ `MainThread.BeginInvokeOnMainThread` ](main-thread.md) metodu pro spuštění tohoto kódu ve vlákně UI.
+[!include[](~/essentials/includes/sensor-speed.md)]
 
 ## <a name="api"></a>rozhraní API
 
 - [OrientationSensor zdrojového kódu](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/OrientationSensor)
-- [Dokumentaci k rozhraní API OrientationSensor](xref:Xamarin.Essentials.OrientationSensor)
+- [Dokumentace k rozhraní API OrientationSensor](xref:Xamarin.Essentials.OrientationSensor)

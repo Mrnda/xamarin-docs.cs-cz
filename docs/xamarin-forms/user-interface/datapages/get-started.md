@@ -1,6 +1,6 @@
 ---
 title: Začínáme s DataPages
-description: Tento článek vysvětluje, jak začít pracovat, vytvoření jednoduché datové stránky pomocí Xamarin.Forms DataPages.
+description: Tento článek vysvětluje, jak začít vytvářet jednoduché stránky s daty pomocí Xamarin.Forms DataPages.
 ms.prod: xamarin
 ms.assetid: 6416E5FA-6384-4298-BAA1-A89381E47210
 ms.technology: xamarin-forms
@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
 ms.openlocfilehash: 1fb8a06111271d453c578cd3d2db97ec8689c995
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243074"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38828208"
 ---
 # <a name="getting-started-with-datapages"></a>Začínáme s DataPages
 
@@ -22,21 +22,21 @@ ms.locfileid: "35243074"
 > Vyžaduje DataPages [Xamarin.Forms motiv](~/xamarin-forms/user-interface/themes/index.md) odkaz k vykreslení.
 
 
-Abyste mohli začít vytváření jednoduché datové stránky pomocí verze Preview DataPages, postupujte podle následujících kroků. Tento ukázkový používá pevně zakódované styl ("události") ve verzi Preview sestavení, které lze použít pouze se konkrétní formátu JSON v kódu.
+Abyste mohli začít vytvářet jednoduché stránky s daty pomocí DataPages ve verzi Preview, použijte následující postup. Tato ukázka používá pevně zakódované styl ("události") ve verzi Preview, sestavení, které funguje pouze s konkrétním formátu JSON v kódu.
 
 [![](get-started-images/demo-sml.png "DataPages ukázkovou aplikaci")](get-started-images/demo.png#lightbox "DataPages ukázkové aplikace")
 
 ## <a name="1-add-nuget-packages"></a>1. Přidání balíčků NuGet
 
-Tyto balíčky Nuget přidáte do vašich Xamarin.Forms .NET Standard projektů knihovny a aplikace:
+Přidejte tyto balíčky Nuget Xamarin.Forms .NET Standard projekty knihovny a aplikace:
 
 * Xamarin.Forms.Pages
 * Xamarin.Forms.Theme.Base
-* Motiv implementace Nuget (např. Xamarin.Forms.Themes.Light)
+* Motiv implementace Nuget (např.) Xamarin.Forms.Themes.Light)
 
 ## <a name="2-add-theme-reference"></a>2. Přidat odkaz na motiv
 
-V **App.xaml** soubor, přidejte vlastní `xmlns:mytheme` pro motiv a ujistěte se, motiv sloučí slovník prostředků aplikace:
+V **App.xaml** přidejte vlastní `xmlns:mytheme` motivu a zajištění motivu sloučeny do slovníku prostředků aplikace:
 
 ```xaml
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
@@ -49,14 +49,14 @@ V **App.xaml** soubor, přidejte vlastní `xmlns:mytheme` pro motiv a ujistěte 
 </Application>
 ```
 
-**Důležité:** také postupujte podle kroků pro [načtení motivu sestavení (dole)](#loadtheme) přidáním některé často používaný kód k iOS `AppDelegate` a Android `MainActivity`. To bude možné zlepšit v budoucí verzi preview verze.
+**Důležité:** by měl taky uvedený postup [načtení motivu sestavení (dole)](#loadtheme) přidáním některých často používaný kód do systému iOS `AppDelegate` a s Androidem `MainActivity`. To se vylepší v budoucí verzi preview verzi.
 
 
 ## <a name="3-add-a-xaml-page"></a>3. Přidání stránky XAML
 
-Přidat novou stránku XAML aplikaci Xamarin.Forms, a *změňte základní třídu* z `ContentPage` k `Xamarin.Forms.Pages.ListDataPage`. To je nutné provést v C# i XAML:
+Přidejte novou stránku XAML do aplikace Xamarin.Forms a *změňte základní třídu* z `ContentPage` k `Xamarin.Forms.Pages.ListDataPage`. To je třeba provést v jazyce C# a XAML:
 
-**Souboru C#**
+**Soubor C#**
 
 ```csharp
 public partial class SessionDataPage : Xamarin.Forms.Pages.ListDataPage // was ContentPage
@@ -68,9 +68,9 @@ public partial class SessionDataPage : Xamarin.Forms.Pages.ListDataPage // was C
 }
 ```
 
-**Souboru XAML**
+**Soubor XAML**
 
-Kromě změna kořenového elementu, který chcete `<p:ListDataPage>` vlastní obor názvů pro `xmlns:p` musí být rovněž přidána:
+Kromě změna kořenového elementu, který chcete `<p:ListDataPage>` vlastní obor názvů pro `xmlns:p` musí také být přidán:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -84,19 +84,19 @@ Kromě změna kořenového elementu, který chcete `<p:ListDataPage>` vlastní o
 </p:ListDataPage>
 ```
 
-**Podtřída aplikace**
+**Podtřídy aplikace**
 
-Změna `App` konstruktoru třídy tak, aby `MainPage` je nastaven na `NavigationPage` obsahující nové `SessionDataPage`. Na stránce navigační *musí* použít.
+Změnit `App` konstruktoru třídy tak, aby `MainPage` je nastavena na `NavigationPage` obsahující nové `SessionDataPage`. Navigační stránka *musí* použít.
 
 ```csharp
 MainPage = new NavigationPage (new SessionDataPage ());
 ```
 
-## <a name="3-add-the-datasource"></a>3. Přidat zdroje dat
+## <a name="3-add-the-datasource"></a>3. Přidat zdroj dat
 
-Odstranit `Content` elementu a nahraďte ho `p:ListDataPage.DataSource` k naplnění stránky s daty. V příkladu níže vzdálené Json je právě načítán datový soubor z adresy URL.
+Odstranit `Content` prvku a nahraďte ho hodnotou `p:ListDataPage.DataSource` k naplnění stránky s daty. V příkladu níže vzdálené Json je načítání datový soubor z adresy URL.
 
-**Poznámka:** ve verzi preview *vyžaduje* `StyleClass` atribut poskytovat vykreslování pro zdroj dat. `StyleClass="Events"` Odkazuje na rozložení, který je předdefinovaná ve verzi preview a obsahuje styly *pevně zakódované* tak, aby odpovídaly zdroji dat JSON, který je používán.
+**Poznámka:** Náhled *vyžaduje* `StyleClass` atribut poskytnout nápovědu pro vykreslování datového zdroje. `StyleClass="Events"` Odkazuje na rozložení, který je předdefinovaná ve verzi preview a obsahuje styly *pevně zakódované* tak, aby odpovídaly použitého zdroje dat JSON.
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -115,7 +115,7 @@ Odstranit `Content` elementu a nahraďte ho `p:ListDataPage.DataSource` k napln�
 
 **JSON data**
 
-Příklad dat JSON z [ukázkový zdroj](http://demo3143189.mockable.io/sessions) jsou uvedeny níže:
+Příklad dat JSON z [ukázku zdroj](http://demo3143189.mockable.io/sessions) je uveden níže:
 
 ```json
 [{
@@ -131,19 +131,19 @@ Příklad dat JSON z [ukázkový zdroj](http://demo3143189.mockable.io/sessions)
 }]
 ```
 
-## <a name="4-run"></a>4. Spuštění!
+## <a name="4-run"></a>4. Spusťte!
 
-Výše uvedené kroky by měl mít za následek stránku pracovní dat:
+Výše uvedené kroky by měl vést na stránce pracovní data:
 
 [![](get-started-images/demo-sml.png "DataPages ukázkovou aplikaci")](get-started-images/demo.png#lightbox "DataPages ukázkové aplikace")
 
-Toto funguje, protože styl předem připravené **"Události"** na balíček Nuget motiv světlý existuje a má styly definované, které odpovídají zdroje dat (např. "title", "image", "přednášejícího").
+Tento postup funguje, protože předdefinovaných styl **"Události"** na balíček Nuget motiv světlý existuje a má definovaný styly, které odpovídají zdroje dat (např.) "title", "image", "skládání").
 
-"Události" `StyleClass` byl vytvořen, aby zobrazení `ListDataPage` ovládacího prvku pomocí vlastní `CardView` prvek, který je definován Xamarin.Forms.Pages. `CardView` Řízení má tři vlastnosti: `ImageSource`, `Text`, a `Detail`. Motiv je pevně zakódované vytvořit vazbu zdroj dat tři pole (ze souboru JSON) na tyto vlastnosti pro zobrazení.
+"Události" `StyleClass` je určený pro zobrazení `ListDataPage` ovládací prvek s vlastní `CardView` prvek, který je definovaný v Xamarin.Forms.Pages. `CardView` Ovládací prvek má tři vlastnosti: `ImageSource`, `Text`, a `Detail`. Motiv je pevně zakódované vytvořit vazbu zdroj dat tři pole (ze souboru JSON) na tyto vlastnosti k zobrazení.
 
 ## <a name="5-customize"></a>5. Přizpůsobit
 
-Styl zděděné lze přepsat zadáním šablonu a pomocí datového zdroje vazby. Níže XAML deklaruje vlastní šablonu pro každý řádek pomocí nové `ListItemControl` a `{p:DataSourceBinding}` syntaxe, který je součástí **Xamarin.Forms.Pages** Nuget:
+Zděděný styl lze přepsat zadáním šablonu a pomocí datového zdroje vazby. XAML níže deklaruje vlastní šablonu pro každý řádek pomocí nového `ListItemControl` a `{p:DataSourceBinding}` syntaxe, která je součástí **Xamarin.Forms.Pages** Nuget:
 
 ```xaml
 <p:ListDataPage.DefaultItemTemplate>
@@ -166,27 +166,27 @@ Tím, že poskytuje `DataTemplate` tento kód přepíše `StyleClass` a místo t
 
 [![](get-started-images/custom-sml.png "DataPages ukázkovou aplikaci")](get-started-images/custom.png#lightbox "DataPages ukázkové aplikace")
 
-Vývojáři, dáváte přednost, C# do jazyka XAML můžete vytvořit datového zdroje vazby příliš (nezapomeňte zahrnout `using Xamarin.Forms.Pages;` příkaz):
+Vývojáři, kteří dávají přednost jazyka C# k XAML můžete vytvořit datového zdroje vazby příliš (nezapomeňte zahrnout `using Xamarin.Forms.Pages;` příkazu):
 
 ```csharp
 SetBinding (TitleProperty, new DataSourceBinding ("title"));
 ```
 
 
-Je trochu další práci vytváření motivů od začátku (najdete v článku [motivy průvodce](~/xamarin-forms/user-interface/themes/index.md)), ale verze preview budoucí vám usnadní to udělat.
+Je o něco více práce vytvořit úplně od začátku motivy (najdete v článku [motivy průvodce](~/xamarin-forms/user-interface/themes/index.md)), ale ve verzi preview budoucích verzí vám usnadní to udělat.
 
 
 ## <a name="troubleshooting"></a>Poradce při potížích
 
 <a name="loadtheme" />
 
-## <a name="could-not-load-file-or-assembly-xamarinformsthemelight-or-one-of-its-dependencies"></a>Nelze načíst soubor nebo sestavení 'Xamarin.Forms.Theme.Light' nebo jedna z jeho závislostí
+## <a name="could-not-load-file-or-assembly-xamarinformsthemelight-or-one-of-its-dependencies"></a>Nepovedlo se načíst soubor nebo sestavení 'Xamarin.Forms.Theme.Light' nebo některou z jeho závislostí
 
-Ve verzi preview nemusí být možné načíst za běhu motivů. Přidejte kód vidíte níže do příslušných projektů odstranění této chyby.
+Ve verzi preview nemusí být schopný načíst za běhu motivů. Přidejte kód níže do relevantní projekty, chcete-li vyřešit tuto chybu.
 
 **iOS**
 
-V **AppDelegate.cs** přidejte následující řádky po `LoadApplication`
+V **AppDelegate.cs** přidáním následujících řádků za `LoadApplication`
 
 ```csharp
 var x = typeof(Xamarin.Forms.Themes.DarkThemeResources);
@@ -196,7 +196,7 @@ x = typeof(Xamarin.Forms.Themes.iOS.UnderlineEffect);
 
 **Android**
 
-V **MainActivity.cs** přidejte následující řádky po `LoadApplication`
+V **MainActivity.cs** přidáním následujících řádků za `LoadApplication`
 
 ```csharp
 var x = typeof(Xamarin.Forms.Themes.DarkThemeResources);

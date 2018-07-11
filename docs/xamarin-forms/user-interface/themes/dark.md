@@ -1,6 +1,6 @@
 ---
-title: Motiv světlý Xamarin.Forms
-description: Tento článek vysvětluje, jak využívat tmavým motivem Xamarin.Forms v aplikaci.
+title: Xamarin.Forms tmavý motiv
+description: Tento článek vysvětluje, jak využívat tmavý motiv Xamarin.Forms v aplikaci.
 ms.prod: xamarin
 ms.assetid: 43A3798D-6F05-4734-AF5E-97235B46D9B9
 ms.technology: xamarin-forms
@@ -8,20 +8,20 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/01/2017
 ms.openlocfilehash: 1fc329f506afde04b0dc59dc637d999865aafbe1
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245921"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38853242"
 ---
-# <a name="xamarinforms-dark-theme"></a>Motiv světlý Xamarin.Forms
+# <a name="xamarinforms-dark-theme"></a>Xamarin.Forms tmavý motiv
 
 ![](~/media/shared/preview.png "Toto rozhraní API je aktuálně ve verzi preview")
 
 > [!NOTE]
-> Motivy vyžadují Xamarin.Forms 2.3 verzi preview. Zkontrolujte [tipy pro odstraňování potíží](~/xamarin-forms/user-interface/themes/index.md) Pokud dojde k chybám.
+> Motivy vyžadují verzi preview Xamarin.Forms 2.3. Zkontrolujte, [tipy pro řešení potíží](~/xamarin-forms/user-interface/themes/index.md) Pokud dojde k chybě.
 
-Použití tmavým motivem:
+Použití tmavého motivu:
 
 ## <a name="1-add-nuget-packages"></a>1. Přidání balíčků Nuget
 
@@ -30,7 +30,7 @@ Použití tmavým motivem:
 
 ## <a name="2-add-to-the-resource-dictionary"></a>2. Přidejte do slovníku prostředků
 
-V **App.xaml** soubor přidat nové vlastní `xmlns` pro motiv a pak zkontrolujte prostředky v motivu jsou sloučeny s slovník prostředků aplikace.
+V **App.xaml** souboru přidat nové vlastní `xmlns` motivu a potom ověřte motivu prostředky jsou sloučeny s slovník prostředků aplikace.
 Příklad souboru XAML je zobrazena níže:
 
 ```xaml
@@ -45,13 +45,13 @@ Příklad souboru XAML je zobrazena níže:
 
 ## <a name="3-load-theme-classes"></a>3. Načtení třídy motiv
 
-Potom zadejte [řešení potíží s krok](~/xamarin-forms/user-interface/themes/index.md) a přidejte požadované kód v projekty aplikace pro Android a iOS.
+Použít tento [řešení potíží s krok](~/xamarin-forms/user-interface/themes/index.md) a přidejte požadovaný kód v iOS a aplikace pro Android projekty.
 
 ## <a name="4-use-styleclass"></a>4. Použití StyleClass
 
-Tady je příklad tlačítka a popisky v tmavý motiv, společně s kód, který vytváří je.
+Tady je příklad tlačítek a popisky v tmavém motivu, spolu s kód, který vytvoří je.
 
-[![](dark-images/dark-theme-sml.png "Popisky v tmavým motivem a tlačítka")](dark-images/dark-theme.png#lightbox "popisky v tmavým motivem a tlačítka")
+[![](dark-images/dark-theme-sml.png "Tlačítka a popisky v tmavém motivu")](dark-images/dark-theme.png#lightbox "tlačítka a popisky v tmavém motivu")
 
 ```xaml
 <StackLayout Padding="20">
@@ -69,4 +69,4 @@ Tady je příklad tlačítka a popisky v tmavý motiv, společně s kód, který
 </StackLayout>
 ```
 
-[Úplný seznam předdefinovaných třídy](~/xamarin-forms/user-interface/themes/index.md) ukazuje, jaké styly jsou dostupné pro některé běžné ovládací prvky.
+[Úplný seznam předdefinovaných tříd](~/xamarin-forms/user-interface/themes/index.md) ukazuje, jaké styly jsou k dispozici pro některé běžné ovládací prvky.

@@ -1,32 +1,32 @@
 ---
-title: 'Xamarin.Essentials: kompas'
-description: Tento dokument popisuje třídy kompas v Xamarin.Essentials, což vám umožní monitorovat zařízení – magnetická sever záhlaví.
+title: 'Xamarin.Essentials: Compass'
+description: Tento dokument popisuje třídy Compass v Xamarin.Essentials, což vám umožní monitorovat zařízení magnetickém severu záhlaví.
 ms.assetid: BF85B0C3-C686-43D9-811A-07DCAF8CDD86
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 63818014a9b3bdbef479055cbbcfbf8d348080fc
-ms.sourcegitcommit: 72450a6a29599fa133ff4f16fb0b1f443d89f9dc
+ms.openlocfilehash: cf41948c55c742140896bfb48d9bb4abf25c8d68
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37080376"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37947410"
 ---
-# <a name="xamarinessentials-compass"></a>Xamarin.Essentials: kompas
+# <a name="xamarinessentials-compass"></a>Xamarin.Essentials: Compass
 
 ![Předběžné verze NuGet](~/media/shared/pre-release.png)
 
-**Kompas** třída umožňuje monitorovat zařízení – magnetická sever záhlaví.
+**Compass** třída umožňuje monitorovat zařízení magnetickém severu záhlaví.
 
-## <a name="using-compass"></a>Pomocí kompas
+## <a name="using-compass"></a>Pomocí Compass
 
-Přidáte odkaz na Xamarin.Essentials v třídě:
+Přidáte odkaz na Xamarin.Essentials ve své třídě:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Funkce kompas funguje tak, že volání `Start` a `Stop` metody pro naslouchání změny kompas. Změny jsou odesílány zpět pomocí `ReadingChanged` událostí. Tady je příklad:
+Funkce Compass funguje tak, že volání `Start` a `Stop` metody pro naslouchání změn kompasu. Všechny změny jsou odesílány zpět prostřednictvím `ReadingChanged` událostí. Tady je příklad:
 
 ```csharp
 public class CompassTest
@@ -68,28 +68,21 @@ public class CompassTest
 }
 ```
 
-## <a name="sensor-speedxrefxamarinessentialssensorspeed"></a>[Snímač rychlosti](xref:Xamarin.Essentials.SensorSpeed)
+[!include[](~/essentials/includes/sensor-speed.md)]
 
-- **Nejrychlejší** – získat data snímačů co nejrychleji (není zaručena k vrácení při vlákna uživatelského rozhraní).
-- **Herní** – míra vhodný pro hry (není zaručena k vrácení při vlákna uživatelského rozhraní).
-- **Normální** – výchozí rychlost vhodný pro změny orientace obrazovky.
-- **Uživatelské rozhraní** – míra vhodný pro obecné uživatelské rozhraní.
-
-Pokud není zaručena vaší obslužné rutiny události pro spuštění na vlákna uživatelského rozhraní a pokud obslužné rutiny události musí pro přístup k elementům uživatelského rozhraní, použijte [ `MainThread.BeginInvokeOnMainThread` ](main-thread.md) metodu pro spuštění tohoto kódu ve vlákně UI.
-
-## <a name="platform-implementation-specifics"></a>Podrobnosti implementace platformy
+## <a name="platform-implementation-specifics"></a>Specifika platforem implementace
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-Android neposkytuje rozhraní API pro načítání kompasu záhlaví. Můžeme využívat zrychlení a magnetometer k výpočtu záhlaví magnetická – sever, což je doporučeno Google. 
+Android neposkytuje o rozhraní API pro načítání daný kompasem. Můžeme využívat akcelerometr a magnetometer k výpočtu záhlaví magnetickém severu, které se doporučuje Google. 
 
-Ve výjimečných případech může být zobrazí nekonzistentním výsledkům protože snímače muset zkalibrovat, což zahrnuje přesun zařízení pohybem obrázek 8. Nejlepší způsob, jak to jde otevřete službu mapy Google, klepněte na tečky pro vaše umístění a vyberte **kalibrovat kompas**.
+Ve výjimečných případech možná uvidíte nekonzistentní výsledky protože snímačům muset být kalibrován, což zahrnuje přesunutí zařízení přenášená data obrázku 8. Nejlepší způsob, jak to jde k otevření map Google, klepněte na tečku pro vaši polohu a vybrat **kalibrovat compass**.
 
-Mějte na paměti systémem více senzorů z vaší aplikace ve stejnou dobu může upravit snímač rychlosti.
+Mějte na paměti systémem řadu senzorů z vaší aplikace ve stejnou dobu může upravit snímač rychlosti.
 
 --------------
 
 ## <a name="api"></a>rozhraní API
 
-- [Kompas zdrojového kódu](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Compass)
-- [Kompasu dokumentaci k rozhraní API](xref:Xamarin.Essentials.Compass)
+- [Compass zdrojového kódu](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Compass)
+- [Kompasu dokumentace k rozhraní API](xref:Xamarin.Essentials.Compass)

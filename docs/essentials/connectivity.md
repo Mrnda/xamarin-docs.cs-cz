@@ -1,60 +1,60 @@
 ---
 title: 'Xamarin.Essentials: připojení'
-description: Třída připojení v Xamarin.Essentials umožňuje sledovat změny v zařízení se síťové podmínky, zkontrolujte aktuální přístup k síti a jak je aktuálně připojen.
+description: Třída připojení v Xamarin.Essentials umožňuje sledovat změny stavu sítě zařízení, zkontrolujte aktuální přístup k síti, a jak je aktuálně připojena.
 ms.assetid: E1B1F152-B1D5-4227-965E-C0AEBF528F49
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
 ms.openlocfilehash: 54c165e15e725caaecb1573b74cfe295170db141
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782863"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38848606"
 ---
 # <a name="xamarinessentials-connectivity"></a>Xamarin.Essentials: připojení
 
 ![Předběžné verze NuGet](~/media/shared/pre-release.png)
 
-**Připojení** třída umožňuje sledovat změny v zařízení síťové podmínky, zkontrolujte aktuální přístupu k síti, a jak je aktuálně připojen.
+**Připojení** třída umožňuje sledovat změny v podmínkách v síti zařízení zkontrolujte aktuální přístup k síti, a jak je aktuálně připojena.
 
 ## <a name="getting-started"></a>Začínáme
 
-Abyste měli přístup **připojení** funkce následující nastavení konkrétní platformy není třeba.
+Pro přístup **připojení** funkce je následující nastavení konkrétní platformy se vyžaduje.
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-`AccessNetworkState` Oprávnění je povinná a musí být konfigurované v projektu pro Android. To lze přidat následujícími způsoby:
+`AccessNetworkState` Oprávnění je povinné a musí být nakonfigurovány v projektu pro Android. Jde přidat následujícími způsoby:
 
-Otevřete **AssemblyInfo.cs** souboru pod **vlastnosti** složky a přidat:
+Otevřít **AssemblyInfo.cs** soubor **vlastnosti** složky a přidejte:
 
 ```csharp
 [assembly: UsesPermission(Android.Manifest.Permission.AccessNetworkState)]
 ```
 
-NEBO aktualizovat manifestu systému Android.:
+NEBO aktualizovat Android Manifest:
 
-Otevřete **AndroidManifest.xml** souboru pod **vlastnosti** složky a přidejte následující uvnitř **manifest** uzlu.
+Otevřít **AndroidManifest.xml** soubor **vlastnosti** složky a přidejte následující uvnitř **manifest** uzlu.
 
 ```xml
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 ```
 
-Nebo klikněte pravým tlačítkem na projekt Anroid a otevřete vlastnosti projektu. V části **Android Manifest** najít **požadovaná oprávnění:** oblasti a kontroly **stavu přístupu k síti** oprávnění. Tím se automaticky aktualizuje **AndroidManifest.xml** souboru.
+Nebo klikněte pravým tlačítkem na projekt Anroid a otevřete vlastnosti projektu. V části **Manifest v Androidu** najít **požadovaná oprávnění:** oblasti a kontrolu **stavu přístupu k síti** oprávnění. Tím se automaticky aktualizují **AndroidManifest.xml** souboru.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-Nevyžaduje žádné další nastavení.
+Není požadováno žádné další nastavení.
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwptabuwp"></a>[UPW](#tab/uwp)
 
-Nevyžaduje žádné další nastavení.
+Není požadováno žádné další nastavení.
 
 -----
 
 ## <a name="using-connectivity"></a>Pomocí připojení
 
-Přidáte odkaz na Xamarin.Essentials v třídě:
+Přidáte odkaz na Xamarin.Essentials ve své třídě:
 
 ```csharp
 using Xamarin.Essentials;
@@ -74,12 +74,12 @@ if (current == NetworkAccess.Internet)
 [Přístup k síti](xref:Xamarin.Essentials.NetworkAccess) spadá do následujících kategorií:
 
 * **Internet** – místní a přístupem k Internetu.
-* **ConstrainedInternet** – omezený přístup k Internetu. Určuje další zpracování portálu připojení, kde je k dispozici místní přístup k webovému portálu, ale přístup k Internetu vyžaduje, aby konkrétní přihlašovací údaje jsou přes portál.
+* **ConstrainedInternet** – omezený přístup k Internetu. Určuje další zpracování portálu připojení, kde je k dispozici místní přístup k webovému portálu, ale přístup k Internetu vyžaduje, aby konkrétní přihlašovací údaje jsou k dispozici prostřednictvím portálu.
 * **Místní** – místní přístup jenom k síti.
-* **Žádný** – je k dispozici žádné připojení.
-* **Neznámý** – nelze určit, připojení k Internetu.
+* **Žádný** – žádné připojení je k dispozici.
+* **Neznámý** – nelze určit připojení k Internetu.
 
-Můžete zkontrolovat, jaký druh [profil připojení](xref:Xamarin.Essentials.ConnectionProfile) aktivně používá zařízení:
+Můžete zkontrolovat, v jakém typu [profilu připojení](xref:Xamarin.Essentials.ConnectionProfile) používajících zařízení:
 
 ```csharp
 var profiles = Connectivity.Profiles;
@@ -89,7 +89,7 @@ if (profiles.Contains(ConnectionProfile.WiFi))
 }
 ```
 
-Vždy, když je profil připojení nebo sítě přístup změny může přijímat události při aktivaci:
+Pokaždé, když se profil připojení nebo síť přístup změny může přijímat události při aktivaci:
 
 ```csharp
 public class ConnectivityTest
@@ -110,9 +110,9 @@ public class ConnectivityTest
 
 ## <a name="limitations"></a>Omezení
 
-Je důležité si uvědomit, že je možné, `Internet` je hlášen `NetworkAccess` , ale není k dispozici úplný přístup k webu. Z důvodu fungování připojení na každou platformu můžete pouze zaručit, že připojení je k dispozici. Pro instanci zařízení může být připojen k síti Wi-Fi, ale směrovači je připojený k Internetu. V tomto případě se může hlásit Internet, ale aktivní připojení není k dispozici.
+Je důležité si uvědomit, že je možné, který `Internet` je ohlášena `NetworkAccess` , ale není k dispozici úplný přístup k webu. Z důvodu fungování připojení na jednotlivých platformách pouze zaručit, že připojení je k dispozici. Například může být zařízení připojené k síti Wi-Fi, ale směrovač není připojený k Internetu. V tomto případě může být nahlášeno Internet, ale aktivní připojení není k dispozici.
 
 ## <a name="api"></a>rozhraní API
 
-* [Připojení zdrojového kódu](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Connectivity)
+* [Připojení k zdrojového kódu](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Connectivity)
 * [Dokumentace k připojení k rozhraní API](xref:Xamarin.Essentials.Connectivity)

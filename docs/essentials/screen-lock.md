@@ -1,32 +1,32 @@
 ---
-title: 'Xamarin.Essentials: Zámek obrazovky'
-description: Tento dokument popisuje třídy ScreenLock v Xamarin.Essentials, která může požadavek na obrazovce zabránit návratem režimu spánku, když je aplikace spuštěna.
+title: 'Xamarin.Essentials: Zamykací obrazovka'
+description: Tento dokument popisuje třídy ScreenLock v Xamarin.Essentials, které můžou požádat o zabránit klesá režimu spánku, když aplikace běží na obrazovce.
 ms.assetid: 6B67C114-315E-4199-AA72-3F90E85A4909
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
 ms.openlocfilehash: 3c8110b7abc86fe1d12485579f134997718540e6
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782905"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38848567"
 ---
-# <a name="xamarinessentials-screen-lock"></a>Xamarin.Essentials: Zámek obrazovky
+# <a name="xamarinessentials-screen-lock"></a>Xamarin.Essentials: Zamykací obrazovka
 
 ![Předběžné verze NuGet](~/media/shared/pre-release.png)
 
-**ScreenLock** třídy můžete žádost o zabránit návratem když je aplikace spuštěna v režimu spánku obrazovky.
+**ScreenLock** třídy můžete požádat o zabránit klesá režimu spánku, když aplikace běží na obrazovce.
 
 ## <a name="using-screenlock"></a>Pomocí ScreenLock
 
-Přidáte odkaz na Xamarin.Essentials v třídě:
+Přidáte odkaz na Xamarin.Essentials ve své třídě:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Funkce Zámek obrazovky funguje tak, že volání `RequestActive` a `RequestRelease` metody k vyžádání obrazovky z vypnutí.
+Funkce Zámek obrazovky funguje tak, že volání `RequestActive` a `RequestRelease` metody se žádá na obrazovce na vypnutí.
 
 ```csharp
 public class ScreenLockTest
@@ -43,5 +43,5 @@ public class ScreenLockTest
 
 ## <a name="api"></a>rozhraní API
 
-- [Zdrojový kód zámku obrazovky](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/ScreenLock)
-- [Dokumentace k API zámku obrazovky](xref:Xamarin.Essentials.ScreenLock)
+- [Zdrojový kód zamykací obrazovky](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/ScreenLock)
+- [Dokumentace k API zamykací obrazovky](xref:Xamarin.Essentials.ScreenLock)

@@ -1,74 +1,74 @@
 ---
-title: Řešení potíží s Xamarin Player za provozu
-description: Tento dokument popisuje známé problémy s Xamarin Player za provozu a potenciální opravy. Popisuje problémy s připojením, problémy s konfigurací a další.
+title: Řešení potíží s Xamarin Live Player
+description: Tento dokument popisuje známé problémy s Xamarin Live Player a možné opravy. Popisuje problémy s připojením, problémy s konfigurací a další.
 ms.prod: xamarin
 ms.assetid: 29A97ADA-80E0-40A1-8B26-C68FFABE7D26
 author: topgenorth
 ms.author: toopge
 ms.date: 05/17/2017
 ms.openlocfilehash: 3db14db2c64e024ef1c04275661f610f9407dfb7
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793752"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38831329"
 ---
-# <a name="troubleshooting-xamarin-live-player"></a>Řešení potíží s Xamarin Player za provozu
+# <a name="troubleshooting-xamarin-live-player"></a>Řešení potíží s Xamarin Live Player
 
 ![Funkce ve verzi Preview](~/media/shared/preview.png)
 
-Tento článek popisuje některé běžné problémy a poskytuje postup opravte je.
+Tento článek popisuje některé běžné problémy a vysvětluje, jak je opravit.
 
-## <a name="mobile-device-does-not-connect-after-scanning-barcode-or-entering-code"></a>Mobilní zařízení není připojit po skenování čárového kódu (nebo vstup kódu)
+## <a name="mobile-device-does-not-connect-after-scanning-barcode-or-entering-code"></a>Mobilní zařízení se nepřipojuje po skenování čárových kódů (nebo zadávání kódu)
 
-Nastane, když mobilní zařízení se systémem Xamarin Live Player není ve stejné síti jako počítač spuštěný rozhraní IDE. Podívejte se na následující:
+Nastane, pokud mobilní zařízení s Xamarin Live Player není ve stejné síti jako počítač se spuštěným integrovaného vývojového prostředí. Projděte si následující:
 
-- Potvrďte, že zařízení a počítače jsou ve stejné síti Wi-Fi.
+- Ověřte, zda zařízení a počítače ve stejné síti Wi-Fi.
   - Pokud počítač je také připojený k drátové síti, zkuste odpojit drátového připojení.
-- Síť může být úzce zabezpečené (například některých podnikových sítích), blokování porty vyžadované Player Xamarin za provozu.
-- Zavřete aplikaci Xamarin Player za provozu a restartujte ji.
+- Síť může být úzce zabezpečené (například některých podnikových sítích), blokují porty vyžadované Xamarin Live Player.
+- Aplikace Xamarin Live Player zavřete a restartujte ji.
 
 ## <a name="error-while-trying-to-deploy-message-in-ide"></a>Zpráva "Chyba při pokusu o nasazení" v integrovaném vývojovém prostředí
 
-**"IOException: Nelze číst data z připojení pro přenos: operace soketem neblokující by blokovat"**
+**"IOException: Nelze číst data z přenosového připojení: operace na neblokujícím soketu by blokovaly"**
 
-Tato chyba je často došlo, pokud mobilní zařízení se systémem Xamarin Live Player není ve stejné síti jako počítač, ke spuštění sady Visual Studio; často se to stane, když připojení k zařízení, který byl dříve úspěšně spárovat.
+K této chybě dochází často Pokud mobilní zařízení s Xamarin Live Player není ve stejné síti jako služba počítači se systémem Visual Studio; této situaci často dochází při připojování k zařízení, která dříve byla úspěšně spárovat.
 
 * Zkontrolujte, jestli zařízení i počítače jsou ve stejné síti Wi-Fi.
-* Síť může být úzce zabezpečené (například některých podnikových sítích), blokování porty vyžadované Player Xamarin za provozu. Následující porty jsou povinné pro Xamarin přehrávač za provozu:
-  * 37847 – přístup k interní síti 
-  * 8090 – přístup k externí síti
+* Síť může být úzce zabezpečené (například některých podnikových sítích), blokují porty vyžadované Xamarin Live Player. Tyto porty jsou povinné pro Xamarin Live Player:
+  * 37847 – přístup k síti interní 
+  * 8090 – externí síťový přístup
 
-## <a name="manually-configure-device"></a>Ručně nakonfigurovat nastavení zařízení
+## <a name="manually-configure-device"></a>Ruční konfigurace zařízení
 
-Pokud se nemůže připojit k zařízení přes Wi-Fi můžete zkusit ruční konfigurace do zařízení pomocí konfiguračního souboru pomocí následujících kroků:
+Pokud se nemůžete připojit přes Wi-Fi na zařízení se můžete pokusit ručně nakonfigurovat své zařízení prostřednictvím konfiguračního souboru pomocí následujících kroků:
 
 **Krok 1: Otevřete konfigurační soubor**
 
-Přejděte do složky data aplikací:
+Přejděte do složky dat aplikací:
 
 * Windows: **%userprofile%\AppData\Roaming**
-* systému macOS: **~/Users/$USER/.config**
+* macOS: **~/Users/$USER/.config**
 
-V této složce zjistíte **PlayerDeviceList.xml** Pokud neexistuje, je nutné ji vytvořit.
+V této složce najdete **PlayerDeviceList.xml** neexistuje bude potřeba ho vytvořit.
 
 **Krok 2: Získání IP adresy**
 
-V aplikaci Xamarin Live Player, přejděte na **o > Test připojení > spustit Test připojení**.
+Přejděte do aplikace Xamarin Live Player **o > Test připojení > spustit Test připojení**.
 
-Všimněte si IP adresy, je nutné s IP adresou uvedenou při konfiguraci zařízení.
+Poznamenejte si IP adresy, budete potřebovat IP adresu uvedené při konfiguraci zařízení.
 
 **Krok 3: Získání párování kódu**
 
-Uvnitř klepnutí Xamarin Live Player **pár** nebo **pár znovu**, stiskněte **zadejte ručně**. Číselný kód se zobrazí, které budete muset aktualizovat konfigurační soubor.
+V přehrávači Xamarin Live Player tap **pár** nebo **pár znovu**, stiskněte klávesu **zadejte ručně**. Číselný kód se zobrazí, které budete muset aktualizovat konfigurační soubor.
 
-**Krok 4: Generovat identifikátor GUID**
+**Krok 4: Generování identifikátoru GUID**
 
-Přejděte na: https://www.guidgenerator.com/online-guid-generator.aspx a vygenerovat nový identifikátor guid a zkontrolujte, zda je velká na.
+Přejděte na: https://www.guidgenerator.com/online-guid-generator.aspx a vygenerujte nový identifikátor guid a ujistěte se, že je velká písmena na.
 
 **Krok 5: Konfigurace zařízení**
 
-Otevřete **PlayerDeviceList.xml** až v editoru, jako je například Visual Studio nebo Visual Studio Code. Budete muset ručně nakonfigurovat zařízení v tomto souboru. Ve výchozím nastavení, soubor by měl obsahovat následující prázdný `Devices` – element XML:
+Otevřete **PlayerDeviceList.xml** nahoru v editoru, jako je Visual Studio nebo Visual Studio Code. Budete muset ručně konfigurovat vaše zařízení v tomto souboru. Ve výchozím nastavení, soubor musí obsahovat následující prázdný `Devices` – element XML:
 
 ```xml
 <DeviceList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
@@ -114,30 +114,30 @@ Otevřete **PlayerDeviceList.xml** až v editoru, jako je například Visual Stu
 </PlayerDevice>
 ```
 
-**Zavřete a znovu otevřete Visual Studio.** Zařízení musí zobrazí v seznamu.
+**Zavřete a znovu otevřete Visual Studio.** Vaše zařízení měla zobrazit v seznamu.
 
-## <a name="type-or-namespace-cannot-be-found-message-in-ide"></a>Zpráva "nelze nalézt typ nebo oboru názvů" v integrovaném vývojovém prostředí
+## <a name="type-or-namespace-cannot-be-found-message-in-ide"></a>Zpráva "nelze nalézt typ nebo obor názvů" v integrovaném vývojovém prostředí
 
-Zkontrolujte, zda jste vybrali **spouštěný projekt** který odpovídá typu vašeho zařízení (iOS nebo Android) a že odpovídá konfiguraci typu zařízení (např. **Ladění | iPhone simulátoru** pro iOS).
+Zkontrolujte, zda jste vybrali **spouštěný projekt** , který odpovídá typu vašeho zařízení (iOS nebo Android) a že v konfiguraci odpovídá typu zařízení (např.) **Ladění | iPhone simulátor** pro iOS).
 
-## <a name="constructor-on-type-interpretedxamarinformsbutton-not-found-message-in-player"></a>Zpráva "Konstruktor typu InterpretedXamarin.Forms.Button nebyla nalezena" v Player
+## <a name="constructor-on-type-interpretedxamarinformsbutton-not-found-message-in-player"></a>Zpráva "Konstruktor typu nebyl nalezen InterpretedXamarin.Forms.Button" v přehrávači
 
-Nebylo možné přepsat některé třídy systému, například:
+Některé systémové třídy nelze přepsat, třeba:
 
 ```csharp
 public class SomeCustomButton : Xamarin.Forms.Button { ... }
 ```
 
-## <a name="mainactivitycs-resourcelayout-does-not-contain-a-definition-for-main"></a>"MainActivity.cs: 'Resource.Layout' neobsahuje definici"Hlavní""
+## <a name="mainactivitycs-resourcelayout-does-not-contain-a-definition-for-main"></a>"MainActivity.cs: 'Resource.Layout' neobsahuje definici pro 'Main'"
 
-Tato chyba vyskytuje v uživatelského rozhraní definované v souborech AXML pro Android projekty.
-AXML soubory nejsou aktuálně podporované v za provozu Player Xamarin.
+Tato chyba vyskytuje v uživatelských rozhraní, které jsou definovány v souborech AXML pro projekty pro Android.
+AXML soubory nejsou aktuálně podporované v přehrávači Xamarin Live Player.
 
-### <a name="android-toolbar-and-tabs-render-incorrectly-using-xamarinforms"></a>Android panelu nástrojů a karty vykreslit nesprávně pomocí Xamarin.Forms
+### <a name="android-toolbar-and-tabs-render-incorrectly-using-xamarinforms"></a>Android nástrojů a karty vykreslit nesprávně pomocí Xamarin.Forms
 
-Projekty Xamarin.Forms Android musí používat "Toolbar.axml" a "Tabbar.axml" pro názvy souborů relevantní rozložení. Výchozí šablona používá tyto názvy; Přejmenování je způsobí, že vykreslování problémy.
+Projekty Xamarin.Forms Android musí používat "Toolbar.axml" a "Tabbar.axml" pro názvy souborů relevantní rozložení. Tyto názvy; používá výchozí šablony Přejmenování je způsobí problémy s vykreslováním.
 
-Nahlaste všechny další problémy na [bugzilla](https://aka.ms/live-player-report-issue).
+Ohlaste prosím všechny další problémy ve [bugzilla](https://aka.ms/live-player-report-issue).
 
 ## <a name="related-links"></a>Související odkazy
 

@@ -1,32 +1,32 @@
 ---
 title: 'Xamarin.Essentials: Magnetometer'
-description: Třída Magnetometer v Xamarin.Essentials umožňuje monitorovat senzor magnetometer zařízení, označující orientace zařízení relativně k země magnetické pole.
+description: Třída Magnetometer v Xamarin.Essentials vám umožní monitorovat senzor magnetometer zařízení označující orientace zařízení vzhledem k země na východozápadní ose magnetické pole.
 ms.assetid: 64DD0D41-03E2-40DD-9EC8-101CA0ED852B
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 2c02188b5282949559e0abc5fa1b61b6b451fc8e
-ms.sourcegitcommit: 72450a6a29599fa133ff4f16fb0b1f443d89f9dc
+ms.openlocfilehash: 52790f78c2d78347a35f111b3c4db63900c24ec7
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37080375"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37947358"
 ---
 # <a name="xamarinessentials-magnetometer"></a>Xamarin.Essentials: Magnetometer
 
 ![Předběžné verze NuGet](~/media/shared/pre-release.png)
 
-**Magnetometer** třída umožňuje monitorovat senzor magnetometer zařízení, označující orientace zařízení relativně k země magnetické pole.
+**Magnetometer** třída umožňuje monitorovat zařízení magnetometer senzor, který označuje orientace zařízení vzhledem k země na východozápadní ose magnetické pole.
 
 ## <a name="using-magnetometer"></a>Pomocí Magnetometer
 
-Přidáte odkaz na Xamarin.Essentials v třídě:
+Přidáte odkaz na Xamarin.Essentials ve své třídě:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Funkce Magnetometer funguje tak, že volání `Start` a `Stop` metody pro naslouchání magnetometer změny. Změny jsou odesílány zpět pomocí `ReadingChanged` událostí. Tady je využití vzorků:
+Funkce Magnetometer funguje tak, že volání `Start` a `Stop` metody tak, aby naslouchala magnetometer se změny. Všechny změny jsou odesílány zpět prostřednictvím `ReadingChanged` událostí. Tady je ukázkový používání:
 
 ```csharp
 
@@ -71,16 +71,9 @@ public class MagnetometerTest
 
 Vrátí se všechna data v microteslas.
 
-## <a name="sensor-speedxrefxamarinessentialssensorspeed"></a>[Snímač rychlosti](xref:Xamarin.Essentials.SensorSpeed)
-
-- **Nejrychlejší** – získat data snímačů co nejrychleji (není zaručena k vrácení při vlákna uživatelského rozhraní).
-- **Herní** – míra vhodný pro hry (není zaručena k vrácení při vlákna uživatelského rozhraní).
-- **Normální** – výchozí rychlost vhodný pro změny orientace obrazovky.
-- **Uživatelské rozhraní** – míra vhodný pro obecné uživatelské rozhraní.
-
-Pokud není zaručena vaší obslužné rutiny události pro spuštění na vlákna uživatelského rozhraní a pokud obslužné rutiny události musí pro přístup k elementům uživatelského rozhraní, použijte [ `MainThread.BeginInvokeOnMainThread` ](main-thread.md) metodu pro spuštění tohoto kódu ve vlákně UI.
+[!include[](~/essentials/includes/sensor-speed.md)]
 
 ## <a name="api"></a>rozhraní API
 
 - [Magnetometer zdrojového kódu](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Magnetometer)
-- [Dokumentace magnetometer rozhraní API](xref:Xamarin.Essentials.Magnetometer)
+- [Dokumentace ke službě magnetometer rozhraní API](xref:Xamarin.Essentials.Magnetometer)

@@ -1,32 +1,32 @@
 ---
-title: 'Xamarin.Essentials: zrychlení'
-description: Třída zrychlení v Xamarin.Essentials umožňuje monitorovat senzor zrychlení v zařízení, označující akcelerace zařízení za tři dimenzí místa na disku.
+title: 'Xamarin.Essentials: akcelerometru'
+description: Třída akcelerometr v Xamarin.Essentials vám umožní monitorovat senzor akcelerometr zařízení, který označuje zrychlení zařízení do tří rozměrného prostoru.
 ms.assetid: 97883573-F0D9-4854-AC7C-A654814401C5
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 8229a372659e7918457a9d2f358b871e1a3f5978
-ms.sourcegitcommit: 72450a6a29599fa133ff4f16fb0b1f443d89f9dc
+ms.openlocfilehash: 15e2cb69806f281e88e226b7bcd87a20e149d508
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37080374"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37947306"
 ---
-# <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials: zrychlení
+# <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials: akcelerometru
 
 ![Předběžné verze NuGet](~/media/shared/pre-release.png)
 
-**Zrychlení** třída umožňuje monitorovat senzor zrychlení v zařízení, označující akcelerace zařízení za tři dimenzí místa na disku.
+**Akcelerometr** třída umožňuje monitorovat zařízení akcelerometr senzor, který označuje zrychlení zařízení do tří rozměrného prostoru.
 
-## <a name="using-accelerometer"></a>Pomocí zrychlení
+## <a name="using-accelerometer"></a>Pomocí akcelerometru
 
-Přidáte odkaz na Xamarin.Essentials v třídě:
+Přidáte odkaz na Xamarin.Essentials ve své třídě:
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-Funkce zrychlení funguje tak, že volání `Start` a `Stop` metody pro naslouchání změny zrychlení. Změny jsou odesílány zpět pomocí `ReadingChanged` událostí. Tady je využití vzorků:
+Funguje akcelerometru funkce voláním `Start` a `Stop` metody k naslouchání pro zrychlení. Všechny změny jsou odesílány zpět prostřednictvím `ReadingChanged` událostí. Tady je ukázkový používání:
 
 ```csharp
 
@@ -69,30 +69,23 @@ public class AccelerometerTest
 }
 ```
 
-Zrychlení odečty nejsou hlášeny v G. G je jednotka gravitation vynutit rovna hodnoty, kterou zemském povrchu gravitační pole (9.81 m/s ^ 2).
+Akcelerometr odečty jsou hlášeny v G. G je jednotka gravitation vynutit rovna hodnotě vyvíjený gravitační pole země (9,81 m/s ^ 2).
 
-Systém souřadnic je definována relativně k obrazovce telefonu v jeho výchozí orientace. Když se změní orientace obrazovky zařízení, nejsou vzájemně zaměněny osy.
+Systém souřadnic je definována relativně vzhledem k obrazovce telefonu v její výchozí orientace. Při změně orientace obrazovky zařízení nejsou prohodily OS.
 
-Je vodorovné osy X a body vpravo osy Y je svislý a bodů a ukazuje osy Z směrem od čelní obrazovky. V tomto systému souřadnice za obrazovky mít záporné hodnoty Z.
+Je vodorovné osy X a odkazuje na pravé straně, osy Y je svislý odkazuje a odkazuje na ose Z ven přední plochy obrazovky. V tomto systému je za obrazovce mají záporné hodnoty Z.
 
 Příklady:
 
-* Když je zařízení je nestrukturované v tabulce a se instaluje na jeho levé straně směrem doprava, je kladné hodnoty zrychlení x.
+* Když zařízení je plochý v tabulce a posunuto v jeho levé směrem doprava, zrychlení hodnota x je kladný.
 
-* Pokud zařízení je nestrukturované v tabulce, hodnoty zrychlení je +1.00 G nebo (+ 9.81 m/s ^ 2), které odpovídají akcelerace zařízení (0 m/s ^ 2) minus platnost gravitace (-9.81 m/s ^ 2) a normalizovaný jako G.
+* Když zařízení je plochý u tabulky, je hodnota akcelerace +1.00 G nebo (+ 9,81 m/s ^ 2), které odpovídají zrychlení zařízení (0 m/s ^ 2) minus platnost závažnosti (-9,81 m/s ^ 2) a normalizované jako např.
 
-* Pokud zařízení je nestrukturované v tabulce a je přesunuty směrem k sky s zrychlení m/s ^ 2, akcelerace hodnota se rovná + 9.81, které odpovídají akcelerace zařízení (+ m/s ^ 2) minus platnost gravitace (-9.81 m/s ^ 2) a normalizovaný v G. 
+* Kdy se zařízení je plochý v tabulce a vloženy směrem k sky s zrychlení m/s ^ 2, hodnota akcelerace je rovna 9.81 A +, které odpovídají zrychlení zařízení (+ m/s ^ 2) minus platnost závažnosti (-9,81 m/s ^ 2) a normalizované v G. 
 
-## <a name="sensor-speedxrefxamarinessentialssensorspeed"></a>[Snímač rychlosti](xref:Xamarin.Essentials.SensorSpeed)
-
-- **Nejrychlejší** – získat data snímačů co nejrychleji (není zaručena k vrácení při vlákna uživatelského rozhraní).
-- **Herní** – míra vhodný pro hry (není zaručena k vrácení při vlákna uživatelského rozhraní).
-- **Normální** – výchozí rychlost vhodný pro změny orientace obrazovky.
-- **Uživatelské rozhraní** – míra vhodný pro obecné uživatelské rozhraní.
-
-Pokud není zaručena vaší obslužné rutiny události pro spuštění na vlákna uživatelského rozhraní a pokud obslužné rutiny události musí pro přístup k elementům uživatelského rozhraní, použijte [ `MainThread.BeginInvokeOnMainThread` ](main-thread.md) metodu pro spuštění tohoto kódu ve vlákně UI.
+[!include[](~/essentials/includes/sensor-speed.md)]
 
 ## <a name="api"></a>rozhraní API
 
-- [Zrychlení zdrojového kódu](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Accelerometer)
-- [Dokumentace zrychlení rozhraní API](xref:Xamarin.Essentials.Accelerometer)
+- [Akcelerometr zdrojového kódu](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Accelerometer)
+- [Dokumentace ke službě akcelerometr rozhraní API](xref:Xamarin.Essentials.Accelerometer)

@@ -1,6 +1,6 @@
 ---
-title: Standardní XAML (Preview)
-description: Tento článek vysvětluje, jak začít pracovat s prohlížení náhledu standardní XAML v Xamarin.Forms.
+title: XAML Standard (Preview)
+description: Tento článek vysvětluje, jak vám umožní začít zkoumat standardní náhled XAML v Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 24382DF1-BE70-4608-B86F-B79FB23E4A78
 ms.technology: xamarin-forms
@@ -8,37 +8,37 @@ author: charlespetzold
 ms.author: chape
 ms.date: 11/15/2017
 ms.openlocfilehash: 61e0fa2587ce9a8794dbd32ff9de1f13da857342
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245791"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38838007"
 ---
-# <a name="xaml-standard-preview"></a>Standardní XAML (Preview)
+# <a name="xaml-standard-preview"></a>XAML Standard (Preview)
 
 ![Náhled](~/media/shared/preview.png)
 
-Postupujte podle těchto kroků a experimentovat s standardní XAML v Xamarin.Forms:
+Postupujte podle těchto kroků můžete experimentovat s XAML Standard v Xamarin.Forms:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. Stažení [náhled zde balíček NuGet](https://aka.ms/xf-xamlstandard-nuget).
-2. Přidat **Xamarin.Forms.Alias** balíček NuGet do vašich projektů Xamarin.Forms .NET standardní a platformu.
-3. Inicializace balíček s `Alias.Init()`
+1. Stáhněte si [ve verzi preview zde balíček NuGet](https://aka.ms/xf-xamlstandard-nuget).
+2. Přidat **Xamarin.Forms.Alias** balíček NuGet do vašich projektů Xamarin.Forms .NET Standard a platformu.
+3. Inicializujte balíček s `Alias.Init()`
 4. Přidat `xmlns:a` odkaz `xmlns:a="clr-namespace:Xamarin.Forms.Alias;assembly=Xamarin.Forms.Alias"`
-5. Použít typy v jazyce XAML – viz [řídí odkaz](controls.md) Další informace.
+5. Použití typů v XAML – viz [řídí odkaz](controls.md) Další informace.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-1. Stažení [náhled zde balíček NuGet](https://aka.ms/xf-xamlstandard-nuget).
-2. Přidat **Xamarin.Forms.Alias** balíček NuGet do vašich projektů Xamarin.Forms .NET standardní a platformu.
-3. Inicializace balíček s `Alias.Init()`
+1. Stáhněte si [ve verzi preview zde balíček NuGet](https://aka.ms/xf-xamlstandard-nuget).
+2. Přidat **Xamarin.Forms.Alias** balíček NuGet do vašich projektů Xamarin.Forms .NET Standard a platformu.
+3. Inicializujte balíček s `Alias.Init()`
 4. Přidat `xmlns:a` odkaz `xmlns:a="clr-namespace:Xamarin.Forms.Alias;assembly=Xamarin.Forms.Alias"`
-5. Použít typy v jazyce XAML – viz [řídí odkaz](controls.md) Další informace.
+5. Použití typů v XAML – viz [řídí odkaz](controls.md) Další informace.
 
 -----
 
-Následující XAML ukazuje některé XAML standardní ovládací prvky použitá v platformě Xamarin.Forms `ContentPage`:
+Ukazuje některé používá v Xamarin.Forms XAML standardní ovládací prvky XAML následující `ContentPage`:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -71,10 +71,10 @@ Následující XAML ukazuje některé XAML standardní ovládací prvky použit�
 ```
 
 > [!NOTE]
-> Vyžadování atribut xmlns `a:` předponu na XAML standardní ovládací prvky se o omezení aktuální verze preview.
+> Vyžadování xmlns `a:` předpony u XAML standardní ovládací prvky se o omezení aktuální verze preview.
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Náhled NuGet](https://aka.ms/xf-xamlstandard-nuget)
+- [NuGet ve verzi Preview](https://aka.ms/xf-xamlstandard-nuget)
 - [Referenční informace o ovládacích prvcích](controls.md)

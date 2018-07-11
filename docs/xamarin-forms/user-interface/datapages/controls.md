@@ -1,6 +1,6 @@
 ---
 title: Referenční dokumentace ovládacích prvků DataPages
-description: Tento článek představuje ovládacích prvků, které jsou k dispozici v balíčku Xamarin.Forms DataPages NuGet.
+description: Tento článek představuje ovládací prvky, které jsou k dispozici v balíčku Xamarin.Forms DataPages NuGet.
 ms.prod: xamarin
 ms.assetid: 891615D0-E8BD-4ACC-A7F0-4C3725FBCC31
 ms.technology: xamarin-forms
@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
 ms.openlocfilehash: c907d55f09d334e167c831a19f9d0edc4c97732f
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243126"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38866519"
 ---
 # <a name="datapages-controls-reference"></a>Referenční dokumentace ovládacích prvků DataPages
 
@@ -22,9 +22,9 @@ ms.locfileid: "35243126"
 > Vyžaduje DataPages [Xamarin.Forms motiv](~/xamarin-forms/user-interface/themes/index.md) odkaz k vykreslení.
 
 
-Xamarin.Forms DataPages Nuget obsahuje řadu ovládacích prvků, které můžete využít výhod datového zdroje vazby.
+Xamarin.Forms DataPages Nuget obsahuje několik ovládacích prvků, které můžete využít výhod datového zdroje vazby.
 
-Pokud chcete použít tyto ovládací prvky v jazyce XAML, zkontrolujte, obor názvů byl součástí najdete například `xmlns:pages` deklarace níže:
+V XAML používat tyto ovládací prvky, ujistěte se obor názvů byl součástí, například najdete v článku `xmlns:pages` deklarace níže:
 
 ```xaml
 <ContentPage
@@ -34,9 +34,9 @@ Pokud chcete použít tyto ovládací prvky v jazyce XAML, zkontrolujte, obor n�
     x:Class="DataPagesDemo.Detail">
 ```
 
-Následující příklady zahrnují `DynamicResource` odkazy, které by bylo potřeba existovat ve slovníku prostředky projektu pro práci. Je také příklad toho, jak vytvořit [vlastního ovládacího prvku](#custom)
+Následující příklady zahrnují `DynamicResource` odkazy, které by musela existovat ve slovníku prostředků v projektu pro práci. Také je příklad toho, jak sestavit [vlastního ovládacího prvku](#custom)
 
-## <a name="built-in-controls"></a>Integrované ovládací prvky
+## <a name="built-in-controls"></a>Integrovaných ovládacích prvků
 
 * [HeroImage](#heroimage)
 * [ListItem](#listitem)
@@ -45,7 +45,7 @@ Následující příklady zahrnují `DynamicResource` odkazy, které by bylo pot
 
 ### <a name="heroimage"></a>HeroImage
 
-`HeroImage` Řízení má čtyři vlastnosti:
+`HeroImage` Ovládací prvek má čtyři vlastnosti:
 
 * Text
 * Podrobnosti
@@ -62,20 +62,20 @@ Následující příklady zahrnují `DynamicResource` odkazy, které by bylo pot
 
 **Android**
 
-![](controls-images/heroimage-light-android.png "Ovládací prvek HeroImage v systému Android") ![ ] (controls-images/heroimage-dark-android.png "HeroImage ovládací prvek v systému Android")
+![](controls-images/heroimage-light-android.png "Ovládací prvek HeroImage v Androidu") ![ ] (controls-images/heroimage-dark-android.png "HeroImage ovládacího prvku v Androidu")
 
 **iOS**
 
-![](controls-images/heroimage-light-ios.png "Ovládací prvek HeroImage v iOS") ![ ] (controls-images/heroimage-dark-ios.png "HeroImage ovládací prvek v iOS")
+![](controls-images/heroimage-light-ios.png "Ovládací prvek HeroImage v Iosu") ![ ] (controls-images/heroimage-dark-ios.png "HeroImage ovládacího prvku v Iosu")
 
 
 <a name="listitem" />
 
 ### <a name="listitem"></a>ListItem
 
-`ListItem` Rozložení ovládacího prvku je podobný nativní aplikace pro iOS a Android seznamu nebo tabulky řádků, ale může taky sloužit jako regulární zobrazení. V příkladu se zobrazí kód pod ním hostované uvnitř `StackLayout`, ale můžou používat i v ovládacích prvcích seznam scolling vázané na data.
+`ListItem` Rozložení ovládacího prvku je podobný nativní aplikace pro iOS a Android seznam nebo tabulku řádků, ale může také sloužit jako regulární zobrazení. V příkladu se zobrazí kód pod ní hostované uvnitř `StackLayout`, ale můžete použít také v ovládacích prvcích seznam scolling vázané na data.
 
-Nejsou k dispozici pět vlastnosti:
+Existuje pět vlastnosti:
 
 * Název
 * Podrobnosti
@@ -93,20 +93,20 @@ Nejsou k dispozici pět vlastnosti:
     />
 ```
 
-Tyto snímky obrazovky ukazují `ListItem` na iOS a Android platforem a jak tmavý a světlý motivů:
+Tyto snímky obrazovky ukazují `ListItem` na platformy iOS a Android pomocí světlý a tmavý motivy:
 
 **Android**
 
-![](controls-images/listitem-light-android.png "Ovládacího prvku ListItem v systému Android") ![ ] (controls-images/listitem-dark-android.png "ovládacího prvku ListItem v systému Android")
+![](controls-images/listitem-light-android.png "Ovládacího prvku ListItem v Androidu") ![ ] (controls-images/listitem-dark-android.png "ovládacího prvku ListItem v Androidu")
 
 **iOS**
 
-![](controls-images/listitem-light-ios.png "Ovládacího prvku ListItem v iOS") ![ ] (controls-images/listitem-dark-ios.png "ovládacího prvku ListItem v iOS")
+![](controls-images/listitem-light-ios.png "Ovládacího prvku ListItem v Iosu") ![ ] (controls-images/listitem-dark-ios.png "ovládacího prvku ListItem v Iosu")
 
 
 ## <a name="custom-control-example"></a>Příklad vlastního ovládacího prvku
 
-Cílem tento vlastní `CardView` ovládací prvek je tak, aby připomínaly nativní Android zobrazení karty aplikace.
+Cílem tuto vlastní `CardView` tak, aby připomínaly nativní Android CardView je ovládací prvek.
 
 Bude obsahovat tři vlastnosti:
 
@@ -114,7 +114,7 @@ Bude obsahovat tři vlastnosti:
 * Podrobnosti
 * ImageSource
 
-Cílem je vlastní ovládací prvek, který bude vypadat podobně jako následující kód (Všimněte si, že vlastní `xmlns:local` je vyžadován, odkazuje na aktuální sestavení):
+Cílem je vlastní ovládací prvek, který bude vypadat jako následující kód (Všimněte si, že vlastní `xmlns:local` je povinný, která odkazuje na aktuální sestavení):
 
 ```xaml
 <local:CardView
@@ -124,33 +124,33 @@ Cílem je vlastní ovládací prvek, který bude vypadat podobně jako následuj
 />
 ```
 
-By měl vypadat jako na snímcích obrazovky níže pomocí barev odpovídající předdefinované motivy tmavý a světlý:
+By měl vypadat jako na snímcích obrazovky níže použití barev odpovídající předdefinované motivy tmavý a světlý motiv:
 
 **Android**
 
-![](controls-images/cardview-light-android.png "Zobrazení karty aplikace vlastní ovládací prvek v systému Android") ![ ] (controls-images/cardview-dark-android.png "zobrazení karty aplikace vlastní ovládací prvek v systému Android")
+![](controls-images/cardview-light-android.png "CardView vlastní ovládací prvek na Androidu") ![ ] (controls-images/cardview-dark-android.png "CardView vlastní ovládací prvek v Androidu")
 
 **iOS**
 
-![](controls-images/cardview-light-ios.png "Zobrazení karty aplikace vlastní ovládací prvek v systému iOS") ![ ] (controls-images/cardview-dark-ios.png "zobrazení karty aplikace vlastní ovládací prvek v systému iOS")
+![](controls-images/cardview-light-ios.png "CardView vlastní ovládací prvek v Iosu") ![ ] (controls-images/cardview-dark-ios.png "CardView vlastní ovládací prvek v Iosu")
 
 <a name="custom" />
 
-### <a name="building-the-custom-cardview"></a>Vytváření vlastních zobrazení karty aplikace
+### <a name="building-the-custom-cardview"></a>Vytváření vlastních CardView
 
-1. [Podtřída zobrazení dat](#1)
-2. [Zadejte písma, rozložení a okraje](#2)
-3. [Vytvoření stylů pro podřízené položky ovládacího prvku](#3)
+1. [Podtřídy třídy DataView](#1)
+2. [Zadejte písmo, rozložení a okraje](#2)
+3. [Vytvoření styly pro podřízené položky ovládacího prvku](#3)
 4. [Vytvořit šablonu rozložení ovládacího prvku](#4)
-5. [Přidat prostředky specifické pro motiv](#5)
-6. [Nastavit ControlTemplate pro zobrazení karty aplikace – třída](#6)
+5. [Přidat prostředky specifické pro konkrétní motiv](#5)
+6. [Nastavte element ControlTemplate pro třídu CardView](#6)
 7. [Přidání ovládacího prvku na stránku](#7)
 
 <a name="1" />
 
-#### <a name="1-dataview-subclass"></a>1. Podtřída zobrazení dat
+#### <a name="1-dataview-subclass"></a>1. Podtřídy třídy DataView
 
-Podtřídami C# třídy `DataView` definuje vazbu vlastnosti pro ovládací prvek.
+Jazyce C# podtřídu `DataView` definuje vlastnosti umožňující vazbu ovládacího prvku.
 
 ```csharp
 public class CardView : DataView
@@ -190,11 +190,11 @@ public class CardView : DataView
 
 <a name="2" />
 
-#### <a name="2-define-font-layout-and-margins"></a>2. Zadejte písma, rozložení a okraje
+#### <a name="2-define-font-layout-and-margins"></a>2. Zadejte písmo, rozložení a okraje
 
-Návrhář ovládacího prvku by rozmyslete si tyto hodnoty jako součást návrh uživatelského rozhraní pro vlastní ovládací prvek. Tam, kde jsou povinné, specifické pro platformu specifikace `OnPlatform` element se používá.
+Návrhář ovládacího prvku by zjistit tyto hodnoty jako součást návrhu uživatelského rozhraní vlastního ovládacího prvku. Pokud jsou povinné, specifikace specifické pro platformu `OnPlatform` element se používá.
 
-Všimněte si, že některé hodnoty se vztahují `StaticResource`s – ty budou určené v [krok 5](#5).
+Všimněte si, že některé hodnoty se vztahují `StaticResource`s – ty budou určené v [kroku 5](#5).
 
 ```xml
 <!-- CARDVIEW FONT SIZES -->
@@ -248,9 +248,9 @@ Všimněte si, že některé hodnoty se vztahují `StaticResource`s – ty budou
 
 <a name="3" />
 
-#### <a name="3-create-styles-for-the-controls-children"></a>3. Vytvoření stylů pro podřízené položky ovládacího prvku
+#### <a name="3-create-styles-for-the-controls-children"></a>3. Vytvoření styly pro podřízené položky ovládacího prvku
 
-Odkazy na všechny prvky, které jsou definované Chystáte se vytvořit podřízené objekty, které se použijí v vlastního ovládacího prvku:
+Odkazovat na všechny prvky definice vytvoření podřízené položky, které se použijí v vlastního ovládacího prvku:
 
 ```xml
 <!-- EXPLICIT STYLES (will be Classes) -->
@@ -282,7 +282,7 @@ Odkazy na všechny prvky, které jsou definované Chystáte se vytvořit podří
 
 #### <a name="4-create-the-control-layout-template"></a>4. Vytvořit šablonu rozložení ovládacího prvku
 
-Vizuální návrh vlastní ovládací prvek je explicitně deklarován v šabloně ovládacího prvku pomocí prostředky definované výše:
+Vizuální návrh vlastního ovládacího prvku je explicitně deklarována v šabloně ovládacího prvku pomocí prostředky definované výše:
 
 ```xml
 <!--- CARDVIEW -->
@@ -324,11 +324,11 @@ Vizuální návrh vlastní ovládací prvek je explicitně deklarován v šablon
 
 <a name="5" />
 
-#### <a name="5-add-the-theme-specific-resources"></a>5. Přidat prostředky specifické pro motiv
+#### <a name="5-add-the-theme-specific-resources"></a>5. Přidat prostředky specifické pro konkrétní motiv
 
-Protože se jedná vlastní ovládací prvek, přidejte prostředky, které splňují motiv používáte slovník prostředků:
+Protože se jedná vlastní ovládací prvek, přidejte prostředky, které odpovídají motiv používáte slovník prostředků:
 
-##### <a name="light-theme-colors"></a>Motiv světlý barvy
+##### <a name="light-theme-colors"></a>Barvy světlý motiv
 
 ```xaml
 <Color x:Key="iOSCardViewBackgroundColor">#FFFFFF</Color>
@@ -341,7 +341,7 @@ Protože se jedná vlastní ovládací prvek, přidejte prostředky, které spl�
 <Color x:Key="iOSCardViewDetailTextColor">#8F8E94</Color>
 ```
 
-##### <a name="dark-theme-colors"></a>Tmavý motiv barvy
+##### <a name="dark-theme-colors"></a>Motiv tmavé barvy
 
 ```xaml
 <!-- CARD VIEW COLORS -->
@@ -357,9 +357,9 @@ Protože se jedná vlastní ovládací prvek, přidejte prostředky, které spl�
 
 <a name="6" />
 
-#### <a name="6-set-the-controltemplate-for-the-cardview-class"></a>6. Nastavit ControlTemplate pro zobrazení karty aplikace – třída
+#### <a name="6-set-the-controltemplate-for-the-cardview-class"></a>6. Nastavte element ControlTemplate pro třídu CardView
 
-Nakonec se ujistěte, třída C# vytvořené v [krok 1](#1) používá šablonu ovládacího prvku definované v [krok 4](#4) pomocí `Style` `Setter` – element
+Nakonec se ujistěte, třída jazyka C# vytvořené v [kroku 1](#1) používá definované v šabloně ovládacího prvku [kroku 4](#4) pomocí `Style` `Setter` – element
 
 ```xml
 <Style TargetType="local:CardView">
@@ -373,7 +373,7 @@ Nakonec se ujistěte, třída C# vytvořené v [krok 1](#1) používá šablonu 
 
 #### <a name="7-add-the-control-to-a-page"></a>7. Přidání ovládacího prvku na stránku
 
-`CardView` Ovládací prvek je nyní možné přidat na stránku. Následující příklad ukazuje ho hostované v `StackLayout`:
+`CardView` Ovládací prvek je nyní možné přidat na stránku. V následujícím příkladu je hostované v `StackLayout`:
 
 ```xaml
 <StackLayout Spacing="0">
