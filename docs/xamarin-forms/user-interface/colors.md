@@ -1,35 +1,35 @@
 ---
 title: Barvy v Xamarin.Forms
-description: Xamarin.Forms poskytuje flexibilní třídu barva napříč platformami. Tento článek vysvětluje funkce poskytované službou třídy barva a způsobu jeho použití.
+description: Xamarin.Forms poskytuje flexibilní barevná třída napříč platformami. Tento článek vysvětluje funkce poskytované službou barevné třídy a jak ji používat.
 ms.prod: xamarin
 ms.assetid: 22288ABF-57BE-47A9-ACC3-AC604D787C46
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 45adcb8a0fe25e729211e8b166be51ce2c4d93bd
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 1017f108d6808155cac84e98a811a30d09afa134
+ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243015"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38986080"
 ---
 # <a name="colors-in-xamarinforms"></a>Barvy v Xamarin.Forms
 
-_Xamarin.Forms poskytuje flexibilní třídu barva napříč platformami._
+_Xamarin.Forms poskytuje flexibilní barevná třída napříč platformami._
 
-Tento článek představuje různé způsoby, kterými `Color` třídu lze použít v Xamarin.Forms.
+Tento článek uvádí různé způsoby, kterými `Color` třída může být použita v Xamarin.Forms.
 
-`Color` Třída poskytuje několik metod k vytvoření instance barev
+`Color` Třída poskytuje několik metod k vytvoření instance barva
 
--  **S názvem barvy** -kolekce běžné s názvem barvy, včetně `Red`, `Green`, a `Blue`.
--  **FromHex** -se syntaxí ve formátu HTML, např "00FF00" podobně jako hodnota typu řetězec. Alfa je Volitelně můžete zadat jako první pár znaků ("CC00FF00").
--  **FromHsla** -Hue, sytost a světlost `double` hodnot, volitelné alfa hodnotu (0,0-1.0).
--  **FromRgb** -červená, zelená a modrá `int` hodnoty (0 – 255).
--  **FromRgba** -červená, zelená, modrá a alpha `int` hodnoty (0 – 255).
+-  **Pojmenované barvy** – kolekce společné s názvem barvy, včetně `Red`, `Green`, a `Blue`.
+-  **FromHex** -řetězcová hodnota podobná syntaxe používané ve formátu HTML, třeba "00FF00". Alfa je Volitelně můžete zadat jako první pár znaků ("CC00FF00").
+-  **FromHsla** -Hue, sytosti a světlosti `double` hodnoty se Volitelná hodnota alfa (0,0 1.0).
+-  **FromRgb** – červené, zelené a modré `int` hodnoty (0 – 255).
+-  **FromRgba** -červená, zelená, modrá a alfa `int` hodnoty (0 – 255).
 -  **FromUint** – nastavení jedné `double` hodnotu představující **argb**.
 
-Tady je některé barvy příklad přiřazené `BackgroundColor` některé popisků pomocí různých variant povolené syntaxe:
+Tady je několik příklad barvy přiřazené `BackgroundColor` některých popisků pomocí různých variant povolené syntaxi:
 
 ```csharp
 var red    = new Label { Text = "Red",   BackgroundColor = Color.Red };
@@ -45,15 +45,15 @@ var @default = new Label    { Text = "Default",    BackgroundColor = Color.Defau
 var accent = new Label      { Text = "Accent",     BackgroundColor = Color.Accent };
 ```
 
-Tyto barvy se zobrazí na jednotlivých platformách níže. Všimněte si barvu konečné - `Accent` -blue-ish barvu pro iOS a Android; je tato hodnota je definováno Xamarin.Forms.
+Tyto barvy se zobrazí na jednotlivých platformách níže. Všimněte si, že konečnou barvu - `Accent` -blue-ish barvu pro iOS a Android je tato hodnota je definována Xamarin.Forms.
 
- [![Barva ukázku](colors-images/colors-sml.png "barva ukázku")](colors-images/colors.png#lightbox "barva Demo")
+ [![Ukázka barvy](colors-images/colors-sml.png "ukázka barvy")](colors-images/colors.png#lightbox "ukázka barvy")
 
 ## <a name="colordefault"></a>Color.Default
 
-Použití `Default` nastavit (nebo znovu nastavit) hodnotu barva zpět na výchozí platformy (vysvětlení, že to představuje základní barvu na každou platformu pro každou vlastnost).
+Použití `Default` nastavit (nebo znovu nastavit) hodnotu barvy zpět na výchozí platforma (vysvětlení, že to představuje různé základní barvy na jednotlivých platformách pro každou vlastnost).
 
-Vývojáři mohou použít tato hodnota k nastavení `Color` vlastnost ale měli **není** dotaz na tuto instanci pro jeho součásti hodnoty RGB (je všechny nastavena na hodnotu -1).
+Vývojáři mohou pomocí tuto hodnotu nastavit `Color` by ale měl vlastnost **není** dotazování tuto instanci pro jeho součást hodnoty RGB (že všechno je nastavené na hodnotu -1).
 
 ## <a name="colortransparent"></a>Color.Transparent
 
@@ -61,17 +61,17 @@ Nastavení barvy zrušte.
 
 ## <a name="coloraccent"></a>Color.Accent
 
-IOS a Android tato instance nastavena kontrastní barvu, která se zobrazí na výchozí pozadí, ale není stejný jako výchozí barvu textu.
+V Iosu a Androidu tato instance je nastavena kontrastní barvu, která je viditelný na výchozí pozadí, ale není stejný jako výchozí barva textu.
 
 ## <a name="additional-methods"></a>Další metody
 
-`Color` instance zahrnout další metody, které lze použít k vytvoření nových barev:
+`Color` instance zahrnují další metody, které lze použít k vytvoření nové barvy:
 
--  **AddLuminosity** -vrátí novou barvu úpravou světelnost zadaný rozdílů.
--  **WithHue** -vrátí novou barvu, nahraďte odstín byla zadána hodnota.
--  **WithLuminosity** -vrátí novou barvu, nahraďte světelnost byla zadána hodnota.
--  **WithSaturation** -vrátí novou barvu, nahraďte sytost byla zadána hodnota.
--  **MultiplyAlpha** -vrátí novou barvu úpravou alfa, vynásobením podle zadané hodnoty alfa.
+-  **AddLuminosity** – vrátí novou barvu tak, že upravíte světelnost zadaná položkou delta.
+-  **WithHue** – vrátí novou barvu, nahradíte odstín zadaná hodnota.
+-  **WithLuminosity** – vrátí novou barvu, světelnost nahradíte zadaná hodnota.
+-  **WithSaturation** – vrátí novou barvu, nahradíte sytost zadaná hodnota.
+-  **MultiplyAlpha** – vrátí novou barvu tak, že upravíte alfa, vynásobení alfa zadaná hodnota.
 
 ## <a name="implicit-conversions"></a>Implicitní převody
 
@@ -90,7 +90,7 @@ Xamarin.Forms.Color xfColor2 = sdColor;
 
 ## <a name="deviceruntimeplatform"></a>Device.RuntimePlatform
 
-Používá tento fragment kódu `Device.RuntimePlatform` vlastnost Selektivní nastavení barvu `ActivityIndicator`:
+Tento fragment kódu používá `Device.RuntimePlatform` vlastnost selektivně nastavení barvy `ActivityIndicator`:
 
 ```csharp
 ActivityIndicator activityIndicator = new ActivityIndicator
@@ -100,9 +100,9 @@ ActivityIndicator activityIndicator = new ActivityIndicator
 };
 ```
 
-## <a name="using-from-xaml"></a>Použití z jazyka XAML
+## <a name="using-from-xaml"></a>Použití z XAML
 
-Barvy lze také snadno odkazovat v jazyce XAML pomocí názvy definovaných barev nebo šestnáctkově reprezentace znázorněno zde:
+Barvy můžete také snadno odkazovat v XAML pomocí názvů definovanou barvu nebo Hex reprezentace je vidět tady:
 
 ```xaml
 <Label Text="Sea color" BackgroundColor="Aqua" />
@@ -112,12 +112,15 @@ Barvy lze také snadno odkazovat v jazyce XAML pomocí názvy definovaných bare
 <Label Text="Tiny Alpha plus RGB" BackgroundColor="#C0F0" />
 ```
 
+> [!NOTE]
+> Při použití sestavení XAML, názvy barev se nerozlišují velká a může být proto napsána malými písmeny. Další informace o sestavení XAML najdete v tématu [kompilace XAML](~/xamarin-forms/xaml/xamlc.md).
+
 ## <a name="summary"></a>Souhrn
 
-Platformě Xamarin.Forms `Color` třída se používá k vytvoření odkazů deklaracemi platformy barev. Je můžete použít v sdíleného kódu a XAML.
+Xamarin.Forms `Color` třída se používá k vytvoření odkazů s ohledem na platformě barvu. Je možné sdílený kód a XAML.
 
 
 ## <a name="related-links"></a>Související odkazy
 
 - [ColorsSample](https://developer.xamarin.com/samples/WorkingWithColors)
-- [Výběr vazbu (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BindablePicker/)
+- [Výběr umožňujících vazbu (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BindablePicker/)

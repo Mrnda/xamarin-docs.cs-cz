@@ -6,13 +6,13 @@ ms.assetid: 22B403C0-FE6D-498A-AE53-095E6C4B527C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/30/2018
-ms.openlocfilehash: 52895564ef327845940d687a58b007fb1502e62b
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
-ms.translationtype: MT
+ms.date: 07/10/2018
+ms.openlocfilehash: c423c6f6f6bae829781fb13b405ad0d5bcf7128e
+ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935113"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38986106"
 ---
 # <a name="windows-platform-specifics"></a>Windows specifik platforem
 
@@ -20,17 +20,19 @@ _Specifika platforem umožňují používat funkce, která je dostupná jenom na
 
 Na Universal Windows Platform (UWP), Xamarin.Forms obsahuje následující specifika platforem:
 
-- Nastavení možnosti umístění panelu nástrojů. Další informace najdete v tématu [Změna umístění nástrojů](#toolbar_placement).
+- Nastavení možnosti umístění panelu nástrojů. Další informace najdete v tématu [Změna umístění panelu nástrojů stránky](#toolbar_placement).
 - Sbalení [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) navigační panel. Další informace najdete v tématu [sbalení navigačního panelu MasterDetailPage](#collapsable_navigation_bar).
 - Povolení [ `WebView` ](xref:Xamarin.Forms.WebView) chcete zobrazit výstrahy jazyka JavaScript v dialogovém okně zpráva UPW. Další informace najdete v tématu [zobrazení výstrahy JavaScript](#webview-javascript-alert).
 - Povolení [ `SearchBar` ](xref:Xamarin.Forms.SearchBar) k interakci s modulem kontroly pravopisu. Další informace najdete v tématu [umožňuje kontrolu pravopisu SearchBar](#searchbar-spellcheck).
 - Zjišťování pořadí čtení z textového obsahu v [ `Entry` ](xref:Xamarin.Forms.Entry), [ `Editor` ](xref:Xamarin.Forms.Editor), a [ `Label` ](xref:Xamarin.Forms.Label) instancí. Další informace najdete v tématu [zjišťování pořadí čtení z obsahu](#inputview-readingorder).
 - Zakázat režim starší verze barvy na podporované [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Další informace najdete v tématu [zakázání barevný režim starší verze](#legacy-color-mode).
 - Povolení podpory klepněte na gesto v [ `ListView` ](xref:Xamarin.Forms.ListView). Další informace najdete v tématu [povolení klepněte na gesto podpory v ListView](#listview-selectionmode).
+- Povolení ikon stránek zobrazený na [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage) nástrojů. Další informace najdete v tématu [povolení ikon na TabbedPage](#tabbedpage-icons).
+- Přístupový klíč pro nastavení [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Další informace najdete v tématu [přístupových klíčů k nastavení VisualElement](#visualelement-accesskeys).
 
 <a name="toolbar_placement" />
 
-## <a name="changing-the-toolbar-placement"></a>Změna umístění panelu nástrojů
+## <a name="changing-the-page-toolbar-placement"></a>Změna umístění panelu nástrojů stránky
 
 Tento konkrétní platformy se používá ke změně umístění panelu nástrojů na [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)a využívat XAML tak, že nastavíte [ `Page.ToolbarPlacement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.Page.ToolbarPlacementProperty/) přidružená vlastnost na hodnotu [ `ToolbarPlacement` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement/) výčtu:
 
@@ -292,6 +294,153 @@ listView.On<Windows>().SetSelectionMode(ListViewSelectionMode.Inaccessible);
 Kromě toho [ `GetSelectionMode` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListView.GetSelectionMode(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.ListView})) metodu lze použít k vrácení aktuální [ `ListViewSelectionMode` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode).
 
 Výsledek je, že zadané [ `ListViewSelectionMode` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode) platí pro [ `ListView` ](xref:Xamarin.Forms.ListView), které ovládací prvky, zda položky v `ListView` můžou reagovat na klepněte na gesta a proto, zda nativní `ListView` aktivována `ItemClick` nebo `Tapped` událostí.
+
+<a name="tabbedpage-icons" />
+
+## <a name="enabling-icons-on-a-tabbedpage"></a>Povolení ikon na TabbedPage
+
+Ikony stránek zobrazený na umožňuje toto specifické pro platformu [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage) nástrojů a umožňuje volitelně zadat velikost ikony. V XAML je využívá tak, že nastavíte [ `TabbedPage.HeaderIconsEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.HeaderIconsEnabledProperty) připojené vlastnosti `true`a volitelně můžete nastavením [ `TabbedPage.HeaderIconsSize` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.HeaderIconsSizeProperty) připojené vlastnosti [ `Size` ](xref:Xamarin.Forms.Size) hodnotu:
+
+```xaml
+<TabbedPage ...
+            xmlns:windows="clr-namespace:Xamarin.Forms.PlatformConfiguration.WindowsSpecific;assembly=Xamarin.Forms.Core"
+            windows:TabbedPage.HeaderIconsEnabled="true">
+    <windows:TabbedPage.HeaderIconsSize>
+        <Size>
+            <x:Arguments>
+                <x:Double>24</x:Double>
+                <x:Double>24</x:Double>
+            </x:Arguments>
+        </Size>
+    </windows:TabbedPage.HeaderIconsSize>
+    <ContentPage Title="Todo" Icon="todo.png">
+        ...
+    </ContentPage>
+    <ContentPage Title="Reminders" Icon="reminders.png">
+        ...
+    </ContentPage>
+    <ContentPage Title="Contacts" Icon="contacts.png">
+        ...
+    </ContentPage>
+</TabbedPage>
+```
+
+Alternativně může být používán z C# s použitím rozhraní fluent API:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
+...
+
+public class WindowsTabbedPageIconsCS : Xamarin.Forms.TabbedPage
+{
+  public WindowsTabbedPageIconsCS()
+    {
+    On<Windows>().SetHeaderIconsEnabled(true);
+    On<Windows>().SetHeaderIconsSize(new Size(24, 24));
+
+    Children.Add(new ContentPage { Title = "Todo", Icon = "todo.png" });
+    Children.Add(new ContentPage { Title = "Reminders", Icon = "reminders.png" });
+    Children.Add(new ContentPage { Title = "Contacts", Icon = "contacts.png" });
+  }
+}
+```
+
+`TabbedPage.On<Windows>` Metody Určuje, že toto specifické pro platformu lze spustit pouze na univerzální platformu Windows. [ `TabbedPage.SetHeaderIconsEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.SetHeaderIconsEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.TabbedPage},System.Boolean)) Metoda v [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) obor názvů, slouží k zapnutí nebo vypnutí záhlaví ikony. [ `TabbedPage.SetHeaderIconsSize` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.SetHeaderIconsSize(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.TabbedPage},Xamarin.Forms.Size)) Metoda volitelně určuje velikost ikony záhlaví s [ `Size` ](xref:Xamarin.Forms.Size) hodnotu.
+
+Kromě toho `TabbedPage` třídy v `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` oboru názvů má také [ `EnableHeaderIcons` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.EnableHeaderIcons*) metodu, která umožňuje záhlaví ikony [ `DisableHeaderIcons` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.DisableHeaderIcons*) metodu, která zakáže záhlaví ikony, a [ `IsHeaderIconsEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.IsHeaderIconsEnabled*) metodu, která vrací `boolean` hodnotu, která určuje, jestli jsou povolené hlavičky ikony.
+
+Výsledkem je této stránce lze zobrazit ikony na [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage) panel nástrojů s velikost ikony je volitelně nastavit požadovaná velikost:
+
+![TabbedPage ikony povolené specifické pro platformu](windows-images/tabbedpage-icons.png "TabbedPage ikony povolené specifické pro platformu")
+
+<a name="visualelement-accesskeys" />
+
+## <a name="setting-visualelement-access-keys"></a>Nastavení VisualElement přístupové klíče
+
+Přístupové klíče jsou klávesové zkratky, které zlepšují použitelnost a přístupnost aplikace na univerzální platformě Windows tím, že poskytuje intuitivní způsob, jak uživatelé mohli rychle procházení a interakce s viditelné Uživatelském rozhraní aplikace pomocí klávesnice místo přes touch nebo myši. Jsou kombinací klávesy Alt a jeden nebo více alfanumerické klíčů, obvykle stisknutí postupně. Klávesové zkratky umožňují automaticky přístupové klíče, které používají jeden alfanumerický znak.
+
+Popisy kláves přístupu jsou plovoucí odznáčků zobrazí vedle ovládacích prvků, které zahrnují přístupové klíče. Každý přístup kláves obsahuje alfanumerické klíče, které aktivovat přidružený ovládací prvek. Pokud uživatel stiskne klávesu Alt, zobrazí se tipy klíčů přístup.
+
+Tento konkrétní platformy se používá k určení přístupového klíče pro [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). V XAML je využívá tak, že nastavíte [ `VisualElement.AccessKey` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyProperty) přidružená vlastnost na hodnotu alfanumerické znaky a volitelně můžete nastavením [ `VisualElement.AccessKeyPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyPlacementProperty) přidružená vlastnost na hodnotu [ `AccessKeyPlacement` ](xref:Xamarin.Forms.AccessKeyPlacement) výčet, [ `VisualElement.AccessKeyHorizontalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyHorizontalOffsetProperty) připojené vlastnosti `double`a [ `VisualElement.AccessKeyVerticalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyVerticalOffsetProperty) přidružená vlastnost `double`:
+
+```xaml
+<TabbedPage ...
+            xmlns:windows="clr-namespace:Xamarin.Forms.PlatformConfiguration.WindowsSpecific;assembly=Xamarin.Forms.Core">
+    <ContentPage Title="Page 1"
+                 windows:VisualElement.AccessKey="1">
+        <StackLayout Margin="20">
+            ...
+            <Switch windows:VisualElement.AccessKey="A" />
+            <Entry Placeholder="Enter text here"
+                   windows:VisualElement.AccessKey="B" />
+            ...
+            <Button Text="Access key F, placement top with offsets"
+                    Margin="20"
+                    Clicked="OnButtonClicked"
+                    windows:VisualElement.AccessKey="F"
+                    windows:VisualElement.AccessKeyPlacement="Top"
+                    windows:VisualElement.AccessKeyHorizontalOffset="20"
+                    windows:VisualElement.AccessKeyVerticalOffset="20" />
+            ...
+        </StackLayout>
+    </ContentPage>
+    ...
+</TabbedPage>
+```
+
+Alternativně může být používán z C# s použitím rozhraní fluent API:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
+...
+
+var page = new ContentPage { Title = "Page 1" };
+page.On<Windows>().SetAccessKey("1");
+
+var switchView = new Switch();
+switchView.On<Windows>().SetAccessKey("A");
+var entry = new Entry { Placeholder = "Enter text here" };
+entry.On<Windows>().SetAccessKey("B");
+...
+
+var button4 = new Button { Text = "Access key F, placement top with offsets", Margin = new Thickness(20) };
+button4.Clicked += OnButtonClicked;
+button4.On<Windows>()
+    .SetAccessKey("F")
+    .SetAccessKeyPlacement(AccessKeyPlacement.Top)
+    .SetAccessKeyHorizontalOffset(20)
+    .SetAccessKeyVerticalOffset(20);
+...
+```
+
+`VisualElement.On<Windows>` Metody Určuje, že toto specifické pro platformu lze spustit pouze na univerzální platformu Windows. [ `VisualElement.SetAccessKey` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.SetAccessKey(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement},System.String)) Metoda v [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) obor názvů, se používá k nastavení hodnotě klíče pro přístup `VisualElement`. [ `VisualElement.SetAccessKeyPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.SetAccessKeyPlacement(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement},Xamarin.Forms.AccessKeyPlacement)) Metoda, volitelně určuje umístění pro zobrazení popisu klávesy přístup pomocí [ `AccessKeyPlacement` ](xref:Xamarin.Forms.AccessKeyPlacement) výčet poskytuje následující možné hodnoty:
+
+- [`Auto`](xref:Xamarin.Forms.AccessKeyPlacement.Auto) – Označuje, že umístění kláves přístupu určí podle operačního systému.
+- [`Top`](xref:Xamarin.Forms.AccessKeyPlacement.Top) – Označuje, že přístup kláves budou zobrazovat nad horním okrajem `VisualElement`.
+- [`Bottom`](xref:Xamarin.Forms.AccessKeyPlacement.Bottom) – Označuje, že přístup kláves zobrazí pod spodní okraj `VisualElement`.
+- [`Right`](xref:Xamarin.Forms.AccessKeyPlacement.Right) – Označuje, že přístup kláves zobrazí napravo od pravého okraje `VisualElement`.
+- [`Left`](xref:Xamarin.Forms.AccessKeyPlacement.Left) – Označuje, že přístup kláves zobrazí nalevo od levého okraje `VisualElement`.
+- [`Center`](xref:Xamarin.Forms.AccessKeyPlacement.Center) – Označuje, že přístup kláves zobrazí překryté na střed `VisualElement`.
+
+> [!NOTE]
+> Obvykle [ `Auto` ](xref:Xamarin.Forms.AccessKeyPlacement.Auto) kláves umístění je dostačující, která zahrnuje podporu pro adaptivní uživatelská rozhraní.
+
+[ `VisualElement.SetAccessKeyHorizontalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.SetAccessKeyHorizontalOffset(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement},System.Double)) a [ `VisualElement.SetAccessKeyVerticalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.SetAccessKeyVerticalOffset(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement},System.Double)) metody lze použít pro podrobnější řízení přístup k poloze popisu klávesy. Argument `SetAccessKeyHorizontalOffset` metoda označuje, jak daleko přejdete přístup k popisu klávesy vlevo nebo vpravo a argument `SetAccessKeyVerticalOffset` metody Určuje, jak daleko přesunout přístup kláves nahoru nebo dolů.
+
+>[!NOTE]
+> Přístup k popisu klávesy posuny nelze nastavit, je-li nastavit umístění klíčů přístup `Auto`.
+
+Kromě toho [ `GetAccessKey` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.GetAccessKey(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement})), [ `GetAccessKeyPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.GetAccessKeyPlacement(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement})), [ `GetAccessKeyHorizontalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.GetAccessKeyHorizontalOffset(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement})), a [ `GetAccessKeyVerticalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.GetAccessKeyVerticalOffset(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement})) metody lze použít k načtení přístupového klíče hodnotu a jeho umístění.
+
+Výsledkem je, že popisy kláves přístup je možné zobrazit vedle některého [ `VisualElement` ](xref:Xamarin.Forms.VisualElement) instancí, které určují přístupové klíče, stisknutím klávesy Alt:
+
+![VisualElement přístupových klíčů specifické pro platformu](windows-images/visualelement-accesskeys.png "VisualElement přístupových klíčů pro konkrétní platformu")
+
+Když uživatel aktivuje přístupový klíč, stisknutím klávesy Alt, za nímž následuje přístup klíče, výchozí akce pro `VisualElement` se spustí. Například když uživatel aktivuje přístupového klíče na [ `Switch` ](xref:Xamarin.Forms.Switch), `Switch` přepne. Když uživatel aktivuje na přístupový klíč [ `Entry` ](xref:Xamarin.Forms.Entry), `Entry` získá fokus. Když uživatel aktivuje na přístupový klíč [ `Button` ](xref:Xamarin.Forms.Button), obslužné rutiny události pro [ `Clicked` ](xref:Xamarin.Forms.Button.Clicked) provedla událost.
+
+Další informace o přístupových klíčů najdete v tématu [přístupové klíče](/windows/uwp/design/input/access-keys#key-tip-positioning).
 
 ## <a name="summary"></a>Souhrn
 

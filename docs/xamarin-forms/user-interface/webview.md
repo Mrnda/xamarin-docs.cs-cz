@@ -1,49 +1,40 @@
 ---
 title: Webové zobrazení Xamarin.Forms
-description: Tento článek vysvětluje, jak používat webové zobrazení Xamarin.Forms třídy k dispozici místní nebo síťové webového obsahu a dokumentů pro uživatele.
+description: Tento článek vysvětluje způsob použití třídy Xamarin.Forms WebView prezentovat místní nebo síť webového obsahu a dokumenty pro uživatele.
 ms.prod: xamarin
 ms.assetid: E44F5D0F-DB8E-46C7-8789-114F1652A6C5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/09/2016
-ms.openlocfilehash: df004bd2a580e48137162d28ca3974521266ae7a
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
-ms.translationtype: MT
+ms.date: 07/10/2018
+ms.openlocfilehash: 55267dfb1439d17f09126f65973ce9e6a0247d80
+ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245641"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38986054"
 ---
 # <a name="xamarinforms-webview"></a>Webové zobrazení Xamarin.Forms
 
-[Webové zobrazení](https://developer.xamarin.com/api/type/Xamarin.Forms.WebView/) je zobrazení pro webové a HTML obsahu ve vaší aplikaci. Na rozdíl od `OpenUri`, který uživatel přejde na webový prohlížeč v zařízení, `WebView` zobrazí obsah HTML v aplikaci.
-
-Tato příručka se skládá z následujících částí:
-
-- **[Obsah](#Content)**  &ndash; webové zobrazení podporuje různé zdroje obsahu, včetně vložených HTML, webové stránky a řetězce HTML.
-- **[Navigační](#Navigation)**  &ndash; webové zobrazení zahrnuje podporu pro navigaci na konkrétní stránku a návratem.
-- **[Události](#Events)**  &ndash; naslouchat a reagovat na akce, které má uživatel ve webovém zobrazení.
-- **[Výkon](#Performance)**  &ndash; Další informace o charakteristiky výkonu webové zobrazení na jednotlivých platformách.
-- **[Oprávnění](#Permissions)**  &ndash; zjistěte, jak nastavit oprávnění tak, aby webové zobrazení bude fungovat ve vaší aplikaci.
-- **[Rozložení](#Layout)**  &ndash; webové zobrazení má některé velmi konkrétní požadavky na tom, jak je rozložená. Naučte se ujistěte se, že webové zobrazení zobrazí správně:
+[`WebView`](https://developer.xamarin.com/api/type/Xamarin.Forms.WebView/) je zobrazení pro webové a obsah ve formátu HTML v aplikaci. Na rozdíl od `OpenUri`, který uživatel přejde na webový prohlížeč na zařízení, `WebView` zobrazí obsah HTML ve svých aplikacích.
 
 ![](webview-images/in-app-browser.png "V prohlížeči aplikace")
 
 ## <a name="content"></a>Obsah
 
-Webové zobrazení teď obsahuje podporu pro následující typy obsahu:
+`WebView` podporuje následující typy obsahu:
 
-- Weby HTML a CSS &ndash; webové zobrazení má plnou podporu pro weby, které jsou zapsány pomocí HTML a CSS, včetně podpory jazyka JavaScript.
-- Dokumenty &ndash; vzhledem k tomu webové zobrazení je implementovaná pomocí nativní součásti na každou platformu, je webové zobrazení umožňuje zobrazení dokumentů, které je možné zobrazit na jednotlivých platformách. To znamená, že soubory PDF fungovat na iOS a Android.
-- Řetězce HTML &ndash; webové zobrazení můžete zobrazit řetězce HTML z paměti.
-- Místní soubory &ndash; webové zobrazení může být jakýkoli z výše uvedených obsahu typů vložených v aplikaci.
+- Weby HTML a CSS &ndash; WebView má plnou podporu pro weby napsané s využitím HTML a CSS, včetně podpory jazyka JavaScript.
+- Dokumenty &ndash; vzhledem k tomu, že WebView je implementováno pomocí nativní součásti na jednotlivých platformách, je WebView umožňuje zobrazení dokumentů, které jsou zobrazené na jednotlivých platformách. To znamená, že soubory PDF fungovat v Iosu a Androidu.
+- Řetězce ve formátu HTML &ndash; WebView můžete zobrazit řetězce ve formátu HTML z paměti.
+- Místní soubory &ndash; WebView s sebou může nést některé z výše uvedených typů obsahu vložený do aplikace.
 
 > [!NOTE]
-> `WebView` v systému Windows nepodporuje program Silverlight, Flash nebo všechny ovládací prvky ActiveX i v případě, že se na této platformě se aplikace Internet Explorer nepodporuje.
+> `WebView` na Windows nepodporuje program Silverlight, Flash nebo ovládací prvky ActiveX, i v případě, že podporuje Internet Exploreru na této platformě.
 
 ### <a name="websites"></a>Weby
 
-Chcete-li zobrazit webovou stránku z Internetu, nastavte `WebView`na [ `Source` ](https://developer.xamarin.com/api/type/Xamarin.Forms.WebViewSource/) vlastnost řetězce adresy URL:
+Zobrazit webu z Internetu, nastavte `WebView`společnosti [ `Source` ](https://developer.xamarin.com/api/type/Xamarin.Forms.WebViewSource/) nastavte na řetězec URL:
 
 ```csharp
 var browser = new WebView {
@@ -52,16 +43,16 @@ var browser = new WebView {
 ```
 
 > [!NOTE]
-> Adresy URL musí být plně vytvořen s protokol zadaný (tj. musí mít "http://" nebo "https://" přidá jako předpona k němu).
+> Adresy URL musí být plně vytvořen s zadán protokol (například musí mít "http://" nebo "https://" pro jeho).
 
-#### <a name="ios-and-ats"></a>iOS a ATS
+#### <a name="ios-and-ats"></a>zařízení s iOS a ATS
 
 Od verze 9 iOS Povolit jenom aplikace ke komunikaci se servery, které implementují osvědčené postupy zabezpečení ve výchozím nastavení. Hodnoty musí být nastavena v `Info.plist` k umožnění komunikace s nezabezpečené servery.
 
 > [!NOTE]
-> Pokud vaše aplikace vyžaduje připojení k nezabezpečené webové stránky, by měla vždycky zadejte doménu jako výjimky pomocí `NSExceptionDomains` místo vypnutí úplně pomocí ATS `NSAllowsArbitraryLoads`. `NSAllowsArbitraryLoads` lze používat pouze v případě extrémně nouze.
+> Pokud vaše aplikace vyžaduje připojení k webu služby nezabezpečené, by měla vždy zadejte doménu jako výjimku pomocí `NSExceptionDomains` místo vypnutí ATS zcela pomocí `NSAllowsArbitraryLoads`. `NSAllowsArbitraryLoads` by měla sloužit pouze v případě extreme nouze.
 
-Následující ukazuje, jak povolit konkrétní domény (v této případu xamarin.com) obejít ATS požadavky:
+Následující příklad ukazuje, jak obejít požadavky na ATS povolit konkrétní domény (v tomto případu xamarin.com):
 
 ```xml
 <key>NSAppTransportSecurity</key>
@@ -81,7 +72,7 @@ Následující ukazuje, jak povolit konkrétní domény (v této případu xamar
     </dict>
 ```
 
-Je vhodné povolit jenom některé domény obejít ATS, budete moci použít důvěryhodných serverů při využívání dodatečné zabezpečení v nedůvěryhodných doménách. Následující ukazuje méně bezpečná metoda zakázání ATS pro aplikaci:
+Je osvědčeným postupem je povolit pouze některé domény obejít ATS, abyste mohli používat důvěryhodných serverů při využívání dodatečné zabezpečení v nedůvěryhodných doménách. Následující příklad ukazuje metodu méně bezpečné zakázat ATS pro aplikaci:
 
 ```xml
 <key>NSAppTransportSecurity</key>
@@ -91,11 +82,11 @@ Je vhodné povolit jenom některé domény obejít ATS, budete moci použít dů
     </dict>
 ```
 
-V tématu [zabezpečení přenosu aplikace](~/ios/app-fundamentals/ats.md) Další informace o této nové funkce v systému iOS 9.
+Zobrazit [App Transport Security](~/ios/app-fundamentals/ats.md) Další informace o této nové funkce v systému iOS 9.
 
-### <a name="html-strings"></a>Řetězce HTML
+### <a name="html-strings"></a>Řetězce ve formátu HTML
 
-Pokud chcete nabízet řetězec dynamicky definované v kódu HTML, budete muset vytvořit instanci [ `HtmlWebViewSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.HtmlWebViewSource/):
+Pokud chcete předložit řetězec dynamicky definované v kódu HTML, budete muset vytvořit instanci [ `HtmlWebViewSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.HtmlWebViewSource/):
 
 ```csharp
 var browser = new WebView();
@@ -107,13 +98,13 @@ htmlSource.Html = @"<html><body>
 browser.Source = htmlSource;
 ```
 
-![](webview-images/html-string.png "Řetězec HTML zobrazení webového zobrazení")
+![](webview-images/html-string.png "Řetězec HTML zobrazení WebView")
 
-Ve výše uvedeném kódu `@` slouží k označení HTML jako řetězec literálu, což znamená, jsou ignorovány všechny obvyklé řídicí znaky.
+Ve výše uvedeném kódu `@` slouží k označení HTML jako řetězec literálu, což znamená obvyklé řídicí znaky se ignorují.
 
-### <a name="local-html-content"></a>Místní obsah HTML
+### <a name="local-html-content"></a>Místní obsah ve formátu HTML
 
-Webové zobrazení můžete zobrazit obsah z HTML, CSS a Javascript vložených v rámci aplikace. Příklad:
+Webové zobrazení můžete zobrazit obsah z HTML, CSS a Javascript vložené v rámci aplikace. Příklad:
 
 ```html
 <html>
@@ -128,7 +119,7 @@ Webové zobrazení můžete zobrazit obsah z HTML, CSS a Javascript vložených 
 </html>
 ```
 
-CSS:
+ŠABLONY STYLŮ CSS:
 
 ```css
 html,body {
@@ -140,27 +131,27 @@ body,p,h1 {
 }
 ```
 
-Všimněte si, že písem zadaný výše uvedené šablony stylů CSS muset přizpůsobit pro každou platformu, ne každá platforma má písma.
+Všimněte si, že písma podle výše uvedené šablony stylů CSS muset přizpůsobená pro každou platformu, protože ne každá platforma má stejné písma.
 
-Zobrazení místní obsahu pomocí `WebView`, budete muset otevřít soubor HTML jako libovolný jiný a pak načíst obsah jako řetězec do `Html` vlastnost `HtmlWebViewSource`. Další informace o otevírání souborů najdete v tématu [práce se soubory](~/xamarin-forms/app-fundamentals/files.md).
+K zobrazení místní obsahu pomocí `WebView`, budete muset otevřít soubor HTML jako u všech ostatních a pak načíst obsah jako řetězec do `Html` vlastnost `HtmlWebViewSource`. Další informace o otevírání souborů najdete v tématu [práce se soubory](~/xamarin-forms/app-fundamentals/files.md).
 
 Na následujících snímcích obrazovky zobrazit výsledek zobrazení místní obsah na jednotlivých platformách:
 
-![](webview-images/local-content.png "Místní obsah zobrazení webového zobrazení")
+![](webview-images/local-content.png "Místní obsah zobrazení WebView")
 
-I když byl načten na první stránku, `WebView` nemá žádné informace o odkud HTML pochází. Problém, je při plánování práce s stránky, které odkazují na místních prostředků. Příklady, při které by se mohlo stát zahrnout při stránky pro místní odkazu, který pro každý další stránky umožňuje použití samostatného souboru, JavaScript, stránka obsahuje odkazy na šablony stylů CSS.  
+I když se načetl první stránka, `WebView` nemá žádné znalosti jazyka HTML, odkud. To je problém při zpracování komplexnějších stránky, které odkazují na místní prostředky. Když, který může dojít, příklady při propojení místní stránky, na všechny ostatní stránky díky použití samostatného souboru, JavaScript nebo stránka obsahuje odkazy na šablony stylů CSS.  
 
-Chcete-li tento problém vyřešit, je třeba sdělit `WebView` kde najít souborů na systém souborů. Udělat nastavením `BaseUrl` vlastnost `HtmlWebViewSource` používané `WebView`.
+Tento problém vyřešit, budete muset zjistit, `WebView` kde najít soubory v systému souborů. To udělat tak, že nastavíte `BaseUrl` vlastnost `HtmlWebViewSource` používané `WebView`.
 
-Protože systém souborů na všech operačních systémech liší, je nutné určit tuto adresu URL na každou platformu. Zpřístupní Xamarin.Forms `DependencyService` pro řešení závislostí za běhu na každou platformu.
+Protože se ze systému souborů na všech operačních systémech liší, je potřeba určit tuto adresu URL na jednotlivých platformách. Xamarin.Forms zpřístupňuje `DependencyService` pro vyřešení závislostí v době běhu na jednotlivých platformách.
 
-Použít `DependencyService`, nejprve definovat rozhraní, které může být implementováno na každou platformu:
+Použít `DependencyService`, nejdříve definujte rozhraní, které je možné implementovat na jednotlivých platformách:
 
 ```csharp
 public interface IBaseUrl { string Get(); }
 ```
 
-Všimněte si, že dokud rozhraní je implementováno na každou platformu, aplikace se nespustí. Ujistěte se, nezapomeňte nastavit v běžné projektu `BaseUrl` pomocí `DependencyService`:
+Všimněte si, že dokud rozhraní je implementováno na jednotlivých platformách, aplikace se nespustí. V běžných projektu, ujistěte se, že nezapomeňte nastavit `BaseUrl` pomocí `DependencyService`:
 
 ```csharp
 var source = new HtmlWebViewSource();
@@ -171,7 +162,7 @@ Pak je třeba zadat implementace rozhraní pro každou platformu.
 
 #### <a name="ios"></a>iOS
 
-V systému iOS, webový obsah by měla být umístěná v kořenovém adresáři projektu nebo **prostředky** adresář pomocí akce sestavení *BundleResource*, jak je znázorněno níže:
+V systémech iOS, webový obsah musí nacházet v kořenovém adresáři projektu nebo **prostředky** adresáře s akcí sestavení *BundleResource*, jak je znázorněno níže:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -183,7 +174,7 @@ V systému iOS, webový obsah by měla být umístěná v kořenovém adresáři
 
 -----
 
-`BaseUrl` By měl být nastavený na cestu hlavní sady:
+`BaseUrl` By mělo být nastavené cesta hlavní sady:
 
 ```csharp
 [assembly: Dependency (typeof (BaseUrl_iOS))]
@@ -198,19 +189,19 @@ namespace WorkingWithWebview.iOS{
 
 #### <a name="android"></a>Android
 
-V systému Android, umístěte do složky prostředky pomocí akce sestavení jazyka HTML, CSS a bitové kopie *AndroidAsset* jak je ukázáno níže:
+V Androidu, umístěte do složky prostředky s akcí sestavení HTML, CSS a obrázky *AndroidAsset* jak je znázorněno níže:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-![](webview-images/android-vs.png "Místní soubory v systému Android")
+![](webview-images/android-vs.png "Místní soubory v Androidu")
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-![](webview-images/android-xs.png "Místní soubory v systému Android")
+![](webview-images/android-xs.png "Místní soubory v Androidu")
 
 -----
 
-V systému Android `BaseUrl` musí být nastavena na `"file:///android_asset/"`:
+V systému Android `BaseUrl` by mělo být nastavené `"file:///android_asset/"`:
 
 ```csharp
 [assembly: Dependency (typeof(BaseUrl_Android))]
@@ -223,7 +214,7 @@ namespace WorkingWithWebview.Android {
 }
 ```
 
-V systému Android se soubory **prostředky** složky lze také přistupovat prostřednictvím aktuální Android kontext, který je zveřejněný prostřednictvím `MainActivity.Instance` vlastnost:
+V systému Android se soubory **prostředky** složky lze rovněž přistupovat pomocí aktuálního kontextu s Androidem, která je vystavená nástroji `MainActivity.Instance` vlastnost:
 
 ```csharp
 var assetManager = MainActivity.Instance.Assets;
@@ -234,9 +225,9 @@ using (var streamReader = new StreamReader (assetManager.Open ("local.html"))) {
 
 #### <a name="universal-windows-platform"></a>Univerzální platforma pro Windows
 
-V projektech univerzální platformu Windows (UWP), umístěte HTML, CSS a obrázků v kořenu projektu pomocí akce sestavení nastavena na *obsahu*.
+V projektech univerzální platformy Windows (UPW), umístěte HTML, CSS a obrázků v kořenové složce projektu s akcí sestavení nastavena na *obsahu*.
 
-`BaseUrl` Musí být nastavena na `"ms-appx-web:///"`:
+`BaseUrl` By mělo být nastavené `"ms-appx-web:///"`:
 
 ```csharp
 [assembly: Dependency(typeof(BaseUrl))]
@@ -254,20 +245,20 @@ namespace WorkingWithWebview.UWP
 
 ## <a name="navigation"></a>Navigace
 
-Webové zobrazení podporuje navigační pomocí několika metod a vlastností, které jsou k dispozici:
+WebView podporuje navigaci pomocí několika metod a vlastností, které jsou k dispozici:
 
-- **GoForward()** &ndash; Pokud `CanGoForward` má hodnotu true, volání `GoForward` dál přejde na další navštívené stránky.
-- **GoBack()** &ndash; Pokud `CanGoBack` má hodnotu true, volání `GoBack` bude přejděte na poslední navštívené stránky.
-- **CanGoBack** &ndash; `true` Pokud jsou stránky přejděte zpět na `false` Pokud v prohlížeči na počáteční adrese URL.
-- **CanGoForward** &ndash; `true` Pokud uživatel přešel zpětné a můžete přejít na stránku, který byl již navštívil.
+- **GoForward()** &ndash; Pokud `CanGoForward` má hodnotu true, volání `GoForward` přejde na další navštívené stránky.
+- **GoBack()** &ndash; Pokud `CanGoBack` má hodnotu true, volání `GoBack` přejdete na poslední navštívené stránky.
+- **CanGoBack** &ndash; `true` Pokud nejsou stránky přejděte zpátky na `false` Pokud prohlížeč je na výchozí adrese URL.
+- **CanGoForward** &ndash; `true` Pokud uživatel přešel zpětně a můžete přejít na stránku, která byla již zobrazeny.
 
-V rámci stránky `WebView` nepodporuje více touch gesta. Je důležité zajistit, tento obsah je optimalizovaný pro mobilní a zobrazí se bez nutnosti přiblížení a oddálení.
+V rámci stránky `WebView` nepodporuje více dotyků gesta. Je důležité k Ujistěte se, že tento obsah je optimalizované pro mobilní zařízení a zobrazí se bez nutnosti měřítka.
 
-Je běžné pro aplikace zobrazíte odkaz v rámci `WebView`, místo prohlížeč v zařízení. V těchto situacích je užitečné pro běžné procházení, ale když přístupů uživatele zpět době, kdy jsou na počáteční odkaz, aplikace by měla vrátit do zobrazení normální aplikace.
+Je běžné, že k zobrazení odkazu v rámci aplikace `WebView`, místo prohlížeč zařízení. V takových situacích je vhodné povolit normální navigace, ale při přístupů uživatele zpět, pokud nejsou na výchozí odkaz, aplikace by měla vrátit do zobrazení normální aplikace.
 
-Pomocí předdefinovaných navigační metody a vlastnosti Pokud chcete povolit tento scénář.
+Povolit tento scénář pomocí předdefinovaných navigační metody a vlastnosti.
 
-Začněte vytvořením stránky pro zobrazení prohlížeče:
+Začněte vytvořením stránka pro zobrazení prohlížeče:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -321,16 +312,16 @@ public partial class InAppDemo : ContentPage
 
 Je to!
 
-![](webview-images/in-app-browser.png "Webové zobrazení navigačních tlačítek")
+![](webview-images/in-app-browser.png "WebView navigačních tlačítek")
 
 ## <a name="events"></a>Události
 
-Webové zobrazení vyvolává dvě události můžete reagovat na změny ve stavu:
+WebView vyvolává dvě události můžete reagovat na změny stavu:
 
-- **Navigace** &ndash; událost se vyvolá, když webové zobrazení začne načítání nové stránky.
-- **Přešli** &ndash; událostí vyvolá, když načtení stránky a navigační byla zastavena.
+- **Navigace** &ndash; Událost aktivovaná při zahájení přicházet načtení nové stránky.
+- **Přejde** &ndash; Událost aktivovaná při načtení stránky a navigace se zastavila.
 
-Pokud očekáváte, že pomocí webových stránek, které trvat dlouhou dobu načíst, zvažte použití těchto událostí k implementaci indikátor stavu. XAML například vypadá takto:
+Pokud očekáváte, že pomocí webové stránky, které trvat dlouhou dobu načítání, zvažte použití těchto událostí k implementaci indikátor stavu. XAML vypadá třeba takto:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -353,7 +344,7 @@ x:Class="WebViewDemo.LoadingDemo" Title="Loading Demo">
 </ContentPage>
 ```
 
-Obslužné rutiny dvou událostí:
+Obslužné rutiny událostí dvě:
 
 ```csharp
 void webOnNavigating (object sender, WebNavigatingEventArgs e)
@@ -369,33 +360,33 @@ void webOnEndNavigating (object sender, WebNavigatedEventArgs e)
 
 Výsledkem je následující výstup (načítání):
 
-![](webview-images/loading-start.png "Příklad událostí navigace webového zobrazení")
+![](webview-images/loading-start.png "Příklad události navigace WebView")
 
-Dokončení načítání:
+Dokončeno načítání:
 
-![](webview-images/loading-end.png "Příklad navigaci události webového zobrazení")
+![](webview-images/loading-end.png "Příklad události přejde WebView")
 
 ## <a name="performance"></a>Výkon
 
-Viděli jste poslední zálohy, každý z oblíbených webových prohlížečů jako hardwaru accelerated vykreslování a JavaScript kompilace přijme technologie. Bohužel se z důvodu omezení zabezpečení, většinu těchto rozvoj nebyly k dispozici v iOS-equaivalent z `WebView`, `UIWebView`. Xamarin.Forms `WebView` používá `UIWebView`. Pokud tento způsob problém, budete potřebovat k zápisu tohoto používá vlastní zobrazovací jednotky `WKWebView`, který podporuje rychlejší procházení. Všimněte si, že `WKWebView` je podporována pouze v systému iOS 8 a novější.
+Mnohojádrových viděli každý z oblíbených webových prohlížečů přijímá technologie jako hardware accelerated vykreslování a kompilace jazyka JavaScript. Bohužel z důvodu omezení zabezpečení, většinu těchto pokroků nebyly k dispozici v equaivalent iOS z `WebView`, `UIWebView`. Xamarin.Forms `WebView` používá `UIWebView`. Pokud se jedná o problém, musíte napsat vlastní zobrazovací jednotky, který používá `WKWebView`, která podporuje rychlejší procházení. Všimněte si, že `WKWebView` se podporuje jenom na iOS 8 a novější.
 
-Webové zobrazení v systému Android ve výchozím nastavení je přibližně tak rychlý jako prohlížeče integrované.
+WebView na Androidu ve výchozím nastavení je přibližně stejně rychlé jako prohlížeče integrované.
 
-[Webové zobrazení UWP](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/web-view) používá modul vykreslování Microsoft Edge. Zařízení Desktop a tablet měli vidět stejného výkonu jako pomocí prohlížeče Edge sám sebe.
+[UPW WebView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/web-view) používá vykreslovací modul Microsoft Edge. Zařízení pro Desktop a tabletu měli vidět stejný výkon jako při použití samotného prohlížeče Edge.
 
 ## <a name="permissions"></a>Oprávnění
 
-Aby `WebView` postup, musíte zkontrolovat, zda jsou oprávnění nastavena pro každou platformu. Všimněte si, že se na některých platformách `WebView` bude fungovat v režimu ladění, ale ne v případě, že vytvořené pro verzi. Je to způsobeno některá oprávnění, jako jsou ty, pro přístup k Internetu v systému Android, jsou nastavené ve výchozím nastavení Visual Studio pro Mac v režimu ladění.
+Aby `WebView` pro práci, ujistěte se, že jsou oprávnění nastavena pro každou platformu. Všimněte si, že na některých platformách `WebView` bude fungovat v režimu ladění, ale ne v případě, že je vytvořená pro vydání. Důvodem je, některá oprávnění pro přístup k Internetu v Androidu, jako jsou nastaveny ve výchozím nastavení sada Visual Studio pro Mac v režimu ladění.
 
-- **UWP** &ndash; při zobrazování obsahu sítě vyžaduje schopnost Internet (klient a Server).
-- **Android** &ndash; vyžaduje `INTERNET` jenom v případě, že zobrazování obsahu ze sítě. Místní obsah vyžaduje žádná zvláštní oprávnění.
+- **UPW** &ndash; při zobrazení obsahu sítě vyžaduje funkci Internet (klient a Server).
+- **Android** &ndash; vyžaduje `INTERNET` pouze při zobrazení obsahu ze sítě. Místnímu obsahu stačí žádná zvláštní oprávnění.
 - **iOS** &ndash; vyžaduje žádná zvláštní oprávnění.
 
 ## <a name="layout"></a>Rozložení
 
-Na rozdíl od většiny ostatních zobrazeních Xamarin.Forms `WebView` vyžaduje, aby `HeightRequest` a `WidthRequest` jsou uvedeny během obsažené v StackLayout nebo RelativeLayout. Pokud se nepodaří zadejte tyto vlastnosti `WebView` nebude vykreslovat.
+Na rozdíl od většiny jiných zobrazení Xamarin.Forms `WebView` vyžaduje, aby `HeightRequest` a `WidthRequest` jsou zadány, pokud je obsažen v StackLayout nebo RelativeLayout. Pokud chcete zadat tyto vlastnosti `WebView` se nevykreslí.
 
-Následující příklady ukazují rozložení, jejichž výsledkem funkční, vykreslování `WebView`s:
+Následující příklady ukazují rozložení, jejichž výsledkem je funkční, vykreslování `WebView`s:
 
 StackLayout s WidthRequest & HeightRequest:
 
@@ -436,7 +427,7 @@ AbsoluteLayout *bez* WidthRequest & HeightRequest:
 </AbsoluteLayout>
 ```
 
-Mřížky *bez* WidthRequest & HeightRequest. Mřížka je jedním z několika rozložení, které nevyžaduje zadání požadovanou výšku a šířku.:
+Mřížka *bez* WidthRequest & HeightRequest. Mřížka je jedním z několika rozložení, které nevyžaduje, zadáte požadované výšky a šířky.:
 
 ```xaml
 <Grid>
@@ -449,8 +440,41 @@ Mřížky *bez* WidthRequest & HeightRequest. Mřížka je jedním z několika r
 </Grid>
 ```
 
+## <a name="invoking-javascript"></a>Volání jazyka JavaScript
+
+[ `WebView` ](xref:Xamarin.Forms.WebView) Zahrnuje schopnost vyvolat funkci jazyka JavaScript z jazyka C# a vrátí výsledek volajícímu kódu C#. Toho se dosahuje pomocí [ `WebView.EvaluateJavaScriptAsync` ](xref:Xamarin.Forms.WebView.EvaluateJavaScriptAsync*) metodu, která je znázorněná v následujícím příkladu z [WebView](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/WebView) vzorku:
+
+```csharp
+var numberEntry = new Entry { Text = "5" };
+var resultLabel = new Label();
+var webView = new WebView();
+...
+
+int number = int.Parse(numberEntry.Text);
+string result = await webView.EvaluateJavaScriptAsync($"factorial({number})");
+resultLabel.Text = $"Factorial of {number} is {result}.";
+```
+
+[ `WebView.EvaluateJavaScriptAsync` ](xref:Xamarin.Forms.WebView.EvaluateJavaScriptAsync*) Metoda vyhodnocuje jazyka JavaScript, který je zadaný jako argument a vrátí výsledek jako `string`. V tomto příkladu `factorial` je vyvolána funkce JavaScriptu, která vrátí faktoriál `number` ve výsledku. Tento jazyk JavaScript funkce je definována v místním jazyce HTML soubor, který [ `WebView` ](xref:Xamarin.Forms.WebView) načítá a zobrazuje se v následujícím příkladu:
+
+```html
+<html>
+<body>
+<script type="text/javascript">
+function factorial(num) {
+        if (num === 0 || num === 1)
+            return 1;
+        for (var i = num - 1; i >= 1; i--) {
+            num *= i;
+        }
+        return num;
+}
+</script>
+</body>
+</html>
+```
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Práce s webové zobrazení (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithWebview/)
-- [Webové zobrazení (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/WebView)
+- [Práce s WebView (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithWebview/)
+- [WebView (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/WebView)

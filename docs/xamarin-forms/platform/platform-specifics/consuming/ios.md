@@ -6,13 +6,13 @@ ms.assetid: C0837996-A1E8-47F9-B3A8-98EE43B4A675
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/30/2018
-ms.openlocfilehash: be378a60a9d9a7b206b64f07ee70edb432cec8e3
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
-ms.translationtype: MT
+ms.date: 07/11/2018
+ms.openlocfilehash: 29cb00c100918bf03efe3f078c366750080c0627
+ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935651"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38986145"
 ---
 # <a name="ios-platform-specifics"></a>iOS specifik platforem
 
@@ -31,6 +31,8 @@ V systémech iOS Xamarin.Forms obsahuje následující specifika platforem:
 - Řízení, zda [ `ScrollView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) zpracovává gesta dotykového ovládání a předává je na jeho obsah. Další informace najdete v tématu [zpoždění v obsahu dnešní v ScrollView](#delay_content_touches).
 - Nastavení stylu oddělovač na [ `ListView` ](xref:Xamarin.Forms.ListView). Další informace najdete v tématu [nastavení styl oddělovače ListView](#listview-separatorstyle).
 - Zakázat režim starší verze barvy na podporované [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Další informace najdete v tématu [zakázání barevný režim starší verze](#legacy-color-mode).
+- Povolení vrhá stín na [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Další informace najdete v tématu [povolení stínem vyřadit](#drop-shadow).
+- Povolení [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer) v posouvání zobrazení k zaznamenání a sdílení pan gesta s možností posouvání zobrazení. Další informace najdete v tématu [povolení souběžných rozpoznání gest Pan](#simultaneous-pan-gesture).
 
 <a name="blur" />
 
@@ -65,6 +67,9 @@ boxView.On<iOS>().UseBlurEffect(BlurEffectStyle.ExtraLight);
 Výsledkem je, že zadané [ `BlurEffectStyle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle/) platí pro [ `BoxView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/) instance, které rozostření [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) vrstvy pod ní:
 
 ![](ios-images/blur-effect.png "Rozostření efekt specifické platformy")
+
+> [!NOTE]
+> Při přidávání efekt rozostření [ `VisualElement` ](xref:Xamarin.Forms.VisualElement), dotyků bude i nadále přijímat podle `VisualElement`.
 
 <a name="large_title" />
 
@@ -550,10 +555,98 @@ Výsledkem je, že lze zakázat režim starší verze barvy tak, aby zůstaly ba
 > [!NOTE]
 > Při nastavování [ `VisualStateGroup` ](xref:Xamarin.Forms.VisualStateGroup) zobrazení, se starší verze barevným režimem zcela ignoruje. Další informace o vizuálních stavů najdete v tématu [The Xamarin.Forms Visual State Managerem](~/xamarin-forms/user-interface/visual-state-manager.md).
 
+<a name="drop-shadow" />
+
+## <a name="enabling-a-drop-shadow"></a>Povolení vrhá stín
+
+Tento konkrétní platformy se používá k povolení vrhá stín na [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). V XAML je využívá tak, že nastavíte [ `VisualElement.IsShadowEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.IsShadowEnabledProperty) připojené vlastnosti `true`, spolu s celou řadou dalších volitelné připojené vlastnosti, které řídí vrhá stín:
+
+```xaml
+<ContentPage ...
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core">
+    <StackLayout Margin="20">
+        <BoxView ...
+                 ios:VisualElement.IsShadowEnabled="true"
+                 ios:VisualElement.ShadowColor="Purple"
+                 ios:VisualElement.ShadowOpacity="0.7"
+                 ios:VisualElement.ShadowRadius="12">
+            <ios:VisualElement.ShadowOffset>
+                <Size>
+                    <x:Arguments>
+                        <x:Double>10</x:Double>
+                        <x:Double>10</x:Double>
+                    </x:Arguments>
+                </Size>
+            </ios:VisualElement.ShadowOffset>
+         </BoxView>
+        ...
+    </StackLayout>
+</ContentPage>
+```
+
+Alternativně může být používán z C# s použitím rozhraní fluent API:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+...
+
+var boxView = new BoxView { Color = Color.Aqua, WidthRequest = 100, HeightRequest = 100 };
+boxView.On<iOS>()
+       .SetIsShadowEnabled(true)
+       .SetShadowColor(Color.Purple)
+       .SetShadowOffset(new Size(10,10))
+       .SetShadowOpacity(0.7)
+       .SetShadowRadius(12);
+```
+
+`VisualElement.On<iOS>` Metody Určuje, že se tento konkrétní platformy spustí pouze v systému iOS. [ `VisualElement.SetIsShadowEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.SetIsShadowEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement},System.Boolean)) Metoda v [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) obor názvů, je slouží ke kontrole, jestli je zapnutá vrhá stín `VisualElement`. Kromě toho může být vyvolána následující metody pro ovládací prvek vrhá stín:
+
+- [`SetShadowColor`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.SetShadowColor(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement},Xamarin.Forms.Color)) – Nastaví barvu vrhá stín. Výchozí barva je [ `Color.Default` ](xref:Xamarin.Forms.Color.Default*).
+- [`SetShadowOffset`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.SetShadowOffset(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement},Xamarin.Forms.Size)) – Nastaví posunutí vrhá stín. Posun změny směr stínu dopadá a je zadán jako [ `Size` ](xref:Xamarin.Forms.Size) hodnotu. `Size` Struktura hodnoty jsou vyjádřeny v jednotkách nezávislých na zařízení, první hodnota je vzdálenost (zápornou hodnotu) doleva nebo doprava (kladná hodnota) a druhá hodnota se výše uvedené vzdálenosti (zápornou hodnotu) nebo dole (kladná hodnota) . Výchozí hodnota této vlastnosti je (0.0, 0.0), výsledek bude stín právě kolem každé straně přetypovat `VisualElement`.
+- [`SetShadowOpacity`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.SetShadowOpacity(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement},System.Double)) – Nastaví neprůhlednost vrhá stín s hodnotou, je v rozsahu od 0,0 (transparentní) 1.0 (neprůhledné). Neprůhlednost výchozí hodnota je 0,5.
+- [`SetShadowRadius`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.SetShadowRadius(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement},System.Double)) – Nastaví rozostření poloměru použitá k vykreslení vrhá stín. Výchozí hodnota protokolu radius je 10.0.
+
+> [!NOTE]
+> Stav vrhá stín může být dotázán pomocí volání [ `GetIsShadowEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.GetIsShadowEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement})), [ `GetShadowColor` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.GetShadowColor(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement})), [ `GetShadowOffset` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.GetShadowOffset(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement})), [ `GetShadowOpacity` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.GetShadowOpacity(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement})), a [ `GetShadowRadius` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.GetShadowRadius(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement})) metody.
+
+Výsledkem je, že lze povolit vrhá stín [ `VisualElement` ](xref:Xamarin.Forms.VisualElement):
+
+![](ios-images/drop-shadow.png "Vrhá stín povoleno")
+
+<a name="simultaneous-pan-gesture" />
+
+## <a name="enabling-simultaneous-pan-gesture-recognition"></a>Povolení rozpoznávání gest souběžných Pan
+
+Když [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer) je připojen k zobrazení v posouvání zobrazení, všechny pan gesta jsou zachyceny na základě `PanGestureRecognizer` a nebudou předány posouvání zobrazení. Proto se už posune posouvání zobrazení.
+
+Povolí toto specifické pro platformu `PanGestureRecognizer` v posouvání zobrazení k zaznamenání a sdílení pan gesta s možností posouvání zobrazení. V XAML je využívá tak, že nastavíte [ `Application.PanGestureRecognizerShouldRecognizeSimultaneously` ](https://docs.microsoft.com/en-us/dotnet/api/xamarin.forms.platformconfiguration.iosspecific.application.pangesturerecognizershouldrecognizesimultaneouslyproperty?view=xamarin-forms) připojené vlastnosti `true`:
+
+```xaml
+<Application ...
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Application.PanGestureRecognizerShouldRecognizeSimultaneously="true">
+    ...
+</Application>
+```
+
+Alternativně může být používán z C# s použitím rozhraní fluent API:
+
+```csharp
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+...
+
+Xamarin.Forms.Application.Current.On<iOS>().SetPanGestureRecognizerShouldRecognizeSimultaneously(true);
+```
+
+`Application.On<iOS>` Metody Určuje, že se tento konkrétní platformy spustí pouze v systému iOS. [ `Application.SetPanGestureRecognizerShouldRecognizeSimultaneously` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.iosspecific.application.setpangesturerecognizershouldrecognizesimultaneously?view=xamarin-forms) Metoda v [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) obor názvů, je slouží ke kontrole, jestli je pro rozpoznávání gest posouvání v posouvání zobrazení se zachytit gesta pan nebo zachycení a sdílení posun gesta s možností posouvání zobrazení. Kromě toho [ `Application.GetPanGestureRecognizerShouldRecognizeSimultaneously` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.iosspecific.application.getpangesturerecognizershouldrecognizesimultaneously?view=xamarin-forms) lze metoda vrátí, zda gesta pan dostaly posouvání zobrazení, která obsahuje [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer).
+
+Proto se tento konkrétní platformy povolena, když [ `ListView` ](xref:Xamarin.Forms.ListView) obsahuje [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer), i `ListView` a `PanGestureRecognizer` obdrží pan gesta a ji zpracovat. Avšak v této konkrétní platformy zakázán, když `ListView` obsahuje `PanGestureRecognizer`, `PanGestureRecognizer` zachytíte pan gesta a zpracovávat je a `ListView` neobdrží gesta pan.
+
 ## <a name="summary"></a>Souhrn
 
 V tomto článku jsme vám ukázali jak využívat iOS specifik platforem, které jsou součástí Xamarin.Forms. Specifika platforem umožňují používat funkce, která je dostupná jenom na konkrétní platformě, bez implementace vlastní renderery nebo účinky.
-
 
 ## <a name="related-links"></a>Související odkazy
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: ff707cdf73665ae07881d2d17ec837a4cfacaca0
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
-ms.translationtype: MT
+ms.openlocfilehash: 652c9cc51f68bee8229b8c5a7684ea872ab6f404
+ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935368"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38986067"
 ---
 # <a name="xamarinforms-device-class"></a>Třída zařízení Xamarin.Forms
 
@@ -75,6 +75,7 @@ layout.Margin = new Thickness(5, top, 5, 0);
 -  **Tablet** – iPad, zařízení s Windows a androidem širší než 600 vyhrazené IP adresy ^
 -  **Desktop** – pouze pro vrácené v [aplikací pro UWP](~/xamarin-forms/platform/windows/installation/index.md) na stolní počítače s Windows 10 (vrátí `Phone` na mobilních zařízeních Windows, včetně v situacích Continuum)
 -  **TV** – Tizen TV zařízení
+-  **Sledování** – Tizen sledování zařízení
 -  **Nepodporovaná** – nepoužívané
 
 *^ vyhrazené IP adresy není nutně počet fyzických pixelů*
@@ -193,4 +194,4 @@ Xamarin.Forms `Device` třída umožňuje detailní kontrolu nad funkce a rozlo�
 
 - [Ukázkové zařízení](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithDevice/)
 - [Ukázka styly](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
-- [Zařízení](xref:Xamarin.Forms.Device)
+- [zařízení](xref:Xamarin.Forms.Device)

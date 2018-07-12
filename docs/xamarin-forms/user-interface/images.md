@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: ea7ec0d297e144966f8ff7545e6b12160f66c9b0
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
-ms.translationtype: MT
+ms.openlocfilehash: f55a7878be898cbae5681d628d07cbe8598c9509
+ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935537"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38986119"
 ---
 # <a name="images-in-xamarinforms"></a>Obrázky v Xamarin.Forms
 
@@ -114,7 +114,7 @@ Některé ovládací prvky mají vlastnosti, které zobrazují jako image, jako 
   > [!IMPORTANT]
   > V systémech iOS [ `Page.Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Icon/) vlastnost nelze naplnit pomocí bitové kopie v sadě image katalog asset. Místo toho načíst obrázky ikon pro `Page.Icon` vlastnost z **prostředky** složky v projektu pro iOS.
 
-- [`ToolbarItem`](https://developer.xamarin.com/api/type/Xamarin.Forms.ToolbarItem/) -Má [ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ToolbarItem.Icon/) vlastnost, která může být nastaven na odkazu na místní soubor.
+- [`ToolbarItem`](https://developer.xamarin.com/api/type/Xamarin.Forms.ToolbarItem/) -Má [ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MenuItem.Icon/) vlastnost, která může být nastaven na odkazu na místní soubor.
 - [`ImageCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageCell/) -Má [ `ImageSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ImageCell.ImageSource/) vlastnost, která je možné nastavit na obrázek načten z místního souboru, vložený prostředek nebo identifikátor URI.
 
 <a name="embedded_images" />

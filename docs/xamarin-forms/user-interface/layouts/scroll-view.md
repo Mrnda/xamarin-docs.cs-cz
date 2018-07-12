@@ -1,43 +1,43 @@
 ---
 title: Xamarin.Forms ScrollView
-description: Tento článek vysvětluje, jak použít třídu Xamarin.Forms ScrollView k dispozici rozložení, který se nemůže vejít na právě jednu obrazovku a které mají obsah uvolnil prostor pro klávesnice.
+description: Tento článek vysvětluje, jak použít třídu Xamarin.Forms ScrollView prezentovat rozložení, který se nemůže vejít na právě jednu obrazovku a obsahem uvolnilo místo pro klávesnici.
 ms.prod: xamarin
 ms.assetid: 7B542872-B3D1-49B3-B15E-0E98F53C1F6E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/22/2016
-ms.openlocfilehash: 72897013842d464ff9d46825e2b111efbaeb79b8
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
-ms.translationtype: MT
+ms.date: 07/10/2018
+ms.openlocfilehash: 814b74ce04269d18b9a280ada74204c1c86621e1
+ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245231"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38985975"
 ---
 # <a name="xamarinforms-scrollview"></a>Xamarin.Forms ScrollView
 
-[`ScrollView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) obsahuje rozložení a umožňuje jim scroll mimo obrazovku. `ScrollView` také používá k povolení zobrazení automaticky přejít na viditelnou část obrazovky, když se zobrazuje na klávesnici.
+[`ScrollView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) obsahuje rozložení a umožňuje jim posuvníku mimo obrazovku. `ScrollView` slouží také povolit zobrazení automaticky přesunout do viditelnou část obrazovky při zobrazování klávesnice.
 
-[![](scroll-view-images/layouts-sml.png "Rozložení Xamarin.Forms")](scroll-view-images/layouts.png#lightbox "Xamarin.Forms rozložení")
+[![](scroll-view-images/layouts-sml.png "Rozložení Xamarin.Forms")](scroll-view-images/layouts.png#lightbox "rozložení Xamarin.Forms")
 
-Tento článek se zabývá:
+Tento článek se týká:
 
 - **[Účel](#Purpose)**  &ndash; účelu `ScrollView` a kdy se používá.
 - **[Využití](#Usage)**  &ndash; použití `ScrollView` v praxi.
 - **[Vlastnosti](#Properties)**  &ndash; veřejné vlastnosti, které může číst a upravovat.
-- **[Metody](#Methods)**  &ndash; veřejné metody, které lze volat pro posuňte zobrazení.
-- **[Události](#Events)**  &ndash; události, které lze použít pro naslouchání na změny ve stavu zobrazení.
+- **[Metody](#Methods)**  &ndash; veřejné metody, které lze volat pro posouvání zobrazení.
+- **[Události](#Events)**  &ndash; události, které můžete použít k naslouchání změnám v zobrazení stavů.
 
 ## <a name="purpose"></a>Účel
 
-`ScrollView` slouží k zajištění vyšší zobrazení zobrazení i na menší telefony. Například může být v zařízení iPhone 4s oříznut rozložení, který funguje na zařízení typu iPhone 6s. Použití `ScrollView` by umožnilo oříznutí části rozložení, který se má zobrazit na obrazovce menší.
+`ScrollView` je možné zajistit, že větší zobrazení dobře na telefonech menší. Například může být rozložení, který funguje na Iphonu 6s oříznut v zařízení iPhone 4s. Použití `ScrollView` by umožnilo zkrácený částí rozložení, které se zobrazí na obrazovce menší.
 
 ## <a name="usage"></a>Použití
 
 > [!NOTE]
-> `ScrollView`s nesmí být vnořený. Kromě toho `ScrollView`s nesmí být vnořené s další ovládací prvky, které poskytují posouvání, jako je třeba `ListView` a `WebView`.
+> `ScrollView`s by neměl být vnořený. Kromě toho `ScrollView`s by neměl být vnořena s jinými ovládacími prvky, které poskytují posouvání, jako je třeba `ListView` a `WebView`.
 
-`ScrollView` zpřístupní `Content` vlastnost, která může být nastaven na jediné zobrazení nebo rozložení. Vezměme si jako příklad rozložení s velmi velké boxView, za nímž následuje `Entry`:
+`ScrollView` Zpřístupňuje `Content` vlastnost, která můžete nastavit na jedno zobrazení nebo rozložení. Podívejte se například rozložení s velmi velké boxView, za nímž následuje `Entry`:
 
 ```xaml
 <ContentPage.Content>
@@ -60,29 +60,30 @@ stack.Children.Add(new BoxView { BackgroundColor = Color.Red,    HeightRequest =
 stack.Children.Add(new Entry());
 ```
 
-Předtím, než uživatel posune stránku dolů, jenom `BoxView` se zobrazí:
+Předtím, než uživatel posouvání, pouze `BoxView` je viditelná:
 
 ![](scroll-view-images/scroll-start.png "BoxView v ScrollView")
 
-Všimněte si, že když uživatel spustí zadání textu v `Entry`, zobrazení posune zachovat viditelný na obrazovce:
+Všimněte si, že když uživatel začne zadávat text `Entry`, zobrazení se posune zůstat viditelné na obrazovce:
 
 ![](scroll-view-images/scroll-end.png "Položka v ScrollView")
 
 ## <a name="properties"></a>Vlastnosti
 
-ScrollView má následující vlastnosti:
+`ScrollView` definuje následující vlastnosti:
 
-- **Obsahu** &ndash; získá nebo nastaví zobrazení v `ScrollView`.
-- **[ContentSize](https://developer.xamarin.com/api/type/Xamarin.Forms.Size/)**  &ndash; jen pro čtení, získá velikost obsahu, který obsahuje komponentu šířky a výšky. Toto je vazbu vlastnost
-- **[Orientace](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollOrientation/)**  &ndash; jde [ `ScrollOrientation` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollOrientation/), které je výčet, který může být nastaven na `Horizontal`, `Vertical`, nebo `Both`.
-- **ScrollX** &ndash; jen pro čtení, získá aktuální pozici posunutí v dimenzi X.
-- **ScrollY** &ndash; jen pro čtení, získá aktuální pozici posunutí v dimenzi Y.
+- [`ContentSize`](xref:Xamarin.Forms.ScrollView.ContentSizeProperty) Získá [ `Size` ](xref:Xamarin.Forms.Size) hodnotu, která představuje velikost obsahu.
+- [`Orientation`](xref:Xamarin.Forms.ScrollView.OrientationProperty) Získá nebo nastaví [ `ScrollOrientation` ](xref:Xamarin.Forms.ScrollOrientation) hodnota výčtu, která představuje posouvání směr `ScrollView`.
+- [`ScrollX`](xref:Xamarin.Forms.ScrollView.ScrollXProperty) Získá `double` , který představuje aktuální pozice posuvníku X.
+- [`ScrollY`](xref:Xamarin.Forms.ScrollView.ScrollYProperty) Získá `double` , který představuje aktuální pozici posunutí Y.
+- [`HorizontalScrollBarVisibility`](xref:Xamarin.Forms.ScrollView.HorizontalScrollBarVisibilityProperty) Získá nebo nastaví [ `ScrollBarVisibility` ](xref:Xamarin.Forms.ScrollBarVisibility) hodnotu, která představuje, když je viditelné vodorovný posuvník.
+- [`VerticalScrollBarVisibility`](xref:Xamarin.Forms.ScrollView.VerticalScrollBarVisibilityProperty) Získá nebo nastaví [ `ScrollBarVisibility` ](xref:Xamarin.Forms.ScrollBarVisibility) hodnotu, která představuje, když je zobrazen panel svislý posuvník.
 
 ## <a name="methods"></a>Metody
 
-`ScrollView` poskytuje `ScrollToAsync` metodu, která slouží k posunutí zobrazení pomocí souřadnic nebo pomocí zadání konkrétní zobrazení, které by měla být dostupná.
+`ScrollView` poskytuje `ScrollToAsync` metodu, která slouží k posunutí zobrazení pomocí souřadnic nebo zadáním určité zobrazení, která by měla být dostupná.
 
-Pokud používáte souřadnice, zadejte `x` a `y` souřadnice, společně s logickou hodnotu udávající, zda by měl animovaný posouvání:
+Při použití souřadnice, zadejte `x` a `y` souřadnice, spolu s logickou hodnotu označující, zda by měl být animován posouvání:
 
 ```csharp
 scroll.ScrollToAsync(0, 150, true); //scrolls so that the position at 150px from the top is visible
@@ -90,18 +91,18 @@ scroll.ScrollToAsync(0, 150, true); //scrolls so that the position at 150px from
 scroll.ScrollToAsync(label, ScrollToPosition.Start, true); //scrolls so that the label is at the start of the list
 ```
 
-Při posouvání konkrétní prvek, `ScrollToPosition` výčet Určuje, kde v zobrazení se zobrazí element:
+Při posouvání na konkrétní element `ScrollToPosition` výčet Určuje, kde v zobrazení se zobrazí element:
 
-- **Center** &ndash; posune elementu k centru viditelnou část zobrazení.
+- **System Center** &ndash; posune element na střed viditelnou část zobrazení.
 - **End** &ndash; posune prvek na konec viditelnou část zobrazení.
-- **MakeVisible** &ndash; posune element tak, aby se viditelné v rámci zobrazení.
-- **Spustit** &ndash; posune prvek na začátek viditelnou část zobrazení.
+- **MakeVisible** &ndash; posune element tak, aby byly viditelné v rámci zobrazení.
+- **Spustit** &ndash; posune elementu na začátku viditelnou část zobrazení.
 
-`IsAnimated` Vlastnost určuje, jak bude posunout zobrazení. Když nastaven na hodnotu true, technologie smooth animace se použije, místo okamžitě Přesun obsahu do zobrazení.
+`IsAnimated` Vlastnost určuje, jak bude posunu zobrazení. Když nastavenou na hodnotu true, plynulou animaci se použije, nikoli okamžité Přesun obsahu do zobrazení.
 
 ## <a name="events"></a>Události
 
-`ScrollView` zpřístupní pouze jednu událost `Scrolled`. `Scrolled` je vyvolána po dokončení posouvání zobrazení. Obslužné rutiny události pro `Scrolled` trvá `ScrolledEventArgs`, který má `ScrollX` a `ScrollY` vlastnosti. Následující ukazuje, jak aktualizovat štítek s aktuální pozici posunutí `ScrollView`:
+`ScrollView` Definuje jen jedna událost, `Scrolled`. `Scrolled` je aktivována po dokončení posouvání zobrazení. Obslužnou rutinu události pro `Scrolled` trvá `ScrolledEventArgs`, který má `ScrollX` a `ScrollY` vlastnosti. Následující ukazuje, jak aktualizovat aktuální pozici posunutí popisek `ScrollView`:
 
 ```csharp
 Label label = new Label { Text = "Position: " };
@@ -111,7 +112,7 @@ scroll.Scrolled += (object sender, ScrolledEventArgs e) => {
 };
 ```
 
-Všimněte si, že posuňte pozic může být záporná, z důvodu vrátit odesílateli účinek při posouvání na konci tohoto seznamu.
+Všimněte si, že pozice posuvníku, mohou být záporná, kvůli opuštění efekt při posouvání na konci seznamu.
 
 
 ## <a name="related-links"></a>Související odkazy

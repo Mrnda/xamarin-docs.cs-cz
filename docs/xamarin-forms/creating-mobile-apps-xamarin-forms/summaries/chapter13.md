@@ -7,12 +7,12 @@ ms.assetid: 5D153857-B6B7-4A14-8FB9-067DE198C2C7
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 0f9b9e27afd5dbbf52f3653995470136e794f17b
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
-ms.translationtype: MT
+ms.openlocfilehash: 6de1959b57dbd1e14a1aff86dfc985e579b3da0f
+ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935196"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38986132"
 ---
 # <a name="summary-of-chapter-13-bitmaps"></a>Souhrn Kapitola 13. Rastrové obrázky
 
@@ -105,7 +105,7 @@ Všechny platformy Xamarin.Forms podporují nekomprimované formátu souboru BMP
 Všechny platformy Xamarin.Forms povolit ukládání rastrové obrázky v sestavení aplikace platformy. Při načítání aplikací Xamarin.Forms, jsou tyto platformy bitmapy typu [ `FileImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FileImageSource/). Můžete využít pro:
 
 - [ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MenuItem.Icon/) vlastnost [`MenuItem`](https://developer.xamarin.com/api/type/Xamarin.Forms.MenuItem/)
-- [ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ToolbarItem.Icon/) vlastnost [`ToolbarItem`](https://developer.xamarin.com/api/type/Xamarin.Forms.ToolbarItem/)
+- [ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MenuItem.Icon/) vlastnost [`ToolbarItem`](https://developer.xamarin.com/api/type/Xamarin.Forms.ToolbarItem/)
 - [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) vlastnost `Button`
 
 Platformy sestavení už obsahují rastrových obrázků pro ikony a úvodní obrazovky:
@@ -180,7 +180,7 @@ Nejdůležitější `ToolbarItem` vlastnosti jsou:
 
 Počet `Primary` položek by měla být omezena na tři nebo čtyři. Měli byste zahrnout `Text` nastavení pro všechny položky. Pro většinu platforem, pouze `Primary` položek vyžaduje `Icon` vyžaduje Windows 8.1, ale `Icon` pro všechny položky. Ikony by měl být 32 Čtvereček jednotkách nezávislých na zařízení. `FileImageSource` Označuje, že jsou specifické pro platformu.
 
-`ToolbarItem` Aktivuje [ `Clicked` ](https://developer.xamarin.com/api/event/Xamarin.Forms.MenuItem.Clicked/) události klepnutí, stejně jako `Button`. `ToolbarItem` podporuje také [ `Command` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ToolbarItem.Command/) a [ `CommandParameter` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ToolbarItem.CommandParameter/) vlastnosti často používané v souvislosti s modelem MVVM. (Viz [kapitola 18, MVVM](chapter18.md)).
+`ToolbarItem` Aktivuje [ `Clicked` ](https://developer.xamarin.com/api/event/Xamarin.Forms.MenuItem.Clicked/) události klepnutí, stejně jako `Button`. `ToolbarItem` podporuje také [ `Command` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MenuItem.Command/) a [ `CommandParameter` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MenuItem.CommandParameter/) vlastnosti často používané v souvislosti s modelem MVVM. (Viz [kapitola 18, MVVM](chapter18.md)).
 
 IOS a Android vyžadují, aby stránka, která se zobrazí na panelu nástrojů [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) nebo stránka, kterou se odkazuje `NavigationPage`. [ **ToolbarDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ToolbarDemo) program sady `MainPage` vlastnost jeho `App` třídu [ `NavigationPage` konstruktor](https://developer.xamarin.com/api/constructor/Xamarin.Forms.NavigationPage.NavigationPage/p/Xamarin.Forms.Page/) s `ContentPage` argument a ukazuje obslužné rutiny konstrukce a události z panelu nástrojů.
 
