@@ -1,6 +1,6 @@
 ---
 title: Xamarin.Forms DataPages
-description: Tento článek představuje Xamarin.Forms DataPages, která poskytují rozhraní API pro rychle a snadno svázat zdroj dat se předdefinovaných zobrazení.
+description: Tento článek představuje Xamarin.Forms DataPages, které poskytuje rozhraní API pro rychle a snadno svázat zdroj dat se předdefinovaných zobrazení.
 ms.prod: xamarin
 ms.assetid: DF16EAEE-DB78-42CA-9C59-51D9D6CB6B95
 ms.technology: xamarin-forms
@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
 ms.openlocfilehash: 2a74b636a41a72b26776157a774f0a33ef45a075
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243327"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38815884"
 ---
 # <a name="xamarinforms-datapages"></a>Xamarin.Forms DataPages
 
@@ -21,56 +21,56 @@ ms.locfileid: "35243327"
 > [!IMPORTANT]
 > Vyžaduje DataPages [Xamarin.Forms motiv](~/xamarin-forms/user-interface/themes/index.md) odkaz k vykreslení.
 
-Xamarin.Forms DataPages byly oznamují na měnícím 2016 a jsou dostupné jako verze preview pro zákazníky a zkuste svůj názor.
+Xamarin.Forms DataPages byly bylo ohlášená na Evolve 2016 a jsou k dispozici jako verze preview pro zákazníky, kteří si vyzkoušet a poskytnout zpětnou vazbu.
 
-DataPages poskytují rozhraní API snadno a rychle vytvořit vazbu zdroj dat na předdefinovaných zobrazení. Položky seznamu a podrobností stránky automaticky vykreslí data a lze přizpůsobit pomocí motivů.
+DataPages poskytují rozhraní API rychle a snadno svázat zdroj dat do předdefinovaných zobrazení. Položky seznamu na stránce podrobností se automaticky generují data a je možné přizpůsobit pomocí motivů.
 
-Pokud chcete zobrazit, jak funguje měnícím //Build ukázka klíčových prvků, podívejte se [Příručka Začínáme](get-started.md).
+Podívejte se, jak Evolve //Build ukázka funguje, přečtěte si [– Příručka Začínáme](get-started.md).
 
 [![](images/demo-sml.png "DataPages ukázkovou aplikaci")](images/demo.png#lightbox "DataPages ukázkové aplikace")
 
 ## <a name="introduction"></a>Úvod
 
-Zdroje dat a přidružená data stránky umožňují vývojářům snadno a rychle využívat na podporovaný zdroj dat a vykreslit ho integrované, které uživatelského rozhraní generování uživatelského rozhraní, které lze přizpůsobit pomocí motivů.
+Zdroje dat a na stránkách přidružená data umožňují vývojářům snadno a rychle používat podporovaný zdroj dat a vykreslit ho pomocí uživatelského rozhraní, generování uživatelského rozhraní, které se dají přizpůsobit integrovanou s motivy.
 
-DataPages se přidají k aplikaci Xamarin.Forms zahrnutím **Xamarin.Forms.Pages** balíček Nuget.
+DataPages jsou přidány do aplikace Xamarin.Forms zahrnutím **Xamarin.Forms.Pages** balíček Nuget.
 
 ### <a name="data-sources"></a>Zdroje dat
 
-Verze Preview má k dispozici pro použití předem datového zdroje:
+Verze Preview má některé zdroje dat s využitím předem připravených k dispozici pro použití:
 
 * **JsonDataSource**
-* **AzureDataSource** (jednotlivé Nuget)
-* **AzureEasyTableDataSource** (jednotlivé Nuget)
+* **AzureDataSource** (samostatný Nuget)
+* **AzureEasyTableDataSource** (samostatný Nuget)
 
-Najdete v článku [Příručka Začínáme](get-started.md) pro příklad použití `JsonDataSource`.
+Zobrazit [– Příručka Začínáme](get-started.md) příklad použití `JsonDataSource`.
 
 
 ### <a name="pages--controls"></a>Stránky a ovládací prvky
 
-Umožňuje snadno vazby ke zdroji dat zadané zahrnují se tyto stránek a ovládacích prvků:
+Následující stránky a ovládací prvky jsou zahrnuty umožňuje snadné vytvoření vazby na zadané datové zdroje:
 
 * **ListDataPage** – najdete v článku [Začínáme příklad](get-started.md).
 * **DirectoryPage** – seznam s seskupení povolena.
-* **PersonDetailPage** – jednu datovou položku zobrazení přizpůsobit pro konkrétní typy objektů (položku kontaktu).
-* **Zobrazení dat** – zobrazení vystavit data ze zdroje obecné způsobem.
-* **Zobrazení karty aplikace** – ve zobrazení, který obsahuje bitovou kopii, nadpis a text popisu.
+* **PersonDetailPage** – jednoho datového bodu zobrazení přizpůsobená pro konkrétní typy objektů (položku kontaktu).
+* **Zobrazení dat** – zobrazení ke zveřejňování dat ze zdroje obecně.
+* **CardView** – styl zobrazení, která obsahuje image, nadpis a popis.
 * **HeroImage** – zobrazení o vykreslování obrázků.
-* **ListItem** – předem vytvořené zobrazení s rozložením podobné nativní aplikace pro iOS a Android seznam položek.
+* **ListItem** – předem připravené zobrazení s rozložením podobně jako nativní aplikace pro iOS a Android seznam položek.
 
-Najdete v článku [DataPages ovládací prvky odkaz](controls.md) příklady.
+Zobrazit [DataPages řídí odkaz](controls.md) příklady.
 
 
 
-### <a name="under-the-hood"></a>Pod pokličkou
+### <a name="under-the-hood"></a>Pohled pod kapotu
 
 Zdroj dat Xamarin.Forms dodržuje `IDataSource` rozhraní.
 
-Infrastruktury Xamarin.Forms komunikuje se zdrojem dat prostřednictvím následujících vlastností:
+Infrastruktura Xamarin.Forms komunikuje se zdrojem dat prostřednictvím následující vlastnosti:
 
-* `Data` – seznam datových položek, které mohou být zobrazeny jen pro čtení.
-* `IsLoading` – logickou hodnotu udávající, zda je data načíst a k dispozici pro vykreslení.
-* `[key]` – indexer načíst elementy.
+* `Data` – seznam datových položek, které lze zobrazit jen pro čtení.
+* `IsLoading` – Logická hodnota označující, zda je data načtena a k dispozici pro vykreslení.
+* `[key]` – indexer načíst prvky.
 
-Existují dvě metody `MaskKey` a `UnmaskKey` , můžete použít (zobrazit nebo skrýt) vlastnosti datové položky (tj. zabránit jejich vykreslení).
-Klíč odpovídá vlastnost s názvem na datový objekt položky.
+Existují dvě metody `MaskKey` a `UnmaskKey` , který slouží k (zobrazení nebo skrytí) (tj vlastnosti položky dat zabránit jejich vykreslení).
+Klíč odpovídá pojmenovanou vlastnost na objekt datové položky.
