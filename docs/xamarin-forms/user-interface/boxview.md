@@ -1,55 +1,55 @@
 ---
 title: Xamarin.Forms BoxView
-description: Tento článek vysvětluje, jak používat barevného obdélníku pro dekorace, grafiky a interakce v aplikaci Xamarin.Forms.
+description: Tento článek vysvětluje, jak používat barevný obdélník pro dekoraci, grafiku a interakce aplikace Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 4CBF703D-84A0-4CDF-A433-5926B587782A
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2017
-ms.openlocfilehash: 0a99845b23ee32a00a6894ef60988e61e361805e
-ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
+ms.openlocfilehash: 813a913c2c2fb27456c9a489c73b16d5892c4b8d
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36209242"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997049"
 ---
 # <a name="xamarinforms-boxview"></a>Xamarin.Forms BoxView
 
-[`BoxView`](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/) vykreslí jednoduché obdélník zadaný šířky, výšky a barvy. Můžete použít `BoxView` pro dekorace, elementární grafiky a pro interakci s uživatelem prostřednictvím dotykového ovládání.
+[`BoxView`](xref:Xamarin.Forms.BoxView) vykreslí jednoduchý obdélník nastavená šířka, výška a barvu. Můžete použít `BoxView` pro dekoraci, základní grafiky a pro interakci s uživatelem prostřednictvím dotykové ovládání.
 
-Protože Xamarin.Forms nemá systému předdefinované vektorové grafiky `BoxView` pomáhá odpovídajícím způsobem. Některé programy ukázka popsané v tomto článku `BoxView` pro vykreslování grafiky. `BoxView` Můžete velikost tak, aby připomínaly řádku konkrétní šířky a tloušťka a pak otáčet o jakékoli úhel pomocí `Rotation` vlastnost.
+Protože Xamarin.Forms nemá žádné předdefinované vektorové grafiky systému, `BoxView` pomáhá odpovídajícím způsobem upravit. Některé z ukázkové aplikace popsané v tomto článku využívají `BoxView` pro vykreslování grafiky. `BoxView` Můžete velikost tak, aby připomínaly řádku s konkrétní šířkou a tloušťku a potom otočit o jakékoli úhel pomocí `Rotation` vlastnost.
 
-I když `BoxView` mohou napodobovat jednoduché grafiky, můžete chtít prozkoumat [pomocí SkiaSharp v Xamarin.Forms](~/xamarin-forms/user-interface/graphics/skiasharp/index.md) pro sofistikovanější grafiky požadavky.
+I když `BoxView` mohou napodobovat jednoduché grafiky, můžete chtít prozkoumat [pomocí ve Skiasharpu v Xamarin.Forms](~/xamarin-forms/user-interface/graphics/skiasharp/index.md) pro sofistikovanější grafiky požadavky.
 
 Tento článek popisuje v následujících tématech:
 
-- **[Nastavení barvy BoxView a velikost](#colorandsize)**  &ndash; nastavit `BoxView` vlastnosti.
-- **[Vykreslování textové dekorace](#textdecorations)**  &ndash; používat `BoxView` pro vykreslování řádky.
-- **[Výpis barvy s BoxView](#listingcolors)**  &ndash; zobrazení všech systému barvy v `ListView`.
-- **[Přehrávání herní dobu životnosti ve vytváření podtříd BoxView](#subclassing)**  &ndash; implementovat famous mobilní automaton.
-- **[Vytváření digitální hodiny](#digitalclock)**  &ndash; simulovat maticové zobrazení.
-- **[Vytváření analogovým hodiny](#analogclock)**  &ndash; transformace a použije animaci `BoxView` elementy.
+- **[Nastavení BoxView barvu a velikost](#colorandsize)**  &ndash; nastavit `BoxView` vlastnosti.
+- **[Dekorace textu vykreslování](#textdecorations)**  &ndash; použít `BoxView` pro vykreslení čáry.
+- **[Výpis barvy s BoxView](#listingcolors)**  &ndash; Zobrazit vše systémových barev v `ListView`.
+- **[Přehrávání hru život tak vytváření podtříd BoxView](#subclassing)**  &ndash; implementovat slavných automaton mobilní sítě.
+- **[Vytvoření digitální hodiny](#digitalclock)**  &ndash; simulovat jehličkové zobrazení.
+- **[Vytvoření obdobu jmenovek hodiny](#analogclock)**  &ndash; transformaci a animovat `BoxView` elementy.
 
 <a name="colorandsize" />
 
-## <a name="setting-boxview-color-and-size"></a>Nastavení BoxView barvy a velikosti
+## <a name="setting-boxview-color-and-size"></a>Nastavení BoxView barvu a velikost
 
-Velmi často budete nastavíte následující tři vlastnosti `BoxView`:
+Velmi často nastavíte následující tři vlastnosti `BoxView`:
 
-- [`Color`](https://developer.xamarin.com/api/property/Xamarin.Forms.BoxView.Color/) Chcete-li nastavit jeho barev.
-- [`WidthRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.WidthRequest/) Chcete-li nastavit šířku `BoxView` v jednotkách nezávislé na zařízení.
-- [`HeightRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.HeightRequest/) Chcete-li nastavit výšku `BoxView`.
+- [`Color`](xref:Xamarin.Forms.BoxView.Color) Chcete-li nastavit její barvu.
+- [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) Chcete-li nastavit šířku `BoxView` v jednotkách nezávislých na zařízení.
+- [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) Chcete-li nastavit výšku `BoxView`.
 
-`Color` Vlastnost je typu `Color`; vlastnost můžete nastavit na libovolnou `Color` hodnotu, včetně 141 statické jen pro čtení pole s názvem barvy abecedně od `AliceBlue` k `YellowGreen`.
+`Color` Vlastnost je typu `Color`; vlastnost lze nastavit na libovolnou `Color` hodnotu, včetně 141 statické pole jen pro čtení z pojmenované barvy podle abecedy od `AliceBlue` k `YellowGreen`.
 
-`WidthRequest` a `HeightRequest` vlastnosti jenom hrají roli, pokud `BoxView` je *neomezeným* v rozložení. To je případ, kdy kontejner rozložení musí znát, podřízená je upravit velikost, například když `BoxView` je podřízená Automatická velikost buňky v `Grid` rozložení. A `BoxView` je také neomezeným při jeho `HorizontalOptions` a `VerticalOptions` vlastnosti jsou nastaveny na hodnoty jiné než `LayoutOptions.Fill`. Pokud `BoxView` neomezeným, ale `WidthRequest` a `HeightRequest` nejsou nastaveny vlastnosti a potom šířky nebo výšky jsou nastaveny na výchozí hodnoty 40 jednotky nebo o 1/4 palce na mobilních zařízeních.
+`WidthRequest` a `HeightRequest` vlastnosti pouze hrají roli, pokud `BoxView` je *neomezeným* v rozložení. To je případ, kdy kontejner rozložení potřebuje vědět, podřízené uživatele upravit velikost, například když `BoxView` je podřízeným prvkem Automatická velikost buňky v `Grid` rozložení. A `BoxView` je také bez omezení při jeho `HorizontalOptions` a `VerticalOptions` vlastnosti jsou nastaveny na hodnoty jiné než `LayoutOptions.Fill`. Pokud `BoxView` je bez omezení, ale `WidthRequest` a `HeightRequest` nejsou nastaveny vlastnosti a pak šířky nebo výšky jsou nastaveny na výchozí hodnoty 40 jednotek nebo přibližně 1/4 palce na mobilních zařízeních.
 
-`WidthRequest` a `HeightRequest` vlastnosti jsou ignorovány, pokud `BoxView` je *omezené* v rozložení, ve kterém případ kontejneru rozložení ukládá na vlastní velikost `BoxView`.
+`WidthRequest` a `HeightRequest` vlastnosti jsou ignorovány, pokud `BoxView` je *omezené* v rozložení, ve kterém případ kontejner rozložení ukládá své vlastní velikosti `BoxView`.
 
-A `BoxView` může být omezené v jednou dimenzí a neomezeného v dalších. Například pokud `BoxView` je podřízená svislého `StackLayout`, svislé dimenzi `BoxView` je neomezeného a jeho vodorovné dimenze je obvykle omezené. Existují však výjimky pro daná vodorovném dimenze: Pokud `BoxView` má jeho `HorizontalOptions` vlastnost nastavena na jinou hodnotu než `LayoutOptions.Fill`, pak vodorovné dimenze je také neomezeným. Je také možné, `StackLayout` samotné tak, aby měl neomezeným vodorovné dimenze, v takovém případě `BoxView` bude také vodorovně neomezeným.
+A `BoxView` můžete omezené v jedné dimenzi a vstupy bez omezení v jiném. Například pokud `BoxView` je podřízeným prvkem a jsou odděleny svislou `StackLayout`, svislé dimenze `BoxView` je vstupy bez omezení a jeho vodorovný rozměr je obvykle omezené. Ale existují výjimky pro tuto dimenzi vodorovné: Pokud `BoxView` má jeho `HorizontalOptions` nastavenou na něco jiného než `LayoutOptions.Fill`, vodorovný rozměr je také bez omezení. Je také možné, `StackLayout` samotný s neomezeným vodorovný rozměr, v takovém případě `BoxView` bude také vodorovně bez omezení.
 
-[ **BasicBoxView** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BasicBoxView) ukázka zobrazuje jeden palec čtverce neomezeného `BoxView` v centru jeho stránky:
+[ **BasicBoxView** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BasicBoxView) ukázka zobrazí jeden – palec – čtverec neomezeného `BoxView` ve středu jeho stránky:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -70,17 +70,17 @@ Tady je výsledek:
 
 [![Základní BoxView](boxview-images/basicboxview-small.png "základní BoxView")](boxview-images/basicboxview-large.png#lightbox "BasicBoxView")
 
-Pokud `VerticalOptions` a `HorizontalOptions` vlastnosti jsou odebrány z `BoxView` značka nebo se nastaví na `Fill`, pak se `BoxView` stane omezené velikost stránky a rozbalí k zaplnění stránky.
+Pokud `VerticalOptions` a `HorizontalOptions` odebráním vlastnosti odeberete z `BoxView` označení nebo se nastaví `Fill`, pak bude `BoxView` stane omezeny velikost stránky a roztáhne a vyplní stránky.
 
-A `BoxView` může být také podřízenou `AbsoluteLayout`. V takovém případě umístění a velikost `BoxView` jsou nastavené pomocí `LayoutBounds` připojené vazbu vlastnosti. `AbsoluteLayout` Je popsána v článku [ **AbsoluteLayout**](~/xamarin-forms/user-interface/layouts/absolute-layout.md).
+A `BoxView` může také být podřízenou `AbsoluteLayout`. V takovém případě umístění a velikost `BoxView` jsou `LayoutBounds` přidružená vlastnost podporující vazby. `AbsoluteLayout` Je popsán v článku [ **AbsoluteLayout**](~/xamarin-forms/user-interface/layouts/absolute-layout.md).
 
-Zobrazí se všechny tyto případy v ukázkové aplikace, které následují příklady.
+Zobrazí se vám všechny tyto případy v ukázkové programy, které následují příklady.
 
 <a name="textdecorations" />
 
-## <a name="rendering-text-decorations"></a>Dekorace vykreslování textu
+## <a name="rendering-text-decorations"></a>Vykreslování dekorace textu
 
-Můžete použít `BoxView` přidat některé jednoduché dekorace na vaše stránky ve formě vodorovného a svislého řádky. [ **TextDecoration** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/TextDecoration) příklad znázorňuje to. Všechny vizuály programu jsou definovány v **MainPage.xaml** soubor, který obsahuje několik `Label` a `BoxView` elementů v `StackLayout` znázorněno zde:
+Můžete použít `BoxView` přidat některé jednoduché dekorace na stránkách v podobě vodorovné a svislé čáry. [ **Textdecoration –** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/TextDecoration) příklad ukazuje to. Všechny vizuály programu jsou definovány v **MainPage.xaml** soubor, který obsahuje několik `Label` a `BoxView` prvky `StackLayout` je vidět tady:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -111,11 +111,11 @@ Můžete použít `BoxView` přidat některé jednoduché dekorace na vaše str�
 </ContentPage>
 ```
 
-Všechny značky následující podřízené objekty jsou `StackLayout`. Tento kód se skládá z několika typů dekorativní `BoxView` prvky používané s `Label` element:
+Všechny značky, který následuje jsou podřízené `StackLayout`. Tato značka se skládá z několika typů dekorativní `BoxView` prvků, které slouží se `Label` element:
 
-[![Textové dekorace](boxview-images/textdecoration-small.png "textové dekorace")](boxview-images/textdecoration-large.png#lightbox "textové dekorace")
+[![Textové dekorace](boxview-images/textdecoration-small.png "textové dekorace")](boxview-images/textdecoration-large.png#lightbox "dekorace textu")
 
-Stylových hlavičky v horní části stránky se dosáhne s `AbsoluteLayout` jehož podřízené objekty jsou čtyři `BoxView` elementy a `Label`, všechny z které jsou přiřazeny konkrétní umístění a velikost:
+Stylový záhlaví v horní části stránky se dosahuje prostřednictvím `AbsoluteLayout` jehož potomci jsou čtyři `BoxView` elementy a `Label`, všechny které jsou přiřazeny konkrétní umístění a velikosti:
 
 ```xaml
 <AbsoluteLayout>
@@ -131,7 +131,7 @@ Stylových hlavičky v horní části stránky se dosáhne s `AbsoluteLayout` je
 
 V souboru XAML `AbsoluteLayout` následuje `Label` s formátovaný text, který popisuje `AbsoluteLayout`.
 
-Textový řetězec můžete underline uzavřením i `Label` a `BoxView` v `StackLayout` s jeho `HorizontalOptions` hodnota nastavena na jinou hodnotu než `Fill`. Šířka `StackLayout` se pak řídí šířku `Label`, který pak ukládá na tuto šířku `BoxView`. `BoxView` Je přiřazena pouze explicitní výška:
+Textový řetězec můžete podtržení uzavřením i `Label` a `BoxView` v `StackLayout` , který má jeho `HorizontalOptions` hodnota nastavená na něco jiného než `Fill`. Šířka `StackLayout` se pak řídí šířku `Label`, která ukládá tuto šířku `BoxView`. `BoxView` Je přiřazená pouze explicitní height:
 
 ```xaml
 <StackLayout HorizontalOptions="Center">
@@ -141,15 +141,15 @@ Textový řetězec můžete underline uzavřením i `Label` a `BoxView` v `Stack
 </StackLayout>
 ```
 
-Tímto způsobem nelze underline jednotlivých slov v textové řetězce delší nebo odstavec.
+Tímto způsobem nelze underline jednotlivých slov v rámci delší textové řetězce nebo odstavce.
 
-Je také možné použít `BoxView` tak, aby připomínaly HTML `hr` – element (vodorovné pravítko). Jednoduše umožní šířku `BoxView` určí na základě jeho nadřazený kontejner, který v tomto případě `StackLayout`:
+Je také možné použít `BoxView` tak, aby připomínaly HTML `hr` – element (vodorovná čára). Jednoduše nechat šířku `BoxView` měli určit podle jeho nadřazeného kontejneru, který je v tomto případě `StackLayout`:
 
 ```xaml
 <BoxView HeightRequest="3" />
 ```
 
-Nakonec kreslení svislé čáry na jedné straně odstavec textu uzavřením i `BoxView` a `Label` vodorovně `StackLayout`. V tomto případě výšku `BoxView` je stejný jako výšku `StackLayout`, které se řídí výšku `Label`:
+Nakonec můžete nakreslit svislá čára na jedné straně odstavce textu uzavřením i `BoxView` a `Label` koleček vodorovnou `StackLayout`. V tomto případě výšku `BoxView` je stejný jako výška `StackLayout`, které se vztahují výšku `Label`:
 
 ```xaml
 <StackLayout Orientation="Horizontal">
@@ -166,11 +166,11 @@ Nakonec kreslení svislé čáry na jedné straně odstavec textu uzavřením i 
 
 ## <a name="listing-colors-with-boxview"></a>Výpis barvy s BoxView
 
-`BoxView` Je vhodné pro zobrazení barev. Tento program používá `ListView` seznam všech veřejných statických jen pro čtení pole platformě Xamarin.Forms `Color` strukturu:
+`BoxView` Je vhodné pro zobrazování barvy. Používá tento program `ListView` k výpisu všech veřejných statických jen pro čtení pole Xamarin.Forms `Color` struktury:
 
-[![Barvy ListView](boxview-images/listviewcolors-small.png "ListView barvy")](boxview-images/listviewcolors-large.png#lightbox "ListView barvy")
+[![Barvy ListView](boxview-images/listviewcolors-small.png "ListView barvy")](boxview-images/listviewcolors-large.png#lightbox "barvy ListView")
 
-[ **ListViewColors** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/ListViewColors/) program zahrnuje třídy s názvem `NamedColor`. Statický konstruktor reflexe používá pro přístup k všechna pole `Color` struktury a vytvořte `NamedColor` objekt pro každé z nich. Tyto jsou uložené v statických `All` vlastnost:
+[ **ListViewColors** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/ListViewColors/) program obsahuje třídu s názvem `NamedColor`. Statický konstruktor používá reflexi pro přístup k všechna pole `Color` struktury a vytvořit `NamedColor` objekt pro každý z nich. Tyto jsou uložené ve statické `All` vlastnost:
 
 ```csharp
 public class NamedColor
@@ -242,7 +242,7 @@ public class NamedColor
 }
 ```
 
-Vizuály programu jsou popsané v souboru XAML. `ItemsSource` Vlastnost `ListView` nastavena na statickou `NamedColor.All` vlastnost, což znamená, že `ListView` zobrazuje všechny jednotlivý `NamedColor` objekty:
+Vizuální prvky programu jsou popsány v souboru XAML. `ItemsSource` Vlastnost `ListView` je nastavena na statickou `NamedColor.All` vlastnost, která znamená, že `ListView` zobrazí všechna individuální `NamedColor` objekty:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -293,15 +293,15 @@ Vizuály programu jsou popsané v souboru XAML. `ItemsSource` Vlastnost `ListVie
 </ContentPage>
 ```
 
-`NamedColor` Objekty jsou formátovány podle `ViewCell` objekt, který je nastaven jako šablonu dat z `ListView`. Tato šablona zahrnuje `BoxView` jejichž `Color` vlastnost je vázána na `Color` vlastnost `NamedColor` objektu.
+`NamedColor` Objekty se formátují podle `ViewCell` objekt, který je nastaven jako šablonu data `ListView`. Tato šablona obsahuje `BoxView` jehož `Color` vlastnost je vázána na `Color` vlastnost `NamedColor` objektu.
 
 <a name="subclassing" />
 
-## <a name="playing-the-game-of-life-by-subclassing-boxview"></a>Hru životnosti ve vytváření podtříd BoxView
+## <a name="playing-the-game-of-life-by-subclassing-boxview"></a>Hraní her ve vytváření podtříd BoxView životnosti
 
-Herní životnosti je mobilní automaton vyvinuta firmou matematikovi Conwayovu Jan a popularized na stránkách *Scientific American* v 1970s. Dobrý Úvod je uveden článek Wikipedia [na Conwayovu herní životnosti](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life).
+Hra životnost je mobilní automaton vymysleli podle matematikovi Jan Conwayův a který na stránkách *vědecké American* v 1970s. Poskytuje vhodným úvodem článku na wikipedii [Conwayův hru životnosti](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life).
 
-Platformě Xamarin.Forms [ **GameOfLife** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/GameOfLife/) program definuje třídu s názvem `LifeCell` která je odvozena od `BoxView`. Tato třída zapouzdří logiku jednotlivých buněk v herním životnosti:
+Xamarin.Forms [ **GameOfLife** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/GameOfLife/) program definuje třídu s názvem `LifeCell` , která je odvozena z `BoxView`. Tato třída zapouzdří logiku jednotlivé buňky v životě hry:
 
 ```csharp
 class LifeCell : BoxView
@@ -344,23 +344,23 @@ class LifeCell : BoxView
 }
 ```
 
-`LifeCell` Přidá tři další vlastnosti pro `BoxView`: `Col` a `Row` vlastnosti ukládání pozici buňky v mřížce a `IsAlive` vlastnost označuje jeho stav. `IsAlive` Také nastaví vlastnost `Color` vlastnost `BoxView` do černé, je-li buňka aktivní a bílé, pokud buňka není aktivní.
+`LifeCell` Přidá tři další vlastnosti `BoxView`: `Col` a `Row` vlastnosti ukládání pozice buňku v mřížce a `IsAlive` vlastnost indikuje její stav. `IsAlive` Vlastnost nastaví `Color` vlastnost `BoxView` na černou, pokud buňka je aktivní a bílé, pokud buňka není aktivní.
 
-`LifeCell` nainstaluje taky `TapGestureRecognizer` chcete umožnit uživatelům přepnutí stavu buněk je klepnutím. Třída přeloží `Tapped` událost z rozpoznávání rukopisu gesto do vlastní `Tapped` událostí.
+`LifeCell` jde nainstalovat také `TapGestureRecognizer` uživatel k přepnutí stavu buněk je klepnutím. Třída překládá `Tapped` událost do jeho vlastní nástroj pro rozpoznávání gest `Tapped` událostí.
 
-**GameOfLife** program také zahrnuje `LifeGrid` třídy, který zapouzdřuje velkou část logiky ve hře, a `MainPage` třída, která zpracovává vizuály programu. Mezi ně patří překrytí, který popisuje pravidla hry. Tady je program v akci zobrazující několik set `LifeCell` objekty na stránce:
+**GameOfLife** program také zahrnuje `LifeGrid` třídy, který ukrývá většinu funkcí logika hry, a `MainPage` třídu, která zpracovává programu vizuály. Patří mezi ně překrytí, který popisuje pravidla hry. Tady je program v akci ukazující několik set `LifeCell` objekty na stránce:
 
-[![Herní života](boxview-images/gameoflife-small.png "herní životní")](boxview-images/gameoflife-large.png#lightbox "herní životnosti")
+[![Hra životnosti](boxview-images/gameoflife-small.png "hru životnosti")](boxview-images/gameoflife-large.png#lightbox "hru životnosti")
 
 <a name="digitalclock" />
 
-## <a name="creating-a-digital-clock"></a>Vytváření digitální hodiny
+## <a name="creating-a-digital-clock"></a>Vytvoření digitální hodiny
 
-[ **DotMatrixClock** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/DotMatrixClock/) program vytvoří 210 `BoxView` elementy k simulaci tečky stejné 5 7 maticové zobrazení. Můžete si přečíst čas v režimu na výšku nebo na šířku, ale je větší v na šířku:
+[ **DotMatrixClock** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/DotMatrixClock/) program vytvoří 210 `BoxView` prvky pro simulaci tečky zastaralý zobrazení jehličkové 5 7. Můžete si přečíst čas v režimu na výšku nebo šířku, ale je větší orientovaný na šířku:
 
-[![Maticové hodiny](boxview-images/dotmatrixclock-small.png "maticové hodiny")](boxview-images/dotmatrixclock-large.png#lightbox "maticové hodiny")
+[![Hodiny jehličkové](boxview-images/dotmatrixclock-small.png "jehličkové hodiny")](boxview-images/dotmatrixclock-large.png#lightbox "jehličkové hodiny")
 
-Vytvoření souboru XAML trochu více než instance `AbsoluteLayout` používá pro hodiny:
+Soubor XAML trochu více než vytvoření instance `AbsoluteLayout` používá pro hodiny:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -375,7 +375,7 @@ Vytvoření souboru XAML trochu více než instance `AbsoluteLayout` používá 
 </ContentPage>
 ```
 
-Všem ostatním dojde v souboru kódu na pozadí. Maticové logiku zobrazení je výrazně jednodušší podle definice několik polí, které popisují tečky odpovídající každé z 10 číslic a dvojtečky:
+Všechno ostatní vyvolá se v souboru kódu na pozadí. Definice několik polí, která popisují tečky odpovídající každé z 10 číslic a dvojtečky výrazně zjednodušuje logiku jehličkové zobrazení:
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -447,9 +447,9 @@ public partial class MainPage : ContentPage
 }
 ```
 
-Tato pole uzavřít s trojrozměrné z `BoxView` prvky pro ukládání tečkou vzory pro šesti číslic.
+Tato pole zakončen trojrozměrného pole `BoxView` prvky pro ukládání tečkou vzory pro šest číslic.
 
-V konstruktoru vytvoří všechny `BoxView` elementy pro číslice a dvojtečky a také inicializuje `Color` vlastnost `BoxView` prvky pro dvojtečkou:
+Konstruktor vytvoří všechny `BoxView` prvky číslice a dvojtečky a také inicializuje `Color` vlastnost `BoxView` prvky pro dvojtečka:
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -528,9 +528,9 @@ public partial class MainPage : ContentPage
 }
 ```
 
-Tento program používá relativní umístění a velikost funkce `AbsoluteLayout`. Šířka a výška jednotlivých `BoxView` jsou nastaveny na desetinné číslo, konkrétně 85 % 1 rozdělené podle počtu vodorovného a svislého tečky. Pozice jsou nastaveny také pro desetinné číslo.
+Tento program používá relativní umístění a velikosti funkce `AbsoluteLayout`. Šířku a výšku každého `BoxView` jsou nastaveny na desetinné hodnoty, konkrétně 85 % 1, vydělí počtem vodorovné a svislé tečky. Pozice jsou nastaveny také pro desetinné hodnoty.
 
-Vzhledem k tomu, že pozice a velikosti jsou relativní vzhledem k celková velikost `AbsoluteLayout`, `SizeChanged` obslužné rutiny pro stránky třeba nastavit pouze `HeightRequest` z `AbsoluteLayout`:
+Protože pozice a velikosti jsou relativní vzhledem k celkové velikosti `AbsoluteLayout`, `SizeChanged` obslužné rutiny pro stránky třeba nastavit pouze `HeightRequest` z `AbsoluteLayout`:
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -549,9 +549,9 @@ public partial class MainPage : ContentPage
 }
 ```
 
-Šířka `AbsoluteLayout` bude automaticky nastavena, protože ji roztahovány na celou šířku stránky.
+Šířka `AbsoluteLayout` je automaticky nastavit, protože se roztáhne na celou šířku stránky.
 
-Poslední kód `MainPage` třída zpracovává zpětné volání časovače a barvy tečky každý číslice. Definice vícerozměrných polí na začátku souboru kódu na pozadí pomáhá zkontrolujte tuto logiku nejjednodušší součást programu:
+Konečný kód `MainPage` třída zpracovává časovače zpětného volání a barvy tečky každou číslici. Definice vícerozměrných polí na začátku souboru kódu na pozadí jednodušeji tuto logiku nejjednodušší část programu:
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -590,15 +590,15 @@ public partial class MainPage : ContentPage
 ```
 <a name="analogclock" />
 
-## <a name="creating-an-analog-clock"></a>Vytváření analogovým hodiny
+## <a name="creating-an-analog-clock"></a>Vytváření analogové hodiny
 
-Maticové hodiny zdát zřejmé aplikace `BoxView`, ale `BoxView` prvky jsou také schopná porozumění analogovým hodiny:
+Hodiny jehličkové zdát zřejmé žádost `BoxView`, ale `BoxView` prvky jsou také schopná porozumění analogové hodiny:
 
 [![Hodiny BoxView](boxview-images/boxviewclock-small.png "BoxView hodiny")](boxview-images/boxviewclock-large.png#lightbox "BoxView hodiny")
 
-Všech vizuálů na [ **BoxViewClock** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BoxViewClock/) programu jsou podřízené `AbsoluteLayout`. Tyto prvky jsou dimenzované pomocí `LayoutBounds` přidružená vlastnost a otáčet pomocí `Rotation` vlastnost.
+Všechny vizuály [ **BoxViewClock** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BoxViewClock/) programu jsou podřízené `AbsoluteLayout`. Tyto prvky jsou velikosti pomocí `LayoutBounds` přidružená vlastnost a otočit pomocí `Rotation` vlastnost.
 
-Tří `BoxView` prvky pro do nesprávných rukou hodiny nejsou vytvořena instance v souboru XAML, ale umístěný nebo velikost:
+Tři `BoxView` prvky pro rukou hodiny nejsou vytvořena instance v souboru XAML, ale umístěné nebo velikosti:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -626,7 +626,7 @@ Tří `BoxView` prvky pro do nesprávných rukou hodiny nejsou vytvořena instan
 </ContentPage>
 ```
 
-Vytvoří konstruktoru souboru kódu 60 `BoxView` elementy značek kolem obvodu hodin:
+Konstruktor soubor kódu na pozadí vytvoří instanci 60 `BoxView` prvky pro značky kolem obvodu hodiny:
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -655,7 +655,7 @@ public partial class MainPage : ContentPage
 }
 ```
 
-Velikost a umístění všech `BoxView` elementy v dojde `SizeChanged` obslužné rutiny pro `AbsoluteLayout`. Trochu struktura interní k třídě volá `HandParams` popisuje velikost každého ze tří rukou relativně k celková velikost hodiny:
+Velikost a umístění všech `BoxView` prvky probíhá `SizeChanged` obslužné rutiny pro `AbsoluteLayout`. Trochu struktura vnitřní třídu volá `HandParams` popisuje velikost každé tři praktické vzhledem k celkové velikosti hodiny:
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -684,7 +684,7 @@ public partial class MainPage : ContentPage
  }
 ```
 
-`SizeChanged` Obslužná rutina určuje center a úhlu `AbsoluteLayout`a pak velikosti a umisťuje 60 `BoxView` prvky používané jako osové značky. `for` Smyčky ukončí nastavení `Rotation` vlastnost každé z nich `BoxView` elementy. Na konci `SizeChanged` obslužnou rutinu, `LayoutHand` metoda je volána velikosti a umístění do tří rukou hodiny:
+`SizeChanged` Obslužné rutiny určuje System center a poloměr `AbsoluteLayout`a potom velikosti a umístí 60 `BoxView` prvků, které slouží jako osové značky. `for` Smyčky končí tím, že nastavíte `Rotation` vlastnost každý z těchto `BoxView` elementy. Na konci `SizeChanged` obslužné rutiny, `LayoutHand` metoda je volána k určení velikosti a umístění tři praktické hodiny:
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -735,9 +735,9 @@ public partial class MainPage : ContentPage
 }
 ```
 
-`LayoutHand` Metoda velikosti a umisťuje každé straně tak, aby odkazoval rovnou až do pozice, 12:00. Na konci metody `AnchorY` je nastavena na poloze odpovídající středu hodiny. To znamená středu otočení.
+`LayoutHand` Metoda velikosti a umístění jednotlivých ručně tak, aby odkazovala přímo do pozice 12:00. Na konci metody `AnchorY` je nastavena na pozici odpovídající center hodin. To znamená střed otáčení.
 
-Do rukou otáčejí ve funkci zpětného volání časovače:
+Do rukou jsou otočeny ve funkci zpětného volání časovače:
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -770,11 +770,11 @@ public partial class MainPage : ContentPage
 }
 ```
 
-Druhé straně považuje se může lišit: usnadnění funkce animace aby zdá se, že pohyb mechanických spíše než smooth. Na každé značky druhé straně vrátí trochu a pak overshoots svého cíle. Tato trocha kód přidá mnoho realism pohybu.
+Druhé straně zpracovává trochu jinak: animace funkce uvolnění se použije provést přesun zdá se, že mechanickým spíše než hladký průběh. Na jednotlivé takty druhé straně si vyžádá zpět trochu a pak overshoots svůj cíl. Nepatrné kód přidá mnohem realitu pohybu.
 
 ## <a name="conclusion"></a>Závěr
 
-`BoxView` Zdát jednoduché na první, ale jako jste viděli, může být velmi flexibilní a můžete téměř reprodukovatelnými vizuály, které jsou obvykle možné jenom s vektorové grafiky. Složitější grafiky naleznete [pomocí SkiaSharp v Xamarin.Forms](~/xamarin-forms/user-interface/graphics/skiasharp/index.md).
+`BoxView` Zdát, že jednoduchá na první, ale jako vy jste viděli, může být poměrně univerzální a můžete téměř reprodukci vizuály, které jsou obvykle je to možné, pouze s vektorové grafiky. Pro složitější grafiky, najdete [pomocí ve Skiasharpu v Xamarin.Forms](~/xamarin-forms/user-interface/graphics/skiasharp/index.md).
 
 
 ## <a name="related-links"></a>Související odkazy
@@ -782,7 +782,7 @@ Druhé straně považuje se může lišit: usnadnění funkce animace aby zdá s
 - [Základní BoxView (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BasicBoxView)
 - [Textové dekorace (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/BoxView/TextDecoration)
 - [Barva ListBox (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/BoxView/ColorListBox)
-- [Herní životnosti (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/BoxView/GameOfLife)
+- [Hra života (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/BoxView/GameOfLife)
 - [Maticové hodin (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/BoxView/DotMatrixClock)
 - [Hodiny BoxView (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BoxViewClock)
-- [BoxView](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/)
+- [BoxView](xref:Xamarin.Forms.BoxView)

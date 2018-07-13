@@ -6,13 +6,13 @@ ms.assetid: E9A7B68A-E164-4C5C-86AC-B2A3E7A30DA1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 06/25/2018
-ms.openlocfilehash: ee5269bf314401328d0184631e817b37ce091479
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.date: 07/08/2018
+ms.openlocfilehash: cf2725eafa18330a07a08db4235bad1a1ecd47b6
+ms.sourcegitcommit: cfb72be633e335147d156af3ef9527151b9e31d9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38831342"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39030617"
 ---
 # <a name="getting-started-with-macos-mojave"></a>Začínáme s macOS Mojave
 
@@ -23,7 +23,7 @@ ms.locfileid: "38831342"
 > Použijte pouze experimentování.
 
 > [!NOTE]
-> Další informace najdete v článku [poznámky k verzi](https://releases.xamarin.com/preview-release-xcode-10-beta/) pro Xamarin ve verzi preview verzi.
+> Další informace najdete v článku Xamarin ve verzi preview [release blogový příspěvek](https://releases.xamarin.com/preview-release-xcode-10-beta-3/).
 
 Tento dokument popisuje, jak jejich nastavení až po sestavení macOS Mojave aplikací Xamarin.Mac. Popisuje, jak stáhnout Xcode 10 a aktualizace sady Visual Studio pro Mac.
 
@@ -36,7 +36,7 @@ Tento dokument popisuje, jak jejich nastavení až po sestavení macOS Mojave ap
 
 2. **Spuštění Xcode 10** – spustit 10 Xcode před aktualizací a spuštění sady Visual Studio pro Mac; nainstaluje několik nástrojů, které vyžaduje Xamarin.
 
-3. **Aktualizace sady Visual Studio pro Mac** – postupujte podle pokynů [poznámky k verzi](https://releases.xamarin.com/preview-release-xcode-10-beta/) nainstalovat Xamarin ve verzi preview.
+3. **Aktualizace sady Visual Studio pro Mac** – postupujte podle pokynů [release blogu](https://releases.xamarin.com/preview-release-xcode-10-beta-3/) nainstalovat Xamarin ve verzi preview.
 
 4. _(volitelné)_  **Nainstalovat nejnovější beta Mojave macOS na počítači Mac** – k otestování aplikace Xamarin.Mac, používající nově zavedeném macOS Mojave rozhraní API pro registrovaný můžou vývojáři Apple [Stáhnout](https://developer.apple.com/download/) a nainstalovat nejnovější beta developer Mojave macOS.
 
@@ -46,9 +46,9 @@ Tento dokument popisuje, jak jejich nastavení až po sestavení macOS Mojave ap
    > [!IMPORTANT]
    > Před upgradem na macOS Mojave pro vytváření a testování aplikací Xamarin.Mac, které volají macOS nové rozhraní API Mojave počítače Mac:
    > - Čtení [zpráva k vydání verze společnosti Apple](https://developer.apple.com/download/) aktualizaci operačního systému.
-   > - Čtení [poznámky k verzi](https://releases.xamarin.com/preview-release-xcode-10-beta/) pro Xamarin ve verzi preview verzi. Všimněte si, že tento první verze preview nezahrnují vazby pro macOS nové rozhraní API prvcích AppKit Mojave (jako je tmavé režim).
+   > - Přečtěte si Xamarin ve verzi preview [release blogový příspěvek](https://releases.xamarin.com/preview-release-xcode-10-beta-3/).
 
 ## <a name="related-links"></a>Související odkazy
 
 - [Stáhnout Xcode 10](https://developer.apple.com/download/)
-- Xamarin ve verzi preview [zpráva k vydání verze](https://releases.xamarin.com/preview-release-xcode-10-beta/)
+- Xamarin ve verzi preview [release blogový příspěvek](https://releases.xamarin.com/preview-release-xcode-10-beta-3/)

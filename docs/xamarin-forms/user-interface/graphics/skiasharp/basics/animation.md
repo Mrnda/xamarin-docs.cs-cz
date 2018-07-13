@@ -1,31 +1,31 @@
 ---
-title: Základní animace v SkiaSharp
-description: Tento článek vysvětluje, jak animace grafiky SkiaSharp v aplikacích Xamarin.Forms a to ukazuje s ukázkový kód.
+title: Základní animace v ve Skiasharpu
+description: Tento článek vysvětluje, jak animace grafiky ve Skiasharpu v Xamarin.Forms aplikací a ukazuje to se vzorovým kódem.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 31C96FD6-07E4-4473-A551-24753A5118C3
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 08583a62719927b900c6aeede1b3b4398ed803de
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 393716e17b042224f2b0bae8c526132489af26c6
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243340"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994809"
 ---
-# <a name="basic-animation-in-skiasharp"></a>Základní animace v SkiaSharp
+# <a name="basic-animation-in-skiasharp"></a>Základní animace v ve Skiasharpu
 
-_Způsob animace SkiaSharp grafiky_
+_Objevte, jak animace grafiky ve Skiasharpu_
 
-Můžete animace SkiaSharp grafiky ve Xamarin.Forms tím, že na `PaintSurface` metoda, která se má volat velmi často, pokaždé, když se může lišit kreslení grafiky. Tady je animace uvidíte později v tomto článku doplněnou soustředných kroužky, které zdánlivě rozbalte ze softwaru:
+Lze animovat grafiky ve Skiasharpu v Xamarin.Forms způsobením `PaintSurface` metodu, která se velmi často volána pokaždé, když vykreslování grafiky trochu jinak. Tady je animace, uvidíte později v tomto článku se soustředných bodovým zdánlivě rozbalte v Centru pro:
 
-![](animation-images/animationexample.png "Několik soustředných kroužky zdánlivě rozšiřování z centra")
+![](animation-images/animationexample.png "Několik soustředných kruhy zdánlivě rozšíření z centra")
 
-**Pulsating elipsy** stránku [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) program animuje dvěma osami elipsy tak, aby se zdá, že se pulsating a můžete řídit i počet tento opatřen:
+**Pulsating Elipsa** stránku [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) program animuje dvě osy elipsa tak, aby se zdá být pulsating a dokonce můžete řídit rychlost tento opatřen:
 
 
-[ **PulsatingEllipsePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml) soubor vytvoří platformě Xamarin.Forms `Slider` a `Label` zobrazit aktuální hodnotu jezdce. Toto je běžný způsob, jak integrovat `SKCanvasView` s dalšími zobrazeními Xamarin.Forms:
+[ **PulsatingEllipsePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml) soubor vytvoří Xamarin.Forms `Slider` a `Label` zobrazíte aktuální hodnotu posuvníku. Toto je běžný způsob, jak integrovat `SKCanvasView` s dalšími zobrazeními Xamarin.Forms:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -60,7 +60,7 @@ Můžete animace SkiaSharp grafiky ve Xamarin.Forms tím, že na `PaintSurface` 
 </ContentPage>
 ```
 
-Vytvoří soubor kódu `Stopwatch` objekt, který má sloužit jako hodiny vysokou přesnost. `OnAppearing` Přepsat nastaví `pageIsActive` do `true` a volá metodu s názvem `AnimationLoop`. `OnDisappearing` Přepsání sad, které `pageIsActive` do `false`:
+Vytvoří soubor kódu na pozadí `Stopwatch` objektu, která bude sloužit jako hodin vysokou přesností. `OnAppearing` Přepsání sady `pageIsActive` pole `true` a volá metodu s názvem `AnimationLoop`. `OnDisappearing` Přepsání sad, které `pageIsActive` pole `false`:
 
 ```csharp
 Stopwatch stopwatch = new Stopwatch();
@@ -86,7 +86,7 @@ protected override void OnDisappearing()
 }
 ```
 
-`AnimationLoop` Metoda spustí `Stopwatch` a pak smyčky při `pageIsActive` je `true`. Toto je v podstatě "nekonečné smyčce" stránky je aktivní, ale nezpůsobuje program přesah vzhledem k tomu, že dojde k závěru, že opakování ve smyčce pomocí volání `Task.Delay` s `await` operátor, který umožňuje dalších částí funkce programu. Argument `Task.Delay` způsobí, že její dokončení za sekundu 1/30. Definuje obnovovací frekvence animace.
+`AnimationLoop` Spuštění metody `Stopwatch` a potom smyčky při `pageIsActive` je `true`. Toto je v podstatě "nekonečná smyčka" na stránce je aktivní, ale nezpůsobí program přestane reagovat, protože dojde k závěru smyčky voláním `Task.Delay` s `await` operátor, který umožňuje jiné části funkce programu. Argument `Task.Delay` způsobí, že se dokončí za sekundu 1/30. Definuje frekvenci snímků animace.
 
 ```csharp
 async Task AnimationLoop()
@@ -107,9 +107,9 @@ async Task AnimationLoop()
 
 ```
 
-`while` Smyčky začíná získáním času cyklu od `Slider`. Toto je čas v sekundách, například 5. Druhý příkaz vypočítá hodnotu `t` pro *čas*. Pro `cycleTime` 5, `t` zvyšuje od 0 do 1 každých 5 sekund. Argument `Math.Sin` funkce v druhý příkaz rozsahu od 0 do 2π každých 5 sekund. `Math.Sin` Funkce vrátí hodnotu v rozsahu od 0 do 1 zpět na hodnotu 0 a pak na &ndash;1 a 0 každých 5 sekund, ale s hodnotami, které pomaleji změnit, pokud je hodnota téměř 1 nebo -1. Hodnota 1 je přidáván, takže jsou vždy aktivní kladné hodnoty a pak je rozdělený podle 2, takže hodnoty v rozsahu od ½ na 1 ½ 0 ½, ale pomalu, pokud hodnota je přibližně 1 a 0. Toto je uloženo v `scale` pole a `SKCanvasView` je zrušena.
+`while` Smyčky začíná získáním času cyklu od `Slider`. Toto je doba v sekundách, například 5. Druhý příkaz vypočítá hodnotu `t` pro *čas*. Pro `cycleTime` 5, `t` zvyšuje od 0 do 1 každých 5 sekund. Argument `Math.Sin` funkce v druhý příkaz rozsahu od 0 do 2π každých 5 sekund. `Math.Sin` Funkce vrací hodnotu od 0 do 1 zpět na 0 a potom na &ndash;1 a 0 každých 5 sekund, ale s hodnotami, které se mění pomaleji, pokud je hodnotou téměř 1 nebo -1. Hodnota 1 přičtena tak, aby se vždy kladné hodnoty a pak je rozdělen 2, takže hodnoty od ½ na 1 ½ 0 ½, ale pomalu, pokud hodnota je přibližně 1 až 0. Toto je uloženo v `scale` pole a `SKCanvasView` zneplatněna.
 
-`PaintSurface` Tato metoda používá `scale` hodnotě k výpočtu dvěma osami elipsy:
+`PaintSurface` Tato metoda používá `scale` hodnotě k výpočtu dvě osy se třemi tečkami:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -140,17 +140,17 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Metoda vypočítá maximální radius na základě velikosti oblasti zobrazení a minimální radius podle maximální radius. `scale` Hodnota je animované mezi 0 a 1 a zpět na hodnotu 0, aby metoda používá k výpočtu `xRadius` a `yRadius` , je v rozsahu `minRadius` a `maxRadius`. Kreslení a vyplňte elipsy se používají tyto hodnoty:
+Metoda vypočítá maximální radius na základě velikosti oblasti zobrazení, minimální radius založeny na maximální radius. `scale` Je animovaný hodnotu mezi 0 a 1 a zpět na 0, tak metodu, která používá k výpočtu `xRadius` a `yRadius` , který je v rozsahu `minRadius` a `maxRadius`. Tyto hodnoty slouží k vykreslení a vyplnit elipsu:
 
-[![](animation-images/pulsatingellipse-small.png "Trojitá snímek obrazovky stránky blikající elipsy")](animation-images/pulsatingellipse-large.png#lightbox "Trojitá snímek obrazovky stránky blikající třemi tečkami")
+[![](animation-images/pulsatingellipse-small.png "Trojitá snímek obrazovky stránky blikající Elipsa")](animation-images/pulsatingellipse-large.png#lightbox "Trojitá snímek obrazovky stránky blikající elipsa")
 
-Všimněte si, že `SKPaint` objekt se vytvoří v `using` bloku. Jako mnoho tříd SkiaSharp `SKPaint` je odvozena z `SKObject`, která je odvozena z `SKNativeObject`, který implementuje [ `IDisposable` ](https://developer.xamarin.com/api/type/System.IDisposable/) rozhraní. `SKPaint` přepsání `Dispose` metodu pro uvolnění nespravovaných prostředků.
+Všimněte si, že `SKPaint` objekt je vytvořen v `using` bloku. Například mnoho tříd ve Skiasharpu `SKPaint` je odvozena z `SKObject`, která je odvozena z `SKNativeObject`, která implementuje [ `IDisposable` ](xref:System.IDisposable) rozhraní. `SKPaint` přepsání `Dispose` metodu pro uvolnění nespravovaných prostředků.
 
- Vložení `SKPaint` v `using` bloku zajišťuje, že `Dispose` nazývá na konci bloku k uvolnění těchto nespravovaných prostředků. To se stane, přesto když paměti používané `SKPaint` uvolněno objekt modulem garbage collector v rozhraní .NET, ale v animace kódu, je nejvhodnější zajistit poněkud proaktivní v uvolnění paměti v více odpovídajícím.
+ Vložení `SKPaint` v `using` bloku zajišťuje, že `Dispose` je volána na konci bloku k uvolnění těchto nespravovaných prostředků. K tomu přesto při paměti používané `SKPaint` je uvolněn objekt systému uvolňování paměti .NET, ale v kódu animace, je nejlepší v uvolňování paměti v více odpovídajícím poněkud aktivní.
 
- Lepší řešení v tomto případě by vytvořte dvě `SKPaint` objekty jednou a uložit je jako pole.
+ V tomto konkrétním případě lepší řešení je vytvořit dva `SKPaint` objekty jednou a uložit je jako pole.
 
-Co se **rozšiřování kroužky** nemá animace. [ `ExpandingCirclesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/skia-sharp-forms/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ExpandingCirclesPage.cs) Třída začne definováním několik polí, včetně `SKPaint` objektu:
+To **rozbalení kruhy** nemá animace. [ `ExpandingCirclesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/skia-sharp-forms/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ExpandingCirclesPage.cs) Třídy začíná tak, že definujete několik polí, včetně `SKPaint` objektu:
 
 ```csharp
 public class ExpandingCirclesPage : ContentPage
@@ -178,7 +178,7 @@ public class ExpandingCirclesPage : ContentPage
 }
 ```
 
-Tento program používá jiný přístup k animace podle platformě Xamarin.Forms `Device.StartTimer`. `t` Pole je animovaný od 0 do 1 každý `cycleTime` milisekundách:
+Tento program používá jiný přístup k animace založené na Xamarin.Forms `Device.StartTimer`. `t` Pole je animovaný od 0 do 1 každý `cycleTime` milisekundách:
 
 ```csharp
 public class ExpandingCirclesPage : ContentPage
@@ -212,7 +212,7 @@ public class ExpandingCirclesPage : ContentPage
 }
 ```
 
-`PaintSurface` Obslužná rutina nevykresluje 5 soustředných kroužky s animovaný poloměr. Pokud `baseRadius` proměnná počítá se jako 100, pak jako `t` je animovaný od 0 do 1, poloměr nárůst pět kroužky od 0 do 100, 100 až 200, 200 až 300, 300 až 400 a 400 na 500. Pro většinu kroužky `strokeWidth` je 50, ale pro první kroužek `strokeWidth` animuje od 0 do 50. Pro většinu kroužky je modrou barvu, ale pro poslední kruhu barvu animovaný z modré na průhledné:
+`PaintSurface` 5 soustředných kruhy s animovaný poloměry nakreslí obslužné rutiny. Pokud `baseRadius` proměnné se vypočte takto: 100, pak jako `t` je animovaný od 0 do 1, poloměr pět kruhy nárůst od 0 do 100, 100 až 200, 200 až 300, 300 až 400 a 400 až 500. Pro většinu z kruhů `strokeWidth` je 50, ale pro první kruh, `strokeWidth` animuje od 0 do 50. Pro většinu z kruhů je modrá barva, ale pro poslední kruhu je animovaný barvu z modré na transparentní:
 
 ```csharp
 public class ExpandingCirclesPage : ContentPage
@@ -243,12 +243,12 @@ public class ExpandingCirclesPage : ContentPage
 }
 ```
 
-Výsledkem je, že obrázek vypadá stejné při `t` rovná 0, jako když `t` rovná 1 a kroužky zdá se, že chcete-li pokračovat, navždy rozšíření:
+Výsledkem je, že obrázek vypadá shodovat `t` rovná 0, jako když `t` je rovno 1 a kruhy zdá se, že pokračujte v rozbalování navždy:
 
-[![](animation-images/expandingcircles-small.png "Trojitá snímek obrazovky stránky rozšiřování kroužky")](animation-images/expandingcircles-large.png#lightbox "Trojitá snímek obrazovky stránky rozšiřování kroužky")
+[![](animation-images/expandingcircles-small.png "Trojitá snímek obrazovky stránky rozbalení kruhy")](animation-images/expandingcircles-large.png#lightbox "Trojitá snímek obrazovky stránky rozbalení kruhy")
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [Rozhraní API ve Skiasharpu](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

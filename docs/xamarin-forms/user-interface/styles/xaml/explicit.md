@@ -1,28 +1,28 @@
 ---
 title: Explicitní styly v Xamarin.Forms
-description: Explicitní styl je ten, který je selektivně použít u ovládacích prvků nastavením své vlastnosti stylu. Tento článek vysvětluje, jak využívat explicitní styly v aplikaci Xamarin.Forms.
+description: Explicitní styl je ten, který je selektivně použít u ovládacích prvků tak, že nastavíte jejich vlastnosti Style. Tento článek vysvětluje, jak používat explicitní styly aplikace Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: C0DF9F8F-B431-4374-A574-325BC3C41A3B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: fd42eae9f70b1a44ee1c844264d1c0cda1fdb734
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: fba00120ed9f5c74bec7622ae1914c43533e8579
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245195"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998567"
 ---
 # <a name="explicit-styles-in-xamarinforms"></a>Explicitní styly v Xamarin.Forms
 
-_Explicitní styl je ten, který je selektivně použít u ovládacích prvků nastavením své vlastnosti stylu._
+_Explicitní styl je ten, který je selektivně použít u ovládacích prvků tak, že nastavíte jejich vlastnosti Style._
 
-## <a name="creating-an-explicit-style-in-xaml"></a>Vytváření explicitní styl v jazyce XAML
+## <a name="creating-an-explicit-style-in-xaml"></a>Vytvoření explicitní styl v XAML
 
-Deklarovat [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) na úrovni stránky [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) musí být přidaný do stránky a pak jeden nebo více `Style` můžou být součástí deklarace `ResourceDictionary`. A `Style` přišla *explicitní* tím, že jeho deklaraci `x:Key` atribut, který poskytuje v popisný klíč `ResourceDictionary`. *Explicitní* pak je nutné použít styly na konkrétní vizuální prvky nastavením jejich [ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/) vlastnosti.
+Chcete-li deklarovat [ `Style` ](xref:Xamarin.Forms.Style) na úrovni stránky [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) musí být přidán do stránky a pak jednu nebo víc `Style` mohou být součástí deklarace `ResourceDictionary`. A `Style` tvoří *explicitní* tím, že jeho deklarace `x:Key` atribut, který poskytuje v klíči popisný `ResourceDictionary`. *Explicitní* styly musí být použijí se určité vizuální prvky nastavením jejich [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) vlastnosti.
 
-Následující příklad kódu ukazuje *explicitní* styly deklarované v jazyce XAML na stránce `ResourceDictionary` a použít na stránku [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) instancí:
+Následující příklad kódu ukazuje *explicitní* styly deklarované v XAML na stránce `ResourceDictionary` a použít na stránku [ `Label` ](xref:Xamarin.Forms.Label) instancí:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.ExplicitStylesPage" Title="Explicit" Icon="xaml.png">
@@ -62,15 +62,15 @@ Následující příklad kódu ukazuje *explicitní* styly deklarované v jazyce
 </ContentPage>
 ```
 
-[ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) Definuje tři *explicitní* stylů, které se použijí na stránku [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) instance. Každý `Style` slouží k zobrazení textu v barvu, při velikosti a vodorovného a svislého rozložení možnosti také nastavení písma. Každý `Style` se použije na jiný `Label` nastavením jeho [ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/) vlastností pomocí `StaticResource` – rozšíření značek. Výsledkem je vidět na následujících snímcích obrazovky vzhled:
+[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) Definuje tři *explicitní* stylů, které se použijí na stránku [ `Label` ](xref:Xamarin.Forms.Label) instancí. Každý `Style` slouží k zobrazení textu v odlišnou barvou, při nastavování také písmo možnosti velikosti a vodorovné a svislé rozložení. Každý `Style` se použije na jiný `Label` nastavením jeho [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) pomocí vlastnosti `StaticResource` – rozšíření značek. Výsledkem je vzhled je znázorněno na následujících snímcích obrazovky:
 
-[![](explicit-images/explicit-styles.png "Příklad explicitní styly")](explicit-images/explicit-styles-large.png#lightbox "příklad explicitní styly")
+[![](explicit-images/explicit-styles.png "Explicitní styly příklad")](explicit-images/explicit-styles-large.png#lightbox "příklad explicitní styly")
 
-Kromě toho konečné [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) má [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) na něho použít, ale také přepsání [ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.TextColor/) vlastnost, která má jiný `Color`hodnotu.
+Kromě toho, koncový [ `Label` ](xref:Xamarin.Forms.Label) má [ `Style` ](xref:Xamarin.Forms.Style) použít, ale také přepisuje [ `TextColor` ](xref:Xamarin.Forms.Label.TextColor) vlastnost různých `Color`hodnotu.
 
-### <a name="creating-an-explicit-style-at-the-control-level"></a>Vytváření explicitní styl v ovládacím prvku úrovně
+### <a name="creating-an-explicit-style-at-the-control-level"></a>Vytváření explicitní styl v ovládacím prvku úrovni
 
-Kromě vytváření *explicitní* styly na úrovni stránky je lze také vytvořit na úrovni ovládacího prvku, jak je znázorněno v následujícím příkladu kódu:
+Kromě vytvoření *explicitní* styly na úrovni stránky, je lze také vytvořit na úrovni ovládacího prvku, jak je znázorněno v následujícím příkladu kódu:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.ExplicitStylesPage" Title="Explicit" Icon="xaml.png">
@@ -91,13 +91,13 @@ Kromě vytváření *explicitní* styly na úrovni stránky je lze také vytvoř
 </ContentPage>
 ```
 
-V tomto příkladu *explicitní* [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) instance jsou přiřazeny k [ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Resources/) kolekce [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) ovládacího prvku. Styly je pak použít ovládací prvek a jeho podřízených položek.
+V tomto příkladu *explicitní* [ `Style` ](xref:Xamarin.Forms.Style) jsou instance přiřazeny do [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) kolekce [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) ovládacího prvku. Styly lze pak použít na ovládací prvek a jeho podřízené položky.
 
-Informace o vytváření stylů v aplikace [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/), najdete v části [globální styly](~/xamarin-forms/user-interface/styles/application.md).
+Informace o vytváření styly v aplikačním [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary), naleznete v tématu [globální styly](~/xamarin-forms/user-interface/styles/application.md).
 
-## <a name="creating-an-explicit-style-in-c35"></a>Vytváření explicitní styl v jazyce C&#35;
+## <a name="creating-an-explicit-style-in-c35"></a>Vytvoření explicitní stylu v jazyce C&#35;
 
-[`Style`](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) instance lze přidat na stránku [ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Resources/) kolekce v jazyce C# tak, že vytvoříte novou [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)a pak přidáním `Style` instance k `ResourceDictionary`, jak je znázorněno v Následující příklad kódu:
+[`Style`](xref:Xamarin.Forms.Style) instance lze přidat na stránku [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) kolekce v jazyce C# vytvořit nový [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)a potom přidáním `Style` instance na `ResourceDictionary`, jak je znázorněno Následující příklad kódu:
 
 ```csharp
 public class ExplicitStylesPageCS : ContentPage
@@ -145,9 +145,9 @@ public class ExplicitStylesPageCS : ContentPage
 }
 ```
 
-V konstruktoru definuje tři *explicitní* stylů, které se použijí na stránku [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) instance. Každý *explicitní* [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) je přidán do [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) pomocí [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ResourceDictionary.Add/p/System.String/System.Object/) metoda, zadání `key` řetězec, který má odkazovat `Style` instance. Každý `Style` se použije na jiný `Label` nastavením jejich [ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/) vlastnosti.
+Konstruktor definuje tři *explicitní* stylů, které se použijí na stránku [ `Label` ](xref:Xamarin.Forms.Label) instancí. Každý *explicitní* [ `Style` ](xref:Xamarin.Forms.Style) se přidá do [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) pomocí [ `Add` ](xref:Xamarin.Forms.ResourceDictionary.Add(System.String,System.Object)) metodu, zadáte `key` řetězec k odkazování `Style` instance. Každý `Style` se použije na jiný `Label` nastavením jejich [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) vlastnosti.
 
-Neexistuje však žádný výhodou používání [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) sem. Místo toho [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) instance může být přiřazen přímo na [ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/) vlastnosti požadované vizuální prvky a `ResourceDictionary` může být odebrán, jak je znázorněno v následujícím Příklad kódu:
+Však neexistuje žádná výhoda pro použití [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) tady. Místo toho [ `Style` ](xref:Xamarin.Forms.Style) instance je možné přiřadit přímo [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) vlastnosti požadované vizuálních prvků a `ResourceDictionary` je možné odebrat, jak je znázorněno v následujícím Příklad kódu:
 
 ```csharp
 public class ExplicitStylesPageCS : ContentPage
@@ -177,11 +177,11 @@ public class ExplicitStylesPageCS : ContentPage
 }
 ```
 
-V konstruktoru definuje tři *explicitní* stylů, které se použijí na stránku [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) instance. Každý `Style` slouží k zobrazení textu v barvu, při velikosti a vodorovného a svislého rozložení možnosti také nastavení písma. Každý `Style` se použije na jiný `Label` nastavením jeho [ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/) vlastnosti. Kromě toho konečné `Label` má `Style` na něho použít, ale také přepsání `TextColor` vlastnost na jiný `Color` hodnotu.
+Konstruktor definuje tři *explicitní* stylů, které se použijí na stránku [ `Label` ](xref:Xamarin.Forms.Label) instancí. Každý `Style` slouží k zobrazení textu v odlišnou barvou, při nastavování také písmo možnosti velikosti a vodorovné a svislé rozložení. Každý `Style` se použije na jiný `Label` nastavením jeho [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) vlastnosti. Kromě toho, koncový `Label` má `Style` použít, ale také přepisuje `TextColor` vlastnost na jiný `Color` hodnotu.
 
 ## <a name="summary"></a>Souhrn
 
-A [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) přišla *explicitní* tím, že jeho deklaraci `x:Key` atributů a selektivně jeho použitím k ovládacím prvkům nastavením jejich [ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/) vlastnosti.
+A [ `Style` ](xref:Xamarin.Forms.Style) tvoří *explicitní* tím, že jeho deklarace `x:Key` atribut a potom selektivně jeho použití k ovládacím prvkům tak, že nastavíte jejich [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) vlastnosti.
 
 
 
@@ -190,6 +190,6 @@ A [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) při�
 - [Rozšíření značek XAML](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
 - [Základní styly (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
 - [Práce se styly (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
-- [ResourceDictionary](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)
-- [Styl](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)
-- [Metoda setter](https://developer.xamarin.com/api/type/Xamarin.Forms.Setter/)
+- [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
+- [Styl](xref:Xamarin.Forms.Style)
+- [Metoda setter](xref:Xamarin.Forms.Setter)

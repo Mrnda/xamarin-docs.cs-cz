@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/11/2018
-ms.openlocfilehash: 29cb00c100918bf03efe3f078c366750080c0627
-ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
-ms.translationtype: HT
+ms.openlocfilehash: 68a38fc43cd744e0382f35baa83643a9f0f7e53d
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 07/12/2018
-ms.locfileid: "38986145"
+ms.locfileid: "38998983"
 ---
 # <a name="ios-platform-specifics"></a>iOS specifik platforem
 
@@ -20,15 +20,15 @@ _Specifika platforem umožňují používat funkce, která je dostupná jenom na
 
 V systémech iOS Xamarin.Forms obsahuje následující specifika platforem:
 
-- Rozostření podporu pro všechny [ `VisualElement` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualElement/). Další informace najdete v tématu [použití rozostření](#blur).
+- Rozostření podporu pro všechny [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Další informace najdete v tématu [použití rozostření](#blur).
 - Řízení, zda se název stránky se zobrazí velké záhlaví na navigačním panelu stránky. Další informace najdete v tématu [zobrazení důležité nadpisy](#large_title).
 - Zajištění tuto stránku obsahu je umístěn na oblast na obrazovce, který je bezpečný pro všechna zařízení s Iosem. Další informace najdete v tématu [umožňuje bezpečné vodítko rozložení pro oblast](#safe_area_layout).
 - Více průchody průsvitných navigační panel. Další informace najdete v tématu [provádění navigační panel průsvitné](#translucent_navigation_bar).
-- Řízení, zda text stavového řádku barva na [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) se upraví tak, aby odpovídaly světelnost na navigačním panelu. Další informace najdete v tématu [nastavení režimu barvu textu panelu Stav](#status_bar_color_mode).
-- Zajištění, který byl vložen text zapadá do [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) úpravou velikosti písma. Další informace najdete v tématu [nastavení velikosti písma položky](#adjust_font_size).
-- Řízení při výběru položky probíhá [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/). Další informace najdete v tématu [řízení výběr položky](#picker_update_mode).
-- Nastavení viditelnost panelu stavu [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/). Další informace najdete v tématu [nastavení viditelnost panelu Stav na stránce](#set_status_bar_visibility).
-- Řízení, zda [ `ScrollView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) zpracovává gesta dotykového ovládání a předává je na jeho obsah. Další informace najdete v tématu [zpoždění v obsahu dnešní v ScrollView](#delay_content_touches).
+- Řízení, zda text stavového řádku barva na [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) se upraví tak, aby odpovídaly světelnost na navigačním panelu. Další informace najdete v tématu [nastavení režimu barvu textu panelu Stav](#status_bar_color_mode).
+- Zajištění, který byl vložen text zapadá do [ `Entry` ](xref:Xamarin.Forms.Entry) úpravou velikosti písma. Další informace najdete v tématu [nastavení velikosti písma položky](#adjust_font_size).
+- Řízení při výběru položky probíhá [ `Picker` ](xref:Xamarin.Forms.Picker). Další informace najdete v tématu [řízení výběr položky](#picker_update_mode).
+- Nastavení viditelnost panelu stavu [ `Page` ](xref:Xamarin.Forms.Page). Další informace najdete v tématu [nastavení viditelnost panelu Stav na stránce](#set_status_bar_visibility).
+- Řízení, zda [ `ScrollView` ](xref:Xamarin.Forms.ScrollView) zpracovává gesta dotykového ovládání a předává je na jeho obsah. Další informace najdete v tématu [zpoždění v obsahu dnešní v ScrollView](#delay_content_touches).
 - Nastavení stylu oddělovač na [ `ListView` ](xref:Xamarin.Forms.ListView). Další informace najdete v tématu [nastavení styl oddělovače ListView](#listview-separatorstyle).
 - Zakázat režim starší verze barvy na podporované [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Další informace najdete v tématu [zakázání barevný režim starší verze](#legacy-color-mode).
 - Povolení vrhá stín na [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Další informace najdete v tématu [povolení stínem vyřadit](#drop-shadow).
@@ -38,7 +38,7 @@ V systémech iOS Xamarin.Forms obsahuje následující specifika platforem:
 
 ## <a name="applying-blur"></a>Použití rozostření
 
-Tento konkrétní platformy rozostření obsahu vrstvy pod ní se používá a je využívat XAML tak, že nastavíte [ `VisualElement.BlurEffect` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.BlurEffectProperty/) přidružená vlastnost na hodnotu [ `BlurEffectStyle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle/) výčtu:
+Tento konkrétní platformy rozostření obsahu vrstvy pod ní se používá a je využívat XAML tak, že nastavíte [ `VisualElement.BlurEffect` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.BlurEffectProperty) přidružená vlastnost na hodnotu [ `BlurEffectStyle` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle) výčtu:
 
 ```xaml
 <ContentPage ...
@@ -62,9 +62,9 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 boxView.On<iOS>().UseBlurEffect(BlurEffectStyle.ExtraLight);
 ```
 
-`BoxView.On<iOS>` Metody Určuje, že se tento konkrétní platformy spustí pouze v systému iOS. [ `VisualElement.UseBlurEffect` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.UseBlurEffect/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement}/Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle/) Metoda v [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) obor názvů, se používá k aplikování efekt rozostření s [ `BlurEffectStyle` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle) výčet poskytuje čtyři hodnoty: [ `None` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.None), [ `ExtraLight` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.ExtraLight), [ `Light` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.Light), a [ `Dark` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.Dark).
+`BoxView.On<iOS>` Metody Určuje, že se tento konkrétní platformy spustí pouze v systému iOS. [ `VisualElement.UseBlurEffect` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.UseBlurEffect(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement},Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle)) Metoda v [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) obor názvů, se používá k aplikování efekt rozostření s [ `BlurEffectStyle` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle) výčet poskytuje čtyři hodnoty: [ `None` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.None), [ `ExtraLight` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.ExtraLight), [ `Light` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.Light), a [ `Dark` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.Dark).
 
-Výsledkem je, že zadané [ `BlurEffectStyle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle/) platí pro [ `BoxView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/) instance, které rozostření [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) vrstvy pod ní:
+Výsledkem je, že zadané [ `BlurEffectStyle` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle) platí pro [ `BoxView` ](xref:Xamarin.Forms.BoxView) instance, které rozostření [ `Image` ](xref:Xamarin.Forms.Image) vrstvy pod ní:
 
 ![](ios-images/blur-effect.png "Rozostření efekt specifické platformy")
 
@@ -98,9 +98,9 @@ var navigationPage = new Xamarin.Forms.NavigationPage(new iOSLargeTitlePageCS())
 navigationPage.On<iOS>().SetPrefersLargeTitles(true);
 ```
 
-`NavigationPage.On<iOS>` Metody Určuje, že se tento konkrétní platformy spustí pouze v systému iOS. `NavigationPage.SetPrefersLargeTitle` Metoda v [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/) obor názvů, určuje, zda jsou povoleny důležité nadpisy.
+`NavigationPage.On<iOS>` Metody Určuje, že se tento konkrétní platformy spustí pouze v systému iOS. `NavigationPage.SetPrefersLargeTitle` Metoda v [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) obor názvů, určuje, zda jsou povoleny důležité nadpisy.
 
-Za předpokladu, že jsou důležité nadpisy zapnuta [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/), budou všechny stránky v navigačním zásobníku zobrazit důležité nadpisy. Toto chování můžete přepsat na stránkách s nastavením `Page.LargeTitleDisplay` přidružená vlastnost na hodnotu `LargeTitleDisplayMode` výčtu:
+Za předpokladu, že jsou důležité nadpisy zapnuta [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage), budou všechny stránky v navigačním zásobníku zobrazit důležité nadpisy. Toto chování můžete přepsat na stránkách s nastavením `Page.LargeTitleDisplay` přidružená vlastnost na hodnotu `LargeTitleDisplayMode` výčtu:
 
 ```xaml
 <ContentPage ...
@@ -129,7 +129,7 @@ public class iOSLargeTitlePageCS : ContentPage
 }
 ```
 
-`Page.On<iOS>` Metody Určuje, že se tento konkrétní platformy spustí pouze v systému iOS. `Page.SetLargeTitleDisplay` Metoda v [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/) obor názvů, řídí chování velkých nadpis na [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/), s `LargeTitleDisplayMode` výčet poskytuje tři možné hodnoty:
+`Page.On<iOS>` Metody Určuje, že se tento konkrétní platformy spustí pouze v systému iOS. `Page.SetLargeTitleDisplay` Metoda v [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) obor názvů, řídí chování velkých nadpis na [ `Page` ](xref:Xamarin.Forms.Page), s `LargeTitleDisplayMode` výčet poskytuje tři možné hodnoty:
 
 - `Always` – v navigačním panelu a písma velikost velkých formát.
 - `Automatic` – stejné styl (velký nebo malý) použít jako předchozí položka v navigačním zásobníku.
@@ -152,7 +152,7 @@ switch (On<iOS>().LargeTitleDisplay())
 }
 ```
 
-Výsledkem je, že zadané `LargeTitleDisplayMode` platí pro [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/), která řídí chování velkých název:
+Výsledkem je, že zadané `LargeTitleDisplayMode` platí pro [ `Page` ](xref:Xamarin.Forms.Page), která řídí chování velkých název:
 
 ![](ios-images/large-title.png "Rozostření efekt specifické platformy")
 
@@ -183,16 +183,16 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 On<iOS>().SetUseSafeArea(true);
 ```
 
-`Page.On<iOS>` Metody Určuje, že se tento konkrétní platformy spustí pouze v systému iOS. `Page.SetUseSafeArea` Metoda v [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/) obor názvů, určuje, zda je povoleno vodítko rozložení pro bezpečnou oblast.
+`Page.On<iOS>` Metody Určuje, že se tento konkrétní platformy spustí pouze v systému iOS. `Page.SetUseSafeArea` Metoda v [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) obor názvů, určuje, zda je povoleno vodítko rozložení pro bezpečnou oblast.
 
 Výsledkem je, že obsah stránky může být umístěné na oblast na obrazovce, který je bezpečný pro všechny Iphony:
 
 [![](ios-images/safe-area-layout.png "Vodítko rozložení pro bezpečnou oblast")](ios-images/safe-area-layout-large.png#lightbox "vodítko rozložení pro bezpečnou oblast")
 
 > [!NOTE]
-> Bezpečné oblast, která Společnost Apple v Xamarin.Forms slouží k nastavení [ `Page.Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Padding/) vlastnost a přepíše předchozí hodnoty této vlastnosti, které jste nastavili.
+> Bezpečné oblast, která Společnost Apple v Xamarin.Forms slouží k nastavení [ `Page.Padding` ](xref:Xamarin.Forms.Page.Padding) vlastnost a přepíše předchozí hodnoty této vlastnosti, které jste nastavili.
 
-Bezpečnou oblast může přizpůsobit načítání jeho [ `Thickness` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Thickness/) hodnotu `Page.SafeAreaInsets` metodu z [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/) oboru názvů. Potom ji můžete změnit jako povinné a znovu přiřazen k `Padding` vlastnost v konstruktoru stránky nebo [ `OnAppearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnAppearing()/) přepsat:
+Bezpečnou oblast může přizpůsobit načítání jeho [ `Thickness` ](xref:Xamarin.Forms.Thickness) hodnotu `Page.SafeAreaInsets` metodu z [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) oboru názvů. Potom ji můžete změnit jako povinné a znovu přiřazen k `Padding` vlastnost v konstruktoru stránky nebo [ `OnAppearing` ](xref:Xamarin.Forms.Page.OnAppearing) přepsat:
 
 ```csharp
 protected override void OnAppearing()
@@ -209,7 +209,7 @@ protected override void OnAppearing()
 
 ## <a name="making-the-navigation-bar-translucent"></a>Provádění více průchody průsvitných navigační panel
 
-Tento konkrétní platformy se používá k změňte průhlednost na navigačním panelu a je využívat XAML tak, že nastavíte [ `NavigationPage.IsNavigationBarTranslucent` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.IsNavigationBarTranslucentProperty/) připojené vlastnosti `boolean` hodnotu:
+Tento konkrétní platformy se používá k změňte průhlednost na navigačním panelu a je využívat XAML tak, že nastavíte [ `NavigationPage.IsNavigationBarTranslucent` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.IsNavigationBarTranslucentProperty) připojené vlastnosti `boolean` hodnotu:
 
 ```xaml
 <NavigationPage ...
@@ -231,7 +231,7 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 (App.Current.MainPage as Xamarin.Forms.NavigationPage).On<iOS>().EnableTranslucentNavigationBar();
 ```
 
-`NavigationPage.On<iOS>` Metody Určuje, že se tento konkrétní platformy spustí pouze v systému iOS. [ `NavigationPage.EnableTranslucentNavigationBar` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.EnableTranslucentNavigationBar/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage}/) Metoda v [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/) oboru názvů je používán k vytváření více průchody průsvitných na navigačním panelu. Kromě toho [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage/) třídy v `Xamarin.Forms.PlatformConfiguration.iOSSpecific` oboru názvů má také [ `DisableTranslucentNavigationBar` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.DisableTranslucentNavigationBar/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage}/) metodu, která obnoví do výchozího stavu, navigačním panelu a [ `SetIsNavigationBarTranslucent` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.SetIsNavigationBarTranslucent/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage}/System.Boolean/) metodu, která slouží k přepnutí transparentnosti navigační panel voláním [ `IsNavigationBarTranslucent` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.IsNavigationBarTranslucent/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage}/) metody:
+`NavigationPage.On<iOS>` Metody Určuje, že se tento konkrétní platformy spustí pouze v systému iOS. [ `NavigationPage.EnableTranslucentNavigationBar` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.EnableTranslucentNavigationBar(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage})) Metoda v [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) oboru názvů je používán k vytváření více průchody průsvitných na navigačním panelu. Kromě toho [ `NavigationPage` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage) třídy v `Xamarin.Forms.PlatformConfiguration.iOSSpecific` oboru názvů má také [ `DisableTranslucentNavigationBar` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.DisableTranslucentNavigationBar(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage})) metodu, která obnoví do výchozího stavu, navigačním panelu a [ `SetIsNavigationBarTranslucent` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.SetIsNavigationBarTranslucent(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage},System.Boolean)) metodu, která slouží k přepnutí transparentnosti navigační panel voláním [ `IsNavigationBarTranslucent` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.IsNavigationBarTranslucent(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage})) metody:
 
 ```csharp
 (App.Current.MainPage as Xamarin.Forms.NavigationPage)
@@ -247,7 +247,7 @@ Výsledkem je, že průhlednost na navigačním panelu můžete změnit:
 
 ## <a name="adjusting-the-status-bar-text-color-mode"></a>Nastavení stavového řádku textového barvu režimu
 
-Tento ovládací prvky pro konkrétní platformu, zda text stavového řádku barva na [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) se upraví tak, aby odpovídaly světelnost na navigačním panelu. V XAML je využívá tak, že nastavíte [ `NavigationPage.StatusBarTextColorMode` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.StatusBarTextColorModeProperty/) přidružená vlastnost na hodnotu [ `StatusBarTextColorMode` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode/) výčtu:
+Tento ovládací prvky pro konkrétní platformu, zda text stavového řádku barva na [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) se upraví tak, aby odpovídaly světelnost na navigačním panelu. V XAML je využívá tak, že nastavíte [ `NavigationPage.StatusBarTextColorMode` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.StatusBarTextColorModeProperty) přidružená vlastnost na hodnotu [ `StatusBarTextColorMode` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode) výčtu:
 
 ```xaml
 <MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -292,14 +292,14 @@ IsPresentedChanged += (sender, e) =>
 };
 ```
 
-`NavigationPage.On<iOS>` Metody Určuje, že se tento konkrétní platformy spustí pouze v systému iOS. [ `NavigationPage.SetStatusBarTextColorMode` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.SetStatusBarTextColorMode/p/Xamarin.Forms.IPlatformElementConfiguration%7BXamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage%7D/Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode/) Metoda v [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/) obor názvů, ovládací prvky, zda text stavového řádku barva na [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) se upraví tak, aby odpovídaly Světelnost navigační panel s [ `StatusBarTextColorMode` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode) výčet poskytuje dva možné hodnoty:
+`NavigationPage.On<iOS>` Metody Určuje, že se tento konkrétní platformy spustí pouze v systému iOS. [ `NavigationPage.SetStatusBarTextColorMode` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.SetStatusBarTextColorMode(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage},Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode)) Metoda v [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) obor názvů, ovládací prvky, zda text stavového řádku barva na [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) se upraví tak, aby odpovídaly Světelnost navigační panel s [ `StatusBarTextColorMode` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode) výčet poskytuje dva možné hodnoty:
 
 - [`DoNotAdjust`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode.DoNotAdjust) – Označuje, že na stavovém řádku barva textu nesmí upravit.
 - [`MatchNavigationBarTextLuminosity`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode.MatchNavigationBarTextLuminosity) – Označuje, že na stavovém řádku textového barvu by měl odpovídat světelnost na navigačním panelu.
 
-Kromě toho [ `GetStatusBarTextColorMode` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.GetStatusBarTextColorMode/p/Xamarin.Forms.IPlatformElementConfiguration%7BXamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage%7D/) metody slouží k získání aktuální hodnoty [ `StatusBarTextColorMode` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode) výčet, který se použije na [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage).
+Kromě toho [ `GetStatusBarTextColorMode` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.GetStatusBarTextColorMode(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage})) metody slouží k získání aktuální hodnoty [ `StatusBarTextColorMode` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode) výčet, který se použije na [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage).
 
-Výsledkem je, že na stavovém řádku textového barvu na [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) je možné upravit tak, aby odpovídaly světelnost na navigačním panelu. V tomto příkladu stavového řádku textového barvu změny jako uživatel přepíná mezi [ `Master` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Master/) a [ `Detail` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Detail/) stránky [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/):
+Výsledkem je, že na stavovém řádku textového barvu na [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) je možné upravit tak, aby odpovídaly světelnost na navigačním panelu. V tomto příkladu stavového řádku textového barvu změny jako uživatel přepíná mezi [ `Master` ](xref:Xamarin.Forms.MasterDetailPage.Master) a [ `Detail` ](xref:Xamarin.Forms.MasterDetailPage.Detail) stránky [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage):
 
 ![](ios-images/status-bar-text-color-mode.png "Stavový řádek textového barvu režimu specifické pro platformu")
 
@@ -307,7 +307,7 @@ Výsledkem je, že na stavovém řádku textového barvu na [ `NavigationPage` ]
 
 ## <a name="adjusting-the-font-size-of-an-entry"></a>Úprava velikosti písma položky
 
-Toto specifické pro platformu slouží ke škálování velikost písma [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) zajistit, že vyhovuje zadaném textu v ovládacím prvku. V XAML je využívá tak, že nastavíte [ `Entry.AdjustsFontSizeToFitWidth` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.AdjustsFontSizeToFitWidthProperty/) připojené vlastnosti `boolean` hodnotu:
+Toto specifické pro platformu slouží ke škálování velikost písma [ `Entry` ](xref:Xamarin.Forms.Entry) zajistit, že vyhovuje zadaném textu v ovládacím prvku. V XAML je využívá tak, že nastavíte [ `Entry.AdjustsFontSizeToFitWidth` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.AdjustsFontSizeToFitWidthProperty) připojené vlastnosti `boolean` hodnotu:
 
 ```xaml
 <ContentPage ...
@@ -332,13 +332,13 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 entry.On<iOS>().EnableAdjustsFontSizeToFitWidth();
 ```
 
-`Entry.On<iOS>` Metody Určuje, že se tento konkrétní platformy spustí pouze v systému iOS. [ `Entry.EnableAdjustsFontSizeToFitWidth` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.EnableAdjustsFontSizeToFitWidth/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Entry}/) Metoda v [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/) obor názvů, slouží ke škálování velikost písma v zadaném text tak, aby se vešel do [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/). Kromě toho [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry/) třídy v `Xamarin.Forms.PlatformConfiguration.iOSSpecific` oboru názvů má také [ `DisableAdjustsFontSizeToFitWidth` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.DisableAdjustsFontSizeToFitWidth/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Entry}/) metodu, která zakáže toto specifické pro platformu, a [ `SetAdjustsFontSizeToFitWidth` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.SetAdjustsFontSizeToFitWidth/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Entry}/System.Boolean/) metodu, která je možné přepnout velikost písma škálování voláním [ `AdjustsFontSizeToFitWidth` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.AdjustsFontSizeToFitWidth/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Entry}/) metody:
+`Entry.On<iOS>` Metody Určuje, že se tento konkrétní platformy spustí pouze v systému iOS. [ `Entry.EnableAdjustsFontSizeToFitWidth` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.EnableAdjustsFontSizeToFitWidth(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Entry})) Metoda v [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) obor názvů, slouží ke škálování velikost písma v zadaném text tak, aby se vešel do [ `Entry` ](xref:Xamarin.Forms.Entry). Kromě toho [ `Entry` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry) třídy v `Xamarin.Forms.PlatformConfiguration.iOSSpecific` oboru názvů má také [ `DisableAdjustsFontSizeToFitWidth` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.DisableAdjustsFontSizeToFitWidth(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Entry})) metodu, která zakáže toto specifické pro platformu, a [ `SetAdjustsFontSizeToFitWidth` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.SetAdjustsFontSizeToFitWidth(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Entry},System.Boolean)) metodu, která je možné přepnout velikost písma škálování voláním [ `AdjustsFontSizeToFitWidth` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.AdjustsFontSizeToFitWidth(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Entry})) metody:
 
 ```csharp
 entry.On<iOS>().SetAdjustsFontSizeToFitWidth(!entry.On<iOS>().AdjustsFontSizeToFitWidth());
 ```
 
-Výsledkem je, že velikost písma [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) škálovat zajistit, že vyhovuje zadaném textu v ovládacím prvku:
+Výsledkem je, že velikost písma [ `Entry` ](xref:Xamarin.Forms.Entry) škálovat zajistit, že vyhovuje zadaném textu v ovládacím prvku:
 
 ![](ios-images/entry-font-size.png "Upravit položku písmo velikost specifické pro platformu")
 
@@ -346,7 +346,7 @@ Výsledkem je, že velikost písma [ `Entry` ](https://developer.xamarin.com/api
 
 ## <a name="controlling-picker-item-selection"></a>Řízení výběr položky
 
-Tento specifický pro platformu řídí, kdy dochází k výběru položky v [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/), které uživateli umožňují určit, že výběr položek dochází při procházení položek v ovládacím prvku, nebo pouze jednou **provádí** stisknutí tlačítka. V XAML je využívá tak, že nastavíte `Picker.UpdateMode` přidružená vlastnost na hodnotu `UpdateMode` výčtu:
+Tento specifický pro platformu řídí, kdy dochází k výběru položky v [ `Picker` ](xref:Xamarin.Forms.Picker), které uživateli umožňují určit, že výběr položek dochází při procházení položek v ovládacím prvku, nebo pouze jednou **provádí** stisknutí tlačítka. V XAML je využívá tak, že nastavíte `Picker.UpdateMode` přidružená vlastnost na hodnotu `UpdateMode` výčtu:
 
 ```xaml
 <ContentPage ...
@@ -370,10 +370,10 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 picker.On<iOS>().SetUpdateMode(UpdateMode.WhenFinished);
 ```
 
-`Picker.On<iOS>` Metody Určuje, že se tento konkrétní platformy spustí pouze v systému iOS. `Picker.SetUpdateMode` Metoda v [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/) obor názvů, se používá k řízení, pokud dojde k výběr položek, s `UpdateMode` výčet poskytuje dva možné hodnoty:
+`Picker.On<iOS>` Metody Určuje, že se tento konkrétní platformy spustí pouze v systému iOS. `Picker.SetUpdateMode` Metoda v [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) obor názvů, se používá k řízení, pokud dojde k výběr položek, s `UpdateMode` výčet poskytuje dva možné hodnoty:
 
-- `Immediately` – Výběr položky dojde k jako uživatel prochází položky [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/). Toto je výchozí chování v Xamarin.Forms.
-- `WhenFinished` – Výběr položky pouze nastane, jakmile uživatel stiskne **provádí** tlačítko [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/).
+- `Immediately` – Výběr položky dojde k jako uživatel prochází položky [ `Picker` ](xref:Xamarin.Forms.Picker). Toto je výchozí chování v Xamarin.Forms.
+- `WhenFinished` – Výběr položky pouze nastane, jakmile uživatel stiskne **provádí** tlačítko [ `Picker` ](xref:Xamarin.Forms.Picker).
 
 Kromě toho `SetUpdateMode` metody slouží k přepnutí hodnoty výčtu ve volání `UpdateMode` metodu, která vrací aktuální `UpdateMode`:
 
@@ -389,7 +389,7 @@ switch (picker.On<iOS>().UpdateMode())
 }
 ```
 
-Výsledkem je, že zadané `UpdateMode` platí pro [ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/), který určuje, vyvolá se při výběru položky:
+Výsledkem je, že zadané `UpdateMode` platí pro [ `Picker` ](xref:Xamarin.Forms.Picker), který určuje, vyvolá se při výběru položky:
 
 [![](ios-images/picker-updatemode.png "Výběr UpdateMode specifické pro platformu")](ios-images/picker-updatemode-large.png#lightbox "Picker UpdateMode Plaform-Specific")
 
@@ -397,7 +397,7 @@ Výsledkem je, že zadané `UpdateMode` platí pro [ `Picker` ](https://develope
 
 ## <a name="setting-the-status-bar-visibility-on-a-page"></a>Nastavení stavového řádku viditelnost na stránce.
 
-Tento konkrétní platformy se používá k nastavení, zda se stavový řádek na [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/), a zahrnuje možnost řídit, jak přejde do stavového řádku, nebo ji opustí `Page`. V XAML je využívá tak, že nastavíte `Page.PrefersStatusBarHidden` přidružená vlastnost na hodnotu `StatusBarHiddenMode` výčtu a volitelně také `Page.PreferredStatusBarUpdateAnimation` přidružená vlastnost na hodnotu `UIStatusBarAnimation` výčet:
+Tento konkrétní platformy se používá k nastavení, zda se stavový řádek na [ `Page` ](xref:Xamarin.Forms.Page), a zahrnuje možnost řídit, jak přejde do stavového řádku, nebo ji opustí `Page`. V XAML je využívá tak, že nastavíte `Page.PrefersStatusBarHidden` přidružená vlastnost na hodnotu `StatusBarHiddenMode` výčtu a volitelně také `Page.PreferredStatusBarUpdateAnimation` přidružená vlastnost na hodnotu `UIStatusBarAnimation` výčet:
 
 ```xaml
 <ContentPage ...
@@ -419,22 +419,22 @@ On<iOS>().SetPrefersStatusBarHidden(StatusBarHiddenMode.True)
          .SetPreferredStatusBarUpdateAnimation(UIStatusBarAnimation.Fade);
 ```
 
-`Page.On<iOS>` Metody Určuje, že se tento konkrétní platformy spustí pouze v systému iOS. `Page.SetPrefersStatusBarHidden` Metoda v `Xamarin.Forms.PlatformConfiguration.iOSSpecific` obor názvů, se používá k nastavení, zda se stavový řádek na [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) zadáním jedné z `StatusBarHiddenMode` hodnot výčtu: `Default`, `True` , nebo `False`. `StatusBarHiddenMode.True` a `StatusBarHiddenMode.False` hodnoty nastavit viditelnost panelu stavu bez ohledu na to orientace zařízení a `StatusBarHiddenMode.Default` hodnotu skryje stavový řádek v prostředí svisle compact.
+`Page.On<iOS>` Metody Určuje, že se tento konkrétní platformy spustí pouze v systému iOS. `Page.SetPrefersStatusBarHidden` Metoda v `Xamarin.Forms.PlatformConfiguration.iOSSpecific` obor názvů, se používá k nastavení, zda se stavový řádek na [ `Page` ](xref:Xamarin.Forms.Page) zadáním jedné z `StatusBarHiddenMode` hodnot výčtu: `Default`, `True` , nebo `False`. `StatusBarHiddenMode.True` a `StatusBarHiddenMode.False` hodnoty nastavit viditelnost panelu stavu bez ohledu na to orientace zařízení a `StatusBarHiddenMode.Default` hodnotu skryje stavový řádek v prostředí svisle compact.
 
-Výsledkem je, zda se stavový řádek [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) lze nastavit:
+Výsledkem je, zda se stavový řádek [ `Page` ](xref:Xamarin.Forms.Page) lze nastavit:
 
 ![](ios-images/hide-status-bar.png "Stavový řádek viditelnost specifické pro platformu")
 
 > [!NOTE]
-> Na [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/), zadaný `StatusBarHiddenMode` hodnota výčtu se aktualizuje i stavový řádek na všechny podřízené stránky. Na všechny ostatní [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)-odvozené typy, zadaný `StatusBarHiddenMode` hodnota výčtu se pouze aktualizace stavového řádku na aktuální stránce.
+> Na [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage), zadaný `StatusBarHiddenMode` hodnota výčtu se aktualizuje i stavový řádek na všechny podřízené stránky. Na všechny ostatní [ `Page` ](xref:Xamarin.Forms.Page)-odvozené typy, zadaný `StatusBarHiddenMode` hodnota výčtu se pouze aktualizace stavového řádku na aktuální stránce.
 
-`Page.SetPreferredStatusBarUpdateAnimation` Metoda se používá k nastavení jak přejde do stavového řádku, nebo ji opustí [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) zadáním jedné z `UIStatusBarAnimation` hodnot výčtu: `None`, `Fade`, nebo `Slide`. Pokud `Fade` nebo `Slide` není zadána hodnota výčtu, a 0,25 druhé animace spustí, když se zadá na stavovém řádku nebo ji opustí `Page`.
+`Page.SetPreferredStatusBarUpdateAnimation` Metoda se používá k nastavení jak přejde do stavového řádku, nebo ji opustí [ `Page` ](xref:Xamarin.Forms.Page) zadáním jedné z `UIStatusBarAnimation` hodnot výčtu: `None`, `Fade`, nebo `Slide`. Pokud `Fade` nebo `Slide` není zadána hodnota výčtu, a 0,25 druhé animace spustí, když se zadá na stavovém řádku nebo ji opustí `Page`.
 
 <a name="delay_content_touches" />
 
 ## <a name="delaying-content-touches-in-a-scrollview"></a>V dnešní zdržení obsahu v ScrollView
 
-Implicitní časovač se aktivuje, když gesta dotykového ovládání v vstoupí v platnost [ `ScrollView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) v Iosu a `ScrollView` rozhodne, založené na akci uživatele v rámci rozsahu časovače, zda by měl zpracovat gesta nebo předání na jeho obsah. Ve výchozím nastavení iOS `ScrollView` zpoždění v dnešní obsahu, ale to může způsobit problémy v některých případech se `ScrollView` obsahu není winning gesta, když by měl. Proto tento ovládacích prvků pro konkrétní platformu, jestli `ScrollView` zpracovává gesta dotykového ovládání a předává je na jeho obsah. V XAML je využívá tak, že nastavíte `ScrollView.ShouldDelayContentTouches` připojené vlastnosti `boolean` hodnotu:
+Implicitní časovač se aktivuje, když gesta dotykového ovládání v vstoupí v platnost [ `ScrollView` ](xref:Xamarin.Forms.ScrollView) v Iosu a `ScrollView` rozhodne, založené na akci uživatele v rámci rozsahu časovače, zda by měl zpracovat gesta nebo předání na jeho obsah. Ve výchozím nastavení iOS `ScrollView` zpoždění v dnešní obsahu, ale to může způsobit problémy v některých případech se `ScrollView` obsahu není winning gesta, když by měl. Proto tento ovládacích prvků pro konkrétní platformu, jestli `ScrollView` zpracovává gesta dotykového ovládání a předává je na jeho obsah. V XAML je využívá tak, že nastavíte `ScrollView.ShouldDelayContentTouches` připojené vlastnosti `boolean` hodnotu:
 
 ```xaml
 <MasterDetailPage ...
@@ -465,13 +465,13 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 scrollView.On<iOS>().SetShouldDelayContentTouches(false);
 ```
 
-`ScrollView.On<iOS>` Metody Určuje, že se tento konkrétní platformy spustí pouze v systému iOS. `ScrollView.SetShouldDelayContentTouches` Metoda v [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/) obor názvů, slouží ke kontrole, jestli [ `ScrollView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) zpracovává gesta dotykového ovládání a předává je na jeho obsah. Kromě toho `SetShouldDelayContentTouches` metody slouží k přepnutí zpoždění obsahu v dnešní voláním `ShouldDelayContentTouches` metoda vrátí, zda jsou zpožděné obsahu v dnešní:
+`ScrollView.On<iOS>` Metody Určuje, že se tento konkrétní platformy spustí pouze v systému iOS. `ScrollView.SetShouldDelayContentTouches` Metoda v [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) obor názvů, slouží ke kontrole, jestli [ `ScrollView` ](xref:Xamarin.Forms.ScrollView) zpracovává gesta dotykového ovládání a předává je na jeho obsah. Kromě toho `SetShouldDelayContentTouches` metody slouží k přepnutí zpoždění obsahu v dnešní voláním `ShouldDelayContentTouches` metoda vrátí, zda jsou zpožděné obsahu v dnešní:
 
 ```csharp
 scrollView.On<iOS>().SetShouldDelayContentTouches(!scrollView.On<iOS>().ShouldDelayContentTouches());
 ```
 
-Důsledkem toho pak bude [ `ScrollView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) můžete zakázat zpoždění příjem obsahu dnešní tak, že v tomto scénáři [ `Slider` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/) obdrží gesta místo [ `Detail` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Detail/) stránku [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/):
+Důsledkem toho pak bude [ `ScrollView` ](xref:Xamarin.Forms.ScrollView) můžete zakázat zpoždění příjem obsahu dnešní tak, že v tomto scénáři [ `Slider` ](xref:Xamarin.Forms.Slider) obdrží gesta místo [ `Detail` ](xref:Xamarin.Forms.MasterDetailPage.Detail) stránku [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage):
 
 [![](ios-images/scrollview-delay-content-touches.png "Zpoždění ScrollView obsah se dotýká specifické pro platformu")](ios-images/scrollview-delay-content-touches-large.png#lightbox "ScrollView Delay Content Touches Plaform-Specific")
 
@@ -652,4 +652,4 @@ V tomto článku jsme vám ukázali jak využívat iOS specifik platforem, kter�
 
 - [Vytváření specifik platforem](~/xamarin-forms/platform/platform-specifics/creating.md)
 - [PlatformSpecifics (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
-- [iOSSpecific](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.iOSSpecific/)
+- [iOSSpecific](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

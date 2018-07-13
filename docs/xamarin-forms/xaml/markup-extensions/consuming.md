@@ -1,45 +1,45 @@
 ---
-title: Využívání XAML – rozšíření značek
-description: Tento článek vysvětluje, jak používat rozšíření značek Xamarin.Forms XAML pro zlepšení výkonu a flexibilitě XAML tím, že atributy prvků nastavit z různých zdrojů.
+title: Používání rozšíření značek XAML
+description: Tento článek vysvětluje, jak použít rozšíření značek XAML Xamarin.Forms vylepšit výkon a flexibilitu XAML tím, že element atributů, které mají být v rozsahu od široké škály zdrojů.
 ms.prod: xamarin
 ms.assetid: CE686893-609C-4EC3-9225-6C68D2A9F79C
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: 278677d45f997ac446c2a20967dc3501179bf8da
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 6f0c15976871129362fb3d6d3287215d1fba2cb9
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245934"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995979"
 ---
-# <a name="consuming-xaml-markup-extensions"></a>Využívání XAML – rozšíření značek
+# <a name="consuming-xaml-markup-extensions"></a>Používání rozšíření značek XAML
 
-XAML – rozšíření značek zlepšení výkonu a flexibilitě XAML tím, že atributy prvků nastavit z různých zdrojů. Několik rozšíření značek XAML jsou součástí specifikace jazyka XAML 2009. Zobrazují se v XAML soubory s obvyklé `x` předponu oboru názvů a jsou obvykle označuje s touto předponou. Tyto možnosti jsou popsány v následujících částech:
+Rozšíření značek XAML pomáhají zlepšit výkon a flexibilitu XAML tím, že element atributů, které mají být v rozsahu od široké škály zdrojů. Několik rozšíření značek XAML jsou součástí specifikace XAML 2009. Zobrazují se v souborech XAML s obvyklý `x` předponu oboru názvů a jsou obvykle označuje s touto předponou. Tyto možnosti jsou popsány v následujících částech:
 
-- [`x:Static`](#static) &ndash; odkaz na statické vlastnosti, pole nebo členové výčtu.
-- [`x:Reference`](#reference) &ndash; referenční dokumentace elementů na stránce s názvem.
+- [`x:Static`](#static) &ndash; odkaz na statické vlastnosti, pole nebo členy výčtu.
+- [`x:Reference`](#reference) &ndash; odkaz na pojmenované elementy na stránce.
 - [`x:Type`](#type) &ndash; Nastavte atribut na `System.Type` objektu.
-- [`x:Array`](#array) &ndash; Vytvořte pole objektů, určitého typu.
+- [`x:Array`](#array) &ndash; Vytvoření pole objektů určitého typu.
 - [`x:Null`](#null) &ndash; Nastavte atribut na `null` hodnotu.
 
-Tři další rozšíření značek XAML, mají v minulosti podporuje jiných implementacích XAML a také podporuje Xamarin.Forms. Tyto možnosti jsou popsány podrobněji v jiných článcích:
+Tři další rozšíření značek XAML v minulosti se nepodporuje v jiných implementacích XAML a jsou také podporovány Xamarin.Forms. Tyto možnosti jsou popsány podrobněji v jiných článcích:
 
-- `StaticResource` &ndash; odkazování objektů z slovník prostředků, jak je popsáno v článku [ **slovnících prostředků**](~/xamarin-forms/xaml/resource-dictionaries.md).
-- `DynamicResource` &ndash; odpověď na změny v objektech v slovník prostředků, jak je popsáno v článku [ **dynamické styly**](~/xamarin-forms/user-interface/styles/dynamic.md).
-- `Binding` &ndash; Vytvoření vazby mezi vlastnosti dva objekty, jak je popsáno v článku [ **datové vazby**](~/xamarin-forms/app-fundamentals/data-binding/index.md).
-- `TemplateBinding` &ndash; provádí datová vazba ze šablony ovládacího prvku, jak je popsáno v článku [**vazby ze šablony řízení**] / příručky nebo xamarin-forms nebo aplikace – základy nebo šablony nebo ovládací prvek šablony nebo šablony vazba nebo)
+- `StaticResource` &ndash; odkaz na objekty ze slovníku prostředků, jak je popsáno v článku [ **zdrojových slovnících**](~/xamarin-forms/xaml/resource-dictionaries.md).
+- `DynamicResource` &ndash; reakce na změny v objektech ve slovníku prostředků, jak je popsáno v článku [ **dynamické styly**](~/xamarin-forms/user-interface/styles/dynamic.md).
+- `Binding` &ndash; vytvořit odkaz mezi vlastnostmi dva objekty, jak je popsáno v článku [ **datové vazby**](~/xamarin-forms/app-fundamentals/data-binding/index.md).
+- `TemplateBinding` &ndash; provádí datové vazby v šabloně ovládacího prvku, jak je popsáno v článku [**vazby ze šablony ovládacího prvku**] / vodítka/xamarin-forms/aplikace – základy/šablony/ovládací prvek – šablony /-vazba šablony /)
 
-[ `RelativeLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/) Rozložení využívá rozšíření vlastních značek [ `ConstraintExpression` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ConstraintExpression/). Toto rozšíření značek je popsána v článku [ **RelativeLayout**](~/xamarin-forms/user-interface/layouts/relative-layout.md).
+[ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout) Rozložení používá rozšíření vlastních značek [ `ConstraintExpression` ](xref:Xamarin.Forms.ConstraintExpression). Toto rozšíření značek je popsaný v článku [ **RelativeLayout**](~/xamarin-forms/user-interface/layouts/relative-layout.md).
 
 <a name="static" />
 
 ## <a name="xstatic-markup-extension"></a>x:Static – rozšíření značek
 
-`x:Static` Podporuje – rozšíření značek [ `StaticExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.StaticExtension/) třídy. Třída má jednu vlastnost s názvem [ `Member` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Xaml.StaticExtension.Member/) typu `string` nastavit na název veřejné konstanta, statické vlastnosti, statické pole nebo člen výčtu.
+`x:Static` – Rozšíření značek je podporován [ `StaticExtension` ](xref:Xamarin.Forms.Xaml.StaticExtension) třídy. Třída má jednu vlastnost s názvem [ `Member` ](xref:Xamarin.Forms.Xaml.StaticExtension.Member) typu `string` nastavit na název veřejné konstanty, statické vlastnosti, statické pole nebo člena výčtu.
 
-Běžný způsob použití `x:Static` je nejdříve definovat třídu s některé konstanty nebo statické proměnné, jako například tomto jen nepatrnou `AppConstants` třídy v [ **MarkupExtensions** ](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/) program:
+Jedním z běžných způsobů použití `x:Static` , je nejprve definovat třídu s konstanty nebo statických proměnných, například tomto malý `AppConstants` třídy v [ **MarkupExtension** ](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/) program:
 
 ```csharp
 static class AppConstants
@@ -48,7 +48,7 @@ static class AppConstants
 }
 ```
 
-**X: Static ukázku** stránky ukazuje několik způsobů, jak používat `x:Static` – rozšíření značek. Vytvoří instanci nejpodrobnější přístup `StaticExtension` třídy mezi `Label.FontSize` element vlastnosti značky:
+**X: Static ukázka** ukazuje několik způsobů, jak používat stránky `x:Static` – rozšíření značek. Vytvoří instanci nejpodrobnější přístup `StaticExtension` třídy mezi `Label.FontSize` element vlastnosti značky:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -70,7 +70,7 @@ static class AppConstants
 </ContentPage>
 ```
 
-Analyzátor jazyka XAML také umožňuje `StaticExtension` třídy zkrátit na `x:Static`:
+Také umožňuje analyzátoru XAML `StaticExtension` třídy zkracuje jako `x:Static`:
 
 ```xaml
 <Label Text="Label No. 2">
@@ -80,38 +80,38 @@ Analyzátor jazyka XAML také umožňuje `StaticExtension` třídy zkrátit na `
 </Label>
 ```
 
-To může ještě víc zjednodušit, ale změnu zavádí některé nové syntaxe: skládá se z umístění `StaticExtension` třídy a člen nastavení do složených závorek. Výsledný výraz nastavena přímo na `FontSize` atribut:
+To se může ještě více zjednodušit, ale tato změna přináší některé nové syntaxe: skládá se z umístění `StaticExtension` tříd a členů nastavení ve složených závorkách. Výsledný výraz nastavena přímo `FontSize` atribut:
 
 ```xaml
 <Label Text="Label No. 3"
        FontSize="{x:StaticExtension Member=local:AppConstants.NormalFontSize}" />
 ```
 
-Všimněte si, že existují *žádné* uvozovek do složených závorek. `Member` Vlastnost `StaticExtension` již není atribut XML. Místo toho je součástí výraz pro rozšíření značek.
+Všimněte si, že existují *žádné* uvozovky uvnitř složených závorek. `Member` Vlastnost `StaticExtension` už není atribut XML. Místo toho je součástí výrazu pro rozšíření značek.
 
-Stejně jako parametr lze zapsat `x:StaticExtension` k `x:Static` při použití jako element objekt, můžete také zkrátit ji ve výrazu v rámci složené závorky:
+Stejně jako lze zkrátit `x:StaticExtension` k `x:Static` při použití jako element objektu, můžete taky zkrátit ho ve výrazu ve složených závorkách:
 
 ```xaml
 <Label Text="Label No. 4"
        FontSize="{x:Static Member=local:AppConstants.NormalFontSize}" />
 ```
 
-`StaticExtension` Třída má `ContentProperty` atribut odkazování na vlastnost `Member`, který označuje tato vlastnost jako vlastnost obsahu výchozí třídy. Pro rozšíření značek pro jazyk XAML vyjádřit s složené závorky, můžete eliminovat `Member=` část výrazu:
+`StaticExtension` Třída nemá `ContentProperty` atribut odkazující na vlastnost `Member`, která označí tuto vlastnost jako vlastnost obsahu výchozí třídy. Pro rozšíření značek XAML vyjádřit pomocí složených závorek, můžete eliminovat `Member=` součástí výrazu:
 
 ```xaml
 <Label Text="Label No. 5"
        FontSize="{x:Static local:AppConstants.NormalFontSize}" />
 ```
 
-Toto je nejběžnější formu `x:Static` – rozšíření značek.
+Toto je nejběžnější forma `x:Static` – rozšíření značek.
 
-**Statické ukázku** stránka obsahuje dva další příklady. Kořenovou značku souboru XAML obsahuje deklarace oboru názvů XML pro .NET `System` obor názvů:
+**Statické ukázka** stránka obsahuje dvě další příklady. Kořenová značka souboru XAML obsahuje deklarace oboru názvů XML pro .NET `System` obor názvů:
 
 ```xaml
 xmlns:sys="clr-namespace:System;assembly=mscorlib"
 ```
 
-To umožňuje `Label` velikost písma být nastavena na statické pole `Math.PI`. Který výsledkem místo malé textové proto `Scale` je nastavena na `Math.E`:
+Díky tomu `Label` velikost písma nastavili na statické pole `Math.PI`. Který má za následek ale malé, takže `Scale` je nastavena na `Math.E`:
 
 ```xaml
 <Label Text="&#x03C0; &#x00D7; E sized text"
@@ -135,19 +135,19 @@ V posledním příkladu se zobrazí `Device.RuntimePlatform` hodnotu. `Environme
 </Label>
 ```
 
-Zde je ukázka běžící na všechny tři platformách:
+Toto je ukázka spuštěná na všech třech platformách:
 
-[![x: Static ukázku](consuming-images/staticdemo-small.png "ukázku x: Static")](consuming-images/staticdemo-large.png#lightbox "x: Static Demo")
+[![x: Static ukázku](consuming-images/staticdemo-small.png "ukázku x: Static")](consuming-images/staticdemo-large.png#lightbox "x: Static – ukázka")
 
 <a name="reference" />
 
 ## <a name="xreference-markup-extension"></a>x:Reference – rozšíření značek
 
-`x:Reference` Podporuje – rozšíření značek [ `ReferenceExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.ReferenceExtension/) třídy. Třída má jednu vlastnost s názvem [ `Name` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Xaml.ReferenceExtension.Name/) typu `string` nastavit na název elementu na stránce, která byla poskytnuta název s `x:Name`. To `Name` vlastnost je vlastnost obsahu `ReferenceExtension`, takže `Name=` není nutné, když `x:Reference` se zobrazí v složené závorky.
+`x:Reference` – Rozšíření značek je podporován [ `ReferenceExtension` ](xref:Xamarin.Forms.Xaml.ReferenceExtension) třídy. Třída má jednu vlastnost s názvem [ `Name` ](xref:Xamarin.Forms.Xaml.ReferenceExtension.Name) typu `string` nastavit na název elementu na stránce, která se předala název s `x:Name`. To `Name` vlastností je vlastnost content `ReferenceExtension`, takže `Name=` není potřeba při `x:Reference` se zobrazí ve složených závorkách.
 
-`x:Reference` – Rozšíření značek se používá výhradně pomocí vazby dat, které jsou popsány podrobněji v článku [ **datové vazby**](~/xamarin-forms/app-fundamentals/data-binding/index.md).
+`x:Reference` – Rozšíření značek se používá výhradně pomocí vazby dat, které jsou popsány podrobně v článku [ **datové vazby**](~/xamarin-forms/app-fundamentals/data-binding/index.md).
 
-**X: Reference ukázku** stránky zobrazí dvě použití `x:Reference` s vazby dat, první, kde se používá k nastavení `Source` vlastnost `Binding` objekt a druhá, kde se používá k nastavení `BindingContext` Vlastnost pro dvě datové vazby:
+**X: Reference ukázka** stránce se zobrazují dva způsoby použití `x:Reference` s datové vazby, první, kde se používá k nastavení `Source` vlastnost `Binding` objekt a druhá, kdy se používá k nastavení `BindingContext` Vlastnost pro dva datové vazby:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -179,23 +179,23 @@ Zde je ukázka běžící na všechny tři platformách:
 </ContentPage>
 ```
 
-Obě `x:Reference` výrazy použít zkrácenou verzi `ReferenceExtension` název třídy a eliminovat `Name=` část výrazu. V prvním příkladu `x:Reference` součástí – rozšíření značek `Binding` – rozšíření značek. Všimněte si, že `Source` a `StringFormat` nastavení jsou odděleny čárkami. Tady je programy spuštěné na všech tří platformách:
+Obě `x:Reference` výrazy používají zkrácenou verzi `ReferenceExtension` název třídy a eliminovat `Name=` součástí výrazu. V prvním příkladu `x:Reference` – rozšíření značek se vloží do `Binding` – rozšíření značek. Všimněte si, `Source` a `StringFormat` nastavení jsou odděleny čárkami. Tady je program spuštěn na všech třech platformách:
 
-[![x: Reference ukázku](consuming-images/referencedemo-small.png "ukázku x: Reference")](consuming-images/referencedemo-large.png#lightbox "x: Reference Demo")
+[![x: Reference ukázka](consuming-images/referencedemo-small.png "x: Reference ukázka")](consuming-images/referencedemo-large.png#lightbox "ukázku x: Reference")
 
 <a name="type" />
 
 ## <a name="xtype-markup-extension"></a>x:Type – rozšíření značek
 
-`x:Type` – Rozšíření značek je ekvivalentem XAML jazyka C# [ `typeof` ](/dotnet/csharp/language-reference/keywords/typeof/) – klíčové slovo. Je podporována [ `TypeExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.TypeExtension/) třídy, která definuje jednu vlastnost s názvem [ `TypeName` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Xaml.TypeExtension.TypeName/) typu `string` , je nastavena na název třídu nebo strukturu. `x:Type` Vrátí rozšíření značek [ `System.Type` ](https://developer.xamarin.com/api/type/System.Type/) objekt tuto třídu nebo strukturu. `TypeName` Vlastnost obsahu je `TypeExtension`, takže `TypeName=` není nutné, když `x:Type` se zobrazí s složené závorky.
+`x:Type` – Rozšíření značek jsou obdobou XAML jazyka C# [ `typeof` ](/dotnet/csharp/language-reference/keywords/typeof/) – klíčové slovo. Je podporován [ `TypeExtension` ](xref:Xamarin.Forms.Xaml.TypeExtension) třídu, která definuje jednu vlastnost s názvem [ `TypeName` ](xref:Xamarin.Forms.Xaml.TypeExtension.TypeName) typu `string` , která je nastavena na název třídy nebo struktury. `x:Type` Vrátí rozšíření značek [ `System.Type` ](xref:System.Type) objekt této třídy nebo struktury. `TypeName` je vlastnost content `TypeExtension`, takže `TypeName=` není potřeba při `x:Type` se zobrazí pomocí složených závorek.
 
-V rámci Xamarin.Forms, existuje několik vlastností, které mají argumenty typu `Type`. Mezi příklady patří [ `TargetType` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.TargetType/) vlastnost `Style`a [x: TypeArguments –](~/xamarin-forms/xaml/passing-arguments.md#generic_type_arguments) atribut používaný k zadání argumentů v obecné třídy. Ale analyzátor XAML provádí `typeof` operace automaticky a `x:Type` – rozšíření značek v těchto případech nepoužívá.
+V rámci Xamarin.Forms, existuje několik vlastností, které mít argumenty typu `Type`. Mezi příklady patří [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType) vlastnost `Style`a [x: TypeArguments](~/xamarin-forms/xaml/passing-arguments.md#generic_type_arguments) atribut používá k určení argumentů v obecné třídy. Ale analyzátoru XAML provádí `typeof` operace automaticky a `x:Type` – rozšíření značek se nepoužívá v těchto případech.
 
-Jednom místě kde `x:Type` *je* požadované je `x:Array` – rozšíření značek, který je popsán v [další části](#array).
+Jedno místo kde `x:Type` *je* vyžaduje se `x:Array` – rozšíření značek, která je popsána v [další části](#array).
 
-`x:Type` – Rozšíření značek je také užitečné při vytváření nabídky kde každá položka nabídky odpovídá objekt určitého typu. Můžete přidružit `Type` objektu s každou položku nabídky a potom vytvořte instanci objektu, pokud je vybraná položka nabídky.
+`x:Type` – Rozšíření značek je také užitečné při vytváření nabídky, kde každá položka nabídky odpovídá objektu určitého typu. Můžete přiřadit `Type` objekt s každou položku nabídky a potom vytvořte instanci objektu, pokud je vybrána položka nabídky.
 
-Jedná se jak v navigační nabídce `MainPage` v **rozšíření značek** programu funguje. **MainPage.xaml** soubor obsahuje `TableView` s jednotlivými `TextCell` odpovídající na konkrétní stránku v programu:
+To je jak v navigační nabídce `MainPage` v **– rozšíření značek** program funguje. **MainPage.xaml** obsahuje soubor `TableView` s každým `TextCell` odpovídající na určitou stránku v aplikaci:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -234,11 +234,11 @@ Jedná se jak v navigační nabídce `MainPage` v **rozšíření značek** prog
 </ContentPage>
 ```
 
-Zde je hlavní stránce otevírání v **rozšíření značek**:
+Tady je hlavní stránky otevírání **– rozšíření značek**:
 
 [![Hlavní stránka](consuming-images/mainpage-small.png "hlavní stránky")](consuming-images/mainpage-large.png#lightbox "hlavní stránky")
 
-Každý `CommandParameter` je nastavena na `x:Type` rozšíření značek, který odkazuje na jednu z dalších stránek. `Command` Vlastnost je vázána na vlastnost s názvem `NavigateCommand`. Tato vlastnost je definována v `MainPage` souboru kódu na pozadí:
+Každý `CommandParameter` je nastavena na `x:Type` – rozšíření značek, který odkazuje na jeden z ostatních stránek. `Command` Vlastnost je vázána na vlastnost s názvem `NavigateCommand`. Tato vlastnost je definována v `MainPage` soubor kódu na pozadí:
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -260,9 +260,9 @@ public partial class MainPage : ContentPage
 }
 ```
 
-`NavigateCommand` Vlastnost je `Command` objekt, který implementuje příkaz execute s parametrem typu `Type` &mdash; hodnotu `CommandParameter`. Používá metodu `Activator.CreateInstance` k vytváření instancí stránku a poté přejde k němu. Konstruktor se ukončí nastavení `BindingContext` stránky na sebe, což umožňuje `Binding` na `Command` pracovat. Najdete v článku [ **datové vazby** ](~/xamarin-forms/app-fundamentals/data-binding/index.md) článku a zvláště [ **Commanding** ](~/xamarin-forms/app-fundamentals/data-binding/commanding.md) článku Další podrobnosti o tomto typu kódu.
+`NavigateCommand` Je vlastnost `Command` objekt, který implementuje příkaz execute se argument typu `Type` &mdash; hodnotu `CommandParameter`. Metoda používá `Activator.CreateInstance` pro vytvoření instance stránky a pak přejde k němu. Konstruktor končí tím, že nastavíte `BindingContext` stránky sám na sebe, což umožňuje `Binding` na `Command` pracovat. Najdete v článku [ **datové vazby** ](~/xamarin-forms/app-fundamentals/data-binding/index.md) článku a zejména [ **Commanding** ](~/xamarin-forms/app-fundamentals/data-binding/commanding.md) článku najdete další podrobnosti o tomto typu kódu.
 
-**X: Type ukázku** stránka používá podobný postup k vytvoření instance Xamarin.Forms elementy a pro jejich přidávání k `StackLayout`. Souboru XAML původně se skládá ze tří `Button` elementy s jejich `Command` vlastnosti nastavené `Binding` a `CommandParameter` vlastnosti nastavena na typy tři Xamarin.Forms zobrazení:
+**X: Type ukázka** stránka používá podobné techniky k vytvoření instance Xamarin.Forms prvky a jejich přidání do `StackLayout`. Soubor XAML původně se skládá ze tří `Button` prvky s jejich `Command` nastaveny `Binding` a `CommandParameter` vlastnosti nastavené na typech tři zobrazení Xamarin.Forms:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -294,7 +294,7 @@ public partial class MainPage : ContentPage
 </ContentPage>
 ```
 
-Definuje a inicializuje v souboru kódu `CreateCommand` vlastnost:
+Použití modelu code-behind soubor definuje a inicializuje `CreateCommand` vlastnost:
 
 ```csharp
 public partial class TypeDemoPage : ContentPage
@@ -317,22 +317,22 @@ public partial class TypeDemoPage : ContentPage
 }
 ```
 
-Metoda, která je spuštěna při `Button` stisknutí vytvoří novou instanci třídy argument, nastaví její `VerticalOptions` vlastnost a přidává ji k `StackLayout`. Tří `Button` stránku elementy potom sdílet s dynamicky vytvořené zobrazení:
+Metoda, která je spuštěna při `Button` stisknutí vytvoří novou instanci argumentu, nastaví její `VerticalOptions` vlastnost a přidá jej do `StackLayout`. Tři `Button` elementy pak sdílet na stránce s dynamicky generovaný zobrazení:
 
-[![x: Type ukázku](consuming-images/typedemo-small.png "ukázku x: Type")](consuming-images/typedemo-large.png#lightbox "x: Type Demo")
+[![x: Type ukázka](consuming-images/typedemo-small.png "x: Type ukázka")](consuming-images/typedemo-large.png#lightbox "x: Type ukázku")
 
 <a name="array" />
 
 ## <a name="xarray-markup-extension"></a>x:Array – rozšíření značek
 
-`x:Array` – Rozšíření značek umožňuje definovat pole v kódu. Je podporována [ `ArrayExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.ArrayExtension/) třídy, která definuje dvě vlastnosti:
+`x:Array` – Rozšíření značek umožňuje definovat pole v kódu. Je podporován [ `ArrayExtension` ](xref:Xamarin.Forms.Xaml.ArrayExtension) třídu, která definuje dvě vlastnosti:
 
-- `Type` typu `Type`, který určuje typ elementů v poli.
-- `Items` typu `IList`, což je kolekce položek, sami. Toto je vlastnost obsahu `ArrayExtension`.
+- `Type` typ `Type`, který určuje typ prvků v poli.
+- `Items` typ `IList`, což je kolekce položek, sami. Toto je vlastnost content `ArrayExtension`.
 
-`x:Array` – Rozšíření značek samotné nikdy se zobrazí v složené závorky. Místo toho `x:Array` počáteční a koncové značky vymezení seznam položek. Nastavte `Type` vlastnost, která má `x:Type` – rozšíření značek.
+`x:Array` – Rozšíření značek samotné nikdy se zobrazí ve složených závorkách. Místo toho `x:Array` počáteční a koncovou značku vymezení seznam položek. Nastavte `Type` vlastnost `x:Type` – rozšíření značek.
 
-**X: Array ukázku** stránky ukazuje způsob použití `x:Array` k přidávání položek do `ListView` nastavením `ItemsSource` vlastnost, která má pole:
+**X: Array ukázka** stránce ukazuje způsob použití `x:Array` položky, které chcete přidat `ListView` nastavením `ItemsSource` vlastnost pole:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -374,39 +374,39 @@ Metoda, která je spuštěna při `Button` stisknutí vytvoří novou instanci t
 </ContentPage>        
 ```
 
-`ViewCell` Vytvoří jednoduchou `BoxView` pro každou položku barev:
+`ViewCell` Vytvoří jednoduchý `BoxView` pro každou položku barvy:
 
-[![x: Array ukázku](consuming-images/arraydemo-small.png "ukázku x: Array")](consuming-images/arraydemo-large.png#lightbox "x: Array Demo")
+[![x: Array ukázka](consuming-images/arraydemo-small.png "x: Array ukázka")](consuming-images/arraydemo-large.png#lightbox "x: Array Demo")
 
-Existuje několik způsobů určení jednotlivých `Color` položky v toto pole. Můžete použít `x:Static` – rozšíření značek:
+Existuje několik způsobů, jak určit jednotlivých `Color` položky v tomto poli. Můžete použít `x:Static` – rozšíření značek:
 
 ```xaml
 <x:Static Member="Color.Blue" />
 ```
 
-Nebo můžete použít `StaticResource` načíst barvy z slovník prostředků:
+Nebo můžete použít `StaticResource` načíst barvu ze slovníku prostředků:
 
 ```xaml
 <StaticResource Key="myColor" />
 ```
 
-Na konci tohoto článku uvidíte vlastní rozšíření značek XAML, který také vytvoří novou hodnotu barev:
+Na konci tohoto článku uvidíte vlastní rozšíření značek XAML, který vytvoří také novou hodnotu barvy:
 
 ```xaml
 <local:HslColor H="0.5" S="1.0" L="0.5" />
 ```
 
-Při definování pole běžné typy jako řetězce nebo čísla, používat značky uvedené v [ **předávání argumenty konstruktoru** ](~/xamarin-forms/xaml/passing-arguments.md#constructor_arguments) článku omezíte hodnoty.
+Při definování polí běžných typů, jako jsou řetězce nebo čísla, použití značek uvedené v [ **předávání argumentů konstruktoru** ](~/xamarin-forms/xaml/passing-arguments.md#constructor_arguments) článku pro vymezení hodnoty.
 
 <a name="null" />
 
 ## <a name="xnull-markup-extension"></a>x:Null – rozšíření značek
 
-`x:Null` Podporuje – rozšíření značek [ `NullExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.NullExtension/) třídy. Nemá žádné vlastnosti a jednoduše ekvivalentní XAML jazyka C# [ `null` ](/dotnet/csharp/language-reference/keywords/null/) – klíčové slovo.
+`x:Null` – Rozšíření značek je podporován [ `NullExtension` ](xref:Xamarin.Forms.Xaml.NullExtension) třídy. Nemá žádné vlastnosti a odpovídá jednoduše XAML jazyka C# [ `null` ](/dotnet/csharp/language-reference/keywords/null/) – klíčové slovo.
 
-`x:Null` – Rozšíření značek je nutná pouze zřídka a málokdy použít, ale pokud potřeba ji najít, budete rádi, existuje.
+`x:Null` Je málokdy potřeba a zřídka používají – rozšíření značek, ale pokud potřebujete ji najít, budete mít rádi, který existuje.
 
-**X: Null ukázku** stránky znázorňuje jeden scénář při `x:Null` může být vhodné. Předpokládejme, že definujete implicitní `Style` pro `Label` , který obsahuje `Setter` , který nastavuje `FontFamily` vlastnost s názvem rodiny závislé na platformě:
+**X: Null ukázka** jeden scénář znázorňuje stránky při `x:Null` může být užitečné. Předpokládejme, že definujete implicitní `Style` pro `Label` , který obsahuje `Setter` , který nastavuje `FontFamily` vlastnost s názvem rodiny závislého na platformě:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -445,23 +445,23 @@ Při definování pole běžné typy jako řetězce nebo čísla, používat zna
 </ContentPage>   
 ```
 
-Pak můžete zjistíte, že pro jeden z `Label` elementy, chcete, aby všechny hodnoty vlastností v implicitní `Style` s výjimkou `FontFamily`, které chcete nastavit jako výchozí hodnota. Můžete třeba definovat jiné `Style` pro tento účel, ale jednodušší je jednoduše nastavit `FontFamily` vlastnost konkrétní `Label` k `x:Null`, jak je ukázáno v centru `Label`.
+Pak zjistíte, že pro jednu z `Label` prvky, mají nastavení vlastnosti v implicitní `Style` s výjimkou `FontFamily`, kterou chcete nastavit jako výchozí hodnota. Můžete například definovat další `Style` pro tento účel, ale jednodušší přístup je jednoduše nastavit `FontFamily` vlastnost konkrétní `Label` k `x:Null`, jak je ukázáno v centru `Label`.
 
 Tady je program běžící na třech platformách:
 
-[![x: Null ukázku](consuming-images/nulldemo-small.png "ukázku x: Null")](consuming-images/nulldemo-large.png#lightbox "x: Null Demo")
+[![x: Null ukázka](consuming-images/nulldemo-small.png "x: Null ukázka")](consuming-images/nulldemo-large.png#lightbox "ukázku x: Null")
 
-Všimněte si, že čtyři z `Label` prvky mít serif písmo, ale centru `Label` má výchozí sans-serif písmo.
+Všimněte si, že čtyři z `Label` elementy mají serif písmo, ale centru `Label` má výchozí písmo sans-serif.
 
 ## <a name="define-your-own-markup-extensions"></a>Definovat vlastní rozšíření značek
 
-Pokud byla zjištěna potřebu rozšíření značek XAML, která není k dispozici v Xamarin.Forms, můžete [vytvořit vlastní](creating.md).
+Pokud jste se setkali potřebu rozšíření značek XAML, který není k dispozici v Xamarin.Forms, můžete si [vytvořit svoje vlastní](creating.md).
 
 
 ## <a name="related-links"></a>Související odkazy
 
 - [Rozšíření značek (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/)
-- [Kapitola rozšíření značek XAML z adresáře Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
+- [Kapitola rozšíření značek XAML Xamarin.Forms knihy](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
 - [Slovníky prostředků](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [Dynamické styly](~/xamarin-forms/user-interface/styles/dynamic.md)
 - [Datová vazba](~/xamarin-forms/app-fundamentals/data-binding/index.md)

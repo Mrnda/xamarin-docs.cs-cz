@@ -1,34 +1,34 @@
 ---
-title: Výběr fotografie z knihovny obrázků
-description: Tento článek vysvětluje způsob použití třídy Xamarin.Forms DependencyService vybrat fotografie z knihovny obrázků telefonu.
+title: Výběr z knihovny obrázků fotografie
+description: Tento článek vysvětluje, jak použít třídu Xamarin.Forms DependencyService vybrat fotografii z knihovny obrázků v telefonu.
 ms.prod: xamarin
 ms.assetid: 4F51B0E7-6A63-403C-B488-500CCBCE75DD
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: af5f499687e1ef0b7c245ca524e33cd9d31683cb
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: b593815df9ce942a98496806116bacfa63e2a2d9
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35242466"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38999027"
 ---
-# <a name="picking-a-photo-from-the-picture-library"></a>Výběr fotografie z knihovny obrázků
+# <a name="picking-a-photo-from-the-picture-library"></a>Výběr z knihovny obrázků fotografie
 
-Tento článek vás provede vytváření aplikace, která umožňuje uživateli vybrat fotografie z knihovny obrázků telefonu. Protože Xamarin.Forms nezahrnuje tuto funkci, je nutné použít [ `DependencyService` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyService/) pro přístup k nativních rozhraní API na každou platformu.  Tento článek se zabývá následující kroky pro používání `DependencyService` k této úloze:
+Tento článek vás provede vytvořením aplikace, která umožňuje uživateli vybrat fotografii z knihovny obrázků v telefonu. Protože Xamarin.Forms nezahrnuje tuto funkci, je nutné použít [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) pro přístup k nativním rozhraním API na každou platformu.  Tento článek se zabývá následující pokyny pro použití `DependencyService` pro tuto úlohu:
 
-- **[Vytváření rozhraní](#Creating_the_Interface)**  &ndash; pochopit vytváření rozhraní ve sdílené kódu.
-- **[iOS implementace](#iOS_Implementation)**  &ndash; zjistěte, jak toto rozhraní implementovat v nativním kódu pro iOS.
+- **[Vytvoření rozhraní](#Creating_the_Interface)**  &ndash; pochopit, jak se v sdílený kód vytvoří rozhraní.
+- **[iOS implementace](#iOS_Implementation)**  &ndash; zjistěte, jak implementovat rozhraní v nativním kódu pro iOS.
 - **[Android implementace](#Android_Implementation)**  &ndash; zjistěte, jak implementovat rozhraní v nativním kódu pro Android.
-- **[Universal Windows Platform implementace](#UWP_Implementation)**  &ndash; zjistěte, jak toto rozhraní implementovat v nativním kódu pro univerzální platformu Windows (UWP).
-- **[Implementace v sdíleného kódu](#Implementing_in_Shared_Code)**  &ndash; Naučte se používat `DependencyService` provést volání do nativního implementace ze sdíleného kódu.
+- **[Implementace pro univerzální platformu Windows](#UWP_Implementation)**  &ndash; zjistěte, jak implementovat rozhraní v nativním kódu pro univerzální platformu Windows (UPW).
+- **[Implementace v sdíleným kódem](#Implementing_in_Shared_Code)**  &ndash; Další informace o použití `DependencyService` Chcete-li volat nativní implementaci ze sdíleného kódu.
 
 <a name="Creating_the_Interface" />
 
-## <a name="creating-the-interface"></a>Vytváření rozhraní
+## <a name="creating-the-interface"></a>Vytvoření rozhraní
 
-Nejprve vytvořte rozhraní v sdíleného kódu, která vyjadřuje požadované funkce. V případě fotografií výdej aplikace je vyžaduje právě jednu metodu. To je definována v [ `IPicturePicker` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/DependencyServiceSample/IPicturePicker.cs) rozhraní v knihovně .NET standardní ukázkového kódu:
+Nejprve vytvořte rozhraní v sdíleného kódu, který vyjadřuje požadované funkce. V případě aplikace fotky vybere pouze jedním ze způsobů je požadovaná. Toto je definováno v [ `IPicturePicker` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/DependencyServiceSample/IPicturePicker.cs) rozhraní v knihovně .NET Standard ukázkového kódu:
 
 ```csharp
 namespace DependencyServiceSample
@@ -40,7 +40,7 @@ namespace DependencyServiceSample
 }
 ```
 
-`GetImageStreamAsync` Metoda je definován jako asynchronní, protože metoda musí vracet rychle, ale nemůže vrátit `Stream` objektu pro vybrané fotografie, dokud se uživatel má procházet knihovny obrázků a vybrali jednu.
+`GetImageStreamAsync` Metoda je definována jako asynchronní, protože metoda musí vracet rychle, ale nemůže vrátit `Stream` pro vybrané fotografie, dokud uživatel procházet knihovnu obrázků a vybrali jeden objekt.
 
 Toto rozhraní je implementováno ve všech platformách pomocí kódu pro konkrétní platformu.
 
@@ -48,9 +48,9 @@ Toto rozhraní je implementováno ve všech platformách pomocí kódu pro konkr
 
 ## <a name="ios-implementation"></a>iOS implementace
 
-Implementace iOS `IPicturePicker` rozhraní používá [ `UIImagePickerController` ](https://developer.xamarin.com/api/type/UIKit.UIImagePickerController/) jak je popsáno v [ **zvolte fotografie z Galerie** ](https://developer.xamarin.com/recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery/) recepturách a [ukázkový kód](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery).
+Implementace iOS `IPicturePicker` rozhraní používá [ `UIImagePickerController` ](https://developer.xamarin.com/api/type/UIKit.UIImagePickerController/) jak je popsáno v [ **vybírat fotografii do Galerie** ](https://developer.xamarin.com/recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery/) recept a [ukázkový kód](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery).
 
-Implementace iOS je součástí [ `PicturePickerImplementation` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/iOS/PicturePickerImplementation.cs) třídu do projektu iOS ukázkový kód. Zpřístupněte Tato třída `DependencyService` správci zjistit třídu, musí se [`assembly`] atribut typu `Dependency`, musí být veřejné a explicitní implementace třídy `IPicturePicker` rozhraní:
+Je součástí implementace iOS [ `PicturePickerImplementation` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/iOS/PicturePickerImplementation.cs) třídu v projektu pro iOS ukázkového kódu. Aby tato třída viditelná pro `DependencyService` správce, musí být určen třídy s [`assembly`] atribut typu `Dependency`, a musí být veřejné a explicitní implementace třídy `IPicturePicker` rozhraní:
 
 ```csharp
 [assembly: Dependency (typeof (PicturePickerImplementation))]
@@ -90,11 +90,11 @@ namespace DependencyServiceSample.iOS
 
 ```
 
-`GetImageStreamAsync` Metoda vytvoří `UIImagePickerController` a inicializuje ho vybrat obrázky z knihovny fotografii. Jsou požadovány dva obslužné rutiny událostí: jeden pro když uživatel vybere fotografie a druhou pro Pokud uživatel zruší zobrazení fotografií knihovny. `PresentModalViewController` Pak zobrazí knihovně fotografií pro uživatele.
+`GetImageStreamAsync` Metoda vytvoří `UIImagePickerController` a inicializuje ji vybrat Image z knihovny fotografií. Dvě obslužné rutiny událostí jsou povinné: jeden pro když uživatel vybere fotografii a druhou pro když uživatel zruší zobrazení knihovny fotografií. `PresentModalViewController` Uživateli zobrazí knihovny fotografií.
 
-V tomto okamžiku `GetImageStreamAsync` metoda musí vrátit `Task<Stream>` objekt, který má kód, který je volání. Tato úloha byla dokončena pouze v případě, že uživatel dokončil interakci s knihovnou fotografie a jeden z obslužné rutiny událostí je volána. Pro situace, jako to [ `TaskCompletionSource` ](https://msdn.microsoft.com/library/dd449174(v=vs.110).aspx) třída je nezbytné. Poskytuje třídy `Task` správné obecného typu vrácení z objektu `GetImageStreamAsync` metoda a třídu můžete později být signál, když je úloha dokončena.
+V tomto okamžiku `GetImageStreamAsync` metoda musí vracet `Task<Stream>` objekt kódu, který je volání. Tento úkol je dokončen, pouze v případě, že uživatel dokončil interakci s knihovny fotografií a jeden z obslužné rutiny událostí je volána. V situacích, jako je to [ `TaskCompletionSource` ](https://msdn.microsoft.com/library/dd449174(v=vs.110).aspx) třída je základní. Poskytuje třídy `Task` objekt správné obecného typu má vrátit z `GetImageStreamAsync` metody a třídy lze později být signalizován při dokončení úlohy.
 
-`FinishedPickingMedia` Obslužné rutiny události je volána, když uživatel vybral obrázku. Však poskytuje obslužné rutiny `UIImage` objektu a `Task` musí vracet .NET `Stream` objektu. To se provádí ve dvou krocích: `UIImage` objekt nejprve převeden do souboru JPEG v uložené v paměti `NSData` objekt a potom `NSData` objekt je převést na .NET `Stream` objektu. Volání `SetResult` metodu `TaskComkpletionSource` objekt dokončí úlohu zadáním `Stream` objektu:
+`FinishedPickingMedia` Obslužná rutina události je volána, když uživatel vybral obrázku. Však poskytuje obslužné rutiny `UIImage` objektu a `Task` musí vracet .NET `Stream` objektu. To se provádí ve dvou krocích: `UIImage` objekt nejprve převeden na soubor JPEG v uložených v paměti `NSData` objektu a pak `NSData` objekt je převést na .NET `Stream` objektu. Volání `SetResult` metodu `TaskCompletionSource` objektu se dokončí úkol zadáním `Stream` objektu:
 
 ```csharp
 namespace DependencyServiceSample.iOS
@@ -134,7 +134,7 @@ namespace DependencyServiceSample.iOS
 
 ```
 
-Aplikace pro iOS vyžaduje oprávnění od uživatele pro přístup k telefonu fotografií knihovny. Přidejte následující `dict` v souboru Info.plist:
+Aplikace pro iOS vyžaduje oprávnění uživatele pro přístup k telefonu knihovny fotografií. Přidejte následující text do `dict` část souboru Info.plist:
 
 ```xml
 <key>NSPhotoLibraryUsageDescription</key>
@@ -144,12 +144,12 @@ Aplikace pro iOS vyžaduje oprávnění od uživatele pro přístup k telefonu f
 
 <a name="Android_Implementation" />
 
-## <a name="android-implementation"></a>Android implementace
+## <a name="android-implementation"></a>Implementace s androidem
 
-Android implementace používá podle postupu popsaného v [ **Vybrat bitovou kopii** ](https://developer.xamarin.com/recipes/android/other_ux/pick_image/) recepturách a [ukázkový kód](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image). Je však metoda, která je volána, když uživatel vybral bitovou kopii z knihovny obrázků `OnActivityResult` potlačení v třídu odvozenou z `Activity`. Z tohoto důvodu normální [ `MainActivity` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/Droid/MainActivity.cs) třídy v projektu pro Android má byla doplněná pole, vlastnosti a přepsání `OnActivityResult` metoda:
+Android implementace používá techniky popsané v [ **vyberte bitovou kopii** ](https://developer.xamarin.com/recipes/android/other_ux/pick_image/) recept a [ukázkový kód](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image). Metoda, která je volána, když uživatel vybral bitovou kopii z knihovny obrázků ale `OnActivityResult` přepsat ve třídě, která je odvozena z `Activity`. Z tohoto důvodu normální [ `MainActivity` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/Droid/MainActivity.cs) třídu v projektu pro Android má byla doplněna pole, vlastnosti a přepsání `OnActivityResult` metody:
 
 ```csharp
-public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
+public class MainActivity : FormsAppCompatActivity
 {
     ...
     // Field, property, and method for Picture Picker
@@ -181,9 +181,9 @@ public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicat
 
 ```
 
-`OnActivityResult`Přepsání Určuje soubor vybraný obrázek se Android `Uri` objektu, ale to může být převedeny do .NET `Stream` objekt voláním `OpenInputStream` metodu `ContentResolver` objekt, který byl získán z aktivity `ContentResolver` vlastnost.
+`OnActivityResult`Přepsání označuje vybraný obrázek souboru pomocí aplikace pro Android `Uri` objektu, ale toto je možné převést do .NET `Stream` objektu voláním `OpenInputStream` metodu `ContentResolver` objekt, který byl získán z aktivity `ContentResolver` vlastnost.
 
-Jako implementace iOS, Android implementace používá `TaskCompletionSource` signál po dokončení úlohy. To `TaskCompletionSource` objektu je definována jako veřejné vlastnosti v `MainActivity` třídy. To umožňuje vlastnost odkazovat ve [ `PicturePickerImplementation` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/Droid/PicturePickerImplementation.cs) třídy v projektu pro Android. Toto je třída, která se `GetImageStreamAsync` metoda:
+Stejně jako implementace iOS, Android implementace používá `TaskCompletionSource` který signalizuje, že po dokončení úlohy. To `TaskCompletionSource` objekt je definovaný jako veřejné vlastnosti v `MainActivity` třídy. To umožňuje vlastnost, která má odkazovat [ `PicturePickerImplementation` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/Droid/PicturePickerImplementation.cs) třídu v projektu pro Android. Toto je třída s `GetImageStreamAsync` metody:
 
 ```csharp
 [assembly: Dependency(typeof(PicturePickerImplementation))]
@@ -214,13 +214,13 @@ namespace DependencyServiceSample.Droid
 }
 ```
 
-Tato metoda umožňuje přístup `MainActivity` třída několik důvodů: pro `Instance` vlastnost, pro `PickImageId` pole pro `TaskCompletionSource` vlastnost a k volání `StartActivityForResult`. Tato metoda je definována `FormsApplicationActivity` třídy tedy základní třídu `MainActivity`.
+Tato metoda umožňuje přístup `MainActivity` třídy několik důvodů: pro `Instance` vlastnost, pro `PickImageId` pole pro `TaskCompletionSource` vlastnost a k volání `StartActivityForResult`. Tato metoda je definována `FormsAppCompatActivity` třídu, která je základní třídou z `MainActivity`.
 
 <a name="UWP_Implementation" />
 
-## <a name="uwp-implementation"></a>Implementace UWP
+## <a name="uwp-implementation"></a>Implementace UPW
 
-Na rozdíl od iOS a Android implementace nevyžaduje implementace nástroje pro výběr fotografií pro univerzální platformu Windows `TaskCompletionSource` třídy. [ `PicturePickerImplementation` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/UWP/PicturePickerImplementation.cs) Třídy používá [ `FileOpenPicker` ](/uwp/api/Windows.Storage.Pickers.FileOpenPicker/) třída získat přístup ke knihovně fotografii. Protože `PickSingleFileAsync` metodu `FileOpenPicker` je sám asynchronní, `GetImageStreamAsync` můžete jednoduše použít metoda `await` pomocí dané metody (a další asynchronní metody) a vrátit `Stream` objektu:
+Na rozdíl od implementace Android a iOS se nevyžaduje implementace nástroje pro výběr fotografií pro univerzální platformu Windows `TaskCompletionSource` třídy. [ `PicturePickerImplementation` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/UWP/PicturePickerImplementation.cs) Třídy používá [ `FileOpenPicker` ](/uwp/api/Windows.Storage.Pickers.FileOpenPicker/) třídy pro získání přístupu do knihovny fotografií. Protože `PickSingleFileAsync` metoda `FileOpenPicker` samotného je asynchronní, `GetImageStreamAsync` můžete jednoduše použít metoda `await` pomocí dané metody (a jiné asynchronní metody) a vraťte se `Stream` objektu:
 
 
 ```csharp
@@ -260,11 +260,11 @@ namespace DependencyServiceSample.UWP
 
 <a name="Implementing_in_Shared_Code" />
 
-## <a name="implementing-in-shared-code"></a>Implementace v sdíleného kódu
+## <a name="implementing-in-shared-code"></a>Implementace v sdíleným kódem
 
-Teď, když byl implementován rozhraní pro každou platformu, aplikace v knihovně .NET Standard můžete využít výhod ho.
+Teď, když rozhraní implementován pro každou platformu, aplikaci knihovny .NET Standard můžete jej využít.
 
-[ `App` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/DependencyServiceSample/DependencyServiceSample.cs) Třída vytvoří `Button` vybrat fotografie:
+[ `App` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/DependencyServiceSample/DependencyServiceSample.cs) Vytvoří třídu `Button` vybrat fotografii:
 
 ```csharp
 Button pickPictureButton = new Button
@@ -276,7 +276,7 @@ Button pickPictureButton = new Button
 stack.Children.Add(pickPictureButton);
 ```
 
-`Clicked` Obslužná rutina používá `DependencyService` třída volat `GetImageStreamAsync`. Výsledkem volání v projektu platformy. Pokud metoda vrátí `Stream` objektu, pak obslužná rutina vytvoří `Image` element pro tento obrázek s `TabGestureRecognizer`a nahradí `StackLayout` na stránce s třídou `Image`:
+`Clicked` Obslužná rutina používá `DependencyService` třídy volání `GetImageStreamAsync`. Výsledkem volání projektu platformy. Pokud metoda vrátí `Stream` objektu, pak vytvoří obslužnou rutinu `Image` – element pro daný obrázek s `TabGestureRecognizer`a nahradí `StackLayout` na stránce, která `Image`:
 
 ```csharp
 pickPictureButton.Clicked += async (sender, e) =>
@@ -309,11 +309,11 @@ pickPictureButton.Clicked += async (sender, e) =>
 };
 ```
 
-Klepnutím `Image` element vrátí stránku na normální.
+Klepnutím `Image` element na stránce se vrátí do normálu.
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Zvolte fotografie z Galerie (iOS)](https://developer.xamarin.com/recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery/)
+- [Zvolte fotografii v galerii (iOS)](https://developer.xamarin.com/recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery/)
 - [Vyberte bitovou kopii (Android)](https://developer.xamarin.com/recipes/android/other_ux/pick_image/)
 - [DependencyService (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/DependencyService/DependencyServiceSample)

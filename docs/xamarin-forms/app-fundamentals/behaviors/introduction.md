@@ -1,42 +1,42 @@
 ---
-title: Úvod do chování
-description: Chování můžete přidat další funkce bez nutnosti podtřídou je ovládacích prvků uživatelského rozhraní. Místo toho funkci je implementována ve třídě chování a připojené k ovládacímu prvku, jako by byl součástí samotném ovládacím prvku. Tento článek obsahuje úvod do chování.
+title: Úvod k chování
+description: Chování umožňují přidat funkce do ovládacích prvků uživatelského rozhraní bez nutnosti podtřídy je. Místo toho funkce je implementována ve třídě chování a připojené do ovládacího prvku, jako kdyby byly součástí ovládacího prvku. Tento článek obsahuje úvod do chování.
 ms.prod: xamarin
 ms.assetid: 0DF1EF8C-A212-4142-A3C6-DF760A82A757
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: dc6d8396c2908d251290e4540dbb3cec3344542f
-ms.sourcegitcommit: a7febc19102209b21e0696256c324f366faa444e
+ms.openlocfilehash: 176f41d4b7349af2cf7cc49de8ba0789ad2f8c11
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34732785"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995811"
 ---
-# <a name="introduction-to-behaviors"></a>Úvod do chování
+# <a name="introduction-to-behaviors"></a>Úvod k chování
 
-_Chování můžete přidat další funkce bez nutnosti podtřídou je ovládacích prvků uživatelského rozhraní. Místo toho funkci je implementována ve třídě chování a připojené k ovládacímu prvku, jako by byl součástí samotném ovládacím prvku. Tento článek obsahuje úvod do chování._
+_Chování umožňují přidat funkce do ovládacích prvků uživatelského rozhraní bez nutnosti podtřídy je. Místo toho funkce je implementována ve třídě chování a připojené do ovládacího prvku, jako kdyby byly součástí ovládacího prvku. Tento článek obsahuje úvod do chování._
 
-Chování umožňují implementovat kód, který je obvykle nutné zapsat jako kódu, protože komunikuje přímo s rozhraním API ovládacího prvku tak, že může být výstižně připojen do ovládacího prvku a zabalené pro opakované použití napříč více než jednu aplikaci. Se dá zajistit plný rozsah funkcí, které ovládací prvky, jako například:
+Chování umožňují implementovat kód, který by normálně musíte napsat jako použití modelu code-behind, protože komunikuje přímo s rozhraním API ovládacího prvku tak, že může být stručně a výstižně připojené do ovládacího prvku a zabalit pro opakované použití napříč více než jednu aplikaci. Se dá poskytují celou řadu funkcí pro ovládací prvky, jako například:
 
-- Přidání e-mailu program pro ověření [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/).
-- Vytvoření ovládacího prvku hodnocení používat klepněte na gesto rozpoznávání.
+- Přidání e-mailu program pro ověření [ `Entry` ](xref:Xamarin.Forms.Entry).
+- Vytvoření ovládacího prvku rating pomocí rozpoznávání gest tap.
 - Řízení animace.
-- Přidání do ovládacího prvku vliv.
+- Přidání do ovládacího prvku efektu.
 
-Chování také povolit pokročilejší scénáře. V kontextu *tvorba příkazů*, chování jsou užitečné přístup pro připojení k příkazu ovládacího prvku. Kromě toho se můžete použít k přiřazení příkazů s ovládacími prvky, které nebyly navrženy tak, aby komunikovali s příkazy. Například může být používají k vyvolání příkazu v reakci na událost, která iniciovala.
+Chování také povolit pokročilejší scénáře. V rámci *příkazů*, chování jsou užitečné přístup pro připojení k příkazu ovládacího prvku. Kromě toho jsou umožňuje přidružit příkazy ovládacích prvků, které nejsou určeny k interakci s příkazy. Například můžete používají pro spuštění příkazu v reakci událost.
 
 Xamarin.Forms podporuje dva různé styly chování:
 
-- **Chování Xamarin.Forms** – třídy, které jsou odvozeny od [ `Behavior` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior/) nebo [ `Behavior<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior%3CT%3E/) třídy, kde `T` typ ovládacího prvku, na kterou je chování by se měly používat. Další informace o chování Xamarin.Forms najdete v tématu [Xamarin.Forms chování](~/xamarin-forms/app-fundamentals/behaviors/creating.md) a [opakovaně použitelného chování](~/xamarin-forms/app-fundamentals/behaviors/reusable/index.md).
-- **Připojené chování** – `static` tříd pomocí jednoho nebo více přidružené vlastnosti. Další informace o připojené chování najdete v tématu [připojené chování](~/xamarin-forms/app-fundamentals/behaviors/attached.md).
+- **Chování Xamarin.Forms** – třídy, které jsou odvozeny z [ `Behavior` ](xref:Xamarin.Forms.Behavior) nebo [ `Behavior<T>` ](xref:Xamarin.Forms.Behavior`1) třídy, kde `T` typ ovládacího prvku, ke kterému je chování by se měly používat. Další informace o chování Xamarin.Forms, naleznete v tématu [chování Xamarin.Forms](~/xamarin-forms/app-fundamentals/behaviors/creating.md) a [opakovaně použitelného chování](~/xamarin-forms/app-fundamentals/behaviors/reusable/index.md).
+- **Připojená chování** – `static` tříd pomocí jednoho nebo více připojené vlastnosti. Další informace o připojená chování najdete v tématu [připojená chování](~/xamarin-forms/app-fundamentals/behaviors/attached.md).
 
-Tato příručka se zaměřuje na platformě Xamarin.Forms chování, protože jsou k vytváření chování žádoucí.
+Tato příručka se zaměřuje na chování Xamarin.Forms, protože jde o upřednostňovaný způsob konstrukce chování.
 
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Chování](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior/)
-- [Chování&lt;T&gt;](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior%3CT%3E/)
+- [Chování](xref:Xamarin.Forms.Behavior)
+- [Chování&lt;T&gt;](xref:Xamarin.Forms.Behavior`1)

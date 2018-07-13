@@ -1,81 +1,81 @@
 ---
-title: Shrnutí kapitoly 7. XAML oproti kódu
-description: 'Vytváření mobilních aplikací s Xamarin.Forms: Souhrn kapitoly 7. XAML oproti kódu'
+title: Souhrn kapitola 7. XAML vs. kód
+description: 'Vytváření mobilních aplikací s Xamarin.Forms: Souhrn kapitola 7. XAML vs. kód'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: E91F387B-CE90-481C-8D90-CB25519BFD2B
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: efa3a22c12983ef742bb46f91ab6096294cdc533
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 02e4ea44d87360deed361d161759fa3a2808100f
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241445"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995154"
 ---
-# <a name="summary-of-chapter-7-xaml-vs-code"></a>Shrnutí kapitoly 7. XAML oproti kódu
+# <a name="summary-of-chapter-7-xaml-vs-code"></a>Souhrn kapitola 7. XAML vs. kód
 
-Xamarin.Forms podporuje jazyka kódu na základě XML nazývaného Extensible Application Markup Language nebo XAML (vyslovováno "zammel"). XAML představuje alternativu ke C# k definování rozložení uživatelské rozhraní aplikace Xamarin.Forms a definování vazby mezi elementy uživatelského rozhraní a základní data.
+Xamarin.Forms podporuje založené na XML značky jazyka nazvaného Extensible Application Markup Language nebo XAML (vyslovováno "zaml"). XAML poskytuje alternativu k C# při definování rozložení uživatelského rozhraní aplikace Xamarin.Forms a definování vazeb mezi prvky uživatelského rozhraní a příslušná data.
 
-## <a name="properties-and-attributes"></a>Vlastnosti a atributy
+## <a name="properties-and-attributes"></a>Vlastnosti a atributů
 
-Xamarin.Forms třídy a struktury elementů XML v jazyce XAML, a vlastnosti třídy a struktury změní atributy XML. Chcete-li být vytvořena instance v jazyce XAML, obecně třídu musí mít konstruktor public bez parametrů. Všechny vlastnosti nastavit v jazyce XAML, musí mít veřejný `set` přistupující objekty.
+Xamarin.Forms třídy a struktury XML elementů v XAML, a vlastnosti třídy a struktury změní atributy ve formátu XML. Má být vytvořena v XAML, musí třída obvykle mít veřejný konstruktor bez parametrů. Všechny vlastnosti nastavené v XAML musí mít veřejnou `set` přistupující objekty.
 
-Pro vlastnosti základní datové typy (`string`, `double`, `bool`, a tak dále), XAML analyzátor používá standardní `TryParse` metody převést na tyto typy nastavení atributů. Analyzátor jazyka XAML může také snadno zpracovat výčtové typy a může být kombinací členy výčtu Pokud typ výčtu je označené `Flags` atribut.
+Pro vlastnosti základní datové typy (`string`, `double`, `bool`a tak dále), používá standardní analyzátor XAML `TryParse` metody převodu nastavení atributů pro tyto typy. Analyzátor XAML může také snadno zpracovávat výčtové typy a členy výčtu může kombinovat Pokud typ výčtu se značkou `Flags` atribut.
 
-Pomáhá analyzátor jazyka XAML, může obsahovat více komplexní typy (nebo vlastnosti těchto typů) [ `TypeConverterAttribute` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TypeConverterAttribute/) identifikující třídu odvozenou z [ `TypeConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TypeConverter/) který podporuje převod z řetězcové hodnoty na tyto typy. Například [ `ColorTypeConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ColorTypeConverter/) převede barvu řetězce, jako je například "#rrggbb", s názvy a do `Color` hodnoty.
+Abychom analyzátoru XAML může obsahovat složitější typy (nebo vlastnosti z těchto typů) [ `TypeConverterAttribute` ](xref:Xamarin.Forms.TypeConverterAttribute) identifikující třídu, která je odvozena z [ `TypeConverter` ](xref:Xamarin.Forms.TypeConverter) který podporuje počítačový převod z řetězcové hodnoty na tyto typy. Například [ `ColorTypeConverter` ](xref:Xamarin.Forms.ColorTypeConverter) převede barev názvy a řetězce, jako je například "#rrggbb" do `Color` hodnoty.
 
-## <a name="property-element-syntax"></a>Vlastnost element syntaxe
+## <a name="property-element-syntax"></a>Syntaxe elementů vlastností
 
-V jazyce XAML třídy a objekty vytvořené z nich jsou vyjádřené jako elementy XML. Toto jsou známé jako *objektu elementy*. Většinu vlastností tyto objekty jsou vyjádřené jako atributy XML. Toto nastavení se nazývá *vlastnost atributy*.
+V XAML třídy a objekty vytvořené z nich jsou vyjádřeny jako prvky jazyka XML. Toto jsou známé jako *objektu prvky*. Většina vlastností tyto objekty jsou vyjádřeny jako atributy ve formátu XML. Toto nastavení se nazývá *atributy vlastnosti*.
 
-Vlastnost někdy musí být nastavená na objekt, který nemůže být vyjádřena jako jednoduchý řetězec. V takovém případě XAML podporuje značku *element vlastnosti* , se skládá z název třídy a název vlastnosti, které jsou odděleny tečkou. Element objekt lze potom použít v rámci pár značek element vlastnosti.
+Někdy musí být vlastnost nastavena na objekt, který nelze vyjádřen jako jednoduchým řetězcem. V takovém případě XAML podporuje značku *element vlastnosti* , který se skládá z názvu třídy a název vlastnosti, které jsou oddělené tečkou. Prvek objektu můžete potom zobrazí během pár značek element vlastnosti.
 
 ## <a name="adding-a-xaml-page-to-your-project"></a>Přidání stránky XAML do projektu
 
-Knihovny přenosných tříd Xamarin.Forms může obsahovat stránky XAML, když je poprvé vytvořen nebo XAML – stránka můžete přidat do existujícího projektu. V dialogovém okně Přidat novou položku, vyberte položku, která odkazuje na stránku XAML, nebo `ContentPage` a XAML. (Není `ContentView`.)
+Xamarin.Forms Přenosná knihovna tříd může obsahovat stránky XAML při prvním vytvoření nebo stránky XAML můžete přidat do existujícího projektu. V dialogovém okně Přidat novou položku, vyberte položku, která odkazuje na stránku XAML nebo `ContentPage` a XAML. (Ne `ContentView`.)
 
-Jsou vytvořeny dva soubory: soubor XAML s XAML příponu názvu souboru a soubor C# s příponou. xaml.cs. Soubor C# se často označuje jako *kódu* souboru XAML. Soubor kódu je definice třídu odvozenou od `ContentPage`. V okamžiku sestavení je analyzovat XAML a jinou třídu definici se generuje pro stejnou třídu. Tato generovaná třída obsahuje metodu s názvem `InitializeComponent` která je volána z konstruktoru souboru kódu na pozadí.
+Se vytvoří dva soubory: soubor XAML s .xaml příponu názvu souboru a soubor jazyka C# s příponou. xaml.cs. Soubor C# se často označuje jako *použití modelu code-behind* souboru XAML. Soubor kódu na pozadí je definicí částečné třídy, která je odvozena z `ContentPage`. V okamžiku sestavení je analyzován XAML a jiné definice částečné třídy je generován pro tutéž třídu. Tato generovaná třída obsahuje metodu s názvem `InitializeComponent` , která je volána z konstruktoru soubor kódu na pozadí.
 
-Během doby běhu, při ukončení `InitializeComponent` volat, všechny elementy souboru XAML byla vytvořena instance a inicializovat stejně, jako by se měl byly vytvořeny v C# – kód.
+Za běhu na závěr `InitializeComponent` volat všechny elementy XAML souboru byla vytvořena instance a inicializován tak, jako kdyby měla byly vytvořeny v kódu jazyka C#.
 
-Kořenový element v souboru XAML `ContentPage`. Kořenovou značku obsahuje alespoň dva deklarace oboru názvů XML, jeden pro elementy Xamarin.Forms a jiných definování `x` předponu pro elementy a atributy vnitřní všem implementacím XAML. Také obsahuje kořenovou značku `x:Class` atribut, který určuje obor názvů a název třídy, která je odvozena z `ContentPage`. To odpovídá názvu oboru názvů a třídy v souboru kódu na pozadí.
+Kořenový element v souboru XAML je `ContentPage`. Kořenová značka obsahuje alespoň dvě deklarace oboru názvů XML, jednu pro Xamarin.Forms prvky a další definování `x` předponu pro prvky a atributy, které jsou přirozené pro všechny implementace XAML. Kořenová značka obsahuje také `x:Class` atribut, který označuje obor názvů a název třídy, která je odvozena z `ContentPage`. To odpovídá názvu oboru názvů a třídy v souboru kódu na pozadí.
 
-Kombinace XAML a kódu ukazují pomocí [ **CodePlusXaml** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07) ukázka.
+Kombinace XAML a kódu je znázorněn ve [ **CodePlusXaml** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07) vzorku.
 
-## <a name="the-xaml-compiler"></a>Kompilátor jazyka XAML
+## <a name="the-xaml-compiler"></a>Kompilátor XAML
 
-Xamarin.Forms má kompilátor jazyka XAML, ale jeho použití je volitelné založené na použití [ `XamlCompilationAttribute` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.XamlCompilationAttribute/). Pokud není kompilována XAML, XAML je analyzována v okamžiku sestavení a souboru XAML vložené do PCL, kde je také analyzovat za běhu. Pokud kompiluje XAML procesu sestavení převede XAML do binárního formátu a zpracování modulu runtime je efektivnější.
+Má kompilátor XAML Xamarin.Forms, ale jeho použití je volitelné na základě týkající se použití [ `XamlCompilationAttribute` ](xref:Xamarin.Forms.Xaml.XamlCompilationAttribute). Pokud není zkompilován XAML, v okamžiku sestavení je analyzován XAML a XAML soubor je vložen PCL, kde je také analyzován za běhu. Pokud XAML je zkompilován, proces sestavení se převede XAML do binárního formátu a zpracování modulu runtime je mnohem efektivnější.
 
-## <a name="platform-specificity-in-the-xaml-file"></a>Specifické platformy podobě v souboru XAML
+## <a name="platform-specificity-in-the-xaml-file"></a>Platforma specifičnosti v souboru XAML
 
-V jazyce XAML [ `OnPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.OnPlatform%3CT%3E/) třídy lze použít k výběru značek závislé na platformu. Toto je obecná třída a musí být vytvořena s `x:TypeArguments` atribut, který odpovídá typu cíle. [ `OnIdiom` ](https://developer.xamarin.com/api/type/Xamarin.Forms.OnIdiom%3CT%3E/) Třída je podobné ale použít mnohem méně často.
+V XAML [ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1) třídy lze použít k výběru značek závislého na platformě. Toto je obecná třída a musí být vytvořena pomocí `x:TypeArguments` atribut, který odpovídá cílovým typem. [ `OnIdiom` ](xref:Xamarin.Forms.OnIdiom`1) Třída je podobné, ale využité mnohem méně často.
 
-Použití `OnPlatform` od publikování knihy změnila. Byl původně použije ve spojení s vlastností s názvem `iOS`, `Android`, a `WinPhone`. Použije se teď s podřízené [ `On` ](https://developer.xamarin.com/api/type/Xamarin.Forms.On/) objekty. Nastavit [ `Platform` ](https://developer.xamarin.com/api/property/Xamarin.Forms.On.Platform/) na řetězec konzistentní s veřejnosti `const` pole [ `Device` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Device/) třídy. Nastavte [ `Value` ](https://developer.xamarin.com/api/property/Xamarin.Forms.On.Value/) vlastnost na hodnotu, která je konzistentní s `x:TypeArguments` atribut `OnPlatform` značky.
+Použití `OnPlatform` změnila knihu publikoval. To byl původně používá ve spojení s vlastností s názvem `iOS`, `Android`, a `WinPhone`. Používá se teď u podřízené [ `On` ](xref:Xamarin.Forms.On) objekty. Nastavte [ `Platform` ](xref:Xamarin.Forms.On.Platform) vlastnost na řetězec, který je konzistentní s veřejně `const` pole [ `Device` ](xref:Xamarin.Forms.Device) třídy. Nastavte [ `Value` ](xref:Xamarin.Forms.On.Value) vlastnost na hodnotu konzistentní s `x:TypeArguments` atribut `OnPlatform` značky.
 
-`OnPlatform` ukazují [ **ScaryColorList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07/ScaryColorList) ukázkové, takže volat, protože obsahuje bloky skoro stejné XAML. Existenci tento automatizujete značek naznačuje, že techniky by měl být k dispozici pro snížit.
+`OnPlatform` je patrné [ **ScaryColorList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07/ScaryColorList) vzorku, takže volat, protože obsahuje bloky skoro stejné XAML. Existence tohoto automatizujete značek naznačuje, že techniky by možné snížit.
 
 ## <a name="the-content-property-attributes"></a>Vlastnost obsahu atributy
 
-Některé prvky vlastnost dojít poměrně často, jako `<ContentPage.Content>` značky na kořenový prvek `ContentPage`, nebo `<StackLayout.Children>` značku, která obklopuje podřízené objekty daného `StackLayout`.
+Některé prvky vlastnosti docházet poměrně často, jako `<ContentPage.Content>` značku na kořenový element `ContentPage`, nebo `<StackLayout.Children>` značky, který obklopuje podřízené objekty daného `StackLayout`.
 
-Každá třída může identifikovat jednu vlastnost s [ `ContentPropertyAttribute` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPropertyAttribute/) na třídu. Pro tuto vlastnost nejsou nutné značky element vlastnosti. `ContentPage` definuje vlastnost jeho obsahu jako `Content`, a `Layout<T>` (třídu, ze které `StackLayout` odvozuje) definuje vlastnost jeho obsahu jako `Children`. Tyto značky elementu vlastností se nevyžaduje.
+Každá třída může identifikovat jednu vlastnost s [ `ContentPropertyAttribute` ](xref:Xamarin.Forms.ContentPropertyAttribute) ve třídě. Pro tuto vlastnost nejsou nutné značky element vlastnosti. `ContentPage` definuje vlastnost obsahu jako `Content`, a `Layout<T>` (třída, ze které `StackLayout` odvozený) definuje jeho vlastnost obsahu jako `Children`. Značky elementů tato vlastnost se nevyžadují.
 
-Vlastnost element `Label` je `Text`.
+Prvek vlastnosti `Label` je `Text`.
 
 ## <a name="formatted-text"></a>Formátovaný text
 
-[ **TextVariations** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07/TextVariations) ukázka obsahuje několik příkladů, nastavení `Text` a `FormattedText` vlastnosti `Label`. V jazyce XAML `Span` objekty se zobrazí jako podřízené objekty `FormattedString` objektu.
+[ **TextVariations** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07/TextVariations) vzorek obsahuje několik příkladů nastavení `Text` a `FormattedText` vlastnosti `Label`. V XAML `Span` zobrazit objekty jako podřízené objekty `FormattedString` objektu.
 
- Když je řetězec Víceřádkový nastavená na `Text` vlastnost, konec řádku znaky jsou převedeny na znaky, ale konec řádku znaky se zachová, i když řetězec Víceřádkový se zobrazí jako obsah `Label` nebo `Label.Text` značky:
+ Když Víceřádkový řetězec je nastavený na `Text` vlastnost, na konci řádku znaky jsou převedeny na znaky mezery, ale znaky konec řádku se zachová, i když Víceřádkový řetězec se zobrazí jako obsah `Label` nebo `Label.Text` značky:
 
- [![Trojitá snímek obrazovky text variace sdílení](images/ch07fg03-small.png "formátovaný Text variace")](images/ch07fg03-large.png#lightbox "variace formátovaný Text")
+ [![Trojitá snímek text variace sdílení](images/ch07fg03-small.png "variace Text ve formátu")](images/ch07fg03-large.png#lightbox "variace formátovaný Text")
 
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Úplný text kapitoly 7 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch07-Apr2016.pdf)
-- [Ukázky kapitoly 7](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07)
-- [Ukázka kapitoly 7 F #](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07/FS/CodePlusXaml)
+- [Kapitola 7 textu v plném znění (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch07-Apr2016.pdf)
+- [Ukázky kapitola 7](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07)
+- [Ukázka kapitola 7 F #](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07/FS/CodePlusXaml)

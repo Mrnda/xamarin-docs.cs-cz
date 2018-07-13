@@ -1,45 +1,45 @@
 ---
 title: Funkce usnadnění v Xamarin.Forms
-description: Xamarin.Forms obsahuje třídu náběh a doběh, který umožňuje zadat přenosu funkce, pomocí které řídí, jak animací zrychlit nebo zpomalit jejich používáte. Tento článek ukazuje, jak používat předdefinované funkce usnadnění a postup vytvoření vlastní funkce usnadnění.
+description: Xamarin.Forms obsahuje třídu Easing, která vám umožní určit funkce převodu, který řídí, jak urychlit animace, nebo zpomalit spuštěnými. Tento článek ukazuje, jak využívat předem definovaných funkcí usnadnění a jak vytvořit vlastní funkcí usnadnění.
 ms.prod: xamarin
 ms.assetid: E6F124C7-A161-4C1F-AF40-52F0935E54DE
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/14/2016
-ms.openlocfilehash: 9398a1b9cf4e5f6fd18f2213a7cf55e9cbb93ef0
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 1c75771173d94a18c7c1cc5100c64d45bdc32078
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243139"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998118"
 ---
 # <a name="easing-functions-in-xamarinforms"></a>Funkce usnadnění v Xamarin.Forms
 
-_Xamarin.Forms obsahuje třídu náběh a doběh, který umožňuje zadat přenosu funkce, pomocí které řídí, jak animací zrychlit nebo zpomalit jejich používáte. Tento článek ukazuje, jak používat předdefinované funkce usnadnění a postup vytvoření vlastní funkce usnadnění._
+_Xamarin.Forms obsahuje třídu Easing, která vám umožní určit funkce převodu, který řídí, jak urychlit animace, nebo zpomalit spuštěnými. Tento článek ukazuje, jak využívat předem definovaných funkcí usnadnění a jak vytvořit vlastní funkcí usnadnění._
 
 
-[ `Easing` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Easing/) Třída definuje počet funkce usnadnění, které mohou být spotřebovávána animací:
+[ `Easing` ](xref:Xamarin.Forms.Easing) Třída definuje počet funkcí usnadnění, které mohou být spotřebovány animace:
 
-- [ `BounceIn` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.BounceIn/) Usnadnění funkce nedoručitelných zpráv animace na začátku.
-- [ `BounceOut` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.BounceOut/) Usnadnění funkce nedoručitelných zpráv animace na konci.
-- [ `CubicIn` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.CubicIn/) Funkce usnadnění pomalu zrychluje animace.
-- [ `CubicInOut` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.CubicInOut/) Usnadnění funkce zrychluje animace na začátku a zpomaluje animace na konci.
-- [ `CubicOut` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.CubicOut/) Usnadnění funkce rychle zpomaluje animace.
-- [ `Linear` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.Linear/) Usnadnění funkce používá konstantní rychlosti a je výchozí funkce usnadnění.
-- [ `SinIn` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SinIn/) Funkce usnadnění plynule zrychluje animace.
-- [ `SinInOut` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SinInOut/) Funkce usnadnění plynule zrychluje animace na začátku a plynule zpomaluje animace na konci.
-- [ `SinOut` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SinOut/) Funkce usnadnění plynule zpomaluje animace.
-- [ `SpringIn` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SpringIn/) Usnadnění funkce způsobí, že animace velmi rychle urychlit ke konci.
-- [ `SpringOut` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SpringOut/) Usnadnění funkce způsobí, že animace rychle zpomalení ke konci.
+- [ `BounceIn` ](xref:Xamarin.Forms.Easing.BounceIn) Funkce uvolnění nedoručitelných zpráv animace na začátku.
+- [ `BounceOut` ](xref:Xamarin.Forms.Easing.BounceOut) Funkce uvolnění nedoručitelných zpráv animace na konci.
+- [ `CubicIn` ](xref:Xamarin.Forms.Easing.CubicIn) Funkce uvolnění pomalu zrychluje animace.
+- [ `CubicInOut` ](xref:Xamarin.Forms.Easing.CubicInOut) Funkce uvolnění zrychluje animace na začátku a zpomalí animace na konci.
+- [ `CubicOut` ](xref:Xamarin.Forms.Easing.CubicOut) Funkce uvolnění rychle zpomalí animace.
+- [ `Linear` ](xref:Xamarin.Forms.Easing.Linear) Funkce uvolnění používá konstantní rychlosti a je výchozí funkce uvolnění.
+- [ `SinIn` ](xref:Xamarin.Forms.Easing.SinIn) Funkce uvolnění plynule zrychluje animace.
+- [ `SinInOut` ](xref:Xamarin.Forms.Easing.SinInOut) Funkce uvolnění plynule zrychluje animace na začátku a plynule zpomalí animace na konci.
+- [ `SinOut` ](xref:Xamarin.Forms.Easing.SinOut) Funkce uvolnění plynule zpomalí animace.
+- [ `SpringIn` ](xref:Xamarin.Forms.Easing.SpringIn) Funkce uvolnění způsobí, že animace velmi rychle zrychlit ke konci.
+- [ `SpringOut` ](xref:Xamarin.Forms.Easing.SpringOut) Funkce uvolnění způsobí, že se ke konci rychle zpomalení animace.
 
-`In` a `Out` přípony znamenat, pokud platnost poskytované nejvýraznější funkce je patrné na začátku animace na konci nebo obojí.
+`In` a `Out` přípony označení, pokud efekt poskytnuté funkci přechodu je patrné na začátku animace, na konci nebo obojí.
 
-Kromě toho můžete vytvořit vlastní funkce usnadnění. Další informace najdete v tématu [funkce usnadnění vlastní](#customeasing).
+Kromě toho můžete vytvořit vlastní funkcí usnadnění. Další informace najdete v tématu [usnadnění funkce vlastního](#customeasing).
 
-## <a name="consuming-an-easing-function"></a>Využívání nejvýraznější funkce
+## <a name="consuming-an-easing-function"></a>Využívání uvolnění – funkce
 
-Metody rozšíření animace v [ `ViewExtensions` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewExtensions/) třída povolit nejvýraznější funkce zadat jako parametr poslední metodu, jak je ukázáno v následujícím příkladu kódu:
+Rozšiřující metody animace v [ `ViewExtensions` ](xref:Xamarin.Forms.ViewExtensions) třídy povolit usnadnění funkce zadat jako parametr poslední metodu, jak je ukázáno v následujícím příkladu kódu:
 
 ```csharp
 await image.TranslateTo(0, 200, 2000, Easing.BounceIn);
@@ -49,25 +49,25 @@ await image.ScaleTo(1, 2000, Easing.CubicOut);
 await image.TranslateTo(0, -200, 2000, Easing.BounceOut);
 ```
 
-Rychlost animace zadáním nejvýraznější funkce pro animace se změní na jiný lineární a vytvoří poskytuje funkci nejvýraznější dopad. Při vytváření animace vynechání nejvýraznější funkce způsobí, že animace použijte výchozí [ `Linear` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.Linear/) zmírnit funkci, která vytváří lineární rychlosti.
+Zadáním usnadnění funkce pro animaci rychlosti animace změní nelineárních a vytváří efekt poskytnuté funkci přechodu. Při vytváření animace vynechání usnadnění funkce způsobí, že animace, který chcete použít výchozí [ `Linear` ](xref:Xamarin.Forms.Easing.Linear) funkci uvolnění navázat, který vytváří lineární rychlost.
 
-Další informace o metodách rozšíření animace v [ `ViewExtensions` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewExtensions/) třídy najdete v tématu [jednoduché animací](~/xamarin-forms/user-interface/animation/simple.md). Funkce usnadnění může také zpracovat [ `Animation` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Animation/) třídy. Další informace najdete v tématu [vlastní animace](~/xamarin-forms/user-interface/animation/custom.md).
+Další informace o použití metod rozšíření animace v [ `ViewExtensions` ](xref:Xamarin.Forms.ViewExtensions) najdete v tématu [jednoduché animace](~/xamarin-forms/user-interface/animation/simple.md). Funkce usnadnění můžete také využívat [ `Animation` ](xref:Xamarin.Forms.Animation) třídy. Další informace najdete v tématu [vlastní animace](~/xamarin-forms/user-interface/animation/custom.md).
 
 <a name="customeasing" />
 
 ## <a name="custom-easing-functions"></a>Vlastní funkce usnadnění
 
-K vytvoření vlastní funkce nejvýraznější třemi způsoby:
+Existují tři hlavní přístupy k vytvoření vlastní funkce usnadnění:
 
-1. Vytvoření metody, která přebírá `double` argument a vrátí `double` výsledek.
+1. Vytvoření metody, která přijímá `double` argument a vrátí `double` výsledek.
 1. Vytvoření `Func<double, double>`.
-1. Zadejte jako argument pro funkci nejvýraznější [ `Easing` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Easing/) konstruktor.
+1. Zadat jako argument funkci přechodu [ `Easing` ](xref:Xamarin.Forms.Easing) konstruktoru.
 
-Ve všech třech případech by měl vrátit vlastní nejvýraznější funkce 0 pro argument 0 a 1 pro argument 1. Libovolná hodnota však mohou být vráceny mezi argument hodnoty 0 a 1. Každý přístup se teď popsané naopak.
+Ve všech třech případech by měl vlastní usnadnění funkce vrátí 0 pro argument 0 a 1 pro argument 1. Libovolná hodnota však mohou být vráceny hodnoty argumentů 0 až 1. Každý přístup teď probereme zase.
 
-### <a name="custom-easing-method"></a>Vlastní zmírnit – metoda
+### <a name="custom-easing-method"></a>Vlastní funkce – metoda
 
-Vlastní nejvýraznější funkce může být definováno jako metody, která přijímá `double` argument a vrátí `double` výsledek, jak je ukázáno v následujícím příkladu kódu:
+Vlastní usnadnění funkce lze definovat jako metodu, která přijímá `double` argument a vrátí `double` povedou, jak je ukázáno v následujícím příkladu kódu:
 
 ```csharp
 await image.TranslateTo(0, 200, 2000, CustomEase);
@@ -78,38 +78,38 @@ double CustomEase (double t)
 }
 ```
 
-`CustomEase` Metoda zkrátí hodnota příchozí hodnoty 0, 0,2, 0.4, 0,6, 0,8 a 1. Proto [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) instance je přeložit v diskrétní přeskočí, nikoli bez problémů.
+`CustomEase` Metoda zkrátí hodnotu příchozí hodnoty 0, 0.2, 0.4, 0.6, 0,8 a 1. Proto [ `Image` ](xref:Xamarin.Forms.Image) instance je přeložen v samostatných přeskočí, spíše než plynule.
 
-### <a name="custom-easing-func"></a>Vlastní zmírnit Func
+### <a name="custom-easing-func"></a>Vlastní funkce Func
 
-Vlastní nejvýraznější funkce může být také definováno jako `Func<double, double>`, jak je znázorněno v následujícím příkladu kódu:
+Vlastní usnadnění funkce lze definovat také jako `Func<double, double>`, jak je ukázáno v následujícím příkladu kódu:
 
 ```csharp
 Func<double, double> CustomEase = t => 9 * t * t * t - 13.5 * t * t + 5.5 * t;
 await image.TranslateTo(0, 200, 2000, CustomEase));
 ```
 
-`CustomEase` `Func` Představuje nejvýraznější funkce, která se spouští vypnout rychlé a zpomaluje obrátí kurzu a potom zruší kurzu znovu k urychlení rychle ke konci. Proto při celkový pohyb [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) instance je směrem dolů, ho navíc dočasně obrátí kurzu uprostřed animace.
+`CustomEase` `Func` Představuje funkci přechodu, který začíná rychle, může zpomalit a vrátí kurz a potom vrátí kurz znovu ke zrychlení rychle ke konci. Proto při celkové přesun [ `Image` ](xref:Xamarin.Forms.Image) instance je dolů, také dočasně obrátí kurzu uprostřed animace.
 
-### <a name="custom-easing-constructor"></a>Vlastní zmírnit – konstruktor
+### <a name="custom-easing-constructor"></a>Vlastní funkce konstruktoru
 
-Vlastní nejvýraznější funkce může být také definováno jako argument [ `Easing` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Easing/) konstruktoru, jak je ukázáno v následujícím příkladu kódu:
+Vlastní funkce usnadnění lze také definovat jako argument [ `Easing` ](xref:Xamarin.Forms.Easing) konstruktoru, jak je ukázáno v následujícím příkladu kódu:
 
 ```csharp
 await image.TranslateTo (0, 200, 2000, new Easing (t => 1 - Math.Cos (10 * Math.PI * t) * Math.Exp (-5 * t)));
 ```
 
-Vlastní nejvýraznější funkci je zadat jako argument lambda funkce k [ `Easing` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Easing/) konstruktor a používá `Math.Cos` metodu pro vytvoření efekt pomalé drop, který je omezován podle `Math.Exp` metoda. Proto [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) instance je přeložená tak, aby se odpojení k jeho poslední řady místo.
+Vlastní usnadnění funkce je zadaný jako argument funkce lambda k [ `Easing` ](xref:Xamarin.Forms.Easing) konstruktor a používá `Math.Cos` metodu pro vytvoření efektu pomalé přetažení, která je Tlumený podle `Math.Exp` metoda. Proto [ `Image` ](xref:Xamarin.Forms.Image) instance je přeložen tak, aby se zobrazuje v jeho konečné řady umístění přetažení.
 
 ## <a name="summary"></a>Souhrn
 
-Tento článek ukázal, jak využívat předem definovaná funkce usnadnění a postup vytvoření vlastní funkce usnadnění. Zahrnuje Xamarin.Forms [ `Easing` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Easing/) třídu, která umožňuje zadat přenos funkci, která určuje, jak zrychlit animací nebo zpomalit jejich používáte.
+V tomto článku jsme vám ukázali, jak využívat předem definovaných funkcí usnadnění a jak vytvořit vlastní funkcí usnadnění. Zahrnuje Xamarin.Forms [ `Easing` ](xref:Xamarin.Forms.Easing) třídu, která vám umožní určit přenos funkci, která určuje, jak urychlit animace nebo zpomalit běží.
 
 
 
 ## <a name="related-links"></a>Související odkazy
 
 - [Přehled podpory asynchronních operací](~/cross-platform/platform/async.md)
-- [Funkce usnadnění (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/animation/easing/)
-- [Usnadnění](https://developer.xamarin.com/api/type/Xamarin.Forms.Easing/)
-- [ViewExtensions](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewExtensions/)
+- [Usnadnění funkce (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/animation/easing/)
+- [Usnadnění](xref:Xamarin.Forms.Easing)
+- [ViewExtensions](xref:Xamarin.Forms.ViewExtensions)

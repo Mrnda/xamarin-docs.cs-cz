@@ -1,41 +1,41 @@
 ---
-title: Aktivační události Xamarin.Forms
-description: Tento článek vysvětluje, jak použít aktivační události Xamarin.Forms reagovat na změny uživatelského rozhraní s XAML. Aktivační události umožňují express akce deklarativně v jazyce XAML, které mění vzhled ovládací prvky založené na události nebo změny vlastností.
+title: Triggery Xamarin.Forms
+description: Tento článek vysvětluje, jak reagovat na změny uživatelského rozhraní s XAML pomocí Xamarin.Forms aktivační události. Aktivační události umožňují express akce deklarativně v XAML, které se mění vzhled ovládacích prvků na základě události nebo změny vlastností.
 ms.prod: xamarin
 ms.assetid: 60460F57-63C6-4916-BBB5-A870F1DF53D7
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: b28ebb8845b7eae0d818e1279b4d6eaef4ad5b8b
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 954a0967e034e0321964e12ca0725ae2a85e3bc6
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241432"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995534"
 ---
-# <a name="xamarinforms-triggers"></a>Aktivační události Xamarin.Forms
+# <a name="xamarinforms-triggers"></a>Triggery Xamarin.Forms
 
-Aktivační události umožňují express akce deklarativně v jazyce XAML, které mění vzhled ovládací prvky založené na události nebo změny vlastností.
+Aktivační události umožňují express akce deklarativně v XAML, které se mění vzhled ovládacích prvků na základě události nebo změny vlastností.
 
-Můžete přiřadit aktivační událost přímo do ovládacího prvku, nebo ho přidat do slovník prostředků úrovni stránky nebo aplikace má být použita pro více ovládacích prvků.
+Můžete přiřadit aktivační události přímo do ovládacího prvku, nebo ho přidejte do slovníku prostředků na úrovni stránky nebo aplikace použít více ovládacích prvků.
 
-Existují čtyři typy aktivační události:
+Existují čtyři typy triggerů:
 
-* [Vlastnost aktivační událost](#property) -nastane, když vlastnost v ovládacím prvku je nastavená na určitou hodnotu.
+* [Aktivační procedura vlastností](#property) -nastane, pokud je vlastnost v ovládacím prvku nastavena na jednu konkrétní hodnotu.
 
-* [Aktivační událost data](#data) – používá datové vazby k aktivační události na základě vlastností jiného ovládacího prvku.
+* [Aktivační událost data](#data) - využívá datové vazby k aktivační události na základě vlastností jiný ovládací prvek.
 
-* [Aktivační událost](#event) -nastane, když dojde k události v ovládacím prvku.
+* [Aktivační procedura událostí](#event) -nastane, pokud dojde k události na ovládacím prvku.
 
-* [Aktivační událost více](#multi) -umožňuje více podmínky aktivace nastavit předtím, než dojde k akci.
+* [Aktivační událost s více](#multi) – umožňuje více podmínek aktivační události vyvolané před akcí nastavit.
 
 <a name="property" />
 
-## <a name="property-triggers"></a>Vlastnost aktivační události
+## <a name="property-triggers"></a>Aktivační procedury vlastností
 
-Jednoduché aktivační událost může být vyjádřený výhradně v jazyce XAML, přidávání `Trigger` aktivuje element do ovládacího prvku kolekce.
-Tento příklad ukazuje aktivační událost, která se změní `Entry` barva pozadí, když obdrží fokus:
+Jednoduché aktivační událost může být vyjádřena čistě v XAML, přidávání `Trigger` spustí element do ovládacího prvku kolekce.
+Tento příklad ukazuje aktivační událost, která se mění `Entry` barva pozadí, když přijme zaměření:
 
 ```xaml
 <Entry Placeholder="enter name">
@@ -48,21 +48,21 @@ Tento příklad ukazuje aktivační událost, která se změní `Entry` barva po
 </Entry>
 ```
 
-Důležitou součástí deklarace aktivační události jsou:
+Důležité části deklarace aktivační události jsou:
 
-* **TargetType** – typ ovládacího prvku, který má aktivační procedura se vztahuje na.
+* **TargetType** – typ ovládacího prvku, který se aktivační událost se vztahuje na.
 
-* **Vlastnost** -vlastnost u prvku, který je monitorován.
+* **Vlastnost** – vlastnost v ovládacím prvku, který je monitorován.
 
-* **Hodnota** -hodnota případě monitorovaných vlastnosti, která způsobuje, aktivační událost aktivovat.
+* **Hodnota** -hodnotu, pokud dojde k sledované vlastnosti, který způsobí, že aktivační událost aktivovat.
 
-* **Metoda setter** -kolekce `Setter` elementy lze přidat, a pokud je splněna podmínka aktivace. Je nutné zadat `Property` a `Value` nastavit.
+* **Metoda setter** – kolekce `Setter` elementy lze přidat, a pokud je splněna podmínka aktivace. Je nutné zadat `Property` a `Value` nastavení.
 
-* **EnterActions a ExitActions** (není vidět) - jsou napsané v kódu a je možné použít kromě (nebo místo) `Setter` elementy. Jsou [popsané dál](#enterexit).
+* **Funkce EnterActions a ExitActions** (není vidět) - jsou napsané v kódu a je možné kromě (nebo namísto něj) `Setter` elementy. Jsou [popisovaném](#enterexit).
 
-### <a name="applying-a-trigger-using-a-style"></a>Použití aktivační událost pomocí stylu
+### <a name="applying-a-trigger-using-a-style"></a>Použití aktivační události pomocí stylu
 
-Aktivační události lze také přidat do `Style` deklarace ovládacího prvku v stránky nebo aplikace v `ResourceDictionary`. Tento příklad deklaruje implicitní styl (ie. žádné `Key` nastavena) což znamená, že budou platit pro všechny `Entry` ovládací prvky na stránce.
+Triggery se dají přidat i do `Style` deklarace na ovládací prvek, na stránce nebo aplikaci `ResourceDictionary`. V tomto příkladu deklaruje implicitní styl (tj. žádné `Key` nastavená) což znamená, že budou vztahovat na všechny `Entry` ovládacích prvků na stránce.
 
 ```xaml
 <ContentPage.Resources>
@@ -83,9 +83,9 @@ Aktivační události lze také přidat do `Style` deklarace ovládacího prvku 
 
 ## <a name="data-triggers"></a>Aktivační události dat
 
-Aktivační události data použít k monitorování další ovládací prvek způsobí datová vazba `Setter`s získat volána. Místo `Property` atribut v aktivační události vlastnost, nastavte `Binding` atribut monitorování pro zadanou hodnotu.
+Aktivační události dat používat datové vazby k monitorování způsobí jiný ovládací prvek `Setter`s zavolána. Místo `Property` atribut aktivační události vlastnost, nastavte `Binding` atribut monitorování pro zadanou hodnotu.
 
-Následující příklad používá syntaxe vazby dat `{Binding Source={x:Reference entry}, Path=Text.Length}` tedy jak označujeme na další ovládací prvek vlastnosti. Když délka `entry` rovná nule, aktivační událost je aktivována. V této ukázce aktivační událost zakáže tlačítko při vstupu je prázdný.
+Následující příklad používá syntaxe vazby dat `{Binding Source={x:Reference entry}, Path=Text.Length}` tedy jak označujeme vlastností ovládacího prvku. Když délka `entry` je nula, trigger se aktivuje. V této ukázce se aktivační událost zakáže tlačítko při vstupu je prázdný.
 
 ```xaml
 <!-- the x:Name is referenced below in DataTrigger-->
@@ -108,15 +108,15 @@ Následující příklad používá syntaxe vazby dat `{Binding Source={x:Refere
 </Button>
 ```
 
-Tip: při vyhodnocování `Path=Text.Length` vždy zadejte výchozí hodnotu pro vlastnost target (např. `Text=""`) protože jinak bude mít `null` a aktivační události nebude fungovat podle očekávání.
+Tip: při vyhodnocování `Path=Text.Length` vždycky zadat výchozí hodnotu pro vlastnost target (např.) `Text=""`) vzhledem k tomu, v opačném případě bude `null` a aktivační události nebude fungovat podle očekávání.
 
-Kromě určení `Setter`s můžete zadat taky [ `EnterActions` a `ExitActions` ](#enterexit).
+Kromě zadání `Setter`s můžete také zadat [ `EnterActions` a `ExitActions` ](#enterexit).
 
 <a name="event" />
 
 ## <a name="event-triggers"></a>Aktivační události
 
-`EventTrigger` Prvek vyžaduje pouze `Event` vlastnosti, jako například `"Clicked"` v následujícím příkladu.
+`EventTrigger` Element vyžaduje pouze `Event` vlastnosti, jako například `"Clicked"` v následujícím příkladu.
 
 ```xaml
 <EventTrigger Event="Clicked">
@@ -124,7 +124,7 @@ Kromě určení `Setter`s můžete zadat taky [ `EnterActions` a `ExitActions` ]
 </EventTrigger>
 ```
 
-Všimněte si, že neexistují žádné `Setter` elementů, ale místo odkazu na třídu definované `local:NumericValidationTriggerAction` což vyžaduje, aby `xmlns:local` deklarovat na stránce je XAML:
+Všimněte si, že neexistují žádné `Setter` elementy, ale místo toho odkaz na třídu definované `local:NumericValidationTriggerAction` vyžadujícího `xmlns:local` deklarovat na stránce vaší XAML:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -132,15 +132,15 @@ Všimněte si, že neexistují žádné `Setter` elementů, ale místo odkazu na
              xmlns:local="clr-namespace:WorkingWithTriggers;assembly=WorkingWithTriggers"
 ```
 
-Implementuje vlastní třídy `TriggerAction` což znamená, že by měl poskytovat přepsání pro `Invoke` metoda, která je volána, když dojde k aktivační události.
+Implementuje vlastní třídy `TriggerAction` což znamená, že by měly poskytnout přepsání `Invoke` metodu, která je volána pokaždé, když nastane aktivační událost.
 
-Na aktivační událost akce implementace proveďte následující kroky:
+By měla implementace akce aktivační události:
 
-* Implementovat Obecné `TriggerAction<T>` třídě, obecný parametr odpovídající s typem aktivační událost se použijí pro ovládací prvek. Můžete například použít nadřazených tříd `VisualElement` k zápisu akce aktivační události, které pracovat s řadu ovládacích prvků, nebo zadat jako typ ovládacího prvku `Entry`.
+* Implementovat obecný `TriggerAction<T>` třídy s odpovídající typ ovládacího prvku se aktivační událost se použijí pro obecný parametr. Nadřazených tříd můžete použít například `VisualElement` pro zápis akce aktivační události, které pracuje s mnoha ovládacích prvků, nebo zadat typ ovládacího prvku, jako jsou `Entry`.
 
-* Přepsání `Invoke` metodu – to je volána, když se splní kritéria aktivační události.
+* Přepsat `Invoke` – to je volána metoda pokaždé, když se splní kritéria aktivační události.
 
-* Volitelně vystavení vlastností, které lze nastavit v XAML při deklaraci aktivační události (například `Anchor`, `Scale`, a `Length` v tomto příkladu).
+* Volitelně můžete vystavit vlastnosti, které je možné nastavit v XAML při deklaraci aktivační událost (například `Anchor`, `Scale`, a `Length` v tomto příkladu).
 
 ```csharp
 public class NumericValidationTriggerAction : TriggerAction<Entry>
@@ -154,7 +154,7 @@ public class NumericValidationTriggerAction : TriggerAction<Entry>
 }
 ```
 
-Vlastnosti vystavené prostřednictvím akce aktivace můžete nastavit v deklaraci XAML následujícím způsobem:
+Vlastností vystavovaných třídami aktivační událost lze nastavit v deklaraci XAML následujícím způsobem:
 
 ```xaml
 <EventTrigger Event="TextChanged">
@@ -162,17 +162,17 @@ Vlastnosti vystavené prostřednictvím akce aktivace můžete nastavit v deklar
 </EventTrigger>
 ```
 
-Buďte opatrní při sdílení aktivační události v `ResourceDictionary`, jedna instance bude sdílena mezi ovládací prvky, takže nějaký stav, který je nakonfigurovaný jednou budou platit pro všechny.
+Buďte opatrní při sdílení aktivační události v `ResourceDictionary`, jedna instance bude sdílena mezi ovládací prvky tak jakýkoli stav, který je nakonfigurovaný jednou budou platit pro všechny.
 
-Všimněte si, že aktivační události nepodporují `EnterActions` a `ExitActions` [popsané dál](#enterexit).    
+Všimněte si, že aktivační události nepodporují `EnterActions` a `ExitActions` [popisovaném](#enterexit).    
 
 <a name="multi" />
 
 ## <a name="multi-triggers"></a>Více aktivačních událostí
 
-A `MultiTrigger` bude vypadat podobně jako `Trigger` nebo `DataTrigger` s tím rozdílem, může být víc než jednu podmínku. Všechny podmínky musí být splněné před `Setter`s aktivaci.
+A `MultiTrigger` vypadá podobně jako `Trigger` nebo `DataTrigger` s tím rozdílem, může být více než jednu podmínku. Všechny podmínky musí být splněny, než `Setter`s spuštěná.
 
-Tady je příklad aktivační událost pro tlačítko s vazbou na dvou různých vstupy (`email` a `phone`):
+Tady je příklad aktivační události pro tlačítko s vazbou na dva různé vstupy (`email` a `phone`):
 
 ```xaml
 <MultiTrigger TargetType="Button">
@@ -190,17 +190,17 @@ Tady je příklad aktivační událost pro tlačítko s vazbou na dvou různých
 </MultiTrigger>
 ```
 
-`Conditions` Kolekce může obsahovat také `PropertyCondition` prvky, jako tento:
+`Conditions` Kolekce může také obsahovat `PropertyCondition` prvky tímto způsobem:
 
 ```xaml
 <PropertyCondition Property="Text" Value="OK" />
 ```
 
-### <a name="building-a-require-all-multi-trigger"></a>Vytváření aktivační události více "požadovat všechny"
+### <a name="building-a-require-all-multi-trigger"></a>Vytváření aktivační události s více "požadovat vše"
 
-Aktivační událost více pouze aktualizuje jeho řízení, pokud jsou splněny všechny podmínky. Testování pro "všechny délky pole jsou nula" (například přihlašovací stránku, kde musí být všechny vstupy dokončení) je složité, protože chcete, aby podmínku "kde Text.Length > 0", ale to není možné vyjádřit v jazyce XAML.
+Aktivační událost s více pouze aktualizuje ovládacího prvku, když jsou splněné všechny podmínky. Testování pro "všechny pole délky mají hodnotu nula" (jako je například přihlašovací stránku, kde všechny vstupy musí být úplný) je velmi obtížné, protože má podmínku "kde Text.Length > 0", ale to nelze vyjádřen v XAML.
 
-To lze provést pomocí `IValueConverter`. Převaděč kódu níže transformace `Text.Length` vazby do `bool` určující, zda pole je prázdné nebo není:
+To můžete udělat pomocí `IValueConverter`. Převaděč kódu níže transformace `Text.Length` vazby do `bool` , která označuje, zda je pole prázdné:
 
 
 ```csharp
@@ -223,7 +223,7 @@ public class MultiTriggerConverter : IValueConverter
 }
 ```
 
-Pokud chcete použít tento převaděč v aktivační události více, přidejte je nejdříve do slovníku prostředků stránky (spolu s vlastní `xmlns:local` definici oboru názvů):
+Pokud chcete použít tento převaděč v triggeru s více, přidejte je nejdříve do slovníku prostředků na stránce (spolu s vlastní `xmlns:local` definice oboru názvů):
 
 ```xaml
 <ResourceDictionary>
@@ -231,11 +231,11 @@ Pokud chcete použít tento převaděč v aktivační události více, přidejte
 </ResourceDictionary>
 ```
 
-XAML jsou uvedeny níže. Vezměte na vědomí následující rozdíly proti v prvním příkladu více aktivační události:
+XAML najdete níž. Mějte na paměti následující rozdíly proti v prvním příkladu aktivační událost s více:
 
 * Tlačítko má `IsEnabled="false"` ve výchozím nastavení.
-* Podmínky aktivace více převaděč slouží k povolení `Text.Length` hodnotu na hodnotu typu boolean.
-* Když jsou všechny podmínky `true`, nastavovací metoda umožňuje na tlačítko `IsEnabled` vlastnost `true`.
+* Podmínky aktivace více zapnout pomocí tohoto převaděče `Text.Length` hodnotu na hodnotu typu boolean.
+* Když jsou všechny podmínky `true`, Metoda setter je tlačítka `IsEnabled` vlastnost `true`.
 
 ```xaml
 <Entry x:Name="user" Text="" Placeholder="user name" />
@@ -264,19 +264,19 @@ XAML jsou uvedeny níže. Vezměte na vědomí následující rozdíly proti v p
 </Button>
 ```
 
-Tyto snímky obrazovky ukazují rozdíl mezi dvěma více aktivační událost výše uvedených příkladech. V horní části obrazovky, vstup text jen v jedné `Entry` k povolení **Uložit** tlačítko.
+Tyto snímky obrazovky ukazují rozdíl mezi dvěma více aktivační událost výše uvedených příkladech. V horní části obrazovky zadejte text jen v jedné `Entry` je, aby bylo možné povolit **Uložit** tlačítko.
 V dolní části obrazovky **přihlášení** tlačítko zůstane neaktivní, dokud obě pole obsahovat data.
 
 
-![](triggers-images/multi-requireall.png "Příklady multiTrigger")
+![](triggers-images/multi-requireall.png "MultiTrigger příklady")
 
 <a name="enterexit" />
 
-## <a name="enteractions-and-exitactions"></a>EnterActions a ExitActions
+## <a name="enteractions-and-exitactions"></a>Funkce EnterActions a ExitActions
 
-Jiný způsob, jak implementovat změny, když dojde k aktivační události je přidáním `EnterActions` a `ExitActions` kolekce a zadání `TriggerAction<T>` implementace.
+Dalším způsobem, jak implementovat změny, když dojde k aktivační události je tak, že přidáte `EnterActions` a `ExitActions` kolekce a určení `TriggerAction<T>` implementace.
 
-Můžete zadat *obě* `EnterActions` a `ExitActions` a také `Setter`s v aktivační události, ale mějte na paměti, `Setter`s se nazývají okamžitě (není čekají `EnterAction` nebo `ExitAction` k Dokončete). Případně můžete provádět všechno, co v kódu a nepoužívat `Setter`s na všechny.
+Můžete zadat *obě* `EnterActions` a `ExitActions` stejně jako `Setter`s aktivační události, ale mějte na paměti, která `Setter`s se nazývají okamžitě (jejich nechcete čekat `EnterAction` nebo `ExitAction` do dokončení). Případně můžete provádět vše, co v kódu a nepoužívat `Setter`s vůbec.
 
 ```xaml
 <Entry Placeholder="enter job title">
@@ -296,7 +296,7 @@ Můžete zadat *obě* `EnterActions` a `ExitActions` a také `Setter`s v aktiva�
 </Entry>
 ```
 
-Jako vždy, když třída odkazuje v jazyce XAML by měly deklarovat obor názvů, jako `xmlns:local` jak je vidět tady:
+Jako vždy, když třída odkazuje v XAML by měla deklarovat oboru názvů, jako `xmlns:local` jak je znázorněno zde:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -326,11 +326,11 @@ public class FadeTriggerAction : TriggerAction<VisualElement>
 }
 ```
 
-Poznámka: `EnterActions` a `ExitActions` ignorují na **aktivačních událostí**.
+Poznámka: `EnterActions` a `ExitActions` se ignorují u **aktivačních procedur událostí**.
 
 
 
 ## <a name="related-links"></a>Související odkazy
 
 - [Ukázka aktivační události](https://developer.xamarin.com/samples/WorkingWithTriggers)
-- [Dokumentace rozhraní API Xamarin.Forms](https://developer.xamarin.com/api/type/Xamarin.Forms.TriggerAction%3CT%3E/)
+- [Dokumentace k rozhraní Xamarin.Forms API](xref:Xamarin.Forms.TriggerAction`1)

@@ -1,42 +1,42 @@
 ---
 title: Přizpůsobení vzhledu ListView
-description: Tento článek vysvětluje, jak přizpůsobit ListViews v aplikacích Xamarin.Forms pomocí záhlaví, zápatí, skupiny a proměnné výška buňky.
+description: Tento článek vysvětluje, jak přizpůsobit zobrazení v aplikacích Xamarin.Forms pomocí záhlaví, zápatí, skupiny a proměnné výška buňky.
 ms.prod: xamarin
 ms.assetid: DC8009B0-4371-4D60-885A-5362FC7EE3E5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: febf712848b81c09a4e25c824acc097e8b65e409
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 1326a1326b4a88459e4e0a01ef590e770e3a88c0
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245137"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997345"
 ---
 # <a name="customizing-listview-appearance"></a>Přizpůsobení vzhledu ListView
 
-`ListView` možnosti pro řízení prezentace seznamu celkové kromě základní `ViewCell`s. Mezi možnosti patří:
+`ListView` obsahuje možnosti pro řízení prezentace celkový přehled, kromě základního `ViewCell`s. Mezi možnosti patří:
 
-- [**Seskupování** ](#Grouping) &ndash; seskupit položky v ListView usnadnil navigaci a lepší organizaci.
-- [**Záhlaví a zápatí** ](#Headers_and_Footers) &ndash; zobrazení informací na začátku a konci zobrazení, které se posouvá společně s další položky.
-- [**Řádek oddělovače** ](#Row_Separators) &ndash; zobrazit nebo skrýt oddělovacích čar mezi položkami.
-- [**Proměnné výšky řádků** ](#Row_Heights) &ndash; ve výchozím nastavení jsou všechny řádky výšce stejné, ale to se dá změnit umožňující řádky s různými výšky, který se má zobrazit.
+- [**Seskupení** ](#Grouping) &ndash; seskupit položky v ListView pro snadnější navigaci a lepší organizaci.
+- [**Záhlaví a zápatí** ](#Headers_and_Footers) &ndash; zobrazit informace na začátku a konci zobrazení, které se posouvá společně s další položky.
+- [**Řádek oddělovače** ](#Row_Separators) &ndash; zobrazit nebo skrýt oddělovače řádků mezi položkami.
+- [**Proměnnou výšku řádků** ](#Row_Heights) &ndash; ve výchozím nastavení všechny řádky se stejnou výškou, ale to se dá změnit umožňující řádky s různými výšky, který se má zobrazit.
 
 <a name="Grouping" />
 
 ## <a name="grouping"></a>Seskupování
-Často se může stát nepraktické, když v seznamu nepřetržitě posouvání rozsáhlých datových sad. Povolení seskupení lze vylepšit činnost koncového uživatele v těchto případech lepší uspořádání obsahu a aktivace ovládacích prvků specifických pro platformy, které usnadňují navigační data.
+Velkých sad dat často, může být nepraktický, při zápisu do průběžně posuvný seznam. Povolení seskupení lze vylepšit uživatelské prostředí v těchto případech lepší uspořádání obsahu a aktivace ovládacích prvků pro konkrétní platformu, které usnadňují navigační data.
 
-Když je aktivován seskupení pro `ListView`, se přidá řádek záhlaví pro každou skupinu.
+Když se aktivuje seskupení pro `ListView`, přidat řádek záhlaví pro každou skupinu.
 
-Chcete-li povolit seskupování:
+Pokud chcete povolit seskupování:
 
-- Vytvořte seznam seznamů (seznam skupin, každé skupiny se seznam prvků).
-- Nastavte `ListView`na `ItemsSource` do tohoto seznamu.
-- Nastavit `IsGroupingEnabled` na hodnotu true.
-- Nastavit [ `GroupDisplayBinding` ](http://developer.xamarin.com/api/property/Xamarin.Forms.ListView.GroupDisplayBinding/) k vytvoření vazby na vlastnost skupiny, který se používá jako název skupiny.
-- [Nepovinné] Nastavit [ `GroupShortNameBinding` ](http://developer.xamarin.com/api/property/Xamarin.Forms.ListView.GroupShortNameBinding/) k vytvoření vazby na vlastnost skupiny, který je používán jako krátký název pro skupinu. Krátký název se používá pro seznam odkazů (sloupec vpravo v systému iOS).
+- Vytvoření seznamů (seznam skupin, každá skupina se seznam prvků).
+- Nastavte `ListView`společnosti `ItemsSource` do tohoto seznamu.
+- Nastavte `IsGroupingEnabled` na hodnotu true.
+- Nastavte [ `GroupDisplayBinding` ](xref:Xamarin.Forms.ListView.GroupDisplayBinding) vytvořit vazbu na vlastnost skupiny, která se používá jako název skupiny.
+- [Volitelné] Nastavte [ `GroupShortNameBinding` ](xref:Xamarin.Forms.ListView.GroupShortNameBinding) vytvořit vazbu k vlastnosti skupiny, který je používán jako krátký název pro skupinu. Krátký název se používá pro seznamy odkazů (sloupec vpravo v Iosu).
 
 Začněte vytvořením třídy pro skupiny:
 
@@ -56,9 +56,9 @@ public class PageTypeGroup : List<PageModel>
     }
 ```
 
-Ve výše uvedeném kódu `All` je seznam, který bude přiřazen k naší ListView jako zdroj vazby. `Title` a `ShortName` jsou vlastnosti, které se použije pro záhlaví skupiny.
+Ve výše uvedeném kódu `All` je seznam, který bude předán naše ListView jako zdroj vazby. `Title` a `ShortName` jsou vlastnosti, které se použijí pro skupinu záhlaví.
 
-V této fázi `All` je prázdný seznam. Přidání statického konstruktoru tak, aby v seznamu se zobrazí při spuštění programu:
+V této fázi `All` je prázdný seznam. Přidání statického konstruktoru tak, aby naplní se seznam při spuštění programu:
 
 ```csharp
 static PageTypeGroup()
@@ -81,9 +81,9 @@ static PageTypeGroup()
 }
 ```
 
-Ve výše uvedeném kódu můžete také říkáme `Add` na elementy `groups`, které jsou instancemi typu `PageTypeGroup`. To je možné, protože `PageTypeGroup` dědí z `List<PageModel>`. Toto je příklad seznam seznamů vzor uvedených výše.
+Ve výše uvedeném kódu lze také říkáme `Add` na prvcích `groups`, které jsou instancemi typu `PageTypeGroup`. To je možné, protože `PageTypeGroup` dědí z `List<PageModel>`. Toto je příklad seznamu seznamy vzor, jak je uvedeno nahoře.
 
-Tady je XAML pro zobrazení seznamu seskupené:
+Tady je XAML pro zobrazení seskupeného seznamu:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -110,20 +110,20 @@ Výsledkem je následující:
 
 ![](customizing-list-appearance-images/grouping-depth.png "Příklad seskupení ListView")
 
-Všimněte si, že máme:
+Všimněte si, že máme k dispozici:
 
-- Nastavit `GroupShortNameBinding` k `ShortName` vlastnost definovanou v naší skupiny – třída
-- Nastavit `GroupDisplayBinding` k `Title` vlastnost definovanou v naší skupiny – třída
-- Nastavit `IsGroupingEnabled` na hodnotu true
-- Změnit `ListView`na `ItemsSource` do seznamu seskupené
+- Nastavte `GroupShortNameBinding` k `ShortName` vlastnosti definované v našich group – třída
+- Nastavte `GroupDisplayBinding` k `Title` vlastnosti definované v našich group – třída
+- Nastavte `IsGroupingEnabled` na hodnotu true
+- Změnit `ListView`společnosti `ItemsSource` do seskupeného seznamu
 
-### <a name="customizing-grouping"></a>Přizpůsobení seskupení
+### <a name="customizing-grouping"></a>Přizpůsobení seskupování
 
-Pokud bylo povoleno seskupení v seznamu, lze přizpůsobit záhlaví skupiny.
+Pokud v seznamu se povolila seskupení, záhlaví skupiny se taky dají upravit.
 
-Podobným způsobem `ListView` má `ItemTemplate` pro definování zobrazení řádky, `ListView` má `GroupHeaderTemplate`.
+Podobným způsobem `ListView` má `ItemTemplate` pro definování, jak je zobrazeno řádků, `ListView` má `GroupHeaderTemplate`.
 
-Zde je uveden příklad možností přizpůsobení záhlaví skupiny v jazyce XAML:
+Příklad přizpůsobení záhlaví skupiny v XAML je znázorněna zde:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -161,12 +161,12 @@ x:Class="DemoListView.GroupingViewPage">
 <a name="Headers_and_Footers" />
 
 ## <a name="headers-and-footers"></a>Záhlaví a zápatí
-Je možné pro ListView nabídne záhlaví a zápatí stránky, které posunout s prvky v seznamu. Záhlaví a zápatí stránky může být řetězce textu nebo složitější rozložení. Všimněte si, že to je oddělený od [části skupiny](#Grouping).
+Je možné, ListView prezentovat záhlaví a zápatí, které umožňují s prvky v seznamu. Záhlaví a zápatí může být řetězce textu nebo složitější rozložení. Všimněte si, že se odděleně od [části skupiny](#Grouping).
 
-Můžete nastavit `Header` nebo `Footer` na řetězec jednoduchého hodnotu, nebo můžete nastavit je složitější rozložení.
-Existují také `HeaderTemplate` a `FooterTemplate` vlastnosti, které vám umožní vytvořit složitější rozložení pro záhlaví a zápatí této vazby dat podpory.
+Můžete nastavit `Header` a/nebo `Footer` k jednoduchým řetězcem hodnotu, nebo můžete je nastavit na složitější rozložení.
+Existují také `HeaderTemplate` a `FooterTemplate` vlastnosti, které vám umožní vytvořit složitější rozložení pro záhlaví a zápatí této podpory datovou vazbu.
 
-Pokud chcete vytvořit jednoduché záhlaví a zápatí, stačí nastavte vlastnosti záhlaví nebo zápatí stránky na text, který chcete zobrazit. V kódu:
+Pokud chcete vytvořit jednoduchou záhlaví/zápatí, stačí nastavte vlastnosti záhlaví nebo zápatí stránky na text, který chcete zobrazit. V kódu:
 
 ```csharp
 ListView HeaderList = new ListView() {
@@ -175,7 +175,7 @@ ListView HeaderList = new ListView() {
     };
 ```
 
-V jazyce XAML:
+V XAML:
 
 ```xaml
 <ListView  x:Name="HeaderList"  Header="Header" Footer="Footer"></ListView>
@@ -183,7 +183,7 @@ V jazyce XAML:
 
 ![](customizing-list-appearance-images/header-default.png "ListView s záhlaví a zápatí")
 
-Pokud chcete vytvořit vlastní záhlaví a zápatí, definujte zobrazení záhlaví a zápatí stránky:
+Chcete-li vytvořit vlastní záhlaví a zápatí, definujte zobrazení záhlaví a zápatí:
 
 ```xaml
 <ListView.Header>
@@ -206,11 +206,11 @@ Pokud chcete vytvořit vlastní záhlaví a zápatí, definujte zobrazení záhl
 
 <a name="Row_Separators" />
 
-## <a name="row-separators"></a>Řádek oddělovačů
-Se zobrazí čáry oddělovače mezi `ListView` elementy ve výchozím nastavení na iOS a Android. Pokud chcete skrýt oddělovacích čar na iOS a Android, nastavte `SeparatorVisibility` vlastnost na vaše ListView. Možnosti pro `SeparatorVisibility` jsou:
+## <a name="row-separators"></a>Oddělovače řádků
+Oddělovač řádků zobrazených mezi `ListView` elementy ve výchozím nastavení v Iosu a Androidu. Pokud chcete skrýt oddělovače řádků v Iosu a Androidu, nastavte `SeparatorVisibility` vlastnost na vaše ListView. Možnosti pro `SeparatorVisibility` jsou:
 
-* **Výchozí** -zobrazuje oddělovací čáry na iOS a Android.
-* **Žádný** -skryje oddělovače na všech platformách.
+* **Výchozí** -ukazuje oddělovací čáry v Iosu a Androidu.
+* **Žádný** -skryje oddělovač na všech platformách.
 
 Výchozí viditelnost:
 
@@ -226,7 +226,7 @@ XAML:
 <ListView x:Name="SeparatorDemoListView" SeparatorVisibility="Default" />
 ```
 
-![](customizing-list-appearance-images/separator-default.png "ListView s oddělovači výchozí řádek")
+![](customizing-list-appearance-images/separator-default.png "ListView s výchozím řádkem oddělovače")
 
 Žádné:
 
@@ -242,9 +242,9 @@ XAML:
 <ListView x:Name="SeparatorDemoListView" SeparatorVisibility="None" />
 ```
 
-![](customizing-list-appearance-images/separator-none.png "ListView bez oddělovačů řádek")
+![](customizing-list-appearance-images/separator-none.png "ListView bez oddělovačů řádků")
 
-Můžete také nastavit barvu čáry oddělovače prostřednictvím `SeparatorColor` vlastnost:
+Můžete také nastavit barvu oddělovací čáry prostřednictvím `SeparatorColor` vlastnost:
 
 C#:
 
@@ -261,17 +261,17 @@ XAML:
 ![](customizing-list-appearance-images/separator-custom.png "ListView s oddělovači řádek zelená")
 
 > [!NOTE]
-> Některá z těchto vlastností nastavení v systému Android po načtení `ListView` způsobuje snížení výkonu velké.
+> Některé z těchto vlastností nastavení pro Android po načtení `ListView` způsobuje snížení výkonu velké.
 
 <a name="Row_Heights" />
 
-## <a name="row-heights"></a>Výšky řádků
-Všechny řádky v prvku ListView mají stejnou výšku ve výchozím nastavení. ListView má dvě vlastnosti, které můžete použít ke změně tohoto chování:
+## <a name="row-heights"></a>Výšku řádků
+Všechny řádky ListView mají stejnou výškou ve výchozím nastavení. ListView má dvě vlastnosti, které můžete použít ke změně tohoto chování:
 
-- `HasUnevenRows` &ndash; `true`/`false` hodnota, řádky mají různé výšky Pokud nastavena na `true`. Použije se výchozí hodnota `false`.
-- `RowHeight` &ndash; Nastaví výšku každý řádek, kdy `HasUnevenRows` je `false`.
+- `HasUnevenRows` &ndash; `true`/`false` hodnota, řádky mají různé výšky-li nastavena na `true`. Výchozí hodnota je `false`.
+- `RowHeight` &ndash; Nastaví výšku každého řádku, při `HasUnevenRows` je `false`.
 
-Výška všechny řádky můžete nastavit pomocí nastavení `RowHeight` vlastnost `ListView`.
+Můžete nastavit tak, že nastavíte výšky všech řádků `RowHeight` vlastnost `ListView`.
 
 ### <a name="custom-fixed-row-height"></a>Vlastní pevnou výšku řádku
 
@@ -290,10 +290,10 @@ XAML:
 ![](customizing-list-appearance-images/height-custom.png "ListView s pevnou výšku řádku")
 
 
-### <a name="uneven-rows"></a>Nevyrovnaná řádků
+### <a name="uneven-rows"></a>Nerovnoměrné řádků
 
-Pokud chcete jednotlivé řádky, které mají různé výšky, můžete nastavit `HasUnevenRows` vlastnost `true`.
-Všimněte si, že výšky řádků není nutné ručně nastavit jednou `HasUnevenRows` byla nastavena na `true`, protože výšky automaticky vypočítá Xamarin.Forms.
+Pokud chcete mít různé výšky jednotlivých řádků, můžete nastavit `HasUnevenRows` vlastnost `true`.
+Všimněte si, že není nutné ručně nastavit jednou výšku řádků `HasUnevenRows` byla nastavena na `true`, protože výšky automaticky vypočítá Xamarin.Forms.
 
 
 C#:
@@ -312,7 +312,7 @@ XAML:
 
 ### <a name="runtime-resizing-of-rows"></a>Modul runtime Změna velikosti řádků
 
-Jednotlivé `ListView` řádky jde prostřednictvím kódu programu změnit za běhu, za předpokladu, že `HasUnevenRows` je nastavena na `true`. [ `Cell.ForceUpdateSize` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Cell.ForceUpdateSize()/) Metoda aktualizace velikost buňky, i když není aktuálně viditelná, jak je ukázáno v následujícím příkladu kódu:
+Jednotlivé `ListView` řádky dá programově změnit za běhu, za předpokladu, že `HasUnevenRows` je nastavena na `true`. [ `Cell.ForceUpdateSize` ](xref:Xamarin.Forms.Cell.ForceUpdateSize) Metoda aktualizuje velikost buňky, i když není aktuálně viditelné, jak je ukázáno v následujícím příkladu kódu:
 
 ```csharp
 void OnImageTapped (object sender, EventArgs args)
@@ -327,18 +327,18 @@ void OnImageTapped (object sender, EventArgs args)
 }
 ```
 
-`OnImageTapped` Obslužné rutiny události se spustí v reakci na [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) v buňce se stisknuté a zvětšuje velikost `Image` zobrazena v buňce, aby je snadno zobrazit.
+`OnImageTapped` Obslužná rutina události je provést v reakci na [ `Image` ](xref:Xamarin.Forms.Image) v buňce se klepnutí a dojde ke zvětšení `Image` v buňce zobrazí tak, aby se snadno zobrazit.
 
-![](customizing-list-appearance-images/dynamic-row-resizing.png "ListView s Změna velikosti řádku modulu Runtime")
+![](customizing-list-appearance-images/dynamic-row-resizing.png "ListView s Změna velikosti řádků modulu Runtime")
 
-Všimněte si, že silné možnost snížení výkonu, pokud je tato funkce je Nepromyšlené.
+Mějte na paměti, že pokud je tato funkce je Nepromyšlené neexistuje silné možnost snížení výkonu.
 
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Seskupování (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/Grouping)
-- [Vlastní vykreslení zobrazení (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithListviewNative/)
+- [Seskupení (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/Grouping)
+- [Vlastní nástroj pro vykreslování zobrazení (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithListviewNative/)
 - [Dynamická změna velikosti řádků (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/DynamicUnevenListCells/)
-- [Poznámky k verzi 1.4](http://forums.xamarin.com/discussion/35451/xamarin-forms-1-4-0-released/)
-- [1.3 poznámky](http://forums.xamarin.com/discussion/29934/xamarin-forms-1-3-0-released/)
+- [zpráva k vydání verze 1.4](http://forums.xamarin.com/discussion/35451/xamarin-forms-1-4-0-released/)
+- [Poznámky k verzi 1.3](http://forums.xamarin.com/discussion/29934/xamarin-forms-1-3-0-released/)

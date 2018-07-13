@@ -1,22 +1,22 @@
 ---
-title: Přehrávání videa Web
-description: Tento článek vysvětluje, jak k přehrávání videa web v aplikaci přehrávání videa pomocí Xamarin.Forms.
+title: Přehrávání webového videa
+description: Tento článek vysvětluje, jak přehrávání webového videa do aplikace přehrávače videa pomocí Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 75781A10-865D-4BA8-8D6B-E3DA012922BC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: f9b52398efbd189153ca74ce80433863b25bd578
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 566f056bd616c918ce274b9c7406d94fdc265ea2
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240974"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994556"
 ---
-# <a name="playing-a-web-video"></a>Přehrávání videa Web
+# <a name="playing-a-web-video"></a>Přehrávání webového videa
 
-`VideoPlayer` Třída definuje `Source` vlastnost slouží k zadání zdrojového souboru videa, a také `AutoPlay` vlastnost. `AutoPlay` má výchozí nastavení pro `true`, což znamená, že by měl začínat na video přehrávání automaticky po `Source` byla nastavena:
+`VideoPlayer` Definuje třídu `Source` vlastnost použít k určení zdrojového souboru videa, ale i `AutoPlay` vlastnost. `AutoPlay` má výchozí nastavení `true`, což znamená, že by měl video začne přehrávat automaticky po `Source` byla nastavena:
 
 ```csharp
 using System;
@@ -52,11 +52,11 @@ namespace FormsVideoLibrary
 }
 ```
 
-`Source` Vlastnost je typu `VideoSource`, což je vzorované po platformě Xamarin.Forms [ `ImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageSource/) abstraktní třída a odvozené tři, [ `UriImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.UriImageSource/), [ `FileImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FileImageSource/), a [ `StreamImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StreamImageSource/). Žádná možnost datového proudu je k dispozici pro `VideoPlayer` ale protože iOS a Android nepodporují přehrávání videa z datového proudu.
+`Source` Vlastnost je typu `VideoSource`, což je vzorované po Xamarin.Forms [ `ImageSource` ](xref:Xamarin.Forms.ImageSource) abstraktní třída a odvozené tři, [ `UriImageSource` ](xref:Xamarin.Forms.UriImageSource), [ `FileImageSource` ](xref:Xamarin.Forms.FileImageSource), a [ `StreamImageSource` ](xref:Xamarin.Forms.StreamImageSource). Žádný datový proud možnost je dostupná pro `VideoPlayer` však, protože zařízení s iOS a Android nepodporují přehrávání videa z datového proudu.
 
-## <a name="video-sources"></a>Video zdroje
+## <a name="video-sources"></a>Zdroje videa
 
-Abstraktní `VideoSource` třídy se skládá pouze z tři statické metody, které doložit tří tříd, které jsou odvozeny od `VideoSource`:
+Abstraktní `VideoSource` tvořen výhradně tři statické metody, které instanci tři třídy, které jsou odvozeny z třídy `VideoSource`:
 
 ```csharp
 namespace FormsVideoLibrary
@@ -82,7 +82,7 @@ namespace FormsVideoLibrary
 }
 ```
 
-`UriVideoSource` Třída se používá k určení soubor ke stažení video s identifikátorem URI. Definuje vlastnosti jediné typu `string`:
+`UriVideoSource` Třída se používá k určení souboru ke stažení videa s identifikátorem URI. Definuje jedinou vlastnost typ `string`:
 
 ```csharp
 namespace FormsVideoLibrary
@@ -101,9 +101,9 @@ namespace FormsVideoLibrary
 }
 ```
 
-Zpracování objektů typu `UriVideoSource` je popsáno níže.
+Zpracování objektů typu `UriVideoSource` je popsána níže.
 
-`ResourceVideoSource` Třída se používá pro přístup k video soubory, které jsou uloženy jako vložené prostředky v aplikaci platformy také zadaným `string` vlastnost:
+`ResourceVideoSource` Třída se používá pro přístup k videosoubory, které jsou uloženy jako vložené prostředky v aplikaci platformy, také se zadaným `string` vlastnost:
 
 ```csharp
 namespace FormsVideoLibrary
@@ -122,9 +122,9 @@ namespace FormsVideoLibrary
 }
 ```
 
-Zpracování objektů typu `ResourceVideoSource` je popsána v článku [načítání videa prostředků aplikace](loading-resources.md). `VideoPlayer` Třída nemá žádné zařízení se načíst soubor videa uložený jako prostředek v knihovně .NET Standard.
+Zpracování objektů typu `ResourceVideoSource` je popsaný v článku [načítání videí prostředků aplikace](loading-resources.md). `VideoPlayer` Třída nemá žádné zařízení se načíst soubor videa uložené jako prostředek v knihovně .NET Standard.
 
-`FileVideoSource` Třída se používá pro přístup k video soubory z knihovny video zařízení. Je také jedinou vlastnost typu `string`:
+`FileVideoSource` Třída se používá pro přístup k souborům videa z knihovny videí zařízení. Je také jedinou vlastnost typu `string`:
 
 ```csharp
 namespace FormsVideoLibrary
@@ -143,7 +143,7 @@ namespace FormsVideoLibrary
 }
 ```
 
-Zpracování objektů typu `FileVideoSource` je popsána v článku [přístup k zařízení Video knihovny](accessing-library.md).
+Zpracování objektů typu `FileVideoSource` je popsaný v článku [přístup k zařízení Videoknihovny](accessing-library.md).
 
 `VideoSource` Obsahuje třídy `TypeConverter` atribut, který odkazuje na `VideoSourceConverter`:
 
@@ -158,7 +158,7 @@ namespace FormsVideoLibrary
 }
 ```
 
-Tento převaděč typ je voláno, když `Source` je nastavena na řetězec v jazyce XAML. Tady je `VideoSourceConverter` třídy:
+Tento převaděč typu, je vyvolána při `Source` je nastavena na řetězec v XAML. Tady je `VideoSourceConverter` třídy:
 
 ```csharp
 namespace FormsVideoLibrary
@@ -180,15 +180,15 @@ namespace FormsVideoLibrary
 }
 ```
 
-`ConvertFromInvariantString` Metoda se pokusí převést řetězec, který má `Uri` objektu. Pokud tato operace úspěšná, a schéma není `file:`, potom metoda vrátí `UriVideoSource`. Funkce `ResourceVideoSource`.
+`ConvertFromInvariantString` Metoda se pokusí převést řetězec, který má `Uri` objektu. Pokud tato operace úspěšná, a schéma není `file:`, vrátí metoda `UriVideoSource`. V opačném případě vrátí `ResourceVideoSource`.
 
 ## <a name="setting-the-video-source"></a>Nastavení zdroj videa
 
-Všechny ostatní logiku zahrnující video zdroje je implementovaná v nástroji pro vykreslování jednotlivé platformy. Následující části vysvětlují, jak pro vykreslování platformy přehrávání videa při `Source` je nastavena na `UriVideoSource` objektu.
+Všechny další logiku zahrnující zdroje videa je implementované v renderery jednotlivé platformy. Následující části vysvětlují, jak platforma renderery přehrávání videa při `Source` je nastavena na `UriVideoSource` objektu.
 
-### <a name="the-ios-video-source"></a>Zdroj videa iOS
+### <a name="the-ios-video-source"></a>Zdroj videa s Iosem
 
-Dva oddíly `VideoPlayerRenderer` se účastní nastavení video zdroj přehrávání videa. Když Xamarin.Forms nejprve vytvoří objekt typu `VideoPlayer`, `OnElementChanged` metoda je volána s `NewElement` vlastnost objektu argumenty nastavena na který `VideoPlayer`. `OnElementChanged` Volání metod `SetSource`:
+Dva oddíly `VideoPlayerRenderer` se podílejí nastavení zdroj videa přehrávače videa. Když Xamarin.Forms nejprve vytvoří objekt typu `VideoPlayer`, `OnElementChanged` metoda je volána `NewElement` vlastnost objekt arguments nastavena na hodnotu, která `VideoPlayer`. `OnElementChanged` Volání metody `SetSource`:
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -221,9 +221,9 @@ namespace FormsVideoLibrary.iOS
 }
 ```
 
-Později na, kdy `Source` vlastnost je změnit, `OnElementPropertyChanged` metoda je volána s `PropertyName` vlastnost "Zdroje" a `SetSource` nebude volán znovu.
+Později na, kdy `Source` změněna vlastnost `OnElementPropertyChanged` metoda je volána s `PropertyName` vlastnost "Zdroj", a `SetSource` volána znovu.
 
-Přehrávání videa soubor v iOS, objekt typu [ `AVAsset` ](https://developer.xamarin.com/api/type/AVFoundation.AVAsset/) je poprvé vytvořen pro zapouzdření souboru videa, a který se používá k vytvoření [ `AVPlayerItem` ](https://developer.xamarin.com/api/type/AVFoundation.AVPlayerItem/), který je pak předávána `AVPlayer`objektu. Tady je jak `SetSource` metoda zpracovává `Source` vlastnost po typu `UriVideoSource`:
+K přehrání videa souboru v Iosu, objekt typu [ `AVAsset` ](https://developer.xamarin.com/api/type/AVFoundation.AVAsset/) prvním vytvoření k zapouzdření souboru videa, která slouží k vytvoření [ `AVPlayerItem` ](https://developer.xamarin.com/api/type/AVFoundation.AVPlayerItem/), který je pak předán `AVPlayer`objektu. Tady je způsob, jakým `SetSource` metoda obslužné rutiny `Source` vlastnost je typu `UriVideoSource`:
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -268,9 +268,9 @@ namespace FormsVideoLibrary.iOS
 }
 ```
 
-`AutoPlay` Vlastnost nemá žádné analogovým v iOS video třídy, tak vlastnost je zkontrolován na konci `SetSource` metoda k volání `Play` metodu `AVPlayer` objektu.
+`AutoPlay` Vlastnost nemá žádné analogové ve třídách videa s Iosem, na konci je zkontrolován vlastnost `SetSource` metoda se má volat `Play` metodu `AVPlayer` objektu.
 
-V některých případech dál přehrávání po stránku s videa `VideoPlayer` přešli zpět na domovskou stránku. Zastavit video, `ReplaceCurrentItemWithPlayerItem` nastavena v `Dispose` přepsání:
+V některých případech pokračování přehrávání za stránku s videa `VideoPlayer` přejde zpět na domovskou stránku. Zastavit na video `ReplaceCurrentItemWithPlayerItem` je také nastavena `Dispose` přepsat:
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -294,7 +294,7 @@ namespace FormsVideoLibrary.iOS
 
 ### <a name="the-android-video-source"></a>Android zdroj videa
 
-Android `VideoPlayerRenderer` je třeba nastavit zdroj videa přehrávače při `VideoPlayer` nejprve je vytvořený a novějším při `Source` změny vlastností:
+Android `VideoPlayerRenderer` nastavit zdroj přehrávače videa při `VideoPlayer` nejprve je vytvořená a v novějších při `Source` změny vlastností:
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -327,7 +327,7 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-`SetSource` Metoda zpracovává objekty typu `UriVideoSource` voláním `SetVideoUri` na `VideoView` s Android `Uri` objekt vytvořený z řetězce identifikátoru URI. `Uri` Třída je plně kvalifikovaný sem ho odlišuje od .NET `Uri` třídy:
+`SetSource` Metoda zpracovává objekty typu `UriVideoSource` voláním `SetVideoUri` na `VideoView` s Androidem `Uri` objekt vytvořený z řetězce identifikátoru URI. `Uri` Třídy je plně kvalifikovaný tady ho odlišuje od .NET `Uri` třídy:
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -362,15 +362,15 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-Android `VideoView` nemá odpovídající `AutoPlay` vlastnost, proto `Start` metoda je volána, pokud byla nastavena nové video.
+Android `VideoView` nemá odpovídající `AutoPlay` vlastnosti, takže `Start` metoda je volána, pokud byla nastavena nové video.
 
-Pokud je rozdíl mezi chování iOS a Android nástroji pro vykreslování `Source` vlastnost `VideoPlayer` je nastaven na `null`, nebo pokud `Uri` vlastnost `UriVideoSource` je nastaven na `null` nebo je prázdný. Pokud přehrávání videa iOS je momentálně přehrávání videa, a `Source` je nastaven na `null` (nebo je řetězec `null` nebo je prázdný), `ReplaceCurrentItemWithPlayerItem` je volán s `null` hodnotu. Aktuální video se nahradí a zastaví přehrávání.
+Pokud je rozdíl mezi chování systému iOS a Android renderery `Source` vlastnost `VideoPlayer` je nastavena na `null`, nebo pokud `Uri` vlastnost `UriVideoSource` je nastavena na `null` nebo prázdný řetězec. Pokud přehrávač videa iOS je momentálně přehrávání videa, a `Source` je nastavena na `null` (nebo je řetězec `null` nebo prázdné), `ReplaceCurrentItemWithPlayerItem` volána s `null` hodnotu. Aktuální videa se nahradí a zastaví přehrávání.
 
-Android nepodporuje budovy podobné. Pokud `Source` je nastavena na `null`, `SetSource` metoda jednoduše ignoruje a aktuální video pokračuje přehrávání.
+Podobně jako zařízení Android nejsou podporovány. Pokud `Source` je nastavena na `null`, `SetSource` metoda jednoduše ignoruje a aktuální videa i nadále přehrát.
 
-### <a name="the-uwp-video-source"></a>Zdroj videa UWP
+### <a name="the-uwp-video-source"></a>Zdroj videa UPW
 
-UWP `MediaElement` definuje `AutoPlay` vlastnosti, které se zpracovávají v zobrazovací jednotky jako ostatní vlastnosti:
+Na UPW `MediaElement` definuje `AutoPlay` vlastnosti, které se zpracovávají v renderer stejně jako jakoukoli jinou vlastnosti:
 
 ```csharp
 namespace FormsVideoLibrary.UWP
@@ -407,7 +407,7 @@ namespace FormsVideoLibrary.UWP
 }
 ```
 
-`SetSource` Popisovače vlastností `UriVideoSource` objekt nastavením `Source` vlastnost `MediaElement` pro .NET `Uri` hodnotu, nebo `null` Pokud `Source` vlastnost `VideoPlayer` je nastaven na `null`:
+`SetSource` Popisovačů vlastností `UriVideoSource` objektu tak, že nastavíte `Source` vlastnost `MediaElement` k .NET `Uri` hodnotu, nebo `null` Pokud `Source` vlastnost `VideoPlayer` je nastavena na `null`:
 
 ```csharp
 namespace FormsVideoLibrary.UWP
@@ -447,7 +447,7 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="setting-a-url-source"></a>Nastavení adresy URL zdroje
 
-S implementací těchto vlastností v tři nástroji pro vykreslování je možné přehrát video z adresy URL zdroje. **Přehrát Video webové** stránku [ **VideoPlayDemos** ]( https://developer.xamarin.com/samples/xamarin-forms/customrenderers/videoplayerdemos/index.md) programu je definován v následujícím souboru XAML:
+K provádění těchto vlastností v tři renderery je možné k přehrání videa ze zdroje adresy URL. **Přehrávání webového videa** stránku [ **VideoPlayDemos** ]( https://developer.xamarin.com/samples/xamarin-forms/customrenderers/videoplayerdemos/index.md) programu je definován v následujícím souboru XAML:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -461,31 +461,31 @@ S implementací těchto vlastností v tři nástroji pro vykreslování je možn
 </ContentPage>
 ```
 
-`VideoSourceConverter` Třída převede řetězec na `UriVideoSource`. Když přejdete **přehrávání videa webové** stránky, na video začíná načítání a spustí přehrávání při dostatečné množství dat po stažení a uložená do vyrovnávací paměti. Je přibližně 10 minut, délka:
+`VideoSourceConverter` Převede řetězec na třídy `UriVideoSource`. Když přejdete **přehrávání webového videa** stránce videa začíná načítání a spustí přehrávání dostatečné množství dat po stažení a uložená do vyrovnávací paměti. Video je přibližně 10 minut:
 
-[![Přehrávání videa webové](web-videos-images/playwebvideo-small.png "přehrát Video webové")](web-videos-images/playwebvideo-large.png#lightbox "přehrát Web Video")
+[![Přehrávání webového videa](web-videos-images/playwebvideo-small.png "přehrávání webového videa")](web-videos-images/playwebvideo-large.png#lightbox "přehrávání webového videa")
 
-Na každé tři platformy objevovat přenosu ovládací prvky, pokud se nepoužívají, ale může být obnovena zobrazíte klepnutím na video.
+Na všech třech platformách ovládací prvky pro přenos zesvětlit Pokud nejsou použity, ale je možné obnovit zobrazíte klepnutím na video.
 
-Video můžete zabránit automatickému spuštění nastavením `AutoPlay` vlastnost `false`:
+Video můžete zabránit automatickému spuštění tak, že nastavíte `AutoPlay` vlastnost `false`:
 
 ```xaml
 <video:VideoPlayer Source="https://archive.org/download/BigBuckBunny_328/BigBuckBunny_512kb.mp4"
                    AutoPlay="false" />
 ```
 
-Budete muset stiskněte **přehrání** tlačítko video spustíte.
+Bude nutné stisknout klávesu **Přehrát** tlačítko, na kterém se video spustí.
 
-Podobně můžete potlačit zobrazení ovládacích prvků přenosu nastavením `AreTransportControlsEnabled` vlastnost `false`:
+Podobně můžete potlačit zobrazení ovládací prvky pro přenos tak, že nastavíte `AreTransportControlsEnabled` vlastnost `false`:
 
 ```xaml
 <video:VideoPlayer Source="https://archive.org/download/BigBuckBunny_328/BigBuckBunny_512kb.mp4"
                    AreTransportControlsEnabled="False" />
 ```
 
-Pokud nastavíte obě vlastnosti na `false`, videa nezahájí, přehrávání a budou existovat žádný způsob, jak jej spustit! Je třeba volat `Play` ze souboru kódu na pozadí, nebo vytvořte vlastní ovládací prvky přenosu, jak je popsáno v článku [implementace vlastní přenos ovládací prvky Video](custom-transport.md).
+Pokud nastavíte na obě vlastnosti `false`, video se začne přehrávat a bude existovat žádný způsob, jak začít ho! Je třeba volat `Play` ze souboru kódu na pozadí nebo vytvořit vlastní ovládací prvky pro přenos, jak je popsáno v článku [implementace vlastní videa ovládací prvky pro přenos](custom-transport.md).
 
-**App.xaml** soubor obsahuje prostředky pro dva další videa:
+**App.xaml** soubor obsahuje prostředky pro další dvě videa:
 
 ```xaml
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
@@ -509,13 +509,13 @@ Pokud nastavíte obě vlastnosti na `false`, videa nezahájí, přehrávání a 
 </Application>
 ```
 
-Odkaz na některou z těchto dalších filmy, můžete nahradit explicitní adresa URL v **PlayWebVideo.xaml** soubor s `StaticResource` – rozšíření značek, v takovém případě `VideoSourceConverter` není potřeba vytvořit `UriVideoSource` objektu:
+Odkaz na některou z těchto filmy, můžete nahradit explicitní adresa URL v **PlayWebVideo.xaml** soubor s `StaticResource` – rozšíření značek, v takovém případě `VideoSourceConverter` není potřeba vytvořit `UriVideoSource` objektu:
 
 ```xaml
 <video:VideoPlayer Source="{StaticResource ElephantsDream}" />
 ```
 
-Alternativně můžete nastavit `Source` vlastnost ze souboru videa v `ListView`, jak je popsáno v článku na další [vazby Video zdroje přehrávači](source-bindings.md).
+Alternativně můžete nastavit `Source` vlastnost z videosouboru v `ListView`, jak je popsáno v následujícím článku [vazby zdroje videa k přehrávači](source-bindings.md).
 
 
 
@@ -523,4 +523,4 @@ Alternativně můžete nastavit `Source` vlastnost ze souboru videa v `ListView`
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Přehrávač videoukázky (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+- [Ukázky přehrávače videa (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)

@@ -1,30 +1,30 @@
 ---
 title: Položka Xamarin.Forms
-description: Tento článek vysvětluje způsob použití třídy Xamarin.Forms položky tak, aby přijímal textových nebo heslo vstup v aplikaci.
+description: Tento článek vysvětluje, jak použít třídu Xamarin.Forms položky tak, aby přijímal jedním řádkem textu nebo zadávání hesla v aplikaci.
 ms.prod: xamarin
 ms.assetid: 9923C541-3C10-4D14-BAB5-C4D6C514FB1E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/31/2018
-ms.openlocfilehash: b6188b986589a56229ad2e092d4100ff3f75dbe4
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 95afdfde878759d4a598e200d16fe6fb1fa2005e
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245550"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998228"
 ---
 # <a name="xamarinforms-entry"></a>Položka Xamarin.Forms
 
-_Jednořádkové textové nebo heslo, zadejte_
+_Jedním řádkem textu nebo zadejte heslo_
 
-Platformě Xamarin.Forms `Entry` se používá pro zadávání textu jeden řádek. `Entry`, Například `Editor` zobrazení, podporuje více typů klávesnice. Kromě toho `Entry` lze použít jako pole pro heslo.
+Xamarin.Forms `Entry` se používá pro vstup jedním řádkem textu. `Entry`, Třeba `Editor` zobrazení, podporuje více typů klávesnice. Kromě toho `Entry` může sloužit jako pole pro heslo.
 
 ## <a name="display-customization"></a>Přizpůsobení zobrazení
 
 ### <a name="setting-and-reading-text"></a>Nastavení a čtení textu
 
-`Entry`, Jako ostatních zobrazení textu prezentací zpřístupní `Text` vlastnost. Tuto vlastnost lze použít k nastavení a přečtěte si text uvedený na `Entry`. Následující příklad ukazuje nastavení `Text` vlastnost v jazyce XAML:
+`Entry`, Stejně jako ostatní zobrazení nabízí ten samý text zpřístupňuje `Text` vlastnost. Tuto vlastnost lze použít k nastavení a přečtěte si text na předložený `Entry`. Následující příklad ukazuje nastavení `Text` vlastnost v XAML:
 
 ```xaml
 <Entry Text="I am an Entry" />
@@ -36,18 +36,18 @@ V jazyce C#:
 var MyEntry = new Entry { Text = "I am an Entry" };
 ```
 
-Čtení textu, přístup `Text` vlastnost v jazyce C#:
+Čtení textu, přístup `Text` vlastností v jazyce C#:
 
 ```csharp
 var text = MyEntry.Text;
 ```
 
 > [!NOTE]
-> Šířka `Entry` můžete definovat nastavením jeho `WidthRequest` vlastnost. Nezávisí na šířku `Entry` definovaný na základě hodnoty z jeho `Text` vlastnost.
+> Šířka `Entry` lze definovat tak, že nastavíte její `WidthRequest` vlastnost. Není závislý na šířku `Entry` definuje na základě hodnoty z jeho `Text` vlastnost.
 
-### <a name="limiting-input-length"></a>Omezení vstupní délka
+### <a name="limiting-input-length"></a>Omezit délku vstupu
 
-[ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength) Vlastnosti lze omezit vstupní délku, která je povolené [ `Entry` ](xref:Xamarin.Forms.Entry). Tato vlastnost by měla být nastavená na kladné celé číslo:
+[ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength) Vlastnost lze použít k omezení, který je povolený pro vstupní délka [ `Entry` ](xref:Xamarin.Forms.Entry). Tuto vlastnost měli nastavit na kladné celé číslo:
 
 ```xaml
 <Entry ... MaxLength="10" />
@@ -57,28 +57,28 @@ var text = MyEntry.Text;
 var entry = new Entry { ... MaxLength = 10 };
 ```
 
-A [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength) vlastnost hodnota 0 znamená, že bude možné žádný vstup a hodnota `int.MaxValue`, což je výchozí hodnota pro [ `Entry` ](xref:Xamarin.Forms.Entry), určuje, že neexistuje žádná efektivní limit počtu znaků, které mohou být zapsána.
+A [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength) vlastnost hodnota 0 znamená, že žádný vstup bude možné a hodnotu `int.MaxValue`, což je výchozí hodnota pro [ `Entry` ](xref:Xamarin.Forms.Entry), označuje, že je žádný platit omezení počtu znaků, které mohou být zadány.
 
 ### <a name="keyboards"></a>Klávesnice
 
-Klávesnice, který se zobrazí, když uživatelé komunikovat s `Entry` lze nastavit prostřednictvím kódu programu prostřednictvím `Keyboard` vlastnost.
+Klávesnice, který se zobrazí, když uživatelé možnost zasahovat `Entry` lze programově nastavit prostřednictvím `Keyboard` vlastnost.
 
 Možnosti pro typ klávesnice jsou:
 
 - **Výchozí** &ndash; výchozí klávesnice
-- **Chat** &ndash; používá pro odesílání textových zpráv & místech kde jsou užitečné emoji
+- **Chat** &ndash; použít pro odesílání textových zpráv a místa kde jsou užitečné emoji
 - **E-mailu** &ndash; použít při zadávání e-mailové adresy
-- **Číselné** &ndash; použít při zadávání čísel
-- **Telefonní** &ndash; použít při zadávání telefonních čísel
+- **Číselné** &ndash; při zadání čísel
+- **Telefonní** &ndash; použít při zadávání telefonní čísla
 - **Adresa URL** &ndash; používá pro zadání cesty k souborům a webové adresy
 
-Došlo [příklad každý klávesnice](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/choose-keyboard-for-entry/) v části našich recepty.
+Je [příklad každý klávesnice](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/choose-keyboard-for-entry/) v oddílu recepty.
 
-### <a name="enabling-and-disabling-spell-checking"></a>Povolení a zakázání kontrola pravopisu
+### <a name="enabling-and-disabling-spell-checking"></a>Povolení a zakázání kontroly pravopisu
 
-[ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) Ovládací prvky vlastnost jestli pravopisu kontrola je povolené. Ve výchozím nastavení, je vlastnost nastavena `true`. Jako uživatel zadá text, jsou vypsány pravopisné chyby.
+[ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) Ovládací prvky vlastnost určuje, zda kontrola pravopisu je povolená. Ve výchozím nastavení je vlastnost nastavena na `true`. Jako uživatel zadá text, jsou uvedeny pravopisné chyby.
 
-Ale v některých případech vstupní text, například zadáním uživatelského jména, kontrolu pravopisu poskytuje záporné prostředí a to by mělo být zakázáno nastavením [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) vlastnost `false`:
+Však pro některé scénáře vstupního textu, jako je zadání uživatelského jména, kontrolu pravopisu poskytuje negativní zkušenosti a proto by mělo být zakázáno nastavením [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) vlastnost `false`:
 
 ```xaml
 <Entry ... IsSpellCheckEnabled="false" />
@@ -89,11 +89,11 @@ var entry = new Entry { ... IsSpellCheckEnabled = false };
 ```
 
 > [!NOTE]
-> Když [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) je nastavena na `false`a není používán vlastní klávesnice, kontrola pravopisu nativní bude zakázán. Ale pokud [ `Keyboard` ](xref:Xamarin.Forms.Keyboard) má byla sada, která zakáže pravopisu kontrola, jako například [ `Keyboard.Chat` ](xref:Xamarin.Forms.Keyboard.Chat), `IsSpellCheckEnabled` vlastnost je ignorována. Proto vlastnost nelze použít k povolení pro kontrolu pravopisu `Keyboard` zakazující explicitně.
+> Když [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) je nastavena na `false`a se nepoužívá vlastní klávesnice, nástroj pro kontrolu pravopisu nativní se deaktivuje. Ale pokud [ `Keyboard` ](xref:Xamarin.Forms.Keyboard) má byla sada, která zakáže pravopisu kontrolu, například [ `Keyboard.Chat` ](xref:Xamarin.Forms.Keyboard.Chat), `IsSpellCheckEnabled` vlastnost se ignoruje. Proto nelze vlastnost použít k povolení kontroly pravopisu pro `Keyboard` zakazující explicitně.
 
 ### <a name="placeholders"></a>Zástupné symboly
 
-`Entry` může být nastaven na Zobrazit zástupný text při jeho není ukládání vstup uživatele. V praxi to je často vidět ve formulářích o vysvětlení, obsah, který je vhodný pro dané pole. Barva textu zástupný symbol nelze přizpůsobit a stejný bez ohledu na to `TextColor` nastavení. Pokud váš návrh žádá barvu, která vlastní zástupného symbolu, bude nutné vrátit zpět [vlastní zobrazovací jednotky](). Vytvoří následující `Entry` "UserName" jako zástupný symbol v jazyce XAML:
+`Entry` je možné nastavit na Zobrazit zástupný text při neukládá uživatelský vstup. V praxi to je často zobrazena ve formulářích upřesněte svůj obsah, který je vhodný pro dané pole. Barva textu zástupný symbol nejde přizpůsobit a budou stejné bez ohledu na to `TextColor` nastavení. Pokud váš návrh žádá pro vlastní zástupný text color, bude nutné vrátit zpět [vlastního rendereru](). Vytvoří následující `Entry` "UserName" jako zástupný symbol v XAML:
 
 ```xaml
 <Entry Placeholder="Username" />
@@ -105,13 +105,13 @@ V jazyce C#:
 var MyEntry = new Entry { Placeholder = "Username" };
 ```
 
-![](entry-images/placeholder.png "Příklad položky zástupný symbol")
+![](entry-images/placeholder.png "Příklad zástupný text položky")
 
-### <a name="password-fields"></a>Pole hesla
+### <a name="password-fields"></a>Pole s heslem
 
-`Entry` poskytuje `IsPassword` vlastnost. Když `IsPassword` je `true`, obsah pole zobrazí jako černá kroužky:
+`Entry` poskytuje `IsPassword` vlastnost. Když `IsPassword` je `true`, se zobrazí obsah pole jako černá kroužky:
 
-V jazyce XAML:
+V XAML:
 
 ```xaml
 <Entry IsPassword="true" />
@@ -125,9 +125,9 @@ var MyEntry = new Entry { IsPassword = true };
 
 ![](entry-images/password.png "Příklad IsPassword položka")
 
-Zástupné symboly lze použít s instancí `Entry` které jsou nakonfigurovány jako pole heslo:
+Zástupné symboly lze použít s instancí `Entry` , které jsou nakonfigurované jako pole s heslem:
 
-V jazyce XAML:
+V XAML:
 
 ```xaml
 <Entry IsPassword="true" Placeholder="Password" />
@@ -139,21 +139,21 @@ V jazyce C#:
 var MyEntry = new Entry { IsPassword = true, Placeholder = "Password" };
 ```
 
-![](entry-images/passwordplaceholder.png "Položka IsPassword a příklad zástupný symbol")
+![](entry-images/passwordplaceholder.png "Položka IsPassword a příklad zástupného symbolu")
 
 
 ### <a name="colors"></a>Barvy
 
-Položka může být nastaven na použití vlastní pozadí a barvy textu prostřednictvím následující vazbu vlastnosti:
+Položky můžete nastavit pomocí vlastní pozadí a barvy textu prostřednictvím následující vlastnosti umožňující vazbu:
 
 - **TextColor** &ndash; nastaví barvu textu.
-- **BackgroundColor** &ndash; nastaví barvu zobrazí pozadí textu.
+- **BackgroundColor** &ndash; nastaví barvu pozadí textu je znázorněno.
 
-Zvláštní pozornost je třeba zajistit, že barvy bude možné použít na každou platformu. Protože každá platforma má jiné výchozí hodnoty pro barvu textu a pozadí, často musíte nastavit obě, pokud jste nastavili jednu.
+Zvláštní pozornost je třeba zajistit, že bude možné použít na jednotlivých platformách barvy. Protože každá platforma má různé výchozí hodnoty pro barvy textu a pozadí, často musíte nastavit obě, pokud nastavíte jednu.
 
-Chcete-li nastavit barvu textu položky, použijte následující kód:
+Pomocí následujícího kódu nastavit barvu textu položky:
 
-V jazyce XAML:
+V XAML:
 
 ```xaml
 <Entry TextColor="Green" />
@@ -166,11 +166,11 @@ var entry = new Entry();
 entry.TextColor = Color.Green;
 ```
 
-![](entry-images/textcolor.png "Příklad TextColor položka")
+![](entry-images/textcolor.png "Příklad položky TextColor")
 
-Všimněte si, že zástupného textu není ovlivněné zadaný `TextColor`.
+Všimněte si, že zástupný symbol není ovlivněn zadaný `TextColor`.
 
-Nastavení barvy pozadí v jazyce XAML:
+Chcete-li nastavit barvu pozadí v XAML:
 
 ```xaml
 <Entry BackgroundColor="#2c3e50" />
@@ -185,18 +185,18 @@ entry.BackgroundColor = Color.FromHex("#2c3e50");
 
 ![](entry-images/textbackgroundcolor.png "Příklad BackgroundColor položka")
 
-Dávejte pozor, abyste měli jistotu, že barvy pozadí a text, který zvolíte lze použít na každou platformu a nemáte skrývat žádné zástupný text.
+Buďte opatrní, abyste měli jistotu, že barvy textu a pozadí, který zvolíte lze použít na jednotlivých platformách a není skryl všechny zástupný text.
 
-## <a name="events-and-interactivity"></a>Události a interakce
+## <a name="events-and-interactivity"></a>Události a interaktivita
 
-Položka zpřístupní dvě události:
+Položka poskytuje dvě události:
 
-- [TextChanged](http://developer.xamarin.com/api/event/Xamarin.Forms.Entry.TextChanged/) &ndash; vyvolá, když se text změní v položce. Poskytuje text před a po provedení změny.
-- [Dokončit](http://developer.xamarin.com/api/event/Xamarin.Forms.Entry.Completed/) &ndash; vyvolá, když uživatel skončila vstup po stisknutí klávesy návratový na klávesnici.
+- [TextChanged](xref:Xamarin.Forms.Entry.TextChanged) &ndash; aktivovaná při změně textu v položce. Obsahuje text před a po provedení změny.
+- [Dokončení](xref:Xamarin.Forms.Entry.Completed) &ndash; vyvolá, když uživatel skončila vstup stisknutím klávesy return na klávesnici.
 
 ### <a name="completed"></a>Byla dokončena
 
-`Completed` Se používá k reagovat na dokončení interakci s položkou. `Completed` se vyvolá, když uživatel končí vstup s polem tak, že zadáte návratový klíč na klávesnici. Obslužná rutina události je obslužná rutina události Obecné, trvá odesílatele a `EventArgs`:
+`Completed` Událost se používá k reagovat na dokončení interakci s položkou. `Completed` je vyvolána, když uživatel ukončí vstup s polem tak, že zadáte klávesu return na klávesnici. Obslužná rutina události je obslužná rutina události obecného, trvá odesílatele a `EventArgs`:
 
 ```csharp
 void Entry_Completed (object sender, EventArgs e)
@@ -205,7 +205,7 @@ void Entry_Completed (object sender, EventArgs e)
 }
 ```
 
-Dokončení události může přihlásit k odběru v jazyce XAML:
+Událost dokončení může být přihlášena k odběru v XAML:
 
 ```xaml
 <Entry Completed="Entry_Completed" />
@@ -218,11 +218,11 @@ var entry = new Entry ();
 entry.Completed += Entry_Completed;
 ```
 
-### <a name="textchanged"></a>TextChanged
+### <a name="textchanged"></a>TextChanged.
 
-`TextChanged` Se používá k reagovat na změny v obsahu pole.
+`TextChanged` Událost se používá k reagovat na změny v obsahu pole.
 
-`TextChanged` se vyvolá, když `Text` z `Entry` změny. Obslužná rutina události přijímá instanci `TextChangedEventArgs`. `TextChangedEventArgs` poskytuje přístup k staré a nové hodnoty `Entry` `Text` prostřednictvím `OldTextValue` a `NewTextValue` vlastnosti:
+`TextChanged` je vyvolána vždy, když `Text` z `Entry` změny. Obslužná rutina události přijímá instanci `TextChangedEventArgs`. `TextChangedEventArgs` poskytuje přístup k staré a nové hodnoty `Entry` `Text` prostřednictvím `OldTextValue` a `NewTextValue` vlastnosti:
 
 ```csharp
 void Entry_TextChanged (object sender, TextChangedEventArgs e)
@@ -232,7 +232,7 @@ void Entry_TextChanged (object sender, TextChangedEventArgs e)
 }
 ```
 
-`TextChanged` Událostí můžete přihlásit k odběru v jazyce XAML:
+`TextChanged` Události může být přihlášena k odběru v XAML:
 
 ```xaml
 <Entry TextChanged="Entry_TextChanged" />
@@ -249,4 +249,4 @@ entry.TextChanged += Entry_TextChanged;
 ## <a name="related-links"></a>Související odkazy
 
 - [Text (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
-- [Položka rozhraní API](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/)
+- [Vstupní rozhraní API](xref:Xamarin.Forms.Entry)

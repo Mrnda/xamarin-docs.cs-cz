@@ -1,64 +1,64 @@
 ---
-title: Nastavení hodnot usnadnění na elementy uživatelského rozhraní
-description: Tento článek vysvětluje, jak používat třídu AutomationProperties tak, aby čtečky obrazovky můžete prodiskutovat elementy na stránce.
+title: Nastavení hodnot přístupnosti pro prvky uživatelského rozhraní
+description: Tento článek vysvětluje, jak použít třídu AutomationProperties tak, aby se čtečkou obrazovky mohou mluvit o elementy na stránce.
 ms.prod: xamarin
 ms.assetid: c0bb6893-fd26-47e7-88e5-3c333c9f786c
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: ad7b1c41f34c14a81910d5be30fd6484919e8d39
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 576fe34b0536c83825aa39bdd7111143d9474225
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241881"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998907"
 ---
-# <a name="setting-accessibility-values-on-user-interface-elements"></a>Nastavení hodnot usnadnění na elementy uživatelského rozhraní
+# <a name="setting-accessibility-values-on-user-interface-elements"></a>Nastavení hodnot přístupnosti pro prvky uživatelského rozhraní
 
-_Xamarin.Forms umožňuje usnadnění hodnoty nastavení na elementy uživatelského rozhraní pomocí přidružené vlastnosti ze třídy AutomationProperties, které se v změní hodnoty nativní usnadnění přístupu sady. Tento článek vysvětluje, jak používat třídu AutomationProperties tak, aby čtečky obrazovky můžete prodiskutovat elementy na stránce._
+_Xamarin.Forms umožňuje hodnot přístupnosti nastavení na prvky uživatelského rozhraní pomocí připojené vlastnosti ze třídy vlastnosti automatizace, které následně nastavte nativní usnadnění hodnoty. Tento článek vysvětluje, jak použít třídu AutomationProperties tak, aby se čtečkou obrazovky mohou mluvit o elementy na stránce._
 
 ## <a name="overview"></a>Přehled
 
-Xamarin.Forms umožňuje usnadnění hodnoty nastavení na elementy uživatelského rozhraní pomocí následující přidružené vlastnosti:
+Xamarin.Forms umožňuje hodnot přístupnosti nastavení na prvky uživatelského rozhraní pomocí následující připojené vlastnosti:
 
-- `AutomationProperties.IsInAccessibleTree` – Určuje, zda je k dispozici pro aplikaci přístupné elementu. Další informace najdete v tématu [AutomationProperties.IsInAccessibleTree](#isinaccessibletree).
-- `AutomationProperties.Name` – Stručný popis elementu, který slouží jako speakable identifikátor elementu. Další informace najdete v tématu [AutomationProperties.Name](#name).
-- `AutomationProperties.HelpText` – delší popis element, který lze chápat jako text popisu tlačítka, které jsou přidružené k tomuto prvku. Další informace najdete v tématu [AutomationProperties.HelpText](#helptext).
-- `AutomationProperties.LabeledBy` – Umožňuje nastavit jiný element definovat informace o usnadnění pro aktuální element. Další informace najdete v tématu [AutomationProperties.LabeledBy](#labeledby).
+- `AutomationProperties.IsInAccessibleTree` – Určuje, zda elementu je k dispozici pro aplikace přístupné. Další informace najdete v tématu [AutomationProperties.IsInAccessibleTree](#isinaccessibletree).
+- `AutomationProperties.Name` – Stručný popis prvku, který slouží jako speakable identifikátor elementu. Další informace najdete v tématu [AutomationProperties.Name](#name).
+- `AutomationProperties.HelpText` – delší popis prvku, který si lze představit jako text popisu tlačítka, které jsou spojené s tímto prvkem. Další informace najdete v tématu [AutomationProperties.HelpText](#helptext).
+- `AutomationProperties.LabeledBy` – Umožňuje definovat informace o usnadnění pro aktuální prvek jiný element. Další informace najdete v tématu [AutomationProperties.LabeledBy](#labeledby).
 
-Tyto připojené vlastnosti nastavené nativní usnadnění hodnoty tak, aby čtečky obrazovky můžete prodiskutovat elementu. Další informace o přidružené vlastnosti najdete v tématu [připojené vlastnosti](~/xamarin-forms/xaml/attached-properties.md).
+Tyto připojené vlastnosti nastavte nativní usnadnění hodnoty tak, aby se čtečkou obrazovky mohou mluvit o elementu. Další informace o přidružené vlastnosti najdete v tématu [připojené vlastnosti](~/xamarin-forms/xaml/attached-properties.md).
 
 > [!IMPORTANT]
-> Pomocí `AutomationProperties` přidružené vlastnosti může mít vliv na spuštění testu uživatelského rozhraní v systému Android. [ `AutomationId` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.AutomationId/), `AutomationProperties.Name` a `AutomationProperties.HelpText` vlastnosti se nastavit nativního `ContentDescription` vlastnost s `AutomationProperties.Name` a `AutomationProperties.HelpText` hodnoty vlastností přednost před `AutomationId`hodnota (pokud obě `AutomationProperties.Name` a `AutomationProperties.HelpText` jsou nastavené hodnoty budou být zřetězen). To znamená, že všechny testy hledá `AutomationId` se nezdaří, pokud `AutomationProperties.Name` nebo `AutomationProperties.HelpText` jsou nastaveny také v elementu. V tomto scénáři, mělo by být změněno testů uživatelského rozhraní a hledat v hodnotě `AutomationProperties.Name` nebo `AutomationProperties.HelpText`, nebo zřetězení těchto dvou možností.
+> Použití `AutomationProperties` připojené vlastnosti může mít vliv na provádění testů uživatelského rozhraní v systému Android. [ `AutomationId` ](xref:Xamarin.Forms.Element.AutomationId), `AutomationProperties.Name` a `AutomationProperties.HelpText` vlastnosti budou nastaveny nativní `ContentDescription` vlastnost, s `AutomationProperties.Name` a `AutomationProperties.HelpText` hodnoty vlastností přednost `AutomationId`hodnotu (pokud mají oba `AutomationProperties.Name` a `AutomationProperties.HelpText` je nastaveno, bude zřetězení hodnoty). To znamená, že všechny testy, které hledáte `AutomationId` selže, pokud `AutomationProperties.Name` nebo `AutomationProperties.HelpText` jsou také nastaven pro element. V tomto scénáři, mělo by být změněno testy uživatelského rozhraní k vyhledání hodnoty `AutomationProperties.Name` nebo `AutomationProperties.HelpText`, nebo zřetězení obou.
 
-Každá platforma má čtečka různých obrazovek komentovat hodnoty usnadnění přístupu:
+Každá platforma má jiné obrazovky k vyprávění příběhu hodnot přístupnosti:
 
-- iOS má VoiceOver. Další informace najdete v tématu [usnadnění Test na vaše zařízení s VoiceOver](https://developer.apple.com/library/content/technotes/TestingAccessibilityOfiOSApps/TestAccessibilityonYourDevicewithVoiceOver/TestAccessibilityonYourDevicewithVoiceOver.html) na developer.apple.com.
-- Android má TalkBack. Další informace najdete v tématu [testování aplikace pro usnadnění](https://developer.android.com/training/accessibility/testing.html#talkback) na developer.android.com.
-- Systém Windows má Předčítání. Další informace najdete v tématu [ověřit scénáře hlavní aplikace pomocí Předčítání](/windows/uwp/accessibility/accessibility-testing#verify-main-app-scenarios-by-using-narrator/).
+- iOS je VoiceOver. Další informace najdete v tématu [Test přístupnosti na vaše zařízení s VoiceOver](https://developer.apple.com/library/content/technotes/TestingAccessibilityOfiOSApps/TestAccessibilityonYourDevicewithVoiceOver/TestAccessibilityonYourDevicewithVoiceOver.html) na developer.apple.com.
+- Android má možnost TalkBack. Další informace najdete v tématu [testování vaší aplikace usnadnění](https://developer.android.com/training/accessibility/testing.html#talkback) na developer.android.com.
+- Windows má Předčítání. Další informace najdete v tématu [ověřit scénáře hlavní aplikace pomocí programu Předčítání](/windows/uwp/accessibility/accessibility-testing#verify-main-app-scenarios-by-using-narrator/).
 
-Přesné chování čtečky obrazovky však závisí na software a konfigurace uživatele je. Například většina čtečky obrazovky přečtěte si text související s ovládacím prvkem, pokud obdrží fokus, tím, že uživatelům orientaci přechází mezi ovládacími prvky na stránce. Uživatelské rozhraní celá aplikace si také přečíst některé čtečky obrazovky při, zobrazí se stránka, která umožňuje uživatelům přijímat všechny stránky k dispozici informační obsahu před pokusem o jeho přejděte.
+Přesné chování čtečky obrazovky, ale závisí na software a na konfiguraci uživatele je. Například většina čtečky obrazovky číst text související s ovládacím prvkem, když získá fokus, povolíte uživatelům orientaci při přechodu mezi ovládacími prvky na stránce. Některé čtečky obrazovky si také přečíst celé aplikace uživatelského rozhraní při, zobrazí se stránka, která umožňuje přijímat všechny stránky k dispozici informativní obsah před pokusem ho můžete procházet.
 
-Čtečky obrazovky také načíst hodnoty různých usnadnění. V ukázkové aplikaci:
+Čtečky obrazovky také číst hodnoty různou přístupností. V ukázkové aplikaci:
 
-- Budou číst voiceOver `Placeholder` hodnotu `Entry`, za nímž následují pokyny pro použití ovládacího prvku.
-- Budou číst talkBack `Placeholder` hodnotu `Entry`, za nímž následují `AutomationProperties.HelpText` hodnotu následovanou pokyny pro použití ovládacího prvku.
-- Program Předčítání, bude číst `AutomationProperties.LabeledBy` hodnotu `Entry`, za nímž následují pokyny týkající se použití ovládacího prvku.
+- Přečte voiceOver `Placeholder` hodnotu `Entry`následovaný pokyny, jak pomocí ovládacího prvku.
+- Přečte talkBack `Placeholder` hodnotu `Entry`následovaný `AutomationProperties.HelpText` hodnotu, za nímž následuje pokyny, jak pomocí ovládacího prvku.
+- Program Předčítání bude číst `AutomationProperties.LabeledBy` hodnotu `Entry`následovaný pokyny, pomocí ovládacího prvku.
 
-Kromě toho bude preferovat Předčítání `AutomationProperties.Name`, `AutomationProperties.LabeledBy`a potom `AutomationProperties.HelpText`. V systému Android se může kombinovat TalkBack `AutomationProperties.Name` a `AutomationProperties.HelpText` hodnoty. Proto se doporučuje, aby důkladné usnadnění testování se provede na každou platformu zajistit optimální zkušenosti.
+Kromě toho bude program Předčítání preferovat `AutomationProperties.Name`, `AutomationProperties.LabeledBy`a potom `AutomationProperties.HelpText`. V systému Android, může kombinovat TalkBack `AutomationProperties.Name` a `AutomationProperties.HelpText` hodnoty. Doporučujeme proto, že usnadnění důkladné testování provádí na jednotlivých platformách zajistit optimální výkon.
 
 <a name="isinaccessibletree" />
 
 ## <a name="automationpropertiesisinaccessibletree"></a>AutomationProperties.IsInAccessibleTree
 
-`AutomationProperties.IsInAccessibleTree` Je přidružená vlastnost `boolean` který určuje, pokud se element nachází přístupné a proto viditelné pro čtečky obrazovky. Musí být nastavena na `true` používat další usnadnění přidružené vlastnosti. Můžete to provést v jazyce XAML následujícím způsobem:
+`AutomationProperties.IsInAccessibleTree` Je připojená vlastnost `boolean` , která určuje, zda elementu je dostupná a proto viditelné pro čtečky obrazovky. Musí být nastaveno na `true` používat další usnadnění připojené vlastnosti. To lze provést v XAML následujícím způsobem:
 
 ```xaml
 <Entry AutomationProperties.IsInAccessibleTree="true" />
 ```
 
-Případně se může být nastavena v C# následujícím způsobem:
+Případně ho lze nastavit v jazyce C# následujícím způsobem:
 
 ```csharp
 var entry = new Entry();
@@ -66,20 +66,20 @@ AutomationProperties.SetIsInAccessibleTree(entry, true);
 ```
 
 > [!NOTE]
-> Všimněte si, že [ `SetValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.SetValue/p/Xamarin.Forms.BindableProperty/System.Object/) metody lze také nastavit `AutomationProperties.IsInAccessibleTree` přidružená vlastnost – `entry.SetValue(AutomationProperties.IsInAccessibleTreeProperty, true);`
+> Všimněte si, že [ `SetValue` ](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object)) metody lze také nastavit `AutomationProperties.IsInAccessibleTree` přidružená vlastnost – `entry.SetValue(AutomationProperties.IsInAccessibleTreeProperty, true);`
 
 <a name="name" />
 
 ## <a name="automationpropertiesname"></a>AutomationProperties.Name
 
-`AutomationProperties.Name` Přidružená vlastnost hodnota by měla být krátký a popisný textový řetězec, který používá čtečky obrazovky oznamujeme elementu. Tato vlastnost musí být nastavená u elementů, které mají význam, který je důležité pro pochopení obsahu nebo interakci s uživatelským rozhraním. Můžete to provést v jazyce XAML následujícím způsobem:
+`AutomationProperties.Name` Hodnotu přidružené vlastnosti by měla být krátký a popisný textový řetězec, který používá čtečky obrazovky oznamujeme elementu. Tuto vlastnost měli nastavit pro prvky, které mají význam, které jsou důležité pro pochopení obsahu nebo interakci s uživatelským rozhraním. To lze provést v XAML následujícím způsobem:
 
 ```xaml
 <ActivityIndicator AutomationProperties.IsInAccessibleTree="true"
                    AutomationProperties.Name="Progress indicator" />
 ```
 
-Případně se může být nastavena v C# následujícím způsobem:
+Případně ho lze nastavit v jazyce C# následujícím způsobem:
 
 ```csharp
 var activityIndicator = new ActivityIndicator();
@@ -88,13 +88,13 @@ AutomationProperties.SetName(activityIndicator, "Progress indicator");
 ```
 
 > [!NOTE]
-> Všimněte si, že [ `SetValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.SetValue/p/Xamarin.Forms.BindableProperty/System.Object/) metody lze také nastavit `AutomationProperties.Name` přidružená vlastnost – `activityIndicator.SetValue(AutomationProperties.NameProperty, "Progress indicator");`
+> Všimněte si, že [ `SetValue` ](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object)) metody lze také nastavit `AutomationProperties.Name` přidružená vlastnost – `activityIndicator.SetValue(AutomationProperties.NameProperty, "Progress indicator");`
 
 <a name="helptext" />
 
 ## <a name="automationpropertieshelptext"></a>AutomationProperties.HelpText
 
-`AutomationProperties.HelpText` Připojené, musí být vlastnost nastavena na hodnotu text, který popisuje element uživatelského rozhraní a může být myšlenku z jako text popisku přidružené elementu. Můžete to provést v jazyce XAML následujícím způsobem:
+`AutomationProperties.HelpText` Připojená vlastnost by měla být nastavena na text, který popisuje prvku uživatelského rozhraní a můžete být myšlenky o jako text popisku spojené s tímto prvkem. To lze provést v XAML následujícím způsobem:
 
 ```xaml
 <Button Text="Toggle ActivityIndicator"
@@ -102,7 +102,7 @@ AutomationProperties.SetName(activityIndicator, "Progress indicator");
         AutomationProperties.HelpText="Tap to toggle the activity indicator" />
 ```
 
-Případně se může být nastavena v C# následujícím způsobem:
+Případně ho lze nastavit v jazyce C# následujícím způsobem:
 
 ```csharp
 var button = new Button { Text = "Toggle ActivityIndicator" };
@@ -111,15 +111,15 @@ AutomationProperties.SetHelpText(button, "Tap to toggle the activity indicator")
 ```
 
 > [!NOTE]
-> Všimněte si, že [ `SetValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.SetValue/p/Xamarin.Forms.BindableProperty/System.Object/) metody lze také nastavit `AutomationProperties.HelpText` přidružená vlastnost – `button.SetValue(AutomationProperties.HelpTextProperty, "Tap to toggle the activity indicator");`
+> Všimněte si, že [ `SetValue` ](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object)) metody lze také nastavit `AutomationProperties.HelpText` přidružená vlastnost – `button.SetValue(AutomationProperties.HelpTextProperty, "Tap to toggle the activity indicator");`
 
-Na některých platformách pro úpravy ovládací prvky jako například [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/), `HelpText` vlastnost někdy může tento parametr vynechán a nahradí zástupný text. Například "zadejte zde název" je vhodným kandidátem [ `Entry.Placeholder` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.Placeholder/) vlastnost, která umístí text v ovládacím prvku před skutečným vstup uživatele.
+Na některých platformách pro úpravy ovládací prvky jako například [ `Entry` ](xref:Xamarin.Forms.Entry), `HelpText` vlastnost někdy můžete vynechat a nahradit zástupný text. Například "zadejte sem patří vaše jméno", je vhodným kandidátem pro [ `Entry.Placeholder` ](xref:Xamarin.Forms.Entry.Placeholder) vlastnost, která umístí text v ovládacím prvku před skutečné vstup uživatele.
 
 <a name="labeledby" />
 
 ## <a name="automationpropertieslabeledby"></a>AutomationProperties.LabeledBy
 
-`AutomationProperties.LabeledBy` Přidružená vlastnost umožňuje jiný element můžete definovat informace o usnadnění pro aktuální element. Například [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) vedle [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) slouží k popište, co `Entry` představuje. Můžete to provést v jazyce XAML následujícím způsobem:
+`AutomationProperties.LabeledBy` Připojená vlastnost umožňuje jiný element k definování informací o usnadnění pro aktuální element. Například [ `Label` ](xref:Xamarin.Forms.Label) vedle [ `Entry` ](xref:Xamarin.Forms.Entry) slouží k popište, co `Entry` představuje. To lze provést v XAML následujícím způsobem:
 
 ```xaml
 <Label x:Name="label" Text="Enter your name: " />
@@ -127,7 +127,7 @@ Na některých platformách pro úpravy ovládací prvky jako například [ `Ent
        AutomationProperties.LabeledBy="{x:Reference label}" />
 ```
 
-Případně se může být nastavena v C# následujícím způsobem:
+Případně ho lze nastavit v jazyce C# následujícím způsobem:
 
 ```csharp
 var nameLabel = new Label { Text = "Enter your name: " };
@@ -137,14 +137,14 @@ AutomationProperties.SetLabeledBy(entry, nameLabel);
 ```
 
 > [!NOTE]
-> Všimněte si, že [ `SetValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.SetValue/p/Xamarin.Forms.BindableProperty/System.Object/) metody lze také nastavit `AutomationProperties.IsInAccessibleTree` přidružená vlastnost – `entry.SetValue(AutomationProperties.LabeledByProperty, nameLabel);`
+> Všimněte si, že [ `SetValue` ](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object)) metody lze také nastavit `AutomationProperties.IsInAccessibleTree` přidružená vlastnost – `entry.SetValue(AutomationProperties.LabeledByProperty, nameLabel);`
 
 ## <a name="summary"></a>Souhrn
 
-Jak nastavit usnadnění hodnoty na uživatelské rozhraní elementy v aplikaci Xamarin.Forms pomocí přidružené vlastnosti z popsané v tomto článku `AutomationProperties` třídy. Tyto připojené vlastnosti nastavené nativní usnadnění hodnoty tak, aby čtečky obrazovky můžete prodiskutovat elementy na stránce.
+Tento článek vysvětlil, jak nastavení hodnot přístupnosti pro uživatele prvky rozhraní aplikace Xamarin.Forms s použitím připojené vlastnosti z `AutomationProperties` třídy. Tyto připojené vlastnosti nastavte nativní usnadnění hodnoty tak, aby se čtečkou obrazovky mohou mluvit o elementy na stránce.
 
 
 ## <a name="related-links"></a>Související odkazy
 
 - [Připojené vlastnosti](~/xamarin-forms/xaml/attached-properties.md)
-- [Usnadnění přístupu (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Accessibility/)
+- [Pro usnadnění (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Accessibility/)

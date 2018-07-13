@@ -1,47 +1,47 @@
 ---
-title: Předávání parametrů účinek jako připojené vlastnosti
-description: Přidružené vlastnosti lze definovat vliv parametry, které reagují na změny v modulu runtime vlastnost. Tento článek ukazuje, pomocí připojené vlastnosti, které chcete předat parametry vliv a změna parametrů běhu.
+title: Předávání parametrů efekt jako připojené vlastnosti
+description: Připojené vlastnosti lze použít k definování parametrů efektu, které reagují na změny vlastností modulu runtime. Tento článek ukazuje, pomocí připojené vlastnosti, které chcete předat parametry efektu a změna parametrů běhu.
 ms.prod: xamarin
 ms.assetid: DFCDCB9F-17DD-4117-BD53-B4FB206BB387
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/05/2016
-ms.openlocfilehash: 2ad27289fb7a4d34b9a951c8132f0147577dfc55
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 9483e424a74a88ce3f0eb49624bb5315551f2062
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847914"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996448"
 ---
-# <a name="passing-effect-parameters-as-attached-properties"></a>Předávání parametrů účinek jako připojené vlastnosti
+# <a name="passing-effect-parameters-as-attached-properties"></a>Předávání parametrů efekt jako připojené vlastnosti
 
-_Přidružené vlastnosti lze definovat vliv parametry, které reagují na změny v modulu runtime vlastnost. Tento článek ukazuje, pomocí připojené vlastnosti, které chcete předat parametry vliv a změna parametrů běhu._
+_Připojené vlastnosti lze použít k definování parametrů efektu, které reagují na změny vlastností modulu runtime. Tento článek ukazuje, pomocí připojené vlastnosti, které chcete předat parametry efektu a změna parametrů běhu._
 
-Proces vytváření vliv parametrů, které reagují na změny v modulu runtime vlastnost vypadá takto:
+Proces vytvoření efektu parametry, které reagovat na změny v modulu runtime vlastnost vypadá takto:
 
-1. Vytvoření `static` třídu, která obsahuje přidružená vlastnost pro každý parametr mají být předány účinek.
-1. Přidejte do třídy, která se použije k řízení přidání nebo odebrání účinek do ovládacího prvku třídy bude připojen k další přidružená vlastnost. Zajistěte, aby to připojen vlastnost Registry `propertyChanged` delegáta, který bude proveden při změně hodnoty vlastnosti.
-1. Vytvoření `static` mechanismy získání a nastavení pro každou přidružená vlastnost.
-1. Implementovat logiku v `propertyChanged` delegáta k přidání a odebrání účinek.
-1. Implementace vnořené třídy uvnitř `static` třídy s názvem po platit, které podtřídy `RoutingEffect` třídy. V konstruktoru volání konstruktoru základní třídy, předávání v zřetězení je název skupiny řešení a jedinečné ID, která byla zadaná v každé třídě vliv specifické pro platformu.
+1. Vytvoření `static` třídu, která obsahuje připojené vlastnosti pro každý parametr má být předán efekt.
+1. Přidejte další připojené vlastnosti do třídy, která se dá používat k ovládání přidání nebo odebrání vliv na ovládací prvek, který třídy bude připojen k. Ujistěte se, že to připojené vlastnosti registrů `propertyChanged` delegáta, který se spustí při změně hodnoty vlastnosti.
+1. Vytvoření `static` metody getter a setter pro jednotlivé připojené vlastnosti.
+1. Implementovat logiku `propertyChanged` delegáta k přidání a odebrání efekt.
+1. Implementace uvnitř vnořené třídy `static` třídu s názvem po efekt, který podtřídy `RoutingEffect` třídy. Pro konstruktor volání konstruktoru základní třídy, předejte zřetězením názvu skupiny řešení a jedinečné ID, který byl zadán v každé třídě efekt specifické pro platformu.
 
-Parametry lze předat pak účinek přidáním přidružené vlastnosti a hodnoty vlastností, do vhodný ovládací prvek. Kromě toho parametry lze za běhu změnit zadáním nové hodnoty přidružená vlastnost.
+Parametry lze předat pak efektu tak, že přidáte připojené vlastnosti a hodnoty vlastností pro příslušný ovládací prvek. Kromě toho nelze změnit parametry běhu tak, že zadáte novou hodnotu přidružené vlastnosti.
 
 > [!NOTE]
-> – Přidružená vlastnost je zvláštní druh vazbu vlastnosti, které jsou definované v jedné třídy ale připojené k ostatním objektům a rozpoznatelném v jazyce XAML jako atributy, které obsahují třídy a název vlastnosti odděleny tečkou. Další informace najdete v tématu [připojené vlastnosti](~/xamarin-forms/xaml/attached-properties.md).
+> Připojená vlastnost je speciální typ s možností vazby vlastnosti definované v jedné třídy ale připojených k jiným objektům a rozpoznat v XAML jako atributy, které obsahují třídy a názvu vlastnosti oddělené tečkou. Další informace najdete v tématu [připojené vlastnosti](~/xamarin-forms/xaml/attached-properties.md).
 
-Představuje ukázkovou aplikaci `ShadowEffect` , přidá stín textu zobrazovaného [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) ovládacího prvku. Kromě toho lze změnit barvu stínu za běhu. Následující diagram znázorňuje odpovědnosti jednotlivých projektů v ukázkové aplikace, spolu s jejich vzájemných vztahů:
+Ukázková aplikace ukazuje `ShadowEffect` , který přidá stínem text, zobrazený [ `Label` ](xref:Xamarin.Forms.Label) ovládacího prvku. Barva stínu lze navíc změnit za běhu. Následující diagram znázorňuje odpovědnosti každý projekt v ukázkové aplikaci, spolu s jejich vzájemné vztahy:
 
-![](attached-properties-images/shadow-effect.png "Stínové vliv projektu odpovědnosti")
+![](attached-properties-images/shadow-effect.png "Stín efekt projektu odpovědnosti")
 
-A [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) řízení na `HomePage` přizpůsobit pomocí `LabelShadowEffect` v každém projektu specifické pro platformu. Parametry jsou předány na každý `LabelShadowEffect` prostřednictvím přidružené vlastnosti v `ShadowEffect` třídy. Každý `LabelShadowEffect` třída odvozená z `PlatformEffect` třídu pro každou platformu. Výsledkem je stínové, který se přidává do textu zobrazovaného `Label` řídit, jak je vidět na následujících snímcích obrazovky:
+A [ `Label` ](xref:Xamarin.Forms.Label) ovládání na `HomePage` je upravena `LabelShadowEffect` v každém projektu pro konkrétní platformu. Parametry jsou předány na všechny `LabelShadowEffect` prostřednictvím připojených vlastností v `ShadowEffect` třídy. Každý `LabelShadowEffect` třída odvozena z `PlatformEffect` třídy pro každou platformu. Výsledkem je stín přidávaný do text, zobrazený `Label` řídit, jak je znázorněno na následujících snímcích obrazovky:
 
-![](attached-properties-images/screenshots.png "Stínové vliv na každou platformu")
+![](attached-properties-images/screenshots.png "Efektem stínování na jednotlivých platformách")
 
-## <a name="creating-effect-parameters"></a>Vytváření vliv parametrů
+## <a name="creating-effect-parameters"></a>Vytvoření efektu parametry
 
-A `static` by měl vytvořit třídu představují vliv parametry, jak je ukázáno v následujícím příkladu kódu:
+A `static` třídy by měl být vytvořen k reprezentování parametrů efekt, jak je ukázáno v následujícím příkladu kódu:
 
 ```csharp
 public static class ShadowEffect
@@ -95,16 +95,16 @@ public static class ShadowEffect
 }
 ```
 
-`ShadowEffect` Obsahuje pět přidružené vlastnosti s `static` mechanismy získání a nastavení pro každou přidružená vlastnost. Čtyři tyto vlastnosti představují parametry, které mají být předány každý specifické pro platformu `LabelShadowEffect`. `ShadowEffect` Třída také definuje `HasShadow` přidružená vlastnost, která se používá k řízení přidání nebo odebrání vliv na ovládací prvek, `ShadowEffect` třída je připojen k. To připojené vlastnost registrů `OnHasShadowChanged` metoda, která bude proveden při změně hodnoty vlastnosti. Tato metoda přidá nebo odebere vliv na základě hodnoty z `HasShadow` přidružená vlastnost.
+`ShadowEffect` Obsahuje pět připojené vlastnosti s `static` metody getter a setter pro jednotlivé připojené vlastnosti. Čtyři z těchto vlastností představují parametry, které se mají předat každou specifické pro platformu `LabelShadowEffect`. `ShadowEffect` Také definuje třídu `HasShadow` připojená vlastnost, která se používá k řízení přidání nebo odebrání vliv na ovládací prvek, který `ShadowEffect` třídy je připojen k. To připojené vlastnosti registrů `OnHasShadowChanged` metodu, která se provede při změně hodnoty vlastnosti. Tato metoda přidá nebo Odebere účinek podle hodnoty `HasShadow` přidružená vlastnost.
 
-Vnořeného `LabelShadowEffect` třídy, které podtřídy [ `RoutingEffect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.RoutingEffect/) třídy, podporuje vliv přidávání a odebírání. `RoutingEffect` Třída reprezentuje vliv nezávislé na platformě, která zabalí vnitřní vliv, který je obvykle specifické pro platformu. Tato funkce zjednodušuje proces odebrání vliv, protože neexistuje žádný kompilaci přístup k informací o typu pro specifické pro platformu vliv. `LabelShadowEffect` Konstruktor volá konstruktor základní třídy, předávání v parametru, který se skládá z zřetězení je název skupiny řešení a jedinečné ID, která byla zadaná v každé třídě vliv specifické pro platformu. To umožňuje vliv přidávání a odebírání v `OnHasShadowChanged` metoda následujícím způsobem:
+Ve vnořeném `LabelShadowEffect` třídy, které podtřídy [ `RoutingEffect` ](xref:Xamarin.Forms.RoutingEffect) třídy, podporuje vliv přidávání a odebírání. `RoutingEffect` Třída reprezentuje efekt nezávislá na platformě, která obaluje vnitřní efekt, který je obvykle specifický pro platformu. Tato funkce zjednodušuje proces odebrání efekt, protože neexistuje žádný kompilace přístup k informace o typu pro konkrétní platformu efekt. `LabelShadowEffect` Konstruktor volá konstruktor základní třídy, která se předá jako parametr skládající se z zřetězením názvu skupiny řešení a jedinečné ID, který byl zadán v každé třídě efekt specifické pro platformu. To umožňuje vliv přidávání a odebírání v `OnHasShadowChanged` metodu následujícím způsobem:
 
-- **Ovlivňuje přidání** – novou instanci třídy `LabelShadowEffect` se přidá do ovládacího prvku [ `Effects` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.Effects/) kolekce. Tím se nahradí pomocí [ `Effect.Resolve` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Effect.Resolve/p/System.String/) metody přidat účinek.
-- **Ovlivňuje odebrání** – první instance `LabelShadowEffect` v ovládacím prvku [ `Effects` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.Effects/) kolekce je načíst a odebrat.
+- **Vliv přidávání** – novou instanci třídy `LabelShadowEffect` se přidá do ovládacího prvku [ `Effects` ](xref:Xamarin.Forms.Element.Effects) kolekce. Tím se nahradí pomocí [ `Effect.Resolve` ](xref:Xamarin.Forms.Effect.Resolve(System.String)) způsob, jak přidat efekt.
+- **Odebrání projeví** – první instance `LabelShadowEffect` v ovládacím prvku [ `Effects` ](xref:Xamarin.Forms.Element.Effects) kolekce je načten a odebrat.
 
-## <a name="consuming-the-effect"></a>Využívání účinek
+## <a name="consuming-the-effect"></a>Použití efektu
 
-Každý specifické pro platformu `LabelShadowEffect` mohou být spotřebovávána přidružené vlastnosti pro přidávání [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) řídit, jak je ukázáno v následujícím příkladu kódu XAML:
+Každý specifické pro platformu `LabelShadowEffect` mohou být spotřebovány přidání připojených vlastností do [ `Label` ](xref:Xamarin.Forms.Label) řídit, jak je ukázáno v následujícím příkladu kódu XAML:
 
 ```xaml
 <Label Text="Label Shadow Effect" ...
@@ -120,7 +120,7 @@ Každý specifické pro platformu `LabelShadowEffect` mohou být spotřebovává
 </Label>
 ```
 
-Ekvivalent [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) v jazyce C# je znázorněno v následujícím příkladu kódu:
+Ekvivalent [ `Label` ](xref:Xamarin.Forms.Label) v jazyce C# je znázorněno v následujícím příkladu kódu:
 
 ```csharp
 var label = new Label {
@@ -149,17 +149,17 @@ ShadowEffect.SetDistanceY (label, 5);
 ShadowEffect.SetColor (label, color));
 ```
 
-Nastavení `ShadowEffect.HasShadow` přidružená vlastnost k `true` provede `ShadowEffect.OnHasShadowChanged` metoda, která přidá nebo odebere `LabelShadowEffect` k [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) ovládacího prvku. V obou příklady kódu `ShadowEffect.Color` přidružená vlastnost poskytuje – hodnoty barev specifické pro platformu. Další informace najdete v tématu [třídu zařízení](~/xamarin-forms/platform/device.md).
+Nastavení `ShadowEffect.HasShadow` připojené vlastnosti `true` provede `ShadowEffect.OnHasShadowChanged` metodu, která přidá nebo odebere `LabelShadowEffect` k [ `Label` ](xref:Xamarin.Forms.Label) ovládacího prvku. V obou příkladech kódu `ShadowEffect.Color` připojené vlastnosti obsahuje hodnoty barvy pro konkrétní platformu. Další informace najdete v tématu [třídu zařízení](~/xamarin-forms/platform/device.md).
 
-Kromě toho [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) umožňuje barvu stínu změnit za běhu. Když `Button` po kliknutí na následující kód změní barvu stínu nastavením `ShadowEffect.Color` přidružená vlastnost:
+Kromě toho [ `Button` ](xref:Xamarin.Forms.Button) umožňuje Barva stínu změnit za běhu. Když `Button` kliknutí na následující kód změní barvu stínu tak, že nastavíte `ShadowEffect.Color` přidružená vlastnost:
 
 ```csharp
 ShadowEffect.SetColor (label, Color.Teal);
 ```
 
-### <a name="consuming-the-effect-with-a-style"></a>Využívání účinek s styl
+### <a name="consuming-the-effect-with-a-style"></a>Použití efektu stylem
 
-Účinky, které mohou být spotřebovávána přidání přidružené vlastnosti do ovládacího prvku mohou být spotřebovávána styl. Následující příklad ukazuje kód XAML *explicitní* styl stínové platit, který lze použít k [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) ovládací prvky:
+Efekty, které mohou být spotřebovány přidání připojených vlastností do ovládacího prvku mohou být spotřebovány stylu. Následující příklad ukazuje kód XAML *explicitní* styl efektem stínování, který lze použít k [ `Label` ](xref:Xamarin.Forms.Label) ovládacích prvků:
 
 ```xaml
 <Style x:Key="ShadowEffectStyle" TargetType="Label">
@@ -172,21 +172,21 @@ ShadowEffect.SetColor (label, Color.Teal);
 </Style>
 ```
 
-[ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) Lze použít pro [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) nastavením jeho [ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/) vlastnost, která má `Style` pomocí `StaticResource`– rozšíření značek, jak je ukázáno v následujícím příkladu kódu:
+[ `Style` ](xref:Xamarin.Forms.Style) Lze použít [ `Label` ](xref:Xamarin.Forms.Label) nastavením jeho [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) vlastnost `Style` instance pomocí `StaticResource`– rozšíření značek, jak je ukázáno v následujícím příkladu kódu:
 
 ```xaml
 <Label Text="Label Shadow Effect" ... Style="{StaticResource ShadowEffectStyle}" />
 ```
 
-Další informace o styly najdete v tématu [styly](~/xamarin-forms/user-interface/styles/index.md).
+Další informace o stylech najdete v tématu [styly](~/xamarin-forms/user-interface/styles/index.md).
 
-## <a name="creating-the-effect-on-each-platform"></a>Vytváření vliv na každou platformu
+## <a name="creating-the-effect-on-each-platform"></a>Vytvoření efektu na jednotlivých platformách
 
-Následující části popisují implementaci specifických pro platformy `LabelShadowEffect` třídy.
+Následující části popisují implementaci specifické pro platformu `LabelShadowEffect` třídy.
 
 ### <a name="ios-project"></a>iOS projektu
 
-Následující příklad kódu ukazuje `LabelShadowEffect` implementace pro projekt pro iOS:
+Následující příklad kódu ukazuje `LabelShadowEffect` implementaci pro projekt pro iOS:
 
 ```csharp
 [assembly:ResolutionGroupName ("MyCompany")]
@@ -231,11 +231,11 @@ namespace EffectsDemo.iOS
     }
 ```
 
-`OnAttached` Metoda volá metody, které k získávání hodnot přidružená vlastnost pomocí `ShadowEffect` metody getter a který nastavení `Control.Layer` vlastnosti hodnot vlastností pro vytvoření stínové kopie. Tato funkce je uzavřen do `try` / `catch` blokovat v případě, že ovládací prvek, který účinek je připojen k nemá `Control.Layer` vlastnosti. Žádné implementace poskytuje `OnDetached` metoda vzhledem k tomu, že je nutné žádné čištění.
+`OnAttached` Metoda volá metody, které načtou hodnoty připojené vlastnosti pomocí `ShadowEffect` metody getter a který nastavení `Control.Layer` vlastnosti a hodnoty vlastností pro vytvoření stínové. Tato funkce není zabalené ve `try` / `catch` blokovat v případě, že ovládací prvek, který se efekt je připojen k nemá `Control.Layer` vlastnosti. Poskytuje implementaci `OnDetached` metoda vzhledem k tomu, že je nezbytné žádné čištění.
 
-#### <a name="responding-to-property-changes"></a>Reakce na změny vlastností
+#### <a name="responding-to-property-changes"></a>Reagování na změny vlastností
 
-Pokud platí jedna z `ShadowEffect` připojené změnu hodnoty vlastnosti za běhu, je nutné vliv reagovat zobrazením změny. Přepsané verzi `OnElementPropertyChanged` metody ve třídě vliv specifických pro platformy je místo, které odpovídají změnám vazbu vlastnosti, jak je ukázáno v následujícím příkladu kódu:
+Pokud je libovolná z `ShadowEffect` připojené změna hodnoty vlastnosti za běhu, potřeba reagovat zobrazením změny vliv. Přepsané verzi `OnElementPropertyChanged` metody ve třídě efekt specifické pro platformu je místem, kde můžete reagovat na změny vázanou vlastnost, jak je ukázáno v následujícím příkladu kódu:
 
 ```csharp
 public class LabelShadowEffect : PlatformEffect
@@ -256,11 +256,11 @@ public class LabelShadowEffect : PlatformEffect
 }
 ```
 
-`OnElementPropertyChanged` Metoda aktualizace radius, barvu nebo posun stínu, za předpokladu, že odpovídající `ShadowEffect` přidružená vlastnost hodnota změněna. Kontrolu pro vlastnost, která se změnila měli vždy provedena, protože toto přepsání lze volat vícekrát.
+`OnElementPropertyChanged` Metoda aktualizuje radius, barvy a posun stínu, za předpokladu, že odpovídající `ShadowEffect` hodnota připojené vlastnosti se změnila. Kontrola změněná vlastnost by měla vždy provedena, protože toto přepsání je možné vyvolat v mnoha případech.
 
 ### <a name="android-project"></a>Projekt pro Android
 
-Následující příklad kódu ukazuje `LabelShadowEffect` implementace pro projekt Android:
+Následující příklad kódu ukazuje `LabelShadowEffect` implementaci pro projekt pro Android:
 
 ```csharp
 [assembly:ResolutionGroupName ("MyCompany")]
@@ -316,11 +316,11 @@ namespace EffectsDemo.Droid
     }
 ```
 
-`OnAttached` Metoda volá metody, které k získávání hodnot přidružená vlastnost pomocí `ShadowEffect` metod getter a volá metodu, která volá [ `TextView.SetShadowLayer` ](https://developer.xamarin.com/api/member/Android.Widget.TextView.SetShadowLayer/p/System.Single/System.Single/System.Single/Android.Graphics.Color/) metodu pro vytvoření stín pomocí hodnoty vlastností. Tato funkce je uzavřen do `try` / `catch` blokovat v případě, že ovládací prvek, který účinek je připojen k nemá `Control.Layer` vlastnosti. Žádné implementace poskytuje `OnDetached` metoda vzhledem k tomu, že je nutné žádné čištění.
+`OnAttached` Metoda volá metody, které načtou hodnoty připojené vlastnosti pomocí `ShadowEffect` metody getter a volá metodu, která volá [ `TextView.SetShadowLayer` ](https://developer.xamarin.com/api/member/Android.Widget.TextView.SetShadowLayer/p/System.Single/System.Single/System.Single/Android.Graphics.Color/) metodu pro vytvoření stínové pomocí hodnot vlastností. Tato funkce není zabalené ve `try` / `catch` blokovat v případě, že ovládací prvek, který se efekt je připojen k nemá `Control.Layer` vlastnosti. Poskytuje implementaci `OnDetached` metoda vzhledem k tomu, že je nezbytné žádné čištění.
 
-#### <a name="responding-to-property-changes"></a>Reakce na změny vlastností
+#### <a name="responding-to-property-changes"></a>Reagování na změny vlastností
 
-Pokud platí jedna z `ShadowEffect` připojené změnu hodnoty vlastnosti za běhu, je nutné vliv reagovat zobrazením změny. Přepsané verzi `OnElementPropertyChanged` metody ve třídě vliv specifických pro platformy je místo, které odpovídají změnám vazbu vlastnosti, jak je ukázáno v následujícím příkladu kódu:
+Pokud je libovolná z `ShadowEffect` připojené změna hodnoty vlastnosti za běhu, potřeba reagovat zobrazením změny vliv. Přepsané verzi `OnElementPropertyChanged` metody ve třídě efekt specifické pro platformu je místem, kde můžete reagovat na změny vázanou vlastnost, jak je ukázáno v následujícím příkladu kódu:
 
 ```csharp
 public class LabelShadowEffect : PlatformEffect
@@ -344,11 +344,11 @@ public class LabelShadowEffect : PlatformEffect
 }
 ```
 
-`OnElementPropertyChanged` Metoda aktualizace radius, barvu nebo posun stínu, za předpokladu, že odpovídající `ShadowEffect` přidružená vlastnost hodnota změněna. Kontrolu pro vlastnost, která se změnila měli vždy provedena, protože toto přepsání lze volat vícekrát.
+`OnElementPropertyChanged` Metoda aktualizuje radius, barvy a posun stínu, za předpokladu, že odpovídající `ShadowEffect` hodnota připojené vlastnosti se změnila. Kontrola změněná vlastnost by měla vždy provedena, protože toto přepsání je možné vyvolat v mnoha případech.
 
-### <a name="universal-windows-platform-project"></a>Univerzální platforma projekt pro Windows
+### <a name="universal-windows-platform-project"></a>Projekt Universal Windows Platform
 
-Následující příklad kódu ukazuje `LabelShadowEffect` implementace pro projekt univerzální platformu Windows (UWP):
+Následující příklad kódu ukazuje `LabelShadowEffect` implementaci pro univerzální platformu Windows (UPW) projektu:
 
 ```csharp
 [assembly: ResolutionGroupName ("MyCompany")]
@@ -402,11 +402,11 @@ namespace EffectsDemo.UWP
 }
 ```
 
-Univerzální platformu Windows neposkytuje stínové platit a proto `LabelShadowEffect` implementace na obou platformách simuluje jeden přidáním druhý posun [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) za primární `Label`. `OnAttached` Metoda vytvoří nový `Label` a nastaví některé vlastnosti rozložení `Label`. Potom volá metody, které načíst hodnoty přidružená vlastnost pomocí `ShadowEffect` metod getter a vytvoří stín nastavením [ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.TextColor/), [ `TranslationX` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationX/)a [ `TranslationY` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationY/) vlastnosti pro řízení barvy a umístění `Label`. `shadowLabel` Se pak vloží posun za primární `Label`. Tato funkce je uzavřen do `try` / `catch` blokovat v případě, že ovládací prvek, který účinek je připojen k nemá `Control.Layer` vlastnosti. Žádné implementace poskytuje `OnDetached` metoda vzhledem k tomu, že je nutné žádné čištění.
+Univerzální platforma Windows neposkytuje efektem stínování a proto `LabelShadowEffect` implementaci na obě platformy simuluje jeden tak, že přidáte druhý posun [ `Label` ](xref:Xamarin.Forms.Label) za primární `Label`. `OnAttached` Metoda vytvoří nový `Label` a některé vlastnosti rozložení nastaví `Label`. Potom volá metody, které načtou hodnoty připojené vlastnosti pomocí `ShadowEffect` metody getter a vytvoří stínu tak, že nastavíte [ `TextColor` ](xref:Xamarin.Forms.Label.TextColor), [ `TranslationX` ](xref:Xamarin.Forms.VisualElement.TranslationX)a [ `TranslationY` ](xref:Xamarin.Forms.VisualElement.TranslationY) vlastností do ovládacího prvku, barvu a umístění `Label`. `shadowLabel` Potom vložen posun za primární `Label`. Tato funkce není zabalené ve `try` / `catch` blokovat v případě, že ovládací prvek, který se efekt je připojen k nemá `Control.Layer` vlastnosti. Poskytuje implementaci `OnDetached` metoda vzhledem k tomu, že je nezbytné žádné čištění.
 
-#### <a name="responding-to-property-changes"></a>Reakce na změny vlastností
+#### <a name="responding-to-property-changes"></a>Reagování na změny vlastností
 
-Pokud platí jedna z `ShadowEffect` připojené změnu hodnoty vlastnosti za běhu, je nutné vliv reagovat zobrazením změny. Přepsané verzi `OnElementPropertyChanged` metody ve třídě vliv specifických pro platformy je místo, které odpovídají změnám vazbu vlastnosti, jak je ukázáno v následujícím příkladu kódu:
+Pokud je libovolná z `ShadowEffect` připojené změna hodnoty vlastnosti za běhu, potřeba reagovat zobrazením změny vliv. Přepsané verzi `OnElementPropertyChanged` metody ve třídě efekt specifické pro platformu je místem, kde můžete reagovat na změny vázanou vlastnost, jak je ukázáno v následujícím příkladu kódu:
 
 ```csharp
 public class LabelShadowEffect : PlatformEffect
@@ -425,17 +425,17 @@ public class LabelShadowEffect : PlatformEffect
 }
 ```
 
-`OnElementPropertyChanged` Metoda aktualizace barvu nebo posun stínu, za předpokladu, že odpovídající `ShadowEffect` přidružená vlastnost hodnota změněna. Kontrolu pro vlastnost, která se změnila měli vždy provedena, protože toto přepsání lze volat vícekrát.
+`OnElementPropertyChanged` Metoda aktualizuje barvu nebo posun stínu, za předpokladu, že odpovídající `ShadowEffect` hodnota připojené vlastnosti se změnila. Kontrola změněná vlastnost by měla vždy provedena, protože toto přepsání je možné vyvolat v mnoha případech.
 
 ## <a name="summary"></a>Souhrn
 
-Tento článek vám ukázal, pomocí připojené vlastnosti, které chcete předat parametry vliv a změna parametrů běhu. Přidružené vlastnosti lze definovat vliv parametry, které reagují na změny v modulu runtime vlastnost.
+Tento článek vám ukázal, pomocí připojené vlastnosti, které chcete předat parametry efektu a změna parametrů běhu. Připojené vlastnosti lze použít k definování parametrů efektu, které reagují na změny vlastností modulu runtime.
 
 
 ## <a name="related-links"></a>Související odkazy
 
 - [Vlastní renderery](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)
-- [Platnost](https://developer.xamarin.com/api/type/Xamarin.Forms.Effect/)
-- [PlatformEffect](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformEffect%3CTContainer,TControl%3E/)
-- [RoutingEffect](https://developer.xamarin.com/api/type/Xamarin.Forms.RoutingEffect/)
-- [Efekt stínu (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/effects/shadoweffectruntimechange/)
+- [Efekt](xref:Xamarin.Forms.Effect)
+- [PlatformEffect](xref:Xamarin.Forms.PlatformEffect`2)
+- [RoutingEffect](xref:Xamarin.Forms.RoutingEffect)
+- [Efektem stínování (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/effects/shadoweffectruntimechange/)

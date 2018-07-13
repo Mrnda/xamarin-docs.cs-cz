@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/24/2016
-ms.openlocfilehash: 4afdf1210a435e4631b1fe43e9415f4f9f599350
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: b7ea75c13d84cf9fe74d7a606f6127aaa6bbe3b2
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935488"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996331"
 ---
 # <a name="native-views-in-xaml"></a>Nativní zobrazení v XAML
 
@@ -44,7 +44,7 @@ Nativní zobrazení odkazovat ze souboru kódu na pozadí, musí používat sdí
 
 ## <a name="consuming-native-views"></a>Využívání nativní zobrazení
 
-Následující příklad kódu ukazuje použití nativní zobrazení pro jednotlivé platformy Xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/):
+Následující příklad kódu ukazuje použití nativní zobrazení pro jednotlivé platformy Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage):
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -63,11 +63,11 @@ Následující příklad kódu ukazuje použití nativní zobrazení pro jednotl
 </ContentPage>
 ```
 
-Stejně tak `clr-namespace` a `assembly` pro obor názvů nativní zobrazení `targetPlatform` musí být také zadána. Toto musí být nastavena na jednu z hodnot [ `TargetPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TargetPlatform/) výčtu a bude obvykle nastavena na `iOS`, `Android`, nebo `Windows`. V době běhu analyzátoru XAML bude ignorovat všechny předpony oboru názvů XML, které mají `targetPlatform` zadané informace neodpovídají platformy, na kterém je aplikace spuštěna.
+Stejně tak `clr-namespace` a `assembly` pro obor názvů nativní zobrazení `targetPlatform` musí být také zadána. Toto musí být nastavena na jednu z hodnot [ `TargetPlatform` ](xref:Xamarin.Forms.TargetPlatform) výčtu a bude obvykle nastavena na `iOS`, `Android`, nebo `Windows`. V době běhu analyzátoru XAML bude ignorovat všechny předpony oboru názvů XML, které mají `targetPlatform` zadané informace neodpovídají platformy, na kterém je aplikace spuštěna.
 
 Každou deklaraci oboru názvů můžete slouží k odkazování libovolné třídy nebo struktury z určený obor názvů. Například `ios` deklarace oboru názvů lze použít k odkazování libovolné třídy nebo struktury z iOS `UIKit` oboru názvů. Vlastnosti nativní zobrazení lze nastavit pomocí XAML, ale typy vlastností a objekt se musí shodovat. Například `UILabel.TextColor` je nastavena na `UIColor.Red` pomocí `x:Static` – rozšíření značek a `ios` oboru názvů.
 
-Vlastnosti umožňující vazbu a s možností vazby připojené vlastnosti můžete také nastavit na nativní zobrazení pomocí `Class.BindableProperty="value"` syntaxe. Každé nativní zobrazení je zabalena v konkrétní platformy `NativeViewWrapper` instanci, která je odvozena z [ `Xamarin.Forms.View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) třídy. Hodnota vlastnosti nastavení vázanou vlastnost nebo připojená vlastnost umožňujících vazbu na nativní zobrazení přenese na obálku. Například zaměřena na vodorovné rozložení se dá nastavit tak, že nastavíte `View.HorizontalOptions="Center"` pro nativní zobrazení.
+Vlastnosti umožňující vazbu a s možností vazby připojené vlastnosti můžete také nastavit na nativní zobrazení pomocí `Class.BindableProperty="value"` syntaxe. Každé nativní zobrazení je zabalena v konkrétní platformy `NativeViewWrapper` instanci, která je odvozena z [ `Xamarin.Forms.View` ](xref:Xamarin.Forms.View) třídy. Hodnota vlastnosti nastavení vázanou vlastnost nebo připojená vlastnost umožňujících vazbu na nativní zobrazení přenese na obálku. Například zaměřena na vodorovné rozložení se dá nastavit tak, že nastavíte `View.HorizontalOptions="Center"` pro nativní zobrazení.
 
 > [!NOTE]
 > Mějte na paměti, že styly nelze použít s nativní zobrazení, protože styly mohou cílit pouze vlastnosti, které se zálohují na `BindableProperty` objekty.
@@ -113,14 +113,14 @@ Vlastnosti nativní zobrazení lze také použít datovou vazbu. Následující 
 
 ```
 
-Tato stránka obsahuje [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) jehož [ `IsEnabled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsEnabled/) vytvoří vazbu vlastnosti `NativeSwitchPageViewModel.IsSwitchOn` vlastnost. [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) Stránky se nastaví na novou instanci třídy `NativeSwitchPageViewModel` třída v souboru kódu na pozadí pomocí implementace tříd ViewModel `INotifyPropertyChanged` rozhraní.
+Tato stránka obsahuje [ `Entry` ](xref:Xamarin.Forms.Entry) jehož [ `IsEnabled` ](xref:Xamarin.Forms.VisualElement.IsEnabled) vytvoří vazbu vlastnosti `NativeSwitchPageViewModel.IsSwitchOn` vlastnost. [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) Stránky se nastaví na novou instanci třídy `NativeSwitchPageViewModel` třída v souboru kódu na pozadí pomocí implementace tříd ViewModel `INotifyPropertyChanged` rozhraní.
 
 Stránka také obsahuje nativní přepínače pro každou platformu. Každý přepínač nativní používá [ `TwoWay` ](xref:Xamarin.Forms.BindingMode.TwoWay) vazba pro aktualizaci hodnoty `NativeSwitchPageViewModel.IsSwitchOn` vlastnost. Proto pokud přepínač vypnutý, `Entry` je zakázané, a když přepínač je zapnutý, `Entry` je povolená. Na následujících snímcích obrazovky zobrazit tuto funkci na jednotlivých platformách:
 
 ![](xaml-images/native-switch-disabled.png "Zakázané nativního přepínacího")
 ![](xaml-images/native-switch-enabled.png "nativního přepínacího povoleno")
 
-Obousměrné vazby jsou automaticky dostupná za předpokladu, že implementuje vlastnost nativní `INotifyPropertyChanged`, podporuje sledování klíč-hodnota (KVO) v systému iOS nebo je `DependencyProperty` na UPW. Mnoho nativní zobrazení však nepodporují oznámení změn vlastností. Tato zobrazení můžete zadat [ `UpdateSourceEventName` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Binding.UpdateSourceEventName/) hodnota vlastnosti jako součást vazbový výraz. Tuto vlastnost měli nastavit název události v nativní zobrazení, která signalizuje, že je změněna vlastnost target. Poté, kdy hodnoty nativního přepínacího změní, `Binding` třídy zasláno oznámení, že uživatel změnil hodnotu přepínače a `NativeSwitchPageViewModel.IsSwitchOn` aktualizovat hodnotu vlastnosti.
+Obousměrné vazby jsou automaticky dostupná za předpokladu, že implementuje vlastnost nativní `INotifyPropertyChanged`, podporuje sledování klíč-hodnota (KVO) v systému iOS nebo je `DependencyProperty` na UPW. Mnoho nativní zobrazení však nepodporují oznámení změn vlastností. Tato zobrazení můžete zadat [ `UpdateSourceEventName` ](xref:Xamarin.Forms.Binding.UpdateSourceEventName) hodnota vlastnosti jako součást vazbový výraz. Tuto vlastnost měli nastavit název události v nativní zobrazení, která signalizuje, že je změněna vlastnost target. Poté, kdy hodnoty nativního přepínacího změní, `Binding` třídy zasláno oznámení, že uživatel změnil hodnotu přepínače a `NativeSwitchPageViewModel.IsSwitchOn` aktualizovat hodnotu vlastnosti.
 
 <a name="passing_arguments" />
 
@@ -199,12 +199,12 @@ Další informace o předávání argumentů v XAML najdete v tématu [Passing A
 
 ## <a name="referring-to-native-views-from-code"></a>Odkaz na nativní zobrazení z kódu
 
-I když není možné nativní zobrazení s názvem `x:Name` atribut, je možné načíst nativní zobrazení instance deklarované v souboru XAML z jeho použití modelu code-behind soubor v projektu sdíleného přístupu, za předpokladu, že nativní zobrazení je podřízeným prvkem [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/) , který určuje `x:Name` hodnotu atributu. Potom uvnitř direktivy podmíněné kompilace v souboru kódu byste měli:
+I když není možné nativní zobrazení s názvem `x:Name` atribut, je možné načíst nativní zobrazení instance deklarované v souboru XAML z jeho použití modelu code-behind soubor v projektu sdíleného přístupu, za předpokladu, že nativní zobrazení je podřízeným prvkem [ `ContentView` ](xref:Xamarin.Forms.ContentView) , který určuje `x:Name` hodnotu atributu. Potom uvnitř direktivy podmíněné kompilace v souboru kódu byste měli:
 
-1. Načíst [ `ContentView.Content` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ContentView.Content/) vlastnost hodnoty a přetypování na konkrétní platformu `NativeViewWrapper` typu.
+1. Načíst [ `ContentView.Content` ](xref:Xamarin.Forms.ContentView.Content) vlastnost hodnoty a přetypování na konkrétní platformu `NativeViewWrapper` typu.
 1. Načíst `NativeViewWrapper.NativeElement` vlastnost a přetypovat na typ nativní zobrazení.
 
-Nativní rozhraní API lze poté vyvolat pro nativní zobrazení k provedení požadované operace. Tento přístup také nabízí výhodu, že více nativní zobrazení XAML pro různé platformy může být podřízené prvky stejného [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/). Následující příklad kódu ukazuje tento postup:
+Nativní rozhraní API lze poté vyvolat pro nativní zobrazení k provedení požadované operace. Tento přístup také nabízí výhodu, že více nativní zobrazení XAML pro různé platformy může být podřízené prvky stejného [ `ContentView` ](xref:Xamarin.Forms.ContentView). Následující příklad kódu ukazuje tento postup:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -234,7 +234,7 @@ Nativní rozhraní API lze poté vyvolat pro nativní zobrazení k provedení po
 </ContentPage>
 ```
 
-Nativní zobrazení pro každou platformu v předchozím příkladu jsou podřízené [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/) ovládací prvky, se `x:Name` hodnota atributu se používá k načtení `ContentView` v modelu code-behind:
+Nativní zobrazení pro každou platformu v předchozím příkladu jsou podřízené [ `ContentView` ](xref:Xamarin.Forms.ContentView) ovládací prvky, se `x:Name` hodnota atributu se používá k načtení `ContentView` v modelu code-behind:
 
 ```csharp
 public partial class NativeViewInsideContentViewPage : ContentPage
@@ -276,9 +276,9 @@ public partial class NativeViewInsideContentViewPage : ContentPage
 }
 ```
 
-[ `ContentView.Content` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ContentView.Content/) Načíst zabalené nativní zobrazit jako konkrétní platformy získat přístup k vlastnosti `NativeViewWrapper` instance. `NativeViewWrapper.NativeElement` Vlastnost se pak přistupuje k načtení zobrazení nativní jako jeho nativního typu. Nativní zobrazení rozhraní API potom je volána k provedení požadované operace.
+[ `ContentView.Content` ](xref:Xamarin.Forms.ContentView.Content) Načíst zabalené nativní zobrazit jako konkrétní platformy získat přístup k vlastnosti `NativeViewWrapper` instance. `NativeViewWrapper.NativeElement` Vlastnost se pak přistupuje k načtení zobrazení nativní jako jeho nativního typu. Nativní zobrazení rozhraní API potom je volána k provedení požadované operace.
 
-IOS a Android native tlačítka sdílet stejný `OnButtonTap` obslužná rutina události, protože každé nativní tlačítko využívá `EventHandler` delegování v reakci na události dotykové ovládání. Ale univerzální platformu Windows (UPW) používá samostatné `RoutedEventHandler`, která zase využívá `OnButtonTap` obslužné rutiny události v tomto příkladu. Proto, když nativní kliknutí na tlačítko, `OnButtonTap` spustí obslužnou rutinu události, který půjde škálovat a otočí nativní ovládací prvek obsažený v rámci [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/) s názvem `contentViewTextParent`. Na následujících snímcích obrazovky ukazují, dochází na jednotlivých platformách:
+IOS a Android native tlačítka sdílet stejný `OnButtonTap` obslužná rutina události, protože každé nativní tlačítko využívá `EventHandler` delegování v reakci na události dotykové ovládání. Ale univerzální platformu Windows (UPW) používá samostatné `RoutedEventHandler`, která zase využívá `OnButtonTap` obslužné rutiny události v tomto příkladu. Proto, když nativní kliknutí na tlačítko, `OnButtonTap` spustí obslužnou rutinu události, který půjde škálovat a otočí nativní ovládací prvek obsažený v rámci [ `ContentView` ](xref:Xamarin.Forms.ContentView) s názvem `contentViewTextParent`. Na následujících snímcích obrazovky ukazují, dochází na jednotlivých platformách:
 
 ![](xaml-images/contentview.png "ContentView obsahující nativní ovládací prvek")
 
@@ -319,7 +319,7 @@ Následující příklad kódu ukazuje, že stránka Xamarin.Forms, která využ
 </ContentPage>
 ```
 
-Tato stránka obsahuje [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) , který zobrazí ovoce výběru uživatelem z nativního ovládacího prvku. `Label` Vytvoří vazbu `SubclassedNativeControlsPageViewModel.SelectedFruit` vlastnost. [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) Stránky se nastaví na novou instanci třídy `SubclassedNativeControlsPageViewModel` třída v souboru kódu na pozadí pomocí implementace tříd ViewModel `INotifyPropertyChanged` rozhraní.
+Tato stránka obsahuje [ `Label` ](xref:Xamarin.Forms.Label) , který zobrazí ovoce výběru uživatelem z nativního ovládacího prvku. `Label` Vytvoří vazbu `SubclassedNativeControlsPageViewModel.SelectedFruit` vlastnost. [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) Stránky se nastaví na novou instanci třídy `SubclassedNativeControlsPageViewModel` třída v souboru kódu na pozadí pomocí implementace tříd ViewModel `INotifyPropertyChanged` rozhraní.
 
 Stránka také obsahuje nativní výběr zobrazení pro každou platformu. Každé nativní zobrazení zobrazuje kolekci ovoce vazbou jeho `ItemSource` vlastnost `SubclassedNativeControlsPageViewModel.Fruits` kolekce. Umožňuje uživateli vybrat ovoce, jak je znázorněno na následujících snímcích obrazovky:
 

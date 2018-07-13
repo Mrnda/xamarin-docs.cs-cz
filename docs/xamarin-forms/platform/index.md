@@ -1,71 +1,71 @@
 ---
-title: Funkce platformě Xamarin.Forms
-description: Tato příručka vysvětluje, jak chcete využít výhod funkce specifické pro platformu v aplikacích Xamarin.Forms pomocí řady různých způsobů.
+title: Funkce platformy Xamarin.Forms
+description: Tato příručka vysvětluje, jak využít výhod funkce specifické pro platformu v aplikacích Xamarin.Forms pomocí různých technik.
 ms.prod: xamarin
 ms.assetid: 2C6CE42C-E380-4BB9-90CC-D0F4E60C4C03
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2018
-ms.openlocfilehash: 2e8eb19411799e7723be338e9e3f6df35058eb8c
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 9bac53f71178ac321dea162d346295556a8f7adb
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35242797"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998749"
 ---
-# <a name="xamarinforms-platform-features"></a>Funkce platformě Xamarin.Forms
+# <a name="xamarinforms-platform-features"></a>Funkce platformy Xamarin.Forms
 
-Xamarin.Forms rozšiřitelný a umožňuje vám začlenění specifické pro platformu funkcí s použitím [důsledky](~/xamarin-forms/app-fundamentals/effects/index.md), [vlastní nástroji pro vykreslování](~/xamarin-forms/app-fundamentals/custom-renderer/index.md), [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md), [MessagingCenter](~/xamarin-forms/app-fundamentals/messaging-center.md)a další.
+Xamarin.Forms je rozšiřitelný a umožňuje zahrnovat funkcemi konkrétní platformy pomocí [účinky](~/xamarin-forms/app-fundamentals/effects/index.md), [vlastní renderery](~/xamarin-forms/app-fundamentals/custom-renderer/index.md), [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md), [MessagingCenter](~/xamarin-forms/app-fundamentals/messaging-center.md)a provádění dalších akcí.
 
 ## <a name="androidandroidindexmd"></a>[Android](android/index.md)
 
-Tato příručka popisuje, jak k implementaci návrhu materiálu při aktualizaci existující aplikace Xamarin.Forms Android.
+Tato příručka popisuje, jak implementovat Material Design prostřednictvím aktualizace existujících aplikací Xamarin.Forms s Androidem.
 
 ## <a name="application-indexing-and-deep-linkingdeep-linkingmd"></a>[Indexování aplikací a přímé odkazování](deep-linking.md)
 
-Indexování aplikace umožňuje aplikacím, které by jinak zapomenete po pár používá zůstane relevantní, ve které jsou uvedeny ve výsledcích hledání. Přímé propojení umožňuje aplikacím reagovat na výsledek hledání, který obsahuje data aplikací, obvykle tak, že přejdete na stránku na něj odkazovat z přímý odkaz.
+Indexování aplikací umožňuje aplikacím, které by jinak budou vymazány po pár používá udržujte podle zobrazování ve výsledcích hledání. Přímé odkazování umožňuje aplikacím reakce na výsledky hledání, který obsahuje data aplikací, obvykle tak, že přejdete na stránku na něj odkazovat z přímý odkaz.
 
 ## <a name="device-classdevicemd"></a>[Třída zařízení](device.md)
 
-Postup použití `Device` třídy za účelem vytvoření specifické pro platformu chování v sdíleného kódu a uživatelského rozhraní (včetně pomocí XAML). Platí i pro `BeginInvokeOnMainThread` které je nezbytné při úpravě ovládacích prvků uživatelského rozhraní z vlákna na pozadí.
+Jak používat `Device` třídy za účelem vytvoření chování specifické pro platformu v sdílenému kódu a uživatelského rozhraní (včetně pomocí XAML). Věnuje se také `BeginInvokeOnMainThread` což je důležité při úpravě ovládacích prvků uživatelského rozhraní z vlákna na pozadí.
 
 ## <a name="iosiosindexmd"></a>[iOS](ios/index.md)
 
-Některé stylů iOS je možné provádět prostřednictvím **Info.plist** a `UIAppearance` rozhraní API. Tato příručka obsahuje příklady, jak se zahrnuje do aplikace pro iOS řešení Xamarin.Forms, včetně vyhledávání Spotlight základní funkce iOS 9.
+Některé stylování iOS je možné provádět prostřednictvím **Info.plist** a `UIAppearance` rozhraní API. Tato příručka obsahuje příklady toho, jak zahrnout do aplikace pro iOS řešení Xamarin.Forms, včetně vyhledávání Spotlight základní funkce iOS 9.
 
 ## <a name="gtkgtkmd"></a>[GTK](gtk.md)
 
-Xamarin.Forms má nyní preview podporuje GTK # aplikace.
+Xamarin.Forms teď nabízí podporu verze preview pro GTK # aplikace.
 
 ## <a name="macmacmd"></a>[Mac](mac.md)
 
-Xamarin.Forms má nyní preview podporu pro aplikace systému macOS.
+Xamarin.Forms teď nabízí podporu verze preview pro aplikace pro macOS.
 
 ## <a name="native-formsnative-formsmd"></a>[Nativní formuláře](native-forms.md)
 
-Nativní formuláře umožňují Xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-odvozené stránky, které se spotřebovávají nativní projekty Xamarin.iOS, Xamarin.Android a univerzální platformu Windows (UWP).
+Nativní formuláře umožňují Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-odvozené stránky, které využívat nativní projekty Xamarin.iOS, Xamarin.Android a univerzální platformu Windows (UPW).
 
 ## <a name="native-viewsnative-viewsindexmd"></a>[Nativní zobrazení](native-views/index.md)
 
-Nativní zobrazení z iOS, Android a univerzální platformu Windows můžete přímo na něj odkazovat z Xamarin.Forms. Vlastnosti a obslužné rutiny událostí můžete nastavit na nativní zobrazení, a mohou komunikovat s Xamarin.Forms zobrazení.
+Nativní zobrazení v iOS, Android a univerzální platformu Windows můžete přímo odkazovanými z Xamarin.Forms. Vlastnosti a obslužných rutin událostí můžete nastavit na nativní zobrazení, a může komunikovat s Xamarin.Forms zobrazení.
 
-## <a name="platform-specificsplatform-specificsindexmd"></a>[Platforma – podrobnosti](platform-specifics/index.md)
+## <a name="platform-specificsplatform-specificsindexmd"></a>[Specifika platforem](platform-specifics/index.md)
 
-Platforma specifika umožňují využívat funkce, která je dostupná pouze na konkrétní platformu, aniž byste museli vlastní nástroji pro vykreslování nebo účinky.
+Specifika platforem umožňují používat funkce, která je dostupná jenom na konkrétní platformě, aniž by bylo nutné vlastní renderery nebo účinky.
 
 ## <a name="pluginspluginsmd"></a>[Moduly plug-in](plugins.md)
 
-Nejsou k dispozici na Githubu, Nuget a úložišti součástí Xamarin pomáhají prodloužit Xamarin.Forms aplikace širokou škálu open-source moduly plug-in.
+Nejsou k dispozici na Githubu, Nuget a Store komponenty Xamarin pomáhají rozšířit u aplikací Xamarin.Forms širokou škálu open source moduly plug-in.
 
-## <a name="tizentizenmd"></a>[tizen](tizen.md)
+## <a name="tizentizenmd"></a>[Tizen](tizen.md)
 
-Tizen .NET umožňuje vytvářet aplikace .NET s Xamarin.Forms a Tizen .NET framework.
+Tizen .NET umožňuje vytvářet aplikace .NET pomocí Xamarin.Forms a Tizen .NET framework.
 
 ## <a name="windowswindowsindexmd"></a>[Windows](windows/index.md)
 
-Xamarin.Forms obsahuje podporu pro univerzální platformu Windows (UWP) ve Windows 10. Tento článek popisuje, jak přidat projektu UPW do existujícího řešení Xamarin.Forms.
+Xamarin.Forms obsahuje podporu pro univerzální platformu Windows (UPW) na Windows 10. Tento článek popisuje, jak přidat projektu UPW do existujícího řešení Xamarin.Forms.
 
 ## <a name="wpfwpfmd"></a>[WPF](wpf.md)
 
-Xamarin.Forms má nyní preview podporu pro aplikace Windows Presentation Foundation (WPF).
+Xamarin.Forms teď nabízí podporu verze preview pro aplikace Windows Presentation Foundation (WPF).

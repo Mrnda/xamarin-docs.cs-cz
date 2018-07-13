@@ -7,32 +7,32 @@ ms.assetid: D1D348F2-6A44-4781-ADCE-A0B7BB9AEF89
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 9c7fd87579d0c35c9efe31edf5c25b8ed8f40658
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: 148388b80137bd335bbb977ea230726da1f4a32d
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935395"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995882"
 ---
 # <a name="summary-of-chapter-25-page-varieties"></a>Souhrn kapitoly 25. Variace stránek
 
 Zatím jste se seznámili dvě třídy, které jsou odvozeny z `Page`: `ContentPage` a `NavigationPage`. Tato kapitola představuje dvěma dalšími:
 
-- [`MasterDetailPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) spravuje dvě stránky předlohy a podrobností
-- [`TabbedPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/) spravuje více podřízené stránky přístupné prostřednictvím karet
+- [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) spravuje dvě stránky předlohy a podrobností
+- [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) spravuje více podřízené stránky přístupné prostřednictvím karet
 
 Tyto stránky typy poskytují sofistikovanější Možnosti navigačního než `NavagationPage` podrobněji [kapitoly 24. Navigační stránka](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter24.md).
 
 ## <a name="master-and-detail"></a>Seznam a podrobnosti
 
-[ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) Definuje dvě vlastnosti typu `Page`: [ `Master` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Master/) a [ `Detail` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.Detail/). Obecně je každá z těchto vlastností lze nastavit `ContentPage`. `MasterDetailPage` Zobrazí a přepne mezi těmito dvěma stránkami.
+[ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) Definuje dvě vlastnosti typu `Page`: [ `Master` ](xref:Xamarin.Forms.MasterDetailPage.Master) a [ `Detail` ](xref:Xamarin.Forms.MasterDetailPage.Detail). Obecně je každá z těchto vlastností lze nastavit `ContentPage`. `MasterDetailPage` Zobrazí a přepne mezi těmito dvěma stránkami.
 
 Existují dva základní způsoby, jak přepínat mezi těmito dvěma stránkami:
 
 - *Rozdělit* kde seznam a podrobnosti se vedle sebe
 - *popover* kde stránce s podrobnostmi pokrývá nebo částečně pokrývá hlavní stránky
 
-Existuje několik variant *popover* přístup (*snímku*, *překrývat*, a *prohození*), ale toto jsou obecně platformy závislé. Můžete nastavit [ `MasterDetailBehavior` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.MasterBehavior/) vlastnost `MasterDetailPage` členovi [ `MasterBehavior` ](xref:Xamarin.Forms.MasterBehavior) výčtu:
+Existuje několik variant *popover* přístup (*snímku*, *překrývat*, a *prohození*), ale toto jsou obecně platformy závislé. Můžete nastavit [ `MasterDetailBehavior` ](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) vlastnost `MasterDetailPage` členovi [ `MasterBehavior` ](xref:Xamarin.Forms.MasterBehavior) výčtu:
 
 - [`Default`](xref:Xamarin.Forms.MasterBehavior.Default)
 - [`Split`](xref:Xamarin.Forms.MasterBehavior.Split)
@@ -54,7 +54,7 @@ Platformy Windows 8.1 a Windows Phone 8.1 vyžadují, aby rastrový obrázek nas
 
 `Master` a `Detail` vlastnosti jsou definované s vizuální stromové struktury v [SchoolAndDetailPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/SchoolAndDetail/SchoolAndDetail/SchoolAndDetail/SchoolAndDetailPage.xaml) soubor, který je odvozen od `MasterDetailPage`. Toto uspořádání umožňuje datové vazby k nastavení mezi stránkami a podrobností.
 
-Také nastaví souboru XAML [ `IsPresented` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.IsPresented/) vlastnost `MasterDetailPage` k `True`. To způsobí, že stránky předlohy, který se má zobrazit při spuštění; ve výchozím nastavení se zobrazí na stránce podrobností. [SchoolAndDetailPage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/SchoolAndDetail/SchoolAndDetail/SchoolAndDetail/SchoolAndDetailPage.xaml.cs) souboru sady `IsPresented` k `false` při výběru položky z `ListView` na hlavní stránce. Pak se zobrazí stránka podrobností:
+Také nastaví souboru XAML [ `IsPresented` ](xref:Xamarin.Forms.MasterDetailPage.IsPresented) vlastnost `MasterDetailPage` k `True`. To způsobí, že stránky předlohy, který se má zobrazit při spuštění; ve výchozím nastavení se zobrazí na stránce podrobností. [SchoolAndDetailPage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/SchoolAndDetail/SchoolAndDetail/SchoolAndDetail/SchoolAndDetailPage.xaml.cs) souboru sady `IsPresented` k `false` při výběru položky z `ListView` na hlavní stránce. Pak se zobrazí stránka podrobností:
 
 [![Trojitá snímek obrazovky podrobností a školy](images/ch25fg09-small.png "stránky podrobností MasterDetailPage")](images/ch25fg09-large.png#lightbox "stránky podrobností MasterDetailPage")
 
@@ -62,8 +62,8 @@ Také nastaví souboru XAML [ `IsPresented` ](https://developer.xamarin.com/api/
 
 I když Xamarin.Forms poskytuje uživatelské rozhraní pro přepínání mezi zobrazením seznamu a podrobností, můžete zadat vlastní. Postup:
 
-- Nastavte [ `IsGestureEnabled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MasterDetailPage.IsGestureEnabled/) vlastnost `false` zakázat potažení prstem
-- Přepsat [ `ShouldShowToolbarButton` ](https://developer.xamarin.com/api/member/Xamarin.Forms.MasterDetailPage.ShouldShowToolbarButton()/) metodu a vrátí `false` ke skrytí tlačítka panelu nástrojů na Windows 8.1 a Windows Phone 8.1.
+- Nastavte [ `IsGestureEnabled` ](xref:Xamarin.Forms.MasterDetailPage.IsGestureEnabled) vlastnost `false` zakázat potažení prstem
+- Přepsat [ `ShouldShowToolbarButton` ](xref:Xamarin.Forms.MasterDetailPage.ShouldShowToolbarButton) metodu a vrátí `false` ke skrytí tlačítka panelu nástrojů na Windows 8.1 a Windows Phone 8.1.
 
 Poté musíte zadat způsob, jak přepnout mezi stránkami a podrobností, tak jak je ukázáno podle [ **ColorsDetail** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25/ColorsDetails) vzorku.
 
@@ -71,28 +71,28 @@ Poté musíte zadat způsob, jak přepnout mezi stránkami a podrobností, tak j
 
 ## <a name="tabbedpage"></a>TabbedPage
 
-[ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/) Je kolekce stránek, které se dají přepínat pomocí karet. Se odvozuje od `MultiPage<Page>` a definuje žádné veřejné vlastnosti nebo metody své vlastní. [`MultiPage<T>`](https://developer.xamarin.com/api/type/Xamarin.Forms.MultiPage%3CT%3E/), ale definovat vlastnost:
+[ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage) Je kolekce stránek, které se dají přepínat pomocí karet. Se odvozuje od `MultiPage<Page>` a definuje žádné veřejné vlastnosti nebo metody své vlastní. [`MultiPage<T>`](xref:Xamarin.Forms.MultiPage`1), ale definovat vlastnost:
 
-- [`Children`](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%3CT%3E.Children/) vlastnost typu `IList<T>`
+- [`Children`](xref:Xamarin.Forms.MultiPage`1.Children) vlastnost typu `IList<T>`
 
 Vyplněním tohoto `Children` kolekce s objekty na stránce.
 
 Další možností můžete zadat `TabbedPage` podobně jako podřízené prvky `ListView` pomocí tyto dvě vlastnosti, které automaticky generují s kartami stránek:
 
-- [`ItemsSource`](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%3CT%3E.ItemsSource/) typu `IEnumerable`
-- [`ItemTemplate`](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%3CT%3E.ItemTemplate/) typu `DataTemplate`
+- [`ItemsSource`](xref:Xamarin.Forms.MultiPage`1.ItemsSource) typu `IEnumerable`
+- [`ItemTemplate`](xref:Xamarin.Forms.MultiPage`1.ItemTemplate) typu `DataTemplate`
 
 Tento přístup však nebude fungovat dobře v Iosu když kolekce obsahuje více než několik položek.
 
 `MultiPage<T>` definuje dvě další vlastnosti, které vám umožňují udržovat přehled o stránku, která je aktuálně zobrazit:
 
-- [`CurrentPage`](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%3CT%3E.CurrentPage/) typu `T`odkazující na stránce
-- [`SelectedItem`](https://developer.xamarin.com/api/property/Xamarin.Forms.MultiPage%3CT%3E.SelectedItem/) typu `Object`odkazující na objekt v `ItemsSource` kolekce
+- [`CurrentPage`](xref:Xamarin.Forms.MultiPage`1.CurrentPage) typu `T`odkazující na stránce
+- [`SelectedItem`](xref:Xamarin.Forms.MultiPage`1.SelectedItem) typu `Object`odkazující na objekt v `ItemsSource` kolekce
 
 `MultiPage<T>` Definuje také dvě události:
 
-- [`PagesChanged`](https://developer.xamarin.com/api/event/Xamarin.Forms.MultiPage%3CT%3E.PagesChanged/) Když `ItemsSource` změny kolekce
-- [`CurrentPageChanged`](https://developer.xamarin.com/api/event/Xamarin.Forms.MultiPage%3CT%3E.CurrentPageChanged/) Když se změní zobrazenou stránku
+- [`PagesChanged`](xref:Xamarin.Forms.MultiPage`1.PagesChanged) Když `ItemsSource` změny kolekce
+- [`CurrentPageChanged`](xref:Xamarin.Forms.MultiPage`1.CurrentPageChanged) Když se změní zobrazenou stránku
 
 ### <a name="discrete-tab-pages"></a>Stránky karet diskrétní
 

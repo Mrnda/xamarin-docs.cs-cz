@@ -1,45 +1,45 @@
 ---
-title: Navigační Xamarin.Forms
-description: Tato příručka vysvětluje, jak provádět navigace v Xamarin.Forms aplikace. Xamarin.Forms poskytuje několik možností, navigace různé stránky, v závislosti na typu stránka používá.
+title: Navigace Xamarin.Forms
+description: Tato příručka vysvětluje, jak k provádění navigace u aplikací Xamarin.Forms. Xamarin.Forms poskytuje řadu jiných stránek navigační prostředí, v závislosti na typu stránky se používají.
 ms.prod: xamarin
 ms.assetid: BC5D0C6C-D5A9-4B12-A492-ED1F570CEC87
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 90aedee42af7ed1788110e832fb3b435d870ee77
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 202f044ebd7dd5b110b94d2aa60eeb7151150607
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241953"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994725"
 ---
-# <a name="xamarinforms-navigation"></a>Navigační Xamarin.Forms
+# <a name="xamarinforms-navigation"></a>Navigace Xamarin.Forms
 
-_Xamarin.Forms poskytuje několik možností, navigace různé stránky, v závislosti na typu stránka používá._
+_Xamarin.Forms poskytuje řadu jiných stránek navigační prostředí, v závislosti na typu stránky se používají._
 
-![](images/page-types.png "Typy Xamarin.Forms stránky")
+![](images/page-types.png "Typy stránek Xamarin.Forms")
 
 ## <a name="hierarchical-navigationhierarchicalmd"></a>[Hierarchická navigace](hierarchical.md)
 
-[ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) Třída poskytuje hierarchické navigační prostředí, kde je možné procházet stránky, dopředný a podle potřeby zpětné uživatele. Třída implementuje navigační jako zásobník ven (LIFO) last-in služby [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) objekty.
+[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) Třída poskytuje hierarchické navigační prostředí, kde uživatel je možné procházet stránkách vpřed a zpět, podle potřeby. Třída implementuje navigace jako poslední dovnitř, první (ven LIFO) zásobníku [ `Page` ](xref:Xamarin.Forms.Page) objekty.
 
 ## <a name="tabbedpagetabbed-pagemd"></a>[TabbedPage](tabbed-page.md)
 
-Platformě Xamarin.Forms [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/) se skládá z seznam karty a větší oblast podrobností, s každé kartě načítání obsahu do oblasti podrobností.
+Xamarin.Forms [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage) se skládá ze seznamu karty a větší oblasti podrobností, každá karta načítání obsahu do oblasti podrobností.
 
 ## <a name="carouselpagecarousel-pagemd"></a>[CarouselPage](carousel-page.md)
 
-Platformě Xamarin.Forms [ `CarouselPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.CarouselPage/) je stránka, která uživatelé mohou prstem stranu procházet stránky obsahu, jako je galerie.
+Xamarin.Forms [ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage) je stránka, která uživatelé můžou potažením prstem přejděte na stranu pro navigaci mezi stránkami obsahu, jako je galerie.
 
 ## <a name="masterdetailpagemaster-detail-pagemd"></a>[MasterDetailPage](master-detail-page.md)
 
-Platformě Xamarin.Forms [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) je stránka, která spravuje dvou stránkách související informace – hlavní stránky, který představuje položky a podrobnosti o stránku, která zobrazí podrobné informace o položky na hlavní stránce.
+Xamarin.Forms [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) je stránka, která spravuje dvě stránky související informace – stránku předlohy, která uvede počet položek a podrobnosti o stránku, která uvede podrobnosti o položkách ve stránce předlohy.
 
 ## <a name="modal-pagesmodalmd"></a>[Modální stránky](modal.md)
 
-Xamarin.Forms taky poskytuje podporu pro modální stránky. Modální stránky doporučuje uživatelům k dokončení samostatná úloha, která nemůže být opuštění dokud je úloha dokončena nebo zrušena.
+Xamarin.Forms také poskytuje podporu pro modální stránky. Modální stránky vyzývá uživatele k dokončení samostatná úloha, která nemůže být opuštění dokud je úloha dokončena nebo zrušena.
 
 ## <a name="displaying-pop-upspop-upsmd"></a>[Zobrazování automaticky otevíraných oken](pop-ups.md)
 
-Xamarin.Forms poskytuje dva elementy pop množství jako uživatelského rozhraní: výstrahu a akci listu. Tyto prvky rozhraní lze použít k dotazu na uživatele jednoduchých dotazů a můžete uživatele prostřednictvím úlohy.
+Xamarin.Forms poskytuje dva prvky pop registrace jako uživatelského rozhraní: upozornění a listu akce. Tyto prvky rozhraní je možné, požádejte uživatele jednoduché otázky a provedou uživatele úkoly.

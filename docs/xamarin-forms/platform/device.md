@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2017
-ms.openlocfilehash: 652c9cc51f68bee8229b8c5a7684ea872ab6f404
-ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
-ms.translationtype: HT
+ms.openlocfilehash: c706d50962fb707208203a97374d4ae26f141ebf
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 07/12/2018
-ms.locfileid: "38986067"
+ms.locfileid: "38998258"
 ---
 # <a name="xamarinforms-device-class"></a>Třída zařízení Xamarin.Forms
 
@@ -24,11 +24,11 @@ Kromě metod a vlastností na cílový kód na konkrétní typy hardwaru a velik
 
 ## <a name="providing-platform-specific-values"></a>Zadání hodnot pro konkrétní platformu
 
-Před Xamarin.Forms 2.3.4 platformu aplikace byla spuštěna na může získat prozkoumáním [ `Device.OS` ](xref:Xamarin.Forms.Device.OS) vlastnost a porovnání na [ `TargetPlatform.iOS` ](xref:Xamarin.Forms.TargetPlatform.iOS), [ `TargetPlatform.Android` ](xref:Xamarin.Forms.TargetPlatform.Android), [ `TargetPlatform.WinPhone` ](xref:Xamarin.Forms.TargetPlatform.WinPhone), a [ `TargetPlatform.Windows` ](xref:Xamarin.Forms.TargetPlatform.Windows) hodnot výčtu. Podobně, jeden z [ `Device.OnPlatform` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.OnPlatform/p/System.Action/System.Action/System.Action/System.Action/) přetížení lze zadat hodnoty specifické pro platformu k ovládacímu prvku.
+Před Xamarin.Forms 2.3.4 platformu aplikace byla spuštěna na může získat prozkoumáním [ `Device.OS` ](xref:Xamarin.Forms.Device.OS) vlastnost a porovnání na [ `TargetPlatform.iOS` ](xref:Xamarin.Forms.TargetPlatform.iOS), [ `TargetPlatform.Android` ](xref:Xamarin.Forms.TargetPlatform.Android), [ `TargetPlatform.WinPhone` ](xref:Xamarin.Forms.TargetPlatform.WinPhone), a [ `TargetPlatform.Windows` ](xref:Xamarin.Forms.TargetPlatform.Windows) hodnot výčtu. Podobně, jeden z [ `Device.OnPlatform` ](xref:Xamarin.Forms.Device.OnPlatform(System.Action,System.Action,System.Action,System.Action)) přetížení lze zadat hodnoty specifické pro platformu k ovládacímu prvku.
 
-Nicméně od Xamarin.Forms 2.3.4 Tato rozhraní API byly zastaralé a nahradit. [ `Device` ](xref:Xamarin.Forms.Device) Třída nyní obsahuje veřejné řetězcové konstanty, které identifikují platformy – [ `Device.iOS` ](xref:Xamarin.Forms.Device.iOS), [ `Device.Android` ](xref:Xamarin.Forms.Device.Android), `Device.WinPhone`() zastaralé), `Device.WinRT` (zastaralé), [ `Device.UWP` ](xref:Xamarin.Forms.Device.UWP), a [ `Device.macOS` ](xref:Xamarin.Forms.Device.macOS). Podobně [ `Device.OnPlatform` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.OnPlatform/p/System.Action/System.Action/System.Action/System.Action/) přetížení se nahradily [ `OnPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.OnPlatform%3CT%3E/) a [ `On` ](xref:Xamarin.Forms.On) rozhraní API.
+Nicméně od Xamarin.Forms 2.3.4 Tato rozhraní API byly zastaralé a nahradit. [ `Device` ](xref:Xamarin.Forms.Device) Třída nyní obsahuje veřejné řetězcové konstanty, které identifikují platformy – [ `Device.iOS` ](xref:Xamarin.Forms.Device.iOS), [ `Device.Android` ](xref:Xamarin.Forms.Device.Android), `Device.WinPhone`() zastaralé), `Device.WinRT` (zastaralé), [ `Device.UWP` ](xref:Xamarin.Forms.Device.UWP), a [ `Device.macOS` ](xref:Xamarin.Forms.Device.macOS). Podobně [ `Device.OnPlatform` ](xref:Xamarin.Forms.Device.OnPlatform(System.Action,System.Action,System.Action,System.Action)) přetížení se nahradily [ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1) a [ `On` ](xref:Xamarin.Forms.On) rozhraní API.
 
-V jazyce C#, lze zadat hodnoty specifické pro platformy tak, že vytvoříte `switch` příkaz na [ `Device.RuntimePlatform` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Device.RuntimePlatform/) vlastnost a potom zadat `case` příkazy pro požadované platformy:
+V jazyce C#, lze zadat hodnoty specifické pro platformy tak, že vytvoříte `switch` příkaz na [ `Device.RuntimePlatform` ](xref:Xamarin.Forms.Device.RuntimePlatform) vlastnost a potom zadat `case` příkazy pro požadované platformy:
 
 ```csharp
 double top;
@@ -46,7 +46,7 @@ switch (Device.RuntimePlatform)
 layout.Margin = new Thickness(5, top, 5, 0);
 ```
 
-[ `OnPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.OnPlatform%3CT%3E/) a [ `On` ](xref:Xamarin.Forms.On) třídy poskytují stejné funkce v XAML:
+[ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1) a [ `On` ](xref:Xamarin.Forms.On) třídy poskytují stejné funkce v XAML:
 
 ```xaml
 <StackLayout>
@@ -60,7 +60,7 @@ layout.Margin = new Thickness(5, top, 5, 0);
 </StackLayout>
 ```
 
-[ `OnPlatform` ](https://developer.xamarin.com/api/type/Xamarin.Forms.OnPlatform%3CT%3E/) Třída je obecná třída a musí být vytvořena pomocí `x:TypeArguments` atribut, který odpovídá cílovým typem. V [ `On` ](xref:Xamarin.Forms.On) třídy, [ `Platform` ](xref:Xamarin.Forms.On.Platform) atribut může přijmout jediného `string` hodnotu nebo více oddělených čárkou `string` hodnoty.
+[ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1) Třída je obecná třída a musí být vytvořena pomocí `x:TypeArguments` atribut, který odpovídá cílovým typem. V [ `On` ](xref:Xamarin.Forms.On) třídy, [ `Platform` ](xref:Xamarin.Forms.On.Platform) atribut může přijmout jediného `string` hodnotu nebo více oddělených čárkou `string` hodnoty.
 
 > [!IMPORTANT]
 > Poskytuje nesprávné `Platform` hodnotu v atributu `On` třídy nesmí dojít k chybě. Místo toho kód se spustí bez použití hodnoty specifické pro platformu.
@@ -173,7 +173,7 @@ Pokud kód uvnitř časovač spolupracuje s uživatelským rozhraním (napříkl
 
 ## <a name="devicebegininvokeonmainthread"></a>Device.BeginInvokeOnMainThread
 
-Prvky uživatelského rozhraní by měl mít nikdy přístup vláken na pozadí, jako je například kód spuštěný v časovač nebo obslužné rutiny dokončení asynchronních operací, jako je webových požadavků. Jakýkoli kód na pozadí, který je potřeba aktualizovat uživatelské rozhraní by měl být uzavřen v [ `BeginInvokeOnMainThread` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.BeginInvokeOnMainThread/p/System.Action/). Jde o ekvivalent `InvokeOnMainThread` v Iosu `RunOnUiThread` v Androidu a `Dispatcher.RunAsync` na univerzální platformu Windows.
+Prvky uživatelského rozhraní by měl mít nikdy přístup vláken na pozadí, jako je například kód spuštěný v časovač nebo obslužné rutiny dokončení asynchronních operací, jako je webových požadavků. Jakýkoli kód na pozadí, který je potřeba aktualizovat uživatelské rozhraní by měl být uzavřen v [ `BeginInvokeOnMainThread` ](xref:Xamarin.Forms.Device.BeginInvokeOnMainThread(System.Action)). Jde o ekvivalent `InvokeOnMainThread` v Iosu `RunOnUiThread` v Androidu a `Dispatcher.RunAsync` na univerzální platformu Windows.
 
 Xamarin.Forms kód je:
 

@@ -1,103 +1,103 @@
 ---
-title: Shrnutí kapitoly 12. Styly
-description: 'Vytváření mobilních aplikací s Xamarin.Forms: Souhrn kapitoly 12. Styly'
+title: Souhrn kapitole 12. Styly
+description: 'Vytváření mobilních aplikací s Xamarin.Forms: Souhrn kapitole 12. Styly'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 3EAE6BDC-8EFB-464B-A87B-1C35B8387BB3
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: d69c6c18a28c89742b186474656ee666b1e6a0ee
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 3bab1d4b61f146f8caa005e9148df745c91a3ebd
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241673"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998170"
 ---
-# <a name="summary-of-chapter-12-styles"></a>Shrnutí kapitoly 12. Styly
+# <a name="summary-of-chapter-12-styles"></a>Souhrn kapitole 12. Styly
 
-Styly v Xamarin.Forms, umožní více zobrazení sdílet kolekce vlastností nastavení. To snižuje značek a umožňuje zachování konzistentní vizuální motivy.
+V Xamarin.Forms styly povolit více zobrazení sdílet kolekce vlastností nastavení. Tím se sníží značek a povolí zachování konzistentní vizuální motivy.
 
-Styly jsou téměř vždy definované a využívat v kódu. Objekt typu [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) je vytvořena instance v slovník prostředků a poté nastavte [ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/) vlastnost vizuální prvek použití `StaticResource` nebo `DyanamicResource` značek rozšíření.
+Styly jsou téměř vždy definována a využívat v kódu. Objekt typu [ `Style` ](xref:Xamarin.Forms.Style) vytvořena ve slovníku prostředků a poté nastavte [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) vlastnost vizuální prvek pomocí `StaticResource` nebo `DyanamicResource` značek rozšíření.
 
 ## <a name="the-basic-style"></a>Základní styl
 
-A `Style` vyžaduje, aby jeho [ `TargetType` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.TargetType/) nastavit na typ visual objektu, se vztahuje na. Když `Style` je vytvořena instance ve slovníku prostředků (jako je běžné) taky vyžaduje `x:Key` atribut.
+A `Style` vyžaduje, aby jeho [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType) nastavit typ vizuální objekty, které se vztahuje na. Když `Style` je vytvořena instance ve slovníku prostředků (což je běžné) také budete potřebovat `x:Key` atribut.
 
-`Style` Obsahu vlastnost typu [ `Setters` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.Setters/), což je kolekce [ `Setter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Setter/) objekty. Každý `Setter` přidruží [ `Property` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Setter.Property/) s [ `Value` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Setter.Value/).
+`Style` Vlastnost content typu [ `Setters` ](xref:Xamarin.Forms.Style.Setters), což je kolekce [ `Setter` ](xref:Xamarin.Forms.Setter) objekty. Každý `Setter` přidruží [ `Property` ](xref:Xamarin.Forms.Setter.Property) s [ `Value` ](xref:Xamarin.Forms.Setter.Value).
 
-V jazyce XAML `Property` nastavení je název vlastnosti CLR (například `Text` vlastnost `Button`), ale vlastnost stylem musí být zajištěna vazbu vlastnosti. Navíc musí být definována vlastnost v třídě indikován `TargetType` nastavení nebo zděděná podle této třídy.
+V XAML `Property` nastavení je název vlastnosti CLR (například `Text` vlastnost `Button`), ale upravený vlastnost musí být se opírá o vlastnost s vazbou. Také, vlastnost musí být definována ve třídě indikován `TargetType` nastavení nebo zděděná podle této třídy.
 
-Můžete zadat `Value` nastavení pomocí elementu vlastnost `<Setter.Value>`. To umožňuje nastavit `Value` na objekt, který nelze vyjádřit v textovém řetězci, nebo na `OnPlatform` objektu nebo objekt vytvořit instance pomocí `x:Arguments` nebo `x:FactoryMethod`. `Value` Vlastnost lze nastavit také s `StaticResource` výraz, který se jiná položka ve slovníku.
+Můžete zadat `Value` nastavení pomocí elementu vlastnosti `<Setter.Value>`. Díky tomu můžete nastavit `Value` na objekt, který nelze vyjádřen v textovém řetězci nebo do `OnPlatform` objektu nebo objekt vytvořit instanci pomocí `x:Arguments` nebo `x:FactoryMethod`. `Value` Vlastnost lze nastavit také pomocí `StaticResource` výraz s jinou položkou ve slovníku.
 
 [ **BasicStyle** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12/BasicStyle) program ukazuje základní syntaxe a ukazuje, jak odkazovat `Style` s `StaticResource` – rozšíření značek:
 
-[![Trojitá snímek obrazovky základní styl](images/ch12fg01-small.png "základní styly")](images/ch12fg01-large.png#lightbox "základní styly")
+[![Trojitá snímek základního styl](images/ch12fg01-small.png "základní styly")](images/ch12fg01-large.png#lightbox "základní styly")
 
-`Style` Objekt a libovolného objektu vytvořeny v `Style` objekt jako `Value` nastavení jsou sdílena mezi všechny zobrazení odkazující na, který `Style`. `Style` Nemůže obsahovat nic, které nemohou být sdíleny, například `View` odvozených.
+`Style` Objekt a všechny objekt vytvořený v `Style` objektu jako `Value` nastavení jsou odkazy sdíleny mezi všechna zobrazení, která odkazuje `Style`. `Style` Nemůže obsahovat cokoli, co nelze sdílet, například `View` odvozených děl na základě.
 
-Obslužné rutiny událostí nelze nastavit `Style`. `GestureRecognizers` Vlastnost nelze nastavit `Style` vzhledem k tomu, že není podporována pomocí vazbu vlastnosti.
+Obslužné rutiny událostí nemohou být nastaveny `Style`. `GestureRecognizers` Nelze nastavit vlastnost `Style` vzhledem k tomu, že není podporovaný službou vázanou vlastnost.
 
 ## <a name="styles-in-code"></a>Styly v kódu
 
-I když není společné, můžete vytvořit instanci a inicializujte `Style` objekty v kódu. Tento postup je znázorněn pomocí [ **BasicStyleCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12/BasicStyleCode) ukázka.
+I když není běžné, můžete konkretizovat a inicializovat `Style` objekty v kódu. To je patrné podle [ **BasicStyleCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12/BasicStyleCode) vzorku.
 
-## <a name="style-inheritance"></a>Styl dědičnosti
+## <a name="style-inheritance"></a>Dědičnost stylů
 
-`Style` má [ `BasedOn` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.BasedOn/) vlastnost, která můžete nastavit, aby `StaticResource` – rozšíření značek odkazující na jiný styl. To umožňuje styly dědit z předchozí styly a přidat nebo nahradit nastavení vlastností. [ **StyleInheritance** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12/StyleInheritance) příklad znázorňuje to.
+`Style` má [ `BasedOn` ](xref:Xamarin.Forms.Style.BasedOn) vlastnost, která můžete nastavit `StaticResource` – rozšíření značek odkazující na jiný styl. To umožňuje styly a dědí z předchozí styly a přidat nebo odebrat nastavení vlastností. [ **StyleInheritance** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12/StyleInheritance) příklad ukazuje to.
 
-Pokud `Style2` je založena na `Style1`, `TargetType` z `Style2` musí být stejný jako `Style1` nebo odvozené od `Style1`. Slovník prostředků, ve kterém `Style1` ukládána musí být slovníku prostředků jako `Style2` nebo slovník prostředků, která je vyšší ve vizuálním stromu.
+Pokud `Style2` vychází `Style1`, `TargetType` z `Style2` musí být stejný jako `Style1` nebo odvozený od `Style1`. Slovník prostředků, ve kterém `Style1` uložená musí být slovníku prostředků jako `Style2` nebo slovníku prostředků, která je vyšší ve vizuálním stromu.
 
 ## <a name="implicit-styles"></a>Implicitní styly
 
-Pokud `Style` v prostředku nemá slovník `x:Key` atribut nastavení, je přiřazen klíč slovník automaticky a `Style` objektu se změní na *implicitní styl*. Zobrazení bez `Style` nastavení a jejíž typ odpovídá `TargetType` přesně zjistí styl, jako [ **ImplicitStyle** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12/ImplicitStyle) příklad znázorňuje.
+Pokud `Style` v prostředku nemá slovníku `x:Key` atribut nastavení, je automaticky přiřazen klíč slovníku a `Style` objekt se stane *implicitní styl*. Zobrazení bez `Style` nastavení a jehož typ odpovídá typu `TargetType` přesně najdou tento styl, jako [ **ImplicitStyle** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12/ImplicitStyle) ukázce.
 
-Implicitní styl můžete odvozena od `Style` s `x:Key` nastavení, ale ne naopak. Implicitní stylu nelze explicitně odkazovat.
+Implicitní styl lze odvodit z `Style` s `x:Key` nastavení, ale ne naopak. Nemůže explicitně odkazovat na implicitní styl.
 
-Můžete implementovat tři typy hierarchie s styly a `BasedOn`:
+Můžete implementovat tři typy hierarchie se styly a `BasedOn`:
 
 - Z styly definované na `Application` a `Page` dolů styly definované v rozložení nižší ve vizuálním stromu.
 - Z styly definované pro základní třídy, jako `VisualElement` a `View` na styly definované pro konkrétní třídy.
-- Z styly s klíče explicitní slovníku pro implicitní stylů.
+- Ze stylů pomocí explicitní slovník klíčů na implicitní styly.
 
-Jsou tyto hierarchií předvedená v [ **StyleHierarchy** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12/StyleHierarchy) ukázka.
+Tato hierarchie je ukázán v [ **StyleHierarchy** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12/StyleHierarchy) vzorku.
 
 ## <a name="dynamic-styles"></a>Dynamické styly
 
-Styl ve slovníku prostředků lze odkazovat pomocí `DynamicResource` místo `StaticResource`. Díky tomu styl *dynamické styl*. Pokud tento styl je nahrazena ve slovníku prostředků jiný styl se stejným klíčem, zobrazení odkazující na tuto stylu `DynamicResource` automaticky změnit. Navíc způsobí, že chybí položky slovníku se zadaným klíčem `StaticResource` k vyvolat výjimku, ale ne `DynamicResource`.
+Styl ve slovníku prostředků lze odkazovat pomocí `DynamicResource` spíše než `StaticResource`. Díky tomu styl *dynamické styl*. Pokud tento styl je nahrazena ve slovníku prostředků jiný styl se stejným klíčem, zobrazení odkazující na tento styl s `DynamicResource` automaticky změnit. Navíc způsobí, neexistence položky slovníku se zadaným klíčem `StaticResource` pro vyvolání výjimky, ale ne `DynamicResource`.
 
-Tento postup můžete dynamicky měnit stylů nebo motivy, jako [ **DynamicStyles** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12/DynamicStyles) příklad znázorňuje.
+Tento postup můžete použít dynamicky měnit styly nebo motivy, jako [ **DynamicStyles** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12/DynamicStyles) ukázce.
 
-Však nelze nastavit `BasedOn` vlastnosti `DynamicResource` způsob vytvoření rozšíření protože `BasedOn` není podporována pomocí vazbu vlastnosti. Odvození styl dynamicky, nenastavujte `BasedOn`. Místo toho nastavte [ `BaseResourceKey` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.BaseResourceKey/) vlastnost slovníku klíč styl, který má být odvozen z. [ **DynamicStylesInheritance** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12/DynaStylesInh) příklad znázorňuje tento postup.
+Však nelze nastavit `BasedOn` vlastnost `DynamicResource` strukturu rozšíření protože `BasedOn` není se opírá o vlastnost s vazbou. Abyste odvodili styl dynamicky, nenastavujte `BasedOn`. Místo toho nastavte [ `BaseResourceKey` ](xref:Xamarin.Forms.Style.BaseResourceKey) vlastnost ke klíči slovníku styl, který má být odvozen od. [ **DynamicStylesInheritance** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12/DynaStylesInh) ukázka demonstruje tento postup.
 
 ## <a name="device-styles"></a>Styly zařízení
 
-[ `Device.Styles` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Device+Styles/) Vnořené třídy definuje dvanáct statická jen pro čtení pole pro šest styly s `TargetType` z `Label` , můžete použít pro běžné typy text použití.
+[ `Device.Styles` ](xref:Xamarin.Forms.Device.Styles) Vnořené třídy definuje dvanáct statické pole jen pro čtení pro šest stylů `TargetType` z `Label` , můžete použít pro běžné typy z použití textu.
 
-Šest z těchto polí jsou typu `Style` , můžete nastavit přímo na `Style` vlastností v kódu:
+Šest tato pole jsou typu `Style` , můžete nastavit přímo `Style` vlastností v kódu:
 
-- [`BodyStyle`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device+Styles.BodyStyle/)
-- [`TitleStyle`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device+Styles.TitleStyle/)
-- [`SubtitleStyle`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device+Styles.SubtitleStyle/)
-- [`CaptionStyle`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device+Styles.CaptionStyle/)
-- [`ListItemTextStyle`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device+Styles.ListItemTextStyle/)
-- [`ListItemDetailTextStyle`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device+Styles.ListItemDetailTextStyle/)
+- [`BodyStyle`](xref:Xamarin.Forms.Device.Styles.BodyStyle)
+- [`TitleStyle`](xref:Xamarin.Forms.Device.Styles.TitleStyle)
+- [`SubtitleStyle`](xref:Xamarin.Forms.Device.Styles.SubtitleStyle)
+- [`CaptionStyle`](xref:Xamarin.Forms.Device.Styles.CaptionStyle)
+- [`ListItemTextStyle`](xref:Xamarin.Forms.Device.Styles.ListItemTextStyle)
+- [`ListItemDetailTextStyle`](xref:Xamarin.Forms.Device.Styles.ListItemDetailTextStyle)
 
-V ostatních polích šesti jsou typu `string` a mohou být použity jako klíče slovníku pro dynamické styly:
+Šest polí jsou typu `string` a může sloužit jako klíče slovníku pro dynamické styly:
 
-- [`BodyStyleKey`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device+Styles.BodyStyleKey/) rovno "BodyStyle"
-- [`TitleStyleKey`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device+Styles.TitleStyleKey/) rovno "TitleStyle"
-- [`SubtitleStyleKey`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device+Styles.SubtitleStyleKey/) rovno "SubtitleStyle"
-- [`CaptionStyleKey`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device+Styles.CaptionStyleKey/) rovno "CaptionStyle"
-- [`ListItemTextStyleKey`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device+Styles.ListItemTextStyleKey/) rovno "ListItemTextStyle"
-- [`ListItemDetailTextStyleKey`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device+Styles.ListItemDetailTextStyleKey/) rovno "ListItemDetailTextStyle"
+- [`BodyStyleKey`](xref:Xamarin.Forms.Device.Styles.BodyStyleKey) rovno "BodyStyle"
+- [`TitleStyleKey`](xref:Xamarin.Forms.Device.Styles.TitleStyleKey) rovno "TitleStyle"
+- [`SubtitleStyleKey`](xref:Xamarin.Forms.Device.Styles.SubtitleStyleKey) rovno "SubtitleStyle"
+- [`CaptionStyleKey`](xref:Xamarin.Forms.Device.Styles.CaptionStyleKey) rovno "CaptionStyle"
+- [`ListItemTextStyleKey`](xref:Xamarin.Forms.Device.Styles.ListItemTextStyleKey) rovno "ListItemTextStyle"
+- [`ListItemDetailTextStyleKey`](xref:Xamarin.Forms.Device.Styles.ListItemDetailTextStyleKey) rovno "ListItemDetailTextStyle"
 
-Tyto styly jsou zobrazené ve [ **DeviceStylesList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12/DeviceStylesList) ukázka.
+Tyto styly jsou znázorněny podle [ **DeviceStylesList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12/DeviceStylesList) vzorku.
 
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Úplný text kapitoly 12 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch12-Apr2016.pdf)
-- [Ukázky kapitoly 12](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12)
+- [Kapitola 12 textu v plném znění (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch12-Apr2016.pdf)
+- [Ukázky kapitole 12](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12)
 - [Styly](~/xamarin-forms/user-interface/styles/index.md)

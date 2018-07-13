@@ -7,24 +7,24 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 07/10/2018
-ms.openlocfilehash: 2ba4ffa1bcaee5f95fbd963cd48e694569ec7850
-ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
-ms.translationtype: HT
+ms.openlocfilehash: c0c433ab44c5b16fda6a01d520c41b31cb94bcc7
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 07/12/2018
-ms.locfileid: "38986093"
+ms.locfileid: "38998222"
 ---
 # <a name="xamarinforms-slider"></a>Posuvník Xamarin.Forms
 
 _Pomocí posuvníku pro výběr z rozsahu průběžné hodnoty._
 
-Xamarin.Forms [ `Slider` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/) je vodorovný pruh, který může uživatel vybrat manipulovat `double` hodnotu z průběžné rozsahu.
+Xamarin.Forms [ `Slider` ](xref:Xamarin.Forms.Slider) je vodorovný pruh, který může uživatel vybrat manipulovat `double` hodnotu z průběžné rozsahu.
 
 `Slider` Definuje tři vlastnosti typu `double`:
 
-- [`Minimum`](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Minimum/) je minimum rozsahu, s výchozí hodnotou 0.
-- [`Maximum`](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Maximum/) je maximální rozsah, s výchozí hodnotou 1.
-- [`Value`](https://developer.xamarin.com/api/property/Xamarin.Forms.Slider.Value/) je hodnota posuvníku, která může být v rozsahu mezi `Minimum` a `Maximum` a má výchozí hodnotu 0.
+- [`Minimum`](xref:Xamarin.Forms.Slider.Minimum) je minimum rozsahu, s výchozí hodnotou 0.
+- [`Maximum`](xref:Xamarin.Forms.Slider.Maximum) je maximální rozsah, s výchozí hodnotou 1.
+- [`Value`](xref:Xamarin.Forms.Slider.Value) je hodnota posuvníku, která může být v rozsahu mezi `Minimum` a `Maximum` a má výchozí hodnotu 0.
 
 Všechny tři vlastnosti využívají `BindableProperty` objekty. `Value` Vlastnost má režim výchozí vazby `BindingMode.TwoWay`, což znamená, že je vhodný jako zdroj vazby v aplikaci, která se používá [Model-View-ViewModel (MVVM)](~/xamarin-forms/enterprise-application-patterns/mvvm.md) architektury.
 
@@ -33,9 +33,9 @@ Všechny tři vlastnosti využívají `BindableProperty` objekty. `Value` Vlastn
 
 `Slider` Převede `Value` vlastnost tak, že je mezi `Minimum` a `Maximum`včetně. Pokud `Minimum` je nastavena na hodnotu větší než `Value` vlastnost, `Slider` nastaví `Value` vlastnost `Minimum`. Podobně pokud `Maximum` je nastavena na hodnotu menší než `Value`, pak `Slider` nastaví `Value` vlastnost `Maximum`.
 
-`Slider` definuje [ `ValueChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Slider.ValueChanged/) událost, která je aktivována, pokud `Value` změny, buď pomocí manipulace s uživateli `Slider` nebo když program nastaví `Value` vlastnost přímo. A `ValueChanged` událost se aktivuje, i když `Value` vlastnost převeden, jak je popsáno v předchozím odstavci.
+`Slider` definuje [ `ValueChanged` ](xref:Xamarin.Forms.Slider.ValueChanged) událost, která je aktivována, pokud `Value` změny, buď pomocí manipulace s uživateli `Slider` nebo když program nastaví `Value` vlastnost přímo. A `ValueChanged` událost se aktivuje, i když `Value` vlastnost převeden, jak je popsáno v předchozím odstavci.
 
-[ `ValueChangedEventArgs` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ValueChangedEventArgs/) Objekt, který doprovází `ValueChanged` událost má dvě vlastnosti, oba typu `double`: [ `OldValue` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ValueChangedEventArgs.OldValue/) a [ `NewValue` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ValueChangedEventArgs.NewValue/). V době událost se aktivuje, hodnota `NewValue` je stejné jako `Value` vlastnost `Slider` objektu.
+[ `ValueChangedEventArgs` ](xref:Xamarin.Forms.ValueChangedEventArgs) Objekt, který doprovází `ValueChanged` událost má dvě vlastnosti, oba typu `double`: [ `OldValue` ](xref:Xamarin.Forms.ValueChangedEventArgs.OldValue) a [ `NewValue` ](xref:Xamarin.Forms.ValueChangedEventArgs.NewValue). V době událost se aktivuje, hodnota `NewValue` je stejné jako `Value` vlastnost `Slider` objektu.
 
 > [!WARNING]
 > Nepoužívejte možnosti neomezeným vodorovné rozložení `Center`, `Start`, nebo `End` s `Slider`. Na Android a UPW `Slider` Sbalí panel o nulové délce a v systémech iOS, na panelu je velmi krátké. Ponechte výchozí `HorizontalOptions` nastavení `Fill`a nepoužívejte šířku `Auto` při vložení `Slider` v `Grid` rozložení.
@@ -508,4 +508,4 @@ Jako `Slider` prvky manipulováno, `BoxView` a `Label` prvky jsou aktualizovány
 ## <a name="related-links"></a>Související odkazy
 
 - [Ukázka ukázky posuvníku](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos)
-- [Posuvník rozhraní API](https://developer.xamarin.com/api/type/Xamarin.Forms.Slider/)
+- [Posuvník rozhraní API](xref:Xamarin.Forms.Slider)

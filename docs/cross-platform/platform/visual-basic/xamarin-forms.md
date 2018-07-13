@@ -1,57 +1,57 @@
 ---
-title: Xamarin.Forms pomocí Visual Basic.NET
-description: Šablona projektu Xamarin.Forms PCL lze upravit pomocí jazyka Visual Basic pro hlavní sestavení, umožňuje efektivně vytvářet různé platformy mobilních aplikací pomocí VB.NET.
+title: Xamarin.Forms pomocí Visual Basic
+description: Šablona projektu Xamarin.Forms PCL lze upravit pomocí jazyka Visual Basic pro hlavní sestavení umožňuje efektivně vytvářet multiplatformní mobilní aplikace pomocí VB.NET.
 ms.prod: xamarin
 ms.assetid: da4b4ba9-9205-47dc-8bae-23272ede2c50
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: b858e26de95d2abbc23917b1ed5a1de65105cd8d
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 256d5c81475be095c8fa0ab0408cbcf673c6b301
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "33917860"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997081"
 ---
-# <a name="xamarinforms-using-visual-basicnet"></a>Xamarin.Forms pomocí Visual Basic.NET
+# <a name="xamarinforms-using-visual-basicnet"></a>Xamarin.Forms pomocí Visual Basic
 
-Xamarin nepodporuje jazyka Visual Basic přímo – postupujte podle pokynů na této stránce, pokud chcete vytvořit řešení Xamarin.Forms PCL C# a nahradit běžné PCL projektu kódu v jazyce Visual Basic.
+Xamarin nepodporuje jazyka Visual Basic přímo – postupujte podle pokynů na této stránce vytvořit řešení, PCL Xamarin.Forms v jazyce C# a potom nahraďte běžné projekt PCL kódu pomocí jazyka Visual Basic.
 
-[![](xamarin-forms-images/hero-sml.png "Vytvoření řešení Xamarin.Forms PCL a potom můžete nahradit běžné PCL projektu kódu v jazyce Visual Basic")](xamarin-forms-images/hero.png#lightbox)
+[![](xamarin-forms-images/hero-sml.png "Vytvořit řešení, Xamarin.Forms PCL a potom nahraďte běžné projekt PCL kódu pomocí jazyka Visual Basic")](xamarin-forms-images/hero.png#lightbox)
 
 > [!NOTE]
-> Visual Studio v systému Windows, musíte použít programu v jazyce Visual Basic.
+> Musíte použít Visual Studio na Windows do aplikace pomocí jazyka Visual Basic.
 
-## <a name="xamarinforms-with-visual-basic-walkthrough"></a>Xamarin.Forms v průvodci jazyka Visual Basic
+## <a name="xamarinforms-with-visual-basic-walkthrough"></a>Xamarin.Forms s názorným postupem jazyka Visual Basic
 
-Postupujte podle těchto kroků můžete vytvořit jednoduché Xamarin.Forms projekt, který používá jazyka Visual Basic:
+Postupujte podle těchto kroků můžete vytvořit jednoduchý projekt Xamarin.Forms, která používá jazyka Visual Basic:
 
-1. Vytvořte novou *Xamarin.Forms C#* řešení, které využívá přenosných třída knihovny PCL ().
-Přejděte na **soubor > Nový projekt** a v **nový projekt** okno přejděte na **nainstalovaná > šablony > Visual C# > křížové platformy** zvolte  **Mezi aplikace platformy (Xamarin.Forms nebo nativní) > Xamarin.Forms**.
+1. Vytvořte nový *Xamarin.Forms jazyka C#* řešení, které používá přenosné knihovny tříd (PCL).
+Přejděte na **soubor > Nový projekt** a **nový projekt** okno Přejít na **nainstalováno > šablony > Visual C# > pro různé platformy** klikněte na tlačítko  **Cross Platform App (Xamarin.Forms nebo Native) > Xamarin.Forms**.
 
 2. Klikněte pravým tlačítkem na řešení a **Přidat > Nový projekt**.
 
-3. Vyberte **jazyka Visual Basic > knihovny tříd (přenositelností)** typ projektu:
+3. Zvolte **jazyka Visual Basic > Knihovna tříd (přenosná)** typ projektu:
 
-   [![](xamarin-forms-images/add-vb-2-sml.png "Přidání nového projektu knihovny přenosných tříd")](xamarin-forms-images/add-vb-2.png#lightbox)
+   [![](xamarin-forms-images/add-vb-2-sml.png "Přidat nový projekt knihovny přenosných tříd")](xamarin-forms-images/add-vb-2.png#lightbox)
 
-4. Vybrat platformy, jak je znázorněno konfigurace správného profilu PCL (nezapomeňte zahrnout Xamarin.iOS a Xamarin.Android):
+4. Vybrat platformy, jak je znázorněno nakonfigurovat správné profilem PCL (ji nezapomeňte zahrnout Xamarin.iOS a Xamarin.Android):
 
    ![](xamarin-forms-images/add-vb-3-sml.png "Vyberte platformy pro podporu")
 
-5. Klikněte pravým tlačítkem na projekt Visual Basic a zvolte **vlastnosti**, pak změňte **výchozí obor názvů** tak, aby odpovídala stávající jazyka C# projekty:
+5. Klikněte pravým tlačítkem na projekt jazyka Visual Basic a zvolte **vlastnosti**, změňte **výchozí obor názvů** tak, aby odpovídala stávající jazyka C# projekty:
 
-   ![](xamarin-forms-images/add-vb-4s-sml.png "Ujistěte se, že aplikace platformě Xamarin.Forms odpovídá kořenového oboru názvů jazyka Visual Basic")
+   ![](xamarin-forms-images/add-vb-4s-sml.png "Ujistěte se, že kořenový obor názvů jazyka Visual Basic odpovídá aplikace Xamarin.Forms")
 
-6. Klikněte pravým tlačítkem na nový projekt jazyka Visual Basic a zvolte **spravovat balíčky Nuget**, potom nainstalovat **Xamarin.Forms** a zavřete okno Správce balíčků.
+6. Klikněte pravým tlačítkem na nový projekt jazyka Visual Basic a zvolte **spravovat balíčky Nuget**, nainstalujte **Xamarin.Forms** a zavřete okno Správce balíčků.
 
-   [![](xamarin-forms-images/add-vb-4-sml.png "Formuláře a zavře okno Správce balíčků")](xamarin-forms-images/add-vb-4.png#lightbox)
+   [![](xamarin-forms-images/add-vb-4-sml.png "Formuláře a zavřete okno Správce balíčků")](xamarin-forms-images/add-vb-4.png#lightbox)
 
-7. Přejmenování výchozí **Class1** soubor *a* třídy k `App`:
+7. Přejmenujte výchozí **Class1** souboru *a* třídu `App`:
 
-   [![](xamarin-forms-images/add-vb-5-sml.png "Přejmenujte soubor výchozího Class1 a třídy aplikace")](xamarin-forms-images/add-vb-5.png#lightbox)
+   [![](xamarin-forms-images/add-vb-5-sml.png "Přejmenovat soubor výchozího Class1 a třídy do aplikace")](xamarin-forms-images/add-vb-5.png#lightbox)
 
-8. Vložte následující kód do **App.vb** souboru, který se stane výchozí bod aplikace Xamarin.Forms. Nezapomeňte zahrnout `Imports Xamarin.Forms` a přidejte `Inherits Application` pro třídu:
+8. Vložte následující kód do **App.vb** soubor, který se stane výchozí bod aplikace Xamarin.Forms. Nezapomeňte zahrnout `Imports Xamarin.Forms` a přidejte `Inherits Application` do třídy:
 
     ```vb 
     Imports Xamarin.Forms
@@ -78,12 +78,12 @@ Přejděte na **soubor > Nový projekt** a v **nový projekt** okno přejděte n
     End Class
     ```
 
-9. Teď musíme bod iOS a Android projekty v novém projektu jazyka Visual Basic.
-Klikněte pravým tlačítkem na **odkazy** uzel v iOS a Android projekty otevřete **správce odkazů**. Zrušení značek přenosné knihovny jazyka C# a značek přenosné knihovny jazyka Visual Basic (nemáte zapomenete, to udělat pro iOS a Android projekty).
+9. Nyní potřebujeme tak, aby odkazovala na nový projekt jazyka Visual Basic pro iOS a Android projekty.
+Klikněte pravým tlačítkem na **odkazy** uzlu v iOS a Android projekty otevřít **správce odkazů**. Zrušit značek přenosné knihovny jazyka C# a značky přenosné knihovny jazyka Visual Basic (není zapomenout, proveďte to pro iOS a Android projektů).
 
    [![](xamarin-forms-images/add-vb-8-sml.png "Odebrat starý odkaz na projekt, přidejte referenční dokumentace jazyka Visual Basic")](xamarin-forms-images/add-vb-8.png#lightbox)
 
-10. Odstranění přenosné projektu C#. Přidat nové **VB** soubory k sestavení mimo aplikaci Xamarin.Forms. Šablonu pro nové `ContentPage`s v jazyce Visual Basic je zobrazena níže:
+10. Odstranění projektu přenosné C#. Přidat nový **.vb** výstupní soubory k sestavení aplikace Xamarin.Forms. Šablonu pro nové `ContentPage`s v jazyce Visual Basic je uveden níže:
 
     ```vb
     Imports Xamarin.Forms
@@ -108,17 +108,17 @@ Klikněte pravým tlačítkem na **odkazy** uzel v iOS a Android projekty otevř
 
 ## <a name="limitations-of-visual-basic-in-xamarinforms"></a>Omezení jazyka Visual Basic v Xamarin.Forms
 
-Jak je uvedeno na [přenosné Visual Basic.NET stránky](~/cross-platform/platform/visual-basic/index.md), Xamarin nepodporuje jazyk Visual Basic. To znamená, že existují určitá omezení, na které můžete použít jazyka Visual Basic:
+Jak je uvedeno na [Visual Basic.NET Portable stránky](~/cross-platform/platform/visual-basic/index.md), Xamarin nepodporuje jazyk Visual Basic. To znamená, že narazíte na určitá omezení, na které můžete použít Visual Basic:
 
- - V jazyce Visual Basic nelze zapsat vlastní nástroji pro vykreslování, se musí být napsané v C# v projektech nativní platformy.
+ - Vlastní Renderery nelze napsané v jazyce Visual Basic, se musí být napsané v jazyce C# v projektech pro nativní platformy.
 
- - V jazyce Visual Basic nelze zapsat implementace služby závislostí, se musí být napsané v C# v projektech nativní platformy.
+ - Implementace služby závislostí nelze zapsat v jazyce Visual Basic, se musí být napsané v jazyce C# v projektech pro nativní platformy.
 
- - XAML stránky nemůže být zahrnut v projektu jazyka Visual Basic – může vytvořit pouze generátor kódu jazyka C#. Je možné zahrnout XAML samostatný, odkazovaná, C# přenosné knihovny tříd a použití datové vazby k naplnění soubory XAML přes modely jazyka Visual Basic (příkladem je součástí [ukázka](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/XamarinFormsVB/XamlPages)).
+ - Stránky XAML nemůže být součástí projektu jazyka Visual Basic – může vytvořit pouze generátor kódu jazyka C#. Je možné zahrnout XAML v samostatné, odkazovaná, C# přenosnou knihovnu tříd a používat datové vazby k naplnění souborů XAML pomocí jazyka Visual Basic modely (příkladem je součástí [ukázka](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/XamarinFormsVB/XamlPages)).
 
  - Xamarin nepodporuje jazyk Visual Basic.NET.
 
 ## <a name="related-links"></a>Související odkazy
 
 - [XamarinFormsVB (ukázka)](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/XamarinFormsVB)
-- [Vývoj pro různé platformy s rozhraním .NET Framework (Microsoft)](http://msdn.microsoft.com/en-us/library/gg597391(v=vs.110).aspx)
+- [Vývoj Multiplatformních aplikací pomocí rozhraní .NET Framework](https://docs.microsoft.com/dotnet/standard/cross-platform/)

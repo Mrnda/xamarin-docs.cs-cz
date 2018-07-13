@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 55267dfb1439d17f09126f65973ce9e6a0247d80
-ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
-ms.translationtype: HT
+ms.openlocfilehash: ed7bec4e25628d938218a40d157442debad8f835
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 07/12/2018
-ms.locfileid: "38986054"
+ms.locfileid: "38998371"
 ---
 # <a name="xamarinforms-webview"></a>Webové zobrazení Xamarin.Forms
 
-[`WebView`](https://developer.xamarin.com/api/type/Xamarin.Forms.WebView/) je zobrazení pro webové a obsah ve formátu HTML v aplikaci. Na rozdíl od `OpenUri`, který uživatel přejde na webový prohlížeč na zařízení, `WebView` zobrazí obsah HTML ve svých aplikacích.
+[`WebView`](xref:Xamarin.Forms.WebView) je zobrazení pro webové a obsah ve formátu HTML v aplikaci. Na rozdíl od `OpenUri`, který uživatel přejde na webový prohlížeč na zařízení, `WebView` zobrazí obsah HTML ve svých aplikacích.
 
 ![](webview-images/in-app-browser.png "V prohlížeči aplikace")
 
@@ -34,7 +34,7 @@ ms.locfileid: "38986054"
 
 ### <a name="websites"></a>Weby
 
-Zobrazit webu z Internetu, nastavte `WebView`společnosti [ `Source` ](https://developer.xamarin.com/api/type/Xamarin.Forms.WebViewSource/) nastavte na řetězec URL:
+Zobrazit webu z Internetu, nastavte `WebView`společnosti [ `Source` ](xref:Xamarin.Forms.WebViewSource) nastavte na řetězec URL:
 
 ```csharp
 var browser = new WebView {
@@ -86,7 +86,7 @@ Zobrazit [App Transport Security](~/ios/app-fundamentals/ats.md) Další informa
 
 ### <a name="html-strings"></a>Řetězce ve formátu HTML
 
-Pokud chcete předložit řetězec dynamicky definované v kódu HTML, budete muset vytvořit instanci [ `HtmlWebViewSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.HtmlWebViewSource/):
+Pokud chcete předložit řetězec dynamicky definované v kódu HTML, budete muset vytvořit instanci [ `HtmlWebViewSource` ](xref:Xamarin.Forms.HtmlWebViewSource):
 
 ```csharp
 var browser = new WebView();

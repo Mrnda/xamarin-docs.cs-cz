@@ -1,42 +1,42 @@
 ---
-title: Omezení Xamarin.iOS
-description: Tento dokument popisuje omezení Xamarin.iOS, hovoříte o obecných typů, obecný podtřídy NSObjects, P/vyvolá v obecné objekty a další.
+title: Omezení pro Xamarin.iOS
+description: Tento dokument popisuje omezení Xamarin.iOS diskuze o obecných typů, obecné podtřídy NSObjects, volání nespravovaných kódů v obecných objektů a další.
 ms.prod: xamarin
 ms.assetid: 5AC28F21-4567-278C-7F63-9C2142C6E06A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 04/09/2018
-ms.openlocfilehash: 8eb2cd5a749beab6f089479f5992fe3fbc16dd0a
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: e154e4e1688b8a3d03459956934409fa9d5aef35
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786226"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998082"
 ---
-# <a name="limitations-of-xamarinios"></a>Omezení Xamarin.iOS
+# <a name="limitations-of-xamarinios"></a>Omezení pro Xamarin.iOS
 
-Vzhledem k tomu, že aplikace na zařízení iPhone pomocí Xamarin.iOS kompilovány statické kódu, není možné použít jakékoli zařízení, které vyžadují generování kódu v době běhu.
+Vzhledem k tomu, že aplikace na Iphonu pomocí Xamarin.iOS jsou kompilovány do statického kódu, není možné použít jakékoli zařízení, které vyžadují generování kódu v době běhu.
 
-Toto jsou omezení Xamarin.iOS ve srovnání s plochy Mono:
+Toto jsou omezení Xamarin.iOS ve srovnání s desktopu Mono:
 
  <a name="Limited_Generics_Support" />
 
 
 ## <a name="limited-generics-support"></a>Podpora omezené obecné typy
 
-Na rozdíl od tradičních Mono/.NET staticky předem místo se zkompilují na vyžádání kompilátoru JIT kompilace kódu na iPhone.
+Na rozdíl od tradičních Mono/.NET staticky předem místo na vyžádání kompilován pomocí kompilátoru JIT kompilace kódu na Iphonu.
 
-Na mono [úplné AOT](http://www.mono-project.com/docs/advanced/aot/#full-aot) technologie má několik omezení s ohledem na obecné typy, tyto se nezdařila, protože nemusí být vždy možné obecné konkretizaci lze určit předem v době kompilace. To není problém pro regulární .NET nebo Mono moduly runtime, jak kód je vždy kompilované za běhu pomocí pouze v kompilátoru čas. Ale to ale představuje výzvu pro statické kompilátoru jako Xamarin.iOS.
+Pro mono [úplné AOT](http://www.mono-project.com/docs/advanced/aot/#full-aot) technologie má několik omezení s ohledem na obecných typů, ty se nezdařila, protože ne všechny možné obecné vytváření instancí se dá určit před jeho zahájením v době kompilace. To není problém, a pravidelné moduly runtime .NET nebo Mono, protože kód je vždy zkompilován za běhu pomocí pouze v kompilátoru čas. Ale to představuje výzvu pro statické kompilátoru jako Xamarin.iOS.
 
-Mezi běžné problémy, které vývojáři spustit do, patří:
+Mezi běžné problémy, které vývojářům tyto problémy, patří:
 
  <a name="Generic_Subclasses_of_NSObjects_are_limited" />
 
 
-### <a name="generic-subclasses-of-nsobjects-are-limited"></a>Obecné podtřídy NSObjects omezeny.
+### <a name="generic-subclasses-of-nsobjects-are-limited"></a>Obecné podtřídy NSObjects jsou omezené
 
-Xamarin.iOS aktuálně má omezenou podporu pro vytváření obecné podtřídy NSObject třídy, jako je například žádná podpora pro obecné metody. Od verze 7.2.1 použití obecné podtřídy NSObjects je možné, jako je tato:
+Xamarin.iOS aktuálně má omezenou podporu pro vytváření obecné podtřídy třídy NSObject, jako je například dostupná podpora pro obecné metody. Od 7.2.1 je použití obecné podtřídy NSObjects je to možné, podobný následujícímu:
 
 ```csharp
 class Foo<T> : UIView {
@@ -45,13 +45,13 @@ class Foo<T> : UIView {
 ```
 
 > [!NOTE]
-> Při obecné podtřídy NSObjects je možné, existuje několik omezení. Pro čtení [obecné podtřídy NSObject](~/ios/internals/api-design/nsobject-generics.md) dokumentu pro další informace
+> I když obecné podtřídy NSObjects je to možné, existuje několik omezení. Přečtěte si [obecné podtřídy nsobjectu](~/ios/internals/api-design/nsobject-generics.md) dokument pro další informace
 
 
 
 ### <a name="pinvokes-in-generic-types"></a>P/vyvolá v obecných typech
 
-P/vyvolá v obecné třídy nejsou podporovány:
+Volání nespravovaných kódů v obecné třídy nejsou podporovány:
 
 ```csharp
 class GenericType<T> {
@@ -63,33 +63,33 @@ class GenericType<T> {
  <a name="Property.SetInfo_on_a_Nullable_Type_is_not_supported" />
 
 
-### <a name="propertysetinfo-on-a-nullable-type-is-not-supported"></a>Property.SetInfo pro typ s možnou hodnotou Null není podporován.
+### <a name="propertysetinfo-on-a-nullable-type-is-not-supported"></a>Není podporováno Property.SetInfo na typ připouštějící hodnotu Null
 
-Nastavte hodnotu na Nullable pomocí reflexe na Property.SetInfo&lt;T&gt; není aktuálně podporováno.
+Pomocí reflexe pro Property.SetInfo k nastavení hodnot Nullable&lt;T&gt; v tuto chvíli nepodporuje.
 
  <a name="Value_types_as_Dictionary_Keys" />
 
 
-### <a name="value-types-as-dictionary-keys"></a>Typy hodnot jako klíče slovníku
+### <a name="value-types-as-dictionary-keys"></a>Typy hodnot jako slovník klíčů
 
-Pomocí typu hodnoty jako slovník&lt;TKey, TValue&gt; klíč je problematické, jako výchozí konstruktor slovník pokusí použít EqualityComparer&lt;TKey&gt;. Výchozí hodnota. EqualityComparer&lt;TKey&gt;. Výchozí, pak pokusí použít reflexe pro vytvoření instance nového typu, který implementuje IEqualityComparer&lt;TKey&gt; rozhraní.
+Použití typu hodnoty jako slovník&lt;TKey, TValue&gt; klíč jen těžko, jako výchozí konstruktor slovníku pokusí použít EqualityComparer&lt;TKey&gt;. Ve výchozím nastavení. EqualityComparer&lt;TKey&gt;. Výchozí, se pak pokusí použít reflexe pro vytvoření instance nového typu, který implementuje IEqualityComparer&lt;TKey&gt; rozhraní.
 
-Tento postup funguje pro odkazové typy (jako odraz + vytvořit nový typ krok se přeskočí), ale pro hodnotu typy ho dojde k chybě a je nastaven místo rychle po pokusí ji použít v zařízení.
+Tento postup funguje pro typy odkazů (jako odraz + vytvořit nový typ krok se přeskočí), ale hodnoty typů, se chyby a oděl do rychle po pokusu o použití na zařízení.
 
- **Alternativní řešení**: ručně implementovat [IEqualityComparer&lt;TKey&gt; ](https://developer.xamarin.com/api/type/System.Collections.Generic.IEqualityComparer%601/) rozhraní v nový typ a poskytovat instance tohoto typu do [slovník&lt;TKey, TValue&gt; ](https://developer.xamarin.com/api/type/System.Collections.Generic.Dictionary%3CTKey,TValue%3E/) [(IEqualityComparer&lt;TKey&gt;)](https://developer.xamarin.com/api/type/System.Collections.Generic.IEqualityComparer%601/) konstruktor.
+ **Alternativní řešení**: ručně implementovat [IEqualityComparer&lt;TKey&gt; ](xref:System.Collections.Generic.IEqualityComparer`1) rozhraní v novém typu a zadat instanci typu, které se [slovníku&lt;TKey, TValue&gt; ](xref:System.Collections.Generic.Dictionary`2) [(IEqualityComparer&lt;TKey&gt;)](xref:System.Collections.Generic.IEqualityComparer`1) konstruktoru.
 
 
  <a name="No_Dynamic_Code_Generation" />
 
 
-## <a name="no-dynamic-code-generation"></a>Generování žádné dynamické kódu
+## <a name="no-dynamic-code-generation"></a>Generování dynamických kódu
 
-Vzhledem k tomu, že pro iPhone jádra brání aplikaci v generování kódu dynamicky Mono na iPhone nepodporuje jakoukoli formu generování dynamické kódu. Mezi ně patří:
+Protože jádra Iphonu zabraňuje aplikaci dynamicky generování kódu Mono na Iphonu nepodporuje žádnou formu generování dynamických kódu. Mezi ně patří:
 
 -  System.Reflection.Emit není k dispozici.
 -  Žádná podpora pro System.Runtime.Remoting.
--  Žádná podpora pro vytváření typů dynamicky (žádné Type.GetType ("MyType" 1")), i když vyhledávání existující typy (Type.GetType ("System.String"), například funguje stejně dobře). 
--  Zpětná zpětného volání musí být zaregistrován s modulem runtime v době kompilace.
+-  Žádná podpora pro dynamicky vytváření typů (žádné Type.GetType ("MyType" 1")), i když hledání existujících typů (Type.GetType ("System.String"), například funguje správně). 
+-  Zpětná zpětného volání musí být zaregistrovaná s modulem runtime v době kompilace.
 
 
  
@@ -98,22 +98,22 @@ Vzhledem k tomu, že pro iPhone jádra brání aplikaci v generování kódu dyn
 
 ### <a name="systemreflectionemit"></a>System.Reflection.Emit
 
-Chybí System.Reflection. **Emitování** znamená, že bude fungovat žádný kód, který závisí na modulu runtime generování kódu. Patří mezi ně třeba:
+Chybějící System.Reflection. **Generování** znamená, že bude fungovat bez kódu, který závisí na generování kódu modulu runtime. Zahrnuje to takové věci, jako jsou:
 
--  Dynamic Language Runtime.
--  Všechny jazyky postavená na Dynamic Language Runtime.
--  Vzdálená komunikace na TransparentProxy nebo cokoliv jiného, co by způsobilo modulu runtime dynamicky generovat kód. 
+-  Runtime modul dynamického jazyka.
+-  Všechny jazyky, postavený na Dynamic Language Runtime.
+-  Vzdálené komunikace pro TransparentProxy nebo cokoli jiného, který způsobí runtime dynamicky generovat kód. 
 
 
- **Důležité:** Nezaměňujte **Reflection.Emit** s **reflexe**. Reflection.Emit je o generování kódu dynamicky a mít tento kód JITed a zkompilované na nativní kód. Z důvodu omezení na zařízení iPhone (žádné JIT – kompilace) nejsou podporované.
+ **Důležité:** Nezaměňujte **Reflection.Emit** s **reflexe**. Reflection.Emit spočívá v dynamicky generování kódu a tento kód zkompilovaných pomocí JIT a zkompilované do nativního kódu. Vzhledem k omezením na Iphonu (bez kompilace JIT) to není podporováno.
 
-Ale celý API reflexe, včetně Type.GetType ("someClass"), seznam metod, seznam vlastností, načítání atributy a hodnoty funguje správně.
+Ale celou Reflection API, včetně Type.GetType ("someClass"), seznam metod, seznam vlastností, načítají se atributy a hodnoty funguje správně.
 
-### <a name="using-delegates-to-call-native-functions"></a>Použití delegátů k volání nativních funkcí
+### <a name="using-delegates-to-call-native-functions"></a>Použití delegátů volat nativní funkce
 
-Pro volání nativní funkce prostřednictvím delegáta C#, musí být doplněný delegáta deklarace s jedním z následujících atributů:
+Volat nativní funkce prostřednictvím delegát jazyka C#, musí být označena deklaraci delegáta s jedním z následujících atributů:
 
-- [UnmanagedFunctionPointerAttribute](https://developer.xamarin.com/api/type/System.Runtime.InteropServices.UnmanagedFunctionPointerAttribute/) (doporučeno, protože je to napříč platformami a kompatibilní s Standard .NET 1.1 +)
+- [UnmanagedFunctionPointerAttribute](xref:System.Runtime.InteropServices.UnmanagedFunctionPointerAttribute) (upřednostňované, protože jde o napříč platformami a je kompatibilní se standardní .NET 1.1 +)
 - [MonoNativeFunctionWrapperAttribute](https://developer.xamarin.com/api/type/ObjCRuntime.MonoNativeFunctionWrapperAttribute)
 
 Chyba za běhu, jako způsobí selhání zadejte některou z těchto atributů:
@@ -127,11 +127,11 @@ System.ExecutionEngineException: Attempting to JIT compile method '(wrapper mana
 
 ### <a name="reverse-callbacks"></a>Zpětná zpětného volání
 
-Standardní mono je možné předat nespravovaného kódu místo ukazatel na funkci delegáta instance jazyka C#. Modul runtime by obvykle transformaci tyto ukazatele na funkce na malé převodu, který umožňuje nespravovaného kódu pro volání zpět do spravovaného kódu.
+Standardní mono je možné předat delegáta instance jazyka C# do nespravovaného kódu namísto ukazatele na funkci. Modul runtime by obvykle transformaci těchto ukazatelů na funkce do malé převodní rutina, která umožňuje nespravovaný kód zavolá zpět do spravovaného kódu.
 
-Mono jsou tyto mostů implementované pouze v době kompilátoru. Při použití kompilátoru napřed předčasné vyžadovanou pro iPhone, že v tomto okamžiku se dvě důležité omezení:
+Mono tyto edice jsou implementované Just-in-Time kompilátoru. Když pomocí kompilátoru ahead of time vyžadované iPhone, že se v tuto chvíli jsou dvě důležité omezení:
 
--  Musí všechny vaše zpětné volání metody s příznak [MonoPInvokeCallbackAttribute](https://developer.xamarin.com/api/type/ObjCRuntime.MonoPInvokeCallbackAttribute) 
+-  Musí všechny vaše zpětné volání metody s příznakem [MonoPInvokeCallbackAttribute](https://developer.xamarin.com/api/type/ObjCRuntime.MonoPInvokeCallbackAttribute) 
 -  Metody musí být statické metody, neexistuje žádná podpora pro instanci metody. 
  
 <a name="No_Remoting" />
@@ -144,16 +144,16 @@ Vzdálená komunikace zásobníku není k dispozici na Xamarin.iOS.
  <a name="Runtime_Disabled_Features" />
 
 
-## <a name="runtime-disabled-features"></a>Modul runtime zakázali funkcí
+## <a name="runtime-disabled-features"></a>Modul runtime zakázané funkce
 
-V iOS na Mono Runtime byly zakázány následující funkce:
+V Iosu na Mono Runtime byly zakázány následující funkce:
 
 -  profiler
 -  Reflection.Emit
 -  Funkce Reflection.Emit.Save
 -  Vazby modelu COM
 -  Modul JIT
--  Metadata ověřovatele (protože neexistuje žádný JIT)
+-  Metadata ověřovatel (protože neexistuje žádný JIT)
 
 
  <a name=".NET_API_Limitations" />
@@ -161,8 +161,8 @@ V iOS na Mono Runtime byly zakázány následující funkce:
 
 ## <a name="net-api-limitations"></a>Omezení rozhraní API .NET
 
-Rozhraní API .NET zveřejněné je podmnožinu rozhraní úplné, protože není všechno, co je k dispozici v iOS. Najdete v části Nejčastější dotazy [seznam aktuálně podporované sestavení](~/cross-platform/internals/available-assemblies.md).
+Vystavit rozhraní API pro .NET je podmnožinou úplné rozhraní framework, protože ne vše, co je k dispozici v Iosu. Najdete v nejčastějších Dotazech [seznam aktuálně podporovaných sestavení](~/cross-platform/internals/available-assemblies.md).
 
 
 
-Konkrétně profilem rozhraní API používané Xamarin.iOS nezahrnuje System.Configuration, takže není možné použít externích souborů XML pro konfiguraci chování modulu runtime.
+Profil rozhraní API používají Xamarin.iOS zejména nezahrnuje System.Configuration, takže není možné použít externí soubory XML konfigurace chování modulu runtime.

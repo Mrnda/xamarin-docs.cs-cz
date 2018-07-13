@@ -1,42 +1,42 @@
 ---
 title: Přizpůsobení ContentPage
-description: ContentPage je visual element, který zobrazí jedno zobrazení a zabírá Většina obrazovky. Tento článek ukazuje, jak vytvořit vlastní zobrazovací jednotky pro stránku ContentPage umožňuje vývojářům přepsat výchozí nativní vykreslování s vlastní přizpůsobení specifické pro platformu.
+description: ContentPage je vizuální prvek, který zobrazí jedno zobrazení a zabírá většinu obrazovky. Tento článek ukazuje, jak vytvořit vlastního rendereru pro stránku ContentPage umožňuje vývojářům přepsat výchozí nativní vykreslení s jejich přizpůsobováním specifické pro platformu.
 ms.prod: xamarin
 ms.assetid: A4E61D93-73D9-4668-8D1C-DB6FC2491822
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 5fe7250b5b8fcea97d4fbe6846999be60e8e8673
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 2369b249681b926476cf3938c51c99745eba9098
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848171"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995739"
 ---
 # <a name="customizing-a-contentpage"></a>Přizpůsobení ContentPage
 
-_ContentPage je visual element, který zobrazí jedno zobrazení a zabírá Většina obrazovky. Tento článek ukazuje, jak vytvořit vlastní zobrazovací jednotky pro stránku ContentPage umožňuje vývojářům přepsat výchozí nativní vykreslování s vlastní přizpůsobení specifické pro platformu._
+_ContentPage je vizuální prvek, který zobrazí jedno zobrazení a zabírá většinu obrazovky. Tento článek ukazuje, jak vytvořit vlastního rendereru pro stránku ContentPage umožňuje vývojářům přepsat výchozí nativní vykreslení s jejich přizpůsobováním specifické pro platformu._
 
-Každý prvek Xamarin.Forms musí doprovodné zobrazovací jednotky pro každou platformu, která vytvoří instanci nativní ovládacího prvku. Když [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) je vykreslen metodou aplikaci Xamarin.Forms, v iOS `PageRenderer` vytvoření instance třídy, které pak vytvoří nativní `UIViewController` ovládacího prvku. Na platformě Android `PageRenderer` vytvoří instanci třídy `ViewGroup` ovládacího prvku. Na univerzální platformu Windows (UWP), `PageRenderer` vytvoří instanci třídy `FrameworkElement` ovládacího prvku. Další informace o zobrazovací jednotky a třídy nativní ovládacích prvků, které ovládací prvky Xamarin.Forms mapování na najdete v tématu [zobrazovací jednotky základní třídy a nativní ovládací prvky](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Každý ovládací prvek Xamarin.Forms má související zobrazovací jednotky pro každou platformu, která vytvoří instanci nativní ovládacího prvku. Když [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) je vykreslen metodou aplikace Xamarin.Forms v Iosu `PageRenderer` je vytvořena instance třídy, které pak vytvoří instanci nativní `UIViewController` ovládacího prvku. Na platformu Android `PageRenderer` vytvoří instanci třídy `ViewGroup` ovládacího prvku. Na Universal Windows Platform (UWP), `PageRenderer` vytvoří instanci třídy `FrameworkElement` ovládacího prvku. Další informace o nástroj pro vykreslování a nativní ovládací prvek třídy, které ovládací prvky Xamarin.Forms namapovat na najdete v tématu [Renderer základní třídy a nativní ovládací prvky](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
-Následující diagram znázorňuje vztah mezi [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) a odpovídající nativní ovládací prvky, které implementují ho:
+Následující diagram znázorňuje vztah mezi [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) a odpovídající nativní ovládací prvky, které je implementují:
 
 ![](contentpage-images/contentpage-classes.png "Vztah mezi třídou ContentPage a implementace nativní ovládací prvky")
 
-Proces vykreslování můžete provedeny výhod implementovat přizpůsobení specifické pro platformu tak, že vytvoříte vlastní zobrazovací jednotky pro [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) na každou platformu. Proces pro to vypadá takto:
+Samotný proces vykreslování děláte výhod implementovat tak, že vytvoříte vlastní zobrazovací jednotky pro vlastní nastavení pro konkrétní platformu [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) na jednotlivých platformách. Tento proces je následujícím způsobem:
 
-1. [Vytvoření](#Creating_the_Xamarin.Forms_Page) Xamarin.Forms stránky.
-1. [Využívat](#Consuming_the_Xamarin.Forms_Page) stránku z Xamarin.Forms.
-1. [Vytvoření](#Creating_the_Page_Renderer_on_each_Platform) vlastní zobrazovací jednotky stránky na každou platformu.
+1. [Vytvoření](#Creating_the_Xamarin.Forms_Page) stránku Xamarin.Forms.
+1. [Využívání](#Consuming_the_Xamarin.Forms_Page) stránku z Xamarin.Forms.
+1. [Vytvoření](#Creating_the_Page_Renderer_on_each_Platform) vlastního rendereru pro danou stránku na jednotlivých platformách.
 
-Každá položka teď probereme pak implementovat `CameraPage` za provozu fotoaparát kanálu a umožňuje zaznamenat fotografie, který poskytuje.
+Každá položka nyní probereme zase k implementaci `CameraPage` poskytující živého kanálu fotoaparátu funguje a schopnost zachytit fotografii.
 
 <a name="Creating_the_Xamarin.Forms_Page" />
 
 ## <a name="creating-the-xamarinforms-page"></a>Vytvoření stránky Xamarin.Forms
 
-Beze změny [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) lze přidat do sdíleného Xamarin.Forms projektu, jak je znázorněno v následujícím příkladu kódu XAML:
+Nezměněném [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) lze přidat do sdíleného projektu Xamarin.Forms, jak je znázorněno v následujícím příkladu kódu XAML:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -47,7 +47,7 @@ Beze změny [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.For
 </ContentPage>
 ```
 
-Podobně souboru kódu na pozadí pro [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) také zůstat beze změny, jak je znázorněno v následujícím příkladu kódu:
+Podobně použití modelu code-behind soubor pro [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) také zůstanou beze změny, jak je znázorněno v následujícím příkladu kódu:
 
 ```csharp
 public partial class CameraPage : ContentPage
@@ -60,7 +60,7 @@ public partial class CameraPage : ContentPage
 }
 ```
 
-Následující příklad kódu ukazuje, jak lze vytvořit stránku v jazyce C#:
+Následující příklad kódu ukazuje, jak se dají vytvářet stránky v jazyce C#:
 
 ```csharp
 public class CameraPageCS : ContentPage
@@ -71,13 +71,13 @@ public class CameraPageCS : ContentPage
 }
 ```
 
-Instance `CameraPage` se použije k zobrazení za provozu fotoaparát kanálu na každou platformu. Přizpůsobení ovládacího prvku budou provedeny v vlastní zobrazovací jednotky, aby žádné další implementace je vyžadována v `CameraPage` třídy.
+Instance `CameraPage` se použije k zobrazení živého kanálu na jednotlivých platformách fotoaparátu funguje. Přizpůsobení ovládacího prvku budou prováděny ve vlastní zobrazovací jednotky, tak se vyžaduje další implementaci `CameraPage` třídy.
 
 <a name="Consuming_the_Xamarin.Forms_Page" />
 
 ## <a name="consuming-the-xamarinforms-page"></a>Využívání stránce Xamarin.Forms
 
-Prázdné `CameraPage` musí být zobrazena v aplikaci Xamarin.Forms. K tomu dojde, když na tlačítko `MainPage` stisknuté instance, který pak provede `OnTakePhotoButtonClicked` metoda, jak je znázorněno v následujícím příkladu kódu:
+Prázdné `CameraPage` musí být aktivní aplikací Xamarin.Forms. Proběhne, když na tlačítko `MainPage` klepnutí instance, která pak spustí `OnTakePhotoButtonClicked` způsob, jak je znázorněno v následujícím příkladu kódu:
 
 ```csharp
 async void OnTakePhotoButtonClicked (object sender, EventArgs e)
@@ -86,40 +86,40 @@ async void OnTakePhotoButtonClicked (object sender, EventArgs e)
 }
 ```
 
-Tento kód jednoduše přejde `CameraPage`, na které vlastní nástroji pro vykreslování bude přizpůsobit její vzhled na každou platformu.
+Tento kód jednoduše přejde `CameraPage`, na které vlastní renderery přizpůsobovat vzhled stránky na jednotlivých platformách.
 
 <a name="Creating_the_Page_Renderer_on_each_Platform" />
 
-## <a name="creating-the-page-renderer-on-each-platform"></a>Vytváření vykreslení stránky na jednotlivých platformách
+## <a name="creating-the-page-renderer-on-each-platform"></a>Vytvoření stránky Renderer na jednotlivých platformách
 
-Proces pro vytvoření třídy vlastní zobrazovací jednotky vypadá takto:
+Proces pro vytvoření vlastního rendereru třídy vypadá takto:
 
-1. Vytvoření podtřídou třídy `PageRenderer` třídy.
-1. Přepsání `OnElementChanged` metody, která vykreslí nativní stránky a zápisu logiku stránku můžete přizpůsobit. `OnElementChanged` Metoda je volána, když se vytvoří odpovídající ovládacího prvku Xamarin.Forms.
-1. Přidat `ExportRenderer` atribut třídy vykreslení stránky k určení, že bude použit k vykreslení stránky Xamarin.Forms. Tento atribut slouží k registraci vlastní zobrazovací jednotky s Xamarin.Forms.
+1. Vytvořit podtřídu `PageRenderer` třídy.
+1. Přepsat `OnElementChanged` metody, která vykreslí nativní stránky a zápis logiku přizpůsobit obrazovku. `OnElementChanged` Metoda se volá, když se vytvoří odpovídající ovládací prvek Xamarin.Forms.
+1. Přidat `ExportRenderer` atribut třídy nástroj pro vykreslování stránky a určit tak, že bude používat k vykreslení stránky Xamarin.Forms. Tento atribut slouží k registraci vlastního rendereru s Xamarin.Forms.
 
 > [!NOTE]
-> Zadání je volitelné zajistit vykreslení stránky v každém projektu platformy. Pokud není registrované vykreslení stránky, se používá výchozí zobrazovací jednotky pro stránku.
+> Zadání je volitelné kvůli renderer stránky v každém projektu platformy. Pokud nástroj pro vykreslování stránky není zaregistrovaný, pak renderer výchozí stránky použít.
 
-Následující diagram znázorňuje odpovědnosti jednotlivých projektů v ukázkové aplikace, společně s vztah mezi nimi:
+Následující diagram znázorňuje odpovědnosti každý projekt v ukázkové aplikaci, spolu s vztah mezi ně:
 
 ![](contentpage-images/solution-structure.png "CameraPage vlastní zobrazovací jednotky projektu odpovědnosti")
 
-`CameraPage` Instance je vykreslen metodou specifické pro platformu `CameraPageRenderer` třídy, které jsou odvozeny od `PageRenderer` třídy pro platformu. Výsledkem je každý `CameraPage` instance vykreslované s za provozu fotoaparát informačního kanálu, jak je vidět na následujících snímcích obrazovky:
+`CameraPage` Instance je vykreslen metodou specifické pro platformu `CameraPageRenderer` třídy, které jsou odvozeny z `PageRenderer` třídy pro danou platformu. Výsledkem je každý `CameraPage` instance vykreslované s informační kanál živé fotoaparát, jak je znázorněno na následujících snímcích obrazovky:
 
 ![](contentpage-images/screenshots.png "CameraPage na jednotlivých platformách")
 
-`PageRenderer` Třídy zpřístupňuje `OnElementChanged` metodu, která je volána, když vytvoření Xamarin.Forms stránky k vykreslení ovládacího prvku odpovídající nativní. Tato metoda přebírá `ElementChangedEventArgs` parametr, který obsahuje `OldElement` a `NewElement` vlastnosti. Tyto vlastnosti představují Xamarin.Forms element, zobrazovací jednotky *byla* připojené a Xamarin.Forms element, zobrazovací jednotky *je* připojené k, v uvedeném pořadí. V ukázkové aplikaci `OldElement` , bude mít vlastnost `null` a `NewElement` vlastnost bude obsahovat odkaz na `CameraPage` instance.
+`PageRenderer` Třídy zpřístupňuje `OnElementChanged` metodu, která je volána, když se vytvoří Xamarin.Forms stránky k vykreslení ovládacího prvku odpovídající nativní. Tato metoda přebírá `ElementChangedEventArgs` parametr, který obsahuje `OldElement` a `NewElement` vlastnosti. Tyto vlastnosti představují elementu Xamarin.Forms, která zobrazovací jednotky *byl* připojené a Xamarin.Forms element, která zobrazovací jednotky *je* připojené položky v uvedeném pořadí. V ukázkové aplikaci `OldElement` bude mít vlastnost `null` a `NewElement` vlastnost bude obsahovat odkaz na `CameraPage` instance.
 
-Přepsané verzi `OnElementChanged` metoda v `CameraPageRenderer` třída je místo, kde provádět přizpůsobení nativní stránky. Nelze získat odkaz na instanci stránky Xamarin.Forms, která je vykreslované prostřednictvím `Element` vlastnost.
+Přepsané verzi `OnElementChanged` metodu `CameraPageRenderer` třída je místem, kde můžete provádět přizpůsobení nativní stránky. Odkaz na instanci stránky Xamarin.Forms, která se vykresluje můžete získat prostřednictvím `Element` vlastnost.
 
-Každá třída vlastní zobrazovací jednotky je upraven pomocí `ExportRenderer` atribut, který registruje zobrazovací jednotky s Xamarin.Forms. Atribut přebírá dva parametry – název typu vykreslované stránky Xamarin.Forms a název typu vlastní zobrazovací jednotky. `assembly` Předpona, která má atribut určuje atribut, které se vztahují na celou sestavení.
+Každá třída vlastní zobrazovací jednotky je doplněn `ExportRenderer` atribut, který registruje vykreslovaný pomocí Xamarin.Forms. Atribut přebírá dva parametry – název typu vykreslované stránky Xamarin.Forms a název typu vlastní zobrazovací jednotky. `assembly` Předpona, která atribut určuje, že platí atribut pro celé sestavení.
 
-Následující části popisují implementaci `CameraPageRenderer` vlastní zobrazovací jednotky pro každou platformu.
+Následující části popisují implementaci `CameraPageRenderer` vlastního rendereru pro každou platformu.
 
 ### <a name="creating-the-page-renderer-on-ios"></a>Vytvoření stránky zobrazovací jednotky v systému iOS
 
-Následující příklad kódu ukazuje vykreslení stránky pro platformu iOS:
+Následující příklad kódu ukazuje stránka zobrazovací jednotky pro platformu iOS:
 
 ```csharp
 [assembly:ExportRenderer (typeof(CameraPage), typeof(CameraPageRenderer))]
@@ -151,13 +151,13 @@ namespace CustomRenderer.iOS
 }
 ```
 
-Volání základní třídy `OnElementChanged` metoda vytvoří instanci iOS `UIViewController` ovládacího prvku. Datový proud za provozu fotoaparát je vykreslen pouze za předpokladu, že zobrazovací jednotky není již připojena k existující element Xamarin.Forms a za předpokladu, že existuje instance stránky, vykreslované ve vlastní zobrazovací jednotky.
+Volání základní třídy `OnElementChanged` metoda vytvoří instanci iOS `UIViewController` ovládacího prvku. Datový proud živého fotoaparát je vykreslen pouze za předpokladu, že zobrazovací jednotky není již připojena k existující prvek Xamarin.Forms a za předpokladu, že existuje instance stránky, které se vykresluje ve vlastní zobrazovací jednotky.
 
-Stránce je pak přizpůsobený podle řady metod, které používají `AVCapture` rozhraní API k poskytování živý datový proud z fotoaparátu a schopnost zachytit fotografie.
+Na stránce se pak přizpůsobit řady metod, které používají `AVCapture` rozhraní API k poskytování živého datového proudu z fotoaparátu/kamery a schopnost zachytit fotografii.
 
-### <a name="creating-the-page-renderer-on-android"></a>Vytvoření stránky zobrazovací jednotky v systému Android
+### <a name="creating-the-page-renderer-on-android"></a>Vytvoření stránky zobrazovací jednotky v Androidu
 
-Následující příklad kódu ukazuje vykreslení stránky pro platformu Android:
+Následující příklad kódu ukazuje stránka zobrazovací jednotky pro platformu Android:
 
 ```csharp
 [assembly: ExportRenderer(typeof(CameraPage), typeof(CameraPageRenderer))]
@@ -195,13 +195,13 @@ namespace CustomRenderer.Droid
 }
 ```
 
-Volání základní třídy `OnElementChanged` metoda vytvoří instanci Android `ViewGroup` řízení, které je skupina zobrazení. Datový proud za provozu fotoaparát je vykreslen pouze za předpokladu, že zobrazovací jednotky není již připojena k existující element Xamarin.Forms a za předpokladu, že existuje instance stránky, vykreslované ve vlastní zobrazovací jednotky.
+Volání základní třídy `OnElementChanged` metoda vytvoří instanci aplikace pro Android `ViewGroup` ovládací prvek, který je skupina zobrazení. Datový proud živého fotoaparát je vykreslen pouze za předpokladu, že zobrazovací jednotky není již připojena k existující prvek Xamarin.Forms a za předpokladu, že existuje instance stránky, které se vykresluje ve vlastní zobrazovací jednotky.
 
-Stránku pak upravíte vyvoláním řady metod, které používají `Camera` rozhraní API k poskytování živý datový proud z fotoaparátu a umožňuje zaznamenat fotografie, než `AddView` přidat kamera za provozu je volána metoda stream uživatelského rozhraní pro `ViewGroup`.
+Na stránce pak upravíte vyvoláním řady metod, které používají `Camera` rozhraní API pro poskytnutí živý stream z fotoaparátu/kamery a schopnost zachytit fotografii, než `AddView` vyvolána metoda pro přidání živé fotoaparátu/kamery uživatelské rozhraní, aby datový proud stream `ViewGroup`.
 
-### <a name="creating-the-page-renderer-on-uwp"></a>Vytváření vykreslení stránky na UWP
+### <a name="creating-the-page-renderer-on-uwp"></a>Vytvoření stránky Renderer na UPW
 
-Následující příklad kódu ukazuje vykreslení stránky pro UPW:
+Následující příklad kódu ukazuje stránka zobrazovací jednotky pro UPW:
 
 ```csharp
 [assembly: ExportRenderer(typeof(CameraPage), typeof(CameraPageRenderer))]
@@ -241,16 +241,16 @@ namespace CustomRenderer.UWP
 
 ```
 
-Volání základní třídy `OnElementChanged` metoda vytvoří instanci `FrameworkElement` řízení, vykreslení stránky. Datový proud za provozu fotoaparát je vykreslen pouze za předpokladu, že zobrazovací jednotky není již připojena k existující element Xamarin.Forms a za předpokladu, že existuje instance stránky, vykreslované ve vlastní zobrazovací jednotky. Stránku pak upravíte vyvoláním řady metod, které používají `MediaCapture` rozhraní API k poskytování živý datový proud z fotoaparátu a schopnost zachytit fotografie před upravené stránky je přidat do `Children` kolekce pro zobrazení.
+Volání základní třídy `OnElementChanged` metoda vytvoří instanci `FrameworkElement` ovládací prvek, na kterém vykreslením stránky. Datový proud živého fotoaparát je vykreslen pouze za předpokladu, že zobrazovací jednotky není již připojena k existující prvek Xamarin.Forms a za předpokladu, že existuje instance stránky, které se vykresluje ve vlastní zobrazovací jednotky. Na stránce pak upravíte vyvoláním řady metod, které používají `MediaCapture` rozhraní API pro poskytnutí živý stream z fotoaparátu/kamery a schopnost zachytit fotografii před přidá vlastní stránka `Children` kolekce pro zobrazení.
 
-Při implementaci vlastní zobrazovací jednotky, která je odvozena z `PageRenderer` na UPW, `ArrangeOverride` by také být implementována metoda uspořádat ovládací prvky stránky, protože základní zobrazovací jednotky nebude vědět, co dělat s nimi. Prázdná stránka výsledků, jinak hodnota. Proto v tomto příkladu `ArrangeOverride` volání metod `Arrange` metodu `Page` instance.
+Při implementaci vlastní zobrazovací jednotky, která je odvozena od `PageRenderer` na UPW, `ArrangeOverride` metoda by měla implementovat také uspořádat ovládací prvky stránky, protože základní renderer neví, co dělat s nimi. V opačném případě prázdná stránka výsledků. Proto se v tomto příkladu `ArrangeOverride` volání metod `Arrange` metodu na `Page` instance.
 
 > [!NOTE]
-> Je důležité k zastavení a uvolnění objektů, které poskytují přístup k fotoaparátu v aplikaci UWP. Tak neučiníte, může narušovat jiné aplikace, které se pokoušejí o přístup k fotoaparátu zařízení. Další informace najdete v tématu [zobrazení náhledu fotoaparátu](https://msdn.microsoft.com/windows/uwp/audio-video-camera/simple-camera-preview-access).
+> Je důležité k zastavení a uvolnění objektů, které poskytují přístup k fotoaparátu/kamery v aplikaci pro UPW. Pokud tak neučiníte může vést k potížím s ostatními aplikacemi, které se pokoušejí o přístup k fotoaparátu zařízení. Další informace najdete v tématu [zobrazit náhled fotoaparát](https://msdn.microsoft.com/windows/uwp/audio-video-camera/simple-camera-preview-access).
 
 ## <a name="summary"></a>Souhrn
 
-Tento článek vám ukázal, jak vytvořit vlastní zobrazovací jednotky pro [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) stránce, který umožňuje vývojářům přepsat výchozí nativní vykreslování s vlastní přizpůsobení specifické pro platformu. A `ContentPage` je visual element, který zobrazí jedno zobrazení a zabírá Většina obrazovky.
+Tento článek vám ukázal, jak vytvořit vlastního rendereru pro [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) stránce, který umožňuje vývojářům přepsat výchozí nativní vykreslení s jejich přizpůsobováním specifické pro platformu. A `ContentPage` je vizuální prvek, který zobrazí jedno zobrazení a zabírá většinu obrazovky.
 
 
 ## <a name="related-links"></a>Související odkazy

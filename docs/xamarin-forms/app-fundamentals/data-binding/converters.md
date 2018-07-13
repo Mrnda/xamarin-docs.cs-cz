@@ -1,28 +1,28 @@
 ---
-title: Převodníky hodnot vazby Xamarin.Forms
-description: Tento článek vysvětluje, jak převést nebo převést hodnoty v rámci datová vazba Xamarin.Forms implementací převaděč hodnoty, (který je také označována jako vazby převaděč nebo převaděč hodnoty vazby).
+title: Převaděče hodnot vazeb Xamarin.Forms
+description: Tento článek vysvětluje, jak přetypujte nebo převeďte hodnot v rámci datové vazby Xamarin.Forms implementací převaděč hodnot (což je také převaděč vazby nebo převaděč hodnoty vazby).
 ms.prod: xamarin
 ms.assetid: 02B1BBE6-D804-490D-BDD4-8ACED8B70C92
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: a5bd52d43ef93013537f30c7d5e0c31cbf336d07
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 28892692133020de1fa5a6eb007bb3f9bcf2612b
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241826"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997477"
 ---
-# <a name="xamarinforms-binding-value-converters"></a>Převodníky hodnot vazby Xamarin.Forms
+# <a name="xamarinforms-binding-value-converters"></a>Převaděče hodnot vazeb Xamarin.Forms
 
-Datové vazby obvykle přenášet data z zdrojová vlastnost pro vlastnost target a v některých případech z vlastnosti cílového zdrojová vlastnost. Tento přenos je jednoduché, když jsou vlastnosti zdrojové a cílové stejného typu, nebo když jeden typ lze převést na typ prostřednictvím implicitní převod. Pokud není tento případ, převod typu musí být provedeno.
+Datové vazby pro vlastnost target a v některých případech vlastnost Cílová vlastnost source obvykle přenést data z vlastnost source. Tento přenos je jednoduché, když vlastnosti zdroje a cíle jsou stejného typu, nebo když jednoho typu lze převést na jiný typ prostřednictvím implicitního převodu. Když to není tento případ, převod typu musí proběhnout.
 
-V [ **formátování řetězce** ](string-formatting.md) článku jste viděli, jak můžete použít `StringFormat` vlastnost vazby dat jakéhokoli typu převést na řetězec. U jiných typů převody, budete muset napsat specializované kód ve třídě, která implementuje [ `IValueConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.IValueConverter/) rozhraní. (Universal Windows Platform obsahuje podobné třídy s názvem [ `IValueConverter` ](/uwp/api/Windows.UI.Xaml.Data.IValueConverter/) v `Windows.UI.Xaml.Data` oboru názvů, ale to `IValueConverter` v `Xamarin.Forms` oboru názvů.) Třídy implementující `IValueConverter` se nazývají *hodnotu převaděče*, ale jejich také často označovány jako *vazby převaděče* nebo *vazby převodníky hodnot*.
+V [ **formátování řetězce** ](string-formatting.md) článku jste viděli, jak můžete použít `StringFormat` vlastnost datovou vazbu pro jakýkoli typ převést na řetězec. Pro ostatní typy převodů, budete muset napsat specializovaný kód do třídy, která implementuje [ `IValueConverter` ](xref:Xamarin.Forms.IValueConverter) rozhraní. (Univerzální platforma Windows obsahuje podobné třídu s názvem [ `IValueConverter` ](/uwp/api/Windows.UI.Xaml.Data.IValueConverter/) v `Windows.UI.Xaml.Data` obor názvů, ale to `IValueConverter` probíhá `Xamarin.Forms` oboru názvů.) Třídy, které implementují `IValueConverter` se nazývají *převaděče hodnoty*, ale že se také často označují jako *vazby převaděče* nebo *převaděče hodnot vazeb*.
 
 ## <a name="the-ivalueconverter-interface"></a>Rozhraní IValueConverter
 
-Předpokládejme, že chcete definovat vazbu dat, kde je zdrojová vlastnost typu `int` , ale vlastnost target je `bool`. Chcete, aby tato vazba dat k vytvoření `false` hodnotu, pokud je zdroj celé číslo rovno 0, a `true` jinak.  
+Předpokládejme, že chcete definovat datové vazby, kde je vlastnost source typu `int` , ale je vlastnost target `bool`. Chcete, aby tato vazba dat k vytvoření `false` hodnotu, pokud je zdroj celé číslo rovno 0, a `true` jinak.  
 
 To lze provést pomocí třídy, která implementuje `IValueConverter` rozhraní:
 
@@ -41,15 +41,15 @@ public class IntToBoolConverter : IValueConverter
 }
 ```
 
-Nastavení instance této třídy lze [ `Converter` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Binding.Converter/) vlastnost `Binding` třídy nebo [ `Converter` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Xaml.BindingExtension.Converter/) vlastnost `Binding` – rozšíření značek. Tato třída stane součástí datové vazby.
+Nastavit instanci této třídy pro [ `Converter` ](xref:Xamarin.Forms.Binding.Converter) vlastnost `Binding` třídy nebo [ `Converter` ](xref:Xamarin.Forms.Xaml.BindingExtension.Converter) vlastnost `Binding` – rozšíření značek. Tato třída se stane součástí datové vazby.
 
-`Convert` Metoda je volána, když data se přesouvají ze zdroje do cíle v `OneWay` nebo `TwoWay` vazby. `value` Parametr je objekt nebo hodnota ve zdroji dat vazby. Metoda musí vracet hodnoty typu cíle datové vazby. Metoda tady uvedené přetypování `value` parametru `int` a porovná je s 0 `bool` vrátit hodnotu.
+`Convert` Metoda se volá, když k přesunu dat ze zdroje do cíle v `OneWay` nebo `TwoWay` vazby. `value` Parametru je objekt nebo hodnotu ze zdroje dat neumožňující vazbu. Metoda musí vracet hodnotu typu cíle datové vazby. Metoda je vidět tady přetypování `value` parametr `int` a porovná ho s 0 pro `bool` návratovou hodnotu.
 
-`ConvertBack` Metoda je volána, když data se přesouvají z cíle zdroj v `TwoWay` nebo `OneWayToSource` vazby. `ConvertBack` provede Obrácený převod: předpokládá `value` parametr je `bool` cíl a převede jej na `int` vrátit hodnotu pro tento zdroj.
+`ConvertBack` Metoda se volá, když data se přesouvají z cíle na zdroj v `TwoWay` nebo `OneWayToSource` vazby. `ConvertBack` provádí opačnou převod: předpokládá `value` parametr je `bool` z cíle a převede jej na `int` návratovou hodnotu pro zdroj.
 
-Pokud také obsahuje datové vazby `StringFormat` nastavení, převaděč hodnoty je volána, než je výsledek naformátovaná jako řetězec.
+Pokud také obsahuje datové vazby `StringFormat` nastavení, převaděč hodnoty vyvolání dříve, než je formátováno výsledek jako řetězec.
 
-**Povolit tlačítka** stránku [ **ukázky vazby dat** ](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) příklad ukazuje, jak používat tento převaděč hodnoty v datová vazba. `IntToBoolConverter` Je vytvořena instance ve slovníku prostředků stránky. Se pak odkazuje s `StaticResource` – rozšíření značek k nastavení `Converter` vlastnost dvě datové vazby. Je velmi běžné sdílet převaděče data mezi víc vazeb dat na stránce:
+**Tlačítka povolte** stránku [ **ukázky vazby dat** ](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) Ukázka předvádí, jak používat tento převaděč hodnoty v datové vazbě. `IntToBoolConverter` Je vytvořena instance ve slovníku prostředků na stránce. Je pak odkazuje se `StaticResource` – rozšíření značek k nastavení `Converter` vlastnost ve dvou datových vazbách. Je velmi běžné sdílet převaděče data mezi víc vazeb dat na stránce:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -91,25 +91,25 @@ Pokud také obsahuje datové vazby `StringFormat` nastavení, převaděč hodnot
 </ContentPage>
 ```
 
-Pokud hodnota převaděč slouží na různých stránkách aplikace, můžete vytvořit instanci ji ve slovníku prostředků v **App.xaml** souboru.
+Pokud převaděč hodnoty se používá ve více stránek vaší aplikace, můžete vytvořit instanci ho do slovníku prostředků **App.xaml** souboru.
 
-**Povolit tlačítka** stránky ukazuje běžné potřebují, kdy `Button` provádí operace založené na text, který uživatel zadá do `Entry` zobrazení. Pokud nic zadali do `Entry`, `Button` by mělo být zakázáno. Každý `Button` obsahuje datová vazba na jeho `IsEnabled` vlastnost. Zdroj datové vazby `Length` vlastnost `Text` vlastnosti k odpovídající položce `Entry`. Pokud tento `Length` vlastnost není převaděč hodnoty 0, vrátí `true` a `Button` zapnutá:
+**Tlačítka povolte** stránce ukazuje společného potřebovat při `Button` provádí operaci na základě textu, který uživatel zadá do `Entry` zobrazení. Pokud není nic byla zadána do `Entry`, `Button` by mělo být zakázáno. Každý `Button` obsahuje datové vazby v jeho `IsEnabled` vlastnost. Zdroj datové vazby je `Length` vlastnost `Text` vlastnosti k odpovídající položce `Entry`. Pokud to `Length` jedná o vlastnost neumožňující převaděč hodnoty 0, vrátí `true` a `Button` zapnutá:
 
-[![Povolit tlačítka](converters-images/enablebuttons-small.png "povolit tlačítka")](converters-images/enablebuttons-large.png#lightbox "povolit tlačítka")
+[![Povolit tlačítka](converters-images/enablebuttons-small.png "povolení tlačítka")](converters-images/enablebuttons-large.png#lightbox "povolit tlačítek")
 
-Všimněte si, že `Text` vlastnost v každé `Entry` je inicializován na prázdný řetězec. `Text` Vlastnost je `null` ve výchozím nastavení a data vazba nebude fungovat v takovém případě.
+Všimněte si, že `Text` vlastnost v každém `Entry` je inicializován na prázdný řetězec. `Text` Vlastnost `null` ve výchozím nastavení a data vazby nebude fungovat v takovém případě.
 
-Některé převodníky hodnot jsou napsané konkrétně pro konkrétní aplikace, zatímco ostatní zobecněn. Pokud víte, že převaděč hodnoty, bude použit pouze v `OneWay` vazby, pak se `ConvertBack` metoda můžete jednoduše vrátit `null`.
+Některé převaděče hodnot jsou psány konkrétně pro konkrétní aplikace, zatímco ostatní zobecněný. Pokud víte, že převaděč hodnoty se použijí jen v `OneWay` vazby, pak bude `ConvertBack` metoda může jednoduše provést vrácení `null`.
 
-`Convert` Výše uvedená metoda implicitně předpokládá, že `value` argument je typu `int` a návratová hodnota musí být typu `bool`. Podobně `ConvertBack` metoda předpokládá, že `value` argument je typu `bool` a že návratová hodnota `int`. Pokud není tento případ, dojde k výjimku modulu runtime.
+`Convert` Výše uvedená metoda implicitně předpokládá, `value` argument je typu `int` a vrácená hodnota musí být typu `bool`. Podobně `ConvertBack` metoda předpokládá, že `value` argument je typu `bool` a vrácená hodnota je `int`. Pokud to není tento případ, dojde k výjimce modulu runtime.
 
-Převodníky hodnot pro více zobecněny a tak, aby přijímal několika různých typů dat může zapisovat. `Convert` a `ConvertBack` můžete použít metody `as` nebo `is` operátory s `value` parametr, nebo můžete volat `GetType` na tento parametr k určení jeho typu a poté proveďte něco vhodné. Očekávaný typ návratovou hodnotu pro každou metodu je dána `targetType` parametr. V některých případech se používají převodníky hodnot s vazby dat jiný cíl typů; Převaděč hodnoty můžete použít `targetType` argument chcete provést konverzi pro správného typu.
+Převodníky hodnot více zobecnit a přijímat několik různých typů dat, můžete napsat. `Convert` a `ConvertBack` metody můžete použít `as` nebo `is` operátory se `value` parametr, nebo může volat `GetType` na tento parametr k určení jeho typu a potom proveďte něco vhodné. Očekávaný typ jednotlivých metod návratová hodnota je dán `targetType` parametru. V některých případech se používají převaděče hodnot s jinou cílovou typů; datové vazby Převaděč hodnoty můžete použít `targetType` argument k provedení převodu správného typu.
 
-Pokud převod provádí se liší pro různé kultury, použijte `culture` parametr pro tento účel. `parameter` Argument `Convert` a `ConvertBack` je popsána dále v tomto článku.
+Pokud právě probíhá převod se liší pro různé jazykové verze, použijte `culture` parametr pro tento účel. `parameter` Argument `Convert` a `ConvertBack` je popsána dále v tomto článku.
 
-## <a name="binding-converter-properties"></a>Vlastnosti převaděč vazby
+## <a name="binding-converter-properties"></a>Převaděč vlastnosti vazby
 
-Hodnota převaděč třídy mohou mít vlastnosti a obecné parametry. Převede tento převaděč konkrétní hodnotu `bool` ze zdroje na objekt typu `T` pro cíl:
+Třídy převaděče hodnot mohou mít vlastnosti a obecných parametrů. Převede tento převaděč určitou hodnotu `bool` ze zdroje do objektu typu `T` pro cíl:
 
 ```csharp
 public class BoolToObjectConverter<T> : IValueConverter
@@ -130,7 +130,7 @@ public class BoolToObjectConverter<T> : IValueConverter
 }
 ```
 
-**Přepínač indikátory** stránky ukazuje, jak může být použita k zobrazení hodnotu `Switch` zobrazení. Přestože je společné pro vytvoření instance převodníky hodnot jako prostředky v slovník prostředků, tato stránka představuje alternativu: vytvoření instance každé převaděč hodnoty mezi `Binding.Converter` značky element vlastnosti. `x:TypeArguments` Označuje obecné argument a `TrueObject` a `FalseObject` jsou nastaveny na objekty daného typu:
+**Přepnout indikátory** stránky ukazuje, jak může být použita k zobrazení hodnoty `Switch` zobrazení. I když je společné pro vytvoření instance převaděče hodnot jako prostředky ve slovníku prostředků, na této stránce ukazuje alternativu: každý převaděč hodnoty je vytvořena instance mezi `Binding.Converter` značky element vlastnosti. `x:TypeArguments` Určuje obecný argument a `TrueObject` a `FalseObject` jsou nastaveny na objekty tohoto typu:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -234,17 +234,17 @@ public class BoolToObjectConverter<T> : IValueConverter
 </ContentPage>
 ```
 
-Během posledních tří `Switch` a `Label` páry obecné argument je nastaven na `Style`a celý `Style` objekty jsou k dispozici pro hodnoty `TrueObject` a `FalseObject`. Toto přepsání implicitní styl pro `Label` nastavit slovník prostředků, takže vlastnosti v daném stylu explicitně přiřazené k `Label`. Přepnutím `Switch` způsobí, že odpovídající `Label` , aby odrážely změny:
+Za posledních tří `Switch` a `Label` dvojice, obecný argument je nastaven na `Style`a celé `Style` objekty jsou k dispozici pro hodnoty `TrueObject` a `FalseObject`. Tyto přepsat implicitní styl `Label` nastavit slovník prostředků, takže vlastností ve stylu jsou explicitně přiřazeny `Label`. Při přepnutí `Switch` způsobí, že odpovídající `Label` tak, aby odrážely změny:
 
-[![Přepnout indikátory](converters-images/switchindicators-small.png "Přepnout indikátory")](converters-images/switchindicators-large.png#lightbox "přepínač ukazatele")
+[![Přepnout indikátory](converters-images/switchindicators-small.png "Přepnout indikátory")](converters-images/switchindicators-large.png#lightbox "Přepnout indikátory")
 
-Je také možné použít [ `Triggers` ](~/xamarin-forms/app-fundamentals/triggers.md) při implementaci podobné změn v uživatelském rozhraní založené na jiné zobrazení.
+Je také možné použít [ `Triggers` ](~/xamarin-forms/app-fundamentals/triggers.md) provádět podobné změny v uživatelském rozhraní založené na jiné zobrazení.
 
-## <a name="binding-converter-parameters"></a>Parametry převaděče vazby
+## <a name="binding-converter-parameters"></a>Převaděč parametry vazby
 
-`Binding` Třída definuje [ `ConverterParameter` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Binding.ConverterParameter/) vlastnost a `Binding` – rozšíření značek také definuje [ `ConverterParameter` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Xaml.BindingExtension.ConverterParameter/) vlastnost. Pokud je tato vlastnost nastavená, pak hodnota je předán `Convert` a `ConvertBack` metody jako `parameter` argument. I když instanci převaděč hodnoty je sdílena mezi několika datové vazby `ConverterParameter` mohou být různé provést poněkud jiné převody.
+`Binding` Definuje třídu [ `ConverterParameter` ](xref:Xamarin.Forms.Binding.ConverterParameter) vlastnost a `Binding` také definuje – rozšíření značek [ `ConverterParameter` ](xref:Xamarin.Forms.Xaml.BindingExtension.ConverterParameter) vlastnost. Pokud je tato vlastnost nastavena, pak hodnota předaná `Convert` a `ConvertBack` metody jako `parameter` argument. I v případě, že instance převaděč hodnoty je sdílen mezi několika datové vazby `ConverterParameter` se může lišit pro převod poněkud liší.
 
-Použití `ConverterParameter` se demonstruje program výběr barev. V takovém případě `RgbColorViewModel` má tři vlastnosti typu `double` s názvem `Red`, `Green`, a `Blue` používající vytvořit `Color` hodnotu:
+Použití `ConverterParameter` je znázorněn s programem výběr barvy. V takovém případě `RgbColorViewModel` má tři vlastnosti typu `double` s názvem `Red`, `Green`, a `Blue` , který se používá k vytvoření `Color` hodnotu:
 
 ```csharp
 public class RgbColorViewModel : INotifyPropertyChanged
@@ -338,9 +338,9 @@ public class RgbColorViewModel : INotifyPropertyChanged
 }
 ```
 
-`Red`, `Green`, A `Blue` vlastnosti rozsahu od 0 do 1. Může ale dáváte přednost tomu, že komponenty zobrazena jako letopočty šestnáctkové hodnoty.
+`Red`, `Green`, A `Blue` vlastnosti rozsahu od 0 do 1. Ale můžete dát přednost, že součásti bude zobrazen jako dvouciferných šestnáctkových hodnot.
 
-Pokud chcete zobrazit jako hexadecimální hodnoty v jazyce XAML, se musí být násobí hodnotou 255, převést na celé číslo a ve formátu s specifikaci "X2" `StringFormat` vlastnost. Převaděč hodnoty může zpracovávat první dvě úlohy (vynásobí 255 a převádění na celá čísla). Chcete-li převaděč hodnoty jako zobecněn nejdříve, lze určit násobitel `ConverterParameter` vlastnost, což znamená, že zadá `Convert` a `ConvertBack` metody jako `parameter` argument:
+Pokud chcete zobrazit jako šestnáctkové hodnoty v XAML, musí být vynásobené 255, převést na celé číslo a ve formátu specifikace "X2" `StringFormat` vlastnost. První dva úkoly (vynásobí 255 a převod na celé číslo) mohou být zpracovány převaděč hodnoty. Převaděč hodnoty za generalizovaný nejdříve proveďte násobitel je možné zadat při `ConverterParameter` vlastnost, což znamená, že přejde `Convert` a `ConvertBack` metody jako `parameter` argument:
 
 ```csharp
 public class DoubleToIntConverter : IValueConverter
@@ -371,17 +371,17 @@ public class DoubleToIntConverter : IValueConverter
 }
 ```
 
-`Convert` Převádí z `double` k `int` při vynásobí `parameter` value; `ConvertBack` rozdělí na celé číslo `value` argument podle `parameter` a vrátí `double` výsledek. (V programu je uvedeno níže, převaděč hodnoty se používá jen v rámci formátování řetězce, takže `ConvertBack` se nepoužívá.)
+`Convert` Převede z `double` k `int` při vynásobí `parameter` hodnota; `ConvertBack` rozdělí na celé číslo `value` argumentu ve `parameter` a vrátí `double` výsledek. (V programu je uvedeno níže, převaděč hodnoty se používá jenom ve spojení s formátování řetězce, takže `ConvertBack` se nepoužívá.)
 
-Typ `parameter` argument je pravděpodobně lišit v závislosti na tom, jestli je definována datové vazby v kódu nebo XAML. Pokud `ConverterParameter` vlastnost `Binding` nastavena v kódu, je pravděpodobně být nastavena na číselnou hodnotu:
+Typ `parameter` argument je pravděpodobně lišit v závislosti na tom, zda je definován datové vazby v kódu nebo XAML. Pokud `ConverterParameter` vlastnost `Binding` je nastavena v kódu, je pravděpodobně být nastavena na číselnou hodnotu:
 
 ```csharp
 binding.ConverterParameter = 255;
 ```
 
-`ConverterParameter` Vlastnost je typu `Object`, takže kompilátor jazyka C# literálu 255 interpretuje jako celé číslo a nastaví vlastnost na tuto hodnotu.
+`ConverterParameter` Vlastnost je typu `Object`, takže kompilátor jazyka C# literálu 255 interpretuje jako celé číslo a nastaví vlastnost k dané hodnotě.
 
-V jazyce XAML, ale `ConverterParameter` může nastavit takto:
+V XAML, ale `ConverterParameter` by mohla být nastavit takto:
 
 ```xaml
 <Label Text="{Binding Red,
@@ -390,11 +390,11 @@ V jazyce XAML, ale `ConverterParameter` může nastavit takto:
                       StringFormat='Red = {0:X2}'}" />
 ```
 
-255 vypadá jako číslo, ale protože `ConverterParameter` je typu `Object`, analyzátor XAML zpracovává 255 jako řetězec.
+255 vypadá jako číslo, ale protože `ConverterParameter` je typu `Object`, analyzátoru XAML považuje za řetězec 255.
 
-Z tohoto důvodu převaděč hodnoty výše uvedeném obsahuje samostatné `GetParameter` metoda, která zpracovává případů pro `parameter` se typu `double`, `int`, nebo `string`.  
+Z tohoto důvodu převaděč hodnoty uvedené nahoře zahrnuje samostatné `GetParameter` metoda, která zpracovává případy `parameter` typ `double`, `int`, nebo `string`.  
 
-**Selektor barva RGB** stránky vytvoří `DoubleToIntConverter` v jeho slovník prostředků definici dvě implicitní styly následující:
+**Výběr barvy RGB** vytvoří instanci stránky `DoubleToIntConverter` v následující definici dvě implicitní styly slovníku prostředků:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -456,14 +456,14 @@ Z tohoto důvodu převaděč hodnoty výše uvedeném obsahuje samostatné `GetP
 </ContentPage>    
 ```
 
-Hodnoty `Red` a `Green` s se zobrazí vlastnosti `Binding` – rozšíření značek. `Blue` Vlastnost, ale vytvoří `Binding` třídy ukazují, jak pomocí explicitní `double` hodnota může být nastaven na `ConverterParameter` vlastnost.
+Hodnoty `Red` a `Green` vlastnosti jsou zobrazovány `Binding` – rozšíření značek. `Blue` Vlastností, ale vytvoří instanci `Binding` třídy k předvedení jak explicitní `double` hodnota může být nastavena na `ConverterParameter` vlastnost.
 
 Tady je výsledek:
 
-[![Výběr barvy RGB](converters-images/rgbcolorselector-small.png "selektor barva RGB")](converters-images/rgbcolorselector-large.png#lightbox "selektor barva RGB")
+[![Výběr barvy RGB](converters-images/rgbcolorselector-small.png "výběr barvy RGB")](converters-images/rgbcolorselector-large.png#lightbox "výběr barvy RGB")
 
 
 ## <a name="related-links"></a>Související odkazy
 
 - [Ukázky vazby dat (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
-- [Kapitola vazby dat z adresáře Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
+- [Data vazby kapitola z knihy Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

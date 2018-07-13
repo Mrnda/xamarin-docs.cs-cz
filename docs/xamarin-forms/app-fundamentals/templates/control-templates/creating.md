@@ -1,26 +1,26 @@
 ---
-title: Vytváření ControlTemplate
-description: Ovládací prvek šablony může být definováno na úrovni aplikace nebo na úrovni stránky. Tento článek ukazuje, jak vytvářet a využívat šablon ovládacích prvků.
+title: Vytvoření objektu ControlTemplate
+description: Šablony ovládacích prvků lze definovat na úrovni aplikace nebo na úrovni stránky. Tento článek ukazuje, jak vytvářet a využívat šablon ovládacích prvků.
 ms.prod: xamarin
 ms.assetid: A9AEB052-FBF5-4589-9BD4-6D6F62BED7F1
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 214f967ccc07a7c952ba87927c34c3ab32623391
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: b83668f6836b1d5d98f67592bf3e2b01e7319edc
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848275"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998184"
 ---
-# <a name="creating-a-controltemplate"></a>Vytváření ControlTemplate
+# <a name="creating-a-controltemplate"></a>Vytvoření objektu ControlTemplate
 
-_Ovládací prvek šablony může být definováno na úrovni aplikace nebo na úrovni stránky. Tento článek ukazuje, jak vytvářet a využívat šablon ovládacích prvků._
+_Šablony ovládacích prvků lze definovat na úrovni aplikace nebo na úrovni stránky. Tento článek ukazuje, jak vytvářet a využívat šablon ovládacích prvků._
 
-## <a name="creating-a-controltemplate-in-xaml"></a>Vytváření ControlTemplate v jazyce XAML
+## <a name="creating-a-controltemplate-in-xaml"></a>Vytvoření objektu ControlTemplate v XAML
 
-K definování [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) na úrovni aplikace, [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) musí být přidaný do `App` třídy. Ve výchozím nastavení, použijte všechny Xamarin.Forms aplikace vytvořené ze šablony **aplikace** třídu pro implementaci [ `Application` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Application/) podtřídy. Deklarovat `ControlTemplate` na úrovni aplikace, do aplikace `ResourceDictionary` pomocí XAML, výchozí **aplikace** třídy je nutné nahradit XAML **aplikace** třídy a přidružené kódu jako Zobrazuje následující příklad kódu:
+K definování [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) na úrovni aplikace [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) musí být přidané do `App` třídy. Ve výchozím nastavení, všechny aplikace Xamarin.Forms, které jsou vytvořené ze šablony pomocí **aplikace** třídu pro implementaci [ `Application` ](xref:Xamarin.Forms.Application) podtřídy. Chcete-li deklarovat `ControlTemplate` na úrovni aplikace v aplikačním `ResourceDictionary` pomocí XAML, výchozí **aplikace** třídy je nutné nahradit XAML **aplikace** třídy a přidružené použití modelu code-behind, jako můžete vidět v následujícím příkladu kódu:
 
 ```xaml
 <Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SimpleTheme.App">
@@ -48,9 +48,9 @@ K definování [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xama
 </Application>
 ```
 
-Každý [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) instance je vytvořit jako objekt opakovaně použitelné v [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/).  Toho dosáhnete tím, že každá deklarace jedinečný `x:Key` atribut, který poskytuje popisný klíč v `ResourceDictionary`.
+Každý [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) jako opakovaně použitelný objekt v je vytvořena instance [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary).  Toho můžete dosáhnout přidělením jedinečné deklaraci `x:Key` atribut, který poskytuje popisný klíčem v `ResourceDictionary`.
 
-Následující příklad kódu ukazuje přidruženého `App` kódu:
+Následující příklad kódu ukazuje přidruženého `App` použití modelu code-behind:
 
 ```csharp
 public partial class App : Application
@@ -63,9 +63,9 @@ public partial class App : Application
 }
 ```
 
-I nastavení [ `MainPage` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.MainPage/) vlastnost modelu code-behind musíte také zavolat `InitializeComponent` metoda se načíst a analyzovat přidružené XAML.
+A také nastavení [ `MainPage` ](xref:Xamarin.Forms.Application.MainPage) vlastnost modelu code-behind musíte také zavolat `InitializeComponent` metoda načíst a analyzovat související XAML.
 
-Následující příklad kódu ukazuje [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) použití `TealTemplate` k [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/):
+Následující příklad kódu ukazuje [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) použití `TealTemplate` k [ `ContentView` ](xref:Xamarin.Forms.ContentView):
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SimpleTheme.HomePage">
@@ -79,13 +79,13 @@ Následující příklad kódu ukazuje [ `ContentPage` ](https://developer.xamar
 </ContentPage>
 ```
 
-`TealTemplate` Je přiřazena k [ `ContentView.ControlTemplate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.TemplatedView.ControlTemplate/) vlastnost pomocí `StaticResource` – rozšíření značek. [ `ContentView.Content` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ContentView.Content/) Je nastavena na [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) , který definuje obsah, který se má zobrazit [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/). Zobrazí se tento obsah pomocí [ `ContentPresenter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPresenter/) obsažené v `TealTemplate`. Výsledkem je vidět na následujících snímcích obrazovky vzhled:
+`TealTemplate` Přiřazen [ `ContentView.ControlTemplate` ](xref:Xamarin.Forms.TemplatedView.ControlTemplate) vlastnost s použitím `StaticResource` – rozšíření značek. [ `ContentView.Content` ](xref:Xamarin.Forms.ContentView.Content) Je nastavena na [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) , který definuje obsah, který se má zobrazit na [ `ContentPage` ](xref:Xamarin.Forms.ContentPage). Tento obsah se zobrazí podle [ `ContentPresenter` ](xref:Xamarin.Forms.ContentPresenter) součástí `TealTemplate`. Výsledkem je vzhled je znázorněno na následujících snímcích obrazovky:
 
-![](creating-images/teal-theme.png "Šablona šedozelená ovládacího prvku")
+![](creating-images/teal-theme.png "Šablony ovládacího prvku šedozelená")
 
-### <a name="re-theming-an-application-at-runtime"></a>Opětovná motivů aplikace za běhu
+### <a name="re-theming-an-application-at-runtime"></a>RE – motivy aplikace za běhu
 
-Kliknutím **změnit motiv** tlačítko spustí `OnButtonClicked` metodu, která je znázorněno v následujícím příkladu kódu:
+Kliknutím **změnit motiv** tlačítko spustí `OnButtonClicked` metoda, která je znázorněna v následujícím příkladu kódu:
 
 ```csharp
 void OnButtonClicked (object sender, EventArgs e)
@@ -95,16 +95,16 @@ void OnButtonClicked (object sender, EventArgs e)
 }
 ```
 
-Tato metoda nahrazuje aktivní [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) instance s alternativním `ControlTemplate` instance, což vede k na následujícím snímku obrazovky:
+Tato metoda nahrazuje aktivní [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) instance s alternativním `ControlTemplate` instance, což vede na následujícím snímku obrazovky:
 
-![](creating-images/aqua-theme.png "Šablona aqua ovládacího prvku")
+![](creating-images/aqua-theme.png "Šablony akvamarínový ovládacího prvku")
 
 > [!NOTE]
-> Na `ContentPage`, `Content` vlastnost lze přiřadit a `ControlTemplate` může být nastavena také vlastnost. Pokud k tomu dojde, pokud `ControlTemplate` obsahuje `ContentPresenter` instance obsahu přiřazeného k `Content` vlastnost bude předložený `ContentPresenter` v rámci `ControlTemplate`.
+> Na `ContentPage`, `Content` je možné přiřadit vlastnosti a `ControlTemplate` může být nastavena také vlastnost. Když k tomu dojde, pokud `ControlTemplate` obsahuje `ContentPresenter` instance obsahu přiřazeného k `Content` vlastnost se zobrazí ve `ContentPresenter` v rámci `ControlTemplate`.
 
-### <a name="setting-a-controltemplate-with-a-style"></a>Nastavení ControlTemplate s styl
+### <a name="setting-a-controltemplate-with-a-style"></a>Nastavení šablony ControlTemplate stylem
 
-A [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) lze použít také prostřednictvím [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) další rozbalte možnost motivu. Toho lze dosáhnout vytvořením *implicitní* nebo *explicitní* styl cílové zobrazení v [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)a nastavení `ControlTemplate` vlastnost cíle zobrazení v [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) instance. Následující příklad kódu ukazuje *implicitní* styl, který je přidán na úrovni aplikace [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/):
+A [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) lze také použít prostřednictvím [ `Style` ](xref:Xamarin.Forms.Style) dále rozbalte možnost motiv. Toho lze dosáhnout vytvořením *implicitní* nebo *explicitní* styl zobrazení cíle v [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)a nastavení `ControlTemplate` vlastnosti cíle Zobrazit [ `Style` ](xref:Xamarin.Forms.Style) instance. Následující příklad kódu ukazuje *implicitní* styl, který je byly přidány na úrovni aplikace [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary):
 
 ```xaml
 <Style TargetType="ContentView">
@@ -112,7 +112,7 @@ A [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Con
 </Style>
 ```
 
-Protože [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) instance je *implicitní*, se použijí na všechny `ContentView` instancí v aplikaci. Proto je již nebude nutné nastavit [ `ContentView.ControlTemplate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.TemplatedView.ControlTemplate/) vlastnosti, jak je ukázáno v následujícím příkladu kódu:
+Protože [ `Style` ](xref:Xamarin.Forms.Style) instance je *implicitní*, se použijí na všechny `ContentView` instancí aplikace. Proto je již nebude nutné nastavit [ `ContentView.ControlTemplate` ](xref:Xamarin.Forms.TemplatedView.ControlTemplate) vlastnost, jak je ukázáno v následujícím příkladu kódu:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SimpleTheme.HomePage">
@@ -122,11 +122,11 @@ Protože [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/
 </ContentPage>
 ```
 
-Další informace o styly najdete v tématu [styly](~/xamarin-forms/user-interface/styles/index.md).
+Další informace o stylech najdete v tématu [styly](~/xamarin-forms/user-interface/styles/index.md).
 
-### <a name="creating-a-controltemplate-at-page-level"></a>Vytváření ControlTemplate na úrovni stránky
+### <a name="creating-a-controltemplate-at-page-level"></a>Vytvoření objektu ControlTemplate na úrovni stránky
 
-Kromě vytváření [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) instance na úrovni aplikace, je lze také vytvořit na úrovni stránky, jak je znázorněno v následujícím příkladu kódu:
+Kromě vytvoření [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) instance na úrovni aplikace, je lze také vytvořit na úrovni stránky, jak je znázorněno v následujícím příkladu kódu:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SimpleTheme.HomePage">
@@ -146,11 +146,11 @@ Kromě vytváření [ `ControlTemplate` ](https://developer.xamarin.com/api/type
 </ContentPage>
 ```
 
-Při přidávání [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) na úrovni stránky [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) je přidán do [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)a potom `ControlTemplate` instance jsou zahrnuty v `ResourceDictionary`.
+Při přidávání [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) na úrovni stránky [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) se přidá do [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)a pak `ControlTemplate` instance jsou zahrnuté v `ResourceDictionary`.
 
-## <a name="creating-a-controltemplate-in-c35"></a>Vytváření ControlTemplate v jazyce C&#35;
+## <a name="creating-a-controltemplate-in-c35"></a>Vytvoření objektu ControlTemplate v jazyce C&#35;
 
-K definování [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) na úrovni aplikace, `class` musí být vytvořen tento představuje `ControlTemplate`. Třída by měl být odvozen z [rozložení](~/xamarin-forms/user-interface/layouts/index.md) používá pro šablonu, jak je znázorněno v následujícím příkladu kódu:
+Chcete-li definovat [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) na úrovni aplikace `class` musí být vytvořeny, které představuje `ControlTemplate`. Třída musí být odvozený z: [rozložení](~/xamarin-forms/user-interface/layouts/index.md) používá pro šablonu, jak je znázorněno v následujícím příkladu kódu:
 
 ```csharp
 class TealTemplate : Grid
@@ -171,9 +171,9 @@ class AquaTemplate : Grid
 }
 ```
 
-`AquaTemplate` Třída je stejný jako `TealTemplate` třídy, s tím rozdílem, že různých barev, které se používají pro [ `BoxView.Color` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BoxView.Color/) a [ `Label.TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.TextColor/) vlastnosti.
+`AquaTemplate` Třída je stejné jako `TealTemplate` třídy, s tím rozdílem, že se používají různé barvy pro [ `BoxView.Color` ](xref:Xamarin.Forms.BoxView.Color) a [ `Label.TextColor` ](xref:Xamarin.Forms.Label.TextColor) vlastnosti.
 
-Následující příklad kódu ukazuje [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) použití `TealTemplate` k [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/):
+Následující příklad kódu ukazuje [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) použití `TealTemplate` k [ `ContentView` ](xref:Xamarin.Forms.ContentView):
 
 ```csharp
 public class HomePageCS : ContentPage
@@ -202,20 +202,20 @@ public class HomePageCS : ContentPage
 }
 ```
 
-[ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) Vytváření instancí zadáním typu třídy, které definují šablon ovládacích prvků v `ControlTemplate` konstruktor.
+[ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) Zadáním typu třídy, které definují šablon ovládacích prvků v se vytvářejí instance `ControlTemplate` konstruktoru.
 
-[ `ContentView.Content` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ContentView.Content/) Je nastavena na [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) , který definuje obsah, který se má zobrazit [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/). Zobrazí se tento obsah pomocí [ `ContentPresenter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPresenter/) obsažené v `TealTemplate`. Chcete-li změnit motiv za běhu, aby dříve se používá stejné mechanismus uvedených `AquaTheme`.
+[ `ContentView.Content` ](xref:Xamarin.Forms.ContentView.Content) Je nastavena na [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) , který definuje obsah, který se má zobrazit na [ `ContentPage` ](xref:Xamarin.Forms.ContentPage). Tento obsah se zobrazí podle [ `ContentPresenter` ](xref:Xamarin.Forms.ContentPresenter) součástí `TealTemplate`. Změna motivu za běhu, abyste dříve se používá stejný mechanismus uvedených `AquaTheme`.
 
 ## <a name="summary"></a>Souhrn
 
-Tento článek ukázal, jak vytvářet a využívat šablon ovládacích prvků. Ovládací prvek šablony může být definováno na úrovni aplikace nebo na úrovni stránky.
+V tomto článku jsme vám ukázali jak vytvářet a využívat šablon ovládacích prvků. Šablony ovládacích prvků lze definovat na úrovni aplikace nebo na úrovni stránky.
 
 
 ## <a name="related-links"></a>Související odkazy
 
 - [Styly](~/xamarin-forms/user-interface/styles/index.md)
-- [Jednoduché motiv (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/templates/controltemplates/simpletheme/)
-- [Element ControlTemplate](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/)
-- [ContentPresenter](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPresenter/)
-- [ContentView](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/)
-- [ResourceDictionary](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)
+- [Jednoduché motivu (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/templates/controltemplates/simpletheme/)
+- [ControlTemplate](xref:Xamarin.Forms.ControlTemplate)
+- [ContentPresenter](xref:Xamarin.Forms.ContentPresenter)
+- [ContentView](xref:Xamarin.Forms.ContentView)
+- [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)

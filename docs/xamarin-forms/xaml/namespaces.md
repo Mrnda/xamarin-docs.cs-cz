@@ -1,67 +1,67 @@
 ---
-title: Obory názvů jazyka XAML v Xamarin.Forms
-description: XAML používá atribut XML xmlns pro deklarace oboru názvů. Tento článek představuje syntaxe oboru názvů jazyka XAML a ukazuje, jak deklarace oboru názvů jazyka XAML pro přístup k typu.
+title: Obory názvů XAML v Xamarin.Forms
+description: XAML používá atribut XML xmlns deklarací oboru názvů. Tento článek představuje obor názvů syntaxe XAML a ukazuje, jak k deklarování oboru názvů XAML pro přístup k typu.
 ms.prod: xamarin
 ms.assetid: C03B5553-B199-4A19-9F0F-E5BCE1DB268F
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 06/18/2018
-ms.openlocfilehash: 25299bc3b56c2fbb748db202e43e75be183cce66
-ms.sourcegitcommit: 7a89735aed9ddf89c855fd33928915d72da40c2d
+ms.openlocfilehash: 30cbb2c3aebdafe2ebf35598c520ae725e01ce65
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36209294"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995141"
 ---
-# <a name="xaml-namespaces-in-xamarinforms"></a>Obory názvů jazyka XAML v Xamarin.Forms
+# <a name="xaml-namespaces-in-xamarinforms"></a>Obory názvů XAML v Xamarin.Forms
 
-_XAML používá atribut XML xmlns pro deklarace oboru názvů. Tento článek představuje syntaxe oboru názvů jazyka XAML a ukazuje, jak deklarace oboru názvů jazyka XAML pro přístup k typu._
+_XAML používá atribut XML xmlns deklarací oboru názvů. Tento článek představuje obor názvů syntaxe XAML a ukazuje, jak k deklarování oboru názvů XAML pro přístup k typu._
 
 ## <a name="overview"></a>Přehled
 
-Existují dvě deklarace oboru názvů jazyka XAML, které jsou vždy v rámci kořenový element souboru XAML. První definuje výchozí obor názvů, jak je znázorněno v následujícím příkladu kódu XAML:
+Existují dvě deklarace oboru názvů XAML, které jsou vždy v rámci kořenového elementu souboru XAML. První definuje výchozí obor názvů, jak je znázorněno v následujícím příkladu kódu XAML:
 
 ```csharp
 xmlns="http://xamarin.com/schemas/2014/forms"
 ```
 
-Určuje výchozí obor názvů, že elementy, které jsou definované v souboru XAML s žádná předpona. získáte na platformě Xamarin.Forms třídy, jako například [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/).
+Určuje výchozí obor názvů, že prvky definované v souboru XAML s žádná předpona odkazují Xamarin.Forms třídy, jako například [ `ContentPage` ](xref:Xamarin.Forms.ContentPage).
 
-Druhý deklaraci oboru názvů používá `x` předpony, jak je znázorněno v následujícím příkladu kódu XAML:
+Druhý obor názvů deklarace používá `x` předpony, jak je znázorněno v následujícím příkladu kódu XAML:
 
 ```csharp
 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 ```
 
-XAML používá předpony deklarovat jiné než výchozí obory názvů, s předponou používá při odkazování na typy v rámci oboru názvů. `x` Deklaraci oboru názvů určuje, že prvky definované v rámci XAML s předponou `x` se používají pro elementy a atributy, které jsou vnitřní do jazyka XAML (konkrétně specifikace jazyka XAML 2009).
+XAML používá k deklaraci jiné než výchozí obory názvů, s předponou se používají při odkazování na typy v rámci oboru názvů předpony. `x` Deklarace oboru názvů určuje, že prvky definované v rámci XAML s předponou `x` jsou použité pro prvky a atributy, které jsou přirozené pro XAML (konkrétně specifikaci XAML 2009).
 
-V následující tabulce jsou podrobněji popsány dále `x` nepodporuje Xamarin.Forms atributy oboru názvů:
+V následující tabulce jsou podrobněji popsány dále `x` podporuje Xamarin.Forms atributy oboru názvů:
 
 |Konstrukce|Popis|
 |--- |--- |
-|`x:Arguments`|Určuje argumenty konstruktoru pro jiné než výchozí konstruktor, nebo na prohlášení metoda objektu factory.|
-|`x:Class`|Určuje název oboru názvů a třídy pro třídy definované v jazyce XAML. Název třídy musí odpovídat názvu třídy souboru kódu na pozadí. Všimněte si, že tento konstruktor může vyskytovat pouze v kořenovém elementu souboru XAML.|
-|`x:FactoryMethod`|Určuje metoda factory, která slouží k inicializaci objektu.|
-|`x:FieldModifier`|Určuje úroveň přístupu pro generované pole s názvem elementů XAML.|
-|`x:Key`|Určuje jedinečný klíč uživatelem definované pro každý zdroj v `ResourceDictionary`. Hodnota klíče se používá k načtení prostředek XAML a obvykle se používá jako argument pro `StaticResource` – rozšíření značek.|
-|`x:Name`|Určuje název objektu modulu runtime pro XAML element. Nastavení `x:Name` je podobná deklarace proměnné v kódu.|
-|`x:TypeArguments`|Určuje argumenty obecného typu do konstruktoru objektu obecného typu.|
+|`x:Arguments`|Určuje argumenty konstruktoru pro jiné než výchozí konstruktor, nebo pro deklaraci objektu factory metody.|
+|`x:Class`|Určuje název oboru názvů a třída pro třídy definované v XAML. Název třídy musí odpovídat názvu třídy v souboru kódu na pozadí. Poznámka: Tento konstruktor může být použit pouze v kořenového elementu souboru XAML.|
+|`x:FactoryMethod`|Určuje metodu factory, který slouží k inicializaci objektu.|
+|`x:FieldModifier`|Určuje úroveň přístupu pro vygenerované pole pro pojmenované elementy XAML.|
+|`x:Key`|Určuje jedinečný uživatelský klíč pro každý zdroj v `ResourceDictionary`. Hodnota klíče se používá k načtení prostředků XAML a se obvykle používá jako argument pro `StaticResource` – rozšíření značek.|
+|`x:Name`|Určuje název objektu modulu runtime pro prvek XAML. Nastavení `x:Name` je podobná deklaraci proměnné v kódu.|
+|`x:TypeArguments`|Určuje obecný typ argumentů konstruktoru obecného typu.|
 
-Další informace o `x:FieldModifier` atributů najdete v tématu [Modifikátory polí](~/xamarin-forms/xaml/field-modifiers.md). Další informace o `x:Arguments`, `x:FactoryMethod`, a `x:TypeArguments` atributy, najdete v části [předání argumentů v jazyce XAML](~/xamarin-forms/xaml/passing-arguments.md).
+Další informace o `x:FieldModifier` atributu naleznete v tématu [modifikátory pole](~/xamarin-forms/xaml/field-modifiers.md). Další informace o `x:Arguments`, `x:FactoryMethod`, a `x:TypeArguments` atributy, naleznete v tématu [Passing Arguments v XAML](~/xamarin-forms/xaml/passing-arguments.md).
 
-V jazyce XAML deklarace oboru názvů dědí z nadřazeného prvku pro podřízený element. Proto při definování oboru názvů v kořenovém elementu souboru XAML, zdědí všechny elementy v souboru deklaraci oboru názvů.
+V XAML deklarace oboru názvů dědí z nadřazeného elementu na podřízený prvek. Proto při definování oboru názvů v kořenového elementu souboru XAML, dědí všechny prvky v rámci tohoto souboru deklarace oboru názvů.
 
 ## <a name="declaring-namespaces-for-types"></a>Deklarace oborů názvů pro typy
 
-Typy můžete odkazovat v jazyce XAML deklarace oboru názvů jazyka XAML s předponou, o deklaraci oboru názvů zadání oboru názvů Common Language Runtime (CLR) a volitelně název sestavení. Toho dosáhnete tak, že definujete hodnoty pro následující klíčová slova v deklaraci oboru názvů:
+Typy lze odkazovat v XAML pomocí deklarace oboru názvů XAML s předponou, pomocí deklarace oboru názvů zadáním názvu oboru názvů Common Language Runtime (CLR) a volitelně název sestavení. Toho můžete dosáhnout tak, že definujete hodnoty pro následující klíčová slova v rámci deklarace oboru názvů:
 
-- **CLR – obor názvů:** nebo **pomocí:** – obor názvů CLR deklarované v rámci sestavení, které obsahuje typy, které mají zveřejnit jako elementů XAML. This – klíčové slovo je povinný.
-- **sestavení =** – sestavení, které obsahuje odkazovaný obor názvů CLR. Tato hodnota je název sestavení, bez přípony souboru. Cesta k sestavení by se mělo vytvořit jako odkaz v souboru projektu, který obsahuje soubor XAML, který bude odkazovat sestavení. This – klíčové slovo lze vynechat, pokud **clr – obor názvů** hodnota je ve stejném sestavení jako aplikační kód, který odkazuje na typy.
+- **CLR-namespace:** nebo **pomocí:** – obor názvů CLR deklarované v rámci sestavení, který obsahuje typy jsou elementy XAML. Toto klíčové slovo je povinný.
+- **sestavení =** – sestavení, který obsahuje odkazovaný obor názvů CLR. Tato hodnota je název bez přípony souboru sestavení. Cesta k sestavení by se mělo vytvořit jako odkaz v souboru projektu, který obsahuje soubor XAML, který bude odkazovat sestavení. Toto klíčové slovo lze vynechat, pokud **clr-namespace** hodnota je v rámci stejného sestavení jako kód aplikace, který odkazuje na typy.
 
-Všimněte si, že znak oddělující `clr-namespace` nebo `using` tokenu z její hodnota je dvojtečkou, zatímco znak oddělení `assembly` tokenu od hodnoty symbolem rovná se. Znak, který má používat mezi dvěma tokeny je středníkem.
+Všimněte si, že znak oddělující `clr-namespace` nebo `using` token z jeho hodnota je dvojtečkou, zatímco znak oddělující `assembly` token z jeho hodnota je shodné znaménko. Znak, který má použít mezi dvěma tokeny je středníkem.
 
-Následující příklad kódu ukazuje deklaraci oboru názvů jazyka XAML:
+Následující příklad kódu znázorňuje deklaraci oboru názvů XAML:
 
 ```xaml
 <ContentPage ... xmlns:local="clr-namespace:HelloWorld" ...>
@@ -69,7 +69,7 @@ Následující příklad kódu ukazuje deklaraci oboru názvů jazyka XAML:
 </ContentPage>
 ```
 
-Alternativně to může být zapsán jako:
+Další možností to může být zapsán jako:
 
 ```xaml
 <ContentPage ... xmlns:local="using:HelloWorld" ...>
@@ -77,7 +77,7 @@ Alternativně to může být zapsán jako:
 </ContentPage>
 ```
 
-`local` Předpona je konvence slouží k určení, že typy v rámci oboru názvů jsou místní vzhledem k aplikaci. Případně pokud typy v jiném sestavení, název sestavení je také nutné definovat v deklaraci oboru názvů, jak je ukázáno v následujícím příkladu kódu XAML:
+`local` Předpona je konvence slouží k označení, že typy v rámci oboru názvů jsou vůči aplikaci lokální. Případně pokud jsou tyto typy v jiném sestavení, název sestavení by měl lze také definovat deklarace oboru názvů, jak je ukázáno v následujícím příkladu kódu XAML:
 
 ```xaml
 <ContentPage ... xmlns:behaviors="clr-namespace:Behaviors;assembly=BehaviorsLibrary" ...>
@@ -85,7 +85,7 @@ Alternativně to může být zapsán jako:
 </ContentPage>
 ```
 
-Předpona oboru názvů je potom zadat při deklarace instance typu z importovaných oboru názvů, jako ukázáno v následujícím příkladu kódu XAML:
+Předpona oboru názvů je poté zadané při deklarování instance typu z importované oboru názvů jako ukázáno v následujícím příkladu kódu XAML:
 
 ```xaml
 <ListView ...>
@@ -97,9 +97,9 @@ Předpona oboru názvů je potom zadat při deklarace instance typu z importovan
 
 ## <a name="summary"></a>Souhrn
 
-Tento článek zavedená syntaxe oboru názvů jazyka XAML a ukázal, jak lze deklarovat oboru názvů jazyka XAML pro přístup k typu. Používá XAML `xmlns` atribut XML pro deklarace oboru názvů a typy může odkazovat v jazyce XAML deklarace oboru názvů jazyka XAML s předponou.
+Tento článek zavedly syntaxe oboru názvů XAML které jsme vám ukázali způsobu deklarace oboru názvů XAML pro přístup k typu. Používá XAML `xmlns` atribut XML pro deklarace oboru názvů a typy lze odkazovat v XAML pomocí deklarace oboru názvů XAML s předponou.
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Předávání argumentů v jazyce XAML](~/xamarin-forms/xaml/passing-arguments.md)
+- [Předávání argumentů v XAML](~/xamarin-forms/xaml/passing-arguments.md)

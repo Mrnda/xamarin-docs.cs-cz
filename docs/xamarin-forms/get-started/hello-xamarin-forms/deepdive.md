@@ -1,6 +1,6 @@
 ---
-title: Informace přímým Xamarin.Forms
-description: Tento článek prozkoumá základní informace o vývoj aplikací pomocí Xamarin.Forms. Témata popsaná zahrnuty anatomie Xamarin.Forms aplikace, architekturu a základy aplikaci a uživatelské rozhraní.
+title: Podrobně o infrastruktuře Xamarin.Forms
+description: Tento článek zkoumá základy vývoje aplikací pomocí Xamarin.Forms. Probíraná témata zahrnuté anatomie aplikace Xamarin.Forms, architektury a základní informace o aplikaci a uživatelské rozhraní.
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: d97aa580-1eb9-48b3-b15b-0d7421ea7ae
@@ -8,96 +8,96 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/13/2018
-ms.openlocfilehash: 7c8eee5fc7075f23221c06dab29b83b1d5e01ffc
-ms.sourcegitcommit: d70fcc6380834127fdc58595aace55b7821f9098
+ms.openlocfilehash: f51992ec5311bdf0c7df7478651398f6ed8491a9
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36269094"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996230"
 ---
-# <a name="xamarinforms-deep-dive"></a>Informace přímým Xamarin.Forms
+# <a name="xamarinforms-deep-dive"></a>Podrobně o infrastruktuře Xamarin.Forms
 
-V [rychlý start Xamarin.Forms](~/xamarin-forms/get-started/hello-xamarin-forms/quickstart.md), Phoneword byla vytvořena. Tento článek zkontroluje, co byla vytvořena získat představu o základní informace o fungování Xamarin.Forms aplikace.
+V [Xamarin.Forms Quickstart](~/xamarin-forms/get-started/hello-xamarin-forms/quickstart.md), kterou Phoneword byla aplikace vytvořena. Tento článek obsahuje přehled co byl sestaven získáte informace o základní informace o fungování aplikací Xamarin.Forms.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-## <a name="introduction-to-visual-studio"></a>Úvod k sadě Visual Studio
+## <a name="introduction-to-visual-studio"></a>Úvod do sady Visual Studio
 
-Visual Studio je výkonný IDE od společnosti Microsoft. Jeho součástí jsou plně integrované vizuálního návrháře, textový editor, který je kompletní s refaktoringu nástroje, sestavení prohlížeče, integrace zdrojového kódu a další. Tento článek se zaměřuje na některé základní funkce sady Visual Studio pomocí modulu plug-in Xamarin.
+Visual Studio je výkonné integrované vývojové prostředí společnosti Microsoft. Nabízí plně integrovaná vizuálního návrháře, kompletní nástroje pro refaktoring textového editoru, prohlížeči sestavení, integrace zdrojového kódu a další. Tento článek se zaměřuje na některé základní funkce sady Visual Studio pomocí modulu plug-in Xamarin.
 
-Visual Studio organizuje kód do *řešení* a *projekty*. Řešení je kontejner, který může obsahovat jeden nebo více projektů. Projekt může být aplikace, do pomocné knihovny, testovací aplikace a další. Phoneword aplikace se skládá z jedné řešení obsahující čtyři projekty, jak je znázorněno na následujícím snímku obrazovky.
+Visual Studio slouží k uspořádání kódu do *řešení* a *projekty*. Řešení je kontejner, který může obsahovat jeden nebo více projektů. Projekt může být aplikace, podpůrné knihovny, testovací aplikace a další. Phoneword aplikace se skládá z jednoho řešení, který obsahuje čtyři projekty, jak je znázorněno na následujícím snímku obrazovky.
 
 ![](deepdive-images/vs/solution.png "Průzkumník řešení sady Visual Studio")
 
 Projekty jsou:
 
-- Phoneword – tento projekt je .NET Standard projektu knihovny, který obsahuje všechny sdílené kód a sdíleného uživatelského rozhraní.
-- Phoneword.Android – tento projekt obsahuje konkrétní kódu pro systém Android a vstupní bod pro aplikace pro Android.
-- Phoneword.iOS – tento projekt obsahuje iOS konkrétního kódu a vstupní bod pro aplikace systému iOS.
-- Phoneword.UWP – tento projekt obsahuje konkrétní kód univerzální platformu Windows (UWP) a je vstupní bod pro aplikace pro UPW.
+- Phoneword – tento projekt je projekt .NET Standard knihovny, který obsahuje všechny sdílenému kódu a sdílené uživatelské rozhraní.
+- Phoneword.Android – tento projekt obsahuje konkrétní kódu pro Android a je vstupním bodem pro aplikaci pro Android.
+- Phoneword.iOS – tento projekt obsahuje iOS konkrétního kódu a je vstupním bodem pro aplikace pro iOS.
+- Phoneword.UWP – tento projekt obsahuje určitý kód pro univerzální platformu Windows (UPW) a je vstupním bodem pro aplikaci pro UPW.
 
-## <a name="anatomy-of-a-xamarinforms-application"></a>Anatomie aplikaci na platformě Xamarin.Forms
+## <a name="anatomy-of-a-xamarinforms-application"></a>Anatomie aplikace Xamarin.Forms
 
 Následující snímek obrazovky ukazuje Phoneword .NET Standard projektu knihovny obsahu v sadě Visual Studio:
 
-![](deepdive-images/vs/net-standard-project.png "Obsah standardní projektu Phoneword rozhraní .NET")
+![](deepdive-images/vs/net-standard-project.png "Obsah Phoneword .NET Standard projektu")
 
-Tento projekt **závislosti** uzlu, který obsahuje **NuGet** a **SDK** uzlů. **NuGet** uzel obsahuje balíček Xamarin.Forms NuGet, který byl přidán do projektu a **SDK** uzel obsahuje `NETStandard.Library` metapackage, který odkazuje na kompletní sadu balíčků NuGet které definují .NET Standard.
+Projekt má **závislosti** uzel, který obsahuje **NuGet** a **SDK** uzly. **NuGet** uzel obsahuje balíček Xamarin.Forms NuGet, která byla přidána do projektu, a **SDK** obsahuje uzel `NETStandard.Library` Microsoft.aspnetcore.all odkazující na kompletní sadu balíčků NuGet které definují .NET Standard.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-## <a name="introduction-to-visual-studio-for-mac"></a>Úvod k sadě Visual Studio pro Mac
+## <a name="introduction-to-visual-studio-for-mac"></a>Úvod do sady Visual Studio pro Mac
 
-Visual Studio pro Mac je zdarma, který open-source IDE podobná Visual Studio. Jeho součástí jsou plně integrované vizuálního návrháře, textový editor, který je kompletní s refaktoringu nástroje, sestavení prohlížeče, integrace zdrojového kódu a další. Další informace o sadě Visual Studio pro Mac najdete v tématu [představení Visual Studio pro Mac](/visualstudio/mac/).
+Visual Studio for Mac je zdarma, open source prostředí IDE podobný sady Visual Studio. Nabízí plně integrovaná vizuálního návrháře, kompletní nástroje pro refaktoring textového editoru, prohlížeči sestavení, integrace zdrojového kódu a další. Další informace o sadě Visual Studio pro Mac najdete v tématu [představení sady Visual Studio pro Mac](/visualstudio/mac/).
 
-Visual Studio pro Mac následuje postup sadě Visual Studio uspořádání kód do *řešení* a *projekty*. Řešení je kontejner, který může obsahovat jeden nebo více projektů. Projekt může být aplikace, do pomocné knihovny, testovací aplikace a další. Phoneword aplikace se skládá z jedné řešení obsahující tři projekty, jak je znázorněno na následujícím snímku obrazovky.
+Visual Studio pro Mac odpovídá uspořádání kódu do sady Visual Studio praxe *řešení* a *projekty*. Řešení je kontejner, který může obsahovat jeden nebo více projektů. Projekt může být aplikace, podpůrné knihovny, testovací aplikace a další. Phoneword aplikace se skládá z jednoho řešení, který obsahuje tři projekty, jak je znázorněno na následujícím snímku obrazovky.
 
 ![](deepdive-images/xs/solution.png "Visual Studio pro Mac podokno řešení")
 
 Projekty jsou:
 
-- Phoneword – tento projekt je .NET Standard projektu knihovny, který obsahuje všechny sdílené kód a sdíleného uživatelského rozhraní.
-- Phoneword.Droid – tento projekt obsahuje konkrétní kódu pro systém Android a vstupní bod pro aplikace pro Android.
-- Phoneword.iOS – tento projekt obsahuje iOS konkrétního kódu a je vstupní bod pro aplikace pro iOS.
+- Phoneword – tento projekt je projekt .NET Standard knihovny, který obsahuje všechny sdílenému kódu a sdílené uživatelské rozhraní.
+- Phoneword.Droid – tento projekt obsahuje konkrétní kódu pro Android a je vstupním bodem pro aplikace pro Android.
+- Phoneword.iOS – tento projekt obsahuje iOS konkrétního kódu a je vstupním bodem pro aplikace pro iOS.
 
-## <a name="anatomy-of-a-xamarinforms-application"></a>Anatomie aplikaci na platformě Xamarin.Forms
+## <a name="anatomy-of-a-xamarinforms-application"></a>Anatomie aplikace Xamarin.Forms
 
 Následující snímek obrazovky ukazuje Phoneword .NET Standard projektu knihovny obsahu v sadě Visual Studio pro Mac:
 
 ![](deepdive-images/xs/library-project.png "Obsah projektu standardní knihovny .NET Phoneword")
 
-Tento projekt **závislosti** uzlu, který obsahuje **NuGet** a **SDK** uzlů. **NuGet** uzel obsahuje balíček Xamarin.Forms NuGet, který byl přidán do projektu a **SDK** uzel obsahuje `NETStandard.Library` metapackage, který odkazuje na kompletní sadu balíčků NuGet které definují .NET Standard.
+Projekt má **závislosti** uzel, který obsahuje **NuGet** a **SDK** uzly. **NuGet** uzel obsahuje balíček Xamarin.Forms NuGet, která byla přidána do projektu, a **SDK** obsahuje uzel `NETStandard.Library` Microsoft.aspnetcore.all odkazující na kompletní sadu balíčků NuGet které definují .NET Standard.
 
 -----
 
-Projekt se skládá z několika souborů:
+Projekt se také skládá počet souborů:
 
-- **App.XAML** – kód jazyce XAML pro `App` třídy, která definuje slovník prostředků pro aplikaci.
-- **App.XAML.cs** – kódu pro `App` třídy, která odpovídá za vytváření instancí na první stránku, která se zobrazí v aplikaci na každou platformu a pro zpracování události životního cyklu aplikace.
-- **IDialer.cs** – `IDialer` rozhraní, které určuje, že `Dial` metoda musí být poskytnuta žádnou implementující třídu.
-- **MainPage.xaml** – kód jazyce XAML pro `MainPage` třídy, která definuje uživatelské rozhraní pro stránky zobrazí při spuštění aplikace.
-- **MainPage.xaml.cs** – kódu pro `MainPage` třídy, která obsahuje obchodní logiky, která se spustí, až uživatel pracuje se stránkou.
-- **PhoneTranslator.cs** – obchodní logiky, která je zodpovědná za převod phone word na telefonní číslo, který lze vyvolat pomocí **MainPage.xaml.cs**.
+- **App.XAML** – značky XAML `App` třídu, která definuje slovník prostředků pro aplikaci.
+- **App.XAML.cs** – kódu pro `App` třídu, která odpovídá za vytvoření instance první stránka, která se zobrazí v aplikaci na jednotlivých platformách a pro zpracování událostí životního cyklu aplikace.
+- **IDialer.cs** – `IDialer` rozhraní, které určuje, že `Dial` v jakékoli implementaci tříd musí být zadaná metoda.
+- **MainPage.xaml** – značky XAML `MainPage` třídu, která definuje uživatelské rozhraní pro stránky zobrazené při spuštění aplikace.
+- **MainPage.xaml.cs** – kódu pro `MainPage` třídu, která obsahuje obchodní logiku, která se spustí, až uživatel pracuje se na stránce.
+- **PhoneTranslator.cs** – obchodní logiky, který je zodpovědný za převod aplikace word telefonní na telefonní číslo, které se vyvolá z **MainPage.xaml.cs**.
 
-Další informace o anatomy aplikace pro Xamarin.iOS najdete v tématu [anatomie aplikace pro Xamarin.iOS](~/ios/get-started/hello-ios/hello-ios-deepdive.md#anatomy). Další informace o anatomy aplikace pro Xamarin.Android, najdete v části [anatomie aplikace pro Xamarin.Android](~/android/get-started/hello-android/hello-android-deepdive.md#anatomy).
+Další informace o anatomií aplikaci Xamarin.iOS, naleznete v tématu [anatomie aplikace pro Xamarin.iOS](~/ios/get-started/hello-ios/hello-ios-deepdive.md#anatomy). Další informace o anatomií aplikace pro Xamarin.Android, naleznete v tématu [anatomie aplikace Xamarin.Android](~/android/get-started/hello-android/hello-android-deepdive.md#anatomy).
 
-## <a name="architecture-and-application-fundamentals"></a>Architektura a základní informace o aplikaci
+## <a name="architecture-and-application-fundamentals"></a>Architektura a principy aplikací
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Aplikaci Xamarin.Forms je navržen stejným způsobem jako tradiční aplikace napříč platformami. Sdílené kódu je obvykle umístěna v rozhraní .NET standardní knihovna a specifické pro platformu aplikace využívat sdíleného kódu. Následující diagram ukazuje přehled této relace pro aplikaci Phoneword:
+Aplikace Xamarin.Forms je navržený stejným způsobem jako tradiční aplikace pro víc platforem. Sdílený kód je obvykle umístěn v knihovně .NET Standard a specifické pro platformu aplikace spotřebovávat sdílený kód. Následující diagram znázorňuje základní informace o této relace pro aplikaci Phoneword:
 
 ![](deepdive-images/vs/architecture.png "Architektura Phoneword")
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-Aplikaci Xamarin.Forms je navržen stejným způsobem jako tradiční aplikace napříč platformami. Sdílené kódu je obvykle umístěna v rozhraní .NET standardní knihovna a specifické pro platformu aplikace využívat sdíleného kódu. Následující diagram ukazuje přehled této relace pro aplikaci Phoneword:
+Aplikace Xamarin.Forms je navržený stejným způsobem jako tradiční aplikace pro víc platforem. Sdílený kód je obvykle umístěn v knihovně .NET Standard a specifické pro platformu aplikace spotřebovávat sdílený kód. Následující diagram znázorňuje základní informace o této relace pro aplikaci Phoneword:
 
 ![](deepdive-images/xs/architecture.png "Architektura Phoneword")
 
 -----
 
-Pokud chcete maximalizovat opakované použití kódu spuštění, Xamarin.Forms aplikací mít jednu třídu s názvem `App` který zodpovídá za vytvoření instance na první stránku, která se zobrazí v aplikaci na každou platformu, jak je znázorněno v následujícím příkladu kódu:
+Pokud chcete maximalizovat opětovné použití kódu po spuštění, aplikace Xamarin.Forms mají jednu třídu s názvem `App` , který je zodpovědný za vytváření instancí první stránka, která se zobrazí v aplikaci na jednotlivé platformy, jak je znázorněno v následujícím příkladu kódu:
 
 ```csharp
 using Xamarin.Forms;
@@ -118,13 +118,13 @@ namespace Phoneword
 }
 ```
 
-Nastaví tento kód `MainPage` vlastnost `App` novou instanci třídy [ `MainPage` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.MainPage/) třídy. Kromě toho [ `XamlCompilation` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.XamlCompilationAttribute/) atribut zapne kompilátoru XAML, tak, aby XAML zkompilován přímo do převodní jazyk. Další informace najdete v tématu [XAML kompilace](~/xamarin-forms/xaml/xamlc.md).
+Tento kód nastaví `MainPage` vlastnost `App` novou instanci třídy [ `MainPage` ](xref:Xamarin.Forms.Application.MainPage) třídy. Kromě toho [ `XamlCompilation` ](xref:Xamarin.Forms.Xaml.XamlCompilationAttribute) atribut zapne kompilátor XAML tak, aby přímo do jazyka intermediate language se zkompilovat XAML. Další informace najdete v tématu [kompilace XAML](~/xamarin-forms/xaml/xamlc.md).
 
-## <a name="launching-the-application-on-each-platform"></a>Spuštění aplikace na každou platformu
+## <a name="launching-the-application-on-each-platform"></a>Spouštění aplikací na jednotlivých platformách
 
 ### <a name="ios"></a>iOS
 
-Spusťte úvodní stránky Xamarin.Forms v iOS, tento projekt Phoneword.iOS zahrnuje `AppDelegate` třídu, která dědí z `FormsApplicationDelegate` třídy, jak je znázorněno v následujícím příkladu kódu:
+Ke spuštění úvodní stránku Xamarin.Forms v Iosu, projekt Phoneword.iOS zahrnuje `AppDelegate` třídu odvozenou od `FormsApplicationDelegate` třídy, jak je znázorněno v následujícím příkladu kódu:
 
 ```csharp
 namespace Phoneword.iOS
@@ -142,11 +142,11 @@ namespace Phoneword.iOS
 }
 ```
 
-`FinishedLaunching` Přepsání inicializuje pomocí volání rozhraní Xamarin.Forms `Init` metoda. To způsobí, že implementace specifické pro iOS Xamarin.Forms má být načten v aplikaci, než je ve volání nastavení řadiče zobrazení kořenové `LoadApplication` metoda.
+`FinishedLaunching` Přepsání inicializuje rozhraní Xamarin.Forms pomocí volání `Init` metody. To způsobí, že implementace Xamarin.Forms, které mají být načteny v aplikaci předtím, než je ve volání nastavení kontroleru zobrazení kořenové iOS `LoadApplication` metody.
 
 ### <a name="android"></a>Android
 
-Spusťte úvodní stránky Xamarin.Forms v Android, tento projekt Phoneword.Droid zahrnuje kód, který vytvoří `Activity` s `MainLauncher` atribut s aktivitou, která dědí z `FormsAppCompatActivity` třídy, jak je znázorněno v následujícím příkladu kódu:
+Ke spuštění úvodní stránku Xamarin.Forms v Androidu, Phoneword.Droid projekt zahrnuje kód, který vytvoří `Activity` s `MainLauncher` atribut s aktivitou dědění z `FormsAppCompatActivity` třídy, jak je znázorněno v následujícím příkladu kódu:
 
 ```csharp
 namespace Phoneword.Droid
@@ -174,11 +174,11 @@ namespace Phoneword.Droid
 }
 ```
 
-`OnCreate` Přepsání inicializuje pomocí volání rozhraní Xamarin.Forms `Init` metoda. To způsobí, že implementace specifické pro Android Xamarin.Forms má být načten v aplikaci, než je aplikace Xamarin.Forms načtena. Kromě toho `MainActivity` třída ukládá odkaz sám na sebe v `Instance` vlastnost. `Instance` Vlastnost se označuje jako lokální kontext a je na něj odkazovat z `PhoneDialer` třídy.
+`OnCreate` Přepsání inicializuje rozhraní Xamarin.Forms pomocí volání `Init` metody. To způsobí, že implementace Xamarin.Forms, které mají být načteny v aplikaci před načtením aplikace Xamarin.Forms s Androidem. Kromě toho `MainActivity` třída uchovává odkaz na sebe sama v `Instance` vlastnost. `Instance` Vlastnost se označuje jako místní kontext a odkazuje `PhoneDialer` třídy.
 
 ## <a name="universal-windows-platform"></a>Univerzální platforma pro Windows
 
-V aplikacích pro univerzální platformu Windows (UWP) `Init` metoda, která inicializuje rozhraní Xamarin.Forms se volá z `App` třídy:
+V aplikacích pro univerzální platformu Windows (UPW) `Init` vyvolat metodu, která inicializuje rozhraní Xamarin.Forms pomocí `App` třídy:
 
 ```csharp
 Xamarin.Forms.Forms.Init (e);
@@ -189,7 +189,7 @@ if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
 }
 ```
 
-To způsobí, že implementace specifické pro UPW Xamarin.Forms načíst v aplikaci. Úvodní stránky Xamarin.Forms je spuštěn `MainPage` třídy, jak je ukázáno v následujícím příkladu kódu:
+To způsobí, že implementace Xamarin.Forms, které mají být načteny v aplikaci UWP. Úvodní stránka Xamarin.Forms je spouštěn `MainPage` třídy, jak je ukázáno v následujícím příkladu kódu:
 
 ```csharp
 namespace Phoneword.UWP
@@ -205,23 +205,23 @@ namespace Phoneword.UWP
 }
 ```
 
-Xamarin.Forms aplikace je načtena s `LoadApplication` metoda.
+Načte se aplikace Xamarin.Forms s `LoadApplication` metody.
 
 > [!NOTE]
-> Univerzální aplikace pro platformu Windows (UWP) může být vytvořené s Xamarin.Forms, ale pouze pomocí sady Visual Studio v systému Windows.
+> Univerzální aplikace pro platformu Windows (UPW) mohou být vytvořené s Xamarin.Forms, ale pouze pomocí sady Visual Studio na Windows.
 
 ## <a name="user-interface"></a>Uživatelské rozhraní
 
-Existují čtyři hlavní řízení skupiny použít k vytvoření uživatelského rozhraní aplikace Xamarin.Forms.
+Existují čtyři hlavní ovládací prvek skupiny použité k vytvoření uživatelského rozhraní aplikace Xamarin.Forms.
 
-1. **Stránky** – Xamarin.Forms stránky představují obrazovky napříč platformami mobilních aplikací. Aplikace Phoneword používá [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) třída zobrazíte jedné obrazovce. Další informace o stránky najdete v tématu [Xamarin.Forms stránky](~/xamarin-forms/user-interface/controls/pages.md).
-1. **Rozložení** – Xamarin.Forms rozložení jsou kontejnery použitý k sestavení zobrazení do logické struktury. Aplikace Phoneword používá [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) třída k uspořádání ovládacích prvků v vodorovné zásobníku. Další informace o rozložení najdete v tématu [Xamarin.Forms rozložení](~/xamarin-forms/user-interface/controls/layouts.md).
-1. **Zobrazení** – Xamarin.Forms zobrazení se zobrazí v uživatelském rozhraní, jako je například popisky, tlačítek a textová vstupní pole ovládacích prvků. Aplikace Phoneword používá [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/), [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/), a [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) ovládací prvky. Další informace o zobrazení najdete v tématu [Xamarin.Forms zobrazení](~/xamarin-forms/user-interface/controls/views.md).
-1. **Buněk** – Xamarin.Forms buněk jsou specializované prvky používané pro položky v seznamu a popisují, jak mají být vykresleny každou položku v seznamu. Použití Phoneword, které aplikace neprovede žádné buňky. Další informace o buněk najdete v tématu [Xamarin.Forms buněk](~/xamarin-forms/user-interface/controls/cells.md).
+1. **Stránky** – stránky Xamarin.Forms představují obrazovky multiplatformní mobilní aplikace. Aplikace Phoneword používá [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) třídy zobrazíte na jedné obrazovce. Další informace o stránkách naleznete v tématu [Xamarin.Forms stránky](~/xamarin-forms/user-interface/controls/pages.md).
+1. **Rozložení** – rozložení Xamarin.Forms jsou kontejnery, které umožňuje sestavit zobrazení do logické struktury. Aplikace Phoneword používá [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) třídy k uspořádání ovládacích prvků ve vodorovné zásobníku. Další informace o rozložení najdete v tématu [rozložení Xamarin.Forms](~/xamarin-forms/user-interface/controls/layouts.md).
+1. **Zobrazení** – zobrazení Xamarin.Forms jsou ovládací prvky zobrazí v uživatelském rozhraní, jako je například popisky, tlačítka a textová vstupní pole. Aplikace Phoneword používá [ `Label` ](xref:Xamarin.Forms.Label), [ `Entry` ](xref:Xamarin.Forms.Entry), a [ `Button` ](xref:Xamarin.Forms.Button) ovládacích prvků. Další informace o zobrazeních najdete v tématu [zobrazení Xamarin.Forms](~/xamarin-forms/user-interface/controls/views.md).
+1. **Buňky** – Xamarin.Forms buňky jsou specializované prvky použitá pro položky v seznamu a popisují, jak má být vykreslena každou položku v seznamu. Všechny buňky použití Phoneword, které se aplikace nepoužívá. Další informace o buňky, naleznete v tématu [Xamarin.Forms buňky](~/xamarin-forms/user-interface/controls/cells.md).
 
-Za běhu budou každý ovládací prvek mapována na ekvivalentní nativní, což je co bude vykreslen.
+Za běhu každý ovládací prvek se namapují na ekvivalentní nativní, což je, co bude vykreslen.
 
-Pokud je aplikace Phoneword je spouštěn na libovolné platformě, zobrazuje jedné obrazovce, která odpovídá [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) v Xamarin.Forms. A `Page` představuje *skupinu ViewGroup* v systému Android, *View Controller* v iOS, nebo *stránky* na univerzální platformu Windows. Phoneword aplikace také vytvoří [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) objekt, který reprezentuje `MainPage` třídy, jejichž XAML poznámky je vidět v následujícím příkladu kódu:
+Když aplikace Phoneword je spouštěn na libovolné platformě, zobrazí se na jedné obrazovce, která odpovídá [ `Page` ](xref:Xamarin.Forms.Page) v Xamarin.Forms. A `Page` představuje *skupinu ViewGroup* v Androidu, *kontroler zobrazení* v Iosu, nebo *stránky* na univerzální platformu Windows. Phoneword aplikace také vytvoří instanci [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) objekt, který reprezentuje `MainPage` třídy, jehož značky XAML je znázorněno v následujícím příkladu kódu:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -238,13 +238,13 @@ Pokud je aplikace Phoneword je spouštěn na libovolné platformě, zobrazuje je
 </ContentPage>
 ```
 
-`MainPage` Třídy používá [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) řízení automaticky uspořádání ovládacích prvků na obrazovce bez ohledu na velikost obrazovky. Každý podřízený element je umístěného jedna po druhé, svisle v pořadí, ve kterém jsou přidány. `StackLayout` Obsahuje ovládací prvek [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) ovládací prvek zobrazí text na stránce [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) ovládacího prvku tak, aby přijímal textovou uživatelský vstup a dvě [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) ovládací prvky, které používají ke spouštění kódu v reakci na touch události.
+`MainPage` Třídy používá [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) ovládací prvek automaticky uspořádat ovládací prvky na obrazovce bez ohledu na velikost obrazovky. Každý podřízený prvek je umístěný za druhým v pořadí, ve kterém byly přidány svisle. `StackLayout` Obsahuje ovládací prvek [ `Label` ](xref:Xamarin.Forms.Label) ovládacího prvku k zobrazení textu na stránce [ `Entry` ](xref:Xamarin.Forms.Entry) ovládacího prvku tak, aby přijímal textový vstup a dva [ `Button` ](xref:Xamarin.Forms.Button) používají ke spouštění kódu v reakci na události dotyku ovládací prvky.
 
-Další informace o XAML v Xamarin.Forms najdete v tématu [Xamarin.Forms XAML Základy](~/xamarin-forms/xaml/xaml-basics/index.md).
+Další informace o v Xamarin.Forms XAML najdete v tématu [Xamarin.Forms XAML Základy](~/xamarin-forms/xaml/xaml-basics/index.md).
 
-### <a name="responding-to-user-interaction"></a>Neodpovídá na požadavky interakci s uživatelem
+### <a name="responding-to-user-interaction"></a>Reagovat na interakci uživatele
 
-Objekt definovaný v jazyce XAML, můžete aktivovat událost, která zpracovává v souboru kódu na pozadí. Následující příklad kódu ukazuje `OnTranslate` metodu v kódu pro `MainPage` třídy, která se spustí v reakci na [ `Clicked` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Button.Clicked/) událost, která iniciovala na *přeložit* tlačítko.
+Objekt definovaný v XAML může vyvolat událost, kterou provádí v souboru kódu na pozadí. Následující příklad kódu ukazuje `OnTranslate` metody v kódu pro `MainPage` třídu, která je provést v reakci na [ `Clicked` ](xref:Xamarin.Forms.Button.Clicked) událost na *přeložit* tlačítko.
 
 ```csharp
 void OnTranslate(object sender, EventArgs e)
@@ -260,25 +260,25 @@ void OnTranslate(object sender, EventArgs e)
 }
 ```
 
-`OnTranslate` Metoda přeloží phoneword do její odpovídající telefonní číslo a v odpovědi, nastaví vlastnosti pro tlačítko volání. K souboru kódu pro třídu XAML přístup objekt definovaný v jazyce XAML, pomocí názvu přiřazen s `x:Name` atribut. Hodnota přiřazená k tento atribut má stejná pravidla jako C# proměnné, v tom musí začínat písmenem nebo podtržítkem a obsahovat žádné mezery.
+`OnTranslate` Metoda překládá phoneword do jeho odpovídající telefonní číslo a v odpovědi, nastaví vlastnosti pro tlačítko volání. Použití modelu code-behind soubor pro třídu XAML dostanete objekt definovaný v XAML pomocí název přiřazený k němu pod `x:Name` atribut. Hodnota přiřazená k tomuto atributu má stejná pravidla jako C# proměnné, v, musí začínat písmenem nebo podtržítkem a obsahovat žádné mezery.
 
-Vedení tlačítka přeložit `OnTranslate` metoda dojde v kód XAML pro `MainPage` třídy:
+Vedení tlačítka přeložit `OnTranslate` metoda vyvolá se v kódu XAML pro `MainPage` třídy:
 
 ```xaml
 <Button x:Name="translateButon" Text="Translate" Clicked="OnTranslate" />
 ```
 
-## <a name="additional-concepts-introduced-in-phoneword"></a>Další koncepty představené v Phoneword
+## <a name="additional-concepts-introduced-in-phoneword"></a>Další koncepty Představenými v Phoneword
 
-Aplikace Phoneword pro Xamarin.Forms obsahuje zavedla několik konceptů, které nejsou zahrnuté v tomto článku. Tyto koncepty patří:
+Phoneword aplikaci pro Xamarin.Forms přináší několik konceptů, které nejsou zahrnuta v tomto článku. Tyto koncepty patří:
 
-- Povolení a zákaz tlačítek. A [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) můžete zapnout nebo vypnout tak, že změníte jeho [ `IsEnabled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsEnabled/) vlastnost. Například následující kód například zakáže `callButton`:
+- Povolení a zakázání tlačítka. A [ `Button` ](xref:Xamarin.Forms.Button) můžete zapnout nebo vypnout tak, že změníte jeho [ `IsEnabled` ](xref:Xamarin.Forms.VisualElement.IsEnabled) vlastnost. Například následující kód například zakáže `callButton`:
 
     ```csharp
     callButton.IsEnabled = false;
     ```
 
-- Zobrazení dialogového okna výstrah. Když uživatel stiskne volání **tlačítko** ukazuje aplikace Phoneword *dialogového okna výstrah* s možností umístit nebo zrušit volání. [ `DisplayAlert` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayAlert/p/System.String/System.String/System.String/System.String/) Metoda se používá k vytvoření tohoto dialogového okna, jak je znázorněno v následujícím příkladu kódu:
+- Zobrazení dialogového okna výstrah. Když uživatel stiskne volání **tlačítko** u aplikace zobrazí Phoneword *dialogového okna výstrah* s možností umístit nebo zrušení volání. [ `DisplayAlert` ](xref:Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String,System.String)) Metoda se používá k vytvoření dialogového okna, jak je znázorněno v následujícím příkladu kódu:
 
     ```csharp
     await this.DisplayAlert (
@@ -288,7 +288,7 @@ Aplikace Phoneword pro Xamarin.Forms obsahuje zavedla několik konceptů, které
             "No");
     ```
 
-- Přístup k nativní funkce prostřednictvím [ `DependencyService` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyService/) třídy. Aplikace Phoneword používá `DependencyService` třída přeložit `IDialer` rozhraní pro vytáčení implementace phone specifické pro platformu, jak je znázorněno v následujícím příkladu kódu z projektu Phoneword:
+- Přístup k nativním funkcím prostřednictvím [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) třídy. Aplikace Phoneword používá `DependencyService` třídy přeložit `IDialer` rozhraní při volání implementace phone specifické pro platformu, jak je znázorněno v následujícím příkladu kódu z projektu Phoneword:
 
     ```csharp
     async void OnCall (object sender, EventArgs e)
@@ -299,15 +299,15 @@ Aplikace Phoneword pro Xamarin.Forms obsahuje zavedla několik konceptů, které
     }
     ```
 
-  Další informace o [ `DependencyService` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyService/) třídy najdete v tématu [přístup k nativní funkce prostřednictvím DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md).
+  Další informace o [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) najdete v tématu [přístup k nativním funkce prostřednictvím DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md).
 
-- Umístění telefonního hovoru s adresou URL. Aplikace Phoneword používá `OpenURL` spustit aplikaci na telefonu systému. Adresa URL se skládá z `tel:` předponou následuje telefonní číslo, která se má volat, jak je znázorněno v následujícím příkladu kódu z projektu pro iOS:
+- Uvedení telefonního hovoru s adresou URL. Aplikace Phoneword používá `OpenURL` ke spuštění systému telefonní aplikace. Adresa URL se skládá z `tel:` předponou následuje telefonní číslo, která se má volat, jak je znázorněno v následujícím příkladu kódu z projektu pro iOS:
 
     ```csharp
     return UIApplication.SharedApplication.OpenUrl (new NSUrl ("tel:" + number));
     ```
 
-- Postupně je upravujte rozložení platformy. [ `Device` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Device/) Třída umožňuje vývojářům přizpůsobit rozložení aplikace a funkce na základě podle platformy, jak je znázorněno v následujícím příkladu kódu, který používá jiný [ `Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/)hodnoty na různých platformách správně zobrazíte každé stránce:
+- Úprava rozložení platformy. [ `Device` ](xref:Xamarin.Forms.Device) Třída umožňuje vývojářům k přizpůsobení rozložení aplikace a funkce na základě podle platformy, jak je znázorněno v následujícím příkladu kódu, který používá jiný [ `Padding` ](xref:Xamarin.Forms.Layout.Padding)hodnoty na různých platformách pro správné zobrazení jednotlivých stránkách:
 
     ```xaml
     <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" ... >
@@ -325,12 +325,12 @@ Aplikace Phoneword pro Xamarin.Forms obsahuje zavedla několik konceptů, které
 
 ## <a name="testing-and-deployment"></a>Testování a nasazení
 
-Visual Studio pro Mac a Visual Studio poskytují mnoho možností pro testování a nasazení aplikace. Ladění aplikace je běžné součástí životního cyklu aplikace a pomáhá diagnostikovat problémy kódu. Další informace najdete v tématu [zarážku](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/set_a_breakpoint/), [kód prostřednictvím kroku](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/step_through_code/), a [výstupní informace do okna protokolu](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/output_information_to_log_window/).
+Visual Studio pro Mac a Visual Studio poskytují mnoho možností pro testování a nasazení aplikace. Ladění aplikací je běžné součástí životního cyklu vývoje aplikací a pomáhá diagnostikovat problémy v kódu. Další informace najdete v tématu [nastavte zarážku](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/set_a_breakpoint/), [kód prostřednictvím kroku](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/step_through_code/), a [výstupní informace do okna protokolu](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/output_information_to_log_window/).
 
-Simulátorů jsou místo pro spuštění nasazení a testování aplikace a funkce užitečné funkce pro testování aplikací. Uživatelé však nebude využívat konečné aplikaci v simulátoru, tak aplikace by měla být testována na skutečné zařízení včas a často. Další informace o zřizování zařízení iOS najdete v tématu [zřizování zařízení](~/ios/get-started/installation/device-provisioning/index.md). Další informace o zřizování zařízení se systémem Android, najdete v části [nastavit zařízení pro vývoj](~/android/get-started/installation/set-up-device-for-development.md).
+Simulátorů jsou vhodné místo pro spuštění nasazení a testování aplikace a funkce užitečných funkcí pro testování aplikací. Uživatelé však nebude využívat konečné aplikaci v simulátoru, tak aplikace by měl být testován na skutečných zařízeních již v rané fázi a často. Další informace o zřizování zařízení s Iosem, najdete v části [Device Provisioning](~/ios/get-started/installation/device-provisioning/index.md). Další informace o zřizování zařízení s Androidem, najdete v části [nastavit zařízení pro vývoj](~/android/get-started/installation/set-up-device-for-development.md).
 
 ## <a name="summary"></a>Souhrn
 
-Tento článek má zkontrolován základní informace o vývoj aplikací pomocí Xamarin.Forms. Témata popsaná zahrnuty anatomie Xamarin.Forms aplikace, architekturu a základy aplikaci a uživatelské rozhraní.
+Tento článek má prověřit, základní informace o vývoji aplikací pomocí Xamarin.Forms. Probíraná témata zahrnuté anatomie aplikace Xamarin.Forms, architektury a základní informace o aplikaci a uživatelské rozhraní.
 
-V další části této příručky aplikace bude rozšířeno zahrnout více obrazovek a prozkoumejte pokročilejší Xamarin.Forms architektura a koncepty.
+V další části této příručky aplikace prodlouží se mají zahrnout více obrazovek, a prozkoumejte pokročilejší architektura Xamarin.Forms a koncepty.

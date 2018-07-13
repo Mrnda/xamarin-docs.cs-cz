@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/25/2018
-ms.openlocfilehash: 03841306ba54e511dbf2f2b86a7c17e9f4669bcd
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: e45d9944a2f4fc392b5a78efb4a7751d19641c73
+ms.sourcegitcommit: cfb72be633e335147d156af3ef9527151b9e31d9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38847558"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39030662"
 ---
 # <a name="introduction-to-tvos-12"></a>Úvod do Tvosu 12
 
@@ -23,7 +23,7 @@ ms.locfileid: "38847558"
 
 > [!NOTE]
 > - Zkontrolujte [Začínáme](~/ios/platform/introduction-to-ios12/get-started.md) příručka pokyny o tom, abyste mohli začít vytvářet aplikace pro tvOS 12 s využitím kódu Xamarin pro iOS 12 a.
-> - Další informace najdete v článku [poznámky k verzi](https://releases.xamarin.com/preview-release-xcode-10-beta/) pro Xamarin ve verzi preview verzi.
+> - Další informace najdete v článku Xamarin ve verzi preview [release blogový příspěvek](https://releases.xamarin.com/preview-release-xcode-10-beta-3/).
 
 Tento dokument poskytuje základní přehled o nových a aktualizovaných tvOS 12 funkce verze pro Xamarin, které ve verzi preview v současné době poskytuje vazby C#.
 
@@ -41,4 +41,4 @@ tvOS 12 umožňuje všechny aplikace, bez ohledu na to, jak jejich vykreslením,
 - [tvOS – pro vývojáře Apple (Apple)](https://developer.apple.com/tvos/)
 - [Co je nového v tvOS 12 (Apple) (video)](https://developer.apple.com/videos/play/wwdc2018/208/)
 - [TV (Apple)](https://www.apple.com/tv/)
-- Xamarin ve verzi preview [zpráva k vydání verze](https://releases.xamarin.com/preview-release-xcode-10-beta/)
+- Xamarin ve verzi preview [release blogový příspěvek](https://releases.xamarin.com/preview-release-xcode-10-beta-3/)

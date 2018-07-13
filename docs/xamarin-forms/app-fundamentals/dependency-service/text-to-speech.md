@@ -1,38 +1,38 @@
 ---
-title: Implementace převod textu na řeč
-description: Tento článek vysvětluje způsob použití třídy Xamarin.Forms DependencyService provést volání do nativního je rozhraní API každou platformu.
+title: Implementace převodu textu na řeč
+description: Tento článek vysvětluje, jak použít třídu Xamarin.Forms DependencyService provést volání do nativního převod textu na řeč API jednotlivé platformy.
 ms.prod: xamarin
 ms.assetid: 1D6164F9-4ECE-43A6-B583-1F5D5EFC1DDF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/18/2017
-ms.openlocfilehash: 5d9e7c74878ea6a095ba28a80fe1307493acbed5
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: d39902f2269d3eb241b48831b8eb1b181ff11e7a
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241056"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997540"
 ---
-# <a name="implementing-text-to-speech"></a>Implementace převod textu na řeč
+# <a name="implementing-text-to-speech"></a>Implementace převodu textu na řeč
 
-Tento článek vám pomohou, jako je vytváření aplikace a platformy, která využívá [ `DependencyService` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyService/) pro přístup k nativních je rozhraní API:
+V tomto článku se dozvíte, jak vytvořit aplikace pro různé platformy, která používá [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) pro přístup k nativním rozhraním API pro převod textu na řeč:
 
-- **[Vytváření rozhraní](#Creating_the_Interface)**  &ndash; pochopit vytváření rozhraní ve sdílené kódu.
-- **[iOS implementace](#iOS_Implementation)**  &ndash; zjistěte, jak toto rozhraní implementovat v nativním kódu pro iOS.
+- **[Vytvoření rozhraní](#Creating_the_Interface)**  &ndash; pochopit, jak se v sdílený kód vytvoří rozhraní.
+- **[iOS implementace](#iOS_Implementation)**  &ndash; zjistěte, jak implementovat rozhraní v nativním kódu pro iOS.
 - **[Android implementace](#Android_Implementation)**  &ndash; zjistěte, jak implementovat rozhraní v nativním kódu pro Android.
-- **[Implementace UWP](#WindowsImplementation)**  &ndash; zjistěte, jak toto rozhraní implementovat v nativním kódu pro univerzální platformu Windows (UWP).
-- **[Implementace v sdíleného kódu](#Implementing_in_Shared_Code)**  &ndash; Naučte se používat `DependencyService` provést volání do nativního implementace ze sdíleného kódu.
+- **[Implementace UPW](#WindowsImplementation)**  &ndash; zjistěte, jak implementovat rozhraní v nativním kódu pro univerzální platformu Windows (UPW).
+- **[Implementace v sdíleným kódem](#Implementing_in_Shared_Code)**  &ndash; Další informace o použití `DependencyService` Chcete-li volat nativní implementaci ze sdíleného kódu.
 
-Aplikace pomocí `DependencyService` bude mít následující strukturu:
+Aplikace používající `DependencyService` mají následující strukturu:
 
-![](text-to-speech-images/tts-diagram.png "Struktura DependencyService aplikace")
+![](text-to-speech-images/tts-diagram.png "Struktury DependencyService aplikace")
 
 <a name="Creating_the_Interface" />
 
-## <a name="creating-the-interface"></a>Vytváření rozhraní
+## <a name="creating-the-interface"></a>Vytvoření rozhraní
 
-Nejprve vytvořte rozhraní ve sdílené kód, který vyjadřuje funkce, které máte v úmyslu implementovat. V tomto příkladu rozhraní obsahuje jedinou metodu `Speak`:
+Nejprve vytvořte rozhraní v sdíleného kódu, který vyjadřuje funkce, které máte v úmyslu implementovat. V tomto příkladu rozhraní obsahuje jedinou metodu `Speak`:
 
 ```csharp
 public interface ITextToSpeech
@@ -41,7 +41,7 @@ public interface ITextToSpeech
 }
 ```
 
-Kódování proti tomuto rozhraní v sdíleného kódu vám umožní aplikaci Xamarin.Forms pro přístup k rozhraní API pro rozpoznávání řeči na každou platformu.
+Kódovat toto rozhraní v sdílený kód vám umožní aplikaci Xamarin.Forms pro přístup k rozhraní API pro rozpoznávání řeči na jednotlivých platformách.
 
 > [!NOTE]
 > Třídy implementující rozhraní musí mít konstruktor bez parametrů pro práci s `DependencyService`.
@@ -50,7 +50,7 @@ Kódování proti tomuto rozhraní v sdíleného kódu vám umožní aplikaci Xa
 
 ## <a name="ios-implementation"></a>iOS implementace
 
-Rozhraní musí být implementován v každé projekt aplikace specifické pro platformu. Všimněte si, že má třída konstruktor bez parametrů, aby `DependencyService` můžete vytvořit nové instance.
+Rozhraní musí být implementované v každém projektu aplikace pro konkrétní platformu. Všimněte si, že třída nemá konstruktor bez parametrů, aby `DependencyService` můžete vytvořit nové instance.
 
 ```csharp
 [assembly: Dependency(typeof(TextToSpeechImplementation))]
@@ -78,13 +78,13 @@ namespace DependencyServiceSample.iOS
 }
 ```
 
-`[assembly]` Atribut zaregistruje jako implementaci třídy `ITextToSpeech` rozhraní, což znamená, že `DependencyService.Get<ITextToSpeech>()` lze použít v sdíleného kódu vytvořit její instanci.
+`[assembly]` Atribut zaregistruje třídu jako implementace `ITextToSpeech` rozhraní, což znamená, že `DependencyService.Get<ITextToSpeech>()` je možné vytvořit její instanci v sdílený kód.
 
 <a name="Android_Implementation" />
 
-## <a name="android-implementation"></a>Android implementace
+## <a name="android-implementation"></a>Implementace s androidem
 
-Kód Android je složitější, než je verze iOS: vyžaduje implementující třídu dědění z specifické pro Android `Java.Lang.Object` a implementovat `IOnInitListener` také rozhraní. Také budete potřebovat přístup k aktuální Android kontext, který je zveřejněný prostřednictvím `MainActivity.Instance` vlastnost.
+Kódu pro Android je složitější než verze iOS: vyžaduje implementující třídu dědit z specifické pro Android `Java.Lang.Object` a provádět `IOnInitListener` a interface. Také budete potřebovat přístup k aktuálním kontextu s Androidem, která je vystavená nástroji `MainActivity.Instance` vlastnost.
 
 ```csharp
 [assembly: Dependency(typeof(TextToSpeechImplementation))]
@@ -119,13 +119,13 @@ namespace DependencyServiceSample.Droid
 }
 ```
 
-`[assembly]` Atribut zaregistruje jako implementaci třídy `ITextToSpeech` rozhraní, což znamená, že `DependencyService.Get<ITextToSpeech>()` lze použít v sdíleného kódu vytvořit její instanci.
+`[assembly]` Atribut zaregistruje třídu jako implementace `ITextToSpeech` rozhraní, což znamená, že `DependencyService.Get<ITextToSpeech>()` je možné vytvořit její instanci v sdílený kód.
 
 <a name="WindowsImplementation" />
 
-## <a name="universal-windows-platform-implementation"></a>Implementace Universal Windows Platform
+## <a name="universal-windows-platform-implementation"></a>Implementace pro platformu Universal Windows
 
-Univerzální platformu Windows má řeči rozhraní API v `Windows.Media.SpeechSynthesis` oboru názvů. Přímý přístup do pouze paměti je nezapomeňte osové **mikrofon** schopností v manifestu, jinak přístup k rozpoznávání řeči rozhraní API jsou zablokované.
+Univerzální platforma Windows má rozhraní speech API v `Windows.Media.SpeechSynthesis` oboru názvů. Pouze výstrahou je nezapomeňte osové **mikrofon** funkce v manifestu, jinak přístup k rozhraním speech API bylo zablokováno.
 
 ```csharp
 [assembly:Dependency(typeof(TextToSpeechImplementation))]
@@ -143,13 +143,13 @@ public class TextToSpeechImplementation : ITextToSpeech
 }
 ```
 
-`[assembly]` Atribut zaregistruje jako implementaci třídy `ITextToSpeech` rozhraní, což znamená, že `DependencyService.Get<ITextToSpeech>()` lze použít v sdíleného kódu vytvořit její instanci.
+`[assembly]` Atribut zaregistruje třídu jako implementace `ITextToSpeech` rozhraní, což znamená, že `DependencyService.Get<ITextToSpeech>()` je možné vytvořit její instanci v sdílený kód.
 
 <a name="Implementing_in_Shared_Code" />
 
-## <a name="implementing-in-shared-code"></a>Implementace v sdíleného kódu
+## <a name="implementing-in-shared-code"></a>Implementace v sdíleným kódem
 
-Nyní jsme zápisu a testování sdíleného kódu, který má přístup k rozhraní je. Tato jednoduchá stránka obsahuje tlačítko, které aktivuje funkci řeči. Použije `DependencyService` získat instanci `ITextToSpeech` rozhraní &ndash; za běhu bude tato instance implementace specifické pro platformu, která má úplný přístup k nativní SDK.
+Nyní jsme napište a otestujte sdíleného kódu, který má přístup k rozhraní převod textu na řeč. Tato jednoduchá stránka obsahuje tlačítko, které aktivuje funkci řeči. Používá `DependencyService` k získání instance typu `ITextToSpeech` rozhraní &ndash; za běhu bude tato instance implementace specifické pro platformu, která má plný přístup k nativní sadou SDK.
 
 ```csharp
 public MainPage ()
@@ -166,9 +166,9 @@ public MainPage ()
 }
 ```
 
-Spuštění této aplikace v iOS, Android nebo UWP a stisknutím tlačítka způsobí v aplikaci a Mluvte prostřednictvím nativního řeči SDK na každou platformu.
+Spuštění této aplikace v iOS, Android a UPW a stisknutím tlačítka bude účtovat v aplikaci mluvený prostřednictvím nativního řeči SDK na jednotlivých platformách.
 
- ![iOS a Android je tlačítko](text-to-speech-images/running.png "převod textu na řeč ukázka")
+ ![iOS a Android převod textu na řeč tlačítko](text-to-speech-images/running.png "ukázka převod textu na řeč")
 
 
 ## <a name="related-links"></a>Související odkazy

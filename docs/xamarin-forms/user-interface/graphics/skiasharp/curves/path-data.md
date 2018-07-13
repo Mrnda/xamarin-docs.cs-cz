@@ -1,32 +1,32 @@
 ---
-title: Data SVG cesty v SkiaSharp
-description: Tento článek vysvětluje, jak definovat SkiaSharp cesty pomocí textové řetězce ve formátu Škálovatelné vektorové grafiky a to ukazuje s ukázkový kód.
+title: Data cesty SVG v ve Skiasharpu
+description: Tento článek vysvětluje, jak definovat cesty ve Skiasharpu používání textové řetězce ve formátu Scalable Vector Graphics a ukazuje to se vzorovým kódem.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 1D53067B-3502-4D74-B89D-7EC496901AE2
 author: charlespetzold
 ms.author: chape
 ms.date: 05/24/2017
-ms.openlocfilehash: 0453374c59c3b12842b7fb1524cc150329d84b7f
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 84b77313ec9cad4d0add3540fe4d26910e593ada
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243971"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996779"
 ---
-# <a name="svg-path-data-in-skiasharp"></a>Data SVG cesty v SkiaSharp
+# <a name="svg-path-data-in-skiasharp"></a>Data cesty SVG v ve Skiasharpu
 
-_Zadejte cesty pomocí textové řetězce ve formátu Škálovatelné vektorová grafika_
+_Definovat cesty k používání textové řetězce ve formátu Scalable Vector Graphics_
 
-`SKPath` Třída podporuje definici celou cestu objektů z textové řetězce ve formátu navázat specifikací škálovatelné grafiky SVG (Vector). Uvidíte později v tomto článku jak může představovat celou cestu jako je tato v textovém řetězci:
+`SKPath` Třída podporuje definici celou cestu objektů z řetězce textu ve formátu stanovené specifikaci grafiky SVG (Scalable Vector). Zobrazí se vám dále v tomto článku jak mohou představovat celou cestu jako je například tento v textovém řetězci:
 
-![](path-data-images/pathdatasample.png "Ukázka cestu definovaný s SVG data cesty")
+![](path-data-images/pathdatasample.png "Ukázka cestu definovanou s data cesty SVG")
 
-SVG je na základě XML grafiky programovací jazyk pro webové stránky. Protože SVG musí umožňovat cesty být definován v značky namísto řady volání funkce, obsahuje standardní SVG velmi stručným způsob zadání cesty celý grafiky jako textový řetězec.
+SVG je založené na XML grafiky programovací jazyk pro webové stránky. Protože SVG musí umožňovat cesty byly definovány v značek namísto řadu volání funkcí, obsahuje standardní SVG velmi stručným způsobem určit cestu k celé grafiky jako textový řetězec.
 
-V rámci SkiaSharp tento formát se označuje jako "SVG cesta data". Formát je podporováno také v založených na Windows XAML programovací prostředí, včetně Windows Presentation Foundation a univerzální platformy Windows, kde se označuje jako [syntaxe značek cesty](https://msdn.microsoft.com/library/ms752293%28v=vs.110%29.aspx) nebo [přesunout a kreslení příkazy Syntaxe](/windows/uwp/xaml-platform/move-draw-commands-syntax/). Můžete také fungovat jako formátu exchange pro Image vektorové grafiky, zejména v textové soubory, jako je například XML.
+V rámci SkiaSharp, tento formát je označován jako "Data cesty SVG-." Formát je podporováno také v XAML Windows programovací prostředí, včetně Windows Presentation Foundation a univerzální platformu Windows, ve kterém se označuje jako [syntaxe značek cesty](https://msdn.microsoft.com/library/ms752293%28v=vs.110%29.aspx) nebo [přesunout a nakreslete příkazy Syntaxe](/windows/uwp/xaml-platform/move-draw-commands-syntax/). Může sloužit také jako formát výměny pro vektorové grafiky, zejména v textové soubory, jako je například XML.
 
-SkiaSharp definuje dvě metody s slova `SvgPathData` jejich názvy:
+Ve Skiasharpu definuje dvě metody s slova `SvgPathData` v jejich názvy:
 
 ```csharp
 public static SKPath ParseSvgPathData(string svgPath)
@@ -36,27 +36,27 @@ public string ToSvgPathData()
 
 Statické [ `ParseSvgPathData` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ParseSvgPathData/p/System.String/) metoda převede řetězec na `SKPath` objektu, zatímco [ `ToSvgPathData` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ToSvgPathData()/) převede `SKPath` objekt na řetězec.
 
-Tady je řetězec SVG pro hvězdu pět odkazoval na střed v bodu (0, 0) o poloměru 100:
+Tady je řetězec SVG pro star pět odkazovala na střed v bodě (0, 0) s poloměrem 100:
 
 ```csharp
 "M 0 -100 L 58.8 90.9, -95.1 -30.9, 95.1 -30.9, -58.8 80.9 Z"
 ```
 
-Písmena jsou příkazy, které sestavení `SKPath` objektu. `M` označuje `MoveTo` volat, `L` je `LineTo`, a `Z` je `Close` zavřete profilu okraje. Každou dvojici čísel poskytuje souřadnici X a Y bodu. Všimněte si, že `L` příkaz následuje několik bodů oddělených čárkami. V řadě souřadnice a body, čárky a prázdné znaky jsou považovány shodně. Některé programátory preferuje uvést čárkami mezi souřadnice X a Y a nikoli mezi body, ale čárky nebo prostory jsou potřeba jenom ke zabránilo nejednoznačnosti. Toto je perfektně právní:
+Písmena jsou příkazy, které sestavení `SKPath` objektu. `M` označuje `MoveTo` volání, `L` je `LineTo`, a `Z` je `Close` zavřete obrysem. Každou dvojici čísel poskytuje souřadnici X a Y bodu. Všimněte si, že `L` příkaz následuje několik bodů oddělených čárkami. V řadě souřadnice a body, čárky a mezery jsou zpracovávána stejně jako. Někteří programátoři raději umístěte čárek mezi souřadnice X a Y, nikoli mezi body, ale čárkami nebo mezerami pouze povinnost, aby se zabránilo nejednoznačnosti. To je naprosto platný:
 
 ```csharp
 "M0-100L58.8 90.9-95.1-30.9 95.1-30.9-58.8 80.9Z"
 ```
 
-Syntaxe data cesty SVG oficiálně zdokumentována [části 8.3 specifikace SVG](http://www.w3.org/TR/SVG11/paths.html#PathData). Zde je souhrn:
+Syntaxe data cesty SVG je formálně zdokumentované v [části 8.3 specifikace SVG](http://www.w3.org/TR/SVG11/paths.html#PathData). Toto je souhrn:
 
-## <a name="moveto"></a>**MoveTo (přesunout)**
+## <a name="moveto"></a>**MoveTo**
 
 ```csharp
 M x y
 ```
 
-Toto nové obrysem v cestě začne nastavením aktuální pozici. Data cesty by měl začínat vždy `M` příkaz.
+Tím se zahájí nové obrysu v cestě tak, že nastavíte na aktuální pozici. Data cesty by měl vždy začínají znakem `M` příkazu.
 
 ## <a name="lineto"></a>**LineTo**
 
@@ -64,7 +64,7 @@ Toto nové obrysem v cestě začne nastavením aktuální pozici. Data cesty by 
 L x y ...
 ```
 
-Tento příkaz přidá přímku (nebo řádky) do cesty a nastaví nové aktuální pozici na konec posledního řádku. Můžete provést `L` s několika párů *x* a *y* souřadnice.
+Tento příkaz přidá rovné čáry (nebo řádky) do cesty a nastaví nové aktuální pozice na konec posledního řádku. Můžete postupovat podle `L` příkazu s více dvojice *x* a *y* souřadnice.
 
 ## <a name="horizontal-lineto"></a>**Vodorovné LineTo**
 
@@ -72,7 +72,7 @@ Tento příkaz přidá přímku (nebo řádky) do cesty a nastaví nové aktuál
 H x ...
 ```
 
-Tento příkaz přidá na vodorovném řádku na cestu a nastaví nové aktuální pozici na konec řádku. Můžete provést `H` příkaz s více *x* souřadnice, ale nebude mít mnoho smysl.
+Tento příkaz přidá do cesty pro vodorovnou horizontální čáru a nastaví nové aktuální pozice na konci řádku. Můžete postupovat podle `H` příkaz s několika *x* souřadnice, ale to moc nedává smysl.
 
 ## <a name="vertical-line"></a>**Svislá čára**
 
@@ -80,31 +80,31 @@ Tento příkaz přidá na vodorovném řádku na cestu a nastaví nové aktuáln
 V y ...
 ```
 
-Tento příkaz přidá svislice na cestu a nastaví nové aktuální pozici na konec řádku.
+Tento příkaz přidá do cesty pro svislou čáru a nastaví nové aktuální pozice na konci řádku.
 
-## <a name="close"></a>**Zavřete**
+## <a name="close"></a>**Zavřít**
 
 ```csharp
 Z
 ```
 
-`C` Příkaz zavře přidáním přímku od aktuální pozice na začátek Kontury obrysu.
+`C` Příkaz zavře přidáním rovné čáry od aktuální pozice na začátku Kontury obrysu.
 
 ## <a name="arcto"></a>**ArcTo**
 
-Příkaz pro přidání eliptické oblouku do Kontury je zdaleka příkaz těch nejsložitějších ve specifikaci celý data cesty SVG. Je pouze příkaz, ve kterém může představovat čísla něco jiného než souřadnic hodnoty:
+Příkaz pro přidání oblouku elipsy rozvrhu je jednoznačně nejpopulárnější nejsložitější příkaz ve specifikaci celý data cesty SVG. Je pouze příkaz, ve kterém může představovat čísla něco jiného než hodnoty souřadnic:
 
 ```csharp
 A rx ry rotation-angle large-arc-flag sweep-flag x y ...
 ```
 
-*Rx* a *Tě* parametry jsou vodorovného a svislého poloměr se třemi tečkami. *Úhel otočení* je po směru hodinových ručiček ve stupních.
+*Rx* a *ry* parametry jsou vodorovný a svislý poloměr elipsy. *Úhel otočení* je po směru hodinových ručiček ve stupních.
 
-Nastavte *velké oblouk příznak* 1 pro velké oblouk nebo na hodnotu 0 pro malé oblouk.
+Nastavte *velké oblouk příznak* pro velké oblouk 1 nebo 0 pro malé oblouk.
 
-Nastavte *oblouku příznak* 1 pro po směru hodinových ručiček a na hodnotu 0 pro proti směru hodinových ručiček.
+Nastavit *vyčištění příznaku* hodnotu 1, aby po směru hodinových ručiček a na hodnotu 0 pro proti směru hodinových ručiček.
 
-Oblouk vykreslením do bodu (*x*, *y*), který bude nový aktuální pozici.
+Oblouku je vykresleno do bodu (*x*, *y*), který se stane novou aktuální pozici.
 
 ## <a name="cubicto"></a>**CubicTo**
 
@@ -112,9 +112,9 @@ Oblouk vykreslením do bodu (*x*, *y*), který bude nový aktuální pozici.
 C x1 y1 x2 y2 x3 y3 ...
 ```
 
-Tento příkaz přidá krychlový Bézierovy křivky z aktuální pozici k (*x3*, *y3*), který bude nový aktuální pozici. V bodech (*x1*, *y1*) a (*x2*, *y2*) jsou kontrolní body.
+Tento příkaz přidá kubické Bézierovy křivky z aktuální pozice (*x3*, *y3*), který se stane novou aktuální pozici. Body (*x1*, *y1*) a (*x2*, *y2*) jsou kontrolní body.
 
-Při jedné lze zadat více Bézierových křivek `C` příkaz. Počet bodů musí být násobkem 3.
+Je možné zadat více Bézierových křivek tak jediné `C` příkazu. Počet bodů musí být násobkem 3.
 
 Je také "smooth" Bézierovy křivky příkaz:
 
@@ -122,7 +122,7 @@ Je také "smooth" Bézierovy křivky příkaz:
 S x2 y2 x3 y3 ...
 ```
 
-Tento příkaz by mělo vycházet regulární příkaz Bézierovy (i když, který má není nezbytně nutné). Příkaz smooth Bézierovy vypočítá první řídicí bod tak, aby se odraz druhý řídicí bod předchozí Bézierovy kolem jejich vzájemné bodu. Tyto tři body jsou proto colinear a připojení mezi dvě Bézierovy křivky je smooth.
+Tento příkaz by měly dodržovat regulární příkaz Bézierovy (i když, který má není nezbytně nutné). Smooth Bézierovy příkaz vypočítá první řídicí bod tak, aby se reflexe druhého ovládacího bodu předchozí Bézierovy kolem jejich vzájemné bodu. Tyto tři body jsou proto colinear a připojení mezi dvě Bézierovy křivky je hladký průběh.
 
 ## <a name="quadto"></a>**QuadTo**
 
@@ -130,25 +130,25 @@ Tento příkaz by mělo vycházet regulární příkaz Bézierovy (i když, kter
 Q x1 y1 x2 y2 ...
 ```
 
-Pro kvadratických Bézierových křivek počet bodů musí být násobkem 2. Řídicí bod je (*x1*, *y1*) a koncový bod (a nové aktuální pozici) (*x2*, *y2*)
+Kvadratické Bézierovy křivky počet bodů musí být násobkem 2. Řídicí bod (*x1*, *y1*) a koncový bod (a nové aktuální pozici) (*x2*, *y2*)
 
-Je také smooth kvadratické křivky příkaz:
+Je také smooth Kvadratická křivka příkaz:
 
 ```csharp
 T x2 y2 ...
 ```
 
-Řídicí bod je vypočítáváno na řídicí bod předchozí kvadratické křivky.
+Řídicí bod se vypočítá podle řídicí bod předchozí Kvadratická křivka.
 
-Všechny tyto příkazy jsou také k dispozici ve verzích "relativní", kde souřadnic body jsou relativní vzhledem k aktuální pozici. Tyto příkazy relativní začínat malá písmena, například `c` místo `C` pro relativní verzi krychlový Bézierovy příkazu.
+Tyto příkazy jsou dostupné v "relativní" verze, ve kterém jsou souřadnice bodů vzhledem k aktuální pozici. Tyto relativní příkazy začínají malými písmeny, například `c` spíše než `C` relativní verze kubické Bézierovy příkazu.
 
-Jedná se rozsah definici data cesty SVG. Neexistuje žádné zařízení pro opakující se skupiny příkazy nebo provádění libovolného typu výpočtu. Příkazy pro `ConicTo` nebo jiné typy oblouk specifikace nejsou k dispozici.
+Toto je v rozsahu definice data cesty SVG. Neexistuje žádné zařízení pro opakující se skupiny příkazů nebo provedení libovolného typu výpočtu. Příkazy pro `ConicTo` nebo jiné typy oblouk specifikací nejsou k dispozici.
 
-Statické [ `SKPath.ParseSvgPathData` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ParseSvgPathData/p/System.String/) metoda očekává platný řetězec příkazů SVG. Pokud se detekuje chyby syntaxe, vrátí metoda `null`. To je indikace pouze chyby.
+Statické [ `SKPath.ParseSvgPathData` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ParseSvgPathData/p/System.String/) metoda očekává platný řetězec SVG příkazů. Pokud se zjistí všechny chyby syntaxe, metoda vrátí `null`. To je označení pouze chyby.
 
-[ `ToSvgPathData` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ToSvgPathData()/) Metoda je užitečný pro získávání dat cesta SVG z existující `SKPath` objekt pro přenos do jiného programu, nebo k ukládání ve formátu textového souboru například XML. ( `ToSvgPathData` Metoda není ukázáno v ukázkovém kódu v tomto článku.) Proveďte *není* očekávat `ToSvgPathData` vrátit řetězec odpovídající přesně volání metod, které vytvořili cestu. Zejména budete zjistíte, že oblouky se převedou na několika `QuadTo` příkazy, a jak se zobrazují v cestě data vrácená z `ToSvgPathData`.
+[ `ToSvgPathData` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ToSvgPathData()/) Metoda je užitečná pro získání data cesty SVG z existující `SKPath` objektu přenést do jiného programu, nebo k ukládání ve formátu textového souboru, například XML. ( `ToSvgPathData` Metoda není ukázáno v ukázkovém kódu v tomto článku.) Proveďte *není* očekávat `ToSvgPathData` vrátit řetězec přesně odpovídající volání metody, které vytvořili cestu. Konkrétně se dozvíte, že oblouky jsou převedeny na více `QuadTo` příkazy, a to je, jak se zobrazují v cestě data vrácená z `ToSvgPathData`.
 
-**Cesta Data Hello** stránky spells na slovo "HELLO" pomocí data cesty SVG. Jak `SKPath` a `SKPaint` objekty jsou definovány jako pole v [ `PathDataHelloPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataHelloPage.cs) třídy:
+**Cesty dat Hello** stránky spells si slovo "HELLO" data cesty SVG. Jak `SKPath` a `SKPaint` objekty jsou definovány jako pole v [ `PathDataHelloPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataHelloPage.cs) třídy:
 
 ```csharp
 public class PathDataHelloPage : ContentPage
@@ -172,21 +172,21 @@ public class PathDataHelloPage : ContentPage
 }
 ```
 
-Cesta k definování textový řetězec začíná v levém horním rohu v bodě (0, 0). Každý písmeno je 50 jednotky široké a 100 jednotky výšku a písmena jsou odděleny jiné jednotky 25, což znamená, že se celou cestu 350 jednotky široké.
+Cesta, která definuje textový řetězec začíná levém horním rohu na místě (0, 0). Každé písmeno je 50 jednotek široký a výšku 100 jednotek a písmena jsou odděleny jiné jednotky 25, což znamená, že celou cestu je 350 jednotky široké.
 
-"H" text "Hello" se skládá z tři profily okrajů jednořádkové dvě Bézierovy křivky krychlový připojené při "E". Všimněte si, že `C` příkaz následuje šest bodů a dva kontrolních bodů mají Souřadnice Y – 10 a 110, který zapisuje je mimo rozsah Souřadnice Y ostatní písmena. Dva řádky připojené, je "L" při ' o. je elipsy, který je vykreslen s `A` příkaz.
+"H" "Hello" se skládá ze tří jednořádkové rozvrh, "E" je dvě připojených kubické Bézierovy křivky. Všimněte si, že `C` příkaz následuje šest bodů a dva kontrolních bodů mají Souřadnice Y – 10 a 110, které se dostanou mimo rozsah Souřadnice Y ostatní písmena. "L" je dva spojené čáry, zatímco "jednoznakový je elipsy, který je vykreslen pomocí `A` příkazu.
 
-Všimněte si, že `M` příkaz, který začíná poslední obrysem nastaví pozici k bodu (350, 50), což je svislé středu doleva strany ' o. Jak znázorňuje následující první čísla `A` příkaz, má se třemi tečkami vodorovné radius 25 a svislé radius 50. Koncový bod je indikován posledních pár čísel ve `A` příkaz, který představuje bod (300, 49.9). Která se záměrně jen mírně liší od počáteční bod. Pokud koncový bod je nastavena na počáteční bod, nebude vykreslen oblouk. Kreslení dokončení elipsy, musíte nastavit koncový bod zavřete na (ale není rovno) počáteční bod, nebo musíte použít dva nebo více `A` příkazy, jednotlivých součástí se třemi tečkami dokončení.
+Všimněte si, že `M` příkaz, který začíná poslední rozvrh nastaví pozici k bodu (350, 50), což je svislé center vlevo strany "jednoznakový. Podle první následující čísla `A` příkazu se třemi tečkami má vodorovný radius 25 a svislý poloměr 50. Koncový bod je indikován posledních pár čísel ve `A` příkaz, který představuje bod (300, 49.9). To je záměrně jen mírně lišit od počátečního bodu. Pokud koncový bod je nastavena na počáteční bod, se nevykreslí oblouk. K dokončení elipsa nakreslit, je nutné nastavit koncový bod Zavřít (ale není rovno) počáteční bod, nebo musíte použít nejmíň dva `A` příkazy, každá část úplný elipsy.
 
-Můžete chtít přidejte následující příkaz pro konstruktor stránky a pak nastavit zarážky prozkoumat výsledný řetězec:
+Můžete chtít přidejte následující příkaz pro konstruktor stránky a pak nastavte zarážku pro zjištění výsledného řetězce:
 
 ```csharp
 string str = helloPath.ToSvgPathData();
 ```
 
-Dozvíte se, že oblouk se nahradil údajem dlouho řadu `Q` příkazy pro postupného aproximace oblouku pomocí kvadratických Bézierových křivek.
+Dozvíte se, že oblouku bylo nahrazeno tématem dlouhé řadě `Q` příkazy pro menších aproximace oblouku pomocí kvadratické Bézierovy křivky.
 
-`PaintSurface` Obslužná rutina získává úzkou hranice cesta, která neobsahuje kontrolní body pro "E" a "o. křivek. Tři transformace přesunutí center cesty do bodu (0, 0), škálování cestu k velikost na plátno (ale také zohledněním šířku tahu) a potom center cesty na střed plátna:
+`PaintSurface` Obslužná rutina získává absolutní hranice cesty, který neobsahuje kontrolní body pro "E" a "jednoznakový křivky. Tři transformací přesunutí center cestu do bodu (0, 0), škálovat ji na velikost plátna (ale také zohledněním šířka tahu) a potom center cestu na střed plátna:
 
 ```csharp
 public class PathDataHelloPage : ContentPage
@@ -215,11 +215,11 @@ public class PathDataHelloPage : ContentPage
 }
 ```
 
-Cesta vyplní celé plátno, která vypadá přijatelnější při zobrazení na šířku:
+Cesta vyplní celé plátno, která vypadá přijatelnějšímu při zobrazení na šířku v režimu:
 
-[![](path-data-images/pathdatahello-small.png "Trojitá snímek obrazovky stránky cesta Data Hello")](path-data-images/pathdatahello-large.png#lightbox "Trojitá snímek obrazovky stránky cesta Data Hello")
+[![](path-data-images/pathdatahello-small.png "Trojitá snímek obrazovky stránky cesty dat Hello")](path-data-images/pathdatahello-large.png#lightbox "Trojitá snímek obrazovky stránky cesty dat Hello")
 
-**Cesta Data Cat** stránka je podobné. Oba objekty Malování a cesta jsou definovány jako pole v [ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs) třídy:
+**Cesty dat Cat** je podobná stránka. Objekty cesty a Malování se definují jako pole v [ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs) třídy:
 
 ```csharp
 public class PathDataCatPage : ContentPage
@@ -253,11 +253,11 @@ public class PathDataCatPage : ContentPage
 }
 ```
 
-Vedoucí cat je kruh a zde je vykreslen se dvěma `A` příkazy, z nichž každý nevykresluje polokruhu. Obě `A` příkazy pro hlavičky definují vodorovného a svislého poloměr 100. První oblouk začíná na (240, 100) a končí (240, 300), který se stane počáteční bod pro druhý oblouk, který končí zpět na (240, 100).
+Hlavní cat je kruhu a zde je vykreslen pomocí dvou `A` příkazy, z nichž každý nakreslí polokruhu. Obě `A` příkazy pro vedoucí definovat vodorovný a svislý poloměr 100. První oblouk začíná na (240, 100) a končí (240, 300,), který se stane počáteční bod pro druhý oblouk, které končí na (240, 100).
 
-Dva očí vykresleny také se dvěma `A` příkazy a stejně jako u vaší kočky head, druhý `A` příkaz končí na stejném místě jako začátek první `A` příkaz. Ale tyto dvojice `A` příkazy nedefinují elipsy. S každou oblouku je 40 jednotek a poloměr je také 40 jednotek, což znamená, že tyto oblouky nejsou úplné semicircles.
+Dva oči vykresleny také dva `A` příkazy a stejně jako u kočky head, druhý `A` příkaz končí na stejném místě jako začátek první `A` příkazu. Ale tyto dvojice `A` příkazy nedefinují elipsu. Na každý oblouku je 40 jednotek a poloměr je také 40 jednotek, což znamená, že tyto oblouky nejsou úplné semicircles.
 
-`PaintSurface` Obslužná rutina provede transformací podobné jako v předchozím příkladu, ale nastaví jedné `Scale` faktor, který se zachovat poměr stran a poskytnout málo okraj, abyste vaší kočky vousů nemáte touch strany obrazovky:
+`PaintSurface` Obslužná rutina provede podobné transformace jako předchozí ukázce, ale nastaví jediného `Scale` faktorem, který je zachovat poměr stran a poskytuje malou okraj, aby kočky whiskers don't touch stranách obrazovky:
 
 ```csharp
 public class PathDataCatPage : ContentPage
@@ -286,13 +286,13 @@ public class PathDataCatPage : ContentPage
 }
 ```
 
-Tady je programy spuštěné na všech tří platformách:
+Tady je program spuštěn na všech třech platformách:
 
-[![](path-data-images/pathdatacat-small.png "Trojitá snímek obrazovky stránky cesta Data Cat")](path-data-images/pathdatacat-large.png#lightbox "Trojitá snímek obrazovky stránky cesta Data Cat")
+[![](path-data-images/pathdatacat-small.png "Trojitá snímek obrazovky stránky cesty dat Cat")](path-data-images/pathdatacat-large.png#lightbox "Trojitá snímek obrazovky stránky cesty dat Cat")
 
-Za normálních okolností, kdy `SKPath` objektu je definována jako pole, obrysy cesty musí být definován v konstruktoru nebo jiným způsobem. Při použití data SVG cesty, ale už víte, že zcela v definici pole lze zadat cestu.
+Obvykle, když `SKPath` objekt je definovaný jako pole, rozvrh cesty musí být definován v konstruktoru nebo jiným způsobem. Při použití data cesty SVG, ale už víte, že cesta se dá nastavit jenom v definici pole.
 
-Dříve **Ugly hodiny analogovým** ukázku v [ **transformace otočit** ](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/rotate.md) článek zobrazí jako jednoduchý řádky do nesprávných rukou hodiny. **Poměrně analogovým hodiny** uvedený program nahradí tyto řádky s `SKPath` objekty definované jako pole v [ `PrettyAnalogClockPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PrettyAnalogClockPage.cs) třídy spolu s `SKPaint` objekty:
+Dříve **bez zbytečných prvků hodiny obdobu jmenovek** ukázku v [ **transformace otočení** ](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/rotate.md) článku do rukou hodin zobrazí jako jednoduchý řádky. **Poměrně obdobu jmenovek hodiny** uvedený program nahradí tyto řádky s `SKPath` objekty definované jako pole v [ `PrettyAnalogClockPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PrettyAnalogClockPage.cs) třídy společně s `SKPaint` objekty:
 
 ```csharp
 public class PrettyAnalogClockPage : ContentPage
@@ -330,9 +330,9 @@ public class PrettyAnalogClockPage : ContentPage
 }
 ```
 
-Rukou hodin a minut nyní mají uzavřen oblasti, tak aby se tyto rukou od sebe liší, jsou vykreslovány se černý obrys i šedé výplně pomocí `handStrokePaint` a `handFillPaint` objekty.
+Rukou hodinu a minutu teď mít uzavřeny oblastí, tak aby tyto praktické liší od sebe navzájem, jsou vykreslovány pomocí černého osnovy i šedé výplně pomocí `handStrokePaint` a `handFillPaint` objekty.
 
-V dříve **Ugly hodiny analogovým** ukázce málo kroužky, která označena za hodin a minut se vykresluje v smyčku. V tomto **poměrně analogovým hodiny** ukázku, se používá úplně jinou přístup: hodin a minut značky jsou řádky tečkovaná vykreslené s `minuteMarkPaint` a `hourMarkPaint` objekty:
+V předchozím **bez zbytečných prvků hodiny obdobu jmenovek** ukázce daném malém kruhy, která označena hodiny a minuty byly nakresleny ve smyčce. V tomto **poměrně obdobu jmenovek hodiny** ukázku, úplně jiný přístup se používá: hodiny a minuty. značky jsou tečkované čáry dekorace s `minuteMarkPaint` a `hourMarkPaint` objekty:
 
 ```csharp
 public class PrettyAnalogClockPage : ContentPage
@@ -359,11 +359,11 @@ public class PrettyAnalogClockPage : ContentPage
 }
 ```
 
-[ **Tečky a pomlčky** ](~/xamarin-forms/user-interface/graphics/skiasharp/paths/dots.md) průvodce popsané, jak můžete použít `SKPathEffect.CreateDash` metodu pro vytvoření na přerušovanou čáru. První argument `float` pole, které obvykle má dva elementy: první prvek je délka pomlček a druhý prvkem je mezera mezi pomlček. Když `StrokeCap` je nastavena na `SKStrokeCap.Round`, pak zaokrouhlené konců čárka efektivně prodloužit délka dash podle šířku tahu na obou stranách čárka. Nastavení první prvek pole na hodnotu 0, tedy vytvoří tečkovaná čára.
+[ **Tečky a pomlčky** ](~/xamarin-forms/user-interface/graphics/skiasharp/paths/dots.md) Průvodce popsáno, jak můžete použít `SKPathEffect.CreateDash` metodu pro vytvoření na přerušovanou čáru. První argument `float` pole, které má obvykle dva prvky: první prvek je délka pomlček a druhý prvek je mezera mezi pomlček. Když `StrokeCap` je nastavena na `SKStrokeCap.Round`, pak zakulacený konce čárka efektivně prodloužit délku pomlčky podle šířka tahu na obou stranách čárka. Proto nastavení na první prvek pole na hodnotu 0, vytvoří se tečkovaná čára.
 
-Tyto rozestupu se řídí druhý prvkem pole. Jak uvidíte krátce, tyto dvě `SKPaint` objekty se používají k vykreslení kroužky se serverem radius 90 jednotek. Obvodu tento kroužek je proto 180π, což znamená, že značky 60 minut musí být uvedeny všechny jednotky 3π, což je druhá hodnota v `float` pole v `minuteMarkPaint`. Značky ve 12 hodin musí být každý 15π jednotek, což je hodnota za sekundu `float` pole.
+Vzdálenost mezi tyto tečky se řídí druhém prvku pole. Jak se zobrazí po chvíli, tyto dvě `SKPaint` objekty se používají k kreslí kruhy s protokolem radius 90 jednotek. Obvod tento kruhu je proto 180π, to znamená, že značky 60 minut musí být uvedena každé jednotky 3π, což je druhá hodnota v `float` obsahuje pole `minuteMarkPaint`. Dvanáct hodin značky musí být uvedena každý 15π jednotek, což je hodnota v druhém `float` pole.
 
-`PrettyAnalogClockPage` Třída nastaví časovače zneplatní povrchu každých 16 milisekund a `PaintSurface` obslužná rutina je volána v tomto kurzu. Starší definice `SKPath` a `SKPaint` objekty povolit pro velmi čisté kreslení kódu:
+`PrettyAnalogClockPage` Třída nastaví časovače zrušit platnost povrchu každých 16 milisekund a `PaintSurface` obslužná rutina je volána v tomto kurzu. Předchozí definice `SKPath` a `SKPaint` objekty umožňují velmi čistým kreslení kódu:
 
 ```csharp
 public class PrettyAnalogClockPage : ContentPage
@@ -423,12 +423,12 @@ public class PrettyAnalogClockPage : ContentPage
 }
 ```
 
-Něco speciální provádí pomocí druhé straně, ale. Protože hodiny se aktualizuje každých 16 milisekund `Millisecond` vlastnost `DateTime` hodnotu lze potenciálně na druhé straně animace oblouku místo ten, který přesune v diskrétní skoků z druhého druhou. Ale tento kód neumožňuje přesun jako plynulé. Místo toho použije platformě Xamarin.Forms [ `SpringIn` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SpringIn/) a [ `SpringOut` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Easing.SpringOut/) animace usnadnění funkce pro jiný druh pohyb. Tyto funkce usnadnění způsobit druhé straně přesunout jerkier způsobem &mdash; stahování zpět malým před přesune ho a potom mírně překročením teploty svůj cíl, vliv to bohužel nelze reprodukovat v těchto statické snímky obrazovky:
+Něco speciální se dělá druhé straně, ale. Protože hodiny se aktualizuje každých 16 milisekund `Millisecond` vlastnost `DateTime` hodnota může potenciálně použít pro animaci vyčištění druhé straně místo jednoho, který přesouvá v samostatných přejde z druhého do druhé. Ale tento kód neumožňuje pohyb být hladký průběh. Místo toho využívá Xamarin.Forms [ `SpringIn` ](xref:Xamarin.Forms.Easing.SpringIn) a [ `SpringOut` ](xref:Xamarin.Forms.Easing.SpringOut) animace funkce pro jiný druh přesun usnadnění. Tyto funkce usnadnění způsobit druhé straně přesunout jerkier způsobem &mdash; přijímání změn zpět trochu před přesunu, a potom mírně over-pass-the potíží svůj cíl, efektu to bohužel není možné reprodukovat v těchto statických snímky obrazovky:
 
-[![](path-data-images/prettyanalogclock-small.png "Trojitá snímek obrazovky stránky poměrně analogovým hodiny")](path-data-images/prettyanalogclock-large.png#lightbox "Trojitá snímek obrazovky stránky poměrně analogovým hodiny")
+[![](path-data-images/prettyanalogclock-small.png "Trojitá snímek obrazovky stránky poměrně obdobu jmenovek hodiny")](path-data-images/prettyanalogclock-large.png#lightbox "Trojitá snímek obrazovky stránky poměrně obdobu jmenovek hodiny")
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [Rozhraní API ve Skiasharpu](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

@@ -1,39 +1,39 @@
 ---
 title: Komprese rozložení
-description: Komprese rozložení Odebere zadaný rozložení vizuálním stromu ve snaze zvýšit výkon vykreslování stránky. Tento článek vysvětluje postup povolení komprese rozložení a výhody, které můžete zahrnout.
+description: Komprese rozložení odebere zadané rozložení z vizuálního stromu za účelem zvýšení výkonu vykreslování stránky. Tento článek vysvětluje, jak povolit kompresi rozložení a výhody, které mohou přinést.
 ms.prod: xamarin
 ms.assetid: da9e1b26-9d31-4762-94c3-4039f306b7f2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2017
-ms.openlocfilehash: 9c698d539ab671ee2a033ae5943a46e0cc870f76
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: ba9be51daa32be1034e2bdfafafe80c45d00d83c
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30791123"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995229"
 ---
 # <a name="layout-compression"></a>Komprese rozložení
 
-_Komprese rozložení Odebere zadaný rozložení vizuálním stromu ve snaze zvýšit výkon vykreslování stránky. Tento článek vysvětluje postup povolení komprese rozložení a výhody, které můžete zahrnout._
+_Komprese rozložení odebere zadané rozložení z vizuálního stromu za účelem zvýšení výkonu vykreslování stránky. Tento článek vysvětluje, jak povolit kompresi rozložení a výhody, které mohou přinést._
 
 ## <a name="overview"></a>Přehled
 
-Xamarin.Forms provádí rozložení pomocí dvou řad rekurzivní volání metod:
+Xamarin.Forms provádí rozložení pomocí dvou řad rekurzivní volání metody:
 
-- Rozložení začne v horní části stromu visual se stránkou, a pokračuje prostřednictvím všechny větve vizuálním stromu zahrnovat každý visual element na stránce. Prvky, které jsou rodičů na další elementy jsou zodpovědní za změny velikosti a umístění jejich podřízené relativně k sami.
-- Zneplatnění je proces, pomocí kterého změnu element na stránce spustí cyklus nové rozložení. Elementy jsou považovány za neplatné, když už nebude mít správnou velikost nebo pozice. Každý element v visual stromové struktury, která má podřízených prvků, je upozornění pokaždé, když jednu z jejích podřízených změny velikosti. Změnit velikost elementu ve vizuální strojové struktuře proto může způsobit změny, které ripple stromu.
+- Rozložení začíná v horní části stránky z vizuálního stromu se stránkou, a pokračuje přes všechny větve ve vizuálním stromu rozšiřovat a zahrnovat každou vizuální prvek na stránce. Prvky, které jsou rodičům, aby ostatní prvky zodpovídají za změně velikosti a umístění jejich podřízených vzhledem k sami.
+- Je proces, pomocí kterého změna v elementu na stránce spustí nový cyklus rozložení. Prvky jsou považovány za neplatné, když už nebude mít správnou velikost nebo pozice. Každý prvek ve vizuálním stromu, který má podřízené položky se zobrazí upozornění vždy, když jedna z jejích podřízených změny velikosti. Změnit velikost elementu ve vizuálním stromu proto může způsobit změny, které ripple směrem nahoru.
 
-Další informace o tom, jak Xamarin.Forms provede rozložení najdete v tématu [vytváření vlastní rozložení](~/xamarin-forms/user-interface/layouts/custom.md).
+Další informace o tom, jak Xamarin.Forms provádí rozložení najdete v tématu [vytvoření rozložení platného pro vlastní](~/xamarin-forms/user-interface/layouts/custom.md).
 
-Výsledek procesu rozložení je hierarchie nativní ovládací prvky. Tato hierarchie však zahrnuje další kontejner pro vykreslování a obálky pro platformu pro vykreslování, další nafouknutí hierarchii zobrazení vnoření. Čím hlouběji úroveň vnoření, tím větší množství práce, který Xamarin.Forms má provést pro zobrazení stránky. Pro komplexní rozložení může být zobrazení hierarchie hlubších a rozsáhlé, s více úrovní vnoření.
+Výsledek procesu rozložení je hierarchie nativní ovládací prvky. Tato hierarchie však zahrnuje další kontejneru renderery a obálky pro platformu renderery, další nafouknutí zobrazit hierarchii vnoření. Čím hlouběji úrovní vnoření, tím větší množství práce, které Xamarin.Forms má provést pro zobrazení stránky. Pro složitá rozložení lze zobrazit hierarchii hluboké a široké, s více úrovní vnoření.
 
-Představte si třeba z ukázkové aplikace pro protokolování do Facebook na následující tlačítko:
+Představte si třeba následující tlačítko pro přihlášení k Facebooku v ukázkové aplikaci:
 
-![](layout-compression-images/facebook-button.png "Tlačítko Facebook")
+![](layout-compression-images/facebook-button.png "Tlačítko Facebooku")
 
-Toto tlačítko je zadán jako vlastního ovládacího prvku s následující zobrazení hierarchie XAML:
+Toto tlačítko je zadán jako vlastní ovládací prvek s následující zobrazení hierarchie XAML:
 
 ```xaml
 <ContentView ...>
@@ -53,18 +53,18 @@ Toto tlačítko je zadán jako vlastního ovládacího prvku s následující zo
 </ContentView>
 ```
 
-Výsledný vnořené zobrazení hierarchie může být prověřen s [Xamarin Inspector](~/tools/inspector/index.md). V systému Android obsahuje hierarchii vnořené zobrazení 17 zobrazení:
+Výsledná vnořená zobrazení hierarchie se dají prozkoumat s [Xamarin Inspector](~/tools/inspector/index.md). V Androidu obsahuje hierarchii vnořená zobrazení 17 zobrazení:
 
-![](layout-compression-images/no-compression.png "Zobrazení hierarchie pro tlačítko Facebook")
+![](layout-compression-images/no-compression.png "Zobrazit hierarchii pro tlačítko Facebooku")
 
-Rozložení kompresi, která je k dispozici pro Xamarin.Forms aplikace v iOS a Android platformy, cílem je vyrovnání zobrazení vnoření odebráním zadaný rozložení ze stromu visual, což může zlepšit výkon vykreslení stránky. Výhody výkonu, která je dodávána se liší v závislosti na složitosti stránky, na verzi operačního systému používá a zařízení, na kterém je aplikace spuštěna. Ale největších zvýšení výkonu se zobrazí na starší zařízení.
+Komprese rozložení, který je k dispozici pro aplikace Xamarin.Forms v Iosu a Androidu platformy, zaměřuje k vyrovnání zobrazení vnoření tak, že odeberete zadanou rozložení z vizuálního stromu, což může zlepšit výkon vykreslování části stránky. Výhody výkonu, která je dodávána se liší v závislosti na složitosti stránku, verze operačního systému se používají a zařízení, na kterém je aplikace spuštěna. Největší zvýšení výkonu se však projeví na starší zařízení.
 
 > [!NOTE]
-> Tento článek zaměřuje na výsledcích použití komprese rozložení v systému Android, je rovněž na iOS.
+> Přestože tento článek se zaměřuje na výsledky použití komprese rozložení v Androidu, se vztahuje rovněž na iOS.
 
 ## <a name="layout-compression"></a>Komprese rozložení
 
-V jazyce XAML, může být povolena komprese rozložení nastavením `CompressedLayout.IsHeadless` přidružená vlastnost k `true` rozložení třídy:
+V XAML, můžete jej povolit nastavením komprese rozložení `CompressedLayout.IsHeadless` připojené vlastnosti `true` rozložení třídy:
 
 ```xaml
 <StackLayout CompressedLayout.IsHeadless="true">
@@ -72,16 +72,16 @@ V jazyce XAML, může být povolena komprese rozložení nastavením `Compressed
 </StackLayout>   
 ```
 
-Alternativně může být povoleno zadáním rozložení instance jako první argument v jazyce C# `CompressedLayout.SetIsHeadless` metoda:
+Alternativně může být povoleno zadáním instance rozložení jako první argument v jazyce C# `CompressedLayout.SetIsHeadless` metody:
 
 ```csharp
 CompressedLayout.SetIsHeadless(stackLayout, true);
 ```
 
 > [!IMPORTANT]
-> Vzhledem k tomu, že komprese rozložení a rozložení odebere vizuálním stromu, není vhodný pro rozložení, které mají vzhled nebo který získat dotykové ovládání. Proto se rozložení, nastavte [ `VisualElement` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualElement/) vlastnosti (například [ `BackgroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.BackgroundColor/), [ `IsVisible` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsVisible/), [ `Rotation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Rotation/), [ `Scale` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Scale/), [ `TranslationX` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationX/) a [ `TranslationY` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationY/)) nebo která gesta přijmout, nejsou kandidáty pro rozložení komprese. Však povolení komprese rozložení na rozložení, který nastaví vlastnosti vzhled nebo který přijímá gesta, nebude mít za následek chyby sestavení nebo modul runtime. Místo toho komprese rozložení se použijí a vlastnosti vzhled a gesto rozpoznávání bez upozornění selže.
+> Protože komprese rozložení odebere rozložení z vizuálního stromu, není vhodný pro rozložení, které mají vizuálního vzhledu, nebo který získat dotykové ovládání. Proto se rozložení, který nastavte [ `VisualElement` ](xref:Xamarin.Forms.VisualElement) vlastnosti (například [ `BackgroundColor` ](xref:Xamarin.Forms.VisualElement.BackgroundColor), [ `IsVisible` ](xref:Xamarin.Forms.VisualElement.IsVisible), [ `Rotation` ](xref:Xamarin.Forms.VisualElement.Rotation), [ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale), [ `TranslationX` ](xref:Xamarin.Forms.VisualElement.TranslationX) a [ `TranslationY` ](xref:Xamarin.Forms.VisualElement.TranslationY) nebo, který přijímá gesta, nejsou kandidáty pro rozložení komprese. Ale povolení komprese rozložení na rozložení, který nastavuje vlastnosti vzhled nebo, který přijímá gesta, nebude mít za následek chybu sestavení nebo modul runtime. Místo toho budou použity komprese rozložení a vzhled vlastnosti a rozpoznání gest se bez upozornění nepodaří.
 
-Pro tlačítko Facebook rozložení komprese může být povolena na tři rozložení třídy:
+Tlačítko Facebook může být povolena komprese rozložení na tři rozložení třídy:
 
 ```xaml
 <StackLayout CompressedLayout.IsHeadless="true">
@@ -94,27 +94,27 @@ Pro tlačítko Facebook rozložení komprese může být povolena na tři rozlo�
 </StackLayout>  
 ```
 
-V systému Android výsledkem vnořené zobrazení hierarchie 14 zobrazení:
+V Androidu výsledkem je vnořená zobrazení hierarchie 14 zobrazení:
 
-![](layout-compression-images/layout-compression.png "Zobrazení hierarchie pro Facebook tlačítko s kompresí rozložení")
+![](layout-compression-images/layout-compression.png "Zobrazit hierarchii pro Facebook tlačítko Komprese rozložení")
 
-Porovnání s původní vnořené zobrazení hierarchie 17 zobrazení, reprezentuje snížení počtu zobrazení % 17. A toto snížení mohou být zobrazeny zanedbatelný, může být větších snížení zobrazení přes celou stránku.
+Porovnání s původní vnořené zobrazení hierarchie 17 zobrazení, to představuje snížení počtu zobrazení 17 %. A toto snížení mohou být zobrazeny nevýznamné, může být mnohem závažnější snížení zobrazení přes celou stránku.
 
-### <a name="fast-renderers"></a>Pro rychlé vykreslování
+### <a name="fast-renderers"></a>Rychlé Renderery
 
-Rychlé nástroji pro vykreslování snížit inflace a náklady vykreslování ovládacích prvků Xamarin.Forms v systému Android pomocí sloučení výsledná hierarchie nativní zobrazení. Tato další zlepšuje výkon vytvořením menší počet objektů, které pak výsledků v méně složitých vizuálním stromu a menší využití paměti. Další informace o nástroji pro vykreslování rychlé najdete v tématu [rychlé nástroji pro vykreslování](~/xamarin-forms/internals/fast-renderers.md).
+Rychlé renderery snížit inflaci a náklady na vykreslení ovládacích prvků Xamarin.Forms v Androidu linearizovat výsledný nativní zobrazit hierarchii. To dále zvyšuje výkon tím, že vytvoříte méně objektů, což zase vede v méně složitých vizuální strom a nižší využití paměti. Další informace o rychlé renderery, naleznete v tématu [rychlé Renderery](~/xamarin-forms/internals/fast-renderers.md).
 
-Pro tlačítko sítě Facebook v ukázkové aplikaci vytváří kombinace rozložení komprese a rychlé nástroji pro vykreslování vnořených zobrazení hierarchie 8 zobrazení:
+Pro tlačítko sítě Facebook v ukázkové aplikaci vytvoří spojení komprese rozložení a rychlé renderery vnořené zobrazení hierarchie 8 zobrazení:
 
-![](layout-compression-images/layout-compression-with-fast-renderers.png "Zobrazení hierarchie pro Facebook tlačítko s rozložení komprese a rychlé nástroji pro vykreslování")
+![](layout-compression-images/layout-compression-with-fast-renderers.png "Zobrazit hierarchii pro Facebook tlačítko s komprese rozložení a rychlé Renderery")
 
-Porovnání s původní vnořené zobrazení hierarchie 17 zobrazení, reprezentuje snížení 52 %.
+Porovnání s původní vnořené zobrazení hierarchie 17 zobrazení, to představuje snížení 52 %.
 
-Ukázková aplikace obsahuje stránku extrahoval z reálné aplikaci. Bez komprese rozložení a rychlé nástroji pro vykreslování vytvoří stránky hierarchii vnořené zobrazení 130 zobrazení v systému Android. Povolení rychlého nástroji pro vykreslování a rozložení kompresi na příslušná rozložení třídy snižuje hierarchii vnořené zobrazení do 70 zobrazení, snížení 46 %.
+Ukázková aplikace obsahuje stránku extrahují z aplikace skutečný. Na stránce bez komprese rozložení a rychlé renderery, vytvoří vnořené zobrazení hierarchie 130 zobrazení v Androidu. Vnořené zobrazení hierarchie umožňující rychlé renderery a komprese rozložení na odpovídající rozložení třídy snižuje 70 zobrazeními, snížení 46 %.
 
 ## <a name="summary"></a>Souhrn
 
-Komprese rozložení Odebere zadaný rozložení vizuálním stromu ve snaze zvýšit výkon vykreslování stránky. Výhody výkonu, který to doručí se liší v závislosti na složitosti stránky, na verzi operačního systému používá a zařízení, na kterém je aplikace spuštěna. Ale největších zvýšení výkonu se zobrazí na starší zařízení.
+Komprese rozložení odebere zadané rozložení z vizuálního stromu za účelem zvýšení výkonu vykreslování stránky. Zlepšuje výkon, který to poskytuje se liší v závislosti na složitosti stránku, verze operačního systému se používají a zařízení, na kterém je aplikace spuštěna. Největší zvýšení výkonu se však projeví na starší zařízení.
 
 
 ## <a name="related-links"></a>Související odkazy

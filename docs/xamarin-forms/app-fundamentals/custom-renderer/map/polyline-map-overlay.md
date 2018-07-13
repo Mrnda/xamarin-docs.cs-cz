@@ -1,45 +1,45 @@
 ---
-title: Zvýraznění trasu na mapě
-description: Tento článek vysvětluje postup přidání překrytí lomenou čáru na mapu. Překrytí lomenou čáru je řada spojených čar segmentů, které jsou obvykle používány trasu zobrazit na mapě nebo formuláře libovolného tvaru, které je nutné.
+title: Zvýraznění trasy na mapě
+description: Tento článek vysvětluje, jak přidat překrytí lomené čáry na mapu. Překrytí lomené čáry je řada spojených čar segmenty, které se obvykle používají k zobrazení trasy na mapě nebo tvoří žádný obrazec, který je potřeba.
 ms.prod: xamarin
 ms.assetid: FBFDC715-1654-4188-82A0-FC522548BCFF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 8b80f9569e9377ca76798911cda64d8c0ee28d93
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 786f050495d4682b719178f2723c482929544678
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34846640"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998717"
 ---
-# <a name="highlighting-a-route-on-a-map"></a>Zvýraznění trasu na mapě
+# <a name="highlighting-a-route-on-a-map"></a>Zvýraznění trasy na mapě
 
-_Tento článek vysvětluje postup přidání překrytí lomenou čáru na mapu. Překrytí lomenou čáru je řada spojených čar segmentů, které jsou obvykle používány trasu zobrazit na mapě nebo formuláře libovolného tvaru, které je nutné._
+_Tento článek vysvětluje, jak přidat překrytí lomené čáry na mapu. Překrytí lomené čáry je řada spojených čar segmenty, které se obvykle používají k zobrazení trasy na mapě nebo tvoří žádný obrazec, který je potřeba._
 
 ## <a name="overview"></a>Přehled
 
-Překrytí je vrstveného grafika na mapě. Překryvy podporovat kreslení grafické obsah, který škáluje s mapy, jako je možnosti. Na následujících snímcích obrazovky zobrazit výsledkem přidání překrytí lomenou čáru na mapu:
+Překrytí je vrstvený grafiky na mapě. Překryvy podporují výkresu grafického obsahu, která se škáluje s mapou, jak je zvětšeno. Na následujících snímcích obrazovky zobrazit výsledek přidání překrytí lomené čáry mapy:
 
 ![](polyline-map-overlay-images/screenshots.png)
 
-Když [ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/) vykreslení ovládacího prvku platformě Xamarin.Forms aplikací v iOS `MapRenderer` vytvoření instance třídy, které pak vytvoří nativní `MKMapView` ovládacího prvku. Na platformě Android `MapRenderer` třída vytvoří nativní `MapView` ovládacího prvku. Na univerzální platformu Windows (UWP), `MapRenderer` třída vytvoří nativní `MapControl`. Proces vykreslování můžete provedeny výhod implementovat přizpůsobení specifické pro platformu mapy tak, že vytvoříte vlastní zobrazovací jednotky pro `Map` na každou platformu. Proces pro to vypadá takto:
+Když [ `Map` ](xref:Xamarin.Forms.Maps.Map) aplikací Xamarin.Forms v Iosu se vykreslí ovládací prvek `MapRenderer` je vytvořena instance třídy, které pak vytvoří instanci nativní `MKMapView` ovládacího prvku. Na platformu Android `MapRenderer` třídy vytvoří instanci nativní `MapView` ovládacího prvku. Na Universal Windows Platform (UWP), `MapRenderer` třídy vytvoří instanci nativní `MapControl`. Samotný proces vykreslování můžete třeba využít implementovat přizpůsobení specifické pro platformu mapování tak, že vytvoříte vlastní zobrazovací jednotky pro `Map` na jednotlivých platformách. Tento proces je následujícím způsobem:
 
-1. [Vytvoření](#Creating_the_Custom_Map) Xamarin.Forms vlastní mapování.
-1. [Využívat](#Consuming_the_Custom_Map) vlastní mapy z Xamarin.Forms.
-1. [Přizpůsobení](#Customizing_the_Map) mapy tak, že vytvoříte vlastní zobrazovací jednotky pro mapu na každou platformu.
+1. [Vytvoření](#Creating_the_Custom_Map) vlastní mapa Xamarin.Forms.
+1. [Využívání](#Consuming_the_Custom_Map) vlastní mapy z Xamarin.Forms.
+1. [Přizpůsobení](#Customizing_the_Map) mapování tak, že vytvoříte vlastní zobrazovací jednotky pro mapování na jednotlivých platformách.
 
 > [!NOTE]
-> [`Xamarin.Forms.Maps`](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/) musí být inicializovaná a před použitím. Další informace najdete na webu [`Maps Control`](~/xamarin-forms/user-interface/map.md).
+> [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps) musí být inicializován a před použitím nakonfigurovat. Další informace najdete na webu [`Maps Control`](~/xamarin-forms/user-interface/map.md).
 
-Informace o přizpůsobení mapu pomocí vlastní zobrazovací jednotky najdete v tématu [přizpůsobení Map kódu Pin](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md).
+Informace o přizpůsobení mapy pomocí vlastní zobrazovací jednotky najdete v tématu [přizpůsobení špendlíku mapy](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md).
 
 <a name="Creating_the_Custom_Map" />
 
-### <a name="creating-the-custom-map"></a>Vytváření vlastních mapy
+### <a name="creating-the-custom-map"></a>Vytváří se vlastní mapa
 
-Vytvoření podtřídou třídy [ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/) třída, která přidává `RouteCoordinates` vlastnost:
+Vytvořit podtřídu [ `Map` ](xref:Xamarin.Forms.Maps.Map) třída, která přidá `RouteCoordinates` vlastnost:
 
 ```csharp
 public class CustomMap : Map
@@ -53,13 +53,13 @@ public class CustomMap : Map
 }
 ```
 
-`RouteCoordinates` Vlastnost uloží kolekce souřadnic, které definují trasy, která má mít zvýrazněná.
+`RouteCoordinates` Vlastnost uloží kolekci souřadnic, které definují trasy, která má být zvýrazněn.
 
 <a name="Consuming_the_Custom_Map" />
 
-### <a name="consuming-the-custom-map"></a>Použití vlastní mapy
+### <a name="consuming-the-custom-map"></a>Použití vlastních Map
 
-Využívat `CustomMap` řízení deklarováním její instanci v instanci stránky XAML:
+Využívat `CustomMap` ovládací prvek deklarováním její instanci v instanci stránky XAML:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -72,7 +72,7 @@ Využívat `CustomMap` řízení deklarováním její instanci v instanci strán
 </ContentPage>
 ```
 
-Alternativně využívat `CustomMap` řízení deklarováním její instanci v instanci stránky C#:
+Můžete také využívat `CustomMap` ovládací prvek deklarováním její instanci v instanci stránky jazyka C#:
 
 ```csharp
 public class MapPageCS : ContentPage
@@ -90,7 +90,7 @@ public class MapPageCS : ContentPage
 }
 ```
 
-Inicializace `CustomMap` řízení podle potřeby:
+Inicializovat `CustomMap` ovládací prvek podle potřeby:
 
 ```csharp
 public partial class MapPage : ContentPage
@@ -108,17 +108,17 @@ public partial class MapPage : ContentPage
 }
 ```
 
-Tato inicializace určuje řadu zeměpisnou šířku a délku souřadnice k definování trasy na mapu, která bude mít zvýrazněná. Ji pak umisťuje zobrazení mapy na s [ `MoveToRegion` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.Map.MoveToRegion(Xamarin.Forms.Maps.MapSpan)/) metoda, která mění pozice a úroveň přiblížení mapy vytvořením [ `MapSpan` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.MapSpan/) z [ `Position` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Position/) a [ `Distance` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Distance/).
+Tato inicializace určuje řadu souřadnice zeměpisné šířky a délky pro definování trasy na mapě zvýrazněny. Potom umístí zobrazení na mapě s [ `MoveToRegion` ](xref:Xamarin.Forms.Maps.Map.MoveToRegion*) metoda, která změní pozice a úroveň přiblížení mapy tak, že vytvoříte [ `MapSpan` ](xref:Xamarin.Forms.Maps.MapSpan) z [ `Position` ](xref:Xamarin.Forms.Maps.Position) a [ `Distance` ](xref:Xamarin.Forms.Maps.Distance).
 
 <a name="Customizing_the_Map" />
 
 ### <a name="customizing-the-map"></a>Přizpůsobení mapy
 
-Vlastní zobrazovací jednotky je nyní přidat na každý projekt aplikace pro přidání do překrytí lomenou čáru na mapě.
+Vlastní zobrazovací jednotky musí nyní přidán do každého projektu aplikace přidat do překrytí lomené čáry na mapě.
 
-#### <a name="creating-the-custom-renderer-on-ios"></a>Vytváření vlastní zobrazovací jednotky v systému iOS
+#### <a name="creating-the-custom-renderer-on-ios"></a>Vytvoření vlastní zobrazovací jednotky v systému iOS
 
-Vytvoření podtřídou třídy `MapRenderer` třídy a přepsat její `OnElementChanged` metoda pro přidání do překrytí lomenou čáru:
+Vytvořit podtřídu `MapRenderer` třídy a přepsat její `OnElementChanged` metoda pro přidání do překrytí lomené čáry:
 
 ```csharp
 [assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
@@ -164,14 +164,14 @@ namespace MapOverlay.iOS
 
 ```
 
-Za předpokladu, že vlastní zobrazovací jednotky je připojen k nového elementu Xamarin.Forms, tato metoda provádí následující konfiguraci:
+Za předpokladu, že vlastní zobrazovací jednotky je připojen k nový prvek Xamarin.Forms, tato metoda provádí následující konfiguraci:
 
 - `MKMapView.OverlayRenderer` Je nastavena na odpovídající delegáta.
-- Kolekce zeměpisné šířky a délky jsou načteny z `CustomMap.RouteCoordinates` vlastnost a uloží jako pole `CLLocationCoordinate2D` instance.
-- Vytvoření lomenou čáru voláním statické `MKPolyline.FromCoordinates` metoda, která určuje zeměpisnou šířku a délku každého bodu.
-- Lomenou čáru je přidán do mapy voláním `MKMapView.AddOverlay` metoda.
+- Kolekce zeměpisné šířky a délky se načítají z `CustomMap.RouteCoordinates` vlastnosti a uložené jako pole `CLLocationCoordinate2D` instancí.
+- Lomenou čáru je vytvořen zavoláním statické `MKPolyline.FromCoordinates` metodu, která určuje zeměpisnou šířku a délku každého bodu.
+- Lomenou čáru je přidán do mapování voláním `MKMapView.AddOverlay` metody.
 
-Potom implementovat `GetOverlayRenderer` metodu za účelem přizpůsobení vykreslování překrytí:
+Pak implementovat `GetOverlayRenderer` metodu za účelem přizpůsobení vykreslování překrytí:
 
 ```csharp
 public class CustomMapRenderer : MapRenderer
@@ -195,9 +195,9 @@ public class CustomMapRenderer : MapRenderer
 }
 ```
 
-#### <a name="creating-the-custom-renderer-on-android"></a>Vytváření vlastní zobrazovací jednotky v systému Android
+#### <a name="creating-the-custom-renderer-on-android"></a>Vytvoření vlastního Rendereru v Androidu
 
-Vytvoření podtřídou třídy `MapRenderer` třídy a přepsat její `OnElementChanged` a `OnMapReady` metody pro přidání do překrytí lomenou čáru:
+Vytvořit podtřídu `MapRenderer` třídy a přepsat její `OnElementChanged` a `OnMapReady` metody pro přidání do překrytí lomené čáry:
 
 ```csharp
 [assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
@@ -246,11 +246,11 @@ namespace MapOverlay.Droid
 }
 ```
 
-`OnElementChanged` Metoda načte kolekci zeměpisných souřadnic ze `CustomMap.RouteCoordinates` vlastnost a ukládá je v členské proměnné. Potom zavolá `MapView.GetMapAsync` metodu, která získá základní `GoogleMap` který je vázaný na zobrazení, za předpokladu, že vlastní zobrazovací jednotky je připojen k nového elementu Xamarin.Forms. Jednou `GoogleMap` instance je k dispozici, `OnMapReady` metoda bude vyvolán, kde se má vytvořit čáru po vytvoření instance `PolylineOptions` objekt, který určuje zeměpisnou šířku a délku každého bodu. Čáru se pak přidá do mapy voláním `NativeMap.AddPolyline` metoda.
+`OnElementChanged` Metoda načte kolekci zeměpisné šířky a délky souřadnice z `CustomMap.RouteCoordinates` vlastnosti a ukládá je v členské proměnné. Poté zavolá `MapView.GetMapAsync` metodu, která získá základní `GoogleMap` , který se váže k zobrazení, za předpokladu, že vlastní zobrazovací jednotky je připojen k nový prvek Xamarin.Forms. Jednou `GoogleMap` instance je k dispozici, `OnMapReady` metoda bude volána, pokud je lomenou čáru vytvořené po vytvoření instance `PolylineOptions` určující zeměpisnou šířku a délku každého bodu. Lomenou čáru se pak přidá do mapy voláním `NativeMap.AddPolyline` metody.
 
-#### <a name="creating-the-custom-renderer-on-the-universal-windows-platform"></a>Vytváření vlastní zobrazovací jednotky na univerzální platformu Windows
+#### <a name="creating-the-custom-renderer-on-the-universal-windows-platform"></a>Vytvoření vlastního Rendereru na Universal Windows Platform
 
-Vytvoření podtřídou třídy `MapRenderer` třídy a přepsat její `OnElementChanged` metoda pro přidání do překrytí lomenou čáru:
+Vytvořit podtřídu `MapRenderer` třídy a přepsat její `OnElementChanged` metoda pro přidání do překrytí lomené čáry:
 
 ```csharp
 [assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
@@ -289,19 +289,19 @@ namespace MapOverlay.UWP
 }
 ```
 
-Tato metoda provede následující operace, za předpokladu, že vlastní zobrazovací jednotky je připojen k nového elementu Xamarin.Forms:
+Za předpokladu, že vlastní zobrazovací jednotky je připojen k nový prvek Xamarin.Forms, tato metoda provádí následující operace:
 
-- Kolekce zeměpisné šířky a délky jsou načteny z `CustomMap.RouteCoordinates` vlastnost a převedený do `List` z `BasicGeoposition` souřadnice.
-- Po vytvoření instance se vytvoří lomenou čáru `MapPolyline` objektu. `MapPolygon` Třída se používá pro zobrazení průběhu na mapě nastavením jeho `Path` vlastnosti `Geopath` objekt, který obsahuje souřadnice řádku.
-- Vykreslení lomenou čáru na mapě přidáním jeho `MapControl.MapElements` kolekce.
+- Kolekce zeměpisné šířky a délky se načítají z `CustomMap.RouteCoordinates` vlastnost a převedené do `List` z `BasicGeoposition` souřadnice.
+- Po vytvoření instance je vytvořena lomenou čáru `MapPolyline` objektu. `MapPolygon` Třída se používá k zobrazení řádku na mapě nastavením jeho `Path` vlastnost `Geopath` objekt, který obsahuje tento řádek souřadnice.
+- Lomenou čáru se vykreslí na mapu tak, že přidáte tak, `MapControl.MapElements` kolekce.
 
 ## <a name="summary"></a>Souhrn
 
-Tento článek vysvětluje postup přidání překrytí lomenou čáru na mapu, můžete zobrazit na mapě trasu nebo formuláři libovolného tvaru, které je nutné.
+Tento článek vysvětlil, jak přidat překrytí lomené čáry na mapě zobrazit trasy na mapě nebo formuláře žádný obrazec, který je potřeba.
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Mapa Ovlerlay lomenou čáru (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/polyline/)
+- [Lomené čáry mapy Ovlerlay (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/polyline/)
 - [Přizpůsobení špendlíku mapy](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)
-- [Xamarin.Forms.Maps](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/)
+- [Xamarin.Forms.Maps](xref:Xamarin.Forms.Maps)

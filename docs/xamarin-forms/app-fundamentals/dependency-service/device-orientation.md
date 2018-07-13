@@ -1,41 +1,41 @@
 ---
-title: Kontrola, zda orientace zařízení
-description: Tento článek vysvětluje, jak používat Xamarin.Forms DependencyService třídy pro přístup k zařízení orientaci ze sdíleného kódu.
+title: Změna orientace zařízení
+description: Tento článek vysvětluje, jak použít třídu Xamarin.Forms DependencyService pro přístup k orientace zařízení ze sdíleného kódu.
 ms.prod: xamarin
 ms.assetid: 5F60975F-47DB-4361-B97C-2290D6F77D2F
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: e21531b7f39d3876d91eea8fa6cb9e409a9deffa
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 620404a217b2e8a31192ae6613dcec023ac366cd
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240053"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995638"
 ---
-# <a name="checking-device-orientation"></a>Kontrola, zda orientace zařízení
+# <a name="checking-device-orientation"></a>Změna orientace zařízení
 
-Tento článek vám pomohou používat [ `DependencyService` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyService/) ke kontrole orientace zařízení ze sdíleného kódu pomocí nativních rozhraní API na každou platformu. Tento názorný postup je založen na existující `DeviceOrientation` modulu plug-in podle Ali Özgür. Najdete v článku [úložiště GitHub](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation) Další informace.
+Tento článek vás provede používat [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) ke kontrole orientace zařízení ze sdíleného kódu pomocí nativních rozhraní API na každou platformu. Tento názorný postup je založen na existujícím `DeviceOrientation` modulu plug-in podle Ali Özgür. Zobrazit [úložiště GitHub se vzorovými](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation) Další informace.
 
-- **[Vytváření rozhraní](#Creating_the_Interface)**  &ndash; pochopit, jak rozhraní je vytvořen v sdíleného kódu.
-- **[iOS implementace](#iOS_Implementation)**  &ndash; zjistěte, jak toto rozhraní implementovat v nativním kódu pro iOS.
+- **[Vytvoření rozhraní](#Creating_the_Interface)**  &ndash; pochopit, jak rozhraní se vytvoří v sdíleným kódem.
+- **[iOS implementace](#iOS_Implementation)**  &ndash; zjistěte, jak implementovat rozhraní v nativním kódu pro iOS.
 - **[Android implementace](#Android_Implementation)**  &ndash; zjistěte, jak implementovat rozhraní v nativním kódu pro Android.
-- **[Implementace UWP](#WindowsImplementation)**  &ndash; zjistěte, jak toto rozhraní implementovat v nativním kódu pro univerzální platformu Windows (UWP).
-- **[Implementace v sdíleného kódu](#Implementing_in_Shared_Code)**  &ndash; Naučte se používat `DependencyService` provést volání do nativního implementace ze sdíleného kódu.
+- **[Implementace UPW](#WindowsImplementation)**  &ndash; zjistěte, jak implementovat rozhraní v nativním kódu pro univerzální platformu Windows (UPW).
+- **[Implementace v sdíleným kódem](#Implementing_in_Shared_Code)**  &ndash; Další informace o použití `DependencyService` Chcete-li volat nativní implementaci ze sdíleného kódu.
 
-Aplikace pomocí `DependencyService` bude mít následující strukturu:
+Aplikace používající `DependencyService` mají následující strukturu:
 
-![](device-orientation-images/orientation-diagram.png "Struktura DependencyService aplikace")
+![](device-orientation-images/orientation-diagram.png "Struktury DependencyService aplikace")
 
 > [!NOTE]
-> Je možné zjistit, jestli se zařízení nachází v orientaci na výšku nebo na šířku v sdíleného kódu, jak je předvedeno v [zařízení Orientation]/guides/xamarin-forms/user-interface/layouts/device-orientation/#changes-in-orientation). Metoda popsaná v tomto článku používá nativní funkce získat další informace o orientaci, včetně toho, jestli je zařízení obráceně.
+> Je možné zjistit, jestli zařízení v orientaci na výšku nebo na šířku v sdíleného kódu, jak je ukázáno v [zařízení Orientation]/guides/xamarin-forms/user-interface/layouts/device-orientation/#changes-in-orientation). Metoda popsaná v tomto článku používá nativní funkce zobrazíte další informace o orientaci, včetně toho, jestli je zařízení vzhůru nohama.
 
 <a name="Creating_the_Interface" />
 
-## <a name="creating-the-interface"></a>Vytváření rozhraní
+## <a name="creating-the-interface"></a>Vytvoření rozhraní
 
-Nejprve vytvořte rozhraní ve sdílené kód, který vyjadřuje funkce, které máte v úmyslu implementovat. V tomto příkladu obsahuje rozhraní jedné metody:
+Nejprve vytvořte rozhraní v sdíleného kódu, který vyjadřuje funkce, které máte v úmyslu implementovat. V tomto příkladu obsahuje rozhraní jedinou metodu:
 
 ```csharp
 namespace DependencyServiceSample.Abstractions
@@ -54,7 +54,7 @@ namespace DependencyServiceSample.Abstractions
 }
 ```
 
-Kódování proti tomuto rozhraní v sdíleného kódu vám umožní aplikaci Xamarin.Forms pro přístup k zařízení orientaci rozhraní API na každou platformu.
+Kódovat toto rozhraní v sdílený kód vám umožní aplikaci Xamarin.Forms pro přístup k zařízení orientace rozhraní API na každou platformu.
 
 > [!NOTE]
 > Třídy implementující rozhraní musí mít konstruktor bez parametrů pro práci s `DependencyService`.
@@ -63,7 +63,7 @@ Kódování proti tomuto rozhraní v sdíleného kódu vám umožní aplikaci Xa
 
 ## <a name="ios-implementation"></a>iOS implementace
 
-Rozhraní musí být implementován v každé projekt aplikace specifické pro platformu. Všimněte si, že má třída konstruktor bez parametrů, aby `DependencyService` můžete vytvořit nové instance služby:
+Rozhraní musí být implementované v každém projektu aplikace pro konkrétní platformu. Všimněte si, že třída nemá konstruktor bez parametrů, aby `DependencyService` můžete vytvořit nové instance:
 
 ```csharp
 using UIKit;
@@ -99,13 +99,13 @@ namespace DependencyServiceSample.iOS {
     ...
 ```
 
-Tento atribut zaregistruje jako implementaci třídy `IDeviceOrientation` rozhraní, což znamená, že `DependencyService.Get<IDeviceOrientation>` lze použít v sdíleného kódu vytvořit její instanci.
+Tento atribut zaregistruje třídu jako implementace `IDeviceOrientation` rozhraní, což znamená, že `DependencyService.Get<IDeviceOrientation>` je možné vytvořit její instanci v sdílený kód.
 
 <a name="Android_Implementation" />
 
-## <a name="android-implementation"></a>Android implementace
+## <a name="android-implementation"></a>Implementace s androidem
 
-Následující kód implementuje `IDeviceOrientation` v systému Android:
+Následující kód implementuje `IDeviceOrientation` na Androidu:
 
 ```csharp
 using DependencyServiceSample.Droid;
@@ -142,11 +142,11 @@ namespace DependencyServiceSample.Droid {
     ...
 ```
 
-Tento atribut zaregistruje jako implementaci třídy `IDeviceOrientaiton` rozhraní, což znamená, že `DependencyService.Get<IDeviceOrientation>` mohou být používány sdíleného kódu můžete vytvořit její instanci.
+Tento atribut zaregistruje třídu jako implementace `IDeviceOrientaiton` rozhraní, což znamená, že `DependencyService.Get<IDeviceOrientation>` lze použít v sdílený kód můžete vytvořit její instanci.
 
 <a name="WindowsImplementation" />
 
-## <a name="universal-windows-platform-implementation"></a>Implementace Universal Windows Platform
+## <a name="universal-windows-platform-implementation"></a>Implementace pro platformu Universal Windows
 
 Následující kód implementuje `IDeviceOrientation` rozhraní na univerzální platformu Windows:
 
@@ -181,13 +181,13 @@ namespace DependencyServiceSample.WindowsPhone {
     ...
 ```
 
-Tento atribut zaregistruje jako implementaci třídy `DeviceOrientationImplementation` rozhraní, což znamená, že `DependencyService.Get<IDeviceOrientation>` mohou být používány sdíleného kódu můžete vytvořit její instanci.
+Tento atribut zaregistruje třídu jako implementace `DeviceOrientationImplementation` rozhraní, což znamená, že `DependencyService.Get<IDeviceOrientation>` lze použít v sdílený kód můžete vytvořit její instanci.
 
 <a name="Implementing_in_Shared_Code" />
 
-## <a name="implementing-in-shared-code"></a>Implementace v sdíleného kódu
+## <a name="implementing-in-shared-code"></a>Implementace v sdíleným kódem
 
-Nyní jsme psaní a testování sdílené kód, který přistupuje `IDeviceOrientation` rozhraní. Tato jednoduchá stránka obsahuje tlačítko, která aktualizuje svůj vlastní text, na základě orientace zařízení. Použije `DependencyService` získat instanci `IDeviceOrientation` rozhraní &ndash; za běhu bude tato instance implementace specifické pro platformu, která má úplný přístup k nativní SDK:
+Nyní jsme zapsat a otestovat sdílený kód, který přistupuje k `IDeviceOrientation` rozhraní. Tato jednoduchá stránka obsahuje tlačítka, která aktualizuje své vlastní text podle orientace zařízení. Používá `DependencyService` k získání instance typu `IDeviceOrientation` rozhraní &ndash; za běhu bude tato instance implementace specifické pro platformu, která má plný přístup k nativním SDK:
 
 ```csharp
 public MainPage ()
@@ -215,7 +215,7 @@ public MainPage ()
 }
 ```
 
-Spuštění této aplikace v iOS, Android nebo platformy systému Windows a stisknutím tlačítka bude výsledkem text tlačítka aktualizován s orientace zařízení.
+Spuštění této aplikace v iOS, Android nebo platformy Windows a stisknutím tlačítka bude účtovat text tlačítka aktualizován s orientací zařízení.
 
 ![](device-orientation-images/orientation.png "Ukázka orientace zařízení")
 

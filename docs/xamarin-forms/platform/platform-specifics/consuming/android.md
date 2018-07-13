@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/11/2018
-ms.openlocfilehash: 4a97bec37c99209fa6de26a08f8bde44753d0f2d
-ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
-ms.translationtype: HT
+ms.openlocfilehash: 5ed11e4afb4c061eb7b9dd8f10c67090b4134888
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 07/12/2018
-ms.locfileid: "38986197"
+ms.locfileid: "38996383"
 ---
 # <a name="android-platform-specifics"></a>Android specifik platforem
 
@@ -21,10 +21,10 @@ _Specifika platforem umožňují používat funkce, která je dostupná jenom na
 V systému Android se Xamarin.Forms obsahuje následující specifika platforem:
 
 - Nastavuje provozní režim softwarová klávesnice. Další informace najdete v tématu [nastavení obnovitelného režimu vstupu klávesnice](#soft_input_mode).
-- Povolení rychlého posouvání v [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) Další informace najdete v tématu [umožňující rychlé posouvání v ListView](#fastscroll).
-- Povolení potažení prstem mezi stránkami [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/). Další informace najdete v tématu [povolení potažení prstem mezi stránkami v TabbedPage](#enable_swipe_paging).
+- Povolení rychlého posouvání v [ `ListView` ](xref:Xamarin.Forms.ListView) Další informace najdete v tématu [umožňující rychlé posouvání v ListView](#fastscroll).
+- Povolení potažení prstem mezi stránkami [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage). Další informace najdete v tématu [povolení potažení prstem mezi stránkami v TabbedPage](#enable_swipe_paging).
 - Řízení pořadí vykreslování vizuálních prvků pro určení pořadí vykreslování. Další informace najdete v tématu [řízení ke zvýšení úrovně oprávnění vizuální prvky](#elevation).
-- Zakazuje [ `Disappearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) a [ `Appearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) stránce události životního cyklu při pozastavení a obnovení, pro aplikace, které používají AppCompat. Další informace najdete v tématu [zakázání Disappearing a povolí události životního cyklu stránky](#disable_lifecycle_events).
+- Zakazuje [ `Disappearing` ](xref:Xamarin.Forms.Page.Appearing) a [ `Appearing` ](xref:Xamarin.Forms.Page.Appearing) stránce události životního cyklu při pozastavení a obnovení, pro aplikace, které používají AppCompat. Další informace najdete v tématu [zakázání Disappearing a povolí události životního cyklu stránky](#disable_lifecycle_events).
 - Řízení, zda [ `WebView` ](xref:Xamarin.Forms.WebView) můžete zobrazit smíšený obsah. Další informace najdete v tématu [povolení smíšený obsah do WebView](#webview-mixed-content).
 - Nastavení možností editoru pro softwarová klávesnice pro vstupní metodu [ `Entry` ](xref:Xamarin.Forms.Entry). Další informace najdete v tématu [možnosti editoru IME pro nastavení položky](#entry-imeoptions).
 - Zakázat režim starší verze barvy na podporované [ `VisualElement` ](xref:Xamarin.Forms.VisualElement). Další informace najdete v tématu [zakázání barevný režim starší verze](#legacy-color-mode).
@@ -35,7 +35,7 @@ V systému Android se Xamarin.Forms obsahuje následující specifika platforem:
 
 ## <a name="setting-the-soft-keyboard-input-mode"></a>Nastavení režimu vstupní softwarová klávesnice
 
-Tento konkrétní platformy se používá k nastavení provozní režim pro vstupní oblast softwarová klávesnice a je využívat XAML tak, že nastavíte [ `Application.WindowSoftInputModeAdjust` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Application.WindowSoftInputModeAdjustProperty/) přidružená vlastnost na hodnotu [ `WindowSoftInputModeAdjust` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust/) výčet:
+Tento konkrétní platformy se používá k nastavení provozní režim pro vstupní oblast softwarová klávesnice a je využívat XAML tak, že nastavíte [ `Application.WindowSoftInputModeAdjust` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Application.WindowSoftInputModeAdjustProperty) přidružená vlastnost na hodnotu [ `WindowSoftInputModeAdjust` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust) výčet:
 
 ```xaml
 <Application ...
@@ -55,7 +55,7 @@ using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 App.Current.On<Android>().UseWindowSoftInputModeAdjust(WindowSoftInputModeAdjust.Resize);
 ```
 
-`Application.On<Android>` Metody Určuje, že se tento konkrétní platformy spustí pouze v systému Android. [ `Application.UseWindowSoftInputModeAdjust` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Application.UseWindowSoftInputModeAdjust/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Application}/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust/) Metoda v [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/) obor názvů, se používá k nastavení provozní režim softwarová klávesnice vstupní oblastí s [ `WindowSoftInputModeAdjust` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust/) poskytuje dvě hodnoty výčtu: [ `Pan` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Pan/) a [ `Resize` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize/). `Pan` Hodnota používá [ `AdjustPan` ](https://developer.xamarin.com/api/field/Android.Views.SoftInput.AdjustPan/) možnost úprav, která není změně velikosti okna, když je ovládací prvek vstupní fokus. Místo toho obsah okna jsou přesunuty tak, aby zvýrazněným není zakrytý softwarová klávesnice. `Resize` Hodnota používá [ `AdjustResize` ](https://developer.xamarin.com/api/field/Android.Views.SoftInput.AdjustResize/) možnost úpravy, což zmenší okno pod při vstupní ovládací prvek má fokus, aby uvolnil prostor pro softwarová klávesnice.
+`Application.On<Android>` Metody Určuje, že se tento konkrétní platformy spustí pouze v systému Android. [ `Application.UseWindowSoftInputModeAdjust` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Application.UseWindowSoftInputModeAdjust(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Application},Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust)) Metoda v [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) obor názvů, se používá k nastavení provozní režim softwarová klávesnice vstupní oblastí s [ `WindowSoftInputModeAdjust` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust) poskytuje dvě hodnoty výčtu: [ `Pan` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Pan) a [ `Resize` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize). `Pan` Hodnota používá [ `AdjustPan` ](https://developer.xamarin.com/api/field/Android.Views.SoftInput.AdjustPan/) možnost úprav, která není změně velikosti okna, když je ovládací prvek vstupní fokus. Místo toho obsah okna jsou přesunuty tak, aby zvýrazněným není zakrytý softwarová klávesnice. `Resize` Hodnota používá [ `AdjustResize` ](https://developer.xamarin.com/api/field/Android.Views.SoftInput.AdjustResize/) možnost úpravy, což zmenší okno pod při vstupní ovládací prvek má fokus, aby uvolnil prostor pro softwarová klávesnice.
 
 Výsledkem je, že vstup z softwarová klávesnice oblasti, kterou provozní režim můžete nastavit, pokud vstupní ovládací prvek má fokus:
 
@@ -65,7 +65,7 @@ Výsledkem je, že vstup z softwarová klávesnice oblasti, kterou provozní re�
 
 ## <a name="enabling-fast-scrolling-in-a-listview"></a>Povolení rychlého posouvání v ListView
 
-Tento konkrétní platformy se používá k povolení rychlého procházení dat v [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/). V XAML je využívá tak, že nastavíte `ListView.IsFastScrollEnabled` připojené vlastnosti `boolean` hodnotu:
+Tento konkrétní platformy se používá k povolení rychlého procházení dat v [ `ListView` ](xref:Xamarin.Forms.ListView). V XAML je využívá tak, že nastavíte `ListView.IsFastScrollEnabled` připojené vlastnosti `boolean` hodnotu:
 
 ```xaml
 <ContentPage ...
@@ -95,13 +95,13 @@ listView.GroupDisplayBinding = new Binding("Key");
 listView.On<Android>().SetIsFastScrollEnabled(true);
 ```
 
-`ListView.On<Android>` Metody Určuje, že se tento konkrétní platformy spustí pouze v systému Android. `ListView.SetIsFastScrollEnabled` Metoda v [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/) obor názvů, slouží k povolení rychlého procházení dat v [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/). Kromě toho `SetIsFastScrollEnabled` metodu je možné přepínat rychlé posouvání pomocí volání `IsFastScrollEnabled` metoda vrátí, zda je povoleno rychlé posouvání:
+`ListView.On<Android>` Metody Určuje, že se tento konkrétní platformy spustí pouze v systému Android. `ListView.SetIsFastScrollEnabled` Metoda v [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) obor názvů, slouží k povolení rychlého procházení dat v [ `ListView` ](xref:Xamarin.Forms.ListView). Kromě toho `SetIsFastScrollEnabled` metodu je možné přepínat rychlé posouvání pomocí volání `IsFastScrollEnabled` metoda vrátí, zda je povoleno rychlé posouvání:
 
 ```csharp
 listView.On<Android>().SetIsFastScrollEnabled(!listView.On<Android>().IsFastScrollEnabled());
 ```
 
-Výsledkem je, že rychlé procházení dat v [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) lze povolit, což změní velikost posouvání thumb:
+Výsledkem je, že rychlé procházení dat v [ `ListView` ](xref:Xamarin.Forms.ListView) lze povolit, což změní velikost posouvání thumb:
 
 [![](android-images/fastscroll.png "ListView FastScroll specifické pro platformu")](android-images/fastscroll-large.png#lightbox "ListView FastScroll Plaform-Specific")
 
@@ -109,7 +109,7 @@ Výsledkem je, že rychlé procházení dat v [ `ListView` ](https://developer.x
 
 ## <a name="enabling-swiping-between-pages-in-a-tabbedpage"></a>Povolení potažení prstem mezi stránkami TabbedPage
 
-Tento specifický pro platformu slouží k povolení potažení prstem s gesto vodorovné prstem mezi stránkami [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/). V XAML je využívá tak, že nastavíte [ `TabbedPage.IsSwipePagingEnabled` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.IsSwipePagingEnabledProperty/) připojené vlastnosti `boolean` hodnotu:
+Tento specifický pro platformu slouží k povolení potažení prstem s gesto vodorovné prstem mezi stránkami [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage). V XAML je využívá tak, že nastavíte [ `TabbedPage.IsSwipePagingEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.IsSwipePagingEnabledProperty) připojené vlastnosti `boolean` hodnotu:
 
 ```xaml
 <TabbedPage ...
@@ -131,9 +131,9 @@ On<Android>().SetOffscreenPageLimit(2)
              .SetIsSwipePagingEnabled(true);
 ```
 
-`TabbedPage.On<Android>` Metody Určuje, že se tento konkrétní platformy spustí pouze v systému Android. [ `TabbedPage.SetIsSwipePagingEnabled` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.SetIsSwipePagingEnabled/p/Xamarin.Forms.BindableObject/System.Boolean/) Metoda v [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/) obor názvů, slouží k povolení potažení prstem mezi stránkami v [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/). Kromě toho `TabbedPage` třídy v `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` oboru názvů má také [ `EnableSwipePaging` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.EnableSwipePaging/p/Xamarin.Forms.IPlatformElementConfiguration%7BXamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.TabbedPage%7D/) metodu, která umožňuje toto specifické pro platformu, a [ `DisableSwipePaging` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.DisableSwipePaging/p/Xamarin.Forms.IPlatformElementConfiguration%7BXamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.TabbedPage%7D/) metodu, která zakáže Tento konkrétní platformu. [ `TabbedPage.OffscreenPageLimit` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.OffscreenPageLimitProperty/) Přidružená vlastnost, a [ `SetOffscreenPageLimit` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.SetOffscreenPageLimit/p/Xamarin.Forms.BindableObject/System.Int32/) metody slouží k nastavení počet stránek, které by měla uchovávat ve stavu nečinnosti na obou stranách aktuální stránku.
+`TabbedPage.On<Android>` Metody Určuje, že se tento konkrétní platformy spustí pouze v systému Android. [ `TabbedPage.SetIsSwipePagingEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.SetIsSwipePagingEnabled(Xamarin.Forms.BindableObject,System.Boolean)) Metoda v [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) obor názvů, slouží k povolení potažení prstem mezi stránkami v [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage). Kromě toho `TabbedPage` třídy v `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` oboru názvů má také [ `EnableSwipePaging` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.EnableSwipePaging(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.TabbedPage})) metodu, která umožňuje toto specifické pro platformu, a [ `DisableSwipePaging` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.DisableSwipePaging(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.TabbedPage})) metodu, která zakáže Tento konkrétní platformu. [ `TabbedPage.OffscreenPageLimit` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.OffscreenPageLimitProperty) Přidružená vlastnost, a [ `SetOffscreenPageLimit` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.SetOffscreenPageLimit(Xamarin.Forms.BindableObject,System.Int32)) metody slouží k nastavení počet stránek, které by měla uchovávat ve stavu nečinnosti na obou stranách aktuální stránku.
 
-Výsledkem je stránkování tohoto potáhnutí prstem na stránkách zobrazený [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/) zapnutá:
+Výsledkem je stránkování tohoto potáhnutí prstem na stránkách zobrazený [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage) zapnutá:
 
 ![](android-images/tabbedpage-swipe.png)
 
@@ -202,9 +202,9 @@ public class AndroidElevationPageCS : ContentPage
 }
 ```
 
-`Button.On<Android>` Metody Určuje, že se tento konkrétní platformy spustí pouze v systému Android. `VisualElement.SetElevation` Metoda v [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/) obor názvů, je sloužící k nastavení zvýšení vizuální prvek s povolenou hodnotou Null `float`. Kromě toho `VisualElement.GetElevation` metody slouží k načtení zvýšení hodnoty prvku visual.
+`Button.On<Android>` Metody Určuje, že se tento konkrétní platformy spustí pouze v systému Android. `VisualElement.SetElevation` Metoda v [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) obor názvů, je sloužící k nastavení zvýšení vizuální prvek s povolenou hodnotou Null `float`. Kromě toho `VisualElement.GetElevation` metody slouží k načtení zvýšení hodnoty prvku visual.
 
-Výsledkem je, že ke zvýšení úrovně oprávnění vizuálních prvků, je možné řídit tak, aby vizuální prvky s vyššími hodnotami Z occlude vizuální prvky s nižšími hodnotami Z. Proto se v tomto příkladu druhá [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) vykreslením výše [ `BoxView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/) vzhledem k tomu, že má vyšší hodnotu zvýšení oprávnění:
+Výsledkem je, že ke zvýšení úrovně oprávnění vizuálních prvků, je možné řídit tak, aby vizuální prvky s vyššími hodnotami Z occlude vizuální prvky s nižšími hodnotami Z. Proto se v tomto příkladu druhá [ `Button` ](xref:Xamarin.Forms.Button) vykreslením výše [ `BoxView` ](xref:Xamarin.Forms.BoxView) vzhledem k tomu, že má vyšší hodnotu zvýšení oprávnění:
 
 ![](android-images/elevation.png)
 
@@ -212,12 +212,12 @@ Výsledkem je, že ke zvýšení úrovně oprávnění vizuálních prvků, je m
 
 ## <a name="disabling-the-disappearing-and-appearing-page-lifecycle-events"></a>Zakázání zmizení a zobrazení události životního cyklu stránky
 
-Je toto specifické pro platformu používá se k zakázání [ `Disappearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) a [ `Appearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) události stránky v aplikaci pozastavení a obnovení, pro aplikace, které používají AppCompat. Kromě toho zahrnuje možnost řízení, zda softwarová klávesnice se zobrazí na pokračování, pokud se zobrazí na pozastavení, za předpokladu, že je provozní režim softwarová klávesnice nastavený na [ `WindowSoftInputModeAdjust.Resize` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize/).
+Je toto specifické pro platformu používá se k zakázání [ `Disappearing` ](xref:Xamarin.Forms.Page.Appearing) a [ `Appearing` ](xref:Xamarin.Forms.Page.Appearing) události stránky v aplikaci pozastavení a obnovení, pro aplikace, které používají AppCompat. Kromě toho zahrnuje možnost řízení, zda softwarová klávesnice se zobrazí na pokračování, pokud se zobrazí na pozastavení, za předpokladu, že je provozní režim softwarová klávesnice nastavený na [ `WindowSoftInputModeAdjust.Resize` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize).
 
 > [!NOTE]
 > Všimněte si, že tyto události jsou povolené ve výchozím nastavení zachovat stávající chování pro aplikace, které spoléhají na události. Tyto události zakážete, nebude cyklu události AppCompat odpovídat cyklus této události pre-AppCompat.
 
-Tento specifický pro platformu můžou je využívat XAML tak, že nastavíte [ `Application.SendDisappearingEventOnPause` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendDisappearingEventOnPauseProperty/), [ `Application.SendAppearingEventOnResume` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendAppearingEventOnResumeProperty/), a [ `Application.ShouldPreserveKeyboardOnResume` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.ShouldPreserveKeyboardOnResumeProperty/) připojených vlastností `boolean` hodnoty:
+Tento specifický pro platformu můžou je využívat XAML tak, že nastavíte [ `Application.SendDisappearingEventOnPause` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendDisappearingEventOnPauseProperty), [ `Application.SendAppearingEventOnResume` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendAppearingEventOnResumeProperty), a [ `Application.ShouldPreserveKeyboardOnResume` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.ShouldPreserveKeyboardOnResumeProperty) připojených vlastností `boolean` hodnoty:
 
 ```xaml
 <Application ...
@@ -245,9 +245,9 @@ Xamarin.Forms.Application.Current.On<Android>()
      .ShouldPreserveKeyboardOnResume(true);
 ```
 
-`Application.Current.On<Android>` Metody Určuje, že se tento konkrétní platformy spustí pouze v systému Android. [ `Application.SendDisappearingEventOnPause` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendDisappearingEventOnPause/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Application}/System.Boolean/) Metoda v [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat/) obor názvů, slouží k povolení nebo zakázání jeho spuštění [ `Disappearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) událostí stránky, když aplikace Přejde na pozadí. [ `Application.SendAppearingEventOnResume` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendAppearingEventOnResume/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Application}/System.Boolean/) Metoda se používá k povolení nebo zakázání jeho spuštění [ `Appearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) událostí stránky, po obnovení aplikace ze na pozadí. [ `Application.ShouldPreserveKeyboardOnResume` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.ShouldPreserveKeyboardOnResume/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Application}/System.Boolean/) Metoda se používá ovládací prvek, zda softwarová klávesnice se zobrazí na pokračování, pokud se zobrazí na pozastavení, k dispozici, že je provozní režim softwarová klávesnice nastavený na [ `WindowSoftInputModeAdjust.Resize` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize/).
+`Application.Current.On<Android>` Metody Určuje, že se tento konkrétní platformy spustí pouze v systému Android. [ `Application.SendDisappearingEventOnPause` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendDisappearingEventOnPause(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Application},System.Boolean)) Metoda v [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat) obor názvů, slouží k povolení nebo zakázání jeho spuštění [ `Disappearing` ](xref:Xamarin.Forms.Page.Appearing) událostí stránky, když aplikace Přejde na pozadí. [ `Application.SendAppearingEventOnResume` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.SendAppearingEventOnResume(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Application},System.Boolean)) Metoda se používá k povolení nebo zakázání jeho spuštění [ `Appearing` ](xref:Xamarin.Forms.Page.Appearing) událostí stránky, po obnovení aplikace ze na pozadí. [ `Application.ShouldPreserveKeyboardOnResume` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.Application.ShouldPreserveKeyboardOnResume(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Application},System.Boolean)) Metoda se používá ovládací prvek, zda softwarová klávesnice se zobrazí na pokračování, pokud se zobrazí na pozastavení, k dispozici, že je provozní režim softwarová klávesnice nastavený na [ `WindowSoftInputModeAdjust.Resize` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize).
 
-Důsledkem toho pak bude [ `Disappearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) a [ `Appearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) události stránky nesmí být aktivována na pozastavení aplikace a pokračovat v uvedeném pořadí a, že pokud softwarová klávesnice se zobrazí, když aplikace byla pozastavena, také se zobrazí po obnovení aplikace:
+Důsledkem toho pak bude [ `Disappearing` ](xref:Xamarin.Forms.Page.Appearing) a [ `Appearing` ](xref:Xamarin.Forms.Page.Appearing) události stránky nesmí být aktivována na pozastavení aplikace a pokračovat v uvedeném pořadí a, že pokud softwarová klávesnice se zobrazí, když aplikace byla pozastavena, také se zobrazí po obnovení aplikace:
 
 [![](android-images/keyboard-on-resume.png "Životní cyklus události specifické pro platformu")](android-images/keyboard-on-resume-large.png#lightbox "životního cyklu události specifické pro platformu")
 
@@ -435,7 +435,7 @@ On<Android>().SetToolbarPlacement(ToolbarPlacement.Bottom)
              .SetBarSelectedItemColor(Color.Red);
 ```
 
-`TabbedPage.On<Android>` Metody Určuje, že tyto specifik platforem se spustí pouze v systému Android. [ `TabbedPage.SetToolbarPlacement` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.settoolbarplacement?view=xamarin-forms) Metoda v [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/) obor názvů, se používá k nastavení umístění panelu nástrojů na [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage), s [ `ToolbarPlacement` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.toolbarplacement?view=xamarin-forms) výčet poskytuje následující hodnoty:
+`TabbedPage.On<Android>` Metody Určuje, že tyto specifik platforem se spustí pouze v systému Android. [ `TabbedPage.SetToolbarPlacement` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.settoolbarplacement?view=xamarin-forms) Metoda v [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) obor názvů, se používá k nastavení umístění panelu nástrojů na [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage), s [ `ToolbarPlacement` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.toolbarplacement?view=xamarin-forms) výčet poskytuje následující hodnoty:
 
 - [`Default`](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.toolbarplacement#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_ToolbarPlacement_Default) – Označuje, že panelu nástrojů je umístěn ve výchozím umístění na stránce. Je horní části stránky na telefonech a v dolní části stránky na jiné idiomy zařízení.
 - [`Top`](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.toolbarplacement#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_ToolbarPlacement_Top) – Označuje, že panelu nástrojů je umístěn v horní části stránky.
@@ -446,7 +446,7 @@ Kromě toho [ `TabbedPage.SetBarItemColor` ](https://docs.microsoft.com/dotnet/a
 > [!NOTE]
 > [ `GetToolbarPlacement` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.gettoolbarplacement?view=xamarin-forms#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_TabbedPage_GetToolbarPlacement_Xamarin_Forms_IPlatformElementConfiguration_Xamarin_Forms_PlatformConfiguration_Android_Xamarin_Forms_TabbedPage__), [ `GetBarItemColor` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.getbaritemcolor?view=xamarin-forms#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_TabbedPage_GetBarItemColor_Xamarin_Forms_IPlatformElementConfiguration_Xamarin_Forms_PlatformConfiguration_Android_Xamarin_Forms_TabbedPage__), A [ `GetBarSelectedItemColor` ](https://docs.microsoft.com/dotnet/api/xamarin.forms.platformconfiguration.androidspecific.tabbedpage.getbarselecteditemcolor?view=xamarin-forms#Xamarin_Forms_PlatformConfiguration_AndroidSpecific_TabbedPage_GetBarSelectedItemColor_Xamarin_Forms_IPlatformElementConfiguration_Xamarin_Forms_PlatformConfiguration_Android_Xamarin_Forms_TabbedPage__) metody slouží k načtení umístění a barvy [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage) nástrojů.
 
-Výsledkem je, že na panelu nástrojů umístění, barva položky panelu nástrojů a barvu položky vybrané nástrojů lze nastavit na [ `TabbedPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TabbedPage/):
+Výsledkem je, že na panelu nástrojů umístění, barva položky panelu nástrojů a barvu položky vybrané nástrojů lze nastavit na [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage):
 
 ![](android-images/tabbedpage-toolbar-placement.png)
 
@@ -458,5 +458,5 @@ V tomto článku jsme vám ukázali jak využívat Androidu specifik platforem, 
 
 - [Vytváření specifik platforem](~/xamarin-forms/platform/platform-specifics/creating.md)
 - [PlatformSpecifics (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
-- [AndroidSpecific](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific/)
-- [AndroidSpecific.AppCompat](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat/)
+- [AndroidSpecific](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
+- [AndroidSpecific.AppCompat](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)

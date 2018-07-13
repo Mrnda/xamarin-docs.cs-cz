@@ -1,45 +1,45 @@
 ---
-title: Zvýraznění Region na mapě
-description: Tento článek vysvětluje postup přidání překrytí mnohoúhelníku na mapu, abyste měli na očích region na mapě. Mnohoúhelníky jsou uzavřený obrazec a jejich vnitřek vyplnili.
+title: Zvýraznění oblasti na mapě
+description: Tento článek vysvětluje, jak přidat překrytí mnohoúhelníku mapy, abyste měli na očích oblasti na mapě. Mnohoúhelníky se zavřeného tvaru a jejich vnitřek vyplněno.
 ms.prod: xamarin
 ms.assetid: E79EB2CF-8DD6-44A8-B47D-5F0A94FB0A63
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: b38ff41415477a8898ee3bd9593f983c705d949e
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 0a11e9c25922531727ad2fee3bbed9c8d4e2b80c
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241787"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998131"
 ---
-# <a name="highlighting-a-region-on-a-map"></a>Zvýraznění Region na mapě
+# <a name="highlighting-a-region-on-a-map"></a>Zvýraznění oblasti na mapě
 
-_Tento článek vysvětluje postup přidání překrytí mnohoúhelníku na mapu, abyste měli na očích region na mapě. Mnohoúhelníky jsou uzavřený obrazec a jejich vnitřek vyplnili._
+_Tento článek vysvětlil, jak přidat překrytí mnohoúhelníku mapy, abyste měli na očích oblasti na mapě. Mnohoúhelníky se zavřeného tvaru a jejich vnitřek vyplněno._
 
 ## <a name="overview"></a>Přehled
 
-Překrytí je vrstveného grafika na mapě. Překryvy podporovat kreslení grafické obsah, který škáluje s mapy, jako je možnosti. Na následujících snímcích obrazovky zobrazit výsledkem přidání překrytí mnohoúhelníku na mapu:
+Překrytí je vrstvený grafiky na mapě. Překryvy podporují výkresu grafického obsahu, která se škáluje s mapou, jak je zvětšeno. Na následujících snímcích obrazovky zobrazit výsledek přidání překrytí mnohoúhelníku mapy:
 
 ![](polygon-map-overlay-images/screenshots.png)
 
-Když [ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/) vykreslení ovládacího prvku platformě Xamarin.Forms aplikací v iOS `MapRenderer` vytvoření instance třídy, které pak vytvoří nativní `MKMapView` ovládacího prvku. Na platformě Android `MapRenderer` třída vytvoří nativní `MapView` ovládacího prvku. Na univerzální platformu Windows (UWP), `MapRenderer` třída vytvoří nativní `MapControl`. Proces vykreslování můžete provedeny výhod implementovat přizpůsobení specifické pro platformu mapy tak, že vytvoříte vlastní zobrazovací jednotky pro `Map` na každou platformu. Proces pro to vypadá takto:
+Když [ `Map` ](xref:Xamarin.Forms.Maps.Map) aplikací Xamarin.Forms v Iosu se vykreslí ovládací prvek `MapRenderer` je vytvořena instance třídy, které pak vytvoří instanci nativní `MKMapView` ovládacího prvku. Na platformu Android `MapRenderer` třídy vytvoří instanci nativní `MapView` ovládacího prvku. Na Universal Windows Platform (UWP), `MapRenderer` třídy vytvoří instanci nativní `MapControl`. Samotný proces vykreslování můžete třeba využít implementovat přizpůsobení specifické pro platformu mapování tak, že vytvoříte vlastní zobrazovací jednotky pro `Map` na jednotlivých platformách. Tento proces je následujícím způsobem:
 
-1. [Vytvoření](#Creating_the_Custom_Map) Xamarin.Forms vlastní mapování.
-1. [Využívat](#Consuming_the_Custom_Map) vlastní mapy z Xamarin.Forms.
-1. [Přizpůsobení](#Customizing_the_Map) mapy tak, že vytvoříte vlastní zobrazovací jednotky pro mapu na každou platformu.
+1. [Vytvoření](#Creating_the_Custom_Map) vlastní mapa Xamarin.Forms.
+1. [Využívání](#Consuming_the_Custom_Map) vlastní mapy z Xamarin.Forms.
+1. [Přizpůsobení](#Customizing_the_Map) mapování tak, že vytvoříte vlastní zobrazovací jednotky pro mapování na jednotlivých platformách.
 
 > [!NOTE]
-> [`Xamarin.Forms.Maps`](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/) musí být inicializovaná a před použitím. Další informace najdete na webu [`Maps Control`](~/xamarin-forms/user-interface/map.md).
+> [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps) musí být inicializován a před použitím nakonfigurovat. Další informace najdete na webu [`Maps Control`](~/xamarin-forms/user-interface/map.md).
 
-Informace o přizpůsobení mapu pomocí vlastní zobrazovací jednotky najdete v tématu [přizpůsobení Map kódu Pin](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md).
+Informace o přizpůsobení mapy pomocí vlastní zobrazovací jednotky najdete v tématu [přizpůsobení špendlíku mapy](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md).
 
 <a name="Creating_the_Custom_Map" />
 
-### <a name="creating-the-custom-map"></a>Vytváření vlastních mapy
+### <a name="creating-the-custom-map"></a>Vytváří se vlastní mapa
 
-Vytvoření podtřídou třídy [ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/) třída, která přidává `ShapeCoordinates` vlastnost:
+Vytvořit podtřídu [ `Map` ](xref:Xamarin.Forms.Maps.Map) třída, která přidá `ShapeCoordinates` vlastnost:
 
 ```csharp
 public class CustomMap : Map
@@ -53,13 +53,13 @@ public class CustomMap : Map
 }
 ```
 
-`ShapeCoordinates` Vlastnost uloží kolekce souřadnic, které definují oblasti, kterou chcete mít zvýrazněná.
+`ShapeCoordinates` Vlastnost uloží kolekci souřadnic, které definují oblasti, kterou chcete být zvýrazněn.
 
 <a name="Consuming_the_Custom_Map" />
 
-### <a name="consuming-the-custom-map"></a>Použití vlastní mapy
+### <a name="consuming-the-custom-map"></a>Použití vlastních Map
 
-Využívat `CustomMap` řízení deklarováním její instanci v instanci stránky XAML:
+Využívat `CustomMap` ovládací prvek deklarováním její instanci v instanci stránky XAML:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -72,7 +72,7 @@ Využívat `CustomMap` řízení deklarováním její instanci v instanci strán
 </ContentPage>
 ```
 
-Alternativně využívat `CustomMap` řízení deklarováním její instanci v instanci stránky C#:
+Můžete také využívat `CustomMap` ovládací prvek deklarováním její instanci v instanci stránky jazyka C#:
 
 ```csharp
 public class MapPageCS : ContentPage
@@ -90,7 +90,7 @@ public class MapPageCS : ContentPage
 }
 ```
 
-Inicializace `CustomMap` řízení podle potřeby:
+Inicializovat `CustomMap` ovládací prvek podle potřeby:
 
 ```csharp
 public partial class MapPage : ContentPage
@@ -108,17 +108,17 @@ public partial class MapPage : ContentPage
 }
 ```
 
-Tato inicializace určuje řadu zeměpisnou šířku a délku souřadnice oblasti mapy chcete mít zvýrazněná definovat. Ji pak umisťuje zobrazení mapy na s [ `MoveToRegion` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.Map.MoveToRegion(Xamarin.Forms.Maps.MapSpan)/) metoda, která mění pozice a úroveň přiblížení mapy vytvořením [ `MapSpan` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.MapSpan/) z [ `Position` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Position/) a [ `Distance` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Distance/).
+Tato inicializace určuje řadu souřadnice zeměpisné šířky a délky na definují oblasti mapy, která má být zvýrazněn. Potom umístí zobrazení na mapě s [ `MoveToRegion` ](xref:Xamarin.Forms.Maps.Map.MoveToRegion*) metoda, která změní pozice a úroveň přiblížení mapy tak, že vytvoříte [ `MapSpan` ](xref:Xamarin.Forms.Maps.MapSpan) z [ `Position` ](xref:Xamarin.Forms.Maps.Position) a [ `Distance` ](xref:Xamarin.Forms.Maps.Distance).
 
 <a name="Customizing_the_Map" />
 
 ### <a name="customizing-the-map"></a>Přizpůsobení mapy
 
-Vlastní zobrazovací jednotky je nyní přidat na každý projekt aplikace pro přidání do překrytí mnohoúhelníku do mapy.
+Vlastní zobrazovací jednotky musí nyní přidán do každého projektu aplikace přidat do překrytí mnohoúhelníku mapy.
 
-#### <a name="creating-the-custom-renderer-on-ios"></a>Vytváření vlastní zobrazovací jednotky v systému iOS
+#### <a name="creating-the-custom-renderer-on-ios"></a>Vytvoření vlastní zobrazovací jednotky v systému iOS
 
-Vytvoření podtřídou třídy `MapRenderer` třídy a přepsat její `OnElementChanged` metoda pro přidání do překrytí mnohoúhelníku:
+Vytvořit podtřídu `MapRenderer` třídy a přepsat její `OnElementChanged` metoda pro přidání do překrytí mnohoúhelníku:
 
 ```csharp
 [assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
@@ -166,14 +166,14 @@ namespace MapOverlay.iOS
 
 ```
 
-Za předpokladu, že vlastní zobrazovací jednotky je připojen k nového elementu Xamarin.Forms, tato metoda provádí následující konfiguraci:
+Za předpokladu, že vlastní zobrazovací jednotky je připojen k nový prvek Xamarin.Forms, tato metoda provádí následující konfiguraci:
 
 - `MKMapView.OverlayRenderer` Je nastavena na odpovídající delegáta.
-- Kolekce zeměpisné šířky a délky jsou načteny z `CustomMap.ShapeCoordinates` vlastnost a uloží jako pole `CLLocationCoordinate2D` instance.
-- Vytvoření mnohoúhelníku voláním statické `MKPolygon.FromCoordinates` metoda, která určuje zeměpisnou šířku a délku každého bodu.
-- Mnohoúhelníku je přidán do mapy voláním `MKMapView.AddOverlay` metoda. Tato metoda automaticky zavře mnohoúhelníku ve kreslení čára spojující body první a poslední.
+- Kolekce zeměpisné šířky a délky se načítají z `CustomMap.ShapeCoordinates` vlastnosti a uložené jako pole `CLLocationCoordinate2D` instancí.
+- Mnohoúhelník je vytvořen zavoláním statické `MKPolygon.FromCoordinates` metodu, která určuje zeměpisnou šířku a délku každého bodu.
+- Mnohoúhelník je přidán do mapování voláním `MKMapView.AddOverlay` metody. Tato metoda automaticky uzavře mnohoúhelník kreslením čára spojující body první a poslední.
 
-Potom implementovat `GetOverlayRenderer` metodu za účelem přizpůsobení vykreslování překrytí:
+Pak implementovat `GetOverlayRenderer` metodu za účelem přizpůsobení vykreslování překrytí:
 
 ```csharp
 public class CustomMapRenderer : MapRenderer
@@ -197,9 +197,9 @@ public class CustomMapRenderer : MapRenderer
 }
 ```
 
-#### <a name="creating-the-custom-renderer-on-android"></a>Vytváření vlastní zobrazovací jednotky v systému Android
+#### <a name="creating-the-custom-renderer-on-android"></a>Vytvoření vlastního Rendereru v Androidu
 
-Vytvoření podtřídou třídy `MapRenderer` třídy a přepsat její `OnElementChanged` a `OnMapReady` metody pro přidání do překrytí mnohoúhelníku:
+Vytvořit podtřídu `MapRenderer` třídy a přepsat její `OnElementChanged` a `OnMapReady` metody pro přidání do překrytí mnohoúhelníku:
 
 ```csharp
 [assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
@@ -249,11 +249,11 @@ namespace MapOverlay.Droid
 }
 ```
 
-`OnElementChanged` Metoda načte kolekci zeměpisných souřadnic ze `CustomMap.ShapeCoordinates` vlastnost a ukládá je v členské proměnné. Potom zavolá `MapView.GetMapAsync` metodu, která získá základní `GoogleMap` který je vázaný na zobrazení, za předpokladu, že vlastní zobrazovací jednotky je připojen k nového elementu Xamarin.Forms. Jednou `GoogleMap` instance je k dispozici, `OnMapReady` metoda bude vyvolán, kde se má vytvořit mnohoúhelníku po vytvoření instance `PolygonOptions` objekt, který určuje zeměpisnou šířku a délku každého bodu. Mnohoúhelníku se pak přidá do mapy voláním `NativeMap.AddPolygon` metoda. Tato metoda automaticky zavře mnohoúhelníku ve kreslení čára spojující body první a poslední.
+`OnElementChanged` Metoda načte kolekci zeměpisné šířky a délky souřadnice z `CustomMap.ShapeCoordinates` vlastnosti a ukládá je v členské proměnné. Poté zavolá `MapView.GetMapAsync` metodu, která získá základní `GoogleMap` , který se váže k zobrazení, za předpokladu, že vlastní zobrazovací jednotky je připojen k nový prvek Xamarin.Forms. Jednou `GoogleMap` instance je k dispozici, `OnMapReady` metoda bude volána, kde se vytvoří mnohoúhelník po vytvoření instance `PolygonOptions` určující zeměpisnou šířku a délku každého bodu. Mnohoúhelník se pak přidá do mapy voláním `NativeMap.AddPolygon` metody. Tato metoda automaticky uzavře mnohoúhelník kreslením čára spojující body první a poslední.
 
-#### <a name="creating-the-custom-renderer-on-the-universal-windows-platform"></a>Vytváření vlastní zobrazovací jednotky na univerzální platformu Windows
+#### <a name="creating-the-custom-renderer-on-the-universal-windows-platform"></a>Vytvoření vlastního Rendereru na Universal Windows Platform
 
-Vytvoření podtřídou třídy `MapRenderer` třídy a přepsat její `OnElementChanged` metoda pro přidání do překrytí mnohoúhelníku:
+Vytvořit podtřídu `MapRenderer` třídy a přepsat její `OnElementChanged` metoda pro přidání do překrytí mnohoúhelníku:
 
 ```csharp
 [assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
@@ -293,19 +293,19 @@ namespace MapOverlay.UWP
 }
 ```
 
-Tato metoda provede následující operace, za předpokladu, že vlastní zobrazovací jednotky je připojen k nového elementu Xamarin.Forms:
+Za předpokladu, že vlastní zobrazovací jednotky je připojen k nový prvek Xamarin.Forms, tato metoda provádí následující operace:
 
-- Kolekce zeměpisné šířky a délky jsou načteny z `CustomMap.ShapeCoordinates` vlastnost a převedený do `List` z `BasicGeoposition` souřadnice.
-- Po vytvoření instance se vytvoří mnohoúhelníku `MapPolygon` objektu. `MapPolygon` Třída se používá k nastavení zobrazit tvar více bodů na mapě jeho `Path` vlastnosti `Geopath` objekt, který obsahuje souřadnice tvaru.
-- Vykreslení mnohoúhelníku na mapě přidáním do `MapControl.MapElements` kolekce. Všimněte si, že mnohoúhelníku se automaticky uzavřou podle kreslení čára spojující body první a poslední.
+- Kolekce zeměpisné šířky a délky se načítají z `CustomMap.ShapeCoordinates` vlastnost a převedené do `List` z `BasicGeoposition` souřadnice.
+- Po vytvoření instance je vytvořena mnohoúhelníku `MapPolygon` objektu. `MapPolygon` Třída se používá k zobrazení více bodů tvar na mapě nastavením jeho `Path` vlastnost `Geopath` objekt, který obsahuje souřadnice tvaru.
+- Mnohoúhelník je vykreslen na mapě přidáním tak, `MapControl.MapElements` kolekce. Všimněte si, že mnohoúhelníku se automaticky zavřou kreslením čára spojující body první a poslední.
 
 ## <a name="summary"></a>Souhrn
 
-Tento článek vysvětluje postup přidání překrytí mnohoúhelníku na mapu, aby byly zvýrazněné oblasti mapy. Mnohoúhelníky jsou uzavřený obrazec a jejich vnitřek vyplnili.
+Tento článek vysvětlil, jak přidat překrytí mnohoúhelníku mapy, abyste měli na očích oblast mapy. Mnohoúhelníky se zavřeného tvaru a jejich vnitřek vyplněno.
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Mnohoúhelníku mapy překrytí (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/polygon/)
+- [Mnohoúhelník mapy překrytí (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/polygon/)
 - [Přizpůsobení špendlíku mapy](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)
-- [Xamarin.Forms.Maps](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/)
+- [Xamarin.Forms.Maps](xref:Xamarin.Forms.Maps)

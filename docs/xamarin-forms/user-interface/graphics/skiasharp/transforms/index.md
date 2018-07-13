@@ -1,90 +1,90 @@
 ---
 title: Transformace SkiaSharp
-description: V tomto článku jsou zde popsány transformací pro zobrazení grafiky SkiaSharp v aplikacích Xamarin.Forms a to ukazuje s ukázkový kód.
+description: Tento článek zkoumá transformací pro zobrazování grafického ve Skiasharpu v Xamarin.Forms aplikací a ukazuje to se vzorovým kódem.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: E9BE322E-ECB3-4395-AFE4-4474A0F25551
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: d8e9c26df9286cec94562b5d3d7b7721cc3f3f3d
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: e2f83e3de574d11052b5301f1832988b7f4166bf
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244945"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998632"
 ---
 # <a name="skiasharp-transforms"></a>Transformace SkiaSharp
 
-_Další informace o transformací pro zobrazení SkiaSharp grafiky_
+_Další informace o transformacích pro zobrazování grafického ve Skiasharpu_
 
-SkiaSharp podporuje tradiční grafiky transformace, které jsou implementovány jako metody [ `SKCanvas` ](https://developer.xamarin.com/api/type/SkiaSharp.SKCanvas/) objektu. Matematický, transformací alter souřadnice a velikostí, které zadáte v `SKCanvas` kreslení funkce, jako jsou vykreslovány grafické objekty. Transformace jsou často vhodné pro kreslení opakovaných grafiky nebo animace. Některé techniky &mdash; například otáčení rastrové obrázky nebo text &mdash; nejsou možné bez použití transformací.
+Ve Skiasharpu podporuje tradiční grafiky transformace, které jsou implementovány jako metody [ `SKCanvas` ](https://developer.xamarin.com/api/type/SkiaSharp.SKCanvas/) objektu. Matematický, změnit transformace souřadnice a velikostí, které zadáte v `SKCanvas` kreslení funkce jako grafické objekty jsou vykreslovány. Transformace mají často vhodné pro vykreslení grafiky opakovaných nebo pro animaci. Některé techniky &mdash; například otáčení rastrové obrázky a text &mdash; nejsou možné bez použití transformací.
 
-Transformace SkiaSharp podporují následující operace:
+Transformace SkiaSharp podporují tyto operace:
 
-- *Převede* k posunutí souřadnice z jednoho umístění do druhého
-- *Škálování* zvýšení nebo snížení souřadnice a velikosti
-- *Otočit* otočení souřadnice z bodu
-- *Zkreslit* se posunou koordinuje vodorovně nebo svisle tak, aby obdélníku stalo rovnoběžník
+- *Přeložit* souřadnice posun z jednoho umístění do jiného
+- *Škálování* chcete zvýšit nebo snížit souřadnice a velikosti
+- *Otočit* obměna souřadnice z bodu
+- *Zkosení* posunout můžete koordinuje vodorovně nebo svisle tak, aby se z něj rovnoběžník obdélník
 
-Toto jsou známé jako *afinní* transformace. Afinní transformace vždy zachovat paralelní řádky a nikdy způsobit souřadnice nebo velikost k nekonečné. Čtverce nikdy převede na jakoukoli jinou hodnotu než rovnoběžník a kruh nikdy převede na jakoukoli jinou hodnotu než elipsy.
+Toto jsou známé jako *nastavená na affine* transformace. Afinní transformace vždy zachovat paralelní řádky a nikdy nezpůsobí souřadnice nebo velikost, aby se stal nekonečné. Čtverec se nikdy transformuje na nic jiného než se z něj rovnoběžník a kruh se nikdy transformuje na nic jiného než elipsu.
 
-SkiaSharp podporuje i jiné afinní transformace (také nazývané *projective* nebo *perspektivy* transformuje) podle standardní 3 3 transformační matice. Afinní transformace umožňuje čtverce ke zpracování na všechny konvexní čtyřúhelník (okolo obrázek se všech vnitřní úhly menší než 180 stupňů). Bez afinní transformace může způsobit souřadnice nebo velikosti k nekonečné, ale jsou důležité pro 3D efekty.
+Také podporuje neafinní transformace SkiaSharp (také nazývané *projective* nebo *perspektivy* transformuje) založené na standardní 3 3 transformační matice. Neafinní transformace umožňuje čtverec a tím se transformuje na jakékoli konvexní čtyřúhelník (čtyřsměrná elementu figure s všechny vnitřní úhly menší než 180stupňový rozsah s orientací). Non afinní transformace může způsobit souřadnice nebo velikosti k nekonečné, ale jsou důležité pro 3D efekty.
 
-## <a name="differences-between-skiasharp-and-xamarinforms-transforms"></a>Rozdíly mezi SkiaSharp a transformace Xamarin.Forms
+## <a name="differences-between-skiasharp-and-xamarinforms-transforms"></a>Rozdíly ve Skiasharpu a transformace Xamarin.Forms
 
-Xamarin.Forms také podporuje transformace, které jsou podobné jako v SkiaSharp. Platformě Xamarin.Forms [ `VisualElement` ](https://developer.xamarin.com/api/type/Xamarin.Forms.VisualElement/) třída definuje následující vlastnosti transformace:
+Xamarin.Forms také podporuje transformace, které jsou podobné těm v SkiaSharp. Xamarin.Forms [ `VisualElement` ](xref:Xamarin.Forms.VisualElement) třída definuje následující vlastnosti transformace:
 
-- `TranslationX` A `TranslationY`
+- `TranslationX` a `TranslationY`
 - `Scale`
 - `Rotation`, `RotationX`, a `RotationY`
 
-`RotationX` a `RotationY` vlastnosti jsou perspektivy transformace, které se vytvořit quasi 3D účinky.
+`RotationX` a `RotationY` perspektivy transformace, které vytvářejí quasi 3D efekty jsou vlastnosti.
 
-Existuje několik klíčové rozdíly mezi SkiaSharp transformací a transformace Xamarin.Forms:
+Existuje několik zásadní rozdíly mezi transformace SkiaSharp a Xamarin.Forms transformace:
 
-První rozdíl je, že jsou SkiaSharp transformací použitá pro celou `SKCanvas` objektu během transformací Xamarin.Forms se použijí pro jednotlivé `VisualElement` odvozené konfigurace. (Můžete použít Xamarin.Forms transformace na `SKCanvasView` objekt samostatně, protože `SKCanvasView` odvozená z `VisualElement`, ale v rámci které `SKCanvasView`, použít transformace SkiaSkarp.)
+První rozdíl spočívá v tom, že transformace SkiaSharp platí pro celou `SKCanvas` objektu transformace Xamarin.Forms, které se použijí na osobu `VisualElement` vy. (Můžete použít Xamarin.Forms transformace `SKCanvasView` objektu samotného, protože `SKCanvasView` je odvozena z `VisualElement`, ale v rámci, která `SKCanvasView`, transformace SkiaSkarp použít.)
 
-Transformace SkiaSharp jsou od levého horního rohu `SKCanvas` Xamarin.Forms transformace jsou relativní vzhledem k levém horním rohu `VisualElement` u kterých se použije. Tento rozdíl je důležité, při použití, změny velikosti a oběh transformuje, protože tyto soubory jsou vždy vzhledem k konkrétní bodu.
+Transformace SkiaSharp jsou relativní vzhledem k levého horního rohu `SKCanvas` Xamarin.Forms transformace jsou relativní vzhledem k levého horního rohu `VisualElement` na které se použijí. Tento rozdíl je důležité při použití měřítka a otočení transformuje, protože tyto transformace jsou vždy relativní k určité místo.
 
-Opravdu velký rozdíl je, že SKiaSharp transformací *metody* jsou transformace Xamarin.Forms *vlastnosti*. To je rozdíl sémantického nad rámec syntaktické rozdíly: transformace SkiaSharp provedení určité operace, při Xamarin.Forms transformací sady stavu. Transformace SkiaSharp použít následně vykresleného grafických objektů, ale není grafických objektů, které jsou vykreslovány před použitím pro transformaci. Naproti tomu se Xamarin.Forms transformace vztahuje na dříve vykreslovaného elementu co nejrychleji, pokud je vlastnost nastavena. SkiaSharp transformace jsou kumulativní, jako jsou metody říká; Transformace Xamarin.Forms jsou nahrazeny, když je vlastnost nastavena s jinou hodnotou.
+Opravdu velký rozdíl je, že transformace SKiaSharp *metody* Xamarin.Forms transformace jsou *vlastnosti*. Toto je sémantické rozdíl nad rámec syntaktické rozdíly: transformace SkiaSharp provádět operace, zatímco Xamarin.Forms transformace nastavení stavu. Transformace SkiaSharp použít následně vykresleného grafických objektů, ale ne grafických objektů, které jsou zpracovány před použitím transformace. Naproti tomu transformace Xamarin.Forms platí pro dříve vykreslovaného elementu, jakmile je vlastnost nastavena. Transformace SkiaSharp jsou kumulativní, protože volání těchto metod; Xamarin.Forms transformace jsou nahrazena když je vlastnost nastavena s jinou hodnotou.
 
-Všechny programy ukázka v této části se zobrazí v části **transformuje** na domovské stránce [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) programu a v [ **Transformuje** ](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms) složce řešení.
+Všechny ukázky programů v této části se zobrazí pod nadpisem **transformuje** na domovské stránce [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) program a [ **Transformuje** ](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms) složky řešení.
 
 ## <a name="the-translate-transformtranslatemd"></a>[Transformace translace](translate.md)
 
-Další informace o použití transformace přeložit se posunou SkiaSharp grafiky.
+Další informace o použití transformace translace posunutí ve Skiasharpu grafiky.
 
 ## <a name="the-scale-transformscalemd"></a>[Transformace měřítka](scale.md)
 
-Zjistit transformace škálování SkiaSharp pro škálování objekty, které se různé velikosti.
+Objevte transformace měřítka ve Skiasharpu škálování objektů různých velikostí.
 
 ## <a name="the-rotate-transformrotatemd"></a>[Transformace rotace](rotate.md)
 
-Prozkoumejte dopady a animací možné pomocí SkiaSharp rotační transformace.
+Prozkoumejte dopady a možnosti s transformace rotace ve Skiasharpu animace.
 
 ## <a name="the-skew-transformskewmd"></a>[Transformace zkosení](skew.md)
 
-V tématu, jak můžete vytvořit nakloněné grafické objekty v SkiaSharp zkosení transformace.
+Podívejte se, jak můžete vytvořit nakloněné grafických objektů v SkiaSharp transformace zkosení.
 
 ## <a name="matrix-transformsmatrixmd"></a>[Maticové transformace](matrix.md)
 
-Podrobně hlubší SkiaSharp transformací s univerzální transformační matice.
+Ponořte se hlouběji do transformace SkiaSharp s univerzální transformační matice.
 
 ## <a name="touch-manipulationstouchmd"></a>[Manipulace dotyků](touch.md)
 
-Použití matice transformuje implementovat manipulace dotykového ovládání pro přetahování, změny velikosti a oběh.
+Použití matice transformuje provádět manipulace dotykového ovládání pro přetažení, měřítko a otočení.
 
 ## <a name="non-affine-transformsnon-affinemd"></a>[Neafinní transformace](non-affine.md)
 
-Překročila oridinary s důsledky-afinní transformace.
+Nad rámec oridinary s účinky neafinní transformace.
 
 ## <a name="3d-rotation3d-rotationmd"></a>[3D otáčení](3d-rotation.md)
 
-Otočit 2D objektů v 3D prostoru pomocí-afinní transformace.
+Pomocí neafinní transformace otočení 2D objekty v 3D prostoru.
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [Rozhraní API ve Skiasharpu](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

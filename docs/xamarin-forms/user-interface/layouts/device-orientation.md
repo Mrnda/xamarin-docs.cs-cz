@@ -1,22 +1,22 @@
 ---
 title: Orientace zařízení
-description: Tento článek vysvětluje, jak rozložení Xamarin.Forms aplikace, které vypadají skvělé v orientaci na výšku a šířku.
+description: Tento článek vysvětluje, jak aplikace Xamarin.Forms rozložení, které vypadají skvěle fungovat v orientaci na výšku a šířku.
 ms.prod: xamarin
 ms.assetid: 11A1D327-2DF3-4F3B-810D-6C95B71D27B2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: 9245a17423d97887d2032856b10427685b25c29b
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: f6ca8f0900c8bc325cc49a7484dabe5bf2534257
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244348"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38999029"
 ---
 # <a name="device-orientation"></a>Orientace zařízení
 
-Je důležité vzít v úvahu používání vaší aplikace a jak orientaci na šířku můžete začlenit i metodu ke zlepšení činnost koncového uživatele. Jednotlivé rozložení můžete navržená tak, aby dokázala pojmout více orientace a nejvhodnější používat volné místo. Na úrovni aplikace můžete zakázat nebo povolit otočení.
+Je důležité vzít v úvahu, jak se vaše aplikace používat a jak orientaci na šířku, dá se využít ke zlepšení uživatelského prostředí. Jednotlivé rozložení můžete navržena tak, aby vyhovovaly více orientace a nejlepší využití volného místa. Na úrovni aplikace můžete zakázat nebo povolit otočení.
 
 <a name="Controlling_Orientation" />
 
@@ -26,25 +26,25 @@ Při použití Xamarin.Forms, podporovaná metoda řízení orientace zařízen�
 
 ### <a name="ios"></a>iOS
 
-V systému iOS, je nakonfigurován orientace zařízení pro aplikace pomocí **Info.plist** souboru. Tento soubor bude obsahovat nastavení orientace pro iPhone & iPod a taky nastavení pro iPad, pokud ji aplikace obsahuje jako cíl. Níže jsou pokyny, které jsou specifické pro vaše rozhraní IDE. Použijte IDE možnosti v horní části tohoto dokumentu a vyberte pokyny, které chcete v tématu:
+V systémech iOS, orientace zařízení je nakonfigurovaný pro aplikace využívající **Info.plist** souboru. Tento soubor bude obsahovat nastavení orientace pro iPhone a iPod, jakož i nastavení pro iPad, pokud tato aplikace obsahuje jako cíl. Toto jsou pokyny, které jsou specifické pro prostředí (IDE). Pomocí možnosti integrovaného vývojového prostředí v horní části tohoto dokumentu vyberte pokyny, které chcete zobrazit:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-V sadě Visual Studio, otevřete projekt pro iOS a otevřete **Info.plist**. Soubor se otevře do konfigurace panelu, počínaje kartě iPhone informace o nasazení:
+V sadě Visual Studio, otevřete projekt pro iOS a otevřete **Info.plist**. Soubor se otevře do panelu konfigurace, počínaje kartě iPhone informace o nasazení:
 
-![iPhone informace o nasazení v sadě Visual Studio](device-orientation-images/orientation-vs-iphone.png)
+![informace o nasazení v sadě Visual Studio pro iPhone](device-orientation-images/orientation-vs-iphone.png)
 
-Pro konfiguraci orientaci iPad, vyberte **iPad informace o nasazení** v horní pravé panelu, pak vyberte z dostupných orientace:
+Pokud chcete nakonfigurovat iPad orientaci, vyberte **iPad informace o nasazení** kartu v levém horním panelu, pak vyberte možnost z dostupné orientace:
 
-![Orientace zařízení podporovaných v sadě Visual Studio](device-orientation-images/orientation-vs-ipad.png)
+![Podporované orientace zařízení v sadě Visual Studio](device-orientation-images/orientation-vs-ipad.png)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-V sadě Visual Studio pro Mac, otevřete projekt pro iOS a otevřete **Info.plist**. V části **aplikace** kartě části bude k dispozici pro nastavte orientaci:
+V sadě Visual Studio pro Mac, otevřete projekt pro iOS a otevřete **Info.plist**. V části **aplikace** karty, oddíly budou mít k dispozici nastavte orientaci:
 
-![iPhone informace o nasazení v sadě Visual Studio pro Mac](device-orientation-images/orientation-xam-ui.png)
+![informace o nasazení v sadě Visual Studio for Mac pro iPhone](device-orientation-images/orientation-xam-ui.png)
 
-Pokud chcete upravit hodnoty pomocí rozhraní editoru klíč hodnota, vyberte **zdroj**> karta v dolní části obrazovky:
+Pokud si přejete upravit hodnoty pomocí rozhraní editoru klíč hodnota, vyberte **zdroj**> karta v dolní části obrazovky:
 
 ![Podporované orientace zařízení v sadě Visual Studio pro Mac](device-orientation-images/orientation-xam-source.png)
 
@@ -52,52 +52,51 @@ Pokud chcete upravit hodnoty pomocí rozhraní editoru klíč hodnota, vyberte *
 
 ### <a name="android"></a>Android
 
-Chcete-li řídit orientaci v systému Android, otevřete **MainActivity.cs** a nastavte orientaci pomocí atributu architekturu `MainActivity` třídy:
+Chcete-li řídit orientace v Androidu, otevřete **MainActivity.cs** a nastavte orientaci pomocí atributu upravení `MainActivity` třídy:
 
 ```csharp
 namespace MyRotatingApp.Droid
 {
-    [Activity (Label = "MyRotatingApp.Droid", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation,
-    ScreenOrientation = ScreenOrientation.Landscape)] //This is what controls orientation
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
+    [Activity (Label = "MyRotatingApp.Droid", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation, ScreenOrientation = ScreenOrientation.Landscape)] //This is what controls orientation
+    public class MainActivity : FormsAppCompatActivity
     {
         protected override void OnCreate (Bundle bundle)
 ...
 ```
 
-Xamarin.Android podporuje několik možností pro zadání orientaci:
+Xamarin.Android podporuje několik možností pro zadání orientace:
 
-- **Na šířku** &ndash; vynutí aplikace orientaci na šířku, bez ohledu na data snímačů.
-- **Na výšku** &ndash; vynutí aplikace orientaci na výšku, bez ohledu na data snímačů jako.
-- **Uživatel** &ndash; způsobí, že aplikace zobrazovat pomocí upřednostňované orientaci uživatele.
-- **Za** &ndash; způsobí, že aplikace orientaci být stejný jako orientaci [aktivity](https://developer.xamarin.com/api/type/Android.App.Activity/) za ní.
-- **Senzor** &ndash; způsobí, že aplikace orientaci bude určen senzoru, i když je uživatel vypnul automatické otočení.
-- **SensorLandscape** &ndash; způsobí, že aplikace orientaci na šířku při použití dat snímačů změnit směr obrazovky čelí (tak, aby na obrazovce není považovat za obráceně).
-- **SensorPortrait** &ndash; způsobí, že aplikace pro používání orientaci na výšku při použití dat snímačů změnit směr obrazovky čelí (tak, aby na obrazovce není považovat za obráceně).
-- **ReverseLandscape** &ndash; způsobí, že aplikace orientaci na šířku, kterým čelí opačným směrem z obvyklé, která se zobrazí "obráceně."
-- **ReversePortrait** &ndash; způsobí, že aplikace pro používání orientaci na výšku, kterým čelí opačným směrem z obvyklé, která se zobrazí "obráceně."
-- **FullSensor** &ndash; způsobí, že aplikace využívají data snímačů a vyberte správnou orientaci (mimo možné 4).
-- **FullUser** &ndash; způsobí, že aplikace pro používání uživatelské předvolby orientace. Pokud je povoleno automatické střídání, můžete použít všechny 4 orientace.
-- **UserLandscape** &ndash; _\[nepodporuje\]_ způsobí, že aplikace orientaci na šířku, pokud uživatel nemá automatické otočení povoleno, v takovém případě se bude používat senzor k určení orientace. Tato možnost by došlo k přerušení kompilace.
-- **UserPortrait** &ndash; _\[nepodporuje\]_ způsobí, že aplikace pro používání orientaci na výšku, pokud uživatel nemá automatické otočení povoleno, v takovém případě se bude používat senzor k určení orientace. Tato možnost by došlo k přerušení kompilace.
-- **Uzamčení** &ndash; _\[nepodporuje\]_ způsobí, že aplikace pro používání orientace obrazovky, ať je při spuštění, bez reagovat na změny v zařízení je fyzický orientace. Tato možnost by došlo k přerušení kompilace.
+- **Na šířku** &ndash; vynutí aplikace orientaci na šířku, bez ohledu na data ze senzorů bude.
+- **Na výšku** &ndash; vynutí orientaci aplikace bude na výšku, bez ohledu na data ze senzorů.
+- **Uživatel** &ndash; způsobí, že aplikace zobrazovat pomocí upřednostňované orientace uživatele.
+- **Za** &ndash; způsobí, že se aplikace orientaci být stejný jako orientaci ovládacího prvku [aktivity](https://developer.xamarin.com/api/type/Android.App.Activity/) za ní.
+- **Senzor** &ndash; způsobí, že orientace aplikace bude určen senzor, i když je uživatel vypnul automatické střídání.
+- **SensorLandscape** &ndash; způsobí, že aplikace orientaci na šířku při používání dat ze snímačů změnit směr obrazovky je otočena směrem k (tak, aby jako vzhůru nohama není zobrazena na obrazovce).
+- **SensorPortrait** &ndash; způsobí, že aplikace použije orientaci na výšku při používání dat ze snímačů změnit směr obrazovky je otočena směrem k (tak, aby jako vzhůru nohama není zobrazena na obrazovce).
+- **ReverseLandscape** &ndash; způsobí, že aplikace orientaci na šířku, kterým čelí opačným směrem obvyklé, aby se zobrazí "vzhůru nohama".
+- **ReversePortrait** &ndash; způsobí, že aplikace použije orientaci na výšku, kterým čelí opačným směrem obvyklé, aby se zobrazí "vzhůru nohama".
+- **FullSensor** &ndash; způsobí, že aplikace využívají data ze senzorů a vyberte správnou orientaci (mimo možné 4).
+- **FullUser** &ndash; způsobí, že aplikace použije uživatelské předvolby orientace. Pokud je povoleno automatické střídání, můžete použít všechny 4 orientace.
+- **UserLandscape** &ndash; _\[nepodporuje\]_ způsobí, že aplikace použije orientaci na šířku, pokud má uživatel povoleno, automatické střídání v takovém případě bude používat senzor, který určuje orientaci. Tato možnost přeruší kompilaci.
+- **UserPortrait** &ndash; _\[nepodporuje\]_ způsobí, že aplikace použije orientaci na výšku, pokud má uživatel povoleno, automatické střídání v takovém případě bude používat senzor, který určuje orientaci. Tato možnost přeruší kompilaci.
+- **Uzamčeno** &ndash; _\[nepodporuje\]_ způsobí, že aplikace použije orientace obrazovky, cokoli, co je při spuštění, bez reagovat na změny v zařízení uživatele fyzické orientace. Tato možnost přeruší kompilaci.
 
-Všimněte si, že nativní Android rozhraní API nabízejí spoustu ovládat, jak se spravuje orientaci, včetně možnosti, které explicitně rozporu uživatele vyjádřit předvolby.
+Všimněte si, že nativní rozhraní Android API poskytováním spousty řídit, jak se spravují orientaci, včetně možnosti, které explicitně jsou v rozporu s uživatele vyjádřené předvolby.
 
-### <a name="universal-windows-platform"></a>Univerzální platformu Windows
+### <a name="universal-windows-platform"></a>Univerzální platforma Windows
 
-Na univerzální platformu Windows (UWP), podporované orientace se nastavují v **Package.appxmanifest** souboru. Otevírání manifest se odhalit konfigurace panel, kde lze vybrat podporované orientace.
+Podporované orientace na Universal Windows Platform (UWP), jsou nastavené **Package.appxmanifest** souboru. Otevření manifestu zobrazíte panel konfigurace, které je možné vybrat podporované orientace.
 
 <a name="Reacting_to_Changes_in_Orientation" />
 
-## <a name="reacting-to-changes-in-orientation"></a>Reaguje na změny v orientaci
+## <a name="reacting-to-changes-in-orientation"></a>Reakce na změny v orientaci
 
-Xamarin.Forms nenabízí žádné nativní události pro upozornění aplikace orientaci změny v sdíleného kódu. Ale `SizeChanged` události `Page` aktivuje se při buď šířka nebo výška `Page` změny. Když šířku `Page` je větší než výška, zařízení je v režimu na šířku. Další informace najdete v tématu [zobrazte obrázek podle orientace obrazovky](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/controls/screen-orientation/).
+Xamarin.Forms nenabízí žádné nativní události pro oznamování aplikace orientaci změn v sdíleným kódem. Ale `SizeChanged` událost `Page` spustí při šířku nebo výšku `Page` změny. Když šířku `Page` je větší než výška, zařízení je v režimu na šířku. Další informace najdete v tématu [zobrazit Image založenou na orientaci obrazovky](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/controls/screen-orientation/).
 
 > [!NOTE]
-> Není k dispozici bezplatná existující NuGet balíčku pro příjem oznámení změn orientace v sdíleného kódu. Najdete v článku [úložiště GitHub](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation) Další informace.
+> Je k balíček NuGet existující, bez pro příjem oznámení změny orientace v sdíleným kódem. Zobrazit [úložiště GitHub se vzorovými](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation) Další informace.
 
-Případně je možné přepsat [ `OnSizeAllocated` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnSizeAllocated(System.Double,System.Double)/) metodu `Page`, vkládání žádné rozložení změnit logiku existuje. `OnSizeAllocated` Metoda je volána vždy, když `Page` je přidělen novou velikost, která se dělá whenver zařízení otočen. Všimněte si, že základní implementace `OnSizeAllocated` provádí funkce důležité rozložení, takže je potřeba volat základní implementaci v přepsání:
+Alternativně je možné přepsat [ `OnSizeAllocated` ](xref:Xamarin.Forms.Page.OnSizeAllocated*) metoda `Page`, vkládání libovolného rozložení změňte logiku existuje. `OnSizeAllocated` Metoda je volána pokaždé, když se `Page` je přidělen novou velikost, která se stane whenver se zařízení otočí. Všimněte si, že základní implementaci `OnSizeAllocated` provádí funkce důležité rozložení, takže je potřeba volat základní implementaci v přepsání:
 
 ```csharp
 protected override void OnSizeAllocated(double width, double height)
@@ -106,9 +105,9 @@ protected override void OnSizeAllocated(double width, double height)
 }
 ```
 
-Chcete-li provést tento krok neuděláte na stránce nefunkční.
+Nepodařilo se provést tento krok způsobí stránku nefunkční.
 
-Všimněte si, že `OnSizeAllocated` metoda může být volána mnohokrát při otočení zařízení. Změna rozložení pokaždé, když je plýtvání prostředků a může vést k blikání. Zvažte použití proměnnou instance v rámci stránku sleduje, zda je orientaci v šířku i na výšku a pouze ho překreslit když dojde ke změně:
+Všimněte si, `OnSizeAllocated` metoda může být volána v mnoha případech po otočí zařízení. Změna rozložení pokaždé, když je plýtvání prostředky a může vést k blikání. Zvažte možnost použít proměnnou instance v rámci stránky pro sledování, zda je orientaci na šířku nebo výšku a jen ho překreslit když dojde ke změně:
 
 ```csharp
 private double width = 0;
@@ -126,41 +125,41 @@ protected override void OnSizeAllocated(double width, double height)
 }
 ```
 
-Jakmile zjistil změnu orientace zařízení, můžete přidat nebo odebrat další zobrazení z uživatelského rozhraní reagování na změnu v hodnotě volné místo. Představte si třeba vestavěné kalkulačky na jednotlivých platformách v na výšku:
+Jakmile byla zjištěna změna orientace zařízení, můžete přidat nebo odebrat další zobrazení do/z uživatelského rozhraní reagovat na změny v dostupné místo. Představte si třeba integrované Kalkulačka na jednotlivých platformách orientovaný na výšku:
 
-![](device-orientation-images/calculator-portrait.png "Kalkulačky aplikace na výšku")
+![](device-orientation-images/calculator-portrait.png "Aplikace Kalkulačka orientovaný na výšku")
 
 a na šířku:
 
-![](device-orientation-images/calculator-landscape.png "Kalkulačky aplikace na šířku")
+![](device-orientation-images/calculator-landscape.png "Aplikace Kalkulačka orientovaný na šířku")
 
-Všimněte si, že aplikace využít výhod dostupné místo přidáním dalších funkcí na šířku.
+Všimněte si, že aplikace využijte volného místa tak, že přidáte další funkce orientovaný na šířku.
 
 <a name="Responsive_Layout" />
 
 ## <a name="responsive-layout"></a>Přizpůsobivé rozložení
 
-Je možné rozhraní návrhu pomocí předdefinovaných rozložení, aby se elegantně přechod při otočení zařízení. Při navrhování rozhraní, které budou nadále přitažlivými při odpovědi na změny v orientaci vezměte v úvahu následující obecná pravidla:
+Je možné k návrhu rozhraní pomocí předdefinovaných rozložení tak, aby se přechod bez výpadku, když se zařízení otočí. Při navrhování rozhraní, která se bude dál přitažlivými při reakci na změny v orientaci vezměte v úvahu následující obecná pravidla:
 
-- **Věnujte pozornost poměr** &ndash; změny v orientaci může způsobit problémy při předem určité domněnky s ohledem na poměry. Zobrazení, který podléhaly dostatek místa v 1/3 svislý prostor obrazovky v na výšku nemusí třeba začlenit do 1/3 svislý prostor v na šířku.
-- **Buďte opatrní s absolutní hodnoty** &ndash; hodnoty absolutní (pixelů), které dávají smysl v na výšku nemusí mít smysl v na šířku. Pokud absolutní hodnoty jsou nezbytné, použijte vnořené rozložení izolovat jejich dopad. Například by bylo vhodné použít absolutní hodnoty v `TableView` `ItemTemplate` při šablony položky má zaručenou uniform výšku.
+- **Věnujte pozornost poměry** &ndash; změn v orientaci může způsobit potíže, pokud předem určité domněnky jsou provedeny s ohledem na poměry. Například zobrazení, které bude mít dostatek místa v 1/3 svislé mezery obrazovky orientovaný na výšku nemusí vejde do 1/3 svislém místě ve světě.
+- **Pozor na absolutní hodnoty** &ndash; absolutní (v pixelech) hodnoty, které dávají smysl orientovaný na výšku nemusí mít smysl orientovaný na šířku. Pokud absolutní hodnoty jsou nezbytné, použijte k izolování jejich dopadu vnořené rozložení. Například by být vhodné použít absolutní hodnoty v `TableView` `ItemTemplate` Pokud má šablona položky zaručené jednotné výšku.
 
-Výše uvedené pravidla platí i při implementaci rozhraní pro více velikost obrazovky a jsou obecně považuje za osvědčené postupy. Zbývající části této příručky se popisují konkrétní příklady v každé primární rozložení Xamarin.Forms přizpůsobivé rozložení.
+Výše uvedených pravidel neplatí při implementaci rozhraní pro různé velikosti obrazovky a jsou obvykle považovány za osvědčené postupy. Zbývající část tohoto průvodce se popisují konkrétní příklady responzivní rozložení v každé primární rozložení Xamarin.Forms.
 
 > [!NOTE]
-> Pro přehlednost, následující části ukazují, jak implementovat přizpůsobivé rozložení pomocí jenom jeden typ `Layout` najednou. V praxi, je často jednodušší kombinovat `Layout`s k dosažení požadované rozložení pomocí jednodušší nebo nejvíce intuitivní `Layout` pro každou součást.
+> Pro přehlednost následující části ukazují, jak implementovat responzivní rozložení pomocí pouze jednoho typu `Layout` najednou. V praxi, často je jednodušší kombinovat `Layout`s k dosažení požadované rozložení pomocí jednodušší nebo nejintuitivnější `Layout` pro jednotlivé komponenty.
 
 ### <a name="stacklayout"></a>StackLayout
 
-Vezměte v úvahu následující aplikace, zobrazí v na výšku:
+Vezměte v úvahu následující aplikace zobrazí orientovaný na výšku:
 
-![](device-orientation-images/photo-stack-portrait.png "Fotografie aplikace na výšku")
+![](device-orientation-images/photo-stack-portrait.png "Aplikace fotky na výšku")
 
 a na šířku:
 
-![](device-orientation-images/photo-stack-landscape.png "Fotografie aplikace na šířku")
+![](device-orientation-images/photo-stack-landscape.png "Aplikace fotky na šířku")
 
-Která se provádí s následující XAML:
+Který se provádí pomocí následujících XAML:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -203,7 +202,7 @@ Title="Stack Photo Editor - XAML">
 </ContentPage>
 ```
 
-Některé C# se používá ke změně orientaci `outerStack` na základě orientace zařízení:
+Některé C# umožňuje změnit orientaci `outerStack` podle orientace zařízení:
 
 ```csharp
 protected override void OnSizeAllocated (double width, double height){
@@ -222,20 +221,20 @@ protected override void OnSizeAllocated (double width, double height){
 
 Vezměte na vědomí následující:
 
-- `outerStack` objektů je upravena ovládacími prvky a bitové kopie k dispozici jako vodorovné nebo svislé zásobníku v závislosti na orientaci nejlépe využít dostupného místa.
+- `outerStack` Upraví prezentovat na obrázku a ovládací prvky jako vodorovný nebo svislý zásobník v závislosti na orientaci, tak, aby co nejlépe využít výhod dostupného místa.
 
 
 ### <a name="absolutelayout"></a>AbsoluteLayout
 
-Vezměte v úvahu následující aplikace, zobrazí v na výšku:
+Vezměte v úvahu následující aplikace zobrazí orientovaný na výšku:
 
-![](device-orientation-images/photo-abs-portrait.png "Fotografie aplikace na výšku")
+![](device-orientation-images/photo-abs-portrait.png "Aplikace fotky na výšku")
 
 a na šířku:
 
-![](device-orientation-images/photo-abs-landscape.png "Fotografie aplikace na šířku")
+![](device-orientation-images/photo-abs-landscape.png "Aplikace fotky na šířku")
 
-Která se provádí s následující XAML:
+Který se provádí pomocí následujících XAML:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -274,21 +273,21 @@ Title="AbsoluteLayout - XAML" BackgroundImage="deer.jpg">
 
 Vezměte na vědomí následující:
 
-- Kvůli způsobu, kterým byla nastíněny stránky není nutné pro procedurální kód zavádět odezvy.
-- `ScrollView` Se používá k povolení štítek, který chcete být viditelné i v případě výšku obrazovky je menší než součet pevné výšky tlačítka a bitovou kopii.
+- Kvůli způsobu, jakým se rozloží na stránce není nutné pro kódu procedury zavést rychlost odezvy.
+- `ScrollView` Se používá k povolení popisek bude viditelný i v případě výška obrazovky je menší než součtem pevné výšky tlačítek a image.
 
 
 ### <a name="relativelayout"></a>RelativeLayout
 
-Vezměte v úvahu následující aplikace, zobrazí v na výšku:
+Vezměte v úvahu následující aplikace zobrazí orientovaný na výšku:
 
-![](device-orientation-images/photo-rel-portrait.png "Fotografie aplikace na výšku")
+![](device-orientation-images/photo-rel-portrait.png "Aplikace fotky na výšku")
 
 a na šířku:
 
-![](device-orientation-images/photo-rel-landscape.png "Fotografie aplikace na šířku")
+![](device-orientation-images/photo-rel-landscape.png "Aplikace fotky na šířku")
 
-Která se provádí s následující XAML:
+Který se provádí pomocí následujících XAML:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -366,20 +365,20 @@ BackgroundImage="deer.jpg">
 
 Vezměte na vědomí následující:
 
-- Kvůli způsobu, kterým byla nastíněny stránky není nutné pro procedurální kód zavádět odezvy.
-- `ScrollView` Se používá k povolení štítek, který chcete být viditelné i v případě výšku obrazovky je menší než součet pevné výšky tlačítka a bitovou kopii.
+- Kvůli způsobu, jakým se rozloží na stránce není nutné pro kódu procedury zavést rychlost odezvy.
+- `ScrollView` Se používá k povolení popisek bude viditelný i v případě výška obrazovky je menší než součtem pevné výšky tlačítek a image.
 
 ### <a name="grid"></a>Mřížka
 
-Vezměte v úvahu následující aplikace, zobrazí v na výšku:
+Vezměte v úvahu následující aplikace zobrazí orientovaný na výšku:
 
-![](device-orientation-images/photo-grid-portrait.png "Fotografie aplikace na výšku")
+![](device-orientation-images/photo-grid-portrait.png "Aplikace fotky na výšku")
 
 a na šířku:
 
-![](device-orientation-images/photo-grid-landscape.png "Fotografie aplikace na šířku")
+![](device-orientation-images/photo-grid-landscape.png "Aplikace fotky na šířku")
 
-Která se provádí s následující XAML:
+Který se provádí pomocí následujících XAML:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -435,7 +434,7 @@ Title="Grid - XAML">
 </ContentPage>
 ```
 
-Společně s následující procedurální kód pro zpracování otočení změny:
+Spolu s následující procesní kód pro zpracování otáčení změny:
 
 ```csharp
 private double width;
@@ -468,7 +467,7 @@ protected override void OnSizeAllocated (double width, double height){
 
 Vezměte na vědomí následující:
 
-- Kvůli způsobu, kterým byla nastíněny stránky je metoda Chcete-li změnit umístění ovládací prvky mřížky.
+- Kvůli způsobu, jakým se rozloží na stránce je metoda, chcete-li změnit umístění mřížky ovládacích prvků.
 
 
 ## <a name="related-links"></a>Související odkazy
@@ -476,4 +475,4 @@ Vezměte na vědomí následující:
 - [Rozložení (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
 - [Příklad BusinessTumble (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BusinessTumble/)
 - [Přizpůsobivé rozložení (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ResponsiveLayout)
-- [Zobrazte obrázek podle orientace obrazovky](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/controls/screen-orientation/)
+- [Zobrazte obrázek na základě orientace obrazovky](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/controls/screen-orientation/)

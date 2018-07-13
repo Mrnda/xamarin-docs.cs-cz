@@ -1,37 +1,37 @@
 ---
-title: Připojené chování
-description: Připojené chování jsou statické třídy s jeden nebo více přidružené vlastnosti. Tento článek ukazuje, jak vytvářet a využívat připojené chování.
+title: Připojená chování
+description: Připojená chování jsou statické třídy s jeden nebo více připojené vlastnosti. Tento článek ukazuje, jak vytvářet a využívat připojená chování.
 ms.prod: xamarin
 ms.assetid: ECEE6AEC-44FA-4AF7-BAD0-88C6EE48422E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 32573ac3ed0dfecf8ddf1c731613c9a5f88fb1e7
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 2c9bd9ad4e7572b9eae6f0073da8a2c8f1e7c9fc
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34845990"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995343"
 ---
-# <a name="attached-behaviors"></a>Připojené chování
+# <a name="attached-behaviors"></a>Připojená chování
 
-_Připojené chování jsou statické třídy s jeden nebo více přidružené vlastnosti. Tento článek ukazuje, jak vytvářet a využívat připojené chování._
+_Připojená chování jsou statické třídy s jeden nebo více připojené vlastnosti. Tento článek ukazuje, jak vytvářet a využívat připojená chování._
 
 ## <a name="overview"></a>Přehled
 
-– Přidružená vlastnost je zvláštní druh vazbu vlastnosti. Jsou definované v jedné třídy, ale připojené k jiné objekty, a jsou rozpoznatelném v jazyce XAML jako atributy, které obsahují třídy a název vlastnosti odděleny tečkou.
+Připojená vlastnost je zvláštní druh vázanou vlastnost. Jsou definovány v jedné třídy, ale připojené k jiné objekty, a jsou rozpoznatelné v XAML jako atributy, které obsahují třídy a názvu vlastnosti oddělené tečkou.
 
-– Přidružená vlastnost můžete definovat `propertyChanged` delegáta, který bude proveden při změně hodnoty vlastnosti, například když je vlastnost nastavena na ovládacího prvku. Když `propertyChanged` provede delegáta, úspěšně prošel odkaz na ovládací prvek, na kterém je připojovaný a parametry, které obsahují staré a nové hodnoty pro vlastnost. Tento delegát slouží k přidání nových funkcí do ovládacího prvku, který vlastnost je připojen k manipulací odkaz, který je předán, následujícím způsobem:
+Můžete definovat připojené vlastnosti `propertyChanged` delegáta, který se spustí při změně hodnoty vlastnosti, například když je vlastnost nastavena na ovládacím prvku. Když `propertyChanged` spouští delegáta, je jí předán odkaz na ovládací prvek, na kterém je připojovaný a parametry, které obsahují staré a nové hodnoty pro vlastnost. Tento delegát je možné přidat nové funkce do ovládacího prvku, který je vlastnost připojen k manipulací odkaz, který je předán, následujícím způsobem:
 
-1. `propertyChanged` Delegáta vrhá odkaz ovládací prvek, který přijal jako [ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/)do typ ovládacího prvku toto chování je navržený tak, aby vylepšit.
-1. `propertyChanged` Delegáta upraví vlastnosti ovládacího prvku, volání metod řízení nebo registry obslužné rutiny událostí pro události, které jsou vystavené ovládací prvek, k implementaci základní funkce chování.
+1. `propertyChanged` Delegáta přetypování odkaz na ovládací prvek, který bude přijata jako [ `BindableObject` ](xref:Xamarin.Forms.BindableObject), pro typ ovládacího prvku, který je chování navržen k zvýšení.
+1. `propertyChanged` Delegáta upraví vlastnosti ovládacího prvku, volání metod ovládací prvek nebo registrech obslužné rutiny událostí pro události, které jsou vystavené ovládacího prvku k implementaci základní chování funkce.
 
-Problém s připojené chování je, že jsou definovány v `static` třída, s `static` vlastnosti a metody. Díky tomu je obtížné vytvořit připojené chování, které mají stav. Kromě toho Xamarin.Forms chování nahradit připojené chování jako upřednostňovaný přístup k vytváření chování. Další informace o chování Xamarin.Forms najdete v tématu [Xamarin.Forms chování](~/xamarin-forms/app-fundamentals/behaviors/creating.md) a [opakovaně použitelného chování](~/xamarin-forms/app-fundamentals/behaviors/reusable/index.md).
+Problém s připojená chování je, že jsou definovány v `static` třídy s `static` vlastnosti a metody. To je těžké vytvořit připojená chování, které mají stav. Kromě toho chování Xamarin.Forms nahradil připojená chování jako upřednostňovaný způsob konstrukce chování. Další informace o chování Xamarin.Forms, naleznete v tématu [chování Xamarin.Forms](~/xamarin-forms/app-fundamentals/behaviors/creating.md) a [opakovaně použitelného chování](~/xamarin-forms/app-fundamentals/behaviors/reusable/index.md).
 
-## <a name="creating-an-attached-behavior"></a>Vytvoření připojených chování
+## <a name="creating-an-attached-behavior"></a>Vytváření připojená chování
 
-Představuje ukázkovou aplikaci `NumericValidationBehavior`, který označuje hodnota zadaná uživatelem do [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) řízení červeně, pokud není `double`. Chování je znázorněno v následujícím příkladu kódu:
+Ukázkové aplikaci ukazuje `NumericValidationBehavior`, hodnota zadaného uživatelem, na kterém se dozvíte [ `Entry` ](xref:Xamarin.Forms.Entry) řídit červeně, pokud není `double`. Chování můžete vidět v následujícím příkladu kódu:
 
 ```csharp
 public static class NumericValidationBehavior
@@ -78,11 +78,11 @@ public static class NumericValidationBehavior
 }
 ```
 
-`NumericValidationBehavior` Třída obsahuje přidružená vlastnost s názvem `AttachBehavior` s `static` metody getter a setter, který řídí přidání nebo odebrání chování k ovládacímu prvku, k níž bude připojen. To připojené vlastnost registrů `OnAttachBehaviorChanged` metoda, která bude proveden při změně hodnoty vlastnosti. Tato metoda registruje nebo zrušte zaregistruje obslužné rutiny události pro [ `TextChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Entry.TextChanged/) události v závislosti na hodnotě `AttachBehavior` přidružená vlastnost. Poskytuje základní funkce služby chování `OnEntryTextChanged` metoda, která analyzuje zadané hodnoty [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) uživatelem, a nastaví `TextColor` vlastnosti tak, aby červená, pokud není hodnota `double`.
+`NumericValidationBehavior` Třída obsahuje připojené vlastnosti s názvem `AttachBehavior` s `static` metody getter a setter, který řídí přidání nebo odebrání vlastnosti do ovládacího prvku, k níž bude připojen. To připojené vlastnosti registrů `OnAttachBehaviorChanged` metodu, která se provede při změně hodnoty vlastnosti. Tato metoda zaregistruje nebo zrušení zaregistruje obslužná rutina události [ `TextChanged` ](xref:Xamarin.Forms.Entry.TextChanged) události v závislosti na hodnotě `AttachBehavior` přidružená vlastnost. Poskytuje základní funkce chování `OnEntryTextChanged` metodu, která analyzuje hodnoty zadané do [ `Entry` ](xref:Xamarin.Forms.Entry) podle uživatele a nastaví `TextColor` vlastnost na hodnotu red, pokud hodnota není `double`.
 
-## <a name="consuming-an-attached-behavior"></a>Využívání připojených chování
+## <a name="consuming-an-attached-behavior"></a>Využívání připojená chování
 
-`NumericValidationBehavior` Třídy mohou být spotřebovávána přidání `AttachBehavior` připojené vlastnosti tak, aby [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) řídit, jak je ukázáno v následujícím příkladu kódu XAML:
+`NumericValidationBehavior` Třídy mohou být spotřebovány přidání `AttachBehavior` nastavte na připojený [ `Entry` ](xref:Xamarin.Forms.Entry) řídit, jak je ukázáno v následujícím příkladu kódu XAML:
 
 ```xaml
 <ContentPage ... xmlns:local="clr-namespace:WorkingWithBehaviors;assembly=WorkingWithBehaviors" ...>
@@ -92,42 +92,42 @@ public static class NumericValidationBehavior
 </ContentPage>
 ```
 
-Ekvivalent [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) v jazyce C# je znázorněno v následujícím příkladu kódu:
+Ekvivalent [ `Entry` ](xref:Xamarin.Forms.Entry) v jazyce C# je znázorněno v následujícím příkladu kódu:
 
 ```csharp
 var entry = new Entry { Placeholder = "Enter a System.Double" };
 NumericValidationBehavior.SetAttachBehavior (entry, true);
 ```
 
-V době běhu chování bude reagovat na interakci s ovládacím prvkem podle chování implementace. Tyto snímky obrazovky ukazují připojené chování neodpovídá na požadavky neplatný vstup:
+Za běhu chování odpoví na interakci ze strany ovládacího prvku, podle chování implementace. Na následujících snímcích obrazovky ukazují připojená chování reakce na neplatný vstup:
 
-[![](attached-images/screenshots-sml.png "Ukázkové aplikace s připojené chování")](attached-images/screenshots.png#lightbox "ukázkové aplikace s připojené chování")
+[![](attached-images/screenshots-sml.png "Ukázková aplikace s připojenými chování")](attached-images/screenshots.png#lightbox "ukázková aplikace s připojenými chování")
 
 > [!NOTE]
-> Připojené chování jsou určeny pro konkrétní ovládací prvek typu (nebo nadřazenou třídu, která můžete použít pro mnoho ovládací prvky) a musí být pouze přidaní do ovládacího prvku kompatibilní. Probíhá pokus o připojení chování do ovládacího prvku nekompatibilní výsledkem bude Neznámý chování a závisí na implementaci chování.
+> Připojená chování, které jsou určeny pro konkrétní ovládací prvek typu (nebo nadřazené třídy, které můžete použít pro mnoho ovládacích prvků) a měly by být pouze přidány do ovládacího prvku kompatibilní. Pokusu o připojení chování ovládacího prvku nekompatibilní bude mít za následek Neznámý chování a závisí na implementaci chování.
 
-### <a name="removing-an-attached-behavior-from-a-control"></a>Odebrání připojené chování z ovládacího prvku
+### <a name="removing-an-attached-behavior-from-a-control"></a>Připojená chování odebrání ovládacího prvku
 
-`NumericValidationBehavior` – Třída může být odebrán z ovládacího prvku nastavením `AttachBehavior` přidružená vlastnost k `false`, jak je znázorněno v následujícím příkladu kódu XAML:
+`NumericValidationBehavior` Třídy lze odebrat pomocí ovládacího prvku tak, že nastavíte `AttachBehavior` připojené vlastnosti `false`, jak je ukázáno v následujícím příkladu kódu XAML:
 
 ```xaml
 <Entry Placeholder="Enter a System.Double" local:NumericValidationBehavior.AttachBehavior="false" />
 ```
 
-Ekvivalent [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) v jazyce C# je znázorněno v následujícím příkladu kódu:
+Ekvivalent [ `Entry` ](xref:Xamarin.Forms.Entry) v jazyce C# je znázorněno v následujícím příkladu kódu:
 
 ```csharp
 var entry = new Entry { Placeholder = "Enter a System.Double" };
 NumericValidationBehavior.SetAttachBehavior (entry, false);
 ```
 
-V době běhu `OnAttachBehaviorChanged` metoda bude spuštěna při hodnotu `AttachBehavior` je připojená vlastnost nastavená na `false`. `OnAttachBehaviorChanged` Metoda bude poté zrušte registraci obslužné rutiny události pro [ `TextChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Entry.TextChanged/) událostí, zajistíte, že není chování provést, protože uživatel pracuje s ovládacím prvkem.
+V době běhu `OnAttachBehaviorChanged` metoda bude spuštěna při hodnotu `AttachBehavior` připojená vlastnost nastavená na `false`. `OnAttachBehaviorChanged` Metody se pak rušit registraci obslužné rutiny události pro [ `TextChanged` ](xref:Xamarin.Forms.Entry.TextChanged) událostí, zajišťuje, že chování není spuštěn během interakce uživatele s ovládacím prvkem.
 
 ## <a name="summary"></a>Souhrn
 
-Tento článek ukázal, jak vytvářet a využívat připojené chování. Jsou připojené chování `static` tříd pomocí jednoho nebo více přidružené vlastnosti.
+V tomto článku jsme vám ukázali jak vytvářet a využívat připojená chování. Připojená chování jsou `static` tříd pomocí jednoho nebo více připojené vlastnosti.
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Připojené chování (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/attachednumericvalidationbehavior/)
+- [Připojená chování (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/attachednumericvalidationbehavior/)

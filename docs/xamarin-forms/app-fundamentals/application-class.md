@@ -1,35 +1,35 @@
 ---
-title: Třída aplikaci Xamarin.Forms
-description: Tento článek vysvětluje funkce výchozí třídy aplikace, která obsahuje vlastnosti, které chcete nastavit na úvodní stránce aplikace, a trvalé slovník pro ukládání jednoduché hodnoty mezi změny stavu životního cyklu.
+title: Třídu aplikace Xamarin.Forms
+description: Tento článek vysvětluje funkce výchozí třídu aplikace, která zahrnuje vlastnosti nastavit na úvodní stránku pro aplikaci, a trvalé slovník pro ukládání jednoduchých hodnot mezi změnami stavu životního cyklu.
 ms.prod: xamarin
 ms.assetid: 421F8294-1944-46A4-8459-D2BD5AAABC9D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/19/2016
-ms.openlocfilehash: 15fb866d2cde9409f401d6d021b22b8cb0468795
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 6de4380f2ce2d19df4ff912b7c86b75ca9e7821b
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240538"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38999026"
 ---
-# <a name="xamarinforms-app-class"></a>Třída aplikaci Xamarin.Forms
+# <a name="xamarinforms-app-class"></a>Třídu aplikace Xamarin.Forms
 
-`Application` Základní třída nabízí následující funkce, které jsou zveřejněné v výchozí projekty `App` podtřídami:
+`Application` Základní třídy nabízí následující funkce, které jsou přístupné na výchozí projekty `App` podtřídy:
 
-* A `MainPage` vlastnost, která je, kde se má nastavit úvodní stránku pro aplikaci.
-* Trvalé [ `Properties` slovník](#Properties_Dictionary) pro uložení jednoduché hodnot mezi změny stavu životního cyklu.
-* Statického `Current` vlastnost, která obsahuje odkaz na objekt aktuální aplikace.
+* A `MainPage` vlastnost, která je tam, kde nastavit počáteční stránku pro aplikaci.
+* Trvalé [ `Properties` slovníku](#Properties_Dictionary) k ukládání jednoduchých hodnot mezi změnami stavu životního cyklu.
+* Statický `Current` vlastnost, která obsahuje odkaz na aktuální objekt aplikace.
 
-Taky zpřístupňuje [životního cyklu metody](~/xamarin-forms/app-fundamentals/app-lifecycle.md) například `OnStart`, `OnSleep`, a `OnResume` a také události modální navigace.
+Také poskytuje [životního cyklu metody](~/xamarin-forms/app-fundamentals/app-lifecycle.md) například `OnStart`, `OnSleep`, a `OnResume` a také modální navigační události.
 
-V závislosti na šablonu, kterou jste zvolili, `App` třídy mohou být definovány v jedním ze dvou způsobů:
+V závislosti na šablonu, kterou jste zvolili, `App` třídy může být definován v jednom ze dvou způsobů:
 
 * **C#**, nebo
 * **XAML A C#**
 
-Chcete-li vytvořit **aplikace** pomocí XAML, výchozí hodnota **aplikace** třídy je nutné nahradit XAML **aplikace** třídy a přidružené kódu, jak je uvedené v následujícím příkladu kódu:
+Vytvoření **aplikace** pomocí XAML, výchozí **aplikace** třídy je nutné nahradit XAML **aplikace** třídy a přidružený kód na pozadí, jak je znázorněno v následujícím příkladu kódu:
 
 ```xaml
 <Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Photos.App">
@@ -37,7 +37,7 @@ Chcete-li vytvořit **aplikace** pomocí XAML, výchozí hodnota **aplikace** t�
 </Application>
 ```
 
-Následující příklad kódu ukazuje přidružené kódu:
+Následující příklad kódu ukazuje související kódu:
 
 ```csharp
 public partial class App : Application
@@ -51,15 +51,15 @@ public partial class App : Application
 }
 ```
 
-I nastavení [ `MainPage` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.MainPage/) vlastnost modelu code-behind musíte také zavolat `InitializeComponent` metoda se načíst a analyzovat přidružené XAML.
+A také nastavení [ `MainPage` ](xref:Xamarin.Forms.Application.MainPage) vlastnost modelu code-behind musíte také zavolat `InitializeComponent` metoda načíst a analyzovat související XAML.
 
 ## <a name="mainpage-property"></a>Vlastnost MainPage
 
-`MainPage` Vlastnost `Application` třída nastaví kořenovou stránku aplikace.
+`MainPage` Vlastnost `Application` třída nastaví kořenové stránky aplikace.
 
-Například můžete vytvořit logiku v vaší `App` třída pro zobrazení jiné stránky v závislosti na tom, zda uživatel je přihlášen nebo ne.
+Můžete například vytvořit logiku v vaše `App` třídy zobrazení jiné stránky v závislosti na tom, jestli je uživatel přihlášen či nikoli.
 
-`MainPage` Musí být vlastnost nastavena `App` konstruktoru,
+`MainPage` Vlastnost by měla být nastavena v `App` konstruktoru,
 
 ```csharp
 public class App : Xamarin.Forms.Application
@@ -75,17 +75,17 @@ public class App : Xamarin.Forms.Application
 
 ## <a name="properties-dictionary"></a>Slovník vlastností
 
-`Application` Podtřídami má statického `Properties` slovník, který můžete použít k ukládání dat, zejména pro použití v `OnStart`, `OnSleep`, a `OnResume` metody. To lze přistupovat z kdekoli v kódu Xamarin.Forms pomocí `Application.Current.Properties`.
+`Application` Podtřídy má statickou `Properties` slovník, který slouží k ukládání dat, zejména pro použití v `OnStart`, `OnSleep`, a `OnResume` metody. To je přístupná z libovolné místo v kódu Xamarin.Forms pomocí `Application.Current.Properties`.
 
-`Properties` Používá slovník `string` klíče a ukládá `object` hodnotu.
+`Properties` Používá slovníku `string` klíče a ukládá `object` hodnotu.
 
-Například můžete nastavit trvalá `"id"` vlastnost kdekoli v kódu (Pokud je položka vybrána na stránce `OnDisappearing` metoda, nebo v `OnSleep` metoda) podobné výjimky:
+Například můžete nastavit trvalá `"id"` vlastnost kdekoli ve vašem kódu (když je položka vybrána na stránce `OnDisappearing` metodu, nebo v `OnSleep` – metoda) tímto způsobem:
 
 ```csharp
 Application.Current.Properties ["id"] = someClass.ID;
 ```
 
-V `OnStart` nebo `OnResume` tuto hodnotu pak můžete použít k opětovnému vytvoření možnosti pro uživatele nějakým způsobem metod. `Properties` Úložiště slovníku `object`s proto musíte přetypovat jeho hodnotu před jeho použitím.
+V `OnStart` nebo `OnResume` metody, které pak můžete tuto hodnotu znovu vytvořit uživatelské prostředí nějakým způsobem. `Properties` Úložiště slovníku `object`s, takže je třeba přetypovat jeho hodnotu před jeho použitím.
 
 ```csharp
 if (Application.Current.Properties.ContainsKey("id"))
@@ -95,27 +95,27 @@ if (Application.Current.Properties.ContainsKey("id"))
 }
 ```
 
-Vždy zkontrolujte přítomnost klíče před přístupem k, abychom zabránili jeho neočekávaným chybám.
+Vždy zkontrolujte přítomnost klíče před přístupem k zabránili neočekávaným chybám.
 
 > [!NOTE]
-> `Properties` Slovníku může serializovat jenom primitivní typy pro úložiště. Pokusu o uložení jiné typy (například `List<string>`) může selhat bezobslužně.
+> `Properties` Slovník může serializovat pouze primitivní typy pro úložiště. Pokusu o uložení jiných typů (například `List<string>`) může selhat, bezobslužně.
 
 <!-- bugzilla 28657 -->
 
 ### <a name="persistence"></a>Trvalost
 
-`Properties` Slovníku se automaticky uloží do zařízení.
-Po návratu aplikace ze na pozadí, nebo i po jeho restartování, bude k dispozici data přidat do slovníku.
+`Properties` Slovníku se ukládá do zařízení automaticky.
+Data přidaná do slovníku bude k dispozici, pokud aplikace vrací z na pozadí nebo i po restartování.
 
-Xamarin.Forms 1.4 zavedená další způsob na `Application` třída - `SavePropertiesAsync()` – které lze volat pro proaktivní zachovat `Properties` slovníku. Toto je vám umožní uložit vlastnosti po důležité aktualizace a nikoli riziko je aplikace serializovat se kvůli chybě nebo se ukončená operačního systému.
+Xamarin.Forms 1.4 představen další metodu `Application` class - `SavePropertiesAsync()` – který dá zavolat, aby proaktivně zachování `Properties` slovníku. Toto je bylo možné uložit vlastnosti po důležité aktualizace, spíše než rizika je neprovedení serializovat si kvůli chybovému ukončení nebo ukončuje podle operačního systému.
 
-Můžete najít odkazy na pomocí `Properties` slovníku v **vytváření mobilních aplikací s Xamarin.Forms** sešit kapitolám [6](https://developer.xamarin.com/r/xamarin-forms/book/chapter06.pdf), [15](https://developer.xamarin.com/r/xamarin-forms/book/chapter15.pdf), a [20 ](https://developer.xamarin.com/r/xamarin-forms/book/chapter20.pdf)a v přidruženém [ukázky](https://github.com/xamarin/xamarin-forms-book-preview-2).
+Můžete najít odkazy na použití `Properties` slovníku **vytváření mobilních aplikací pomocí Xamarin.Forms** kapitoly knihy [6](https://developer.xamarin.com/r/xamarin-forms/book/chapter06.pdf), [15](https://developer.xamarin.com/r/xamarin-forms/book/chapter15.pdf), a [20 ](https://developer.xamarin.com/r/xamarin-forms/book/chapter20.pdf)a v souvisejících [ukázky](https://github.com/xamarin/xamarin-forms-book-preview-2).
 
 
 
 ## <a name="the-application-class"></a>Třída aplikace
 
-Úplná `Application` implementaci třídy jsou uvedeny níže pro referenci:
+Kompletní `Application` implementace třídy je uveden níže pro referenci:
 
 ```csharp
 public class App : Xamarin.Forms.Application
@@ -146,13 +146,13 @@ public class App : Xamarin.Forms.Application
 
 ```
 
-Tato třída je pak instanci v každém projektu specifické pro platformu a předán `LoadApplication` metodu, která je tam, kde `MainPage` načíst a zobrazit uživateli.
-V následujících částech se zobrazí kód pro každou platformu. Nejnovější šablony řešení Xamarin.Forms již obsahovat všechny tento kód předem nakonfigurovat pro vaši aplikaci.
+Tato třída se pak vytvořit instanci v každém projektu konkrétní platformy a předat `LoadApplication` metodu, která je tam, kde `MainPage` se načte a zobrazí uživateli.
+V následujících částech se zobrazí kód pro každou platformu. Nejnovější šablony řešení Xamarin.Forms již obsahují celý tento kód, předem nakonfigurovat pro vaši aplikaci.
 
 
 ### <a name="ios-project"></a>iOS projektu
 
-IOS `AppDelegate` třídy dědí vlastnosti z `FormsApplicationDelegate`. Má následující vlastnosti:
+IOS `AppDelegate` třída dědí z `FormsApplicationDelegate`. Má následující vlastnosti:
 
 * Volání `LoadApplication` s instancí `App` třídy.
 
@@ -176,13 +176,12 @@ public partial class AppDelegate :
 
 ### <a name="android-project"></a>Projekt pro Android
 
-Android `MainActivity` nyní dědí z `FormsApplicationActivity`. V `OnCreate` přepsat `LoadApplication` metoda je volána s instancí `App` třídy.
+Android `MainActivity` dědí z `FormsAppCompatActivity`. V `OnCreate` přepsat `LoadApplication` metoda je volána s instancí `App` třídy.
 
 ```csharp
-[Activity (Label = "App Lifecycle Sample", Icon = "@drawable/icon", MainLauncher = true,
+[Activity (Label = "App Lifecycle Sample", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true,
     ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-public class MainActivity :
-    global::Xamarin.Forms.Platform.Android.FormsApplicationActivity // superclass new in 1.3
+public class MainActivity : FormsAppCompatActivity
 {
     protected override void OnCreate (Bundle bundle)
     {
@@ -195,17 +194,11 @@ public class MainActivity :
 }
 ```
 
-> [!NOTE]
-> Je novější [ `FormsAppCompatActivity` ](~/xamarin-forms/platform/android/appcompat.md) základní třídu, která umožňuje lepší podpory Android materiálu návrhu.
-> To se stane výchozí šablonu pro Android v budoucnosti, ale můžete postupovat podle [tyto pokyny](~/xamarin-forms/platform/android/appcompat.md) k aktualizaci existující aplikace pro Android.
+### <a name="universal-windows-project-uwp-for-windows-10"></a>Projekt univerzální Windows (UPW) pro Windows 10
 
-### <a name="universal-windows-project-uwp-for-windows-10"></a>Univerzální projekt pro Windows (UWP) pro Windows 10
+Zobrazit [projekty instalace Windows](~/xamarin-forms/platform/windows/installation/index.md) informace o podpoře UWP v Xamarin.Forms.
 
-V tématu [projekty instalace Windows](~/xamarin-forms/platform/windows/installation/index.md) informace o podpoře UWP v Xamarin.Forms.
-
-Na hlavní stránku projektu UPW musí dědit z `WindowsPage`. To znamená XAML a C# pro `MainPage` odkaz `FormsApplicationPage` třídy, jak je vidět.
-
-XAML používá vlastní obor názvů tak, aby kořenový element odráží `FormsApplicationPage` třídy:
+Hlavní stránka v projektu UWP by měla dědit z `WindowsPage`:
 
 ```xaml
 <forms:WindowsPage
@@ -215,7 +208,7 @@ XAML používá vlastní obor názvů tak, aby kořenový element odráží `For
 </forms:WindowsPage>
 ```
 
-Konstrukce codebehind C# musí volat `LoadApplication` k vytvoření instance vaše Xamarin.Forms `App`. Všimněte si, že je dobrým zvykem explicitně ke kvalifikaci použít obor názvů aplikace `App` vzhledem k tomu, že aplikace UWP také mají svůj vlastní `App` nezávislé na platformě Xamarin.Forms třídy.
+Konstrukce codebehind C# musí volat `LoadApplication` vytvořit instanci vaší Xamarin.Forms `App`. Všimněte si, že je dobrým zvykem explicitně používání oboru názvů aplikací k získání způsobilosti `App` vzhledem k tomu, že aplikace UPW také mají svůj vlastní `App` třídy, které nesouvisí se Xamarin.Forms.
 
 ```csharp
 public sealed partial class MainPage
@@ -229,4 +222,4 @@ public sealed partial class MainPage
  }
 ```
 
-Všimněte si, že `Forms.Init()` musí být volán v **App.xaml.cs** kolem řádku 63.
+Všimněte si, že `Forms.Init()` musí být volána **App.xaml.cs** kolem řádku 63.

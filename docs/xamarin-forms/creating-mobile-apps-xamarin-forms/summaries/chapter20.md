@@ -1,167 +1,167 @@
 ---
-title: Souhrn kapitoly 20. Asynchronní a soubor vstupně-výstupních operací
-description: 'Vytváření mobilních aplikací s Xamarin.Forms: Souhrn kapitoly 20. Asynchronní a soubor vstupně-výstupních operací'
+title: Souhrn kapitoly 20. Asynchronní a souborové I/O
+description: 'Vytváření mobilních aplikací s Xamarin.Forms: Souhrn kapitoly 20. Asynchronní a souborové I/O'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: D595862D-64FD-4C0D-B0AD-C1F440564247
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: fbcf1c9cfb1cd87ea33f47ae61a8ebe233b89736
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 2ff54b65b1dca9798c91f147da7e8482649e40d2
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241865"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996279"
 ---
-# <a name="summary-of-chapter-20-async-and-file-io"></a>Souhrn kapitoly 20. Asynchronní a soubor vstupně-výstupních operací
+# <a name="summary-of-chapter-20-async-and-file-io"></a>Souhrn kapitoly 20. Asynchronní a souborové I/O
 
- Grafické uživatelské rozhraní musí reagovat na vstup uživatele události postupně. To znamená, že veškeré zpracování uživatelského vstupu událostí, které se musí vyskytovat v jedním vláknem, často říká *hlavního vlákna* nebo *vlákna uživatelského rozhraní*.
+ Grafické uživatelské rozhraní musí reagovat na události uživatelského vstupu postupně. Z toho vyplývá, veškeré zpracování událostí uživatelského vstupu, které se musí vyskytovat v jednom vlákně, často označované jako *hlavního vlákna* nebo *vlákno uživatelského rozhraní*.
 
-Uživatelé očekávají, že jako odpovídající grafické uživatelské rozhraní. To znamená, že program rychle musí zpracovat události vstup uživatele. Pokud tento způsob není možný, pak zpracování musí být předané centrům sekundární vláken provádění.
+Uživatelé očekávají, že grafické uživatelské rozhraní bude reagovat. To znamená, že program rychle musí zpracovávat události vstupu uživatele. Pokud to není možné, pak zpracování musí být předané centrům sekundární vlákna exekuce.
 
-Několik ukázkových programů v této příručce použili [ `WebRequest` ](https://developer.xamarin.com/api/type/System.Net.WebRequest/) třídy. V této třídě [ `BeginGetReponse` ](https://developer.xamarin.com/api/member/System.Net.WebRequest.BeginGetResponse/p/System.AsyncCallback/System.Object/) metoda spustí pracovní vlákno, které zavolá funkci zpětného volání při dokončení. Ale této funkce zpětného volání běží pracovní vlákno, takže program musí volat [ `Device.BeginInvokeOnMainThread` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.BeginInvokeOnMainThread/p/System.Action/) metoda pro přístup k uživatelské rozhraní.
+Několik ukázkové aplikace v této příručce používají [ `WebRequest` ](xref:System.Net.WebRequest) třídy. V této třídě [ `BeginGetReponse` ](xref:System.Net.WebRequest.BeginGetResponse(System.AsyncCallback,System.Object)) metoda začíná pracovní podproces, který volá funkci zpětného volání, jakmile se dokončí. Však spuštění této funkce zpětného volání v pracovní vlákno, takže program musí volat [ `Device.BeginInvokeOnMainThread` ](xref:Xamarin.Forms.Device.BeginInvokeOnMainThread(System.Action)) metody pro přístup k uživatelské rozhraní.
 
-Více moderní přístup k asynchronní zpracování je k dispozici v rozhraní .NET a C#. To zahrnuje [ `Task` ](https://developer.xamarin.com/api/type/System.Threading.Tasks.Task/) a [ `Task<TResult>` ](https://developer.xamarin.com/api/type/System.Threading.Tasks.Task%3CTResult%3E/) třídami a ostatními typy v [ `System.Threading` ](https://developer.xamarin.com/api/namespace/System.Threading/) a [ `System.Threading.Tasks` ](https://developer.xamarin.com/api/namespace/System.Threading.Tasks/) obory názvů, a také 5.0 C# `async` a `await` klíčová slova. Je tato kapitola, která se zaměřuje na.
+Více moderní přístup pro asynchronní zpracování je k dispozici v rozhraní .NET a C#. To zahrnuje [ `Task` ](xref:System.Threading.Tasks.Task) a [ `Task<TResult>` ](xref:System.Threading.Tasks.Task`1) třídami a ostatními typy v [ `System.Threading` ](xref:System.Threading) a [ `System.Threading.Tasks` ](xref:System.Threading.Tasks) obory názvů, a také 5.0 C# `async` a `await` klíčová slova. To je tato kapitola, která se zaměřuje na.
 
-## <a name="from-callbacks-to-await"></a>Z zpětná volání a operátoru await
+## <a name="from-callbacks-to-await"></a>Z zpětná volání k operátoru await
 
-`Page` Vlastní třídy obsahuje tři asynchronní metody pro zobrazení výstrah polí:
+`Page` Třída obsahuje tři asynchronní metody k zobrazení polí výstrahy:
 
-- [`DisplayAlert`](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayAlert/p/System.String/System.String/System.String/) Vrátí `Task` objektu
-- [`DisplayAlert`](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayAlert/p/System.String/System.String/System.String/System.String/) Vrátí `Task<bool>` objektu
-- [`DisplayActionSheet`](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.DisplayActionSheet/p/System.String/System.String/System.String/System.String[]/) Vrátí `Task<string>` objektu
+- [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String)) Vrátí `Task` objektu
+- [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String,System.String)) Vrátí `Task<bool>` objektu
+- [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet(System.String,System.String,System.String,System.String[])) Vrátí `Task<string>` objektu
 
-`Task` Objekty znamenat, že tyto metody implementovat úloh based Asynchronous Pattern označuje jako klepnutím. Tyto `Task` objekty jsou rychle vrátila z metody. `Task<T>` Hodnot tvoří "promise", která vrátí hodnotu typu `TResult` budou k dispozici po dokončení úlohy. `Task` Návratová hodnota určuje, že se vrátil dokončení ale bez hodnoty asynchronní akce.
+`Task` Objekty znamenat, že tyto metody implementovat založené na úlohách asynchronního vzoru označovaného jako TAP. Tyto `Task` objekty jsou rychle vrátil z metody. `Task<T>` Hodnoty představují "příslib", která vrátí hodnotu typu `TResult` budou dostupné po dokončení úlohy. `Task` Návratová hodnota Určuje asynchronní akce se bude vrátil dokončení ale bez hodnot.
 
-V těchto případech `Task` je dokončená, když uživatel zavře pole výstrahy.  
+V těchto případech `Task` je dokončená, když je uživatel nezavře pole výstrahy.  
 
-### <a name="an-alert-with-callbacks"></a>Výstraha s zpětných volání
+### <a name="an-alert-with-callbacks"></a>Výstraha se zpětná volání
 
-[ **AlertCallbacks** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/AlertCallbacks) příklad znázorňuje způsob zpracování `Task<bool>` vrátit objekty a `Device.BeginInvokeOnMainThread` volání pomocí metody zpětného volání.
+[ **AlertCallbacks** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/AlertCallbacks) Ukázka předvádí, jak zpracovat `Task<bool>` vrátí objekty a `Device.BeginInvokeOnMainThread` volání pomocí metod zpětného volání.
 
-### <a name="an-alert-with-lambdas"></a>Výstraha s lambdas
+### <a name="an-alert-with-lambdas"></a>Výstraha s výrazy lambda
 
-[ **AlertLambdas** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/AlertLambdas) příklad ukazuje, jak používat anonymní lambda funkce pro zpracování `Task` a `Device.BeginInvokeOnMainThread` volání.  
+[ **AlertLambdas** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/AlertLambdas) Ukázka předvádí, jak používat anonymní lambda funkce pro zpracování `Task` a `Device.BeginInvokeOnMainThread` volání.  
 
-### <a name="an-alert-with-await"></a>Výstraha s await
+### <a name="an-alert-with-await"></a>Výstraha se await
 
-Zahrnuje více Nejjednodušším způsobem `async` a `await` klíčová slova zavedená v C# 5. [ **AlertAwait** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/AlertAwait) příklad znázorňuje jejich použití.
+Jednodušší přístup zahrnuje `async` a `await` klíčová slova zavedená v jazyce C# 5. [ **AlertAwait** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/AlertAwait) ukázce jejich použití.
 
 ### <a name="an-alert-with-nothing"></a>Výstraha se nic
 
-Asynchronní metoda vrátí-li `Task` místo `Task<TResult>`, potom program nepotřebuje k používání některé z těchto postupů, pokud nepotřebuje vědět při dokončení asynchronní úlohu. [ **NothingAlert** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/NothingAlert) příklad znázorňuje to.
+Pokud asynchronní metoda vrátí `Task` spíše než `Task<TResult>`, program nebude muset použít libovolnou z následujících postupů, pokud nepotřebuje vědět, až se dokončí asynchronní úlohu. [ **NothingAlert** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/NothingAlert) příklad ukazuje to.
 
 ### <a name="saving-program-settings-asynchronously"></a>Ukládá se nastavení programu asynchronně
 
-[ **SaveProgramChanges** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/SaveProgramSettings) příklad ukazuje použití [ `SavePropertiesAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Application.SavePropertiesAsync()/) metodu `Application` se uložit nastavení programu, které se změnit bez přepsání `OnSleep` metoda.
+[ **SaveProgramChanges** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/SaveProgramSettings) ukázka demonstruje použití [ `SavePropertiesAsync` ](xref:Xamarin.Forms.Application.SavePropertiesAsync) metoda `Application` uložte nastavení programu při změně bez přepsání `OnSleep` metody.
 
-### <a name="a-platform-independent-timer"></a>Časovač nezávislé na platformě
+### <a name="a-platform-independent-timer"></a>Časovač nezávislá na platformě
 
-Je možné použít [ `Task.Delay` ](https://developer.xamarin.com/api/member/System.Threading.Tasks.Task.Delay/p/System.Int32/) vytvořit časovač nezávislé na platformě. [ **TaskDelayClock** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/TaskDelayClock) příklad znázorňuje to.
+Je možné použít [ `Task.Delay` ](xref:System.Threading.Tasks.Task.Delay(System.Int32)) vytvoření časovače nezávislá na platformě. [ **TaskDelayClock** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/TaskDelayClock) příklad ukazuje to.
 
 ## <a name="file-inputoutput"></a>Vstupní a výstupní soubor
 
-Obvyklým .NET [ `System.IO` ](https://developer.xamarin.com/api/namespace/System.IO/) obor názvů byl zdroj podpora souborů vstupně-výstupní operace. I když některé metody v tomto oboru názvů podporovat asynchronní operace, většina nepodporují. Obor názvů také podporuje několik jednoduchý způsob volání, která provádějí vstupně-výstupních operací funkce sofistikované souboru.
+Tradičně .NET [ `System.IO` ](xref:System.IO) obor názvů byl zdroj vstupu a výstupu souborů podpory. I když některé metody v tomto oboru názvů podporovat asynchronní operace, většina to nejde. Obor názvů podporuje také několik jednoduchý způsob volání, které provádějí funkce sofistikované souboru vstupně-výstupních operací.
 
-### <a name="good-news-and-bad-news"></a>Dobrá zpráva a chybný zprávy
+### <a name="good-news-and-bad-news"></a>Dobrá zpráva a špatné
 
-Všechny platformy nepodporuje místní úložiště Xamarin.Forms podporu aplikací &mdash; úložiště, které je privátní k aplikaci.
+Všechny platformy podporuje místní úložiště aplikací Xamarin.Forms podporu &mdash; úložiště, které patří k aplikaci.
 
-Knihovny Xamarin.iOS a Xamarin.Android zahrnují verzi rozhraní .NET, která má Xamarin výslovně přizpůsobit pro těchto dvou platforem. Patří mezi ně třídy z `System.IO` můžete provádět vstupně-výstupní soubor s místním úložištěm aplikace v těchto dvou platforem.
+Knihovny Xamarin.iOS a Xamarin.Android obsahují verzi rozhraní .NET, která má Xamarin výslovně přizpůsobené u těchto dvou platforem. Mezi ně patří třídy z `System.IO` , můžete použít k provádění vstupně-výstupní soubor s místním úložištěm aplikace v těchto dvou platforem.
 
-Ale pokud hledáte tyto `System.IO` třídy v Xamarin.Forms PCL, nebude možné najít je. Problém je, že soubor Microsoft zcela renovována vstupně-výstupních operací pro rozhraní API systému Windows Runtime. Programy, které jsou cílené na Windows 8.1, Windows Phone 8.1 a univerzální platformu Windows nepoužívejte `System.IO` pro soubor vstupně-výstupní operace.
+Nicméně pokud hledáte toto `System.IO` třídy v Xamarin.Forms PCL, které nenajdete je. Problém je tento soubor Microsoft zcela přepracované vstupně-výstupních operací pro rozhraní API architektury Windows Runtime. Programy, které cílí na Windows 8.1, Windows Phone 8.1 a univerzální platformu Windows nepoužívejte `System.IO` pro soubor vstupně-výstupních operací.
 
-To znamená, že budete muset použít [ `DependencyService` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyService/) (nejprve popsané v [ **kapitoly 9. Volání rozhraní API specifické pro platformu** ](chapter09.md) implementovat vstupně-výstupní soubor.
+To znamená, že budete muset použít [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) (nejprve podrobněji [ **kapitoly 9. Volání rozhraní API pro konkrétní platformu** ](chapter09.md) provádět vstupně-výstupní operace souboru.
 
-### <a name="a-first-shot-at-cross-platform-file-io"></a>První snímek v souboru napříč platformami vstupně-výstupních operací
+### <a name="a-first-shot-at-cross-platform-file-io"></a>První snímek na vstupu a výstupu souborů napříč platformami
 
-[ **TextFileTryout** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/TextFileTryout) definuje ukázková [ `IFileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter20/TextFileTryout/TextFileTryout/TextFileTryout/IFileHelper.cs) rozhraní pro vstupně-výstupní soubor a implementace tohoto rozhraní ve všech platformách. Implementace prostředí Windows Runtime však nepodporují pomocí metod v tomto rozhraní vzhledem k tomu, že jsou asynchronní metody prostředí Windows Runtime souboru vstupně-výstupní operace.
+[ **TextFileTryout** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/TextFileTryout) definuje ukázková [ `IFileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter20/TextFileTryout/TextFileTryout/TextFileTryout/IFileHelper.cs) rozhraní pro vstup a výstup souborů a implementace tohoto rozhraní ve všech platformách. Ale implementace modulu Windows Runtime nefungují pomocí metod v tomto rozhraní, protože jsou asynchronní vstupně-výstupní metody souboru Windows Runtime.
 
-### <a name="accommodating-windows-runtime-file-io"></a>Možnost využití vstupně-výstupní soubor prostředí Windows Runtime
+### <a name="accommodating-windows-runtime-file-io"></a>Narážely vstup a výstup souborů Windows Runtime
 
-Aplikace běžící v rámci prostředí Windows Runtime použít třídy v [ `Windows.Storage` ](https://msdn.microsoft.com/library/windows/apps/windows.storage.aspx) a [ `Windows.Storage.Streams` ](https://msdn.microsoft.com/library/windows/apps/windows.storage.streams.aspx) obory názvů pro soubor vstupně-výstupní operace, včetně aplikace místní úložiště. Protože Microsoft určili, že všechny operace, které vyžadují více než 50 milisekundách musí být asynchronní k zabránění blokování vlákna uživatelského rozhraní, jsou většinou asynchronní tyto metody vstupně-výstupní soubor.
+Použít třídy v programy spuštěné v rámci modulu Windows Runtime [ `Windows.Storage` ](https://msdn.microsoft.com/library/windows/apps/windows.storage.aspx) a [ `Windows.Storage.Streams` ](https://msdn.microsoft.com/library/windows/apps/windows.storage.streams.aspx) obory názvů pro soubor vstupně-výstupních operací, včetně místní úložiště aplikací. Protože Microsoft určili, že všechny operace, které vyžadují více než 50 MS by měl být asynchronní k zabránění blokování vlákna uživatelského rozhraní, jsou většinou asynchronní tyto metody vstupně-výstupní operace souboru.
 
-Kód demonstraci tento nový přístup bude v knihovně, aby se může použít jiné aplikace.
+Ukázka tento nový přístup kódu bude v knihovně tak, aby ho můžete použít jiné aplikace.
 
-## <a name="platform-specific-libraries"></a>Specifické pro platformu knihovny
+## <a name="platform-specific-libraries"></a>Knihovny pro konkrétní platformu
 
-Je výhodné opakovaně použitelný kód uložit do knihovny. To je samozřejmě obtížnější, když jsou různé části opakovaně použitelný kód pro úplně jinou operační systémy.
+Je výhodné pro uložení opakovaně použitelný kód v knihovnách. To je samozřejmě obtížnější, když jsou různý kód opakovaně použitelné pro zcela různé operační systémy.
 
-[ **Xamarin.FormsBook.Platform** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform) řešení ukazuje jeden ze způsobů. Toto řešení obsahuje sedm různých projektů:
+[ **Xamarin.FormsBook.Platform** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform) řešení ukazuje jeden ze způsobů. Toto řešení obsahuje sedm různých projektech:
 
 - [**Xamarin.FormsBook.Platform**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform), normální PCL Xamarin.Forms
 - [**Xamarin.FormsBook.Platform.iOS**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.iOS), knihovny tříd s iOS
-- [**Xamarin.FormsBook.Platform.Android**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android), knihovnu aplikace Android – třída
-- [**Xamarin.FormsBook.Platform.UWP**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.UWP), knihovny tříd Universal Windows
+- [**Xamarin.FormsBook.Platform.Android**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android), knihovny tříd Androidu
+- [**Xamarin.FormsBook.Platform.UWP**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.UWP), knihovnu tříd Universal Windows
 - [**Xamarin.FormsBook.Platform.Windows**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Windows), PCL pro Windows 8.1.
 - [**Xamarin.FormsBook.Platform.WinPhone**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinPhone), PCL pro Windows Phone 8.1
-- [**Xamarin.FormsBook.Platform.WinRT**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT), sdílený projekt pro kód, který je společný pro všechny platformy systému Windows
+- [**Xamarin.FormsBook.Platform.WinRT**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT), sdílený projekt pro kód, který je společné pro všechny platformy Windows
 
-Všechny projekty jednotlivé platformy (s výjimkou produktů **Xamarin.FormsBook.Platform.WinRT**) odkazující na **Xamarin.FormsBook.Platform**. Tři projekty Windows obsahují odkaz na **Xamarin.FormsBook.Platform.WinRT**.
+Všechny projekty jednotlivé platformy (s výjimkou produktů **Xamarin.FormsBook.Platform.WinRT**) mají odkazy na **Xamarin.FormsBook.Platform**. Tři projekty Windows obsahují odkaz na **Xamarin.FormsBook.Platform.WinRT**.
 
-Všechny projekty obsahují statického `Toolkit.Init` metodou, jak zajistit, že knihovny je načtena, pokud ji není přímo odkazuje na projekt v řešení Xamarin.Forms aplikace.
+Všechny projekty obsahují statickou `Toolkit.Init` metodou, jak zajistit, že je načíst knihovnu, pokud to není přímo odkazuje projekt v řešení aplikace Xamarin.Forms.
 
-**Xamarin.FormsBook.Platform** projekt obsahuje nové [ `IFileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/IFileHelper.cs) rozhraní. Všechny metody nyní mají názvy s `Async` přípony a vraťte se `Task` objekty.
+**Xamarin.FormsBook.Platform** projekt obsahuje nové [ `IFileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/IFileHelper.cs) rozhraní. Všechny metody teď mají názvy s `Async` přípony a vraťte se `Task` objekty.
 
 **Xamarin.FormsBook.Platform.WinRT** projekt obsahuje [ `FileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/FileHelper.cs) třídu pro prostředí Windows Runtime.
 
-**Xamarin.FormsBook.Platform.iOS** projekt obsahuje [ `FileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.iOS/FileHelper.cs) třídu pro iOS. Tyto metody musí být nyní asynchronní. Některé metody použít asynchronní verze metody definované v `StreamWriter` a `StreamReader`: [ `WriteAsync` ](https://developer.xamarin.com/api/member/System.IO.StreamWriter.WriteAsync/p/System.String/) a [ `ReadToEndAsync` ](https://developer.xamarin.com/api/member/System.IO.StreamReader.ReadToEndAsync()/). Ostatní převést výsledek, který má `Task` pomocí [ `FromResult` ](https://developer.xamarin.com/api/member/System.Threading.Tasks.Task.FromResult%7BTResult%7D/p/TResult/) metoda.
+**Xamarin.FormsBook.Platform.iOS** projekt obsahuje [ `FileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.iOS/FileHelper.cs) třídy pro iOS. Tyto metody musí být nyní asynchronní. Některé metody použít asynchronní verze metod definovaných v `StreamWriter` a `StreamReader`: [ `WriteAsync` ](xref:System.IO.StreamWriter.WriteAsync(System.String)) a [ `ReadToEndAsync` ](xref:System.IO.StreamReader.ReadToEndAsync). Ostatní výsledek pro převedení `Task` pomocí [ `FromResult` ](xref:System.Threading.Tasks.Task.FromResult*) metody.
 
-**Xamarin.FormsBook.Platform.Android** projekt obsahuje podobná [ `FileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android/FileHelper.cs) třídu pro Android.
+**Xamarin.FormsBook.Platform.Android** projekt obsahuje podobná [ `FileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android/FileHelper.cs) třída pro Android.
 
-**Xamarin.FormsBook.Platform** projekt obsahuje také [ `FileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/FileHelper.cs) třídu, která usnadňuje použití `DependencyService` objektu.
+**Xamarin.FormsBook.Platform** také obsahuje projekt [ `FileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/FileHelper.cs) třídu, která usnadňuje použití nástroje `DependencyService` objektu.
 
-Pokud chcete použít tyto knihovny, řešení aplikace musí obsahovat všechny projekty v **Xamarin.FormsBook.Platform** řešení a všechny projekty aplikací musí mít odkaz na knihovnu odpovídající v  **Xamarin.FormsBook.Platform**.
+Pokud chcete použít tyto knihovny, řešení pro aplikace musí zahrnovat všechny projekty v **Xamarin.FormsBook.Platform** řešení a všechny projekty aplikace musí mít odkaz na knihovnu odpovídající v  **Xamarin.FormsBook.Platform**.
 
-[ **TextFileAsync** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/TextFileAsync) řešení ukazuje, jak používat **Xamarin.FormsBook.Platform** knihovny. Všechny projekty má volání `Toolkit.Init`. Aplikace využívá asynchronní vstupně funkce.
+[ **TextFileAsync** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/TextFileAsync) řešení ukazuje, jak používat **Xamarin.FormsBook.Platform** knihovny. Každý z projektů má volání `Toolkit.Init`. Aplikace využívá asynchronní vstupně funkce.
 
 ### <a name="keeping-it-in-the-background"></a>Zachování na pozadí
 
-Metody v knihovny, které provádět volání do více asynchronních metod &mdash; , jako `WriteFileAsync` a `ReadFileASync` metody v prostředí Windows Runtime [ `FileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/FileHelper.cs) třída &mdash; můžete provedeny poněkud efektivnější pomocí [ `ConfigureAwait` ](https://developer.xamarin.com/api/member/System.Threading.Tasks.Task%3CTResult%3E.ConfigureAwait/p/System.Boolean/) metoda zrušení přepnutím zpět vlákna uživatelského rozhraní.
+Metody v knihovnách, které provádět volání do více asynchronních metod &mdash; , jako `WriteFileAsync` a `ReadFileASync` metody v modulu Windows Runtime [ `FileHelper` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/FileHelper.cs) třídy &mdash; provádět mírně efektivnější pomocí [ `ConfigureAwait` ](xref:System.Threading.Tasks.Task`1.ConfigureAwait(System.Boolean)) metoda vyhnout přepnutí zpět do vlákna uživatelského rozhraní.
 
-### <a name="dont-block-the-ui-thread"></a>Nedošlo k blokování vlákna uživatelského rozhraní!
+### <a name="dont-block-the-ui-thread"></a>Nedošlo k blokování vlákna uživatelského rozhraní.
 
-Někdy je tempting nepoužívejte `ContinueWith` nebo `await` pomocí [ `Result` ](https://developer.xamarin.com/api/property/System.Threading.Tasks.Task%3CTResult%3E.Result/) vlastnosti na metodu. To je nutno pro můžete blokovat vlákna uživatelského rozhraní nebo i zablokování aplikace.
+Někdy je lákavé nepoužívejte `ContinueWith` nebo `await` pomocí [ `Result` ](xref:System.Threading.Tasks.Task`1.Result) vlastnost na metodu. Mělo by se vyhnout může zablokovat vlákno uživatelského rozhraní nebo dokonce zablokování aplikace.
 
-## <a name="your-own-awaitable-methods"></a>Vlastní může používat await metody
+## <a name="your-own-awaitable-methods"></a>Očekávatelný metody
 
-Můžete spouštět nějaký kód asynchronně předáním do jednoho z [ `Task.Run` ](https://developer.xamarin.com/api/member/System.Threading.Tasks.Task.Run/p/System.Action/) metody. Můžete volat `Task.Run` v rámci asynchronní metody, která zpracovává některé režijní náklady.
+Kód lze spouštět asynchronně pomocí předání do jednoho z [ `Task.Run` ](xref:System.Threading.Tasks.Task.Run(System.Action)) metody. Můžete volat `Task.Run` v rámci asynchronní metody, která zpracovává některé režijní náklady.
 
-Různé `Task.Run` vzory jsou popsané dále.
+Různé `Task.Run` vzory jsou popsány níže.
 
-### <a name="the-basic-mandelbrot-set"></a>Základní sady Mandelbrot
+### <a name="the-basic-mandelbrot-set"></a>Základní sada Mandelbrot
 
-Kreslení Mandelbrot nastavit v reálném čase [ **Xamarin.Forms.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) knihovna má [ `Complex` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/Complex.cs) struktura podobná v `System.Numerics` obor názvů.
+Chcete-li nakreslit Mandelbrot nastavit v reálném čase [ **Xamarin.Forms.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) knihovna má [ `Complex` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/Complex.cs) strukturou podobnou té v `System.Numerics` obor názvů.
 
-[ **MandelbrotSet** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/MandelbrotSet) ukázka má `CalculateMandeblotAsync` metoda ve svém kódu souboru, který vypočítá základní černobílý sadu Mandelbrot a používá [ `BmpMaker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BmpMaker.cs)se umístí na rastrový obrázek.
+[ **MandelbrotSet** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/MandelbrotSet) ukázka má `CalculateMandeblotAsync` metody v souboru kódu na pozadí, který vypočítá základní sadu černobílé Mandelbrot a používá [ `BmpMaker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BmpMaker.cs)umístění na rastrový obrázek.
 
 ### <a name="marking-progress"></a>Označení průběh
 
-Sestava pokroku z asynchronní metodu můžete vytvořit instanci [ `Progress<T>` ](https://developer.xamarin.com/api/type/System.Progress%3CT%3E/) třídy a definovat asynchronní metodu tak, aby měl argument typu [ `IProgress<T>` ](https://developer.xamarin.com/api/type/System.IProgress%3CT%3E/). Tento postup je znázorněn v [ **MandelbrotProgress** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/MandelbrotProgress) ukázka.
+Pro informace o průběhu z asynchronní metody můžete vytvořit instanci [ `Progress<T>` ](xref:System.Progress`1) třídy a definujte vaši asynchronní metoda může mít argument typu [ `IProgress<T>` ](xref:System.IProgress`1). To je patrné [ **MandelbrotProgress** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/MandelbrotProgress) vzorku.
 
 ### <a name="cancelling-the-job"></a>Probíhá zrušení úlohy
 
-Je také možné zapsat asynchronní metodu být zrušit. Začínat třídy s názvem [ `CancellationTokenSource` ](https://developer.xamarin.com/api/type/System.Threading.CancellationTokenSource/). [ `Token` ](https://developer.xamarin.com/api/property/System.Threading.CancellationTokenSource.Token/) Vlastnost je hodnota typu [ `CancellationToken` ](https://developer.xamarin.com/api/type/System.Threading.CancellationToken/). To je předán asynchronní funkce. Program zavolá [ `Cancel` ](https://developer.xamarin.com/api/member/System.Threading.CancellationTokenSource.Cancel()/) metodu `CancellationTokenSource` (obvykle v odpovědi na akce uživatelem) Chcete-li zrušit asynchronní funkce.
+Můžete taky psát asynchronní metody na zrušit. Začněte s třídou s názvem [ `CancellationTokenSource` ](xref:System.Threading.CancellationTokenSource). [ `Token` ](xref:System.Threading.CancellationTokenSource.Token) Vlastnost je hodnota typu [ `CancellationToken` ](xref:System.Threading.CancellationToken). To je předáno asynchronní funkci. Program zavolá [ `Cancel` ](xref:System.Threading.CancellationTokenSource.Cancel) metoda `CancellationTokenSource` (obecně v reakci na akci uživatel) pro zrušení asynchronní funkce.
 
-Asynchronní metoda může pravidelně kontrolovat, [ `IsCancellationRequested` ](https://developer.xamarin.com/api/property/System.Threading.CancellationToken.IsCancellationRequested/) vlastnost `CancellationToken` a ukončení, pokud je vlastnost `true`, stačí zavolat [ `ThrowIfCancellationRequested` ](https://developer.xamarin.com/api/member/System.Threading.CancellationToken.ThrowIfCancellationRequested()/) metoda v takovém případě metodu končí [ `OperationCancelledException` ](https://developer.xamarin.com/api/type/System.OperationCanceledException/).
+Asynchronní metoda může pravidelně kontrolovat [ `IsCancellationRequested` ](xref:System.Threading.CancellationToken.IsCancellationRequested) vlastnost `CancellationToken` a pokud je vlastnost `true`, nebo jednoduše zavoláte [ `ThrowIfCancellationRequested` ](xref:System.Threading.CancellationToken.ThrowIfCancellationRequested) metoda v Metoda takovém končí [ `OperationCancelledException` ](xref:System.OperationCanceledException).
 
-[ **MandelbrotCancellation** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/MandelbrotCancellation) příklad ukazuje použití zrušit funkce.
+[ **MandelbrotCancellation** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/MandelbrotCancellation) ukázka demonstruje použití zrušitelný funkce.
 
 ### <a name="an-mvvm-mandelbrot"></a>Mandelbrot modelem MVVM
 
-[ **MandelbrotXF** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/MandelbrotXF) ukázka má rozsáhlejší uživatelské rozhraní a většinou je založena na [ `MandelbrotModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter20/MandelbrotXF/MandelbrotXF/MandelbrotXF/MandelbrotModel.cs) a [ `MandelbrotViewModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter20/MandelbrotXF/MandelbrotXF/MandelbrotXF/MandelbrotViewModel.cs)třídy:
+[ **MandelbrotXF** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/MandelbrotXF) ukázka má rozsáhlejší uživatelské rozhraní a většinou je na základě [ `MandelbrotModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter20/MandelbrotXF/MandelbrotXF/MandelbrotXF/MandelbrotModel.cs) a [ `MandelbrotViewModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter20/MandelbrotXF/MandelbrotXF/MandelbrotXF/MandelbrotViewModel.cs)třídy:
 
-[![Trojitá snímek obrazovky Mandelbrot X F](images/ch20fg13-small.png "rozhraní MVVM Mandelbrot")](images/ch20fg13-large.png#lightbox "Mandelbrot rozhraní MVVM")
+[![Trojitá snímek Mandelbrot X F](images/ch20fg13-small.png "MVVM Mandelbrot")](images/ch20fg13-large.png#lightbox "MVVM Mandelbrot")
 
-## <a name="back-to-the-web"></a>Zpět na webu
+## <a name="back-to-the-web"></a>Zpět do webového rozhraní
 
-[ `WebRequest` ](https://developer.xamarin.com/api/type/System.Net.WebRequest/) Třída používaná v některé ukázky používá protokol stejné asynchronní označovaný jako asynchronní programovací Model nebo APM. Tyto třídy můžete převést moderní klepněte na protokol pomocí jedné z `FromAsync` metody v [ `TaskFactory` ](https://developer.xamarin.com/api/type/System.Threading.Tasks.TaskFactory%3CTResult%3E/) třídy. [ **ApmToTap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/ApmToTap) příklad znázorňuje to.
+[ `WebRequest` ](xref:System.Net.WebRequest) Třída používaná v některých vzorcích používá zastaralý asynchronní protokol volá asynchronní programovací Model nebo APM. Takové třídy lze převést na moderní klepnutím na protokol pomocí jedné z `FromAsync` metody v [ `TaskFactory` ](xref:System.Threading.Tasks.TaskFactory`1) třídy. [ **ApmToTap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/ApmToTap) příklad ukazuje to.
 
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Úplný text 20 kapitoly (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch20-Apr2016.pdf)
+- [20 kapitoly textu v plném znění (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch20-Apr2016.pdf)
 - [Ukázky kapitoly 20](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20)
 - [Práce se soubory](~/xamarin-forms/app-fundamentals/files.md)

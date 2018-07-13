@@ -1,36 +1,36 @@
 ---
-title: Základy rastrový obrázek v SkiaSharp
-description: Tento článek vysvětluje, jak načíst rastrové obrázky v SkiaSharp z různých zdrojů a zobrazí je v aplikacích Xamarin.Forms a to ukazuje s ukázkový kód.
+title: Bitmapa – základy ve ve Skiasharpu
+description: Tento článek vysvětluje, jak načíst rastrové obrázky v SkiaSharp z různých zdrojů a jejich zobrazení v aplikacích Xamarin.Forms a ukazuje to se vzorovým kódem.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
 author: charlespetzold
 ms.author: chape
 ms.date: 04/03/2017
-ms.openlocfilehash: 291f08afb95c70e9f9fccc02e1fd7353cf107213
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: dec6fa1534f14836ae98677ad33e280ff510fb97
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244383"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995182"
 ---
-# <a name="bitmap-basics-in-skiasharp"></a>Základy rastrový obrázek v SkiaSharp
+# <a name="bitmap-basics-in-skiasharp"></a>Bitmapa – základy ve ve Skiasharpu
 
 _Načíst rastrové obrázky z různých zdrojů a jejich zobrazení._
 
-Podpora rastrových obrázků v SkiaSharp je poměrně rozsáhlé. Tento článek se týká pouze Základy &mdash; jak načíst rastrové obrázky a jejich zobrazení:
+Podpora rastrové obrázky v SkiaSharp je poměrně rozsáhlý. Tento článek se týká pouze Základy &mdash; zatížení rastrové obrázky a způsob jejich zobrazení:
 
-![](bitmaps-images/bitmapssample.png "Zobrazení dvě bitové mapy")
+![](bitmaps-images/bitmapssample.png "Zobrazení dvou rastrových obrázků")
 
-Rastrový obrázek SkiaSharp je objekt typu [ `SKBitmap` ](https://developer.xamarin.com/api/type/SkiaSharp.SKBitmap/). Existuje celá řada způsobů pro vytvoření rastrového obrázku, ale v tomto článku omezuje, aby se do [ `SKBitmap.Decode` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.Decode/p/SkiaSharp.SKStream/) metodu, která načte bitovou mapu z [ `SKStream` ](https://developer.xamarin.com/api/type/SkiaSharp.SKStream/) objekt, který odkazuje na soubor rastrového obrázku. Je možné použít [ `SKManagedStream` ](https://developer.xamarin.com/api/type/SkiaSharp.SKManagedStream/) třídu odvozenou od `SKStream` protože má konstruktor, který přijímá .NET [ `Stream` ](https://developer.xamarin.com/api/type/System.IO.Stream/) objektu.
+Rastrový obrázek ve Skiasharpu je objekt typu [ `SKBitmap` ](https://developer.xamarin.com/api/type/SkiaSharp.SKBitmap/). Existuje mnoho způsobů, jak vytvořit rastrový obrázek, ale v tomto článku omezuje na [ `SKBitmap.Decode` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.Decode/p/SkiaSharp.SKStream/) metodu, která načte bitovou mapu ze [ `SKStream` ](https://developer.xamarin.com/api/type/SkiaSharp.SKStream/) objekt, který odkazuje na soubor rastrového obrázku. Je vhodné použít [ `SKManagedStream` ](https://developer.xamarin.com/api/type/SkiaSharp.SKManagedStream/) třídu odvozenou od `SKStream` protože nemá konstruktor, který přijímá .NET [ `Stream` ](xref:System.IO.Stream) objektu.
 
-**Základní bitmap** stránku **SkiaSharpFormsDemos** program ukazuje, jak načíst rastrové obrázky ze tří různých zdrojů:
+**Základní rastrové obrázky** stránku **SkiaSharpFormsDemos** program ukazuje, jak načíst rastrové obrázky ze tří různých zdrojů:
 
-- Příliš Internetu
-- Z prostředku vložených ve spustitelném souboru
+- Z více než Internetu
+- Ze zdroje vložený do spustitelného souboru
 - Z knihovny fotografií uživatele
 
-Tři `SKBitmap` objekty pro tyto tři zdroje jsou definovány jako pole v [ `BasicBitmapsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/BasicBitmapsPage.cs) třídy:
+Tři `SKBitmap` objekty pro tyto tři zdroje se definují jako pole v [ `BasicBitmapsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/BasicBitmapsPage.cs) třídy:
 
 ```csharp
 public class BasicBitmapsPage : ContentPage
@@ -53,9 +53,9 @@ public class BasicBitmapsPage : ContentPage
 }
 ```
 
-## <a name="loading-a-bitmap-from-the-web"></a>Načítání bitmapy z webu
+## <a name="loading-a-bitmap-from-the-web"></a>Načítání rastrový obrázek z webu
 
-Načíst rastrový obrázek založené na adresu URL, můžete použít [ `WebRequest` ](https://developer.xamarin.com/api/type/System.Net.WebRequest/) třídy, jak je znázorněno v následujícím kódu spustit v `BasicBitmapsPage` konstruktor. Adresu URL sem odkazuje na oblast na webu Xamarin s bitovými mapami některé ukázka. Balíček na webu umožňuje připojování specifikace pro změnu velikosti rastrového obrázku na konkrétní šířku:
+Načíst bitmapu podle adresy URL, můžete použít [ `WebRequest` ](xref:System.Net.WebRequest) třídy, jak je znázorněno v následujícím kódu proveden v `BasicBitmapsPage` konstruktoru. Adresa URL zde odkazuje na oblast na webu Xamarin se některé ukázkové rastrové obrázky. Balíček na webu umožňuje přidávání specifikace pro změnu velikosti rastrový obrázek pro konkrétní width:
 
 ```csharp
 Uri uri = new Uri("http://developer.xamarin.com/demo/IMG_3256.JPG?width=480");
@@ -85,15 +85,15 @@ request.BeginGetResponse((IAsyncResult arg) =>
 }, null);
 ```
 
-Když bitmapy byly úspěšně staženy, metody zpětného volání předaný `BeginGetResponse` metoda spustí. `EndGetResponse` Volání musí být ve `try` blokovat v případě, že došlo k chybě. `Stream` Získaného z `GetResponseStream` není odpovídající na některých platformách, a proto rastrový obrázek obsahu se zkopírují do `MemoryStream` objektu. V tomto okamžiku `SKManagedStream` můžete vytvořit objekt. Tuto chybu odkazuje rastrového obrázku, který je pravděpodobně soubor JPEG nebo PNG. `SKBitmap.Decode` Metoda dekóduje rastrového obrázku a ukládá výsledky do interní SkiaSharp formátu.
+Po úspěšném stažení rastrový obrázek, metody zpětného volání předána `BeginGetResponse` metoda spuštění. `EndGetResponse` Musí být ve volání `try` blokovat v případě, že došlo k chybě. `Stream` Získaného z `GetResponseStream` není dostatečné na některých platformách, takže obsah rastrového obrázku se zkopíruje do `MemoryStream` objektu. V tomto okamžiku `SKManagedStream` objekt může být vytvořen. Tuto chybu odkazuje na soubor rastrového obrázku, který je pravděpodobně soubor JPEG nebo PNG. `SKBitmap.Decode` Metoda dekóduje rastrového obrázku a ukládá výsledky v interním formátu ve Skiasharpu.
 
-Metoda zpětného volání předaný `BeginGetResponse` spustí po dokončení provádění, konstruktoru, což znamená, které `SKCanvasView` musí být zrušena umožňující `PaintSurface` obslužná rutina aktualizace zobrazení. Ale `BeginGetResponse` zpětného volání běží sekundární podproces provádění, takže je nutné použít `Device.BeginInvokeOnMainThread` ke spuštění `InvalidateSurface` metoda ve vláknu uživatelského rozhraní.
+Metoda zpětného volání předána `BeginGetResponse` spustí po dokončení provádění, konstruktor, což znamená, `SKCanvasView` je potřeba ukončit platnost umožňující `PaintSurface` obslužné rutiny aktualizace zobrazíte. Ale `BeginGetResponse` zpětného volání běží sekundární vlákno provádění, takže je nutné použít `Device.BeginInvokeOnMainThread` ke spuštění `InvalidateSurface` metodu ve vlákně uživatelského rozhraní.
 
-## <a name="loading-a-bitmap-resource"></a>Načítání prostředků rastrového obrázku
+## <a name="loading-a-bitmap-resource"></a>Načítání prostředku rastrového obrázku
 
-Z hlediska kódu je snadný přístup k načítání bitmap včetně prostředků rastrový obrázek přímo v aplikaci. **SkiaSharpFormsDemos** program obsahuje složku s názvem **média** obsahující soubor rastrového obrázku s názvem **monkey.png**. V **vlastnosti** dialogové okno pro tento soubor musí dát takový soubor **akce sestavení** z **vložený prostředek**!
+Z hlediska kódu je nejjednodušší přístup k načítání rastrové obrázky včetně prostředku rastrového obrázku přímo ve vaší aplikaci. **SkiaSharpFormsDemos** program obsahuje složku s názvem **média** obsahující soubor rastrového obrázku s názvem **monkey.png**. V **vlastnosti** dialogové okno pro tento soubor je třeba zadat takový soubor **akce sestavení** z **integrovaný prostředek**!
 
-Má každý vložený prostředek *ID prostředku* , se skládá z název projektu, složku a název souboru, všechny připojené podle období: **SkiaSharpFormsDemos.Media.monkey.png**. Přístup k tomuto prostředku můžete získat tak, že zadáte tento prostředek ID jako argument pro [ `GetManifestResourceStream` ](https://developer.xamarin.com/api/member/System.Reflection.Assembly.GetManifestResourceStream/p/System.String/) metodu [ `Assembly` ](https://developer.xamarin.com/api/type/System.Reflection.Assembly/) třídy:
+Má každý vložený prostředek *ID prostředku* , který se skládá z názvu projektu, složku a název souboru, všechny připojené podle období: **SkiaSharpFormsDemos.Media.monkey.png**. Přístup k tomuto prostředku můžete získat tak, že zadáte tento prostředek ID jako argument [ `GetManifestResourceStream` ](xref:System.Reflection.Assembly.GetManifestResourceStream(System.String)) metodu [ `Assembly` ](xref:System.Reflection.Assembly) třídy:
 
 ```csharp
 string resourceID = "SkiaSharpFormsDemos.Media.monkey.png";
@@ -106,15 +106,15 @@ using (SKManagedStream skStream = new SKManagedStream(stream))
 }
 ```
 
-To `Stream` přímo na možné převést objekt `SKManagedStream` objektu.
+To `Stream` objekt převést přímo do `SKManagedStream` objektu.
 
-## <a name="loading-a-bitmap-from-the-photo-library"></a>Načítání bitmapy z knihovny fotografie
+## <a name="loading-a-bitmap-from-the-photo-library"></a>Načítání rastrový obrázek z knihovny fotografií
 
-Je také možné uživatele, pro zatížení fotografie z knihovny obrázků zařízení. Pokud tuto funkci není poskytovaný Xamarin.Forms sám sebe. Úloha vyžaduje službu závislosti, jako jsou popsané v článku [výběr fotografie z knihovny obrázků](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md).
+Je také možné pro uživatele k načtení fotografii z knihovny obrázků zařízení. Toto zařízení není k dispozici pomocí Xamarin.Forms, samotného. Úloha vyžaduje závislou službu, jako jsou popsané v článku [výběr z knihovny obrázků fotografie](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md).
 
-**IPicturePicker.cs** souboru a tři **PicturePickerImplementation.cs** soubory z tohoto článku byly zkopírovány do různých projektů **SkiaSharpFormsDemos**řešení a zadané nové názvy oborů názvů. Kromě toho pro Android **MainActivity.cs** soubor byl upraven, jak je popsáno v článku a projekt pro iOS byla udělil oprávnění k přístupu ke knihovně fotografie se dvěma řádky směrem k dolní části **info.plist**  souboru.
+**IPicturePicker.cs** souboru a tři **PicturePickerImplementation.cs** soubory z tohoto článku byly zkopírovány do různých projektů **SkiaSharpFormsDemos**řešení a nové názvy oborů názvů. Kromě toho, Android **MainActivity.cs** soubor byl změněn, jak je popsáno v článku a projekt pro iOS se předala oprávnění pro přístup k knihovny fotografií se dvěma řádky směrem k dolní části **info.plist**  souboru.
 
-`BasicBitmapsPage` Přidá konstruktor `TapGestureRecognizer` k `SKCanvasView` upozornit odposlouchávání. Po obdržení klepněte `Tapped` obslužná rutina získá přístup k výběru obrázek závislostí služby a volání `GetImageStreamAsync`. Pokud `Stream` se vrátí objekt a potom obsah je zkopírován do `MemoryStream`, podle požadavku některé platformy. Zbytek kód je podobná další dvě metody:
+`BasicBitmapsPage` Přidá konstruktor `TapGestureRecognizer` k `SKCanvasView` upozornit odposlouchávání. Po obdržení klepnutím na `Tapped` obslužná rutina získá přístup ke službě závislost obrázek výběru a volání `GetImageStreamAsync`. Pokud `Stream` je vrácen objekt a potom se obsah zkopíruje do `MemoryStream`, jak je požadováno v některé z platforem. Zbývající část kódu je podobný dvě techniky:
 
 ```csharp
 // Add tap gesture recognizer
@@ -145,21 +145,21 @@ tapRecognizer.Tapped += async (sender, args) =>
 canvasView.GestureRecognizers.Add(tapRecognizer);
 ```
 
-Všimněte si, že `Tapped` volání obslužné rutiny `InvalidateSurface` metodu `SKCanvasView` objektu. Tím se vygeneruje nové volání `PaintSurface` obslužné rutiny.
+Všimněte si, že `Tapped` volání obslužné rutiny `InvalidateSurface` metodu `SKCanvasView` objektu. Tím se vytvoří nové volání `PaintSurface` obslužné rutiny.
 
-## <a name="displaying-the-bitmaps"></a>Zobrazení rastrových obrázků
+## <a name="displaying-the-bitmaps"></a>Zobrazení rastrové obrázky
 
-`PaintSurface` Obslužné rutiny musí zobrazit tři bitmapy. Obslužná rutina předpokládá, že telefon je v režimu na výšku a rozdělí na plátno svisle na tři stejné části.
+`PaintSurface` Obslužná rutina potřebuje rychle zobrazit tři rastrových obrázků. Obslužná rutina předpokládá, že telefon je v režimu na výšku a svisle rozdělí tři stejné části plátna.
 
-První rastrového obrázku se zobrazí se i ty nejjednodušší [ `DrawBitmap` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmap/p/SkiaSharp.SKBitmap/System.Single/System.Single/SkiaSharp.SKPaint/) metoda. Všechny, které je třeba zadat jsou souřadnice X a Y, kde má být umístěn levém horním rohu bitmapy:
+Zobrazí se první rastrového obrázku s nejjednodušší [ `DrawBitmap` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmap/p/SkiaSharp.SKBitmap/System.Single/System.Single/SkiaSharp.SKPaint/) metody. Všechno, co je třeba zadat jsou souřadnice X a Y, kde má být umístěn levém horním rohu rastrového obrázku:
 
 ```csharp
 public void DrawBitmap (SKBitmap bitmap, Single x, Single y, SKPaint paint = null)
 ```
 
-I když `SKPaint` parametr je definovaný, má výchozí hodnotu `null` a můžete ji ignorovat. Pixelů bitmapy přenesou jednoduše pixelů zobrazení plochy s mapování 1: 1.
+I když `SKPaint` je definován parametr, má výchozí hodnotu `null` a můžete ji ignorovat. Pixely rastrového obrázku jednoduše přenese na pixelech zobrazovacím povrchu se mapování 1: 1.
 
-Program můžete získat dimenze pixelů rastru pomocí [ `Width` ](https://developer.xamarin.com/api/property/SkiaSharp.SKBitmap.Width/) a [ `Height` ](https://developer.xamarin.com/api/property/SkiaSharp.SKBitmap.Height/) vlastnosti. Tyto vlastnosti povolit program vypočítat souřadnice na pozici bitovou mapu ve středu třetí horní plátna:
+Program můžete získat pixel rozměry rastrový obrázek s [ `Width` ](https://developer.xamarin.com/api/property/SkiaSharp.SKBitmap.Width/) a [ `Height` ](https://developer.xamarin.com/api/property/SkiaSharp.SKBitmap.Height/) vlastnosti. Tyto vlastnosti povolit program k výpočtu souřadnice, kde umístit rastrového obrázku ve středu horní třetí plátna:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -180,15 +180,15 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-S verzí se zobrazují dvě bitmapy [ `DrawBitmap` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmap/p/SkiaSharp.SKBitmap/SkiaSharp.SKRect/SkiaSharp.SKPaint/) s `SKRect` parametr:
+Další dvě rastrových obrázků, které se zobrazují s verzí [ `DrawBitmap` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmap/p/SkiaSharp.SKBitmap/SkiaSharp.SKRect/SkiaSharp.SKPaint/) s `SKRect` parametr:
 
 ```csharp
 public void DrawBitmap (SKBitmap bitmap, SKRect dest, SKPaint paint = null)
 ```
 
-Třetí verzi [ `DrawBitmap` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmap/p/SkiaSharp.SKBitmap/SkiaSharp.SKRect/SkiaSharp.SKRect/SkiaSharp.SKPaint/) má dva `SKRect` argumenty pro zadání podmnožinu rastrový obrázek zobrazit, ale tuto verzi obdélníková není použit v tomto článku.
+Třetí verzi [ `DrawBitmap` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmap/p/SkiaSharp.SKBitmap/SkiaSharp.SKRect/SkiaSharp.SKRect/SkiaSharp.SKPaint/) má dva `SKRect` argumenty pro zadání obdélníkové podmnožiny rastrový obrázek pro zobrazení, ale tato verze není použit v tomto článku.
 
-Tady je kód, který zobrazí rastrový obrázek načtené ze rastrový obrázek vložený prostředek:
+Tady je kód, který zobrazí rastrový obrázek načten ze integrovaný prostředek rastrového obrázku:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -203,11 +203,11 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Rastrový obrázek je roztažen tak, aby dimenze obdélníku, proto opic vodorovně roztažen tak tyto snímcích obrazovky:
+Rastrový obrázek je roztažen tak, aby dimenze obdélníku, což je důvod, proč opic je vodorovně roztažená tyto snímcích obrazovky:
 
-[![](bitmaps-images/basicbitmaps-small.png "Trojitá snímek obrazovky stránky základní bitmap")](bitmaps-images/basicbitmaps-large.png#lightbox "Trojitá snímek obrazovky stránky základní rastrové obrázky")
+[![](bitmaps-images/basicbitmaps-small.png "Trojitá snímek obrazovky stránky základní rastrové obrázky")](bitmaps-images/basicbitmaps-large.png#lightbox "Trojitá snímek obrazovky stránky základní rastrových obrázků")
 
-Bitovou kopii třetí &mdash; které lze zobrazit pouze pokud spuštění programu a načíst fotografie z vlastní knihovny obrázků &mdash; se zobrazí také v obdélníku, ale obdélníku pozice a velikosti upraveny tak, aby zachovat poměr stran rastrového obrázku. Tohoto výpočtu je trochu složitější, protože vyžaduje výpočet měřítko podle velikosti bitovou mapu a rámeček cílové a zarovnání obdélníku v této oblasti:
+Třetího bitové kopie &mdash; to můžete vidět pouze pokud spuštění programu a načíst z knihovny obrázků fotografie &mdash; se také zobrazí v obdélníku, ale obdélníku pozici a velikost tak, aby zachovat poměr stran rastrového obrázku. Tento výpočet je o něco složitější, protože vyžaduje výpočet měřítko na základě velikosti rastrového obrázku a cílového obdélníku a zarovnání na střed obdélníku v této oblasti:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -242,11 +242,11 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Pokud žádné rastrový obrázek ještě byl načten z knihovny obrázků, pak se `else` bloku zobrazí text pro vyzvání uživatele klepnout na obrazovce.
+Pokud má nebyly načteny žádné rastrový obrázek z knihovny obrázků, pak bude `else` bloku zobrazí text, který chcete vyzvat uživatele k klepněte na obrazovku.
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [Rozhraní API ve Skiasharpu](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
-- [Výběr fotografie z knihovny obrázků](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)
+- [Výběr z knihovny obrázků fotografie](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)

@@ -1,31 +1,31 @@
 ---
 title: Vazby Xamarin.Forms Basic
-description: Tento článek vysvětluje, jak používat Xamarin.Forms datové vazby, který odkazuje alespoň dvojici vlastností mezi dvěma objekty, z nichž jeden je obvykle objekt uživatelského rozhraní. Tyto dva objekty se nazývají cíl a zdroj.
+description: Tento článek vysvětluje, jak pomocí Xamarin.Forms datové vazby, která odkazuje alespoň dvojici vlastností mezi dvěma objekty, z nichž jeden je obvykle objekt uživatelského rozhraní. Tyto dva objekty se nazývají cíl a zdroj.
 ms.prod: xamarin
 ms.assetid: 96553DF7-12EA-4FB2-AE85-3D1D59382B40
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: f932b7dfbcccb8f1c6ccb726f5e48c2df6e93c6c
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 16d1970b5e9d8f9c2b7c8be875c81136525c4fb7
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241686"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998069"
 ---
 # <a name="xamarinforms-basic-bindings"></a>Vazby Xamarin.Forms Basic
 
-Datová vazba Xamarin.Forms propojí dvojici vlastností mezi dvěma objekty, alespoň jeden z nich je obvykle objekt uživatelského rozhraní. Tyto dva objekty se nazývají *cíl* a *zdroj*:
+Datová vazba Xamarin.Forms propojí dvojici vlastností mezi dvěma objekty nejmíň jedno z nich je obvykle objekt uživatelského rozhraní. Tyto dva objekty jsou volány *cílové* a *zdroj*:
 
-- *Cíl* je tento objekt (a vlastnost) na který je nastaven datové vazby.
-- *Zdroj* je tento objekt (a vlastnost), odkazuje datová vazba.
+- *Cílové* je objekt (a vlastností) na datové vazby je nastavena.
+- *Zdroj* je objekt (a vlastností) odkazuje datovou vazbu.
 
-Tento rozdíl v některých případech může být trochu matoucí: V nejjednodušším případě data proudí ze zdroje do cíle, což znamená, že je hodnota vlastnosti cílového nastavena z hodnoty vlastnosti zdroje. Ale v některých případech můžete případně toku dat z cíle ke zdroji nebo v obou směrech. Pokud chcete předejít nejasnostem, mějte na paměti, že cíl je vždy objekt, na kterém je datová vazba nastavena i v případě, že poskytuje data místo bude přijímá data.
+Toto rozlišení někdy může být trochu matoucí: V nejjednodušším případě data proudí ze zdroje do cíle, což znamená, že je nastavena hodnota vlastnosti cílové z hodnoty vlastnosti zdroje. Ale v některých případech můžete případně toku dat z cíle ke zdroji nebo v obou směrech. Aby nedocházelo k záměně, nezapomínejte, že cíl je vždy objektu, na kterém je nastavena datové vazby i v případě, je poskytování dat spíše přijímá data.
 
 ## <a name="bindings-with-a-binding-context"></a>Vazby s kontextem vazby
 
-Datové vazby jsou zadané obvykle zcela v jazyce XAML, sice významné zobrazíte datové vazby v kódu. **Základní vazby kódu** stránka obsahuje soubor XAML s `Label` a `Slider`:
+I když datové vazby jsou obvykle určené výhradně v XAML, je poučné naleznete v tématu datové vazby v kódu. **Vazby základní kód** stránky obsahuje soubor XAML `Label` a `Slider`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -46,18 +46,18 @@ Datové vazby jsou zadané obvykle zcela v jazyce XAML, sice významné zobrazí
 </ContentPage>
 ```
 
-`Slider` Je nastaven pro řadu 0 až 360. Tohoto programu je cílem otočit `Label` manipulací `Slider`.
+`Slider` Nastavený pro rozsah 0 až 360. Cílem tohoto programu je otočit `Label` manipulací `Slider`.
 
-Bez vazby na data, byste měli nastavit `ValueChanged` události `Slider` k obslužné rutině událostí, který přistupuje k `Value` vlastnost `Slider` a nastaví tuto hodnotu `Rotation` vlastnost `Label`. Datová vazba automatizuje tuto úlohu; obslužné rutiny události a kód v něm již nejsou potřebné.
+Bez vazby dat, nastavíte `ValueChanged` událost `Slider` pro obslužnou rutinu události, který přistupuje k `Value` vlastnost `Slider` a nastaví tuto hodnotu na `Rotation` vlastnost `Label`. Datová vazba automatizuje úlohy; Obslužná rutina události a kód v ní už nejsou potřebné.
 
-Můžete nastavit vazbu na instanci třídy, která je odvozena z [ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/), což zahrnuje `Element`, `VisualElement`, `View`, a `View` odvozené konfigurace.  Vazba je vždycky nastavený na cílový objekt. Vazba odkazuje na zdrojový objekt. Pokud chcete nastavit vazby na data, použijte následující dva členy cílové třídy:
+Můžete nastavit vazbu na instanci třídy, která je odvozena od [ `BindableObject` ](xref:Xamarin.Forms.BindableObject), což zahrnuje `Element`, `VisualElement`, `View`, a `View` vy.  Vazba je vždycky nastavený na cílovém objektu. Vazba odkazuje na zdrojový objekt. K nastavení datové vazby, použijte následující dva členy třídy cíle:
 
-- [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) Vlastnost určuje zdrojový objekt.
-- [ `SetBinding` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.SetBinding/p/Xamarin.Forms.BindableProperty/Xamarin.Forms.BindingBase/) Metoda určuje vlastnost target a source – vlastnost.
+- [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) Vlastnost určuje zdrojový objekt.
+- [ `SetBinding` ](xref:Xamarin.Forms.BindableObject.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase)) Metody určuje vlastnost target a source – vlastnost.
 
-V tomto příkladu `Label` je cílem vazby a `Slider` je zdrojem vazby. Změny v `Slider` zdroj ovlivnit natočení `Label` cíl. Toky dat ze zdroje do cíle.
+V tomto příkladu `Label` je cíl vazby a `Slider` je zdroj vazby. Se změnami `Slider` zdroj ovlivnit otáčení `Label` cíl. Toky dat ze zdroje do cíle.
 
-`SetBinding` Metoda definované `BindableObject` má argument typu [ `BindingBase` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindingBase/) ze kterého [ `Binding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Binding/) třída odvozena, ale existují další `SetBinding` metody definované [ `BindableObjectExtensions` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObjectExtensions/) třídy. Soubor kódu v **základní vazby kódu** ukázce se používá jednodušší [ `SetBinding` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObjectExtensions.SetBinding/p/Xamarin.Forms.BindableObject/Xamarin.Forms.BindableProperty/System.String/) metoda rozšíření z této třídy.
+`SetBinding` Metody definované `BindableObject` má argument typu [ `BindingBase` ](xref:Xamarin.Forms.BindingBase) ze kterého [ `Binding` ](xref:Xamarin.Forms.Binding) třída odvozena, ale existují další `SetBinding` metody určené [ `BindableObjectExtensions` ](xref:Xamarin.Forms.BindableObjectExtensions) třídy. Soubor kódu na pozadí v **základní kód vazby** ukázce se používá jednodušší [ `SetBinding` ](xref:Xamarin.Forms.BindableObjectExtensions.SetBinding*) rozšiřující metoda z této třídy.
 
 ```csharp
 public partial class BasicCodeBindingPage : ContentPage
@@ -72,31 +72,31 @@ public partial class BasicCodeBindingPage : ContentPage
 }
 ```
 
-`Label` Objektu je cílem vazby, který je objekt, na kterém je tato vlastnost nastavena a na kterém je volána metoda. `BindingContext` Vlastnost určuje vazby zdroj, který je `Slider`.
+`Label` Objekt je cíl vazby tak, aby se objektu, na kterém je tato vlastnost nastavena a na kterém je volána metoda. `BindingContext` Vlastnost určuje zdroj vazby, který je `Slider`.
 
-`SetBinding` Metoda je volána v cíli vazby, ale určuje vlastnost target i pro vlastnost zdroje. Vlastnost target je zadán jako `BindableProperty` objekt: `Label.RotationProperty`. Zdrojová vlastnost je zadán jako řetězec a označuje `Value` vlastnost `Slider`.
+`SetBinding` Metoda je volána na cíl vazby, ale určuje vlastnost target a vlastnost source. Vlastnost target je zadán jako `BindableProperty` objektu: `Label.RotationProperty`. Vlastnost source je zadán jako řetězec a označuje, `Value` vlastnost `Slider`.
 
-`SetBinding` Metoda zjistí jedním z nejdůležitějších pravidel vazeb dat:
+`SetBinding` Metoda zobrazí jedno z vašich nejdůležitějších pravidel datové vazby:
 
-*Vlastnost target musí být zálohovaný pomocí vazbu vlastnosti.*
+*Vlastnost target musí být podporovaný službou vázanou vlastnost.*
 
-Toto pravidlo znamená, že cílový objekt musí být instancí třídy, která je odvozena z `BindableObject`. Najdete v článku [ **vazbu vlastnosti** ](~/xamarin-forms/xaml/bindable-properties.md) článku Přehled vazbu objektů a vazbu vlastnosti.
+Toto pravidlo předpokládá, že cílový objekt musí být instancí třídy, která je odvozena z `BindableObject`. Zobrazit [ **vlastnosti umožňující vazbu** ](~/xamarin-forms/xaml/bindable-properties.md) článku Přehled vytvořil objekty a vlastnosti umožňující vazbu.
 
-Neexistuje žádné takové pravidlo pro vlastnost zdroj, který je zadán jako řetězec. Reflexe se interně používá pro přístup skutečné vlastnost. V tomto případě, ale `Value` vlastnost je také zálohovaný pomocí vazbu vlastnosti.
+Neexistuje žádné takové pravidlo pro vlastnost source, který je zadán jako řetězec. Reflexe interně, slouží k přístupu k skutečné vlastnost. V tomto konkrétním případě však `Value` vlastnost je také založená na vlastnost s vazbou.
 
-Kód může být zjednodušené poněkud: `RotationProperty` je definována vazbu vlastnosti `VisualElement`a zdědí `Label` a `ContentPage` i, takže název třídy nevyžaduje v `SetBinding` volání:
+Kód může být trochu zjednodušená: `RotationProperty` vázanou vlastnost je definován `VisualElement`a dědí `Label` a `ContentPage` stejně, takže název třídy nevyžadoval `SetBinding` volání:
 
 ```csharp
 label.SetBinding(RotationProperty, "Value");
 ```
 
-Včetně název třídy je však dobré připomenutí cílového objektu.
+Včetně názvu třídy je však vhodné připomenutí cílového objektu.
 
 Při manipulaci s `Slider`, `Label` otočí odpovídajícím způsobem:
 
-[![Kód Basice vazby](basic-bindings-images/basiccodebinding-small.png "základní kódu vazby")](basic-bindings-images/basiccodebinding-large.png#lightbox "základní vazby")
+[![Kód Basice vazby](basic-bindings-images/basiccodebinding-small.png "základní kód vazby")](basic-bindings-images/basiccodebinding-large.png#lightbox "základní vazby")
 
-**Základní vazby Xaml** stránky je stejný jako **základní vazby kód** s tím rozdílem, že definuje celé datové vazby v jazyce XAML:
+**Základní vazby Xaml** stránky je stejný jako **základní kód vazby** s tím rozdílem, že definuje celé datové vazby v XAML:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -118,24 +118,24 @@ Při manipulaci s `Slider`, `Label` otočí odpovídajícím způsobem:
 </ContentPage>
 ```
 
-Stejně jako kódu, datové vazby u cílový objekt, který je nastavený `Label`. Se jedná o dvě rozšíření značek XAML. Toto jsou okamžitě rozpoznatelném ve složených závorek oddělovače:
+Stejně jako u kódu, datové vazby je nastavena na cílový objekt, který je `Label`. Se podílejí dvě rozšíření značek XAML. Jedná se pozná okamžitě podle oddělovače složených závorek:
 
-- `x:Reference` – Rozšíření značek je potřeba odkazovat na zdrojový objekt, který je `Slider` s názvem `slider`.
-- `Binding` Odkazy rozšíření značek `Rotation` vlastnost `Label` k `Value` vlastnost `Slider`.
+- `x:Reference` – Rozšíření značek je vyžadovaný pro odkaz na zdrojový objekt, který je `Slider` s názvem `slider`.
+- `Binding` Odkazy na rozšíření značek `Rotation` vlastnost `Label` k `Value` vlastnost `Slider`.
 
-Najdete v článku [XAML – rozšíření značek](~/xamarin-forms/xaml/markup-extensions/index.md) Další informace o rozšíření značek XAML. `x:Reference` Podporuje – rozšíření značek [ `ReferenceExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.ReferenceExtension/) třídy; `Binding` podporuje [ `BindingExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.BindingExtension/) třídy. Jako soubor XML – předpony oboru názvů indikuje, `x:Reference` je součástí specifikace jazyka XAML 2009, zatímco `Binding` je součástí Xamarin.Forms. Všimněte si, že žádné uvozovky se objeví do složených závorek.
+Přečtěte si článek [– rozšíření značek XAML](~/xamarin-forms/xaml/markup-extensions/index.md) Další informace o rozšíření značek XAML. `x:Reference` – Rozšíření značek je podporován [ `ReferenceExtension` ](xref:Xamarin.Forms.Xaml.ReferenceExtension) třídy; `Binding` je podporován [ `BindingExtension` ](xref:Xamarin.Forms.Xaml.BindingExtension) třídy. Předpony oboru názvů označit jako soubor XML, `x:Reference` je součástí specifikace XAML 2009, zatímco `Binding` je součástí Xamarin.Forms. Všimněte si, že žádné uvozovky uvnitř složených závorek objevit.
 
-Je snadné zapomněli `x:Reference` – rozšíření značek při nastavení `BindingContext`. Je běžné omylem nastavte vlastnost přímo na název zdroje vazba takto:
+Je snadné zapomenout `x:Reference` – rozšíření značek při nastavení `BindingContext`. Je běžné omylem nastavte vlastnost přímo na název zdroje připojení následujícím způsobem:
 
 ```xaml
 BindingContext="slider"
 ```
 
-Ale není pravé. Nastaví tento kód `BindingContext` vlastnosti `string` objekt, jehož znaky pravopisu "posuvník"!
+Ale to není správné. Tento kód nastaví `BindingContext` vlastnost `string` objekt, jehož znaků pravopisu "posuvníku"!
 
-Všimněte si, že zdrojová vlastnost se zadaným [ `Path` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Xaml.BindingExtension.Path/) vlastnost `BindingExtension`, který odpovídá [ `Path` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Binding.Path/) vlastnost [ `Binding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Binding/) třídy.
+Všimněte si, že je zadána vlastnost zdroje s [ `Path` ](xref:Xamarin.Forms.Xaml.BindingExtension.Path) vlastnost `BindingExtension`, který odpovídá [ `Path` ](xref:Xamarin.Forms.Binding.Path) vlastnost [ `Binding` ](xref:Xamarin.Forms.Binding) třídy.
 
-Kód zobrazí na **základní vazby XAML** stránky můžete zjednodušit: XAML – rozšíření značek, jako `x:Reference` a `Binding` může mít *obsahu vlastnost* definované atributy, které pro jazyk XAML rozšíření značek znamená, že název vlastnosti nemusí zobrazit. `Name` Vlastnost je vlastnost obsahu `x:Reference`a `Path` vlastnost je vlastnost obsahu `Binding`, což znamená, že jde je eliminovat z výrazů:
+Kód zobrazený na **základní vazby XAML** stránky se dá zjednodušit: rozšíření značek XAML, jako `x:Reference` a `Binding` může mít *Vlastnost ContentProperty* definované atributy, které je pro XAML – rozšíření značek znamená, že název vlastnosti nemusí zobrazit. `Name` Vlastností je vlastnost content `x:Reference`a `Path` vlastností je vlastnost content `Binding`, což znamená, že může být odstraněny z výrazů:
 
 ```xaml
 <Label Text="TEXT"
@@ -148,9 +148,9 @@ Kód zobrazí na **základní vazby XAML** stránky můžete zjednodušit: XAML 
 
 ## <a name="bindings-without-a-binding-context"></a>Vazby bez kontextu vazby
 
-`BindingContext` Vlastnost je důležitou součástí vazeb data, ale není vždy nutné. Zdrojový objekt lze zadat místo toho v `SetBinding` volání nebo `Binding` – rozšíření značek.
+`BindingContext` Vlastnost je jejich důležitou součástí nad vázáním dat, ale není vždy nutné. Zdrojový objekt lze zadat místo toho `SetBinding` volání nebo `Binding` – rozšíření značek.
 
-Tento postup je znázorněn v **alternativní kód vazby** ukázka. Je podobná souboru XAML **základní vazby kódu** ukázkové vyjma toho, že `Slider` není definován pro ovládací prvek `Scale` vlastnost `Label`. Z tohoto důvodu `Slider` je nastaven pro řadu &ndash;2 až 2:
+To je patrné **alternativní vazby kód** vzorku. Soubor XAML je podobný **základní kód vazby** ukázkový s výjimkou, že `Slider` je definován na ovládací prvek `Scale` vlastnost `Label`. Z tohoto důvodu `Slider` nastavena pro celou řadu &ndash;2 až 2:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -172,7 +172,7 @@ Tento postup je znázorněn v **alternativní kód vazby** ukázka. Je podobná 
 </ContentPage>
 ```
 
-Nastaví vazbu s souboru kódu [ `SetBinding` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.SetBinding/p/Xamarin.Forms.BindableProperty/Xamarin.Forms.BindingBase/) metoda definované `BindableObject`. Argument je [konstruktor](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Binding.Binding/p/System.String/Xamarin.Forms.BindingMode/Xamarin.Forms.IValueConverter/System.Object/System.String/System.Object/) pro [ `Binding` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Binding/) třídy:
+Použití modelu code-behind souboru nastaví vazbu s [ `SetBinding` ](xref:Xamarin.Forms.BindableObject.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase)) metody definované `BindableObject`. Argument je [konstruktor](xref:Xamarin.Forms.Binding.%23ctor(System.String,Xamarin.Forms.BindingMode,Xamarin.Forms.IValueConverter,System.Object,System.String,System.Object)) pro [ `Binding` ](xref:Xamarin.Forms.Binding) třídy:
 
 ```csharp
 public partial class AlternativeCodeBindingPage : ContentPage
@@ -186,19 +186,19 @@ public partial class AlternativeCodeBindingPage : ContentPage
 }
 ```
 
-`Binding` Konstruktor má 6 parametry, proto `source` parametr zadán s argumentem. Argument je `slider` objektu.
+`Binding` Konstruktor má 6 parametrů, proto `source` parametr není zadán s pojmenovaný argument. Argument je `slider` objektu.
 
-Spuštění tohoto programu, může být trochu překvapivé:
+Spuštění tohoto programu může být trochu překvapivé:
 
-[![Vazba alternativní kód](basic-bindings-images/alternativecodebinding-small.png "alternativní kód vazby")](basic-bindings-images/alternativecodebinding-large.png#lightbox "alternativní kód vazby")
+[![Alternativní kód vazby](basic-bindings-images/alternativecodebinding-small.png "alternativní kód vazby")](basic-bindings-images/alternativecodebinding-large.png#lightbox "alternativní kód vazby")
 
-Na obrazovce iOS na levé straně ukazuje, jak vypadá obrazovky po první zobrazení stránky. Kde je `Label`?
+Na obrazovce iOS na levé straně se zobrazí, vzhled obrazovky, když se nejprve zobrazí na stránce. Pokud je `Label`?
 
-Problém je, že `Slider` má počáteční hodnotu 0. To způsobí, že `Scale` vlastnost `Label` být také nastavena na 0, přepsání jeho výchozí hodnotu 1. Výsledkem `Label` se původně neviditelná. Jak ukazují na snímcích obrazovky Android a univerzální platformu Windows (UWP), můžete upravit `Slider` aby `Label` objeví znovu, ale její počáteční zrušení je zneklidňovat.
+Problém je, že `Slider` má počáteční hodnotu 0. To způsobí, že `Scale` vlastnost `Label` být také nastavena na 0, přepíše jeho výchozí hodnotu 1. Výsledkem `Label` se zpočátku neviditelné. Jak ukazují, snímky obrazovky pro Android a univerzální platformu Windows (UPW), můžete upravit `Slider` provést `Label` zobrazí znovu, ale jeho počáteční zmizení je zneklidňovat.
 
-Dozvíte v [následující článek](binding-mode.md) jak tomuto problému nedošlo podle inicializace `Slider` z výchozí hodnota `Scale` vlastnost.
+Zjistíte v [dalšímu článku](binding-mode.md) jak tomuto problému zabráníte tak inicializace `Slider` z výchozí hodnoty `Scale` vlastnost.
 
-**Alternativní XAML vazby** stránka zobrazuje ekvivalentní vazby zcela v jazyce XAML:
+**Alternativní XAML vazby** stránka zobrazuje ekvivalentní vazby zcela XAML:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -221,21 +221,21 @@ Dozvíte v [následující článek](binding-mode.md) jak tomuto problému nedo�
 </ContentPage>
 ```
 
-Nyní `Binding` – rozšíření značek má dvě vlastnosti nastavena, `Source` a `Path`, oddělených čárkou. Mohou se zobrazit na stejné přímce. Pokud dáváte přednost:
+Nyní `Binding` – rozšíření značek má dvě vlastnosti nastavit, `Source` a `Path`, oddělená čárkou. Na stejném řádku se může zobrazit, pokud dáváte přednost:
 
 ```xaml
 Scale="{Binding Source={x:Reference slider}, Path=Value}" />
 ```
 
-`Source` Je nastavena na embedded `x:Reference` – rozšíření značek, jinak se stejnou syntaxí, jako nastavení `BindingContext`. Všimněte si, že žádné uvozovky se objeví do složených závorek a že dvě vlastnosti musí být odděleny čárkami.
+`Source` Je nastavena na vložený `x:Reference` rozšíření značek, které mají stejnou syntaxi jako nastavení `BindingContext`. Všimněte si, že žádné uvozovky uvnitř složených závorek objevit, a že dvě vlastnosti musí být odděleny čárkou.
 
-Vlastnost obsahu `Binding` – rozšíření značek je `Path`, ale `Path=` součástí rozšíření značek lze odstranit pouze pokud je první vlastnost ve výrazu. Omezit `Path=` část, potřebujete Prohodit dvě vlastnosti:
+Vlastnost obsahu `Binding` – rozšíření značek je `Path`, ale `Path=` součástí rozšíření značek lze odstranit pouze pokud je první vlastnost ve výrazu. Chcete-li odstranit `Path=` část, musíte se Prohodit dvě vlastnosti:
 
 ```xaml
 Scale="{Binding Value, Source={x:Reference slider}}" />
 ```
 
-I když XAML – rozšíření značek jsou obvykle oddělená složené závorky, může se také vyjádřený jako objekt prvky:
+I když rozšíření značek XAML jsou odděleny obvykle složených závorek, je také lze vyjádřit jako objekt prvky:
 
 ```xaml
 <Label Text="TEXT"
@@ -249,7 +249,7 @@ I když XAML – rozšíření značek jsou obvykle oddělená složené závork
 </Label>
 ```
 
-Nyní `Source` a `Path` vlastnosti jsou regulární atributy XAML: hodnoty jsou uvedeny v uvozovkách a atributy nejsou oddělených čárkou. `x:Reference` – Rozšíření značek se může stát také element objektu:
+Nyní `Source` a `Path` vlastnosti jsou pravidelné atributy XAML: Zobrazí hodnoty v uvozovkách a atributy nejsou oddělené čárkou. `x:Reference` – Rozšíření značek zároveň může stát elementu objektu:
 
 ```xaml
 <Label Text="TEXT"
@@ -266,25 +266,25 @@ Nyní `Source` a `Path` vlastnosti jsou regulární atributy XAML: hodnoty jsou 
 </Label>
 ```
 
-Tuto syntaxi není běžné, ale v některých případech je nutné při se podílejí na komplexní objekty.
+Tato syntaxe není běžné, ale v některých případech je nutné po složité objekty souvisejí.
 
-Příklady uvedené dosavadní nastavit `BindingContext` vlastnost a `Source` vlastnost `Binding` k `x:Reference` – rozšíření značek k odkazování jiného zobrazení na stránce. Tyto dvě vlastnosti se typu `Object`, a můžete je nastavit pro libovolný objekt, který obsahuje vlastnosti, které jsou vhodné pro vytvoření vazby zdroje.
+Nastavte příkladů uvedených zatím `BindingContext` vlastnost a `Source` vlastnost `Binding` do `x:Reference` – rozšíření značek pro odkazovat na jiné zobrazení na stránce. Tyto dvě vlastnosti jsou typu `Object`, je možné nastavit na libovolný objekt, který obsahuje vlastnosti, které jsou vhodné pro vytvoření vazby zdroje.
 
-V článcích dopředu, zjistíte, že můžete nastavit `BindingContext` nebo `Source` vlastnost, která má `x:Static` – rozšíření značek Chcete-li hodnota statickou vlastnost nebo pole, nebo `StaticResource` – rozšíření značek k odkazování uložené v objektu slovník prostředků, nebo přímo na objekt, který je obvykle (ale ne vždy) instance ViewModel.
+V článcích dopředu, zjistíte, že můžete nastavit `BindingContext` nebo `Source` vlastnost `x:Static` – rozšíření značek tak, aby odkazovaly hodnotu statickou vlastnost nebo pole, nebo `StaticResource` – rozšíření značek k odkazování objekt uložený v slovník prostředků, nebo přímo na objekt, který je obvykle (ale ne vždy) instance ViewModel.
 
-`BindingContext` Vlastnost může být také nastavena na `Binding` objektu tak, aby `Source` a `Path` vlastnosti `Binding` definovat kontext vazby.
+`BindingContext` Vlastnost může být také nastavena na `Binding` objektu tak, aby `Source` a `Path` vlastnosti `Binding` definovat kontextu vazby.
 
-## <a name="binding-context-inheritance"></a>Dědičnost kontext vazby
+## <a name="binding-context-inheritance"></a>Dědičnost kontextu vazby
 
-V tomto článku jste se seznámili, můžete zadat zdrojový objekt pomocí `BindingContext` vlastnost nebo `Source` vlastnost `Binding` objektu. Pokud jsou obě nastaveny, `Source` vlastnost `Binding` má přednost před `BindingContext`.
+V tomto článku jste se seznámili, můžete zadat zdrojový objekt pomocí `BindingContext` vlastnost nebo `Source` vlastnost `Binding` objektu. Pokud obě nastaveny `Source` vlastnost `Binding` má přednost před `BindingContext`.
 
-`BindingContext` Vlastnost má velmi důležitou vlastností:
+`BindingContext` Vlastnost má velmi důležitou vlastnost:
 
-*Nastavení jazyka `BindingContext` vlastnost je zděděná prostřednictvím vizuálním stromu.*
+*Nastavení jazyka `BindingContext` vlastnost je zděděná prostřednictvím vizuálního stromu.*
 
-Jak zjistíte, to může být velmi užitečný pro zjednodušenou výrazy vazby a v některých případech &mdash; zvlášť ve Model-View-ViewModel (modelem MVVM) scénářích &mdash; je nezbytné.
+Jak se zobrazí, to může být velmi užitečný pro zjednodušení vazbové výrazy a v některých případech &mdash; zejména ve scénářích Model-View-ViewModel (MVVM) &mdash; je nezbytné.
 
-**Dědičnosti kontext vazby** ukázka je jednoduchá ukázka dědičnosti třídy kontextu vazby:
+**Dědičnosti kontextu vazby** ukázka je jednoduché ukázku dědičnosti kontextu vazby:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -317,14 +317,14 @@ Jak zjistíte, to může být velmi užitečný pro zjednodušenou výrazy vazby
 </ContentPage>
 ```
 
-`BindingContext` Vlastnost `StackLayout` je nastaven na `slider` objektu. Tento kontext vazby zdědí i `Label` a `BoxView`, které mít jejich `Rotation` vlastnosti nastavit na `Value` vlastnost `Slider`:
+`BindingContext` Vlastnost `StackLayout` je nastavena na `slider` objektu. Tento kontext vazby zdědí i `Label` a `BoxView`, obě sady, u nichž jejich `Rotation` nastaveny `Value` vlastnost `Slider`:
 
-[![Vazba kontextu dědičnosti](basic-bindings-images/bindingcontextinheritance-small.png "vazby kontextu dědičnosti")](basic-bindings-images/bindingcontextinheritance-large.png#lightbox "vazby kontextu dědičnosti")
+[![Vazba kontextu dědičnosti](basic-bindings-images/bindingcontextinheritance-small.png "dědičnosti kontextu vazby")](basic-bindings-images/bindingcontextinheritance-large.png#lightbox "vazby kontextu dědičnosti")
 
-V [následující článek](binding-mode.md), uvidíte jak *vazby režimu* tok dat mezi zdrojové a cílové objekty, můžete změnit.
+V [dalšímu článku](binding-mode.md), zobrazí se vám jak *vazby režimu* můžete změnit tok dat mezi zdrojové a cílové objektů.
 
 
 ## <a name="related-links"></a>Související odkazy
 
 - [Ukázky vazby dat (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
-- [Kapitola vazby dat z adresáře Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
+- [Data vazby kapitola z knihy Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

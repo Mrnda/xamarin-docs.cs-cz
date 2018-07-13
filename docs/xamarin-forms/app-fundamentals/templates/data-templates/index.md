@@ -1,36 +1,36 @@
 ---
-title: Šablony Xamarin.Forms dat
-description: Šablonu DataTemplate slouží k určení vzhledu dat na podporované ovládací prvky a obvykle se váže k dat, který se má zobrazit.
+title: Šablony dat Xamarin.Forms
+description: Šablonu DataTemplate slouží k určení vzhledu data na podporovaných ovládacích prvků a obvykle sváže data mají být zobrazeny.
 ms.prod: xamarin
 ms.assetid: 838F4BDB-B719-457F-8633-27E9B267A2A0
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/11/2017
-ms.openlocfilehash: b461cb8be9dcf618b7a497b001186fde5f2b2aa1
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 771ae22c3e28a4fce758bbfd6a3bd63bafb75e53
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35239853"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994968"
 ---
-# <a name="xamarinforms-data-templates"></a>Šablony Xamarin.Forms dat
+# <a name="xamarinforms-data-templates"></a>Šablony dat Xamarin.Forms
 
-_Šablonu DataTemplate slouží k určení vzhledu dat na podporované ovládací prvky a obvykle se váže k dat, který se má zobrazit._
+_Šablonu DataTemplate slouží k určení vzhledu data na podporovaných ovládacích prvků a obvykle sváže data mají být zobrazeny._
 
 ## <a name="introductionintroductionmd"></a>[Úvod](introduction.md)
 
-Šablony dat Xamarin.Forms poskytují možnost definovat prezentaci dat na podporované ovládací prvky. Tento článek obsahuje úvod do šablony dat, prozkoumání, proč jsou zapotřebí.
+Xamarin.Forms datové šablony umožňují definovat prezentaci dat pro podporované ovládací prvky. Tento článek obsahuje úvod do šablon dat, posouzení důvod, proč jsou nezbytné.
 
-## <a name="creating-a-datatemplatecreatingmd"></a>[Vytváření šablonu DataTemplate](creating.md)
+## <a name="creating-a-datatemplatecreatingmd"></a>[Vytvořit šablonu DataTemplate](creating.md)
 
-Data šablony lze vytvořit vložený, v [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/), nebo z vlastního typu nebo příslušného typu buňky Xamarin.Forms. Šablonu vložené by měl použijí, pokud není nutné znovu použít šablonu dat jinam. Šablonu dat můžete alternativně znovu použít tak, že definujete jej jako vlastní typ nebo jako prostředek řízení úrovni úrovně stránky nebo na úrovni aplikace.
+Datové šablony lze vytvořit jako vložené, v [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary), nebo z vlastního typu nebo odpovídající typ buňky Xamarin.Forms. Vložená šablona by měla použít, pokud není nutné opakovaně používat šablony jinde. Alternativně můžete použít opakovaně datové šablony tak, že definujete ho jako vlastní typ, nebo jako ovládací prvek úrovni úrovni stránky nebo aplikace na úrovni prostředků.
 
 ## <a name="creating-a-datatemplateselectorselectormd"></a>[Vytváření DataTemplateSelector](selector.md)
 
-A [ `DataTemplateSelector` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplateSelector/) je možné vybrat [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) za běhu na základě hodnoty vlastnosti vázané na data. To umožňuje více `DataTemplate` instance, který bude použit na stejný typ objektu, chcete-li přizpůsobit vzhled konkrétní objekty. Tento článek ukazuje, jak vytvářet a využívat `DataTemplateSelector`.
+A [ `DataTemplateSelector` ](xref:Xamarin.Forms.DataTemplateSelector) můžete použít k výběru [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) za běhu na základě hodnoty vlastnosti vázané na data. To umožňuje více `DataTemplate` instance, které chcete použít pro stejný typ objektu, pro přizpůsobení vzhledu konkrétní objekty. Tento článek ukazuje, jak vytvářet a využívat `DataTemplateSelector`.
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Šablony dat (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/templates/datatemplates/)
+- [Datové šablony (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/templates/datatemplates/)

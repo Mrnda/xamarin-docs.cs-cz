@@ -1,31 +1,31 @@
 ---
-title: Integrace s Xamarin.Forms
-description: Tento článek vysvětluje, jak vytvořit SkiaSharp grafiky, které reagují na touch a elementy Xamarin.Forms a to ukazuje s ukázkový kód.
+title: Integrace se Xamarin.Forms
+description: Tento článek vysvětluje, jak vytvořit ve Skiasharpu grafiky, které reagují na dotykového ovládání a prvky Xamarin.Forms a ukazuje to se vzorovým kódem.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 288224F1-7AEE-4148-A88D-A70C03F83D7A
 author: charlespetzold
 ms.author: chape
 ms.date: 02/09/2017
-ms.openlocfilehash: 9233850686fa6b20f858bf3358fc46393685297f
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 35aede1a541d0ff62f6a4a5b57256c389e5a8640
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243502"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997515"
 ---
-# <a name="integrating-with-xamarinforms"></a>Integrace s Xamarin.Forms
+# <a name="integrating-with-xamarinforms"></a>Integrace se Xamarin.Forms
 
-_Vytvoření SkiaSharp grafiky, které reagují na touch a elementy Xamarin.Forms_
+_Vytvořte ve Skiasharpu grafiky, které reagují na dotykové ovládání a prvky Xamarin.Forms_
 
-Grafika SkiaSharp můžete integrovat s ostatními Xamarin.Forms několika způsoby. Zkombinováním SkiaSharp plátno a Xamarin.Forms prvků na stejné stránce a elementy Xamarin.Forms i pozice nad plátno SkiaSharp:
+Ve Skiasharpu grafiky můžete integrovat se zbytkem Xamarin.Forms několika způsoby. Můžete zkombinovat ve Skiasharpu plátno a Xamarin.Forms elementů na stejné stránce a dokonce i umístění Xamarin.Forms elementů nad plátnem ve Skiasharpu:
 
 ![](integration-images/integrationexample.png "Výběr barvy s posuvníky")
 
-Další postup pro vytváření interaktivních SkiaSharp grafiky v Xamarin.Forms je prostřednictvím dotykového ovládání.
-Na druhou stránku [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) nárok program **klepněte na přepnutí vyplnění**. Nakreslí Jednoduchý kruh dva způsoby, jak &mdash; bez výplně a s výplní &mdash; přepínat stav klepněte na. [ `TapToggleFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml.cs) Třída ukazuje, jak změnit SkiaSharp grafiky v reakci na vstup uživatele.
+Další způsob, jak vytvářet interaktivní grafické obrazce ve Skiasharpu v Xamarin.Forms je prostřednictvím dotykové ovládání.
+Na druhé stránce v [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) programu je oprávněn **klepnutím na přepínač vyplnit**. Nakreslí Jednoduchý kruh dva způsoby, jak &mdash; bez výplně a s výplní &mdash; přepínat pomocí klepnutím. [ `TapToggleFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml.cs) Třídy ukazuje, jak je možné změnit grafiky ve Skiasharpu v reakci na vstup uživatele.
 
-Pro tuto stránku `SKCanvasView` vytvoření instance třídy v [TapToggleFill.xaml](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml) souboru, který také nastaví platformě Xamarin.Forms [ `TapGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/) v zobrazení:
+Pro tuto stránku `SKCanvasView` je vytvořena instance třídy v [TapToggleFill.xaml](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml) soubor, který nastaví také Xamarin.Forms [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) pro zobrazení:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -42,9 +42,9 @@ Pro tuto stránku `SKCanvasView` vytvoření instance třídy v [TapToggleFill.x
 </ContentPage>
 ```
 
-Upozornění `skia` deklaraci oboru názvů XML.
+Všimněte si, že `skia` deklarace oboru názvů XML.
 
-`Tapped` Obslužné rutiny pro `TapGestureRecognizer` objekt jednoduše přepíná hodnota logická hodnota pole a volání [ `InvalidateSurface` ](https://developer.xamarin.com/api/member/SkiaSharp.Views.Forms.SKCanvasView.InvalidateSurface()/) metodu `SKCanvasView`:
+`Tapped` Obslužné rutiny pro `TapGestureRecognizer` objekt jednoduše přepne hodnotu pole Boolean a volání [ `InvalidateSurface` ](https://developer.xamarin.com/api/member/SkiaSharp.Views.Forms.SKCanvasView.InvalidateSurface()/) metoda `SKCanvasView`:
 
 ```csharp
 bool showFill = true;
@@ -56,7 +56,7 @@ void OnCanvasViewTapped(object sender, EventArgs args)
 }
 ```
 
-Volání `InvalidateSurface` efektivně generuje volání `PaintSurface` obslužná rutina, která používá `showFill` pole zadejte nebo nevyplní kruhu:
+Volání `InvalidateSurface` efektivně generuje volání `PaintSurface` obslužná rutina, která používá `showFill` pole, které chcete vyplnit nebo není vyplnit kruhu:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -84,23 +84,23 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-`StrokeWidth` Vlastnost byla nastavena na 50 věnované rozdíl. Najdete v části šířku celý řádek kreslení vnitřku nejprve a obrys. Ve výchozím nastavení, obrázky vykresleného později v grafiky `PaintSurface` obslužné rutiny události skrývat těch, které vykresluje dříve v obslužná rutina.
+`StrokeWidth` Vlastnost byla nastavena na 50 věnované rozdíl. Šířku celého řádku vidíte, nejprve kreslení vnitřní a obrysu. Ve výchozím nastavení, přijde vykresleného v grafiky `PaintSurface` obslužnou rutinu události jsou vykreslovány dříve v obslužné rutině překrývat.
 
-**Barva prozkoumat** stránky ukazuje, jak můžete také integrovat SkiaSharp grafiky s jinými prvky Xamarin.Forms a také ukazuje rozdíl mezi dvě alternativní metody pro definování barvy v SkiaSharp. Statické [ `SKColor.FromHsl` ](https://developer.xamarin.com/api/member/SkiaSharp.SKColor.FromHsl/p/System.Single/System.Single/System.Single/System.Byte/) metoda vytvoří `SKColor` hodnota založená na modelu Hue-sytost světlost:
+**Barva prozkoumat** stránce ukazuje, jak můžete také integrovat grafiky ve Skiasharpu další prvky Xamarin.Forms a také ukazuje rozdíl mezi dva alternativní způsoby definování barvy v SkiaSharp. Statické [ `SKColor.FromHsl` ](https://developer.xamarin.com/api/member/SkiaSharp.SKColor.FromHsl/p/System.Single/System.Single/System.Single/System.Byte/) metoda vytvoří `SKColor` hodnota založená na modelu Hue-sytost světlosti:
 
 ```csharp
 public static SKColor FromHsl (Single h, Single s, Single l, Byte a)
 ```
 
-Statické [ `SKColor.FromHsv` ](https://developer.xamarin.com/api/member/SkiaSharp.SKColor.FromHsv/p/System.Single/System.Single/System.Single/System.Byte/) metoda vytvoří `SKColor` hodnota založená na modelu podobné Hue-sytost-hodnota:
+Statické [ `SKColor.FromHsv` ](https://developer.xamarin.com/api/member/SkiaSharp.SKColor.FromHsv/p/System.Single/System.Single/System.Single/System.Byte/) metoda vytvoří `SKColor` hodnoty na základě podobné hodnotu Hue sytosti modelu:
 
 ```csharp
 public static SKColor FromHsv (Single h, Single s, Single v, Byte a)
 ```
 
-V obou případech `h` argument v rozmezí od 0 do 360. `s`, `l`, A `v` argumenty v rozsahu od 0 do 100. `a` (Alpha nebo krytí) argument rozmezí od 0 do 255.
+V obou případech platí `h` argument v rozsahu od 0 do 360. `s`, `l`, A `v` argumentů v rozsahu od 0 do 100. `a` (Alfa a krytí) argumentu v rozsahu 0 až 255.
 
-[ **ColorExplorePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ColorExplorePage.xaml) soubor vytvoří dvě `SKCanvasView` objekty v `StackLayout` -souběžného s `Slider` a `Label` zobrazení, které umožňují uživateli vybrat HSL a HSV – hodnoty barev:
+[ **ColorExplorePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ColorExplorePage.xaml) soubor vytvoří dva `SKCanvasView` objekty v `StackLayout` – souběžně s `Slider` a `Label` zobrazení, které uživateli umožňují vybrat HSL a HSV hodnot barev:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -180,9 +180,9 @@ V obou případech `h` argument v rozmezí od 0 do 360. `s`, `l`, A `v` argument
 </ContentPage>
 ```
 
-Dva `SKCanvasView` prvky jsou v jednotlivých buněk `Grid` s `Label` uložený v horní části pro zobrazení výsledné hodnoty RGB barev.
+Dva `SKCanvasView` prvky jsou v jedné buňce `Grid` s `Label` na horní části pro zobrazení výsledná hodnota barvy RGB.
 
-[ **ColorExplorePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ColorExplorePage.xaml.cs) souboru kódu je poměrně jednoduché. Sdílený `ValueChanged` obslužné rutiny pro tři `Slider` elementy jednoduše by způsobila neplatnost obě `SKCanvasView` elementy. `PaintSurface` Obslužné rutiny vymazat na plátno barvou indikován `Slider` prvky a také nastavit `Label` uložený na `SKCanvasView` prvky:
+[ **ColorExplorePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ColorExplorePage.xaml.cs) soubor kódu na pozadí je poměrně jednoduché. Sdílený `ValueChanged` obslužné rutiny pro tři `Slider` prvky jednoduše zruší platnost obě `SKCanvasView` elementy. `PaintSurface` Obslužné rutiny zrušte na plátno s barvou indikován `Slider` elementy a také nastavit `Label` sedí nahoře `SKCanvasView` prvky:
 
 ```csharp
 public partial class ColorExplorePage : ContentPage
@@ -227,18 +227,18 @@ public partial class ColorExplorePage : ContentPage
 }
 ```
 
-HSL i HSV barva modely hodnota Hue rozsah od 0 do 360 a označuje dominantní odstín barvy. Jedná se o tradiční barvy rainbow: červená, oranžová, žlutý, zelený, modrá, indigově modré, fialová a zpět v kruh a red.
+V HSL i HSV modely barva Hue hodnotu od 0 do 360 a označuje dominantní odstín barvy. Toto jsou tradiční barvy rainbow: red, oranžová, žlutá, zelená, modrá, indigo, violet a znovu v kruhu, red.
 
-V modelu HSL hodnotu 0 pro světlost je vždy černá a 100 hodnota je vždy bílé. Pokud je hodnota sytost 0, jsou hodnoty světlosti mezi 0 a 100 odstínech šedi. Zvýšení sytost přidá další barev. Čistý barvy (které jsou hodnoty RGB u některé komponenty rovna 255, jiné rovna 0 a třetí rozsahu od 0 do 255) dojít, když Sytost je 100 a světlost je 50.
+V modelu HSL – hodnoty 0 pro světlosti je vždy černá a 100 hodnota je vždy bílé. Pokud je hodnota sytost 0, jsou světlosti hodnoty v rozmezí 0 až 100 odstíny šedé. Zvýšení sytost přidá další barvu. Čistě barvy (které jsou hodnoty RGB jedna komponenta rovna 255, jiný roven 0 a třetí od 0 do 255) dojít, pokud Sytost je 100 a světlosti je 50.
 
-V modelu HSV čistý barvy dojít při sytost a hodnota je 100. Pokud je hodnota 0, bez ohledu na ostatní nastavení, je černá barvu. Šedé odstínech nastane, když je sytost 0 a hodnotu v rozmezí od 0 do 100.
+V modelu HSV čistě barvy dojít při sytost a hodnota je 100. Pokud je hodnota 0, bez ohledu na případná další nastavení, je černá barva. Odstíny šedé dojít, když Sytost je 0 a hodnotu od 0 do 100.
 
-Ale nejlepší způsob, jak podívat, dva modely a experimentovat s nimi sami:
+Ale můžete experimentovat s nimi sami je nejlepší způsob, jak získat představu dvou modelů:
 
-[![](integration-images/colorexplore-large.png "Trojitá snímek obrazovky stránky prozkoumat barva")](integration-images/colorexplore-small.png#lightbox "Trojitá snímek obrazovky stránky prozkoumat barev")
+[![](integration-images/colorexplore-large.png "Trojitá snímek obrazovky stránky barva prozkoumat")](integration-images/colorexplore-small.png#lightbox "Trojitá snímek obrazovky stránky prozkoumat barva")
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [Rozhraní API ve Skiasharpu](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

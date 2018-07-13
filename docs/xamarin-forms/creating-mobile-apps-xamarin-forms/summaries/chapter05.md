@@ -1,89 +1,89 @@
 ---
-title: Souhrn kapitoly 5. Práci s velikostí
-description: 'Vytváření mobilních aplikací s Xamarin.Forms: Souhrn kapitoly 5. Práci s velikostí'
+title: Souhrn kapitola 5. Řešení velikostí
+description: 'Vytváření mobilních aplikací s Xamarin.Forms: Souhrn kapitola 5. Řešení velikostí'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 486800E9-C09F-4B95-9AC2-C0F8FE563BCF
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 0b93942d6623106a5e507d6eef3e7140f9d409bd
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 36d208f2326c7584bc03c351b4a5b05a3f3928c9
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241644"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995450"
 ---
-# <a name="summary-of-chapter-5-dealing-with-sizes"></a>Souhrn kapitoly 5. Práci s velikostí
+# <a name="summary-of-chapter-5-dealing-with-sizes"></a>Souhrn kapitola 5. Řešení velikostí
 
-Několik velikosti na platformě Xamarin.Forms došlo, pokud:
+Více velikostí v Xamarin.Forms zatím byly zjištěny:
 
-- Výška iOS stavový řádek je 20
+- Výška stavového řádku iOS je 20
 - `BoxView` Má výchozí šířku a výšku 40
 - Výchozí hodnota `Padding` v `Frame` je 20
 - Výchozí hodnota `Spacing` na `StackLayout` 6
-- `Device.GetNamedSize` Metoda vrátí velikost číselné písma
+- `Device.GetNamedSize` Metoda vrátí číselné písmo
 
-Tyto velikosti nejsou pixelů. Místo toho jsou nezávislé na zařízení jednotky nezávisle rozpoznáno každou platformu.
+Tyto velikosti nejsou pixelů. Místo toho jsou jednotkách nezávislých na zařízení, nezávisle na sobě rozpoznávaných jednotlivé platformy.
 
-## <a name="pixels-points-dps-dips-and-dius"></a>Pixelů, body, distribučních bodů, vyhrazené IP adresy a DIUs
+## <a name="pixels-points-dps-dips-and-dius"></a>Obrazové body, body, distribučních bodů, vyhrazené IP adresy a DIUs
 
-Časná v historií Apple Mac a Microsoft Windows programátory fungovala jednotky pixelů. Nástupem vyšší řešení zobrazí však vyžaduje více virtualizované a abstraktní přístupu k souřadnice obrazovky. Na světě Mac programátory fungovala jednotky *body*, tradičně 1/72 palce při Windows vývojáři použít *jednotky nezávislé na zařízení* na 1/96 palce na základě (DIUs).
+V rané fázi historie Apple Mac a Microsoft Windows nastavení spolupráci programátorům v jednotkách, které pixelů. Nástupu vyšším rozlišením však vyžaduje virtualizované a abstraktní přístup na souřadnice obrazovky. Ve světě Mac programátoři pracovali v jednotkách, které *body*, tradičně 1/72 palce při Windows vývojáři použít *jednotkách nezávislých na zařízení* (DIUs) založené na 1/96 palce.
 
-Mobilní zařízení, ale jsou obecně uložené mnohem blíže tučné a vyšší rozlišení než plochu obrazovky, které znamená, že může tolerovat vyšší hustotu pixelů.
+Mobilní zařízení, ale obvykle ukládají brzo plochu a vyšší rozlišení než plochy obrazovky, což znamená, že může tolerovat vyšší hustota pixelů.
 
-Cílení na zařízení Apple iPhone a iPad programátory pokračovat v práci v jednotkách *body*, ale existují 160 těchto bodů palec. V závislosti na zařízení může být 1, 2 nebo 3 pixelů do bodu.
+Pokračovat v práci v jednotkách, které programátoři cílení na zařízení iPhone a iPad Apple *body*, ale existují 160 těchto bodů palec. V závislosti na zařízení může být 1, 2 nebo 3 pixelů do bodu.
 
-Android jsou podobné. Programátory pracovních jednotek *nezávislé na hustotě pixelů* (distribučních bodů), a je na 160 distribučních bodů na palec na základě vztah mezi distribučních bodů a pixelů.
+Android je podobná. Programátoři pracovat v jednotkách, které *pixelech nezávislých na hustotě* (dps), a vztah mezi distribučních bodů a je založen na 160 dps palec.
 
-Prostředí Windows Runtime také navázal škálování faktorů, které implikují něco blízko 160 jednotky nezávislé na zařízení, které mají palec.
+Modul Windows Runtime má zároveň je stanovené škálování faktory, které znamenají něco blízko 160 jednotky nezávislé na zařízení, aby palec.
 
-V souhrnu Xamarin.Forms programátorem cílení na telefonů a tabletů Předpokládejme, aby všechny jednotky měření jsou založené na následující kritéria:
+Stručně řečeno programátor Xamarin.Forms cílení na telefonech a tabletech můžete předpokládat, že všechny jednotky měření vycházejí z následujících podmínek:
 
-- 160 jednotky pro palec, ekvivalentní
-- 64 jednotky pro centimetr
+- 160 jednotky na palec, odpovídá
+- 64 jednotek, aby centimetr
 
-Jen pro čtení [ `Width` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Width/) a [ `Height` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Height/) vlastnosti definované `VisualElement` mají výchozí hodnoty "model" &ndash;1. Jenom v případě, že element má velikost a shromáždit v rozložení se tyto vlastnosti projeví skutečná velikost element v jednotky nezávislé na zařízení. Tato velikost obsahuje jakoukoliv `Padding` nastavené u elementu, ale ne `Margin`.
+Jen pro čtení [ `Width` ](xref:Xamarin.Forms.VisualElement.Width) a [ `Height` ](xref:Xamarin.Forms.VisualElement.Height) vlastnosti určené `VisualElement` mají výchozí hodnoty "napodobení" &ndash;1. Pouze v případě, že element má velikost a shromáždit v rozložení těchto vlastností projeví se skutečná velikost prvku v jednotkách nezávislých na zařízení. Tato velikost obsahuje jakoukoliv `Padding` nastaven pro element, ale ne `Margin`.
 
-Aktivuje se vizuální prvek [ `SizeChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.VisualElement.SizeChanged/) události při jeho `Width` nebo `Height` došlo ke změně. [ **WhatSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/WhatSize) ukázce se používá tato událost Pokud chcete zobrazit velikost obrazovky programu.
+Aktivuje vizuální prvek [ `SizeChanged` ](xref:Xamarin.Forms.VisualElement.SizeChanged) událostí při jeho `Width` nebo `Height` došlo ke změně. [ **WhatSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/WhatSize) Ukázka používá tuto událost zobrazit velikosti obrazovky programu.
 
 ## <a name="metrical-sizes"></a>Metrical velikosti
 
-[ **MetricalBoxView** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/MetricalBoxView) používá [ `WidthRequest` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.WidthRequest/) a [ `HeightRequest` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.HeightRequest/) k zobrazení `BoxView` jeden palec talovat a jeden centimetr široké.
+[ **MetricalBoxView** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/MetricalBoxView) používá [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest) a [ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest) zobrazíte `BoxView` 2,5 talovat a jeden centimetr široké.
 
-## <a name="estimated-font-sizes"></a>Velikosti odhadované písem
+## <a name="estimated-font-sizes"></a>Písmo odhadované velikosti
 
-[ **FontSizes** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/FontSizes) ukázka ukazuje, jak použít 160 jednotky na the palců pravidlo k určení velikosti písem v jednotkách bodů. Visual konzistence mezi touto technikou platformy je lepší, než `Device.GetNamedSize`.
+[ **FontSizes** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/FontSizes) příklad ukazuje, jak použít 160 jednotky na the palců pravidlo k určení velikosti písem v jednotkách, které body. Vizuální konzistence mezi platformami pomocí této techniky je obecně lepší než `Device.GetNamedSize`.
 
-## <a name="fitting-text-to-available-size"></a>Přizpůsobení textu do dostupné velikosti
+## <a name="fitting-text-to-available-size"></a>Přizpůsobení text, který má k dispozici velikost
 
-Je možné, aby vyhovovaly blok textu v obdélníku konkrétní pomocí výpočtu `FontSize` z `Label` pomocí následujících kritérií:
+Je možné přizpůsobit blok textu v rámci konkrétní obdélník výpočtem `FontSize` z `Label` pomocí následujících kritérií:
 
-- Mezery mezi řádky je 120 % velikosti písma (130 % na platformách systému Windows).
-- Šířka znaku průměrná je 50 % velikosti písma.
+- Řádkování je 120 % velikost písma (% 130 na platformách Windows).
+- Šířka znaku průměrné je 50 % velikosti písma.
 
-[ **EstimatedFontSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/EstimatedFontSize) příklad znázorňuje tento postup. Tento program byla zapsána před [ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/) byla vlastnost k dispozici, takže používá [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/) s [ `Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/) nastavení pro simulaci okraj.
+[ **EstimatedFontSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/EstimatedFontSize) ukázka demonstruje tento postup. Tento program vytvořené před [ `Margin` ](xref:Xamarin.Forms.View.Margin) vlastnost byla k dispozici, aby používalo [ `ContentView` ](xref:Xamarin.Forms.ContentView) s [ `Padding` ](xref:Xamarin.Forms.Layout.Padding) nastavení pro simulaci okraj.
 
-[![Trojitá snímek obrazovky velikost písma odhadované](images/ch05fg07-small.png "Text nevejde do dostupné velikosti")](images/ch05fg07-large.png#lightbox "Text nevejde do dostupné velikosti")
+[![Trojitá snímek odhadované písmo](images/ch05fg07-small.png "Text přizpůsobení dostupné velikosti")](images/ch05fg07-large.png#lightbox "Text přizpůsobení dostupné velikosti")
 
 ## <a name="a-fit-to-size-clock"></a>Přizpůsobit velikost hodiny
 
-[ **FitToSizeClock** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/FitToSizeClock) příklad ukazuje použití [ `Device.StartTimer` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.StartTimer/p/System.TimeSpan/System.Func%7BSystem.Boolean%7D/) spustit časovač, který pravidelně upozorní aplikace, když je na čase aktualizovat hodiny. Aby zobrazení co největší velikost písma nastavena na-šestinu šířce stránky.
+[ **FitToSizeClock** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/FitToSizeClock) ukázka znázorňuje použití [ `Device.StartTimer` ](xref:Xamarin.Forms.Device.StartTimer(System.TimeSpan,System.Func{System.Boolean})) spustit časovač, který pravidelně upozorní aplikaci, když je čas aktualizovat hodiny. Velikost písma je nastavený na čtvrtinu, šestinu šířky stránky, abyste měli zobrazení co největší.
 
-## <a name="accessibility-issues"></a>Problémy s
+## <a name="accessibility-issues"></a>Usnadnění
 
-**EstimatedFontSize** program a **FitToSizeClock** program obě obsahují jemně chybu: Pokud uživatel změní nastavení usnadnění telefonu na Android nebo Windows 10 Mobile, už programu můžete odhadnout, jak velký vykreslením text na základě velikosti písma. [ **AccessibilityTest** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/AccessibilityTest) příklad znázorňuje tento problém.
+**EstimatedFontSize** programu a **FitToSizeClock** program oba obsahují drobným chybu: Pokud uživatel změní nastavení usnadnění v telefonu na Android nebo Windows 10 Mobile, aplikace už odhadnout velikost textu je vykreslen na základě velikosti písma. [ **AccessibilityTest** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/AccessibilityTest) ukázka demonstruje tento problém.
 
-## <a name="empirically-fitting-text"></a>Empirically přizpůsobování textu
+## <a name="empirically-fitting-text"></a>Empirických přizpůsobování textu
 
-Dalším způsobem podle textu do obdélníku je empirically vypočítat velikost vykresleného textu a upravit ho nahoru nebo dolů. Program volání kniha [ `GetSizeRequest` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.GetSizeRequest/p/System.Double/System.Double/) na vizuální prvek získat požadovaná velikost elementu. Že metoda je zastaralá a místo toho by měly volat programy [ `Measure` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.Measure/p/System.Double/System.Double/Xamarin.Forms.MeasureFlags/).
+Dalším způsobem podle textu do obdélníku je empirických vypočítat velikost vykresleného textu a upravte ho nahoru nebo dolů. Program ve voláních knihy [ `GetSizeRequest` ](xref:Xamarin.Forms.VisualElement.GetSizeRequest(System.Double,System.Double)) na vizuální prvek získat požadovaná velikost prvku. Že metoda je zastaralá a programy by měly místo toho volat [ `Measure` ](xref:Xamarin.Forms.VisualElement.Measure(System.Double,System.Double,Xamarin.Forms.MeasureFlags)).
 
-Pro `Label`prvního argumentu musí být Šířka kontejneru (aby bylo možné zabalení), zatímco druhý argument by měl být nastaven na `Double.PositiveInfinity` aby neomezeného výšku. [ **EmpiricalFontSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/EmpiricalFontSize) příklad znázorňuje tento postup.
+Pro `Label`, první argument by měl být Šířka kontejneru (povolit zalamování), zatímco druhý argument by měl být nastaven na `Double.PositiveInfinity` na výšku vstupy bez omezení. [ **EmpiricalFontSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/EmpiricalFontSize) ukázka demonstruje tento postup.
 
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Úplný text kapitoly 5 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch05-Apr2016.pdf)
-- [Ukázky kapitoly 5](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05)
-- [Kapitola 5 F # – ukázky](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/FS)
+- [Kapitola 5 textu v plném znění (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch05-Apr2016.pdf)
+- [Ukázky kapitola 5](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05)
+- [Ukázky kapitola 5 F #](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/FS)

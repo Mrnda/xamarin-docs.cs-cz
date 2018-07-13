@@ -1,42 +1,42 @@
 ---
 title: Implementace zobrazení
-description: Tento článek vysvětluje, jak vytvořit vlastní zobrazovací jednotky Xamarin.Forms vlastního ovládacího prvku, který se používá k zobrazení náhledu datový proud videa z fotoaparátu zařízení.
+description: Tento článek vysvětluje, jak vytvořit vlastního rendereru pro Xamarin.Forms vlastního ovládacího prvku, který se používá k zobrazení videa zobrazit náhled streamu z fotoaparátu zařízení.
 ms.prod: xamarin
 ms.assetid: 915E25E7-4A6B-4F34-B7B4-07D5F4B240F2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: eb0bc199bfd31ac631ca9d131796b606960d76aa
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 8ee9926eb3b726673711141e7c75a68b607d02d3
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240483"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994699"
 ---
 # <a name="implementing-a-view"></a>Implementace zobrazení
 
-_Xamarin.Forms vlastní uživatelské rozhraní ovládací prvky by měl být odvozen od třídy zobrazení, který se používá k umístění rozložení a ovládací prvky na obrazovce. Tento článek ukazuje, jak vytvořit vlastní zobrazovací jednotky Xamarin.Forms vlastního ovládacího prvku, který se používá k zobrazení náhledu datový proud videa z fotoaparátu zařízení._
+_Ovládací prvky Xamarin.Forms vlastního uživatelského rozhraní by měl být odvozen ze třídy zobrazení, která se používá k umístění rozložení a ovládací prvky na obrazovce. Tento článek ukazuje, jak vytvořit vlastního rendereru pro Xamarin.Forms vlastního ovládacího prvku, který se používá k zobrazení videa zobrazit náhled streamu z fotoaparátu zařízení._
 
-Každé zobrazení Xamarin.Forms má doprovodné zobrazovací jednotky pro každou platformu, která vytvoří instanci nativní ovládacího prvku. Když [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) je vykreslen metodou Xamarin.Forms aplikace v iOS, `ViewRenderer` vytvoření instance třídy, které pak vytvoří nativní `UIView` ovládacího prvku. Na platformě Android `ViewRenderer` třída vytvoří nativní `View` ovládacího prvku. Na univerzální platformu Windows (UWP), `ViewRenderer` třída vytvoří nativní `FrameworkElement` ovládacího prvku. Další informace o zobrazovací jednotky a třídy nativní ovládacích prvků, které ovládací prvky Xamarin.Forms mapování na najdete v tématu [zobrazovací jednotky základní třídy a nativní ovládací prvky](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Každé zobrazení Xamarin.Forms má související zobrazovací jednotky pro každou platformu, která vytvoří instanci nativní ovládacího prvku. Když [ `View` ](xref:Xamarin.Forms.View) je vykreslen metodou aplikace Xamarin.Forms v iOS, `ViewRenderer` je vytvořena instance třídy, které pak vytvoří instanci nativní `UIView` ovládacího prvku. Na platformu Android `ViewRenderer` třídy vytvoří instanci nativní `View` ovládacího prvku. Na Universal Windows Platform (UWP), `ViewRenderer` třídy vytvoří instanci nativní `FrameworkElement` ovládacího prvku. Další informace o nástroj pro vykreslování a nativní ovládací prvek třídy, které ovládací prvky Xamarin.Forms namapovat na najdete v tématu [Renderer základní třídy a nativní ovládací prvky](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
-Následující diagram znázorňuje vztah mezi [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) a odpovídající nativní ovládací prvky, které implementují ho:
+Následující diagram znázorňuje vztah mezi [ `View` ](xref:Xamarin.Forms.View) a odpovídající nativní ovládací prvky, které je implementují:
 
-![](view-images/view-classes.png "Vztah mezi třídou zobrazení a jeho implementující nativních tříd")
+![](view-images/view-classes.png "Vztah mezi třídou zobrazení a jeho implementaci nativních tříd")
 
-Proces vykreslování lze použít k implementaci přizpůsobení specifické pro platformu tak, že vytvoříte vlastní zobrazovací jednotky pro [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) na každou platformu. Proces pro to vypadá takto:
+Samotný proces vykreslování je možné implementovat přizpůsobení konkrétní platformy tak, že vytvoříte vlastní zobrazovací jednotky pro [ `View` ](xref:Xamarin.Forms.View) na jednotlivých platformách. Tento proces je následujícím způsobem:
 
 1. [Vytvoření](#Creating_the_Custom_Control) Xamarin.Forms vlastního ovládacího prvku.
-1. [Využívat](#Consuming_the_Custom_Control) vlastní ovládací prvek z Xamarin.Forms.
-1. [Vytvoření](#Creating_the_Custom_Renderer_on_each_Platform) vlastní zobrazovací jednotky pro ovládací prvek na každou platformu.
+1. [Využívání](#Consuming_the_Custom_Control) vlastního ovládacího prvku z Xamarin.Forms.
+1. [Vytvoření](#Creating_the_Custom_Renderer_on_each_Platform) vlastního rendereru pro ovládací prvek na jednotlivých platformách.
 
-Každá položka teď probereme pak implementovat `CameraPreview` zobrazovací jednotky, která zobrazuje preview datový proud videa z fotoaparátu zařízení. Klepnutím na na datový proud videa zastaví a spusťte ji.
+Každá položka nyní probereme zase k implementaci `CameraPreview` renderer, který zobrazuje náhled streamu videa z fotoaparátu zařízení. Klepnutí na datový proud videa počítač zastavíme a spustíme ji.
 
 <a name="Creating_the_Custom_Control" />
 
-## <a name="creating-the-custom-control"></a>Vytvoření vlastního ovládacího prvku
+## <a name="creating-the-custom-control"></a>Vytvořit vlastní ovládací prvek
 
-Vytváření podtříd můžete vytvořit vlastního ovládacího prvku [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) třídy, jak je znázorněno v následujícím příkladu kódu:
+Vytváření podtříd můžete vytvořit vlastní ovládací prvek [ `View` ](xref:Xamarin.Forms.View) třídy, jak je znázorněno v následujícím příkladu kódu:
 
 ```csharp
 public class CameraPreview : View
@@ -54,13 +54,13 @@ public class CameraPreview : View
 }
 ```
 
-`CameraPreview` Vlastní ovládací prvek je vytvořen v projektu knihovny (PCL) přenosných tříd a definuje rozhraní API pro ovládací prvek. Vlastní ovládací prvek zpřístupní `Camera` vlastnost, která se používá k řízení, zda má být zobrazena datový proud videa z přední nebo zadní fotoaparát v zařízení. Pokud není zadána hodnota pro `Camera` vlastnost při vytvoření ovládacího prvku, nastaví se jako výchozí zadání zadní fotoaparát.
+`CameraPreview` Vlastního ovládacího prvku je vytvořen v projektu (PCL) knihovny přenosných tříd a definuje rozhraní API pro ovládací prvek. Zpřístupňuje vlastní ovládací prvek `Camera` vlastnost, která je možné řídit, zda má být zobrazena datový proud videa z přední nebo zadní fotoaparát v zařízení. Pokud není zadána hodnota pro `Camera` vlastnost, když se vytvoří ovládací prvek, použije se výchozí zadání zadní kamera.
 
 <a name="Consuming_the_Custom_Control" />
 
-## <a name="consuming-the-custom-control"></a>Použití vlastního ovládacího prvku
+## <a name="consuming-the-custom-control"></a>Používání vlastního ovládacího prvku
 
-`CameraPreview` Vlastní ovládací prvek může být odkazováno v XAML v projektu PCL deklarace oboru názvů pro umístění a použitím Předpona oboru názvů vlastního ovládacího prvku elementu. Následující příklad kódu ukazuje jak `CameraPreview` vlastního ovládacího prvku mohou být spotřebovávána stránky XAML:
+`CameraPreview` Vlastní ovládací prvek může být odkazováno v XAML v projektu PCL deklarace oboru názvů pro jeho umístění a použitím předponu oboru názvů na vlastní ovládací prvek. Následující příklad kódu ukazuje jak `CameraPreview` vlastního ovládacího prvku mohou být spotřebovány stránky XAML:
 
 ```xaml
 <ContentPage ...
@@ -76,9 +76,9 @@ public class CameraPreview : View
 </ContentPage>
 ```
 
-`local` Předponu oboru názvů můžete pojmenovat. Ale `clr-namespace` a `assembly` hodnoty musí odpovídat podrobnosti vlastního ovládacího prvku. Jakmile je deklarován obor názvů, je předpona, která slouží k odkazování vlastního ovládacího prvku.
+`local` Předponu oboru názvů může být název cokoli. Ale `clr-namespace` a `assembly` hodnoty musí odpovídat podrobnosti vlastního ovládacího prvku. Jakmile je deklarován obor názvů, předpona, která slouží k odkazování na vlastní ovládací prvek.
 
-Následující příklad kódu ukazuje jak `CameraPreview` vlastního ovládacího prvku mohou být spotřebovávána stránky C#:
+Následující příklad kódu ukazuje jak `CameraPreview` vlastního ovládacího prvku mohou být spotřebovány stránky jazyka C#:
 
 ```csharp
 public class MainPageCS : ContentPage
@@ -100,36 +100,36 @@ public class MainPageCS : ContentPage
 }
 ```
 
-Instance `CameraPreview` vlastního ovládacího prvku se použije k zobrazení náhledu datový proud videa z fotoaparátu v zařízení. Kromě zajištění dostatečného Volitelně můžete zadat hodnotu pro `Camera` vlastnost, přizpůsobení ovládacího prvku se provede vlastní zobrazovací jednotky.
+Instance `CameraPreview` vlastního ovládacího prvku se použije k zobrazení videa zobrazit náhled streamu z fotoaparátu zařízení. Kromě volitelnému určení hodnotu `Camera` vlastnost, přizpůsobení ovládacího prvku se provede vlastní zobrazovací jednotky.
 
-Vlastní zobrazovací jednotky lze nyní přidat na každý projekt aplikace vytvořit ovládací prvky náhledu fotoaparátu specifické pro platformu.
+Vlastní zobrazovací jednotky je nyní přidat do každého projektu aplikace k vytvoření ovládacích prvků specifických pro platformu fotoaparátu ve verzi preview.
 
 <a name="Creating_the_Custom_Renderer_on_each_Platform" />
 
-## <a name="creating-the-custom-renderer-on-each-platform"></a>Vytváření vlastní zobrazovací jednotky na jednotlivých platformách
+## <a name="creating-the-custom-renderer-on-each-platform"></a>Vytvoření vlastního Rendereru na jednotlivých platformách
 
-Proces pro vytvoření třídy vlastní zobrazovací jednotky vypadá takto:
+Proces pro vytvoření vlastního rendereru třídy vypadá takto:
 
-1. Vytvoření podtřídou třídy `ViewRenderer<T1,T2>` třídu, která vykreslí vlastního ovládacího prvku. První argument typ měli vlastního ovládacího prvku se zobrazovací jednotky, v takovém případě `CameraPreview`. Druhý argument typu musí být nativní ovládací prvek, který bude implementace vlastního ovládacího prvku.
-1. Přepsání `OnElementChanged` metody, která vykreslí vlastní logiky řízení a zápis a přizpůsobit. Tato metoda je volána, když je vytvořen odpovídající ovládacího prvku Xamarin.Forms.
-1. Přidat `ExportRenderer` atributu na vlastní zobrazovací jednotky třídu k určení, že bude použit k vykreslení vlastního ovládacího prvku Xamarin.Forms. Tento atribut slouží k registraci vlastní zobrazovací jednotky s Xamarin.Forms.
+1. Vytvořit podtřídu `ViewRenderer<T1,T2>` třídu, která vykreslí vlastního ovládacího prvku. První argument typu musí být vlastní ovládací prvek je vykreslovaný, v tomto případě `CameraPreview`. Druhý argument typu musí být nativní ovládací prvek, který implementuje vlastní ovládací prvek.
+1. Přepsat `OnElementChanged` metody, která vykreslí vlastní ovládací prvek a zapisovat logiku, aby ji přizpůsobit. Tato metoda je volána, když se vytvoří odpovídající ovládací prvek Xamarin.Forms.
+1. Přidat `ExportRenderer` atribut pro třídu vlastního rendereru určíte, že bude používat k vykreslení vlastního ovládacího prvku Xamarin.Forms. Tento atribut slouží k registraci vlastního rendereru s Xamarin.Forms.
 
 > [!NOTE]
-> Pro většinu prvků Xamarin.Forms je volitelné poskytnout vlastní zobrazovací jednotky v každém projektu platformy. Pokud vlastní zobrazovací jednotky není registrované, bude použit výchozí zobrazovací jednotky pro základní třídu ovládacího prvku. Však vlastní nástroji pro vykreslování se vyžadují v každém projektu platformy při vykreslování [zobrazení](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) elementu.
+> Pro většinu prvků Xamarin.Forms je volitelný poskytnout vlastní zobrazovací jednotky v každém projektu platformy. Pokud není zaregistrovaný vlastní zobrazovací jednotky, se používá výchozí zobrazovací jednotky pro základní třídu ovládacího prvku. Nicméně vlastní renderery jsou nutné v každém projektu platformy při vykreslování [zobrazení](xref:Xamarin.Forms.View) elementu.
 
-Následující diagram znázorňuje odpovědnosti jednotlivých projektů v ukázkové aplikace, spolu s jejich vzájemných vztahů:
+Následující diagram znázorňuje odpovědnosti každý projekt v ukázkové aplikaci, spolu s jejich vzájemné vztahy:
 
 ![](view-images/solution-structure.png "CameraPreview vlastní zobrazovací jednotky projektu odpovědnosti")
 
-`CameraPreview` Vykreslení vlastního ovládacího prvku renderer specifické pro platformu třídy, které jsou odvozeny od `ViewRenderer` třídu pro každou platformu. Výsledkem je každý `CameraPreview` vlastního ovládacího prvku vykreslované s ovládacími prvky specifické pro platformu, jak je vidět na následujících snímcích obrazovky:
+`CameraPreview` Vlastního ovládacího prvku je vykreslen metodou renderer specifické pro platformu, všechny odvozené třídy `ViewRenderer` třídy pro každou platformu. Výsledkem je každý `CameraPreview` vlastní ovládací prvky vykreslované s ovládacími prvky pro konkrétní platformu, jak je znázorněno na následujících snímcích obrazovky:
 
 ![](view-images/screenshots.png "CameraPreview na jednotlivých platformách")
 
-`ViewRenderer` Třídy zpřístupňuje `OnElementChanged` metodu, která je volána, když vlastního ovládacího prvku Xamarin.Forms se vytvoří pro vykreslení odpovídající nativní ovládacího prvku. Tato metoda přebírá `ElementChangedEventArgs` parametr, který obsahuje `OldElement` a `NewElement` vlastnosti. Tyto vlastnosti představují Xamarin.Forms element, zobrazovací jednotky *byla* připojené a Xamarin.Forms element, zobrazovací jednotky *je* připojené k, v uvedeném pořadí. V ukázkové aplikaci `OldElement` , bude mít vlastnost `null` a `NewElement` vlastnost bude obsahovat odkaz na `CameraPreview` instance.
+`ViewRenderer` Třídy zpřístupňuje `OnElementChanged` metodu, která je volána při vytvoření vlastního ovládacího prvku Xamarin.Forms pro vykreslení odpovídající nativní ovládací prvek. Tato metoda přebírá `ElementChangedEventArgs` parametr, který obsahuje `OldElement` a `NewElement` vlastnosti. Tyto vlastnosti představují elementu Xamarin.Forms, která zobrazovací jednotky *byl* připojené a Xamarin.Forms element, která zobrazovací jednotky *je* připojené položky v uvedeném pořadí. V ukázkové aplikaci `OldElement` bude mít vlastnost `null` a `NewElement` vlastnost bude obsahovat odkaz na `CameraPreview` instance.
 
-Přepsané verzi `OnElementChanged` metoda v každé třídě renderer specifických pro platformy je místo, při vytváření instancí nativní řízení a přizpůsobení. `SetNativeControl` Metoda má být použita k vytvoření instance nativní ovládací prvek a tato metoda bude přiřadit také odkaz na ovládací prvek `Control` vlastnost. Kromě toho nelze získat odkaz na platformě Xamarin.Forms ovládací prvek, který je vykreslované prostřednictvím `Element` vlastnost.
+Přepsané verzi `OnElementChanged` metoda v každé třídě renderer specifické pro platformu je místem, kde můžete provádět nativní řízení vytváření instancí a přizpůsobení. `SetNativeControl` Metoda má být použita k vytvoření instance nativní ovládací prvek, a to tato metoda také odkaz na ovládací `Control` vlastnost. Kromě toho lze získat odkaz na ovládací prvek Xamarin.Forms, která se vykresluje přes `Element` vlastnost.
 
-V některých případech `OnElementChanged` metodu lze volat vícekrát. Proto aby se zabránilo nevracení paměti, musí dát pozor při vytvoření instance nového nativní ovládacího prvku. Přístup použít při vytvoření instance nového nativní ovládacího prvku ve vlastní zobrazovací jednotky je znázorněno v následujícím příkladu kódu:
+V některých případech `OnElementChanged` metodu lze volat více než jednou. Proto aby se zabránilo nevracení paměti, musí dbát při vytváření instance nový nativní ovládací prvek. Přístup k použití při vytváření instance nový nativní ovládací prvek ve vlastní zobrazovací jednotky můžete vidět v následujícím příkladu kódu:
 
 ```csharp
 protected override void OnElementChanged (ElementChangedEventArgs<NativeListView> e)
@@ -151,13 +151,13 @@ protected override void OnElementChanged (ElementChangedEventArgs<NativeListView
 }
 ```
 
-Nový nativní ovládací prvek by měla být vytvořená pouze jednou, pokud `Control` vlastnost je `null`. Ovládací prvek by měl být nakonfigurovaný jenom a po vlastní zobrazovací jednotky k nové element Xamarin.Forms přihlásit k odběru obslužné rutiny událostí. Podobně, všechny obslužné rutiny, které byly přihlásit k odběru by měly být jenom v až elementu, který zobrazovací jednotky je připojen k změní odhlásit. Přijetí tento přístup vám pomůže vytvořit vlastní vykreslení původce, který není trpí nevracení paměti.
+Nový nativní ovládací prvek by měl vytvořit jenom jednou, když `Control` vlastnost `null`. Ovládací prvek by měl být nakonfigurovaný jenom a když vlastní zobrazovací jednotky je připojen k nový prvek Xamarin.Forms přihlásit k odběru obslužných rutin událostí. Podobně, všechny obslužné rutiny, které byly k odběru by měly být jenom z při změně elementu, který je zobrazovací jednotky připojené k odhlášení odběru. Přijmout tento přístup vám pomůže vytvořit výkonné vlastní zobrazovací jednotky, který není trpí nevracení paměti.
 
-Každá třída vlastní zobrazovací jednotky je upraven pomocí `ExportRenderer` atribut, který registruje zobrazovací jednotky s Xamarin.Forms. Atribut přebírá dva parametry – název typu vlastního ovládacího prvku Xamarin.Forms vykreslované a název typu vlastní zobrazovací jednotky. `assembly` Předpona, která má atribut určuje atribut, které se vztahují na celou sestavení.
+Každá třída vlastní zobrazovací jednotky je doplněn `ExportRenderer` atribut, který registruje vykreslovaný pomocí Xamarin.Forms. Atribut přebírá dva parametry – název typu vlastního ovládacího prvku Xamarin.Forms vykreslované a název typu vlastní zobrazovací jednotky. `assembly` Předpona, která atribut určuje, že platí atribut pro celé sestavení.
 
-Následující části popisují implementaci třídy každý vlastní zobrazovací jednotky specifické pro platformu.
+Následující části popisují implementaci každou třídu vlastního rendereru pro konkrétní platformu.
 
-### <a name="creating-the-custom-renderer-on-ios"></a>Vytváření vlastní zobrazovací jednotky v systému iOS
+### <a name="creating-the-custom-renderer-on-ios"></a>Vytvoření vlastní zobrazovací jednotky v systému iOS
 
 Následující příklad kódu ukazuje vlastní zobrazovací jednotky pro platformu iOS:
 
@@ -202,9 +202,9 @@ namespace CustomRenderer.iOS
 }
 ```
 
-Za předpokladu, že `Control` vlastnost je `null`, `SetNativeControl` metoda je volána k vytvoření instance nového `UICameraPreview` řízení a k přiřazení odkaz na jeho `Control` vlastnost. `UICameraPreview` Je specifické pro platformu ovládací prvek vlastní, který používá `AVCapture` rozhraní API k poskytování preview datový proud z kamery. Zpřístupňuje `Tapped` událost, která jsou zpracována `OnCameraPreviewTapped` metoda zastavení a spuštění náhledu videa, když je stisknuté. `Tapped` Událostí je přihlášen k, když je vlastní zobrazovací jednotky připojené k nového elementu Xamarin.Forms a odhlásil z jenom, když je element zobrazovací jednotky připojen na změny.
+Za předpokladu, že `Control` vlastnost `null`, `SetNativeControl` metoda je volána k vytvoření instance nového `UICameraPreview` ovládacího prvku a přiřazovat na ni na odkaz `Control` vlastnost. `UICameraPreview` Je specifické pro platformu vlastní ovládací prvek, který používá `AVCapture` rozhraní API k poskytování zobrazit náhled streamu z fotoaparátu/kamery. Zpřístupňuje `Tapped` událost, která je zpracována `OnCameraPreviewTapped` metoda zastavit a spustit video ve verzi preview je klepnutí. `Tapped` Událostí je přihlášen k odběru vlastní zobrazovací jednotky připojené k nový prvek Xamarin.Forms a pouze po elementu zobrazovací jednotky připojené k změn se zrušilo.
 
-### <a name="creating-the-custom-renderer-on-android"></a>Vytváření vlastní zobrazovací jednotky v systému Android
+### <a name="creating-the-custom-renderer-on-android"></a>Vytvoření vlastního Rendereru v Androidu
 
 Následující příklad kódu ukazuje vlastní zobrazovací jednotky pro platformu Android:
 
@@ -262,9 +262,9 @@ namespace CustomRenderer.Droid
 }
 ```
 
-Za předpokladu, že `Control` vlastnost je `null`, `SetNativeControl` metoda je volána k vytvoření instance nového `CameraPreview` řízení a přiřaďte odkaz na jeho `Control` vlastnost. `CameraPreview` Je specifické pro platformu ovládací prvek vlastní, který používá `Camera` rozhraní API k poskytování preview datový proud z kamery. `CameraPreview` Ovládací prvek je nakonfigurovaný, za předpokladu, že vlastní zobrazovací jednotky je připojen k nového elementu Xamarin.Forms. Tato konfigurace zahrnuje vytvoření nové nativní `Camera` objektu pro přístup k fotoaparátu konkrétní hardware a registraci obslužné rutiny události ke zpracování `Click` událostí. Tato obslužná rutina zase zastaví a spustit náhledu videa v případě, že je stisknuté. `Click` Událostí je odhlásil ze, pokud element Xamarin.Forms zobrazovací jednotky je připojena k změny.
+Za předpokladu, že `Control` vlastnost `null`, `SetNativeControl` metoda je volána k vytvoření instance nového `CameraPreview` řídit a přiřadit na ni na odkaz `Control` vlastnost. `CameraPreview` Je specifické pro platformu vlastní ovládací prvek, který používá `Camera` rozhraní API pro poskytnutí zobrazit náhled streamu z fotoaparátu/kamery. `CameraPreview` Ovládací prvek je nakonfigurovaný, za předpokladu, že vlastní zobrazovací jednotky je připojen k nový prvek Xamarin.Forms. Tato konfigurace zahrnuje vytvoření nové nativní `Camera` objektu pro přístup k fotoaparátu konkrétní hardware a registraci obslužné rutiny události ke zpracování `Click` událostí. Pak tato obslužná rutina počítač zastavíme a spustíme videa ve verzi preview je klepnutí. `Click` Událostí je zrušili odběr, pokud element Xamarin.Forms zobrazovací jednotky je připojený k změny.
 
-### <a name="creating-the-custom-renderer-on-uwp"></a>Vytváření vlastní zobrazovací jednotky na UWP
+### <a name="creating-the-custom-renderer-on-uwp"></a>Vytvoření vlastního Rendereru na UPW
 
 Následující příklad kódu ukazuje vlastní zobrazovací jednotky pro UPW:
 
@@ -320,14 +320,14 @@ namespace CustomRenderer.UWP
 }
 ```
 
-Za předpokladu, že `Control` vlastnost je `null`, nový `CaptureElement` je vytvořena instance a `SetupCamera` metoda je volána, které používá `MediaCapture` rozhraní API k poskytování preview datový proud z kamery. `SetNativeControl` Metoda je volána poté přiřadit odkaz na `CaptureElement` instance k `Control` vlastnost. `CaptureElement` Řízení zpřístupňuje `Tapped` událost, která jsou zpracována `OnCameraPreviewTapped` metoda zastavení a spuštění náhledu videa, když je stisknuté. `Tapped` Událostí je přihlášen k, když je vlastní zobrazovací jednotky připojené k nového elementu Xamarin.Forms a odhlásil z jenom, když je element zobrazovací jednotky připojen na změny.
+Za předpokladu, že `Control` vlastnost `null`, nový `CaptureElement` je vytvořena instance a `SetupCamera` metoda je volána, který používá `MediaCapture` rozhraní API pro poskytnutí zobrazit náhled streamu z fotoaparátu/kamery. `SetNativeControl` Metoda je volána poté přiřadit odkaz na `CaptureElement` instance na `Control` vlastnost. `CaptureElement` Řídit zpřístupňuje `Tapped` událost, která je zpracována `OnCameraPreviewTapped` metoda zastavit a spustit video ve verzi preview je klepnutí. `Tapped` Událostí je přihlášen k odběru vlastní zobrazovací jednotky připojené k nový prvek Xamarin.Forms a pouze po elementu zobrazovací jednotky připojené k změn se zrušilo.
 
 > [!NOTE]
-> Je důležité k zastavení a uvolnění objektů, které poskytují přístup k fotoaparátu v aplikaci UWP. Tak neučiníte, může narušovat jiné aplikace, které se pokoušejí o přístup k fotoaparátu zařízení. Další informace najdete v tématu [zobrazení náhledu fotoaparátu](/windows/uwp/audio-video-camera/simple-camera-preview-access/).
+> Je důležité k zastavení a uvolnění objektů, které poskytují přístup k fotoaparátu/kamery v aplikaci pro UPW. Pokud tak neučiníte může vést k potížím s ostatními aplikacemi, které se pokoušejí o přístup k fotoaparátu zařízení. Další informace najdete v tématu [zobrazit náhled fotoaparát](/windows/uwp/audio-video-camera/simple-camera-preview-access/).
 
 ## <a name="summary"></a>Souhrn
 
-Tento článek vám ukázal, jak vytvořit vlastní zobrazovací jednotky Xamarin.Forms vlastního ovládacího prvku, který se používá k zobrazení náhledu datový proud videa z fotoaparátu zařízení. Xamarin.Forms vlastní uživatelské rozhraní ovládací prvky by měl být odvozen z [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) třídy, která se používá k umístění rozložení a ovládacích prvků na obrazovce.
+Tento článek vám ukázal, jak vytvořit vlastního rendereru pro Xamarin.Forms vlastního ovládacího prvku, který se používá k zobrazení videa zobrazit náhled streamu z fotoaparátu zařízení. Xamarin.Forms vlastního uživatelského rozhraní ovládacích prvků musí být odvozený z: [ `View` ](xref:Xamarin.Forms.View) třídu, která se používá k umístění rozložení a ovládací prvky na obrazovce.
 
 
 ## <a name="related-links"></a>Související odkazy

@@ -1,55 +1,61 @@
 ---
-title: Funkce watchOS
-description: Tento dokument obsahuje odkazy na různé příručky, které popisují watchOS platformy funkce jako je dotykový identifikátor, oznámení, komplikace, proaktivní návrhy, cvičení aplikace a další.
+title: funkce platformy pro watchOS
+description: Tento dokument obsahuje odkazy na různá vodítka, které popisují funkce platformy watchOS jako oprávnění Apple Pay, oznámení, komplikace, proaktivní návrhy, aplikace cvičení a další.
 ms.prod: xamarin
 ms.assetid: 13F23E01-BAED-43EB-A70E-3B30EF53D379
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/25/2018
-ms.openlocfilehash: 16d10dd69223f404aac7c933302992a1544461e9
-ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
+ms.openlocfilehash: e915ec38ed29b6ef2a0710c9dad10cf339c3a3ab
+ms.sourcegitcommit: cfb72be633e335147d156af3ef9527151b9e31d9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37066611"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39030675"
 ---
-# <a name="watchos-platform-features"></a>Funkce watchOS
+# <a name="watchos-platform-features"></a>funkce platformy pro watchOS
 
-Tento dokument obsahuje odkazy na různé příručky, které popisují watchOS platformy funkce jako je dotykový identifikátor, oznámení, komplikace, proaktivní návrhy, cvičení aplikace a další.
+## <a name="introduction-to-watchos-5introduction-to-watchos5indexmd"></a>[Úvod do Watchosu 5](introduction-to-watchos5/index.md)
+
+> [!WARNING]
+> Podpora Xamarinu pro watchOS 5 je aktuálně ve verzi preview, což znamená, že může obsahovat chyb, které není plně funkční, a může změnit.
+> Použijte pouze experimentování.
+
+Tento dokument poskytuje základní přehled o nových a aktualizovaných funkcích watchOS 5, které jsou k dispozici pro použití při sestavování aplikace pro watchOS s využitím kódu Xamarin.
 
 ## <a name="introduction-to-watchos-4introduction-to-watchos4md"></a>[Úvod do watchOSu 4](introduction-to-watchos4.md)
 
-Tento dokument obsahuje přehled funkce a aktualizace v watchOS 4.
+Tento dokument obsahuje podrobný přehled funkcí a aktualizace v watchOS 4.
 
 ## <a name="introduction-to-watchos-3introduction-to-watchos3indexmd"></a>[Úvod do watchOSu 3](introduction-to-watchos3/index.md)
 
-Tento článek popisuje nové a aktualizované rozhraní API v watchOS 3.
+Tento článek popisuje nové a aktualizované rozhraní API ve Watchosu 3.
 
-## <a name="apple-pay-enhancementsioswatchosplatformapple-paymd"></a>[Dotykový identifikátor vylepšení](~/ios/watchos/platform/apple-pay.md)
+## <a name="apple-pay-enhancementsioswatchosplatformapple-paymd"></a>[Vylepšení oprávnění Apple Pay](~/ios/watchos/platform/apple-pay.md)
 
-V watchOS 3 rozhraní PassKit rozšířila povolit podporu pro zabezpečené, v aplikaci platby (z fyzického zboží a služeb) pro aplikace běžící na Apple Watch.
+Ve Watchosu 3 rozhraní PassKit zvětšil povolit podporu pro zabezpečené, v aplikaci platby (z fyzického zboží a služeb) pro aplikace běžící na Apple Watch.
 
 ## <a name="background-tasksioswatchosplatformbackground-tasksmd"></a>[Úlohy na pozadí](~/ios/watchos/platform/background-tasks.md)
 
-watchOS 3 zavádí několik úlohy na pozadí, které aplikace můžete použít k aktualizovat informace o zajištění, že obsahuje obsah, uživatel musí před jeho otevřením.
+watchOS 3 zavádí několik úloh na pozadí, které aplikace můžete použít k aktualizaci jeho informace o zajištění, že na něm obsah uživatel musí před jeho otevřením.
 
 ## <a name="notificationsnotificationsmd"></a>[Oznámení](notifications.md)
 
-Zjistěte, jak poskytnout vlastní oznámení zpracování v aplikaci sledování.
+Zjistěte, jak poskytnout vlastní oznámení v aplikace na hodinkách.
 
 ## <a name="complicationscomplicationsmd"></a>[Komplikace](complications.md)
 
-Přidání podpory komplikace zobrazíte aktuální data na tučné sledovat.
+Přidání podpory komplikací zobrazíte aktuální data na ciferníku.
 
 ## <a name="proactive-suggestionsioswatchosplatformproactive-suggestionsmd"></a>[Proaktivní návrhy](~/ios/watchos/platform/proactive-suggestions.md)
 
-watchOS 3 umožňuje aplikaci na proaktivně informace pro uživatele v rámci zadané kontexty. Chcete-li tuto funkci podporovat [NSUserActivity](https://developer.apple.com/reference/foundation/nsuseractivity) nyní zahrnuje `MapItem` vlastnost, která umožní aplikaci poskytují informace o umístění pro pozdější použití jiné aplikace.
+watchOS 3 umožňuje aplikaci aktivně zobrazíte informace o uživateli v rámci zadané kontexty. Chcete-li tuto funkci podporovat [NSUserActivity](https://developer.apple.com/reference/foundation/nsuseractivity) teď zahrnuje `MapItem` vlastnost, která umožní aplikaci poskytují informace o umístění pro pozdější použití v jiných aplikacích.
 
 ## <a name="quick-interaction-techniquesioswatchosplatformquick-interaction-techniquesmd"></a>[Techniky rychlé interakce](~/ios/watchos/platform/quick-interaction-techniques.md)
 
-Poskytnete rychlé uživatelské interakce jsou nezbytné pro vytváření byly atraktivní aplikace Apple Watch a komplikace. Nové za účelem watchOS 3, Apple přidala podporu pro rozpoznávání gesto, přístup k digitální Crown a nové techniky oznámení pro uživatele a navigace. To, společně s přidanou podporu pro SceneKit a SpriteKit, umožňuje vývojářům snadno vytvářet bohaté, přehledné rozhraní, která se rychle a dobře reagovaly.
+Poskytuje rychlé uživatelské interakce jsou nezbytné pro vytváření poutavých aplikací Apple Watch a komplikací. Nové do Watchosu 3 Apple má přidanou podporu pro rozpoznávání gest, přístup k digitální koruny a nové techniky oznámení pro uživatele a navigace. To, spolu s přidání podpory pro SceneKit a spritekit – umožňuje vývojářům snadno vytvářet bohaté a glanceable rozhraní, které jsou rychlé a responzivní.
 
-## <a name="workout-app-enhancementsioswatchosplatformworkout-appsmd"></a>[Vylepšení cvičení aplikace](~/ios/watchos/platform/workout-apps.md)
+## <a name="workout-app-enhancementsioswatchosplatformworkout-appsmd"></a>[Vylepšení aplikace workout](~/ios/watchos/platform/workout-apps.md)
 
-Nové k watchOS 3 cvičení související s aplikací mít možnost spustit na pozadí na Apple Watch. Povolit tuto funkci (a přístup k datům HealthKit), musí aplikace obsahovat `WKBackgroundModes` klíče v `Info.plist` soubor s hodnotou `workout-processing`.
+Nové do Watchosu 3 cvičení související s aplikací se budou moct běžet na pozadí na Apple Watch. Pokud chcete povolit tuto funkci (a získat přístup k datům HealthKit), musí obsahovat aplikace `WKBackgroundModes` klíče v `Info.plist` soubor s hodnotou `workout-processing`.

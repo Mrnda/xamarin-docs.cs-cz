@@ -1,60 +1,60 @@
 ---
-title: Úvod do šablon ovládacích Xamarin.Forms
-description: Ovládací prvek šablony Xamarin.Forms poskytují možnost snadno motiv a opětovná motivu stránek aplikací za běhu. Tento článek obsahuje úvod do ovládacího prvku šablony.
+title: Úvod do šablon ovládacích prvků Xamarin.Forms
+description: Šablony ovládacích prvků Xamarin.Forms umožňují snadno motivu a znovu motivu stránky aplikace za běhu. Tento článek obsahuje úvod do šablon ovládacích prvků.
 ms.prod: xamarin
 ms.assetid: 8B8E2360-6531-44A3-A7C8-9A8808DE9B86
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: a8e5c84bfa2525a28e9af5343be0ee156564bdd6
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 6b7a6c6d9c9c541e1d5e821fc2dac202e98bec62
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35242515"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994422"
 ---
-# <a name="introduction-to-xamarinforms-control-templates"></a>Úvod do šablon ovládacích Xamarin.Forms
+# <a name="introduction-to-xamarinforms-control-templates"></a>Úvod do šablon ovládacích prvků Xamarin.Forms
 
-_Ovládací prvek šablony Xamarin.Forms poskytují možnost snadno motiv a opětovná motivu stránek aplikací za běhu. Tento článek obsahuje úvod do ovládacího prvku šablony._
+_Šablony ovládacích prvků Xamarin.Forms umožňují snadno motivu a znovu motivu stránky aplikace za běhu. Tento článek obsahuje úvod do šablon ovládacích prvků._
 
-Ovládací prvky mít různé vlastnosti, jako `BackgroundColor` a `TextColor`, který můžete definovat prvky vzhledu ovládacího prvku. Tyto vlastnosti se dá nastavit pomocí [styly](~/xamarin-forms/user-interface/styles/index.md), kterou lze změnit v době běhu k implementaci základní motivů. Ale styly nemáte udržovat čistou oddělení mezi vzhled stránky a jejího obsahu a změny, které můžete provést pomocí nastavení těchto vlastností jsou omezené.
+Ovládací prvky, jako mají různé vlastnosti `BackgroundColor` a `TextColor`, které definují aspekty vzhledu ovládacího prvku. Tyto vlastnosti můžete nastavit pomocí [styly](~/xamarin-forms/user-interface/styles/index.md), která lze změnit za běhu k implementaci základní motivů. Ale styly nemusíte udržovat čisté oddělení mezi vzhled stránky a její obsah a změny, které je možné provádět pomocí nastavení těchto vlastností jsou omezené.
 
-Ovládací prvek šablony poskytují čistou oddělení mezi vzhled stránky a její obsah, proto povolením vytváření stránek, které se dají snadno motivu. Aplikace může například obsahovat šablon řízení na úrovni aplikace, které poskytují tmavý motiv a motiv světlý. Každý [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) v aplikaci může být motivu jednu z šablon řízení použitím beze změny obsahu v zobrazení každé stránce. Kromě toho nejsou omezeny na změny vlastností ovládacích prvků motivy poskytované šablon ovládacích prvků. Mohou také změnit ovládacích prvků používaná k implementaci motiv.
+Ovládací prvek šablony poskytují čisté oddělení mezi vzhled stránky a její obsah, proto umožňují vytvářet stránky, které můžete snadno použít motivy. Aplikace může například obsahovat šablon řízení na úrovni aplikace, které poskytují motiv tmavý a světlý motiv. Každý [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) v aplikaci můžete použít motivy použitím některého šablon ovládacích prvků beze změny obsah zobrazený každou stránku. Kromě toho nejsou omezeny na změny vlastností ovládacích prvků motivy poskytované šablony ovládacích prvků. Mohou také změnit ovládací prvky používané k implementaci v motivu.
 
-## <a name="creating-a-controltemplate"></a>Vytváření ControlTemplate
+## <a name="creating-a-controltemplate"></a>Vytvoření objektu ControlTemplate
 
-A [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) určuje vzhled stránky nebo zobrazení a obsahuje kořenové rozložení a v rámci rozložení ovládacích prvků, které implementují šablony. Obvykle `ControlTemplate` bude využívat [ `ContentPresenter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPresenter/) k označení, kde se zobrazí obsah, který se má zobrazit stránku nebo zobrazení. Stránky nebo zobrazení, který využívá `ControlTemplate` pak definují obsah, který se má zobrazovat `ContentPresenter`. Následující diagram znázorňuje `ControlTemplate` pro stránky, která obsahuje řadu ovládacích prvků, včetně `ContentPresenter` označeny blue obdélníku:
+A [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) určuje vzhled stránky nebo zobrazení a obsahuje kořenové rozložení a v rámci rozložení, ovládací prvky, které implementují šablony. Obvykle `ControlTemplate` budou využívat [ `ContentPresenter` ](xref:Xamarin.Forms.ContentPresenter) k označení, kde se zobrazí obsah, který se má zobrazovat na stránce nebo zobrazení. Na stránce nebo zobrazení, která využívá `ControlTemplate` bude nadefinujte typ obsahu, který se má zobrazovat `ContentPresenter`. Následující diagram znázorňuje `ControlTemplate` pro stránku, která obsahuje řadu ovládacích prvků, včetně `ContentPresenter` označeny modrý obdélník:
 
-![](introduction-images/control-template.png "Šablona ovládacího prvku pro stránku")
+![](introduction-images/control-template.png "Šablony ovládacího prvku pro stránku")
 
-A [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) můžete použít pro následující typy nastavením jejich `ControlTemplate` vlastnosti:
+A [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) lze použít následující typy nastavením jejich `ControlTemplate` vlastnosti:
 
-- [`ContentPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)
-- [`ContentView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/)
-- [`TemplatedPage`](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplatedPage/)
-- [`TemplatedView`](https://developer.xamarin.com/api/type/Xamarin.Forms.TemplatedView/)
+- [`ContentPage`](xref:Xamarin.Forms.ContentPage)
+- [`ContentView`](xref:Xamarin.Forms.ContentView)
+- [`TemplatedPage`](xref:Xamarin.Forms.TemplatedPage)
+- [`TemplatedView`](xref:Xamarin.Forms.TemplatedView)
 
-Když [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) a přiřazeno na tyto typy se žádné existující vzhled nahradí vzhled definované v `ControlTemplate`. Kromě toho i nastavení vzhledu pomocí `ControlTemplate` vlastnost šablony můžete použít také pomocí stylů pro další ovládací prvek rozbalte možnost motiv.
+Při [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) je vytvořit a přiřadit tyto typy, všechny existující vzhled nahradí vzhled definované v `ControlTemplate`. Kromě toho také nastavení vzhledu pomocí `ControlTemplate` vlastnost ovládacího prvku pomocí stylů pro další můžete také použít šablony rozbalte možnost motiv.
 
 > [!NOTE]
->  *Jaké jsou `TemplatedPage` a `TemplatedView` typy?* `TemplatedPage` je základní třídou pro `ContentPage`a je základní typ stránky poskytované Xamarin.Forms. Na rozdíl od `ContentPage`, `TemplatedPage` nemá `Content` vlastnost. Proto nelze obsah přidat přímo do `TemplatedPage` instance. Místo toho je obsah přidán nastavením pro šablonu ovládacího prvku `TemplatedPage` instance. Podobně `TemplatedView` je základní třídou pro `ContentView`. Na rozdíl od `ContentView`, `TemplatedView` nemá `Content` vlastnost. Proto nelze obsah přidat přímo do `TemplatedView` instance. Místo toho je obsah přidán nastavením pro šablonu ovládacího prvku `TemplatedView` instance.
+>  *Co jsou `TemplatedPage` a `TemplatedView` typy?* `TemplatedPage` je základní třídou pro `ContentPage`a je základní typ stránky poskytované Xamarin.Forms. Na rozdíl od `ContentPage`, `TemplatedPage` nemá `Content` vlastnost. Proto nelze obsah přidat přímo do `TemplatedPage` instance. Místo toho přidal obsah tak, že nastavíte pro šablonu ovládacího prvku `TemplatedPage` instance. Obdobně `TemplatedView` je základní třídou pro `ContentView`. Na rozdíl od `ContentView`, `TemplatedView` nemá `Content` vlastnost. Proto nelze obsah přidat přímo do `TemplatedView` instance. Místo toho přidal obsah tak, že nastavíte pro šablonu ovládacího prvku `TemplatedView` instance.
 
-Ovládací prvek šablony lze vytvořit v jazyce XAML a C#:
+Šablony ovládacího prvku lze vytvořit v XAML a C#:
 
-- Ovládací prvek šablony vytvořené v jazyce XAML, které jsou definovány v [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) přiřazené [ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Resources/) kolekce stránky nebo více obvykle do [ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.Resources/) kolekce aplikace.
-- Ovládací prvek šablony vytvořené v C# jsou obvykle definovány v třídy stránky, nebo třídu, která je přístupná globálně.
+- Šablony ovládacích prvků, které jsou vytvořené v XAML jsou definovány v [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) přiřazené [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) kolekce stránku nebo častěji tak, aby [ `Resources` ](xref:Xamarin.Forms.Application.Resources) kolekce aplikace.
+- Šablony ovládacích prvků, které jsou vytvořené v jazyce C# jsou obvykle definovány ve třídě na stránce nebo ve třídě, která je přístupná globálně.
 
-Výběr místo definice [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) instance ovlivňuje, kde je možné:
+Volba místo definice [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) instance dopady, kde je možné:
 
-- [`ControlTemplate`](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) instance definované na úrovni stránky lze použít pouze na stránku.
-- [`ControlTemplate`](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) instance definované na úrovni aplikace můžete použít na stránky v celé aplikaci.
+- [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) instance, které jsou definované na úrovni stránky může používat jedině pro stránku.
+- [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) instance definované na úrovni aplikace můžete použít pro stránky v celé aplikaci.
 
-Níže v hierarchii zobrazení šablon ovládacích prvků mají přednost před nastavením definovaným vyšší nahoru. Například [ `ControlTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/) s názvem `DarkTheme` definovanou na úrovni stránky bude mít prioritu před šablonu stejně jako s názvem definované na úrovni aplikace. Ovládací prvek šablonu, která definuje motiv, který bude použit na každé stránce v aplikaci proto nesmí být definován na úrovni aplikace.
+Šablony ovládacích prvků, níže v hierarchii zobrazení přednost před těmi definovanými vyšší nahoru. Například [ `ControlTemplate` ](xref:Xamarin.Forms.ControlTemplate) s názvem `DarkTheme` , který je definován na úrovni stránky bude mít prioritu před šablonu identicky pojmenovanou definované na úrovni aplikace. Šablony ovládacího prvku, který definuje motiv se použijí na každou stránku v aplikaci, proto musí být definován na úrovni aplikace.
 
 
 ## <a name="related-links"></a>Související odkazy
 
 - [Styly](~/xamarin-forms/user-interface/styles/index.md)
-- [Element ControlTemplate](https://developer.xamarin.com/api/type/Xamarin.Forms.ControlTemplate/)
-- [ContentPresenter](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPresenter/)
+- [ControlTemplate](xref:Xamarin.Forms.ControlTemplate)
+- [ContentPresenter](xref:Xamarin.Forms.ContentPresenter)

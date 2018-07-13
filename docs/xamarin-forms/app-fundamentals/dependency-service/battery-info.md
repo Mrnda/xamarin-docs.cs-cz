@@ -1,40 +1,40 @@
 ---
 title: Kontrola stavu baterie
-description: Tento článek vysvětluje způsob použití Xamarin.Forms DependencyService třídy pro přístup k informacím baterie nativně pro každou platformu.
+description: Tento článek vysvětluje, jak použít třídu Xamarin.Forms DependencyService pro přístup k informacím baterie nativně pro každou platformu.
 ms.prod: xamarin
 ms.assetid: CF1C5A73-84ED-407D-BDC5-EB1D83D2D3DB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/09/2016
-ms.openlocfilehash: 74e191cd6a87626e887d45f823e65d57000d7463
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: cbb4a01ac2c6d933fe40a0b3c2571d1fe3ce75c0
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241081"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998391"
 ---
 # <a name="checking-battery-status"></a>Kontrola stavu baterie
 
-Tento článek vás provede vytváření aplikace, která kontroluje stav baterie. Tento článek je založena na modulu plug-in baterie James Montemagno. Další informace najdete v tématu [úložiště GitHub](https://github.com/jamesmontemagno/Xamarin.Plugins/tree/master/Battery).
+Tento článek vás provede vytvořením aplikace, která kontroluje stav baterie. Tento článek je založena na modulu plug-in baterie James Montemagno. Další informace najdete v tématu [úložiště GitHub se vzorovými](https://github.com/jamesmontemagno/Xamarin.Plugins/tree/master/Battery).
 
-Protože Xamarin.Forms neobsahuje funkce pro kontrolu aktuální stav baterie, tato aplikace bude třeba použít [ `DependencyService` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyService/) využívat výhod nativních rozhraní API.  Tento článek se zabývá následující kroky pro používání `DependencyService`:
+Protože Xamarin.Forms neobsahuje funkce pro kontrolu aktuální stav baterie, tato aplikace bude muset používat [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) výhod nativních rozhraní API.  Tento článek se zabývá následující pokyny pro použití `DependencyService`:
 
-- **[Vytváření rozhraní](#Creating_the_Interface)**  &ndash; pochopit vytváření rozhraní ve sdílené kódu.
-- **[iOS implementace](#iOS_Implementation)**  &ndash; zjistěte, jak toto rozhraní implementovat v nativním kódu pro iOS.
+- **[Vytvoření rozhraní](#Creating_the_Interface)**  &ndash; pochopit, jak se v sdílený kód vytvoří rozhraní.
+- **[iOS implementace](#iOS_Implementation)**  &ndash; zjistěte, jak implementovat rozhraní v nativním kódu pro iOS.
 - **[Android implementace](#Android_Implementation)**  &ndash; zjistěte, jak implementovat rozhraní v nativním kódu pro Android.
-- **[Universal Windows Platform implementace](#UWPImplementation)**  &ndash; zjistěte, jak toto rozhraní implementovat v nativním kódu pro univerzální platformu Windows (UWP).
-- **[Implementace v sdíleného kódu](#Implementing_in_Shared_Code)**  &ndash; Naučte se používat `DependencyService` provést volání do nativního implementace ze sdíleného kódu.
+- **[Implementace pro univerzální platformu Windows](#UWPImplementation)**  &ndash; zjistěte, jak implementovat rozhraní v nativním kódu pro univerzální platformu Windows (UPW).
+- **[Implementace v sdíleným kódem](#Implementing_in_Shared_Code)**  &ndash; Další informace o použití `DependencyService` Chcete-li volat nativní implementaci ze sdíleného kódu.
 
-Po dokončení aplikace pomocí `DependencyService` bude mít následující strukturu:
+Po dokončení aplikace pomocí `DependencyService` mají následující strukturu:
 
-![](battery-info-images/battery-diagram.png "Struktura DependencyService aplikace")
+![](battery-info-images/battery-diagram.png "Struktury DependencyService aplikace")
 
 <a name="Creating_the_Interface" />
 
-## <a name="creating-the-interface"></a>Vytváření rozhraní
+## <a name="creating-the-interface"></a>Vytvoření rozhraní
 
-Nejprve vytvořte rozhraní v sdíleného kódu, která vyjadřuje požadované funkce. V případě stav baterie Kontrola aplikace je důležité informace procento zbývající baterie, jestli je zařízení poplatků nebo Ne, a jak zařízení přijímá napájení:
+Nejprve vytvořte rozhraní v sdíleného kódu, který vyjadřuje požadované funkce. V případě baterie Kontrola aplikace je důležité informace procento zbývajícího baterie, jestli zařízení je účtování nebo Ne, a jak zařízení přijímá napájení:
 
 ```csharp
 namespace DependencyServiceSample
@@ -66,16 +66,16 @@ namespace DependencyServiceSample
 }
 ```
 
-Kódování proti tomuto rozhraní v sdíleného kódu vám umožní aplikaci Xamarin.Forms pro přístup k řízení spotřeby rozhraní API na každou platformu.
+Kódovat toto rozhraní v sdílený kód vám umožní aplikaci Xamarin.Forms pro přístup k řízení spotřeby API na každou platformu.
 
 > [!NOTE]
-> Třídy implementující rozhraní musí mít konstruktor bez parametrů pro práci s `DependencyService`. Konstruktory nelze definovat pomocí rozhraní.
+> Třídy implementující rozhraní musí mít konstruktor bez parametrů pro práci s `DependencyService`. Rozhraní nejde definovat konstruktory.
 
 <a name="iOS_Implementation" />
 
 ## <a name="ios-implementation"></a>iOS implementace
 
-`IBattery` Rozhraní musí být implementován v každé projekt aplikace specifické pro platformu. IOS implementace použijí nativního [ `UIDevice` ](https://developer.xamarin.com/api/type/UIKit.UIDevice/) rozhraní API pro přístup k informacím baterie. Všimněte si, že má následující třídy konstruktor bez parametrů, aby `DependencyService` můžete vytvořit nové instance služby:
+`IBattery` Rozhraní musí implementovat v každém projektu aplikace pro konkrétní platformu. Implementace iOS budou používat nativní [ `UIDevice` ](https://developer.xamarin.com/api/type/UIKit.UIDevice/) rozhraní API pro přístup k informacím baterie. Všimněte si, že následující třída nemá konstruktor bez parametrů, aby `DependencyService` můžete vytvořit nové instance:
 
 ```csharp
 using UIKit;
@@ -152,13 +152,13 @@ namespace DependencyServiceSample.iOS
     ...
 ```
 
-Tento atribut zaregistruje jako implementaci třídy `IBattery` rozhraní, což znamená, že `DependencyService.Get<IBattery>` k vytvoření instance je lze v sdíleného kódu:
+Tento atribut zaregistruje třídu jako implementace `IBattery` rozhraní, což znamená, že `DependencyService.Get<IBattery>` je možné vytvořit její instanci v sdílený kód:
 
 <a name="Android_Implementation" />
 
-## <a name="android-implementation"></a>Android implementace
+## <a name="android-implementation"></a>Implementace s androidem
 
-Android implementace používá [ `Android.OS.BatteryManager` ](https://developer.xamarin.com/api/type/Android.OS.BatteryManager/) rozhraní API. Tato implementace je složitější, než je verze iOS nutnosti kontroly pro zpracování nedostatečná oprávnění baterie:
+Android implementace používá [ `Android.OS.BatteryManager` ](https://developer.xamarin.com/api/type/Android.OS.BatteryManager/) rozhraní API. Tato implementace je složitější než verze iOS vyžadující kontroly pro zpracování nedostatečná oprávnění baterie:
 
 ```csharp
 using System;
@@ -309,13 +309,13 @@ namespace DependencyServiceSample.Droid
     ...
 ```
 
-Tento atribut zaregistruje jako implementaci třídy `IBattery` rozhraní, což znamená, že `DependencyService.Get<IBattery>` mohou být používány sdíleného kódu můžete vytvořit její instanci.
+Tento atribut zaregistruje třídu jako implementace `IBattery` rozhraní, což znamená, že `DependencyService.Get<IBattery>` lze použít v sdílený kód můžete vytvořit její instanci.
 
 <a name="UWPImplementation" />
 
-## <a name="universal-windows-platform-implementation"></a>Implementace Universal Windows Platform
+## <a name="universal-windows-platform-implementation"></a>Implementace pro platformu Universal Windows
 
-Implementace UWP používá `Windows.Devices.Power` rozhraní API se získat informace o stavu baterie:
+Implementace UPW používá `Windows.Devices.Power` rozhraní API pro získání informací o stavu baterie:
 
 ```csharp
 using DependencyServiceSample.UWP;
@@ -409,13 +409,13 @@ namespace DependencyServiceSample.UWP
 }
 ```
 
-`[assembly]` Atribut nad deklaraci oboru názvů zaregistruje jako implementaci třídy `IBattery` rozhraní, což znamená, že `DependencyService.Get<IBattery>` lze použít v sdíleného kódu vytvořit její instanci.
+`[assembly]` Atribut nad deklaraci oboru názvů zaregistruje třídu jako implementace `IBattery` rozhraní, což znamená, že `DependencyService.Get<IBattery>` je možné vytvořit její instanci v sdíleným kódem.
 
 <a name="Implementing_in_Shared_Code" />
 
-## <a name="implementing-in-shared-code"></a>Implementace v sdíleného kódu
+## <a name="implementing-in-shared-code"></a>Implementace v sdíleným kódem
 
-Teď, když byl implementován rozhraní pro každou platformu, sdílené aplikace se dá napsat využívat výhod ho. Aplikace budou obsahovat stránky s tlačítkem na který po stisknuté aktualizace textu jeho aktuální stav baterie. Použije `DependencyService` získat instanci `IBattery` rozhraní. Za běhu bude tato instance implementace specifické pro platformu, která má úplný přístup k nativní SDK.
+Teď, když rozhraní implementován pro každou platformu, můžete zapisovat ji využít sdílené aplikace. Aplikace se skládá ze stránky s tlačítkem, že klepnutí aktualizace textu jeho aktuální stav baterie. Používá `DependencyService` k získání instance typu `IBattery` rozhraní. Za běhu bude tato instance implementace specifické pro platformu, která má plný přístup k nativní sadou SDK.
 
 ```csharp
 public MainPage ()
@@ -469,9 +469,9 @@ public MainPage ()
 }
 ```
 
-Spuštění této aplikace v iOS, Android, nebo UWP a stisknutím tlačítka výsledkem bude text tlačítka aktualizace tak, aby odrážela aktuální stav napájení zařízení.
+Spuštění této aplikace v iOS, Android, nebo UPW a stisknutím tlačítka výsledkem bude text tlačítka aktualizuje tak, aby odrážela aktuální stav napájení zařízení.
 
-![](battery-info-images/battery.png "Ukázka stavu baterie")
+![](battery-info-images/battery.png "Ukázka stav baterie")
 
 
 ## <a name="related-links"></a>Související odkazy

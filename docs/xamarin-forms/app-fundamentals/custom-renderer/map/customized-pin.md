@@ -1,45 +1,45 @@
 ---
-title: Přizpůsobení Map kódu Pin
-description: Tento článek ukazuje, jak vytvořit vlastní zobrazovací jednotky pro mapový ovládací prvek, který zobrazí nativní mapa s vlastní kód pin a vlastní zobrazení dat PIN kódu na jednotlivých platformách.
+title: Přizpůsobení špendlíku mapy
+description: Tento článek ukazuje, jak vytvořit vlastního rendereru pro mapový ovládací prvek, který zobrazuje nativní mapa s vlastní kód pin a vlastní zobrazení dat PIN kód na jednotlivých platformách.
 ms.prod: xamarin
 ms.assetid: C5481D86-80E9-4E3D-9FB6-57B0F93711A6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 029dbf073f61e3a07ec01da4f877bf997af57d98
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 4fee67f08e86c40709aa226c40c0f7721dc26800
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848548"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998297"
 ---
-# <a name="customizing-a-map-pin"></a>Přizpůsobení Map kódu Pin
+# <a name="customizing-a-map-pin"></a>Přizpůsobení špendlíku mapy
 
-_Tento článek ukazuje, jak vytvořit vlastní zobrazovací jednotky pro mapový ovládací prvek, který zobrazí nativní mapa s vlastní kód pin a vlastní zobrazení dat PIN kódu na jednotlivých platformách._
+_Tento článek ukazuje, jak vytvořit vlastního rendereru pro mapový ovládací prvek, který zobrazuje nativní mapa s vlastní kód pin a vlastní zobrazení dat PIN kód na jednotlivých platformách._
 
-Každé zobrazení Xamarin.Forms má doprovodné zobrazovací jednotky pro každou platformu, která vytvoří instanci nativní ovládacího prvku. Když [ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/) je vykreslen metodou Xamarin.Forms aplikace v iOS, `MapRenderer` vytvoření instance třídy, které pak vytvoří nativní `MKMapView` ovládacího prvku. Na platformě Android `MapRenderer` třída vytvoří nativní `MapView` ovládacího prvku. Na univerzální platformu Windows (UWP), `MapRenderer` třída vytvoří nativní `MapControl`. Další informace o zobrazovací jednotky a třídy nativní ovládacích prvků, které ovládací prvky Xamarin.Forms mapování na najdete v tématu [zobrazovací jednotky základní třídy a nativní ovládací prvky](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Každé zobrazení Xamarin.Forms má související zobrazovací jednotky pro každou platformu, která vytvoří instanci nativní ovládacího prvku. Když [ `Map` ](xref:Xamarin.Forms.Maps.Map) je vykreslen metodou aplikace Xamarin.Forms v iOS, `MapRenderer` je vytvořena instance třídy, které pak vytvoří instanci nativní `MKMapView` ovládacího prvku. Na platformu Android `MapRenderer` třídy vytvoří instanci nativní `MapView` ovládacího prvku. Na Universal Windows Platform (UWP), `MapRenderer` třídy vytvoří instanci nativní `MapControl`. Další informace o nástroj pro vykreslování a nativní ovládací prvek třídy, které ovládací prvky Xamarin.Forms namapovat na najdete v tématu [Renderer základní třídy a nativní ovládací prvky](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
-Následující diagram znázorňuje vztah mezi [ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/) a odpovídající nativní ovládací prvky, které implementují ho:
+Následující diagram znázorňuje vztah mezi [ `Map` ](xref:Xamarin.Forms.Maps.Map) a odpovídající nativní ovládací prvky, které je implementují:
 
-![](customized-pin-images/map-classes.png "Vztah mezi mapový ovládací prvek a implementuje nativní ovládací prvky")
+![](customized-pin-images/map-classes.png "Vztah mezi ovládací prvek mapa a implementující nativní ovládací prvky")
 
-Proces vykreslování lze použít k implementaci přizpůsobení specifické pro platformu tak, že vytvoříte vlastní zobrazovací jednotky pro [ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/) na každou platformu. Proces pro to vypadá takto:
+Samotný proces vykreslování je možné implementovat přizpůsobení konkrétní platformy tak, že vytvoříte vlastní zobrazovací jednotky pro [ `Map` ](xref:Xamarin.Forms.Maps.Map) na jednotlivých platformách. Tento proces je následujícím způsobem:
 
-1. [Vytvoření](#Creating_the_Custom_Map) Xamarin.Forms vlastní mapování.
-1. [Využívat](#Consuming_the_Custom_Map) vlastní mapy z Xamarin.Forms.
-1. [Vytvoření](#Creating_the_Custom_Renderer_on_each_Platform) vlastní zobrazovací jednotky pro mapu na každou platformu.
+1. [Vytvoření](#Creating_the_Custom_Map) vlastní mapa Xamarin.Forms.
+1. [Využívání](#Consuming_the_Custom_Map) vlastní mapy z Xamarin.Forms.
+1. [Vytvoření](#Creating_the_Custom_Renderer_on_each_Platform) vlastní zobrazovací jednotky pro mapování na jednotlivých platformách.
 
-Každá položka teď probereme pak implementovat `CustomMap` zobrazovací jednotky, která zobrazuje nativní mapa s vlastní kód pin a vlastní zobrazení dat PIN kódu na jednotlivých platformách.
+Každá položka nyní probereme zase k implementaci `CustomMap` renderer, který se zobrazí nativní mapa s vlastní kód pin a vlastní zobrazení dat PIN kód na jednotlivých platformách.
 
 > [!NOTE]
-> [`Xamarin.Forms.Maps`](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/) musí být inicializovaná a před použitím. Další informace najdete na webu [`Maps Control`](~/xamarin-forms/user-interface/map.md).
+> [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps) musí být inicializován a před použitím nakonfigurovat. Další informace najdete na webu [`Maps Control`](~/xamarin-forms/user-interface/map.md).
 
 <a name="Creating_the_Custom_Map" />
 
-## <a name="creating-the-custom-map"></a>Vytváření vlastních mapy
+## <a name="creating-the-custom-map"></a>Vytváří se vlastní mapa
 
-Vytváření podtříd můžete vytvořit vlastní mapový ovládací prvek [ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/) třídy, jak je znázorněno v následujícím příkladu kódu:
+Vytváření podtříd můžete vytvořit vlastní mapový ovládací prvek [ `Map` ](xref:Xamarin.Forms.Maps.Map) třídy, jak je znázorněno v následujícím příkladu kódu:
 
 ```csharp
 public class CustomMap : Map
@@ -48,7 +48,7 @@ public class CustomMap : Map
 }
 ```
 
-`CustomMap` Řízení je vytvořen v rozhraní .NET standardní projektu knihovny a definuje rozhraní API pro vlastní mapy. Zpřístupňuje vlastní mapy `CustomPins` vlastnost, která představuje kolekci `CustomPin` objekty, které bude vykreslen pomocí nativní mapový ovládací prvek na každou platformu. `CustomPin` Třída je znázorněno v následujícím příkladu kódu:
+`CustomMap` Ovládacího prvku je vytvořen v projektu knihovny .NET Standard a definuje rozhraní API pro vlastní mapy. Vlastní mapa zpřístupňuje `CustomPins` vlastnost, která představuje kolekci `CustomPin` objekty, které se zobrazí nativní mapový ovládací prvek na jednotlivých platformách. `CustomPin` Třídy je znázorněno v následujícím příkladu kódu:
 
 ```csharp
 public class CustomPin : Pin
@@ -57,13 +57,13 @@ public class CustomPin : Pin
 }
 ```
 
-Tato třída definuje `CustomPin` jako dědí vlastnosti [ `Pin` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Pin/) třídy a přidávání `Url` vlastnost.
+Tato třída definuje `CustomPin` jako dědění vlastností [ `Pin` ](xref:Xamarin.Forms.Maps.Pin) třídy a přidání `Url` vlastnost.
 
 <a name="Consuming_the_Custom_Map" />
 
-## <a name="consuming-the-custom-map"></a>Použití vlastní mapy
+## <a name="consuming-the-custom-map"></a>Použití vlastních Map
 
-`CustomMap` Řízení může odkazovat v jazyce XAML v rozhraní .NET standardní projektu knihovny deklarace oboru názvů pro umístění a použití Předpona oboru názvů na vlastní mapový ovládací prvek. Následující příklad kódu ukazuje jak `CustomMap` řízení mohou být spotřebovávána stránky XAML:
+`CustomMap` Ovládací prvek může být odkazováno v XAML v projektu knihovny .NET Standard deklarace oboru názvů pro jeho umístění a použitím předponu oboru názvů na vlastní mapový ovládací prvek. Následující příklad kódu ukazuje jak `CustomMap` ovládacího prvku mohou být spotřebovány stránky XAML:
 
 ```xaml
 <ContentPage ...
@@ -76,9 +76,9 @@ Tato třída definuje `CustomPin` jako dědí vlastnosti [ `Pin` ](https://devel
 </ContentPage>
 ```
 
-`local` Předponu oboru názvů můžete pojmenovat. Ale `clr-namespace` a `assembly` hodnoty musí odpovídat podrobnosti vlastní mapy. Jakmile je deklarován obor názvů, je předpona, která slouží k odkazování vlastní mapy.
+`local` Předponu oboru názvů může být název cokoli. Ale `clr-namespace` a `assembly` hodnoty musí odpovídat podrobnosti o vlastní mapy. Jakmile je deklarován obor názvů, je předpona, která slouží k odkazování vlastní mapy.
 
-Následující příklad kódu ukazuje jak `CustomMap` řízení mohou být spotřebovávána stránky C#:
+Následující příklad kódu ukazuje jak `CustomMap` ovládacího prvku mohou být spotřebovány stránky jazyka C#:
 
 ```csharp
 public class MapPageCS : ContentPage
@@ -97,9 +97,9 @@ public class MapPageCS : ContentPage
 }
 ```
 
-`CustomMap` Instance bude sloužit k zobrazení nativní mapy na každou platformu. Má [ `MapType` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Map.MapType/) vlastnost nastaví styl zobrazení [ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/), s možné hodnoty, které definujete ve [ `MapType` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.MapType/) výčtu. Pro iOS a Android, šířku a výšku mapy nastavit pomocí vlastnosti `App` třídu, která jsou inicializovány v projektech specifické pro platformu.
+`CustomMap` Instance se použije k zobrazení nativní mapování na jednotlivých platformách. Má [ `MapType` ](xref:Xamarin.Forms.Maps.Map.MapType) vlastnost nastaví styl zobrazení [ `Map` ](xref:Xamarin.Forms.Maps.Map), s možné hodnoty jsou popsány v [ `MapType` ](xref:Xamarin.Forms.Maps.MapType) výčtu. Pro iOS a Android, šířka a výška ohraničení mapy je nastavena prostřednictvím vlastnosti `App` třídu, která jsou inicializovány v projektech pro konkrétní platformu.
 
-Umístění mapy a kódy PIN obsahuje, se inicializují, jak je znázorněno v následujícím příkladu kódu:
+Umístění na mapě a kolíky obsahuje, jsou inicializovány, jak je znázorněno v následujícím příkladu kódu:
 
 ```csharp
 public MapPage ()
@@ -121,36 +121,36 @@ public MapPage ()
 }
 ```
 
-Tato inicializace přidá vlastní kód pin a umisťuje zobrazení mapy na s [ `MoveToRegion` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.Map.MoveToRegion(Xamarin.Forms.Maps.MapSpan)/) metoda, která mění pozice a úroveň přiblížení mapy vytvořením [ `MapSpan` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.MapSpan/) z [ `Position` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Position/) a [ `Distance` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Distance/).
+Tato inicializace přidá vlastní kód pin a umístí zobrazení na mapě s [ `MoveToRegion` ](xref:Xamarin.Forms.Maps.Map.MoveToRegion*) metoda, která změní pozice a úroveň přiblížení mapy tak, že vytvoříte [ `MapSpan` ](xref:Xamarin.Forms.Maps.MapSpan) z [ `Position` ](xref:Xamarin.Forms.Maps.Position) a [ `Distance` ](xref:Xamarin.Forms.Maps.Distance).
 
-Vlastní zobrazovací jednotky lze nyní přidat na každý projekt aplikace k přizpůsobení ovládací prvky nativní mapy.
+Vlastní zobrazovací jednotky je nyní přidat do každého projektu aplikace k přizpůsobení ovládacích prvků nativní mapování.
 
 <a name="Creating_the_Custom_Renderer_on_each_Platform" />
 
-## <a name="creating-the-custom-renderer-on-each-platform"></a>Vytváření vlastní zobrazovací jednotky na jednotlivých platformách
+## <a name="creating-the-custom-renderer-on-each-platform"></a>Vytvoření vlastního Rendereru na jednotlivých platformách
 
-Proces pro vytvoření třídy vlastní zobrazovací jednotky vypadá takto:
+Proces pro vytvoření vlastního rendereru třídy vypadá takto:
 
-1. Vytvoření podtřídou třídy `MapRenderer` třídu, která vykreslí vlastní mapy.
-1. Přepsání `OnElementChanged` metoda, která vykreslí mapy a logiku zápisu a přizpůsobit. Tato metoda je volána, když je vytvořen odpovídající Xamarin.Forms vlastní mapy.
-1. Přidat `ExportRenderer` atributu na vlastní zobrazovací jednotky třídu k určení, že bude použit k vykreslení Xamarin.Forms vlastní mapy. Tento atribut slouží k registraci vlastní zobrazovací jednotky s Xamarin.Forms.
+1. Vytvořit podtřídu `MapRenderer` třídu, která vykreslí vlastní mapy.
+1. Přepsat `OnElementChanged` metody, která vykreslí vlastní mapy a psaní logiky ji přizpůsobit. Tato metoda je volána, když se vytvoří odpovídající vlastní mapa Xamarin.Forms.
+1. Přidat `ExportRenderer` atribut pro třídu vlastního rendereru určíte, že bude používat k vykreslení vlastní mapa Xamarin.Forms. Tento atribut slouží k registraci vlastního rendereru s Xamarin.Forms.
 
 > [!NOTE]
-> Zadání je volitelné poskytnout vlastní zobrazovací jednotky v každém projektu platformy. Pokud vlastní zobrazovací jednotky není registrované, bude použit výchozí zobrazovací jednotky pro základní třídu ovládacího prvku.
+> Zadání je volitelné poskytnout vlastní zobrazovací jednotky v každém projektu platformy. Pokud není zaregistrovaný vlastní zobrazovací jednotky, se používá výchozí zobrazovací jednotky pro základní třídu ovládacího prvku.
 
-Následující diagram znázorňuje odpovědnosti jednotlivých projektů v ukázkové aplikace, spolu s jejich vzájemných vztahů:
+Následující diagram znázorňuje odpovědnosti každý projekt v ukázkové aplikaci, spolu s jejich vzájemné vztahy:
 
 ![](customized-pin-images/solution-structure.png "CustomMap vlastní zobrazovací jednotky projektu odpovědnosti")
 
-`CustomMap` Vykreslení ovládacího prvku renderer specifické pro platformu třídy, odvozených od `MapRenderer` třídu pro každou platformu. Výsledkem je každý `CustomMap` řízení vykreslované s ovládacími prvky specifické pro platformu, jak je vidět na následujících snímcích obrazovky:
+`CustomMap` Ovládací prvek je vykreslen metodou renderer specifické pro platformu, odvozené třídy `MapRenderer` třídy pro každou platformu. Výsledkem je každý `CustomMap` řídit vykreslované s ovládacími prvky pro konkrétní platformu, jak je znázorněno na následujících snímcích obrazovky:
 
 ![](customized-pin-images/screenshots.png "CustomMap na jednotlivých platformách")
 
-`MapRenderer` Třídy zpřístupňuje `OnElementChanged` metodu, která je volána, když vlastní mapy Xamarin.Forms se vytvoří pro vykreslení odpovídající nativní ovládacího prvku. Tato metoda přebírá `ElementChangedEventArgs` parametr, který obsahuje `OldElement` a `NewElement` vlastnosti. Tyto vlastnosti představují Xamarin.Forms element, zobrazovací jednotky *byla* připojené a Xamarin.Forms element, zobrazovací jednotky *je* připojené k, v uvedeném pořadí. V ukázkové aplikaci `OldElement` , bude mít vlastnost `null` a `NewElement` vlastnost bude obsahovat odkaz na `CustomMap` instance.
+`MapRenderer` Třídy zpřístupňuje `OnElementChanged` metodu, která je volána, když se vytvoří vlastní mapa Xamarin.Forms pro vykreslení odpovídající nativní ovládací prvek. Tato metoda přebírá `ElementChangedEventArgs` parametr, který obsahuje `OldElement` a `NewElement` vlastnosti. Tyto vlastnosti představují elementu Xamarin.Forms, která zobrazovací jednotky *byl* připojené a Xamarin.Forms element, která zobrazovací jednotky *je* připojené položky v uvedeném pořadí. V ukázkové aplikaci `OldElement` bude mít vlastnost `null` a `NewElement` vlastnost bude obsahovat odkaz na `CustomMap` instance.
 
-Přepsané verzi `OnElementChanged` metoda v každé třídě renderer specifických pro platformy je místo, kde provádět přizpůsobení nativní ovládací prvek. Zadaný odkaz na nativní ovládací prvek používá na platformě je možné přistupovat prostřednictvím `Control` vlastnost. Kromě toho nelze získat odkaz na platformě Xamarin.Forms ovládací prvek, který je vykreslované prostřednictvím `Element` vlastnost.
+Přepsané verzi `OnElementChanged` metoda v každé třídě renderer specifické pro platformu je místem, kde můžete provádět přizpůsobení nativní ovládacího prvku. Zadaný odkaz na nativní ovládací prvek se používají na platformě je přístupná prostřednictvím `Control` vlastnost. Kromě toho lze získat odkaz na ovládací prvek Xamarin.Forms, která se vykresluje přes `Element` vlastnost.
 
-Musí dát pozor, když se přihlásíte k obslužné rutiny událostí v odběru `OnElementChanged` metoda, jak je ukázáno v následujícím příkladu kódu:
+Musíte věnovat pozornost při přihlášení k odběru do obslužné rutiny událostí v `OnElementChanged` způsob, jak je ukázáno v následujícím příkladu kódu:
 
 ```csharp
 protected override void OnElementChanged (ElementChangedEventArgs<Xamarin.Forms.ListView> e)
@@ -167,19 +167,19 @@ protected override void OnElementChanged (ElementChangedEventArgs<Xamarin.Forms.
 }
 ```
 
-Nativní ovládacího prvku by měl být nakonfigurovaný a jenom v případě, že vlastní zobrazovací jednotky je připojen k nového elementu Xamarin.Forms přihlásit k odběru obslužné rutiny událostí. Podobně všechny obslužné rutiny, které byly přihlásit k odběru musí být v po elementu, který zobrazovací jednotky je připojena k pouze změny odhlásit. Přijetí tento přístup vám pomůže vytvořit vlastní zobrazovací jednotky, která není trpí nevracení paměti.
+Nativní ovládací prvek by měl být nakonfigurovaný a obslužných rutin událostí k odběru pouze v případě, že vlastní zobrazovací jednotky je připojen k nový prvek Xamarin.Forms. Podobně by měla být všechny obslužné rutiny, které byly k odběru Odhlášený pouze, když změní elementu, který je přiřazena zobrazovací jednotky. Přijmout tento přístup vám pomůže vytvořit vlastní zobrazovací jednotky, který není trpí nevracení paměti.
 
-Každá třída vlastní zobrazovací jednotky je upraven pomocí `ExportRenderer` atribut, který registruje zobrazovací jednotky s Xamarin.Forms. Atribut přebírá dva parametry – název typu vlastního ovládacího prvku Xamarin.Forms vykreslované a název typu vlastní zobrazovací jednotky. `assembly` Předpona, která má atribut určuje atribut, které se vztahují na celou sestavení.
+Každá třída vlastní zobrazovací jednotky je doplněn `ExportRenderer` atribut, který registruje vykreslovaný pomocí Xamarin.Forms. Atribut přebírá dva parametry – název typu vlastního ovládacího prvku Xamarin.Forms vykreslované a název typu vlastní zobrazovací jednotky. `assembly` Předpona, která atribut určuje, že platí atribut pro celé sestavení.
 
-Následující části popisují implementaci třídy každý vlastní zobrazovací jednotky specifické pro platformu.
+Následující části popisují implementaci každou třídu vlastního rendereru pro konkrétní platformu.
 
-### <a name="creating-the-custom-renderer-on-ios"></a>Vytváření vlastní zobrazovací jednotky v systému iOS
+### <a name="creating-the-custom-renderer-on-ios"></a>Vytvoření vlastní zobrazovací jednotky v systému iOS
 
 Na následujících snímcích obrazovky zobrazit na mapě před a po přizpůsobení:
 
 ![](customized-pin-images/map-layout-ios.png "Mapový ovládací prvek před a po přizpůsobení")
 
-V systému iOS se nazývá kódu pin *poznámky*, a může být buď vlastní image nebo PIN kód definovaná systémem různých barev. Volitelně můžete zobrazit poznámky *popisku*, který se zobrazí v reakci na uživatele vybráním poznámky. Zobrazí popisek `Label` a `Address` vlastnosti `Pin` instance s volitelné v levém horním a pravém příslušenství zobrazení. Na snímku obrazovky výše, je z levého zobrazení příslušenství bitové kopie opic s právo příslušenství zobrazení se *informace* tlačítko.
+V Iosu se volá kód pin *anotace*, a může být buď vlastní image nebo systémem definovaná pin různých barev. Můžete volitelně zobrazit poznámky *popisek*, který se zobrazí v reakci na výběru Poznámka uživatelem. Popisek zobrazí `Label` a `Address` vlastnosti `Pin` instance volitelné vlevo a vpravo příslušenství zobrazení. Na snímku obrazovky výše je z levého zobrazení příslušenství image opic, s přímo příslušenství zobrazení se *informace* tlačítko.
 
 Následující příklad kódu ukazuje vlastní zobrazovací jednotky pro platformu iOS:
 
@@ -223,21 +223,21 @@ namespace CustomRenderer.iOS
 }
 ```
 
-`OnElementChanged` Metoda provádí následující konfigurace [ `MKMapView` ](https://developer.xamarin.com/api/type/MapKit.MKMapView/) instance, za předpokladu, že vlastní zobrazovací jednotky je připojen k nového elementu Xamarin.Forms:
+`OnElementChanged` Metoda provádí následující konfiguraci [ `MKMapView` ](https://developer.xamarin.com/api/type/MapKit.MKMapView/) instance, za předpokladu, že vlastní zobrazovací jednotky je připojen k nový prvek Xamarin.Forms:
 
-- [ `GetViewForAnnotation` ](https://developer.xamarin.com/api/property/MapKit.MKMapView.GetViewForAnnotation/) Je nastavena na `GetViewForAnnotation` metoda. Tato metoda je volána, když [umístění Poznámka se zobrazí na mapě](#Displaying_the_Annotation)a slouží k přizpůsobení před poznámky k zobrazení.
-- Obslužné rutiny události pro `CalloutAccessoryControlTapped`, `DidSelectAnnotationView`, a `DidDeselectAnnotationView` události jsou registrované. Provést tyto události, kdy uživatel [klepne na pravém příslušenství v popisku](#Tapping_on_the_Right_Callout_Accessory_View)a když uživatel [vybere](#Selecting_the_Annotation) a [zruší výběr](#Deselecting_the_Annotation) poznámky, v uvedeném pořadí. Události jsou v odhlásit pouze v případě, že element zobrazovací jednotky je připojen k změny.
+- [ `GetViewForAnnotation` ](https://developer.xamarin.com/api/property/MapKit.MKMapView.GetViewForAnnotation/) Je nastavena na `GetViewForAnnotation` metody. Tato metoda je volána, když [umístění ze Poznámka se zobrazí na mapě](#Displaying_the_Annotation)a slouží k přizpůsobení předchozího poznámky k zobrazení.
+- Obslužné rutiny událostí pro `CalloutAccessoryControlTapped`, `DidSelectAnnotationView`, a `DidDeselectAnnotationView` události jsou registrované. Vyvolat tyto události, kdy uživatel [klepne správné příslušenství v popisku](#Tapping_on_the_Right_Callout_Accessory_View)a když uživatel [vybere](#Selecting_the_Annotation) a [zrušit výběr](#Deselecting_the_Annotation) poznámku, v uvedeném pořadí. Události se zrušila, pouze v případě, že element zobrazovací jednotky je připojený k změny.
 
 <a name="Displaying_the_Annotation" />
 
 #### <a name="displaying-the-annotation"></a>Zobrazení anotace
 
-`GetViewForAnnotation` Metoda je volána, když umístění Poznámka se zobrazí na mapě a slouží k přizpůsobení před poznámky k zobrazení. Poznámky má dvě části:
+`GetViewForAnnotation` Metoda je volána při umístění na poznámku se zobrazí na mapě a slouží k přizpůsobení předchozího poznámky k zobrazení. Poznámka má dvě části:
 
-- `MkAnnotation` – obsahuje název, subtitle a umístění anotace.
-- `MkAnnotationView` – obsahuje bitovou kopii k reprezentaci anotace a volitelně popisků, které se zobrazí, když uživatel klepnutím anotace.
+- `MkAnnotation` – obsahuje nadpis, podnadpis a umístění anotace.
+- `MkAnnotationView` – obsahuje bitovou kopii k reprezentaci anotace a volitelně popisek, který se zobrazí, když uživatel klepne na poznámku.
 
-`GetViewForAnnotation` Metoda přijímá `IMKAnnotation` který obsahuje data, poznámky a vrátí `MKAnnotationView` pro zobrazení na mapě a je znázorněno v následujícím příkladu kódu:
+`GetViewForAnnotation` Metoda přijímá `IMKAnnotation` , který obsahuje data, poznámky a vrátí `MKAnnotationView` pro zobrazení na mapě a je znázorněno v následujícím příkladu kódu:
 
 ```csharp
 MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKAnnotation annotation)
@@ -268,25 +268,25 @@ MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKAnnotation annotatio
 }
 ```
 
-Tato metoda zajišťuje, že poznámka se zobrazí jako vlastní image, nikoli jako definované v systému a kódu pin, který po Poznámka je stisknuté popisku se zobrazí obsahující další obsah vlevo a vpravo od poznámky název a adresu . To lze provést následujícím způsobem:
+Tato metoda zajišťuje, že poznámka se zobrazí jako vlastní image, nikoli jako definovaných systémem PIN kód a že klepnutí Poznámka popisku se zobrazí, který zahrnuje další obsah vlevo a vpravo od názvu poznámky a adresa . To lze provést následujícím způsobem:
 
-1. `GetCustomPin` Metoda je volána pro vrácení dat vlastní kód pin pro poznámku.
-1. Pro konzervaci paměti, poznámky zobrazení je ve fondu pro opakované použití s volání [ `DequeueReusableAnnotation` ](https://developer.xamarin.com/api/member/MapKit.MKMapView.DequeueReusableAnnotation/(System.String)/).
-1. `CustomMKAnnotationView` Třída rozšiřuje `MKAnnotationView` třídy s `Id` a `Url` vlastnosti, které odpovídají na stejné vlastnosti v `CustomPin` instance. Novou instanci třídy `CustomMKAnnotationView` je vytvořen, za předpokladu, že je Poznámka `null`:
+1. `GetCustomPin` Metoda je volána k vrácení dat vlastní kód pin pro poznámku.
+1. Pro konzervaci paměti, zobrazit poznámky je ve fondu pro další použití volání [ `DequeueReusableAnnotation` ](https://developer.xamarin.com/api/member/MapKit.MKMapView.DequeueReusableAnnotation/(System.String)/).
+1. `CustomMKAnnotationView` Třída rozšiřuje `MKAnnotationView` třídy s `Id` a `Url` vlastnostmi, které odpovídají na stejné vlastnosti v `CustomPin` instance. Novou instanci třídy `CustomMKAnnotationView` se vytvoří, za předpokladu, že je Poznámka `null`:
   - `CustomMKAnnotationView.Image` Je nastavena na bitovou kopii, která bude představovat poznámky na mapě.
-  - `CustomMKAnnotationView.CalloutOffset` Je nastavena na `CGPoint` který určuje, že popisek bude vycházet výše anotace.
-  - `CustomMKAnnotationView.LeftCalloutAccessoryView` Je nastavena na obrázek opic, který se zobrazí vlevo od poznámky název a adresu.
-  - `CustomMKAnnotationView.RightCalloutAccessoryView` Je nastavena na *informace* tlačítko, které se zobrazí vpravo od poznámky název a adresu.
-  - `CustomMKAnnotationView.Id` Je nastavena na `CustomPin.Id` vlastnost vrácený `GetCustomPin` metoda. To umožňuje anotaci identifikaci tak, aby měl [popisku mohou být dále uzpůsobeny](#Selecting_the_Annotation), v případě potřeby.
-  - `CustomMKAnnotationView.Url` Je nastavena na `CustomPin.Url` vlastnost vrácený `GetCustomPin` metoda. Adresu URL se přejde poté, kdy uživatel [klepnutím na tlačítko se zobrazí v pravém popisku příslušenství zobrazení](#Tapping_on_the_Right_Callout_Accessory_View).
-1. [ `MKAnnotationView.CanShowCallout` ](https://developer.xamarin.com/api/property/MapKit.MKAnnotationView.CanShowCallout/) Je nastavena na `true` tak, aby popisku se zobrazí, když je stisknuté anotace.
-1. Poznámka vrátí k zobrazení na mapě.
+  - `CustomMKAnnotationView.CalloutOffset` Je nastavena na `CGPoint` , která určuje, že bude popisek nad Poznámka na střed.
+  - `CustomMKAnnotationView.LeftCalloutAccessoryView` Je nastavena na obrázek opic, který se zobrazí nalevo od názvu poznámky a adresu.
+  - `CustomMKAnnotationView.RightCalloutAccessoryView` Je nastavena na *informace* tlačítko, které se zobrazí napravo od názvu poznámky a adresu.
+  - `CustomMKAnnotationView.Id` Je nastavena na `CustomPin.Id` vlastnosti vrácené `GetCustomPin` metody. To umožňuje anotaci musí identifikovat tak, aby byly [popisek se dají dál přizpůsobit](#Selecting_the_Annotation), v případě potřeby.
+  - `CustomMKAnnotationView.Url` Je nastavena na `CustomPin.Url` vlastnosti vrácené `GetCustomPin` metody. Adresu URL se přejde poté, kdy uživatel [klepne na tlačítko v pravém popisek příslušenství zobrazení](#Tapping_on_the_Right_Callout_Accessory_View).
+1. [ `MKAnnotationView.CanShowCallout` ](https://developer.xamarin.com/api/property/MapKit.MKAnnotationView.CanShowCallout/) Je nastavena na `true` tak, aby popisek se zobrazí po klepnutí na poznámku.
+1. Poznámka se vrátí k zobrazení na mapě.
 
 <a name="Selecting_the_Annotation" />
 
-#### <a name="selecting-the-annotation"></a>Výběr anotace
+#### <a name="selecting-the-annotation"></a>Vybráním poznámky
 
-Když uživatel klepnutím na poznámku, `DidSelectAnnotationView` aktivuje událost, které pak provede `OnDidSelectAnnotationView` metoda:
+Když uživatel klepne na poznámku, `DidSelectAnnotationView` dojde k aktivaci události, které se spouštějí zase `OnDidSelectAnnotationView` metody:
 
 ```csharp
 void OnDidSelectAnnotationView (object sender, MKAnnotationViewEventArgs e)
@@ -305,13 +305,13 @@ void OnDidSelectAnnotationView (object sender, MKAnnotationViewEventArgs e)
 }
 ```
 
-Tato metoda rozšiřuje existující popisek (která obsahuje zobrazení levé a pravé příslušenství) přidáním `UIView` instance k němu, který obsahuje obrázek loga Xamarin, za předpokladu, že vybrané poznámky jeho `Id` vlastnost nastavena na hodnotu `Xamarin`. To umožňuje scénáře, kde lze zobrazit různé popisky pro různé poznámky. `UIView` Instance se zobrazí na střed výše existující popisku.
+Tato metoda rozšiřuje existující popisek (který obsahuje zobrazení vlevo a vpravo příslušenství) tak, že přidáte `UIView` instance k němu, který obsahuje obrázek loga Xamarin, za předpokladu, že vybrané poznámky jeho `Id` nastavenou na `Xamarin`. To umožňuje scénáře, kde lze zobrazit různé popisky pro různé poznámky. `UIView` Instance se zobrazí na střed nad existující popisek.
 
 <a name="Tapping_on_the_Right_Callout_Accessory_View" />
 
-#### <a name="tapping-on-the-right-callout-accessory-view"></a>Klepnutím na zobrazení správné příslušenství popisku
+#### <a name="tapping-on-the-right-callout-accessory-view"></a>Klepnutím na zobrazení správné popisek příslušenství
 
-Když uživatel klepnutím na *informace* tlačítko v pravém popisku příslušenství zobrazení `CalloutAccessoryControlTapped` aktivuje událost, které pak provede `OnCalloutAccessoryControlTapped` metoda:
+Když uživatel klepne na *informace* tlačítko v pravém popisek příslušenství zobrazení, `CalloutAccessoryControlTapped` dojde k aktivaci události, které následně provede `OnCalloutAccessoryControlTapped` metody:
 
 ```csharp
 void OnCalloutAccessoryControlTapped (object sender, MKMapViewAccessoryTappedEventArgs e)
@@ -323,13 +323,13 @@ void OnCalloutAccessoryControlTapped (object sender, MKMapViewAccessoryTappedEve
 }
 ```
 
-Tato metoda otevře webový prohlížeč a přejde na adresu uložené v `CustomMKAnnotationView.Url` vlastnost. Všimněte si, že adresa byla definována při vytváření `CustomPin` kolekce v rozhraní .NET standardní projektu knihovny.
+Tato metoda se otevře webový prohlížeč a přejde na adresu uloženou v `CustomMKAnnotationView.Url` vlastnost. Všimněte si, že adresa byla definována při vytváření `CustomPin` kolekce v projektu knihovny .NET Standard.
 
 <a name="Deselecting_the_Annotation" />
 
-#### <a name="deselecting-the-annotation"></a>Ať anotace
+#### <a name="deselecting-the-annotation"></a>Zrušením výběru anotace
 
-Když Poznámka se zobrazí a uživatel klepnutím na mapě, `DidDeselectAnnotationView` aktivuje událost, které pak provede `OnDidDeselectAnnotationView` metoda:
+Když uživatel klepne na mapě a poznámky se zobrazí `DidDeselectAnnotationView` dojde k aktivaci události, které následně provede `OnDidDeselectAnnotationView` metoda:
 
 ```csharp
 void OnDidDeselectAnnotationView (object sender, MKAnnotationViewEventArgs e)
@@ -342,17 +342,17 @@ void OnDidDeselectAnnotationView (object sender, MKAnnotationViewEventArgs e)
 }
 ```
 
-Tato metoda zajišťuje, že pokud není vybrána existující popisku, rozšířené součástí popisku (obrázek loga Xamarin) také zastaví se zobrazuje, a její prostředky, které budou vydané.
+Tato metoda zajišťuje, že při existující popisek není vybrána, rozšířené součástí popisek (obrázek loga Xamarin) se také zastaví se zobrazí a její prostředky budou vydané.
 
 Další informace o přizpůsobení `MKMapView` instance najdete v tématu [iOS mapy](~/ios/user-interface/controls/ios-maps/index.md).
 
-### <a name="creating-the-custom-renderer-on-android"></a>Vytváření vlastní zobrazovací jednotky v systému Android
+### <a name="creating-the-custom-renderer-on-android"></a>Vytvoření vlastního Rendereru v Androidu
 
 Na následujících snímcích obrazovky zobrazit na mapě před a po přizpůsobení:
 
 ![](customized-pin-images/map-layout-android.png "Mapový ovládací prvek před a po přizpůsobení")
 
-V systému Android se nazývá PIN kód *značky*, a může být buď vlastní image nebo značku definovaná systémem různých barev. Můžete zobrazit značek *informační okno*, který se zobrazí v reakci na uživatel klepnutím na značky. V okně informace se zobrazí `Label` a `Address` vlastnosti `Pin` instance a můžete upravit, aby obsahoval jiný obsah. Pouze jeden informační okno však lze zobrazit najednou.
+V systému Android je volána kód pin *značky*, a může být buď vlastní image nebo systémem definovaná značky různých barev. Můžete zobrazit značky *informační okno*, který se zobrazí odpověď na uživatelský, klepnutím na značku. V okně se informace zobrazí `Label` a `Address` vlastnosti `Pin` instanci a je možné přizpůsobit zahrnout další obsah. Pouze jeden informační okno však lze zobrazit najednou.
 
 Následující příklad kódu ukazuje vlastní zobrazovací jednotky pro platformu Android:
 
@@ -397,18 +397,18 @@ namespace CustomRenderer.Droid
 }
 ```
 
-Za předpokladu, že vlastní zobrazovací jednotky je připojen k nového elementu Xamarin.Forms, `OnElementChanged` volání metod `MapView.GetMapAsync` metodu, která získá základní `GoogleMap` který je vázaný na zobrazení. Jednou `GoogleMap` instance je k dispozici, `OnMapReady` přepsání bude volána. Metoda registruje obslužné rutiny události pro `InfoWindowClick` událost, která aktivuje, když [po kliknutí na informační okno](#Clicking_on_the_Info_Window)a je odhlásil z jenom v případě, že element zobrazovací jednotky je připojen k změny. `OnMapReady` Přepsat také volání `SetInfoWindowAdapter` metoda určíte, že `CustomMapRenderer` instance třídy bude poskytovat metody k přizpůsobení okně informace.
+Za předpokladu, že vlastní zobrazovací jednotky je připojen k nový prvek Xamarin.Forms `OnElementChanged` volání metod `MapView.GetMapAsync` metodu, která získá základní `GoogleMap` , který se váže k zobrazení. Jednou `GoogleMap` instance je k dispozici, `OnMapReady` přepsání, který bude vyvolán. Metoda registruje obslužná rutina události `InfoWindowClick` událost, která se vyvolá, když [informační okno dojde ke kliknutí na](#Clicking_on_the_Info_Window)a je jenom v případě, že element zobrazovací jednotky je připojený k změny zrušili odběr. `OnMapReady` Přepsat také volání `SetInfoWindowAdapter` metoda určit, že `CustomMapRenderer` instance třídy se poskytují metody pro přizpůsobení informační okno.
 
-`CustomMapRenderer` Třída implementuje `GoogleMap.IInfoWindowAdapter` rozhraní k [přizpůsobit informační okno](#Customizing_the_Info_Window). Toto rozhraní určuje, že musí být implementována následujících metod:
+`CustomMapRenderer` Implementuje třída `GoogleMap.IInfoWindowAdapter` rozhraní při [přizpůsobit informační okno](#Customizing_the_Info_Window). Toto rozhraní určuje, že musí být implementované následujících metod:
 
-- `public Android.Views.View GetInfoWindow(Marker marker)` – Tato metoda je volána vrátit okna vlastní informace pro značku. Vrátí-li `null`, pak vykreslování oken ve výchozím nastavení se použije. Vrátí-li `View`, pak který `View` budou umístěny uvnitř rámce okna informace.
-- `public Android.Views.View GetInfoContents(Marker marker)` – Tato metoda je volána vrátit `View` s obsahem okna informací a bude volat pouze pokud `GetInfoWindow` metoda vrátí `null`. Vrátí-li `null`, pak se použije výchozí vykreslování obsahu okna informace.
+- `public Android.Views.View GetInfoWindow(Marker marker)` – Tato metoda je volána k vrácení informací o vlastní okno pro značku. Vrátí-li `null`, pak bude použita výchozí vykreslování oken. Vrátí-li `View`, pak, která `View` budou umístěny uvnitř okna rámce informace.
+- `public Android.Views.View GetInfoContents(Marker marker)` – Tato metoda je volána k vrácení `View` s obsahem v okně informací a bude volat pouze pokud `GetInfoWindow` vrátí metoda `null`. Vrátí-li `null`, pak bude použita výchozí vykreslování obsahu okna informace.
 
-V ukázkové aplikaci pouze obsah, okno informace upravíte a proto `GetInfoWindow` metoda vrátí `null` Chcete-li povolit tuto funkci.
+V ukázkové aplikaci je přizpůsobený pouze informace o obsahu okna a proto `GetInfoWindow` vrátí metoda `null` aby to bylo.
 
 #### <a name="customizing-the-marker"></a>Přizpůsobení značky
 
-Ikona použitá pro znázornění značku lze přizpůsobit pomocí volání `MarkerOptions.SetIcon` metoda. Toho lze dosáhnout přepsáním `CreateMarker` metoda, která se vyvolá pro každou `Pin` , se přidá do mapy:
+Ikona použitá pro znázornění značku je možné přizpůsobit pomocí volání `MarkerOptions.SetIcon` metody. Toho můžete docílit tak, že přepíšete `CreateMarker` metoda, která se vyvolá pro každou `Pin` , který je přidán do mapování:
 
 ```csharp
 protected override MarkerOptions CreateMarker(Pin pin)
@@ -422,15 +422,15 @@ protected override MarkerOptions CreateMarker(Pin pin)
 }
 ```
 
-Tato metoda vytvoří novou `MarkerOption` instance pro každý `Pin` instance. Po nastavení pozice, popisek a adresy značky, jeho ikonu nastavena `SetIcon` metoda. Tato metoda přebírá `BitmapDescriptor` objekt obsahující data potřebná k vykreslení na ikonu s `BitmapDescriptorFactory` třída poskytuje pomocné metody pro zjednodušení vytváření `BitmapDescriptor`.
+Tato metoda vytvoří nový `MarkerOption` instance pro každý `Pin` instance. Po nastavení pozice, popisek a adresu značky, jeho ikonu nastavená `SetIcon` metody. Tato metoda přebírá `BitmapDescriptor` objekt, který obsahuje data potřebná k vykreslení na ikonu s `BitmapDescriptorFactory` třída poskytující pomocné metody pro zjednodušení vytváření `BitmapDescriptor`.
 
-Další informace o používání `BitmapDescriptorFactory` třída přizpůsobit značku, najdete v článku [přizpůsobení značku](~/android/platform/maps-and-location/maps/maps-api.md).
+Další informace o používání `BitmapDescriptorFactory` třídy upravit značku, přečtěte si téma [přizpůsobení značku](~/android/platform/maps-and-location/maps/maps-api.md).
 
 <a name="Customizing_the_Info_Window" />
 
-#### <a name="customizing-the-info-window"></a>Okno informace o přizpůsobení
+#### <a name="customizing-the-info-window"></a>Přizpůsobení informační okno
 
-Když uživatel klepnutím na značky, `GetInfoContents` metoda proveden, za předpokladu, že `GetInfoWindow` metoda vrátí `null`. Následující příklad kódu ukazuje `GetInfoContents` metoda:
+Když uživatel klepne na značku, `GetInfoContents` metoda provádí, za předpokladu, že `GetInfoWindow` vrátí metoda `null`. Následující příklad kódu ukazuje `GetInfoContents` metody:
 
 ```csharp
 public Android.Views.View GetInfoContents (Marker marker)
@@ -466,22 +466,22 @@ public Android.Views.View GetInfoContents (Marker marker)
 }
 ```
 
-Tato metoda vrátí hodnotu `View` obsahující obsah okně informace. To lze provést následujícím způsobem:
+Tato metoda vrátí hodnotu `View` obsahující informační okno. To lze provést následujícím způsobem:
 
-- A `LayoutInflater` instance je načíst. Slouží k vytváření instancí rozložení souboru XML do její odpovídající `View`.
-- `GetCustomPin` Metoda je volána pro vrácení dat vlastní kód pin pro informační okno.
-- `XamarinMapInfoWindow` Rozložení je zvětšený, pokud `CustomPin.Id` vlastnost rovná `Xamarin`. Jinak `MapInfoWindow` je zvětšený rozložení. To umožňuje scénáře, kde lze zobrazit různé informace o rozložení oken pro jiné značky.
-- `InfoWindowTitle` a `InfoWindowSubtitle` prostředky jsou načteny z zvýšeným rozložení a jejich `Text` vlastnosti jsou nastaveny na odpovídající data z `Marker` instance, za předpokladu, že prostředky nejsou `null`.
-- `View` Instance vrátí k zobrazení na mapě.
+- A `LayoutInflater` načíst instanci. Tento parametr slouží k vytvoření instance XML soubor rozložení do odpovídající `View`.
+- `GetCustomPin` Metoda je volána k vrácení dat vlastní kód pin pro informační okno.
+- `XamarinMapInfoWindow` Rozložení je zvětšený, pokud `CustomPin.Id` rovná vlastnost `Xamarin`. V opačném případě `MapInfoWindow` zvětšený rozložení. To umožňuje scénáře, kde můžou zobrazit různé informace o rozložení oken různých značek.
+- `InfoWindowTitle` a `InfoWindowSubtitle` zdroje se načítají z zvýšeným rozložení a jejich `Text` vlastnosti jsou nastavené na odpovídající data z `Marker` instance, za předpokladu, že prostředky nejsou `null`.
+- `View` Instance se vrátí k zobrazení na mapě.
 
 > [!NOTE]
-> Okno s informací není živé `View`. Místo toho Android převede `View` do statického bitmap a které zobrazit jako obrázek. To znamená, které při okno s informací mohou reagovat na událost click, nemůže reagovat na všechny události touch nebo gesta a jednotlivých ovládacích prvků v okně informace o nemůže reagovat na vlastních události kliknutí.
+> Informační okno není živé `View`. Místo toho se Android převede `View` na statickou rastrového obrázku a zobrazit je jako obrázek. To znamená, které při informační okno můžou reagovat na událost click, nemůže reagovat na gesta ani dotyků a jednotlivých ovládacích prvků v okně informace nemůže reagovat na své vlastní události kliknutí.
 
 <a name="Clicking_on_the_Info_Window" />
 
 #### <a name="clicking-on-the-info-window"></a>Kliknutím na informační okno
 
-Když uživatel klikne v okně informace `InfoWindowClick` aktivuje událost, které pak provede `OnInfoWindowClick` metoda:
+Když uživatel klikne na informační okno `InfoWindowClick` dojde k aktivaci události, které následně provede `OnInfoWindowClick` metoda:
 
 ```csharp
 void OnInfoWindowClick (object sender, GoogleMap.InfoWindowClickEventArgs e)
@@ -500,19 +500,19 @@ void OnInfoWindowClick (object sender, GoogleMap.InfoWindowClickEventArgs e)
 }
 ```
 
-Tato metoda otevře webový prohlížeč a přejde na adresu uložené v `Url` vlastnost načtené `CustomPin` instanci pro `Marker`. Všimněte si, že adresa byla definována při vytváření `CustomPin` kolekce v rozhraní .NET standardní projektu knihovny.
+Tato metoda se otevře webový prohlížeč a přejde na adresu uloženou v `Url` vlastnost načtené `CustomPin` instanci `Marker`. Všimněte si, že adresa byla definována při vytváření `CustomPin` kolekce v projektu knihovny .NET Standard.
 
 Další informace o přizpůsobení `MapView` instance najdete v tématu [rozhraní API map](~/android/platform/maps-and-location/maps/maps-api.md).
 
-### <a name="creating-the-custom-renderer-on-the-universal-windows-platform"></a>Vytváření vlastní zobrazovací jednotky na univerzální platformu Windows
+### <a name="creating-the-custom-renderer-on-the-universal-windows-platform"></a>Vytvoření vlastního Rendereru na Universal Windows Platform
 
 Na následujících snímcích obrazovky zobrazit na mapě před a po přizpůsobení:
 
 ![](customized-pin-images/map-layout-uwp.png "Mapový ovládací prvek před a po přizpůsobení")
 
-Na UWP se nazývá PIN kód *ikonu mapy*, a může být buď vlastní image nebo definovaná systémem výchozí image. Můžete zobrazit ikonu mapy `UserControl`, který se zobrazí v reakci na uživatel klepnutím na ikonu mapy. `UserControl` Můžete zobrazit všechny obsah, včetně `Label` a `Address` vlastnosti `Pin` instance.
+Na UPW je volána kód pin *ikona mapa*, a může být buď vlastní image nebo systémem definovaná výchozí image. Může zobrazit ikona mapa `UserControl`, který se zobrazí v reakci na uživatele, klepněte na ikonu mapy. `UserControl` Můžete zobrazit žádný obsah, včetně `Label` a `Address` vlastnosti `Pin` instance.
 
-Následující příklad kódu ukazuje UWP vlastní zobrazovací jednotky:
+Následující příklad kódu ukazuje vlastní zobrazovací jednotky pro UPW:
 
 ```csharp
 [assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
@@ -566,23 +566,23 @@ namespace CustomRenderer.UWP
 }
 ```
 
-`OnElementChanged` Metoda provede následující operace, za předpokladu, že vlastní zobrazovací jednotky je připojen k nového elementu Xamarin.Forms:
+`OnElementChanged` Metoda provádí následující operace, za předpokladu, že vlastní zobrazovací jednotky je připojen k nový prvek Xamarin.Forms:
 
-- Vypne `MapControl.Children` kolekce k odebrání všech existujících prvky uživatelského rozhraní mapy, před registrací obslužné rutiny události pro `MapElementClick` událostí. Tato událost se aktivuje, když uživatel klepnutím nebo klikne na `MapElement` na `MapControl`a je odhlásil z jenom v případě, že element zobrazovací jednotky je připojen k změny.
+- Vymaže `MapControl.Children` kolekce odeberte všechny existující prvky uživatelského rozhraní z mapy, před registrací obslužná rutina události `MapElementClick` událostí. Tato událost se aktivuje, když uživatel klepne nebo klikne na `MapElement` na `MapControl`a je jenom v případě, že element zobrazovací jednotky je připojený k změny zrušili odběr.
 - Každý kód pin v `customPins` kolekce se zobrazí ve správném geografické umístění na mapě následujícím způsobem:
-  - Umístění pro PIN kód je vytvořen jako `Geopoint` instance.
-  - A `MapIcon` představují PIN kód se vytvoří instance.
-  - Bitovou kopii používá k reprezentování `MapIcon` je určený nastavením `MapIcon.Image` vlastnost. Obrázek ikony mapy není však vždy zaručena zobrazený, jako mohou být skryty jinými prvky na mapě. Proto mapy ikony `CollisionBehaviorDesired` je nastavena na `MapElementCollisionBehavior.RemainVisible`, aby bylo zajištěno, že zůstává viditelná.
+  - Umístění pro kód pin je vytvořen jako `Geopoint` instance.
+  - A `MapIcon` představující kód pin je vytvořena instance.
+  - Obrázek použitý k reprezentaci `MapIcon` je určený nastavením `MapIcon.Image` vlastnost. Ale mapy obraz bitové kopie není vždy zaručeně ukazuje, jak mohou být skryty pomocí jiných prvků na mapě. Proto mapy ikony `CollisionBehaviorDesired` je nastavena na `MapElementCollisionBehavior.RemainVisible`, aby bylo zajištěno, že zůstává viditelná.
   - Umístění `MapIcon` je určený nastavením `MapIcon.Location` vlastnost.
-  - `MapIcon.NormalizedAnchorPoint` Je nastavena na přibližnou polohu ukazatele na bitovou kopii. Pokud tuto vlastnost zachová výchozí hodnota (0,0), který představuje levém horním rohu bitovou kopii, změny v úroveň přiblížení mapy může vést k bitové kopie odkazující na jiné umístění.
-  - `MapIcon` Instance je přidán do `MapControl.MapElements` kolekce. Výsledkem je na mapu ikonu se zobrazí na `MapControl`.
+  - `MapIcon.NormalizedAnchorPoint` Je nastavena na Přibližná poloha ukazatele na obrázku. Pokud tuto vlastnost zachová svou výchozí hodnotu (0; 0), který představuje levý horní roh obrázku, změny v úroveň přiblížení mapy nemusí se bitové kopie odkazující na jiné místo.
+  - `MapIcon` Instance je přidána do `MapControl.MapElements` kolekce. Výsledkem je ikona mapa na `MapControl`.
 
 > [!NOTE]
-> Při použití stejnou bitovou kopii pro více mapy ikony `RandomAccessStreamReference` instance musí být deklarován na úrovni stránky nebo aplikace pro nejlepší výkon.
+> Při použití stejnou bitovou kopii pro více mapy ikony `RandomAccessStreamReference` by měly být deklarovány instance na úrovni stránky nebo aplikace pro zajištění nejlepšího výkonu.
 
-#### <a name="displaying-the-usercontrol"></a>Zobrazení UserControl
+#### <a name="displaying-the-usercontrol"></a>Zobrazení uživatelský ovládací prvek
 
-Když uživatel klepnutím na ikonu mapy `OnMapElementClick` metoda spuštěna. Následující příklad kódu ukazuje této metody:
+Po klepnutí na ikonu mapování `OnMapElementClick` provedení metody. Následující příklad kódu ukazuje tuto metodu:
 
 ```csharp
 private void OnMapElementClick(MapControl sender, MapElementClickEventArgs args)
@@ -623,21 +623,21 @@ private void OnMapElementClick(MapControl sender, MapElementClickEventArgs args)
 }
 ```
 
-Tato metoda vytvoří `UserControl` instance, který zobrazí informace o kódu pin. To lze provést následujícím způsobem:
+Tato metoda vytvoří `UserControl` instanci, která zobrazí informace o kódu pin. To lze provést následujícím způsobem:
 
-- `MapIcon` Instance je načíst.
-- `GetCustomPin` Metoda je volána vrátit data vlastní pin, který se zobrazí.
-- A `XamarinMapOverlay` je vytvořena instance pro zobrazení dat vlastní kód pin. Tato třída je uživatelský ovládací prvek.
-- Zeměpisné umístění, kam chcete zobrazit `XamarinMapOverlay` instance na `MapControl` je vytvořen jako `Geopoint` instance.
-- `XamarinMapOverlay` Instance je přidán do `MapControl.Children` kolekce. Tato kolekce obsahuje prvky uživatelského rozhraní jazyka XAML, které se zobrazí na mapě.
-- Geografické umístění `XamarinMapOverlay` instance na mapě nastavit tak, že zavoláte `SetLocation` metoda.
-- Relativní umístění na `XamarinMapOverlay` instanci, která odpovídá do zadaného umístění, je nastavit, že zavoláte `SetNormalizedAnchorPoint` metoda. To zajistí, která se změní úroveň přiblížení mapy výsledek v `XamarinMapOverlay` instance vždy zobrazují ve správném umístění.
+- `MapIcon` Načíst instanci.
+- `GetCustomPin` Metoda je volána k vrácení dat vlastní kód pin, který se zobrazí.
+- A `XamarinMapOverlay` pro zobrazení údajů o vlastní kód pin je vytvořena instance. Tato třída je uživatelský ovládací prvek.
+- Zeměpisné umístění, ve kterém se má zobrazit `XamarinMapOverlay` instance na `MapControl` je vytvořen jako `Geopoint` instance.
+- `XamarinMapOverlay` Instance je přidána do `MapControl.Children` kolekce. Tato kolekce obsahuje prvky uživatelského rozhraní XAML, které se zobrazí na mapě.
+- Zeměpisné umístění `XamarinMapOverlay` instance na mapě je nastavena pomocí volání `SetLocation` metoda.
+- Relativní umístění v `XamarinMapOverlay` instance, která odpovídá zadané umístění, je nastavit pomocí volání `SetNormalizedAnchorPoint` metody. Tím se zajistí, která se změní úroveň přiblížení mapy výsledku `XamarinMapOverlay` instance vždy zobrazí ve správném umístění.
 
-Případně, pokud už se zobrazuje informace o kódu pin na mapě, klepnutím na na mapě odebere `XamarinMapOverlay` instanci z `MapControl.Children` kolekce.
+Případně, pokud už se zobrazí informace o PIN kód na mapě, klepnete na mapě odebere `XamarinMapOverlay` z instance `MapControl.Children` kolekce.
 
 #### <a name="tapping-on-the-information-button"></a>Klepnutím na tlačítko informace
 
-Když uživatel klepnutím na *informace* tlačítko v `XamarinMapOverlay` uživatelský ovládací prvek, `Tapped` aktivuje událost, které pak provede `OnInfoButtonTapped` metoda:
+Když uživatel klepne na *informace* tlačítko `XamarinMapOverlay` uživatelský ovládací prvek, `Tapped` dojde k aktivaci události, které se spouštějí zase `OnInfoButtonTapped` – metoda:
 
 ```csharp
 private async void OnInfoButtonTapped(object sender, TappedRoutedEventArgs e)
@@ -646,18 +646,18 @@ private async void OnInfoButtonTapped(object sender, TappedRoutedEventArgs e)
 }
 ```
 
-Tato metoda otevře webový prohlížeč a přejde na adresu uložené v `Url` vlastnost `CustomPin` instance. Všimněte si, že adresa byla definována při vytváření `CustomPin` kolekce v rozhraní .NET standardní projektu knihovny.
+Tato metoda se otevře webový prohlížeč a přejde na adresu uloženou v `Url` vlastnost `CustomPin` instance. Všimněte si, že adresa byla definována při vytváření `CustomPin` kolekce v projektu knihovny .NET Standard.
 
-Další informace o přizpůsobení `MapControl` instance najdete v tématu [Maps a umístění přehled](https://msdn.microsoft.com/library/windows/apps/mt219699.aspx) na webu MSDN.
+Další informace o přizpůsobení `MapControl` instance najdete v tématu [mapy a přehled umístění](https://msdn.microsoft.com/library/windows/apps/mt219699.aspx) na webové stránce MSDN.
 
 ## <a name="summary"></a>Souhrn
 
-Tento článek ukázal, jak vytvořit vlastní zobrazovací jednotky pro `Map` řízení, umožňuje vývojářům přepsat výchozí nativní vykreslování s vlastní přizpůsobení specifické pro platformu. Xamarin.Forms.Maps poskytuje abstrakci a platformy pro zobrazení mapy, které používají nativní mapy rozhraní API na jednotlivých platformách zajistit mapu rychlého a známým prostředí pro uživatele.
+V tomto článku jsme vám ukázali jak vytvořit vlastního rendereru pro `Map` ovládacího prvku, umožňuje vývojářům přepsat výchozí nativní vykreslení s jejich přizpůsobováním specifické pro platformu. Xamarin.Forms.Maps není úspěšný kvůli poskytuje abstrakce napříč platformami pro zobrazení mapy, které používají nativní mapování rozhraní API na každou platformu zajistit rychlé a důvěrně známé mapování prostředí pro uživatele.
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Ovládací prvek map](~/xamarin-forms/user-interface/map.md)
+- [Ovládací prvek mapy](~/xamarin-forms/user-interface/map.md)
 - [iOS mapy](~/ios/user-interface/controls/ios-maps/index.md)
 - [Rozhraní API služby Map](~/android/platform/maps-and-location/maps/maps-api.md)
 - [Vlastní kód Pin (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/map/pin/)

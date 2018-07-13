@@ -7,36 +7,36 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 3cb4d7f152e0f9540275f12f0ade568cd0552784
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: b1ebe2694ad5fa996b8b679cfb31a203588de05c
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935573"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998996"
 ---
 # <a name="customizing-a-viewcell"></a>Přizpůsobení ViewCell
 
 _Xamarin.Forms ViewCell je buňky, která mohou být přidány do ListView nebo zobrazení Tabulka, která obsahuje zobrazení definované uživatelem pro vývojáře. Tento článek ukazuje, jak vytvořit vlastního rendereru pro ViewCell, která je hostována v ovládacím prvku ListView Xamarin.Forms. Tím se zastaví výpočty rozložení Xamarin.Forms nebudou opakovaně volat při posouvání ListView._
 
-Všechny buňky Xamarin.Forms má související zobrazovací jednotky pro každou platformu, která vytvoří instanci nativní ovládacího prvku. Když [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) je vykreslen metodou aplikace Xamarin.Forms v Iosu `ViewCellRenderer` je vytvořena instance třídy, které pak vytvoří instanci nativní `UITableViewCell` ovládacího prvku. Na platformu Android `ViewCellRenderer` třídy vytvoří instanci nativní `View` ovládacího prvku. Na Universal Windows Platform (UWP), `ViewCellRenderer` třídy vytvoří instanci nativní `DataTemplate`. Další informace o nástroj pro vykreslování a nativní ovládací prvek třídy, které ovládací prvky Xamarin.Forms namapovat na najdete v tématu [Renderer základní třídy a nativní ovládací prvky](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Všechny buňky Xamarin.Forms má související zobrazovací jednotky pro každou platformu, která vytvoří instanci nativní ovládacího prvku. Když [ `ViewCell` ](xref:Xamarin.Forms.ViewCell) je vykreslen metodou aplikace Xamarin.Forms v Iosu `ViewCellRenderer` je vytvořena instance třídy, které pak vytvoří instanci nativní `UITableViewCell` ovládacího prvku. Na platformu Android `ViewCellRenderer` třídy vytvoří instanci nativní `View` ovládacího prvku. Na Universal Windows Platform (UWP), `ViewCellRenderer` třídy vytvoří instanci nativní `DataTemplate`. Další informace o nástroj pro vykreslování a nativní ovládací prvek třídy, které ovládací prvky Xamarin.Forms namapovat na najdete v tématu [Renderer základní třídy a nativní ovládací prvky](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
-Následující diagram znázorňuje vztah mezi [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) a odpovídající nativní ovládací prvky, které je implementují:
+Následující diagram znázorňuje vztah mezi [ `ViewCell` ](xref:Xamarin.Forms.ViewCell) a odpovídající nativní ovládací prvky, které je implementují:
 
 ![](viewcell-images/viewcell-classes.png "Vztah mezi ovládacím prvkem ViewCell a implementující nativní ovládací prvky")
 
-Samotný proces vykreslování děláte výhod implementovat tak, že vytvoříte vlastní zobrazovací jednotky pro vlastní nastavení pro konkrétní platformu [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) na jednotlivých platformách. Tento proces je následujícím způsobem:
+Samotný proces vykreslování děláte výhod implementovat tak, že vytvoříte vlastní zobrazovací jednotky pro vlastní nastavení pro konkrétní platformu [ `ViewCell` ](xref:Xamarin.Forms.ViewCell) na jednotlivých platformách. Tento proces je následujícím způsobem:
 
 1. [Vytvoření](#Creating_the_Custom_Cell) vlastní buňky Xamarin.Forms.
 1. [Využívání](#Consuming_the_Custom_Cell) vlastní buňky od Xamarin.Forms.
 1. [Vytvoření](#Creating_the_Custom_Renderer_on_each_Platform) vlastního rendereru pro buňku na jednotlivých platformách.
 
-Každá položka nyní probereme zase k implementaci `NativeCell` renderer, který využívá rozložení specifické pro platformu pro každou buňku hostované uvnitř Xamarin.Forms [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) ovládacího prvku. Tím se zastaví výpočty rozložení Xamarin.Forms byla volána opakovaně během `ListView` posouvání.
+Každá položka nyní probereme zase k implementaci `NativeCell` renderer, který využívá rozložení specifické pro platformu pro každou buňku hostované uvnitř Xamarin.Forms [ `ListView` ](xref:Xamarin.Forms.ListView) ovládacího prvku. Tím se zastaví výpočty rozložení Xamarin.Forms byla volána opakovaně během `ListView` posouvání.
 
 <a name="Creating_the_Custom_Cell" />
 
 ## <a name="creating-the-custom-cell"></a>Vytvoření vlastní buňky
 
-Vytváření podtříd můžete vytvořit vlastní ovládací prvek [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) třídy, jak je znázorněno v následujícím příkladu kódu:
+Vytváření podtříd můžete vytvořit vlastní ovládací prvek [ `ViewCell` ](xref:Xamarin.Forms.ViewCell) třídy, jak je znázorněno v následujícím příkladu kódu:
 
 ```csharp
 public class NativeCell : ViewCell
@@ -143,9 +143,9 @@ public class NativeCellPageCS : ContentPage
 }
 ```
 
-Xamarin.Forms [ `ListView` ](xref:Xamarin.Forms.ListView) ovládací prvek se používá k zobrazení seznamu dat, který je vyplněný prostřednictvím [ `ItemSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ItemsView%601.ItemsSource/) vlastnost. [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) Ukládání do mezipaměti strategie pokusí minimalizovat `ListView` nároky na paměť a provádění rychlost recyklací seznamu buněk. Další informace najdete v tématu [strategie ukládání do mezipaměti](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy).
+Xamarin.Forms [ `ListView` ](xref:Xamarin.Forms.ListView) ovládací prvek se používá k zobrazení seznamu dat, který je vyplněný prostřednictvím [ `ItemSource` ](xref:Xamarin.Forms.ItemsView`1.ItemsSource) vlastnost. [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) Ukládání do mezipaměti strategie pokusí minimalizovat `ListView` nároky na paměť a provádění rychlost recyklací seznamu buněk. Další informace najdete v tématu [strategie ukládání do mezipaměti](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy).
 
-Každý řádek v seznamu obsahuje tři položky dat – název, kategorie a souboru obrázku. Rozložení každý řádek v seznamu je definována `DataTemplate` , který se odkazuje prostřednictvím [ `ListView.ItemTemplate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ItemsView%601.ItemTemplate/) vázanou vlastnost. `DataTemplate` Definuje, že každý řádek dat v seznamu se budou `NativeCell` , který zobrazí jeho `Name`, `Category`, a `ImageFilename` vlastnosti prostřednictvím datové vazby. Další informace o `ListView` řídí, najdete v článku [ListView](~/xamarin-forms/user-interface/listview/index.md).
+Každý řádek v seznamu obsahuje tři položky dat – název, kategorie a souboru obrázku. Rozložení každý řádek v seznamu je definována `DataTemplate` , který se odkazuje prostřednictvím [ `ListView.ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1.ItemTemplate) vázanou vlastnost. `DataTemplate` Definuje, že každý řádek dat v seznamu se budou `NativeCell` , který zobrazí jeho `Name`, `Category`, a `ImageFilename` vlastnosti prostřednictvím datové vazby. Další informace o `ListView` řídí, najdete v článku [ListView](~/xamarin-forms/user-interface/listview/index.md).
 
 Vlastní zobrazovací jednotky je nyní přidat do každého projektu aplikace k přizpůsobení rozložení specifické pro platformu pro každou buňku.
 
@@ -315,9 +315,9 @@ internal class NativeiOSCell : UITableViewCell, INativeElementView
 }
 ```
 
-Tato třída definuje ovládací prvky používané k vykreslení obsahu buňky a jejich rozložení. Třída implementuje [ `INativeElementView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.INativeElementView/) rozhraní, které se požaduje, pokud [ `ListView` ](xref:Xamarin.Forms.ListView) používá [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) strategie ukládání do mezipaměti. Toto rozhraní určuje, že musí implementovat třídu [ `Element` ](https://developer.xamarin.com/api/property/Xamarin.Forms.INativeElementView.Element/) vlastnost, která by měla vrátit data vlastní buňky recyklován buněk.
+Tato třída definuje ovládací prvky používané k vykreslení obsahu buňky a jejich rozložení. Třída implementuje [ `INativeElementView` ](xref:Xamarin.Forms.INativeElementView) rozhraní, které se požaduje, pokud [ `ListView` ](xref:Xamarin.Forms.ListView) používá [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) strategie ukládání do mezipaměti. Toto rozhraní určuje, že musí implementovat třídu [ `Element` ](xref:Xamarin.Forms.INativeElementView.Element) vlastnost, která by měla vrátit data vlastní buňky recyklován buněk.
 
-`NativeiOSCell` Konstruktor inicializuje vzhled `HeadingLabel`, `SubheadingLabel`, a `CellImageView` vlastnosti. Tyto vlastnosti jsou používány k zobrazení dat uložených v `NativeCell` instance, se `UpdateCell` metoda se volá za účelem nastavení hodnoty vlastností. Kromě toho, kdy [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) používá [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) ukládání do mezipaměti strategie, data zobrazená ve `HeadingLabel`, `SubheadingLabel`, a `CellImageView` vlastnosti mohou být aktualizoval `OnNativeCellPropertyChanged` metoda ve vlastní zobrazovací jednotky.
+`NativeiOSCell` Konstruktor inicializuje vzhled `HeadingLabel`, `SubheadingLabel`, a `CellImageView` vlastnosti. Tyto vlastnosti jsou používány k zobrazení dat uložených v `NativeCell` instance, se `UpdateCell` metoda se volá za účelem nastavení hodnoty vlastností. Kromě toho, kdy [ `ListView` ](xref:Xamarin.Forms.ListView) používá [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) ukládání do mezipaměti strategie, data zobrazená ve `HeadingLabel`, `SubheadingLabel`, a `CellImageView` vlastnosti mohou být aktualizoval `OnNativeCellPropertyChanged` metoda ve vlastní zobrazovací jednotky.
 
 Rozložení buněk se provádí `LayoutSubviews` přepsání, která nastaví souřadnice `HeadingLabel`, `SubheadingLabel`, a `CellImageView` v buňce.
 
@@ -358,19 +358,19 @@ namespace CustomRenderer.Droid
 }
 ```
 
-`GetCellCore` Metoda je volána k sestavení buňky, který se má zobrazit. Každá buňka je `NativeAndroidCell` instanci, která definuje rozložení v buňce a jeho data. Operace `GetCellCore` metoda je závislá [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) strategie ukládání do mezipaměti:
+`GetCellCore` Metoda je volána k sestavení buňky, který se má zobrazit. Každá buňka je `NativeAndroidCell` instanci, která definuje rozložení v buňce a jeho data. Operace `GetCellCore` metoda je závislá [ `ListView` ](xref:Xamarin.Forms.ListView) strategie ukládání do mezipaměti:
 
-- Když [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) strategie ukládání do mezipaměti je [ `RetainElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RetainElement), `GetCellCore` metoda bude volána pro každou buňku. A `NativeAndroidCell` se vytvoří pro každou `NativeCell` , jež se zpočátku zobrazí na obrazovce. Procházení prostřednictvím `ListView`, `NativeAndroidCell` instancí bude znovu použít. Další informace o Androidu buňky znovu použít, najdete v části [řádek opětovného použití zobrazení](~/android/user-interface/layouts/list-view/populating.md).
+- Když [ `ListView` ](xref:Xamarin.Forms.ListView) strategie ukládání do mezipaměti je [ `RetainElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RetainElement), `GetCellCore` metoda bude volána pro každou buňku. A `NativeAndroidCell` se vytvoří pro každou `NativeCell` , jež se zpočátku zobrazí na obrazovce. Procházení prostřednictvím `ListView`, `NativeAndroidCell` instancí bude znovu použít. Další informace o Androidu buňky znovu použít, najdete v části [řádek opětovného použití zobrazení](~/android/user-interface/layouts/list-view/populating.md).
 
   > [!NOTE]
-  > Všimněte si, že tento kód vlastní zobrazovací jednotky provede některé buňky znovu použít i v případě [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) je nastavené na uchování buňky.
+  > Všimněte si, že tento kód vlastní zobrazovací jednotky provede některé buňky znovu použít i v případě [ `ListView` ](xref:Xamarin.Forms.ListView) je nastavené na uchování buňky.
 
   Data zobrazená každou `NativeAndroidCell` instance, zda se nově vytvořená nebo používaná znovu, aktualizuje data z každého `NativeCell` instance podle `UpdateCell` metody.
 
   > [!NOTE]
-  > Všimněte si, že při `OnNativeCellPropertyChanged` metoda bude vyvolána v případě [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) je nastavené na uchování buňky, nebude aktualizovat `NativeAndroidCell` hodnot vlastností.
+  > Všimněte si, že při `OnNativeCellPropertyChanged` metoda bude vyvolána v případě [ `ListView` ](xref:Xamarin.Forms.ListView) je nastavené na uchování buňky, nebude aktualizovat `NativeAndroidCell` hodnot vlastností.
 
-- Když [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) strategie ukládání do mezipaměti je [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement), `GetCellCore` metoda bude volána pro každou buňku, která je zobrazena na obrazovce. A `NativeAndroidCell` instance se vytvoří pro každou `NativeCell` , jež se zpočátku zobrazí na obrazovce. Data zobrazená každou `NativeAndroidCell` instance bude aktualizována s daty z `NativeCell` instance podle `UpdateCell` metoda. Ale `GetCellCore` jako uživatel posune nebude vyvolána metoda `ListView`. Místo toho `NativeAndroidCell` instancí bude znovu použít.  `PropertyChanged` události, bude vyvolána na `NativeCell` instance se změní jeho data a `OnNativeCellPropertyChanged` obslužná rutina události se aktualizace dat v každém opakovaně používat `NativeAndroidCell` instance.
+- Když [ `ListView` ](xref:Xamarin.Forms.ListView) strategie ukládání do mezipaměti je [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement), `GetCellCore` metoda bude volána pro každou buňku, která je zobrazena na obrazovce. A `NativeAndroidCell` instance se vytvoří pro každou `NativeCell` , jež se zpočátku zobrazí na obrazovce. Data zobrazená každou `NativeAndroidCell` instance bude aktualizována s daty z `NativeCell` instance podle `UpdateCell` metoda. Ale `GetCellCore` jako uživatel posune nebude vyvolána metoda `ListView`. Místo toho `NativeAndroidCell` instancí bude znovu použít.  `PropertyChanged` události, bude vyvolána na `NativeCell` instance se změní jeho data a `OnNativeCellPropertyChanged` obslužná rutina události se aktualizace dat v každém opakovaně používat `NativeAndroidCell` instance.
 
 Následující příklad kódu ukazuje `OnNativeCellPropertyChanged` metody, která je volána při `PropertyChanged` událost se vyvolá:
 
@@ -474,7 +474,7 @@ internal class NativeAndroidCell : LinearLayout, INativeElementView
 }
 ```
 
-Tato třída definuje ovládací prvky používané k vykreslení obsahu buňky a jejich rozložení. Třída implementuje [ `INativeElementView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.INativeElementView/) rozhraní, které se požaduje, pokud [ `ListView` ](xref:Xamarin.Forms.ListView) používá [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) strategie ukládání do mezipaměti. Toto rozhraní určuje, že musí implementovat třídu [ `Element` ](https://developer.xamarin.com/api/property/Xamarin.Forms.INativeElementView.Element/) vlastnost, která by měla vrátit data vlastní buňky recyklován buněk.
+Tato třída definuje ovládací prvky používané k vykreslení obsahu buňky a jejich rozložení. Třída implementuje [ `INativeElementView` ](xref:Xamarin.Forms.INativeElementView) rozhraní, které se požaduje, pokud [ `ListView` ](xref:Xamarin.Forms.ListView) používá [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) strategie ukládání do mezipaměti. Toto rozhraní určuje, že musí implementovat třídu [ `Element` ](xref:Xamarin.Forms.INativeElementView.Element) vlastnost, která by měla vrátit data vlastní buňky recyklován buněk.
 
 `NativeAndroidCell` Tento konstruktor `NativeAndroidCell` rozložení a inicializuje `HeadingTextView`, `SubheadingTextView`, a `ImageView` vlastnosti k ovládacím prvkům v zvýšeným rozložení. Tyto vlastnosti jsou používány k zobrazení dat uložených v `NativeCell` instance, se `UpdateCell` metoda se volá za účelem nastavení hodnoty vlastností. Kromě toho, kdy [ `ListView` ](xref:Xamarin.Forms.ListView) používá [ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) ukládání do mezipaměti strategie, data zobrazená ve `HeadingTextView`, `SubheadingTextView`, a `ImageView` vlastnosti mohou být aktualizoval `OnNativeCellPropertyChanged` metoda ve vlastní zobrazovací jednotky.
 
@@ -569,7 +569,7 @@ namespace CustomRenderer.UWP
 
 ## <a name="summary"></a>Souhrn
 
-Tento článek vám ukázal, jak vytvořit vlastního rendereru pro [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) , která je hostována v Xamarin.Forms [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) ovládacího prvku. Tím se zastaví výpočty rozložení Xamarin.Forms byla volána opakovaně během `ListView` posouvání.
+Tento článek vám ukázal, jak vytvořit vlastního rendereru pro [ `ViewCell` ](xref:Xamarin.Forms.ViewCell) , která je hostována v Xamarin.Forms [ `ListView` ](xref:Xamarin.Forms.ListView) ovládacího prvku. Tím se zastaví výpočty rozložení Xamarin.Forms byla volána opakovaně během `ListView` posouvání.
 
 
 ## <a name="related-links"></a>Související odkazy

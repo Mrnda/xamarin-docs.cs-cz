@@ -1,79 +1,79 @@
 ---
 title: Přidružené vlastnosti
-description: Tento článek obsahuje úvod do přidružené vlastnosti a ukazuje, jak vytvářet a využívat je.
+description: Tento článek obsahuje úvod do připojené vlastnosti a ukazuje, jak vytvářet a využívat je.
 ms.prod: xamarin
 ms.assetid: 6E9DCDC3-A0E4-46A6-BAA9-4FEB6DF8A5A8
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 06/02/2016
-ms.openlocfilehash: e0ecff37eaf615321c7fcdce35e334db89ae631a
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 981e59fe3ba8c63d0f6c6a067ceb9f338a02da8f
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245895"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997329"
 ---
 # <a name="attached-properties"></a>Přidružené vlastnosti
 
-_– Přidružená vlastnost je zvláštním typem vazbu vlastnosti definované v jedné třídy ale připojené k jiné objekty a rozpoznat v jazyce XAML jako atribut, který obsahuje třídu a název vlastnosti, které jsou odděleny tečkou. Tento článek obsahuje úvod do přidružené vlastnosti a ukazuje, jak vytvářet a využívat je._
+_Připojená vlastnost je speciální typ s možností vazby vlastnosti definované v jedné třídy ale připojený k jiné objekty a rozpoznat v XAML jako atribut, který obsahuje třídu a název vlastnosti oddělené tečkou. Tento článek obsahuje úvod do připojené vlastnosti a ukazuje, jak vytvářet a využívat je._
 
 ## <a name="overview"></a>Přehled
 
-Připojené vlastnosti povolit objekt přiřadit hodnotu pro vlastnost, která nedefinuje své vlastní třídy. Například podřízený, které můžete použít prvky připojené vlastnosti, které chcete informovat o tom, jak jsou uvedené v uživatelském rozhraní jejich nadřazený element. [ `Grid` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/) Řízení umožňuje řádků a sloupců podřízených zadat nastavením `Grid.Row` a `Grid.Column` přidružené vlastnosti. `Grid.Row` a `Grid.Column` jsou přidružené vlastnosti, protože jsou nastavené u elementů, které jsou podřízené objekty `Grid`, spíš než na `Grid` sám sebe.
+Připojené vlastnosti povolit objektu přiřadí hodnotu pro vlastnost, která nedefinuje své vlastní třídy. Podřízené elementy můžete použít například připojených vlastností informovat jejich nadřazený element jak mají být uvedené v uživatelském rozhraní. [ `Grid` ](xref:Xamarin.Forms.Grid) Ovládací prvek umožňuje řádků a sloupců pro podřízenou položku zadat tak, že nastavíte `Grid.Row` a `Grid.Column` připojené vlastnosti. `Grid.Row` a `Grid.Column` jsou připojené vlastnosti, protože jsou nastavena pro prvky, které jsou podřízené `Grid`, spíše než na `Grid` samotný.
 
-Vlastnosti vazbu by měla být implementována jako připojené vlastnosti v následujících scénářích:
+Vlastnosti umožňující vazbu by měla být implementována jako připojené vlastnosti v následujících scénářích:
 
-- Pokud je potřeba mít vlastnost nastavení mechanismus k dispozici pro třídy jiné než definice třídy.
-- Pokud třída představuje službu, která musí být snadno integrovat s jiné třídy.
+- Když je potřeba mít vlastnost nastavení mechanismus k dispozici pro třídy jiné než definování třídy.
+- Když třída představuje službu, která musí být snadno integrovat s jinými třídami.
 
-Další informace o vlastnosti vazbu najdete v tématu [vazbu vlastnosti](~/xamarin-forms/xaml/bindable-properties.md).
+Další informace o vlastnosti umožňující vazbu, naleznete v tématu [vlastnosti umožňující vazbu](~/xamarin-forms/xaml/bindable-properties.md).
 
-## <a name="creating-and-consuming-an-attached-property"></a>Vytvoření a použití přidružená vlastnost
+## <a name="creating-and-consuming-an-attached-property"></a>Vytváření a využívání připojené vlastnosti
 
-Proces vytvoření přidružená vlastnost vypadá takto:
+Proces vytvoření připojené vlastnosti vypadá takto:
 
-1. Vytvoření [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) instance s jedním z [ `CreateAttached` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.CreateAttached/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/) přetížení metody.
-1. Zadejte `static` `Get` *PropertyName* a `Set` *PropertyName* metody jako přístupových objektů pro připojená vlastnost.
+1. Vytvoření [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) instance s jedním z [ `CreateAttached` ](xref:Xamarin.Forms.BindableProperty.CreateAttached*) přetížení metody.
+1. Zadejte `static` `Get` *PropertyName* a `Set` *PropertyName* metody jako přístupové objekty pro připojené vlastnosti.
 
 ### <a name="creating-a-property"></a>Vytvoření vlastnosti
 
-Při vytváření přidružená vlastnost pro použití v jiných typů, třídě, kde se má vytvořit vlastnost nemá k odvozování z [ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/). Ale *cíl* vlastnost pro přistupující objekty by měla být nebo odvozena od, [ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/).
+Při vytváření připojené vlastnosti pro použití na jiné typy, třídy, kde se vytvoří vlastnost nemá být odvozen od [ `BindableObject` ](xref:Xamarin.Forms.BindableObject). Ale *cílové* pro přistupující objekty vlastnosti by měla být nebo odvozovat, [ `BindableObject` ](xref:Xamarin.Forms.BindableObject).
 
-– Přidružená vlastnost lze vytvořit pomocí deklarace `public static readonly` vlastnost typu [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/). Vazbu vlastnost musí být nastavená na vrácená hodnota jednoho z [ `BindableProperty.CreateAttached` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableProperty.CreateAttached/p/System.String/System.Type/System.Type/System.Object/Xamarin.Forms.BindingMode/Xamarin.Forms.BindableProperty+ValidateValueDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangedDelegate/Xamarin.Forms.BindableProperty+BindingPropertyChangingDelegate/Xamarin.Forms.BindableProperty+CoerceValueDelegate/Xamarin.Forms.BindableProperty+CreateDefaultValueDelegate/) přetížení metody. Deklaraci by měla být v textu vlastnícím třídy, ale mimo všechny definice člen.
+Přidruženou vlastnost lze vytvořit deklarováním `public static readonly` vlastnost typu [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty). Vázanou vlastnost měli nastavit na hodnotu vrácené některého [ `BindableProperty.CreateAttached` ](xref:Xamarin.Forms.BindableProperty.CreateAttached(System.String,System.Type,System.Type,System.Object,Xamarin.Forms.BindingMode,Xamarin.Forms.BindableProperty.ValidateValueDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangedDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangingDelegate,Xamarin.Forms.BindableProperty.CoerceValueDelegate,Xamarin.Forms.BindableProperty.CreateDefaultValueDelegate)) přetížení metody. Deklarace by měla být v těle vlastnící třídy, ale mimo všechny definice členů.
 
-Následující kód ukazuje příklad přidružená vlastnost:
+Následující kód ukazuje příklad připojené vlastnosti:
 
 ```csharp
 public static readonly BindableProperty HasShadowProperty =
   BindableProperty.CreateAttached ("HasShadow", typeof(bool), typeof(ShadowEffect), false);
 ```
 
-Tím se vytvoří přidružená vlastnost s názvem `HasShadow`, typu `bool`. Vlastní vlastnost `ShadowEffect` třídy a má výchozí hodnotu `false`. Zásady vytváření názvů pro přidružené vlastnosti je, že identifikátor přidružená vlastnost musí shodovat název vlastnosti zadaný ve `CreateAttached` metoda s "Vlastnost" připojená k němu. Proto v předchozím příkladu je identifikátor přidružená vlastnost `HasShadowProperty`.
+Tím se vytvoří připojené vlastnosti s názvem `HasShadow`, typu `bool`. Vlastní vlastnost `ShadowEffect` třídy a má výchozí hodnotu `false`. Zásady vytváření názvů pro připojené vlastnosti je, že identifikátor připojené vlastnosti musí odpovídat název vlastnosti zadaný v `CreateAttached` metodou "Vlastnosti" připojenou k němu. Proto v předchozím příkladu je připojená vlastnost identifikátor `HasShadowProperty`.
 
-Další informace o vytváření vlastnosti vazbu, včetně parametrů, které lze zadat během vytváření, najdete v části [vytváření a použití vazbu vlastnosti](~/xamarin-forms/xaml/bindable-properties.md#consuming-bindable-property).
+Další informace o vytvoření vlastnosti umožňující vazbu, včetně parametry, které se dá nastavit během vytváření, naleznete v tématu [vytváření a využívání vázanou vlastnost](~/xamarin-forms/xaml/bindable-properties.md#consuming-bindable-property).
 
 ### <a name="creating-accessors"></a>Vytváření přístupových objektů
 
-Statické `Get` *PropertyName* a `Set` *PropertyName* metody je vyžadován jako přistupující objekty pro připojená vlastnost, jinak bude systém vlastnost nelze použít – přidružená vlastnost. `Get` *PropertyName* přistupujícího objektu by měla odpovídat následující podpis:
+Statické `Get` *PropertyName* a `Set` *PropertyName* metody, které budou sloužit jako přístupové objekty pro připojené vlastnosti, jinak bude systém vlastností nelze použít připojená vlastnost. `Get` *PropertyName* přistupující objekt by měl odpovídat následující podpis:
 
 ```csharp
 public static valueType GetPropertyName(BindableObject target)
 ```
 
-`Get` *PropertyName* přistupujícího objektu by měla vrátit hodnotu, která se nachází v odpovídající `BindableProperty` pole pro vlastnost připojené. Toho lze dosáhnout pomocí volání [ `GetValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.GetValue/p/Xamarin.Forms.BindableProperty/) metoda předávání v identifikátor vazbu vlastnosti, na kterém má být získána hodnota a pak výslednou hodnotu na požadovaný typ přetypování.
+`Get` *PropertyName* přístupového objektu by měla vrátit hodnotu, která se nachází v odpovídající `BindableProperty` pole pro připojené vlastnosti. Toho lze dosáhnout pomocí volání [ `GetValue` ](xref:Xamarin.Forms.BindableObject.GetValue(Xamarin.Forms.BindableProperty)) metoda, předávání v identifikátoru vázanou vlastnost, na kterém má být získána hodnota a potom výslednou hodnotu na požadovaný typ přetypování.
 
-`Set` *PropertyName* přistupujícího objektu by měla odpovídat následující podpis:
+`Set` *PropertyName* přistupující objekt by měl odpovídat následující podpis:
 
 ```csharp
 public static void SetPropertyName(BindableObject target, valueType value)
 ```
 
-`Set` *PropertyName* přistupujícího objektu měli nastavit hodnotu odpovídající `BindableProperty` pole pro vlastnost připojené. Toho lze dosáhnout pomocí volání [ `SetValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.BindableObject.SetValue/p/Xamarin.Forms.BindableProperty/System.Object/) metody předávání v identifikátor vazbu vlastnosti, na kterém chcete nastavit hodnota a hodnota k nastavení.
+`Set` *PropertyName* přistupující objekt měli nastavit hodnotu odpovídající `BindableProperty` pole pro připojené vlastnosti. Toho lze dosáhnout pomocí volání [ `SetValue` ](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object)) metodu identifikátor umožňujících vazbu vlastnosti na základě které chcete nastavit hodnotu a hodnotu nastavení.
 
-Pro obě přístupových objektů *cíl* objektu by měla být nebo odvozena od, [ `BindableObject` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/).
+Pro přistupující objekty jak *cílové* objektu by měla být nebo odvozovat, [ `BindableObject` ](xref:Xamarin.Forms.BindableObject).
 
-Následující příklad kódu ukazuje přistupující objekty pro `HasShadow` přidružená vlastnost:
+Následující příklad kódu ukazuje přístupové objekty pro `HasShadow` přidružená vlastnost:
 
 ```csharp
 public static bool GetHasShadow (BindableObject view)
@@ -87,11 +87,11 @@ public static void SetHasShadow (BindableObject view, bool value)
 }
 ```
 
-### <a name="consuming-an-attached-property"></a>Využívání přidružená vlastnost
+### <a name="consuming-an-attached-property"></a>Použití připojené vlastnosti
 
-Po vytvoření přidružená vlastnost, mohou být využívány z XAML nebo kódu. V jazyce XAML toho se dosáhne deklarace oboru názvů s předponou, s deklaraci oboru názvů, která udává název oboru názvů Common Language Runtime (CLR) a volitelně název sestavení. Další informace najdete v tématu [obory názvů jazyka XAML](~/xamarin-forms/xaml/namespaces.md).
+Po vytvoření připojené vlastnosti mohou být spotřebovány z XAML nebo kódu. V XAML tím se dosahuje deklarace oboru názvů s předponou, pomocí deklarace oboru názvů označující název oboru názvů Common Language Runtime (CLR) a volitelně název sestavení. Další informace najdete v tématu [obory názvů XAML](~/xamarin-forms/xaml/namespaces.md).
 
-Následující příklad kódu ukazuje oboru názvů jazyka XAML pro vlastní typ, který obsahuje přidružená vlastnost, která je definována v rámci stejného sestavení jako aplikační kód, který odkazuje na vlastní typ:
+Následující příklad kódu ukazuje obor názvů XAML pro vlastní typ, který obsahuje připojené vlastnosti, která je definována v rámci stejného sestavení jako kód aplikace, který odkazuje na vlastní typ:
 
 ```xaml
 <ContentPage ... xmlns:local="clr-namespace:EffectsDemo" ...>
@@ -99,22 +99,22 @@ Následující příklad kódu ukazuje oboru názvů jazyka XAML pro vlastní ty
 </ContentPage>
 ```
 
-Deklarace oboru názvů se pak použije, když nastavení přidružená vlastnost na určitý ovládací prvek, jako ukázáno v následujícím příkladu kódu XAML:
+Deklarace oboru názvů se pak použije, když nastavení připojená vlastnost na určitý ovládací prvek, jako ukazuje následující příklad kódu XAML:
 
 ```xaml
 <Label Text="Label Shadow Effect" local:ShadowEffect.HasShadow="true" />
 ```
 
-Ekvivalentní kódu C# je znázorněno v následujícím příkladu kódu:
+Ekvivalentní kód jazyka C# můžete vidět v následujícím příkladu kódu:
 
 ```csharp
 var label = new Label { Text = "Label Shadow Effect" };
 ShadowEffect.SetHasShadow (label, true);
 ```
 
-### <a name="consuming-an-attached-property-with-a-style"></a>Využívání přidružená vlastnost s styl
+### <a name="consuming-an-attached-property-with-a-style"></a>Použití se stylem připojené vlastnosti
 
-Připojené vlastnosti můžete také přidat do ovládacího prvku ve stylu. Následující příklad ukazuje kód XAML *explicitní* styl, který používá `HasShadow` přidružená vlastnost, která může být použita na [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) ovládací prvky:
+Připojené vlastnosti můžete také přidat do ovládacího prvku ve stylu. Následující příklad ukazuje kód XAML *explicitní* styl, který se používá `HasShadow` připojené vlastnosti, který lze použít k [ `Label` ](xref:Xamarin.Forms.Label) ovládacích prvků:
 
 ```xaml
 <Style x:Key="ShadowEffectStyle" TargetType="Label">
@@ -124,27 +124,27 @@ Připojené vlastnosti můžete také přidat do ovládacího prvku ve stylu. N�
 </Style>
 ```
 
-[ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) Lze použít pro [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) nastavením jeho [ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/) vlastnost, která má `Style` pomocí `StaticResource`– rozšíření značek, jak je ukázáno v následujícím příkladu kódu:
+[ `Style` ](xref:Xamarin.Forms.Style) Lze použít [ `Label` ](xref:Xamarin.Forms.Label) nastavením jeho [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) vlastnost `Style` instance pomocí `StaticResource`– rozšíření značek, jak je ukázáno v následujícím příkladu kódu:
 
 ```xaml
 <Label Text="Label Shadow Effect" Style="{StaticResource ShadowEffectStyle}" />
 ```
 
-Další informace o styly najdete v tématu [styly](~/xamarin-forms/user-interface/styles/index.md).
+Další informace o stylech najdete v tématu [styly](~/xamarin-forms/user-interface/styles/index.md).
 
-## <a name="advanced-scenarios"></a>Složitější scénáře
+## <a name="advanced-scenarios"></a>Pokročilé scénáře
 
-Při vytváření přidružená vlastnost, existují počet volitelné parametry, které můžete nastavit pro povolení přidružená vlastnost pokročilé scénáře. To zahrnuje detekce změn vlastnosti, ověřování hodnoty vlastností a vynucený hodnot vlastností. Další informace najdete v tématu [pokročilé scénáře](~/xamarin-forms/xaml/bindable-properties.md#advanced).
+Při vytváření připojené vlastnosti, existuje mnoho nepovinných parametrů, které můžete nastavit pro povolení rozšířených připojených vlastností scénáře. To zahrnuje detekce změn vlastnosti, ověřování hodnoty vlastností a podřízenému hodnot vlastností. Další informace najdete v tématu [pokročilé scénáře](~/xamarin-forms/xaml/bindable-properties.md#advanced).
 
 ## <a name="summary"></a>Souhrn
 
-Tento článek poskytuje úvod do přidružené vlastnosti a ukázal, jak lze vytvářet a využívat je. – Přidružená vlastnost je zvláštní druh vazbu vlastnosti, které jsou definované v jedné třídy ale připojené k ostatním objektům a rozpoznatelném v jazyce XAML jako atributy, které obsahují třídy a název vlastnosti odděleny tečkou.
+Tento článek poskytuje úvod do připojené vlastnosti a ukázal, jak vytvářet a využívat je. Připojená vlastnost je speciální typ s možností vazby vlastnosti definované v jedné třídy ale připojených k jiným objektům a rozpoznat v XAML jako atributy, které obsahují třídy a názvu vlastnosti oddělené tečkou.
 
 
 ## <a name="related-links"></a>Související odkazy
 
 - [Vlastnosti s podporou vazeb](~/xamarin-forms/xaml/bindable-properties.md)
 - [Obory názvů jazyka XAML](~/xamarin-forms/xaml/namespaces.md)
-- [Efekt stínu (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/effects/shadoweffect/)
-- [BindableProperty](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/)
-- [BindableObject](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableObject/)
+- [Efektem stínování (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/effects/shadoweffect/)
+- [BindableProperty](xref:Xamarin.Forms.BindableProperty)
+- [BindableObject](xref:Xamarin.Forms.BindableObject)

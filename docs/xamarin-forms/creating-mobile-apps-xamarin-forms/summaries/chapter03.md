@@ -7,22 +7,22 @@ ms.assetid: 2E5581A6-4D3E-4BD5-9FDB-ACBA0F0FC734
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 5843147b82837f1a8677d8be48a8e1ca92db1a75
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: 3ef8f14bd60cf612408bb9e3885ef319d3efc8c5
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935413"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998332"
 ---
 # <a name="summary-of-chapter-3-deeper-into-text"></a>Souhrn kapitolu 3. Hlouběji do textu
 
-Tato kapitola popisuje [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) zobrazení do větší hloubky, včetně barvy, písma a formátování.
+Tato kapitola popisuje [ `Label` ](xref:Xamarin.Forms.Label) zobrazení do větší hloubky, včetně barvy, písma a formátování.
 
 ## <a name="wrapping-paragraphs"></a>Zabalení odstavců
 
-Když [ `Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.Text/) vlastnost `Label` obsahuje dlouhý text `Label` automaticky zabalí jej do více řádků jak je uvedeno ve [ **Baskervilles** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/Baskervilles) vzorku. Můžete vložit Unicode kódy, jako je například "\u2014" pro dlouhé pomlčky nebo znaky jazyka C#, jako je '\r; k rozdělení na nový řádek.
+Když [ `Text` ](xref:Xamarin.Forms.Label.Text) vlastnost `Label` obsahuje dlouhý text `Label` automaticky zabalí jej do více řádků jak je uvedeno ve [ **Baskervilles** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/Baskervilles) vzorku. Můžete vložit Unicode kódy, jako je například "\u2014" pro dlouhé pomlčky nebo znaky jazyka C#, jako je '\r; k rozdělení na nový řádek.
 
-Při [ `HorizontalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.HorizontalOptions/) a [ `VerticalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) vlastnosti `Label` jsou nastaveny na `LayoutOptions.Fill`, celková velikost `Label` se řídí prostor, který jeho kontejneru zpřístupňuje. `Label` Je označen jako *omezené*. Velikost `Label` je velikost svého kontejneru.
+Při [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions) a [ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions) vlastnosti `Label` jsou nastaveny na `LayoutOptions.Fill`, celková velikost `Label` se řídí prostor, který jeho kontejneru zpřístupňuje. `Label` Je označen jako *omezené*. Velikost `Label` je velikost svého kontejneru.
 
 Když `HorizontalOptions` a `VerticalOptions` vlastnosti jsou nastaveny na hodnoty jiné než `LayoutOptions.Fill`, velikost `Label` se řídí místa vyžadovaného k vykreslení textu, až do velikosti, který zpřístupňuje jeho kontejneru pro `Label`. `Label` Je označen jako *neomezeným* a určuje vlastní velikost.
 
@@ -38,41 +38,41 @@ Nastavte [ `LineBreakMode` ](xref:Xamarin.Forms.Label.LineBreakMode) vlastnost �
 
 ## <a name="text-and-background-colors"></a>Barva textu a pozadí
 
-Nastavte [ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.TextColor/) a [ `BackgroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.BackgroundColor/) vlastnosti `Label` k [ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/) hodnoty barvy textu a pozadí.
+Nastavte [ `TextColor` ](xref:Xamarin.Forms.Label.TextColor) a [ `BackgroundColor` ](xref:Xamarin.Forms.VisualElement.BackgroundColor) vlastnosti `Label` k [ `Color` ](xref:Xamarin.Forms.Color) hodnoty barvy textu a pozadí.
 
 `BackgroundColor` Se vztahuje na pozadí je celá oblast obsazena `Label`. V závislosti na tom `HorizontalOptions` a `VerticalOptions` vlastnosti, že velikost může být výrazně větší než oblasti vyžadována k zobrazení textu. Barvu můžete experimentovat s různými hodnotami `HorizontalOptions`, `VerticalOptions`, `HorizontalExeAlignment`, a `VerticalTextAlignment` zobrazíte, jak ovlivňují velikost a umístění `Label`a velikost a umístění textu v rámci `Label`.
 
 ## <a name="the-color-structure"></a>Struktura barva
 
-[ `Color` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Color/) Struktura umožňuje zadat barvy jako červená zelená modré (RGB) hodnoty nebo hodnoty odstín, sytost, jas (HSL), nebo název barvy. Kanál alfa je také k dispozici k označení průhlednost.
+[ `Color` ](xref:Xamarin.Forms.Color) Struktura umožňuje zadat barvy jako červená zelená modré (RGB) hodnoty nebo hodnoty odstín, sytost, jas (HSL), nebo název barvy. Kanál alfa je také k dispozici k označení průhlednost.
 
 Použití `Color` konstruktor k určení:
 
-- [šedý stín](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Color.Color/p/System.Double/)
-- [hodnota RGB](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Color.Color/p/System.Double/System.Double/System.Double/)
-- [RGB hodnotu průhlednosti](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Color.Color/p/System.Double/System.Double/System.Double/System.Double/)
+- [šedý stín](xref:Xamarin.Forms.Color.%23ctor(System.Double))
+- [hodnota RGB](xref:Xamarin.Forms.Color.%23ctor(System.Double,System.Double,System.Double))
+- [RGB hodnotu průhlednosti](xref:Xamarin.Forms.Color.%23ctor(System.Double,System.Double,System.Double,System.Double))
 
 Argumenty jsou `double` hodnoty od 0 do 1.
 
 Několik statických metod můžete také použít k vytvoření `Color` hodnoty:
 
-- [`Color.FromRgb`](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromRgb/p/System.Double/System.Double/System.Double/) pro `double` hodnoty RGB od 0 do 1
-- [`Color.FromRgb`](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromRgb/p/System.Int32/System.Int32/System.Int32/) pro hodnoty RGB celé číslo od 0 do 255
-- [`Color.FromRgba`](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromRgba/p/System.Double/System.Double/System.Double/System.Double/) pro `double` hodnoty RGB transparentnosti
-- [`Color.FromRgba`](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromRgba/p/System.Int32/System.Int32/System.Int32/System.Int32/) pro celočíselné hodnoty RGB s transparentnosti
-- [`Color.FromHsla`](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromHsla/p/System.Double/System.Double/System.Double/System.Double/) pro `double` HSL – hodnoty s transparentnosti
-- [`Color.FromUint`](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromUint/p/System.UInt32/) pro `uint` hodnota se vypočítá jako (B + 256 * (G + 256 * (R + 256 * A)))
-- [`Color.FromHex`](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromHex/p/System.String/) pro `string` formát šestnáctkových číslic ve formě "#AARRGGBB" nebo "#RRGGBB" nebo "#ARGB" nebo "#RGB", kde každé písmeno odpovídá šestnáctková číslice pro platformu alpha červené, zelené a modré kanály. Tato metoda se používá pro převody barva XAML, jak je popsáno v primární [kapitola 7, XAML vs. kód](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter07.md).
+- [`Color.FromRgb`](xref:Xamarin.Forms.Color.FromRgb(System.Double,System.Double,System.Double)) pro `double` hodnoty RGB od 0 do 1
+- [`Color.FromRgb`](xref:Xamarin.Forms.Color.FromRgb(System.Int32,System.Int32,System.Int32)) pro hodnoty RGB celé číslo od 0 do 255
+- [`Color.FromRgba`](xref:Xamarin.Forms.Color.FromRgba(System.Double,System.Double,System.Double,System.Double)) pro `double` hodnoty RGB transparentnosti
+- [`Color.FromRgba`](xref:Xamarin.Forms.Color.FromRgba(System.Int32,System.Int32,System.Int32,System.Int32)) pro celočíselné hodnoty RGB s transparentnosti
+- [`Color.FromHsla`](xref:Xamarin.Forms.Color.FromHsla(System.Double,System.Double,System.Double,System.Double)) pro `double` HSL – hodnoty s transparentnosti
+- [`Color.FromUint`](xref:Xamarin.Forms.Color.FromUint(System.UInt32)) pro `uint` hodnota se vypočítá jako (B + 256 * (G + 256 * (R + 256 * A)))
+- [`Color.FromHex`](xref:Xamarin.Forms.Color.FromHex(System.String)) pro `string` formát šestnáctkových číslic ve formě "#AARRGGBB" nebo "#RRGGBB" nebo "#ARGB" nebo "#RGB", kde každé písmeno odpovídá šestnáctková číslice pro platformu alpha červené, zelené a modré kanály. Tato metoda se používá pro převody barva XAML, jak je popsáno v primární [kapitola 7, XAML vs. kód](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter07.md).
 
 Po vytvoření klikněte `Color` hodnota je neměnná. Vlastnosti barvy můžete získat následující vlastnosti:
 
-- [`R`](https://developer.xamarin.com/api/property/Xamarin.Forms.Color.R/)
-- [`G`](https://developer.xamarin.com/api/property/Xamarin.Forms.Color.G/)
-- [`B`](https://developer.xamarin.com/api/property/Xamarin.Forms.Color.B/)
-- [`A`](https://developer.xamarin.com/api/property/Xamarin.Forms.Color.A/)
-- [`Hue`](https://developer.xamarin.com/api/property/Xamarin.Forms.Color.Hue/)
-- [`Saturation`](https://developer.xamarin.com/api/property/Xamarin.Forms.Color.Saturation/)
-- [`Luminosity`](https://developer.xamarin.com/api/property/Xamarin.Forms.Color.Luminosity/)
+- [`R`](xref:Xamarin.Forms.Color.R)
+- [`G`](xref:Xamarin.Forms.Color.G)
+- [`B`](xref:Xamarin.Forms.Color.B)
+- [`A`](xref:Xamarin.Forms.Color.A)
+- [`Hue`](xref:Xamarin.Forms.Color.Hue)
+- [`Saturation`](xref:Xamarin.Forms.Color.Saturation)
+- [`Luminosity`](xref:Xamarin.Forms.Color.Luminosity)
 
 Toto jsou všechny `double` hodnoty od 0 do 1.
 
@@ -84,16 +84,16 @@ Jiné veřejné statické pole jen pro čtení definuje barvu, která se všechn
 
 Několik metod instance povolit úpravy existujících barva vytvořit novou barvu:
 
-- [`AddLuminosity`](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.AddLuminosity/p/System.Double/)
-- [`MultiplyAlpha`](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.MultiplyAlpha/p/System.Double/)
-- [`WithHue`](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.WithHue/p/System.Double/)
-- [`WithLuminosity`](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.WithLuminosity/p/System.Double/)
-- [`WithSaturation`](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.WithSaturation/p/System.Double/)
+- [`AddLuminosity`](xref:Xamarin.Forms.Color.AddLuminosity(System.Double))
+- [`MultiplyAlpha`](xref:Xamarin.Forms.Color.MultiplyAlpha(System.Double))
+- [`WithHue`](xref:Xamarin.Forms.Color.WithHue(System.Double))
+- [`WithLuminosity`](xref:Xamarin.Forms.Color.WithLuminosity(System.Double))
+- [`WithSaturation`](xref:Xamarin.Forms.Color.WithSaturation(System.Double))
 
 Nakonec definujte dvě statické vlastnosti jen pro čtení hodnoty speciální barvy:
 
-- [`Color.Default`](https://developer.xamarin.com/api/property/Xamarin.Forms.Color.Default/), nastavte všechny kanály na &ndash;1
-- [`Color.Accent`](https://developer.xamarin.com/api/property/Xamarin.Forms.Color.Accent/)
+- [`Color.Default`](xref:Xamarin.Forms.Color.Default), nastavte všechny kanály na &ndash;1
+- [`Color.Accent`](xref:Xamarin.Forms.Color.Accent)
 
 `Color.Default` slouží k vynucení platformy barevné schéma, a proto má odlišný význam v různých kontextech na různých platformách. Ve výchozím nastavení jsou platformy barevná schémata:
 
@@ -115,19 +115,19 @@ Pro platformy Windows barevný motiv obvykle vybraný uživatelem, ale můžete 
 
 ## <a name="font-sizes-and-attributes"></a>Velikost písma a atributy
 
-Nastavte [ `FontFamily` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.FontFamily/) vlastnost `Label` na řetězec, jako je "Times Roman" vybrat rodinu písem. Však budete muset zadat rodiny písem, který je podporovaný na konkrétní platformě a v tomto ohledu nejsou konzistentní platformy.
+Nastavte [ `FontFamily` ](xref:Xamarin.Forms.Label.FontFamily) vlastnost `Label` na řetězec, jako je "Times Roman" vybrat rodinu písem. Však budete muset zadat rodiny písem, který je podporovaný na konkrétní platformě a v tomto ohledu nejsou konzistentní platformy.
 
-Nastavte [ `FontSize` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.FontSize/) vlastnost `Label` k `double` pro zadání přibližně výška písma. Zobrazit [kapitola 5 řešení velikostí](chapter05.md), podrobné informace o volbě inteligentně velikostí písma.
+Nastavte [ `FontSize` ](xref:Xamarin.Forms.Label.FontSize) vlastnost `Label` k `double` pro zadání přibližně výška písma. Zobrazit [kapitola 5 řešení velikostí](chapter05.md), podrobné informace o volbě inteligentně velikostí písma.
 
-Případně můžete získat jeden z několika velikostí písma přednastavených závislého na platformě. Statické [ `Device.GetNamedSize` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.GetNamedSize/p/Xamarin.Forms.NamedSize/System.Type/) metoda a [přetížení](https://developer.xamarin.com/api/member/Xamarin.Forms.Device.GetNamedSize/p/Xamarin.Forms.NamedSize/Xamarin.Forms.Element/) oba vracejí `double` hodnota velikosti písma pro platformu podle členů [ `NamedSize` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NamedSize/)výčet ([`Default`](xref:Xamarin.Forms.NamedSize.Default), [ `Micro` ](xref:Xamarin.Forms.NamedSize.Micro), [ `Small` ](xref:Xamarin.Forms.NamedSize.Small), [ `Medium` ](xref:Xamarin.Forms.NamedSize.Medium),  a [ `Large` ](xref:Xamarin.Forms.NamedSize.Large)). Hodnota vrácená z `Medium` člen není nutně stejné jako `Default`. [ **NamedFontSizes** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/NamedFontSizes) ukázka zobrazí text s těmito s názvem velikosti.
+Případně můžete získat jeden z několika velikostí písma přednastavených závislého na platformě. Statické [ `Device.GetNamedSize` ](xref:Xamarin.Forms.Device.GetNamedSize(Xamarin.Forms.NamedSize,System.Type)) metoda a [přetížení](xref:Xamarin.Forms.Device.GetNamedSize(Xamarin.Forms.NamedSize,Xamarin.Forms.Element)) oba vracejí `double` hodnota velikosti písma pro platformu podle členů [ `NamedSize` ](xref:Xamarin.Forms.NamedSize)výčet ([`Default`](xref:Xamarin.Forms.NamedSize.Default), [ `Micro` ](xref:Xamarin.Forms.NamedSize.Micro), [ `Small` ](xref:Xamarin.Forms.NamedSize.Small), [ `Medium` ](xref:Xamarin.Forms.NamedSize.Medium),  a [ `Large` ](xref:Xamarin.Forms.NamedSize.Large)). Hodnota vrácená z `Medium` člen není nutně stejné jako `Default`. [ **NamedFontSizes** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/NamedFontSizes) ukázka zobrazí text s těmito s názvem velikosti.
 
 Nastavte [ `FontAttributes` ](xref:Xamarin.Forms.Label.FontAttributes) vlastnost `Label` členovi těchto [ `FontAttributes` ](xref:Xamarin.Forms.FontAttributes) výčet, [ `Bold` ](xref:Xamarin.Forms.FontAttributes.Bold), [ `Italic` ](xref:Xamarin.Forms.FontAttributes.Italic), nebo [ `None` ](xref:Xamarin.Forms.FontAttributes.None). Můžete kombinovat `Bold` a `Italic` členy s C# bitového operátoru OR.
 
 ## <a name="formatted-text"></a>Formátovaný text
 
-Ve všech příkladech zatím zobrazením celý text `Label` rovnoměrně formátována. Postup obměny formátování v rámci textový řetězec, nemají nastavený `Text` vlastnost `Label`. Místo toho nastavte [ `FormattedText` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.FormattedText/) vlastnost na objekt typu [ `FormattedString` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FormattedString/).
+Ve všech příkladech zatím zobrazením celý text `Label` rovnoměrně formátována. Postup obměny formátování v rámci textový řetězec, nemají nastavený `Text` vlastnost `Label`. Místo toho nastavte [ `FormattedText` ](xref:Xamarin.Forms.Label.FormattedText) vlastnost na objekt typu [ `FormattedString` ](xref:Xamarin.Forms.FormattedString).
 
-`FormattedString` má [ `Spans` ](https://developer.xamarin.com/api/property/Xamarin.Forms.FormattedString.Spans/) vlastnost, která je kolekce [ `Span` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Span/) objekty. Každý `Span` objekt má své vlastní [ `Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Span.Text/), [ `FontFamily` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Span.FontFamily/), [ `FontSize` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Span.FontSize/), [ `FontAttributes` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Span.FontAttributes/), [ `ForegroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Span.ForegroundColor/), a [ `BackgroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Span.BackgroundColor/) vlastnosti.
+`FormattedString` má [ `Spans` ](xref:Xamarin.Forms.FormattedString.Spans) vlastnost, která je kolekce [ `Span` ](xref:Xamarin.Forms.Span) objekty. Každý `Span` objekt má své vlastní [ `Text` ](xref:Xamarin.Forms.Span.Text), [ `FontFamily` ](xref:Xamarin.Forms.Span.FontFamily), [ `FontSize` ](xref:Xamarin.Forms.Span.FontSize), [ `FontAttributes` ](xref:Xamarin.Forms.Span.FontAttributes), [ `ForegroundColor` ](xref:Xamarin.Forms.Span.ForegroundColor), a [ `BackgroundColor` ](xref:Xamarin.Forms.Span.BackgroundColor) vlastnosti.
 
 [ **VariableFormattedText** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/VarFormText) ukázka znázorňuje použití `FormattedText` vlastnost pro jeden řádek textu, a [ **VariableFormattedParagraph** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/VarFormPara) techniku pro celý odstavec, ukazuje, jak je znázorněno zde:
 

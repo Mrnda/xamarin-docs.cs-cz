@@ -1,45 +1,45 @@
 ---
-title: Rozhraní příkazového Xamarin.Forms
-description: Tento článek vysvětluje, jak implementovat vlastnost příkazu s Xamarin.Forms datové vazby. Rozhraní řídicího poskytuje alternativní způsob implementace příkazy, je mnohem lepší vhodný k architektuře rozhraní MVVM.
+title: Rozhraní příkazového řádku Xamarin.Forms
+description: Tento článek vysvětluje, jak implementovat vlastnost příkazu s Xamarin.Forms datové vazby. Řídicího rozhraní poskytuje alternativní způsob implementace příkazů, který je mnohem lépe hodí pro architektury MVVM.
 ms.prod: xamarin
 ms.assetid: 69922284-F398-45C3-B4CC-B8E29BB4C533
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 37fe5bbcfa3dbc6aa5483c89b49c1698a00ecbb6
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: b18d042e34146a72b488da9017648a430c9cd353
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241309"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996370"
 ---
-# <a name="the-xamarinforms-command-interface"></a>Rozhraní příkazového Xamarin.Forms
+# <a name="the-xamarinforms-command-interface"></a>Rozhraní příkazového řádku Xamarin.Forms
 
-V architektuře Model-View-ViewModel (modelem MVVM) jsou definované vazby dat mezi vlastnosti v ViewModel, který je obvykle třídu odvozenou z `INotifyPropertyChanged`a vlastnosti v zobrazení, která je obecně souboru XAML. Někdy potřeb, které jdou nad rámec těchto vazeb vlastnost tím, že uživatel zahájíte příkazy, které ovlivňují něco v ViewModel má aplikace. Tyto příkazy jsou obecně signalizovala pomocí kliknutí na tlačítko nebo prostem odposlouchávání a tradičně jsou zpracovány v souboru kódu na pozadí v obslužnou rutinu pro `Clicked` události `Button` nebo `Tapped` události `TapGestureRecognizer`.
+V architektuře Model-View-ViewModel (MVVM) jsou definovány datové vazby mezi vlastnostmi v ViewModel, který je obvykle třída, která je odvozena z `INotifyPropertyChanged`a vlastností v zobrazení, která je obvykle soubor XAML. Někdy aplikace má nároky, které přesahují tyto vazby vlastnosti tak, že uživatel zahájil příkazy, které ovlivňují něco v ViewModel vyžaduje. Tyto příkazy jsou obecně signalizován pomocí kliknutí na tlačítko nebo prsty odposlouchávání a obvykle jsou zpracovány v souboru kódu na pozadí v obslužné rutiny pro `Clicked` událost `Button` nebo `Tapped` události `TapGestureRecognizer`.
 
-Rozhraní řídicího poskytuje alternativní způsob implementace příkazy, je mnohem lepší vhodný k architektuře rozhraní MVVM. ViewModel samotné mohou obsahovat příkazy, které metody, které jsou spouštěny v reakci na konkrétní aktivity v zobrazení, jako jsou `Button` klikněte na tlačítko. Datové vazby jsou definované mezi tyto příkazy a `Button`.
+Řídicího rozhraní poskytuje alternativní způsob implementace příkazů, který je mnohem lépe hodí pro architektury MVVM. ViewModel samotný mohou obsahovat příkazy, které jsou metody, které jsou provedeny v reakci na konkrétní aktivitu v zobrazení jako `Button` klikněte na tlačítko. Mezi tyto příkazy jsou definovány datové vazby a `Button`.
 
-Umožňuje vytvoření vazby dat mezi `Button` a ViewModel, `Button` definuje dvě vlastnosti:
+Chcete-li povolit vazby dat mezi `Button` a ViewModel, `Button` definuje dvě vlastnosti:
 
-- [`Command`](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.Command/) typu <xref:System.Windows.Input.ICommand>
-- [`CommandParameter`](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.CommandParameter/) typu `Object`
+- [`Command`](xref:Xamarin.Forms.Button.Command) typu <xref:System.Windows.Input.ICommand>
+- [`CommandParameter`](xref:Xamarin.Forms.Button.CommandParameter) typu `Object`
 
-Pokud chcete používat rozhraní příkazového, definujete vazbu dat, která je cílena `Command` vlastnost `Button` Pokud je zdrojem na vlastnost ve ViewModel typu `ICommand`. ViewModel obsahuje kód, který přidružené `ICommand` vlastnost, která se spustí, až po kliknutí na tlačítko. Můžete nastavit `CommandParameter` na libovolná data k rozlišení mezi více tlačítek, pokud jsou všechny vázán ke stejné `ICommand` vlastnost ViewModel.
+Pokud chcete používat rozhraní příkazového řádku, definujete datové vazby, který se zaměřuje `Command` vlastnost `Button` Pokud je zdrojem vlastnost ViewModel typ `ICommand`. Obsahuje kód spojený s, která ViewModel `ICommand` vlastnost, která se spouští při kliknutí na tlačítko. Můžete nastavit `CommandParameter` pro libovolná data rozlišovat mezi více tlačítek, pokud jsou všechny vázána na stejný `ICommand` vlastnost ViewModel.
 
-`Command` a `CommandParameter` vlastnosti jsou definovány také následující třídy:
+`Command` a `CommandParameter` vlastnosti jsou také definovány následující třídy:
 
-- [`MenuItem`](https://developer.xamarin.com/api/type/Xamarin.Forms.MenuItem/) a proto [ `ToolbarItem` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ToolbarItem/), která je odvozena z `MenuItem`
-- [`TextCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.TextCell/) a proto [ `ImageCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageCell/), která je odvozena z `TextCell`
-- [`TapGestureRecognizer`](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/)
+- [`MenuItem`](xref:Xamarin.Forms.MenuItem) a proto [ `ToolbarItem` ](xref:Xamarin.Forms.ToolbarItem), která je odvozena z `MenuItem`
+- [`TextCell`](xref:Xamarin.Forms.TextCell) a proto [ `ImageCell` ](xref:Xamarin.Forms.ImageCell), která je odvozena z `TextCell`
+- [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer)
 
-[`SearchBar`](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/) definuje [ `SearchCommand` ](https://developer.xamarin.com/api/property/Xamarin.Forms.SearchBar.SearchCommand/) vlastnost typu `ICommand` a [ `SearchCommandParameter` ](https://developer.xamarin.com/api/property/Xamarin.Forms.SearchBar.SearchCommandParameter/) vlastnost. [ `RefreshCommand` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.RefreshCommand/) Vlastnost [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) je také typu `ICommand`.
+[`SearchBar`](xref:Xamarin.Forms.SearchBar) definuje [ `SearchCommand` ](xref:Xamarin.Forms.SearchBar.SearchCommand) vlastnost typu `ICommand` a [ `SearchCommandParameter` ](xref:Xamarin.Forms.SearchBar.SearchCommandParameter) vlastnost. [ `RefreshCommand` ](xref:Xamarin.Forms.ListView.RefreshCommand) Vlastnost [ `ListView` ](xref:Xamarin.Forms.ListView) je také typu `ICommand`.
 
-Všechny tyto příkazy lze zpracovat v rámci ViewModel způsobem, který nezávisí na objekt konkrétní uživatelského rozhraní v zobrazení.
+Tyto příkazy může být zpracována v rámci ViewModel v podobě, která nezávisí na objekt konkrétního uživatelského rozhraní v zobrazení.
 
-## <a name="the-icommand-interface"></a>Rozhraní ICommand
+## <a name="the-icommand-interface"></a>Rozhraní ICommand, které
 
-<xref:System.Windows.Input.ICommand> Rozhraní není součástí Xamarin.Forms. Je definována místo v [System.Windows.Input](xref:System.Windows.Input) obor názvů a se skládá ze dvou metod a jedna událost:
+<xref:System.Windows.Input.ICommand> Rozhraní není součástí Xamarin.Forms. Místo toho definovaný v [System.Windows.Input](xref:System.Windows.Input) obor názvů se skládá ze dvou metod a jednu událost:
 
 ```csharp
 public interface ICommand
@@ -52,41 +52,41 @@ public interface ICommand
 }
 ```
 
-Pokud chcete používat rozhraní příkazového, vaše ViewModel obsahuje vlastnosti typu `ICommand`:
+Pokud chcete používat rozhraní příkazového řádku, vaše ViewModel obsahuje vlastnosti typu `ICommand`:
 
 ```csharp
 public ICommand MyCommand { private set; get; }
 ```
 
-ViewModel také musí odkazovat třídu, která implementuje `ICommand` rozhraní. Tato třída bude za chvíli popsané. V zobrazení `Command` vlastnost `Button` je vázána na tuto vlastnost:
+ViewModel musí také odkazovat na třídu, která implementuje `ICommand` rozhraní. Tato třída bude za chvíli popsané. V zobrazení `Command` vlastnost `Button` je vázán na tuto vlastnost:
 
 ```xaml
 <Button Text="Execute command"
         Command="{Binding MyCommand}" />
 ```
 
-Uživatel stiskne `Button`, `Button` volání `Execute` metoda v `ICommand` objekt vázána na jeho `Command` vlastnost. Který je nejjednodušší součástí řídicího rozhraní.
+Když uživatel stiskne klávesu `Button`, `Button` volání `Execute` metoda ve `ICommand` objekt vázán na jeho `Command` vlastnost. To je nejjednodušší část řídicího rozhraní.
 
-`CanExecute` Metoda je složitější. Když vazby nejprve musí být definován `Command` vlastnost `Button`, a kdy se změní datové vazby nějakým způsobem `Button` volání `CanExecute` metoda v `ICommand` objektu. Pokud `CanExecute` vrátí `false`, pak se `Button` vypne. To znamená, že konkrétní příkaz je nyní k dispozici nebo je neplatný.
+`CanExecute` Metoda je složitější. Pokud nejprve definován vazbu na `Command` vlastnost `Button`, a při změně datové vazby v některých případech `Button` volání `CanExecute` metoda ve `ICommand` objektu. Pokud `CanExecute` vrátí `false`, pak bude `Button` sama deaktivuje. To znamená, že konkrétní příkaz je momentálně není k dispozici nebo je neplatný.
 
-`Button` Také připojí na obslužnou rutinu `CanExecuteChanged` události `ICommand`. Událost je aktivována z v rámci ViewModel. Když tuto událost je aktivována, `Button` volání `CanExecute` znovu. `Button` Umožňuje sám sebe, pokud `CanExecute` vrátí `true` a vypne, pokud `CanExecute` vrátí `false`.
+`Button` Také připojí obslužnou rutinu na `CanExecuteChanged` událost `ICommand`. Událost je aktivována z v rámci ViewModel. Když se aktivuje tuto událost, `Button` volání `CanExecute` znovu. `Button` Samotný umožňuje v případě `CanExecute` vrátí `true` a vypne, pokud `CanExecute` vrátí `false`.
 
 > [!IMPORTANT]
-> Nepoužívejte `IsEnabled` vlastnost `Button` Pokud používáte rozhraní příkazu.  
+> Nepoužívejte `IsEnabled` vlastnost `Button` Pokud používáte rozhraní příkazového řádku.  
 
-## <a name="the-command-class"></a>Příkaz – třída
+## <a name="the-command-class"></a>Třídy příkazů
 
-Pokud vaše ViewModel definuje prvku typu `ICommand`, ViewModel musí také obsahovat nebo odkazovat na třídu, která implementuje `ICommand` rozhraní. Tato třída musí obsahovat nebo odkaz `Execute` a `CanExecute` metody a ještě efektivněji `CanExecuteChanged` událost vždy, když `CanExecute` metoda může vrátit na jinou hodnotu.
+Pokud vaše ViewModel definuje prvku typu `ICommand`, ViewModel musí také obsahovat nebo odkazovat na třídu, která implementuje `ICommand` rozhraní. Tato třída musí obsahovat nebo odkazovat `Execute` a `CanExecute` metody a fire `CanExecuteChanged` událost pokaždé, když `CanExecute` metoda může vrátit jiné hodnoty.
 
-Můžete napsat takové třídu sami nebo můžete použít třídu, která má někdo jiný zapsána. Protože `ICommand` je součástí systému Windows, že se používá let s modelem MVVM Windows aplikace. Použití třídy Windows, který implementuje `ICommand` můžete sdílet vaše ViewModels mezi aplikací systému Windows a Xamarin.Forms aplikací.
+Můžete napsat takové třídy sami nebo můžete použít třídu, která zapsala někdo jiný. Protože `ICommand` je součástí systému Microsoft Windows, bylo použito pro roky s aplikacemi Windows MVVM. Pomocí třídy Windows, která implementuje `ICommand` vám umožní sdílet vaše modely ViewModels mezi Windows a aplikace Xamarin.Forms.
 
-Pokud sdílení ViewModels mezi Windows a Xamarin.Forms nehrají důležitou roli, pak můžete použít [ `Command` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Command/) nebo [ `Command<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Command%3CT%3E/) třídy součástí Xamarin.Forms implementovat `ICommand`rozhraní. Tyto třídy umožňují určit orgánů `Execute` a `CanExecute` metody v konstruktorech třídy. Použít `Command<T>` při použití `CommandParameter` vlastnost k rozlišení mezi více zobrazení vázána na stejné `ICommand` vlastnost a jednodušší `Command` třídy, při které není požadavkem.
+Pokud modely ViewModels mezi Windows a Xamarin.Forms pro sdílení obsahu není žádný problém, pak můžete použít [ `Command` ](xref:Xamarin.Forms.Command) nebo [ `Command<T>` ](xref:Xamarin.Forms.Command`1) třídy zahrnuty v Xamarin.Forms pro implementaci `ICommand`rozhraní. Tyto třídy umožňují určit orgánů `Execute` a `CanExecute` metody v konstruktorech tříd. Použít `Command<T>` při použití `CommandParameter` vlastnost k rozlišení mezi více pohledy vázána na stejný `ICommand` vlastnosti a jednodušší `Command` třídy při, není to povinné.
 
-## <a name="basic-commanding"></a>Tvorba základní příkazů
+## <a name="basic-commanding"></a>Základní příkazů
 
-**Osoba položka** stránku [ **ukázky vazby dat** ](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) program ukazuje některé jednoduché příkazy implementované v ViewModel.
+**Položky osoba** stránku [ **ukázky vazby dat** ](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) program ukazuje některé jednoduché příkazy implementované v ViewModel.
 
-`PersonViewModel` Definuje tři vlastnosti s názvem `Name`, `Age`, a `Skills` které definují osoby. Tato třída neodpovídá *není* obsahovat žádné `ICommand` vlastnosti:
+`PersonViewModel` Definuje tři vlastnosti s názvem `Name`, `Age`, a `Skills` , definovat osobu. Tato třída nemá *není* obsahovat žádný `ICommand` vlastnosti:
 
 ```csharp
 public class PersonViewModel : INotifyPropertyChanged
@@ -137,7 +137,7 @@ public class PersonViewModel : INotifyPropertyChanged
 }
 ```
 
-`PersonCollectionViewModel` Vidět níže vytváří nové objekty typu `PersonViewModel` a umožňuje uživateli vyplnit data. K tomuto účelu třída definuje vlastnosti `IsEditing` typu `bool` a `PersonEdit` typu `PersonViewModel`. Kromě toho třída definuje tři vlastnosti typu `ICommand` a vlastnost s názvem `Persons` typu `IList<PersonViewModel>`:
+`PersonCollectionViewModel` Uvedené níže vytvoří nové objekty typu `PersonViewModel` a umožňuje uživatelům vyplnit data. Pro tento účel třídy definuje vlastnosti `IsEditing` typu `bool` a `PersonEdit` typu `PersonViewModel`. Kromě toho třída definuje tři vlastnosti typu `ICommand` a vlastnost s názvem `Persons` typu `IList<PersonViewModel>`:
 
 ```csharp
 public class PersonCollectionViewModel : INotifyPropertyChanged
@@ -186,9 +186,9 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 }
 ```
 
-Zkrácený výpis nezahrnuje konstruktoru třídy, která je tam, kde tři vlastnosti typu `ICommand` jsou definovány, které se krátce zobrazí. Všimněte si, že se změní na tři vlastnosti typu `ICommand` a `Persons` vlastnost nezpůsobovalo neustálé `PropertyChanged` události je aktivováno. Tyto vlastnosti jsou nastavené při prvním vytvoření třídy a neměňte po tomto datu.
+Zkrácený výpis neobsahuje konstruktor třídy, která je tam, kde tři vlastnosti typu `ICommand` jsou definovány, který se zobrazí za chvíli. Všimněte si, že se změní na tři vlastnosti typu `ICommand` a `Persons` následek vlastnost `PropertyChanged` události se aktivoval. Tyto vlastnosti jsou nastavené při prvním vytvoření třídy a nemění po tomto datu.
 
-Před zkoumání konstruktoru `PersonCollectionViewModel` třídy, podíváme se na v souboru XAML **osoba položka** program. Tato položka obsahuje `Grid` s jeho `BindingContext` vlastnost nastavena na hodnotu `PersonCollectionViewModel`. `Grid` Obsahuje `Button` s textem **nový** s jeho `Command` vlastnost vázána na `NewCommand` vlastnost v ViewModel, formuláře položky s vlastnostmi vázána na `IsEditing` vlastnosti, jako dobře jako vlastnosti `PersonViewModel`, a další dvě tlačítka vázaný k `SubmitCommand` a `CancelCommand` vlastnosti ViewModel. Konečné `ListView` zobrazí kolekci již byl zadán osob:
+Před zkoumání konstruktoru `PersonCollectionViewModel` třídy, Pojďme se podívat v souboru XAML **položky osoba** programu. Tady se nachází `Grid` s jeho `BindingContext` vlastnost nastavena na hodnotu `PersonCollectionViewModel`. `Grid` Obsahuje `Button` s textem **nový** s jeho `Command` vlastnost vázána na `NewCommand` vlastnost v ViewModel, formulář Položka s vlastnostmi vázána na `IsEditing` vlastnosti, jako také jako vlastnosti `PersonViewModel`, a dvě tlačítka Další vázaná na `SubmitCommand` a `CancelCommand` vlastnosti ViewModel. Finální `ListView` zobrazuje kolekci osob už zadali:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -275,17 +275,17 @@ Před zkoumání konstruktoru `PersonCollectionViewModel` třídy, podíváme se
 </ContentPage>
 ```
 
-Zde je, jak to funguje: první stisknutí uživatele **nový** tlačítko. To umožňuje formuláře, ale zakáže **nový** tlačítko. Uživatel potom zadá název, stáří a znalosti. V průběhu úprav, může uživatel stisknout **zrušit** tlačítko a začít od začátku. Pokud byl zadán název a platné stáří je pouze **odeslání** tlačítko povoleno. Stisknutím to **odeslání** tlačítko převádí osoba, která do kolekce zobrazí `ListView`. Po buď **zrušit** nebo **odeslání** stisknutí tlačítka, formuláře se vymaže a **nový** tlačítko opět povolena.
+Zde je, jak to funguje: uživatel stiskne první **nový** tlačítko. To umožňuje položka formuláře, ale zakáže **nový** tlačítko. Uživatel zadá název, věk a dovednosti. Kdykoli během úpravy může uživatel stisknout **zrušit** tlačítko a začít od začátku. Pokud není zadaný název a platné stáří je jenom **odeslat** tlačítko povoleno. Klávesy to **odeslat** tlačítko převádí osoby do kolekce, zobrazí `ListView`. Po zavolání **zrušit** nebo **odeslat** stisknutí tlačítka, se vymaže formuláři pro zadávání a **nový** tlačítko opět povolena.
 
-Na obrazovce iOS na levé straně se zobrazí rozložení předtím, než je zadaná platná stáří. Android a UWP obrazovky zobrazit **odeslání** tlačítko povoleno po stáří:
+Na obrazovce iOS na levé straně se zobrazí rozložení před zadáním platné stáří. Android a UPW obrazovky zobrazit **odeslat** tlačítko povoleno po nastavení stáří:
 
-[![Položka osoba](commanding-images/personentry-small.png "osoba položka")](commanding-images/personentry-large.png#lightbox "osoba položka")
+[![Položka osoba](commanding-images/personentry-small.png "položky osoba")](commanding-images/personentry-large.png#lightbox "položka osoby")
 
-Program nemá žádné zařízení pro úpravy existujících položek a neukládá položky, když přejdete mimo stránku.
+Program nemá žádné zařízení pro úpravu existující položky a nedojde k uložení položky při navigaci pryč z stránky.
 
-Veškerou logiku pro **nový**, **odeslání**, a **zrušit** tlačítka zpracovává při `PersonCollectionViewModel` prostřednictvím definice `NewCommand`, `SubmitCommand`, a `CancelCommand` vlastnosti. Konstruktoru `PersonCollectionViewModel` nastaví tyto tři vlastnosti pro objekty typu `Command`.  
+Veškerou logiku pro **nový**, **odeslat**, a **zrušit** tlačítka je zpracována v `PersonCollectionViewModel` prostřednictvím definice `NewCommand`, `SubmitCommand`, a `CancelCommand` vlastnosti. Konstruktor třídy `PersonCollectionViewModel` nastaví tyto tři vlastnosti pro objekty typu `Command`.  
 
-A [konstruktor](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Command.Command/p/System.Action/System.Func%7BSystem.Boolean%7D/) z `Command` třída umožňuje předání argumentů typu `Action` a `Func<bool>` odpovídající `Execute` a `CanExecute` metody. Je to nejjednodušší provádět můžete určit tyto akce a funkce jako lambda funkce přímo `Command` konstruktor. Zde je definice `Command` objekt pro `NewCommand` vlastnost:
+A [konstruktor](xref:Xamarin.Forms.Command.%23ctor(System.Action,System.Func{System.Boolean})) z `Command` třída umožňuje předat argumenty typu `Action` a `Func<bool>` odpovídající `Execute` a `CanExecute` metody. Je nejjednodušší definovat tyto akce a funkce jako lambda funkce přímo `Command` konstruktoru. Tady je definice `Command` objekt pro `NewCommand` vlastnost:
 
 ```csharp
 public class PersonCollectionViewModel : INotifyPropertyChanged
@@ -329,13 +329,13 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 }
 ```
 
-Když uživatel klikne **nový** tlačítko `execute` předaný funkci `Command` konstruktor se spustí. Tím se vytvoří nový `PersonViewModel` objektu, nastaví obslužnou rutinu pro tento objekt `PropertyChanged` událostí, nastaví `IsEditing` k `true`a volá `RefreshCanExecutes` metoda definované po konstruktoru.
+Pokud uživatel klikne **nový** tlačítko, `execute` funkce předány `Command` konstruktor provádí. Tím se vytvoří nový `PersonViewModel` objektu, nastaví obslužnou rutinu k tomuto objektu `PropertyChanged` událostí, nastaví `IsEditing` k `true`a volá `RefreshCanExecutes` metody definované po konstruktoru.
 
-Kromě implementace `ICommand` rozhraní, `Command` třída také definuje metodu s názvem `ChangeCanExecute`. Vaše ViewModel by měly volat `ChangeCanExecute` pro `ICommand` vlastnost vždy, když se něco stane, které mohou změnit vrácenou hodnotu `CanExecute` metoda. Volání `ChangeCanExecute` způsobí, že `Command` třída má provést, `CanExecuteChanged` metoda. `Button` Se připojilo obslužnou rutinu pro tuto událost a reaguje voláním `CanExecute` znovu a pak povolení založena na návratovou hodnotu této metody.
+Kromě provádění `ICommand` rozhraní, `Command` třída také definuje metodu s názvem `ChangeCanExecute`. Vaše ViewModel by měly volat `ChangeCanExecute` pro `ICommand` vlastnost pokaždé, když se něco stane s, který může změnit návratový typ `CanExecute` metoda. Volání `ChangeCanExecute` způsobí, že `Command` třídy, která se aktivuje `CanExecuteChanged` metody. `Button` Obslužnou rutinu pro tuto událost se připojilo a odpovídá voláním `CanExecute` znovu a pak povolení založena na hodnotě vrácení této metody.
 
-Když `execute` metodu `NewCommand` volání `RefreshCanExecutes`, `NewCommand` vlastnost získá volání `ChangeCanExecute`a `Button` volání `canExecute` metoda, která teď vrátí `false` protože `IsEditing`je vlastnost `true`.
+Při `execute` metoda `NewCommand` volání `RefreshCanExecutes`, `NewCommand` vlastnost získá volání `ChangeCanExecute`a `Button` volání `canExecute` metody, které nyní vrací `false` protože `IsEditing`vlastnost je nyní `true`.
 
-`PropertyChanged` Obslužné rutiny pro nové `PersonViewModel` objektu volání `ChangeCanExecute` metodu `SubmitCommand`. Tady je způsob implementace tohoto příkazu:
+`PropertyChanged` Obslužné rutiny pro novou `PersonViewModel` objektu volání `ChangeCanExecute` metoda `SubmitCommand`. Zde je, jak je implementovaná vlastnost tohoto příkazu:
 
 
 ```csharp
@@ -374,11 +374,11 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 }
 ```
 
-`canExecute` Funkce pro `SubmitCommand` nazývá pokaždé, když je vlastnost změnit v `PersonViewModel` upravovaný objekt. Vrátí `true` pouze tehdy, když `Name` vlastnost je alespoň jeden znak, a `Age` je větší než 0. V ten moment se **odeslání** aktivuje tlačítko.
+`canExecute` Fungovat `SubmitCommand` je volána pokaždé, když se vlastnost změnil `PersonViewModel` objekt, který právě upravujete. Vrátí `true` pouze tehdy, když `Name` vlastnost je alespoň jeden znak, a `Age` je větší než 0. V tu chvíli **odeslat** aktivuje tlačítko.
 
-`execute` Funkce pro **odeslání** odebere obslužná rutina vlastnost změnit z `PersonViewModel`, přidá objekt, který má `Persons` kolekce a vrátí všechno počáteční podmínky.
+`execute` Fungovat **odeslat** odebere obslužnou rutinu změny vlastnosti z `PersonViewModel`, přidá objekt, který má `Persons` kolekce a všechno, co vrátí počáteční podmínky.
 
-`execute` Funkce pro **zrušit** tlačítko nemá vše, který **odeslání** execept nemá tlačítko Přidat objekt do kolekce:
+`execute` Fungovat **zrušit** tlačítko dělá všechno, **odeslat** tlačítko nemá execept přidejte objekt do kolekce:
 
 ```csharp
 public class PersonCollectionViewModel : INotifyPropertyChanged
@@ -410,21 +410,21 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 }
 ```
 
-`canExecute` Metoda vrátí `true` kdykoli `PersonViewModel` upravována.
+`canExecute` Vrátí metoda `true` kdykoli `PersonViewModel` se právě upravuje.
 
-Tyto postupy by mohla být přizpůsobena složitější scénáře: vlastnost v `PersonCollectionViewModel` může být vázána na `SelectedItem` vlastnost `ListView` pro úpravy existujících položek a **odstranit** tlačítko nebylo možné přidat do odstranit Tyto položky.
+Tyto postupy by mohly být přizpůsobeny pro složitější scénáře: vlastnost v `PersonCollectionViewModel` může být vázaný na `SelectedItem` vlastnost `ListView` pro úpravu existující položky a **odstranit** může být přidán tlačítko Odstranit Tyto položky.
 
-Není nutné definovat `execute` a `canExecute` metody jako funkce lambda. Můžete napsat je běžnými privátní metody v ViewModel a odkazujte na ně v `Command` konstruktory. Tento postup však zpravidla vést k velkému metod, které odkazuje ViewModel pouze jednou.
+Není nutné definovat `execute` a `canExecute` metody jako funkce lambda. Můžete napsat je jako běžné privátní metody v ViewModel a odkazovat na nich `Command` konstruktory. Tento přístup však mají za následek mnoho metod, které jsou odkazovány pouze jednou v ViewModel.
 
 ## <a name="using-command-parameters"></a>Pomocí parametrů příkazu
 
-V některých případech je vhodné pro jeden nebo více tlačítek (nebo jiné objekty uživatelského rozhraní) sdílet stejný `ICommand` vlastnost ViewModel. V takovém případě použijete `CommandParameter` vlastnost k rozlišení mezi tlačítka.
+Někdy je vhodné pro jedno nebo více tlačítek (nebo jiných objektů uživatelského rozhraní) sdílet stejný `ICommand` vlastnost ViewModel. V tomto případě použijete `CommandParameter` vlastnost k rozlišení mezi tlačítky.
 
-Můžete dál používat `Command` třídu pro tyto sdílené `ICommand` vlastnosti. Definuje třídu [alternativní konstruktor](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Command.Command/p/System.Action%7BSystem.Object%7D/System.Func%7BSystem.Object,System.Boolean%7D/) který přijímá `execute` a `canExecute` metody s parametry typu `Object`. Jedná se jak `CommandParameter` předaný těchto metod.
+Můžete dál používat `Command` třídy pro tyto sdílené `ICommand` vlastnosti. Definuje třídu [alternativní konstruktor](xref:Xamarin.Forms.Command.%23ctor(System.Action{System.Object},System.Func{System.Object,System.Boolean})) , který přijme `execute` a `canExecute` metody s parametry typu `Object`. Toto je způsob, jakým `CommandParameter` je předán do těchto metod.
 
-Ale při použití `CommandParameter`, jednoduše používat obecná [ `Command<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Command%3CT%3E/) třídu k určení typu objektu nastavena na `CommandParameter`. `execute` a `canExecute` metody, které zadáte mít parametry daného typu.
+Ale při použití `CommandParameter`, je nejjednodušší museli používat obecná [ `Command<T>` ](xref:Xamarin.Forms.Command`1) tak, aby určovala typ objektu nastavena na `CommandParameter`. `execute` a `canExecute` metody, které zadáte mít parametry typu.
 
-**Decimal klávesnice** stránky tento postup ukazuje ukazuje, jak implementovat klávesnice pro zadání desetinná čísla. `BindingContext` Pro `Grid` je `DecimalKeypadViewModel`. `Entry` Vlastnost pro tento ViewModel je vázána na `Text` vlastnost `Label`. Všechny `Button` objekty, které jsou vázány na různé příkazy v ViewModel: `ClearCommand`, `BackspaceCommand`, a `DigitCommand`:
+**Desítkové klávesnice** stránky znázorňuje tuto techniku ve kterém se naučíte implementovat klávesnice pro zadání desetinná čísla. `BindingContext` Pro `Grid` je `DecimalKeypadViewModel`. `Entry` Vlastnosti tohoto ViewModel je vázán na `Text` vlastnost `Label`. Všechny `Button` objekty jsou svázány s různými příkazy v ViewModel: `ClearCommand`, `BackspaceCommand`, a `DigitCommand`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -527,15 +527,15 @@ Ale při použití `CommandParameter`, jednoduše používat obecná [ `Command<
 </ContentPage>
 ```
 
-Tlačítka 11 pro 10 číslic a desetinnou sdílet vazbu ke `DigitCommand`. `CommandParameter` Rozlišuje mezi tato tlačítka. Nastavte na hodnotu `CommandParameter` jsou obvykle stejné jako text ve tlačítko s výjimkou desetinné čárky, která pro účely přehlednosti se zobrazí s tečkou uprostřed znak zobrazí.
+Sdílení tlačítka 11 pro 10 číslic a desetinná čárka vazbu na `DigitCommand`. `CommandParameter` Rozlišuje mezi tato tlačítka. Nastavte na hodnotu `CommandParameter` jsou obvykle stejné jako text, zobrazený na tlačítko s výjimkou desetinné místo, které v zájmu přehlednosti se zobrazí s tečkou uprostřed znak.
 
 Tady je program v akci:
 
-[![Decimal klávesnice](commanding-images/decimalkeyboard-small.png "Decimal klávesnice")](commanding-images/decimalkeyboard-large.png#lightbox "Decimal klávesnice")
+[![Desetinné klávesnice](commanding-images/decimalkeyboard-small.png "desítkové klávesnice")](commanding-images/decimalkeyboard-large.png#lightbox "desítkové klávesnice")
 
-Všimněte si, že na tlačítko desetinné čárky všechny tři snímcích obrazovky zakázaná, protože zadané číslo již obsahuje desetinné čárky.
+Všimněte si, že tlačítko pro desetinné čárky všechny tři snímcích obrazovky je zakázaná, protože zadané číslo již obsahuje desetinnou čárkou.
 
-`DecimalKeypadViewModel` Definuje `Entry` vlastnost typu `string` (což je jediná vlastnost, kterou se aktivuje `PropertyChanged` událostí) a tři vlastnosti typu `ICommand`:
+`DecimalKeypadViewModel` Definuje `Entry` vlastnost typu `string` (což je jediná vlastnost, která aktivuje `PropertyChanged` událostí) a tři vlastnosti typu `ICommand`:
 
 ```csharp
 public class DecimalKeypadViewModel : INotifyPropertyChanged
@@ -570,7 +570,7 @@ public class DecimalKeypadViewModel : INotifyPropertyChanged
 }
 ```
 
-Tlačítko odpovídající k `ClearCommand` je vždy povolena a jednoduše nastaví položku zpět na hodnotu "0":
+Odpovídající tlačítko na `ClearCommand` je vždy povolena a jednoduše nastaví položku na "0":
 
 ```csharp
 public class DecimalKeypadViewModel : INotifyPropertyChanged
@@ -602,11 +602,11 @@ public class DecimalKeypadViewModel : INotifyPropertyChanged
 }
 ```
 
-Protože tlačítko je vždy povolena, není nutné zadávat `canExecute` argument `Command` konstruktor.
+Vzhledem k tomu tlačítko je vždy povoleno, není potřeba zadávat `canExecute` argumentu `Command` konstruktoru.
 
-Logika pro zadání čísla a mazání pomocí klávesy BACKSPACE je trochu složité, protože pokud byly zadány žádné číslic, pak se `Entry` vlastnost je řetězec "0". Pokud uživatel zadá další nuly, potom `Entry` stále obsahuje pouze jeden nula. Pokud uživatel zadá další číslice, že číslice nahrazuje na nule. Ale pokud uživatel zadá desetinné čárky před další číslice, spojovníky pak `Entry` je řetězec "0.".
+Logika pro zadání čísel a mazání pomocí klávesy BACKSPACE je trochu složité, protože pokud byly zadány žádné číslice, pak bude `Entry` vlastnosti je řetězec "0". Pokud uživatel zadá další nuly, pak bude `Entry` stále obsahuje pouze jeden nula. Pokud uživatel zadá jakékoli další číslice, nahradí tato číslice nula. Pokud uživatel zadá desetinné čárky před jakékoli další číslice, pak ale `Entry` je řetězec "0".
 
-**Backspace** tlačítko je dostupné, jenom když délka položka je větší než 1 nebo `Entry` není roven řetězec "0":
+**Backspace** tlačítko je povoleno pouze v případě, že délka záznamu je větší než 1, nebo pokud `Entry` není neshoduje s řetězcem "0":
 
 ```csharp
 public class DecimalKeypadViewModel : INotifyPropertyChanged
@@ -643,9 +643,9 @@ public class DecimalKeypadViewModel : INotifyPropertyChanged
 }
 ```
 
-Logiku pro `execute` funkce pro **Backspace** tlačítko zajišťuje, že `Entry` je alespoň řetězec "0".
+Logiku pro `execute` fungovat **Backspace** tlačítko zajišťuje, že `Entry` alespoň řetězec "0".
 
-`DigitCommand` Vlastnost je vázána na 11 tlačítka, z nichž každý identifikuje s `CommandParameter` vlastnost. `DigitCommand` Může být nastaven na instanci běžné `Command` třídy, ale je jednodušší použít `Command<T>` obecná třída. Při používání řídicího rozhraní s XAML, `CommandParameter` vlastnosti jsou obvykle řetězce a který je typu Obecné argumentu. `execute` a `canExecute` pak obsahují argumenty typu `string`:
+`DigitCommand` Vlastnost je vázána na 11 tlačítka, z nichž každý se identifikuje `CommandParameter` vlastnost. `DigitCommand` Může být nastaven na instanci běžné `Command` třídy, ale je jednodušší použít `Command<T>` obecnou třídu. Při používání řídicího rozhraní s XAML, `CommandParameter` vlastnosti jsou obvykle řetězce, a to je typ obecný argument. `execute` a `canExecute` pak obsahují funkce argumenty typu `string`:
 
 ```csharp
 public class DecimalKeypadViewModel : INotifyPropertyChanged
@@ -679,19 +679,19 @@ public class DecimalKeypadViewModel : INotifyPropertyChanged
 }
 ```
 
-`execute` Metoda připojí argument řetězec `Entry` vlastnost. Ale pokud výsledek začíná nulu (ale ne nulu a desetinné čárky) pak této počáteční nula musíte odstranit pomocí `Substring` funkce.
+`execute` Metoda přidá řetězec argumentu `Entry` vlastnost. Nicméně pokud výsledek začíná nulou (ale není nula a desetinná čárka) pak tento počáteční nuly musí odebrány `Substring` funkce.
 
-`canExecute` Metoda vrátí `false` pouze v případě, že je argumentem desetinné čárky (značí, že stisknutí desetinné čárky) a `Entry` již obsahuje desetinné čárky.
+`canExecute` Vrátí metoda `false` pouze v případě, že argument je desetinná čárka (značí, že stisknutí desetinná čárka) a `Entry` již obsahuje desetinnou čárkou.
 
-Všechny `execute` volání metody `RefreshCanExecutes`, který potom volá `ChangeCanExecute` pro obě `DigitCommand` a `ClearCommand`. To zajišťuje, že desetinné čárky a backspace tlačítka jsou povolené nebo zakázané podle aktuální pořadí zadaných číslic.
+Všechny `execute` volání metody `RefreshCanExecutes`, který pak volá `ChangeCanExecute` pro obě `DigitCommand` a `ClearCommand`. Tím se zajistí, že desetinné čárky a backspace tlačítka jsou povolené nebo zakázané v závislosti na aktuální pořadí zadaných číslic.
 
-## <a name="adding-commands-to-existing-views"></a>Přidání příkazů na existující zobrazení
+## <a name="adding-commands-to-existing-views"></a>Přidání příkazů pro stávající zobrazení
 
-Pokud chcete použít rozhraní řídicího se zobrazeními, které ji nepodporují, je možné použít chování Xamarin.Forms, která převede událost příkaz. To je popsána v článku [ **opakovaně použitelného EventToCommandBehavior**](~/xamarin-forms/app-fundamentals/behaviors/reusable/event-to-command-behavior.md).
+Pokud chcete použít se zobrazeními, s omezenou podporou řídicího rozhraní, je možné použít chování Xamarin.Forms, která převede událost do příkazu. Toto je popsáno v článku [ **opakovaně použitelného EventToCommandBehavior**](~/xamarin-forms/app-fundamentals/behaviors/reusable/event-to-command-behavior.md).
 
-## <a name="asynchronous-commanding-for-navigation-menus"></a>Asynchronní tvorba příkazů pro navigační nabídky
+## <a name="asynchronous-commanding-for-navigation-menus"></a>Asynchronní příkazů pro navigační nabídky
 
-Tvorba příkazů je vhodné pro implementace navigační nabídky, jako je například, že [ **ukázky vazby dat** ](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) programu sám sebe. Zde je součástí **MainPage.xaml**:
+Příkazů je vhodné pro implementaci navigační nabídky, jako je například, že [ **ukázky vazby dat** ](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) program sám. Tady je součástí **MainPage.xaml**:
 
 
 ```xaml
@@ -729,9 +729,9 @@ Tvorba příkazů je vhodné pro implementace navigační nabídky, jako je nap�
 </ContentPage>
 ```
 
-Při použití tvorba příkazů s XAML, `CommandParameter` vlastnosti jsou obvykle nastavené na řetězce. V takovém případě však použít příponu značek XAML tak, aby `CommandParameter` je typu `System.Type`.
+Při použití příkazů s XAML, `CommandParameter` vlastnosti jsou obvykle nastaveny na řetězce. V takovém případě však použít rozšíření značek XAML tak, aby `CommandParameter` je typu `System.Type`.
 
-Každý `Command` vlastnost je vázána na vlastnost s názvem `NavigateCommand`. Aby vlastnost je definována v souboru kódu na pozadí, **MainPage.xaml.cs**:
+Každý `Command` vlastnost je vázána na vlastnost s názvem `NavigateCommand`. Že je vlastnost definována v souboru kódu na pozadí **MainPage.xaml.cs**:
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -754,19 +754,19 @@ public partial class MainPage : ContentPage
 }
 ```
 
-Nastaví konstruktor `NavigateCommand` vlastnost, která má `execute` metoda, která vytvoří instanci `System.Type` parametr a poté přejde k němu. Protože `PushAsync` vyžaduje volání `await` operátor, `execute` metoda musí být označené jako o asynchronním. To je provedeno pomocí `async` – klíčové slovo před seznam parametrů.
+Sady konstruktoru `NavigateCommand` vlastnost `execute` metodu, která vytvoří instanci `System.Type` parametr a pak přejde k němu. Protože `PushAsync` volání vyžaduje `await` operátor, `execute` metoda musí být označených jako o asynchronním. Toho se dosahuje pomocí `async` – klíčové slovo před seznam parametrů.
 
 Konstruktor také nastaví `BindingContext` stránky na sebe sama tak, aby vazby odkazovat `NavigateCommand` v této třídě.
 
-Pořadí kód v tomto konstruktoru. Díky rozdíl: `InitializeComponent` volání způsobí, že XAML ho proto analyzovat, ale v tuto chvíli vytvoření vazby na vlastnost s názvem `NavigateCommand` nelze vyřešit, protože `BindingContext` je nastaven na `null`. Pokud `BindingContext` je nastavena v konstruktoru *před* `NavigateCommand` nastavena, pak vazby lze vyřešit při `BindingContext` nastavená, ale současně se `NavigateCommand` stále `null`. Nastavení `NavigateCommand` po `BindingContext` nebude mít žádný vliv na vazby, protože ke změně `NavigateCommand` není fire `PropertyChanged` událostí a vazbu nebude vědět, že `NavigateCommand` je nyní platný.
+Pořadí kódu v tomto konstruktoru různá: `InitializeComponent` volání způsobí, že XAML, který má být analyzován, ale v tuto chvíli vazbu na vlastnost s názvem `NavigateCommand` nelze zpracovat, protože `BindingContext` je nastavena na `null`. Pokud `BindingContext` je nastavena v konstruktoru *před* `NavigateCommand` je nastavena, pak vazby lze vyřešit při `BindingContext` nastavena, ale v tuto chvíli `NavigateCommand` je stále `null`. Nastavení `NavigateCommand` po `BindingContext` nebude mít žádný vliv na vazby, protože změna `NavigateCommand` neaktivuje `PropertyChanged` události a vazby nebude vědět, že `NavigateCommand` je platný.
 
-Obě nastavení `NavigateCommand` a `BindingContext` (v libovolném pořadí) před volání `InitializeComponent` bude fungovat, protože i komponent vazby jsou nastaveny, pokud analyzátor XAML nalezne definici vazby.
+Nastavení obě `NavigateCommand` a `BindingContext` (v libovolném pořadí) před voláním `InitializeComponent` bude fungovat, protože obě komponenty vazby jsou nastaveny při analyzátoru XAML setká s jeho definicí vazby.
 
-Datové vazby v některých případech může být složité, ale jako jste viděli v této série článků, jsou výkonný a flexibilní a pomůže výrazně organizace kódu oddělením základní logiku z uživatelského rozhraní.
+Datové vazby v některých případech může být velmi obtížné, ale jak už víte, v této sérii článků, jsou účinný a flexibilní a výrazně usnadňuje organizovat kód tak, že oddělíte logiku z uživatelského rozhraní.
 
 
 
 ## <a name="related-links"></a>Související odkazy
 
 - [Ukázky vazby dat (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
-- [Kapitola vazby dat z adresáře Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter18.md)
+- [Data vazby kapitola z knihy Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter18.md)

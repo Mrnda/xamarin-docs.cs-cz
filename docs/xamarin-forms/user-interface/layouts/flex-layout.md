@@ -1,6 +1,6 @@
 ---
 title: Xamarin.Forms FlexLayout
-description: Použijte FlexLayout překrývání nebo zabalení kolekce podřízené zobrazení.
+description: Použití FlexLayout překrývání nebo obtékání kolekci podřízené zobrazení.
 ms.prod: xamarin
 ms.assetid: 6A91EA70-268C-462C-AAAF-F8DA011403F8
 ms.technology: xamarin-forms
@@ -8,34 +8,34 @@ ms.custom: xamu-video
 author: charlespetzold
 ms.author: chape
 ms.date: 05/07/2018
-ms.openlocfilehash: 7585138cd6c33c2a5dc537ba28101a84e1c4b7ae
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: a6c1b0a4e0df1c25f595ca4eb53079c74b84972e
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "33921833"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998580"
 ---
 # <a name="the-xamarinforms-flexlayout"></a>Xamarin.Forms FlexLayout
 
-_Použijte FlexLayout překrývání nebo zabalení kolekce podřízené zobrazení._
+_Použití FlexLayout překrývání nebo obtékání kolekci podřízené zobrazení._
 
-Platformě Xamarin.Forms [ `FlexLayout` ](xref:Xamarin.Forms.FlexLayout) je nového v Xamarin.Forms verze 3.0. Je založena na CSS [modulu rozložení flexibilní pole](http://www.w3.org/TR/css-flexbox-1/), běžně označovaný jako _flexibilní rozložení_ nebo _flexibilního pole_, takže volat, protože obsahuje mnoho flexibilní možnosti uspořádat podřízené objekty v rámci rozložení.
+Xamarin.Forms [ `FlexLayout` ](xref:Xamarin.Forms.FlexLayout) je nového v Xamarin.Forms verze 3.0. Je založen na šabloně stylů CSS [flexibilní modul rozložení pole](http://www.w3.org/TR/css-flexbox-1/), běžně označované jako _flex rozložení_ nebo _poměr flexibilního pole_, proto volat, protože obsahuje mnoho flexibilních možností uspořádat podřízené objekty v rámci rozložení.
 
-`FlexLayout` je podobná platformě Xamarin.Forms [ `StackLayout` ](~/xamarin-forms/user-interface/layouts/stack-layout.md) v tom, že ho můžete uspořádat podřízené vodorovně a svisle ve vrstvách. Ale `FlexLayout` se taky může zabalení své podřízené objekty, pokud jsou moc, aby se vešla do jednoho řádku nebo sloupce, a také obsahuje mnoho možností pro orientaci, zarovnání a přizpůsobení do různých velikost obrazovky.
+`FlexLayout` je podobný Xamarin.Forms [ `StackLayout` ](~/xamarin-forms/user-interface/layouts/stack-layout.md) v tom, že ho můžete uspořádat podřízené vodorovně a svisle v zásobníku. Ale `FlexLayout` se taky může obtékání své podřízené objekty, pokud existuje příliš mnoho, aby se vešel do jednoho řádku nebo sloupce a obsahuje také mnoho možností pro orientaci, zarovnání a přizpůsobování různé velikosti obrazovky.
 
-`FlexLayout` odvozená z [ `Layout<View>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/) a dědí [ `Children` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout%3CT%3E.Children/) vlastnost typu `IList<View>`.
+`FlexLayout` je odvozen od [ `Layout<View>` ](xref:Xamarin.Forms.Layout`1) a dědí [ `Children` ](xref:Xamarin.Forms.Layout`1.Children) vlastnost typu `IList<View>`.
 
-`FlexLayout` Definuje šesti veřejné vazbu vlastnosti a pět přidružené vazbu vlastnosti, které mají vliv velikost, orientaci a zarovnání podřízených elementů. (Pokud nejste obeznámeni s připojené vlastnosti vazbu, najdete v článku  **[přidružené vlastnosti](~/xamarin-forms/xaml/attached-properties.md)**.) Tyto vlastnosti jsou podrobně popsány v části níže na **[vazbu vlastnosti podrobně](#bindable-properties)** a  **[přidružené vazbu vlastnosti podrobně](#attached-properties)**. Však v tomto článku začíná sekce u některých **[obvyklé scénáře použití](#common-scenarios)** z `FlexLayout` , který popisuje mnoho z těchto vlastností neformálně. Na konci článku uvidíte postup kombinace `FlexLayout` s [šablony stylů CSS](~/xamarin-forms/user-interface/styles/css/index.md).
+`FlexLayout` definuje šest veřejné vlastnosti umožňující vazbu a pět připojené vlastnosti umožňující vazbu, které mají vliv na velikost, orientace a zarovnání podřízených elementů. (Pokud nejste obeznámeni s připojené vlastnosti umožňující vazbu, najdete v článku  **[připojených vlastností](~/xamarin-forms/xaml/attached-properties.md)**.) Tyto vlastnosti jsou podrobně popsány v níže uvedených částech na **[vlastnosti umožňující vazbu podrobně](#bindable-properties)** a  **[připojené vlastnosti umožňující vazbu podrobně](#attached-properties)**. Ale v tomto článku začíná část věnovanou některé **[obvyklé scénáře použití](#common-scenarios)** z `FlexLayout` , který popisuje mnoho z těchto vlastností neformálně. Na konci článku, uvidíte, jak kombinovat `FlexLayout` s [šablony stylů CSS](~/xamarin-forms/user-interface/styles/css/index.md).
 
 <a name="common-scenarios" />
 
 ## <a name="common-usage-scenarios"></a>Obvyklé scénáře použití
 
-**[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** ukázkový program obsahuje několik stránky tohoto demonstate některé běžné použití `FlexLayout` a můžete experimentovat s jeho vlastnosti.
+**[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** ukázkový program obsahuje několik stránek tento popisují některé běžné použití `FlexLayout` a umožňuje vyzkoušet její vlastnosti.
 
 ### <a name="using-flexlayout-for-a-simple-stack"></a>Použití FlexLayout pro jednoduché zásobníku
 
-**Jednoduché zásobníku** stránka ukazuje, jak `FlexLayout` můžete nahradit pro `StackLayout` , ale s jednodušší značek. Všechno, co v této ukázce je definována v stránky XAML. `FlexLayout` Obsahuje čtyři podřízené položky:
+**Jednoduché zásobníku** stránce ukazuje jak `FlexLayout` můžete nahradit `StackLayout` , ale s jednodušší značek. Všechno, co je v tomto příkladu je definována v stránky XAML. `FlexLayout` Obsahuje čtyři podřízené položky:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -62,17 +62,17 @@ Platformě Xamarin.Forms [ `FlexLayout` ](xref:Xamarin.Forms.FlexLayout) je nov�
 
 Tady je této stránce se systémem iOS, Android a univerzální platformu Windows:
 
-[![Jednoduché zásobníku stránky](flex-layout-images/SimpleStack.png "jednoduché zásobníku stránky")](flex-layout-images/SimpleStack-Large.png#lightbox)
+[![Stack – jednoduché stránky](flex-layout-images/SimpleStack.png "jednoduché zásobníku stránky")](flex-layout-images/SimpleStack-Large.png#lightbox)
 
-Tři vlastnosti `FlexLayout` se zobrazují v **SimpleStackPage.xaml** souboru:
+Tři vlastnosti `FlexLayout` jsou uvedeny v **SimpleStackPage.xaml** souboru:
 
-- [ `Direction` ](xref:Xamarin.Forms.FlexLayout.Direction) Je nastavena na hodnotu [ `FlexDirection` ](xref:Xamarin.Forms.FlexDirection) výčtu. Výchozí hodnota je `Row`. Nastavení vlastnosti na `Column` způsobí, že podřízené objekty daného `FlexLayout` musí být uspořádány do jednoho sloupce položek.
+- [ `Direction` ](xref:Xamarin.Forms.FlexLayout.Direction) Je nastavena na hodnotu [ `FlexDirection` ](xref:Xamarin.Forms.FlexDirection) výčtu. Výchozí hodnota je `Row`. Nastavení vlastnosti na `Column` způsobí, že podřízených položek `FlexLayout` uspořádány v jednom sloupci položek.
 
-    Když položky v `FlexLayout` jsou uspořádány ve sloupci a `FlexLayout` říká, že je mít svislé _hlavní ose_ a vodorovných _křížové osy_.
+    Při položky v `FlexLayout` jsou uspořádány ve sloupci a `FlexLayout` se říká, že mají svislé _hlavní ose_ a vodorovnou _křížové ose_.
 
-- [ `AlignItems` ](xref:Xamarin.Forms.FlexLayout.AlignItems) Vlastnost je typu [ `FlexAlignItems` ](xref:Xamarin.Forms.FlexAlignItems) a určuje, jak jsou položky zarovnávat na křížové ose. `Center` Možnost způsobí, že každá položka být vodorovně zarovnaný na střed.
+- [ `AlignItems` ](xref:Xamarin.Forms.FlexLayout.AlignItems) Vlastnost je typu [ `FlexAlignItems` ](xref:Xamarin.Forms.FlexAlignItems) a určuje, jak jsou zarovnány položky na křížové ose. `Center` Možnost způsobí, že každá položka vodorovně na střed.
 
-    Pokud jste používali `StackLayout` ne `FlexLayout` pro tuto úlohu by všechny položky center přiřazením `HorizontalOptions` vlastnost každé položky k `Center`. `HorizontalOptions` Vlastnost nefunguje pro podřízené objekty `FlexLayout`, ale jedné `AlignItems` vlastnost provede stejným cílem. Pokud potřebujete, můžete použít `AlignSelf` přidružená vlastnost vazbu k přepsání `AlignItems` vlastnost pro jednotlivé položky:
+    Pokud jste používali `StackLayout` spíše než `FlexLayout` pro tuto úlohu by všechny položky center pomocí přiřazení `HorizontalOptions` vlastnosti každé položky na `Center`. `HorizontalOptions` Vlastnost nefunguje pro podřízené objekty `FlexLayout`, ale jedné `AlignItems` vlastnost provede stejným cílem. Pokud potřebujete, můžete použít `AlignSelf` přidružená vlastnost podporující vazby přepsání `AlignItems` vlastnosti pro jednotlivé položky:
 
     ```xaml
     <Label Text="FlexLayout in Action"
@@ -80,17 +80,17 @@ Tři vlastnosti `FlexLayout` se zobrazují v **SimpleStackPage.xaml** souboru:
            FlexLayout.AlignSelf="Start" />
     ```
 
-    S touto změnou, tato `Label` je nastavený na levém okraji `FlexLayout` po pořadí čtení zleva doprava.
+    Díky této změně tohohle `Label` je umístěn na levém okraji `FlexLayout` po pořadí čtení zleva doprava.
 
-- [ `JustifyContent` ](xref:Xamarin.Forms.FlexLayout.JustifyContent) Vlastnost je typu [ `FlexJustify` ](xref:Xamarin.Forms.FlexJustify)a určuje, jak jsou uspořádány položky na hlavní ose. `SpaceEvenly` Možnost přiděluje všechny velikost zbývajícího svislý prostor rovnoměrně mezi všechny položky a nad první položka a pod poslední položky.
+- [ `JustifyContent` ](xref:Xamarin.Forms.FlexLayout.JustifyContent) Vlastnost je typu [ `FlexJustify` ](xref:Xamarin.Forms.FlexJustify)a určuje, jak jsou uspořádány položky na hlavní ose. `SpaceEvenly` Možnost přidělí všechny zbylé svislé mezery rovnoměrně mezi všechny položky a výše první položky a pod poslední položkou.
 
-    Pokud jste používali `StackLayout`, je třeba přiřadit `VerticalOptions` vlastnost každé položky k `CenterAndExpand` k dosažení podobný vliv. Ale `CenterAndExpand` možnost by přidělit dvakrát tolik místa mezi každou položku než před první a za poslední položku. Mohou napodobovat `CenterAndExpand` možnost `VerticalOptions` nastavením `JustifyContent` vlastnost `FlexLayout` k `SpaceAround`.
+    Pokud jste používali `StackLayout`, je třeba přiřadit `VerticalOptions` vlastnosti každé položky na `CenterAndExpand` dosáhnout podobné vliv. Ale `CenterAndExpand` možnost by přidělit dvakrát tolik místa mezi jednotlivými položkami než před první položky a za poslední položky. Mohou napodobovat `CenterAndExpand` možnost `VerticalOptions` nastavením `JustifyContent` vlastnost `FlexLayout` k `SpaceAround`.
 
-Tyto `FlexLayout` vlastnosti jsou podrobněji popsána v části **[vazbu vlastnosti podrobně](#bindable-properties)** níže.
+Tyto `FlexLayout` vlastnosti jsou podrobně popsány v další části **[vlastnosti umožňující vazbu podrobně](#bindable-properties)** níže.
 
-### <a name="using-flexlayout-for-wrapping-items"></a>Použití FlexLayout pro zabalení položky
+### <a name="using-flexlayout-for-wrapping-items"></a>Použití FlexLayout pro obtékání položky
 
-**Fotografií zabalení** stránky **[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** příklad znázorňuje jak `FlexLayout` může obtékat své podřízené objekty další řádky nebo sloupce. Vytvoří soubor XAML `FlexLayout` a přiřadí dvě vlastnosti:
+**Fotografii obtékání** stránku **[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** Ukázka předvádí, jak `FlexLayout` můžete zalomit své podřízené objekty další řádky nebo sloupce. Vytvoří instanci souboru XAML `FlexLayout` a přiřadí dvě vlastnosti:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -111,15 +111,15 @@ Tyto `FlexLayout` vlastnosti jsou podrobněji popsána v části **[vazbu vlastn
 </ContentPage>
 ```
 
-`Direction` Vlastnost tohoto objektu `FlexLayout` není nastavena, takže má výchozí nastavení `Row`, což znamená, že podřízené objekty jsou uspořádány do řádků a na hlavní ose je vodorovné.
+`Direction` Vlastnosti tohoto `FlexLayout` není nastavená, takže má ve výchozím nastavení `Row`, což znamená, že podřízené objekty jsou uspořádány do řádků a na hlavní ose je vodorovný.
 
-[ `Wrap` ](xref:Xamarin.Forms.FlexLayout.Wrap) Vlastnost je typ výčtu [ `FlexWrap` ](xref:Xamarin.Forms.FlexWrap). Pokud existuje příliš mnoho položek pro řádek, potom nastavení této vlastnosti způsobí, že položky, které chcete zabalit na další řádek.
+[ `Wrap` ](xref:Xamarin.Forms.FlexLayout.Wrap) Vlastnost je výčtového typu [ `FlexWrap` ](xref:Xamarin.Forms.FlexWrap). Pokud existuje příliš mnoho položek vejít na řádek, potom nastavení této vlastnosti způsobí, že se položky, které chcete zabalit do dalšího řádku.
 
-Všimněte si, že `FlexLayout` je podřízená `ScrollView`. Pokud jsou moc velký počet řádků, který má velikost stránky, pak se `ScrollView` má výchozí `Orientation` vlastnost `Vertical` a umožňuje svislé posouvání.
+Všimněte si, `FlexLayout` je podřízeným prvkem `ScrollView`. Pokud existuje příliš mnoho řádků vejít na stránku, pak bude `ScrollView` má výchozí `Orientation` vlastnost `Vertical` a umožňuje svislé posouvání.
 
-`JustifyContent` Vlastnost přiděluje velikost zbývajícího místa na hlavní ose (vodorovnou osu) tak, aby každá položka je obklopená stejné množství volného místa.
+`JustifyContent` Vlastnost přiděluje velikost zbývajícího místa na hlavní ose (na vodorovné ose) tak, aby každá položka je obklopená stejné množství volného místa.
 
-Kolekce fotografií ukázka přistupuje k souboru kódu na pozadí a přidá je do `Children` kolekce `FlexLayout`:
+Přistupuje k kolekce fotografií ukázkový soubor kódu na pozadí a přidá je do `Children` kolekce `FlexLayout`:
 
 ```csharp
 public partial class PhotoWrappingPage : ContentPage
@@ -187,15 +187,15 @@ public partial class PhotoWrappingPage : ContentPage
 }
 ```
 
-Tady je programy spuštěné na tři platformách, postupně přesunut oblasti shora dolů:
+Tady je program běžící na třech platformách, postupně posunul shora dolů:
 
-[![Stránka zabalení fotografie](flex-layout-images/PhotoWrapping.png "stránce fotografií zabalení")](flex-layout-images/PhotoWrapping-Large.png#lightbox)
+[![Stránka zabalení fotografii](flex-layout-images/PhotoWrapping.png "stránce zabalení fotografií")](flex-layout-images/PhotoWrapping-Large.png#lightbox)
 
 ### <a name="page-layout-with-flexlayout"></a>Rozložení stránky s FlexLayout
 
-V návrhu webu názvem je standardní rozložení [ _Svatý grail_ ](https://en.wikipedia.org/wiki/Holy_grail_(web_design)) vzhledem k tomu, že je rozložení formátu, který je velmi žádoucí, ale často těžko mějte na paměti s bílků. Rozložení se skládá z hlavičky v horní části stránky a zápatí v dolní části, jak rozšíření na celou šířku stránky. Zabírá center stránky je hlavní obsah, ale často s sloupcovém nabídce nalevo od obsahu a doplňující informace (někdy nazývané _z produkce_ oblasti) vpravo. [Část 5.4.1 specifikace CSS flexibilní pole rozložení](http://www.w3.org/TR/css-flexbox-1/#order-accessibility) popisuje, jak může být dosaženo rozložení Svatý grail flexibilního pole.
+Je v webových stránek, které volá standardní rozložení [ _nám omegou_ ](https://en.wikipedia.org/wiki/Holy_grail_(web_design)) protože je rozložení formátu, který je zajímavá, ale často obtížné realizovat s dokonalé. Rozložení se skládá z záhlaví v horní části stránky a přidáme zápatí v dolní části i rozšíření na celou šířku stránky. Zabírá center stránky je hlavním obsahem, ale často a obsahují úložiště se sloupcovou strukturou nabídce nalevo od obsahu a doplňující informace (říká se jim _jste si poznamenali_ oblasti) na pravé straně. [Části 5.4.1 specifikace šablony stylů CSS flexibilní pole rozložení](http://www.w3.org/TR/css-flexbox-1/#order-accessibility) popisuje, jak se dají realizovat nám omegou rozložení s poměr flexibilního pole.
 
-**Rozložení Svatý Grail** stránky **[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** ukázka představuje jednoduchou implementaci toto rozložení pomocí jednoho `FlexLayout` vnořené v jiném. Protože tato stránka je navržený pro telefon v režimu na výšku, jsou 50 pixelů pouze oblasti vlevo a vpravo od oblast obsahu:
+**Nám Omegou rozložení** stránku **[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** příklad ukazuje jednoduchý provádění toto rozložení pomocí jednoho `FlexLayout` vnořeny v jiném. Protože tato stránka slouží k telefonu na výšku v režimu, je 50 pixelů na šířku pouze oblasti vlevo a vpravo od oblasti obsahu:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -242,33 +242,33 @@ V návrhu webu názvem je standardní rozložení [ _Svatý grail_ ](https://en.
 </ContentPage>
 ```
 
-Zde je spuštěn na tři platformy:
+Tady je spuštěn na třech platformách:
 
-[![Stránka rozložení Svatý Grail](flex-layout-images/HolyGrailLayout.png "ke stránce rozložení Svatý Grail")](flex-layout-images/HolyGrailLayout-Large.png#lightbox)
+[![Stránka rozložení nám Omegou](flex-layout-images/HolyGrailLayout.png "nám Omegou stránku rozložení")](flex-layout-images/HolyGrailLayout-Large.png#lightbox)
 
-Oblasti navigační a vyhraďte se vykreslují `BoxView` vlevo a vpravo.
+Vykreslení oblasti navigace a aside s `BoxView` vlevo a vpravo.
 
-První `FlexLayout` v XAML soubor má svislé osy. hlavní a obsahuje tři podřízené položky uspořádané ve sloupci. Toto jsou záhlaví, text a zápatí stránky. Vnořeného `FlexLayout` má hlavní vodorovnou osu s tří podřízených uspořádány v řadě.
+První `FlexLayout` v XAML soubor má svislou osu hlavní a obsahuje tři podřízené objekty uspořádány ve sloupci. Toto jsou záhlaví, textu stránky a zápatí. Ve vnořeném `FlexLayout` má hlavní vodorovnou osu s tři podřízené objekty uspořádány v řadě.
 
-V tento program je ukázán tři přidružené vazbu vlastnosti:
+Tři připojené vlastnosti umožňující vazbu je ukázán v rámci tohoto programu:
 
-- `Order` Připojené vazbu vlastnost nastavena na prvním `BoxView`. Tato vlastnost je celočíselná a výchozí hodnotu 0. Chcete-li změnit pořadí rozložení můžete tuto vlastnost. Vývojáři obvykle raději obsahu stránce se zobrazí v značek před navigační položky a z produkce položky. Nastavení `Order` vlastnost v prvním `BoxView` na hodnotu menší než uzly z jiných na stejné úrovni způsobuje, že se zobrazí jako první položka v řádku. Podobně můžete zajistit, že položka je uvedena poslední nastavením `Order` vlastnost na hodnotu větší než uzly na stejné úrovni.
+- `Order` Připojená vlastnost podporující vazby je nastavena na první `BoxView`. Tato vlastnost je celé číslo s výchozí hodnotou 0. Chcete-li změnit pořadí rozložení můžete použít tuto vlastnost. Vývojáři obvykle raději obsah na stránce se zobrazí v kódu před položky navigačního a jste si poznamenali položky. Nastavení `Order` vlastnost na první `BoxView` na hodnotu menší než ostatní na stejné úrovni způsobí, že se má objevit jako první položky na řádku. Podobně můžete zajistit, že položka zobrazuje poslední tak, že nastavíte `Order` vlastnost na hodnotu větší než na stejné úrovni.
 
-- `Basis` Připojené vazbu vlastnost nastavena na dva `BoxView` položky jim dát šířka 50 pixelů. Tato vlastnost je typu `FlexBasis`, strukturu, která definuje statickou vlastnost typu `FlexBasis` s názvem `Auto`, který je výchozí. Můžete použít `Basis` určete velikost pixelu nebo procentuální hodnotu, která určuje, kolik místa zabírá položky na hlavní ose. Je volána _základ_ protože určuje velikost položky, je základem všechny následné rozložení.
+- `Basis` Připojená vlastnost podporující vazby je nastavena na dvou `BoxView` položky, které chcete uživatelům umožnit šířka 50 pixelů. Tato vlastnost je typu `FlexBasis`, strukturu, která definuje statickou vlastnost typu `FlexBasis` s názvem `Auto`, což je výchozí hodnota. Můžete použít `Basis` určit velikost v pixelech nebo procenta, který označuje, kolik místa zabírá položky na hlavní ose. Je volána _základ_ protože určuje velikost položky, která je základem všechny následné rozložení.
 
-- `Grow` Je nastavena na vnořeného `Layout` a na `Label` podřízené představující obsah. Tato vlastnost je typu `float` a výchozí hodnota je 0. Pokud nastavíte hodnotu kladnou hodnotu, veškerý zbývající prostor na hlavní ose je přidělen, že položka a stejné úrovně se kladné hodnoty `Grow`. Místo je přidělena úměrně hodnotám poněkud jako hvězdičkami specifikace v `Grid`.
+- `Grow` Je nastavena na ve vnořeném `Layout` a na `Label` podřízené představující obsah. Tato vlastnost je typu `float` a má výchozí hodnotu 0. Pokud je nastavený na kladnou hodnotu, veškerý zbývající prostor na hlavní ose přidělen na danou položku a na stejné úrovně se kladné hodnoty `Grow`. Místo je přidělen proporcionálně hodnoty, o něco jako specifikaci hvězdičky v `Grid`.
 
-    První `Grow` je připojená vlastnost nastavená na vnořeného `FlexLayout`, která udává které tento `FlexLayout` je tak, aby zabíral všechny nepoužívané svislý prostor v rámci vnější `FlexLayout`. Druhý `Grow` je připojená vlastnost nastavená na `Label` představující obsah, což označuje, že tento obsah tak, aby zabíral všechny nepoužívané vodorovný prostor v rámci vnitřní `FlexLayout`.
+    První `Grow` připojená vlastnost nastavená na ve vnořeném `FlexLayout`, která udává, že tento `FlexLayout` je tak, aby obsadily všechny nepoužívané svislé mezery v rámci vnějšího `FlexLayout`. Druhá `Grow` připojená vlastnost nastavená na `Label` představující obsah označující, že tento obsah je tak, aby obsadily všechny nepoužívané mezer v rámci vnitřního `FlexLayout`.
 
-    K dispozici je také podobná `Shrink` připojené vazbu vlastnosti, která můžete použít, když velikost podřízené objekty překračuje velikost `FlexLayout` ale zabalení není žádoucí.
+    K dispozici je také podobná `Shrink` připojená vlastnost s vazbou, který vám pomůže při velikost podřízené překračuje velikost `FlexLayout` ale zabalení není žádoucí.
 
 ### <a name="catalog-items-with-flexlayout"></a>Položky katalogu s FlexLayout
 
-**Položky katalogu** stránku **[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** ukázka je podobná [Příklad 1 v části 1.1 specifikace CSS flexibilní rozložení pole](http://www.w3.org/TR/css-flexbox-1/#overview)s tím rozdílem, že se zobrazí vodorovně posouvatelným řadu obrázky a popisy tři opice:
+**Položky katalogu** stránku **[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** vzorek je podobný [Příklad 1 v části 1.1 specifikace šablony stylů CSS Flex rozložení pole](http://www.w3.org/TR/css-flexbox-1/#overview)s tím rozdílem, že zobrazuje vodorovně posouvatelným řadu obrázky a popisy tři opice:
 
-[![Položky katalogu stránky](flex-layout-images/CatalogItems.png "stránku položek katalogu")](flex-layout-images/CatalogItems-Large.png#lightbox)
+[![Stránka položek katalogu](flex-layout-images/CatalogItems.png "stránka položek katalogu")](flex-layout-images/CatalogItems-Large.png#lightbox)
 
-Každý z tři opice `FlexLayout` obsažené v `Frame` , je zadaná explicitní výška a šířka a která je také podřízenou větší `FlexLayout`. V tomto souboru XAML většinu vlastností `FlexLayout` podřízené objekty jsou určené v styly, ale jeden z nich je implicitní styl:
+Všechny tři opice jsou `FlexLayout` součástí `Frame` , který je uveden explicitní výšku a šířku a který je také podřízený větší `FlexLayout`. V tomto souboru XAML, většinu vlastností `FlexLayout` podřízené objekty jsou určené v styly všechny kromě jednoho z nich je implicitní styl:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -367,7 +367,7 @@ Každý z tři opice `FlexLayout` obsažené v `Frame` , je zadaná explicitní 
 </ContentPage>
 ```
 
-Implicitní styl `Image` zahrnuje nastavení dva připojené vlastnosti vazbu `Flexlayout`:
+Implicitní styl `Image` zahrnuje nastavení dvou připojené vlastnosti vazbu `Flexlayout`:
 
 ```xaml
 <Style TargetType="Image">
@@ -376,24 +376,24 @@ Implicitní styl `Image` zahrnuje nastavení dva připojené vlastnosti vazbu `F
 </Style>
 ```
 
-`Order` Nastavení &ndash;1 znamená, že `Image` element, který se má zobrazit nejprve v každé vnořeného `FlexLayout` zobrazení bez ohledu na jeho polohu v kolekci podřízených prvků. `AlignSelf` Vlastnost `Center` způsobí, že `Image` být zarovnaný na střed v rámci `FlexLayout`. Přepíše nastavení jazyka `AlignItems` vlastnosti, která má výchozí hodnotu z `Stretch`znamená, `Label` a `Button` podřízené objekty jsou roztažen tak, aby na celou šířku `FlexLayout`.
+`Order` Nastavení &ndash;1 znamená, že `Image` element zobrazen jako první v každém vnořeného `FlexLayout` zobrazeních bez ohledu na jeho umístění v rámci kolekce podřízené položky. `AlignSelf` Vlastnost `Center` způsobí, že `Image` být zarovnaný na střed v rámci `FlexLayout`. Tím se přepíše nastavení jazyka `AlignItems` vlastnost, která má výchozí hodnotu z `Stretch`, to znamená, který `Label` a `Button` podřízené objekty jsou roztažená do celou šířku `FlexLayout`.
 
-V každém ze tří `FlexLayout` zobrazení, prázdné `Label` předchází `Button`, ale má `Grow` nastavení 1. To znamená, že všechny velmi svislý prostor je přidělen na tomto prázdné `Label`, které efektivně nabízených oznámení `Button` dolů.
+V každé ze tří `FlexLayout` zobrazení, prázdnou hodnotu `Label` předchází `Button`, ale nemá `Grow` nastavení z 1. To znamená, že všechny velmi svislém místě je přidělen toto prázdné `Label`, což účinně nabízených oznámení `Button` do dolní části.
 
 <a name="bindable-properties" />
 
-## <a name="the-bindable-properties-in-detail"></a>Vlastnosti vazbu podrobně
+## <a name="the-bindable-properties-in-detail"></a>Vlastnosti umožňující vazbu podrobně
 
-Teď, když jste viděli některé běžné aplikace `FlexLayout`, vlastnosti `FlexLayout` může být zkoumána podrobněji. 
-`FlexLayout` Definuje šesti vazbu vlastnosti, které nastavíte `FlexLayout` samostatně, buď v kódu nebo v jazyce XAML, orientatin řízení a zarovnání. (Jednu z těchto vlastností [ `Position` ](xref:Xamarin.Forms.FlexLayout.Position), není popsaná v tomto článku.)
+Teď, když jste viděli některé běžné aplikace `FlexLayout`, vlastnosti `FlexLayout` můžete prozkoumat podrobněji. 
+`FlexLayout` definuje šest umožňujících vazbu vlastnosti, které jste `FlexLayout` samostatně, buď v kódu nebo XAML orientatin ovládacího prvku a zarovnání. (Jednu z těchto vlastností [ `Position` ](xref:Xamarin.Forms.FlexLayout.Position), není popsaná v tomto článku.)
 
-Můžete experimentovat s pěti zbývající vlastnosti vazbu pomocí **experimentovat** stránky **[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** ukázka. Tato stránka umožňuje přidat nebo odebrat podřízené objekty ve `FlexLayout` a nastavit kombinace pět vazbu vlastnosti. Všechny podřízené objekty daného `FlexLayout` jsou `Label` zobrazení různých barev a velikostí, s `Text` vlastností nastavenou na počet odpovídající pozici v `Children` kolekce.
+Můžete experimentovat s pěti zbývající vlastnosti umožňující vazbu použitím **experimentovat** stránku **[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** vzorku. Tato stránka umožňuje přidat nebo odebrat podřízené položky z `FlexLayout` a nastavit kombinací pět vlastnosti umožňující vazbu. Všechny podřízené objekty `FlexLayout` jsou `Label` zobrazení různých barev a velikostí, se `Text` nastavenou na číslo odpovídající jeho umístění v `Children` kolekce.
 
 Při spuštění programu až pět `Picker` zobrazení zobrazí výchozí hodnoty těchto pět `FlexLayout` vlastnosti. `FlexLayout` Směrem k dolnímu okraji obrazovky obsahuje tři podřízené položky:
 
-[![Stránce experimentu: Výchozí](flex-layout-images/ExperimentDefault.png "stránce experimentu - výchozí")](flex-layout-images/ExperimentDefault-Large.png#lightbox)
+[![Na stránce experimentu: Výchozí](flex-layout-images/ExperimentDefault.png "stránce experimentu – výchozí")](flex-layout-images/ExperimentDefault-Large.png#lightbox)
 
-Každý z `Label` zobrazení má šedé pozadí zobrazující místo přidělené který `Label` v rámci `FlexLayout`. Pozadí `FlexLayout` sám o sobě představuje Alice Blue. S výjimkou málo okraje v levém dolním a pravém zabírá oblasti celý dolní části stránky.
+Každá z `Label` šedé pozadí, který zobrazuje místo přidělené, který obsahuje zobrazení `Label` v rámci `FlexLayout`. Na pozadí `FlexLayout` sám o sobě představuje modravá. S výjimkou trochu okraj na levou a pravou zabírá celé dolní části stránky.
 
 <a name="direction" />
 
@@ -402,33 +402,33 @@ Každý z `Label` zobrazení má šedé pozadí zobrazující místo přidělen�
 [ `Direction` ](xref:Xamarin.Forms.FlexLayout.Direction) Vlastnost je typu [ `FlexDirection` ](xref:Xamarin.Forms.FlexDirection), výčet s čtyři členy:
 
 - `Column`
-- `ColumnReverse` (nebo "sloupec zpětného" v jazyce XAML)
-- `Row`, výchozí
-- `RowReverse` (nebo "řádek zpětného" v jazyce XAML)
+- `ColumnReverse` (nebo "sloupce reverse" v XAML)
+- `Row`, výchozí hodnota
+- `RowReverse` (nebo "řádku reverse" v XAML)
 
-V jazyce XAML můžete zadat hodnotu této vlastnosti pomocí názvy členů výčtu na malá písmena, velká písmena, nebo smíšeném případu, nebo můžete použít dva další řetězce, které jsou uvedené v závorkách, které jsou stejné jako indikátory šablon stylů CSS. ("Sloupec zpětného" a "řádek zpětného" řetězce jsou definovány v [ `FlexDirectionTypeConverter` ](xref:Xamarin.Forms.FlexDirectionTypeConverter) třída používaná analyzátorem jazyka XAML.)
+V XAML můžete zadat hodnotu této vlastnosti pomocí názvy členů výčtu na malá písmena, velká písmena, nebo smíšené případ, nebo můžete použít dva další řetězce, uvedené v závorkách, které se shodují s indikátory šablon stylů CSS. (Řetězce "obráceně sloupci" a "řádek zpětného" jsou definovány v [ `FlexDirectionTypeConverter` ](xref:Xamarin.Forms.FlexDirectionTypeConverter) třídy používané analyzátoru XAML.)
 
-Tady je **experimentu** stránky zobrazující (zleva doprava), `Row` směr, `Column` směr, a `ColumnReverse` směr:
+Tady je **Experiment** stránky zobrazující (zleva doprava), `Row` směr, `Column` směr, a `ColumnReverse` směr:
 
-[![Stránce experimentu: Směr](flex-layout-images/ExperimentDirection.png "stránce experimentu - směr")](flex-layout-images/ExperimentDirection-Large.png#lightbox)
+[![Na stránce experimentu: Směr](flex-layout-images/ExperimentDirection.png "stránce experimentu - směr")](flex-layout-images/ExperimentDirection-Large.png#lightbox)
 
-Všimněte si, že pro `Reverse` možnosti položky se spustí v pravé nebo dolní.
+Všimněte si, že pro `Reverse` možnosti, položky se spustí v pravé nebo dolní.
 
 <a name="wrap" />
 
-### <a name="the-wrap-property"></a>Vlastnost Wrap
+### <a name="the-wrap-property"></a>Vlastnost zalamování řádků
 
-[ `Wrap` ](xref:Xamarin.Forms.FlexLayout.Wrap) Vlastnost je typu [ `FlexWrap` ](xref:Xamarin.Forms.FlexWrap), výčet se tři členy:
+[ `Wrap` ](xref:Xamarin.Forms.FlexLayout.Wrap) Vlastnost je typu [ `FlexWrap` ](xref:Xamarin.Forms.FlexWrap), výčet pomocí tří členů:
 
-- `NoWrap`, výchozí
+- `NoWrap`, výchozí hodnota
 - `Wrap`
-- `Reverse` (nebo "wrap zpětného" v jazyce XAML)
+- `Reverse` (nebo "wrap-reverse" v XAML)
 
-Zleva doprava, tyto obrazovky zobrazit `NoWrap`, `Wrap` a `Reverse` možnosti pro děti 12:
+Zleva doprava, tyto obrazovky zobrazit `NoWrap`, `Wrap` a `Reverse` možností pro děti 12:
 
-[![Stránce experimentu: Zabalení](flex-layout-images/ExperimentWrap.png "stránce experimentu - zabalení")](flex-layout-images/ExperimentWrap-Large.png#lightbox)
+[![Na stránce experimentu: Zabalení](flex-layout-images/ExperimentWrap.png "stránce experimentu – obtékání")](flex-layout-images/ExperimentWrap-Large.png#lightbox)
 
-Když `Wrap` je nastavena na `NoWrap` je omezené na hlavní ose (stejně jako tento program) a na hlavní ose není široký nebo dostatečně vysoký, aby vyhovovaly všechny podřízené objekty, `FlexLayout` zmenšit položek, jako snímek iOS se pokusí ukazuje. Můžete řídit shrinkness položek s [ `Shrink` ](#shrink) připojené vazbu vlastnosti.
+Když `Wrap` je nastavena na `NoWrap` a na hlavní ose je omezená (stejně jako v tomto programu) a na hlavní ose není široký nebo dostatečně vysoký, aby všechny podřízené objekty, `FlexLayout` zmenšete položky, jako na snímku obrazovky pro iOS se pokusí ukazuje. Můžete řídit shrinkness položky s [ `Shrink` ](#shrink) přidružená vlastnost podporující vazby.
 
 <a name="justify-content" />
 
@@ -436,18 +436,18 @@ Když `Wrap` je nastavena na `NoWrap` je omezené na hlavní ose (stejně jako t
 
 [ `JustifyContent` ](xref:Xamarin.Forms.FlexLayout.JustifyContent) Vlastnost je typu [ `FlexJustify` ](xref:Xamarin.Forms.FlexJustify), výčet se šesti členy:
 
-- `Start` (nebo "flex-start" v jazyce XAML), výchozí
+- `Start` (nebo "flex-start" v XAML), výchozí hodnota
 - `Center`
-- `End` (nebo "flex-end" v jazyce XAML)
-- `SpaceBetween` (nebo "místo mezi" v jazyce XAML)
-- `SpaceAround` (nebo "místo kolem" v jazyce XAML)
+- `End` (nebo "flex-end" v XAML)
+- `SpaceBetween` (nebo "místo mezi" v XAML)
+- `SpaceAround` (nebo "místo around" v XAML)
 - `SpaceEvenly`
 
-Tato vlastnost určuje, jak jsou rozloženy položky na hlavní ose, což je vodorovnou osu v tomto příkladu:
+Tato vlastnost určuje, jak jsou položky rozloženy na hlavní ose, který je na vodorovné ose v tomto příkladu:
 
-[![Stránce experimentu: Justify obsahu](flex-layout-images/ExperimentJustifyContent.png "stránce experimentu - Justify obsahu")](flex-layout-images/ExperimentJustifyContent-Large.png#lightbox)
+[![Na stránce experimentu: Zarovnat obsah](flex-layout-images/ExperimentJustifyContent.png "stránce experimentu - zarovnání obsahu")](flex-layout-images/ExperimentJustifyContent-Large.png#lightbox)
 
-Všechny tři snímcích obrazovky `Wrap` je nastavena na `Wrap`. `Start` Výchozí je uveden v předchozím snímku obrazovky Android. Na iOS snímku obrazovky tady vidíte `Center` možnost: všechny položky přesunou do centra. Tři další možnosti počínaje slovo `Space` přidělit místo navíc není obsazena položky. `SpaceBetween` přiděluje místo rovnoměrně mezi položkami; `SpaceAround` PUT roven prostoru kolem každou položku, zatímco `SpaceEvenly` PUT roven prostoru mezi každou položku a před první a po poslední položky na řádek.
+Všechny tři snímcích obrazovky `Wrap` je nastavena na `Wrap`. `Start` Výchozí je uveden v předchozím snímku obrazovky s Androidem. Snímek obrazovky s Iosem zde ukazuje `Center` možnost: všechny položky, které jsou přesunuty do centra. Tyto tři jiné možnosti počínaje slovo `Space` přidělit místo navíc není obsazena položky. `SpaceBetween` přiděluje místo rovnoměrně mezi položkami; `SpaceAround` vloží rovnat prostor kolem každé položky, zatímco `SpaceEvenly` vloží být roven prostoru mezi každé položky a před první položku a po poslední položky na řádku.
 
 <a name="align-items" />
 
@@ -455,62 +455,62 @@ Všechny tři snímcích obrazovky `Wrap` je nastavena na `Wrap`. `Start` Výcho
 
 [ `AlignItems` ](xref:Xamarin.Forms.FlexLayout.AlignItems) Vlastnost je typu [ `FlexAlignItems` ](xref:Xamarin.Forms.FlexAlignItems), výčet s čtyři členy:
 
-- `Stretch`, výchozí
+- `Stretch`, výchozí hodnota
 - `Center`
-- `Start` (nebo "flex-start" v jazyce XAML)
-- `End` (nebo "flex-end" v jazyce XAML)
+- `Start` (nebo "flex-start" v XAML)
+- `End` (nebo "flex-end" v XAML)
 
-Toto je jedna ze dvou vlastností (z jiné je [ `AlignContent` ](#align-content)) určující způsob zarovnání podřízené objekty na křížové ose. V rámci každého řádku jsou podřízené objekty (jak je uvedeno v předchozím snímku obrazovky) k roztažení nebo zarovnán na start, center nebo konec každé položky, jak je znázorněno v následující tři snímky obrazovky:
+Toto je jedna ze dvou vlastností (z jiných je [ `AlignContent` ](#align-content)), která indikuje, jak jsou podřízené položky zarovnány na křížové ose. V rámci každého řádku jsou podřízené objekty roztažená (jak je znázorněno na předchozím snímku obrazovky) nebo zarovnány na začátku, center nebo na konci každé položky, jak je znázorněno na následujících snímcích tři obrazovky:
 
-[![Stránce experimentu: Zarovná položky](flex-layout-images/ExperimentAlignItems.png "stránce experimentu - zarovnání položek")](flex-layout-images/ExperimentAlignItems-Large.png#lightbox)
+[![Na stránce experimentu: Zarovnání položek](flex-layout-images/ExperimentAlignItems.png "stránce experimentu - zarovnání položek")](flex-layout-images/ExperimentAlignItems-Large.png#lightbox)
 
-Na snímku obrazovky iOS je zarovnán horní všechny podřízené objekty. Na snímcích obrazovky Android položky svisle na střed podle nejvyšší podřízené. Na snímku obrazovky UWP je zarovnán na dolním okraji všechny položky.
+Na snímku obrazovky s Iosem je zarovnán lineárních všechny podřízené objekty. V Androidu snímky obrazovky položky se zarovnaný svisle na střed podle nejvyšší podřízené. Na snímku obrazovky UPW je zarovnán na dolním okraji všechny položky.
 
-Pro všechny jednotlivé položky `AlignItems` monitorconfigurationoverride lze přepsat nastavení [ `AlignSelf` ](#align-self) připojené vazbu vlastnosti.
+Pro všechny jednotlivé položky `AlignItems` monitorconfigurationoverride lze přepsat nastavení [ `AlignSelf` ](#align-self) přidružená vlastnost podporující vazby.
 
 <a name="align-content" />
 
 ### <a name="the-aligncontent-property"></a>Vlastnost AlignContent
 
-[ `AlignContent` ](xref:Xamarin.Forms.FlexLayout.AlignContent) Vlastnost je typu [ `FlexAlignContent` ](xref:Xamarin.Forms.FlexAlignContent), výčet se sedm členy:
+[ `AlignContent` ](xref:Xamarin.Forms.FlexLayout.AlignContent) Vlastnost je typu [ `FlexAlignContent` ](xref:Xamarin.Forms.FlexAlignContent), výčet s sedm členy:
 
-- `Stretch`, výchozí
+- `Stretch`, výchozí hodnota
 - `Center`
-- `Start` (nebo "flex-start" v jazyce XAML)
-- `End` (nebo "flex-end" v jazyce XAML)
-- `SpaceBetween` (nebo "místo mezi" v jazyce XAML)
-- `SpaceAround` (nebo "místo kolem" v jazyce XAML)
+- `Start` (nebo "flex-start" v XAML)
+- `End` (nebo "flex-end" v XAML)
+- `SpaceBetween` (nebo "místo mezi" v XAML)
+- `SpaceAround` (nebo "místo around" v XAML)
 - `SpaceEvenly`
 
-Jako `AlignItems`, `AlignContent` vlastnost také zarovnává podřízené objekty na křížové ose, ale ovlivňuje celé řádky nebo sloupce:
+Stejně jako `AlignItems`, `AlignContent` vlastnost také zarovná podřízené objekty na křížové ose, ale ovlivňuje celé řádky nebo sloupce:
 
-[![Stránce experimentu: Zarovnání obsahu](flex-layout-images/ExperimentAlignContent.png "stránce experimentu - zarovnání obsahu")](flex-layout-images/ExperimentAlignContent-Large.png#lightbox)
+[![Na stránce experimentu: Zarovnání obsahu](flex-layout-images/ExperimentAlignContent.png "stránce experimentu - zarovnání obsahu")](flex-layout-images/ExperimentAlignContent-Large.png#lightbox)
 
-V iOS screnshot jsou obě řádky v horní části; v systému Android – snímek obrazovky jsou v Centru; a na snímku obrazovky UWP jsou v dolní části. Řádky mohou také rozmístěny různými způsoby:
+V iOS screnshot jsou obě řádky v horní části stránky; snímek obrazovky s Androidem jsou v Centru; a na snímku obrazovky UWP jsou v dolní části. Řádky mohou také rozmístěné různými způsoby:
 
-[![Stránce experimentu: Zarovnat 2 obsahu](flex-layout-images/ExperimentAlignContent2.png "stránce experimentu - Align obsahu 2")](flex-layout-images/ExperimentAlignContent2-Large.png#lightbox)
+[![Na stránce experimentu: Zarovnání obsahu 2](flex-layout-images/ExperimentAlignContent2.png "stránce experimentu - zarovnání obsahu 2")](flex-layout-images/ExperimentAlignContent2-Large.png#lightbox)
 
-`AlignContent` Nemá žádný vliv, pokud je pouze jeden řádek nebo sloupec.
+`AlignContent` Nemá žádný vliv, pokud existuje pouze jeden řádek nebo sloupec.
 
 <a name="attached-properties" />
 
-## <a name="the-attached-bindable-properties-in-detail"></a>Přidružené vazbu vlastnosti podrobně
+## <a name="the-attached-bindable-properties-in-detail"></a>Připojené vlastnosti umožňující vazbu podrobně
 
-`FlexLayout` definuje pět připojené vazbu vlastnosti. Tyto vlastnosti jsou nastaveny na podřízené objekty `FlexLayout` a se vztahují pouze k podřazených konkrétní.
+`FlexLayout` definuje pět připojené vlastnosti umožňující vazbu. Tyto vlastnosti jsou nastaveny na podřízené objekty `FlexLayout` vztahovat pouze na tuto konkrétní podřízenou položku.
 
 <a name="align-self" />
 
 ### <a name="the-alignself-property"></a>Vlastnost AlignSelf
 
-[ `AlignSelf` ](xref:Xamarin.Forms.FlexLayout.AlignSelfProperty) Přidružená vlastnost vazbu je typu [ `FlexAlignSelf` ](xref:Xamarin.Forms.FlexAlignContent), výčet s pěti členy:
+[ `AlignSelf` ](xref:Xamarin.Forms.FlexLayout.AlignSelfProperty) Připojená vlastnost podporující vazby je typu [ `FlexAlignSelf` ](xref:Xamarin.Forms.FlexAlignContent), výčet s pěti členů:
 
-- `Auto`, výchozí
+- `Auto`, výchozí hodnota
 - `Stretch`
 - `Center`
-- `Start` (nebo "flex-start" v jazyce XAML)
-- `End` (nebo "flex-end" v jazyce XAML)
+- `Start` (nebo "flex-start" v XAML)
+- `End` (nebo "flex-end" v XAML)
 
-Pro všechny jednotlivé podřízeným `FlexLayout`, tato vlastnost nastavení přepsání [ `AlignItems` ](#align-items) vlastnost nastavte u `FlexLayout` sám sebe. Výchozí nastavení `Auto` znamená používání `AlignItems` nastavení.
+Pro jednotlivé podřízený uzel `FlexLayout`, tato vlastnost nastavení přepsání [ `AlignItems` ](#align-items) nastavenou na `FlexLayout` samotný. Ve výchozím nastavení `Auto` znamená použití `AlignItems` nastavení.
 
 Pro `Label` element s názvem `label` (nebo příkladu), můžete nastavit `AlignSelf` vlastností v kódu takto:
 
@@ -518,37 +518,37 @@ Pro `Label` element s názvem `label` (nebo příkladu), můžete nastavit `Alig
 FlexAlign.SetAlignSelf(label, FlexAlignSelf.Center);
 ```
 
-Všimněte si, že neexistuje žádný odkaz na `FlexLayout` nadřazené položky `Label`. V jazyce XAML nastavte vlastnost takto:
+Všimněte si, že neexistuje žádný odkaz na `FlexLayout` nadřazeného člena `Label`. V XAML nastavte vlastnosti následujícím způsobem:
 
 ```xaml
 <Label ... FlexAlign.AlignSelf="Center" ... />
 ```
 
-### <a name="the-order-property"></a>Vlastnost pořadí
+### <a name="the-order-property"></a>Vlastnosti prostředí
 
 [ `Order` ](xref:Xamarin.Forms.FlexLayout.OrderProperty) Vlastnost je typu `int`. Výchozí hodnota je 0.
 
-`Order` Vlastnost umožňuje změnit pořadí, podřízené objekty daného `FlexLayout` jsou uspořádány. Obvykle, děti `FlexLayout` jsou uspořádány je stejné pořadí, ve kterém se zobrazují v `Children` kolekce. Toto pořadí můžete změnit nastavením `Order` připojené vazbu vlastnosti na hodnotu nula celé číslo na jeden nebo více podřízených prvků. `FlexLayout` Pak uspořádá své podřízené objekty podle nastavení `Order` vlastnost v každé podřízené, ale podřízené objekty se stejnou `Order` nastavení jsou uspořádány v pořadí, ve kterém se zobrazují v `Children` kolekce.
+`Order` Vlastnost umožňuje změnit pořadí, které podřízených položek `FlexLayout` jsou uspořádané. Obvykle podřízených položek `FlexLayout` jsou uspořádány je stejné pořadí, ve kterém se zobrazují v `Children` kolekce. Toto pořadí můžete změnit tak, že nastavíte `Order` připojená vlastnost s vazbou na nenulovou celočíselnou hodnotu na jeden nebo víc podřízených. `FlexLayout` Pak uspořádá podřízené podle nastavení `Order` vlastnosti na každé podřízené, ale podřízené položky se stejným `Order` nastavení jsou uspořádány v pořadí, ve kterém se zobrazují v `Children` kolekce.
 
 ### <a name="the-basis-property"></a>Vlastnost základ
 
-[ `Basis` ](xref:Xamarin.Forms.FlexLayout.BasisProperty) Přidružená vlastnost vazbu určuje množství místa, která je přidělena podřízenou `FlexLayout` na hlavní ose. Velikost určený pomocí `Basis` vlastnost je velikost na hlavní ose nadřazené `FlexLayout`. Proto `Basis` Určuje šířku podřízenou při podřízené objekty jsou řazeny řádků nebo výška při podřízené objekty jsou uspořádány do sloupců.
+[ `Basis` ](xref:Xamarin.Forms.FlexLayout.BasisProperty) Připojená vlastnost podporující vazby označuje množství místa, která je přidělena podřízený `FlexLayout` na hlavní ose. Určená velikost podle `Basis` vlastnost je velikost na hlavní ose nadřazené `FlexLayout`. Proto `Basis` Určuje šířku pro podřízenou položku, pokud podřízené objekty jsou uspořádány v řádcích nebo výšku, pokud podřízené objekty jsou uspořádány ve sloupcích.
 
-`Basis` Vlastnost je typu [ `FlexBasis` ](xref:Xamarin.Forms.FlexBasis), struktury. Velikost může být zadané buď jednotky nezávislé na zařízení nebo jako procento velikosti `FlexLayout`. Výchozí hodnota `Basis` je statickou vlastnost `FlexBasis.Auto`, což znamená, že podřízená požadované šířky nebo výšky se používá.
+`Basis` Vlastnost je typu [ `FlexBasis` ](xref:Xamarin.Forms.FlexBasis), strukturu. Velikost se dá nastavit v obou jednotkách nezávislých na zařízení nebo jako procento velikosti `FlexLayout`. Výchozí hodnota `Basis` je statická vlastnost `FlexBasis.Auto`, což znamená, že podřízené požadované šířky nebo výšky se používá.
 
-V kódu, můžete nastavit `Basis` vlastnost `Label` s názvem `label` na 40 jednotky nezávislé na zařízení takto:
+V kódu, můžete nastavit `Basis` vlastnost `Label` s názvem `label` 40 jednotkách nezávislých na zařízení následujícím způsobem:
 
 ```csharp
 FlexLayout.SetBasis(label, new FlexBasis(40, false));
 ```
 
-Druhý argument `FlexBasis` konstruktor jmenuje `isRelative` a určuje, zda je velikost relativní (`true`) nebo absolutní (`false`). Argument má výchozí hodnotu `false`, takže můžete také použít následující kód:
+Druhý argument `FlexBasis` konstruktor jmenuje `isRelative` a určuje, zda je relativní velikosti (`true`) nebo absolutní (`false`). Argument má výchozí hodnotu `false`, takže můžete použít také následující kód:
 
 ```csharp
 FlexLayout.SetBasis(label, new FlexBasis(40));
 ```
 
-Implicitní převod z `float` k `FlexBasis` je definován, takže se může ještě víc zjednodušit:
+Implicitní převod z `float` k `FlexBasis` je definován, takže ho můžete ještě více zjednodušit:
 
 ```csharp
 FlexLayout.SetBasis(label, 40);
@@ -560,63 +560,63 @@ Můžete nastavit velikost na 25 % `FlexLayout` nadřazené takto:
 FlexLayout.SetBasis(label, new FlexBasis(0.25f, true));
 ```
 
-Tato desetinná hodnota musí být v rozsahu od 0 do 1.
+Desetinná hodnota musí být v rozsahu od 0 do 1.
 
-V jazyce XAML můžete použít několik pro velikost v jednotky nezávislé na zařízení:
+V XAML můžete použít číslo pro velikost v jednotkách nezávislých na zařízení:
 
 ```xaml
 <Label ... FlexLayout.Basis="40" ... />
 ```
 
-Nebo můžete zadat procentuální hodnotu v rozsahu od 0 % do 100 %:
+Nebo můžete určit procento v rozmezí od 0 % do 100 %:
 
 ```xaml
 <Label ... FlexLayout.Basis="25%" ... />
 ```
 
-**Základ experimentovat** stránky **[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** ukázka můžete experimentovat s `Basis` vlastnost. Na stránce se zobrazuje zabalené sloupec pět `Label` elementů s různými barvy popředí a na pozadí. Dva `Slider` prvky umožňují zadat `Basis` hodnoty pro druhé a čtvrté `Label`:
+**Experiment intervalech** stránku **[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** ukázky můžete experimentovat `Basis` vlastnost. Na stránce se zobrazí zabalené sloupec pěti `Label` prvky s různými barvy popředí a pozadí. Dvě `Slider` prvky umožňují zadat `Basis` hodnot za sekundu a čtvrtý `Label`:
 
 [![Základ experimentovat stránky](flex-layout-images/BasisExperiment.png "základ experimentovat stránky")](flex-layout-images/BasisExperiment-Large.png#lightbox)
 
-Snímek obrazovky iOS na levé straně ukazuje dva `Label` elementy právě uvedeného výšky v jednotkách nezávislé na zařízení. Android obrazovka ukazuje je právě zadané výšky, které jsou zlomek celková výška `FlexLayout`. Pokud `Basis` je nastavený na 100 %, je podřízený objekt výšku `FlexLayout`a zabalení do dalšího sloupce a zabírají okraj sloupce, jak ukazuje na snímku obrazovky UWP: zdá se, jako kdyby pět podřízené objekty jsou uspořádány v řadě , ale ve skutečnosti se uspořádané do pěti sloupců.
+Snímek obrazovky s Iosem na levé straně ukazuje dvě `Label` prvky výšky je uveden v jednotkách nezávislých na zařízení. Android obrazovka ukazuje jejich výšku, které jsou zlomek celková výška předávané `FlexLayout`. Pokud `Basis` nastavená na 100 %, podřízená je výška `FlexLayout`a zabalte tak do dalšího sloupce a zabírají celý výška tohoto sloupce, jak ukazuje snímek obrazovky UPW: Zobrazí se jako pět podřízené objekty jsou uspořádány v řadě , ale ve skutečnosti jsou uspořádané do pěti sloupců.
 
-### <a name="the-grow-property"></a>Růst vlastnost
+### <a name="the-grow-property"></a>Vlastnost růst
 
-[ `Grow` ](xref:Xamarin.Forms.FlexLayout.GrowProperty) Přidružená vlastnost vazbu je typu `int`. Výchozí hodnota je 0, a hodnota musí být větší než nebo rovna 0.
+[ `Grow` ](xref:Xamarin.Forms.FlexLayout.GrowProperty) Připojená vlastnost podporující vazby je typu `int`. Výchozí hodnota je 0, a hodnota musí být větší než nebo rovna 0.
 
-`Grow` Vlastnost hrají roli při při `Wrap` je nastavena na `NoWrap` a řádek podřízených prvků má celková šířka menší než šířka `FlexLayout`, nebo sloupec podřízených prvků má kratší výška než `FlexLayout`. `Grow` Vlastnost určuje, jak pro rozdělení velikost zbývajícího prostoru mezi podřízené objekty.
+`Grow` Vlastnost hraje roli při při `Wrap` je nastavena na `NoWrap` a řádku podřízených prvků je celková šířka menší než šířka `FlexLayout`, nebo sloupec podřízených prvků má výšku kratší než `FlexLayout`. `Grow` Vlastnost určuje, jak rozdělí zbylé prostor mezi podřízené objekty.
 
-V **růst experimentu** stránky, pět `Label` prvky střídání barvy jsou uspořádány do sloupce a dvě `Slider` prvky umožňují upravit `Grow` vlastnost druhé a čtvrté `Label`. Snímek obrazovky iOS na levém ukazuje výchozí `Grow` vlastnosti 0:
+V **růst Experiment** stránce pět `Label` části střídavé barvy jsou uspořádány do sloupce a dva `Slider` prvky umožňují nastavit `Grow` vlastnost druhá a čtvrtá `Label`. Snímek obrazovky s Iosem na levém ukazuje výchozí `Grow` vlastnosti 0:
 
-[![Stránce experimentu zvětšit](flex-layout-images/GrowExperiment.png "stránce experimentu zvětšit")](flex-layout-images/GrowExperiment-Large.png#lightbox)
+[![Na stránce experimentu zvětšit](flex-layout-images/GrowExperiment.png "stránce experimentu zvětšit")](flex-layout-images/GrowExperiment-Large.png#lightbox)
 
-Pokud žádné jednu podřízenou uvedena kladnou `Grow` hodnotu, pak podřazených zabírají veškerý zbývající prostor, jako ukazuje na Android snímku obrazovky. Tento prostor lze také rozdělit mezi dva nebo více podřízených prvků. Na snímku obrazovky UWP `Grow` vlastnost druhý `Label` je nastaven na 0,5, při `Grow` vlastnost čtvrtý `Label` je 1.5, která umožňuje čtvrtý `Label` tři x větší velikost zbývajícího místa jako druhý `Label`.
+Pokud žádné jeden podřízený prvek dostane pozitivní `Grow` hodnotu, pak tento podřízený zabírá veškerý zbývající prostor, jak ukazuje snímek obrazovky s Androidem. Zde můžete také přidělují nejmíň dva podřízené prvky. Na snímku obrazovky UPW `Grow` vlastnost druhého `Label` je nastavena na 0,5, zatímco `Grow` vlastnost čtvrtý `Label` je 1.5, která poskytuje čtvrtý `Label` třikrát větší velikost zbývajícího místa jako druhý `Label`.
 
-Používání toto místo podřízené zobrazení, závisí na konkrétní typ podřízené. Pro `Label`, text může být umístěn uvnitř z celkového místa `Label` pomocí vlastnosti `HorizontalTextAlignment` a `VerticalTextAlignment`.
+Jak podřízené zobrazení používá toto místo závisí na konkrétní typ podřízené. Pro `Label`, text může být umístěné v rámci celkového prostoru `Label` pomocí vlastnosti `HorizontalTextAlignment` a `VerticalTextAlignment`.
 
 <a name="shrink" />
 
-### <a name="the-shrink-property"></a>Vlastnost zmenšení
+### <a name="the-shrink-property"></a>Vlastnost zmenšit
 
-[ `Shrink` ](xref:Xamarin.Forms.FlexLayout.ShrinkProperty) Přidružená vlastnost vazbu je typu `int`. Výchozí hodnota je 1 a hodnota musí být větší než nebo rovna 0.
+[ `Shrink` ](xref:Xamarin.Forms.FlexLayout.ShrinkProperty) Připojená vlastnost podporující vazby je typu `int`. Výchozí hodnota je 1 a hodnota musí být větší než nebo rovna 0.
 
-`Shrink` Vlastnost hrají roli při `Wrap` je nastavena na `NoWrap` a je větší než šířka agregační šířka řádku podřízených prvků `FlexLayout`, nebo je větší než celková výška jeden sloupec podřízených prvků Výška `FlexLayout`. Obvykle `FlexLayout` se zobrazí tyto podřízené objekty podle constricting jejich velikost. `Shrink` Vlastnosti můžete určit, které podřízené objekty jsou uvedeny priority v zobrazení v jejich úplné velikosti.
+`Shrink` Vlastnost hraje roli při `Wrap` je nastavena na `NoWrap` a je větší než šířka agregovaná šířka řádek podřízených prvků `FlexLayout`, nebo je větší než celková výška jeden sloupec podřízených prvků Výška `FlexLayout`. Obvykle `FlexLayout` zobrazí tyto podřízené objekty podle constricting jejich velikosti. `Shrink` Vlastnosti můžete určit, které podřízené prvky budou mít vyšší prioritu v zobrazení v jejich plnou velikost.
 
-**Zmenšit experimentu** stránka vytvoří `FlexLayout` s jednoho řádku pět `Label` podřízené objekty, které vyžadují víc místa, než `FlexLayout` šířka. Snímek obrazovky iOS na levé straně ukazuje všechny `Label` elementů s výchozími hodnotami 1:
+**Zmenšit Experiment** stránka vytvoří `FlexLayout` s jeden řádek pěti `Label` podřízené položky, které vyžadují více místa `FlexLayout` šířku. Snímek obrazovky s Iosem na levé straně ukazuje všechny `Label` prvky s výchozími hodnotami 1:
 
 [![Zmenšení experimentovat stránky](flex-layout-images/ShrinkExperiment.png "zmenšení experimentovat stránky")](flex-layout-images/ShrinkExperiment-Large.png#lightbox)
 
-Na snímku obrazovky Android `Shrink` hodnotu pro druhý `Label` nastavena na 0, a že `Label` se zobrazí v plnou šířkou. Navíc čtvrtý `Label` je uveden `Shrink` hodnotu větší než 1 a má zmenšit. Snímek obrazovky UWP ukazuje, jak `Label` elementy ohledem `Shrink` hodnotu 0, aby se mohly zobrazit v plné velikosti, případě je možné.
+Na snímku obrazovky s Androidem `Shrink` hodnotu pro druhý `Label` nastavena na 0, a že `Label` se zobrazí v jeho celou šířku. Také zavádí čtvrtý `Label` dostane `Shrink` hodnotu větší než jedna a má zmenšit. UPW – snímek obrazovky ukazuje obě `Label` prvky předávané `Shrink` hodnotu 0, která zajistí, aby se zobrazí v plné velikosti, pokud to je možné.
 
-Můžete nastavit i `Grow` a `Shrink` hodnoty pro umístění situacích, kdy velikosti agregační podřízené může někdy menší než nebo někdy větší než velikost `FlexLayout`.
+Můžete nastavit i `Grow` a `Shrink` hodnoty tak, aby vyhovovaly situacích, kdy agregační podřízené velikosti může být někdy menší než nebo někdy větší než velikost `FlexLayout`.
 
-## <a name="css-styling-with-flexlayout"></a>Stylů CSS s FlexLayout
+## <a name="css-styling-with-flexlayout"></a>CSS stylování s FlexLayout
 
-Můžete použít [stylů CSS](~/xamarin-forms/user-interface/styles/css/index.md) funkce zavedená s Xamarin.Forms 3.0 ve spojení s `FlexLayout`. **Položky katalogu šablon stylů CSS** stránky **[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** ukázka duplikuje rozložení **položky katalogu** stránky, ale s šablony stylů CSS šablony stylů pro řadu stylů:
+Můžete použít [CSS stylování](~/xamarin-forms/user-interface/styles/css/index.md) , která byla zavedena 3.0 Xamarin.Forms v souvislosti s `FlexLayout`. **Položky katalogu šablon stylů CSS** stránce **[FlexLayoutDemos](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/)** ukázka duplikuje rozložení **položek katalogu** stránky, ale s CSS Šablona stylů pro celou řadu styly:
 
-[![Stránka položky katalogu CSS](flex-layout-images/CssCatalogItems.png "stránka položky katalogu šablon stylů CSS")](flex-layout-images/CssCatalogItems-Large.png#lightbox)
+[![Stránka položek katalogu CSS](flex-layout-images/CssCatalogItems.png "CSS stránka položek katalogu")](flex-layout-images/CssCatalogItems-Large.png#lightbox)
 
-Původní **CatalogItemsPage.xaml** soubor má pět `Style` definice v jeho `Resources` oddíl s 15 `Setter` objekty. V **CssCatalogItemsPage.xaml** souboru, která byla snížena na dva `Style` definice s jenom čtyři `Setter` objekty. Tyto styly doplnit šablony stylů CSS pro vlastnosti, které funkci stylů Xamarin.Forms CSS v současné době nepodporuje:
+Původní **CatalogItemsPage.xaml** soubor má pět `Style` definice v jeho `Resources` oddíl s 15 `Setter` objekty. V **CssCatalogItemsPage.xaml** souboru, který byl snížen na dva `Style` definice s pouze čtyři `Setter` objekty. Tyto styly doplňují šablony stylů CSS pro vlastnosti, které funkce stylů Xamarin.Forms CSS v současné době nepodporuje:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -682,13 +682,13 @@ Původní **CatalogItemsPage.xaml** soubor má pět `Style` definice v jeho `Res
 </ContentPage>
 ```
 
-Šablony stylů CSS v první řádek odkazuje `Resources` části:
+Šablony stylů CSS je odkazováno v prvním řádku `Resources` části:
 
 ```xaml
 <StyleSheet Source="CatalogItemsStyles.css" />
 ```
 
-Všimněte si také, že obsahují dva elementy v každé tři položky `StyleClass` nastavení:
+Všimněte si, že také, že dva prvky v každé tři položky zahrnují `StyleClass` nastavení:
 
 ```xaml
 <Label Text="Seated Monkey" StyleClass="header" />
@@ -696,7 +696,7 @@ Všimněte si také, že obsahují dva elementy v každé tři položky `StyleCl
 <Label StyleClass="empty" />
 ```
 
-Tyto odkazovat na selektory v **CatalogItemsStyles.css** list stylu:
+Jde o selektory v **CatalogItemsStyles.css** šablony stylů:
 
 ```css
 frame {
@@ -733,15 +733,15 @@ button {
 }
 ```
 
-Několik `FlexLayout` přidružené vazbu vlastnosti jsou zde odkazuje. V `label.empty` selektor, uvidíte `flex-grow` atribut, který styly prázdnou `Label` zajistit výše uvedené prázdné místo `Button`. `image` Selektor obsahuje `order` atribut a `align-self` atributů, které odpovídají `FlexLayout` přidružené vazbu vlastnosti.
+Několik `FlexLayout` připojené umožňujících vazbu na vlastnosti odkazováno tady. V `label.empty` selektor, zobrazí se vám `flex-grow` atribut, který styly prázdného `Label` poskytnout nějaké prázdné místo výše uvedené `Button`. `image` Selektor obsahuje `order` atribut a `align-self` atributů, které odpovídají `FlexLayout` připojené vlastnosti umožňující vazbu.
 
-Už víte, že můžete nastavit vlastnosti přímo na `FlexLayout` a přidružené vazbu vlastnosti můžete nastavit na podřízené objekty daného `FlexLayout`. Nebo můžete nastavit tyto vlastnosti nepřímo pomocí tradičních stylů založených na XAML a stylů CSS. Co je důležité je vědět, a pochopit tyto vlastnosti. Tyto vlastnosti jsou díky `FlexLayout` skutečně flexibilní. 
+Viděli jsme, že můžete nastavit vlastnosti přímo na `FlexLayout` a připojené umožňujících vazbu vlastnosti můžete nastavit na podřízené objekty daného `FlexLayout`. Nebo můžete nastavit tyto vlastnosti nepřímo pomocí tradiční styly založené na XAML nebo styly CSS. Co je důležité je vědět a vysvětlení těchto vlastností. Tyto vlastnosti jsou díky tomu `FlexLayout` skutečně flexibilní. 
 
 ## <a name="flexlayout-with-xamarinuniversity"></a>FlexLayout s Xamarin.University
 
 > [!VIDEO https://youtube.com/embed/Ng3sel_5D_0]
 
-**Xamarin.Forms 3.0 flexibilní rozložení pomocí [univerzity Xamarin](https://university.xamarin.com/)**
+**Xamarin.Forms 3.0 přizpůsobena podle rozložení, [Xamarin University](https://university.xamarin.com/)**
 
 ## <a name="related-links"></a>Související odkazy
 

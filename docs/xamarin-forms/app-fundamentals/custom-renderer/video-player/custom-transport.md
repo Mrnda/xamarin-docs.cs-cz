@@ -1,28 +1,28 @@
 ---
-title: Ovládací prvky vlastní video přenosu
-description: Tento článek vysvětluje, jak implementovat vlastní přenos ovládací prvky v aplikaci přehrávání videa pomocí Xamarin.Forms.
+title: Ovládací prvky pro přenos vlastní videa
+description: Tento článek vysvětluje, jak implementovat vlastní přenos ovládacích prvků do aplikace přehrávače videa pomocí Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: CE9E955D-A9AC-4019-A5D7-6390D80DECA1
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: a20c68d5f86dad852a4425206846292c1c6c5838
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 84870de28ffd30b2d29fb5d8fbea815e1fd0d9c4
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241657"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996435"
 ---
-# <a name="custom-video-transport-controls"></a>Ovládací prvky vlastní video přenosu
+# <a name="custom-video-transport-controls"></a>Ovládací prvky pro přenos vlastní videa
 
-Ovládací prvky přenos z přehrávání videa zahrnují tlačítka, které provádějí funkce **přehrání**, **pozastavení**, a **Zastavit**. Tyto přepínače jsou obecně označeny známé ikony spíše než text a **přehrání** a **pozastavení** funkce jsou obecně zkombinované do jednoho tlačítka.
+Přenos ovládací prvky přehrávače videa zahrnout tlačítka, které provádějí funkce **Přehrát**, **pozastavení**, a **Zastavit**. Tato tlačítka jsou obecně označeny známé ikony spíše než textovém a **Přehrát** a **pozastavení** funkcí jsou obecně zkombinovány do jedno tlačítko.
 
-Ve výchozím nastavení `VideoPlayer` zobrazí přenosu ovládací prvky na každé platformě podporováno. Když nastavíte `AreTransportControlsEnabled` vlastnost `false`, jsou potlačovány tyto ovládací prvky. Můžete pak řídit `VideoPlayer` prostřednictvím kódu programu nebo zadat své vlastní ovládací prvky přenosu.
+Ve výchozím nastavení `VideoPlayer` zobrazí přenosu ovládacích prvků podporuje jednotlivé platformy. Při nastavení `AreTransportControlsEnabled` vlastnost `false`, tyto ovládací prvky jsou potlačeny. Můžete pak řídit `VideoPlayer` prostřednictvím kódu programu nebo zadat vlastní ovládací prvky pro přenos.
 
-## <a name="the-play-pause-and-stop-methods"></a>Metody Play, pozastavení a ukončení
+## <a name="the-play-pause-and-stop-methods"></a>Metody, pozastavení, spouštění a zastavování
 
-`VideoPlayer` Třída definuje tři metody s názvem `Play`, `Pause`, a `Stop` , jsou implementované aktivaci událostí:
+`VideoPlayer` Třída definuje tři metody s názvem `Play`, `Pause`, a `Stop` , které jsou implementované vyvolává události:
 
 ```csharp
 namespace FormsVideoLibrary
@@ -54,11 +54,11 @@ namespace FormsVideoLibrary
 }
 ```
 
-Obslužné rutiny události pro tyto události jsou nastavena `VideoPlayerRenderer` třídy u různých platforem, jak je uvedeno níže:
+Obslužné rutiny událostí pro tyto události jsou nastaveny pomocí `VideoPlayerRenderer` třídy u různých platforem, jak je znázorněno níže:
 
 ### <a name="ios-transport-implementations"></a>iOS přenosu implementace
 
-Verze iOS `VideoPlayerRenderer` používá `OnElementChanged` metodu a nastavit obslužné rutiny pro tyto tři události při `NewElement` vlastnost není `null` a odpojí obslužné rutiny událostí při `OldElement` není `null`:
+Verze iOS `VideoPlayerRenderer` používá `OnElementChanged` metody nastavte obslužné rutiny pro tyto tři události při `NewElement` jedná o vlastnost neumožňující `null` a odpojí obslužné rutiny událostí při `OldElement` není `null`:
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -107,11 +107,11 @@ namespace FormsVideoLibrary.iOS
 }
 ```
 
-Obslužné rutiny událostí jsou implementované pomocí volání metody na `AVPlayer` objektu. Neexistuje žádné `Stop` metodu pro `AVPlayer`, takže se simuluje pozastavení videa a přesunutí pozici na začátku.
+Obslužné rutiny událostí jsou implementovány pomocí volání metody na `AVPlayer` objektu. Neexistuje žádná `Stop` metodu `AVPlayer`, takže se simuluje pozastavení video a přesunutím pozice na začátku.
 
 ### <a name="android-transport-implementations"></a>Implementace Android přenosu
 
-Android implementace je podobná implementace iOS. Obslužné rutiny pro tři funkce jsou nastaveny, jakmile `NewElement` není `null` a kdy odpojit `OldElement` není `null`:
+Android implementace se podobá implementace iOS. Obslužné rutiny pro tři funkce jsou nastaveny, jakmile `NewElement` není `null` a odpojit, kdy `OldElement` není `null`:
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -158,11 +158,11 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-Tři funkce volat metody definované `VideoView`.
+Tři funkce volání metody definované `VideoView`.
 
-### <a name="uwp-transport-implementations"></a>Implementace přenos UWP
+### <a name="uwp-transport-implementations"></a>Implementace přenosu UPW
 
-Implementace UWP funkce tři přenosu je velmi podobné iOS a Android implementace:
+UPW provádění funkce tři přenosu je velmi podobný iOS i Android implementace:
 
 ```csharp
 namespace FormsVideoLibrary.UWP
@@ -208,13 +208,13 @@ namespace FormsVideoLibrary.UWP
 }
 ```
 
-## <a name="the-video-player-status"></a>Stav přehrávání videa
+## <a name="the-video-player-status"></a>Stav přehrávače videa
 
-Implementace **přehrání**, **pozastavení**, a **Zastavit** funkce není dostatečná pro podporu ovládacích prvků. Často **přehrání** a **pozastavení** příkazy jsou implementované pomocí stejné tlačítka, která se mění její vzhled indikující, zda je aktuálně přehrává nebo je pozastaveno. Kromě toho by nemělo být tlačítko povoleno i pokud video nebyl dosud načteny.
+Implementace **Přehrát**, **pozastavení**, a **Zastavit** funkce není dostatečná pro podporu ovládací prvky pro přenos. Často **Přehrát** a **pozastavení** příkazy jsou implementovány pomocí stejného tlačítka, která se mění její vzhled k určení, zda video je aktuálně přehrávání nebo pozastaveno. Kromě toho by nemělo být tlačítko povoleno i pokud video ještě nezavedl.
 
-Tyto požadavky neznamená, že je potřeba zpřístupnit aktuální stav označující, pokud je přehrávání nebo pozastavena, nebo pokud ještě není připraven k přehrávání videa přehrávání videa. (Tři platformy také podporují označují, pokud na video může být pozastavena, nebo lze přesunout do nového umístění, ale tyto vlastnosti jsou k dispozici pro streamování videa, nikoli videosoubory, takže některé funkce nejsou podporovány v `VideoPlayer` zde popsané.)
+Tyto požadavky znamenají, že je potřeba zpřístupnit aktuální stav označující, pokud je přehrávání nebo pozastavena, nebo pokud ještě není připravené k přehrání videa přehrávač videa. (Tři platformy podporují také vlastnosti, které Pokud video můžete pozastavit nebo je přesunout do nového umístění, ale tyto vlastnosti jsou k dispozici pro streamování videa, spíše než videosoubory, proto nejsou podporovány v `VideoPlayer` je popsáno zde.)
 
-**VideoPlayerDemos** projekt zahrnuje `VideoStatus` výčet s tři členy:
+**VideoPlayerDemos** obsahuje projekt `VideoStatus` výčet pomocí tří členů:
 
 ```csharp
 namespace FormsVideoLibrary
@@ -228,7 +228,7 @@ namespace FormsVideoLibrary
 }
 ```
 
-`VideoPlayer` Třída definuje jen reálné vazbu vlastnost s názvem `Status` typu `VideoStatus`. Tato vlastnost je definován jako jen pro čtení, protože by měl nastavit jenom z platformy zobrazovací jednotky:
+`VideoPlayer` Třídy definuje pouze reálném vlastnost umožňujících vazbu s názvem `Status` typu `VideoStatus`. Tato vlastnost je definován jako jen pro čtení, protože by měl nastavit pouze od rendereru platformy:
 
 ```csharp
 using System;
@@ -260,9 +260,9 @@ namespace FormsVideoLibrary
 }
 ```
 
-Obvykle vazbu vlastnosti jen pro čtení by mít privátního `set` přistupujícího objektu na `Status` vlastnost tak, aby ji z nastavení v rámci třídy. Pro `View` odvozených nepodporuje nástroji pro vykreslování, ale vlastnost musí být nastavená z mimo třídu, ale pouze pomocí zobrazovací jednotky platformy.
+Obvykle vázanou vlastnost jen pro čtení by mít privátní `set` přístupového objektu na `Status` vlastnost, aby mělo být nastavené v třídě. Pro `View` odvozených děl na základě podporovaných zobrazovacím jednotkám, ale vlastnost musí nastavit z vně třídy, ale pouze pomocí zobrazovací jednotky platformy.
 
-Z tohoto důvodu je definována jinou vlastnost s názvem `IVideoPlayerController.Status`. To je explicitní implementace rozhraní a je možné pomocí `IVideoPlayerController` rozhraní `VideoPlayer` implementuje třída:
+Z tohoto důvodu je definována jinou vlastnost s názvem `IVideoPlayerController.Status`. Toto je explicitní implementací rozhraní a je možné podle `IVideoPlayerController` rozhraní, která `VideoPlayer` implementuje třída:
 
 ```csharp
 namespace FormsVideoLibrary
@@ -276,11 +276,11 @@ namespace FormsVideoLibrary
 }
 ```
 
-Toto je podobným způsobem [ `WebView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.WebView/) používá ovládací prvek [ `IWebViewController` ](https://developer.xamarin.com/api/type/Xamarin.Forms.IWebViewController/) rozhraní k implementaci `CanGoBack` a `CanGoForward` vlastnosti. (Zobrazit zdrojový kód [ `WebView` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Core/WebView.cs) a jeho nástroji pro vykreslování podrobnosti.)
+Podobá se to jak [ `WebView` ](xref:Xamarin.Forms.WebView) používá ovládací prvek [ `IWebViewController` ](xref:Xamarin.Forms.IWebViewController) rozhraní k implementaci `CanGoBack` a `CanGoForward` vlastnosti. (Zobrazit zdrojový kód [ `WebView` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Core/WebView.cs) a jeho renderery podrobnosti.)
 
-To umožňuje pro třídu mimo `VideoPlayer` nastavit `Status` vlastnost odkazem `IVideoPlayerController` rozhraní. (Se zobrazí kód za chvíli.) Vlastnost lze nastavit z také další třídy, ale je nepravděpodobné, že nechtěně nastavit. Co je nejdůležitější `Status` prostřednictvím vazby dat nelze nastavit vlastnost.
+To umožňuje pro třídu pro externí `VideoPlayer` nastavit `Status` vlastnost odkazováním `IVideoPlayerController` rozhraní. (Zobrazí se vám kód za chvíli.) Vlastnost lze nastavit z jiné třídy stejně, ale je nepravděpodobné, že neúmyslně nastavit. Nejdůležitější ale je `Status` vlastnost nelze nastavit prostřednictvím datové vazby.
 
-Pomůže nástroji pro vykreslování při ochraně to `Status` vlastnost aktualizována, `VideoPlayer` třída definuje `UpdateStatus` událost, která se spustí každý desetinu sekundy:
+Pomáhat renderery ochraně to `Status` vlastnost aktualizována, `VideoPlayer` třída definuje `UpdateStatus` události, která se aktivuje každou desetinu sekundy:
 
 ```csharp
 namespace FormsVideoLibrary
@@ -302,9 +302,9 @@ namespace FormsVideoLibrary
 }
 ```
 
-### <a name="the-ios-status-setting"></a>Nastavení stavu iOS
+### <a name="the-ios-status-setting"></a>Stav nastavení iOS
 
-IOS `VideoPlayerRenderer` nastaví obslužnou rutinu pro `UpdateStatus` událostí (a odpojí této obslužné rutiny při základní `VideoPlayer` chybí element) a používá obslužná rutina nastavit `Status` vlastnost:
+IOS `VideoPlayerRenderer` nastaví obslužnou rutinu pro `UpdateStatus` událostí (a odpojí tuto obslužnou rutinu při základní `VideoPlayer` chybí element) a používá obslužnou rutinu k nastavení `Status` vlastnost:
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -358,11 +358,11 @@ namespace FormsVideoLibrary.iOS
 }
 ```
 
-Dvě vlastnosti `AVPlayer` , musí se přístup: [ `Status` ](https://developer.xamarin.com/api/property/AVFoundation.AVPlayer.Status/) vlastnost typu `AVPlayerStatus` a [ `TimeControlStatus` ](https://developer.xamarin.com/api/property/AVFoundation.AVPlayer.TimeControlStatus/) vlastnost typu `AVPlayerTimeControlStatus`. Všimněte si, že `Element` vlastnost (což je `VideoPlayer`) musí být převedena `IVideoPlayerController` nastavit `Status` vlastnost.
+Dvě vlastnosti `AVPlayer` je možný: [ `Status` ](https://developer.xamarin.com/api/property/AVFoundation.AVPlayer.Status/) vlastnost typu `AVPlayerStatus` a [ `TimeControlStatus` ](https://developer.xamarin.com/api/property/AVFoundation.AVPlayer.TimeControlStatus/) vlastnost typu `AVPlayerTimeControlStatus`. Všimněte si, že `Element` vlastnosti (což je `VideoPlayer`) musí být přetypovat na `IVideoPlayerController` nastavit `Status` vlastnost.
 
-### <a name="the-android-status-setting"></a>Nastavení Android stavu
+### <a name="the-android-status-setting"></a>Nastavení Androidu stavu
 
-[ `IsPlaying` ](https://developer.xamarin.com/api/property/Android.Widget.VideoView.IsPlaying/) Vlastnost Android `VideoView` je logická hodnota určující, pouze pokud je přehrává nebo je pozastaveno. K určení, zda `VideoView` můžete ani play ani pozastavit video ale, `Prepared` události `VideoView` musí být zpracován. Tyto dvě obslužné rutiny jsou nastaveny v `OnElementChanged` metody a odpojené během `Dispose` přepsání:
+[ `IsPlaying` ](https://developer.xamarin.com/api/property/Android.Widget.VideoView.IsPlaying/) Vlastnost Android `VideoView` je logická hodnota označující, pouze pokud je video přehrávání nebo pozastavena. Určete, jestli `VideoView` můžete ani play ani je pozastavit video ještě, `Prepared` událost `VideoView` musí být zpracován. Tyto dvě obslužné rutiny jsou nastaveny `OnElementChanged` metody a odpojená během `Dispose` přepsat:
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -415,7 +415,7 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-`UpdateStatus` Obslužná rutina používá `isPrepared` pole (nastavit `Prepared` obslužné rutiny) a `IsPlaying` vlastnost nastavit `Status` vlastnost:
+`UpdateStatus` Obslužná rutina používá `isPrepared` pole (nastavit `Prepared` obslužné rutiny) a `IsPlaying` vlastnosti chcete nastavit `Status` vlastnost:
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -447,9 +447,9 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-### <a name="the-uwp-status-setting"></a>Nastavení stavu UWP
+### <a name="the-uwp-status-setting"></a>Nastavení stavu UPW
 
-UWP `VideoPlayerRenderer` využívá `UpdateStatus` událostí, ale nemusí jej pro nastavení `Status` vlastnost. `MediaElement` Definuje [ `CurrentStateChanged` ](/uwp/api/windows.ui.xaml.controls.mediaelement#Windows_UI_Xaml_Controls_MediaElement_CurrentStateChanged) událost, která umožňuje zobrazovací jednotky při upozornění [ `CurrentState` ](/uwp/api/windows.ui.xaml.controls.mediaelement#Windows_UI_Xaml_Controls_MediaElement_CurrentState) došlo ke změně vlastností. Vlastnost odpojení na severu `Dispose` přepsání:
+Na UPW `VideoPlayerRenderer` využívá `UpdateStatus` události, ale nemusí jej pro nastavení `Status` vlastnost. `MediaElement` Definuje [ `CurrentStateChanged` ](/uwp/api/windows.ui.xaml.controls.mediaelement#Windows_UI_Xaml_Controls_MediaElement_CurrentStateChanged) událost, která umožňuje zobrazovací jednotky která vás upozorní, když [ `CurrentState` ](/uwp/api/windows.ui.xaml.controls.mediaelement#Windows_UI_Xaml_Controls_MediaElement_CurrentState) je změněna vlastnost. Vlastnost je odpojená v `Dispose` přepsat:
 
 ```csharp
 namespace FormsVideoLibrary.UWP
@@ -487,7 +487,7 @@ namespace FormsVideoLibrary.UWP
 }
 ```
 
-`CurrentState` Vlastnost je typu [ `MediaElementState` ](/uwp/api/windows.ui.xaml.media.mediaelementstate)a snadno mapy do `VideoStatus`:
+`CurrentState` Vlastnost je typu [ `MediaElementState` ](/uwp/api/windows.ui.xaml.media.mediaelementstate)a snadno map `VideoStatus`:
 
 ```csharp
 namespace FormsVideoLibrary.UWP
@@ -518,27 +518,27 @@ namespace FormsVideoLibrary.UWP
 }
 ```
 
-## <a name="play-pause-and-stop-buttons"></a>Přehrání, pozastavení a zastavit tlačítka
+## <a name="play-pause-and-stop-buttons"></a>Přehrát, pozastavit a zastavit tlačítka
 
-Pomocí znaků Unicode symbolický **přehrání**, **pozastavení**, a **Zastavit** bitové kopie je problematické. [Různé technické](https://unicode-table.com/en/blocks/miscellaneous-technical/) části standardu Unicode definuje tři symbolů zdánlivě vhodné pro tento účel. Jsou to:
+Pomocí znaků Unicode pro symbolické **Přehrát**, **pozastavení**, a **Zastavit** Image jen těžko. [Různé technické](https://unicode-table.com/en/blocks/miscellaneous-technical/) části Unicode standard definuje tří znaků symbolu zdánlivě vhodné pro tento účel. Toto jsou:
 
-- 0x23F5 (černý střední šipkou trojúhelník) nebo &#x23F5; pro **přehrávání**
-- 0x23F8 (dvojité svislá čára) nebo &#x23F8; pro **pozastavení**
-- 0x23F9 (černý čtvereček) nebo &#x23F9; pro **zastavit**
+- 0x23F5 (černý střední vpravo trojúhelník) nebo &#x23F5; pro **přehrávání**
+- 0x23F8 (double svislá čára) nebo &#x23F8; pro **pozastavení**
+- 0x23F9 (černé čtverec) nebo &#x23F9; pro **zastavit**
 
-Bez ohledu na to jak v prohlížeči se zobrazí tyto symboly (a různé prohlížeče zpracovávají různými způsoby), nejsou zobrazeny konzistentně na platformách podporovaných aplikací Xamarin.Forms. IOS a zařízení UWP **pozastavení** a **Zastavit** znaky mají grafické vzhled, modré 3D pozadí a bílé popředí. Tato akce není případ v systému Android, kde je jednoduše blue symbolu. Ale codepoint 0x23F5 pro **přehrání** nemá, že stejný vzhled na UPW a dokonce ani podporovaná na iOS a Android.
+Bez ohledu na to jak v prohlížeči se zobrazí tyto symboly (a různé prohlížeče zpracovávají různými způsoby), se nezobrazují konzistentně na platformách podporovaných aplikací Xamarin.Forms. V iOS a UPW zařízení **pozastavení** a **Zastavit** mají grafické vzhledu, pomocí modré 3D pozadí a popředí bílé znaky. To není případ v Androidu, pokud symbol je jednoduše modrá. Ale 0x23F5 bod kódu pro **Přehrát** nemá, že je stejný vzhled na UPW a dokonce ani podporováno v Iosu a Androidu.
 
-Z tohoto důvodu nelze použít 0x23F5 codepoint pro **přehrání**. Je dobré náhrada:
+Z tohoto důvodu 0x23F5 bod kódu nelze použít pro **Přehrát**. Je dobrou náhradou:
 
-- 0x25B6 (černý trojúhelník směřující doprava) nebo &#x25B6; pro **přehrávání**
+- 0x25B6 (černý trojúhelník vpravo) nebo &#x25B6; pro **přehrávání**
 
-To je podporováno všemi tři platformami s tím rozdílem, že je prostý černý trojúhelník, který není vypadat 3D vzhled **pozastavení** a **Zastavit**. Jednou z možností je postupujte podle codepoint 0x25B6 variant kódem:
+To je podporováno ve všech třech platformách, s tím rozdílem, že je prostý černý trojúhelník, který není vypadat podobně jako na 3D vzhled **pozastavení** a **Zastavit**. Jednou z možností se řídit 0x25B6 bod kódu s kódem varianty:
 
-- 0x25B6 následuje 0xFE0F (typ variant 16) nebo &#x25B6; &#xFE0F; pro **přehrávání**
+- 0x25B6 následovaný 0xFE0F (typ variant 16) nebo &#x25B6; &#xFE0F; pro **přehrávání**
 
-Je to, co se používá v kódu vidíte níže. V systému iOS, nabízí **přehrání** symbolů stejné 3D vzhled jako **pozastavení** a **Zastavit** tlačítka, ale varianta nefunguje pro Android a UWP.
+To se používá v kódu je uvedeno níže. V systémech iOS, poskytuje **Přehrát** symbol stejný 3D vzhled jako **pozastavení** a **Zastavit** tlačítka, ale varianty nefunguje na Android a UPW.
 
-**Vlastní přenos** stránka sady **AreTransportControlsEnabled** vlastnost, která má **false** i `ActivityIndicator` zobrazit při načítání videa a dva tlačítka. `DataTrigger` objekty se používají k povolení a zákaz `ActivityIndicator` a tlačítka a přejděte na první tlačítko mezi **přehrání** a **pozastavení**:
+**Přenosu vlastní** stránce sady **AreTransportControlsEnabled** vlastnost **false** a zahrnuje `ActivityIndicator` zobrazí, když se načítá videa a dvě tlačítka. `DataTrigger` objekty se používají k povolení a zakázání `ActivityIndicator` a tlačítka a přepnout na první tlačítko mezi **Přehrát** a **pozastavení**:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -611,9 +611,9 @@ Je to, co se používá v kódu vidíte níže. V systému iOS, nabízí **přeh
 </ContentPage>
 ```
 
-Data aktivační události jsou podrobně popsané v článku [Data aktivační události](~/xamarin-forms/app-fundamentals/triggers.md#data).
+Data aktivační události jsou popsány podrobně v článku [Data aktivace](~/xamarin-forms/app-fundamentals/triggers.md#data).
 
-Soubor kódu má obslužné rutiny pro tlačítko `Clicked` události:
+Použití modelu code-behind soubor má obslužné rutiny pro tlačítko `Clicked` události:
 
 ```csharp
 namespace VideoPlayerDemos
@@ -645,17 +645,17 @@ namespace VideoPlayerDemos
 }
 ```
 
-Protože `AutoPlay` je nastaven na `false` v **CustomTransport.xaml** soubor, budete muset stiskněte **přehrání** když nepovolíte zahájíte videa. Tlačítka jsou definovány tak, aby znaky znakové sady Unicode výše popsané se předěl doprovází jejich ekvivalenty u textu. Při přehrávání videa tlačítka mají Konzistentnějšího vzhledu na jednotlivých platformách:
+Protože `AutoPlay` je nastavena na `false` v **CustomTransport.xaml** souboru, bude nutné stisknout klávesu **Přehrát** tlačítko, pokud jej nepovolíte zahájíte videa. Tlačítka jsou definovány, tak, aby znaky znakové sady Unicode probírali výše jsou doplněny ekvivalenty text. Při přehrávání videa tlačítek mít konzistentní vzhled na jednotlivých platformách:
 
-[![Přehrávání vlastní přenos](custom-transport-images/customtransportplaying-small.png "vlastní přenos přehrávání")](custom-transport-images/customtransportplaying-large.png#lightbox "vlastní přenos přehrávání")
+[![Vlastní přenosu přehrávání](custom-transport-images/customtransportplaying-small.png "přehrávání vlastní přenosu")](custom-transport-images/customtransportplaying-large.png#lightbox "přehrávání vlastní přenosu")
 
-Ale pro Android a UPW **přehrání** tlačítko vypadá příliš neliší, když je pozastaven na video:
+Ale na Android a UPW **Přehrát** tlačítko vypadá velmi odlišné při pozastavení videa:
 
 [![Vlastní přenos pozastaven](custom-transport-images/customtransportpaused-small.png "vlastní přenos pozastaven")](custom-transport-images/customtransportpaused-large.png#lightbox "vlastní přenos pozastaven")
 
-V případě produkční aplikace budete pravděpodobně chtít používat vlastní Image rastrový obrázek pro tlačítka zajistit jednotnost visual.
+V produkční aplikace budete pravděpodobně chtít použít vlastní rastrový obrázek Image pro tlačítka k dosažení visual sjednocení.
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Přehrávač videoukázky (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)
+- [Ukázky přehrávače videa (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/VideoPlayerDemos/)

@@ -1,33 +1,33 @@
 ---
 title: Xamarin.Forms Editor
-description: Tento článek vysvětluje, jak používat ovládací prvek Xamarin.Forms Editor tak, aby přijímal Víceřádkový textový vstup v aplikaci.
+description: Tento článek vysvětluje, jak použít ovládací prvek editoru Xamarin.Forms tak, aby přijímal Víceřádkový textový vstup v aplikaci.
 ms.prod: xamarin
 ms.assetid: 7074DB3A-30D2-4A6B-9A89-B029EEF20B07
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/31/2018
-ms.openlocfilehash: 7ad8c8aa77e23c5a8fb7649736ecb271f835d1a7
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 4879ff88d5bbdab5aa92024bee7f50239a141e3b
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245521"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995861"
 ---
 # <a name="xamarinforms-editor"></a>Xamarin.Forms Editor
 
 _Víceřádkový textový vstup_
 
-`Editor` Řízení se používá k přijetí Víceřádkový vstup. Tento článek se zabývá:
+`Editor` Ovládací prvek se používá tak, aby přijímal Víceřádkový vstupní. Tento článek se zabývá:
 
-- **[Přizpůsobení](#customization)**  &ndash; klávesnici a barvu možnosti.
-- **[Interaktivity](#interactivity)**  &ndash; události, které můžete naslouchali pro zajistit interaktivity.
+- **[Přizpůsobení](#customization)**  &ndash; možnosti klávesnice a barvu.
+- **[Interakce](#interactivity)**  &ndash; události, které mohou být data pro interaktivitu.
 
-## <a name="customization"></a>Přizpůsobení
+## <a name="customization"></a>Vlastní nastavení
 
 ### <a name="setting-and-reading-text"></a>Nastavení a čtení textu
 
-`Editor`, Jako ostatních zobrazení textu prezentací zpřístupní `Text` vlastnost. Tuto vlastnost lze použít k nastavení a přečtěte si text uvedený na `Editor`. Následující příklad ukazuje nastavení `Text` vlastnost v jazyce XAML:
+`Editor`, Stejně jako ostatní zobrazení nabízí ten samý text zpřístupňuje `Text` vlastnost. Tuto vlastnost lze použít k nastavení a přečtěte si text na předložený `Editor`. Následující příklad ukazuje nastavení `Text` vlastnost v XAML:
 
 ```xaml
 <Editor Text="I am an Editor" />
@@ -39,15 +39,15 @@ V jazyce C#:
 var MyEditor = new Editor { Text = "I am an Editor" };
 ```
 
-Čtení textu, přístup `Text` vlastnost v jazyce C#:
+Čtení textu, přístup `Text` vlastností v jazyce C#:
 
 ```csharp
 var text = MyEditor.Text;
 ```
 
-### <a name="limiting-input-length"></a>Omezení vstupní délka
+### <a name="limiting-input-length"></a>Omezit délku vstupu
 
-[ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength) Vlastnosti lze omezit vstupní délku, která je povolené [ `Editor` ](xref:Xamarin.Forms.Editor). Tato vlastnost by měla být nastavená na kladné celé číslo:
+[ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength) Vlastnost lze použít k omezení, který je povolený pro vstupní délka [ `Editor` ](xref:Xamarin.Forms.Editor). Tuto vlastnost měli nastavit na kladné celé číslo:
 
 ```xaml
 <Editor ... MaxLength="10" />
@@ -57,28 +57,28 @@ var text = MyEditor.Text;
 var editor = new Editor { ... MaxLength = 10 };
 ```
 
-A [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength) vlastnost hodnota 0 znamená, že bude možné žádný vstup a hodnota `int.MaxValue`, což je výchozí hodnota pro [ `Editor` ](xref:Xamarin.Forms.Editor), určuje, že neexistuje žádná efektivní limit počtu znaků, které mohou být zapsána.
+A [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength) vlastnost hodnota 0 znamená, že žádný vstup bude možné a hodnotu `int.MaxValue`, což je výchozí hodnota pro [ `Editor` ](xref:Xamarin.Forms.Editor), označuje, že je žádný platit omezení počtu znaků, které mohou být zadány.
 
 ### <a name="keyboards"></a>Klávesnice
 
-Klávesnice, který se zobrazí, když uživatelé komunikovat s `Editor` lze nastavit prostřednictvím kódu programu prostřednictvím [ ``Keyboard`` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Keyboard/) vlastnost.
+Klávesnice, který se zobrazí, když uživatelé možnost zasahovat `Editor` lze programově nastavit prostřednictvím [ ``Keyboard`` ](xref:Xamarin.Forms.Keyboard) vlastnost.
 
 Možnosti pro typ klávesnice jsou:
 
 - **Výchozí** &ndash; výchozí klávesnice
-- **Chat** &ndash; používá pro odesílání textových zpráv & místech kde jsou užitečné emoji
+- **Chat** &ndash; použít pro odesílání textových zpráv a místa kde jsou užitečné emoji
 - **E-mailu** &ndash; použít při zadávání e-mailové adresy
-- **Číselné** &ndash; použít při zadávání čísel
-- **Telefonní** &ndash; použít při zadávání telefonních čísel
+- **Číselné** &ndash; při zadání čísel
+- **Telefonní** &ndash; použít při zadávání telefonní čísla
 - **Adresa URL** &ndash; používá pro zadání cesty k souborům & webové adresy
 
-Došlo [příklad každý klávesnice](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/choose-keyboard-for-entry/) v části našich recepty.
+Je [příklad každý klávesnice](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/choose-keyboard-for-entry/) v oddílu recepty.
 
-### <a name="enabling-and-disabling-spell-checking"></a>Povolení a zakázání kontrola pravopisu
+### <a name="enabling-and-disabling-spell-checking"></a>Povolení a zakázání kontroly pravopisu
 
-[ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) Ovládací prvky vlastnost jestli pravopisu kontrola je povolené. Ve výchozím nastavení, je vlastnost nastavena `true`. Jako uživatel zadá text, jsou vypsány pravopisné chyby.
+[ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) Ovládací prvky vlastnost určuje, zda kontrola pravopisu je povolená. Ve výchozím nastavení je vlastnost nastavena na `true`. Jako uživatel zadá text, jsou uvedeny pravopisné chyby.
 
-Ale v některých případech vstupní text, například zadáním uživatelského jména, kontrolu pravopisu poskytuje záporné prostředí a to by mělo být zakázáno nastavením [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) vlastnost `false`:
+Však pro některé scénáře vstupního textu, jako je zadání uživatelského jména, kontrolu pravopisu poskytuje negativní zkušenosti a proto by mělo být zakázáno nastavením [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) vlastnost `false`:
 
 ```xaml
 <Editor ... IsSpellCheckEnabled="false" />
@@ -89,11 +89,11 @@ var editor = new Editor { ... IsSpellCheckEnabled = false };
 ```
 
 > [!NOTE]
-> Když [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) je nastavena na `false`a není používán vlastní klávesnice, kontrola pravopisu nativní bude zakázán. Ale pokud [ `Keyboard` ](xref:Xamarin.Forms.Keyboard) má byla sada, která zakáže pravopisu kontrola, jako například [ `Keyboard.Chat` ](xref:Xamarin.Forms.Keyboard.Chat), `IsSpellCheckEnabled` vlastnost je ignorována. Proto vlastnost nelze použít k povolení pro kontrolu pravopisu `Keyboard` zakazující explicitně.
+> Když [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) je nastavena na `false`a se nepoužívá vlastní klávesnice, nástroj pro kontrolu pravopisu nativní se deaktivuje. Ale pokud [ `Keyboard` ](xref:Xamarin.Forms.Keyboard) má byla sada, která zakáže pravopisu kontrolu, například [ `Keyboard.Chat` ](xref:Xamarin.Forms.Keyboard.Chat), `IsSpellCheckEnabled` vlastnost se ignoruje. Proto nelze vlastnost použít k povolení kontroly pravopisu pro `Keyboard` zakazující explicitně.
 
 ### <a name="colors"></a>Barvy
 
-`Editor` může být nastaven na použití vlastní barvu pozadí prostřednictvím `BackgroundColor` vlastnost. Zvláštní pozornost je třeba zajistit, že barvy bude možné použít na každou platformu. Protože každá platforma má jiné výchozí hodnoty pro barvu textu, musíte nastavit vlastní barvu pozadí pro každou platformu. V tématu [práce s Tweaks platformy](~/xamarin-forms/platform/device.md) Další informace o optimalizaci uživatelského rozhraní pro každou platformu.
+`Editor` můžete nastavit vlastní barvu pozadí prostřednictvím `BackgroundColor` vlastnost. Zvláštní pozornost je třeba zajistit, že bude možné použít na jednotlivých platformách barvy. Protože každá platforma má různé výchozí hodnoty pro barvu textu, budete muset nastavit vlastní barvu pozadí pro jednotlivé platformy. Zobrazit [práce s úprav platformy](~/xamarin-forms/platform/device.md) Další informace o optimalizaci uživatelského rozhraní pro každou platformu.
 
 V jazyce C#:
 
@@ -112,7 +112,7 @@ public partial class EditorPage : ContentPage
 }
 ```
 
-V jazyce XAML:
+V XAML:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -135,20 +135,20 @@ V jazyce XAML:
 </ContentPage>
 ```
 
-![](editor-images/textbackgroundcolor.png "Editor BackgroundColor příklad")
+![](editor-images/textbackgroundcolor.png "Editor s BackgroundColor příklad")
 
-Ujistěte se, že barvy pozadí a text, který zvolíte lze použít na každou platformu a nemáte skrývat žádné zástupný text.
+Ujistěte se, že barvy textu a pozadí, který zvolíte lze použít na jednotlivých platformách a není skryl všechny zástupný text.
 
 ## <a name="interactivity"></a>Interaktivita
 
-`Editor` zpřístupní dvě události:
+`Editor` poskytuje dvě události:
 
-- [TextChanged](http://developer.xamarin.com/api/event/Xamarin.Forms.Editor.TextChanged/) &ndash; vyvolá, když se text změní v editoru. Poskytuje text před a po provedení změny.
-- [Dokončit](http://developer.xamarin.com/api/event/Xamarin.Forms.Editor.Completed/) &ndash; vyvolá, když uživatel skončila vstup po stisknutí klávesy návratový na klávesnici.
+- [TextChanged](xref:Xamarin.Forms.Editor.TextChanged) &ndash; aktivovaná při změně textu v editoru. Obsahuje text před a po provedení změny.
+- [Dokončení](xref:Xamarin.Forms.Editor.Completed) &ndash; vyvolá, když uživatel skončila vstup stisknutím klávesy return na klávesnici.
 
 ### <a name="completed"></a>Byla dokončena
 
-`Completed` Se používá k reagovat na dokončení interakci s `Editor`. `Completed` se vyvolá, když uživatel končí vstup s polem tak, že zadáte návratový klíč na klávesnici. Obslužná rutina události je obslužná rutina události Obecné, trvá odesílatele a `EventArgs`:
+`Completed` Událost se používá k reagovat na dokončení interakci se `Editor`. `Completed` je vyvolána, když uživatel ukončí vstup s polem tak, že zadáte klávesu return na klávesnici. Obslužná rutina události je obslužná rutina události obecného, trvá odesílatele a `EventArgs`:
 
 ```csharp
 void EditorCompleted (object sender, EventArgs e)
@@ -157,7 +157,7 @@ void EditorCompleted (object sender, EventArgs e)
 }
 ```
 
-Dokončení události může přihlásit k odběru v kódu a XAML:
+Událost dokončení může přihlásit k odběru v kódu a XAML:
 
 V jazyce C#:
 
@@ -176,7 +176,7 @@ public partial class EditorPage : ContentPage
 }
 ```
 
-V jazyce XAML:
+V XAML:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -192,11 +192,11 @@ Title="Editor Demo">
 </Contentpage>
 ```
 
-### <a name="textchanged"></a>TextChanged
+### <a name="textchanged"></a>TextChanged.
 
-`TextChanged` Se používá k reagovat na změny v obsahu pole.
+`TextChanged` Událost se používá k reagovat na změny v obsahu pole.
 
-`TextChanged` se vyvolá, když `Text` z `Editor` změny. Obslužná rutina události přijímá instanci `TextChangedEventArgs`. `TextChangedEventArgs` poskytuje přístup k staré a nové hodnoty `Editor` `Text` prostřednictvím `OldTextValue` a `NewTextValue` vlastnosti:
+`TextChanged` je vyvolána vždy, když `Text` z `Editor` změny. Obslužná rutina události přijímá instanci `TextChangedEventArgs`. `TextChangedEventArgs` poskytuje přístup k staré a nové hodnoty `Editor` `Text` prostřednictvím `OldTextValue` a `NewTextValue` vlastnosti:
 
 ```csharp
 void EditorTextChanged (object sender, TextChangedEventArgs e)
@@ -206,7 +206,7 @@ void EditorTextChanged (object sender, TextChangedEventArgs e)
 }
 ```
 
-Dokončení události může přihlásit k odběru v kódu a XAML:
+Událost dokončení může přihlásit k odběru v kódu a XAML:
 
 V kódu:
 
@@ -225,7 +225,7 @@ public partial class EditorPage : ContentPage
 }
 ```
 
-V jazyce XAML:
+V XAML:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -245,4 +245,4 @@ Title="Editor Demo">
 ## <a name="related-links"></a>Související odkazy
 
 - [Text (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
-- [Editor rozhraní API](https://developer.xamarin.com/api/type/Xamarin.Forms.Editor/)
+- [Editor rozhraní API](xref:Xamarin.Forms.Editor)

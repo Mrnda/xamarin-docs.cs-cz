@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 07/02/2018
-ms.openlocfilehash: 4635857fc850b2985f988f8c20ff854e487f79ed
-ms.sourcegitcommit: 081a2d094774c6f75437d28b71d22607e33aae71
+ms.openlocfilehash: b828e62ef1037bf47a2ae5fb303fbf8fcace6549
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37403400"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997130"
 ---
 # <a name="xaml-compilation-in-xamarinforms"></a>Kompilace XAML v Xamarin.Forms
 
@@ -60,5 +60,5 @@ V tomto příkladu kompilace XAML pro kontrolu `HomePage` provede třídy a chyb
 
 ## <a name="related-links"></a>Související odkazy
 
-- [XamlCompilation](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.XamlCompilationAttribute/)
-- [XamlCompilationOptions](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.XamlCompilationOptions/)
+- [XamlCompilation](xref:Xamarin.Forms.Xaml.XamlCompilationAttribute)
+- [XamlCompilationOptions](xref:Xamarin.Forms.Xaml.XamlCompilationOptions)

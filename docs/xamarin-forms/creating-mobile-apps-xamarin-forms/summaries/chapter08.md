@@ -7,26 +7,26 @@ ms.assetid: 5970DEEB-1FC9-4F78-B4F6-D403E16D22ED
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 70c2babef55ee6cb886b0e7da26ee57b086fa558
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: b08355db6cc90381b16f51ce7bf23be8e8bd4e14
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241016"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994530"
 ---
 # <a name="summary-of-chapter-8-code-and-xaml-in-harmony"></a>Souhrn kapitoly 8. Kód a XAML v souladu
 
-Tato kapitola zde popsány XAML hlubšímu a zvláště kód XAML interakci a.
+Tato kapitola popisuje XAML hlouběji a zejména kód a XAML interakci.
 
-## <a name="passing-arguments"></a>Předání argumentů
+## <a name="passing-arguments"></a>Předávání argumentů
 
-V případě obecné třídu instanci v jazyce XAML, musí mít veřejný konstruktor; Výsledný objekt je inicializován prostřednictvím nastavení vlastností. Ale existují dva další způsoby, objekty, můžete vytvořit instance a inicializován.
+V tomto obecném případě třída vytvořena instance v XAML musí mít veřejný konstruktor bez parametrů; Výsledný objekt je inicializován pomocí nastavení vlastnosti. Existují však dvěma dalšími způsoby, objektů můžete vytvořit instanci a inicializován.
 
-I když jsou tyto pro obecné účely techniky, se nejčastěji používá ve spojení s modelem MVVM Zobrazit modely.
+I když tyto techniky pro obecné účely, se nejčastěji používají v souvislosti s modelem MVVM Zobrazit modely.
 
-### <a name="constructors-with-arguments"></a>Konstruktory argumentů.
+### <a name="constructors-with-arguments"></a>Konstruktory s argumenty
 
-[ **ParameteredConstructorDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/ParameteredConstructorDemo) příklad ukazuje způsob použití `x:Arguments` značky chcete zadat argumenty konstruktoru. Tyto argumenty musí být odděleny značky elementu označující typ argumentu. Pro základní datové typy .NET jsou k dispozici následující značky:
+[ **ParameteredConstructorDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/ParameteredConstructorDemo) Ukázka předvádí, jak používat `x:Arguments` značka zadat argumenty konstruktoru. Tyto argumenty musí být odděleny značky elementů určující typ argumentu. Pro základní datové typy .NET jsou k dispozici následující značky:
 
 - `x:Object`
 - `x:Boolean`
@@ -43,42 +43,42 @@ I když jsou tyto pro obecné účely techniky, se nejčastěji používá ve sp
 - `x:Array`
 - `x:DateTime`
 
-### <a name="can-i-call-methods-from-xaml"></a>Můžete volat metody z XAML?
+### <a name="can-i-call-methods-from-xaml"></a>Můžete volat metody z XAML
 
-[ **FactoryMethodDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/FactoryMethodDemo) příklad ukazuje způsob použití `x:FactoryMethod` elementu, který chcete zadat metoda factory, která je vyvolána k vytvoření objektu. Tato metoda factory musí být veřejné a statické, a musí vytvořit objekt typu, ve kterém je definovaný. (Například [ `Color.FromRgb` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Color.FromRgb/p/System.Double/System.Double/System.Double/)) metoda vyfiltrování, protože je veřejná a statické a vrátí hodnotu typu `Color`.) Jsou zadané argumenty, které se metoda objektu factory v rámci `x:Arguments` značky.
+[ **FactoryMethodDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/FactoryMethodDemo) Ukázka předvádí, jak používat `x:FactoryMethod` element chcete zadat objekt pro vytváření metodu, která se vyvolá pro vytvoření objektu. Metoda factory musí být veřejná a statická a se musí vytvořit objekt typu, ve kterém je definována. (Například [ `Color.FromRgb` ](xref:Xamarin.Forms.Color.FromRgb(System.Double,System.Double,System.Double)) metoda kvalifikuje, protože není veřejná a statická a vrátí hodnotu typu `Color`.) Argumenty pro výrobní metoda jsou určené v rámci `x:Arguments` značky.
 
-## <a name="the-xname-attribute"></a>X: Name – atribut
+## <a name="the-xname-attribute"></a>Atribut x: Name
 
-`x:Name` Atribut umožňuje vytvoření v jazyce XAML, které má být poskytnut název instance objektu. Pravidla pro tyto názvy jsou stejné jako názvy proměnných C#. Následující návrat `InitializeComponent` volání v konstruktoru, souboru kódu na pozadí se může vztahovat na tyto názvy pro přístup k odpovídající element XAML. Názvy jsou ve skutečnosti převést analyzátorem jazyka XAML do privátním polím v generované třídu.
+`x:Name` Atribut umožňuje vytvořit instanci v XAML název objektu. Pravidla pro tyto názvy jsou stejné jako názvy proměnných jazyka C#. Po návratu `InitializeComponent` volání v konstruktoru, soubor kódu na pozadí mohou odkazovat na tyto názvy pro přístup k odpovídající prvek XAML. Názvy jsou ve skutečnosti převedené pomocí analyzátoru XAML do privátní pole v vygenerovanou dílčí třídu.
 
-[ **XamlClock** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/XamlClock) příklad ukazuje použití `x:Name` povolíte souboru kódu na pozadí udržovat dva `Label` prvky, které jsou definované v jazyce XAML aktualizovat s aktuálním datem a časem.
+[ **XamlClock** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/XamlClock) ukázka demonstruje použití `x:Name` umožňující použití modelu code-behind souboru se má zachovat dvě `Label` prvky definované v XAML aktualizovat s aktuálním datem a časem.
 
-Stejný název nelze použít pro více prvků na stejné stránce. Pokud použijete tento konkrétní problém je `OnPlatform` k vytvoření paralelní s názvem objekty pro každou platformu. [ **PlatformSpecificLabele** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/PlatformSpecificLabels) ukázka představuje lepší způsob, jak dělat něco jako je například.
+Se stejným názvem nelze použít pro několik elementů na stejné stránce. To je konkrétního problému, když používáte `OnPlatform` vytvoření paralelní s názvem objekty pro každou platformu. [ **PlatformSpecificLabele** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/PlatformSpecificLabels) ukázce lepší způsob, jak něco udělat tímto způsobem.
 
-## <a name="custom-xaml-based-views"></a>Vlastní pohledy založených na XAML
+## <a name="custom-xaml-based-views"></a>Vlastní zobrazení XAML
 
-Existuje několik způsobů, aby se zabránilo opakování značek v jazyce XAML. Jednou z běžných technik je vytvořte novou třídu založených na XAML, která je odvozena z [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/). Tento postup je znázorněn v [ **ColorViewList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/ColorViewList) ukázka. `ColorView` Třída odvozená z `ContentView` Pokud chcete zobrazit konkrétní barvy a jeho název, při `ColorViewListPage` třída odvozená z `ContentPage` obvyklým a explicitně vytváří 17 instance `ColorView`.
+Existuje několik způsobů, jak zabránit opakování kódu v XAML. Jednou z běžných metod je pro vytvoření nové třídy založené na XAML, který je odvozen z [ `ContentView` ](xref:Xamarin.Forms.ContentView). Tato technika je patrné [ **ColorViewList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/ColorViewList) vzorku. `ColorView` Třída odvozena z `ContentView` k zobrazení určité barvy a jeho název, zatímco `ColorViewListPage` třída odvozena z `ContentPage` obvyklým způsobem a explicitně vytvoří 17 instancí `ColorView`.
 
-Přístup k `ColorView` třídy v jazyce XAML vyžaduje jiný deklaraci oboru názvů XML, obvykle s názvem `local` pro třídy ve stejném sestavení.
+Přístup k `ColorView` třídy v XAML vyžaduje jiné deklarace oboru názvů XML, obvykle s názvem `local` pro třídy ve stejném sestavení.
 
 ## <a name="events-and-handlers"></a>Události a obslužné rutiny
 
-Události lze přiřadit k obslužné rutiny událostí v jazyce XAML, ale samotný obslužné rutiny události musí být implementován v souboru kódu na pozadí. [ **XamlKeypad** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/XamlKeypad) ukazuje postup vytvoření uživatelského rozhraní v jazyce XAML klávesnici a k implementaci `Clicked` obslužné rutiny v souboru kódu na pozadí.
+Události je možné přiřadit k obslužné rutiny událostí v XAML, ale samotná obslužná rutina události musí být implementován v souboru kódu na pozadí. [ **XamlKeypad** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/XamlKeypad) ukazuje, jak vytvořit uživatelské rozhraní klávesnice v XAML a jak implementovat `Clicked` obslužných rutin v souboru kódu na pozadí.
 
 ## <a name="tap-gestures"></a>Klepněte na gesta
 
-Všechny `View` objekt můžete získat dotykové ovládání a generovat události z tento vstup. `View` Třída definuje [ `GestureRecognizers` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.GestureRecognizers/) vlastnost kolekce, která může obsahovat jednu nebo více instancí třídy, které jsou odvozeny od [ `GestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GestureRecognizer/).
+Žádné `View` objektu můžete získat dotykové ovládání a generovat události z těchto informací. `View` Definuje třídu [ `GestureRecognizers` ](xref:Xamarin.Forms.View.GestureRecognizers) vlastnost kolekce, která může obsahovat jednu nebo víc instancí třídy, které jsou odvozeny z [ `GestureRecognizer` ](xref:Xamarin.Forms.GestureRecognizer).
 
-[ `TapGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/) Generuje [ `Tapped` ](https://developer.xamarin.com/api/event/Xamarin.Forms.TapGestureRecognizer.Tapped/) události. [ **MonkeyTap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/MonkeyTap) program ukazuje, jak připojit `TapGestureRecognizer` objekty čtyři `BoxView` elementy vytvořit napodobeniny herní:
+[ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) Generuje [ `Tapped` ](xref:Xamarin.Forms.TapGestureRecognizer.Tapped) události. [ **MonkeyTap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/MonkeyTap) program ukazuje, jak připojit `TapGestureRecognizer` objekty na čtyři `BoxView` prvky pro vytvoření imitace hry:
 
-[![Trojitá snímek obrazovky klepněte na opic](images/ch08fg07-small.png "napodobení herní")](images/ch08fg07-large.png#lightbox "napodobení hra")
+[![Trojitá snímek obrazovky klepněte na opic](images/ch08fg07-small.png "imitace hru")](images/ch08fg07-large.png#lightbox "imitace hry")
 
-Ale **MonkeyTap** program opravdu potřebuje zvuku. (Viz [další kapitoly](chapter09.md).)
+Ale **MonkeyTap** program potřebuje zvuk. (Viz [další kapitolu](chapter09.md).)
 
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Úplný text kapitoly 8 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch08-Apr2016.pdf)
+- [8 kapitoly textu v plném znění (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch08-Apr2016.pdf)
 - [Ukázky kapitoly 8](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08)
 - [Ukázka kapitoly 8 F #](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/FS/XamlKeypad)

@@ -1,96 +1,96 @@
 ---
-title: Použití CocosSharp v Xamarin.Forms
-description: CocosSharp slouží k přidání do aplikace pro pokročilé vizualizaci přesné tvaru, image a vykreslování textu
+title: Používání Cocossharpu v Xamarin.Forms
+description: Cocossharpu lze přidat do aplikace pro pokročilé vizualizace přesné tvar, image a vykreslování textu
 ms.prod: xamarin
 ms.assetid: E0F404D5-5C6B-4288-92EC-78996C674E4E
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 05/03/2016
-ms.openlocfilehash: 4770076a0bf31ebd3cdf8f1b83da076a4dcc83ef
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: c823eb27552f0a42ad428ed6f36790e925079295
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847888"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998804"
 ---
-# <a name="using-cocossharp-in-xamarinforms"></a>Použití CocosSharp v Xamarin.Forms
+# <a name="using-cocossharp-in-xamarinforms"></a>Používání Cocossharpu v Xamarin.Forms
 
-_CocosSharp slouží k přidání do aplikace pro pokročilé vizualizaci přesné tvaru, image a vykreslování textu_
+_Cocossharpu lze přidat do aplikace pro pokročilé vizualizace přesné tvar, image a vykreslování textu_
 
 > [!VIDEO https://youtube.com/embed/eYCx63FeqVU]
 
-**Momentální 2016: Kokosové # v Xamarin.Forms**
+**Rozvoj 2016: Cocos # v Xamarin.Forms**
 
 ## <a name="overview"></a>Přehled
 
-CocosSharp je výkonná technologie pro zobrazení grafiky, čtení dotykové ovládání, přehrávání zvuku a správa obsahu. Tato příručka vysvětluje, jak přidat CocosSharp Xamarin.Forms aplikace. Pokrývá následující:
+Cocossharpu je flexibilní a výkonné technologie pro zobrazení grafické, dotykové ovládání pro čtení, přehrávání audio a správě obsahu. Tato příručka vysvětluje, jak přidat Cocossharpu aplikace Xamarin.Forms. Zahrnuje následující:
 
-* [Co je CocosSharp?](#what)
-* [Přidání balíčků CocosSharp Nuget](#nuget)
-* [Návod: Přidání CocosSharp do aplikace na platformě Xamarin.Forms](#add)
+* [Co je Cocossharpu?](#what)
+* [Přidávají se balíčky Nuget Cocossharpu](#nuget)
+* [Návod: Přidání Cocossharpu do aplikace na platformě Xamarin.Forms](#add)
 
 <a name="what" />
 
-## <a name="what-is-cocossharp"></a>Co je CocosSharp?
+## <a name="what-is-cocossharp"></a>Co je Cocossharpu?
 
-[CocosSharp](~/graphics-games/cocossharp/index.md) herní modul s otevřeným zdrojem, která je k dispozici na platformě Xamarin.
-CocosSharp je efektivní runtime knihovnu, která zahrnuje následující funkce:
+[Cocossharpu](~/graphics-games/cocossharp/index.md) je open source herní modul, který je dostupný na platformě Xamarin.
+Cocossharpu je modul runtime úsporných knihovnu, která zahrnuje následující funkce:
 
-* Pomocí vykreslování obrázku [CCSprite – třída](https://developer.xamarin.com/api/type/CocosSharp.CCSprite/)
-* Tvar vykreslování pomocí [CCDrawNode – třída](https://developer.xamarin.com/api/type/CocosSharp.CCDrawNode/)
-* Pomocí logiky každých rámce [CCNode.Schedule – metoda](https://developer.xamarin.com/api/member/CocosSharp.CCNode.Schedule/p/System.Action%7BSystem.Single%7D/)
-* Pomocí správy obsahu (načítání a uvolňování prostředků, jako jsou soubory PNG) [CCTextureCache – třída](https://developer.xamarin.com/api/type/CocosSharp.CCTextureCache/)
-* Animace pomocí [CCAction – třída](https://developer.xamarin.com/api/type/CocosSharp.CCAction/)
+* Použití vykreslování obrázků [CCSprite třídy](https://developer.xamarin.com/api/type/CocosSharp.CCSprite/)
+* Obrazec pomocí vykreslení [třídy CCDrawNode](https://developer.xamarin.com/api/type/CocosSharp.CCDrawNode/)
+* Použití logiky každých rámce [CCNode.Schedule – metoda](https://developer.xamarin.com/api/member/CocosSharp.CCNode.Schedule/p/System.Action%7BSystem.Single%7D/)
+* Pomocí správy obsahu (načítání a uvolňování prostředků, jako jsou soubory ve formátu PNG) [CCTextureCache třídy](https://developer.xamarin.com/api/type/CocosSharp.CCTextureCache/)
+* Použití animací [třídy CCAction](https://developer.xamarin.com/api/type/CocosSharp.CCAction/)
 
-Hlavním cílem je CocosSharp je zjednodušení vytváření 2D hry napříč platformami; však může být také skvělé přidání do aplikace Xamarin formuláře. Vzhledem k tomu, že hry obvykle vyžadují efektivní vykreslování a přesnou kontrolu nad vizuály, CocosSharp lze použít k přidání výkonné vizualizace a účinky na jiné herní aplikace.
+Cocossharpu v hlavním cílem je zjednodušit proces vytváření 2D her pro různé platformy; však může být také skvělé přidání do aplikací pro formuláře Xamarin. Protože hry obvykle vyžadují efektivní vykreslování a mít naprostou kontrolu nad vizuály, Cocossharpu umožňuje přidat do aplikace bez hru výkonnou vizualizaci a efekty.
 
-Xamarin.Forms je založena na nativní, specifické pro platformu systémy uživatelského rozhraní. Například [ `Button`s](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) vypadat jinak, na iOS a Android a dokonce můžou lišit podle verze operačního systému. Naopak CocosSharp nepoužívá žádné vizuální objekty specifických pro platformy, takže všechny vizuální objekty vypadají stejně na všech platformách. Samozřejmě překlad IP adres a poměr stran se liší mezi zařízeními, a to může mít vliv na to, jak CocosSharp vykreslí jeho vizuální prvky. Tyto podrobnosti budou popsané v této příručce.
+Xamarin.Forms je postavené na nativní, specifické pro platformu systémy uživatelského rozhraní. Například [ `Button`s](xref:Xamarin.Forms.Button) vypadat jinak v Iosu a Androidu a může dokonce se liší podle verze operačního systému. Naopak Cocossharpu nepoužívá všechny vizuální objekty specifické pro platformu, takže se zobrazí všechny vizuální objekty identické na všech platformách. Samozřejmě překlad IP adres a poměr stran lišit mezi zařízeními, a to může mít vliv na to, jak Cocossharpu vykreslí její vizuály. Tyto podrobnosti probereme později v tomto průvodci.
 
-Podrobnější informace najdete v [CocosSharp části](~/graphics-games/cocossharp/index.md).
+Podrobnější informace najdete v [Cocossharpu části](~/graphics-games/cocossharp/index.md).
 
 <a name="nuget" />
 
-## <a name="adding-the-cocossharp-nuget-packages"></a>Přidání balíčků CocosSharp Nuget
+## <a name="adding-the-cocossharp-nuget-packages"></a>Přidávají se balíčky Nuget Cocossharpu
 
-Před použitím CocosSharp, vývojáři potřeba provést několik dodatky k jejich Xamarin.Forms projektu.
-Tato příručka předpokládá Xamarin.Forms projektu s iOS, Android a .NET Standard projektu knihovny.
-Kód, bude napsán v rozhraní .NET standardní projektu knihovny; ale knihovny, je nutné přidat na iOS a Android projekty.
+Před použitím Cocossharpu, vývojáři muset udělat pár dodatky k jejich projektu Xamarin.Forms.
+Tento průvodce to předpokládá projekt Xamarin.Forms s iOS, Android a .NET Standard projekt knihovny.
+Veškerý kód, bude napsán v .NET Standard knihovny projektu. knihovny však musíte přidat do iOS a Android projekty.
 
-Balíček CocosSharp Nuget obsahuje všechny objekty, které jsou potřebné k vytváření objektů CocosSharp.
-Balíček nuget CocosSharp.Forms zahrnuje `CocosSharpView` třídy, která se používá k hostiteli CocosSharp v Xamarin.Forms.
-Přidat **CocosSharp.Forms** NuGet a **CocosSharp** bude automaticky přidáno také.
-Chcete-li to provést, klikněte pravým tlačítkem na <span class="UIItem">balíčky</span> složky v rozhraní .NET standardní projektu knihovny a vyberte <span class="UIItem">přidat balíčky... </span>. Zadejte hledaný termín <span class="UIItem">CocosSharp.Forms</span>, vyberte <span class="UIItem">CocosSharp pro Xamarin.Forms</span>, pak klikněte na tlačítko <span class="UIItem">přidat balíček</span>.
+Balíček Nuget Cocossharpu obsahuje všechny objekty, které jsou potřeba k vytvoření objektů Cocossharpu.
+Balíček nuget CocosSharp.Forms zahrnuje `CocosSharpView` třídu, která se používá k hostiteli Cocossharpu v Xamarin.Forms.
+Přidat **CocosSharp.Forms** NuGet a **Cocossharpu** se automaticky přidají také.
+Chcete-li to provést, klikněte pravým tlačítkem na <span class="UIItem">balíčky</span> složky projekt knihovny .NET Standard a vyberte <span class="UIItem">přidat balíčky... </span>. Zadejte hledaný termín <span class="UIItem">CocosSharp.Forms</span>vyberte <span class="UIItem">Cocossharpu pro Xamarin.Forms</span>, pak klikněte na tlačítko <span class="UIItem">přidat balíček</span>.
 
-![](cocossharp-images/image1.png "Balíčky dialogové okno Přidání")
+![](cocossharp-images/image1.png "Přidat Dialog balíčky")
 
-Obě **CocosSharp** a **CocosSharp.Forms** balíčky NuGet se zařadí do projektu:
+Obě **Cocossharpu** a **CocosSharp.Forms** balíčky NuGet se přidají do projektu:
 
-![](cocossharp-images/image2.png "Balíčky složky")
+![](cocossharp-images/image2.png "Složky balíčků")
 
-Zopakujte výše uvedené kroky pro projekty specifických pro platformy (třeba iOS a Android).
+Opakujte předchozí postup pro konkrétní platformu projekty (jako je iOS a Android).
 
 <a name="add" />
 
-## <a name="walkthrough-adding-cocossharp-to-a-xamarinforms-app"></a>Návod: Přidání CocosSharp do aplikace na platformě Xamarin.Forms
+## <a name="walkthrough-adding-cocossharp-to-a-xamarinforms-app"></a>Návod: Přidání Cocossharpu do aplikace na platformě Xamarin.Forms
 
-Postupujte podle těchto kroků jednoduché CocosSharp zobrazení přidat do aplikace na platformě Xamarin.Forms:
+Postupujte podle těchto kroků přidejte jednoduché Cocossharpu zobrazení aplikace na platformě Xamarin.Forms:
 
 1. [Vytváření Xamarin Forms stránky](#1)
 1. [Přidání CocosSharpView](#2)
-1. [Vytváření GameScene](#3)
+1. [Vytváří GameScene](#3)
 1. [Přidání kruh](#4)
-1. [Interakci s CocosSharp](#5)
+1. [Interakce s Cocossharpem](#5)
 
-Po zobrazení CocosSharp byla úspěšně přidána do aplikace na platformě Xamarin.Forms, přejděte [CocosSharp dokumentace](~/graphics-games/cocossharp/index.md) Další informace o vytváření obsahu pomocí CocosSharp.
+Po zobrazení Cocossharpu úspěšně jste přidali do aplikace na platformě Xamarin.Forms, přejděte na web [Cocossharpu dokumentaci](~/graphics-games/cocossharp/index.md) Další informace o vytváření obsahu s Cocossharpem.
 
 <a name="1" />
 
 ### <a name="1-creating-a-xamarin-forms-page"></a>1. Vytváření Xamarin Forms stránky
 
-CocosSharp může být hostovaný v kontejneru, Xamarin.Forms. Tato ukázka pro tuto stránku používá stránku s názvem `HomePage`. `HomePage` je rozdělený na polovinu podle `Grid` zobrazíte jak Xamarin.Forms a CocosSharp mohou být vykresleny současně na stejné stránce.
+Je možné hostovat Cocossharpu v Xamarin.Forms kontejneru. Tento příklad pro tuto stránku používá stránku s názvem `HomePage`. `HomePage` je rozdělený na polovinu podle `Grid` zobrazit, jak Xamarin.Forms a Cocossharpu lze vykreslit souběžně na stejné stránce.
 
-Nejprve, nastavte stránky tak, aby obsahovala `Grid` a dvě `Button` instancí:
+Nejprve, nastavte na stránce tak, aby obsahovala `Grid` a dva `Button` instancí:
 
 
 ```csharp
@@ -135,15 +135,15 @@ public HomePage ()
 }
 ```
 
-V systému iOS `HomePage` se zobrazí, jak je znázorněno na následujícím obrázku:
+V Iosu `HomePage` se zobrazí, jak je znázorněno na následujícím obrázku:
 
-![](cocossharp-images/image3.png "Snímek domovské stránky")
+![](cocossharp-images/image3.png "Snímek obrazovky s domovskou stránku")
 
 <a name="2" />
 
 ### <a name="2-adding-a-cocossharpview"></a>2. Přidání CocosSharpView
 
-`CocosSharpView` Třída slouží k vložení do aplikace na platformě Xamarin.Forms CocosSharp. Vzhledem k tomu `CocosSharpView` dědí z [Xamarin.Forms.View](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) třída, poskytuje známé rozhraní pro rozložení a použitím do kontejnerů rozložení, jako [Xamarin.Forms.Grid](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/). Přidejte nový `CocosSharpView` do projektu dokončení `CreateTopHalf` metoda:
+`CocosSharpView` Třída slouží k vložení Cocossharpu do aplikace na platformě Xamarin.Forms. Protože `CocosSharpView` dědí z [Xamarin.Forms.View](xref:Xamarin.Forms.View) třídy, poskytuje známému rozhraní pro rozložení a může sloužit do kontejnerů rozložení, jako [Xamarin.Forms.Grid](xref:Xamarin.Forms.Grid). Přidat nový `CocosSharpView` do projektu provedením `CreateTopHalf` metody:
 
 
 ```csharp
@@ -162,7 +162,7 @@ void CreateTopHalf(Grid grid)
 }
 ```
 
-Inicializace CocosSharp není okamžitý, takže pro při registraci události `CocosSharpView` dokončil jeho vytvoření. K tomu `HandleViewCreated` metoda:
+Inicializace Cocossharpu není okamžitý, takže zaregistrujte se na událost při `CocosSharpView` dokončil jeho vytvoření. K tomu `HandleViewCreated` metody:
 
 
 ```csharp
@@ -181,25 +181,25 @@ void HandleViewCreated (object sender, EventArgs e)
 }
 ```
 
-`HandleViewCreated` Metoda má dvě důležité podrobnosti, které jsme budete vidí. První je `GameScene` třídy, která budou vytvořeny v další části. Je důležité si uvědomit, že aplikace nebude kompilace až `GameScene` je vytvořena a `gameScene` odkaz na instanci je vyřešený.
+`HandleViewCreated` Metoda má dva důležité podrobnosti, které nám budete hledat. První je `GameScene` třídy, které budou vytvořeny v další části. Je důležité si uvědomit, že dokud nebude kompilovat aplikaci `GameScene` se vytvoří a `gameScene` odkazu na instanci je vyřešený.
 
-Je druhý důležité podrobnosti `DesignResolution` vlastnosti, která definuje oblast viditelné ve hře CocosSharp objektů. `DesignResolution` Vlastnost se hledá v po vytvoření `GameScene`.
+Je druhý důležité podrobnosti `DesignResolution` vlastnost, která definuje hry pro objekty Cocossharpu viditelná oblast. `DesignResolution` Vlastnost se podívali na po vytvoření `GameScene`.
 
 <a name="3" />
 
-### <a name="3-creating-the-gamescene"></a>3. Vytváření GameScene
+### <a name="3-creating-the-gamescene"></a>3. Vytváří GameScene
 
-`GameScene` Třída dědí z na CocosSharp `CCScene`. `GameScene` je první bod, kde budeme řešit čistě CocosSharp. Kód obsažené v `GameScene` bude fungovat v jakékoli aplikaci, CocosSharp, zda je umístěna v rámci projektu Xamarin.Forms, nebo ne.
+`GameScene` Třída dědí z vaší Cocossharpu `CCScene`. `GameScene` je první bod, ve kterém se zabýváme čistě s Cocossharpem. Kód obsažený v `GameScene` bude fungovat ve všech aplikacích Cocossharpu, zda je umístěno v rámci projektu Xamarin.Forms nebo ne.
 
-`CCScene` Třída je visual kořenovém všechny CocosSharp vykreslování. Žádné viditelné CocosSharp objekt musí být obsažena v `CCScene`. Přesněji řečeno, vizuální objekty musí být přidaný do `CCLayer` instance a ty `CCLayer` instancí musí být přidaný do `CCScene`.
+`CCScene` Visual kořenové veškerého vykreslování Cocossharpu je třída. Musí obsahovat jakéhokoliv viditelného objektu Cocossharpu `CCScene`. Přesněji řečeno, vizuální objekty musí být přidané do `CCLayer` instancí a ty `CCLayer` instancí musí být přidané do `CCScene`.
 
-Následující graf může pomoct vizualizovat typické CocosSharp hierarchie:
+Následující graf vám můžou pomoct vizualizovat typické Cocossharpu hierarchie:
 
 ![](cocossharp-images/image4.png "Typical CocosSharp Hierarchy")
 
-Pouze jeden `CCScene` může být aktivní v jednom okamžiku. Většina her používá více `CCLayer` instance řazení obsahu, ale naše aplikace používá jenom jeden. Podobně Většina her používat víc vizuální objekty, ale nemůžeme budete mít pouze jednu v naší aplikaci. Podrobnější diskuzi o CocosSharp visual hierarchie lze nalézt v [BouncingGame návod](~/graphics-games/cocossharp/bouncing-game.md).
+Pouze jeden `CCScene` aktivní může být najednou. Většina her používá více `CCLayer` instancí k řazení obsahu, ale naše aplikace používá pouze jeden. Podobně Většina her používá víc vizuální objekty, ale pouze jsme si v naší aplikaci. Podrobnější diskuzi o Cocossharpu visual hierarchie najdete v [hry BouncingGame návod](~/graphics-games/cocossharp/bouncing-game.md).
 
-Zpočátku `GameScene` třída bude téměř prázdný – stačí vytvoříme ji vyhovět odkaz v `HomePage`. Přidejte novou třídu do projektu .NET standardní knihovny s názvem `GameScene`. Musí dědit z `CCScene` třídy následujícím způsobem:
+Zpočátku `GameScene` třídy bude téměř prázdný – stačí vytvoříme vám ho tím se uspokojí odkaz v `HomePage`. Přidejte novou třídu do projektu knihovny .NET Standard s názvem `GameScene`. By měla dědit z `CCScene` třídy následujícím způsobem:
 
 
 ```csharp
@@ -212,7 +212,7 @@ public class GameScene : CCScene
 }
 ```
 
-Teď, když `GameScene` je definován, jsme mohli vrátit k `HomePage` a přidejte pole:
+Teď, když `GameScene` je definován, jsme mohli vrátit k `HomePage` a přidat pole:
 
 
 ```csharp
@@ -221,7 +221,7 @@ Teď, když `GameScene` je definován, jsme mohli vrátit k `HomePage` a přidej
 GameScene gameScene;
 ```
 
-Nyní jsme můžete zkompilovat naše projektu a spusťte ji zobrazíte CocosSharp systémem. Jsme nepřidali nic, aby naše `GameScene,` tak, aby horní polovině naší stránce s začernit – výchozí barvu scény CocosSharp:
+Teď můžeme kompilace projektu a ji spustit a zjistit Cocossharpu systémem. Jsme nepřidali nic, aby naše `GameScene,` proto černé – výchozí barva scény Cocossharpu v horní polovině naši stránku:
 
 ![](cocossharp-images/image5.png "Prázdné GameScene")
 
@@ -229,9 +229,9 @@ Nyní jsme můžete zkompilovat naše projektu a spusťte ji zobrazíte CocosSha
 
 ### <a name="4-adding-a-circle"></a>4. Přidání kruh
 
-Aplikace má aktuálně spuštěné instance CocosSharp stroje, zobrazení prázdnou `CCScene`. Potom přidáme objekt visual: kruh. `CCDrawNode` Třídu lze použít k vykreslení celou řadu geometrické obrazce, jak je uvedeno v [geometrie kreslení pomocí Průvodce CCDrawNode](~/graphics-games/cocossharp/ccdrawnode.md).
+Aplikace má aktuálně spuštěné instance modulu Cocossharpu zobrazení prázdná `CCScene`. V dalším kroku přidáme vizuální objekty: kruh. `CCDrawNode` Třída slouží k vykreslení širokou škálu geometrické tvary, jak je uvedeno v [kreslení geometrie v CCDrawNode příručce](~/graphics-games/cocossharp/ccdrawnode.md).
 
-Přidat kruh na našem `GameScene` třídy a doložit v konstruktoru, jak je znázorněno v následujícím kódu:
+Přidejte kruh do našich `GameScene` třídy a instance v konstruktoru, jak je znázorněno v následujícím kódu:
 
 
 ```csharp
@@ -256,35 +256,35 @@ public class GameScene : CCScene
 }
 ```
 
-Spuštění aplikace teď zobrazuje kruh na levé straně oblasti CocosSharp zobrazení:
+Spuštění aplikace nyní zobrazuje kruhu na levé straně Cocossharpu zobrazované oblasti:
 
-![](cocossharp-images/image6.png "Kruh v GameScene")
+![](cocossharp-images/image6.png "Kruhu GameScene")
 
 
 #### <a name="understanding-designresolution"></a>Principy DesignResolution
 
-Teď, když se zobrazí objekt visual CocosSharp nám prozkoumat `DesignResolution` vlastnost.
+Teď, když se zobrazí vizuální objekty Cocossharpu, nám prozkoumat `DesignResolution` vlastnost.
 
-`DesignResolution` Představuje šířku a výšku oblasti CocosSharp pro umístění a velikosti. Skutečné rozlišení oblasti se měří v *pixelů* při `DesignResolution` se měří ve světě *jednotky*. Následující diagram znázorňuje rozlišení různých částí zobrazení, zobrazovat na zařízení iPhone 5 rozlišení obrazovky 640 x 1136 pixelů:
+`DesignResolution` Představuje šířku a výšku oblasti Cocossharpu pro umístění a velikosti objektů. Aktuální řešení v oblasti se měří v *pixelů* zatímco `DesignResolution` se měří v celém světě *jednotky*. Následující diagram znázorňuje rozlišení zobrazení, jak se zobrazuje na zařízeních iPhone 5 s rozlišení 640 × 1136 pixelů různých částí:
 
 ![](cocossharp-images/image7.png "iPhone 5s návrhu řešení")
 
-Diagramu výše zobrazí na vnější straně obrazovky v černého textu v pixelech. Jednotky se zobrazí uvnitř diagram bílý text. Zde jsou některé důležité podrobnosti zobrazené výše:
+Výše uvedeném diagramu zobrazí z vnějšku obrazovky v černý text v pixelech. Jsou jednotky zobrazeny uvnitř diagram bílým textem. Tady jsou některé důležité podrobnosti zobrazený nad:
 
-* Zobrazení CocosSharp pochází z vlevo dole. Posunutí doprava zvyšuje hodnotu X a přesunutí nahoru hodnoty Y. Všimněte si, že je obrácený hodnotu Y ve srovnání s některé jiné stroje 2D rozložení, kde (0,0) je horní části nalevo od plátna.
-* Výchozí chování CocosSharp je zachování poměru stran jeho zobrazení. Vzhledem k tomu, že první řádek v mřížce je větší než výška, CocosSharp nevyplní celou šířku jeho buňky znázorněného desítkovém bílé rámeček. Toto chování může být změněn, jak je popsáno v [Průvodce zpracování více řešení v CocosSharp](~/graphics-games/cocossharp/resolutions.md).
-* V tomto příkladu bude udržovat CocosSharp zobrazení oblasti 100 jednotek vodorovně a svisle bez ohledu na velikost nebo poměr stran jeho zařízení. To znamená, že kód můžete předpokládat, že představuje X = 100 vázaný úplně vpravo-o CocosSharp zobrazit, rozložení pro zachování konzistentní u všech zařízení.
+* Zobrazení Cocossharpu pochází z vlevo dole. Přesuňte do pravé zvyšuje hodnotu X, a přesunutí nahoru hodnotu Y. Všimněte si, že je obrácený hodnotu Y ve srovnání s některých jiných modulů 2D rozložení, ve kterém (0; 0) je v levém horním rohu plátna.
+* Výchozí chování Cocossharpu je zachování poměru stran u jeho zobrazení. Vzhledem k tomu, že první řádek v tabulce je větší než výška, Cocossharpu nevyplní celou šířku jeho buňky znázorněno tečkovaná bílý obdélník. Toto chování lze změnit, jak je popsáno v [provede zpracování řešení více rozlišení v Cocossharpu](~/graphics-games/cocossharp/resolutions.md).
+* V tomto příkladu bude udržovat Cocossharpu zobrazení plochy 100 jednotek šířku a výšku bez ohledu na velikost nebo poměru stran u jeho zařízení. To znamená, že kód, můžete předpokládat, že X = 100 představuje vázán úplně vpravo Cocossharpu zobrazíte rozložení zachování konzistentní vzhledem k aplikacím na všech zařízeních.
 
 
 #### <a name="ccdrawnode-details"></a>Podrobnosti o CCDrawNode
 
-Naše používá jednoduchou aplikaci `CCDrawNode` třída k vykreslení kruh. Tato třída může být velmi užitečná pro obchodní aplikace, protože poskytuje vektorové geometrie vykreslování – funkce chybí Xamarin.Forms. Kromě kroužky `CCDrawNode` třídu lze použít k vykreslení obdélníků, křivky, řádky a vlastní mnohoúhelníky. `CCDrawNode` je také snadno použitelný protože nevyžaduje použití soubory bitových kopií (například .png). Podrobnější diskuzi o CCDrawNode lze nalézt v [geometrie kreslení pomocí Průvodce CCDrawNode](~/graphics-games/cocossharp/ccdrawnode.md).
+Náš jednoduchý aplikace používá `CCDrawNode` třídy nakreslit kruh. Tato třída může být velmi užitečné pro obchodní aplikace, protože poskytuje geometrie vektorové vykreslování – funkce chybí Xamarin.Forms. Kromě kruzích `CCDrawNode` třída slouží k vykreslení obdélníky, křivek, řádky a vlastní mnohoúhelníky. `CCDrawNode` je také snadno se používá od nevyžaduje použití soubory obrázků (například PNG). Podrobnější diskuzi o CCDrawNode najdete v [kreslení geometrie v CCDrawNode příručce](~/graphics-games/cocossharp/ccdrawnode.md).
 
 <a name="5" />
 
-### <a name="5-interacting-with-cocossharp"></a>5. Interakci s CocosSharp
+### <a name="5-interacting-with-cocossharp"></a>5. Interakce s Cocossharpem
 
-Vizuální prvky CocosSharp (například `CCDrawNode`) dědí `CCNode` třídy. `CCNode` poskytuje dvě vlastnosti, které se dají použít pro umístění objektu relativně k nadřazenému: `PositionX` a `PositionY`. Naše kód aktuálně používá tyto dvě vlastnosti na pozici střed kruhu, jak ukazuje tento fragment kódu:
+Cocossharpu vizuálních prvků (například `CCDrawNode`) dědí `CCNode` třídy. `CCNode` poskytuje dvě vlastnosti, které je možné použít pro umístění objektu relativně k nadřazenému: `PositionX` a `PositionY`. Náš kód aktuálně používá tyto dvě vlastnosti k umístění střed kruhu, jak je znázorněno v tomto fragmentu kódu:
 
 
 ```csharp
@@ -292,9 +292,9 @@ circle.PositionX = 20;
 circle.PositionY = 50;
 ```
 
-Je důležité si uvědomit, že CocosSharp objekty jsou umístěny hodnotami explicitní pozici, na rozdíl od většiny Xamarin.Forms zobrazení, která se automaticky umístí podle chování ovládacích prvků jejich nadřazené rozložení.
+Je důležité si uvědomit, že Cocossharpu objekty jsou umístěny ve explicitními hodnotami pozic, na rozdíl od většiny zobrazení Xamarin.Forms, která se automaticky umístí podle jejich chování z jejich nadřazených rozložení ovládacích prvků.
 
-Přidáme kód chcete umožnit uživatelům dvě tlačítka Přesunout doleva nebo doprava na kruh 10 jednotkami (není pixelů, protože kruhu nevykresluje v prostoru CocosSharp world jednotku). Nejdříve vytvoříme dvě veřejné metody v `GameScene` třídy:
+Přidáme kód umožňující uživateli dvě tlačítka přesun kruh vlevo nebo vpravo o 10 jednotek (ne pixelů, protože kreslí kruh v prostoru světa jednotky Cocossharpu). Nejprve vytvoříme dvě veřejné metody v `GameScene` třídy:
 
 
 ```csharp
@@ -309,7 +309,7 @@ public void MoveCircleRight()
 }
 ```
 
-Potom přidáme obslužné rutiny pro dvě tlačítka v `HomePage` reakce na kliknutí. Po dokončení naše `CreateBottomHalf` metoda obsahuje následující kód:
+V dalším kroku přidáme obslužné rutiny pro dvě tlačítka v `HomePage` reakce na kliknutí. Až budete hotovi, naše `CreateBottomHalf` metoda obsahuje následující kód:
 
 
 ```csharp
@@ -337,19 +337,19 @@ void CreateBottomHalf(Grid grid)
 }
 ```
 
-Kruhu CocosSharp přesune teď v odpovědi na kliknutí. Můžeme také jasně uvidí hranice plátno CocosSharp přesunutím kruhu dostatečně doleva nebo doprava:
+Kruh Cocossharpu teď přesune v reakci na kliknutí. Můžeme vidět také jasně hranice plátno Cocossharpu přesunutím kruhu dostatečně úplně vlevo nebo vpravo:
 
-![](cocossharp-images/image8.png "GameScene s přesunutím kruhu.")
+![](cocossharp-images/image8.png "GameScene s přesunem kruh")
 
 ## <a name="summary"></a>Souhrn
 
-Tato příručka ukazuje, jak přidat do existující Xamarin.Forms CocosSharp projektu, jak vytvořit interakce mezi Xamarin.Forms a CocosSharp a popisuje různé aspekty při vytváření rozložení v CocosSharp.
+Tato příručka ukazuje, jak přidat do existující Xamarin.Forms Cocossharpu projektu, jak vytvořit interakce mezi Xamarin.Forms a Cocossharpu a tento článek popisuje různé aspekty při vytváření rozložení v Cocossharpu.
 
-Herní modul CocosSharp nabízí mnoho funkcí a hloubku, aby tato příručka pouze scratches prostor co můžete dělat CocosSharp. Vývojáři zájem o další materiály o CocosSharp najdete mnoho články v [CocosSharp části](~/graphics-games/cocossharp/index.md).
+Herní engine Cocossharpu nabízí mnoho funkcí a hloubka, tak tato příručka pouze zjednodušené co můžete dělat Cocossharpu. Vývojáři zájem o další materiály o Cocossharpu můžete najít mnoho články v [Cocossharpu části](~/graphics-games/cocossharp/index.md).
 
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Rozhraní API CocosSharp](https://developer.xamarin.com/api/root/CocosSharp/)
+- [Rozhraní API Cocossharpu](https://developer.xamarin.com/api/root/CocosSharp/)
 - [CocosSharpForms (sample)](https://developer.xamarin.com/samples/xamarin-forms/CocosSharpForms/)

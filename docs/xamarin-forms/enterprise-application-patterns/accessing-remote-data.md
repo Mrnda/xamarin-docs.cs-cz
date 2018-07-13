@@ -1,63 +1,63 @@
 ---
-title: Přístup k vzdálených dat
-description: Tato kapitola vysvětluje, jak mobilní aplikace eShopOnContainers přistupuje k datům z kontejnerizované mikroslužeb.
+title: Přístup ke vzdáleným datům
+description: Tato kapitola popisuje, jak aplikaci eShopOnContainers mobilní aplikace přistupuje k datům z kontejnerizované mikroslužby.
 ms.prod: xamarin
 ms.assetid: 42eba6f5-9784-4e1a-9943-5c1fbeea7452
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: a140560731cc68dd85c97dc5a89aedcb32abd405
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 009a4025bc9df6f657964b7e97e559635ef0a929
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35242086"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996162"
 ---
-# <a name="accessing-remote-data"></a>Přístup k vzdálených dat
+# <a name="accessing-remote-data"></a>Přístup ke vzdáleným datům
 
-Ujistěte se, mnohá moderní řešení založené na webu pomocí webových služeb, hostované webové servery, nabízí funkce pro vzdálené klientské aplikace. Operace, které zpřístupní webové služby tvoří webového rozhraní API.
+Ujistěte se, mnohá moderní řešení založeného na webu využívání webových služeb hostovaných webových serverů k zajištění funkce pro vzdálené klientské aplikace. Operace, které zveřejňuje webová služba tvoří webového rozhraní API.
 
-Klienta aplikace by měla umět využívají webové rozhraní API bez znalosti, jak jsou implementované dat nebo operace, které zpřístupňuje rozhraní API. To vyžaduje, aby rozhraní API dodržuje běžné standardů, které umožňují klienta aplikace a webové služby dohodnout se na které formáty dat mají být použity a struktura dat, která se vyměňují mezi klientské aplikace a webové služby.
+Klientské aplikace by měla moct využívat webového rozhraní API bez znalosti, jak se implementují dat nebo operace, které zveřejňuje rozhraní API. To vyžaduje, aby rozhraní API dodržuje běžných standardů, které umožňují klientské aplikaci a webovou službou shodnout na které formáty data a strukturu dat, která se vyměňují mezi klientské aplikace a webové služby.
 
-## <a name="introduction-to-representational-state-transfer"></a>Úvod do Representational State Transfer
+## <a name="introduction-to-representational-state-transfer"></a>Úvod do služby Representational State Transfer
 
-Přenos REST (Representational State) je styl architektury pro vytváření distribuované systémy založené na hypermédií. Primární výhod modelu REST je, že má založených na standardech otevřete a bez vazby implementace modelu nebo klientských aplikací, které k němu přístup pro všechny konkrétní implementaci. Proto webové služby REST, může být implementovaná pomocí Microsoft ASP.NET Core MVC a klientské aplikace může být vývoj s použitím všechny jazyk a sady nástrojů, která může generovat požadavků HTTP a analyzovat odpovědi HTTP.
+Representational State Transfer (REST) je styl architektury pro vytváření distribuovaných systémů založených na hypermédiích. Primární výhoda REST modelu je, že je založená na otevřených standardech a bez vazby implementaci modelu nebo klientských aplikací, kteří k nim žádnou konkrétní implementaci. Proto webovou službu REST může implementovat s využitím Microsoft ASP.NET Core MVC a klientské aplikace může být vývoj pomocí jakéhokoli jazyka a nástrojů, která mohou generovat požadavky HTTP a parsovat odpovědi HTTP.
 
-REST model navigační schéma používá k reprezentaci objekty a služby přes síť, označuje jako prostředky. Systémy, které obvykle implementovat REST pomocí protokolu HTTP k předání žádosti o přístup k těmto prostředkům. V těchto systémech klientské aplikace odešle žádost o ve formě identifikátoru URI, který identifikuje prostředek a metodu HTTP (třeba GET, POST, PUT nebo odstranit), která určuje operaci provést na tento prostředek. Text žádosti HTTP obsahuje všechna data potřebná k provedení operace.
+REST model navigační schéma používá k reprezentaci objekty a služby přes síť, označuje jako prostředky. Systémy, které obvykle implementují REST pomocí protokolu HTTP k přenosu žádosti o přístup k těmto prostředkům. V takových systémech klientská aplikace odešle žádost ve formě identifikátoru URI, který identifikuje prostředek a metodou HTTP (například GET, POST, PUT nebo DELETE), která určuje operaci provést na tento prostředek. Text požadavku HTTP obsahuje všechna data potřebná k provedení operace.
 
 > [!NOTE]
-> REST definuje model bezstavové požadavku. Proto požadavky HTTP musí být nezávislý a může dojít v libovolném pořadí.
+> REST definuje bezstavový model požadavků. Proto požadavky HTTP musí být nezávislé a může dojít v libovolném pořadí.
 
-Odpověď REST požadavku díky použití standardní stavové kódy HTTP. Požadavek, který vrátí platná data například by měla obsahovat kód odpovědi HTTP 200 (OK), zatímco žádost, kterému se nepodařilo najít nebo odstranit zadaný prostředek by měl vrátit odpověď zahrnující stavový kód protokolu HTTP 404 (není nalezena).
+Odpověď zbývající požadavku umožňuje používat standardní stavové kódy HTTP. Například požadavek, který vrátí platná data by měl obsahovat kód odpovědi HTTP 200 (OK), zatímco požadavek, který nejde najít nebo odstranění zadaného prostředku by mělo vrátit odpověď, která zahrnuje stavový kód HTTP 404 (Nenalezeno).
 
-RESTful webová rozhraní API zveřejňuje sadu připojené prostředků a poskytuje základních operací, které umožňují aplikacím pracovat s tyto prostředky a snadno přejít mezi nimi. Z tohoto důvodu se identifikátory URI, které tvoří typické RESTful webového rozhraní API zaměřeno na data, která zpřístupňuje a použití zadané zařízení pomocí protokolu HTTP k provozu na tato data.
+RESTful webového rozhraní API zveřejňuje sadu připojených prostředků a poskytuje základních operací, které umožňují aplikaci manipulovat s těmito prostředky a snadno procházet mezi nimi. Z tohoto důvodu jsou orientované na data, která zveřejňuje a použijte k dispozici zařízení pomocí protokolu HTTP pro provoz na těchto datech identifikátory URI, který tvoří typické RESTful webového rozhraní API.
 
-Údaje zahrnuté ve klientskou aplikaci v požadavku HTTP a odpovídající zprávy odpovědi z webového serveru, může být zpracovány v různých formátech, označuje jako typy médií. Pokud klientské aplikace odešle požadavek, který vrací data v textu zprávy, může však určovat typy médií dokáže zpracovat v `Accept` hlavičky žádosti. Pokud server podporuje tento typ média, může odpovědět odpovědi, která zahrnuje `Content-Type` hlavičky, která určují formát dat v textu zprávy. Pak je zodpovědností klientské aplikace a analyzovat zprávu odpovědi správně interpretovat výsledky v textu zprávy.
+Zobrazí data zahrnutá ve klientskou aplikaci v požadavku HTTP a odpovídající zprávy odpovědi z webového serveru, může se vám v různých formátech, označované jako typy médií. Když klientská aplikace odešle požadavek, který vrací data v textu zprávy, můžete určit typy médií, dokáže zpracovat v `Accept` záhlaví požadavku. Pokud server podporuje tento typ média, můžete odpovědět s odpovědí, který obsahuje `Content-Type` hlavičku, která určuje formát dat v těle zprávy. Pak je na starost klientská aplikace k parsování zprávy s odpovědí a odpovídajícím způsobem interpretace výsledků v textu zprávy.
 
-Další informace o REST najdete v tématu [rozhraní API návrhu](/azure/architecture/best-practices/api-design/) a [implementace rozhraní API](/azure/architecture/best-practices/api-implementation/).
+Další informace o REST, naleznete v tématu [návrh rozhraní API](/azure/architecture/best-practices/api-design/) a [implementace rozhraní API](/azure/architecture/best-practices/api-implementation/).
 
-## <a name="consuming-restful-apis"></a>Použití rozhraní RESTful API
+## <a name="consuming-restful-apis"></a>Použití rozhraní REST API
 
-Mobilní aplikace eShopOnContainers využívá vzor Model-View-ViewModel (modelem MVVM) a prvků modelu představují vzor entity domény použít v aplikaci. Třídy kontroleru a úložiště v referenční aplikace eShopOnContainers přijmout a vrátí mnoho z těchto objektů modelu. Proto se používají jako objekty přenos dat (DTOs), které mají všechna data, která se předávají mezi mobilní aplikace a kontejnerizované mikroslužeb. Hlavní výhodou použití DTOs předat data a přijímat data z webové služby je, že předáním více dat na základě jednoho vzdáleného volání aplikace ke snížení počtu vzdálené volání, které je potřeba provést.
+Aplikaci eShopOnContainers mobilní aplikace používá vzor Model-View-ViewModel (MVVM) a prvky modelu, který představuje model domény entity používané v aplikaci. Třídy kontroleru a úložiště v aplikaci eShopOnContainers referenční aplikace přijímají a vrací mnoho z těchto objektů modelu. Proto se používají jako objektů pro přenos dat (DTO), které obsahují všechna data, která je předána mezi mobilní aplikaci a kontejnerizovaných mikroslužeb. Hlavní výhodou používání DTO předejte data a přijímat data z webové služby je, že předáním další data v jednom vzdáleného volání aplikace můžete snížit počet vzdálené volání, které je potřeba provést.
 
-### <a name="making-web-requests"></a>Provádění webových požadavků
+### <a name="making-web-requests"></a>Vytváření webových požadavků
 
-Použití mobilní aplikace eShopOnContainers `HttpClient` třída provádět požadavky pomocí protokolu HTTP s JSON používá jako typ média. Tato třída poskytuje funkce pro asynchronní odesílání požadavků HTTP a příjem odpovědí HTTP z identifikátoru URI identifikuje prostředek. `HttpResponseMessage` Třída reprezentuje zprávu odpovědi HTTP po provedl se požadavek HTTP přijata rozhraní REST API. Obsahuje informace o odpověď, a to včetně stavový kód, hlavičky a všechny text. `HttpContent` Třída reprezentuje obsahu HTTP a hlavičky obsahu, jako například `Content-Type` a `Content-Encoding`. Obsah lze číst pomocí kteréhokoli `ReadAs` metody, například `ReadAsStringAsync` a `ReadAsByteArrayAsync`, v závislosti na formát data.
+Mobilní aplikace používá aplikaci eShopOnContainers `HttpClient` třídy k podání žádostí o přes protokol HTTP s JSON se používají jako typ média. Tato třída poskytuje funkce pro asynchronní odesílání požadavků HTTP a příjem odpovědí HTTP z identifikátoru URI prostředků identifikovat. `HttpResponseMessage` Třída reprezentuje zprávy odpovědi HTTP přijaté z rozhraní REST API po požadavku HTTP. Obsahuje informace o odpověď, a to včetně stavový kód, záhlaví a libovolný text. `HttpContent` Třída reprezentuje těla protokolu HTTP a hlavičky obsahu, jako například `Content-Type` a `Content-Encoding`. Obsah lze číst pomocí kteréhokoli z `ReadAs` metody, například `ReadAsStringAsync` a `ReadAsByteArrayAsync`, v závislosti na formátu data.
 
 <a name="making_a_get_request" />
 
-#### <a name="making-a-get-request"></a>Provedení požadavek GET.
+#### <a name="making-a-get-request"></a>Provádění požadavku GET
 
-`CatalogService` Třída se používá ke správě procesu načítání dat z katalogu mikroslužby. V `RegisterDependencies` metoda v `ViewModelLocator` třídy, `CatalogService` třída je registrována jako typ mapování proti `ICatalogService` typ s kontejneru pro vkládání závislosti Autofac. Pak, když instanci `CatalogViewModel` je vytvořit třídu, jeho konstruktor přijímá `ICatalogService` typ, který řeší Autofac, vrací instanci třídy `CatalogService` třídy. Další informace o vkládání závislostí v tématu [Úvod do vkládání závislostí](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction_to_dependency_injection).
+`CatalogService` Třída se používá ke správě procesu načítání dat z katalogu mikroslužeb. V `RegisterDependencies` metodu `ViewModelLocator` třídy, `CatalogService` třída je registrována jako typ mapování proti `ICatalogService` typ kontejneru pro vkládání závislosti Autofac. Potom, pokud instance `CatalogViewModel` třída se vytvoří, jeho konstruktor přijímá `ICatalogService` typ, který řeší Autofac vrací instanci `CatalogService` třídy. Další informace o vkládání závislostí, naleznete v tématu [Úvod ke vkládání závislostí](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction_to_dependency_injection).
 
-Obrázek 10-1 ukazuje interakce tříd, které čtou data katalogu z katalogu mikroslužbu pro zobrazení pomocí `CatalogView`.
+Obrázek 10-1 ukazuje interakci tříd, které načítají data katalogu z katalogu mikroslužeb pro zobrazení podle `CatalogView`.
 
-[![](accessing-remote-data-images/catalogdata.png "Načítání dat z katalogu mikroslužbu")](accessing-remote-data-images/catalogdata-large.png#lightbox "načítání dat z mikroslužbu katalogu")
+[![](accessing-remote-data-images/catalogdata.png "Načítání dat z mikroslužeb katalogu")](accessing-remote-data-images/catalogdata-large.png#lightbox "načítání dat z katalogu mikroslužeb")
 
-**Obrázek 10-1**: načítání dat z mikroslužbu katalogu
+**Obrázek 10-1**: načítání dat z katalogu mikroslužeb
 
-Když `CatalogView` přešli, `OnInitialize` metoda v `CatalogViewModel` třídy se nazývá. Tato metoda načítá data katalogu z katalogu mikroslužbu, jak je ukázáno v následujícím příkladu kódu:
+Když `CatalogView` se přejde poté, `OnInitialize` metoda ve `CatalogViewModel` třída se nazývá. Tato metoda načte data katalogu z katalogu mikroslužeb, jak je ukázáno v následujícím příkladu kódu:
 
 ```csharp
 public override async Task InitializeAsync(object navigationData)  
@@ -68,7 +68,7 @@ public override async Task InitializeAsync(object navigationData)
 }
 ```
 
-Tato metoda volá `GetCatalogAsync` metodu `CatalogService` instanci, která byla vloženy do `CatalogViewModel` podle Autofac. Následující příklad kódu ukazuje `GetCatalogAsync` metoda:
+Tato metoda volá `GetCatalogAsync` metodu `CatalogService` instanci, která se vloží do `CatalogViewModel` podle Autofac. Následující příklad kódu ukazuje `GetCatalogAsync` metody:
 
 ```csharp
 public async Task<ObservableCollection<CatalogItem>> GetCatalogAsync()  
@@ -83,9 +83,9 @@ public async Task<ObservableCollection<CatalogItem>> GetCatalogAsync()
 }
 ```
 
-Tato metoda vytvoří identifikátor URI, který identifikuje prostředek, bude odeslána žádost a používá `RequestProvider` třída k vyvolání metody GET protokolu HTTP na prostředek, než vrátí výsledky do `CatalogViewModel`. `RequestProvider` Třída obsahuje funkce, které odešle žádost o ve formě identifikátoru URI, který identifikuje prostředek metodu HTTP, která určuje operaci provést na tento prostředek, a text, který obsahuje všechna data potřebná k provedení operace. Informace o tom, jak `RequestProvider` třída je vloženy do `CatalogService class`, najdete v části [Úvod do vkládání závislostí](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction_to_dependency_injection).
+Tato metoda vytvoří identifikátor URI, který identifikuje prostředek žádost bude odeslána na a používá `RequestProvider` třídy volání metody GET protokolu HTTP na prostředku, před vrácením z výsledků `CatalogViewModel`. `RequestProvider` Třída obsahuje funkce, které odesílá požadavek v podobě identifikátoru URI, který identifikuje prostředek, lze metodu HTTP, která určuje operaci provést na tento prostředek a textu, která obsahuje veškerá data potřebná k provedení operace. Informace o tom, jak `RequestProvider` třídy je vloženou `CatalogService class`, naleznete v tématu [Úvod ke vkládání závislostí](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction_to_dependency_injection).
 
-Následující příklad kódu ukazuje `GetAsync` metoda v `RequestProvider` třídy:
+Následující příklad kódu ukazuje `GetAsync` metodu `RequestProvider` třídy:
 
 ```csharp
 public async Task<TResult> GetAsync<TResult>(string uri, string token = "")  
@@ -103,7 +103,7 @@ public async Task<TResult> GetAsync<TResult>(string uri, string token = "")
 }
 ```
 
-Tato metoda volá `CreateHttpClient` metoda, která vrátí instanci `HttpClient` s nastavenou odpovídající hlavičky. Pak odešle požadavek GET asynchronní v prostředku označeném identifikátorem URI, se ukládají v odpovědi `HttpResponseMessage` instance. `HandleResponse` Potom je volána metoda, která vyvolá výjimku, pokud odpověď neobsahuje úspěšné stavový kód HTTP. Pak je určený pro čtení odpovědi jako řetězec převést z JSON na `CatalogRoot` objektu a vrátí `CatalogService`.
+Tato metoda volá `CreateHttpClient` metodu, která vrací instanci `HttpClient` třídy sadou příslušné záhlaví. Poté odešle Asynchronní požadavek GET na prostředku označeném identifikátorem URI, se ukládají v odpovědi `HttpResponseMessage` instance. `HandleResponse` Potom je volána metoda, která vyvolá výjimku, pokud odpověď neobsahuje úspěch stavového kódu protokolu HTTP. Pak je pro čtení odpovědi jako řetězec převést z JSON na `CatalogRoot` objekt a vrátí `CatalogService`.
 
 `CreateHttpClient` Metoda je znázorněno v následujícím příkladu kódu:
 
@@ -123,9 +123,9 @@ private HttpClient CreateHttpClient(string token = "")
 }
 ```
 
-Tato metoda vytvoří novou instanci třídy `HttpClient` třídy a nastaví `Accept` záhlaví všechny žádosti provedené `HttpClient` instance k `application/json`, což naznačuje, že se očekává, že obsah všechny odpovědi na formátován pomocí JSON. Pak v případě, že přístupový token byl předán jako argument k `CreateHttpClient` metoda, se přidá do `Authorization` záhlaví všechny žádosti provedené `HttpClient` instance, řetězec s předponou `Bearer`. Další informace o autorizaci, najdete v části [autorizace](~/xamarin-forms/enterprise-application-patterns/authentication-and-authorization.md#authorization).
+Tato metoda vytvoří novou instanci třídy `HttpClient` třídy a nastaví `Accept` hlavičky požadavků provedených `HttpClient` instance na `application/json`, což znamená, že se očekává, že obsah odpovědi má být formátováno pomocí formátu JSON. Pak v případě, že přístupový token byl předán jako argument `CreateHttpClient` metoda, přidá se do `Authorization` hlavičky požadavků provedených `HttpClient` instance řetězec s předponou `Bearer`. Další informace o ověřování najdete v tématu [autorizace](~/xamarin-forms/enterprise-application-patterns/authentication-and-authorization.md#authorization).
 
-Když `GetAsync` metoda v `RequestProvider` třídy volání `HttpClient.GetAsync`, `Items` metoda v `CatalogController` – třída v projektu Catalog.API je vyvolána, která je uvedena v následujícím příkladu kódu:
+Při `GetAsync` metoda ve `RequestProvider` třídy volání `HttpClient.GetAsync`, `Items` metoda ve `CatalogController` třídu v projektu Catalog.API je vyvolána, která je uvedena v následujícím příkladu kódu:
 
 ```csharp
 [HttpGet]  
@@ -150,19 +150,19 @@ public async Task<IActionResult> Items(
 }
 ```
 
-Tato metoda načítá data katalogu z databáze SQL s využitím objektu EntityFramework a vrátí jako zprávu odpovědi, která zahrnuje úspěšné stavový kód HTTP a kolekce JSON formátu `CatalogItem` instance.
+Tato metoda načte katalog dat v databázi SQL s využitím objektu EntityFramework a vrátí jako zpráva odpovědi, která zahrnuje úspěch stavový kód HTTP a soubor JSON ve formátu `CatalogItem` instancí.
 
-#### <a name="making-a-post-request"></a>Vytváření požadavku POST
+#### <a name="making-a-post-request"></a>Provedení požadavku POST
 
-`BasketService` Třída se používá ke správě načtení dat a aktualizovat proces s mikroslužbu nákupní košík. V `RegisterDependencies` metoda v `ViewModelLocator` třídy, `BasketService` třída je registrována jako typ mapování proti `IBasketService` typ s kontejneru pro vkládání závislosti Autofac. Pak, když instanci `BasketViewModel` je vytvořit třídu, jeho konstruktor přijímá `IBasketService` typ, který řeší Autofac, vrací instanci třídy `BasketService `třídy. Další informace o vkládání závislostí v tématu [Úvod do vkládání závislostí](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction_to_dependency_injection).
+`BasketService` Třída se používá ke správě načítání dat a aktualizovat košík mikroslužeb procesu. V `RegisterDependencies` metodu `ViewModelLocator` třídy, `BasketService` třída je registrována jako typ mapování proti `IBasketService` typ kontejneru pro vkládání závislosti Autofac. Potom, pokud instance `BasketViewModel` třída se vytvoří, jeho konstruktor přijímá `IBasketService` typ, který řeší Autofac vrací instanci `BasketService `třídy. Další informace o vkládání závislostí, naleznete v tématu [Úvod ke vkládání závislostí](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction_to_dependency_injection).
 
-Obrázek 10-2 ukazuje interakce tříd, které odesílají data košík zobrazuje `BasketView`, do nákupního košíku mikroslužby.
+Obrázek 10-2 ukazuje interakce třídy, které posílají data nákupního košíku, zobrazí `BasketView`, do nákupního košíku mikroslužeb.
 
-[![](accessing-remote-data-images/basketdata.png "Odesílání dat do košíku mikroslužbu")](accessing-remote-data-images/basketdata-large.png#lightbox "odesílání dat do mikroslužbu nákupní košík")
+[![](accessing-remote-data-images/basketdata.png "Odesílání dat do nákupního košíku mikroslužeb")](accessing-remote-data-images/basketdata-large.png#lightbox "odesílání dat do nákupního košíku mikroslužeb")
 
-**Obrázek 10-2**: odesílání dat do mikroslužbu nákupní košík
+**Obrázek 10-2**: odesílání dat do nákupního košíku mikroslužeb
 
-Při přidání položky do nákupního košíku `ReCalculateTotalAsync` metoda v `BasketViewModel` třídy se nazývá. Tato metoda aktualizace celkovou hodnotu položky v košíku a odesílá data košík košík mikroslužbu, jak je ukázáno v následujícím příkladu kódu:
+Při přidání položky do nákupního košíku `ReCalculateTotalAsync` metodu `BasketViewModel` třída se nazývá. Tato metoda aktualizuje celkovou hodnotu položek v nákupním košíku a odesílá data nákupní košík do nákupního košíku mikroslužeb, jak je ukázáno v následujícím příkladu kódu:
 
 ```csharp
 private async Task ReCalculateTotalAsync()  
@@ -176,7 +176,7 @@ private async Task ReCalculateTotalAsync()
 }
 ```
 
-Tato metoda volá `UpdateBasketAsync` metodu `BasketService` instanci, která byla vloženy do `BasketViewModel` podle Autofac. Následující metoda ukazuje `UpdateBasketAsync` metoda:
+Tato metoda volá `UpdateBasketAsync` metodu `BasketService` instanci, která se vloží do `BasketViewModel` podle Autofac. Následující metoda ukazuje `UpdateBasketAsync` metody:
 
 ```csharp
 public async Task<CustomerBasket> UpdateBasketAsync(CustomerBasket customerBasket, string token)  
@@ -188,9 +188,9 @@ public async Task<CustomerBasket> UpdateBasketAsync(CustomerBasket customerBaske
 }
 ```
 
-Tato metoda vytvoří identifikátor URI, který identifikuje prostředek, bude odeslána žádost a používá `RequestProvider` třída k vyvolání metody POST HTTP na prostředek, než vrátí výsledky do `BasketViewModel`. Všimněte si, že přístupový token, získaný IdentityServer během procesu ověřování se vyžadují k autorizaci žádosti o mikroslužbu nákupní košík. Další informace o autorizaci, najdete v části [autorizace](~/xamarin-forms/enterprise-application-patterns/authentication-and-authorization.md#authorization).
+Tato metoda vytvoří identifikátor URI, který identifikuje prostředek žádost bude odeslána na a používá `RequestProvider` třídy volání metody POST protokolu HTTP na prostředku, před vrácením z výsledků `BasketViewModel`. Všimněte si, že přístupový token, získané z IdentityServer během procesu ověřování se vyžaduje k autorizaci požadavků na mikroslužbách nákupní košík. Další informace o ověřování najdete v tématu [autorizace](~/xamarin-forms/enterprise-application-patterns/authentication-and-authorization.md#authorization).
 
-Následující příklad kódu ukazuje jeden z `PostAsync` metody v `RequestProvider` třídy:
+Následující příklad kódu ukazuje jednu z `PostAsync` metody v `RequestProvider` třídy:
 
 ```csharp
 public async Task<TResult> PostAsync<TResult>(  
@@ -212,9 +212,9 @@ public async Task<TResult> PostAsync<TResult>(
 }
 ```
 
-Tato metoda volá `CreateHttpClient` metoda, která vrátí instanci `HttpClient` s nastavenou odpovídající hlavičky. Pak odešle požadavek POST asynchronní v prostředku označeném identifikátorem URI, s daty serializovaných košík odesílány ve formátu JSON a ukládají v reakci `HttpResponseMessage` instance. `HandleResponse` Potom je volána metoda, která vyvolá výjimku, pokud odpověď neobsahuje úspěšné stavový kód HTTP. Pak je pro čtení odpovědi jako řetězec převést z JSON na `CustomerBasket` objektu a vrátí `BasketService`. Další informace o `CreateHttpClient` metodu, najdete v části [provedení požadavku na získat](#making_a_get_request).
+Tato metoda volá `CreateHttpClient` metodu, která vrací instanci `HttpClient` třídy sadou příslušné záhlaví. Poté odešle požadavek POST asynchronní prostředku označeném identifikátorem URI, s daty serializovaná nákupní košík odesílány ve formátu JSON a ukládají v odpovědi `HttpResponseMessage` instance. `HandleResponse` Potom je volána metoda, která vyvolá výjimku, pokud odpověď neobsahuje úspěch stavového kódu protokolu HTTP. Potom, načtou odpovědi jako řetězec převést z JSON na `CustomerBasket` objekt a vrátí `BasketService`. Další informace o `CreateHttpClient` metodu, najdete v článku [provádění požadavek na získání](#making_a_get_request).
 
-Když `PostAsync` metoda v `RequestProvider` třídy volání `HttpClient.PostAsync`, `Post` metoda v `BasketController` – třída v projektu Basket.API je vyvolána, která je uvedena v následujícím příkladu kódu:
+Při `PostAsync` metoda ve `RequestProvider` třídy volání `HttpClient.PostAsync`, `Post` metoda ve `BasketController` třídu v projektu Basket.API je vyvolána, která je uvedena v následujícím příkladu kódu:
 
 ```csharp
 [HttpPost]  
@@ -225,17 +225,17 @@ public async Task<IActionResult> Post([FromBody]CustomerBasket value)
 }
 ```
 
-Tato metoda používá instanci `RedisBasketRepository` třídy zachování košík dat do mezipaměti Redis a vrátí ji jako zprávu odpovědi, která zahrnuje úspěšné stavový kód HTTP a JSON formátované `CustomerBasket` instance.
+Tato metoda používá instanci `RedisBasketRepository` třídy k uchování dat. nákupní košík k mezipaměti Redis a vrátí jej jako zprávu odpovědi, která zahrnuje úspěch stavový kód HTTP a JSON ve formátu `CustomerBasket` instance.
 
-#### <a name="making-a-delete-request"></a>Provedení požadavku na odstranění
+#### <a name="making-a-delete-request"></a>U žádosti o odstranění
 
-Obrázek 10-3 ukazuje interakce tříd, které odstraní košík data z košíku mikroslužbu, `CheckoutView`.
+Obrázek 10-3 ukazuje interakce třídy, které odstranit nákupní košík data z mikroslužeb nákupní košík pro `CheckoutView`.
 
-![](accessing-remote-data-images/checkoutdata.png "Při odstranění dat z mikroslužbu nákupní košík")
+![](accessing-remote-data-images/checkoutdata.png "Při odstranění dat z nákupního košíku mikroslužeb")
 
-**Obrázek 10-3**: odstranění dat z mikroslužbu nákupní košík
+**Obrázek 10-3**: odstranění dat z nákupního košíku mikroslužeb
 
-Po vyvolání projít procesem `CheckoutAsync` metoda v `CheckoutViewModel` třídy se nazývá. Tato metoda vytvoří nové pořadí, než dojde k vymazání nákupní košík, jak je ukázáno v následujícím příkladu kódu:
+Při vyvolání proces platby u pokladny `CheckoutAsync` metodu `CheckoutViewModel` třída se nazývá. Tato metoda vytvoří nová objednávka, před vymazáním nákupního košíku, jak je ukázáno v následujícím příkladu kódu:
 
 ```csharp
 private async Task CheckoutAsync()  
@@ -246,7 +246,7 @@ private async Task CheckoutAsync()
 }
 ```
 
-Tato metoda volá `ClearBasketAsync` metodu `BasketService` instanci, která byla vloženy do `CheckoutViewModel` podle Autofac. Následující metoda ukazuje `ClearBasketAsync` metoda:
+Tato metoda volá `ClearBasketAsync` metodu `BasketService` instanci, která se vloží do `CheckoutViewModel` podle Autofac. Následující metoda ukazuje `ClearBasketAsync` metody:
 
 ```csharp
 public async Task ClearBasketAsync(string guidUser, string token)  
@@ -258,9 +258,9 @@ public async Task ClearBasketAsync(string guidUser, string token)
 }
 ```
 
-Tato metoda vytvoří identifikátor URI, který identifikuje prostředek, který bude odeslána žádost a používá `RequestProvider` třída volat metodu DELETE HTTP u daného prostředku. Všimněte si, že přístupový token, získaný IdentityServer během procesu ověřování se vyžadují k autorizaci žádosti o mikroslužbu nákupní košík. Další informace o autorizaci, najdete v části [autorizace](~/xamarin-forms/enterprise-application-patterns/authentication-and-authorization.md#authorization).
+Tato metoda sestavení, který identifikuje prostředek, který pošle požadavek na identifikátor URI a používá `RequestProvider` třídy vyvolat metodu DELETE HTTP pro prostředek. Všimněte si, že přístupový token, získané z IdentityServer během procesu ověřování se vyžaduje k autorizaci požadavků na mikroslužbách nákupní košík. Další informace o ověřování najdete v tématu [autorizace](~/xamarin-forms/enterprise-application-patterns/authentication-and-authorization.md#authorization).
 
-Následující příklad kódu ukazuje `DeleteAsync` metoda v `RequestProvider` třídy:
+Následující příklad kódu ukazuje `DeleteAsync` metodu `RequestProvider` třídy:
 
 ```csharp
 public async Task DeleteAsync(string uri, string token = "")  
@@ -270,9 +270,9 @@ public async Task DeleteAsync(string uri, string token = "")
 }
 ```
 
-Tato metoda volá `CreateHttpClient` metoda, která vrátí instanci `HttpClient` s nastavenou odpovídající hlavičky. Poté odešle Asynchronní požadavek DELETE v prostředku označeném identifikátorem URI. Další informace o `CreateHttpClient` metodu, najdete v části [provedení požadavku na získat](#making_a_get_request).
+Tato metoda volá `CreateHttpClient` metodu, která vrací instanci `HttpClient` třídy sadou příslušné záhlaví. Poté odešle asynchronního požadavku odstranění prostředku označeném identifikátorem URI. Další informace o `CreateHttpClient` metodu, najdete v článku [provádění požadavek na získání](#making_a_get_request).
 
-Když `DeleteAsync` metoda v `RequestProvider` třídy volání `HttpClient.DeleteAsync`, `Delete` metoda v `BasketController` – třída v projektu Basket.API je vyvolána, která je uvedena v následujícím příkladu kódu:
+Při `DeleteAsync` metoda ve `RequestProvider` třídy volání `HttpClient.DeleteAsync`, `Delete` metoda ve `BasketController` třídu v projektu Basket.API je vyvolána, která je uvedena v následujícím příkladu kódu:
 
 ```csharp
 [HttpDelete("{id}")]  
@@ -282,47 +282,47 @@ public void Delete(string id)
 }
 ```
 
-Tato metoda používá instanci `RedisBasketRepository` třída odstraníte košík data z mezipaměti Redis.
+Tato metoda používá instanci `RedisBasketRepository` třídy odstranit nákupní košík data z mezipaměti Redis.
 
 ## <a name="caching-data"></a>Ukládaní dat do mezipaměti
 
-Výkon aplikace lze zvýšit pomocí ukládání do mezipaměti často používaná data do rychlé úložiště, který je umístěný zavřít aplikaci. Pokud se nachází blíže k aplikaci než původního zdroje rychlé úložiště, pak ukládání do mezipaměti může výrazně zlepšit odpovědi časový limit při získávání data.
+Výkon aplikace lze zvýšit pomocí ukládání do mezipaměti často používaná data do rychlého úložiště umístěného v blízkosti aplikace. Pokud je umístěno blíž k aplikaci než původní zdroj rychlé úložiště, pak ukládání do mezipaměti může výrazně zlepšit odpovědi v případech, kdy se načítají se data.
 
-Nejběžnější formu ukládání do mezipaměti je read-through ukládání do mezipaměti, kde aplikace načte data pod položkou mezipaměti. Není-li data v mezipaměti, má načíst z úložiště dat a přidány do mezipaměti. Aplikace můžete implementovat read-through ukládání do mezipaměti s doplňováním mezipaměti. Tento vzor Určuje, zda je položka v současné době v mezipaměti. Pokud položka není v mezipaměti, má číst z úložiště dat a přidány do mezipaměti. Další informace najdete v tématu [mezipaměti vyhraďte](/azure/architecture/patterns/cache-aside/) vzor.
-
-> [!TIP]
-> Data do mezipaměti, je často čtou a který zřídka mění. Tato data lze přidat do mezipaměti na vyžádání poprvé, že ho načte aplikaci. To znamená, že aplikace je potřeba načíst data pouze jednou z úložiště dat a že následné přístup může obsloužit pomocí mezipaměti.
-
-Distribuované aplikace, jako eShopOnContainers odkazovat na aplikaci, by měl poskytovat jedné nebo obou následujících mezipaměti:
-
--   Sdílené mezipaměti, který je přístupný pomocí několika procesů nebo počítače.
--   Privátní mezipaměti, kde se data uchovávat místně na zařízení, na kterém aplikace běží.
-
-Mobilní aplikace eShopOnContainers používá privátní mezipaměti, kde se data uchovávat místně na zařízení, které je spuštěna instance aplikace. Informace o mezipaměti používané eShopOnContainers referenční aplikací najdete v tématu [Mikroslužeb .NET: architektura pro kontejnerové aplikace .NET](https://aka.ms/microservicesebook).
+Nejběžnější způsob ukládání do mezipaměti je přímého čtení ukládání do mezipaměti, kde aplikace načte data odkazováním na mezipaměť. Pokud data v mezipaměti nejsou, má načíst z úložiště dat a přidají se do mezipaměti. Aplikace může implementovat přímého čtení do mezipaměti pomocí modelu doplňování mezipaměti. Tento model Určuje, zda položka je aktuálně v mezipaměti. Pokud položka není v mezipaměti, má číst z úložiště dat a přidají se do mezipaměti. Další informace najdete v tématu [s doplňováním mezipaměti](/azure/architecture/patterns/cache-aside/) vzor.
 
 > [!TIP]
-> Mezipaměti si můžete představit jako přechodný datové úložiště, které může kdykoli ztratit. Ujistěte se, že data se udržuje v původní úložiště dat a také do mezipaměti. Minimalizuje případné ztráty dat se pak mezipaměti přestane být dostupný.
+> Data v mezipaměti, který je často čtou a se mění zřídka. Tato data lze přidat do mezipaměti na vyžádání při prvním načtení aplikací. To znamená, že aplikace potřebuje načíst data jen jednou z úložiště dat a všechny další přístupy může zajišťovat mezipaměť.
 
-### <a name="managing-data-expiration"></a>Správa Data vypršení platnosti
+Distribuované aplikace, jako například aplikaci eShopOnContainers odkazovat na aplikaci, by měla poskytnout jednu nebo obě z následujících mezipaměti:
 
-Je nepraktické očekávat, že data uložená v mezipaměti bude vždy konzistentní s původní data. Data v úložišti dat původní může změnit po byl do mezipaměti, způsobuje data uložená v mezipaměti se zastaralé. Proto aplikace by měla implementovat strategii, která pomáhá zajistit, že data v mezipaměti je jako aktuální nejmenší, ale můžete také zjistit a řešení situací, které vznikají při již zastaralá data v mezipaměti. Většina ukládání do mezipaměti mechanismy povolit mezipaměť nakonfigurovat tak, aby platnost dat a proto zkrátit dobu, pro kterou data mohou být zastaralé.
+-   Sdílené mezipaměti, který se dá dostat několik procesů nebo počítačů.
+-   Soukromé mezipaměti, kde jsou data uložena místně na zařízení spuštění aplikace.
+
+Mobilní aplikace aplikaci eShopOnContainers používá soukromé mezipaměti, kde jsou data uložena místně na zařízení, na kterém běží instance aplikace. Informace o mezipaměti používané aplikací odkaz na aplikaci eShopOnContainers najdete v tématu [Mikroslužby .NET: architektura pro Kontejnerizovaných aplikací .NET](https://aka.ms/microservicesebook).
 
 > [!TIP]
-> Nastavit dobu platnosti výchozí čas při konfiguraci mezipaměti. Mnoho mezipamětí implementovat vypršení platnosti, která by způsobila neplatnost dat a odstraní ji z mezipaměti, pokud není k němu připojil po zadanou dobu. Však musí dát pozor při výběru dobu platnosti. Pokud se provádí příliš krátký, data příliš rychle vyprší a bude snížen výhod ukládání do mezipaměti. Pokud je k příliš dlouhý, data rizika zastaralé. Čas vypršení platnosti, proto by měl odpovídat vzor přístupu pro aplikace, které používají data.
+> Mezipaměti můžete představit jako s přechodným úložištěm dat, která může kdykoli zmizet. Ujistěte se, že data se udržují v původní úložiště dat, stejně jako mezipaměť. Minimalizuje riziko ztráty dat se pak pokud mezipaměť přestane být k dispozici.
 
-Pokud data uložená v mezipaměti vyprší, měla by být odebrána z mezipaměti a aplikace musí získat data z původní data ukládat a umístěte ji zpět do mezipaměti.
+### <a name="managing-data-expiration"></a>Správa konce platnosti dat
 
-Je také možné, že mezipaměť může zaplnit Pokud dat může zůstat po příliš dlouhou dobu. Proto žádosti o přidání nových položek do mezipaměti bude pravděpodobně nutné odebrat některé položky v tento proces se označuje jako *vyřazení*. Ukládání do mezipaměti služby obvykle vyřazení dat na základě nejmenší naposledy použitých. Existují však další zásady vyřazení, včetně naposledy použité a objektů first in first out. Další informace najdete v tématu [ukládání do mezipaměti pokyny](/azure/architecture/best-practices/caching/).
+Je vhodné očekávat, že data uložená v mezipaměti bude vždy konzistentní s původními daty. Data v původní úložiště dat může změnit poté, co je tam byla uložena, způsobí data uložená v mezipaměti stala zastaralými. Proto aplikace by měl implementovanou strategii, která pomáhá zajistit, že se data v mezipaměti jako co nejaktuálnější, ale můžete také zjistit a řešit situace, které vznikají při data v mezipaměti je zastaralá. Nejvíce ukládání do mezipaměti mechanismy povolit mezipaměť nakonfigurovat tak, aby platnost dat a proto zkrátit dobu, pro který může být data zastaralá.
+
+> [!TIP]
+> Nastavit dobu platnosti výchozí čas při konfiguraci mezipaměti. Počet mezipamětí implementovat vypršení platnosti, která zneplatní data a odstraní z mezipaměti, pokud není přístupné za určité období. Však musí být věnovat pozornost při výběru doby platnosti. Pokud je provedeno příliš krátký, data vyprší příliš brzy a výhody ukládání do mezipaměti se sníží. Pokud je k příliš dlouhý, rizika data budou zastaralá. Čas vypršení platnosti proto by měl odpovídat vzoru přístupu pro aplikace, které využívají data.
+
+Když vyprší platnost dat uložených v mezipaměti, musí být odebrány z mezipaměti a aplikace musí získat data z původní data ukládat a umístěte ji zpět do mezipaměti.
+
+Je také možné, že mezipaměť může vyplnit nahoru, pokud se data můžou zůstat po příliš dlouhou dobu. Proto se žádosti o přidání nových položek do mezipaměti může být nutné odebrat i některé položky v rámci procesu nazývaného *vyřazení*. Ukládání do mezipaměti služby obvykle vyřazení dat na základě nejnižší naposledy použitých. Existují však další zásady vyřazení, včetně naposledy použité a first-in-first-out. Další informace najdete v tématu [ukládání do mezipaměti](/azure/architecture/best-practices/caching/).
 
 <a name="caching_images" />
 
-### <a name="caching-images"></a>Ukládání do mezipaměti bitové kopie
+### <a name="caching-images"></a>Ukládání do mezipaměti Imagí
 
-Mobilní aplikace eShopOnContainers spotřebuje obrázky vzdálené produktů, které těžit z mezipaměti. Tyto Image jsou zobrazeny [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) řízení a `CachedImage` řízení poskytované [FFImageLoading](https://www.nuget.org/packages/Xamarin.FFImageLoading.Forms/) knihovny.
+Mobilní aplikace aplikaci eShopOnContainers využívá obrázky vzdálené produktů, které využívají samosprávné ukládat se do mezipaměti. Tyto Image jsou zobrazeny [ `Image` ](xref:Xamarin.Forms.Image) ovládacího prvku a `CachedImage` poskytuje ovládací prvek [FFImageLoading](https://www.nuget.org/packages/Xamarin.FFImageLoading.Forms/) knihovny.
 
-Platformě Xamarin.Forms [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) řízení podporuje ukládání do mezipaměti stažené bitových kopií. Ukládání do mezipaměti je ve výchozím nastavení povolené a uloží obrázek místně po dobu 24 hodin. Kromě toho je možné nakonfigurovat čas vypršení platnosti se [ `CacheValidity` ](https://developer.xamarin.com/api/property/Xamarin.Forms.UriImageSource.CacheValidity/) vlastnost. Další informace najdete v tématu [stáhnout bitovou kopii do mezipaměti](~/xamarin-forms/user-interface/images.md#Image_Caching).
+Xamarin.Forms [ `Image` ](xref:Xamarin.Forms.Image) ovládací prvek podporuje ukládání do mezipaměti stažených imagí. Ukládání do mezipaměti je ve výchozím nastavení povolené a bude uchovávat image místně po dobu 24 hodin. Kromě toho může mít nakonfigurovanou čas vypršení platnosti [ `CacheValidity` ](xref:Xamarin.Forms.UriImageSource.CacheValidity) vlastnost. Další informace najdete v tématu [stáhli Image do mezipaměti](~/xamarin-forms/user-interface/images.md#Image_Caching).
 
-Na FFImageLoading `CachedImage` ovládací prvek je náhradou za platformě Xamarin.Forms [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) ovládací prvek a poskytne další vlastnosti, které umožňují doplňující funkce. Mezi tato funkce poskytuje ovládací prvek konfigurovat ukládání do mezipaměti, a podpora chyba a načítání zástupné symboly bitové kopie. Následující příklad kódu ukazuje, jak eShopOnContainers mobilní aplikace používá `CachedImage` řídit ve `ProductTemplate`, které je šablona dat používané [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) řídit ve `CatalogView`:
+Společnosti FFImageLoading `CachedImage` ovládací prvek je náhradou pro Xamarin.Forms [ `Image` ](xref:Xamarin.Forms.Image) ovládacího prvku, poskytuje další vlastnosti, které umožňují doplňující funkce. Mezi tato funkce poskytuje ovládací prvek konfigurovat ukládání do mezipaměti, a chyby a pro načítání obrázků zástupné symboly. Následující příklad kódu ukazuje, jak se používá v aplikaci eShopOnContainers mobilní aplikaci `CachedImage` v ovládacím prvku `ProductTemplate`, který je šablona dat používané [ `ListView` ](xref:Xamarin.Forms.ListView) v ovládacím prvku `CatalogView`:
 
 ```xaml
 <ffimageloading:CachedImage
@@ -344,76 +344,76 @@ Na FFImageLoading `CachedImage` ovládací prvek je náhradou za platformě Xama
 </ffimageloading:CachedImage>
 ```
 
-`CachedImage` Řízení nastaví `LoadingPlaceholder` a `ErrorPlaceholder` vlastností bitové kopie specifické pro platformu. `LoadingPlaceholder` Vlastnost určuje obrázek, který se bude zobrazovat během bitovou kopii určeného `Source` vlastnosti je načtena a `ErrorPlaceholder` vlastnost určuje obrázek, který má být zobrazen v případě, že dojde k chybě při pokusu o načtení obrázku specifikace `Source` vlastnost.
+`CachedImage` Řídit sad `LoadingPlaceholder` a `ErrorPlaceholder` vlastnosti k obrázkům specifické pro platformu. `LoadingPlaceholder` Vlastnost určuje obrázek, který se bude zobrazovat během bitovou kopii určeného `Source` vlastnosti je načtena a `ErrorPlaceholder` vlastnost určuje obrázek, který se zobrazí, pokud dojde k chybě při pokusu o načtení obrázku určená `Source` vlastnost.
 
-Jak již název napovídá, `CachedImage` řízení vzdálené bitové kopie v zařízení ukládá do mezipaměti po dobu uvedenou hodnotou `CacheDuration` vlastnost. Hodnota této vlastnosti není explicitně nastavena, je použita výchozí hodnota 30 dní.
+Jak již název napovídá, `CachedImage` ovládací prvek vzdálené imagí v zařízení po dobu uvedenou hodnotou ukládá do mezipaměti `CacheDuration` vlastnost. Pokud tato hodnota vlastnosti není explicitně nastavena, bude použita výchozí hodnota 30 dnů.
 
-## <a name="increasing-resilience"></a>Zvyšuje odolnost
+## <a name="increasing-resilience"></a>Zvýšení odolnosti
 
-Všechny aplikace, které komunikují s vzdálené služby a prostředky musí být citlivé na přechodných. Přechodných zahrnují aktuálně ztrátu připojení k síti pro služby, dočasné nedostupnosti služeb nebo vypršení časových limitů, které vzniknou, když služba je zaneprázdněná. Tyto chyby jsou často samy opraví, a pokud se po vhodný zpoždění opakuje akci bude pravděpodobně úspěšné.
+Všechny aplikace, které komunikují se vzdálenými službami a prostředky musí být citlivé na přechodné chyby. K přechodným chybám patří momentální ztráta síťového připojení ke službám, dočasná nedostupnost služby nebo vypršení časových limitů, ke kterému dochází, když je služba přetížená. Tyto chyby se často samy opraví, a pokud se akce opakuje po vhodně dlouhém bude nejspíš úspěšná.
 
-Přechodných může mít velký dopad na kvalitu dosahovaný aplikace, i v případě, že byla důkladně neotestovali za všech okolností předvídatelné. Zkontrolovat, že aplikaci, která komunikuje se službou vzdálené funkce spolehlivě, musí být schopen provést následující kroky:
+Přechodné chyby může mít velký dopad na kvalitu zjištěné aplikace, i když byla důkladně otestována za všech předvídatelných okolností. Aby se zajistilo, spolehlivě funguje aplikaci, která komunikuje se službou vzdálené služby, musí být schopen provést všechny tyto:
 
--   Chyby rozpoznat, kdy dochází a určí, jestli je k poruchám mohly být přechodné.
--   Opakujte operaci, pokud zjistí, že selhání je pravděpodobně být dočasné a sledovat počet, který byl zopakován.
--   Použijte příslušné opakování strategie, která určuje počet opakovaných pokusů, zpoždění mezi jednotlivými pokusy o a akcích, lze provést po neúspěšný pokus.
+-   Zjistit chyby při jejich výskytu a určit, pokud jsou pravděpodobně přechodné chyby.
+-   Pokud se zjistí, že chyba je pravděpodobně přechodná a mějte přehled o počet pokusů, které operace, zkuste operaci zopakovat.
+-   Použití strategie odpovídající opakování, která určuje počet opakovaných pokusů, zpoždění mezi jednotlivými pokusy a akce, které lze provést po neúspěšném pokusu.
 
-Tato přechodná chyba zpracování lze dosáhnout zabalení všechny pokusy o přístup ke vzdálené službě v kódu, který implementuje vzor opakování.
+Toto zpracování přechodných chyb můžete dosáhnout obalením všechny pokusy o přístup ke vzdálené službě v kódu, který implementuje modelu opakování.
 
-### <a name="retry-pattern"></a>Opakujte vzor
+### <a name="retry-pattern"></a>Model opakování
 
-Pokud aplikace zjistí chybu při pokusu poslat žádost o vzdálené služby, je selhání zpracovat v některém z následujících způsobů:
+Pokud aplikace zjistí chybu při pokusu poslat žádost vzdálené služby, dokáže zpracovat selhání v některém z následujících způsobů:
 
--   Opakováním operace. Aplikace může opakovat požadavek selhání okamžitě.
--   Opakováním operace po prodlevě. Aplikace má čekat vhodnou dobu před opakováním žádosti.
--   Zrušení operace. Aplikace by měl operaci zrušte a sestav k výjimce.
+-   Opakováním operace. Aplikace může zkusit neúspěšnou žádost okamžitě.
+-   Opakování operace po prodlevě. Aplikace by měl čekat vhodnou dobu před opakováním žádosti.
+-   Zrušení operace. Aplikace by měla operaci zrušit a ohlásit výjimku.
 
-Strategie opakování má přizpůsobená pro splnění požadavků na obchodní aplikace. Například je důležité k optimalizaci počet opakování a intervalu probíhá pokus o operaci opakujte. Pokud je operace součástí interakce s uživatelem, interval opakování musí být krátké a pouze několik opakování pokusu o Vyvarujte se čekat na odpověď uživatele. Pokud je součást dlouhotrvající pracovního postupu, operace kde zrušení nebo restartování pracovního postupu je nákladné nebo časově náročné, je vhodné již čekání mezi pokusy a opakujte vícekrát.
+Strategie opakování by měly být vyladěné tak, aby odpovídaly obchodním požadavkům aplikace. Například je důležité optimalizovat počet opakování a interval operace probíhá pokus o opakování. Pokud je operace součástí interakce s uživatelem, interval opakování by měl být krátký s pouze několika opakovanými pokusy, aby uživatelé nečekali na odpověď. Pokud operace součástí dlouho běžící pracovní postup, kdy zrušení a restartování pracovního postupu je nákladné nebo časově náročné, je vhodné čekat mezi pokusy déle a opakovat je víckrát.
 
 > [!NOTE]
-> Strategie agresivní opakování s minimálním zpožděním mezi pokusy a velký počet opakovaných pokusů, může dojít ke snížení Vzdálená služba, která běží blízkých nebo na kapacitě. Kromě toho tato strategie opakování mohou také ovlivnit rychlost reakce aplikace Pokud průběžně se pokouší provést operaci selhání.
+> Strategie účinnou opakovat s minimální prodlevou mezi pokusy a velký počet opakování, může dojít ke snížení vzdálené služby, na kterém běží zavřít nebo plně využívá kapacitu. Kromě toho strategie opakování může také ovlivnit rychlost reakce aplikace v případě, že se neustále pokouší provést neúspěšnou operaci.
 
-Pokud se žádost o stále nedaří po uplynutí počtu opakování, je lepší pro aplikaci, aby se zabránilo další požadavky, chystáte stejného zdroje a ohlásí chybu. Potom po určené, může aplikace využít jeden nebo více požadavků pro tento prostředek zobrazit, pokud jsou úspěšné. Další informace najdete v tématu [jistič vzor](#circuit_breaker_pattern).
+Pokud žádost selže i po uplynutí počtu opakování, je lepší pro aplikaci, aby se zabránilo další žádostí do stejného prostředku a ohlásí chybu. Pak po nastavené období aplikace můžete provést jeden nebo více požadavků prostředek, který chcete zobrazit, pokud jsou úspěšné. Další informace najdete v tématu [vzoru Circuit Breaker](#circuit_breaker_pattern).
 
 > [!TIP]
-> Nikdy implementovat mechanismus nekonečná opakování. Použít omezený počet opakovaných pokusů, nebo implementovat [jistič](/azure/architecture/patterns/circuit-breaker/) vzor povolit služby pro obnovení.
+> Nikdy implementujte mechanismus nekonečným počtem opakování. Použijte konečný počet opakování nebo implementujte [jistič](/azure/architecture/patterns/circuit-breaker/) vzor, který má povolit služba mohla zotavit.
 
-Mobilní aplikace eShopOnContainers neimplementuje aktuálně vzoru opakovat při provádění RESTful webových požadavků. Ale `CachedImage` řízení, poskytované [FFImageLoading](https://www.nuget.org/packages/Xamarin.FFImageLoading.Forms/) knihovna podporuje přechodná chyba zpracování opakováním načítání bitové kopie. Pokud se nezdaří načítání bitové kopie, budou provedeny další pokusy. Počet pokusů o je zadána `RetryCount` vlastnost a opakování dojde po prodlevě určeného `RetryDelay` vlastnost. Pokud tyto hodnoty vlastností nejsou explicitně nastaven, jejich výchozí hodnoty se použijí – 3 pro `RetryCount` vlastnost a 250ms pro `RetryDelay` vlastnost. Další informace o `CachedImage` řízení najdete v tématu [ukládání do mezipaměti image](#caching_images).
+V aplikaci eShopOnContainers mobilní aplikaci aktuálně neimplementuje modelu opakování při vytváření rozhraní RESTful webových požadavků. Ale `CachedImage` ovládacího prvku, poskytuje [FFImageLoading](https://www.nuget.org/packages/Xamarin.FFImageLoading.Forms/) knihovna podporuje zpracování přechodných chyb opakováním načítání obrázku. Pokud načítání obrázků selže, bude proveden další pokusy. Je určený počet pokusů o `RetryCount` vlastnost a opakování pokusu dojde po prodlevě určené `RetryDelay` vlastnost. Pokud tyto hodnoty vlastností nejsou nastavena explicitně, jejich výchozí hodnoty se použijí – 3 pro `RetryCount` vlastnost a 250ms pro `RetryDelay` vlastnost. Další informace o `CachedImage` řídí, najdete v článku [ukládání do mezipaměti Imagí](#caching_images).
 
-Odkaz na aplikaci eShopOnContainers implementovat vzor opakování. Další informace, včetně diskuzi o tom, jak kombinací vzor opakování s `HttpClient` třídy najdete v tématu [Mikroslužeb .NET: architektura pro kontejnerové aplikace .NET](https://aka.ms/microservicesebook).
+Odkaz na aplikaci aplikaci eShopOnContainers implementaci modelu opakování. Další informace, včetně diskusi o tom, jak kombinací modelu opakování s `HttpClient` najdete v tématu [Mikroslužby .NET: architektura pro Kontejnerizovaných aplikací .NET](https://aka.ms/microservicesebook).
 
-Další informace o vzoru opakování, najdete v článku [opakujte](/azure/architecture/patterns/retry/) vzor.
+Další informace o modelu opakování, najdete v článku [opakujte](/azure/architecture/patterns/retry/) vzor.
 
 <a name="circuit_breaker_pattern" />
 
-### <a name="circuit-breaker-pattern"></a>Vzor jistič
+### <a name="circuit-breaker-pattern"></a>Model jistič
 
-V některých situacích chyb může nastat v důsledku předpokládaného události, které trvat déle, než se opravit. Tyto chyby musí být v rozsahu částečné ztrátě připojení k úplnému selhání služby. V těchto situacích je zbytečný pro aplikaci, opakujte operaci, která je pravděpodobně úspěšná a místo toho může přijmout, operace se nezdařila a odpovídajícím způsobem zpracování této chyby.
+V některých případech chyby můžou nastat z důvodu očekávané události, které trvají déle, chcete-li vyřešit. Tyto chyby můžou být v rozsahu od částečného výpadku připojení až po úplné selhání služby. V takových situacích je zbytečný pro aplikaci opakovat operaci, která pravděpodobně nebude úspěšná a místo toho by měl přijmout, operace se nezdařila a tuto chybu příslušně zpracovat.
 
-Vzor jistič zabránit opakovaného pokusu o provedení operace, která je pravděpodobně selžou, a zároveň umožnit aplikace ke zjištění, zda byl vyřešen selhání aplikace.
+Model jistič může zabránit aplikace opakovaně pokoušela provést operaci, která pravděpodobně selže, a zároveň umožnit aplikace ke zjištění, zda byl vyřešen v době.
 
 > [!NOTE]
-> Účelem tohoto vzoru jistič se liší od vzoru opakování. Vzor opakování umožňuje aplikaci opakovat operace v očekávání, který budete úspěšně. Vzor jistič brání aplikaci v provádění operace, která je pravděpodobně selžou.
+> Účel modelu jistič se liší od modelu opakování. Model opakování umožňuje aplikaci opakovat operaci s předpokladem, že bude úspěšná. Model jistič zabraňuje aplikaci provést operaci, která pravděpodobně selže.
 
-Jistič funguje jako proxy pro operace, které může selhat. Proxy server by měl sledovat počet poslední chyby, ke kterým došlo v a použijte tyto informace můžete rozhodnout, jestli k povolení operace, aby bylo možné pokračovat, nebo pro návrat k výjimce okamžitě.
+Jistič funguje jako proxy pro operace, které může selhat. Proxy by měl sledovat počet chyb, ke kterým došlo a pomocí těchto informací můžete rozhodnout, jestli se má operace pokračovat nebo vrátit výjimka.
 
-Mobilní aplikace eShopOnContainers neimplementuje aktuálně jistič vzor. EShopOnContainers však nepodporuje. Další informace najdete v tématu [Mikroslužeb .NET: architektura pro kontejnerové aplikace .NET](https://aka.ms/microservicesebook).
+V aplikaci eShopOnContainers mobilní aplikaci aktuálně neimplementuje vzorek jističe. Aplikaci eShopOnContainers však nepodporuje. Další informace najdete v tématu [Mikroslužby .NET: architektura pro Kontejnerizovaných aplikací .NET](https://aka.ms/microservicesebook).
 
 > [!TIP]
-> Kombinovat opakování a jistič vzory. Aplikace můžete kombinovat vzory opakování a jistič pomocí vzoru opakování k vyvolání operace prostřednictvím jistič. Logika opakovaných pokusů by však být citlivé na jakékoli výjimky vrácený vypínač a abandon opakovaných pokusů, pokud vypínač signalizuje, že chybu není přechodný.
+> Kombinovat modely opakování a jistič. Aplikaci můžete kombinovat opakování a jistič vzory pomocí modelu opakování vyvolat operaci prostřednictvím jističe. Logika opakovaných pokusů by však brát ohled na výjimky vrácené jističem a provádět opakované pokusy, pokud jistič signalizuje, že chyba není přechodná.
 
-Další informace o vzoru jistič najdete v tématu [jistič](/azure/architecture/patterns/circuit-breaker/) vzor.
+Další informace o modelu jistič, najdete v článku [jistič](/azure/architecture/patterns/circuit-breaker/) vzor.
 
 ## <a name="summary"></a>Souhrn
 
-Ujistěte se, mnohá moderní řešení založené na webu pomocí webových služeb, hostované webové servery, nabízí funkce pro vzdálené klientské aplikace. Operace, které zpřístupní webové služby tvoří webového rozhraní API a klientské aplikace by měla umět využívají webové rozhraní API bez znalosti, jak jsou implementované dat nebo operace, které zpřístupňuje rozhraní API.
+Ujistěte se, mnohá moderní řešení založeného na webu využívání webových služeb hostovaných webových serverů k zajištění funkce pro vzdálené klientské aplikace. Operace, které zveřejňuje webová služba tvoří webového rozhraní API a klientské aplikace by měl být schopen využívají webové rozhraní API bez znalosti, jak se implementují dat nebo operace, které zveřejňuje rozhraní API.
 
-Výkon aplikace lze zvýšit pomocí ukládání do mezipaměti často používaná data do rychlé úložiště, který je umístěný zavřít aplikaci. Aplikace můžete implementovat read-through ukládání do mezipaměti s doplňováním mezipaměti. Tento vzor Určuje, zda je položka v současné době v mezipaměti. Pokud položka není v mezipaměti, má číst z úložiště dat a přidány do mezipaměti.
+Výkon aplikace lze zvýšit pomocí ukládání do mezipaměti často používaná data do rychlého úložiště umístěného v blízkosti aplikace. Aplikace může implementovat přímého čtení do mezipaměti pomocí modelu doplňování mezipaměti. Tento model Určuje, zda položka je aktuálně v mezipaměti. Pokud položka není v mezipaměti, má číst z úložiště dat a přidají se do mezipaměti.
 
-Při komunikaci s webových rozhraní API, aplikace musí být citlivé na přechodných. Přechodných zahrnují aktuálně ztrátu připojení k síti pro služby, dočasné nedostupnosti služeb nebo vypršení časových limitů, které vzniknou, když služba je zaneprázdněná. Tyto chyby jsou často samy opraví, a pokud po vhodný zpoždění se opakuje akci, je pravděpodobně úspěšné. Aplikace má proto obtékat všechny pokusy o přístup k webovému rozhraní API v kódu, který implementuje přechodná chyba mechanismu pro zpracování.
+Při komunikaci s webovým rozhraním API, aplikace musí být citlivé na přechodné chyby. K přechodným chybám patří momentální ztráta síťového připojení ke službám, dočasná nedostupnost služby nebo vypršení časových limitů, ke kterému dochází, když je služba přetížená. Tyto chyby se často samy opraví, a pokud se akce opakuje po vhodně dlouhém, je pravděpodobné, že uspěje. Proto aplikace by měla všechny pokusy o přístup k webovému rozhraní API v kódu, který implementuje mechanismus pro zpracování přechodných chyb.
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Stáhnout elektronická kniha (2Mb PDF)](https://aka.ms/xamarinpatternsebook)
-- [eShopOnContainers (Githubu) (ukázka)](https://github.com/dotnet-architecture/eShopOnContainers)
+- [Stáhněte si elektronickou knihu (2Mb PDF)](https://aka.ms/xamarinpatternsebook)
+- [aplikaci eShopOnContainers (GitHub) (ukázka)](https://github.com/dotnet-architecture/eShopOnContainers)

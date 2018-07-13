@@ -1,26 +1,26 @@
 ---
 title: Dynamické styly v Xamarin.Forms
-description: Tento článek vysvětluje, jak reagovat na aplikaci Xamarin.Forms na styl změny dynamicky za běhu pomocí dynamické prostředky.
+description: Tento článek vysvětluje, jak může aplikace Xamarin.Forms reakce na změny stylu dynamicky za běhu pomocí dynamické prostředky.
 ms.prod: xamarin
 ms.assetid: 13D4FA4B-DF10-42BF-B001-2C49367FC216
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 0f82e0cfde29921ea768000f17b93d04f8ad307e
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: cedf9e3daed9a2d5f8bfa0962bf66510748b592a
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245218"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997143"
 ---
 # <a name="dynamic-styles-in-xamarinforms"></a>Dynamické styly v Xamarin.Forms
 
-_Styly nezadávejte reagovat na změny vlastností a zůstanou nezměněny po dobu trvání aplikace. Například po přiřazení styl visual elementu, pokud jedna z instancí Setter změněna, odebrána nebo přidat novou instanci Setter, změny se nepoužije pro vizuální prvek. Ale aplikace reagovat na změny styl dynamicky za běhu pomocí dynamické prostředky._
+_Styly není reagovat na změny vlastností a zůstanou nezměněny po dobu trvání aplikace. Například po přidělení styl vizuální prvek, pokud jedna z instancí Setter změněna, odebrána nebo nová instance Setter přidání, změny se nepoužije pro vizuální prvek. Ale aplikace reagovat na změny stylu dynamicky za běhu pomocí dynamické prostředky._
 
-`DynamicResource` Je podobná – rozšíření značek `StaticResource` rozšíření značek v obě načíst hodnotu z použití klíče slovníku [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/). Ale při `StaticResource` vyhledá jeden slovník, `DynamicResource` udržuje odkaz na klíče slovníku. Proto pokud slovník přidružené ke klíči se nahrazuje, změny se použijí pro vizuální prvek. To umožňuje styl změny v modulu runtime v rámci aplikace.
+`DynamicResource` – Rozšíření značek se podobá `StaticResource` – rozšíření značek v obou použít klíč slovníku se načíst hodnotu z [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary). Nicméně Přestože `StaticResource` provede vyhledávání jednoho slovníku `DynamicResource` udržuje odkaz na klíč slovníku. Proto pokud se nahradí slovníku přidružený ke klíči, použití této změny na vizuální prvek. To umožňuje modulu runtime styl změny provedené v aplikaci.
 
-Následující příklad kódu ukazuje *dynamické* stylů na stránce XAML:
+Následující příklad kódu ukazuje *dynamické* styly stránky XAML:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.DynamicStylesPage" Title="Dynamic" Icon="xaml.png">
@@ -51,9 +51,9 @@ Následující příklad kódu ukazuje *dynamické* stylů na stránce XAML:
 </ContentPage>
 ```
 
-[ `SearchBar` ](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/) Instance použití `DynamicResource` – rozšíření značek tak, aby odkazovaly [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) s názvem `searchBarStyle`, která není definována v XAML. Ale protože [ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/) vlastnosti `SearchBar` instance jsou nastaveny pomocí `DynamicResource`, chybí klíč slovník nevede se došlo k výjimce.
+[ `SearchBar` ](xref:Xamarin.Forms.SearchBar) Instance použití `DynamicResource` – rozšíření značek tak, aby odkazovaly [ `Style` ](xref:Xamarin.Forms.Style) s názvem `searchBarStyle`, která není definovaná v XAML. Ale protože [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) vlastnosti `SearchBar` instance jsou nastaveny pomocí `DynamicResource`, chybí klíč slovníku nevede k vyvolání výjimky.
 
-Místo toho v souboru kódu na pozadí konstruktoru vytvoří [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) položka s klíčem `searchBarStyle`, jak ukazuje následující příklad kódu:
+Místo toho v souboru kódu na pozadí, vytvoří konstruktor [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) položka s klíčem `searchBarStyle`, jak je znázorněno v následujícím příkladu kódu:
 
 ```csharp
 public partial class DynamicStylesPage : ContentPage
@@ -79,10 +79,10 @@ public partial class DynamicStylesPage : ContentPage
 }
 ```
 
-Když `OnButtonClicked` obslužné rutiny události proveden, `searchBarStyle` bude přepínat mezi `blueSearchBarStyle` a `greenSearchBarStyle`. Výsledkem je vidět na následujících snímcích obrazovky vzhled:
+Když `OnButtonClicked` obslužná rutina události je spuštěn, `searchBarStyle` Přepne mezi `blueSearchBarStyle` a `greenSearchBarStyle`. Výsledkem je vzhled je znázorněno na následujících snímcích obrazovky:
 
-[![](dynamic-images/dynamic-style-blue.png "Modrá dynamické styl příklad")](dynamic-images/dynamic-style-blue-large.png#lightbox "modrá dynamické styl příklad")
-[![](dynamic-images/dynamic-style-green.png "zelená dynamické styl příklad") ] (dynamic-images/dynamic-style-green-large.png#lightbox "Zelená příklad dynamické styl")
+[![](dynamic-images/dynamic-style-blue.png "Modrá příklad dynamické styl")](dynamic-images/dynamic-style-blue-large.png#lightbox "modrou příklad dynamické styl")
+[![](dynamic-images/dynamic-style-green.png "zelená příklad dynamické styl") ] (dynamic-images/dynamic-style-green-large.png#lightbox "Zelená příklad dynamické styl")
 
 Následující příklad kódu ukazuje na stejnou stránku v jazyce C#:
 
@@ -120,15 +120,15 @@ public class DynamicStylesPageCS : ContentPage
 }
 ```
 
-V jazyce C# [ `SearchBar` ](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/) instance použití [ `SetDynamicResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Element.SetDynamicResource/) metoda tak, aby odkazovaly `searchBarStyle`. `OnButtonClicked` Kód obslužné rutiny událostí je stejný jako v příkladu XAML a po provedení `searchBarStyle` bude přepínat mezi `blueSearchBarStyle` a `greenSearchBarStyle`.
+V jazyce C# [ `SearchBar` ](xref:Xamarin.Forms.SearchBar) instance použití [ `SetDynamicResource` ](xref:Xamarin.Forms.Element.SetDynamicResource*) metodu tak, aby odkazovaly `searchBarStyle`. `OnButtonClicked` Kód obslužné rutiny události je stejný jako v příkladu XAML a při spuštění `searchBarStyle` Přepne mezi `blueSearchBarStyle` a `greenSearchBarStyle`.
 
 <a name="dynamic-style-inheritance">
 
-## <a name="dynamic-style-inheritance"></a>Dynamické styl dědičnosti
+## <a name="dynamic-style-inheritance"></a>Dědičnost stylů dynamické
 
-Odvozování z dynamické styl styl nelze dosáhnout pomocí [ `Style.BasedOn` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.BasedOn/) vlastnost. Místo toho [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) třída zahrnuje [ `BaseResourceKey` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.BaseResourceKey/) může dynamicky měnit vlastnosti, která může být nastaveno na klíč slovník jehož hodnota.
+Styl odvozený od dynamické styl není možné dosáhnout použitím [ `Style.BasedOn` ](xref:Xamarin.Forms.Style.BasedOn) vlastnost. Místo toho [ `Style` ](xref:Xamarin.Forms.Style) třída zahrnuje [ `BaseResourceKey` ](xref:Xamarin.Forms.Style.BaseResourceKey) vlastnost, která může být nastaven na klíč slovníku jehož hodnota může dynamicky měnit.
 
-Následující příklad kódu ukazuje *dynamické* styl dědičnosti na stránce XAML:
+Následující příklad kódu ukazuje *dynamické* stylu dědičnosti v stránky XAML:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.DynamicStylesInheritancePage" Title="Dynamic Inheritance" Icon="xaml.png">
@@ -158,11 +158,11 @@ Následující příklad kódu ukazuje *dynamické* styl dědičnosti na stránc
 </ContentPage>
 ```
 
-[ `SearchBar` ](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/) Instance použití `StaticResource` – rozšíření značek tak, aby odkazovaly [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) s názvem `tealSearchBarStyle`. To `Style` nastaví některé další vlastnosti a používá [ `BaseResourceKey` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.BaseResourceKey/) vlastnost tak, aby odkazovaly `searchBarStyle`. `DynamicResource` – Rozšíření značek není vyžadována, protože `tealSearchBarStyle` nedojde ke změně, s výjimkou `Style` je odvozena z. Proto `tealSearchBarStyle` udržuje odkaz na `searchBarStyle` a je změněn, když se změní základní styl.
+[ `SearchBar` ](xref:Xamarin.Forms.SearchBar) Instance použití `StaticResource` – rozšíření značek tak, aby odkazovaly [ `Style` ](xref:Xamarin.Forms.Style) s názvem `tealSearchBarStyle`. To `Style` nastaví některé další vlastnosti a používá [ `BaseResourceKey` ](xref:Xamarin.Forms.Style.BaseResourceKey) vlastnost tak, aby odkazovaly `searchBarStyle`. `DynamicResource` – Rozšíření značek se nevyžaduje, protože `tealSearchBarStyle` nedojde ke změně, s výjimkou `Style` se odvozuje od. Proto `tealSearchBarStyle` udržuje odkaz na `searchBarStyle` a je změnit při změně stylu základní.
 
-V souboru kódu na pozadí konstruktoru vytvoří [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) položka s klíčem `searchBarStyle`, jak na předchozí příklad, který ukázky dynamické stylů. Když `OnButtonClicked` obslužné rutiny události proveden, `searchBarStyle` bude přepínat mezi `blueSearchBarStyle` a `greenSearchBarStyle`. Výsledkem je vidět na následujících snímcích obrazovky vzhled:
+V souboru kódu na pozadí, vytvoří konstruktor [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) položka s klíčem `searchBarStyle`, protože za předchozí příklad, který jsme vám ukázali dynamické styly. Když `OnButtonClicked` obslužná rutina události je spuštěn, `searchBarStyle` Přepne mezi `blueSearchBarStyle` a `greenSearchBarStyle`. Výsledkem je vzhled je znázorněno na následujících snímcích obrazovky:
 
-[![](dynamic-images/dynamic-style-inheritance-blue.png "Modrá dynamické styl dědičnosti příklad")](dynamic-images/dynamic-style-inheritance-blue-large.png#lightbox "modrá dynamické styl dědičnosti příklad")
+[![](dynamic-images/dynamic-style-inheritance-blue.png "Modrá dynamické styl dědičnosti příklad")](dynamic-images/dynamic-style-inheritance-blue-large.png#lightbox "modrou dynamické styl dědičnosti příklad")
 [![](dynamic-images/dynamic-style-inheritance-green.png "zelená dynamické styl Příklad dědičnosti")](dynamic-images/dynamic-style-inheritance-green-large.png#lightbox "zelená příklad dynamické styl dědičnosti")
 
 Následující příklad kódu ukazuje na stejnou stránku v jazyce C#:
@@ -205,11 +205,11 @@ public class DynamicStylesInheritancePageCS : ContentPage
 }
 ```
 
-`tealSearchBarStyle` Je přiřazen přímo na [ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/) vlastnost [ `SearchBar` ](https://developer.xamarin.com/api/type/Xamarin.Forms.SearchBar/) instance. To `Style` nastaví některé další vlastnosti a používá [ `BaseResourceKey` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.BaseResourceKey/) vlastnost tak, aby odkazovaly `searchBarStyle`. [ `SetDynamicResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Element.SetDynamicResource/) Metoda požadované zde není protože `tealSearchBarStyle` nedojde ke změně, s výjimkou `Style` je odvozena z. Proto `tealSearchBarStyle` udržuje odkaz na `searchBarStyle` a je změněn, když se změní základní styl.
+`tealSearchBarStyle` Se přiřadí přímo [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) vlastnost [ `SearchBar` ](xref:Xamarin.Forms.SearchBar) instancí. To `Style` nastaví některé další vlastnosti a používá [ `BaseResourceKey` ](xref:Xamarin.Forms.Style.BaseResourceKey) vlastnost tak, aby odkazovaly `searchBarStyle`. [ `SetDynamicResource` ](xref:Xamarin.Forms.Element.SetDynamicResource*) Metoda není vyžadována zde protože `tealSearchBarStyle` nedojde ke změně, s výjimkou `Style` se odvozuje od. Proto `tealSearchBarStyle` udržuje odkaz na `searchBarStyle` a je změnit při změně stylu základní.
 
 ## <a name="summary"></a>Souhrn
 
-Styly nezadávejte reagovat na změny vlastností a zůstanou nezměněny po dobu trvání aplikace. Ale aplikace reagovat na změny styl dynamicky za běhu pomocí dynamické prostředky. Kromě toho *dynamické* styly může být odvozen od s [ `BaseResourceKey` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.BaseResourceKey/) vlastnost.
+Styly není reagovat na změny vlastností a zůstanou nezměněny po dobu trvání aplikace. Ale aplikace reagovat na změny stylu dynamicky za běhu pomocí dynamické prostředky. Kromě toho *dynamické* styly může být odvozena z s [ `BaseResourceKey` ](xref:Xamarin.Forms.Style.BaseResourceKey) vlastnost.
 
 
 
@@ -218,6 +218,6 @@ Styly nezadávejte reagovat na změny vlastností a zůstanou nezměněny po dob
 - [Rozšíření značek XAML](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
 - [Dynamické styly (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/DynamicStyles/)
 - [Práce se styly (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
-- [ResourceDictionary](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)
-- [Styl](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)
-- [Metoda setter](https://developer.xamarin.com/api/type/Xamarin.Forms.Setter/)
+- [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
+- [Styl](xref:Xamarin.Forms.Style)
+- [Metoda setter](xref:Xamarin.Forms.Setter)

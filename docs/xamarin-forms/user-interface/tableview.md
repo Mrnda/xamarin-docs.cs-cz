@@ -1,30 +1,30 @@
 ---
-title: Zobrazení Tabulka Xamarin.Forms
-description: Tento článek vysvětluje způsob použití třídy zobrazení Xamarin.Forms tabulka nabídne posouvání nabídek, nastavení a vstupní formuláře v aplikacích.
+title: Zobrazení Xamarin.Forms tabulka
+description: Tento článek vysvětluje, jak použít třídu zobrazení Xamarin.Forms tabulka prezentovat posouvání nabídek, nastavení a vstupních formulářů v aplikacích.
 ms.prod: xamarin
 ms.assetid: D1619D19-A74F-40DF-8E53-B1B7DFF7A3FB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 5ad1db6a073b5a6d0199aa586230cb55a9d4a925
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 47cd79611cfeaf48c0422772d8f3e75eb57ba771
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244855"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996050"
 ---
-# <a name="xamarinforms-tableview"></a>Zobrazení Tabulka Xamarin.Forms
+# <a name="xamarinforms-tableview"></a>Zobrazení Xamarin.Forms tabulka
 
-[Zobrazení Tabulka](https://developer.xamarin.com/api/type/Xamarin.Forms.TableView/) je zobrazení pro posouvatelného seznamy dat nebo volby tam, kde existují řádky, které Nesdílejte stejné šablony. Na rozdíl od [ListView](~/xamarin-forms/user-interface/listview/index.md), zobrazení tabulka neobsahuje koncept `ItemsSource`, takže položky je nutné přidat jako podřízené objekty ručně.
+[Zobrazení Tabulka](xref:Xamarin.Forms.TableView) je zobrazení pro posuvný seznam data nebo možnosti tam, kde existují řádky, které nechcete sdílet stejnou šablonu. Na rozdíl od [ListView](~/xamarin-forms/user-interface/listview/index.md), zobrazení tabulka neobsahuje koncept `ItemsSource`, takže položky musí být přidány jako podřízené objekty ručně.
 
 Tato příručka se skládá z následujících částí:
 
 - **[Případy použití](#Use_Cases)**  &ndash; kdy použít zobrazení Tabulka místo ListView nebo vlastní zobrazení.
-- **[Struktura zobrazení Tabulka](#TableView_Structure)**  &ndash; hierarchie zobrazení, která je vyžadována během zobrazení Tabulka.
-- **[Vzhled zobrazení Tabulka](#TableView_Appearance)**  &ndash; možnosti přizpůsobení zobrazení Tabulka.
-- **[Předdefinované buněk](#Built-In_Cells)**  &ndash; buňky integrované možnosti, včetně [EntryCell](#EntryCell) a [SwitchCell](#SwitchCell).
-- **[Vlastní buněk](#Custom_Cells)**  &ndash; jak provádět vlastní vlastní buněk.
+- **[Struktura zobrazení Tabulka](#TableView_Structure)**  &ndash; hierarchii zobrazení, která je potřeba v rámci zobrazení Tabulka.
+- **[Vzhled zobrazení Tabulka](#TableView_Appearance)**  &ndash; možnosti vlastního nastavení pro zobrazení Tabulka.
+- **[Integrované buňky](#Built-In_Cells)**  &ndash; buňky integrované možnosti, včetně [EntryCell](#EntryCell) a [SwitchCell](#SwitchCell).
+- **[Vlastní buňky](#Custom_Cells)**  &ndash; jak vytvořit vlastní vlastní buňky.
 
 ![](tableview-images/tableview-all-sml.png "Příklad zobrazení Tabulka")
 
@@ -34,17 +34,17 @@ Tato příručka se skládá z následujících částí:
 
 Zobrazení Tabulka je užitečné, když:
 
-- prezentace seznamu nastavení
+- prezentace seznamu nastavení,
 - shromažďování dat ve formuláři, nebo
-- Zobrazuje data, která se zobrazí jinak z řádku řádek (např. čísla, procenta a bitové kopie).
+- zobrazení dat, která se zobrazí odlišně od řádků na řádek (např. čísla, procenta a bitové kopie).
 
-Zobrazení Tabulka zpracovává posouvání a rozložení řádků v atraktivní částech, potřebují společné výše uvedených scénářů. `TableView` Řízení používá každou platformu základní ekvivalentní zobrazení, pokud je k dispozici, vytváření nativní vzhled pro každou platformu.
+Zobrazení Tabulka zpracovává posouvání a rozložení řádků v atraktivní oddíly, potřebují společné pro výše zmíněné situace umožnili. `TableView` Ovládací prvek používá jednotlivé platformy základní ekvivalentní zobrazení, pokud je k dispozici, vytvoření nativní vzhledu pro každou platformu.
 
 <a name="TableView_Structure" />
 
 ## <a name="tableview-structure"></a>Struktura zobrazení Tabulka
 
-Elementy v `TableView` jsou uspořádány do oddílů. V kořenovém adresáři `TableView` je `TableRoot`, což je nadřazená na jeden nebo více `TableSections`:
+Prvky `TableView` jsou uspořádány do oddílů. V kořenovém adresáři `TableView` je `TableRoot`, což je rodiče, aby jeden nebo více `TableSections`:
 
 ```csharp
 Content = new TableView {
@@ -55,7 +55,7 @@ Content = new TableView {
 };
 ```
 
-Každý `TableSection` se skládá z nadpisu a jeden nebo více ViewCells. Tady vidíte `TableSection`na `Title` vlastnost nastavena na hodnotu *"Okruh"* v konstruktoru:
+Každý `TableSection` se skládá ze záhlaví a jeden nebo více ViewCells. Tady vidíme `TableSection`společnosti `Title` vlastnost nastavena na hodnotu *"Kanál"* v konstruktoru:
 
 ```csharp
 var section = new TableSection ("Ring") { //TableSection constructor takes title as an optional parameter
@@ -64,7 +64,7 @@ var section = new TableSection ("Ring") { //TableSection constructor takes title
 };
 ```
 
-K provedení se stejné rozvržení jako výše v jazyce XAML:
+K provedení stejné rozložení, jak je uvedeno výše v XAML:
 
 ```xaml
 <TableView Intent="Settings">
@@ -81,69 +81,69 @@ K provedení se stejné rozvržení jako výše v jazyce XAML:
 
 ## <a name="tableview-appearance"></a>Vzhled zobrazení Tabulka
 
-Zobrazení Tabulka zpřístupní `Intent` vlastnost, která je výčet z následujících možností:
+Zobrazení tabulka uvádí `Intent` vlastnost, která je výčet z následujících možností:
 
-- **Data** &ndash; pro použití při zobrazení datové položky. Všimněte si, že [ListView](~/xamarin-forms/user-interface/listview/index.md) může být lepším řešením pro posouvání seznam data.
-- **Formulář** &ndash; pro použití při zobrazení Tabulka funguje jako formulář.
-- **Nabídky** &ndash; pro použití při prezentací nabídky výběry.
-- **Nastavení** &ndash; pro použití při zobrazení seznamu nastavení konfigurace.
+- **Data** &ndash; pro použití při zobrazení datových položek. Všimněte si, že [ListView](~/xamarin-forms/user-interface/listview/index.md) , může být lepší možností pro posouvání seznamy data.
+- **Formulář** &ndash; k použití pro zobrazení Tabulka funguje jako formulář.
+- **Nabídka** &ndash; pro použití při zobrazení nabídky možností.
+- **Nastavení** &ndash; pro použití při zobrazování seznamu nastavení konfigurace.
 
-`TableIntent` Zvolíte, může mít vliv jak `TableView` se zobrazí na každé platformě. I když existují, nerušte zaškrtnutí rozdíly, je osvědčeným postupem vyberte `TableIntent` která nejvíce odpovídá jak máte v úmyslu použít v tabulce.
+`TableIntent` Zvolíte, může mít vliv na způsob, jakým `TableView` se zobrazí na jednotlivých platformách. I když nejsou, nerušte zaškrtnutí políčka rozdíly, je osvědčeným postupem je vybrat `TableIntent` , která nejlépe odpovídá způsobu použití v tabulce.
 
 <a name="Built-In_Cells" />
 
-## <a name="built-in-cells"></a>Předdefinované buněk
+## <a name="built-in-cells"></a>Integrované buňky
 
-Xamarin.Forms se dodává s integrovanou buňky shromažďování a zobrazení informací. I když ListView a zobrazení Tabulka můžete použít všechny stejné buňky, tady jsou nejdůležitější pro zobrazení Tabulka scénář:
+Xamarin.Forms se dodává s integrovanou buňky pro shromažďování a zobrazování informací. I když ListView a zobrazení Tabulka umožňují používat všechny funkce stejných buňkách, tady jsou nejrelevantnější pro zobrazení Tabulka scénář:
 
-- **SwitchCell** &ndash; pro prezentování a zaznamenávání stavu hodnotu true nebo false, společně s textový popisek.
-- **EntryCell** &ndash; pro prezentování a zachycení textu.
+- **SwitchCell** &ndash; pro prezentaci a zaznamenávání stavu true nebo false, spolu s textový popisek.
+- **EntryCell** &ndash; pro prezentaci a zachycení textu.
 
-V tématu [vzhledu buněk ListView](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md) podrobný popis [TextCell](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#TextCell) a [funkce ImageCell](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#ImageCell).
+Zobrazit [vzhled buňky ListView](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md) podrobný popis [TextCell](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#TextCell) a [funkce ImageCell](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#ImageCell).
 
 <a name="switchcell" />
 
 ### <a name="switchcell"></a>SwitchCell
-[`SwitchCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.SwitchCell/) ovládací prvek, který chcete použít pro prezentování a zachycení zapnutí nebo vypnutí nebo `true` / `false` stavu.
+[`SwitchCell`](xref:Xamarin.Forms.SwitchCell) ovládací prvek určený pro prezentaci a zaznamenávání zapnuto/vypnuto nebo `true` / `false` stavu.
 
-SwitchCells mít jeden řádek textu upravit a vlastnost zapnout nebo vypnout. Obě tyto vlastnosti jsou vazbu.
+SwitchCells mít jeden řádek textu k úpravě a vlastnost zapnout nebo vypnout. Obě tyto vlastnosti jsou s možností vazby.
 
-- `Text` &ndash; text, který se zobrazí vedle přepínač.
-- `On` &ndash; zda přepínač se zobrazuje jako zapnuto nebo vypnuto.
+- `Text` &ndash; text zobrazený vedle přepínač.
+- `On` &ndash; Určuje, zda přepínač je zobrazena jako zapnuto nebo vypnuto.
 
-Všimněte si, že `SwitchCell` zpřístupní `OnChanged` událostí, umožňuje reagovat na změny ve stavu na buňku.
+Všimněte si, že `SwitchCell` zpřístupňuje `OnChanged` událost, abyste mohli reagovat na změny stavu buňky.
 
 ![](tableview-images/switch-cell.png "Příklad SwitchCell")
 
 <a name="entrycell" />
 
 ### <a name="entrycell"></a>EntryCell
-[`EntryCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.EntryCell/) je užitečné, když je třeba zobrazit text data, která může uživatel upravit. `EntryCell`s nabízejí následující vlastnosti, které se dají přizpůsobit:
+[`EntryCell`](xref:Xamarin.Forms.EntryCell) je užitečné, když budete chtít zobrazit textová data, která uživatel může upravovat. `EntryCell`s nabídky, které můžete přizpůsobit následující vlastnosti:
 
-- `Keyboard` &ndash; Klávesnice zobrazíte při úpravách. Existují možnosti pro takové věci, jako číselné hodnoty, e-mailu, telefonních čísel atd. [Najdete v dokumentaci rozhraní API](http://developer.xamarin.com/api/type/Xamarin.Forms.Keyboard/).
-- `Label` &ndash; Text popisku, který chcete zobrazit napravo od textového pole.
+- `Keyboard` &ndash; Klávesnice pro zobrazení při úpravách. Existují možnosti pro takové věci, jako jsou číselné hodnoty, e-mailu, telefonních čísel atd. [Viz dokumentace rozhraní API](xref:Xamarin.Forms.Keyboard).
+- `Label` &ndash; Text popisku zobrazíte napravo od polem pro zadání textu.
 - `LabelColor` &ndash; Barva textu popisku.
-- `Placeholder` &ndash; Text, který se zobrazí v poli položku, když je null nebo prázdný. Tento text zmizí při zahájení zadávání textu.
-- `Text` &ndash; Text v poli položku.
-- `HorizontalTextAlignment` &ndash; Vodorovné zarovnání textu. Může být center doleva nebo doprava zarovnaný. [Najdete v dokumentaci rozhraní API](http://developer.xamarin.com/api/type/Xamarin.Forms.TextAlignment/).
+- `Placeholder` &ndash; Text, který se zobrazí v poli položky, když má hodnotu null nebo prázdný. Tento text zmizí při zahájení zadání textu.
+- `Text` &ndash; Text v polem pro zadání.
+- `HorizontalTextAlignment` &ndash; Vodorovné zarovnání textu. Může být center vlevo nebo vpravo zarovnaný. [Viz dokumentace rozhraní API](xref:Xamarin.Forms.TextAlignment).
 
-Všimněte si, že `EntryCell` zpřístupní `Completed` událost, která je aktivována, pokud uživatel narazí 'v' na klávesnici při úpravách textu.
+Všimněte si, že `EntryCell` zpřístupňuje `Completed` událost, která se aktivuje, když uživatel stiskne "Hotovo" na klávesnici během úprav textu.
 
 ![](tableview-images/entry-cell.png "Příklad EntryCell")
 
 <a name="Custom_Cells" />
 
-## <a name="custom-cells"></a>Vlastní buněk
-Pokud integrované buněk nejsou dost, vlastní buněk slouží k zaznamenání dat takovým způsobem, který dává smysl pro vaši aplikaci a k dispozici. Můžete například jezdce chcete umožnit uživatelům zvolit krytí bitové kopie k dispozici.
+## <a name="custom-cells"></a>Vlastní buňky
+Pokud integrované buňky nestačí, vlastní buňky je možné k prezentaci a sbírat data způsobem, který dává smysl pro vaši aplikaci. Můžete například k dispozici posuvník umožňující uživateli vybrat míra průhlednosti obrázku.
 
-Všechny vlastní buňky musí být odvozeny od [ `ViewCell` ](http://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/), že všechny buňky předdefinované typy použijte stejnou základní třídu.
+Všechny vlastní buňky musí být odvozen od [ `ViewCell` ](xref:Xamarin.Forms.ViewCell), je stejná základní třída, že všechny buňky vestavěné typy použití.
 
-Jedná se o příklad vlastní buňky:
+Toto je příklad vlastního buňky:
 
 ![](tableview-images/custom-cell.png "Příklad vlastní buňky")
 
 ### <a name="xaml"></a>XAML
-Zde je XAML pro vytvoření rozložení výše:
+XAML vytvořit výše rozložení je nižší než:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -170,17 +170,17 @@ Zde je XAML pro vytvoření rozložení výše:
 
 ```
 
-Výše uvedené XAML provádí mnoho. Můžeme rozdělit ho:
+Výše uvedené XAML je to mnohem. To Pojďme rozdělit:
 
-- Kořenový element v části `TableView` je `TableRoot`.
+- Kořenový element v rámci `TableView` je `TableRoot`.
 - Je `TableSection` bezprostředně pod `TableRoot`.
-- `ViewCell` Je definována přímo pod oddíl tabulky. Na rozdíl od `ListView`, `TableView` nevyžaduje, aby tento vlastní (nebo některého) buněk jsou definovány v `ItemTemplate`.
-- StackLayout slouží ke správě rozložení vlastní buňky. Všechny rozložení může zde.
+- `ViewCell` Definovaný přímo v oddíl tabulky. Na rozdíl od `ListView`, `TableView` nevyžaduje, aby tuto vlastní (nebo všechny) buňky jsou definovány v `ItemTemplate`.
+- StackLayout slouží ke správě rozložení vlastní buňky. Tady můžete použít libovolného rozložení.
 
 ### <a name="cnum"></a>C&num;
 
-Protože `TableView` funguje s statických dat nebo dat, která je ručně změnit, nemá koncept šablony položky. Místo toho vlastní buněk ručně vytvořit a umístí do tabulky. Poznámka: postup vytvoření vlastní buňky, dědí z `ViewCell`, pak jejím přidáním do `TableView` jako jste by předdefinované buňku, je také podporována.
-Tady je kód c# k provádění rozložení výše:
+Protože `TableView` funguje s statická data nebo data, která se ručně změní, nemá koncept šablony položky. Místo toho vlastní buňky lze ručně vytvořit a vložit do tabulky. Všimněte si, že postup vytvoření vlastní buňky, která dědí z `ViewCell`, pak jejím přidáním na `TableView` jako jste vy byste integrované buňky, je také podporována.
+Tady je kód jazyka c# k dosažení vyšší rozložení:
 
 ```csharp
 var table = new TableView();
@@ -207,14 +207,14 @@ table.Root = new TableRoot () {
 Content = table;
 ```
 
-C# výše provádí mnoho. Můžeme rozdělit ho:
+C# výše je to mnohem. To Pojďme rozdělit:
 
-- Kořenový element v části `TableView` je `TableRoot`.
+- Kořenový element v rámci `TableView` je `TableRoot`.
 - Je `TableSection` bezprostředně pod `TableRoot`.
-- `ViewCell` Je definována přímo pod oddíl tabulky. Na rozdíl od `ListView`, `TableView` nevyžaduje, aby tento vlastní (nebo některého) buněk jsou definovány v `ItemTemplate`.
-- StackLayout slouží ke správě rozložení vlastní buňky. Všechny rozložení může zde.
+- `ViewCell` Definovaný přímo v oddíl tabulky. Na rozdíl od `ListView`, `TableView` nevyžaduje, aby tuto vlastní (nebo všechny) buňky jsou definovány v `ItemTemplate`.
+- StackLayout slouží ke správě rozložení vlastní buňky. Tady můžete použít libovolného rozložení.
 
-Všimněte si, že třída pro vlastní buňky nikdy definovaná. Místo toho `ViewCell`na zobrazení je nastavena pro konkrétní instanci `ViewCell`.
+Všimněte si, že třída pro buňku vlastní nikdy definovaný. Místo toho `ViewCell`jeho zobrazení je nastavena pro konkrétní instanci `ViewCell`.
 
 
 

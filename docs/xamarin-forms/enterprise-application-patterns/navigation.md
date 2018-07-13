@@ -1,42 +1,42 @@
 ---
-title: Podnikové aplikace navigace
-description: Tato kapitola vysvětluje, jak mobilní aplikace eShopOnContainers provede zobrazení modelu první navigační z modelů zobrazení.
+title: Navigační aplikace organizace
+description: Tato kapitola popisuje, jak aplikaci eShopOnContainers mobilní aplikace provádí zobrazení první model navigace z modelů zobrazení.
 ms.prod: xamarin
 ms.assetid: 4cad57b5-7fe4-4527-a988-d9b60c9620b4
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 9ac9f3200440001752c07ad45fdaaf2b1d9ba6a5
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: d306b0c1c0d08129671e27b96911ec771acb658e
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243678"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994767"
 ---
-# <a name="enterprise-app-navigation"></a>Podnikové aplikace navigace
+# <a name="enterprise-app-navigation"></a>Navigační aplikace organizace
 
-Xamarin.Forms zahrnuje podporu pro navigaci na stránce, které obvykle výsledky z interakce uživatele se uživatelské rozhraní nebo z aplikace v důsledku vnitřní stav řízené logiku změny. Navigace však může být složité implementace v aplikacích, které používají vzorec Model-View-ViewModel (modelem MVVM), protože musí být splněny následující problémy:
+Xamarin.Forms zahrnuje podporu pro navigaci na stránce, které obvykle výsledky z interakce uživatele s uživatelským rozhraním nebo z vlastní aplikaci v důsledku změn ve vnitřní stav řízené logiku. Navigace však může být složité implementovat v aplikacích, které používají vzor Model-View-ViewModel (MVVM) musí být splněny následující problémy:
 
--   Jak identifikovat zobrazení přesměrováni do, způsobem, který nezavádí úzkou párování a závislosti mezi zobrazení.
--   Jak pro koordinaci proces podle kterého je vytvořena instance a inicializovat přesměrováni do zobrazení. Při použití rozhraní MVVM, zobrazení a modelu zobrazení muset vytvořit instanci a přidružené navzájem pomocí kontextu vazby tohoto zobrazení. Pokud aplikace používá kontejner vkládání závislostí, vytváření instancí zobrazení a Zobrazit modely může vyžadovat mechanismus konkrétní konstrukce.
--   Zda chcete provést navigační první zobrazení nebo zobrazení modelu první navigace. S navigací první zobrazení přejděte na stránku odkazuje na název typu zobrazení. Během navigace je zadané zobrazení je vytvořena, spolu s jeho odpovídající modelu zobrazení a další závislé služby. Alternativní způsob je použití navigační první modelu zobrazení, kde přejděte na stránku odkazuje na název typu modelu zobrazení.
--   Jak chcete této aplikace oddělte navigační chování aplikace v zobrazení a zobrazení modelů. Rozhraní MVVM vzor zajišťuje oddělení mezi uživatelském rozhraní aplikace a její prezentační a obchodní logiku. Navigační chování aplikace však bude často span uživatelského rozhraní a prezentacím částí aplikace. Tento uživatel bude často spustit navigační ze zobrazení a zobrazení bude nahrazena v důsledku navigaci. Navigace může často také potřebovat iniciované nebo koordinované z v rámci modelu zobrazení.
--   Jak předat parametry během navigace pro účely inicializace. Například pokud uživatel přejde na zobrazení pro pořadí podrobné informace o aktualizaci, bude mít data pořadí mají být předány zobrazení tak, aby mohla zobrazovat správná data.
--   Jak koordinovat navigační zajistit, že jsou řídit některé obchodní pravidla. Například může být vyzvání uživatele před přechodem z zobrazení tak, aby neplatná data můžete opravit nebo vyzváni k odeslání nebo zrušit všechny změny dat, které byly provedeny v rámci zobrazení.
+-   Jak identifikovat zobrazení tak, aby se přejde poté, pomocí přístup, který nezavádí určitou úzkou svázanost a závislostí mezi zobrazeními.
+-   Jak ke koordinaci procesu, podle kterého zobrazení tak, aby se přejde poté, je vytvořena instance a inicializován. Při použití MVVM, zobrazení a modelu zobrazení muset vytvořit instanci a přidružené k sobě navzájem prostřednictvím zobrazení kontextu vazby. Pokud aplikace používá kontejner vkládání závislostí, vytváření instancí zobrazení a modely, zobrazení mohou vyžadovat konkrétní konstrukci mechanismus.
+-   Určuje, zda provést navigace první zobrazení nebo zobrazení první model navigace. S navigací na první zobrazení přejděte na stránku odkazuje na název typu zobrazení. Během navigace zadané zobrazení je vytvořena instance, spolu s jeho odpovídající model zobrazení a další závislé služby. Alternativním přístupem je použití navigace v modelu první zobrazení, kde přejděte na stránku odkazuje na název typu modelu zobrazení.
+-   Jak chcete-li čistě oddělte navigační chování aplikace v zobrazení a Zobrazit modely. Vzor MVVM oddělit Uživatelském rozhraní aplikace a prezentační a obchodní logiku. Chování navigace aplikace však bude zahrnovat často částí uživatelského rozhraní a prezentace aplikace. Uživatel zahájí často navigace z zobrazení a zobrazení se nahradí v důsledku navigace. Ale navigace často také potřebovat zahájené nebo koordinovaný z v rámci modelu zobrazení.
+-   Jak předávat parametry během navigace pro účely inicializace. Například pokud uživatel přejde na zobrazení aktualizovat podrobnosti objednávky, pořadí data muset být předána do zobrazení, takže může zobrazovat správná data.
+-   Jak zkoordinovat navigace k zajištění, že se řídit určité obchodní pravidla. Uživatelé mohou například zobrazit výzvu před navigaci pryč z zobrazení tak, aby neplatná data můžete opravit nebo výzva k odeslání nebo zahodit všechny změny dat, které byly provedeny v rámci zobrazení.
 
-Tato kapitola řeší tyto problémy prezentací `NavigationService` třídu, která se používá k provádění navigace modelu první stránky zobrazení.
+Tato kapitola řeší tyto problémy tím, že předloží `NavigationService` třídu, která se používá k provedení navigaci na stránce první model zobrazení.
 
 > [!NOTE]
-> `NavigationService` Používané aplikace je určena pouze pro provádění hierarchické navigace mezi instancemi ContentPage. Pomocí služby umožňují přecházet mezi jednotlivými jiné typy stránky může vést k neočekávanému chování.
+> `NavigationService` Používané aplikace je určena pouze pro provádění hierarchická navigace mezi instancemi ContentPage. Pomocí služby přecházet mezi ostatní typy stránce může způsobit neočekávané chování.
 
 ## <a name="navigating-between-pages"></a>Navigace mezi stránkami
 
-Navigace logiky můžete jsou umístěny v kódu zobrazení nebo v dat vázaný zobrazení modelu. Při umístění logiku navigace v zobrazení může být nejjednodušší přístup, není snadno testovat pomocí testování částí. Umístění logiku navigace v zobrazení třídy modelu znamená, že logiku může uplatnit prostřednictvím testů jednotek. Kromě toho model zobrazení poté můžete implementovat logiku pro ovládací prvek navigace k zajištění, že některé obchodní pravidla jsou vyžadována. Například aplikace nemusí povolit uživateli opustit stránku bez předchozího zajistíte, že zadaná data jsou platná.
+Navigace logiky můžete jsou umístěny v zobrazení kódu nebo v data vázaná model zobrazení. Přestože umístění logiky navigace v zobrazení je pravděpodobně nejjednodušším přístupem, není snadno testovat pomocí testů jednotek. Umístění logiky navigace v zobrazení tříd modelu znamená, že logiku lze uplatnit prostřednictvím testů jednotek. Navíc model zobrazení pak mohou implementovat logiku pro ovládací prvek navigace k zajištění, že se vynucují určité obchodní pravidla. Například aplikace nemusí povolit uživatelům opustit stránku, aniž byste nejdřív zajistit, že zadaná data jsou platné.
 
-A `NavigationService` třída je obvykle volat z Zobrazit modely, zvýšení úrovně testovatelnosti. Přejdete na zobrazení z modelů zobrazení by vyžadovaly modely zobrazení pro odkaz na zobrazení a zejména zobrazení, které model active zobrazení není spojen s, který se nedoporučuje. Proto `NavigationService` uvedené zde určuje typ modelu zobrazení jako cíl přejděte k položce.
+A `NavigationService` třídy obvykle vyvolat pomocí Zobrazit modely, zvýšení úrovně testovatelnost. Přejdete na zobrazení z modelů zobrazení by vyžadovaly modelů zobrazení kvůli odkaz a zejména zobrazení, které aktivní zobrazení modelu není spojen s, což se nedoporučuje. Proto `NavigationService` uvedené tady Určuje typ modelu zobrazení jako cíl, který chcete přejít na.
 
-Použití mobilní aplikace eShopOnContainers `NavigationService` třída zajistit zobrazení modelu první navigace. Tato třída implementuje `INavigationService` rozhraní, což je znázorněno v následujícím příkladu kódu:
+Mobilní aplikace používá aplikaci eShopOnContainers `NavigationService` třídě poskytnout navigační model na prvním zobrazení. Tato třída implementuje `INavigationService` rozhraní, které je znázorněno v následujícím příkladu kódu:
 
 ```csharp
 public interface INavigationService  
@@ -50,44 +50,44 @@ public interface INavigationService
 }
 ```
 
-Toto rozhraní určuje, že implementující třídu musí poskytnout následující metody:
+Toto rozhraní určuje, že implementující třída musí poskytovat následující metody:
 
 |Metoda|Účel|
 |--- |--- |
-|`InitializeAsync`|Navigace na jednu z dvě stránky provede při spuštění aplikace.|
-|`NavigateToAsync`|Provede hierarchické navigační určenou stránku.|
-|`NavigateToAsync(parameter)`|Provede hierarchické navigace na určenou stránku předání parametru.|
-|`RemoveLastFromBackStackAsync`|Odebere zásobník navigace na předchozí stránku.|
-|`RemoveBackStackAsync`|Odebere všechny předchozí stránky v zásobníku navigace.|
+|`InitializeAsync`|Navigace na jednu z dvou stránkách provede, když je aplikace spuštěná.|
+|`NavigateToAsync`|Provádí hierarchická navigace na zadanou stránku.|
+|`NavigateToAsync(parameter)`|Provádí hierarchická navigace na určenou stránku předáním parametru.|
+|`RemoveLastFromBackStackAsync`|Odebere z navigační zásobník na předchozí stránku.|
+|`RemoveBackStackAsync`|Odebere všechny předchozí stránky z navigační zásobník.|
 
-Kromě toho `INavigationService` rozhraní určuje, že musíte zadat implementující třídu `PreviousPageViewModel` vlastnost. Tato vlastnost vrátí typ modelu zobrazení související s v zásobníku navigace na předchozí stránku.
+Kromě toho `INavigationService` rozhraní určuje, že implementující třída musí poskytovat `PreviousPageViewModel` vlastnost. Tato vlastnost vrátí typ modelu zobrazení přidružený k předchozí stránce v navigačním zásobníku.
 
 > [!NOTE]
-> `INavigationService` Rozhraní by obvykle také určit `GoBackAsync` metodu, která se používá k prostřednictvím kódu programu vrátit na předchozí stránku v zásobníku navigace. Tato metoda je však chybí eShopOnContainers mobilní aplikace, protože není nutné.
+> `INavigationService` Rozhraní by obvykle také určit `GoBackAsync` metodu, která se používá k vrácení prostřednictvím kódu programu na předchozí stránku v navigačním zásobníku. Tato metoda je však chybí v aplikaci eShopOnContainers mobilní aplikaci, protože to není nutné.
 
-### <a name="creating-the-navigationservice-instance"></a>Vytvoření NavigationService Instance
+### <a name="creating-the-navigationservice-instance"></a>Vytvoření Instance Stoploading
 
-`NavigationService` Třídy, které implementuje `INavigationService` rozhraní, je zaregistrován jako typ singleton s kontejneru pro vkládání závislosti Autofac, jak je ukázáno v následujícím příkladu kódu:
+`NavigationService` Třídy, která implementuje `INavigationService` rozhraní, je registrován jako typ singleton s kontejneru pro vkládání závislosti Autofac, jak je ukázáno v následujícím příkladu kódu:
 
 ```csharp
 builder.RegisterType<NavigationService>().As<INavigationService>().SingleInstance();
 ```
 
-`INavigationService` Rozhraní vyřešen v `ViewModelBase` konstruktoru třídy, jak je ukázáno v následujícím příkladu kódu:
+`INavigationService` Rozhraní vyřeší v `ViewModelBase` konstruktoru třídy, jak je ukázáno v následujícím příkladu kódu:
 
 ```csharp
 NavigationService = ViewModelLocator.Resolve<INavigationService>();
 ```
 
-Vrátí odkaz na `NavigationService` objekt, který je uložen v kontejneru vkládání závislostí Autofac, který byl vytvořený `InitNavigation` metoda v `App` třídy. Další informace najdete v tématu [navigace při App se spouští](#navigating_when_the_app_is_launched).
+Vrátí odkaz na `NavigationService` objekt, který je uložen v kontejneru injektáž závislostí Autofac, který je vytvořen `InitNavigation` metodu `App` třídy. Další informace najdete v tématu [navigace při aplikaci je spustit](#navigating_when_the_app_is_launched).
 
-`ViewModelBase` Třídy úložiště `NavigationService` instance v `NavigationService` vlastnost typu `INavigationService`. Proto všechny třídy modelu, které jsou odvozeny od zobrazení `ViewModelBase` třídy, můžete použít `NavigationService` vlastnost, která metody určeného `INavigationService` rozhraní. Tím je zabráněno režii vložení `NavigationService` objekt z kontejneru pro vkládání závislosti Autofac do každé třídy modelu zobrazení.
+`ViewModelBase` Třídy úložiště `NavigationService` instance v `NavigationService` vlastnost typu `INavigationService`. Proto všechny třídy modelu, které jsou odvozeny z zobrazení `ViewModelBase` třídy, můžete použít `NavigationService` vlastnost přistupovat k metodám, které jsou určené `INavigationService` rozhraní. Tím se vyhnete nároky na vkládání `NavigationService` objekt z kontejneru pro vkládání závislosti Autofac do každou třídu modelu zobrazení.
 
-### <a name="handling-navigation-requests"></a>Zpracování žádostí navigace
+### <a name="handling-navigation-requests"></a>Zpracování žádosti o navigaci
 
-Poskytuje Xamarin.Forms [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) třídy, která implementuje hierarchické navigační prostředí, ve které je možné procházet stránky, dopředný a podle potřeby zpětné uživatele. Další informace o hierarchické navigační najdete v tématu [hierarchické navigační](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md).
+Poskytuje Xamarin.Forms [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) třídy, která implementuje hierarchické navigační prostředí, ve kterém je uživatel moci přejít prostřednictvím stránek, vpřed a zpět, podle potřeby. Další informace o hierarchická navigace, naleznete v tématu [hierarchická navigace](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md).
 
-Místo použití [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) třídy přímo, který zabalí aplikace eShopOnContainers `NavigationPage` třídy v `CustomNavigationView` třídy, jak je znázorněno v následujícím příkladu kódu:
+Místo použití [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) třídy přímo, který zabalí aplikaci eShopOnContainers aplikace `NavigationPage` třídy v `CustomNavigationView` třídy, jak je znázorněno v následujícím příkladu kódu:
 
 ```csharp
 public partial class CustomNavigationView : NavigationPage  
@@ -104,15 +104,15 @@ public partial class CustomNavigationView : NavigationPage
 }
 ```
 
-Účelem této zabalení je pro usnadnění stylů [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) instance v souboru XAML pro třídu.
+Účelem této zabalení je pro používání stylů pro snadné [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) instance v souboru XAML pro třídu.
 
-Navigace provádí uvnitř třídy modelu zobrazení vyvoláním mezi `NavigateToAsync` metody, určení modelu typu zobrazení pro stránku se přešli na, jak je ukázáno v následujícím příkladu kódu:
+Navigace ve volání jednoho z provádí uvnitř třídy modelu zobrazení `NavigateToAsync` metody určující typ modelu zobrazení pro stránku se přejde na, jak je ukázáno v následujícím příkladu kódu:
 
 ```csharp
 await NavigationService.NavigateToAsync<MainViewModel>();
 ```
 
-Následující příklad kódu ukazuje `NavigateToAsync` metody poskytované `NavigationService` třídy:
+Následující příklad kódu ukazuje `NavigateToAsync` metody poskytované objektem `NavigationService` třídy:
 
 ```csharp
 public Task NavigateToAsync<TViewModel>() where TViewModel : ViewModelBase  
@@ -126,9 +126,9 @@ public Task NavigateToAsync<TViewModel>(object parameter) where TViewModel : Vie
 }
 ```
 
-Každá metoda umožňuje žádné zobrazení modelu třída odvozená z `ViewModelBase` třída provést hierarchický navigační vyvoláním `InternalNavigateToAsync` metoda. Kromě toho druhý `NavigateToAsync` metoda umožňuje navigační data zadat jako argument, který je předán do modelu zobrazení se navigaci, kde se obvykle používá k provedení inicializace. Další informace najdete v tématu [předání parametrů během navigační](#passing_parameters_during_navigation).
+Každá metoda umožňuje zobrazit třídu modelu, která je odvozena z `ViewModelBase` pro provádění hierarchická navigace vyvoláním `InternalNavigateToAsync` metody. Kromě toho druhého `NavigateToAsync` metoda umožňuje navigační data zadaný jako argument, který je předán do zobrazení modelu se přejde poté, kdy se obvykle používá k provedení inicializace. Další informace najdete v tématu [předání parametrů během navigace](#passing_parameters_during_navigation).
 
-`InternalNavigateToAsync` Metoda zpracuje navigační požadavek a je znázorněno v následujícím příkladu kódu:
+`InternalNavigateToAsync` Metoda spustí požadavek pro navigaci a je znázorněno v následujícím příkladu kódu:
 
 ```csharp
 private async Task InternalNavigateToAsync(Type viewModelType, object parameter)  
@@ -178,27 +178,27 @@ private Page CreatePage(Type viewModelType, object parameter)
 }
 ```
 
-`InternalNavigateToAsync` Metoda provádí navigaci na zobrazení modelu ve první volání `CreatePage` metoda. Tato metoda vyhledá zobrazení, která odpovídá typu modelu zadané zobrazení a vytvoří a vrátí instance tohoto typu zobrazení. Vyhledání zobrazení, která odpovídá typu modelu zobrazení používá přístup založené na konvenci, která předpokládá, že:
+`InternalNavigateToAsync` Metoda provádí přechod na model zobrazení prvním voláním `CreatePage` metody. Tato metoda vyhledá zobrazení, který odpovídá zadané zobrazení typu modelu a vytvoří a vrátí instance tohoto typu zobrazení. Vyhledání zobrazení, která odpovídá typu modelu zobrazení využívá přístup založený na konvenci, což předpokládá, že:
 
 -   Zobrazení jsou ve stejném sestavení jako typy zobrazení modelu.
--   Zobrazení jsou v. Obor názvů podřízené zobrazení.
--   Zobrazit modely jsou v. Obor názvů ViewModels podřízené.
--   Chcete-li zobrazit názvy modelu s "Model" Odebrat odpovídají názvy zobrazení.
+-   Zobrazení. Zobrazení podřízených oborů názvů.
+-   Zobrazit modely jsou ve. Modely ViewModels podřízených oborů názvů.
+-   Zobrazit názvy odpovídají zobrazit názvy modelu s "Model" odebrat.
 
-Při vytváření instance zobrazení je spojen s jeho odpovídající zobrazení modelu. Další informace o tom, jak k tomu dojde, najdete v části [automaticky vytvoření modelu zobrazení s lokátoru modelu zobrazení](~/xamarin-forms/enterprise-application-patterns/mvvm.md#automatically_creating_a_view_model_with_a_view_model_locator).
+Při vytváření instance zobrazení se přidruží k jeho odpovídající model zobrazení. Další informace o tom, jak k tomu dojde, naleznete v tématu [automaticky vytvoří Model zobrazení pomocí zobrazení modelu lokátoru](~/xamarin-forms/enterprise-application-patterns/mvvm.md#automatically_creating_a_view_model_with_a_view_model_locator).
 
-Pokud je zobrazení vytváří `LoginView`, je uzavřen uvnitř novou instanci třídy `CustomNavigationView` třídy a přiřazení [ `Application.Current.MainPage` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.MainPage/) vlastnost. Jinak hodnota `CustomNavigationView` instance je načíst a zadat, že není null, [ `PushAsync` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) metoda je volána tak, aby nabízel zobrazení vytváří do zásobníku navigace. Ale pokud načtený `CustomNavigationView` instance je `null`, zobrazení vytváří zabalená uvnitř novou instanci třídy `CustomNavigationView` třídy a přiřazení `Application.Current.MainPage` vlastnost. Tento mechanismus zajišťuje, že během navigace, stránky se přidají správně pro navigační zásobník je prázdný, i při obsahuje data.
+Pokud je zobrazení vytváří `LoginView`, je zabalená do nové instance `CustomNavigationView` třídy a přiřazená [ `Application.Current.MainPage` ](xref:Xamarin.Forms.Application.MainPage) vlastnost. V opačném případě `CustomNavigationView` instance je načten a že není null, k dispozici [ `PushAsync` ](xref:Xamarin.Forms.NavigationPage) vyvolána metoda tak, aby nabízel zobrazení vytváří do navigačního zásobníku. Ale pokud načtený `CustomNavigationView` instance je `null`, zobrazení vytváří je zabalená do nové instance `CustomNavigationView` třídy a přiřazená `Application.Current.MainPage` vlastnost. Tento mechanismus zajišťuje, že během navigace stránky se přidají správně do navigační zásobník je prázdný, i při obsahuje data.
 
 > [!TIP]
-> Vezměte v úvahu ukládání do mezipaměti stránek. Stránka ukládání do mezipaměti má za následek využití paměti pro zobrazení, která se momentálně nezobrazují. Ale bez ukládání do mezipaměti stránky ho znamená, že XAML analýzy a vytváření stránky a modelu jeho zobrazení dojde pokaždé, když je nová stránka navigaci, který může mít dopad na výkon pro komplexní stránku. Pro dobře navrženou stránku, která nevyužívá příliš mnoho ovládacích prvků musí být dostatečný výkon. Ale ukládání do mezipaměti stránky mohou pomoci Pokud došlo k času načítání stránky pomalé.
+> Zvažte možnost ukládání do mezipaměti stránek. Ukládání do mezipaměti za následek využití paměti pro zobrazení, která nejsou aktuálně zobrazené stránky. Ale bez ukládání do mezipaměti stránky to znamená, že analýza XAML a konstrukci stránky a modelu jeho zobrazení dojde pokaždé, když se vytvoří nová stránka se přejde poté, který může mít dopad na výkon pro složité stránku. Dobře navržené stránky, která nepoužívá nadměrný počet prvků mělo stačit výkon. Ale stránky ukládání do mezipaměti může pomoct Pokud nedojde k času načítání stránky pomalé.
 
-Po zobrazení se vytvoří a přešli, `InitializeAsync` spuštění metody zobrazení přidruženého zobrazení modelu. Další informace najdete v tématu [předání parametrů během navigační](#passing_parameters_during_navigation).
+Po vytvoření a přejde na zobrazení `InitializeAsync` provedení metody model zobrazení přidruženého zobrazení. Další informace najdete v tématu [předání parametrů během navigace](#passing_parameters_during_navigation).
 
 <a name="navigating_when_the_app_is_launched" />
 
 ### <a name="navigating-when-the-app-is-launched"></a>Navigace aplikaci při spuštění
 
-Při spuštění aplikace `InitNavigation` metoda v `App` třída je volána. Následující příklad kódu ukazuje této metody:
+Při spuštění aplikace `InitNavigation` metodu `App` třídy je vyvolána. Následující příklad kódu ukazuje tuto metodu:
 
 ```csharp
 private Task InitNavigation()  
@@ -208,12 +208,12 @@ private Task InitNavigation()
 }
 ```
 
-Metoda vytvoří novou `NavigationService` objekt v kontejneru pro vkládání závislosti Autofac a vrátí odkaz na, před vyvoláním jeho `InitializeAsync` metoda.
+Vytvoří novou metodu `NavigationService` objekt v kontejneru pro vkládání závislosti Autofac a vrátí odkaz na něj před vyvoláním jeho `InitializeAsync` metoda.
 
 > [!NOTE]
-> Když `INavigationService` rozhraní řeší `ViewModelBase` třídu kontejneru vrátí odkaz na `NavigationService` objektu, která byla vytvořena, když je volána metoda InitNavigation.
+> Když `INavigationService` rozhraní se dá vyřešit `ViewModelBase` třídy kontejneru vrátí odkaz na `NavigationService` objekt, který byl vytvořen při vyvolání metody InitNavigation.
 
-Následující příklad kódu ukazuje `NavigationService` `InitializeAsync` metoda:
+Následující příklad kódu ukazuje `NavigationService` `InitializeAsync` metody:
 
 ```csharp
 public Task InitializeAsync()  
@@ -225,17 +225,17 @@ public Task InitializeAsync()
 }
 ```
 
-`MainView` Je přešli Pokud má aplikace v mezipaměti přístupový token, který se používá k ověřování. Jinak `LoginView` je přešli.
+`MainView` Se přejde poté, pokud má uložené v mezipaměti přístupový token, který se používá k ověřování. V opačném případě `LoginView` se přejde poté.
 
-Další informace o kontejneru pro vkládání závislosti Autofac najdete v tématu [Úvod do vkládání závislostí](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction_to_dependency_injection).
+Další informace o kontejneru pro vkládání závislosti Autofac najdete v tématu [Úvod ke vkládání závislostí](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction_to_dependency_injection).
 
 <a name="passing_parameters_during_navigation" />
 
 ### <a name="passing-parameters-during-navigation"></a>Předávání parametrů během navigace
 
-Jeden z `NavigateToAsync` metody, určeného `INavigationService` rozhraní, umožňuje navigační data zadat jako argument, který je předán do modelu zobrazení se navigaci, kde se obvykle používá k provedení inicializace.
+Jeden z `NavigateToAsync` metody určené `INavigationService` rozhraní umožňuje navigační data zadaný jako argument, který je předán do zobrazení modelu se přejde poté, kdy se obvykle používá k provedení inicializace.
 
-Například `ProfileViewModel` třída obsahuje `OrderDetailCommand` který se spustí, až uživatel vybere pořadí na `ProfileView` stránky. Pak se to provádí `OrderDetailAsync` metodu, která je znázorněno v následujícím příkladu kódu:
+Například `ProfileViewModel` třída obsahuje `OrderDetailCommand` , který je spuštěn, když uživatel vybere objednávku na `ProfileView` stránky. Naopak to provádí `OrderDetailAsync` metoda, která je znázorněna v následujícím příkladu kódu:
 
 ```csharp
 private async Task OrderDetailAsync(Order order)  
@@ -244,9 +244,9 @@ private async Task OrderDetailAsync(Order order)
 }
 ```
 
-Tato metoda vyvolá navigace k `OrderDetailViewModel`, předejte `Order` instance, která představuje pořadí, který uživatel vybral na `ProfileView` stránky. Když `NavigationService` třída vytvoří `OrderDetailView`, `OrderDetailViewModel` třída je vytvořena instance a přiřazené k zobrazení [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/). Po přechodu na `OrderDetailView`, `InternalNavigateToAsync` metody `InitializeAsync` metoda zobrazení přidruženému zobrazení modelu.
+Tato metoda vyvolá navigace `OrderDetailViewModel`, předejte `Order` instanci, která představuje pořadí, ve kterém uživatel vybral na `ProfileView` stránky. Když `NavigationService` třída vytvoří `OrderDetailView`, `OrderDetailViewModel` třída je vytvořena instance a přiřazené k zobrazení [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext). Po přechodu na `OrderDetailView`, `InternalNavigateToAsync` metody `InitializeAsync` metoda zobrazení přidruženého zobrazení modelu.
 
-`InitializeAsync` Metoda je definována v `ViewModelBase` třída jako metodu, která je možné přepsat. Tato metoda určuje `object` argument, který představuje data mají být předány modelu zobrazení během operace navigace. Proto třídy modelu zobrazení, které chcete přijímat data z operace navigační zadejte vlastní implementaci `InitializeAsync` možností, jak provést požadovanou inicializaci. Následující příklad kódu ukazuje `InitializeAsync` metoda z `OrderDetailViewModel` třídy:
+`InitializeAsync` Metoda je definována v `ViewModelBase` třídu jako metodu, která se dá přepsat. Tato metoda určuje `object` argument, který představuje data mají být předány model zobrazení během operace navigace. Proto tříd modelu zobrazení, které chcete přijímat data z navigační operace. Zadejte vlastní implementaci `InitializeAsync` metodu za účelem inicializace vyžaduje. Následující příklad kódu ukazuje `InitializeAsync` metodu z `OrderDetailViewModel` třídy:
 
 ```csharp
 public override async Task InitializeAsync(object navigationData)  
@@ -261,13 +261,13 @@ public override async Task InitializeAsync(object navigationData)
 }
 ```
 
-Tato metoda načítá `Order` Podrobnosti instance, který byl předán do modelu zobrazení během operace navigace a použije ho k načtení úplné pořadí `OrderService` instance.
+Tato metoda načítá `Order` Podrobnosti instance, která byla předána do zobrazení modelu při operaci navigace a použije ho k získání úplné pořadí `OrderService` instance.
 
 <a name="invoking_navigation_using_behaviors" />
 
-### <a name="invoking-navigation-using-behaviors"></a>Volajícím navigační pomocí chování
+### <a name="invoking-navigation-using-behaviors"></a>Vyvolání pomocí chování navigace
 
-Navigace se obvykle aktivuje ze zobrazení interakci s uživatelem. Například `LoginView` provede navigační po úspěšném ověření. Následující příklad kódu ukazuje, jak je navigaci vyvolané chování:
+Navigace je obvykle aktivuje ze zobrazení interakce s uživatelem. Například `LoginView` provádí navigaci po úspěšném ověření. Následující příklad kódu ukazuje, jak vyvolá chování navigace:
 
 ```xaml
 <WebView ...>  
@@ -280,9 +280,9 @@ Navigace se obvykle aktivuje ze zobrazení interakci s uživatelem. Například 
 </WebView>
 ```
 
-V době běhu `EventToCommandBehavior` bude reagovat na interakci s [ `WebView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.WebView/). Při `WebView` přejde na webové stránce, [ `Navigating` ](https://developer.xamarin.com/api/event/Xamarin.Forms.WebView.Navigating/) bude platit událostí, které budou spuštěny `NavigateCommand` v `LoginViewModel`. Ve výchozím nastavení jsou argumenty událostí pro událost předány do příkazu. Tato data se převedou předaných mezi zdrojem a cílem převaděčem zadaný v `EventArgsConverter` vlastnost, která vrací [ `Url` ](https://developer.xamarin.com/api/property/Xamarin.Forms.WebNavigationEventArgs.Url/) z [ `WebNavigatingEventArgs` ](https://developer.xamarin.com/api/type/Xamarin.Forms.WebNavigatingEventArgs/). Proto když `NavigationCommand` je proveden, adresa Url webové stránky je předán jako parametr zaregistrovanou `Action`.
+V době běhu `EventToCommandBehavior` bude reagovat na interakci ze strany [ `WebView` ](xref:Xamarin.Forms.WebView). Když `WebView` přejde na webovou stránku, [ `Navigating` ](xref:Xamarin.Forms.WebView.Navigating) se aktivuje událost, která se spustí `NavigateCommand` v `LoginViewModel`. Ve výchozím nastavení jsou předány argumenty událostí pro událost do příkazu. Tato data je převeden podle je jí předán mezi zdrojem a cílem pomocí převaděče zadané v `EventArgsConverter` vlastnost, která vrací [ `Url` ](xref:Xamarin.Forms.WebNavigationEventArgs.Url) z [ `WebNavigatingEventArgs` ](xref:Xamarin.Forms.WebNavigatingEventArgs). Proto, když `NavigationCommand` se provedl a vytvořil adresu Url webové stránky se předá jako parametr zaregistrovanou `Action`.
 
-Pak `NavigationCommand` provede `NavigateAsync` metodu, která je znázorněno v následujícím příkladu kódu:
+Pak `NavigationCommand` provede `NavigateAsync` metoda, která je znázorněna v následujícím příkladu kódu:
 
 ```csharp
 private async Task NavigateAsync(string url)  
@@ -294,20 +294,20 @@ private async Task NavigateAsync(string url)
 }
 ```
 
-Tato metoda vyvolá navigace k `MainViewModel`, a následující navigační, odebere `LoginView` stránky v zásobníku navigace.
+Tato metoda vyvolá navigaci na `MainViewModel`, a následující navigace, odebere `LoginView` stránky do navigačního zásobníku.
 
 ### <a name="confirming-or-cancelling-navigation"></a>Potvrzení nebo zrušení navigace
 
-Aplikace může být potřeba komunikovat s uživatelem během operace navigace, takže uživatel může potvrdit nebo zrušit navigace. Může se jednat třeba, například když se uživatel pokusí o přejděte před s úplně nedokončí stránku pro zadávání dat. V takovém případě by mělo poskytovat aplikace oznámení, že umožňuje uživateli se stránku opustit, nebo na tlačítko Storno navigační předtím, než k ní dojde. Toho lze dosáhnout v třídu modelu zobrazení pomocí odpovědi z oznámení řídit, jestli je volána navigace.
+Aplikace může být nutné k interakci s uživatelem během operace navigace, tak, aby uživatel mohl potvrdit nebo zrušit navigace. To může být nutné, například když se uživatel pokusí přejděte před s úplně nedokončí stránku pro zadávání dat. V takovém případě by měla poskytnout aplikaci oznámení, který umožňuje uživateli se stránku opustit, nebo zrušit operaci navigace předtím, než k ní dojde. Toho lze dosáhnout v třídě modelu zobrazení pomocí odpovědi z oznámení k řízení, určuje, jestli je vyvolán navigace.
 
 ## <a name="summary"></a>Souhrn
 
-Xamarin.Forms zahrnuje podporu pro navigaci na stránce, které obvykle výsledky z interakce uživatele s uživatelským rozhraním, nebo z aplikace, v důsledku vnitřní stav řízené logiku změny. Navigace však může být složité implementace v aplikacích, které používají rozhraní MVVM vzorec.
+Xamarin.Forms zahrnuje podporu pro navigaci na stránce, které obvykle výsledky z interakce uživatele s uživatelským rozhraním, nebo z vlastní aplikaci a v důsledku změn ve vnitřní stav řízené logiku. Navigace však může být složité implementace v aplikacích, které používají vzor MVVM.
 
-Tato kapitola uvedené `NavigationService` třídy, která se používá k provádění zobrazení modelu první navigační z modelů zobrazení. Umístění logiku navigace v zobrazení třídy modelu znamená, že logiku může uplatnit prostřednictvím automatizovaných testů. Kromě toho model zobrazení poté můžete implementovat logiku pro ovládací prvek navigace k zajištění, že některé obchodní pravidla jsou vyžadována.
+Tato kapitola uvedené `NavigationService` třídu, která se používá k provedení zobrazení první model navigace z modelů zobrazení. Umístění logiky navigace v zobrazení tříd modelu znamená, že logiku lze uplatnit prostřednictvím automatizovaných testů. Navíc model zobrazení pak mohou implementovat logiku pro ovládací prvek navigace k zajištění, že se vynucují určité obchodní pravidla.
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Stáhnout elektronická kniha (2Mb PDF)](https://aka.ms/xamarinpatternsebook)
-- [eShopOnContainers (Githubu) (ukázka)](https://github.com/dotnet-architecture/eShopOnContainers)
+- [Stáhněte si elektronickou knihu (2Mb PDF)](https://aka.ms/xamarinpatternsebook)
+- [aplikaci eShopOnContainers (GitHub) (ukázka)](https://github.com/dotnet-architecture/eShopOnContainers)

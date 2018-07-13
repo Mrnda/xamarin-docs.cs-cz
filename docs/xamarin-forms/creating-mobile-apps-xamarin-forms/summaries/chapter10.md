@@ -1,99 +1,99 @@
 ---
-title: Souhrn kapitoly 10. XAML – rozšíření značek
-description: 'Vytváření mobilních aplikací s Xamarin.Forms: Souhrn kapitoly 10. XAML – rozšíření značek'
+title: Souhrn kapitoly 10. Rozšíření značek XAML
+description: 'Vytváření mobilních aplikací s Xamarin.Forms: Souhrn kapitoly 10. Rozšíření značek XAML'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 575EAE55-BD4D-470F-A583-3D065FA102E2
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: cc6c3154b7e6535fa7528032fb7a91ad90a0a7f8
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 1ee19d96e39534ccce5238eca3a90ba5c8d9d451
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241097"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997504"
 ---
-# <a name="summary-of-chapter-10-xaml-markup-extensions"></a>Souhrn kapitoly 10. XAML – rozšíření značek
+# <a name="summary-of-chapter-10-xaml-markup-extensions"></a>Souhrn kapitoly 10. Rozšíření značek XAML
 
-Za normálních okolností analyzátor XAML převede libovolný řetězec nastavená jako hodnota atributu typ vlastnosti podle standardní převody pro základní datové typy .NET, nebo [ `TypeConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TypeConverter/) odvozených připojen ke vlastnost nebo typ s [`TypeConverterAttribute`](https://developer.xamarin.com/api/type/Xamarin.Forms.TypeConverterAttribute/).
+Za normálních okolností analyzátoru XAML převede jakýkoli řetězec, nastavit jako hodnotu atributu pro typ vlastnosti založen na standardní převody na základní datové typy rozhraní .NET, nebo [ `TypeConverter` ](xref:Xamarin.Forms.TypeConverter) odvozených děl na základě přiřazená vlastnost nebo její typ [`TypeConverterAttribute`](xref:Xamarin.Forms.TypeConverterAttribute).
 
-Ale v některých případech je vhodné nastavit atribut z jiného zdroje, například na položku ve slovníku nebo hodnotu statickou vlastnost nebo pole, nebo z výpočtu některé řazení.
+Ale někdy je vhodné nastavit atribut z jiného zdroje, například položky ve slovníku, nebo hodnotu statickou vlastnost nebo pole, nebo z výpočtů s nějakým.
 
-Toto je práci *XAML – rozšíření značek*. Bez ohledu název, jsou rozšíření značek XAML *není* rozšíření XML. XAML je vždy právní XML.
+To je práce *– rozšíření značek XAML*. Bez ohledu na název, jsou rozšíření značek XAML *není* rozšíření XML. XAML je vždy právní XML.
 
 ## <a name="the-code-infrastructure"></a>Kód infrastruktury
 
-Rozšíření značek XAML je třída, která implementuje [ `IMarkupExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.IMarkupExtension/) rozhraní. Tato třída má často slovo `Extension` na konci názvu ale obvykle se zobrazí v jazyce XAML bez tuto příponu.
+Rozšíření značek XAML je třída, která implementuje [ `IMarkupExtension` ](xref:Xamarin.Forms.Xaml.IMarkupExtension) rozhraní. Tato třída často obsahuje slovo `Extension` na konci názvu ale obvykle se zobrazí v XAML bez této přípony.
 
-Následující rozšíření značek XAML jsou podporovány všechny implementacemi XAML:
+Následující rozšíření značek XAML podporuje všechny implementace XAML:
 
-- `x:Static` nepodporuje [`StaticExtension`](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.StaticExtension/)
-- `x:Reference` nepodporuje [`ReferenceExtension`](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.ReferenceExtension/)
-- `x:Type` nepodporuje [`TypeExtension`](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.TypeExtension/)
-- `x:Null` nepodporuje [`NullExtension`](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.NullExtension/)
-- `x:Array` nepodporuje [`ArrayExtension`](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.ArrayExtension/)
+- `x:Static` podporuje [`StaticExtension`](xref:Xamarin.Forms.Xaml.StaticExtension)
+- `x:Reference` podporuje [`ReferenceExtension`](xref:Xamarin.Forms.Xaml.ReferenceExtension)
+- `x:Type` podporuje [`TypeExtension`](xref:Xamarin.Forms.Xaml.TypeExtension)
+- `x:Null` podporuje [`NullExtension`](xref:Xamarin.Forms.Xaml.NullExtension)
+- `x:Array` podporuje [`ArrayExtension`](xref:Xamarin.Forms.Xaml.ArrayExtension)
 
-Mnoho implementací XAML, včetně Xamarin.Forms podporuje tyto čtyři rozšíření značek v jazyce XAML:
+Mnoho implementací XAML, včetně Xamarin.Forms podporuje tyto čtyři rozšíření značek XAML:
 
-- `StaticResource` nepodporuje [`StaticResourceExtension`](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.StaticResourceExtension/)
-- `DynamicResource` nepodporuje [`DynamicResourceExtension`](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.DynamicResourceExtension/)
-- `Binding` nepodporuje [ `BindingExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.BindingExtension/) &mdash;popsané v [kapitoly 16. Datová vazba](#chapter16)
-- `TemplateBinding` nepodporuje [ `TemplateBindingExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.TemplateBindingExtension/) &mdash;nejsou zahrnuté v knize
+- `StaticResource` podporuje [`StaticResourceExtension`](xref:Xamarin.Forms.Xaml.StaticResourceExtension)
+- `DynamicResource` podporuje [`DynamicResourceExtension`](xref:Xamarin.Forms.Xaml.DynamicResourceExtension)
+- `Binding` podporuje [ `BindingExtension` ](xref:Xamarin.Forms.Xaml.BindingExtension) &mdash;podrobněji [kapitola 16. Datová vazba](#chapter16)
+- `TemplateBinding` podporuje [ `TemplateBindingExtension` ](xref:Xamarin.Forms.Xaml.TemplateBindingExtension) &mdash;nejsou zahrnuta v knize
 
-Další rozšíření značek XAML je součástí Xamarin.Forms ve spojení s [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/):
+Další rozšíření značek XAML je součástí Xamarin.Forms v souvislosti s [ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout):
 
-- [`ConstraintExpression`](https://developer.xamarin.com/api/type/Xamarin.Forms.ConstraintExpression/)&mdash;nejsou zahrnuté v knize
+- [`ConstraintExpression`](xref:Xamarin.Forms.ConstraintExpression)&mdash;nejsou zahrnuta v knize
 
-## <a name="accessing-static-members"></a>Přístup k statické členy
+## <a name="accessing-static-members"></a>Přistupování ke statickým členům
 
-Použití [ `x:Static` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.StaticExtension/) elementu, který chcete nastavit atribut na hodnotu veřejné statický člen vlastnost, pole nebo výčet. Nastavte [ `Member` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Xaml.StaticExtension.Member/) vlastnost statický člen. Je obvykle jednodušší zadejte `x:Static` a název člena do složených závorek. Název `Member` vlastnost nemusí být zahrnut, právě člena samotného. Běžné čárkami v [ **SharedStatics** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/SharedStatics) ukázka. Statická pole sami jsou definovány v [ `AppConstants` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter10/SharedStatics/SharedStatics/SharedStatics/AppConstants.cs) třídy. Tento postup umožňuje vytvořit konstanty používá prostřednictvím programu.
+Použití [ `x:Static` ](xref:Xamarin.Forms.Xaml.StaticExtension) prvek, který chcete nastavit atribut na hodnotu veřejného statického členu vlastnosti, pole nebo výčet. Nastavte [ `Member` ](xref:Xamarin.Forms.Xaml.StaticExtension.Member) vlastnost statického členu. Je obvykle jednodušší určit `x:Static` a název člena ve složených závorkách. Název `Member` vlastnost nemusí být zahrnut, stačí samotný člen. Tato běžné syntaxe je zobrazena ve [ **SharedStatics** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/SharedStatics) vzorku. Statická pole, samotné jsou definované v [ `AppConstants` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter10/SharedStatics/SharedStatics/SharedStatics/AppConstants.cs) třídy. Tato technika umožňuje navázat konstanty používané prostřednictvím programu.
 
-S další deklarace oboru názvů XML, můžete odkazovat veřejné statické vlastnosti, pole nebo členové výčtu definované v rozhraní .NET framework, jak je předvedeno v [ **SystemStatics** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/SystemStatics) vzorku .
+Pomocí dalších deklarace oboru názvů XML, můžete odkazovat veřejné statické vlastnosti, pole nebo členy výčtu definované v rozhraní .NET framework, jak je ukázáno v [ **SystemStatics** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/SystemStatics) vzorku .
 
-## <a name="resource-dictionaries"></a>Slovnících prostředků
+## <a name="resource-dictionaries"></a>Slovníky sloučených prostředků
 
-`VisualElement` Třída definuje vlastnost s názvem [ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Resources/) , kterou můžete nastavit pro objekt typu [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/). V jazyce XAML, můžete uložit položky do tohoto slovníku a identifikovat pomocí `x:Key` atribut. Položky uložené ve slovníku prostředků jsou sdílena mezi všechny odkazy na položky.
+`VisualElement` Třída definuje vlastnost s názvem [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) , kterou můžete nastavit pro objekt typu [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary). V rámci XAML, můžete ukládat položky tohoto slovníku a s jejich identifikaci `x:Key` atribut. Položek uložených ve slovníku prostředků jsou sdílena mezi všechny odkazy na položky.
 
-### <a name="staticresource-for-most-purposes"></a>StaticResource pro většinu účelů
+### <a name="staticresource-for-most-purposes"></a>Pro většinu účelů StaticResource
 
-Ve většině případů budete používat [ `StaticResource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.StaticResourceExtension/) – rozšíření značek k odkazování položku ze slovníku prostředků, jak je předvedeno pomocí [ **ResourceSharing** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/ResourceSharing) ukázka . Můžete použít `StaticResourceExtension` element nebo `StaticResource` v rámci složené závorky:
+Ve většině případů budete používat [ `StaticResource` ](xref:Xamarin.Forms.Xaml.StaticResourceExtension) – rozšíření značek pro odkažte na položku ze slovníku prostředků, jak je uvedeno ve [ **ResourceSharing** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/ResourceSharing) vzorku . Můžete použít `StaticResourceExtension` element nebo `StaticResource` ve složených závorkách:
 
-[![Trojitá snímek obrazovky sdílení prostředků](images/ch10fg03-small.png "sdílení prostředků")](images/ch10fg03-large.png#lightbox "sdílení prostředků")
+[![Trojitá snímek sdílení prostředků](images/ch10fg03-small.png "sdílení prostředků")](images/ch10fg03-large.png#lightbox "sdílení prostředků")
 
-Nezaměňujte `x:Static` – rozšíření značek a `StaticResource` – rozšíření značek.
+Nepleťte si `x:Static` – rozšíření značek a `StaticResource` – rozšíření značek.
 
-### <a name="a-tree-of-dictionaries"></a>Strom slovník
+### <a name="a-tree-of-dictionaries"></a>Strom slovníky
 
-Pokud analyzátor XAML nalezne `StaticResource`, začne hledání se ve vizuálním stromu odpovídající klíč a pak hledá v `ResourceDictionary` do aplikace `App` třídy. To umožňuje položky v slovník prostředků, který je umístěný hlouběji ve stromové struktuře visual přepsat slovník prostředků, která je vyšší ve vizuálním stromu. Tento postup je znázorněn v [ **ResourceTrees** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/ResourceTrees) ukázka.
+Když analyzátor XAML narazí `StaticResource`, začíná hledání nahoru ve vizuálním stromu odpovídajícího klíče a poté hledá v `ResourceDictionary` v aplikačním `App` třídy. To umožňuje položky ve slovníku prostředků hlubší ve vizuálním stromu přepsat slovník prostředků, která je vyšší ve vizuálním stromu. To je patrné [ **ResourceTrees** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/ResourceTrees) vzorku.
 
 ### <a name="dynamicresource-for-special-purposes"></a>DynamicResource pro zvláštní účely
 
-`StaticResource` – Rozšíření značek způsobí, že položku, kterou chcete načíst ze slovníku při vizuálním stromu vychází během `InitializeComponent` volání. Alternativu k `StaticResource` je [ `DynamicResource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.DynamicResourceExtension/), který udržuje odkaz na klíče slovníku a aktualizuje cíl, když položka odkazuje změn klíče.
+`StaticResource` – Rozšíření značek položku, kterou chcete načíst ze slovníku při vytváření během vizuálním stromu způsobí, že `InitializeComponent` volání. Alternativa k `StaticResource` je [ `DynamicResource` ](xref:Xamarin.Forms.Xaml.DynamicResourceExtension), který uchovává odkaz na klíč slovníku a aktualizuje cíl, když položka odkazuje změny klíče.
 
-Rozdíl mezi `StaticResource` a `DynamicResource` ukazují [ **DynamicVsStatic** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/DynamicVsStatic) ukázka.
+Rozdíl mezi `StaticResource` a `DynamicResource` je patrné [ **DynamicVsStatic** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/DynamicVsStatic) vzorku.
 
-Vlastnost, která nastavuje `DynamicResource` musí zálohovaný pomocí vazbu vlastnosti, jak je popsáno v [kapitoly 11, vazbu infrastruktury](chapter11.md).
+Nastavit vlastnost `DynamicResource` musí být se opírá o vlastnost s vazbou jak je popsáno v [kapitoly 11, infrastruktura s podporou vazeb](chapter11.md).
 
-## <a name="lesser-used-markup-extensions"></a>Rozšíření méně používaný značek
+## <a name="lesser-used-markup-extensions"></a>Rozšíření značek nižší úrovně použít
 
-Použití [ `x:Null` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.NullExtension/) – rozšíření značek pro nastavení vlastnosti `null`.
+Použití [ `x:Null` ](xref:Xamarin.Forms.Xaml.NullExtension) – rozšíření značek nastavení vlastnosti `null`.
 
-Použití [ `x:Type` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.TypeExtension/) – rozšíření značek pro nastavení vlastnosti na .NET `Type` objektu.
+Použití [ `x:Type` ](xref:Xamarin.Forms.Xaml.TypeExtension) – rozšíření značek k nastavení vlastnosti .NET `Type` objektu.
 
-Použití [ `x:Array` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.ArrayExtension/) k definování pole. Zadejte typ pole členů nastavením [`Type`] vlastnost, která má `x:Type` – rozšíření značek.
+Použití [ `x:Array` ](xref:Xamarin.Forms.Xaml.ArrayExtension) k definování pole. Zadejte typ členy pole tak, že nastavíte [`Type`] vlastnost `x:Type` – rozšíření značek.
 
 ## <a name="a-custom-markup-extension"></a>Rozšíření vlastního kódu
 
-Můžete vytvořit vlastní rozšíření značek v jazyce XAML zápis třídu, která implementuje [ `IMarkupExtension` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.IMarkupExtension/) rozhraní s [ `ProvideValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Xaml.IMarkupExtension.ProvideValue/p/System.IServiceProvider/) metoda.
+Můžete vytvořit vlastní rozšíření značek XAML napsáním třídu, která implementuje [ `IMarkupExtension` ](xref:Xamarin.Forms.Xaml.IMarkupExtension) rozhraní se službou [ `ProvideValue` ](xref:Xamarin.Forms.Xaml.IMarkupExtension.ProvideValue(System.IServiceProvider)) metoda.
 
-[ `HslColorExtension` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/HslColorExtension.cs) Třída splňuje tyto požadavky. Vytvoří hodnotu typu `Color` na základě hodnot vlastností s názvem `H`, `S`, `L`, a `A`. Tato třída představuje první položku v knihovně Xamarin.Forms s názvem [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) , je vytvářet a používat v průběhu této příručky.
+[ `HslColorExtension` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/HslColorExtension.cs) Třídy splňuje tyto požadavky. Vytvoří hodnotu typu `Color` na základě hodnot vlastností s názvem `H`, `S`, `L`, a `A`. Tato třída je první položky v knihovně Xamarin.Forms s názvem [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) , která je vytvořená a použít v průběhu této příručky.
 
-[ **CustomExtensionDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/CustomExtensionDemo) ukázka ukazuje, jak odkazovat na tuto knihovnu a používání rozšíření vlastních značek.
+[ **CustomExtensionDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/CustomExtensionDemo) Ukázka předvádí, jak odkazovat na tuto knihovnu a pomocí rozšíření vlastních značek.
 
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Úplný text kapitoly 10 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch10-Apr2016.pdf)
-- [Kapitola 10 – ukázky](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10)
+- [Kapitola 10 textu v plném znění (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch10-Apr2016.pdf)
+- [Ukázky kapitoly 10](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10)

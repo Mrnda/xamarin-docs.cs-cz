@@ -1,28 +1,28 @@
 ---
 title: Implicitní styly v Xamarin.Forms
-description: Implicitní styl je ten, který je používán všechny ovládací prvky typu stejné TargetType, bez nutnosti každý ovládací prvek tak, aby odkazovaly styl.
+description: Implicitní styl je ten, který používá všechny ovládací prvky stejného TargetType, aniž by každý ovládací prvek tak, aby odkazovaly styl.
 ms.prod: xamarin
 ms.assetid: 02A75F3B-4389-49D4-A2F4-AFD473A4A161
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 9444d6d8d743fb63496de31e23291b24d9d09993
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 277be51c242521f52e9b1e162226ae8137e7b133
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245393"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995511"
 ---
 # <a name="implicit-styles-in-xamarinforms"></a>Implicitní styly v Xamarin.Forms
 
-_Implicitní styl je ten, který je používán všechny ovládací prvky typu stejné TargetType, bez nutnosti každý ovládací prvek tak, aby odkazovaly styl._
+_Implicitní styl je ten, který používá všechny ovládací prvky stejného TargetType, aniž by každý ovládací prvek tak, aby odkazovaly styl._
 
-## <a name="creating-an-implicit-style-in-xaml"></a>Vytváření implicitní styl v jazyce XAML
+## <a name="creating-an-implicit-style-in-xaml"></a>Vytváření implicitní styl v XAML
 
-Deklarovat [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) na úrovni stránky [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) musí být přidaný do stránky a pak jeden nebo více `Style` můžou být součástí deklarace `ResourceDictionary`. A `Style` přišla *implicitní* není zadáním `x:Key` atribut. Styl se pak použijí pro vizuální prvky, které odpovídají `TargetType` přesně, ale ne na elementy, které jsou odvozeny od `TargetType` hodnotu.
+Chcete-li deklarovat [ `Style` ](xref:Xamarin.Forms.Style) na úrovni stránky [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) musí být přidán do stránky a pak jednu nebo víc `Style` mohou být součástí deklarace `ResourceDictionary`. A `Style` tvoří *implicitní* bez zadání `x:Key` atribut. Styl se pak použije k vizuální prvky, které odpovídají `TargetType` přesně, ale ne na elementy, které jsou odvozeny z `TargetType` hodnotu.
 
-Následující příklad kódu ukazuje *implicitní* styl deklarované v jazyce XAML na stránce `ResourceDictionary`a použít na stránku [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) instancí:
+Následující příklad kódu ukazuje *implicitní* styl deklarované v XAML na stránce `ResourceDictionary`a použít na stránku [ `Entry` ](xref:Xamarin.Forms.Entry) instancí:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Styles;assembly=Styles" x:Class="Styles.ImplicitStylesPage" Title="Implicit" Icon="xaml.png">
@@ -49,15 +49,15 @@ Následující příklad kódu ukazuje *implicitní* styl deklarované v jazyce 
 </ContentPage>
 ```
 
-[ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) Definuje jeden *implicitní* styl, který se použije na stránku [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) instance. `Style` Se používá k zobrazení modrý text na pozadí žluté, při nastavení také další možnosti vzhledu. `Style` Se přidá na stránku [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) bez zadání `x:Key` atribut. Proto `Style` se použije pro všechny `Entry` implicitně instance jako odpovídají [ `TargetType` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.TargetType/) vlastnost `Style` přesně. Však `Style` u není použitá `CustomEntry` instanci, která je rozčleněné `Entry`. Výsledkem je vidět na následujících snímcích obrazovky vzhled:
+[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) Definuje jedinou *implicitní* styl, který se použije na stránku [ `Entry` ](xref:Xamarin.Forms.Entry) instancí. `Style` Slouží k zobrazení modrý text na žlutým pozadím při nastavování také další možnosti vzhled. `Style` Je přidán na stránku [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) bez zadání `x:Key` atribut. Proto `Style` platí pro všechny `Entry` instance implicitně, jak budou odpovídat [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType) vlastnost `Style` přesně. Ale `Style` nebude použito `CustomEntry` instanci, která je rozčleněných do podtříd `Entry`. Výsledkem je vzhled je znázorněno na následujících snímcích obrazovky:
 
 [![](implicit-images/implicit-styles.png "Příklad implicitní styly")](implicit-images/implicit-styles-large.png#lightbox "příklad implicitní styly")
 
-Kromě toho čtvrtý [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) přepsání [ `BackgroundColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.BackgroundColor/) a [ `TextColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Entry.TextColor/) vlastnosti styl implicitní do různých `Color`hodnoty.
+Kromě toho, čtvrtý [ `Entry` ](xref:Xamarin.Forms.Entry) přepsání [ `BackgroundColor` ](xref:Xamarin.Forms.VisualElement.BackgroundColor) a [ `TextColor` ](xref:Xamarin.Forms.Entry.TextColor) vlastnosti implicitní styl různých `Color`hodnoty.
 
-### <a name="creating-an-implicit-style-at-the-control-level"></a>Vytváření implicitní styl v ovládacím prvku úrovně
+### <a name="creating-an-implicit-style-at-the-control-level"></a>Vytváření implicitní styl v ovládacím prvku úrovni
 
-Kromě vytváření *implicitní* styly na úrovni stránky je lze také vytvořit na úrovni ovládacího prvku, jak je znázorněno v následujícím příkladu kódu:
+Kromě vytvoření *implicitní* styly na úrovni stránky, je lze také vytvořit na úrovni ovládacího prvku, jak je znázorněno v následujícím příkladu kódu:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Styles;assembly=Styles" x:Class="Styles.ImplicitStylesPage" Title="Implicit" Icon="xaml.png">
@@ -78,13 +78,13 @@ Kromě vytváření *implicitní* styly na úrovni stránky je lze také vytvoř
 </ContentPage>
 ```
 
-V tomto příkladu *implicitní* [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) je přiřazena k [ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Resources/) kolekce [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/)ovládacího prvku. *Implicitní* styl pak můžete použít k řízení a její podřízené položky.
+V tomto příkladu *implicitní* [ `Style` ](xref:Xamarin.Forms.Style) přiřazen [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) kolekce [ `StackLayout` ](xref:Xamarin.Forms.StackLayout)ovládacího prvku. *Implicitní* styl lze pak použít na ovládací prvek a jeho podřízené položky.
 
-Informace o vytváření stylů v aplikace [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/), najdete v části [globální styly](~/xamarin-forms/user-interface/styles/application.md).
+Informace o vytváření styly v aplikačním [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary), naleznete v tématu [globální styly](~/xamarin-forms/user-interface/styles/application.md).
 
 ## <a name="creating-an-implicit-style-in-c35"></a>Vytváření implicitní styl v jazyce C&#35;
 
-[`Style`](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) instance lze přidat na stránku [ `Resources` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Resources/) kolekce v jazyce C# tak, že vytvoříte novou [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)a pak přidáním `Style` instance k `ResourceDictionary`, jak je znázorněno v Následující příklad kódu:
+[`Style`](xref:Xamarin.Forms.Style) instance lze přidat na stránku [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) kolekce v jazyce C# vytvořit nový [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)a potom přidáním `Style` instance na `ResourceDictionary`, jak je znázorněno Následující příklad kódu:
 
 ```csharp
 public class ImplicitStylesPageCS : ContentPage
@@ -115,11 +115,11 @@ public class ImplicitStylesPageCS : ContentPage
 }
 ```
 
-V konstruktoru definuje jeden *implicitní* styl, který se použije na stránku [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) instance. `Style` Se používá k zobrazení modrý text na pozadí žluté, při nastavení také další možnosti vzhledu. `Style` Se přidá na stránku [ `ResourceDictionary` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/) bez zadání `key` řetězec. Proto `Style` se použije pro všechny `Entry` implicitně instance jako odpovídají [ `TargetType` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.TargetType/) vlastnost `Style` přesně. Však `Style` u není použitá `CustomEntry` instanci, která je rozčleněné `Entry`.
+Konstruktor definuje jedinou *implicitní* styl, který se použije na stránku [ `Entry` ](xref:Xamarin.Forms.Entry) instancí. `Style` Slouží k zobrazení modrý text na žlutým pozadím při nastavování také další možnosti vzhled. `Style` Je přidán na stránku [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) bez zadání `key` řetězec. Proto `Style` platí pro všechny `Entry` instance implicitně, jak budou odpovídat [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType) vlastnost `Style` přesně. Ale `Style` nebude použito `CustomEntry` instanci, která je rozčleněných do podtříd `Entry`.
 
 ## <a name="summary"></a>Souhrn
 
-*Implicitní* styl je ten, který se používá ve všech vizuálních prvků na stejné [ `TargetType` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.TargetType/), bez nutnosti každý ovládací prvek tak, aby odkazovaly styl. A `Style` přišla *implicitní* není zadáním `x:Key` atribut. Místo toho `x:Key` atribut se automaticky stane hodnotu [ `TargetType` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.TargetType/) vlastnost.
+*Implicitní* style je ten, který se používá ve všech vizuálních prvků stejného [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType), aniž by každý ovládací prvek tak, aby odkazovaly styl. A `Style` tvoří *implicitní* bez zadání `x:Key` atribut. Místo toho `x:Key` atribut se automaticky stane hodnota [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType) vlastnost.
 
 
 
@@ -128,6 +128,6 @@ V konstruktoru definuje jeden *implicitní* styl, který se použije na stránku
 - [Rozšíření značek XAML](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
 - [Základní styly (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
 - [Práce se styly (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
-- [ResourceDictionary](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)
-- [Styl](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)
-- [Metoda setter](https://developer.xamarin.com/api/type/Xamarin.Forms.Setter/)
+- [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
+- [Styl](xref:Xamarin.Forms.Style)
+- [Metoda setter](xref:Xamarin.Forms.Setter)

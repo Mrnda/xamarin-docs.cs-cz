@@ -7,16 +7,16 @@ ms.assetid: 2B7F4346-414E-49FF-97FB-B85E92D98A21
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: b6ef23364cac0dd1459681aa92c7a7db58bc81f0
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: 1fc42207d26f2e2154c7bd6634cc90fead4b0b17
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935638"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998931"
 ---
 # <a name="summary-of-chapter-26-custom-layouts"></a>Souhrn kapitole 26. Vlastní rozložení
 
-Xamarin.Forms zahrnuje několik tříd odvozených z [ `Layout<View>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/):
+Xamarin.Forms zahrnuje několik tříd odvozených z [ `Layout<View>` ](xref:Xamarin.Forms.Layout`1):
 
 * `StackLayout`,
 * `Grid`,
@@ -35,74 +35,74 @@ Každý element, který obsahuje podřízené položky je odpovědná za umíst�
 
 ### <a name="sizing-and-positioning"></a>Změna velikosti a polohování
 
-Rozložení začíná v horní části stránky z vizuálního stromu se stránkou a pak pokračuje přes všechny větve. Nejdůležitější veřejnou metodu v rozložení je [ `Layout` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.Layout/p/Xamarin.Forms.Rectangle/) určené `VisualElement`. Každý element, který je nadřazený objekt jiných prvků volání `Layout` pro každý z jejích podřízených poskytnout podřízené, velikost a umístění vzhledem k samotné ve formě [ `Rectangle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Rectangle/) hodnotu. Tyto `Layout` volání šířila vizuálního stromu.
+Rozložení začíná v horní části stránky z vizuálního stromu se stránkou a pak pokračuje přes všechny větve. Nejdůležitější veřejnou metodu v rozložení je [ `Layout` ](xref:Xamarin.Forms.VisualElement.Layout(Xamarin.Forms.Rectangle)) určené `VisualElement`. Každý element, který je nadřazený objekt jiných prvků volání `Layout` pro každý z jejích podřízených poskytnout podřízené, velikost a umístění vzhledem k samotné ve formě [ `Rectangle` ](xref:Xamarin.Forms.Rectangle) hodnotu. Tyto `Layout` volání šířila vizuálního stromu.
 
 Volání `Layout` je vyžadován pro element, který má na obrazovce a způsobí, že vlastnosti jen pro čtení, následující nastavení. Jsou v souladu s `Rectangle` předaný metodě:
 
-- [`Bounds`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Bounds/) typu `Rectangle`
-- [`X`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.X/) typu `double`
-- [`Y`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Y/) typu `double`
-- [`Width`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Width/) typu `double`
-- [`Height`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Height/) typu `double`
+- [`Bounds`](xref:Xamarin.Forms.VisualElement.Bounds) typu `Rectangle`
+- [`X`](xref:Xamarin.Forms.VisualElement.X) typu `double`
+- [`Y`](xref:Xamarin.Forms.VisualElement.Y) typu `double`
+- [`Width`](xref:Xamarin.Forms.VisualElement.Width) typu `double`
+- [`Height`](xref:Xamarin.Forms.VisualElement.Height) typu `double`
 
 Před verzí `Layout` volání, `Height` a `Width` mají hodnoty mock &ndash;1.
 
 Volání `Layout` také aktivuje volání na následující chráněné metody:
 
-- [`SizeAllocated`](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.SizeAllocated/p/System.Double/System.Double/), který volá
-- [`OnSizeAllocated`](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.OnSizeAllocated/p/System.Double/System.Double/), který se dá přepsat.
+- [`SizeAllocated`](xref:Xamarin.Forms.VisualElement.SizeAllocated(System.Double,System.Double)), který volá
+- [`OnSizeAllocated`](xref:Xamarin.Forms.VisualElement.OnSizeAllocated(System.Double,System.Double)), který se dá přepsat.
 
 Nakonec se aktivuje následující událost:
 
-- [`SizeChanged`](https://developer.xamarin.com/api/event/Xamarin.Forms.VisualElement.SizeChanged/)
+- [`SizeChanged`](xref:Xamarin.Forms.VisualElement.SizeChanged)
 
 `OnSizeAllocated` Je přepsána metoda `Page` a `Layout`, které jsou jenom dvě třídy v Xamarin.Forms, která může mít podřízené objekty. Volání přepsaných metod
 
-- [`UpdateChildrenLayout`](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.UpdateChildrenLayout()/) pro `Page` vy a [ `UpdateChildrenLayout` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.UpdateChildrenLayout()/) pro `Layout` odvozené konfigurace, které volá
-- [`LayoutChildren`](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.LayoutChildren/p/System.Double/System.Double/System.Double/System.Double/) pro `Page` vy a [ `LayoutChildren` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.LayoutChildren/p/System.Double/System.Double/System.Double/System.Double/) pro `Layout` vy.
+- [`UpdateChildrenLayout`](xref:Xamarin.Forms.Page.UpdateChildrenLayout) pro `Page` vy a [ `UpdateChildrenLayout` ](xref:Xamarin.Forms.Layout.UpdateChildrenLayout) pro `Layout` odvozené konfigurace, které volá
+- [`LayoutChildren`](xref:Xamarin.Forms.Page.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) pro `Page` vy a [ `LayoutChildren` ](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) pro `Layout` vy.
 
 `LayoutChildren` pak zavolá `Layout` pro každý z podřízené objekty daného elementu. Pokud má alespoň jeden podřízený prvek nový `Bounds` nastavení, a aktivuje následující událost:
 
-- [`LayoutChanged`](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.LayoutChanged/) pro `Page` vy a [ `LayoutChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Layout.LayoutChanged/) pro `Layout` odvozené konfigurace
+- [`LayoutChanged`](xref:Xamarin.Forms.Page.LayoutChanged) pro `Page` vy a [ `LayoutChanged` ](xref:Xamarin.Forms.Layout.LayoutChanged) pro `Layout` odvozené konfigurace
 
 ### <a name="constraints-and-size-requests"></a>Omezení a požadavky na velikost
 
 Pro `LayoutChildren` inteligentně volat `Layout` na všech jejích potomků, musíte znát *upřednostňované* nebo *požadované* velikost pro podřízené položky. Proto volání `Layout` pro každou podřízenou položku obecně předchází volání
 
-- [`GetSizeRequest`](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.GetSizeRequest/p/System.Double/System.Double/)
+- [`GetSizeRequest`](xref:Xamarin.Forms.VisualElement.GetSizeRequest(System.Double,System.Double))
 
 Po publikování knihy, `GetSizeRequest` byl zastaralý a nahradí – metoda
 
-- [`Measure`](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.Measure/p/System.Double/System.Double/Xamarin.Forms.MeasureFlags/)
+- [`Measure`](xref:Xamarin.Forms.VisualElement.Measure(System.Double,System.Double,Xamarin.Forms.MeasureFlags))
 
-`Measure` Metoda přizpůsobuje [ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/) vlastnost a zahrnuje argument typu [ `MeasureFlag` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MeasureFlags/), který má dva členy:
+`Measure` Metoda přizpůsobuje [ `Margin` ](xref:Xamarin.Forms.View.Margin) vlastnost a zahrnuje argument typu [ `MeasureFlag` ](xref:Xamarin.Forms.MeasureFlags), který má dva členy:
 
 - [`IncludeMargins`](xref:Xamarin.Forms.MeasureFlags.IncludeMargins)
 - [`None`](xref:Xamarin.Forms.MeasureFlags.None) tak, aby nezahrnovala okraje
 
 Pro mnoho prvků `GetSizeRequest` nebo `Measure` nativní velikost elementu získává z jeho zobrazovací jednotky. Obě metody mají parametry pro šířku a výšku *omezení*. Například `Label` budou používat omezení šířky určit, jak zabalit více řádků textu.
 
-Obě `GetSizeRequest`a `Measure` vrátit hodnotu typu [ `SizeRequest` ](https://developer.xamarin.com/api/type/Xamarin.Forms.SizeRequest/), která má dvě vlastnosti:
+Obě `GetSizeRequest`a `Measure` vrátit hodnotu typu [ `SizeRequest` ](xref:Xamarin.Forms.SizeRequest), která má dvě vlastnosti:
 
-- [`Request`](https://developer.xamarin.com/api/property/Xamarin.Forms.SizeRequest.Request/) typu `Size`
-- [`Minimum`](https://developer.xamarin.com/api/property/Xamarin.Forms.SizeRequest.Minimum/) typu `Size`
+- [`Request`](xref:Xamarin.Forms.SizeRequest.Request) typu `Size`
+- [`Minimum`](xref:Xamarin.Forms.SizeRequest.Minimum) typu `Size`
 
 Velmi často se tyto dvě hodnoty stejné a `Minimum` hodnotu lze obvykle ignorovat.
 
 `VisualElement` Definuje také chráněné metody podobné `GetSizeRequest` , která je volána z `GetSizeRequest`:
 
-- [`OnSizeRequest`](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.OnSizeRequest/p/System.Double/System.Double/) Vrátí `SizeRequest` hodnota
+- [`OnSizeRequest`](xref:Xamarin.Forms.VisualElement.OnSizeRequest(System.Double,System.Double)) Vrátí `SizeRequest` hodnota
 
 Tato metoda je nyní zastaralé a nahradit:
 
-- [`OnMeasure`](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.OnMeasure/p/System.Double/System.Double/)
+- [`OnMeasure`](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double))
 
 Každá třída, která je odvozena z `Layout` nebo `Layout<T>` musí přepsat `OnSizeRequest` nebo `OnMeasure`. To je, kde rozložení třídy určuje vlastní velikost, která je obecně podle velikosti jeho podřízené položky, která se získá voláním `GetSizeRequest` nebo `Measure` na podřízené objekty. Před a po volání `OnSizeRequest` nebo `OnMeasure`, `GetSizeRequest` nebo `Measure` provádí úpravy na základě následujících vlastností:
 
-- [`WidthRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.WidthRequest/)typu `double`, má vliv `Request` vlastnost `SizeRequest`
-- [`HeightRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.HeightRequest/) typu `double`, má vliv `Request` vlastnost `SizeRequest`
-- [`MinimumWidthRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.MinimumWidthRequest/) typu `double`, má vliv `Minimum` vlastnost `SizeRequest`
-- [`MinimumHeightRequest`](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.MinimumHeightRequest/) typu `double`, má vliv `Minimum` vlastnost `SizeRequest`
+- [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest)typu `double`, má vliv `Request` vlastnost `SizeRequest`
+- [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) typu `double`, má vliv `Request` vlastnost `SizeRequest`
+- [`MinimumWidthRequest`](xref:Xamarin.Forms.VisualElement.MinimumWidthRequest) typu `double`, má vliv `Minimum` vlastnost `SizeRequest`
+- [`MinimumHeightRequest`](xref:Xamarin.Forms.VisualElement.MinimumHeightRequest) typu `double`, má vliv `Minimum` vlastnost `SizeRequest`
 
 ### <a name="infinite-constraints"></a>Nekonečné omezení
 
@@ -131,23 +131,23 @@ Volání `OnMeasure` není zaručena. `OnMeasure` nebude volat, pokud se nadřaz
 
 ### <a name="vertical-and-horizontal-positioning-simplified"></a>Vodorovné a svislé umístění zjednodušená
 
-Jedna z úloh, která `VerticalStack` musí provádět spadá `LayoutChildren` přepsat. Metoda používá dítěte `HorizontalOptions` vlastnost určit, jak na pozici v rámci jeho pozice v podřízené `VerticalStack`. Místo toho můžete volat statickou metodu [ `Layout.LayoutChildIntoBoundingRect` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.LayoutChildIntoBoundingRegion/p/Xamarin.Forms.VisualElement/Xamarin.Forms.Rectangle/). Tato metoda volá `Measure` na podřízené a používá svůj `HorizontalOptions` a `VerticalOptions` vlastnosti, které chcete umístit podřízené v rámci určeného obdélníku.
+Jedna z úloh, která `VerticalStack` musí provádět spadá `LayoutChildren` přepsat. Metoda používá dítěte `HorizontalOptions` vlastnost určit, jak na pozici v rámci jeho pozice v podřízené `VerticalStack`. Místo toho můžete volat statickou metodu [ `Layout.LayoutChildIntoBoundingRect` ](xref:Xamarin.Forms.Layout.LayoutChildIntoBoundingRegion(Xamarin.Forms.VisualElement,Xamarin.Forms.Rectangle)). Tato metoda volá `Measure` na podřízené a používá svůj `HorizontalOptions` a `VerticalOptions` vlastnosti, které chcete umístit podřízené v rámci určeného obdélníku.
 
 ### <a name="invalidation"></a>Zrušení
 
 Změna vlastnosti elementu často ovlivňuje, jak se zobrazuje tento prvek v rozložení. Rozložení musí být zneplatněné k aktivaci nového rozložení.
 
-`VisualElement` Definuje chráněná metoda [ `InvalidateMeasure` ](https://developer.xamarin.com/api/member/Xamarin.Forms.VisualElement.InvalidateMeasure()/), což obecně volá obslužná rutina změny vlastnosti libovolné umožňujících vazbu vlastnosti jehož změna ovlivňuje velikost prvku. `InvalidateMeasure` Aktivuje se metoda [ `MeasureInvalidated` ](https://developer.xamarin.com/api/event/Xamarin.Forms.VisualElement.MeasureInvalidated/) událostí.
+`VisualElement` Definuje chráněná metoda [ `InvalidateMeasure` ](xref:Xamarin.Forms.VisualElement.InvalidateMeasure), což obecně volá obslužná rutina změny vlastnosti libovolné umožňujících vazbu vlastnosti jehož změna ovlivňuje velikost prvku. `InvalidateMeasure` Aktivuje se metoda [ `MeasureInvalidated` ](xref:Xamarin.Forms.VisualElement.MeasureInvalidated) událostí.
 
-`Layout` Třída definuje podobně jako chráněnou metodu s názvem [ `InvalidateLayout` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.InvalidateLayout()/), který `Layout` odvozených děl na základě by měly volat pro všechny změny, který má vliv jak umístění a velikosti své podřízené objekty.
+`Layout` Třída definuje podobně jako chráněnou metodu s názvem [ `InvalidateLayout` ](xref:Xamarin.Forms.Layout.InvalidateLayout), který `Layout` odvozených děl na základě by měly volat pro všechny změny, který má vliv jak umístění a velikosti své podřízené objekty.
 
 ### <a name="some-rules-for-coding-layouts"></a>Některá pravidla pro kódování rozložení
 
 1. Vlastnosti definované `Layout<T>` odvozené by měl být založená na vlastnosti umožňující vazbu a obslužné rutiny změny vlastnosti by měly volat `InvalidateLayout`.
 
-2. A `Layout<T>` by měly přepsat jeho odvozených děl, která definuje připojené vlastnosti umožňující vazbu [ `OnAdded` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout%3CT%3E.OnAdded/p/T/) pro přidání obslužné rutiny změny vlastnosti na podřízené a [ `OnRemoved` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout%3CT%3E.OnRemoved/p/T/) odebrat Obslužná rutina. By měla obslužná rutina zkontrolujte, zda změny v těchto připojené vlastnosti umožňující vazbu a reagovat voláním `InvalidateLayout`.
+2. A `Layout<T>` by měly přepsat jeho odvozených děl, která definuje připojené vlastnosti umožňující vazbu [ `OnAdded` ](xref:Xamarin.Forms.Layout`1.OnAdded*) pro přidání obslužné rutiny změny vlastnosti na podřízené a [ `OnRemoved` ](xref:Xamarin.Forms.Layout`1.OnRemoved*) odebrat Obslužná rutina. By měla obslužná rutina zkontrolujte, zda změny v těchto připojené vlastnosti umožňující vazbu a reagovat voláním `InvalidateLayout`.
 
-3. A `Layout<T>` by měly přepsat jeho odvozených děl, která implementuje mezipaměť podřízené velikostí `InvalidateLayout` a [ `OnChildMeasureInvalidated` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.OnChildMeasureInvalidated()/) a vymažte její mezipaměť při volání těchto metod.
+3. A `Layout<T>` by měly přepsat jeho odvozených děl, která implementuje mezipaměť podřízené velikostí `InvalidateLayout` a [ `OnChildMeasureInvalidated` ](xref:Xamarin.Forms.Layout.OnChildMeasureInvalidated) a vymažte její mezipaměť při volání těchto metod.
 
 ### <a name="a-layout-with-properties"></a>Rozložení s vlastnostmi
 
@@ -169,8 +169,8 @@ A `Layout<T>` odvozených děl na základě může dojít k překrytí své pod�
 
 `Layout` Třída definuje dvě metody, které umožňují přesunout podřízené v rámci kolekce:
 
-- [`LowerChild`](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.LowerChild/p/Xamarin.Forms.View/) Přesunout podřízenou na začátek kolekce
-- [`RaiseChild`](https://developer.xamarin.com/api/member/Xamarin.Forms.Layout.RaiseChild/p/Xamarin.Forms.View/) Přesunout podřízenou na konec kolekce
+- [`LowerChild`](xref:Xamarin.Forms.Layout.LowerChild(Xamarin.Forms.View)) Přesunout podřízenou na začátek kolekce
+- [`RaiseChild`](xref:Xamarin.Forms.Layout.RaiseChild(Xamarin.Forms.View)) Přesunout podřízenou na konec kolekce
 
 Pro překrývající se děti podřízené položky na konec kolekce vizuálně zobrazují nad podřízené objekty na začátku kolekce.
 

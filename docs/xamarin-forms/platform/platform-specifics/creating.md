@@ -1,51 +1,51 @@
 ---
-title: Vytváření specifika platformy
-description: Tento článek ukazuje, jak vystavit vliv prostřednictvím příslušnou platformu.
+title: Vytváření specifik platforem
+description: Tento článek ukazuje, jak vystavit efektu přes konkrétní platformu.
 ms.prod: xamarin
 ms.assetid: 0D0E6274-6EF2-4D40-BB77-3D8E53BCD24B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/23/2016
-ms.openlocfilehash: a07ff2e206a08ee40355733ab2c1026f29de2f2f
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 1d9f07a089eabedf07bef49c9815fe7e93128f09
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35242781"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997253"
 ---
-# <a name="creating-platform-specifics"></a>Vytváření specifika platformy
+# <a name="creating-platform-specifics"></a>Vytváření specifik platforem
 
-_Dodavatelé mohou vytvářet své vlastní specifika platformy s účinky. Efekt poskytuje určitých funkcí, které jsou pak dostupné prostřednictvím příslušnou platformu. Výsledkem je efektu, kterou můžete snadno zpracovat prostřednictvím XAML a prostřednictvím fluent kódu rozhraní API. Tento článek ukazuje, jak vystavit vliv prostřednictvím příslušnou platformu._
+_Dodavatelé můžete vytvořit svá vlastní specifika platforem s účinky. Efekt poskytuje určitých funkcí, které jsou pak dostupné prostřednictvím konkrétní platformu. Výsledkem je efekt, který se snadno zpracovat prostřednictvím XAML a kódu rozhraní API fluent. Tento článek ukazuje, jak vystavit efektu přes konkrétní platformu._
 
 ## <a name="overview"></a>Přehled
 
-Proces vytvoření specifické platformy je následující:
+Proces vytvoření konkrétní platformy je následujícím způsobem:
 
-1. Implementujte určité funkce jako efekt. Další informace najdete v tématu [vytváření vliv](~/xamarin-forms/app-fundamentals/effects/creating.md).
-1. Vytvořte třídu specifické pro platformu, která zveřejní účinek. Další informace najdete v tématu [vytvoření třídy specifické pro platformu](#creating).
-1. Ve třídě specifické pro platformu implementujte přidružená vlastnost umožňující podle platformy, který se má používat prostřednictvím XAML. Další informace najdete v tématu [přidání připojené vlastnosti](#attached_property).
-1. Ve třídě specifické pro platformu implementujte rozšiřující metody umožňující podle platformy, který se má používat prostřednictvím fluent kódu rozhraní API. Další informace najdete v tématu [metody přidání rozšíření](#extension_methods).
-1. Implementace vliv upravte tak, aby účinek se používá pouze v případě specifické platformy metoda byla volána na stejnou platformu jako účinek. Další informace najdete v tématu [vytváření účinek](#creating_the_effect).
+1. Implementujte určité funkce jako efektu. Další informace najdete v tématu [vytvoření efektu](~/xamarin-forms/app-fundamentals/effects/creating.md).
+1. Vytvoření třídy specifické pro platformu, která se zveřejňují efekt. Další informace najdete v tématu [vytvoření třídy specifické pro platformu](#creating).
+1. Ve třídě specifické pro platformu implementujte připojené vlastnosti umožňující konkrétní platformy, které mají zpracovávat prostřednictvím XAML. Další informace najdete v tématu [přidání k připojené vlastnosti](#attached_property).
+1. Ve třídě specifické pro platformu implementujte metody rozšíření, které umožňují konkrétní platformy, který se má používat rozhraní API fluent kódu. Další informace najdete v tématu [metody přidání rozšíření](#extension_methods).
+1. Implementace efekt upravte, aby účinek se používá pouze v případě zavolání specifický pro platformu v rámci téže platformy jako efekt. Další informace najdete v tématu [vytvoření efektu](#creating_the_effect).
 
-Vystavení vliv jako specifické platformy výsledkem je, že účinek může snadno zpracovat prostřednictvím XAML a prostřednictvím fluent kódu rozhraní API.
+Vystavení efektu jako konkrétní platformy výsledkem je, že efekt můžete snadněji využívat pomocí XAML a kódu rozhraní API fluent.
 
 > [!NOTE]
-> Předpokládá se, dodavatelé použijete tento postup k vytvoření vlastních platformy specifika, pro usnadnění spotřeba uživatelé. Když uživatelé se můžou rozhodnout pro vytvoření svá vlastní specifika platformy, je potřeba poznamenat, že vyžaduje více kódu než vytváření a použití vliv.
+> Předpokládá se, dodavatelé použijete tento postup k vytvoření vlastních specifik platforem, pro snadné využití podle uživatele. Zatímco uživatelé se můžou rozhodnout vytvořit svá vlastní specifika platforem, je třeba poznamenat, že vyžaduje více kódu, než vytváření a využívání efektu.
 
-Představuje ukázkovou aplikaci `Shadow` platformu, která přidává stín do textu zobrazovaného [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) ovládacího prvku:
+Ukázková aplikace ukazuje `Shadow` specifické pro platformu, která přidá stínem text, zobrazený [ `Label` ](xref:Xamarin.Forms.Label) ovládacího prvku:
 
-![](creating-images/screenshots.png "Stínové specifické pro platformu")
+![](creating-images/screenshots.png "Stín specifické pro platformu")
 
-Implementuje aplikace ukázka `Shadow` specifických pro platformy na každou platformu, pro usnadnění pochopení. Kromě zajištění dostatečného každý implementace vliv specifické pro platformu, je však z velké části stejný jako pro každou platformu implementaci třídy stínové. Tato příručka proto zaměřen na implementaci třídy stínové a přidružené vliv na jeden platformy.
+Implementuje ukázkové aplikace `Shadow` specifické pro platformu na jednotlivých platformách pro snadnější pochopení. Kromě každá implementace efekt specifické pro platformu implementace třídy stínové ale velké části stejný jako pro každou platformu. Proto tato příručka je zaměřen na implementaci třídy stínové a přidružené vliv na jediné platformě.
 
-Další informace o důsledky najdete v tématu [přizpůsobení ovládací prvky s důsledky](~/xamarin-forms/app-fundamentals/effects/index.md).
+Další informace o efektů, naleznete v tématu [přizpůsobení ovládacích prvků s účinky](~/xamarin-forms/app-fundamentals/effects/index.md).
 
 <a name="creating" />
 
 ## <a name="creating-a-platform-specific-class"></a>Vytvoření třídy specifické pro platformu
 
-Specifické platformy je vytvořen jako `public static` třídy:
+Konkrétní platformy je vytvořen jako `public static` třídy:
 
 ```csharp
 namespace MyCompany.Forms.PlatformConfiguration.iOS
@@ -61,9 +61,9 @@ Následující části popisují implementaci `Shadow` specifické pro platformu
 
 <a name="attached_property" />
 
-### <a name="adding-an-attached-property"></a>Přidání přidružená vlastnost
+### <a name="adding-an-attached-property"></a>Přidání připojené vlastnosti
 
-– Přidružená vlastnost musí být přidán do `Shadow` specifické pro platformu pro povolení využívání prostřednictvím XAML:
+Připojené vlastnosti musí být přidané do `Shadow` specifické pro platformu povolit spotřebu prostřednictvím XAML:
 
 ```csharp
 namespace MyCompany.Forms.PlatformConfiguration.iOS
@@ -136,10 +136,10 @@ namespace MyCompany.Forms.PlatformConfiguration.iOS
 }
 ```
 
-`IsShadowed` Přidružená vlastnost se používá k přidání `MyCompany.LabelShadowEffect` ovlivňuje a jeho odebrání z ovládacího prvku, `Shadow` třída je připojen k. To připojené vlastnost registrů `OnIsShadowedPropertyChanged` metoda, která bude proveden při změně hodnoty vlastnosti. Naopak, tato metoda volá `AttachEffect` nebo `DetachEffect` na základě hodnoty na základě metod přidat nebo odebrat účinek `IsShadowed` přidružená vlastnost. Účinek je přidat nebo odebrat z ovládacího prvku změnou ovládacího prvku [ `Effects` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.Effects/) kolekce.
+`IsShadowed` Připojená vlastnost se používá k přidání `MyCompany.LabelShadowEffect` projeví a odeberte z ovládacího prvku, který `Shadow` třídy je připojen k. To připojené vlastnosti registrů `OnIsShadowedPropertyChanged` metodu, která se provede při změně hodnoty vlastnosti. Tato metoda volá `AttachEffect` nebo `DetachEffect` metodu pro přidání nebo odebrání účinek podle hodnoty `IsShadowed` přidružená vlastnost. Efekt je přidán či odebrán z ovládacího prvku úpravou ovládacího prvku [ `Effects` ](xref:Xamarin.Forms.Element.Effects) kolekce.
 
 > [!NOTE]
-> Všimněte si, že účinek je vyřešit tak, že zadáte hodnotu, která je tvořen název skupiny řešení a jedinečný identifikátor, který je zadaný na implementaci vliv. Další informace najdete v tématu [vytváření vliv](~/xamarin-forms/app-fundamentals/effects/creating.md).
+> Všimněte si, že efekt je vyřešit tak, že zadáte hodnotu, která je zřetězením název skupiny pro rozlišení a jedinečný identifikátor, který je zadán v implementaci vliv. Další informace najdete v tématu [vytvoření efektu](~/xamarin-forms/app-fundamentals/effects/creating.md).
 
 Další informace o přidružené vlastnosti najdete v tématu [připojené vlastnosti](~/xamarin-forms/xaml/attached-properties.md).
 
@@ -147,7 +147,7 @@ Další informace o přidružené vlastnosti najdete v tématu [připojené vlas
 
 ### <a name="adding-extension-methods"></a>Přidání metody rozšíření
 
-Rozšiřující metody musí být přidán do `Shadow` specifické pro platformu pro povolení využívání prostřednictvím fluent kódu rozhraní API:
+Metody rozšíření musí být přidané do `Shadow` specifické pro platformu povolit spotřebu fluent kódu rozhraní API:
 
 ```csharp
 namespace MyCompany.Forms.PlatformConfiguration.iOS
@@ -175,13 +175,13 @@ namespace MyCompany.Forms.PlatformConfiguration.iOS
 }
 ```
 
-`IsShadowed` a `SetIsShadowed` rozšiřující metody get vyvolání a nastavte přistupující objekty pro `IsShadowed` přidružená vlastnost, v uvedeném pořadí. Každá metoda rozšíření pracovat `IPlatformElementConfiguration<iOS, FormsElement>` typu, který určuje, že příslušnou platformu lze uplatnit na [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) instancí z iOS.
+`IsShadowed` a `SetIsShadowed` rozšiřující metody volání get a set přístupové objekty pro `IsShadowed` přidružená vlastnost, v uvedeném pořadí. Každá metoda rozšíření pracuje `IPlatformElementConfiguration<iOS, FormsElement>` typ, který určuje, že konkrétní platformy může být vyvolána na [ `Label` ](xref:Xamarin.Forms.Label) instancí z iOS.
 
 <a name="creating_the_effect" />
 
-### <a name="creating-the-effect"></a>Vytváření účinek
+### <a name="creating-the-effect"></a>Vytvoření efektu
 
-`Shadow` Specifické pro platformu přidá `MyCompany.LabelShadowEffect` k [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)a odstraní ji. Následující příklad kódu ukazuje `LabelShadowEffect` implementace pro projekt pro iOS:
+`Shadow` Specifické pro platformu přidá `MyCompany.LabelShadowEffect` k [ `Label` ](xref:Xamarin.Forms.Label)a odstraní ji. Následující příklad kódu ukazuje `LabelShadowEffect` implementaci pro projekt pro iOS:
 
 ```csharp
 [assembly: ResolutionGroupName("MyCompany")]
@@ -234,15 +234,15 @@ namespace ShadowPlatformSpecific.iOS
 }
 ```
 
-`UpdateShadow` Metoda nastaví `Control.Layer` vlastnosti, které chcete vytvořit stínové, za předpokladu, že `IsShadowed` je připojená vlastnost nastavená na `true`a za předpokladu, že `Shadow` specifické pro platformu byla použita na stejnou platformu, Efekt je implementována pro. Tato kontrola se provádí pomocí `OnThisPlatform` metoda.
+`UpdateShadow` Metody nastaví `Control.Layer` vlastnosti pro vytvoření stínové, za předpokladu, že `IsShadowed` připojená vlastnost nastavená na `true`a za předpokladu, že `Shadow` zavolání specifické pro platformu v rámci téže platformy, která Efekt je implementován pro. Tato kontrola se provádí pomocí `OnThisPlatform` metody.
 
-Pokud `Shadow.IsShadowed` připojené změn hodnot vlastností v době běhu vliv musí odpovídat odebráním stínové kopie. Proto je přepsané verze nástroje `OnElementPropertyChanged` metoda se používá k reakci na změnu vazbu vlastnosti pomocí volání `UpdateShadow` metoda.
+Pokud `Shadow.IsShadowed` připojené změn hodnot vlastností v době běhu efekt potřeba reagovat odebráním stínu. Proto na přepsané verzi `OnElementPropertyChanged` metoda se používá k reagovat na změny vázanou vlastnost voláním `UpdateShadow` metody.
 
-Další informace o vytváření vliv najdete v tématu [vytváření vliv](~/xamarin-forms/app-fundamentals/effects/creating.md) a [předání parametrů efektu jako připojené vlastnosti](~/xamarin-forms/app-fundamentals/effects/passing-parameters/attached-properties.md).
+Další informace o vytvoření efektu najdete v tématu [vytvoření efektu](~/xamarin-forms/app-fundamentals/effects/creating.md) a [předávání efekt parametry jako připojené vlastnosti](~/xamarin-forms/app-fundamentals/effects/passing-parameters/attached-properties.md).
 
-## <a name="consuming-a-platform-specific"></a>Využívání specifické platformy
+## <a name="consuming-a-platform-specific"></a>Využívání konkrétní platformu
 
-`Shadow` Specifické pro platformu obsazením v jazyce XAML nastavením `Shadow.IsShadowed` připojené vlastnosti `boolean` hodnotu:
+`Shadow` Specifické pro platformu je využívána v XAML nastavení `Shadow.IsShadowed` připojené vlastnosti `boolean` hodnotu:
 
 ```xaml
 <ContentPage xmlns:ios="clr-namespace:MyCompany.Forms.PlatformConfiguration.iOS" ...>
@@ -263,15 +263,15 @@ using MyCompany.Forms.PlatformConfiguration.iOS;
 shadowLabel.On<iOS>().SetIsShadowed(true);
 ```
 
-Další informace o využívání specifika platformy najdete v tématu [využívání platformy specifika](~/xamarin-forms/platform/platform-specifics/consuming/index.md).
+Další informace o používání specifik platforem, naleznete v tématu [používání specifik platforem](~/xamarin-forms/platform/platform-specifics/consuming/index.md).
 
 ## <a name="summary"></a>Souhrn
 
-Tento článek ukázal, jak vystavit vliv prostřednictvím příslušnou platformu. Výsledkem je efektu, kterou můžete snadno zpracovat prostřednictvím XAML a prostřednictvím fluent kódu rozhraní API.
+V tomto článku jsme vám ukázali jak vystavit efektu přes konkrétní platformu. Výsledkem je efekt, který se snadno zpracovat prostřednictvím XAML a kódu rozhraní API fluent.
 
 
 ## <a name="related-links"></a>Související odkazy
 
 - [ShadowPlatformSpecific (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/shadowplatformspecific/)
-- [Přizpůsobení ovládací prvky s efekty](~/xamarin-forms/app-fundamentals/effects/index.md)
+- [Přizpůsobení ovládacích prvků s účinky](~/xamarin-forms/app-fundamentals/effects/index.md)
 - [Připojené vlastnosti](~/xamarin-forms/xaml/attached-properties.md)

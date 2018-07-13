@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: ae284cf90ccb2d2735b4fafa0c0e44f69533638f
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: d7719f231a6d70594985a1158340104d68367ffe
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935157"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998605"
 ---
 # <a name="xamarinforms-performance"></a>Výkon Xamarin.Forms
 
@@ -59,7 +59,7 @@ XAMLC je zakázané ve výchozím nastavení k zajištění zpětné kompatibili
 
 ## <a name="choose-the-correct-layout"></a>Výběr správné rozložení
 
-Rozložení, která je schopná zobrazit více podřízených položek, ale který má jenom jednu podřízenou je plýtváním. Například následující příklad kódu ukazuje [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) s jednu podřízenou:
+Rozložení, která je schopná zobrazit více podřízených položek, ale který má jenom jednu podřízenou je plýtváním. Například následující příklad kódu ukazuje [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) s jednu podřízenou:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -73,7 +73,7 @@ Rozložení, která je schopná zobrazit více podřízených položek, ale kter
 </ContentPage>
 ```
 
-Toto je plýtvání a [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) element by měl odebrat, jak je znázorněno v následujícím příkladu kódu:
+Toto je plýtvání a [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) element by měl odebrat, jak je znázorněno v následujícím příkladu kódu:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -85,7 +85,7 @@ Toto je plýtvání a [ `StackLayout` ](https://developer.xamarin.com/api/type/X
 </ContentPage>
 ```
 
-Kromě toho Nepokoušejte se reprodukovat vzhled specifické rozložení pomocí kombinace jiné rozložení, jako tento výsledky ve výpočtech zbytečné rozložení právě probíhá. Například, nepokoušejte se reprodukovat [ `Grid` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/) rozložení pomocí kombinace [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) instancí. Následující příklad kódu ukazuje příklad tohoto postupu chybný:
+Kromě toho Nepokoušejte se reprodukovat vzhled specifické rozložení pomocí kombinace jiné rozložení, jako tento výsledky ve výpočtech zbytečné rozložení právě probíhá. Například, nepokoušejte se reprodukovat [ `Grid` ](xref:Xamarin.Forms.Grid) rozložení pomocí kombinace [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) instancí. Následující příklad kódu ukazuje příklad tohoto postupu chybný:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -115,7 +115,7 @@ Kromě toho Nepokoušejte se reprodukovat vzhled specifické rozložení pomocí
 </ContentPage>
 ```
 
-To je plýtvání, protože se provádí výpočty zbytečné rozložení. Místo toho na požadované rozložení můžete lépe dosáhnout pomocí [ `Grid` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/), jak je znázorněno v následujícím příkladu kódu:
+To je plýtvání, protože se provádí výpočty zbytečné rozložení. Místo toho na požadované rozložení můžete lépe dosáhnout pomocí [ `Grid` ](xref:Xamarin.Forms.Grid), jak je znázorněno v následujícím příkladu kódu:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -163,7 +163,7 @@ Rychlé renderery snížit inflaci a náklady na vykreslení ovládacích prvků
 
 ## <a name="reduce-unnecessary-bindings"></a>Snížit nepotřebné vazby
 
-Nepoužívejte vazby pro obsah, který je možné snadno nastavit staticky. Neexistuje žádná výhoda ve vazbě dat, která nemusí být vázán, protože vazby nejsou nákladově efektivnější. Například nastavení `Button.Text = "Accept"` má nižší režijní náklady než vazby [ `Button.Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.Text/) k ViewModel `string` vlastnost s hodnotou "Přijmout".
+Nepoužívejte vazby pro obsah, který je možné snadno nastavit staticky. Neexistuje žádná výhoda ve vazbě dat, která nemusí být vázán, protože vazby nejsou nákladově efektivnější. Například nastavení `Button.Text = "Accept"` má nižší režijní náklady než vazby [ `Button.Text` ](xref:Xamarin.Forms.Button.Text) k ViewModel `string` vlastnost s hodnotou "Přijmout".
 
 <a name="optimizelayout" />
 
@@ -171,36 +171,36 @@ Nepoužívejte vazby pro obsah, který je možné snadno nastavit staticky. Neex
 
 Xamarin.Forms 2 zavedl modul optimalizované rozložení, který má vliv na aktualizaci rozložení. Pokud chcete získat nejlepší výkon možné rozložení, postupujte podle následujících pokynů:
 
-- Snižte hloubku hierarchie rozložení tak, že zadáte [ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/) hodnoty vlastností, umožní vytvoření rozložení s menším počtem zabalení zobrazení. Další informace najdete v tématu [okraje a výplň](~/xamarin-forms/user-interface/layouts/margin-and-padding.md).
-- Při použití [ `Grid` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/), pokuste se zajistit, že počet řádků a sloupců nejvíce nastavené na [ `Auto` ](https://developer.xamarin.com/api/property/Xamarin.Forms.GridLength.Auto/) velikost. Každý Automatická velikost řádku nebo sloupce způsobí, že modul rozložení provádět výpočty další rozložení. Místo toho použijte pevné velikosti řádků a sloupců, pokud je to možné. Můžete také nastavit řádků a sloupců, aby obsadily poměrné množství prostoru se [ `GridUnitType.Star` ](xref:Xamarin.Forms.GridUnitType.Star) hodnota výčtu, k dispozici, že stromu nadřazené následuje tyto pokyny rozložení.
-- Nemají nastavený [ `VerticalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) a [ `HorizontalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) vlastnosti rozložení Pokud nevyžaduje. Výchozí hodnoty [ `LayoutOptions.Fill` ](xref:Xamarin.Forms.LayoutOptions.Fill) a [ `LayoutOptions.FillAndExpand` ](xref:Xamarin.Forms.LayoutOptions.FillAndExpand) povolit osvědčené optimalizace rozložení. Změna těchto vlastností má svou cenu a spotřebovává paměť, i v případě nastavení na výchozí hodnoty.
-- Vyhněte se použití [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/) kdykoli je to možné. Bude výsledkem by bylo nutné provést mnohem více práce procesoru.
-- Při použití [ `AbsoluteLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayout/), vyhněte se použití [ `AbsoluteLayout.AutoSize` ](https://developer.xamarin.com/api/property/Xamarin.Forms.AbsoluteLayout.AutoSize/) vlastnost kdykoli je to možné.
-- Při použití [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/), ujistěte se, že pouze jeden podřízený prvek je nastavena na [ `LayoutOptions.Expands` ](https://developer.xamarin.com/api/property/Xamarin.Forms.LayoutOptions.Expands/). Tato vlastnost se zajistí, že budou zaměstnávat zadanou podřízenou položku. největší prostor, který `StackLayout` můžete přidělit a je plýtvání k provedení těchto výpočtů více než jednou.
-- Nemůžete volat metody [ `Layout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout/) třídy, protože se provádí výpočty náročné rozložení. Místo toho je pravděpodobné, aby bylo možné získat požadované rozložení chování tak, že nastavíte [ `TranslationX` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationX/) a [ `TranslationY` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationY/) vlastnosti. Alternativně podtřídy [ `Layout<View>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/) třídy k dosažení požadované rozložení chování.
-- Nechcete aktualizovat některé [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) instance častěji, než se požaduje, jak změnit velikost popisku může vést k rozložení celé obrazovky se přepočítávají.
-- Nemají nastavený [ `Label.VerticalTextAlignment` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.VerticalTextAlignment/) vlastnost Pokud nevyžaduje.
-- Nastavte [ `LineBreakMode` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.LineBreakMode/) žádné [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) instance na [ `NoWrap` ](xref:Xamarin.Forms.LineBreakMode.NoWrap) kdykoli je to možné.
+- Snižte hloubku hierarchie rozložení tak, že zadáte [ `Margin` ](xref:Xamarin.Forms.View.Margin) hodnoty vlastností, umožní vytvoření rozložení s menším počtem zabalení zobrazení. Další informace najdete v tématu [okraje a výplň](~/xamarin-forms/user-interface/layouts/margin-and-padding.md).
+- Při použití [ `Grid` ](xref:Xamarin.Forms.Grid), pokuste se zajistit, že počet řádků a sloupců nejvíce nastavené na [ `Auto` ](xref:Xamarin.Forms.GridLength.Auto) velikost. Každý Automatická velikost řádku nebo sloupce způsobí, že modul rozložení provádět výpočty další rozložení. Místo toho použijte pevné velikosti řádků a sloupců, pokud je to možné. Můžete také nastavit řádků a sloupců, aby obsadily poměrné množství prostoru se [ `GridUnitType.Star` ](xref:Xamarin.Forms.GridUnitType.Star) hodnota výčtu, k dispozici, že stromu nadřazené následuje tyto pokyny rozložení.
+- Nemají nastavený [ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions) a [ `HorizontalOptions` ](xref:Xamarin.Forms.View.VerticalOptions) vlastnosti rozložení Pokud nevyžaduje. Výchozí hodnoty [ `LayoutOptions.Fill` ](xref:Xamarin.Forms.LayoutOptions.Fill) a [ `LayoutOptions.FillAndExpand` ](xref:Xamarin.Forms.LayoutOptions.FillAndExpand) povolit osvědčené optimalizace rozložení. Změna těchto vlastností má svou cenu a spotřebovává paměť, i v případě nastavení na výchozí hodnoty.
+- Vyhněte se použití [ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout) kdykoli je to možné. Bude výsledkem by bylo nutné provést mnohem více práce procesoru.
+- Při použití [ `AbsoluteLayout` ](xref:Xamarin.Forms.AbsoluteLayout), vyhněte se použití [ `AbsoluteLayout.AutoSize` ](xref:Xamarin.Forms.AbsoluteLayout.AutoSize) vlastnost kdykoli je to možné.
+- Při použití [ `StackLayout` ](xref:Xamarin.Forms.StackLayout), ujistěte se, že pouze jeden podřízený prvek je nastavena na [ `LayoutOptions.Expands` ](xref:Xamarin.Forms.LayoutOptions.Expands). Tato vlastnost se zajistí, že budou zaměstnávat zadanou podřízenou položku. největší prostor, který `StackLayout` můžete přidělit a je plýtvání k provedení těchto výpočtů více než jednou.
+- Nemůžete volat metody [ `Layout` ](xref:Xamarin.Forms.Layout) třídy, protože se provádí výpočty náročné rozložení. Místo toho je pravděpodobné, aby bylo možné získat požadované rozložení chování tak, že nastavíte [ `TranslationX` ](xref:Xamarin.Forms.VisualElement.TranslationX) a [ `TranslationY` ](xref:Xamarin.Forms.VisualElement.TranslationY) vlastnosti. Alternativně podtřídy [ `Layout<View>` ](xref:Xamarin.Forms.Layout`1) třídy k dosažení požadované rozložení chování.
+- Nechcete aktualizovat některé [ `Label` ](xref:Xamarin.Forms.Label) instance častěji, než se požaduje, jak změnit velikost popisku může vést k rozložení celé obrazovky se přepočítávají.
+- Nemají nastavený [ `Label.VerticalTextAlignment` ](xref:Xamarin.Forms.Label.VerticalTextAlignment) vlastnost Pokud nevyžaduje.
+- Nastavte [ `LineBreakMode` ](xref:Xamarin.Forms.Label.LineBreakMode) žádné [ `Label` ](xref:Xamarin.Forms.Label) instance na [ `NoWrap` ](xref:Xamarin.Forms.LineBreakMode.NoWrap) kdykoli je to možné.
 
 <a name="optimizelistview" />
 
 ## <a name="optimize-listview-performance"></a>Optimalizace výkonu ListView
 
-Při použití [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) několik položek uživatelským prostředím, které by mělo být optimalizované ovládací prvek:
+Při použití [ `ListView` ](xref:Xamarin.Forms.ListView) několik položek uživatelským prostředím, které by mělo být optimalizované ovládací prvek:
 
 - **Inicializace** – časový interval spuštění při vytvoření ovládacího prvku a končí, když položky se zobrazí na obrazovce.
 - **Posouvání** – možnost procházet seznam a ujistěte se, že uživatelské rozhraní nepodporuje zaostávat za touch gesta.
 - **Interakce** pro přidávání, odstraňování a výběr položek.
 
-[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) Ovládací prvek vyžaduje, aby aplikace k poskytnutí dat a buňky šablony. Jak toho dosáhnout, bude mít velký dopad na výkon ovládacího prvku. Další informace najdete v tématu [ListView výkonu](~/xamarin-forms/user-interface/listview/performance.md).
+[ `ListView` ](xref:Xamarin.Forms.ListView) Ovládací prvek vyžaduje, aby aplikace k poskytnutí dat a buňky šablony. Jak toho dosáhnout, bude mít velký dopad na výkon ovládacího prvku. Další informace najdete v tématu [ListView výkonu](~/xamarin-forms/user-interface/listview/performance.md).
 
 <a name="optimizeimages" />
 
 ## <a name="optimize-image-resources"></a>Optimalizace prostředků obrázků
 
-Zobrazení prostředků obrázků, může výrazně zlepšit nároky na paměť aplikace. Proto jsou by měl pouze vytvořit při vyžaduje a by měly být vydány ihned poté, co aplikace již nevyžaduje. Například pokud aplikace zobrazuje obrázek načtením dat z datového proudu, ujistěte se, že tohoto datového proudu se vytvoří pouze v případě, že je to požadováno a ujistěte se, že datový proud uvolní se, když už nebude potřeba. Toho lze dosáhnout vytvořením datového proudu při vytvoření stránky, nebo když [ `Page.Appearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Appearing/) dojde k aktivaci události a pak odstraňování datového proudu při [ `Page.Disappearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Page.Disappearing/) dojde k aktivaci události.
+Zobrazení prostředků obrázků, může výrazně zlepšit nároky na paměť aplikace. Proto jsou by měl pouze vytvořit při vyžaduje a by měly být vydány ihned poté, co aplikace již nevyžaduje. Například pokud aplikace zobrazuje obrázek načtením dat z datového proudu, ujistěte se, že tohoto datového proudu se vytvoří pouze v případě, že je to požadováno a ujistěte se, že datový proud uvolní se, když už nebude potřeba. Toho lze dosáhnout vytvořením datového proudu při vytvoření stránky, nebo když [ `Page.Appearing` ](xref:Xamarin.Forms.Page.Appearing) dojde k aktivaci události a pak odstraňování datového proudu při [ `Page.Disappearing` ](xref:Xamarin.Forms.Page.Disappearing) dojde k aktivaci události.
 
-Při stahování obrázku pro zobrazení s [ `ImageSource.FromUri` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromUri/p/System.Uri/) metoda mezipaměti stažený obraz tak zajistit, aby [ `UriImageSource.CachingEnabled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.UriImageSource.CachingEnabled/) je nastavena na `true`. Další informace najdete v tématu [práce s obrázky](~/xamarin-forms/user-interface/images.md).
+Při stahování obrázku pro zobrazení s [ `ImageSource.FromUri` ](xref:Xamarin.Forms.ImageSource.FromUri(System.Uri)) metoda mezipaměti stažený obraz tak zajistit, aby [ `UriImageSource.CachingEnabled` ](xref:Xamarin.Forms.UriImageSource.CachingEnabled) je nastavena na `true`. Další informace najdete v tématu [práce s obrázky](~/xamarin-forms/user-interface/images.md).
 
 Další informace najdete v tématu [optimalizovat prostředky obrázků](~/cross-platform/deploy-test/memory-perf-best-practices.md#optimizeimages).
 
@@ -208,9 +208,9 @@ Další informace najdete v tématu [optimalizovat prostředky obrázků](~/cros
 
 ## <a name="reduce-the-visual-tree-size"></a>Zmenšit velikost vizuálního stromu.
 
-Snížení počtu prvků na stránce způsobí, že na stránce rychlejšímu vykreslování. Pro dosažení tohoto cíle dvěma způsoby. První je skrýt prvky, které nejsou viditelné. [ `IsVisible` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsVisible/) Vlastnost každého prvku určuje, zda element by měla být součástí vizuálního stromu, nebo ne. Proto pokud element není zobrazen, protože je skrytá za další prvky, buď odeberte element nebo nastavte jeho `IsVisible` vlastnost `false`.
+Snížení počtu prvků na stránce způsobí, že na stránce rychlejšímu vykreslování. Pro dosažení tohoto cíle dvěma způsoby. První je skrýt prvky, které nejsou viditelné. [ `IsVisible` ](xref:Xamarin.Forms.VisualElement.IsVisible) Vlastnost každého prvku určuje, zda element by měla být součástí vizuálního stromu, nebo ne. Proto pokud element není zobrazen, protože je skrytá za další prvky, buď odeberte element nebo nastavte jeho `IsVisible` vlastnost `false`.
 
-Odebrání nepotřebných prvků jako druhý postup se používá. Například následující příklad kódu ukazuje rozložení stránky, které se zobrazuje řada z [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) prvky:
+Odebrání nepotřebných prvků jako druhý postup se používá. Například následující příklad kódu ukazuje rozložení stránky, které se zobrazuje řada z [ `Label` ](xref:Xamarin.Forms.Label) prvky:
 
 ```xaml
 <ContentPage.Content>
@@ -330,5 +330,5 @@ Tento článek popisuje a popsané techniky pro zvýšení výkonu aplikací s X
 - [Rychlé renderery](~/xamarin-forms/internals/fast-renderers.md)
 - [Komprese rozložení](~/xamarin-forms/user-interface/layouts/layout-compression.md)
 - [Ukázka změnu velikosti obrázku Xamarin.Forms](https://developer.xamarin.com/samples/xamarin-forms/XamFormsImageResize/)
-- [XamlCompilation](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.XamlCompilation/)
-- [XamlCompilationOptions](https://developer.xamarin.com/api/type/Xamarin.Forms.Xaml.XamlCompilationOptions/)
+- [XamlCompilation](xref:Xamarin.Forms.Xaml.XamlCompilationAttribute)
+- [XamlCompilationOptions](xref:Xamarin.Forms.Xaml.XamlCompilationOptions)

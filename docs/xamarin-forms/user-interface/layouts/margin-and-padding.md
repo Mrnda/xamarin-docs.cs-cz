@@ -1,43 +1,43 @@
 ---
-title: Okraj a odsazení
-description: Okraj a odsazení vlastnosti řízení rozložení chování při vykreslení elementu v uživatelském rozhraní. Tento článek ukazuje rozdíl mezi dvě vlastnosti a postupu při jejich nastavení.
+title: Okraje a odsazení
+description: Na okraj a odsazení vlastnosti řídit rozložení chování při vykreslení elementu v uživatelském rozhraní. Tento článek ukazuje rozdíl mezi dvěma vlastnostmi a jejich nastavení.
 ms.prod: xamarin
 ms.assetid: BEB096BB-51DF-410F-B0F1-D235287B0F4A
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: 545468d3b02f9651c45fcaebe159351aafea6432
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 595e673c59d23a45cbaf923a0d58faff2000c296
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30790597"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996613"
 ---
-# <a name="margin-and-padding"></a>Okraj a odsazení
+# <a name="margin-and-padding"></a>Okraje a odsazení
 
-_Okraj a odsazení vlastnosti řízení rozložení chování při vykreslení elementu v uživatelském rozhraní. Tento článek ukazuje rozdíl mezi dvě vlastnosti a postupu při jejich nastavení._
+_Na okraj a odsazení vlastnosti řídit rozložení chování při vykreslení elementu v uživatelském rozhraní. Tento článek ukazuje rozdíl mezi dvěma vlastnostmi a jejich nastavení._
 
 ## <a name="overview"></a>Přehled
 
-Okraj a odsazení jsou související rozložení koncepty:
+Okraje a odsazení jsou související rozložení koncepty:
 
-- [ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/) Vlastnost představuje vzdálenost mezi prvek a jeho přiléhající prvky a slouží k řízení umístění prvku vykreslování a vykreslování pozici své okolí. `Margin` hodnoty mohou být zadány na [rozložení](~/xamarin-forms/user-interface/controls/layouts.md) a [zobrazení](~/xamarin-forms/user-interface/controls/views.md) třídy.
-- [ `Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/) Vlastnost představuje vzdálenost mezi elementem a její podřízené elementy a slouží k oddělení od vlastní obsah ovládacího prvku. `Padding` hodnoty mohou být zadány na [rozložení](~/xamarin-forms/user-interface/controls/layouts.md) třídy.
+- [ `Margin` ](xref:Xamarin.Forms.View.Margin) Vlastnost představuje vzdálenost mezi prvkem a jeho sousedícími elementy a slouží k řízení pozici vykreslení tohoto prvku a jeho okolím pozici vykreslení. `Margin` je možné zadat hodnoty na [rozložení](~/xamarin-forms/user-interface/controls/layouts.md) a [zobrazení](~/xamarin-forms/user-interface/controls/views.md) třídy.
+- [ `Padding` ](xref:Xamarin.Forms.Layout.Padding) Vlastnost představuje vzdálenost mezi prvkem a jeho podřízené prvky a slouží k oddělení ovládacího prvku z jeho vlastní obsah. `Padding` je možné zadat hodnoty na [rozložení](~/xamarin-forms/user-interface/controls/layouts.md) třídy.
 
-Následující diagram znázorňuje dvěma konceptů:
+Následující diagram znázorňuje dvě koncepty:
 
 [![](margin-and-padding-images/margins-and-padding-sml.png "Okraje a odsazení koncepty")](margin-and-padding-images/margins-and-padding.png#lightbox "okraje a odsazení koncepty")
 
-Všimněte si, že [ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/) hodnoty jsou aditivní. Proto pokud dva elementy přiléhající zadat okraj 20 pixelů, vzdálenost mezi elementy, bude 40 pixelů. Kromě toho jsou okraj a odsazení doplňkové obě použité v, že vzdálenost mezi elementem a veškerý obsah, bude okraj a odsazení.
+Všimněte si, že [ `Margin` ](xref:Xamarin.Forms.View.Margin) hodnoty jsou aditivní. Proto pokud dva sousedící prvky okraj 20 pixelů, bude vzdálenost mezi elementy 40 pixelů. Kromě toho jsou okraje a odsazení additive při použití i, v tom, že vzdálenost mezi prvkem a veškerý obsah bude okraj a odsazení.
 
-## <a name="specifying-a-thickness"></a>Určení tloušťka
+## <a name="specifying-a-thickness"></a>Určení tloušťku ohraničení
 
-[ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/) a [ `Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/) vlastnosti jsou obě typu [ `Thickness` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Thickness/). Existují tři možnosti při vytváření `Thickness` strukturu:
+[ `Margin` ](xref:Xamarin.Forms.View.Margin) a [ `Padding` ](xref:Xamarin.Forms.Layout.Padding) vlastnosti jsou typu [ `Thickness` ](xref:Xamarin.Forms.Thickness). Existují tři možnosti při vytváření `Thickness` struktury:
 
-- Vytvoření [ `Thickness` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Thickness/) struktury definované uniform jednu hodnotu. Jednu hodnotu se použije na levé straně, horní, pravé a dolní strany elementu.
-- Vytvoření [ `Thickness` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Thickness/) struktury definované hodnoty vodorovného a svislého. Vodorovné hodnota platí symetricky na levé a pravé straně elementu, svislé hodnotou symetricky aplikované na horní a dolní strana elementu.
-- Vytvoření [ `Thickness` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Thickness/) struktury definované čtyři odlišné hodnoty, které se použijí na levé straně, horní, pravé a dolní strany elementu.
+- Vytvoření [ `Thickness` ](xref:Xamarin.Forms.Thickness) struktury definované jednotné jednu hodnotu. Vlevo, horní, pravé a dolní strana elementu, který se použije jednu hodnotu.
+- Vytvoření [ `Thickness` ](xref:Xamarin.Forms.Thickness) struktury definované hodnoty vodorovného a svislého. Vodorovné hodnotu je symetricky použít na levé a pravé straně elementu, svislé hodnotou symetricky zavádí horní a dolní strana elementu.
+- Vytvoření [ `Thickness` ](xref:Xamarin.Forms.Thickness) struktury definované čtyři různé hodnoty, které se použijí na levé straně, horní, pravé a dolní strana elementu.
 
 Následující příklad kódu XAML ukazuje všechny tři možnosti:
 
@@ -49,7 +49,7 @@ Následující příklad kódu XAML ukazuje všechny tři možnosti:
 </StackLayout>
 ```
 
-Ekvivalentní kódu C# je znázorněno v následujícím příkladu kódu:
+Ekvivalentní kód jazyka C# můžete vidět v následujícím příkladu kódu:
 
 ```csharp
 var stackLayout = new StackLayout {
@@ -63,15 +63,15 @@ var stackLayout = new StackLayout {
 ```
 
 > [!NOTE]
-> `Thickness` hodnoty mohou být záporná, která obvykle klipy nebo overdraws obsah.
+> `Thickness` hodnoty mohou být záporná, který se obvykle klipy nebo overdraws obsah.
 
 ## <a name="summary"></a>Souhrn
 
-Tento článek ukázán rozdíl mezi [ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/) a [ `Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/) vlastnosti a postupu při jejich nastavení. Vlastnosti řízení rozložení chování při vykreslení elementu v uživatelském rozhraní.
+V tomto článku jsme vám ukázali rozdíl mezi [ `Margin` ](xref:Xamarin.Forms.View.Margin) a [ `Padding` ](xref:Xamarin.Forms.Layout.Padding) vlastností a jejich nastavení. Vlastnosti řídit rozložení chování při vykreslení elementu v uživatelském rozhraní.
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Okraj](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/)
-- [Odsazení](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/)
-- [Tloušťka](https://developer.xamarin.com/api/type/Xamarin.Forms.Thickness/)
+- [Okraj](xref:Xamarin.Forms.View.Margin)
+- [Odsazení](xref:Xamarin.Forms.Layout.Padding)
+- [Tloušťka](xref:Xamarin.Forms.Thickness)

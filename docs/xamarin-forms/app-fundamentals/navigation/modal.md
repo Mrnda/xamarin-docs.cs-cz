@@ -1,35 +1,35 @@
 ---
-title: Modální Xamarin.Forms stránky
-description: Xamarin.Forms poskytuje podporu pro modální stránky. Modální stránky doporučuje uživatelům k dokončení samostatná úloha, která nemůže být opuštění dokud je úloha dokončena nebo zrušena. Tento článek ukazuje, jak přejděte na modální stránky.
+title: Xamarin.Forms modální stránky
+description: Xamarin.Forms poskytuje podporu pro modální stránky. Modální stránky vyzývá uživatele k dokončení samostatná úloha, která nemůže být opuštění dokud je úloha dokončena nebo zrušena. Tento článek ukazuje, jak přejít na modální stránky.
 ms.prod: xamarin
 ms.assetid: 486CB7FD-2B9A-4DE3-94BD-C8D904E5D3C6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 4540ac006993a46cb0ead9346c1cb960ac631926
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 44aee8500c7de2ae56b59049368d6025ec49cc5e
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240135"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994814"
 ---
-# <a name="xamarinforms-modal-pages"></a>Modální Xamarin.Forms stránky
+# <a name="xamarinforms-modal-pages"></a>Xamarin.Forms modální stránky
 
-_Xamarin.Forms poskytuje podporu pro modální stránky. Modální stránky doporučuje uživatelům k dokončení samostatná úloha, která nemůže být opuštění dokud je úloha dokončena nebo zrušena. Tento článek ukazuje, jak přejděte na modální stránky._
+_Xamarin.Forms poskytuje podporu pro modální stránky. Modální stránky vyzývá uživatele k dokončení samostatná úloha, která nemůže být opuštění dokud je úloha dokončena nebo zrušena. Tento článek ukazuje, jak přejít na modální stránky._
 
 Tento článek popisuje v následujících tématech:
 
-- [Provádění navigační](#Performing_Navigation) – když zavedete stránky modální zásobníku operace stránky z modální zásobníku, zakázání tlačítko Zpět a animace přechody stránek.
-- [Předávání dat při přechodu](#Passing_Data_when_Navigating) – předávání dat prostřednictvím stránky konstruktor a prostřednictvím `BindingContext`.
+- [Provádění navigace](#Performing_Navigation) – odesílání stránky do modální zásobníku, vyjímání stránky od modálních zásobníku, zakázáním tlačítka Zpět a animace přechody stránek.
+- [Předávání dat při navigaci](#Passing_Data_when_Navigating) – předávání dat prostřednictvím konstruktor stránky a prostřednictvím `BindingContext`.
 
 ## <a name="overview"></a>Přehled
 
-Modální stránky může být libovolná z [stránky](~/xamarin-forms/user-interface/controls/pages.md) typy podporované systémem Xamarin.Forms. K zobrazení modální stránky aplikace předá ho do modální zásobníku, kde se stane aktivní stránku, jak je znázorněno v následujícím diagramu:
+Modální stránky může být libovolná z [stránky](~/xamarin-forms/user-interface/controls/pages.md) typů podporuje Xamarin.Forms. Zobrazíte modální stránky aplikace zařadí ho do modální zásobníku, kde se tak stane aktivní stránkou., jak je znázorněno v následujícím diagramu:
 
-![](modal-images/pushing.png "Když zavedete stránky modální zásobníku")
+![](modal-images/pushing.png "Odesílání stránky do modální zásobníku")
 
-Chcete-li vrátit na předchozí stránku aplikace, objeví se aktuální stránku z modální zásobníku a nová stránka nejhornější stane aktivní stránku, jak je znázorněno v následujícím diagramu:
+Vrátit na předchozí stránku aplikace zobrazte aktuální stránku od modálních zásobníku, a na novou stránku nejvyšší úrovně se stane aktivní stránkou., jak je znázorněno v následujícím diagramu:
 
 ![](modal-images/popping.png "Odebrání stránky z modální zásobníku")
 
@@ -37,18 +37,18 @@ Chcete-li vrátit na předchozí stránku aplikace, objeví se aktuální strán
 
 ## <a name="performing-navigation"></a>Provádění navigace
 
-Modální navigační metody jsou vystavené [ `Navigation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Navigation/) vlastnost na žádném [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) odvozených typů. Tyto metody umožňují [push modální stránky](#Pushing_Pages_to_the_Modal_Stack) do modální zásobníku a [pop modální stránky](#Popping_Pages_from_the_Modal_Stack) z modální zásobníku.
+Modální navigační metody jsou vystavené [ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation) vlastnost na žádném [ `Page` ](xref:Xamarin.Forms.Page) odvozené typy. Tyto metody poskytují možnost [push modální stránky](#Pushing_Pages_to_the_Modal_Stack) do modální zásobníku a [vyvolat přes pop modální stránky](#Popping_Pages_from_the_Modal_Stack) od modálních zásobníku.
 
-[ `Navigation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Navigation/) Vlastnost taky zpřístupňuje [ `ModalStack` ](https://developer.xamarin.com/api/property/Xamarin.Forms.INavigation.ModalStack/) vlastnost, ze kterého lze získat modální stránky v modální zásobníku. Však neexistuje žádná koncepce provádění modální zásobníku manipulaci nebo odebrání kořenovou stránku v modální navigaci. Je to proto, že tyto operace nepodporuje všeobecně základní platformy.
+[ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation) Také poskytuje vlastnost [ `ModalStack` ](xref:Xamarin.Forms.INavigation.ModalStack) vlastností, ze kterého můžete získat modální stránky v modálním zásobníku. Neexistuje však žádný koncept provádění modální zásobníku manipulaci nebo automaticky otevíraného kořenovou stránku v modálním navigaci. Je to proto, že tyto operace nejsou podporovány univerzálně na základní platformy.
 
 > [!NOTE]
-> A [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) instance není vyžadován pro provádění navigace modální stránky.
+> A [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) instance není vyžadován pro provádění navigace modální stránky.
 
 <a name="Pushing_Pages_to_the_Modal_Stack" />
 
-### <a name="pushing-pages-to-the-modal-stack"></a>Vkládání stránky modální zásobníku
+### <a name="pushing-pages-to-the-modal-stack"></a>Odesílání stránky do modální zásobníku
 
-Přejděte na `ModalPage` je nutné vyvolat [ `PushModalAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.INavigation.PushModalAsync(Xamarin.Forms.Page)/) metodu [ `Navigation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Navigation/) vlastnost aktuální stránky, jako předvedenou v následujícím příkladu kódu:
+Přejděte `ModalPage` je potřeba vyvolat [ `PushModalAsync` ](xref:Xamarin.Forms.INavigation.PushModalAsync*) metodu na [ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation) vlastnost aktuální stránky jako předvedenou v následujícím příkladu kódu:
 
 ```csharp
 async void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
@@ -61,28 +61,28 @@ async void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
 }
 ```
 
-To způsobí, že `ModalPage` instance, která má být vloženy do modální zásobníku, kde bude aktivní stránku, zadat, že byla vybrána položka v [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) na `MainPage` instance. `ModalPage` Instance je vidět na následujících snímcích obrazovky:
+To způsobí, že `ModalPage` instance má být vloženy do zásobníku modální okno, kde stane aktivní stránkou, k dispozici, že byla vybrána položka v [ `ListView` ](xref:Xamarin.Forms.ListView) na `MainPage` instance. `ModalPage` Instance je znázorněno na následujících snímcích obrazovky:
 
-![](modal-images/modalpage.png "Modální příklad stránky")
+![](modal-images/modalpage.png "Příklad modální stránky")
 
-Když [ `PushModalAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.INavigation.PushModalAsync(Xamarin.Forms.Page)/) je vyvolána, dojde k následujícím událostem:
+Když [ `PushModalAsync` ](xref:Xamarin.Forms.INavigation.PushModalAsync*) je vyvolána, dojde k následujícím událostem:
 
-- Stránka volání `PushModalAsync` má jeho [ `OnDisappearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnDisappearing/) přepsání vyvolána, za předpokladu, že není základní platformu Android.
-- Na stránce se přešli jeho [ `OnAppearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnAppearing/) přepsání vyvolat.
-- `PushAsync` Dokončení úlohy.
+- Volání funkce stránky `PushModalAsync` má jeho [ `OnDisappearing` ](xref:Xamarin.Forms.Page.OnDisappearing) přepsání vyvolána, za předpokladu, že se základní platformy Android.
+- Na stránce se přejde poté, jeho [ `OnAppearing` ](xref:Xamarin.Forms.Page.OnAppearing) přepsání vyvolána.
+- `PushAsync` Dokončení úkolu.
 
-Přesné pořadí, že k těmto událostem dojde, je však platformy, které jsou závislé. Další informace najdete v tématu [kapitoly 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) Charlese Petzold Xamarin.Forms knihy.
+Přesné pořadí, že k těmto událostem dojde je však závislý na platformě. Další informace najdete v tématu [kapitoly 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) Charles Petzold Xamarin.Forms knihy.
 
 > [!NOTE]
-> Volání [ `OnDisappearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnDisappearing/) a [ `OnAppearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnAppearing/) přepsání nemohou být považovány za zaručenou indikace navigaci na stránce. Například v systému iOS `OnDisappearing` přepsání je na stránce active volána, když se aplikace ukončí.
+> Volání [ `OnDisappearing` ](xref:Xamarin.Forms.Page.OnDisappearing) a [ `OnAppearing` ](xref:Xamarin.Forms.Page.OnAppearing) přepsání nemůže být zpracován jako garantované údaje o navigaci na stránce. Například v Iosu `OnDisappearing` přepsání je volána na aktivní stránce, když se aplikace ukončí.
 
 <a name="Popping_Pages_from_the_Modal_Stack" />
 
-### <a name="popping-pages-from-the-modal-stack"></a>Operace stránky z modální zásobníku
+### <a name="popping-pages-from-the-modal-stack"></a>Vyjímání stránky od modálních zásobníku
 
-Aktivní stránky může být odebrány z modální zásobníku stisknutím kombinace kláves *zpět* tlačítko na zařízení, bez ohledu na to, zda je na zařízení fyzické tlačítko nebo na obrazovce tlačítko.
+Aktivní stránkou. může být odebrány ze zásobníku modální stisknutím klávesy *zpět* tlačítko na zařízení, bez ohledu na to, zda se jedná o fyzického tlačítka na zařízení nebo tlačítko na obrazovce.
 
-Prostřednictvím kódu programu vrátit na stránku původní `ModalPage` musí vyvolání instance [ `PopModalAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.INavigation.PopModalAsync()/) metoda, jak je ukázáno v následujícím příkladu kódu:
+Programově vrátit na původní stránku `ModalPage` instance musí vyvolat [ `PopModalAsync` ](xref:Xamarin.Forms.INavigation.PopModalAsync) způsob, jak je ukázáno v následujícím příkladu kódu:
 
 ```csharp
 async void OnDismissButtonClicked (object sender, EventArgs args)
@@ -91,21 +91,21 @@ async void OnDismissButtonClicked (object sender, EventArgs args)
 }
 ```
 
-To způsobí, že `ModalPage` instance, která má být odebrán, modální, s novou nejhornější stránku stane aktivní stránky. Když [ `PopModalAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.INavigation.PopModalAsync()/) je vyvolána, dojde k následujícím událostem:
+To způsobí, že `ModalPage` instance má být odebrán z modální zásobníku s novou stránku nejvyšší úrovně stane aktivní stránkou. Když [ `PopModalAsync` ](xref:Xamarin.Forms.INavigation.PopModalAsync) je vyvolána, dojde k následujícím událostem:
 
-- Stránka volání `PopModalAsync` má jeho [ `OnDisappearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnDisappearing/) přepsání vyvolat.
-- Na stránce jako odpověď na jeho [ `OnAppearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnAppearing/) přepsání vyvolána, za předpokladu, že není základní platformu Android.
+- Volání funkce stránky `PopModalAsync` má jeho [ `OnDisappearing` ](xref:Xamarin.Forms.Page.OnDisappearing) přepsání vyvolána.
+- Na stránce se vrací do jeho [ `OnAppearing` ](xref:Xamarin.Forms.Page.OnAppearing) přepsání vyvolána, za předpokladu, že se základní platformy Android.
 - `PopModalAsync` Úkolů vrátí.
 
-Přesné pořadí, že k těmto událostem dojde, je však platformy, které jsou závislé. Další informace najdete v tématu [kapitoly 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) Charlese Petzold Xamarin.Forms knihy.
+Přesné pořadí, že k těmto událostem dojde je však závislý na platformě. Další informace najdete v tématu [kapitoly 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) Charles Petzold Xamarin.Forms knihy.
 
-### <a name="disabling-the-back-button"></a>Zakázat tlačítko Zpět
+### <a name="disabling-the-back-button"></a>Zakázání tlačítka Zpět
 
-V systému Android, uživatel může vždy vrátit na předchozí stránku stisknutím standardní *zpět* na zařízení tlačítko. Pokud stránce modální vyžaduje, aby uživatel k dokončení úlohy nezávislý před opuštěním stránky, musíte zakázat aplikaci *zpět* tlačítko. Toho lze dosáhnout přepsáním [ `Page.OnBackButtonPressed` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnBackButtonPressed/) metoda na stránce modální. Další informace najdete v části [kapitoly 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) Charlese Petzold Xamarin.Forms knihy.
+V Androidu, uživatel se kdykoli vrátit k předchozí stránce stisknutím klávesy standardní *zpět* na zařízení tlačítko. Pokud se modální stránky vyžaduje, aby uživatel k dokončení úkolu samostatná před opustit stránku, musíte zakázat aplikaci *zpět* tlačítko. Toho můžete docílit tak, že přepíšete [ `Page.OnBackButtonPressed` ](xref:Xamarin.Forms.Page.OnBackButtonPressed) metody ve stránce modální okno. Další informace najdete v části [kapitoly 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) Charles Petzold Xamarin.Forms knihy.
 
 ### <a name="animating-page-transitions"></a>Animace přechody stránek
 
-[ `Navigation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Navigation/) Vlastnost každé stránce poskytuje taky přepsaného nabízené a pop metody, které zahrnují `boolean` parametr, který určuje, jestli se má zobrazit stránku animace během navigace, jak je znázorněno v následujícím kódu Příklad:
+[ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation) Vlastnost jednotlivých stránek také poskytuje přepsané nabízená oznámení a pop metody, které obsahují `boolean` parametr, který určuje, zda se zobrazí stránka animace průběhu navigace, jak je znázorněno v následujícím kódu Příklad:
 
 ```csharp
 async void OnNextPageButtonClicked (object sender, EventArgs e)
@@ -121,17 +121,17 @@ async void OnDismissButtonClicked (object sender, EventArgs args)
 }
 ```
 
-Nastavení `boolean` parametru `false` zakáže animace přechod stránky, při nastavení parametru na `true` umožňuje animace přechod stránky za předpokladu, že ji podporuje základní platformy. Metody nabízené a pop, která nemají tento parametr však povolit animace ve výchozím nastavení.
+Nastavení `boolean` parametr `false` zakáže stránku přechodu animace, při nastavení parametru na `true` umožňuje přechod na stránky animace, za předpokladu, že ji podporuje základní platformy. Nabízená oznámení a pop metody, které nemají tento parametr však povolit animace ve výchozím nastavení.
 
 <a name="Passing_Data_when_Navigating" />
 
-## <a name="passing-data-when-navigating"></a>Předávání dat při přechodu
+## <a name="passing-data-when-navigating"></a>Předání dat při navigaci
 
-Někdy je nezbytné pro stránku k předávání dat při navigaci na jinou stránku. Jsou dva postupy provádění to předávání dat pomocí konstruktoru stránky a nastavení nová stránka [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) k datům. Každý teď probereme naopak.
+Někdy je nezbytné pro stránku k předávání dat při navigaci na jinou stránku. Jsou dvě techniky způsoby předávání dat prostřednictvím konstruktor stránky a nastavením nová stránka [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) k datům. Každý nyní probereme zase.
 
-### <a name="passing-data-through-a-page-constructor"></a>Předávání dat prostřednictvím stránky konstruktor
+### <a name="passing-data-through-a-page-constructor"></a>Předání dat prostřednictvím konstruktoru stránky
 
-Nejjednodušší způsob pro předávání dat při navigaci na jinou stránku je prostřednictvím parametru stránky konstruktor, který je znázorněno v následujícím příkladu kódu:
+Nejjednodušší techniku pro předávání dat na jinou stránku během navigace je prostřednictvím parametru konstruktor stránky, která je znázorněna v následujícím příkladu kódu:
 
 ```csharp
 public App ()
@@ -140,9 +140,9 @@ public App ()
 }
 ```
 
-Tento kód vytvoří `MainPage` instance, předávání v aktuální datum a čas ve formátu ISO 8601.
+Tento kód vytvoří `MainPage` instance předávání v aktuálním datem a časem ve formátu ISO8601.
 
-`MainPage` Instance přijímá data prostřednictvím parametr konstruktoru, jak je znázorněno v následujícím příkladu kódu:
+`MainPage` Instance přijímá data prostřednictvím konstruktoru parametru, jak je znázorněno v následujícím příkladu kódu:
 
 ```csharp
 public MainPage (string date)
@@ -152,11 +152,11 @@ public MainPage (string date)
 }
 ```
 
-Data se následně zobrazí na stránce nastavení [ `Label.Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.Text/) vlastnost.
+Data se následně zobrazí na stránce nastavení [ `Label.Text` ](xref:Xamarin.Forms.Label.Text) vlastnost.
 
-### <a name="passing-data-through-a-bindingcontext"></a>Předávání dat prostřednictvím vazby
+### <a name="passing-data-through-a-bindingcontext"></a>Předání dat prostřednictvím BindingContext
 
-Alternativní způsob pro předávání dat při navigaci na jinou stránku je nastavením nová stránka [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) k datům, jak je znázorněno v následujícím příkladu kódu:
+Alternativním přístupem k předávání dat při navigaci na jinou stránku, je nastavení nová stránka [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) k datům, jak je znázorněno v následujícím příkladu kódu:
 
 ```csharp
 async void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
@@ -170,9 +170,9 @@ async void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
 }
 ```
 
-Nastaví tento kód [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) z `DetailPage` instance k `Contact` instance a pak přejde `DetailPage`.
+Tento kód nastaví [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) z `DetailPage` instance na `Contact` instance a pak přejde do `DetailPage`.
 
-`DetailPage` Pak použije k zobrazení datová vazba `Contact` instance dat, jak je znázorněno v následujícím příkladu kódu XAML:
+`DetailPage` Pak datové vazby používá pro zobrazení `Contact` instance data, jak je znázorněno v následujícím příkladu kódu XAML:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -196,7 +196,7 @@ Nastaví tento kód [ `BindingContext` ](https://developer.xamarin.com/api/prope
 </ContentPage>
 ```
 
-Následující příklad kódu ukazuje, jak lze provést datové vazby v C#:
+Následující příklad kódu ukazuje, jak se dají naplnit datové vazby v C#:
 
 ```csharp
 public class DetailPageCS : ContentPage
@@ -248,17 +248,17 @@ public class DetailPageCS : ContentPage
 }
 ```
 
-Data se následně zobrazí na stránce řadu [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) ovládací prvky.
+Data se pak zobrazí na stránce řadou [ `Label` ](xref:Xamarin.Forms.Label) ovládacích prvků.
 
-Další informace o vazbě dat najdete v tématu [základy vazby dat](~/xamarin-forms/xaml/xaml-basics/index.md).
+Další informace o datové vazbě naleznete v tématu [základy vytváření vazeb dat](~/xamarin-forms/xaml/xaml-basics/index.md).
 
 ## <a name="summary"></a>Souhrn
 
-Tento článek ukázal, jak se orientovat na modální stránky. Modální stránky doporučuje uživatelům k dokončení samostatná úloha, která nemůže být opuštění dokud je úloha dokončena nebo zrušena.
+V tomto článku jsme vám ukázali jak přejít na modální stránky. Modální stránky vyzývá uživatele k dokončení samostatná úloha, která nemůže být opuštění dokud je úloha dokončena nebo zrušena.
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Navigace stránky](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)
-- [Modální (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/Modal/)
+- [Navigace po stránkách](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)
+- [Modální okno (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/Modal/)
 - [PassingData (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/PassingData/)

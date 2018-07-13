@@ -7,32 +7,32 @@ ms.assetid: 0AEC3A5C-586E-4D0F-9895-67E99A053A79
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 7ae6ff5bb08977ab83f95242770794b4c4363145
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: a04f72d0577c7b8bf467ee73df233e483f6aa401
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935170"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996422"
 ---
 # <a name="summary-of-chapter-19-collection-views"></a>Souhrn kapitole 19. Zobrazení kolekcí
 
 Xamarin.Forms definuje tři zobrazení, které udržují kolekce a zobrazit jejich prvky:
 
-- [`Picker`](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/) je poměrně krátké seznam položek řetězec, který umožňuje uživateli vybrat jednu
-- [`ListView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) často je dlouhý seznam položek obvykle stejného typu a formátování, také umožňuje uživateli vybrat jednu
-- [`TableView`](https://developer.xamarin.com/api/type/Xamarin.Forms.TableView/) je kolekce *buňky* (obvykle o různých typech videí a vzhled) k zobrazení dat nebo spravovat uživatelský vstup
+- [`Picker`](xref:Xamarin.Forms.Picker) je poměrně krátké seznam položek řetězec, který umožňuje uživateli vybrat jednu
+- [`ListView`](xref:Xamarin.Forms.ListView) často je dlouhý seznam položek obvykle stejného typu a formátování, také umožňuje uživateli vybrat jednu
+- [`TableView`](xref:Xamarin.Forms.TableView) je kolekce *buňky* (obvykle o různých typech videí a vzhled) k zobrazení dat nebo spravovat uživatelský vstup
 
 Je běžné pro použití aplikacemi MVVM `ListView` zobrazíte Vybrat kolekci objektů.
 
 ## <a name="program-options-with-picker"></a>Některé z možností programu s výběr
 
-[ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/) Je dobrou volbou, když budete chtít umožnit uživateli vybrat možnost z poměrně krátké seznam `string` položky.
+[ `Picker` ](xref:Xamarin.Forms.Picker) Je dobrou volbou, když budete chtít umožnit uživateli vybrat možnost z poměrně krátké seznam `string` položky.
 
 ### <a name="the-picker-and-event-handling"></a>Výběr a zpracování událostí
 
-[ **PickerDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/PickerDemo) Ukázka předvádí, jak nastavit pomocí XAML `Picker` [ `Title` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.Title/) vlastnost a přidejte `string` položky, které chcete [ `Items` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.Items/) kolekce. Když uživatel vybere `Picker`, zobrazuje položky v `Items` kolekce v podobě závislého na platformě.
+[ **PickerDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/PickerDemo) Ukázka předvádí, jak nastavit pomocí XAML `Picker` [ `Title` ](xref:Xamarin.Forms.Picker.Title) vlastnost a přidejte `string` položky, které chcete [ `Items` ](xref:Xamarin.Forms.Picker.Items) kolekce. Když uživatel vybere `Picker`, zobrazuje položky v `Items` kolekce v podobě závislého na platformě.
 
-[ `SelectedIndexChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Picker.SelectedIndexChanged/) Událost označuje, kdy uživatel vybral položky. Založený na nule [ `SelectedIndex` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Picker.SelectedIndex/) vlastnost pak označuje vybranou položku. Pokud není vybrána žádná položka `SelectedIndex` rovná &ndash;1.
+[ `SelectedIndexChanged` ](xref:Xamarin.Forms.Picker.SelectedIndexChanged) Událost označuje, kdy uživatel vybral položky. Založený na nule [ `SelectedIndex` ](xref:Xamarin.Forms.Picker.SelectedIndex) vlastnost pak označuje vybranou položku. Pokud není vybrána žádná položka `SelectedIndex` rovná &ndash;1.
 
 Můžete také použít `SelectedIndex` inicializovat vybrané položky, ale musí být nastavena po `Items` naplní kolekci. V XAML, to znamená, že budete pravděpodobně používat prvek vlastnosti nastavit `SelectedIndex`.
 
@@ -42,11 +42,11 @@ Můžete také použít `SelectedIndex` inicializovat vybrané položky, ale mus
 
 ## <a name="rendering-data-with-listview"></a>Vykreslování dat pomocí ListView
 
-[ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) Je jediná třída, která je odvozena z [ `ItemsView<TVisual>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ItemsView%3CTVisual%3E/) ze kterého se dědí [ `ItemsSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ItemsView%3CTVisual%3E.ItemsSource/) a [ `ItemTemplate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ItemsView%3CTVisual%3E.ItemTemplate/) vlastnosti.
+[ `ListView` ](xref:Xamarin.Forms.ListView) Je jediná třída, která je odvozena z [ `ItemsView<TVisual>` ](xref:Xamarin.Forms.ItemsView`1) ze kterého se dědí [ `ItemsSource` ](xref:Xamarin.Forms.ItemsView`1.ItemsSource) a [ `ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1.ItemTemplate) vlastnosti.
 
 `ItemsSource` je typu `IEnumerable` je ale `null` ve výchozím nastavení a musí být explicitně inicializován nebo do kolekce (častěji) nastavit prostřednictvím datové vazby. Položky v této kolekci mohou být libovolného typu.
 
-`ListView` definuje [ `SelectedItem` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.SelectedItem/) vlastnost, která je nastavena na jednu z položek v `ItemsSource` kolekce nebo `null` Pokud není vybrána žádná položka. `ListView` je aktivována [ `ItemSelected` ](https://developer.xamarin.com/api/event/Xamarin.Forms.ListView.ItemSelected/) událost v případě, že je vybraná nová položka.
+`ListView` definuje [ `SelectedItem` ](xref:Xamarin.Forms.ListView.SelectedItem) vlastnost, která je nastavena na jednu z položek v `ItemsSource` kolekce nebo `null` Pokud není vybrána žádná položka. `ListView` je aktivována [ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected) událost v případě, že je vybraná nová položka.
 
 ### <a name="collections-and-selections"></a>Kolekce a výběr
 
@@ -54,7 +54,7 @@ Můžete také použít `SelectedIndex` inicializovat vybrané položky, ale mus
 
 ### <a name="the-row-separator"></a>Oddělovač řádků
 
-V Iosu a Androidu zobrazí odděluje dynamického zajišťování řádku řádky. Můžete řídit pomocí [ `SeparatorVisibiliy` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.SeparatorVisibility/) a [ `SeparatorColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.SeparatorColor/) vlastnosti. `SeparatorVisibility` Vlastnost je typu [ `SeparatorVisbility` ](https://developer.xamarin.com/api/type/Xamarin.Forms.SeparatorVisibility/), výčet se dvěma členy:
+V Iosu a Androidu zobrazí odděluje dynamického zajišťování řádku řádky. Můžete řídit pomocí [ `SeparatorVisibiliy` ](xref:Xamarin.Forms.ListView.SeparatorVisibility) a [ `SeparatorColor` ](xref:Xamarin.Forms.ListView.SeparatorColor) vlastnosti. `SeparatorVisibility` Vlastnost je typu [ `SeparatorVisbility` ](xref:Xamarin.Forms.SeparatorVisibility), výčet se dvěma členy:
 
 - [`Default`](xref:Xamarin.Forms.SeparatorVisibility.Default), ve výchozím nastavení
 - [`None`](xref:Xamarin.Forms.SeparatorVisibility.None)
@@ -69,7 +69,7 @@ V Iosu a Androidu zobrazí odděluje dynamického zajišťování řádku řádk
 
 Však `ListView` neaktualizuje automaticky sama vzhledem k tomu, `List<T>` kolekce nemá mechanismus oznámení označíte, když jsou položky přidán či odebrán z kolekce.
 
-Je mnohem lepší třídu použít v těchto scénářích [ `ObservableCollection<T>` ](https://developer.xamarin.com/api/type/System.Collections.ObjectModel.ObservableCollection%3CT%3E/) definované v `System.Collections.ObjectModel` oboru názvů. Tato třída implementuje [ `INotifyCollectionChanged` ](https://developer.xamarin.com/api/type/System.Collections.Specialized.INotifyCollectionChanged/) rozhraní a proto je aktivována [ `CollectionChanged` ](https://developer.xamarin.com/api/event/System.Collections.ObjectModel.ObservableCollection%3CT%3E.CollectionChanged/) událost, když jsou položky přidán či odebrán z kolekce, nebo když jsou nahrazeny nebo přesunuta v rámci kolekce. Při `ListView` interně zjistí, že třída implementace `INotifyCollectionChanged` byla nastavena na jeho `ItemsSource` vlastnost, připojí obslužnou rutinu pro `CollectionChanged` událostí a aktualizuje jeho zobrazení, pokud se změní kolekce.
+Je mnohem lepší třídu použít v těchto scénářích [ `ObservableCollection<T>` ](xref:System.Collections.ObjectModel.ObservableCollection`1) definované v `System.Collections.ObjectModel` oboru názvů. Tato třída implementuje [ `INotifyCollectionChanged` ](xref:System.Collections.Specialized.INotifyCollectionChanged) rozhraní a proto je aktivována [ `CollectionChanged` ](xref:System.Collections.ObjectModel.ObservableCollection`1.CollectionChanged) událost, když jsou položky přidán či odebrán z kolekce, nebo když jsou nahrazeny nebo přesunuta v rámci kolekce. Při `ListView` interně zjistí, že třída implementace `INotifyCollectionChanged` byla nastavena na jeho `ItemsSource` vlastnost, připojí obslužnou rutinu pro `CollectionChanged` událostí a aktualizuje jeho zobrazení, pokud se změní kolekce.
 
 [ **ObservableLogger** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/ObservableLogger) ukázka demonstruje použití `ObservableCollection`.
 
@@ -81,41 +81,41 @@ Můžete experimentovat s touto funkcí, můžete použít [ `NamedColor` ](http
 
 [ **NaiveNamedColorList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/NaiveNamedColorList) ukázkové sady `ItemsSource` z `ListView` této `NamedColor.All` vlastnost, ale pouze třídy plně kvalifikované názvy `NamedColor` jsou objekty zobrazí.
 
-`ListView` potřebuje šablonu pro zobrazení těchto položek. V kódu, můžete nastavit [ `ItemTemplate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ItemsView%3CTVisual%3E.ItemTemplate/) vlastnosti určené `ItemsView<TVisual>` k [ `DataTemplate` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTemplate/) pomocí [ `DataTemplate` konstruktor](https://developer.xamarin.com/api/constructor/Xamarin.Forms.DataTemplate.DataTemplate/p/System.Type/) , který odkazuje na jejich odvozené z [ `Cell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Cell/) třídy. `Cell` má pět prvků odvozených:
+`ListView` potřebuje šablonu pro zobrazení těchto položek. V kódu, můžete nastavit [ `ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1.ItemTemplate) vlastnosti určené `ItemsView<TVisual>` k [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) pomocí [ `DataTemplate` konstruktor](xref:Xamarin.Forms.DataTemplate.%23ctor(System.Type)) , který odkazuje na jejich odvozené z [ `Cell` ](xref:Xamarin.Forms.Cell) třídy. `Cell` má pět prvků odvozených:
 
-- [`TextCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.TextCell/) &mdash; obsahuje dva `Label` zobrazení (koncepčně mluvený)
-- [`ImageCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageCell/) &mdash; Přidá `Image` se můžete podívat na `TextCell`
-- [`EntryCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.EntryCell/) &mdash; obsahuje `Entry` zobrazit se `Label`
-- [`SwitchCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.SwitchCell/) &mdash; obsahuje `Switch` s `Label`
-- [`ViewCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) &mdash; může být kterýkoli `View` (pravděpodobně s podřízených objektů)
+- [`TextCell`](xref:Xamarin.Forms.TextCell) &mdash; obsahuje dva `Label` zobrazení (koncepčně mluvený)
+- [`ImageCell`](xref:Xamarin.Forms.ImageCell) &mdash; Přidá `Image` se můžete podívat na `TextCell`
+- [`EntryCell`](xref:Xamarin.Forms.EntryCell) &mdash; obsahuje `Entry` zobrazit se `Label`
+- [`SwitchCell`](xref:Xamarin.Forms.SwitchCell) &mdash; obsahuje `Switch` s `Label`
+- [`ViewCell`](xref:Xamarin.Forms.ViewCell) &mdash; může být kterýkoli `View` (pravděpodobně s podřízených objektů)
 
-Poté zavolejte [ `SetValue` ](https://developer.xamarin.com/api/member/Xamarin.Forms.DataTemplate.SetValue/p/Xamarin.Forms.BindableProperty/System.Object/) a [ `SetBinding` ](https://developer.xamarin.com/api/member/Xamarin.Forms.DataTemplate.SetBinding/p/Xamarin.Forms.BindableProperty/Xamarin.Forms.BindingBase/) na `DataTemplate` objektu pro přiřazení hodnoty `Cell` vlastnosti, nebo k nastavení datové vazby na `Cell` odkazování na vlastnosti položek ve vlastnosti `ItemsSource` kolekce. To je patrné [ **TextCellListCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/TextCellListCode) vzorku.
+Poté zavolejte [ `SetValue` ](xref:Xamarin.Forms.DataTemplate.SetValue(Xamarin.Forms.BindableProperty,System.Object)) a [ `SetBinding` ](xref:Xamarin.Forms.DataTemplate.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase)) na `DataTemplate` objektu pro přiřazení hodnoty `Cell` vlastnosti, nebo k nastavení datové vazby na `Cell` odkazování na vlastnosti položek ve vlastnosti `ItemsSource` kolekce. To je patrné [ **TextCellListCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/TextCellListCode) vzorku.
 
-Protože každá položka je zobrazena ve `ListView`malé vizuálního stromu je vytvořen z šablony a datové vazby se vytvoří mezi položky a vlastnosti prvků v tomto vizuálním stromu. Můžete získat představu o tomto procesu nainstalováním obslužné rutiny pro [ `ItemAppearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.ListView.ItemAppearing/) a [ `ItemDisappearing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.ListView.ItemDisappearing/) události `ListView`, nebo pomocí alternativu [ `DataTemplate`konstruktor](https://developer.xamarin.com/api/constructor/Xamarin.Forms.DataTemplate.DataTemplate/p/System.Func%7BSystem.Object%7D/) , který používá funkce, která je volána pokaždé, když vizuálního stromu. položky se musí vytvořit.
+Protože každá položka je zobrazena ve `ListView`malé vizuálního stromu je vytvořen z šablony a datové vazby se vytvoří mezi položky a vlastnosti prvků v tomto vizuálním stromu. Můžete získat představu o tomto procesu nainstalováním obslužné rutiny pro [ `ItemAppearing` ](xref:Xamarin.Forms.ListView.ItemAppearing) a [ `ItemDisappearing` ](xref:Xamarin.Forms.ListView.ItemDisappearing) události `ListView`, nebo pomocí alternativu [ `DataTemplate`konstruktor](xref:Xamarin.Forms.DataTemplate.%23ctor(System.Func{System.Object})) , který používá funkce, která je volána pokaždé, když vizuálního stromu. položky se musí vytvořit.
 
-[ **TextCellListXaml** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/TextCellListXaml) znázorňuje funkčně stejný jako program zcela v XAML. A `DataTemplate` značka je nastavená na `ItemTemplate` vlastnost `ListView`a pak `TextCell` je nastavena na `DataTemplate`. Vazby na vlastnosti položek v kolekci jsou nastavena přímo [ `Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.TextCell.Text/) a [ `Detail` ](https://developer.xamarin.com/api/property/Xamarin.Forms.TextCell.Detail/) vlastnosti `TextCell`.
+[ **TextCellListXaml** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/TextCellListXaml) znázorňuje funkčně stejný jako program zcela v XAML. A `DataTemplate` značka je nastavená na `ItemTemplate` vlastnost `ListView`a pak `TextCell` je nastavena na `DataTemplate`. Vazby na vlastnosti položek v kolekci jsou nastavena přímo [ `Text` ](xref:Xamarin.Forms.TextCell.Text) a [ `Detail` ](xref:Xamarin.Forms.TextCell.Detail) vlastnosti `TextCell`.
 
 ### <a name="custom-cells"></a>Vlastní buňky
 
-V XAML je možné nastavit [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) k `DataTemplate` a pak definovat vlastní vizuálního stromu, jako [ `View` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ViewCell.View/) vlastnost `ViewCell`. (`View` je vlastnost content `ViewCell` proto `ViewCell.View` značky nejsou povinné.) [ **CustomNamedColorList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/CustomNamedColorList) ukázka demonstruje tento postup:
+V XAML je možné nastavit [ `ViewCell` ](xref:Xamarin.Forms.ViewCell) k `DataTemplate` a pak definovat vlastní vizuálního stromu, jako [ `View` ](xref:Xamarin.Forms.ViewCell.View) vlastnost `ViewCell`. (`View` je vlastnost content `ViewCell` proto `ViewCell.View` značky nejsou povinné.) [ **CustomNamedColorList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/CustomNamedColorList) ukázka demonstruje tento postup:
 
 [![Trojitá snímek obrazovky seznam s názvem barev vlastní](images/ch19fg11-small.png "vlastní seznam barev s názvem")](images/ch19fg11-large.png#lightbox "vlastní s názvem seznam barev")
 
-Získání nastavení velikosti pro všechny platformy může být velmi obtížné. [ `RowHeight` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.RowHeight/) Vlastnost je užitečná, ale v některých případech budete chtít uchýlíte k [ `HasUnevenRows` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.HasUnevenRows/) vlastnost, která je méně efektivní, ale sil `ListView` pro nastavení velikosti řádků. Pro iOS a Android musíte použít jednu z těchto dvou vlastností se získat nastavení velikosti řádku správné.
+Získání nastavení velikosti pro všechny platformy může být velmi obtížné. [ `RowHeight` ](xref:Xamarin.Forms.ListView.RowHeight) Vlastnost je užitečná, ale v některých případech budete chtít uchýlíte k [ `HasUnevenRows` ](xref:Xamarin.Forms.ListView.HasUnevenRows) vlastnost, která je méně efektivní, ale sil `ListView` pro nastavení velikosti řádků. Pro iOS a Android musíte použít jednu z těchto dvou vlastností se získat nastavení velikosti řádku správné.
 
 ### <a name="grouping-the-listview-items"></a>Seskupení položek ListView
 
 `ListView` podporuje seskupování položek a procházení mezi těchto skupin. `ItemsSource` Do kolekce kolekcí musí být nastavena vlastnost: objekt, který `ItemsSource` je nastavena na musí implementovat `IEnumerable`, a každá položka v kolekci musí také implementovat `IEnumerable`. Každá skupina by měla obsahovat dvě vlastnosti: textový popis skupiny a dvoupísmennou zkratku.
 
-[ `NamedColorGroup` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NamedColorGroup.cs) Třídy v [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) knihovny vytvoří sedm skupiny `NamedColor` objekty. [ **ColorGroupList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/ColorGroupList) příklad ukazuje, jak používat tyto skupiny se [ `IsGroupingEnabled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.IsGroupingEnabled/) vlastnost `ListView` nastavena na `true`a [ `GroupDisplayBinding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.GroupDisplayBinding/) a [ `GroupShortNameBinding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.GroupShortNameBinding/) vlastnosti vázané na vlastnosti v každé skupině.
+[ `NamedColorGroup` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NamedColorGroup.cs) Třídy v [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) knihovny vytvoří sedm skupiny `NamedColor` objekty. [ **ColorGroupList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/ColorGroupList) příklad ukazuje, jak používat tyto skupiny se [ `IsGroupingEnabled` ](xref:Xamarin.Forms.ListView.IsGroupingEnabled) vlastnost `ListView` nastavena na `true`a [ `GroupDisplayBinding` ](xref:Xamarin.Forms.ListView.GroupDisplayBinding) a [ `GroupShortNameBinding` ](xref:Xamarin.Forms.ListView.GroupShortNameBinding) vlastnosti vázané na vlastnosti v každé skupině.
 
 ### <a name="custom-group-headers"></a>Vlastní skupiny záhlaví
 
-Je možné vytvořit vlastní hlavičky pro `ListView` skupiny tak, že nahradíte `GroupDisplayBinding` vlastnost s [ `GroupHeaderTemplate` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.GroupHeaderTemplate/) definice šablony pro záhlaví.
+Je možné vytvořit vlastní hlavičky pro `ListView` skupiny tak, že nahradíte `GroupDisplayBinding` vlastnost s [ `GroupHeaderTemplate` ](xref:Xamarin.Forms.ListView.GroupHeaderTemplate) definice šablony pro záhlaví.
 
 ### <a name="listview-and-interactivity"></a>ListView a interaktivita
 
-Obecná aplikace získá interakce uživatele s `ListView` připojením obslužná rutina `ItemSelected` nebo [ `ItemTapped` ](https://developer.xamarin.com/api/event/Xamarin.Forms.ListView.ItemTapped/) události, nebo nastavením datové vazby na `SelectedItem` vlastnost. Ale některé typy buňky (`EntryCell` a `SwitchCell`) umožňují interakci s uživatelem, a je také možné vytvořit vlastní buňky, že sami komunikovat s uživatelem. [ **InteractiveListView** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/InteractiveListView) vytvoří 100 instancí [ `ColorViewModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ColorViewModel.cs) a umožňuje uživatelům změnit každá barva pomocí trojice `Slider` elementy. Program také využívá [ `ColorToContrastColorConverter` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ColorToContrastColorConverter.cs) v [ **Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit).
+Obecná aplikace získá interakce uživatele s `ListView` připojením obslužná rutina `ItemSelected` nebo [ `ItemTapped` ](xref:Xamarin.Forms.ListView.ItemTapped) události, nebo nastavením datové vazby na `SelectedItem` vlastnost. Ale některé typy buňky (`EntryCell` a `SwitchCell`) umožňují interakci s uživatelem, a je také možné vytvořit vlastní buňky, že sami komunikovat s uživatelem. [ **InteractiveListView** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/InteractiveListView) vytvoří 100 instancí [ `ColorViewModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ColorViewModel.cs) a umožňuje uživatelům změnit každá barva pomocí trojice `Slider` elementy. Program také využívá [ `ColorToContrastColorConverter` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ColorToContrastColorConverter.cs) v [ **Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit).
 
 ## <a name="listview-and-mvvm"></a>ListView a rozhraní MVVM
 
@@ -131,7 +131,7 @@ K prozkoumání, [ **SchoolOfFineArts** ](https://github.com/xamarin/xamarin-for
 
 [![Trojitá snímek Student](images/ch19fg18-small.png "seznamu studentů")](images/ch19fg18-large.png#lightbox "seznamu studentů")
 
-[ **ListViewHeader** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/ListViewHeader) ukázka přidá [ `Header` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.Header/) vlastností, ale zobrazí jen v systému Android.
+[ **ListViewHeader** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/ListViewHeader) ukázka přidá [ `Header` ](xref:Xamarin.Forms.ListView.Header) vlastností, ale zobrazí jen v systému Android.
 
 ### <a name="selection-and-the-binding-context"></a>Výběr a kontextu vazby
 
@@ -139,17 +139,17 @@ K prozkoumání, [ **SchoolOfFineArts** ](https://github.com/xamarin/xamarin-for
 
 ### <a name="context-menus"></a>Kontextové nabídky
 
-Buňky můžete definovat kontextové nabídky, která je implementována v podobě specifické pro platformu. Chcete-li vytvořit tuto nabídku, přidejte [ `MenuItem` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MenuItem/) objektů [ `ContextActions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Cell.ContextActions/) vlastnost `Cell`.
+Buňky můžete definovat kontextové nabídky, která je implementována v podobě specifické pro platformu. Chcete-li vytvořit tuto nabídku, přidejte [ `MenuItem` ](xref:Xamarin.Forms.MenuItem) objektů [ `ContextActions` ](xref:Xamarin.Forms.Cell.ContextActions) vlastnost `Cell`.
 
 `MenuItem` definuje vlastnosti pět:
 
-- [`Text`](https://developer.xamarin.com/api/property/Xamarin.Forms.MenuItem.Text/) typu `string`
-- [`Icon`](https://developer.xamarin.com/api/property/Xamarin.Forms.MenuItem.Icon/) typu `FileImageSource`
-- [`IsDestructive`](https://developer.xamarin.com/api/property/Xamarin.Forms.MenuItem.IsDestructive/) typu `bool`
-- [`Command`](https://developer.xamarin.com/api/property/Xamarin.Forms.MenuItem.Command/) typu `ICommand`
-- [`CommandParameter`](https://developer.xamarin.com/api/property/Xamarin.Forms.MenuItem.CommandParameter/) typu `object`
+- [`Text`](xref:Xamarin.Forms.MenuItem.Text) typu `string`
+- [`Icon`](xref:Xamarin.Forms.MenuItem.Icon) typu `FileImageSource`
+- [`IsDestructive`](xref:Xamarin.Forms.MenuItem.IsDestructive) typu `bool`
+- [`Command`](xref:Xamarin.Forms.MenuItem.Command) typu `ICommand`
+- [`CommandParameter`](xref:Xamarin.Forms.MenuItem.CommandParameter) typu `object`
 
-`Command` a `CommandParameter` vlastnosti znamenají, že ViewModel pro každou položku obsahuje metody k provedení požadované příkazy. Ve scénářích bez MVVM `MenuItem` také definuje [ `Clicked` ](https://developer.xamarin.com/api/event/Xamarin.Forms.MenuItem.Clicked/) událostí.
+`Command` a `CommandParameter` vlastnosti znamenají, že ViewModel pro každou položku obsahuje metody k provedení požadované příkazy. Ve scénářích bez MVVM `MenuItem` také definuje [ `Clicked` ](xref:Xamarin.Forms.MenuItem.Clicked) událostí.
 
 [ **CellContextMenu** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/CellContextMenu) ukazuje tento postup. `Command` Vlastnosti každého `MenuItem` je vázán na vlastnost typu `ICommand` v `Student` třídy. Nastavte `IsDestructive` vlastnost `true` pro `MenuItem` , odebere nebo odstraní vybraný objekt.
 
@@ -160,7 +160,7 @@ To lze provést pomocí převaděč hodnot vazby [ `ThresholdToObjectConverter` 
 
 ### <a name="refreshing-the-content"></a>Aktualizace obsahu
 
-`ListView` Podporuje rozevírací gesta pro aktualizaci svá data. Program musí nastavit [ `IsPullToRefresh` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.IsPullToRefreshEnabled/) vlastnost `true` aby to bylo. `ListView` Reaguje na gesta rozevírací nastavením jeho [ `IsRefreshing` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.IsRefreshing/) vlastnost `true`a zobrazením [ `Refreshing` ](https://developer.xamarin.com/api/event/Xamarin.Forms.ListView.Refreshing/) události a (pro scénáře MVVM) volání `Execute` metodu jeho [ `RefreshCommand` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.RefreshCommand/) vlastnost.
+`ListView` Podporuje rozevírací gesta pro aktualizaci svá data. Program musí nastavit [ `IsPullToRefresh` ](xref:Xamarin.Forms.ListView.IsPullToRefreshEnabled) vlastnost `true` aby to bylo. `ListView` Reaguje na gesta rozevírací nastavením jeho [ `IsRefreshing` ](xref:Xamarin.Forms.ListView.IsRefreshing) vlastnost `true`a zobrazením [ `Refreshing` ](xref:Xamarin.Forms.ListView.Refreshing) události a (pro scénáře MVVM) volání `Execute` metodu jeho [ `RefreshCommand` ](xref:Xamarin.Forms.ListView.RefreshCommand) vlastnost.
 
 Kód zpracování `Refresh` události nebo `RefreshCommand` pravděpodobně aktualizace dat zobrazených ve `ListView` a nastaví `IsRefreshing` zpět `false`.
 
@@ -168,16 +168,16 @@ Kód zpracování `Refresh` události nebo `RefreshCommand` pravděpodobně aktu
 
 ## <a name="the-tableview-and-its-intents"></a>Zobrazení Tabulka a její záměrů
 
-Zatímco `ListView` obecně zobrazí více instancí stejného typu, [ `TableView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TableView/) se obvykle zaměřuje na poskytování uživatelského rozhraní pro více vlastností různých typů. Každá položka je přidružena k vlastní [ `Cell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Cell/) odvozené pro zobrazení vlastnosti nebo poskytnutí uživatelského rozhraní na ni.
+Zatímco `ListView` obecně zobrazí více instancí stejného typu, [ `TableView` ](xref:Xamarin.Forms.TableView) se obvykle zaměřuje na poskytování uživatelského rozhraní pro více vlastností různých typů. Každá položka je přidružena k vlastní [ `Cell` ](xref:Xamarin.Forms.Cell) odvozené pro zobrazení vlastnosti nebo poskytnutí uživatelského rozhraní na ni.
 
 ### <a name="properties-and-hierarchies"></a>Vlastnosti a hierarchie
 
 `TableView` definuje pouze čtyři vlastnosti:
 
-- [`Intent`](https://developer.xamarin.com/api/property/Xamarin.Forms.TableView.Intent/) typu [ `TableIntent` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TableIntent/), výčet
-- [`Root`](https://developer.xamarin.com/api/property/Xamarin.Forms.TableView.Root/) typu [ `TableRoot` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TableRoot/), vlastnost obsahu `TableView`
-- [`RowHeight`](https://developer.xamarin.com/api/property/Xamarin.Forms.TableView.RowHeight/) typu `int`
-- [`HasUnevenRows`](https://developer.xamarin.com/api/property/Xamarin.Forms.TableView.HasUnevenRows/) typu `bool`
+- [`Intent`](xref:Xamarin.Forms.TableView.Intent) typu [ `TableIntent` ](xref:Xamarin.Forms.TableIntent), výčet
+- [`Root`](xref:Xamarin.Forms.TableView.Root) typu [ `TableRoot` ](xref:Xamarin.Forms.TableRoot), vlastnost obsahu `TableView`
+- [`RowHeight`](xref:Xamarin.Forms.TableView.RowHeight) typu `int`
+- [`HasUnevenRows`](xref:Xamarin.Forms.TableView.HasUnevenRows) typu `bool`
 
 `TableIntent` Výčet Určuje, jak máte v úmyslu použít `TableView`:
 
@@ -190,13 +190,13 @@ Tito členové také navrhnout využijete například `TableView`.
 
 Několik jiných tříd jsou součástí definice tabulky:
 
-- [`TableSectionBase`](https://developer.xamarin.com/api/type/Xamarin.Forms.TableSectionBase/) je abstraktní třída, která je odvozena z `BindableObject` a definuje [ `Title` ](https://developer.xamarin.com/api/property/Xamarin.Forms.TableSectionBase.Title/) vlastnost
+- [`TableSectionBase`](xref:Xamarin.Forms.TableSectionBase) je abstraktní třída, která je odvozena z `BindableObject` a definuje [ `Title` ](xref:Xamarin.Forms.TableSectionBase.Title) vlastnost
 
-- [`TableSectionBase<T>`](https://developer.xamarin.com/api/type/Xamarin.Forms.TableSectionBase%3CT%3E/) je abstraktní třída, která je odvozena z `TableSectionBase` a implementuje `IList<T>` a `INotifyCollectionChanged`
+- [`TableSectionBase<T>`](xref:Xamarin.Forms.TableSectionBase`1) je abstraktní třída, která je odvozena z `TableSectionBase` a implementuje `IList<T>` a `INotifyCollectionChanged`
 
-- [`TableSection`](https://developer.xamarin.com/api/type/Xamarin.Forms.TableSection/) je odvozen od `TableSectionBase<Cell>`
+- [`TableSection`](xref:Xamarin.Forms.TableSection) je odvozen od `TableSectionBase<Cell>`
 
-- [`TableRoot`](https://developer.xamarin.com/api/type/Xamarin.Forms.TableRoot/) je odvozen od `TableSectionBase<TableSection>`
+- [`TableRoot`](xref:Xamarin.Forms.TableRoot) je odvozen od `TableSectionBase<TableSection>`
 
 Stručně řečeno `TableView` má `Root` vlastnost, která nastavíte, a `TableRoot` objekt, což je kolekce z `TableSection` objektů, z nichž každý je kolekce `Cell` objekty. Má tabulka více oddílů a každý oddíl obsahuje více buněk. Samotnou tabulku může mít název, a každý oddíl může obsahovat název. I když `TableView` využívá `Cell` vy, neprovede využívání `DataTemplate`.
 

@@ -1,87 +1,87 @@
 ---
-title: Vzory podnikové aplikace pomocí elektronická kniha Xamarin.Forms
-description: Tato elektronická kniha obsahuje architektury pokyny pro vývoj přizpůsobitelné, udržovatelného a možností intenzivního testování Xamarin.Forms podnikové aplikace.
+title: Modely podnikové aplikací pomocí Xamarin.Forms e-knihy
+description: Tato elektronická kniha poskytuje informace o architektuře pro vývoj přizpůsobitelných, udržovatelných a testovatelných podnikových aplikací Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 28cfed6c-6175-4223-a8cc-798d40bf0832
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: c401465d8a57abe1d5a1cfaf9ee2616888332ea3
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: ecfe99f66e16eafabc3117036ff065e3a35259c3
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35242160"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994345"
 ---
-# <a name="enterprise-application-patterns-using-xamarinforms-ebook"></a>Vzory podnikové aplikace pomocí elektronická kniha Xamarin.Forms
+# <a name="enterprise-application-patterns-using-xamarinforms-ebook"></a>Modely podnikové aplikací pomocí Xamarin.Forms e-knihy
 
-_Architektury pokyny pro vývoj aplikací enterprise Xamarin.Forms přizpůsobitelné, udržovatelného a možností intenzivního testování_
+_Doprovodné materiály k architektuře pro vývoj přizpůsobitelných, udržovatelných a testovatelných podnikových aplikací Xamarin.Forms_
 
-![](images/cover-sml.png "Vzory podnikové aplikace pomocí elektronická kniha Xamarin.Forms")
+![](images/cover-sml.png "Modely podnikové aplikací pomocí Xamarin.Forms e-knihy")
 
-Tato elektronická kniha obsahuje pokyny o tom, jak implementovat Model-View-ViewModel (modelem MVVM) vzor, vkládání závislostí, navigace, ověření a správa konfigurace, při zachování volné párování. Kromě toho je také pokyny na provádění ověřování a autorizace s IdentityServer, přístup k datům z kontejnerizované mikroslužeb a testování částí.
+Tato elektronická kniha poskytuje pokyny o tom, jak implementovat vzor Model-View-ViewModel (MVVM), injektáž závislostí, navigace, ověřování a správě konfigurace, při zachování volné párování. Kromě toho je také pokyny na ověřování a autorizace s IdentityServer, přístup k datům z kontejnerizované mikroslužby a testování částí.
 
 ## <a name="prefaceprefacemd"></a>[Předmluva](preface.md)
 
-Tato kapitola vysvětluje účel a rozsah v průvodci a který je zaměřen na.
+Tato kapitola popisuje účel a rozsah v průvodci a který je zaměřen na.
 
 ## <a name="introductionintroductionmd"></a>[Úvod](introduction.md)
 
-Vývojáři aplikací enterprise čelí několik výzvy, které můžete změnit architektuře aplikace během vývoje. Proto je důležité k sestavení aplikace, abyste mohli upravit nebo rozšířené v čase. Návrh pro takové přizpůsobivost může být složité, ale obvykle zahrnuje dělení aplikace do diskrétní, volně párované součásti, které lze snadno integrovat společně do aplikace.
+Vývojáři podnikových aplikací pro rozpoznávání tváře několik problémů, které promění architektury aplikace během vývoje. Proto je potřeba vytvořit aplikaci tak, aby ho upravit nebo rozšířit v čase. Navrhování pro tato přizpůsobivost může být obtížné, ale obvykle zahrnuje dělení aplikaci do samostatné, volně komponenty, které je možné snadno integrovat společně do aplikace.
 
 ## <a name="mvvmmvvmmd"></a>[MVVM](mvvm.md)
 
-Vzor Model-View-ViewModel (modelem MVVM) pomáhá řádně jednotlivé obchodní a prezentace logiku aplikace z jeho uživatelské rozhraní (UI). Zachování čistou oddělení mezi aplikační logiku a uživatelské rozhraní pomáhá řešit potíže se množství vývoj a můžete usnadnit aplikace testování, údržbu a momentální. To může také výrazně zlepšit příležitosti opětovné použití kódu a umožňuje vývojářům a Návrháři UI více snadno spolupracovat při vývoji jejich odpovídajících částí aplikace.
+Vzor Model-View-ViewModel (MVVM) pomáhá čistě rozdělte logiku obchodního a prezentační aplikace z uživatelského rozhraní (UI). Udržovat čisté oddělení mezi aplikace logiky a uživatelského rozhraní pomáhá řešit řadu problémy při vývoji a mohou usnadnit aplikaci otestovat, udržovat a vyvíjejí. Můžete také výrazně zlepšit příležitosti opakované použití kódu a umožňuje vývojářům a návrhářům uživatelských rozhraní pro další snadnou spolupráci při vývoji svých příslušné části aplikace.
 
 ## <a name="dependency-injectiondependency-injectionmd"></a>[Injektáž závislostí](dependency-injection.md)
 
-Vkládání závislostí umožňuje oddělení konkrétní typy z kód, který závisí na těchto typů. Obvykle používá kontejner, který obsahuje seznam registrace a mapování mezi rozhraní a abstraktní typy a konkrétní typy, které implementují nebo rozšířit tyto typy.
+Injektáž závislostí umožňuje oddělení konkrétní typy z kódu, který závisí na těchto typů. Obvykle používá, kontejner, který obsahuje seznam registrací a mapování mezi rozhraní a abstraktní typy a konkrétní typy, které implementují nebo rozšířit těchto typů.
 
-Kontejnery vkládání závislostí snížit párování mezi objekty tím, že poskytuje budovy doložit instancí tříd a spravovat své životnosti, v závislosti na konfiguraci kontejneru. Při vytváření objektů kontejneru vloží všechny závislosti, které vyžaduje objekt do ní. Pokud tyto závislosti ještě nevytvořili, kontejner vytvoří a přeloží nejprve závislé.
+Kontejnery injektáž závislostí snížit párování mezi objekty tím, že poskytuje zařízení pro vytvoření instancí třídy a spravovat jejich životního cyklu, v závislosti na konfiguraci kontejneru. Při vytváření objektů kontejneru vkládá všechny závislosti, které vyžaduje objekt do něj. Pokud tyto závislosti ještě nevytvořili, kontejner vytvoří a nejprve řeší jejich závislosti.
 
 ## <a name="communicating-between-loosely-coupled-componentscommunicating-between-loosely-coupled-componentsmd"></a>[Komunikace mezi volně vázanými komponentami](communicating-between-loosely-coupled-components.md)
 
-Platformě Xamarin.Forms [ `MessagingCenter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MessagingCenter/) třída implementuje publikování-přihlášení k odběru vzor, umožňuje na základě zpráv komunikace mezi součástmi, které jsou praktické, že lze propojit pomocí objektu a typu odkazy. Tento mechanismus umožňuje vydavatele a odběratele komunikovat bez nutnosti odkaz na sebe, pomáhá snížit závislosti mezi součástmi, a zároveň součástí nezávisle vývoji a testování.
+Xamarin.Forms [ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter) třída implementuje publikování – vzorec, což založenou na zprávách komunikaci mezi součástmi, které je obtížné propojit pomocí odkazů na objekt a typ odběru. Tento mechanismus umožňuje vydavatelé a odběratelé komunikovat bez nutnosti odkaz k sobě navzájem, což snižuje závislosti mezi komponentami, a zároveň součásti nezávisle na sobě vývoj a testování.
 
 ## <a name="navigationnavigationmd"></a>[Navigace](navigation.md)
 
-Xamarin.Forms zahrnuje podporu pro navigaci na stránce, které obvykle výsledky z interakce uživatele s uživatelským rozhraním, nebo z aplikace, v důsledku vnitřní stav řízené logiku změny. Navigace však může být složité implementace v aplikacích, které používají rozhraní MVVM vzorec.
+Xamarin.Forms zahrnuje podporu pro navigaci na stránce, které obvykle výsledky z interakce uživatele s uživatelským rozhraním, nebo z vlastní aplikaci a v důsledku změn ve vnitřní stav řízené logiku. Navigace však může být složité implementace v aplikacích, které používají vzor MVVM.
 
-Tato kapitola uvede `NavigationService` třídy, která se používá k provádění zobrazení modelu první navigační z modelů zobrazení. Umístění logiku navigace v zobrazení třídy modelu znamená, že logiku může uplatnit prostřednictvím automatizovaných testů. Kromě toho model zobrazení poté můžete implementovat logiku pro ovládací prvek navigace k zajištění, že některé obchodní pravidla jsou vyžadována.
+Tato kapitola uvede `NavigationService` třídu, která se používá k provedení zobrazení první model navigace z modelů zobrazení. Umístění logiky navigace v zobrazení tříd modelu znamená, že logiku lze uplatnit prostřednictvím automatizovaných testů. Navíc model zobrazení pak mohou implementovat logiku pro ovládací prvek navigace k zajištění, že se vynucují určité obchodní pravidla.
 
 ## <a name="validationvalidationmd"></a>[Ověřování](validation.md)
 
-Jakékoli aplikaci, která přijímá vstup od uživatele zkontrolujte, že vstup je neplatný. Bez ověřování může uživatel zadat data, která způsobila selhání aplikace. Ověření vynucuje obchodní pravidla a zabraňuje útočníkovi vložení škodlivá data.
+Jakékoli aplikaci, která přijímá vstup od uživatelů by měly zajistit, že je vstup platný. Bez ověřování může uživatel zadat data, která způsobí, že aplikace selhala. Ověření vynucuje obchodní pravidla a zabrání útočníkovi ve vkládání škodlivá data.
 
-V kontextu systému Model ViewModel Model (modelem MVVM) vzor, zobrazení model nebo model bude často nutné provést ověření dat a signál všechny chyby ověření do zobrazení, takže uživatel může opravte je.
+V rámci Model ViewModel Model (MVVM) vzor, model zobrazení nebo model bude často nutné provést ověření dat a signalizuje, že všechny chyby ověření do zobrazení tak, aby uživatel opravit.
 
 ## <a name="configuration-managementconfiguration-managementmd"></a>[Správa konfigurace](configuration-management.md)
 
-Nastavení umožňují oddělení dat, které konfiguruje chování nástroje aplikace z kódu, což chování změnit bez opětovného aplikace. Nastavení aplikace jsou data, která aplikace vytváří a spravuje a nastavení uživatele jsou přizpůsobitelné nastavení aplikace, která ovlivňují chování aplikace a nevyžadují časté opakované úpravu.
+Nastavení umožňují oddělení dat, které konfiguruje chování nástroje aplikace od kódu, který umožňuje chování změnit bez opětovné sestavení aplikace. Nastavení aplikace jsou data, která vytvoří a postará se aplikace a nastavení uživatele upravitelných nastavení aplikace, které ovlivňují chování aplikace a nevyžadují časté úpravy znovu.
 
 ## <a name="containerized-microservicescontainerized-microservicesmd"></a>[Kontejnerizované mikroslužby](containerized-microservices.md)
 
-Mikroslužeb nabízí přístup k vývoji aplikací a nasazení, který je vhodný flexibility, měřítko a spolehlivost požadavkům moderní cloudové aplikace. Jedním z hlavní výhody mikroslužeb je, aby mohly být upraveným nezávisle, což znamená, že konkrétní funkční oblast je možné rozšířit vyžadující další zpracování napájení nebo síťové šířky pásma pro podporu poptávky, bez zbytečně škálování oblastí aplikace, která k těmto problémům zvýšené poptávky.
+Mikroslužby poskytují přístup k vývoji aplikací a nasazení, která je vhodná k pružnosti, škálovatelnosti a spolehlivosti požadavky na moderní cloudové aplikace. Jedním z hlavních výhod mikroslužeb je, že je možné horizontálním navýšením kapacity nezávisle na sobě, což znamená, že určitou funkční oblast je možné škálovat, který vyžaduje další zpracování napájení nebo sítě šířky pásma pro podporu poptávky, bez zbytečně škálování oblastí aplikace, která nejde zvýšené poptávky.
 
 ## <a name="authentication-and-authorizationauthentication-and-authorizationmd"></a>[Ověřování a autorizace](authentication-and-authorization.md)
 
-Existuje mnoho přístupů k integraci ověřování a autorizace do aplikace na platformě Xamarin.Forms, která komunikuje s webovou aplikaci ASP.NET MVC. Zde ověřování a autorizace se provádí s mikroslužbu kontejnerizované identity, která používá IdentityServer 4. IdentityServer je otevřeným zdrojem OpenID Connect a OAuth 2.0 framework pro ASP.NET Core, který se integruje s ASP.NET Identity Core k provedení ověřování tokenu nosiče.
+Existuje celá řada přístupů k integraci ověřování a autorizace v aplikaci Xamarin.Forms, která komunikuje s webovou aplikaci ASP.NET MVC. Tady ověřování a autorizace jsou prováděny s identity kontejnerizované mikroslužby, který používá IdentityServer 4. IdentityServer je open source platforma OpenID Connect a OAuth 2.0 pro ASP.NET Core, která se integruje s ASP.NET Core Identity provádět ověřování tokenu nosiče.
 
 ## <a name="accessing-remote-dataaccessing-remote-datamd"></a>[Přístup ke vzdáleným datům](accessing-remote-data.md)
 
-Ujistěte se, mnohá moderní řešení založené na webu pomocí webových služeb, hostované webové servery, nabízí funkce pro vzdálené klientské aplikace. Operace, které zpřístupní webové služby tvoří webového rozhraní API a klientské aplikace by měla umět využívají webové rozhraní API bez znalosti, jak jsou implementované dat nebo operace, které zpřístupňuje rozhraní API.
+Ujistěte se, mnohá moderní řešení založeného na webu využívání webových služeb hostovaných webových serverů k zajištění funkce pro vzdálené klientské aplikace. Operace, které zveřejňuje webová služba tvoří webového rozhraní API a klientské aplikace by měl být schopen využívají webové rozhraní API bez znalosti, jak se implementují dat nebo operace, které zveřejňuje rozhraní API.
 
 ## <a name="unit-testingunit-testingmd"></a>[Testování částí](unit-testing.md)
 
-Testování modely a Zobrazit modely z rozhraní MVVM aplikací je stejný jako při testování jiné třídy a můžete použít stejné nástroje a techniky. Existují však některé vzorů, které jsou typické modelu a třídy modelu zobrazení, které můžete využít techniky testování konkrétní jednotka.
+Testování modely a Zobrazit modely z MVVM aplikací je totožné s testováním jiné třídy a můžou používat stejné nástroje a techniky. Existují však některé vzory, které jsou běžně k modelu a tříd modelu zobrazení, které můžete využít techniky testování konkrétní jednotka.
 
 ## <a name="feedback"></a>Zpětná vazba
 
-Tento projekt má web komunity, ve kterém můžete Ptejte se a poskytnout zpětnou vazbu. Komunitní web umístěn na [Githubu](https://github.com/dotnet-architecture/eShopOnContainers). Alternativně může být názor elektronická kniha vám poslali na [ dotnet-architecture-ebooks-feedback@service.microsoft.com ](mailto:dotnet-architecture-ebooks-feedback@service.microsoft.com).
+Tento projekt obsahuje web komunity, ve kterém můžete posílat otázky a poskytovat zpětnou vazbu. Web komunity se nachází na [Githubu](https://github.com/dotnet-architecture/eShopOnContainers). Můžete také zpětnou vazbu o e-kniha může být e-mailem [ dotnet-architecture-ebooks-feedback@service.microsoft.com ](mailto:dotnet-architecture-ebooks-feedback@service.microsoft.com).
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Stáhnout elektronická kniha (2Mb PDF)](https://aka.ms/xamarinpatternsebook)
-- [eShopOnContainers (Githubu) (ukázka)](https://github.com/dotnet-architecture/eShopOnContainers)
+- [Stáhněte si elektronickou knihu (2Mb PDF)](https://aka.ms/xamarinpatternsebook)
+- [aplikaci eShopOnContainers (GitHub) (ukázka)](https://github.com/dotnet-architecture/eShopOnContainers)

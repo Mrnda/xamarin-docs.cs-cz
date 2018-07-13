@@ -6,100 +6,100 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 03/14/2018
-ms.openlocfilehash: 806ed841ec4db037a063bb458e1eed13226e08bd
-ms.sourcegitcommit: 1561c8022c3585655229a869d9ef3510bf83f00a
+ms.openlocfilehash: bf8dfb43115806f28935c6dec0ebd2d6d7bd2cdc
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/27/2018
-ms.locfileid: "32019708"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998235"
 ---
 # <a name="build-process"></a>Proces sestavení
 
 
 ## <a name="overview"></a>Přehled
 
-Proces sestavení Xamarin.Android zodpovídá za připevnění všechno, co společně: [generování `Resource.designer.cs` ](~/android/internals/api-design.md), podpůrné `AndroidAsset`, `AndroidResource`a dalších [akce sestavení](#Build_Actions), generování [Android – obálky s možností](~/android/platform/java-integration/android-callable-wrappers.md)a generování `.apk` pro spuštění na zařízeních s Androidem.
+Proces sestavení Xamarin.Android zodpovídá za všechno dohromady připevnit: [generování `Resource.designer.cs` ](~/android/internals/api-design.md), podpůrné `AndroidAsset`, `AndroidResource`a další [akce sestavení](#Build_Actions), generování [obálek volatelných Android](~/android/platform/java-integration/android-callable-wrappers.md)a generovat `.apk` pro spouštění na zařízeních s Androidem.
 
 
 ## <a name="application-packages"></a>Balíčky aplikací
 
-V obecné podmínky, existují dva typy balíčků aplikace pro Android (`.apk` soubory) kterého může generovat systém Xamarin.Android sestavení: 
+Široký řečeno, existují dva typy balíčků aplikace pro Android (`.apk` soubory), která mohou generovat sestavovacího systému Xamarin.Android: 
 
--   **Verze** sestavení, které jsou plně samostatné a nevyžadují další balíčky provést. Toto jsou balíčky, u nichž by na obchod s aplikacemi. 
+-   **Verze** sestavení, které jsou plně samostatná a nevyžadují další balíčky ke spuštění. Toto jsou balíčky, které by do App storu. 
 
 -   **Ladění** sestavení, které nejsou. 
 
-Toto nastavení není shodou odpovídat MSBuild `Configuration` produkuje balíčku.
+Není shodou okolností odpovídají MSBuild `Configuration` produkuje balíček.
 
 ### <a name="shared-runtime"></a>Sdílený modul Runtime
 
-*Sdílený modul runtime* je pár dalších Android balíčky, které poskytují základní knihovny tříd (`mscorlib.dll`atd) a knihovně Android vazba (`Mono.Android.dll`atd.). Ladění sestavení závisí sdílený modul runtime místo včetně základní knihovny tříd a vazby sestavení v rámci balíčku aplikace pro Android, povolení ladění balíčku, který má být menší.
+*Sdílený modul runtime* je pár dalších balíčky pro Android, které poskytují základní knihovny tříd (`mscorlib.dll`atd) a s Androidem vazby knihovny (`Mono.Android.dll`atd.). Ladění sestavení používá sdílený modul runtime namísto včetně základní knihovny tříd a vazby sestavení v rámci balíčku aplikace pro Android umožňuje ladit balíček bude menší.
 
-Sdílený modul runtime mohou být zakázány v sestavení pro ladění nastavením `$(AndroidUseSharedRuntime)` vlastnost `False`. 
+Sdílený modul runtime může být zakázaná v sestavení pro ladění nastavením `$(AndroidUseSharedRuntime)` vlastnost `False`. 
 
 <a name="Fast_Deployment" />
 
 ### <a name="fast-deployment"></a>Rychlé nasazení
 
-*Rychlé nasazení* spolupracuje s modulem runtime sdílené další zmenšení velikosti balíček aplikace pro Android. K tomu potřeba není sdružování sestavení aplikace v rámci balíčku. Místo toho se zkopírují na cílový prostřednictvím `adb push`. Tento proces urychluje cyklus sestavení/nasadit/debug, protože pokud *pouze* sestavení se změní, balíček není přeinstalovat. Místo toho jsou pouze aktualizované sestavení znovu synchronizované cílového zařízení. 
+*Rychlé nasazení* spolupracuje s sdílený modul runtime pro další zmenšit velikost balíčku aplikace pro Android. To se provádí není sdružování sestavení aplikace v rámci balíčku. Místo toho se zkopírují na cílový prostřednictvím `adb push`. Tento proces zrychluje cyklus sestavení/nasazení/debug, protože pokud *pouze* sestavení se mění, není přeinstalovat balíček. Místo toho jsou pouze aktualizované sestavení znovu synchronizované cílové zařízení. 
 
-Rychlé nasazení se označuje selhání na zařízení, které blokovat `adb` synchronizaci adresáře `/data/data/@PACKAGE_NAME@/files/.__override__`. 
+Rychlé nasazení se označuje selhání na zařízení, která zablokuje `adb` ze synchronizace do adresáře `/data/data/@PACKAGE_NAME@/files/.__override__`. 
 
-Rychlé nasazení je ve výchozím nastavení povolené a mohou být zakázány v ladicí sestavení nastavením `$(EmbedAssembliesIntoApk)` vlastnost `True`.
+Rychlé nasazení je standardně povolená a můžete zakázat v sestavení ladění tím, že nastavíte `$(EmbedAssembliesIntoApk)` vlastnost `True`.
 
 
-## <a name="msbuild-projects"></a>Projektů MSBuild
+## <a name="msbuild-projects"></a>Projekty MSBuild
 
-Proces sestavení Xamarin.Android je založena na MSBuild, což je také použít Visual Studio pro Mac a Visual Studio formát souboru projektu.
-Normálně, nebudou uživatelé muset ručně upravte soubory nástroje MSBuild &ndash; IDE vytvoří plně funkční projekty a aktualizuje všechny změny a podle potřeby automaticky vyvolání sestavení cílů. 
+Proces sestavení Xamarin.Android je založená na MSBuild, který je zároveň formát souboru projektu, který se používá sada Visual Studio pro Mac a Visual Studio.
+Obvykle by uživatelé nebudou muset ručně upravit soubory MSBuild &ndash; rozhraní IDE vytvoří plně funkční projekty a aktualizuje jakékoliv změny a automatickému vyvolávání cílů pro sestavení podle potřeby. 
 
-Pokročilí uživatelé chtít provádět akce, které nejsou podporované grafického uživatelského rozhraní IDE, takže procesu sestavení je přizpůsobitelné přímou úpravou souboru projektu. Tato stránka dokumenty pouze funkce specifické pro Xamarin.Android a přizpůsobení &ndash; je možné s normální MSBuild položky, vlastnosti a cíle, mnoho dalších věcí. 
+Pokročilí uživatelé mohou chtít provádět akce, které nepodporují grafického uživatelského rozhraní IDE, tedy procesu sestavení přizpůsobit úpravou souboru projektu přímo. Tato stránka dokumenty pouze funkce specifické pro Xamarin.Android a přizpůsobení &ndash; mnoho dalších věcí, které je možné s normální MSBuild položky, vlastnosti a cíle. 
 
 <a name="Build_Targets" />
 
-## <a name="build-targets"></a>Sestavení cílů
+## <a name="build-targets"></a>Sestavení cíle
 
-Následující cíle sestavení jsou definovány pro Xamarin.Android projekty:
+Následující cíle sestavení jsou definovány pro projekty Xamarin.Android:
 
--   **Sestavení** &ndash; sestavení balíčku.
+-   **Sestavení** &ndash; sestaví balíček.
 
--   **Vyčištění** &ndash; odebere všechny soubory vygenerovaných procesem sestavení.
+-   **Vyčištění** &ndash; odebere všechny soubory generované záznamem pro proces sestavení.
 
 -   **Nainstalujte** &ndash; nainstaluje balíček do výchozího zařízení nebo virtuální zařízení.
 
--   **Odinstalace** &ndash; Odinstaluje balíček z výchozího zařízení nebo virtuální zařízení.
+-   **Odinstalujte** &ndash; Odinstaluje balíček z výchozího zařízení nebo virtuální zařízení.
 
--   **SignAndroidPackage** &ndash; vytvoří a podepíše balíčku (`.apk`). Použití s `/p:Configuration=Release` ke generování balíčků nezávislý "Verze".
+-   **SignAndroidPackage** &ndash; vytvoří a podepíše balíček (`.apk`). Použití s `/p:Configuration=Release` generovat samostatné balíčky "Verze".
 
--   **UpdateAndroidResources** &ndash; aktualizace `Resource.designer.cs` souboru. Tento cíl nazývá IDE obvykle, když se přidají nové prostředky do projektu.
+-   **UpdateAndroidResources** &ndash; aktualizace `Resource.designer.cs` souboru. Tento cíl je obvykle volána integrovaným vývojovým prostředím, když do projektu přidají nové prostředky.
 
 
 ## <a name="build-properties"></a>Vlastnosti sestavení
 
-Vlastnosti nástroje MSBuild řídí chování cíle. Jsou uvedené v souboru projektu, například **MyApp.csproj**, uvnitř [MSBuild PropertyGroup – element](http://msdn.microsoft.com/en-us/library/t4w159bs.aspx). 
+Vlastnosti nástroje MSBuild řídit chování cílů. V jakém jsou uvedeny v souboru projektu, například **MyApp.csproj**, v rámci [MSBuild PropertyGroup – element](https://docs.microsoft.com/visualstudio/msbuild/propertygroup-element-msbuild).
 
--   **Konfigurace** &ndash; Určuje konfiguraci sestavení, které chcete použít, například "Ladění" nebo "Verze". Vlastnosti konfigurace slouží k určení výchozí hodnoty pro ostatní vlastnosti, které určují chování cíl. Další konfigurace může být vytvořen v rámci vašeho rozhraní IDE.
+-   **Konfigurace** &ndash; Určuje konfiguraci sestavení, který chcete použít, jako je například "Debug" nebo "Vydané verze". Vlastnost konfigurace slouží k určení výchozí hodnoty pro další vlastnosti, které určují chování cíl. Další konfigurace, které mohou být vytvořeny v rámci prostředí (IDE).
 
-    *Ve výchozím nastavení*, `Debug` bude mít za následek konfigurace `Install` a `SignAndroidPackage` cíle vytváření menší Android balíčku, který vyžaduje další soubory a balíčky pracovat.
+    *Ve výchozím nastavení*, `Debug` konfigurace za následek `Install` a `SignAndroidPackage` cíle vytváření menší balíček pro Android, která vyžaduje přítomnost jiných souborů a balíčků pro provoz.
 
-    Výchozí hodnota `Release` bude mít za následek konfigurace `Install` a `SignAndroidPackage` cíle vytváření Android balíčku, který je *samostatné*a mohou být použity bez instalace dalších balíčků nebo soubory.
+    Výchozí hodnota `Release` konfigurace za následek `Install` a `SignAndroidPackage` cíle vytváření balíčku Android, která je *samostatné*a můžou se používat bez instalace dalších balíčků nebo soubory.
 
--   **DebugSymbols** &ndash; logickou hodnotu, která určuje, zda je balíček Android *debuggable*, v kombinaci s `$(DebugType)` vlastnost. Debuggable balíček obsahuje symboly ladění, nastaví `//application/@android:debuggable` atribut `true`a automaticky přidá `INTERNET` oprávnění tak, aby k procesu můžete připojit ladicí program. Aplikace je debuggable Pokud `DebugSymbols` je `True` *a* `DebugType` je buď prázdný řetězec nebo `Full`.
+-   **DebugSymbols** &ndash; logická hodnota, která určuje, zda je balíček Android *laditelný*, v kombinaci s `$(DebugType)` vlastnost. Laditelný balíček obsahuje symboly ladění, nastaví `//application/@android:debuggable` atribut `true`a automaticky přidá `INTERNET` oprávnění tak, aby ladicí program může připojit k procesu. Aplikace je laditelné Pokud `DebugSymbols` je `True` *a* `DebugType` je prázdný řetězec nebo `Full`.
 
--   **DebugType** &ndash; Určuje [typ symboly ladění](http://msdn.microsoft.com/en-us/library/s5c8athz.aspx) ke generování jako součást sestavení, což také ovlivňuje, jestli je aplikace debuggable. Možné hodnoty patří:
+-   **DebugType** &ndash; Určuje [typu symboly ladění](https://docs.microsoft.com/visualstudio/msbuild/csc-task) ke generování jako součást sestavení, která ovlivňuje také, zda je aplikace laditelný. Možné hodnoty:
 
-    - **Úplné**: úplná symboly jsou generovány. Pokud `DebugSymbols` vlastnosti MSBuild je také `True`, pak je debuggable balíčku aplikace.
+    - **Úplné**: úplné symboly jsou generovány. Pokud `DebugSymbols` vlastnost MSBuild je také `True`, pak balíček aplikace není laditelný.
 
-    - **PdbOnly**: "PDB" symboly jsou generovány. Balíček aplikace bude *není* být debuggable.
+    - **PdbOnly**: jsou generovány symboly "PDB". Balíček aplikace se *není* být laditelná.
 
-    Pokud `DebugType` není nastavena nebo je prázdný řetězec, pak se `DebugSymbols` vlastnost určuje, zda je debuggable aplikace.
+    Pokud `DebugType` není nastavena nebo je prázdný řetězec, pak bude `DebugSymbols` vlastnost určuje, zda je aplikace laditelný.
 
 
 ### <a name="install-properties"></a>Vlastnosti instalace
 
-Vlastnosti instalace řídí chování `Install` a `Uninstall` cíle.
+Vlastnosti instalace řídit chování `Install` a `Uninstall` cíle.
 
--   **AdbTarget** &ndash; určuje Android cílové zařízení balíček Android může být nainstalována do nebo odebrat z. Hodnota této vlastnosti je stejná jako [ `adb` – možnost cílové zařízení](http://developer.android.com/tools/help/adb.html#issuingcommands):
+-   **AdbTarget** &ndash; určuje Android cílové zařízení s Androidem balíčku může nainstalovat nebo odebrání. Hodnota této vlastnosti je stejná jako [ `adb` cílové zařízení možnost](http://developer.android.com/tools/help/adb.html#issuingcommands):
 
     ```bash
     # Install package onto emulator via -e
@@ -108,42 +108,42 @@ Vlastnosti instalace řídí chování `Install` a `Uninstall` cíle.
     ```
 
 
-### <a name="packaging-properties"></a>Balení vlastnosti
+### <a name="packaging-properties"></a>Vlastnosti vytváření balíčků
 
-Balení vlastnosti řídit vytváření balíček Android a jsou používány `Install` a `SignAndroidPackage` cíle.
-[Podepisování vlastnosti](#Signing_Properties) jsou také v případě relevantní balení verzi aplikace.
+Vlastnosti vytváření balíčků řídit vytváření balíčku pro Android a jsou používány `Install` a `SignAndroidPackage` cíle.
+[Podepisování vlastnosti](#Signing_Properties) jsou také důležité při balení verzi aplikace.
 
 
--   **AndroidApkSigningAlgorithm** &ndash; hodnotu řetězce, který určuje podpisový algoritmus pro použití s `jarsigner -sigalg`.
+-   **AndroidApkSigningAlgorithm** &ndash; řetězcovou hodnotu, která určuje podpisový algoritmus pro použití s `jarsigner -sigalg`.
 
     Výchozí hodnota je `md5withRSA`.
 
-    Přidat v Xamarin.Android 8.2.
+    Přidáno v Xamarin.Android 8.2.
 
--   **AndroidApplication** &ndash; logická hodnota, která určuje, zda je projekt pro aplikace pro Android (`True`) nebo pro projekt Android knihovny (`False` nebo není k dispozici).
+-   **AndroidApplication** &ndash; logická hodnota určující, zda je projekt pro aplikaci pro Android (`True`) nebo pro projekt knihovny pro Android (`False` nebo není k dispozici).
 
-    Pouze jeden projekt pomocí `<AndroidApplication>True</AndroidApplication>` mohou být přítomné v rámci balíček Android. (Bohužel to není ještě ověřit, což může vést k jemně a zvláštní chyby týkající se systémem Android prostředky.)
+    Pouze jeden projekt s `<AndroidApplication>True</AndroidApplication>` může být k dispozici v rámci balíčku pro Android. (Bohužel to není ještě ověřit, což může vést k chybám zvláštní a současně lákavé týkající se prostředků s Androidem.)
 
--   **AndroidBuildApplicationPackage** &ndash; logická hodnota, která označuje, zda se k vytvoření a podepsání balíčku (.apk). Nastavení této hodnoty na `True` je ekvivalentní k použití [SignAndroidPackage](#Build_Targets) sestavení cíl.
+-   **AndroidBuildApplicationPackage** &ndash; logická hodnota, která označuje, jestli se k vytvoření a podepsání balíčku (.apk). Tuto hodnotu nastavíte na `True` je ekvivalentní k použití [SignAndroidPackage](#Build_Targets) cíl sestavení.
 
     Přidala se podpora pro tuto vlastnost po Xamarin.Android 7.1.
 
     Tato vlastnost je `False` ve výchozím nastavení.
 
--   **AndroidEnableMultiDex** &ndash; vlastnost typu boolean, která určuje, zda podporu více dex se použije v konečné `.apk`.
+-   **AndroidEnableMultiDex** &ndash; vlastnost typu boolean určující, zda podpora Multi-Dex se použijí v konečné `.apk`.
 
-    V Xamarin.Android 5.1 přidala se podpora pro tuto vlastnost.
-
-    Tato vlastnost je `False` ve výchozím nastavení.
-
--   **AndroidEnableSGenConcurrent** &ndash; vlastnost typu boolean, která určuje, zda Mono na [souběžné uvolňování paměti kolekce](http://www.mono-project.com/docs/about-mono/releases/4.8.0/#concurrent-sgen) se použije.
-
-    V Xamarin.Android 7.2 přidala se podpora pro tuto vlastnost.
+    Přidala se podpora pro tuto vlastnost v Xamarin.Android 5.1.
 
     Tato vlastnost je `False` ve výchozím nastavení.
 
--   **AndroidErrorOnCustomJavaObject** &ndash; vlastnost typu boolean, která určuje, zda může implementovat typy `Android.Runtime.IJavaObject` 
-     *bez* také dědění z `Java.Lang.Object` nebo `Java.Lang.Throwable`:
+-   **AndroidEnableSGenConcurrent** &ndash; logická vlastnost, která určuje, zda Mono společnosti [souběžné uvolňování paměti kolekce](http://www.mono-project.com/docs/about-mono/releases/4.8.0/#concurrent-sgen) se použije.
+
+    Přidala se podpora pro tuto vlastnost v Xamarin.Android 7.2.
+
+    Tato vlastnost je `False` ve výchozím nastavení.
+
+-   **AndroidErrorOnCustomJavaObject** &ndash; vlastnost typu boolean určující, zda může implementovat typy `Android.Runtime.IJavaObject` 
+     *bez* také dědí `Java.Lang.Object` nebo `Java.Lang.Throwable`:
 
     ```csharp
     class BadType : IJavaObject {
@@ -157,297 +157,297 @@ Balení vlastnosti řídit vytváření balíček Android a jsou používány `I
     }
     ```
 
-    V případě hodnoty True tyto typy vygenerují chybu XA4212, jinak se budou generovat XA4212 upozornění.
+    V případě hodnoty True, takové typy vygeneruje chybu XA4212, jinak se nevygeneruje XA4212 upozornění.
 
-    V Xamarin.Android 8.1 přidala se podpora pro tuto vlastnost.
+    Přidala se podpora pro tuto vlastnost v Xamarin.Android 8.1.
 
     Tato vlastnost je `True` ve výchozím nastavení.
 
--   **AndroidFastDeploymentType** &ndash; A `:` (dvojtečka) – seznam oddělených hodnot k řízení, jaké typy se dá nasadit na [adresáře rychlého nasazení](#Fast_Deployment) na cílovém zařízení při `$(EmbedAssembliesIntoApk)` Vlastnosti nástroje MSBuild `False`. Pokud prostředek je rychlé nasazení, je *není* vkládat do vygenerovaného `.apk`, můžete urychlit časů nasazení. (Další, který je rychlé nasazená, pak méně často `.apk` musí být znovu sestavit a proces instalace může být rychlejší.) Platné hodnoty patří:
+-   **AndroidFastDeploymentType** &ndash; A `:` (dvojtečka) – seznam oddělených hodnot řídit, jaké typy mohou být nasazeny na [adresář pro rychlé nasazení](#Fast_Deployment) na cílovém zařízení při `$(EmbedAssembliesIntoApk)` Vlastnost MSBuild je `False`. Pokud prostředek je rychlé nasazení, je *není* vložen do vytvořeného `.apk`, které můžou urychlit doba nasazení. (Informace, které je rychlé nasazení pak Čím méně často `.apk` musí znovu sestavit a procesu instalace může být rychlejší.) Platné hodnoty jsou:
 
-    - `Assemblies`: Nasazení sestavení aplikace.
+    - `Assemblies`: Sestavení aplikace nasaďte.
 
-    - `Dexes`: Nasazení `.dex` souborů, Android prostředky a prostředky Android. **Tato hodnota může *pouze* použít na zařízeních se systémem Android 4.4 nebo novější (API-19).**
+    - `Dexes`: Nasazení `.dex` soubory, prostředky Androidu a Assetů Androidu. **Tuto hodnotu můžete *pouze* použít na zařízeních s Androidem 4.4 nebo novější (rozhraní API 19).**
 
     Výchozí hodnota je `Assemblies`.
 
-    **Experimentální**. Přidat v Xamarin.Android 6.1.
+    **Experimentální**. Přidáno v Xamarin.Android 6.1.
 
--   **AndroidApplicationJavaClass** &ndash; úplný název třídy Java používat místě `android.app.Application` při třídy dědí z [Android.App.Application](https://developer.xamarin.com/api/type/Android.App.Application/).
+-   **AndroidApplicationJavaClass** &ndash; úplný název třídy Java používat místo `android.app.Application` když třída dědí z [Android.App.Application](https://developer.xamarin.com/api/type/Android.App.Application/).
 
-    Tato vlastnost se obvykle nastavuje *jiných* vlastnosti, například `$(AndroidEnableMultiDex)` vlastnosti MSBuild.
+    Tato vlastnost je obvykle nastavena *jiných* vlastnosti, například `$(AndroidEnableMultiDex)` vlastnosti Msbuildu.
 
-    Přidat v Xamarin.Android 6.1.
+    Přidáno v Xamarin.Android 6.1.
 
--   **AndroidHttpClientHandlerType** &ndash; výchozí ovládací prvky `System.Net.Http.HttpMessageHandler` implementace, které budou používat `System.Net.Http.HttpClient` výchozí konstruktor. Hodnota je typu sestavení kvalifikovaný název `HttpMessageHandler` podtřídami, vhodné pro použití s [ `System.Type.GetType(string)` ](/dotnet/api/system.type.gettype?view=netcore-2.0#System_Type_GetType_System_String_).
+-   **AndroidHttpClientHandlerType** &ndash; Určuje výchozí nastavení `System.Net.Http.HttpMessageHandler` implementace, které budou používat `System.Net.Http.HttpClient` výchozí konstruktor. Hodnota je název typu kvalifikovaného pro sestavení z `HttpMessageHandler` podtřídy vhodný pro použití s [ `System.Type.GetType(string)` ](/dotnet/api/system.type.gettype?view=netcore-2.0#System_Type_GetType_System_String_).
 
     Výchozí hodnota je `System.Net.Http.HttpClientHandler, System.Net.Http`.
 
-    To může být potlačena za účelem místo toho obsahují `Xamarin.Android.Net.AndroidClientHandler`, který používá rozhraní Android API Java k provedení síťové požadavky. To umožňuje přístup k protokolu TLS 1.2 adresy URL, pokud základní verzi systému Android podporuje TLS 1.2.  
-    Pouze Android 5.0 nebo novější spolehlivě poskytuje podporu protokolu TLS 1.2 prostřednictvím Java.
+    To může být potlačena za účelem místo toho obsahují `Xamarin.Android.Net.AndroidClientHandler`, který používá rozhraní Android API Java k provedení síťové požadavky. Díky přístupu k protokolu TLS 1.2 adresy URL v případě základní verzi systému Android podporuje TLS 1.2.  
+    Jenom Android 5.0 nebo novější spolehlivě poskytne podporu protokolu TLS 1.2 pomocí Javy.
 
-    *Poznámka:*: na Android verze starší než 5.0, se vyžaduje podpora protokolu TLS 1.2 Pokud *nebo* Pokud je to nutné podpora protokolu TLS 1.2 `System.Net.WebClient` a související rozhraní API, pak `$(AndroidTlsProvider)` by měl být použit.
+    *Poznámka:*: u verze Androidu starší než 5.0, se vyžaduje podpora protokolu TLS 1.2 Pokud *nebo* Pokud je požadován spolu s podpora protokolu TLS 1.2 `System.Net.WebClient` a souvisejících rozhraní API, pak `$(AndroidTlsProvider)` by měla sloužit.
 
-    *Poznámka:*: podpora pro tuto vlastnost funguje tak, že nastavení [ `XA_HTTP_CLIENT_HANDLER_TYPE` proměnnou prostředí](~/android/deploy-test/environment.md).
-    A `$XA_HTTP_CLIENT_HANDLER_TYPE` nalezena hodnota v souboru pomocí akce sestavení `@(AndroidEnvironment)` bude mít přednost.
+    *Poznámka:*: podpora pro tuto vlastnost funguje tak, že nastavíte [ `XA_HTTP_CLIENT_HANDLER_TYPE` proměnnou prostředí](~/android/deploy-test/environment.md).
+    A `$XA_HTTP_CLIENT_HANDLER_TYPE` hodnota nalezena v souboru pomocí akce sestavení `@(AndroidEnvironment)` bude mít přednost.
 
-    Přidat v Xamarin.Android 6.1.
+    Přidáno v Xamarin.Android 6.1.
 
--   **AndroidTlsProvider** &ndash; hodnotu řetězce, který určuje TLS poskytovatele, kterého má být použit v aplikaci. Možné hodnoty jsou:
+-   **AndroidTlsProvider** &ndash; řetězcovou hodnotu, která určuje, který zprostředkovatel TLS slouží v aplikaci. Možné hodnoty jsou:
 
-    - `btls`: Použijte [přítomnost SSL](https://boringssl.googlesource.com/boringssl) pro TLS komunikaci s [HttpWebRequest](https://msdn.microsoft.com/en-us/library/system.net.httpwebrequest.aspx).
-      To umožňuje použití protokolu TLS 1.2 ve všech verzích systému Android.
+    - `btls`: Použijte v případě [přítomnost SSL](https://boringssl.googlesource.com/boringssl) pro komunikaci TLS s [HttpWebRequest](https://msdn.microsoft.com/en-us/library/system.net.httpwebrequest.aspx).
+      To umožňuje použití protokolu TLS 1.2 ve všech verzích.
 
-    - `legacy`: Pomocí historických spravované implementaci SSL pro interakci sítě. To *nemá* podporovala TLS 1.2.
+    - `legacy`: Použijte historických spravovanou implementaci protokolu SSL pro interakci sítě. To *nemá* podporovala TLS 1.2.
 
-    - `default`: Povolit *Mono* vybrat výchozí poskytovatel TLS.
-      Jde o ekvivalent `legacy`, i v Xamarin.Android 7.3.  
-      *Poznámka:*: Tato hodnota je nepravděpodobné, že se zobrazí v `.csproj` hodnoty, jako IDE "Výchozí" hodnota má za následek *odebrání* z `$(AndroidTlsProvider)` vlastnost.
+    - `default`: Povolit *Mono* zvolit výchozí zprostředkovatel TLS.
+      Jedná se o ekvivalent k `legacy`, i v Xamarin.Android 7.3.  
+      *Poznámka:*: Tato hodnota je nepravděpodobné, že se zobrazí v `.csproj` hodnoty, jako rozhraní IDE "Výchozí" hodnota za následek *odebrání* z `$(AndroidTlsProvider)` vlastnost.
 
-    - Nastavení, v prázdný řetězec: V Xamarin.Android 7.1, jde o ekvivalent `legacy`.  
+    - Zrušit nastavení nebo na prázdný řetězec: V Xamarin.Android 7.1, jedná se o ekvivalent k `legacy`.  
       V Xamarin.Android 7.3, jde o ekvivalent `btls`.
 
     Výchozí hodnota je prázdný řetězec.
 
-    Přidat v Xamarin.Android 7.1.
+    Přidáno v Xamarin.Android 7.1.
 
--   **AndroidLinkMode** &ndash; Určuje, jaký typ [propojení](~/android/deploy-test/linker.md) je třeba provést na sestavení, které jsou obsažené v balíček Android. Použít pouze v projektech aplikace pro Android. Výchozí hodnota je *SdkOnly*. Platné hodnoty jsou:
+-   **AndroidLinkMode** &ndash; Určuje, jaký typ [propojení](~/android/deploy-test/linker.md) je třeba provést na sestaveních obsažených v rámci balíčku pro Android. Použít jenom v projektech aplikace pro Android. Výchozí hodnota je *SdkOnly*. Platné hodnoty jsou:
 
     - **Žádný**: žádné propojení se pokusí vytvořit.
 
-    - **SdkOnly**: propojování bude provést na pouze, knihovny základní třída není uživatele sestavení.
+    - **SdkOnly**: propojení se provedla pouze, knihovny základních tříd nejsou uživatele sestavení.
 
-    - **Úplné**: propojení se provede na základní třídy knihovny a sestavení uživatele. **Poznámka:** pomocí `AndroidLinkMode` hodnotu *úplné* často vede porušený aplikace, zejména v případě, že se používá reflexe. Pokud jste *skutečně* vědět, jaké úlohy.
+    - **Úplné**: propojení se provede na knihovny základních tříd a uživatelská sestavení. **Poznámka:** použití `AndroidLinkMode` hodnotu *úplné* často vede přerušeno aplikace, zejména pokud se používá reflexi. Pokud jste *skutečně* vědět, co děláte.
 
     ```xml
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
     ```
 
--   **AndroidLinkSkip** &ndash; určuje oddělený středníkem (`;`) seznam sestavení názvů bez přípon souborů, sestavení, která nemá být propojena. Použít pouze v rámci aplikace pro Android projekty.
+-   **AndroidLinkSkip** &ndash; určuje oddělený středníkem (`;`) seznam názvů sestavení bez přípony souborů, sestavení, které by neměly být propojeny. Použít pouze v projektech aplikace pro Android.
 
     ```xml
     <AndroidLinkSkip>Assembly1;Assembly2</AndroidLinkSkip>
     ```
 
--   **AndroidManagedSymbols** &ndash; vlastnost typu boolean ovládací prvky zda pořadí body jsou generovány, aby název a řádek číslo informací o souboru lze extrahovat z `Release` trasování zásobníku.
+-   **AndroidManagedSymbols** &ndash; vlastnost typu boolean, ovládací prvky, zda body sekvence jsou generovány tak, aby soubor název a informace čísla řádku může být extrahována z `Release` trasování zásobníku.
 
-    Přidat v Xamarin.Android 6.1.
+    Přidáno v Xamarin.Android 6.1.
 
--   **AndroidManifest** &ndash; Určuje název souboru má použít jako šablonu pro aplikace [ `AndroidManifest.xml` ](~/android/platform/android-manifest.md).
-    Během vytváření sestavení, budou všechny potřebné hodnoty sloučena do k vytvoření skutečnou `AndroidManifest.xml`.
+-   **AndroidManifest** &ndash; Určuje název souboru má použít jako šablony pro aplikace [ `AndroidManifest.xml` ](~/android/platform/android-manifest.md).
+    Během sestavení, všechny potřebné hodnoty se sloučí do vytvoří skutečné `AndroidManifest.xml`.
     `$(AndroidManifest)` Musí obsahovat název balíčku v `/manifest/@package` atribut.
 
--   **AndroidSdkBuildToolsVersion** &ndash; nástroje sestavení balíček Android SDK poskytuje **aapt** a **zipalign** nástroje, mimo jiné. Více různých verzích balíček nástroje sestavení může být nainstalována současně. Balíček nástroje sestavení zvolené pro balení se provádí kontrola a používáte verzi "upřednostňované" nástroje sestavení, pokud je k dispozici; Pokud je "upřednostňované" verze *není* k dispozici, pak se používá nejvyšší balíček verzí nainstalované nástroje sestavení.
+-   **AndroidSdkBuildToolsVersion** &ndash; poskytuje nástroje pro vytváření balíčku sada SDK pro Android **aapt** a **zipalign** nástroje, mimo jiné. Současně může být nainstalováno více verzí různých balíčku nástroje sestavení. Balíček nástroje sestavení pro balení se provádí vyhledávání a použití "upřednostňované" nástroje sestavení verze, pokud je k dispozici; Pokud je "upřednostňované" verze *není* k dispozici, pak se používá nejvyšší verze nainstalovaných nástrojů na vytváření balíčku.
 
-    `$(AndroidSdkBuildToolsVersion)` Vlastnosti MSBuild obsahuje verzi upřednostňované nástroje sestavení. Sestavení systému Xamarin.Android poskytuje výchozí hodnotu v `Xamarin.Android.Common.targets`, a výchozí hodnota může být přepsána v souboru projektu zvolte alternativní nástroje sestavení verze, pokud (například) nejnovější aapt selhává se při předchozí verze aapt je zřejmé, fungovat.
+    `$(AndroidSdkBuildToolsVersion)` Vlastnost MSBuild obsahuje verzi upřednostňované nástroje sestavení. Sestavení systému Xamarin.Android poskytuje výchozí hodnotu v `Xamarin.Android.Common.targets`, a výchozí hodnota může být přepsána v rámci souboru projektu zvolte verzi alternativní nástroje sestavení, pokud (například) nejnovější aapt dochází k chybám při předchozí verze aapt je známo, fungovat.
 
--   **AndroidSupportedAbis** &ndash; ve vlastnosti string, který obsahuje středníkem (`;`)-oddělený seznam bis , které mají být zahrnuty do `.apk`.
+-   **AndroidSupportedAbis** &ndash; vlastnost řetězce, který obsahuje středníkem (`;`) – oddělený seznam instrukce ABI, které mají být zahrnuty do `.apk`.
 
-    Podporované hodnoty:
+    Mezi podporované hodnoty patří:
 
     -   `armeabi`
     -   `armeabi-v7a`
     -   `x86`
-    -   `arm64-v8a`: Vyžaduje Xamarin.Android 5.1 a novějším.
-    -   `x86_64`: Vyžaduje Xamarin.Android 5.1 a novějším.
+    -   `arm64-v8a`: Vyžaduje Xamarin.Android 5.1 a novější.
+    -   `x86_64`: Vyžaduje Xamarin.Android 5.1 a novější.
 
--   **AndroidUseSharedRuntime** &ndash; určuje vlastnost typu boolean, který je jestli *sdílený modul runtime balíčky* jsou potřeba ke spuštění aplikace na cílovém zařízení. Balíček aplikace pro menší, urychlení proces vytvoření a nasazení balíčku, výsledkem je rychlejší cyklus sestavení/nasadit/debug vyřízení spoléhat na balíčky sdílený modul runtime umožňuje.
+-   **AndroidUseSharedRuntime** &ndash; logická vlastnost, která určuje, zda *sdílet balíčky runtime* jsou potřeba ke spuštění aplikace na cílovém zařízení. Spoléhání se na balíčky sdílený modul runtime umožňuje balíček aplikace do menších, zrychlení procesu vytváření a nasazování balíčků, výsledkem je rychlejší cyklus obrátky sestavení/nasazení/debug.
 
-    Tato vlastnost by měla být `True` pro sestavení pro ladění a `False` pro projekty verze.
+    Tato vlastnost by měla být `True` pro sestavení pro ladění a `False` pro uvolnění projektů.
 
--   **AotAssemblies** &ndash; vlastnost typu boolean, která určuje, zda bude sestavení Ahead předčasné zkompilovat do nativního kódu a součástí `.apk`.
+-   **AotAssemblies** &ndash; vlastnost typu boolean určující, zda budou sestavení Ahead-of-Time kompilovány do nativního kódu a součástí `.apk`.
 
-    V Xamarin.Android 5.1 přidala se podpora pro tuto vlastnost.
-
-    Tato vlastnost je `False` ve výchozím nastavení.
-
--   **EmbedAssembliesIntoApk** &ndash; vlastnost typu boolean, která určuje, zda sestavení aplikace měly by být zahrnuty do balíčku aplikace.
-
-    Tato vlastnost by měla být `True` pro verze sestavení a `False` pro sestavení pro ladění. Ho *může* musí být `True` u sestavení ladicí verze, pokud rychlého nasazení nepodporuje cílové zařízení.
-
-    Pokud je tato vlastnost `False`, pak se `$(AndroidFastDeploymentType)` MSBuild vlastnost také určuje, co budou vloženy do `.apk`, který může mít vliv nasazení a sestavte znovu časy.
-
--   **EnableLLVM** &ndash; vlastnost typu boolean, který určuje, zda LLVM se použije při Ahead dobu kompilace sestavení do nativního kódu.
-
-    V Xamarin.Android 5.1 přidala se podpora pro tuto vlastnost.
+    Přidala se podpora pro tuto vlastnost v Xamarin.Android 5.1.
 
     Tato vlastnost je `False` ve výchozím nastavení.
 
-    Tato vlastnost se ignoruje, pokud `$(AotAssemblies)` vlastnosti MSBuild je `True`.
+-   **EmbedAssembliesIntoApk** &ndash; vlastnost typu boolean určující, zda sestavení aplikace má být vložen do balíčku aplikace.
 
--   **EnableProguard** &ndash; vlastnost typu boolean, která určuje, jestli [proguard](http://developer.android.com/tools/help/proguard.html) se spouští jako součást procesu balení propojení kódu v jazyce Java.
+    Tato vlastnost by měla být `True` pro buildy vydaných verzí a `False` pro sestavení pro ladění. To *může* musí být `True` v sestavení ladění, pokud rychlé nasazení nepodporuje cílové zařízení.
 
-    V Xamarin.Android 5.1 přidala se podpora pro tuto vlastnost.
+    Pokud je tato vlastnost `False`, pak bude `$(AndroidFastDeploymentType)` vlastnost MSBuild také určuje, co bude vložena do `.apk`, což může ovlivnit nasazení a znovu sestavte časy.
+
+-   **EnableLLVM** &ndash; vlastnost typu boolean určující, zda kompilátor LLVM se použije při Ahead of Time kompilace sestavení do nativního kódu.
+
+    Přidala se podpora pro tuto vlastnost v Xamarin.Android 5.1.
 
     Tato vlastnost je `False` ve výchozím nastavení.
 
-    Když `True`, [ProguardConfiguration](#ProguardConfiguration) soubory se použije k řízení `proguard` provádění.
+    Tato vlastnost se ignoruje, pokud `$(AotAssemblies)` je vlastnost MSBuild `True`.
+
+-   **EnableProguard** &ndash; vlastnost typu boolean určující, zda [proguard](http://developer.android.com/tools/help/proguard.html) je spuštěn jako součást procesu vytváření balíčků k propojení kódu v Javě.
+
+    Přidala se podpora pro tuto vlastnost v Xamarin.Android 5.1.
+
+    Tato vlastnost je `False` ve výchozím nastavení.
+
+    Když `True`, [ProguardConfiguration](#ProguardConfiguration) soubory se použije k řízení `proguard` spuštění.
 
 -   **JavaMaximumHeapSize** &ndash; Určuje hodnotu **java** 
-     `-Xmx` hodnota parametru pro použití při vytváření `.dex` souboru jako součást procesu vytváření balíčků. Pokud není zadaný, pak se `-Xmx` možnost není k dispozici na **java**.
+     `-Xmx` hodnota parametru pro použití při vytváření `.dex` souboru jako součást procesu vytváření balíčků. Pokud není zadán, pak bude `-Xmx` možnost není k dispozici na **java**.
 
-    Určení Tato vlastnost je nutné Pokud [ `_CompileDex` cíl vrátí `java.lang.OutOfMemoryError` ](https://bugzilla.xamarin.com/show_bug.cgi?id=18327).
+    Určení této vlastnosti je nezbytné Pokud [ `_CompileDex` cílit vyvolá výjimku `java.lang.OutOfMemoryError` ](https://bugzilla.xamarin.com/show_bug.cgi?id=18327).
 
     ```xml
     <JavaMaximumHeapSize>1G</JavaMaximumHeapSize>
     ```
 
--   **JavaOptions** &ndash; Určuje další možnosti příkazového řádku, které mají být předány **java** při sestavování `.dex` souboru.
+-   **JavaOptions** &ndash; Určuje další možnosti příkazového řádku k předání do **java** při sestavování `.dex` souboru.
 
--   **MandroidI18n** &ndash; Určuje podporu internacionalizace součástí aplikace, jako je například kolace a řazení tabulky. Hodnota je seznam oddělený čárkami nebo středníkem jednoho nebo více z následujících hodnot velká a malá písmena:
+-   **MandroidI18n** &ndash; určuje podpory iternacionalizace součástí aplikace, jako je například řazení a řazení tabulek. Hodnota je čárkami nebo středníkem oddělený seznam jednoho nebo více z následujících hodnot velká a malá písmena:
 
-    -   **Žádný**: zahrnovat žádné další kódování.
+    -   **Žádný**: obsahovat žádné další kódování.
 
     -   **Všechny**: zahrnují všechny dostupné kódování.
 
-    -   **CJK**: kódování zahrnují čínština, japonština nebo korejština, jako *japonské (EUC)* \[šif jp, CP51932\], *japonština (Shift-JIS)* \[ Posunutí ISO-2022-jp,\_jis, CP932\], *japonské (JIS)* \[CP50220\], *zjednodušená čínština (GB2312)* \[gb2312, CP936\], *korejština (UHC)* \[lokálně\_c\_5601-1987 CP949\], *korejština (EUC)* \[euc-kr, CP51949\], *tradiční čínština (Big5)* \[big5, CP950\], a *zjednodušená čínština (GB18030)* \[ GB18030, CP54936\].
+    -   **CJK**: zahrnují čínštině, japonská a Korejská kódování, jako *japonština (EUC)* \[enc-jp, CP51932\], *japonština (Shift-JIS)* \[ ISO-2022-jp, shift\_jis CP932\], *japonština (JIS)* \[CP50220\], *zjednodušená čínština (GB2312)* \[gb2312 CP936\], *korejština (UHC)* \[lokálně\_c\_5601-1987 CP949\], *korejština (EUC)* \[euc-kr, CP51949\], *tradiční čínština (Big5)* \[big5 CP950\], a *zjednodušená čínština (GB18030)* \[ GB18030, CP54936\].
 
-    -   **MidEast**: zahrnují střední-východní kódování jako *turečtina (Windows)* \[iso-8859-9, CP1254\], *Hebrejština (Windows)* \[ Windows-., CP1255 1255\], *Arabština (Windows)* \[windows-1256, CP1256\], *Arabština (ISO)* \[iso-8859-6, CP28596\], *Hebrejština (ISO)* \[iso-8859-8, CP28598\], *Latin 5 (ISO)* \[iso-8859-9, CP28599\]a *Hebrejština (Iso alternativní)* \[iso-8859-8, CP38598\].
+    -   **MidEast**: zahrnují Střední-východ kódování, jako *turečtina (Windows)* \[iso-8859-9, CP1254\], *Hebrejština (Windows)* \[ Windows-., CP1255 1255\], *Arabština (Windows)* \[windows-1256, CP1256\], *Arabština (ISO)* \[iso-8859-6, CP28596\], *Hebrejština (ISO)* \[iso-8859-8, CP28598\], *Latin 5 (ISO)* \[iso-8859-9, CP28599\]a *Hebrejština (Iso alternativní)* \[iso-8859-8, CP38598\].
 
-    -   **Další**: obsahují další kódování, například *cyrilice (Windows)* \[CP1251\], *Baltského (Windows)* \[iso-8859-4, CP1257\], *Vietnamštině (Windows)* \[CP1258\], *cyrilice (KOI8-R)* \[koi8-r, CP1251\], *ukrajinská (KOI8-U)*  \[koi8-u, CP1251\], *Baltského (ISO)* \[iso-8859-4, CP1257\], *cyrilici (ISO)* \[iso-8859-5, CP1251\], *ISCII Davenagari* \[x-iscii-de, CP57002\], *ISCII bengálština* \[x-iscii se, CP57003 \], *ISCII Tamilské* \[x-iscii tových, CP57004\], *ISCII telugština* \[x-iscii-te CP57005\], *ISCII ásámština* \[x-iscii jako, CP57006\], *ISCII Uríské* \[x-iscii nebo, CP57007\], *ISCII Kannadské* \[x-iscii-ka CP57008\], *ISCII Malajálamské* \[x-iscii-ma CP57009\], *ISCII Gudžarátské* \[x-iscii-gu CP57010\], *ISCII paňdžábština* \[x-iscii-pa CP57011\], a *thajštině (Windows)*  \[CP874\].
+    -   **Další**: obsahují jiné kódování, například *cyrilice (Windows)* \[CP1251\], *Pobaltské jazyky (Windows)* \[iso-8859-4 CP1257\], *Vietnamština (Windows)* \[CP1258\], *cyrilice (KOI8-R)* \[koi8-r, CP1251\], *ukrajinština (KOI8-U)*  \[koi8-u, CP1251\], *Pobaltské jazyky (ISO)* \[iso-8859-4 CP1257\], *cyrilice (ISO)* \[iso-8859-5, CP1251\], *ISCII Davenagari* \[x-iscii-de, CP57002\], *ISCII – bengálština* \[x-iscii-be, CP57003 \], *ISCII-tamilština* \[x-iscii – ta, CP57004\], *ISCII-telugština* \[x-iscii-te CP57005\], *ISCII-ásámština* \[x-iscii jako CP57006\], *ISCII-urijština* \[x-iscii nebo, CP57007\], *ISCII Kannadština* \[x-iscii-ka CP57008\], *ISCII-malajalámština* \[x-iscii-ma CP57009\], *ISCII Gudžarádština* \[x-iscii-gu CP57010\], *ISCII-pandžábština* \[x-iscii-pa, CP57011\], a *thajština (Windows)*  \[CP874\].
 
     -   **Výjimečných**: zahrnují výjimečných kódování jako *IBM EBCDIC (turečtina)* \[CP1026\], *IBM EBCDIC (otevřete Latin 1 systémy)* \[CP1047\], *IBM EBCDIC (USA a Kanada s Euro)* \[CP1140\], *IBM EBCDIC (Německo s Euro)* \[CP1141\], *IBM EBCDIC (Dánsko/Norsko s Euro)* \[CP1142\], *IBM EBCDIC (Finsko/Švédsko s Euro)* \[CP1143\], *IBM EBCDIC (Itálie s Euro)* \[CP1144\], *IBM EBCDIC (Latinská Amerika a Španělsko s Euro)* \[CP1145\], *IBM EBCDIC (Spojené Království s Euro)* \[CP1146\], *IBM EBCDIC (Francie s Euro)* \[CP1147\], *IBM EBCDIC (mezinárodní s Euro)*  \[CP1148\], *IBM EBCDIC (Island s Euro)* \[CP1149\], *IBM EBCDIC (Německo)* \[ CP20273\], *IBM EBCDIC (Dánsko/Norsko)* \[CP20277\], *IBM EBCDIC (Finsko/Švédsko)* \[CP20278\], *IBM EBCDIC (Itálie)* \[CP20280\], *IBM EBCDIC (Latinská Amerika a Španělsko)* \[CP20284\], *IBM EBCDIC (Česká republika)* \[CP20285\], *IBM EBCDIC (Extended japonské Katakana)* \[CP20290\], *IBM EBCDIC (Francie)* \[CP20297\], *IBM EBCDIC (Arabské)* \[CP20420\], *IBM EBCDIC (hebrejština)* \[CP20424\], *IBM EBCDIC (Island)* \[ CP20871\], *IBM EBCDIC (cyrilice - srbština, bulharština)* \[CP21025\], *IBM EBCDIC (USA a Kanada)* \[ CP37\], *IBM EBCDIC (mezinárodní)* \[CP500\], *Arabština (ASMO 708)* \[CP708\], *Stření Evropa (DOS)* \[CP852\], *cyrilice (DOS)* \[CP855\], *turečtina (DOS)* \[CP857\], *západní Evropa (DOS S Euro)* \[CP858\], *hebrejština (DOS)* \[CP862\], *arabština (DOS)* \[CP864\], *ruština (DOS)* \[CP866\], *řečtina (DOS)* \[CP869\], *IBM EBCDIC (latina 2)* \[CP870\], and *IBM EBCDIC (řečtina)* \[CP875\].
 
-    -   **Západní**: zahrnují západní kódování, jako *západní Evropa (Mac)* \[macintosh, CP10000\], *islandském (Mac)* \[x-mac islandském CP10079\], *Středoevropské jazyky (Windows)* \[iso 8859-2, CP1250\], *západní Evropa (Windows)* \[iso-8859-1 CP1252\], *Řečtina (Windows)* \[iso 8859-7, CP1253\], *centrální jazyky (ISO)* \[iso 8859-2, CP28592\], *Latin 3 (ISO)* \[iso-8859-3, CP28593\], *Řečtina (ISO)* \[iso 8859-7, CP28597\], *Latin 9 (ISO)*  \[iso-8859-15, CP28605\], *OEM Spojených států* \[CP437\], *západní Evropského (DOS)* \[CP850\], *portugalština (DOS)* \[CP860\], *islandském (DOS)* \[CP861\],  *Francouzština (Kanada) (DOS)* \[CP863\], a *severské (DOS)* \[CP865\].
+    -   **Západní**: západní zahrnují kódování, jako *Západoevropské jazyky (Mac)* \[macintosh CP10000\], *Islandština (Mac)* \[x-mac islandština CP10079\], *Středoevropské jazyky (Windows)* \[iso-8859-2, CP1250\], *Západoevropské jazyky (Windows)* \[iso-8859-1 CP1252\], *Řečtina (Windows)* \[iso-8859-7, CP1253\], *centrální jazyky (ISO)* \[iso-8859-2, CP28592\], *Latinky 3 (ISO)* \[iso-8859-3 CP28593\], *Řečtina (ISO)* \[iso-8859-7, CP28597\], *latinky 9 (ISO)*  \[iso-8859-15, CP28605\], *OEM-USA* \[CP437\], *západní Evropského (DOS)* \[CP850\], *portugalština (DOS)* \[CP860\], *Islandština (DOS)* \[CP861\],  *Kanadská francouzština (DOS)* \[CP863\], a *severské jazyky (DOS)* \[CP865\].
 
 
     ```xml
     <MandroidI18n>West</MandroidI18n>
     ```
 
--   **MonoSymbolArchive** &ndash; vlastnost typu boolean, která určuje, zda `.mSYM` artefakty jsou vytvořené pro pozdější použití s `mono-symbolicate`, k extrakci &ldquo;skutečné&rdquo; a název souboru a řádku číslo informací z Verze trasování zásobníku.
+-   **MonoSymbolArchive** &ndash; logická vlastnost, která určuje, zda `.mSYM` artefakty jsou vytvořeny pro pozdější použití s `mono-symbolicate`, pro extrakci &ldquo;skutečné&rdquo; název souboru a řádku číslo informací z Verze trasování zásobníku.
 
-    Toto je True ve výchozím nastavení pro &ldquo;verze&rdquo; aplikace, které mají povolené symboly ladění: `$(EmbedAssembliesIntoApk)` má hodnotu True, `$(DebugSymbols)` má hodnotu True, a `$(Optimize)` má hodnotu True.
+    To je PRAVDA ve výchozím nastavení pro &ldquo;vydání&rdquo; aplikace, které mají povolené symboly ladění: `$(EmbedAssembliesIntoApk)` má hodnotu True, `$(DebugSymbols)` má hodnotu True, a `$(Optimize)` má hodnotu True.
 
-    Přidat v Xamarin.Android 7.1.
+    Přidáno v Xamarin.Android 7.1.
 
--   **AndroidVersionCodePattern** &ndash; ve vlastnosti string, který umožňuje vývojáři přizpůsobit `versionCode` v manifestu.
-    V tématu [vytváření kód verze pro APK](~/android/deploy-test/building-apps/abi-specific-apks.md) informace týkající se rozhodování `versionCode`.
+-   **AndroidVersionCodePattern** &ndash; vlastnosti typu string, který umožňuje vývojářům pro přizpůsobení `versionCode` v manifestu.
+    V tématu [vytváření kód verze pro APK](~/android/deploy-test/building-apps/abi-specific-apks.md) informace o tom `versionCode`.
     
-    Některé příklady, pokud `abi` je `armeabi` a `versionCode` v manifestu je `123`, `{abi}{versionCode}` vytvoří versionCode z `1123` při `$(AndroidCreatePackagePerAbi)` má hodnotu True, v opačném případě bude vytvoření hodnoty 123.
-    Pokud `abi` je `x86_64` a `versionCode` v manifestu je `44`. Vznikne tak `544` při `$(AndroidCreatePackagePerAbi)` má hodnotu True, v opačném případě bude vytvoření hodnoty `44`.
+    Některé příklady, pokud `abi` je `armeabi` a `versionCode` v manifestu je `123`, `{abi}{versionCode}` vytvoří versionCode z `1123` při `$(AndroidCreatePackagePerAbi)` má hodnotu True, jinak bude výsledkem hodnota 123.
+    Pokud `abi` je `x86_64` a `versionCode` v manifestu je `44`. Vznikne `544` při `$(AndroidCreatePackagePerAbi)` má hodnotu True, jinak bude výsledkem hodnota z `44`.
 
-    Pokud jsme obsahovat left odsazení řetězec formátu `{abi}{versionCode:0000}`, by vytvořit `50044` vzhledem k tomu, že jsme nezbývají odsazení `versionCode` s `0`. Alternativně můžete použít desetinné odsazení, jako `{abi}{versionCode:D4}` která dělá to stejné jako v předchozím příkladu.
+    Pokud zahrnujeme vlevo vyplňující řetězec formátu `{abi}{versionCode:0000}`, byste mohli vytvořit `50044` protože jsme se odsazení `versionCode` s `0`. Alternativně můžete použít desetinné čárky, jako například odsazení `{abi}{versionCode:D4}` která dělá to samé jako v předchozím příkladu.
 
-    Pouze '0' a 'DirectX odsazení formátu řetězce jsou podporovány, protože hodnota musí být celé číslo.
+    Pouze "0" a Dx formát řetězce jsou podporovány, protože hodnota odsazení musí být celé číslo.
     
-    Předem definované klíčové položky
+    Předem definované klíčové body
 
-    -   **ABI** &ndash; vloží abi cílové aplikace  
+    -   **ABI** &ndash; vloží cílové abi pro aplikaci  
         -   1 &ndash; `armeabi`
         -   2 &ndash; `armeabi-v7a`
         -   3 &ndash; `x86`
         -   4 &ndash; `arm64-v8a`
         -   5 &ndash; `x86_64`
 
-    -   **minSDK** &ndash; vloží minimální podporovaná hodnota Sdk z `AndroidManifest.xml` nebo `11` Pokud žádný je definována.
+    -   **minSDK** &ndash; vloží minimální podporovaná hodnota sady Sdk z `AndroidManifest.xml` nebo `11` Pokud není definován.  
 
-    -   **versionCode** &ndash; používá verzi kód přímo z `Properties\AndroidManifest.xml`. 
+    -   **versionCode** &ndash; používá verzi kódu přímo z `Properties\AndroidManifest.xml`. 
 
-    Můžete definovat vlastní položky pomocí `$(AndroidVersionCodeProperties)` vlastnosti (definovaná Další).
+    Můžete definovat vlastní položky pomocí `$(AndroidVersionCodeProperties)` vlastnosti (definované dále).
 
-    Ve výchozím nastavení je možnost Hodnota `{abi}{versionCode:D6}`. Pokud chce vývojář zachovat původní chování můžete přepsat výchozí nastavení `$(AndroidUseLegacyVersionCode)` vlastnosti `true`
+    Ve výchozím nastavení hodnota bude nastavena `{abi}{versionCode:D6}`. Pokud si vývojář chce uchovávat staré chování můžete přepsat výchozí nastavení `$(AndroidUseLegacyVersionCode)` vlastnost `true`
 
-    Přidat v Xamarin.Android 7.2.
+    Přidáno v Xamarin.Android 7.2.
 
--   **AndroidVersionCodeProperties** &ndash; ve vlastnosti string, který umožňuje definovat vlastní položky pro použití s vývojáři `AndroidVersionCodePattern`. Jsou ve formě `key=value` pár. Všechny položky v `value` musí být celočíselné hodnoty. Příklad: `screen=23;target=$(_SupportedApiLevel)`. Jak je vidět, můžete provést pomocí nástroje MSBuild existujících nebo vlastních vlastností v řetězci.
+-   **AndroidVersionCodeProperties** &ndash; vlastnosti typu string, který umožňuje vývojářům k definování vlastní položky pro použití s `AndroidVersionCodePattern`. Jsou ve formě `key=value` pár. Všechny položky v `value` musí být celočíselné hodnoty. Příklad: `screen=23;target=$(_SupportedApiLevel)`. Jak je vidět, můžete využít nástroje MSBuild, zvolte existující nebo vlastní vlastnosti v řetězci.
 
-    Přidat v Xamarin.Android 7.2.
+    Přidáno v Xamarin.Android 7.2.
 
--   **AndroidUseLegacyVersionCode** &ndash; vlastnost typu boolean bude umožňuje vývojáři vrátit výpočtu versionCode zpět na jeho původní před Xamarin.Android 8.2 chování. Mělo by být použito pouze pro vývojáře se stávajícími aplikacemi v obchodě Google Play. Důrazně doporučujeme, nové `$(AndroidVersionCodePattern)` vlastnost se používá.
+-   **AndroidUseLegacyVersionCode** &ndash; vlastnost typu boolean bude umožňuje vývojářům vrátit výpočtu versionCode zpět do její původní pre Xamarin.Android 8.2 chování. To by měla sloužit pouze pro vývojáře se stávajícími aplikacemi v Google Play Store. Důrazně doporučujeme, který nový `$(AndroidVersionCodePattern)` vlastnost se používá.
 
-    Přidat v Xamarin.Android 8.2.
+    Přidáno v Xamarin.Android 8.2.
 
--  **AndroidUseManagedDesignTimeResourceGenerator** &ndash; vlastnost typu boolean, která se změní v době návrhu sestavení použít analyzátor spravovaných prostředků místo `aapt`.
+-  **AndroidUseManagedDesignTimeResourceGenerator** &ndash; logická vlastnost, která bude přejít v době návrhu sestavení pro použití analyzátoru spravovaný prostředek spíše než `aapt`.
 
-    Přidat v Xamarin.Android 8.1.
+    Přidáno v Xamarin.Android 8.1.
 
--  **AndroidUseApkSigner** &ndash; bool vlastnost, která umožňuje vývojáři použít k `apksigner` nástroj místo `jarsigner`.
+-  **AndroidUseApkSigner** &ndash; bool vlastnost, která umožňuje vývojářům používat na `apksigner` nástroj místo `jarsigner`.
 
-    Přidat v Xamarin.Android 8.2.
+    Přidáno v Xamarin.Android 8.2.
 
--  **AndroidApkSignerAdditionalArguments** &ndash; ve vlastnosti string, který umožňuje vývojáři poskytnout další argumenty, které mají `apksigner` nástroj.
+-  **AndroidApkSignerAdditionalArguments** &ndash; řetězcovou vlastnost, která umožňuje vývojářům zadat další argumenty pro `apksigner` nástroj.
 
-    Přidat v Xamarin.Android 8.2.
+    Přidáno v Xamarin.Android 8.2.
 
-### <a name="binding-project-build-properties"></a>Vlastnosti sestavení projektu vazby
+### <a name="binding-project-build-properties"></a>Vazby vlastnosti sestavení projektu
 
-Následující vlastnosti nástroje MSBuild se používají s [vazby projekty](~/android/platform/binding-java-library/index.md):
+Následující vlastnosti nástroje MSBuild se používají s [projekty vazby](~/android/platform/binding-java-library/index.md):
 
--   **AndroidClassParser** &ndash; ve vlastnosti string, který určuje, jak `.jar` soubory jsou analyzovány. Možné hodnoty patří:
+-   **AndroidClassParser** &ndash; řetězcovou vlastnost, která určuje, jak `.jar` soubory jsou analyzovány. Možné hodnoty:
 
-    - **Třída analýzy**: používá `class-parse.exe` analyzovat bajtového kódu Java přímo, bez pomoci JVM. Tato hodnota je experimentální. 
+    - **Třída analýzy**: používá `class-parse.exe` přímo analyzovat bajtový kód Java bez pomoci JVM. Tato hodnota je experimentální. 
 
 
-    - **jar2xml**: použijte `jar2xml.jar` používat k extrahování typy a členy z reflexe Java `.jar` souboru.
+    - **jar2xml**: použijte `jar2xml.jar` pomocí reflexe Javy extrahovat typy a členy z `.jar` souboru.
 
     Výhody `class-parse` přes `jar2xml` jsou:
 
-    - `class-parse` je možné extrahovat z bajtového kódu Java, který obsahuje názvy parametrů *ladění* symboly (například bajtového kódu kompilovat s `javac -g`).
+    - `class-parse` dokáže extrahovat názvy parametrů z bajtového kódu Javy obsahující *ladění* symboly (například bajtový kód zkompilovaný s `javac -g`).
 
-    - `class-parse` nepodporuje "přeskočení" třídy, které dědí nebo obsahovat členy nepřeložitelný typů.
+    - `class-parse` "nepřeskočí" třídy, které dědí z členů nebo obsahují členy nerozpoznatelných typů.
 
-    **Experimentální**. Přidat v Xamarin.Android 6.0.
+    **Experimentální**. Přidáno v Xamarin.Android 6.0.
 
     Výchozí hodnota je `jar2xml`.
 
-    Výchozí hodnota se změní v budoucí verzi.
+    Výchozí hodnota se změní v budoucích vydáních.
 
--   **AndroidCodegenTarget** &ndash; ve vlastnosti string, který řídí cíl generování kódu ABI. Možné hodnoty patří:
+-   **AndroidCodegenTarget** &ndash; vlastnosti řetězce, které řídí cíl generování kódu ABI. Možné hodnoty:
 
-    - **XamarinAndroid**: používá rozhraní API vazby JNI součástí od Mono pro Android 1.0. Vazba sestavení vytvořené s Xamarin.Android 5.0 nebo novější můžete pouze spouštět na Xamarin.Android 5.0 nebo novější (rozhraní API/ABI dodatky), ale *zdroj* je kompatibilní s dřívější verze produktu.
+    - **XamarinAndroid**: používá součástí od Mono JNI vazby pro rozhraní API pro Android 1.0. Vazba sestavení vytvořená pomocí Xamarin.Android 5.0 nebo novější můžete spouštět v Xamarin.Android 5.0 nebo novější (rozhraní API/ABI dodatky), jenom ale *zdroj* je kompatibilní s dřívější verze produktu.
 
-    - **XAJavaInterop1**: použití Java.Interop pro JNI volání. Vazba sestavení s využitím `XAJavaInterop1` můžete pouze sestavit a spustit s Xamarin.Android 6.1 nebo novější. Xamarin.Android 6.1 a novější vazby `Mono.Android.dll` s touto hodnotou.
+    - **XAJavaInterop1**: použití Java.Interop pro volání JNI. Vazba sestavení pomocí `XAJavaInterop1` lze pouze sestavit a spustit s Xamarin.Android 6.1 nebo vyšší. Xamarin.Android 6.1 a novější vazby `Mono.Android.dll` s touto hodnotou.
 
-      Výhody `XAJavaInterop1` zahrnují:
+      Výhody `XAJavaInterop1` patří:
 
       - Menší sestavení.
 
-      - `jmethodID` ukládání do mezipaměti pro `base` volání metod, tak dlouho, dokud druhé vazby typy v hierarchii dědičnosti jsou integrované s `XAJavaInterop1` nebo novější.
+      - `jmethodID` ukládání do mezipaměti pro `base` volání metod, tak dlouho, dokud druhé vazby typů v hierarchii dědičnosti jsou vybaveny `XAJavaInterop1` nebo novější.
 
       - `jmethodID` Obálka volatelná aplikacemi Java konstruktory pro spravované podtřídy ukládání do mezipaměti.
 
     Výchozí hodnota je `XamarinAndroid`.
 
-    Výchozí hodnota se změní v budoucí verzi.
+    Výchozí hodnota se změní v budoucích vydáních.
 
 
 ### <a name="resource-properties"></a>Vlastnosti prostředku
 
-Vlastnosti prostředku řídit generování `Resource.designer.cs` souboru, který poskytuje přístup k prostředkům Android. 
+Vlastnosti prostředku řídit generování `Resource.designer.cs` soubor, který poskytuje přístup k prostředkům s Androidem. 
 
--   **AndroidResgenExtraArgs** &ndash; Určuje další možnosti příkazového řádku, které mají být předány **aapt** příkaz při zpracování Android prostředky a prostředky.
+-   **AndroidResgenExtraArgs** &ndash; Určuje další možnosti příkazového řádku k předání **aapt** příkaz při zpracování assetů Androidu a prostředky.
 
--   **AndroidResgenFile** &ndash; Určuje název souboru prostředků pro generování. Výchozí šablony to nastaví na `Resource.designer.cs`.
+-   **AndroidResgenFile** &ndash; Určuje název souboru prostředků pro generování. Nastaví tuto výchozí šablonu `Resource.designer.cs`.
 
--   **MonoAndroidResourcePrefix** &ndash; Určuje *cesta předponu* , se odebere z počátku názvy souborů pomocí akce sestavení `AndroidResource`. Toto je umožnit změnu níž jsou umístěny prostředky.
+-   **MonoAndroidResourcePrefix** &ndash; Určuje *předpona cesty* , který se odebere ze začátku názvů souborů pomocí akce sestavení `AndroidResource`. Toto je umožnit změnu, kde se prostředky nacházejí.
 
-    Výchozí hodnota je `Resources`. Změňte jej na `res` pro Java projektu struktury.
+    Výchozí hodnota je `Resources`. Změňte tuto hodnotu na `res` struktura projektu jazyka Java.
 
--   **AndroidExplicitCrunch** &ndash; Pokud vytváříte aplikace s velmi velkým počtem místní drawables, může počáteční sestavení (nebo opětovné sestavení) trvat minut. Pro urychlení procesu sestavení, zkuste včetně této vlastnosti a jeho nastavení na hodnotu `True`. Pokud je tato vlastnost nastavena, proces vytváření předem crunches soubory PNG.
+-   **AndroidExplicitCrunch** &ndash; Pokud vytváříte aplikace s velmi velkým počtem místní drawables, minut na dokončení může trvat počáteční sestavení (nebo opětovné sestavení). Ke zrychlení procesu sestavení, zkuste včetně tuto vlastnost a nastavíte ho na `True`. Pokud je tato vlastnost nastavena, proces sestavení předem crunches soubory ve formátu PNG.
 
-    **Experimentální**. Přidat v Xamarin.Android 7.0.
+    **Experimentální**. Přidáno v Xamarin.Android 7.0.
 
 
 <a name="Signing_Properties" />
 
 ### <a name="signing-properties"></a>Podepisování vlastnosti
 
-Podepisování vlastnosti určují, jak je balíček aplikace podepsaný tak, aby může být nainstalována na zařízení se systémem Android. Umožňuje rychlejší iterace sestavení úlohy Xamarin.Android neregistrujte balíčky během procesu sestavení, protože podpis je velmi pomalé. Místo toho, že jsou podepsané (v případě potřeby) před instalací nebo během exportu, prostředí IDE nebo *nainstalovat* sestavení cíl. Vyvolání *SignAndroidPackage* cíl vytvoří balíček s `-Signed.apk` příponu v výstupnímu adresáři.
+Podepisování vlastností ovládacího prvku, jak je balíček aplikace podepsaný tak, aby ji můžou instalovat na zařízení s Androidem. Povolit rychlejší sestavení iterace, úlohy Xamarin.Android uživatel balíčky během procesu sestavení, protože podpis je velmi pomalé. Místo toho, že jsou podepsané (v případě potřeby) před zahájením instalace nebo během exportu, rozhraní IDE nebo *nainstalovat* cíl sestavení. Volání *SignAndroidPackage* cílové vytvoří balíček se `-Signed.apk` přípona ve výstupním adresáři.
 
-Ve výchozím nastavení podpisový cíl generuje nový ladění podpisový klíč v případě potřeby. Pokud chcete použít konkrétní klíč, například na serveru sestavení následující vlastnosti nástroje MSBuild lze použít:
+Ve výchozím nastavení podepisování cíl vygenerování nového klíče podpisu ladění, v případě potřeby. Pokud chcete použít konkrétní klíč, například na serveru sestavení, následující vlastnosti nástroje MSBuild lze použít:
 
--   **AndroidKeyStore** &ndash; logickou hodnotu označující, zda má být použita vlastní podpisový informace. Výchozí hodnota je `False`, což znamená, že výchozí ladění podpisový klíč se použije k podepisování balíčků.
+-   **AndroidKeyStore** &ndash; logickou hodnotu označující, zda má být použita vlastní podpisové informace. Výchozí hodnota je `False`, což znamená, že výchozí ladění podpisový klíč se použije k podepisování balíčků.
 
--   **AndroidSigningKeyAlias** &ndash; Určuje alias pro klíč v úložišti klíčů. Toto je **keytool-alias** hodnotu použít při vytváření úložiště klíčů. 
+-   **AndroidSigningKeyAlias** &ndash; Určuje alias klíče v keystore. Toto je **keytool – alias** hodnotu použitou při vytváření úložiště klíčů. 
 
--   **AndroidSigningKeyPass** &ndash; Určuje heslo klíče v rámci souboru úložiště klíčů. Toto je hodnota zadaná při `keytool` požádá **zadejte heslo klíče pro $(AndroidSigningKeyAlias)**.
+-   **AndroidSigningKeyPass** &ndash; Určuje heslo klíče v rámci souboru úložiště klíčů. Jedná se o hodnotu zadat při `keytool` požádá **zadejte heslo klíče pro $(AndroidSigningKeyAlias)**.
 
--   **AndroidSigningKeyStore** &ndash; Určuje název souboru úložiště klíčů vytvořené `keytool`. To odpovídá hodnotě poskytnuté **keytool - úložiště klíčů** možnost.
+-   **AndroidSigningKeyStore** &ndash; Určuje název souboru úložiště klíčů vytvořené `keytool`. To odpovídá hodnotě k dispozici na **keytool - úložiště klíčů** možnost.
 
--   **AndroidSigningStorePass** &ndash; Určuje heslo pro `$(AndroidSigningKeyStore)`. Toto je hodnota zadaná pro `keytool` při vytváření souboru úložiště klíčů a kladené **zadejte heslo úložiště klíčů:**. 
+-   **AndroidSigningStorePass** &ndash; Určuje heslo pro `$(AndroidSigningKeyStore)`. Toto je hodnota zadaná pro `keytool` při vytváření souboru úložiště klíčů a ke správě **zadejte heslo úložiště klíčů:**. 
 
-Například vezměte v úvahu následující `keytool` volání:
+Představte si třeba následující `keytool` vyvolání:
 
 ```shell
 $ keytool -genkey -v -keystore filename.keystore -alias keystore.alias -keyalg RSA -keysize 2048 -validity 10000
@@ -464,7 +464,7 @@ Enter key password for keystore.alias
 [Storing filename.keystore]
 ```
 
-Pokud chcete použít úložiště klíčů generované výše, použijte vlastnost skupiny:
+Úložiště klíčů generované výše, použijte vlastnost skupiny:
 
 ```xml
 <PropertyGroup>
@@ -476,37 +476,37 @@ Pokud chcete použít úložiště klíčů generované výše, použijte vlastn
 </PropertyGroup>
 ```
 
--   **AndroidDebugKeyAlgorithm** &ndash; Určuje výchozí algoritmus, který chcete použít pro `debug.keystore`. Výchozí hodnota `RSA`.
+-   **AndroidDebugKeyAlgorithm** &ndash; Určuje výchozí algoritmus pro `debug.keystore`. Použije se výchozí `RSA`.
 
--   **AndroidDebugKeyValidity** &ndash; Určuje výchozí platnosti pro `debug.keystore`. Výchozí hodnota `10950` nebo `30 * 365` nebo `30 years`.
+-   **AndroidDebugKeyValidity** &ndash; Určuje výchozí platnosti pro `debug.keystore`. Použije se výchozí `10950` nebo `30 * 365` nebo `30 years`.
 
 <a name="Build_Actions" />
 
 ## <a name="build-actions"></a>Akce sestavení
 
-*Akce sestavení* jsou [použít na soubory](http://msdn.microsoft.com/en-us/library/bb629388.aspx) v rámci projektu a řízení způsobu zpracování souboru. 
+*Akce sestavení* jsou [použít na soubory](https://docs.microsoft.com/visualstudio/msbuild/common-msbuild-project-items) v rámci projektu a jak se zpracovávají soubor ovládacího prvku. 
 
 <a name="AndroidEnvironment" />
 
 ### <a name="androidenvironment"></a>AndroidEnvironment
 
-Soubory pomocí akce sestavení `AndroidEnvironment` se používají pro [inicializace proměnné prostředí a vlastnosti systému během spuštění procesu](~/android/deploy-test/environment.md).
-`AndroidEnvironment` Akce sestavení může použít na několik souborů a se vyhodnotí seřazeny (takže nezadávejte stejnou vlastnost proměnnou nebo systému prostředí ve více souborech).
+Soubory pomocí akce sestavení `AndroidEnvironment` se používají pro [inicializaci proměnných prostředí a systémové vlastnosti během spuštění procesu](~/android/deploy-test/environment.md).
+`AndroidEnvironment` Akci sestavení může použít na několik souborů a vyhodnocují bez určitého pořadí (takže nezadávejte stejnou vlastnost proměnné nebo systém prostředí ve více souborech).
 
 
 ### <a name="androidjavasource"></a>AndroidJavaSource
 
-Soubory pomocí akce sestavení `AndroidJavaSource` jsou Java zdrojového kódu, které budou zahrnuty do konečné balíček Android.
+Soubory pomocí akce sestavení `AndroidJavaSource` jsou zdrojový kód v Javě, který bude zahrnut ve finálním balíčku s Androidem.
 
 
 ### <a name="androidjavalibrary"></a>AndroidJavaLibrary
 
-Soubory pomocí akce sestavení `AndroidJavaLibrary` jsou Java archivy ( `.jar` soubory) které budou zahrnuty do konečné balíček Android.
+Soubory pomocí akce sestavení `AndroidJavaLibrary` jsou archivy Java ( `.jar` soubory) která bude součástí poslední balíček pro Android.
 
 
 ### <a name="androidresource"></a>AndroidResource
 
-Všechny soubory s *AndroidResource* akce sestavení se zkompiluje do Android prostředků během procesu vytváření a přístupné prostřednictvím `$(AndroidResgenFile)`.
+Všechny soubory *AndroidResource* akci sestavení jsou zkompilovány do Android prostředků během procesu sestavení a přístupné přes `$(AndroidResgenFile)`.
 
 ```xml
 <ItemGroup>
@@ -514,7 +514,7 @@ Všechny soubory s *AndroidResource* akce sestavení se zkompiluje do Android pr
 </ItemGroup>
 ```
 
-Pokročilejší uživatele může možná chcete mít různé prostředky používané v různých konfiguracích, ale se stejnou cestou efektivní. Toho lze dosáhnout s více prostředků adresářů a souborů pomocí stejné relativní cesty v rámci tyto různé adresáře a pomocí podmínky nástroje MSBuild podmíněně zahrnout různé soubory v různých konfiguracích. Příklad:
+Pokročilejší uživatele může být možná chcete mít různé prostředky používané v různých konfiguracích, ale se stejnou cestou efektivní. Toho lze dosáhnout s více prostředků adresáře a soubory se stejnými relativními cestami v rámci těchto různých adresářích a použití podmínky nástroje MSBuild podmíněně zahrnout různé soubory v různých konfiguracích. Příklad:
 
 ```xml
 <ItemGroup Condition="'$(Configuration)'!='Debug'">
@@ -528,7 +528,7 @@ Pokročilejší uživatele může možná chcete mít různé prostředky použ�
 </PropertyGroup>
 ```
 
-**LogicalName** &ndash; explicitně určuje cesta prostředku. Umožňuje &ldquo;aliasy&rdquo; soubory tak, aby byla k dispozici jako názvy více různých prostředků.
+**LogicalName** &ndash; explicitně určuje cestu prostředku. Umožňuje &ldquo;aliasing&rdquo; soubory tak, že budou k dispozici jako názvy více různých zdrojů.
 
 ```xml
 <ItemGroup Condition="'$(Configuration)'!='Debug'">
@@ -544,19 +544,19 @@ Pokročilejší uživatele může možná chcete mít různé prostředky použ�
 
 ### <a name="androidnativelibrary"></a>AndroidNativeLibrary
 
-[Nativní knihovny](~/android/platform/native-libraries.md) jsou přidány do sestavení nastavením jejich akce sestavení na `AndroidNativeLibrary`.
+[Nativní knihovny](~/android/platform/native-libraries.md) jsou přidány do sestavení, nastavením jejich akci sestavení na `AndroidNativeLibrary`.
 
-Všimněte si, že Android podporuje více aplikací binární rozhraní (bis ), musíte znát systém sestavení, které ABI nativní knihovny je vytvořené pro. To můžete provést dvěma způsoby:
+Všimněte si, že vzhledem k tomu, že Android podporuje více aplikačních binárních rozhraní (ABI), sestavovací systém musíte znát ABI, které je nativní knihovna sestavena pro. Existují dva způsoby, jak se to dá udělat:
 
-1.  Cesta k "analýzy rozšíření".
-2.  Pomocí `Abi` atribut položky.
+1.  Cesta "analýzy rozšíření".
+2.  Použití `Abi` atribut položky.
 
-Pomocí sledování toku dat cesta, název nadřazeného adresáře nativní knihovny slouží k určení ABI, knihovna cíle. Proto pokud přidáte `lib/armeabi/libfoo.so` Build, pak ABI bude možné "zachycení" jako `armeabi`. 
+Pomocí cesty pro analýzu sítě, název nadřazené adresáře nativní knihovny slouží k určení ABI, které cíle představující knihovny. Proto pokud chcete přidat `lib/armeabi/libfoo.so` k sestavení, pak ABI bude možné "zachycení" jako `armeabi`. 
 
 
-#### <a name="item-attribute-name"></a>Název atributu položky
+#### <a name="item-attribute-name"></a>Název položky atributu
 
-**ABI** &ndash; určuje ABI nativní knihovny.
+**ABI** &ndash; určuje ABI nativní knihovnu.
 
 ```xml
 <ItemGroup>
@@ -569,35 +569,35 @@ Pomocí sledování toku dat cesta, název nadřazeného adresáře nativní kni
 
 ### <a name="androidaarlibrary"></a>AndroidAarLibrary
 
-Akce sestavení `AndroidAarLibrary` se má použít pro přímý odkaz .aar soubory. Tato akce sestavení se nejčastěji používá Xamarin součásti. Konkrétně odkazy na soubory .aar, které jsou vyžadované k získání Google Play a dalším službám práce.
+Akce sestavení `AndroidAarLibrary` by měla sloužit k přímému odkazování .aar soubory. Tato akce sestavení se nejčastěji používá komponenty Xamarin. Konkrétně zahrnoval reference na .aar soubory, které jsou požadovány pro Google Play a dalších služeb.
 
-Pomocí tohoto sestavení akce považovat podobným způsobem příliš vložené prostředky nalezeny soubory v projektech knihovny. .aar budou extrahovány do adresáře zprostředkující. Potom všechny prostředky, soubory prostředků a .jar bude součástí skupiny odpovídající položky.  
+S tímto sestavením akce bude zacházet podobným způsobem příliš vložené prostředky nalezeny soubory v projektech knihovny. .aar budou extrahovány do zprostředkujícím adresáři. Potom všechny prostředky, soubory prostředků a .jar bude obsahovat příslušnou položku skupiny.  
 
 ### <a name="content"></a>Obsah
 
-Normální `Content` sestavení akce není podporována (jak jsme nebyly započítáno jak ho podporují bez pravděpodobně nákladná krok při prvním spuštění).
+Normální `Content` akci sestavení se nepodporuje (jak nebyly napadlo nás, jak podporovat bez může být nákladné krok při prvním spuštění).
 
-Od verze 5.1 Xamarin.Android, pokus o použití `@(Content)` výsledkem akce sestavení `XA0101` upozornění.
+Od verze 5.1 Xamarin.Android, pokus o použití `@(Content)` bude mít za následek akci sestavení `XA0101` upozornění.
 
 ### <a name="linkdescription"></a>LinkDescription
 
-Soubory s *LinkDescription* akce sestavení se používají pro [řízení chování linkeru](~/cross-platform/deploy-test/linker.md).
+Soubory s *LinkDescription* akci sestavení se používají pro [řídit chování linkeru](~/cross-platform/deploy-test/linker.md).
 
 
 <a name="ProguardConfiguration" />
 
 ### <a name="proguardconfiguration"></a>ProguardConfiguration
 
-Soubory s *ProguardConfiguration* akce sestavení obsahovat možnosti, které se používají k řízení `proguard` chování. Další informace o této akce sestavení najdete v tématu [ProGuard](~/android/deploy-test/release-prep/proguard.md).
+Soubory s *ProguardConfiguration* akci sestavení obsahují možnosti, které se používají k řízení `proguard` chování. Další informace o této akci sestavení naleznete v tématu [ProGuard](~/android/deploy-test/release-prep/proguard.md).
 
-Tyto soubory se ignoruje, pokud `$(EnableProguard)` vlastnosti MSBuild je `True`.
+Tyto soubory se ignorovaly, pokud `$(EnableProguard)` je vlastnost MSBuild `True`.
 
 
 ## <a name="target-definitions"></a>Definice cílového
 
-Specifické pro Xamarin.Android části procesu sestavení jsou definovány v `$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets`, ale normální cíle pro specifický jazyk, jako *Microsoft.CSharp.targets* se taky požadovat, aby sestavení sestavení.
+Specifické pro Xamarin.Android částí procesu sestavení, které jsou definovány v `$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets`, ale normální jazykově specifické cíle jako *Microsoft.CSharp.targets* jsou také nutné k vytvoření sestavení.
 
-Následující vlastnosti sestavení musí být nastavená před importem veškerých cílů jazyka:
+Následující vlastnosti sestavení musí být nastavena před importem cílů libovolný jazyk:
 
 ```xml
 <PropertyGroup>
@@ -607,10 +607,10 @@ Následující vlastnosti sestavení musí být nastavená před importem veške
 </PropertyGroup>
 ```
 
-Všechny tyto cíle a vlastnosti lze nastavit pro jazyk C# importováním *Xamarin.Android.CSharp.targets*: 
+Všechny tyto cíle a vlastnosti metodou importování, půjdou zahrnout pro jazyk C# *Xamarin.Android.CSharp.targets*: 
 
 ```xml
 <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 ```
 
-Tento soubor lze snadno přizpůsobit pro jiné jazyky.
+Tento soubor lze snadno upravit pro jiné jazyky.

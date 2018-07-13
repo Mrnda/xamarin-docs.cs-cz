@@ -1,41 +1,41 @@
 ---
-title: rozhraní API pro vývojáře Xamarin.Mac systému macOS
-description: Tento dokument popisuje, jak číst selektory jazyka Objective-C a jak v aplikaci Xamarin.Mac najít jejich odpovídající metody C#.
+title: macOS rozhraní API pro vývojáře Xamarin.Mac
+description: Tento dokument popisuje, jak číst selektory Objective-C a tom, jak najít jejich odpovídající metody jazyka C# v aplikaci pro Xamarin.Mac.
 ms.prod: xamarin
 ms.assetid: 9F7451FA-E07E-4C7B-B5CF-27AFC157ECDA
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/02/2017
-ms.openlocfilehash: cceaa2f6e89b712be5929f7e978663d8c47f18c5
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 6dfaa3c7bf988228bfbacefe7c8e7268edc8117a
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34791547"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994309"
 ---
-# <a name="macos-apis-for-xamarinmac-developers"></a>rozhraní API pro vývojáře Xamarin.Mac systému macOS
+# <a name="macos-apis-for-xamarinmac-developers"></a>macOS rozhraní API pro vývojáře Xamarin.Mac
 
 ## <a name="overview"></a>Přehled
 
-Pro většinu doby vývoj s Xamarin.Mac vezměte v úvahu, čtení a zápis v jazyce C# bez mnohem problém na základní rozhraní API jazyka Objective-C. V některých případech můžete ale budete potřebovat od společnosti Apple, přečtěte si dokumentaci rozhraní API převede na odpověď od Stack Overflow řešení pro váš problém, nebo porovnat s existující vzorek.
+Pro mnoho času vývoj s využitím Xamarin.Mac představit, čtení a zápis v jazyce C# bez obav, mnoho základní rozhraní API jazyka Objective-C. Ale někdy budete potřebujete od společnosti Apple, přečtěte si dokumentaci rozhraní API přeložit odpověď z přetečení zásobníku do řešení pro váš problém, nebo porovnat s existující vzorek.
 
 ## <a name="reading-enough-objective-c-to-be-dangerous"></a>Čtení dostatek Objective-C nebezpečné
 
-Někdy je nezbytné pro čtení definici jazyka Objective-C nebo metoda volání a který převede ekvivalentní metodě C#. Pojďme si prohlédněte definici funkce jazyka Objective-C a rozdělení částí do jednoho. Tato metoda ( *selektor* v Objective-C) můžete najít na `NSTableView`:
+V některých případech bude nutné načíst definici Objective-C nebo metoda volání a překladu, který ekvivalentní metodě jazyka C#. Pojďme podívejte se na definici funkce Objective-C a rozdělit části. Tuto metodu ( *selektor* v Objective-C) můžete najít na `NSTableView`:
 
 ```objc
 - (BOOL)canDragRowsWithIndexes:(NSIndexSet *)rowIndexes atPoint:(NSPoint)mouseDownPoint
 ```
 
-Deklaraci můžete přečíst vlevo, vpravo:
+Deklarace může být čteny zleva doprava:
 
-- `-` Předponu znamená, že je metoda instance (nestatické). + znamená je metoda třídy (statické)
-- `(BOOL)` je návratový typ (logická hodnota v jazyce C#)
-- `canDragRowsWithIndexes` představuje první část názvu.
-- `(NSIndexSet *)rowIndexes` je první param a s ním má typu. První parametr je ve formátu: `(Type) pararmName`
-- `atPoint:(NSPoint)mouseDownPoint` je druhý param a jeho typu. Každý parametr po první je ve formátu: `selectorPart:(Type) pararmName`
-- Úplný název selektoru tato zpráva je: `canDragRowsWithIndexes:atPoint:`. Poznámka: `:` na konci – je důležité.
+- `-` Předponu znamená, že je metoda instance (nestatické). + znamená, že se jedná o metodu třídy (statické)
+- `(BOOL)` je návratový typ (bool v jazyce C#)
+- `canDragRowsWithIndexes` je první část názvu.
+- `(NSIndexSet *)rowIndexes` je první parametr a má typ s ním. První parametr je ve formátu: `(Type) pararmName`
+- `atPoint:(NSPoint)mouseDownPoint` je druhý parametr a jeho typu. Každý parametr po prvním má tento formát: `selectorPart:(Type) pararmName`
+- Úplný název selektor tato zpráva je: `canDragRowsWithIndexes:atPoint:`. Poznámka: `:` na konci – je důležité.
 - Skutečná vazba Xamarin.Mac C# je: `bool CanDragRows (NSIndexSet rowIndexes, PointF mouseDownPoint)`
 
 Toto volání selektor může číst stejným způsobem jako:
@@ -44,31 +44,31 @@ Toto volání selektor může číst stejným způsobem jako:
 [v canDragRowsWithIndexes:set atPoint:point];
 ```
 
-- Instance `v` s jeho `canDragRowsWithIndexes:atPoint` selektor volána s dva parametry `set` a `point`, je předaná.
-- V jazyce C# volání metody vypadat třeba takto: `x.CanDragRows (set, point);`
+- Instance `v` dochází k danému jeho `canDragRowsWithIndexes:atPoint` selektor volat se dvěma parametry `set` a `point`, předané.
+- V jazyce C# volání metody vypadá například takto: `x.CanDragRows (set, point);`
 
 <a name="finding_selector" />
 
-## <a name="finding-the-c-member-for-a-given-selector"></a>Hledání člen C# pro danou selektor
+## <a name="finding-the-c-member-for-a-given-selector"></a>Vyhledání člen C# pro daný selektor
 
-Teď, když jste najde selektor jazyka Objective-C, které potřebujete k vyvolání, dalším krokem je, mapování na ekvivalentní člen C#. Existují čtyři přístupy, můžete zkusit (budete pokračovat `NSTableView CanDragRows` příklad):
+Teď, když najdete modulu pro výběr jazyka Objective-C, které potřebujete k vyvolání, dalším krokem, který mapuje na ekvivalentní člen C#. Můžete zkusit čtyři způsoby (pokračujte `NSTableView CanDragRows` příklad):
 
-1. Pomocí seznamu dokončení automaticky můžete rychle vyhledat něco se stejným názvem. Vzhledem k tomu, že jsme víte, že se o instanci `NSTableView` můžete zadat:
+1. Pomocí seznamu dokončení automaticky rychle vyhledávat něco se stejným názvem. Protože víme, že to je instanci `NSTableView` můžete zadat:
 
     - `NSTableView x;`
-    - `x.` [ctrl + místa, pokud v seznamu nezobrazí.).
-    - `CanDrag` [Zadejte]
-    - Klikněte pravým tlačítkem na metodu, přejděte na deklaraci otevřete prohlížeč sestavení, kde můžete porovnat `Export` atribut modulu pro výběr v
+    - `x.` [ctrl + MEZERNÍK, pokud se nezobrazí v seznamu).
+    - `CanDrag` [enter]
+    - Klikněte pravým tlačítkem na metodu, přejděte do deklarace otevřít prohlížeč sestavení, ve kterém můžete porovnat `Export` atribut dotyčný selektoru
 
-2. Hledat celou třídu vazby. Vzhledem k tomu, že jsme víte, že se o instanci `NSTableView` můžete zadat:
+2. Hledejte celá třída vazby. Protože víme, že to je instanci `NSTableView` můžete zadat:
 
     - `NSTableView x;`
     - Klikněte pravým tlačítkem na `NSTableView`, přejděte na deklaraci do prohlížeče sestavení
-    - Vyhledejte modulu pro výběr v
+    - Vyhledejte dotyčný selektor
 
-3. Můžete použít [online dokumentaci rozhraní API Xamarin.Mac](https://developer.xamarin.com/api/root/monomac-lib/) .
+3. Můžete použít [online dokumentaci k rozhraní API Xamarin.Mac](https://docs.microsoft.com/dotnet/api/?view=xamarinmac-3.0) .
 
-4. Miguel poskytuje "Rosetta kamenem" zobrazení rozhraní API Xamarin.Mac [sem](http://tirania.org/tmp/rosetta.html) lze vyhledat prostřednictvím pro dané rozhraní API. Pokud vaše rozhraní API není AppKit nebo konkrétní systému macOS, bude pravděpodobně existuje.
+4. Miguel poskytuje přehled rozhraní API Xamarin.Mac "Rosetta kámen" [tady](http://tirania.org/tmp/rosetta.html) , která může prohledávat pro dané rozhraní API. Pokud vaše rozhraní API není prvcích AppKit nebo macOS konkrétní, možná bude existuje.
 
 <!--
 Note: In some cases, the assembly browser can hit a bug where it will open but not jump to the right definition. Keep that tab open, switch back to your source code and try again.

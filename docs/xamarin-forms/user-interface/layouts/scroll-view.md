@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 814b74ce04269d18b9a280ada74204c1c86621e1
-ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
-ms.translationtype: HT
+ms.openlocfilehash: f2bccc9140c4c1c9d5d543a4240178f9301852bb
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 07/12/2018
-ms.locfileid: "38985975"
+ms.locfileid: "38997358"
 ---
 # <a name="xamarinforms-scrollview"></a>Xamarin.Forms ScrollView
 
-[`ScrollView`](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) obsahuje rozložení a umožňuje jim posuvníku mimo obrazovku. `ScrollView` slouží také povolit zobrazení automaticky přesunout do viditelnou část obrazovky při zobrazování klávesnice.
+[`ScrollView`](xref:Xamarin.Forms.ScrollView) obsahuje rozložení a umožňuje jim posuvníku mimo obrazovku. `ScrollView` slouží také povolit zobrazení automaticky přesunout do viditelnou část obrazovky při zobrazování klávesnice.
 
 [![](scroll-view-images/layouts-sml.png "Rozložení Xamarin.Forms")](scroll-view-images/layouts.png#lightbox "rozložení Xamarin.Forms")
 

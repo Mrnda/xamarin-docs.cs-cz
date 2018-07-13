@@ -1,21 +1,21 @@
 ---
-title: System.Data v Xamarin.iOS
-description: Tento dokument popisuje, jak používat System.Data a Mono.Data.Sqlite.dll pro přístup k datům SQLite aplikace pro Xamarin.iOS.
+title: System.Data v Xamarin.iosu
+description: Tento dokument popisuje způsob použití System.Data a Mono.Data.Sqlite.dll pro přístup k datům SQLite aplikace pro Xamarin.iOS.
 ms.prod: xamarin
 ms.assetid: F10C0C57-7BDE-A3F3-B011-9839949D15C8
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: f20bdbdb9fe0d25e1ba545633e271af912aab3ba
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 183079c150ad4df05424d4dbf2980a307a889352
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784713"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997195"
 ---
-# <a name="systemdata-in-xamarinios"></a>System.Data v Xamarin.iOS
+# <a name="systemdata-in-xamarinios"></a>System.Data v Xamarin.iosu
 
-Přidává podporu pro Xamarin.iOS 8.10 [System.Data](https://developer.xamarin.com/api/namespace/System.Data/), včetně `Mono.Data.Sqlite.dll` zprostředkovatele ADO.NET. Podpora zahrnuje přidání následující [sestavení](~/cross-platform/internals/available-assemblies.md):
+Přidává podporu pro Xamarin.iOS 8.10 [System.Data](xref:System.Data), včetně `Mono.Data.Sqlite.dll` poskytovatele ADO.NET. Podpora zahrnuje přidání následujících [sestavení](~/cross-platform/internals/available-assemblies.md):
 
 -  `System.Data.dll`
 -  `System.Data.Service.Client.dll`
@@ -27,17 +27,17 @@ Přidává podporu pro Xamarin.iOS 8.10 [System.Data](https://developer.xamarin.
 
 ## <a name="example"></a>Příklad
 
-Následující program vytvoří databázi v `Documents/mydb.db3`, a pokud databáze neexistuje dříve ho naplněný vzorovými daty. Databáze je pak dotazován výstup zapsán do `stderr`.
+Následující program vytvoří databázi v `Documents/mydb.db3`, a pokud databáze neexistuje. dříve se vyplní ukázkovými daty. Databáze je následně dotázán pomocí výstup zapsán do `stderr`.
 
-### <a name="add-references"></a>Přidejte odkazy na
+### <a name="add-references"></a>Přidání odkazů
 
-První, klikněte pravým tlačítkem na **odkazy** uzel a zvolte **upravit odkazy...**  vyberte `System.Data` a `Mono.Data.Sqlite`:
+Nejprve, klikněte pravým tlačítkem na **odkazy** uzlu a zvolte **upravit odkazy...**  vyberte `System.Data` a `Mono.Data.Sqlite`:
 
-[![](system.data-images/edit-references-sml.png "Přidávání nových odkazů")](system.data-images/edit-references.png#lightbox)
+[![](system.data-images/edit-references-sml.png "Přidání nových odkazů")](system.data-images/edit-references.png#lightbox)
 
 ### <a name="sample-code"></a>Ukázkový kód
 
-Následující kód ukazuje jednoduchý příklad vytvoření tabulky a vložení řádků embedded příkazy SQL:
+Následující kód ukazuje jednoduchý příklad vytvoření tabulky a vložení řádků pomocí vložených příkazů SQL:
 
 ```csharp
 using System;
@@ -107,12 +107,12 @@ class Demo {
 ```
 
 > [!IMPORTANT]
-> Jak je uvedeno v ukázce kódu, výše, je chybný postup pro vložení řetězce do příkazy SQL, protože umožňuje snadno napadnutelný kódu [Injektáž SQL](http://en.wikipedia.org/wiki/SQL_injection).
+> Jak je uvedeno v ukázkovém kódu výše, je špatný postup vložit řetězce v příkazy SQL, protože je zranitelný kódu [útok prostřednictvím injektáže SQL](http://en.wikipedia.org/wiki/SQL_injection).
 
 
 ### <a name="using-command-parameters"></a>Pomocí parametrů příkazu
 
-Následující kód ukazuje, jak používat parametry příkazu pro vkládání uživatelem zadaný text bezpečně do databáze (i v případě, že text obsahuje speciální znaky SQL jako jeden apostrof):
+Následující kód ukazuje, jak používat u parametrů příkazu k vložení uživatel zadal text bez obav do databáze (i v případě, že text obsahuje speciální znaky SQL, jako je jedním apostrof):
 
 ```csharp
 // user input from Textbox control
@@ -139,34 +139,34 @@ Obě **System.Data** a **Mono.Data.Sqlite** chybí některé funkce.
 
 ### <a name="systemdata"></a>System.Data
 
-Funkce chybí **System.Data.dll** se skládá z:
+Funkce chybí **System.Data.dll** se skládá ze:
 
--  Cokoli vyžadují [System.CodeDom](https://developer.xamarin.com/api/namespace/System.CodeDom/) (např.)  [System.Data.TypedDataSetGenerator](https://developer.xamarin.com/api/type/System.Data.TypedDataSetGenerator/) )
--  Podpora souborů konfigurace XML (např.)  [System.Data.Common.DbProviderConfigurationHandler](https://developer.xamarin.com/api/type/System.Data.Common.DbProviderConfigurationHandler/) )
--   [System.Data.Common.DbProviderFactories](https://developer.xamarin.com/api/type/System.Data.Common.DbProviderFactories/) (závisí na podporu soubor XML konfigurace)
--   [System.Data.OleDb](https://developer.xamarin.com/api/namespace/System.Data.OleDb/)
--   [System.Data.Odbc](https://developer.xamarin.com/api/namespace/System.Data.Odbc/)
--  `System.EnterpriseServices.dll` Závislost byla *odebrat* z `System.Data.dll` , což je odebrání [SqlConnection.EnlistDistributedTransaction(ITransaction)](https://developer.xamarin.com/api/member/System.Data.SqlClient.SqlConnection.EnlistDistributedTransaction/(System.EnterpriseServices.ITransaction)) metoda.
+-  Cokoli vyžadující [System.CodeDom](xref:System.CodeDom) (např.)  [System.Data.TypedDataSetGenerator](xref:System.Data.TypedDataSetGenerator) )
+-  Podpora souborů konfigurace XML (např.)  [System.Data.Common.DbProviderConfigurationHandler](xref:System.Data.Common.DbProviderConfigurationHandler) )
+-   [System.Data.Common.DbProviderFactories](xref:System.Data.Common.DbProviderFactories) (závisí na podpoře soubor config XML)
+-   [System.Data.OleDb](xref:System.Data.OleDb)
+-   [System.Data.Odbc](xref:System.Data.Odbc)
+-  `System.EnterpriseServices.dll` Závislost byla *odebrat* z `System.Data.dll` výsledkem odebrání [SqlConnection.EnlistDistributedTransaction(ITransaction)](xref:System.Data.SqlClient.SqlConnection.EnlistDistributedTransaction*) metody.
 
 
 <a name="Mono.Data.Sqlite" />
 
 ### <a name="monodatasqlite"></a>Mono.Data.Sqlite
 
-Mezitím **Mono.Data.Sqlite.dll** vyskytla žádné změny zdrojového kódu, ale místo toho může být hostitelem na počet *runtime* problémy od `Mono.Data.Sqlite.dll` váže SQLite 3.5. iOS 8, mezitím se dodává s SQLite 3.8.5. To suffice vyslovte některé věci změnily mezi dvěma verzemi.
+Mezitím **Mono.Data.Sqlite.dll** utrpělo bez změny zdrojového kódu, ale místo toho může být hostitelem počtu *runtime* vydá od `Mono.Data.Sqlite.dll` váže SQLite 3.5. iOS 8, mezitím se dodává s SQLite 3.8.5. To suffice Řekněme mezi oběma verzemi změnilo několik věcí.
 
-Starší verze iOS se dodávají s následujícími verzemi SQLite:
+V následujících verzích SQLite dodávat starší verze iOS:
 
-- **iOS 7** -verze 3.7.13.
-- **iOS 6** -verze 3.7.13.
-- **systém iOS 5** -verze 3.7.7.
-- **iOS 4** -verze 3.6.22.
+- **iOS 7** – verze 3.7.13.
+- **iOS 6** – verze 3.7.13.
+- **systém iOS 5** – verze 3.7.7.
+- **iOS 4** – verze 3.6.22.
 
-Většina běžných potíží zobrazí souvisejí s dotazování schématu databáze, například určení za běhu, které sloupce existují v dané tabulce, jako například `Mono.Data.Sqlite.SqliteConnection.GetSchema` (přepsání [DbConnection.GetSchema](https://developer.xamarin.com/api/member/System.Data.Common.DbConnection.GetSchema/)) a `Mono.Data.Sqlite.SqliteDataReader.GetSchemaTable` () přepsání [DbDataReader.GetSchemaTable](https://developer.xamarin.com/api/member/System.Data.Common.DbDataReader.GetSchemaTable/)). Stručně řečeno, zdá se, že cokoli pomocí [DataTable](https://developer.xamarin.com/api/type/System.Data.DataTable/) se pravděpodobně fungovat.
+Nejběžnějších problémů zobrazí souvisí s dotazování schématu databáze, například určení za běhu, která sloupce existovat pro danou tabulku jako `Mono.Data.Sqlite.SqliteConnection.GetSchema` (přepsání [DbConnection.GetSchema](xref:System.Data.Common.DbConnection.GetSchema) a `Mono.Data.Sqlite.SqliteDataReader.GetSchemaTable` (přepsání [DbDataReader.GetSchemaTable](xref:System.Data.Common.DbDataReader.GetSchemaTable). Stručně řečeno, vypadá to cokoli pomocí [DataTable](xref:System.Data.DataTable) nebude fungovat.
 
 <a name="Data_Binding" />
 
 ## <a name="data-binding"></a>Datová vazba
 
-Datová vazba není v tuto chvíli nepodporuje.
+Vytváření datových vazeb není v tuto chvíli nepodporuje.
 

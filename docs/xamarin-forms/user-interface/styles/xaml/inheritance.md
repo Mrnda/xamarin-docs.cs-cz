@@ -1,30 +1,30 @@
 ---
-title: Styl dědičnosti v Xamarin.Forms
-description: Styly může dědit vlastnosti z jiných styly snížit duplikování a povolit opakované použití. Tento článek vysvětluje, jak provést styl dědičnosti v aplikaci Xamarin.Forms.
+title: Dědičnost stylů v Xamarin.Forms
+description: Styly může dědit z jiné styly snížit duplikace a umožňují opakované použití. Tento článek vysvětluje, jak provádět dědičnost stylů aplikace Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 67A3A39C-8CC0-446D-8162-FFA73582D3B8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: aff47769fad065e03de4c62af1be1d67b903eb0a
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: f8cf3287c6d713d91a0217bd30ca2ee927534aea
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245091"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995330"
 ---
-# <a name="style-inheritance-in-xamarinforms"></a>Styl dědičnosti v Xamarin.Forms
+# <a name="style-inheritance-in-xamarinforms"></a>Dědičnost stylů v Xamarin.Forms
 
-_Styly může dědit vlastnosti z jiných styly snížit duplikování a povolit opakované použití._
+_Styly může dědit z jiné styly snížit duplikace a umožňují opakované použití._
 
-## <a name="style-inheritance-in-xaml"></a>Styl dědičnosti v jazyce XAML
+## <a name="style-inheritance-in-xaml"></a>Dědičnost stylů v XAML
 
-Styl dědičnosti se provádí nastavením [ `Style.BasedOn` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.BasedOn/) vlastnost, která má existující [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/). V jazyce XAML, toho se dosáhne nastavení `BasedOn` vlastnosti `StaticResource` rozšíření značek, který odkazuje na dříve vytvořenou `Style`. V jazyce C#, toho se dosáhne nastavení `BasedOn` vlastnosti `Style` instance.
+Dědičnost stylů se provádí nastavením [ `Style.BasedOn` ](xref:Xamarin.Forms.Style.BasedOn) vlastnost do existujícího [ `Style` ](xref:Xamarin.Forms.Style). V XAML, toho dosáhnete pomocí nastavení `BasedOn` vlastnost `StaticResource` – rozšíření značek, který odkazuje na dříve vytvořené `Style`. V jazyce C#, toho dosáhnete pomocí nastavení `BasedOn` vlastnost `Style` instance.
 
-Styly, které dědí od základní styl může zahrnovat [ `Setter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Setter/) instancí nové vlastnosti, nebo je používat k přepsání styly ze základní styl. Kromě toho stylů, které dědí od základního stylu musí být stejného typu nebo typ, který je odvozen od typu cílem základní styl. Například, pokud základní styl cíle [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) instancí, styly, které jsou založeny na základní styl můžete cílit na `View` instance nebo typy, které jsou odvozeny od `View` třídy, jako například [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) a [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) instance.
+Styly, které dědí ze základní stylu mohou zahrnovat [ `Setter` ](xref:Xamarin.Forms.Setter) instance pro nové vlastnosti, nebo je používat k přepsání styly ze základní stylu. Kromě toho styly, které dědí ze základní stylu musí cílit na stejný typ nebo typ, který je odvozen z typu cílem základní style. Například, pokud základní styl cíle [ `View` ](xref:Xamarin.Forms.View) instancí, styly, které jsou založeny na základní styl můžete cílit na `View` instance nebo typy, které jsou odvozeny z `View` třídy, jako například [ `Label` ](xref:Xamarin.Forms.Label) a [ `Button` ](xref:Xamarin.Forms.Button) instancí.
 
-Následující kód ukazuje *explicitní* styl dědičnosti na stránce XAML:
+Následující kód ukazuje *explicitní* stylu dědičnosti v stránky XAML:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.StyleInheritancePage" Title="Inheritance" Icon="xaml.png">
@@ -60,20 +60,20 @@ Následující kód ukazuje *explicitní* styl dědičnosti na stránce XAML:
 </ContentPage>
 ```
 
-`baseStyle` Cíle [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) instance a nastaví [ `HorizontalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.HorizontalOptions/) a [ `VerticalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) vlastnosti. `baseStyle` Není nastaven přímo na všech ovládacích prvků. Místo toho `labelStyle` a `buttonStyle` , dědí nastavení hodnoty další vazbu vlastnosti. `labelStyle` a `buttonStyle` jsou poté použity [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) instancí a [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) instance, a to nastavením jejich [ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/) vlastnosti. Výsledkem je vidět na následujících snímcích obrazovky vzhled:
+`baseStyle` Cíle [ `View` ](xref:Xamarin.Forms.View) instance a nastaví [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions) a [ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions) vlastnosti. `baseStyle` Není nastavena přímo na žádné ovládací prvky. Místo toho `labelStyle` a `buttonStyle` , dědí nastavení hodnot další vlastnost s vazbou. `labelStyle` a `buttonStyle` použijí se [ `Label` ](xref:Xamarin.Forms.Label) instancí a [ `Button` ](xref:Xamarin.Forms.Button) instanci, nastavením jejich [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) vlastnosti. Výsledkem je vzhled je znázorněno na následujících snímcích obrazovky:
 
 [![](inheritance-images/style-inheritance.png)](inheritance-images/style-inheritance-large.png#lightbox)
 
 > [!NOTE]
-> Implicitní styl může být odvozen od explicitní styl, ale explicitní styl nemůže být odvozen od implicitní stylu.
+> Implicitní styl může být odvozena z explicitní styl, ale explicitní styl nelze odvodit z implicitní styl.
 
-### <a name="respecting-the-inheritance-chain"></a>Respektováním řetězu dědičnosti
+### <a name="respecting-the-inheritance-chain"></a>Respektování řetězu dědičnosti
 
-Styl může dědit vlastnosti pouze z stylů na stejné úrovni nebo vyšší, v hierarchii zobrazení. To znamená, že:
+Styl může dědit jedině z styly na stejné úrovni nebo výše v hierarchii zobrazení. To znamená, že:
 
-- Prostředek na úrovni aplikace může dědit vlastnosti pouze z jiné úrovně prostředky aplikace.
-- Úrovně prostředek stránky může dědit vlastnosti z úrovně prostředky aplikace a další prostředky úrovni stránky.
-- Řízení úrovně prostředku může dědit vlastnosti z úrovně prostředky aplikace, prostředky na úrovni stránky a dalším prostředkům úrovni ovládacího prvku.
+- Prostředek na úrovni aplikace může dědit pouze z jiných prostředků úrovni aplikace.
+- Prostředek úrovni stránky může dědit z úrovně prostředků aplikace a dalších prostředků úrovni stránky.
+- Prostředků s úrovní řízení může zdědit z úrovně prostředků aplikace, prostředky na úrovni stránky a dalších prostředků úrovně ovládacího prvku.
 
 Tento řetězec dědičnosti je znázorněn v následujícím příkladu kódu:
 
@@ -104,11 +104,11 @@ Tento řetězec dědičnosti je znázorněn v následujícím příkladu kódu:
 </ContentPage>
 ```
 
-V tomto příkladu `labelStyle` a `buttonStyle` prostředků řízení úrovně, zatímco `baseStyle` je úrovně prostředek stránky. Ale při `labelStyle` a `buttonStyle` dědí `baseStyle`, není možné pro `baseStyle` dědění z `labelStyle` nebo `buttonStyle`, kvůli jejich odpovídajících umístění v hierarchii zobrazení.
+V tomto příkladu `labelStyle` a `buttonStyle` se ovládací prvek úrovni prostředků, zatímco `baseStyle` je prostředek úrovni stránky. Nicméně Přestože `labelStyle` a `buttonStyle` dědit z `baseStyle`, není možné pro `baseStyle` dědit z `labelStyle` nebo `buttonStyle`z důvodu jejich odpovídajících umístěních v zobrazení hierarchie.
 
-## <a name="style-inheritance-in-c35"></a>Styl dědičnosti v jazyce C&#35;
+## <a name="style-inheritance-in-c35"></a>Dědičnost stylů v jazyce C&#35;
 
-Ekvivalentní C# stránky, kde [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/) instance přiřazené přímo na [ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/) vlastnosti požadované ovládacích prvků, je znázorněno v následujícím příkladu kódu:
+Ekvivalentní C# stránku, kde [ `Style` ](xref:Xamarin.Forms.Style) jsou instance přiřazeny přímo [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) vlastnosti požadovaných kontrolních mechanismů, je znázorněno v následujícím příkladu kódu:
 
 ```csharp
 public class StyleInheritancePageCS : ContentPage
@@ -151,11 +151,11 @@ public class StyleInheritancePageCS : ContentPage
 }
 ```
 
-`baseStyle` Cíle [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) instance a nastaví [ `HorizontalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.HorizontalOptions/) a [ `VerticalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) vlastnosti. `baseStyle` Není nastaven přímo na všech ovládacích prvků. Místo toho `labelStyle` a `buttonStyle` , dědí nastavení hodnoty další vazbu vlastnosti. `labelStyle` a `buttonStyle` jsou poté použity [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) instancí a [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) instance, a to nastavením jejich [ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/) vlastnosti.
+`baseStyle` Cíle [ `View` ](xref:Xamarin.Forms.View) instance a nastaví [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions) a [ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions) vlastnosti. `baseStyle` Není nastavena přímo na žádné ovládací prvky. Místo toho `labelStyle` a `buttonStyle` , dědí nastavení hodnot další vlastnost s vazbou. `labelStyle` a `buttonStyle` použijí se [ `Label` ](xref:Xamarin.Forms.Label) instancí a [ `Button` ](xref:Xamarin.Forms.Button) instanci, nastavením jejich [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) vlastnosti.
 
 ## <a name="summary"></a>Souhrn
 
-Styly může dědit vlastnosti z jiných styly snížit duplikování a povolit opakované použití. Styl dědičnosti se provádí nastavením [ `Style.BasedOn` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.BasedOn/) vlastnost, která má existující [ `Style` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/).
+Styly může dědit z jiné styly snížit duplikace a umožňují opakované použití. Dědičnost stylů se provádí nastavením [ `Style.BasedOn` ](xref:Xamarin.Forms.Style.BasedOn) vlastnost do existujícího [ `Style` ](xref:Xamarin.Forms.Style).
 
 
 ## <a name="related-links"></a>Související odkazy
@@ -163,6 +163,6 @@ Styly může dědit vlastnosti z jiných styly snížit duplikování a povolit 
 - [Rozšíření značek XAML](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
 - [Základní styly (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
 - [Práce se styly (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
-- [ResourceDictionary](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)
-- [Styl](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)
-- [Metoda setter](https://developer.xamarin.com/api/type/Xamarin.Forms.Setter/)
+- [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
+- [Styl](xref:Xamarin.Forms.Style)
+- [Metoda setter](xref:Xamarin.Forms.Setter)

@@ -1,24 +1,24 @@
 ---
-title: Přehled rozhraní API Xamarin.iOS
-description: Tento dokument obsahuje odkazy na referenční dokumentace rozhraní API Xamarin, průvodce, který popisuje rozhraní API Xamarin.iOS návrhu a seznam sestavení, které jsou k dispozici pro použití v vývoj na platformě Xamarin.
+title: Přehled rozhraní API pro Xamarin.iOS
+description: Tento dokument obsahuje odkazy na referenční dokumentaci rozhraní API Xamarin, příručku, která popisuje návrh rozhraní API Xamarin.iOS a seznam sestavení, které jsou k dispozici pro použití při vývoji Xamarin.
 ms.prod: xamarin
 ms.assetid: 4C1669A4-C12B-9C49-4A39-9046576D10DC
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 81c30af4d7c95960344015ed6dcfd868deda06af
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: c6e0e770e844bf186dfb936fb8136b20f2c81daf
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786132"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994907"
 ---
-# <a name="xamarinios-api-overview"></a>Přehled rozhraní API Xamarin.iOS
+# <a name="xamarinios-api-overview"></a>Přehled rozhraní API pro Xamarin.iOS
 
-Zpřístupní Xamarin.iOS C# / CIL vytvoření vazby na rozhraní API CocoaTouch a také poskytuje přístup k rozhraní API souboru CIL ECMA a různé další rozhraní API technologie .NET.
+Xamarin.iOS zpřístupňuje C# / soubor CIL se NAČTE vazby CocoaTouch rozhraní API a také poskytuje přístup k rozhraní API ECMA soubor CIL se NAČTE a různé další rozhraní API pro .NET.
 
- **Referenční dokumentace rozhraní API**: referenční dokumentace rozhraní API je k dispozici na [ https://developer.xamarin.com/api/ ](https://developer.xamarin.com/api/), začínají [Xamarin.iOS Framework uzlu](https://developer.xamarin.com/api/root/ios-unified/) u vazeb rozhraní API pro nativní iPhone rozhraní API nebo přejděte na [ Základní knihovny tříd uzlu](https://developer.xamarin.com/api/root/classlib/) dokumentaci k rozhraní API .NET.
+ **Reference k rozhraní API**: referenční informace k API je k dispozici na [ https://developer.xamarin.com/api/ ](https://docs.microsoft.com/dotnet/api/), začínají [Xamarin.iOS Framework uzel](https://docs.microsoft.com/dotnet/api/?view=xamarinios-10.8) u vazeb rozhraní API pro iPhone nativní rozhraní API nebo přejít na [ Základní knihovny tříd uzel](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0) dokumentaci k rozhraní API pro .NET.
 
- **Rozhraní API návrhu**: návrhu rozhraní API pro vazbu souboru CIL, Objective-C je popsaná v [Xamarin.iOS rozhraní API návrhu](~/ios/internals/api-design/index.md) dokumentu a popisuje, jak jsme vázaný rozhraní API jazyka C a jazyka Objective-C z CocoaTouch a vystavené do jazyka C# nebo soubor CIL world .
+ **Návrh rozhraní API**: návrh rozhraní API pro vazbu soubor CIL se NAČTE/Objective-C je obsažen v [návrh rozhraní API Xamarin.iOS](~/ios/internals/api-design/index.md) dokumentu a popisuje, jak jsme z CocoaTouch vázán Objective-C a rozhraní API pro C a vystavit do jazyka C# / soubor CIL se NAČTE world .
 
- **Sestavení**: Zkontrolujte naše [seznam vázané sestavení](~/cross-platform/internals/available-assemblies.md) pro podrobné referenční informace, které rozhraní API z jazyka C# / CIL/ECMA jsou k dispozici pro použití v Xamarin.iOS.
+ **Sestavení**: Zkontrolujte naše [seznamu vázaného sestavení](~/cross-platform/internals/available-assemblies.md) pro podrobné referenční, které rozhraní API z jazyka C# / soubor CIL se NAČTE/ECMA jsou k dispozici pro použití v Xamarin.iOS.

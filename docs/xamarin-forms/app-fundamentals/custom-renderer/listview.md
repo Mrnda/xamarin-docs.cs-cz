@@ -1,42 +1,42 @@
 ---
-title: Přizpůsobení prvku ListView
-description: Xamarin.Forms ListView je zobrazení, které zobrazuje kolekce dat jako svislý seznam. Tento článek ukazuje, jak vytvořit vlastní zobrazovací jednotky zapouzdřující ovládací prvky seznamu specifické pro platformu a nativní buňky rozložení umožňuje větší kontrolu nad nativní seznamu řízení výkonu.
+title: Přizpůsobení ListView
+description: Xamarin.Forms ListView je zobrazení, která zobrazuje kolekce dat jako svislý seznam. Tento článek ukazuje, jak vytvořit vlastní zobrazovací jednotky, který zapouzdřuje ovládacích prvcích seznam specifické pro platformu a nativní buňky rozložení, umožní větší kontrolu nad nativní seznamu řízení výkonu.
 ms.prod: xamarin
 ms.assetid: 2FBCB8C8-4F32-45E7-954F-63AD29D5F1B5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 69640c1cdea6d7dbe3ec82dacbc77991c7b28c99
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: b3b73d542faebdb8ab85c989d7812368f4f3ffac
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34847397"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997481"
 ---
-# <a name="customizing-a-listview"></a>Přizpůsobení prvku ListView
+# <a name="customizing-a-listview"></a>Přizpůsobení ListView
 
-_Xamarin.Forms ListView je zobrazení, které zobrazuje kolekce dat jako svislý seznam. Tento článek ukazuje, jak vytvořit vlastní zobrazovací jednotky zapouzdřující ovládací prvky seznamu specifické pro platformu a nativní buňky rozložení umožňuje větší kontrolu nad nativní seznamu řízení výkonu._
+_Xamarin.Forms ListView je zobrazení, která zobrazuje kolekce dat jako svislý seznam. Tento článek ukazuje, jak vytvořit vlastní zobrazovací jednotky, který zapouzdřuje ovládacích prvcích seznam specifické pro platformu a nativní buňky rozložení, umožní větší kontrolu nad nativní seznamu řízení výkonu._
 
-Každé zobrazení Xamarin.Forms má doprovodné zobrazovací jednotky pro každou platformu, která vytvoří instanci nativní ovládacího prvku. Když [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) je vykreslen metodou aplikaci Xamarin.Forms, v iOS `ListViewRenderer` vytvoření instance třídy, které pak vytvoří nativní `UITableView` ovládacího prvku. Na platformě Android `ListViewRenderer` třída vytvoří nativní `ListView` ovládacího prvku. Na univerzální platformu Windows (UWP), `ListViewRenderer` třída vytvoří nativní `ListView` ovládacího prvku. Další informace o zobrazovací jednotky a třídy nativní ovládacích prvků, které ovládací prvky Xamarin.Forms mapování na najdete v tématu [zobrazovací jednotky základní třídy a nativní ovládací prvky](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
+Každé zobrazení Xamarin.Forms má související zobrazovací jednotky pro každou platformu, která vytvoří instanci nativní ovládacího prvku. Když [ `ListView` ](xref:Xamarin.Forms.ListView) je vykreslen metodou aplikace Xamarin.Forms v Iosu `ListViewRenderer` je vytvořena instance třídy, které pak vytvoří instanci nativní `UITableView` ovládacího prvku. Na platformu Android `ListViewRenderer` třídy vytvoří instanci nativní `ListView` ovládacího prvku. Na Universal Windows Platform (UWP), `ListViewRenderer` třídy vytvoří instanci nativní `ListView` ovládacího prvku. Další informace o nástroj pro vykreslování a nativní ovládací prvek třídy, které ovládací prvky Xamarin.Forms namapovat na najdete v tématu [Renderer základní třídy a nativní ovládací prvky](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md).
 
-Následující diagram znázorňuje vztah mezi [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) řízení a odpovídající nativní ovládací prvky, které implementují ho:
+Následující diagram znázorňuje vztah mezi [ `ListView` ](xref:Xamarin.Forms.ListView) ovládacího prvku a odpovídající nativní ovládací prvky, které je implementují:
 
-![](listview-images/listview-classes.png "Vztah mezi ovládacího prvku ListView a implementuje nativní ovládací prvky")
+![](listview-images/listview-classes.png "Vztah mezi ovládacím prvkem ListView a implementující nativní ovládací prvky")
 
-Proces vykreslování můžete provedeny výhod implementovat přizpůsobení specifické pro platformu tak, že vytvoříte vlastní zobrazovací jednotky pro [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) na každou platformu. Proces pro to vypadá takto:
+Samotný proces vykreslování děláte výhod implementovat tak, že vytvoříte vlastní zobrazovací jednotky pro vlastní nastavení pro konkrétní platformu [ `ListView` ](xref:Xamarin.Forms.ListView) na jednotlivých platformách. Tento proces je následujícím způsobem:
 
 1. [Vytvoření](#Creating_the_Custom_ListView_Control) Xamarin.Forms vlastního ovládacího prvku.
-1. [Využívat](#Consuming_the_Custom_Control) vlastní ovládací prvek z Xamarin.Forms.
-1. [Vytvoření](#Creating_the_Custom_Renderer_on_each_Platform) vlastní zobrazovací jednotky pro ovládací prvek na každou platformu.
+1. [Využívání](#Consuming_the_Custom_Control) vlastního ovládacího prvku z Xamarin.Forms.
+1. [Vytvoření](#Creating_the_Custom_Renderer_on_each_Platform) vlastního rendereru pro ovládací prvek na jednotlivých platformách.
 
-Každá položka teď probereme pak implementovat `NativeListView` vykreslovacího modulu, který využívá ovládací prvky seznamu specifické pro platformu a nativní buňky rozložení. Tento scénář je užitečné, když portování stávající nativní aplikace, který obsahuje seznam a buňky kód, který může být znovu použít. Kromě toho umožňuje podrobné přizpůsobení funkce ovládací prvek seznamu, které mohou ovlivnit výkon, jako je virtualizace data.
+Každá položka nyní probereme zase k implementaci `NativeListView` renderer, který využívá ovládacích prvcích seznam specifické pro platformu a rozložení nativní buňky. Tento scénář je vhodný, pokud přenášíte stávající nativní aplikace, který obsahuje seznam a buňky kódu, který se dá znovu použít. Kromě toho umožňuje podrobné přizpůsobení funkce ovládací prvek seznamu, které mohou ovlivnit výkon, jako je virtualizace dat.
 
 <a name="Creating_the_Custom_ListView_Control" />
 
-## <a name="creating-the-custom-listview-control"></a>Vytvoření ovládacího prvku ListView vlastní
+## <a name="creating-the-custom-listview-control"></a>Vytvoření ovládacího prvku vlastní ListView
 
-Vlastní [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) řízení lze vytvořit pomocí vytváření podtříd `ListView` třídy, jak je znázorněno v následujícím příkladu kódu:
+Vlastní [ `ListView` ](xref:Xamarin.Forms.ListView) ovládací prvek může být vytvořen vytváření podtříd `ListView` třídy, jak je znázorněno v následujícím příkladu kódu:
 
 ```csharp
 public class NativeListView : ListView
@@ -60,13 +60,13 @@ public class NativeListView : ListView
 }
 ```
 
-`NativeListView` Je vytvořen v rozhraní .NET standardní projektu knihovny a definuje rozhraní API pro vlastní ovládací prvek. Tento ovládací prvek zpřístupní `Items` vlastnost, která se používá pro sestavování `ListView` s daty a může být zobrazení data vázaná na pro účely. Také poskytuje `ItemSelected` událost, která nebudou vydány vždy, když je položka vybrána v ovládacím prvku seznamu nativní specifické pro platformu. Další informace o vazbě dat najdete v tématu [základy vazby dat](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md).
+`NativeListView` Je vytvořen v projektu knihovny .NET Standard a definuje rozhraní API pro vlastní ovládací prvek. Tento ovládací prvek poskytuje `Items` vlastnost, která se používá k naplnění `ListView` s daty, a které lze zobrazit data vázaná na pro účely. Také poskytuje `ItemSelected` událost, která se aktivuje vždy, když je vybrána položka v ovládacím prvku seznamu nativní specifické pro platformu. Další informace o datové vazbě naleznete v tématu [základy vytváření vazeb dat](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md).
 
 <a name="Consuming_the_Custom_Control" />
 
-## <a name="consuming-the-custom-control"></a>Použití vlastního ovládacího prvku
+## <a name="consuming-the-custom-control"></a>Používání vlastního ovládacího prvku
 
-`NativeListView` Vlastní ovládací prvek může být odkazováno v Xaml v rozhraní .NET standardní projektu knihovny deklarace oboru názvů pro umístění a použitím Předpona oboru názvů na ovládací prvek. Následující příklad kódu ukazuje jak `NativeListView` vlastního ovládacího prvku mohou být spotřebovávána stránky XAML:
+`NativeListView` Vlastní ovládací prvek může být odkazováno v jazyce Xaml v projektu knihovny .NET Standard deklarace oboru názvů pro jeho umístění a použitím předponu oboru názvů na ovládacím prvku. Následující příklad kódu ukazuje jak `NativeListView` vlastního ovládacího prvku mohou být spotřebovány stránky XAML:
 
 ```xaml
 <ContentPage ...
@@ -86,9 +86,9 @@ public class NativeListView : ListView
 </ContentPage>
 ```
 
-`local` Předponu oboru názvů můžete pojmenovat. Ale `clr-namespace` a `assembly` hodnoty musí odpovídat podrobnosti vlastního ovládacího prvku. Jakmile je deklarován obor názvů, je předpona, která slouží k odkazování vlastního ovládacího prvku.
+`local` Předponu oboru názvů může být název cokoli. Ale `clr-namespace` a `assembly` hodnoty musí odpovídat podrobnosti vlastního ovládacího prvku. Jakmile je deklarován obor názvů, předpona, která slouží k odkazování na vlastní ovládací prvek.
 
-Následující příklad kódu ukazuje jak `NativeListView` vlastního ovládacího prvku mohou být spotřebovávána stránky C#:
+Následující příklad kódu ukazuje jak `NativeListView` vlastního ovládacího prvku mohou být spotřebovány stránky jazyka C#:
 
 ```csharp
 public class MainPageCS : ContentPage
@@ -131,39 +131,39 @@ public class MainPageCS : ContentPage
 }
 ```
 
-`NativeListView` Vlastního ovládacího prvku používá vlastní nástroji pro vykreslování specifické pro platformu pro zobrazení seznamu data, která se naplní prostřednictvím `Items` vlastnost. Každý řádek v seznamu obsahuje tři položky dat – název, kategorie a názvu souboru bitové kopie. Rozložení každý řádek v seznamu je definována vlastní zobrazovací jednotky specifické pro platformu.
+`NativeListView` Vlastního ovládacího prvku používá vlastní renderery specifické pro platformu pro zobrazení seznamu dat, který je vyplněný prostřednictvím `Items` vlastnost. Každý řádek v seznamu obsahuje tři položky dat – název, kategorie a souboru obrázku. Rozložení každý řádek v seznamu je definována vlastního rendereru pro konkrétní platformu.
 
 > [!NOTE]
-> Protože `NativeListView` vlastní ovládací prvek bude vykreslen pomocí ovládací prvky seznamu specifických pro platformy, které zahrnují možnost posouvání, vlastního ovládacího prvku by neměly hostovat v ovládacích prvcích posouvatelného rozložení, jako [ `ScrollView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/).
+> Vzhledem k tomu, `NativeListView` vlastní ovládací prvek bude vykreslen pomocí ovládacích prvků seznamu specifické pro platformu, které zahrnují možnost posouvání, vlastní ovládací prvek by neměl být hostovaný ve posuvný rozložení ovládacích prvků, jako [ `ScrollView` ](xref:Xamarin.Forms.ScrollView).
 
-Vlastní zobrazovací jednotky lze nyní přidat na každý projekt aplikace pro vytvoření ovládací prvky seznamu specifické pro platformu a nativní buňky rozložení.
+Vlastní zobrazovací jednotky je nyní přidat do každého projektu aplikace pro vytvoření ovládacích prvcích seznam specifické pro platformu a nativní buňky rozložení.
 
 <a name="Creating_the_Custom_Renderer_on_each_Platform" />
 
-## <a name="creating-the-custom-renderer-on-each-platform"></a>Vytváření vlastní zobrazovací jednotky na jednotlivých platformách
+## <a name="creating-the-custom-renderer-on-each-platform"></a>Vytvoření vlastního Rendereru na jednotlivých platformách
 
-Proces pro vytvoření třídy vlastní zobrazovací jednotky vypadá takto:
+Proces pro vytvoření vlastního rendereru třídy vypadá takto:
 
-1. Vytvoření podtřídou třídy `ListViewRenderer` třídu, která vykreslí vlastního ovládacího prvku.
-1. Přepsání `OnElementChanged` metody, která vykreslí vlastní logiky řízení a zápis a přizpůsobit. Tato metoda je volána, když odpovídající Xamarin.Forms [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) je vytvořena.
-1. Přidat `ExportRenderer` atributu na vlastní zobrazovací jednotky třídu k určení, že bude použit k vykreslení vlastního ovládacího prvku Xamarin.Forms. Tento atribut slouží k registraci vlastní zobrazovací jednotky s Xamarin.Forms.
+1. Vytvořit podtřídu `ListViewRenderer` třídu, která vykreslí vlastního ovládacího prvku.
+1. Přepsat `OnElementChanged` metody, která vykreslí vlastní ovládací prvek a zapisovat logiku, aby ji přizpůsobit. Tato metoda je volána, když odpovídající Xamarin.Forms [ `ListView` ](xref:Xamarin.Forms.ListView) se vytvoří.
+1. Přidat `ExportRenderer` atribut pro třídu vlastního rendereru určíte, že bude používat k vykreslení vlastního ovládacího prvku Xamarin.Forms. Tento atribut slouží k registraci vlastního rendereru s Xamarin.Forms.
 
 > [!NOTE]
-> Zadání je volitelné poskytnout vlastní zobrazovací jednotky v každém projektu platformy. Pokud není registrované vlastní zobrazovací jednotky, pak výchozí zobrazovací jednotky pro základní třídu z buňky použít.
+> Zadání je volitelné poskytnout vlastní zobrazovací jednotky v každém projektu platformy. Pokud není zaregistrovaný vlastní zobrazovací jednotky, se používá výchozí zobrazovací jednotky pro základní třídu na buňku.
 
-Následující diagram znázorňuje odpovědnosti jednotlivých projektů v ukázkové aplikace, spolu s jejich vzájemných vztahů:
+Následující diagram znázorňuje odpovědnosti každý projekt v ukázkové aplikaci, spolu s jejich vzájemné vztahy:
 
 ![](listview-images/solution-structure.png "NativeListView vlastní zobrazovací jednotky projektu odpovědnosti")
 
-`NativeListView` Vykreslení vlastního ovládacího prvku renderer specifické pro platformu třídy, které jsou odvozeny od `ListViewRenderer` třídu pro každou platformu. Výsledkem je každý `NativeListView` vlastního ovládacího prvku vykreslované s ovládací prvky seznamu specifické pro platformu a nativní buňky rozložení, jak je vidět na následujících snímcích obrazovky:
+`NativeListView` Vlastního ovládacího prvku je vykreslen metodou renderer specifické pro platformu, všechny odvozené třídy `ListViewRenderer` třídy pro každou platformu. Výsledkem je každý `NativeListView` vlastní ovládací prvky vykreslované s ovládacími prvky seznam specifické pro platformu a nativní buňky rozložení, jak je znázorněno na následujících snímcích obrazovky:
 
 ![](listview-images/screenshots.png "NativeListView na jednotlivých platformách")
 
-`ListViewRenderer` Třídy zpřístupňuje `OnElementChanged` metodu, která je volána, když vlastního ovládacího prvku Xamarin.Forms se vytvoří pro vykreslení odpovídající nativní ovládacího prvku. Tato metoda přebírá `ElementChangedEventArgs` parametr, který obsahuje `OldElement` a `NewElement` vlastnosti. Tyto vlastnosti představují Xamarin.Forms element, zobrazovací jednotky *byla* připojené a Xamarin.Forms element, zobrazovací jednotky *je* připojené k, v uvedeném pořadí. V ukázkové aplikaci `OldElement` , bude mít vlastnost `null` a `NewElement` vlastnost bude obsahovat odkaz na `NativeListView` instance.
+`ListViewRenderer` Třídy zpřístupňuje `OnElementChanged` metodu, která je volána při vytvoření vlastního ovládacího prvku Xamarin.Forms pro vykreslení odpovídající nativní ovládací prvek. Tato metoda přebírá `ElementChangedEventArgs` parametr, který obsahuje `OldElement` a `NewElement` vlastnosti. Tyto vlastnosti představují elementu Xamarin.Forms, která zobrazovací jednotky *byl* připojené a Xamarin.Forms element, která zobrazovací jednotky *je* připojené položky v uvedeném pořadí. V ukázkové aplikaci `OldElement` bude mít vlastnost `null` a `NewElement` vlastnost bude obsahovat odkaz na `NativeListView` instance.
 
-Přepsané verzi `OnElementChanged` metoda v každé třídě renderer specifických pro platformy je místo, kde provádět přizpůsobení nativní ovládací prvek. Zadaný odkaz na nativní ovládací prvek používá na platformě je možné přistupovat prostřednictvím `Control` vlastnost. Kromě toho nelze získat odkaz na platformě Xamarin.Forms ovládací prvek, který je vykreslované prostřednictvím `Element` vlastnost.
+Přepsané verzi `OnElementChanged` metoda v každé třídě renderer specifické pro platformu je místem, kde můžete provádět přizpůsobení nativní ovládacího prvku. Zadaný odkaz na nativní ovládací prvek se používají na platformě je přístupná prostřednictvím `Control` vlastnost. Kromě toho lze získat odkaz na ovládací prvek Xamarin.Forms, která se vykresluje přes `Element` vlastnost.
 
-Musí dát pozor, když se přihlásíte k obslužné rutiny událostí v odběru `OnElementChanged` metoda, jak je ukázáno v následujícím příkladu kódu:
+Musíte věnovat pozornost při přihlášení k odběru do obslužné rutiny událostí v `OnElementChanged` způsob, jak je ukázáno v následujícím příkladu kódu:
 
 ```csharp
 protected override void OnElementChanged (ElementChangedEventArgs<Xamarin.Forms.ListView> e)
@@ -180,15 +180,15 @@ protected override void OnElementChanged (ElementChangedEventArgs<Xamarin.Forms.
 }
 ```
 
-Nativní ovládacího prvku by měl být nakonfigurovaný jenom a po vlastní zobrazovací jednotky k nové element Xamarin.Forms přihlásit k odběru obslužné rutiny událostí. Všechny obslužné rutiny, které byly přihlásit k odběru podobně, musí být v odhlásit jenom v případě, že element zobrazovací jednotky je připojen k změny. Přijetí tento přístup vám pomůže vytvořit vlastní zobrazovací jednotky, která není trpí nevracení paměti.
+Nativní ovládací prvek by měl být nakonfigurovaný jenom a když vlastní zobrazovací jednotky je připojen k nový prvek Xamarin.Forms přihlásit k odběru obslužných rutin událostí. Všechny obslužné rutiny, které byly k odběru Podobně by měla být Odhlášený jenom v případě, že element zobrazovací jednotky je připojený k změny. Přijmout tento přístup vám pomůže vytvořit vlastní zobrazovací jednotky, který není trpí nevracení paměti.
 
-Přepsané verzi `OnElementPropertyChanged` metoda v každé třídě renderer specifických pro platformy je místo, které odpovídají změnám vazbu vlastnosti na platformě Xamarin.Forms vlastního ovládacího prvku. Kontrolu pro vlastnost, která se změnila měli vždy provedena, protože toto přepsání lze volat vícekrát.
+Přepsané verzi `OnElementPropertyChanged` metoda v každé třídě renderer specifické pro platformu je místem, kde můžete reagovat na změny vlastnost s vazbou na vlastním ovládacím prvku Xamarin.Forms. Kontrola změněná vlastnost by měla vždy provedena, protože toto přepsání je možné vyvolat v mnoha případech.
 
-Každá třída vlastní zobrazovací jednotky je upraven pomocí `ExportRenderer` atribut, který registruje zobrazovací jednotky s Xamarin.Forms. Atribut přebírá dva parametry – název typu vlastního ovládacího prvku Xamarin.Forms vykreslované a název typu vlastní zobrazovací jednotky. `assembly` Předpona, která má atribut určuje atribut, které se vztahují na celou sestavení.
+Každá třída vlastní zobrazovací jednotky je doplněn `ExportRenderer` atribut, který registruje vykreslovaný pomocí Xamarin.Forms. Atribut přebírá dva parametry – název typu vlastního ovládacího prvku Xamarin.Forms vykreslované a název typu vlastní zobrazovací jednotky. `assembly` Předpona, která atribut určuje, že platí atribut pro celé sestavení.
 
-Následující části popisují implementaci třídy každý vlastní zobrazovací jednotky specifické pro platformu.
+Následující části popisují implementaci každou třídu vlastního rendereru pro konkrétní platformu.
 
-### <a name="creating-the-custom-renderer-on-ios"></a>Vytváření vlastní zobrazovací jednotky v systému iOS
+### <a name="creating-the-custom-renderer-on-ios"></a>Vytvoření vlastní zobrazovací jednotky v systému iOS
 
 Následující příklad kódu ukazuje vlastní zobrazovací jednotky pro platformu iOS:
 
@@ -214,7 +214,7 @@ namespace CustomRenderer.iOS
 }
 ```
 
-`UITableView` Ovládací prvek je nakonfigurován tak, že vytvoříte instanci `NativeiOSListViewSource` třídy, za předpokladu, že vlastní zobrazovací jednotky je připojen k nového elementu Xamarin.Forms. Tato třída poskytuje data, která `UITableView` řízení přepsáním `RowsInSection` a `GetCell` metody z `UITableViewSource` třídy a nástrojem vystavení `Items` vlastnost, která obsahuje seznam dat, který se má zobrazit. Také poskytuje třídy `RowSelected` přepsání metody, která volá `ItemSelected` událostí poskytované `NativeListView` vlastního ovládacího prvku. Další informace o metodě přepsání, najdete v části [vytváření podtříd UITableViewSource](~/ios/user-interface/controls/tables/populating-a-table-with-data.md). `GetCell` Metoda vrátí `UITableCellView` který naplněný daty pro každý řádek v seznamu a je znázorněno v následujícím příkladu kódu:
+`UITableView` Ovládací prvek je nakonfigurovaný tak, že vytvoříte instanci `NativeiOSListViewSource` třídy za předpokladu, že vlastní zobrazovací jednotky je připojen k nový prvek Xamarin.Forms. Tato třída poskytuje data, aby `UITableView` ovládacího prvku tak, že přepíšete `RowsInSection` a `GetCell` metody ze `UITableViewSource` třídy a tím vystavení `Items` vlastnost, která obsahuje seznam dat, který se má zobrazit. Třída rovněž poskytuje `RowSelected` přepsání metody, která volá `ItemSelected` události poskytované `NativeListView` vlastního ovládacího prvku. Další informace o metodě přepsání, najdete v části [vytváření podtříd UITableViewSource](~/ios/user-interface/controls/tables/populating-a-table-with-data.md). `GetCell` Metoda vrátí hodnotu `UITableCellView` , který je naplněný daty pro každý řádek v seznamu a je znázorněno v následujícím příkladu kódu:
 
 ```csharp
 public override UITableViewCell GetCell (UITableView tableView, NSIndexPath indexPath)
@@ -241,9 +241,9 @@ public override UITableViewCell GetCell (UITableView tableView, NSIndexPath inde
 }
 ```
 
-Tato metoda vytvoří `NativeiOSListViewCell` instance pro každý řádek dat, která se zobrazí na obrazovce. `NativeiOSCell` Instance definuje rozložení jednotlivých buněk a dat z buňky. Když buňku zmizí z obrazovky kvůli posouvání, buňky bude dostupná pro opakované použití. Tím předejdete tím, že zajistí plýtvání paměti, které existují pouze `NativeiOSCell` instance pro data zobrazená na obrazovce, nikoli všechna data v seznamu. Další informace o opakované použití buňky najdete v tématu [buňky opakovaně](~/ios/user-interface/controls/tables/populating-a-table-with-data.md). `GetCell` Metoda také přečte `ImageFilename` vlastnost pro každý řádek dat, že existuje, a načte bitovou kopii a uloží ji jako `UIImage` instance před aktualizací `NativeiOSListViewCell` instanci s daty (název, kategorie a bitové kopie) pro řádek.
+Tato metoda vytvoří `NativeiOSListViewCell` instance pro každý řádek dat, která se zobrazí na obrazovce. `NativeiOSCell` Instance definuje rozložení buněk a data na buňku. Když buňky dané zařízení zmizí z obrazovky z důvodu posouvání, bude buňky budou dostupné pro opakované použití. To zabraňuje plýtvání paměti tím, že zajišťuje, že existují pouze `NativeiOSCell` instance pro data se zobrazí na obrazovce, a nikoli všech dat v seznamu. Další informace o opakované použití buňky, naleznete v tématu [buňky znovu použít](~/ios/user-interface/controls/tables/populating-a-table-with-data.md). `GetCell` Metoda také přečte `ImageFilename` vlastnost každý řádek dat, předpokladu, že existuje a načte bitovou kopii a uloží ji jako `UIImage` instance před aktualizací `NativeiOSListViewCell` instanci s daty (název, kategorie a obrázků) řádek.
 
-`NativeiOSListViewCell` Třídy definuje rozložení pro každý buňky a je znázorněno v následujícím příkladu kódu:
+`NativeiOSListViewCell` Třída definuje rozložení pro každou buňku a je znázorněno v následujícím příkladu kódu:
 
 ```csharp
 public class NativeiOSListViewCell : UITableViewCell
@@ -295,11 +295,11 @@ public class NativeiOSListViewCell : UITableViewCell
 }
 ```
 
-Tato třída definuje použitý k vykreslení obsah buňky a jejich rozložení ovládacích prvků. `NativeiOSListViewCell` Konstruktor vytváří instance `UILabel` a `UIImageView` ovládací prvky a inicializuje jejich vzhled. Tyto ovládací prvky slouží k zobrazení každý řádek dat s `UpdateCell` metodu použitou k nastavení těchto dat na `UILabel` a `UIImageView` instance. Umístění těchto instancí se nastaví pomocí přepsané `LayoutSubviews` metoda zadáním jejich souřadnice v rámci buňky.
+Tato třída definuje ovládací prvky používané k vykreslení obsahu buňky a jejich rozložení. `NativeiOSListViewCell` Konstruktoru vytváří instance `UILabel` a `UIImageView` ovládací prvky a inicializuje jejich výskytu. Tyto ovládací prvky se používají k zobrazení každý řádek dat, mají `UpdateCell` používanou k nastavení těchto dat na metodu `UILabel` a `UIImageView` instancí. Umístění těchto instancí je nastaveno tak přepsané `LayoutSubviews` metoda zadáním jejich souřadnice v buňce.
 
-#### <a name="responding-to-a-property-change-on-the-custom-control"></a>Neodpovídá na požadavky na změnu vlastností vlastního ovládacího prvku
+#### <a name="responding-to-a-property-change-on-the-custom-control"></a>Reakce na změnu vlastnosti na vlastním ovládacím prvku
 
-Pokud `NativeListView.Items` vlastnost změní z důvodu položek, který se přidává do nebo ze seznamu odebrány, vlastní zobrazovací jednotky musí odpovídat tak, že zobrazení změny. Toho lze dosáhnout přepsáním `OnElementPropertyChanged` metodu, která je znázorněno v následujícím příkladu kódu:
+Pokud `NativeListView.Items` vlastnosti změní, protože položky se přidávají do nebo odebrán ze seznamu, vlastní zobrazovací jednotky je potřeba reagovat zobrazením změny. Toho můžete docílit tak, že přepíšete `OnElementPropertyChanged` metoda, která je znázorněna v následujícím příkladu kódu:
 
 ```csharp
 protected override void OnElementPropertyChanged (object sender, System.ComponentModel.PropertyChangedEventArgs e)
@@ -312,9 +312,9 @@ protected override void OnElementPropertyChanged (object sender, System.Componen
 }
 ```
 
-Metoda vytvoří novou instanci třídy `NativeiOSListViewSource` třídu, která poskytuje data, která `UITableView` řídit, za předpokladu, že vazbu `NativeListView.Items` došlo ke změně vlastností.
+Metoda vytvoří novou instanci třídy `NativeiOSListViewSource` třídu, která poskytuje data, aby `UITableView` řídit, za předpokladu, umožňujících vazbu `NativeListView.Items` je změněna vlastnost.
 
-### <a name="creating-the-custom-renderer-on-android"></a>Vytváření vlastní zobrazovací jednotky v systému Android
+### <a name="creating-the-custom-renderer-on-android"></a>Vytvoření vlastního Rendereru v Androidu
 
 Následující příklad kódu ukazuje vlastní zobrazovací jednotky pro platformu Android:
 
@@ -358,9 +358,9 @@ namespace CustomRenderer.Droid
 }
 ```
 
-Nativního `ListView` ovládací prvek je nakonfigurován za předpokladu, že vlastní zobrazovací jednotky je připojen k nového elementu Xamarin.Forms. Tato konfigurace zahrnuje vytvoření instance `NativeAndroidListViewAdapter` třídu, která poskytuje data do nativního `ListView` řízení a registraci obslužné rutiny události ke zpracování `ItemClick` událostí. Pak bude tato obslužná rutina vyvolání `ItemSelected` událostí poskytované `NativeListView` vlastního ovládacího prvku. `ItemClick` Událostí je odhlásil ze, pokud element Xamarin.Forms zobrazovací jednotky je připojena k změny.
+Nativní `ListView` ovládací prvek je nakonfigurován za předpokladu, že vlastní zobrazovací jednotky je připojen k nový prvek Xamarin.Forms. Tato konfigurace zahrnuje vytvoření instance `NativeAndroidListViewAdapter` třídu, která poskytuje data pro nativní `ListView` řídit a registraci obslužné rutiny události ke zpracování `ItemClick` událostí. Pak se vyvolá tuto obslužnou rutinu `ItemSelected` události poskytované `NativeListView` vlastního ovládacího prvku. `ItemClick` Událostí je zrušili odběr, pokud element Xamarin.Forms zobrazovací jednotky je připojený k změny.
 
-`NativeAndroidListViewAdapter` Je odvozena z `BaseAdapter` třídy a zpřístupňuje `Items` vlastnost, která obsahuje seznam dat, který se má zobrazit, jakož i přepsání `Count`, `GetView`, `GetItemId`, a `this[int]` metody. Další informace o tato metoda přepsání najdete v tématu [implementace ListAdapter](~/android/user-interface/layouts/list-view/populating.md). `GetView` Metoda vrací zobrazení pro každý řádek naplněný daty a je znázorněno v následujícím příkladu kódu:
+`NativeAndroidListViewAdapter` Je odvozen od `BaseAdapter` třídy a zpřístupňuje `Items` vlastnost, která obsahuje seznam dat, který se má zobrazit, stejně jako přepsání `Count`, `GetView`, `GetItemId`, a `this[int]` metody. Další informace o tato přepsání metody, naleznete v tématu [implementace ListAdapter](~/android/user-interface/layouts/list-view/populating.md). `GetView` Metoda vrací zobrazení pro každý řádek naplněný daty a je znázorněno v následujícím příkladu kódu:
 
 ```csharp
 public override View GetView (int position, View convertView, ViewGroup parent)
@@ -405,11 +405,11 @@ public override View GetView (int position, View convertView, ViewGroup parent)
 }
 ```
 
-`GetView` Metoda je volána vrátit buňky k vykreslení, jako `View`, pro každý řádek dat v seznamu. Vytvoří `View` instance pro každý řádek dat, která se zobrazí na obrazovce s vzhled `View` instance definovaný v souboru rozložení. Když buňku zmizí z obrazovky kvůli posouvání, buňky bude dostupná pro opakované použití. Tím předejdete tím, že zajistí plýtvání paměti, které existují pouze `View` instance pro data zobrazená na obrazovce, nikoli všechna data v seznamu. Další informace o opakované použití zobrazení najdete v tématu [řádek zobrazení znovu použít](~/android/user-interface/layouts/list-view/populating.md).
+`GetView` Metoda je volána k vrácení buňky, které mají být vykresleny jako `View`, pro každý řádek dat v seznamu. Vytvoří `View` instance pro každý řádek dat, která se zobrazí na obrazovce s vzhled `View` instance definované v souboru rozložení. Když buňky dané zařízení zmizí z obrazovky z důvodu posouvání, bude buňky budou dostupné pro opakované použití. To zabraňuje plýtvání paměti tím, že zajišťuje, že existují pouze `View` instance pro data se zobrazí na obrazovce, a nikoli všech dat v seznamu. Další informace o opakované použití zobrazení najdete v tématu [řádek opětovného použití zobrazení](~/android/user-interface/layouts/list-view/populating.md).
 
-`GetView` Metoda také naplní `View` instance s daty, včetně čtení bitovou kopii dat z zadaný v názvu souboru `ImageFilename` vlastnost.
+`GetView` Metoda také naplní `View` instance s daty, včetně čtení dat bitové kopie z název souboru zadaného v `ImageFilename` vlastnost.
 
-Rozložení jednotlivých buněk dispayed pomocí nativního `ListView` je definována v `NativeAndroidListViewCell.axml` rozložení souboru, který je zvětšený pomocí `LayoutInflater.Inflate` metoda. Následující příklad kódu ukazuje definici rozložení:
+Rozložení jednotlivých dispayed buňky pomocí nativního `ListView` je definována v `NativeAndroidListViewCell.axml` soubor rozložení, který je zvětšený podle `LayoutInflater.Inflate` metody. Následující příklad kódu ukazuje definice rozložení:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -449,11 +449,11 @@ Rozložení jednotlivých buněk dispayed pomocí nativního `ListView` je defin
 </RelativeLayout>
 ```
 
-Toto rozložení určuje, že dva `TextView` ovládací prvky a `ImageView` řízení lze zobrazit obsah buňky. Dva `TextView` ovládací prvky jsou v rámci svisle orientované `LinearLayout` ovládacího prvku pomocí všechny ovládací prvky v `RelativeLayout`.
+Toto rozložení určuje, že dvě `TextView` ovládací prvky a `ImageView` ovládacího prvku se používají k zobrazení obsahu buňky. Dva `TextView` ovládací prvky jsou v rámci svisle orientovaný `LinearLayout` ovládací prvek s všechny ovládací prvky jsou obsaženy v rámci `RelativeLayout`.
 
-#### <a name="responding-to-a-property-change-on-the-custom-control"></a>Neodpovídá na požadavky na změnu vlastností vlastního ovládacího prvku
+#### <a name="responding-to-a-property-change-on-the-custom-control"></a>Reakce na změnu vlastnosti na vlastním ovládacím prvku
 
-Pokud `NativeListView.Items` vlastnost změní z důvodu položek, který se přidává do nebo ze seznamu odebrány, vlastní zobrazovací jednotky musí odpovídat tak, že zobrazení změny. Toho lze dosáhnout přepsáním `OnElementPropertyChanged` metodu, která je znázorněno v následujícím příkladu kódu:
+Pokud `NativeListView.Items` vlastnosti změní, protože položky se přidávají do nebo odebrán ze seznamu, vlastní zobrazovací jednotky je potřeba reagovat zobrazením změny. Toho můžete docílit tak, že přepíšete `OnElementPropertyChanged` metoda, která je znázorněna v následujícím příkladu kódu:
 
 ```csharp
 protected override void OnElementPropertyChanged (object sender, System.ComponentModel.PropertyChangedEventArgs e)
@@ -466,9 +466,9 @@ protected override void OnElementPropertyChanged (object sender, System.Componen
 }
 ```
 
-Metoda vytvoří novou instanci třídy `NativeAndroidListViewAdapter` třídu, která poskytuje data do nativního `ListView` řídit, za předpokladu, že vazbu `NativeListView.Items` došlo ke změně vlastností.
+Metoda vytvoří novou instanci třídy `NativeAndroidListViewAdapter` třídu, která poskytuje data pro nativní `ListView` řídit, za předpokladu, umožňujících vazbu `NativeListView.Items` je změněna vlastnost.
 
-### <a name="creating-the-custom-renderer-on-uwp"></a>Vytváření vlastní zobrazovací jednotky na UWP
+### <a name="creating-the-custom-renderer-on-uwp"></a>Vytvoření vlastního Rendereru na UPW
 
 Následující příklad kódu ukazuje vlastní zobrazovací jednotky pro UPW:
 
@@ -511,9 +511,9 @@ namespace CustomRenderer.UWP
 }
 ```
 
-Nativního `ListView` ovládací prvek je nakonfigurován za předpokladu, že vlastní zobrazovací jednotky je připojen k nového elementu Xamarin.Forms. Tato konfigurace zahrnuje nastavení jak nativního `ListView` ovládací prvek bude reagovat na vybraných, položek naplnění dat zobrazovaného ovládacím prvku definování vzhled a obsah jednotlivých buněk a registraci obslužné rutiny události ke zpracování `SelectionChanged` událostí. Pak bude tato obslužná rutina vyvolání `ItemSelected` událostí poskytované `NativeListView` vlastního ovládacího prvku. `SelectionChanged` Událostí je odhlásil ze, pokud element Xamarin.Forms zobrazovací jednotky je připojena k změny.
+Nativní `ListView` ovládací prvek je nakonfigurován za předpokladu, že vlastní zobrazovací jednotky je připojen k nový prvek Xamarin.Forms. Tato konfigurace zahrnuje nastavení jak nativní `ListView` ovládací prvek bude reagovat na vybraných, položek naplnění dat zobrazí ovládací prvek, definování vzhledu a obsahy buněk a registraci obslužné rutiny události ke zpracování `SelectionChanged` událostí. Pak se vyvolá tuto obslužnou rutinu `ItemSelected` události poskytované `NativeListView` vlastního ovládacího prvku. `SelectionChanged` Událostí je zrušili odběr, pokud element Xamarin.Forms zobrazovací jednotky je připojený k změny.
 
-Vzhled a obsah každé nativní `ListView` buňky jsou definovány `DataTemplate` s názvem `ListViewItemTemplate`. To `DataTemplate` je uložený ve slovníku prostředek na úrovni aplikace a je znázorněno v následujícím příkladu kódu:
+Vzhled a obsah každé nativní `ListView` buňky jsou definovány `DataTemplate` s názvem `ListViewItemTemplate`. To `DataTemplate` jsou uloženy ve slovníku prostředků na úrovni aplikace a je znázorněno v následujícím příkladu kódu:
 
 ```xaml
 <DataTemplate x:Key="ListViewItemTemplate">
@@ -538,11 +538,11 @@ Vzhled a obsah každé nativní `ListView` buňky jsou definovány `DataTemplate
 </DataTemplate>
 ```
 
-`DataTemplate` Určuje ovládacích prvků používaná k zobrazení obsahu buňky a jejich rozložení a vzhled. Dva `TextBlock` ovládací prvky a `Image` řízení lze zobrazit obsah buňky prostřednictvím datové vazby. Kromě toho instance `ConcatImageExtensionConverter` slouží k řetězení `.jpg` souboru rozšíření pro každý název souboru obrázku. To zajistí, že `Image` řízení můžete načíst a vykreslit bitovou kopii, když je `Source` je nastavena.
+`DataTemplate` Určuje ovládací prvky používané k zobrazení obsahu buňky a jejich rozložení a vzhled. Dvě `TextBlock` ovládací prvky a `Image` ovládacího prvku se používají k zobrazení obsahu buňky prostřednictvím datové vazby. Kromě toho instance `ConcatImageExtensionConverter` slouží ke zřetězení `.jpg` příponou pro každý název souboru obrázku. To zajistí, že `Image` můžete načíst a vykreslit bitovou kopii, když je ovládací prvek `Source` je nastavena.
 
-#### <a name="responding-to-a-property-change-on-the-custom-control"></a>Neodpovídá na požadavky na změnu vlastností vlastního ovládacího prvku
+#### <a name="responding-to-a-property-change-on-the-custom-control"></a>Reakce na změnu vlastnosti na vlastním ovládacím prvku
 
-Pokud `NativeListView.Items` vlastnost změní z důvodu položek, který se přidává do nebo ze seznamu odebrány, vlastní zobrazovací jednotky musí odpovídat tak, že zobrazení změny. Toho lze dosáhnout přepsáním `OnElementPropertyChanged` metodu, která je znázorněno v následujícím příkladu kódu:
+Pokud `NativeListView.Items` vlastnosti změní, protože položky se přidávají do nebo odebrán ze seznamu, vlastní zobrazovací jednotky je potřeba reagovat zobrazením změny. Toho můžete docílit tak, že přepíšete `OnElementPropertyChanged` metoda, která je znázorněna v následujícím příkladu kódu:
 
 ```csharp
 protected override void OnElementPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
@@ -556,11 +556,11 @@ protected override void OnElementPropertyChanged(object sender, System.Component
 }
 ```
 
-Metoda znovu naplní nativního `ListView` ovládacího prvku s změněná data za předpokladu, že vazbu `NativeListView.Items` došlo ke změně vlastností.
+Metoda znovu naplní nativní `ListView` ovládacího prvku s změněná data, za předpokladu, umožňujících vazbu `NativeListView.Items` je změněna vlastnost.
 
 ## <a name="summary"></a>Souhrn
 
-Tento článek vám ukázal, jak vytvořit vlastní zobrazovací jednotky zapouzdřující ovládací prvky seznamu specifické pro platformu a nativní buňky rozložení umožňuje větší kontrolu nad nativní seznamu řízení výkonu.
+Tento článek vám ukázal, jak vytvořit vlastní zobrazovací jednotky, který zapouzdřuje ovládacích prvcích seznam specifické pro platformu a nativní buňky rozložení, umožní větší kontrolu nad nativní seznamu řízení výkonu.
 
 
 ## <a name="related-links"></a>Související odkazy

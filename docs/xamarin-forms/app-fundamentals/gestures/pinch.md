@@ -1,26 +1,26 @@
 ---
-title: Přidání funkce rozpoznávání Roztahováním gesto
-description: Tento článek vysvětluje, jak používat k provádění interaktivní přiblížení bitové kopie v umístění roztahováním gesto roztahováním.
+title: Přidání rozpoznávání gest prstů
+description: Tento článek vysvětluje, jak pomocí gesta stažení provádět interaktivní zvětšení obrázku v umístění stažení.
 ms.prod: xamarin
 ms.assetid: 832F7810-F0CF-441A-B04A-3975F3FB8B29
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
-ms.openlocfilehash: 3600a8bf059bf29429cce35a233cc6618daa4d79
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 37befdcd4ccbcd49e3cebda92d55ae6f70da2ad6
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241774"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998696"
 ---
-# <a name="adding-a-pinch-gesture-recognizer"></a>Přidání funkce rozpoznávání Roztahováním gesto
+# <a name="adding-a-pinch-gesture-recognizer"></a>Přidání rozpoznávání gest prstů
 
-_Gesto roztahováním slouží k provádění interaktivní přiblížení a je implementována pomocí třídy PinchGestureRecognizer. Běžný scénář pro gesto roztahováním je provést interaktivní přiblížení bitové kopie v umístění roztahováním. Provádí škálování obsah zobrazení a je ukázáno v tomto článku._
+_Gesta stažení se používá pro provádění interaktivního přiblížení a je implementována pomocí PinchGestureRecognizer třídy. Je běžným scénářem, gesta stažení provádět interaktivní zvětšení obrázku v umístění stažení. Provádí škálování obsahu zobrazení a je ukázáno v tomto článku._
 
 ## <a name="overview"></a>Přehled
 
-Chcete-li umožňujícím s gesto roztahováním element uživatelského rozhraní, vytvořte [ `PinchGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PinchGestureRecognizer/) instance, zpracování [ `PinchUpdated` ](https://developer.xamarin.com/api/event/Xamarin.Forms.PinchGestureRecognizer.PinchUpdated/) události, a přidejte nový rozpoznávání gesto [ `GestureRecognizers` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.GestureRecognizers/) kolekce na element uživatelského rozhraní. Následující příklad kódu ukazuje `PinchGestureRecognizer` připojené k [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) element:
+Chcete-li prvek uživatelského rozhraní pomocí gesta stažení roztahováním, vytvořte [ `PinchGestureRecognizer` ](xref:Xamarin.Forms.PinchGestureRecognizer) instance, nastavte popisovač [ `PinchUpdated` ](xref:Xamarin.Forms.PinchGestureRecognizer.PinchUpdated) události, a přidejte nový nástroj pro rozpoznávání gest na [ `GestureRecognizers` ](xref:Xamarin.Forms.View.GestureRecognizers) kolekce na prvek uživatelského rozhraní. Následující příklad kódu ukazuje `PinchGestureRecognizer` připojené k [ `Image` ](xref:Xamarin.Forms.Image) element:
 
 ```csharp
 var pinchGesture = new PinchGestureRecognizer();
@@ -30,7 +30,7 @@ pinchGesture.PinchUpdated += (s, e) => {
 image.GestureRecognizers.Add(pinchGesture);
 ```
 
-To jde dosáhnout i v jazyce XAML, jak je znázorněno v následujícím příkladu kódu:
+Taky jde tohoto dosáhnout v XAML, jak je znázorněno v následujícím příkladu kódu:
 
 ```xaml
 <Image Source="waterfront.jpg">
@@ -40,7 +40,7 @@ To jde dosáhnout i v jazyce XAML, jak je znázorněno v následujícím příkl
 </Image>
 ```
 
-Kód pro `OnPinchUpdated` obslužné rutiny události se pak přidá do souboru kódu na pozadí:
+Kód `OnPinchUpdated` obslužná rutina události se pak přidá do souboru kódu na pozadí:
 
 ```csharp
 void OnPinchUpdated (object sender, PinchGestureUpdatedEventArgs e)
@@ -49,9 +49,9 @@ void OnPinchUpdated (object sender, PinchGestureUpdatedEventArgs e)
 }
 ```
 
-## <a name="creating-a-pinchtozoom-container"></a>Vytvoření kontejneru PinchToZoom
+## <a name="creating-a-pinchtozoom-container"></a>Vytváří se kontejner PinchToZoom
 
-Zpracování gesto roztahováním k provedení operace zvětšení vyžaduje některé matematické k transformaci uživatelského rozhraní. Tato část obsahuje zobecněný pomocná třída určená k provádět výpočty, který můžete použít pro interaktivní přiblížení žádné element uživatelského rozhraní. Následující příklad kódu ukazuje `PinchToZoomContainer` třídy:
+Zpracování gesta prstů k provedení operace zvětšení vyžaduje procvičili matematiku k transformaci uživatelského rozhraní. Tato část obsahuje zobecněný pomocná třída určená k provádět výpočty, které lze použít pro interaktivní přiblížení libovolný prvek uživatelského rozhraní. Následující příklad kódu ukazuje `PinchToZoomContainer` třídy:
 
 ```csharp
 public class PinchToZoomContainer : ContentView
@@ -72,7 +72,7 @@ public class PinchToZoomContainer : ContentView
 }
 ```
 
-Tato třída může obtékat element uživatelského rozhraní tak, aby gesto roztahováním změní měřítko element zabalené uživatelského rozhraní. Následující příklad ukazuje kód XAML `PinchToZoomContainer` zabalení [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) element:
+Tato třída může obtékat prvek uživatelského rozhraní tak, aby gesta stažení Změní měřítko prvek zabalené uživatelského rozhraní. Následující příklad ukazuje kód XAML `PinchToZoomContainer` pro zabalení [ `Image` ](xref:Xamarin.Forms.Image) element:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -91,7 +91,7 @@ Tato třída může obtékat element uživatelského rozhraní tak, aby gesto ro
 </ContentPage>
 ```
 
-Následující příklad kódu ukazuje jak `PinchToZoomContainer` zabalí [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) element na stránce C#:
+Následující příklad kódu ukazuje jak `PinchToZoomContainer` zabalí [ `Image` ](xref:Xamarin.Forms.Image) element na stránce jazyka C#:
 
 ```csharp
 public class HomePageCS : ContentPage
@@ -110,7 +110,7 @@ public class HomePageCS : ContentPage
 }
 ```
 
-Když [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) element dostane gesto roztahováním, zobrazeného obrázku bude možné možnosti v nebo out. Přiblížení se provádí pomocí `PinchZoomContainer.OnPinchUpdated` metodu, která je znázorněno v následujícím příkladu kódu:
+Když [ `Image` ](xref:Xamarin.Forms.Image) prvek dostane gesto prstů, zobrazeného obrázku bude možné v měřítku in nebo out. Přiblížení provádí `PinchZoomContainer.OnPinchUpdated` metoda, která je znázorněna v následujícím příkladu kódu:
 
 ```csharp
 void OnPinchUpdated (object sender, PinchGestureUpdatedEventArgs e)
@@ -160,15 +160,15 @@ void OnPinchUpdated (object sender, PinchGestureUpdatedEventArgs e)
 }
 ```
 
-Tato metoda aktualizace úroveň přiblížení element zabalené uživatelského rozhraní založené na roztahováním gesto uživatele. Toho dosáhnete pomocí hodnoty [ `Scale` ](https://developer.xamarin.com/api/property/Xamarin.Forms.PinchGestureUpdatedEventArgs.Scale/), [ `ScaleOrigin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.PinchGestureUpdatedEventArgs.ScaleOrigin/) a [ `Status` ](https://developer.xamarin.com/api/property/Xamarin.Forms.PinchGestureUpdatedEventArgs.Status/) vlastnosti [ `PinchGestureUpdatedEventArgs` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PinchGestureUpdatedEventArgs/) instance k výpočtu měřítko použité na počátku gesto roztahováním. Element zabalené uživatele pak možnosti v původu gesto roztahováním nastavením jeho [ `TranslationX` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationX/), [ `TranslationY` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationY/), a [ `Scale` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Scale/) vlastnosti na počítané hodnoty.
+Tato metoda aktualizuje úroveň přiblížení prvek zabalené uživatelského rozhraní založené na stažení gesto uživatele. Tím se dosahuje pomocí hodnot [ `Scale` ](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.Scale), [ `ScaleOrigin` ](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.ScaleOrigin) a [ `Status` ](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.Status) vlastnosti [ `PinchGestureUpdatedEventArgs` ](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs) instance k výpočtu měřítko použité na počátku gesta stažení. Element zabalené uživatele je pak zvětšeno na počátek gesta stažení nastavením jeho [ `TranslationX` ](xref:Xamarin.Forms.VisualElement.TranslationX), [ `TranslationY` ](xref:Xamarin.Forms.VisualElement.TranslationY), a [ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale) Vlastnosti počítané hodnoty.
 
 ## <a name="summary"></a>Souhrn
 
-Gesto roztahováním slouží k provádění interaktivní přiblížení a je implementováno s [ `PinchGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PinchGestureRecognizer/) třídy.
+Gesta stažení se používá pro provádění interaktivního přiblížení a je implementováno s [ `PinchGestureRecognizer` ](xref:Xamarin.Forms.PinchGestureRecognizer) třídy.
 
 
 ## <a name="related-links"></a>Související odkazy
 
 - [PinchGesture (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithGestures/PinchGesture/)
-- [GestureRecognizer](https://developer.xamarin.com/api/type/Xamarin.Forms.GestureRecognizer/)
-- [PinchGestureRecognizer](https://developer.xamarin.com/api/type/Xamarin.Forms.PinchGestureRecognizer/)
+- [GestureRecognizer](xref:Xamarin.Forms.GestureRecognizer)
+- [PinchGestureRecognizer](xref:Xamarin.Forms.PinchGestureRecognizer)

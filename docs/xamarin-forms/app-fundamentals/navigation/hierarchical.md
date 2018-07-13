@@ -1,63 +1,63 @@
 ---
 title: Hierarchická navigace
-description: Tento článek ukazuje, jak používat třídu NavigationPage k provádění navigace v zásobníku last-in, první ven (LIFO) stránky.
+description: Tento článek ukazuje, jak použít třídu NavigationPage provádět navigace v zásobníku poslední dovnitř, první (ven LIFO) stránky.
 ms.prod: xamarin
 ms.assetid: C8A5EEFF-5A3B-4163-838A-147EE3939FAA
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2017
-ms.openlocfilehash: 20dfb6e935d08c35da73a81fb401a613aa6c9bac
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: f8f8f9b4e5755e8b1707178fef633321b64e4e94
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35242453"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994673"
 ---
 # <a name="hierarchical-navigation"></a>Hierarchická navigace
 
-_Třída NavigationPage poskytuje hierarchické navigační prostředí, kde je možné procházet stránky, dopředný a podle potřeby zpětné uživatele. Třída implementuje navigační jako zásobník ven (LIFO) last-in objektů stránky. Tento článek ukazuje, jak používat třídu NavigationPage k provádění navigace v zásobníku stránek._
+_Třída NavigationPage poskytuje hierarchické navigační prostředí, kde uživatel je možné procházet stránkách vpřed a zpět, podle potřeby. Třída implementuje navigace jako poslední dovnitř, první (ven LIFO) zásobníku objekty stránky. Tento článek ukazuje, jak použít třídu NavigationPage provádět navigace v zásobníku stránek._
 
 Tento článek popisuje v následujících tématech:
 
-- [Provádění navigační](#Performing_Navigation) – vytváření stránce kořenové, vkládání stránky se zásobníkem navigace, odebrání stránky z navigační zásobníku a animace přechody stránek.
-- [Předávání dat při přechodu](#Passing_Data_when_Navigating) – předávání dat prostřednictvím stránky konstruktor a prostřednictvím `BindingContext`.
-- [Manipulace s zásobníku navigační](#Manipulating_the_Navigation_Stack) – manipulace s zásobníku vložení nebo odebráním stránky.
+- [Provádění navigace](#Performing_Navigation) – vytvoření stránky kořenový, odesílání stránky do navigačního zásobníku, odebrání stránky z navigační zásobník a animace přechody stránek.
+- [Předávání dat při navigaci](#Passing_Data_when_Navigating) – předávání dat prostřednictvím konstruktor stránky a prostřednictvím `BindingContext`.
+- [Manipulace s navigační zásobník](#Manipulating_the_Navigation_Stack) – manipulace s zásobníku pomocí vložení nebo odstranění stránky.
 
 ## <a name="overview"></a>Přehled
 
-Pokud chcete přesunout z jedné stránky na jiný, aplikace předá novou stránku do zásobníku navigace, kde se stane aktivní stránku, jak je znázorněno v následujícím diagramu:
+Přesunutí z jedné stránky na jiný, aplikace budou nabízená oznámení nové stránky do navigačního zásobníku, kde se tak stane aktivní stránkou., jak je znázorněno v následujícím diagramu:
 
-![](hierarchical-images/pushing.png "Vkládání stránky navigační zásobníku")
+![](hierarchical-images/pushing.png "Odesílání stránky do navigačního zásobníku")
 
-Pokud chcete vrátit zpět na předchozí stránku, aplikace bude pop aktuální stránku z navigační zásobníku a nová stránka nejhornější stane aktivní stránku, jak je znázorněno v následujícím diagramu:
+Pokud chcete vrátit zpět na předchozí stránku, aplikaci zobrazte aktuální stránku z navigační zásobník a na novou stránku nejvyšší úrovně se stane aktivní stránkou., jak je znázorněno v následujícím diagramu:
 
-![](hierarchical-images/popping.png "Odebrání stránky v navigačním zásobníku")
+![](hierarchical-images/popping.png "Odebrání stránky z navigační zásobník")
 
-Navigační metody jsou vystavené [ `Navigation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Navigation/) vlastnost na žádném [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) odvozených typů. Tyto metody poskytují možnost tak, aby nabízel stránek do zásobníku navigace na pop stránky v zásobníku navigační a k provádění manipulace s zásobníku.
+Jsou navigační metody vystavené [ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation) vlastnost na žádném [ `Page` ](xref:Xamarin.Forms.Page) odvozené typy. Tyto metody poskytují možnost Vložit stránky do navigačního zásobníku pop stránky z navigační zásobník a, provádět manipulace s zásobníku.
 
 <a name="Performing_Navigation" />
 
 ## <a name="performing-navigation"></a>Provádění navigace
 
-V hierarchické navigaci [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) třída se používá k procházení zásobníku z [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) objekty. Na následujících snímcích obrazovky zobrazit hlavními součástmi `NavigationPage` na jednotlivých platformách:
+Hierarchická navigace [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) třída se používá k procházení zásobníku [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) objekty. Na následujících snímcích obrazovky zobrazit základních komponent `NavigationPage` na jednotlivých platformách:
 
-![](hierarchical-images/navigationpage-components.png "NavigationPage součásti")
+![](hierarchical-images/navigationpage-components.png "NavigationPage komponenty")
 
-Rozložení [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) je závislý na platformě:
+Rozložení [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) je závislý na platformě:
 
-- V systému iOS, se nachází v horní části stránky, který zobrazí název, a který má navigačním panelu *zpět* tlačítko, které vrátí na předchozí stránku.
-- V systému Android, se nachází v horní části stránky, který zobrazuje název, ikonu, navigačním panelu a *zpět* tlačítko, které vrátí na předchozí stránku. Ikona je definována v `[Activity]` atribut, který upraví `MainActivity` třídy v projektu pro specifické pro platformu Android.
-- Na univerzální platformu Windows nachází v horní části stránky, který zobrazuje název navigačním panelu.
+- V Iosu se nachází v horní části stránky, která zobrazí název a má navigační panel *zpět* tlačítko, které vrátí na předchozí stránku.
+- V systému Android se navigační panel nachází v horní části stránky, která zobrazuje název, ikonu, a *zpět* tlačítko, které vrátí na předchozí stránku. Ikona je definována v `[Activity]` atribut, který upraví `MainActivity` třídu v projektu pro specifické pro platformu Android.
+- Na univerzální platformu Windows se nachází v horní části stránky, která zobrazuje název navigační panel.
 
-Na všech platformách hodnotu [ `Page.Title` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Title/) vlastnosti se zobrazí jako nadpis stránky.
+Na všech platformách se hodnota [ `Page.Title` ](xref:Xamarin.Forms.Page.Title) vlastnost se zobrazí jako nadpis stránky.
 
 > [!NOTE]
-> Je doporučeno, `NavigationPage` by měl být naplněný `ContentPage` pouze instance.
+> Doporučujeme `NavigationPage` mělo být vyplněno pomocí `ContentPage` pouze instance.
 
-### <a name="creating-the-root-page"></a>Vytváření kořenové stránky
+### <a name="creating-the-root-page"></a>Vytvoření kořenové stránky
 
-Na první stránku přidat navigační zásobníku se označuje jako *kořenové* stránku aplikace a následující příklad kódu ukazuje, jak toho dosahuje:
+První stránka Přidat do navigační zásobník se označuje jako *kořenové* stránku aplikace a následující příklad kódu ukazuje, jak to lze provést:
 
 ```csharp
 public App ()
@@ -66,16 +66,16 @@ public App ()
 }
 ```
 
-To způsobí, že `Page1Xaml` [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) instance, která má být vloženy do zásobníku navigace, kde bude aktivní stránky a stránky kořenové aplikace. Můžete se podívat na následujících snímcích obrazovky:
+To způsobí, že `Page1Xaml` [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) instance doručit bez vyžádání do navigačního zásobníku, kde bude aktivní stránce a stránce kořenové aplikace. To můžete vidět na následujících snímcích obrazovky:
 
-![](hierarchical-images/mainpage.png "Hlavní stránka navigační zásobníku")
+![](hierarchical-images/mainpage.png "Hlavní stránka navigačním zásobníku")
 
 > [!NOTE]
-> [ `RootPage` ](https://developer.xamarin.com/api/property/Xamarin.Forms.NavigationPage.RootPage/) Vlastnost [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) instance poskytuje přístup na první stránku v zásobníku navigace.
+> [ `RootPage` ](xref:Xamarin.Forms.NavigationPage.RootPage) Vlastnost [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) instance poskytuje přístup k první stránka v navigační zásobník.
 
-### <a name="pushing-pages-to-the-navigation-stack"></a>Vkládání stránky navigační zásobníku
+### <a name="pushing-pages-to-the-navigation-stack"></a>Odesílání stránky do navigačního zásobníku
 
-Přejděte na `Page2Xaml`, je nutné vyvolat [ `PushAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.NavigationPage.PushAsync(Xamarin.Forms.Page)/) metodu [ `Navigation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Navigation/) vlastnost aktuální stránky, jako předvedenou v následujícím příkladu kódu:
+Přejít na `Page2Xaml`, je potřeba vyvolat [ `PushAsync` ](xref:Xamarin.Forms.NavigationPage.PushAsync*) metodu [ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation) vlastnost aktuální stránky jako předvedenou v následujícím příkladu kódu:
 
 ```csharp
 async void OnNextPageButtonClicked (object sender, EventArgs e)
@@ -84,26 +84,26 @@ async void OnNextPageButtonClicked (object sender, EventArgs e)
 }
 ```
 
-To způsobí, že `Page2Xaml` instance, která má být vloženy do zásobníku navigace, kde bude aktivní stránku. Můžete se podívat na následujících snímcích obrazovky:
+To způsobí, že `Page2Xaml` instance doručit bez vyžádání do navigačního zásobníku, kde se stane aktivní stránkou. To můžete vidět na následujících snímcích obrazovky:
 
-![](hierarchical-images/secondpage.png "Stránka nabídnutých do zásobníku navigace")
+![](hierarchical-images/secondpage.png "Stránka vloženy do navigačního zásobníku")
 
-Když [ `PushAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.NavigationPage.PushAsync(Xamarin.Forms.Page)/) metoda je volána, dojde k následujícím událostem:
+Když [ `PushAsync` ](xref:Xamarin.Forms.NavigationPage.PushAsync*) je metoda vyvolána, dojde k následujícím událostem:
 
-- Stránka volání `PushAsync` má jeho [ `OnDisappearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnDisappearing/) přepsání vyvolat.
-- Na stránce se přešli jeho [ `OnAppearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnAppearing/) přepsání vyvolat.
-- `PushAsync` Dokončení úlohy.
+- Volání funkce stránky `PushAsync` má jeho [ `OnDisappearing` ](xref:Xamarin.Forms.Page.OnDisappearing) přepsání vyvolána.
+- Na stránce se přejde poté, jeho [ `OnAppearing` ](xref:Xamarin.Forms.Page.OnAppearing) přepsání vyvolána.
+- `PushAsync` Dokončení úkolu.
 
-Přesné pořadí, ve kterém k těmto událostem dojde, je však platformy, které jsou závislé. Další informace najdete v tématu [kapitoly 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) Charlese Petzold Xamarin.Forms knihy.
+Přesné pořadí, ve kterém se tyto události nastanou je však závislý na platformě. Další informace najdete v tématu [kapitoly 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) Charles Petzold Xamarin.Forms knihy.
 
 > [!NOTE]
-> Volání [ `OnDisappearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnDisappearing/) a [ `OnAppearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnAppearing/) přepsání nemohou být považovány za zaručenou indikace navigaci na stránce. Například v systému iOS `OnDisappearing` přepsání je na stránce active volána, když se aplikace ukončí.
+> Volání [ `OnDisappearing` ](xref:Xamarin.Forms.Page.OnDisappearing) a [ `OnAppearing` ](xref:Xamarin.Forms.Page.OnAppearing) přepsání nemůže být zpracován jako garantované údaje o navigaci na stránce. Například v Iosu `OnDisappearing` přepsání je volána na aktivní stránce, když se aplikace ukončí.
 
-### <a name="popping-pages-from-the-navigation-stack"></a>Operace stránky z navigační zásobníku
+### <a name="popping-pages-from-the-navigation-stack"></a>Vyjímání stránky v navigačním zásobníku
 
-Aktivní stránku může být odebrány ze zásobníku navigační stisknutím kombinace kláves *zpět* tlačítko na zařízení, bez ohledu na to, zda je na zařízení fyzické tlačítko nebo na obrazovce tlačítko.
+Aktivní stránkou. může být odebrány z navigační zásobník stisknutím kombinace kláves *zpět* tlačítko na zařízení, bez ohledu na to, zda se jedná o fyzického tlačítka na zařízení nebo tlačítko na obrazovce.
 
-Prostřednictvím kódu programu vrátit na stránku původní `Page2Xaml` musí vyvolání instance [ `PopAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.NavigationPage.PopAsync()/) metoda, jak je ukázáno v následujícím příkladu kódu:
+Programově vrátit na původní stránku `Page2Xaml` instance musí vyvolat [ `PopAsync` ](xref:Xamarin.Forms.NavigationPage.PopAsync) způsob, jak je ukázáno v následujícím příkladu kódu:
 
 ```csharp
 async void OnPreviousPageButtonClicked (object sender, EventArgs e)
@@ -112,15 +112,15 @@ async void OnPreviousPageButtonClicked (object sender, EventArgs e)
 }
 ```
 
-To způsobí, že `Page2Xaml` instance, která má být odebrán, navigace, s novou nejhornější stránku stane aktivní stránku. Když [ `PopAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.NavigationPage.PopAsync()/) metoda je volána, dojde k následujícím událostem:
+To způsobí, že `Page2Xaml` instance má být odebrána z navigační zásobník s novou stránku nejvyšší úrovně stane aktivní stránkou. Když [ `PopAsync` ](xref:Xamarin.Forms.NavigationPage.PopAsync) je metoda vyvolána, dojde k následujícím událostem:
 
-- Stránka volání `PopAsync` má jeho [ `OnDisappearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnDisappearing/) přepsání vyvolat.
-- Na stránce jako odpověď na jeho [ `OnAppearing` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Page.OnAppearing/) přepsání vyvolat.
+- Volání funkce stránky `PopAsync` má jeho [ `OnDisappearing` ](xref:Xamarin.Forms.Page.OnDisappearing) přepsání vyvolána.
+- Na stránce se vrací do jeho [ `OnAppearing` ](xref:Xamarin.Forms.Page.OnAppearing) přepsání vyvolána.
 - `PopAsync` Úkolů vrátí.
 
-Přesné pořadí, ve kterém k těmto událostem dojde, je však platformy, které jsou závislé. Další informace najdete v části [kapitoly 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) Charlese Petzold Xamarin.Forms knihy.
+Přesné pořadí, ve kterém se tyto události nastanou je však závislý na platformě. Další informace najdete v části [kapitoly 24](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) Charles Petzold Xamarin.Forms knihy.
 
-A také [ `PushAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.NavigationPage.PushAsync(Xamarin.Forms.Page)/) a [ `PopAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.NavigationPage.PopAsync()/) metody, [ `Navigation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Navigation/) také obsahuje vlastnost každé stránce [ `PopToRootAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.NavigationPage.PopToRootAsync()/) metodu, která je znázorněno v následujícím příkladu kódu:
+Stejně jako [ `PushAsync` ](xref:Xamarin.Forms.NavigationPage.PushAsync*) a [ `PopAsync` ](xref:Xamarin.Forms.NavigationPage.PopAsync) metody, [ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation) také poskytuje vlastnost jednotlivých stránek [ `PopToRootAsync` ](xref:Xamarin.Forms.NavigationPage.PopToRootAsync) metoda, která je znázorněna v následujícím příkladu kódu:
 
 ```csharp
 async void OnRootPageButtonClicked (object sender, EventArgs e)
@@ -129,11 +129,11 @@ async void OnRootPageButtonClicked (object sender, EventArgs e)
 }
 ```
 
-Tato metoda se zobrazí všechny kromě kořenové [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) vypnout navigační zásobníku, takže stránku kořenové aplikace aktivní stránky.
+Tato metoda se zobrazí všechny kromě kořenové [ `Page` ](xref:Xamarin.Forms.Page) vypnout navigační zásobník, takže kořenové stránky aplikace aktivní stránkou.
 
 ### <a name="animating-page-transitions"></a>Animace přechody stránek
 
-[ `Navigation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Navigation/) Vlastnost každé stránce poskytuje taky přepsaného nabízené a pop metody, které zahrnují `boolean` parametr, který určuje, jestli se má zobrazit stránku animace během navigace, jak je znázorněno v následujícím kódu Příklad:
+[ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation) Vlastnost jednotlivých stránek také poskytuje přepsané nabízená oznámení a pop metody, které obsahují `boolean` parametr, který určuje, zda se zobrazí stránka animace průběhu navigace, jak je znázorněno v následujícím kódu Příklad:
 
 ```csharp
 async void OnNextPageButtonClicked (object sender, EventArgs e)
@@ -155,17 +155,17 @@ async void OnRootPageButtonClicked (object sender, EventArgs e)
 }
 ```
 
-Nastavení `boolean` parametru `false` zakáže animace přechod stránky, při nastavení parametru na `true` umožňuje animace přechod stránky za předpokladu, že ji podporuje základní platformy. Metody nabízené a pop, která nemají tento parametr však povolit animace ve výchozím nastavení.
+Nastavení `boolean` parametr `false` zakáže stránku přechodu animace, při nastavení parametru na `true` umožňuje přechod na stránky animace, za předpokladu, že ji podporuje základní platformy. Nabízená oznámení a pop metody, které nemají tento parametr však povolit animace ve výchozím nastavení.
 
 <a name="Passing_Data_when_Navigating" />
 
-## <a name="passing-data-when-navigating"></a>Předávání dat při přechodu
+## <a name="passing-data-when-navigating"></a>Předání dat při navigaci
 
-Někdy je nezbytné pro stránku k předávání dat při navigaci na jinou stránku. Dva postupy provádění to jsou předávání dat prostřednictvím stránky konstruktor a nastavením nová stránka [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) k datům. Každý teď probereme naopak.
+Někdy je nezbytné pro stránku k předávání dat při navigaci na jinou stránku. Dvě techniky způsoby předávání dat prostřednictvím konstruktor stránky a nastavením nová stránka [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) k datům. Každý nyní probereme zase.
 
-### <a name="passing-data-through-a-page-constructor"></a>Předávání dat prostřednictvím stránky konstruktor
+### <a name="passing-data-through-a-page-constructor"></a>Předání dat prostřednictvím konstruktoru stránky
 
-Nejjednodušší způsob pro předávání dat při navigaci na jinou stránku je prostřednictvím parametru stránky konstruktor, který je znázorněno v následujícím příkladu kódu:
+Nejjednodušší techniku pro předávání dat na jinou stránku během navigace je prostřednictvím parametru konstruktor stránky, která je znázorněna v následujícím příkladu kódu:
 
 ```csharp
 public App ()
@@ -174,9 +174,9 @@ public App ()
 }
 ```
 
-Tento kód vytvoří `MainPage` instance, předávání v aktuální datum a čas ve formátu ISO 8601, který je uzavřen do [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) instance.
+Tento kód vytvoří `MainPage` instance, předávání v aktuálním datem a časem ve formátu ISO8601, která je zabalena v [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) instance.
 
-`MainPage` Instance přijímá data prostřednictvím parametr konstruktoru, jak je znázorněno v následujícím příkladu kódu:
+`MainPage` Instance přijímá data prostřednictvím konstruktoru parametru, jak je znázorněno v následujícím příkladu kódu:
 
 ```csharp
 public MainPage (string date)
@@ -186,13 +186,13 @@ public MainPage (string date)
 }
 ```
 
-Data se následně zobrazí na stránce nastavení [ `Label.Text` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Label.Text/) vlastnost, jak je vidět na následujících snímcích obrazovky:
+Data se následně zobrazí na stránce nastavení [ `Label.Text` ](xref:Xamarin.Forms.Label.Text) vlastnost, jak je znázorněno na následujících snímcích obrazovky:
 
-![](hierarchical-images/passing-data-constructor.png "Data předána stránce konstruktor")
+![](hierarchical-images/passing-data-constructor.png "Data předaná pomocí konstruktoru stránky")
 
-### <a name="passing-data-through-a-bindingcontext"></a>Předávání dat prostřednictvím vazby
+### <a name="passing-data-through-a-bindingcontext"></a>Předání dat prostřednictvím BindingContext
 
-Alternativní způsob pro předávání dat při navigaci na jinou stránku je nastavením nová stránka [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) k datům, jak je znázorněno v následujícím příkladu kódu:
+Alternativním přístupem k předávání dat při navigaci na jinou stránku, je nastavení nová stránka [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) k datům, jak je znázorněno v následujícím příkladu kódu:
 
 ```csharp
 async void OnNavigateButtonClicked (object sender, EventArgs e)
@@ -210,9 +210,9 @@ async void OnNavigateButtonClicked (object sender, EventArgs e)
 }
 ```
 
-Nastaví tento kód [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) z `SecondPage` instance k `Contact` instance a pak přejde `SecondPage`.
+Tento kód nastaví [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) z `SecondPage` instance na `Contact` instance a pak přejde do `SecondPage`.
 
-`SecondPage` Pak použije k zobrazení datová vazba `Contact` instance dat, jak je znázorněno v následujícím příkladu kódu XAML:
+`SecondPage` Pak datové vazby používá pro zobrazení `Contact` instance data, jak je znázorněno v následujícím příkladu kódu XAML:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -232,7 +232,7 @@ Nastaví tento kód [ `BindingContext` ](https://developer.xamarin.com/api/prope
 </ContentPage>
 ```
 
-Následující příklad kódu ukazuje, jak lze provést datové vazby v C#:
+Následující příklad kódu ukazuje, jak se dají naplnit datové vazby v C#:
 
 ```csharp
 public class SecondPageCS : ContentPage
@@ -272,27 +272,27 @@ public class SecondPageCS : ContentPage
 }
 ```
 
-Data se následně zobrazí na stránce řadu [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) řídí, jak je vidět na následujících snímcích obrazovky:
+Data se pak zobrazí na stránce řadou [ `Label` ](xref:Xamarin.Forms.Label) řídí, jak je znázorněno na následujících snímcích obrazovky:
 
-![](hierarchical-images/passing-data-bindingcontext.png "Data předána vazby")
+![](hierarchical-images/passing-data-bindingcontext.png "Data předaná prostřednictvím BindingContext")
 
-Další informace o vazbě dat najdete v tématu [základy vazby dat](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md).
+Další informace o datové vazbě naleznete v tématu [základy vytváření vazeb dat](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md).
 
 <a name="Manipulating_the_Navigation_Stack" />
 
-## <a name="manipulating-the-navigation-stack"></a>Manipulace s navigační zásobníku
+## <a name="manipulating-the-navigation-stack"></a>Manipulace s navigačním zásobníku
 
-[ `Navigation` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Navigation/) Zpřístupňuje vlastnost [ `NavigationStack` ](https://developer.xamarin.com/api/property/Xamarin.Forms.INavigation.NavigationStack/) ze kterého můžete získat na stránkách v zásobníku navigační vlastnost. Při Xamarin.Forms udržuje přístup k zásobníku navigace `Navigation` vlastnost poskytuje [ `InsertPageBefore` ](https://developer.xamarin.com/api/member/Xamarin.Forms.INavigation.InsertPageBefore(Xamarin.Forms.Page,Xamarin.Forms.Page)/) a [ `RemovePage` ](https://developer.xamarin.com/api/member/Xamarin.Forms.INavigation.RemovePage(Xamarin.Forms.Page)/) metody pro práci s zásobníku vložením stránky nebo jejich odebrání.
+[ `Navigation` ](xref:Xamarin.Forms.VisualElement.Navigation) Zpřístupňuje vlastnost [ `NavigationStack` ](xref:Xamarin.Forms.INavigation.NavigationStack) vlastností, ze kterého můžete získat na stránkách v navigačním zásobníku. Při přístupu k navigační zásobník udržuje Xamarin.Forms `Navigation` poskytuje vlastnost [ `InsertPageBefore` ](xref:Xamarin.Forms.INavigation.InsertPageBefore*) a [ `RemovePage` ](xref:Xamarin.Forms.INavigation.RemovePage*) metody pro práci s zásobníku vložením stránky nebo jejich odebrání.
 
-[ `InsertPageBefore` ](https://developer.xamarin.com/api/member/Xamarin.Forms.INavigation.InsertPageBefore(Xamarin.Forms.Page,Xamarin.Forms.Page)/) Metoda vloží zadanou stránku v zásobníku navigační před existující zadané stránky, jak je znázorněno v následujícím diagramu:
+[ `InsertPageBefore` ](xref:Xamarin.Forms.INavigation.InsertPageBefore*) Metoda vloží zadanou stránku v navigačním zásobníku před existující zadané stránky, jak je znázorněno v následujícím diagramu:
 
-![](hierarchical-images/insert-page-before.png "Vložení stránky v zásobníku navigace")
+![](hierarchical-images/insert-page-before.png "Vložení stránky v navigačním zásobníku")
 
-[ `RemovePage` ](https://developer.xamarin.com/api/member/Xamarin.Forms.INavigation.RemovePage(Xamarin.Forms.Page)/) Metoda odebere zadané stránky zásobník navigace, jak je znázorněno v následujícím diagramu:
+[ `RemovePage` ](xref:Xamarin.Forms.INavigation.RemovePage*) Metoda odstraní zadanou stránku z navigačního zásobníku, jak je znázorněno v následujícím diagramu:
 
-![](hierarchical-images/remove-page.png "Na stránce odebráním navigační zásobníku")
+![](hierarchical-images/remove-page.png "Odebrání stránky z navigační zásobník")
 
-Tyto metody povolit vlastní navigační prostředí, jako je například přihlašovací stránku nahraďte novou stránku, po úspěšném přihlášení. Následující příklad kódu ukazuje tento scénář:
+Tyto metody umožňují vlastní navigační prostředí, jako je například nahradit novou stránku, po úspěšném přihlášení přihlašovací stránku. Následující příklad kódu ukazuje tento scénář:
 
 ```csharp
 async void OnLoginButtonClicked (object sender, EventArgs e)
@@ -310,19 +310,19 @@ async void OnLoginButtonClicked (object sender, EventArgs e)
 
 ```
 
-Za předpokladu, že přihlašovací údaje uživatele jsou správné, `MainPage` instance se vloží do zásobníku navigační před aktuální stránku. [ `PopAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.NavigationPage.PopAsync()/) Metoda pak odstraní aktuální stránku v zásobníku navigační s `MainPage` instance stane aktivní stránky.
+Za předpokladu, že přihlašovací údaje uživatele jsou správné, `MainPage` instance je vložen do navigační zásobník před aktuální stránku. [ `PopAsync` ](xref:Xamarin.Forms.NavigationPage.PopAsync) Metoda pak odstraní aktuální stránku z navigační zásobník s `MainPage` instance stane aktivní stránkou.
 
 ## <a name="summary"></a>Souhrn
 
-Tento článek ukázal, jak používat [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) třída provádět navigace v zásobníku stránek. Tato třída poskytuje hierarchické navigační prostředí, kde je možné procházet stránky, dopředný a podle potřeby zpětné uživatele. Třída implementuje navigační jako zásobník ven (LIFO) last-in služby [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) objekty.
+V tomto článku jsme vám ukázali jak používat [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) pro provádění navigace v zásobníku stránek. Tato třída poskytuje hierarchické navigační prostředí, kde uživatel je možné procházet stránkách vpřed a zpět, podle potřeby. Třída implementuje navigace jako poslední dovnitř, první (ven LIFO) zásobníku [ `Page` ](xref:Xamarin.Forms.Page) objekty.
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Navigace stránky](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)
+- [Navigace po stránkách](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)
 - [Hierarchické (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/Hierarchical/)
 - [PassingData (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/PassingData/)
 - [LoginFlow (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/LoginFlow/)
-- [Postup vytvoření znaménkem v toku obrazovky v ukázce Xamarin.Forms (Xamarin univerzity Video)](http://xamarinuniversity.blob.core.windows.net/lightninglectures/CreateASignIn.zip)
-- [Postup vytvoření znaménkem v toku obrazovky v Xamarin.Forms (Xamarin univerzity Video)](https://university.xamarin.com/lightninglectures/how-to-create-a-sign-in-screen-flow-in-xamarinforms)
-- [NavigationPage](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/)
+- [Jak vytvořit přihlášení ve službě Flow obrazovky v ukázce Xamarin.Forms (Xamarin University Video)](http://xamarinuniversity.blob.core.windows.net/lightninglectures/CreateASignIn.zip)
+- [Postup vytvoření přihlášení v toku obrazovky v Xamarin.Forms (Xamarin University Video)](https://university.xamarin.com/lightninglectures/how-to-create-a-sign-in-screen-flow-in-xamarinforms)
+- [NavigationPage](xref:Xamarin.Forms.NavigationPage)

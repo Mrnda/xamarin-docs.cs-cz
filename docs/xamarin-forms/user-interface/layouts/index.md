@@ -1,6 +1,6 @@
 ---
 title: Rozložení v Xamarin.Forms
-description: Xamarin.Forms má několik rozložení a funkce pro uspořádání obsahu na obrazovce a tento článek vysvětluje jejich.
+description: Xamarin.Forms má několik rozložení a funkce pro uspořádání obsahu na obrazovce, a tento článek vysvětluje je.
 ms.prod: xamarin
 ms.assetid: 65030DA3-C7C1-4A02-B478-811073C39139
 ms.technology: xamarin-forms
@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: d11e0e286c25f11c24dc788be8d1c29155261b7a
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: cff5f9c15f4608ecfb643d2c49dd636df8b18b5c
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244887"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995752"
 ---
 # <a name="layouts-in-xamarinforms"></a>Rozložení v Xamarin.Forms
 
@@ -21,39 +21,39 @@ Xamarin.Forms má několik rozložení a funkce pro uspořádání obsahu na obr
 
 > [!VIDEO https://youtube.com/embed/4HlLjTZQzjM]
 
-**Rozložení Xamarin.Forms, pomocí [univerzity Xamarin](https://university.xamarin.com/)**
+**Rozložení Xamarin.Forms, [Xamarin University](https://university.xamarin.com/)**
 
 Každý ovládací prvek rozložení je popsáno níže, a také podrobnosti o tom, jak zpracovat změny orientace obrazovky:
 
-* **[StackLayout](stack-layout.md)**  &ndash; použitá k uspořádání zobrazení lineárně, vodorovně nebo svisle. Zobrazení StackLayout může být zarovnaný na střed doleva nebo doprava na rozložení.
-* **[AbsoluteLayout](absolute-layout.md)**  &ndash; umožňuje uspořádat zobrazení podle nastavení souřadnic & velikost jako absolutní hodnoty nebo poměry. AbsoluteLayout slouží k zobrazení vrstvy a také je ukotvení vlevo, vpravo nebo center.
-* **[RelativeLayout](relative-layout.md)**  &ndash; použitá k uspořádání zobrazení nastavením omezení vzhledem k jejich nadřazené rozměry a umístění.
-* **[Mřížky](grid.md)**  &ndash; použitá k uspořádání zobrazení v mřížce. Řádků a sloupců lze zadat jako absolutní hodnoty nebo poměry.
-* **[FlexLayout](flex-layout.md)**  &ndash; použitá k uspořádání zobrazení obtékané vodorovně nebo svisle.
-* **[ScrollView](scroll-view.md)**  &ndash; použitý k poskytnutí posouvání při zobrazení se nemůže vejít zcela v rámci hranice na obrazovce.
-* **[LayoutOptions](layout-options.md)**  &ndash; definovat zarovnání a rozšíření pro zobrazení, relativně k jeho nadřazený objekt.
-* **[Vstupní průhlednost](#input_transparency)**  &ndash; Určuje, jestli element obdrží vstup.
-* **[Okraj a odsazení](margin-and-padding.md)**  &ndash; ukazuje, jak můžete řídit chování rozložení po vykreslení elementu v uživatelském rozhraní.
+* **[StackLayout](stack-layout.md)**  &ndash; použít k zobrazení lineárně, uspořádat vodorovně nebo svisle. Zobrazení StackLayout může být zarovnaný na System center, doleva nebo doprava rozložení.
+* **[AbsoluteLayout](absolute-layout.md)**  &ndash; umožňuje uspořádat zobrazení tak, že nastavíte souřadnice & velikost jako absolutní hodnoty nebo poměry. AbsoluteLayout slouží k zobrazení vrstvy a také ukotvit vlevo, vpravo nebo System center.
+* **[RelativeLayout](relative-layout.md)**  &ndash; používá se k uspořádání zobrazení nastavením omezení vzhledem k jejich nadřazené rozměry a umístění.
+* **[Mřížka](grid.md)**  &ndash; používá se k uspořádání zobrazení v mřížce. Řádky a sloupce lze z hlediska absolutní hodnoty nebo poměry.
+* **[FlexLayout](flex-layout.md)**  &ndash; používá se k uspořádání zobrazení obtékané vodorovně nebo svisle.
+* **[ScrollView](scroll-view.md)**  &ndash; používají k zajištění posouvání při zobrazení se nemůže vejít zcela v rámci hranice obrazovky.
+* **[LayoutOptions](layout-options.md)**  &ndash; definovat zarovnání a rozšíření pro zobrazení, relativně k nadřazenému.
+* **[Vstup transparentnosti](#input_transparency)**  &ndash; Určuje, zda element přijímá vstup.
+* **[Okraje a odsazení](margin-and-padding.md)**  &ndash; ukazuje, jak řídit rozložení chování při vykreslení elementu v uživatelském rozhraní.
 * **[Orientace zařízení](device-orientation.md)**  &ndash; vysvětluje, jak zpracovat změny orientace zařízení.
-* **[Rozložení v zařízení tablet a vzdálené ploše](tablet.md)**  &ndash; ukazuje, jak optimalizovat pro větší obrazovky na každou platformu.
-* **[Vytvoření vlastního rozložení](custom.md)**  &ndash; vysvětluje, jak vytvořit vlastní rozložení třídu.
-* **[Komprese rozložení](layout-compression.md)**  &ndash; Odebere zadaný ve snaze zvýšit výkon vykreslování stránky rozložení z vizuálním stromu.
+* **[Rozložení na zařízeních tablet a desktop](tablet.md)**  &ndash; ukazuje, jak optimalizovat pro větší obrazovky na jednotlivých platformách.
+* **[Vytvoření vlastního rozložení](custom.md)**  &ndash; vysvětluje, jak vytvořit vlastní rozložení třídy.
+* **[Komprese rozložení](layout-compression.md)**  &ndash; odebere zadané za účelem zvýšení výkonu vykreslování stránky rozložení z vizuálního stromu.
 
-Ovládací prvky platformy můžete taky použít přímo v Xamarin.Forms rozložení s [ **nativní vložení** ](~/xamarin-forms/platform/native-views/index.md) (nové v Xamarin.Forms 2.2), a můžete [ **vytvořit vlastní rozložení** ](custom.md) podle specifických požadavků.
+Platforma ovládacích prvků lze také přímo v rozložení Xamarin.Forms s [ **nativní vkládání** ](~/xamarin-forms/platform/native-views/index.md) (nového v Xamarin.Forms 2.2), a můžete je [ **vytvářet vlastní rozložení** ](custom.md) podle specifických požadavků.
 
 Na následujícím obrázku vizualizuje rozložení ovládacích prvků:
 
-[![](images/layouts-sml.png "Rozložení Xamarin.Forms")](images/layouts.png#lightbox "Xamarin.Forms rozložení")
+[![](images/layouts-sml.png "Rozložení Xamarin.Forms")](images/layouts.png#lightbox "rozložení Xamarin.Forms")
 
 ## <a name="choosing-the-right-layout"></a>Výběr správné rozložení
 
-Rozložení, který zvolíte ve vaší aplikaci můžete pomoci nebo narušit vám, jak vytváříte aplikaci Xamarin.Forms přitažlivé a dá se použít. Zvažte, jak funguje každé rozložení můžete napsat kód uživatelského rozhraní větší škálovatelnost a čisticí nějakou dobu trvá. Na obrazovce může mít kombinaci různých rozložení a dosáhnout konkrétní návrh.
+Rozložení, které zvolíte ve vaší aplikaci můžete pomoci nebo nepříznivě ovlivnit, jak vytváříte aplikace Xamarin.Forms atraktivní a použitelný. Trvá nějakou dobu vzít v úvahu, jak funguje každá rozložení vám může pomoci psát přehlednější a škálovat kód uživatelského rozhraní. Na obrazovce můžete mít kombinaci různá rozložení k dosažení konkrétního návrhu.
 
 ### <a name="stacklayoutstack-layoutmd"></a>[StackLayout](stack-layout.md)
 
-`StackLayout` Se používá pro zobrazení zobrazení podél řádek, na kterém je vodorovně nebo svisle. Pozice a velikosti v rámci rozložení je určen na základě pro zobrazení `HeightRequest`, `WidthRequest`, `HorizontalOptions` a `VerticalOptions`. `StackLayout` se často používá jako základní rozložení, uspořádání jiná rozložení klávesnice na obrazovce.
+`StackLayout` Se používá pro zobrazení zobrazení na řádek, který je vodorovně nebo svisle. Umístění a velikost v rámci rozložení závisí na zobrazení `HeightRequest`, `WidthRequest`, `HorizontalOptions` a `VerticalOptions`. `StackLayout` se často používá jako základní rozložení uspořádání jiné rozložení na obrazovce.
 
-Příklad při `StackLayout` by být vhodné použít, zvažte aplikaci, která potřebuje k zobrazení tlačítka a popisek, popisek zarovnaný doleva a tlačítko zarovnaný doprava.
+Příklad nad tím, kdy `StackLayout` by být dobrou volbou, vezměte v úvahu aplikaci, která potřebuje rychle zobrazit tlačítko a popisek s popiskem zarovnané vlevo a tlačítko zarovnaný doprava.
 
 ```xaml
 <StackLayout Orientation="Horizontal">
@@ -64,7 +64,7 @@ Příklad při `StackLayout` by být vhodné použít, zvažte aplikaci, která 
 
 ### <a name="flexlayoutflex-layoutmd"></a>[FlexLayout](flex-layout.md)
 
-`FlexLayout` Je podobná `StackLayout` v, že zobrazuje podřízené zobrazení vodorovně nebo svisle:
+`FlexLayout` Je podobný `StackLayout` , zobrazí zobrazení podřízených vodorovně nebo svisle:
 
 ```xaml
 <FlexLayout Direction="Column"
@@ -77,15 +77,15 @@ Příklad při `StackLayout` by být vhodné použít, zvažte aplikaci, která 
 </FlexLayout>
 ```
 
-Nicméně, pokud jsou moc podřízené objekty, aby se vešla do jednoho řádku nebo sloupec, `FlexLayout` se taky může zabalení těchto zobrazení. `FlexLayout` je založena na modulu pro rozložení flexibilní pole ze šablon stylů CSS a má řadu stejné integrované možnosti pro umístění a zarovnání své podřízené objekty.
+Nicméně, pokud existuje příliš mnoho podřízených objektů pro jeden řádek nebo sloupec, `FlexLayout` se taky může wrapping tato zobrazení. `FlexLayout` je založená na modulu šablon stylů CSS flexibilní pole rozložení a má mnoho stejné integrované možnosti pro umístění a zarovnání své podřízené objekty.
 
 ### <a name="absolutelayoutabsolute-layoutmd"></a>[AbsoluteLayout](absolute-layout.md)
 
-`AbsoluteLayout` Se používá pro zobrazení zobrazení, velikosti a pozice se zadat buď jako explicitní hodnoty nebo hodnoty vzhledem k velikosti rozložení. Na rozdíl od `StackLayout` a `Grid`, `AbsoluteLayout` umožňuje podřízené zobrazení, která překrývají. Na rozdíl od `RelativeLayout`, `AbsoluteLayout` neumožní umístit elementy mimo obrazovku.
+`AbsoluteLayout` Se používá pro zobrazení zobrazení s velikostí a umístění se zadat buď jako explicitní hodnoty nebo hodnoty vzhledem k velikosti rozložení. Na rozdíl od `StackLayout` a `Grid`, `AbsoluteLayout` umožňuje podřízené zobrazení, které se překrývají. Na rozdíl od `RelativeLayout`, `AbsoluteLayout` neumožňuje umístit prvky mimo obrazovku.
 
-Příklad při `AbsoluteLayout` by být vhodné použít, zvažte aplikaci, která je k dispozici kolekce objektů jako zásobníky. To je často vidět během zobrazení alba fotografií nebo skladeb. Následující kód dává vzhled relačních operátorů, u elementů s otočením pomocného parametru na obsah relačních operátorů:
+Příklad nad tím, kdy `AbsoluteLayout` by být dobrou volbou, vezměte v úvahu aplikace, kterou je potřeba k dispozici kolekce objektů jako zásobníků. To je často vidět při zobrazení alba fotografií nebo skladeb. Následující kód obsahuje vzhled balík, s prvky otočeny pomocného parametru na obsah celé:
 
-V jazyce XAML:
+V XAML:
 
 ```xaml
 <AbsoluteLayout Padding="15">
@@ -98,18 +98,18 @@ V jazyce XAML:
 </AbsoluteLayout>
 ```
 
-Všimněte si následujících charakteristik ve výše uvedeném kódu:
+Mějte na paměti následující aspekty výše uvedený kód:
 
-- Každý `Image` se zobrazí ve stejné pozici (uprostřed vodorovný prostor)
-- `Padding` Považuje `AbsoluteLayout`, na rozdíl od `RelativeLayout`, která bude ignorovat.
-- `AbsoluteLayout.LayoutFlags` Určuje, jak se interpretují hranice rozložení. V takovém případě `PositionProportional`, znamená, že souřadnice poměr velikosti rozložení, při velikosti, bude vyhodnocen jako explicitní velikost.
-- `AbsoluteLayout.Layoutbounds` v tomto pořadí určuje pozice ve vodorovném směru, pozice ve svislém směru, šířku a výšku.
+- Každý `Image` se zobrazí na stejné pozici (uprostřed vodorovné mezery)
+- `Padding` Považuje `AbsoluteLayout`, na rozdíl od `RelativeLayout`, které ignoruje.
+- `AbsoluteLayout.LayoutFlags` Určuje, jak budou interpretovány hranice rozložení. V tomto případě `PositionProportional`, znamená, že souřadnice poměr velikost rozložení, při velikosti, bude vyhodnocen jako explicitní velikost.
+- `AbsoluteLayout.Layoutbounds` Určuje vodorovné umístění, svislou pozici, šířku a výšku v uvedeném pořadí.
 
 ### <a name="relativelayoutrelative-layoutmd"></a>[RelativeLayout](relative-layout.md)
 
-`RelativeLayout` Se používá pro zobrazení zobrazení, velikosti a pozice zadána jako relativní vzhledem k hodnoty rozložení nebo jiného zobrazení hodnoty. Relativní hodnoty nemusí odpovídat mu odpovídající hodnotu v relaci zobrazení. Jako příklad, je možné nastavit zobrazení `Width` vlastnost, která má být přímo úměrná do jiného zobrazení `X` vlastnost.
+`RelativeLayout` Se používá pro zobrazení zobrazení s velikost a umístění, zadat jako hodnoty vzhledem k hodnoty rozložení nebo v jiném zobrazení. Relativní hodnoty tak, aby odpovídaly má odpovídající hodnotu v související zobrazení není nutné. Jako příklad, je možné nastavit zobrazení `Width` vlastnost jako proporcionální do jiného zobrazení `X` vlastnost.
 
-RelativeLayout lze použít k vytvoření uživatelská rozhraní, které úměrně napříč velikosti zařízení. Následující XAML implementuje návrh s polí v nejhornější rozích s flagpole s příznakem v centru:
+RelativeLayout slouží k vytváření uživatelského rozhraní, které se škálují proporcionálně velikosti zařízení. Následující XAML implementuje návrh s použitím polí v nejvyšší rozích s flagpole s příznakem v centru:
 
 ```xaml
 <RelativeLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
@@ -131,17 +131,17 @@ RelativeLayout lze použít k vytvoření uživatelská rozhraní, které úměr
 </RelativeLayout>
 ```
 
-Všimněte si následujících charakteristik ve výše uvedeném kódu:
+Mějte na paměti následující aspekty výše uvedený kód:
 
 - Pozice a velikosti jsou zadané jako omezení.
-- Flagpole jmenuje tak, aby příznaku (zelený pole) lze nastavit pozice relativně k flagpole.
-- Výrazy omezení mít `Factor` a `Constant` vlastnosti, které se dají použít k definování pozice a velikosti jako násobky (nebo zlomků) vlastností jiné objekty, plus konstanta. Konstanty může být záporná.
+- Flagpole jmenuje tak, aby příznaku (zelený pole) je možné nastavit pozici vzhledem k flagpole.
+- Výrazy omezení `Factor` a `Constant` vlastnosti, které je možné použít k definování pozice a velikosti jako násobky (nebo podíly) z vlastností objektu jiných objektů včetně konstantu. Konstanty může být záporné.
 
 ### <a name="gridgridmd"></a>[Mřížka](grid.md)
 
-`Grid` Se používá pro zobrazení prvků v řádky a sloupce. Všimněte si, že mřížky se nejedná o tabulku, takže nemá koncept buněk, řádků záhlaví a zápatí nebo ohraničení mezi řádky a sloupce. Obecně platí není vhodná pro zobrazení tabulková data mřížky. Pro použití, vezměte v úvahu [ListView](~/xamarin-forms/user-interface/listview/index.md) nebo [zobrazení Tabulka](~/xamarin-forms/user-interface/tableview.md).
+`Grid` Slouží k zobrazení prvků v řádky a sloupce. Všimněte si, že mřížce se nejedná o tabulku, takže nemá koncept buněk, řádků záhlaví a zápatí nebo ohraničení mezi řádky a sloupce. Obecně platí není vhodná pro tabulková data zobrazení mřížky. Pro použití, vezměte v úvahu [ListView](~/xamarin-forms/user-interface/listview/index.md) nebo [zobrazení Tabulka](~/xamarin-forms/user-interface/tableview.md).
 
-Příklad při `Grid` není pravé rozložení chcete použít, zvažte číselný vstup kalkulačky. Číselný vstup kalkulačky může obsahovat čtyři řádků a sloupců tři, každý s tlačítko. Následující kód implementuje tohoto návrhu:
+Příklad nad tím, kdy `Grid` je správné rozložení chcete použít, zvažte číselného vstupu pro kalkulačku. Číselného vstupu pro kalkulačku může obsahovat čtyři řádky a tři sloupce, každý s tlačítkem. Následující kód implementuje tohoto návrhu:
 
 ```xaml
 <Grid>
@@ -171,53 +171,53 @@ Příklad při `Grid` není pravé rozložení chcete použít, zvažte číseln
 </Grid>
 ```
 
-Všimněte si následujících charakteristik ve výše uvedeném kódu:
+Mějte na paměti následující aspekty výše uvedený kód:
 
-- Mřížky a sloupce jsou explicitně určena, nelze odvodit z obsahu.
-- `Height` a `Width` hodnoty může být nastaven na hvězdičkami, což znamená, že mřížky nastaví těchto hodnot vyplňování dostupného místa.
-- Pozice každé tlačítko je zadána `Grid.Row`  &  `Grid.Column` vlastnosti.
+- Tabulky a sloupce jsou explicitně zadán, není odvozen z obsahu.
+- `Height` a `Width` hodnoty je možné nastavit na hvězdičkami, což znamená, že mřížky, nastaví tyto hodnoty tak, aby vyplnil dostupné místo.
+- Je určená pozice každé tlačítko `Grid.Row`  &  `Grid.Column` vlastnosti.
 
 ### <a name="layoutoptionslayout-optionsmd"></a>[LayoutOptions](layout-options.md)
 
-[ `LayoutOptions` ](https://developer.xamarin.com/api/type/Xamarin.Forms.LayoutOptions/) Struktura můžete používat k definování zarovnání a rozšíření pro zobrazení, relativně k jeho nadřazený objekt.
+[ `LayoutOptions` ](xref:Xamarin.Forms.LayoutOptions) Struktury lze definovat zarovnání a rozšíření pro zobrazení, relativně k nadřazenému.
 
 ### <a name="margin-and-paddingmargin-and-paddingmd"></a>[Okraje a odsazení](margin-and-padding.md)
 
-[ `Margin` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.Margin/) a [ `Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/) vlastnosti řízení rozložení chování při vykreslení elementu v uživatelském rozhraní.
+[ `Margin` ](xref:Xamarin.Forms.View.Margin) a [ `Padding` ](xref:Xamarin.Forms.Layout.Padding) vlastnosti řídit rozložení chování při vykreslení elementu v uživatelském rozhraní.
 
 <a name="input_transparency" />
 
-### <a name="input-transparency"></a>Vstupní průhlednosti
+### <a name="input-transparency"></a>Vstupní transparentnosti
 
-Každý prvek má [ `InputTransparent` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.InputTransparent/) vlastnost, která se používá k definování, jestli element obdrží vstup. Výchozí hodnota je `false`, zajistíte, že element obdrží vstup.
+Každý prvek má [ `InputTransparent` ](xref:Xamarin.Forms.VisualElement.InputTransparent) vlastnost, která slouží k určení, zda elementu přijímá vstup. Výchozí hodnota je `false`, zajištění, že element přijímá vstup.
 
-Když je tato vlastnost nastavena na třídu kontejneru, například třída rozložení, jeho hodnota přenosy do podřízených elementů. Proto nastavení [ `InputTransparent` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.InputTransparent/) vlastnost `true` na rozložení třída způsobí elementů v rámci rozložení nepřijaté vstup.
+Když tato vlastnost nastavena na třídu kontejneru, jako je rozložení třídy, jeho hodnota přenosy do podřízených elementů. Proto se nastavení [ `InputTransparent` ](xref:Xamarin.Forms.VisualElement.InputTransparent) vlastnost `true` na rozložení třídy způsobí elementů v rámci rozložení nepřijímá vstup.
 
 ### <a name="device-orientationdevice-orientationmd"></a>[Orientace zařízení](device-orientation.md)
 
-Xamarin.Forms a jeho předdefinované rozložení jsou umožňuje zpracovávat změny v orientace zařízení. Zvažte, které orientace aplikace podporovat, a jak budete provedete využití místa v orientaci na výšku a režimy.
+Xamarin.Forms a jeho integrované rozložení jsou schopné zpracovat změny v orientace zařízení. Vezměte v úvahu orientace, které bude aplikace podporovat, a jak si využití místa k dispozici v režimu na šířku a výšku.
 
-### <a name="layout-for-tablet-and-desktop-appstabletmd"></a>[Rozložení pro aplikace, tablety a vzdálené ploše](tablet.md)
+### <a name="layout-for-tablet-and-desktop-appstabletmd"></a>[Rozložení pro Tablet a Desktop](tablet.md)
 
-iOS, Android a univerzální platformu Windows všechny podporují větší velikost obrazovky na tablet zařízení (i laptopy a desktopy pro Windows). Xamarin.Forms umožňuje optimalizovat vaší aplikace pro větší obrazovky zjišťování typu zařízení a úpravě rozložení stránky nebo zcela pomocí uvidíte úplně jiné stránky pro větší obrazovky.
+iOS, Android a univerzální platformu Windows podporují větší velikosti obrazovky na tablet zařízení (a také laptopů a stolních počítačů pro Windows). Xamarin.Forms umožňuje optimalizovat aplikaci pro větší obrazovky detekce typu zařízení a úpravě rozložení stránky nebo zcela pomocí zcela různé stránky pro větší obrazovky.
 
 ### <a name="creating-a-custom-layoutcustommd"></a>[Vytvoření vlastního rozložení](custom.md)
 
-Definuje Xamarin.Forms třídy čtyři rozložení - [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/), [ `AbsoluteLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayout/), [ `RelativeLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.RelativeLayout/), a [ `Grid` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/), a všechny její podřízené položky uspořádá jiným způsobem. Ale někdy poskytované jeho nezbytné k uspořádání obsahu stránce pomocí rozložení není Xamarin.Forms. Tento článek vysvětluje, jak napsat vlastní rozložení třídu a ukazuje orientaci citlivé `WrapLayout` třídu, která uspořádá podřízené vodorovně na stránce a potom zabalí zobrazení následné podřízené objekty další řádky.
+Xamarin.Forms definuje čtyři rozložení třídy – [ `StackLayout` ](xref:Xamarin.Forms.StackLayout), [ `AbsoluteLayout` ](xref:Xamarin.Forms.AbsoluteLayout), [ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout), a [ `Grid` ](xref:Xamarin.Forms.Grid), a každý uspořádá podřízené jiným způsobem. Ale někdy poskytované jeho nezbytné k uspořádání obsahu stránky, ne pomocí rozložení Xamarin.Forms. Tento článek vysvětluje, jak psát vlastní rozložení třídy a ukazuje orientace citlivé `WrapLayout` třídu, která uspořádá podřízené vodorovně na stránce a tento algoritmus pak zabalí zobrazení další podřízené objekty další řádky.
 
 ### <a name="layout-compressionlayout-compressionmd"></a>[Komprese rozložení](layout-compression.md)
 
-Komprese rozložení Odebere zadaný rozložení vizuálním stromu ve snaze zvýšit výkon vykreslování stránky. Výhody výkonu, který to doručí se liší v závislosti na složitosti stránky, na verzi operačního systému používá a zařízení, na kterém je aplikace spuštěna. Ale největších zvýšení výkonu se zobrazí na starší zařízení.
+Komprese rozložení odebere zadané rozložení z vizuálního stromu za účelem zvýšení výkonu vykreslování stránky. Zlepšuje výkon, který to poskytuje se liší v závislosti na složitosti stránku, verze operačního systému se používají a zařízení, na kterém je aplikace spuštěna. Největší zvýšení výkonu se však projeví na starší zařízení.
 
 ## <a name="making-your-choice"></a>Provedení výběru
 
-Upozorňujeme, že ve většině případů více než jednu možnost rozložení lze použít k implementaci návrhu požadované. Pokud nejsou k dispozici více možností platný, zvažte, jaký přístup budou nejjednodušší pro vaši situaci.
-Většina návrhy nelze nastane s jedním rozložení, aby vnoření rozložení jako vytvořit složitější návrhů.
+Mějte na paměti, že ve většině případů více než jednu možnost rozložení je možné provádět požadované návrhu. Když existuje několik možností platný, zvažte, jaký přístup bude nejjednodušší pro vaši situaci.
+Většina návrhy nelze dají realizovat s využitím právě jedno rozložení, tak vnoření rozložení jako potřebné k vytvoření složitějších návrhy.
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Lidské rozhraní pokynů společnosti Apple](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG)
-- [Android návrh webu](https://developer.android.com/design/index.html)
+- [Pokyny pro lidské rozhraní společnosti Apple](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG)
+- [Návrh webu Android](https://developer.android.com/design/index.html)
 - [Rozložení (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
 - [Příklad BusinessTumble (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BusinessTumble/)

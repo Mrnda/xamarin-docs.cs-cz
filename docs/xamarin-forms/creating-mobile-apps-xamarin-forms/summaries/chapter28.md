@@ -7,16 +7,16 @@ ms.assetid: F6E20077-687C-45C4-A375-31D4F49BBFA4
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: c10a3c1a0ed2755734fe351df39caadc88dd61c4
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: a02239906f5a30c068cb7eebd31308ad188696b3
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935112"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998095"
 ---
 # <a name="summary-of-chapter-28-location-and-maps"></a>Souhrn kapitola 28. Poloha a mapy
 
-Podporuje Xamarin.Forms [ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/) element, který je odvozen od `View`. Vzhledem k požadavkům na platformu speciální účastnící se pomocí mapy, jsou implementovány v samostatném sestavení **xamarin.Forms.Maps není úspěšný kvůli**a zahrnovat jiný obor názvů: `Xamarin.Forms.Maps`.
+Podporuje Xamarin.Forms [ `Map` ](xref:Xamarin.Forms.Maps.Map) element, který je odvozen od `View`. Vzhledem k požadavkům na platformu speciální účastnící se pomocí mapy, jsou implementovány v samostatném sestavení **xamarin.Forms.Maps není úspěšný kvůli**a zahrnovat jiný obor názvů: `Xamarin.Forms.Maps`.
 
 ## <a name="the-geographic-coordinate-system"></a>Geografické souřadnicový systém
 
@@ -118,13 +118,13 @@ Aplikace v jazyce prostředí Windows Runtime vyžaduje autorizačního klíče 
 
 [ **MapDemos** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter28/MapDemos) vzorek se skládá z [MapsDemoHomePage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/MapDemosHomePage.xaml) souboru a [MapsDemoHomePage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/MapDemosHomePage.xaml.cs) soubor kódu Umožňuje přechod na různé ukázkové programy.
 
-[BasicMapPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/BasicMapPage.xaml) soubor ukazuje, jak zobrazit [ `Map` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Map/) zobrazení. Ve výchozím nastavení zobrazí město Řím, ale uživatel můžete pracovat na mapě.
+[BasicMapPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/BasicMapPage.xaml) soubor ukazuje, jak zobrazit [ `Map` ](xref:Xamarin.Forms.Maps.Map) zobrazení. Ve výchozím nastavení zobrazí město Řím, ale uživatel můžete pracovat na mapě.
 
-Chcete-li zakázat vodorovné a svislé posouvání, nastavte [ `HasScrollEnabled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Map.HasScrollEnabled/) vlastnost `false`. Chcete-li zakázat měřítka, nastavte [ `HasZoomEnabled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Map.HasZoomEnabled/) k `false`. Tyto vlastnosti nemusí fungovat na všech platformách.
+Chcete-li zakázat vodorovné a svislé posouvání, nastavte [ `HasScrollEnabled` ](xref:Xamarin.Forms.Maps.Map.HasScrollEnabled) vlastnost `false`. Chcete-li zakázat měřítka, nastavte [ `HasZoomEnabled` ](xref:Xamarin.Forms.Maps.Map.HasZoomEnabled) k `false`. Tyto vlastnosti nemusí fungovat na všech platformách.
 
 ### <a name="streets-and-terrain"></a>Ulice a terénu
 
-Různé druhy maps můžete zobrazit tak, že nastavíte `Map` vlastnost [ `MapType` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Map.MapType/) typu [ `MapType` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.MapType/), výčet pomocí tří členů:
+Různé druhy maps můžete zobrazit tak, že nastavíte `Map` vlastnost [ `MapType` ](xref:Xamarin.Forms.Maps.Map.MapType) typu [ `MapType` ](xref:Xamarin.Forms.Maps.MapType), výčet pomocí tří členů:
 
 - [`Street`](xref:Xamarin.Forms.Maps.MapType.Street), výchozí hodnota
 - [`Satellite`](xref:Xamarin.Forms.Maps.MapType.Satellite)
@@ -134,32 +134,32 @@ Různé druhy maps můžete zobrazit tak, že nastavíte `Map` vlastnost [ `MapT
 
 ### <a name="map-coordinates"></a>Souřadnicích mapy
 
-Program můžete získat aktuální oblasti, která `Map` zobrazení prostřednictvím [ `VisibleRegion` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Map.VisibleRegion/) vlastnost. Tato vlastnost je *není* se opírá o vlastnost podporující vazby, a neexistuje žádný mechanismus oznámení k označení, kdy byl změněn, takže program, který chce monitorovat vlastnost vhodné použít časovač pro tento účel.
+Program můžete získat aktuální oblasti, která `Map` zobrazení prostřednictvím [ `VisibleRegion` ](xref:Xamarin.Forms.Maps.Map.VisibleRegion) vlastnost. Tato vlastnost je *není* se opírá o vlastnost podporující vazby, a neexistuje žádný mechanismus oznámení k označení, kdy byl změněn, takže program, který chce monitorovat vlastnost vhodné použít časovač pro tento účel.
 
-`VisibleRegion` je typu [ `MapSpan` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.MapSpan/), třída s atributem čtyři vlastnosti jen pro čtení:
+`VisibleRegion` je typu [ `MapSpan` ](xref:Xamarin.Forms.Maps.MapSpan), třída s atributem čtyři vlastnosti jen pro čtení:
 
-- [`Center`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.MapSpan.Center/) typu [`Position`](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Position/)
-- [`LatitudeDegrees`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.MapSpan.LatitudeDegrees/) typ `double`, označující výšku oblasti zobrazené mapy
-- [`LongitudeDegrees`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.MapSpan.LongitudeDegrees/) typ `double`, Long určující šířku zobrazených oblasti mapy
-- [`Radius`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.MapSpan.Radius/) typu [ `Distance` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Distance/), určující velikost největší kruhové oblasti na mapě viditelné
+- [`Center`](xref:Xamarin.Forms.Maps.MapSpan.Center) typu [`Position`](xref:Xamarin.Forms.Maps.Position)
+- [`LatitudeDegrees`](xref:Xamarin.Forms.Maps.MapSpan.LatitudeDegrees) typ `double`, označující výšku oblasti zobrazené mapy
+- [`LongitudeDegrees`](xref:Xamarin.Forms.Maps.MapSpan.LongitudeDegrees) typ `double`, Long určující šířku zobrazených oblasti mapy
+- [`Radius`](xref:Xamarin.Forms.Maps.MapSpan.Radius) typu [ `Distance` ](xref:Xamarin.Forms.Maps.Distance), určující velikost největší kruhové oblasti na mapě viditelné
 
-`Position` a `Distance` jsou obě struktury. `Position` definuje dvě vlastnosti jen pro čtení nastavené přes [ `Position` konstruktor](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Maps.Position.Position/p/System.Double/System.Double/):
+`Position` a `Distance` jsou obě struktury. `Position` definuje dvě vlastnosti jen pro čtení nastavené přes [ `Position` konstruktor](xref:Xamarin.Forms.Maps.Position.%23ctor(System.Double,System.Double)):
 
-- [`Latitude`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Position.Latitude/)
-- [`Longitude`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Position.Longitude/)
+- [`Latitude`](xref:Xamarin.Forms.Maps.Position.Latitude)
+- [`Longitude`](xref:Xamarin.Forms.Maps.Position.Longitude)
 
 `Distance` je určená k zajištění nezávislé na jednotku vzdálenosti převedením mezi metriky a angličtině jednotky. A `Distance` hodnotu lze vytvořit několika způsoby:
 
-- [`Distance` Konstruktor](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Maps.Distance.Distance/p/System.Double/) vzdálenost v metrech
-- [`Distance.FromMeters`](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.Distance.FromMeters/p/System.Double/) statická metoda
-- [`Distance.FromKilometers`](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.Distance.FromKilometers/p/System.Double/) statická metoda
-- [`Distance.FromMiles`](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.Distance.FromMiles/p/System.Double/) statická metoda
+- [`Distance` Konstruktor](xref:Xamarin.Forms.Maps.Distance.%23ctor(System.Double)) vzdálenost v metrech
+- [`Distance.FromMeters`](xref:Xamarin.Forms.Maps.Distance.FromMeters(System.Double)) statická metoda
+- [`Distance.FromKilometers`](xref:Xamarin.Forms.Maps.Distance.FromKilometers(System.Double)) statická metoda
+- [`Distance.FromMiles`](xref:Xamarin.Forms.Maps.Distance.FromMiles(System.Double)) statická metoda
 
 Hodnota je k dispozici tři vlastnosti:
 
-- [`Meters`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Distance.Meters/) typu `double`
-- [`Kilometers`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Distance.Kilometers/) typu `double`
-- [`Miles`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Distance.Miles/) typu `double`
+- [`Meters`](xref:Xamarin.Forms.Maps.Distance.Meters) typu `double`
+- [`Kilometers`](xref:Xamarin.Forms.Maps.Distance.Kilometers) typu `double`
+- [`Miles`](xref:Xamarin.Forms.Maps.Distance.Miles) typu `double`
 
 [MapCoordinatesPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/MapCoordinatesPage.xaml) soubor obsahuje několik `Label` prvky pro zobrazení `MapSpan` informace. [MapCoordinatesPage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/MapCoordinatesPage.xaml.cs) soubor kódu na pozadí používá časovač Udržovat informace aktualizovat, protože uživatel manipuluje se na mapě.
 
@@ -169,16 +169,16 @@ Nová knihovna pro tento seznam s názvem [ **Xamarin.FormsBook.Toolkit.Maps** ]
 
 ### <a name="setting-an-initial-location"></a>Nastavení počáteční umístění
 
-Můžete volat [ `MoveToRegion` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.Map.MoveToRegion/p/Xamarin.Forms.Maps.MapSpan/) metoda `Map` prostřednictvím kódu programu nastavit úroveň umístění a přiblížení na mapě. Argument je typu `MapSpan`. Můžete vytvořit `MapSpan` pomocí některého z následujících:
+Můžete volat [ `MoveToRegion` ](xref:Xamarin.Forms.Maps.Map.MoveToRegion(Xamarin.Forms.Maps.MapSpan)) metoda `Map` prostřednictvím kódu programu nastavit úroveň umístění a přiblížení na mapě. Argument je typu `MapSpan`. Můžete vytvořit `MapSpan` pomocí některého z následujících:
 
-- [`MapSpan` Konstruktor](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Maps.MapSpan.MapSpan/p/Xamarin.Forms.Maps.Position/System.Double/System.Double/) s `Position`a zeměpisné šířky a délky rozpětí
-- [`MapSpan.FromCenterAndRadius`](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.MapSpan.FromCenterAndRadius/p/Xamarin.Forms.Maps.Position/Xamarin.Forms.Maps.Distance/) s `Position` a protokolu radius
+- [`MapSpan` Konstruktor](xref:Xamarin.Forms.Maps.MapSpan.%23ctor(Xamarin.Forms.Maps.Position,System.Double,System.Double)) s `Position`a zeměpisné šířky a délky rozpětí
+- [`MapSpan.FromCenterAndRadius`](xref:Xamarin.Forms.Maps.MapSpan.FromCenterAndRadius(Xamarin.Forms.Maps.Position,Xamarin.Forms.Maps.Distance)) s `Position` a protokolu radius
 
-Je také možné vytvořit nový `MapSpan` z existující pomocí metod [ `ClampLatitude` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.MapSpan.ClampLatitude/p/System.Double/System.Double/) nebo [ `WithZoom` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.MapSpan.WithZoom/p/System.Double/).
+Je také možné vytvořit nový `MapSpan` z existující pomocí metod [ `ClampLatitude` ](xref:Xamarin.Forms.Maps.MapSpan.ClampLatitude(System.Double,System.Double)) nebo [ `WithZoom` ](xref:Xamarin.Forms.Maps.MapSpan.WithZoom(System.Double)).
 
 [WyomingPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/WyomingPage.xaml) souboru a [WyomingPage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/WyomingPage.xaml.cs) použití modelu code-behind soubor popisuje způsob použití `MoveToRegion` metodu pro zobrazení stát Wyoming.
 
-Můžete také použít [ `Map` konstruktor](https://developer.xamarin.com/api/constructor/Xamarin.Forms.Maps.Map.Map/p/Xamarin.Forms.Maps.MapSpan/) s `MapSpan` objekt inicializovat umístění na mapě. [XamarinHQPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/XamarinHQPage.xaml) soubor ukazuje, jak to provést jenom v XAML zobrazení Xamarinu pro ústředí v kalifornském San Franciscu.
+Můžete také použít [ `Map` konstruktor](xref:Xamarin.Forms.Maps.Map.%23ctor(Xamarin.Forms.Maps.MapSpan)) s `MapSpan` objekt inicializovat umístění na mapě. [XamarinHQPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/XamarinHQPage.xaml) soubor ukazuje, jak to provést jenom v XAML zobrazení Xamarinu pro ústředí v kalifornském San Franciscu.
 
 ### <a name="dynamic-zooming"></a>Dynamická změna měřítka zobrazení
 
@@ -188,7 +188,7 @@ Můžete použít `Slider` dynamicky Přiblížení mapy. [RadiusZoomPage.xaml](
 
 ### <a name="the-phones-location"></a>Umístění v telefonu
 
-[ `IsShowingUser` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Map.IsShowingUser/) Vlastnost `Map` funguje trochu jinak na třech platformách, jako [ShowLocationPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/ShowLocationPage.xaml) soubor ukazuje:
+[ `IsShowingUser` ](xref:Xamarin.Forms.Maps.Map.IsShowingUser) Vlastnost `Map` funguje trochu jinak na třech platformách, jako [ShowLocationPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/ShowLocationPage.xaml) soubor ukazuje:
 
 - V systémech iOS modrá tečka označuje umístění v telefonu, ale je nutné ručně přejít existuje
 - V systému Android, zobrazí se ikona, že vloženo přesune na mapě do umístění v telefonu
@@ -200,12 +200,12 @@ Můžete použít `Slider` dynamicky Přiblížení mapy. [RadiusZoomPage.xaml](
 
 ### <a name="pins-and-science-museums"></a>Kódy PIN a muzea vědy
 
-Nakonec `Map` definuje třídu [ `Pins` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Map.Pins/) vlastnost typu `IList<Pin>`. [ `Pin` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Pin/) Třída definuje čtyři vlastnosti:
+Nakonec `Map` definuje třídu [ `Pins` ](xref:Xamarin.Forms.Maps.Map.Pins) vlastnost typu `IList<Pin>`. [ `Pin` ](xref:Xamarin.Forms.Maps.Pin) Třída definuje čtyři vlastnosti:
 
-- [`Label`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Pin.Label/) typ `string`, požadovaná vlastnost
-- [`Address`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Pin.Address/) typ `string`, volitelné čitelné adresu
-- [`Position`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Pin.Position/) typ `Position`, určující, kde se zobrazí kód pin na mapě
-- [`Type`](https://developer.xamarin.com/api/property/Xamarin.Forms.Maps.Pin.Type/) typu [ `PinType` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.PinType/), výčtu, která není používána.
+- [`Label`](xref:Xamarin.Forms.Maps.Pin.Label) typ `string`, požadovaná vlastnost
+- [`Address`](xref:Xamarin.Forms.Maps.Pin.Address) typ `string`, volitelné čitelné adresu
+- [`Position`](xref:Xamarin.Forms.Maps.Pin.Position) typ `Position`, určující, kde se zobrazí kód pin na mapě
+- [`Type`](xref:Xamarin.Forms.Maps.Pin.Type) typu [ `PinType` ](xref:Xamarin.Forms.Maps.PinType), výčtu, která není používána.
 
 **MapDemos** projekt obsahuje soubor [ScienceMuseums.xml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/Data/ScienceMuseums.xml), vypíše seznam vědy muzea ve Spojených státech a [ `Locations` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/Locations.cs) a [ `Site` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/Site.cs) třídy pro deserializaci tato data.
 
@@ -223,7 +223,7 @@ Program také ukazuje, jak dynamicky omezit počet kódů PIN, v závislosti na 
 
 ## <a name="geocoding-and-back-again"></a>Geokódování a zpět
 
-[ **Xamarin.Forms.Maps není úspěšný kvůli** ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.Maps/) také obsahuje sestavení [ `Geocoder` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Maps.Geocoder/) třídy s [ `GetPositionsForAddressAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.Geocoder.GetPositionsForAddressAsync/p/System.String/) metodu, která převede Adresa text do nula nebo více možné zeměpisné polohy a jinou metodu [ `GetAddressesForPositionAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Maps.Geocoder.GetAddressesForPositionAsync/p/Xamarin.Forms.Maps.Position/) , která převede opačným směrem.
+[ **Xamarin.Forms.Maps není úspěšný kvůli** ](xref:Xamarin.Forms.Maps) také obsahuje sestavení [ `Geocoder` ](xref:Xamarin.Forms.Maps.Geocoder) třídy s [ `GetPositionsForAddressAsync` ](xref:Xamarin.Forms.Maps.Geocoder.GetPositionsForAddressAsync(System.String)) metodu, která převede Adresa text do nula nebo více možné zeměpisné polohy a jinou metodu [ `GetAddressesForPositionAsync` ](xref:Xamarin.Forms.Maps.Geocoder.GetAddressesForPositionAsync(Xamarin.Forms.Maps.Position)) , která převede opačným směrem.
 
 [GeocoderRoundTrip.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/GeocoderRoundTripPage.xaml) souboru a [GeocoderRoundTrip.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/GeocoderRoundTripPage.xaml.cs) soubor kódu ukazují tuto funkci.
 

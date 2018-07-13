@@ -1,54 +1,54 @@
 ---
 title: Vlastní ovládací prvky v Návrháři Xamarin pro iOS
-description: Návrhář Xamarin pro iOS podporuje vykreslování vlastní ovládací prvky vytvořené ve vašem projektu nebo na něj odkazovat z externích zdrojů jako úložišti součástí Xamarin.
+description: Návrhář Xamarin pro iOS podporuje vykreslování vlastní ovládací prvky ve vašem projektu nebo na něj odkazovat z externích zdrojů, jako jsou Store komponenty Xamarin.
 ms.prod: xamarin
 ms.assetid: D8F07D63-B006-4050-9D1B-AC6FCDA71B99
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 113fab2fd0d1a055d566606885cefbafe3185529
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 05b190f4bfd4058e9e2f6e465e6026fa76dce6f4
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30782181"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995694"
 ---
 # <a name="custom-controls-in-the-xamarin-designer-for-ios"></a>Vlastní ovládací prvky v Návrháři Xamarin pro iOS
 
-_Návrhář Xamarin pro iOS podporuje vykreslování vlastní ovládací prvky vytvořené ve vašem projektu nebo na něj odkazovat z externích zdrojů jako úložišti součástí Xamarin._
+_Návrhář Xamarin pro iOS podporuje vykreslování vlastní ovládací prvky ve vašem projektu nebo na něj odkazovat z externích zdrojů, jako jsou Store komponenty Xamarin._
 
-Návrhář Xamarin pro iOS je výkonný nástroj pro vizualizaci aplikace uživatelské rozhraní a poskytuje WYSIWYG úpravy podpora pro většinu iOS zobrazeních a řadičích, zobrazení. Aplikace může také obsahovat vlastní ovládací prvky, které rozšiřují těm, které jsou součástí iOS. Pokud tyto ovládací prvky jsou zapsány s pár pokynů na paměti, můžete se také vykreslen v iOS Designer, poskytuje i bohatší úpravy prostředí. Tento dokument se podíváme na těchto pokynů.
+Návrhář Xamarin pro iOS je výkonný nástroj pro vizualizaci uživatelského rozhraní a poskytuje podporu pro většinu iOS zobrazení a kontrolery zobrazení pro úpravy WYSIWYG. Vaše aplikace může také obsahovat vlastní ovládací prvky, které rozšiřují těm, které jsou integrované do iOS. Pokud tyto ovládací prvky jsou vytvářeny s použitím několika pokyny na paměti, se můžou také zobrazovat v iOS designeru, poskytuje ještě bohatší možnosti úprav. Tento dokument se podíváme na tyto pokyny.
 
 ## <a name="requirements"></a>Požadavky
 
-Na návrhovou plochu, která bude vykreslen ovládacího prvku, který splňuje následující požadavky:
+Na návrhové ploše zobrazí se ovládací prvek, který splňuje následující požadavky:
 
-1.  Je přímý nebo nepřímý podtřídou třídy [UIView](https://developer.xamarin.com/api/type/UIKit.UIView/) nebo [UIViewController](https://developer.xamarin.com/api/type/UIKit.UIView/Controller). Další [NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/) podtřídy se zobrazí jako ikony na návrhovou plochu.
-2.  Má [RegisterAttribute](https://developer.xamarin.com/api/type/Foundation.RegisterAttribute/) ke zveřejnění na cíl C.
+1.  Je přímý nebo nepřímý podtřídou třídy [UIView](https://developer.xamarin.com/api/type/UIKit.UIView/) nebo [UIViewController](https://developer.xamarin.com/api/type/UIKit.UIView/Controller). Další [NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/) podtřídy se zobrazí jako ikony na návrhové ploše.
+2.  Má [RegisterAttribute](https://developer.xamarin.com/api/type/Foundation.RegisterAttribute/) k tomu, aby Objective-C.
 3.  Má [požadovaný konstruktor IntPtr](~/ios/internals/api-design/index.md).
-4.  Buď implementuje [IComponent](https://developer.xamarin.com/api/type/System.ComponentModel.IComponent/) rozhraní nebo má [DesignTimeVisibleAttribute](https://developer.xamarin.com/api/type/System.ComponentModel.DesignTimeVisibleAttribute/) nastavit na hodnotu True.
+4.  Buď implementuje [IComponent](xref:System.ComponentModel.IComponent) rozhraní nebo má [DesignTimeVisibleAttribute](xref:System.ComponentModel.DesignTimeVisibleAttribute) nastavena na hodnotu True.
 
-Ovládací prvky definované v kódu, které splňují požadavky na výše uvedené se zobrazí v Návrháři při kompilaci jejich obsahující projektu pro simulátoru. Ve výchozím nastavení, zobrazí se všechny vlastní ovládací prvky v **vlastní komponenty** části **sada nástrojů**. Ale [CategoryAttribute](https://developer.xamarin.com/api/type/System.ComponentModel.CategoryAttribute/) můžete použít pro vlastní ovládací prvek třídu k určení různých oddílu.
+Ovládací prvky definované v kódu, které splňují výše uvedené požadavky se zobrazí v Návrháři při jejich obsahující projekt je zkompilován pro simulátoru. Ve výchozím nastavení, zobrazí se všechny vlastní ovládací prvky v **vlastních součástech** část **nástrojů**. Ale [CategoryAttribute](xref:System.ComponentModel.CategoryAttribute) můžete použít pro vlastní ovládací prvek třídu k určení jiného oddílu než.
 
-Návrhář nepodporuje načítání knihoven jazyka Objective-C třetích stran.
+Návrhář nepodporuje načítání knihovny třetích stran Objective-C.
 
 ## <a name="custom-properties"></a>Vlastní vlastnosti
 
-Vlastnost deklarovaná vlastního ovládacího prvku se zobrazí v panelu vlastnost, pokud jsou splněny následující podmínky:
+Vlastnosti deklarované pomocí vlastního ovládacího prvku se zobrazí na panelu Vlastnosti, pokud jsou splněny následující podmínky:
 
-1.  Vlastnost má veřejné metody getter a setter.
-1.  Tato vlastnost nemá [ExportAttribute](https://developer.xamarin.com/api/type/Foundation.ExportAttribute/) a také [BrowsableAttribute](https://developer.xamarin.com/api/type/System.ComponentModel.BrowsableAttribute/) nastavit na hodnotu True.
-1.  Typ vlastnosti je číselného typu, nikoli typ výčtu, string, bool, [SizeF](https://developer.xamarin.com/api/type/System.Drawing.SizeF/), [UIColor](https://developer.xamarin.com/api/type/UIKit.UIColor/), nebo [UIImage](https://developer.xamarin.com/api/type/UIKit.UIImage/). Tento seznam podporovaných typů může v budoucnu rozšířit.
+1.  Vlastnost má veřejnou metodu getter a setter.
+1.  Vlastnost má [ExportAttribute](https://developer.xamarin.com/api/type/Foundation.ExportAttribute/) a také [BrowsableAttribute](xref:System.ComponentModel.BrowsableAttribute) nastavena na hodnotu True.
+1.  Typ vlastnosti je číselného typu, typ výčtu, string, bool, [SizeF](xref:System.Drawing.SizeF), [UIColor](https://developer.xamarin.com/api/type/UIKit.UIColor/), nebo [UIImage](https://developer.xamarin.com/api/type/UIKit.UIImage/). Tento seznam podporovaných typů mohou v budoucnu rozšířit.
 
 
-Vlastnost může být také doplněny pomocí [DisplayNameAttribute](https://developer.xamarin.com/api/type/System.ComponentModel.DisplayNameAttribute/) k určení štítek, který se zobrazí pro něj panelu vlastnost.
+Vlastnost také jde dekorovat atributem [DisplayNameAttribute](xref:System.ComponentModel.DisplayNameAttribute) zadat popisek, který se pro něj zobrazí na panelu Vlastnosti.
 
 ## <a name="initialization"></a>Inicializace
 
-Pro `UIViewController` podtřídy, měli byste použít [ViewDidLoad](https://developer.xamarin.com/api/member/UIKit.UIViewController.ViewDidLoad/) metodu pro kód, který závisí na zobrazení, které jste vytvořili v návrháři.
+Pro `UIViewController` podtřídy, měli byste použít [ViewDidLoad](https://developer.xamarin.com/api/member/UIKit.UIViewController.ViewDidLoad/) metodu pro kód, který závisí na zobrazením vytvořeným v návrháři.
 
-Pro `UIView` a dalších `NSObject` podtřídy, [AwakeFromNib](https://developer.xamarin.com/api/member/Foundation.NSObject.AwakeFromNib/) metoda je doporučené místo, které provést inicializaci vlastního ovládacího prvku po načtení ze souboru rozložení. Důvodem je, že všechny vlastní vlastnosti nastavit v panelu vlastnost nebude nastavená, pokud běží konstruktoru ovládacího prvku, ale nastavují před `AwakeFromNib` se označuje jako:
+Pro `UIView` a dalších `NSObject` podtřídy, [AwakeFromNib](https://developer.xamarin.com/api/member/Foundation.NSObject.AwakeFromNib/) metoda je doporučený místem, kde můžete provést inicializaci vlastního ovládacího prvku po načtení ze souboru rozložení. Důvodem je, že všechny vlastní nastavení na panelu Vlastnosti se nenastaví vlastnosti při spuštění konstruktoru ovládacího prvku, ale nastavují před `AwakeFromNib` se volá:
 
 
 ```csharp
@@ -64,7 +64,7 @@ public class CustomView : UIView {
 }
 ```
 
-Pokud ovládací prvek je navržen tak, aby vytvořit přímo z kódu, můžete vytvoření metody, která má společný kód inicializace, například takto:
+Pokud ovládací prvek je navržený tak, aby vytvořit přímo z kódu, můžete vytvořit metodu, která má společný kód inicializace, následujícím způsobem:
 
 ```csharp
 [Register ("CustomView"), DesignTimeVisible (true)]
@@ -93,7 +93,7 @@ public class CustomView : UIView {
 
 ## <a name="property-initialization-and-awakefromnib"></a>Inicializace vlastností a AwakeFromNib
 
-Potřeba dát pozor na kdy a kde inicializace navrhovatelé vlastností v vlastní součásti, není přepsat hodnoty, které byly nastaveny uvnitř iOS Designer. Jako příklad proveďte následující kód:
+Mělo dbát na kdy a kde k inicializaci vlastnosti navrhovatelé vlastní komponenty jako přepsat hodnoty, které jsou nastavené v iOS designeru. Jako příklad postupujte následovně:
 
 ```csharp
 [Register ("CustomView"), DesignTimeVisible (true)]
@@ -124,25 +124,25 @@ public class CustomView : UIView {
 }
 ```
 
-`CustomView` Zpřístupní součásti `Counter` vlastnost, která můžete nastavit, že vývojář uvnitř iOS Designer. Ale bez ohledu na to hodnota uvnitř návrháře hodnotu `Counter` vlastnost bude vždy nula (0). Tady je důvod, proč:
+`CustomView` Komponenta zpřístupní `Counter` vlastnost, kterou můžete nastavit pro vývojáře v iOS designeru. Ale nezáleží na tom, jaká hodnota je nastavena v návrháři, hodnota `Counter` vlastnost bude vždy nula (0). Tady jsou důvody:
 
--  Instance `CustomControl` je zvětšený ze souboru scénáře.
--  Jsou nastaveny žádné vlastnosti upravit v designeru iOS (například nastavení hodnoty `Counter` na dva (2), např.).
--  `AwakeFromNib` Spuštění metody a do součásti Přišla žádost o `Initialize` metoda.
--  Uvnitř `Initialize` hodnotu `Counter` vlastnost je obnovena na nula (0).
+-  Instance `CustomControl` zvětšený ze souboru scénáře.
+-  Jsou nastaveny žádné vlastnosti, změnit v návrháři pro iOS (jako je například nastavení hodnoty `Counter` na dva (2), například).
+-  `AwakeFromNib` Provedení metody a komponenty je provedeno volání `Initialize` metoda.
+-  Uvnitř `Initialize` hodnotu `Counter` vlastnost se resetuje na nulu (0).
 
 
-Vyřešte výše uvedený situaci, buď inicializovat `Counter` jinde vlastnost, (například konstruktor komponenty) nebo nepotlačí `AwakeFromNib` metoda a volání `Initialize` Pokud komponentu vyžaduje, aby žádné další inicializaci mimo co je aktuálně zpracovanou jeho konstruktory.
+Výše uvedené situaci vyřešíte buď inicializovat `Counter` vlastnost jinde, (jako je například konstruktor komponenty) nebo nepřepíšete `AwakeFromNib` metoda a volání `Initialize` Pokud komponenta vyžaduje žádné další inicializaci mimo co je aktuálně zpracovávanou podle jejích konstruktorů.
 
 ## <a name="design-mode"></a>Režim návrhu
 
-Návrhové ploše vlastního ovládacího prvku musí splňovat několik omezení:
+Vlastní ovládací prvek na návrhové ploše, musí dodržovat několik omezení:
 
--  Prostředky aplikace sady nejsou k dispozici v režimu návrhu. Obrázky nejsou k dispozici při načítání prostřednictvím [UIImage metody](https://developer.xamarin.com/api/type/UIKit.UIImage/%2fM) .
--  Asynchronní operace, například webových požadavků, nebude prováděna v režimu návrhu. Návrhovou plochu, která nepodporuje animace nebo jiné asynchronní aktualizace do ovládacího prvku uživatelského rozhraní.
+-  Sada prostředků aplikace nejsou k dispozici v režimu návrhu. Image jsou dostupné při načtení prostřednictvím [UIImage metody](https://developer.xamarin.com/api/type/UIKit.UIImage/%2fM) .
+-  Asynchronní operace, například webových požadavků, by neměla provést v režimu návrhu. Návrhové ploše nepodporuje animaci nebo jiné asynchronní aktualizace do uživatelského ovládacího prvku.
 
 
-Můžete implementovat vlastní ovládací prvek [IComponent](https://developer.xamarin.com/api/type/System.ComponentModel.IComponent/) a použít [DesignMode](https://developer.xamarin.com/api/property/System.ComponentModel.ISite.DesignMode/) vlastnosti zkontrolujte, jestli je na návrhovou plochu. V tomto příkladu se zobrazí popisek "Návrhu režim" na návrhovou plochu a "Runtime" za běhu:
+Můžete implementovat vlastní ovládací prvek [IComponent](xref:System.ComponentModel.IComponent) a použít [DesignMode](xref:System.ComponentModel.ISite.DesignMode) vlastnost zkontrolujte, jestli je na návrhové ploše. V tomto příkladu se popisek na návrhové ploše a "Runtime" zobrazí "Režimu návrhu", za běhu:
 
 ```csharp
 [Register ("DesignerAwareLabel")]
@@ -167,26 +167,26 @@ public class DesignerAwareLabel : UILabel, IComponent {
 }
 ```
 
-Vždy byste měli zkontrolovat `Site` vlastnost pro `null` před pokusem o přístup k libovolnému její členy. Pokud `Site` je `null`, je bezpečné předpokládat, že ovládací prvek není spuštěn v návrháři.
-V režimu návrhu `Site` se nastaví po spuštění konstruktoru ovládacího prvku a před `AwakeFromNib` je volána.
+Vždy byste měli zkontrolovat `Site` vlastnost `null` před pokusem o přístup k některé z jejích členů. Pokud `Site` je `null`, jde bezpečně předpokládat, že ovládací prvek není spuštěna v návrháři.
+V režimu návrhu `Site` se nastaví po provedení konstruktoru ovládacího prvku a před `AwakeFromNib` je volána.
 
 ## <a name="debugging"></a>Ladění
 
-Ovládací prvek, který splňuje požadavky na výše uvedené se zobrazená v panelu nástrojů a vykresluje na ploše.
-Pokud není vykreslení ovládacího prvku, vyhledejte chyby v ovládacím prvku nebo jeden z jeho závislých.
+Ovládací prvek, který splňuje výše uvedené požadavky se zobrazí na panelu nástrojů a vykreslen na povrchu.
+Pokud není ovládací prvek vykreslen, zkontrolujte chyby v ovládacím prvku nebo v některém z jeho závislostí.
 
-Na návrhovou plochu můžete často catch výjimky vyvolané jednotlivých ovládacích prvků při pokračování k vykreslení další ovládací prvky. Vadný ovládacího prvku se nahradí zástupný symbol red a kliknutím na ikonu vykřičníku můžete zobrazit trasování výjimky:
+Na návrhovou plochu lze často zachytávaly výjimky vyvolané jednotlivých ovládacích prvků přitom k vykreslení další ovládací prvky. Chybný ovládacího prvku se nahradí zástupný symbol red a trasování výjimky můžete zobrazit kliknutím na ikonu upozornění:
 
- ![](ios-designable-controls-overview-images/exception-box.png "Vadného ovládacího prvku jako zástupný symbol red a podrobnosti o výjimce")
+ ![](ios-designable-controls-overview-images/exception-box.png "Chybný ovládací prvek jako červený zástupný text a podrobnosti o výjimce")
 
-Pokud jsou k dispozici pro ovládací prvek symboly ladění, trasování bude mít názvy souborů a čísla řádků. Dvojím kliknutím na řádek v trasování zásobníku přeskočí do daného řádku ve zdrojovém kódu.
+Pokud jsou k dispozici pro ovládací prvek symboly ladění, trasování bude mít názvy souborů a čísel řádků. Dvojité kliknutí na řádek v trasování zásobníku přeskočí a tento řádek ve zdrojovém kódu.
 
-Pokud návrháře nelze izolovat vadný ovládacího prvku, upozornění se zobrazí v horní části návrhové plochy:
+Pokud návrháře nelze izolovat vadného ovládacího prvku, zobrazí se zpráva s upozorněním v horní části návrhové plochy:
 
  ![](ios-designable-controls-overview-images/info-bar.png "Upozornění v horní části návrhové plochy")
 
-Úplné vykreslování bude pokračovat, až je vadný ovládací prvek pevné nebo odebrat z návrhové plochy.
+Úplné vykreslování bude pokračovat, až vadného ovládacího prvku nebo je odebrat z návrhové plochy.
 
 ## <a name="summary"></a>Souhrn
 
-Tento článek se zavedl vytváření a použití vlastních ovládacích prvků v Návrháři iOS. Nejprve popsané požadavky, které ovládací prvky musí splnit, aby se zobrazí na návrhovou plochu a vystavení vlastní vlastnosti v panelu vlastnost. Pak hledá v kódu na pozadí - inicializace ovládacího prvku a vlastnost DesignMode. Nakonec popsáno, co se stane, když nastanou výjimky a jak to vyřešit.
+Tento článek zavedené vytváření a používání vlastních ovládacích prvků v návrháři pro iOS. Nejprve popsány požadavky, které musí splnit ovládací prvky a být vykreslen na návrhové ploše tak a zpřístupnit vlastní vlastnosti na panelu Vlastnosti. Poté hledá v kódu – inicializace ovládací prvek a vlastnost DesignMode. A konečně popsané, co se stane, když jsou výjimky vyvolány a jak to vyřešit.

@@ -1,26 +1,26 @@
 ---
-title: Přidání pro rozpoznávání gesto Pan
-description: Tento článek vysvětluje, jak používat gesto pan k vodorovně a svisle přetáhněte bitovou kopii, tak, aby veškerý obsah image jde zobrazit, když se zobrazily v zobrazení menší než image rozměry.
+title: Přidání rozpoznávání gest Pan
+description: Tento článek vysvětluje, jak používat gesto posun k vodorovně a svisle přetáhněte bitové kopie, tak, aby veškerý obsah image můžete lze zobrazit v případě, že se zobrazily v oblast zobrazení menší než rozměry obrázku.
 ms.prod: xamarin
 ms.assetid: 42CBD2CF-432D-4F19-A05E-D569BB7F8713
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
-ms.openlocfilehash: d3e4dfc57678ff75fb8f9761360748d94aeefcc2
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 45c0a1452916f193236e5ba741f8e8e19b6691aa
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35239981"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996803"
 ---
-# <a name="adding-a-pan-gesture-recognizer"></a>Přidání pro rozpoznávání gesto Pan
+# <a name="adding-a-pan-gesture-recognizer"></a>Přidání rozpoznávání gest Pan
 
-_Gesto pan se používá pro zjišťování přetahování a je implementována pomocí třídy PanGestureRecognizer. Běžný scénář pro gesto panoramování je vodorovně a svisle přetáhnout bitovou kopii, tak, aby veškerý obsah image jde zobrazit, když se zobrazily v zobrazení menší než image rozměry. To je prováděno přesunutím obrázku v rámci zobrazení a je ukázáno v tomto článku._
+_Posun gest se používá pro zjišťování přetahování a je implementováno třídou PanGestureRecognizer. Běžným scénářem, gesta posun je vodorovně a svisle přetáhnout bitové kopie, takže veškerý obsah image můžete zobrazit, když ho se zobrazuje na oblast zobrazení menší než rozměry obrázku. To se provádí přesunutím image v rámci zobrazení a je ukázáno v tomto článku._
 
 ## <a name="overview"></a>Přehled
 
-Chcete-li přetahovatelným s gesto pan element uživatelského rozhraní, vytvořte [ `PanGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PanGestureRecognizer/) instance, zpracování [ `PanUpdated` ](https://developer.xamarin.com/api/event/Xamarin.Forms.PanGestureRecognizer.PanUpdated/) události, a přidejte nový rozpoznávání gesto [ `GestureRecognizers` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.GestureRecognizers/) kolekce na element uživatelského rozhraní. Následující příklad kódu ukazuje `PanGestureRecognizer` připojené k [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) element:
+Chcete-li prvek uživatelského rozhraní přetažitelného pomocí gest posouvání, vytvořte [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer) instance, nastavte popisovač [ `PanUpdated` ](xref:Xamarin.Forms.PanGestureRecognizer.PanUpdated) události, a přidejte nový nástroj pro rozpoznávání gest na [ `GestureRecognizers` ](xref:Xamarin.Forms.View.GestureRecognizers) kolekce na prvek uživatelského rozhraní. Následující příklad kódu ukazuje `PanGestureRecognizer` připojené k [ `Image` ](xref:Xamarin.Forms.Image) element:
 
 ```csharp
 var panGesture = new PanGestureRecognizer();
@@ -30,7 +30,7 @@ panGesture.PanUpdated += (s, e) => {
 image.GestureRecognizers.Add(panGesture);
 ```
 
-To jde dosáhnout i v jazyce XAML, jak je znázorněno v následujícím příkladu kódu:
+Taky jde tohoto dosáhnout v XAML, jak je znázorněno v následujícím příkladu kódu:
 
 ```xaml
 <Image Source="MonoMonkey.jpg">
@@ -40,7 +40,7 @@ To jde dosáhnout i v jazyce XAML, jak je znázorněno v následujícím příkl
 </Image>
 ```
 
-Kód pro `OnPanUpdated` obslužné rutiny události se pak přidá do souboru kódu na pozadí:
+Kód `OnPanUpdated` obslužná rutina události se pak přidá do souboru kódu na pozadí:
 
 ```csharp
 void OnPanUpdated (object sender, PanUpdatedEventArgs e)
@@ -50,11 +50,11 @@ void OnPanUpdated (object sender, PanUpdatedEventArgs e)
 ```
 
 > [!NOTE]
-> Správné posouvání v systému Android vyžaduje [balíček NuGet 2.1.0-pre1 Xamarin.Forms](https://www.nuget.org/packages/Xamarin.Forms/2.1.0.6501-pre1) minimálně.
+> Vyžaduje správné vyvážení v systému Android [balíček NuGet Xamarin.Forms 2.1.0-pre1](https://www.nuget.org/packages/Xamarin.Forms/2.1.0.6501-pre1) minimálně.
 
-## <a name="creating-a-pan-container"></a>Vytvoření kontejneru Pan
+## <a name="creating-a-pan-container"></a>Vytváří se kontejner Pan
 
-Tato část obsahuje zobecněný pomocná třída, která provádí posouvání volného tvaru, který je obvykle vhodnější navigace v rámci bitové kopie nebo mapy. Zpracování gesto pan k provedení operace přetažení vyžaduje některé matematické k transformaci uživatelského rozhraní. Tato matematické se používá k přetáhněte pouze v rámci hranice element zabalené uživatelského rozhraní. Následující příklad kódu ukazuje `PanContainer` třídy:
+Tato část obsahuje zobecněný pomocná třída, která provádí posouvání volného tvaru, který je obvykle vhodné k navigace v rámci bitové kopie nebo aplikace mapy. Zpracování gesta posun k provedení operace přetažení vyžaduje procvičili matematiku k transformaci uživatelského rozhraní. Tato matematický zápis se používá k přetáhnout pouze v rámci hranice prvku zabalené uživatelského rozhraní. Následující příklad kódu ukazuje `PanContainer` třídy:
 
 ```csharp
 public class PanContainer : ContentView
@@ -77,7 +77,7 @@ public class PanContainer : ContentView
 }
 ```
 
-Tato třída může obtékat element uživatelského rozhraní tak, aby gesto pan bude přetáhněte element zabalené uživatelského rozhraní. Následující příklad ukazuje kód XAML `PanContainer` zabalení [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) element:
+Tato třída může obtékat prvek uživatelského rozhraní tak, aby gesta pan bude přetáhněte prvek zabalené uživatelského rozhraní. Následující příklad ukazuje kód XAML `PanContainer` pro zabalení [ `Image` ](xref:Xamarin.Forms.Image) element:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -94,7 +94,7 @@ Tato třída může obtékat element uživatelského rozhraní tak, aby gesto pa
 </ContentPage>
 ```
 
-Následující příklad kódu ukazuje jak `PanContainer` zabalí [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) element na stránce C#:
+Následující příklad kódu ukazuje jak `PanContainer` zabalí [ `Image` ](xref:Xamarin.Forms.Image) element na stránce jazyka C#:
 
 ```csharp
 public class HomePageCS : ContentPage
@@ -117,9 +117,9 @@ public class HomePageCS : ContentPage
 }
 ```
 
-V obou příkladech [ `WidthRequest` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.WidthRequest/) a [ `HeightRequest` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.HeightRequest/) vlastnosti jsou nastaveny na hodnoty Šířka a výška obrázku se zobrazí.
+V obou příkladech [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest) a [ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest) vlastnosti nastavené hodnoty šířku a výšku obrázku se zobrazuje.
 
-Když [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) element dostane gesto pan, bude přetažen zobrazeného obrázku. Přetahování provádí `PanContainer.OnPanUpdated` metodu, která je znázorněno v následujícím příkladu kódu:
+Když [ `Image` ](xref:Xamarin.Forms.Image) prvek dostane gesto posouvání, zobrazeného obrázku se přetáhnout. Tažení. provádí `PanContainer.OnPanUpdated` metoda, která je znázorněna v následujícím příkladu kódu:
 
 ```csharp
 void OnPanUpdated (object sender, PanUpdatedEventArgs e)
@@ -142,21 +142,21 @@ void OnPanUpdated (object sender, PanUpdatedEventArgs e)
 }
 ```
 
-Tato metoda aktualizace lze zobrazit obsah element zabalené uživatelského rozhraní, podle pan gesto uživatele. Toho dosáhnete pomocí hodnoty [ `TotalX` ](https://developer.xamarin.com/api/property/Xamarin.Forms.PanUpdatedEventArgs.TotalX/) a [ `TotalY` ](https://developer.xamarin.com/api/property/Xamarin.Forms.PanUpdatedEventArgs.TotalY/) vlastnosti [ `PanUpdatedEventArgs` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PanUpdatedEventArgs/) instance k výpočtu směr a vzdálenost panoramování. `App.ScreenWidth` a `App.ScreenHeight` vlastnosti zadejte výška a Šířka zobrazení a jsou nastaveny na obrazovce šířky a výšky hodnoty obrazovky zařízení, podle příslušných projektů specifické pro platformu. Element zabalené uživatele je pak přetáhnout nastavením jeho [ `TranslationX` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationX/) a [ `TranslationY` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.TranslationY/) vlastnosti počítané hodnoty.
+Tato metoda aktualizuje zobrazit obsah prvku zabalené uživatelského rozhraní, podle pan gesto uživatele. Tím se dosahuje pomocí hodnot [ `TotalX` ](xref:Xamarin.Forms.PanUpdatedEventArgs.TotalX) a [ `TotalY` ](xref:Xamarin.Forms.PanUpdatedEventArgs.TotalY) vlastnosti [ `PanUpdatedEventArgs` ](xref:Xamarin.Forms.PanUpdatedEventArgs) instance k výpočtu směru a vzdálenost posouvání. `App.ScreenWidth` a `App.ScreenHeight` vlastností zadejte výšku a šířku zobrazení a jsou nastaveny na šířka obrazovky a obrazovky výška hodnoty zařízení pomocí své projekty specifické pro platformu. Element zabalené uživatele se pak kvůli usnadnění použití vypsány nastavením jeho [ `TranslationX` ](xref:Xamarin.Forms.VisualElement.TranslationX) a [ `TranslationY` ](xref:Xamarin.Forms.VisualElement.TranslationY) vlastnosti vypočítané hodnoty.
 
-Při posouvání obsahu v element nezabírá na celé obrazovce, výška a Šířka zobrazení lze získat v elementu [ `Height` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Height/) a [ `Width` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Width/) vlastnosti.
+Při posouvání obsahu v element nezabírá celé obrazovky, výšku a šířku zobrazení lze získat z elementu [ `Height` ](xref:Xamarin.Forms.VisualElement.Height) a [ `Width` ](xref:Xamarin.Forms.VisualElement.Width) vlastnosti.
 
 > [!NOTE]
-> Zobrazení obrázků s vysokým rozlišením může výrazně zvýšit spotřeba paměti aplikace. Proto že by měl pouze vytvářet, pokud požadované a by měly být uvolněny, jakmile je aplikace již nevyžaduje. Další informace najdete v tématu [optimalizovat prostředky obrázků](~/xamarin-forms/deploy-test/performance.md#optimizeimages).
+> Zobrazení obrázků ve vysokém rozlišení výrazně zvýšit nároky na paměť vaší aplikace. Proto jsou by měl pouze vytvořit při vyžaduje a by měly být vydány ihned poté, co aplikace již nevyžaduje. Další informace najdete v tématu [optimalizovat prostředky obrázků](~/xamarin-forms/deploy-test/performance.md#optimizeimages).
 
 ## <a name="summary"></a>Souhrn
 
-Gesto pan se používá pro zjišťování přetahování a je implementováno s [ `PanGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PanGestureRecognizer/) třídy.
+Posun gest se používá pro zjišťování přetahování a je implementováno s [ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer) třídy.
 
 
 
 ## <a name="related-links"></a>Související odkazy
 
 - [PanGesture (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithGestures/PanGesture/)
-- [GestureRecognizer](https://developer.xamarin.com/api/type/Xamarin.Forms.GestureRecognizer/)
-- [PanGestureRecognizer](https://developer.xamarin.com/api/type/Xamarin.Forms.PanGestureRecognizer/)
+- [GestureRecognizer](xref:Xamarin.Forms.GestureRecognizer)
+- [PanGestureRecognizer](xref:Xamarin.Forms.PanGestureRecognizer)

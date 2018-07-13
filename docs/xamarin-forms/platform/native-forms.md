@@ -1,43 +1,43 @@
 ---
-title: Xamarin.Forms v projektech nativní Xamarin
-description: Tento článek vysvětluje, jak využívat odvozené ContentPage stránek, které jsou přímo přidat do nativní projekty Xamarin a jak se orientovat mezi nimi.
+title: Xamarin.Forms v Xamarin nativní projekty
+description: Tento článek vysvětluje, jak využívat odvozené ContentPage stránek, které jsou přímo přidány do nativní projekty Xamarin a jak k navigaci mezi nimi.
 ms.prod: xamarin
 ms.assetid: f343fc21-dfb1-4364-a332-9da6705d36bc
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/11/2018
-ms.openlocfilehash: ca62b9fec3223e8da62d8e4cc6e1f69a58f335a0
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 65bb3fa070c082fa6c6c489e326a870a80fb9502
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243272"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997509"
 ---
-# <a name="xamarinforms-in-xamarin-native-projects"></a>Xamarin.Forms v projektech nativní Xamarin
+# <a name="xamarinforms-in-xamarin-native-projects"></a>Xamarin.Forms v Xamarin nativní projekty
 
-_Nativní Forms povolí na stránkách Xamarin.Forms ContentPage odvozené využívat nativní projekty Xamarin.iOS, Xamarin.Android a univerzální platformu Windows (UWP). Nativní projekty spotřebovat odvozené ContentPage stránek, které jsou přímo přidat do projektu, nebo z .NET standardní knihovny, .NET standardní knihovny nebo sdílené projektu. Tento článek vysvětluje, jak využívat odvozené ContentPage stránek, které jsou přímo přidat do nativní projekty a jak se orientovat mezi nimi._
+_Nativní formuláře povolit odvozené Xamarin.Forms ContentPage stránkám využívat nativní projekty Xamarin.iOS, Xamarin.Android a univerzální platformu Windows (UPW). Nativní projekty mohou využívat odvozené ContentPage stránek, které jsou přímo přidat do projektu, nebo z knihovny .NET Standard, .NET Standard knihovny nebo sdíleného projektu. Tento článek vysvětluje, jak využívat odvozené ContentPage stránky, které jsou přímo přidat do nativních projektů a jak k navigaci mezi nimi._
 
-Obvykle Xamarin.Forms aplikace obsahuje jednu nebo více stránek, které jsou odvozeny od [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/), a tyto stránek jsou sdíleny ve všech platformách v rozhraní .NET standardní projektu knihovny nebo sdílený projekt. Však umožňuje nativní Forms `ContentPage`-odvozené stránky, které chcete přidat do nativní aplikace Xamarin.iOS, Xamarin.Android a UWP přímo. Ve srovnání s s nativní projektem využívat `ContentPage`-odvozené stránky z .NET Standard projektu knihovny nebo sdílené projektu výhod přidání stránky přímo do nativní projektů je, že stránky lze rozšířit pomocí nativní zobrazení. Nativní zobrazení může být název pak v jazyce XAML s `x:Name` a odkazované z modelu code-behind. Další informace o nativní zobrazení najdete v tématu [nativní zobrazení](~/xamarin-forms/platform/native-views/index.md).
+Obvykle obsahuje jeden nebo více stránek, které jsou odvozeny z aplikace Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage), a tyto stránky jsou sdíleny ve všech platformách ve sdíleném projektu a projekt knihovny .NET Standard. Nicméně umožňuje nativní formuláře `ContentPage`-odvozené stránky, které se přidávají přímo do nativní aplikace pro Xamarin.iOS, Xamarin.Android a UPW. Ve srovnání s tím, že nativní projekt využívat `ContentPage`-odvozené stránky z projekt knihovny .NET Standard nebo sdíleného projektu výhod přidávání stránek přímo do nativních projektů je, že je možné rozšířit na stránkách s nativní zobrazení. Nativní zobrazení může být název pak v XAML s `x:Name` a odkazované z modelu code-behind. Další informace o nativní zobrazení najdete v tématu [nativní zobrazení](~/xamarin-forms/platform/native-views/index.md).
 
-Proces pro použití Xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-odvozené stránku k nativnímu projektu je následující:
+Proces určená pro Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-odvozené stránky v nativní projekt vypadá takto:
 
-1. Přidejte balíček Xamarin.Forms NuGet k nativnímu projektu.
-1. Přidat [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-odvozené stránku a všechny závislosti, k nativnímu projektu.
-1. Volání `Forms.Init` metoda.
-1. Vytvořit instanci [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-odvozené stránky a ho převést na typ odpovídající nativní pomocí jedné z následujících metod rozšíření: `CreateViewController` pro iOS, `CreateFragment` nebo `CreateSupportFragment` pro Android, nebo `CreateFrameworkElement` pro UPW.
-1. Přejděte k reprezentaci nativního typu [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-odvozené stránku pomocí nativní navigační rozhraní API.
+1. K nativnímu projektu přidejte balíček Xamarin.Forms NuGet.
+1. Přidat [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-odvozené stránku a všechny závislosti, do nativního projektu.
+1. Volání `Forms.Init` metody.
+1. Vytvořit instanci [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-odvozené stránky a převést na odpovídající nativní typ pomocí jedné z následujících metod rozšíření: `CreateViewController` pro iOS, `CreateFragment` nebo `CreateSupportFragment` pro Android, nebo `CreateFrameworkElement` pro UPW.
+1. Přejděte na nativní typ reprezentace [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-odvozené stránky pomocí navigace nativní rozhraní API.
 
-Xamarin.Forms se musí inicializovat voláním `Forms.Init` metoda předtím, než můžete vytvořit k nativnímu projektu [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-odvozené stránky. Výběr, pokud se jedná především závisí na při je nejvýhodnější pro vaše aplikace toku – ho můžete provést při spuštění aplikace, nebo jednoduše před `ContentPage`-odvozené stránky je vytvořený. V tomto článku a doprovodné ukázkové aplikace `Forms.Init` metoda je volána při spuštění aplikace.
+Xamarin.Forms musí být inicializován pomocí volání `Forms.Init` metoda před nativní projekt můžete vytvořit [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-odvozené stránky. Výběr, pokud se jedná hlavně při je nejpohodlnější ve svém toku aplikace závisí na – to lze provést při spuštění aplikace, nebo jen před `ContentPage`-odvozené stránky je vytvořený. V tomto článku a související ukázkové aplikace `Forms.Init` metoda je volána při spuštění aplikace.
 
 > [!NOTE]
-> **NativeForms** ukázkové aplikace řešení neobsahuje žádné projekty Xamarin.Forms. Místo toho sestává z projektu Xamarin.iOS, projektu Xamarin.Android a projektu UPW. Každý projekt je nativní projekt, který používá nativní Forms využívat [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-odvozené stránky. Neexistuje však žádný důvod, proč nelze využívat nativní projekty `ContentPage`-stránky odvozen od standardní rozhraní .NET projektu knihovny nebo sdílené projektu.
+> **NativeForms** ukázkové aplikace řešení neobsahuje žádné projekty Xamarin.Forms. Místo toho ji se skládá z projektu Xamarin.iOS, Xamarin.Android projekt a projekt UPW. Každý projekt je nativní projekt, který používá nativní formuláře využívat [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-odvozené stránky. Neexistuje však žádný důvod, proč nelze využívat nativní projekty `ContentPage`-stránky odvozen ze sdíleného projektu a projekt knihovny .NET Standard.
 
-Pokud používáte nativní formulářů, Xamarin.Forms funkce, jako [ `DependencyService` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyService/), [ `MessagingCenter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MessagingCenter/)a modul vazby dat, všechny stále práci.
+Pokud používáte nativní formuláře, Xamarin.Forms funkce, jako [ `DependencyService` ](xref:Xamarin.Forms.DependencyService), [ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter)a modul vazby dat, všechny funkční.
 
 ## <a name="ios"></a>iOS
 
-V systému iOS `FinishedLaunching` potlačení v `AppDelegate` třída je obvykle místní aplikace provést spuštění související úlohy. Je volána poté, co aplikace je spuštěna a je obvykle potlačena za účelem konfigurace hlavní okno a zobrazit řadiče. Následující příklad kódu ukazuje `AppDelegate` – třída v ukázkové aplikaci:
+V Iosu `FinishedLaunching` přepsat v `AppDelegate` třída je obvykle místem, kde můžete provádět aplikace po spuštění úlohy související se službou. Je volána poté, co aplikace byla spuštěna a je obvykle potlačena za účelem konfigurace hlavní okno a zobrazení kontroleru. Následující příklad kódu ukazuje `AppDelegate` třídy v ukázkové aplikaci:
 
 ```csharp
 [Register("AppDelegate")]
@@ -75,19 +75,19 @@ public class AppDelegate : UIApplicationDelegate
 
 `FinishedLaunching` Metoda provádí následující úlohy:
 
-- Xamarin.Forms se inicializuje pomocí volání `Forms.Init` metoda.
-- Odkaz na `AppDelegate` třída je uložena v `static` `Instance` pole. Toto nastavení slouží k poskytují mechanismus pro jiné třídy pro volání metody definované v `AppDelegate` třídy.
-- `UIWindow`, Což je hlavní kontejner pro zobrazení v aplikacích nativní aplikace pro iOS, se vytvoří.
-- `PhonewordPage` Třída, která je platformě Xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-odvozené stránky, které jsou definované v jazyce XAML, je vytvořená a převést na `UIViewController` pomocí `CreateViewController` metoda rozšíření.
-- `Title` Vlastnost `UIViewController` nastavena, bude se zobrazovat v `UINavigationBar`.
-- A `UINavigationController` se vytvoří pro správu hierarchické navigace. `UINavigationController` Třída spravuje zásobníku zobrazení řadičů a `UIViewController` předaný do konstruktoru bude uvedeno původně při `UINavigationController` je načteno.
-- `UINavigationController` Instance je nastaven jako nejvyšší úrovně `UIViewController` pro `UIWindow`a `UIWindow` je nastaven jako okno klíče pro aplikace a jsou dostupná.
+- Xamarin.Forms je inicializována pomocí volání `Forms.Init` metody.
+- Odkaz na `AppDelegate` třída je uložena v `static` `Instance` pole. Toto je mechanismus pro jiné třídy k volání metody definované v `AppDelegate` třídy.
+- `UIWindow`, Což je hlavní kontejner pro zobrazení v nativních aplikací pro iOS aplikací, je vytvořen.
+- `PhonewordPage` Třídy, která je Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-odvozené stránky, které jsou definovány v XAML, je vytvořen a převést na `UIViewController` pomocí `CreateViewController` – metoda rozšíření.
+- `Title` Vlastnost `UIViewController` nastavena, který bude zobrazen na `UINavigationBar`.
+- A `UINavigationController` se vytvoří pro správu hierarchická navigace. `UINavigationController` Třída spravuje zásobníku kontrolery zobrazení a `UIViewController` předaná do konstruktoru se zobrazí nejprve při `UINavigationController` je načteno.
+- `UINavigationController` Instance je nastavená na nejvyšší úrovni `UIViewController` pro `UIWindow`a `UIWindow` je nastaven jako klíče v okně aplikace a jsou dostupná.
 
-Jednou `FinishedLaunching` metoda provedlo, uživatelského rozhraní definované v platformě Xamarin.Forms `PhonewordPage` třídy se zobrazí, jak je znázorněno na následujícím snímku obrazovky:
+Jednou `FinishedLaunching` po provedení metody, uživatelského rozhraní definované v Xamarin.Forms `PhonewordPage` třídy se zobrazí, jak je znázorněno na následujícím snímku obrazovky:
 
 [![](native-forms-images/ios-phonewordpage.png "iOS PhonewordPage")](native-forms-images/ios-phonewordpage-large.png#lightbox "iOS PhonewordPage")
 
-Interakci s uživatelským rozhraním, například klepnutím na [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/), bude mít za následek obslužné rutiny událostí v `PhonewordPage` provádění kódu. Když uživatel například klepne **historie volání** tlačítko následující obslužné rutiny události se spustí:
+Interakce s uživatelským rozhraním, například po klepnutí na [ `Button` ](xref:Xamarin.Forms.Button), bude mít za následek obslužné rutiny událostí v `PhonewordPage` provádění kódu. Například po klepnutí **historie volání** spustit tlačítko, následující obslužnou rutinu události:
 
 ```csharp
 void OnCallHistory(object sender, EventArgs e)
@@ -107,15 +107,15 @@ public void NavigateToCallHistoryPage()
 }
 ```
 
-`NavigateToCallHistoryPage` Metoda převede platformě Xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-odvozené stránky `UIViewController` s `CreateViewController` metoda rozšíření a nastaví `Title` vlastnost `UIViewController`. `UIViewController` Se pak posune do `UINavigationController` pomocí `PushViewController` metoda. Proto definováno uživatelské rozhraní v platformě Xamarin.Forms `CallHistoryPage` třídy se zobrazí, jak je znázorněno na následujícím snímku obrazovky:
+`NavigateToCallHistoryPage` Metoda převede Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-odvozené stránku `UIViewController` s `CreateViewController` – metoda rozšíření a sady `Title` vlastnost `UIViewController`. `UIViewController` Poté vloženo do `UINavigationController` podle `PushViewController` metody. Proto uživatelského rozhraní definované v Xamarin.Forms `CallHistoryPage` třídy se zobrazí, jak je znázorněno na následujícím snímku obrazovky:
 
 [![](native-forms-images/ios-callhistorypage.png "iOS CallHistoryPage")](native-forms-images/ios-callhistorypage-large.png#lightbox "iOS CallHistoryPage")
 
-Při `CallHistoryPage` se zobrazí, klepnutím na zadní bude pop šipku `UIViewController` pro `CallHistoryPage` třídy z `UINavigationController`, vrácení uživateli `UIViewController` pro `PhonewordPage` – třída.
+Když `CallHistoryPage` se zobrazí, klepněte back šipku zobrazte `UIViewController` pro `CallHistoryPage` třídy z `UINavigationController`, stávající uživatel k `UIViewController` pro `PhonewordPage` třídy.
 
 ## <a name="android"></a>Android
 
-V systému Android `OnCreate` potlačení v `MainActivity` třída je obvykle místní aplikace provést spuštění související úlohy. Následující příklad kódu ukazuje `MainActivity` – třída v ukázkové aplikaci:
+V systému Android `OnCreate` přepsat v `MainActivity` třída je obvykle místem, kde můžete provádět aplikace po spuštění úlohy související se službou. Následující příklad kódu ukazuje `MainActivity` třídy v ukázkové aplikaci:
 
 ```csharp
 public class MainActivity : AppCompatActivity
@@ -147,23 +147,23 @@ public class MainActivity : AppCompatActivity
 
 `OnCreate` Metoda provádí následující úlohy:
 
-- Xamarin.Forms se inicializuje pomocí volání `Forms.Init` metoda.
-- Odkaz na `MainActivity` třída je uložena v `static` `Instance` pole. Toto nastavení slouží k poskytují mechanismus pro jiné třídy pro volání metody definované v `MainActivity` třídy.
-- `Activity` Obsah je nastavený z prostředku rozložení. V ukázkové aplikaci rozložení se skládá z `LinearLayout` obsahující `Toolbar`a `FrameLayout` tak, aby fungoval jako kontejner fragment.
-- `Toolbar` Načíst a nastavená na panelu akcí pro `Activity`, a je nastavená název panelu akcí.
-- `PhonewordPage` Třída, která je platformě Xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-odvozené stránky, které jsou definované v jazyce XAML, je vytvořená a převést na `Fragment` pomocí `CreateFragment` metoda rozšíření.
-- `FragmentManager` Třídy vytvoří a potvrdí transakci, která nahrazuje `FrameLayout` instanci s `Fragment` pro `PhonewordPage` třídy.
+- Xamarin.Forms je inicializována pomocí volání `Forms.Init` metody.
+- Odkaz na `MainActivity` třída je uložena v `static` `Instance` pole. Toto je mechanismus pro jiné třídy k volání metody definované v `MainActivity` třídy.
+- `Activity` Obsah je nastavený z prostředku rozložení. V ukázkové aplikaci rozložení se skládá z `LinearLayout` , která obsahuje `Toolbar`a `FrameLayout` tak, aby fungoval jako kontejner fragment.
+- `Toolbar` Načíst a nastavená na panelu akcí pro `Activity`, a nastavte název panelu akcí.
+- `PhonewordPage` Třídy, která je Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-odvozené stránky, které jsou definovány v XAML, je vytvořen a převést na `Fragment` pomocí `CreateFragment` – metoda rozšíření.
+- `FragmentManager` Třídy vytvoří a potvrzení transakce, který nahrazuje `FrameLayout` instanci s `Fragment` pro `PhonewordPage` třídy.
 
 Další informace o fragmenty najdete v tématu [fragmenty](~/android/platform/fragments/index.md).
 
 > [!NOTE]
-> Kromě `CreateFragment` metoda rozšíření Xamarin.Forms také zahrnuje `CreateSupportFragment` metoda. `CreateFragment` Metoda vytvoří `Android.App.Fragment` , mohou být použity v aplikacích, které cílí 11 rozhraní API a větší. `CreateSupportFragment` Metoda vytvoří `Android.Support.V4.App.Fragment` který lze použít v aplikacích, které cílí na rozhraní API verze starší než 11.
+> Kromě `CreateFragment` rozšiřující metoda Xamarin.Forms také zahrnuje `CreateSupportFragment` metoda. `CreateFragment` Metoda vytvoří `Android.App.Fragment` , které mohou být použity v aplikacích, které jsou cíleny na rozhraní API 11 a vyšší. `CreateSupportFragment` Metoda vytvoří `Android.Support.V4.App.Fragment` , který můžete použít v aplikacích, které jsou cíleny na rozhraní API verze starší než 11.
 
-Jednou `OnCreate` metoda provedlo, uživatelského rozhraní definované v platformě Xamarin.Forms `PhonewordPage` třídy se zobrazí, jak je znázorněno na následujícím snímku obrazovky:
+Jednou `OnCreate` po provedení metody, uživatelského rozhraní definované v Xamarin.Forms `PhonewordPage` třídy se zobrazí, jak je znázorněno na následujícím snímku obrazovky:
 
 [![](native-forms-images/android-phonewordpage.png "Android PhonewordPage")](native-forms-images/android-phonewordpage-large.png#lightbox "Android PhonewordPage")
 
-Interakci s uživatelským rozhraním, například klepnutím na [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/), bude mít za následek obslužné rutiny událostí v `PhonewordPage` provádění kódu. Když uživatel například klepne **historie volání** tlačítko následující obslužné rutiny události se spustí:
+Interakce s uživatelským rozhraním, například po klepnutí na [ `Button` ](xref:Xamarin.Forms.Button), bude mít za následek obslužné rutiny událostí v `PhonewordPage` provádění kódu. Například po klepnutí **historie volání** spustit tlačítko, následující obslužnou rutinu události:
 
 ```csharp
 void OnCallHistory(object sender, EventArgs e)
@@ -186,15 +186,15 @@ public void NavigateToCallHistoryPage()
 }
 ```
 
-`NavigateToCallHistoryPage` Metoda převede platformě Xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-odvozené stránky `Fragment` s `CreateFragment` metoda rozšíření a přidá `Fragment` fragment zpět zásobníku. Proto definováno uživatelské rozhraní v platformě Xamarin.Forms `CallHistoryPage` se zobrazí, jak je znázorněno na následujícím snímku obrazovky:
+`NavigateToCallHistoryPage` Metoda převede Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-odvozené stránku `Fragment` s `CreateFragment` metodu rozšíření a přidá `Fragment` fragment zpět zásobník. Proto uživatelského rozhraní definované v Xamarin.Forms `CallHistoryPage` se zobrazí, jak je znázorněno na následujícím snímku obrazovky:
 
 [![](native-forms-images/android-callhistorypage.png "Android CallHistoryPage")](native-forms-images/android-callhistorypage-large.png#lightbox "Android CallHistoryPage")
 
-Při `CallHistoryPage` se zobrazí, klepnutím na zadní bude pop šipku `Fragment` pro `CallHistoryPage` v zásobníku back fragment vrácení uživateli `Fragment` pro `PhonewordPage` – třída.
+Když `CallHistoryPage` se zobrazí, klepněte back šipku zobrazte `Fragment` pro `CallHistoryPage` ze zadní zásobníku fragment vrátí uživateli `Fragment` pro `PhonewordPage` třídy.
 
-### <a name="enabling-back-navigation-support"></a>Povolení podpory Back navigace
+### <a name="enabling-back-navigation-support"></a>Povolení podpory zpětné navigace
 
-`FragmentManager` Třída má `BackStackChanged` událost, která aktivuje vždy, když se změní obsah fragment back zásobníku. `OnCreate` Metoda v `MainActivity` třída obsahuje anonymní obslužnou rutinu pro tuto událost:
+`FragmentManager` Třída nemá `BackStackChanged` událostí, který se aktivuje pokaždé, když se změní obsah zpět zásobník fragment. `OnCreate` Metodu `MainActivity` třída obsahuje obslužnou rutinu anonymní události pro tuto událost:
 
 ```csharp
 FragmentManager.BackStackChanged += (sender, e) =>
@@ -206,7 +206,7 @@ FragmentManager.BackStackChanged += (sender, e) =>
 };
 ```
 
-Tuto obslužnou rutinu události zobrazí tlačítko Zpět na panelu akcí za předpokladu, že je jeden nebo více `Fragment` instancí na fragment zpět zásobníku. Odpověď na klepnutím na tlačítko Zpět se zpracovává souborem `OnOptionsItemSelected` přepsání:
+Tato obslužná rutina události se zobrazí tlačítko Zpět na panelu akcí za předpokladu, že je jeden nebo více `Fragment` instancí na fragment zpět zásobník. Zpracovává odpověď klepnutím na tlačítko Zpět `OnOptionsItemSelected` přepsat:
 
 ```csharp
 public override bool OnOptionsItemSelected(Android.Views.IMenuItem item)
@@ -220,18 +220,18 @@ public override bool OnOptionsItemSelected(Android.Views.IMenuItem item)
 }
 ```
 
-`OnOptionsItemSelected` Přepsání je volána, když vyberete položku v nabídce Možnosti. Tato implementace automaticky otevře aktuální fragment z back zásobník fragment, za předpokladu, že byla vybrána tlačítko Zpět a existují jeden nebo více `Fragment` instancí na fragment zpět zásobníku.
+`OnOptionsItemSelected` Přepsání je volána, když je vybraná položka v nabídce Možnosti. Tato implementace zobrazí aktuální fragment ze zásobníku back fragment, za předpokladu, že vybral tlačítko Zpět a jsou jeden nebo více `Fragment` instancí na fragment zpět zásobník.
 
 ### <a name="multiple-activities"></a>Více aktivit
 
-Když se aplikace skládá z více aktivit, [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-odvozené stránky lze jej vkládat do jednotlivých aktivit. V tomto scénáři `Forms.Init` metoda musí být volán jen v `OnCreate` přepsat prvního `Activity` , vloží platformě Xamarin.Forms `ContentPage`. To však má dopad na následující:
+Když se aplikace skládá z více aktivit [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-odvozené stránky může být vložen do každé aktivity. V tomto scénáři `Forms.Init` metoda musí být volán jen v `OnCreate` přepsat prvního `Activity` , která vloží Xamarin.Forms `ContentPage`. Ale tato akce nemá vliv následující:
 
-- Hodnota `Xamarin.Forms.Color.Accent` se provedou z `Activity` která volána `Forms.Init` metoda.
-- Hodnota `Xamarin.Forms.Application.Current` bude přidružen `Activity` která volána `Forms.Init` metoda.
+- Hodnota `Xamarin.Forms.Color.Accent` vytvářena z `Activity` , který volá `Forms.Init` metody.
+- Hodnota `Xamarin.Forms.Application.Current` přidruží `Activity` , který volá `Forms.Init` metoda.
 
 ### <a name="choosing-a-file"></a>Výběr souboru
 
-Při vložení [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-odvozené stránky, která používá [ `WebView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.WebView/) , musí pro podporu HTML "Zvolit soubor" tlačítko, `Activity` muset přepsat `OnActivityResult` Metoda:
+Při vkládání [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-odvozené stránka, která používá [ `WebView` ](xref:Xamarin.Forms.WebView) , který potřebuje k podpoře HTML "Zvolte soubor" tlačítko, `Activity` bude nutné přepsat `OnActivityResult` Metoda:
 
 ```csharp
 protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
@@ -243,9 +243,9 @@ protected override void OnActivityResult(int requestCode, Result resultCode, Int
 
 ## <a name="uwp"></a>UWP
 
-Na UPW, nativního `App` třída je obvykle místní aplikace provést spuštění související úlohy. Xamarin.Forms je obvykle inicializován, v aplikacích pro UPW Xamarin.Forms v `OnLaunched` override v nativní `App` tříd, předat `LaunchActivatedEventArgs` argument `Forms.Init` metoda. Z tohoto důvodu nativních aplikací UWP, které využívají platformě Xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-odvozené stránka snadno volat `Forms.Init` metoda z `App.OnLaunched` metoda.
+Na UPW, nativní `App` třída je obvykle místem, kde můžete provádět aplikace po spuštění úlohy související se službou. Xamarin.Forms je obvykle inicializován, v aplikacích UPW Xamarin.Forms v `OnLaunched` override v nativní `App` třídy k předání `LaunchActivatedEventArgs` argument `Forms.Init` metoda. Z tohoto důvodu nativních aplikací UWP, které využívají Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-odvozené stránka nejsnadněji volat `Forms.Init` metodu z `App.OnLaunched` metody.
 
-Ve výchozím nastavení nativního `App` třídy spustí `MainPage` třída jako první stránka aplikace. Následující příklad kódu ukazuje `MainPage` – třída v ukázkové aplikaci:
+Ve výchozím nastavení, nativní `App` třídy spustí `MainPage` třídu jako první stránka aplikace. Následující příklad kódu ukazuje `MainPage` třídy v ukázkové aplikaci:
 
 ```csharp
 public sealed partial class MainPage : Page
@@ -263,17 +263,17 @@ public sealed partial class MainPage : Page
 }
 ```
 
-`MainPage` Konstruktor provede následující úlohy:
+`MainPage` Konstruktor provádí následující úlohy:
 
-- Je povoleno ukládání do mezipaměti pro stránku, tak, aby nový `MainPage` není vytvořená, když uživatel přejde zpět na stránku.
-- Odkaz na `MainPage` třída je uložena v `static` `Instance` pole. Toto nastavení slouží k poskytují mechanismus pro jiné třídy pro volání metody definované v `MainPage` třídy.
-- `PhonewordPage` Třída, která je platformě Xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-odvozené stránky, které jsou definované v jazyce XAML, je vytvořená a převést na `FrameworkElement` pomocí `CreateFrameworkElement` metoda rozšíření a potom nastavte jako obsah `MainPage` třídy.
+- Je povoleno ukládání do mezipaměti pro stránku, aby nový `MainPage` není vytvořen, když uživatel přejde zpět na stránku.
+- Odkaz na `MainPage` třída je uložena v `static` `Instance` pole. Toto je mechanismus pro jiné třídy k volání metody definované v `MainPage` třídy.
+- `PhonewordPage` Třídy, která je Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-odvozené stránky, které jsou definovány v XAML, je vytvořen a převést na `FrameworkElement` pomocí `CreateFrameworkElement` – metoda rozšíření a pak nastavte jako obsah `MainPage` třídy.
 
-Jednou `MainPage` konstruktor provedlo, uživatelského rozhraní definované v platformě Xamarin.Forms `PhonewordPage` třídy se zobrazí, jak je znázorněno na následujícím snímku obrazovky:
+Jednou `MainPage` po provedení konstruktoru, uživatelského rozhraní definované v Xamarin.Forms `PhonewordPage` třídy se zobrazí, jak je znázorněno na následujícím snímku obrazovky:
 
-[![](native-forms-images/uwp-phonewordpage.png "UWP PhonewordPage")](native-forms-images/uwp-phonewordpage-large.png#lightbox "UWP PhonewordPage")
+[![](native-forms-images/uwp-phonewordpage.png "UPW PhonewordPage")](native-forms-images/uwp-phonewordpage-large.png#lightbox "PhonewordPage UPW")
 
-Interakci s uživatelským rozhraním, například klepnutím na [ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/), bude mít za následek obslužné rutiny událostí v `PhonewordPage` provádění kódu. Když uživatel například klepne **historie volání** tlačítko následující obslužné rutiny události se spustí:
+Interakce s uživatelským rozhraním, například po klepnutí na [ `Button` ](xref:Xamarin.Forms.Button), bude mít za následek obslužné rutiny událostí v `PhonewordPage` provádění kódu. Například po klepnutí **historie volání** spustit tlačítko, následující obslužnou rutinu události:
 
 ```csharp
 void OnCallHistory(object sender, EventArgs e)
@@ -291,15 +291,15 @@ public void NavigateToCallHistoryPage()
 }
 ```
 
-Navigace ve UWP se obvykle provádí pomocí `Frame.Navigate` metoda, která přebírá `Page` argument. Definuje Xamarin.Forms `Frame.Navigate` metody rozšíření, která přijímá [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-odvozené instance stránky. Proto když `NavigateToCallHistoryPage` metoda provádí, uživatelského rozhraní definované v platformě Xamarin.Forms `CallHistoryPage` se zobrazí, jak je znázorněno na následujícím snímku obrazovky:
+Navigace v UPW se obvykle provádí pomocí `Frame.Navigate` metoda, která přijímá `Page` argument. Definuje Xamarin.Forms `Frame.Navigate` rozšiřující metoda, která přijímá [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-odvozené instance stránky. Proto, když `NavigateToCallHistoryPage` metoda spustí, uživatelského rozhraní definované v Xamarin.Forms `CallHistoryPage` se zobrazí, jak je znázorněno na následujícím snímku obrazovky:
 
-[![](native-forms-images/uwp-callhistorypage.png "UWP CallHistoryPage")](native-forms-images/uwp-callhistorypage-large.png#lightbox "UWP CallHistoryPage")
+[![](native-forms-images/uwp-callhistorypage.png "UPW CallHistoryPage")](native-forms-images/uwp-callhistorypage-large.png#lightbox "CallHistoryPage UPW")
 
-Při `CallHistoryPage` se zobrazí, klepnutím na zadní bude pop šipku `FrameworkElement` pro `CallHistoryPage` z back zásobníku v aplikaci, vrácení uživateli `FrameworkElement` pro `PhonewordPage` – třída.
+Když `CallHistoryPage` se zobrazí, klepněte back šipku zobrazte `FrameworkElement` pro `CallHistoryPage` ze zásobníku zpět v aplikaci, vrací uživateli `FrameworkElement` pro `PhonewordPage` třídy.
 
-### <a name="enabling-back-navigation-support"></a>Povolení podpory Back navigace
+### <a name="enabling-back-navigation-support"></a>Povolení podpory zpětné navigace
 
-Na UPW musí aplikace povolit back navigace pro všechny hardwarové a softwarové back tlačítka, mezi velikostem jiné zařízení. To lze provést tak, že zaregistrujete obslužné rutiny události pro `BackRequested` událost, která mohou být prováděny v `OnLaunched` metoda v nativního `App` třídy:
+Na UPW musí aplikace umožňují zpětné navigace pro všechny hardwarové a softwarové back tlačítka, v různých zařízeních. Toho můžete docílit tak, že zaregistrujete obslužná rutina události `BackRequested` událost, která je možné provádět `OnLaunched` metoda nativního `App` třídy:
 
 ```csharp
 protected override void OnLaunched(LaunchActivatedEventArgs e)
@@ -318,7 +318,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 }
 ```
 
-Při spuštění aplikace `GetForCurrentView` metoda načte `SystemNavigationManager` přidružené k aktuální zobrazení objektu a pak zaregistruje obslužné rutiny události pro `BackRequested` událostí. Aplikaci jenom obdrží tuto událost, pokud je aplikace popředí a v reakci, volá `OnBackRequested` obslužné rutiny události:
+Při spuštění aplikace `GetForCurrentView` načte metodu `SystemNavigationManager` spojené s aktuálním zobrazením objektu a pak zaregistruje obslužnou rutinu události pro `BackRequested` událostí. Aplikace obdrží tuto událost pouze, pokud je aplikace popředí a v odpovědi, volá `OnBackRequested` obslužné rutiny události:
 
 ```csharp
 void OnBackRequested(object sender, BackRequestedEventArgs e)
@@ -332,9 +332,9 @@ void OnBackRequested(object sender, BackRequestedEventArgs e)
 }
 ```
 
-`OnBackRequested` Volání obslužné rutiny událostí `GoBack` metoda rámec kořenové aplikace a nastaví `BackRequestedEventArgs.Handled` vlastnost `true` označit událost jako zpracovává. Označit událost jako zpracování může dojít v systému navigace mimo aplikaci (v dané rodině mobilních zařízení) nebo události (na rodiny stolního počítače) je ignorována.
+`OnBackRequested` Volání obsluhy události `GoBack` metoda u kořenového rámce aplikace a nastaví `BackRequestedEventArgs.Handled` vlastnost `true` k označení události jako zpracování. K označení události jako zpracované může vést systému navigaci pryč z aplikace (v řadě mobilní zařízení) nebo ignorování událostí (v desktopové zařízení řady).
 
-Tato aplikace spoléhá na tlačítko zpět systému podle na telefon, ale rozhodne, zda má být zobrazeno tlačítko Zpět v záhlaví okna na ploše zařízení. Toho dosáhnete pomocí nastavení `AppViewBackButtonVisibility` vlastnost na jednu z `AppViewBackButtonVisibility` hodnot výčtu:
+Aplikace závisí na systému k dispozici tlačítko Zpět na telefonu, ale rozhodne, zda se má zobrazit tlačítko Zpět v záhlaví okna na desktopových zařízeních. Toho dosáhnete pomocí nastavení `AppViewBackButtonVisibility` vlastnost na jednu z `AppViewBackButtonVisibility` hodnot výčtu:
 
 ```csharp
 void OnNavigated(object sender, NavigationEventArgs e)
@@ -344,13 +344,13 @@ void OnNavigated(object sender, NavigationEventArgs e)
 }
 ```
 
-`OnNavigated` Obslužná rutina události, která se spustí v reakci `Navigated` událost, která iniciovala, aktualizuje viditelnost záhlaví tlačítko Zpět, když dojde k navigaci na stránce. Zajistíte tak, že tlačítko Zpět panelu název se zobrazí, pokud back zásobníku v aplikaci není prázdná, nebo odebrat ze záhlaví, pokud back zásobníku v aplikaci je prázdná.
+`OnNavigated` Obslužnou rutinu události, která je provést v reakci `Navigated` událost, když dojde k navigaci na stránce aktualizuje viditelnost záhlaví tlačítko Zpět. Tím se zajistí, že tlačítko Zpět. název panelu je viditelná v případě zásobníku zpět v aplikaci není prázdný, nebo odebrán z záhlaví okna, je-li v aplikaci zpět zásobník je prázdný.
 
-Další informace o podpoře back navigace na UWP najdete v tématu [navigační historie a zpětně navigace pro aplikace UWP](/windows/uwp/design/basics/navigation-history-and-backwards-navigation/).
+Další informace o podpoře zpětné navigace na UPW, naleznete v tématu [historii pro navigaci a zpětné navigace pro aplikace pro UPW](/windows/uwp/design/basics/navigation-history-and-backwards-navigation/).
 
 ## <a name="summary"></a>Souhrn
 
-Nativní formuláře umožňují Xamarin.Forms [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/)-odvozené stránky, které se spotřebovávají nativní projekty Xamarin.iOS, Xamarin.Android a univerzální platformu Windows (UWP). Můžete využívat nativní projekty `ContentPage`-odvozené stránek, které jsou přímo přidat do projektu, nebo z .NET Standard projektu knihovny nebo sdílené projektu. Tento článek vysvětlené využívání `ContentPage`-odvozené stránek, které jsou přímo přidat do nativní projekty a jak se orientovat mezi nimi.
+Nativní formuláře umožňují Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-odvozené stránky, které využívat nativní projekty Xamarin.iOS, Xamarin.Android a univerzální platformu Windows (UPW). Můžete využívat nativní projekty `ContentPage`-odvozené stránky, které jsou přímo přidat do projektu, nebo ze sdíleného projektu a projekt knihovny .NET Standard. Tento článek vysvětlil, jak využívat `ContentPage`-odvozené stránky, které jsou přímo přidat do nativní projekty a jak k navigaci mezi nimi.
 
 
 ## <a name="related-links"></a>Související odkazy

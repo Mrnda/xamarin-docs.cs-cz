@@ -7,36 +7,36 @@ ms.assetid: 7A39FD4F-15AD-4F94-960E-9FEEB63FFD44
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 7860df998fbfe580362aff0f4f01374a4ae1f923
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: 3571774ddec4182f35cac6f13d4582235e2ff31a
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935550"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997423"
 ---
 # <a name="summary-of-chapter-4-scrolling-the-stack"></a>Souhrn kapitoly 4. Posouvání zásobníku
 
 Tato kapitola je primárně věnována zavedení konceptu *rozložení*, což je celková doba splatnosti třídy a techniky, které využívá Xamarin.Forms pro uspořádání vizuální zobrazení více zobrazení na stránce.
 
-Rozložení zahrnuje několik tříd, které jsou odvozeny z [ `Layout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout/) a [ `Layout<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/). Tato kapitola se zaměřuje na [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/).
+Rozložení zahrnuje několik tříd, které jsou odvozeny z [ `Layout` ](xref:Xamarin.Forms.Layout) a [ `Layout<T>` ](xref:Xamarin.Forms.Layout`1). Tato kapitola se zaměřuje na [ `StackLayout` ](xref:Xamarin.Forms.StackLayout).
 
-V této kapitole zavedli jsou [ `ScrollView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/), [ `Frame` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Frame/), a [ `BoxView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/) třídy.
+V této kapitole zavedli jsou [ `ScrollView` ](xref:Xamarin.Forms.ScrollView), [ `Frame` ](xref:Xamarin.Forms.Frame), a [ `BoxView` ](xref:Xamarin.Forms.BoxView) třídy.
 
 ## <a name="stacks-of-views"></a>Zobrazení zásobníků
 
-[`StackLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) je odvozen od `Layout<View>` a dědí [ `Children` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/) vlastnost typu `IList<View>`. Přidání více zobrazení položek do této kolekce a `StackLayout` zobrazí je v zásobníku vodorovně nebo svisle.
+[`StackLayout`](xref:Xamarin.Forms.StackLayout) je odvozen od `Layout<View>` a dědí [ `Children` ](xref:Xamarin.Forms.Layout`1) vlastnost typu `IList<View>`. Přidání více zobrazení položek do této kolekce a `StackLayout` zobrazí je v zásobníku vodorovně nebo svisle.
 
 Nastavte [ `Orientation` ](xref:Xamarin.Forms.StackLayout.Orientation) vlastnost `StackLayout` členovi [ `StackOrientation` ](xref:Xamarin.Forms.StackOrientation) výčet, buď [ `Vertical` ](xref:Xamarin.Forms.StackOrientation.Vertical) nebo [ `Horizontal`](xref:Xamarin.Forms.StackOrientation.Horizontal). Výchozí hodnota je `Vertical`.
 
-Nastavte [ `Spacing` ](https://developer.xamarin.com/api/property/Xamarin.Forms.StackLayout.Spacing/) vlastnost `StackLayout` k `double` hodnotu, která určuje mezery mezi podřízené objekty. Výchozí hodnota je 6.
+Nastavte [ `Spacing` ](xref:Xamarin.Forms.StackLayout.Spacing) vlastnost `StackLayout` k `double` hodnotu, která určuje mezery mezi podřízené objekty. Výchozí hodnota je 6.
 
 V kódu, můžete přidat položky, které chcete `Children` kolekce `StackLayout` v `for` nebo `foreach` smyčce, jak je ukázáno v [ **ColorLoop** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ColorLoop) vzorku, nebo můžete inicializovat `Children` kolekce se seznamem jednotlivá zobrazení jako předvedenou v [ **ColorList**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ColorList). Podřízené objekty musí být odvozen od `View` ale mohou zahrnovat další `StackLayout` objekty.
 
 ## <a name="scrolling-content"></a>Posouvání obsahu
 
-Pokud `StackLayout` obsahuje příliš mnoho podřízených objektů se zobrazí na stránce, můžete umístit `StackLayout` v [ `ScrollView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ScrollView/) umožňující posouvání.
+Pokud `StackLayout` obsahuje příliš mnoho podřízených objektů se zobrazí na stránce, můžete umístit `StackLayout` v [ `ScrollView` ](xref:Xamarin.Forms.ScrollView) umožňující posouvání.
 
-Nastavte [ `Content` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ScrollView.Content/) vlastnost `ScrollView` chcete přejít do zobrazení. Často se jedná `StackLayout`, ale může být libovolné zobrazení.
+Nastavte [ `Content` ](xref:Xamarin.Forms.ScrollView.Content) vlastnost `ScrollView` chcete přejít do zobrazení. Často se jedná `StackLayout`, ale může být libovolné zobrazení.
 
 Nastavte [ `Orientation` ](xref:Xamarin.Forms.ScrollView.Orientation) vlastnost `ScrollView` členovi [ `ScrollOrientation` ](xref:Xamarin.Forms.ScrollOrientation) vlastnost [ `Vertical` ](xref:Xamarin.Forms.ScrollOrientation.Vertical), [ `Horizontal` ](xref:Xamarin.Forms.ScrollOrientation.Horizontal), nebo [ `Both` ](xref:Xamarin.Forms.ScrollOrientation.Both). Výchozí hodnota je `Vertical`. Pokud obsah `ScrollView` je `StackLayout`, dva orientace by měl být konzistentní vzhledem k aplikacím.
 
@@ -53,14 +53,14 @@ Když `StackLayout` zásobníky podřízených jednotlivých podřízených zab�
 
 Pro usnadnění práce `LayoutOptions` struktury také definuje osm statické pole jen pro čtení typu `LayoutOptions` , který zahrnuje všechny kombinace dvě instance vlastnosti:
 
-- [`LayoutOptions.Start`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.Start/)
-- [`LayoutOptions.Center`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.Center/)
-- [`LayoutOptions.End`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.End/)
-- [`LayoutOptions.Fill`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.Fill/)
-- [`LayoutOptions.StartAndExpand`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.StartAndExpand/)
-- [`LayoutOptions.CenterAndExpand`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.CenterAndExpand/)
-- [`LayoutOptions.EndAndExpand`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.EndAndExpand/)
-- [`LayoutOptions.FillAndExpand`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.FillAndExpand/)
+- [`LayoutOptions.Start`](xref:Xamarin.Forms.LayoutOptions.Start)
+- [`LayoutOptions.Center`](xref:Xamarin.Forms.LayoutOptions.Center)
+- [`LayoutOptions.End`](xref:Xamarin.Forms.LayoutOptions.End)
+- [`LayoutOptions.Fill`](xref:Xamarin.Forms.LayoutOptions.Fill)
+- [`LayoutOptions.StartAndExpand`](xref:Xamarin.Forms.LayoutOptions.StartAndExpand)
+- [`LayoutOptions.CenterAndExpand`](xref:Xamarin.Forms.LayoutOptions.CenterAndExpand)
+- [`LayoutOptions.EndAndExpand`](xref:Xamarin.Forms.LayoutOptions.EndAndExpand)
+- [`LayoutOptions.FillAndExpand`](xref:Xamarin.Forms.LayoutOptions.FillAndExpand)
 
 Zahrnuje následující diskuse `StackLayout` při svislé orientaci výchozí. Vodorovné `StackLayout` je obdobou.
 
@@ -78,21 +78,21 @@ To je patrné [ **VerticalOptionsDemo** ](https://github.com/xamarin/xamarin-for
 
 Tyto dvě obdélníkové zobrazení se často používají pro účely prezentace.
 
-[ `Frame` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Frame/) Zobrazení zobrazí obdélníkové rámeček kolek jiné zobrazení, která může být například rozložení `StackLayout`. `Frame` dědí [ `Content` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ContentView.Content/) vlastnost z [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/) , kterou jste nastavili na zobrazení, který se má zobrazit v rámci `Frame`. `Frame` Je ve výchozím nastavení transparentní. Nastavte následující tři vlastnosti pro přizpůsobení vzhledu rámce:
+[ `Frame` ](xref:Xamarin.Forms.Frame) Zobrazení zobrazí obdélníkové rámeček kolek jiné zobrazení, která může být například rozložení `StackLayout`. `Frame` dědí [ `Content` ](xref:Xamarin.Forms.ContentView.Content) vlastnost z [ `ContentView` ](xref:Xamarin.Forms.ContentView) , kterou jste nastavili na zobrazení, který se má zobrazit v rámci `Frame`. `Frame` Je ve výchozím nastavení transparentní. Nastavte následující tři vlastnosti pro přizpůsobení vzhledu rámce:
 
-- [ `OutlineColor` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Frame.OutlineColor/) Vlastnost, aby byla viditelná. Je běžné nastavit `OutlineColor` k `Color.Accent` Pokud si nejste jisti, základní barevném schématu.
-- [ `HasShadow` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Frame.HasShadow/) Nastavenou na `true` zobrazíte černé stín na zařízeních s Iosem.
-- Nastavte [ `Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/) vlastnost `Thickness` obsah vašeho hodnotu nechte mezeru mezi snímek a snímek. Výchozí hodnota je 20 jednotek na všech stranách.
+- [ `OutlineColor` ](xref:Xamarin.Forms.Frame.OutlineColor) Vlastnost, aby byla viditelná. Je běžné nastavit `OutlineColor` k `Color.Accent` Pokud si nejste jisti, základní barevném schématu.
+- [ `HasShadow` ](xref:Xamarin.Forms.Frame.HasShadow) Nastavenou na `true` zobrazíte černé stín na zařízeních s Iosem.
+- Nastavte [ `Padding` ](xref:Xamarin.Forms.Layout.Padding) vlastnost `Thickness` obsah vašeho hodnotu nechte mezeru mezi snímek a snímek. Výchozí hodnota je 20 jednotek na všech stranách.
 
 `Frame` Nemá výchozí hodnotu `HorizontalOptions` a `VerticalOptions` hodnoty `LayoutOptions.Fill`, což znamená, že `Frame` vyplní svého kontejneru. S jinými nastaveními, velikost `Frame` vychází z velikosti svého obsahu.
 
 `Frame` Je patrné [ **FramedText** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/FramedText) vzorku.
 
-[ `BoxView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/) Zobrazí obdélníkovou oblast barva určená jeho [ `Color` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BoxView.Color/) vlastnost.
+[ `BoxView` ](xref:Xamarin.Forms.BoxView) Zobrazí obdélníkovou oblast barva určená jeho [ `Color` ](xref:Xamarin.Forms.BoxView.Color) vlastnost.
 
 Pokud `BoxView` je omezená (jeho `HorizontalOptions` a `VerticalOptions` vlastnosti mají jejich výchozí nastavení pro položky `LayoutOptions.Fill`), `BoxView` vyplní dostupné místo pro něj. Pokud `BoxView` je bez omezení (s `HorizontalOptions` a `LayoutOptions` nastavení `Start`, `Center`, nebo `End`), má výchozí dimenzi 40 jednotek čtverce. A `BoxView` můžete omezené v jedné dimenzi a vstupy bez omezení v jiném.
 
-Často, bude nastavena [ `WidthRequest` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.WidthRequest/) a [ `HeightRequest` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.HeightRequest/) vlastnosti `BoxView` nabízí určité velikosti. To je znázorněn ve [ **SizedBoxView** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/SizedBoxView) vzorku.
+Často, bude nastavena [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest) a [ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest) vlastnosti `BoxView` nabízí určité velikosti. To je znázorněn ve [ **SizedBoxView** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/SizedBoxView) vzorku.
 
 Můžete použít několik instancí `StackLayout` zkombinovat `BoxView` a několik `Label` instance v `Frame` k zobrazení určité barvy a potom se spojí každé z těchto zobrazení v `StackLayout` v `ScrollView` vytvořit atraktivní Seznam barev zobrazených v [ **ColorBlocks** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ColorBlocks) vzorku:
 

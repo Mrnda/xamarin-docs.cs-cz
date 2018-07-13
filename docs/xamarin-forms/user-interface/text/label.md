@@ -1,56 +1,56 @@
 ---
 title: Popisek Xamarin.Forms
-description: Tento článek vysvětluje způsob použití třídy Xamarin.Forms popisek zobrazení jednou či více řádků textu v aplikacích.
+description: Tento článek vysvětluje, jak použít třídu Xamarin.Forms popisek k zobrazení jedné a více řádky textu v aplikacích.
 ms.prod: xamarin
 ms.assetid: 02E6C553-5670-49A0-8EE9-5153ED21EA91
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: e9f99ace64e013dfa681e497b9d33376d79555ed
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: ce602a84ea1024dc22298a3ec1567a9a34ad4a82
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245495"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995963"
 ---
 # <a name="xamarinforms-label"></a>Popisek Xamarin.Forms
 
 _Zobrazení textu v Xamarin.Forms_
 
-`Label` Zobrazení se používá pro zobrazení textu, jednou či více řádků. Popisky může mít vlastní písem (rodiny, velikosti a možnosti) a barevný text. Tento článek obsahuje následující témata:
+`Label` Zobrazení se používá pro zobrazení textu i s více řádky. Popisky může mít vlastní písma (rodiny, velikosti a možnosti) a barevný text. Tento článek obsahuje následující témata:
 
-- **[Zkrácení a zabalení](#Truncation_and_Wrapping)**  &ndash; zkrácení a zabalení možnosti pro zpracování situacích, kde text nevejdou na jeden řádek.
+- **[Zkrácení a zabalení](#Truncation_and_Wrapping)**  &ndash; zkrácení a možnosti zalamování pro zpracování situací, ve kterém se text nemůže vejít na jeden řádek.
 - **[Písmo](#Font)**  &ndash; možnosti písma.
-- **[Barva](#Color)**  &ndash; label text volby barev.
-- **[Formátovaný Text](#Formatted_Text)**  &ndash; možnosti pro zobrazení textu s více formátů/styly vložené.
+- **[Barva](#Color)**  &ndash; XT popisku volby barev.
+- **[Formátovaný Text](#Formatted_Text)**  &ndash; možnosti pro zobrazení textu s více formátů a stylů vložené.
 
-## <a name="styling-label"></a>Styl popisku
+## <a name="styling-label"></a>Používání stylů pro popisek
 
-Následující části se věnují nastavení vlastnosti `Label` ručně na základě jednotlivých instancí. Všimněte si, že nastaví vlastnosti je možné seskupit do jednoho stylu konzistentně použitý pro jednu nebo více zobrazení. To můžete zvýšit čitelnost kódu a snadněji implementovat změn v návrhu. V tématu [styly](~/xamarin-forms/user-interface/text/styles.md) Další informace.
+Následující části se věnují nastavení vlastnosti `Label` ručně na základě jednotlivé instance. Všimněte si, že nastaví vlastnosti mohou být seskupeny do jednoho styl, který konzistentně platí pro jeden nebo více zobrazení. To může zvýšení přehlednosti kódu a změny návrhu usnadnil. Zobrazit [styly](~/xamarin-forms/user-interface/text/styles.md) Další informace.
 
 <a name="Truncation_and_Wrapping" />
 
 ## <a name="truncation-and-wrapping"></a>Zkrácení a zabalení
 
-Popisky lze nastavit pro zpracování text, který se nemůže vejít na jeden řádek v několika způsoby, vystavené `LineBreakMode` vlastnost. [`LineBreakMode`](https://developer.xamarin.com/api/type/Xamarin.Forms.LineBreakMode/) je výčet z následujících možností:
+Popisky lze nastavit pro zpracování textu, který se nemůže vejít na jeden řádek v jednom z několika způsobů vystavené `LineBreakMode` vlastnost. [`LineBreakMode`](xref:Xamarin.Forms.LineBreakMode) je výčet z následujících možností:
 
-- **HeadTruncation** &ndash; zkrátí hlavního textu, zobrazující end.
-- **CharacterWrap** &ndash; nezalamuje text na novém řádku na hranici znak.
-- **MiddleTruncation** &ndash; zobrazí začátek a konec textu s prostředním nahradit pomocí tři tečky.
-- **NoWrap** &ndash; nezalamuje text, zobrazení pouze tolik text jako můžete umístit na jeden řádek.
-- **TailTruncation** &ndash; ukazuje na začátek textu, zkrátit end.
-- **Zalamování řádků** &ndash; nezalamuje text v hranice slova.
+- **HeadTruncation** &ndash; zkrátí hlavní text zobrazující do konce.
+- **CharacterWrap** &ndash; zalomí text na nový řádek na hranici znak.
+- **MiddleTruncation** &ndash; zobrazí začátku a konci textu, střední nahradit pomocí tři teček.
+- **NoWrap** &ndash; nezalamuje text zobrazení pouze tolik text jako může vešel na jeden řádek.
+- **TailTruncation** &ndash; ukazuje začátek textu, zkracování do konce.
+- **WordWrap** &ndash; zalomí text na hranici slova.
 
 ## <a name="font"></a>Písma
 
-V tématu [práce s písem](~/xamarin-forms/user-interface/text/fonts.md) Další informace.
+Zobrazit [práce s písmy](~/xamarin-forms/user-interface/text/fonts.md) Další informace.
 
 ## <a name="color"></a>Barva
 
-`Label`s může být nastaven na použití vlastní barvy prostřednictvím vazbu `TextColor` vlastnost.
+`Label`můžete nastavit s vlastní barvy prostřednictvím umožňujících vazbu `TextColor` vlastnost.
 
-Zvláštní pozornost je třeba zajistit, že barvy bude možné použít na každou platformu. Protože každá platforma má jiné výchozí hodnoty pro barvu textu a pozadí, budete muset pečlivě vyberte výchozí, který funguje na všech.
+Zvláštní pozornost je třeba zajistit, že bude možné použít na jednotlivých platformách barvy. Protože každá platforma má různé výchozí hodnoty pro barvy textu a pozadí, musíte být opatrní a vyberte výchozí hodnotu, která funguje na každém.
 
 Pomocí následujícího kódu nastavit barvu textu popisku:
 
@@ -70,7 +70,7 @@ public partial class LabelPage : ContentPage
 }
 ```
 
-V jazyce XAML:
+V XAML:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -86,24 +86,24 @@ Title="Label Demo">
 </ContentPage>
 ```
 
-![](label-images/textcolor.png "Příklad TextColor popisek")
+![](label-images/textcolor.png "Příklad popisku TextColor")
 
 <a name="Formatted_Text" />
 
 ## <a name="formatted-text"></a>Formátovaný Text
 
-Popisky vystavit `FormattedText` vlastnost, která umožňuje text představovat víc písem a barvy ve stejném zobrazení.
+Zobrazit popisky `FormattedText` vlastnost, která umožňuje zobrazit text s víc písem a barev ve stejném zobrazení.
 
-`FormattedText` Vlastnost je typu [ `FormattedString` ](https://developer.xamarin.com/api/type/Xamarin.Forms.FormattedString/). Formátované řetězce se skládají z jedné nebo více `Span`s a každý z nich s následujícími vlastnostmi:
+`FormattedText` Vlastnost je typu [ `FormattedString` ](xref:Xamarin.Forms.FormattedString). Formátované řetězce se skládají z nejméně jednu `Span`s, každý z nich s následujícími vlastnostmi:
 
-- **BackgroundColor** &ndash; můžete použít k nastavení barvu pozadí, třeba k dosažení zvýraznění vliv.
-- **FontAttributes** &ndash; může být nastaven na tučné, kurzíva nebo ani jeden z nich.
+- **BackgroundColor** &ndash; umožňuje nastavit vlastní barvu pozadí, třeba když chcete dosáhnout zvýrazňovači nepoužívaného mohou mít vliv.
+- **FontAttributes** &ndash; může být nastavenou na tučné, kurzíva nebo ani jeden.
 - **FontFamily** &ndash; nastaví písmo, který se má použít.
-- **Velikost písma** &ndash; nastaví velikost textu.
+- **FontSize** &ndash; nastaví velikost textu.
 - **ForegroundColor** &ndash; nastaví barvu textu.
-- **Text** &ndash; text, který má být uvedené.
+- **Text** &ndash; text, který se znovu nezobrazí.
 
-Následující kód C# ukazuje štítek, kde je první slovo tučné a poslední slovo je red:
+Následující kód jazyka C# ukazuje, kde první slovo je tučný a poslední slovo je červený popisek:
 
 ```csharp
 public partial class LabelPage : ContentPage
@@ -124,7 +124,7 @@ public partial class LabelPage : ContentPage
 }
 ```
 
-V jazyce XAML:
+V XAML:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -153,6 +153,6 @@ Title="Label Demo">
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Vytváření mobilních aplikací s Xamarin.Forms, kapitoly 3](https://developer.xamarin.com/r/xamarin-forms/book/chapter03.pdf)
+- [Vytváření mobilních aplikací s Xamarin.Forms, kapitolu 3](https://developer.xamarin.com/r/xamarin-forms/book/chapter03.pdf)
 - [Text (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
-- [Popisek rozhraní API](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/)
+- [Popisek rozhraní API](xref:Xamarin.Forms.Label)

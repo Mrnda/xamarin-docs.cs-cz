@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: f55a7878be898cbae5681d628d07cbe8598c9509
-ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
-ms.translationtype: HT
+ms.openlocfilehash: 47fbe67561ea9150d0fdc0b41eb5c70edbeac75e
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 07/12/2018
-ms.locfileid: "38986119"
+ms.locfileid: "38996266"
 ---
 # <a name="images-in-xamarinforms"></a>Obrázky v Xamarin.Forms
 
@@ -31,19 +31,19 @@ Tento dokument obsahuje následující témata:
 
 ## <a name="displaying-images"></a>Zobrazení obrázků
 
-Využívá Xamarin.Forms [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) zobrazení obrázků na stránce. Má dvě důležité vlastnosti:
+Využívá Xamarin.Forms [ `Image` ](xref:Xamarin.Forms.Image) zobrazení obrázků na stránce. Má dvě důležité vlastnosti:
 
-- [`Source`](https://developer.xamarin.com/api/property/Xamarin.Forms.Image.Source/) – [ `ImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageSource/) Instance, soubor, identifikátor Uri nebo prostředek, který nastaví obrázek k zobrazení.
-- [`Aspect`](https://developer.xamarin.com/api/property/Xamarin.Forms.Image.Aspect/) -Postupy velikost bitové kopie v rámci hranice, které se zobrazily v rámci (ať už chcete roztáhnout, oříznout nebo letterbox).
+- [`Source`](xref:Xamarin.Forms.Image.Source) – [ `ImageSource` ](xref:Xamarin.Forms.ImageSource) Instance, soubor, identifikátor Uri nebo prostředek, který nastaví obrázek k zobrazení.
+- [`Aspect`](xref:Xamarin.Forms.Image.Aspect) -Postupy velikost bitové kopie v rámci hranice, které se zobrazily v rámci (ať už chcete roztáhnout, oříznout nebo letterbox).
 
-[`ImageSource`](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageSource/) instance se dají získat pomocí statické metody pro každý typ zdroje obrázku:
+[`ImageSource`](xref:Xamarin.Forms.ImageSource) instance se dají získat pomocí statické metody pro každý typ zdroje obrázku:
 
-- [`FromFile`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromFile/p/System.String/) -Vyžaduje název souboru nebo cesta k souboru, který lze převést na jednotlivých platformách.
-- [`FromUri`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromUri/p/System.Uri/) -Vyžaduje objekt identifikátoru Uri, např.  `new Uri("http://server.com/image.jpg")` .
-- [`FromResource`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/) -Vyžaduje identifikátor prostředku pro soubor obrázku s vloženým v aplikaci nebo projekt knihovny .NET Standard, **sestavení akce: EmbeddedResource**.
-- [`FromStream`](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromStream/p/System.Func%7BSystem.IO.Stream%7D/) -Vyžaduje datový proud, který poskytuje data obrázku.
+- [`FromFile`](xref:Xamarin.Forms.ImageSource.FromFile(System.String)) -Vyžaduje název souboru nebo cesta k souboru, který lze převést na jednotlivých platformách.
+- [`FromUri`](xref:Xamarin.Forms.ImageSource.FromUri(System.Uri)) -Vyžaduje objekt identifikátoru Uri, např.  `new Uri("http://server.com/image.jpg")` .
+- [`FromResource`](xref:Xamarin.Forms.ImageSource.FromResource*) -Vyžaduje identifikátor prostředku pro soubor obrázku s vloženým v aplikaci nebo projekt knihovny .NET Standard, **sestavení akce: EmbeddedResource**.
+- [`FromStream`](xref:Xamarin.Forms.ImageSource.FromStream(System.Func{System.IO.Stream})) -Vyžaduje datový proud, který poskytuje data obrázku.
 
-[ `Aspect` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Image.Aspect/) Vlastnost určuje, jak image se přizpůsobí zobrazení oblasti:
+[ `Aspect` ](xref:Xamarin.Forms.Image.Aspect) Vlastnost určuje, jak image se přizpůsobí zobrazení oblasti:
 
 - [`Fill`](xref:Xamarin.Forms.Aspect.Fill) -Roztáhne obrázek, který se přesně a zcela vyplnění oblasti zobrazení. Výsledkem může být image se zkreslený.
 - [`AspectFill`](xref:Xamarin.Forms.Aspect.AspectFill) -Klipy image tak, že vyplní oblast zobrazení při zachování aspekt (tj. bez narušení).
@@ -109,13 +109,13 @@ Názvy obrázkových souborů UPW [končil slovem `.scale-xxx` před příponou]
 
 Některé ovládací prvky mají vlastnosti, které zobrazují jako image, jako například:
 
-- [`Page`](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) -Žádný typ, který je odvozen z stránky `Page` má [ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Icon/) a [ `BackgroundImage` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.BackgroundImage/) vlastnosti, které je možné přiřadit odkazu na místní soubor. Za určitých okolností, například když [ `NavigationPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.NavigationPage/) se zobrazuje [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/), na ikonu se zobrazí, pokud podporovaná platforma.
+- [`Page`](xref:Xamarin.Forms.Page) -Žádný typ, který je odvozen z stránky `Page` má [ `Icon` ](xref:Xamarin.Forms.Page.Icon) a [ `BackgroundImage` ](xref:Xamarin.Forms.Page.BackgroundImage) vlastnosti, které je možné přiřadit odkazu na místní soubor. Za určitých okolností, například když [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) se zobrazuje [ `ContentPage` ](xref:Xamarin.Forms.ContentPage), na ikonu se zobrazí, pokud podporovaná platforma.
 
   > [!IMPORTANT]
-  > V systémech iOS [ `Page.Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Page.Icon/) vlastnost nelze naplnit pomocí bitové kopie v sadě image katalog asset. Místo toho načíst obrázky ikon pro `Page.Icon` vlastnost z **prostředky** složky v projektu pro iOS.
+  > V systémech iOS [ `Page.Icon` ](xref:Xamarin.Forms.Page.Icon) vlastnost nelze naplnit pomocí bitové kopie v sadě image katalog asset. Místo toho načíst obrázky ikon pro `Page.Icon` vlastnost z **prostředky** složky v projektu pro iOS.
 
-- [`ToolbarItem`](https://developer.xamarin.com/api/type/Xamarin.Forms.ToolbarItem/) -Má [ `Icon` ](https://developer.xamarin.com/api/property/Xamarin.Forms.MenuItem.Icon/) vlastnost, která může být nastaven na odkazu na místní soubor.
-- [`ImageCell`](https://developer.xamarin.com/api/type/Xamarin.Forms.ImageCell/) -Má [ `ImageSource` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ImageCell.ImageSource/) vlastnost, která je možné nastavit na obrázek načten z místního souboru, vložený prostředek nebo identifikátor URI.
+- [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) -Má [ `Icon` ](xref:Xamarin.Forms.MenuItem.Icon) vlastnost, která může být nastaven na odkazu na místní soubor.
+- [`ImageCell`](xref:Xamarin.Forms.ImageCell) -Má [ `ImageSource` ](xref:Xamarin.Forms.ImageCell.ImageSource) vlastnost, která je možné nastavit na obrázek načten z místního souboru, vložený prostředek nebo identifikátor URI.
 
 <a name="embedded_images" />
 
@@ -150,7 +150,7 @@ Toto ID lze upravovat ve službě **vlastnosti** panel, ale tyto příklady hodn
 
 Pokud vložené obrázky se umístí do složky v rámci projektu, názvy složek jsou také oddělených tečkami (.) v ID prostředku. Přechod **beach.jpg** image do složky s názvem **MyImages** způsobí ID prostředku **WorkingWithImages.MyImages.beach.jpg**
 
-Kód pro načtení vložený obrázek jednoduše předává **ID prostředku** k [ `ImageSource.FromResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/) způsob, jak je znázorněno níže:
+Kód pro načtení vložený obrázek jednoduše předává **ID prostředku** k [ `ImageSource.FromResource` ](xref:Xamarin.Forms.ImageSource.FromResource*) způsob, jak je znázorněno níže:
 
 ```csharp
 var embeddedImage = new Image { Source = ImageSource.FromResource("WorkingWithImages.beach.jpg", typeof(EmbeddedImages).GetTypeInfo().Assembly) };
@@ -159,7 +159,7 @@ var embeddedImage = new Image { Source = ImageSource.FromResource("WorkingWithIm
 > [!NOTE]
 > Pro podporu zobrazení vložené obrázky v režimu vydání na univerzální platformu Windows, je nutné, použijte přetížení `ImageSource.FromResource` , který určuje zdrojové sestavení, ve kterém chcete hledat bitovou kopii.
 
-Aktuálně neexistuje žádný implicitní převod pro identifikátory prostředků. Místo toho je nutné použít [ `ImageSource.FromResource` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromResource/p/System.String/) nebo `new ResourceImageSource()` načíst vložené obrázky.
+Aktuálně neexistuje žádný implicitní převod pro identifikátory prostředků. Místo toho je nutné použít [ `ImageSource.FromResource` ](xref:Xamarin.Forms.ImageSource.FromResource*) nebo `new ResourceImageSource()` načíst vložené obrázky.
 
 Na následujících snímcích obrazovky zobrazit výsledek zobrazení vložený obrázek na jednotlivých platformách:
 
@@ -265,7 +265,7 @@ Ekvivalentní kód jazyka C# je následujícím způsobem:
 var webImage = new Image { Source = ImageSource.FromUri(new Uri("https://xamarin.com/content/images/pages/forms/example-app.png")) };
 ```
 
-[ `ImageSource.FromUri` ](https://developer.xamarin.com/api/member/Xamarin.Forms.ImageSource.FromUri/p/System.Uri/) Vyžaduje metodu `Uri` objekt a vrátí nový [ `UriImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.UriImageSource/) , která čte z `Uri`.
+[ `ImageSource.FromUri` ](xref:Xamarin.Forms.ImageSource.FromUri(System.Uri)) Vyžaduje metodu `Uri` objekt a vrátí nový [ `UriImageSource` ](xref:Xamarin.Forms.UriImageSource) , která čte z `Uri`.
 
 Je také implicitní převod řetězce identifikátoru URI, takže budou fungovat i v následujícím příkladu:
 
@@ -281,10 +281,10 @@ Na následujících snímcích obrazovky zobrazit výsledek zobrazení vzdálen�
 
 ### <a name="downloaded-image-caching"></a>Stažený obraz ukládání do mezipaměti
 
-A [ `UriImageSource` ](https://developer.xamarin.com/api/type/Xamarin.Forms.UriImageSource/) také podporuje ukládání do mezipaměti stažených imagí, nakonfigurovat pomocí následující vlastnosti:
+A [ `UriImageSource` ](xref:Xamarin.Forms.UriImageSource) také podporuje ukládání do mezipaměti stažených imagí, nakonfigurovat pomocí následující vlastnosti:
 
-- [`CachingEnabled`](https://developer.xamarin.com/api/property/Xamarin.Forms.UriImageSource.CachingEnabled/) -Určuje, zda je povoleno ukládání do mezipaměti (`true` ve výchozím nastavení).
-- [`CacheValidity`](https://developer.xamarin.com/api/property/Xamarin.Forms.UriImageSource.CacheValidity/) -A `TimeSpan` , který definuje, jak dlouho na obrázku se uloží místně.
+- [`CachingEnabled`](xref:Xamarin.Forms.UriImageSource.CachingEnabled) -Určuje, zda je povoleno ukládání do mezipaměti (`true` ve výchozím nastavení).
+- [`CacheValidity`](xref:Xamarin.Forms.UriImageSource.CacheValidity) -A `TimeSpan` , který definuje, jak dlouho na obrázku se uloží místně.
 
 Ukládání do mezipaměti je ve výchozím nastavení povolené a bude uchovávat image místně po dobu 24 hodin. Chcete-li zakázat ukládání do mezipaměti pro konkrétní image, vytvořit instanci zdroj obrázku následujícím způsobem:
 
@@ -309,7 +309,7 @@ Integrované ukládání do mezipaměti umožňuje velmi snadno podporují scén
 
 ## <a name="icons-and-splashscreens"></a>Ikony a splashscreens
 
-Zatímco nesouvisí [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) zobrazení ikon aplikací a splashscreens jsou také důležité použití imagí v projektech Xamarin.Forms.
+Zatímco nesouvisí [ `Image` ](xref:Xamarin.Forms.Image) zobrazení ikon aplikací a splashscreens jsou také důležité použití imagí v projektech Xamarin.Forms.
 
 Nastavení ikon a splashscreens u aplikací Xamarin.Forms se provádí ve všech projektech aplikací. To znamená, že generování správně velikost bitové kopie pro iOS, Android a UPW. Tyto Image by měla s názvem a umístěn podle požadavků na každou platformu.
 

@@ -1,48 +1,48 @@
 ---
-title: Přizpůsobení vzhledu buněk ListView
-description: Tento článek popisuje možnosti pro zobrazení dat uložených v aplikacích Xamarin.Forms, s využitím pohodlím, které představuje ovládacího prvku ListView.
+title: Přizpůsobení vzhledu ListView buňky
+description: Tento článek popisuje možnosti pro zobrazení dat v aplikacích Xamarin.Forms výhod pohodlí ovládacího prvku ListView.
 ms.prod: xamarin
 ms.assetid: FD45CB91-1A8F-46FB-B432-6BC20492E456
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 86447afbabca1384f9e46f5128a9dc00253a798c
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 7a0f55b6d8a61f52f4ef137d83c56d86149bc3c9
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244753"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996253"
 ---
-# <a name="customizing-listview-cell-appearance"></a>Přizpůsobení vzhledu buněk ListView
+# <a name="customizing-listview-cell-appearance"></a>Přizpůsobení vzhledu ListView buňky
 
-ListView uvede posouvatelného seznamů, které lze přizpůsobit prostřednictvím `ViewCell`s. `ViewCells` můžete použít pro zobrazení textu a obrázků, uvádí stav true nebo false a přijetí vstup uživatele.
+ListView uvede posuvný seznamy, které je možné přizpůsobit prostřednictvím `ViewCell`s. `ViewCells` můžete použít pro zobrazení textu a obrázků, označující stav pravda/nepravda a přijímají uživatelský vstup.
 
-Získávání vzhledu, které chcete z buněk ListView dvěma způsoby:
+Získávání vzhled, který chcete z buněk ListView dvěma způsoby:
 
-- **[Přizpůsobení předdefinované buněk](#Built_in_Cells)**  &ndash; jednodušší implementací a lepší výkon za cenu možnosti přizpůsobení.
-- **[Vytváření vlastních buněk](#customcells)**  &ndash; více ovládat konečný výsledek, ale mají potenciální problémy s výkonem, pokud není správně implementován.
+- **[Přizpůsobení předdefinovaných buňky](#Built_in_Cells)**  &ndash; jednodušší implementací a lepší výkon na úkor přizpůsobitelnost.
+- **[Vytváření vlastních buňky](#customcells)**  &ndash; větší kontrolu nad konečný výsledek, ale mají potenciální problémy s výkonem, pokud není správně implementován.
 
 <a name="Built_in_Cells" />
 
 ## <a name="built-in-cells"></a>Vytvořené v buňkách
-Xamarin.Forms se dodává s integrovanou buněk, které pracují pro mnoho jednoduché aplikace:
+Xamarin.Forms dodává s integrovanou buňky, které fungují pro spoustu aplikací na jednoduchý:
 
 - **TextCell** &ndash; pro zobrazení textu
-- **Funkce ImageCell** &ndash; pro zobrazení bitovou kopii s textem.
+- **Funkce ImageCell** &ndash; pro zobrazování obrázku s textem.
 
-Dvě další buňky, [ `SwitchCell` ](~/xamarin-forms/user-interface/tableview.md#switchcell) a [ `EntryCell` ](~/xamarin-forms/user-interface/tableview.md#entrycell) jsou k dispozici, ale nejsou obvykle používány s `ListView`. V tématu [ `TableView` ](~/xamarin-forms/user-interface/tableview.md) Další informace o těchto buněk.
+Dvě další buňky [ `SwitchCell` ](~/xamarin-forms/user-interface/tableview.md#switchcell) a [ `EntryCell` ](~/xamarin-forms/user-interface/tableview.md#entrycell) jsou k dispozici, ale nejsou běžně používá s `ListView`. Zobrazit [ `TableView` ](~/xamarin-forms/user-interface/tableview.md) Další informace o těchto buněk.
 
 <a name="TextCell" />
 
 ### <a name="textcell"></a>TextCell
 
-[`TextCell`](http://developer.xamarin.com/api/type/Xamarin.Forms.TextCell/) je buňky pro zobrazení textu, volitelně i s druhou linii jako text podrobností.
+[`TextCell`](xref:Xamarin.Forms.TextCell) je buňky pro zobrazení textu, volitelně i s druhý řádek jako text podrobností.
 
-TextCells se vykresluje jako nativní ovládací prvky v době běhu, výkon, je velmi dobré ve srovnání s vlastní `ViewCell`. TextCells lze přizpůsobit, abyste mohli nastavit:
+TextCells jsou vykresleny jako nativní ovládací prvky za běhu, takže je výkon velmi dobře ve srovnání s vlastní `ViewCell`. TextCells jsou přizpůsobitelné, což vám umožní nastavit:
 
-- `Text` &ndash; text, který je zobrazený na prvním řádku velkými písmeny.
-- `Detail` &ndash; text, který se zobrazí pod v prvním řádku, menší písmo.
+- `Text` &ndash; text, který se zobrazí na prvním řádku v velkými písmeny.
+- `Detail` &ndash; text, který se zobrazí pod první řádek v menším písmem.
 - `TextColor` &ndash; Barva textu.
 - `DetailColor` &ndash; Barva textu podrobností
 
@@ -54,15 +54,15 @@ TextCells se vykresluje jako nativní ovládací prvky v době běhu, výkon, je
 
 ### <a name="imagecell"></a>Funkce ImageCell
 
-[`ImageCell`](http://developer.xamarin.com/api/type/Xamarin.Forms.ImageCell/), jako je `TextCell`, lze použít pro zobrazení textu a sekundární podrobností text a nabízí vysoký výkon pomocí nativní ovládací prvky každou platformu. `ImageCell` se liší od `TextCell` v, že se zobrazí obrázek vlevo od textu.
+[`ImageCell`](xref:Xamarin.Forms.ImageCell), jako je `TextCell`, lze použít pro zobrazení textu a sekundární podrobností text a nabízí skvělý výkon pomocí nativní ovládací prvky jednotlivé platformy. `ImageCell` se liší od `TextCell` v tom, že se zobrazí obrázek nalevo od textu.
 
-`ImageCell` je užitečné, když je třeba zobrazit seznam dat pomocí visual aspekt, jako je například seznam kontaktů nebo filmy. ImageCells lze přizpůsobit, abyste mohli nastavit:
+`ImageCell` je užitečné, když budete chtít zobrazit seznam dat pomocí vizuální stran, například seznam kontaktů nebo filmy. ImageCells jsou přizpůsobitelné, což vám umožní nastavit:
 
-- `Text` &ndash; text, který je zobrazený na prvním řádku velkými písmeny
-- `Detail` &ndash; text, který se zobrazí pod v prvním řádku, menší písma
+- `Text` &ndash; text, který se zobrazí na prvním řádku v velkými písmeny
+- `Detail` &ndash; text, který se zobrazí pod první řádek v menším písmem
 - `TextColor` &ndash; Barva textu
 - `DetailColor` &ndash; Barva textu podrobností
-- `ImageSource` &ndash; obrázek, který má zobrazit vedle textu
+- `ImageSource` &ndash; Obrázek se zobrazí vedle textu
 
 ![](customizing-cell-appearance-images/image-cell-default.png "Výchozí funkce ImageCell příklad")
 
@@ -70,19 +70,19 @@ TextCells se vykresluje jako nativní ovládací prvky v době běhu, výkon, je
 
 <a name="customcells" />
 
-## <a name="custom-cells"></a>Vlastní buněk
-Při integrované buněk neposkytují na požadované rozložení, implementovat vlastní buněk na požadované rozložení. Můžete například představovat buňku dva popisky, které mají stejnou váhu. A `TextCell` by dostatek protože `TextCell` má jeden štítek, který je menší. Většina přizpůsobení buněk přidat další data jen pro čtení (například další popisky, obrázky nebo jiné zobrazované informace).
+## <a name="custom-cells"></a>Vlastní buňky
+Když integrované buňky neposkytuje požadované rozložení, implementovat vlastní buňky požadované rozložení. Můžete například představovat buňky pomocí dvou popisků, které mají stejnou důležitost. A `TextCell` by být nedostatečné vzhledem k tomu, `TextCell` má jeden popisek, který je menší. Většina nastavení buňky přidání dalších dat jen pro čtení (například další popisky, obrázky nebo jiné informace o zobrazení).
 
-Všechny vlastní buňky musí být odvozeny od [ `ViewCell` ](http://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/), že všechny buňky předdefinované typy použijte stejnou základní třídu.
+Všechny vlastní buňky musí být odvozen od [ `ViewCell` ](xref:Xamarin.Forms.ViewCell), je stejná základní třída, že všechny buňky vestavěné typy použití.
 
-Xamarin.Forms 2 zavedl nový [chování ukládání do mezipaměti](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy) na `ListView` řídit, která může být nastaven na posouvání výkon pro některé typy vlastní buněk.
+Xamarin.Forms 2 zavedl nový [chování ukládání do mezipaměti](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy) na `ListView` ovládací prvek, který může být nastaven na zvýšení výkonu posunování pro některé typy vlastní buněk.
 
-Jedná se o příklad vlastní buňky:
+Toto je příklad vlastního buňky:
 
 ![](customizing-cell-appearance-images/custom-cell.png "Příklad vlastní buňky")
 
 ### <a name="xaml"></a>XAML
-Zde je XAML pro vytvoření rozložení výše:
+XAML vytvořit výše rozložení je nižší než:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -113,17 +113,17 @@ x:Class="demoListView.ImageCellPage">
 </ContentPage>
 ```
 
-Výše uvedené XAML provádí mnoho. Můžeme rozdělit ho:
+Výše uvedené XAML je to mnohem. To Pojďme rozdělit:
 
-- Je vnořit vlastní buňky `DataTemplate`, který je uvnitř `ListView.ItemTemplate`. Toto je stejný postup jako při použití jiných buňky.
-- `ViewCell` je typ vlastní buňky. Podřízeným `DataTemplate` element musí být nebo odvozen z typu `ViewCell`.
-- Všimněte si, že uvnitř `ViewCell`, spravuje rozložení `StackLayout`. Toto rozložení umožňuje přizpůsobit barvu pozadí. Všimněte si, že žádnou vlastnost `StackLayout` tedy vazbu může být vázána v buňce vlastní, i když, není zde zobrazený.
+- Vlastní buňky je vnořená do `DataTemplate`, která se nachází uvnitř `ListView.ItemTemplate`. Toto je stejný postup jako při použití libovolnou buňku.
+- `ViewCell` je typ vlastního buňky. Podřízený `DataTemplate` elementu musí být nebo odvozen od typu `ViewCell`.
+- Všimněte si, že uvnitř `ViewCell`, spravuje rozložení `StackLayout`. Toto rozložení umožňuje přizpůsobit barvu pozadí. Všimněte si, že nějaká vlastnost `StackLayout` , který je s možností vazby může být vázaný vlastní buňce, i když, která tady není ukázaný.
 
 ### <a name="cnum"></a>C&num;
 
-Určení vlastních buňky v jazyce C# je trochu podrobnější než ekvivalentní XAML. Podívejme se:
+Zadání vlastní buňku v jazyce C# je trochu podrobnější než ekvivalentní XAML. Podívejme se na to:
 
-Nejprve definovat třídu vlastní buňky s `ViewCell` jako základní třída:
+Nejprve definujte třídu vlastního buňky s `ViewCell` jako základní třídy:
 
 ```csharp
 public class CustomCell : ViewCell
@@ -159,7 +159,7 @@ public class CustomCell : ViewCell
     }
 ```
 
-Ve vašem konstruktor pro stránku s `ListView`, nastavte ListView `ItemTemplate` vlastnost na nový `DataTemplate`:
+Vaše konstruktoru pro stránku s `ListView`, nastavte ListView `ItemTemplate` vlastnost do nového `DataTemplate`:
 
 ```csharp
 public partial class ImageCellPage : ContentPage
@@ -172,13 +172,13 @@ public partial class ImageCellPage : ContentPage
     }
 ```
 
-Všimněte si, že v konstruktoru pro `DataTemplate` trvá typu. Získá typ CLR pro operátor typeof `CustomCell`.
+Všimněte si, že konstruktor pro `DataTemplate` trvá typu. Operátor typeof získá typ CLR pro `CustomCell`.
 
 <a name="binding-context-changes" />
 
-### <a name="binding-context-changes"></a>Vazba kontextové změny
+### <a name="binding-context-changes"></a>Změny kontextu vazby
 
-Při vytváření vazby na vlastní buňky typ [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) instance ovládacích prvků uživatelského rozhraní zobrazení `BindableProperty` hodnoty by měl používat [ `OnBindingContextChanged` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Cell.OnBindingContextChanged()/) přepsání nastavení dat, který se má zobrazit v Každá buňka, nikoli buňky konstruktoru, jak je ukázáno v následujícím příkladu kódu:
+Při vytváření vazby na vlastní typ [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) instancí, ovládacích prvků uživatelského rozhraní zobrazení `BindableProperty` byste použít hodnoty [ `OnBindingContextChanged` ](xref:Xamarin.Forms.Cell.OnBindingContextChanged) přepsání nastavení data, která mají být zobrazeny v Každá buňka, spíše než konstruktoru buňky, jak je ukázáno v následujícím příkladu kódu:
 
 ```csharp
 public class CustomCell : ViewCell
@@ -221,14 +221,14 @@ public class CustomCell : ViewCell
 }
 ```
 
-[ `OnBindingContextChanged` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Cell.OnBindingContextChanged()/) Přepsání bude volána při [ `BindingContextChanged` ](https://developer.xamarin.com/api/event/Xamarin.Forms.BindableObject.BindingContextChanged/) aktivuje událost v reakci na hodnotu [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) změna vlastností. Proto když `BindingContext` změní, ovládacích prvků uživatelského rozhraní zobrazení [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) hodnoty by měly nastavit svá data. Všimněte si, že `BindingContext` zkontrolovat `null` hodnota, protože to je možné nastavit pomocí Xamarin.Forms pro uvolňování paměti, který pak bude mít za následek `OnBindingContextChanged` přepsat volána.
+[ `OnBindingContextChanged` ](xref:Xamarin.Forms.Cell.OnBindingContextChanged) Bude volat přepsání, pokud [ `BindingContextChanged` ](xref:Xamarin.Forms.BindableObject.BindingContextChanged) událost je aktivována v reakci na hodnotu [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) změny vlastnosti. Proto, když `BindingContext` změní, ovládacích prvků uživatelského rozhraní zobrazení [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) hodnot by měl nastavit jejich data. Všimněte si, že `BindingContext` zkontrolovat `null` hodnoty, jak to lze nastavit pomocí Xamarin.Forms pro uvolňování paměti, které pak bude mít za následek `OnBindingContextChanged` přepsat volána.
 
-Alternativně můžete vázat ovládacích prvků uživatelského rozhraní na [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) instance, které chcete zobrazit jejich hodnoty, které eliminuje nutnost přepsat `OnBindingContextChanged` metoda.
+Alternativně lze svázat ovládací prvky uživatelského rozhraní [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) instance zobrazíte jejich hodnoty, které eliminuje potřebu přepsat `OnBindingContextChanged` metody.
 
 > [!NOTE]
-> Při přepsání `OnBindingContextChanged`, ujistěte se, že základní třídy `OnBindingContextChanged` metoda je volána, aby registrovaná delegáti `BindingContextChanged` událostí.
+> Při přepisování `OnBindingContextChanged`, ujistěte se, že základní třídy `OnBindingContextChanged` metoda je volána, tak, že registrovaní delegáti obdrží `BindingContextChanged` událostí.
 
-V jazyce XAML typ vlastní buňky vytvoření vazby na data lze dosáhnout jak je znázorněno v následujícím příkladu kódu:
+V XAML vlastní typ vazby k datům lze dosáhnout jak je znázorněno v následujícím příkladu kódu:
 
 ```xaml
 <ListView x:Name="listView">
@@ -240,9 +240,9 @@ V jazyce XAML typ vlastní buňky vytvoření vazby na data lze dosáhnout jak j
 </ListView>
 ```
 
-Tím je vytvořena vazba `Name`, `Age`, a `Location` vazbu vlastnosti v `CustomCell` instance na `Name`, `Age`, a `Location` vlastnosti každého objektu v podkladové kolekci.
+Tím je vytvořena vazba `Name`, `Age`, a `Location` vlastnosti umožňující vazbu v `CustomCell` instance položky `Name`, `Age`, a `Location` vlastnosti jednotlivých objektů v zdrojové kolekce.
 
-Ekvivalentní vazby v jazyce C# je znázorněno v následujícím příkladu kódu:
+Ekvivalentní vazby v jazyce C# můžete vidět v následujícím příkladu kódu:
 
 ```csharp
 var customCell = new DataTemplate (typeof(CustomCell));
@@ -256,10 +256,10 @@ var listView = new ListView {
 };
 ```
 
-Na iOS a Android Pokud [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) je recyklace elementy a vlastní buňky používá vlastní zobrazovací jednotky, vlastní zobrazovací jednotky musí správně implementovat oznámení o změně vlastností. Když jsou opakovaně buněk jejich hodnoty vlastností se změní při aktualizaci kontextu vazby na k dispozici buňky, který se `PropertyChanged` událostí vyvolaných. Další informace najdete v tématu [přizpůsobení ViewCell](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md). Další informace o buňky recyklace najdete v tématu [ukládání do mezipaměti strategie](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy).
+V Iosu a Androidu Pokud [ `ListView` ](xref:Xamarin.Forms.ListView) se recykluje elementy a vlastní buňky používá vlastní zobrazovací jednotky, vlastní zobrazovací jednotky musí správně implementace oznámení změn vlastností. Když údaje znovu použijí buňky hodnot vlastností se změní při aktualizaci kontextu vazby, který k dispozici buňky, s `PropertyChanged` událostí vyvolaných. Další informace najdete v tématu [přizpůsobení ViewCell](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md). Další informace o recyklaci buňky, naleznete v tématu [strategie ukládání do mezipaměti](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy).
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Vytvořené v buňkách (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/BuiltInCells)
-- [Vlastní buněk (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/CustomCells)
+- [Součástí buňky (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/BuiltInCells)
+- [Vlastní buňky (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/CustomCells)
 - [Vazba kontext změnit (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/BindingContextChanged)

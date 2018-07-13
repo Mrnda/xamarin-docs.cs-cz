@@ -1,26 +1,26 @@
 ---
-title: Přidání klepněte na gesto gesto rozpoznávání
-description: Tento článek vysvětluje, jak pomocí gesta klepněte na pro detekci klepněte na aplikaci na platformě Xamarin.Forms. Klepněte na zjišťování je implementováno s třídou TapGestureRecognizer.
+title: Přidání rozpoznávání gest klepněte na gesto
+description: Tento článek vysvětluje, jak použít gesto klepnutí k vyhledání tap aplikace Xamarin.Forms. Klepněte na zjišťování je implementováno třídou TapGestureRecognizer.
 ms.prod: xamarin
 ms.assetid: 1D150BAF-4157-49BC-90A0-153323B8EBCF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
-ms.openlocfilehash: bbe4ca7a1080459b8aeb33640be5158b15e97715
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: e602ae1f140640d9a895b65d78feab3d0a3b7861
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240662"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994851"
 ---
-# <a name="adding-a-tap-gesture-gesture-recognizer"></a>Přidání klepněte na gesto gesto rozpoznávání
+# <a name="adding-a-tap-gesture-gesture-recognizer"></a>Přidání rozpoznávání gest klepněte na gesto
 
-_Klepněte na gesto se používá pro zjišťování klepněte na a je implementována pomocí třídy TapGestureRecognizer._
+_Gesto klepnutí se používá pro zjišťování klepnutím a je implementováno třídou TapGestureRecognizer._
 
 ## <a name="overview"></a>Přehled
 
-Chcete-li prokliknutelný s gesto klepněte na prvek uživatelského rozhraní, vytvořte [ `TapGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/) instance, zpracování [ `Tapped` ](https://developer.xamarin.com/api/event/Xamarin.Forms.TapGestureRecognizer.Tapped/) událostí a přidejte nový rozpoznávání gesto [ `GestureRecognizers` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.GestureRecognizers/) kolekce na element uživatelského rozhraní. Následující příklad kódu ukazuje `TapGestureRecognizer` připojené k [ `Image` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Image/) element:
+Chcete-li prvek uživatelského rozhraní kliknout, čímž se gesto klepnutí, vytvořte [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) instance, nastavte popisovač [ `Tapped` ](xref:Xamarin.Forms.TapGestureRecognizer.Tapped) událostí a přidejte nový nástroj pro rozpoznávání gest na [ `GestureRecognizers` ](xref:Xamarin.Forms.View.GestureRecognizers) kolekce na prvek uživatelského rozhraní. Následující příklad kódu ukazuje `TapGestureRecognizer` připojené k [ `Image` ](xref:Xamarin.Forms.Image) element:
 
 ```csharp
 var tapGestureRecognizer = new TapGestureRecognizer();
@@ -30,19 +30,19 @@ tapGestureRecognizer.Tapped += (s, e) => {
 image.GestureRecognizers.Add(tapGestureRecognizer);
 ```
 
-Ve výchozím nastavení bude odpovídat bitovou kopii do jednoho odposlouchávání. Nastavte [ `NumberOfTapsRequired` ](https://developer.xamarin.com/api/property/Xamarin.Forms.TapGestureRecognizer.NumberOfTapsRequired/) vlastnost čekat poklepání (nebo další odposlouchávání v případě potřeby).
+Ve výchozím nastavení bude obrázek reagovat na jedné odposlouchávání. Nastavte [ `NumberOfTapsRequired` ](xref:Xamarin.Forms.TapGestureRecognizer.NumberOfTapsRequired) vlastnost čekat poklepání (nebo více odposlouchávání v případě potřeby).
 
 ```csharp
 tapGestureRecognizer.NumberOfTapsRequired = 2; // double-tap
 ```
 
-Když [ `NumberOfTapsRequired` ](https://developer.xamarin.com/api/property/Xamarin.Forms.TapGestureRecognizer.NumberOfTapsRequired/) nastavena výše, obslužné rutiny události bude spuštěn pouze pokud je tato klepnutí v rámci nastavte dobu, (toto období není konfigurovatelné). Pokud odposlouchávání druhý (nebo následné) nedojde v rámci této doby efektivně jsou ignorovány a restartuje, klepněte na count'.
+Když [ `NumberOfTapsRequired` ](xref:Xamarin.Forms.TapGestureRecognizer.NumberOfTapsRequired) nastavena vyššími, obslužná rutina události bude spuštěn pouze pokud odposlouchávání, ke kterým došlo v nastavenou dobu, (toto období není konfigurovatelné). Pokud během tohoto období nedojde odposlouchávání druhý (nebo následně) efektivně jsou ignorovány a tap počet restartuje.
 
 <a name="Using_Xaml" />
 
-## <a name="using-xaml"></a>Použitím jazyka Xaml
+## <a name="using-xaml"></a>Pomocí jazyka Xaml
 
-Pro rozpoznávání gesto mohou být přidány do ovládacího prvku v jazyce Xaml pomocí přidružené vlastnosti. Syntaxe pro přidání [ `TapGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/) do bitové kopie, které jsou uvedeny níže (v tomto případě definování *dvojité klepněte na* událostí):
+Rozpoznávání gest je přidat do ovládacího prvku v Xaml pomocí připojené vlastnosti. Syntaxe pro přidání [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) do bitové kopie, které jsou uvedené níže (v tomto případě definování *dvojitým klepnutím* události):
 
 ```xaml
 <Image Source="tapped.jpg">
@@ -54,7 +54,7 @@ Pro rozpoznávání gesto mohou být přidány do ovládacího prvku v jazyce Xa
 </Image>
 ```
 
-Kód pro obslužnou rutinu události (v ukázce) zvýší čítače a změní bitovou kopii na černé barvy &amp; bílé.
+Kód pro obslužnou rutinu události (v ukázce) zvýší čítač a obrázek z barvy změní na černou &amp; bílé.
 
 ```csharp
 void OnTapGestureRecognizerTapped(object sender, EventArgs args)
@@ -72,7 +72,7 @@ void OnTapGestureRecognizerTapped(object sender, EventArgs args)
 
 ## <a name="using-icommand"></a>Pomocí rozhraní ICommand
 
-Aplikace, které používají vzorec modelem Mvvm obvykle používat `ICommand` místo kabeláž přímo do obslužné rutiny událostí. [ `TapGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/) Může podporovat snadno `ICommand` buď nastavení vazby v kódu:
+Použití aplikace, které používají vzor Mvvm obvykle `ICommand` místo její přímo do obslužné rutiny událostí. [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) Může snadno podporovat `ICommand` buď nastavením vazby v kódu:
 
 ```csharp
 var tapGestureRecognizer = new TapGestureRecognizer();
@@ -80,7 +80,7 @@ tapGestureRecognizer.SetBinding (TapGestureRecognizer.CommandProperty, "TapComma
 image.GestureRecognizers.Add(tapGestureRecognizer);
 ```
 
-nebo použitím jazyka Xaml:
+nebo pomocí jazyka Xaml:
 
 ```xaml
 <Image Source="tapped.jpg">
@@ -92,7 +92,7 @@ nebo použitím jazyka Xaml:
 </Image>
 ```
 
-Kód dokončení pro tento model zobrazení naleznete v ukázce. Odpovídajícího `Command` níže jsou uvedeny podrobnosti implementace:
+Kompletní kód pro tento model zobrazení najdete v ukázce. Příslušné `Command` níže jsou uvedené podrobnosti implementace:
 
 ```csharp
 public class TapViewModel : INotifyPropertyChanged
@@ -116,11 +116,11 @@ public class TapViewModel : INotifyPropertyChanged
 
 ## <a name="summary"></a>Souhrn
 
-Klepněte na gesto se používá pro zjišťování klepněte na a je implementováno s [ `TapGestureRecognizer` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/) třídy. Počet odposlouchávání lze rozpoznat poklepání (nebo trojitého klepnutí, nebo více klepne) chování.
+Gesto klepnutí se používá pro zjišťování klepnutím a je implementováno s [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) třídy. K rozpoznání dvojitého klepnutí lze zadat počet odposlouchávání (nebo trojím, nebo více klepne) chování.
 
 
 ## <a name="related-links"></a>Související odkazy
 
 - [TapGesture (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithGestures/TapGesture/)
-- [GestureRecognizer](https://developer.xamarin.com/api/type/Xamarin.Forms.GestureRecognizer/)
-- [TapGestureRecognizer](https://developer.xamarin.com/api/type/Xamarin.Forms.TapGestureRecognizer/)
+- [GestureRecognizer](xref:Xamarin.Forms.GestureRecognizer)
+- [TapGestureRecognizer](xref:Xamarin.Forms.TapGestureRecognizer)

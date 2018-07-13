@@ -1,67 +1,67 @@
 ---
 title: Možnosti rozložení v Xamarin.Forms
-description: Každé zobrazení Xamarin.Forms má HorizontalOptions a VerticalOptions vlastnosti typu LayoutOptions. Tento článek vysvětluje o tom, že každá hodnota LayoutOptions má na zarovnání a rozšíření zobrazení.
+description: Každé zobrazení Xamarin.Forms má HorizontalOptions a VerticalOptions vlastnosti typu LayoutOptions. Tento článek vysvětluje, každá hodnota LayoutOptions vliv na zarovnání a rozšíření zobrazení.
 ms.prod: xamarin
 ms.assetid: 7CAB5631-5153-4DEF-8AD7-C6011CE44307
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/10/2017
-ms.openlocfilehash: dc15c05bf3633ef2ae5f71754290a7bd768dc836
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 1ede5f75925a3dafa93062d147fa349ff91f07d2
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245687"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995307"
 ---
 # <a name="layout-options-in-xamarinforms"></a>Možnosti rozložení v Xamarin.Forms
 
-_Každé zobrazení Xamarin.Forms má HorizontalOptions a VerticalOptions vlastnosti typu LayoutOptions. Tento článek vysvětluje o tom, že každá hodnota LayoutOptions má na zarovnání a rozšíření zobrazení._
+_Každé zobrazení Xamarin.Forms má HorizontalOptions a VerticalOptions vlastnosti typu LayoutOptions. Tento článek vysvětluje, každá hodnota LayoutOptions vliv na zarovnání a rozšíření zobrazení._
 
 ## <a name="overview"></a>Přehled
 
-[ `LayoutOptions` ](https://developer.xamarin.com/api/type/Xamarin.Forms.LayoutOptions/) Struktura zapouzdří dvě předvolby rozložení:
+[ `LayoutOptions` ](xref:Xamarin.Forms.LayoutOptions) Struktura zapouzdřuje dvě předvolby rozložení:
 
-- **Zarovnání** – zobrazení preferovaný zarovnání, což určuje jeho pozice a velikosti v rámci své nadřazené rozložení.
-- **Rozšíření** – používá se pouze [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/)a určuje, pokud zobrazení by měl použít místo navíc, pokud je k dispozici.
+- **Zarovnání** – zobrazení upřednostňovaného zarovnání, který udává jeho pozici a velikost v rámci své nadřazené rozložení.
+- **Rozšíření** – používá se pouze [ `StackLayout` ](xref:Xamarin.Forms.StackLayout)a znamená, pokud zobrazení by měl používat místo navíc, pokud je k dispozici.
 
-Lze použít tyto předvolby rozložení [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/), relativně k jeho nadřazeným prvkem, a to nastavením [ `HorizontalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.HorizontalOptions/) nebo [ `VerticalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) vlastnost `View` na jednu z veřejná pole z [ `LayoutOptions` ](https://developer.xamarin.com/api/type/Xamarin.Forms.LayoutOptions/) struktury. Veřejná pole jsou následující:
+Tyto předvolby rozložení můžete použít u [ `View` ](xref:Xamarin.Forms.View), relativní k nadřazené úloze, tak, že nastavíte [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions) nebo [ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions) vlastnost `View` k jednomu z veřejné pole z [ `LayoutOptions` ](xref:Xamarin.Forms.LayoutOptions) struktury. Veřejná pole jsou následující:
 
-- [`Start`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.Start/)
-- [`Center`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.Center/)
-- [`End`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.End/)
-- [`Fill`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.Fill/)
-- [`StartAndExpand`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.StartAndExpand/)
-- [`CenterAndExpand`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.CenterAndExpand/)
-- [`EndAndExpand`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.EndAndExpand/)
-- [`FillAndExpand`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.FillAndExpand/)
+- [`Start`](xref:Xamarin.Forms.LayoutOptions.Start)
+- [`Center`](xref:Xamarin.Forms.LayoutOptions.Center)
+- [`End`](xref:Xamarin.Forms.LayoutOptions.End)
+- [`Fill`](xref:Xamarin.Forms.LayoutOptions.Fill)
+- [`StartAndExpand`](xref:Xamarin.Forms.LayoutOptions.StartAndExpand)
+- [`CenterAndExpand`](xref:Xamarin.Forms.LayoutOptions.CenterAndExpand)
+- [`EndAndExpand`](xref:Xamarin.Forms.LayoutOptions.EndAndExpand)
+- [`FillAndExpand`](xref:Xamarin.Forms.LayoutOptions.FillAndExpand)
 
-`Start`, `Center`, `End`, A `Fill` pole slouží k určení zarovnání zobrazení v rámci nadřazené rozložení:
+`Start`, `Center`, `End`, A `Fill` pole se používají k definování zarovnání zobrazení v rámci nadřazené rozložení:
 
-- Pro vodorovné zarovnání [ `Start` ](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.Start/) pozice [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) na na levé straně na nadřazené rozložení a pro svislé zarovnání, umisťuje `View` v horní části nadřazené rozložení.
-- Pro vodorovné nebo svislé zarovnání [ `Center` ](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.Center/) vodorovně nebo svisle soustředí [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/).
-- Pro vodorovné zarovnání [ `End` ](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.End/) pozice [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) na pravé straně nadřazené rozložení a pro svislé zarovnání, umisťuje `View` v dolní části nadřazené rozložení.
-- Pro vodorovné zarovnání [ `Fill` ](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.Fill/) zajistí, že [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) vyplní celé šířce nadřazeného rozložení a pro svislé zarovnání, zajišťuje, aby `View` vyplní celé Výška nadřazené rozložení.
+- Vodorovné zarovnání [ `Start` ](xref:Xamarin.Forms.LayoutOptions.Start) pozice [ `View` ](xref:Xamarin.Forms.View) na levé straně nadřazené rozložení a svislé zarovnání, umístí `View` v horní části nadřazené rozložení.
+- Pro vodorovného a svislého zarovnání [ `Center` ](xref:Xamarin.Forms.LayoutOptions.Center) vodorovně nebo svisle centra [ `View` ](xref:Xamarin.Forms.View).
+- Vodorovné zarovnání [ `End` ](xref:Xamarin.Forms.LayoutOptions.End) pozice [ `View` ](xref:Xamarin.Forms.View) na pravé straně nadřazené rozložení a svislé zarovnání, umístí `View` v dolní části nadřazené rozložení.
+- Vodorovné zarovnání [ `Fill` ](xref:Xamarin.Forms.LayoutOptions.Fill) zajišťuje, že [ `View` ](xref:Xamarin.Forms.View) vyplní šířku nadřazené rozložení a svislé zarovnání, zajišťuje, že `View` vyplní Výška nadřazené rozložení.
 
-`StartAndExpand`, `CenterAndExpand`, `EndAndExpand`, A `FillAndExpand` hodnoty slouží k určení zarovnání předvoleb, a zda zobrazení bude zabírat více místa, pokud je k dispozici v rámci nadřazené [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/).
+`StartAndExpand`, `CenterAndExpand`, `EndAndExpand`, A `FillAndExpand` hodnoty se používají k definování předvoleb zarovnání a určuje, zda zobrazení bude zabírat více místa, pokud je k dispozici v rámci nadřazené [ `StackLayout` ](xref:Xamarin.Forms.StackLayout).
 
 > [!NOTE]
-> Výchozí hodnota pro zobrazení [ `HorizontalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.HorizontalOptions/) a [ `VerticalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) vlastnosti je [ `LayoutOptions.Fill` ](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.Fill/).
+> Výchozí hodnota pro zobrazení [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions) a [ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions) vlastnosti je [ `LayoutOptions.Fill` ](xref:Xamarin.Forms.LayoutOptions.Fill).
 
 <a name="alignment" />
 
 ## <a name="alignment"></a>Zarovnání
 
-Zarovnání řídí, jak zobrazení je umístěn v rámci své nadřazené rozložení při rozložení nadřazené obsahuje nevyužívaného místa (nadřazené rozložení je větší než celková velikost všech jeho podřízených položek).
+Zarovnání řídí, jak zobrazení je umístěn v rámci své nadřazené rozložení při rozložení nadřazené obsahuje nevyužité místo (to znamená, nadřazené rozložení je větší než celková velikost všech jeho podřízených prvků).
 
-A [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) pouze respektuje `Start`, `Center`, `End`, a `Fill` [ `LayoutOptions` ](https://developer.xamarin.com/api/type/Xamarin.Forms.LayoutOptions/) pole na podřízené zobrazení, které jsou v opačném směru na `StackLayout` orientace. Proto podřízené zobrazení v rámci svisle orientované `StackLayout` můžete nastavit jejich [ `HorizontalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.HorizontalOptions/) vlastností do jednoho ze `Start`, `Center`, `End`, nebo `Fill` pole. Podobně podřízené zobrazení v rámci vodorovně orientované `StackLayout` můžete nastavit jejich [ `VerticalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) vlastností do jednoho ze `Start`, `Center`, `End`, nebo `Fill` pole.
+A [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) pouze respektuje `Start`, `Center`, `End`, a `Fill` [ `LayoutOptions` ](xref:Xamarin.Forms.LayoutOptions) polí na podřízené zobrazení, které jsou v opačném směru Chcete `StackLayout` orientace. Proto podřízené zobrazení v rámci svisle orientovaný `StackLayout` můžete nastavit jejich [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions) vlastností do jednoho ze `Start`, `Center`, `End`, nebo `Fill` pole. Obdobně podřízené zobrazení v rámci vodorovně orientovaného `StackLayout` můžete nastavit jejich [ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions) vlastností do jednoho ze `Start`, `Center`, `End`, nebo `Fill` pole.
 
-A [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) nerespektuje `Start`, `Center`, `End`, a `Fill` [ `LayoutOptions` ](https://developer.xamarin.com/api/type/Xamarin.Forms.LayoutOptions/) pole na podřízené zobrazení, které jsou ve stejném směru jako `StackLayout` orientace. Proto svisle orientované `StackLayout` ignoruje `Start`, `Center`, `End`, nebo `Fill` pole, pokud jsou nastavená na [ `VerticalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) vlastnosti podřízené zobrazení. Podobně, vodorovně orientované `StackLayout` ignoruje `Start`, `Center`, `End`, nebo `Fill` pole, pokud jsou nastavená na [ `HorizontalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.HorizontalOptions/) vlastnosti podřízené zobrazení.
+A [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) nerespektuje `Start`, `Center`, `End`, a `Fill` [ `LayoutOptions` ](xref:Xamarin.Forms.LayoutOptions) polí na podřízené zobrazení, které jsou ve stejném směru jako `StackLayout` orientace. Proto svisle orientovaný `StackLayout` ignoruje `Start`, `Center`, `End`, nebo `Fill` pole v případě, že jsou nastavené na [ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions) vlastnosti podřízené zobrazení. Podobně, vodorovně orientovaného `StackLayout` ignoruje `Start`, `Center`, `End`, nebo `Fill` pole v případě, že jsou nastavené na [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions) vlastnosti podřízené zobrazení.
 
 > [!NOTE]
-> [`LayoutOptions.Fill`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.Fill/) obecně přepsání velikost zadán pomocí požadavků [ `HeightRequest` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.HeightRequest/) a [ `WidthRequest` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.WidthRequest/) vlastnosti.
+> [`LayoutOptions.Fill`](xref:Xamarin.Forms.LayoutOptions.Fill) obecně přepsání velikost požadavků určeny pomocí [ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest) a [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest) vlastnosti.
 
-Následující příklad kódu XAML ukazuje svisle orientované [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) kde jednotlivých podřízených [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) nastaví jeho [ `HorizontalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.HorizontalOptions/) vlastnost na jedno z polí čtyři zarovnání z [ `LayoutOptions` ](https://developer.xamarin.com/api/type/Xamarin.Forms.LayoutOptions/) strukturu:
+Následující příklad kódu XAML ukazuje svisle orientovaný [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) kde jednotlivých podřízených [ `Label` ](xref:Xamarin.Forms.Label) nastaví jeho [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions) vlastnost na jedno z polí čtyři zarovnání z [ `LayoutOptions` ](xref:Xamarin.Forms.LayoutOptions) struktury:
 
 ```xaml
 <StackLayout Margin="0,20,0,0">
@@ -73,7 +73,7 @@ Následující příklad kódu XAML ukazuje svisle orientované [ `StackLayout` 
 </StackLayout>
 ```
 
-Ekvivalentní kódu C# je zobrazena níže:
+Ekvivalentní kód jazyka C# je uveden níže:
 
 ```csharp
 Content = new StackLayout
@@ -89,24 +89,24 @@ Content = new StackLayout
 };
 ```
 
-Kód výsledkem rozložení vidět na následujících snímcích obrazovky:
+Kód za následek rozložení je znázorněno na následujících snímcích obrazovky:
 
-[![](layout-options-images/alignment.png "Možnosti zarovnání rozložení")](layout-options-images/alignment-large.png#lightbox "možnosti zarovnání rozložení")
+[![](layout-options-images/alignment.png "Možnosti rozložení zarovnání")](layout-options-images/alignment-large.png#lightbox "možnosti rozložení zarovnání")
 
 <a name="expansion" />
 
 ## <a name="expansion"></a>Rozšíření
 
-Rozšíření řídí, zda zobrazení bude zabírat více místa, pokud je k dispozici v rámci [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/). Pokud `StackLayout` obsahuje nevyužívaného místa (tedy `StackLayout` je větší než celková velikost všech jeho podřízených položek), nevyužité místo sdílí stejnou měrou všechny podřízené zobrazení, která požádat o rozšíření nastavením jejich [ `HorizontalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.HorizontalOptions/)nebo [ `VerticalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) vlastností [ `LayoutOptions` ](https://developer.xamarin.com/api/type/Xamarin.Forms.LayoutOptions/) pole, které používá `AndExpand` příponu. Všimněte si, že když veškeré místo v `StackLayout` se používá, možnosti rozšíření nemají žádný vliv.
+Rozšíření určuje, zda zobrazení bude zabírat více místa, pokud je k dispozici v rámci [ `StackLayout` ](xref:Xamarin.Forms.StackLayout). Pokud `StackLayout` obsahuje nevyužité místo (to znamená, `StackLayout` je větší než kombinované velikosti všech podřízených), nevyužité místo je sdílet stejnou měrou všechny podřízené zobrazení, které požadují rozšíření tak, že nastavíte jejich [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions)nebo [ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions) vlastnosti, které chcete [ `LayoutOptions` ](xref:Xamarin.Forms.LayoutOptions) pole, které používá `AndExpand` příponu. Všimněte si, že veškeré místo v `StackLayout` je používají, možnosti rozšíření nemají žádný vliv.
 
-A [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) můžete rozšířit pouze podřízené zobrazení ve směru orientace. Proto svisle orientované `StackLayout` můžete rozbalit podřízené zobrazení, které nastavit jejich [ `VerticalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) vlastností do jednoho ze `StartAndExpand`, `CenterAndExpand`, `EndAndExpand`, nebo `FillAndExpand` pole, pokud `StackLayout` obsahuje nevyužívaného místa. Podobně, vodorovně orientované `StackLayout` můžete rozbalit podřízené zobrazení, které nastavit jejich [ `HorizontalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.HorizontalOptions/) vlastností do jednoho ze `StartAndExpand`, `CenterAndExpand`, `EndAndExpand`, nebo `FillAndExpand` pole, pokud `StackLayout` obsahuje nevyužívaného místa.
+A [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) můžete rozbalit jenom podřízené zobrazení ve směru orientace. Proto svisle orientovaný `StackLayout` můžete rozbalit podřízené zobrazení, které nastavit jejich [ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions) vlastností do jednoho ze `StartAndExpand`, `CenterAndExpand`, `EndAndExpand`, nebo `FillAndExpand` polí, pokud `StackLayout` obsahuje nevyužité místo. Podobně, vodorovně orientovaného `StackLayout` můžete rozbalit podřízené zobrazení, které nastavit jejich [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions) vlastností do jednoho ze `StartAndExpand`, `CenterAndExpand`, `EndAndExpand`, nebo `FillAndExpand` polí, pokud `StackLayout` obsahuje nevyužité místo.
 
-A [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) nelze rozbalit podřízené zobrazení, v opačném než její orientace. Proto na svisle orientované `StackLayout`, nastavení [ `HorizontalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.HorizontalOptions/) vlastnost podřízené zobrazení [ `StartAndExpand` ](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.StartAndExpand/) má stejný účinek jako nastavení vlastnosti na [ `Start`](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.Start/).
+A [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) nelze rozbalit podřízené zobrazení ve směru než jeho orientace. Proto se na svisle orientovaný `StackLayout`a nastavte [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions) vlastnost u podřízené zobrazení, které [ `StartAndExpand` ](xref:Xamarin.Forms.LayoutOptions.StartAndExpand) má stejný účinek jako nastavení vlastnosti na [ `Start`](xref:Xamarin.Forms.LayoutOptions.Start).
 
 > [!NOTE]
-> Všimněte si, že povolení rozšíření nemění velikost zobrazení pokud používá [ `LayoutOptions.FillAndExpand` ](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.FillAndExpand/).
+> Všimněte si, že povolení rozšíření nemění velikost zobrazení pokud používá [ `LayoutOptions.FillAndExpand` ](xref:Xamarin.Forms.LayoutOptions.FillAndExpand).
 
-Následující příklad kódu XAML ukazuje svisle orientované [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) kde jednotlivých podřízených [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) nastaví jeho [ `VerticalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) vlastnost na jedno z polí čtyři rozšíření z [ `LayoutOptions` ](https://developer.xamarin.com/api/type/Xamarin.Forms.LayoutOptions/) strukturu:
+Následující příklad kódu XAML ukazuje svisle orientovaný [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) kde jednotlivých podřízených [ `Label` ](xref:Xamarin.Forms.Label) nastaví jeho [ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions) vlastnost na jedno z polí čtyři rozšíření z [ `LayoutOptions` ](xref:Xamarin.Forms.LayoutOptions) struktury:
 
 ```xaml
 <StackLayout Margin="0,20,0,0">
@@ -123,7 +123,7 @@ Následující příklad kódu XAML ukazuje svisle orientované [ `StackLayout` 
 </StackLayout>
 ```
 
-Ekvivalentní kódu C# je zobrazena níže:
+Ekvivalentní kód jazyka C# je uveden níže:
 
 ```csharp
 Content = new StackLayout
@@ -144,19 +144,19 @@ Content = new StackLayout
 };
 ```
 
-Kód výsledkem rozložení vidět na následujících snímcích obrazovky:
+Kód za následek rozložení je znázorněno na následujících snímcích obrazovky:
 
-[![](layout-options-images/expansion.png "Možnosti rozložení rozšíření")](layout-options-images/expansion-large.png#lightbox "možnosti rozšíření rozložení")
+[![](layout-options-images/expansion.png "Možnosti rozložení rozšíření")](layout-options-images/expansion-large.png#lightbox "rozšíření možnosti rozložení")
 
-Každý [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) zabírá stejné množství místa v rámci [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/). Však pouze konečné `Label`, která nastaví jeho [ `VerticalOptions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.View.VerticalOptions/) vlastnost [ `FillAndExpand` ](https://developer.xamarin.com/api/field/Xamarin.Forms.LayoutOptions.FillAndExpand/) má různou velikost. Kromě toho každý `Label` jsou oddělené oddělovačem malé red [ `BoxView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BoxView/), což umožňuje prostor `Label` zabírá lze snadno zobrazit.
+Každý [ `Label` ](xref:Xamarin.Forms.Label) zabírají stejné množství mezeru mezi kulaté [ `StackLayout` ](xref:Xamarin.Forms.StackLayout). Nicméně pouze poslední `Label`, který nastaví jeho [ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions) vlastnost [ `FillAndExpand` ](xref:Xamarin.Forms.LayoutOptions.FillAndExpand) má jinou velikost. Kromě toho každý `Label` jsou oddělené oddělovačem malé red [ `BoxView` ](xref:Xamarin.Forms.BoxView), což umožňuje místo `Label` zabírá snadné prohlížení.
 
 ## <a name="summary"></a>Souhrn
 
-Tento článek vysvětlené účinek že každý [ `LayoutOptions` ](https://developer.xamarin.com/api/type/Xamarin.Forms.LayoutOptions/) hodnoty strukturu má na zarovnání a rozšíření zobrazení, relativně k nadřazenému. `Start`, `Center`, `End`, A `Fill` pole slouží k určení zarovnání zobrazení v rámci nadřazené rozložení a `StartAndExpand`, `CenterAndExpand`, `EndAndExpand`, a `FillAndExpand` pole slouží k určení Zarovnání předvoleb a určení, zda zobrazení bude zabírat více místa, pokud je k dispozici v rámci [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/).
+Tento článek vysvětlil efekt, které každý [ `LayoutOptions` ](xref:Xamarin.Forms.LayoutOptions) struktura hodnota má na zarovnání a rozšíření zobrazení, relativně k nadřazenému. `Start`, `Center`, `End`, A `Fill` pole se používají k definování zarovnání zobrazení v rámci nadřazené rozložení a `StartAndExpand`, `CenterAndExpand`, `EndAndExpand`, a `FillAndExpand` pole se používají k definování Předvolby zarovnání a na zjištění, zda zobrazení bude zabírat více místa, pokud je k dispozici v rámci [ `StackLayout` ](xref:Xamarin.Forms.StackLayout).
 
 
 
 ## <a name="related-links"></a>Související odkazy
 
 - [LayoutOptions (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/layoutoptions/)
-- [LayoutOptions](https://developer.xamarin.com/api/type/Xamarin.Forms.LayoutOptions/)
+- [LayoutOptions](xref:Xamarin.Forms.LayoutOptions)

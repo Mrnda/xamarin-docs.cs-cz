@@ -1,65 +1,65 @@
 ---
-title: XAML – rozšíření značek
-description: Článek vysvětluje, jak používat rozšíření značek Xamarin.Forms XAML a rozšířit výkon a flexibilitu XAML tím, že atributy prvků nastavit z jiných zdrojů než literálu textové řetězce.
+title: Rozšíření značek XAML
+description: Tento článek vysvětluje způsob používání rozšíření značek XAML Xamarin.Forms rozšířit výkonná a flexibilní XAML, tím, že element atributů, které mají být v rozsahu od zdrojů než literál řetězce.
 ms.prod: xamarin
 ms.assetid: EB06C8B7-3FD5-47B7-A09C-A13063BD110F
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: c6f1853c5864eed8484e7746755c6fa80a28a49b
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: d507ff3c74de6bb4ea36c1a7b7dc2cd5dd60823b
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245882"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996737"
 ---
-# <a name="xaml-markup-extensions"></a>XAML – rozšíření značek
+# <a name="xaml-markup-extensions"></a>Rozšíření značek XAML
 
-XAML – rozšíření značek pomáhají prodloužit výkon a flexibilitu XAML tím, že atributy prvků nastavit z jiných zdrojů než literálu textové řetězce.
+Rozšíření značek XAML pomáhají rozšířit výkonná a flexibilní XAML, tím, že element atributů, které mají být v rozsahu od zdrojů než literál řetězce.
 
-Například obvykle nastaveno `Color` vlastnost `BoxView` podobné výjimky:
+Například obvykle nastaveno `Color` vlastnost `BoxView` tímto způsobem:
 
 ```xaml
 <BoxView Color="Blue" />
 ```
 
-Nebo, můžete ho nastavit na hodnotu hexadecimální barva RGB:
+Nebo můžete ho nastavit na šestnáctkovou hodnotu barva RGB:
 
 ```xaml
 <BoxView Color="#FF0080" />
 ```
 
-V obou případech textový řetězec nastavena `Color` atribut je převést na `Color` hodnota ve [ `ColorTypeConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ColorTypeConverter/) – třída.
+V obou případech se textový řetězec nastaven na `Color` atribut je převedena na `Color` hodnota [ `ColorTypeConverter` ](xref:Xamarin.Forms.ColorTypeConverter) třídy.
 
-Může místo toho raději nastavit `Color` atribut z hodnoty uloženy ve slovníku prostředků, nebo hodnotu pomocí statické vlastnosti třídy, kterou jste vytvořili nebo vlastnost typu `Color` jiného elementu na stránce nebo vytvořený z oddělte hodnoty hue, sytost a Světlost.
+Pravděpodobně budete chtít místo toho nastavit `Color` atribut z hodnoty uloženy ve slovníku prostředků, nebo hodnotu statická vlastnost třídy, kterou jste vytvořili nebo vlastnost typu `Color` jiného elementu na stránce, nebo vytvořený z oddělte hodnoty odstín, sytost a světelnost.
 
-Je možné pomocí rozšíření značek v jazyce XAML, všechny tyto možnosti. Ale Nenechte fráze "rozšíření značek" vystrašení jste: XAML – rozšíření značek jsou *není* rozšíření do formátu XML. I když rozšíření značek v jazyce XAML XAML je vždy právní XML.
+Všechny tyto možnosti jsou přes rozšíření značek XAML. Ale Nenechte frázi "přípony označení" vystrašení vám: rozšíření značek XAML jsou *není* rozšíření XML. Dokonce i rozšíření značek XAML, XAML jsou vždy právní XML.
 
-Rozšíření značek je skutečně právě jiný způsob, jak express atribut elementu. XAML – rozšíření značek jsou obvykle osobní nastavením atributu, který je uzavřen do složených závorek:
+Rozšíření značek je vlastně jenom jiný způsob, jak vyjádřit atribut prvku. Rozšíření značek XAML jsou obvykle poznáte ho podle nastavení atributu, který je uzavřen ve složených závorkách:
 
 ```xaml
 <BoxView Color="{StaticResource themeColor}" />
 ```
 
-Všechna nastavení atributu do složených závorek je *vždy* rozšíření značek XAML. Ale jak zjistíte, XAML – rozšíření značek lze také odkazovat bez použití složené závorky.
+Jakékoli nastavení atributu ve složených závorkách je *vždy* rozšíření značek XAML. Ale jak uvidíte, rozšíření značek XAML lze také odkazovat bez použití složených závorek.
 
-Tento článek je rozdělené do dvou částí:
+Tento článek je rozdělený do dvou částí:
 
 ## <a name="consuming-xaml-markup-extensionsconsumingmd"></a>[Používání rozšíření značek XAML](consuming.md)  
 
-Pomocí rozšíření značek XAML, který je definován v Xamarin.Forms.
+Použití rozšíření značek XAML, který je definován v Xamarin.Forms.
 
 ## <a name="creating-xaml-markup-extensionscreatingmd"></a>[Vytváření rozšíření značek XAML](creating.md)
 
-Zápis vlastní vlastní rozšíření značek v jazyce XAML.
+Napište vlastní vlastní rozšíření značek XAML.
 
 
 
 ## <a name="related-links"></a>Související odkazy
 
 - [Rozšíření značek (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/XAML/MarkupExtensions/)
-- [Kapitola rozšíření značek XAML z adresáře Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
+- [Kapitola rozšíření značek XAML Xamarin.Forms knihy](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
 - [Slovníky prostředků](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [Dynamické styly](~/xamarin-forms/user-interface/styles/dynamic.md)
 - [Datová vazba](~/xamarin-forms/app-fundamentals/data-binding/index.md)

@@ -1,36 +1,36 @@
 ---
-title: Ověření v podnikové aplikace
-description: Tato kapitola vysvětluje, jak mobilní aplikace eShopOnContainers provede ověření vstupu uživatele. To zahrnuje určení ověřovacích pravidel, která aktivuje ověření a zobrazení chyby ověření.
+title: Ověřování v podnikových aplikací
+description: Tato kapitola popisuje, jak aplikaci eShopOnContainers mobilní aplikace provádí ověření vstupu uživatele. To zahrnuje určení pravidel ověřování, aktivuje ověření a zobrazování chyb při ověřování.
 ms.prod: xamarin
 ms.assetid: 56e4f0fc-48d9-4033-91ec-173bb46a5e4d
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 6a7f244b78d5b48dd219f59f1191993d62663bbf
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 2b4be17e3c96ee223433b435a7b1011eafa8e9db
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243174"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995824"
 ---
-# <a name="validation-in-enterprise-apps"></a>Ověření v podnikové aplikace
+# <a name="validation-in-enterprise-apps"></a>Ověřování v podnikových aplikací
 
-Jakékoli aplikaci, která přijímá vstup od uživatele zkontrolujte, že vstup je neplatný. Aplikace může například zkontrolovat pro vstup, obsahuje pouze znaky v konkrétní rozsah, je určité délky nebo odpovídá konkrétní formátu. Bez ověřování může uživatel zadat data, která způsobila selhání aplikace. Ověření vynucuje obchodní pravidla a zabraňuje útočníkovi vložení škodlivá data.
+Jakékoli aplikaci, která přijímá vstup od uživatelů by měly zajistit, že je vstup platný. Aplikace může například zkontrolujte vstup, která obsahuje pouze znaky v konkrétní oblasti, odpovídá konkrétní formát nebo je z určité délky. Bez ověřování může uživatel zadat data, která způsobí, že aplikace selhala. Ověření vynucuje obchodní pravidla a zabrání útočníkovi ve vkládání škodlivá data.
 
-V kontextu systému Model ViewModel Model (modelem MVVM) vzor, zobrazení model nebo model bude často nutné provést ověření dat a signál všechny chyby ověření do zobrazení, takže uživatel může opravte je. Mobilní aplikace eShopOnContainers provede synchronní ověřování na straně klienta vlastností modelu zobrazení a upozorní uživatele všechny chyby ověření zvýraznění ovládací prvek, který obsahuje neplatná data a zobrazení chybové zprávy, které informovat uživatele Proč dat je neplatný. Obrázek 6-1 ukazuje třídy účastnících se provádění ověření v eShopOnContainers mobilní aplikace.
+V rámci Model ViewModel Model (MVVM) vzor, model zobrazení nebo model bude často nutné provést ověření dat a signalizuje, že všechny chyby ověření do zobrazení tak, aby uživatel opravit. Mobilní aplikace aplikaci eShopOnContainers provádí synchronní ověřování na straně klienta vlastností zobrazení modelu a upozorní uživatele všechny chyby ověření zvýrazněním ovládací prvek, který obsahuje neplatná data a tím, že zobrazuje chybové zprávy, které uživatele informuje, že Proč je neplatná data. Obrázek 6-1 ukazuje třídy účastnící se provádí ověřování v aplikaci eShopOnContainers mobilní aplikaci.
 
-[![](validation-images/validation.png "Ověření třídy v mobilní aplikaci eShopOnContainers")](validation-images/validation-large.png#lightbox "ověření třídy v mobilní aplikaci eShopOnContainers")
+[![](validation-images/validation.png "Ověření třídy v aplikaci eShopOnContainers mobilní aplikaci")](validation-images/validation-large.png#lightbox "třídy ověřování v aplikaci eShopOnContainers mobilní aplikaci")
 
-**Obrázek 6-1**: ověření třídy v mobilní aplikaci eShopOnContainers
+**Obrázek 6-1**: ověření třídy v aplikaci eShopOnContainers mobilní aplikace
 
-Zobrazit vlastnosti modelu, které vyžadují ověření jsou typu `ValidatableObject<T>`a každou `ValidatableObject<T>` instance má ověřovacích pravidel, které jsou přidány do jeho `Validations` vlastnost. Ověření je volána z modelu zobrazení pomocí volání `Validate` metodu `ValidatableObject<T>` instanci, která načte ověřovací pravidla a provede jejich proti `ValidatableObject<T>` `Value` vlastnost. Všechny chyby ověřování se umístí do `Errors` vlastnost `ValidatableObject<T>` instance a `IsValid` vlastnost `ValidatableObject<T>` instance je aktualizována indikující, zda bylo ověření úspěšné nebo se nezdařilo.
+Zobrazit vlastnosti modelu, které vyžadují ověření jsou typu `ValidatableObject<T>`a každý `ValidatableObject<T>` instance má ověřovacích pravidel, které jsou přidány do jeho `Validations` vlastnost. Vyvolání z modelu zobrazení ověření zavoláním `Validate` metodu `ValidatableObject<T>` instanci, která načte ověření pravidla a provede je proti `ValidatableObject<T>` `Value` vlastnost. Všechny chyby ověření jsou umístěny do `Errors` vlastnost `ValidatableObject<T>` instance a `IsValid` vlastnost `ValidatableObject<T>` je instance aktualizována označující, zda ověření úspěšné nebo neúspěšné.
 
-Oznámení o změně vlastností zajišťuje `ExtendedBindableObject` třída a tak [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) řízení můžete vázat na `IsValid` vlastnost `ValidatableObject<T>` instance do třídy modelu zobrazení pro informováni o tom, zda Zadaná data jsou platná.
+Oznámení změn vlastností poskytuje `ExtendedBindableObject` třídy a proto [ `Entry` ](xref:Xamarin.Forms.Entry) lze svázat ovládací prvek `IsValid` vlastnost `ValidatableObject<T>` instance ve třídě modelu zobrazení, která vás upozorní, zda zadané údaje je neplatný.
 
-## <a name="specifying-validation-rules"></a>Zadání pravidel ověřování
+## <a name="specifying-validation-rules"></a>Určení pravidel ověřování
 
-Ověřovací pravidla jsou určené třídu odvozenou od `IValidationRule<T>` rozhraní, což je znázorněno v následujícím příkladu kódu:
+Ověřovací pravidla jsou určena pomocí vytvoření, která je odvozena z třídy `IValidationRule<T>` rozhraní, které je znázorněno v následujícím příkladu kódu:
 
 ```csharp
 public interface IValidationRule<T>  
@@ -40,9 +40,9 @@ public interface IValidationRule<T>
 }
 ```
 
-Toto rozhraní určuje, že musíte zadat třídu pravidlo ověření `boolean` `Check` metoda, která se používá k provedení požadované ověření a `ValidationMessage` vlastnost, jehož hodnota je chybová zpráva ověření, která se zobrazí, pokud ověření se nezdaří.
+Toto rozhraní určuje, že musíte zadat třídu pravidel ověřování `boolean` `Check` metodu, která se používá k provedení požadované ověřovací a `ValidationMessage` vlastnost, jejíž hodnota je chybovou zprávu ověření, který se zobrazí, pokud ověření se nezdaří.
 
-Následující příklad kódu ukazuje `IsNotNullOrEmptyRule<T>` ověřovací pravidlo, které se používá k provádění ověření uživatelské jméno a heslo zadané uživatelem `LoginView` při použití v mobilní aplikaci eShopOnContainers imitované služeb:
+Následující příklad kódu ukazuje `IsNotNullOrEmptyRule<T>` ověřovacího pravidla, která se používá k provedení ověření uživatelské jméno a heslo zadané uživatelem `LoginView` při použití mock služeb v aplikaci eShopOnContainers mobilní aplikace:
 
 ```csharp
 public class IsNotNullOrEmptyRule<T> : IValidationRule<T>  
@@ -62,9 +62,9 @@ public class IsNotNullOrEmptyRule<T> : IValidationRule<T>
 }
 ```
 
-`Check` Metoda vrátí `boolean` určující, zda je hodnota argumentu `null`, prázdný nebo obsahuje jenom prázdné znaky.
+`Check` Metoda vrátí hodnotu `boolean` určující, zda je hodnota argumentu `null`, prázdný nebo obsahuje pouze prázdné znaky.
 
-I když není používán eShopOnContainers mobilní aplikace, následující příklad kódu ukazuje ověřovacího pravidla pro ověření e-mailové adresy:
+I když se nepoužívá v aplikaci eShopOnContainers mobilní aplikaci, následující příklad kódu ukazuje ověřovacího pravidla pro ověření e-mailové adresy:
 
 ```csharp
 public class EmailRule<T> : IValidationRule<T>  
@@ -87,14 +87,14 @@ public class EmailRule<T> : IValidationRule<T>
 }
 ```
 
-`Check` Metoda vrátí `boolean` označující, zda hodnota argument je platný e-mailovou adresu. Toho dosáhnete tak, že hodnota argument pro první výskyt zadané v vzor regulárního výrazu `Regex` konstruktor. Jestli regulární výraz nebyl nalezen ve vstupním řetězci se dá určit kontrolou hodnotu `Match` objektu `Success` vlastnost.
+`Check` Metoda vrátí hodnotu `boolean` určující, zda je hodnota argumentu platné e-mailovou adresu. Toho můžete dosáhnout tak, že hodnota argumentu pro první výskyt podle vzoru regulárního výrazu `Regex` konstruktoru. Určuje, zda byla nalezena vzor regulárního výrazu ve vstupním řetězci se dají určit pomocí kontroly hodnoty `Match` objektu `Success` vlastnost.
 
 > [!NOTE]
-> Ověření vlastností někdy může zahrnovat závislé vlastnosti. Je například závislé vlastnosti, když sada platné hodnoty pro vlastnosti A závisí na konkrétní hodnotu, která byla nastavena ve vlastnosti B. Chcete-li zkontrolovat, že hodnota vlastnosti A je jednou z povolených hodnot by zahrnovat načítání hodnotu vlastnosti B. Kromě toho při změně hodnoty vlastnosti B, vlastnosti A by musela být obnoveny.
+> Ověření vlastností můžete někdy zahrnují závislé vlastnosti. Příklad závislé vlastnosti je při sady platné hodnoty pro vlastnost A závisí na konkrétní hodnotu, která je nastavená vlastnost B. Chcete-li zkontrolovat, že hodnota vlastnosti A je jedním z povolených hodnot by vyžadovalo načítání hodnoty vlastnosti B. Navíc při změně hodnoty vlastnosti B, vlastnosti A bude potřeba ověřit.
 
-## <a name="adding-validation-rules-to-a-property"></a>Přidání pravidla ověřování na vlastnost
+## <a name="adding-validation-rules-to-a-property"></a>Přidání pravidel ověřování do vlastnosti
 
-V mobilní aplikaci eShopOnContainers jsou deklarované vlastnosti modelu zobrazení, které vyžadují ověření bude typu `ValidatableObject<T>`, kde `T` je typu dat, která má být ověřen. Následující příklad kódu ukazuje příklad dvě tyto vlastnosti:
+V aplikaci eShopOnContainers mobilní aplikaci, jsou deklarovány jako typ zobrazení vlastností modelu, které vyžadují ověření `ValidatableObject<T>`, kde `T` je typ dat, která má být ověřen. Následující příklad kódu ukazuje příklad tyto dvě vlastnosti:
 
 ```csharp
 public ValidatableObject<string> UserName  
@@ -124,7 +124,7 @@ public ValidatableObject<string> Password
 }
 ```
 
-Pro ověření proběhnout, musí být přidaný do ověřovacích pravidel `Validations` kolekce jednotlivých `ValidatableObject<T>` instance, jak je ukázáno v následujícím příkladu kódu:
+Pro dojde k ověření, musí být přidané do ověřovacích pravidel `Validations` kolekce jednotlivých `ValidatableObject<T>` instance, jak je ukázáno v následujícím příkladu kódu:
 
 ```csharp
 private void AddValidations()  
@@ -140,15 +140,15 @@ private void AddValidations()
 }
 ```
 
-Tato metoda přidá `IsNotNullOrEmptyRule<T>` ověřovacího pravidla pro `Validations` kolekce jednotlivých `ValidatableObject<T>` instance, zadání hodnot pro ověřovací pravidlo `ValidationMessage` vlastnosti, která určuje chybovou zprávu ověření, který se zobrazí, pokud ověření se nezdaří.
+Tato metoda přidá `IsNotNullOrEmptyRule<T>` ověřovacího pravidla pro `Validations` kolekce jednotlivých `ValidatableObject<T>` instance, určuje hodnoty pro ověřovací pravidlo `ValidationMessage` vlastnost, která určuje chybovou zprávu ověření, který se zobrazí, pokud ověření se nezdaří.
 
 ## <a name="triggering-validation"></a>Spouštění ověření
 
-Metoda ověření používaná v mobilní aplikaci eShopOnContainers můžete ručně spustit ověřování vlastnosti a automaticky aktivační událost ověření změní-li vlastnost.
+Tato metoda ověřování v aplikaci eShopOnContainers mobilní aplikaci můžete ručně aktivovat ověřování vlastnosti a automaticky aktivační událost ověření při změně vlastnosti.
 
-### <a name="triggering-validation-manually"></a>Spouštění ověření ručně
+### <a name="triggering-validation-manually"></a>Ruční aktivace ověření
 
-Ověření lze spustit ručně pro vlastnosti modelu zobrazení. Například k tomu dochází v mobilní aplikaci eShopOnContainers když uživatel klepnutím **přihlášení** tlačítko `LoginView`, při použití imitované služeb. Delegát volání příkazu `MockSignInAsync` metoda v `LoginViewModel`, který vyvolá ověření spuštěním `Validate` metodu, která je znázorněno v následujícím příkladu kódu:
+Ověření lze spustit ručně pro vlastnosti modelu zobrazení. Například to nastane v aplikaci eShopOnContainers mobilní aplikaci uživatel klepne **přihlášení** tlačítko `LoginView`, při použití mock služeb. Volání delegáta příkaz `MockSignInAsync` metoda ve `LoginViewModel`, který vyvolá ověření pomocí provádí `Validate` metoda, která je znázorněna v následujícím příkladu kódu:
 
 ```csharp
 private bool Validate()  
@@ -169,7 +169,7 @@ private bool ValidatePassword()
 }
 ```
 
-`Validate` Metoda provádí ověření uživatelské jméno a heslo zadané uživatelem `LoginView`, voláním metody ověření v každém `ValidatableObject<T>` instance. Následující příklad kódu ukazuje metodu Validate z `ValidatableObject<T>` třídy:
+`Validate` Metoda ověří uživatelské jméno a heslo zadané uživatelem `LoginView`, voláním metody Validate v každém `ValidatableObject<T>` instance. Následující příklad kódu ukazuje metodu Validate z `ValidatableObject<T>` třídy:
 
 ```csharp
 public bool Validate()  
@@ -187,11 +187,11 @@ public bool Validate()
 }
 ```
 
-Tato metoda odstraní `Errors` kolekce a potom načte všechny ověřovací pravidla, které byly přidány do objektu `Validations` kolekce. `Check` Proveden metoda pro každou načtenou ověřovací pravidlo a `ValidationMessage` hodnota vlastnosti pro ověřovací pravidlo, kterému se nepodařilo ověřit data je přidán do `Errors` kolekce `ValidatableObject<T>` instance. Nakonec `IsValid` vlastnost nastavena a jeho hodnota se vrátí k volání metody, která určuje, jestli ověření proběhlo úspěšně, nebo neúspěšná.
+Tato metoda odstraní `Errors` kolekce a pak načte všechny ověřovací pravidla, které byly přidány do objektu `Validations` kolekce. `Check` Provedení metody pro každý načtený ověřovací pravidlo a `ValidationMessage` hodnota vlastnosti pro všechny ověřovací pravidlo, které se nedaří ověřit data se přidá do `Errors` kolekce `ValidatableObject<T>` instance. Nakonec `IsValid` je vlastnost nastavena a jeho hodnota se vrátí do volání metody, která udává, jestli ověření proběhlo úspěšně nebo se nezdařilo.
 
-### <a name="triggering-validation-when-properties-change"></a>Spouštěcí ověření při změně vlastnosti
+### <a name="triggering-validation-when-properties-change"></a>Aktivuje se při změně vlastnosti ověření
 
-Ověřování se dá taky spustit při každé změně vázané vlastnosti. Například když vazba obousměrná v `LoginView` nastaví `UserName` nebo `Password` vlastnost, ověření se aktivuje. Následující příklad kódu ukazuje, jak k tomu dochází:
+Ověřování se dá taky spustit při každé změně vázané vlastnosti. Například když obousměrnou vazbu v `LoginView` nastaví `UserName` nebo `Password` vlastnost, ověření se aktivuje. Následující příklad kódu ukazuje, jak k tomu dochází:
 
 ```xaml
 <Entry Text="{Binding UserName.Value, Mode=TwoWay}">  
@@ -204,23 +204,23 @@ Ověřování se dá taky spustit při každé změně vázané vlastnosti. Nap�
 </Entry>
 ```
 
-[ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) Vytvoří vazbu ovládacího prvku `UserName.Value` vlastnost `ValidatableObject<T>` instance a ovládacího prvku `Behaviors` kolekce má `EventToCommandBehavior` přidána instance. Provede toto chování `ValidateUserNameCommand` v reakci na [`TextChanged`] událost, která iniciovala na `Entry`, která se vyvolá, když text v `Entry` změny. Pak `ValidateUserNameCommand` delegáta provede `ValidateUserName` metodu, která provede `Validate` metodu `ValidatableObject<T>` instance. Proto pokaždé, když uživatel zadá znak v `Entry` ovládací prvek pro uživatelské jméno, ověřování zadaných dat provádí.
+[ `Entry` ](xref:Xamarin.Forms.Entry) Vytvoří vazbu ovládacího prvku `UserName.Value` vlastnost `ValidatableObject<T>` instance a ovládacího prvku `Behaviors` kolekce má `EventToCommandBehavior` instance do ní přidá. Spustí toto chování `ValidateUserNameCommand` v reakci na [`TextChanged`] událost na `Entry`, které se vyvolá, když text v `Entry` změny. Pak `ValidateUserNameCommand` delegáta provede `ValidateUserName` metoda, která spustí `Validate` metodu na `ValidatableObject<T>` instance. Proto se pokaždé, když uživatel zadá znak v `Entry` ovládací prvek pro uživatelské jméno ověřování zadaných dat provádí.
 
 Další informace o chování najdete v tématu [implementace chování](~/xamarin-forms/enterprise-application-patterns/mvvm.md#implementing_behaviors).
 
 <a name="displaying_validation_errors" />
 
-## <a name="displaying-validation-errors"></a>Zobrazení chyb při ověřování
+## <a name="displaying-validation-errors"></a>Zobrazení chyb ověřování
 
-Mobilní aplikace eShopOnContainers upozorní uživatele všechny chyby ověření pomocí zvýraznění ovládací prvek, který obsahuje neplatná data s červenou řádku a tím, že zobrazuje chybovou zprávu informující uživatele, proč je neplatný pod ovládací prvek obsahující data Neplatná data. Při nápravě neplatná data na řádku změní na černé a chybová zpráva se odeberou. Obrázek 6-2 je znázorněný LoginView v mobilní aplikaci eShopOnContainers, pokud existuje chyby ověření.
+V aplikaci eShopOnContainers mobilní aplikaci upozorní uživatele všechny chyby ověření zvýrazněním ovládací prvek, který obsahuje neplatná data s červenou čáru, a tím, že zobrazuje chybovou zprávu informující uživatele, proč je neplatný pod ovládací prvek obsahující data Neplatná data. Pokud nebude napraven neplatná data řádku se změní na černou a chybová zpráva bude odebrán. Obrázek 6-2 je znázorněný LoginView v aplikaci eShopOnContainers mobilní aplikaci když jsou chyby ověření.
 
-![](validation-images/validation-login.png "Zobrazení chyb při ověřování během přihlašování")
+![](validation-images/validation-login.png "Zobrazení chyby ověření při přihlášení")
 
-**Obrázek 6-2:** zobrazení chyb při ověřování během přihlašování
+**Obrázek 6 – 2:** zobrazování chyb ověření při přihlášení
 
-### <a name="highlighting-a-control-that-contains-invalid-data"></a>Zvýraznění ovládacího prvku, který obsahuje neplatná Data.
+### <a name="highlighting-a-control-that-contains-invalid-data"></a>Zvýraznění ovládací prvek, který obsahuje neplatná Data
 
-`LineColorBehavior` Připojené chování se používá k zvýrazněte [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) ovládací prvky, kde došlo k chybám ověření. Následující příklad kódu ukazuje jak `LineColorBehavior` připojené chování je připojen k `Entry` ovládacího prvku:
+`LineColorBehavior` Připojená chování slouží k zvýraznit [ `Entry` ](xref:Xamarin.Forms.Entry) ovládacích prvků, kde došlo k chybám ověření. Následující příklad kódu ukazuje jak `LineColorBehavior` připojená chování je připojen k `Entry` ovládacího prvku:
 
 ```xaml
 <Entry Text="{Binding UserName.Value, Mode=TwoWay}">
@@ -234,7 +234,7 @@ Mobilní aplikace eShopOnContainers upozorní uživatele všechny chyby ověřen
 </Entry>
 ```
 
-[ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) Ovládací prvek využívá explicitní styl, který je znázorněno v následujícím příkladu kódu:
+[ `Entry` ](xref:Xamarin.Forms.Entry) Ovládací prvek využívá explicitní styl, který je znázorněno v následujícím příkladu kódu:
 
 ```xaml
 <Style x:Key="EntryStyle"  
@@ -248,9 +248,9 @@ Mobilní aplikace eShopOnContainers upozorní uživatele všechny chyby ověřen
 </Style>
 ```
 
-Nastaví tento styl `ApplyLineColor` a `LineColor` připojené vlastnosti `LineColorBehavior` připojené chování na [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) ovládacího prvku. Další informace o styly najdete v tématu [styly](~/xamarin-forms/user-interface/styles/index.md).
+Nastaví tento styl `ApplyLineColor` a `LineColor` připojené vlastnosti `LineColorBehavior` připojená chování na [ `Entry` ](xref:Xamarin.Forms.Entry) ovládacího prvku. Další informace o stylech najdete v tématu [styly](~/xamarin-forms/user-interface/styles/index.md).
 
-Při hodnotě `ApplyLineColor` přidružená vlastnost je sada nebo změny, `LineColorBehavior` připojené chování provede `OnApplyLineColorChanged` metodu, která je znázorněno v následujícím příkladu kódu:
+Při hodnotu `ApplyLineColor` připojené vlastnosti je sada nebo změny, `LineColorBehavior` připojená chování spustí `OnApplyLineColorChanged` metoda, která je znázorněna v následujícím příkladu kódu:
 
 ```csharp
 public static class LineColorBehavior  
@@ -283,9 +283,9 @@ public static class LineColorBehavior
 }
 ```
 
-Zadejte parametry pro tuto metodu instanci ovládacího prvku, který chování je připojen k a staré a nové hodnoty `ApplyLineColor` přidružená vlastnost. `EntryLineColorEffect` Třídy se přidá do ovládacího prvku [ `Effects` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.Effects/) kolekce Pokud `ApplyLineColor` je přidružená vlastnost `true`, jinak se odebere z ovládacího prvku `Effects` kolekce. Další informace o chování najdete v tématu [implementace chování](~/xamarin-forms/enterprise-application-patterns/mvvm.md#implementing_behaviors).
+Zadejte parametry pro tuto metodu instance ovládacího prvku, který chování je připojen k a staré a nové hodnoty `ApplyLineColor` přidružená vlastnost. `EntryLineColorEffect` Třídy se přidá do ovládacího prvku [ `Effects` ](xref:Xamarin.Forms.Element.Effects) kolekce Pokud `ApplyLineColor` je připojená vlastnost `true`, v opačném případě se odebere z ovládacího prvku `Effects` kolekce. Další informace o chování najdete v tématu [implementace chování](~/xamarin-forms/enterprise-application-patterns/mvvm.md#implementing_behaviors).
 
-`EntryLineColorEffect` Podtřídy [ `RoutingEffect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.RoutingEffect/) třídy a je znázorněno v následujícím příkladu kódu:
+`EntryLineColorEffect` Podtřídy [ `RoutingEffect` ](xref:Xamarin.Forms.RoutingEffect) třídy a je znázorněno v následujícím příkladu kódu:
 
 ```csharp
 public class EntryLineColorEffect : RoutingEffect  
@@ -296,7 +296,7 @@ public class EntryLineColorEffect : RoutingEffect
 }
 ```
 
-[ `RoutingEffect` ](https://developer.xamarin.com/api/type/Xamarin.Forms.RoutingEffect/) Třída reprezentuje vliv nezávislé na platformě, která zabalí vnitřní vliv, který se liší podle platformy. Tato funkce zjednodušuje proces odebrání vliv, protože neexistuje žádný kompilaci přístup k informací o typu pro specifické pro platformu vliv. `EntryLineColorEffect` Volá konstruktor základní třídy, předávání parametr skládající se z zřetězení je název skupiny řešení a jedinečné ID, který je zadaný na jednotlivé třídy specifické pro platformu vliv.
+[ `RoutingEffect` ](xref:Xamarin.Forms.RoutingEffect) Třída reprezentuje efekt nezávislá na platformě, která obaluje vnitřní efekt, který se liší podle platformy. Tato funkce zjednodušuje proces odebrání efekt, protože neexistuje žádný kompilace přístup k informace o typu pro konkrétní platformu efekt. `EntryLineColorEffect` Volá konstruktor základní třídy, která se předá jako parametr skládající se z zřetězením názvu skupiny řešení a jedinečné ID, který je zadaný na jednotlivé třídy specifické pro platformu vliv.
 
 Následující příklad kódu ukazuje `eShopOnContainers.EntryLineColorEffect` implementace pro iOS:
 
@@ -374,15 +374,15 @@ namespace eShopOnContainers.iOS.Effects
 }
 ```
 
-`OnAttached` Metoda načte nativní ovládací prvek pro platformě Xamarin.Forms [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) řízení a aktualizuje barvu čáry voláním `UpdateLineColor` metoda. `OnElementPropertyChanged` Přepsání reaguje na změny vazbu vlastnosti na `Entry` řízení aktualizací barvu čáry, pokud připojený `LineColor` změny vlastností nebo [ `Height` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Height/) vlastnost `Entry`změny. Další informace o důsledky najdete v tématu [důsledky](~/xamarin-forms/app-fundamentals/effects/index.md).
+`OnAttached` Metoda načte nativní ovládací prvek pro Xamarin.Forms [ `Entry` ](xref:Xamarin.Forms.Entry) řídit a aktualizuje barvu čáry pomocí volání `UpdateLineColor` metoda. `OnElementPropertyChanged` Přepsání reaguje na změny vlastnost s vazbou na `Entry` řízení aktualizací barvu čáry, pokud připojeného `LineColor` změny vlastností nebo [ `Height` ](xref:Xamarin.Forms.VisualElement.Height) vlastnost `Entry`změny. Další informace o efektů, naleznete v tématu [účinky](~/xamarin-forms/app-fundamentals/effects/index.md).
 
-Pokud je zadána platná data v [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) ovládací prvek, bude se vztahovat černá čára k dolnímu okraji ovládací prvek indikující, že se nezobrazí žádná chyba ověření. Obrázek 6-3 ukazuje příklad tohoto objektu.
+Když se zadá platný datový v [ `Entry` ](xref:Xamarin.Forms.Entry) ovládací prvek, použije černá čára k dolnímu okraji ovládacího prvku k označení, že se nezobrazí žádná chyba ověření. Obrázek 6 – 3 ukazuje příklad tohoto objektu.
 
 ![](validation-images/validation-blackline.png "Černá čára indikující žádná chyba ověření")
 
-**Obrázek 6-3**: černá čára indikující žádná chyba ověření
+**Obrázek 6 – 3**: černá čára indikující žádná chyba ověření
 
-[ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) Řízení má také [ `DataTrigger` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTrigger/) přidán do jeho [ `Triggers` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Triggers/) kolekce. Následující příklad kódu ukazuje `DataTrigger`:
+[ `Entry` ](xref:Xamarin.Forms.Entry) Ovládací prvek má také [ `DataTrigger` ](xref:Xamarin.Forms.DataTrigger) přidán do jeho [ `Triggers` ](xref:Xamarin.Forms.VisualElement.Triggers) kolekce. Následující příklad kódu ukazuje `DataTrigger`:
 
 ```xaml
 <Entry Text="{Binding UserName.Value, Mode=TwoWay}">  
@@ -399,35 +399,35 @@ Pokud je zadána platná data v [ `Entry` ](https://developer.xamarin.com/api/ty
 </Entry>
 ```
 
-To [ `DataTrigger` ](https://developer.xamarin.com/api/type/Xamarin.Forms.DataTrigger/) monitorování `UserName.IsValid` vlastnost a pokud je hodnota stane `false`, se provede [ `Setter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Setter/), jaké změny `LineColor` připojit Vlastnost `LineColorBehavior` připojené chování na červený. Obrázek 6-4 ukazuje příklad tohoto objektu.
+To [ `DataTrigger` ](xref:Xamarin.Forms.DataTrigger) monitorování `UserName.IsValid` vlastnost a pokud je hodnota stane `false`, se provede [ `Setter` ](xref:Xamarin.Forms.Setter), jaké změny `LineColor` připojené Vlastnost `LineColorBehavior` připojená chování na červenou. Příkladem je vidět na obrázku 6 – 4.
 
-![](validation-images/validation-redline.png "Red čáru indikující chybu ověření")
+![](validation-images/validation-redline.png "Červená čára indikující Chyba ověřování")
 
-**Obrázek 6-4**: Red čáru indikující chybu ověření
+**Obrázek 6 – 4**: červená čára indikující Chyba ověřování
 
-Na řádku [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) řízení zůstane red, zatímco zadaných dat je neplatný, v opačném případě se změní na černé indikující, že zadaná data jsou platná.
+Na řádku [ `Entry` ](xref:Xamarin.Forms.Entry) ovládací prvek zůstane red zadaných dat je neplatný, v opačném případě se změní na černou, že zadané údaje je neplatný.
 
-Další informace o aktivační události najdete v tématu [aktivační události](~/xamarin-forms/app-fundamentals/triggers.md).
+Další informace o aktivačních událostech najdete v tématu [triggery](~/xamarin-forms/app-fundamentals/triggers.md).
 
 ### <a name="displaying-error-messages"></a>Zobrazení chybových zpráv
 
-Uživatelské rozhraní zobrazí chybové zprávy ověření v ovládacích prvcích popisek pro každý ovládací prvek, jejichž data se nepodařilo ověřit. Následující příklad kódu ukazuje [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) který zobrazí chybovou zprávu ověření, pokud uživatel nebyl zadali platné uživatelské jméno:
+Uživatelské rozhraní zobrazí chybové zprávy ověření v ovládacích prvcích popisek pod každý ovládací prvek, jehož data se nepovedlo ověřit. Následující příklad kódu ukazuje [ `Label` ](xref:Xamarin.Forms.Label) , který zobrazí chybovou zprávu ověření, pokud uživatel nebyl zadali platné uživatelské jméno:
 
 ```xaml
 <Label Text="{Binding UserName.Errors, Converter={StaticResource FirstValidationErrorConverter}"  
        Style="{StaticResource ValidationErrorLabelStyle}" />
 ```
 
-Každý [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) váže `Errors` vlastnost v objektu modelu zobrazení, který je ověřován. `Errors` Vlastnost zajišťuje `ValidatableObject<T>` třídy a je typu `List<string>`. Protože `Errors` vlastnost může obsahovat několik chyb ověření `FirstValidationErrorConverter` instance se používá k načtení první chyba z kolekce pro zobrazení.
+Každý [ `Label` ](xref:Xamarin.Forms.Label) vytvoří vazbu `Errors` vlastnost v objektu zobrazení modelu, který se ověřuje. `Errors` Poskytuje vlastnost `ValidatableObject<T>` třídy a je typu `List<string>`. Protože `Errors` vlastnost může obsahovat několik chyb ověření `FirstValidationErrorConverter` instance slouží k načtení první chyba z kolekce pro zobrazení.
 
 ## <a name="summary"></a>Souhrn
 
-Mobilní aplikace eShopOnContainers provede synchronní ověřování na straně klienta vlastností modelu zobrazení a upozorní uživatele všechny chyby ověření zvýraznění ovládací prvek, který obsahuje neplatná data a zobrazení chybové zprávy, které informovat uživatele Proč dat je neplatný.
+Mobilní aplikace aplikaci eShopOnContainers provádí synchronní ověřování na straně klienta vlastností zobrazení modelu a upozorní uživatele všechny chyby ověření zvýrazněním ovládací prvek, který obsahuje neplatná data a tím, že zobrazuje chybové zprávy, které uživatele informuje, že Proč data nejsou platná.
 
-Zobrazit vlastnosti modelu, které vyžadují ověření jsou typu `ValidatableObject<T>`a každou `ValidatableObject<T>` instance má ověřovacích pravidel, které jsou přidány do jeho `Validations` vlastnost. Ověření je volána z modelu zobrazení pomocí volání `Validate` metodu `ValidatableObject<T>` instanci, která načte ověřovací pravidla a provede jejich proti `ValidatableObject<T>` `Value` vlastnost. Všechny chyby ověřování se umístí do `Errors` vlastnost `ValidatableObject<T>`instance a `IsValid` vlastnost `ValidatableObject<T>` instance je aktualizována indikující, zda bylo ověření úspěšné nebo se nezdařilo.
+Zobrazit vlastnosti modelu, které vyžadují ověření jsou typu `ValidatableObject<T>`a každý `ValidatableObject<T>` instance má ověřovacích pravidel, které jsou přidány do jeho `Validations` vlastnost. Vyvolání z modelu zobrazení ověření zavoláním `Validate` metodu `ValidatableObject<T>` instanci, která načte ověření pravidla a provede je proti `ValidatableObject<T>` `Value` vlastnost. Všechny chyby ověření jsou umístěny do `Errors` vlastnost `ValidatableObject<T>`instance a `IsValid` vlastnost `ValidatableObject<T>` je instance aktualizována označující, zda ověření úspěšné nebo neúspěšné.
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Stáhnout elektronická kniha (2Mb PDF)](https://aka.ms/xamarinpatternsebook)
-- [eShopOnContainers (Githubu) (ukázka)](https://github.com/dotnet-architecture/eShopOnContainers)
+- [Stáhněte si elektronickou knihu (2Mb PDF)](https://aka.ms/xamarinpatternsebook)
+- [aplikaci eShopOnContainers (GitHub) (ukázka)](https://github.com/dotnet-architecture/eShopOnContainers)

@@ -1,49 +1,49 @@
 ---
 title: Nativní zobrazení v jazyce C#
-description: Nativní zobrazení z iOS, Android a UWP můžete přímo na něj odkazovat z Xamarin.Forms stránky vytvořené pomocí jazyka C#. Tento článek ukazuje, jak přidat nativní zobrazení na platformě Xamarin.Forms rozložení vytvořit pomocí jazyka C# a jak k přepsání rozložení vlastní zobrazení a opravte jejich měření využití rozhraní API.
+description: Nativní zobrazení v iOS, Android a UPW může být přímo odkazovanými z Xamarin.Forms stránky vytvořené pomocí jazyka C#. Tento článek ukazuje, jak přidat nativní zobrazení rozložení Xamarin.Forms vytvořené pomocí jazyka C# a jak přepsat rozložení vlastních zobrazení, chcete-li jejich měření využití rozhraní API.
 ms.prod: xamarin
 ms.assetid: 230F937C-F914-4B21-8EA1-1A2A9E644769
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: c3a79947b02e0f877fd4ea1b0ddb72486c222719
-ms.sourcegitcommit: b0a1c3969ab2a7b7fe961f4f470d1aa57b1ff2c6
+ms.openlocfilehash: ad633f49c1c448529fa4c2b50483ec233c1ee841
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "34050049"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996191"
 ---
 # <a name="native-views-in-c"></a>Nativní zobrazení v jazyce C#
 
-_Nativní zobrazení z iOS, Android a UWP můžete přímo na něj odkazovat z Xamarin.Forms stránky vytvořené pomocí jazyka C#. Tento článek ukazuje, jak přidat nativní zobrazení na platformě Xamarin.Forms rozložení vytvořit pomocí jazyka C# a jak k přepsání rozložení vlastní zobrazení a opravte jejich měření využití rozhraní API._
+_Nativní zobrazení v iOS, Android a UPW může být přímo odkazovanými z Xamarin.Forms stránky vytvořené pomocí jazyka C#. Tento článek ukazuje, jak přidat nativní zobrazení rozložení Xamarin.Forms vytvořené pomocí jazyka C# a jak přepsat rozložení vlastních zobrazení, chcete-li jejich měření využití rozhraní API._
 
 ## <a name="overview"></a>Přehled
 
-Libovolný ovládací prvek Xamarin.Forms, která umožňuje `Content` o nastavit, nebo který má `Children` kolekce, můžete přidat zobrazení specifické pro platformu. Například iOS `UILabel` lze přímo přidat do [ `ContentView.Content` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ContentView.Content/) vlastnost, nebo [ `StackLayout.Children` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout%3CT%3E.Children/) kolekce. Ale Všimněte si, že tato funkce vyžaduje použití `#if` definuje v řešení Xamarin.Forms sdílených projektů a není k dispozici z řešení Xamarin.Forms .NET standardní knihovny.
+Libovolný ovládací prvek Xamarin.Forms, která umožňuje `Content` k nastavení, nebo, který má `Children` kolekci, můžete přidat zobrazení specifické pro platformu. Například pro iOS `UILabel` lze přidat přímo do [ `ContentView.Content` ](xref:Xamarin.Forms.ContentView.Content) vlastnost, nebo [ `StackLayout.Children` ](xref:Xamarin.Forms.Layout`1.Children) kolekce. Mějte však na paměti, že tato funkce vyžaduje použití `#if` definuje v řešení Xamarin.Forms sdíleného projektu a není k dispozici z řešení Xamarin.Forms .NET Standard knihovny.
 
-Tyto snímky obrazovky ukazují specifické pro platformu zobrazení přidána do platformě Xamarin.Forms [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/):
+Na následujících snímcích obrazovky ukazují specifické pro platformu zobrazení s byl přidán do Xamarin.Forms [ `StackLayout` ](xref:Xamarin.Forms.StackLayout):
 
-[![](code-images/screenshots-sml.png "StackLayout obsahující specifické pro platformu zobrazení")](code-images/screenshots.png#lightbox "StackLayout obsahující specifické pro platformu zobrazení")
+[![](code-images/screenshots-sml.png "Obsahuje zobrazení specifická pro platformu StackLayout")](code-images/screenshots.png#lightbox "StackLayout, který obsahuje zobrazení specifická pro platformu")
 
-Možnost Přidat zobrazení specifických pro platformy na platformě Xamarin.Forms rozložení je povolit pomocí dvou metod rozšíření na jednotlivých platformách:
+Možnost přidat do rozložení Xamarin.Forms zobrazení specifické pro platformu zajišťuje dvě rozšiřující metody na jednotlivých platformách:
 
-- `Add` – Přidá zobrazení specifických pro platformy [ `Children` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout%3CT%3E.Children/) kolekce rozložení.
-- `ToView` – přebírá zobrazení specifické pro platformu a zabalí jako platformě Xamarin.Forms [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) , můžete nastavit jako `Content` vlastností ovládacího prvku.
+- `Add` – Přidá zobrazení specifické pro platformu [ `Children` ](xref:Xamarin.Forms.Layout`1.Children) kolekce rozložení.
+- `ToView` – trvá zobrazení specifické pro platformu a zabalí jej jako Xamarin.Forms [ `View` ](xref:Xamarin.Forms.View) , který je možné nastavit jako `Content` vlastnost ovládacího prvku.
 
-Pomocí těchto metod v projektu sdíleného Xamarin.Forms vyžaduje import odpovídající Xamarin.Forms názvů specifických pro platformy:
+Použití těchto metod ve sdíleném projektu Xamarin.Forms vyžaduje import oboru názvů Xamarin.Forms odpovídající specifické pro platformu:
 
 - **iOS** – Xamarin.Forms.Platform.iOS
 - **Android** – Xamarin.Forms.Platform.Android
-- **Univerzální platformu Windows (UWP)** – Xamarin.Forms.Platform.UWP
+- **Universal Windows Platform (UWP)** – Xamarin.Forms.Platform.UWP
 
-## <a name="adding-platform-specific-views-on-each-platform"></a>Přidání zobrazení specifických pro platformy na jednotlivých platformách
+## <a name="adding-platform-specific-views-on-each-platform"></a>Přidání zobrazení specifické pro platformu na jednotlivých platformách
 
-Následující části ukazují, jak přidat zobrazení specifických pro platformy na platformě Xamarin.Forms rozložení na každou platformu.
+Následující části ukazují, jak přidat do rozložení Xamarin.Forms na jednotlivých platformách zobrazení specifické pro platformu.
 
 ### <a name="ios"></a>iOS
 
-Následující příklad kódu ukazuje, jak přidat `UILabel` k [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) a [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/):
+Následující příklad kódu ukazuje, jak přidat `UILabel` k [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) a [ `ContentView` ](xref:Xamarin.Forms.ContentView):
 
 ```csharp
 var uiLabel = new UILabel {
@@ -56,11 +56,11 @@ stackLayout.Children.Add (uiLabel);
 contentView.Content = uiLabel.ToView();
 ```
 
-Příklad předpokládá, že `stackLayout` a `contentView` instance dříve vytvořené v jazyce XAML nebo C#.
+Příklad předpokládá, že `stackLayout` a `contentView` instance dříve byly vytvořeny v XAML nebo C#.
 
 ### <a name="android"></a>Android
 
-Následující příklad kódu ukazuje, jak přidat `TextView` k [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) a [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/):
+Následující příklad kódu ukazuje, jak přidat `TextView` k [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) a [ `ContentView` ](xref:Xamarin.Forms.ContentView):
 
 ```csharp
 var textView = new TextView (MainActivity.Instance) { Text = originalText, TextSize = 14 };
@@ -68,11 +68,11 @@ stackLayout.Children.Add (textView);
 contentView.Content = textView.ToView();
 ```
 
-Příklad předpokládá, že `stackLayout` a `contentView` instance dříve vytvořené v jazyce XAML nebo C#.
+Příklad předpokládá, že `stackLayout` a `contentView` instance dříve byly vytvořeny v XAML nebo C#.
 
 ### <a name="universal-windows-platform"></a>Univerzální platforma pro Windows
 
-Následující příklad kódu ukazuje, jak přidat `TextBlock` k [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/) a [ `ContentView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentView/):
+Následující příklad kódu ukazuje, jak přidat `TextBlock` k [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) a [ `ContentView` ](xref:Xamarin.Forms.ContentView):
 
 ```csharp
 var textBlock = new TextBlock
@@ -86,17 +86,17 @@ stackLayout.Children.Add(textBlock);
 contentView.Content = textBlock.ToView();
 ```
 
-Příklad předpokládá, že `stackLayout` a `contentView` instance dříve vytvořené v jazyce XAML nebo C#.
+Příklad předpokládá, že `stackLayout` a `contentView` instance dříve byly vytvořeny v XAML nebo C#.
 
-## <a name="overriding-platform-measurements-for-custom-views"></a>Hodnoty přepsání pro vlastní zobrazení
+## <a name="overriding-platform-measurements-for-custom-views"></a>Přepsání měření platformy pro vlastní zobrazení
 
-Vlastní zobrazení na jednotlivých platformách často jenom správně implementovat měření pro scénář rozložení, pro které byly vytvořeny. Například vlastní zobrazení může byly navrženy pro pouze zabírají polovinu dostupné šířky zařízení. Po sdílení s jinými uživateli, může být potřeba zabírají veškerou dostupnou šířku zařízení vlastní zobrazení. Proto může být potřeba při opakovaně používáno v rozložení Xamarin.Forms přepsat na měření implementace vlastních zobrazení. Z tohoto důvodu `Add` a `ToView` metody rozšíření poskytují přepsání, které umožňují delegátů měření k lze zadat, které můžete přepsat rozložení vlastní zobrazení, když je přidán do Xamarin.Forms rozložení.
+Vlastní zobrazení na jednotlivých platformách často jenom správnou implementaci měření rozložení scénáře, pro kterou byly vytvořeny. Například vlastní zobrazení může byly navrženy tak, aby obsadily pouze polovinu dostupné šířky zařízení. Po sdílení s ostatními uživateli, může být vyžaduje, aby obsadily veškerou dostupnou šířku zařízení vlastní zobrazení. Proto může být nutné přepsat implementaci měření vlastních zobrazení, když se znovu použít v rozložení Xamarin.Forms. Z tohoto důvodu `Add` a `ToView` rozšiřující metody poskytují přepsání, které umožňují měření delegátům uvést, které můžete přepsat vlastní zobrazení rozložení, když se přidá do rozložení Xamarin.Forms.
 
-V následujících částech ukazují, jak lze přepsat rozložení vlastní zobrazení a opravte jejich měření využití rozhraní API.
+Následující části ukazují, jak přepsat rozložení vlastních zobrazení, chcete-li jejich měření využití rozhraní API.
 
 ### <a name="ios"></a>iOS
 
-Následující příklad kódu ukazuje `CustomControl` třídy, která dědí z `UILabel`:
+Následující příklad kódu ukazuje `CustomControl` třída, která dědí z `UILabel`:
 
 ```csharp
 public class CustomControl : UILabel
@@ -113,7 +113,7 @@ public class CustomControl : UILabel
 }
 ```
 
-Instanci třídy v tomto zobrazení se přidá do [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/), jak je znázorněno v následujícím příkladu kódu:
+Instance tohoto zobrazení se přidá do [ `StackLayout` ](xref:Xamarin.Forms.StackLayout), jak je ukázáno v následujícím příkladu kódu:
 
 ```csharp
 var customControl = new CustomControl {
@@ -125,9 +125,9 @@ var customControl = new CustomControl {
 stackLayout.Children.Add (customControl);
 ```
 
-Ale protože `CustomControl.SizeThatFits` přepsání vždy vrátí hodnotu Výška 150, zobrazení se zobrazí prázdná místo nad ním a pod něj, jak je znázorněno na následujícím snímku obrazovky:
+Ale vzhledem k tomu, `CustomControl.SizeThatFits` vždy vrátí výšku 150 hodnotu přepsání, zobrazení se zobrazí s prázdné místo nahoře a pod ní, jak je znázorněno na následujícím snímku obrazovky:
 
-![](code-images/ios-bad-measurement.png "iOS CustomControl s implementací chybný SizeThatFits")
+![](code-images/ios-bad-measurement.png "iOS CustomControl s chybnou implementací SizeThatFits")
 
 Řešení tohoto problému je zajistit `GetDesiredSizeDelegate` implementace, jak je ukázáno v následujícím příkladu kódu:
 
@@ -150,19 +150,19 @@ SizeRequest? FixSize (NativeViewWrapperRenderer renderer, double width, double h
 }
 ```
 
-Tato metoda používá šířku poskytované `CustomControl.SizeThatFits` metoda, ale nahradí výšku 150 pro výšku 70. Když `CustomControl` instance se přidá do [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/), `FixSize` metoda lze zadat jako `GetDesiredSizeDelegate` opravit chybný měření poskytované `CustomControl` – třída:
+Tato metoda používá šířku určenou vlastností `CustomControl.SizeThatFits` metody, ale nahradí výška 150 výšce 70. Při `CustomControl` instance je přidána do [ `StackLayout` ](xref:Xamarin.Forms.StackLayout), `FixSize` jako může být zadaná metoda `GetDesiredSizeDelegate` opravit chybný měření poskytované `CustomControl` třídy:
 
 ```csharp
 stackLayout.Children.Add (customControl, FixSize);
 ```
 
-To vede k vlastní zobrazení se zobrazuje správně, bez prázdná místo nad ním a pod ním, jak je znázorněno na následujícím snímku obrazovky:
+Výsledkem vlastní zobrazení se zobrazí správně, bez prázdné místo nahoře a pod ní, jak je znázorněno na následujícím snímku obrazovky:
 
-![](code-images/ios-good-measurement.png "iOS CustomControl s GetDesiredSize přepsání")
+![](code-images/ios-good-measurement.png "iOS CustomControl s přepsáním GetDesiredSize")
 
 ### <a name="android"></a>Android
 
-Následující příklad kódu ukazuje `CustomControl` třídy, která dědí z `TextView`:
+Následující příklad kódu ukazuje `CustomControl` třída, která dědí z `TextView`:
 
 ```csharp
 public class CustomControl : TextView
@@ -184,7 +184,7 @@ public class CustomControl : TextView
 }
 ```
 
-Instanci třídy v tomto zobrazení se přidá do [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/), jak je znázorněno v následujícím příkladu kódu:
+Instance tohoto zobrazení se přidá do [ `StackLayout` ](xref:Xamarin.Forms.StackLayout), jak je ukázáno v následujícím příkladu kódu:
 
 ```csharp
 var customControl = new CustomControl (MainActivity.Instance) {
@@ -194,7 +194,7 @@ var customControl = new CustomControl (MainActivity.Instance) {
 stackLayout.Children.Add (customControl);
 ```
 
-Ale protože `CustomControl.OnMeasure` přepsání vždy vrátí hodnotu polovinu požadovanou šířku, zobrazení se zobrazí v pouze poloviční šířky, které jsou k dispozici zařízení, jak je znázorněno na následujícím snímku obrazovky:
+Ale vzhledem k tomu, `CustomControl.OnMeasure` přepsání vždy vrátí polovinu požadovaná šířka, zobrazení se zobrazí zabírá pouze polovinu dostupné šířky zařízení, jak je znázorněno na následujícím snímku obrazovky:
 
 ![](code-images/android-bad-measurement.png "Android CustomControl s implementací chybný OnMeasure")
 
@@ -217,19 +217,19 @@ SizeRequest? FixSize (NativeViewWrapperRenderer renderer, int widthConstraint, i
 }
 ```
 
-Tato metoda používá šířku poskytované `CustomControl.OnMeasure` metoda, ale vynásobí ve dvou. Když `CustomControl` instance se přidá do [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/), `FixSize` metoda lze zadat jako `GetDesiredSizeDelegate` opravit chybný měření poskytované `CustomControl` – třída:
+Tato metoda používá šířku určenou vlastností `CustomControl.OnMeasure` metody, ale vynásobí dvě. Při `CustomControl` instance je přidána do [ `StackLayout` ](xref:Xamarin.Forms.StackLayout), `FixSize` jako může být zadaná metoda `GetDesiredSizeDelegate` opravit chybný měření poskytované `CustomControl` třídy:
 
 ```csharp
 stackLayout.Children.Add (customControl, FixSize);
 ```
 
-Výsledkem je vlastní zobrazení se zobrazí správně, zabírá šířku zařízení, jak je znázorněno na následujícím snímku obrazovky:
+Výsledkem vlastní zobrazení se zobrazí správně, zabírá šířka zařízení, jak je znázorněno na následujícím snímku obrazovky:
 
 ![](code-images/android-good-measurement.png "Android CustomControl s vlastní GetDesiredSize delegáta")
 
 ### <a name="universal-windows-platform"></a>Univerzální platforma pro Windows
 
-Následující příklad kódu ukazuje `CustomControl` třídy, která dědí z `Panel`:
+Následující příklad kódu ukazuje `CustomControl` třída, která dědí z `Panel`:
 
 ```csharp
 public class CustomControl : Panel
@@ -282,7 +282,7 @@ public class CustomControl : Panel
 }
 ```
 
-Instanci třídy v tomto zobrazení se přidá do [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/), jak je znázorněno v následujícím příkladu kódu:
+Instance tohoto zobrazení se přidá do [ `StackLayout` ](xref:Xamarin.Forms.StackLayout), jak je ukázáno v následujícím příkladu kódu:
 
 ```csharp
 var brokenControl = new CustomControl {
@@ -291,11 +291,11 @@ var brokenControl = new CustomControl {
 stackLayout.Children.Add(brokenControl);
 ```
 
-Ale protože `CustomControl.ArrangeOverride` přepsání vždy vrátí polovinu požadovanou šířku, zobrazení bude oříznut, aby poloviční šířky, které jsou k dispozici zařízení, jak je znázorněno na následujícím snímku obrazovky:
+Ale vzhledem k tomu, `CustomControl.ArrangeOverride` přepsání vždy vrátí poloviční šířku požadované, bude oříznut zobrazení na polovinu dostupné šířky zařízení, jak je znázorněno na následujícím snímku obrazovky:
 
-![](code-images/winrt-bad-measurement.png "UWP CustomControl s implementací chybný ArrangeOverride")
+![](code-images/winrt-bad-measurement.png "CustomControl UPW s implementací chybný ArrangeOverride")
 
-Řešení tohoto problému je zajistit `ArrangeOverrideDelegate` implementace, při přidávání zobrazení tak, aby [ `StackLayout` ](https://developer.xamarin.com/api/type/Xamarin.Forms.StackLayout/), jak je znázorněno v následujícím příkladu kódu:
+Řešení tohoto problému je zajistit `ArrangeOverrideDelegate` implementace, při přidávání zobrazení tak, aby [ `StackLayout` ](xref:Xamarin.Forms.StackLayout), jak je ukázáno v následujícím příkladu kódu:
 
 ```csharp
 stackLayout.Children.Add(fixedControl, arrangeOverrideDelegate: (renderer, finalSize) =>
@@ -310,13 +310,13 @@ stackLayout.Children.Add(fixedControl, arrangeOverrideDelegate: (renderer, final
 });
 ```
 
-Tato metoda používá šířku poskytované `CustomControl.ArrangeOverride` metoda, ale vynásobí ve dvou. Výsledkem je vlastní zobrazení se zobrazí správně, zabírá šířku zařízení, jak je znázorněno na následujícím snímku obrazovky:
+Tato metoda používá šířku určenou vlastností `CustomControl.ArrangeOverride` metody, ale vynásobí dvě. Výsledkem vlastní zobrazení se zobrazí správně, zabírá šířka zařízení, jak je znázorněno na následujícím snímku obrazovky:
 
-![](code-images/winrt-good-measurement.png "UWP CustomControl s ArrangeOverride delegáta")
+![](code-images/winrt-good-measurement.png "CustomControl UPW s delegátem ArrangeOverride")
 
 ## <a name="summary"></a>Souhrn
 
-Tento článek vysvětlit, jak přidat nativní zobrazení na platformě Xamarin.Forms rozložení vytvořit pomocí jazyka C# a jak přepsat rozložení vlastní zobrazení a opravte jejich měření využití rozhraní API.
+Tento článek vysvětlil, jak přidat nativní zobrazení rozložení Xamarin.Forms vytvořené pomocí jazyka C# a jak přepsat rozložení vlastních zobrazení, chcete-li jejich měření využití rozhraní API.
 
 
 ## <a name="related-links"></a>Související odkazy

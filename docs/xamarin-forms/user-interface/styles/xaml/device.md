@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 6b5d4623bb331f4bf52faa096afeacb21d6d7489
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: bba42c966c6a606790655751db8b294d9ca7b6f9
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245592"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994374"
 ---
 # <a name="device-styles-in-xamarinforms"></a>Styly zařízení v Xamarin.Forms
 
@@ -20,16 +20,16 @@ _Xamarin.Forms obsahuje šest dynamické styly, označované jako styly zaříze
 
 *Zařízení* styly jsou:
 
-- [`BodyStyle`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device+Styles.BodyStyle/)
-- [`CaptionStyle`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device+Styles.CaptionStyle/)
-- [`ListItemDetailTextStyle`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device+Styles.ListItemDetailTextStyle/)
-- [`ListItemTextStyle`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device+Styles.ListItemTextStyle/)
-- [`SubtitleStyle`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device+Styles.SubtitleStyle/)
-- [`TitleStyle`](https://developer.xamarin.com/api/field/Xamarin.Forms.Device+Styles.TitleStyle/)
+- [`BodyStyle`](xref:Xamarin.Forms.Device.Styles.BodyStyle)
+- [`CaptionStyle`](xref:Xamarin.Forms.Device.Styles.CaptionStyle)
+- [`ListItemDetailTextStyle`](xref:Xamarin.Forms.Device.Styles.ListItemDetailTextStyle)
+- [`ListItemTextStyle`](xref:Xamarin.Forms.Device.Styles.ListItemTextStyle)
+- [`SubtitleStyle`](xref:Xamarin.Forms.Device.Styles.SubtitleStyle)
+- [`TitleStyle`](xref:Xamarin.Forms.Device.Styles.TitleStyle)
 
-Všech šest styly lze použít pouze k [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) instance. Například `Label` , že je zobrazení textu odstavce může nastavit jeho [ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/) vlastnost [ `BodyStyle` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Device+Styles.BodyStyle/).
+Všech šest styly může používat jedině pro [ `Label` ](xref:Xamarin.Forms.Label) instancí. Například `Label` , který zobrazuje text odstavce může nastavit jeho [ `Style` ](xref:Xamarin.Forms.VisualElement.Style) vlastnost [ `BodyStyle` ](xref:Xamarin.Forms.Device.Styles.BodyStyle).
 
-Následující příklad kódu ukazuje, jak pomocí *zařízení* stylů na stránce XAML:
+Následující příklad kódu ukazuje použití *zařízení* styly stránky XAML:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.DeviceStylesPage" Title="Device" Icon="xaml.png">
@@ -63,11 +63,11 @@ Následující příklad kódu ukazuje, jak pomocí *zařízení* stylů na str�
 </ContentPage>
 ```
 
-Styly zařízení je vázána k použití `DynamicResource` – rozšíření značek. Dynamické povaha stylů se zobrazí v iOS změnou **usnadnění** nastavení pro velikost textu. Vzhled *zařízení* styly se na jednotlivých platformách liší, jak je vidět na následujících snímcích obrazovky:
+Styly zařízení je vázána k použití `DynamicResource` – rozšíření značek. Dynamické povaze styly si můžete prohlédnout ve iOS tak, že změníte **usnadnění** nastavení pro velikost textu. Vzhled *zařízení* styly se liší na jednotlivých platformách, jak je znázorněno na následujících snímcích obrazovky:
 
 ![](device-images/device-styles.png "Styly zařízení na jednotlivých platformách")
 
-*Zařízení* styly může být také odvozen od nastavením [ `BaseResourceKey` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Style.BaseResourceKey/) vlastnost na název klíče pro styl zařízení. V příkladu výše `myBodyStyle` dědí z [ `BodyStyle` ](https://developer.xamarin.com/api/field/Xamarin.Forms.Device+Styles.BodyStyle/) a nastaví barvu textu s diakritikou. Další informace o dědičnosti dynamické styl najdete v tématu [dynamické dědičnosti styl](~/xamarin-forms/user-interface/styles/xaml/dynamic.md#dynamic-style-inheritance).
+*Zařízení* styly může být také odvozena z tak, že nastavíte [ `BaseResourceKey` ](xref:Xamarin.Forms.Style.BaseResourceKey) nastavte na název klíče pro styl zařízení. V příkladu výše `myBodyStyle` dědí z [ `BodyStyle` ](xref:Xamarin.Forms.Device.Styles.BodyStyle) a nastaví barvu textu s diakritikou. Další informace o dynamické styl dědičnosti, naleznete v tématu [dynamické dědičnost stylů](~/xamarin-forms/user-interface/styles/xaml/dynamic.md#dynamic-style-inheritance).
 
 Následující příklad kódu ukazuje na stejnou stránku v jazyce C#:
 
@@ -107,23 +107,23 @@ public class DeviceStylesPageCS : ContentPage
 }
 ```
 
-[ `Style` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Style/) Vlastnost jednotlivých [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) instance je nastaven na příslušnou vlastnost z [ `Devices.Styles` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Device+Styles/) třídy.
+[ `Style` ](xref:Xamarin.Forms.VisualElement.Style) Vlastnosti každého [ `Label` ](xref:Xamarin.Forms.Label) instance je nastavena na odpovídající vlastnosti z [ `Devices.Styles` ](xref:Xamarin.Forms.Device.Styles) třídy.
 
 ## <a name="accessibility"></a>Usnadnění
 
-*Zařízení* styly respektují usnadnění předvolby, takže velikosti písem budou měnit, protože jsou na jednotlivých platformách změnit předvolby usnadnění přístupu. Proto pro podporu přístupný text, zajistěte, aby *zařízení* styly jsou použity jako základ pro všechny styly textu v rámci vaší aplikace.
+*Zařízení* styly respektovat Předvolby Usnadnění přístupu, tak velikosti písma se změní podle předvolby usnadnění přístupu se změní na jednotlivých platformách. Proto se na podporu přístupný text, ujistěte se, že *zařízení* styly jsou použity jako základ pro všechny styly textu v rámci vaší aplikace.
 
-Tyto snímky obrazovky ukazují styly zařízení na každou platformu, s nejnižší velikost písma dostupné:
+Na následujících snímcích obrazovky ukazují styly zařízení na jednotlivých platformách, s nejmenší velikost dostupné písma:
 
-[![](device-images/minimum-size.png "Styly přístupné malé zařízení na jednotlivých platformách")](device-images/minimum-size-large.png#lightbox "přístupné malé zařízení stylů pro každou platformu")
+[![](device-images/minimum-size.png "Styly zařízení přístupné malé na jednotlivých platformách")](device-images/minimum-size-large.png#lightbox "styly přístupné malé zařízení na jednotlivých platformách")
 
-Tyto snímky obrazovky ukazují styly zařízení na každou platformu, s největší velikost písma dostupné:
+Na následujících snímcích obrazovky ukazují styly zařízení na jednotlivých platformách, s největší velikost dostupné písma:
 
-![](device-images/maximum-size.png "Styly přístupné velké zařízení na jednotlivých platformách")
+![](device-images/maximum-size.png "Styly zařízení přístupné velké na jednotlivých platformách")
 
 ## <a name="summary"></a>Souhrn
 
-Xamarin.Forms obsahuje šest *dynamické* styly, označované jako *zařízení* styly v [ `Devices.Styles` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Device+Styles/) třídy. Všech šest styly lze použít pouze k [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) instance.
+Xamarin.Forms obsahuje šest *dynamické* styly, označované jako *zařízení* styly, v [ `Devices.Styles` ](xref:Xamarin.Forms.Device.Styles) třídy. Všech šest styly může používat jedině pro [ `Label` ](xref:Xamarin.Forms.Label) instancí.
 
 
 ## <a name="related-links"></a>Související odkazy
@@ -132,7 +132,7 @@ Xamarin.Forms obsahuje šest *dynamické* styly, označované jako *zařízení*
 - [Rozšíření značek XAML](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
 - [Dynamické styly (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/DynamicStyles/)
 - [Práce se styly (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
-- [Device.Styles](https://developer.xamarin.com/api/type/Xamarin.Forms.Device+Styles/)
-- [ResourceDictionary](https://developer.xamarin.com/api/type/Xamarin.Forms.ResourceDictionary/)
-- [Styl](https://developer.xamarin.com/api/type/Xamarin.Forms.Style/)
-- [Metoda setter](https://developer.xamarin.com/api/type/Xamarin.Forms.Setter/)
+- [Device.Styles](xref:Xamarin.Forms.Device.Styles)
+- [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
+- [Styl](xref:Xamarin.Forms.Style)
+- [Metoda setter](xref:Xamarin.Forms.Setter)

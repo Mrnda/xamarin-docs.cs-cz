@@ -1,66 +1,66 @@
 ---
-title: Nástroji pro vykreslování vlastní Xamarin.Forms
-description: Vlastní nástroji pro vykreslování umožňují vývojářům přepsat vykreslování nativní ovládací prvky na každou platformu, chcete-li přizpůsobit vzhled a chování Xamarin.Forms ovládacích prvků.
+title: Xamarin.Forms vlastními Renderery
+description: Vlastní Renderery umožňují vývojářům přepsat vykreslování nativní ovládací prvky na jednotlivých platformách, chcete-li upravit vzhled a chování ovládacích prvků Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: BF1CF23A-3BC9-4226-92E6-DAEEB91422F1
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: a88462052906e68fd85a07161e8b5bb63a61e69d
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: c7ae25688b2f8635a9a89318e0b307e58add7a5a
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35239887"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998740"
 ---
-# <a name="xamarinforms-custom-renderers"></a>Nástroji pro vykreslování vlastní Xamarin.Forms
+# <a name="xamarinforms-custom-renderers"></a>Xamarin.Forms vlastními Renderery
 
-_Uživatelská rozhraní Xamarin.Forms jsou vykreslovány pomocí nativní ovládací prvky typu cílovou platformu, povolíte Xamarin.Forms aplikací zachovat odpovídající vzhledu a chování pro každou platformu. Vlastní nástroji pro vykreslování umožňují vývojářům přepsání tohoto procesu, chcete-li přizpůsobit vzhled a chování Xamarin.Forms ovládacích prvků na každou platformu._
+_Xamarin.Forms uživatelského rozhraní jsou vykreslovány pomocí nativní ovládací prvky cílové platformy, povolení aplikace Xamarin.Forms pro zachování odpovídající vzhled a chování pro každou platformu. Vlastní Renderery umožňují vývojářům přepsání tohoto procesu upravit vzhled a chování Xamarin.Forms ovládací prvky na jednotlivých platformách._
 
-## <a name="introduction-to-custom-renderersintroductionmd"></a>[Úvod do vlastní nástroji pro vykreslování](introduction.md)
+## <a name="introduction-to-custom-renderersintroductionmd"></a>[Úvod do vlastní renderery](introduction.md)
 
-Přizpůsobení vzhledu a chování ovládacích prvků Xamarin.Forms zadejte vlastní nástroji pro vykreslování efektivní přístup. Mohou být použity pro malé stylů změny nebo sofistikované rozložení specifické pro platformu a přizpůsobení chování. Tento článek obsahuje úvod do vlastní nástroji pro vykreslování a popisuje proces pro vytvoření vlastní zobrazovací jednotky.
+Vlastní renderery poskytují výkonný přístup pro přizpůsobení vzhledu a chování ovládacích prvků Xamarin.Forms. Je možné použít pro používání stylů pro malé změny nebo sofistikované rozložení specifické pro platformu a přizpůsobení chování. Tento článek obsahuje úvod do vlastní renderery a popisuje proces pro vytvoření vlastní zobrazovací jednotky.
 
-## <a name="renderer-base-classes-and-native-controlsrenderersmd"></a>[Základní třídy zobrazovací jednotky a nativní ovládací prvky](renderers.md)
+## <a name="renderer-base-classes-and-native-controlsrenderersmd"></a>[Nástroj pro vykreslování základní třídy a nativní ovládací prvky](renderers.md)
 
-Každý prvek Xamarin.Forms musí doprovodné zobrazovací jednotky pro každou platformu, která vytvoří instanci nativní ovládacího prvku. V tomto článku jsou uvedené zobrazovací jednotky a nativní řízení třídy, které implementují každou stránku Xamarin.Forms, rozložení, zobrazení a buňky.
+Každý ovládací prvek Xamarin.Forms má související zobrazovací jednotky pro každou platformu, která vytvoří instanci nativní ovládacího prvku. Tento článek uvádí nástroj pro vykreslování a nativní ovládací prvek třídy, které implementují každé stránky Xamarin.Forms, rozložení, zobrazení a buňky.
 
 ## <a name="customizing-an-entryentrymd"></a>[Přizpůsobení položky](entry.md)
 
-Platformě Xamarin.Forms [ `Entry` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Entry/) řízení umožňuje jeden řádek textu k provádění úprav. Tento článek ukazuje, jak vytvořit vlastní zobrazovací jednotky pro `Entry` řízení, umožňuje vývojářům přepsat výchozí nativní vykreslování s vlastní přizpůsobení specifické pro platformu.
+Xamarin.Forms [ `Entry` ](xref:Xamarin.Forms.Entry) ovládací prvek umožňuje jeden řádek textu má být upraven. Tento článek ukazuje, jak vytvořit vlastního rendereru pro `Entry` ovládacího prvku, umožňuje vývojářům přepsat výchozí nativní vykreslení s jejich přizpůsobováním specifické pro platformu.
 
 ## <a name="customizing-a-contentpagecontentpagemd"></a>[Přizpůsobení ContentPage](contentpage.md)
 
-A [ `ContentPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ContentPage/) je visual element, který zobrazí jedno zobrazení a zabírá Většina obrazovky. Tento článek ukazuje, jak vytvořit vlastní zobrazovací jednotky pro `ContentPage` stránce, který umožňuje vývojářům přepsat výchozí nativní vykreslování s vlastní přizpůsobení specifické pro platformu.
+A [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) je vizuální prvek, který zobrazí jedno zobrazení a zabírá většinu obrazovky. Tento článek ukazuje, jak vytvořit vlastního rendereru pro `ContentPage` stránce, který umožňuje vývojářům přepsat výchozí nativní vykreslení s jejich přizpůsobováním specifické pro platformu.
 
 ## <a name="customizing-a-mapmapindexmd"></a>[Přizpůsobení mapy](map/index.md)
 
-Xamarin.Forms.Maps poskytuje abstrakci a platformy pro zobrazení mapy, které používají nativní mapy rozhraní API na jednotlivých platformách zajistit mapu rychlého a známým prostředí pro uživatele. Toto téma ukazuje, jak vytvořit vlastní nástroji pro vykreslování pro `Map` řízení, umožňuje vývojářům přepsat výchozí nativní vykreslování s vlastní přizpůsobení specifické pro platformu.
+Xamarin.Forms.Maps není úspěšný kvůli poskytuje abstrakce napříč platformami pro zobrazení mapy, které používají nativní mapování rozhraní API na každou platformu, k poskytování rychlého a důvěrně známé mapování prostředí pro uživatele. Toto téma ukazuje, jak vytvořit vlastní renderery pro `Map` ovládacího prvku, umožňuje vývojářům přepsat výchozí nativní vykreslení s jejich přizpůsobováním specifické pro platformu.
 
 ## <a name="customizing-a-listviewlistviewmd"></a>[Přizpůsobení ListView](listview.md)
 
-Platformě Xamarin.Forms [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) zobrazení, které zobrazí kolekce dat jako svislý seznam. Tento článek ukazuje, jak vytvořit vlastní zobrazovací jednotky zapouzdřující ovládací prvky seznamu specifické pro platformu a nativní buňky rozložení umožňuje větší kontrolu nad nativní seznamu řízení výkonu.
+Xamarin.Forms [ `ListView` ](xref:Xamarin.Forms.ListView) je zobrazení, která zobrazuje kolekce dat jako svislý seznam. Tento článek ukazuje, jak vytvořit vlastní zobrazovací jednotky, který zapouzdřuje ovládacích prvcích seznam specifické pro platformu a nativní buňky rozložení, umožní větší kontrolu nad nativní seznamu řízení výkonu.
 
 ## <a name="customizing-a-viewcellviewcellmd"></a>[Přizpůsobení ViewCell](viewcell.md)
 
-Platformě Xamarin.Forms [ `ViewCell` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) je buňku, která mohou být přidány do [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) nebo [ `TableView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.TableView/), která obsahuje zobrazení definované developer. Tento článek ukazuje, jak vytvořit vlastní zobrazovací jednotky pro `ViewCell` hostující uvnitř platformě Xamarin.Forms `ListView` ovládacího prvku. To zastaví výpočty rozložení Xamarin.Forms z opakovaně volané během `ListView` posouvání.
+Xamarin.Forms [ `ViewCell` ](xref:Xamarin.Forms.ViewCell) je přidaný do buňky [ `ListView` ](xref:Xamarin.Forms.ListView) nebo [ `TableView` ](xref:Xamarin.Forms.TableView), který obsahuje zobrazení definované uživatelem pro vývojáře. Tento článek ukazuje, jak vytvořit vlastního rendereru pro `ViewCell` , která je hostována v Xamarin.Forms `ListView` ovládacího prvku. Tím se zastaví výpočty rozložení Xamarin.Forms byla volána opakovaně během `ListView` posouvání.
 
 ## <a name="implementing-a-viewviewmd"></a>[Implementace zobrazení](view.md)
 
-Xamarin.Forms vlastní uživatelské rozhraní ovládací prvky by měl být odvozen z [ `View` ](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) třídy, která se používá k umístění rozložení a ovládacích prvků na obrazovce. Tento článek ukazuje, jak vytvořit vlastní zobrazovací jednotky Xamarin.Forms vlastního ovládacího prvku, který se používá k zobrazení náhledu datový proud videa z fotoaparátu zařízení.
+Xamarin.Forms vlastního uživatelského rozhraní ovládacích prvků musí být odvozený z: [ `View` ](xref:Xamarin.Forms.View) třídu, která se používá k umístění rozložení a ovládací prvky na obrazovce. Tento článek ukazuje, jak vytvořit vlastního rendereru pro Xamarin.Forms vlastního ovládacího prvku, který se používá k zobrazení videa zobrazit náhled streamu z fotoaparátu zařízení.
 
 ## <a name="implementing-a-hybridwebviewhybridwebviewmd"></a>[Implementace HybridWebView](hybridwebview.md)
 
-Tento článek ukazuje, jak vytvořit vlastní zobrazovací jednotky pro `HybridWebView` vlastní ovládací prvek, který ukazuje, jak zvýšit ovládací prvky specifické pro platformu webového povolit C# – kód má být volána z jazyka JavaScript.
+Tento článek ukazuje, jak vytvořit vlastního rendereru pro `HybridWebView` vlastní ovládací prvek, který ukazuje, jak vylepšit specifické pro platformu webové ovládací prvky umožňující kódu jazyka C# má být volána z jazyka JavaScript.
 
-## <a name="implementing-a-video-playervideo-playerindexmd"></a>[Implementace přehrávání videa](video-player/index.md)
+## <a name="implementing-a-video-playervideo-playerindexmd"></a>[Implementace přehrávače videa](video-player/index.md)
 
-Tento článek ukazuje, jak napsat nástroji pro vykreslování implementovat vlastní `VideoPlayer` ovládací prvek, který můžete přehrát videa z webových, videa vložených jako prostředky aplikace nebo videa uložený v knihovně videa na zařízení uživatele. Je ukázán několik postupů, včetně implementace metod a vlastností, vázat jen pro čtení.
+Tento článek popisuje, jak psát renderery implementovat vlastní `VideoPlayer` ovládací prvek, který můžete přehrávat videa z webu, videa vloženy jako prostředky aplikace nebo videa, které jsou uložené v knihovně videí na zařízení uživatele. Je ukázán několik postupů, včetně implementace metody a vlastnosti jen pro čtení s možností vazby.
 
 
 ## <a name="related-links"></a>Související odkazy
 
 - [Efekty](~/xamarin-forms/app-fundamentals/effects/index.md)
-- [Vlastní nástroji pro vykreslování (Xamarin univerzity Video)](https://developer.xamarin.com/videos/cross-platform/xamarinforms-custom-renderers/)
-- [Ukázka vlastních nástroji pro vykreslování (Xamarin univerzity Video)](http://bit.ly/xf-customrenderer)
+- [Vlastní Renderery (Xamarin University Video)](https://developer.xamarin.com/videos/cross-platform/xamarinforms-custom-renderers/)
+- [Ukázková vlastní Renderery (Xamarin University Video)](http://bit.ly/xf-customrenderer)

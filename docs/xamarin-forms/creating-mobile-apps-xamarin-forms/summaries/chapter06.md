@@ -1,89 +1,89 @@
 ---
-title: Souhrn kapitoly 6. Kliknutí na tlačítko
-description: 'Vytváření mobilních aplikací s Xamarin.Forms: Souhrn kapitoly 6. Kliknutí na tlačítko'
+title: Souhrn kapitola 6. Kliknutí na tlačítko
+description: 'Vytváření mobilních aplikací s Xamarin.Forms: Souhrn kapitola 6. Kliknutí na tlačítko'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: D4F9C429-A6CF-40FA-AC68-3F149307A5F9
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: 9c8a4e6a6c4d62722e72ff3b27251987aa201284
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: f06d0b312422889072be634768611ea1cc25088d
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240746"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997169"
 ---
-# <a name="summary-of-chapter-6-button-clicks"></a>Souhrn kapitoly 6. Kliknutí na tlačítko
+# <a name="summary-of-chapter-6-button-clicks"></a>Souhrn kapitola 6. Kliknutí na tlačítko
 
-[ `Button` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Button/) Zobrazení, které umožňuje uživatelům spustit příkaz. A `Button` je identifikována text (a volitelně bitovou kopii jak je předvedeno v [kapitoly 13, rastrové obrázky](chapter13.md)). V důsledku toho `Button` definuje řadu stejných vlastností, jako `Label`:
+[ `Button` ](xref:Xamarin.Forms.Button) Je zobrazení, které umožňuje uživateli spustit příkaz. A `Button` je identifikován podle textu (a volitelně obrázku jak je ukázáno v [Kapitola 13, bitmap](chapter13.md)). V důsledku toho `Button` definuje řadu stejné vlastnosti jako `Label`:
 
-- [`Text`](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.Text/)
-- [`FontFamily`](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.FontFamily/)
-- [`FontSize`](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.FontSize/)
-- [`FontAttributes`](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.FontAttributes/)
-- [`TextColor`](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.TextColor/)
+- [`Text`](xref:Xamarin.Forms.Button.Text)
+- [`FontFamily`](xref:Xamarin.Forms.Button.FontFamily)
+- [`FontSize`](xref:Xamarin.Forms.Button.FontSize)
+- [`FontAttributes`](xref:Xamarin.Forms.Button.FontAttributes)
+- [`TextColor`](xref:Xamarin.Forms.Button.TextColor)
 
-`Button` také definuje tři vlastnosti, řídí vzhled jeho ohraničení, ale podporu těchto vlastností a jejich vzájemné nezávislost je specifický pro platformu:
+`Button` Definuje také tři vlastnosti, které řídí vzhled ohraničení, ale podporu těchto vlastností a jejich vzájemné nezávislost je specifický pro platformu:
 
-- [`BorderColor`](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.BorderColor/) typu `Color`
-- [`BorderWidth`](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.BorderWidth/) typu `Double`
-- [`BorderRadius`](https://developer.xamarin.com/api/property/Xamarin.Forms.Button.BorderRadius/) typu `Double`
+- [`BorderColor`](xref:Xamarin.Forms.Button.BorderColor) typu `Color`
+- [`BorderWidth`](xref:Xamarin.Forms.Button.BorderWidth) typu `Double`
+- [`BorderRadius`](xref:Xamarin.Forms.Button.BorderRadius) typu `Double`
 
-`Button` rovněž dědí všechny vlastnosti `VisualElement` a `View`, včetně `BackgroundColor`, `HorizontalOptions`, a `VerticalOptions`.
+`Button` také dědí všechny vlastnosti `VisualElement` a `View`, včetně `BackgroundColor`, `HorizontalOptions`, a `VerticalOptions`.
 
-## <a name="processing-the-click"></a>Zpracování a klikněte na
+## <a name="processing-the-click"></a>Kliknutím na zpracování
 
-`Button` Třída definuje [ `Clicked` ](https://developer.xamarin.com/api/event/Xamarin.Forms.Button.Clicked/) událost, která je aktivována, když uživatel klepnutím `Button`. `Click` Obslužná rutina je typu `EventHandler`. První argument je `Button` objektu generování události; druhý argument je `EventArgs` objekt, který poskytuje žádné další informace.
+`Button` Definuje třídu [ `Clicked` ](xref:Xamarin.Forms.Button.Clicked) událost, která se aktivuje, když uživatel klepne `Button`. `Click` Obslužná rutina je typu `EventHandler`. První argument je `Button` objektu generování události; druhý argument je `EventArgs` objekt, který poskytuje žádné další informace.
 
-[ **ButtonLogger** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/ButtonLogger) příklad znázorňuje jednoduché `Clicked` zpracování.
+[ **ButtonLogger** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/ButtonLogger) příklad ukazuje jednoduchý `Clicked` zpracování.
 
-## <a name="sharing-button-clicks"></a>Kliknutím na tlačítko pro sdílení
+## <a name="sharing-button-clicks"></a>Sdílení tlačítka klikne
 
-Více `Button` zobrazení můžete sdílet stejný `Clicked` obslužná rutina, ale obslužná rutina obecně musí určit, které `Button` zodpovídá za určité události. Jeden z přístupů je pro uložení různých `Button` objekty pole a kontrolu, která se aktivuje událost v obslužné rutině.
+Více `Button` zobrazení můžou sdílet stejný `Clicked` obslužné rutiny, ale obslužnou rutinu obecně potřebuje k určení, které `Button` zodpovídá za konkrétní události. Jedním z přístupů je pro uložení různých `Button` objekty jako pole a kontroly, který se spouští v obslužné rutině události.
 
-[ **TwoButtons** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/TwoButtons) příklad znázorňuje tento postup. Program také ukazuje, jak nastavit [ `IsEnabled` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.IsEnabled/) vlastnost `Button` k `false` při stisknutí kláves `Button` již není platný. A zakázané `Button` negeneruje `Clicked` událostí.
+[ **TwoButtons** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/TwoButtons) ukázka demonstruje tento postup. Program také ukazuje, jak nastavit [ `IsEnabled` ](xref:Xamarin.Forms.VisualElement.IsEnabled) vlastnost `Button` k `false` při stisknutí klávesy `Button` již není platný. A je zakázaná. `Button` negeneruje `Clicked` událostí.
 
-## <a name="anonymous-event-handlers"></a>Obslužné rutiny anonymní událostí
+## <a name="anonymous-event-handlers"></a>Obslužné rutiny událostí anonymní
 
-Je možné definovat `Clicked` obslužné rutiny jako anonymní lambda funkce, jako [ **ButtonLambdas** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/ButtonLambdas) příklad znázorňuje. Anonymní obslužné rutiny však nelze sdílet bez komplikované reflexe kód.
+Je možné definovat `Clicked` obslužnými rutinami jako anonymní lambda funkce, jako [ **ButtonLambdas** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/ButtonLambdas) ukázce. Anonymní obslužné rutiny však nelze sdílet bez kódu neuspořádaných reflexe.
 
-## <a name="distinguishing-views-with-ids"></a>Rozlišovací zobrazení s ID
+## <a name="distinguishing-views-with-ids"></a>Rozlišování zobrazení s ID
 
-Více `Button` objektů můžete také rozlišovat podle nastavení [ `StyleId` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.StyleId/) vlastnost nebo [ `AutomationId` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Element.AutomationId/) vlastnosti `string`. Tato vlastnost je definována `Element` však není použit v rámci Xamarin.Forms. Je určena k používány pouze ve programy aplikací.
+Více `Button` objekty také dají rozlišovat podle nastavení [ `StyleId` ](xref:Xamarin.Forms.Element.StyleId) vlastnost nebo [ `AutomationId` ](xref:Xamarin.Forms.Element.AutomationId) vlastnost `string`. Tato vlastnost je definován `Element` , ale není použit v rámci Xamarin.Forms. Jeho účelem je používat výhradně aplikacemi.
 
-[ **SimplestKeypad** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/SimplestKeypad) Ukázka používá stejné obslužné rutiny události pro všechny 10 čísel klíče na numerické klávesnici a slouží k rozlišení mezi nimi pomocí `StyleId` vlastnost:
+[ **SimplestKeypad** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/SimplestKeypad) Ukázka používá stejný ovladač událostí pro všechny 10 čísel klíče na numerické klávesnici a rozlišuje mezi nimi pomocí `StyleId` vlastnost:
 
-[![Trojitá snímek obrazovky nejjednodušší klávesnici](images/ch06fg04-small.png "kalkulačky")](images/ch06fg04-large.png#lightbox "kalkulačky")
+[![Trojitá snímek nejjednodušší klávesnici](images/ch06fg04-small.png "Kalkulačka")](images/ch06fg04-large.png#lightbox "Kalkulačka")
 
-## <a name="saving-transient-data"></a>Ukládání dat přechodné
+## <a name="saving-transient-data"></a>Ukládání přechodných dat
 
-Mnoho aplikací potřebovat k uložení dat při ukončení programu a znovu načíst data při spuštění programu znovu. [ `Application` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Application/) Třída definuje několik členů, které pomáhají váš program uložení a obnovení dat o přechodný:
+Mnoho aplikací se musí k ukládání dat, když program se ukončí a znovu načíst data při spuštění programu znovu. [ `Application` ](xref:Xamarin.Forms.Application) Třída definuje několik členů, které pomáhají program uložení a obnovení přechodných dat:
 
-- [ `Properties` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.Properties/) Vlastnost je slovník s `string` klíče a `object` položky. Obsah slovníku jsou automaticky uloží do místního úložiště aplikací před ukončení programu a znovu načíst při spuštění programu.
-- `Application` Třída definuje tři chráněné virtuální metody, že je standardní program `App` třídy přepsání: [ `OnStart` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Application.OnStart()/), [ `OnSleep` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Application.OnSleep()/), a [ `OnResume` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Application.OnResume()/). Tyto odkazovat na *životního cyklu aplikace* události.
-- [ `SavePropertiesAsync` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Application.SavePropertiesAsync()/) Metoda uloží obsah slovníku.
+- [ `Properties` ](xref:Xamarin.Forms.Application.Properties) Vlastnost je slovník s `string` klíče a `object` položky. Obsah slovníku se automaticky uloží do místního úložiště aplikací před ukončením programu a znovu načíst při spuštění programu.
+- `Application` Třída definuje tři chráněné virtuální metody, že je standardní program `App` třídy přepsání: [ `OnStart` ](xref:Xamarin.Forms.Application.OnStart), [ `OnSleep` ](xref:Xamarin.Forms.Application.OnSleep), a [ `OnResume` ](xref:Xamarin.Forms.Application.OnResume). Jde o *životního cyklu aplikací* události.
+- [ `SavePropertiesAsync` ](xref:Xamarin.Forms.Application.SavePropertiesAsync) Metoda uloží obsah slovníku.
 
-Není nutné volat `SavePropertiesAsync`. Obsah slovníku jsou automaticky před ukončení programu uloží a načtené před spuštění programu. Je užitečná během testování program k uložení dat, pokud dojde k chybě programu.
+Není nutné volat `SavePropertiesAsync`. Obsah slovníku jsou automaticky uložen před ukončením programu a načíst před spuštěním programu. Je užitečná během testování aplikace k ukládání dat, pokud dojde k chybě programu.
 
 Užitečné je také:
 
-- [`Application.Current`](https://developer.xamarin.com/api/property/Xamarin.Forms.Application.Current/), pomocí statické vlastnosti, který vrací aktuální `Application` objekt, který pak můžete získat `Properties` slovníku.
+- [`Application.Current`](xref:Xamarin.Forms.Application.Current), statickou vlastnost, která vrátí aktuální `Application` objekt, který potom slouží k získání `Properties` slovníku.
 
-Prvním krokem je identifikace všech proměnných na stránku, která chcete zachovat při ukončení programu. Pokud znáte všechna místa, kde tyto proměnné změnit, můžete jednoduše přidat je do `Properties` slovníku v daném okamžiku. V konstruktoru stránky, můžete nastavit proměnné z `Properties` slovníku existuje-li klíč.
+Prvním krokem je identifikace všechny proměnné na stránce, které chcete zachovat, když program skončí. Pokud znáte všechna místa, kde tyto proměnné změnit, můžete jednoduše přidat je `Properties` slovníku v tomto okamžiku. V konstruktoru na stránce můžete nastavit proměnné z `Properties` slovníku existuje-li klíč.
 
-Větší programu bude pravděpodobně muset řešit události životního cyklu aplikace. Nejdůležitější je `OnSleep` metoda. Volání této metody označuje, že program opustil popředí. Možná má uživatel stisknutí **Domů** tlačítko na zařízení, zobrazí všechny aplikace nebo se vypíná telefonu. Volání `OnSleep` pouze oznámení, že program přijme dříve, než je ukončen. Tento program by měl využít této příležitosti a ujistěte se, že `Properties` slovník je aktuální.
+Rozsáhlejšího programu bude pravděpodobně muset zabývat události životního cyklu aplikace. Nejdůležitější je `OnSleep` metody. Volání této metody Určuje, že program opustil popředí. Například uživatel stiskne **Domů** tlačítko na zařízení, zobrazí všechny aplikace nebo Probíhá ukončení telefonu. Volání `OnSleep` je jenom oznámení, že program přijímá předtím, než se ukončí. Program by měl využijte této příležitosti a ujistěte se, `Properties` slovník je aktuální.
 
-Volání `OnResume` označuje, že program není ukončit po posledním volání `OnSleep` , ale je teď spuštěná v popředí, se znovu. Program může použít tuto možnost aktualizovat připojení k Internetu (třeba).
+Volání `OnResume` označuje, že program nebyl ukončen následující po posledním volání do `OnSleep` , ale je teď spuštěná v popředí, se znovu. Program může využít tuto příležitost k aktualizaci připojení k Internetu (třeba).
 
-Volání `OnStart` dojde při spuštění programu. Není nutné čekat, až volání této metody pro přístup k `Properties` slovníku protože již bylo obsah obnovit, když `App` volání konstruktoru.
+Volání `OnStart` dochází při spuštění programu. Není nutné čekat na volání této metody pro přístup k `Properties` slovníku vzhledem k tomu, že již byly obsah obnovit, kdy `App` volání konstruktoru.
 
-[ **PersistentKeypad** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/PersistentKeypad) ukázka je velmi podobné **SimplestKeypad** s tím rozdílem, že program používá `OnSleep` přepsání uložit aktuální položky klávesnici a stránka konstruktor data obnovit.
+[ **PersistentKeypad** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/PersistentKeypad) ukázka je velmi podobný **SimplestKeypad** s tím rozdílem, že program použije `OnSleep` přepsání uložit s aktuální položkou klávesnici a Konstruktor stránky pro tato data obnovit.
 
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Úplný text kapitoly 6 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch06-Apr2016.pdf)
-- [Ukázky kapitoly 6](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06)
-- [Kapitola 6 F # – ukázky](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/FS)
+- [Kapitola 6 textu v plném znění (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch06-Apr2016.pdf)
+- [Ukázky kapitola 6](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06)
+- [Ukázky kapitola 6 F #](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/FS)

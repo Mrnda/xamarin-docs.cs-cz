@@ -7,39 +7,39 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: 0b81d429b0488603c7a487421cb7f32c1f3cf890
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 558a05b5fdc4c4f08194b708de886bca342dd860
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240990"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995411"
 ---
 # <a name="introduction-to-dependencyservice"></a>Úvod do DependencyService
 
 ## <a name="overview"></a>Přehled
 
-[`DependencyService`](https://developer.xamarin.com/api/type/Xamarin.Forms.DependencyService/) umožňuje aplikacím volání do funkce specifické pro platformu ze sdíleného kódu. Tato funkce umožňuje aplikacím Xamarin.Forms dělat všechno, co můžete udělat nativní aplikaci.
+[`DependencyService`](xref:Xamarin.Forms.DependencyService) umožňuje aplikacím provádět volání do funkce specifické pro platformu ze sdíleného kódu. Tato funkce umožňuje u aplikací Xamarin.Forms provést cokoli, co můžete dělat nativní aplikaci.
 
-`DependencyService` je překladače závislostí. V praxi, je definována rozhraní a `DependencyService` vyhledá správné implementace tohoto rozhraní různé projekty platformy.
+`DependencyService` je překladače závislostí. V praxi je definována rozhraní a `DependencyService` najde správnou implementaci rozhraní z různých projektů platformy.
 
 ## <a name="how-dependencyservice-works"></a>Jak funguje DependencyService
 
-Xamarin.Forms aplikace potřebují čtyři komponenty pro použití `DependencyService`:
+U aplikací Xamarin.Forms potřebovat čtyři součásti používat `DependencyService`:
 
-- **Rozhraní** &ndash; požadovanou funkčnost je definované rozhraní v sdíleného kódu.
-- **Implementace za platformy** &ndash; třídy, které implementují rozhraní musí být přidaný do každého projektu platformy.
-- **Registrace** &ndash; každý implementující třídu, musí být zaregistrovaný u `DependencyService` prostřednictvím atribut metadat. Registrace umožňuje `DependencyService` najít implementující třídu a zadejte místo rozhraní za běhu.
-- **Volání na DependencyService** &ndash; sdíleného kódu musí explicitně volání `DependencyService` požádat o implementace rozhraní.
+- **Rozhraní** &ndash; požadované funkce je definována rozhraní v sdíleným kódem.
+- **Implementace na platformě** &ndash; třídy, které implementují rozhraní musí být přidané do každého projektu platformy.
+- **Registrace** &ndash; každá implementující třída musí být zaregistrovaná s `DependencyService` prostřednictvím atributu metadat. Umožňuje registraci `DependencyService` najít implementující třídu a zadat namísto rozhraní v době běhu.
+- **Volání za účelem DependencyService** &ndash; sdílený kód je potřeba explicitně volat `DependencyService` žádat pro implementace rozhraní.
 
-Všimněte si, že je třeba zadat implementace pro jednotlivé platformy projekty v řešení. Projekty platformy bez implementace selže za běhu.
+Všimněte si, že musí být poskytnuty implementace pro každou platformu projektu ve vašem řešení. Projekty platformy bez implementace selže v době běhu.
 
-Následující diagram vysvětluje strukturu aplikace:
+Struktura aplikace je vysvětlené na následujícím diagramu:
 
-![](introduction-images/overview-diagram.png "Struktura DependencyService aplikace")
+![](introduction-images/overview-diagram.png "Struktury DependencyService aplikace")
 
 ### <a name="interface"></a>Rozhraní
 
-Na rozhraní, které vám navrhnout definují způsob práce s funkce specifické pro platformu. Dávejte pozor, pokud vyvíjíte součást ke sdílení jako součást nebo balíček Nuget. Rozhraní API návrhu můžete nebo rozdělte balíček. Následující příklad určuje jednoduché rozhraní pro hovořícího text, který umožňuje flexibilitu při zadání slova budou výslovně, ale ponechá implementace k přizpůsobení pro každou platformu:
+Rozhraní, navrhnout budou definovat, jak pracovat s funkcemi konkrétní platformy. Dejte si pozor při vývoji komponentu ke sdílení jako součást nebo balíček Nuget. Návrh rozhraní API může vylepšit nebo zničit balíčku. Následující příklad určuje jednoduché rozhraní pro mluvený text, který umožňuje flexibilitu při zadávání slova budou, ale ponechá implementaci přizpůsobená pro každou platformu:
 
 ```csharp
 public interface ITextToSpeech {
@@ -47,9 +47,9 @@ public interface ITextToSpeech {
 }
 ```
 
-### <a name="implementation-per-platform"></a>Implementace na každou platformu
+### <a name="implementation-per-platform"></a>Implementace jednotlivé platformy
 
-Po vhodné rozhraní byly navržené tak, že rozhraní musí být implementován v projektu pro každou platformu, kterou cílíte na. Například následující třídy implementuje `ITextToSpeech` rozhraní v systému iOS:
+Jakmile vhodné rozhraní byl navržen tak, musí být rozhraní implementované v projektu pro každou platformu, na které cílíte. Například následující implementuje třída `ITextToSpeech` rozhraní pro iOS:
 
 ```csharp
 namespace UsingDependencyService.iOS
@@ -75,7 +75,7 @@ namespace UsingDependencyService.iOS
 
 ### <a name="registration"></a>Registrace
 
-Každá implementace rozhraní musí být registrováno s `DependencyService` s atributem metadat. Následující kód zaregistruje implementaci pro iOS:
+Každá implementace rozhraní musí být zaregistrovaná s `DependencyService` s atributem metadat. Následující kód zaregistruje implementaci pro iOS:
 
 ```csharp
 [assembly: Dependency (typeof (TextToSpeech_iOS))]
@@ -85,7 +85,7 @@ namespace UsingDependencyService.iOS
 }
 ```
 
-Vložení všechny společně, specifické pro platformu implementace vypadá takto:
+Všechno dohromady uvádění, implementaci specifické pro platformu vypadá takto:
 
 ```csharp
 [assembly: Dependency (typeof (TextToSpeech_iOS))]
@@ -110,13 +110,13 @@ namespace UsingDependencyService.iOS
 }
 ```
 
-Poznámka: které registrace probíhá na úrovni oboru názvů, ne na úrovni třídy.
+Poznámka:, která se provede registrace na úrovni oboru názvů, ne na úrovni třídy.
 
-#### <a name="universal-windows-platform-net-native-compilation"></a>Nativní kompilace rozhraní .NET Universal Windows Platform
+#### <a name="universal-windows-platform-net-native-compilation"></a>Nativní kompilace .NET Universal Windows Platform
 
-Postupujte podle projektů UPW, které používají možnost kompilace .NET Native [mírně odlišné konfigurace](~/xamarin-forms/platform/windows/installation/index.md#target-invocation-exception) při inicializaci Xamarin.Forms. Kompilace .NET native taky vyžaduje trochu jiná registrace závislosti služeb.
+Projekty UWP, které používají možnost kompilace .NET Native by měly dodržovat [mírně odlišné konfigurace](~/xamarin-forms/platform/windows/installation/index.md#target-invocation-exception) při inicializaci Xamarin.Forms. Kompilace .NET native vyžaduje také mírně odlišné registrace pro závislosti služby.
 
-V **App.xaml.cs** souboru, ruční registraci jednotlivých služeb závislostí definované v projektu UPW pomocí `Register<T>` metoda, jak je uvedeno níže:
+V **App.xaml.cs** souboru, každá služba závislosti definované v projektu UPW pomocí ruční registraci `Register<T>` způsob, jak je znázorněno níže:
 
 ```csharp
 Xamarin.Forms.Forms.Init(e, assembliesToInclude);
@@ -124,26 +124,26 @@ Xamarin.Forms.Forms.Init(e, assembliesToInclude);
 Xamarin.Forms.DependencyService.Register<TextToSpeechImplementation>();
 ```
 
-Poznámka: ruční registraci pomocí `Register<T>` je efektivní pouze ve verzi sestavení pomocí .NET Native kompilace. Pokud vynecháte tento řádek, sestavení pro ladění, budou i nadále fungovat, ale verze sestavení se nepodaří načíst službu závislostí.
+Poznámka: pomocí ruční registraci `Register<T>` je efektivní pouze ve verzi sestavení pomocí kompilace .NET Native. Pokud tento řádek vynecháte, sestavení pro ladění budou i nadále fungovat, ale verze sestavení se nezdaří načtení závislostí service.
 
-### <a name="call-to-dependencyservice"></a>Volání do DependencyService
+### <a name="call-to-dependencyservice"></a>Volání za účelem DependencyService
 
-Jakmile se projekt je nastaven s společné rozhraní a implementace pro každou platformu, použijte `DependencyService` získat správné implementace za běhu:
+Jakmile projektu je nastavený s společné rozhraní a implementace pro každou platformu, použijte `DependencyService` zobrazíte správné implementaci za běhu:
 
 ```csharp
 DependencyService.Get<ITextToSpeech>().Speak("Hello from Xamarin Forms");
 ```
 
-`DependencyService.Get<T>` najde správné implementace rozhraní `T`.
+`DependencyService.Get<T>` Najde správnou implementaci rozhraní `T`.
 
-### <a name="solution-structure"></a>Struktura řešení
+### <a name="solution-structure"></a>Struktury řešení
 
-[Ukázkové řešení UsingDependencyService](https://developer.xamarin.com/samples/UsingDependencyService/) je uvedeno níže pro iOS a Android, se změnami kódu uvedených výše zvýrazněná.
+[Ukázkové řešení UsingDependencyService](https://developer.xamarin.com/samples/UsingDependencyService/) je níže pro iOS a Android, změny kódu uvedených výše zvýrazní.
 
  [![iOS a Android řešení](introduction-images/solution-sml.png "DependencyService ukázkové řešení struktura")](introduction-images/solution.png#lightbox "DependencyService ukázkové řešení struktura")
 
 > [!NOTE]
-> Můžete **musí** poskytnout implementaci ve všech projektech platformy. Pokud žádné implementace rozhraní je registrován, pak se `DependencyService` nelze přeložit `Get<T>()` metoda za běhu.
+> Můžete **musí** poskytnout implementaci projektu pro všechny platformy. Pokud žádná implementace rozhraní se nezaregistrovali, pak bude `DependencyService` nelze přeložit `Get<T>()` metoda za běhu.
 
 
 ## <a name="related-links"></a>Související odkazy

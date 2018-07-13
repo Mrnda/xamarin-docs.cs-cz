@@ -1,28 +1,28 @@
 ---
-title: Řetězec Xamarin.Forms formátování
-description: Tento článek vysvětluje, jak používat Xamarin.FOrms datové vazby k formátování a zobrazení objektů jako řetězce. Toho dosáhnete pomocí nastavení StringFormat – vazby na standardní řetězec formátování .NET s zástupný symbol.
+title: Formátování řetězců Xamarin.Forms
+description: Tento článek vysvětluje, jak pomocí Xamarin.FOrms datové vazby pro formátování a zobrazení objektů jako řetězce. Toho dosáhnete nastavením StringFormat vazby na standardní formátovací řetězec .NET s zástupný symbol.
 ms.prod: xamarin
 ms.assetid: 978C85B7-CB58-4483-A131-21B381A865E0
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: bdac74e4ec14797ec373f86b8a94c7af4d480951
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: a876e81c67b6ec61a2cb29143cb001a7d6160032
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35240298"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998144"
 ---
-# <a name="xamarinforms-string-formatting"></a>Řetězec Xamarin.Forms formátování
+# <a name="xamarinforms-string-formatting"></a>Formátování řetězců Xamarin.Forms
 
-Někdy je vhodnější použít datové vazby k zobrazení řetězcovou reprezentaci objektu nebo hodnota. Například můžete chtít použít `Label` zobrazit aktuální hodnoty `Slider`. V této vazbě dat `Slider` je zdroj a cíl `Text` vlastnost `Label`.
+Někdy je vhodné použít datové vazby k zobrazení řetězcová reprezentace objektu nebo hodnoty. Například můžete chtít použít `Label` zobrazíte aktuální hodnotu `Slider`. V této vazbě dat `Slider` je zdrojem a cílem `Text` vlastnost `Label`.
 
-Při zobrazování řetězců v kódu, nástroj nejúčinnějších je statických [ `String.Format` ](https://developer.xamarin.com/api/member/System.String.Format/p/System.String/System.Object/) metoda. Formátovací řetězec obsahuje formátování kódy, které jsou specifické pro různé typy objektů, a může obsahovat další text společně s hodnoty, který je formátován. Najdete v článku [typy formátování v .NET](/dotnet/standard/base-types/formatting-types/) článku Další informace o formátování řetězce.
+Při zobrazování řetězců v kódu, nástroj procesorově nejvýkonnější je statické [ `String.Format` ](xref:System.String.Format(System.String,System.Object)) metody. Formátovací řetězec obsahuje formátování specifické pro různé typy objektů kódy a může obsahovat další text spolu s hodnotami, který je formátován. Zobrazit [formátovací typy v .NET](/dotnet/standard/base-types/formatting-types/) najdete další informace o formátování řetězce.
 
-## <a name="the-stringformat-property"></a>StringFormat – vlastnost
+## <a name="the-stringformat-property"></a>Vlastnost StringFormat
 
-Pokud tuto funkci se přenášejí do datové vazby: nastavíte [ `StringFormat` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindingBase.StringFormat/) vlastnost `Binding` (nebo [ `StringFormat` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Xaml.BindingExtension.StringFormat/) vlastnost `Binding` – rozšíření značek) pro formátování řetězce s jeden zástupný symbol standardní .NET:
+Je tato zařízení přenesou do datové vazby: můžete nastavit [ `StringFormat` ](xref:Xamarin.Forms.BindingBase.StringFormat) vlastnost `Binding` (nebo [ `StringFormat` ](xref:Xamarin.Forms.Xaml.BindingExtension.StringFormat) vlastnost `Binding` – rozšíření značek) do Standardní formátovací řetězec s jeden zástupný symbol .NET:
 
 ```xaml
 <Slider x:Name="slider" />
@@ -31,13 +31,13 @@ Pokud tuto funkci se přenášejí do datové vazby: nastavíte [ `StringFormat`
                       StringFormat='The slider value is {0:F2}'}" />
 ```
 
-Všimněte si, že formátovací řetězec je oddělená jednoduchou uvozovku (apostrof) znaků, který má pomoci vyhnout práce složené závorky jako jiné XAML – rozšíření značek analyzátor jazyka XAML. Jinak, který řetězec bez jednoduchou uvozovku znak je do jednoho řetězce, které byste použili k zobrazení hodnoty s plovoucí desetinnou čárkou v volání `String.Format`. Formátování specifikaci `F2` způsobí, že hodnota zobrazí dvě desetinná místa.
+Všimněte si, že formátovací řetězec je oddělen složenými znaky uvozovek (apostrof) umožňující analyzátoru XAML, vyhněte se zpracuje složené závorky jako další rozšíření značek XAML. Jinak, který řetězec bez uvozovek znak, který je stejný řetězec, můžete použít k zobrazení hodnoty s plovoucí desetinnou čárkou ve volání `String.Format`. Formátování specifikace `F2` způsobí, že hodnota má být zobrazen na dvě desetinná místa.
 
-`StringFormat` Vlastnost má smysl jenom, když je vlastnost cílového typu `string`, a režim vazba je `OneWay` nebo `TwoWay`. Pro obousměrné vazby `StringFormat` platí jenom pro předávání ze zdrojové do cílové hodnoty.
+`StringFormat` Vlastnost má smysl jenom když je vlastnost cílového typu `string`, a režim vazby je `OneWay` nebo `TwoWay`. Pro obousměrné vazby `StringFormat` jde použít jenom pro předávání ze zdrojové do cílové hodnoty.
 
-Jak uvidíte v článku na další na [cesta vazby](binding-path.md), vazby dat se může stát poměrně složitá a convoluted. Při ladění tyto vazby dat, můžete přidat `Label` do souboru XAML s `StringFormat` zobrazíte některé mezilehlých výsledků. I když ji použít pouze k zobrazení typ objektu, který může být užitečné.
+Jak uvidíte v následujícím článku na [cesta vazby](binding-path.md), datové vazby může být poměrně složité a složitými. Při ladění tyto vazby dat, můžete přidat `Label` do souboru XAML s `StringFormat` zobrazíte některé mezilehlých výsledků. I když ho používáte jenom k zobrazení typ objektu, který může být užitečné.
 
-**Formátování řetězce** stránky znázorňuje několik použití `StringFormat` vlastnost:
+**Formátování řetězce** stránce ukazuje několik použití `StringFormat` vlastnost:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -101,33 +101,33 @@ Jak uvidíte v článku na další na [cesta vazby](binding-path.md), vazby dat 
 </ContentPage>
 ```
 
-Vazby na `Slider` a `TimePicker` zobrazit použití – specifikace formátu pro konkrétní `double` a `TimeSpan` datové typy. `StringFormat` Který zobrazí text z `Entry` zobrazení ukazuje, jak k určení dvojité uvozovky v řetězci formátování s použitím `&quot;` HTML entity.
+Vazby na `Slider` a `TimePicker` zobrazit konkrétní k použití specifikace formátu `double` a `TimeSpan` datové typy. `StringFormat` , Který zobrazí text z `Entry` zobrazení ukazuje, jak vyplnit formátovací řetězec s použitím dvojitých uvozovek `&quot;` entita HTML.
 
-Další oddíl v souboru XAML `StackLayout` s `BindingContext` nastavena na `x:Static` rozšíření značek, který odkazuje na statickou `DateTime.Now` vlastnost. První vazba nemá žádné vlastnosti:
+V následující části najdete v souboru XAML `StackLayout` s `BindingContext` nastavena na `x:Static` – rozšíření značek, který odkazuje na statickou `DateTime.Now` vlastnost. První vazba nemá žádné vlastnosti:
 
 ```xaml
 <Label Text="{Binding}" />
 ```
 
-Jednoduše zobrazí `DateTime` hodnotu `BindingContext` s výchozí formátování. Zobrazí druhé vazby `Ticks` vlastnost `DateTime`, zatímco zobrazí dvě vazby `DateTime` s konkrétní formátování. Všimněte si to `StringFormat`:
+Jednoduše zobrazí `DateTime` hodnotu `BindingContext` s výchozím nastavením. Zobrazí druhé vazby `Ticks` vlastnost `DateTime`, zatímco zobrazují dvě vazby `DateTime` s konkrétní formátování. Všimněte si, že to `StringFormat`:
 
 ```xaml
 <Label Text="{Binding StringFormat='The {{0:MMMM}} specifier produces {0:MMMM}'}" />
 ```
 
-Pokud potřebujete zobrazit levé nebo pravé složené závorky v formátovací řetězec, jednoduše použijte pár z nich.
+Pokud potřebujete zobrazit levou nebo pravou složenou složené závorky v formátovací řetězec, jednoduše použijte pár z nich.
 
-Poslední část nastaví `BindingContext` na hodnotu `Math.PI` a zobrazí se výchozí formátování a dva různé typy formátování čísel.
+Poslední část sady `BindingContext` hodnotě `Math.PI` a zobrazí se výchozí formátování a dva různé typy formátování čísel.
 
-Tady je programy spuštěné na všech tří platformách:
+Tady je program spuštěn na všech třech platformách:
 
-[![Řetězec formátování](string-formatting-images/stringformatting-small.png "řetězec formátování")](string-formatting-images/stringformatting-large.png#lightbox "řetězec formátování")
+[![Řetězce formátování](string-formatting-images/stringformatting-small.png "řetězce formátování")](string-formatting-images/stringformatting-large.png#lightbox "řetězce formátování")
 
-## <a name="viewmodels-and-string-formatting"></a>ViewModels a formátování řetězce
+## <a name="viewmodels-and-string-formatting"></a>Řetězec, formátování a modely ViewModels
 
-Pokud používáte `Label` a `StringFormat` Chcete-li zobrazit hodnotu zobrazení, která je také cíl ViewModel, můžete buď definovat vazby ze zobrazení `Label` nebo z ViewModel k `Label`. Druhý postup je obecně osvědčených vzhledem k tomu, tak ověří, že vazby mezi zobrazením a ViewModel funguje.
+Když používáte `Label` a `StringFormat` k zobrazení hodnoty zobrazení, která je také cíl ViewModel, můžete buď definovat vazby ze zobrazení tak, aby `Label` nebo z ViewModel k `Label`. Obecně platí druhý postup je nejlepší, jelikož ověřuje, že vazby mezi zobrazením a ViewModel fungují.
 
-Tento postup je uveden v **lepší výběr barvy** vzorku, který používá stejné ViewModel jako **jednoduchý selektor barva** program zobrazený v [ **vazby režimu** ](binding-mode.md) článku:
+Tento přístup je zobrazena ve **lepší výběr barvy** vzorku, který používá stejné ViewModel jako **jednoduchý výběr barvy** programu zobrazeného [ **vazby režimu** ](binding-mode.md) článku:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -172,18 +172,18 @@ Tento postup je uveden v **lepší výběr barvy** vzorku, který používá ste
 </ContentPage>    
 ```
 
-Existují tři páry `Slider` a `Label` prvky, které jsou vázány na stejnou vlastnost v zdroje `HslColorViewModel` objektu. Jediným rozdílem je, že `Label` má `StringFormat` vlastnost zobrazíte všechny `Slider` hodnotu.
+Nyní existují tři páry `Slider` a `Label` prvky, které jsou vázány na stejné source – vlastnost v `HslColorViewModel` objektu. Jediným rozdílem je, že `Label` má `StringFormat` vlastnost pro zobrazení jednotlivých `Slider` hodnotu.
 
-[![Lépe barvu selektor](string-formatting-images/bettercolorselector-small.png "lépe barvu selektor")](string-formatting-images/bettercolorselector-large.png#lightbox "lépe barvu selektor")
+[![Lepší barva selektor](string-formatting-images/bettercolorselector-small.png "lépe barva selektor")](string-formatting-images/bettercolorselector-large.png#lightbox "lépe barva selektor")
 
-Možná se ptáte, jak můžete zobrazit (červená, zelená, modré) hodnoty RGB v šestnáctkovém formátu tradiční dvou číslic. Tyto celočíselné hodnoty nejsou přímo dostupné z `Color` struktura. Jedno řešení by vypočítat celočíselné hodnoty součástí barev v rámci ViewModel a umístěte je jako vlastnosti. Může pak naformátovat pomocí `X2` formátování specifikace.
+Možná se ptáte, jak můžete zobrazit (červená, zelená, modrá) hodnoty RGB v šestnáctkovém formátu tradiční dvěma číslicemi. Nejsou přímo dostupné z těchto celočíselných hodnot `Color` struktury. Jedním řešením může být pro výpočet celočíselné hodnoty barevných složek v rámci ViewModel a vystavit jako vlastnosti. Může pak naformátovat pomocí `X2` formátování specifikace.
 
-Další možností je další obecné: můžete napsat *převaděč hodnoty vazby* popsané v článku na novější [ **převodníky hodnot vazby**](converters.md).
+Další možností je obecnější: můžete napsat *převaděč hodnoty vazby* jak je popsáno v pozdější článku [ **převaděče hodnot vazeb**](converters.md).
 
-Další článek, ale jsou zde popsány [ **cesta vazby** ](binding-path.md) v další podrobnosti a zobrazit, jak můžete použít k odkazování dílčí vlastností a položek v kolekcích.
+Další článek, ale prozkoumává [ **cesta vazby** ](binding-path.md) ve více podrobností a jeho použití k odkazování na dílčí vlastnosti a položky v kolekci.
 
 
 ## <a name="related-links"></a>Související odkazy
 
 - [Ukázky vazby dat (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
-- [Kapitola vazby dat z adresáře Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
+- [Data vazby kapitola z knihy Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

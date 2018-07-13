@@ -1,46 +1,46 @@
 ---
-title: Znovu použitelné EventToCommandBehavior
-description: Chování může být použito k přidružení příkazy s ovládacími prvky, které nebyly navrženy tak, aby komunikovali s příkazy. Tento článek ukazuje použití Xamarin.Forms chování k vyvolání příkazu, pokud aktivuje událost.
+title: Opakovaně použitelné EventToCommandBehavior
+description: Chování slouží k přidružení příkazů s ovládacími prvky, které nejsou určeny k interakci s příkazy. Tento článek ukazuje použití chování Xamarin.Forms spuštění příkazu, když se aktivuje událost.
 ms.prod: xamarin
 ms.assetid: EC7F6556-9776-40B8-9424-A8094482A2F3
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: e89400c74c3d1afbf8954d0f88387c5967ebd534
-ms.sourcegitcommit: d80d93957040a14b4638a91b0eac797cfaade840
+ms.openlocfilehash: 3151179b6ff6d26b74a87ded747310646b304603
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34848217"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996318"
 ---
-# <a name="reusable-eventtocommandbehavior"></a>Znovu použitelné EventToCommandBehavior
+# <a name="reusable-eventtocommandbehavior"></a>Opakovaně použitelné EventToCommandBehavior
 
-_Chování může být použito k přidružení příkazy s ovládacími prvky, které nebyly navrženy tak, aby komunikovali s příkazy. Tento článek ukazuje použití Xamarin.Forms chování k vyvolání příkazu, pokud aktivuje událost._
+_Chování slouží k přidružení příkazů s ovládacími prvky, které nejsou určeny k interakci s příkazy. Tento článek ukazuje použití chování Xamarin.Forms spuštění příkazu, když se aktivuje událost._
 
 ## <a name="overview"></a>Přehled
 
-`EventToCommandBehavior` Třída je opakovaně použitelné vlastní chování Xamarin.Forms, který spouští příkaz v reakci na *žádné* spouštění událostí. Ve výchozím nastavení, argumenty událostí pro události se předá příkaz a může být volitelně pomocí převedeny [ `IValueConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.IValueConverter/) implementace.
+`EventToCommandBehavior` Třída je opakovaně použitelné vlastní chování Xamarin.Forms, které spouští příkaz v reakci na *jakékoli* spouštění událostí. Ve výchozím nastavení, argumenty událostí pro události se předá příkazu a volitelně může být převedena [ `IValueConverter` ](xref:Xamarin.Forms.IValueConverter) implementace.
 
-Následující vlastnosti chování musí být nastavené použít toto chování:
+Použít toto chování, musí být nastaveny následující vlastnosti chování:
 
 - **EventName** – název události chování naslouchá.
-- **Příkaz** – **ICommand** spouštění. Chování se očekává, že najít `ICommand` instance na [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) připojené ovládacího prvku, který může být dědí z nadřazeného prvku.
+- **Příkaz** – **rozhraní ICommand** má být proveden. Chování očekává `ICommand` instance na [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) připojeného ovládacího prvku, který může být zděděna z nadřazeného prvku.
 
 Následující vlastnosti volitelné chování lze také nastavit:
 
-- **CommandParameter** – `object` , budou předány do příkazu.
-- **Převaděč** – [ `IValueConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.IValueConverter/) implementace, které změní formát data argument události, jak se předávají mezi *zdroj* a *cíl*modul vazby.
+- **CommandParameter** – `object` , který se předá příkazu.
+- **Převaděč** – [ `IValueConverter` ](xref:Xamarin.Forms.IValueConverter) implementace, která změní formát data argument události, jako je jí předán mezi *zdroj* a *cílové*nástrojem vazby.
 
-## <a name="creating-the-behavior"></a>Vytváření chování
+## <a name="creating-the-behavior"></a>Vytvoření chování
 
-`EventToCommandBehavior` Třída odvozená z `BehaviorBase<T>` třídy, která naopak odvozen z [ `Behavior<T>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior%3CT%3E/) třída. Účelem `BehaviorBase<T>` třídy je poskytnout základní třídu pro všechny Xamarin.Forms chování, které vyžadují [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) chování být nastavena na připojené ovládacího prvku. Zajistíte tak, že chování navázat a provést `ICommand` určeným elementem `Command` vlastnost, když je zpracován chování.
+`EventToCommandBehavior` Třída odvozena z `BehaviorBase<T>` třídu, která je dále odvozeno z [ `Behavior<T>` ](xref:Xamarin.Forms.Behavior`1) třídy. Účelem `BehaviorBase<T>` třídy je stanovit základní třídu pro Xamarin.Forms neovlivní žádné chování, které vyžadují [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) chování nastavit do připojeného ovládacího prvku. Tím se zajistí, že chování lze svázat a spusťte `ICommand` určená `Command` vlastnosti, když je zpracován chování.
 
-`BehaviorBase<T>` Třída poskytuje přepisovatelným [ `OnAttachedTo` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnAttachedTo/p/Xamarin.Forms.BindableObject/) metoda, která nastaví [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) chování a přepisovatelným [ `OnDetachingFrom` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnDetachingFrom/p/Xamarin.Forms.BindableObject/)metoda, která vyčistí `BindingContext`. Kromě toho třída ukládá odkaz na připojené ovládacího prvku `AssociatedObject` vlastnost.
+`BehaviorBase<T>` Třída poskytuje přepisovatelným [ `OnAttachedTo` ](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) metodu, která nastaví [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) chování a přepisovatelným [ `OnDetachingFrom` ](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject))metodu, která vyčistí `BindingContext`. Kromě toho třídy ukládá odkaz na připojeného ovládacího prvku `AssociatedObject` vlastnost.
 
-### <a name="implementing-bindable-properties"></a>Implementace vazbu vlastnosti
+### <a name="implementing-bindable-properties"></a>Implementace vlastnosti umožňující vazbu
 
-`EventToCommandBehavior` Třída definuje čtyři [ `BindableProperty` ](https://developer.xamarin.com/api/type/Xamarin.Forms.BindableProperty/) při aktivuje událost definovaný instancí, které uživatel provést příkaz. Tyto vlastnosti jsou uvedeny v následující příklad kódu:
+`EventToCommandBehavior` Třída definuje čtyři [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty) instancí, které jsou spouštěny uživatelem definovaný příkaz, když se aktivuje událost. Tyto vlastnosti jsou uvedeny v následujícím příkladu kódu:
 
 ```csharp
 public class EventToCommandBehavior : BehaviorBase<View>
@@ -62,13 +62,13 @@ public class EventToCommandBehavior : BehaviorBase<View>
 }
 ```
 
-Když `EventToCommandBehavior` třída zpracován, `Command` vlastnost by měla představovat data vázaná na `ICommand` mají být provedeny v reakci na spouštění událostí, která je definována v `EventName` vlastnost. Chování bude očekávali `ICommand` na [ `BindingContext` ](https://developer.xamarin.com/api/property/Xamarin.Forms.BindableObject.BindingContext/) připojené ovládacího prvku.
+Když `EventToCommandBehavior` spotřebování třídy `Command` vlastnost by měla představovat data vázaná `ICommand` mají být provedeny v reakci na události jeho spuštění, který je definován v `EventName` vlastnost. Chování bude chtít najít `ICommand` na [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) připojeného ovládacího prvku.
 
-Ve výchozím nastavení se předá argumenty událostí pro událost příkaz. Tato data mohou být volitelně převedeny předaných mezi *zdroj* a *cíl* stroj vazby, zadáním [ `IValueConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.IValueConverter/) implementaci jako `Converter` hodnotu vlastnosti. Alternativně můžete Předaný parametr k příkazu zadáním `CommandParameter` hodnotu vlastnosti.
+Ve výchozím nastavení se předá příkazu argumenty událostí pro událost. Tato data lze volitelně převést předaly mezi *zdroj* a *cílové* modulem vazbu tak, že určíte [ `IValueConverter` ](xref:Xamarin.Forms.IValueConverter) implementace jako `Converter` hodnotu vlastnosti. Můžete také parametr může být předán příkazu tak, že zadáte `CommandParameter` hodnotu vlastnosti.
 
 ### <a name="implementing-the-overrides"></a>Implementace přepsání
 
-`EventToCommandBehavior` Třídy přepsání [ `OnAttachedTo` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnAttachedTo/p/Xamarin.Forms.BindableObject/) a [ `OnDetachingFrom` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnDetachingFrom/p/Xamarin.Forms.BindableObject/) metody `BehaviorBase<T>` třídy, jak je znázorněno v následujícím příkladu kódu:
+`EventToCommandBehavior` Třídy přepsání [ `OnAttachedTo` ](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) a [ `OnDetachingFrom` ](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) metody `BehaviorBase<T>` třídy, jak je znázorněno v následujícím příkladu kódu:
 
 ```csharp
 public class EventToCommandBehavior : BehaviorBase<View>
@@ -89,11 +89,11 @@ public class EventToCommandBehavior : BehaviorBase<View>
 }
 ```
 
-[ `OnAttachedTo` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnAttachedTo/p/Xamarin.Forms.BindableObject/) Metoda provede instalaci pomocí volání `RegisterEvent` metodu předáním hodnoty `EventName` vlastnosti jako parametr. [ `OnDetachingFrom` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnDetachingFrom/p/Xamarin.Forms.BindableObject/) Metoda provádí vyčištění voláním `DeregisterEvent` metodu předáním hodnoty `EventName` vlastnosti jako parametr.
+[ `OnAttachedTo` ](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) Metoda provede instalaci pomocí volání `RegisterEvent` metodu předáním hodnoty `EventName` vlastnost jako parametr. [ `OnDetachingFrom` ](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) Metoda provede vyčištění voláním `DeregisterEvent` metodu předáním hodnoty `EventName` vlastnost jako parametr.
 
-### <a name="implementing-the-behavior-functionality"></a>Implementace funkce chování
+### <a name="implementing-the-behavior-functionality"></a>Implementace chování funkce
 
-Účelem chování je možné provést příkaz definované `Command` v odezvě na spouštění událostí, který je definován `EventName` vlastnost. Základní funkce chování je znázorněno v následujícím příkladu kódu:
+Chování slouží k provedení příkazu definované `Command` v odezvě na událost vyvolanou, který je definován `EventName` vlastnost. Základní chování funkce můžete vidět v následujícím příkladu kódu:
 
 ```csharp
 public class EventToCommandBehavior : BehaviorBase<View>
@@ -137,21 +137,21 @@ public class EventToCommandBehavior : BehaviorBase<View>
 }
 ```
 
-`RegisterEvent` Metodu je provést v reakci na `EventToCommandBehavior` připojovaný ke ovládacího prvku a obdrží hodnotu `EventName` vlastnosti jako parametr. Metoda poté se pokusí vyhledat události definované v `EventName` vlastnost u prvku připojené. Za předpokladu, že událost může být umístěn, `OnEvent` metoda je zaregistrován jako metodu obslužné rutiny události.
+`RegisterEvent` Provedení metody v reakci `EventToCommandBehavior` připojovaný ke ovládací prvek a přijímá hodnotu z `EventName` vlastnost jako parametr. Metoda následně se pokusí najít události definované v `EventName` vlastnost připojeného ovládacího prvku. Za předpokladu, že událost může být umístěna `OnEvent` metoda je zaregistrovaná a může být metoda obslužné rutiny události.
 
-`OnEvent` Metodu je provést v reakci na spouštění událostí, která je definována v `EventName` vlastnost. Za předpokladu, že `Command` odkazuje vlastnost platnou `ICommand`, metoda se pokusí načíst parametr předat `ICommand` následujícím způsobem:
+`OnEvent` Provedení metody v reakci na události jeho spuštění, který je definován v `EventName` vlastnost. Za předpokladu, že `Command` vlastnost odkazuje na platný `ICommand`, metoda se pokusí načíst parametr předat `ICommand` následujícím způsobem:
 
-- Pokud `CommandParameter` vlastnost definuje parametr, načítání.
-- Jinak, pokud `Converter` definuje vlastnost [ `IValueConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.IValueConverter/) implementace převaděč se spustí a převede data události argumentů předaných mezi *zdroj* a *cíl* modul vazby.
-- Jinak argumenty událostí se předpokládá, že jako parametr.
+- Pokud `CommandParameter` vlastnost definuje parametr, je načten.
+- Jinak, pokud `Converter` definuje vlastnost [ `IValueConverter` ](xref:Xamarin.Forms.IValueConverter) implementace konvertoru spouští a převádí data argument události předaly mezi *zdroj* a *cílové* nástrojem vazby.
+- Argumenty události jsou jinak, předpokládá se parametr.
 
-Data vázaná `ICommand` potom spuštěn, předávání v parametr k příkazu, za předpokladu, že [ `CanExecute` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Command.CanExecute/p/System.Object/) metoda vrátí `true`.
+Data vázaná `ICommand` pak provést, v parametru předá do příkazu za předpokladu, že [ `CanExecute` ](xref:Xamarin.Forms.Command.CanExecute(System.Object)) vrátí metoda `true`.
 
-I když není tady, zobrazené `EventToCommandBehavior` také zahrnuje `DeregisterEvent` metoda, kterou spouští [ `OnDetachingFrom` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Behavior%3CT%3E.OnDetachingFrom/p/Xamarin.Forms.BindableObject/) metoda. `DeregisterEvent` Metoda se používá k vyhledání a zrušení registrace události definované v `EventName` vlastnost k vyčištění nevracení všechny potenciální paměti.
+I když není zobrazený, `EventToCommandBehavior` zahrnuje také `DeregisterEvent` metodu, která provádí [ `OnDetachingFrom` ](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) – metoda. `DeregisterEvent` Metoda se používá k vyhledání a zrušení registrace události definované v `EventName` vlastnost k vyčištění paměti potenciální nevracení.
 
 ## <a name="consuming-the-behavior"></a>Využívání chování
 
-`EventToCommandBehavior` Třídy je možné připojit k [ `Behaviors` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Behaviors/) kolekce ovládacího prvku, jak je ukázáno v následujícím příkladu kódu XAML:
+`EventToCommandBehavior` Třídy lze připojit k [ `Behaviors` ](xref:Xamarin.Forms.VisualElement.Behaviors) kolekce ovládacího prvku, jak je ukázáno v následujícím příkladu kódu XAML:
 
 ```xaml
 <ListView ItemsSource="{Binding People}">
@@ -163,7 +163,7 @@ I když není tady, zobrazené `EventToCommandBehavior` také zahrnuje `Deregist
 <Label Text="{Binding SelectedItemText}" />
 ```
 
-Ekvivalentní kódu C# je znázorněno v následujícím příkladu kódu:
+Ekvivalentní kód jazyka C# můžete vidět v následujícím příkladu kódu:
 
 ```csharp
 var listView = new ListView ();
@@ -178,21 +178,21 @@ var selectedItemLabel = new Label ();
 selectedItemLabel.SetBinding (Label.TextProperty, "SelectedItemText");
 ```
 
-`Command` Vlastnost chování je data vázaná na `OutputAgeCommand` vlastnost přidružené ViewModel při `Converter` je nastavena na `SelectedItemConverter` instanci, která vrátí [ `SelectedItem` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ListView.SelectedItem/)z [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/) z [ `SelectedItemChangedEventArgs` ](https://developer.xamarin.com/api/type/Xamarin.Forms.SelectedItemChangedEventArgs/).
+`Command` Vlastnost chování je vázán na data `OutputAgeCommand` vlastnost přidružené ViewModel zatímco `Converter` je nastavena na `SelectedItemConverter` instance, která vrátí [ `SelectedItem` ](xref:Xamarin.Forms.ListView.SelectedItem)z [ `ListView` ](xref:Xamarin.Forms.ListView) z [ `SelectedItemChangedEventArgs` ](xref:Xamarin.Forms.SelectedItemChangedEventArgs).
 
-V době běhu chování bude odpovídat interakci s ovládacím prvkem. Když je položka vybrána v [ `ListView` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ListView/), [ `ItemSelected` ](https://developer.xamarin.com/api/event/Xamarin.Forms.ListView.ItemSelected/) bude platit událostí, které budou spuštěny `OutputAgeCommand` v ViewModel. Naopak tím se aktualizuje ViewModel `SelectedItemText` vlastnost, [ `Label` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Label/) váže na, jak je vidět na následujících snímcích obrazovky:
+Za běhu chování odpoví na interakci ze strany ovládacího prvku. Při výběru položky v [ `ListView` ](xref:Xamarin.Forms.ListView), [ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected) se aktivuje událost, která se spustí `OutputAgeCommand` v ViewModel. Tím se pak aktualizuje ViewModel `SelectedItemText` vlastnost, která [ `Label` ](xref:Xamarin.Forms.Label) vytvoří vazbu na, jak je znázorněno na následujících snímcích obrazovky:
 
-[![](event-to-command-behavior-images/screenshots-sml.png "Ukázkové aplikace s EventToCommandBehavior")](event-to-command-behavior-images/screenshots.png#lightbox "ukázkové aplikace s EventToCommandBehavior")
+[![](event-to-command-behavior-images/screenshots-sml.png "Ukázková aplikace s EventToCommandBehavior")](event-to-command-behavior-images/screenshots.png#lightbox "ukázkovou aplikaci s EventToCommandBehavior")
 
-Výhodou použití toto chování k provedení příkazu, když událost se aktivuje, je, že příkazy mohou být související s ovládacími prvky, které nebyly navrženy tak, aby komunikovali s příkazy. Kromě toho tím odebere kód pro zpracování událostí kotle tabulky z soubory kódu.
+Výhodou použití tohoto chování k provedení příkazu, když se aktivuje událost je, že příkazy mohou být spojeny s prvky, které nejsou určeny k interakci s příkazy. Kromě toho tím kód pro zpracování událostí kotle talíře z soubory kódu na pozadí.
 
 ## <a name="summary"></a>Souhrn
 
-Tento článek ukázal pomocí Xamarin.Forms chování k vyvolání příkazu, pokud aktivuje událost. Chování může být použito k přidružení příkazy s ovládacími prvky, které nebyly navrženy tak, aby komunikovali s příkazy.
+V tomto článku jsme vám ukázali pomocí chování Xamarin.Forms spuštění příkazu, když se aktivuje událost. Chování slouží k přidružení příkazů s ovládacími prvky, které nejsou určeny k interakci s příkazy.
 
 
 ## <a name="related-links"></a>Související odkazy
 
 - [Chování EventToCommand (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/behaviors/eventtocommandbehavior/)
-- [Chování](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior/)
-- [Chování<T>](https://developer.xamarin.com/api/type/Xamarin.Forms.Behavior%3CT%3E/)
+- [Chování](xref:Xamarin.Forms.Behavior)
+- [Chování<T>](xref:Xamarin.Forms.Behavior`1)

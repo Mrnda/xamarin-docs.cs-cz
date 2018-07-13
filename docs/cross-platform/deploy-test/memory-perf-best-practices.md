@@ -1,53 +1,53 @@
 ---
-title: Napříč platformami výkonu
-description: Tento dokument popisuje různé postupy, které lze použít ke zlepšení výkonu mobilní aplikace. Popisuje, profileru, IDisposable prostředků, slabé odkazy, bude systém uvolňování SGen, techniky snížení velikosti a další.
+title: Výkon napříč platformami
+description: Tento dokument popisuje různé postupy, které lze použít ke zlepšení výkonu mobilních aplikací. Popisuje Profiler, IDisposable prostředků, slabé odkazy, systém uvolňování paměti SGen, technik snížení velikosti a další.
 ms.prod: xamarin
 ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: 66234bb44bb0cae9580c119c6029603a528f882e
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: c529d1d42d582cb49a906ad6fc39a191a7389f58
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781979"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997436"
 ---
-# <a name="cross-platform-performance"></a>Napříč platformami výkonu
+# <a name="cross-platform-performance"></a>Výkon napříč platformami
 
-Výkon nízký aplikace prezentuje mnoha způsoby. Aplikace může díky pravděpodobně reagovat, může způsobit pomalé posouvání a může snížit z baterie. Ale optimalizace výkonu zahrnuje více než jen implementace efektivní kódu. Musíte také zvážit možnosti pro uživatele s výkonem aplikace. Například zajistíte, že operace spustit bez blokování uživatele z jiné aktivity vám může pomoct vylepšit možnosti pro uživatele.
+Nízký výkon aplikace prezentuje v mnoha způsoby. Může být aplikace vypadá to, že nereaguje, může způsobit pomalé posouvání a může snížit výdrži baterie. Ale optimalizace výkonu zahrnuje více než jen implementace efektivního kódu. Prostředí uživatele s výkonem aplikace musíte také zvážit. Třeba zajistit, že operace spuštění bez blokování uživatele od provádění dalších aktivit může pomoct vylepšit uživatelské prostředí.
 
 <a name="profiler" />
 
-## <a name="use-the-profiler"></a>Použití profileru
+## <a name="use-the-profiler"></a>Použít Profiler
 
-Při vývoji aplikace, je důležité se pokusí optimalizace kódu, jakmile byla profilovaným. Profilace je technika pro určení, kde optimalizace kód bude mít největší vliv snížit problémy s výkonem. Profileru sleduje využití paměti aplikaci a zaznamenává běhu metod v aplikaci. Tato data pomáhají procházet cesty spuštění aplikace a náklady na provádění kódu, tak, aby nejlepší příležitostí k optimalizaci můžete zjistit.
+Při vývoji aplikace, je potřeba pouze pokusí optimalizace kódu, jakmile byl profilován. Profilace je technika pro určení, kdy optimalizace kódu budou mít největší vliv na omezení problémy s výkonem. Profiler sleduje využití paměti aplikaci a zaznamenává doba běhu metody v aplikaci. Tato data pomáhají procházení cesty ke spuštění aplikace a náklady na spuštění kódu, takže můžete zjistit nejlepší příležitosti k optimalizaci.
 
-Xamarin profileru bude měřit, hodnocení a pomáhají najít problémy související s výkonem v aplikaci. Může sloužit k profilu aplikace Xamarin.iOS a Xamarin.Android z v sadě Visual Studio pro Mac nebo Visual Studio. Další informace o profileru Xamarin najdete v tématu [Úvod do profileru Xamarin](~/tools/profiler/index.md).
+Xamarin Profiler bude měřit, vyhodnotit a vám umožní najít problémy související s výkonem v aplikaci. Je možné do profilu aplikace Xamarin.iOS a Xamarin.Android v rámci sady Visual Studio pro Mac nebo Visual Studio. Další informace o Xamarin Profiler najdete v tématu [Úvod do Xamarin Profiler](~/tools/profiler/index.md).
 
-Doporučujeme následující osvědčené postupy při vytváření profilu aplikace:
+Doporučujeme následující osvědčené postupy při profilování aplikace:
 
-- Vyhněte se profilace aplikaci v simulátoru, protože simulátoru mohou vést k narušení výkonu aplikací.
-- V ideálním případě profilace je třeba provést na různých zařízeních, jako trvá měření výkonu na jednom zařízení nebude vždy zobrazovat výkonové charakteristiky jiných zařízení. Ale minimálně profilace je třeba provést na zařízení, které má nejnižší předpokládaného specifikace.
-- Zavřete všechny ostatní aplikace a ujistěte se, že celkovému dopadu aplikace profilovaný je měřeno, místo jiné aplikace.
+- Vyhněte se profilování aplikaci v simulátoru, jak simulátoru může narušit výkon aplikace.
+- V ideálním případě profilace je třeba provést na různých zařízeních, jako trvá měření výkonu na jednom zařízení vždy nezobrazí výkonové charakteristiky jiných zařízení. Ale minimálně profilace je třeba provést na zařízení, které má nejnižší očekávané specifikaci.
+- Zavřete všechny ostatní aplikace k zajištění, že celkový dopad profilovanou aplikací délka má být zjištěna, namísto jiných aplikací.
 
 <a name="idisposable" />
 
-## <a name="release-idisposable-resources"></a>Uvolnění prostředků IDisposable
+## <a name="release-idisposable-resources"></a>Uvolnění prostředků rozhraní IDisposable
 
-`IDisposable` Rozhraní poskytuje mechanismus pro uvolnění prostředků. Poskytuje `Dispose` metoda, která by měla být implementována pro explicitně uvolnění prostředků. `IDisposable` není destruktor a by měla být implementována pouze v následujících případech:
+`IDisposable` Rozhraní poskytuje mechanismus pro uvolnění prostředků. Poskytuje `Dispose` metodu, která by měla být implementována explicitně uvolnit prostředky. `IDisposable` není destruktor a by měla být implementována pouze v následujících případech:
 
-- Pokud třída vlastní nespravovaných prostředků. Typické nespravované prostředky, které vyžadují uvolnění zahrnout soubory, datové proudy a připojení k síti.
-- Pokud třída spravované `IDisposable` prostředky.
+- Při vlastní třídu nespravovaných prostředků. Typické nespravované prostředky, které vyžadují uvolnění zahrnují soubory, datových proudů a připojení k síti.
+- Pokud má třída spravované `IDisposable` prostředky.
 
-Typ příjemce potom může volat `IDisposable.Dispose` implementace kvůli uvolnění prostředků, pokud instance se už nevyžaduje. Existují dva přístupy k dosažení tohoto cíle:
+Příjemci typu provést zavoláním `IDisposable.Dispose` implementace uvolnění prostředků při instanci se už nevyžaduje. Existují dva přístupy k dosažení tohoto cíle:
 
-- Nástrojem pro zabalení `IDisposable` objekt v `using` příkaz.
-- Nástrojem pro zabalení volání `IDisposable.Dispose` v `try` / `finally` bloku.
+- Obalením `IDisposable` objekt `using` příkazu.
+- Obalením volání `IDisposable.Dispose` v `try` / `finally` bloku.
 
-### <a name="wrapping-the-idisposable-object-in-a-using-statement"></a>Zabalení objekt IDisposable v pomocí příkazu
+### <a name="wrapping-the-idisposable-object-in-a-using-statement"></a>Zabalení objektů IDisposable do pomocí příkazu
 
-Následující příklad kódu ukazuje, jak zabalit `IDisposable` objekt v `using` příkaz:
+Následující příklad kódu ukazuje postup při zabalení `IDisposable` objekt `using` – příkaz:
 
 ```csharp
 public void ReadText (string filename)
@@ -61,11 +61,11 @@ public void ReadText (string filename)
 }
 ```
 
-`StreamReader` Třída implementuje `IDisposable`a `using` příkaz poskytuje pohodlné syntaxi, která volá `StreamReader.Dispose` metodu `StreamReader` objekt před jeho přejdete mimo rozsah. V rámci `using` bloku, `StreamReader` objekt je jen pro čtení a nelze přiřadit. `using` Příkaz taky zajišťuje, že `Dispose` metoda je volána i v případě, že dojde k výjimce, protože kompilátor implementuje převodní jazyk (IL) pro `try` / `finally` bloku.
+`StreamReader` Implementuje třída `IDisposable`a `using` příkaz poskytuje pohodlné syntaxe, která volá `StreamReader.Dispose` metodu `StreamReader` objektu před jeho odcházející z oboru. V rámci `using` bloku `StreamReader` objekt je jen pro čtení a nejde ji přiřadit. `using` Příkaz také zajišťuje, že `Dispose` je pro volána metoda i v případě, že dojde k výjimce, protože kompilátor implementuje převodní jazyk (IL) `try` / `finally` bloku.
 
-### <a name="wrapping-the-call-to-idisposabledispose-in-a-tryfinally-block"></a>Zabalení volání metody IDisposable.Dispose v bloku Try/Finally
+### <a name="wrapping-the-call-to-idisposabledispose-in-a-tryfinally-block"></a>Volání metody IDisposable.Dispose pro zabalení v bloku Try/Finally
 
-Následující příklad kódu ukazuje, jak zabalit volání `IDisposable.Dispose` v `try` / `finally` bloku:
+Následující příklad kódu ukazuje, jak zabalte volání do `IDisposable.Dispose` v `try` / `finally` blok:
 
 ```csharp
 public void ReadText (string filename)
@@ -85,17 +85,17 @@ public void ReadText (string filename)
 }
 ```
 
-`StreamReader` Třída implementuje `IDisposable`a `finally` blokovat volání `StreamReader.Dispose` metodu pro uvolnění prostředku.
+`StreamReader` Implementuje třída `IDisposable`a `finally` blokovat volání `StreamReader.Dispose` metodu pro uvolnění prostředku.
 
-Další informace najdete v tématu [rozhraní IDisposable](https://developer.xamarin.com/api/type/System.IDisposable/).
+Další informace najdete v tématu [rozhraní IDisposable](xref:System.IDisposable).
 
 <a name="events" />
 
-## <a name="unsubscribe-from-events"></a>Odhlášení odběru událostí
+## <a name="unsubscribe-from-events"></a>Zrušit odběr události
 
-Pokud chcete zabránit nevracení paměti, musí být události v odhlásit předtím, než je odstraněn objekt odběratele. Dokud nebude tato událost je odhlásil ze, delegát pro událost v objektu, publikování obsahuje odkaz na delegáta, který zapouzdřuje obslužné rutiny události odběratele. Tak dlouho, dokud objekt publikování obsahuje tento odkaz, nebude uvolňování paměti uvolnit paměť objekt odběratele.
+Prevence úniků paměti, události by mělo být Odhlášený předtím, než je odstraněn objekt odběratele. Dokud je událost zrušili odběr, delegáta pro událost v objektu publikování obsahuje odkaz na delegáta, který zapouzdřuje obslužná rutina události odběratele. Tak dlouho, dokud publikování objekt obsahuje tento odkaz, uvolňování paměti nebude uvolnit paměť objektu odběratele.
 
-Následující příklad kódu ukazuje, jak zrušit odběr událost:
+Následující příklad kódu ukazuje, jak zrušit odběr události:
 
 ```csharp
 public class Publisher
@@ -132,9 +132,9 @@ public class Subscriber : IDisposable
 }
 ```
 
-`Subscriber` Třída odhlásí událost v jeho `Dispose` metoda.
+`Subscriber` Třídy zrušení odběru události v jeho `Dispose` metoda.
 
-Odkaz cyklů může dojít také při používání obslužných rutin událostí a syntaxe lambda výrazy lambda může odkazovat a udržování objekty připojení. Odkaz na metodu anonymní tedy můžete uložené v poli a použít k odhlášení odběru událostí, jak je znázorněno v následujícím příkladu kódu:
+Cykly odkazů může dojít také při použití syntaxe výrazu lambda a obslužné rutiny událostí jako výrazy lambda mohou odkazovat na a zachování objekty. Odkaz na anonymní metoda proto může uloženy v poli a použít k odhlášení odběru událostí, jak je znázorněno v následujícím příkladu kódu:
 
 ```csharp
 public class Subscriber : IDisposable
@@ -158,26 +158,26 @@ public class Subscriber : IDisposable
 }
 ```
 
-`handler` Pole udržuje odkaz na metodu anonymní a slouží k odběru událostí a odhlášení.
+`handler` Pole udržuje odkaz na anonymní metoda se používá pro odběr události a odhlášení odběru.
 
 <a name="weakreferences" />
 
-## <a name="use-weak-references-to-prevent-immortal-objects"></a>Použít slabé odkazy, abyste zabránili Immortal objekty
+## <a name="use-weak-references-to-prevent-immortal-objects"></a>Slabé odkazy můžete zabránit Immortal objekty
 
 > [!NOTE]
-> Vývojáři pro iOS, zkontrolujte v dokumentaci na [zabraňující cyklické odkazy v iOS](~/ios/deploy-test/performance.md#avoid-strong-circular-references) zajistit jejich aplikace efektivně používat paměti.
+> Vývojáři pro iOS musí najdete v dokumentaci na [vyhnout cyklické odkazy v Iosu](~/ios/deploy-test/performance.md#avoid-strong-circular-references) zajistit jejich aplikace efektivně používat paměti.
 
 <a name="lazy" />
 
-## <a name="delay-the-cost-of-creating-objects"></a>Zpoždění náklady na vytváření objektů
+## <a name="delay-the-cost-of-creating-objects"></a>Zpoždění náklady na vytvoření objektů
 
-Opožděná inicializace umožňuje pozdržet vytvoření objektu, dokud se nejprve používá. Tento postup slouží především k zlepšení výkonu, vyhněte se výpočetní a snížit požadavky na paměť.
+Opožděná inicializace slouží k vytvoření objektu odložit, dokud se nejdříve nepoužije. Tento postup slouží především ke zvýšení výkonu, vyhněte se výpočet a snížit požadavky na paměť.
 
 
-Vezměte v úvahu pomocí opožděné inicializace pro objekty, které jsou nákladné vytvořit v této ve dvou situacích:
+Zvažte použití opožděné inicializace objektů, které je vždycky vytvořit v této dva scénáře:
 
-- Aplikace nemusí použít objekt.
-- Před vytvořením objektu, musíte provést další náročná operace.
+- Aplikace nemusí používat objekt.
+- Další nákladný provoz, musíte dokončit vytvoření objektu.
 
 `Lazy<T>` Třída se používá k definování typu opožděně inicializované, jak je ukázáno v následujícím příkladu kódu:
 
@@ -206,17 +206,17 @@ double Compute(double x)
 }
 ```
 
-Opožděná inicializace při první `Lazy<T>.Value` získat přístup k vlastnosti. Typ zabalené je vytvořen a vrátí na prvním přístupu a uložené pro jakýkoli budoucí přístup.
+Opožděné inicializaci dochází při prvním `Lazy<T>.Value` získat přístup k vlastnosti. Zabalený typ, který je vytvořen a vrátí na první přístup a uložené pro jakýkoli budoucí přístup.
 
-Další informace o opožděné inicializace najdete v tématu [opožděné inicializace](https://msdn.microsoft.com/library/dd997286(v=vs.110).aspx).
+Další informace o opožděné inicializace naleznete v tématu [opožděné inicializace](https://msdn.microsoft.com/library/dd997286(v=vs.110).aspx).
 
 <a name="async" />
 
-## <a name="implement-asynchronous-operations"></a>Implementovat asynchronní operace
+## <a name="implement-asynchronous-operations"></a>Implementaci asynchronních operací
 
-Rozhraní .NET poskytuje asynchronní verze řadu jejích rozhraní API. Asynchronní rozhraní API na rozdíl od synchronní rozhraní API, ujistěte se, že aktivní prováděcí vlákno nikdy blokuje volající vlákno pro významné množství času. Proto při volání rozhraní API z vlákna uživatelského rozhraní, použijte asynchronní rozhraní API, pokud je k dispozici. To ponechá vlákna uživatelského rozhraní odblokováno, která vám pomůže zlepšit možnosti pro uživatele s aplikací.
+.NET poskytuje asynchronní verze spoustu jejích rozhraní API. Asynchronní rozhraní API na rozdíl od synchronního rozhraní API, ujistěte se, že aktivní prováděcího vlákna nikdy blokuje volající vlákno pro významné množství času. Proto při volání rozhraní API z vlákna uživatelského rozhraní, použijte asynchronní rozhraní API, pokud je k dispozici. To budete mít vlákna uživatelského rozhraní odblokováno, což pomůže ke zlepšení prostředí pro uživatele s aplikací.
 
-Dlouho běžící operace kromě toho by měla být provedeny u vlákna na pozadí, k zabránění blokování vlákna uživatelského rozhraní. Poskytuje rozhraní .NET `async` a `await` klíčová slova, která povolit zápis asynchronní kódu, který provádí dlouhotrvající operace vlákna na pozadí a přistupuje k výsledky při dokončení. Ale při dlouho běžící operace lze spustit asynchronně s `await` – klíčové slovo, to není zaručeno, že bude spouštět operace vlákna na pozadí. Místo toho můžete to provést pomocí předání dlouhotrvající operace `Task.Run`, jak ukazuje následující příklad kódu:
+Kromě toho dlouho běžící operace by měl provádět ve vlákně na pozadí, chcete-li zabránit zablokování vlákna uživatelského rozhraní. Poskytuje rozhraní .NET `async` a `await` klíčová slova, které umožňují zápis asynchronní kód, který provádí dlouho běžící operace ve vlákně na pozadí a přistupuje k výsledků při dokončení. Nicméně Přestože dlouho běžící operací je možné spustit asynchronně pomocí `await` – klíčové slovo, to není zaručeno, že operace bude spuštěna ve vlákně na pozadí. Místo toho můžete to provést předáním dlouho běžící operace `Task.Run`, jak je znázorněno v následujícím příkladu kódu:
 
 ```csharp
 public class FaceDetection
@@ -235,69 +235,69 @@ public class FaceDetection
 }
 ```
 
-`RecognizeFace` Metoda provádí na vlákna na pozadí s `RecognizeFaceButtonClick` metoda čeká, až `RecognizeFace` Metoda dokončení než budete pokračovat.
+`RecognizeFace` Metoda provádí u vlákna na pozadí s `RecognizeFaceButtonClick` metoda čeká, až `RecognizeFace` dokončení metody než budete pokračovat.
 
-Dlouho běžící operace by měla podporovat i zrušení. Pokračování operace probíhající dlouhou dobu například může stát nutný, pokud uživatel přejde v aplikaci. Vzor pro implementaci zrušení vypadá takto:
+Dlouho běžící operace by měl také podporují zrušení. Například dlouho běžící operace pokračování může být nutný, pokud uživatel přejde v rámci aplikace. Vzor pro implementování zrušení vypadá takto:
 
-- Vytvoření `CancellationTokenSource` instance. Tato instance bude spravovat a odesílání oznámení o zrušení.
-- Předat `CancellationTokenSource.Token` hodnota vlastnosti pro každý úkol, který by měl být možné zrušit.
-- Poskytují mechanismus pro každý úkol reagovat na zrušení.
-- Volání `CancellationTokenSource.Cancel` metody můžete zajistit zrušení oznámení.
+- Vytvoření `CancellationTokenSource` instance. Tato instance bude spravovat a odesílat oznámení o zrušení.
+- Předání `CancellationTokenSource.Token` hodnota vlastnosti pro každý úkol, který by měl být možné zrušit.
+- Poskytuje mechanismus pro každý úkol reagovat na zrušení.
+- Volání `CancellationTokenSource.Cancel` metodu k dispozici oznámení o zrušení.
 
 > [!IMPORTANT]
-> `CancellationTokenSource` Třída implementuje `IDisposable` rozhraní a proto `CancellationTokenSource.Dispose` metoda by měla být volána jednou `CancellationTokenSource` instance dokončení s.
+> `CancellationTokenSource` Implementuje třída `IDisposable` rozhraní a proto `CancellationTokenSource.Dispose` má metoda vyvolat jednou `CancellationTokenSource` dokončení instance s.
 
 
 
-Další informace najdete v tématu [Přehled podpory asynchronní](~/cross-platform/platform/async.md).
+Další informace najdete v tématu [Přehled podpory asynchronních](~/cross-platform/platform/async.md).
 
 <a name="sgen" />
 
-## <a name="use-the-sgen-garbage-collector"></a>Používá systém uvolňování SGen
+## <a name="use-the-sgen-garbage-collector"></a>Použít systém uvolňování paměti SGen
 
-Spravované jazyků, například C# použití uvolňování získat paměť, která je přidělena objekty, které jsou již používán. Jsou dvě paměti Kolektory používá platformě Xamarin:
+Spravovaných jazyků, jako je C# pomocí uvolňování paměti pro uvolnění paměti, která je přidělena na objekty, které se už používá. Jsou dvě kolekce uvolnění paměti používané platformu Xamarin:
 
-- [**SGen –** ](http://www.mono-project.com/docs/advanced/garbage-collector/sgen/) – to je generační uvolňování a výchozí uvolňování paměti na platformě Xamarin.
-- [**Boehm** ](http://www.hboehm.info/gc/) – to je konzervativní-generační uvolňování. Je výchozí garbage collector v použít pro Xamarin.iOS aplikace, které používají rozhraní API Classic.
+- [**SGen** ](http://www.mono-project.com/docs/advanced/garbage-collector/sgen/) – to je generační systému uvolňování paměti a je výchozí systému uvolňování paměti na platformě Xamarin.
+- [**Boehm** ](http://www.hboehm.info/gc/) – to je konzervativní, generační systému uvolňování paměti. Je výchozí systému uvolňování paměti používá pro aplikace Xamarin.iOS, které používají klasického rozhraní API.
 
-SGen – využívá jednu ze tří haldách k přidělení místa pro objekty:
+SGen – využívá jednu ze tří haldy k přidělení místa pro objekty:
 
--  **Mateřské** – to je, kde jsou přiděleny nové malé objekty. Pokud mateřské dojde místo, dojde k menší uvolnění paměti. Všechny objekty za provozu přesune do hlavní halda.
--  **Hlavní haldy** – to je, kde jsou uchovány dlouhotrvající objekty. Pokud hlavní haldy není dostatek paměti, se provedou kolekce hlavní paměti. Hlavní uvolňování selže-li uvolnit tak dostatek paměti pak SGen požádá o další paměť systému.
--  **Velký prostor objekt** – to je, kde se nacházejí objekty, které vyžadují maximálně 8 000 bajtů. Rozsáhlé objekty v mateřské se nespustí, ale budou místo přidělené v této haldě.
+-  **Mateřské** – to je, kde jsou přiděleny nové malé objekty. Při spuštění mateřské nedostatek místa, dojde k menší uvolňování paměti. Žádné živé objekty se přesunou do hlavní haldy.
+-  **Hlavní haldy** – to je, kde jsou uloženy dlouhodobě spuštěných objektů. Pokud hlavní haldy není dostatek paměti, hlavní uvolňování paměti dojde. Pokud hlavní uvolňování paměti se nepovedlo uvolnit tak dostatek paměti, pak SGen požádá pro větší množství paměti systému.
+-  **Velký prostor objekt** – to je, kde jsou uloženy objekty, které vyžadují víc než 8 000 bajtů. Velké objekty nebudou začínají mateřské, ale místo toho budou přiděleny tento haldy.
 
-Jednou z výhod SGen je, že doba potřebná k provedení menší uvolňování je přímo úměrná počtu nové za chodu objekty, které byly vytvořeny od posledního shromažďování menší uvolňování paměti. Tím se sníží dopad uvolňování paměti na výkon aplikace, jak tyto vedlejší kolekce bude trvat kratší dobu, než kolekce hlavní paměti. Hlavní probíhalo uvolňování paměti bude i nadále, ale méně často.
+Jednou z výhod SGen je, že čas potřebný k provedení vedlejších uvolňování paměti je přímo úměrný počtu nových živé objekty, které byly vytvořeny od posledního shromažďování dat menší uvolňování paměti. Tím se sníží dopad uvolňování paměti na výkon aplikace, jak tyto dílčí uvolňování paměti kolekce bude trvat kratší dobu než hlavní uvolňování paměti. Hlavní uvolňování paměti kolekce proběhne, ale méně často.
 
-### <a name="reducing-pressure-on-the-garbage-collector"></a>Snížení nároků na uvolňování paměti
+### <a name="reducing-pressure-on-the-garbage-collector"></a>Snižuje tlak na systému uvolňování paměti
 
-Když se spustí SGen – kolekce paměti, přestane při jeho uvolňuje volné paměti vláken aplikace. Když je právě uvolnit paměť, může aplikace prostředí stručný pozastavení nebo trhaně v uživatelském rozhraní. Jak znatelné je tento pozastavení závisí na dva faktory:
+Při spuštění uvolňování paměti SGen přestane při uvolňování paměti vlákna aplikace. Zatímco paměti je převzata, může dojít k přerušení (BRIEF) nebo zadrhávají v uživatelském rozhraní aplikace. Jak postřehnutelné tento pozastavení závisí na dva faktory:
 
-1. **Frekvence** – jak často dojde k uvolnění paměti. Četnost kolekce se zvýší, jako je přidělen více paměti mezi kolekcí.
-1. **Doba trvání** – jak dlouho bude trvat každé jednotlivé uvolňování paměti. To je zhruba přímo úměrná počtu živé objekty, které jsou shromažďovány.
+1. **Frekvence** – jak často dojde k uvolnění paměti. Frekvence uvolnění paměti zvýší, je větší množství paměti přidělené mezi kolekcemi.
+1. **Doba trvání** – jak dlouho bude trvat každé jednotlivé uvolňování paměti. To je přibližně úměrný počtu živé objekty, které jsou shromažďovány.
 
-Souhrnně to znamenat, že pokud jsou přiděleny mnoho objektů, ale není zůstane aktivní, bude mnoho kolekcí krátké uvolňování paměti. Naopak pokud jsou pomalu přiděleny nové objekty a objekty zůstane aktivní, budou existovat méně ale déle kolekce.
+Souhrnně to znamenat, že pokud mnoho objektů jsou přiděleny, ale není zůstane aktivní, bude existovat mnoho krátký uvolnění paměti. Naopak pokud nové objekty jsou přiděleny pomalu a objekty zůstanou aktivní, bude existovat kolekce uvolnění paměti méně ale delší dobu.
 
-Ke snížení nároků na systém uvolňování, postupujte podle následujících pokynů:
+Pokud chcete snížit tlak na systému uvolňování paměti, postupujte podle následujících pokynů:
 
-- Uvolňování paměti v úzkou smyčky vyhněte použitím objektu fondy. To je obzvláště důležité pro hry, které je třeba vytvořit většina objekty, které předem.
-- Jakmile již nejsou požadované explicitně neuvolníte prostředkům, například datové proudy, připojení k síti, velké bloky paměti a soubory. Další informace najdete v tématu [verzi rozhraní IDisposable prostředky](#idisposable).
-- Jakmile již nejsou povinné, aby byly objekty shromážditelného zrušte registraci obslužných rutin událostí. Další informace najdete v tématu [Unsubscribe z událostí](#events).
+- Vyhněte se uvolňování paměti v těsné smyčky s použitím objektu fondy. To platí zejména pro hry, které je potřeba vytvořit většinou objekty, které předem.
+- Explicitně uvolněte prostředky, jako jsou datové proudy, připojení k síti, velkých bloků paměti a soubory, když už nejsou povinné. Další informace najdete v tématu [vydání IDisposable prostředky](#idisposable).
+- Jakmile už nejsou povinné, aby byly objekty shromážditelného rušit registraci obslužné rutiny událostí. Další informace najdete v tématu [Unsubscribe z událostí](#events).
 
 <a name="linker" />
 
-## <a name="reduce-the-size-of-the-application"></a>Snížení velikosti aplikace
+## <a name="reduce-the-size-of-the-application"></a>Zmenšení velikosti aplikace
 
-Je důležité si uvědomit, proces kompilace na každou platformu, abyste pochopili, kde velikost spustitelný soubor aplikace pochází z:
+Je důležité pochopit, proces kompilace na jednotlivých platformách, pochopit, odkud pochází velikost spustitelný soubor aplikace:
 
-- aplikace pro iOS jsou napřed předčasné (AOT) zkompilovat jazyk sestavení ARM. Rozhraní .NET framework je součástí, nepoužívané třídy se vynechají pouze v případě, že je povolena možnost odpovídající linkeru.
-- Aplikace pro Android jsou zkompilovány do převodního jazyka (IL) a zabalené s MonoVM a kompilace za běhu (JIT). Nepoužívané framework třídy se vynechají pouze v případě, že je povolena možnost odpovídající linkeru.
-- Aplikace Windows Phone jsou kompilované IL a provedený předdefinované modulu runtime.
+- aplikace pro iOS jsou ahead-of-time (AOT) zkompilována do jazyka assembleru ARM. Rozhraní .NET framework je součástí, nepoužité třídy se vynechají pouze v případě, že je povolená možnost odpovídající linkeru.
+- Aplikace pro Android jsou kompilovány do (IL intermediate language) a zabalené MonoVM a kompilace just-in-time (JIT). Nepoužité framework třídy se vynechají pouze v případě, že je povolená možnost odpovídající linkeru.
+- Aplikace Windows Phone jsou kompilovány do IL a spuštěn tímto modulem integrované.
 
-Kromě toho pokud aplikace provede rozsáhlé používání obecných typů pak konečné velikosti spustitelný soubor bude dál zvýšit vzhledem k tomu, že bude obsahovat nativně kompilované verze Obecné možnosti.
+Kromě toho pokud aplikace příliš často používá obecné typy a konečné velikosti spustitelný soubor bude dál zvýšit protože obsahovalo nativní kompilaci verze obecných možností.
 
-Pokud chcete snížit velikost aplikace, zahrnuje Xamarin platformy linkeru jako součást nástrojů pro sestavení. Ve výchozím nastavení linkeru je zakázané a musí být povolen v nastavení projektu pro aplikaci. V čase vytvoření buildu bude provedeno statické analýzu aplikace k určení, které typy a členy, jsou ve skutečnosti používá aplikace. Pak se odebere všechny nepoužívané typy a metody z aplikace.
+Ke snížení velikosti aplikací zahrnuje platformu Xamarin propojovacího jako součást nástrojů pro vytváření. Ve výchozím nastavení linkeru je zakázaný a musí být povolená v možnostech projektu pro aplikaci. V okamžiku sestavení bude provedeno statické analýzy aplikace a určí, které typy a členy, jsou skutečně používané aplikace. Potom ji odebere všechny nepoužívané typy a metody z aplikace.
 
-Následující snímek obrazovky ukazuje linkeru možnosti v sadě Visual Studio pro Mac pro Xamarin.iOS projektu:
+Následující snímek obrazovky ukazuje linkeru možnosti v sadě Visual Studio pro Mac pro projekt Xamarin.iOS:
 
 ![](memory-perf-best-practices-images/linker-options-ios.png)
 
@@ -305,79 +305,79 @@ Následující snímek obrazovky ukazuje linkeru možnosti v sadě Visual Studio
 
 ![](memory-perf-best-practices-images/linker-options-droid.png)
 
-Linkeru poskytuje mohla kontrolovat své chování tří různých nastavení:
+Propojovací program poskytuje tři různá nastavení, kontrolovat své chování:
 
--  **Nemáte odkaz** – žádné nepoužité typy a metody se odebere linkeru. Z důvodů výkonu to je výchozí nastavení pro ladění.
--  **Odkaz Framework sady SDK nebo sady SDK sestavení pouze** – toto nastavení bude pouze zmenšete velikost těchto sestavení, které jsou sice pomocí Xamarin. Kód uživatele, zůstanou beze změn.
--  **Odkaz ve všech sestaveních** – to je agresivnější optimalizace, který bude cílit na kód SDK sestavení a uživatele. U vazeb tímto odeberete nepoužívané základní pole a ujistěte se, každé instanci (nebo vázaný objekty) světlejšího, využívají méně paměti.
+-  **Nepropojovat** – žádné nepoužité typy a metody budou odebrány linkerem. Z důvodů výkonu je ve výchozím nastavení, pro sestavení pro ladění.
+-  **Propojit pouze Framework sady SDK/SDK sestavení** – toto nastavení bude pouze snížit velikost těchto sestavení, které se dodávají pomocí Xamarin. Uživatelský kód, zůstanou beze změn.
+-  **Propojovat všechna sestavení** – to je mnohem vyššími optimalizace, které bude cílit sadu SDK sestavení a kódem uživatele. U vazeb se nepoužívané základní pole odebrat a ujistěte se, každá instance (nebo vázán objekty) světlejší, méně paměti.
 
-*Odkaz ve všech sestaveních* musí být použit s upozornění jako aplikace by mohla přerušit neočekávaným způsobem. Statické analýzy, které se provádí pomocí linkeru všechny kód, který je vyžadován, což je příliš mnoho kódu odebírán z kompilované aplikace nemusí správně identifikovat. Tato situace se manifest sám sebe jenom za běhu, pokud aplikace spadne. Z tohoto důvodu je důležité si důkladně testovat aplikaci po změně chování linkeru.
+*Všechna sestavení odkazu* třeba používat opatrně, protože to může přerušit aplikace neočekávaným způsobem. Statické analýzy, které se provádí pomocí linkeru veškerý kód, který je požadován, což vede k příliš mnoho kódu odebírán z kompilované aplikace nemusí správně rozpoznat. Tato situace se manifestu samotné pouze za běhu, pokud dojde k chybě aplikace. Z tohoto důvodu je důležité, důkladně otestovat aplikaci po změně chování linkeru.
 
-Pokud testování odhalit nesprávně má linkeru odebrat třídu nebo metodu, kterou je možné označit typy nebo metody, které nejsou staticky odkazuje, ale jsou požadované aplikací pomocí jedné z následujících atributů:
+Pokud testování odhalí, že má linker nesprávně odebrat třídy nebo metody, které je možné označit typy nebo metody, které nejsou staticky odkazuje, ale jsou vyžadované aplikací pomocí jedné z následujících atributů:
 
--  `Xamarin.iOS.Foundation.PreserveAttribute` – Tento atribut je pro Xamarin.iOS projekty.
+-  `Xamarin.iOS.Foundation.PreserveAttribute` – Tento atribut je pro projekty Xamarin.iOS.
 -  `Android.Runtime.PreserveAttribute` – Tento atribut je pro projekty Xamarin.Android.
 
-Například může být potřeba zachovat výchozí konstruktory typů, které jsou vytvářeny dynamicky instance. Použití serializace XML také může vyžadovat, že vlastnosti typů zachovány.
+Například může být potřeba zachovat výchozí konstruktory typů, které jsou dynamicky vytvořit instanci. Použití serializace XML může také vyžadovat, že jsou zachovány vlastnosti typů.
 
 Další informace najdete v tématu [Linkeru pro iOS](~/ios/deploy-test/linker.md) a [Linkeru pro Android](~/android/deploy-test/linker.md).
 
 ### <a name="additional-size-reduction-techniques"></a>Další velikosti snížení techniky
 
-Existují širokou škálu architektury procesoru tohoto power mobilní zařízení. Proto vytvořit Xamarin.iOS a Xamarin.Android *fat binární soubory* obsahující kompilované verzi aplikace pro každou architekturu procesoru. To zajistí, že mobilní aplikace můžete použít na zařízení bez ohledu na architektuře procesoru.
+Existují nejrůznější architektury procesoru tohoto power mobilní zařízení. Proto vytvořit Xamarin.iOS a Xamarin.Android *binárních souborů fat* , které obsahují používat zkompilovanou verzi aplikace pro každou architekturu procesoru. Tím se zajistí, že mobilní aplikace mohla spustit na zařízení bez ohledu na architekturu procesoru.
 
-Pokud chcete dál snížit velikost spustitelný soubor aplikace lze použít následující kroky:
+Následující kroky slouží k dalšímu snížení velikosti spustitelný soubor aplikace:
 
-- Ujistěte se, že se vytváří sestavení pro vydání.
-- Snižte počet architektury, které aplikace je vytvořené, aby se zabránilo FAT binární vytvářen.
-- Zkontrolujte, že kompilátoru LLVM se používá, generovat více optimalizované spustitelný soubor.
-- Snížení velikosti spravovaného kódu aplikace. To lze provést povolením linkeru na všechna sestavení (*odkaz všechny* pro iOS projekty a *odkaz ve všech sestaveních* pro Android projekty).
+- Ujistěte se, že je vytvořen sestavení pro vydání.
+- Snižte počet architektur, které je aplikace sestavená, aby se zabránilo FAT binární vytvořených.
+- Zkontrolujte, že kompilátor LLVM se používá, chcete-li generovat více optimalizované spustitelný soubor.
+- Zmenšení velikosti aplikace spravovaného kódu. Můžete to provést tím, že má linker na všechna sestavení (*propojení všech* pro projekty iOS a *propojovat všechna sestavení* pro projekty pro Android).
 
-Aplikace pro Android můžete také rozdělit na samostatné APK pro každý ABI ("Architektura").
-Další informace v tomto příspěvku na blogu: [jak k ponechat si Android aplikace velikost dolů](http://motzcod.es/post/112072508362/how-to-keep-your-android-app-size-down).
+Aplikace pro Android je možné také rozdělit na samostatné APK pro každý ABI ("Architektura").
+Další informace najdete v tomto blogovém příspěvku: [jak k zachovat Your Android App velikost dolů](http://motzcod.es/post/112072508362/how-to-keep-your-android-app-size-down).
 
 <a name="optimizeimages" />
 
-## <a name="optimize-image-resources"></a>Optimalizovat prostředky obrázků
+## <a name="optimize-image-resources"></a>Optimalizace prostředků obrázků
 
-Bitové kopie jsou některé nejnákladnější prostředky, které aplikace používají, a jsou často zaznamenané v vysoké řešení. Zatímco tím se vytvoří živoucí Image úplné podrobností, aplikace, které zobrazují tyto obrázky obvykle vyžaduje další využití procesoru k dekódování bitovou kopii a víc paměti k uložení dekódované image. Je plýtvání dekódovat vysokém rozlišení obrázku v paměti, když se bude škálovat na menší velikost pro zobrazení. Místo toho redukuje procesoru využití a paměti tak, že vytvoříte více verzí řešení uložené bitové kopie, které blíží velikosti předpokládaných zobrazení. Obrázek v zobrazení seznamu by měl být například s největší pravděpodobností nižší rozlišení než image se zobrazí v celé obrazovky. Kromě toho škálovat dolů verzích obrázků s vysokým rozlišením lze načíst efektivně je zobrazený spolu s minimální paměti dopad. Další informace najdete v tématu [zatížení velké bitmap efektivně](https://developer.xamarin.com/recipes/android/resources/general/load_large_bitmaps_efficiently/).
+Bitové kopie jsou některé nejdražší prostředky, které používají aplikace a jsou často zachytí na vysoké rozlišení. Ačkoli tím se vytvoří živý imagí úplné podrobností, aplikace, které zobrazují tyto bitové kopie obvykle vyžadují další využití procesoru pro dekódování obrázku a víc paměti k ukládání dekódovaný obrázek. Je plýtvání dekódování obrázek s vysokým rozlišením v paměti, když ho bude vertikálně snížit kapacitu menší velikost pro zobrazení. Místo toho snížit nároky na procesor využití a paměti tak, že vytvoříte několik verzí řešení uložené obrázky, které se blíží velikosti předpokládané zobrazení. Obrázek zobrazen v zobrazení seznamu by měla být například pravděpodobně nižší rozlišení, než na celé obrazovce zobrazí obrázek. Kromě toho kapacitu vertikálně snížit verzích obrázků ve vysokém rozlišení lze načíst efektivně jejich zobrazení tak, aby minimální paměti vliv. Další informace najdete v tématu [zatížení velké rastrové obrázky efektivně](https://developer.xamarin.com/recipes/android/resources/general/load_large_bitmaps_efficiently/).
 
-Bez ohledu na rozlišení obrázku může zobrazení prostředky obrázků výrazně zvýšit spotřeba paměti aplikace. Proto se musí jenom vytvářet, pokud vyžaduje a by měly být uvolněny, jakmile je aplikace již nevyžaduje.
+Bez ohledu na rozlišení obrázku můžete zobrazení prostředků obrázků výrazně zvýšit nároky na paměť aplikace. Proto jsou by měl pouze vytvořit při vyžaduje a by měly být vydány ihned poté, co aplikace již nevyžaduje.
 
 <a name="activationperiod" />
 
-## <a name="reduce-the-application-activation-period"></a>Zkrátit dobu aktivace aplikace
+## <a name="reduce-the-application-activation-period"></a>Snižte období aktivace aplikace
 
-Všechny aplikace mají *období aktivace*, což je čas mezi při spuštění aplikace a aplikace je připravená k použití. Toto období aktivace poskytuje uživatelům na jejich první dojem aplikace, a proto je důležité ke snížení období aktivace a dojem uživatele, aby jim umožní získat uspokojivým první dojem aplikace.
+Všechny aplikace mají *období aktivace*, což je doba mezi při spuštění aplikace a když je aplikace připravená k použití. Toto období aktivace poskytuje uživatelům na jejich první dojem aplikace, a proto je potřeba zkrátit období aktivace a dojem uživatele, aby se jim umožní získat uspokojivým první dojem aplikace.
 
-Předtím, než se aplikace zobrazí jeho počáteční uživatelského rozhraní, měl by poskytnout úvodní obrazovku a informuje uživatele, je spuštění aplikace. Pokud aplikace nemůže rychle zobrazit jeho počáteční uživatelského rozhraní, úvodní obrazovka by měla sloužící k informování uživatelům průběh prostřednictvím období aktivace nabízejí ujištění, který nebyl zablokování aplikace. Tato ujištění může být indikátor průběhu, nebo podobné řízení.
+Předtím, než se aplikace zobrazí jeho počáteční uživatelské rozhraní, měl by poskytovat úvodní obrazovku a informuje uživatele, aplikace se spouští. Pokud aplikace nemůže rychle zobrazit jeho počáteční uživatelského rozhraní, úvodní obrazovka by měla sloužit k uživatel informován o průběhu prostřednictvím období aktivace nabízí jistotu, které aplikace nebyla přestala reagovat. Toto zajištění může být indikátor průběhu, ovládacího prvku nebo podobné.
 
-Během období aktivace aplikace provést aktivaci logiku, která často zahrnuje načítání a zpracování prostředků. Období aktivace může snížit zajistíte, že jsou v aplikaci, místo načítány vzdáleně zabalené požadované prostředky. Například v některých případech se může být vhodné během období aktivace načíst data místně uložené zástupný symbol. Potom, až se zobrazí počáteční uživatelského rozhraní a uživatel bude moci pracovat s aplikací, lze data zástupný symbol progresivně nahradit ze vzdáleného zdroje. Kromě toho aplikace logiky aktivace měli dělat jenom pracovní, které je nutné, aby mohl uživatel začít používat aplikaci. To může pomoct Pokud bez zpoždění načítání dalších sestavení, protože sestavení se načetly poprvé, které se používají.
+Během období aktivace spuštění aplikace logiky aktivace, což často zahrnuje načítání a zpracování prostředků. Období aktivace může snížit tím, že zajišťuje, že požadované prostředky jsou zabaleny v aplikaci, místo načítají vzdáleně. Například v některých případech je vhodné během období aktivace pro načtení dat místně uložených zástupný symbol. Potom jakmile se zobrazí počáteční uživatelského rozhraní a uživatel je schopen komunikovat s aplikací, zástupná data lze postupně nahradit ze vzdáleného zdroje. Kromě toho logiku pro aktivace aplikace měli dělat jenom práci, která je nutná, umožníte uživateli začít používat aplikace. To může pomoct Pokud zpoždění načítání dalších sestavení, protože sestavení nejsou načtena okamžiku, kdy se používají.
 
 <a name="webservicecommunication" />
 
 ## <a name="reduce-web-service-communication"></a>Snižte komunikace webové služby
 
-Připojení k webové službě z aplikace může mít vliv na výkon aplikace. Například vyšší využití šířky pásma sítě povede vyšší míra využívání baterie zařízení. Kromě toho uživatelé mohou používat aplikace v omezeném prostředí šířky pásma. Je proto rozumný k omezení využití šířky pásma mezi aplikací a webové služby.
+Připojení k webové službě z aplikace může mít dopad na výkon aplikace. Například vyšší využití šířky pásma sítě způsobí zvýšení využití baterie zařízení. Navíc uživatelé můžou používat aplikace v prostředí s omezenou šířku pásma. Proto je rozumné k omezení využití šířky pásma mezi aplikací a webové služby.
 
-Jeden ze způsobů snížení využití šířky pásma aplikace je komprese dat před přenosem přes síť. Další využití procesoru z procesu komprese může také způsobit zvýšenou baterie využití. Proto tento kompromis je třeba pečlivě zvážit než se rozhodnete, zda se má přesunout komprimovaná data přes síť.
+Jedním z přístupů ke snížení využití šířky pásma aplikace je komprese dat před přenosem přes síť. Další využití procesoru z procesu komprese může také způsobit zvýšenou baterie využití. Proto tento kompromis by se mělo pečlivě vyhodnotit před rozhodnutím, jestli se má přesunout komprimovaných dat přes síť.
 
-Jiný problém vzít v úvahu je formát data, která přesune mezi aplikací a webové služby. Dvě primární formáty jsou Extensible Markup Language (XML) a JavaScript Object Notation (JSON). XML je založený na textu výměnu formát, který poskytuje datové části relativně velkých dat, protože obsahuje velký počet formátování znaků. JSON je založený na textu výměnu formátu, který vytváří compact datové části ukládat, výsledkem je snižuje nároky na šířku pásma při odesílání dat a přijímat data. JSON je proto často upřednostňované formát pro mobilní aplikace.
+Jinému problému, které byste měli zvážit je formát dat, která přesunuje mezi aplikací a webové služby. Dva hlavní formáty jsou značky XML (Extensible Language) a zápis JSON (JavaScript Object). XML je textový formát pro výměnu dat, která vytváří datové části relativně velkých dat, protože obsahuje velký počet formátovací znaky. JSON je textový formát pro výměnu dat, která vytváří vytížení komprese dat, takže se použila snižuje nároky na šířku pásma při odesílání dat a přijímá data. JSON je proto často preferovaném formátu pro mobilní aplikace.
 
-Se doporučuje použít objekty přenos dat (DTOs), při přenosu dat mezi aplikací a webové služby. DTO obsahuje sadu dat pro přenos přes síť. S využitím DTOs, lze přenášet další data v jediném vzdálené volání, které může pomoci snížit počet od aplikace vzdáleného volání. Obecně platí vzdálené volání dělal větší datovou trvá podobné množství času jako volání pouze nesoucí malé datovou částí.
+Doporučuje se použít objektů pro přenos dat (DTO), při přenosu dat mezi aplikací a webové služby. Objekt DTO obsahuje sadu dat pro přenos přes síť. S využitím DTO, lze přenášet víc dat v rámci jediného vzdálené volání, což může pomoct snížit počet vzdáleného volání prováděných aplikací. Obecně platí vzdálené volání, výkonu větší datovou částí trvá podobné množství času jako volání, které provádí pouze malé datová část.
 
-Data načtená z webové služby do mezipaměti místně, se data uložená v mezipaměti se využité místo opakovaně načtena z webové služby. Ale při přijímání tento přístup vhodná strategie pro ukládání do mezipaměti by měla také být implementována k aktualizaci dat v místní mezipaměti, pokud se změní ve webové službě.
+Data načtená z webové služby do mezipaměti místně, se data uložená v mezipaměti se využívá spíše než opakovaně načtena z webové služby. Ale při přijímání tento přístup vhodná strategie ukládání do mezipaměti by měla implementovat také k aktualizaci dat v místní mezipaměti, pokud se změní ve webové službě.
 
 ## <a name="summary"></a>Souhrn
 
-Tento článek popisuje a popsané techniky pro zvýšení výkonu aplikace vytvořené pomocí platformy Xamarin. Tyto postupy souhrnně může výrazně snížit objem práce využití procesoru a paměti spotřebovávají aplikace.
+Tento článek popisuje a popsané techniky pro zvýšení výkonu aplikace založené na platformě Xamarin. Společně tyto postupy mohou výrazně snížit množství práce prováděné procesoru a paměti spotřebované aplikací.
 
 ## <a name="related-links"></a>Související odkazy
 
 - [Výkon Xamarin.iOS](~/ios/deploy-test/performance.md)
 - [Výkon Xamarin.Android](~/android/deploy-test/performance.md)
-- [Úvod do Xamarin profileru](~/tools/profiler/index.md)
+- [Úvod do Xamarin Profiler](~/tools/profiler/index.md)
 - [Výkon Xamarin.Forms](~/xamarin-forms/deploy-test/performance.md)
 - [Přehled podpory asynchronních operací](~/cross-platform/platform/async.md)
-- [Rozhraní IDisposable](https://developer.xamarin.com/api/type/System.IDisposable/)
-- [Zamezení běžné nástrahy aplikace Xamarin (video)](https://university.xamarin.com/guestlectures/avoiding-common-pitfalls-in-xamarin-apps)
+- [Rozhraní IDisposable](xref:System.IDisposable)
+- [Jak se vyhnout běžným nástrahám v aplikacích Xamarin (video)](https://university.xamarin.com/guestlectures/avoiding-common-pitfalls-in-xamarin-apps)

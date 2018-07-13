@@ -1,41 +1,41 @@
 ---
 title: Xamarin.Forms AbsoluteLayout
-description: Tento článek vysvětluje způsob použití třídy Xamarin.Forms AbsoluteLayout vytvořit uživatelská dokonalou pixelů. Tato třída umisťuje a velikosti podřízené elementy přímo úměrná vlastní velikosti a pozice nebo absolutní hodnoty.
+description: Tento článek vysvětluje, jak použít třídu Xamarin.Forms AbsoluteLayout pro vytváření uživatelského rozhraní perfektním vzhledem. Tato třída pozice a velikosti podřízené prvky přímo úměrná velikosti a pozice nebo absolutní hodnoty.
 ms.prod: xamarin
 ms.assetid: 01A5CCE0-AD45-4806-84FD-72C007005B38
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: f36334bca9e7401f35d4b6181b47c0f64923f652
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 0d49b8c50db08ad07952425492591ee246de4f8b
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244454"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998345"
 ---
 # <a name="xamarinforms-absolutelayout"></a>Xamarin.Forms AbsoluteLayout
 
-[`AbsoluteLayout`](https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayout/) umisťuje a velikosti podřízené elementy přímo úměrná vlastní velikosti a pozice nebo absolutní hodnoty. Podřízené zobrazení může být umístěné a velikosti pomocí přímo úměrná hodnoty nebo statické hodnoty a přímo úměrná a statické hodnoty můžete kombinovat.
+[`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) umístění a velikosti podřízené prvky přímo úměrná velikosti a pozice nebo absolutní hodnoty. Podřízené zobrazení mohou být umístěné a velikosti pomocí proporcionální hodnoty nebo statickými hodnotami a proporcionální a statické hodnoty lze kombinovat.
 
-[![](absolute-layout-images/layouts-sml.png "Rozložení Xamarin.Forms")](absolute-layout-images/layouts.png#lightbox "Xamarin.Forms rozložení")
+[![](absolute-layout-images/layouts-sml.png "Rozložení Xamarin.Forms")](absolute-layout-images/layouts.png#lightbox "rozložení Xamarin.Forms")
 
 Tento článek se zabývá:
 
-- **[Účel](#Purpose)**  &ndash; běžné používá pro `AbsoluteLayout`.
+- **[Účel](#Purpose)**  &ndash; běžné použití pro `AbsoluteLayout`.
 - **[Využití](#Usage)**  &ndash; použití `AbsoluteLayout` k dosažení požadované návrhu.
-  - **[Proporční rozložení](#Proportional_Layouts)**  &ndash; pochopit, jak přímo úměrná hodnoty pracovní v `AbsoluteLayout`.
-  - **[Zadání hodnoty](#Specifying_Values)**  &ndash; pochopit, jak jsou určené proporční a absolutní hodnoty.
-  - **[Proporční hodnoty](#Proportional_Values)**  &ndash; pochopit, jak přímo úměrná hodnoty fungovat.
-    - **[Absolutní hodnoty](#Absolute_Values)**  &ndash; pochopili, jak funguje absolutní hodnoty.
+  - **[Proporcionální rozložení](#Proportional_Layouts)**  &ndash; pochopit, jak poměrné hodnoty fungují `AbsoluteLayout`.
+  - **[Zadání hodnot](#Specifying_Values)**  &ndash; pochopit, jak zadat proporcionálně a absolutní hodnoty.
+  - **[Proporcionální hodnoty](#Proportional_Values)**  &ndash; pochopit, jak poměrné hodnoty fungovat.
+    - **[Absolutní hodnoty](#Absolute_Values)**  &ndash; pochopit, jak fungují absolutní hodnoty.
 
 <a name="Purpose" />
 
 ## <a name="purpose"></a>Účel
 
-Z důvodu umísťovací model `AbsoluteLayout`, rozložení díky je poměrně přehledné na pozici elementy, aby byly roviny s žádné straně rozložení nebo na střed. S přímo úměrná velikosti a pozice, elementů v `AbsoluteLayout` lze automaticky škálovat pro libovolnou velikost zobrazení. Pro položky, kde by měl škálovat jenom pozici, ale ne podle velikosti můžete ve smíšeném absolutní a přímo úměrná hodnoty.
+Z důvodu umístění model `AbsoluteLayout`, rozložení je poměrně přímočarý do umístění prvků tak, aby byly flush všechny strany rozložení, nebo na střed. S přímo úměrná velikosti a pozice prvků v `AbsoluteLayout` může automaticky škálovat na libovolnou velikost zobrazení. Pro položky, ve kterém by se měly škálovat pouze na pozici, ale nikoli velikost absolutní a proporcionální hodnoty lze kombinovat.
 
-`AbsoluteLayout` bylo možné použít kdekoli elementy musí být umístěn v rámci zobrazení a je obzvláště užitečná při zarovnání prvky hrany.
+`AbsoluteLayout` může být použít všude, kde prvky musí být umístěn v rámci zobrazení a je zvláště užitečné, když zarovnání prvků, které mají hran.
 
 <a name="Usage" />
 
@@ -43,50 +43,50 @@ Z důvodu umísťovací model `AbsoluteLayout`, rozložení díky je poměrně p
 
 <a name="Proportional_Layouts" />
 
-### <a name="proportional-layouts"></a>Proporční rozložení
+### <a name="proportional-layouts"></a>Proporcionální rozložení
 
-`AbsoluteLayout` má jedinečný ukotvení modelu, při němž ukotvení elementu umístěný relativně k jeho element jako element nachází relativně k rozložení přímo úměrná umístění se používá. Pokud absolutní umístění se používá, je ukotvení na (0,0) v rámci zobrazení. To má dvě důležité důsledky:
+`AbsoluteLayout` má jedinečné ukotvení model, kterým ukotvení elementu, který je umístěn vzhledem k jeho element jako prvek umístěn vzhledem k rozložení proporcionální umístění se používá. Při použití absolutní pozici ukotvení je na (0,0) v rámci zobrazení. To má dvě důležité důsledky:
 
-- Elementy nelze umístit mimo obrazovku pomocí přímo úměrná hodnot.
-- Elementy lze spolehlivě umístit na žádné straně rozložení nebo v centru bez ohledu na velikost rozložení nebo zařízení.
+- Elementy nelze umístit, obrazovky pomocí proporcionální hodnot.
+- Prvky může být spolehlivě umístěné společně na žádné straně rozložení nebo v centru bez ohledu na velikost rozložení nebo zařízení.
 
-`AbsoluteLayout`, jako je `RelativeLayout`, je možné umístit elementy, aby se překrývala.
+`AbsoluteLayout`, jako je `RelativeLayout`, je možné umístit prvky tak, aby se překrývají.
 
-Poznámka: na následujícím snímku obrazovky ukotvení pole je bílé tečku. Všimněte si vztah mezi ukotvení a do pole, při jejich přesunu prostřednictvím rozložení:
+Poznámka: na následujícím snímku obrazovky ukotvení pole je bílé tečku. Všimněte si, že vztah mezi ukotvení a do pole při jejich přesunu prostřednictvím rozložení:
 
-![](absolute-layout-images/anchor-start.png "Ukotvení při spuštění")
+![](absolute-layout-images/anchor-start.png "Ukotvení na začátku")
 ![](absolute-layout-images/anchor-center.png "ukotvení v centru")
 ![](absolute-layout-images/anchor-end.png "ukotvení na konci")
 
 <a name="Specifying_Values" />
 
-### <a name="specifying-values"></a>Zadání hodnoty
+### <a name="specifying-values"></a>Zadání hodnot
 
-Zobrazení v rámci `AbsoluteLayout` jsou umístěny pomocí čtyř hodnot:
+Zobrazení v rámci `AbsoluteLayout` jsou umístěny pomocí čtyři hodnoty:
 
 - **X** &ndash; (vodorovně) x pozice ukotvení zobrazení
-- **Y** &ndash; y (svisle) pozici ukotvení zobrazení
+- **Y** &ndash; pozice y (svislé) zobrazení ukotvení
 - **Šířka** &ndash; Šířka zobrazení
 - **Výška** &ndash; výšku zobrazení
 
-Každý z těchto hodnot můžete nastavit jako [přímo úměrná](#Proportional_Values) hodnotu nebo [absolutní](#Absolute_Values) hodnotu.
+Každá z těchto hodnot je možné nastavit jako [proporcionální](#Proportional_Values) hodnotu nebo [absolutní](#Absolute_Values) hodnotu.
 
-Hodnoty jsou specifikované jako kombinace hranice a příznak. `LayoutBounds` je [ `Rectangle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Rectangle/) sestávající ze čtyř hodnot: `x`, `y`, `width`, `height`.
+Hodnoty jsou specifikované jako kombinace omezení a příznak. `LayoutBounds` je [ `Rectangle` ](xref:Xamarin.Forms.Rectangle) sestávající ze čtyř hodnot: `x`, `y`, `width`, `height`.
 
 ### <a name="absolutelayoutflags"></a>AbsoluteLayoutFlags
 
-[`AbsoluteLayoutFlags`](https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayoutFlags/) Určuje, jak se interpretují hodnoty a obsahuje následující předdefinované možnosti:
+[`AbsoluteLayoutFlags`](xref:Xamarin.Forms.AbsoluteLayoutFlags) Určuje, jak bude interpretovat hodnoty a obsahuje následující předdefinované možnosti:
 
-- **Žádný** &ndash; interpretuje jako absolutní všechny hodnoty. Toto je výchozí hodnota, pokud nejsou zadány žádné příznaky rozložení.
-- **Všechny** &ndash; interpretuje jako úměrná všechny hodnoty.
-- **WidthProportional** &ndash; interpretuje `Width` hodnotu jako proporční a všechny ostatní hodnoty jako absolutní.
-- **HeightProportional** &ndash; interpretuje pouze hodnota height jako úměrná s všechny ostatní hodnoty absolutní.
-- **XProportional** &ndash; interpretuje `X` hodnotu jako úměrná, při práce jako absolutní všechny ostatní hodnoty.
-- **YProportional** &ndash; interpretuje `Y` hodnotu jako úměrná, při práce jako absolutní všechny ostatní hodnoty.
-- **PositionProportional** &ndash; interpretuje `X` a `Y` hodnoty jako úměrná, zatímco hodnoty velikosti se interpretují jako absolutní.
-- **SizeProportional** &ndash; interpretuje `Width` a `Height` hodnoty jako úměrná, pokud jsou absolutní hodnoty pozice.
+- **Žádný** &ndash; interpretuje všechny hodnoty jako absolutní. Toto je výchozí hodnota, pokud nejsou zadány žádné příznaky rozložení.
+- **Všechny** &ndash; interpretuje jako proporcionální všechny hodnoty.
+- **WidthProportional** &ndash; interpretuje `Width` hodnotu jako proporcionálně a všechny ostatní hodnoty jako absolutní.
+- **HeightProportional** &ndash; interpretuje pouze hodnota výšky jako proporcionální se všemi ostatními hodnotami absolutní.
+- **XProportional** &ndash; interpretuje `X` hodnotu jako proporcionální, nakládá všechny ostatní hodnoty jako absolutní.
+- **YProportional** &ndash; interpretuje `Y` hodnotu jako proporcionální, nakládá všechny ostatní hodnoty jako absolutní.
+- **PositionProportional** &ndash; interpretuje `X` a `Y` hodnoty jako proporcionální, zatímco hodnoty velikosti se interpretují jako absolutní.
+- **SizeProportional** &ndash; interpretuje `Width` a `Height` podle proporcionální hodnoty jsou absolutní hodnoty pozice.
 
-V jazyce XAML, rozsah a příznaky jsou nastavené jako součást definice zobrazení v rozložení, pomocí `AbsoluteLayout.LayoutBounds` vlastnost. Hranice jsou nastavené jako textový soubor s oddělovači seznam hodnot, `X`, `Y`, `Width`, a `Height`, v tomto pořadí. Příznaky jsou také zadaný v deklaraci zobrazení v rozložení pomocí `AbsoluteLayout.LayoutFlags` vlastnost. Všimněte si, že příznaky mohou být kombinovány v jazyce XAML pomocí seznam oddělený čárkami. Podívejte se na následující příklad:
+V XAML, hranice a příznaky jsou nastaveny jako součást definice zobrazení v rámci rozložení, pomocí `AbsoluteLayout.LayoutBounds` vlastnost. Hranice jsou nastavené jako čárkou oddělený seznam hodnot, `X`, `Y`, `Width`, a `Height`v tomto pořadí. Příznaky jsou také uvedené v deklaraci zobrazení v rozložení pomocí `AbsoluteLayout.LayoutFlags` vlastnost. Všimněte si, že je možné kombinovat příznaky v XAML pomocí seznamu čárkami. Vezměte v úvahu v následujícím příkladu:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -116,9 +116,9 @@ Title="Absolute Layout Exploration">
 
 Vezměte na vědomí následující:
 
-- Popisek v centru umístěn pomocí absolutní hodnoty velikosti a pozice. Z tohoto důvodu zobrazí se na zařízení iPhone 4S na střed a nižší, ale není zarovnaný na větší zařízení.
-- Text v dolní části rozložení je nastavený pomocí přímo úměrná velikosti a pozice hodnot. Vždy zobrazí v centru dolní rozložení, ale s větší velikostí rozložení se zvýší jeho velikost.
-- Tři stejné barvy `BoxView`s jsou umístěny na horní, levé a pravé hrany obrazovky pomocí přímo úměrná pozice a velikosti absolutní.
+- Popisek ve středu je umístěn pomocí absolutní hodnoty velikost a umístění. Z důvodu, zobrazí se na střed na iPhone 4S a nižší, ale není zarovnaný na větší zařízení.
+- Text v dolní části rozložení je umístěn pomocí přímo úměrná velikosti a pozice hodnot. Vždy se zobrazí v dolní části centru rozložení, ale jeho velikost se zvýší o větší velikosti rozložení.
+- Tři barevné `BoxView`s jsou umístěny v horní, levý a pravý okraji obrazovky pomocí proporcionální pozici a velikost absolutní.
 
 Následující dosahuje se stejné rozvržení v jazyce C#:
 
@@ -165,15 +165,15 @@ public class AbsoluteLayoutExplorationCode : ContentPage
 ```
 <a name="Proportional_Values" />
 
-### <a name="proportional-values"></a>Proporční hodnoty
+### <a name="proportional-values"></a>Proporcionální hodnoty
 
-Proporční hodnoty definovat vztah mezi rozložení a zobrazení. Tento vztah definuje jako podíl s odpovídající hodnotou rozložení nadřazené podřízené zobrazení pozici nebo hodnota měřítka. Tyto hodnoty jsou vyjádřené jako `double`s hodnotami mezi 0 a 1.
+Proporcionální hodnoty definovat vztah mezi rozložení a zobrazení. Tento vztah definuje jako podíl odpovídající hodnota rozložení nadřazené umístění nebo hodnota měřítka podřízené zobrazení. Tyto hodnoty jsou vyjádřeny jako `double`s hodnotami mezi 0 a 1.
 
-Proporční hodnoty se používají k pozice a velikosti zobrazení v rozložení. Ano, Šířka zobrazení je nastaven jako část, hodnota výsledné width při poměr násobí hodnotou `AbsoluteLayout`na šířku. Například s `AbsoluteLayout` šířky `500` a zobrazení nastavit tak, aby měl přímo úměrná šířku.5, šířku vykreslené zobrazení bude 250 (500 ×.5).
+Proporcionální hodnoty se používají k pozici a velikost zobrazení v rámci rozložení. Tedy Šířka zobrazení nastavena jako část, hodnota výsledná šířky při poměr vynásobené `AbsoluteLayout`na šířku. Například `AbsoluteLayout` šířky `500` a zobrazení nastavení mít přímo úměrná šířku.5, šířku vykreslené zobrazení bude 250 (500 ×.5).
 
-Chcete-li použít přímo úměrná hodnoty, nastavte `LayoutBounds` pomocí (x, y) proporce a přímo úměrná velikosti, nastavte `LayoutFlags` k `All`.
+Chcete-li použít přímo úměrná hodnoty, nastavte `LayoutBounds` pomocí (x, y) rozměry a přímo úměrná velikosti, nastavte `LayoutFlags` k `All`.
 
-V jazyce XAML:
+V XAML:
 
 ```xaml
 <Label Text="I'm bottom center on every device."
@@ -192,13 +192,13 @@ AbsoluteLayout.SetLayoutFlags(label, AbsoluteLayoutFlags.All);
 
 ### <a name="absolute-values"></a>Absolutní hodnoty
 
-Absolutní hodnoty explicitně definujte, kde má být umístěn zobrazení v rámci rozložení. Na rozdíl od přímo úměrná hodnoty jsou schopná využívat umístění a velikost zobrazení, který se nevejde do hranice rozložení absolutní hodnoty.
+Absolutní hodnoty explicitně definovat, kde zobrazení by měl být umístěn v rámci rozložení. Na rozdíl od přímo úměrná hodnoty jsou schopné umístění a velikosti zobrazení, které se nevejde do hranice rozložení absolutní hodnoty.
 
-Pomocí absolutní hodnoty pro umístění může být nebezpečné, když velikost rozložení není znám. Pokud používáte absolutní umístění, element ve středu obrazovky na velikosti může posunu v jiné velikosti. Je důležité k testování aplikace napříč různými velikost obrazovky zařízení podporované.
+Použití absolutní hodnoty pro umístění může být nebezpečné, pokud není známý velikost rozložení. Při použití absolutní umístění, ve středu obrazovky na velikosti elementu může posun v jakékoli velikosti. Je potřeba testovat aplikace pro různé velikosti obrazovky podporovaných zařízení.
 
-Chcete-li použít absolutní rozložení hodnoty, nastavte `LayoutBounds` pomocí (x, y) souřadnice explicitní velikost a poté nastavte `LayoutFlags` k `None`.
+Chcete-li použít absolutní rozložení hodnoty, nastavte `LayoutBounds` pomocí (x, y) souřadnic a explicitní velikost nastavte `LayoutFlags` k `None`.
 
-V jazyce XAML:
+V XAML:
 
 ```xaml
 <Label Text="I'm centered on iPhone 4 but no other device."
@@ -212,9 +212,9 @@ var label = new Label {Text = "I'm centered on iPhone 4 but no other device."};
 AbsoluteLayout.SetLayoutBounds(label, new Rectangle(115,150,100,100));
 ```
 
-## <a name="exploring-a-complex-layout"></a>Zkoumání komplexní rozložení
+## <a name="exploring-a-complex-layout"></a>Zkoumání složitá rozložení
 
-Každé rozložení mít silné a slabé stránky pro vytvoření konkrétní rozložení. Ukázkovou aplikaci byl vytvořen v rámci této série rozložení články s stejné rozložení stránky implementovaná pomocí tří různých rozložení.
+Každá z rozložení mít silné a slabé stránky pro vytvoření konkrétního rozložení. V celé této sérii článků rozložení byla vytvořena ukázkovou aplikaci s stejné rozložení stránky implementované pomocí tři různá rozložení.
 
 Vezměte v úvahu následující XAML:
 
@@ -279,15 +279,15 @@ Title="AbsoluteLayout">
 </ContentPage>
 ```
 
-Ve výše uvedeném kódu má za následek následující rozložení:
+Výše uvedený kód za následek následující rozložení:
 
 ![](absolute-layout-images/abs.png "Komplexní AbsoluteLayout")
 
-Všimněte si, že `AbsoluteLayout`s jsou vnořené, protože v některých případech vnoření rozložení může být snazší než nabízí všechny elementy v rámci stejné rozvržení.
+Všimněte si, že `AbsoluteLayout`s jsou vnořené, protože v některých případech vnoření rozložení může být jednodušší, než nabízí ten samý všechny prvky v rámci stejné rozložení.
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Vytváření mobilních aplikací s Xamarin.Forms, kapitoly 14](https://developer.xamarin.com/r/xamarin-forms/book/chapter14.pdf)
-- [AbsoluteLayout](https://developer.xamarin.com/api/type/Xamarin.Forms.AbsoluteLayout/)
+- [Vytváření mobilních aplikací s Xamarin.Forms, kapitola 14](https://developer.xamarin.com/r/xamarin-forms/book/chapter14.pdf)
+- [AbsoluteLayout](xref:Xamarin.Forms.AbsoluteLayout)
 - [Rozložení (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
 - [Příklad BusinessTumble (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BusinessTumble/)

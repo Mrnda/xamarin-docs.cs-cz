@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: c423c6f6f6bae829781fb13b405ad0d5bcf7128e
-ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
-ms.translationtype: HT
+ms.openlocfilehash: 43a681350035c3e965798bd63f49cd39f472ebfd
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 07/12/2018
-ms.locfileid: "38986106"
+ms.locfileid: "38998411"
 ---
 # <a name="windows-platform-specifics"></a>Windows specifik platforem
 
@@ -21,7 +21,7 @@ _Specifika platforem umožňují používat funkce, která je dostupná jenom na
 Na Universal Windows Platform (UWP), Xamarin.Forms obsahuje následující specifika platforem:
 
 - Nastavení možnosti umístění panelu nástrojů. Další informace najdete v tématu [Změna umístění panelu nástrojů stránky](#toolbar_placement).
-- Sbalení [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) navigační panel. Další informace najdete v tématu [sbalení navigačního panelu MasterDetailPage](#collapsable_navigation_bar).
+- Sbalení [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) navigační panel. Další informace najdete v tématu [sbalení navigačního panelu MasterDetailPage](#collapsable_navigation_bar).
 - Povolení [ `WebView` ](xref:Xamarin.Forms.WebView) chcete zobrazit výstrahy jazyka JavaScript v dialogovém okně zpráva UPW. Další informace najdete v tématu [zobrazení výstrahy JavaScript](#webview-javascript-alert).
 - Povolení [ `SearchBar` ](xref:Xamarin.Forms.SearchBar) k interakci s modulem kontroly pravopisu. Další informace najdete v tématu [umožňuje kontrolu pravopisu SearchBar](#searchbar-spellcheck).
 - Zjišťování pořadí čtení z textového obsahu v [ `Entry` ](xref:Xamarin.Forms.Entry), [ `Editor` ](xref:Xamarin.Forms.Editor), a [ `Label` ](xref:Xamarin.Forms.Label) instancí. Další informace najdete v tématu [zjišťování pořadí čtení z obsahu](#inputview-readingorder).
@@ -34,7 +34,7 @@ Na Universal Windows Platform (UWP), Xamarin.Forms obsahuje následující speci
 
 ## <a name="changing-the-page-toolbar-placement"></a>Změna umístění panelu nástrojů stránky
 
-Tento konkrétní platformy se používá ke změně umístění panelu nástrojů na [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/)a využívat XAML tak, že nastavíte [ `Page.ToolbarPlacement` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.Page.ToolbarPlacementProperty/) přidružená vlastnost na hodnotu [ `ToolbarPlacement` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement/) výčtu:
+Tento konkrétní platformy se používá ke změně umístění panelu nástrojů na [ `Page` ](xref:Xamarin.Forms.Page)a využívat XAML tak, že nastavíte [ `Page.ToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.Page.ToolbarPlacementProperty) přidružená vlastnost na hodnotu [ `ToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement) výčtu:
 
 ```xaml
 <TabbedPage ...
@@ -54,9 +54,9 @@ using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
 page.On<Windows>().SetToolbarPlacement(ToolbarPlacement.Bottom);
 ```
 
-`Page.On<Windows>` Metody Určuje, že toto specifické pro platformu lze spustit pouze na Windows. [ `Page.SetToolbarPlacement` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.Page.SetToolbarPlacement/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.Page}/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement/) Metoda v [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) obor názvů, se používá k nastavení umístění panelu nástrojů s [ `ToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement) poskytuje výčet tří hodnot: [ `Default` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement.Default), [ `Top` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement.Top), a [ `Bottom` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement.Bottom).
+`Page.On<Windows>` Metody Určuje, že toto specifické pro platformu lze spustit pouze na Windows. [ `Page.SetToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.Page.SetToolbarPlacement(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.Page},Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement)) Metoda v [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) obor názvů, se používá k nastavení umístění panelu nástrojů s [ `ToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement) poskytuje výčet tří hodnot: [ `Default` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement.Default), [ `Top` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement.Top), a [ `Bottom` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement.Bottom).
 
-Výsledkem je, že je umístění zadané nástrojů platí pro [ `Page` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Page/) instance:
+Výsledkem je, že je umístění zadané nástrojů platí pro [ `Page` ](xref:Xamarin.Forms.Page) instance:
 
 [![](windows-images/toolbar-placement.png "Panel nástrojů umístění specifické pro platformu")](windows-images/toolbar-placement-large.png#lightbox "nástrojů umístění specifické pro platformu")
 
@@ -64,7 +64,7 @@ Výsledkem je, že je umístění zadané nástrojů platí pro [ `Page` ](https
 
 ## <a name="collapsing-a-masterdetailpage-navigation-bar"></a>Sbalení navigačního panelu MasterDetailPage
 
-Tento konkrétní platformy se používá ke sbalení navigačního panelu na [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/)a využívat XAML tak, že nastavíte [ `MasterDetailPage.CollapseStyle` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapseStyleProperty/) a [ `MasterDetailPage.CollapsedPaneWidth` ](https://developer.xamarin.com/api/field/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapsedPaneWidthProperty/)přidružené vlastnosti:
+Tento konkrétní platformy se používá ke sbalení navigačního panelu na [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage)a využívat XAML tak, že nastavíte [ `MasterDetailPage.CollapseStyle` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapseStyleProperty) a [ `MasterDetailPage.CollapsedPaneWidth` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapsedPaneWidthProperty)přidružené vlastnosti:
 
 ```xaml
 <MasterDetailPage ...
@@ -86,9 +86,9 @@ using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
 page.On<Windows>().SetCollapseStyle(CollapseStyle.Partial).CollapsedPaneWidth(148);
 ```
 
-`MasterDetailPage.On<Windows>` Metody Určuje, že toto specifické pro platformu lze spustit pouze na Windows. [ `Page.SetCollapseStyle` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.SetCollapseStyle/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.MasterDetailPage}/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle/) Metoda v [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.WindowsSpecific/) obor názvů, slouží k určení stylu sbalit s [ `CollapseStyle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle/) výčet poskytuje dvě hodnoty: [ `Full` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle.Full) a [ `Partial` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle.Partial). [ `MasterDetailPage.CollapsedPaneWidth` ](https://developer.xamarin.com/api/member/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapsedPaneWidth/p/Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.MasterDetailPage}/System.Double/) Metoda se používá k určení šířka částečně sbaleným navigačním panelem.
+`MasterDetailPage.On<Windows>` Metody Určuje, že toto specifické pro platformu lze spustit pouze na Windows. [ `Page.SetCollapseStyle` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.SetCollapseStyle(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.MasterDetailPage},Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle)) Metoda v [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) obor názvů, slouží k určení stylu sbalit s [ `CollapseStyle` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle) výčet poskytuje dvě hodnoty: [ `Full` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle.Full) a [ `Partial` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle.Partial). [ `MasterDetailPage.CollapsedPaneWidth` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.MasterDetailPage.CollapsedPaneWidth(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.MasterDetailPage},System.Double)) Metoda se používá k určení šířka částečně sbaleným navigačním panelem.
 
-Výsledkem je, že zadané [ `CollapseStyle` ](https://developer.xamarin.com/api/type/Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle/) platí pro [ `MasterDetailPage` ](https://developer.xamarin.com/api/type/Xamarin.Forms.MasterDetailPage/) instance se také specifikovanou šířkou:
+Výsledkem je, že zadané [ `CollapseStyle` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.CollapseStyle) platí pro [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) instance se také specifikovanou šířkou:
 
 [![](windows-images/collapsed-navigation-bar.png "Sbalený navigační panel specifickou platformu")](windows-images/collapsed-navigation-bar-large.png#lightbox "sbalený navigační panel specifické platformy")
 
@@ -450,4 +450,4 @@ V tomto článku jsme vám ukázali jak využívat Windows specifik platforem, k
 
 - [Vytváření specifik platforem](~/xamarin-forms/platform/platform-specifics/creating.md)
 - [PlatformSpecifics (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/userinterface/platformspecifics/)
-- [WindowsSpecific](https://developer.xamarin.com/api/namespace/Xamarin.Forms.PlatformConfiguration.WindowsSpecific/)
+- [WindowsSpecific](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)

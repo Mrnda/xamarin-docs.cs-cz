@@ -1,38 +1,38 @@
 ---
-title: Pixelů a jednotky nezávislé na zařízení
-description: Tento článek jsou zde popsány rozdíly mezi Xamarin.Forms souřadnice a SkiaSharp souřadnice a to ukazuje s ukázkový kód.
+title: Pixely a jednotky nezávislé na zařízení
+description: Tento článek popisuje rozdíly mezi souřadnice ve Skiasharpu a souřadnice Xamarin.Forms a ukazuje to se vzorovým kódem.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 26C25BB8-FBE8-4B77-B01D-16A163A16890
 author: charlespetzold
 ms.author: chape
 ms.date: 02/09/2017
-ms.openlocfilehash: 2c7521fbedf1759c32e18d9c7f2a8fc6f0903587
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: b0655934b0389b06dca5ef6bab3badc0023400b4
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244136"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38997375"
 ---
-# <a name="pixels-and-device-independent-units"></a>Pixelů a jednotky nezávislé na zařízení
+# <a name="pixels-and-device-independent-units"></a>Pixely a jednotky nezávislé na zařízení
 
-_Prozkoumat rozdíly mezi SkiaSharp souřadnice a souřadnice Xamarin.Forms_
+_Prozkoumáte rozdíly mezi souřadnice Xamarin.Forms a souřadnice ve Skiasharpu_
 
-Tento článek popisuje rozdíly v souřadnicový systém používán SkiaSharp a Xamarin.Forms. Můžete získat informace o převod mezi dvěma systémy souřadnic a také kreslení grafiky, který vyplnění konkrétní oblasti:
+Tento článek popisuje rozdíly mezi souřadnicový systém používán ve Skiasharpu a Xamarin.Forms. Můžete získat informace k převodu mezi dvěma systémy souřadnic a také nakreslit grafiku, které vyplnit ke konkrétní oblasti:
 
 ![](pixels-images/screenfillexample.png "Objekt, který vyplní celé obrazovky")
 
-Pokud nějakou dobu, jste byla programování v Xamarin.Forms, může být chování pro Xamarin.Forms souřadnice a velikosti. Kroužky v článcích dva předchozí vykreslován zdát trochu malé, aby vám.
+Pokud nějakou dobu, jsme se programování v Xamarin.Forms, bude pravděpodobně chování pro souřadnice Xamarin.Forms a velikostí. Kruhy vykreslen v předchozích dvou článcích zdát trochu malé vám.
 
-Tyto kroužky *jsou* malé ve srovnání s Xamarin.Forms velikosti. Ve výchozím nastavení se SkiaSharp získává v jednotkách pixelů, zatímco Xamarin.Forms základny souřadnice a velikosti na jednotce nezávislé na zařízení, vytvořit základní platformou. (Další informace o Xamarin.Forms souřadnicový systém naleznete v [kapitoly 5. Plánování práce s velikostí](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter05.md) knihy *vytváření mobilních aplikací s Xamarin.Forms*.)
+Těchto kruzích *jsou* malé ve srovnání s velikostí Xamarin.Forms. Ve výchozím nastavení kreslení ve Skiasharpu v jednotkách, které pixelů, zatímco Xamarin.Forms základů souřadnice a velikosti na jednotce nezávislých na zařízení stanovené základní platformy. (Další informace o Xamarin.Forms souřadnicový systém najdete v [kapitola 5. Řešení velikostí](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter05.md) knihy *vytváření mobilních aplikací pomocí Xamarin.Forms*.)
 
-Na stránku [ **SkewSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) program s názvem **prostor velikost** používá SkiaSharp textového výstupu zobrazuje velikost zobrazení plochy ze tří různých zdrojů:
+Na stránce v [ **SkewSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) program s názvem **Surface velikost** používá ve Skiasharpu textový výstup zobrazuje velikost zobrazovacím povrchu ze tří různých zdrojů:
 
-- Normální Xamarin.Forms [ `Width` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Width/) a [ `Height` ](https://developer.xamarin.com/api/property/Xamarin.Forms.VisualElement.Height/) vlastnosti `SKCanvasView` objektu.
+- Normální Xamarin.Forms [ `Width` ](xref:Xamarin.Forms.VisualElement.Width) a [ `Height` ](xref:Xamarin.Forms.VisualElement.Height) vlastnosti `SKCanvasView` objektu.
 - [ `CanvasSize` ](https://developer.xamarin.com/api/property/SkiaSharp.Views.Forms.SKCanvasView.CanvasSize/) Vlastnost `SKCanvasView` objektu.
 - [ `Size` ](https://developer.xamarin.com/api/property/SkiaSharp.SKImageInfo.Size/) Vlastnost `SKImageInfo` hodnotu, která je konzistentní s `Width` a `Height` vlastnosti používané ve dvou předchozí stránky.
 
-[ `SurfaceSizePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SurfaceSizePage.cs) Třída ukazuje, jak zobrazit tyto hodnoty. Konstruktor uloží `SKCanvasView` objektu jako pole, aby byla přístupná v `PaintSurface` obslužné rutiny události:
+[ `SurfaceSizePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SurfaceSizePage.cs) Třídy ukazuje, jak zobrazit tyto hodnoty. Konstruktor uloží `SKCanvasView` objektu jako pole, aby byla přístupná v `PaintSurface` obslužné rutiny události:
 
 ```csharp
 SKCanvasView canvasView;
@@ -53,11 +53,11 @@ public SurfaceSizePage()
 public void DrawText (String text, Single x, Single y, SKPaint paint)
 ```
 
-Zadejte textový řetězec, kde je text, pokud chcete začít, souřadnic X a Y a `SKPaint` objektu. Souřadnice X Určuje, kde je umístěn na levé straně text, ale sledovat out: Určuje souřadnici Y umístění *směrného plánu* textu. Pokud někdy napsání ručně na řádkovaný dokumentu, do směrného plánu je na řádku, na které lokality znaků, a pod sestup které dolní dotahy (jako jsou ty na písmena g, p, otázek a y).
+Zadejte textový řetězec, ve kterém se má text začít, souřadnic X a Y a `SKPaint` objektu. Souřadnice X Určuje, kde je umístěn levé straně textu, ale watch navýšení kapacity: Určuje souřadnici Y umístění *směrného plánu* textu. Pokud někdy ručně jste napsali na linkované papíru, je směrný plán na řádku, na které sit znaků a pod sestup které dolní dotahy (například na těch, na písmena g, p, q a y).
 
-`SKPaint` Objekt umožňuje zadat barvu textu, rodiny písem a velikost textu. Ve výchozím nastavení [ `TextSize` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.TextSize/) vlastnost má hodnotu 12, což vede k velmi malé textové na zařízení s vysokým rozlišením, jako jsou telefony. V jinou možnost než nejjednodušší aplikace, budete také potřebovat některé informace o velikosti text, který je zobrazen. `SKPaint` Třída definuje [ `FontMetrics` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.FontMetrics/) vlastnost a několik [ `MeasureText` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.MeasureText/p/System.String/) metody, ale pro menší zvláštní požadavky [ `FontSpacing` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.FontSpacing/) vlastnost poskytuje doporučené hodnoty pro mezery mezi po sobě jdoucích řádků textu.
+`SKPaint` Objektu umožňuje zadat barvu textu, rodina písem a velikost textu. Ve výchozím nastavení [ `TextSize` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.TextSize/) vlastnost má hodnotu 12, což vede k velmi malé na zařízeních s vysokým rozlišením, jako jsou telefony. V jinde nejjednodušší aplikace, budete také potřebovat některé informace o velikosti textu, který chcete zobrazit. `SKPaint` Třída definuje [ `FontMetrics` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.FontMetrics/) vlastnost a několik [ `MeasureText` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.MeasureText/p/System.String/) metody, ale méně nápadité potřebám [ `FontSpacing` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.FontSpacing/) Vlastnosti zajišťující Doporučená hodnota mezery mezi po sobě jdoucích řádků textu.
 
-Následující `PaintSurface` obslužná rutina vytvoří `SKPaint` objekt pro `TextSize` 40 pixelů, které je požadované výšky text z horní části horních k dolnímu okraji dolní dotahy. `FontSpacing` Hodnotu, která `SKPaint` objekt vrátí o něco větší než, o 47 pixelů.
+Následující `PaintSurface` vytvoří obslužnou rutinu `SKPaint` objekt pro `TextSize` 40 pixelů, což je požadované výšky textu od horního okraje horní a dolní dotahy. `FontSpacing` Hodnota, která `SKPaint` vrátí objekt je o něco větší než, o 47 pixelů.
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -95,27 +95,27 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Metoda zahájí první řádek textu souřadnici X 20 (pro malé okraje v levém) a souřadnici Y `fontSpacing`, což je trochu déle, než co je potřeba zobrazit úplnou výšku první řádek textu v horní části prostor pro zobrazení. Po každé volání `DrawText`, souřadnici Y vzroste jedno nebo dvě vždy o `fontSpacing`.
+Metoda začíná první řádek textu s souřadnici X 20 (málo okraj na levé straně) a souřadnice Y `fontSpacing`, což je o něco víc, než co je nutné zobrazit úplnou výška prvního řádku textu v horní části zobrazovacím povrchu. Po každé volání `DrawText`, Souřadnice Y se zvýší o jednu nebo dvě násobcích `fontSpacing`.
 
-Tady je programy spuštěné na všech tří platformách:
+Tady je program spuštěn na všech třech platformách:
 
-[![](pixels-images/surfacesize-small.png "Trojitá snímek obrazovky stránky prostor velikost")](pixels-images/surfacesize-large.png#lightbox "Trojitá snímek obrazovky stránky prostor pro velikost")
+[![](pixels-images/surfacesize-small.png "Trojitá snímek obrazovky stránky Surface velikost")](pixels-images/surfacesize-large.png#lightbox "Trojitá snímek Surface velikost stránky")
 
-Jak je vidět `CanvasSize` vlastnost `SKCanvasView` a `Size` vlastnost `SKImageInfo` hodnota jsou konzistentní v sestavách dimenze pixelů. `Height` a `Width` vlastnosti `SKCanvasView` jsou vlastnosti Xamarin.Forms a zobrazit zprávu velikost zobrazení v definované platformou jednotky nezávislé na zařízení.
+Jak je vidět `CanvasSize` vlastnost `SKCanvasView` a `Size` vlastnost `SKImageInfo` hodnota jsou konzistentní vzhledem k aplikacím v generování sestav pixelech. `Height` a `Width` vlastnosti `SKCanvasView` jsou vlastnosti Xamarin.Forms a zobrazit zprávu velikost zobrazení v jednotkách nezávislých na zařízení definované platformou.
 
-Simulátoru iOS 7 na levé straně má 2 počet pixelů na jednotka nezávislá na zařízení a 3 pixelů na jednotku se systémem Android 5 Nexus v centru. To je důvod, proč jednoduchý kruh uvedena výše má různou velikost na různých platformách.
+Simulátor Iosu 7 na levé straně má 2 pixelů na jednotku nezávislých na zařízení a s Androidem 5 Nexus v centru má 3 pixelů na jednotku. To je důvod, proč jednoduchého kruhu je uvedeno výše má různé velikosti na různých platformách.
 
-Pokud si přejete pracovat zcela v jednotky nezávislé na zařízení, můžete tak učinit nastavením `IgnorePixelScaling` vlastnost `SKCanvasView` k `true`. Nemusí ale jako výsledky. SkiaSharp vykreslí grafiky na menší prostor zařízení, s velikostí pixelů rovná velikosti zobrazení jednotky nezávislé na zařízení. (Například SkiaSharp využije zobrazení prostor 360 x 512 pixelů na Nexus 5.) Potom škálování této bitové kopie velikostí, což vede k významnému rastrový obrázek jaggies.
+Pokud si přejete pracovat jenom v jednotkách nezávislých na zařízení, můžete provést tak, že nastavíte `IgnorePixelScaling` vlastnost `SKCanvasView` k `true`. Však nemusí být výsledky. Ve Skiasharpu vykreslí grafiky na menší plochy zařízení, se rovná velikosti zobrazení v jednotkách nezávislých na zařízení velikost v pixelech. (Například ve Skiasharpu byste použili zobrazení surface 360 x 512 pixelů na Nexus 5.) Potom škálování této bitové kopie v velikost, čímž jaggies znatelný rastrového obrázku.
 
-Pokud chcete zachovat stejné rozlišení obrázku, je lepší řešení napsat vlastní jednoduché funkce pro převod mezi dvěma systémy souřadnic.
+Pokud chcete zachovat stejné rozlišení obrázku, lepším řešením je napsat vlastní jednoduché funkce pro převod mezi těmito dvěma systémy souřadnic.
 
-Kromě `DrawCircle` metody `SKCanvas` také definuje dvě `DrawOval` metody, které Nakreslení elipsy. Elipsy je definované dva poloměr místo jednoho protokolu radius. Toto jsou známé jako *hlavní radius* a *menší radius*. `DrawOval` Metoda nevykresluje elipsy s dvěma poloměr paralelní na ose X a Y. Tohoto omezení lze překonat s transformací nebo použití cesty grafiky (na které se vztahují později), ale [to `DrawOval` metoda](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawOval/p/System.Single/System.Single/System.Single/System.Single/SkiaSharp.SKPaint/) názvy dvou poloměr argument `rx` a `ry` k označení, že jsou paralelní k osy X a Y:
+Kromě `DrawCircle` metody `SKCanvas` také definuje dva `DrawOval` metody, které nakreslíte elipsu. Elipsa je definována dvě poloměry místo jednoho protokolu radius. Toto jsou známé jako *hlavní radius* a *menší radius*. `DrawOval` Metoda nakreslí elipsu s dvěma poloměry paralelního na osách X a Y. Omezení je možné překonat s transformací nebo použijte cestu grafiky (k věnujeme později), ale [to `DrawOval` metoda](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawOval/p/System.Single/System.Single/System.Single/System.Single/SkiaSharp.SKPaint/) názvy dvou poloměry argument `rx` a `ry` označuje, že je paralelně OS X a Y:
 
 ```csharp
 public void DrawOval (Single cx, Single cy, Single rx, Single ry, SKPaint paint)
 ```
 
-Je možné k vykreslení elipsy, který vyplní povrch zobrazení? **Vyplnění elipsy** stránky ukazuje, jak. `PaintSurface` Obslužné rutiny událostí v [ **EllipseFillPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/EllipseFillPage.xaml.cs) třída odečítá poloviční šířku tahu z `xRadius` a `yRadius` hodnoty přizpůsobit celou elipsy a jeho popisují se v rámci prostor pro zobrazení:
+Je možné pro kreslení elipsy, která naplní zobrazovacím povrchu? **Vyplnit elipsu** stránce ukazuje, jak. `PaintSurface` Obslužné rutině událostí ve [ **EllipseFillPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/EllipseFillPage.xaml.cs) odečte poloviční šířku tahu ze třídy `xRadius` a `yRadius` hodnoty přizpůsobit celý tři tečky a jeho Osnova v rámci zobrazovacím povrchu:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -140,18 +140,18 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Zde je spuštěn na tři platformy:
+Tady je spuštěn na třech platformách:
 
-[![](pixels-images/ellipsefill-small.png "Trojitá snímek obrazovky stránky prostor velikost")](pixels-images/ellipsefill-large.png#lightbox "Trojitá snímek obrazovky stránky prostor pro velikost")
+[![](pixels-images/ellipsefill-small.png "Trojitá snímek obrazovky stránky Surface velikost")](pixels-images/ellipsefill-large.png#lightbox "Trojitá snímek Surface velikost stránky")
 
-[Jiných `DrawOval` metoda](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawOval/p/SkiaSharp.SKRect/SkiaSharp.SKPaint/) má [ `SGRect` ](https://developer.xamarin.com/api/type/SkiaSharp.SKRect/) argument, který je definována v souřadnice X a Y jeho levém horním a pravém dolním rohu obdélníku. Elipsy doplní obdélníku, což naznačuje, že je pravděpodobně možné ho použít **vyplnění elipsy** stránky takto:
+[Jiných `DrawOval` metoda](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawOval/p/SkiaSharp.SKRect/SkiaSharp.SKPaint/) má [ `SGRect` ](https://developer.xamarin.com/api/type/SkiaSharp.SKRect/) argument, který je definován jako souřadnice X a Y levého horního rohu a pravém dolním rohu obdélníku. Elipsy vyplní obdélníku, který naznačuje, že je možné pro použití v **Vyplnit elipsu** stránky následujícím způsobem:
 
 ```csharp
 SKRect rect = new SKRect(0, 0, info.Width, info.Height);
 canvas.DrawOval(rect, paint);
 ```
 
-Nicméně, zkrátí všech hran obrysu se třemi tečkami na čtyři strany. Bude nutné upravit všechny `SKRect` na základě argumenty konstruktoru `strokeWidth` byly správné tyto funkce:
+Nicméně, který zkrátí všechny okraji osnovy na tři tečky na čtyřech stranách. Je potřeba upravit všechny `SKRect` na základě argumenty konstruktoru `strokeWidth` provést tuto práci vpravo:
 
 ```csharp
 SKRect rect = new SKRect(strokeWidth / 2,
@@ -164,5 +164,5 @@ canvas.DrawOval(rect, paint);
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [Rozhraní API ve Skiasharpu](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

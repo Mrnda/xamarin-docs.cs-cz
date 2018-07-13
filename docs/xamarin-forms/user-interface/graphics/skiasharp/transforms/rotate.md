@@ -1,28 +1,28 @@
 ---
-title: Otočit transformace
-description: V tomto článku jsou zde popsány dopady a animací možné pomocí rotační transformace SkiaSharp a předvádí to s ukázkový kód.
+title: Transformace rotace
+description: Tento článek popisuje dopady a možnosti s transformace rotace ve Skiasharpu animace a ukazuje to se vzorovým kódem.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: CBB3CD72-4377-4EA3-A768-0C4228229FC2
 author: charlespetzold
 ms.author: chape
 ms.date: 03/23/2017
-ms.openlocfilehash: 514ecd16fedd7d3fda39fe20641cf0ee9ecb119e
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: cbb34fb4887fc3fa086fa9912d25addebd9b13f2
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244617"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994997"
 ---
-# <a name="the-rotate-transform"></a>Otočit transformace
+# <a name="the-rotate-transform"></a>Transformace rotace
 
-_Prozkoumat efekty a animací možné pomocí SkiaSharp rotační transformace_
+_Prozkoumejte efekty a animace s transformace rotace ve Skiasharpu_
 
-U otáčení transformace SkiaSharp grafických objektů rozdělit volné omezení zarovnání s vodorovného a svislého osy:
+Pomocí transformace rotace ve Skiasharpu grafických objektů už se osvoboďte omezení zarovnání s vodorovné a svislé osy:
 
-![](rotate-images/rotateexample.png "Text otočen kolem center")
+![](rotate-images/rotateexample.png "Text otáčet kolem System center")
 
-Pro výměnu grafického objektu kolem bodu (0, 0), SkiaSharp podporuje obě [ `RotateDegrees` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.RotateDegrees/p/System.Single/) metoda a [ `RotateRadians` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.RotateRadians/p/System.Single/) metoda:
+Pro rotaci kolem bodu (0, 0), ve Skiasharpu podporuje obě grafický objekt [ `RotateDegrees` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.RotateDegrees/p/System.Single/) metoda a [ `RotateRadians` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.RotateRadians/p/System.Single/) metody:
 
 ```csharp
 public void RotateDegrees (Single degrees)
@@ -30,17 +30,17 @@ public void RotateDegrees (Single degrees)
 public Void RotateRadians (Single radians)
 ```
 
-Kruh 360 stupňů je stejný jako 2π radiánech, takže můžete snadno pro převod mezi dvě jednotky. Použijte, podle toho, co je vhodné. Trigonometrické funkce v statických [ `Math` ](https://developer.xamarin.com/api/type/System.Math/) třída použít jednotky radiánech.
+Kruh 360 stupňů je stejný jako 2π radiány tak, aby byl snadno převést mezi dvěma jednotkami. Použijte, podle toho, co je vhodné. Trigonometrické funkce v statické [ `Math` ](xref:System.Math) třídy používat jednotky radiánů.
 
-Otočení je po směru hodinových ručiček pro zvýšení úhly. (I když otočení na kartézský souřadnicový systém proti směru hodinových ručiček podle konvence, po směru hodinových ručiček kolem je konzistentní s Souřadnice Y zvýšení probíhající dolů.) Záporné úhly a úhly větší, než je povoleno 360 stupňů.
+Musí se obměnit po směru hodinových ručiček pro zvýšení úhlů. (Sice proti směru hodinových ručiček podle konvence otočení na systém souřadnic kartézský rotaci kolem je konzistentní s nimi souřadnice zvýšení přejít dolů.) Záporné úhly a úhly větší, než je povoleno 360 stupňů.
 
-Transformace vzorce pro otočení jsou složitější než ty, které pro přeložit a škálovatelnost. Pro úhel α jsou transformace vzorce:
+Transformace vzorce pro rotaci jsou složitější než u přeložit a škálování. Pro úhel α vzorce transformace jsou:
 
-x: = x•cos(α) – y•sin(α)   
+x! = x•cos(α) – y•sin(α)   
 
 y' = x•sin(α) + y•cos(α)
 
-**Základní otočit** stránky ukazuje `RotateDegrees` metoda. [ `BasicRotate.xaml.cs` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicRotatePage.xaml.cs) Soubor zobrazuje text na střed stránky směrného a na základě otočí `Slider` s rozsahem – 360 do 360. Tady je příslušné části `PaintSurface` obslužné rutiny:
+**Základní otočit** stránce ukazuje `RotateDegrees` metody. [ `BasicRotate.xaml.cs` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicRotatePage.xaml.cs) Souboru zobrazí text s jeho základní zarovnání na střed na stránce a na základě otočí `Slider` s celou řadou – 360 do 360. Tady je odpovídající část `PaintSurface` obslužné rutiny:
 
 ```csharp
 using (SKPaint textPaint = new SKPaint
@@ -56,11 +56,11 @@ using (SKPaint textPaint = new SKPaint
 }
 ```
 
-Protože otočení je zaměřená na levém horním rohu plátna pro většinu úhly nastaven v tomto programu Tento text otočen z obrazovky:
+Protože otočení tkví v levém horním rohu plátna pro většinu úhly nastavit v rámci tohoto programu, je tento text otočen mimo obrazovku:
 
-[![](rotate-images/basicrotate-small.png "Trojitá snímek obrazovky stránky základní otočit")](rotate-images/basicrotate-large.png#lightbox "Trojitá snímek obrazovky otočit základní stránky")
+[![](rotate-images/basicrotate-small.png "Trojitá snímek obrazovky stránky základní otočit")](rotate-images/basicrotate-large.png#lightbox "Trojitá snímek obrazovky stránky základní otočení")
 
-Velmi často budete chtít otočit něco zaměřená na bod zadaný pivot používat tyto verze [ `RotateDegrees` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.RotateDegrees/p/System.Single/System.Single/System.Single/) a [ `RotateRadians` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.RotateRadians/p/System.Single/System.Single/System.Single/) metody:
+Velmi často budete chtít otočit něco zaměřená na bod zadaný pivot pomocí těchto verzích [ `RotateDegrees` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.RotateDegrees/p/System.Single/System.Single/System.Single/) a [ `RotateRadians` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.RotateRadians/p/System.Single/System.Single/System.Single/) metody:
 
 ```csharp
 public void RotateDegrees (Single degrees, Single px, Single py)
@@ -68,7 +68,7 @@ public void RotateDegrees (Single degrees, Single px, Single py)
 public void RotateRadians (Single radians, Single px, Single py)
 ```
 
-**Zarovnaný na střed otočit** stránka je podobně jako **základní otočit** s tím rozdílem, že rozšířené verze `RotateDegrees` se používá k nastavení střed otáčení do stejného bodu k umístění text:
+**Zarovnaný na střed otáčení** stránka je stejně jako **základní otočit** s tím rozdílem, že rozšířenou verzi `RotateDegrees` slouží k nastavení střed otáčení do stejného bodu používá umístění textu:
 
 ```csharp
 using (SKPaint textPaint = new SKPaint
@@ -84,17 +84,17 @@ using (SKPaint textPaint = new SKPaint
 }
 ```
 
-Nyní text otočí kolem bodu k umístění text, který je vodorovném centru směrného plánu text:
+Nyní text otočí kolem bodu k umístění text, který je vodorovné center směrného plánu textu:
 
-[![](rotate-images/centeredrotate-small.png "Trojitá snímek obrazovky stránky zarovnaný na střed otočit")](rotate-images/centeredrotate-large.png#lightbox "Trojitá snímek obrazovky stránky zarovnaný na střed otočit")
+[![](rotate-images/centeredrotate-small.png "Trojitá snímek obrazovky stránky na střed otáčení")](rotate-images/centeredrotate-large.png#lightbox "Trojitá snímek obrazovky stránky na střed otáčení")
 
-Stejně jako u zarovnaný verzi `Scale` metoda, na střed verzi `RotateDegrees` volání je zástupce:
+Stejně jako u zaměřena na verzi `Scale` metody, zaměřena na verzi `RotateDegrees` volání je zástupce:
 
 ```csharp
 RotateDegrees (degrees, px, py);
 ```
 
-Jde o ekvivalent takto:
+To je ekvivalentní následujícímu zápisu:
 
 ```csharp
 canvas.Translate(px, py);
@@ -102,14 +102,14 @@ canvas.RotateDegrees(degrees);
 canvas.Translate(-px, -py);
 ```
 
-Dozvíte se, že v některých případech můžete kombinovat `Translate` volá s `Rotate` volání. Tady jsou například `RotateDegrees` a `DrawText` zavolá **zarovnaný na střed otočit** stránky;
+Dozvíte se, že v některých případech můžete kombinovat `Translate` volání s `Rotate` volání. Tady jsou například `RotateDegrees` a `DrawText` volání **zarovnaný na střed otáčení** stránce;
 
 ```csharp
 canvas.RotateDegrees((float)rotateSlider.Value, info.Width / 2, info.Height / 2);
 canvas.DrawText(Title, info.Width / 2, info.Height / 2, textPaint);
 ```
 
-`RotateDegrees` Volání je ekvivalentní ke dvěma `Translate` volání a jiných-zarovnaný na střed `RotateDegrees`:
+`RotateDegrees` Volání je ekvivalentní ke dvěma `Translate` volání a jiných střed `RotateDegrees`:
 
 ```csharp
 canvas.Translate(info.Width / 2, info.Height / 2);
@@ -118,7 +118,7 @@ canvas.Translate(-info.Width / 2, -info.Height / 2);
 canvas.DrawText(Title, info.Width / 2, info.Height / 2, textPaint);
 ```
 
-`DrawText` Je ekvivalentní volání k zobrazení textu v konkrétních místech `Translate` volání pro danou lokalitu, za nímž následuje `DrawText` v bodě (0, 0):
+`DrawText` Je ekvivalentní volání k zobrazení textu v konkrétních místech `Translate` volání pro danou lokaci, za nímž následuje `DrawText` okamžiku (0, 0):
 
 ```csharp
 canvas.Translate(info.Width / 2, info.Height / 2);
@@ -128,7 +128,7 @@ canvas.Translate(info.Width / 2, info.Height / 2);
 canvas.DrawText(Title, 0, 0, textPaint);
 ```
 
-Dvě po sobě jdoucích `Translate` volání navzájem zruší:
+Dvě po sobě jdoucích `Translate` volání mezi sebou zrušit navýšení kapacity:
 
 ```csharp
 canvas.Translate(info.Width / 2, info.Height / 2);
@@ -136,13 +136,13 @@ canvas.RotateDegrees((float)rotateSlider.Value);
 canvas.DrawText(Title, 0, 0, textPaint);
 ```
 
-Koncepčně dva soubory použije v pořadí, než jak se zobrazují v kódu. `DrawText` Volání zobrazí text v levém horním rohu na plátno. `RotateDegrees` Volání otočí tento text relativně k levého horního rohu. Pak se `Translate` volání přesune text na střed plátna.
+Dva transformační soubory koncepčně, se použijí v pořadí, než jak se zobrazují v kódu. `DrawText` Volání zobrazí text v levém horním rohu plátna. `RotateDegrees` Volání otočí textu relativní k levého horního rohu. Pak bude `Translate` volání přesune text na střed plátna.
 
-Obvykle tam existuje několik způsobů, jak kombinovat otočení a překlad. **Text otočen** stránky vytvoří následující zobrazení:
+Jsou obvykle několik způsobů, jak kombinovat otočení a překladu. **Otočený Text** stránka vytvoří následující výstup:
 
-[![](rotate-images/rotatedtext-small.png "Trojitá snímek obrazovky stránky Text otočen")](rotate-images/rotatedtext-large.png#lightbox "Trojitá snímek obrazovky stránky Text otočen")
+[![](rotate-images/rotatedtext-small.png "Trojitá snímek obrazovky stránky otočený Text")](rotate-images/rotatedtext-large.png#lightbox "Trojitá snímek obrazovky stránky otočený Text")
 
-Tady je `PaintSurface` obslužnou rutinu [ `RotatedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/RotatedTextPage.cs) třídy:
+Tady je `PaintSurface` obslužná rutina [ `RotatedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/RotatedTextPage.cs) třídy:
 
 ```csharp
 static readonly string text = "    ROTATE";
@@ -180,9 +180,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ```
 
-`xCenter` a `yCenter` hodnoty stanovují na střed plátna. `yText` Hodnota je trochu posun od. To znamená souřadnici Y potřebné k umístění text tak, aby skutečně svisle na střed na stránce. `for` Smyčky nastaví rotaci kolem zarovnaný na střed na střed plátna. Otočení je v přírůstcích po 30 stupňů. Text je vykreslen pomocí `yText` hodnotu. Počet prázdných hodnot před slovo "OTOČIT" v `text` hodnota byla určena empirically pro připojení mezi tyto 12 textové řetězce, zobrazí jako dodecagon.
+`xCenter` a `yCenter` hodnoty označují střed plátna. `yText` Hodnota je trochu posun od. To znamená souřadnici Y potřebné k umístění text tak, aby skutečně svisle na střed na stránce. `for` Smyčky pak nastaví otočení zarovnaný na střed na střed plátna. Otočení je dokupuje se násobek 30 stupňů. Text je vykreslen `yText` hodnotu. Počet prázdných hodnot před slovo "OTOČIT" v `text` hodnota byla určena empirických navázat připojení mezi těmito 12 textové řetězce se zdají být dodecagon.
 
-Jedním ze způsobů pro zjednodušení tento kód je vyšší, úhel otočení o 30 stupňů prostřednictvím smyčky po `DrawText` volání. Tím se eliminuje potřeba pro volání `Save` a `Restore`. Všimněte si, že `degrees` proměnná se už používá v rámci textu `for` bloku:
+Jedním ze způsobů pro zjednodušení tento kód je se zvýší pokaždé, když pomocí smyčky po úhel otočení ve stupních 30 `DrawText` volání. Tím se eliminuje nutnost volání `Save` a `Restore`. Všimněte si, že `degrees` proměnná se už používá v těle `for` blok:
 
 ```csharp
 for (int degrees = 0; degrees < 360; degrees += 30)
@@ -193,7 +193,7 @@ for (int degrees = 0; degrees < 360; degrees += 30)
 
 ```
 
-Je také možné použít jednoduchý způsob `RotateDegrees` podle zahájením literálu smyčky pomocí volání `Translate` přesunout vše na střed plátna:
+Je také možné používat jednoduchá forma `RotateDegrees` podle zahájením literálu smyčky voláním `Translate` všechno přesunout do střed plátna:
 
 ```csharp
 float yText = -textBounds.Height / 2 - textBounds.Top;
@@ -207,15 +207,15 @@ for (int degrees = 0; degrees < 360; degrees += 30)
 }
 ```
 
-Upravenou `yText` výpočtu již nezahrnují `yCenter`. Nyní `DrawText` volání centra textu ve svislém směru v horní části plátna.
+Upravené `yText` výpočtu už zahrnuje `yCenter`. Nyní `DrawText` volání vystředí text svisle v horní části plátna.
 
-Protože transformace jsou použity koncepčně opačné jak se zobrazují v kódu, je možné mít na začátku globálnější transformací, následuje další místní transformace. To je často nejjednodušší způsob, jak kombinovat otočení a překlad.
+Protože transformace jsou použity koncepčně než jak se zobrazují v kódu, je možné začneme víc globálních transformací, za nímž následuje další místní transformace. Často je to nejjednodušší způsob, jak kombinovat otočení a překladu.
 
-Předpokládejme například, že chcete kreslení grafického objektu, který otočí kolem jeho center podobně jako planetu, otáčení na ose. Můžete ale také chcete tento objekt základem center obrazovky podobně jako planetu obkroužení kolem sun.
+Předpokládejme například, že chcete kreslit grafický objekt, který otáčí kolem středu podobně jako globálním otáčení na ose. Ale také chcete tento objekt točí kolem středu obrazovky, podobně jako globálním obkroužení kolem slunce.
 
-To provedete tak umístění objektu v levém horním rohu na plátno a potom pomocí animace pro rotaci kolem tohoto rohu. V dalším kroku převede objekt vodorovně jako kruhová protokolu radius. Nyní budou vztahovat rotaci kolem počátku také druhý animovaný. Díky tomu objekt základem rohu. Nyní se převede na střed plátna.
+Můžete to provést umístěním objektů v levém horním rohu plátna a následným použitím animace otočení kolem tohoto rohu. V dalším kroku převede objekt vodorovně jako kruhová protokolu radius. Teď použijte druhý animovaný otočení, také kolem počátku. Tím je objekt točí kolem rohu. Nyní se převede na střed plátna.
 
-Tady je `PaintSurface` obslužná rutina, která obsahuje tyto transformace volání v obráceném pořadí:
+Tady je `PaintSurface` obslužná rutina, která obsahuje následující transformace volání v obráceném pořadí:
 
 ```csharp
 float revolveDegrees, rotateDegrees;
@@ -253,7 +253,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-`revolveDegrees` a `rotateDegrees` pole nedochází. Tento program používá jiný animace postup podle platformě Xamarin.Forms `Animation` třídy. (Tato třída je popsaná v [kapitoly 22 *vytváření mobilních aplikací s Xamarin.Forms*](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch22-Apr2016.pdf)) `OnAppearing` přepsání vytvoří dvě `Animation` objekty s metody zpětného volání a pak zavolá `Commit` na nich doby trvání animace:
+`revolveDegrees` a `rotateDegrees` pole jsou animovat. Tento program využívá techniku jiné animace založené na Xamarin.Forms `Animation` třídy. (Tato třída je popsána v [kapitoly 22 *vytváření mobilních aplikací pomocí Xamarin.Forms*](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch22-Apr2016.pdf)) `OnAppearing` přepsání vytvoří dva `Animation` objekty pomocí metod zpětného volání a pak zavolá `Commit` na nich na dobu animace:
 
 ```csharp
 protected override void OnAppearing()
@@ -271,7 +271,7 @@ protected override void OnAppearing()
 }
 ```
 
-První `Animation` objekt animuje `revolveDegrees` od 0 do 360 stupňů více než 10 sekund. Druhý animuje `rotateDegrees` od 0 do 360 stupňů každou 1 sekundu a také by způsobila neplatnost prostor pro generování jiném volání `PaintSurface` obslužné rutiny. `OnDisappearing` Přepsání zruší tyto dvě animací:
+První `Animation` objekt animuje `revolveDegrees` od 0 do 360 stupňů více než 10 sekund. Pro druhou kolekci animuje `rotateDegrees` od 0 do 360 stupňů každou 1 sekundu a také zruší platnost plochu pro vygenerování další volání `PaintSurface` obslužné rutiny. `OnDisappearing` Přepsání zruší těchto dvou animace:
 
 ```csharp
 protected override void OnDisappearing()
@@ -282,9 +282,9 @@ protected override void OnDisappearing()
 }
 ```
 
-**Ugly analogovým hodiny** programu (nazývané, protože více atraktivní analogovým hodiny budou popsané v článku na novější) používá otočení zakreslit značky minutu a hodinu hodin a Otočit do rukou. Program nevykresluje hodiny pomocí libovolné souřadnicový systém založené na kruh, který je umístěn na střed v bodě (0, 0) o poloměru 100. Překlad a škálování používá pro rozšíření a center tohoto kroužku na stránce.
+**Bez zbytečných prvků analogové hodiny** programu (tedy volá se, protože atraktivnější analogové hodiny najdete v článku novější) používá otočení zakreslit značky minutu a hodina hodin a otočení do rukou. V programu kreslení pomocí libovolného souřadnicový systém založen na kruh, které jsou zaměřeny na bod (0, 0) s poloměrem 100 hodin. Otočení a změny používá, tím rozbalíte a center této kruhu na stránce.
 
-`Translate` a `Scale` volání platí globálně pro hodiny, takže těch, které jsou první ty, která se má volat po inicializaci `SKPaint` objekty:
+`Translate` a `Scale` volání platí globálně pro clock, takže to jsou první těch, která se má volat po inicializaci `SKPaint` objekty:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -330,7 +330,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Nakonec `PaintSurface` obslužná rutina získá aktuální čas a vypočítá otočení stupňů za hodinu, minutu a druhý rukou. Každý dlaně se vykresluje v pozici 12:00 tak, aby úhel otočení je relativní vzhledem ke který:
+Nakonec `PaintSurface` obslužná rutina získá aktuální čas a vypočítá otočení stupňů za hodinu, minutu a druhá hands. Každý ručně vykreslením na pozici, 12:00, tak, aby úhel otočení je relativní vzhledem ke, který:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -362,12 +362,12 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Hodiny je určitě funkční, i když jsou do rukou místo hrubých:
+Hodin je určitě funkční, i když jsou do rukou místo hrubého:
 
-[![](rotate-images/uglyanalogclock-small.png "Trojitá snímek obrazovky stránky Ugly analogovým hodiny textu")](rotate-images/uglyanalogclock-large.png#lightbox "Triple screenshot of the Ugly Analog page")
+[![](rotate-images/uglyanalogclock-small.png "Trojitá snímek obrazovky stránky bez zbytečných prvků textu hodiny obdobu jmenovek")](rotate-images/uglyanalogclock-large.png#lightbox "Triple screenshot of the Ugly Analog page")
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [Rozhraní API ve Skiasharpu](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

@@ -1,30 +1,30 @@
 ---
-title: Úvod do vlastní nástroji pro vykreslování
-description: Tento článek obsahuje úvod do vlastní nástroji pro vykreslování a popisuje proces pro vytvoření vlastní zobrazovací jednotky.
+title: Úvod do vlastní Renderery
+description: Tento článek obsahuje úvod do vlastní renderery a popisuje proces pro vytvoření vlastní zobrazovací jednotky.
 ms.prod: xamarin
 ms.assetid: 264314BE-1C5C-4727-A14E-F6F98151CDBD
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/19/2016
-ms.openlocfilehash: fa22be081433bdd0c59a0d921511d3f3d83d4448
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 180a196e0b95854815c8a74ef1d2df63407dd04f
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35241761"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38998001"
 ---
-# <a name="introduction-to-custom-renderers"></a>Úvod do vlastní nástroji pro vykreslování
+# <a name="introduction-to-custom-renderers"></a>Úvod do vlastní Renderery
 
-_Přizpůsobení vzhledu a chování ovládacích prvků Xamarin.Forms zadejte vlastní nástroji pro vykreslování efektivní přístup. Mohou být použity pro malé stylů změny nebo sofistikované rozložení specifické pro platformu a přizpůsobení chování. Tento článek obsahuje úvod do vlastní nástroji pro vykreslování a popisuje proces pro vytvoření vlastní zobrazovací jednotky._
+_Vlastní renderery poskytují výkonný přístup pro přizpůsobení vzhledu a chování ovládacích prvků Xamarin.Forms. Je možné použít pro používání stylů pro malé změny nebo sofistikované rozložení specifické pro platformu a přizpůsobení chování. Tento článek obsahuje úvod do vlastní renderery a popisuje proces pro vytvoření vlastní zobrazovací jednotky._
 
-Xamarin.Forms [rozložení stránky a ovládací prvky](~/xamarin-forms/user-interface/controls/index.md) k dispozici společné rozhraní API popisují různé platformy mobilních uživatelská rozhraní. Každé stránky, rozložení a řízení vykreslením jinak na jednotlivých platformách pomocí `Renderer` třídu, která zase vytvoří nativní ovládací prvek (odpovídající Xamarin.Forms zastupování), uspořádá na obrazovce a přidá zadané v chování sdílené kód.
+Xamarin.Forms [rozložení stránky a ovládací prvky](~/xamarin-forms/user-interface/controls/index.md) prezentovat společné rozhraní API popsat mobilních multiplatformních uživatelských rozhraní. Jednotlivé stránky, rozložení a ovládací prvek je vykreslen jinak na jednotlivých platformách pomocí `Renderer` třídu, která se pak vytvoří ovládací prvek nativní (odpovídající reprezentaci Xamarin.Forms), uspořádá na obrazovce a přidá chování určené v sdílený kód.
 
-Vývojářům můžete implementovat vlastní vlastní `Renderer` třídy k přizpůsobení vzhledu a chování ovládacího prvku. Vlastní nástroji pro vykreslování pro daný typ lze přidat do projektu jedné aplikace k přizpůsobení ovládacího prvku na jednom místě, zatímco výchozí chování na jiných platformách; nebo jiný vlastní nástroji pro vykreslování lze přidat na každý projekt aplikace vytvořit různé vzhled a chování na iOS, Android a univerzální platformu Windows (UWP). Implementace třídy vlastní zobrazovací jednotky k přizpůsobení jednoduchý ovládací prvek je však často zobrazené – odpověď. Účinky zjednodušení tohoto procesu a jsou obvykle používány pro malé stylů změny. Další informace najdete v tématu [důsledky](~/xamarin-forms/app-fundamentals/effects/index.md).
+Vývojáři můžou implementovat vlastní vlastní `Renderer` třídy k přizpůsobení vzhledu a chování ovládacího prvku. Vlastní renderery pro daný typ lze přidat do projektu jednu aplikaci zároveň umožní výchozí chování na jiných platformách; přizpůsobení ovládacího prvku na jednom místě nebo jiný vlastní renderery lze přidat do každého projektu aplikace na iOS, Android a univerzální platformu Windows (UPW) vytvořit jiný vzhled a chování. Implementující třída vlastního rendereru provádět přizpůsobení jednoduchých ovládacího prvku je však často odpověď náročné. Účinky zjednodušení tohoto procesu a jsou obvykle používány pro používání stylů pro malé změny. Další informace najdete v tématu [účinky](~/xamarin-forms/app-fundamentals/effects/index.md).
 
-## <a name="examining-why-custom-renderers-are-necessary"></a>Zkušební proč vlastní nástroji pro vykreslování jsou nezbytné
+## <a name="examining-why-custom-renderers-are-necessary"></a>Potřeby se zkušební proč vlastními Renderery
 
-Změna vzhledu ovládacího prvku Xamarin.Forms, bez použití vlastní zobrazovací jednotky, je dvoustupňový proces, který zahrnuje vytvoření vlastního ovládacího prvku pomocí vytvoření podtřídy a potom využívají vlastního ovládacího prvku místo původního ovládacího prvku. Následující příklad kódu ukazuje příklad vytváření podtříd `Entry` ovládacího prvku:
+Změna vzhledu ovládacího prvku Xamarin.Forms, bez použití vlastní zobrazovací jednotky je dvoustupňový proces, který zahrnuje vytvoření vlastního ovládacího prvku pomocí vytvoření podtřídy a následného využití vlastního ovládacího prvku místo původního ovládacího prvku. Následující příklad kódu ukazuje příklad vytváření podtříd `Entry` ovládacího prvku:
 
 ```csharp
 public class MyEntry : Entry
@@ -36,7 +36,7 @@ public class MyEntry : Entry
 }
 ```
 
-`MyEntry` Ovládacího prvku `Entry` řídí umístění `BackgroundColor` je nastaven na šedé a může být odkazováno v Xaml deklarace oboru názvů pro umístění a použitím Předpona oboru názvů na elementu ovládacího prvku. Následující příklad kódu ukazuje jak `MyEntry` mohou být spotřebovávána vlastního ovládacího prvku `ContentPage`:
+`MyEntry` Je ovládací prvek `Entry` řídí umístění `BackgroundColor` je nastavena na šedé a může být odkazováno v jazyce Xaml pomocí deklarace oboru názvů pro jeho umístění a pomocí předpony oboru názvů na ovládací prvek. Následující příklad kódu ukazuje jak `MyEntry` vlastního ovládacího prvku mohou být využívány službou `ContentPage`:
 
 ```xaml
 <ContentPage
@@ -49,49 +49,49 @@ public class MyEntry : Entry
 </ContentPage>
 ```
 
-`local` Předponu oboru názvů můžete použít jakýkoli. Ale `namespace` a `assembly` hodnoty musí odpovídat podrobnosti vlastního ovládacího prvku. Jakmile je deklarován obor názvů, je předpona, která slouží k odkazování vlastního ovládacího prvku.
+`local` Předponu oboru názvů může být cokoli. Ale `namespace` a `assembly` hodnoty musí odpovídat podrobnosti vlastního ovládacího prvku. Jakmile je deklarován obor názvů, předpona, která slouží k odkazování na vlastní ovládací prvek.
 
 > [!NOTE]
-> Definování `xmlns` je v rozhraní .NET standardní projektů knihovny mnohem jednodušší než sdílených projektů. Knihovnu .NET Standard je zkompilován do sestavení tak, aby byl snadno zjistit, co `assembly=CustomRenderer` hodnota by měla být. Při použití sdílených projektů, jsou všechny sdílené prostředky (včetně XAML) zkompilovány do každé odkazující projektů, které znamená, že pokud iOS, Android a UWP projekty mají svůj vlastní *názvy sestavení* není možné zapisovat `xmlns` deklarace vzhledem k tomu, že hodnota musí být různé pro jednotlivé aplikace. Vlastní ovládací prvky v jazyce XAML pro sdílených projektů bude vyžadovat každý projekt aplikace nakonfigurovat se stejným názvem sestavení.
+> Definování `xmlns` je v .NET Standard projekty knihovny mnohem jednodušší než sdílené projekty. Knihovny .NET Standard se zkompiluje do sestavení tak, aby byl snadno zjistit, co `assembly=CustomRenderer` hodnota by měla být. Při použití sdílené projekty, všechny sdílené prostředky (včetně XAML) jsou zkompilovány do každé odkazujících projektů, což znamená, že pokud iOS, Android a UPW projekty mají svůj vlastní *názvy sestavení* není možné zapsat `xmlns` deklarace vzhledem k tomu, hodnota musí být různé pro jednotlivé aplikace. Každý projekt aplikace nakonfigurovat se stejným názvem sestavení bude vyžadovat vlastní ovládací prvky v XAML pro sdílené projekty.
 
-`MyEntry` Vlastní vykreslení ovládacího prvku klikněte na každou platformu, barvou pozadí, jak je vidět na následujících snímcích obrazovky:
+`MyEntry` Vlastního ovládacího prvku se pak vykreslí na jednotlivých platformách, na šedém pozadí, jak je znázorněno na následujících snímcích obrazovky:
 
 ![](introduction-images/screenshots.png "MyEntry vlastní ovládací prvek na jednotlivých platformách")
 
-Změna barvy pozadí ovládacího prvku na jednotlivých platformách má být provedeno výhradně prostřednictvím vytvoření podtřídy ovládacího prvku. Tento postup je však omezená co může dosáhnout jako není možné využívat výhod rozšíření specifické pro platformu a přizpůsobení. Pokud jsou požadována, musí být implementované vlastní nástroji pro vykreslování.
+Změna barvy pozadí ovládacího prvku na jednotlivých platformách bylo dosaženo výhradně pomocí vytvoření podtřídy ovládacího prvku. Tento postup je však omezenou co může dosáhnout jako není možné využít k přizpůsobení a rozšíření specifické pro platformu. Když jsou povinné, musí implementovat vlastní renderery.
 
-## <a name="creating-a-custom-renderer-class"></a>Vytvoření třídy vlastní zobrazovací jednotky
+## <a name="creating-a-custom-renderer-class"></a>Vytvoření vlastního Rendereru třídy
 
-Proces pro vytvoření třídy vlastní zobrazovací jednotky vypadá takto:
+Proces pro vytvoření vlastního rendereru třídy vypadá takto:
 
-1. Vytvořte podtřídou třídy zobrazovací jednotky, která vykreslí nativní ovládací prvek.
-1. Potlačí metodu, která vykreslí nativní ovládací prvek a zapisovat logiku pro přizpůsobení ovládacího prvku. Často `OnElementChanged` metoda se používá k vykreslení ovládacího prvku nativní, která je volána, když se vytvoří odpovídající ovládacího prvku Xamarin.Forms.
-1. Přidat `ExportRenderer` atributu na vlastní zobrazovací jednotky třídu k určení, že bude použit k vykreslení ovládacího prvku Xamarin.Forms. Tento atribut slouží k registraci vlastní zobrazovací jednotky s Xamarin.Forms.
+1. Vytvořte podtřídu třídy renderer, který vykreslí nativní ovládací prvek.
+1. Přepsání metody, která vykreslí nativní ovládací prvek a zapisovat logiku přizpůsobení ovládacího prvku. Často se stává `OnElementChanged` metody slouží k vykreslení nativní ovládací prvek, který se volá, když se vytvoří odpovídající ovládací prvek Xamarin.Forms.
+1. Přidat `ExportRenderer` atribut třídy vlastní zobrazovací jednotky a určit tak, že bude používat k vykreslení ovládacího prvku Xamarin.Forms. Tento atribut slouží k registraci vlastního rendereru s Xamarin.Forms.
 
 > [!NOTE]
-> Pro většinu prvků Xamarin.Forms je volitelné poskytnout vlastní zobrazovací jednotky v každém projektu platformy. Pokud vlastní zobrazovací jednotky není registrované, bude použit výchozí zobrazovací jednotky pro základní třídu ovládacího prvku. Však vlastní nástroji pro vykreslování se vyžadují v každém projektu platformy při vykreslování [zobrazení](https://developer.xamarin.com/api/type/Xamarin.Forms.View/) nebo [ViewCell](https://developer.xamarin.com/api/type/Xamarin.Forms.ViewCell/) element.
+> Pro většinu prvků Xamarin.Forms je volitelný poskytnout vlastní zobrazovací jednotky v každém projektu platformy. Pokud není zaregistrovaný vlastní zobrazovací jednotky, se používá výchozí zobrazovací jednotky pro základní třídu ovládacího prvku. Nicméně vlastní renderery jsou nutné v každém projektu platformy při vykreslování [zobrazení](xref:Xamarin.Forms.View) nebo [ViewCell](xref:Xamarin.Forms.ViewCell) elementu.
 
-Témata v této série vám poskytne předvádění a vysvětlení tohoto procesu pro různé prvky Xamarin.Forms.
+Témata v této sérii poskytne ukázek a vysvětlení tohoto procesu pro různé prvky Xamarin.Forms.
 
 ## <a name="troubleshooting"></a>Poradce při potížích
 
-Pokud je součástí vlastního ovládacího prvku .NET Standard projektu knihovny, který byl přidán do řešení (tj. není .NET Standard knihovny vytvořené sady Visual Studio pro šablony projektu aplikace Xamarin.Forms Mac/Visual Studio), k výjimce může dojít v iOS při došlo k pokusu o přístup k vlastní ovládací prvek. Pokud tento problém nastane, dají se vyřešit vytvořením odkaz na vlastní ovládací prvek z `AppDelegate` třídy:
+Pokud je součástí vlastního ovládacího prvku projekt .NET Standard knihovny, který byl přidán do řešení (tedy ne knihovny .NET Standard vytvořili pomocí sady Visual Studio pro Mac/Visual Studio Xamarin.Forms App šablony projektu), výjimka může dojít v iOS při došlo k pokusu o přístup k vlastní ovládací prvek. Pokud k tomuto problému dochází, se dá vyřešit vytvořením odkazu na vlastní ovládací prvek z `AppDelegate` třídy:
 
 ```csharp
 var temp = new ClassInPCL(); // in AppDelegate, but temp not used anywhere
 ```
 
-Vynutí se tak kompilátoru rozpoznat `ClassInPCL` typu vyřešte je. Případně `Preserve` atribut lze přidat do `AppDelegate` třídu k dosažení stejného výsledku:
+To vynutí, aby kompilátor rozpoznával `ClassInPCL` typ podle jeho řešení. Další možností `Preserve` atribut lze přidat do `AppDelegate` třídy k dosažení stejného výsledku:
 
 ```csharp
 [assembly: Preserve (typeof (ClassInPCL))]
 ```
 
-Tím se vytvoří odkaz na `ClassInPCL` typu, která určuje, že je to požadováno, v době běhu. Další informace najdete v tématu [zachování kód](~/ios/deploy-test/linker.md).
+Tím se vytvoří odkaz na `ClassInPCL` typ označující, že je to požadováno za běhu. Další informace najdete v tématu [zachování kódu](~/ios/deploy-test/linker.md).
 
 ## <a name="summary"></a>Souhrn
 
-Tento článek poskytl úvod do vlastní nástroji pro vykreslování a má uvedených proces vytvoření vlastní zobrazovací jednotky. Přizpůsobení vzhledu a chování ovládacích prvků Xamarin.Forms zadejte vlastní nástroji pro vykreslování efektivní přístup. Mohou být použity pro malé stylů změny nebo sofistikované rozložení specifické pro platformu a přizpůsobení chování.
+Tento článek poskytuje úvod do vlastní renderery a má uvedených proces pro vytvoření vlastní zobrazovací jednotky. Vlastní renderery poskytují výkonný přístup pro přizpůsobení vzhledu a chování ovládacích prvků Xamarin.Forms. Je možné použít pro používání stylů pro malé změny nebo sofistikované rozložení specifické pro platformu a přizpůsobení chování.
 
 
 ## <a name="related-links"></a>Související odkazy

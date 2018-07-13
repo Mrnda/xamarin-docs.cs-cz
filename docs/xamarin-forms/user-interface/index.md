@@ -1,105 +1,105 @@
 ---
-title: Zobrazení Xamarin.Forms uživatelské rozhraní
-description: Tento článek představuje ovládací prvky a koncepty, které lze použít při vytváření uživatelského rozhraní v aplikaci Xamarin.Forms.
+title: Xamarin.Forms uživatelské rozhraní zobrazení
+description: Tento článek představuje ovládacích prvků a koncepty, které se dá použít při vytváření uživatelského rozhraní aplikace Xamarin.Forms.
 ms.prod: xamarin
 ms.assetid: 391B4A77-7CAC-42D2-9E77-BD8E170E9BE6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2017
-ms.openlocfilehash: 55c461a7dee26462e0b9daebeb10e47afa4e5f6f
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: a89bce4f35a73d0b881fd38b2ae246d2eb86ef7b
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244367"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38996818"
 ---
-# <a name="xamarinforms-user-interface-views"></a>Zobrazení Xamarin.Forms uživatelské rozhraní
+# <a name="xamarinforms-user-interface-views"></a>Xamarin.Forms uživatelské rozhraní zobrazení
 
 _Použití zobrazení poskytované Xamarin.Forms_
 
 ## <a name="animationanimationindexmd"></a>[Animace](animation/index.md)
 
-Xamarin.Forms zahrnuje vlastní animace infrastrukturu, která je jednoduchá pro vytvoření jednoduché animací při zároveň dostatečně flexibilní na to, k vytvoření komplexní animace.
+Xamarin.Forms obsahuje svou vlastní animace infrastrukturu, která je pro vytvoření jednoduché animace, a také byla dostatečně všestranné k vytvoření složitých animace přitom jednoduché.
 
 ## <a name="boxviewboxviewmd"></a>[BoxView](boxview.md)
 
-`BoxView` Je stejně jednoduché barevného obdélníku, ale může sloužit dekorativní položky elementární grafiky a k získání interaktivní dotykové ovládání.
+`BoxView` Je stejně jednoduché barevný obdélník, ale může sloužit pro dekorativní položky Základní grafiky a získávání interaktivní dotykové ovládání.
 
 ## <a name="buttonbuttonmd"></a>[Tlačítko](button.md)
 
-`Button` Odpoví na klepněte nebo klikněte na tlačítko, která přesměruje aplikaci k provedení určité úlohy.
+`Button` Reaguje na klepněte nebo klikněte na tlačítko, který směruje aplikace provádět určité úlohy.
 
 ## <a name="colorscolorsmd"></a>[Barvy](colors.md)
 
-Definování a používání barvy napříč platformami může být složité, pokud každá platforma má svou vlastní standardy a výchozí nastavení.
+Definování a použití barev napříč platformami může být velmi obtížné, pokud každá platforma má svou vlastní standardy a výchozí hodnoty.
 
 ## <a name="controls-referencecontrolsindexmd"></a>[Referenční informace o ovládacích prvcích](controls/index.md)
 
-Tento dokument je Stručná referenční příručka pro zobrazení uživatelského rozhraní, která tvoří rozhraní Xamarin.Forms, jako [stránky](~/xamarin-forms/user-interface/controls/pages.md), [rozložení](~/xamarin-forms/user-interface/controls/layouts.md), [zobrazení](~/xamarin-forms/user-interface/controls/views.md) a [buněk](~/xamarin-forms/user-interface/controls/cells.md).
+Tento dokument je rychlý odkaz na zobrazení uživatelského rozhraní, které tvoří rozhraní Xamarin.Forms, třeba [stránky](~/xamarin-forms/user-interface/controls/pages.md), [rozložení](~/xamarin-forms/user-interface/controls/layouts.md), [zobrazení](~/xamarin-forms/user-interface/controls/views.md) a [buňky](~/xamarin-forms/user-interface/controls/cells.md).
 
 ## <a name="datapagesdatapagesindexmd"></a>[DataPages](datapages/index.md)
 
-DataPages poskytují rozhraní API snadno a rychle vytvořit vazbu zdroj dat na předdefinovaných zobrazení. Položky seznamu a podrobností stránky automaticky vykreslí data a lze přizpůsobit pomocí motivů.
+DataPages poskytují rozhraní API rychle a snadno svázat zdroj dat do předdefinovaných zobrazení. Položky seznamu a podrobností stránky se automaticky generují data a přizpůsobit pomocí motivů.
 
 ## <a name="datepickerdatepickermd"></a>[DatePicker](datepicker.md)
 
-`DatePicker` Umožňuje uživateli vybrat datum v zadaném rozsahu. Je implementována pomocí nástroje pro výběr data podporuje konkrétní platformu, který je spuštěn program.
+`DatePicker` Umožňuje uživateli vybrat datum v rámci zadaného rozsahu. Je implementována pomocí nástroje pro výběr data podporována konkrétní platformu, na kterém je program spustili.
 
 ## <a name="graphicsgraphicsindexmd"></a>[Grafika](graphics/index.md)
 
-Popisuje, jak začlenit grafika a vizuální prvky herní modul do aplikace Xamarin.Forms.
+Jak zahrnout grafiky a herním enginu vizuálů do aplikace Xamarin.Forms.
 
 ## <a name="imagesimagesmd"></a>[Obrázky](images.md)
 
-Bitové kopie lze sdílet napříč platformami s Xamarin.Forms, může se jednat o načíst speciálně pro každou platformu nebo si můžete stáhnout pro zobrazení.
+Bitové kopie mohou být sdíleny napříč platformami pomocí Xamarin.Forms, mohou být načteny speciálně pro každou platformu, nebo si můžete stáhnout pro zobrazení.
 
 ## <a name="layoutslayoutsindexmd"></a>[Rozložení](layouts/index.md)
 
-Xamarin.Forms má několik rozložení pro organizační na obrazovce obsahu. `StackLayout`, `Grid`, `FlexLayout`, `AbsoluteLayout`, `ScrollView`, a `RelativeLayout` každý lze vytvořit Krásný reagující uživatelské rozhraní.
+Xamarin.Forms má několik rozložení pro organizační obsahem na obrazovce. `StackLayout`, `Grid`, `FlexLayout`, `AbsoluteLayout`, `ScrollView`, a `RelativeLayout` každý slouží k vytváření atraktivních, interaktivních uživatelských rozhraní.
 
 ## <a name="listviewlistviewindexmd"></a>[ListView](listview/index.md)
 
-Xamarin.Forms poskytuje ovládacího prvku zobrazení seznamu zobrazíte posouvání řádky data. Ovládací prvek obsahuje kontextové akce `HasUnevenRows` Automatická změna velikosti, přizpůsobení oddělovač, -aktualizace obsahu a záhlaví a zápatí.
+Xamarin.Forms poskytuje ovládací prvek zobrazení seznamu zobrazíte posouvání řádky dat. Ovládací prvek obsahuje kontextové akce `HasUnevenRows` automatické velikosti, oddělovač přizpůsobení, o přijetí změn pro aktualizace a záhlaví a zápatí.
 
 ## <a name="mapsmapmd"></a>[Mapy](map.md)
 
-Přidání mapy vyžaduje další stažení balíčku NuGet a některé konfigurace specifických pro platformy. PIN kód značky a mapy přidáním několika řádků kódu po dokončení konfigurace.
+Přidání map vyžaduje další stahování balíčku NuGet a některé konfigurace specifické pro platformu. Mapy a PIN kód značky mohou být přidány v několika řádků kódu po dokončení konfigurace.
 
 ## <a name="pickerpickerindexmd"></a>[Výběr](picker/index.md)
 
-[ `Picker` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/) Zobrazení je ovládací prvek pro výběr textu položky ze seznamu data.
+[ `Picker` ](xref:Xamarin.Forms.Picker) Zobrazení je ovládací prvek pro výběr textu položky ze seznamu data.
 
 ## <a name="sliderslidermd"></a>[Posuvník](slider.md)
 
-`Slider` Umožňuje uživateli vybrat číselná hodnota z rozsahu souvislé.
+`Slider` Umožňuje uživateli vybrat číselnou hodnotu z průběžné rozsahu.
 
 ## <a name="stylesstylesindexmd"></a>[Styly](styles/index.md)
 
-Písmo, barvy a další atributy je možné seskupit do stylů, které můžete sdílet mezi ovládací prvky, rozložení nebo celou aplikaci pomocí ResourceDictionaries.
+Písma, barvu a další atributy mohou být seskupeny do styly, které mohou být sdíleny napříč ovládací prvky, rozložení nebo celou aplikaci pomocí třídách ResourceDictionaries.
 
 ## <a name="tableviewtableviewmd"></a>[TableView](tableview.md)
 
-Zobrazení tabulky je podobně jako zobrazení seznamu, ale místo navrženy pro dlouhý seznam dat je určený pro obrazovky styl položky dat z posouvání ovládací prvky nebo jednoduchý posouvání nabídky.
+Zobrazení tabulky se podobně jako zobrazení seznamu, ale místo navrženy pro dlouhé seznamy dat je určený pro styl položky dat obrazovkách posouvání ovládacích prvků nebo jednoduchý posouvání nabídek.
 
 ## <a name="texttextindexmd"></a>[Text](text/index.md)
 
-Xamarin.Forms obsahuje několik zobrazení pro prezentování a přijetí textu. Zobrazení textu můžete formátu a přizpůsobit pro platformy. Nastavení písem můžete povolit kompatibilitu s funkce pro usnadnění přístupu.
+Xamarin.Forms obsahuje několik zobrazení pro prezentaci a přijetí textu. Zobrazení textu lze naformátovat a přizpůsobit pro platformy. Nastavení písem můžete povolit kompatibilitu s funkcí usnadnění.
 
 ## <a name="themesthemesindexmd"></a>[Motivy](themes/index.md)
 
-Motivy Xamarin.Forms definovat konkrétní vzhled pro standardní ovládací prvky. Jakmile přidáte motiv na slovník prostředků aplikace, se změní vzhled standardní ovládací prvky.
+Motivy Xamarin.Forms definovat konkrétní vizuálního vzhledu pro standardní ovládací prvky. Po přidání motiv na slovník prostředků aplikace se změní vzhled standardní ovládací prvky.
 
 ## <a name="visual-state-managervisual-state-managermd"></a>[Správce vizuálního stavu](visual-state-manager.md)
 
-Visual správce stavu poskytuje strukturovaných způsob, jak aktivují změny v uživatelském rozhraní z kódu, včetně rozložení, který přizpůsobení změnám v orientace zařízení nebo velikost.
+Visual State Manager umožňuje strukturované aktivují změny v uživatelském rozhraní z kódu, včetně rozložení, které se přizpůsobí změny orientace zařízení nebo velikost.
 
 ## <a name="webviewwebviewmd"></a>[WebView](webview.md)
 
-Xamarin.Forms používá prvku nativní webového prohlížeče na každou platformu a můžete zobrazit webů, místní prostředky a generovaného řetězce Html.
+Xamarin.Forms pomocí ovládacího prvku nativního webového prohlížeče na jednotlivých platformách a může zobrazit weby, místní prostředky a vygenerovaný řetězcích Html.
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Úvod k platformě Xamarin.Forms](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
+- [Úvod do Xamarin.Forms](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
 - [Galerie Xamarin.Forms (ukázka)](https://developer.xamarin.com/samples/FormsGallery/)

@@ -1,64 +1,64 @@
 ---
-title: Xamarin.Forms mřížky
-description: Tento článek vysvětluje způsob použití třídy Xamarin.Forms mřížky prezentovat zobrazení v mřížkách, které měl řádků a sloupců.
+title: Mřížka Xamarin.Forms
+description: Tento článek vysvětluje, jak pomocí třídy Xamarin.Forms mřížky v tabulkách, které mají řádků a sloupců vyjádřit.
 ms.prod: xamarin
 ms.assetid: 762B1802-D185-494C-B643-74EED55882FE
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: a50144f5e0962bd74858bb7731e30cef5dd31b6d
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 01dd59d5e94b473316b03f9035d38305fad42880
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245150"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38994499"
 ---
-# <a name="xamarinforms-grid"></a>Xamarin.Forms mřížky
+# <a name="xamarinforms-grid"></a>Mřížka Xamarin.Forms
 
-[`Grid`](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/) podporuje uspořádání zobrazení do řádků a sloupců. Řádků a sloupců můžete nastavit tak, aby měl přímo úměrná velikosti nebo absolutní velikosti. `Grid` Rozložení by neměly zaměňovat s tradiční tabulky a není určena pro tabulková data k dispozici. `Grid` Koncept řádek, sloupec nebo buňka formátování není k dispozici. Na rozdíl od tabulek HTML `Grid` je určený výhradně pro vytvoření rozložení obsahu.
+[`Grid`](xref:Xamarin.Forms.Grid) podporuje uspořádání zobrazení do řádků a sloupců. Řádky a sloupce můžete nastavit přímo úměrná velikosti nebo absolutní velikosti. `Grid` Rozložení by neměly být zaměněny s tradiční tabulkami a není určena pro tabulková data k dispozici. `Grid` nemá koncept řádek, sloupec nebo buňku formátování. Na rozdíl od tabulek HTML `Grid` čistě slouží k vytváření rozložení obsahu.
 
-[![](grid-images/layouts-sml.png "Rozložení Xamarin.Forms")](grid-images/layouts.png#lightbox "Xamarin.Forms rozložení")
+[![](grid-images/layouts-sml.png "Rozložení Xamarin.Forms")](grid-images/layouts.png#lightbox "rozložení Xamarin.Forms")
 
 Tento článek se zabývá:
 
-- **[Účel](#Purpose)**  &ndash; běžné používá pro `Grid`.
+- **[Účel](#Purpose)**  &ndash; běžné použití pro `Grid`.
 - **[Využití](#Usage)**  &ndash; použití `Grid` k dosažení požadované návrhu.
-  - **[Řádků a sloupců](#Rows_and_Columns)**  &ndash; zadejte řádků a sloupců pro `Grid`.
+  - **[Řádky a sloupce](#Rows_and_Columns)**  &ndash; zadejte řádků a sloupců `Grid`.
   - **[Umístění zobrazení](#Placing_Views)**  &ndash; přidat zobrazení do mřížky v určitých řádků a sloupců.
-  - **[Mezer](#Spacing)**  &ndash; konfigurace mezery mezi řádky a sloupce.
-  - **[Rozsahy](#Spans)**  &ndash; konfigurace elementů span napříč více řádků nebo sloupců.
+  - **[Mezery](#Spacing)**  &ndash; konfigurace mezery mezi řádky a sloupce.
+  - **[Rozsahy](#Spans)**  &ndash; konfigurace prvků, které mají pokrývat více řádcích nebo sloupcích.
 
 ![](grid-images/grid.png "Zkoumání mřížky")
 
 ## <a name="purpose"></a>Účel
 
-`Grid` slouží k uspořádání zobrazení v mřížce. To je užitečné v mnoha případech:
+`Grid` umožňuje uspořádat zobrazení do mřížky. To je užitečné v mnoha případech:
 
-- Uspořádání tlačítek v aplikaci kalkulačky
-- Uspořádáním tlačítka nebo volby v mřížce, jako je iOS nebo Android domovské obrazovky
-- Uspořádání zobrazení, aby byly stejné velikosti ve jednu dimenzi (jako v některé panely nástrojů)
+- Uspořádání tlačítek v kalkulačce aplikace
+- Uspořádáním tlačítka/volby v mřížce, jako je iOS nebo Android domovské obrazovky
+- Uspořádání zobrazení tak, aby byly stejné velikosti v jedné dimenzi (jako v některé panely nástrojů)
 
 ## <a name="usage"></a>Použití
 
-Na rozdíl od tradičních tabulky `Grid` nelze odvodit počtu a velikosti řádků a sloupců z obsahu. Místo toho `Grid` má `RowDefinitions` a `ColumnDefinitions` kolekce. Tyto obsahovat definice kolik řádků a sloupců budou rozloženy. Zobrazení jsou přidány do `Grid` zadaný řádek a indexy sloupců, které identifikovat, které řádků a sloupců zobrazení musí být umístěny v.
+Na rozdíl od tradičních tabulky `Grid` nelze odvodit, počtu a velikosti řádků a sloupců z obsahu. Místo toho `Grid` má `RowDefinitions` a `ColumnDefinitions` kolekce. Tyto definice o tom, kolik řádků a sloupců se rozloží uchování. Zobrazení jsou přidána do `Grid` zadaný řádek a indexy sloupců, které identifikovat, kterému řádku a sloupce zobrazení musí být umístěné ve.
 
 <a name="Rows_and_Columns" />
 
 ### <a name="rows-and-columns"></a>Řádků a sloupců
 
-Řádků a sloupců informace jsou uloženy v `Grid`na `RowDefinitions`  &  `ColumnDefinitions` vlastnosti, které jsou každé kolekce z [ `RowDefinition` ](https://developer.xamarin.com/api/type/Xamarin.Forms.RowDefinition/) a [ `ColumnDefinition` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ColumnDefinition/)objekty, v uvedeném pořadí. `RowDefinition` má jednu vlastnost, `Height`, a `ColumnDefinition` má jednu vlastnost, `Width`. Možnosti pro výška a šířka jsou následující:
+Řádek a sloupec informace jsou uloženy v `Grid`společnosti `RowDefinitions`  &  `ColumnDefinitions` vlastnosti, které jsou každé kolekce z [ `RowDefinition` ](xref:Xamarin.Forms.RowDefinition) a [ `ColumnDefinition` ](xref:Xamarin.Forms.ColumnDefinition)objekty v uvedeném pořadí. `RowDefinition` má jednu vlastnost `Height`, a `ColumnDefinition` má jednu vlastnost `Width`. Možnosti pro výška a šířka jsou následující:
 
-- **Automatické** &ndash; automaticky velikosti podle obsahu sloupce nebo řádku. Zadaný jako [ `GridUnitType.Auto` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GridUnitType/) v jazyce C# nebo jako `Auto` v jazyce XAML.
-- **Proportional(*)** &ndash; velikosti řádků a sloupců jako podíl zbývající místo. Stanovená jako hodnota a `GridUnitType.Star` v jazyce C# a jako `#*` v jazyce XAML, s `#` se požadovanou hodnotu. Určení jeden řádek nebo sloupec s `*` způsobí, že vyplňování dostupného místa.
-- **Absolutní** &ndash; velikosti sloupce a řádky s konkrétní, pevné hodnoty výškou a šířkou. Stanovená jako hodnota a `GridUnitType.Absolute` v jazyce C# a jako `#` v jazyce XAML, s `#` se požadovanou hodnotu.
+- **Automatické** &ndash; automaticky velikosti podle obsahu v řádku nebo sloupce. Zadaný jako [ `GridUnitType.Auto` ](xref:Xamarin.Forms.GridUnitType) v jazyce C# nebo jako `Auto` v XAML.
+- **Proportional(*)** &ndash; jako podíl zbývající prostor o velikosti sloupců a řádků. Stanovená jako hodnota a `GridUnitType.Star` v jazyce C# a jako `#*` v XAML, s `#` se požadovanou hodnotu. Zadáním jednoho řádku/sloupce s `*` způsobí tak, aby vyplnil dostupné místo.
+- **Absolutní** &ndash; velikosti sloupců a řádků s hodnotami konkrétní, pevné výšky a šířky. Stanovená jako hodnota a `GridUnitType.Absolute` v jazyce C# a jako `#` v XAML, s `#` se požadovanou hodnotu.
 
 > [!NOTE]
-> Šířka hodnoty pro sloupce jsou nastavené jako "*" ve výchozím nastavení v Xamarin.Forms, což zajistí, že sloupec bude vyplňování dostupného místa.
+> Šířka hodnoty pro sloupce jsou nastavené jako "*" ve výchozím nastavení v Xamarin.Forms, které zajišťuje, že se sloupci vyplnil dostupné místo.
 
-Zvažte aplikaci, která potřebuje tři řádky a dva sloupce. Dolní řádek musí být přesně 200 px výšku a na začátek řádku musí být dvakrát tak vysoký jako střední řádek. V levém sloupci musí být dost široké, a přizpůsobit obsah a pravém sloupci potřebuje k vyplnění zbývající místo.
+Vezměte v úvahu aplikaci, která potřebuje tři řádky a dva sloupce. Dolní řádek musí být přesně 200 px výšku a do horního řádku musí být dvakrát tak vysoký jako prostředním. Do levého sloupce musí být dostatečně široké a nevejdou se obsah a v pravém sloupci je potřeba vyplnit zbývající prostor.
 
-V jazyce XAML:
+V XAML:
 
 ```xaml
 <Grid>
@@ -86,17 +86,17 @@ grid.ColumnDefinitions.Add (new ColumnDefinition{ Width = new GridLength (200) }
 
 <a name="Placing_Views" />
 
-### <a name="placing-views-in-a-grid"></a>Umístění zobrazení v mřížce
+### <a name="placing-views-in-a-grid"></a>Zobrazení umístění v mřížce
 
-Zobrazení v umístit `Grid` budete muset přidat jako podřízené objekty do mřížky a potom zadejte, které řádků a sloupců patří v.
+Umístí zobrazení `Grid` je potřeba je přidat jako podřízené objekty k mřížce a potom zadejte, kterému řádku a sloupci patří v.
 
-V jazyce XAML, použijte `Grid.Row` a `Grid.Column` na každé jednotlivé zobrazení k určení umístění. Všimněte si, že `Grid.Row` a `Grid.Column` zadejte umístění, které jsou založené na nule seznam řádků a sloupců. To znamená, že v mřížce 4 x 4, buňku vlevo nahoře je (0,0) a není pravé dolní buňky (3,3).
+V XAML, použijte `Grid.Row` a `Grid.Column` na každé jednotlivé zobrazení k určení umístění. Všimněte si, že `Grid.Row` a `Grid.Column` zadejte umístění podle založený na nule seznam řádků a sloupců. To znamená, že do mřížky 4 x 4 levá horní buňka je (0; 0) a pravá dolní buňka je (3,3).
 
-`Grid` Vidět níže obsahuje čtyři buňky:
+`Grid` Uvedené níže obsahuje čtyři pole:
 
 ![](grid-images/label-grid.png "Mřížka s čtyři zobrazení")
 
-V jazyce XAML:
+V XAML:
 
 ```xaml
 <Grid>
@@ -136,9 +136,9 @@ grid.Children.Add(bottomLeft, 0, 1);
 grid.Children.Add(bottomRight, 1, 1);
 ```
 
-Výše uvedený kód vytvoří čtyři popisky, dva sloupce a dva řádky mřížky. Všimněte si, že každý popisek bude mít stejnou velikost a že bude používat všechny dostupné místo rozbalte řádky.
+Výše uvedený kód vytvoří mřížku s čtyři popisky, dvěma sloupci a dva řádky. Mějte na paměti, že každému popisku bude mít stejnou velikost a že řádky se rozbalí a použít všechny dostupné místo.
 
-V předchozím příkladu se zobrazení přidat do [ `Grid.Children` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Grid.Children/) kolekce používá [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid+IGridList%3CT%3E.Add/p/Xamarin.Forms.View/System.Int32/System.Int32/) přetížení, které určuje levého a horního argumenty. Při použití [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid+IGridList%3CT%3E.Add/p/Xamarin.Forms.View/System.Int32/System.Int32/System.Int32/System.Int32/) přetížení, které určuje vlevo, vpravo, horní a dolní argumenty během doleva a horní argumenty se odkazují na buňky v rámci [ `Grid` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/), pravé a může se zobrazit dolní argumenty k odkazování na buněk, které jsou mimo `Grid`. Je to proto pravý argument musí být vždy větší než levý argument a argument dolní vždy musí být větší než top argument. Následující příklad ukazuje ekvivalentní kódu pomocí obou `Add` přetížení:
+V předchozím příkladu zobrazení jsou přidána do [ `Grid.Children` ](xref:Xamarin.Forms.Grid.Children) pomocí kolekce [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid+IGridList%3CT%3E.Add/p/Xamarin.Forms.View/System.Int32/System.Int32/) přetížení, která určuje argumenty nahoře a vlevo. Při použití [ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid+IGridList%3CT%3E.Add/p/Xamarin.Forms.View/System.Int32/System.Int32/System.Int32/System.Int32/) přetížení, které určuje vlevo, vpravo, horní a dolní argumenty, zatímco nalevo a hlavní argumenty bude vždy odkazovat buněk v rámci [ `Grid` ](xref:Xamarin.Forms.Grid), pravé a dolní argumenty pravděpodobně neodkazuje na buňky, které jsou mimo `Grid`. Je to proto, že pravý argument musí být větší než levý argument a dolní argument vždy musí být větší než top argument. Následující příklad ukazuje odpovídající kód pomocí `Add` přetížení:
 
 ```csharp
 // left, top
@@ -156,12 +156,12 @@ grid.Children.Add(bottomRight, 1, 2, 1, 2);
 
 ### <a name="spacing"></a>Mezery
 
-`Grid` má vlastnosti k řízení mezery mezi řádky a sloupce.  Následující vlastnosti jsou k dispozici pro přizpůsobení `Grid`:
+`Grid` obsahuje vlastnosti pro řízení mezery mezi řádky a sloupce.  Následující vlastnosti jsou k dispozici pro přizpůsobení `Grid`:
 
-- **ColumnSpacing** &ndash; množství mezeru mezi sloupci.
-- **RowSpacing** &ndash; velikost mezery mezi řádky.
+- **ColumnSpacing** &ndash; velikost místa mezi sloupci.
+- **RowSpacing** &ndash; velikost místa mezi řádky.
 
-Určuje následující XAML `Grid` s dva sloupce, jeden řádek a 5 px mezery mezi sloupci:
+Určuje následující XAML `Grid` dva sloupce, jeden řádek a 5 px mezery mezi sloupci:
 
 ```xaml
 <Grid ColumnSpacing="5">
@@ -182,11 +182,11 @@ grid.ColumnDefnitions.Add(new ColumnDefinition { Width = new GridLength (1, Grid
 
 ### <a name="spans"></a>Rozpětí
 
-Často při práci s mřížka, není element, který by měla zabírat více než jeden sloupce či řádku. Vezměte v úvahu aplikace pro jednoduché výpočet:
+Při práci s mřížky, často je element, který by měla zabírat více než jeden řádek nebo sloupec. Vezměte v úvahu aplikace s jednoduchou kalkulačku:
 
 ![](grid-images/calculator.png "Calulator aplikace")
 
-Všimněte si, že tlačítko 0 zahrnuje dva sloupce, stejně jako na vestavěné kalkulačky pro každou platformu. Toho dosahuje pomocí `ColumnSpan` vlastnosti, která určuje, kolik sloupců na element by měla zabírat. XAML pro toto tlačítko:
+Všimněte si, že tlačítko 0 zahrnuje dva sloupce, stejně jako na integrované kalkulačky pro každou platformu. Využívá se při něm `ColumnSpan` vlastnost, která určuje, kolik sloupců, kterým je element by měla zabírat. XAML pro toto tlačítko:
 
 ```xaml
 <Button Text = "0" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" />
@@ -200,9 +200,9 @@ controlGrid.Children.Add (zeroButton, 0, 4);
 Grid.SetColumnSpan (zeroButton, 2);
 ```
 
-Všimněte si, že v kódu statických metod `Grid` třída slouží k provádění umísťovací změny, včetně změny `ColumnSpan` a `RowSpan`. Všimněte si, že na rozdíl od jiných vlastností, které lze nastavit kdykoli, vlastnosti nastavit pomocí statických metod musí již být také v mřížce předtím, než jsou změněna.
+Všimněte si, že v kódu statických metod `Grid` třídy jsou používány k provádění umístění změn včetně změny `ColumnSpan` a `RowSpan`. Všimněte si, že na rozdíl od dalších vlastností, které lze nastavit v okamžiku, vlastnosti nastavené pomocí statické metody, už musí být také v mřížce předtím, než se změní.
 
-Dokončení XAML pro výše uvedené aplikaci kalkulačky vypadá takto:
+Kompletní XAML pro výše uvedené Kalkulačka aplikace vypadá takto:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -294,7 +294,7 @@ BackgroundColor="#404040">
 </ContentPage>
 ```
 
-Všimněte si, že jsou oba popisek v horní části mřížky a tlačítko nula occuping více než jeden sloupec. I když lze dosáhnout podobné rozložení pomocí vnořené mřížky `ColumnSpan`  &  `RowSpan` přístup je jednodušší.
+Všimněte si, že popisek v horní části stránky mřížky i na nulovou tlačítko occuping více než jeden sloupec. I když rozložení lze dosáhnout pomocí vnořených mřížky `ColumnSpan`  &  `RowSpan` přístup je jednodušší.
 
 C# implementace:
 
@@ -383,7 +383,7 @@ public CalculatorGridCode ()
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Vytváření mobilních aplikací s Xamarin.Forms, kapitoly 17](https://developer.xamarin.com/r/xamarin-forms/book/chapter17.pdf)
-- [Mřížka](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/)
+- [Vytváření mobilních aplikací s Xamarin.Forms, kapitole 17](https://developer.xamarin.com/r/xamarin-forms/book/chapter17.pdf)
+- [Mřížka](xref:Xamarin.Forms.Grid)
 - [Rozložení (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
 - [Příklad BusinessTumble (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BusinessTumble/)

@@ -7,28 +7,28 @@ ms.assetid: 71EDEF9C-4220-4D2E-A235-43F1EC8746C1
 author: charlespetzold
 ms.author: chape
 ms.date: 11/07/2017
-ms.openlocfilehash: b71859d0848d7bf790b3cc4beddc67a5ea86d340
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: 5f5b934b5f828bf6f5e8d4a0f0738c7db633aefb
+ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37935475"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38995837"
 ---
 # <a name="summary-of-chapter-17-mastering-the-grid"></a>Souhrn kapitole 17. Ovládnutí mřížky
 
-[ `Grid` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Grid/) Virtuálních sítí je mechanismus výkonné rozložení, který uspořádá podřízené do řádků a sloupců. Na rozdíl od podobně jako HTML `table` elementu, `Grid` slouží výhradně pro účely rozložení spíše než prezentace.
+[ `Grid` ](xref:Xamarin.Forms.Grid) Virtuálních sítí je mechanismus výkonné rozložení, který uspořádá podřízené do řádků a sloupců. Na rozdíl od podobně jako HTML `table` elementu, `Grid` slouží výhradně pro účely rozložení spíše než prezentace.
 
 ## <a name="the-basic-grid"></a>Základní mřížky
 
-`Grid` je odvozen od [ `Layout<View>` ](https://developer.xamarin.com/api/type/Xamarin.Forms.Layout%3CT%3E/), která definuje [ `Children` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout%3CT%3E.Children/) vlastnost, která `Grid` dědí. Můžete přejít k vyplnění tuto kolekci na XAML nebo kódu.
+`Grid` je odvozen od [ `Layout<View>` ](xref:Xamarin.Forms.Layout`1), která definuje [ `Children` ](xref:Xamarin.Forms.Layout`1.Children) vlastnost, která `Grid` dědí. Můžete přejít k vyplnění tuto kolekci na XAML nebo kódu.
 
 ### <a name="the-grid-in-xaml"></a>Mřížky v XAML
 
-Definice `Grid` v XAML obvykle začíná naplnění [ `RowDefinitions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Grid.RowDefinitions/) a [ `ColumnDefinitions` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Grid.ColumnDefinitions/) kolekce `Grid` s [ `RowDefinition` ](https://developer.xamarin.com/api/type/Xamarin.Forms.RowDefinition/) a [ `ColumnDefinition` ](https://developer.xamarin.com/api/type/Xamarin.Forms.ColumnDefinition/) objekty. To je, jak vytvořit počet řádků a sloupců `Grid`a jejich vlastnosti.
+Definice `Grid` v XAML obvykle začíná naplnění [ `RowDefinitions` ](xref:Xamarin.Forms.Grid.RowDefinitions) a [ `ColumnDefinitions` ](xref:Xamarin.Forms.Grid.ColumnDefinitions) kolekce `Grid` s [ `RowDefinition` ](xref:Xamarin.Forms.RowDefinition) a [ `ColumnDefinition` ](xref:Xamarin.Forms.ColumnDefinition) objekty. To je, jak vytvořit počet řádků a sloupců `Grid`a jejich vlastnosti.
 
-`RowDefinition` má [ `Height` ](https://developer.xamarin.com/api/property/Xamarin.Forms.RowDefinition.Height/) vlastnost a `ColumnDefinition` má [ `Width` ](https://developer.xamarin.com/api/property/Xamarin.Forms.ColumnDefinition.Width/) vlastnost, oba typu [ `GridLength` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GridLength/), strukturu.
+`RowDefinition` má [ `Height` ](xref:Xamarin.Forms.RowDefinition.Height) vlastnost a `ColumnDefinition` má [ `Width` ](xref:Xamarin.Forms.ColumnDefinition.Width) vlastnost, oba typu [ `GridLength` ](xref:Xamarin.Forms.GridLength), strukturu.
 
-V XAML [ `GridLengthTypeConverter` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GridLengthTypeConverter/) převede jednoduché textové řetězce do `GridLength` hodnoty. Na pozadí [ `GridLength` konstruktor](https://developer.xamarin.com/api/constructor/Xamarin.Forms.GridLength.GridLength/p/System.Double/Xamarin.Forms.GridUnitType/) vytvoří `GridLength` hodnoty na základě čísla a hodnota typu [ `GridUnitType` ](https://developer.xamarin.com/api/type/Xamarin.Forms.GridUnitType/), výčet pomocí tří členů:
+V XAML [ `GridLengthTypeConverter` ](xref:Xamarin.Forms.GridLengthTypeConverter) převede jednoduché textové řetězce do `GridLength` hodnoty. Na pozadí [ `GridLength` konstruktor](xref:Xamarin.Forms.GridLength.%23ctor(System.Double,Xamarin.Forms.GridUnitType)) vytvoří `GridLength` hodnoty na základě čísla a hodnota typu [ `GridUnitType` ](xref:Xamarin.Forms.GridUnitType), výčet pomocí tří členů:
 
 - [`Absolute`](xref:Xamarin.Forms.GridUnitType.Absolute) &mdash; Šířka nebo výška je zadán v jednotkách nezávislých na zařízení (číslo v XAML)
 - [`Auto`](xref:Xamarin.Forms.GridUnitType.Auto) &mdash; na výšku nebo šířku je autosized na základě obsahu buňky ("Auto" v XAML)
@@ -36,17 +36,17 @@ V XAML [ `GridLengthTypeConverter` ](https://developer.xamarin.com/api/type/Xama
 
 Každý podřízený `Grid` musíte být také přiřazeni řádků a sloupců (explicitně nebo implicitně). Překlenuje řádek a sloupec rozsahy jsou volitelné. Tyto jsou všechny zadané pomocí připojené vlastnosti umožňující vazbu &mdash; vlastnosti, které jsou definovány `Grid` ale nastavit na podřízené objekty `Grid`. `Grid` definuje čtyři statické připojené vlastnosti umožňující vazbu:
 
-- [`RowProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.RowProperty/) &mdash; řádek založený na nule. Výchozí hodnota je 0
-- [`ColumnProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.ColumnProperty/) &mdash; sloupec založený na nule. Výchozí hodnota je 0
-- [`RowSpanProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.RowSpanProperty/) &mdash; počet řádků zahrnuje podřízené; Výchozí hodnota je 1
-- [`ColumnSpanProperty`](https://developer.xamarin.com/api/field/Xamarin.Forms.Grid.ColumnSpanProperty/) &mdash; počet sloupců zahrnuje podřízené; Výchozí hodnota je 1
+- [`RowProperty`](xref:Xamarin.Forms.Grid.RowProperty) &mdash; řádek založený na nule. Výchozí hodnota je 0
+- [`ColumnProperty`](xref:Xamarin.Forms.Grid.ColumnProperty) &mdash; sloupec založený na nule. Výchozí hodnota je 0
+- [`RowSpanProperty`](xref:Xamarin.Forms.Grid.RowSpanProperty) &mdash; počet řádků zahrnuje podřízené; Výchozí hodnota je 1
+- [`ColumnSpanProperty`](xref:Xamarin.Forms.Grid.ColumnSpanProperty) &mdash; počet sloupců zahrnuje podřízené; Výchozí hodnota je 1
 
 V kódu můžete použít program osm statické metody nastavit a získat tyto hodnoty:
 
-- [`Grid.SetRow`](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid.SetRow/p/Xamarin.Forms.BindableObject/System.Int32/) a [`Grid.GetRow`](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid.GetRow/p/Xamarin.Forms.BindableObject/)
-- [`Grid.SetColumn`](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid.SetColumn/p/Xamarin.Forms.BindableObject/System.Int32/) a [`Grid.GetColumn`](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid.GetColumn/p/Xamarin.Forms.BindableObject/)
-- [`Grid.SetRowSpan`](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid.SetRowSpan/p/Xamarin.Forms.BindableObject/System.Int32/) a [`Grid.GetRowSpan`](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid.GetRowSpan/p/Xamarin.Forms.BindableObject/)
-- [`Grid.SetColumnSpan`](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid.SetColumnSpan/p/Xamarin.Forms.BindableObject/System.Int32/) a [`Grid.GetColumnSpan`](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid.GetColumnSpan/p/Xamarin.Forms.BindableObject/)
+- [`Grid.SetRow`](xref:Xamarin.Forms.Grid.SetRow(Xamarin.Forms.BindableObject,System.Int32)) a [`Grid.GetRow`](xref:Xamarin.Forms.Grid.GetRow(Xamarin.Forms.BindableObject))
+- [`Grid.SetColumn`](xref:Xamarin.Forms.Grid.SetColumn(Xamarin.Forms.BindableObject,System.Int32)) a [`Grid.GetColumn`](xref:Xamarin.Forms.Grid.GetColumn(Xamarin.Forms.BindableObject))
+- [`Grid.SetRowSpan`](xref:Xamarin.Forms.Grid.SetRowSpan(Xamarin.Forms.BindableObject,System.Int32)) a [`Grid.GetRowSpan`](xref:Xamarin.Forms.Grid.GetRowSpan(Xamarin.Forms.BindableObject))
+- [`Grid.SetColumnSpan`](xref:Xamarin.Forms.Grid.SetColumnSpan(Xamarin.Forms.BindableObject,System.Int32)) a [`Grid.GetColumnSpan`](xref:Xamarin.Forms.Grid.GetColumnSpan(Xamarin.Forms.BindableObject))
 
 V XAML pro nastavení tyto hodnoty použijete následující atributy:
 
@@ -57,10 +57,10 @@ V XAML pro nastavení tyto hodnoty použijete následující atributy:
 
 [ **SimpleGridDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/SimpleGridDemo) ukázce vytváření a inicializaci `Grid` v XAML.
 
-`Grid` Dědí [ `Padding` ](https://developer.xamarin.com/api/property/Xamarin.Forms.Layout.Padding/) vlastnost z `Layout` a definuje dvě další vlastnosti, které poskytují mezery mezi řádky a sloupce:
+`Grid` Dědí [ `Padding` ](xref:Xamarin.Forms.Layout.Padding) vlastnost z `Layout` a definuje dvě další vlastnosti, které poskytují mezery mezi řádky a sloupce:
 
-- [`RowSpacing`](https://developer.xamarin.com/api/property/Xamarin.Forms.Grid.RowSpacing/) má výchozí hodnotu 6
-- [`ColumnSpacing`](https://developer.xamarin.com/api/property/Xamarin.Forms.Grid.ColumnSpacing/) má výchozí hodnotu 6
+- [`RowSpacing`](xref:Xamarin.Forms.Grid.RowSpacing) má výchozí hodnotu 6
+- [`ColumnSpacing`](xref:Xamarin.Forms.Grid.ColumnSpacing) má výchozí hodnotu 6
 
 `RowDefinitions` a `ColumnDefinitions` kolekce nejsou nezbytně nutné. Pokud tomu tak není, `Grid` vytvoří řádků a sloupců pro `Grid` podřízené položky a poskytuje všechny výchozí `GridLength` z "\*" (hvězdička).
 
