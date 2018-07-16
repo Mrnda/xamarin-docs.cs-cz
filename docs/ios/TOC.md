@@ -370,6 +370,7 @@
 #### [Nabídka (Force Touch)](watchos/user-interface/menu.md)
 #### [Zadávání textu](watchos/user-interface/text-input.md)
 ### [Funkce platformy](watchos/platform/index.md)
+#### [Úvod do watchOSu 5](watchos/platform/introduction-to-watchos5/index.md)
 #### [Úvod do watchOSu 4](watchos/platform/introduction-to-watchos4.md)
 #### [Úvod do watchOSu 3](watchos/platform/introduction-to-watchos3/index.md)
 ##### [Další změny v architektuře watchOSu 3](watchos/platform/introduction-to-watchos3/additional-framework-changes.md)
