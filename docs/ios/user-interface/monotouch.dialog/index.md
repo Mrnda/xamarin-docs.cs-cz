@@ -1,23 +1,23 @@
 ---
 title: Úvod do MonoTouch.Dialog pro Xamarin.iOS
-description: Tento dokument popisuje MonoTouch.Dialog (strojový překladů. D), rozhraní pro rychlé, deklarativní vývoj uživatelského rozhraní pomocí Xamarin.iOS. Popisuje, jak používat rozhraní API MonoTouch.Dialog k vytváření rozhraní v kódu nebo JSON a používání funkcí, jako je aktualizace obsahu, hledání, načítání obrázku pozadí a další.
+description: Tento dokument popisuje MonoTouch.Dialog (MT.) D), rozhraní pro rychlé, deklarativní vývoj uživatelského rozhraní s Xamarin.iOS. Popisuje, jak používat rozhraní API MonoTouch.Dialog vytváření rozhraní v kódu nebo JSON a používání funkcí, jako je o přijetí změn – aktualizace, hledání, načítání obrázků na pozadí a další.
 ms.prod: xamarin
 ms.assetid: 52A35B24-C23B-8461-A8FF-5928A2128FB0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 6511d8deed1800a8ae655f749feccd249bf4a8c0
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: bee4b460552c7273021b16955b52ba3d95d3e07c
+ms.sourcegitcommit: cb80df345795989528e9df78eea8a5b45d45f308
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34790835"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39038401"
 ---
 # <a name="introduction-to-monotouchdialog-for-xamarinios"></a>Úvod do MonoTouch.Dialog pro Xamarin.iOS
 
-MonoTouch.Dialog, označuje jako strojový překladů. D pro zkrácení, je rychlé toolkit vývoj uživatelského rozhraní, která umožňuje vývojářům vytvářet aplikace obrazovky a navigační pomocí informace místo nebylo nutné pracně vytváření řadiče zobrazení, tabulek atd. Jako takový nabízí významné zjednodušení snížení vývoj a kód uživatelského rozhraní. Zvažte například následující snímek obrazovky:
+MonoTouch.Dialog označovány jako pro MT. D zkráceně, je rychlé toolkit vývoj uživatelského rozhraní, která umožňuje vývojářům vytvářet aplikace obrazovky a navigace pomocí informace spíše než můžete vytvořit kontrolery zobrazení tabulky, atd. V důsledku toho poskytuje výrazné zjednodušení vývoje a kód snížení uživatelského rozhraní. Zvažte například na následujícím snímku obrazovky:
 
- [![](images/image1.png "Představte si třeba tento snímek obrazovky")](images/image1.png#lightbox)
+ [![](images/image1.png "Zvažte například tento snímek obrazovky")](images/image1.png#lightbox)
 
 Následující kód se používá k definování této celé obrazovky:
 
@@ -48,70 +48,74 @@ public class Expense
 }
 ```
 
-Při práci s tabulkami v iOS, je často tuny automatizujete kódu.
-Například pokaždé, když je potřeba tabulku, zdroj dat je potřeba k vyplnění této tabulky. Každý obrazovky v aplikaci, která má dva obrazovky založené na tabulky, které jsou připojené přes řadič navigační, sdílí spoustu stejný kód.
+Při práci s tabulkami v iOS, je často spoustu automatizujete kódu.
+Například pokaždé, když je potřeba tabulku, je potřeba zdroje dat k vyplnění tabulky. Každou obrazovku v aplikaci, která má dvě obrazovky založené na tabulce, které jsou připojené přes kontroler navigace, sdílí mnoho stejný kód.
 
-STROJOVÝ PŘEKLADŮ. D, zjednodušuje tím, kdy zapouzdřuje všechny tento kód do obecné rozhraní API pro vytvoření tabulky. Pak poskytuje abstrakci nad toto rozhraní API umožňující pro objekt deklarativní syntaxi, která zjednodušuje i vazby. Jako takový existují dvě rozhraní API dostupná v strojový překladů. D:
+PRO MT. D, která zjednodušuje tím, že zapouzdření všech tohoto kódu do obecného rozhraní API pro vytvoření tabulky. Pak poskytuje abstrakce vycházející z tohoto rozhraní API, který umožňuje deklarativní objektu vazby syntaxe, která ještě více zjednodušuje. V důsledku toho dvě rozhraní API ve nejsou k dispozici pro MT. D:
 
--   **Nízké úrovně rozhraní API elementy** – *API elementy* je založena na vytváření hierarchická stromu prvky, které představují obrazovky a jejich součástí. Prvky rozhraní API poskytuje vývojářům nejvíce flexibilitu a řízení při vytváření uživatelská rozhraní. Rozhraní API elementy navíc obsahuje rozšířené podpory pro deklarativní definice prostřednictvím formátu JSON, která umožňuje velmi rychlé deklarace, jak dynamické generování uživatelského rozhraní ze serveru. 
--   **Nejdůležitější rozhraní API reflexe** – taky známé jako *vazby**rozhraní API* , ve které třídy jsou opatřeny poznámkami pomocí uživatelského rozhraní pomocné parametry a potom strojový překladů. D automaticky vytvoří obrazovky založené na objektech a poskytuje vazbu mezi co se zobrazí (a volitelně upravovat) na obrazovce a základní objekt zálohování. Výše uvedený příklad ukazuje použití rozhraní API reflexe. Toto rozhraní API neposkytuje podrobné ovládací prvek, který nemá elementy rozhraní API, ale snižuje složitost i další podle budovy automaticky se element hierarchii na základě třídy atributů. 
+-   **Rozhraní API nízké úrovně prvky** – *Elements API* je založen na vytváření hierarchická stromové struktuře prvků, které představují obrazovek a jejich komponent. Rozhraní Elements API poskytuje vývojářům největší flexibilitu a řízení při vytváření uživatelského rozhraní. Kromě toho rozhraní Elements API má rozšířenou podporu pro deklarativní definice prostřednictvím formátu JSON, která umožňuje jak neuvěřitelně rychlá prohlášení, tak i dynamické generování uživatelského rozhraní ze serveru. 
+-   **Rozhraní API vysoké úrovně reflexe** – označované také jako *vazby**rozhraní API* , do které třídy jsou opatřeny poznámkami s uživatelské rozhraní pomocné parametry a potom pro MT. D automaticky vytvoří obrazovky založené na objektech a poskytuje vazby mezi co je zobrazen (a volitelně upravovat) na obrazovce a základního objektu zálohování.   Výše uvedený příklad znázorněný využívání Reflection API. Toto rozhraní API neposkytuje podrobné ovládací prvek, který nemá prvky rozhraní API, ale to snižuje složitost ještě více tak automaticky vytvářela hierarchie elementů na základě atributů třídy. 
 
 
-STROJOVÝ PŘEKLADŮ. D dodává sbalené s velké sady součástí prvky uživatelského rozhraní pro vytvoření obrazovky, ale také rozpozná potřeba vlastní elementy a pokročilé obrazovky rozložení. Rozšiřitelnost jako takový je, že že první třídy vybrané pečené do rozhraní API. Vývojáři můžou rozšířit stávající elementy nebo vytvořit nové a pak bezproblémově integrovat.
+PRO MT. D obsahuje balené s rozsáhlou sadou integrovaným prvky uživatelského rozhraní pro vytvoření obrazovky, ale také rozpozná potřeby pro vlastní elementy a rozložení pokročilé obrazovky. V důsledku toho rozšíření je prvotřídní doporučených dokončené do rozhraní API. Vývojáři mohou rozšířit stávající elementy nebo vytvářet nové a bezproblémově integrují.
 
-Kromě toho strojový překladů. D má celou řadu funkcí UX běžné iOS, které jsou součástí, jako je "vyžádání aktualizace" podporovat asynchronní image načítání a vyhledejte podpory.
+Kromě toho pro MT. D má celou řadu běžných funkcí uživatelského rozhraní iOS součástí, jako jsou "o přijetí změn – aktualizace" podpora asynchronního načítání, obrázků a podpora vyhledávání.
 
-V tomto článku bude trvat komplexní pohled na práci s strojový překladů. D, včetně:
+Tento článek bude trvat podrobný přehled práce se pro MT. D, včetně:
 
--   **STROJOVÝ PŘEKLADŮ. Součásti D** – to bude soustředit na pochopení třídy, které tvoří strojový překladů. Chcete-li povolit, získávání rychle se zorientujte D. 
--   **Referenční dokumentace elementů** – kompletní seznam předdefinovaných elementů strojový překladů. D. 
--   **Rozšířené použití** – to zahrnuje pokročilé funkce jako aktualizace obsahu, hledání, načítání obrázku pozadí, použití LINQ k sestavení se element hierarchií a vytvoření vlastní elementy buněk, a řadiče pro použití s strojový překladů. D. 
+-   **PRO MT. Součásti D** – to se zaměřuje na principy třídy, které tvoří pro MT. Povolit získávání rychle se Naučte D. 
+-   **Referenční dokumentace elementů** – úplný seznam předdefinovaných prvků pro MT. D. 
+-   **Rozšířené využití** – Toto téma zahrnuje rozšířených funkcí, třeba o přijetí změn – aktualizace, vyhledávání, načítání obrázků na pozadí, pomocí jazyka LINQ k sestavení element hierarchie a vytváření vlastních elementů, buňky, a řadiče pro použití s pro MT. D. 
 
-## <a name="understanding-the-pieces-of-mtd"></a>Principy kusy strojový překladů. D
+## <a name="setting-up-mtd"></a>Nastavení pro MT. D
 
-I když pomocí reflexe rozhraní API, strojový překladů. D vytvoří Element hierarchie pod pokličkou, stejně, jako kdyby se byly vytvořené prostřednictvím rozhraní API elementy přímo. Také podporu JSON uvedených v předchozí části vytvoří také elementy. Z tohoto důvodu je důležité mít základní znalosti o základní údaje strojový překladů. D.
+PRO MT. D je distribuován spolu s Xamarin.iOS. Ho Pokud chcete použít, klikněte pravým tlačítkem na **odkazy** uzel Xamarin.iOS projektu v sadě Visual Studio 2017 nebo Visual Studio pro Mac a přidejte odkaz na **MonoTouch.Dialog 1** sestavení. Pak přidejte `using MonoTouch.Dialog` příkazy ve zdrojovém kódu podle potřeby.
 
-STROJOVÝ PŘEKLADŮ. D sestavení obrazovky pomocí následující čtyři části:
+## <a name="understanding-the-pieces-of-mtd"></a>Principy, které byly pro MT. D
+
+I když se používá reflexi pro rozhraní API, MT. D vytvoří hierarchii Element pod pokličkou, stejně jako by byl vytvořen pomocí rozhraní Elements API přímo. Také podpora JSON uvedené v předchozí části vytvoří také elementy. Z tohoto důvodu je důležité mít základní znalosti o základních částí pro MT. D.
+
+PRO MT. D sestavení obrazovky pomocí následující čtyři části:
 
 -  **DialogViewController**
--  **RootElement**
--  **Část**
--  **Element**
+-  **Vlastnosti RootElement**
+-  **Oddíl**
+-  **– Element**
 
 
 ### <a name="dialogviewcontroller"></a>DialogViewController
 
-A *DialogViewController*, nebo *DVC* pro zkrácení, dědí z `UITableViewController` a proto představuje obrazovky s tabulkou. DVCs možné převést na navigační řadič stejně jako regulární UITableViewController.
+A *DialogViewController*, nebo *DVC* zkráceně, dědí z `UITableViewController` a proto představuje obrazovku s tabulkou. DVCs mohou být vloženy do kontroler navigace stejně jako regulární UITableViewController.
 
-### <a name="rootelement"></a>RootElement
+### <a name="rootelement"></a>Vlastnosti RootElement
 
-A *RootElement* je kontejner pro položky, které přejděte do DVC nejvyšší úrovně. Obsahuje oddíly, které pak může obsahovat elementy. RootElements se nevykreslí; Místo toho jsou jednoduše kontejnery pro co ve skutečnosti získá vykreslen. RootElement je přiřazena k DVC a pak DVC vykreslí podřízené.
+A *vlastnosti RootElement* je kontejner pro položky, které DVC nejvyšší úrovně. Obsahuje oddíly, které může obsahovat elementy. RootElements nevykreslují; Místo toho jsou jednoduše kontejnery pro co ve skutečnosti získá vykreslen. Vlastnosti RootElement přiřazen DVC a pak DVC vykreslí své podřízené objekty.
 
-### <a name="section"></a>Část
+### <a name="section"></a>Oddíl
 
-Oddíl je skupina buněk v tabulce. Jako s normální tabulky oddílu, můžete volitelně může mít záhlaví a zápatí stránky, která buď může být text nebo dokonce vlastní zobrazení, stejně jako na následujícím snímku obrazovky:
+Oddíl je skupina buněk v tabulce. Jako s normální tabulky oddílu, můžete volitelně mít záhlaví a zápatí, které můžou být text nebo dokonce vlastní zobrazení jako na následujícím snímku obrazovky:
 
- [![](images/image2.png "Jako s normální tabulky oddílu, můžete volitelně může mít záhlaví a zápatí stránky, která buď může být text nebo dokonce vlastní zobrazení, stejně jako tento snímek obrazovky")](images/image2.png#lightbox)
+ [![](images/image2.png "Jako s normální tabulky oddílu, můžete volitelně obsahovat záhlaví a zápatí, které můžou být text nebo dokonce i ve vlastních zobrazeních, stejně jako v tomto snímku obrazovky")](images/image2.png#lightbox)
 
 ### <a name="element"></a>Prvek
 
-Element představuje skutečný buňku v tabulce. STROJOVÝ PŘEKLADŮ. D dodává sbalené s širokou škálu prvky, které představují různými datovými typy nebo jiné vstupy. Například následující snímky obrazovky ilustruje několik k dispozici následující prvky:
+Element představuje skutečný buňku v tabulce. PRO MT. D obsahuje balené s celou řadu prvků, které představují různé datové typy nebo různé vstupy. Například na následujících snímcích obrazovky ukazuje několik dostupných prvků:
 
- [![](images/image3.png "Například tato snímky obrazovky ilustruje několik dostupných prvků")](images/image3.png#lightbox)
+ [![](images/image3.png "Například tato snímky obrazovky ukazují některé z dostupných prvků")](images/image3.png#lightbox)
 
-## <a name="more-on-sections-and-rootelements"></a>Další na oddíly a RootElements
+## <a name="more-on-sections-and-rootelements"></a>Další části a RootElements
 
-Nyní probereme RootElements a oddíly podrobněji.
+Nyní Pojďme RootElements a oddíly podrobněji.
 
 ### <a name="rootelements"></a>RootElements
 
-Alespoň jeden RootElement je nezbytné ke spuštění procesu MonoTouch.Dialog.
+Alespoň jeden vlastnosti RootElement je potřebná ke spuštění procesu MonoTouch.Dialog.
 
-Pokud je RootElement inicializovaný s hodnotou prvek oddílu nebo tato hodnota slouží k vyhledání podřízený Element, který obsahuje všechny konfigurace, které je vykresleno na pravé straně zobrazení. Například následující snímek obrazovky ukazuje tabulky na levé straně s buňku obsahující název obrazovky podrobností na pravé straně, "Cukrářské", společně s hodnotu vybrané poušť.
+Pokud je vlastnosti RootElement inicializovat pomocí hodnoty elementu/section tato hodnota se používá k vyhledání podřízený Element, který bude poskytovat přehled o konfiguraci, který je vykreslen na pravé straně obrazovky. Například následující snímek obrazovky ukazuje tabulky na levé straně s buňku obsahující název obrazovky podrobností na pravé straně, "Dessert", včetně hodnoty vybrané desert.
 
- [![](images/image4.png "Tento snímek obrazovky ukazuje tabulky na levé straně s buňku obsahující název obrazovky podrobností na pravé straně, cukrářské, společně s hodnotu vybrané poušť") ](images/image4.png#lightbox) [ ![ ] (images/image5.png "to Následující snímek obrazovky ukazuje tabulky na levé straně s buňku obsahující název obrazovky podrobností na pravé straně, cukrářské, společně s hodnotu vybrané poušť")](images/image5.png#lightbox)
+ [![](images/image4.png "Tento snímek obrazovky znázorňuje tabulky na levé straně s buňku obsahující název obrazovky podrobností na pravé straně, Dessert, včetně hodnoty vybrané desert") ](images/image4.png#lightbox) [ ![ ] (images/image5.png "to Následující snímek obrazovky ilustruje tabulky na levé straně s buňku obsahující název obrazovky podrobností na pravé straně, Dessert, včetně hodnoty vybrané poušť")](images/image5.png#lightbox)
 
-Kořenové elementy lze také v části pro aktivaci načítání novou stránku vnořené konfigurace, jako v příkladu nahoře. Při použití v tomto režimu titulek zadaný se používá při vykreslit v rámci oddílu a také slouží jako nadpis na podstránku. Příklad:
+Kořenových elementů můžete také použít uvnitř oddíly k aktivaci načtení nové stránky vnořené konfigurace, jak je uvedeno výše. Při použití v tomto režimu titulek, zadat se používá při vykreslit v rámci oddílu a slouží také jako název pro podstránku. Příklad:
 
 ```csharp
 var root = new RootElement ("Meals") {
@@ -127,41 +131,41 @@ var root = new RootElement ("Meals") {
     }
 ```
 
-V předchozím příkladu když uživatel klepnutím na "Cukrářské", MonoTouch.Dialog se vytvořit novou stránku a přejděte k němu s kořenovým je "Cukrářské" a nutnosti skupinu přepínač pomocí tří hodnot.
+V příkladu výše když uživatel klepne na "Dessert", MonoTouch.Dialog se vytvoří novou stránku a přejít k němu se ukládají "Dessert" a skupinu přepínačů pomocí tří hodnot s kořenem.
 
-V této ukázce konkrétní skupině přepínacích vybere "Čokoládový dort" v části "Cukrářské", protože jsme předat hodnotu "2" RadioGroup. To znamená, vyberte 3. položka v seznamu (nula – index).
+V této ukázce konkrétní skupině přepínačů vybere "Čokoládový dort" v části "Dessert" vzhledem k tomu, RadioGroup jsme předat hodnotu "2". To znamená, že vyberte 3. položky v seznamu (nula index).
 
-Volání metody přidat nebo pomocí syntaxe inicializátoru 4 C# přidá oddíly.
-K dispozici jsou metody Insert vkládat oddíly s animace.
+Volání metody Add nebo pomocí syntaxe inicializátoru C# 4 přidá oddíly.
+Vložit metody jsou k dispozici pro vložení oddíly se animace.
 
-Pokud vytvoříte RootElement s instance skupiny (namísto RadioGroup) bude souhrnnou hodnotu RootElement, kdy se zobrazí v části Kumulativní počet všech BooleanElements a CheckboxElements, které mají stejný klíč jako Group.Key hodnotu.
+Pokud vytvoříte pomocí skupiny instance (namísto RadioGroup) vlastnosti RootElement souhrnnou hodnotu vlastnosti RootElement při zobrazení v části bude kumulativní počet všech BooleanElements a CheckboxElements, které mají stejný klíč jako hodnotu Group.Key.
 
 ### <a name="sections"></a>Oddíly
 
-Oddíly slouží k seskupení prvků na obrazovce a jsou jedinými platnými přímé podřízené objekty RootElement. Části může obsahovat jakýkoli standardní elementy, včetně nové RootElements.
+Oddíly slouží k seskupení prvků na obrazovce a jsou platné pouze přímé podřízené objekty vlastnosti RootElement. Oddíly mohou obsahovat žádný z standardních prvků, včetně nového RootElements.
 
-RootElements vložených v části se používají k přejděte do nové hlubší úrovni.
+RootElements vložené v části se používají pro navigaci na zcela novou úroveň hlouběji.
 
-Části může mít jako řetězce nebo jako UIViews záhlaví a zápatí stránky.
-Obvykle použijete pouze řetězce, ale chcete-li vytvořit vlastní uživatelská rozhraní můžete použít všechny UIView jako záhlaví nebo zápatí. Řetězec můžete použít buď při jejich vytváření takto:
+Oddíly může mít buď jako řetězce, nebo jako UIViews záhlaví a zápatí.
+Obvykle použijete pouze řetězce, ale chcete-li vytvořit vlastní uživatelská rozhraní můžete použít libovolný UIView jako záhlaví nebo zápatí. Chcete-li vytvořit tímto způsobem můžete použít buď řetězec:
 
 ```csharp
 var section = new Section ("Header", "Footer")
 ```
 
-Chcete-li použít zobrazení, stačí předejte zobrazení konstruktoru:
+Použití zobrazení, stačí pouze předejte zobrazení konstruktoru:
 
 ```csharp
 var header = new UIImageView (Image.FromFile ("sample.png"));
 var section = new Section (header)
 ```
 
-### <a name="getting-notified"></a>Získávání upozornění
+### <a name="getting-notified"></a>Získávání oznámení
 
 #### <a name="handling-nsaction"></a>Zpracování NSAction
 
-STROJOVÝ PŘEKLADŮ. D povrchy `NSAction` jako delegáta pro zpracování zpětných volání.
-Řekněme například, že chcete zpracovat událost touch buňky tabulky vytvořené strojový překladů. D. Při vytváření element s strojový překladů. D, jednoduše zadejte a zpětného volání funkce, jak je uvedeno níže:
+PRO MT. Zařízení Surface D `NSAction` jako delegáta pro zpracování zpětných volání.
+Řekněme například, že chcete zpracovat událost dotykového ovládání pro buňky tabulky vytvořené pro MT. D. Při vytváření elementu se pro MT. D, jednoduše zadejte zpětné volání funkce, jak je znázorněno níže:
 
 ```csharp
 new Section () {
@@ -170,9 +174,9 @@ new Section () {
 }
 ```
 
-#### <a name="retrieving-element-value"></a>Načítání hodnota elementu
+#### <a name="retrieving-element-value"></a>Načtení hodnoty prvku
 
-V kombinaci s `Element.Value` vlastnost zpětné volání můžete načíst hodnotu nastavenou v dalších prvků. Zvažte například následující kód:
+V kombinaci s `Element.Value` vlastnost zpětného volání můžete načíst hodnotu nastavenou v dalších prvků. Zvažte například následující kód:
 
 ```csharp
 var element = new EntryElement (task.Name, "Enter task description",
@@ -190,32 +194,32 @@ var taskElement = new RootElement (task.Name){
 };
 ```
 
-Tento kód vytvoří uživatelského rozhraní, jak je uvedeno níže. Kompletní a podrobný postup tohoto příkladu, najdete v článku [prvky rozhraní API návod](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md) kurzu.
+Tento kód vytvoří uživatelské rozhraní, jak je znázorněno níže. Kompletní postup v tomto příkladu najdete v článku [prvky rozhraní API návod](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md) kurzu.
 
- [![](images/image6.png "V kombinaci s vlastností Element.Value, zpětné volání můžete načíst hodnotu nastavenou v další prvky")](images/image6.png#lightbox)
+ [![](images/image6.png "V kombinaci s vlastností Element.Value, zpětné volání můžete načíst hodnotu nastavenou v dalších prvků")](images/image6.png#lightbox)
 
-Když uživatel stiskne dolní buňky tabulky, kód v anonymní funkce provede, zápis hodnotu z `element` instance k **výstupu aplikace** odsazení v sadě Visual Studio for Mac.
+Když uživatel stiskne dolní buňky tabulky, kód ve funkci anonymní spustí, zápisu hodnoty z `element` instance na **výstup aplikace** panel v sadě Visual Studio pro Mac.
 
-## <a name="built-in-elements"></a>Předdefinované elementy
+## <a name="built-in-elements"></a>Integrované elementy
 
-STROJOVÝ PŘEKLADŮ. D obsahuje mnoho položek buňky předdefinované tabulce označuje jako elementy.
-Tyto prvky se používají k zobrazení v buňkách tabulky například řetězce, obtékaných objektů, kalendářních dat a i obrázky, název několika celou řadu různých typů. Každý prvek postará zobrazení datovým typem odpovídajícím způsobem. Logická hodnota elementu například zobrazí přepínač k přepnutí jeho hodnotu. Float element, se zobrazí jezdce ke změně hodnoty float.
+PRO MT. D zahrnuje celou řadu položek buňky předdefinované tabulce označuje jako prvky.
+Tyto prvky se používají k zobrazení širokou škálu různých typů v například řetězce, float, data a dokonce i obrázky, pojmenujte několika buňkami v tabulce. Každý prvek postará zobrazení datovým typem odpovídajícím způsobem. Například prvek logické hodnoty zobrazí přepínače přepnete jeho hodnotu. Prvek typu float, se zobrazí posuvník, chcete-li změnit hodnoty typu float.
 
-Existuje i složitější elementů pro podporu bohatší datové typy, jako jsou bitové kopie a html. Element html, který se otevře UIWebView načíst webovou stránku, pokud vybraná, například zobrazí popisek v buňce tabulky.
+Existují i složitější prvky pro podporu bohatší datové typy, jako jsou obrázky a html. Element html, který se otevře UIWebView načíst webovou stránku při výběru, například zobrazí titulku v buňce tabulky.
 
 ### <a name="working-with-element-values"></a>Práce s hodnotami – Element
 
-Prvky, které se používají k zachycení uživatelského vstupu vystavit veřejné `Value` vlastnost, která obsahuje aktuální hodnotu elementu kdykoli. Se automaticky aktualizuje, protože uživatel používá aplikaci.
+Prvky, které se používají k zachycení uživatelského vstupu vystavit veřejnou `Value` vlastnost, která obsahuje aktuální hodnotu prvku v každém okamžiku. Se automaticky aktualizuje, protože uživatel používá aplikaci.
 
-Jedná se o chování pro všechny elementy, které jsou součástí MonoTouch.Dialog, ale není nutné u elementů vytvořené uživatelem.
+Toto chování se použije pro všechny prvky, které jsou součástí MonoTouch.Dialog, ale není nutné pro uživatelem vytvořené elementy.
 
-### <a name="string-element"></a>Řetězec – Element
+### <a name="string-element"></a>Element řetězce
 
-A `StringElement` zobrazí popisek na levé straně hodnotu řetězce na pravé straně buňky a buňku tabulky.
+A `StringElement` zobrazí popisek na levé straně buňky tabulky a řetězcovou hodnotu na pravé straně buňky.
 
- [![](images/image7.png "StringElement zobrazí popisek na levé straně hodnotu řetězce na pravé straně buňky a buňku tabulky")](images/image7.png#lightbox)
+ [![](images/image7.png "StringElement zobrazí popisek na levé straně buňky tabulky a řetězcovou hodnotu na pravé straně buňky")](images/image7.png#lightbox)
 
-Použít `StringElement` jako tlačítko, zadejte delegáta.
+Použití `StringElement` jako tlačítko, poskytují delegáta.
 
 ```csharp
 new StringElement (
@@ -224,40 +228,40 @@ new StringElement (
 , null, "ok", null).Show(); })
 ```
 
- [![](images/image8.png "Pokud chcete použít jako tlačítka StringElement, poskytovat delegáta")](images/image8.png#lightbox)
+ [![](images/image8.png "Pokud chcete používat StringElement jako tlačítko, zadejte delegáta")](images/image8.png#lightbox)
 
-### <a name="styled-string-element"></a>Element stylem řetězce
+### <a name="styled-string-element"></a>Element upravený řetězce
 
-A `StyledStringElement` umožňuje řetězců, které mají zobrazovat pomocí buď styly buňky předdefinované tabulky nebo s vlastní formátování.
+A `StyledStringElement` umožňuje řetězců, které mají zobrazovat pomocí buď předdefinované styly buňky nebo vlastního formátování.
 
- [![](images/image9.png "StyledStringElement umožňuje řetězců, které mají zobrazovat pomocí buď styly buňky předdefinované tabulky nebo s vlastní formátování")](images/image9.png#lightbox)
+ [![](images/image9.png "StyledStringElement umožňuje řetězců, které mají zobrazovat pomocí buď předdefinované styly buňky nebo vlastní formátování")](images/image9.png#lightbox)
 
-`StyledStringElement` Třída odvozená z `StringElement`, ale umožňuje vývojářům přizpůsobit několik vlastností, jako je písmo, barvy, barva pozadí buněk, režimu ukončování řádků, počet řádků, které chcete zobrazit, a zda má být zobrazena určité příslušenství.
+`StyledStringElement` Třída odvozena z `StringElement`, ale umožňuje vývojářům přizpůsobit několika vlastnosti, jako je písmo, barva textu, barva pozadí buňky, režimu ukončování řádků, kolik řádků chcete zobrazit, a určuje, zda má být zobrazena určité příslušenství.
 
 ### <a name="multiline-element"></a>Multiline – Element
 
  [![](images/image10.png "Multiline – Element")](images/image10.png#lightbox)
 
-### <a name="entry-element"></a>Vstupní Element
+### <a name="entry-element"></a>Entry Element
 
-`EntryElement`, Jako název znamená, že se používá k získání vstupu uživatele. Podporuje regulárních řetězců nebo hesla, kde jsou skryté znaky.
+`EntryElement`, Jako název znamená, slouží k získání vstupu uživatele. Podporuje běžné řetězce nebo hesla, ve kterém jsou skryté znaků.
 
  [![](images/image11.png "EntryElement slouží k získání vstupu uživatele")](images/image11.png#lightbox)
 
-Není inicializována pomocí tří hodnot:
+Je inicializován pomocí tří hodnot:
 
 -  Popisek pro položku, která se zobrazí uživateli.
--  Zástupný text (Toto je aktivní out text, který poskytuje nápovědu pro uživatele). 
+-  Zástupný text (jedná se šedě text, který poskytuje nápovědu pro uživatele). 
 -  Hodnota textu.
 
 
 Zástupný text a hodnoty může mít hodnotu null. Popisek je však vyžaduje.
 
-V libovolném bodě přístupu k jeho hodnotu vlastnosti můžete načíst hodnotu `EntryElement`.
+V kterékoli fázi můžete přístup k jeho hodnota vlastnosti načtení hodnoty `EntryElement`.
 
-Kromě toho `KeyboardType` vlastnost lze nastavit v okamžiku vytvoření na styl typu klávesnice požadovaných pro zadávání dat. Tímto lze nakonfigurovat pomocí hodnot klávesnice `UIKeyboardType` jak je uvedeno dále:
+Kromě toho `KeyboardType` vlastnost lze nastavit v okamžiku vytvoření požadovaného pro zadávání dat stylu typ klávesnice. To je možné nakonfigurovat pomocí hodnot z klávesnice `UIKeyboardType` jak je uvedeno níže:
 
--  číselné
+-  Číselné
 -  Telefon
 -  Adresa URL
 -  E-mailu
@@ -279,19 +283,19 @@ A `RadioElement` vyžaduje `RadioGroup` zadat v `RootElement`.
 mtRoot = new RootElement ("Demos", new RadioGroup("MyGroup", 0))
 ```
 
- [![](images/image14.png "RadioElement vyžaduje RadioGroup zadat v RootElement")](images/image14.png#lightbox)
+ [![](images/image14.png "Vyžaduje RadioGroup zadat v vlastnosti RootElement RadioElement")](images/image14.png#lightbox)
 
- `RootElements` také se používají ke koordinaci přepínač elementy. `RadioElement` Členy může mít rozsah více oddílů (například k implementaci něco podobného prstenec styl podání selektor a samostatné vlastní vyzvánění z tónům systému). Souhrnné zobrazení se zobrazí přepínač elementu, který je momentálně zvolen. Pokud chcete použít, vytvořte `RootElement` s konstruktorem skupiny, například takto:
+ `RootElements` slouží také ke koordinaci prvků přepínačů. `RadioElement` Členové můžou pokrývat více oddílů (třeba k implementaci podobný výběr tón aktualizačního kanálu a samostatné vlastní vyzvánění z vyzváněcím tónům systému). Souhrnné zobrazení se zobrazí prvku přepínač, který aktuálně není vybrán. Pokud chcete použít, vytvořte `RootElement` pomocí konstruktoru skupiny takto:
 
 ```csharp
 var root = new RootElement ("Meals", new RadioGroup ("myGroup", 0))
 ```
 
-Název skupiny v `RadioGroup` se používá k zobrazení vybrané hodnoty na stránce obsahující (pokud existuje) a hodnotu, kterou v tomto případě je nulová, je index první vybrané položky.
+Název skupiny v `RadioGroup` se používá k zobrazení vybrané hodnoty obsahující stránce (pokud existuje) a hodnotu, která v tomto případě je nula, je index první vybrané položky.
 
-### <a name="badge-element"></a>Element oznámení "BADGE"
+### <a name="badge-element"></a>Oznámení "BADGE" – Element
 
- [![](images/image15.png "Element oznámení \"BADGE\"")](images/image15.png#lightbox)
+ [![](images/image15.png "Oznámení \"BADGE\" – Element")](images/image15.png#lightbox)
 
 ### <a name="float-element"></a>Float – Element
 
@@ -301,54 +305,54 @@ Název skupiny v `RadioGroup` se používá k zobrazení vybrané hodnoty na str
 
  [![](images/image17.png "Element aktivity")](images/image17.png#lightbox)
 
-### <a name="date-element"></a>Element datum
+### <a name="date-element"></a>Data elementu
 
- ![](images/image18.png "Element datum")
+ ![](images/image18.png "Data elementu")
 
-Pokud je vybraná buňky odpovídající DateElement, výběr data se zobrazí, jak je uvedeno níže:
+Při výběru buňky odpovídající DateElement ovládacího prvku pro výběr data se zobrazí, jak je znázorněno níže:
 
- [![](images/image19.png "Pokud je vybraná buňky odpovídající DateElement, výběr data se zobrazí, jak je znázorněno")](images/image19.png#lightbox)
+ [![](images/image19.png "Pokud je vybrána odpovídající DateElement buňky, výběr data se zobrazí, jak je znázorněno")](images/image19.png#lightbox)
 
 ### <a name="time-element"></a>Time Element
 
  [![](images/image20.png "Time Element")](images/image20.png#lightbox)
 
-Pokud je vybraná buňky odpovídající TimeElement, výběr času se zobrazí, jak je uvedeno níže:
+Pokud je vybrána odpovídající TimeElement buňky, ovládacího prvku pro výběr času se zobrazí, jak je znázorněno níže:
 
- [![](images/image21.png "Pokud je vybraná buňky odpovídající TimeElement, výběr času se zobrazí, jak je znázorněno")](images/image21.png#lightbox)
+ [![](images/image21.png "Pokud je vybrána odpovídající TimeElement buňky, jak je znázorněno se zobrazí ovládacího prvku pro výběr času")](images/image21.png#lightbox)
 
-### <a name="datetime-element"></a>Element data a času
+### <a name="datetime-element"></a>DateTime – Element
 
- [![](images/image22.png "Element data a času")](images/image22.png#lightbox)
+ [![](images/image22.png "DateTime – Element")](images/image22.png#lightbox)
 
-Pokud je vybraná buňky odpovídající DateTimeElement, se zobrazí pro výběr data a času, jak je uvedeno níže:
+Pokud je vybrána odpovídající DateTimeElement buňky, ovládacího prvku pro výběr data a času se zobrazí, jak je znázorněno níže:
 
- [![](images/image23.png "Pokud je vybraná buňky odpovídající DateTimeElement, jak je znázorněno se zobrazí pro výběr data a času")](images/image23.png#lightbox)
+ [![](images/image23.png "Pokud je vybrána odpovídající DateTimeElement buňky, ovládacího prvku pro výběr data a času se zobrazí, jak je znázorněno")](images/image23.png#lightbox)
 
 ### <a name="html-element"></a>HTML Element
 
  [![](images/image24.png "HTML Element")](images/image24.png#lightbox)
 
-`HTMLElement` Zobrazuje hodnotu jeho `Caption` vlastnost v buňce tabulky. Vybraná, kde `Url` přiřazen k elementu je načteno v `UIWebView` řídit, jak je uvedeno níže:
+`HTMLElement` Zobrazuje hodnotu jeho `Caption` vlastnost v buňce tabulky. Vybraná, kde `Url` přiřadit k elementu je načtena do `UIWebView` řídit, jak je znázorněno níže:
 
- [![](images/image25.png "Kde vybraná, adresu Url přiřazen k elementu je načtena v ovládacím prvku UIWebView, jak je uvedeno níže")](images/image25.png#lightbox)
+ [![](images/image25.png "Kde vybraná, adresu Url přiřadit k elementu je načtena v ovládacím prvku UIWebView, jak je znázorněno níže")](images/image25.png#lightbox)
 
 ### <a name="message-element"></a>Element zprávy
 
  [![](images/image26.png "Element zprávy")](images/image26.png#lightbox)
 
-### <a name="load-more-element"></a>Načíst další – Element
+### <a name="load-more-element"></a>Načíst další prvek
 
-Povolit uživatelům načíst více položek v seznamu, použijte tento element. Můžete přizpůsobit normální a načítání titulků, jakož i barvu písma a text.
-`UIActivity` Indikátor spustí animace a titulek načítání se zobrazí, když uživatel klepnutím na buňku a potom `NSAction` předaný do konstruktoru se spustí. Jednou kódu v `NSAction` po dokončení, `UIActivity` indikátor zastaví animace a titulek normální, zobrazí se znovu.
+Tento element slouží k povolení uživatelům načíst další položky v seznamu. Můžete přizpůsobit normální a načítání popisků, jakož i barvu písma a text.
+`UIActivity` Indikátor spuštění animace a načítání popisek se zobrazí, když uživatel klepne na buňku a potom `NSAction` předaná do konstruktoru provádí. Jednou kódu v `NSAction` dokončení `UIActivity` indikátor zastaví, animace a normální popisek se zobrazí znovu.
 
 ### <a name="uiview-element"></a>UIView Element
 
-Kromě toho vlastní `UIView` lze zobrazit pomocí `UIViewElement`.
+Kromě toho všechny vlastní `UIView` lze zobrazit pomocí `UIViewElement`.
 
-### <a name="owner-drawn-element"></a>Element vykreslované uživatelem
+### <a name="owner-drawn-element"></a>Element vykreslovaných vlastníkem
 
-Tento element musí být rozčlenění, protože je abstraktní třída. By měly přepsat `Height(RectangleF bounds)` metoda, ve kterém by měla vrátit Výška elementu, a také `Draw(RectangleF bounds, CGContext context, UIView view)` v které měli byste udělat všechny přizpůsobené kreslení v rámci dané hranice pomocí parametrů kontextu a zobrazení. Tento element nemá lifting těžký o vytváření podtříd `UIView`a umístit ho do buňky, který se má vrátit, ponechat pouze bylo třeba implementovat dvě jednoduché přepsání. Můžete zobrazit lepší implementace ukázka v ukázkové aplikace v `DemoOwnerDrawnElement.cs` souboru.
+Protože je abstraktní třída rozčlenit do podtříd tohoto elementu. By měl přepsat `Height(RectangleF bounds)` metody, ve kterém by měl vrátit výšku prvku, stejně jako `Draw(RectangleF bounds, CGContext context, UIView view)` ve kterém byste měli udělat všechny vlastní kreslení v rámci dané hranice pomocí parametrů kontextu a zobrazení. Tento element nemá rutinní vytváření podtříd `UIView`a jejich umístěním do buňky, která má být vrácena, poskytne vám pouze by bylo potřeba implementovat dva jednoduché přepisy. Můžete zobrazit lepší ukázková implementace v ukázkové aplikaci v `DemoOwnerDrawnElement.cs` souboru.
 
 Tady je velmi jednoduchý příklad implementace třídy:
 
@@ -381,17 +385,17 @@ public class SampleOwnerDrawnElement : OwnerDrawnElement
  }
 ```
 
-### <a name="json-element"></a>JSON – Element
+### <a name="json-element"></a>JSON Element
 
-`JsonElement` Je podtřídou třídy `RootElement` který rozšiřuje `RootElement` moct načíst obsah vnořené podřízených z místní nebo Vzdálená adresa url.
+`JsonElement` Je podtřídou třídy `RootElement` , který rozšiřuje `RootElement` být schopni načíst obsah vnořené podřízené z místní nebo vzdálené adresy url.
 
-`JsonElement` Je `RootElement` , může být vytvořena ve dvou formách. Vytvoří jednu verzi `RootElement` , načte obsah na vyžádání. Tyto jsou vytvořeny pomocí `JsonElement` konstruktory, které nepřijímají nadbytečný argument na konci načíst obsah z adresy url:
+`JsonElement` Je `RootElement` , který může být vytvořena ve dvou formách. Vytvoří jednu verzi `RootElement` , který načte obsah na vyžádání. Ty se vytvářejí pomocí `JsonElement` konstruktorů, které přijímají nadbytečný argument na konci adresy url načíst obsah ze:
 
 ```csharp
 var je = new JsonElement ("Dynamic Data", "http://tirania.org/tmp/demo.json");
 ```
 
-Jiná forma vytvoří data z místního souboru nebo existující `System.Json.JsonObject` který už mají analyzovat:
+Další způsob vytvoří data z místního souboru nebo z existujícího `System.Json.JsonObject` , kterou jste již analyzovat:
 
 ```csharp
 var je = JsonElement.FromFile ("json.sample");
@@ -399,50 +403,50 @@ using (var reader = File.OpenRead ("json.sample"))
     return JsonElement.FromJson (JsonObject.Load (reader) as JsonObject, arg);
 ```
 
-Další informace o používání JSON s strojový překladů. D, najdete v článku [JSON Element návod](http://docs.xamarin.com/guides/ios/user_interface/monotouch.dialog/json_element_walkthrough) kurzu.
+Další informace o použití JSON se pro MT. D, najdete v článku [návod elementu JSON](http://docs.xamarin.com/guides/ios/user_interface/monotouch.dialog/json_element_walkthrough) kurzu.
 
 ## <a name="other-features"></a>Další funkce
 
-### <a name="pull-to-refresh-support"></a>Podpora aktualizace obsahu
+### <a name="pull-to-refresh-support"></a>Podpora o přijetí změn – aktualizace
 
- *Pro vyžádání obsahu-na-* *aktualizovat* vizuální efekt původně nachází v *Tweetie2* aplikaci, která se aktivovala oblíbených efekt mezi mnoho aplikací.
+ *O přijetí změn-na-* *aktualizovat* vizuální efekt původně najdete v *Tweetie2* aplikace, kde byl program oblíbených efekt mezi několika aplikacemi.
 
-Přidání podpory automatické aktualizace obsahu do vaší dialogová okna, stačí udělat dvě věci: spojit Obslužné rutiny události chcete být upozorněni, když si uživatel vyžádá data a upozorňovat `DialogViewController` po načtení dat se vrátíte do výchozího stavu.
+Přidává automatické o přijetí změn – aktualizace na vaše dialogová okna, stačí provést dva kroky: připojení obslužnou rutinu události, která vás upozorní, když si uživatel vyžádá data a upozorňovat `DialogViewController` při načtení dat se vrátíte do výchozího stavu.
 
-Zapojování oznámení je jednoduché. připojit pouze k `RefreshRequested` událostí na `DialogViewController`, podobné výjimky:
+Zapojování oznámení je jednoduché. Stačí se připojit k `RefreshRequested` událostí na `DialogViewController`, tímto způsobem:
 
 ```csharp
 dvc.RefreshRequested += OnUserRequestedRefresh;
 ```
 
-Pak na metodu `OnUserRequestedRefresh`, by fronty některé načítání dat, některé data žádosti z sítě nebo číselníku vlákno k výpočtu data. Jakmile se má načíst data, musíte upozornit `DialogViewController` nová data v, a pokud chcete obnovit do výchozího stavu zobrazení, to se provádí volání `ReloadComplete`:
+Pak na vaše metoda `OnUserRequestedRefresh`, by některé načítání dat do fronty, některá data žádosti z net nebo aktivovat vlákna pro data. Po načtení dat musíte upozornit `DialogViewController` jsou nová data v, který Pokud chcete obnovit do výchozího stavu zobrazení, to provedete voláním `ReloadComplete`:
 
 ```csharp
 dvc.ReloadComplete ();
 ```
 
-### <a name="search-support"></a>Podpora hledání
+### <a name="search-support"></a>Hledat podporu
 
-Chcete-li podporovat hledání, nastavte `EnableSearch` vlastnost na vaše `DialogViewController`. Můžete také nastavit `SearchPlaceholder` vlastnost, která má použít jako vodoznakového textu v panelu vyhledávání.
+Hledání, nastavit `EnableSearch` vlastnost na vaše `DialogViewController`. Můžete také nastavit `SearchPlaceholder` vlastnost použít jako vodoznakového textu v panelu vyhledávání.
 
-Hledání se změní obsah zobrazení jako typy uživatelů. To vyhledá viditelná pole a ukazuje, aby se uživatel. `DialogViewController` Poskytuje tři metody prostřednictvím kódu programu zahájení, ukončení nebo aktivovat novou operace filtru na výsledky. Tyto metody jsou uvedeny níže:
+Hledání se změní obsah zobrazení zadaného uživatelem. Vyhledá pole viditelné a ukazuje, aby uživatel. `DialogViewController` Poskytuje tři metody prostřednictvím kódu programu zahájení, ukončení nebo aktivovat novou operaci filtr na výsledky. Tyto metody jsou uvedeny níže:
 
 -  `StartSearch`
 -  `FinishSearch`
 -  `PerformFilter`
 
 
-Systém je rozšiřitelný, takže toto nastavení můžete změnit, pokud chcete.
+Systém je rozšiřitelný, takže je možné toto chování změnit, pokud chcete.
 
-### <a name="background-image-loading"></a>Načítání obrázku pozadí
+### <a name="background-image-loading"></a>Načítání obrázků na pozadí
 
-Zahrnuje MonoTouch.Dialog [TweetStation](https://github.com/migueldeicaza/TweetStation) aplikace pro načítání obrázků. Tento nástroj pro načítání obrázků slouží k načtení obrázky na pozadí, podporuje ukládání do mezipaměti a váš kód může upozornit, když se načetl bitovou kopii.
+Zahrnuje MonoTouch.Dialog [TweetStation](https://github.com/migueldeicaza/TweetStation) načítání obrázků aplikace. Tento obrázek zavaděč slouží k načtení obrázků na pozadí, podporuje ukládání do mezipaměti a váš kód může upozornit, když se obrázek načetl.
 
-Také omezí počet odchozích síťových připojení.
+Také omezí počet odchozí síťová připojení.
 
-Načítání obrázků je implementována ve `ImageLoader` volání je třída, všechny musíte udělat `DefaultRequestImage` metoda, budete muset zadat identifikátor Uri pro bitové kopie, které chcete zatížení, jakož i instanci `IImageUpdated` rozhraní, která bude vyvolána v případě bitovou kopii ha s bylo načteno.
+Zavaděč obrázků je implementována v `ImageLoader` třídy, všechno, co potřebujete udělat, je volání `DefaultRequestImage` metodu, budete muset poskytnout identifikátor Uri pro image, kterou chcete nahrát, stejně jako instance `IImageUpdated` rozhraní, která bude vyvolána v případě bitovou kopii ha s bylo načteno.
 
-Například následující kód načte z adresy Url do obrázku `BadgeElement`:
+Například následující kód načte bitovou kopii z adresy Url do `BadgeElement`:
 
 ```csharp
 string uriString = "http://some-server.com/some image url";
@@ -454,11 +458,11 @@ var rootElement = new RootElement("Image Loader") {
 };
 ```
 
-Třída ImageLoader zpřístupní vyprázdnění metodu, kterou můžete volat, když chcete uvolnit všechny bitové kopie, které jsou aktuálně uložené do mezipaměti v paměti. Aktuální kód má mezipaměti pro 50 bitové kopie. Pokud chcete použít jiný mezipaměti velikost (například pokud očekáváte obrázky, které chcete být příliš velký, že 50 bitové kopie budou příliš mnoho), můžete pouze vytvářet instance ImageLoader a předat počet bitových kopií, které chcete zachovat v mezipaměti.
+ImageLoader třída zveřejňuje vyprázdnění metodu, která můžete volat, pokud chcete uvolnit všechny Image, které jsou aktuálně uložených v mezipaměti v paměti. Aktuální kód má mezipaměť pro 50 bitové kopie. Pokud chcete použít jiný velikost (například pokud očekáváte imagí příliš velká, že 50 Image by byly příliš mnoho), stačí vytvořit instance ImageLoader a předejte počet imagí, které chcete zachovat v mezipaměti.
 
-## <a name="using-linq-to-create-element-hierarchy"></a>Chcete-li vytvořit Element hierarchii pomocí LINQ
+## <a name="using-linq-to-create-element-hierarchy"></a>Vytvoření hierarchie elementů pomocí LINQ
 
-Prostřednictvím inteligentní použití syntaxe inicializace LINQ a C# pro LINQ slouží k vytvoření hierarchie elementu. Například následující kód vytvoří obrazovky z některých polí řetězec a zpracovává buňka výběr přes anonymní funkce, která je předána do každé `StringElement`:
+Prostřednictvím inteligentní využití syntaxe inicializace LINQ a C# je možné vytvořit hierarchii element LINQ. Například následující kód vytvoří obrazovky z některých polí řetězce a popisovače buňky výběr přes anonymní funkci, která je předána do každé `StringElement`:
 
 ```csharp
 var rootElement = new RootElement ("LINQ root element") {
@@ -471,15 +475,15 @@ delegate { Debug.WriteLine("cell tapped"); })
 };
 ```
 
-To může snadno kombinovat s XML úložiště dat nebo dat z databáze k vytvoření složitých aplikací téměř úplně z dat.
+To může snadno kombinovat s XML úložiště dat nebo dat z databáze k vytvoření komplexní aplikace z dat téměř zcela.
 
-## <a name="extending-mtd"></a>Rozšíření strojový překladů. D
+## <a name="extending-mtd"></a>Rozšíření pro MT. D
 
-### <a name="creating-custom-elements"></a>Vytváření vlastní elementy
+### <a name="creating-custom-elements"></a>Vytváří se vlastní elementy
 
-Můžete vytvořit vlastní element dědění ze buď existující Element nebo odvozené od třídy kořenový Element.
+Můžete vytvořit vlastní element dědí buď z existujícího prvku nebo odvozený od třídy kořenový Element.
 
-Pokud chcete vytvořit vlastní Element, můžete přepsat tyto metody:
+Vytvoření vlastního elementu, kterou chcete přepsat následující metody:
 
 ```csharp
 // To release any heavy resources that you might have
@@ -499,14 +503,14 @@ Pokud chcete vytvořit vlastní Element, můžete přepsat tyto metody:
     bool Matches (string text)
 ```
 
-Pokud vaše element může obsahovat proměnné velikosti, potřebujete implementovat `IElementSizing` rozhraní, který obsahuje jedno z těchto metod:
+Pokud vaše element může obsahovat proměnné velikosti, budete muset implementovat `IElementSizing` rozhraní, která obsahuje jednu metodu:
 
 ```csharp
 // Returns the height for the cell at indexPath.Section, indexPath.Row
     float GetHeight (UITableView tableView, NSIndexPath indexPath);
 ```
 
-Pokud plánujete implementace vaše `GetCell` metoda voláním `base.GetCell(tv)` a přizpůsobení vrácený buňky, musíte také přepsat `CellKey` vlastnost vrátit klíč, který bude jedinečný pro Element, jako jsou to:
+Plánujete na implementaci vašeho `GetCell` metoda voláním `base.GetCell(tv)` a přizpůsobení vrácený buňky, je třeba také přepsat `CellKey` vlastnost vrátit klíč, který bude jedinečný pro Element, tímto způsobem:
 
 ```csharp
 static NSString MyKey = new NSString ("MyKey");
@@ -517,15 +521,15 @@ static NSString MyKey = new NSString ("MyKey");
     }
 ```
 
-Tento postup funguje pro většinu prvků, ale ne pro `StringElement` a `StyledStringElement` jako ty, použijte vlastní sadu klíčů pro různé scénáře vykreslování. Museli byste se replikovat kód v těchto tříd.
+Tento postup funguje pro většinu prvků, ale ne pro `StringElement` a `StyledStringElement` jako ty, použijte vlastní sadu klíčů pro různé scénáře vykreslování. Je třeba replikaci kód v těchto tříd.
 
-### <a name="dialogviewcontrollers-dvcs"></a>DialogViewControllers (DVCs)
+### <a name="dialogviewcontrollers-dvcs"></a>DialogViewControllers (systém DVCs)
 
-Odraz a rozhraní API elementy používat stejné `DialogViewController`. Někdy budete chtít přizpůsobit vzhled zobrazení nebo můžete chtít použít některé funkce `UITableViewController` která překročila základní vytváření uživatelská rozhraní.
+Odraz i rozhraní Elements API používají stejné `DialogViewController`. Někdy budete chtít přizpůsobit vzhled zobrazení nebo můžete chtít použít některé funkce `UITableViewController` , které přesahují základní vytváření uživatelských rozhraní.
 
-`DialogViewController` Je jenom podtřídou třídy `UITableViewController` a upravit ji stejným způsobem, který by přizpůsobit `UITableViewController`.
+`DialogViewController` Je pouze podtřídou třídy `UITableViewController` a přizpůsobit ho stejným způsobem, který by upravíte `UITableViewController`.
 
-Například, pokud jste chtěli změnit styl seznamu být buď `Grouped` nebo `Plain`, tuto hodnotu můžete nastavit změnou vlastnosti při vytvoření řadiče, například takto:
+Například Kdybyste chtěli změnit styl seznamu, který má být buď `Grouped` nebo `Plain`, tuto hodnotu můžete nastavit tak, že změníte vlastnost při vytváření kontroler, například takto:
 
 ```csharp
 var myController = new DialogViewController (root, true){
@@ -533,7 +537,7 @@ var myController = new DialogViewController (root, true){
     }
 ```
 
-Pro pokročilejší vlastní nastavení `DialogViewController`, jako je třeba nastavení jeho pozadí, byste podtřídami a přepsání správné metod, jak je znázorněno v následujícím příkladu:
+Pro pokročilejší úpravy `DialogViewController`, jako je nastavení jeho pozadí, byste podtřídy ho a správné přepsání metody, jak je znázorněno v následujícím příkladu:
 
 ```csharp
 class SpiffyDialogViewController : DialogViewController {
@@ -555,39 +559,39 @@ class SpiffyDialogViewController : DialogViewController {
 }
 ```
 
-Dalším kritériem při přizpůsobení je následující virtuální metody v `DialogViewController`:
+Další přizpůsobení bod je následující virtuální metody v `DialogViewController`:
 
 ```csharp
 public override Source CreateSizingSource (bool unevenRows)
 ```
 
-Tato metoda by měla vrátit podtřídou třídy `DialogViewController.Source` pro případy, kdy jsou vaše buněk rovnoměrně dimenzované nebo podtřídou třídy `DialogViewController.SizingSource` Pokud nerovnoměrné vaší buněk.
+Tato metoda by měla vrátit podtřída `DialogViewController.Source` pro případy, kde jsou vaše buňky měly rovnoměrnou velikost, nebo jejich podtřída `DialogViewController.SizingSource` Pokud nestejné vaše buňky.
 
-Toto přepsání můžete zaznamenat některé z `UITableViewSource` metody. Například [TweetStation](https://github.com/migueldeicaza/TweetStation) pomocí této funkce sledovat, kdy uživatel má přechod na horní a počet nepřečtená tweetů se aktualizují odpovídajícím způsobem.
+Toto přepsání můžete použít k zachycení všech `UITableViewSource` metody. Například [TweetStation](https://github.com/migueldeicaza/TweetStation) používá toto příslušně aktualizovat počet nepřečtených tweety a sledovat, kdy se uživatel posunul do horní části.
 
 ## <a name="validation"></a>Ověřování
 
-Elementy neposkytují ověření sami jako modely, které se nehodí pro webové stránky a aplikací klasické pracovní plochy se nemapují přímo do modelu interakce iPhone.
+Prvky neposkytují ověření samotných jako modely, které jsou vhodné pro webové stránky a aplikací klasické pracovní plochy nemapovaly přímo do modelu interakce iPhone.
 
-Pokud chcete provést ověření dat, měli byste to provést, když uživatel spustí akci s zadaná data. Například <span class="ui">provádí</span> nebo <span class="ui">Další</span> tlačítko na horním panelu nástrojů nebo některé `StringElement` používá jako tlačítko Přejít do další fáze.
+Pokud chcete provést ověření dat, by měl to provést, když uživatel spustí akce s daty zadali. Například <span class="ui">provádí</span> nebo <span class="ui">Další</span> tlačítko na horním panelu nástrojů nebo některé `StringElement` slouží jako tlačítko pro přechod do další fáze.
 
-Toto je, kde můžete provést základní ověření vstupu, a případně více komplikovanější, ověřování, jako je kontrola platnosti kombinace uživatele a hesla se serverem.
+Je to můžete provést základní ověření vstupu, kde možná více složité ověřování, jako je kontrola platnosti kombinaci uživatele a hesla se serverem.
 
-Jak upozornit uživatele chyba je specifické pro aplikaci. Může překryvné `UIAlertView` nebo zobrazit nápovědu.
+Jak oznámit uživateli chybu je specifické pro aplikaci. Může automaticky otevře `UIAlertView` nebo zobrazit nápovědu.
 
 ## <a name="summary"></a>Souhrn
 
-Tento článek zahrnutých velké množství informací o MonoTouch.Dialog. Je popsané základní informace o způsobu, jakým strojový překladů. D funguje a zahrnutých různé součásti, které tvoří strojový překladů. D. Je také vám ukázal, širokou škálu elementy a přizpůsobení Tabulka nepodporuje strojový překladů. D a jak strojový překladů. D lze rozšířit pomocí vlastní elementy. Kromě toho je vysvětlené podporu JSON v strojový překladů. D, která umožňuje dynamicky vytváření prvků z formátu JSON.
+Tento článek popisuje velké množství informací o MonoTouch.Dialog. Popsané základní informace o způsobu, jakým pro MT. D funguje a které pokrývá různých komponent, které tvoří pro MT. D. To jsme si také ukázali širokou škálu prvky a přizpůsobení tabulky podporované pro MT. D a jak popsaných pro MT. D je možné rozšířit pomocí vlastní elementy. Kromě vysvětlení podporu JSON pro MT. D, která umožňuje dynamicky vytváření prvků z formátu JSON.
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Záznam dění na monitoru - Miguel de Icaza vytvoří obrazovka pro přihlášení iOS s MonoTouch.Dialog](http://youtu.be/3butqB1EG0c)
-- [Záznam dění na monitoru - snadno vytvářet iOS uživatelského rozhraní s MonoTouch.Dialog](http://youtu.be/j7OC5r8ZkYg)
+- [Záznam dění na monitoru - Miguela de Icaza vytvoří přihlašovací obrazovka aplikace iOS s MonoTouch.Dialog](http://youtu.be/3butqB1EG0c)
+- [Záznam dění na monitoru – snadno vytvářet iOS uživatelské rozhraní s MonoTouch.Dialog](http://youtu.be/j7OC5r8ZkYg)
 - [Návod: Vytvoření aplikace pomocí rozhraní Elements API](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)
 - [Návod: Vytvoření aplikace pomocí rozhraní Reflection API](~/ios/user-interface/monotouch.dialog/reflection-api-walkthrough.md)
 - [Návod: Vytvoření uživatelského rozhraní pomocí elementu JSON](~/ios/user-interface/monotouch.dialog/json-element-walkthrough.md)
-- [MonoTouch.Dialog JSON značek](~/ios/user-interface/monotouch.dialog/monotouch.dialog-json-markup.md)
+- [Značka MonoTouch.Dialog JSON](~/ios/user-interface/monotouch.dialog/monotouch.dialog-json-markup.md)
 - [Dialogové okno MonoTouch na Githubu](https://github.com/migueldeicaza/MonoTouch.Dialog)
-- [Odkaz na UITableViewController – třída](http://developer.apple.com/library/ios/#DOCUMENTATION/UIKit/Reference/UITableViewController_Class/Reference/Reference.html)
-- [Odkaz na UINavigationController – třída](http://developer.apple.com/library/ios/#documentation/UIKit/Reference/UINavigationController_Class/Reference/Reference.html)
+- [Referenční třída UITableViewController](http://developer.apple.com/library/ios/#DOCUMENTATION/UIKit/Reference/UITableViewController_Class/Reference/Reference.html)
+- [Referenční třída UINavigationController](http://developer.apple.com/library/ios/#documentation/UIKit/Reference/UINavigationController_Class/Reference/Reference.html)

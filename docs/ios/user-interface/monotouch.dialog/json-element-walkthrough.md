@@ -1,41 +1,45 @@
 ---
-title: Použití JSON pro vytvoření uživatelského rozhraní v Xamarin.iOS
-description: MonoTouch.Dialog (strojový překladů. D) zahrnuje podporu pro dynamické generování uživatelského rozhraní pomocí JSON data. V tomto kurzu budeme zabývat použití JSONElement vytvořit uživatelské rozhraní z formátu JSON, který je buď součástí aplikace, nebo načíst z vzdálené adresy Url.
+title: Vytvoření uživatelského rozhraní v Xamarin.iOS pomocí JSON
+description: MonoTouch.Dialog (MT.) D) zahrnuje podporu pro dynamické generování uživatelského rozhraní pomocí dat JSON. V tomto kurzu provedeme procesem použití JSONElement k vytvoření uživatelského rozhraní z formátu JSON, který je součástí aplikace, nebo načíst z vzdálené adresy Url.
 ms.prod: xamarin
 ms.assetid: E353DF14-51D7-98E3-59EA-16683C770C23
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: f9ba2cce1650260aa889e8282c091012ef8bbddc
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 94cef78bb7eedc03192071f17af765ebb702e260
+ms.sourcegitcommit: cb80df345795989528e9df78eea8a5b45d45f308
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34790650"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39038492"
 ---
-# <a name="using-json-to-create-a-user-interface-in-xamarinios"></a>Použití JSON pro vytvoření uživatelského rozhraní v Xamarin.iOS
+# <a name="using-json-to-create-a-user-interface-in-xamarinios"></a>Vytvoření uživatelského rozhraní v Xamarin.iOS pomocí JSON
 
-_MonoTouch.Dialog (strojový překladů. D) zahrnuje podporu pro dynamické generování uživatelského rozhraní pomocí JSON data. V tomto kurzu budeme zabývat použití JSONElement vytvořit uživatelské rozhraní z formátu JSON, který je buď součástí aplikace, nebo načíst z vzdálené adresy Url._
+_MonoTouch.Dialog (MT.) D) zahrnuje podporu pro dynamické generování uživatelského rozhraní pomocí dat JSON. V tomto kurzu provedeme procesem použití JSONElement k vytvoření uživatelského rozhraní z formátu JSON, který je součástí aplikace, nebo načíst z vzdálené adresy Url._
 
-STROJOVÝ PŘEKLADŮ. D podporuje vytváření uživatelské rozhraní deklarovat ve formátu JSON. Když jsou elementy deklarováno s použitím JSON, strojový překladů. D přidružených elementů pro vytvoření automaticky. JSON je možné načíst buď z místního souboru Analyzovaná `JsonObject` instance nebo i vzdálenou adresou Url.
+PRO MT. D podporuje vytváření uživatelského rozhraní, které jsou deklarovány ve formátu JSON. Když elementů jsou deklarovány pomocí formátu JSON, pro MT. D související prvky pro vytvoření automaticky. JSON je možné načíst z místního souboru analyzovaný `JsonObject` instance nebo dokonce i vzdálené adresy Url.
 
-STROJOVÝ PŘEKLADŮ. D podporuje plný rozsah funkcí, které jsou k dispozici v rozhraní API elementy při použití formátu JSON. Například aplikace na následujícím snímku obrazovky je zcela deklarováno s použitím JSON:
+PRO MT. D podporuje celou škálu funkcí, které jsou k dispozici v rozhraní API pro prvky při použití formátu JSON. Například aplikace na následujícím snímku obrazovky je zcela deklarovat pomocí formátu JSON:
 
-[![](json-element-walkthrough-images/01-load-from-file.png "Například aplikace na tomto snímku obrazovky je zcela deklarováno s použitím JSON") ](json-element-walkthrough-images/01-load-from-file.png#lightbox) [ ![ ] (json-element-walkthrough-images/01-load-from-file.png "například aplikace na tomto snímku obrazovky je zcela deklarováno s použitím JSON")](json-element-walkthrough-images/01-load-from-file.png#lightbox)
+[![](json-element-walkthrough-images/01-load-from-file.png "Aplikace na tomto snímku obrazovky je zcela deklarovány například pomocí JSON") ](json-element-walkthrough-images/01-load-from-file.png#lightbox) [ ![ ] (json-element-walkthrough-images/01-load-from-file.png "aplikace na tomto snímku obrazovky je zcela deklarovány například pomocí JSON")](json-element-walkthrough-images/01-load-from-file.png#lightbox)
 
-Pojďme pokroku příklad z [prvky rozhraní API návod](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md) kurzu znázorňující přidat úloha podrobností obrazovky pomocí JSON.
+Vraťme se k příklad z [prvky rozhraní API návod](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md) kurz ukazuje, jak přidat obrazovky podrobností úlohy pomocí formátu JSON.
+
+## <a name="setting-up-mtd"></a>Nastavení pro MT. D
+
+PRO MT. D je distribuován spolu s Xamarin.iOS. Ho Pokud chcete použít, klikněte pravým tlačítkem na **odkazy** uzel Xamarin.iOS projektu v sadě Visual Studio 2017 nebo Visual Studio pro Mac a přidejte odkaz na **MonoTouch.Dialog 1** sestavení. Pak přidejte `using MonoTouch.Dialog` příkazy ve zdrojovém kódu podle potřeby.
 
 ## <a name="json-walkthrough"></a>Návod JSON
 
-V příkladu v tomto návodu umožňuje vytvořit úkoly. Pokud úloha je vybraná na první obrazovce, obrazovky podrobností se zobrazí, jak je znázorněno:
+V příkladu v tomto návodu umožňuje úlohy, který se má vytvořit. Vyberete úlohu na první obrazovce se zobrazí obrazovce s podrobnostmi o, jak je znázorněno:
 
- [![](json-element-walkthrough-images/03-task-list.png "Pokud úloha je vybraná na první obrazovce, obrazovky podrobností se zobrazí, jak je znázorněno")](json-element-walkthrough-images/03-task-list.png#lightbox)
+ [![](json-element-walkthrough-images/03-task-list.png "Vyberete úlohu na první obrazovce se zobrazí obrazovce s podrobnostmi o, jak je znázorněno")](json-element-walkthrough-images/03-task-list.png#lightbox)
 
-## <a name="creating-the-json"></a>Vytváření kódu JSON
+## <a name="creating-the-json"></a>Vytváří se kód JSON
 
-V tomto příkladu jsme budete načíst JSON ze souboru v projektu s názvem `task.json`. STROJOVÝ PŘEKLADŮ. D očekává JSON tak, aby odpovídala syntaxe, které odpovídá prvky rozhraní API. Stejně jako pomocí rozhraní API elementy z kódu, pokud používáte JSON, jsme deklarovat části a v těchto částech přidáme elementy. Deklarace částí a elementy ve formátu JSON, používáme řetězce "části" a "prvků" v uvedeném pořadí jako klíče. Pro každý element, typ přidruženého prvku je nastaven pomocí `type` klíč. Každý další prvky je nastavena název vlastnosti jako klíč.
+V tomto příkladu budete načteme JSON ze souboru v projektu s názvem `task.json`. PRO MT. D se očekává JSON tak, aby odpovídal syntaxi, která zrcadlí rozhraní Elements API. Stejně jako pomocí rozhraní Elements API z kódu, při použití formátu JSON, můžeme deklarovat oddíly a v těchto částech se nám přidat prvky. Chcete-li deklarovat oddíly a elementy ve formátu JSON, používáme řetězce "části" a "prvky" v uvedeném pořadí jako klíče. Pro každý prvek se nastavuje pomocí přidruženého prvku typu `type` klíč. Každých dalších prvků je nastavena s názvem vlastnosti jako klíč.
 
-Například následujícím kódu JSON popisuje části a prvky pro podrobnosti úlohy:
+Například následující kód JSON popisuje části a prvky pro podrobnosti úlohy:
 
 ```csharp
 {
@@ -60,20 +64,17 @@ Například následujícím kódu JSON popisuje části a prvky pro podrobnosti 
   }
 ```
 
-Všimněte si výše uvedený kód JSON obsahuje id pro každý prvek. Libovolný element může obsahovat id, na něj odkazovat za běhu. Ukážeme, jak to se používá v okamžiku, kdy ukážeme, jak načíst JSON v kódu.
+Všimněte si, že výše uvedené JSON obsahuje id pro každý prvek. Libovolný element může obsahovat identifikátor, na něj odkazovat v době běhu. Podíváme se, jak to se používá v okamžiku, kdy vám ukážeme, jak načíst JSON v kódu.
 
- <a name="Loading_the_JSON_in_Code" />
+## <a name="loading-the-json-in-code"></a>Načítají se ve formátu JSON v kódu
 
-
-## <a name="loading-the-json-in-code"></a>Načítání JSON v kódu
-
-Po definování formátu JSON, je potřeba načíst do strojový překladů. Pomocí D `JsonElement` třídy. Za předpokladu, že soubor s JSON jsme vytvořili výše má byl přidán do projektu s názvem sample.json a zadané akce sestavení obsahu, načítání `JsonElement` je jednoduché, volání následující řádek kódu:
+Jakmile je definována ve formátu JSON, potřebujeme jejich načtení do služby pro MT. Pomocí D `JsonElement` třídy. Za předpokladu, že soubor pomocí tohoto kódu JSON, který jsme vytvořili výše byl přidán do projektu s názvem sample.json a zadané akci sestavení obsahu, načítání `JsonElement` je stejně jednoduché jako volání následující řádek kódu:
 
 ```csharp
 var taskElement = JsonElement.FromFile ("task.json");
 ```
 
-Vzhledem k tomu, že jsme přidáváte na vyžádání pokaždé, když je vytvořena úloha, jsme upravte tlačítko klikli z předchozího příkladu elementy API následujícím způsobem:
+Protože přidáváme to na vyžádání pokaždé, když je vytvořena úloha, můžeme upravit tlačítko kliknutí z předchozího příkladu Elements API následujícím způsobem:
 
 ```csharp
 _addButton.Clicked += (sender, e) => {
@@ -88,12 +89,9 @@ _addButton.Clicked += (sender, e) => {
 };
 ```
 
- <a name="Accessing_Elements_at_Runtime" />
+## <a name="accessing-elements-at-runtime"></a>Přístup k prvkům v době běhu
 
-
-## <a name="accessing-elements-at-runtime"></a>Přístup k elementům za běhu
-
-Odvolat, že id jsme přidali na oba elementy jsme deklarovaného v souboru JSON. Vlastnost id jsme můžete použít pro přístup k každý prvek v době běhu změna jejich vlastností v kódu. Například následující kód odkazuje na položku a datum prvky pro nastavení hodnot z objektu úlohy:
+Připomínáme, že id jsme přidali do oba prvky jsme deklarované v souboru JSON. Vlastnost id jsme můžete použít pro přístup k každý prvek v době běhu k úpravě jeho vlastností v kódu. Například následující kód odkazuje na prvky vstupní data a času k nastavení hodnot z objektu úlohy:
 
 ```csharp
 _addButton.Clicked += (sender, e) => {
@@ -122,12 +120,9 @@ _addButton.Clicked += (sender, e) => {
 };
 ```
 
- <a name="Loading_JSON_from_a_Url" />
+## <a name="loading-json-from-a-url"></a>Načítání JSON z adresy url
 
-
-## <a name="loading-json-from-a-url"></a>Načítání JSON z adresy Url
-
-STROJOVÝ PŘEKLADŮ. D také podporuje dynamicky načítání JSON z externí adresu Url jednoduše předáním adresu Url do konstruktoru objektu `JsonElement`. STROJOVÝ PŘEKLADŮ. D rozšíří hierarchii deklarovaných v kódu JSON na vyžádání, jako je přecházet mezi obrazovky. Představte si třeba soubor JSON, jako je třeba níže umístěný v kořenovém adresáři místního webového serveru:
+PRO MT. D také podporuje dynamicky načítání JSON z externí adresu Url jednoduše předáním adresu Url do konstruktoru `JsonElement`. PRO MT. D se rozbalí hierarchii deklarované v kódu JSON na vyžádání, jako je navigace mezi obrazovkami. Představme si třeba, například následující soubor JSON umístěný v kořenové složce místní webový server:
 
 ```csharp
 {
@@ -153,7 +148,7 @@ STROJOVÝ PŘEKLADŮ. D také podporuje dynamicky načítání JSON z externí a
 }
 ```
 
-Nám můžete načíst to pomocí `JsonElement` jako v následujícím kódu:
+Můžete načteme to pomocí `JsonElement` stejně jako v následujícím kódu:
 
 ```csharp
 _rootElement = new RootElement ("Json Example"){
@@ -163,27 +158,23 @@ _rootElement = new RootElement ("Json Example"){
 };
 ```
 
-V době běhu soubor načíst a analyzovat podle strojový překladů. D, když uživatel přejde na druhý zobrazení, jak ukazuje následující snímek obrazovky:
+Za běhu budou se soubor načten a analyzován pomocí pro MT. D, když uživatel přejde na druhém zobrazení, jak je znázorněno v následujícím snímku obrazovky:
 
- [![](json-element-walkthrough-images/04-json-web-example.png "Soubor se načíst a analyzovat podle strojový překladů. Když uživatel přejde na druhý zobrazení D")](json-element-walkthrough-images/04-json-web-example.png#lightbox)
-
- <a name="Summary" />
-
+ [![](json-element-walkthrough-images/04-json-web-example.png "Soubor bude načten a analyzován pomocí pro MT. D, když uživatel přejde na druhém zobrazení")](json-element-walkthrough-images/04-json-web-example.png#lightbox)
 
 ## <a name="summary"></a>Souhrn
 
-Tento článek vám ukázal, jak vytvořit pomocí rozhraní s strojový překladů. D z formátu JSON. Je vám ukázal, jak načíst JSON do souboru s aplikací i ze vzdálené adresy Url. Také ukázal, jak přístup k elementům popsané ve formátu JSON za běhu.
-
+Tento článek vám ukázal, jak vytvořit pomocí rozhraní pro MT. D z formátu JSON. To vám ukázal, jak načíst JSON, které jsou obsaženy v souboru s aplikací i ze vzdálené adresy Url. Také ukázala, jak přistupovat k prvkům popsaných ve formátu JSON za běhu.
 
 ## <a name="related-links"></a>Související odkazy
 
 - [MTDJsonDemo (ukázka)](https://developer.xamarin.com/samples/MTDJsonDemo/)
-- [Záznam dění na monitoru - Miguel de Icaza vytvoří obrazovka pro přihlášení iOS s MonoTouch.Dialog](http://youtu.be/3butqB1EG0c)
-- [Záznam dění na monitoru - snadno vytvářet iOS uživatelského rozhraní s MonoTouch.Dialog](http://youtu.be/j7OC5r8ZkYg)
+- [Záznam dění na monitoru - Miguela de Icaza vytvoří přihlašovací obrazovka aplikace iOS s MonoTouch.Dialog](http://youtu.be/3butqB1EG0c)
+- [Záznam dění na monitoru – snadno vytvářet iOS uživatelské rozhraní s MonoTouch.Dialog](http://youtu.be/j7OC5r8ZkYg)
 - [Úvod do MonoTouch.Dialog](~/ios/user-interface/monotouch.dialog/index.md)
-- [Prvky rozhraní API návod](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)
-- [Návod rozhraní API reflexe](~/ios/user-interface/monotouch.dialog/reflection-api-walkthrough.md)
+- [Návod prvky rozhraní API](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)
+- [Návod pro rozhraní API reflexe](~/ios/user-interface/monotouch.dialog/reflection-api-walkthrough.md)
 - [Dialogové okno MonoTouch na Githubu](https://github.com/migueldeicaza/MonoTouch.Dialog)
 - [TweetStation aplikace](https://github.com/migueldeicaza/TweetStation)
-- [Odkaz na UITableViewController – třída](http://developer.apple.com/library/ios/#DOCUMENTATION/UIKit/Reference/UITableViewController_Class/Reference/Reference.html)
-- [Odkaz na UINavigationController – třída](http://developer.apple.com/library/ios/#documentation/UIKit/Reference/UINavigationController_Class/Reference/Reference.html)
+- [Referenční třída UITableViewController](http://developer.apple.com/library/ios/#DOCUMENTATION/UIKit/Reference/UITableViewController_Class/Reference/Reference.html)
+- [Referenční třída UINavigationController](http://developer.apple.com/library/ios/#documentation/UIKit/Reference/UINavigationController_Class/Reference/Reference.html)

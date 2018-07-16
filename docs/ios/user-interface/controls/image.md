@@ -1,89 +1,86 @@
 ---
 title: Zobrazení obrázků s Xamarin.iOS
-description: Tento dokument popisuje postup zobrazení obrázků v Xamarin.iOS. Pokrývá Přidání bitové kopie do aplikace buď programově, nebo prostřednictvím návrháře.
+description: Tento dokument popisuje, jak zobrazit obrázky v Xamarin.iOS. Přidání obrázků do aplikace zahrnují programově nebo prostřednictvím v iOS designeru.
 ms.prod: xamarin
 ms.assetid: 67CA8DB6-769D-42BB-A137-3AF933789FE1
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/21/2017
-ms.openlocfilehash: f42cc5e4ab26c4c53d96e96420cbbba8036d6b5d
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 07/13/2018
+ms.openlocfilehash: 9777b4abf6e7f370178bcff2cb40666612888a9f
+ms.sourcegitcommit: cb80df345795989528e9df78eea8a5b45d45f308
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34789827"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39038375"
 ---
 # <a name="displaying-images-with-xamarinios"></a>Zobrazení obrázků s Xamarin.iOS
 
-Přidání bitové kopie do vaší aplikace vyžaduje dva kroky: nejprve přidejte bitové kopie do projektu; pak přidejte ovládacími prvky a kódem jejich zobrazení na obrazovce. Odkazovat [práce s obrázky](~/ios/app-fundamentals/images-icons/index.md) článek podrobnější pokrytí bitové kopie v Xamarin.iOS.
+Přidání obrázků do vaší aplikace sestává ze dvou kroků: nejprve přidat Image do svého projektu; pak přidejte ovládací prvky a kódem se zobrazí na obrazovce. Odkazovat [práce s obrázky](~/ios/app-fundamentals/images-icons/index.md) najdete podrobnější pokrytí bitové kopie v Xamarin.iOS.
 
-## <a name="adding-images-to-your-app"></a>Přidání bitové kopie do vaší aplikace
+## <a name="adding-images-to-your-app"></a>Přidání obrázků do vaší aplikace
 
-Bitové kopie mohou být přidány do libovolné složky ve vaší sadě Visual Studio pro Mac řešení a pokud **akce sestavení** je nastaven na **obsahu** soubor bude součástí vaší aplikace a je možné zobrazit.
+Image můžete přidat do libovolné složky v sadě Visual Studio for Mac řešení a pokud **akce sestavení** je nastavena na **obsahu** soubor bude součástí vaší aplikace a je možné zobrazit.
 
-Visual Studio pro Mac také podporuje speciální adresář s názvem prostředky, které může také obsahovat soubory obrázků. Soubory ve složce prostředky musí mít **akce sestavení** nastavena na **BundleResource**.
+Visual Studio for Mac podporuje také speciální adresář s názvem **prostředky** , který může také obsahovat soubory bitových kopií. Soubory ve složce Resources musí mít **akce sestavení** nastavena na **BundleResource**.
 
-Tento snímek obrazovky ukazuje **akce sestavení** možnosti, které se zobrazí při otevření souboru je klepli pravým tlačítkem myši:
+Tento snímek obrazovky ukazuje **akce sestavení** možnosti, které se zobrazí při otevření souboru je klikli pravým tlačítkem myši:
 
- [![](image-images/image30a.png "Nabídka Akce sestavení")](image-images/image30a.png#lightbox)
+ [![](image-images/image30a.png "Vytvořit nabídku akcí")](image-images/image30a.png#lightbox)
 
-Visual Studio pro Mac obvykle vyberte správný **akce sestavení** automaticky, ale byste měli vědět z těchto nastavení, zejména v případě, že můžete přesouvat soubory v projektu.
+Visual Studio pro Mac zpravidla zvolit správnou **akce sestavení** automaticky, ale je třeba si uvědomit z těchto nastavení, zejména v případě, že můžete přesouvat soubory v projektu.
 
-### <a name="adding-an-image-file"></a>Přidání souboru obrázku
+### <a name="adding-an-image-file"></a>Přidávání souboru obrázku
 
-Chcete-li přidat do projektu soubor obrázku, nejprve klikněte pravým tlačítkem na projekt a zvolte **přidat soubory...**
+Přidání souboru obrázku do projektu, nejprve klikněte pravým tlačítkem na projekt a zvolte **přidat soubory...**
 
- [![](image-images/image31a.png "Přidání souborů... nabídky")](image-images/image31a.png#lightbox)
+ [![](image-images/image31a.png "Přidat soubory... nabídky")](image-images/image31a.png#lightbox)
 
-Vyberte bitovou kopii (nebo bitové kopie) chcete zahrnout v dialogovém okně standardní soubor. Výchozí akce sestavení pro bitové kopie bude **BundleResource** – nepotlačí tuto hodnotu, pokud nemáte konkrétní důvod, proč.
+Výběr image (nebo Image) chcete zahrnout do souboru standardní dialogové okno. Výchozí akce sestavení pro Image bude **BundleResource** – nepřepíšete tuto hodnotu, pokud nemáte konkrétní důvod.
 
- [![](image-images/image32a.png "Přidat soubory – dialogové okno")](image-images/image32a.png#lightbox)
+ [![](image-images/image32a.png "Přidat dialog soubory")](image-images/image32a.png#lightbox)
 
-Obrázek se přidá do projektu a k dispozici pro načtení a zobrazí v kódu. Tento snímek obrazovky ukazuje image přidat do projektu aplikace iOS:
+Na obrázku se přidají do vašeho projektu a k dispozici pro načte a zobrazí v kódu. Tento snímek obrazovky znázorňuje obrázek přidat projekt aplikace pro iOS:
 
- [![](image-images/image33a.png "Bitové kopie v projektu")](image-images/image33a.png#lightbox)
+ [![](image-images/image33a.png "Obrázek v projektu")](image-images/image33a.png#lightbox)
 
-### <a name="what-is-the-resources-directory"></a>Co je adresář prostředky?
+### <a name="what-is-the-resources-directory"></a>Co je adresář prostředků?
 
-Soubory umístěné v adresáři prostředky jsou zpracovávat odděleně od regulární soubory – obsah složky prostředky se zkopírují do kořenového adresáře aplikace a můžete na něj odkazovat z ní ve vašem kódu. To může být užitečné z mnoha důvodů:
+Soubory umístěné v **prostředky** directory zpracovávat odděleně od běžné soubory – obsah **prostředky** složce se zkopírují do kořenového adresáře aplikace a může být odkazováno odtud v váš kód. To může být užitečné z mnoha důvodů:
 
--  Ukládání bitových kopií ve vlastnostech aplikace, jako je například výchozí spouštěcí Image a ikony aplikace.
--  Ukládání jiné bitové kopie a soubory nezávisle na kód, proto jsou snazší správa (podadresáře se zachová, i když se zkopírují obsah adresáře prostředky).
-
-
-Adresář prostředků je obzvláště užitečná v projektu knihovny vzhledem k tomu, že kód můžete předpokládat, že tyto bitové kopie se zkopírují do kořenové spotřebitelskou aplikací, což usnadňuje zápisu knihovny sdíleného kódu, které vyžadují image, zvuk, video, XML nebo jiné soubory.
+-  Ukládání imagí, určená ve vlastnostech aplikace, jako je například výchozí spouštěcí Image a ikony aplikace.
+-  Ukládání další Image a soubory samostatně od kódu, takže můžete snadněji spravovat (podadresáře se zachová, i když se zkopírovat obsah adresáře zdrojů).
 
 
+**Prostředky** adresář je zvláště užitečná v projektu knihovny, protože kód mohou předpokládat, že tyto Image budou zkopírovány do kořenového náročné aplikace, což usnadňuje zápis sdílených knihoven kódu, které vyžadují obrázek, zvuk, video, XML nebo jiné soubory.
 
-Adresář prostředků musí mít název, a všechny soubory musí mít akce sestavení nastavena na **BundleResource**
+**Prostředky** adresář musí být proto s názvem a všechny soubory musí mít akci sestavení nastavena na **BundleResource**.
 
-## <a name="displaying-the-image"></a>Zobrazení bitovou kopii
+## <a name="displaying-the-image"></a>Zobrazování obrázku
 
-Zobrazíte bitovou kopii pomocí návrháře zobrazení obrazu slouží jako kontejner a zobrazit jedinou bitovou kopii nebo animace bitových kopií. **Image zobrazení** ikonu z panelu nástrojů je zobrazena níže:
+V iOS designeru, použijte **zobrazení obrázku** zobrazit obrázek nebo animovaný řadu obrázků. **Zobrazení obrázku** ikonu z panelu nástrojů je uveden níže:
 
- [![](image-images/image35a.png "ImageView v sadě nástrojů")](image-images/image35.png#lightbox)
+ [![](image-images/image35a.png "ImageView v panelu nástrojů")](image-images/image35.png#lightbox)
 
-Přetáhněte **bitové kopie zobrazení** z **Toobox** do řadiče zobrazení. Potom v části ** Image zobrazení > Image ** rozevíracího seznamu vám poskytne seznam všech souborů bitové kopie k dispozici ve vašem projektu. Vyberte některé z těchto přidat do bitové kopie zobrazení.
+Přetáhněte **zobrazení obrázku** z **nástrojů** na kontroler zobrazení. Potom v části **zobrazení obrázku > obrázku** rozevíracího seznamu vám poskytne seznam všech souborů k dispozici image ve vašem projektu. Vyberte některé z nich se přidá do zobrazení obrázku.
 
- [![](image-images/image36a.png "ImageView v sadě nástrojů")](image-images/image36.png#lightbox)
+ [![](image-images/image36a.png "ImageView v panelu nástrojů")](image-images/image36.png#lightbox)
 
-### <a name="displaying-the-image-programmatically"></a>Zobrazení bitovou kopii prostřednictvím kódu programu
+### <a name="displaying-the-image-programmatically"></a>Zobrazení obrázku prostřednictvím kódu programu
 
-Protože blocks.jpg je umístěný v kořenovém adresáři prostředky budou dostupné v době běhu kořenové sadu aplikací. Chcete-li zobrazit tuto bitovou kopii v ImageView ovládací prvek použít následující kód:
+Protože **SF Monkey.jpg** se nachází v kořenovém adresáři **prostředky** adresář bude k dispozici za běhu v kořenovém adresáři sady prostředků aplikace. Tento obrázek v ovládacím prvku zobrazit obrázek zobrazíte pomocí následujícího kódu:
 
 ```csharp
-imageview1.Image = UIImage.FromBundle ("SF Monkey.png");
+imageview1.Image = UIImage.FromBundle("SF Monkey.png");
 ```
 
-Pokud jsme měl umístit bitovou kopii v `/Resources/Pics/blocks.jpg` pak kód by mělo zahrnovat obrazy složky v cestě:
+Pokud jsme měli umístit image v **prostředky/Pics/SF Monkey.jpg**, pak by obsahovat kód **Pics** složky v cestě:
 
 ```csharp
-imageview1.Image = UIImage.FromBundle ("Pics/SF Monkey.png");
+imageview1.Image = UIImage.FromBundle("Pics/SF Monkey.png");
 ```
 
-Zdrojový soubor odkazuje nikdy potřeba zahrnovat `Resources` složky.
-
+Soubor prostředků odkazuje nikdy potřeba zahrnovat symbol **prostředky** složky.
 
 ## <a name="related-links"></a>Související odkazy
 

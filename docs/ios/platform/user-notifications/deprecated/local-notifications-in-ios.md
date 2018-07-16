@@ -1,52 +1,49 @@
 ---
-title: Oznámení v Xamarin.iOS
-description: V této části ukazuje, jak implementovat místní oznámení v Xamarin.iOS. Bude popisují různé prvky uživatelského rozhraní oznámení iOS a popisují rozhraní API je zahrnuta s vytváření a zobrazování oznámení.
+title: Oznámení v Xamarin.iosu
+description: Tato část ukazuje, jak implementovat místní oznámení v Xamarin.iosu. Bude popisují různé elementy uživatelského rozhraní z oznámení o iOS a diskutovat o rozhraní API na péči o vytváření a zobrazování oznámení.
 ms.prod: xamarin
 ms.assetid: 5BB76915-5DB0-48C7-A267-FA9F7C50793E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 03/18/2017
-ms.openlocfilehash: d4dd759f52e52f417441f69e6417fab536daf6d3
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 07/13/2018
+ms.openlocfilehash: ef5ce97736e60ff3a03bc0d496eadcae8c6f7e61
+ms.sourcegitcommit: cb80df345795989528e9df78eea8a5b45d45f308
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30777909"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39038531"
 ---
-# <a name="notifications-in-xamarinios"></a>Oznámení v Xamarin.iOS
-
-_V této části ukazuje, jak implementovat místní oznámení v Xamarin.iOS. Bude popisují různé prvky uživatelského rozhraní oznámení iOS a popisují rozhraní API je zahrnuta s vytváření a zobrazování oznámení._
+# <a name="notifications-in-xamarinios"></a>Oznámení v Xamarin.iosu
 
 > [!IMPORTANT]
-> Informace v této části se vztahují na iOS 9 a předchozí, ho byla ponechána zde k podpoře starší verze iOS. IOS 10 a novější, najdete v tématu [uživatele oznámení Framework – průvodce](~/ios/platform/user-notifications/index.md) pro podporu místní i vzdálené oznámení na zařízení s iOS.
+> Informace v této části se vztahují na iOS 9 a předchozí. IOS 10 a novější, najdete v tématu [uživatelská příručka k rozhraní framework oznámení](~/ios/platform/user-notifications/index.md).
 
-iOS má tři způsoby, jak oznámení uživateli, aby bylo přijato oznámení:
+iOS má tři způsoby, jak uživateli označit, že bylo přijato oznámení:
 
--  **Zvukové nebo vibrací** -iOS můžete přehrát zvuk, který má upozornit uživatele. Pokud zvuk je zakázaná, může být toto zařízení nakonfigurované na zavibrovat.
--  **Výstrahy** -je možné zobrazit dialogové okno na obrazovce s informacemi o oznámení.
--  **Odznaky** – při publikování oznámení číslo lze zobrazit (služebním označením) na ikonu aplikace.
+- **Zvuk nebo pronikavost** -iOS můžete přehrát zvuk oznámení uživatelům. Pokud zvuk je zakázaná, může být toto zařízení nakonfigurované vibrovat.
+- **Výstrahy** – je možné zobrazit dialogové okno na obrazovce s informacemi o oznámení.
+- **Odznáčky** – když se publikuje oznámení, je možné zobrazit číslo (označené jako) na ikonu aplikace.
 
+poskytuje také iOS *centrum oznámení* všechna oznámení, místních i vzdálených, který se zobrazí uživateli. Uživatelé mohou získat přístup potažením dolů z horní části obrazovky:
 
-také poskytuje iOS *centru oznámení* všechna oznámení, místních i vzdálených, který se zobrazí uživateli. Uživatelé mohou přístup k: potažením dolů z horní části obrazovky:
+![Centrum oznámení](local-notifications-in-ios-images/image13.png "Centrum oznámení")
 
- ![](local-notifications-in-ios-images/image13.png "Centrum oznámení")
-
-## <a name="creating-local-notifications-in-ios"></a>Vytvoření místního oznámení v iOS
+## <a name="creating-local-notifications-in-ios"></a>Vytváření místních oznámení v iOS
 
 iOS je poměrně snadné k vytvoření a zpracování místního oznámení.
-Nejprve iOS 8 vyžaduje aplikace a požádejte o oprávnění k zobrazení oznámení. Přidejte následující kód do aplikace před pokusem o odeslání oznámení místní – připojené ukázka umístí jej do **AppDelegate**na **FinishedLaunching** metoda.
+IOS 8 vyžaduje nejprve aplikace a požádejte o oprávnění uživatele zobrazíte oznámení. Přidejte následující kód do aplikace před pokusem o odeslání místní oznámení – [připojené ukázkové](https://developer.xamarin.com/samples/monotouch/LocalNotifications/) umístí jej do **AppDelegate**společnosti **FinishedLaunching** metody.
 
 ```csharp
-var settings = UIUserNotificationSettings.GetSettingsForTypes(
-  UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound
-  , null);
-UIApplication.SharedApplication.RegisterUserNotificationSettings (settings);
+var notificationSettings = UIUserNotificationSettings.GetSettingsForTypes(
+    UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound, null
+);
+application.RegisterUserNotificationSettings(notificationSettings);
 ```
 
-  [![](local-notifications-in-ios-images/image0-sml.png "Potvrzení schopnost posílání místního oznámení")](local-notifications-in-ios-images/image0.png#lightbox)
+[![Potvrzují se možnost odeslat místního oznámení](local-notifications-in-ios-images/image0-sml.png "potvrzení umožňuje odeslat místního oznámení změny")](local-notifications-in-ios-images/image0.png#lightbox)
 
-Při plánování místního oznámení vytvoříte `UILocalNotification` objektu, nastavte `FireDate`a naplánovat pomocí `ScheduleLocalNotification` metodu `UIApplication.SharedApplication` objektu. Následující fragment kódu se ukazují, jak naplánovat oznámení, že bude fire v budoucnu jednu minutu a zobrazit výstrahu o zprávou:
+Naplánování místního oznámení vytvořit `UILocalNotification` objektu, nastaven `FireDate`a naplánovat jeho prostřednictvím `ScheduleLocalNotification` metodu na `UIApplication.SharedApplication` objektu. Následující fragment kódu ukazuje, jak naplánovat oznámení, že se aktivuje v budoucnu jedné minuty a zobrazí výstraha a zobrazí se zpráva:
 
 ```csharp
 UILocalNotification notification = new UILocalNotification();
@@ -57,70 +54,72 @@ notification.AlertBody = "Your 15 second alert has fired!";
 UIApplication.SharedApplication.ScheduleLocalNotification(notification);
 ```
 
-Následující snímek obrazovky zobrazit tuto výstrahu, která bude vypadat takto:
+Následující snímek obrazovky ukazuje, jak vypadá této výstrahy:
 
-  [![](local-notifications-in-ios-images/image2-sml.png "Příklad výstrahy")](local-notifications-in-ios-images/image2.png#lightbox)
+[![](local-notifications-in-ios-images/image2-sml.png "Příklad upozornění")](local-notifications-in-ios-images/image2.png#lightbox)
 
-Všimněte si, že pokud se uživatel rozhodl *nepovolíte* oznámení a nic se zobrazí.
+Všimněte si, že pokud se uživatel rozhodl *nepovoluje* se zobrazí oznámení pak žádnou akci.
 
-Pokud chcete použít oznámení "BADGE" na ikonu aplikace s číslem, můžete ho jak je znázorněno v následujícím řádku kódu nastavit:
+Pokud chcete použít Odznáček s číslem na ikonu aplikace, můžete nastavit ji jak je znázorněno v následující řádek kódu:
 
 ```csharp
 notification.ApplicationIconBadgeNumber = 1;
 ```
 
-V play pořadí zvuku s ikonou, nastavte vlastnost SoundName na oznámení jak je znázorněno v následující fragment kódu:
+V pořadí přehrát zvuk s ikonou, nastavte vlastnost SoundName na oznámení jak je znázorněno v následujícím fragmentu kódu:
 
 ```csharp
 notification.SoundName = UILocalNotification.DefaultSoundName;
 ```
 
-Podle dokumentu Apple Human Interface Guidelines Pokud oznámení přehrát zvuk, ho měli také doprovázet Odznáček nebo uživatelům pomoci identifikovat aplikace, který výstrahu vyvolal výstrahu. Navíc pokud zvuk je delší než 30 sekund, iOS bude přehrát výchozí zvuk místo.
+Pokud zvukové upozornění je delší než 30 sekund, iOS bude přehrávat výchozí zvuk místo.
 
 > [!IMPORTANT]
-> Je chyba v simulátoru iOS, které bude platit oznámení delegáta dvakrát. Tento problém by nemělo dojít při spuštění aplikace na zařízení.
+> Je chyba v simulátoru iOS, která se aktivuje upozornění delegáta dvakrát. Tento problém by nemělo dojít při spuštění aplikace na zařízení.
 
 ## <a name="handling-notifications"></a>Zpracování oznámení
 
-aplikace pro iOS zpracování vzdálené a místní oznámení v téměř přesně stejným způsobem. Když aplikace běží, `ReceivedLocalNotification` metoda nebo `ReceivedRemoteNotification` volání metody pro třídu AppDelegate a oznámení o se předá jako parametr.
+aplikace pro iOS zpracování vzdálené a místní oznámení v téměř přesně stejným způsobem. Když aplikace běží, `ReceivedLocalNotification` metoda nebo `ReceivedRemoteNotification` metodu na `AppDelegate` třídu bude volat a informace o oznámení se předá jako parametr.
 
-Aplikace může zpracovávat oznámení různými způsoby. Například aplikace může zobrazit právě výstrahu k upozornění uživatele o některé události. Nebo oznámení může použít k zobrazení výstrahy uživateli, který tento proces se dokončí, jako jsou například synchronizace soubory na server.
+Může aplikace řešit oznámení různými způsoby. Aplikace může například pouze zobrazit upozornění, abyste jim Připomeňte o některé události. Nebo oznámení může se použít k zobrazení oznámení pro uživatele, který proces dokončí, jako je například synchronizace souborů na serveru.
 
-Následující kód ukazuje, jak zpracovat místního oznámení a zobrazit výstrahu a číslo oznámení "BADGE" nastaven na hodnotu nula:
+Následující kód ukazuje, jak zpracovat místního oznámení a zobrazit výstrahy a oznámení "BADGE" číslo resetuje na nulu:
 
 ```csharp
- public override void ReceivedLocalNotification(UIApplication application, UILocalNotification notification)
-        {
-            // show an alert
-            UIAlertController okayAlertController = UIAlertController.Create (notification.AlertAction, notification.AlertBody, UIAlertControllerStyle.Alert);
-            okayAlertController.AddAction (UIAlertAction.Create ("OK", UIAlertActionStyle.Default, null));
-            viewController.PresentViewController (okayAlertController, true, null);
+public override void ReceivedLocalNotification(UIApplication application, UILocalNotification notification)
+{
+    // show an alert
+    UIAlertController okayAlertController = UIAlertController.Create(notification.AlertAction, notification.AlertBody, UIAlertControllerStyle.Alert);
+    okayAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
 
-            // reset our badge
-            UIApplication.SharedApplication.ApplicationIconBadgeNumber = 0;
-        }
+    Window.RootViewController.PresentViewController(okayAlertController, true, null);
+
+    // reset our badge
+    UIApplication.SharedApplication.ApplicationIconBadgeNumber = 0;
+}
 ```
 
-Pokud aplikace není spuštěný, bude iOS přehrát zvuk nebo aktualizovat ikonu oznámení "BADGE" podle vhodnosti. Když uživatel spustí aplikaci spojených s výstrahou, se spustí aplikace a bude volána metoda FinishedLaunching na delegáta aplikace a informace oznámení budou předávána ve prostřednictvím parametr možnosti. Pokud možnosti slovník obsahuje klíč `UIApplication.LaunchOptionsLocalNotificationKey`, pak AppDelegate ví, že aplikace byla spuštěna z místního oznámení. Následující fragment kódu ukazuje tento proces:
+Pokud není aplikace spuštěna, iOS bude přehrávat zvuk a/nebo aktualizovat ikonu oznámení "BADGE" podle potřeby. Když uživatel spustí aplikaci souvisejícího s výstrahou, spustí se aplikace a `FinishedLaunching` zavolá se metoda delegáta aplikace a informace o oznámení budou předávána ve prostřednictvím `launchOptions` parametru. Pokud možnosti slovník obsahuje klíč `UIApplication.LaunchOptionsLocalNotificationKey`, pak bude `AppDelegate` ví, že se spustila aplikace z místního oznámení. Následující fragment kódu ukazuje tento proces:
 
 ```csharp
 // check for a local notification
-if (options.ContainsKey(UIApplication.LaunchOptionsLocalNotificationKey))
- {
-     var localNotification = options[UIApplication.LaunchOptionsLocalNotificationKey] as UILocalNotification;
-     if (localNotification != null)
-     {
-        UIAlertController okayAlertController = UIAlertController.Create (localNotification.AlertAction, localNotification.AlertBody, UIAlertControllerStyle.Alert);
-        okayAlertController.AddAction (UIAlertAction.Create ("OK", UIAlertActionStyle.Default, null));
-        viewController.PresentViewController (okayAlertController, true, null);
+if (launchOptions.ContainsKey(UIApplication.LaunchOptionsLocalNotificationKey))
+{
+    var localNotification = launchOptions[UIApplication.LaunchOptionsLocalNotificationKey] as UILocalNotification;
+    if (localNotification != null)
+    {
+        UIAlertController okayAlertController = UIAlertController.Create(localNotification.AlertAction, localNotification.AlertBody, UIAlertControllerStyle.Alert);
+        okayAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
 
-         // reset our badge
-         UIApplication.SharedApplication.ApplicationIconBadgeNumber = 0;
-     }
- }
+        Window.RootViewController.PresentViewController(okayAlertController, true, null);
+
+        // reset our badge
+        UIApplication.SharedApplication.ApplicationIconBadgeNumber = 0;
+    }
+}
 ```
 
-Pokud je Vzdálená oznámení slovníku možnosti místo toho by obsahovala `LaunchOptionsRemoteNotificationKey`, a výslednou hodnotu pro tento klíč by `NSDictionary` objekt se datová část vzdáleného oznámení. Datová část oznámení prostřednictvím výstrahy, oznámení a zvukových klíčů můžete rozbalit. Následující fragment kódu ukazuje, jak získat vzdáleného oznámení:
+Pro vzdálené oznamování `launchOptions` bude mít `LaunchOptionsRemoteNotificationKey` s přidruženou `NSDictionary` obsahující datové části Vzdálená oznámení. Můžete rozbalit datová část oznámení prostřednictvím `alert`, `badge`, a `sound` klíče. Následující fragment kódu ukazuje, jak získat Vzdálená oznámení:
 
 ```csharp
 NSDictionary remoteNotification = options[UIApplication.LaunchOptionsRemoteNotificationKey];
@@ -132,13 +131,12 @@ if(remoteNotification != null)
 
 ## <a name="summary"></a>Souhrn
 
-V této části vám ukázal, jak vytvářet a publikovat oznámení v Xamarin.iOS. Ji zobrazit, jak může aplikace reagovat na oznámení přepsáním `ReceivedLocalNotification` metoda nebo `ReceivedRemoteNotification` metoda v `AppDelegate`.
-
+Tato část vám ukázal, jak vytvářet a publikovat oznámení v Xamarin.iosu. Měl zobrazit, jak může aplikace reakce na oznámení tak, že přepíšete `ReceivedLocalNotification` metoda nebo `ReceivedRemoteNotification` metoda ve `AppDelegate`.
 
 ## <a name="related-links"></a>Související odkazy
 
 - [Místní oznámení (ukázka)](https://developer.xamarin.com/samples/monotouch/LocalNotifications)
-- [Místní a nabízená oznámení pro vývojáře](https://developer.apple.com/notifications/)
+- [Místní a nabízenými oznámeními pro vývojáře](https://developer.apple.com/notifications/)
 - [Místních a nabízených oznámení Průvodce programováním](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)
 - [UIApplication](http://iosapi.xamarin.com/?link=T%3aMonoTouch.UIKit.UIApplication)
 - [UILocalNotification](http://iosapi.xamarin.com/?link=T%3aMonoTouch.UIKit.UILocalNotification)

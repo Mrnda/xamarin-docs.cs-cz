@@ -1,51 +1,51 @@
 ---
 title: Základní příklad RecyclerView
+description: Příklad aplikace, které ukazuje, jak používat RecyclerView.
 ms.prod: xamarin
 ms.assetid: A50520D2-1214-40E1-9B27-B0891FE11584
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: d5be838dcb5530ece76c3701d8fce10403622e8d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 07/13/2018
+ms.openlocfilehash: abc21c3830126346ffb877639657c973da474812
+ms.sourcegitcommit: cb80df345795989528e9df78eea8a5b45d45f308
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30770609"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39038388"
 ---
 # <a name="a-basic-recyclerview-example"></a>Základní příklad RecyclerView
 
+Pochopit, jak `RecyclerView` funguje v typické aplikaci, toto téma popisuje [RecyclerViewer](https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer/) ukázkovou aplikaci, jednoduchým příkladem kódu, který používá `RecyclerView` zobrazíte velké kolekce fotografií: 
 
-Zjistit, jak `RecyclerView` jsou zde popsány v tomto tématu funguje v typické aplikaci [RecyclerViewer](https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer/) ukázkové aplikace, příklad jednoduchého kódu, který používá `RecyclerView` zobrazíte velké kolekce fotografií: 
+[![Dvěma snímky obrazovky, který se používá k zobrazení fotografií CardViews aplikace RecyclerView](recyclerview-example-images/01-recyclerviewer-sml.png)](recyclerview-example-images/01-recyclerviewer.png#lightbox)
 
-[![Dva snímky obrazovky RecyclerView aplikaci, která používá CardViews zobrazíte fotografie](recyclerview-example-images/01-recyclerviewer-sml.png)](recyclerview-example-images/01-recyclerviewer.png#lightbox)
-
-**RecyclerViewer** používá [zobrazení karty aplikace](~/android/user-interface/controls/card-view.md) implementovat jednotlivé položky fotografie `RecyclerView` rozložení. Z důvodu `RecyclerView`na výkon výhody této ukázkové aplikace je schopen rychle procházet velké kolekce fotografií plynule a bez znatelného zpoždění.
+**RecyclerViewer** používá [CardView](~/android/user-interface/controls/card-view.md) pro každou položku fotografii v implementaci `RecyclerView` rozložení. Z důvodu `RecyclerView`jeho výhody výkonu, tato ukázková aplikace je možné rychle procházet velké kolekce fotografií hladce a bez znatelného zpoždění.
 
 
 ### <a name="an-example-data-source"></a>Zdroj dat příklad
 
-V této aplikaci příklad, zdroj dat "fotoalba" (reprezentována `PhotoAlbum` třída) poskytuje `RecyclerView` s obsahem položky.
-`PhotoAlbum` je kolekce fotografií s titulky; Když se vytvořit jeho instanci zobrazí připravených kolekce 32 fotografií:
+V této ukázkové aplikace, zdroj dat "fotoalba" (představované `PhotoAlbum` třídy) poskytuje `RecyclerView` s obsah položky.
+`PhotoAlbum` je soubor fotografie s titulky; Když vytvoříte instanci, získáte předem připravenou kolekci 32 fotografie:
 
 ```csharp
 PhotoAlbum mPhotoAlbum = new PhotoAlbum ();
 ```
 
-Každá instance fotografií ve `PhotoAlbum` zpřístupní vlastnosti, které vám umožní číst jeho ID prostředku bitové kopie `PhotoID`a její popisek řetězec `Caption`. Kolekce fotografií je organizovaná tak, aby každý fotografií přístupná pomocí indexer. Například následující řádky kódu přístup k ID prostředku bitové kopie a titulek desetinu fotografie v kolekci:
+Každá instance fotografii v `PhotoAlbum` zpřístupní vlastnosti, které umožňují čtení jeho ID prostředku bitové kopie `PhotoID`a jeho řetězec titulku `Caption`. Kolekce fotografií je uspořádán tak, že každou fotografii přístupná pomocí indexeru. Například následující řádky kódu k ID prostředku bitové kopie a titulek desátý fotografie v kolekci:
 
 ```csharp
 int imageId = mPhotoAlbum[9].ImageId;
 string caption = mPhotoAlbum[9].Caption;
 ```
 
-`PhotoAlbum` také poskytuje `RandomSwap` metoda, kterou můžete volat Pokud chcete prohodit. první fotografie v kolekci s fotografie náhodně zvolenou jinde v kolekci:
+`PhotoAlbum` poskytuje také `RandomSwap` metoda, která může volat do odkládacího první fotografii v kolekci s náhodně zvolených fotografii jinde v kolekci:
 
 ```csharp
 mPhotoAlbum.RandomSwap ();
 ```
 
-Protože podrobnosti implementace `PhotoAlbum` nejsou důležité k porozumění `RecyclerView`, `PhotoAlbum` zdrojový kód není uveden zde. Zdrojový kód a `PhotoAlbum` je k dispozici na [PhotoAlbum.cs](https://github.com/xamarin/monodroid-samples/blob/master/android5.0/RecyclerViewer/RecyclerViewer/PhotoAlbum.cs) v [RecyclerViewer](https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer/) ukázkovou aplikaci.
+Protože podrobnosti implementace `PhotoAlbum` nejsou důležité k porozumění `RecyclerView`, `PhotoAlbum` zdrojového kódu není okomentovat. Zdrojový kód a `PhotoAlbum` je k dispozici na [PhotoAlbum.cs](https://github.com/xamarin/monodroid-samples/blob/master/android5.0/RecyclerViewer/RecyclerViewer/PhotoAlbum.cs) v [RecyclerViewer](https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer/) ukázkovou aplikaci.
 
 
 ### <a name="layout-and-initialization"></a>Rozložení a inicializace
@@ -66,7 +66,7 @@ Soubor rozložení **Main.axml**, se skládá z jedné `RecyclerView` v rámci `
 </LinearLayout>
 ```
 
-Všimněte si, že je nutné použít plně kvalifikovaný název **android.support.v7.widget.RecyclerView** protože `RecyclerView` je součástí knihovny podpory. `OnCreate` Metodu `MainActivity` inicializuje toto rozložení, vytvoří instanci adaptéru a připraví na podkladový zdroj dat:
+Všimněte si, že je nutné použít plně kvalifikovaný název **android.support.v7.widget.RecyclerView** protože `RecyclerView` je zabalený ve knihovny podpory. `OnCreate` Metoda `MainActivity` inicializuje toto rozložení, vytvoří instanci adaptér a připraví podkladový zdroj dat:
 
 ```csharp
 public class MainActivity : Activity
@@ -98,37 +98,37 @@ public class MainActivity : Activity
 
 Tento kód provede následující akce:
 
-1. Vytvoří instanci `PhotoAlbum` zdroj dat.
+1. Vytvoří instanci `PhotoAlbum` zdroj.
 
-2. Zdroj dat alba fotografií předá do konstruktoru adaptéru, `PhotoAlbumAdapter` (který je definován v této příručce). 
-   Všimněte si, že bude považován za osvědčený postup předat zdroji dat jako parametr pro konstruktor adaptéru. 
+2. Zdroj dat alba fotografií předá konstruktoru adaptéru, `PhotoAlbumAdapter` (která je definovaná v této příručce). 
+   Všimněte si, že se považuje za osvědčeným postupem je předat zdroj dat jako parametr do konstruktoru adaptéru. 
 
 3. Získá `RecyclerView` z rozložení.
 
-4. Připojí adaptéru do `RecyclerView` instance voláním `RecyclerView` `SetAdapter` metoda, jak je uvedeno výše.
+4. Zpřístupní adaptéru do `RecyclerView` instance voláním `RecyclerView` `SetAdapter` způsob, jak je znázorněno výše.
 
 ### <a name="layout-manager"></a>Správce rozložení
 
-Každá položka v `RecyclerView` se skládá z `CardView` fotografií image a fotografie popisek, který obsahuje (podrobnosti jsou popsané v [zobrazení držitel](#view-holder) části). Předdefinovanou `LinearLayoutManager` se používá k rozložení jednotlivých `CardView` ve svislém uspořádání posouvání:
+Každá položka v `RecyclerView` se skládá ze `CardView` , který obsahuje fotografii a titulek fotografie (podrobnosti najdete v [zobrazení držitel](#view-holder) níže v části). Předdefinované `LinearLayoutManager` se používá k rozložení jednotlivých `CardView` ve svislé posouvání uspořádání:
 
 ```csharp
 mLayoutManager = new LinearLayoutManager (this);
 mRecyclerView.SetLayoutManager (mLayoutManager);
 ```
 
-Tento kód se nachází v hlavní aktivitě `OnCreate` metoda. Konstruktor pro rozložení správce požaduje *kontextu*, proto `MainActivity` je předán pomocí `this` registrovaného výše.
+Tento kód se nachází v hlavní aktivitě `OnCreate` metody. Konstruktor pro Správce rozložení vyžaduje *kontextu*, takže `MainActivity` je předán pomocí `this` jak je znázorněno výše.
 
-Místo použití predefind `LinearLayoutManager`, můžete zařadit vlastní rozložení správce, který zobrazí dva `CardView` položky souběžného, implementace efekt page-turning animace procházení prostřednictvím kolekce fotografií. V této příručce uvidíte příklad toho, jak upravit rozložení odkládací ve Správci různých rozložení.
+Namísto použití predefind `LinearLayoutManager`, můžete zařadit vlastní rozložení správce, který zobrazí dvě `CardView` položky souběžně, implementace efekt page-turning animace průchodné kolekce fotografií. Dál v této příručce uvidíte příklad toho, jak změnit rozložení pomocí výměny ve Správci jiné rozložení.
 
 <a name="view-holder" />
 
 ### <a name="view-holder"></a>Držitel zobrazení
 
-Třída vlastníka zobrazení se nazývá `PhotoViewHolder`. Každý `PhotoViewHolder` instance obsahuje odkazy na `ImageView` a `TextView` položky přidružené řádek, který je nastíněny v `CardView` jako na tomto serveru provedeny tady:
+Třída vlastníka zobrazení se nazývá `PhotoViewHolder`. Každý `PhotoViewHolder` instance obsahuje odkazy na `ImageView` a `TextView` položky řádků, které se zobrazuje ve `CardView` jako na tomto serveru provedeny tady:
 
-[![Diagram zobrazení karty aplikace obsahující ImageView a TextView](recyclerview-example-images/02-cardview-layout-sml.png)](recyclerview-example-images/02-cardview-layout.png#lightbox)
+[![Diagram CardView obsahující ImageView a TextView služby](recyclerview-example-images/02-cardview-layout-sml.png)](recyclerview-example-images/02-cardview-layout.png#lightbox)
 
-`PhotoViewHolder` odvozená z `RecyclerView.ViewHolder` a obsahuje vlastnosti, které chcete uložit odkazy na `ImageView` a `TextView` zobrazeno ve výše uvedené zobrazení.
+`PhotoViewHolder` je odvozena z `RecyclerView.ViewHolder` a obsahuje vlastnosti, které chcete ukládat odkazy `ImageView` a `TextView` v výše rozložení.
 `PhotoViewHolder` se skládá ze dvou vlastností a jeden konstruktor:
 
 ```csharp
@@ -145,16 +145,16 @@ public class PhotoViewHolder : RecyclerView.ViewHolder
     }
 }
 ```
-V tomto příkladu kódu `PhotoViewHolder` konstruktoru je předán odkaz na zobrazení nadřazené položky ( `CardView`), `PhotoViewHolder` zabalí. Všimněte si, že vždy předávání nadřazeného zobrazení položek základní konstruktoru. `PhotoViewHolder` Volá konstruktor `FindViewById` v nadřazeném zobrazení položku najít všechny jeho podřízené zobrazení odkazy `ImageView` a `TextView`, výsledky v ukládání `Image` a `Caption` vlastnosti, v uvedeném pořadí. Při aktualizaci to adaptér později načte zobrazení odkazy z těchto vlastností `CardView`na podřízené zobrazení s nová data.
+V tomto příkladu kódu `PhotoViewHolder` konstruktor je předán odkaz na zobrazení nadřazené položky ( `CardView`), který `PhotoViewHolder` zabalí. Všimněte si, že vždy předávání nadřazeného zobrazení položek na konstruktor základní třídy. `PhotoViewHolder` Volá konstruktor `FindViewById` v nadřazeném zobrazení položka k vyhledání všech zobrazit jeho podřízené odkazy `ImageView` a `TextView`, uložte výsledky do atributu `Image` a `Caption` vlastnosti, v uvedeném pořadí. Zobrazit odkazy na adaptér později načte z těchto vlastností, při aktualizaci to `CardView`na podřízené zobrazení s novými daty.
 
-Další informace o `RecyclerView.ViewHolder`, najdete v článku [referenci třídy RecyclerView.ViewHolder](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html).
+Další informace o `RecyclerView.ViewHolder`, najdete v článku [referenční třída RecyclerView.ViewHolder](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html).
 
 
 ### <a name="adapter"></a>Adaptér
 
-Adaptér načte každý `RecyclerView` řádek s daty pro konkrétní fotografie. Pro danou fotografie pozice řádku *P*, například adaptér vyhledá přidružená data na pozici *P* v rámci zdroj dat a zkopíruje položky tato data na řádek na pozici *P* v `RecyclerView` kolekce. Karta používá k vyhledávání odkazy pro držitele zobrazení `ImageView` a `TextView` na této pozici, takže nemusí opakovaně volat `FindViewById` pro ty zobrazení se uživatel posune prostřednictvím kolekce fotografie a opětovně používá zobrazení.
+Adaptér načte každý `RecyclerView` řádků s daty pro konkrétní fotografie. Pro daný fotografie pozici řádku *P*, například adaptér vyhledá přidružená data na pozici *P* v rámci zdroje dat a kopie položky na řádku dat na pozici *P* v `RecyclerView` kolekce. Adaptér používá pro vyhledání odkazů pro držitele zobrazení `ImageView` a `TextView` na této pozici, aby neobsahovalo opakovaně volat `FindViewById` pro ty zobrazení jako uživatel procházení kolekce fotografie a opětovně používá zobrazení.
 
-V **RecyclerViewer**, třídu adaptér je odvozený od `RecyclerView.Adapter` k vytvoření `PhotoAlbumAdapter`:
+V **RecyclerViewer**, třída adaptéru je odvozen z `RecyclerView.Adapter` vytvořit `PhotoAlbumAdapter`:
 
 ```csharp
 public class PhotoAlbumAdapter : RecyclerView.Adapter
@@ -169,22 +169,22 @@ public class PhotoAlbumAdapter : RecyclerView.Adapter
 }
 ```
 
-`mPhotoAlbum` Člen obsahuje zdroj dat (alba fotografií), která je předána do konstruktoru; konstruktoru zkopíruje alba fotografií do této proměnné členů. Následující požadované `RecyclerView.Adapter` metody se implementují:
+`mPhotoAlbum` Člena obsahuje zdroj dat (alba fotografií), která je předána do konstruktoru; konstruktor zkopíruje alba fotografií do této proměnné členů. Následující povinné `RecyclerView.Adapter` jsou implementované metody:
 
--   **`OnCreateViewHolder`** &ndash; Vytvoří instanci držitele soubor nebo zobrazit položky rozložení.
+-   **`OnCreateViewHolder`** &ndash; Vytvoří instanci položky rozložení souboru a zobrazení vlastník.
 
--   **`OnBindViewHolder`** &ndash; Načte data na zadané pozici do zobrazení, jehož odkazy jsou uložené v držitele daného zobrazení.
+-   **`OnBindViewHolder`** &ndash; Načte data na konkrétní pozici do zobrazení, jejichž odkazy jsou uloženy v vlastník daného zobrazení.
 
--   **`ItemCount`** &ndash; Vrátí počet položek v datovém zdroji.
+-   **`ItemCount`** &ndash; Vrátí počet položek ve zdroji dat.
 
-Správce rozložení volání těchto metod, přičemž se je umístění položky v rámci `RecyclerView`. V následujících částech je zkontrolován provádění těchto metod.
+Správce rozložení volání těchto metod, přičemž to je umístění položky v rámci `RecyclerView`. Implementace těchto metod je zkontrolován v následujících částech.
 
 
 #### <a name="oncreateviewholder"></a>OnCreateViewHolder
 
-Volání manager rozložení `OnCreateViewHolder` při `RecyclerView` musí nového vlastníka zobrazení představující položku. `OnCreateViewHolder` zvýšení kapacity zobrazení položek ze souboru rozložení zobrazení a zabalí zobrazení v nové `PhotoViewHolder` instance. `PhotoViewHolder` Konstruktor vyhledá a ukládá odkazy na podřízené zobrazení v rozložení, jak je popsáno dříve v [zobrazení držitel](#view-holder).
+Volá Správce rozložení `OnCreateViewHolder` při `RecyclerView` potřebuje nový vlastník zobrazení představující položku. `OnCreateViewHolder` zvýšení kapacity zobrazení položky ze souboru rozložení zobrazení a zabalí zobrazení v novém `PhotoViewHolder` instance. `PhotoViewHolder` Konstruktor vyhledá a ukládají odkazy na podřízené zobrazení v rozložení, jak je popsáno výše v [zobrazení držitel](#view-holder).
 
-Každá položka řádek je reprezentována `CardView` obsahující `ImageView` (pro fotografie) a `TextView` (pro titulek). Toto rozložení se nachází v souboru **PhotoCardView.axml**:
+Každá položka řádku je reprezentována `CardView` , který obsahuje `ImageView` (pro fotografii) a `TextView` (pro titulek). Toto rozložení se nachází v souboru **PhotoCardView.axml**:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -222,8 +222,8 @@ Každá položka řádek je reprezentována `CardView` obsahující `ImageView` 
 </FrameLayout>
 ```
 
-Toto rozložení představuje položku jeden řádek v `RecyclerView`. `OnBindViewHolder` – Metoda (popsaný níže) kopíruje data ze zdroje dat do `ImageView` a `TextView` tento rozložení.
-`OnCreateViewHolder` zvýšení kapacity toto rozložení pro dané fotografií umístění v `RecyclerView` a vytvoří novou `PhotoViewHolder` instance (která vyhledá a ukládá do mezipaměti odkazy na `ImageView` a `TextView` podřízené zobrazení v přidruženém `CardView` rozložení):
+Toto rozložení představuje položku jeden řádek v `RecyclerView`. `OnBindViewHolder` – Metoda (popsaných níže) kopíruje data ze zdroje dat do `ImageView` a `TextView` toto rozložení.
+`OnCreateViewHolder` zvýšení kapacity toto rozložení pro dané umístění v `RecyclerView` a vytvoří novou instanci `PhotoViewHolder` instance (která vyhledává a ukládá do mezipaměti odkazy na `ImageView` a `TextView` podřízené zobrazení v přidruženém `CardView` rozložení):
 
 ```csharp
 public override RecyclerView.ViewHolder
@@ -240,12 +240,12 @@ public override RecyclerView.ViewHolder
 
 ```
 
-Výsledné zobrazení držitel instanci `vh`, je vrácen zpět do volající (manager rozložení).
+Výsledné zobrazení vlastníka instance, `vh`, je vrácena zpět volajícímu (správce).
 
 
 #### <a name="onbindviewholder"></a>OnBindViewHolder
 
-Když je připravena k zobrazení konkrétní zobrazení v rozložení správce `RecyclerView`na viditelné obrazovky oblasti, zavolá adaptéru `OnBindViewHolder` metoda k vyplnění položku na pozici zadanou řádek s obsahem ze zdroje dat. `OnBindViewHolder` Získá fotografie informace pro zadaný řádek pozice (zdroj obrázku se fotografie a řetězec pro titulek fotografie) a zkopíruje tato data přidružené zobrazení. Zobrazení jsou umístěné prostřednictvím odkazů, které jsou uložené v objektu držitel zobrazení (která je předána v `holder` parametr):
+Když je připravený k zobrazení určité zobrazení v rozložení správce `RecyclerView`společnosti viditelné obrazovky, volá adaptéru `OnBindViewHolder` metodu tak, aby vyplnil položku na pozici zadaného řádku s obsahem ze zdroje dat. `OnBindViewHolder` Získá informace o fotografií pro zadaný řádek pozice (fotografie obrázkový prostředek a řetězce pro titulek fotografie) a zkopíruje data do přidružené zobrazení. Zobrazení jsou umístěné přes odkazy na uloženou v objektu držitel zobrazení (který se předává v `holder` parametr):
 
 ```csharp
 public override void
@@ -261,15 +261,15 @@ public override void
 }
 ```
 
-Objekt předaný zobrazení držitel musí nejprve přetypovat do typu držitel odvozené zobrazení (v tomto případě `PhotoViewHolder`) před jeho použitím.
-Adaptér načte prostředek bitové kopie do zobrazení odkazuje držitele zobrazení `Image` vlastnost a zkopíruje text titulku do zobrazení odkazuje držitele zobrazení `Caption` vlastnost. To *váže* přidružené zobrazení s jeho data.
+Držitel objekt předaný v zobrazení musí být nejprve přetypovat na typ držitel odvozené zobrazení (v tomto případě `PhotoViewHolder`) předtím, než je použit.
+Adaptér načte prostředek obrázku do zobrazení odkazuje zobrazení držitele `Image` vlastnost a zkopíruje text titulku do zobrazení odkazuje zobrazení držitele `Caption` vlastnost. To *váže* zobrazení související s daty.
 
-Všimněte si, že `OnBindViewHolder` je kód, který se zabývá strukturu dat. V takovém případě `OnBindViewHolder` rozumí mapování `RecyclerView` položka pozice k jeho položka přidružená data v datovém zdroji. Mapování je přehledné v tomto případě protože pozice lze použít jako index pole do fotoalba; složitější zdroje dat však může vyžadovat další kód k vytvoření takové mapování.
+Všimněte si, že `OnBindViewHolder` je kód, který se zabývá strukturu dat. V takovém případě `OnBindViewHolder` rozumí jak namapovat `RecyclerView` pozicí a její přidružená data položky ve zdroji dat. položky. Mapování je jednoduché v tomto případě protože pozice lze použít jako index pole do fotoalba; však mnohem složitější zdroje dat může vyžadovat další kód k vytvoření takové mapování.
 
 
-#### <a name="itemcount"></a>ItemCount
+#### <a name="itemcount"></a>Vlastnost ItemCount
 
-`ItemCount` Metoda vrátí počet položek v kolekci data. Počet položek v aplikaci Prohlížeč fotografií příklad je počet fotografií v alba fotografií:
+`ItemCount` Metoda vrací počet položek v kolekci data. Počet položek v aplikaci Prohlížeč fotografii příklad, je počet fotografií v fotoalbu:
 
 ```csharp
 public override int ItemCount
@@ -278,12 +278,12 @@ public override int ItemCount
 }
 ```
 
-Další informace o `RecyclerView.Adapter`, najdete v článku [referenci třídy RecyclerView.Adapter](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.Adapter.html).
+Další informace o `RecyclerView.Adapter`, najdete v článku [referenční třída RecyclerView.Adapter](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.Adapter.html).
 
 
 ### <a name="putting-it-all-together"></a>Jeho uvedení společně všechny
 
-Výsledná `RecyclerView` implementace příklad fotografií aplikace se skládá z `MainActivity` kód, který vytvoří zdroj dat, Správce rozložení a adaptéru. `MainActivity` vytvoří `mRecyclerView` instance, vytvoří zdroj dat a adaptérem a připojí manager rozložení a adaptér:
+Výsledná `RecyclerView` implementaci pro ukázkovou aplikaci fotografie se skládá z `MainActivity` kód, který vytvoří zdroj dat a rozložení správce adaptéru. `MainActivity` vytvoří `mRecyclerView` instance, vytvoří instanci zdroje dat a adaptéru a zpřístupní v rámci Správce rozložení a adaptéru:
 
 ```csharp
 public class MainActivity : Activity
@@ -329,7 +329,7 @@ public class PhotoViewHolder : RecyclerView.ViewHolder
 }
 ```
 
-`PhotoAlbumAdapter` implementuje tři požadovaná metoda přepsání:
+`PhotoAlbumAdapter` implementuje tři přepsání požadovanou metodu:
 
 ```csharp
 public class PhotoAlbumAdapter : RecyclerView.Adapter
@@ -364,29 +364,29 @@ public class PhotoAlbumAdapter : RecyclerView.Adapter
 }
 ```
 
-Když tento kód kompiluje a spustit, vytvoří základní fotografie zobrazení aplikací, jak je vidět na následujících snímcích obrazovky:
+Když tento kód je zkompilován a spustíte, vytvoří základní fotografií zobrazení aplikace, jak je znázorněno na následujících snímcích obrazovky:
 
-[![Dva snímky obrazovky fotografií zobrazení aplikace pomocí svisle posouvání fotografií karty](recyclerview-example-images/03-recyclerviewer-basic-sml.png)](recyclerview-example-images/03-recyclerviewer-basic.png#lightbox)
+[![Dvěma snímky obrazovky fotky zobrazení aplikace s svisle posuvného fotografii karty](recyclerview-example-images/03-recyclerviewer-basic-sml.png)](recyclerview-example-images/03-recyclerviewer-basic.png#lightbox)
 
-Tato základní aplikace podporuje pouze procházení alba fotografií. Neodpovídá na položku touch události, ani nebude zpracovat změny v základních datech. Tato funkce je přidaný do [rozšíření příklad RecyclerView](~/android/user-interface/layouts/recycler-view/extending-the-example.md).
+Tato základní aplikace podporuje pouze procházení alba fotografií. Neodpovídá na dotykem položky události, ani nemá zpracovat změny v podkladových datech. Tato funkce je přidána do [rozšíření příklad RecyclerView](~/android/user-interface/layouts/recycler-view/extending-the-example.md).
 
 
 ### <a name="changing-the-layoutmanager"></a>Změna LayoutManager
 
-Z důvodu `RecyclerView`na flexibilitu, je snadné upravit aplikaci, aby používala jiné rozložení správce. V následujícím příkladu se upravují zobrazíte alba fotografií s rozložení mřížky, který se posouvá vodorovně, a nikoli s svislé lineární rozložení. K tomu je instance manager rozložení upravit tak, aby použít `GridLayoutManager` následujícím způsobem:
+Z důvodu `RecyclerView`vaší flexibilitu, jde snadno upravit aplikaci, aby používala jiné rozložení správce. V následujícím příkladu to je upravené pro zobrazit fotoalba s rozložením mřížky, umožňuje posouvání vodorovně, a nikoli s lineární svislé rozložení. K tomuto účelu instance Správce rozložení vedla k použití `GridLayoutManager` následujícím způsobem:
 
 ```csharp
 mLayoutManager = new GridLayoutManager(this, 2, GridLayoutManager.Horizontal, false);
 ```
 
-Tato změna kódu nahrazuje svislice `LinearLayoutManager` s `GridLayoutManager` , uvede mřížka tvořen dvěma řádky, které přejděte ve vodorovném směru. Při kompilování a znovu spusťte aplikaci, dozvíte se, že fotografie se zobrazují v mřížce a že posouvání je vodorovné spíše než svislé:
+Tato změna kódu nahradí svislé `LinearLayoutManager` s `GridLayoutManager` , který představuje mřížky tvořené dvěma řádky, které umožňují ve vodorovném směru. Když kompilujete a znovu spusťte aplikaci, uvidíte, že fotografie se zobrazí v mřížce a posouvání vodorovné spíše než svislé je, že:
 
-[![Příklad snímek obrazovky aplikace s fotografiemi vodorovně posouvání v mřížce](recyclerview-example-images/04-gridlayoutmanager-sml.png)](recyclerview-example-images/04-gridlayoutmanager.png#lightbox)
+[![Příklad snímek obrazovky aplikace s horizontálně posouvání fotky do mřížky](recyclerview-example-images/04-gridlayoutmanager-sml.png)](recyclerview-example-images/04-gridlayoutmanager.png#lightbox)
 
-Změnou pouze jeden řádek kódu je lze změnit zobrazení fotografií aplikaci, aby používala jiné rozložení s jiným chováním.
-Všimněte si, že kód adaptér ani rozložení XML museli upravit tak, aby změna stylu rozložení. 
+Je tak, že změníte pouze jeden řádek kódu, je možné změnit zobrazení fotografií aplikaci, aby používala jiné rozložení s různé chování.
+Všimněte si, že kód adaptér ani rozložení XML měli upravit tak, aby změnit styl rozložení. 
 
-V dalším tématu [rozšíření příklad RecyclerView](~/android/user-interface/layouts/recycler-view/extending-the-example.md), tento základní ukázkové aplikace je rozšířený a zpracování události kliknutí na položku Aktualizovat `RecyclerView` při změně zdroje v základních datech.
+V dalším tématu [rozšíření příklad RecyclerView](~/android/user-interface/layouts/recycler-view/extending-the-example.md), tato základní ukázková aplikace je rozšířená zpracovávat události kliknutí na položku a aktualizovat `RecyclerView` při změně zdroje podkladová data.
 
 
 
@@ -394,6 +394,6 @@ V dalším tématu [rozšíření příklad RecyclerView](~/android/user-interfa
 
 - [RecyclerViewer (ukázka)](https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer)
 - [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md)
-- [RecyclerView částí a funkce](~/android/user-interface/layouts/recycler-view/parts-and-functionality.md)
-- [Příklad RecyclerView rozšíření](~/android/user-interface/layouts/recycler-view/extending-the-example.md)
+- [RecyclerView části a funkce](~/android/user-interface/layouts/recycler-view/parts-and-functionality.md)
+- [Rozšíření příklad RecyclerView](~/android/user-interface/layouts/recycler-view/extending-the-example.md)
 - [RecyclerView](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.html)
