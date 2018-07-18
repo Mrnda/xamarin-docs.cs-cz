@@ -1,98 +1,145 @@
 ---
-title: Volné zřizování pro aplikace pro Xamarin.iOS
-description: Tento dokument popisuje, jak mohou vývojáři Xamarin.iOS testovat svou aplikaci na fyzické zařízení bez nutnosti zaregistrovat placené programu pro vývojáře Apple.
+title: Bezplatné zřizování pro aplikace Xamarin.iOS
+description: Tento dokument popisuje, jak mohou vývojáři Xamarin.iOS testovat své aplikace na fyzickém zařízení bez nutnosti registrace pro placené programu pro vývojáře společnosti Apple.
 ms.prod: xamarin
 ms.assetid: A5CE2ECF-8057-49ED-8393-EB0C5977FE4C
 ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
-ms.date: 03/19/2017
-ms.openlocfilehash: 623f79f482170c6b1d8ecdb642afb2fc7acf061d
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 07/16/2018
+ms.openlocfilehash: 22ac17e211562eccbc49cc213e06079e77dd08c0
+ms.sourcegitcommit: e98a9ce8b716796f15de7cec8c9465c4b6bb2997
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786019"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39111154"
 ---
-# <a name="free-provisioning-for-xamarinios-apps"></a>Volné zřizování pro aplikace pro Xamarin.iOS
+# <a name="free-provisioning-for-xamarinios-apps"></a>Bezplatné zřizování pro aplikace Xamarin.iOS
 
-_Verze společnosti Apple Xcode 7 pocházejí důležité změně pro všechny iOS a Mac vývojáři: Uvolněte zřizování._
+Bezplatné zřizování umožňuje vývojářům Xamarin.iOS pro nasazování a testování své aplikace na zařízení s Iosem **bez** se zapojil **Apple Developer Program**.
+Při testování simulátor cenných a pohodlné, je také nezbytné pro testování aplikací na zařízeních s Iosem fyzický k ověření, že fungují správně v nabídce skutečná paměť, úložiště a omezení připojení k síti.
 
-Volné zřizování umožňuje vývojářům k nasazení své aplikace pro Xamarin.iOS na svém zařízení s iOS **bez** stal součástí žádné **programu pro vývojáře Apple**. To je velmi výhodné pro vývojáře, jako testování na zařízení testování v simulátoru, včetně, ale bez omezení na paměti, úložiště, připojení k síti, mimo jiné umožňuje řadu výhod.
+Nasazení aplikace do zařízení pomocí bezplatné zřizování:
 
-Zřizování bez vývojáře Apple účet se musí provádět prostřednictvím Xcode, která vytvoří *identitu podepisování* (obsahující privátní klíč a certifikátu vývojáře) a *profil zřizování* () obsahující explicitní ID aplikace a UDID vašeho zařízení připojených iOS).
+- Pomocí Xcode vytvořte nezbytné *Podpisová identita* (developer certifikát a privátní klíč) a *zřizovací profil* (který obsahuje explicitní ID aplikace a UDID připojené zařízení s iOS).
+- Při nasazování aplikace Xamarin.iOS pomocí podpisovou identitu a zřizovací profil se vytvořil pomocí Xcode v sadě Visual Studio pro Mac nebo Visual Studio 2017.
+
+> [!IMPORTANT]
+> [Automatické zřizování](~/ios/get-started/installation/device-provisioning/automatic-provisioning.md) umožňuje sadě Visual Studio for Mac nebo Visual Studio 2017 automaticky nastavit zařízení pro testování vývojářem. Ale automatické zřizování není kompatibilní s bezplatné zřizování. Chcete-li použít automatické zřizování, musí mít placený účet Apple Developer Program.
 
 ## <a name="requirements"></a>Požadavky
 
-Pokud chcete využít výhod nasazení vaší Xamarin.iOS musí aplikace na zařízení s bezplatnou zřizování pomocí Xcode 7 nebo novější.
+Nasazení vaší aplikace Xamarin.iOS na zařízení s bezplatné zřizování:
 
-**Apple ID, které používá nesmí být připojen k žádné programu pro vývojáře Apple.**
+- Apple ID, které se používají nesmí být připojené k programu pro vývojáře Apple.
+- Aplikace Xamarin.iOS musíte použít explicitní ID aplikace, není zástupný znak ID aplikace.
+- Identifikátor sady prostředků používaných v aplikaci Xamarin.iOS musí být jedinečný a nedá se používají v jiné aplikaci dříve. Libovolný identifikátor sady prostředků používá bezplatné zřizování **nelze** znovu použít.
+- Pokud již distribuované aplikace se nedají nasadit tuto aplikaci bezplatné zřizování.
+- Pokud vaše aplikace používá App Services, budete muset vytvořit zřizovací profil, jak je uvedeno v [zřizování zařízení](~/ios/get-started/installation/device-provisioning/index.md#appservices) průvodce. 
 
-Číslo ID sady použité v aplikaci musí být jedinečný a nemůže byly použity v jiné aplikaci dříve. Žádné ID sady použité s bezplatnou zřizování můžete není znovu použít znovu. Pokud již jste distribuovali aplikace, nejde zřídit aplikaci s bezplatnou zřizování. 
+Podívejte se na [omezení](#limitations) část tohoto dokumentu pro další informace o omezeních přidružené k bezplatné zřizování a odkazovat [Průvodce distribuce aplikací](~/ios/deploy-test/app-distribution/index.md) Další informace o distribuce aplikací pro iOS.
 
-Odkazovat [provede distribuci aplikací](~/ios/deploy-test/app-distribution/index.md) Další informace.
+## <a name="testing-on-device-with-free-provisioning"></a>Testování na zařízení s bezplatné zřizování
 
-Pokud vaše aplikace používá aplikační služby, pak budete muset vytvořit profil pro zřizování podle popisu v [zřizování zařízení](~/ios/get-started/installation/device-provisioning/index.md#appservices) průvodce. Se zobrazí další omezení [odpovídající část](#limitations) níže.
+Postupujte podle následujících kroků pro testování vaší aplikace Xamarin.iOS pomocí bezplatné zřizování.
 
+### <a name="use-xcode-to-create-a-signing-identity-and-provisioning-profile"></a>Pomocí Xcode můžete vytvořit podpisovou identitu a zřizovací profil
 
-## <a name="a-namelaunching--launching-your-app"></a><a name="launching" /> Spuštění aplikace
+1. Pokud nemáte Apple ID, [vytvořit](https://appleid.apple.com).
+2. Xcode otevřete a přejděte do **Xcode > Předvolby**.
+3. V části **účty**, použijte **+** tlačítko můžete přidat existující Apple ID. By měla vypadat podobně jako na následujícím snímku obrazovky:
 
-Při použití volné zřizování pro nasazení aplikace do zařízení se pomocí Xcode vytvořte podpisovou identitu a zřizovacích profilů a pak bude používat Visual Studio pro Mac nebo Visual Studio vyberte správný profil k podepsání vaší aplikace s. Postupujte podle podrobný návod k tomu následující:
+    ![Předvolby Xcode – účty](free-provisioning-images/launchapp1.png "předvolby Xcode – účty")
 
-1. Pokud nemáte Apple ID, vytvořit na [appleid.apple.com](https://appleid.apple.com/account).
-2. Otevřete Xcode a přejděte do **Xcode > Předvolby**.
-3. V části **účty**, použijte **+** tlačítko Přidat existující ID Apple. By měl vypadat podobně jako tento snímek obrazovky:
+4. Zavřít předvolby Xcode.
+5. Připojte zařízení s Iosem, ke které chcete nasadit vaši aplikaci.
+6. V prostředí Xcode vytvořte nový projekt. Zvolte **soubor > Nový > projekt** a vyberte **aplikace s jedním zobrazením**.
+7. V dialogovém okně Nový projekt, nastavte **týmu** Apple ID, který jste právě přidali. V rozevíracím seznamu by měla vypadat podobně jako **svůj název (osobní týmu)**:
 
-  [![](free-provisioning-images/launchapp1.png "Xcode předvolby účty")](free-provisioning-images/launchapp1.png#lightbox)
+    ![Vytvořit novou aplikaci](free-provisioning-images/launchapp2.png "vytvoření nové aplikace")
 
-4. Připojte zařízení iOS, které chcete nasadit do a vytvořte nový projekt iOS prázdné zobrazení jedním v Xcode. Nastavte **Team** rozevírací seznam pro Apple ID, který jste právě přidali. Musí být v podobném formátu `your name (Personal Team - your Apple ID)`:
+8. Po vytvoření nového projektu, vyberte schéma sestavení Xcode, který cílí na zařízení s Iosem (a ne simulátor).
 
-  [![](free-provisioning-images/launchapp2.png "Vytvořit identitu podepisování")](free-provisioning-images/launchapp2.png#lightbox)
+    ![Vyberte schéma sestavení Xcode](free-provisioning-images/xcodescheme.png "vyberte schéma sestavení Xcode")
 
-5. V části **Obecné > Identity** Ujistěte se, že identifikátor balíčku shoduje _přesně_ identifikátor balíku aplikace Xamarin.iOS a ujistěte se, cíl nasazení odpovídá nebo je nižší než zařízení s iOS připojené. Tento krok je velmi důležité, protože Xcode pouze vytvoří profil pro zřizování s explicitní ID aplikace:
+9. Otevřete nastavení projektu vaší aplikace tak, že vyberete jeho uzel nejvyšší úrovně v Xcode **navigátoru projektů**.
+10. V části **Obecné > Identity**, ujistěte se, že **identifikátor sady prostředků** _přesně odpovídá_ identifikátor sady prostředků aplikace Xamarin.iOS.
 
-  [![](free-provisioning-images/launchapp5.png "Vytvořit profil pro zřizování s explicitní ID aplikace")](free-provisioning-images/launchapp5.png#lightbox)
+    ![Identifikátor sady prostředků nastavení](free-provisioning-images/launchapp5.png "nastavení identifikátoru sady prostředků")
 
-6. V části podpisování vyberte **automaticky spravovat podepisování** a z rozevíracího seznamu vyberte váš tým:
+    > [!IMPORTANT]
+    > Xcode pouze vytvoření zřizovacího profilu pro explicitní ID aplikace a musí být stejné jako ID aplikace z aplikace Xamarin.iOS.
+    > Pokud se liší, nebude možné používat bezplatné zřizování k nasazení aplikace Xamarin.iOS.
 
-  [![](free-provisioning-images/launchapp6.png "Vyberte automaticky spravovat podepisování a z rozevíracího seznamu vyberte váš tým")](free-provisioning-images/launchapp6.png#lightbox)
+11. V části **informace o nasazení**, zkontrolujte, že cíl nasazení odpovídá nebo je nižší než verze iOS nainstalovaný na zařízení s Iosem připojené.
+12. V části **podepisování**vyberte **automaticky spravovat podepisování** a z rozevíracího seznamu vyberte váš tým:
 
-7. V předchozím kroku automaticky generovat zřizovací profil a podpisové identity pro vás. To můžete zobrazit kliknutím na ikonu informace vedle profilu pro zřizování:
+    ![Automaticky spravovat podepisování](free-provisioning-images/launchapp6.png "automaticky spravovat podepisování")
 
-  [![](free-provisioning-images/launchapp7.png "Zobrazení profilu pro zřizování")](free-provisioning-images/launchapp7.png#lightbox)
+    Xcode automaticky vygenerovat zřizovací profil a podpisovou identitu za vás. To můžete zobrazit kliknutím na ikonu informace vedle zřizovací profil:
 
-8. K testování v Xcode, nasazení prázdné aplikace na zařízení kliknutím na tlačítko spustit.
+    ![Zobrazit profil zřizování](free-provisioning-images/launchapp7.png "zobrazit zřizovací profil")
 
-9. Vraťte se do integrovaného vývojového prostředí, se stejným zařízením napájen ze sítě a klikněte pravým tlačítkem na název projektu Xamarin.iOS otevřete **možnosti projektu** dialogové okno. Přejděte do části podepisování sady iOS a explicitně nastavit podepisování identity a profil pro zřizování:
+    > [!TIP]
+    > Pokud dojde k selhání, když Xcode se pokusí vygenerovat zřizovacího profilu, zkontrolujte, zda že tento Xcode aktuálně vybrané sestavení schéma, zaměřuje připojené zařízení s iOS, ne simulátor.
 
-  [![](free-provisioning-images/launchapp8.png "Nastavte podepisování identity a profil pro zřizování")](free-provisioning-images/launchapp8.png#lightbox)
+13. Testování v Xcode, nasazení prázdné aplikace do zařízení kliknutím na tlačítko pro spuštění.
 
-Pokud nevidíte podpisové identity nebo správný profil zřizování ve vašem IDE, musíte jej restartovat.
+### <a name="deploy-your-xamarinios-app"></a>Nasazení aplikace Xamarin.iOS
 
+# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-## <a name="a-namelimitations-limitations"></a><a name="limitations" />Omezení
+1. Připojit zařízení s Iosem k hostiteli buildu Mac přes USB nebo [bezdrátově](~/ios/deploy-test/wireless-deployment.md).
+2. V sadě Visual Studio pro Mac **oblasti řešení**, dvakrát klikněte na **Info.plist**.
+3. V **podepisování**vyberte **ručního zřizování**.
+4. Klikněte na tlačítko **podepsání sady prostředků aplikace pro iOS...** tlačítko.
+5. Pro **konfigurace**vyberte **ladění**.
+6. Pro **platformy**vyberte **iPhone**.
+7. Vyberte **Podpisová identita** vytvořili pomocí Xcode.
+8. Vyberte **zřizovací profil** vytvořili pomocí Xcode.
 
-Apple uložila počet omezení kdy a jak můžete použít bezplatné zřizování spusťte aplikaci na zařízení s iOS, zajistíte, že lze nasadit pouze do *vaše* zařízení. Tyto podmínky jsou uvedeny v této části.
+    ![Nastavte podpisovou identitu a zřizovací profil](free-provisioning-images/launchapp8.png "nastavit podpisovou identitu a zřizovací profil")
 
-Přístup k iTunes Connect je omezená a proto službami, jako je publikování do obchodu s aplikacemi a TestFlight nejsou k dispozici pro vývojáře volně zřizování svých aplikací. Je potřeba distribuovat přes Ad Hoc a interní znamená účet Apple Developer (Enterprise nebo osobní).
+    > [!TIP]
+    > Pokud nevidíte podpisové identity nebo správný zřizovacího profilu, budete muset restartovat Visual Studio pro Mac.
 
-Profily vytvořené v tomto případě zřizování skončí za jeden týden, podepisování identity po jednom roce. Kromě toho profily zřizování pouze se vytvoří pomocí explicitní ID aplikace a proto je třeba postupovat podle pokynů [výše](#launching) pro každou aplikaci, kterou chcete nainstalovat.
+9. Klikněte na tlačítko **OK** uložte a zavřete **možnosti projektu**.
+10. Vyberte zařízení s Iosem a spuštění aplikace.
 
-Zřizování pro většinu aplikační služby není také možné pomocí volné zřizování. Sem patří:
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-- Platím Apple
-- Herní Centrum
-- Icloudu
-- V aplikaci nákupu
-- Nabízená oznámení
-- Peněženka (byl Passbook.)
+1. Ujistěte se, že Visual Studio 2017 byla [spárované k hostiteli buildu Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
+2. Připojit zařízení s Iosem k hostiteli buildu Mac přes USB nebo [bezdrátově](~/ios/deploy-test/wireless-deployment.md).
+3. Visual Studio 2017 **Průzkumníka řešení**, klikněte pravým tlačítkem na projekt Xamarin.iOS a vyberte **vlastnosti**.
+4. Přejděte do **podepsání sady prostředků aplikace pro iOS**.
+5. Pro **konfigurace**vyberte **ladění**.
+6. Pro **platformy**vyberte **iPhone**.
+7. Vyberte **ruční zřizování**.
+8. Vyberte **Podpisová identita** vytvořili pomocí Xcode.
+9. Vyberte **zřizovací profil** vytvořili pomocí Xcode.
+    
+    ![Nastavte podpisovou identitu a zřizovací profil](free-provisioning-images/setprofile-w157.png "nastavit podpisovou identitu a zřizovací profil")
 
-Úplný seznam je poskytovaných společností Apple v jejich [podporované možnosti](https://developer.apple.com/library/prerelease/ios/documentation/IDEs/Conceptual/AppDistributionGuide/SupportedCapabilities/SupportedCapabilities.html#//apple_ref/doc/uid/TP40012582-CH38-SW1) průvodce. Zřídit aplikace pro použití s aplikačními službami, najdete [práce s možností](~/ios/deploy-test/provisioning/capabilities/index.md) příručky.
+    > [!TIP]
+    > Xcode vytvoří tento podpisovou identitu a zřizovací profil a uložené na hostiteli buildu Mac se vaše. Soubory byly přístupné pro Visual Studio 2017, protože byl [spárované](~/ios/get-started/installation/windows/connecting-to-mac/index.md) k hostiteli buildu Mac. Pokud nejsou uvedené, budete muset restartovat Visual Studio 2017.
 
+10. Uložte a zavřete dialogové okno Vlastnosti projektu.
+11. Vyberte zařízení s Iosem a spuštění aplikace.
+
+-----
+
+## <a name="limitations"></a>Omezení
+
+Apple uložila několik omezení na kdy a jak vám pomůže bezplatné zřizování spouštět svoje aplikace na zařízení s Iosem, zajištění, že je lze nasadit pouze do *vaše* zařízení:
+
+- Přístup do služby iTunes Connect je omezená a proto službami, jako je publikování pro App Store a testovacího prostředí nejsou k dispozici pro vývojáře volně zřizování svých aplikací. Účet Apple Developer (firemní nebo osobní) je nutné distribuovat přes Ad Hoc a interní prostředky.
+- Zřizovací profily vytvořené pomocí bezplatné zřizování platnost vyprší po jeden týden a podpisové identity vyprší po jednom roce. 
+- Protože Xcode vytvoří jenom zřizovací profily pro explicitní ID aplikace, které musí použít [výše uvedené pokyny](#testing-on-device-with-free-provisioning) pro každou aplikaci, kterou chcete nainstalovat.
+- Zřizování pro většinu aplikační služby není možné bezplatné zřizování. To zahrnuje oprávnění Apple Pay, Game Center, Icloudu, nákupy v aplikaci, nabízená oznámení a peněženky. Úplný seznam možností, které poskytuje Apple [podporované schopnosti (iOS)](https://help.apple.com/developer-account/#/dev21218dfd6) průvodce. Zřídit aplikace pro použití s aplikačními službami, najdete v tématu [práce s funkcemi](~/ios/deploy-test/provisioning/capabilities/index.md) vodítka.
 
 ## <a name="summary"></a>Souhrn
 
-Tato příručka obsahuje prozkoumali výhody a omezení použití volné zřizování k instalaci aplikací na zařízení s iOS. Také byl spojen, krok za krokem, instalace aplikace Xamarin.iOS pomocí volné zřizování.
+Tato příručka prozkoumat výhody a omezení pro instalaci aplikace na zařízení s iOS pomocí bezplatné zřizování. To poskytuje podrobný návod, který jsme vám ukázali, jak nainstalovat aplikaci Xamarin.iOS pomocí bezplatné zřizování.
 
 ## <a name="related-links"></a>Související odkazy
 

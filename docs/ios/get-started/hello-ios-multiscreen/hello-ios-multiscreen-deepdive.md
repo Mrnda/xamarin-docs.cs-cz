@@ -1,6 +1,6 @@
 ---
-title: Hello, iOS Multiscreen – podrobné informace
-description: Tento dokument se hlubší podíváme na rozšířené Phoneword aplikace, další zvažování model-view-controller, navigace iOS a dalších konceptech vývoj pro iOS.
+title: Hello, iOS s více obrazovkami – podrobně
+description: Tento dokument se podíváme podrobněji na rozbalené aplikace Phoneword, další vzhledem k tomu, model-view-controller, iOS navigace a dalších konceptech vývoj pro iOS.
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: c866e5f4-8154-4342-876e-efa0693d66f5
@@ -8,117 +8,112 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 12/02/2016
-ms.openlocfilehash: cdeea6d78ec1262a0b5b613b4f483012c9df2c19
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: eaf77dd68895a3fbf677e1d0aa68125d81d709c1
+ms.sourcegitcommit: e98a9ce8b716796f15de7cec8c9465c4b6bb2997
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785655"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39111222"
 ---
-# <a name="hello-ios-multiscreen--deep-dive"></a>Hello, iOS Multiscreen – podrobné informace
+# <a name="hello-ios-multiscreen--deep-dive"></a>Hello, iOS s více obrazovkami – podrobně
 
-V tomto návodu rychlý start jsme vytvořené a spustil první aplikace Xamarin.iOS více obrazovky. Nyní je čas k vývoji lépe pochopili, architektura a iOS navigace.
+V tomto rychlém startu návodu jsme vytvořené a spustili naši první aplikace pro Xamarin.iOS více obrazovkami. Nyní je doba k rozvoji lepší představu o iOS navigace a architektury.
 
-V této příručce zavedeme *Model, zobrazení, Controller (MVC)* vzor a její role v iOS architektura a navigace.
-Pak podrobně řadičem navigační a zjistěte, jak lze použít k zajištění známý navigační prostředí v iOS.
+V této příručce zavedeme *Model, zobrazení, Controller (MVC)* vzor a jejich rolí v iOS architektury a navigace.
+Pak podrobně kontroler navigace a zjistěte, jak ho použít k poskytnutí známých navigaci v iOS.
 
 <a name="Model_View_Controller" />
 
-## <a name="model-view-controller-mvc"></a>Model View Controller (MVC)
+## <a name="model-view-controller-mvc"></a>Model-View-Controller (MVC)
 
-V [Hello, iOS](~/ios/get-started/hello-ios/index.md) kurzu jste se dozvěděli, že aplikace pro iOS mají jenom jednu *okno* který řadiče zobrazení se staráte o načtení jejich *obsahu zobrazení hierarchie* do Okno. V druhé návodu Phoneword jsme přidali druhý obrazovky pro naši aplikaci a předán – seznam telefonních čísel – některá data mezi dvěma obrazovky, které jsou popsány v následujícím diagramu:
+V [Hello, iOS](~/ios/get-started/hello-ios/index.md) kurzu jsme zjistili, že aplikace pro iOS mají pouze jednu *okno* , Kontrolery zobrazení se staráte o načtení jejich *obsahu zobrazení hierarchie* do v okně. V druhém Phoneword návodu jsme přidané do naší aplikace druhou obrazovku a předané – seznam telefonních čísel – některá data mezi dvěma obrazovkami, jak je znázorněno v následujícím diagramu:
 
- [![](hello-ios-multiscreen-deepdive-images/08.png "Tento diagram znázorňuje předávání dat mezi dvěma obrazovky")](hello-ios-multiscreen-deepdive-images/08.png#lightbox)
+ [![](hello-ios-multiscreen-deepdive-images/08.png "Tento diagram znázorňuje předávání dat mezi dvěma obrazovkami")](hello-ios-multiscreen-deepdive-images/08.png#lightbox)
 
-V našem příkladu nebyla shromážděna data na první obrazovce předat z prvního řadiče zobrazení na druhý a ve druhé obrazovce zobrazí. Toto rozdělení obrazovky, řadiče zobrazení a dat odpovídá *Model, zobrazení, Controller (MVC)* vzor. V následujících částech několik probereme výhod vzoru, jeho komponenty a způsob jejich použití v naší aplikaci Phoneword.
+V našem příkladu byla data shromážděna na první obrazovce předat z prvního řadiče zobrazení na sekundy a ve druhé obrazovce zobrazí. Následuje toto oddělení obrazovek, Kontrolery zobrazení a data *Model, zobrazení, Controller (MVC)* vzor. V následujících částech si podrobně probereme výhody vzor, jeho komponenty a jak ho použít v naší aplikaci Phoneword.
 
-### <a name="benefits-of-the-mvc-pattern"></a>Výhody vzor MVC
+### <a name="benefits-of-the-mvc-pattern"></a>Výhody vzoru MVC
 
-Je model-View-Controller *vzoru návrhu* – opakovaně použitelné architektury řešení běžných problémů nebo použijte případu v kódu. MVC je architekturu pro aplikace s *grafické uživatelské rozhraní (GUI)*. Přiřadí objekty v aplikaci, jednu ze tří rolí - *modelu* (dat nebo aplikaci logiky), *zobrazení* (uživatelské rozhraní) a *řadiče* (kódu na pozadí). Následující obrázek znázorňuje vztahy mezi tři údaje vzor MVC a uživatele:
+Je model-View-Controller *vzoru návrhu* – opakovaně použitelné architektury řešení pro běžné potíže nebo použití případu v kódu. Je pro aplikace využívající architekturu MVC *grafické uživatelské rozhraní (GUI)*. Přiřadí objekty v aplikaci jednu ze tří rolí – *modelu* (data nebo aplikaci logiky), *zobrazení* (uživatelské rozhraní) a *řadič* (kódu na pozadí). Následující diagram znázorňuje vztahy mezi tři údaje vzor MVC a uživatel:
 
  [![](hello-ios-multiscreen-deepdive-images/00.png "Tento diagram znázorňuje vztahy mezi tři údaje vzor MVC a uživatele")](hello-ios-multiscreen-deepdive-images/00.png#lightbox)
 
-Vzor MVC je užitečné, protože poskytuje logického oddělení mezi různými částmi aplikace grafickým uživatelským rozhraním a je jednodušší, abychom mohli znovu použít kódu a zobrazení. Umožňuje přejít v a podívejte se na všech tří rolí podrobněji.
+Vzor MVC je užitečné, protože logické oddělit různé části aplikace s grafickým uživatelským rozhraním a usnadňuje nám opětovné použití kódu a zobrazení. Teď přidejte se k nám a podívejte se na všechny tři role podrobněji.
 
 > [!NOTE]
-> Vzor MVC je volně podobná struktury stránek ASP.NET nebo aplikace WPF. Zobrazení v těchto příkladech je součást, která je ve skutečnosti zodpovědná za popisující uživatelského rozhraní a odpovídá stránky ASPX (HTML) technologie ASP.NET nebo XAML v aplikaci WPF. Řadičem je součást, která je zodpovědná za správu zobrazení, která odpovídá kódu ASP.NET nebo WPF.
-
+> Vzor MVC je volně obdobná struktury stránky technologie ASP.NET nebo aplikací WPF. Zobrazení v těchto příkladech je komponenta, která ve skutečnosti zodpovídá za popisující uživatelského rozhraní a odpovídá na stránku ASPX (HTML) v technologii ASP.NET nebo XAML v aplikaci WPF. Kontroler je komponenta, která zodpovídá za správu zobrazení, která odpovídá kódu v ASP.NET nebo WPF.
 
 ### <a name="model"></a>Model
 
-Objekt modelu je obvykle reprezentaci specifické pro aplikaci dat, která je zobrazit nebo zadat do zobrazení. Model se často volně definované – například v našem **Phoneword_iOS** aplikace, seznam telefonních čísel (vyjádřený jako seznam řetězců) je Model. Pokud jsme byly vytvoření aplikace a platformy, jsme může zvolit, aby **PhonewordTranslator** kód mezi naše aplikace pro iOS a Android. Tento sdílený kód jsme může považovat za také modelu.
+Objekt modelu je obvykle specifické pro aplikaci reprezentace dat, která se má zobrazit nebo zadat do zobrazení. Model se často volně definován – například v našem **Phoneword_iOS** modelu je aplikace, seznam telefonních čísel (reprezentovány jako seznam řetězců). Pokud jsme bylo vytváření aplikací napříč platformami, může zvolíme sdílet **PhonewordTranslator** kód mezi naše aplikace pro iOS a Android. Tento sdílený kód jsme může považovat za i modelu.
 
-MVC je zcela lhostejné z *trvalosti dat* a *přístup* modelu. Jinými slovy, MVC není pro vás co naše data vypadá jako a uložení způsob, jak dat je pouze *reprezentované*. Například můžeme může zvolit k uložení našich dat v databázi SQL, nebo zachovat v některé cloudové úložiště mechanismus nebo jednoduše použijte `List<string>`. Pro účely MVC pouze znázornění dat samotné je součástí vzoru.
+MVC je zcela závislé *trvalost dat* a *přístup* modelu. Jinými slovy, MVC není pro vás co naše data vypadá podobně jako nebo jak je uložen, jak se data jen *reprezentované*. Například může zvolíme ukládat naše data ve službě SQL database, nebo zachovat v některé mechanismus úložiště cloudu nebo jednoduše použít `List<string>`. Pro účely MVC pouze reprezentace dat, samotný součástí vzor.
 
-V některých případech může být část modelu MVC prázdný. Například může vybereme možnost přidat některé statické stránky do vaší aplikace vysvětlením fungování překladač telefon, proč jsme vytvořili a jak můžeme kontaktovat nás na zprávu chyby. Tyto aplikace obrazovky by vytvořily stále pomocí zobrazeních a řadičích, ale nebude mít žádná skutečná data modelu.
+V některých případech může být část modelu MVC prázdný. Například můžeme rozhodnout přidat některé statických stránek do naší aplikace s vysvětlením fungování translator telefon, proč jsme vytvořili a jak nás kontaktovali pro ohlašování chyb. Tyto obrazovky aplikace by stále se vytvořily pomocí zobrazení a Kontrolery, ale nebude mít žádná skutečná data modelu.
 
 > [!NOTE]
-> V některé dokumentaci najdete části modelu vzor MVC celá aplikace back-end, ne jenom data, která se zobrazí v Uživatelském rozhraní. V této příručce použijeme moderní výklad modelu, ale rozdíl není zvlášť důležité.
-
+> Model část vzor MVC najdete v některé dokumentaci celé aplikace back-endu, ne jenom data, která se zobrazí v Uživatelském rozhraní. V této příručce používáme moderní výklad modelu, ale není zvlášť důležité rozlišení.
 
 ### <a name="view"></a>Zobrazit
 
-Zobrazení je součást, který je zodpovědný za generování uživatelského rozhraní. V téměř všech platformách, které používají vzor MVC uživatelské rozhraní se skládá z hierarchie zobrazení. Jsme si můžete představit zobrazení v rozhraní MVC jako zobrazení hierarchie s jedním zobrazením – označuje jako kořenové zobrazení – na nejvyšší úrovni hierarchie a libovolný počet podřízené zobrazení (označované jako nebo dílčích zobrazení) pod ním. Na obrazovce obsahu zobrazení hierarchie v iOS, odpovídá komponentu zobrazení v rozhraní MVC.
+Zobrazení je komponenta, která odpovídá pro vykreslení uživatelského rozhraní. V téměř všech platformách, které používají vzor MVC uživatelské rozhraní se skládá z hierarchie zobrazení. Zobrazení v aplikaci MVC jsme můžete představit jako hierarchii zobrazení s jedním zobrazením – označované jako kořenový zobrazení – na nejvyšší úrovni hierarchie a libovolný počet podřízených zobrazení (označované jako nebo dílčích zobrazení) pod ní. V Iosu zobrazit hierarchii obsahu na obrazovce odpovídá zobrazení komponenty v aplikaci MVC.
 
-### <a name="controller"></a>Řadiče
+### <a name="controller"></a>Kontroler
 
-Objektu Kontroleru je součást, která vedení všechno vodiče společně a je znázorněna v iOS pomocí `UIViewController`. Jsme si můžete představit řadičem jako kód zálohování pro obrazovky nebo sadu zobrazení. Kontroleru je zodpovědná za přijímat požadavky od uživatele a vrátí hierarchii odpovídající zobrazení. Ho naslouchá na požadavky ze zobrazení (kliknutí na tlačítko, zadávání textu atd.) a provede příslušnou zpracování, zobrazení změn a opětovném načtení zobrazení. Řadičem zodpovídá taky za vytváření nebo načítání modelu z ať zálohování úložiště dat existuje v aplikaci a naplnění zobrazení s jeho data.
+Objekt řadiče je komponenta, která vedení vodiče všechno dohromady a představuje v Iosu pomocí `UIViewController`. Můžeme představit jako základní kód pro obrazovku nebo sadu zobrazení Kontroleru. Kontroler je zodpovědná za naslouchat žádostem od uživatele a vrátí odpovídající zobrazit hierarchii. Žádosti o naslouchá ze zobrazení (kliknutí na tlačítko, textový vstup, atd.) a provede příslušné zpracování změny zobrazení a znovu načíst zobrazení. Kontroler je také zodpovědná za vytvoření nebo načtení modelu z libovolné záložní úložiště dat existuje v aplikaci a naplnění zobrazení k datům.
 
-Řadiče můžete také spravovat jiných řadičů. Například jeden řadič může načíst jiného řadiče, pokud je nutné zobrazit různých obrazovek nebo spravovat zásobníku řadičů sledovat jejich pořadí a přechody mezi nimi. V další části, uvidíme příkladem kontroler, který spravuje ostatní řadiče jako zavedeme zvláštním typem iOS názvem View Controller *navigační řadiče*.
+Řadiče můžete také spravovat další řadiče. Například jeden řadič může načíst jiný řadič, pokud je nutné zobrazit jinou obrazovku, nebo spravovat zásobníku řadičů ke sledování jejich pořadí a přechody mezi nimi. V další části uvidíme příklad kontroler, který spravuje ostatních řadičů jako zavedeme speciální typ Kontroleru zobrazení volá systému iOS *kontroler navigace*.
 
-## <a name="navigation-controller"></a>Navigace řadiče
+## <a name="navigation-controller"></a>Kontroler navigace
 
-V aplikaci Phoneword jsme použili *navigační řadiče* ke správě přecházení mezi více obrazovky. Navigace řadič je speciální `UIViewController` reprezentována `UINavigationController` třídy. Místo správu jedné hierarchii zobrazení obsahu, řadičem navigační spravuje ostatní řadiče zobrazení, jakož i vlastní speciální obsahu zobrazení hierarchie ve formě navigační panel nástrojů, který obsahuje název, tlačítko Zpět a další volitelné funkce.
+V aplikaci Phoneword jsme použili kontroler navigace ke správě navigace mezi více obrazovek. Kontroler navigace je specializovaný `UIViewController` reprezentována `UINavigationController` třídy. Místo správy jedné hierarchii zobrazení obsahu, kontroler navigace slouží ke správě jiných Kontrolery zobrazení a také své vlastní zvláštní zobrazení hierarchie obsahu ve formuláři navigace nástrojů, který obsahuje název, tlačítko Zpět a další volitelné funkce.
 
-Adaptér navigace je běžné v aplikacích pro iOS a poskytuje navigace pro střižová iOS aplikací, jako **nastavení** aplikace, které jsou popsány v následující snímek obrazovky:
+Kontroler navigace je běžné v aplikacích pro iOS a poskytuje navigace pro střižová iOS aplikací, jako je **nastavení** aplikace, jak je znázorněno v následujícím snímku obrazovky:
 
- [![](hello-ios-multiscreen-deepdive-images/01.png "Adaptér navigační poskytuje navigace pro iOS aplikace, jako jsou tady uvedené nastavení aplikace")](hello-ios-multiscreen-deepdive-images/01.png#lightbox)
+ [![](hello-ios-multiscreen-deepdive-images/01.png "Navigace pro aplikace iOS, jako je nastavení aplikace je vidět tady poskytuje kontroler navigace")](hello-ios-multiscreen-deepdive-images/01.png#lightbox)
 
-Navigace řadič používají tři primární funkce:
+Kontroler navigace slouží tři primární funkce:
 
--  **Poskytuje háky dál navigace** – řadič navigační používá jedná hierarchická navigace, kde obsahu zobrazení hierarchie jsou *nabídnutých* na *navigační zásobník* . Navigační zásobník si můžete představit jako více přehrávání karet, ve kterých je viditelná, pouze nejvyšší většina karty, které jsou popsány v následujícím diagramu:  
+-  **Poskytuje zachytávání pro navigaci vpřed** – The kontroler navigace používá metafora hierarchická navigace, kde se hierarchie obsahu zobrazení *vloženo* na *navigační zásobník* . Navigační zásobník si lze představit jako zásobník hracích kartách, ve kterých je viditelné, jenom horní panel většina, jak je znázorněno v následujícím diagramu:  
 
-    [![](hello-ios-multiscreen-deepdive-images/02.png "Tento diagram znázorňuje navigační jako více karet")](hello-ios-multiscreen-deepdive-images/02.png#lightbox)
-
-
--  **Volitelně poskytuje tlačítka Zpět** – Pokud jsme push novou položku do zásobníku navigace, můžete automaticky zobrazí v záhlaví *tlačítko Zpět* , který umožňuje uživatelům zpětné přejděte. Kliknutím na tlačítko Zpět *POP* je aktuální řadič zobrazení vypnout navigační zásobníku a načítání předchozí hierarchie zobrazení obsahu do okna:  
-
-    [![](hello-ios-multiscreen-deepdive-images/03.png "Tento diagram znázorňuje odebrání karet ze zásobníku")](hello-ios-multiscreen-deepdive-images/03.png#lightbox)
+    [![](hello-ios-multiscreen-deepdive-images/02.png "Tento diagram znázorňuje navigace jako zásobník karet")](hello-ios-multiscreen-deepdive-images/02.png#lightbox)
 
 
--  **Poskytuje záhlaví** – horní části **navigační řadič** je volána *záhlaví* . Zodpovídá za zobrazení názvu řadiče zobrazení, které jsou popsány v následujícím diagramu:  
+-  **Volitelně obsahuje tlačítko Zpět** – když jsme vložit novou položku do navigačního zásobníku, záhlaví mohou automaticky zobrazí *tlačítka Zpět* , který umožňuje uživateli procházet zpět. Stisknutím tlačítka Zpět *POP* aktuální kontroler zobrazení vypnout navigační zásobník a zatížením předchozí zobrazení hierarchie obsahu do okna:  
 
-    [![](hello-ios-multiscreen-deepdive-images/04.png "Záhlaví je zodpovědná za zobrazení názvu řadiče zobrazení")](hello-ios-multiscreen-deepdive-images/04.png#lightbox)
-
-
+    [![](hello-ios-multiscreen-deepdive-images/03.png "Tento diagram znázorňuje vyjímání karty ze zásobníku")](hello-ios-multiscreen-deepdive-images/03.png#lightbox)
 
 
-### <a name="root-view-controller"></a>Kořenový řadič zobrazení
+-  **Poskytuje záhlaví** – je volána horní části kontroler navigace *záhlaví* . Je zodpovědná za zobrazení názvu Kontroleru zobrazení, jak je znázorněno v následujícím diagramu:  
 
-A **navigační řadiče** nespravuje obsahu zobrazení hierarchie, tak má nic k zobrazení svoje vlastní.
-Místo toho **navigační řadič** je spárován s *kořenové View Controller*:
+    [![](hello-ios-multiscreen-deepdive-images/04.png "Záhlaví je zodpovědný za zobrazení názvu Kontroleru zobrazení")](hello-ios-multiscreen-deepdive-images/04.png#lightbox)
 
- [![](hello-ios-multiscreen-deepdive-images/05.png "Řadič navigace je spárován s řadičem kořenové zobrazení")](hello-ios-multiscreen-deepdive-images/05.png#lightbox)
+### <a name="root-view-controller"></a>Kontroler zobrazení kořenové
 
-Kořenový řadič zobrazení představuje první řadič v zobrazení **navigační řadiče** zásobníku a View Controller kořenový obsah zobrazení hierarchie je první obsahu zobrazení hierarchie má být načten do okna. Pokud nám chcete vložit naše celá aplikace v zásobníku řadičem navigace, se můžeme přesunout Sourceless Segue k **navigační řadiče** a nastavte řadič zobrazení naše první obrazovce jako kořenový řadič zobrazení, jako jsme provedli Phoneword aplikace:
+Kontroler navigace nespravuje obsahu zobrazit hierarchii, proto nemá žádnou akci se zobrazí na své vlastní.
+Místo toho se páruje s oblastí kontroler navigace *kontroler zobrazení kořenové*:
 
- [![](hello-ios-multiscreen-deepdive-images/06.png "Sourceless Segue nastaví první obrazovky řadiče zobrazení jako kořenový řadič zobrazení")](hello-ios-multiscreen-deepdive-images/06.png#lightbox)
+ [![](hello-ios-multiscreen-deepdive-images/05.png "Kontroler navigace je spárovaná s kořenové Kontroleru zobrazení")](hello-ios-multiscreen-deepdive-images/05.png#lightbox)
+
+Kontroler zobrazení kořenové představuje první kontroler zobrazení v zásobníku kontroler navigace a kontroler zobrazení kořenové obsahu zobrazení hierarchie je ta první obsahu zobrazení mají být načtena do okna. Pokud se mají vložit naše celou aplikaci v zásobníku kontroler navigace, můžeme přesunout kontroler navigace Sourceless přechod na to a nastavte řadič zobrazení naši první obrazovky jako kontroler zobrazení kořenové, jak jsme to udělali v aplikaci Phoneword:
+
+ [![](hello-ios-multiscreen-deepdive-images/06.png "Sourceless přechod na to nastaví na první obrazovce kontroler zobrazení jako kontroler zobrazení kořenové")](hello-ios-multiscreen-deepdive-images/06.png#lightbox)
 
 ### <a name="additional-navigation-options"></a>Možnosti další navigace
 
-**Navigační řadiče** je běžný způsob zpracování navigace v iOS, ale není jedinou možností. A [kartě panelu řadiče](~/ios/user-interface/controls/creating-tabbed-applications.md) můžete rozdělit do různých funkčním oblastem; aplikace [rozdělení View Controller](https://developer.xamarin.com/recipes/ios/content_controls/split_view/use_split_view_to_show_two_controllers) můžete vytvořit zobrazení a podrobností; a [plovoucím panelem navigační řadič](http://components.xamarin.com/view/flyoutnavigation) vytvoří navigace, který uživatel může potáhnete prstem směrem od strany. Všechny tyto mohou být kombinovány s **navigační řadič** pro intuitivní způsob této prezentovat obsah.
+Kontroler navigace je běžný způsob zpracování navigace v Iosu, ale není jedinou možností. Například [kontroler panelu karet](~/ios/user-interface/controls/creating-tabbed-applications.md) můžete rozdělit aplikaci do různých funkčních oblastí a [kontroler zobrazení rozdělení](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/split_view/use_split_view_to_show_two_controllers) slouží k vytváření zobrazení záznamů master/detail. Kombinování řadiče navigace pomocí těchto jiných vzorů navigace umožňuje flexibilní způsobů, jak k dispozici a procházet obsah v iOS.
 
-## <a name="handling-transitions"></a>Zpracování přechody
+## <a name="handling-transitions"></a>Zpracování změn
 
-V tomto návodu Phoneword jsme zpracovány přechod mezi dva řadiče zobrazení dvěma různými způsoby – nejprve Storyboard Segue a potom prostřednictvím kódu programu. Podíváme podrobněji obě tyto možnosti.
+V tomto návodu Phoneword jsme vyřešil přechod mezi dvěma Kontrolery zobrazení dvěma různými způsoby – nejdříve se scénář přechod na to a potom prostřednictvím kódu programu. Podívejme se na obou těchto možností podrobněji.
 
 ### <a name="prepareforsegue"></a>PrepareForSegue
 
-Když přidáme Segue s **zobrazit** akce do scénáře jsme pokyn iOS tak, aby nabízel druhého řadiče zobrazení na navigační řadiče zásobníku:
+Pokud se nám přidat Segue s **zobrazit** akce se scénářem, nám dáte pokyn, aby iOS tak, aby nabízel druhý kontroler zobrazení do zásobníku kontroler navigace:
 
  [![](hello-ios-multiscreen-deepdive-images/09.png "Nastavení typu segue z rozevíracího seznamu")](hello-ios-multiscreen-deepdive-images/09.png#lightbox)
 
-Přidání Segue do scénáře, stačí vytvořit jednoduché přechod mezi obrazovky. Pokud nám chcete předávání dat mezi řadiče zobrazení, se musí přepsat `PrepareForSegue` metoda a zpracovat data sebe:
+Přidávání Segue se scénářem, stačí vytvořit jednoduchý přechod mezi obrazovkami. Pokud budeme chtít předávat data mezi Kontrolery zobrazení, máme pro přepsání `PrepareForSegue` metoda a zpracování dat, chceme:
 
 ```csharp
 public override void PrepareForSegue (UIStoryboardSegue segue, NSObject sender)
@@ -128,20 +123,20 @@ public override void PrepareForSegue (UIStoryboardSegue segue, NSObject sender)
 }
 ```
 
-iOS volání `PrepareForSegue` pravým předtím, než dojde k přechodu a předá Segue, který jsme vytvořili ve scénáři, do metody.
-V tomto okamžiku se musí ručně nastavit Segue cílového řadiče zobrazení. Následující kód získá popisovač pro cílový řadič zobrazení a obsahuje ji správnou třídu - CallHistoryController, v takovém případě:
+volání iOS `PrepareForSegue` klikněte pravým tlačítkem myši předtím, než dojde k přechodu a předává Segue, kterou jsme vytvořili ve scénáři do metody.
+V tuto chvíli máme ručně nastavit cíl Segue kontroler zobrazení. Následující kód získá popisovač Kontroleru zobrazení cílové a přetypování správnou třídu - CallHistoryController, v tomto případě:
 
 ```csharp
 CallHistoryController callHistoryContoller = segue.DestinationViewController as CallHistoryController;
 ```
 
-Nakonec jsme předat seznam telefonních čísel (modelu) z `ViewController` k `CallHistoryController` nastavením `PhoneHistory` vlastnost `CallHistoryController` do seznamu vytáčená telefonní čísla:
+Nakonec jsme předat seznam telefonních čísel (modelu) z `ViewController` k `CallHistoryController` nastavením `PhoneHistory` vlastnost `CallHistoryController` do seznamu vytáčená telefonních čísel:
 
 ```csharp
 callHistoryContoller.PhoneNumbers = PhoneNumbers;
 ```
 
-Kód dokončení pro předávání dat pomocí Segue vypadá takto:
+Kompletní kód pro předávání dat s využitím Segue vypadá takto:
 
 ```csharp
 public override void PrepareForSegue (UIStoryboardSegue segue, NSObject sender)
@@ -156,18 +151,18 @@ public override void PrepareForSegue (UIStoryboardSegue segue, NSObject sender)
  }
 ```
 
-### <a name="navigation-without-segues"></a>Navigace bez Segues
+### <a name="navigation-without-segues"></a>Navigace bez přechody
 
-Přechod z prvního řadiče zobrazení druhou v kódu je stejně jako s Segue, ale mají několik kroků provést ručně.
-Nejprve používáme `this.NavigationController` získat odkaz na kontroler navigační jejichž zásobníku Snažíme se v současné době. Potom používáme řadičem navigační `PushViewController` metoda k vyvolání ručně další řadiče zobrazení do zásobníku, předávání v Kontroleru zobrazení a možnost animace přechodu (jsme tuto možnost nastavíte na `true`).
+Přechod z první Kontroleru zobrazení k druhému v kódu je stejně jako s Segue, ale mají několik kroky provést ručně.
+Nejprve používáme `this.NavigationController` získat odkaz na kontroler navigace jehož zásobníku jsme jsou aktuálně zapnuté. Potom použijeme kontroler navigace `PushViewController` metoda ručně vložit další kontroler zobrazení do zásobníku při předávání v Kontroleru zobrazení a možnost má animovat přechod (to nastavíme na `true`).
 
-Následující kód zpracovává přechod z obrazovky Phoneword obrazovce historie volání:
+Následující kód zpracovává přechod z obrazovky Phoneword historie volání obrazovku:
 
 ```csharp
 this.NavigationController.PushViewController (callHistory, true);
 ```
 
-Před jsme můžete přejít na další řadiče zobrazení, se musí vytvořit instanci jej ručně z scénáři voláním `this.Storyboard.InstantiateViewController` a předání v Storyboard ID `CallHistoryController`:
+Předtím, než jsme můžete přejít na další kontroler zobrazení, musíme vytvořit její instanci ručně ze scénáře voláním `this.Storyboard.InstantiateViewController` a předání v ID scénáře `CallHistoryController`:
 
 ```csharp
 CallHistoryController callHistory =
@@ -175,13 +170,13 @@ this.Storyboard.InstantiateViewController
 ("CallHistoryController") as CallHistoryController;
 ```
 
-Nakonec jsme předat seznam telefonních čísel (modelu) z `ViewController` k `CallHistoryController` nastavením `PhoneHistory` vlastnost `CallHistoryController` do seznamu vytáčená telefonní čísla, stejně jako jsme provedli, když jsme ošetřena přechodu se Segue:
+Nakonec jsme předat seznam telefonních čísel (modelu) z `ViewController` k `CallHistoryController` nastavením `PhoneHistory` vlastnost `CallHistoryController` do seznamu vytáčená telefonní čísla, stejně jako jsme to udělali při jsme vyřešil přechod s Segue:
 
 ```csharp
 callHistory.PhoneNumbers = PhoneNumbers;
 ```
 
-Kód dokončení pro programové přechod vypadá takto:
+Kompletní kód pro programový přechod vypadá takto:
 
 ```csharp
 CallHistoryButton.TouchUpInside += (object sender, EventArgs e) => {
@@ -194,26 +189,24 @@ CallHistoryButton.TouchUpInside += (object sender, EventArgs e) => {
 };
 ```
 
-## <a name="additional-concepts-introduced-in-phoneword"></a>Další koncepty představené v Phoneword
+## <a name="additional-concepts-introduced-in-phoneword"></a>Další koncepty představenými v Phoneword
 
-Aplikace Phoneword zavedl několik konceptů, které nejsou zahrnuté v této příručce. Tyto koncepty patří:
+Aplikace Phoneword zavedli několik konceptů, které nejsou součástí této příručky. Tyto koncepty patří:
 
--  **Automatické vytváření zobrazení řadičů** – Pokud jsme zadejte název třídy pro řadiče zobrazení v **vlastnosti Pad** , návrháře iOS ověří, zda třídy existuje a poté generuje řadiče zobrazení zálohování třídy pro nás. Další informace o tomto a dalších funkcí návrháře iOS, najdete v části [Úvod do systému iOS Návrhář](~/ios/user-interface/designer/introduction.md) průvodce.
--  **Tabulka View Controller** – `CallHistoryController` řadiče zobrazení tabulky. Řadič zobrazení tabulka obsahuje zobrazení tabulky, nejběžnější rozložení a data zobrazení nástroj v iOS. Tabulky jsou nad rámec této příručky. Další informace o tabulce řadiče zobrazení, naleznete [práce s tabulkami a buněk](~/ios/user-interface/controls/tables/index.md) průvodce.
--   **Vytváření scénářů ID** – nastavení Storyboard ID vytvoří třídu řadiče zobrazení v Objective-C obsahující kódu pro řadič zobrazení ve scénáři. ID scénáře používáme nalezena třída jazyka Objective-C a vytvořte instanci řadiče zobrazení ve scénáři. Další informace o ID Storyboard, naleznete [Úvod do scénářů](~/ios/user-interface/storyboards/index.md) průvodce.
-
+-  **Automatické vytváření Kontrolery zobrazení** – když jsme zadejte název třídy Kontroleru zobrazení k **oblasti vlastnosti** , iOS designer zkontroluje, jestli dané třídy existuje a poté vygeneruje kontroler zobrazení zálohování třídy pro nás. Další informace o tomto a dalších funkcí návrháře iOS, najdete [Úvod do Iosu návrháře](~/ios/user-interface/designer/introduction.md) průvodce.
+-  **Kontroler zobrazení tabulky** – `CallHistoryController` je kontroler zobrazení tabulky. Kontroler zobrazení tabulky obsahuje zobrazení tabulky, nejběžnější rozložení a data se zobrazí nástroj v iOS. Tabulky jsou nad rámec této příručky. Další informace o Kontrolery zobrazení tabulky, najdete [práce s tabulkami a buňky](~/ios/user-interface/controls/tables/index.md) průvodce.
+-   **ID scénáře** – nastavení ID scénáře vytvoří třídu Kontroleru zobrazení v Objective-C obsahující kódu pro kontroler zobrazení ve scénáři. Chcete-li najít třídu Objective-C a vytvoření instancí Kontroleru zobrazení ve scénáři používáme ID scénáře. Další informace o ID scénáře, naleznete [Úvod do scénářů](~/ios/user-interface/storyboards/index.md) průvodce.
 
 ## <a name="summary"></a>Souhrn
 
-Blahopřejeme, jste dokončili svou první aplikaci iOS více obrazovky.
+Blahopřejeme, jste dokončili svou první aplikaci s více obrazovkami iOS.
 
-V této příručce jsme zavedená vzor MVC a použít k vytvoření více monitorované aplikace. Můžeme také prozkoumali navigační řadiče a jejich role v pohánějící iOS navigace. Nyní máte sice solidní základ, je nutné začít vyvíjet aplikace Xamarin.iOS.
+V této příručce zavedené vzor MVC jsme ji použili k vytvoření více monitorovaná aplikace. Také Prozkoumali jsme navigace řadiče a jejich role v provozování iOS navigace. Teď máte solidní základ je potřeba začít vyvíjet aplikace Xamarin.iOS.
 
-V dalším kroku naučíme, jak vytvářet aplikace napříč platformami pomocí Xamarinu s [Úvod do vývoj mobilních řešení pro](~/cross-platform/get-started/introduction-to-mobile-development.md) a [vytváření aplikací a platformy](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md) příručky.
-
+V dalším kroku naučíme, jak vytvářet aplikace napříč platformami s Xamarinem s [Úvod do vývoje mobilních](~/cross-platform/get-started/introduction-to-mobile-development.md) a [vytváření Multiplatformních aplikací](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md) vodítka.
 
 ## <a name="related-links"></a>Související odkazy
 
 - [Hello, iOS (ukázka)](https://developer.xamarin.com/samples/monotouch/Hello_iOS/)
 - [iOS Human Interface Guidelines](http://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html)
-- [iOS Provisioning Portal](https://developer.apple.com/ios/manage/overview/index.action)
+- [Portál zřizování iOS](https://developer.apple.com/ios/manage/overview/index.action)
