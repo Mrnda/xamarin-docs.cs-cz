@@ -1,6 +1,6 @@
 ---
 title: Rychlý start Xamarin.Forms
-description: Tento článek vysvětluje, jak vytvořit aplikaci, která znamená, že alfanumerické telefonní číslo, zadané uživatelem do číselné telefonní číslo a číslo, který volá.
+description: Tento článek vysvětluje, jak vytvořit aplikaci, která se přeloží alfanumerické telefonní číslo, zadané uživatelem na číselné telefonní číslo a číslo, který volá.
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: 3f2f9c2d-d204-43bc-8c8a-a55ce1e6d2c8
@@ -9,15 +9,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 06/13/2018
 ms.openlocfilehash: 5b5f8c80e49d66ed3bd8b008c975d1cfeda93ed4
-ms.sourcegitcommit: 0be3d10bf08d1f76eab109eb891ed202615ac399
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36321402"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38832381"
 ---
 # <a name="xamarinforms-quickstart"></a>Rychlý start Xamarin.Forms
 
-Tento návod ukazuje, jak vytvořit aplikaci, která znamená, že alfanumerické telefonní číslo, zadané uživatelem do číselné telefonní číslo a číslo, který volá. Konečné aplikace je zobrazena níže:
+Tento návod ukazuje, jak vytvořit aplikaci, která se přeloží alfanumerické telefonní číslo, zadané uživatelem na číselné telefonní číslo a číslo, který volá. Konečná aplikace je zobrazena níže:
 
 [![](quickstart-images/intro-app-examples-sml.png "Aplikace Phoneword")](quickstart-images/intro-app-examples.png#lightbox "Phoneword aplikace")
 
@@ -25,7 +25,7 @@ Vytvoření aplikace Phoneword následujícím způsobem:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. V **spustit** obrazovky, spusťte sadu Visual Studio. Otevře se stránka start:
+1. V **Start** obrazovky, spusťte sadu Visual Studio. Tím se otevře úvodní stránku:
 
     ![](quickstart-images/vs/start-page.png "Visual Studio")
 
@@ -33,22 +33,22 @@ Vytvoření aplikace Phoneword následujícím způsobem:
 
     ![](quickstart-images/vs/new-solution.png "Nový projekt")
 
-3. V **nový projekt** dialogové okno, klikněte na tlačítko **napříč platformami**, vyberte **mobilní aplikace (Xamarin.Forms)** šablony, nastavte název na **Phoneword**, vyberte vhodný umístění projektu a klikněte na **OK** tlačítko:
+3. V **nový projekt** dialogového okna, klikněte na tlačítko **Cross-Platform**, vyberte **mobilní aplikace (Xamarin.Forms)** šablony, nastavte název na **Phoneword**, zvolte vhodné umístění pro projekt a klikněte na tlačítko **OK** tlačítka:
 
-    ![](quickstart-images/vs/new-project.w157.png "Šablony projektů a platformy")
+    ![](quickstart-images/vs/new-project.w157.png "Šablony projektu pro různé platformy")
 
     > [!NOTE]
-    > Nedaří se název řešení **Phoneword** bude mít za následek chyby množství sestavení.
+    > Pojmenujte řešení selhání **Phoneword** způsobí mnoho chyb sestavení.
 
-4. V **novou aplikaci křížové platformy** dialogové okno, klikněte na tlačítko **prázdnou aplikaci**, vyberte **.NET Standard** strategie sdílení kódu a klikněte na **OK** tlačítko:
+4. V **nové aplikace pro různé platformy** dialogového okna, klikněte na tlačítko **prázdnou aplikaci pro**vyberte **.NET Standard** jako strategii sdílení kódu a klikněte na tlačítko **OK** tlačítko:
 
-    ![](quickstart-images/vs/new-app.png "Novou aplikaci pro různé platformy")
+    ![](quickstart-images/vs/new-app.png "Nová aplikace pro víc platforem")
 
-5. V **Průzkumníku řešení**v **Phoneword** projektu, klikněte dvakrát na **MainPage.xaml** a otevře se:
+5. V **Průzkumníka řešení**v **Phoneword** projektu, klikněte dvakrát na **MainPage.xaml** otevřete:
 
     ![](quickstart-images/vs/open-mainpage-xaml.png "Otevřete MainPage.xaml")
 
-6. V **MainPage.xaml**, odeberte všechny kód šablony a nahraďte ji následujícím kódem. Tento kód definuje deklarativně uživatelské rozhraní pro stránky:
+6. V **MainPage.xaml**, odeberte všechny šablony kód a nahraďte následujícím kódem. Tento kód definuje deklarativně uživatelského rozhraní pro stránky:
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -70,13 +70,13 @@ Vytvoření aplikace Phoneword následujícím způsobem:
     </ContentPage>
     ```
 
-    Uložit změny do **MainPage.xaml** stisknutím **CTRL + S**a zavřete soubor.
+    Uložit změny do **MainPage.xaml** stisknutím kombinace kláves **CTRL + S**a zavřete soubor.
 
-7. V **Průzkumníku řešení**, rozbalte položku **MainPage.xaml** a dvakrát klikněte na **MainPage.xaml.cs** a otevře se:
+7. V **Průzkumníka řešení**, rozbalte **MainPage.xaml** a dvakrát klikněte na panel **MainPage.xaml.cs** otevřete:
 
-    ![](quickstart-images/vs/open-mainpage-codebehind.png "Otevřete MainPage.xaml.cs")
+    ![](quickstart-images/vs/open-mainpage-codebehind.png "Open MainPage.xaml.cs")
 
-8. V **MainPage.xaml.cs**, odeberte všechny kód šablony a nahraďte ji následujícím kódem. `OnTranslate` a `OnCall` metody bude proveden v reakci **přeložit** a **volání** tlačítka klepnutí v uživatelském rozhraní, v uvedeném pořadí:
+8. V **MainPage.xaml.cs**, odeberte všechny šablony kód a nahraďte následujícím kódem. `OnTranslate` a `OnCall` metody se spustí v reakci **přeložit** a **volání** tlačítka klepnutí v uživatelském rozhraní, v uvedeném pořadí:
 
     ```csharp
     using System;
@@ -122,19 +122,19 @@ Vytvoření aplikace Phoneword následujícím způsobem:
     ```
 
     > [!NOTE]
-    > Při pokusu o vytvoření aplikace v tomto okamžiku bude mít za následek chyby, které budou později opravit.
+    > Pokus o sestavení aplikace v tomto okamžiku způsobí chyby, které budou opraveny později.
 
-    Uložit změny do **MainPage.xaml.cs** stisknutím **CTRL + S**a zavřete soubor.
+    Uložit změny do **MainPage.xaml.cs** stisknutím kombinace kláves **CTRL + S**a zavřete soubor.
 
-9. V **Průzkumníku řešení**, klikněte pravým tlačítkem na **Phoneword** projektu a vyberte **Přidat > novou položku...** :
+9. V **Průzkumníka řešení**, klikněte pravým tlačítkem na **Phoneword** projektu a vyberte **Přidat > Nová položka...** :
 
     ![](quickstart-images/vs/add-new-item.png "Přidat novou položku")
 
-10. V **přidat novou položku** dialogovém okně, vyberte **Visual C# > kódu > třída**, název nový soubor **PhoneTranslator**a klikněte na tlačítko **přidat** tlačítko :
+10. V **přidat novou položku** dialogového okna, vyberte **Visual C# > kód > třída**, pojmenujte nový soubor **PhoneTranslator**a klikněte na tlačítko **přidat** tlačítko :
 
     ![](quickstart-images/vs/add-translator-class.w157.png "Přidejte novou třídu")
 
-11. V **PhoneTranslator.cs**, odeberte všechny kód šablony a nahraďte ji následujícím kódem. Tento kód se přeloží slovo phone na telefonní číslo:
+11. V **PhoneTranslator.cs**, odeberte všechny šablony kód a nahraďte následujícím kódem. Tento kód se přeloží do telefonu slova, aby telefonní číslo:
 
     ```csharp
     using System.Text;
@@ -190,17 +190,17 @@ Vytvoření aplikace Phoneword následujícím způsobem:
     }
     ```
 
-    Uložit změny do **PhoneTranslator.cs** stisknutím **CTRL + S**a zavřete soubor.
+    V **konfigurace prázdná formulářová aplikace** dialogového okna, název nové aplikace **Phoneword**, ujistěte se, že pomocí .NET Standard přepínací tlačítko zaškrtnuto a klikněte na tlačítko Další tlačítka:
 
-12. V **Průzkumníku řešení**, klikněte pravým tlačítkem na **Phoneword** projektu a vyberte **Přidat > novou položku...** :
+12. V **Průzkumníka řešení**, klikněte pravým tlačítkem na **Phoneword** projektu a vyberte **Přidat > Nová položka...** :
 
     ![](quickstart-images/vs/add-new-item.png "Přidat novou položku")
 
-13. V **přidat novou položku** dialogovém okně, vyberte **Visual C# > kódu > rozhraní**, pojmenujte nový soubor **IDialer**a klikněte na tlačítko **přidat** tlačítko:
+13. Konfigurace aplikace Forms
 
-    ![](quickstart-images/vs/add-idialer-interface.w157.png "Přidejte nové rozhraní")
+    ![](quickstart-images/vs/add-idialer-interface.w157.png "Přidat nové rozhraní")
 
-14. V **IDialer.cs**, odeberte všechny kód šablony a nahraďte ji následujícím kódem. Tento kód definuje `Dial` metodu, která musí být implementována na jednotlivých platformách k vytočení přeložený telefonní číslo:
+14. Konfigurace projektu formuláře Selhání název řešení a projektu `Dial`Phoneword způsobí mnoho chyb sestavení.
 
     ```csharp
     namespace Phoneword
@@ -212,20 +212,20 @@ Vytvoření aplikace Phoneword následujícím způsobem:
     }
     ```
 
-    Uložit změny do **IDialer.cs** stisknutím **CTRL + S**a zavřete soubor.
+    V **oblasti řešení**, dvakrát klikněte na panel **MainPage.xaml** otevřete:
 
     > [!NOTE]
-    > Společný kód aplikace je nyní dokončen. Kód programu Telefon specifické pro platformu phone se teď implementuje jako [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md).
+    > Uložit změny do MainPage.xaml výběrem soubor > Uložit (nebo stisknutím klávesy  &#8984; + S) a zavřete soubor. V [oblasti řešení](~/xamarin-forms/app-fundamentals/dependency-service/index.md), dvakrát klikněte na panel MainPage.xaml.cs otevřete:
 
-15. V **Průzkumníku řešení**, klikněte pravým tlačítkem na **Phoneword.iOS** projektu a vyberte **Přidat > novou položku...** :
+15. **a** metody se spustí v reakci **přeložit** a **volání** tlačítka klepnutí na uživatelské rozhraní v uvedeném pořadí:
 
     ![](quickstart-images/vs/add-new-item-ios.png "Přidat novou položku")
 
-16. V **přidat novou položku** dialogovém okně, vyberte **Apple > kódu > třída**, název nový soubor **telefon.dokument**a klikněte na tlačítko **přidat** tlačítko:
+16. Uložit změny do **MainPage.xaml.cs** výběrem **soubor > Uložit** (nebo stisknutím klávesy  **&#8984; + S**) a zavřete soubor.
 
     ![](quickstart-images/vs/new-phone-dialer-ios.w157.png "Přidejte novou třídu")
 
-17. V **PhoneDialer.cs**, odeberte všechny kód šablony a nahraďte ji následujícím kódem. Tento kód vytvoří <code>Dial</code> metoda, která se použije na platformě iOS k vytočení přeložený telefonní číslo:
+17. V **oblasti řešení**, vyberte Phoneword projektu, klikněte pravým tlačítkem a vyberte Přidat > Nový soubor... : Tento kód vytvoří <code>Dial</code> metodu, která bude použita na platformě iOS k vytočení přeloženého telefonního čísla:
 
     ```csharp
     using Foundation;
@@ -247,17 +247,17 @@ Vytvoření aplikace Phoneword následujícím způsobem:
     }
     ```
 
-    Uložit změny do **PhoneDialer.cs** stisknutím **CTRL + S**a zavřete soubor.
+    V **nový soubor** dialogového okna, vyberte **Obecné > prázdná třída**, pojmenujte nový soubor PhoneTranslatora klikněte na tlačítko nový tlačítka:
 
-18. V **Průzkumníku řešení**, klikněte pravým tlačítkem na **Phoneword.Android** projektu a vyberte **Přidat > novou položku...** :
+18. Uložit změny do **PhoneTranslator.cs** výběrem **soubor > Uložit** (nebo stisknutím klávesy  **&#8984; + S**) a zavřete soubor.
 
     ![](quickstart-images/vs/add-new-item-android.png "Přidat novou položku")
 
-19. V **přidat novou položku** dialogovém okně, vyberte **Visual C# > Android > třída**, název nový soubor **telefon.dokument**a klikněte na tlačítko **přidat** tlačítko:
+19. V **nový soubor** dialogového okna, vyberte **Obecné > prázdné rozhraní**, pojmenujte nový soubor **IDialer**a klikněte na tlačítko **nový** tlačítka:
 
     ![](quickstart-images/vs/new-phone-dialer-android.w157.png "Přidejte novou třídu")
 
-20. V **PhoneDialer.cs**, odeberte všechny kód šablony a nahraďte ji následujícím kódem. Tento kód vytvoří `Dial` metoda, která se použije na platformě Android k vytočení přeložený telefonní číslo:
+20. V **oblasti řešení**, vyberte Phoneword projektu, klikněte pravým tlačítkem a vyberte Přidat > Nový soubor... : Uložit změny do `Dial`IDialer.cs výběrem soubor > Uložit (nebo stisknutím klávesy  &#8984; + S) a zavřete soubor.
 
     ```csharp
     using Android.Content;
@@ -306,9 +306,9 @@ Vytvoření aplikace Phoneword následujícím způsobem:
     }
     ```
 
-    Uložit změny do **PhoneDialer.cs** stisknutím **CTRL + S**a zavřete soubor.
+    V **nový soubor** dialogového okna, vyberte **Obecné > prázdná třída**, pojmenujte nový soubor PhoneTranslatora klikněte na tlačítko nový tlačítka:
 
-21. V **Průzkumníku řešení**v **Phoneword.Android** projektu, klikněte dvakrát na **MainActivity.cs** otevřete ho odebrat všechny kód šablony a nahraďte ho Následující kód:
+21. V **oblasti řešení**, vyberte **Phoneword.iOS** projektu, klikněte pravým tlačítkem a vyberte **Přidat > Nový soubor...** :
 
     ```csharp
     using Android.App;
@@ -337,27 +337,27 @@ Vytvoření aplikace Phoneword následujícím způsobem:
     }
     ```
 
-    Uložit změny do **MainActivity.cs** stisknutím **CTRL + S**a zavřete soubor.
+    Uložit změny do **MainActivity.cs** stisknutím kombinace kláves **CTRL + S**a zavřete soubor.
 
-22. V **Průzkumníku řešení**v **Phoneword.Android** projektu, klikněte dvakrát na **vlastnosti** a vyberte **Android Manifest** karty:
+22. V **Průzkumníka řešení**v **Phoneword.Android** projektu, klikněte dvakrát na **vlastnosti** a vyberte **Manifest v Androidu** kartu:
 
-    ![](quickstart-images/vs/android-manifest.png "Otevřete manifestu systému Android.")
+    ![](quickstart-images/vs/android-manifest.png "Otevřít Manifest Android")
 
-23. V **požadovaná oprávnění** povolte **CALL_PHONE** oprávnění. To dává oprávnění aplikace umístit telefonní hovor:
+23. V **požadovaná oprávnění** povolte **CALL_PHONE** oprávnění. Díky tomu oprávnění k aplikaci umístit telefonního hovoru:
 
     ![](quickstart-images/vs/android-manifest-changed.png "Povolit CallPhone oprávnění")
 
-    Uložit změny do manifestu stisknutím **CTRL + S**a zavřete soubor.
+    Uložte změny do manifestu stisknutím kombinace kláves **CTRL + S**a zavřete soubor.
 
-24. V **Průzkumníku řešení**, klikněte pravým tlačítkem na **Phoneword.UWP** projektu a vyberte **Přidat > novou položku...** :
+24. V **Průzkumníka řešení**, klikněte pravým tlačítkem na **Phoneword.UWP** projektu a vyberte **Přidat > Nová položka...** :
 
     ![](quickstart-images/vs/add-new-item-uwp.png "Přidat novou položku")
 
-25. V **přidat novou položku** dialogovém okně, vyberte **Visual C# > kódu > třída**, název nový soubor **telefon.dokument**a klikněte na tlačítko **přidat** tlačítko:
+25. V **přidat novou položku** dialogového okna, vyberte **Visual C# > kód > třída**, pojmenujte nový soubor **telefon.dokument**a klikněte na tlačítko **přidat** tlačítka:
 
     ![](quickstart-images/vs/new-phone-dialer-uwp.w157.png "Přidejte novou třídu")
 
-26. V **PhoneDialer.cs**, odeberte všechny kód šablony a nahraďte ji následujícím kódem. Tento kód vytvoří `Dial` metoda a pomocné metody, které se použijí k vytočení přeložený telefonní číslo na univerzální platformu Windows:
+26. V **oblasti řešení**, vyberte Phoneword projektu, klikněte pravým tlačítkem a vyberte Přidat > Nový soubor... : Tento kód vytvoří `Dial` metoda a pomocné metody, které budou použity na univerzální platformu Windows na přeložený telefonní číslo:
 
     ```csharp
     using Phoneword.UWP;
@@ -406,73 +406,73 @@ Vytvoření aplikace Phoneword následujícím způsobem:
     }
     ```
 
-    Uložit změny do **PhoneDialer.cs** stisknutím **CTRL + S**a zavřete soubor.
+    V **nový soubor** dialogového okna, vyberte **Obecné > prázdná třída**, pojmenujte nový soubor PhoneTranslatora klikněte na tlačítko nový tlačítka:
 
-27. V **Průzkumníku řešení**v **Phoneword.UWP** projektu, klikněte pravým tlačítkem na **odkazy**a vyberte **přidat odkaz na...** :
+27. V **Průzkumníka řešení**v **Phoneword.UWP** projektu, klikněte pravým tlačítkem na **odkazy**a vyberte **přidat odkaz...** :
 
-    ![](quickstart-images/vs/uwp-add-reference.png "Přidání odkazu")
+    ![](quickstart-images/vs/uwp-add-reference.png "Přidat odkaz")
 
-28. V **správce odkazů** dialogovém okně, vyberte **Universal Windows > Rozšíření > rozšíření Windows Mobile pro UPW**a klikněte na tlačítko **OK** tlačítko:
+28. V **správce odkazů** dialogového okna, vyberte **Universal Windows > Rozšíření > Windows Mobile rozšíření pro UPW**a klikněte na tlačítko **OK** tlačítka:
 
-    ![](quickstart-images/vs/uwp-add-reference-extensions.png "Přidání mobilní rozšíření Windows pro UPW")
+    ![](quickstart-images/vs/uwp-add-reference-extensions.png "Přidat mobilní rozšíření Windows pro UPW")
 
-29. V **Průzkumníku řešení**v **Phoneword.UWP** projektu, klikněte dvakrát na **Package.appxmanifest**:
+29. V **Průzkumníka řešení**v **Phoneword.UWP** projektu, klikněte dvakrát na **Package.appxmanifest**:
 
-    ![](quickstart-images/vs/uwp-manifest.png "Otevřete UWP Manifest")
+    ![](quickstart-images/vs/uwp-manifest.png "Otevření manifestu UPW")
 
-30. V **možnosti** povolte **telefonní hovor** schopností. To dává oprávnění aplikace umístit telefonní hovor:
+30. V **možnosti** stránce, povolte **telefonního hovoru** funkce. Díky tomu oprávnění k aplikaci umístit telefonního hovoru:
 
-    ![](quickstart-images/vs/uwp-manifest-changed.png "Povolení schopností telefonního hovoru")
+    ![](quickstart-images/vs/uwp-manifest-changed.png "Povolení možnosti telefonního hovoru")
 
-    Uložit změny do manifestu stisknutím **CTRL + S**a zavřete soubor.
+    Uložte změny do manifestu stisknutím kombinace kláves **CTRL + S**a zavřete soubor.
 
-31. V sadě Visual Studio, vyberte **sestavení > Sestavit řešení** položku nabídky (nebo stiskněte klávesu **CTRL + SHIFT + B**). Aplikace bude sestavení a na stavovém řádku v sadě Visual Studio se zobrazí zpráva o úspěšném provedení:
+31. V sadě Visual Studio, vyberte **sestavení > Sestavit řešení** položky nabídky (nebo stiskněte klávesu **CTRL + SHIFT + B**). Aplikace se sestaví a zprávu o úspěšném dokončení se zobrazí ve stavovém řádku sady Visual Studio:
 
-    ![](quickstart-images/vs/build-successful.png "Sestavení úspěšné")
+    ![](quickstart-images/vs/build-successful.png "Sestavení bylo úspěšné")
 
-    Pokud nejsou chyby, opakujte předchozí kroky a opravte chyby, dokud úspěšně sestavení aplikace.
+    Pokud chyby existují, opakujte předchozí kroky a opravte všechny chyby, dokud aplikace sestavena úspěšně.
 
-32. V **Průzkumníku řešení**, klikněte pravým tlačítkem na **Phoneword.UWP** projektu a vyberte **nastavit jako spouštěný projekt**:
+32. V **Průzkumníka řešení**, klikněte pravým tlačítkem na **Phoneword.UWP** projektu a vyberte **nastavit jako spouštěný projekt**:
 
     ![](quickstart-images/vs/uwp-set-as-startup-project.png "Nastavit jako spouštěný projekt")
 
-33. Na panelu nástrojů Visual Studio, stiskněte **spustit** (tlačítko trojúhelníkovou podobná tlačítko Přehrát akci) ke spuštění aplikace:
+33. Na panelu nástrojů sady Visual Studio stiskněte klávesu **Start** tlačítka (trojúhelníkové tlačítko, která se podobá tlačítko Přehrát) ke spuštění aplikace:
 
-    ![](quickstart-images/vs/start.png "Panel nástrojů Visual Studio")
-    ![](quickstart-images/vs/phone-result-uwp.png "Phoneword aplikace UWP")
+    ![](quickstart-images/vs/start.png "Panel nástrojů sady Visual Studio")
+    ![](quickstart-images/vs/phone-result-uwp.png "Phoneword aplikace UPW")
 
-34. V **Průzkumníku řešení**, klikněte pravým tlačítkem na **Phoneword.Android** projektu a vyberte **nastavit jako spouštěný projekt**.
-35. Na panelu nástrojů Visual Studio, stiskněte **spustit** (tlačítko trojúhelníkovou podobná tlačítko Přehrát akci) spustíte aplikaci v emulátoru Androidu.
-36. Pokud máte zařízení s iOS a splňovat požadavky na systém Mac pro vývoj s Xamarin.Forms, použijte k nasazení aplikace na zařízení s iOS podobným způsobem. Můžete taky nasadit aplikaci, která [vzdáleného simulátoru iOS](~/tools/ios-simulator.md).
+34. V **Průzkumníka řešení**, klikněte pravým tlačítkem na **Phoneword.Android** projektu a vyberte **nastavit jako spouštěný projekt**.
+35. Na panelu nástrojů sady Visual Studio stiskněte klávesu **Start** tlačítka (trojúhelníkové tlačítko, která se podobá tlačítko Přehrát) ke spuštění aplikace v emulátoru Androidu.
+36. Pokud máte zařízení s Iosem a splňovat požadavky na systém Mac pro vývoj s Xamarin.Forms, použijte podobné techniky nasazení aplikace do zařízení s Iosem. Můžete také nasadit aplikaci [vzdálený simulátor iOS](~/tools/ios-simulator.md).
 
-    Poznámka: telefonní hovory nejsou podporovány na všechny simulátorů.
+    Poznámka: telefonní hovory nejsou podporovány ve všech simulátorů.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-1. Spusťte Visual Studio pro Mac a na úvodní stránce klikněte na tlačítko **nový projekt...**  k vytvoření nového projektu:
+1. Spusťte sadu Visual Studio pro Mac a na úvodní stránce klikněte na tlačítko **nový projekt...**  k vytvoření nového projektu:
 
     ![](quickstart-images/xs/new-solution.png "Nové řešení")
 
-2. V **vyberte šablonu pro nový projekt** dialogové okno, klikněte na tlačítko **Multiplatform > aplikace**, vyberte **prázdnou aplikaci Forms** šablonu a klikněte na tlačítko **Další** tlačítko:
+2. V **vybrat šablonu pro nový projekt** dialogového okna, klikněte na tlačítko **Multiplatformní > aplikace**, vyberte **prázdnou aplikaci pro formuláře** šablonu a klikněte na tlačítko **Další** tlačítka:
 
     ![](quickstart-images/xs/choose-template.png "Výběr šablony")
 
-3. V **konfigurace aplikace prázdné formuláře** dialogové okno, název nové aplikace **Phoneword**, ujistěte se, že **Standard .NET použijte** přepínač je vybrána a klikněte **Další** tlačítko:
+3. V **konfigurace prázdná formulářová aplikace** dialogového okna, název nové aplikace **Phoneword**, ujistěte se, že **pomocí .NET Standard** přepínací tlačítko zaškrtnuto a klikněte na tlačítko **Další** tlačítka:
 
-    ![](quickstart-images/xs/configure-app.png "Konfigurace aplikace formulářů")
+    ![](quickstart-images/xs/configure-app.png "Konfigurace aplikace Forms")
 
-4. V **konfigurace nové prázdné formuláře aplikace** dialogové okno, ponechte název řešení a projektu nastavena na **Phoneword**, vyberte vhodný umístění projektu a klikněte **vytvořit**tlačítko pro vytvoření projektu:
+4. V **konfigurovat nová prázdná formulářová aplikace** dialogové okno, ponechejte tuto položku názvy řešení a projektu nastavena na **Phoneword**, zvolte vhodné umístění pro projekt a klikněte na tlačítko **vytvořit**tlačítko pro vytvoření projektu:
 
-    ![](quickstart-images/xs/configure-project.png "Konfigurace projektu formulářů")
+    ![](quickstart-images/xs/configure-project.png "Konfigurace projektu formuláře")
 
     > [!NOTE]
-    > Nedaří se název řešení a projektu **Phoneword** bude mít za následek chyby množství sestavení.
+    > Selhání název řešení a projektu **Phoneword** způsobí mnoho chyb sestavení.
 
-5. V **řešení Pad**, dvakrát klikněte na **MainPage.xaml** a otevře se:
+5. V **oblasti řešení**, dvakrát klikněte na panel **MainPage.xaml** otevřete:
 
     ![](quickstart-images/xs/open-mainpage-xaml.png "Otevřete MainPage.xaml")
 
-6. V **MainPage.xaml**, odeberte všechny kód šablony a nahraďte ji následujícím kódem. Tento kód definuje deklarativně uživatelské rozhraní pro stránky:
+6. V **MainPage.xaml**, odeberte všechny šablony kód a nahraďte následujícím kódem. Tento kód definuje deklarativně uživatelského rozhraní pro stránky:
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -494,13 +494,13 @@ Vytvoření aplikace Phoneword následujícím způsobem:
     </ContentPage>
     ```
 
-    Uložit změny do **MainPage.xaml** výběrem **soubor > Uložit** (nebo stisknutím kombinace kláves  **&#8984; + S**) a zavřete soubor.
+    Uložit změny do **MainPage.xaml** výběrem **soubor > Uložit** (nebo stisknutím klávesy  **&#8984; + S**) a zavřete soubor.
 
-7. V **řešení Pad**, dvakrát klikněte na **MainPage.xaml.cs** a otevře se:
+7. V **oblasti řešení**, dvakrát klikněte na panel **MainPage.xaml.cs** otevřete:
 
-    ![](quickstart-images/xs/open-mainpage-codebehind.png "Otevřete MainPage.xaml.cs")
+    ![](quickstart-images/xs/open-mainpage-codebehind.png "Open MainPage.xaml.cs")
 
-8. V **MainPage.xaml.cs**, odeberte všechny kód šablony a nahraďte ji následujícím kódem. `OnTranslate` a `OnCall` metody bude proveden v reakci **přeložit** a **volání** tlačítka klepnutí na uživatelské rozhraní v uvedeném pořadí:
+8. V **MainPage.xaml.cs**, odeberte všechny šablony kód a nahraďte následujícím kódem. `OnTranslate` a `OnCall` metody se spustí v reakci **přeložit** a **volání** tlačítka klepnutí na uživatelské rozhraní v uvedeném pořadí:
 
     ```csharp
     using System;
@@ -546,19 +546,19 @@ Vytvoření aplikace Phoneword následujícím způsobem:
     ```
 
     > [!NOTE]
-    > Při pokusu o vytvoření aplikace v tomto okamžiku bude mít za následek chyby, které budou později opravit.
+    > Pokus o sestavení aplikace v tomto okamžiku způsobí chyby, které budou opraveny později.
 
-    Uložit změny do **MainPage.xaml.cs** výběrem **soubor > Uložit** (nebo stisknutím kombinace kláves  **&#8984; + S**) a zavřete soubor.
+    Uložit změny do **MainPage.xaml.cs** výběrem **soubor > Uložit** (nebo stisknutím klávesy  **&#8984; + S**) a zavřete soubor.
 
-9. V **řešení Pad**, vyberte **Phoneword** projektu klikněte pravým tlačítkem a vyberte **Přidat > Nový soubor...** :
+9. V **oblasti řešení**, vyberte **Phoneword** projektu, klikněte pravým tlačítkem a vyberte **Přidat > Nový soubor...** :
 
-    ![](quickstart-images/xs/add-new-translator-file.png "Přidat nový soubor")
+    ![](quickstart-images/xs/add-new-translator-file.png "Přidejte nový soubor")
 
-10. V **nový soubor** dialogovém okně, vyberte **Obecné > prázdná třída**, pojmenujte nový soubor **PhoneTranslator**a klikněte na tlačítko **nový** tlačítko:
+10. V **nový soubor** dialogového okna, vyberte **Obecné > prázdná třída**, pojmenujte nový soubor **PhoneTranslator**a klikněte na tlačítko **nový** tlačítka:
 
     ![](quickstart-images/xs/add-translator-class.png "Přidejte novou třídu")
 
-11. V **PhoneTranslator.cs**, odeberte všechny kód šablony a nahraďte ji následujícím kódem. Tento kód se přeloží slovo phone na telefonní číslo:
+11. V **PhoneTranslator.cs**, odeberte všechny šablony kód a nahraďte následujícím kódem. Tento kód se přeloží do telefonu slova, aby telefonní číslo:
 
     ```csharp
     using System.Text;
@@ -614,17 +614,17 @@ Vytvoření aplikace Phoneword následujícím způsobem:
     }
     ```
 
-    Uložit změny do **PhoneTranslator.cs** výběrem **soubor > Uložit** (nebo stisknutím kombinace kláves  **&#8984; + S**) a zavřete soubor.
+    Uložit změny do **PhoneTranslator.cs** výběrem **soubor > Uložit** (nebo stisknutím klávesy  **&#8984; + S**) a zavřete soubor.
 
-12. V **řešení Pad**, vyberte **Phoneword** projektu klikněte pravým tlačítkem a vyberte **Přidat > Nový soubor...** :
+12. V **oblasti řešení**, vyberte **Phoneword** projektu, klikněte pravým tlačítkem a vyberte **Přidat > Nový soubor...** :
 
-    ![](quickstart-images/xs/add-new-interface.png "Přidat nový soubor")
+    ![](quickstart-images/xs/add-new-interface.png "Přidejte nový soubor")
 
-13. V **nový soubor** dialogovém okně, vyberte **Obecné > prázdného rozhraní**, pojmenujte nový soubor **IDialer**a klikněte na tlačítko **nový** tlačítko:
+13. V **nový soubor** dialogového okna, vyberte **Obecné > prázdné rozhraní**, pojmenujte nový soubor **IDialer**a klikněte na tlačítko **nový** tlačítka:
 
-    ![](quickstart-images/xs/add-idialer-interface.png "Přidejte nové rozhraní")
+    ![](quickstart-images/xs/add-idialer-interface.png "Přidat nové rozhraní")
 
-14. V **IDialer.cs**, odeberte všechny kód šablony a nahraďte ji následujícím kódem. Tento kód definuje `Dial` metodu, která musí být implementována na jednotlivých platformách k vytočení přeložený telefonní číslo:
+14. Konfigurace projektu formuláře Selhání název řešení a projektu `Dial`Phoneword způsobí mnoho chyb sestavení.
 
     ```csharp
     namespace Phoneword
@@ -635,20 +635,20 @@ Vytvoření aplikace Phoneword následujícím způsobem:
         }
     }
     ```
-    Uložit změny do **IDialer.cs** výběrem **soubor > Uložit** (nebo stisknutím kombinace kláves  **&#8984; + S**) a zavřete soubor.
+    Uložit změny do **IDialer.cs** výběrem **soubor > Uložit** (nebo stisknutím klávesy  **&#8984; + S**) a zavřete soubor.
 
     > [!NOTE]
-    > Společný kód aplikace je nyní dokončen. Kód programu Telefon specifické pro platformu phone se teď implementuje jako [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md).
+    > Uložit změny do MainPage.xaml výběrem soubor > Uložit (nebo stisknutím klávesy  &#8984; + S) a zavřete soubor. V [oblasti řešení](~/xamarin-forms/app-fundamentals/dependency-service/index.md), dvakrát klikněte na panel MainPage.xaml.cs otevřete:
 
-15. V **řešení Pad**, vyberte **Phoneword.iOS** projektu klikněte pravým tlačítkem a vyberte **Přidat > Nový soubor...** :
+15. V **oblasti řešení**, vyberte **Phoneword.iOS** projektu, klikněte pravým tlačítkem a vyberte **Přidat > Nový soubor...** :
 
-    ![](quickstart-images/xs/add-new-file-ios.png "Přidat nový soubor")
+    ![](quickstart-images/xs/add-new-file-ios.png "Přidejte nový soubor")
 
-16. V **nový soubor** dialogovém okně, vyberte **Obecné > prázdná třída**, pojmenujte nový soubor **telefon.dokument**a klikněte na tlačítko **nový** tlačítko:
+16. V **nový soubor** dialogového okna, vyberte **Obecné > prázdná třída**, pojmenujte nový soubor **telefon.dokument**a klikněte na tlačítko **nový** tlačítka:
 
     ![](quickstart-images/xs/new-phonedialer-ios.png "Přidejte novou třídu")
 
-17. V **PhoneDialer.cs**, odeberte všechny kód šablony a nahraďte ji následujícím kódem. Tento kód vytvoří `Dial` metoda, která se použije na platformě iOS k vytočení přeložený telefonní číslo:
+17. V **oblasti řešení**, vyberte Phoneword projektu, klikněte pravým tlačítkem a vyberte Přidat > Nový soubor... : Tento kód vytvoří `Dial` metodu, která bude použita na platformě iOS k vytočení přeloženého telefonního čísla:
 
     ```csharp
     using Foundation;
@@ -670,17 +670,17 @@ Vytvoření aplikace Phoneword následujícím způsobem:
     }
     ```
 
-    Uložit změny do **PhoneDialer.cs** výběrem **soubor > Uložit** (nebo stisknutím kombinace kláves  **&#8984; + S**) a zavřete soubor.
+    Uložit změny do **PhoneDialer.cs** výběrem **soubor > Uložit** (nebo stisknutím klávesy  **&#8984; + S**) a zavřete soubor.
 
-18. V **řešení Pad**, vyberte **Phoneword.Droid** projektu klikněte pravým tlačítkem a vyberte **Přidat > Nový soubor...** :
+18. V **oblasti řešení**, vyberte **Phoneword.Droid** projektu, klikněte pravým tlačítkem a vyberte **Přidat > Nový soubor...** :
 
-    ![](quickstart-images/xs/add-new-file-android.png "Přidat nový soubor")
+    ![](quickstart-images/xs/add-new-file-android.png "Přidejte nový soubor")
 
-19. V **nový soubor** dialogovém okně, vyberte **Obecné > prázdná třída**, pojmenujte nový soubor **telefon.dokument**a klikněte na tlačítko **nový** tlačítko:
+19. V **nový soubor** dialogového okna, vyberte **Obecné > prázdná třída**, pojmenujte nový soubor **telefon.dokument**a klikněte na tlačítko **nový** tlačítka:
 
     ![](quickstart-images/xs/new-phonedialer-android.png "Přidejte novou třídu")
 
-20. V **PhoneDialer.cs**, odeberte všechny kód šablony a nahraďte ji následujícím kódem. Tento kód vytvoří `Dial` metoda, která se použije na platformě Android k vytočení přeložený telefonní číslo:
+20. V **oblasti řešení**, vyberte Phoneword projektu, klikněte pravým tlačítkem a vyberte Přidat > Nový soubor... : Uložit změny do `Dial`IDialer.cs výběrem soubor > Uložit (nebo stisknutím klávesy  &#8984; + S) a zavřete soubor.
 
     ```csharp
     using Android.Content;
@@ -729,9 +729,9 @@ Vytvoření aplikace Phoneword následujícím způsobem:
     }
     ```
 
-    Uložit změny do **PhoneDialer.cs** výběrem **soubor > Uložit** (nebo stisknutím kombinace kláves  **&#8984; + S**) a zavřete soubor.
+    Uložit změny do **PhoneDialer.cs** výběrem **soubor > Uložit** (nebo stisknutím klávesy  **&#8984; + S**) a zavřete soubor.
 
-21. V **řešení Pad**v **Phoneword.Droid** projektu, klikněte dvakrát na **MainActivity.cs** otevřete ho odebrat všechny kód šablony a nahraďte ji následujícím kódem :
+21. V **oblasti řešení**v **Phoneword.Droid** projektu, klikněte dvakrát na **MainActivity.cs** Pokud chcete soubor otevřít, odeberte všechny kód šablony a nahraďte ji následujícím kódem :
 
     ```csharp
     using Android.App;
@@ -760,46 +760,46 @@ Vytvoření aplikace Phoneword následujícím způsobem:
     }
     ```
 
-    Uložit změny do **MainActivity.cs** výběrem **soubor > Uložit** (nebo stisknutím kombinace kláves  **&#8984; + S**) a zavřete soubor.
+    Uložit změny do **MainActivity.cs** výběrem **soubor > Uložit** (nebo stisknutím klávesy  **&#8984; + S**) a zavřete soubor.
 
-22. V **řešení Pad**, rozbalte **vlastnosti** složku a dvojím kliknutím **AndroidManifest.xml** souboru:
+22. V **oblasti řešení**, rozbalte **vlastnosti** složky a dvojím kliknutím **AndroidManifest.xml** souboru:
 
-    ![](quickstart-images/xs/android-manifest.png "Otevřete manifestu systému Android.")
+    ![](quickstart-images/xs/android-manifest.png "Otevřít Manifest Android")
 
-23. V **požadovaná oprávnění** povolte **CallPhone** oprávnění. To dává oprávnění aplikace umístit telefonní hovor:
+23. V **požadovaná oprávnění** povolte **CallPhone** oprávnění. Díky tomu oprávnění k aplikaci umístit telefonního hovoru:
 
     ![](quickstart-images/xs/android-manifest-changed.png "Povolit CallPhone oprávnění")
 
-    Uložit změny do **AndroidManifest.xml** výběrem **soubor > Uložit** (nebo stisknutím kombinace kláves  **&#8984; + S**) a zavřete soubor.
+    Uložit změny do **AndroidManifest.xml** výběrem **soubor > Uložit** (nebo stisknutím klávesy  **&#8984; + S**) a zavřete soubor.
 
-24. V sadě Visual Studio pro Mac, vyberte **sestavení > sestavení všechny** položku nabídky (nebo stiskněte klávesu  **&#8984; + B**). Aplikace bude sestavení a zobrazí se zpráva o úspěšném provedení v sadě Visual Studio pro Mac panelu nástrojů.
+24. V sadě Visual Studio pro Mac, vyberte **sestavení > sestavení všechny** položky nabídky (nebo stiskněte klávesu  **&#8984; + B**). Aplikace se sestaví a zprávu o úspěšném dokončení se zobrazí v sadě Visual Studio pro Mac nástrojů.
 
-    ![](quickstart-images/xs/build-successful.png "Sestavení úspěšné")
+    ![](quickstart-images/xs/build-successful.png "Sestavení bylo úspěšné")
 
-25. Pokud nejsou chyby, opakujte předchozí kroky a opravte chyby, dokud úspěšně sestavení aplikace.
-26. V sadě Visual Studio pro Mac nástrojů stisknutím klávesy **spustit** (tlačítko trojúhelníkovou podobná tlačítko Přehrát akci) spustíte aplikaci v simulátoru iOS:
+25. Pokud chyby existují, opakujte předchozí kroky a opravte všechny chyby, dokud aplikace sestavena úspěšně.
+26. V sadě Visual Studio pro Mac nástrojů stisknutím klávesy **Start** tlačítka (trojúhelníkové tlačítko, která se podobá tlačítko Přehrát) Chcete-li spustit aplikaci v simulátoru iOS:
 
     ![](quickstart-images/xs/start.png "Visual Studio pro Mac nástrojů")
-    ![](quickstart-images/xs/phoneword-result-ios.png "simulátoru iOS")
+    ![](quickstart-images/xs/phoneword-result-ios.png "simulátor iOS")
 
     Poznámka: telefonní hovory nejsou podporovány v simulátoru iOS.
 
-27. V **řešení Pad**, vyberte **Phoneword.Droid** projektu klikněte pravým tlačítkem a vyberte **nastavit jako spouštěný projekt**:
+27. V **oblasti řešení**, vyberte **Phoneword.Droid** projektu, klikněte pravým tlačítkem a vyberte **nastavit jako spouštěný projekt**:
 
     ![](quickstart-images/xs/set-startup-project.png "Nastavit jako spouštěný projekt")
 
-28. V sadě Visual Studio pro Mac nástrojů stisknutím klávesy **spustit** (tlačítko trojúhelníkovou podobná tlačítko Přehrát akci) spustíte aplikaci v emulátoru Androidu:
+28. V aplikaci Visual Studio pro Mac nástrojů, stiskněte **Start** tlačítka (trojúhelníkové tlačítko, která se podobá tlačítko Přehrát) ke spuštění aplikace v emulátoru Androidu:
 
-    ![](quickstart-images/xs/phoneword-result-android.png "Emulátoru systému Android")
+    ![](quickstart-images/xs/phoneword-result-android.png "Emulátor androidu")
 
-    Poznámka: telefonní hovory nejsou podporovány v systému Android emulátorů.
+    Poznámka: telefonní hovory nejsou podporovány v emulátory Androidu.
 
 -----
 
-Blahopřejeme k dokončení Xamarin.Forms aplikace. [Dalšího tématu](~/xamarin-forms/get-started/hello-xamarin-forms/deepdive.md) v této příručce zkontroluje kroky, které byly provedeny v tomto názorném postupu získáte informace o základní informace o vývoj aplikací pomocí Xamarin.Forms.
+Blahopřejeme k dokončení aplikace Xamarin.Forms. [Dalším tématu](~/xamarin-forms/get-started/hello-xamarin-forms/deepdive.md) v této příručce kontroly kroky, které byly provedeny v tomto názorném postupu získáte informace o základní informace o vývoji aplikací pomocí Xamarin.Forms.
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Přístup k nativní funkce prostřednictvím DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md)
+- [Přístup k nativním funkcím prostřednictvím DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md)
 - [Phoneword (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/Phoneword/)

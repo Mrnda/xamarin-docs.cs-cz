@@ -1,52 +1,52 @@
 ---
 title: Funkce Oreo
-description: Jak začít vyvíjet aplikace pro nejnovější verzi systému Android pomocí Xamarin.Android.
+description: Jak začít používat Xamarin.Android pro vývoj aplikací pro nejnovější verzi Androidu.
 ms.prod: xamarin
 ms.assetid: EAEF7341-7A00-4439-9FAF-43882637BEF8
 ms.technology: xamarin-android
 ms.custom: video
 author: mgmclemore
 ms.author: mamcle
-ms.date: 06/22/2018
-ms.openlocfilehash: a23072427a74119bfa339fea8a695cd13b775685
-ms.sourcegitcommit: 26033c087f49873243751deded8037d2da701655
+ms.date: 07/06/2018
+ms.openlocfilehash: af560848240fec9558cc63969bcc269eedbd5424
+ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36935100"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37947283"
 ---
 # <a name="oreo-features"></a>Funkce Oreo
 
-_Jak začít vyvíjet aplikace pro nejnovější verzi systému Android pomocí Xamarin.Android._
+_Jak začít používat Xamarin.Android pro vývoj aplikací pro nejnovější verzi Androidu._
 
-[Android 8.0 Oreo](https://developer.android.com/index.html) najdete nejnovější verze Android na webu Google. Android Oreo obsahuje mnoho nových funkcí, které vás zajímají vývojářům Xamarin.Android. Tyto funkce patří kanály oznámení, oznámení odznaky, vlastní písem v XML, zaváděná písma, automatické vyplňování a obrázek obrázku (PIP). Android Oreo zahrnuje nové rozhraní API pro tyto nové capabilties a tato rozhraní API jsou k dispozici pro aplikace Xamarin.Android při použití Xamarin.Android 8.0 a novější.
+[Android 8.0 Oreo](https://developer.android.com/index.html) je k dispozici z Googlu nejnovější verzi Androidu. Android Oreo nabízí mnoho nových funkcí, které vás zajímají pro vývojáře prostředí Xamarin.Android. Tyto funkce patří kanály oznámení, oznámení, oznámení, vlastní písma v XML, ke stažení písma, automatické vyplňování a picture in picture (PIP). Android Oreo zahrnuje nové rozhraní API pro tyto nové capabilties a tato rozhraní API jsou dostupná pro aplikace Xamarin.Android při použití Xamarin.Android 8.0 a novější.
 
-[![Android Oreo nejdůležitější image](oreo-images/01-android-o-logo-sml.png)](oreo-images/01-android-o-logo.png#lightbox)
+[![Android Oreo ústřední obrázek](oreo-images/01-android-o-logo-sml.png)](oreo-images/01-android-o-logo.png#lightbox)
 
-Tento článek je strukturovaná můžete začít pracovat v vývoj Xamarin.Android aplikací pro Android 8.0 Oreo. Vysvětluje, jak nainstalovat potřebné aktualizace, konfigurace sady SDK a vytvořte emulátoru (nebo zařízení) pro testování. Také poskytuje přehled nových funkcí v systému Android Oreo 8.0, s odkazy na ukázkových aplikací, které ukazují, jak používat funkce Android Oreo v aplikacích pro Xamarin.Android.
+Tento článek je strukturována tak, aby vám pomohli při vývoji aplikace Xamarin.Android pro Android 8.0 Oreo. Vysvětluje, jak nainstalovat potřebné aktualizace, nakonfigurujte sadu SDK a vytvořte emulátoru (nebo zařízení) pro účely testování. Nabízí také přehled nových funkcí v Androidu 8.0 Oreo s odkazy na ukázkové aplikace, které ukazují, jak používat funkce Android Oreo do aplikace Xamarin.Android.
 
 
 ## <a name="requirements"></a>Požadavky
 
-Toto je potřeba používat aplikace pro Xamarin Android Oreo funkce:
+Pokud chcete používat Android Oreo funkce v aplikacích založených na Xamarinu jsou vyžadovány následující položky:
 
--   **Visual Studio** &ndash; Pokud používáte systém Windows, je vyžadována verze 15,5 nebo novější sady Visual Studio.  Pokud používáte algoritmu Mac, je třeba Visual Studio pro Mac verze 7.2.0.
+-   **Visual Studio** &ndash; Pokud používáte Windows, je vyžadována verze 15.5 nebo novější sady Visual Studio.  Pokud používáte počítač Mac, Visual Studio pro Mac verze 7.2.0 je povinný.
 
--   **Xamarin.Android** &ndash; Xamarin.Android 8.0 nebo novější musí být nainstalovaná a nakonfigurovaná pomocí sady Visual Studio.
+-   **Xamarin.Android** &ndash; Xamarin.Android 8.0 nebo novější musí být nainstalované a nakonfigurované pomocí sady Visual Studio.
 
--   **Sady SDK pro Android** &ndash; Android SDK 8.0 (26 rozhraní API) nebo novější musí být nainstalován prostřednictvím Android SDK Manager.
+-   **Sada SDK pro Android** &ndash; Android SDK 8.0 (API 26) nebo novější musí být nainstalován prostřednictvím správce sady Android SDK.
 
 
 
 ## <a name="getting-started"></a>Začínáme
 
-Abyste mohli začít používat Android Oreo s Xamarin.Android, musíte stáhnout a nainstalovat nejnovější nástroje a balíčky SDK před vytvořením projektu Android Oreo:
+Abyste mohli začít používat Android Oreo s Xamarin.Android, musíte stáhnout a nainstalovat nejnovější nástroje a sady SDK balíčky, než budete moct vytvořit projekt Android Oreo:
 
 1. Aktualizovat na nejnovější verzi sady Visual Studio.
 
-2. Nainstalujte **Android 8.0.0 (rozhraní API 26)** nebo novější balíčky a nástroje prostřednictvím sady SDK Manager.
+2. Nainstalujte **Android 8.0.0 (API 26)** nebo novější balíčky a nástrojů přes správce sady SDK.
 
-3. Vytvoření nového projektu Xamarin.Android s cílem Android Oreo (26 rozhraní API).
+3. Vytvoření nového projektu Xamarin.Android, který cílí na Android Oreo (API 26).
 
 4. Nakonfigurujte emulátoru nebo zařízení pro testování aplikací pro Android Oreo.
 
@@ -56,185 +56,184 @@ Každý z těchto kroků je vysvětlené v následujících částech:
 
 ### <a name="update-visual-studio-and-xamarinandroid"></a>Aktualizace sady Visual Studio a Xamarin.Android
 
-Přidání podpory Android Oreo do sady Visual Studio, postupujte takto:
+Přidání podpory pro Android Oreo do sady Visual Studio, postupujte takto:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 -   Pokud používáte Visual Studio 2017: 
 
-    1. Aktualizace Visual Studio 2017 verze 15,5 nebo novější (viz [aktualizace Visual Studio 2017](https://docs.microsoft.com/en-us/visualstudio/install/update-visual-studio)).
+    1. Aktualizace na Visual Studio 2017 verze 15.7 nebo novější (viz [aktualizace sady Visual Studio 2017](https://docs.microsoft.com/visualstudio/install/update-visual-studio)).
 
-    2. Pomocí Správce SDK [pokyny k instalaci](~/android/get-started/installation/android-sdk.md#installation) instalace nástroje Xamarin SDK Manager.
-       Xamarin SDK Manager musíte nainstalovat, protože Google neposkytuje samostatnou SDK grafického uživatelského rozhraní správce, který podporuje rozhraní API 26.0 a novější.
+    2. Použití [správce sady SDK](~/android/get-started/installation/android-sdk.md) instalace úrovně rozhraní API 26.0 nebo vyšší.
 
--   Pokud používáte Visual Studio 2015, jsme doporučujeme, abyste přechod na starší verzi sady SDK nástroje na 25 a pomocí Správce staré Google emulátor grafickým uživatelským rozhraním. Nástroje sady SDK 25 můžete stále používat společně se rozhraní API 26, 27 a novější a nebude mít vliv na vývoj pro nové platformy. Tím získáte rozhraní pro správu vaší Android SDK pro starší verze VS.
+-   Pokud používáte sadu Visual Studio 2015 jsme doporučujeme downgradu SDK Tools 25 a pomocí staré Google Emulator manager grafického uživatelského rozhraní. Nástroje sady SDK 25 pořád můžou použít společně s 26 rozhraní API 27 a novější a nebude mít vliv na vývoj řešení pro nové platformy. Tím získáte rozhraní pro správu vaší sady Android SDK pro starší verzi sady VS.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
--   Aktualizovat na nejnovější stabilní verze Visual Studio 2017 pro Mac, jak je popsáno v [aktualizace Visual Studio pro Mac](https://docs.microsoft.com/en-us/visualstudio/mac/update).
+-   Aktualizovat na nejnovější stabilní verze sady Visual Studio 2017 pro Mac, jak je vysvětleno v [aktualizace sady Visual Studio pro Mac](https://docs.microsoft.com/visualstudio/mac/update).
 
 -----
 
-Další informace o podpoře Xamarin pro Android Oreo najdete v tématu [poznámky k verzi Xamarin.Android 8.0](https://developer.xamarin.com/releases/android/xamarin.android_8/xamarin.android_8.0/).
+Další informace o podpoře Xamarin pro Android Oreo, najdete v článku [zpráva k vydání verze Xamarin.Android 8.0](https://developer.xamarin.com/releases/android/xamarin.android_8/xamarin.android_8.0/).
 
 
 
-### <a name="install-the-android-sdk"></a>Instalace sady SDK pro Android
+### <a name="install-the-android-sdk"></a>Instalace sady Android SDK
 
-Vytvoření projektu s Xamarin.Android 8.0, musíte nejprve použít Xamarin Android SDK Manager k instalaci sady SDK platforma pro **Android 8.0 - Oreo** nebo novější. Je také nutné nainstalovat Android SDK Tools 26.0 nebo novější.
+Vytvoření projektu s Xamarin.Android 8.0, musíte nejprve použít Xamarin Android SDK Manager k instalaci sady SDK platformy pro **Android 8.0 – Oreo** nebo novější. Je také nutné nainstalovat Android SDK Tools 26.0 nebo novější.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. Spusťte správce SDK (v sadě Visual Studio, klikněte na tlačítko **nástroje > Android > Android SDK Manager**).
+1. Spustit správce sady SDK (v sadě Visual Studio, klikněte na tlačítko **nástroje > Android > správce sady Android SDK**).
 
-2. Nainstalujte **Android 8.0 - Oreo** balíčky. Pokud používáte sady SDK pro Android emulátoru, nezapomeňte zahrnout **x86** bitové kopie systému, které budete potřebovat:
+2. Nainstalujte **Android 8.0 – Oreo** balíčky. Pokud používáte emulátor sady Android SDK, je potřeba zahrnout **x86** bitové kopie systému, které budete potřebovat:
 
-    [![Výběr Android 8.0 balíčky v Android SDK Manager](oreo-images/win/01-android-o-packages.png)](oreo-images/win/01-android-o-packages.png#lightbox)
+    [![Výběr Android 8.0 balíčky Android SDK Manager](oreo-images/win/01-android-o-packages.png)](oreo-images/win/01-android-o-packages.png#lightbox)
 
-3. Nainstalujte **Android SDK Tools 26.0.2** nebo novější, **Android SDK nástrojů platformy 26.0.0** nebo novější, a **Android SDK – nástroje sestavení 26.0.0** (nebo novější):
+3. Nainstalujte **Android SDK Tools 26.0.2** nebo novější, **platformy – nástroje sady Android SDK 26.0.0** nebo novější, a **sestavení-nástroje sady Android SDK 26.0.0** (nebo novější):
 
-    [![Výběr nástrojů sady SDK pro Android 26 ve správci sady SDK pro Android](oreo-images/win/02-sdk-tools.png)](oreo-images/win/02-sdk-tools.png#lightbox)
+    [![Vyberte Android SDK Tools 26 ve správci sady Android SDK](oreo-images/win/02-sdk-tools.png)](oreo-images/win/02-sdk-tools.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-1. Spusťte správce SDK (v sadě Visual Studio pro Mac, klikněte na tlačítko **nástroje > SDK Manager**).
+1. Spustit správce sady SDK (v sadě Visual Studio pro Mac, klikněte na tlačítko **nástroje > správce sady SDK**).
 
-2. Nainstalujte **Android 8.0 - Oreo** SDK balíčky. Pokud používáte sady SDK pro Android emulátoru, nezapomeňte zahrnout **x86** bitové kopie systému, které budete potřebovat:
+2. Nainstalujte **Android 8.0 – Oreo** balíčků sady SDK. Pokud používáte emulátor sady Android SDK, je potřeba zahrnout **x86** bitové kopie systému, které budete potřebovat:
 
-    [![Výběr balíčků Android 8.0 ve Správci SDK](oreo-images/mac/01-android-o-packages.png)](oreo-images/mac/01-android-o-packages.png#lightbox)
+    [![Výběr balíčků s Androidem 8.0 ve správci sady SDK](oreo-images/mac/01-android-o-packages.png)](oreo-images/mac/01-android-o-packages.png#lightbox)
 
-3. Nainstalujte **Android SDK Tools 26.0.2** nebo novější, **Android SDK nástrojů platformy 26.0.0** nebo novější, a **Android SDK – nástroje sestavení 26.0.0** (nebo novější):
+3. Nainstalujte **Android SDK Tools 26.0.2** nebo novější, **platformy – nástroje sady Android SDK 26.0.0** nebo novější, a **sestavení-nástroje sady Android SDK 26.0.0** (nebo novější):
 
-    [![Výběr nástrojů sady SDK pro Android 26 ve Správci SDK](oreo-images/mac/02-sdk-tools.png)](oreo-images/mac/02-sdk-tools.png#lightbox)
+    [![Vyberte Android SDK Tools 26 ve správci sady SDK](oreo-images/mac/02-sdk-tools.png)](oreo-images/mac/02-sdk-tools.png#lightbox)
 
 -----
 
 
 
-### <a name="start-a-xamarinandroid-project"></a>Zahájení projektu Xamarin.Android
+### <a name="start-a-xamarinandroid-project"></a>Spuštění projektu Xamarin.Android
 
-Vytvoření nového projektu Xamarin.Android. Pokud jste pro vývoj pro Android pomocí Xamarinu nové, přečtěte si téma [Hello, Android](~/android/get-started/hello-android/index.md) Další informace o vytváření projektů Xamarin.Android.
+Vytvoření nového projektu Xamarin.Android. Pokud jste ještě na vývoj pro Android s využitím kódu Xamarin, najdete v článku [Hello, Android](~/android/get-started/hello-android/index.md) Další informace o vytváření projekty Xamarin.Android.
 
-Když vytvoříte projekt pro Android, musíte nakonfigurovat nastavení verze cíl Android 8.0 nebo novější. Například pokud chcete zacílit na projekt pro Android 8.0, musíte nakonfigurovat úroveň cílové rozhraní API systému Android projektu pro **Android 8.0 (rozhraní API 26)**. Doporučujeme také nastavit cílové úrovni framework na rozhraní API 26 nebo novější. Další informace o konfiguraci úrovní úrovně rozhraní API systému Android, najdete v části [Principy Android API úrovně](~/android/app-fundamentals/android-api-levels.md).
+Když vytvoříte projekt pro Android, musíte nakonfigurovat nastavení verzí pro cílový Android 8.0 nebo novější. Například pokud chcete zaměřit svůj projekt pro Android 8.0, musíte nakonfigurovat úroveň rozhraní Android API cílový projekt tak, aby **Android 8.0 (API 26)**. Doporučuje se nastavit také cílovou úrovní rozhraní API 26 nebo novější. Další informace o konfiguraci úrovně rozhraní Android API úrovně, naleznete v tématu [Principy Android API úrovně](~/android/app-fundamentals/android-api-levels.md).
 
 
 ### <a name="configure-an-emulator-or-device"></a>Konfigurace zařízení nebo emulátoru
 
-Pokud se pokusíte spustit výchozí Google grafického uživatelského rozhraní správce AVD po instalaci Android SDK nástroje 26.0 nebo novější, se můžou zobrazit následující chyba dialog, který dá pokyn k použití nástroje příkazového řádku AVD manager **avdmanager** místo :
+Pokud se pokusíte spustit využívající grafické rozhraní Google AVD Manager výchozí po instalaci Android SDK Tools 26.0 nebo později, může se zobrazit následující chyba dialog, který dává pokyn k použití nástroje příkazového řádku AVD manager **avdmanager** místo :
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-![Dialogové okno s upozorněním správce emulátoru Android](oreo-images/win/03-avd-warning.png)
+![Dialogové okno upozornění správce emulátoru androidu](oreo-images/win/03-avd-warning.png)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-![Dialogové okno s upozorněním správce emulátoru Android](oreo-images/mac/03-avd-warning.png)
+![Dialogové okno upozornění správce emulátoru androidu](oreo-images/mac/03-avd-warning.png)
 
 -----
 
-Tato zpráva se zobrazí, protože Google již poskytuje samostatnou správce AVD grafického uživatelského rozhraní, která podporuje rozhraní API 26.0 a novější. Pro Android 8.0 Oreo, je nutné použít Správce emulátoru Android Xamarin nebo příkazového řádku `avdmanager` nástroj pro Android Oreo vytvořit virtuální zařízení.
+Tato zpráva je zobrazena, protože Google už obsahuje samostatných grafické uživatelské rozhraní AVD Manageru, která podporuje rozhraní API 26.0 a novější. Pro Android 8.0 Oreo, je nutné použít Správce emulátoru Xamarin Androidu nebo příkazového řádku `avdmanager` nástroj k vytvoření virtuálního zařízení pro Android Oreo.
 
-Chcete-li vytvořit a spravovat virtuální zařízení pomocí Správce zařízení Android, najdete v části [Správa virtuálního zařízení pomocí Správce zařízení Android](~/android/get-started/installation/android-emulator/device-manager.md).
-Pokud chcete vytvořit virtuální zařízení bez Správce zařízení Android, postupujte podle kroků v další části.
+Chcete-li vytvořit a spravovat virtuální zařízení pomocí Správce zařízení s Androidem, najdete v článku [spravovat virtuální zařízení pomocí Správce zařízení s Androidem](~/android/get-started/installation/android-emulator/device-manager.md).
+Pokud chcete vytvořit virtuální zařízení bez Správce zařízení s Androidem, postupujte podle kroků v další části.
 
 
-#### <a name="creating-virtual-devices-using-avdmanager"></a>Vytvoření virtuálního zařízení používat avdmanager
+#### <a name="creating-virtual-devices-using-avdmanager"></a>Vytváří se virtuální zařízení používat avdmanager
 
-Chcete-li použít **avdmanager** při vytváření nové virtuální zařízení, postupujte podle těchto kroků:
+Chcete-li použít **avdmanager** k vytvoření nové virtuální zařízení, postupujte podle těchto kroků:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1.  Otevřete okno příkazového řádku a nastavte `JAVA_HOME` umístění sady Java SDK ve vašem počítači. Pro typické instalace Xamarin můžete použít následující příkaz:
+1.  Otevřete okno příkazového řádku a nastavte `JAVA_HOME` umístění sady Java SDK ve vašem počítači. Při typické instalaci Xamarin můžete použít následující příkaz:
 
     ```cmd
     setx JAVA_HOME "C:\Program Files\Java\jdk1.8.0_131"
     ```
 
-2.  Přidat umístění sady SDK pro Android `bin` složku pro vaše `PATH`.
-    Pro typické instalace Xamarin můžete použít následující příkaz:
+2.  Přidat umístění sady Android SDK `bin` složku pro váš `PATH`.
+    Při typické instalaci Xamarin můžete použít následující příkaz:
 
     ```cmd
     setx PATH "%PATH%;C:\Program Files (x86)\Android\android-sdk\tools\bin"
     ```
 
-3.  Zavřete okno příkazového řádku a otevřete nové okno příkazového řádku. Vytvoření nového virtuálního zařízení pomocí [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html) příkaz. Například k vytvoření AVD s názvem **AVD. Oreo 8.0** pomocí x86 bitovou kopii systému pro úroveň rozhraní API 26, použijte následující příkaz:
+3.  Zavřete okno příkazového řádku a otevřete nové okno příkazového řádku. Vytvoření nového virtuálního zařízení s použitím [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html) příkazu. Například k vytvoření AVD s názvem **AVD. Oreo 8.0** x86 pomocí image systému pro úroveň rozhraní API 26, použijte následující příkaz:
 
     ```cmd
     avdmanager create avd -n AVD-Oreo-8.0 -k "system-images;android-26;google_apis;x86"
     ```
 
-4.  Po zobrazení výzvy s **chcete vytvořit vlastní hardwarového profilu [ne]** můžete zadat **žádné** a přijměte výchozí profil hardwaru. Pokud pro sdělení **Ano**, **avdmanager** vás vyzve seznam dotazy pro přizpůsobení hardwarového profilu.
+4.  Po zobrazení výzvy s **chcete vytvořit vlastní hardwarového profilu [Žádný]** můžete zadat **žádné** a přijměte výchozí profil hardwaru. Pokud pro sdělení **Ano**, **avdmanager** vás vyzve k seznam otázek pro přizpůsobení hardwarový profil.
 
-Po jste **avdmanager** Pokud chcete vytvořit virtuální zařízení, budou zahrnuty v rozevírací nabídce zařízení:
+Poté co **avdmanager** k vytvoření virtuálního zařízení, budou zahrnuty v rozevírací nabídce zařízení:
 
 [![Nové AVD přidány do zařízení rozevírací nabídky](oreo-images/win/04-android-o-avd-sml.png)](oreo-images/win/04-android-o-avd.png#lightbox)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-1.  Otevřete **Terminálové** okno a změňte umístění adresáře nástrojů sady SDK pro Android na vaše Mac. Pro typické instalace Xamarin můžete použít následující příkaz:
+1.  Otevřít **terminálu** okna a změňte umístění adresáře nástroje sady Android SDK na vašem počítači Mac. Při typické instalaci Xamarin můžete použít následující příkaz:
 
     ```bash
     cd ~/Library/Developer/Xamarin/android-sdk-macosx/tools/bin
     ```
 
-2.  Vytvoření nového virtuálního zařízení pomocí [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html) příkaz. Například k vytvoření AVD s názvem **AVD. Oreo 8.0** pomocí x86 bitovou kopii systému pro úroveň rozhraní API 26, použijte následující příkaz:
+2.  Vytvoření nového virtuálního zařízení s použitím [avdmanager](https://developer.android.com/studio/command-line/avdmanager.html) příkazu. Například k vytvoření AVD s názvem **AVD. Oreo 8.0** x86 pomocí image systému pro úroveň rozhraní API 26, použijte následující příkaz:
 
     ```bash
     avdmanager create avd -n AVD-Oreo-8.0 -k "system-images;android-26;google_apis;x86"
     ```
 
-3.  Po zobrazení výzvy s **chcete vytvořit vlastní hardwarového profilu [ne]** můžete zadat **žádné** a přijměte výchozí profil hardwaru. Pokud pro sdělení **Ano**, **avdmanager** vás vyzve seznam dotazy pro přizpůsobení profilu hardwaru.
+3.  Po zobrazení výzvy s **chcete vytvořit vlastní hardwarového profilu [Žádný]** můžete zadat **žádné** a přijměte výchozí profil hardwaru. Pokud pro sdělení **Ano**, **avdmanager** vás vyzve k seznam otázek pro přizpůsobení hardwarovém profilu.
 
-Po použití **avdmanager** Pokud chcete vytvořit virtuální zařízení, budou zahrnuty v rozevírací nabídce zařízení:
+Když použijete **avdmanager** k vytvoření virtuálního zařízení, budou zahrnuty v rozevírací nabídce zařízení:
 
 [![Nové AVD přidány do zařízení rozevírací nabídky](oreo-images/mac/04-android-o-avd-sml.png)](oreo-images/mac/04-android-o-avd.png#lightbox)
 
 -----
 
-Další informace o konfiguraci pro testování a ladění emulátoru Androidu najdete v tématu [ladění na emulátoru systému Android](~/android/deploy-test/debugging/debug-on-emulator.md).
+Další informace o konfiguraci nástroje pro testování a ladění v emulátoru Androidu najdete v tématu [ladění v emulátoru Android](~/android/deploy-test/debugging/debug-on-emulator.md).
 
-Pokud používáte fyzické zařízení, například Nexus nebo jeden bod, můžete buď zařízení prostřednictvím automaticky aktualizovat prostřednictvím aktualizace letecké (OTA) nebo stáhnout bitovou kopii systému a flash zařízení přímo. Další informace o ruční aktualizaci zařízení pro Android Oreo najdete v tématu [objekt pro vytváření bitových kopií pro Nexus a pixelů zařízení](https://developers.google.com/android/images).
+Pokud používáte fyzické zařízení, jako je například Nexus nebo Pixel, můžete buď aktualizujte svoje zařízení prostřednictvím automaticky přes aktualizace air (OTA) nebo stáhnout bitovou kopii systému a flash zařízení přímo. Další informace o ruční aktualizaci zařízení na Android Oreo najdete v tématu [objekt pro vytváření bitových kopií pro Nexus a pixelů zařízení](https://developers.google.com/android/images).
 
 
 
 ## <a name="new-features"></a>Nové funkce
 
-Android Oreo zavádí řadu nových funkcí a funkce, jako třeba kanály oznámení, oznámení odznaky, vlastní písem v XML, ke stažení písma, automatické vyplňování a obrázek v obraze. V následujících částech zvýrazněte tyto funkce a poskytuje odkazy na vám pomůže začít používat je ve vaší aplikaci.
+Android Oreo zavádí řadu nových funkcí a možností, jako je například kanály oznámení, oznámení odznáčků, vlastní písma ve formátu XML, ke stažení písem, automatické vyplňování a obrázek v obrázku. V dalších částech zvýrazněte tyto funkce a poskytují odkazy vám pomůžou začít používat je ve vaší aplikaci.
 
 
 
 ### <a name="notification-channels"></a>Kanály oznámení
 
 *Kanály oznámení* jsou aplikace definované kategorie pro oznámení.
-Můžete vytvořit kanál oznámení pro každý typ oznámení, že budete muset odeslat, a můžete vytvořit kanály oznámení tak, aby odrážela volby provedené uživatele vaší aplikace. Nová funkce kanály oznámení umožňuje poskytnout uživatelům jemně odstupňovanou kontrolu nad různé druhy oznámení. Například Pokud implementujete zasílání zpráv aplikace, můžete vytvořit kanály samostatné oznámení pro každou skupinu konverzace, který je vytvořen uživatelem.
+Můžete vytvořit kanál oznámení pro každý typ oznámení, které je nutné odeslat, a můžou vytvářet kanály oznámení tak, aby odrážely volby provedené uživatelů vaší aplikace. Nová funkce kanály oznámení umožňuje poskytnout uživatelům velice přesně kontrolovat různé druhy oznámení. Například Pokud implementujete aplikaci zasílání zpráv, můžete vytvořit kanály samostatné oznámení pro každou skupinu konverzace, která je vytvořená uživatelem.
 
-[Kanály oznámení](~/android/app-fundamentals/notifications/local-notifications.md#notif-chan) vysvětluje, jak vytvořit kanál oznámení a použít jej pro publikování místního oznámení. Příklad kódu reálného, najdete v článku [NotificationChannels](https://developer.xamarin.com/samples/monodroid/android-o/NotificationChannels) ukázku; této ukázkové aplikace spravuje dva kanály a nastaví možnosti Další oznámení.
-
-
-
-### <a name="notification-badges"></a>Odznaky oznámení
-
-Odznaky oznámení jsou malých bodů, které se zobrazují nad ikony aplikace, jak je vidět na tomto snímku obrazovky:
-
-[![Příklad odznaky oznámení na ikony aplikace](oreo-images/02-badges-sml.png)](oreo-images/02-badges.png#lightbox)
-
-Tyto tečky označit, že nová oznámení pro jeden nebo více kanálů oznámení v aplikaci přidružené k této aplikace ikonu &ndash; Toto jsou oznámení, která ještě nebyla uživatel zavře nebo reagovali na ni. Uživatelé mohou dlouho-stisknutím klávesy na ikonu přehled upozornění související s oznámení oznámení v zavření nebo funguje na oznámení z nabídky stiskněte dlouho této appeaars.
-
-Další informace o odznaky oznámení najdete v tématu Android Developer [oznámení odznaky](https://developer.android.com/guide/topics/ui/notifiers/notifications.html#Badges) tématu.
+[Kanály oznámení](~/android/app-fundamentals/notifications/local-notifications.md#notif-chan) vysvětluje, jak vytvořit kanál oznámení a jeho použití pro odesílání místní oznámení. Příklad kódu reálného světa, najdete v článku [NotificationChannels](https://developer.xamarin.com/samples/monodroid/android-o/NotificationChannels) ukázka; Tato ukázková aplikace spravuje dva kanály a nastaví možnosti Další oznámení.
 
 
 
-### <a name="custom-fonts-in-xml"></a>Vlastní písem v kódu XML
+### <a name="notification-badges"></a>Oznámení Odznáčků
 
-Zavádí Android Oreo *písem v kódu XML*, které umožňuje umožňuje začlenit vlastní písma jako prostředky. OpenType (**.otf**) a TrueType (**ttf**) podporované jsou formáty písma. Chcete-li přidat písma jako prostředky, postupujte takto:
+Odznáčky oznámení jsou malé tečky, které se zobrazují nad ikony aplikace, jak je znázorněno na tomto snímku obrazovky:
 
-1. Vytvoření **prostředky nebo písma** složky.
+[![Příklad oznámení odznáčků na ikony aplikace](oreo-images/02-badges-sml.png)](oreo-images/02-badges.png#lightbox)
 
-2. Zkopírujte soubory písma (například **ttf** a **.otf** soubory) k **prostředky nebo písma**. 
+Tyto tečky značí, že se nové oznámení pro jeden nebo více kanálů oznámení do aplikace přidružené k této aplikaci ikony &ndash; jde o upozornění, která ještě není uživatel zavře nebo reagovali na ni. Uživatelé můžou dlouho-stisknutím klávesy na ikonu okamžitý přehled o oznámení související s odznáčkem oznámení, zavření nebo funguje na oznámení z nabídky stiskněte dlouho této appeaars.
 
-3. V případě potřeby přejmenujte každý soubor písma, aby se dodržuje konvence pojmenování souborů Android (tj, použijte pouze malá *a – z*, *0-9*a podtržítka v názvech souborů). Například soubor písma `Pacifico-Regular.ttf` může být přejmenován na něco podobného jako `pacifico.ttf`.
+Další informace o odznáčky oznámení, naleznete v části Android Developer [oznámení Odznáčků](https://developer.android.com/guide/topics/ui/notifiers/notifications.html#Badges) tématu.
 
-4. Použít vlastní písma s použitím nové `android:fontFamily` atribut v rozvržení XML. Například následující `TextView` deklarace používá přidaném **pacifico.ttf** písma prostředků:
+
+
+### <a name="custom-fonts-in-xml"></a>Vlastní písma ve formátu XML
+
+Android Oreo zavádí *písma v XML*, takže je možné začlenit vlastní písma jako prostředky. OpenType (**.otf**) a TrueType (**ttf**) jsou podporované formáty. Přidání písma jako prostředků, postupujte takto:
+
+1. Vytvoření **prostředky/písma** složky.
+
+2. Zkopírujte soubory písma (například **ttf** a **.otf** souborů) do **prostředky/písma**. 
+
+3. V případě potřeby přejmenovat každý soubor písma tak, že dodržuje zásady vytváření názvů Android soubor (například použití pouze malá *a – z*, *0-9*a podtržítka. v názvech souborů). Například soubor písma `Pacifico-Regular.ttf` může být přejmenován na něco jako `pacifico.ttf`.
+
+4. Použít vlastní písma s použitím nového `android:fontFamily` atribut do rozložení XML. Například následující `TextView` deklarace používá přidání **pacifico.ttf** písmo prostředků:
 
    ```xml
    <TextView
@@ -244,123 +243,123 @@ Zavádí Android Oreo *písem v kódu XML*, které umožňuje umožňuje začlen
      android:fontFamily="@font/pacifico" />
    ```
 
-Můžete také vytvořit písma rodiny XML soubor, který popisuje víc písem a také stylu a tloušťky podrobnosti. Další informace najdete v tématu Android Developer [písem v kódu XML](https://developer.android.com/guide/topics/ui/look-and-feel/fonts-in-xml.html) tématu.
+Můžete také vytvořit písmo řady soubor XML, který popisuje několik písma také stylu a tloušťky podrobnosti. Další informace najdete v části Android Developer [písma v XML](https://developer.android.com/guide/topics/ui/look-and-feel/fonts-in-xml.html) tématu.
 
 
-### <a name="downloadable-fonts"></a>Zaváděná písma
+### <a name="downloadable-fonts"></a>Ke stažení písma
 
-Od verze Android Oreo, aplikace může požádat o písma z poskytovatele namísto sdružování je do APK. Písma se stáhnou ze sítě, podle potřeby. Tato funkce snižuje velikost APK uspořit dat využití paměti a mobilní telefon. Také můžete tuto funkci verze Android API 14 a vyšší nainstalováním balíček Android knihovně 26 podpory.
+Od verze Android Oreo, aplikace můžete požádat písma zprostředkovatele spíše než sdružování do APK. Písma se stáhnou ze sítě podle potřeby. Tato funkce se zmenší velikost APK, zachování dat využití paměti a mobilní telefon. Tuto funkci můžete použít také ve verzích rozhraní Android API 14 a vyšší nainstalováním balíček Android podporu knihovně 26.
 
-Když aplikace potřebuje písmo, můžete vytvořit `FontsRequest` objektu (Výběr písma ke stažení) a pak předejte jej `FontsContract` metoda chcete stáhnout. Následující kroky popisují proces stahování písma podrobněji:
+Když vaše aplikace potřebuje písmo, můžete vytvořit `FontsRequest` (určující písmem, které chcete stáhnout) a pak ji předejte do `FontsContract` metoda chcete stáhnout. Následující kroky popisují proces stahování písma podrobněji:
 
-1.  Vytváření instancí [FontRequest](https://developer.android.com/reference/android/provider/FontRequest.html) objektu. 
+1.  Vytvořit instanci [FontRequest](https://developer.android.com/reference/android/provider/FontRequest.html) objektu. 
 
-2.  Podtřída a vytvoření instancí [FontsContract.FontRequestCallback](https://developer.android.com/reference/android/provider/FontsContract.FontRequestCallback.html).
+2.  Podtřídy a vytvoření instance [FontsContract.FontRequestCallback](https://developer.android.com/reference/android/provider/FontsContract.FontRequestCallback.html).
 
-3.  Implementace [FontRequestCallback.OnTypeFaceRetrieved](https://developer.android.com/reference/android/provider/FontsContract.FontRequestCallback.html#onTypefaceRetrieved%28android.graphics.Typeface%29) metodu, která slouží ke zpracování dokončení žádosti písma.
+3.  Implementace [FontRequestCallback.OnTypeFaceRetrieved](https://developer.android.com/reference/android/provider/FontsContract.FontRequestCallback.html#onTypefaceRetrieved%28android.graphics.Typeface%29) metodu, která se používá ke zpracování dokončení požadavku písma.
 
-4.  Implementace [FontRequestCallback.OnTypeFaceRequestFailed](https://developer.android.com/reference/android/provider/FontsContract.FontRequestCallback.html#onTypefaceRequestFailed%28int%29) metoda, která slouží k informování aplikace všechny chyby, které se uskuteční během zpracování žádosti o písma.
+4.  Implementace [FontRequestCallback.OnTypeFaceRequestFailed](https://developer.android.com/reference/android/provider/FontsContract.FontRequestCallback.html#onTypefaceRequestFailed%28int%29) metodu, která slouží k informování aplikace všech chyb, provést během zpracování žádosti o písma.
 
-5.  Volání [FontsContract.RequestFonts](https://developer.android.com/reference/android/provider/FontsContract.html#requestFonts(android.content.Context,%20android.provider.FontRequest,%20android.os.Handler,%20android.os.CancellationSignal,%20android.provider.FontsContract.FontRequestCallback)) metoda pro načtení písmo od zprostředkovatele písma. 
+5.  Volání [FontsContract.RequestFonts](https://developer.android.com/reference/android/provider/FontsContract.html#requestFonts(android.content.Context,%20android.provider.FontRequest,%20android.os.Handler,%20android.os.CancellationSignal,%20android.provider.FontsContract.FontRequestCallback)) metodu pro načtení písmo v poskytovateli písma. 
 
-Při volání `RequestFonts` metoda, nejdřív zkontroluje, pokud písmo se místně uloží do mezipaměti (z předchozího volání `RequestFont`). Pokud není v mezipaměti, volá zprostředkovatele písma, asynchronně načte písmo a pak předá výsledky zpět do aplikace vyvoláním vaší `OnTypeFaceRetrieved` metoda.
+Cuando llama al método `RequestFonts`, primero verifica si la fuente está localmente en caché (desde una llamada anterior a `RequestFont`). Další informace o nové spuštění limity na pozadí, naleznete v části Android Developer `OnTypeFaceRetrieved`omezení zpracování na pozadí tématu.
 
-[Ke stažení písem](https://developer.xamarin.com/samples/monodroid/android-o/DownloadableFonts) příklad ukazuje, jak používat funkci ke stažení písem, která byla zavedená v systému Android Oreo. 
+Vzorek [Stahovatelné písma](https://developer.xamarin.com/samples/monodroid/android-o/DownloadableFonts) ukazuje, jak používat funkci Stahovatelné písma, která byla představena v systému Android Oreo. 
 
-Další informace o stahování písem najdete v tématu Android Developer [ke stažení písem](https://developer.android.com/guide/topics/ui/look-and-feel/downloadable-fonts.html) tématu.
-
-
-
-### <a name="autofill"></a>Automatické vyplňování
-
-Nové _automatické vyplňování_ framework v Android Oreo usnadňuje uživatelům zpracování opakované úlohy, jako je například přihlašovací údaje, vytvoření účtu služby a transakce s kreditními kartami. Uživatelé stráví méně času znovu zadáním informace (což může vést k vstupnímu chyby). Než vaše aplikace může pracovat s rozhraní automatické vyplňování, musí být povolena služby Automatické vyplňování v nastavení systému (uživatelům můžete povolit nebo zakázat automatické vyplňování).
-
-[AutofillFramework](https://developer.xamarin.com/samples/monodroid/android-o/AutoFillFramework/) příklad znázorňuje použití automatické vyplňování Framework. Zahrnuje implementace klienta aktivity se zobrazeními, které by měly být autofilled a služba, která může poskytnout automatické vyplňování dat klientovi aktivity.
-
-Další informace o nové funkce automatického vyplňování a optimalizaci aplikace pro automatické vyplňování najdete v tématu Android Developer [automatické vyplňování Framework](https://developer.android.com/guide/topics/text/autofill.html) tématu.
+Další informace o stahování písem naleznete v tématu Témata ke [Stahovatelné písma](https://developer.android.com/guide/topics/ui/look-and-feel/downloadable-fonts.html) pro vývojáře Android.
 
 
 
-### <a name="picture-in-picture-pip"></a>Obrázek v obraze (PIP)
+### <a name="autofill"></a>Při vytváření kanálu oznámení se místo toho nastavte úroveň doporučené důležitosti.
 
-Android Oreo umožňuje pro aktivitu spustit v režimu obraz v obraze (PIP) na obrazovce jinou aktivitou překrytí. Tato funkce je určená pro přehrávání videa.
+Nový rámec _automatického vyplňování_ v systému Android Oreo usnadňuje uživatelům zvládat opakované úkoly, jako je přihlašovací údaje, vytváření účtů a transakce s kreditními kartami. Pro aplikace zaměřené na Androidu Oreo  nefunguje z důvodu nového omezení umístit services spuštěna na pozadí. Pokud se zaměřujete na Androidu Oreo, měli byste použít PendingIntent.GetBroadcast místo.
 
-Chcete-li určit, že aktivita vaší aplikace můžete použít režim PIP, nastavte na hodnotu true v manifestu systému Android příznak následující:
+Vzor [AutofillFramework](https://developer.xamarin.com/samples/monodroid/android-o/AutoFillFramework/) demonstruje použití modulu Autofill Framework. Několik ukázky Xamarin.Android jsou k dispozici ukazují, jak využít výhod funkcí Android Oreo.
+
+Další informace o nové funkci [Automatické vyplňování](https://developer.android.com/guide/topics/text/autofill.html) a o tom, jak optimalizovat aplikaci pro automatické vyplňování, naleznete v tématu Tvorba automatizovaných aplikací pro vývojáře systému Android.
+
+
+
+### <a name="picture-in-picture-pip"></a>Tato ukázka spravuje dva kanály oznámení: jednu s výchozí význam a druhý s vysokou důležitostí.
+
+PictureInPicture ukazuje základní použití režimu obrázku v obrázku (PiP) pro kapesní zařízení zavedený Oreo. AutofillFramework demonstruje použití rámce automatického vyplňování.
+
+Ke stažení písma poskytuje příklad, jak používat funkce ke stažení písma popsané výše.
 
 ```xml
 android:supportsPictureInPicture
 ```
 
-K určení chování vaši aktivitu, pokud je v režimu PIP, můžete použít novou [PictureInPictureParams](https://developer.android.com/reference/android/app/PictureInPictureParams.html) objektu. `PictureInPictureParams` představuje sadu parametrů, které používáte k inicializaci a aktualizovat aktivitu v režimu PIP (například aktivity upřednostňované poměr stran). Byly přidány následující nové metody PIP do `Activity` v Android Oreo:
+Chcete-li určit, jak se má vaše činnost chovat, když je v režimu PIP, použijte nový objekt [PictureInPictureParams](https://developer.android.com/reference/android/app/PictureInPictureParams.html). `PictureInPictureParams` Tuto knihovnu můžete zabránit aplikaci ze zobrazení chybějících emoji znaků jako "tofu" znaků. Následující nové metody PIP byly přidány k `Activity` Android Oreo:
 
--   [EnterPictureInPictureMode](https://developer.android.com/reference/android/app/Activity.html#enterPictureInPictureMode%28android.app.PictureInPictureParams%29) &ndash; vloží aktivity v režimu PIP. Aktivita je umístěn v horním rohu obrazovky a zbytek na obrazovce, naplní se předchozí aktivity, který byl na obrazovce.
+-   [Služba umístění aktualizace popředí](https://developer.android.com/reference/android/app/Activity.html#enterPictureInPictureMode%28android.app.PictureInPictureParams%29) znázorňuje, jakým způsobem má být aktualizován o umístění zařízení pomocí služby popředí provázaná a začít používat rozhraní API pro umístění. Android 8.0 Oreo vývoj pomocí jazyka C#
 
--   [SetPictureInPictureParams](https://developer.android.com/reference/android/app/Activity.html#setPictureInPictureParams%28android.app.PictureInPictureParams%29) &ndash; aktualizace nastavení konfigurace PIP aktivity (například změnit v poměru stran).
+-   [SetPictureInPictureParams](https://developer.android.com/reference/android/app/Activity.html#setPictureInPictureParams%28android.app.PictureInPictureParams%29)&ndash; Aktualizuje nastavení konfigurace PIP aktivity (například změna poměru stran).
 
-[PictureInPicture](https://developer.xamarin.com/samples/monodroid/android-o/PictureInPicture) příklad ukazuje základní informace o využití pro kapesní zařízení byla zavedená v Oreo režimu obraz v obraze (PiP). Ukázka hraje video, které bude pokračovat bez přerušení při a zpět přepínání mezi režimy zobrazení nebo jiných aktivit.
+Vzor [PictureInPicture](https://developer.xamarin.com/samples/monodroid/android-o/PictureInPicture) demonstruje základní použití režimu Picture-in-Picture (Picture-in-Picture) pro přenosné zařízení představené v Oreo. Zahrnuté odkazy na dokumentaci k rozhraní API a Android Developer témat, která vám pomůže začít pracovat v vytváření aplikací pro Android Oreo.
 
 
 
 ### <a name="other-features"></a>Další funkce
 
-Android Oreo obsahuje mnoho nových funkcí, například Emoji podpory knihovny API umístění pozadí omezení, barvu barevného celou rozsahu pro aplikace, nové zvukových kodeků, webového zobrazení vylepšení, podpora navigace Vylepšené klávesnice a nové rozhraní API AAudio (pro zvuk) pro zvuk s nízkou latencí vysoce výkonné, další informace o těchto funkcích najdete v části Android Developer [Android Oreo funkce a rozhraní API](https://developer.android.com/about/versions/oreo/android-8.0.html) tématu.
+Aplikace Android Oreo obsahuje mnoho dalších nových funkcí, jako je knihovna podpory Emoji, rozhraní API pro umístění, omezení na pozadí, širokou škálu barev pro aplikace, nové zvukové kodeky, vylepšení WebView, vylepšenou navigaci pomocí klávesnice a nové rozhraní API pro audio -výkon s nízkou latencí zvuku, Další informace o těchto funkcích naleznete v tématu Funkce Android Developer [Android Oreo Features and APIs](https://developer.android.com/about/versions/oreo/android-8.0.html).
 
 
 
-## <a name="behavior-changes"></a>Změny chování
+## <a name="behavior-changes"></a>Android 8.0 Oreo
 
-Android Oreo zahrnuje celou řadu systému a změny chování rozhraní API, které mohou mít vliv na funkci existující aplikace. Tyto změny jsou popsány následujícím způsobem.
+Android Oreo zahrnuje širokou škálu systémových a změny chování rozhraní API, které můžou mít vliv na funkce nasazovaných aplikací tak existující. Tyto změny jsou popsány následujícím způsobem.
 
 
-### <a name="background-execution-limits"></a>Omezení provádění pozadí
+### <a name="background-execution-limits"></a>Omezení zpracování na pozadí
 
-K vylepšení zkušeností uživatele, Android Oreo s sebou omezení na co můžete dělat aplikace při spuštění na pozadí. Například pokud uživatel je sledování videa nebo hraní her, spuštěná na pozadí aplikace může narušovat výkon aplikace náročné na video spuštěná v popředí. V důsledku toho Android Oreo umístí následující omezení na aplikace, které nejsou přímo interakci s uživatelem:
+Vylepšit uživatelské prostředí, má aplikace Android Oreo omezení Co může aplikace provádět při běhu na pozadí. Například pokud uživatel se sledováním videa nebo hraní her, aplikace běžící na pozadí by mohla narušit výkon video náročné aplikace spuštěná v popředí. V důsledku toho Android Oreo umístí následující omezení na aplikací, které nejsou přímo interakci s uživatelem:
 
-1.  **Omezení služby na pozadí** &ndash; když aplikace běží na pozadí, má okno několik minut, ve kterém je stále povoleno vytváření a používání služby. Na konci tohoto okna Android zastaví služba na pozadí aplikace a zpracovává jako _nečinnosti_.
+1.  **Omezení služby na pozadí** &ndash; když aplikace běží na pozadí, má okno několik minut, ve kterém je stále povoleno vytváření a používání služby. Na konci tohoto okna, Android, zastaví službu na pozadí aplikace a považuje se _nečinnosti_.
 
-2.  **Vysílání omezení** &ndash; Android 7.0 (25 rozhraní API) umístit do všesměrové vysílání, které aplikace se zaregistruje pro příjem omezení. Android Oreo díky přísnější tato omezení. Například aplikace Android Oreo už registrovat pro implicitní všesměrové vysílání příjemci v jejich manifesty.
+2.  **Vysílání omezení** &ndash; Android 7.0 (rozhraní API 25) přikládá všesměrové vysílání, které aplikace registruje omezení. Android Oreo provádí přísnější těchto omezení. Například Android Oreo aplikace už zaregistrovat přijímače všesměrového vysílání pro implicitní vysílání ve svých manifestech.
 
-Další informace o nové spuštění omezení pozadí najdete v tématu Android Developer [omezení provádění pozadí](https://developer.android.com/about/versions/oreo/background.html) tématu.
+Další informace o nové spuštění limity na pozadí, naleznete v části Android Developer [omezení zpracování na pozadí](https://developer.android.com/about/versions/oreo/background.html) tématu.
 
 
 ### <a name="breaking-changes"></a>Nejnovější změny
 
-Aplikace, které cílí na Android Oreo nebo vyšší, musíte změnit své aplikace pro podporu k následujícím změnám, kde je to možné:
+Aplikace, které cílí na Android Oreo nebo vyšší, musíte upravit jejich aplikací pro podporu následujících změn, kde je to možné:
 
-- Android Oreo ukončuje používání možnost nastavit prioritu jednotlivých oznámení. Místo toho nastavit úroveň doporučené důležitosti při vytváření kanál oznámení. Úroveň důležitosti, který přiřadíte kanál oznámení se vztahuje na všechny zprávy oznámení, které jsou účtovány na ni.
+- Android Oreo zastarání možnost nastavit prioritu jednotlivých oznámení. Při vytváření kanálu oznámení se místo toho nastavte úroveň doporučené důležitosti. Úroveň důležitosti, které přiřadíte do kanálu oznámení se vztahuje na všechny zprávy oznámení, které pošlete do něj.
 
-- Pro aplikace cílený na Android Oreo `PendingIntent.GetService()` nefunguje z důvodu nového omezení vztahujících se na služby spuštěny na pozadí. Pokud cílíte na Android Oreo, měli byste použít [PendingIntent.GetBroadcast](https://developer.xamarin.com/api/member/Android.App.PendingIntent.GetBroadcast/p/Android.Content.Context/System.Int32/Android.Content.Intent/Android.App.PendingIntentFlags/) místo.  
+- Pro aplikace zaměřené na Androidu Oreo `PendingIntent.GetService()` nefunguje z důvodu nového omezení umístit services spuštěna na pozadí. Pokud se zaměřujete na Androidu Oreo, měli byste použít [PendingIntent.GetBroadcast](https://developer.xamarin.com/api/member/Android.App.PendingIntent.GetBroadcast/p/Android.Content.Context/System.Int32/Android.Content.Intent/Android.App.PendingIntentFlags/) místo.  
 
 
 ## <a name="sample-code"></a>Ukázkový kód
 
-Několik ukázky Xamarin.Android jsou k dispozici pro ukazují, jak můžete využít výhod funkcí Android Oreo:
+Několik ukázky Xamarin.Android jsou k dispozici ukazují, jak využít výhod funkcí Android Oreo.
 
--   [NotificationsChannels](https://developer.xamarin.com/samples/monodroid/android-o/NotificationChannels) ukazuje, jak používat nového systému kanály oznámení byla zavedená v systému Android Oreo. Tato ukázka spravuje dva kanály oznámení: jednu s výchozí důležitosti a dalších s vysokou důležitostí.
+-   [NotificationsChannels](https://developer.xamarin.com/samples/monodroid/android-o/NotificationChannels) ukazuje, jak používat nové kanály oznámení zavedené v Androidu Oreo. Tato ukázka spravuje dva kanály oznámení: jednu s výchozí význam a druhý s vysokou důležitostí.
 
--   [PictureInPicture](https://developer.xamarin.com/samples/monodroid/android-o/PictureInPicture) ukazuje základní informace o využití pro kapesní zařízení byla zavedená v Oreo režimu obraz v obraze (PiP). Ukázka hraje video, které bude pokračovat bez přerušení při a zpět přepínání mezi režimy zobrazení nebo jiných aktivit.
+-   [PictureInPicture](https://developer.xamarin.com/samples/monodroid/android-o/PictureInPicture) ukazuje základní použití režimu obrázku v obrázku (PiP) pro kapesní zařízení zavedený Oreo. Zahrnuté odkazy na dokumentaci k rozhraní API a Android Developer témat, která vám pomůže začít pracovat v vytváření aplikací pro Android Oreo.
 
--   [AutofillFramework](https://developer.xamarin.com/samples/monodroid/android-o/AutoFillFramework) demonstruje použití automatické vyplňování Framework. Zahrnuje implementace klienta aktivity se zobrazeními, které by měly být autofilled a služba, která může poskytnout automatické vyplňování dat klientovi aktivity.
+-   [AutofillFramework](https://developer.xamarin.com/samples/monodroid/android-o/AutoFillFramework) demonstruje použití rámce automatického vyplňování. Několik ukázky Xamarin.Android jsou k dispozici ukazují, jak využít výhod funkcí Android Oreo.
 
--   [Zaváděná písma](https://developer.xamarin.com/samples/monodroid/android-o/DownloadableFonts) představuje příklad, jak používat funkci ke stažení písem popsané výše.
+-   [Ke stažení písma](https://developer.xamarin.com/samples/monodroid/android-o/DownloadableFonts) poskytuje příklad, jak používat funkce ke stažení písma popsané výše.
 
--   [EmojiCompat](https://developer.xamarin.com/samples/monodroid/android-o/EmojiCompat) ukazuje použití EmojiCompat podpory knihovny. V této knihovně můžete zabránit aplikaci z zobrazující chybějící emoji znaků jako "tofu" znaků.
+-   [EmojiCompat](https://developer.xamarin.com/samples/monodroid/android-o/EmojiCompat) demonstruje použití EmojiCompat podporu knihovny. Tuto knihovnu můžete zabránit aplikaci ze zobrazení chybějících emoji znaků jako "tofu" znaků.
 
--   [Umístění aktualizace čekající na vyřízení záměr](https://developer.xamarin.com/samples/monodroid/android-o/AndroidPlayLocation/LocUpdPendIntent) ukazuje využití rozhraní API umístění chcete získat aktualizace o umístění zařízení pomocí `PendingIntent`.
+-   [Aktualizace umístění Pendingintent](https://developer.xamarin.com/samples/monodroid/android-o/AndroidPlayLocation/LocUpdPendIntent) ukazuje využití rozhraní API pro umístění má být aktualizován o umístění zařízení pomocí `PendingIntent`.
 
--   [Služba popředí aktualizace umístění](https://developer.xamarin.com/samples/monodroid/android-o/AndroidPlayLocation/LocUpdFgService) ukazuje, jak používat rozhraní API umístění k získání aktualizací o umístění zařízení pomocí služby popředí vázané a spuštěna.
+-   [Služba umístění aktualizace popředí](https://developer.xamarin.com/samples/monodroid/android-o/AndroidPlayLocation/LocUpdFgService) znázorňuje, jakým způsobem má být aktualizován o umístění zařízení pomocí služby popředí provázaná a začít používat rozhraní API pro umístění.
 
 
 ## <a name="video"></a>Video
 
 > [!VIDEO https://youtube.com/embed/OuvEcaMO-Ho]
 
-**8.0 Oreo vývoj pro Android pomocí jazyka C#**
+**Android 8.0 Oreo vývoj pomocí jazyka C#**
 
 
 ## <a name="summary"></a>Souhrn
 
-Tento článek zavedená Android Oreo a vysvětlení, jak nainstalovat a nakonfigurovat na Android Oreo nejnovější nástroje a balíčky pro vývoj pro Xamarin.Android. Poskytl přehled klíčových funkcí, které jsou k dispozici v systému Android Oreo odkazy na příkladu zdrojového kódu pro několik nových funkcí. Zahrnutý odkazy na dokumentaci k rozhraní API a Android Developer témata vám pomohou začít vytváření aplikací pro Android Oreo. Zvýrazněná také nejdůležitější změny Android Oreo chování, které by mohlo mít vliv na stávající aplikace.
+Tento článek zavedené Android Oreo a bylo vysvětleno, jak nainstalovat a nakonfigurovat nejnovější nástroje a balíčky pro vývoj pro Xamarin.Android v Androidu Oreo. Přehled klíčových funkcí, které jsou k dispozici v Androidu Oreo je k dispozici s odkazy na ukázkovém zdrojovém kódu pro několik nových funkcí. Zahrnuté odkazy na dokumentaci k rozhraní API a Android Developer témat, která vám pomůže začít pracovat v vytváření aplikací pro Android Oreo. Také zvýrazněna nejdůležitější změny Android Oreo chování, které by mohly mít vliv na stávající aplikace.
 
 
 ## <a name="related-links"></a>Související odkazy
