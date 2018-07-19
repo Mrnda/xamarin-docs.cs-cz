@@ -6,13 +6,13 @@ ms.technology: xamarin-forms
 ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
 author: charlespetzold
 ms.author: chape
-ms.date: 04/03/2017
-ms.openlocfilehash: dec6fa1534f14836ae98677ad33e280ff510fb97
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/17/2018
+ms.openlocfilehash: cbce6f414586597dc2b2788aa18b03228c128018
+ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995182"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39130956"
 ---
 # <a name="bitmap-basics-in-skiasharp"></a>Bitmapa – základy ve ve Skiasharpu
 
@@ -22,7 +22,7 @@ Podpora rastrové obrázky v SkiaSharp je poměrně rozsáhlý. Tento článek s
 
 ![](bitmaps-images/bitmapssample.png "Zobrazení dvou rastrových obrázků")
 
-Rastrový obrázek ve Skiasharpu je objekt typu [ `SKBitmap` ](https://developer.xamarin.com/api/type/SkiaSharp.SKBitmap/). Existuje mnoho způsobů, jak vytvořit rastrový obrázek, ale v tomto článku omezuje na [ `SKBitmap.Decode` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.Decode/p/SkiaSharp.SKStream/) metodu, která načte bitovou mapu ze [ `SKStream` ](https://developer.xamarin.com/api/type/SkiaSharp.SKStream/) objekt, který odkazuje na soubor rastrového obrázku. Je vhodné použít [ `SKManagedStream` ](https://developer.xamarin.com/api/type/SkiaSharp.SKManagedStream/) třídu odvozenou od `SKStream` protože nemá konstruktor, který přijímá .NET [ `Stream` ](xref:System.IO.Stream) objektu.
+Rastrový obrázek ve Skiasharpu je objekt typu [ `SKBitmap` ](https://developer.xamarin.com/api/type/SkiaSharp.SKBitmap/). Existuje mnoho způsobů, jak vytvořit rastrový obrázek, ale v tomto článku omezuje na [ `SKBitmap.Decode` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.Decode/p/System.IO.Stream/) metodu, která načte bitovou mapu z .NET `Stream` objektu.
 
 **Základní rastrové obrázky** stránku **SkiaSharpFormsDemos** program ukazuje, jak načíst rastrové obrázky ze tří různých zdrojů:
 
@@ -55,39 +55,46 @@ public class BasicBitmapsPage : ContentPage
 
 ## <a name="loading-a-bitmap-from-the-web"></a>Načítání rastrový obrázek z webu
 
-Načíst bitmapu podle adresy URL, můžete použít [ `WebRequest` ](xref:System.Net.WebRequest) třídy, jak je znázorněno v následujícím kódu proveden v `BasicBitmapsPage` konstruktoru. Adresa URL zde odkazuje na oblast na webu Xamarin se některé ukázkové rastrové obrázky. Balíček na webu umožňuje přidávání specifikace pro změnu velikosti rastrový obrázek pro konkrétní width:
+Načíst bitmapu podle adresy URL, můžete použít [ `HttpClient` ](/dotnet/api/system.net.http.httpclient?view=netstandard-2.0) třídy. By měl vytvořit instanci jenom jeden výskyt `HttpClient` a znovu použít, takže ho uložit jako pole:
 
 ```csharp
-Uri uri = new Uri("http://developer.xamarin.com/demo/IMG_3256.JPG?width=480");
-WebRequest request = WebRequest.Create(uri);
-request.BeginGetResponse((IAsyncResult arg) =>
+HttpClient httpClient = new HttpClient();
+```
+
+Při použití `HttpClient` pomocí aplikace pro iOS a Android, budete chtít nastavit vlastnosti projektu, jak je popsáno v dokumentech na  **[zabezpečení TLS (Transport Layer) 1.2](~/cross-platform/app-fundamentals/transport-layer-security.md)**.
+
+Protože je nejvhodnější pro použití `await` operátor s `HttpClient`, kód nelze provést v `BasicBitmapsPage` konstruktoru. Místo toho je součástí `OnAppearing` přepsat. Adresa URL zde odkazuje na oblast na webu Xamarin se některé ukázkové rastrové obrázky. Balíček na webu umožňuje přidávání specifikace pro změnu velikosti rastrový obrázek pro konkrétní width:
+
+
+```csharp
+protected override async void OnAppearing()
 {
+    base.OnAppearing();
+
+    // Load web bitmap.
+    string url = "https://developer.xamarin.com/demo/IMG_3256.JPG?width=480";
+
     try
     {
-        using (Stream stream = request.EndGetResponse(arg).GetResponseStream())
+        using (Stream stream = await httpClient.GetStreamAsync(url))
         using (MemoryStream memStream = new MemoryStream())
         {
-            stream.CopyTo(memStream);
+            await stream.CopyToAsync(memStream);
             memStream.Seek(0, SeekOrigin.Begin);
 
-            using (SKManagedStream skStream = new SKManagedStream(memStream))
-            {
-                webBitmap = SKBitmap.Decode(skStream);
-            }
-        }
+            webBitmap = SKBitmap.Decode(stream);
+            canvasView.InvalidateSurface();
+        };
     }
     catch
     {
     }
-
-    Device.BeginInvokeOnMainThread(() => canvasView.InvalidateSurface());
-
-}, null);
+}
 ```
 
-Po úspěšném stažení rastrový obrázek, metody zpětného volání předána `BeginGetResponse` metoda spuštění. `EndGetResponse` Musí být ve volání `try` blokovat v případě, že došlo k chybě. `Stream` Získaného z `GetResponseStream` není dostatečné na některých platformách, takže obsah rastrového obrázku se zkopíruje do `MemoryStream` objektu. V tomto okamžiku `SKManagedStream` objekt může být vytvořen. Tuto chybu odkazuje na soubor rastrového obrázku, který je pravděpodobně soubor JPEG nebo PNG. `SKBitmap.Decode` Metoda dekóduje rastrového obrázku a ukládá výsledky v interním formátu ve Skiasharpu.
+Android vyvolá výjimku při použití `Stream` vrácená `GetStreamAsync` v `SKBitmap.Decode` metoda protože provádí operace s delším průběhem hlavního vlákna. Z tohoto důvodu se obsah rastrového obrázku zkopírují do `MemoryStream` pomocí `CopyToAsync`.
 
-Metoda zpětného volání předána `BeginGetResponse` spustí po dokončení provádění, konstruktor, což znamená, `SKCanvasView` je potřeba ukončit platnost umožňující `PaintSurface` obslužné rutiny aktualizace zobrazíte. Ale `BeginGetResponse` zpětného volání běží sekundární vlákno provádění, takže je nutné použít `Device.BeginInvokeOnMainThread` ke spuštění `InvalidateSurface` metodu ve vlákně uživatelského rozhraní.
+Statické `SKBitmap.Decode` metoda je zodpovědná za dekódování rastrové soubory. Funguje s JPEG, PNG, ve formátu GIF a několik dalších formátů oblíbených rastrový obrázek a ukládá výsledky v interním formátu ve Skiasharpu. V tomto okamžiku `SKCanvasView` je potřeba ukončit platnost umožňující `PaintSurface` obslužné rutiny aktualizace zobrazíte. 
 
 ## <a name="loading-a-bitmap-resource"></a>Načítání prostředku rastrového obrázku
 
@@ -100,19 +107,18 @@ string resourceID = "SkiaSharpFormsDemos.Media.monkey.png";
 Assembly assembly = GetType().GetTypeInfo().Assembly;
 
 using (Stream stream = assembly.GetManifestResourceStream(resourceID))
-using (SKManagedStream skStream = new SKManagedStream(stream))
 {
-    resourceBitmap = SKBitmap.Decode(skStream);
+    resourceBitmap = SKBitmap.Decode(stream);
 }
 ```
 
-To `Stream` objekt převést přímo do `SKManagedStream` objektu.
+To `Stream` objekt je možné předat přímo `SKBitmap.Decode` metody.
 
 ## <a name="loading-a-bitmap-from-the-photo-library"></a>Načítání rastrový obrázek z knihovny fotografií
 
 Je také možné pro uživatele k načtení fotografii z knihovny obrázků zařízení. Toto zařízení není k dispozici pomocí Xamarin.Forms, samotného. Úloha vyžaduje závislou službu, jako jsou popsané v článku [výběr z knihovny obrázků fotografie](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md).
 
-**IPicturePicker.cs** souboru a tři **PicturePickerImplementation.cs** soubory z tohoto článku byly zkopírovány do různých projektů **SkiaSharpFormsDemos**řešení a nové názvy oborů názvů. Kromě toho, Android **MainActivity.cs** soubor byl změněn, jak je popsáno v článku a projekt pro iOS se předala oprávnění pro přístup k knihovny fotografií se dvěma řádky směrem k dolní části **info.plist**  souboru.
+**IPhotoLibrary.cs** soubor **SkiaSharpFormsDemos** projektu a tři **PhotoLibrary.cs** soubory v projektech platformy byly upraveny z tohoto článku. Kromě toho, Android **MainActivity.cs** soubor byl změněn, jak je popsáno v článku a projekt pro iOS se předala oprávnění pro přístup k knihovny fotografií se dvěma řádky směrem k dolní části **info.plist**  souboru.
 
 `BasicBitmapsPage` Přidá konstruktor `TapGestureRecognizer` k `SKCanvasView` upozornit odposlouchávání. Po obdržení klepnutím na `Tapped` obslužná rutina získá přístup ke službě závislost obrázek výběru a volání `GetImageStreamAsync`. Pokud `Stream` je vrácen objekt a potom se obsah zkopíruje do `MemoryStream`, jak je požadováno v některé z platforem. Zbývající část kódu je podobný dvě techniky:
 
@@ -122,22 +128,13 @@ TapGestureRecognizer tapRecognizer = new TapGestureRecognizer();
 tapRecognizer.Tapped += async (sender, args) =>
 {
     // Load bitmap from photo library
-    IPicturePicker picturePicker = DependencyService.Get<IPicturePicker>();
+    IPhotoLibrary photoLibrary = DependencyService.Get<IPhotoLibrary>();
 
-    using (Stream stream = await picturePicker.GetImageStreamAsync())
+    using (Stream stream = await photoLibrary.PickPhotoAsync())
     {
         if (stream != null)
         {
-            using (MemoryStream memStream = new MemoryStream())
-            {
-                stream.CopyTo(memStream);
-                memStream.Seek(0, SeekOrigin.Begin);
-
-                using (SKManagedStream skStream = new SKManagedStream(memStream))
-                {
-                    libraryBitmap = SKBitmap.Decode(skStream);
-                }
-            }
+            libraryBitmap = SKBitmap.Decode(stream);
             canvasView.InvalidateSurface();
         }
     }

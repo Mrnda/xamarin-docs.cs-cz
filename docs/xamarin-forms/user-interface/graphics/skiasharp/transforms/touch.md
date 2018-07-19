@@ -1,33 +1,33 @@
 ---
-title: Manipulace dotykového ovládání
-description: Tento článek vysvětluje, jak použít k implementaci přetahování dotykového ovládání, roztáhnout a oběh matice transformací a to ukazuje s ukázkový kód.
+title: Manipulace dotyků
+description: Tento článek vysvětluje, jak používat maticové transformace pro implementaci přetažením dotykového ovládání, sevření a otočení a ukazuje to se vzorovým kódem.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: A0B8DD2D-7392-4EC5-BFB0-6209407AD650
 author: charlespetzold
 ms.author: chape
 ms.date: 04/03/2018
-ms.openlocfilehash: a53fe287e74070adb22c2a7c67d4b7cc10b35d3e
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 2de5b9a3a6bf0d36330212a52ba5c7278b970efc
+ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244283"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39130904"
 ---
-# <a name="touch-manipulations"></a>Manipulace dotykového ovládání
+# <a name="touch-manipulations"></a>Manipulace dotyků
 
-_Použití matice transformuje implementovat přetahování dotykového ovládání, roztáhnout a otočení_
+_Použití matice transformuje k implementaci přetažením dotykového ovládání, sevření a otočení_
 
-V prostředích s více touch například na mobilních zařízeních uživatelů často používají jejich prsty manipulovat s objekty, na obrazovce. Například jeden prstem přetažení a roztahováním prstů dvě běžné gesta můžete přesunout a škálování objekty nebo i jejich otočení. Tyto gesta jsou obecně implementovaná pomocí transformační matice a v tomto článku se dozvíte, jak to provést.
+V prostředích s více dotyků ohrožují na mobilních zařízeních uživatelů často používají jejich prstů k manipulaci s objekty na obrazovce. Běžné gesta jako je například jedním prstem přetahování a roztažením prstů dvě můžete přesunout a škálovat objekty nebo dokonce i jejich otočení. Tyto gesta jsou obvykle implementovány pomocí transformační matice a v tomto článku se dozvíte, jak to provést.
 
-![](touch-images/touchmanipulationsexample.png "Rastrový obrázek podrobí překlad, změny velikosti a oběh")
+![](touch-images/touchmanipulationsexample.png "Rastrový obrázek překladu, měřítko a otočení")
 
-## <a name="manipulating-one-bitmap"></a>Manipulace s jeden rastrového obrázku
+## <a name="manipulating-one-bitmap"></a>Manipulace s jeden rastrový obrázek
 
-**Touch manipulaci** stránky ukazuje touch manipulace na jednom rastrového obrázku.
-Tato ukázka využívá touch sledování účinku uvedené v článku [vyvolání události z důsledky](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md).
+**Touch manipulace** stránce ukazuje manipulace dotykové ovládání v jediné bitmapě.
+Tato ukázka používá touch sledování účinku uvedené v článku [vyvolání události z účinků](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md).
 
-Poskytují podporu pro několik dalších souborů **Touch manipulaci** stránky. První je [ `TouchManipulationMode` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TouchManipulationMode.cs) výčtu, který označuje různé typy zpracování touch implementované kód budete zobrazuje:
+Poskytuje podporu pro několik dalších souborů **Touch manipulace** stránky. První je [ `TouchManipulationMode` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TouchManipulationMode.cs) výčet, který určuje různé druhy touch manipulace implementovat v kódu, bude zobrazení:
 
 ```csharp
 enum TouchManipulationMode
@@ -41,13 +41,13 @@ enum TouchManipulationMode
 }
 ```
 
-`PanOnly` je přetáhněte prstem jeden, který je implementováno s překlad. Všechny ostatní možnosti také zahrnovat posouvání ale zahrnují dvěma prsty: `IsotropicScale` je roztahováním operace, která vyústí v objektu škálování stejně v vodorovného a svislého směru. `AnisotropicScale` Umožňuje nerovné škálování.
+`PanOnly` je s jedním prstem přetažení, která je implementována pomocí překladu. Všechny ostatní možnosti také zahrnovat posouvání, ale zahrnují dvěma prsty: `IsotropicScale` je operace prstů, jehož výsledkem objekt škálování stejně vodorovného a svislého směry. `AnisotropicScale` umožňuje škálování nerovnost.
 
-`ScaleRotate` Možnost je pro dva prstem škálování a otočení. Změna velikosti je isotropic. Implementace dva prstem otočení s volba škálování je problematické, protože pohybů prstem jsou v podstatě stejné.
+`ScaleRotate` Možnost je pro dvě prstem změnu měřítka a otočení. Škálování je isotropic. Implementace dvou prstem otočení pomocí anizotropního škálování jen těžko pohybů prstem jsou v podstatě stejné.
 
-`ScaleDualRotate` Možnost přidá jeden prstem otočení. Při jednom prstem nastavuje tažením objekt, objekt taženou nejprve otočen kolem jeho center tak, aby center objektu zarovnán s přetahování vektoru.
+`ScaleDualRotate` Možnost přidá otočení jedním prstem. Při jedné prstem objektu, přetahovaného objektu je nejprve otáčet kolem středu tak, aby středu objektu zarovnán s přetahování vektoru.
 
-[ **TouchManipulationPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TouchManipulationPage.xaml) soubor obsahuje `Picker` s členů `TouchManipulationMode` výčtu:
+[ **TouchManipulationPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TouchManipulationPage.xaml) obsahuje soubor `Picker` s členy `TouchManipulationMode` výčtu:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -92,9 +92,9 @@ enum TouchManipulationMode
 </ContentPage>
 ```
 
-Směrem dolní je `SKCanvasView` a `TouchEffect` připojené k jedné buňce `Grid` uzavře ho.
+Směrem k dolní části je `SKCanvasView` a `TouchEffect` připojené k jedné buňce `Grid` , který obklopuje.
 
-[ **TouchManipulationPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TouchManipulationPage.xaml.cs) má souboru kódu na pozadí `bitmap` pole, ale není typu `SKBitmap`. Typ je `TouchManipulationBitmap` (třídu se krátce zobrazí):
+[ **TouchManipulationPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TouchManipulationPage.xaml.cs) má soubor kódu na pozadí `bitmap` pole, ale není typu `SKBitmap`. Typ je `TouchManipulationBitmap` (zobrazí se vám zanedlouho třídu):
 
 ```csharp
 public partial class TouchManipulationPage : ContentPage
@@ -110,9 +110,8 @@ public partial class TouchManipulationPage : ContentPage
         Assembly assembly = GetType().GetTypeInfo().Assembly;
 
         using (Stream stream = assembly.GetManifestResourceStream(resourceID))
-        using (SKManagedStream skStream = new SKManagedStream(stream))
         {
-            SKBitmap bitmap = SKBitmap.Decode(skStream);
+            SKBitmap bitmap = SKBitmap.Decode(stream);
             this.bitmap = new TouchManipulationBitmap(bitmap);
             this.bitmap.TouchManager.Mode = TouchManipulationMode.ScaleRotate;
         }
@@ -121,9 +120,9 @@ public partial class TouchManipulationPage : ContentPage
 }
 ```
 
-V konstruktoru vytvoří `TouchManipulationBitmap` objekt, předejte do konstruktoru `SKBitmap` získané z vložený prostředek. Konstruktor se ukončí nastavení `Mode` vlastnost `TouchManager` vlastnost `TouchManipulationBitmap` objekt, který chcete členem `TouchManipulationMode` – výčet.
+Vytvoří instanci konstruktoru `TouchManipulationBitmap` objekt předáním konstruktoru `SKBitmap` získané ze vloženého prostředku. Konstruktor končí tím, že nastavíte `Mode` vlastnost `TouchManager` vlastnost `TouchManipulationBitmap` objektu na člen `TouchManipulationMode` výčtu.
 
-`SelectedIndexChanged` Obslužné rutiny pro `Picker` také nastaví to `Mode` vlastnost:
+`SelectedIndexChanged` Obslužné rutiny pro `Picker` také nastaví tuto `Mode` vlastnost:
 
 ```csharp
 public partial class TouchManipulationPage : ContentPage
@@ -143,7 +142,7 @@ public partial class TouchManipulationPage : ContentPage
 }
 ```
 
-`TouchAction` Obslužnou rutinu `TouchEffect` instanci ve voláních souboru XAML dvě metody v `TouchManipulationBitmap` s názvem `HitTest` a `ProcessTouchEvent`:
+`TouchAction` Obslužná rutina `TouchEffect` vytvořena ve voláních soubor XAML dvě metody v `TouchManipulationBitmap` s názvem `HitTest` a `ProcessTouchEvent`:
 
 ```csharp
 public partial class TouchManipulationPage : ContentPage
@@ -193,11 +192,11 @@ public partial class TouchManipulationPage : ContentPage
 }
 ```
 
-Pokud `HitTest` metoda vrátí `true` &mdash; znamená, že má prstem dotýkal obrazovky v oblasti obsazena bitovou mapu &mdash; pak touch ID je přidán do `TouchIds` kolekce. Toto ID představuje posloupnost událostí dotykového ovládání pro tento prstu, dokud prstu zruší na obrazovce. Pokud více prsty touch rastrového obrázku, pak se `touchIds` kolekce obsahuje touch ID pro každý prstu.
+Pokud `HitTest` vrátí metoda `true` &mdash; to znamená, že má některé prstem na obrazovce v rámci zabraná rastrového obrázku &mdash; potom touch ID je přidán k `TouchIds` kolekce. Toto ID představuje posloupnost událostí dotykového ovládání pro tento prstem, dokud prstu výtahy z obrazovky. Pokud více prsty touch rastrového obrázku, pak bude `touchIds` kolekce obsahuje touch ID pro každý prstem.
 
-`TouchAction` Obslužná rutina také voláním `ProcessTouchEvent` třídy v `TouchManipulationBitmap`. To je, kdy některé (ale ne všechny) z reálného touch zpracování probíhá.
+`TouchAction` Také volá obslužná rutina `ProcessTouchEvent` třídy v `TouchManipulationBitmap`. Tady některých (ale ne všech) aplikace skutečný touch neproběhne zpracování.
 
-[ `TouchManipulationBitmap` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TouchManipulationBitmap.cs) Třída představuje obálkovou třídu pro `SKBitmap` obsahující kód pro vykreslení bitovou mapu a zpracování události dotykového ovládání. Funguje ve spojení s více zobecněn kód `TouchManipulationManager` (která se krátce zobrazí).
+[ `TouchManipulationBitmap` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TouchManipulationBitmap.cs) Představuje obálkovou třídu pro třídy `SKBitmap` , která obsahuje kód pro vykreslení rastrového obrázku a zpracovávat události dotykové ovládání. Funguje ve spojení s více zobecnit kód v `TouchManipulationManager` (která se zobrazí za chvíli).
 
 `TouchManipulationBitmap` Konstruktor uloží `SKBitmap` a vytvoří dvě vlastnosti `TouchManager` vlastnost typu `TouchManipulationManager` a `Matrix` vlastnost typu `SKMatrix`:
 
@@ -225,9 +224,9 @@ class TouchManipulationBitmap
 }
 ```
 
-To `Matrix` vlastnost je Akumulovaná transformace vyplývající z veškerou aktivitu dotykového ovládání. Jak zjistíte, každá událost touch je přeložit na přehled, který je pak zřetězen s `SKMatrix` hodnotě uložené `Matrix` vlastnost.
+To `Matrix` vlastnost je součet transformace vyplývající z dotykového ovládání aktivit. Jak uvidíte, každá událost touch vyřeší do matice, který je pak zřetězená s `SKMatrix` hodnota uložená `Matrix` vlastnost.
 
-`TouchManipulationBitmap` Objekt nevykresluje sám jeho `Paint` metoda. Argument je `SKCanvas` objektu. To `SKCanvas` již můžete mít transformace použít, proto `Paint` metoda zřetězí `Matrix` vlastnost přidružené rastrového obrázku na existující transformace a obnoví na plátno po dokončení:
+`TouchManipulationBitmap` Objekt vykresluje jeho `Paint` metoda. Argument je `SKCanvas` objektu. To `SKCanvas` již můžete mít transformace použita, proto `Paint` metoda zřetězí `Matrix` vlastnost přidružený rastrový obrázek pro existující transformace a obnoví na plátně po dokončení:
 
 ```csharp
 class TouchManipulationBitmap
@@ -245,11 +244,11 @@ class TouchManipulationBitmap
 }
 ```
 
-`HitTest` Metoda vrátí `true` Pokud uživatel dotykem obrazovky na místo uvnitř bitmapy. Jako uživatel manipuluje bitovou mapu, bitmapy může otáčet nebo i (pomocí kombinace volba změny velikosti a oběh) být ve tvaru rovnoběžník. Může obávat, který `HitTest` metoda musí implementovat v takovém případě místo komplexní geometrie analýzu.
+`HitTest` Vrátí metoda `true` Pokud uživatel se dotýká obrazovky v okamžiku v rámci hranic rastrového obrázku. Jako uživatel manipuluje rastrový obrázek, rastrového obrázku může otočit nebo dokonce (pomocí kombinace anisotropního měřítka a otočení) být ve tvaru se z něj rovnoběžník. Může být obávat, který `HitTest` metoda musí implementovat spíše složité analýze geometrie v takovém případě.
 
 Zástupce je však k dispozici:
 
-Určení, zda bod leží v hranicích transformovaných obdélníku je stejný jako určení toho, jestli bod inverzní transformovaných leží v hranicích Netransformovaný rámečku. Který je mnohem snazší výpočtu a můžete použít vhodného `Contains` metoda definované `SKRect`:
+Zjištění, zda se bod nachází v rámci hranic transformovaný obdélníku je stejný jako zjištění, zda inverzní transformovaný bodu leží v hranicích Netransformovaný obdélník. To je mnohem jednodušší výpočet a můžete použít pohodlný `Contains` metody definované `SKRect`:
 
 ```csharp
 class TouchManipulationBitmap
@@ -275,7 +274,7 @@ class TouchManipulationBitmap
 }
 ```
 
-Druhý veřejná metoda v `TouchManipulationBitmap` je `ProcessTouchEvent`. Když tato metoda je volána, již bylo zjištěno, že událost touch patří do této konkrétní rastrového obrázku. Metoda udržuje slovník [ `TouchManipulationInfo` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TouchManipulationInfo.cs) objekty, které je jednoduše předchozího bodu a nový bod každý prstu:
+Druhá veřejná metoda v `TouchManipulationBitmap` je `ProcessTouchEvent`. Když tato metoda je volána, již bylo zjištěno, že události touch patří do této konkrétní rastrového obrázku. Metoda udržuje slovník [ `TouchManipulationInfo` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TouchManipulationInfo.cs) objekty, které je jednoduše dřívějšímu bodu a nový bod každé prstem:
 
 ```csharp
 class TouchManipulationInfo
@@ -329,11 +328,11 @@ class TouchManipulationBitmap
 }
 ```
 
-V `Moved` a `Released` události, volání metod `Manipulate`. V těchto časech `touchDictionary` obsahuje jeden nebo více `TouchManipulationInfo` objekty. Pokud `touchDictionary` obsahuje jednu položku, je pravděpodobné, který `PreviousPoint` a `NewPoint` hodnoty nerovné a představují pohyb prstu. Pokud více prsty, které jsou dotykové ovládání bitovou mapu, slovník obsahuje více než jednu položku, ale pouze jeden z těchto položek má jiný `PreviousPoint` a `NewPoint` hodnoty. Všechny ostatní mají stejné `PreviousPoint` a `NewPoint` hodnoty.
+V `Moved` a `Released` události, volání metod `Manipulate`. Za těchto okolností `touchDictionary` obsahuje jeden nebo více `TouchManipulationInfo` objekty. Pokud `touchDictionary` obsahuje jednu položku, je pravděpodobné, který `PreviousPoint` a `NewPoint` hodnoty rovny a představují přesun prstem. Pokud více prsty se dotýká rastrový obrázek, slovník obsahuje více než jednu položku, ale pouze jeden z těchto položek má jiné `PreviousPoint` a `NewPoint` hodnoty. Všechny ostatní mají stejné `PreviousPoint` a `NewPoint` hodnoty.
 
-To je důležité: `Manipulate` metoda můžete předpokládat, že ji zpracovává pohyb pouze jedním prstem. V době toto volání se žádné z ostatních prstů přesunutí a pokud se skutečně přesouváte (jako je pravděpodobně), tyto pohybů budou zpracovány v budoucí volání `Manipulate`.
+To je důležité: `Manipulate` metoda můžete předpokládat, že se zpracování pohyb pouze jedním prstem. V okamžiku tohoto volání žádná další prsty není přesun a pokud, skutečně přesouváte (což je pravděpodobně), tyto pohybů plb typu budou zpracovány v budoucích volání `Manipulate`.
 
-`Manipulate` Slovníku metoda nejprve zkopíruje do pole pro usnadnění práce. Ignoruje jakoukoli jinou hodnotu než první dva záznamy. Pokud více než dva prsty, které se pokoušejí o manipulaci s bitovou mapu, další se ignorují. `Manipulate` je posledním členem `TouchManipulationBitmap`:
+`Manipulate` Slovníku metoda nejprve zkopíruje do pole pro usnadnění práce. Ignoruje nic jiného než první dvě položky. Pokud více než dvěma prsty se pokoušejí o manipulaci s rastrový obrázek, ostatní budou ignorovány. `Manipulate` je poslední člen `TouchManipulationBitmap`:
 
 ```csharp
 class TouchManipulationBitmap
@@ -370,13 +369,13 @@ class TouchManipulationBitmap
 }
 ```
 
-Pokud je jedním prstem manipulace rastrového obrázku, `Manipulate` volání `OneFingerManipulate` metodu `TouchManipulationManager` objektu. Pro dva prsty, zavolá `TwoFingerManipulate`. Argumenty, které mají tyto metody jsou stejné: `prevPoint` a `newPoint` argumenty představují prstu, který je přesunutí. Ale `pivotPoint` argument je jiný pro dvě volání:
+Pokud je jedním prstem manipulace s rastrový obrázek, `Manipulate` volání `OneFingerManipulate` metodu `TouchManipulationManager` objektu. Pro dvěma prsty, které volá `TwoFingerManipulate`. Argumenty pro tyto metody jsou stejné: `prevPoint` a `newPoint` argumenty představují prstu, který je přesun. Ale `pivotPoint` argument se liší pro dvě volání:
 
-Pro manipulaci s jedním prstem `pivotPoint` je středu bitové mapy. To je umožnit pro jeden prstem otočení. Pro manipulaci s dvěma prstu, událost označuje pohyb pouze jedním prstem tak, aby `pivotPoint` je prstu, který není přesunutí.
+Pro manipulaci s jedním prstem `pivotPoint` centrum rastrového obrázku. Toto je povolit pro rotaci jedním prstem. Pro manipulaci s dvěma prstem, události indikuje pohyb pouze jedním prstem, tak, aby `pivotPoint` je prstu, který není přesun.
 
-V obou případech `TouchManipulationManager` vrátí `SKMatrix` hodnotu, která metoda zřetězí s aktuálním `Matrix` vlastnost který `TouchManipulationPage` k vykreslení bitové mapy.
+V obou případech `TouchManipulationManager` vrátí `SKMatrix` hodnotu, kterou metodu zřetězí s aktuálním `Matrix` vlastnost, která `TouchManipulationPage` používá k vykreslení rastrového obrázku.
 
-`TouchManipulationManager` je zobecněn a používá žádné soubory s výjimkou `TouchManipulationMode`. Je možné používat tuto třídu bez změn v aplikaci. Definuje vlastnosti jediné typu `TouchManipulationMode`:
+`TouchManipulationManager` je zobecněný a používá další soubory, s výjimkou `TouchManipulationMode`. Je možné použít tuto třídu beze změny ve svých vlastních aplikacích. Definuje jedinou vlastnost typ `TouchManipulationMode`:
 
 ```csharp
 class TouchManipulationManager
@@ -387,9 +386,9 @@ class TouchManipulationManager
 ```
 
 
-Však budete pravděpodobně chtít vyhnout `AnisotropicScale` možnost. Je velmi snadné tato možnost k manipulaci s bitovou mapu, aby jednoho z faktorů škálování klesne na nulu. Který zpřístupňuje rastrový obrázek zmizí z nebyl zřejmý nikdy k vrácení. Pokud skutečně potřebujete volba škálování, budete chtít vylepšit logiku, aby se zabránilo nežádoucí výsledky.
+Ale budete pravděpodobně chtít vyhnout `AnisotropicScale` možnost. Je velmi snadné pomocí této možnosti pro manipulaci s rastrového obrázku tak, aby jedním z faktorů škálování nula. Díky tomu rastrový obrázek zmizí z pohledu nikdy k vrácení. Pokud skutečně potřebujete anisotropního škálování, je vhodné k vylepšení logiku, aby se zabránilo nežádoucí výsledky.
 
-`TouchManipulationManager` využívá vektorů, ale vzhledem k tomu, že neexistuje žádné `SKVector` struktury SkiaSharp, `SKPoint` bude místo něj použita. `SKPoint` operátor odčítání a výsledek lze považovat za vektor podporuje. Pouze konkrétní vektoru logiky, která potřeby přidat je `Magnitude` výpočet:
+`TouchManipulationManager` využívá vektorů, ale neexistuje totiž žádný `SKVector` struktury v SkiaSharp, `SKPoint` místo ní se použije. `SKPoint` podporuje operátor odčítání a výsledek lze považovat za vektoru. Logika pouze konkrétní vektoru, která potřeba přidat je `Magnitude` výpočtu:
 
 ```csharp
 class TouchManipulationManager
@@ -402,9 +401,9 @@ class TouchManipulationManager
 }
 ```
 
-Vždy, když byla vybrána otočení, zpracovat manipulaci jeden prstem a dva prstem metody je oběh nejprve. Pokud se detekuje všechny otočení komponentu otočení efektivně odebrat. Co je ještě interpretována jako posouvání a změna měřítka.
+Pokaždé, když byl vybrán otočení, manipulaci s jedním prstem a prstem dvě metody zpracování otáčení nejprve. Pokud se zjistí otočení komponentu otočení vlastně odebraná. Co je ještě je interpretován jako posouvání a změna měřítka.
 
-Tady je `OneFingerManipulate` metoda. Pokud jeden prstem otočení není povolená, pak je jednoduchá logiku &mdash; jednoduše používá předchozího bodu a nový bod vytvořit vektor s názvem `delta` odpovídající přesněji překlad. S jedním prstem otočení povolené metoda použije úhly z bodu pivot (center bitmapy) do předchozího bodu a nový bod k vytvoření matice otočení:
+Tady je `OneFingerManipulate` metody. Pokud jedním prstem otočení není povolená, pak je jednoduchou logiku &mdash; jednoduše používá předchozí bod a nový bod pro vytvoření Vektoru s názvem `delta` , který odpovídá přesně překladu. S jedním prstem otočení povolena metoda používá úhly z bodu otáčení (System center rastrového obrázku) k dřívějšímu bodu a nový bod k sestavení kompletních otočení matice:
 
 ```csharp
 class TouchManipulationManager
@@ -455,7 +454,7 @@ class TouchManipulationManager
 }
 ```
 
-V `TwoFingerManipulate` metody bodem pivot je pozice prstu, který není v tomto případě konkrétní touch přesunutí. Je velmi podobný jako jeden prstem otočení je oběh a potom s názvem vektoru `oldVector` (podle předchozího bodu) se upraví pro otáčení. Přesun zbývajících interpretována jako škálování:
+V `TwoFingerManipulate` metody bodu otáčení je pozice prstu, který není v tomto případě konkrétní touch přesunutí. Otočení je velmi podobný otočení jedním prstem, a potom s názvem vektoru `oldVector` (založená na předchozí bod) dojde k přenastavení pro otáčení. Přesun zbývajících je interpretován jako škálování:
 
 ```csharp
 class TouchManipulationManager
@@ -513,9 +512,9 @@ class TouchManipulationManager
 }
 ```
 
-Můžete si všimnout, že neexistuje žádné explicitní překlad v této metodě. Ale, jak `MakeRotation` a `MakeScale` metody jsou založeny na bod pivot a který obsahuje implicitní překlad. Pokud používáte dvě prsty, které pro bitovou mapu a je přetáhnete ve stejném směru `TouchManipulation` získají řady událostí touch střídavých mezi dvěma prsty. Jako každý prstem přesune relativně k jiných, změnu velikosti nebo otáčení výsledky, ale je Negované podle jiných prstu pohyb a výsledkem je, překlad.
+Můžete si všimnout, že neexistuje žádný explicitní překlad v této metodě. Nicméně, obojí `MakeRotation` a `MakeScale` metody jsou založeny na bodu otáčení a implicitní převod, který obsahuje. Pokud používáte dvěma prsty na rastrový obrázek a jejich přetažením ve stejném směru `TouchManipulation` získáte řadu dotyků přepínání mezi dvěma prsty. Pokaždé prstem pohybuje relativně k jiné, změna velikosti nebo otočení výsledky, ale je negovat pohybem prstu jiné a výsledkem je překladu.
 
-Jenom zbývající část **Touch manipulaci s** stránka je `PaintSurface` obslužné rutiny v `TouchManipulationPage` souboru kódu na pozadí. Volá `Paint` metodu `TouchManipulationBitmap`, které se vztahují matice představující Akumulovaná touch aktivity:
+Jediný zbývající část **Touch manipulace** stránka je `PaintSurface` obslužné rutiny v `TouchManipulationPage` soubor kódu na pozadí. Volá `Paint` metodu `TouchManipulationBitmap`, které se vztahují matice představující aktivity nahromaděné dotykové ovládání:
 
 ```csharp
 public partial class TouchManipulationPage : ContentPage
@@ -544,15 +543,15 @@ public partial class TouchManipulationPage : ContentPage
 }
 ```
 
-`PaintSurface` Obslužná rutina se ukončí zobrazení `MatrixDisplay` objekt zobrazující matice Akumulovaná touch:
+`PaintSurface` Obslužná rutina dojde k závěru zobrazením `MatrixDisplay` objekt zobrazující matice nahromaděné dotykové ovládání:
 
-[![](touch-images/touchmanipulation-small.png "Trojitá snímek obrazovky stránky Touch manipulaci s")](touch-images/touchmanipulation-large.png#lightbox "Trojitá snímek obrazovky stránky Touch manipulace")
+[![](touch-images/touchmanipulation-small.png "Trojitá snímek obrazovky stránky Touch manipulace")](touch-images/touchmanipulation-large.png#lightbox "Trojitá snímek obrazovky stránky Touch manipulace")
 
-## <a name="manipulating-multiple-bitmaps"></a>Manipulace s více rastrové obrázky
+## <a name="manipulating-multiple-bitmaps"></a>Manipulace s více rastrových obrázků
 
-Jednou z výhod, jako izolace touch zpracování kódu v třídách `TouchManipulationBitmap` a `TouchManipulationManager` je možnost opakovaně použít tyto třídy v aplikaci, která umožňuje uživatelům pracovat s více bitmapy.
+Jednou z výhod, jako izolace touch zpracování kódu ve třídách `TouchManipulationBitmap` a `TouchManipulationManager` je možnosti opakovaně používat tyto třídy v programu, který mu umožní pracovat s více rastrových obrázků.
 
-**Rastrový obrázek bodový zobrazení** stránky ukazuje, jak to provést. Místo definice pole typu `TouchManipulationBitmap`, [ `BitmapScatterPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BitmapScatterViewPage.xaml.cs) třída definuje `List` objektů rastrového obrázku:
+**Zobrazení bodového grafu rastrový obrázek** stránce ukazuje, jak to lze provést. Místo definování pole typu `TouchManipulationBitmap`, [ `BitmapScatterPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BitmapScatterViewPage.xaml.cs) definuje třídu `List` objektů rastrového obrázku:
 
 ```csharp
 public partial class BitmapScatterViewPage : ContentPage
@@ -575,9 +574,8 @@ public partial class BitmapScatterViewPage : ContentPage
                 resourceID.EndsWith(".jpg"))
             {
                 using (Stream stream = assembly.GetManifestResourceStream(resourceID))
-                using (SKManagedStream skStream = new SKManagedStream(stream))
                 {
-                    SKBitmap bitmap = SKBitmap.Decode(skStream);
+                    SKBitmap bitmap = SKBitmap.Decode(stream);
                     bitmapCollection.Add(new TouchManipulationBitmap(bitmap)
                     {
                         Matrix = SKMatrix.MakeTranslation(position.X, position.Y),
@@ -592,9 +590,9 @@ public partial class BitmapScatterViewPage : ContentPage
 }
 ```
 
-Konstruktor načte ve všech rastrových obrázků, k dispozici jako vložené prostředky a přidá je do `bitmapCollection`. Všimněte si, že `Matrix` vlastnost inicializovala na každém `TouchManipulationBitmap` objektu, tak se levém horním rohu každé bitmapy posunut 100 pixelů.
+Konstruktor načte ve všech rastrových obrázků, která je k dispozici jako vložené prostředky a přidá je do `bitmapCollection`. Všimněte si, že `Matrix` vlastnost je inicializována na každém `TouchManipulationBitmap` objektu, takže se levém horním rohu rastru posun × 100 pixelů.
 
-`BitmapScatterView` Stránky je rovněž třeba zpracování událostí dotykového ovládání pro více bitmapy. Místo definice `List` z touch ID aktuálně manipulovat `TouchManipulationBitmap` objekty, tento program vyžaduje slovník:
+`BitmapScatterView` Stránka musí také zpracovávat události dotykového ovládání pro více bitmapy. Místo definování samostatné výstrahy `List` z touch ID aktuálně manipulovat `TouchManipulationBitmap` objekty, tento program vyžaduje slovník:
 
 ```csharp
 public partial class BitmapScatterViewPage : ContentPage
@@ -658,11 +656,11 @@ public partial class BitmapScatterViewPage : ContentPage
 }
 ```
 
-Všimněte si jak `Pressed` projde logiky `bitmapCollection` pozpátku. Rastrových obrázků, které často překrývají. Rastrové obrázky později v kolekci vizuálně leží na rastrové obrázky dříve v kolekci. Pokud existují více rastrové obrázky v části prstu, který stiskem tlačítka na obrazovce, nejhornější ten musí být ten, který je zpracováván této prstu.
+Všimněte si, že jak `Pressed` logiky prochází `bitmapCollection` v opačném pořadí. Rastrové obrázky často vzájemně překrývat. Rastrové obrázky později v kolekci vizuálně leží na rastrové obrázky dříve v kolekci. Pokud existuje více rastrové obrázky v části prstem, který stiskem tlačítka na obrazovce, je nejvyšší musí být ten, který je zpracováván této prstem.
 
-Všimněte si také, že `Pressed` logiku přesune tento rastrového obrázku na konec kolekce tak, aby vizuálně přesune do horní části balík jiné bitmapy.
+Všimněte si také, že `Pressed` logiky tak, aby vizuálně přesune do horní části celé řady dalších rastrové obrázky přesune tento rastrový obrázek na konec kolekce.
 
-V `Moved` a `Released` události, `TouchAction` volání obslužné rutiny `ProcessingTouchEvent` metoda v `TouchManipulationBitmap` stejně jako starší program.
+V `Moved` a `Released` události, `TouchAction` volání obslužné rutiny `ProcessingTouchEvent` metoda ve `TouchManipulationBitmap` stejně jako dřívější programu.
 
 Nakonec `PaintSurface` volání obslužné rutiny `Paint` metoda jednotlivých `TouchManipulationBitmap` objektu:
 
@@ -683,17 +681,17 @@ public partial class BitmapScatterViewPage : ContentPage
 }
 ```
 
-Kód prochází kolekci a zobrazí balík bitmap od začátku kolekce na konec:
+Kód smyčky přes kolekce a zobrazí celé řady rastrové obrázky ze začátku kolekce na konec:
 
-[![](touch-images/bitmapscatterview-small.png "Trojitá snímek obrazovky stránky zobrazení bodový rastrový obrázek")](touch-images/bitmapscatterview-large.png#lightbox "Trojitá snímek obrazovky stránky zobrazení bodový rastrového obrázku")
+[![](touch-images/bitmapscatterview-small.png "Trojitá snímek obrazovky stránky zobrazení bodového grafu rastrový obrázek")](touch-images/bitmapscatterview-large.png#lightbox "Trojitá snímek obrazovky stránky zobrazení bodového grafu rastrový obrázek")
 
-## <a name="single-finger-scaling"></a>Škálování jednoho prstu
+## <a name="single-finger-scaling"></a>Škálování jedním prstem
 
-Škálování operace obvykle vyžaduje gesto roztahováním pomocí dvou prstů. Je však možné implementovat škálování jednoho prstem tak, že prstu přesunout rozích rastrový obrázek.
+Operaci škálování obvykle vyžaduje gesto roztažením pomocí dvěma prsty. Nicméně je možné implementovat škálování jednoho prstem tím, že prstem přesunout rohů rastrový obrázek.
 
-Tento postup je znázorněn v **jeden škálování rohu prstem** stránky. Protože poněkud jiný typ škálování, že, které implementované v této ukázce se používá `TouchManipulationManager` třída, nepoužívá třídy nebo `TouchManipulationBitmap` třídy. Místo toho veškerou logiku touch je v souboru kódu na pozadí. Toto je poněkud jednodušší logikou, než je obvyklé, protože sleduje pouze jedním prstem najednou a jednoduše ignoruje všechny sekundární prsty, které může být klepnou na obrazovce.
+To je patrné **jedné Škálovací rohu prstem** stránky. Protože se o něco jiného typu než škálování, implementované v této ukázce se používá `TouchManipulationManager` třídy, nepoužívá dané třídy nebo `TouchManipulationBitmap` třídy. Místo toho veškerou logiku dotykového ovládání je v souboru kódu na pozadí. To je poněkud jednodušší logiky než obvykle, protože sleduje pouze jedním prstem najednou a jednoduše ignoruje všechny sekundární prsty, které může být klepnou na obrazovce.
 
-[ **SingleFingerCornerScale.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SingleFingerCornerScalePage.xaml) vytvoří stránky `SKCanvasView` třídy a vytvoří `TouchEffect` objektů pro sledování touch události:
+[ **SingleFingerCornerScale.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SingleFingerCornerScalePage.xaml) vytvoří instanci stránky `SKCanvasView` třídy a vytvoří `TouchEffect` objektů pro sledování události dotykové ovládání:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -716,7 +714,7 @@ Tento postup je znázorněn v **jeden škálování rohu prstem** stránky. Prot
 </ContentPage>
 ```
 
-[ **SingleFingerCornerScalePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SingleFingerCornerScalePage.xaml.cs) načtení souboru bitové mapy prostředků z **média** adresáře a zobrazí pomocí `SKMatrix` objekt definovaný jako pole:
+[ **SingleFingerCornerScalePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SingleFingerCornerScalePage.xaml.cs) načtení prostředku rastrového obrázku ze souboru **média** adresáře a zobrazí ji pomocí `SKMatrix` definované jako objekty pole:
 
 ```csharp
 public partial class SingleFingerCornerScalePage : ContentPage
@@ -733,9 +731,8 @@ public partial class SingleFingerCornerScalePage : ContentPage
         Assembly assembly = GetType().GetTypeInfo().Assembly;
 
         using (Stream stream = assembly.GetManifestResourceStream(resourceID))
-        using (SKManagedStream skStream = new SKManagedStream(stream))
         {
-            bitmap = SKBitmap.Decode(skStream);
+            bitmap = SKBitmap.Decode(stream);
         }
     }
 
@@ -754,11 +751,11 @@ public partial class SingleFingerCornerScalePage : ContentPage
 }
 ```
 
-To `SKMatrix` objekt je upraven logikou touch vidíte níže.
+To `SKMatrix` objekt je upravit podle logiky touch najdete níž.
 
-Je zbytek souboru kódu `TouchEffect` obslužné rutiny události. Začne tím, že převedete aktuální umístění prstu k `SKPoint` hodnotu. Pro `Pressed` typ akce obslužná rutina ověří, že žádné další prstem je klepnou na obrazovce, a že prstu je v rámci hranice bitmapy.
+Je zbytek souboru kódu na pozadí `TouchEffect` obslužné rutiny události. Začíná převedením aktuální umístění prstem na `SKPoint` hodnotu. Pro `Pressed` typ akce, obslužná rutina ověří, že se dotýká žádné prstem na obrazovce, a že prstu jsou uvnitř mezí rastrového obrázku.
 
-Je zásadní součástí kód `if` příkaz zahrnující dvě volání `Math.Pow` metoda. Tato matematické zkontroluje, jestli umístění prstem mimo elipsy, který vyplní celé bitové mapy. Pokud ano, který je operace škálování. Prstu je téměř mezi rozích bitovou mapu a bod pivot je určen, že je opačné rohu. Pokud prstu v rámci této elipsy, je regulární klávesnicí operace:
+Je klíčovou součástí kód `if` příkaz zahrnující dvě volání `Math.Pow` metoda. Tato matematické zkontroluje, jestli prstem umístění mimo elipsy, která naplní rastrového obrázku. Pokud ano, to je operaci škálování. Prstu se blíží jeden z rohů rastrového obrázku a bodu otáčení je určit, že je protilehlého rohu. Pokud je v této elipsa prstu, je regulární posouvání operace:
 
 ```csharp
 public partial class SingleFingerCornerScalePage : ContentPage
@@ -851,9 +848,9 @@ public partial class SingleFingerCornerScalePage : ContentPage
 }
 ```
 
-`Moved` Typ akce vypočítá matice odpovídající aktivity touch od času prstu stisknutí obrazovce až do této doby. Tento matice s matice zřetězuje platit v době prstu nejprve stisknutí bitové mapy. Operace škálování je vždy relativně k rohu než ten, který dotýkal prstu.
+`Moved` Typ akce počítá matice odpovídající aktivitě touch od času prstu stisknutí obrazovky až po tuto dobu. Tento matice s matice zřetězuje v platnosti v době prstu prvním stisknutí rastrového obrázku. Operace škálování je vždy relativní k horním než ten, který některé prstu.
 
-Pro malá nebo podlouhlých rastrové obrázky může vnitřních elipsy zabírají většinu bitovou mapu a nechte velmi malá velikost oblasti v rozích škálování bitové mapy. Možná budete chtít poněkud jiný přístup, v takovém případě můžete nahradit této celý `if` blok, který nastaví `isScaling` k `true` s tímto kódem:
+Pro malé nebo podlouhlá rastrové obrázky může být vnitřní elipsa zabírat většinu rastrového obrázku a nechte velmi malý oblastí v rozích škálování rastrového obrázku. Můžete dát přednost trochu jiný přístup, v takovém případě je možné nahradit tuto celý `if` blok, který nastaví `isScaling` k `true` s tímto kódem:
 
 ```csharp
 float halfHeight = rect.Height / 2;
@@ -897,10 +894,10 @@ else
 }
 ```
 
-Tento kód efektivně rozděluje oblasti bitmapy do obrazce vnitřních kosočtverec a čtyři trojúhelníčky v rozích. To umožňuje mnohem větší oblasti v rozích převzetí a škálovat bitové mapy.
+Tento kód efektivně rozděluje oblasti rastrového obrázku do vnitřní kosočtverec a čtyři trojúhelníky v rozích. To umožňuje mnohem větší oblastí v rozích k převzetí a změnit velikost rastrového obrázku.
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [Rozhraní API ve Skiasharpu](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
-- [Vyvolání událostí z efekty](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)
+- [Vyvolání události z účinků](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)

@@ -1,50 +1,50 @@
 ---
-title: Cesty a Text v SkiaSharp
-description: V tomto článku jsou zde popsány průnik SkiaSharp cesty a text a to ukazuje s ukázkový kód.
+title: Cesty a Text ve Skiasharpu
+description: Tento článek zkoumá je určena průsečíkem cesty ve Skiasharpu a text a ukazuje to se vzorovým kódem.
 ms.prod: xamarin
 ms.assetid: C14C07F6-4A84-4A8C-BDB4-CD61FBF0F79B
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 08/01/2017
-ms.openlocfilehash: 305ee2946d3a291e6237d5a2860eda7331193b23
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: e7ce6994541ae947fa714d3c67acbc5d5d816975
+ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243902"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39130777"
 ---
-# <a name="paths-and-text-in-skiasharp"></a>Cesty a Text v SkiaSharp
+# <a name="paths-and-text-in-skiasharp"></a>Cesty a Text ve Skiasharpu
 
-_Prozkoumejte průnik cesty a text._
+_Prozkoumejte je určena průsečíkem cesty a text_
 
-V systémech moderní grafiky jsou písma textu kolekce obrysy znaků, obvykle definované kvadratických Bézierových křivek. V důsledku toho mnoho moderní grafické systémy zahrnují umožňuje převést do cesty grafiky textových znaků.
+V systémech moderních grafických písma textu jsou kolekce znaku jsou podrobněji popsány dále, většinou definovaný pomocí kvadratické Bézierovy křivky. Řada moderních grafických systémů v důsledku toho obsahovat zařízení, které chcete převést textové znaky do cesty grafiky.
 
-Už jste se seznámili, vám může obtažení jsou podrobněji popsány dále textových znaků, stejně jako je vyplnění. To umožňuje zobrazit tyto obrysy znaků s šířku tahu konkrétní a i efekt cestu, jak je popsáno v [ **cesta důsledky** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) článku. Je také možné převést na řetězec znaků, ale `SKPath` objektu. To znamená, že text jsou podrobněji popsány dále lze použít pro výstřižek pomocí technik, které bylo popsané v [ **výstřižek s cestami a oblasti** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/clipping.md) článku.
+Už víte, že je můžete vytáhnout obrysy textové znaky i vyplnit. Díky tomu můžete zobrazit tyto znaky jsou podrobněji popsány dále s šířku tahu konkrétní a dokonce i mohou mít vliv cestu, jak je popsáno v [ **efekty cest** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) článku. Je také možné převést na řetězec znaků, ale `SKPath` objektu. To znamená, že jsou podrobněji popsány dále text lze použít pro oříznutí s techniky, které jsou popsány v [ **Ořezy cestami a oblastmi** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/clipping.md) článku.
 
-Kromě použití efektu cesta k obtažení outline znak, můžete také vytvořit cestu, kterou účinky, které jsou založená na cestách jsou odvozené z řetězce znaků, a dokonce můžete kombinovat dvě důsledky:
+Kromě použití mohou mít vliv cestu k obtažení osnovy znak, můžete také vytvořit cestu, která efekty, které jsou založeny na cesty jsou odvozeny z řetězce znaků a dokonce je možné kombinovat dva důsledky:
 
-![](text-paths-images/pathsandtextsample.png "Efekt cesta textu")
+![](text-paths-images/pathsandtextsample.png "Vliv cestu text")
 
-V [předchozí článek](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) jste viděli, jak [ `GetFillPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetFillPath/p/SkiaSharp.SKPath/SkiaSharp.SKPath/SkiaSharp.SKRect/System.Single/) metodu `SKPaint` můžete získat přehled vytažené cesty. Tuto metodu můžete použít také pomocí cesty, které jsou odvozené od obrysy znaků.
+V [předchozím článku](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) jste viděli, jak [ `GetFillPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetFillPath/p/SkiaSharp.SKPath/SkiaSharp.SKPath/SkiaSharp.SKRect/System.Single/) metoda `SKPaint` můžete získat přehled vytažené cestu. Tuto metodu můžete také pomocí cesty odvozené z znaku jsou podrobněji popsány dále.
 
-Nakonec tento článek ukazuje další průnik cesty a text: [ `DrawTextOnPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawTextOnPath/p/System.String/SkiaSharp.SKPath/System.Single/System.Single/SkiaSharp.SKPaint/) metodu `SKCanvas` umožňuje zobrazit textový řetězec tak, aby účaří text odpovídá zakřivené cesty.
+A konečně, tento článek popisuje další průsečík cesty a text: [ `DrawTextOnPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawTextOnPath/p/System.String/SkiaSharp.SKPath/System.Single/System.Single/SkiaSharp.SKPaint/) metodu `SKCanvas` umožňuje zobrazit textový řetězec tak, aby základní text následuje zakřivené cesty.
 
-## <a name="text-to-path-conversion"></a>Text, který má cesta převod
+## <a name="text-to-path-conversion"></a>Text, který se cesta převodu
 
-[ `GetTextPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetTextPath/p/System.String/System.Single/System.Single/) Metodu `SKPaint` převede na řetězec znaků `SKPath` objektu:
+[ `GetTextPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetTextPath/p/System.String/System.Single/System.Single/) Metoda `SKPaint` převede řetězec znaků na `SKPath` objektu:
 
 ```csharp
 public SKPath GetTextPath (String text, Single x, Single y)
 ```
 
-`x` a `y` argumenty označuje počáteční bod základních hodnot v levé části textu. Přehrávání na stejný atribut role v tomto poli jako v `DrawText` metodu `SKCanvas`. V této cestě bude mít základních hodnot v levé části textu souřadnic (x, y).
+`x` a `y` argumenty označuje počáteční bod základních hodnot v levé části textu. Hrají je stejný atribut role zde jako v `DrawText` metoda `SKCanvas`. V této cestě bude mít základních hodnot v levé části textu souřadnic (x, y).
 
-`GetTextPath` Metoda je přehnaně, pokud chcete jenom vyplnění nebo obtažení výsledné cestu. Normální `DrawText` metoda umožňuje udělat. `GetTextPath` Je užitečnější pro další úkoly týkající se cesty.
+`GetTextPath` Metoda je přehnaně, pokud chcete pouze pro výplň nebo tah Výsledná cesta. Normální `DrawText` metody umožňují udělat. `GetTextPath` Metoda je užitečnější pro další úkoly týkající se cesty.
 
-Jeden z těchto úloh je výstřižek. **Výstřižek Text** stránky vytvoří výstřižek cestu podle jsou podrobněji popsány dále znak slova "Kód." Tato cesta je roztažen tak, aby velikost stránky oříznutí rastrového obrázku, který obsahuje bitovou kopii **výstřižek Text** zdrojový kód:
+Jednu z těchto úloh je oříznutí. **Oříznutí textu** stránka vytvoří ořezovou cestu podle jsou podrobněji popsány dále znak slova "Kód". Tato cesta je roztažen tak, aby velikost stránky má oříznout rastrový obrázek, který obsahuje bitovou kopii **oříznutí textu** zdrojový kód:
 
-[![](text-paths-images/clippingtext-small.png "Trojitá snímek obrazovky stránky výstřižek Text")](text-paths-images/clippingtext-large.png#lightbox "Trojitá snímek obrazovky stránky výstřižek textu")
+[![](text-paths-images/clippingtext-small.png "Trojitá snímek obrazovky stránky oříznutí textu")](text-paths-images/clippingtext-large.png#lightbox "Trojitá snímek obrazovky stránky oříznutí textu")
 
 [ `ClippingTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ClippingTextPage.cs) Konstruktoru třídy načte bitovou mapu, která je uložena jako vložený prostředek v **média** složku řešení:
 
@@ -65,18 +65,17 @@ public class ClippingTextPage : ContentPage
         Assembly assembly = GetType().GetTypeInfo().Assembly;
 
         using (Stream stream = assembly.GetManifestResourceStream(resourceID))
-        using (SKManagedStream skStream = new SKManagedStream(stream))
         {
-            bitmap = SKBitmap.Decode(skStream);
+            bitmap = SKBitmap.Decode(stream);
         }
     }
     ...
 }
 ```
 
-`PaintSurface` Obslužná rutina začíná vytvořením `SKPaint` objekt vhodný pro text. `Typeface` Vlastnost nastavena a taky `TextSize`, i když pro tuto konkrétní aplikaci `TextSize` vlastnost je čistě arbirtrary. Všimněte si také neexistuje žádné `Style` nastavení.
+`PaintSurface` Obslužná rutina začíná tím, že vytvoříte `SKPaint` objekt vhodný pro text. `Typeface` Je nastavena také `TextSize`, i když se pro tuto konkrétní aplikaci `TextSize` vlastnost je čistě arbirtrary. Všimněte si také neexistuje žádné `Style` nastavení.
 
-`TextSize` a `Style` nastavení vlastností nejsou nutné protože to `SKPaint` objekt se používá výhradně pro `GetTextPath` volat pomocí textový řetězec "Kódu". Obslužná rutina pak měří výsledné `SKPath` objektu a použije tři transformace na střed a změňte jeho velikost na velikost stránky. Cesta pak můžete nastavit jako cestu výstřižek:
+`TextSize` a `Style` nastavení vlastnosti nejsou nutné protože to `SKPaint` objekt se používá pouze pro `GetTextPath` zavolat pomocí textový řetězec "Kód". Obslužná rutina pak změří výsledné `SKPath` objektu a použije tři transformace na střed a změňte jeho velikost na velikost stránky. Cestu můžete nastavit jako ořezové cesty:
 
 ```csharp
 public class ClippingTextPage : ContentPage
@@ -121,13 +120,13 @@ public class ClippingTextPage : ContentPage
 }
 ```
 
-Po nastavení cesty výstřižek bitmapy lze zobrazit a bude oříznuto obrysy znaků. Všimněte si použití [ `AspectFill` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRect.AspectFill/p/SkiaSharp.SKSize/) metodu `SKRect` , vypočítá obdélníku pro naplnění stránky při zachování poměru stran.
+Po nastavení ořezové cesty rastrového obrázku je možné zobrazit a bude oříznut znak přehledy. Všimněte si použití [ `AspectFill` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRect.AspectFill/p/SkiaSharp.SKSize/) metoda `SKRect` , která vypočítá obdélníku pro naplnění stránky při zachování poměru stran.
 
-**Efektu cesta Text** stránky převádí znak znak ampersand na cestu k vytvoření efektu cesta 1 D. Objekt Malování s efektu tato cesta se pak použije k obtažení obrys větší verze tento stejný znak:
+**Vliv cestu Text** stránky převede jeden znak do cesty k vytvoření vliv cestu 1 D. Objekt malby se tato cesta se pak použije k obtažení osnovy větší verze stejného znaku:
 
-[![](text-paths-images/textpatheffect-small.png "Trojitá snímek obrazovky stránky efektu cesta Text")](text-paths-images/textpatheffect-large.png#lightbox "Trojitá snímek obrazovky stránky efekt cesta textu")
+[![](text-paths-images/textpatheffect-small.png "Trojitá snímek obrazovky stránky vliv cestu Text")](text-paths-images/textpatheffect-large.png#lightbox "Trojitá snímek obrazovky stránky vliv cestu Text")
 
-Velká část práce při [ `TextPathEffectPath` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TextPathEffectPage.cs) třída dojde v pole a konstruktor. Dva `SKPaint` objekty definované jako pole se používají pro dva různé účely: první (s názvem `textPathPaint`) se používá k převodu ampersand s `TextSize` 50 na cestu k efektu cesta 1 D. Druhý (`textPaint`) se používá k zobrazení větší verze ampersand s platnost této cesty. Z tohoto důvodu `Style` z této druhé Malování objektu na hodnotu `Stroke`, ale `StrokeWidth` není nastavena vlastnost, protože tuto vlastnost není nezbytné při použití efektu cesta 1 D:
+Velká část práce v [ `TextPathEffectPath` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TextPathEffectPage.cs) třída vyvolá se v polích a konstruktor. Dva `SKPaint` objekty definované jako pole se používají pro dva různé účely: první (s názvem `textPathPaint`) se používá k převodu ampersand s `TextSize` 50 na cestu pro vliv cestu 1 D. Druhý (`textPaint`) slouží k zobrazení větší verzi ampersand pomocí tohoto vliv cestu. Z tohoto důvodu `Style` tento druhý malířského objektu se nastaví na `Stroke`, ale `StrokeWidth` vlastnost není nastavená, protože tato vlastnost není nezbytné, při použití mohou mít vliv cestu 1 D:
 
 ```csharp
 public class TextPathEffectPage : ContentPage
@@ -172,9 +171,9 @@ public class TextPathEffectPage : ContentPage
 }
 ```
 
-Nejdřív pomocí konstruktoru `textPathPaint` objektu k měření ampersand s `TextSize` 50. Negativy se center souřadnice obdélníku jsou předána do `GetTextPath` metoda pro převod textu na cestu. Výsledná cesta obsahuje (0, 0) bodu ve středu znaku, který je ideální pro cestu efekt 1D.
+Nejdřív pomocí konstruktoru `textPathPaint` objektu k měření ampersand s `TextSize` 50. Negativní center souřadnice obdélníku jsou potom předány `GetTextPath` metodu pro převod textu na cestu. Výsledná cesta má (0, 0) přejděte v centru znaku, který je ideální pro vliv cestu 1D.
 
-Může si myslíte, který `SKPathEffect` vytvořen na konci tohoto konstruktoru objekt může být nastaven na `PathEffect` vlastnost `textPaint` místo uložena jako pole. Ale tento není zapnuté na velmi dobře pracovat, protože je poškozený, výsledky `MeasureText` volání v `PaintSurface` obslužné rutiny:
+Si možná myslíte, že `SKPathEffect` objekt vytvořený na konci konstruktoru může být nastaven na `PathEffect` vlastnost `textPaint` spíše než uložit jako pole. Ale tento nastavená na Ne dobře pracovat, protože zkreslený výsledky `MeasureText` volání `PaintSurface` obslužné rutiny:
 
 ```csharp
 public class TextPathEffectPage : ContentPage
@@ -206,17 +205,17 @@ public class TextPathEffectPage : ContentPage
 }
 ```
 
-Aby `MeasureText` hovor se používá k centru znak na stránce. Aby nedocházelo k problémům, `PathEffect` je nastavena na objekt Malování po byla měřena text, ale předtím, než se zobrazí.
+Že `MeasureText` hovor se používá k center znak na stránce. Abyste se vyhnuli potížím, `PathEffect` je nastavena na objekt malířského po se měří textu, ale než se zobrazí.
 
-## <a name="outlines-of-character-outlines"></a>Obrysy obrysy znaků
+## <a name="outlines-of-character-outlines"></a>Přehledy jsou podrobněji popsány dále znak
 
-Obvykle [ `GetFillPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetFillPath/p/SkiaSharp.SKPath/SkiaSharp.SKPath/SkiaSharp.SKRect/System.Single/) metodu `SKPaint` převede jednu cestu do jiné použitím vlastnosti Malování, zejména tahu šířky a cestu účinek. Při použití bez cesty důsledky `GetFillPath` efektivně vytváří cestu, která popisuje jiné cesty. Tento postup je znázorněn v **klepněte sem a Outline cesta** stránky v [ **cesta důsledky** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) článku.
+Obvykle [ `GetFillPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetFillPath/p/SkiaSharp.SKPath/SkiaSharp.SKPath/SkiaSharp.SKRect/System.Single/) metodu `SKPaint` převede jednu cestu na jiný použitím vlastnosti programu Malování, zejména stroke šířku a cestu efekt. Při použití bez efekty cest `GetFillPath` účinně vytvoří cestu, která popisuje jinou cestu. To je ukázáno v **klepnutím osnovy cestu** stránku [ **efekty cest** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) článku.
 
-Můžete také volat `GetFillPath` na cestu, kterou vrátil `GetTextPath` ale zpočátku nemusí být zcela jisti jaké, který chcete vzhled.
+Můžete také volat `GetFillPath` v cestě vrácená `GetTextPath` , ale zpočátku nemusí být úplně jistí tom, jak to bude vypadat.
 
-**Znak Outline jsou podrobněji popsány dále** stránky ukazuje techniku. Všechny relevantní kód je v `PaintSurface` obslužnou rutinu [ `CharacterOutlineOutlinesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CharacterOutlineOutlinesPage.cs) třídy.
+**Znak osnovy jsou podrobněji popsány dále** stránce ukazuje postup. Důležitý kód je ve `PaintSurface` obslužná rutina [ `CharacterOutlineOutlinesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CharacterOutlineOutlinesPage.cs) třídy.
 
-Konstruktor začíná vytvořením `SKPaint` objekt s názvem `textPaint` s `TextSize` vlastností na základě velikosti stránky. To je převést na cestu pomocí `GetTextPath` metoda. Souřadnice argumenty, které mají `GetTextPath` efektivně center cestu na obrazovce:
+Konstruktor začíná tím, že vytvoříte `SKPaint` objekt s názvem `textPaint` s `TextSize` vlastností na základě velikosti stránky. To je převeden na cestu pomocí `GetTextPath` metody. Souřadnice argumenty, které mají `GetTextPath` efektivně center cestu na obrazovce:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -268,27 +267,27 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-`PaintSurface` Obslužná rutina vytvoří novou cestu s názvem `outlinePath`. To se stane cílovou cestu ve volání `GetFillPath`. `StrokeWidth` Vlastnost 25 příčiny `outlinePath` k popisu obrys 25. pixelů celou cestu vytažení textových znaků. Tato cesta se následně zobrazí červeně s šířku tahu 5:
+`PaintSurface` Obslužná rutina vytvoří novou cestu s názvem `outlinePath`. Toto řešení je cílová cesta ve volání `GetFillPath`. `StrokeWidth` Vlastnost 25 příčiny `outlinePath` k popisu osnovy 25 pixel celou cestu vytažení textové znaky. Tato cesta se následně zobrazí červeně s šířku tahu 5:
 
-[![](text-paths-images/characteroutlineoutlines-small.png "Trojitá snímek obrazovky stránky jsou podrobněji popsány dále znak Outline")](text-paths-images/characteroutlineoutlines-large.png#lightbox "Trojitá snímek obrazovky stránky jsou podrobněji popsány dále znak obrysu")
+[![](text-paths-images/characteroutlineoutlines-small.png "Trojitá snímek obrazovky stránky jsou podrobněji popsány dále znak osnovy")](text-paths-images/characteroutlineoutlines-large.png#lightbox "Trojitá snímek obrazovky stránky jsou podrobněji popsány dále znak osnovy")
 
-Podrobněji a uvidíte překrytí, kde obrysu cesty díky sharp rohu. Jedná se o normální artefakty tohoto procesu.
+Prohlédněte si blíže a zobrazí se vám překrytí kde obrysu cesty díky ostrý roh. Jedná se o normální artefakty tohoto procesu.
 
 ## <a name="text-along-a-path"></a>Text podél cesty
 
-Text se zobrazí za normálních okolností na vodorovné směrného plánu. Text lze spustit ve svislém směru nebo šikmo otáčet, ale směrného plánu je stále přímka.
+Text se normálně zobrazí pro vodorovné základnu. Text lze otočit spouštět svisle nebo šikmo směrný plán je však stále rovné čáry.
 
-Čas od času, kdy chcete text, který má spusťte společně křivka nejsou k dispozici. Toto je účelem [ `DrawTextOnPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawTextOnPath/p/System.String/SkiaSharp.SKPath/System.Single/System.Single/SkiaSharp.SKPaint/) metodu `SKCanvas`:
+Existují však situace, kdy se má text spusťte společně křivky. Toto je účelem [ `DrawTextOnPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawTextOnPath/p/System.String/SkiaSharp.SKPath/System.Single/System.Single/SkiaSharp.SKPaint/) metoda `SKCanvas`:
 
 ```csharp
 public Void DrawTextOnPath (String text, SKPath path, Single hOffset, Single vOffset, SKPaint paint)
 ```
 
-Text zadaný v prvním argumentu Přišla žádost o spuštění v cestě zadané jako druhý argument. Můžete začít text v posun od začátku pomocí cestu `hOffset` argument. Za normálních okolností cesta forms účaří text: Text horních jsou na jedné straně cesty a dolní dotahy text na straně druhé. Ale můžete odsadit základní text z cesty s `vOffset` argument.
+Textem zadaným v prvním argumentu dojde ke spuštění na cestě zadané jako druhý argument. Můžete začít text na posunu od začátku do cesty `hOffset` argument. Obvykle cestu tvoří základní text: na jedné straně cesty jsou Text horní a dolní dotahy text na druhé. Ale můžete posun základní text z cesty s `vOffset` argument.
 
-Tato metoda nemá žádné zařízení pro poskytovat pokyny k nastavení `TextSize` vlastnost `SKPaint` Chcete-li text, velikost perfektně spustit od začátku cesty na konec. Někdy může rozmyslete si, že velikost textu sami. Jinou dobu, budete muset být popsané v článku na budoucí pomocí funkce měření cestu.
+Tato metoda nemá žádné zařízení a přidal se návod na nastavení `TextSize` vlastnost `SKPaint` velikosti dokonale spustit od začátku cesty na konec textu. Někdy můžete zjistit velikost tohoto textu na vlastní. Jindy je potřeba pomocí služby functions měření cestu najdete v některém z budoucích článků.
 
-**Cyklické Text** program obtéká text kruh. Je snadné tak, aby byl snadno velikost text, který se nevejde přesně určit obvodu kruhu. `PaintSurface` Obslužnou rutinu [ `CircularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CircularTextPage.cs) třída vypočítá radius kruhu na základě velikosti stránky. Že kroužek se změní na `circularPath`:
+**Cyklické Text** program zalomí text kruh. Je snadné k určení obvod kruhu, takže je snadné pro nastavení velikosti textu podle přesně. `PaintSurface` Obslužná rutina [ `CircularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CircularTextPage.cs) třídy vypočítá poloměr kruhu na základě velikosti stránky. Tento kruh stane `circularPath`:
 
 ```csharp
 public class CircularTextPage : ContentPage
@@ -321,13 +320,13 @@ public class CircularTextPage : ContentPage
 }
 ```
 
-`TextSize` Vlastnost `textPaint` se pak upraví tak, aby odpovídalo obvodu kruhu šířka textu:
+`TextSize` Vlastnost `textPaint` potom upraví tak, aby šířka textu odpovídá obvod kruhu:
 
-[![](text-paths-images/circulartext-small.png "Trojitá snímek obrazovky stránky cyklické Text")](text-paths-images/circulartext-large.png#lightbox "Trojitá snímek obrazovky stránky cyklické textu")
+[![](text-paths-images/circulartext-small.png "Trojitá snímek obrazovky stránky cyklické Text")](text-paths-images/circulartext-large.png#lightbox "Trojitá snímek obrazovky stránky cyklické Text")
 
-Vlastní text jste vybrali bude poněkud cyklické: slova "Kruh" je předmět věty i objekt prepositional frázi.
+Vlastní text byl zvolen bude poněkud cyklické: slovo "Kruh" je předmětem věty i objekt prepositional frázi.
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [Rozhraní API ve Skiasharpu](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

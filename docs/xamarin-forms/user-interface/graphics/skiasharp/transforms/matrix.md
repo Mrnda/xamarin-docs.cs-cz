@@ -1,34 +1,34 @@
 ---
-title: Maticové transformace v SkiaSharp
-description: Tento článek dives hlubší do SkiaSharp transformací s univerzální transformační matice a to ukazuje s ukázkový kód.
+title: Maticové transformace v ve Skiasharpu
+description: Tento článek podrobně transformace SkiaSharp s univerzální transformační matice věnuje hlouběji a ukazuje to se vzorovým kódem.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 9EDED6A0-F0BF-4471-A9EF-E0D6C5954AE4
 author: charlespetzold
 ms.author: chape
 ms.date: 04/12/2017
-ms.openlocfilehash: 816a5f47a4a4f5c01a1fb20b5c8e7a2fc83a64b0
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: fafa883d013701b9e72e544aff03739a7ff9230c
+ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244874"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39130865"
 ---
-# <a name="matrix-transforms-in-skiasharp"></a>Maticové transformace v SkiaSharp
+# <a name="matrix-transforms-in-skiasharp"></a>Maticové transformace v ve Skiasharpu
 
-_Ponořit hlouběji do SkiaSharp transformací s univerzální transformační matice_
+_Ponořte se hlouběji do transformace SkiaSharp s univerzální transformační matice_
 
-Všechny transformací použitá pro `SKCanvas` objekt se konsolidují v jednu instanci [ `SKMatrix` ](https://developer.xamarin.com/api/type/SkiaSharp.SKMatrix/) struktury. Toto je podobná těm ve všech systémech moderní 2D grafiky standardní 3 3 transformace matice.
+Všechny transformací použitá pro `SKCanvas` konsolidované objektu v jedné instance [ `SKMatrix` ](https://developer.xamarin.com/api/type/SkiaSharp.SKMatrix/) struktury. Toto je standardní matice 3 3 transformace podobné těm v všechny moderní 2D grafika systémy.
 
-Jak jste se seznámili, můžete použít transformací v SkiaSharp, bez znalosti o transformaci matice, ale transformace matice je důležité z hlediska teoretické a je velmi důležité při použití transformace k úpravě cesty nebo pro zpracování vstupu komplexní touch, obě což je ukázán v tomto článku a další.
+Jak už víte, bez znalosti o transformaci, matice, ale transformační matice je důležité z hlediska teoretické, a je zásadní význam při použití transformace na změnit cesty nebo pro zpracování složitých dotykové ovládání, obě, můžete použít transformace v ve Skiasharpu což je ukázán v tomto článku a dalších.
 
-![](matrix-images/matrixtransformexample.png "Rastrový obrázek podrobí afinní transformace")
+![](matrix-images/matrixtransformexample.png "Rastrový obrázek podroben afinní transformace")
 
-Aktuální transformační matice použít `SKCanvas` je k dispozici kdykoli přímým přístupem jen pro čtení [ `TotalMatrix` ](https://developer.xamarin.com/api/property/SkiaSharp.SKCanvas.TotalMatrix/) vlastnost. Můžete nastavit nový matice transformace pomocí [ `SetMatrix` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.SetMatrix/p/SkiaSharp.SKMatrix/) metoda a vy můžete obnovit tento transformační matice výchozí hodnoty pomocí volání [ `ResetMatrix` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.ResetMatrix/).
+Aktuální transformační matice u `SKCanvas` je k dispozici v každém okamžiku díky přístupu jen pro čtení [ `TotalMatrix` ](https://developer.xamarin.com/api/property/SkiaSharp.SKCanvas.TotalMatrix/) vlastnost. Můžete nastavit nové transformační matice s použitím [ `SetMatrix` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.SetMatrix/p/SkiaSharp.SKMatrix/) metody kde můžete obnovit tento transformační matice výchozí hodnoty voláním [ `ResetMatrix` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.ResetMatrix/).
 
-Jediným jiných `SKCanvas` člen, který přímo funguje s transformační matice na plátno [ `Concat` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Concat/p/SkiaSharp.SKMatrix@/) který zřetězí dvě matic vynásobením je společně.
+Jediná Další `SKCanvas` člena, který pracuje přímo s transformační matice plátna je [ `Concat` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Concat/p/SkiaSharp.SKMatrix@/) který zřetězí dvě matice vynásobením je společně.
 
-Maticové transformace výchozí matice identity a skládá se z 1 na v diagonálních buněk a 0 je everywhere else:
+Maticové transformace výchozí je jednotkovou matici a skládá se z 1 v Úhlopříčný buňky a uživatele 0 všude, kde else:
 
 <pre>
 | 1  0  0 |
@@ -36,23 +36,23 @@ Maticové transformace výchozí matice identity a skládá se z 1 na v diagoná
 | 0  0  1 |
 </pre>
 
-Můžete vytvořit matici identity pomocí statické [ `SKMatrix.MakeIdentity` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.MakeIdentity()/) metoda:
+Můžete vytvořit matici identity pomocí statické [ `SKMatrix.MakeIdentity` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.MakeIdentity()/) metody:
 
 ```csharp
 SKMatrix matrix = SKMatrix.MakeIdentity();
 ```
 
-`SKMatrix` Nemá výchozí konstruktor *není* vrátit matici identity. Vrátí matice se všemi buněk nastaven na hodnotu nula. Nepoužívejte `SKMatrix` konstruktor Pokud budete chtít nastavit těchto buněk ručně.
+`SKMatrix` Výchozí konstruktor neprovede *není* vrátit jednotkovou matici. Vrátí matici s všechny buňky nastaven na hodnotu nula. Nepoužívejte `SKMatrix` konstruktoru jen pokud plánujete nastavit tyto buňky ručně.
 
-Když SkiaSharp vykreslí grafický objekt, je 1 3 matice s 1 ve sloupci třetí efektivně převést každý bod (x, y):
+Když ve Skiasharpu vykreslí grafický objekt, každý bod (x, y) je efektivně převedena na 1 3 matice s 1 ve třetím sloupci:
 
 <pre>
 | x  y  1 |
 </pre>
 
-Tato matice 1 3 představuje bod trojrozměrné s souřadnice nastavena na hodnotu 1. Proč matice dvourozměrná transformace vyžaduje práce v tři dimenze je matematickém důvodů, proč (popsané později). Si můžete představit Tato matice 1 3 jako představující bod v 3D systém souřadnic, ale vždy na 2D rovinu, kde Z hodnotu 1.
+Tato matice 1 3 představuje bod trojrozměrného s souřadnice nastavena na hodnotu 1. Proč dvojrozměrné matici po transformaci vyžaduje práce v trojrozměrném jsou matematické důvodů (prodiskutována později). Tato matice 1 3 jako představující bod v 3D souřadnicový systém, ale vždy v rovině 2D, kde Z rovná 1 si můžete představit.
 
-Tato matice 1 3 násobí transformační matice a výsledkem je bodu na plátně se vykresluje:
+Tato matice 1 3 se pak vynásobí transformační matice a výsledek je vykreslen na plátně bod:
 
 <pre>
               | 1  0  0 |
@@ -60,9 +60,9 @@ Tato matice 1 3 násobí transformační matice a výsledkem je bodu na plátně
               | 0  0  1 |
 </pre>
 
-Pomocí násobení matic standardní, převedený body jsou následující:
+Pomocí násobení matic standardní převedený body jsou následující:
 
-x: = x
+x! = x
 
 y' = y
 
@@ -70,7 +70,7 @@ z' = 1
 
 To je výchozí transformace.
 
-Při `Translate` metoda je volána na `SKCanvas` objekt, `tx` a `ty` argumenty, které mají `Translate` metoda stane první dva buněk ve třetím řádku transformační matice:
+Když `Translate` metoda je volána v `SKCanvas` objektu, `tx` a `ty` argumenty, které mají `Translate` metoda stane první dvě buňky ve třetím řádku transformační matice:
 
 <pre>
 |  1   0   0 |
@@ -78,7 +78,7 @@ Při `Translate` metoda je volána na `SKCanvas` objekt, `tx` a `ty` argumenty, 
 | tx  ty   1 |
 </pre>
 
-Vynásobením je teď následujícím způsobem:
+Násobení je teď následujícím způsobem:
 
 <pre>
               |  1   0   0 |
@@ -86,13 +86,13 @@ Vynásobením je teď následujícím způsobem:
               | tx  ty   1 |
 </pre>
 
-Zde jsou transformace vzorce:
+Tady jsou vzorce transformace:
 
-x: = x + tx
+x! = x + tx
 
 y' = y + ty
 
-Škálování faktory mít výchozí hodnotu 1. Při volání `Scale` metoda na nový `SKCanvas` objektu, výsledná transformační matice neobsahuje `sx` a `sy` argumenty v buňkách diagonálních:
+Škálování faktory mají výchozí hodnotu 1. Při volání `Scale` metoda na novém `SKCanvas` objektu, výsledná transformační matice neobsahuje `sx` a `sy` argumenty v Úhlopříčný buněk:
 
 <pre>
               | sx   0   0 |
@@ -102,11 +102,11 @@ y' = y + ty
 
 Transformace vzorce jsou následující:
 
-x: sx · = x
+x! = sx. x
 
-y' = sy · y
+y' = sy. y
 
-Maticové transformace po volání `Skew` obsahuje dva argumenty v buňkách matice přiléhající k škálování faktory:
+Maticové transformace po volání `Skew` obsahuje dva argumenty v buňkách matice vedle škálování faktory:
 
 <pre>
               │   1   ySkew   0 │
@@ -114,13 +114,13 @@ Maticové transformace po volání `Skew` obsahuje dva argumenty v buňkách mat
               │   0     0     1 │
 </pre>
 
-Transformace vzorce jsou:
+Vzorce transformace jsou:
 
-x: = x + xSkew · y
+x! = x + xSkew. y
 
-y' = ySkew · x a y
+y' = ySkew. x + y
 
-Pro volání `RotateDegrees` nebo `RotateRadians` pro úhel α, transformační matice vypadá takto:
+Pro volání `RotateDegrees` nebo `RotateRadians` pro úhel α transformační matice vypadá takto:
 
 <pre>
               │  cos(α)  sin(α)  0 │
@@ -128,13 +128,13 @@ Pro volání `RotateDegrees` nebo `RotateRadians` pro úhel α, transformační 
               │    0       0     1 │
 </pre>
 
-Zde jsou transformace vzorce:
+Tady jsou vzorce transformace:
 
-x: cos(α) · = x - sin(α) · y
+x! = cos(α). x - sin(α). y
 
-y' = sin(α) · x - cos(α) · y
+y' = sin(α). x - cos(α). y
 
-Když α je 0 stupňů, je identita matice. Když α 180 stupňů, transformační matice vypadá takto:
+Když α 0 stupňů, je jednotkovou matici. 180stupňový rozsah s orientací po α transformační matice vypadá takto:
 
 <pre>
 | –1   0   0 |
@@ -142,26 +142,26 @@ Když α je 0 stupňů, je identita matice. Když α 180 stupňů, transformačn
 |  0   0   1 |
 </pre>
 
-Otočení 180 stupňů je ekvivalentní objekt překlopení vodorovně a svisle, který provádí taky nastavení škálování faktory – 1.
+Otočení kolem osy 180 stupňů je ekvivalentní překlopení objektu vodorovně a svisle, která se také provádí nastavením měřítko – 1.
 
-Všechny tyto typy transformací jsou klasifikovány jako *afinní* transformace. Afinní transformace zahrnují nikdy třetí sloupec matice, která zůstává na výchozí hodnotu 0, 0 a 1. Článek [Non-Afinní transformace](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/non-affine.md) popisuje-afinní transformace.
+Všechny tyto typy transformací, které jsou klasifikovány jako *nastavená na affine* transformace. Afinní transformace zahrnují nikdy třetí sloupec matrice, který zůstane na výchozí hodnotu 0, 0 a 1. Tento článek [Non-Afinní transformace](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/non-affine.md) popisuje neafinní transformace.
 
 ## <a name="matrix-multiplication"></a>Násobení matic
 
-S použitím transformační matice jeden velký výhoda spočívá v tom, že je možné získat složené transformací násobení matic, což se často označuje v dokumentaci k SkiaSharp jako *zřetězení*. Mnoho transformovat související metody v `SKCanvas` k "předběžné zřetězení" nebo "pre-concat." Vztahuje se pracovního násobení, což je důležité, protože není komutativní násobení matic.
+Jednu velkou výhodou s použití transformační matice se, že je možné získat kompozitní transformace násobení matic, což se často označuje v dokumentaci ve Skiasharpu jako *zřetězení*. Mnoho metod související transformace v `SKCanvas` k "předběžné zřetězení" nebo "pre-concat." To se vztahuje pracovního násobení, což je důležité, protože násobení matic není komutativní.
 
-Například v dokumentaci [ `Translate` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Translate/p/System.Single/System.Single/) metoda říká to "Pre-concats aktuální matice s zadaný překlad" při v dokumentaci pro [ `Scale` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Scale/p/System.Single/System.Single/) Metoda upozorněním, že IT oddělení "Pre-concats aktuální matice s zadaný měřítkem."
+Například v dokumentaci [ `Translate` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Translate/p/System.Single/System.Single/) metoda uvádí, že se "Pre-concats aktuální matice s zadaný překladu" při dokumentaci pro [ `Scale` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Scale/p/System.Single/System.Single/) Metoda říká, že se "Pre-concats aktuální matice pomocí zadaného rozsahu."
 
-To znamená, že transformace určeného volání metody, které je násobitel (levé operand) a aktuální transformační matice se násobenec (pravém operand).
+To znamená, že transformace zadané ve volání metody, které je násobitel (levý operand) a aktuální transformační matice se násobenec (operand pravé strany).
 
-Předpokládejme, že `Translate` nazývá následované `Scale`:
+Předpokládejme, že `Translate` je volána po něm `Scale`:
 
 ```csharp
 canvas.Translate(tx, ty);
 canvas.Scale(sx, sy);
 ```
 
-`Scale` Transformace se násobí hodnotou `Translate` transformace pro matici složené transformace:
+`Scale` Transformace se násobí hodnotou `Translate` transformace pro matici kompozitní transformace:
 
 <pre>
 | sx   0   0 |   |  1   0   0 |   | sx   0   0 |
@@ -169,14 +169,14 @@ canvas.Scale(sx, sy);
 |  0   0   1 |   | tx  ty   1 |   | tx  ty   1 |
 </pre>
 
-`Scale` může být volána před provedením `Translate` podobné výjimky:
+`Scale` může být volána před `Translate` tímto způsobem:
 
 ```csharp
 canvas.Scale(sx, sy);
 canvas.Translate(tx, ty);
 ```
 
-V takovém případě je obrácený pořadí násobení a škálování faktory efektivně se použijí pro překlad faktory:
+V takovém případě je obrácený pořadí násobení a faktory měřítka efektivně se použijí pro překlad faktory:
 
 <pre>
 |  1   0   0 |   | sx   0   0 |   |  sx      0    0 |
@@ -184,13 +184,13 @@ V takovém případě je obrácený pořadí násobení a škálování faktory 
 | tx  ty   1 |   |  0   0   1 |   | tx·sx  ty·sy  1 |
 </pre>
 
-Tady je `Scale` metoda s bodem pivot:
+Tady je `Scale` metodu s bodem otáčení:
 
 ```csharp
 canvas.Scale(sx, sy, px, py);
 ```
 
-Jde o ekvivalent následující volání přeložit a škálování:
+Toto je shodné s následující volání přeložit a škálování:
 
 ```csharp
 canvas.Translate(px, py);
@@ -198,7 +198,7 @@ canvas.Scale(sx, sy);
 canvas.Translate(–px, –py);
 ```
 
-Tři transformační matice se násobí v obráceném pořadí z jak metody zobrazují v kódu:
+Tři transformační matice se vynásobené v obráceném pořadí ze zobrazení metody v kódu:
 
 <pre>
 |  1    0   0 |   | sx   0   0 |   |  1   0  0 |   |    sx         0     0 |
@@ -208,7 +208,7 @@ Tři transformační matice se násobí v obráceném pořadí z jak metody zobr
 
 ### <a name="the-skmatrix-structure"></a>Struktura SKMatrix
 
-`SKMatrix` Struktura definuje devět vlastností čtení/zápisu typu `float` odpovídající devět buňkách matice transformace:
+`SKMatrix` Struktury definuje devět vlastností čtení/zápisu typu `float` odpovídající devět buňky ovládacího prvku transformační matice:
 
 <pre>
 │ ScaleX  SkewY   Persp0 │
@@ -216,9 +216,9 @@ Tři transformační matice se násobí v obráceném pořadí z jak metody zobr
 │ TransX  TransY  Persp2 │
 </pre>
 
-`SKMatrix` také definuje vlastnost s názvem [ `Values` ](https://developer.xamarin.com/api/property/SkiaSharp.SKMatrix.Values/) typu `float[]`. Tuto vlastnost lze nastavit nebo získat devět hodnot v jednom spuštění v pořadí `ScaleX`, `SkewX`, `TransX`, `SkewY`, `ScaleY`, `TransY`, `Persp0`, `Persp1`, a `Persp2`.
+`SKMatrix` také definuje vlastnost s názvem [ `Values` ](https://developer.xamarin.com/api/property/SkiaSharp.SKMatrix.Values/) typu `float[]`. Tuto vlastnost lze použít k nastavení nebo získání devět hodnot v jednom kroku v pořadí `ScaleX`, `SkewX`, `TransX`, `SkewY`, `ScaleY`, `TransY`, `Persp0`, `Persp1`, a `Persp2`.
 
-`Persp0`, `Persp1`, A `Persp2` buněk, které jsou popsané v článku, [Non-Afinní transformace](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/non-affine.md). Pokud tyto buňky mají výchozí hodnoty 0, 0 a 1, pro transformaci se násobí hodnotou souřadnice bodu takto:
+`Persp0`, `Persp1`, A `Persp2` buňky jsou popsány v následujícím článku [Non-Afinní transformace](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/non-affine.md). Pokud tyto výchozí hodnoty 0, 0 a 1, transformací, která se násobí hodnotou souřadnice bodu takto:
 
 <pre>
               │ ScaleX  SkewY   0 │
@@ -226,26 +226,26 @@ Tři transformační matice se násobí v obráceném pořadí z jak metody zobr
               │ TransX  TransY  1 │
 </pre>
 
-x: ScaleX · = x + SkewX · y + TransX
+x! = ScaleX. x + SkewX. y + TransX
 
-y' = SkewX · x + ScaleY · y + TransY
+y' = SkewX. x + ScaleY. y + TransY
 
 z' = 1
 
-Toto je kompletní dvourozměrná afinní transformace. Afinní transformace zachovává paralelní řádky, což znamená, že obdélníku nikdy převede na jakoukoli jinou hodnotu než rovnoběžník.
+Toto je úplný dvojrozměrné afinní transformace. Afinní transformace zachová paralelní řádky, což znamená, že obdélník se nikdy transformuje na nic jiného než se z něj rovnoběžník.
 
-`SKMatrix` Struktura definuje několik statické metody pro vytvoření `SKMatrix` hodnoty. Tyto všechny návratové `SKMatrix` hodnoty:
+`SKMatrix` Struktury definuje několik statické metody pro vytvoření `SKMatrix` hodnoty. Tyto všechny návratové `SKMatrix` hodnoty:
 
 - [`MakeTranslation`](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.MakeTranslation/p/System.Single/System.Single/)
 - [`MakeScale`](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.MakeScale/p/System.Single/System.Single/)
-- [`MakeScale`](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.MakeScale/p/System.Single/System.Single/System.Single/System.Single/) s bodem pivot
+- [`MakeScale`](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.MakeScale/p/System.Single/System.Single/System.Single/System.Single/) s bodem otáčení
 - [`MakeRotation`](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.MakeRotation/p/System.Single/) pro úhel v radiánech
-- [`MakeRotation`](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.MakeRotation/p/System.Single/System.Single/System.Single/) pro úhel v radiánech s bodem pivot
+- [`MakeRotation`](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.MakeRotation/p/System.Single/System.Single/System.Single/) pro úhel v radiánech s bodem otáčení
 - [`MakeRotationDegrees`](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.MakeRotationDegrees/p/System.Single/)
-- [`MakeRotationDegrees`](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.MakeRotationDegrees/p/System.Single/System.Single/System.Single/) s bodem pivot
+- [`MakeRotationDegrees`](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.MakeRotationDegrees/p/System.Single/System.Single/System.Single/) s bodem otáčení
 - [`MakeSkew`](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.MakeSkew/p/System.Single/System.Single/)
 
-`SKMatrix` také definuje několik statické metody, které řetězení dvou matic, což znamená, že je násobení. Tyto metody jsou pojmenované `Concat`, `PostConcat`, a `PreConcat`, a existují dvě verze jednotlivých. Tyto metody mít žádné návratové hodnoty; Místo toho budou odkazovat na existující `SKMatrix` hodnoty prostřednictvím `ref` argumenty. V následujícím příkladu `A`, `B`, a `R` (pro "výsledek") jsou všechny `SKMatrix` hodnoty.
+`SKMatrix` také definuje několik statické metody, které zřetězení dvou matice, což znamená, že je násobení. Tyto metody jsou pojmenovány `Concat`, `PostConcat`, a `PreConcat`, a existují dvě verze jednotlivých. Tyto metody mají bez návratové hodnoty; Místo toho, které odkazují existující `SKMatrix` hodnoty prostřednictvím `ref` argumenty. V následujícím příkladu `A`, `B`, a `R` (pro "výsledek") jsou všechny `SKMatrix` hodnoty.
 
 Dva `Concat` metody jsou volány takto:
 
@@ -255,11 +255,11 @@ SKMatrix.Concat(ref R, A, B);
 SKMatrix.Concat(ref R, ref A, ref B);
 ```
 
-To proveďte následující násobení:
+Tyto provedení násobení následující:
 
 R = B × A
 
-Jiné metody mít pouze dva parametry. První parametr je upravený a pro návrat z volání metody, obsahuje součin dvou matice. Dva `PostConcat` metody jsou volány takto:
+Jiné metody mít pouze dva parametry. První parametr je upravený a při návratu z volání metody, obsahuje součin dvou matice. Dva `PostConcat` metody jsou volány takto:
 
 ```csharp
 SKMatrix.PostConcat(ref A, B);
@@ -267,7 +267,7 @@ SKMatrix.PostConcat(ref A, B);
 SKMatrix.PostConcat(ref A, ref B);
 ```
 
-Tyto volání provádět následující operace:
+Tato volání provádět následující operace:
 
 A = A × B
 
@@ -279,11 +279,11 @@ SKMatrix.PreConcat(ref A, B);
 SKMatrix.PreConcat(ref A, ref B);
 ```
 
-Tyto volání provádět následující operace:
+Tato volání provádět následující operace:
 
 A = B × A
 
-Verze těchto volání metod se všemi `ref` argumenty jsou mírně efektivnější při volání základní implementace, ale může být matoucí někomu čtení kódu a za předpokladu, že to cokoli pomocí `ref` argument je změnit metodu. Kromě toho je často vhodnější předat argument, který je výsledkem mezi `Make` metody, třeba:
+Verze těchto volání metod se všemi `ref` argumenty jsou efektivnější ve volání implementace základní, ale může být matoucí někomu čtení kódu a za předpokladu, že to cokoli pomocí `ref` argument je změnit metodu. Kromě toho je často vhodné předat argument, který je výsledkem jednoho z `Make` metody, například:
 
 ```csharp
 SKMatrix result;
@@ -291,7 +291,7 @@ SKMatrix.Concat(result, SKMatrix.MakeTranslation(100, 100),
                         SKMatrix.MakeScale(3, 3));
 ```
 
-Tím se vytvoří následující tabulku:
+Tím se vytvoří následující matice:
 
 <pre>
 │   3    0  0 │
@@ -299,14 +299,14 @@ Tím se vytvoří následující tabulku:
 │ 100  100  1 │
 </pre>
 
-Toto je transformace škálování násobí hodnotou transformace přeložit. V tomto konkrétním případě `SKMatrix` struktura poskytuje metodu s názvem zástupce [ `SetScaleTranslate` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.SetScaleTranslate/p/System.Single/System.Single/System.Single/System.Single/):
+Toto je vynásobené transformace translace transformace měřítka. V tomto konkrétním případě `SKMatrix` struktury poskytuje metodu s názvem zástupce [ `SetScaleTranslate` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.SetScaleTranslate/p/System.Single/System.Single/System.Single/System.Single/):
 
 ```csharp
 SKMatrix R = new SKMatrix();
 R.SetScaleTranslate(3, 3, 100, 100);
 ```
 
-Toto je jedna z několika prvních případech, kdy je bezpečně používat `SKMatrix` konstruktor. `SetScaleTranslate` Metoda nastaví všechny devět buňkách matice. Je také bezpečně používat `SKMatrix` konstruktor s statických `Rotate` a `RotateDegrees` metody:
+Toto je jeden z několika situace, kdy je bezpečné používat `SKMatrix` konstruktoru. `SetScaleTranslate` Metoda nastaví všechny buňky devět matice. Je také bezpečně používat `SKMatrix` konstruktor s statické `Rotate` a `RotateDegrees` metody:
 
 ```csharp
 SKMatrix R = new SKMatrix();
@@ -320,9 +320,9 @@ SKMatrix.RotateDegrees(ref R, degrees);
 SKMatrix.RotateDegrees(ref R, degrees, px, py);
 ```
 
-Tyto metody se *není* řetězení rotační transformace na existující transformace. Metody nastavit všechny buňkách matice. Jejich fungují stejně jako `MakeRotation` a `MakeRotationDegrees` metody s tím rozdílem, že nemáte v vytvořit instanci `SKMatrix` hodnotu.
+Tyto metody provádět *není* zřetězit transformace rotace do existující transformace. Metody nastavte všechny buňky v matici. Jsou funkčně stejný jako `MakeRotation` a `MakeRotationDegrees` metody s tím rozdílem, že není instance `SKMatrix` hodnotu.
 
-Předpokládejme, že máte `SKPath` objekt, který chcete zobrazit, ale si přejete, že mají poněkud jinou orientaci nebo jiné centrálního bodu. Všechny souřadnice této cestě můžete upravit pomocí volání [ `Transform` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.Transform/p/SkiaSharp.SKMatrix/) metodu `SKPath` s `SKMatrix` argument. **Cesta transformace** stránky ukazuje, jak to udělat. [ `PathTransform` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/PathTransformPage.cs) Třídy odkazy `HendecagramPath` objekt v poli, ale používá jeho konstruktoru použití transformace na této cestě:
+Předpokládejme, že máte `SKPath` objekt, který chcete zobrazit, ale chcete raději, aby měla poněkud liší orientace nebo jiné středový bod. Souřadnice této cestě můžete upravit pomocí volání [ `Transform` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.Transform/p/SkiaSharp.SKMatrix/) metoda `SKPath` s `SKMatrix` argument. **Cesta transformace** stránce ukazuje, jak to provést. [ `PathTransform` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/PathTransformPage.cs) Třídy odkazy `HendecagramPath` objekt v poli, ale používá jeho konstruktor k použití transformace na tuto cestu:
 
 ```csharp
 public class PathTransformPage : ContentPage
@@ -347,9 +347,9 @@ public class PathTransformPage : ContentPage
 }
 ```
 
-`HendecagramPath` Objekt má ve středisku (0, 0), a 11 body hvězdy rozšířit i z tohoto centra 100 jednotkami ve všech směrech. To znamená, že cesta obsahuje kladné a záporné souřadnice. **Cesta transformace** stránky upřednostní pro práci s hvězdičkou třikrát jako velký a se všechny kladné souřadnice. Kromě toho nechce jeden bod hvězdy tak, aby odkazoval nahoru. Chce místo pro jeden bod hvězdy přejděte rovnou dolů. (Protože hvězdičkou má 11 body, nemůže mít oba.) To vyžaduje otáčení hvězdičkou o 360 stupňů dělený 22.
+`HendecagramPath` Objekt má ve středisku (0, 0), a jedenáct body na hvězdičku rozšířit ven z tohoto centra 100 jednotkami ve všech směrech. To znamená, že cesta obsahuje kladné a záporné souřadnice. **Cesta transformace** stránky upřednostňuje pro práci s star třikrát jako velké a všechna kladné souřadnice. Kromě toho nechce jeden bod hvězdičku, aby se bod nahoru. Chce místo pro jeden bod hvězdy tak, aby odkazovala přímo dolů. (Protože hvězdičky má jedenáct body, nemůže mít oba.) Tento postup vyžaduje otáčení hvězdičky o 360 stupňů dělený 22.
 
-Konstruktoru vytvoří `SKMatrix` objektu ze tří samostatných transformace pomocí `PostConcat` metoda s vzoru následující, kde A, B a C jsou instance třídy `SKMatrix`:
+Konstruktor sestavení `SKMatrix` objekt ze tří samostatných transformace pomocí `PostConcat` metodu s následujícím vzorem, kde A, B a C jsou instancemi `SKMatrix`:
 
 ```csharp
 SKMatrix matrix = A;
@@ -357,13 +357,13 @@ SKMatrix.PostConcat(ref A, B);
 SKMatrix.PostConcat(ref A, C);
 ```
 
-Toto je řadu následných součinů, takže výsledek je následující:
+Toto je řadě po sobě jdoucích součinů, výsledek je následující:
 
 A × B × C
 
-Podpora po sobě jdoucích součinů porozumět, co každý transformace nemá. Transformace škálování zvětšuje velikost souřadnice cesta faktorem, 3, takže souřadnice v rozsahu od – 300 do 300. Otočit transformace otočí hvězdičky kolem jeho počátek. Transformace přeložit pak posune, je 300 pixelů vpravo a dolů, takže všechny souřadnice stát kladné.
+Po sobě jdoucích součinů vám pomůže porozumět tomu, co dělá každý transformace. Transformace měřítka zvýší velikost souřadnice cesta 3, takže souřadnice rozsahu – 300 až 300. Transformace rotace otočí star kolem původu. Transformace translace pak posune, je 300 pixelů pravým tlačítkem a dolů tak všechny souřadnice stát kladné.
 
-Existují další pořadí, které produkují stejné matice. Zde je jiný:
+Existují jiné sekvence, které vyvolávají stejné matice. Tady je jiný:
 
 ```csharp
 SKMatrix matrix = SKMatrix.MakeRotationDegrees(360f / 22);
@@ -371,9 +371,9 @@ SKMatrix.PostConcat(ref matrix, SKMatrix.MakeTranslation(100, 100));
 SKMatrix.PostConcat(ref matrix, SKMatrix.MakeScale(3, 3));
 ```
 
-To nejdřív otočí cesty okolo jeho center a převede jej 100 pixelů vpravo a směrem dolů, takže všechny souřadnice jsou uváděny kladná. Hvězdy je pak zvýšit velikost relativně k jeho nové levého horního rohu, který je bod (0, 0).
+To otočí nejdříve cestě kolem středu a převede jej na pravé straně 100 pixelů a tak veškeré souřadnice jsou uváděny kladné. Barva hvězdičky se pak zvýšit velikost vzhledem k jeho nové levého horního rohu, což je bod (0, 0).
 
-`PaintSurface` Obslužná rutina může vykreslit jednoduše tuto cestu:
+`PaintSurface` Obslužná rutina může jednoduše vykreslit tuto cestu:
 
 ```csharp
 public class PathTransformPage : ContentPage
@@ -400,26 +400,26 @@ public class PathTransformPage : ContentPage
 
 ```
 
-Zobrazí se v levém horním rohu na plátno:
+Zobrazí se v levém horním rohu plátna:
 
 [![](matrix-images/pathtransform-small.png "Trojitá snímek obrazovky stránky cesta transformace")](matrix-images/pathtransform-large.png#lightbox "Trojitá snímek obrazovky stránky cesta transformace")
 
-Konstruktor tohoto programu se vztahuje matice cestu s následující volání:
+Konstruktor tento program se týká matice do cesty následující volání:
 
 ```csharp
 transformedPath.Transform(matrix);
 ```
 
-Cesta nemá *není* zachovat tato matice jako vlastnost. Místo toho používá pro transformaci se všechny souřadnice cesty. Pokud `Transform` nazývá znovu, Transformovat se použije znovu, a je jediným způsobem, můžete se vrátit je použitím jiného přehled, který vrátí zpět pro transformaci. Naštěstí `SKMatrix` definuje strukturu [ `TryInverse` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.TryInvert/p/SkiaSharp.SKMatrix/) metoda, která získává matice, který obrátí dané matice:
+Cesta nemá *není* zachovat tato matice jako vlastnost. Místo toho ji transformací, která se vztahuje na všechny souřadnice cesty. Pokud `Transform` je volána znovu, znovu je použita transformace a je jediný způsob, jak se můžete vrátit použitím jiného matice, který vrátí zpět transformaci. Naštěstí `SKMatrix` definuje strukturu [ `TryInverse` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.TryInvert/p/SkiaSharp.SKMatrix/) metodu, která získá matici, která obrací daného matice:
 
 ```csharp
 SKMatrix inverse;
 bool success = matrix.TryInverse(out inverse);
 ```
 
-Volání metody `TryInverse` protože ne všechny matice jsou invertible, ale bez invertible matice není mohou být použity k grafiky transformace.
+Je volána metoda `TryInverse` protože ne všechny matice jsou inverzi, ale bez inverzi matice není pravděpodobně budou používat pro transformaci grafiky.
 
-Můžete taky použít transformační matice do `SKPoint` hodnota, pole bodů `SKRect`, nebo i právě jedno číslo programu. `SKMatrix` Struktura podporuje tyto operace s kolekci metod, které začínají slovem `Map`, například tyto:
+Můžete také použít transformační matice do `SKPoint` hodnoty, pole bodů `SKRect`, nebo jenom jedno číslo v rámci programu. `SKMatrix` Struktura podporuje tyto operace s kolekcí z metod, které začínají slovem `Map`, jako je například tyto:
 
 ```csharp
 SKPoint transformedPoint = matrix.MapPoint(point);
@@ -433,21 +433,21 @@ float transformedValue = matrix.MapRadius(floatValue);
 SKRect transformedRect = matrix.MapRect(rect);
 ```
 
-Pokud použijete tento poslední metodu, mějte na paměti, že `SKRect` struktura není schopné představující otočený obdélníku. Metoda má smysl jenom `SKMatrix` hodnotu představující překlad a škálování.
+Pokud použijete tento poslední metodu, mějte na paměti, která `SKRect` struktura není schopný reprezentovat otočený obdélník. Metoda má smysl jenom `SKMatrix` hodnotu představující překladu a škálování.
 
 ### <a name="interactive-experimentation"></a>Interaktivní experimentování
 
-Jedním ze způsobů podívat afinní transformace je interaktivně přesunutím tři rozích bitmapy kolem obrazovky a zobrazuje, jaké transformace výsledků. Toto je cílem **zobrazit Afinní matici** stránky. Tato stránka vyžaduje dvě třídy, které používá také v jiných ukázky:
+Jedním ze způsobů, chcete-li získat představu afinní transformace je interaktivní přesun tři rohů rastrového obrázku na obrazovce a podívat se, jaké transformace výsledků. Toto je myšlenku za **zobrazit nastavená na Affine matici** stránky. Tato stránka vyžaduje dvě třídy, které se používají také v jiných ukázky:
 
-[ `TouchPoint` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/TouchPoint.cs) Zobrazí třída průhledná kruh, který lze přetáhnout po obrazovce. `TouchPoint` vyžaduje, aby `SKCanvasView` nebo element, který je nadřazeným objektem `SKCanvasView` mít [ `TouchEffect` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/TouchEffect.cs) připojen. Nastavte `Capture` vlastnost `true`. V `TouchAction` obslužné rutiny události, musí volat program `ProcessTouchEvent` metoda v `TouchPoint` pro každou `TouchPoint` instance. Vrátí metoda `true` Pokud událost touch vytvořily bod touch přesunutí. Navíc `PaintSurface` obslužné rutiny musí volat `Paint` metoda v každé `TouchPoint` instance, předávání do ní `SKCanvas` objekt.
+[ `TouchPoint` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/TouchPoint.cs) Třída zobrazí více průchody průsvitných kruh, který můžete přetahovat po obrazovce. `TouchPoint` vyžaduje, aby `SKCanvasView` nebo element, který je nadřazená `SKCanvasView` mít [ `TouchEffect` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/TouchEffect.cs) připojené. Nastavte `Capture` vlastnost `true`. V `TouchAction` obslužná rutina události, program musí volat `ProcessTouchEvent` metoda ve `TouchPoint` pro každou `TouchPoint` instance. Metoda vrátí `true` Pokud událost touch výsledkem bodu touch přesunutí. Navíc `PaintSurface` obslužná rutina musí volat `Paint` metoda v každém `TouchPoint` instance předáním `SKCanvas` objektu.
 
-`TouchPoint` ukazuje běžné způsobem, že SkiaSharp visual můžete zapouzdřené v samostatné třídy. Třída můžete definovat vlastnosti pro zadání vlastnosti vizuál a metodu s názvem `Paint` s `SKCanvas` argument může vykreslit ho.
+`TouchPoint` ukazuje společného tak, že vizuál SkiaSharp, lze zapouzdřit v samostatné třídě. Třídu můžete definovat vlastnosti pro zadání vlastnosti vizuálu, a metodu s názvem `Paint` s `SKCanvas` argument může mít za následek ho.
 
-`Center` Vlastnost `TouchPoint` Určuje umístění objektu. Tuto vlastnost lze nastavit inicializovat umístění; změny vlastností, když uživatel nastavuje tažením kruh kolem na plátno.
+`Center` Vlastnost `TouchPoint` označuje umístění objektu. Tuto vlastnost lze nastavit k inicializaci umístění. změny vlastností, když uživatel přetáhne kruh kolem plátna.
 
-**Zobrazit Afinní stránce matice** taky vyžaduje [ `MatrixDisplay` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/MatrixDisplay.cs) třídy. Tato třída zobrazí buňkách `SKMatrix` objektu. Má dvě veřejné metody: `Measure` získat dimenze vykreslené matice a `Paint` můžete ho zobrazit. Obsahuje třídy `MatrixPaint` vlastnost typu `SKPaint` , lze nahradit jinou velikost písma nebo barev.
+**Zobrazit stránku nastavená na Affine matice** také vyžaduje [ `MatrixDisplay` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/MatrixDisplay.cs) třídy. Tato třída zobrazí buňky ovládacího prvku `SKMatrix` objektu. Má dvě veřejné metody: `Measure` získat dimenze vykreslené matice a `Paint` ji zobrazíte. Obsahuje třídy `MatrixPaint` vlastnost typu `SKPaint` , který se dá nahradit jinou velikost písma a barvy.
 
-[ **ShowAffineMatrixPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml) soubor vytvoří `SKCanvasView` a připojí `TouchEffect`. [ **ShowAffineMatrixPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml.cs) souboru kódu vytvoří tři `TouchPoint` objektů a potom je nastaví na pozic odpovídající tři rozích rastrového obrázku, který načte ze embedded prostředek:
+[ **ShowAffineMatrixPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml) vytvoří soubor `SKCanvasView` a připojí `TouchEffect`. [ **ShowAffineMatrixPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml.cs) soubor kódu na pozadí vytvoří tři `TouchPoint` objektů a potom je nastaví na polohami pro tři rohů rastrový obrázek, který se načítá z vložený prostředek:
 
 ```csharp
 public partial class ShowAffineMatrixPage : ContentPage
@@ -468,9 +468,8 @@ public partial class ShowAffineMatrixPage : ContentPage
         Assembly assembly = GetType().GetTypeInfo().Assembly;
 
         using (Stream stream = assembly.GetManifestResourceStream(resourceID))
-        using (SKManagedStream skStream = new SKManagedStream(stream))
         {
-            bitmap = SKBitmap.Decode(skStream);
+            bitmap = SKBitmap.Decode(stream);
         }
 
         touchPoints[0] = new TouchPoint(100, 100);                  // upper-left corner
@@ -486,9 +485,9 @@ public partial class ShowAffineMatrixPage : ContentPage
 }
 ```
 
-Afinní matice je jedinečně definované tři body. Tří `TouchPoint` objektů odpovídá levém horním pravém horním a dolním rozích bitové mapy. Protože afinní matice je pouze schopná transformace obdélníku do rovnoběžník, čtvrtou je zahrnuto v další tři. Konstruktor končí volání `ComputeMatrix`, která vypočítá buňkách `SKMatrix` objekt z těchto tří bodů.
+Nastavená na affine matice je jednoznačně definována tři body. Tři `TouchPoint` objekty odpovídají levého horního, pravého horního a levého dolního rohu rastrového obrázku. Vzhledem k tomu je nastavená na affine matice pouze dokáže transformace obdélník se z něj rovnoběžník, čtvrtou odvozené od ostatních tří. Konstruktor končí volání `ComputeMatrix`, která vypočítá buňky ovládacího prvku `SKMatrix` objekt z těchto tří bodů.
 
-`TouchAction` Volání obslužné rutiny `ProcessTouchEvent` metoda jednotlivých `TouchPoint`. `scale` Hodnotu převede z Xamarin.Forms souřadnice pixelů:
+`TouchAction` Volání obslužné rutiny `ProcessTouchEvent` metoda jednotlivých `TouchPoint`. `scale` Hodnotu převede ze souřadnice Xamarin.Forms na pixelech:
 
 ```csharp
 public partial class ShowAffineMatrixPage : ContentPage
@@ -518,9 +517,9 @@ public partial class ShowAffineMatrixPage : ContentPage
 }
 ```
 
-Pokud existuje `TouchPoint` přesunul, pak zavolá metodu `ComputeMatrix` znovu a zruší platnost povrchu.
+Pokud existuje `TouchPoint` přesunula, potom volá metodu `ComputeMatrix` znovu a zruší platnost povrchu.
 
-`ComputeMatrix` Metoda určuje matice implicitní tyto tři body. Matice názvem `A` transformací jeden pixelů odmocnina obdélníku do rovnoběžník založené na tři body při transformace škálování názvem `S` škáluje rastrového obrázku na čtvereček obdélníku jeden pixelů. Složené matice je `S` × `A`:
+`ComputeMatrix` Metoda určí matice odvozené od těchto tří bodů. Matice volá `A` transformace jeden pixel Čtvereček obdélníku do rovnoběžník podle tři body při škálování transformací, která se nazývá `S` škáluje rastrového obrázku na čtvereček obdélník jeden pixel. Složený Matrix `S` × `A`:
 
 ```csharp
 public partial class ShowAffineMatrixPage : ContentPage
@@ -551,7 +550,7 @@ public partial class ShowAffineMatrixPage : ContentPage
 }
 ```
 
-Nakonec `PaintSurface` metoda vykreslí rastrový obrázek podle této matice, matice zobrazí v dolní části obrazovky a vykreslí body touch v tři rozích bitmapy:
+Nakonec `PaintSurface` metoda vykreslí rastrový obrázek podle této matici, matice zobrazí v dolní části obrazovky a vykreslí dotykovými body v tři rozích rastrového obrázku:
 
 ```csharp
 public partial class ShowAffineMatrixPage : ContentPage
@@ -587,17 +586,17 @@ public partial class ShowAffineMatrixPage : ContentPage
   }
 ```
 
-Na obrazovce iOS níže znázorňuje bitovou mapu, když prvním načtení stránky, když ho dvou obrazovkách zobrazit po některé manipulaci:
+Na následující obrazovce iOS zobrazí rastrový obrázek při prvním načtení stránky, při další dvě obrazovky zobrazit po některé manipulace s:
 
-[![](matrix-images/showaffinematrix-small.png "Trojitá snímek obrazovky stránky zobrazit Afinní matici")](matrix-images/showaffinematrix-large.png#lightbox "Trojitá snímek obrazovky stránky zobrazit Afinní matici")
+[![](matrix-images/showaffinematrix-small.png "Trojitá snímek obrazovky stránky zobrazit nastavená na Affine matici")](matrix-images/showaffinematrix-large.png#lightbox "Trojitá snímek obrazovky stránky zobrazit nastavená na Affine matici")
 
-I když se zdá být jako body touch přetáhněte rozích rastrový obrázek, který je pouze dojem. Matice počítá z bodů touch transformuje bitovou mapu, aby rozích se shodovat s body dotykového ovládání.
+I když to vypadá, jako kdyby dotykovými body přetahováním rohů rastrového obrázku, který je pouze dojem. Matice počítají na základě dotykovými body transformuje rastrového obrázku tak, aby rohy shoduje s dotykovými body.
 
-Je více fyzických uživatelům přesunout, přizpůsobit a otočit bitmap není přetažením rozích, ale pomocí jednoho nebo dvou prsty přímo na objekt, který má přetáhněte, prohnutí a otočit. To je popsaná v další článku [Touch manipulaci s](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/touch.md).
+Je přirozenější pro uživatele k přesunutí, změna velikosti a otočit rastrové obrázky nejsou přetažením rohy, ale s použitím jedním nebo dvěma prsty přímo na objekt, který chcete přetáhnout, ovládání stažením prstů a otočení. Je to popsané v dalším článku [Touch manipulace](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/touch.md).
 
-### <a name="the-reason-for-the-3-by-3-matrix"></a>Z důvodu pro matici 3 3
+### <a name="the-reason-for-the-3-by-3-matrix"></a>Důvod matice 3 3
 
-Může se očekávat, že dvourozměrná grafika systému by vyžadovaly pouze matice transformace 2 2:
+To lze očekávat, že systém dvojrozměrné grafiky by vyžadovaly pouze 2 2 transformační matice:
 
 <pre>
            │ ScaleX  SkewY  │
@@ -605,11 +604,11 @@ Může se očekávat, že dvourozměrná grafika systému by vyžadovaly pouze m
            │ SkewX   ScaleY │
 </pre>
 
-Tento postup funguje pro škálování, otáčení a i zkosení, ale není schopen nejzákladnější transformací, což je překlad.
+Tento postup funguje pro škálování, otočení a dokonce i zkosení, ale není schopen nejzákladnější transformací, která je překladu.
 
-Problém je, že představuje matici 2 2 *lineární* transformaci v dvěma rozměry. Lineární transformace zachovává některé základní aritmetické operace, ale jeden z důsledky je, že lineární transformace nikdy mění bodu (0, 0). Lineární transformace znemožňuje překlad.
+Problém je, že představuje matici 2 2 *lineární* transformace ve dvou dimenzích. Lineární transformace zachová některé základní aritmetické operace, ale jeden z důsledky je lineární transformace nikdy mění bod (0, 0). Lineární transformovat nemožný překladu.
 
-V tři dimenze lineární transformace matice vypadat třeba takto:
+V trojrozměrném lineární transformační matice vypadá například takto:
 
 <pre>
               │ ScaleX  SkewYX  SkewZX │
@@ -617,9 +616,9 @@ V tři dimenze lineární transformace matice vypadat třeba takto:
               │ SkewXZ  SkewYZ  ScaleZ │
 </pre>
 
-Buňky s názvem bez přípony `SkewXY` znamená, že hodnota zkosí souřadnici X na základě hodnot y; buňky `SkewXZ` znamená, že hodnota zkosí souřadnici X na základě hodnot Z; a hodnoty zkreslit podobně pro druhý `Skew` buněk.
+Buňky označené `SkewXY` znamená, že hodnota zkosí souřadnici X na základě hodnot Y; buňku `SkewXZ` znamená, že hodnota zkosí souřadnici X na základě hodnot Z; a hodnoty zkosení podobně jako pro ostatní `Skew` buňky.
 
-Je možné omezit Tato matice 3D transformace dvourozměrné roviny tak, že nastavení `SkewZX` a `SkewZY` na hodnotu 0, a `ScaleZ` na 1:
+Je možné omezit Tato matice 3D transformace na dvourozměrné roviny nastavením `SkewZX` a `SkewZY` na hodnotu 0, a `ScaleZ` 1:
 
 <pre>
               │ ScaleX  SkewYX   0 │
@@ -627,7 +626,7 @@ Je možné omezit Tato matice 3D transformace dvourozměrné roviny tak, že nas
               │ SkewXZ  SkewYZ   1 │
 </pre>
 
-Pokud dvourozměrná grafiky jsou vykreslovány zcela v rovině v 3D místa, kde Z hodnotu 1, násobení transformace vypadá takto:
+Pokud dvojrozměrné grafiky jsou vykreslovány vedle zcela v rovině v 3D prostoru, kde Z rovná 1, násobení transformace vypadá takto:
 
 <pre>
               │ ScaleX  SkewYX   0 │
@@ -635,11 +634,11 @@ Pokud dvourozměrná grafiky jsou vykreslovány zcela v rovině v 3D místa, kde
               │ SkewXZ  SkewYZ   1 │
 </pre>
 
-Všechno, co zůstává na dvourozměrné roviny, kde Z rovná 1, ale `SkewXZ` a `SkewYZ` buněk efektivně stát dvourozměrná překlad faktorů.
+Všechno, co zůstane na dvourozměrné roviny, kde Z rovná 1, ale `SkewXZ` a `SkewYZ` buňky efektivně promyslete dvojrozměrné překladu.
 
-Toto je, jak trojrozměrné lineární transformace slouží jako dvourozměrná – lineární transformace. (Obdobně, transformací v 3D grafiky jsou na základě matice 4 4.)
+To je, jak trojrozměrného lineární transformace slouží jako dvojrozměrné – a lineární transformace. (Obdobně, transformace v 3D grafiky jsou na základě matice 4 4.)
 
-`SKMatrix` Struktury SkiaSharp definuje vlastnosti pro tento třetí řádek:
+`SKMatrix` Struktury ve Skiasharpu definuje vlastnosti pro tento třetí řádek:
 
 <pre>
               │ ScaleX  SkewY   Persp0 │
@@ -647,10 +646,10 @@ Toto je, jak trojrozměrné lineární transformace slouží jako dvourozměrná
               │ TransX  TransY  Persp2 │
 </pre>
 
-Hodnoty nenulová `Persp0` a `Persp1` mít za následek transformace, které přesun objektů vypnout dvourozměrné roviny, kde Z hodnotu 1. Co se stane, když tyto objekty jsou přesunuta zpět do této roviny je popsaná v článku na [Non-Afinní transformace](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/non-affine.md).
+Hodnoty non-zero `Persp0` a `Persp1` způsobit transformace, které se přesunout objekty vypnout dvourozměrné roviny, kde Z rovná 1. Co se stane, když tyto objekty jsou přesunut na této roviny je popsané v článku na [Non-Afinní transformace](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/non-affine.md).
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [Rozhraní API ve Skiasharpu](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

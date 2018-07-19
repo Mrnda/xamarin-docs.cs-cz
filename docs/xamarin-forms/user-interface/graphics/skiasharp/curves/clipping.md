@@ -1,30 +1,30 @@
 ---
-title: Výstřižek se cesty a oblasti
-description: Tento článek vysvětluje, jak používat SkiaSharp cesty k klip grafiky pro konkrétní oblasti a k vytvoření oblastí a to ukazuje s ukázkový kód.
+title: Ořezy cestami a oblastmi
+description: Tento článek vysvětluje, jak pomocí cesty ve Skiasharpu na grafiku klip určité oblasti a vytvořit oblasti a ukazuje to se vzorovým kódem.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 8022FBF9-2208-43DB-94D8-0A4E9A5DA07F
 author: charlespetzold
 ms.author: chape
 ms.date: 06/16/2017
-ms.openlocfilehash: 0d246dc4a5304b56560deb1095149e52c1f82335
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 52e426c8788ca017f36ba49b338b04a64dc0ef3d
+ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243886"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39130814"
 ---
-# <a name="clipping-with-paths-and-regions"></a>Výstřižek se cesty a oblasti
+# <a name="clipping-with-paths-and-regions"></a>Ořezy cestami a oblastmi
 
-_Použití cesty grafiky klip určitých oblastí a vytvářet oblastí_
+_Použít cesty k klip grafiky na určité oblasti a k vytváření oblastí_
 
-V některých případech je potřeba omezit vykreslování grafiky na určitou oblast. To se označuje jako *výstřižek*. Výstřižek můžete použít pro zvláštní efekty, jako je například tato kopie opic, prostřednictvím klíčové dírky:
+Někdy je potřeba omezit vykreslování grafiky na konkrétní oblasti. To se označuje jako *výstřižek*. Výstřižek můžete použít pro speciální efekty, jako je například tento obrázek opic zobrazené prostřednictvím klíčové dírky:
 
 ![](clipping-images/clippingsample.png "Opic prostřednictvím klíčové dírky")
 
-*Výstřižek oblasti* je oblast na obrazovce, ve kterém jsou grafické vykresleny. Všechno, co se zobrazí mimo oblasti výstřižek není vykreslen. Oblasti výstřižek je obvykle definováno [ `SKPath` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath/) objektu, ale můžete taky definovat výstřižek oblasti pomocí [ `SKRegion` ](https://developer.xamarin.com/api/type/SkiaSharp.SKRegion/) objektu. Tyto dva typy objektů v první zdát související, protože oblast můžete vytvořit z cesty. Však možné vytvořit cestu z oblasti a jsou velmi odlišné interně: cesta se skládá z řady čar a křivek, při oblast je definována řadu vodorovné prohledávání řádků.
+*Výstřižek oblasti* je oblast na obrazovce, ve kterém jsou generovány grafiky. Cokoli, co se zobrazí mimo oblasti výstřižek není vykresleno. Oblasti výstřižek většinou definovaný pomocí [ `SKPath` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath/) objekt, ale můžete také definovat oblasti výstřižek pomocí [ `SKRegion` ](https://developer.xamarin.com/api/type/SkiaSharp.SKRegion/) objektu. Tyto dva typy objektů v první zdát související, protože oblast můžete vytvořit pomocí cesty. Ale možné vytvořit cestu z oblasti, a jsou velmi odlišné interně: cesta se skládá z řady čar a křivek, zatímco oblast je definován pomocí posloupnosti řádků vodorovné kontroly.
 
-Byl vytvořen na obrázku výše **opic prostřednictvím klíčové dírky** stránky. [ `MonkeyThroughKeyholePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/MonkeyThroughKeyholePage.cs) Třída definuje cestu pomocí SVG dat a používá konstruktoru načíst rastrový obrázek z programu prostředků:
+Byl vytvořen na obrázku výše **opic prostřednictvím klíčové dírky** stránky. [ `MonkeyThroughKeyholePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/MonkeyThroughKeyholePage.cs) Třída definuje cestu pomocí SVG dat a používá konstruktor k načtení rastrový obrázek z programu prostředky:
 
 ```csharp
 public class MonkeyThroughKeyholePage : ContentPage
@@ -45,16 +45,15 @@ public class MonkeyThroughKeyholePage : ContentPage
         Assembly assembly = GetType().GetTypeInfo().Assembly;
 
         using (Stream stream = assembly.GetManifestResourceStream(resourceID))
-        using (SKManagedStream skStream = new SKManagedStream(stream))
         {
-            bitmap = SKBitmap.Decode(skStream);
+            bitmap = SKBitmap.Decode(stream);
         }
     }
     ...
 }
 ```
 
-I když `keyholePath` objekt popisuje obrys klíčové dírky, souřadnice jsou zcela libovolný a odrážet, co je vhodné při navrhování data cesty. Z tohoto důvodu `PaintSurface` obslužná rutina získává hranice touto cestou a volání `Translate` a `Scale` přesunout cestu k centru obrazovky a aby téměř výšku jako obrazovky:
+I když `keyholePath` osnovy klíčové dírky popisuje objekt, souřadnice jsou zcela libovolného a odrážejí, co bylo vhodné při navrhování data cesty. Z tohoto důvodu `PaintSurface` obslužná rutina získá hranice touto cestou a volání `Translate` a `Scale` přesunout cestu do středu obrazovky a aby bylo téměř vysoké jako na obrazovce:
 
 
 ```csharp
@@ -91,35 +90,35 @@ public class MonkeyThroughKeyholePage : ContentPage
 }
 ```
 
-Ale cesta není vykreslen. Místo toho následující transformace, cesta slouží k nastavení výstřižek oblasti s Tento příkaz:
+Ale není vykreslen cestu. Místo toho následující transformace, cesta slouží k nastavení oblasti výstřižek pomocí tohoto příkazu:
 
 ```csharp
 canvas.ClipPath(keyholePath);
 ```
 
-`PaintSurface` Obslužná rutina pak obnoví transformace pomocí volání `ResetMatrix` a nevykresluje rastrový obrázek k rozšíření na úplné výšku obrazovky. Tento kód předpokládá, že bitmapy se čtvereček, který má tato konkrétní rastrový obrázek. Bitmapy je vykreslen pouze v oblasti určené cestou výstřižek:
+`PaintSurface` Obslužná rutina potom resetuje transformace voláním `ResetMatrix` a kreslí rastrového obrázku můžete rozšířit do plnou výškou na obrazovce. Tento kód předpokládá, že rastrový obrázek čtvereček, což je tento konkrétní rastrový obrázek. Rastrový obrázek je vykreslen pouze v rámci oblasti určené ořezové cesty:
 
-[![](clipping-images/monkeythroughkeyhole-small.png "Trojitá snímek obrazovky opic prostřednictvím stránky klíčové dírky")](clipping-images/monkeythroughkeyhole-large.png#lightbox "Trojitá snímek obrazovky opic prostřednictvím klíčové dírky stránky")
+[![](clipping-images/monkeythroughkeyhole-small.png "Trojitá snímek opic prostřednictvím stránky klíčové dírky")](clipping-images/monkeythroughkeyhole-large.png#lightbox "Trojitá snímek opic prostřednictvím klíčové dírky stránky")
 
-Cesta výstřižek je podmíněno transformace při platit `ClipPath` metoda je volána, a k transformace platit při grafického objektu (například rastrový obrázek) se nezobrazí. Cesta výstřižek je součástí plátno stavu, který je uložený s `Save` metoda a obnovený s `Restore` metoda.
+Ořezové cesty se vztahuje transformace při platit `ClipPath` metoda je volána, a pro transformace v platnosti Pokud grafický objekt (například rastrový obrázek) nezobrazuje. Ořezové cesty je součástí plátna stav, který je uložen s `Save` metoda a obnovit pomocí `Restore` metoda.
 
 ## <a name="combining-clipping-paths"></a>Kombinování ořezové cesty
 
-Přesněji řečeno, oblasti výstřižek není "nastavení" `ClipPath` metoda. Místo toho se zkombinuje s existující cestou výstřižek, který je vytvořen jako obdélníku stejnou velikost jako na obrazovku. Můžete získat obdélníková hranice výstřižek oblasti pomocí [ `ClipBounds` ](https://developer.xamarin.com/api/property/SkiaSharp.SKCanvas.ClipBounds/) vlastnost nebo [ `ClipDeviceBounds` ](https://developer.xamarin.com/api/property/SkiaSharp.SKCanvas.ClipDeviceBounds/) vlastnost. `ClipBounds` Vlastnost vrátí `SKRect` hodnotu, která odráží všechny transformuje, který může být v platnosti. `ClipDeviceBounds` Vlastnost vrátí `RectI` hodnotu. Toto je obdélníku s dimenzemi v celé číslo a popisuje oblasti výstřižek v skutečné v pixelech.
+Přesněji řečeno, oblasti výstřižek není "set" `ClipPath` metody. Místo toho se zkombinuje s existující ořezovou cestu, která začíná jako obdélník rovná velikosti obrazovky. Můžete získat pomocí výstřižek oblasti obdélníkový hranice [ `ClipBounds` ](https://developer.xamarin.com/api/property/SkiaSharp.SKCanvas.ClipBounds/) vlastnost nebo [ `ClipDeviceBounds` ](https://developer.xamarin.com/api/property/SkiaSharp.SKCanvas.ClipDeviceBounds/) vlastnost. `ClipBounds` Vrátí vlastnost `SKRect` hodnotu, která odpovídá některé transformace, která může být v platnosti. `ClipDeviceBounds` Vrátí vlastnost `RectI` hodnotu. Toto je obdélníku s dimenzemi celé číslo a popisuje oblasti výstřižek aplikace skutečný v pixelech.
 
-Žádné volat na `ClipPath` snižuje oblasti výstřižek tím, že propojíte ořezové oblasti s novou oblast. Úplná syntaxe [ `ClipPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.ClipPath/p/SkiaSharp.SKPath/SkiaSharp.SKClipOperation/System.Boolean/) metoda je:
+Žádné volání `ClipPath` snižuje oblasti výstřižek kombinací výstřižek oblasti s novou oblast. Úplná syntaxe [ `ClipPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.ClipPath/p/SkiaSharp.SKPath/SkiaSharp.SKClipOperation/System.Boolean/) metoda je:
 
 ```csharp
 public void ClipPath(SKPath path, SKClipOperation operation = SKClipOperation.Intersect, Boolean antialias = false);
 ```
 
-K dispozici je také [ `ClipRect` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.ClipRect/p/SkiaSharp.SKRect/SkiaSharp.SKClipOperation/System.Boolean/) metoda, která spojuje oblasti výstřižek se obdélníku:
+K dispozici je také [ `ClipRect` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.ClipRect/p/SkiaSharp.SKRect/SkiaSharp.SKClipOperation/System.Boolean/) metodu, která kombinuje s obdélník oříznutí:
 
 ```csharp
 public Void ClipRect(SKRect rect, SKClipOperation operation = SKClipOperation.Intersect, Boolean antialias = false);
 ```
 
-Ve výchozím nastavení, je oblast výsledné výstřižek průnik oblasti existující výstřižek a `SKPath` nebo `SKRect` který je uveden v `ClipPath` nebo `ClipRect` metoda. Tento postup je znázorněn v **čtyři kroužky Intersect klip** stránky. `PaintSurface` Obslužné rutiny v [ `FourCircleInteresectClipPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/FourCircleIntersectClipPage.cs) třída opětovně používá stejný `SKPath` objekt, který chcete vytvořit čtyři překrývající se kruhy, z nichž každý snižuje oblasti výstřižek prostřednictvím následná volání `ClipPath`:
+Ve výchozím nastavení, výsledná výstřižek oblasti jsou průsečíkem existující oblasti výstřižek a `SKPath` nebo `SKRect` , který je uveden v `ClipPath` nebo `ClipRect` metody. To je patrné **čtyři kruhy Intersect klip** stránky. `PaintSurface` Obslužné rutiny v [ `FourCircleInteresectClipPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/FourCircleIntersectClipPage.cs) třídy opětovně používá stejný `SKPath` objektu, který chcete vytvořit čtyři překrývající se kruhy, z nichž každý snižuje oblasti výstřižek prostřednictvím následná volání `ClipPath`:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -164,27 +163,27 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Co je ponechán je průnik tyto čtyři kruhy:
+Co je ponecháno je průsečík tyto čtyři kruhy:
 
-[![](clipping-images//fourcircleintersectclip-small.png "Trojitá snímek obrazovky stránky čtyři kruh Intersect klip")](clipping-images/fourcircleintersectclip-large.png#lightbox "Trojitá snímek obrazovky stránky klip Intersect čtyři kruhu.")
+[![](clipping-images//fourcircleintersectclip-small.png "Trojitá snímek obrazovky stránky čtyři kruh Intersect klip")](clipping-images/fourcircleintersectclip-large.png#lightbox "Trojitá snímek obrazovky stránky klip Intersect čtyři kruh")
 
-[ `SKClipOperation` ](https://developer.xamarin.com/api/type/SkiaSharp.SKClipOperation/) Výčet má pouze dva členy:
+[ `SKClipOperation` ](https://developer.xamarin.com/api/type/SkiaSharp.SKClipOperation/) Výčet má jenom dva členy:
 
-- [`Difference`](https://developer.xamarin.com/api/field/SkiaSharp.SKClipOperation.Difference/) Odebere zadaná cesta nebo obdélníku z existující oblasti výstřižek
+- [`Difference`](https://developer.xamarin.com/api/field/SkiaSharp.SKClipOperation.Difference/) Odebere zadanou cestu nebo obdélník z existující oblasti oříznutí
 
-- [`Intersect`](https://developer.xamarin.com/api/field/SkiaSharp.SKClipOperation.Intersect/) Zadaná cesta nebo obdélníku existující oblasti výstřižek protíná
+- [`Intersect`](https://developer.xamarin.com/api/field/SkiaSharp.SKClipOperation.Intersect/) Zadaná cesta nebo obdélníku s existující oblasti výstřižek protíná
 
 Pokud nahradíte čtyři `SKClipOperation.Intersect` argumentů `FourCircleIntersectClipPage` třídy s `SKClipOperation.Difference`, zobrazí se následující:
 
-[![](clipping-images//fourcircledifferenceclip-small.png "Trojitá snímek obrazovky stránky čtyři kruh Intersect klip rozdíl operace")](clipping-images/fourcircledifferenceclip-large.png#lightbox "Trojitá snímek obrazovky stránky čtyři kruh Intersect klip rozdíl operace")
+[![](clipping-images//fourcircledifferenceclip-small.png "Trojitá snímek obrazovky stránky klip Intersect čtyři kroužek s operace zjišťování rozdílů")](clipping-images/fourcircledifferenceclip-large.png#lightbox "Trojitá snímek obrazovky stránky klip Intersect čtyři kroužek s operace zjišťování rozdílů")
 
-Čtyři kruhy překrývajících se byly odebrány z oblasti výstřižek.
+Čtyři překrývající se kruhy byly odebrány z oblasti oříznutí.
 
-**Klip Operations** stránky ukazuje rozdíl mezi těmito dvěma operacemi s jenom pár kroužky. V prvním kruhu na levé straně je přidáno do oblasti výstřižek s provozem klip výchozí `Intersect`, zatímco druhý kruhu na pravé straně je přidáno do oblasti výstřižek klip operace indikován textový popisek:
+**Klip operace** stránce ukazuje rozdíl mezi tyto dvě operace pomocí jenom pár kruzích. První kruh vlevo je přidán do oblasti výstřižek s provozem klip výchozí `Intersect`, zatímco ve druhém kruhu na pravé straně se přidá do oblasti výstřižek s klip operace označený text popisku:
 
 [![](clipping-images//clipoperations-small.png "Trojitá snímek obrazovky stránky klip operace")](clipping-images/clipoperations-large.png#lightbox "Trojitá snímek obrazovky stránky klip operace")
 
-[ `ClipOperationsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ClipOperationsPage.cs) Třída definuje dvě `SKPaint` objektů jako pole a pak rozdělí na obrazovce na dvě obdélníková oblasti. Tyto oblasti se liší v závislosti na tom, jestli je telefonu v režimu na výšku nebo na šířku. `DisplayClipOp` Třída pak zobrazí text a volání `ClipPath` s dvě kruh cesty k objasnění každou operaci klip:
+[ `ClipOperationsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ClipOperationsPage.cs) Třída definuje dvě `SKPaint` objekty jako pole a potom vyfiltruje obrazovky na dvě oblasti obdélníkový. Tyto oblasti se liší v závislosti na tom, jestli je v režimu na výšku nebo šířku telefon. `DisplayClipOp` Třídy zobrazí text a volání `ClipPath` s cestami dvě kruh pro ilustraci každou operaci klipu:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -245,11 +244,11 @@ void DisplayClipOp(SKCanvas canvas, SKRect rect, SKClipOperation clipOp)
 }
 ```
 
-Volání metody `DrawPaint` celé plátno pro vyplnění pomocí které obvykle způsobí, že `SKPaint` objektu, ale v takovém případě metodu právě vybarví v oblasti výstřižek.
+Volání `DrawPaint` celé plátno tankujeme, které obvykle způsobí, že `SKPaint` objektu, ale v tomto případě metodu právě jsou vykreslovány v rámci oblasti oříznutí.
 
 ## <a name="exploring-regions"></a>Zkoumání oblastí
 
-Pokud jste prozkoumali dokumentaci rozhraní API pro `SKCanvas`, budete možná jste si všimli přetížení `ClipPath` a `ClipRect` metody, které jsou podobné metod popsaných výše, ale místo toho mají parametr s názvem [ `SKRegionOperation` ](https://developer.xamarin.com/api/type/SkiaSharp.SKRegionOperation/) místo `SKClipOperation`. `SKRegionOperation` má šest členů, poskytuje trochu větší flexibilitu při kombinování cesty do formuláře výstřižek oblastí:
+Pokud zkoumáte dokumentaci k rozhraní API pro `SKCanvas`, možná jste si všimli přetížení `ClipPath` a `ClipRect` metody, které jsou podobné metodám, které je popsáno výše, ale místo toho máte parametr s názvem [ `SKRegionOperation` ](https://developer.xamarin.com/api/type/SkiaSharp.SKRegionOperation/) spíše než `SKClipOperation`. `SKRegionOperation` má šest členy, poskytují poněkud vyšší flexibilitu ve spojení cest k oblasti formuláře výstřižek:
 
 - [`Difference`](https://developer.xamarin.com/api/field/SkiaSharp.SKRegionOperation.Difference/)
 
@@ -265,29 +264,29 @@ Pokud jste prozkoumali dokumentaci rozhraní API pro `SKCanvas`, budete možná 
 
 Ale přetížení `ClipPath` a `ClipRect` s `SKRegionOperation` parametry jsou zastaralé a nelze jej použít.
 
-Můžete dál používat `SKRegionOperation` výčtu, ale vyžaduje definování oblasti výstřižek z hlediska [ `SKRegion` ](https://developer.xamarin.com/api/type/SkiaSharp.SKRegion/) objektu.
+Můžete dál používat `SKRegionOperation` výčtu, ale vyžaduje definování oblasti omezení z hlediska [ `SKRegion` ](https://developer.xamarin.com/api/type/SkiaSharp.SKRegion/) objektu.
 
-Nově vytvořená `SKRegion` objekt popisuje na prázdnou oblast. Obvykle je první volání objektu [ `SetRect` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.SetRect/p/SkiaSharp.SKRectI/) tak, aby oblast popisují obdélníkovou oblast. Parametr pro `SetRect` je `SKRectI` hodnota &mdash; hodnota obdélníku s vlastnostmi celé číslo. Potom můžete volat [ `SetPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.SetPath/p/SkiaSharp.SKPath/SkiaSharp.SKRegion/) s `SKPath` objektu. Tím se vytvoří oblasti, která je stejná jako vnitřní cesty, ale oříznuto počáteční obdélníkovou oblast.
+Nově vytvořená `SKRegion` popisuje objekt, na prázdnou oblast. První volání objektu je obvykle [ `SetRect` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.SetRect/p/SkiaSharp.SKRectI/) tak, aby v oblasti popisu obdélníkovou oblast. Parametr `SetRect` je `SKRectI` hodnotu &mdash; hodnota obdélníku s vlastnostmi celé číslo. Potom můžete zavolat [ `SetPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.SetPath/p/SkiaSharp.SKPath/SkiaSharp.SKRegion/) s `SKPath` objektu. Tím se vytvoří oblast, která je stejná jako vnitřní cesty, ale ořízne počáteční obdélníkovou oblast.
 
-`SKRegionOperation` Výčtu pochází jenom do play při volání jednoho z [ `Op` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.Op/p/SkiaSharp.SKRegion/SkiaSharp.SKRegionOperation/) přetížení metody, jako je tato:
+`SKRegionOperation` Výčet pochází jenom do hry při volání [ `Op` ](https://developer.xamarin.com/api/member/SkiaSharp.SKRegion.Op/p/SkiaSharp.SKRegion/SkiaSharp.SKRegionOperation/) přetížení metody, jako je například tento:
 
 ```csharp
 public Boolean Op(SKRegion region, SKRegionOperation op)
 ```
 
-Oblast, kterou vytvoříte `Op` volání je zkombinován s oblasti zadána jako parametr na základě `SKRegionOperation` člen. Když nakonec získáte oblast vhodný pro výstřižek, můžete, nastavit jako oblasti výstřižek na plátno pomocí [ `ClipRegion` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.ClipRegion/p/SkiaSharp.SKRegion/SkiaSharp.SKClipOperation/) metodu `SKCanvas`:
+Oblasti, kterou děláte `Op` volání na číslo zkombinuje s zadanou jako parametr na základě oblast `SKRegionOperation` člena. Pokud nakonec získáte oblast vhodný pro oříznutí, použijete, který nastavit jako výstřižek oblast plátna pomocí [ `ClipRegion` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.ClipRegion/p/SkiaSharp.SKRegion/SkiaSharp.SKClipOperation/) metoda `SKCanvas`:
 
 ```csharp
 public void ClipRegion(SKRegion region, SKClipOperation operation = SKClipOperation.Intersect)
 ```
 
-Následující snímek obrazovky ukazuje výstřižek oblasti podle činnosti šesti oblast. Levé kroužek je oblast, `Op` metoda je volána na a pravém kroužek je oblast předaný `Op` metoda:
+Následující snímek obrazovky ukazuje omezení oblasti podle šesti oblastech operací. Kruh vlevo je oblast, která `Op` metoda je volána na a správné kruhu je oblast, předán `Op` metoda:
 
-[![](clipping-images//regionoperations-small.png "Trojitá snímek obrazovky stránky oblast operace")](clipping-images/regionoperations-large.png#lightbox "Trojitá snímek obrazovky stránky operace oblast")
+[![](clipping-images//regionoperations-small.png "Trojitá snímek obrazovky stránky oblasti operace")](clipping-images/regionoperations-large.png#lightbox "Trojitá snímek obrazovky stránky oblasti operace")
 
-Jsou tyto všechny možnosti kombinace těchto dvou kroužky? Vezměte v úvahu bitovou kopii výsledné jako kombinace tří součástí, která jsou zobrazená v samotné `Difference`, `Intersect`, a `ReverseDifference` operace. Celkový počet kombinací je dva třetí mocninu nebo osm. Jsou dva, které chybí oblasti původní (který výsledkem není volání `Op` vůbec) a oblast zcela prázdný.
+Jsou tyto všechny možnosti kombinace těchto dvou kruzích? Vezměte v úvahu výsledná image jako kombinace tři komponenty, které samy o sobě v `Difference`, `Intersect`, a `ReverseDifference` operace. Celkový počet kombinací je dva třetí mocninu nebo 8. Jsou dva, které chybí původní oblast (který výsledkem volání není `Op` vůbec) a zcela prázdnou oblast.
 
-Je těžší používat oblasti pro výstřižek, protože je třeba nejprve vytvořit cestu a poté v oblasti z této cestě a kombinovat více oblastí. Celková struktura **oblast Operations** stránka je velmi podobné **klip Operations** ale [ `RegionOperationsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RegionOperationsPage.cs) třída rozděluje obrazovky do šesti oblastí a Zobrazuje navíc práce potřebné pro tuto úlohu použít oblastí:
+Použití oblastí pro oříznutí, protože je potřeba nejprve vytvořit cestu a potom v oblasti z této cesty a pak sloučí více oblastí je obtížnější. Celkovou strukturu **oblasti operace** stránka je velmi podobný **klip operace** ale [ `RegionOperationsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RegionOperationsPage.cs) třídy vyfiltruje obrazovky do šesti oblastí a ukazuje další práci potřebnou k oblasti pro tuto úlohu použít:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -358,20 +357,20 @@ void DisplayClipOp(SKCanvas canvas, SKRect rect, SKRegionOperation regionOp)
 }
 ```
 
-Tady je velký rozdíl mezi `ClipPath` metoda a `ClipRegion` metoda:
+Tady je velký rozdíl mezi `ClipPath` metoda a `ClipRegion` metody:
 
 > [!IMPORTANT]
-> Na rozdíl od `ClipPath` metody `ClipRegion` – metoda neovlivňuje transformací.
+> Na rozdíl od `ClipPath` metody `ClipRegion` metoda nemá vliv transformací.
 
-Pro pochopení důvody tohoto rozdílu, je vhodné se seznámit s jaké oblasti je. Pokud jste si myslíte o tom, jak klip operace nebo oblasti provozu může implementovat interně, se pravděpodobně zdá být velmi složité. Několik potenciálně velmi složité cesty se spojují se a obrys výsledné cesty je pravděpodobně algoritmické při důvodů.
+Informace o tom důvody pro tento rozdíl, je dobré znát jaké oblasti je. Pokud jste si mysleli, že o tom, jak klip operace nebo operace oblasti může být implementují interně, pravděpodobně vypadá velmi složité. Spolu se několik cest potenciálně velmi složitý a osnovy Výsledná cesta je pravděpodobně vylepšením připomínající.
 
-Ale tato úloha je výrazně jednodušší, pokud každá cesta je snížen na řadu řádky vodorovné kontroly, jako jsou ty stejné vakuu zkumavky televizní přijímače. Každý řádek kontroly je jednoduše na vodorovném řádku s bod počáteční a koncový bod. Například můžete kruh se serverem radius 10 rozložit na 20 vodorovné kontroly řádky, z nichž každá začíná v levé části na kruh a končí na pravé straně. Kombinování dva kruhy s všechny operace oblast stane velmi jednoduchý, protože se jedná pouze záležitost zkoumání počáteční a koncové souřadnice každý pár odpovídající prohledávání řádků.
+Ale tuto úlohu je výrazně zjednodušené pokud každá cesta je omezená na řadu řádky vodorovné kontroly, jako například sítě na zastaralý a takový trubky televizorů. Každý řádek kontroly je jednoduše vodorovné čáry s počáteční bod a koncový bod. Například kruhu s poloměrem 10 lze rozložit na 20 řádků vodorovné kontroly, z nichž každý začíná v levé části kruhu a končí na pravé straně. Kombinace dvou kruhy s jakoukoli operaci oblasti stane velmi jednoduchý, protože ji stačí zkoušení produktu počáteční a koncové souřadnice každý pár odpovídající prohledávání řádků.
 
-To znamená, co je oblast: série vodorovné prohledávání řádků, která definuje oblast.
+To je, co je oblast: řady čar vodorovné kontroly, který definuje oblast.
 
-Ale když je oblast snížen na řadu prohledávání řádků, tyto kontroly, které řádky jsou založeny na dimenzi pixelu. Oblast přesněji řečeno, není objekt vektorové grafiky. Je blíže ve své podstatě komprimované černobílý bitmapy než na cestu. Oblasti v důsledku toho nelze škálovat nebo otáčet bez ztráty věrnosti a z toho důvodu, že nejsou transformovat při použití pro výstřižek oblasti.
+Ale pokud oblast je omezená na řadu kontroly řádky, tyto kontroly, které řádky jsou založeny na dimenzi pixelu. Přesněji řečeno oblast není objekt vektorové grafiky. Je ze své podstaty blíž ke komprimované monochromatický rastrový obrázek než na cestu. Oblasti v důsledku toho nelze škálovat nebo otočit bez ztráty přesnosti a proto se nepřevedou při použití pro ořezové oblasti.
 
-Můžete však použít transformací oblasti pro účely Malování. **Oblast Malování** program vividly ukazuje vnitřní povaha oblasti. [ `RegionPaintPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RegionPaintPage.cs) Třída vytvoří `SKRegion` na základě objektu `SKPath` kruhu 10 jednotky radius. Transformace potom rozšíří tohoto kroužku k zaplnění stránky:
+Můžete však použití transformací na oblasti pro účely vykreslování. **Oblasti malířského** program ukazuje zřetelně vnitřní povaze oblastech. [ `RegionPaintPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RegionPaintPage.cs) Vytvoří třídu `SKRegion` objektu na základě `SKPath` 10 jednotek poloměr kruhu. Transformace poté rozbalí této kruh tak, aby vyplnil stránky:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -422,13 +421,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-`DrawRegion` Volání vyplní celé oblasti oranžovou barvu, když `DrawPath` volání tahy původní cesta modře pro porovnání:
+`DrawRegion` Volání vyplní oblast zvýrazněných oranžovou barvou, zatímco `DrawPath` volání tahy původní cesta modrou barvu pro porovnání:
 
-[![](clipping-images//regionpaint-small.png "Trojitá snímek obrazovky stránky oblast Malování")](clipping-images/regionpaint-large.png#lightbox "Trojitá snímek obrazovky stránky oblast Malování")
+[![](clipping-images//regionpaint-small.png "Trojitá snímek obrazovky stránky oblasti Malování")](clipping-images/regionpaint-large.png#lightbox "Trojitá snímek obrazovky stránky oblasti Malování")
 
-Oblast je jasně řadu diskrétní souřadnice.
+Oblast je jasně řady diskrétní souřadnic.
 
-Pokud nemusíte používat transformací souvislosti s vaší oblasti výstřižek, můžete použít oblasti pro výstřižek, jako **čtyři – listu jetel** ukazuje stránky. [ `FourLeafCloverPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/FourLeafCloverPage.cs) – Třída vytvoří složené oblast z čtyři cyklické oblastí, nastaví tento složený oblasti jako oblasti výstřižek a pak nevykresluje řadu 360 přímky ze středu stránky:
+Pokud nepotřebujete k použití transformací souvislosti s vaší oblasti oříznutí, můžete použít oblastí pro oříznutí, jako **čtyři – listu Jetelové** demonstruje stránky. [ `FourLeafCloverPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/FourLeafCloverPage.cs) Třídy vytvoří oblast složené ze čtyř oblastí cyklický, nastaví tuto oblast složené jako oblast výstřižek a pak vykreslí řadu 360 rovné čáry pocházející z centra na stránce:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -508,12 +507,12 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Je skutečně nevypadá čtyři – listu jetel, ale je obrázek, který jinak může být obtížné vykreslení bez výstřižek:
+To skutečně nevypadá Jetelové listu – čtyři, ale je obrázek, který jinak může být obtížné vykreslit bez omezení:
 
-[![](clipping-images//fourleafclover-small.png "Trojitá snímek obrazovky stránky čtyři – listu jetel")](clipping-images/fourleafclover-large.png#lightbox "Trojitá snímek obrazovky stránky čtyři – listu jetel")
+[![](clipping-images//fourleafclover-small.png "Trojitá snímek obrazovky stránky čtyři – listu Jetelové")](clipping-images/fourleafclover-large.png#lightbox "Trojitá snímek Jetelové listu – čtyři stránky")
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [Rozhraní API ve Skiasharpu](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

@@ -1,58 +1,58 @@
 ---
-title: 2D kreslení s SkiaSharp
-description: Tento dokument obsahuje přehled napříč platformami 2D kreslení pomocí SkiaSharp. Ho odkazy na různé příručky, které popisují SkiaSharp a jeho různých rozhraních API.
+title: 2D kreslení ve Skiasharpu
+description: Tento dokument obsahuje přehled multiplatformní 2D kreslení ve Skiasharpu. Odkazuje na různé pokyny, které popisují ve Skiasharpu a jeho různá rozhraní API.
 ms.prod: xamarin
 ms.assetid: A8A61421-4544-422A-A7E0-9355C67DF21E
 author: charlespetzold
 ms.author: chape
-ms.date: 09/14/2017
-ms.openlocfilehash: 962fe657f25976f9b5069f2d434e92f816d249ca
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 07/17/2018
+ms.openlocfilehash: 0c8cbc14308c8c4131e5aaa2bcc0ddfa798af610
+ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783284"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39130917"
 ---
-# <a name="2d-drawing-with-skiasharp"></a>2D kreslení s SkiaSharp
+# <a name="2d-drawing-with-skiasharp"></a>2D kreslení ve Skiasharpu
 
-SkiaSharp poskytuje výkonné API jazyka C# pro provádění 2D grafiky. Používá technologii [Google Skia knihovny](http://skia.org), stejnou knihovnu, která pohání grafické zásobníky Google Chrome, Firefox a pro Android.
+Ve Skiasharpu poskytuje výkonné API jazyka C# to 2D grafika. Používá technologii [Googlu Skia knihovny](http://skia.org), stejnou knihovnu, která je základem grafické zásobníky Google Chrome, Firefox a pro Android.
 
-[![](images/ide-sml.png "SkiaSharp poskytuje výkonné C# rozhraní API pro provádění 2D grafiky")](images/ide.png#lightbox)
+[![](images/ide-sml.png "Ve Skiasharpu poskytuje výkonné API jazyka C# to 2D grafika")](images/ide.png#lightbox)
 
-SkiaSharp je přenosné knihovny a nemusí se dodává jako [balíček NuGet napříč platformami](https://www.nuget.org/packages/SkiaSharp)a podporuje tyto platformy ihned: systému macOS, Xamarin.Android, Xamarin.iOS a Windows Desktop.
+Ve Skiasharpu je přenosné knihovny a snadno se dodává jako [balíček NuGet multiplatformní](https://www.nuget.org/packages/SkiaSharp)a podporuje tyto platformy předpřipravených: macOS, Windows Desktop, Xamarin.Android a Xamarin.iOS.
 
-## <a name="introduction-to-skiasharpgraphics-gamesskiasharpintroductionmd"></a>[Úvod do SkiaSharp](~/graphics-games/skiasharp/introduction.md)
+## <a name="introduction-to-skiasharpgraphics-gamesskiasharpintroductionmd"></a>[Úvod do ve Skiasharpu](~/graphics-games/skiasharp/introduction.md)
 
-Přehled o klíčových konceptech SkiaSharp a ukázkový kód k vykreslení grafiky, text, rastrové obrázky a použít filtry bitové kopie.
+Přehled o klíčových konceptech ve Skiasharpu a ukázkový kód pro vykreslení grafiky, text, bitmap a použít obraz filtry.
 
-## <a name="skiasharp-tutorials-for-xamarinformsxamarin-formsuser-interfacegraphicsskiasharpindexmd"></a>[SkiaSharp kurzy pro Xamarin.Forms](~/xamarin-forms/user-interface/graphics/skiasharp/index.md)
+## <a name="skiasharp-tutorials-for-xamarinformsxamarin-formsuser-interfacegraphicsskiasharpindexmd"></a>[Kurzy ve Skiasharpu v Xamarin.Forms](~/xamarin-forms/user-interface/graphics/skiasharp/index.md)
 
-Naučte se pracovat s křížové grafiky platformu, která vykreslit v Xamarin.Forms:
+Zjistěte, jak pracovat s pro různé platformy grafiky, která vykreslit v Xamarin.Forms:
 
 - [Základy kreslení](~/xamarin-forms/user-interface/graphics/skiasharp/basics/index.md)
-  * [Kreslení jednoduché kruhu.](~/xamarin-forms/user-interface/graphics/skiasharp/basics/circle.md)
+  * [Nakreslení jednoduchého kruhu](~/xamarin-forms/user-interface/graphics/skiasharp/basics/circle.md)
   * [Integrace se Xamarin.Forms](~/xamarin-forms/user-interface/graphics/skiasharp/basics/integration.md)
-  * [Pixelů a jednotky nezávislé na zařízení](~/xamarin-forms/user-interface/graphics/skiasharp/basics/pixels.md)
+  * [Pixely a jednotky nezávislé na zařízení](~/xamarin-forms/user-interface/graphics/skiasharp/basics/pixels.md)
   * [Základní animace](~/xamarin-forms/user-interface/graphics/skiasharp/basics/animation.md)
   * [Integrace textu a obrázků](~/xamarin-forms/user-interface/graphics/skiasharp/basics/text.md)
-  * [Bitmap – základy](~/xamarin-forms/user-interface/graphics/skiasharp/basics/bitmaps.md)
-- [Řádky a cest](~/xamarin-forms/user-interface/graphics/skiasharp/paths/index.md)
-  * [Řádky a tahu CAP k vzdálené ploše](~/xamarin-forms/user-interface/graphics/skiasharp/paths/lines.md)
-  * [Základy cesta](~/xamarin-forms/user-interface/graphics/skiasharp/paths/paths.md)
-  * [Typy výplně cesta](~/xamarin-forms/user-interface/graphics/skiasharp/paths/fill-types.md)
-  * [Čáru lomených a čištění vzorce](~/xamarin-forms/user-interface/graphics/skiasharp/paths/polylines.md)
-  * [Tečky a pomlčky](~/xamarin-forms/user-interface/graphics/skiasharp/paths/dots.md)
+  * [Bitmapa – základy](~/xamarin-forms/user-interface/graphics/skiasharp/basics/bitmaps.md)
+- [Čáry a cesty](~/xamarin-forms/user-interface/graphics/skiasharp/paths/index.md)
+  * [Čáry a zakončení tahů](~/xamarin-forms/user-interface/graphics/skiasharp/paths/lines.md)
+  * [Cesta – základy](~/xamarin-forms/user-interface/graphics/skiasharp/paths/paths.md)
+  * [Typy výplně cesty](~/xamarin-forms/user-interface/graphics/skiasharp/paths/fill-types.md)
+  * [Lomené čáry a parametrické rovnice](~/xamarin-forms/user-interface/graphics/skiasharp/paths/polylines.md)
+  * [Tečky a spojovníky](~/xamarin-forms/user-interface/graphics/skiasharp/paths/dots.md)
   * [Malování prstem](~/xamarin-forms/user-interface/graphics/skiasharp/paths/finger-paint.md)
 - [Transformace](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/index.md)
-  * [Transformace přeložit](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/translate.md)
-  * [Transformace škálování](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/scale.md)
-  * [Otočit transformace](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/rotate.md)
-  * [Zkosení transformace](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/skew.md)
+  * [Transformace translace](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/translate.md)
+  * [Transformace měřítka](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/scale.md)
+  * [Transformace rotace](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/rotate.md)
+  * [Transformace zkosení](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/skew.md)
   * [Maticové transformace](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/matrix.md)
-  * [Manipulace dotykového ovládání](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/touch.md)
-  * [Bez afinní transformace](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/non-affine.md)
-  * [3D otočení](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/3d-rotation.md)
-- [Cesty a křivek](~/xamarin-forms/user-interface/graphics/skiasharp/curves/index.md)
+  * [Manipulace dotyků](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/touch.md)
+  * [Non afinní transformace](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/non-affine.md)
+  * [3D otáčení](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/3d-rotation.md)
+- [Křivky a cesty](~/xamarin-forms/user-interface/graphics/skiasharp/curves/index.md)
   * [Tři způsoby, jak nakreslit oblouk](~/xamarin-forms/user-interface/graphics/skiasharp/curves/arcs.md)
   * [Tři typy Bézierových křivek](~/xamarin-forms/user-interface/graphics/skiasharp/curves/beziers.md)
   * [Data cesty SVG](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md)
@@ -60,17 +60,25 @@ Naučte se pracovat s křížové grafiky platformu, která vykreslit v Xamarin.
   * [Efekty cest](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md)
   * [Cesty a text](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md)
   * [Informace o cestě a výčet](~/xamarin-forms/user-interface/graphics/skiasharp/curves/information.md)
+- [Rastrové obrázky](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/index.md)
+  * [Zobrazení rastrových obrázků](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/displaying.md)
+  * [Vytváření a na základě rastrových obrázků](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/drawing.md)
+  * [Oříznutí rastrových obrázků](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/cropping.md)
+  * [Segmentované zobrazení rastrových obrázků](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/segmented.md)
+  * [Ukládání bitmap k souborům](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/saving.md)
+  * [Přístup k rastrové bity pixelů](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/pixel-bits.md)
+  * [Animace rastrových obrázků](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/animating.md)
 
 ## <a name="platform-specific-notesgraphics-gamesskiasharpplatformmd"></a>[Poznámky pro konkrétní platformu](~/graphics-games/skiasharp/platform.md)
 
-Tato stránka popisuje pokynů pro instalaci pro SkiaSharp na různých platformách, včetně iOS, Android, systému macOS a Windows.
+Tato stránka popisuje pokynů instalačního programu pro SkiaSharp na různých platformách, včetně iOS, Android, macOS a Windows.
 
-## <a name="api-documentationhttpsdeveloperxamarincomapinamespaceskiasharp"></a>[Dokumentaci k rozhraní API](https://developer.xamarin.com/api/namespace/SkiaSharp/)
+## <a name="api-documentationhttpsdeveloperxamarincomapinamespaceskiasharp"></a>[Dokumentace k rozhraní API](https://developer.xamarin.com/api/namespace/SkiaSharp/)
 
-Můžete procházet [dokumentaci k rozhraní API](https://developer.xamarin.com/api/namespace/SkiaSharp/) pro SkiaSharp na našem webu.
+Můžete přejít [dokumentace k rozhraní API](https://developer.xamarin.com/api/namespace/SkiaSharp/) pro SkiaSharp na našem webu.
 
 ## <a name="work-in-progress"></a>Probíhající práce
 
-SkiaSharp je probíhající práce, kterou jsme sdílení k naší komunitou. Když jsme vázaná důležité částí rozhraní API Skia množství práce zůstává provést. Používáme stabilní C API prezentované podle Skia a naše plán je chcete-li pokračovat, které přispívají naše práce C vazeb Skia k poskytování úplné pokrytí rozhraní API.
+Ve Skiasharpu je ve vývoji, které sdílíme s naší komunitou. Když jsme vázaná důležité části Skia rozhraní API mnoho práce je ještě třeba provést. Používáme stabilní rozhraní API jazyka C prezentované podle Skia a náš plán je nadále přispívání naší práci do vazby C Skia úplné pokrytí rozhraní API.
 
-Abychom Průvodce naše vazby úsilí, nechejte prosím komentáře nebo návrhy jako problémy v úložišti GitHub [ http://github.com/mono/SkiaSharp ](http://github.com/mono/SkiaSharp).
+Nám Průvodce naše úsilí vazby, nechejte prosím nějaké komentáře nebo návrhy jako problémy v úložišti GitHub [ http://github.com/mono/SkiaSharp ](http://github.com/mono/SkiaSharp).

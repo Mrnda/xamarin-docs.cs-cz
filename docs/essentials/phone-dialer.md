@@ -1,22 +1,22 @@
 ---
 title: 'Xamarin.Essentials: Telefon'
-description: Třída telefon.dokument v Xamarin.Essentials umožňuje aplikaci otevřete webový odkaz v upřednostňovaný prohlížeč optimalizovaného systému nebo v externím prohlížeči.
+description: Třída telefon.dokument v Xamarin.Essentials umožňuje aplikaci otevřete telefonní číslo telefon
 ms.assetid: E7457942-4D7B-4195-A2FF-417919B9537F
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 6733e43ed4174d1dd78b2e8f70268eb54adadb98
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 34a6c80836d8cb42b1f8fd95718fe248d4701c0f
+ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38831394"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39130790"
 ---
 # <a name="xamarinessentials-phone-dialer"></a>Xamarin.Essentials: Telefon
 
 ![Předběžné verze NuGet](~/media/shared/pre-release.png)
 
-**Telefon.dokument** třída umožňuje aplikaci otevřete webový odkaz v upřednostňovaný prohlížeč optimalizovaného systému nebo v externím prohlížeči.
+**Telefon.dokument** třída umožňuje aplikaci otevřete telefonní číslo telefon.
 
 ## <a name="using-phone-dialer"></a>Pomocí telefonní vytáčecí zařízení
 

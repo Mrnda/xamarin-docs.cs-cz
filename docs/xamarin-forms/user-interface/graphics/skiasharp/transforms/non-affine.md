@@ -1,32 +1,32 @@
 ---
-title: Afinní transformace
-description: Tento článek vysvětluje, jak vytvářet perspektivy a Sbíhavost důsledky s třetí sloupec matice transformace a to ukazuje s ukázkový kód.
+title: Neafinní transformace
+description: Tento článek vysvětluje, jak vytvořit perspektivy a Sbíhavost efekty třetí sloupec transformační matice a ukazuje to se vzorovým kódem.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 785F4D13-7430-492E-B24E-3B45C560E9F1
 author: charlespetzold
 ms.author: chape
 ms.date: 04/14/2017
-ms.openlocfilehash: 03c5b0dcbb7870e38991d7e0f4c7ac4feebfcf4e
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: f4b1926fd21f7df4ea9231887032742fdc96f465
+ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244230"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39130878"
 ---
-# <a name="non-affine-transforms"></a>Afinní transformace
+# <a name="non-affine-transforms"></a>Neafinní transformace
 
-_Vytvoření perspektivy a Sbíhavost důsledky s třetí sloupec maticové transformace_
+_Vytvoření perspektivy a Sbíhavost efekty s třetí sloupec transformační matice_
 
-Překlad, změna velikosti, otáčení a zkosení jsou všechny klasifikovány jako *afinní* transformace. Afinní transformace zachovat paralelní řádky. Pokud jsou dva řádky paralelní před transformovat, zůstanou paralelní po transformaci. Obdélníky jsou vždy transformuje na parallelograms.
+Překlad, škálování, otočení a zkosení jsou všechny klasifikované jako *nastavená na affine* transformace. Afinní transformace zachovat paralelní řádky. Pokud jsou dva řádky paralelní před transformace, zůstanou paralelní po transformaci. Obdélníky jsou vždy transformuje na parallelograms.
 
-SkiaSharp je však také schopná-afinní transformace, které mají možnost transformace obdélníku do jakékoli konvexní čtyřúhelník:
+Ve Skiasharpu je však také schopné neafinní transformace, které mají funkce pro transformaci obdélníku do jakékoli konvexní čtyřúhelník:
 
-![](non-affine-images/nonaffinetransformexample.png "Převede na konvexní čtyřúhelník rastrový obrázek")
+![](non-affine-images/nonaffinetransformexample.png "Transformuje na konvexní čtyřúhelník rastrový obrázek")
 
-Konvexní čtyřúhelník je okolo obrázek s vnitřní úhly vždy menší než 180 stupňů a strany, které si navzájem zasahují.
+Konvexní čtyřúhelník je obrázek čtyřsměrná s vnitřní úhly vždy menší než 180stupňový rozsah s orientací a stran, které není překračují mezi sebou.
 
-Bez afinní transformace výsledek třetí řádek matice transformace nastavena na hodnoty než 0, 0 a 1. Kompletní `SKMatrix` násobení je:
+Non-nastavená na affine transformuje výsledek, při třetím řádku transformační matice je nastavena na hodnotu jinou než 0, 0 a 1. Kompletní `SKMatrix` násobení je:
 
 <pre>
               │ ScaleX  SkewY   Persp0 │
@@ -34,39 +34,39 @@ Bez afinní transformace výsledek třetí řádek matice transformace nastavena
               │ TransX  TransY  Persp2 │
 </pre>
 
-Výsledná transformace vzorce jsou:
+Vzorce výsledná transformace jsou:
 
 x' = ScaleX·x + SkewX·y + TransX
 
-y' = SkewY·x + ScaleY·y + TransY
+y' = SkewY·x ScaleY·y + TransY
 
-z' = Persp0·x + Persp1·y + Persp2
+z' = Persp0·x Persp1·y + Persp2
 
-Základní pravidlo použití matice 3 3 pro dvourozměrná transformace je, že všechno, co na rovině zůstává, kde Z rovná 1. Pokud `Persp0` a `Persp1` mají hodnotu 0, a `Persp2` hodnotu 1, transformovat přesunul souřadnice Z této plochy.
+Základní pravidlo použití 3 3 matice pro dvourozměrná transformace je, že všechno, co v rovině zůstanou, kde Z rovná 1. Není-li `Persp0` a `Persp1` mají hodnotu 0, a `Persp2` rovná 1, transformací, která se má přesunout souřadnice Z této plochy.
 
-Pokud chcete obnovit to dvourozměrná transformace, je třeba souřadnice přesunout zpět touto rovinou. Další krok je povinný. X', y ", a z"hodnoty musí být rozdělené podle z':
+Pokud chcete obnovit to dvourozměrná transformace, souřadnice musí přesunout zpátky na této roviny. Další krok je povinný. X ", y", a z "hodnoty musí být rozdělené podle z":
 
-x"= x, nebo z.
+x"= x' / z.
 
-y"= y, nebo z.
+y"= y' / z.
 
-z"= z, nebo z" = 1
+z"= z" / z' = 1
 
-Toto jsou známé jako *homogenní souřadnice* a byly vyvinuty společností matematikovi srpen Ferdinand Möbius, mnohem lepší známé pro jeho topologické oddity pruhu Möbius.
+Toto jsou známé jako *homogenní souřadnice* a byly vytvořeny podle matematikovi srpna Ferdinand Möbius, mnohem lepší známé pro jeho topologické oddity Möbius pruh.
 
-Pokud z, 0, výsledkem dělení nekonečné souřadnice. Ve skutečnosti byl jeden ze společnosti Möbius motivace pro vývoj homogenní souřadnice možnost představují nekonečné hodnoty s konečná čísla.
+Pokud z "je 0, výsledkem dělení nekonečné souřadnice. Ve skutečnosti byl jeden ze společnosti Möbius motivace pro vývoj homogenní souřadnice schopnost představují nekonečné hodnoty se konečná čísla.
 
-Při zobrazení grafiky, ale budete chtít vyhnout vykreslování něco s souřadnice, které transformace nekonečné hodnoty. Tyhle souřadnice nebude vykreslen. Vše v blízkosti Tyhle souřadnice bude velmi velké a pravděpodobně ne vizuálně souvislého.
+Při zobrazení grafiky, ale chcete se vyhnout vykreslování něco s souřadnice, které transformují nekonečné hodnoty. Tyhle souřadnice se nevykreslí. Všechno, co pixelům Tyhle souřadnice bude velmi velké a pravděpodobně není vizuálně souvislé.
 
-V této rovnici nechcete hodnotu z "stal nula:
+V tomto rovnice nechcete, aby hodnotu z "změní na hodnotu nula:
 
-z' = Persp0·x + Persp1·y + Persp2
+z' = Persp0·x Persp1·y + Persp2
 
-`Persp2` Buňky může být nula nebo není nula. Pokud `Persp2` nula, pak je z' je nulová bodu (0, 0), a které nejsou obvykle žádoucí vzhledem k tomu, že tento bod je velmi běžné u dvourozměrná grafiky. Pokud `Persp2` není rovný nule, a pokud je bez ztráty Obecné `Persp2` vyřešen v 1. Například, pokud zjistíte, že `Persp2` by měla být 5, pak můžete jednoduše rozdělíte všechny buňky v matici o 5, díky čemuž `Persp2` rovno 1 a výsledkem bude stejná.
+`Persp2` Buňka může být buď nula nebo není nula. Pokud `Persp2` je nula a pak z "je nula (0, 0) bodu a, která obvykle není žádoucí, protože tento bod je velmi běžné v dvojrozměrné grafiky. Pokud `Persp2` není rovno nule, pak pokud nedochází ke ztrátě obecnosti `Persp2` je pevně nastavena na 1. Například, pokud zjistíte, že `Persp2` by měl být 5, pak v 5, můžete rozdělit všechny buňky v matici jednoduše díky `Persp2` rovno 1 a výsledky budou stejné.
 
-Z těchto důvodů `Persp2` často stanoví na 1, který má stejnou hodnotu v matici identity.
+Z těchto důvodů `Persp2` je často pevně nastavena na 1, což je v jednotkovou matici stejnou hodnotu.
 
-Obecně platí `Persp0` a `Persp1` jsou malé čísla. Předpokládejme například, že začnete s matice identity, ale sada `Persp0` k 0,01:
+Obecně platí `Persp0` a `Persp1` jsou malé čísla. Předpokládejme například, že se pustíte do jednotkovou matici, ale sada `Persp0` na 0,01:
 
 <pre>
 | 1  0   0.01 |
@@ -74,13 +74,13 @@ Obecně platí `Persp0` a `Persp1` jsou malé čísla. Předpokládejme napřík
 | 0  0    1   |
 </pre>
 
-Transformace vzorce jsou:
+Vzorce transformace jsou:
 
-x: = x / (0.01·x + 1)
+x! = x / (0.01·x + 1)
 
 y' = y / (0.01·x + 1)
 
-Tato transformace teď použijte k vykreslení pole čtvercový 100 pixelů umístěný na počátku. Zde je, jak jsou transformovány čtyři rohy:
+Tato transformace je teď možné použijte k vykreslení pole čtvercový 100 pixelů umístěny v počátku. Zde je, jak jsou transformovány čtyři rohy:
 
 (0, 0) → (0, 0)
 
@@ -90,13 +90,13 @@ Tato transformace teď použijte k vykreslení pole čtvercový 100 pixelů umí
 
 (100, 100) → (50, 50)
 
-Pokud x je 100 a potom z' jmenovatel je 2, takže souřadnice x a y je oproti jiným situacím poloviční. Na pravé straně pole bude kratší než na levé straně:
+Pokud x je 100 a pak z "jmenovatel je 2, takže souřadnice x a y jsou oproti jiným situacím poloviční. Pravé straně pole bude kratší než na levé straně:
 
-![](non-affine-images/nonaffinetransform.png "Pole podrobí-afinní transformace")
+![](non-affine-images/nonaffinetransform.png "Pole podroben neafinní transformace")
 
-`Persp` Součástí názvy těchto buněk odkazuje na "perspektivy", protože perspektivního zkreslení naznačuje, že pole se teď sklopí s pravé straně dále za prohlížeč.
+`Persp` Součástí tyto názvy buňky označuje "perspektivy", protože perspektivního zkreslení naznačuje, že pole je nyní Naklápěcí s pravou stranou nic není dál od v prohlížeči.
 
-**Perspektivy testu** stránce můžete experimentovat s hodnotami `Persp0` a `Pers1` k podívat, jak pracují. Přiměřené hodnoty těchto buňkách matice jsou tak malá, který `Slider` v univerzální platformu Windows nemůže zpracovat správně je. Pro přizpůsobení UWP problém, dva `Slider` elementů v [ **TestPerspective.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TestPerspectivePage.xaml) muset inicializována tak, aby rozsahu od -1 do 1:
+**Perspektivy testování** stránce můžete experimentovat s hodnotami `Persp0` a `Pers1` získat představu pro jejich fungování. Přiměřené hodnoty těchto buňkách matice jsou to malé, který `Slider` na univerzální platformě Windows nelze správně jejich zpracování. Tak, aby vyhovovaly problém UPW, dva `Slider` prvky [ **TestPerspective.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TestPerspectivePage.xaml) inicializovat na rozsah od – 1 na 1:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -150,7 +150,7 @@ Pokud x je 100 a potom z' jmenovatel je 2, takže souřadnice x a y je oproti ji
 </ContentPage>
 ```
 
-Obslužné rutiny události pro posuvníků v [ `TestPerspectivePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TestPerspectivePage.xaml.cs) souboru kódu tak, aby se v rozsahu mezi –0.01 a 0,01 dělení hodnot po 100. Kromě toho konstruktoru načítat rastrový obrázek:
+Obslužné rutiny událostí pro jezdce v [ `TestPerspectivePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TestPerspectivePage.xaml.cs) soubor kódu na pozadí dělení hodnoty 100 tak, že jsou v rozsahu mezi –0.01 a 0,01. Kromě toho načte konstruktoru v rastrový obrázek:
 
 ```csharp
 public partial class TestPerspectivePage : ContentPage
@@ -165,9 +165,8 @@ public partial class TestPerspectivePage : ContentPage
         Assembly assembly = GetType().GetTypeInfo().Assembly;
 
         using (Stream stream = assembly.GetManifestResourceStream(resourceID))
-        using (SKManagedStream skStream = new SKManagedStream(stream))
         {
-            bitmap = SKBitmap.Decode(skStream);
+            bitmap = SKBitmap.Decode(stream);
         }
     }
 
@@ -188,7 +187,7 @@ public partial class TestPerspectivePage : ContentPage
 }
 ```
 
-`PaintSurface` Vypočítá obslužná rutina `SKMatrix` hodnotu s názvem `perspectiveMatrix` na základě hodnot tyto dva jezdce dělený 100. To je v kombinaci s dvěma převede transformace, které se umístí středu Tato transformace v centru bitmapy:
+`PaintSurface` Vypočítá obslužná rutina `SKMatrix` hodnotu s názvem `perspectiveMatrix` na základě hodnot těchto dvou posuvníky, vydělí se číslem 100. Toto číslo zkombinuje s dvěma přeložit transformace, které ukládají center Tato transformace v centru rastrového obrázku:
 
 ```csharp
 public partial class TestPerspectivePage : ContentPage
@@ -225,26 +224,26 @@ public partial class TestPerspectivePage : ContentPage
 }
 ```
 
-Zde jsou některé obrázky, ukázka:
+Tady jsou některé ukázkové obrázky:
 
-[![](non-affine-images/testperspective-small.png "Trojitá snímek obrazovky stránky perspektivy testu")](non-affine-images/testperspective-large.png#lightbox "Trojitá snímek obrazovky stránky perspektivy testu")
+[![](non-affine-images/testperspective-small.png "Trojitá snímek obrazovky stránky perspektivy testování")](non-affine-images/testperspective-large.png#lightbox "Trojitá snímek obrazovky stránky perspektivy testování")
 
-Proto byste posuvníků, zjistíte, že hodnoty nad rámec 0.0066 nebo pod –0.0066 způsobit bitovou kopii k najednou fractured a osamocené. Rastrový obrázek transformaci je hranaté 300 pixelů. Je transformovat relativně k jeho center, takže souřadnice bitmapy v rozsahu od –150 do 150. Odvolat, hodnotu z "je:
+Jak můžete experimentovat s posuvníky, zjistíte, že hodnoty nad rámec 0.0066 nebo pod –0.0066 způsobit, že obrázek, který se náhle stát fractured a osamocené. Rastrový obrázek, který se má transformovat je čtverec 300 pixelů. Se transformuje vzhledem k jeho střed tak souřadnice rastrového obrázku v rozsahu od –150 150. Vzpomeňte si, že hodnotu z "je:
 
-z' = Persp0·x + Persp1·y + 1
+z' = Persp0·x Persp1·y + 1
 
-Pokud `Persp0` nebo `Persp1` je větší než 0.0066 nebo pod –0.0066, pak je vždy některé souřadnice rastrového obrázku, jejímž výsledkem z "hodnota nula. Která způsobí dělení nulou a vykreslování bude času. Pokud používáte jiný afinní transformace, budete chtít vyhnout vykreslování nic s souřadnice, které způsobí dělení nulou.
+Pokud `Persp0` nebo `Persp1` je větší než 0.0066 nebo pod –0.0066, pak je vždy některé souřadnice rastrový obrázek, který vede z' Hodnota nula. Který způsobí, že dělení nulou a vykreslování stane hustá doprava. Při použití neafinní transformace, chcete se vyhnout vykreslování k ničemu souřadnice, které způsobují dělení nulou.
 
-Obecně platí, které nebudou nastavení `Persp0` a `Persp1` izolovaně. Je také často nutné nastavit další buněk v matici k dosažení určitých typů-afinní transformace.
+Obecně platí, které nebudou nastavení `Persp0` a `Persp1` izolovaně. Je také často potřeba nastavit další buňky v matici k dosažení určitých typů neafinní transformace.
 
-Jeden-afinní transformace je *Sbíhavost transformace*. Tento typ-afinní transformace uchovává celkové rozměry obdélníku ale zužuje jedné straně:
+Je jedna neafinní transformace *Sbíhavost transformace*. Tento typ neafinní transformace zachovává celkový dimenze obdélník ale zužuje na jedné straně:
 
-![](non-affine-images/tapertransform.png "Pole podrobí Sbíhavost transformace")
+![](non-affine-images/tapertransform.png "Pole podroben Sbíhavost transformace")
 
-[ `TaperTransform` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TaperTransform.cs) Třída provádí zobecněný výpočtu-afinní transformace na základě těchto parametrů:
+[ `TaperTransform` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TaperTransform.cs) Třída provádí výpočet zobecněný neafinní transformace na základě těchto parametrů:
 
-- Obdélníková velikost bitové kopie transformace,
-- výčet, který označuje na straně, který zužuje, rámeček
+- Obdélníková velikost obrázku, který se má transformovat,
+- výčet, který označuje straně obdélníku, který zužuje,
 - jiném výčtu, která určuje, jak zužuje a
 - rozsah špičkou.
 
@@ -350,7 +349,7 @@ static class TaperTransform
 }
 ```
 
-Tato třída se používá v **Sbíhavost transformace** stránky. Vytvoří dvě souboru XAML instance `Picker` elementy a vyberte hodnoty výčtu a `Slider` pro výběr Sbíhavost podílem. [ `PaintSurface` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TaperTransformPage.xaml.cs#L55) Kombinuje obslužná rutina převede Sbíhavost transformace se dvěma transformací aby transformace relativně k levém horním rohu bitmapy:
+Tato třída se používá v **Sbíhavost transformace** stránky. Soubor XAML vytvoří dvě `Picker` prvky k výběru hodnot výčtu a `Slider` pro výběr Sbíhavost zlomek. [ `PaintSurface` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TaperTransformPage.xaml.cs#L55) Obslužná rutina kombinuje Sbíhavost transformací, která se dvěma přeložit transformací, aby transformace vzhledem k levého horního rohu rastrového obrázku:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -393,13 +392,13 @@ Následuje několik příkladů:
 
 [![](non-affine-images/tapertransform-small.png "Trojitá snímek obrazovky stránky Sbíhavost transformace")](non-affine-images/tapertransform-large.png#lightbox "Trojitá snímek obrazovky stránky Sbíhavost transformace")
 
-Dalším typem zobecněný-afinní transformace je 3D otočení, které ukazují další článek, [3D otočení](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/3d-rotation.md).
+3D otáčení, který je znázorněn v následujícím článku, je jiného typu zobecněný neafinní transformace [3D otáčení](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/3d-rotation.md).
 
-Afinní transformace můžete převést obdélník do jakékoli konvexní čtyřúhelník. Tento postup je znázorněn podle **zobrazit bez Afinní matici** stránky. Je velmi podobné **zobrazit Afinní matici** stránku z [matice transformuje](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/matrix.md) článek s tím rozdílem, že má čtvrtý `TouchPoint` objektu k manipulaci s čtvrtý rohu bitmapy:
+Neafinní transformace můžete transformovat obdélníku do jakékoli konvexní čtyřúhelník. To je patrné podle **zobrazit Non-nastavená na Affine matici** stránky. Je velmi podobný **zobrazit nastavená na Affine matici** stránku ze [transformuje matice](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/matrix.md) článku s tím rozdílem, že má čtvrtý `TouchPoint` objekt pro manipulaci s čtvrtý rohu rastrového obrázku:
 
-[![](non-affine-images/shownonaffinematrix-small.png "Trojitá snímek obrazovky stránky zobrazit bez Afinní matici")](non-affine-images/shownonaffinematrix-large.png#lightbox "Trojitá snímek obrazovky stránky zobrazit bez Afinní matici")
+[![](non-affine-images/shownonaffinematrix-small.png "Trojitá snímek obrazovky stránky zobrazit Non-nastavená na Affine matici")](non-affine-images/shownonaffinematrix-large.png#lightbox "Trojitá snímek obrazovky stránky zobrazit Non-nastavená na Affine matici")
 
-Tak dlouho, dokud není pokusí úhlu interior jednoho rozích bitmapy větší než 180 stupňů nebo dvě strany cross navzájem, program úspěšně vypočítá transformace pomocí této metody z [ `ShowNonAffineMatrixPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowNonAffineMatrixPage.xaml.cs) třídy:
+Tak dlouho, dokud není při pokusu úhlu vnitřní jeden z rohů rastrového obrázku větší než 180 stupňů, nebo obě strany cross mezi sebou, program vypočítá úspěšně transformace pomocí této metody z [ `ShowNonAffineMatrixPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowNonAffineMatrixPage.xaml.cs) třídy:
 
 ```csharp
 static SKMatrix ComputeMatrix(SKSize size, SKPoint ptUL, SKPoint ptUR, SKPoint ptLL, SKPoint ptLR)
@@ -448,26 +447,26 @@ static SKMatrix ComputeMatrix(SKSize size, SKPoint ptUL, SKPoint ptUR, SKPoint p
 }
 ```
 
-Pro usnadnění výpočtu tato metoda získá celkový transformace jako produkt tři samostatné transformací, které jsou zde symbolized se šipkami znázorňující, jak tyto transformace upravit čtyři rohy bitmapy:
+Za účelem usnadnění výpočtu tato metoda získá celkový počet transformací, která se jako součin tři samostatné transformace, které jsou zde symbolized se šipkami, zobrazují, jak tyto soubory upravit čtyři rohy rastrového obrázku:
 
-(0, 0) → (0, 0) → (0, 0) → (x 0, y0) (levém)
+(0, 0) → → (0, 0) → (0, 0) x (0, y0) (vlevo nahoře)
 
-(0, H) → (0, 1) → (0, 1) → (x1, y1) (levém)
+(0, H) → (0, 1) → (0, 1) → (x1 y1) (levém)
 
-(W, 0) → (1, 0) → (1, 0) → (x 2, y2) (pravém)
+(W, 0) → → (1, 0) → (1, 0) x (2, y2) (pravém)
 
-(W, H) → (1, 1) → (a, b) → (x 3, y3) (pravém)
+(W, H) → prostředí → (a, b) → (1, 1) (x 3, y3) (pravém)
 
-Poslední souřadnice vpravo jsou čtyři body přidružené k touch čtyři body. Jedná se o konečnou souřadnice rozích bitové mapy.
+Poslední souřadnice na pravé straně jsou čtyři body přidružené k čtyři dotykovými body. Jedná se o konečné souřadnice rohů rastrového obrázku.
 
-W a H představují šířka a výška bitové mapy. První transformace (`S`) jednoduše škáluje rastrového obrázku na čtverce 1 pixel. Druhý transformace je – afinní transformace `N`, a třetí je afinní transformace `A`. Tento afinní transformace je založena na tři body, takže je stejně jako dříve afinní [ `ComputeMatrix` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml.cs#L68) metoda a nebude zahrnovat čtvrtý řádek s (bodu a, b).
+Š a představují šířku a výšku rastrového obrázku. První transformace (`S`) jednoduše škáluje rastrového obrázku na čtverec 1 pixelu. Druhý transformace je neafinní transformace `N`, a třetí je nastavená na affine transformace `A`. Tento afinní transformace jsou založené na tři body, je stejně jako dříve afinní [ `ComputeMatrix` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml.cs#L68) metoda a nezahrnuje čtvrtý řádek s (bodu a, b).
 
-`a` a `b` tak, aby třetí transformace afinní výpočtu hodnot. Kód získá inverzní afinní transformace a použije tento mapovat pravém dolním rohu. Je bod (a, b).
+`a` a `b` hodnoty se počítají tak, aby byla nastavená na affine třetí transformace. Kód získá inverzní afinní transformace a použije ho k mapování pravého dolního rohu. To je bod (a, b).
 
-Jiné použití-afinní transformace je tak, aby napodoboval prostorovou grafiku. V následující článek [3D otočení](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/3d-rotation.md) najdete v článku o otočení dvourozměrná obrázek v 3D prostoru.
+Další používání neafinní transformace je tak, aby napodoboval 3D grafiky. V následujícím článku [3D otáčení](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/3d-rotation.md) uvidíte obměna dvojrozměrného obrázku v 3D prostoru.
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [Rozhraní API ve Skiasharpu](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

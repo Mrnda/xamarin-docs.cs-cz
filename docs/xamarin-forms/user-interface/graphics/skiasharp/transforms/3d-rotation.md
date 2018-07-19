@@ -1,36 +1,36 @@
 ---
-title: 3D otočení v SkiaSharp
-description: Tento článek vysvětluje, jak používat-afinní transformace otočení 2D objektů v 3D prostoru a to ukazuje s ukázkový kód.
+title: 3D otáčení v ve Skiasharpu
+description: Tento článek vysvětluje, jak používat neafinní transformace otočení 2D objekty v 3D prostoru a ukazuje to se vzorovým kódem.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: B5894EA0-C415-41F9-93A4-BBF6EC72AFB9
 author: charlespetzold
 ms.author: chape
 ms.date: 04/14/2017
-ms.openlocfilehash: ad4bce6eff7df65185fc3bd754c747fd0db0c9f1
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 53102b735b4b64bff4456e5e252f2342d0c4002f
+ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244296"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39130891"
 ---
-# <a name="3d-rotations-in-skiasharp"></a>3D otočení v SkiaSharp
+# <a name="3d-rotations-in-skiasharp"></a>3D otáčení v ve Skiasharpu
 
-_Otočit 2D objektů v 3D prostoru pomocí-afinní transformace._
+_Pomocí neafinní transformace otočení 2D objekty v 3D prostoru._
 
-Běžné uplatňování-afinní transformace simuluje oběh 2D objektu v 3D prostoru:
+Běžné použití neafinní transformace je budete jen simulovat otočení 2D objektu v 3D prostoru:
 
-![](3d-rotation-images/3drotationsexample.png "Textový řetězec otáčet v 3D prostoru")
+![](3d-rotation-images/3drotationsexample.png "Otočit textového řetězce v 3D prostoru")
 
-Tato úloha zahrnuje práci s trojrozměrné otáčení a pak odvozování jiných afinní `SKMatrix` transformace, který provádí tyto 3D otočení.
+Tato práce spočívá ve práce s trojrozměrné rotace a odvozování neafinní `SKMatrix` transformaci, která provádí tyto 3D otáčení.
 
-Je obtížné vyvíjet to `SKMatrix` transformace funguje pouze v rámci dvěma rozměry. Úloha změní mnohem jednodušší, pokud tato matice 3 3 je odvozený od matice 4 ve 4 se používá v 3D grafický. Zahrnuje SkiaSharp [ `SKMatrix44` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix44.PreConcat/p/SkiaSharp.SKMatrix44/) třídu pro tento účel, ale některé pozadí 3D grafického procesoru je nezbytné pro pochopení 3D otáčení a matice 4 4 transformace.
+Je obtížné rozvíjet to `SKMatrix` transformace funguje pouze v rámci dvou dimenzí. Úlohy se změní mnohem jednodušší, pokud tato matice 3 3 je odvozen z matice 4 4 používaných pro 3D grafiky. Zahrnuje ve Skiasharpu [ `SKMatrix44` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix44.PreConcat/p/SkiaSharp.SKMatrix44/) třídu pro tento účel, ale některé na pozadí v 3D grafiky, je nutný pro pochopení 3D otáčení a 4 4 transformační matice.
 
-Trojrozměrné souřadnicový systém přidá třetí osy Z. koncepčně volat, osy Z v pravém úhlu na obrazovku. Souřadnice body v 3D prostoru jsou vypsány s tři čísla: (x, y, z). V 3D systém souřadnic používané v tomto článku, zvýšení hodnoty X jsou napravo a roste hodnoty y přejděte dolů, jako v případě dvěma rozměry. Zvyšující kladné Z hodnoty pocházejí z obrazovky. Levém horním rohu, jako v případě grafiky 2D pochází. Na obrazovce si lze představit jako XY rovině s osy Z v pravém úhlu k této roviny.
+Trojrozměrného souřadnicový systém přidá třetí osy Z. koncepčně volá, je na ose Z kolmo na obrazovku. Souřadnice bodů v 3D prostoru jsou označeny pomocí tří čísel: (x, y, z). V 3D jsou souřadnicový systém použité v tomto článku, zvýšení hodnoty X napravo a zvýšení hodnoty Y, přestanou fungovat, stejně jako u dvou dimenzí. Rostoucí kladné Z hodnoty pocházejí z obrazovky. Levém horním rohu, stejně jako u 2D grafika je zdrojem. Na obrazovce můžete představit jako rovině XY s osy v pravém úhlu tento rovinou.
 
-Tomu se říká levé souřadnicový systém. Pokud bod ukazováčkem pro vaše vlevo ve směru kladné X souřadnice (napravo) a prstu střední ve směru zvýšení Y koordinuje (dolů), pak palec bodů ve směru zvýšení souřadnice Z – rozšíření se z na obrazovce.
+Tomu se říká vlevo systém souřadnic. Pokud bod ukazováčkem pro vaše levém ve směru kladná X souřadnice (napravo) a střední prstu ve směru Y zvýšení koordinuje (dolů), pak vaše thumb body v směr zvyšované souřadnice Z – z rozšíření navýšení kapacity na obrazovce.
 
-V 3D grafiky jsou transformací založené na matice 4 4. Tady je matice 4 4 identity:
+V 3D grafiky transformací podle matice 4 4. Tady je 4 4 jednotkovou matici:
 
 <pre>
 |  1  0  0  0  |
@@ -39,7 +39,7 @@ V 3D grafiky jsou transformací založené na matice 4 4. Tady je matice 4 4 ide
 |  0  0  0  1  |
 </pre>
 
-Při práci s matice 4 4, je vhodné k identifikaci buněk s jejich čísla řádků a sloupců:
+Při práci s matice 4 4, je vhodné určit buňky s příslušnými čísly řádků a sloupců:
 
 <pre>
 |  M11  M12  M13  M14  |
@@ -48,9 +48,9 @@ Při práci s matice 4 4, je vhodné k identifikaci buněk s jejich čísla řá
 |  M41  M42  M43  M44  |
 </pre>
 
-Ale SkiaSharp `Matrix44` třídy se mírně liší. Jediný způsob, jak nastavit nebo získat hodnoty jednotlivých buněk `SKMatrix44` je pomocí [ `Item` ](https://developer.xamarin.com/api/property/SkiaSharp.SKMatrix44.Item/p/System.Int32/System.Int32/) indexer. Indexy řádků a sloupců, které jsou od nuly spíše než založené na jeden a jsou vzájemně zaměněny řádků a sloupců. Buňky M14 v diagramu přistupuje pomocí indexeru `[3, 0]` v `SKMatrix44` objektu.
+Nicméně SkiaSharp `Matrix44` třídy se mírně liší. Jediný způsob, jak nastavit nebo získat hodnoty jednotlivých buněk `SKMatrix44` pomocí [ `Item` ](https://developer.xamarin.com/api/property/SkiaSharp.SKMatrix44.Item/p/System.Int32/System.Int32/) indexeru. Indexy řádků a sloupců jsou založený na nule, spíše než založen na jedničce, a jsou přehozeny řádků a sloupců. Buňka M14 v diagramu výše se přistupuje pomocí indexeru `[3, 0]` v `SKMatrix44` objektu.
 
-V rámci systému 3D grafický je 1 4 matice pro vynásobí matice 4 4 transformace převést bod 3D (x, y, z):
+V systému 3D grafiky 3D bod (x, y, z) je převedena na 1 4 matice pro vynásobí matice 4 4 transformace:
 
 <pre>
                  |  M11  M12  M13  M14  |
@@ -59,31 +59,31 @@ V rámci systému 3D grafický je 1 4 matice pro vynásobí matice 4 4 transform
                  |  M41  M42  M43  M44  |
 </pre>
 
-Podobá se 2D transformuje které se provádějí v tři dimenze, 3D transformace se předpokládá, že proběhne ve čtyři dimenze. Čtvrtý dimenze se označuje jako W a 3D prostoru se předpokládá, že v rámci 4D místa, kde jsou W souřadnice rovna 1. Transformace vzorce jsou následující:
+Obdobná 2D transformace které se provádějí v trojrozměrném, 3D transformace se předpokládá, že proběhne do čtyř dimenzí. Čtvrtý dimenze se označuje jako W a 3D prostoru se předpokládá, že existují v rámci 4D místa, kde jsou souřadnice W rovnající se 1. Transformace vzorce jsou následující:
 
-x: = M11·x + M21·y + M31·z + M41
+x! = M11·x M21·y + M31·z + M41
 
-y' = M12·x + M22·y + M32·z + M42
+y' = M12·x M22·y + M32·z + M42
 
 z' = M13·x + M23·y + M33·z + M43
 
-w "= M14·x + M24·y + M34·z + M44
+w "= M14·x M24·y + M34·z + M44
 
-Je zřejmé od vzorců transformace, buněk `M11`, `M22`, `M33` jsou škálování faktory v X, Y a pokynů, a `M41`, `M42`, a `M43` jsou překlad faktory X, Y a Z pokynů.
+Je zřejmé z vzorce transformace, která buňky `M11`, `M22`, `M33` faktory jsou škálování ve směru X, Y a Z a `M41`, `M42`, a `M43` jsou překlad faktory X, Y a Z směry.
 
-Převést tyto souřadnice 3D místa, kde W rovná 1, x', y ", a z 'souřadnice jsou všechny rozdělené podle w":
+Převést tyto souřadnice 3D prostoru, W rovná hodnotě 1, x ", y", a z "souřadnice jsou všechny dělený w":
 
-x"= x' / w.
+x"= x' / w"
 
-y"= y" / w.
+y"= y' / w"
 
-z"= z" / w.
+z"= z" / w "
 
-w"= w, / w" = 1
+w"= w" / w "= 1
 
-Že dělení w, poskytuje perspektivy v 3D prostoru. Pokud w se rovná 1, pak dojde k žádné perspektivy.
+Tento dělení w "poskytuje perspektivou v 3D prostoru. Pokud w "se rovná 1, dojde k žádné perspektivy.
 
-Otáčení v 3D prostoru může být poměrně složité, ale jsou nejjednodušší otáčení kolem osy X, Y a Z. Rotaci kolem osy X úhlu α je tato matice:
+Rotace v 3D prostoru může být poměrně složité, ale jsou nejjednodušší otočení kolem osy X, Y a Z. Otočení kolem osy X úhlu α je tato matice:
 
 <pre>
 |  1     0       0     0  |
@@ -92,7 +92,7 @@ Otáčení v 3D prostoru může být poměrně složité, ale jsou nejjednoduš�
 |  0     0       0     1  |
 </pre>
 
-Hodnoty X zůstávají stejné při podrobí Tato transformace. Otočení okolo osy Y opustí hodnoty y beze změny:
+Hodnoty X nemění, když podroben Tato transformace. Otočení kolem osy Y opustí hodnoty Y beze změny:
 
 <pre>
 |  cos(α)  0  –sin(α)  0  |
@@ -101,7 +101,7 @@ Hodnoty X zůstávají stejné při podrobí Tato transformace. Otočení okolo 
 |    0     0     0     1  |
 </pre>
 
-Otočení kolem osy Z je stejné jako grafiky 2D:
+Otočení kolem osy Z je stejné jako 2D grafika:
 
 <pre>
 |  cos(α)  sin(α)  0  0  |
@@ -110,24 +110,24 @@ Otočení kolem osy Z je stejné jako grafiky 2D:
 |    0       0     0  1  |
 </pre>
 
-Směru je zahrnuto v uchopení pera z souřadnicový systém. Toto je levou systém, takže pokud se bod úchytu levé ruky při zvyšování hodnoty pro konkrétní osu – vpravo pro otočení okolo osy X dolů pro otočení okolo osy Y a směrem můžete pro otočení kolem osy Z – pak křivku z yo Další prsty udává směr pro kladné hodnoty úhlu otočení.
+Směru odvozené od uchopení pera souřadnicovém systému. Toto je levou systému, tak pokud bod thumb vaše levém při zvyšování hodnoty pro konkrétní osu – doprava pro rotaci kolem osy X, dolů pro rotaci kolem osy Y a vůči vám pro rotaci kolem osy Z – potom křivka Jo prstů malovat označuje směr pro kladné hodnoty úhlu otočení.
 
-`SKMatrix44` má zobecněné statické [ `CreateRotation` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix44.CreateRotation/p/System.Single/System.Single/System.Single/System.Single/) a [ `CreateRotationDegrees` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix44.CreateRotationDegrees/p/System.Single/System.Single/System.Single/System.Single/) metody, které umožňují určit osy, kolem kterého dojde k otočení:
+`SKMatrix44` má zobecněn statické [ `CreateRotation` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix44.CreateRotation/p/System.Single/System.Single/System.Single/System.Single/) a [ `CreateRotationDegrees` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix44.CreateRotationDegrees/p/System.Single/System.Single/System.Single/System.Single/) metody, které vám umožňují určit okolo kterého dojde k otočení osy:
 
 ```csharp
 public static SKMatrix44 CreateRotationDegrees (Single x, Single y, Single z, Single degrees)
 ```
 
-Pro otočení okolo osy X nastavte na 1, 0, 0 první tři argumenty. Pro otáčení okolo osy Y je nastavena na 0, 1, 0 a pro otáčení kolem osy Z je nastavena na 0, 0, 1.
+Pro rotaci kolem osy X nastavte na 1, 0, 0 první tři argumenty. Pro rotaci kolem osy Y nastavte u nich hodnotu 0, 1, 0 a pro rotaci kolem osy Z, nastavte u nich hodnotu 0, 0, 1.
 
-Čtvrtém sloupci 4 ve 4 je pro perspektivu. `SKMatrix44` Nemá žádné metody pro vytvoření perspektivy transformací, ale můžete vytvořit jeden sami pomocí následujícího kódu:
+Čtvrtý sloupec 4 ve 4 je pro perspektivu. `SKMatrix44` Nemá žádné metody pro vytvoření perspektivy transformací, ale můžete vytvořit vlastní pomocí následujícího kódu:
 
 ```csharp
 SKMatrix44 perspectiveMatrix = SKMatrix44.CreateIdentity();
 perspectiveMatrix[3, 2] = -1 / depth;
 ```
 
-Z důvodu pro argument název `depth` bude zřejmé za chvíli. Tento kód vytvoří matice:
+Důvod pro název argumentu `depth` bude zřejmé, za chvíli. Tento kód vytvoří matici:
 
 <pre>
 |  1  0  0      0     |
@@ -136,21 +136,21 @@ Z důvodu pro argument název `depth` bude zřejmé za chvíli. Tento kód vytvo
 |  0  0  0      1     |
 </pre>
 
-Transformace vzorce mít za následek následující výpočtu w ":
+Transformace vzorce za následek následující výpočet w ":
 
-w "= – z / hloubka + 1
+w! = – z nebo hloubka + 1
 
-To slouží ke snížení souřadnice X a Y při hodnoty Z jsou menší než nula (koncepčně za rovinou XY) a ke zvýšení souřadnice X a Y pro kladné hodnoty Z. Když souřadnice rovná `depth`, pak w se rovná nule a souřadnice přestat nekonečné. Prostorovou grafiku systémy jsou vytvořeny kolem jedná fotoaparát a `depth` v tomto poli hodnota představuje vzdálenost fotoaparát z tohoto počátku souřadnicový systém. Pokud má grafické objekt a Z koordinaci, který je `depth` jednotky z tohoto počátku, je koncepčně dotykové ovládání přehledu kamera a nekonečnou velká.
+Tato stránka slouží ke snížení souřadnice X a Y, když hodnoty Z jsou menší než nula (koncepčně za XY roviny) a ke zvýšení souřadnice X a Y pro kladné hodnoty Z. Když se rovná souřadnice `depth`, pak w "je nula a souřadnice stát nekonečné. Systémy 3D grafiky jsou postavené na metafora fotoaparát a `depth` hodnotu v tomto poli představuje vzdálenost fotoaparátu/kamery od počátku systém souřadnic. Pokud grafický objekt má Z koordinovat, který je `depth` jednotky ze zdroje se dotýká koncepčně přehledu fotoaparátu/kamery a nekonečně velká.
 
-Mějte na paměti, že budete pravděpodobně používat toto `perspectiveMatrix` hodnota v kombinaci s otočení matice. Pokud má objekt grafiky otáčení souřadnic X nebo Y větší než `depth`, pak je oběh tohoto objektu v 3D prostoru bude pravděpodobně vytvářet souřadnice Z větší než `depth`. To je třeba se vyhnout! Při vytváření `perspectiveMatrix` chcete nastavit `depth` na hodnotu dostatečně velký pro všechny souřadnice v objektu grafiky, bez ohledu na to, jak je otočen. Tím se zajistí, že se nikdy žádné dělení nulou.
+Mějte na paměti, že budete pravděpodobně používat toto `perspectiveMatrix` hodnotu v kombinaci s otočení matice. Pokud grafický objekt střídajících má větší než X nebo Y souřadnice `depth`, pak otočení tento objekt v 3D prostoru by mohla zahrnovat Z souřadnice větší než `depth`. To je třeba se vyhnout! Při vytváření `perspectiveMatrix` chcete nastavit `depth` na hodnotu dostatečně velký pro všechny souřadnice objektu grafiky bez ohledu na to, jak se otočí. Tím se zajistí, že to se nikdy jakékoli dělení nulou.
 
-Kombinování 3D otáčení a perspektivy vyžaduje vynásobením matice 4 4 společně. Pro tento účel `SKMatrix44` definuje zřetězení metody. Pokud `A` a `B` jsou `SKMatrix44` objekty, pak následující kód nastaví stejnou × B:
+Kombinování 3D otáčení a perspektivy vyžaduje násobení matic 4 4 společně. Pro tento účel `SKMatrix44` definuje metody, zřetězení. Pokud `A` a `B` jsou `SKMatrix44` objekty, následující kód nastaví stejné na x B:
 
 ```csharp
 A.PostConcat(B);
 ```
 
-Pokud 4 4 transformační matice se používá v systému 2D grafiky, se použije u 2D objekty. Tyto objekty jsou ploché a se předpokládá, že mají souřadnice Z nula. Transformace násobení je trochu jednodušší než transformace uvedena výše:
+Když 4 4 transformační matice se používá v systému 2D grafika, použije se na 2D objekty. Tyto objekty jsou bez stromové struktury a se předpokládá, že má souřadnice Z nula. Transformace násobení je o něco jednodušší než transformací, která je uvedeno výše:
 
 <pre>
                  |  M11  M12  M13  M14  |
@@ -159,27 +159,27 @@ Pokud 4 4 transformační matice se používá v systému 2D grafiky, se použij
                  |  M41  M42  M43  M44  |
 </pre>
 
-Z výsledků ve vzorcích transformace, které nezahrnují žádné buňky ve třetím řádku matice tuto hodnotu 0:
+Z výsledků ve vzorcích transformace, které nezahrnují jakékoli buňky ve třetím řádku matice tuto hodnotu 0:
 
-x: = M11·x + M21·y + M41
+x! = M11·x M21·y + M41
 
-y' = M12·x + M22·y + M42
+y' = M12·x M22·y + M42
 
-z' = M13·x + M23·y + M43
+z' = M13·x M23·y + M43
 
-w "= M14·x + M24·y + M44
+w "= M14·x M24·y + M44
 
-Kromě toho z' souřadnice je důležité i zde. Když 3D objektu se zobrazí v systému 2D grafiky, je ignorováním souřadnic hodnoty Z sbalený dvourozměrná objektu. Transformace vzorce jsou pouze tyto dva:
+Navíc z "souřadnice je bezvýznamná i zde. Při 3D objekt je zobrazen ve 2D grafika systému, je sbaleny do dvourozměrné objekt ignorováním Z hodnot souřadnic. Transformace vzorce jsou pouze tyto dvě:
 
-x"= x' / w.
+x"= x' / w"
 
-y"= y" / w.
+y"= y' / w"
 
 To znamená, že třetí řádek *a* třetí sloupec matice 4 4 můžete ignorovat.
 
 Ale pokud je to, proč je dokonce nezbytné matice 4 4 na prvním místě?
 
-I když jsou důležité pro dvourozměrná transformace, třetí řádků a sloupců třetí řádek a třetí sloupec 4 ve 4 *provést* hrají roli před který po různé `SKMatrix44` hodnoty se násobí společně. Předpokládejme například, že, vynásobte Otočení okolo osy Y s perspektivní transformace:
+I když jsou relevantní pro dvourozměrná transformace, třetí řádek a sloupec třetí řádek a třetí sloupec 4 ve 4 *proveďte* hrají roli před, že různé `SKMatrix44` hodnoty jsou navzájem vynásobeny. Předpokládejme například, že vynásobit otočení kolem osy Y s perspektivní transformace:
 
 <pre>
 |  cos(α)  0  –sin(α)  0  |   |  1  0  0      0     |   |  cos(α)  0  –sin(α)   sin(α)/depth  |
@@ -188,7 +188,7 @@ I když jsou důležité pro dvourozměrná transformace, třetí řádků a slo
 |    0     0     0     1  |   |  0  0  0      1     |   |    0     0     0           1        |
 </pre>
 
-V rámci produktu buňky `M14` nyní obsahuje hodnotu perspektivy. Pokud chcete použít tento matice 2D objektů, jsou odstraněny třetí řádků a sloupců převést na matici 3 3:
+V rámci produktu buňku `M14` teď obsahuje hodnotu perspektivy. Pokud chcete použít tento matice 2D objektů, jsou odstraněny třetí řádek a sloupec převést na 3 3 matice:
 
 <pre>
 |  cos(α)  0  sin(α)/depth  |
@@ -196,7 +196,7 @@ V rámci produktu buňky `M14` nyní obsahuje hodnotu perspektivy. Pokud chcete 
 |    0     0       1        |
 </pre>
 
-Teď může sloužit k transformaci bod 2D:
+Teď se dá bod 2D transformace:
 
 <pre>
                 |  cos(α)  0  sin(α)/depth  |
@@ -204,25 +204,25 @@ Teď může sloužit k transformaci bod 2D:
                 |    0     0       1        |
 </pre>
 
-Transformace vzorce jsou:
+Vzorce transformace jsou:
 
-x: = cos ·x (α)
+x! = cos ·x (α)
 
 y' = y
 
-z' = (sin (α) nebo hloubku) ·x + 1
+z! = (sin (α) / hloubku) ·x + 1
 
-Všechno teď dělení z':
+Nyní vše, co dělit z ":
 
-x"= cos ·x (α) / ((sin (α) nebo hloubku) ·x + 1)
+x"= cos ·x (α) / ((sin (α) / hloubku) ·x + 1)
 
-y"= y / ((sin (α) nebo hloubku) ·x + 1)
+y"= y / ((sin (α) / hloubku) ·x + 1)
 
-Když 2D objekty otáčejí s kladný úhel okolo osy Y, pak kladné hodnoty X ubíhají na pozadí při záporné hodnoty X zobrazeny na popředí. Hodnoty X zdá se, že blíže přesunout na ose Y (která se řídí hodnota kosinus) jako souřadnice nejvíce vzdálený od osy Y bude menší nebo větší, jak se přesouvají dále za prohlížeč nebo blíže do prohlížeče.
+Když se 2D objekty jsou otočeny kladné úhel okolo osy Y, pak kladné hodnoty X ubíhají na pozadí při záporné hodnoty X zobrazeny na popředí. Hodnoty X zdá se, že chcete přesuňte se blíže na ose Y (což se řídí hodnotu kosinus) jako souřadnice nejvzdálenější osy Y změní menší nebo větší, při přechodu od diváka nebo blíž k uživateli.
 
-Při použití `SKMatrix44`, provádění všech 3D otočení a operací perspektivy vynásobením různé `SKMatrix44` hodnoty. Pak můžete rozbalit dvourozměrná 3 3 matice 4 ve 4 matice pomocí [ `Matrix` ](https://developer.xamarin.com/api/property/SkiaSharp.SKMatrix44.Matrix/) vlastnost `SKMatrix44` třída. Tato vlastnost vrací známým `SKMatrix` hodnotu.
+Při použití `SKMatrix44`, provádět všechny 3D otočení a perspektivy operace vynásobením různých `SKMatrix44` hodnoty. Pak můžete extrahovat dvojrozměrné matici po 3 3 ze 4 ve 4 pomocí matici [ `Matrix` ](https://developer.xamarin.com/api/property/SkiaSharp.SKMatrix44.Matrix/) vlastnost `SKMatrix44` třídy. Tato vlastnost vrátí známým `SKMatrix` hodnotu.
 
-**Natočení 3D** stránky umožňuje experimentovat s 3D otočení. [ **Rotation3DPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml) soubor vytvoří čtyřech posuvníky nastavit Otočení okolo osy X, Y a Z a nastavte hodnotu hloubky:
+**3D otočení** stránce umožňuje experimentovat s 3D otočení. [ **Rotation3DPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml) soubor vytvoří čtyři jezdců nastavte otočení kolem osy X, Y a a nastavit hodnotu hloubky:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -301,9 +301,9 @@ Při použití `SKMatrix44`, provádění všech 3D otočení a operací perspek
 </ContentPage>
 ```
 
-Všimněte si, že `depthSlider` inicializován s `Minimum` hodnotu 250. To znamená, že se tady otáčet 2D objekt obsahuje souřadnice X a Y omezen na kruh definovaný radius 250 pixelů kolem počátku. Výsledkem otočení tohoto objektu v 3D prostoru bude vždy souřadnic hodnoty menší než 250.
+Všimněte si, že `depthSlider` je inicializován `Minimum` hodnota 250. Z toho vyplývá, že 2D objekt střídajících zde má souřadnice X a Y omezen na kruh definovaný 250 pixelů radius kolem počátku. Výsledkem otočení tohoto objektu v 3D prostoru bude vždy hodnoty souřadnic méně než 250.
 
-[ **Rotation3DPage.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml.cs) souboru kódu se bude načítat rastrového obrázku, který je 300 pixelů odmocnina:
+[ **Rotation3DPage.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml.cs) načtení souboru kódu na pozadí rastrového obrázku, který je 300 pixelů Čtvereček:
 
 ```csharp
 public partial class Rotation3DPage : ContentPage
@@ -318,9 +318,8 @@ public partial class Rotation3DPage : ContentPage
         Assembly assembly = GetType().GetTypeInfo().Assembly;
 
         using (Stream stream = assembly.GetManifestResourceStream(resourceID))
-        using (SKManagedStream skStream = new SKManagedStream(stream))
         {
-            bitmap = SKBitmap.Decode(skStream);
+            bitmap = SKBitmap.Decode(stream);
         }
     }
 
@@ -335,9 +334,9 @@ public partial class Rotation3DPage : ContentPage
 }
 ```
 
-Pokud 3D transformace se jedná o tento rastrového obrázku, pak souřadnice X a Y rozsahu –150 až 150, zatímco rozích 212 pixelů z centra, takže všechno, co je v rámci protokolu radius 250 pixelů.
+Pokud 3D transformace se jedná o tento rastrový obrázek, pak souřadnic X a Y rozsahu –150 až 150, zatímco rohy jsou 212 pixelů z centra, takže všechno, co je v rámci radius 250 pixelů.
 
-`PaintSurface` Obslužná rutina vytvoří `SKMatrix44` objekty podle posuvníků a vynásobí společně pomocí `PostConcat`. `SKMatrix` Hodnota, na které se extrahují z konečné `SKMatrix44` se kolem objektu podle převede transformace na střed otočení v centru obrazovky:
+`PaintSurface` Obslužná rutina vytvoří `SKMatrix44` objekty podle posuvníky a vynásobí hodnotu je propojit pomocí `PostConcat`. `SKMatrix` Extrahují z poslední hodnotu `SKMatrix44` kolem objektu je podle přeložit transformace na střed otáčení uprostřed obrazovky:
 
 ```csharp
 public partial class Rotation3DPage : ContentPage
@@ -352,9 +351,8 @@ public partial class Rotation3DPage : ContentPage
         Assembly assembly = GetType().GetTypeInfo().Assembly;
 
         using (Stream stream = assembly.GetManifestResourceStream(resourceID))
-        using (SKManagedStream skStream = new SKManagedStream(stream))
         {
-            bitmap = SKBitmap.Decode(skStream);
+            bitmap = SKBitmap.Decode(stream);
         }
     }
 
@@ -407,11 +405,11 @@ public partial class Rotation3DPage : ContentPage
 }
 ```
 
-Pokud můžete experimentovat s čtvrtý jezdce, můžete si všimnout nastavení různých hloubka nelze přesunout objekt další mimo prohlížeč, že místo toho změnit rozsah účinek perspektivy:
+Když můžete experimentovat s čtvrtý posuvník, můžete si všimnout, že nastavení různých hloubky nepřesouvejte objekt další mimo prohlížeč, ale místo toho změnit rozsah efekt perspektivy:
 
-[![](3d-rotation-images/rotation3d-small.png "Trojitá snímek obrazovky stránky natočení 3D")](3d-rotation-images/rotation3d-large.png#lightbox "Trojitá snímek obrazovky stránky natočení 3D")
+[![](3d-rotation-images/rotation3d-small.png "Trojitá snímek obrazovky stránky 3D otočení")](3d-rotation-images/rotation3d-large.png#lightbox "Trojitá snímek obrazovky stránky 3D otáčení")
 
-**Animovaný natočení 3D** také používá `SKMatrix44` pro animaci textového řetězce v 3D prostoru. `textPaint` Objekt nastavit, protože pole v konstruktoru slouží k určení mezí text:
+**Animovat natočení 3D** také používá `SKMatrix44` pro animaci textového řetězce v 3D prostoru. `textPaint` Objekt nastaven jako pole se používá v konstruktoru určit rozsah textu:
 
 ```csharp
 public class AnimatedRotation3DPage : ContentPage
@@ -443,7 +441,7 @@ public class AnimatedRotation3DPage : ContentPage
 }
 ```
 
-`OnAppearing` Přepsání definuje tři Xamarin.Forms `Animation` objekty, které se použije animaci `xRotationDegrees`, `yRotationDegrees`, a `zRotationDegrees` pole různým tempem. Všimněte si, že období tyto animací jsou nastaveny pro primární čísla – 5 sekund, 7 sekund a 11 sekund – tak celkovou kombinace pouze opakuje každý 385 sekund nebo delší než 10 minut:
+`OnAppearing` Přepsání definuje tři Xamarin.Forms `Animation` objekty animace `xRotationDegrees`, `yRotationDegrees`, a `zRotationDegrees` pole různým tempem. Všimněte si, že jsou nastavené období tyto animace budete Vymazat čísla – 5 sekund, 7 sekund a 11 sekund – tak celkové kombinaci pouze opakuje každé 385 sekund nebo delší než 10 minut:
 
 ```csharp
 public class AnimatedRotation3DPage : ContentPage
@@ -477,7 +475,7 @@ public class AnimatedRotation3DPage : ContentPage
 }
 ```
 
-Jako v předchozích programu `PaintCanvas` obslužná rutina vytvoří `SKMatrix44` hodnoty pro otáčení a perspektivy a je vynásobí společně:
+Stejně jako v předchozím program `PaintCanvas` obslužná rutina vytvoří `SKMatrix44` hodnoty pro otočení a perspektivy a jejich vynásobí dohromady:
 
 ```csharp
 public class AnimatedRotation3DPage : ContentPage
@@ -531,12 +529,12 @@ public class AnimatedRotation3DPage : ContentPage
 }
 ```
 
-Tato 3D otočení obklopená několik 2D transformací chcete přesunout střed otáčení center obrazovky a škálování velikost textový řetězec tak, aby se stejnou délku jako obrazovky:
+3D otočení je obklopená několik 2D transformace přesunout střed otáčení do středu obrazovky a umožňuje změnit velikost textového řetězce, tak, aby se stejnou šířku jako na obrazovce:
 
-[![](3d-rotation-images/animatedrotation3d-small.png "Trojitá snímek obrazovky stránky animovaný natočení 3D")](3d-rotation-images/animatedrotation3d-large.png#lightbox "Trojitá snímek obrazovky stránky animovaný natočení 3D")
+[![](3d-rotation-images/animatedrotation3d-small.png "Trojitá snímek obrazovky stránky 3D otočení animovat")](3d-rotation-images/animatedrotation3d-large.png#lightbox "Trojitá snímek obrazovky stránky animovat natočení 3D")
 
 
 ## <a name="related-links"></a>Související odkazy
 
-- [Rozhraní API SkiaSharp](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [Rozhraní API ve Skiasharpu](https://developer.xamarin.com/api/root/SkiaSharp/)
 - [SkiaSharpFormsDemos (ukázka)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
