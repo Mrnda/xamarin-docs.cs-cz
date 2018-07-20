@@ -1,5 +1,4 @@
 # [Kniha Creating Mobile Apps with Xamarin.Forms](index.md)
-## [Sumáře kapitol](summaries/index.md)
 ## [1. Jak do toho zapadá Xamarin.Forms?](summaries/chapter01.md)
 ## [2. Anatomie aplikace](summaries/chapter02.md)
 ## [3. Hlouběji do textu](summaries/chapter03.md)
